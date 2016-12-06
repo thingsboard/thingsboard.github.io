@@ -23,14 +23,14 @@ cd <docker-folder>
     1. **[docker-compose.random.yml](https://raw.githubusercontent.com/thingsboard/thingsboard/master/docker/docker-compose.random.yml)** - overwrite docker-compose file with thirdparty ports configuration.
     1. **[.env](https://raw.githubusercontent.com/thingsboard/thingsboard/master/docker/.env)** - main env file that contains default location of cassandra data folder.
     1. **[thingsboard.env](https://raw.githubusercontent.com/thingsboard/thingsboard/master/docker/thingsboard.env)** - default thingsboard environment variables.
-    1. **[thingsboard-db-dchema.env](https://raw.githubusercontent.com/thingsboard/thingsboard/master/docker/thingsboard-db-dchema.env)** - default db-schema environment variables.
+    1. **[thingsboard-db-schema.env](https://raw.githubusercontent.com/thingsboard/thingsboard/master/docker/thingsboard-db-schema.env)** - default db-schema environment variables.
       
 ```bash
 curl -L https://raw.githubusercontent.com/thingsboard/thingsboard/master/docker/docker-compose.yml > docker-compose.yml
 curl -L https://raw.githubusercontent.com/thingsboard/thingsboard/master/docker/docker-compose.random.yml > docker-compose.random.yml
 curl -L https://raw.githubusercontent.com/thingsboard/thingsboard/master/docker/.env > .env
 curl -L https://raw.githubusercontent.com/thingsboard/thingsboard/master/docker/thingsboard.env > thingsboard.env
-curl -L https://raw.githubusercontent.com/thingsboard/thingsboard/master/docker/thingsboard-db-dchema.env > thingsboard-db-dchema.env
+curl -L https://raw.githubusercontent.com/thingsboard/thingsboard/master/docker/thingsboard-db-schema.env > thingsboard-db-schema.env
 ```
       
 - Pull main thingsboard image from docker hub
