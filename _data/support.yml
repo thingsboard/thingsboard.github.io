@@ -1,0 +1,12 @@
+bigheader: "Support"
+abstract: "Troubleshooting resources, frequently asked questions, and community support channels."
+toc:
+- title: Support
+  path: /docs/support/
+
+- title: Other Resources
+  section:
+  - title: Release Notes
+    path: https://github.com/thingsboard/thingsboard/releases/
+  - title: Release Roadmap
+    path: https://github.com/thingsboard/thingsboard/milestones/

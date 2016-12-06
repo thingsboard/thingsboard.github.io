@@ -1,0 +1,8 @@
+Thingsboard Documentation
+
+Copyright 2016 The Kubernetes Authors
+Copyright 2016 The Thingsboard Authors
+
+This template was originally copied from Kubernetes website/documentation repo https://github.com/kubernetes/kubernetes.github.io
+on 2016-11-04 which was licensed under Apache 2.0 License and is now licensed under CC BY 4.0.
+Thingsboard Authors removed all Kubernetes-related content and used this project as a skeleton for their documentation.

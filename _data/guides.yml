@@ -1,0 +1,55 @@
+bigheader: "Guides"
+abstract: "How to get started, and accomplish tasks, using Thingsboard."
+toc:
+- title: Guides
+  path: /docs/user-guide/
+- title: What is Thingsboard?
+  path: /docs/getting-started-guides/what-is-thingsboard/
+- title: Getting Started
+  path: /docs/getting-started-guides/helloworld/
+- title: Installation guide
+  section:
+  - title: Installation options
+    path: /docs/user-guide/install/installation-options/
+  - title: Installing Thingsboard using Docker
+    path: /docs/user-guide/install/docker/
+  - title: Installing Thingsboard on Linux
+    path: /docs/user-guide/install/linux/
+  - title: Building from sources
+    path: /docs/user-guide/install/building-from-source/
+  - title: Configuration
+    path: /docs/user-guide/install/config/
+  - title: Cluster setup
+    path: /docs/user-guide/install/cluster-setup/
+- title: Working with device attributes
+  path: /docs/user-guide/attributes/
+- title: Working with telemetry data
+  path: /docs/user-guide/telemetry/
+- title: Using RPC capabilities
+  path: /docs/user-guide/rpc/
+- title: Rule Engine
+  path: /docs/user-guide/rule-engine/
+- title: Data Visualization
+  path: /docs/user-guide/visualization/
+- title: Platform Customization
+  path: /docs/user-guide/customization/
+- title: Administation UI
+  section:
+  - title: Tenants
+    path: /docs/user-guide/ui/tenants/
+  - title: Customers
+    path: /docs/user-guide/ui/customers/
+  - title: Users
+    path: /docs/user-guide/ui/users/
+  - title: Devices
+    path: /docs/user-guide/ui/devices/
+  - title: Rules
+    path: /docs/user-guide/ui/rules/
+  - title: Plugins
+    path: /docs/user-guide/ui/plugins/
+  - title: Widgets Library
+    path: /docs/user-guide/ui/widget-library/
+  - title: Dashboards
+    path: /docs/user-guide/ui/dashboards/
+  - title: Mail Settings
+    path: /docs/user-guide/ui/mail-settings/

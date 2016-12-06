@@ -1,0 +1,20 @@
+bigheader: "Samples"
+abstract: "A collection of example applications that show how to use Thingsboard."
+toc:
+- title: Samples
+  path: /docs/samples/
+- title: Demo Account
+  path: /docs/samples/demo-account/
+- title: NodeMCU
+  section:
+  - title: NodeMCU overview
+    path: /docs/samples/nodemcu/
+  - title: Temperature upload over MQTT using NodeMCU and DHT22 sensor
+    path: /docs/samples/nodemcu/temperature/
+
+- title: Raspberry Pi
+  section:
+  - title: Raspberry Pi overview
+    path: /docs/samples/raspberry/
+  - title: Raspberry Pi GPIO control over MQTT using Thingsboard
+    path: /docs/samples/raspberry/gpio/

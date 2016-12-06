@@ -1,0 +1,5 @@
+bigheader: "Thingsboard Documentation"
+abstract: "Documentation for using Thingsboard IoT Platform."
+toc:
+- title: Thingsboard Documentation
+  path: /docs/

@@ -1,0 +1,7 @@
+**/.DS_Store
+**/desktop.ini
+.jekyll-metadata
+_site/**
+.sass-cache/**
+CNAME
+.idea/**
