@@ -200,3 +200,8 @@ Explore guides related to main Thingsboard features:
  - [Rule Engine](/docs/user-guide/rule-engine/) - how to use rule engine to analyze data from devices.
  - [Data Visualization](/docs/user-guide/visualization/) - how to visualize collected data.
 
+
+## Your feedback
+
+Don't hesitate to star Thingsboard on **[github](https://github.com/thingsboard/thingsboard)** to help us spread the word.
+If you have some questions about this sample - post it on the **[forum](https://groups.google.com/forum/#!forum/thingsboard)**.
