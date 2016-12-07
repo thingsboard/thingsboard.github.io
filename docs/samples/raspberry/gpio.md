@@ -57,6 +57,7 @@ This simple command will launch the application:
 ```bash
 python gpio.py
 ```
+
 ## Data visualization
 
 In order to simplify this guide we have included "Raspberry PI GPIO Demo Dashboard" to the [demo data](/docs/samples/demo-account/#dashboards) that is available in each thingboard installation. 

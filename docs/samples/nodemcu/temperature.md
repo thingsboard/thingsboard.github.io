@@ -70,7 +70,7 @@ There is ability to customize firmware by changing two files:
 
  - ~/samples/nodemcu/nodemcu-firmware/app/include/user_modules.h - Contains list of what kind of modules included by default.
 
-In our case all necessary modules included by default. However, please check thet this modules are uncommented.
+In our case all necessary modules included by default. However, please check that these modules are uncommented.
 
 ```
 ...
