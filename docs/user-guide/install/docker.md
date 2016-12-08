@@ -4,13 +4,13 @@ assignees:
 ---
 
 
-This guide will help you to install and start Thingsboard using Docker.
+This guide will help you to install and start Thingsboard using Docker on Linux or Mac OS.
 
 
 ## Installation steps
 
 - [Install Docker](https://docs.docker.com/engine/installation/)
-- [Install Docker Compose](https://docs.docker.com/compose/install/)
+- [Install Docker Compose (Linux only)](https://docs.docker.com/compose/install/) - Mac OS Docker installation already contains Docker Compose. 
 - Make folder to store docker files:
 
 ```bash
@@ -33,18 +33,6 @@ curl -L https://raw.githubusercontent.com/thingsboard/thingsboard/master/docker/
 curl -L https://raw.githubusercontent.com/thingsboard/thingsboard/master/docker/thingsboard-db-schema.env > thingsboard-db-schema.env
 ```
       
-- Pull main thingsboard image from docker hub
-
-```bash
-sudo docker pull thingsboard/application:1.0
-```
-   
-- Pull db-schema thingsboard image from docker hub
-
-```bash
-sudo docker pull thingsboard/thingsboard-db-schema:1.0
-```
-
 - Execute docker-compose command to start Thingsboard node and all thirdparty components 
 
 ```bash
