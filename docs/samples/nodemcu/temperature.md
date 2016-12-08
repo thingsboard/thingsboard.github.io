@@ -7,7 +7,7 @@
 
 ## Introduction
 
-{% include templates/what-is-thingsboard.md %}
+{% include templates/whatisthingsboard.md %}
 
 This sample application performs collection of temperature and humidity values produced by DHT11 sensor. 
 Collected data is pushed to Thingsboard for storage and visualization.
