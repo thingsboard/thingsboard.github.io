@@ -23,7 +23,7 @@ defaults:
     scope:
       path: "docs"
     values:
-      layout: docwithnav
+      layout: "docwithnav"
       showedit: true
 
 permalink: pretty
