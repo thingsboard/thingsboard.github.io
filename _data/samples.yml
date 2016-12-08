@@ -9,7 +9,7 @@ toc:
   section:
   - title: NodeMCU overview
     path: /docs/samples/nodemcu/
-  - title: Temperature upload over MQTT using NodeMCU and DHT22 sensor
+  - title: Temperature upload over MQTT using NodeMCU and DHT11 sensor
     path: /docs/samples/nodemcu/temperature/
 
 - title: Raspberry Pi

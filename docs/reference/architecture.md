@@ -77,7 +77,7 @@ Brief description of each actors functionality is listed below:
 ###### Service Discovery
 
 Thingsboard uses Zookeeper for service discovery. 
-All Thignsboard nodes are identical and registered as ephemeral in Zookeeper. Apache Curator [path cache receipt](http://curator.apache.org/curator-recipes/path-cache.html) is used to keep track of all available sibling nodes.  
+All Thingsboard nodes are identical and registered as ephemeral in Zookeeper. Apache Curator [path cache receipt](http://curator.apache.org/curator-recipes/path-cache.html) is used to keep track of all available sibling nodes.  
 
 ###### Consistent Hashing
 

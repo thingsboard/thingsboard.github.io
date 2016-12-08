@@ -7,11 +7,11 @@
 
 ## Introduction
 
-This sample application performs collection of temperature and humidity values produced by DHT22 sensor. 
+This sample application performs collection of temperature and humidity values produced by DHT11 sensor. 
 Collected data is pushed to Thingsboard for storage and visualization.
 The purpose of this application is to demonstrate Thingsboard [data collection API](/docs/user-guide/telemetry/) and [visualization capabilities](docs/user-guide/visualization/).
 
-The DHT22 sensor is connected to [NodeMCU](https://en.wikipedia.org/wiki/NodeMCU). NodeMCU push data to Thingsboard server via [MQTT](https://en.wikipedia.org/wiki/MQTT) protocol.
+The DHT11 sensor is connected to [NodeMCU](https://en.wikipedia.org/wiki/NodeMCU). NodeMCU push data to Thingsboard server via [MQTT](https://en.wikipedia.org/wiki/MQTT) protocol.
 Data is visualized using built-in customizable dashboard. The application that is running on NodeMCU is written using Lua scripting language which is quite simple and easy to understand.
 
 ## Prerequisites
@@ -70,7 +70,7 @@ There is ability to customize firmware by changing two files:
 
  - ~/samples/nodemcu/nodemcu-firmware/app/include/user_modules.h - Contains list of what kind of modules included by default.
 
-In our case all necessary modules included by default. However, please check thet this modules are uncommented.
+In our case all necessary modules included by default. However, please check that this modules are uncommented.
 
 ```
 ...
@@ -105,7 +105,7 @@ As the result binary firmware located in the **~/samples/nodemcu/nodemcu-firmwar
 Our application consists of three *.lua* files:
 
  - config.lua - configuration file, where we define custom configuration. 
-   You need to modify this file in order to setup your wifi network parameters and address of Thignsboard server.
+   You need to modify this file in order to setup your wifi network parameters and address of Thingsboard server.
    - your wifi network SSID - name of the wifi network.
    - your wifi network password - password to the network.
    - thingsboard server ip - host where your thingsboard installation. 
@@ -155,13 +155,13 @@ $ sudo ./luatool.py --port /dev/ttyUSB0 -b 115200 --src init.lua --dest init.lua
 
 ### Troubleshooting
 
-Sometimes you can observe frequent blinking of the blue led after firmware upload. This is probalby related to missing initialization data. Use following command to fix this: 
+Sometimes you can observe frequent blinking of the blue led after firmware upload. This is probably related to missing initialization data. Use following command to fix this: 
 
 ```bash
 $ sudo ./esptool.py -b 115200 write_flash --flash_mode dio --flash_size 32m 0x3fc000 ~/samples/nodemcu/nodemcu-firmware/bin/esp_init_data_default.bin --verify
 ```
 
-Sometimes you are not able to upload lua files. Try reseting device and executing command again within first 10 seconds after reset. If no success, try to delete init.lua code from nodemcu:
+Sometimes you are not able to upload lua files. Try to reset device and executing command again within first 10 seconds after reset. If no success, try to delete init.lua code from NodeMCU:
 
 ```bash
 $ sudo ./luatool.py --port /dev/ttyUSB0 -b 115200 --delete init.lua
@@ -169,7 +169,7 @@ $ sudo ./luatool.py --port /dev/ttyUSB0 -b 115200 --delete init.lua
 
 ## Data visualization
 
-In order to simplify this guide we have included "Temperature & Humidity Demo Dashboard" to the [demo data](TODO) that is available in each thingboard installation. 
+In order to simplify this guide we have included "Temperature & Humidity Demo Dashboard" to the [demo data](/docs/samples/demo-account/) that is available in each Thingsboard installation. 
 Of course, you can modify this dashboard: tune, add, delete widgets, etc.
 You can access this dashboard by logging in as a tenant administrator:
 
@@ -181,6 +181,7 @@ Once logged in, open **Dashboards->Temperature & Humidity Demo Dashboard** page.
  ![image](/images/samples/nodemcu/temperature/dashboard.png)
  
 ## Your feedback
+
 
 Don't hesitate to star Thingsboard on **[github](https://github.com/thingsboard/thingsboard)** to help us spread the word.
 If you have some questions about this sample - post it on the **[forum](https://groups.google.com/forum/#!forum/thingsboard)**.
