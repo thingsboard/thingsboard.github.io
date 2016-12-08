@@ -20,6 +20,8 @@ Data is visualized using map widget which is part of customizable dashboard.
 The application that is running on LinkIt ONE is written using Arduino SDK which is quite simple and easy to understand.
 
 ## Prerequisites
+
+This tutorial was prepared for Windows OS users. However it is possible to run it on other OS (Linux or MacOS).
  
 You will need to have Thingsboard server up and running. 
 Use following [guide](/docs/user-guide/install/docker-windows/) to install Thingsboard on Windows. 
