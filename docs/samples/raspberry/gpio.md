@@ -7,6 +7,8 @@
 
 ## Introduction
 
+{% include templates/whatisthingsboard.md %}
+
 This sample application will allow you to control GPIO of your Raspberry Pi device using Thingsboard web UI. We will observe GPIO control using Led connected to one of the pins. 
 The purpose of this application is to demonstrate Thingsboard [RPC capabilities](/docs/user-guide/rpc/).
 
@@ -72,7 +74,16 @@ Screenshot of the dashboard is attached below.
 
  ![image](/images/samples/raspberry/gpio/dashboard.png)
  
-## Your feedback
+## Next steps
 
-Don't hesitate to star Thingsboard on **[github](https://github.com/thingsboard/thingsboard)** to help us spread the word.
-If you have some questions about this sample - post it on the **[forum](https://groups.google.com/forum/#!forum/thingsboard)**.
+Browse other [samples](/docs/samples) or explore guides related to main Thingsboard features:
+
+ - [Device attributes](/docs/user-guide/attributes/) - how to use device attributes.
+ - [Telemetry data collection](/docs/user-guide/telemetry/) - how to collect telemetry data.
+ - [Using RPC capabilities](/docs/user-guide/rpc/) - how to send commands to/from devices.
+ - [Rule Engine](/docs/user-guide/rule-engine/) - how to use rule engine to analyze data from devices.
+ - [Data Visualization](/docs/user-guide/visualization/) - how to visualize collected data.
+ 
+{% include templates/feedback.md %}
+  
+{% include socials.html %}
