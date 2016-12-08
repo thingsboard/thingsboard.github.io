@@ -1,6 +1,6 @@
 ---
-no_canonical: true
----
+layout: docwithnav
+---gi
 
 * TOC
 {:toc}
