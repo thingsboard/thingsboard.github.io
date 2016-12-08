@@ -7,8 +7,6 @@
 
 ## Introduction
 
-{% include templates/whatisthingsboard.md %}
-
 This sample application will allow you to control GPIO of your Raspberry Pi device using Thingsboard web UI. We will observe GPIO control using Led connected to one of the pins. 
 The purpose of this application is to demonstrate Thingsboard [RPC capabilities](/docs/user-guide/rpc/).
 
