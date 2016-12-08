@@ -180,8 +180,16 @@ Once logged in, open **Dashboards->Temperature & Humidity Demo Dashboard** page.
 
  ![image](/images/samples/nodemcu/temperature/dashboard.png)
  
-## Your feedback
+## Next steps
 
+Browse other [samples](/docs/samples) or explore guides related to main Thingsboard features:
 
-Don't hesitate to star Thingsboard on **[github](https://github.com/thingsboard/thingsboard)** to help us spread the word.
-If you have some questions about this sample - post it on the **[forum](https://groups.google.com/forum/#!forum/thingsboard)**.
+ - [Device attributes](/docs/user-guide/attributes/) - how to use device attributes.
+ - [Telemetry data collection](/docs/user-guide/telemetry/) - how to collect telemetry data.
+ - [Using RPC capabilities](/docs/user-guide/rpc/) - how to send commands to/from devices.
+ - [Rule Engine](/docs/user-guide/rule-engine/) - how to use rule engine to analyze data from devices.
+ - [Data Visualization](/docs/user-guide/visualization/) - how to visualize collected data.
+
+{% include templates/feedback.md %}
+ 
+{% include socials.html %}
