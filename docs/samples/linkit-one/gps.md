@@ -6,6 +6,7 @@ layout: docwithnav
 {:toc}
 
 ## Introduction
+{% include templates/what-is-thingsboard.md %}
 
 This sample application shows capability to track GPS location of LinkIt ONE device and further visualization on the map. 
 It performs collection of latitude and longitude values produced by GPS module. 
