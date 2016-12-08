@@ -1,5 +1,6 @@
 ---
-
+layout: docwithnav
+no_canonical: true
 ---
 
 * TOC
