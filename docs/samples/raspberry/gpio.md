@@ -1,5 +1,5 @@
 ---
-
+no_canonical: true
 ---
 
 * TOC
