@@ -21,7 +21,7 @@ defaults:
       docsbranch: "master"
   -
     scope:
-      path: "docs"
+      path: docs
     values:
       layout: docwithnav
       showedit: true
