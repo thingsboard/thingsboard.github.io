@@ -1,5 +1,6 @@
 ---
 layout: docwithnav
+
 ---
 In the reference section, you can find reference documentation for Thingsboard APIs as well as our glossary and design docs. 
 

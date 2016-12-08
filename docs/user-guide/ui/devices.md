@@ -2,7 +2,6 @@
 layout: docwithnav
 assignees:
 - ashvayka
-
 ---
 
 Thingsboard support following device management features using Web UI and [REST API](/docs/reference/rest-api/).
