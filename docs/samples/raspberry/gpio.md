@@ -1,6 +1,6 @@
 ---
 layout: docwithnav
----gi
+---
 
 * TOC
 {:toc}

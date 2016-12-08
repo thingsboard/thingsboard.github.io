@@ -1,5 +1,5 @@
 ---
-
+layout: docwithnav
 ---
 
 <p>The Thingsboard documentation can help you set up Thingsboard, learn about the platform and get your applications running on Thingsboard.</p>
