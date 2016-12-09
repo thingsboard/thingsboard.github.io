@@ -1,5 +1,6 @@
 ---
 layout: docwithnav
+title: Thingsboard Architecture
 
 ---
 

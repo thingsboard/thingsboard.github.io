@@ -1,5 +1,6 @@
 ---
 layout: docwithnav
+title: GPS data upload and visualization using LinkIt ONE and Thingsboard
 
 ---
 
