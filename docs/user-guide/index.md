@@ -2,6 +2,8 @@
 layout: docwithnav
 assignees:
 - ashvayka
+title: Guides
+
 ---
 
 The Thingsboard **Guides** can help you to get familiar with Thingsboard platform.

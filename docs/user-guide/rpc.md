@@ -2,6 +2,8 @@
 layout: docwithnav
 assignees:
 - ashvayka
+title: Using RPC capabilities
+
 ---
 
 * TOC

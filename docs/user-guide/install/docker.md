@@ -2,6 +2,8 @@
 layout: docwithnav
 assignees:
 - ashvayka
+title: Installing Thingsboard using Docker (Linux or Mac OS)
+
 ---
 
 

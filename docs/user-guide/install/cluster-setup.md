@@ -2,6 +2,8 @@
 layout: docwithnav
 assignees:
 - ashvayka
+title: Cluster setup
+
 ---
 
 This guide will help you to setup Thingsboard in cluster mode.
