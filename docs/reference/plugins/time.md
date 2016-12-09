@@ -2,6 +2,7 @@
 layout: docwithnav
 assignees:
 - ashvayka
+title: Time RPC Plugin
 
 ---
 

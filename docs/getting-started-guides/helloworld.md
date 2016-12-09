@@ -5,9 +5,6 @@ assignees:
 
 ---
 
-* TOC
-{:toc}
-
 ## Introduction
 
 The goal of this guide is for you to collect and visualize some IoT device data using Thingsboard. 

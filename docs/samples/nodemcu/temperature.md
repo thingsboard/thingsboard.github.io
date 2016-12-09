@@ -1,5 +1,6 @@
 ---
 layout: docwithnav
+title: Temperature upload over MQTT using NodeMCU and DHT11 sensor
 
 ---
 
