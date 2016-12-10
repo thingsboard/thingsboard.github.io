@@ -2,6 +2,8 @@
 layout: docwithnav
 assignees:
 - ashvayka
+title: Configuration
+
 ---
 
 This guide will help you to get familiar with Thingsboard configuration files and parameters.

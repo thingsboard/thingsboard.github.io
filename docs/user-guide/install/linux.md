@@ -2,6 +2,8 @@
 layout: docwithnav
 assignees:
 - ashvayka
+title: Installing Thingsboard on Linux
+
 ---
 
 This guide describes how to install Thingsboard on a Linux based server machine.

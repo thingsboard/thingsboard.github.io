@@ -2,6 +2,8 @@
 layout: docwithnav
 assignees:
 - ashvayka
+title: Building from sources
+
 ---
 
 This guide will help you to download and build Thingsboard from sources. Instructions listed below are tested on Ubuntu 16.04 and CentOS 7.1
