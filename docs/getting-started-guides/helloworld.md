@@ -34,7 +34,7 @@ We will use this emulators in advanced tutorials, however, the for the purpose o
 
 The first step is to login to administration Web UI using default account: 
   
-  - Username: **tenant@thingsboard.org**
+  - Username: **tenant@thingsboard.io**
   - Password: **tenant**
   
 {:refdef: style="text-align: center;"}

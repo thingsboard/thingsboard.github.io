@@ -66,7 +66,7 @@ In order to simplify this guide we have included "Raspberry PI GPIO Demo Dashboa
 Of course, you can modify this dashboard: tune, add, delete widgets, etc.
 You can access this dashboard by logging in as a tenant administrator:
 
- - login: tenant@thingsboard.org
+ - login: tenant@thingsboard.io
  - password: tenant
  
 Once logged in, open **Dashboards->Raspberry PI GPIO Demo Dashboard** page. You should observe demo dashboard with GPIO control and status panel for your device. 
