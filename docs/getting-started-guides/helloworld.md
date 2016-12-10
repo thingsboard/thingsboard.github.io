@@ -101,7 +101,7 @@ ClientF,cURL (macOS),shell,resources/curl-macos.sh,/docs/getting-started-guides/
 Download or create the following data files:
 
  - **attributes-data.json** - contains two device attributes values: firmware version and serial number.
- - **timeseries-data.json** - contains three time-series values: temperature, humidity and active flag.
+ - **telemetry-data.json** - contains three time-series values: temperature, humidity and active flag.
  
 Please note that data in this files is basically in key-value format. You can use your own keys and values. 
 See [MQTT](/docs/reference/mqtt-api/#key-value-format), [CoAP](/docs/reference/coap-api/#key-value-format)
