@@ -142,6 +142,7 @@ Execute dashboard upload command:
 curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' --header 'X-Authorization: Bearer $YOUR_JSON_TOKEN' -d "@arduino_dht_temp_dashboard.json" 'http://localhost:8080/api/dashboard'
 ```
 
+
 ## Programming the Arduino UNO device
 
 If you already familiar with basics of Arduino UNO programming using Arduino IDE you can skip the following step and proceed with step 2.
@@ -180,7 +181,7 @@ Download and open **arduino-dht-esp8266-mqtt.ino** sketch.
 - WIFI_PASSWORD - access point password
 - thingsboardServer - Thingsboard HOST/IP address that is accessable within your wifi network.
 
-{% capture tabspec %}gps-arduino
+{% capture tabspec %}arduino-sketch
 arduino-dht-esp8266-mqtt,arduino-dht-esp8266-mqtt.ino,c,resources/arduino-dht-esp8266-mqtt.ino,/docs/samples/arduino/resources/arduino-dht-esp8266-mqtt.ino{% endcapture %}
 {% include tabs.html %}
 
