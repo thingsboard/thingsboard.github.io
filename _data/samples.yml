@@ -23,3 +23,9 @@ toc:
     path: /docs/samples/linkit-one/
   - title: GPS data upload and visualization using LinkIt ONE and Thingsboard
     path: /docs/samples/linkit-one/gps/
+- title: Arduino
+  section:
+  - title: Arduino overview
+    path: /docs/samples/arduino/
+  - title: Temperature upload over MQTT using Arduino UNO and DHT22 sensor
+    path: /docs/samples/arduino/temperature/

@@ -1,0 +1,224 @@
+---
+layout: docwithnav
+title: Temperature upload over MQTT using Arduino UNO and DHT22 sensor
+
+---
+
+* TOC
+{:toc}
+
+## Introduction
+{% include templates/what-is-thingsboard.md %}
+
+This sample application performs collection of temperature and humidity values produced by [DHT22 sensor](https://www.adafruit.com/product/385) and further visualization on the dashboard.
+Collected data is pushed to Thingsboard for storage and visualization.
+The purpose of this application is to demonstrate Thingsboard [data collection API](/docs/user-guide/telemetry/) and [visualization capabilities](docs/user-guide/visualization/).
+
+The DHT22 sensor is connected to [Arduino UNO](https://en.wikipedia.org/wiki/Arduino/).
+Arduino UNO connects to the WiFi network using [ESP8266](https://en.wikipedia.org/wiki/ESP8266/). 
+Arduino UNO push data to Thingsboard server via MQTT protocol by using [PubSubClient](https://github.com/knolleary/pubsubclient) library for Arduino.
+Data is visualized using built-in customizable dashboard. 
+The application that is running on Arduino UNO is written using Arduino SDK which is quite simple and easy to understand.
+
+## Prerequisites
+
+You will need to Thingsboard server up and running. Use following [guide](/docs/user-guide/install/installation-options/) to install Thingsboard.
+
+## List of hardware and pinouts
+
+ - [Arduino UNO](https://store.arduino.cc/product/GBX00066)
+ 
+  ![image](/images/samples/arduino/temperature/arduino-uno-pinout.png)
+
+ - [ESP8266 module](https://www.aliexpress.com/item/Free-shipping-50pcs-lot-ESP8266-serial-WIFI-wireless-module-wireless-transceiver/32257568124.html?spm=2114.03010208.3.126.6Ir2oN&ws_ab_test=searchweb0_0,searchweb201602_2_10065_10068_10084_10083_10080_10082_10081_10060_10061_10062_10056_10055_10054_10059_10099_10078_10079_10093_426_10073_10103_10102_10096_10052_10050_10051,searchweb201603_6&btsid=5ad90a6c-2282-48ee-a450-5ab29e2e5d84)
+
+  ![image](/images/samples/arduino/temperature/esp8266-pinout.png)
+
+ - [DHT22 sensor](https://www.aliexpress.com/item/1pcs-DHT22-digital-temperature-and-humidity-sensor-Temperature-and-humidity-module-AM2302-replace-SHT11-SHT15/32316036161.html?spm=2114.03010208.3.49.aZvfaG&ws_ab_test=searchweb0_0,searchweb201602_2_10065_10068_10084_10083_10080_10082_10081_10060_10061_10062_10056_10055_10054_10059_10099_10078_10079_10093_426_10073_10103_10102_10096_10052_10050_10051,searchweb201603_6&btsid=28d9ee9a-283a-4e97-af7b-a7e530490916)
+
+  ![image](/images/samples/arduino/temperature/dht22-pinout.png)
+  
+ - Resistor (between 4.7K and 10K)
+  
+ - Breadboard 
+  
+ - 2 female-to-female jumper wires
+ 
+ - 11 female-to-male jumper wires
+ 
+ - 3 male-to-male jumper wire  
+
+## ESP8266 Firmware
+
+In the current tutorial [WiFiEsp Arduino library](https://github.com/bportaluri/WiFiEsp) is used to connect Arduino board to the internet. 
+This library supports ESP SDK version 1.1.1 and above (AT version 0.25 and above).
+Please make sure that your ESP8266 has compatible firmware. You can download and flash [AT25-SDK112 firmware](http://www.espruino.com/files/ESP8266_AT25-SDK112-512k.bin) which is tested in this tutorial.  
+
+Please note that serial baud rate of ESP8266 should be set to 9600 by the following AT command:
+
+```bash
+AT+UART_DEF=9600,8,1,0,0
+```
+ 
+## Wiring schema
+ 
+Arduino UNO Pin| ESP8266 Pin
+-----------|-----------
+Arduino UNO 3.3V|ESP8266 VCC
+Arduino UNO 3.3V|ESP8266 CH_PD
+Arduino UNO GND|ESP8266 GND (-)
+Arduino UNO D2|ESP8266 RX
+Arduino UNO D3|ESP8266 TX
+ 
+Arduino UNO Pin| DHT-22 Pin
+-----------|-----------
+Arduino UNO 5V|DHT-22 VCC
+Arduino UNO GND|DHT-22 GND (-)
+Arduino UNO D4|DHT-22 Data 
+
+Finally, place a resistor (between 4.7K and 10K) between pin number 1 and 2 of the DHT sensor.
+
+The following picture summarizes the connections for this project:
+
+![image](/images/samples/arduino/temperature/schema.png)
+ 
+## Configuring Thingsboard
+
+### Provision your device
+
+This step contains instructions that are necessary to connect your device to Thingsboard.
+
+Open Thingsboard Web UI (http://localhost:8080) in browser and login as tenant administrator
+
+ - login: tenant@thingsboard.org
+ - password: tenant
+ 
+Goto "Devices" section. Click "+" button and create device with name "Arduino UNO Demo Device". 
+
+![image](/images/samples/arduino/temperature/device.png)
+
+Once device created, open its details and click "Manage credentials".
+Enter "ARDUINO_DEMO_TOKEN" in "Access token" field and click "Save".
+
+![image](/images/samples/arduino/temperature/credentials.png)
+
+
+Click "Copy Device ID" in device details to copy your device id to clipboard.
+Paste your device id to some place, this value will be used in further steps.
+
+### Provision your dashboard
+
+This step contains instructions that are necessary to provision new dashboard with map widgets to Thingsboard.
+
+Open "Terminal" and download file containing demo dashboard JSON:
+
+```bash
+curl -L http://thingsboard.io/docs/samples/arduino/resources/arduino_dht_temp_dashboard.json > arduino_dht_temp_dashboard.json
+```
+
+Update dashboard configuration with your device Id (obtained in previous step) by issuing the following command:
+
+```bash
+sed -i "s/{DEVICE_ID}/<your device id>/" arduino_dht_temp_dashboard.json
+```
+
+Obtain JWT token by issuing login POST command:
+
+```bash
+curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{"username":"tenant@thingsboard.org", "password":"tenant"}' 'http://localhost:8080/api/auth/login'
+```
+
+You will receive response in the following format:
+
+```json
+{"token":"$YOUR_JSON_TOKEN", "refreshToken": "$REFRESH_TOKEN"}
+```
+
+copy $YOUR_JSON_TOKEN to some place. **Note** that it will be valid for 15 minutes by default.
+
+Execute dashboard upload command:
+
+```bash
+curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' --header 'X-Authorization: Bearer $YOUR_JSON_TOKEN' -d "@arduino_dht_temp_dashboard.json" 'http://localhost:8080/api/dashboard'
+```
+
+## Programming the Arduino UNO device
+
+If you already familiar with basics of Arduino UNO programming using Arduino IDE you can skip the following step and proceed with step 2.
+
+### Step 1. Arduino UNO and Arduino IDE setup.
+In order to start programming Arduino UNO device you will need Arduino IDE installed and all related software. 
+
+Download and install [Arduino IDE](https://www.arduino.cc/en/Main/Software).
+
+To learn how to connect your Uno board to the computer and upload your first sketch please follow this [guide](https://www.arduino.cc/en/Guide/ArduinoUno).
+
+### Step 2. Install Arduino libraries.
+
+Open Arduino IDE and go to **Sketch -> Include Library -> Manage Libraries**. 
+Find and install the following libraries:
+
+- [PubSubClient by Nick O'Leary](http://pubsubclient.knolleary.net/).
+- [WiFiEsp by bportaluri](https://github.com/bportaluri/WiFiEsp)
+- [Adafruit Unified Sensor by Adafruit](https://github.com/adafruit/Adafruit_Sensor)
+- [DHT sensor library by Adafruit](https://github.com/adafruit/DHT-sensor-library)
+
+**Note** that this tutorial was tested with the following versions of the libraries:
+
+- PubSubClient 2.6
+- WiFiEsp 2.1.2
+- Adafruit Unified Sensor 1.0.2
+- DHT sensor library 1.3.0
+
+### Step 3. Prepare and upload sketch.
+
+Download and open **arduino-dht-esp8266-mqtt.ino** sketch. 
+
+**Note** You need to edit following constants and variables in the sketch:
+
+- WIFI_AP - name of your access point
+- WIFI_PASSWORD - access point password
+- thingsboardServer - Thingsboard HOST/IP address that is accessable within your wifi network.
+
+{% capture tabspec %}gps-arduino
+arduino-dht-esp8266-mqtt,arduino-dht-esp8266-mqtt.ino,c,resources/arduino-dht-esp8266-mqtt.ino,/docs/samples/arduino/resources/arduino-dht-esp8266-mqtt.ino{% endcapture %}
+{% include tabs.html %}
+
+Connect your Arduino UNO device via USB cable and select "Arduino/Genuino Uno" port in Arduino IDE. Compile and Upload your sketch to device using "Upload" button.
+
+After application will be uploaded and started it will try to connect to Thingsboard node using mqtt client and upload "temperature" and "humidity" attributes once per second.
+
+## Troubleshooting
+
+When application is running you can select "Arduino/Genuino Uno" port in Arduino IDE and open "Serial Monitor" in order to view debug information produced by serial output.
+
+## Data visualization
+
+Finally, open Thingsboard Web UI. You can access this dashboard by logging in as a tenant administrator:
+
+ - login: tenant@thingsboard.org
+ - password: tenant
+  
+Go to **"Devices"** section and locate **"Arduino UNO Demo Device"**, open device details and switch to **"Latest telemetry"** tab. 
+If all is configured correctly you should be able to see *"temperature"* and *"humidity"* attributes and theirs latest values in the table.
+
+![image](/images/samples/arduino/temperature/attributes.png)
+
+After, open **"Dashboards"** section then locate and open **"Arduino DHT22: Temperature & Humidity Demo Dashboard"**. 
+As a result you will see two time-series charts and two digital gauges displaying temperature and humidity level.
+
+![image](/images/samples/arduino/temperature/dashboard.png)
+
+## Next steps
+
+Browse other [samples](/docs/samples) or explore guides related to main Thingsboard features:
+
+ - [Device attributes](/docs/user-guide/attributes/) - how to use device attributes.
+ - [Telemetry data collection](/docs/user-guide/telemetry/) - how to collect telemetry data.
+ - [Using RPC capabilities](/docs/user-guide/rpc/) - how to send commands to/from devices.
+ - [Rule Engine](/docs/user-guide/rule-engine/) - how to use rule engine to analyze data from devices.
+ - [Data Visualization](/docs/user-guide/visualization/) - how to visualize collected data.
+
+{% include templates/feedback.md %}
+ 
+{% include socials.html %}
