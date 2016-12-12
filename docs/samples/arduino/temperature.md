@@ -20,6 +20,10 @@ Arduino UNO push data to Thingsboard server via MQTT protocol by using [PubSubCl
 Data is visualized using built-in customizable dashboard. 
 The application that is running on Arduino UNO is written using Arduino SDK which is quite simple and easy to understand.
 
+Once you complete this sample/tutorial, you will see your sensor data on the following dashboard.
+
+![image](/images/samples/arduino/temperature/dashboard.png)
+
 ## Prerequisites
 
 You will need to Thingsboard server up and running. Use following [guide](/docs/user-guide/install/installation-options/) to install Thingsboard.
@@ -206,9 +210,7 @@ If all is configured correctly you should be able to see latest values of *"temp
 ![image](/images/samples/arduino/temperature/attributes.png)
 
 After, open **"Dashboards"** section then locate and open **"Arduino DHT22: Temperature & Humidity Demo Dashboard"**. 
-As a result you will see two time-series charts and two digital gauges displaying temperature and humidity level.
-
-![image](/images/samples/arduino/temperature/dashboard.png)
+As a result you will see two time-series charts and two digital gauges displaying temperature and humidity level (similar to dashboard image in the introduction).
 
 ## Next steps
 

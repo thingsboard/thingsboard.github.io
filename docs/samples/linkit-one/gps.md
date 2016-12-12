@@ -20,6 +20,10 @@ LinkIt ONE pushes data to Thingsboard server via MQTT protocol by using [PubSubC
 Data is visualized using map widget which is part of customizable dashboard. 
 The application that is running on LinkIt ONE is written using Arduino SDK which is quite simple and easy to understand.
 
+Once you complete this sample/tutorial, you will see your device GPS and battery data on the following dashboard.
+
+![image](/images/samples/linkit-one/gps/dashboard.png)
+
 ## Prerequisites
 
 This tutorial was prepared for Windows OS users. However it is possible to run it on other OS (Linux or MacOS).
@@ -143,9 +147,7 @@ If all is configured correctly you should be able to see *"latitude"*, *"longitu
 ![image](/images/samples/linkit-one/gps/attributes.png)
 
 After, open **"Dashboards"** section then locate and open **"LinkIt One GPS Tracking Demo Dashboard"**. 
-As a result you will see the map widget with pointer indicating your device location and battery level widget.
-
-![image](/images/samples/linkit-one/gps/dashboard.png)
+As a result you will see the map widget with pointer indicating your device location and battery level widget (similar to dashboard image in the introduction).
 
 ## Next steps
 

@@ -14,10 +14,10 @@ and will upload them to this page as soon as possible.
 
 #### Contents
 
+ - [**Arduino**](/docs/samples/arduino/) 
+
  - [**NodeMCU**](/docs/samples/nodemcu/)
 
  - [**Raspberry Pi**](/docs/samples/raspberry/)
  
  - [**LinkIt ONE**](/docs/samples/linkit-one/) 
-
- - [**Arduino**](/docs/samples/arduino/) 

@@ -17,6 +17,10 @@ The purpose of this application is to demonstrate Thingsboard [data collection A
 The DHT11 sensor is connected to [NodeMCU](https://en.wikipedia.org/wiki/NodeMCU). NodeMCU push data to Thingsboard server via [MQTT](https://en.wikipedia.org/wiki/MQTT) protocol.
 Data is visualized using built-in customizable dashboard. The application that is running on NodeMCU is written using Lua scripting language which is quite simple and easy to understand.
 
+Once you complete this sample/tutorial, you will see your sensor data on the following dashboard.
+
+![image](/images/samples/nodemcu/temperature/dashboard.png)
+
 ## Prerequisites
  
 You will need to Thingsboard server up and running. Use following [guide](/docs/user-guide/install/installation-options/) to install Thingsboard.
@@ -179,9 +183,7 @@ You can access this dashboard by logging in as a tenant administrator:
  - login: tenant@thingsboard.org
  - password: tenant
  
-Once logged in, open **Dashboards->Temperature & Humidity Demo Dashboard** page. You should observe demo dashboard with live data from your device. Screenshot of the dashboard is attached below.
-
- ![image](/images/samples/nodemcu/temperature/dashboard.png)
+Once logged in, open **Dashboards->Temperature & Humidity Demo Dashboard** page. You should observe demo dashboard with live data from your device (similar to dashboard image in the introduction).
  
 ## Next steps
 
