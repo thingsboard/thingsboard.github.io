@@ -8,15 +8,11 @@ title: Arduino overview
 {:toc}
 
 [Arduino](https://en.wikipedia.org/wiki/Arduino/) is an open-source prototyping platform based on easy-to-use hardware and software. 
-Arduino boards are able to read inputs - light on a sensor, a finger on a button, or a Twitter message - and turn it into an output - activating a motor, turning on an LED, publishing something online. 
-You can tell your board what to do by sending a set of instructions to the microcontroller on the board. 
-It is like the brain of a project.
-
-The applications in this samples that are running on Arduino are developed using [Arduino IDE](https://www.arduino.cc/en/Main/Software).
+Arduino boards are able to read inputs from sensor or buttons, process it and turn it into an output. The applications in this samples that are running on Arduino are developed using [Arduino IDE](https://www.arduino.cc/en/Main/Software).
 
 ## Samples
 
- - [Temperature upload over MQTT using Arduino UNO and DHT22 sensor](/docs/samples/arduino/temperature/)
+ - [Temperature upload over MQTT using Arduino UNO, ESP8266 and DHT22 sensor](/docs/samples/arduino/temperature/)
 
 ## Documentation
 

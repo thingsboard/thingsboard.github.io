@@ -1,6 +1,6 @@
 ---
 layout: docwithnav
-title: Temperature upload over MQTT using Arduino UNO and DHT22 sensor
+title: Temperature upload over MQTT using Arduino UNO, ESP8266 and DHT22 sensor
 
 ---
 
@@ -10,8 +10,8 @@ title: Temperature upload over MQTT using Arduino UNO and DHT22 sensor
 ## Introduction
 {% include templates/what-is-thingsboard.md %}
 
-This sample application performs collection of temperature and humidity values produced by [DHT22 sensor](https://www.adafruit.com/product/385) and further visualization on the dashboard.
-Collected data is pushed to Thingsboard for storage and visualization.
+This sample application performs collection of temperature and humidity values produced by [DHT22 sensor](https://www.adafruit.com/product/385) and further visualization on the real-time web dashboard.
+Collected data is pushed via MQTT to Thingsboard server for storage and visualization.
 The purpose of this application is to demonstrate Thingsboard [data collection API](/docs/user-guide/telemetry/) and [visualization capabilities](docs/user-guide/visualization/).
 
 The DHT22 sensor is connected to [Arduino UNO](https://en.wikipedia.org/wiki/Arduino/).
@@ -82,7 +82,7 @@ The following picture summarizes the connections for this project:
 
 ![image](/images/samples/arduino/temperature/schema.png)
  
-## Configuring Thingsboard
+## Thingsboard configuration
 
 ### Provision your device
 
@@ -187,7 +187,7 @@ arduino-dht-esp8266-mqtt,arduino-dht-esp8266-mqtt.ino,c,resources/arduino-dht-es
 
 Connect your Arduino UNO device via USB cable and select "Arduino/Genuino Uno" port in Arduino IDE. Compile and Upload your sketch to device using "Upload" button.
 
-After application will be uploaded and started it will try to connect to Thingsboard node using mqtt client and upload "temperature" and "humidity" attributes once per second.
+After application will be uploaded and started it will try to connect to Thingsboard node using mqtt client and upload "temperature" and "humidity" timeseries data once per second.
 
 ## Troubleshooting
 
@@ -201,7 +201,7 @@ Finally, open Thingsboard Web UI. You can access this dashboard by logging in as
  - password: tenant
   
 Go to **"Devices"** section and locate **"Arduino UNO Demo Device"**, open device details and switch to **"Latest telemetry"** tab. 
-If all is configured correctly you should be able to see *"temperature"* and *"humidity"* attributes and theirs latest values in the table.
+If all is configured correctly you should be able to see latest values of *"temperature"* and *"humidity"* in the table.
 
 ![image](/images/samples/arduino/temperature/attributes.png)
 
