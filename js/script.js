@@ -35,7 +35,18 @@ function copyCode(elem){
  			sweetAlert("Oh, no...","Sorry, your browser doesn't support document.execCommand('copy'), so we can't copy this code to your clipboard.");		
  			succeed = false;		
  		}		
- 		if (succeed) sweetAlert("Copied to clipboard:",target.value);		
+ 		if (succeed) {
+			var alertText = target.value;
+			var lines = alertText.split(/\r\n|\r|\n/);
+			if (lines.length > 10) {
+				alertText = "";
+				for (var i = 0; i < 10; i++) {
+					alertText += lines[i]+'\n';
+				}
+				alertText += "...";
+			}
+			sweetAlert("Copied to clipboard:",alertText);
+		}
  		return succeed;		
  	} else {		
  		sweetAlert("Oops!",elem + " not found when trying to copy code");		
