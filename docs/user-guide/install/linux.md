@@ -33,7 +33,7 @@ Corresponding instructions are in the same articles listed above.
 
 ##### Cassandra
 
-Thingsboard service requires Cassandra databas.
+Thingsboard service requires Cassandra database.
 Instructions listed below will help you to install Cassandra.
 
 {% capture tabspec %}cassandra-installation
