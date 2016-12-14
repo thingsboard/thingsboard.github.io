@@ -720,6 +720,7 @@ dd
 		margin-bottom: 30px
 		padding-bottom: 10px
 		border-bottom: 1px solid #cccccc
+		pointer-events: none
 
 		// Make sure anchor links aren't hidden by the header
 		&:before
@@ -798,7 +799,7 @@ dd
 		padding: 0 !important
 
 	.includecode th
-		text-align: right !important
+		//text-align: right !important
 		padding: 10px !important
 
 	.includecode th a, .includecode th a code
@@ -1151,6 +1152,7 @@ $feature-box-div-margin-bottom: 40px
 .ui-tabs .ui-tabs-panel
 	padding: 0px !important
 	border: 1px solid #ccc !important
+	overflow-x: auto
 
 // Talk to us
 #talkToUs
@@ -1268,3 +1270,9 @@ $feature-box-div-margin-bottom: 40px
 			transform: translateX(-50%)
 			color: $blue
 			font-weight: 400
+
+
+// jSocials
+
+.jssocials-share-link
+	border-radius: 50% !important

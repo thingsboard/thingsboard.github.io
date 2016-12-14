@@ -11,10 +11,14 @@ toc:
   section:
   - title: Installation options
     path: /docs/user-guide/install/installation-options/
-  - title: Installing Thingsboard using Docker
+  - title: Installing Thingsboard using Docker (Linux or Mac OS)
     path: /docs/user-guide/install/docker/
-  - title: Installing Thingsboard on Linux
+  - title: Installing Thingsboard using Docker (Windows)
+    path: /docs/user-guide/install/docker-windows/
+  - title: Installing Thingsboard on Linux (Ubuntu & CentOS)
     path: /docs/user-guide/install/linux/
+  - title: Installing Thingsboard on Raspberry Pi 3
+    path: /docs/user-guide/install/rpi/
   - title: Building from sources
     path: /docs/user-guide/install/building-from-source/
   - title: Configuration

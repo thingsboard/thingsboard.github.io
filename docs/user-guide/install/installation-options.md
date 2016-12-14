@@ -1,6 +1,9 @@
 ---
+layout: docwithnav
 assignees:
 - ashvayka
+title: Installation options
+
 ---
 
 
@@ -9,5 +12,7 @@ Thingsboard is designed to run and utilize on majority of hardware, from local R
 Ways to set up a Thingsboard cluster include:
 
 
- - [Docker](/docs/user-guide/install/docker/) - install a single-node Thingsboard cluster on your local machine for development and testing.
- - [Linux](/docs/user-guide/install/linux/) - install a Thingboard cluster on any pre-existing machines running Linux.
+ - [Docker (Linux or Mac OS)](/docs/user-guide/install/docker/) - install a single-node Thingsboard cluster on your Linux or Mac OS machine for development and testing.
+ - [Docker (Windows)](/docs/user-guide/install/docker-windows/) - install a single-node Thingsboard cluster on your Windows machine for development and testing.
+ - [Linux (Ubuntu & CentOS)](/docs/user-guide/install/linux/) - install a Thingboard cluster on any pre-existing machines running Linux.
+ - [Raspberry Pi 3 Model B (Raspbian Jessie)](/docs/user-guide/install/rpi/) - install Cassandra and Thingboard server on a Raspberry Pi 3 Model B.

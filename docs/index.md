@@ -1,4 +1,6 @@
 ---
+layout: docwithnav
+title: Thingsboard Documentation
 
 ---
 

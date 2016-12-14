@@ -1,6 +1,9 @@
 ---
+layout: docwithnav
 assignees:
 - ashvayka
+title: HTTP Device API Reference
+
 ---
 
 * TOC

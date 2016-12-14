@@ -1,6 +1,9 @@
 ---
+layout: docwithnav
 assignees:
 - ashvayka
+title: MQTT Device API Reference
+
 ---
 
 * TOC

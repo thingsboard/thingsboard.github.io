@@ -1,6 +1,8 @@
 ---
+layout: docwithnav
 assignees:
 - ashvayka
+title: Plugins
 
 ---
 

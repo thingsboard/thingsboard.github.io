@@ -1,6 +1,8 @@
 ---
+layout: docwithnav
 assignees:
 - ashvayka
+title: Working with telemetry data
 
 ---
 

@@ -5,16 +5,27 @@ toc:
   path: /docs/samples/
 - title: Demo Account
   path: /docs/samples/demo-account/
+- title: Arduino
+  section:
+  - title: Arduino overview
+    path: /docs/samples/arduino/
+  - title: Temperature upload over MQTT using Arduino UNO, ESP8266 and DHT22 sensor
+    path: /docs/samples/arduino/temperature/
 - title: NodeMCU
   section:
   - title: NodeMCU overview
     path: /docs/samples/nodemcu/
-  - title: Temperature upload over MQTT using NodeMCU and DHT22 sensor
+  - title: Temperature upload over MQTT using NodeMCU and DHT11 sensor
     path: /docs/samples/nodemcu/temperature/
-
 - title: Raspberry Pi
   section:
   - title: Raspberry Pi overview
     path: /docs/samples/raspberry/
   - title: Raspberry Pi GPIO control over MQTT using Thingsboard
     path: /docs/samples/raspberry/gpio/
+- title: LinkIt ONE
+  section:
+  - title: LinkIt ONE overview
+    path: /docs/samples/linkit-one/
+  - title: GPS data upload and visualization using LinkIt ONE and Thingsboard
+    path: /docs/samples/linkit-one/gps/

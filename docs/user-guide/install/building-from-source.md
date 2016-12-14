@@ -1,6 +1,9 @@
 ---
+layout: docwithnav
 assignees:
 - ashvayka
+title: Building from sources
+
 ---
 
 This guide will help you to download and build Thingsboard from sources. Instructions listed below are tested on Ubuntu 16.04 and CentOS 7.1
@@ -31,6 +34,8 @@ You can clone source code of the project from official [github repo](https://git
 
 ```bash
 git clone git@github.com:thingsboard/thingsboard.git
+# checkout latest release branch
+git checkout release-1.0
 ```
 
 #### Build

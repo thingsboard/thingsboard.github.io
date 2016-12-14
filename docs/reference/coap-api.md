@@ -1,6 +1,9 @@
 ---
+layout: docwithnav
 assignees:
 - ashvayka
+title: CoAP Device API Reference
+
 ---
 
 * TOC

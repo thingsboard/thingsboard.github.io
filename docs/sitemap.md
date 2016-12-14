@@ -1,4 +1,6 @@
 ---
+layout: docwithnav
+
 ---
 <script language="JavaScript">
 var dropDownsPopulated = false;

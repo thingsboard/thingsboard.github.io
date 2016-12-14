@@ -1,4 +1,6 @@
 ---
+layout: docwithnav
+title: Temperature upload over MQTT using NodeMCU and DHT11 sensor
 
 ---
 
@@ -6,13 +8,18 @@
 {:toc}
 
 ## Introduction
+{% include templates/what-is-thingsboard.md %}
 
-This sample application performs collection of temperature and humidity values produced by DHT22 sensor. 
+This sample application performs collection of temperature and humidity values produced by DHT11 sensor. 
 Collected data is pushed to Thingsboard for storage and visualization.
 The purpose of this application is to demonstrate Thingsboard [data collection API](/docs/user-guide/telemetry/) and [visualization capabilities](docs/user-guide/visualization/).
 
-The DHT22 sensor is connected to [NodeMCU](https://en.wikipedia.org/wiki/NodeMCU). NodeMCU push data to Thingsboard server via [MQTT](https://en.wikipedia.org/wiki/MQTT) protocol.
+The DHT11 sensor is connected to [NodeMCU](https://en.wikipedia.org/wiki/NodeMCU). NodeMCU push data to Thingsboard server via [MQTT](https://en.wikipedia.org/wiki/MQTT) protocol.
 Data is visualized using built-in customizable dashboard. The application that is running on NodeMCU is written using Lua scripting language which is quite simple and easy to understand.
+
+Once you complete this sample/tutorial, you will see your sensor data on the following dashboard.
+
+![image](/images/samples/nodemcu/temperature/dashboard.png)
 
 ## Prerequisites
  
@@ -105,7 +112,7 @@ As the result binary firmware located in the **~/samples/nodemcu/nodemcu-firmwar
 Our application consists of three *.lua* files:
 
  - config.lua - configuration file, where we define custom configuration. 
-   You need to modify this file in order to setup your wifi network parameters and address of Thignsboard server.
+   You need to modify this file in order to setup your wifi network parameters and address of Thingsboard server.
    - your wifi network SSID - name of the wifi network.
    - your wifi network password - password to the network.
    - thingsboard server ip - host where your thingsboard installation. 
@@ -155,13 +162,13 @@ $ sudo ./luatool.py --port /dev/ttyUSB0 -b 115200 --src init.lua --dest init.lua
 
 ### Troubleshooting
 
-Sometimes you can observe frequent blinking of the blue led after firmware upload. This is probalby related to missing initialization data. Use following command to fix this: 
+Sometimes you can observe frequent blinking of the blue led after firmware upload. This is probably related to missing initialization data. Use following command to fix this: 
 
 ```bash
 $ sudo ./esptool.py -b 115200 write_flash --flash_mode dio --flash_size 32m 0x3fc000 ~/samples/nodemcu/nodemcu-firmware/bin/esp_init_data_default.bin --verify
 ```
 
-Sometimes you are not able to upload lua files. Try reseting device and executing command again within first 10 seconds after reset. If no success, try to delete init.lua code from nodemcu:
+Sometimes you are not able to upload lua files. Try to reset device and executing command again within first 10 seconds after reset. If no success, try to delete init.lua code from NodeMCU:
 
 ```bash
 $ sudo ./luatool.py --port /dev/ttyUSB0 -b 115200 --delete init.lua
@@ -169,18 +176,25 @@ $ sudo ./luatool.py --port /dev/ttyUSB0 -b 115200 --delete init.lua
 
 ## Data visualization
 
-In order to simplify this guide we have included "Temperature & Humidity Demo Dashboard" to the [demo data](TODO) that is available in each thingboard installation. 
+In order to simplify this guide we have included "Temperature & Humidity Demo Dashboard" to the [demo data](/docs/samples/demo-account/) that is available in each Thingsboard installation. 
 Of course, you can modify this dashboard: tune, add, delete widgets, etc.
 You can access this dashboard by logging in as a tenant administrator:
 
  - login: tenant@thingsboard.org
  - password: tenant
  
-Once logged in, open **Dashboards->Temperature & Humidity Demo Dashboard** page. You should observe demo dashboard with live data from your device. Screenshot of the dashboard is attached below.
-
- ![image](/images/samples/nodemcu/temperature/dashboard.png)
+Once logged in, open **Dashboards->Temperature & Humidity Demo Dashboard** page. You should observe demo dashboard with live data from your device (similar to dashboard image in the introduction).
  
-## Your feedback
+## Next steps
 
-Don't hesitate to star Thingsboard on **[github](https://github.com/thingsboard/thingsboard)** to help us spread the word.
-If you have some questions about this sample - post it on the **[forum](https://groups.google.com/forum/#!forum/thingsboard)**.
+Browse other [samples](/docs/samples) or explore guides related to main Thingsboard features:
+
+ - [Device attributes](/docs/user-guide/attributes/) - how to use device attributes.
+ - [Telemetry data collection](/docs/user-guide/telemetry/) - how to collect telemetry data.
+ - [Using RPC capabilities](/docs/user-guide/rpc/) - how to send commands to/from devices.
+ - [Rule Engine](/docs/user-guide/rule-engine/) - how to use rule engine to analyze data from devices.
+ - [Data Visualization](/docs/user-guide/visualization/) - how to visualize collected data.
+
+{% include templates/feedback.md %}
+ 
+{% include socials.html %}

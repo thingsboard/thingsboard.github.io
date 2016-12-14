@@ -1,4 +1,6 @@
 ---
+layout: docwithnav
+title: Support
 
 ---
 
@@ -47,4 +49,4 @@ ways for you to get help from the Thingsboard team.
 
 ### Contact us
 
-Feel free to contact us by sending email to [support account](mailto:support@thingsboard.io).
+Feel free to contact Thingsboard authors by sending us an email to [support@thingsboard.io](mailto:support@thingsboard.io)

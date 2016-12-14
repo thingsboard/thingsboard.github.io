@@ -1,11 +1,10 @@
 ---
+layout: docwithnav
 assignees:
 - ashvayka
+title: Getting Started
 
 ---
-
-* TOC
-{:toc}
 
 ## Introduction
 
@@ -102,7 +101,7 @@ ClientF,cURL (macOS),shell,resources/curl-macos.sh,/docs/getting-started-guides/
 Download or create the following data files:
 
  - **attributes-data.json** - contains two device attributes values: firmware version and serial number.
- - **timeseries-data.json** - contains three time-series values: temperature, humidity and active flag.
+ - **telemetry-data.json** - contains three time-series values: temperature, humidity and active flag.
  
 Please note that data in this files is basically in key-value format. You can use your own keys and values. 
 See [MQTT](/docs/reference/mqtt-api/#key-value-format), [CoAP](/docs/reference/coap-api/#key-value-format)
@@ -196,7 +195,7 @@ Explore guides related to main Thingsboard features:
 
  - [Device attributes](/docs/user-guide/attributes/) - how to use device attributes.
  - [Telemetry data collection](/docs/user-guide/telemetry/) - how to collect telemetry data.
- - [Using RPC capabilities](/docs/user-guide/telemetry/) - how to send commands to/from devices.
+ - [Using RPC capabilities](/docs/user-guide/rpc/) - how to send commands to/from devices.
  - [Rule Engine](/docs/user-guide/rule-engine/) - how to use rule engine to analyze data from devices.
  - [Data Visualization](/docs/user-guide/visualization/) - how to visualize collected data.
 

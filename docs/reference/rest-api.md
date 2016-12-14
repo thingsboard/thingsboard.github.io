@@ -1,6 +1,9 @@
 ---
+layout: docwithnav
 assignees:
 - ashvayka
+title: REST API
+
 ---
 
 * TOC
@@ -29,4 +32,4 @@ A,get-token.sh,shell,resources/get-token.sh,/docs/reference/resources/get-token.
 B,resonse.json,json,resources/get-token-response.json,/docs/reference/resources/get-token-response.json{% endcapture %}
 {% include tabs.html %}
 
- - Now, you shoud set  'X-Authorization' to "Bearer $YOUR_JSON_TOKEN"  
+ - Now, you shoud set  'X-Authorization' to "Bearer $YOUR_JWT_TOKEN"  
