@@ -180,7 +180,7 @@ In order to simplify this guide we have included "Temperature & Humidity Demo Da
 Of course, you can modify this dashboard: tune, add, delete widgets, etc.
 You can access this dashboard by logging in as a tenant administrator:
 
- - login: tenant@thingsboard.org
+ - login: tenant@thingsboard.io
  - password: tenant
  
 Once logged in, open **Dashboards->Temperature & Humidity Demo Dashboard** page. You should observe demo dashboard with live data from your device (similar to dashboard image in the introduction).

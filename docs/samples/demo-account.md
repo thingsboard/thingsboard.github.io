@@ -15,21 +15,21 @@ Thingsboard installation contains single tenant account that is used in sample a
  
 Default system administrator account:
 
- - login - **sysadmin@thingsboard.org**.
+ - login - **sysadmin@thingsboard.io**.
  - password - **sysadmin**.
  
 ## Demo Tenant
 
 Default tenant administrator account:
 
- - login - **tenant@thingsboard.org**.
+ - login - **tenant@thingsboard.io**.
  - password - **tenant**.
  
 Demo tenant customers:
 
- - Customer A users -  **customer@thingsboard.org** or **customerA@thingsboard.org**.
- - Customer B users -  **customerB@thingsboard.org**.
- - Customer C users -  **customerC@thingsboard.org**.
+ - Customer A users -  **customer@thingsboard.io** or **customerA@thingsboard.io**.
+ - Customer B users -  **customerB@thingsboard.io**.
+ - Customer C users -  **customerC@thingsboard.io**.
  - all users have **"customer"** password. 
  
 ## Tenant devices:

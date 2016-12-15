@@ -45,7 +45,7 @@ This step contains instructions that are necessary to connect your device to Thi
 
 Open Thingsboard Web UI (http://localhost:8080) in browser and login as tenant administrator
 
- - login: tenant@thingsboard.org
+ - login: tenant@thingsboard.io
  - password: tenant
  
 Goto "Devices" section. Click "+" button and create device with name "LinkIt One Demo Device". 
@@ -80,7 +80,7 @@ sed -i "s/{DEVICE_ID}/<your device id>/" linkit_one_gps_dashboard.json
 Obtain JWT token by issuing login POST command:
 
 ```bash
-curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{"username":"tenant@thingsboard.org", "password":"tenant"}' 'http://localhost:8080/api/auth/login'
+curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{"username":"tenant@thingsboard.io", "password":"tenant"}' 'http://localhost:8080/api/auth/login'
 ```
 
 You will receive response in the following format:
@@ -138,7 +138,7 @@ When application is running you can connect your device to Serial Debug COM port
 
 Finally, open Thingsboard Web UI. You can access this dashboard by logging in as a tenant administrator:
 
- - login: tenant@thingsboard.org
+ - login: tenant@thingsboard.io
  - password: tenant
   
 Go to **"Devices"** section and locate **"LinkIt One Demo Device"**, open device details and switch to **"Attributes"** tab. 
