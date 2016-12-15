@@ -19,6 +19,8 @@ toc:
     path: /docs/user-guide/install/linux/
   - title: Installing Thingsboard on Raspberry Pi 3
     path: /docs/user-guide/install/rpi/
+  - title: Installing Thingsboard on AWS EC2
+    path: /docs/user-guide/install/aws/
   - title: Building from sources
     path: /docs/user-guide/install/building-from-source/
   - title: Configuration
