@@ -115,9 +115,11 @@ Our application consists of three *.lua* files:
    You need to modify this file in order to setup your wifi network parameters and address of Thingsboard server.
    - your wifi network SSID - name of the wifi network.
    - your wifi network password - password to the network.
-   - thingsboard server ip - host where your thingsboard installation. 
+   - thingsboard server ip - host where your thingsboard installation. Use "demo.thingsboard.io" if you are using [live demo](http://demo.thingsboard.io/) server.
    - thingsboard mqtt port - 1883 is the default value.
    - thingsboard access token - DHT11_DEMO_TOKEN is the default value that corresponds to pre-provisioned [demo account](/docs/samples/demo-account/#tenant-devices).
+   
+   If you are using [live demo](http://demo.thingsboard.io/) server - [get the access token](/docs/user-guide/ui/devices/#manage-device-credentials) for pre-provisioned "DHT11 Demo Device".
  - dht11.lua - sending temperature and humidity every 10 seconds to thingsboard server via MQTT protocol.
  - init.lua - initalization file that contains 
 config.lua:
@@ -178,10 +180,12 @@ $ sudo ./luatool.py --port /dev/ttyUSB0 -b 115200 --delete init.lua
 
 In order to simplify this guide we have included "Temperature & Humidity Demo Dashboard" to the [demo data](/docs/samples/demo-account/) that is available in each Thingsboard installation. 
 Of course, you can modify this dashboard: tune, add, delete widgets, etc.
-You can access this dashboard by logging in as a tenant administrator:
+You can access this dashboard by logging in as a tenant administrator. Use
 
  - login: tenant@thingsboard.org
  - password: tenant
+ 
+in case of local Thingsboard installation.
  
 Once logged in, open **Dashboards->Temperature & Humidity Demo Dashboard** page. You should observe demo dashboard with live data from your device (similar to dashboard image in the introduction).
  

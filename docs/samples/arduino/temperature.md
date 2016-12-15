@@ -26,7 +26,8 @@ Once you complete this sample/tutorial, you will see your sensor data on the fol
 
 ## Prerequisites
 
-You will need to Thingsboard server up and running. Use following [guide](/docs/user-guide/install/installation-options/) to install Thingsboard.
+You will need to Thingsboard server up and running. Use either [live demo](http://demo.thingsboard.io/signup) or 
+[installation guide](/docs/user-guide/install/installation-options/) to install Thingsboard.
 
 ## List of hardware and pinouts
 
@@ -88,6 +89,10 @@ The following picture summarizes the connections for this project:
  
 ## Thingsboard configuration
 
+**Note** Thingsboard configuration steps are necessary only in case of **local Thingsboard** installation.
+If you are using [Live Demo](http://demo.thingsboard.io/) instance all entities are pre-configured for your demo account.
+However, we recommend to review this steps because you will still need to get device access token to send requests to Thingsboard.
+
 ### Provision your device
 
 This step contains instructions that are necessary to connect your device to Thingsboard.
@@ -102,7 +107,8 @@ Goto "Devices" section. Click "+" button and create device with name "Arduino UN
 ![image](/images/samples/arduino/temperature/device.png)
 
 Once device created, open its details and click "Manage credentials".
-Enter "ARDUINO_DEMO_TOKEN" in "Access token" field and click "Save".
+
+Copy auto-generated access token from the "Access token" field. Please save this device token. It will be referred to later as **$ACCESS_TOKEN**.
 
 ![image](/images/samples/arduino/temperature/credentials.png)
 
@@ -183,7 +189,8 @@ Download and open **arduino-dht-esp8266-mqtt.ino** sketch.
 
 - WIFI_AP - name of your access point
 - WIFI_PASSWORD - access point password
-- thingsboardServer - Thingsboard HOST/IP address that is accessable within your wifi network.
+- TOKEN - the **$ACCESS_TOKEN** from Thingsboard configuration step.
+- thingsboardServer - Thingsboard HOST/IP address that is accessible within your wifi network. Specify "demo.thingsboard.io" if you are using [live demo](http://demo.thingsboard.io/) server.
 
 {% capture tabspec %}arduino-sketch
 arduino-dht-esp8266-mqtt,arduino-dht-esp8266-mqtt.ino,c,resources/arduino-dht-esp8266-mqtt.ino,/docs/samples/arduino/resources/arduino-dht-esp8266-mqtt.ino{% endcapture %}
@@ -199,10 +206,12 @@ When application is running you can select "Arduino/Genuino Uno" port in Arduino
 
 ## Data visualization
 
-Finally, open Thingsboard Web UI. You can access this dashboard by logging in as a tenant administrator:
+Finally, open Thingsboard Web UI. You can access this dashboard by logging in as a tenant administrator. Use
 
  - login: tenant@thingsboard.org
  - password: tenant
+ 
+in case of local Thingsboard installation.
   
 Go to **"Devices"** section and locate **"Arduino UNO Demo Device"**, open device details and switch to **"Latest telemetry"** tab. 
 If all is configured correctly you should be able to see latest values of *"temperature"* and *"humidity"* in the table.

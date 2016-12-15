@@ -46,8 +46,11 @@ sudo pip install paho-mqtt
 ### Application source code
 
 Our application consists of single python script that is well commented. 
-You will need to modify **THINGSBOARD_HOST** constant to match your Thingsboard server installation IP address or hostname.
+You will need to modify **THINGSBOARD_HOST** constant to match your Thingsboard server installation IP address or hostname. 
+Use "demo.thingsboard.io" if you are using [live demo](http://demo.thingsboard.io/) server.
+
 The value of **ACCESS_TOKEN** constant corresponds to sample Raspberry Pi device in pre-provisioned [demo data](/docs/samples/demo-account/#tenant-devices).
+If you are using [live demo](http://demo.thingsboard.io/) server - [get the access token](/docs/user-guide/ui/devices/#manage-device-credentials) for pre-provisioned "Raspberry Pi Demo Device".
 
 {% capture tabspec %}python-script
 gpio,gpio.py,python,resources/gpio.py,/docs/samples/raspberry/resources/gpio.py{% endcapture %}
@@ -64,10 +67,12 @@ python gpio.py
 
 In order to simplify this guide we have included "Raspberry PI GPIO Demo Dashboard" to the [demo data](/docs/samples/demo-account/#dashboards) that is available in each thingboard installation. 
 Of course, you can modify this dashboard: tune, add, delete widgets, etc.
-You can access this dashboard by logging in as a tenant administrator:
+You can access this dashboard by logging in as a tenant administrator. Use
 
  - login: tenant@thingsboard.org
  - password: tenant
+ 
+in case of local Thingsboard installation. 
  
 Once logged in, open **Dashboards->Raspberry PI GPIO Demo Dashboard** page. You should observe demo dashboard with GPIO control and status panel for your device. 
 Now you can switch status of GPIOs using control panel. As a result you will see LEDs status change on device and on the status panel.

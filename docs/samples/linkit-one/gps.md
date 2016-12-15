@@ -37,7 +37,11 @@ Use following [guide](/docs/user-guide/install/docker-windows/) to install Thing
    
    GPS and WIFI Antenna are shipped with board.
  
-## Configuring Thingsboard
+## Thingsboard configuration
+
+**Note** Thingsboard configuration steps are necessary only in case of **local Thingsboard** installation.
+If you are using [Live Demo](http://demo.thingsboard.io/) instance all entities are pre-configured for your demo account.
+However, we recommend to review this steps because you will still need to get device access token to send requests to Thingsboard.
 
 ### Provision your device
 
@@ -53,7 +57,8 @@ Goto "Devices" section. Click "+" button and create device with name "LinkIt One
 ![image](/images/samples/linkit-one/gps/device.png)
 
 Once device created, open its details and click "Manage credentials".
-Enter "LINKITONE_DEMO_TOKEN" in "Access token" field and click "Save".
+
+Copy auto-generated access token from the "Access token" field. Please save this device token. It will be referred to later as **$ACCESS_TOKEN**.
 
 ![image](/images/samples/linkit-one/gps/credentials.png)
 
@@ -120,7 +125,8 @@ Download and open **gps_tracker.ino** sketch.
  - WIFI_AP - name of your access point
  - WIFI_PASSWORD - access point password
  - WIFI_AUTH - choose one of LWIFI_OPEN, LWIFI_WPA, or LWIFI_WEP.
- - thingsboardServer - Thingsboard HOST/IP address that is accessable within your wifi network.
+ - TOKEN - the **$ACCESS_TOKEN** from Thingsboard configuration step. 
+ - thingsboardServer - Thingsboard HOST/IP address that is accessable within your wifi network. Specify "demo.thingsboard.io" if you are using [live demo](http://demo.thingsboard.io/) server.
 
 {% capture tabspec %}gps-arduino
 gps,gps_tracker.ino,c,resources/gps_tracker.ino,/docs/samples/linkit-one/resources/gps_tracker.ino{% endcapture %}
@@ -136,10 +142,12 @@ When application is running you can connect your device to Serial Debug COM port
 
 ## Data visualization
 
-Finally, open Thingsboard Web UI. You can access this dashboard by logging in as a tenant administrator:
+Finally, open Thingsboard Web UI. You can access this dashboard by logging in as a tenant administrator. Use 
 
  - login: tenant@thingsboard.org
  - password: tenant
+
+in case of local Thingsboard installation.
   
 Go to **"Devices"** section and locate **"LinkIt One Demo Device"**, open device details and switch to **"Attributes"** tab. 
 If all is configured correctly you should be able to see *"latitude"*, *"longitude"* and battery status attributes and theirs latest values in the table.
