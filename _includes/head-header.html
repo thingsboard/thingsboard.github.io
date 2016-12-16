@@ -17,6 +17,7 @@
     <script src="/js/jquery-ui.min.js"></script>
 	<script src="/js/script.js"></script>
 	<script src="/js/sweetalert.min.js"></script>
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
 	<title>Thingsboard - {{ title }}</title>
 	<script>
 		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -32,6 +33,9 @@
 <div id="cellophane" onclick="tb.toggleMenu()"></div>
 <header>
 	<a href="/" class="logo"></a>
+	<div id="githubButtonContainer">
+		<a class="github-button" href="https://github.com/thingsboard/thingsboard" data-icon="octicon-star" data-style="mega" data-count-href="/thingsboard/thingsboard/stargazers" data-count-api="/repos/thingsboard/thingsboard#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star thingsboard/thingsboard on GitHub">Star</a>
+	</div>
 	<div class="nav-buttons" data-auto-burger="primary">
 		<a href="/docs/" class="button" id="viewDocs" data-auto-burger-exclude>View Documentation</a>
 		<a href="/docs/getting-started-guides/helloworld/" class="button" id="gettingStarted" data-auto-burger-exclude>Getting started</a>
