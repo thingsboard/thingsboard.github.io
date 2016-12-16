@@ -22,7 +22,7 @@ The application that is running on ESP8266 is written using Arduino SDK which is
 
 Once you complete this sample/tutorial, you will see your sensor data on the following dashboard.
 
-![image](/images/samples/esp8266/temperature/dashboard.png)
+![image](/images/samples/esp8266/temperature/dashboard.gif)
 
 {% include templates/prerequisites.md %}
 
