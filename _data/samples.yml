@@ -11,6 +11,12 @@ toc:
     path: /docs/samples/arduino/
   - title: Temperature upload over MQTT using Arduino UNO, ESP8266 and DHT22 sensor
     path: /docs/samples/arduino/temperature/
+- title: ESP8266
+  section:
+  - title: ESP8266 overview
+    path: /docs/samples/esp8266/
+  - title: Temperature upload over MQTT using ESP8266 and DHT22 sensor
+    path: /docs/samples/esp8266/temperature/
 - title: NodeMCU
   section:
   - title: NodeMCU overview

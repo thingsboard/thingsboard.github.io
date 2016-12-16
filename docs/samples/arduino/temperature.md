@@ -14,8 +14,8 @@ This sample application performs collection of temperature and humidity values p
 Collected data is pushed via MQTT to Thingsboard server for storage and visualization.
 The purpose of this application is to demonstrate Thingsboard [data collection API](/docs/user-guide/telemetry/) and [visualization capabilities](docs/user-guide/visualization/).
 
-The DHT22 sensor is connected to [Arduino UNO](https://en.wikipedia.org/wiki/Arduino/).
-Arduino UNO connects to the WiFi network using [ESP8266](https://en.wikipedia.org/wiki/ESP8266/). 
+The DHT22 sensor is connected to [Arduino UNO](https://en.wikipedia.org/wiki/Arduino).
+Arduino UNO connects to the WiFi network using [ESP8266](https://en.wikipedia.org/wiki/ESP8266). 
 Arduino UNO push data to Thingsboard server via MQTT protocol by using [PubSubClient](https://github.com/knolleary/pubsubclient) library for Arduino.
 Data is visualized using built-in customizable dashboard. 
 The application that is running on Arduino UNO is written using Arduino SDK which is quite simple and easy to understand.
