@@ -59,3 +59,5 @@ toc:
     path: /docs/user-guide/ui/dashboards/
   - title: Mail Settings
     path: /docs/user-guide/ui/mail-settings/
+- title: Live Demo
+  path: /docs/user-guide/live-demo/

@@ -27,6 +27,8 @@ You will need to populate "X-Authorization" header using "Authorize" button in t
 
 In order to get the JWT token, you need to execute following request:
 
+ - replace **$THINGSBOARD_URL** with either **127.0.0.1:8080** (in case of local installation) or **demo.thingsboard.io** (in case of live-demo).
+
 {% capture tabspec %}token
 A,get-token.sh,shell,resources/get-token.sh,/docs/reference/resources/get-token.sh
 B,resonse.json,json,resources/get-token-response.json,/docs/reference/resources/get-token-response.json{% endcapture %}

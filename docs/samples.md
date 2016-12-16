@@ -16,6 +16,8 @@ and will upload them to this page as soon as possible.
 
  - [**Arduino**](/docs/samples/arduino/) 
 
+ - [**ESP8266**](/docs/samples/esp8266/) 
+
  - [**NodeMCU**](/docs/samples/nodemcu/)
 
  - [**Raspberry Pi**](/docs/samples/raspberry/)

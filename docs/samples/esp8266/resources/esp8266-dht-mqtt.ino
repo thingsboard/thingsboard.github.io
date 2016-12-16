@@ -1,56 +1,40 @@
 #include "DHT.h"
-#include <WiFiEspClient.h>
-#include <WiFiEsp.h>
-#include <WiFiEspUdp.h>
 #include <PubSubClient.h>
-#include "SoftwareSerial.h"
+#include <ESP8266WiFi.h>
 
 #define WIFI_AP "YOUR_WIFI_AP"
 #define WIFI_PASSWORD "YOUR_WIFI_PASSWORD"
 
-#define TOKEN "YOUR_ACCESS_TOKEN"
+#define TOKEN "ESP8266_DEMO_TOKEN"
 
 // DHT
-#define DHTPIN 4
+#define DHTPIN 2
 #define DHTTYPE DHT22
 
 char thingsboardServer[] = "YOUR_THINGSBOARD_HOST_OR_IP";
 
-// Initialize the Ethernet client object
-WiFiEspClient espClient;
+WiFiClient wifiClient;
 
 // Initialize DHT sensor.
 DHT dht(DHTPIN, DHTTYPE);
 
-PubSubClient client(espClient);
-
-SoftwareSerial soft(2, 3); // RX, TX
+PubSubClient client(wifiClient);
 
 int status = WL_IDLE_STATUS;
 unsigned long lastSend;
 
-void setup() {
-  // initialize serial for debugging
-  Serial.begin(9600);
+void setup()
+{
+  Serial.begin(115200);
   dht.begin();
+  delay(10);
   InitWiFi();
   client.setServer( thingsboardServer, 1883 );
   lastSend = 0;
 }
 
-void loop() {
-  status = WiFi.status();
-  if ( status != WL_CONNECTED) {
-    while ( status != WL_CONNECTED) {
-      Serial.print("Attempting to connect to WPA SSID: ");
-      Serial.println(WIFI_AP);
-      // Connect to WPA/WPA2 network
-      status = WiFi.begin(WIFI_AP, WIFI_PASSWORD);
-      delay(500);
-    }
-    Serial.println("Connected to AP");
-  }
-
+void loop()
+{
   if ( !client.connected() ) {
     reconnect();
   }
@@ -106,39 +90,38 @@ void getAndSendTemperatureAndHumidityData()
   payload.toCharArray( attributes, 100 );
   client.publish( "v1/devices/me/telemetry", attributes );
   Serial.println( attributes );
+
 }
 
 void InitWiFi()
 {
-  // initialize serial for ESP module
-  soft.begin(9600);
-  // initialize ESP module
-  WiFi.init(&soft);
-  // check for the presence of the shield
-  if (WiFi.status() == WL_NO_SHIELD) {
-    Serial.println("WiFi shield not present");
-    // don't continue
-    while (true);
-  }
-
   Serial.println("Connecting to AP ...");
   // attempt to connect to WiFi network
-  while ( status != WL_CONNECTED) {
-    Serial.print("Attempting to connect to WPA SSID: ");
-    Serial.println(WIFI_AP);
-    // Connect to WPA/WPA2 network
-    status = WiFi.begin(WIFI_AP, WIFI_PASSWORD);
+
+  WiFi.begin(WIFI_AP, WIFI_PASSWORD);
+  while (WiFi.status() != WL_CONNECTED) {
     delay(500);
+    Serial.print(".");
   }
   Serial.println("Connected to AP");
 }
 
+
 void reconnect() {
   // Loop until we're reconnected
   while (!client.connected()) {
+    status = WiFi.status();
+    if ( status != WL_CONNECTED) {
+      WiFi.begin(WIFI_AP, WIFI_PASSWORD);
+      while (WiFi.status() != WL_CONNECTED) {
+        delay(500);
+        Serial.print(".");
+      }
+      Serial.println("Connected to AP");
+    }
     Serial.print("Connecting to Thingsboard node ...");
     // Attempt to connect (clientId, username, password)
-    if ( client.connect("Arduino Uno Device", TOKEN, NULL) ) {
+    if ( client.connect("ESP8266 Device", TOKEN, NULL) ) {
       Serial.println( "[DONE]" );
     } else {
       Serial.print( "[FAILED] [ rc = " );
@@ -149,5 +132,7 @@ void reconnect() {
     }
   }
 }
+
+
 
 

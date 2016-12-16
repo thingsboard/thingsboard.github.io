@@ -18,7 +18,9 @@ This guide will let you:
 
 ## Setup and Requirements
 
-If you don't have a running Thingsboard instance, use <a href="/docs/user-guide/install/installation-options/">installation guide</a> to fix this.
+If you don't have access to a running Thingsboard instance, use either [Live Demo](http://demo.thingsboard.io/signup) or 
+[Installation Guide](/docs/user-guide/install/installation-options/) 
+to fix this.
 
 ## Demo account
 
@@ -114,7 +116,10 @@ B,telemetry-data.json,json,resources/telemetry-data.json,/docs/getting-started-g
 
 Execute commands in one of the following tabs to push data to the server.
  
-Don't forget to replace **$ACCESS_TOKEN** with one from **Device credentials** window. 
+Don't forget to 
+
+ - replace **$ACCESS_TOKEN** with one from **Device credentials** window.
+ - replace **$THINGSBOARD_HOST** with either **127.0.0.1** (in case of local installation) or **demo.thingsboard.io** (in case of live-demo).
 
 {% capture tabspec %}mqtt-telemetry-upload
 A,Mosquitto (MQTT),shell,resources/mosquitto.sh,/docs/getting-started-guides/resources/mosquitto.sh
