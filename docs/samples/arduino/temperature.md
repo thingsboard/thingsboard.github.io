@@ -24,10 +24,7 @@ Once you complete this sample/tutorial, you will see your sensor data on the fol
 
 ![image](/images/samples/arduino/temperature/dashboard.png)
 
-## Prerequisites
-
-You will need to Thingsboard server up and running. Use either [live demo](http://demo.thingsboard.io/signup) or 
-[installation guide](/docs/user-guide/install/installation-options/) to install Thingsboard.
+{% include templates/prerequisites.md %}
 
 ## List of hardware and pinouts
 
@@ -87,11 +84,7 @@ The following picture summarizes the connections for this project:
 
 ![image](/images/samples/arduino/temperature/schema.png)
  
-## Thingsboard configuration
-
-**Note** Thingsboard configuration steps are necessary only in case of **local Thingsboard** installation.
-If you are using [Live Demo](http://demo.thingsboard.io/) instance all entities are pre-configured for your demo account.
-However, we recommend to review this steps because you will still need to get device access token to send requests to Thingsboard.
+{% include templates/thingsboard-configuration.md %}
 
 ### Provision your device
 

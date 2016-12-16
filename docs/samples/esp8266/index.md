@@ -7,8 +7,8 @@ title: ESP8266 overview
 * TOC
 {:toc}
 
-[ESP8266](https://en.wikipedia.org/wiki/ESP8266) is a highly integrated chip designed for the needs of a new connected world. It offers a complete and self-contained Wi-Fi networking solution, allowing it to either host the application or to offload all Wi-Fi networking functions from another application processor.
-The applications in this samples that are running on Arduino are developed using [Arduino IDE](https://www.arduino.cc/en/Main/Software).
+[ESP8266](https://en.wikipedia.org/wiki/ESP8266) is a very popular low-cost Wi-Fi chip with TCP/IP stack support and MCU capability.
+The applications in this samples that are running on ESP8266 core for Arduino and are developed using [Arduino IDE](https://www.arduino.cc/en/Main/Software).
 
 ## Samples
 
@@ -17,6 +17,7 @@ The applications in this samples that are running on Arduino are developed using
 ## Documentation
 
  - [ESP8266 wiki](https://en.wikipedia.org/wiki/ESP8266)
+ - [ESP8266 core for Arduino](https://github.com/esp8266/Arduino)
  - [Official page](https://espressif.com/en/products/hardware/esp8266ex/overview)
 
  ![image](/images/samples/arduino/temperature/esp8266-pinout.png)

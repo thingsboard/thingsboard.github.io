@@ -24,24 +24,17 @@ Once you complete this sample/tutorial, you will see your device GPS and battery
 
 ![image](/images/samples/linkit-one/gps/dashboard.png)
 
-## Prerequisites
+{% include templates/prerequisites.md %}
 
 This tutorial was prepared for Windows OS users. However it is possible to run it on other OS (Linux or MacOS).
  
-You will need to have Thingsboard server up and running. 
-Use following [guide](/docs/user-guide/install/docker-windows/) to install Thingsboard on Windows. 
-
 ## List of hardware
 
  - [LinkIt One](https://www.seeedstudio.com/LinkIt-ONE-p-2017.html) 
    
    GPS and WIFI Antenna are shipped with board.
  
-## Thingsboard configuration
-
-**Note** Thingsboard configuration steps are necessary only in case of **local Thingsboard** installation.
-If you are using [Live Demo](http://demo.thingsboard.io/) instance all entities are pre-configured for your demo account.
-However, we recommend to review this steps because you will still need to get device access token to send requests to Thingsboard.
+{% include templates/thingsboard-configuration.md %}
 
 ### Provision your device
 

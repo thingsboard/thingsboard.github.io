@@ -21,9 +21,7 @@ Once you complete this sample/tutorial, you will see your sensor data on the fol
 
 ![image](/images/samples/nodemcu/temperature/dashboard.png)
 
-## Prerequisites
- 
-You will need to Thingsboard server up and running. Use following [guide](/docs/user-guide/install/installation-options/) to install Thingsboard.
+{% include templates/prerequisites.md %}
 
 ## List of hardware and pinouts
 

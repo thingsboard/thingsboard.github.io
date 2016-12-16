@@ -16,9 +16,7 @@ The purpose of this application is to demonstrate Thingsboard [RPC capabilities]
 Raspberry Pi will use simple application written in Python that will connect to Thingsboard server via [MQTT](https://en.wikipedia.org/wiki/MQTT) and listen to RPC commands.
 Current GPIO state and GPIO control widget is visualized using built-in customizable dashboard. 
 
-## Prerequisites
- 
-You will need to Thingsboard server up and running. Use following [guide](/docs/user-guide/install/installation-options/) to install Thingsboard.
+{% include templates/prerequisites.md %}
 
 ## List of hardware and pinouts
 

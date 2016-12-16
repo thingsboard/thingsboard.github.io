@@ -24,9 +24,7 @@ Once you complete this sample/tutorial, you will see your sensor data on the fol
 
 ![image](/images/samples/esp8266/temperature/dashboard.png)
 
-## Prerequisites
-
-You will need to Thingsboard server up and running. Use following [guide](/docs/user-guide/install/installation-options/) to install Thingsboard.
+{% include templates/prerequisites.md %}
 
 ## List of hardware and pinouts
 
@@ -60,7 +58,7 @@ You will need to Thingsboard server up and running. Use following [guide](/docs/
  
  - 3.3V power source (for example 2 AA batteries)
  
-## Wiring schema
+## Wiring schemes
 
 ### Programming/flashing schema 
 
@@ -84,11 +82,11 @@ DHT-22 GND (-)|USB-TTL GND
 
 Finally, place a resistor (between 4.7K and 10K) between pin number 1 and 2 of the DHT sensor.
 
-The following picture summarizes the connections for this project in programming mode:
+The following picture summarizes the connections for this project in programming/debug mode:
 
 ![image](/images/samples/esp8266/temperature/schema-flash.png)
 
-### Final schema
+### Final schema (Battery Powered)
 
 ESP8266 Pin|3.3V power source
 -----------|-----------
@@ -109,7 +107,7 @@ The final picture:
 
 ![image](/images/samples/esp8266/temperature/schema.png)
  
-## Thingsboard configuration
+{% include templates/thingsboard-configuration.md %}
 
 ### Provision your device
 
@@ -125,7 +123,7 @@ Goto "Devices" section. Click "+" button and create device with name "ESP8266 De
 ![image](/images/samples/esp8266/temperature/device.png)
 
 Once device created, open its details and click "Manage credentials".
-Enter "ESP8266_DEMO_TOKEN" in "Access token" field and click "Save".
+Copy auto-generated access token from the "Access token" field. Please save this device token. It will be referred to later as **$ACCESS_TOKEN**.
 
 ![image](/images/samples/esp8266/temperature/credentials.png)
 
@@ -232,7 +230,8 @@ Download and open **esp8266-dht-mqtt.ino** sketch.
 
 - WIFI_AP - name of your access point
 - WIFI_PASSWORD - access point password
-- thingsboardServer - Thingsboard HOST/IP address that is accessable within your wifi network.
+- TOKEN - the **$ACCESS_TOKEN** from Thingsboard configuration step.
+- thingsboardServer - Thingsboard HOST/IP address that is accessable within your wifi network. Specify "demo.thingsboard.io" if you are using [live demo](http://demo.thingsboard.io/) server.
 
 {% capture tabspec %}arduino-sketch
 esp8266-dht-mqtt,esp8266-dht-mqtt.ino,c,resources/esp8266-dht-mqtt.ino,/docs/samples/esp8266/resources/esp8266-dht-mqtt.ino{% endcapture %}
@@ -253,10 +252,12 @@ Then connect USB-TTL adapter with PC and select port of the USB-TTL adapter in A
 
 ## Data visualization
 
-Finally, open Thingsboard Web UI. You can access this dashboard by logging in as a tenant administrator:
+Finally, open Thingsboard Web UI. You can access this dashboard by logging in as a tenant administrator. Use:
 
  - login: tenant@thingsboard.org
  - password: tenant
+ 
+in case of local Thingsboard installation. 
   
 Go to **"Devices"** section and locate **"ESP8266 Demo Device"**, open device details and switch to **"Latest telemetry"** tab. 
 If all is configured correctly you should be able to see latest values of *"temperature"* and *"humidity"* in the table.
