@@ -171,11 +171,21 @@ header
 	&.flip-nav .flyout-button
 		background-image: url(/images/toc_icon_grey.png)
 
+#githubButtonContainer
+	position: relative
+	padding-left: 20px
+	float: left
+	vertical-align: middle
+	height: 80px
+	iframe
+		position: absolute
+		top: 50%
+		transform: translateY(-50%)
 
 .nav-buttons
 	float: right
 
-#viewDocs, #gettingStarted, #liveDemo
+#viewDocs, #gettingStarted, #liveDemo, #githubButtonContainer
 	display: none
 
 #viewDocs
@@ -186,6 +196,7 @@ header
 	&:hover
 		background-color: white
 		color: $dark-grey
+
 
 #gettingStarted, #liveDemo
 	width: 0
