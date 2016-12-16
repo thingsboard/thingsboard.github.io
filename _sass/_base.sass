@@ -175,7 +175,7 @@ header
 .nav-buttons
 	float: right
 
-#viewDocs, #tryThingsboard
+#viewDocs, #gettingStarted, #liveDemo
 	display: none
 
 #viewDocs
@@ -187,7 +187,7 @@ header
 		background-color: white
 		color: $dark-grey
 
-#tryThingsboard
+#gettingStarted, #liveDemo
 	width: 0
 	padding: 0 0
 	border: 0px solid transparent
@@ -197,6 +197,10 @@ header
 	vertical-align: middle
 	overflow: hidden
 	transition: 0.3s
+
+#tryThingsboard
+	text-align: center
+	padding: 25px 0
 
 #hamburger
 	display: inline-block
@@ -281,7 +285,7 @@ header
 			transform: rotate(-45deg)
 
 .open-nav, .y-enough
-	#tryThingsboard
+	#gettingStarted, #liveDemo
 		width: 150px
 		border-width: 1px
 		background-color: $blue

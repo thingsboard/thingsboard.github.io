@@ -9,7 +9,7 @@
 #define WIFI_PASSWORD "YOUR_WIFI_PASSWORD"
 #define WIFI_AUTH LWIFI_WPA  // choose from LWIFI_OPEN, LWIFI_WPA, or LWIFI_WEP.
 
-#define TOKEN "LINKITONE_DEMO_TOKEN"
+#define TOKEN "YOUR_ACCESS_TOKEN"
 
 gpsSentenceInfoStruct gpsInfo;
 
