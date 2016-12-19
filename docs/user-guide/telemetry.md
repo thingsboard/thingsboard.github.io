@@ -2,7 +2,7 @@
 layout: docwithnav
 assignees:
 - ashvayka
-title: Working with telemetry dataa
+title: Working with telemetry data
 
 ---
 
