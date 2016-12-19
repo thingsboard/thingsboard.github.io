@@ -211,4 +211,4 @@ B,mqtt-js-rpc-from-client.js,javascript,resources/mqtt-js-rpc-from-client.js,/do
   
 ## Protocol customization
 
-MQTT transport can be fully customized for specific use-case by changing the corresponding [module](https://github.com/ashvayka/thingsboard/tree/master/transport/mqtt).
+MQTT transport can be fully customized for specific use-case by changing the corresponding [module](https://github.com/thingsboard/thingsboard/tree/master/transport/mqtt).
