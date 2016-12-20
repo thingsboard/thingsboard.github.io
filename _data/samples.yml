@@ -5,7 +5,7 @@ toc:
   path: /docs/samples/
 - title: Demo Account
   path: /docs/samples/demo-account/
-- title: Hardware specific
+- title: Hardware platforms
   section:
   - title: Arduino
     section:
@@ -37,13 +37,11 @@ toc:
       path: /docs/samples/linkit-one/
     - title: GPS data upload and visualization using LinkIt ONE and Thingsboard
       path: /docs/samples/linkit-one/gps/
-- title: Use cases
+- title: Tutorials
   section:
   - title: Alarms
     section:
     - title: Sending Alarms using Email Plugin
       path: /docs/samples/alarms/mail/
-    - title: Alarms based on sensor readings
-      path: /docs/samples/alarms/temperature/
-    - title: Alarms based on geo-fencing rules
-      path: /docs/samples/alarms/geofencing/
+    - title: Alarms based on devices attributes and sensor readings
+      path: /docs/samples/alarms/basic-rules/
