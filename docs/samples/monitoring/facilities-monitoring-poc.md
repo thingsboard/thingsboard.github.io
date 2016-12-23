@@ -82,7 +82,7 @@ Rule action consists of several templates that allow flexible configuration of e
 
 For example, following email body template:
 
-```text
+```velocity
 [$date.get('yyyy-MM-dd HH:mm:ss')] $ss.get('ZoneId') HVAC malfunction detected. 
 Temperature - $temperature.valueAsString (°C). 
 Humidity - $humidity.valueAsString (%)!
@@ -97,3 +97,63 @@ Humidity – 70.0 (%)!
 ```
 
 The evaluation and template syntax is based on [Velocity](http://velocity.apache.org/) engine.
+
+### Step 5. Data visualization
+At this step we provisioned several dashboards to visualize the data. We will describe them below.
+    
+
+**Map dashboard**
+
+This dashboard shows multiple buildings on the map with their short status available in the tooltip. You can use links in the tooltips to navigate to Floor Plan and Historical Data dashboards.
+
+   ![image](/images/samples/monitoring/map.png)
+
+**Floor Plan dashboard**
+
+This dashboard uses static background image with the floor plan. We have placed widgets that show temperature and humidity in each room that is being monitored.
+
+   ![image](/images/samples/monitoring/plan.png)
+
+**Historical dashboard**
+
+This dashboard shows last minute of sensor readings that are reported each second.
+
+   ![image](/images/samples/monitoring/history-all.png)
+
+**Live Demo**
+
+In order to demonstrate this PoC in action you need to do two simple steps:
+
+ - [Sign-up](http://demo.thingsboard.io/signup) or [login](http://demo.thingsboard.io) to the live demo instance and save your login and password.
+ - Download and launch device emulator using this [link](https://github.com/thingsboard/samples/releases/download/v1.0-tfm/facilities-monitoring.jar). 
+
+```shell
+java -jar facilities-monitoring.jar demo.thingsboard.io
+```
+
+Once started, the emulator will ask you for your live demo login and password. This information will be used to get the JWT token and execute REST API calls in order to:
+
+ - provision demo devices.
+ - create rules and dashboards.
+ - start emulation of the temperature and humidity sensor data for provisioned devices using MQTT.
+
+**Conclusion**
+
+This prototype was written by two engineers literally in one day. Most of the time was spent on the client-side code (Lua script for real device and emulator). The server-side part of the prototype has zero coding and was all about configuration of the rules, plugins and dashboards.
+
+This demonstrates how easy is to prototype and build IoT solutions using [Thingsboard](http://thingsboard.io). Of course, there is certain learning curve that you need to pass, but we hope that this article and other [docs](http://thingsboard.io/docs/) will help you to do this.
+
+If you found this article interesting, please leave your feedback, questions or feature requests in the comments section and “star” our project on the [github](https://github.com/thingsboard/thingsboard) in order to stay tuned for new releases and tutorials.
+
+
+**Links**
+
+ - Compatible sample applications for different hardware platforms:
+ 
+    - Temperature upload over MQTT using ESP8266 and DHT22 sensor
+    - Temperature upload over MQTT using Arduino UNO, ESP8266 and DHT22 sensor
+    - Temperature upload over MQTT using NodeMCU and DHT11 sensor
+ 
+ - Thingsboard github page
+ - Emulator source code
+ - Emulator binary
