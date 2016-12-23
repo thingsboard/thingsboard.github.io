@@ -45,3 +45,8 @@ toc:
       path: /docs/samples/alarms/mail/
     - title: Alarms based on devices attributes and sensor readings
       path: /docs/samples/alarms/basic-rules/
+  - title: Monitoring
+    section:
+    - title: Facilities monitoring system prototype using Thingsboard
+      path: /docs/samples/monitoring/facilities-monitoring/
+
