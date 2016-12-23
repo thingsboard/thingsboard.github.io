@@ -17,7 +17,7 @@ This article describes development and configuration steps we have done in order
 
 The prototype is open-source and is also based on open-source technologies, so you are able to use it for building commercial products.
 
-![image](https://dzone.com/storage/temp/3792844-facilities-management.png)
+   ![image](/images/samples/monitoring/facilities-management.png)
 
 ## Devices and Connectivity
 
@@ -34,8 +34,8 @@ The server-side part of the solution will be based on the Thingsboard IoT platfo
 
 Initial step of the PoC was to provision several devices and their attributes. We’ve decided to support three zone types: work area, meeting and server rooms. We have registered three buildings with four rooms in each. During registration we have populated Zone Id, Zone Type server-side attributes. Note that the server-side device attributes may be used by the processing rules, but are not visible to the device itself.
 
-  ![image](https://dzone.com/storage/temp/3791311-attributes.png)
-
+  ![image](/images/samples/monitoring/service-side-attributes.png)
+  
 ### Step 2. Flushing the devices
 
 During this step we have flushed firmware update with individual device credentials built-in to the firmware. The firmware code and corresponding instructions are available in links below. We have used code from our [previous article](/docs/samples/nodemcu/temperature/) without modifications, since all the logic is on the server side.
