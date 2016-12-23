@@ -152,10 +152,10 @@ If you found this article interesting, please leave your feedback, questions or 
 
  - Compatible sample applications for different hardware platforms:
  
-    - Temperature upload over MQTT using ESP8266 and DHT22 sensor
-    - Temperature upload over MQTT using Arduino UNO, ESP8266 and DHT22 sensor
-    - Temperature upload over MQTT using NodeMCU and DHT11 sensor
+    - [Temperature upload over MQTT using ESP8266 and DHT22 sensor](/docs/samples/esp8266/temperature/)
+    - [Temperature upload over MQTT using Arduino UNO, ESP8266 and DHT22 sensor](/docs/samples/arduino/temperature/)
+    - [Temperature upload over MQTT using NodeMCU and DHT11 sensor](/docs/samples/nodemcu/temperature/)
  
- - Thingsboard github page
- - Emulator source code
- - Emulator binary
+ - [Thingsboard github page](https://github.com/thingsboard/thingsboard)
+ - [Emulator source code](https://github.com/thingsboard/samples)
+ - [Emulator binary](https://github.com/thingsboard/samples/releases/download/v1.0-tfm/facilities-monitoring.jar)
