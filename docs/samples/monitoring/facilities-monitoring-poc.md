@@ -4,6 +4,9 @@ title: Facilities monitoring system prototype using Thingsboard
 
 ---
 
+* TOC
+{:toc}
+
 Environmental controls in the office rooms are very important as loss of HVAC can result in significant loss to servers, network gear, employee productivity etc. 
 
 In this tutorial we will prototype facilities monitoring system that will be able to cover following use cases:
@@ -100,27 +103,26 @@ The evaluation and template syntax is based on [Velocity](http://velocity.apache
 
 ### Step 5. Data visualization
 At this step we provisioned several dashboards to visualize the data. We will describe them below.
-    
 
-**Map dashboard**
+### Map dashboard
 
 This dashboard shows multiple buildings on the map with their short status available in the tooltip. You can use links in the tooltips to navigate to Floor Plan and Historical Data dashboards.
 
    ![image](/images/samples/monitoring/map.png)
 
-**Floor Plan dashboard**
+### Floor Plan dashboard
 
 This dashboard uses static background image with the floor plan. We have placed widgets that show temperature and humidity in each room that is being monitored.
 
    ![image](/images/samples/monitoring/plan.png)
 
-**Historical dashboard**
+### Historical dashboard
 
 This dashboard shows last minute of sensor readings that are reported each second.
 
    ![image](/images/samples/monitoring/history-all.png)
 
-**Live Demo**
+## Live Demo
 
 In order to demonstrate this PoC in action you need to do two simple steps:
 
@@ -137,7 +139,7 @@ Once started, the emulator will ask you for your live demo login and password. T
  - create rules and dashboards.
  - start emulation of the temperature and humidity sensor data for provisioned devices using MQTT.
 
-**Conclusion**
+## Conclusion
 
 This prototype was written by two engineers literally in one day. Most of the time was spent on the client-side code (Lua script for real device and emulator). The server-side part of the prototype has zero coding and was all about configuration of the rules, plugins and dashboards.
 
@@ -146,7 +148,7 @@ This demonstrates how easy is to prototype and build IoT solutions using [Things
 If you found this article interesting, please leave your feedback, questions or feature requests in the comments section and “star” our project on the [github](https://github.com/thingsboard/thingsboard) in order to stay tuned for new releases and tutorials.
 
 
-**Links**
+## Links
 
  - Compatible sample applications for different hardware platforms:
  
