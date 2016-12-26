@@ -39,8 +39,8 @@ $hamburger-size: 50px
 $main-nav-padding: 140px 0 30px
 $main-nav-h5-margin-bottom: 1em
 $main-nav-h3-margin-bottom: 0.6em
-$nav-box-width: 27%
-$nav-box-sibling-margin-left: calc(18% / 2)
+$nav-box-width: 20%
+$nav-box-sibling-margin-left: calc(13% / 2)
 $main-nav-main-sibling-margin-top: 60px
 $main-nav-left-button-size: 50px
 $main-nav-left-button-font-size: 18px
@@ -185,10 +185,10 @@ header
 .nav-buttons
 	float: right
 
-#viewDocs, #gettingStarted, #liveDemo, #githubButtonContainer
+#viewDocs, #blog, #gettingStarted, #liveDemo, #githubButtonContainer
 	display: none
 
-#viewDocs
+#viewDocs, #blog
 	border: 2px solid white
 	background-color: transparent
 	transition: 0.3s
@@ -307,7 +307,7 @@ header
 	header
 		box-shadow: 0 1px 2px $medium-grey
 
-	#viewDocs
+	#viewDocs, #blog
 		border-color: $dark-grey
 		color: $dark-grey
 
@@ -355,7 +355,7 @@ footer
 
 	main
 		padding: 20px 0
-		max-width: 600px
+		max-width: 800px
 
 	nav
 		a
@@ -456,7 +456,7 @@ a.calendar
 	&:hover
 		background-position: -250px 100%
 
-#viewDocs
+#viewDocs, #blog
 	display: none
 
 section

@@ -9,7 +9,7 @@ title: Raspberry Pi overview
 
 [Raspberry Pi](https://en.wikipedia.org/wiki/Raspberry_Pi) is a credit-card sized computer. It is able to run Linux and has WiFi module built-in (starting Raspberry Pi 3).
 
-The applications in this samples that are running on [Raspbian](https://www.raspberrypi.org/downloads/raspbian/) and are written in Python programming language. 
+The applications in these samples that are running on [Raspbian](https://www.raspberrypi.org/downloads/raspbian/) are written in Python programming language.
 However, you are able to use other programming languages and OS.
 
 ## Samples

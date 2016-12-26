@@ -70,7 +70,7 @@ In case your device is able to get the client-side timestamp, you can use follow
 
 
 ```json
-{"ts":1451649600512, "values":{"key1":"value1", "key2":"value2"}
+{"ts":1451649600512, "values":{"key1":"value1", "key2":"value2"}}
 ```
 
 In the example above, we assume that "1451649600512" is a [unix timestamp](https://en.wikipedia.org/wiki/Unix_time) with milliseconds precision.
@@ -201,4 +201,4 @@ C,Response Body,shell,resources/rpc-server-response.json,/docs/reference/resourc
   
 ## Protocol customization
 
-HTTP transport can be fully customized for specific use-case by changing the corresponding [module](https://github.com/ashvayka/thingsboard/tree/master/transport/http).
+HTTP transport can be fully customized for specific use-case by changing the corresponding [module](https://github.com/thingsboard/thingsboard/tree/master/transport/http).
