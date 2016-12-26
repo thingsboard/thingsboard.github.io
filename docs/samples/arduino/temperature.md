@@ -1,6 +1,6 @@
 ---
 layout: docwithnav
-title: Alarms based on Sensor readings
+title: Temperature upload over MQTT using Arduino UNO, ESP8266 and DHT22 sensor
 
 ---
 
