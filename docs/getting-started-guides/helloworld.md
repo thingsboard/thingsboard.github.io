@@ -6,6 +6,9 @@ title: Getting Started
 
 ---
 
+* TOC
+{:toc}
+
 ## Introduction
 
 The goal of this guide is for you to collect and visualize some IoT device data using Thingsboard. 
@@ -86,19 +89,20 @@ Now you can push some data from this device to Thingsboard for visualization and
 In order to simplify this guide, we will push data using MQTT, CoAP or HTTP protocol from your local PC.
 Please refer to <a href="/docs/samples/">samples</a> for advanced examples of for various hardware platforms.
 
-### Pushing data using MQTT, CoAP or HTTP
+### Client-side libraries installation
 
 Install preferred MQTT (Mosquitto or MQTT.js), CoAP (CoAP.js) or HTTP (cURL) client using following commands.
 
 {% capture tabspec %}mqtt-client
-ClientA,Mosquitto (Ubuntu),shell,resources/mosquitto-ubuntu.sh,/docs/getting-started-guides/resources/mosquitto-ubuntu.sh
-ClientB,Mosquitto (macOS),shell,resources/mosquitto-macos.sh,/docs/getting-started-guides/resources/mosquitto-macos.sh
-ClientC,MQTT.js,shell,resources/node-mqtt.sh,/docs/getting-started-guides/resources/node-mqtt.sh
+ClientA,MQTT.js,shell,resources/node-mqtt.sh,/docs/getting-started-guides/resources/node-mqtt.sh
+ClientB,Mosquitto (Ubuntu),shell,resources/mosquitto-ubuntu.sh,/docs/getting-started-guides/resources/mosquitto-ubuntu.sh
+ClientC,Mosquitto (macOS),shell,resources/mosquitto-macos.sh,/docs/getting-started-guides/resources/mosquitto-macos.sh
 ClientD,CoAP.js,shell,resources/node-coap.sh,/docs/getting-started-guides/resources/node-coap.sh
 ClientE,cURL (Ubuntu),shell,resources/curl-ubuntu.sh,/docs/getting-started-guides/resources/curl-ubuntu.sh
 ClientF,cURL (macOS),shell,resources/curl-macos.sh,/docs/getting-started-guides/resources/curl-macos.sh{% endcapture %}
 {% include tabs.html %}
 
+### Sample data files
 
 Download or create the following data files:
 
@@ -114,6 +118,8 @@ A,attributes-data.json,json,resources/attributes-data.json,/docs/getting-started
 B,telemetry-data.json,json,resources/telemetry-data.json,/docs/getting-started-guides/resources/telemetry-data.json{% endcapture %}
 {% include tabs.html %}
 
+### Pushing data using MQTT, CoAP or HTTP
+
 Execute commands in one of the following tabs to push data to the server.
  
 Don't forget to 
@@ -122,10 +128,12 @@ Don't forget to
  - replace **$THINGSBOARD_HOST** with either **127.0.0.1** (in case of local installation) or **demo.thingsboard.io** (in case of live-demo).
 
 {% capture tabspec %}mqtt-telemetry-upload
-A,Mosquitto (MQTT),shell,resources/mosquitto.sh,/docs/getting-started-guides/resources/mosquitto.sh
-B,MQTT.js (MQTT),shell,resources/mqtt-js.sh,/docs/getting-started-guides/resources/mqtt-js.sh
-C,CoAP.js (CoAP),shell,resources/coap-js.sh,/docs/getting-started-guides/resources/coap-js.sh
-D,cURL (HTTP),shell,resources/curl.sh,/docs/getting-started-guides/resources/curl.sh{% endcapture %}
+A,MQTT.js (Ubuntu & MacOS),shell,resources/mqtt-js.sh,/docs/getting-started-guides/resources/mqtt-js.sh
+B,MQTT.js (Windows),shell,resources/mqtt-js.bat,/docs/getting-started-guides/resources/mqtt-js.bat
+C,publish.js,shell,resources/publish.js,/docs/getting-started-guides/resources/publish.js
+D,Mosquitto (MQTT),shell,resources/mosquitto.sh,/docs/getting-started-guides/resources/mosquitto.sh
+E,CoAP.js (CoAP),shell,resources/coap-js.sh,/docs/getting-started-guides/resources/coap-js.sh
+F,cURL (HTTP),shell,resources/curl.sh,/docs/getting-started-guides/resources/curl.sh{% endcapture %}
 {% include tabs.html %}
 
 ## Observe device data on the Web UI
