@@ -9,6 +9,7 @@ title: Getting Started
 * TOC
 {:toc}
 
+
 ## Introduction
 
 The goal of this guide is for you to collect and visualize some IoT device data using Thingsboard. 
@@ -17,7 +18,13 @@ This guide will let you:
  - Provision your device
  - Create and register device credentials
  - Push data from device to your Thingsboard instance using MQTT, CoAP or HTTP protocols
- - Create dashboard to visualize the data 
+ - Create dashboard to visualize the data
+  
+<div id="video">  
+    <div id="video_wrapper">
+        <iframe src="https://www.youtube.com/embed/dIKXFxpfB_Q" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
 
 ## Setup and Requirements
 
