@@ -23,6 +23,8 @@ toc:
     path: /docs/user-guide/install/aws/
   - title: Building from sources
     path: /docs/user-guide/install/building-from-source/
+  - title: Upgrade instructions
+    path: /docs/user-guide/install/upgrade-instructions/
   - title: Configuration
     path: /docs/user-guide/install/config/
   - title: Cluster setup

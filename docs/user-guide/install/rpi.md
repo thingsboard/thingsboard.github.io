@@ -66,9 +66,9 @@ Download installation package or [build it from source](/docs/user-guide/install
 
 ```bash
 # Download the package
-$ wget https://github.com/thingsboard/thingsboard/releases/download/v1.0.1/thingsboard-1.0.1.deb
+$ wget https://github.com/thingsboard/thingsboard/releases/download/v1.0.2/thingsboard-1.0.2.deb
 # Install Thingsboard as a service
-$ sudo dpkg -i thingsboard-1.0.1.deb
+$ sudo dpkg -i thingsboard-1.0.2.deb
 ```
 
 ##### Provision database schema and initial data

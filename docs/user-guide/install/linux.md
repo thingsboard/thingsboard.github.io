@@ -6,6 +6,9 @@ title: Installing Thingsboard on Linux
 
 ---
 
+* TOC
+{:toc}
+
 This guide describes how to install Thingsboard on a Linux based server machine.
 Instructions below are provided for Ubuntu 16.04 and CentOS 7. 
 This instructions can be easily adopted to other similar operation systems. 

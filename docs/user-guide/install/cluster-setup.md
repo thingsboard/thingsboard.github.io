@@ -6,6 +6,9 @@ title: Cluster setup
 
 ---
 
+* TOC
+{:toc}
+
 This guide will help you to setup Thingsboard in cluster mode.
 
 ### Assumptions
