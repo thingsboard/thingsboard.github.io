@@ -15,6 +15,7 @@ However, you are able to use other programming languages and OS.
 ## Samples
 
  - [Raspberry Pi GPIO control over MQTT using Thingsboard](/docs/samples/raspberry/gpio/)
+ - [Raspberry Pi GPIO control using Android Things and Thingsboard](/docs/samples/raspberry/gpio-android-things/) 
 
 ## Documentation
 

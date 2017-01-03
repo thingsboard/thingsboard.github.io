@@ -31,6 +31,8 @@ toc:
       path: /docs/samples/raspberry/
     - title: Raspberry Pi GPIO control over MQTT using Thingsboard
       path: /docs/samples/raspberry/gpio/
+    - title: Raspberry Pi GPIO control using Android Things and Thingsboard
+      path: /docs/samples/raspberry/gpio-android-things/
   - title: LinkIt ONE
     section:
     - title: LinkIt ONE overview
