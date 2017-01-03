@@ -4,6 +4,8 @@ title: Email Plugin Configuration
 
 ---
 
+* TOC
+{:toc}
 
 In this short tutorial we will explain how to configure Email Plugin to distribute alarms to recepients via email.
 We will use [Live Demo](http://demo.thingsboard.io) Thignsboard server and [SendGrid](http://www.sendgrid.com) SMTP API in this tutorial. 
