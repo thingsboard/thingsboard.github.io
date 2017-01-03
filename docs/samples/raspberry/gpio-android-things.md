@@ -107,6 +107,7 @@ In case of live-demo server:
  
  - login: your live-demo username (email)
  - password: your live-demo password
+ 
 See **[live-demo](/docs/user-guide/live-demo/)** page for more details how to get your account.
  
 Once logged in, open **Dashboards->Raspberry PI GPIO Demo Dashboard** page. You should observe demo dashboard with GPIO control and status panel for your device. 
