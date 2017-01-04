@@ -5,7 +5,7 @@ toc:
   path: /docs/samples/
 - title: Demo Account
   path: /docs/samples/demo-account/
-- title: Hardware platforms
+- title: Hardware samples
   section:
   - title: Arduino
     section:
