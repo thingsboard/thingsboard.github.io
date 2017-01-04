@@ -33,6 +33,8 @@ toc:
       path: /docs/samples/raspberry/gpio/
     - title: Raspberry Pi GPIO control using Android Things and Thingsboard
       path: /docs/samples/raspberry/gpio-android-things/
+    - title: Temperature upload over MQTT using Raspberry Pi and DHT22 sensor
+      path: /docs/samples/raspberry/temperature/
   - title: LinkIt ONE
     section:
     - title: LinkIt ONE overview
