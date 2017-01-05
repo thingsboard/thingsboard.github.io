@@ -255,7 +255,7 @@ After application will be uploaded and started it will try to connect to Thingsb
 
 ## Autonomous operation
 
-When you have uploaded the sketch, you may remove all the wires required for uploading including USB-TTL adapter and connect your ESP8266 and DHT sensor directly to power source according to the [Final wiring schema](#final-schema).
+When you have uploaded the sketch, you may remove all the wires required for uploading including USB-TTL adapter and connect your ESP8266 and DHT sensor directly to power source according to the [Final wiring schema](#final-schema-battery-powered).
 
 ## Troubleshooting
 
