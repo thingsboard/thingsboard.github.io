@@ -16,6 +16,18 @@ The purpose of this application is to demonstrate Thingsboard [RPC capabilities]
 Raspberry Pi will use simple [Android Things](https://developer.android.com/things/index.html) application that will connect to Thingsboard server via [MQTT](https://en.wikipedia.org/wiki/MQTT) and listen to RPC commands.
 Current GPIO state and GPIO control widget is visualized using built-in customizable dashboard. 
 
+The video below demonstrates the final result of this tutorial.
+
+<br/>
+<br/>
+<div id="video">  
+    <div id="video_wrapper">
+        <iframe src="https://www.youtube.com/embed/SRnYjoS3M0Y" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
+<br/>
+<br/>
+
 {% include templates/prerequisites.md %}
 
 ## List of hardware and pinouts
@@ -112,17 +124,6 @@ See **[live-demo](/docs/user-guide/live-demo/)** page for more details how to ge
  
 Once logged in, open **Dashboards->Raspberry PI GPIO Demo Dashboard** page. You should observe demo dashboard with GPIO control and status panel for your device. 
 Now you can switch status of GPIOs using control panel. As a result you will see LEDs status change on device and on the status panel.
-The video below demonstrates the final result of this tutorial.
-
-<br/>
-<br/>
-<div id="video">  
-    <div id="video_wrapper">
-        <iframe src="https://www.youtube.com/embed/SRnYjoS3M0Y" frameborder="0" allowfullscreen></iframe>
-    </div>
-</div>
-<br/>
-<br/>
 
 Below is the screenshot of the "Raspberry PI GPIO Demo Dashboard".  
 

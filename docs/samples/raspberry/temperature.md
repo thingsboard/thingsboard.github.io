@@ -20,6 +20,18 @@ Raspberry Pi push data to Thingsboard server via MQTT protocol by using [paho mq
 Data is visualized using built-in customizable dashboard. 
 The application that is running on Raspberry Pi is written on python which is quite simple and easy to understand.
 
+The video below demonstrates the final result of this tutorial.
+
+<br/>
+<br/>
+<div id="video">  
+    <div id="video_wrapper">
+        <iframe src="https://www.youtube.com/embed/-26bxb90tt0" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
+<br/>
+<br/>
+
 Once you complete this sample/tutorial, you will see your sensor data on the following dashboard.
 
 ![image](/images/samples/esp8266/temperature/dashboard.gif)

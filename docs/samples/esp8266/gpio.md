@@ -18,6 +18,18 @@ ESP8266 offers a complete and self-contained Wi-Fi networking solution.
 ESP8266 push data to Thingsboard server via MQTT protocol by using [PubSubClient](https://github.com/knolleary/pubsubclient) library for Arduino.
 Current GPIO state and GPIO control widget is visualized using built-in customizable dashboard. 
 
+The video below demonstrates the final result of this tutorial.
+
+<br/>
+<br/>
+<div id="video">  
+    <div id="video_wrapper">
+        <iframe src="https://www.youtube.com/embed/NGU_MJd7fk8" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
+<br/>
+<br/>
+
 {% include templates/prerequisites.md %}
 
 ## List of hardware and pinouts
