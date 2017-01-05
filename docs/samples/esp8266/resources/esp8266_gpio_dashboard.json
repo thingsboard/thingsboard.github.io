@@ -1,0 +1,186 @@
+{
+   "title":"ESP8266 GPIO Demo Dashboard",
+   "configuration":{  
+      "description":"Demo dashboard for ESP8266 GPIO Demo",
+      "widgets":[  
+         {  
+            "isSystemType":true,
+            "bundleAlias":"gpio_widgets",
+            "typeAlias":"basic_gpio_control",
+            "type":"rpc",
+            "title":"New widget",
+            "sizeX":5,
+            "sizeY":3,
+            "config":{  
+               "targetDeviceAliases":[  
+
+               ],
+               "showTitle":true,
+               "backgroundColor":"#fff",
+               "color":"rgba(0, 0, 0, 0.87)",
+               "padding":"0px",
+               "settings":{  
+                  "parseGpioStatusFunction":"return body[pin] === true;",
+                  "gpioStatusChangeRequest":{  
+                     "method":"setGpioStatus",
+                     "paramsBody":"{\n   \"pin\": \"{$pin}\",\n   \"enabled\": \"{$enabled}\"\n}"
+                  },
+                  "requestTimeout":500,
+                  "switchPanelBackgroundColor":"#0f7391",
+                  "gpioStatusRequest":{  
+                     "method":"getGpioStatus",
+                     "paramsBody":"{}"
+                  },
+                  "gpioList":[  
+                     {  
+                        "pin":3,
+                        "label":"GPIO 0",
+                        "col":0,
+                        "_uniqueKey":0,
+                        "row":1
+                     },
+                     {  
+                        "label":"GPIO 2",
+                        "col":0,
+                        "_uniqueKey":1,
+                        "pin":5,
+                        "row":2
+                     }
+                  ]
+               },
+               "title":"ESP8266 GPIO Control Panel",
+               "datasources":[  
+
+               ],
+               "targetDeviceAliasIds":[  
+                  "1"
+               ]
+            },
+            "row":0,
+            "col":0
+         },
+         {  
+            "isSystemType":true,
+            "bundleAlias":"gpio_widgets",
+            "typeAlias":"gpio_panel",
+            "type":"latest",
+            "title":"New widget",
+            "sizeX":5,
+            "sizeY":3,
+            "config":{  
+               "showTitle":true,
+               "backgroundColor":"#fff",
+               "color":"rgba(0, 0, 0, 0.87)",
+               "padding":"0px",
+               "settings":{  
+                  "gpioList":[  
+                     {  
+                        "pin":1,
+                        "label":"RX",
+                        "row":0,
+                        "col":0,
+                        "color":"#ffff00",
+                        "_uniqueKey":0
+                     },
+                     {  
+                        "pin":2,
+                        "label":"VCC",
+                        "row":0,
+                        "col":1,
+                        "color":"#d32f2f",
+                        "_uniqueKey":1
+                     },
+                     {  
+                        "pin":3,
+                        "label":"GPIO 0",
+                        "row":1,
+                        "col":0,
+                        "color":"#008000",
+                        "_uniqueKey":2
+                     },
+                     {  
+                        "color":"#795548",
+                        "pin":4,
+                        "label":"RESET",
+                        "row":1,
+                        "col":1
+                     },
+                     {  
+                        "color":"#008000",
+                        "pin":5,
+                        "label":"GPIO 2",
+                        "row":2,
+                        "col":0
+                     },
+                     {  
+                        "color":"#d32f2f",
+                        "pin":6,
+                        "label":"CH_PD",
+                        "row":2,
+                        "col":1
+                     },
+                     {  
+                        "color":"#000000",
+                        "pin":7,
+                        "label":"GND",
+                        "row":3,
+                        "col":0
+                     },
+                     {  
+                        "color":"#4db6ac",
+                        "pin":8,
+                        "label":"TX",
+                        "row":3,
+                        "col":1
+                     }
+                  ],
+                  "ledPanelBackgroundColor":"#0f7391"
+               },
+               "title":"ESP8266 GPIO Status Panel",
+               "datasources":[  
+                  {  
+                     "type":"device",
+                     "dataKeys":[  
+                        {  
+                           "name":"3",
+                           "type":"attribute",
+                           "label":"3",
+                           "color":"#2196f3",
+                           "settings":{  
+
+                           },
+                           "_hash":0.9551370597917774
+                        },
+                        {  
+                           "name":"5",
+                           "type":"attribute",
+                           "label":"5",
+                           "color":"#4caf50",
+                           "settings":{  
+
+                           },
+                           "_hash":0.9061744142937156
+                        }
+                     ],
+                     "deviceAliasId":"1",
+                     "name":"ESP8266 Demo Device"
+                  }
+               ],
+               "timewindow":{  
+                  "realtime":{  
+                     "timewindowMs":60000
+                  }
+               }
+            },
+            "row":0,
+            "col":5
+         }
+      ],
+      "deviceAliases":{  
+         "1":{  
+            "alias":"ESP8266 Demo Device",
+            "deviceId":"{DEVICE_ID}"
+         }
+      }
+   }
+}

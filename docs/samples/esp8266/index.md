@@ -13,6 +13,7 @@ The applications in this samples that are running on ESP8266 core for Arduino an
 ## Samples
 
  - [Temperature upload over MQTT using ESP8266 and DHT22 sensor](/docs/samples/esp8266/temperature/)
+ - [ESP8266 GPIO control over MQTT using Thingsboard](/docs/samples/esp8266/gpio/)
 
 ## Documentation
 
