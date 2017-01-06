@@ -45,7 +45,7 @@ $ sudo service cassandra stop
 
 # Find and set memory options in /etc/cassandra/cassandra-env.sh
 MAX_HEAP_SIZE="300M"
-NEW_HEAP_SIZE="60M"
+HEAP_NEWSIZE="60M"
 
 # Find and set timeout options in /etc/cassandra/cassandra.yaml
 read_request_timeout_in_ms: 20000
