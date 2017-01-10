@@ -9,9 +9,9 @@ title: Upgrade instructions
 * TOC
 {:toc}
 
-## Upgrading to 1.0.2
+## Upgrading to 1.0.3
 
-This steps are applicable for both 1.0 and 1.0.1 Thingsboard versions.
+This steps are applicable for both 1.0, 1.0.1 and 1.0.2 Thingsboard versions.
 
 #### Thingsboard package download
 
@@ -29,6 +29,7 @@ B,CentOS,shell,resources/thingsboard-centos-installation.sh,/docs/user-guide/ins
 
 #### Database upgrade
 
+This step is required only if you are upgrading from 1.0 or 1.0.1 versions.
 Please use following instruction to update your single node instance:
 
 ```bash
