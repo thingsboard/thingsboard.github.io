@@ -1,1 +1,1 @@
-sudo dpkg -i thingsboard-1.0.2.deb
+sudo dpkg -i thingsboard-1.0.3.deb

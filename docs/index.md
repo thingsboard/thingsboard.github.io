@@ -25,7 +25,11 @@ title: Thingsboard Documentation
 <li><b><a href="/docs/reference/architecture/">Architecture</a></b> provide a deep understanding of how Thingsboard works.</li>
 </ul>
 
+<h2>Video Tutorials</h2>
+
+<p>The Thingsboard Youtube <b><a href="https://www.youtube.com/channel/UCDb9fsV-YR4JmnipAMGsVAQ/videos">channel</a></b> contains useful video tutorials that cover various platform features.</p>
+
 <h2>REST API and Device Connectivity Protocols</h2>
 
-<p>The reference documentation provides complete information on the Thingsboard <a href="/docs/reference/rest-api">REST APIs</a> 
-and various supported device connectivity protocols: <a href="/docs/reference/mqtt-api">MQTT</a>, <a href="/docs/reference/coap-api">CoAP</a> and <a href="/docs/reference/http-api">HTTP</a>.</p>
+<p>The reference documentation provides complete information on the Thingsboard <b><a href="/docs/reference/rest-api">REST APIs</a></b>
+and various supported device connectivity protocols: <b><a href="/docs/reference/mqtt-api">MQTT</a></b>, <b><a href="/docs/reference/coap-api">CoAP</a></b> and <b><a href="/docs/reference/http-api">HTTP</a></b>.</p>

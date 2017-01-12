@@ -45,7 +45,7 @@ $ sudo service cassandra stop
 
 # Find and set memory options in /etc/cassandra/cassandra-env.sh
 MAX_HEAP_SIZE="300M"
-NEW_HEAP_SIZE="60M"
+HEAP_NEWSIZE="60M"
 
 # Find and set timeout options in /etc/cassandra/cassandra.yaml
 read_request_timeout_in_ms: 20000
@@ -66,9 +66,9 @@ Download installation package or [build it from source](/docs/user-guide/install
 
 ```bash
 # Download the package
-$ wget https://github.com/thingsboard/thingsboard/releases/download/v1.0.2/thingsboard-1.0.2.deb
+$ wget https://github.com/thingsboard/thingsboard/releases/download/v1.0.3/thingsboard-1.0.3.deb
 # Install Thingsboard as a service
-$ sudo dpkg -i thingsboard-1.0.2.deb
+$ sudo dpkg -i thingsboard-1.0.3.deb
 ```
 
 ##### Provision database schema and initial data

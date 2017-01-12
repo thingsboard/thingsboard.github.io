@@ -1,6 +1,6 @@
 ---
 layout: docwithnav
-title: Temperature upload over MQTT using ESP8266 and DHT22 sensor
+title: ESP8266 GPIO control over MQTT using Thingsboard
 
 ---
 
@@ -10,15 +10,13 @@ title: Temperature upload over MQTT using ESP8266 and DHT22 sensor
 ## Introduction
 {% include templates/what-is-thingsboard.md %}
 
-This sample application performs collection of temperature and humidity values produced by [DHT22 sensor](https://www.adafruit.com/product/385) and further visualization on the real-time web dashboard.
-Collected data is pushed via MQTT to Thingsboard server for storage and visualization.
-The purpose of this application is to demonstrate Thingsboard [data collection API](/docs/user-guide/telemetry/) and [visualization capabilities](docs/user-guide/visualization/).
+This sample application will allow you to control GPIO of your ESP8266 device using Thingsboard web UI. We will observe GPIO control using Leds connected to the pins. 
+The purpose of this application is to demonstrate Thingsboard [RPC capabilities](/docs/user-guide/rpc/).
 
-The DHT22 sensor is connected to [ESP8266](https://en.wikipedia.org/wiki/ESP8266).
+The application that is running on ESP8266 is written using Arduino SDK which is quite simple and easy to understand.
 ESP8266 offers a complete and self-contained Wi-Fi networking solution.
 ESP8266 push data to Thingsboard server via MQTT protocol by using [PubSubClient](https://github.com/knolleary/pubsubclient) library for Arduino.
-Data is visualized using built-in customizable dashboard. 
-The application that is running on ESP8266 is written using Arduino SDK which is quite simple and easy to understand.
+Current GPIO state and GPIO control widget is visualized using built-in customizable dashboard. 
 
 The video below demonstrates the final result of this tutorial.
 
@@ -26,15 +24,11 @@ The video below demonstrates the final result of this tutorial.
 <br/>
 <div id="video">  
     <div id="video_wrapper">
-        <iframe src="https://www.youtube.com/embed/S8JNPYsdT_M" frameborder="0" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/NGU_MJd7fk8" frameborder="0" allowfullscreen></iframe>
     </div>
 </div>
 <br/>
 <br/>
-
-Once you complete this sample/tutorial, you will see your sensor data on the following dashboard.
-
-![image](/images/samples/esp8266/temperature/dashboard.gif)
 
 {% include templates/prerequisites.md %}
 
@@ -43,10 +37,6 @@ Once you complete this sample/tutorial, you will see your sensor data on the fol
  - [ESP8266 module](https://www.aliexpress.com/item/2PCS-ESP8266-Serial-Esp-01-WIFI-Wireless-Transceiver-Module-Send-Receive-LWIP-AP-STA/32302638695.html?spm=2114.03010208.3.163.FPBlcc&ws_ab_test=searchweb0_0,searchweb201602_2_10065_10068_10084_10083_10080_10082_10081_10060_10061_10062_10056_10055_10054_10059_10099_10078_10079_10093_427_10073_10103_10102_10096_10052_10050_10051,searchweb201603_3&btsid=1494d8a7-6202-4a69-a0e7-877ffa333243)
 
   ![image](/images/samples/arduino/temperature/esp8266-pinout.png)
-
- - [DHT22 sensor](https://www.aliexpress.com/item/1pcs-DHT22-digital-temperature-and-humidity-sensor-Temperature-and-humidity-module-AM2302-replace-SHT11-SHT15/32316036161.html?spm=2114.03010208.3.49.aZvfaG&ws_ab_test=searchweb0_0,searchweb201602_2_10065_10068_10084_10083_10080_10082_10081_10060_10061_10062_10056_10055_10054_10059_10099_10078_10079_10093_426_10073_10103_10102_10096_10052_10050_10051,searchweb201603_6&btsid=28d9ee9a-283a-4e97-af7b-a7e530490916)
-
-  ![image](/images/samples/arduino/temperature/dht22-pinout.png)
 
  - USB to TTL
     
@@ -58,15 +48,13 @@ Once you complete this sample/tutorial, you will see your sensor data on the fol
     
     ![image](/images/samples/esp8266/temperature/usb-ttl-pl2303hx.png)
 
- - Resistor (between 4.7K and 10K)
-  
  - Breadboard 
   
  - 2 female-to-female jumper wires
  
- - 10 female-to-male jumper wires
+ - 7 female-to-male jumper wires
  
- - 3 male-to-male jumper wire  
+ - 2 Leds
  
  - 3.3V power source (for example 2 AA batteries)
  
@@ -83,20 +71,17 @@ ESP8266 GPIO 0|USB-TTL GND
 ESP8266 RX|USB-TTL TX
 ESP8266 TX|USB-TTL RX
 
-DHT-22 Pin|ESP8266 Pin
+LED 1 Pin  |USB-TTL Pin
 -----------|-----------
-DHT-22 Data|ESP8266 GPIO 2
+cathode|USB-TTL GND
 
-DHT-22 Pin|USB-TTL Pin
+LED 1 Pin  |ESP8266 Pin
 -----------|-----------
-DHT-22 VCC|USB-TTL VCC +3.3V
-DHT-22 GND (-)|USB-TTL GND
-
-Finally, place a resistor (between 4.7K and 10K) between pin number 1 and 2 of the DHT sensor.
+anode|ESP8266 GPIO 2
 
 The following picture summarizes the connections for this project in programming/debug mode:
 
-![image](/images/samples/esp8266/temperature/schema-flash.png)
+![image](/images/samples/esp8266/gpio/schema-flash.png)
 
 ### Final schema (Battery Powered)
 
@@ -106,18 +91,25 @@ ESP8266 VCC|VCC+
 ESP8266 CH_PD|VCC+
 ESP8266 GND (-)|VCC-
 
-DHT-22 Pin|ESP8266 Pin
+LED 1 Pin|ESP8266 Pin
 -----------|-----------
-DHT-22 Data|ESP8266 GPIO 2
+anode|ESP8266 GPIO 2
 
-DHT-22 Pin|3.3V power source
+LED 1 Pin|3.3V power source
 -----------|-----------
-DHT-22 VCC|VCC+
-DHT-22 GND (-)|VCC-
+cathode|VCC-
+
+LED 2 Pin|ESP8266 Pin
+-----------|-----------
+anode|ESP8266 GPIO 0
+
+LED 2 Pin|3.3V power source
+-----------|-----------
+cathode|VCC-
 
 The final picture:
 
-![image](/images/samples/esp8266/temperature/schema.png)
+![image](/images/samples/esp8266/gpio/schema.png)
  
 {% include templates/thingsboard-configuration.md %}
 
@@ -150,13 +142,13 @@ This step contains instructions that are necessary to provision new dashboard wi
 Open "Terminal" and download file containing demo dashboard JSON:
 
 ```bash
-curl -L http://thingsboard.io/docs/samples/esp8266/resources/esp8266_dht_temp_dashboard.json > esp8266_dht_temp_dashboard.json
+curl -L http://thingsboard.io/docs/samples/esp8266/resources/esp8266_gpio_dashboard.json > esp8266_gpio_dashboard.json
 ```
 
 Update dashboard configuration with your device Id (obtained in previous step) by issuing the following command:
 
 ```bash
-sed -i "s/{DEVICE_ID}/<your device id>/" esp8266_dht_temp_dashboard.json
+sed -i "s/{DEVICE_ID}/<your device id>/" esp8266_gpio_dashboard.json
 ```
 
 Obtain JWT token by issuing login POST command:
@@ -176,7 +168,7 @@ copy $YOUR_JSON_TOKEN to some place. **Note** that it will be valid for 15 minut
 Execute dashboard upload command:
 
 ```bash
-curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' --header 'X-Authorization: Bearer $YOUR_JSON_TOKEN' -d "@esp8266_dht_temp_dashboard.json" 'http://localhost:8080/api/dashboard'
+curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' --header 'X-Authorization: Bearer $YOUR_JSON_TOKEN' -d "@esp8266_gpio_dashboard.json" 'http://localhost:8080/api/dashboard'
 ```
 
 
@@ -225,18 +217,16 @@ Open Arduino IDE and go to **Sketch -> Include Library -> Manage Libraries**.
 Find and install the following libraries:
 
 - [PubSubClient by Nick O'Leary](http://pubsubclient.knolleary.net/).
-- [Adafruit Unified Sensor by Adafruit](https://github.com/adafruit/Adafruit_Sensor)
-- [DHT sensor library by Adafruit](https://github.com/adafruit/DHT-sensor-library)
+- [ArduinoJson by Benoit Blanchon](https://github.com/bblanchon/ArduinoJson)
 
 **Note** that this tutorial was tested with the following versions of the libraries:
 
 - PubSubClient 2.6
-- Adafruit Unified Sensor 1.0.2
-- DHT sensor library 1.3.0
+- ArduinoJson 5.8.0
 
 ### Step 3. Prepare and upload sketch.
 
-Download and open **esp8266-dht-mqtt.ino** sketch. 
+Download and open **esp8266-gpio-control.ino** sketch. 
 
 **Note** You need to edit following constants and variables in the sketch:
 
@@ -246,16 +236,16 @@ Download and open **esp8266-dht-mqtt.ino** sketch.
 - thingsboardServer - Thingsboard HOST/IP address that is accessable within your wifi network. Specify "demo.thingsboard.io" if you are using [live demo](http://demo.thingsboard.io/) server.
 
 {% capture tabspec %}arduino-sketch
-esp8266-dht-mqtt,esp8266-dht-mqtt.ino,c,resources/esp8266-dht-mqtt.ino,/docs/samples/esp8266/resources/esp8266-dht-mqtt.ino{% endcapture %}
+esp8266-gpio-control,esp8266-gpio-control.ino,c,resources/esp8266-gpio-control.ino,/docs/samples/esp8266/resources/esp8266-gpio-control.ino{% endcapture %}
 {% include tabs.html %}
 
 Connect USB-TTL adapter to PC and select the corresponding port in Arduino IDE. Compile and Upload your sketch to device using "Upload" button.
 
-After application will be uploaded and started it will try to connect to Thingsboard node using mqtt client and upload "temperature" and "humidity" timeseries data once per second.
+After application will be uploaded and started it will try to connect to Thingsboard node using mqtt client and upload current GPIOs state.
 
 ## Autonomous operation
 
-When you have uploaded the sketch, you may remove all the wires required for uploading including USB-TTL adapter and connect your ESP8266 and DHT sensor directly to power source according to the [Final wiring schema](#final-schema-battery-powered).
+When you have uploaded the sketch, you may remove all the wires required for uploading including USB-TTL adapter and connect your ESP8266 and LEDs directly to power source according to the [Final wiring schema](#final-schema-battery-powered).
 
 ## Troubleshooting
 
@@ -264,21 +254,27 @@ Then connect USB-TTL adapter with PC and select port of the USB-TTL adapter in A
 
 ## Data visualization
 
-Finally, open Thingsboard Web UI. You can access this dashboard by logging in as a tenant administrator. Use:
+Finally, open Thingsboard Web UI. You can access this dashboard by logging in as a tenant administrator.
 
+In case of local installation:
+ 
  - login: tenant@thingsboard.org
  - password: tenant
+
+In case of live-demo server:
  
-in case of local Thingsboard installation. 
-  
-Go to **"Devices"** section and locate **"ESP8266 Demo Device"**, open device details and switch to **"Latest telemetry"** tab. 
-If all is configured correctly you should be able to see latest values of *"temperature"* and *"humidity"* in the table.
+ - login: your live-demo username (email)
+ - password: your live-demo password
+ 
+See **[live-demo](/docs/user-guide/live-demo/)** page for more details how to get your account.
+ 
+Once logged in, open **Dashboards->ESP8266 GPIO Demo Dashboard** page. You should observe demo dashboard with GPIO control and status panel for your device. 
+Now you can switch status of GPIOs using control panel. As a result you will see LEDs status change on device and on the status panel.
 
-![image](/images/samples/esp8266/temperature/attributes.png)
+Below is the screenshot of the "ESP8266 GPIO Demo Dashboard".  
 
-After, open **"Dashboards"** section then locate and open **"ESP8266 DHT22: Temperature & Humidity Demo Dashboard"**. 
-As a result you will see two digital gauges and two time-series charts displaying temperature and humidity level (similar to dashboard image in the introduction).
-
+ ![image](/images/samples/esp8266/gpio/dashboard.png)
+ 
 ## Next steps
 
 Browse other [samples](/docs/samples) or explore guides related to main Thingsboard features:
