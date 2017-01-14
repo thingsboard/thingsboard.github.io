@@ -46,7 +46,7 @@ Demo tenant customers:
 ## Dashboards
 
  - Temperature & Humidity Demo Dashboard - created for temperature and humidity upload [sample applications](/docs/samples/nodemcu/temperature/).
- - Raspberry PI GPIO Demo Dashboard - created for Raspberry Pi GPIO control [sample application](docs/samples/raspberry/gpio/).
+ - Raspberry PI GPIO Demo Dashboard - created for Raspberry Pi GPIO control [sample application](/docs/samples/raspberry/gpio/).
  
 ## Rules
 
