@@ -11,7 +11,7 @@ This guide will help you to get familiar with Thingsboard configuration files an
 Once you have installed Thingsboard, you can find configuration files in the following directory:
 
 ```bash
-/etc/init.d/thingsboard/conf
+/etc/thingsboard/conf
 ```
 
 We will describe main configuration files below.
