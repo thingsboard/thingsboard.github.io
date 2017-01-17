@@ -24,7 +24,7 @@ You can specify default RPC timeout for plugin instance in plugin configuration.
 
 ## Server-side API
 
-RPC plugin API description is available in corresponding [rpc](docs/user-guide/rpc/#server-side-rpc-api) guides. 
+RPC plugin API description is available in corresponding [rpc](/docs/user-guide/rpc/#server-side-rpc-api) guides. 
 
 ## Example
 

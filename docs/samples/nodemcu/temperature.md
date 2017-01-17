@@ -12,7 +12,7 @@ title: Temperature upload over MQTT using NodeMCU and DHT11 sensor
 
 This sample application performs collection of temperature and humidity values produced by DHT11 sensor. 
 Collected data is pushed to Thingsboard for storage and visualization.
-The purpose of this application is to demonstrate Thingsboard [data collection API](/docs/user-guide/telemetry/) and [visualization capabilities](docs/user-guide/visualization/).
+The purpose of this application is to demonstrate Thingsboard [data collection API](/docs/user-guide/telemetry/) and [visualization capabilities](/docs/user-guide/visualization/).
 
 The DHT11 sensor is connected to [NodeMCU](https://en.wikipedia.org/wiki/NodeMCU). NodeMCU push data to Thingsboard server via [MQTT](https://en.wikipedia.org/wiki/MQTT) protocol.
 Data is visualized using built-in customizable dashboard. The application that is running on NodeMCU is written using Lua scripting language which is quite simple and easy to understand.

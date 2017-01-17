@@ -40,13 +40,13 @@ Demo tenant customers:
  
  - DHT11 Demo Device - created for temperature and humidity upload [sample applications](/docs/samples/nodemcu/temperature/). 
    Access token: DHT11_DEMO_TOKEN
- - Raspberry Pi Demo Device - created for GPIO control [sample application](docs/samples/raspberry/gpio/).
+ - Raspberry Pi Demo Device - created for GPIO control [sample application](/docs/samples/raspberry/gpio/).
    Access token: RASPBERRY_PI_DEMO_TOKEN
  
 ## Dashboards
 
  - Temperature & Humidity Demo Dashboard - created for temperature and humidity upload [sample applications](/docs/samples/nodemcu/temperature/).
- - Raspberry PI GPIO Demo Dashboard - created for Raspberry Pi GPIO control [sample application](docs/samples/raspberry/gpio/).
+ - Raspberry PI GPIO Demo Dashboard - created for Raspberry Pi GPIO control [sample application](/docs/samples/raspberry/gpio/).
  
 ## Rules
 

@@ -33,9 +33,9 @@ In order to send a message to other devices you will need to their identifiers.
 Device can request a list of other devices that belong to the same customer using *getDevices* RPC call.
 
 {% capture tabspec %}mqtt-get-device-list
-A,mqtt-get-device-list.sh,shell,resources/mqtt-get-device-list.sh,/docs/user-guide/plugins/resources/mqtt-get-device-list.sh
-B,mqtt-get-device-list.js,javascript,resources/mqtt-get-device-list.js,/docs/user-guide/plugins/resources/mqtt-get-device-list.js
-C,response.json,javascript,resources/mqtt-get-device-list.json,/docs/user-guide/plugins/resources/mqtt-get-device-list.json{% endcapture %}
+A,mqtt-get-device-list.sh,shell,resources/mqtt-get-device-list.sh,/docs/reference/plugins/resources/mqtt-get-device-list.sh
+B,mqtt-get-device-list.js,javascript,resources/mqtt-get-device-list.js,/docs/reference/plugins/resources/mqtt-get-device-list.js
+C,response.json,javascript,resources/mqtt-get-device-list.json,/docs/reference/plugins/resources/mqtt-get-device-list.json{% endcapture %}
 {% include tabs.html %}
 
 ##### Send Message API
@@ -45,8 +45,8 @@ Device can send a message to other device that belong to the same customer using
 Example below will attempt to send message from device "Test Device A1" to device "Test Device A2". 
 
 {% capture tabspec %}mqtt-send-msg-fail
-A,mqtt-send-msg.sh,shell,resources/mqtt-send-msg.sh,/docs/user-guide/plugins/resources/mqtt-send-msg.sh
-B,mqtt-send-msg.js,javascript,resources/mqtt-send-msg.js,/docs/user-guide/plugins/resources/mqtt-send-msg.js{% endcapture %}
+A,mqtt-send-msg.sh,shell,resources/mqtt-send-msg.sh,/docs/reference/plugins/resources/mqtt-send-msg.sh
+B,mqtt-send-msg.js,javascript,resources/mqtt-send-msg.js,/docs/reference/plugins/resources/mqtt-send-msg.js{% endcapture %}
 {% include tabs.html %}
 
 As a result you should receive following error:
@@ -57,8 +57,8 @@ As a result you should receive following error:
 
 Let's launch emulator of target device and send message again:
 {% capture tabspec %}mqtt-receive-msg
-A,mqtt-receive-msg.sh,shell,resources/mqtt-receive-msg.sh,/docs/user-guide/plugins/resources/mqtt-receive-msg.sh
-B,mqtt-receive-msg.js,javascript,resources/mqtt-receive-msg.js,/docs/user-guide/plugins/resources/mqtt-receive-msg.js{% endcapture %}
+A,mqtt-receive-msg.sh,shell,resources/mqtt-receive-msg.sh,/docs/reference/plugins/resources/mqtt-receive-msg.sh
+B,mqtt-receive-msg.js,javascript,resources/mqtt-receive-msg.js,/docs/reference/plugins/resources/mqtt-receive-msg.js{% endcapture %}
 {% include tabs.html %}
 
 As a result you should receive following response from device:
