@@ -59,7 +59,7 @@ If you specified not to copy the keystore file, then upload it manually to a dir
 Locate your **thingsboard.yml** file and uncomment the lines after **# Uncomment the following lines to enable ssl for MQTT**:
 
 
-{% capture tabspec %}mqtt-ssl-configuration-thingsboard
+{% capture tabspec %}mqtt-ssl-configuration-thingsboard-yml
 A,thingsboard.yml,shell,resources/mqtt-ssl-configuration-thingsboard.yml,/docs/user-guide/mqtt-ssl-configuration-thingsboard.yml{% endcapture %}
 {% include tabs.html %}
 
@@ -70,7 +70,7 @@ The **key_store** Property must point to the **.jks** file location. **key_store
 
 After these values are set, launch or restart your thingsboard server.
 
-## MQTT SSL Client. 
+## MQTT SSL Client 
 
 ### Authentication types
 
@@ -107,7 +107,7 @@ A,onewaysslmqttclient.py output,shell,resources/mqtt-ssl-configuration-onewayssl
 
 X.509 Certificate Based Authentication is used in Two-Way SSL connection. In this case, the certificate itself is the client's  ID, thus, Access Token is no longer needed.
 
-#### Update the keygen.properties file
+#### Update keygen.properties file
  
 Open the keygen.properties file, and update the values if needed:
 
@@ -125,8 +125,8 @@ A,keygen.properties,shell,resources/mqtt-ssl-configuration-securemqttclient.keyg
 
 The script outputs the following files:
 
- - **CLIENT_FILE_PREFIX.jks** - Java Keystore file with server certificate imported
- - **CLIENT_FILE_PREFIX.nopass.pem** - The client certificate file in PEM format to be used by non-java client 
+ - **CLIENT_FILE_PREFIX.jks** - Java Keystore file with the server certificate imported
+ - **CLIENT_FILE_PREFIX.nopass.pem** - Client certificate file in PEM format to be used by non-java client 
  - **CLIENT_FILE_PREFIX.pub.pem** - Client public key
 
 #### Save Client Public Key in Device Credentials
@@ -135,7 +135,7 @@ Go to thingsboard GUI, click on Device Credentials, Select X.509 Certificate dev
 Alternatively, the same can be done through the REST API.
 
 #### Run Two-Way MQTT SSL Python Client
- **./tools/src/main/shell/** directory contains **twowaysslmqttclient.py** Python client, which uses **SERVER_FILE_PREFIX.pub.pem**  certificate and X.509 client certificate from **mqttclient.nopass.pem**   
+ **./tools/src/main/shell/** directory contains **twowaysslmqttclient.py** Python client, which uses **SERVER_FILE_PREFIX.pub.pem**  server certificate as a trust store and X.509 client certificate from **mqttclient.nopass.pem**   
  
 {% capture tabspec %}mqtt-ssl-configuration-twoway-python
 A,twowaysslmqttclient.py,shell,resources/mqtt-ssl-configuration-twowaysslmqttclient.py,/docs/user-guide/mqtt-ssl-configuration-twowaysslmqttclient.py{% endcapture %}
