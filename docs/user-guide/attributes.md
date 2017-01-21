@@ -9,7 +9,7 @@ title: Working with device attributes
 * TOC
 {:toc}
 
-Thingsboard provide ability to assign custom attributes to your devices and manage them. 
+Thingsboard provides ability to assign custom attributes to your devices and manage them. 
 Attributes are treated key-value pairs. Flexibility and simplicity of key-value format allows easy and seamless integration with almost any IoT device on the market.
 
 All attributes may be used in [Rule Engine](/docs/user-guide/rule-engine) components: filters, processors and actions.

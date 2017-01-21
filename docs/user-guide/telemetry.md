@@ -9,7 +9,7 @@ title: Working with telemetry data
 * TOC
 {:toc}
 
-Thingsboard provide rich set of features related to telemetry data:
+Thingsboard provides rich set of features related to telemetry data:
 
  - **collect** data from devices using MQTT, CoAP or HTTP protocols.
  - **store** timeseries data in Cassandra (efficient, scalable and fault-tolerant NoSQL database).

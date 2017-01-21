@@ -1,0 +1,12 @@
+# MQTT server parameters
+mqtt:
+  bind_address: "${MQTT_BIND_ADDRESS:0.0.0.0}"
+  bind_port: "${MQTT_BIND_PORT:1883}"
+  adaptor: "${MQTT_ADAPTOR_NAME:JsonMqttAdaptor}"
+  timeout: "${MQTT_TIMEOUT:10000}"
+# Uncomment the following lines to enable ssl for MQTT
+  ssl:
+    key_store: keystore/mqttserver.jks
+    key_store_password: server_ks_password
+    key_password: server_key_password
+    key_store_type: JKS
