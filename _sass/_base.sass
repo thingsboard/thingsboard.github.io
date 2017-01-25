@@ -39,8 +39,8 @@ $hamburger-size: 50px
 $main-nav-padding: 140px 0 30px
 $main-nav-h5-margin-bottom: 1em
 $main-nav-h3-margin-bottom: 0.6em
-$nav-box-width: 20%
-$nav-box-sibling-margin-left: calc(13% / 2)
+$nav-box-width: 16%
+$nav-box-sibling-margin-left: calc(10% / 2)
 $main-nav-main-sibling-margin-top: 60px
 $main-nav-left-button-size: 50px
 $main-nav-left-button-font-size: 18px
@@ -98,8 +98,12 @@ p
 		background-color: $blue-02
 	&:active
 		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4)
-
-
+	&.accent
+		background-color: $orange
+		&:hover
+			background-color: $orange-02
+		&:focus
+			background-color: $orange-02
 
 #cellophane
 	position: fixed
@@ -939,6 +943,303 @@ dd
 	#video
 		width: 100%
 		margin: 0
+
+	.services
+		width: 100%
+		margin: 30px 0
+		position: relative
+		display: block
+		font-size: 16px
+		.service
+			position: relative
+			padding-bottom: 25px
+			padding-left: 0px
+			display: block
+			.service-card
+				position: relative
+				border-radius: 3px
+				padding: 20px 15px
+				box-shadow: 0 2px 5px 0 rgba(0,0,0,.26)
+				height: 360px
+				display: block
+				color: #ffffff
+				.title
+					position: absolute
+					top: 0px
+					left: 0px
+					background-color: #334250
+					background-image: url(/images/texture.png)
+					display: flex
+					text-align: center
+					align-items: center
+					justify-content: center
+					text-transform: uppercase
+					width: 100%
+					border-top-left-radius: 3px
+					border-top-right-radius: 3px
+					padding: 15px
+					font-size: 28px
+					height: 86px
+				.description
+					position: absolute
+					top: 86px
+					bottom: 87px
+					background-color: $blue
+					display: flex
+					text-align: center
+					align-items: center
+					justify-content: center
+					width: 100%
+					color: rgba(255,255,255,0.87)
+					left: 0px
+					padding: 15px
+					font-size: 26px
+				.service-button
+					position: absolute
+					bottom: 0px
+					left: 0px
+					padding: 10px 0
+					display: flex
+					align-items: center
+					justify-content: center
+					width: 100%
+					border-top: 1px solid rgba(0,0,0,0.25)
+					border-bottom-left-radius: 3px
+					border-bottom-right-radius: 3px
+					background: #f8f8f8
+					a.button
+						padding: 14px 30px 12px
+						font-size: 18px
+
+	.supportPlans
+		width: 100%
+		margin: 30px 0
+		position: relative
+		display: block
+		font-size: 16px
+		color: #323232
+
+		.supportPlan
+			display: block
+			padding-bottom: 15px
+
+			.pricingTable
+				margin: 10px
+
+				li.empty
+					display: none
+
+				li
+					list-style-type: none
+					list-style-position: outside
+					text-align: center
+					padding: 14px 17px
+					margin: 0
+					position: relative
+					border-color: #e1e1e1
+					border-top-style: solid
+					border-top-width: 1px
+					border-left-style: solid
+					border-left-width: 1px
+					border-right-style: solid
+					border-right-width: 1px
+					height: 48px
+					display: flex
+					align-items: center
+					justify-content: center
+
+					a.button
+						padding: 14px 30px 12px
+						font-size: 18px
+
+				li:first-child
+					border-top-left-radius: 3px
+					border-top-right-radius: 3px
+
+				li:nth-child(odd)
+					background: #f8f8f8
+
+				li:nth-child(even)
+					background: #ffffff
+
+				li:last-child
+					border-bottom-left-radius: 3px
+					border-bottom-right-radius: 3px
+					border-bottom-style: solid
+					border-bottom-width: 1px
+					display: block
+					height: auto
+
+				li.heading-row
+					background-color: #334250
+					background-image: url(/images/texture.png)
+					color: #ffffff
+					border-color: #545454
+					height: auto
+					font-size: 28px
+
+				li.pricing-row
+					line-height: 1em
+					padding: 10px 12px
+					color: #ffffff
+					background-color: $blue
+					border: 1px solid $blue
+					height: 146px
+					display: block
+					text-align: center
+
+					.old-price
+						line-height: 30px
+						opacity: 0.85
+						display: block
+						font-size: 20px
+						text-decoration: line-through
+						padding-bottom: 10px
+
+					.price
+						line-height: 60px
+						display: block
+						font-size: 50px
+						font-weight: 600
+						.small
+							font-size: 16px
+							line-height: 1.4em
+						&.free
+							height: 100%
+							display: flex
+							justify-content: center
+							align-items: center
+
+					.currency-symbol
+						text-decoration: none
+						opacity: 0.4
+						color: #000
+						text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3)
+						font-size: 0.5em
+						position: relative
+						top: -0.6em
+						line-height: 1em
+						font-weight: normal
+
+					small
+						opacity: 0.4
+						color: #000
+						text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3)
+						display: block
+						font-size: 16px
+						font-style: italic
+						line-height: 1.4em
+						font-weight: normal
+						letter-spacing: 1px
+
+	.contact-form
+		.form-element
+			position: relative
+			width: 100%
+			margin: 7px 0
+			float: none
+			clear: both
+			&.half
+				width: 100%
+				float: left
+				margin-left: 0
+				clear: both
+			&.first
+				clear: both
+				margin-left: 0
+			label
+				display: block
+				position: relative
+				margin-bottom: 5px
+				margin-left: 2px
+				font-weight: bold
+				font-size: 16px
+			.text-input, .text-area, .select
+				outline: none
+				font-size: 16px
+				margin-bottom: 0
+				background-color: #f8f8f8
+				border: 2px solid #e1e1e1
+				color: #666666
+				width: 100%
+				display: inline
+				min-width: 50px
+				padding: 6px
+				border-radius: 4px
+				box-shadow: none
+				transition: 0.3s
+				&:focus
+					background-color: $light-grey
+					color: $dark-grey
+					border-color: #2fd1ff
+					box-shadow: 0 0 8px rgba(0, 201, 255, .5)
+			input.button
+				width: 150px
+
+	.trainings-info
+		width: 100%
+		color: #ffffff
+		table
+			border: 0
+		td
+			border-bottom: 1px solid #ffffff
+		td:nth-child(1)
+			width: 25%
+			background-color: #334250
+			background-image: url(/images/texture.png)
+			font-size: 14px
+			text-transform: uppercase
+		td:nth-child(2), td:nth-child(3)
+			background-color: $blue
+		td:nth-child(2)
+			width: 75%
+			font-size: 16px
+		tr:last-child
+			td
+				border-bottom: none
+			td:nth-child(2)
+				width: 35%
+			td:nth-child(3)
+				width: 40%
+				padding: 8px 0
+				.button
+					font-size: 12px
+					padding: 0 4px
+					line-height: 30px
+		td.price
+			font-size: 14px
+			.old-price
+				opacity: 0.85
+				text-decoration: line-through
+
+	span.heading
+		font-weight: 500
+		font-size: 26px
+
+@media screen and (min-width: 1700px)
+	#docsContent
+
+		.services
+			display: table
+			table-layout: fixed
+			.service
+				display: table-cell
+				padding-left: 50px
+				padding-bottom: 0px
+
+		.supportPlans
+			display: table
+			table-layout: fixed
+
+			.supportPlan
+				display: table-cell
+				padding-bottom: 0px
+
+				.pricingTable
+					li.empty
+						display: flex
+		.contact-form
+			width: 50%
 
 .fixed footer
 	position: fixed

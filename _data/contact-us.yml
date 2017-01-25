@@ -1,0 +1,6 @@
+bigheader: "Contact us"
+abstract: "Get in touch with Thingsboard authors."
+hidetoc: "true"
+toc:
+- title: Contact us
+  path: /docs/contact-us/
