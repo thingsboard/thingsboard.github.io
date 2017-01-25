@@ -18,7 +18,7 @@ function _gaLt(event) {
         var link = el.href;
 
         /* Only if it is an external link */
-        if (link.indexOf(location.host) == -1 && !link.match(/^javascript\:/i)) {
+        if ((link.indexOf(location.host) == -1 || link.indexOf('.' + location.host) > 0) && !link.match(/^javascript\:/i)) {
 
             /* Is actual target set and not _(self|parent|top)? */
             var target = (el.target && !el.target.match(/^_(self|parent|top)$/i)) ? el.target : false;
