@@ -1,0 +1,12 @@
+bigheader: "Services"
+abstract: "Services provided by Thingsboard authors."
+toc:
+- title: Services
+  path: /docs/services/
+
+- title: Support plans
+  path: /docs/services/support/
+- title: Training sessions
+  path: /docs/services/trainings/
+- title: Professional services
+  path: /docs/services/professional-services/

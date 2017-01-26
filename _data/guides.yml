@@ -63,3 +63,5 @@ toc:
     path: /docs/user-guide/ui/mail-settings/
 - title: Live Demo
   path: /docs/user-guide/live-demo/
+- title: Troubleshooting
+  path: /docs/user-guide/troubleshooting/

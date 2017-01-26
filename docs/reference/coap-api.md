@@ -22,7 +22,7 @@ Thingsboard server nodes act as a CoAP Server that supports both regular and obs
 ##### Client libraries setup
 
 You can find CoAP client libraries for different programming languages in the web. Examples in this article will be based on [CoAP cli](https://www.npmjs.com/package/coap-cli).
-In order to setup this tool, you can use instructions in our [Hello World](docs/getting-started-guides/helloworld/) guide.
+In order to setup this tool, you can use instructions in our [Hello World](/docs/getting-started-guides/helloworld/) guide.
 
 ##### CoAP Authentication and error codes
 
