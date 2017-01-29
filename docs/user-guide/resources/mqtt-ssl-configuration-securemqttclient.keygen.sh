@@ -1,1 +1,0 @@
-./securemqttclient.keygen.sh

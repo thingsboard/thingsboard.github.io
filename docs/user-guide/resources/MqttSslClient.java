@@ -14,15 +14,14 @@ import java.security.cert.CertificateException;
 
 public class MqttSslClient {
 
-    private static final String MQTT_URL = "ssl://localhost:1883";
+    private static final String MQTT_URL = "ssl://localhost:8883";
 
     private static final String clientId = "MQTT_SSL_JAVA_CLIENT";
-    private static final String accessToken = "C1_TEST_TOKEN";
     private static final String keyStoreFile = "mqttclient.jks";
     private static final String JKS="JKS";
     private static final String TLS="TLS";
-    private static final String CLIENT_KEYSTORE_PASSWORD = "client_ks_password";
-    private static final String CLIENT_KEY_PASSWORD = "client_key_password";
+    private static final String CLIENT_KEYSTORE_PASSWORD = "password";
+    private static final String CLIENT_KEY_PASSWORD = "password";
 
     public static void main(String[] args) {
 

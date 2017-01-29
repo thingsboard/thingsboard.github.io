@@ -35,22 +35,22 @@ toc:
   path: /docs/user-guide/telemetry/
 - title: Using RPC capabilities
   path: /docs/user-guide/rpc/
-- title: Rule Engine
+- title: Rule engine
   path: /docs/user-guide/rule-engine/
-- title: Data Visualization
+- title: Data visualization
   path: /docs/user-guide/visualization/
-- title: Platform Customization
+- title: Platform customization
   path: /docs/user-guide/customization/
 - title: Security
   section:
-  - title: Device Authentication Types
-    path: /docs/user-guide/device-credentials/
-  - title: Access Token Based Authentication
-    path: /docs/user-guide/access-token/
-  - title: X.509 Certificate Based Authentication
-    path: /docs/user-guide/certificates/
   - title: MQTT over SSL
     path: /docs/user-guide/mqtt-over-ssl/
+  - title: Device authentication options
+    path: /docs/user-guide/device-credentials/
+  - title: Access Token based authentication
+    path: /docs/user-guide/access-token/
+  - title: X.509 Certificate based authentication
+    path: /docs/user-guide/certificates/
 - title: Administation UI
   section:
   - title: Tenants
