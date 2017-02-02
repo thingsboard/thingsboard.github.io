@@ -15,7 +15,7 @@ This instructions can be easily adopted to other similar operation systems.
 
 #### Hardware requirements
 
-To run Thingsboard and third-party components on a single machine you will need at least 1Gb or RAM.
+To run Thingsboard and third-party components on a single machine you will need at least 1Gb of RAM.
 
 #### Third-party components installation
 
@@ -69,6 +69,45 @@ cqlsh -f /usr/share/thingsboard/data/schema.cql
 cqlsh -f /usr/share/thingsboard/data/system-data.cql
 cqlsh -f /usr/share/thingsboard/data/demo-data.cql
 ```
+
+##### Memory update for slow machines (1GB of RAM)
+
+In case you are running Cassandra and Thingsboard on a single instance that has only 1 GB of RAM memory you need to update memory usage for these services to avoid being killed by OS kernel once services start consuming a lot of memory
+
+For Cassandra service:
+
+```bash
+# Stop cassandra service
+$ sudo service cassandra stop
+
+# Find and set memory options in /etc/cassandra/cassandra-env.sh
+MAX_HEAP_SIZE="150M"
+HEAP_NEWSIZE="50M"
+
+# Find and set timeout options in /etc/cassandra/cassandra.yaml
+read_request_timeout_in_ms: 20000
+range_request_timeout_in_ms: 20000
+write_request_timeout_in_ms: 20000
+counter_write_request_timeout_in_ms: 50000
+cas_contention_timeout_in_ms: 10000
+truncate_request_timeout_in_ms: 120000
+request_timeout_in_ms: 60000
+
+# Start cassandra service
+$ sudo service cassandra start
+```
+
+For Thingsboard service:
+
+```bash
+# Update Thingsboard memory usage and restrict it to 150MB in /etc/thingsboard/conf/thingsboard.conf
+export JAVA_OPTS="$JAVA_OPTS -Xms150M -Xmx150M"
+```
+
+
+If you are running on a single instance that has 2GB this still can be insufficient for Cassandra under heavy load
+
+In this case if services started to failing please update memory usage accordingly, but with less restrict parameters (for example '300M' instead of '150M')
 
 ##### Start Thingsboard service
 
