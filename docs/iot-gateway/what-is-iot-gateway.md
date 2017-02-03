@@ -42,4 +42,4 @@ The Gateway project is currently in active development stage and you should expe
 
 #### Next Steps
 
-<p><a href="/docs/iot-gateway/helloworld" class="button">Hello World Application</a></p>
+<p><a href="/docs/iot-gateway/getting-started" class="button">Getting Started</a></p>

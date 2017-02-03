@@ -2,7 +2,7 @@
 layout: docwithnav
 assignees:
 - ashvayka
-title: Getting started guide
+title: Getting started with Thingsboard IoT Gateway
 
 ---
 
@@ -15,7 +15,7 @@ We will also configure MQTT extension in order to subscribe to device data feed 
 
 ### Prerequisites
 
-If you don't have access to a running Thingsboard instance, use either [Live Demo](http://demo.thingsboard.io/signup) or 
+If you don't have access to a running Thingsboard instance, use either [Live Demo](https://demo.thingsboard.io/signup) or 
 [Installation Guide](/docs/user-guide/install/installation-options/) 
 to fix this.
 
@@ -37,7 +37,8 @@ Login as tenant administrator. Use [default credentials](/docs/samples/demo-acco
 Open **Devices** and click on big red "+" button in the bottom right corner.
 
 Populate your gateway name and select "Is gateway" checkbox.
-**Note** Gateway and device names should be unique in scope of tenant.
+
+**NOTE:** Gateway and device names should be unique in scope of tenant.
 
 Open new device card and click on "Copy Access Token" button.
 
@@ -85,19 +86,186 @@ mqtt:
 server:
   address: "0.0.0.0"
   port: "9090"
-
-
 ```
 
 ## Step 5. Launch your gateway
 
 Follow steps (5-6) in the chosen installation guide.
 
+## Step 6. Review gateway statistics
 
+Open the web UI of your Thingsboard server and review statistics that is uploaded from your thingsboard gateway.
+Login as Tenant Administrator and open **Devices** page. Click on the gateway device card. 
+Open "Latest Telemetry" tab and review following statistics: "**devicesOnline**", "**attributesUploaded**" and "**telemetryUploaded**".
+All values should be set to "0".
+ 
+{:refdef: style="text-align: center;"}
+![image](/images/gateway/gateway-statistics.png)
+{: refdef} 
 
+The presence of those values on the UI means that your gateway have successfully connected to Thingsboard server.
+  
+## Step 7. Connect to external MQTT broker
 
+In this step we will connect to external MQTT broker in order to start collecting data from legacy or third-party applications and devices.
 
+Navigate to gateway configuration folder and edit **tb-gateway.yml** file.
+Configuration folder location:
 
+```bash
+Windows: YOUR_INSTALL_DIR/conf
+Linux: /etc/tb-gateway/conf
+```
+
+Change **mqtt.enabled** property value to **true**.
+
+We will use Mosquitto MQTT broker for the demonstration purposes. See Mosquitto [downloads page](https://mosquitto.org/download/) for instructions how to install this broker.
+
+**NOTE:** Mosquitto and Thingsboard use same port (1883) for MQTT service. If you want to use Thingsboard and Mosquitto on the same host, you need to change mqtt port in one of the servers.
+See corresponding [Thingsboard](/docs/user-guide/install/config/) or [Mosquitto](https://mosquitto.org/man/mosquitto-conf-5.html) documentation for more details. (TODO)
+
+Since we use Thingsboard [demo instance](https://demo.thingsboard.io/signup) hosted in the cloud, we will install Mosquitto MQTT broker locally and use default service configuration.
+
+If you decide to use other MQTT broker that is deployed to external host or has specific security configuration, please edit **mqtt-config.json** file and modify connection parameters.
+See MQTT [configuration guide](/docs/iot-gateway/mqtt/) for more details.
+
+Restart your gateway using following commands
+
+```bash
+Windows: 
+net stop tb-gateway
+net start tb-gateway
+Linux: 
+sudo service tb-gateway restart
+```
+ 
+## Step 8. Send data from devices
+
+The **mqtt-config.json** contains sample configuration that allows mapping of JSON messages from external MQTT broker to Thingsboard device attributes and telemetry.
+
+### Step 8.1 Basic mapping example
+
+For example, the default mapping listed below will force gateway to subscribe to the **sensors** topic and use **serialNumber** from incoming json message as a device name.
+Similar, **model** and **temperature** json object fields will be mapped to corresponding Thingsboard device attribute and telemetry fields.  
+ 
+```json
+{
+  "topicFilter": "sensors",
+  "converter": {
+    "type": "json",
+    "filterExpression": "",
+    "deviceNameJsonExpression": "${$.serialNumber}",
+    "attributes": [
+      {
+        "type": "string",
+        "key": "model",
+        "value": "${$.model}"
+      }
+    ],
+    "timeseries": [
+      {
+        "type": "double",
+        "key": "temperature",
+        "value": "${$.temperature}"
+      }
+    ]
+  }
+}
+```
+
+Let's see this mapping in action. We will use **mosquitto_pub** command to emulate data from device that is connected to external mqtt broker:
+ 
+```bash
+mosquitto_pub -h localhost -p 1883 -t "sensors" -m '{"serialNumber":"SN-001", "model":"T1000", "temperature":36.6}'
+```
+
+You should observe following log message in the gateway logs:
+ 
+```text
+... INFO  o.t.g.service.MqttGatewayService - [SN-001][*] Device Connected!
+```
+Logs are located in the following folder:
+
+```bash
+Windows: YOUR_INSTALL_DIR/logs
+Linux: /var/log/tb-gateway
+```
+
+Now you can navigate to the Thingsboard Web UI and observe new device **SN-001** on the **Devices** page.
+You can click on the device card and observe delivered attributes and telemetry in the corresponding tabs.
+
+{:refdef: style="text-align: center;"}
+![image](/images/gateway/device-model-attribute.png)
+{: refdef}
+
+### Step 8.2 Mapping JSON arrays
+
+By default, gateway supports mapping of json arrays, by mapping each array element as a separate entity. For example, following command will create or update two devices: **SN-002** and **SN-003**.
+   
+```bash
+mosquitto_pub -h localhost -p 1883 -t "sensors" -m '[{"serialNumber":"SN-002", "model":"M2", "temperature":42.0}, {"serialNumber":"SN-003", "model":"M3", "temperature":73.0}]'
+```
+
+### Step 8.3 Mapping MQTT topic to device name
+
+In some cases, device name is a part of the MQTT topic. In this case you are able to use regular expression to extract device name value. 
+This regular expression is configured in the **deviceNameTopicExpression** field.
+
+See example publish command and mapping below:
+ 
+```bash
+mosquitto_pub -h localhost -p 1883 -t "sensor/SN-004/temperature" -m '{"value":36.6}'
+``` 
+ 
+```json
+{
+  "topicFilter": "sensors",
+  "converter": {
+    "type": "json",
+    "filterExpression": "",
+    "deviceNameJsonExpression": "${$.serialNumber}",
+    "attributes": [
+      {
+        "type": "string",
+        "key": "model",
+        "value": "${$.model}"
+      }
+    ],
+    "timeseries": [
+      {
+        "type": "double",
+        "key": "temperature",
+        "value": "${$.temperature}"
+      }
+    ]
+  }
+}
+```
+
+### Step 8.4 Advanced mapping syntax and filtering
+
+Gateway MQTT extension uses [**JsonPath**](https://github.com/jayway/JsonPath) library to provide ability of flexible mapping and filtering of JSON structures.
+You can define filterExpression based on the [**path**](https://github.com/jayway/JsonPath#path-examples) and [**filter**](https://github.com/jayway/JsonPath#filter-operators) examples.
+
+### Step 8.5 Custom MQTT message mappers
+
+As a gateway developer, you are able to fork and add custom mappers using following [interface](TODO). 
+Feel free to submit PRs with your custom mapper implementations if you believe that they may be useful for Thingsboard community.
+
+## Next steps
+
+Explore extension configuration guides:
+ 
+ - [MQTT extension configuration](/docs/iot-gateway/mqtt)
+ - [OPC-UA extension configuration](/docs/iot-gateway/opc-ua/)
+
+Explore guides related to main Thingsboard features:
+
+ - [Device attributes](/docs/user-guide/attributes/) - how to use device attributes.
+ - [Telemetry data collection](/docs/user-guide/telemetry/) - how to collect telemetry data.
+ - [Using RPC capabilities](/docs/user-guide/rpc/) - how to send commands to/from devices.
+ - [Rule Engine](/docs/user-guide/rule-engine/) - how to use rule engine to analyze data from devices.
+ - [Data Visualization](/docs/user-guide/visualization/) - how to visualize collected data.
 
 
 
