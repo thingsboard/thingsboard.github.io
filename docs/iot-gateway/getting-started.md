@@ -127,7 +127,7 @@ See corresponding [Thingsboard](/docs/user-guide/install/config/) or [Mosquitto]
 Since we use Thingsboard [demo instance](https://demo.thingsboard.io/signup) hosted in the cloud, we will install Mosquitto MQTT broker locally and use default service configuration.
 
 If you decide to use other MQTT broker that is deployed to external host or has specific security configuration, please edit **mqtt-config.json** file and modify connection parameters.
-See MQTT [configuration guide](/docs/iot-gateway/mqtt/) for more details.
+See MQTT extension [configuration guide](/docs/iot-gateway/mqtt/) for more details.
 
 Restart your gateway using following commands
 
@@ -261,11 +261,11 @@ Explore extension configuration guides:
 
 Explore guides related to main Thingsboard features:
 
+ - [Data Visualization](/docs/user-guide/visualization/) - how to visualize collected data.
  - [Device attributes](/docs/user-guide/attributes/) - how to use device attributes.
  - [Telemetry data collection](/docs/user-guide/telemetry/) - how to collect telemetry data.
  - [Using RPC capabilities](/docs/user-guide/rpc/) - how to send commands to/from devices.
  - [Rule Engine](/docs/user-guide/rule-engine/) - how to use rule engine to analyze data from devices.
- - [Data Visualization](/docs/user-guide/visualization/) - how to visualize collected data.
 
 
 
