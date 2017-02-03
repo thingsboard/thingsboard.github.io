@@ -183,7 +183,7 @@ Download and open **arduino-dht-esp8266-mqtt.ino** sketch.
 - WIFI_AP - name of your access point
 - WIFI_PASSWORD - access point password
 - TOKEN - the **$ACCESS_TOKEN** from Thingsboard configuration step.
-- thingsboardServer - Thingsboard HOST/IP address that is accessible within your wifi network. Specify "demo.thingsboard.io" if you are using [live demo](http://demo.thingsboard.io/) server.
+- thingsboardServer - Thingsboard HOST/IP address that is accessible within your wifi network. Specify "demo.thingsboard.io" if you are using [live demo](https://demo.thingsboard.io/) server.
 
 {% capture tabspec %}arduino-sketch
 arduino-dht-esp8266-mqtt,arduino-dht-esp8266-mqtt.ino,c,resources/arduino-dht-esp8266-mqtt.ino,/docs/samples/arduino/resources/arduino-dht-esp8266-mqtt.ino{% endcapture %}

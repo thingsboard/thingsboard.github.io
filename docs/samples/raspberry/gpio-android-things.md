@@ -72,10 +72,10 @@ Open cloned samples folder and navigate to **android-things/GpioControlSample**.
 Open **GpioControlActivity.java** file located at **app/src/main/java/org/thingsboard/sample/gpiocontrol** folder.
 
 You will need to modify **THINGSBOARD_HOST** constant to match your Thingsboard server installation IP address or hostname. 
-Use "demo.thingsboard.io" if you are using [live demo](http://demo.thingsboard.io/) server.
+Use "demo.thingsboard.io" if you are using [live demo](https://demo.thingsboard.io/) server.
 
 The value of **ACCESS_TOKEN** constant corresponds to sample Raspberry Pi device in pre-provisioned [demo data](/docs/samples/demo-account/#tenant-devices).
-If you are using [live demo](http://demo.thingsboard.io/) server - [get the access token](/docs/user-guide/ui/devices/#manage-device-credentials) for pre-provisioned "Raspberry Pi Demo Device".
+If you are using [live demo](https://demo.thingsboard.io/) server - [get the access token](/docs/user-guide/ui/devices/#manage-device-credentials) for pre-provisioned "Raspberry Pi Demo Device".
 
 ### Running the application
 

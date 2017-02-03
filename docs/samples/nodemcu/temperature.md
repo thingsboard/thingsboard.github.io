@@ -113,11 +113,11 @@ Our application consists of three *.lua* files:
    You need to modify this file in order to setup your wifi network parameters and address of Thingsboard server.
    - your wifi network SSID - name of the wifi network.
    - your wifi network password - password to the network.
-   - thingsboard server ip - host where your thingsboard installation. Use "demo.thingsboard.io" if you are using [live demo](http://demo.thingsboard.io/) server.
+   - thingsboard server ip - host where your thingsboard installation. Use "demo.thingsboard.io" if you are using [live demo](https://demo.thingsboard.io/) server.
    - thingsboard mqtt port - 1883 is the default value.
    - thingsboard access token - DHT11_DEMO_TOKEN is the default value that corresponds to pre-provisioned [demo account](/docs/samples/demo-account/#tenant-devices).
    
-   If you are using [live demo](http://demo.thingsboard.io/) server - [get the access token](/docs/user-guide/ui/devices/#manage-device-credentials) for pre-provisioned "DHT11 Demo Device".
+   If you are using [live demo](https://demo.thingsboard.io/) server - [get the access token](/docs/user-guide/ui/devices/#manage-device-credentials) for pre-provisioned "DHT11 Demo Device".
  - dht11.lua - sending temperature and humidity every 10 seconds to thingsboard server via MQTT protocol.
  - init.lua - initalization file that contains 
 config.lua:
