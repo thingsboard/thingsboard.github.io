@@ -17,6 +17,8 @@ toc:
       path: /docs/iot-gateway/install/linux/
     - title: Raspberry Pi
       path: /docs/iot-gateway/install/rpi/
+    - title: Building from sources
+      path: /docs/iot-gateway/install/building-from-source/
 - title: Configuration guide
   section:
   - title: General configuration

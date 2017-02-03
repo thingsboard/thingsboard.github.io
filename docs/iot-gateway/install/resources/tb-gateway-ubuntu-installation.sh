@@ -1,0 +1,1 @@
+sudo dpkg -i tb-gateway-1.0.deb

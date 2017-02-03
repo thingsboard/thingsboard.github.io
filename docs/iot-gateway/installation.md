@@ -11,5 +11,5 @@ Ways to set up a Thingsboard IoT Gateway include:
 
  - [Windows](/docs/iot-gateway/install/windows/) - install Thingsboard IoT Gateway on Windows.
  - [Linux (Ubuntu & CentOS)](/docs/iot-gateway/install/linux/) - install Thingsboard IoT Gateway on any pre-existing machines running Linux.
- - [Raspberry Pi (Raspbian Jessie)](/docs/user-guide/install/rpi/) - install Thingsboard IoT Gateway on a Raspberry Pi.
+ - [Raspberry Pi (Raspbian Jessie)](/docs/iot-gateway/install/rpi/) - install Thingsboard IoT Gateway on a Raspberry Pi.
  
