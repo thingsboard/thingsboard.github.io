@@ -27,5 +27,3 @@ toc:
     path: /docs/iot-gateway/opc-ua/
   - title: MQTT Extension
     path: /docs/iot-gateway/mqtt/
-- title: Troubleshooting
-  path: /docs/iot-gateway/troubleshooting/

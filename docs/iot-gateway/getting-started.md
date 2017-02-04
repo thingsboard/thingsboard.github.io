@@ -108,7 +108,7 @@ The presence of those values on the UI means that your gateway have successfully
 ## Step 7. Choose your extension
   
 Based on your use case, you can choose either to connect to external 
-[MQTT broker](/docs/iot-gateway/getting-started/#step-8-connect-to-external-mqtt-broker) or [OPC-UA server]() or follow instruction for both steps.
+[**MQTT broker**](/docs/iot-gateway/getting-started/#step-8-connect-to-external-mqtt-broker) or [**OPC-UA server**](/docs/iot-gateway/getting-started/#step-9-connect-to-external-opc-ua-server) or follow instruction for both steps.
   
 ## Step 8. Connect to external MQTT broker
 

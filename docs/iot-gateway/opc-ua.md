@@ -16,14 +16,14 @@ We will describe extension configuration file below.
 ### Extension configuration: opc-config.json
 
 Extension configuration is a JSON file that contain information about how to connect and monitor list of OPC-UA servers.
-The root JSON element should contain "servers" array. Each server in array is configured using following properties:
+The root JSON element should contain "servers" array. Each server in the array is configured using following properties:
 
 #### Basic connection properties
 
 | **Property**        | **Description**                                                                                                                                                                                                  | **Default Value**         |
 |---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------|
 | applicationName     | Name of the client application, used for OPC-UA connection.                                                                                                                                                      | Thingsboard OPC-UA client |
-| applicationUri      | URI of the client application, used for OPC-UA connection.                                                                                                                                                       | urn:thingsboard:client    |
+| applicationUri      | URI of the client application, used for OPC-UA connection.                                                                                                                                                       |     |
 | host                | OPC-UA server host                                                                                                                                                                                               | localhost                 |
 | port                | OPC-UA server port                                                                                                                                                                                               | 49320                     |
 | scanPeriodInSeconds | Interval for complete OPC-UA server structure re-scan. Used to detect new or deleted devices.                                                                                                                    | 10                        |
@@ -104,7 +104,26 @@ Example of keystore configuration:
 
 #### Mapping
 
-Mapping configuration basically setups rules of OPC-UA server monitoring and data conversion to Thingsboard Key-Value format.
+Mapping configuration setup rules of OPC-UA server monitoring and data conversion to Thingsboard Key-Value format. For example:
+
+```json
+{
+...
+  "mapping": [
+    {
+      "deviceNodePattern": "Channel1\\.Device\\d+$",
+      "deviceNamePattern": "Device ${_System._DeviceId}",
+      "attributes": [
+        {"key":"Tag1", "type": "string", "value": "${Tag1}"}
+      ],
+      "timeseries": [
+        {"key":"Tag2", "type": "long", "value": "${Tag2}"}
+      ]
+    }
+    ...
+  ]
+}
+```
 
 Mapping process periodically travers OPC-UA server node tree and applies regular expression that is configured in **deviceNodePattern** parameter for each mapping configuration.
 List of nodes that match regular expression are stored as device nodes. 

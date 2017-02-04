@@ -2,54 +2,142 @@
 layout: docwithnav
 assignees:
 - ashvayka
-title: IoT Gateway Configuration
+title: MQTT Extension Configuration
 
 ---
 
-This guide will help you to get familiar with Thingsboard configuration files and parameters.
+* TOC
+{:toc}
 
-Once you have installed Thingsboard IoT Gateway, you can find configuration files in the following directory:
+This guide will help you to get familiar with OPC-UA extension configuration for Thingsboard IoT Gateway.
+Use [general configuration](/docs/iot-gateway/configuration/) to enable this extension.
+We will describe extension configuration file below.
 
-```bash
-Linux: /etc/tb-gateway/conf
-Windows: $INSTALL_DIR/conf
+### Extension configuration: mqtt-config.json
+
+Extension configuration is a JSON file that contain information about how to connect and monitor list of MQTT brokers.
+The root JSON element should contain "brokers" array. Each broker in the array is configured using following properties:
+
+#### Basic connection properties
+
+| **Property**       | **Description**                                      | **Default Value** |
+|--------------------|------------------------------------------------------|-------------------|
+| host               | MQTT broker host                                     | localhost         |
+| port               | MQTT broker port                                     | 1883              |
+| ssl                | Boolean flag to enable/disable encrypted connection  | false             |
+| truststore         | Path to the Truststore file for encrypted connection | empty             |
+| truststorePassword | Password to the Truststore                           | empty             |
+| retryInterval      | Interval to retry connection in milliseconds         | 3000              |
+
+For Example:
+
+```json
+{
+  "brokers": [
+    {
+      "host": "localhost",
+      "port": 1883,
+      "ssl": false,
+      "retryInterval": 3000
+      ...
+    }
+  ]
+}
 ```
 
-We will describe main configuration files below.
+#### Client identity properties
 
-#### tb-gateway.yml
+MQTT extension supports "anonymous" and "basic" client credentials.
+Example of anonymous identity configuration:
 
-Main configuration file that is used to setup connection to Thingsboard server and enable/disable extensions.
+```json
+{
+      ...
+      "credentials": {
+        "type": "anonymous"
+      }
+      ...
+}
+      
+```
 
-| **Configuration property**            | **Description**                                                                                                                                                                           |
-|---------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Thingsboard connection properties** |                                                                                                                                                                                           |
-| gateway.connection.host               | Thingsboard server hostname. For example, demo.thingsboard.io - live demo server.                                                                                                         |
-| gateway.connection.port               | Thingsboard server MQTT port (1883 for not encrypted connection, 8883 for encrypted connection)                                                                                           |
-| gateway.connection.retryInterval      | Thingsboard connect retry interval in milliseconds.                                                                                                                                       |
-| gateway.connection.maxInFlight        | Maximum amount of pending publish messages. Pending messages are messages that are either not sent due to connection problem or not yet confirmed due to high load on Thingsboard Server. |
-| **Thingsboard security properties**   |                                                                                                                                                                                           |
-| gateway.security.accessToken          | Populate this field in case of [Access Token based authentication](/docs/user-guide/access-token/)                                                                                        |
-| gateway.security.keystore             | Absolute or relative pass to keystore. Used in case of [X.509 Certificate based authentication](/docs/user-guide/certificates/)                                                           |
-| gateway.security.keystorePassword     | Password to the keystore.                                                                                                                                                                 |
-| gateway.security.keystoreKeyAlias     | Name of the client key in keystore. Password to the key should match password to keystore.                                                                                                |
-| gateway.security.truststore           | Absolute or relative pass to truststore. Used in case of encrypted connection.                                                                                                            |
-| gateway.security.truststorePassword   | Password to the truststore.                                                                                                                                                               |
-| **Misc gateway properties**           |                                                                                                                                                                                           |
-| gateway.reporting.interval            | Statistics report interval in milliseconds. Reports amount of connected devices and sent messages.                                                                                        |
-| gateway.persistence.type              | Either "file" or "memory" message persistence options available.                                                                                                                          |
-| gateway.persistence.path              | Path to the storage file in case of "file" persistence. Make sure that user who is running gateway process is able to create/modify the file.                                             |
-| gateway.persistence.bufferSize        | Maximum size of messages in storage.                                                                                                                                                      |
-| **OPC-UA extension**                  |                                                                                                                                                                                           |
-| opc.enabled                           | Either "true" or "false". Boolean flag that enables OPC-UA extension.                                                                                                                     |
-| opc.configuration                     | Absolute or relative pass to OPC-UA extension configuration file. See corresponding section for more details.                                                                             |
-| **MQTT extension**                    |                                                                                                                                                                                           |
-| mqtt.enabled                          | Either "true" or "false". Boolean flag that enables MQTT extension.                                                                                                                       |
-| mqtt.configuration                    | Absolute or relative pass to MQTT extension configuration file. See corresponding section for more details.                                                                               |
-| **HTTP server properties**            |                                                                                                                                                                                           |
-| server.address                        | HTTP server bind address. Reserved for future usage.                                                                                                                                      |
-| server.port                           | HTTP server bind port. Reserved for future usage                                                                                                                                          |
+Example of basic identity configuration:
 
+```json
+{
+      ...
+      "credentials": {
+        "type": "basic",
+        "username": "Your username",
+        "password": "Your password"
+      }
+      ...
+}
+      
+```
+
+#### Mapping
+
+Mapping configuration setup rules of MQTT topics monitoring and data conversion to Thingsboard Key-Value format. 
+For example:
+
+```json
+{
+...
+"mapping": [
+        {
+          "topicFilter": "sensors",
+          "converter": {
+            "type": "json",
+            "filterExpression": "",
+            "deviceNameJsonExpression": "${$.serialNumber}",
+            "attributes": [
+              {
+                "type": "string",
+                "key": "model",
+                "value": "${$.model}"
+              }
+            ],
+            "timeseries": [
+              {
+                "type": "double",
+                "key": "temperature",
+                "value": "${$.temperature}"
+              }
+            ]
+          }
+        }
+        ...
+        ]
+}
+```
+
+Mapping process subscribes to the MQTT topics using **topicFilter** parameter of the mapping object. 
+Each message that is published to this topic by other devices or applications is analyzed to extract device name and device data (attributes or timeseries values).
+By default, gateway use [Json converter](TODO link to github), but you can customize this behaviour and implement your own converter. See [converter interface](TODO link to github) for more details.
+
+The Json converter is based on [**JsonPath**](https://github.com/jayway/JsonPath) library to provide ability of flexible mapping and filtering of JSON structures.
+You can define **filterExpression** based on the [**path**](https://github.com/jayway/JsonPath#path-examples) and [**filter**](https://github.com/jayway/JsonPath#filter-operators) examples.
+
+The **deviceNameJsonExpression** mapping parameter is used to extract device name from the incoming JSON message. 
+
+For example, if you have following message:
+
+```json
+{"serialNumber":"SN-001", "model":"T1000", "temperature":36.6}
+```
+
+The **"${$.serialNumber}"** expression will return **"SN-001"** device name. Similar, **"Device ${$.serialNumber} (${$.model})"** will return **"Device SN-001 (T1000)"** device name.
+
+If device name is a part of the MQTT topic, you can use **deviceNameTopicExpression** parameter, which is basically Java regular expression.
+
+For example, if you have **"sensor/SN-001/temperature"**" topic, the **"(?<=sensor\/)(.*?)(?=\/temperature)"** expression will return **"SN-001"** device name.
+
+Similar [**JsonPath**](https://github.com/jayway/JsonPath) mapping rules are applied for **attributes** and **timeseries** values:
+
+ - **key** - constant Attribute or Timeseries Thingsboard key.
+ - **type** - either boolean, long, double or string.
+ - **value** - expression based on JsonPath syntax that may be specified inside **${}** 
 
 ## Next steps
 
