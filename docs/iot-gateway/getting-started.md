@@ -127,7 +127,7 @@ Change **mqtt.enabled** property value to **true**.
 We will use Mosquitto MQTT broker for the demonstration purposes. See Mosquitto [downloads page](https://mosquitto.org/download/) for instructions how to install this broker.
 
 **NOTE:** Mosquitto and Thingsboard use same port (1883) for MQTT service. If you want to use Thingsboard and Mosquitto on the same host, you need to change mqtt port in one of the servers.
-See corresponding [Thingsboard](/docs/user-guide/install/config/) or [Mosquitto](https://mosquitto.org/man/mosquitto-conf-5.html) documentation for more details. (TODO)
+See corresponding [Thingsboard](/docs/user-guide/install/config/) or [Mosquitto](https://mosquitto.org/man/mosquitto-conf-5.html) documentation for more details.
 
 Since we use Thingsboard [demo instance](https://demo.thingsboard.io/signup) hosted in the cloud, we will install Mosquitto MQTT broker locally and use default service configuration.
 

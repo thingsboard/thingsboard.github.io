@@ -11,15 +11,16 @@ This guide will help you to get familiar with Thingsboard configuration files an
 Once you have installed Thingsboard, you can find configuration files in the following directory:
 
 ```bash
-/etc/thingsboard/conf
+Windows: YOUR_INSTALL_DIR/conf
+Linux: /etc/thingsboard/conf
 ```
 
 We will describe main configuration files below.
 
 #### thingsboard.yml
 
-Main configuration file that contains properties 
-for transports (HTTP, MQTT, CoAP), database(Cassandra), clustering (Zookeeper and gRPC), etc.
+This is the main configuration file that contains configuration properties 
+for transports (HTTP, MQTT, CoAP), database (Cassandra), clustering (Zookeeper and gRPC), etc.
 The configuration file is written in YAML. 
 
 All configuration parameters have corresponding environment variable name and default value. In order to change configuration parameter you can simply change it's default value.
@@ -34,7 +35,20 @@ In this case, *'HTTP_BIND_ADDRESS'* is environment variable name and *'0.0.0.0'*
 Environment variables are useful in case of docker installation. 
 See [docker documentation](https://docs.docker.com/compose/environment-variables/#/the-envfile-configuration-option) for more details.
 
-We will not explain all configuration parameters here. You can review their description in the [configuration file](https://raw.githubusercontent.com/thingsboard/thingsboard/master/application/src/main/resources/thingsboard.yml) itself.
+There is **80+** configuration parameters in **thingsboard.yml** file. You can review their description in the [**configuration file**](https://raw.githubusercontent.com/thingsboard/thingsboard/master/application/src/main/resources/thingsboard.yml) itself.
+We will list only main configuration parameters below to avoid duplication of the parameter descriptions and to simplify maintenance of this documentation page.
+
+| **Property**                     | **Description**                                                                        | **Default Value** | **Environment Variable**          |
+|----------------------------------|----------------------------------------------------------------------------------------|-------------------|-----------------------------------|
+| server.address                   | HTTP Server bind address                                                               | 0.0.0.0           | HTTP_BIND_ADDRESS                 |
+| server.port                      | HTTP Server bind port                                                                  | 8080              | HTTP_BIND_PORT                    |
+| mqtt.bind_address                | MQTT Server bind address                                                               | 0.0.0.0           | MQTT_BIND_ADDRESS                 |
+| mqtt.bind_port                   | MQTT Server bind port                                                                  | 1883              | MQTT_BIND_PORT                    |
+| coap.bind_address                | CoAP Server bind address                                                               | 0.0.0.0           | COAP_BIND_ADDRESS                 |
+| coap.bind_port                   | CoAP Server bind port                                                                  | 5683              | COAP_BIND_PORT                    |
+| cassandra.url                    | Cassandra node list                                                                    | 127.0.0.1:9042    | CASSANDRA_URL                     |
+| security.jwt.tokenExpirationTime | JWT token expiration time in seconds used by Web UI                                    | 900               | JWT_TOKEN_EXPIRATION_TIME         |
+| security.jwt.refreshTokenExpTime | JWT refresh token expiration time in seconds used by Web UI (session expiration time)  | 3600              | JWT_REFRESH_TOKEN_EXPIRATION_TIME |
 
 #### thingsboard.conf
 
