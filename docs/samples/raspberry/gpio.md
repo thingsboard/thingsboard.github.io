@@ -57,10 +57,10 @@ sudo pip install paho-mqtt
 
 Our application consists of single python script that is well commented. 
 You will need to modify **THINGSBOARD_HOST** constant to match your Thingsboard server installation IP address or hostname. 
-Use "demo.thingsboard.io" if you are using [live demo](http://demo.thingsboard.io/) server.
+Use "demo.thingsboard.io" if you are using [live demo](https://demo.thingsboard.io/) server.
 
 The value of **ACCESS_TOKEN** constant corresponds to sample Raspberry Pi device in pre-provisioned [demo data](/docs/samples/demo-account/#tenant-devices).
-If you are using [live demo](http://demo.thingsboard.io/) server - [get the access token](/docs/user-guide/ui/devices/#manage-device-credentials) for pre-provisioned "Raspberry Pi Demo Device".
+If you are using [live demo](https://demo.thingsboard.io/) server - [get the access token](/docs/user-guide/ui/devices/#manage-device-credentials) for pre-provisioned "Raspberry Pi Demo Device".
 
 {% capture tabspec %}python-script
 gpio,gpio.py,python,resources/gpio.py,/docs/samples/raspberry/resources/gpio.py{% endcapture %}

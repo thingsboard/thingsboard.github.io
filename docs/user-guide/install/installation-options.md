@@ -17,5 +17,5 @@ Ways to set up a Thingsboard cluster include:
  - [Raspberry Pi 3 Model B (Raspbian Jessie)](/docs/user-guide/install/rpi/) - install Cassandra and Thingboard server on a Raspberry Pi 3 Model B.
  - [AWC EC2 installation using AMIs](/docs/user-guide/install/aws/) - install a single-node Thingsboard cluster using public AWS AMI.
  
-**NOTE** If this is your first experience with the platform, you may want to use our [Live Demo](http://demo.thingsboard.io/signup) to save some time on the installation. 
+**NOTE** If this is your first experience with the platform, you may want to use our [Live Demo](https://demo.thingsboard.io/signup) to save some time on the installation. 
 See live demo [documentation page](/docs/user-guide/live-demo) for more details. 

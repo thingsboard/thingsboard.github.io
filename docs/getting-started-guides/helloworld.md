@@ -28,7 +28,7 @@ This guide will let you:
 
 ## Setup and Requirements
 
-If you don't have access to a running Thingsboard instance, use either [Live Demo](http://demo.thingsboard.io/signup) or 
+If you don't have access to a running Thingsboard instance, use either [Live Demo](https://demo.thingsboard.io/signup) or 
 [Installation Guide](/docs/user-guide/install/installation-options/) 
 to fix this.
 

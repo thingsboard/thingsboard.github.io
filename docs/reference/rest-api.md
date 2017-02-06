@@ -12,7 +12,7 @@ title: REST API
 ## Swagger UI
 
 Thingsboard REST API may be explored using Swagger UI. 
-You can explore REST API of the live-demo server using this **[Swagger UI link.](http://demo.thingsboard.io/swagger-ui.html)**
+You can explore REST API of the live-demo server using this **[Swagger UI link.](https://demo.thingsboard.io/swagger-ui.html)**
 
 Once you will install Thingsboard server you can open UI using following URL:
     

@@ -162,10 +162,10 @@ sudo python setup.py install
 
 Our application consists of single python script that is well commented. 
 You will need to modify **THINGSBOARD_HOST** constant to match your Thingsboard server installation IP address or hostname. 
-Use "demo.thingsboard.io" if you are using [live demo](http://demo.thingsboard.io/) server.
+Use "demo.thingsboard.io" if you are using [live demo](https://demo.thingsboard.io/) server.
 
 The value of **ACCESS_TOKEN** constant corresponds to sample DHT22 demo device.
-If you are using [live demo](http://demo.thingsboard.io/) server - [get the access token](/docs/user-guide/ui/devices/#manage-device-credentials) for pre-provisioned "DHT22 Demo Device".
+If you are using [live demo](https://demo.thingsboard.io/) server - [get the access token](/docs/user-guide/ui/devices/#manage-device-credentials) for pre-provisioned "DHT22 Demo Device".
 
 {% capture tabspec %}python-script
 mqtt-dht22,mqtt-dht22.py,python,resources/mqtt-dht22.py,/docs/samples/raspberry/resources/mqtt-dht22.py{% endcapture %}

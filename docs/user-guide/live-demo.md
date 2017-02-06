@@ -11,7 +11,7 @@ title: Live Demo
 
 Live Demo is a single-node server that is deployed to simplify the process of getting started with the Thingsboard platform.
 
-You can access the demo server using following url [**demo.thingsboard.io**](http://demo.thingsboard.io/signup)
+You can access the demo server using following url [**demo.thingsboard.io**](https://demo.thingsboard.io/signup)
 
 You will need to populate sign-up form and as a result you will receive tenant administrator account for your dedicated tenant.
 
