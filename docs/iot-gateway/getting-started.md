@@ -11,36 +11,49 @@ title: Getting started with Thingsboard IoT Gateway
 
 This guide covers initial IoT Gateway installation and configuration.
 We will connect IoT Gateway to Thingsboard server and visualize some basic gateway statistics: amount of devices connected and messages processed.
-We will also configure MQTT extension in order to subscribe to device data feed from external applications.  
+We will also configure MQTT and OPC-UA extension in order to subscribe to device data feed from external devices or applications.  
 
 ### Prerequisites
 
-If you don't have access to a running Thingsboard instance, use either [Live Demo](https://demo.thingsboard.io/signup) or 
-[Installation Guide](/docs/user-guide/install/installation-options/) 
-to fix this.
+If you don't have access to a running Thingsboard instance, use either [**Live Demo**](https://demo.thingsboard.io/signup) or 
+[**Installation Guide**](/docs/user-guide/install/installation-options/) 
+to fix this. 
+
+**NOTE** Thingsboard version 1.1 or greater is required.  
 
 ## Step 1: Choose installation option
 
-Browse available [installation options](/docs/iot-gateway/installation/) and choose the most suitable installation guide.
+Browse available gateway [**installation options**](/docs/iot-gateway/installation/) and choose the most suitable installation guide.
 
 ## Step 2: Follow installation steps
 
-Follow steps (1-3) in the chosen installation guide. The Gateway configuration steps are covered below.
+Follow steps (1-3) in the chosen gateway installation guide. The Gateway configuration steps are covered below.
  
 ## Step 3: Gateway provisioning
 
-In order to connect your IoT gateway to Thingsboard server you need to provision gateway credentials first.   
-We will use access token credentials as the most simple one. 
+In order to connect your IoT gateway to Thingsboard server you need to provision gateway credentials first. We will use access token credentials as the most simple one. 
 See [device authentication options](/docs/user-guide/device-credentials/) for more details.
 
 Login as tenant administrator. Use [default credentials](/docs/samples/demo-account/#demo-tenant) in case of local Thingsboard server.
 Open **Devices** and click on big red "+" button in the bottom right corner.
 
+{:refdef: style="text-align: center;"}
+![image](/images/gateway/device-page.png)
+{: refdef} 
+
 Populate your gateway name and select "Is gateway" checkbox.
+
+{:refdef: style="text-align: center;"}
+![image](/images/gateway/device-add.png)
+{: refdef} 
 
 **NOTE:** Gateway and device names should be unique in scope of tenant.
 
 Open new device card and click on "Copy Access Token" button.
+
+{:refdef: style="text-align: center;"}
+![image](/images/gateway/device-token.png)
+{: refdef} 
 
 ## Step 4: Gateway configuration
 
@@ -214,7 +227,7 @@ mosquitto_pub -h localhost -p 1883 -t "sensors" -m '[{"serialNumber":"SN-002", "
 In some cases, device name is a part of the MQTT topic. In this case you are able to use regular expression to extract device name value. 
 This regular expression is configured in the **deviceNameTopicExpression** field.
 
-See example publish command and mapping below:
+See example publish command and mapping (already present in default configuration) below:
  
 ```bash
 mosquitto_pub -h localhost -p 1883 -t "sensor/SN-004/temperature" -m '{"value":36.6}'
@@ -222,23 +235,16 @@ mosquitto_pub -h localhost -p 1883 -t "sensor/SN-004/temperature" -m '{"value":3
  
 ```json
 {
-  "topicFilter": "sensors",
+  "topicFilter": "sensor/+/temperature",
   "converter": {
     "type": "json",
     "filterExpression": "",
-    "deviceNameJsonExpression": "${$.serialNumber}",
-    "attributes": [
-      {
-        "type": "string",
-        "key": "model",
-        "value": "${$.model}"
-      }
-    ],
+    "deviceNameTopicExpression": "(?<=sensor\/)(.*?)(?=\/temperature)",
     "timeseries": [
       {
         "type": "double",
         "key": "temperature",
-        "value": "${$.temperature}"
+        "value": "${$.value}"
       }
     ]
   }
@@ -278,6 +284,7 @@ Linux: /etc/tb-gateway/conf
 ```
 
 **NOTE** This certificate is added to the configuration folder for the demonstration purposes. Both certificate and key is in public access, thus it is not secure and is not for production usage.
+You can create and configure your own certificate pair for production usage.
  
 {:refdef: style="text-align: center;"}
 ![image](/images/gateway/certificate-import.png)

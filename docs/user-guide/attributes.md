@@ -68,11 +68,11 @@ Although you can query database directly, Thingsboard provide set of RESTful and
  - Tenant Administrator user is able to manage attributes for all unassigned devices that belong to corresponding tenant.
  - Customer user is able to manage attributes only for devices that are assigned to corresponding customer.
   
-#### Data Query API
+### Data Query API
 
 Telemetry plugin provides following API to fetch device attributes:
 
-##### Attribute keys API
+#### Attribute keys API
 
 You can fetch list of all *attribute keys* for particular *device id* using GET request to the following URL  
  
@@ -85,7 +85,7 @@ A,get-attributes-keys.sh,shell,resources/get-attributes-keys.sh,/docs/user-guide
 B,get-attributes-keys-result.json,json,resources/get-attributes-keys-result.json,/docs/user-guide/resources/get-attributes-keys-result.json{% endcapture %}
 {% include tabs.html %}
 
-##### Timeseries data values API
+#### Timeseries data values API
 
 You can fetch list of latest values for particular *device id* using GET request to the following URL  
  

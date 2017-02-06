@@ -91,5 +91,5 @@ In case of any unclear errors, use general [troubleshooting guide](/docs/user-gu
   
 ### Next Steps
 
-Use [**OPC-UA**](/docs/iot-gateway/opc-ua/) or [**MQTT**](/docs/iot-gateway/mqtt/) extensions to integrate your devices with Thingsboard platform. 
+Use [**OPC-UA**](/docs/iot-gateway/getting-started/#step-9-connect-to-external-opc-ua-server) or [**MQTT**](/docs/iot-gateway/getting-started/#step-8-connect-to-external-mqtt-broker) extensions to integrate your devices with Thingsboard platform. 
  
