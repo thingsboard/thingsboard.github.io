@@ -57,7 +57,7 @@ VBoxManage controlvm "default" natpf1 "tcp-port8080,tcp,,8080,,8080"
 # MQTT port
 VBoxManage controlvm "default" natpf1 "tcp-port1883,tcp,,1883,,1883"
 # CoAP port
-VBoxManage controlvm "default" natpf1 "tcp-port1883,tcp,,5683,,5683"
+VBoxManage controlvm "default" natpf1 "tcp-port5683,tcp,,5683,,5683"
 ```
    
 - Now you should be able to open Web UI using following link:
