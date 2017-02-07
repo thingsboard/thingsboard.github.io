@@ -6,6 +6,9 @@ title: Installing Thingsboard on Raspberry Pi 3 Model B
 
 ---
 
+* TOC
+{:toc}
+
 This guide describes how to install Thingsboard on a Raspberry Pi 3 running Raspbian Jessie.
 
 #### Third-party components installation
@@ -106,7 +109,9 @@ Once started, you will be able to open Web UI using following link:
 
 ```bash
 http://your_raspberry_pi_ip_address:8080/
+
 ```
+**NOTE**: Please allow up to 2 minutes for the Web UI to start
 
 ##### Troubleshooting
 

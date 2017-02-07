@@ -28,8 +28,8 @@ There are **other programming languages** (C, C++, Python, Javascript, Go..) tha
 Especially, when we are talking about language APIs and existing libraries to work with serial ports, GPIOs, I2C, and new modules and sensors that are released every day. 
 
 The Gateway provides simple integration APIs, and encapsulates common Thingsboard related tasks: device provisioning, local data persistence and delivery, message converters/adaptors and other.
-As an application developer, you are able to choose Python, Go, C/C++ and other languages and connect to Thingsboard Gateway through MQTT broker. 
-Some legacy devices may be connected through other protocols by implementing custom extension. The Gateway also supports OPC-UA extension out-of-the-box.   
+As an application developer, you are able to choose Python, Go, C/C++ and other languages and connect to Thingsboard Gateway through external MQTT broker or OPC-UA server. 
+Devices that support other protocols may be connected to gateway by implementing custom extensions.
 
 #### Project Roadmap
 

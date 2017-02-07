@@ -14,7 +14,7 @@ Instructions below are provided for Windows 10/8.1/8/7 32-bit/64-bit.
 
 #### Hardware requirements
 
-To run Thingsboard and third-party components on a single machine you will need at least 1Gb or RAM.
+To run Thingsboard and third-party components on a single machine you will need at least 2Gb of RAM (4Gb recommended).
 
 #### Third-party components installation
 
@@ -128,6 +128,8 @@ Once started, you will be able to open Web UI using following link:
 ```bash
 http://localhost:8080/
 ```
+
+**NOTE**: Please allow up to 90 seconds for the Web UI to start
 
 ##### Troubleshooting
 

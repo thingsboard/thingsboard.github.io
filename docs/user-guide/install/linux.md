@@ -123,6 +123,8 @@ Once started, you will be able to open Web UI using following link:
 http://localhost:8080/
 ```
 
+**NOTE**: Please allow up to 90 seconds for the Web UI to start
+
 ##### Troubleshooting
 
 Thingsboard logs are stored in the following directory:

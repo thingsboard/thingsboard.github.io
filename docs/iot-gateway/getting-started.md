@@ -198,7 +198,7 @@ mosquitto_pub -h localhost -p 1883 -t "sensors" -m '{"serialNumber":"SN-001", "m
 You should observe following log message in the gateway logs:
  
 ```text
-... INFO  o.t.g.service.MqttGatewayService - [SN-001][*] Device Connected!
+... INFO  o.t.g.service.MqttGatewayService - [SN-001] Device Connected!
 ```
 Logs are located in the following folder:
 
@@ -353,7 +353,7 @@ Similar, **Tag1** and **Tag2** relative OPC-UA tags will be mapped to correspond
 You should observe following log message in the gateway logs:
  
 ```text
-... INFO  o.t.g.service.MqttGatewayService - [Device 1][*] Device Connected!
+... INFO  o.t.g.service.MqttGatewayService - [Device 1] Device Connected!
 ```
 
 Logs are located in the following folder:
