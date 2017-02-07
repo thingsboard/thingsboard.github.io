@@ -32,7 +32,7 @@ Demo tenant customers:
  - Customer C users -  **customerC@thingsboard.org**.
  - all users have **"customer"** password. 
  
-## Tenant devices:
+## Tenant devices
 
  - Test Device A1, A2, A3 - belong to Customer A. Access tokens: A1_TEST_TOKEN, A2_TEST_TOKEN and A3_TEST_TOKEN.
  - Test Device B1 - belong to Customer B. Access token: B1_TEST_TOKEN.
