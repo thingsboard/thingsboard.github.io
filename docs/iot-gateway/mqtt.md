@@ -114,7 +114,7 @@ For example:
 
 Mapping process subscribes to the MQTT topics using **topicFilter** parameter of the mapping object. 
 Each message that is published to this topic by other devices or applications is analyzed to extract device name and device data (attributes or timeseries values).
-By default, gateway use [Json converter](TODO link to github), but you can customize this behaviour and implement your own converter. See [converter interface](TODO link to github) for more details.
+By default, gateway use [Json converter](https://github.com/thingsboard/thingsboard-gateway/blob/release-1.0/src/main/java/org/thingsboard/gateway/extensions/mqtt/client/conf/mapping/MqttJsonConverter.java), but you can customize this behaviour and implement your own converter. See [converter interface](https://github.com/thingsboard/thingsboard-gateway/blob/release-1.0/src/main/java/org/thingsboard/gateway/extensions/mqtt/client/conf/mapping/MqttDataConverter.java) for more details.
 
 The Json converter is based on [**JsonPath**](https://github.com/jayway/JsonPath) library to provide ability of flexible mapping and filtering of JSON structures.
 You can define **filterExpression** based on the [**path**](https://github.com/jayway/JsonPath#path-examples) and [**filter**](https://github.com/jayway/JsonPath#filter-operators) examples.

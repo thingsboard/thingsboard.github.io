@@ -258,7 +258,7 @@ You can define filterExpression based on the [**path**](https://github.com/jaywa
 
 ### Step 8.5 Custom MQTT message mappers
 
-As a gateway developer, you are able to fork and add custom mappers using following [interface](TODO). 
+As a gateway developer, you are able to fork and add custom mappers using following [interface](https://github.com/thingsboard/thingsboard-gateway/blob/release-1.0/src/main/java/org/thingsboard/gateway/extensions/mqtt/client/conf/mapping/MqttDataConverter.java). 
 Feel free to submit PRs with your custom mapper implementations if you believe that they may be useful for Thingsboard community.
 
 ## Step 9. Connect to external OPC-UA server

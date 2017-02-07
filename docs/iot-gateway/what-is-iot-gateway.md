@@ -22,6 +22,11 @@ Thingsboard IoT Gateway provides following features:
   
 #### Architecture  
 
+{:refdef: style="text-align: center;"}
+![Thingsboard IoT Gateway architecture](/images/gateway/tb-gateway-opt.svg)
+{: refdef}
+
+
 The IoT Gateway is built on top of **Java**, however is different from similar projects that leverage OSGi technology.
 The idea is distantly similar to microservices architecture.
 There are **other programming languages** (C, C++, Python, Javascript, Go..) that may be more suitable for application development that target IoT devices.
