@@ -5,6 +5,8 @@ toc:
   path: /docs/reference/
 - title: Thingsboard Architecture
   path: /docs/reference/architecture/
+- title: Performance Tools
+  path: /docs/reference/performance-tools/
 - title: API Reference
   section:
   - title: Device Connectivity Protocols
