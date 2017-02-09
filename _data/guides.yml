@@ -11,18 +11,22 @@ toc:
   section:
   - title: Installation options
     path: /docs/user-guide/install/installation-options/
-  - title: Installing Thingsboard using Docker (Linux or Mac OS)
-    path: /docs/user-guide/install/docker/
-  - title: Installing Thingsboard using Docker (Windows)
-    path: /docs/user-guide/install/docker-windows/
+  - title: Installing Thingsboard on Windows
+    path: /docs/user-guide/install/windows/
   - title: Installing Thingsboard on Linux (Ubuntu & CentOS)
     path: /docs/user-guide/install/linux/
   - title: Installing Thingsboard on Raspberry Pi 3
     path: /docs/user-guide/install/rpi/
+  - title: Installing Thingsboard using Docker (Linux or Mac OS)
+    path: /docs/user-guide/install/docker/
+  - title: Installing Thingsboard using Docker (Windows)
+    path: /docs/user-guide/install/docker-windows/
   - title: Installing Thingsboard on AWS EC2
     path: /docs/user-guide/install/aws/
   - title: Building from sources
     path: /docs/user-guide/install/building-from-source/
+  - title: Upgrade instructions
+    path: /docs/user-guide/install/upgrade-instructions/
   - title: Configuration
     path: /docs/user-guide/install/config/
   - title: Cluster setup
@@ -33,12 +37,22 @@ toc:
   path: /docs/user-guide/telemetry/
 - title: Using RPC capabilities
   path: /docs/user-guide/rpc/
-- title: Rule Engine
+- title: Rule engine
   path: /docs/user-guide/rule-engine/
-- title: Data Visualization
+- title: Data visualization
   path: /docs/user-guide/visualization/
-- title: Platform Customization
+- title: Platform customization
   path: /docs/user-guide/customization/
+- title: Security
+  section:
+  - title: MQTT over SSL
+    path: /docs/user-guide/mqtt-over-ssl/
+  - title: Device authentication options
+    path: /docs/user-guide/device-credentials/
+  - title: Access Token based authentication
+    path: /docs/user-guide/access-token/
+  - title: X.509 Certificate based authentication
+    path: /docs/user-guide/certificates/
 - title: Administation UI
   section:
   - title: Tenants
@@ -61,3 +75,5 @@ toc:
     path: /docs/user-guide/ui/mail-settings/
 - title: Live Demo
   path: /docs/user-guide/live-demo/
+- title: Troubleshooting
+  path: /docs/user-guide/troubleshooting/

@@ -186,7 +186,7 @@ Telemetry plugin need to keep track of websocket subscriptions for particular de
  
 Thingsboard Clustering and Actor models are covered in Thingsboard Architecture.
   
-<p><a href="/docs/user-guide/architecture" class="button">Thingsboard Architecture</a></p>
+<p><a href="/docs/reference/architecture" class="button">Thingsboard Architecture</a></p>
 
 ##### Implementations
 

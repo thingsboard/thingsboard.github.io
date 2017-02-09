@@ -1,9 +1,13 @@
 ---
 layout: docwithnav
-
+title: Reference Documentation
 ---
 
-In the reference section, you can find reference documentation for Thingsboard APIs as well as our glossary and design docs. 
+In the reference section, you can find reference documentation for Thingsboard APIs as well as our design docs and rule engine components. 
+
+## Architecture
+
+Thingsboard design documentation, clustering mode and actor models are covered in Thingsboard [Architecture](/docs/reference/architecture).
 
 ## API References
 
@@ -17,12 +21,8 @@ Device API is grouped by supported communication protocols:
 
 Server-side API consist of core REST API and a set of specific APIs that are provided by various plugins:
 
- * [REST API](/docs/reference/rest-api) - The server-side core APIs.
+* [REST API](/docs/reference/rest-api) - The server-side core APIs.
 
-## Glossary
+## Rule Engine Components
 
-Explore the [glossary](/docs/reference/glossary) of essential Thingsboard concepts.
-
-## Design Docs
-
-An archive of the [design docs](/docs/reference/design) for Thingsboard functionality.
+Explore list of available Rule Engine components: filters, processors, actions and plugins. 

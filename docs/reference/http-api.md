@@ -22,7 +22,7 @@ Thingsboard server nodes act as a HTTP Server that supports both HTTP and HTTPS 
 ##### Client libraries setup
 
 You can find HTTP client libraries for different programming languages in the web. Examples in this article will be based on [curl](https://en.wikipedia.org/wiki/CURL).
-In order to setup this tool, you can use instructions in our [Hello World](docs/getting-started-guides/helloworld/) guide.
+In order to setup this tool, you can use instructions in our [Hello World](/docs/getting-started-guides/helloworld/) guide.
 
 ##### HTTP Authentication and error codes
 

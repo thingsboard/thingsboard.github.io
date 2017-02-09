@@ -8,7 +8,7 @@ title: Mail Plugin
 
 ## Overview
 
-Mail plugin is responsible for sending email messages that are triggered by corresponding rule [actions](/docs/user-guide/actions/send-mail-action/).  
+Mail plugin is responsible for sending email messages that are triggered by corresponding rule [actions](/docs/reference/actions/send-mail-action/).  
 
 ## Configuration
 

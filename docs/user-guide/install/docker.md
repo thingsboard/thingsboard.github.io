@@ -6,6 +6,8 @@ title: Installing Thingsboard using Docker (Linux or Mac OS)
 
 ---
 
+* TOC
+{:toc}
 
 This guide will help you to install and start Thingsboard using Docker on Linux or Mac OS.
 
@@ -22,18 +24,24 @@ cd <docker-folder>
 ```
 
 - Download the following files from thingsboard repo:
-    1. **[docker-compose.yml](https://raw.githubusercontent.com/thingsboard/thingsboard/master/docker/docker-compose.yml)** - main docker-compose file.
-    1. **[docker-compose.random.yml](https://raw.githubusercontent.com/thingsboard/thingsboard/master/docker/docker-compose.random.yml)** - overwrite docker-compose file with thirdparty ports configuration.
-    1. **[.env](https://raw.githubusercontent.com/thingsboard/thingsboard/master/docker/.env)** - main env file that contains default location of cassandra data folder.
-    1. **[thingsboard.env](https://raw.githubusercontent.com/thingsboard/thingsboard/master/docker/thingsboard.env)** - default thingsboard environment variables.
-    1. **[thingsboard-db-schema.env](https://raw.githubusercontent.com/thingsboard/thingsboard/master/docker/thingsboard-db-schema.env)** - default db-schema environment variables.
+    1. **[docker-compose.yml](https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.1/docker/docker-compose.yml)** - main docker-compose file.
+    1. **[docker-compose.random.yml](https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.1/docker/docker-compose.random.yml)** - overwrite docker-compose file with thirdparty ports configuration.
+    1. **[.env](https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.1/docker/.env)** - main env file that contains default location of cassandra data folder.
+    1. **[thingsboard.env](https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.1/docker/thingsboard.env)** - default thingsboard environment variables.
+    1. **[thingsboard-db-schema.env](https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.1/docker/thingsboard-db-schema.env)** - default db-schema environment variables.
       
 ```bash
-curl -L https://raw.githubusercontent.com/thingsboard/thingsboard/master/docker/docker-compose.yml > docker-compose.yml
-curl -L https://raw.githubusercontent.com/thingsboard/thingsboard/master/docker/docker-compose.random.yml > docker-compose.random.yml
-curl -L https://raw.githubusercontent.com/thingsboard/thingsboard/master/docker/.env > .env
-curl -L https://raw.githubusercontent.com/thingsboard/thingsboard/master/docker/thingsboard.env > thingsboard.env
-curl -L https://raw.githubusercontent.com/thingsboard/thingsboard/master/docker/thingsboard-db-schema.env > thingsboard-db-schema.env
+curl -L https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.1/docker/docker-compose.yml > docker-compose.yml
+curl -L https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.1/docker/docker-compose.random.yml > docker-compose.random.yml
+curl -L https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.1/docker/.env > .env
+curl -L https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.1/docker/thingsboard.env > thingsboard.env
+curl -L https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.1/docker/thingsboard-db-schema.env > thingsboard-db-schema.env
+```
+   
+- If you have already installed Thingsboard using docker and want to upgrade or cleanup your installation, please cleanup Cassandra data directory
+      
+```bash
+sudo rm -rf /home/docker/cassandra_volume
 ```
       
 - Execute docker-compose command to start Thingsboard node and all thirdparty components 
@@ -87,5 +95,6 @@ sudo docker-compose -f docker-compose.yml -f docker-compose.static.yml up -d
 127.0.1.1:53: cannot unmarshal DNS message
 ```
 
-You may configure your system to use [Google public DNS servers](https://developers.google.com/speed/public-dns/)
+You may configure your system to use Google public DNS servers. 
+See corresponding [Linux](https://developers.google.com/speed/public-dns/docs/using#linux) and [Mac OS](https://developers.google.com/speed/public-dns/docs/using#mac_os) instructions.
 

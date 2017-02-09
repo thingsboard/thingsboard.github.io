@@ -119,7 +119,7 @@ Download and open **gps_tracker.ino** sketch.
  - WIFI_PASSWORD - access point password
  - WIFI_AUTH - choose one of LWIFI_OPEN, LWIFI_WPA, or LWIFI_WEP.
  - TOKEN - the **$ACCESS_TOKEN** from Thingsboard configuration step. 
- - thingsboardServer - Thingsboard HOST/IP address that is accessable within your wifi network. Specify "demo.thingsboard.io" if you are using [live demo](http://demo.thingsboard.io/) server.
+ - thingsboardServer - Thingsboard HOST/IP address that is accessable within your wifi network. Specify "demo.thingsboard.io" if you are using [live demo](https://demo.thingsboard.io/) server.
 
 {% capture tabspec %}gps-arduino
 gps,gps_tracker.ino,c,resources/gps_tracker.ino,/docs/samples/linkit-one/resources/gps_tracker.ino{% endcapture %}

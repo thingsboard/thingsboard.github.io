@@ -12,13 +12,25 @@ title: Temperature upload over MQTT using ESP8266 and DHT22 sensor
 
 This sample application performs collection of temperature and humidity values produced by [DHT22 sensor](https://www.adafruit.com/product/385) and further visualization on the real-time web dashboard.
 Collected data is pushed via MQTT to Thingsboard server for storage and visualization.
-The purpose of this application is to demonstrate Thingsboard [data collection API](/docs/user-guide/telemetry/) and [visualization capabilities](docs/user-guide/visualization/).
+The purpose of this application is to demonstrate Thingsboard [data collection API](/docs/user-guide/telemetry/) and [visualization capabilities](/docs/user-guide/visualization/).
 
 The DHT22 sensor is connected to [ESP8266](https://en.wikipedia.org/wiki/ESP8266).
 ESP8266 offers a complete and self-contained Wi-Fi networking solution.
 ESP8266 push data to Thingsboard server via MQTT protocol by using [PubSubClient](https://github.com/knolleary/pubsubclient) library for Arduino.
 Data is visualized using built-in customizable dashboard. 
 The application that is running on ESP8266 is written using Arduino SDK which is quite simple and easy to understand.
+
+The video below demonstrates the final result of this tutorial.
+
+<br/>
+<br/>
+<div id="video">  
+    <div id="video_wrapper">
+        <iframe src="https://www.youtube.com/embed/S8JNPYsdT_M" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
+<br/>
+<br/>
 
 Once you complete this sample/tutorial, you will see your sensor data on the following dashboard.
 
@@ -231,7 +243,7 @@ Download and open **esp8266-dht-mqtt.ino** sketch.
 - WIFI_AP - name of your access point
 - WIFI_PASSWORD - access point password
 - TOKEN - the **$ACCESS_TOKEN** from Thingsboard configuration step.
-- thingsboardServer - Thingsboard HOST/IP address that is accessable within your wifi network. Specify "demo.thingsboard.io" if you are using [live demo](http://demo.thingsboard.io/) server.
+- thingsboardServer - Thingsboard HOST/IP address that is accessable within your wifi network. Specify "demo.thingsboard.io" if you are using [live demo](https://demo.thingsboard.io/) server.
 
 {% capture tabspec %}arduino-sketch
 esp8266-dht-mqtt,esp8266-dht-mqtt.ino,c,resources/esp8266-dht-mqtt.ino,/docs/samples/esp8266/resources/esp8266-dht-mqtt.ino{% endcapture %}
@@ -243,7 +255,7 @@ After application will be uploaded and started it will try to connect to Thingsb
 
 ## Autonomous operation
 
-When you have uploaded the sketch, you may remove all the wires required for uploading including USB-TTL adapter and connect your ESP8266 and DHT sensor directly to power source according to the [Final wiring schema](#final-schema).
+When you have uploaded the sketch, you may remove all the wires required for uploading including USB-TTL adapter and connect your ESP8266 and DHT sensor directly to power source according to the [Final wiring schema](#final-schema-battery-powered).
 
 ## Troubleshooting
 

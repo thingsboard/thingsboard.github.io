@@ -6,6 +6,9 @@ title: Building from sources
 
 ---
 
+* TOC
+{:toc}
+
 This guide will help you to download and build Thingsboard from sources. Instructions listed below are tested on Ubuntu 16.04 and CentOS 7.1
 
 #### Required tools
@@ -35,7 +38,7 @@ You can clone source code of the project from official [github repo](https://git
 ```bash
 git clone git@github.com:thingsboard/thingsboard.git
 # checkout latest release branch
-git checkout release-1.0
+git checkout release-1.1
 ```
 
 #### Build
@@ -48,7 +51,7 @@ mvn clean install
 
 #### Build artifacts
 
-You can find debian and rpm packages in the target folder:
+You can find debian, rpm and windows packages in the target folder:
  
 ```bash
 application/target

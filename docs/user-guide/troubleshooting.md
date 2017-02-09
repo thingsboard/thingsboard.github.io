@@ -1,10 +1,8 @@
 ---
 layout: docwithnav
-title: Support
+title: Troubleshooting
 
 ---
-
-## Troubleshooting
 
 Thingsboard logs are stored in the following directory:
  
@@ -18,15 +16,7 @@ You can issue the following command in order to check if there are any errors on
 cat /var/log/thingsboard/thingsboard.log | grep ERROR
 ```
 
-### Questions
-
-If you aren't familiar with it, many of your questions may be answered by the
-[user guide](/docs/user-guide/).
-
 ### Getting help
-
-If your problem isn't answered by any of the guides above, there are variety of
-ways for you to get help from the Thingsboard team.
 
 <section id="talkToUs">
     <main>
@@ -47,6 +37,6 @@ ways for you to get help from the Thingsboard team.
     </main>
 </section>
 
-### Contact us
+If your problem isn't answered by any of the guides above, feel free to contact Thingsboard team.
 
-Feel free to contact Thingsboard authors by sending us an email to [support@thingsboard.io](mailto:support@thingsboard.io)
+<a class="button" href="/docs/contact-us/">Contact us</a>

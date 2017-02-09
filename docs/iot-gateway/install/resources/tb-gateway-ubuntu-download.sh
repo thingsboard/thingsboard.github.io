@@ -1,0 +1,1 @@
+wget https://github.com/thingsboard/thingsboard-gateway/releases/download/v1.0/tb-gateway-1.0.deb

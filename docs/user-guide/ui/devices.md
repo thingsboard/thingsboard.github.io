@@ -20,7 +20,7 @@ Tenant administrator is able to register new devices or delete them from Thingsb
 ## Manage device credentials
 
 Tenant administrator is able to manage device credentials. 
-Current release supports Access Token credentials. X.509 Certificates support is planned for next minor release.
+Current release supports Access Token and X.509 Certificates based credentials.
 
 ![image](/images/user-guide/ui/manage-device-credentials.png)
 

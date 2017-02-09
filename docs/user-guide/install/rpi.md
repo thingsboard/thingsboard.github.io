@@ -6,6 +6,9 @@ title: Installing Thingsboard on Raspberry Pi 3 Model B
 
 ---
 
+* TOC
+{:toc}
+
 This guide describes how to install Thingsboard on a Raspberry Pi 3 running Raspbian Jessie.
 
 #### Third-party components installation
@@ -44,8 +47,8 @@ In order to fix this run following commands:
 $ sudo service cassandra stop
 
 # Find and set memory options in /etc/cassandra/cassandra-env.sh
-MAX_HEAP_SIZE="300M"
-NEW_HEAP_SIZE="60M"
+MAX_HEAP_SIZE="150M"
+HEAP_NEWSIZE="50M"
 
 # Find and set timeout options in /etc/cassandra/cassandra.yaml
 read_request_timeout_in_ms: 20000
@@ -66,9 +69,11 @@ Download installation package or [build it from source](/docs/user-guide/install
 
 ```bash
 # Download the package
-$ wget https://github.com/thingsboard/thingsboard/releases/download/v1.0.1/thingsboard-1.0.1.deb
+$ wget https://github.com/thingsboard/thingsboard/releases/download/v1.1/thingsboard-1.1.0.deb
 # Install Thingsboard as a service
-$ sudo dpkg -i thingsboard-1.0.1.deb
+$ sudo dpkg -i thingsboard-1.1.0.deb
+# Update Thingsboard memory usage and restrict it to 150MB in /etc/thingsboard/conf/thingsboard.conf
+export JAVA_OPTS="$JAVA_OPTS -Xms150M -Xmx150M"
 ```
 
 ##### Provision database schema and initial data
@@ -104,7 +109,9 @@ Once started, you will be able to open Web UI using following link:
 
 ```bash
 http://your_raspberry_pi_ip_address:8080/
+
 ```
+**NOTE**: Please allow up to 2 minutes for the Web UI to start
 
 ##### Troubleshooting
 

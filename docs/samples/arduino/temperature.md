@@ -12,7 +12,7 @@ title: Temperature upload over MQTT using Arduino UNO, ESP8266 and DHT22 sensor
 
 This sample application performs collection of temperature and humidity values produced by [DHT22 sensor](https://www.adafruit.com/product/385) and further visualization on the real-time web dashboard.
 Collected data is pushed via MQTT to Thingsboard server for storage and visualization.
-The purpose of this application is to demonstrate Thingsboard [data collection API](/docs/user-guide/telemetry/) and [visualization capabilities](docs/user-guide/visualization/).
+The purpose of this application is to demonstrate Thingsboard [data collection API](/docs/user-guide/telemetry/) and [visualization capabilities](/docs/user-guide/visualization/).
 
 The DHT22 sensor is connected to [Arduino UNO](https://en.wikipedia.org/wiki/Arduino).
 Arduino UNO connects to the WiFi network using [ESP8266](https://en.wikipedia.org/wiki/ESP8266). 
@@ -183,7 +183,7 @@ Download and open **arduino-dht-esp8266-mqtt.ino** sketch.
 - WIFI_AP - name of your access point
 - WIFI_PASSWORD - access point password
 - TOKEN - the **$ACCESS_TOKEN** from Thingsboard configuration step.
-- thingsboardServer - Thingsboard HOST/IP address that is accessible within your wifi network. Specify "demo.thingsboard.io" if you are using [live demo](http://demo.thingsboard.io/) server.
+- thingsboardServer - Thingsboard HOST/IP address that is accessible within your wifi network. Specify "demo.thingsboard.io" if you are using [live demo](https://demo.thingsboard.io/) server.
 
 {% capture tabspec %}arduino-sketch
 arduino-dht-esp8266-mqtt,arduino-dht-esp8266-mqtt.ino,c,resources/arduino-dht-esp8266-mqtt.ino,/docs/samples/arduino/resources/arduino-dht-esp8266-mqtt.ino{% endcapture %}

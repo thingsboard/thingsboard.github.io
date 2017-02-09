@@ -108,14 +108,13 @@ DTLS for CoAP is not supported yet.
 ### Device authentication
 
 Thingsboard is designed to support many types of device credentials. 
-However, current release provides support of token based credentials.
-Certificate based credentials are coming soon.
+Current release provides support of token based credentials for all [protocols](/docs/reference/protocols/) 
+and support of X.509 certificate based credentials for MQTT protocol. See [MQTT over SSL](/docs/user-guide/mqtt-over-ssl/) guide for more details.
 
 ## Third-party tools
 
 Thingsboard uses following main third-party projects:
  
- * Spring Boot
  * Akka - for actor system implementation
  * Zookeeper - for services coordination 
  * gRPC - for high-performance RPC 

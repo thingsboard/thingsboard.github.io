@@ -87,6 +87,22 @@ $dashboard-section-height: 550px
 		#editPageButton
 			right: -25px
 
+		// Video
+		#video
+			width: 50%
+
+		.contact-form
+			.form-element
+				float: left
+				&.half
+					width: 49.5%
+					float: left
+					margin-left: 1%
+					clear: none
+				&.first
+					clear: both
+					margin-left: 0
+
 	section, header, footer
 		main
 			max-width: $main-max-width
@@ -132,6 +148,10 @@ $dashboard-section-height: 550px
 		background-repeat: no-repeat
 		background-origin: content-box
 
+	#video
+		width: $main-max-width
+		position: relative
+
 	#talkToUs
 		h4
 			br
@@ -169,7 +189,7 @@ $dashboard-section-height: 550px
 			margin-bottom: 20px
 
 			a
-				width: 25%
+				width: 20%
 				float: left
 				font-size: 24px
 				font-weight: 300
@@ -247,28 +267,17 @@ $dashboard-section-height: 550px
 		&:hover
 			background-position: -250px 100%
 
+	a.youtube
+		background-position: -300px 0
 
+		&:hover
+			background-position: -300px 100%
 
+	a.facebook
+		background-position: -350px 0
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+		&:hover
+			background-position: -350px 100%
 
 	#community, .gridPage
 		#hero

@@ -19,6 +19,6 @@ During action configuration you are able to specify following:
 - expected result code in http response
 - body template of the request
 The Body Template syntax is based on [Velocity](https://velocity.apache.org/)
-and is already described in [alarm processor documentation](/docs/user-guide/processors/alarm-deduplication-processor/#configuration).
+and is already described in [alarm processor documentation](/docs/reference/processors/alarm-deduplication-processor/#configuration).
 
 ## Example

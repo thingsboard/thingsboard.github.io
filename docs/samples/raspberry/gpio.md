@@ -16,6 +16,18 @@ The purpose of this application is to demonstrate Thingsboard [RPC capabilities]
 Raspberry Pi will use simple application written in Python that will connect to Thingsboard server via [MQTT](https://en.wikipedia.org/wiki/MQTT) and listen to RPC commands.
 Current GPIO state and GPIO control widget is visualized using built-in customizable dashboard. 
 
+The video below demonstrates the final result of this tutorial.
+
+<br/>
+<br/>
+<div id="video">  
+    <div id="video_wrapper">
+        <iframe src="https://www.youtube.com/embed/SRnYjoS3M0Y" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
+<br/>
+<br/>
+
 {% include templates/prerequisites.md %}
 
 ## List of hardware and pinouts
@@ -45,10 +57,10 @@ sudo pip install paho-mqtt
 
 Our application consists of single python script that is well commented. 
 You will need to modify **THINGSBOARD_HOST** constant to match your Thingsboard server installation IP address or hostname. 
-Use "demo.thingsboard.io" if you are using [live demo](http://demo.thingsboard.io/) server.
+Use "demo.thingsboard.io" if you are using [live demo](https://demo.thingsboard.io/) server.
 
 The value of **ACCESS_TOKEN** constant corresponds to sample Raspberry Pi device in pre-provisioned [demo data](/docs/samples/demo-account/#tenant-devices).
-If you are using [live demo](http://demo.thingsboard.io/) server - [get the access token](/docs/user-guide/ui/devices/#manage-device-credentials) for pre-provisioned "Raspberry Pi Demo Device".
+If you are using [live demo](https://demo.thingsboard.io/) server - [get the access token](/docs/user-guide/ui/devices/#manage-device-credentials) for pre-provisioned "Raspberry Pi Demo Device".
 
 {% capture tabspec %}python-script
 gpio,gpio.py,python,resources/gpio.py,/docs/samples/raspberry/resources/gpio.py{% endcapture %}
@@ -75,7 +87,8 @@ in case of local Thingsboard installation.
  
 Once logged in, open **Dashboards->Raspberry PI GPIO Demo Dashboard** page. You should observe demo dashboard with GPIO control and status panel for your device. 
 Now you can switch status of GPIOs using control panel. As a result you will see LEDs status change on device and on the status panel.
-Screenshot of the dashboard is attached below.
+
+Below is the screenshot of the "Raspberry PI GPIO Demo Dashboard".  
 
  ![image](/images/samples/raspberry/gpio/dashboard.png)
  

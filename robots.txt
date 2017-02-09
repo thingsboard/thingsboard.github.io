@@ -6,4 +6,4 @@ Disallow: /v1.1/
 Disallow: /404/
 Disallow: 404.html
 
-SITEMAP: http://thingsboard.io/sitemap.xml
+SITEMAP: https://thingsboard.io/sitemap.xml

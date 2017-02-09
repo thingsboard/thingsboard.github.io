@@ -30,7 +30,7 @@ Let's create a Device and provision certain server-side attributes: ZoneId and Z
 
 #### Step 1. Create Device
 
-Navigate to [devices](http://demo.thingsboard.io/devices) page and click on big red "+" button. Populate device name and description and click "Add" button.
+Navigate to [devices](https://demo.thingsboard.io/devices) page and click on big red "+" button. Populate device name and description and click "Add" button.
 
 ![image](/images/samples/alarms/add-device.png)
 
@@ -49,7 +49,7 @@ Click on the highlighted "+" button. Add two attributes "ZoneId" and "ZoneType" 
 
 #### Step 3. Create "Server Room Monitoring" Rule
 
-Navigate to [rules](http://demo.thingsboard.io/rules) page and click on big red "+" button. Populate rule name and description first.
+Navigate to [rules](https://demo.thingsboard.io/rules) page and click on big red "+" button. Populate rule name and description first.
 
 ![image](/images/samples/alarms/add-rule.png)
 
