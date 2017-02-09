@@ -126,7 +126,7 @@ This dashboard shows last minute of sensor readings that are reported each secon
 
 In order to demonstrate this PoC in action you need to do two simple steps:
 
- - [Sign-up](http://demo.thingsboard.io/signup) or [login](http://demo.thingsboard.io) to the live demo instance and save your login and password.
+ - [Sign-up](https://demo.thingsboard.io/signup) or [login](https://demo.thingsboard.io) to the live demo instance and save your login and password.
  - Download and launch device emulator using this [link](https://github.com/thingsboard/samples/releases/download/v1.0-tfm/facilities-monitoring.jar). 
 
 ```shell

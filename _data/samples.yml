@@ -5,7 +5,7 @@ toc:
   path: /docs/samples/
 - title: Demo Account
   path: /docs/samples/demo-account/
-- title: Hardware platforms
+- title: Hardware samples
   section:
   - title: Arduino
     section:
@@ -19,6 +19,8 @@ toc:
       path: /docs/samples/esp8266/
     - title: Temperature upload over MQTT using ESP8266 and DHT22 sensor
       path: /docs/samples/esp8266/temperature/
+    - title: ESP8266 GPIO control over MQTT using Thingsboard
+      path: /docs/samples/esp8266/gpio/
   - title: NodeMCU
     section:
     - title: NodeMCU overview
@@ -31,6 +33,10 @@ toc:
       path: /docs/samples/raspberry/
     - title: Raspberry Pi GPIO control over MQTT using Thingsboard
       path: /docs/samples/raspberry/gpio/
+    - title: Raspberry Pi GPIO control using Android Things and Thingsboard
+      path: /docs/samples/raspberry/gpio-android-things/
+    - title: Temperature upload over MQTT using Raspberry Pi and DHT22 sensor
+      path: /docs/samples/raspberry/temperature/
   - title: LinkIt ONE
     section:
     - title: LinkIt ONE overview
@@ -47,5 +53,3 @@ toc:
       path: /docs/samples/alarms/basic-rules/
   - title: Facilities Monitoring PoC
     path: /docs/samples/monitoring/facilities-monitoring-poc/
-
-
