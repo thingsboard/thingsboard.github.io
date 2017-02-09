@@ -186,4 +186,4 @@ We will share the results of Thingsboard IoT platform performance tests in the n
 
 Also, we’ll describe code changes, improvements and instances tuning that we have done to achieve processing of more than 1 million MQTT messages per minute. These are basically the first steps for us in the direction of performance testing of the platform, and any feedback regarding this approach is more than welcome. 
 
-We hope that the experience provided will help you to verify your solutions against load specifications that you expect to see in the production. Stay tuned by subscribing to our twitter, blog or by starring our project on Github. (TODO: links)
+We hope that the experience provided will help you to verify your solutions against load specifications that you expect to see in the production. Stay tuned by subscribing to our twitter, blog or by starring our project on Github.
