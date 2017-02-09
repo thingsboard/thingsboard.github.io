@@ -28,11 +28,11 @@ Unfortunately Gatling.io framework from doesn’t support MQTT protocol out-of-t
 
 The problem with the default scenario of the unofficial Gatling-MQTT plugin is that each time when some data is published, client waits for reply from server and sends MQTT disconnect. So, the message sequence looks like this: 
 
-Connect -> Publish -> Disconnect -> Connect -> Publish -> Disconnect -> ... -> Connect -> Publish -> Disconnect. 
+![image](/images/reference/performance-tools/connect-publish-disconnect.png)
 
 This approach is very resource consuming and gives minimal benefits comparing to HTTP or other protocols. This behaviour is normal for HTTP requests-response model, but not for MQTT. The typical MQTT session is maintained for certain time and multiple MQTT publish messages are sent and received between client and MQTT broker. Of course, there are other types of MQTT messages, but they were out of scope for our tests. In our scenario, load testing of the IOT platform must be done in the following way:
 
-Connect -> Publish -> Publish -> Publish -> ... -> Publish -> Disconnect. 
+![image](/images/reference/performance-tools/connect-publish-publish-publish-disconnect.png)
 
 So once we have connected a device to the IOT platform that acts as an MQTT broker, we will reuse session and publish MQTT messages using the same session. Sure, the session could be recreated at some point, but not every time we would like to publish a message to the server. 
 
