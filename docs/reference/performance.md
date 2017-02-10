@@ -9,7 +9,7 @@ title: Thingsboard Data Collection Performance
 
 One of the key features of Thingsboard open-source IoT Platform is data collection and this is crucial feature that must work reliable under high load. 
 In this article we are going to describe steps and improvements that we have made to ensure that single instance of Thingsboard server 
-can constantly handle **10,000+** devices and **30,000+** MQTT publish messages per second, 
+can constantly handle **20,000+** devices and **30,000+** MQTT publish messages per second,
 which in summary gives us around **2 million published messages per minute**.
 
 ## Architecture
@@ -30,7 +30,7 @@ MQTT is light-weight publish/subscribe messaging protocol and offers number of a
  
 TODO: ONE MORE DIAGRAM
 
-Thingsboard server process MQTT publish messages and store them to Cassandra asynchronously. 
+Thingsboard server processes MQTT publish messages and stores them to Cassandra asynchronously.
 Server may also push data to websocket subscriptions from the Web UI dashboards (if present).
 We try to avoid any blocking operations and this is critical for overall system performance.  
 
@@ -44,14 +44,13 @@ See our separate [article](/docs/reference/performance-tools) about how we impro
 
 The results of first performance tests on the modern 4-core laptop with SSD was quite poor. Platform was able to process only 200 messages per second.
 The root cause and main performance bottle-neck was also on the surface. 
-It appears that the processing was not 100% asynchronous and we were executing blocking API of Cassandra driver inside the [Telemetry plugin](/docs/user-guide/telemetry/) actor.
+It appears that the processing was not 100% asynchronous and we were executing blocking API call of Cassandra driver inside the [Telemetry plugin](/docs/user-guide/telemetry/) actor.
 Quick refactoring of the plugin implementation resulted in more then 10X performance improvement and we received approximately 2500 published messages per second from 1000 devices.
 We would like to recommend [this article](http://www.datastax.com/dev/blog/java-driver-async-queries) about async queries to Cassandra. 
 
 ### Step 2. Connection pooling
 
-We have decided to move to AWS EC2 instances to be able to share both results and tests we executed and 
-executed tests on [c4.xlarge](http://www.ec2instances.info/?selected=c4.xlarge) instance (4 vCPUs and 7.5 Gb of RAM) with Cassandra and Thingsboard services co-located.
+We have decided to move to AWS EC2 instances to be able to share both results and tests we executed. We start running tests on [c4.xlarge](http://www.ec2instances.info/?selected=c4.xlarge) instance (4 vCPUs and 7.5 Gb of RAM) with Cassandra and Thingsboard services co-located.
 
 ![image](/images/reference/performance/performance-diagram-1.png)
 
@@ -61,15 +60,15 @@ Test specification:
  - Publish frequency per device: once per second
  - Total load: 10 000 messages/second
  
-First test results was obviously unacceptable:
+First test results were obviously unacceptable:
 
 ![image](/images/reference/performance/single_node_no_fix_stats.png) 
  
-The huge responce time above is caused by the fact that server simply not able to process 10 K messages per second and they are getting queued.
+The huge response time above is caused by the fact that server simply not able to process 10K messages per second and they are getting queued.
 
 We have started investigation with monitoring memory and CPU load on the testing instance. 
 Initially our guessing regarding poor performance was because of the heavy and fully load of the CPU or RAM memory. 
-But in fact during load testing we have seeing that CPU in particular moments is idle for a couple of seconds. 
+But in fact during load testing we have seen that CPU in particular moments is idle for a couple of seconds.
 This 'pause' event is happening every 3-7 seconds, see chart below.
  
 ![image](/images/reference/performance/single_node_no_fix_rps.png) 
@@ -84,7 +83,7 @@ kill -3 THINGSBOARD_PID
 
 ```
 
-We have identified that during pause there is always one thread in TIMED_WAITING state and the root cause for the is method awaitAvailableConnection in Cassandra driver:
+We have identified that during pause there is always one thread in TIMED_WAITING state and the root cause for this is method awaitAvailableConnection in Cassandra driver:
 
 ```bash
 java.lang.Thread.State: TIMED_WAITING (parking)
@@ -120,7 +119,7 @@ So we have done changes in code and update values for LOCAL and REMOTE hosts and
 ```java
 poolingOptions
     .setMaxRequestsPerConnection(HostDistance.LOCAL, 32768)
-    .setMaxRequestsPerConnection(HostDistance.REMOTE, 2000); 
+    .setMaxRequestsPerConnection(HostDistance.REMOTE, 32768);
 ```
 
 Test results after the applied changes:
@@ -144,7 +143,7 @@ We may notice significant improvement in response time. After significant peak o
 
 ![image](/images/reference/performance/single_node_x2_with_fix_time.png)
 
-Number of requests per second is arround 10K
+Number of requests per second is around 10K
 
 ![image](/images/reference/performance/single_node_x2_with_fix_rps.png)
 
@@ -176,22 +175,125 @@ Based on the data from two simultaneous test runs we have reached 30400 publishe
 
 ## How to replicate the tests
 
-We have prepared several AWS AMIs for anyone who is interested in replication of this tests. 
-This AMIs contain some tuned OS parameters, for example max amount of process threads and open file descriptors:
+We have prepared several AWS AMIs for anyone who is interested in replication of these tests.
+These AMIs contain some tuned OS parameters, for example max amount of process threads and open file descriptors:
 
- - [Thingsboard AMI]()
- - [Cassandra AMI]()
- - [Test Client AMI]()
- 
-Once you will setup your cluster configuration using Thingsboard and Cassandra AMIs you can execute tests from "client" machines using following command:
+ - [Thingsboard AMI]() (username **centos**)
+
+    **Ports that must be opened while starting AMI: 8080, 22, 9001, 2181, 1883, 5683**
+
+ - [Cassandra AMI]() (username **ubuntu**)
+
+    **Ports that must be opened while starting AMI: 7000 - 7001, 22, 9160, 9042**
+
+ - [Test Client AMI]() (username **ubuntu**)
+
+    **Ports that must be opened while starting AMI: 22**
+
+If you would like to verify for a single instance simply run Thingsboard AMI instance. By default this instance will be using Cassandra that runs locally.
+
+If you would like to verify results for a Cassandra Cluster please first init cluster using provided Cassandra AMI.
+For example let's do the configuration for three Cassandra instances.
+Once you have run 3 AWS using Cassandra AMI please update **cassandra.yml** file to make them run in a cluster.
+In our case we have 3 instances with the following IP addresses:
+
+ - 172.31.12.132, *instance A*
+ - 172.31.7.23, *instance B*
+ - 172.31.6.60, *instance C*
+
+Login into every cluster instance and do the following:
+
+```bash
+sudo nano /etc/cassandra/cassandra.yaml
+```
+
+Find in the file next lines and update them accordingly.
+
+For instance A:
+
+```bash
+seeds: "172.31.12.132:9042,172.31.7.23:9042,172.31.6.60:9042"
+
+listen_address: "172.31.12.132"
+
+rpc_address: "172.31.12.132"
+```
+
+For instance B:
+
+```bash
+seeds: "172.31.12.132:9042,172.31.7.23:9042,172.31.6.60:9042"
+
+listen_address: "172.31.7.23"
+
+rpc_address: "172.31.7.23"
+```
+
+For instance C:
+
+```bash
+seeds: "172.31.12.132:9042,172.31.7.23:9042,172.31.6.60:9042"
+
+listen_address: "172.31.6.60"
+
+rpc_address: "172.31.6.60"
+
+```
+
+On every instance restart cassandra:
+
+```bash
+sudo service cassandra stop
+sudo service cassandra start
+```
+
+And verify that Cassandra cluster setup was successful:
+
+```bash
+nodetool status
+```
+
+Once Cassandra cluster setup is done please run Thingsboard AMI instance. You need to update **thingsbaord.yml** config to use Cassandra cluster instead of local instance:
+
+```bash
+sudo nano /usr/share/thingsboard/conf/thingsboard.yml
+```
+
+And update cassandra url from localhost to IPs of cassandra ring:
+
+```bash
+url: "${CASSANDRA_URL:172.31.12.132:9042,172.31.7.23:9042,172.31.6.60:9042}"
+```
+
+After configuration update restart Thingsboard service:
+
+```bash
+sudo service thingsboard stop
+sudo service thingsboard start
+```
+
+Once you will setup your cluster configuration using Thingsboard and Cassandra AMIs you can execute tests from "client" machines (Thingsboard Performance Test AMIs) using following commands:
  
 ```bash
-TODO
+cd projects/performance-tests
 ```
+
+Update **mqttUrls** and **restUrl** and set private IPs of AWS instance where Thingsboard service is deployed in **test.properties** file:
+
+```bash
+nano src/main/resources/test.properties
+```
+
+Re-install project so Gatling can pick up latest config files and start test:
+
+```bash
+mvn clean install gatling:execute
+```
+
 
 ## Conclusion
 
-This performance test demonstrates how small Thingsboard cluster that cost approximately **1$ per hour** can easily receive,
+This performance test demonstrates how small Thingsboard cluster, that cost approximately **1$ per hour**, can easily receive,
 store and visualize more than **100 million messages** from your devices. 
 We will continue our work on performance improvements and going to publish performance results for cluster of Thingsboard servers in our next blog post.   
 We hope this article will be useful for people who are evaluating the platform and want to execute performance tests on their own.
