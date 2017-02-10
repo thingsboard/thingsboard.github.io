@@ -14,7 +14,7 @@ which in summary gives us around **2 million published messages per minute**.
 
 ## Architecture
 
-Thingsboard performance is based on three main projects: 
+Thingsboard performance leverages three main projects: 
 
  - [Netty](http://netty.io/) for high performance MQTT server/broker for IoT devices.
  - [Akka](http://akka.io/) for high performance actor system to coordinate messages between millions of devices.
@@ -26,16 +26,19 @@ We also use [Zookeeper](https://zookeeper.apache.org/) for coordination and [gRP
  
 IoT devices connect to Thingsboard server via MQTT and issue "publish" commands with JSON payload. 
 Size of single publish message is approximately 100 bytes. 
-MQTT is light-weight publish/subscribe messaging protocol and offers number of advantages over HTTP request/response protocol.
+[MQTT](http://mqtt.org/) is light-weight publish/subscribe messaging protocol and offers number of advantages over HTTP request/response protocol.
  
-TODO: ONE MORE DIAGRAM
+![image](/images/reference/performance/performance-diagram-0.png)
 
 Thingsboard server process MQTT publish messages and store them to Cassandra asynchronously. 
 Server may also push data to websocket subscriptions from the Web UI dashboards (if present).
-We try to avoid any blocking operations and this is critical for overall system performance.  
+We try to avoid any blocking operations and this is critical for overall system performance.
+Thingsboard supports MQTT QoS level 1, which means that client receives response to the publish message only after data is stored to Cassandra DB.
+Data duplicates which are possible with QoS level 1 are just overwrites to corresponding Cassandra row and thus are not present in persisted data. 
+This functionality provides reliable data delivery and persistence. 
 
 We have used [Gatling](http://gatling.io/) load testing framework that is also based on Akka and Netty. 
-Gatling is able to simulate 10K MQTT devices using 5-10% of a 2-core CPU. 
+Gatling is able to simulate 10K MQTT clients using 5-10% of a 2-core CPU. 
 See our separate [article](/docs/reference/performance-tools) about how we improved unofficial Gatling MQTT plugin to support our use case.
 
 ## Performance improvement steps
@@ -43,7 +46,7 @@ See our separate [article](/docs/reference/performance-tools) about how we impro
 ### Step 1. Asynchronous Cassandra Driver API 
 
 The results of first performance tests on the modern 4-core laptop with SSD was quite poor. Platform was able to process only 200 messages per second.
-The root cause and main performance bottle-neck was also on the surface. 
+The root cause and main performance bottle-neck was quite obvious and easy to find. 
 It appears that the processing was not 100% asynchronous and we were executing blocking API of Cassandra driver inside the [Telemetry plugin](/docs/user-guide/telemetry/) actor.
 Quick refactoring of the plugin implementation resulted in more then 10X performance improvement and we received approximately 2500 published messages per second from 1000 devices.
 We would like to recommend [this article](http://www.datastax.com/dev/blog/java-driver-async-queries) about async queries to Cassandra. 
@@ -57,26 +60,26 @@ executed tests on [c4.xlarge](http://www.ec2instances.info/?selected=c4.xlarge) 
 
 Test specification:
 
- - Amount of devices: 10 000
+ - Number of devices: 10 000
  - Publish frequency per device: once per second
- - Total load: 10 000 messages/second
+ - Total load: 10 000 messages per second
  
-First test results was obviously unacceptable:
+First test results were obviously unacceptable:
 
 ![image](/images/reference/performance/single_node_no_fix_stats.png) 
  
-The huge responce time above is caused by the fact that server simply not able to process 10 K messages per second and they are getting queued.
+The huge response time above was caused by the fact that server simply not able to process 10 K messages per second and they are getting queued.
 
-We have started investigation with monitoring memory and CPU load on the testing instance. 
-Initially our guessing regarding poor performance was because of the heavy and fully load of the CPU or RAM memory. 
-But in fact during load testing we have seeing that CPU in particular moments is idle for a couple of seconds. 
-This 'pause' event is happening every 3-7 seconds, see chart below.
+We have started our investigation with monitoring memory and CPU load on the testing instance. 
+Initially our guessing regarding poor performance was because of the heavy load on CPU or RAM. 
+But in fact during load testing we have seen that CPU in particular moments was idle for a couple of seconds. 
+This 'pause' event was happening every 3-7 seconds, see chart below.
  
 ![image](/images/reference/performance/single_node_no_fix_rps.png) 
 
 As next step we have decided to do the thread dump during these pauses. 
 We were expecting to see threads that are blocked and this could give us some clue what is happening while pauses. 
-So we have opened in separate console CPU load and in another we were doing thread dump while performing stress tests:
+So we have opened separate console to monitor CPU load and another one to execute thread dump while performing stress tests using the following command:
 
 ```bash
 
@@ -84,7 +87,7 @@ kill -3 THINGSBOARD_PID
 
 ```
 
-We have identified that during pause there is always one thread in TIMED_WAITING state and the root cause for the is method awaitAvailableConnection in Cassandra driver:
+We have identified that during pause there was always one thread in TIMED_WAITING state and the root cause was in method awaitAvailableConnection of Cassandra driver:
 
 ```bash
 java.lang.Thread.State: TIMED_WAITING (parking)
@@ -105,17 +108,17 @@ at org.thingsboard.server.dao.AbstractDao.executeAsyncWrite(AbstractDao.java:75)
 at org.thingsboard.server.dao.timeseries.BaseTimeseriesDao.savePartition(BaseTimeseriesDao.java:135)
 ```
 
-As a result we have realized that default Connection Pool config for cassandra driver causes bad results in our use case.
+As a result we have realized that default connection pool configuration for cassandra driver caused bad results in our use case.
 
 [Official configuration](http://docs.datastax.com/en/developer/java-driver/2.1/manual/pooling/) for connection pool feature contains special option 
 **‘Simultaneous requests per connection’** that allows you to tune concurrent request per single connection. 
 We use cassandra driver protocol v3 and by default it uses next values: 
  
- - 1024 for LOCAL hosts
+ - 1024 for LOCAL hosts.
  - 256 for REMOTE hosts. 
 
-Considering fact that we are actually pulling data from 10,000 devices, default values for sure are not enough. 
-So we have done changes in code and update values for LOCAL and REMOTE hosts and set them to maximum possible values:
+Considering the fact that we are actually pulling data from 10,000 devices, default values are definitely not enough. 
+So we have done changes in the code and updated values for LOCAL and REMOTE hosts and set them to the maximum possible values:
 
 ```java
 poolingOptions
@@ -123,36 +126,36 @@ poolingOptions
     .setMaxRequestsPerConnection(HostDistance.REMOTE, 2000); 
 ```
 
-Test results after the applied changes:
+Test results after the applied changes are listed below.
 
 ![image](/images/reference/performance/single_node_with_fix_stats.png)
  
 ![image](/images/reference/performance/single_node_with_fix_rps.png) 
 
 The results were much better, but far from even 1 million messages per minute. We have not seen pauses in CPU load during our tests on c4.xlarge any more.
-CPU load was high (80-95%) during entire test. We have done couple thread dumps during testing to verify that cassandra driver doesn’t await available connections 
-and indeed we didn’t see that this issue has been happening anymore.
+CPU load was high (80-95%) during entire test. We have done couple thread dumps to verify that cassandra driver does not awaiting available connections 
+and indeed we have not seen this issue anymore.
 
 ### Step 3: Vertical scaling
  
-We have decided to run same tests on twice more powerful node [c4.2xlarge](http://www.ec2instances.info/?selected=c4.2xlarge) with 8 vCPUs and 15Gb of RAM.
+We have decided to run the same tests on twice more powerful node [c4.2xlarge](http://www.ec2instances.info/?selected=c4.2xlarge) with 8 vCPUs and 15Gb of RAM.
 The performance increase was not linear and the CPU was still loaded (80-90%).
 
 ![image](/images/reference/performance/single_node_x2_with_fix_stats.png)
 
-We may notice significant improvement in response time. After significant peak on the start of the test, max response time is within 200ms and avg response time is ~ 50ms. 
+We have noticed significant improvement in response time. After significant peak on the start of the test maximum response time was within 200ms and average response time was ~ 50ms. 
 
 ![image](/images/reference/performance/single_node_x2_with_fix_time.png)
 
-Number of requests per second is arround 10K
+Number of requests per second was around 10K
 
 ![image](/images/reference/performance/single_node_x2_with_fix_rps.png)
 
-We have also executed test on [c4.4xlarge](http://www.ec2instances.info/?selected=c4.4xlarge) with 16 vCPUs and 30Gb of RAM but have not noticed significant improvements and decided to separate Thingsboard server and move Cassandra to 3-node cluster.
+We have also executed test on [c4.4xlarge](http://www.ec2instances.info/?selected=c4.4xlarge) with 16 vCPUs and 30Gb of RAM but have not noticed significant improvements and decided to separate Thingsboard server and move Cassandra to three nodes cluster.
 
 ### Step 4: Horizontal scaling
 
-Our main goal was to identify how much MQTT messages we can handle using single Thingsboard node runing on [c4.2xlarge](http://www.ec2instances.info/?selected=c4.2xlarge).
+Our main goal was to identify how much MQTT messages we can handle using single Thingsboard server running on [c4.2xlarge](http://www.ec2instances.info/?selected=c4.2xlarge).
 We will cover horizontal scalability of Thingsboard cluster in a separate article. 
 So, we decided to move Cassandra to three [c4.xlarge](http://www.ec2instances.info/?selected=c4.xlarge) separate instances with default configuration 
 and launch gatling stress test tool from two separate [c4.xlarge](http://www.ec2instances.info/?selected=c4.xlarge) instances simultaneously 
@@ -162,17 +165,17 @@ to minimize possible affect on latency and throughput by thirdparty.
 
 Test specification:
 
- - Amount of devices: 20 000
+ - Number of devices: 20 000
  - Publish frequency per device: twice per second
- - Total load: 40 000 messages/second
+ - Total load: 40 000 messages per second
 
-The stats of **two** simultaneous test runs launched on different client machines are listed below.
+The statistics of two simultaneous test runs launched on different client machines is listed below.
  
 ![image](/images/reference/performance/cluster_stats.png)
 ![image](/images/reference/performance/cluster_rps.png)
 ![image](/images/reference/performance/cluster_responses_ps.png)
 
-Based on the data from two simultaneous test runs we have reached 30400 published messages per second which is equal to **1.8 million per minute**.
+Based on the data from two simultaneous test runs we have reached 30300 published messages per second which is equal to **1.8 million per minute**.
 
 ## How to replicate the tests
 
