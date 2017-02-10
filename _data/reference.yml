@@ -11,6 +11,8 @@ toc:
     path: /docs/reference/performance/
   - title: Performance Test Tools
     path: /docs/reference/performance-tools/
+  - title: How to repeate the tests
+    path: /docs/reference/performance-tests/
 - title: API Reference
   section:
   - title: Device Connectivity Protocols
