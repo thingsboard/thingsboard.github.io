@@ -9,7 +9,7 @@ title: Thingsboard Data Collection Performance
 
 One of the key features of Thingsboard open-source IoT Platform is data collection and this is crucial feature that must work reliable under high load. 
 In this article we are going to describe steps and improvements that we have made to ensure that single instance of Thingsboard server 
-can constantly handle **10,000+** devices and **30,000+** MQTT publish messages per second, 
+can constantly handle **20,000+** devices and **30,000+** MQTT publish messages per second,
 which in summary gives us around **2 million published messages per minute**.
 
 ## Architecture
@@ -30,7 +30,7 @@ Size of single publish message is approximately 100 bytes.
  
 ![image](/images/reference/performance/performance-diagram-0.png)
 
-Thingsboard server process MQTT publish messages and store them to Cassandra asynchronously. 
+Thingsboard server processes MQTT publish messages and stores them to Cassandra asynchronously.
 Server may also push data to websocket subscriptions from the Web UI dashboards (if present).
 We try to avoid any blocking operations and this is critical for overall system performance.
 Thingsboard supports MQTT QoS level 1, which means that client receives response to the publish message only after data is stored to Cassandra DB.
@@ -47,14 +47,13 @@ See our separate [article](/docs/reference/performance-tools) about how we impro
 
 The results of first performance tests on the modern 4-core laptop with SSD was quite poor. Platform was able to process only 200 messages per second.
 The root cause and main performance bottle-neck was quite obvious and easy to find. 
-It appears that the processing was not 100% asynchronous and we were executing blocking API of Cassandra driver inside the [Telemetry plugin](/docs/user-guide/telemetry/) actor.
+It appears that the processing was not 100% asynchronous and we were executing blocking API call of Cassandra driver inside the [Telemetry plugin](/docs/user-guide/telemetry/) actor.
 Quick refactoring of the plugin implementation resulted in more then 10X performance improvement and we received approximately 2500 published messages per second from 1000 devices.
 We would like to recommend [this article](http://www.datastax.com/dev/blog/java-driver-async-queries) about async queries to Cassandra. 
 
 ### Step 2. Connection pooling
 
-We have decided to move to AWS EC2 instances to be able to share both results and tests we executed and 
-executed tests on [c4.xlarge](http://www.ec2instances.info/?selected=c4.xlarge) instance (4 vCPUs and 7.5 Gb of RAM) with Cassandra and Thingsboard services co-located.
+We have decided to move to AWS EC2 instances to be able to share both results and tests we executed. We start running tests on [c4.xlarge](http://www.ec2instances.info/?selected=c4.xlarge) instance (4 vCPUs and 7.5 Gb of RAM) with Cassandra and Thingsboard services co-located.
 
 ![image](/images/reference/performance/performance-diagram-1.png)
 
@@ -68,6 +67,7 @@ First test results were obviously unacceptable:
 
 ![image](/images/reference/performance/single_node_no_fix_stats.png) 
  
+
 The huge response time above was caused by the fact that server simply not able to process 10 K messages per second and they are getting queued.
 
 We have started our investigation with monitoring memory and CPU load on the testing instance. 
@@ -123,7 +123,7 @@ So we have done changes in the code and updated values for LOCAL and REMOTE host
 ```java
 poolingOptions
     .setMaxRequestsPerConnection(HostDistance.LOCAL, 32768)
-    .setMaxRequestsPerConnection(HostDistance.REMOTE, 2000); 
+    .setMaxRequestsPerConnection(HostDistance.REMOTE, 32768);
 ```
 
 Test results after the applied changes are listed below.
@@ -175,26 +175,15 @@ The statistics of two simultaneous test runs launched on different client machin
 ![image](/images/reference/performance/cluster_rps.png)
 ![image](/images/reference/performance/cluster_responses_ps.png)
 
-Based on the data from two simultaneous test runs we have reached 30300 published messages per second which is equal to **1.8 million per minute**.
+Based on the data from two simultaneous test runs we have reached **30 000 published messages per second** which is equal to **1.8 million per minute**.
 
-## How to replicate the tests
+## How to repeat the tests
 
-We have prepared several AWS AMIs for anyone who is interested in replication of this tests. 
-This AMIs contain some tuned OS parameters, for example max amount of process threads and open file descriptors:
-
- - [Thingsboard AMI]()
- - [Cassandra AMI]()
- - [Test Client AMI]()
- 
-Once you will setup your cluster configuration using Thingsboard and Cassandra AMIs you can execute tests from "client" machines using following command:
- 
-```bash
-TODO
-```
+We have prepared several AWS AMIs for anyone who is interested in replication of these tests. See separate [documentation page](/docs/reference/performance-tests) with detailed instructions.
 
 ## Conclusion
 
-This performance test demonstrates how small Thingsboard cluster that cost approximately **1$ per hour** can easily receive,
+This performance test demonstrates how small Thingsboard cluster, that cost approximately **1$ per hour**, can easily receive,
 store and visualize more than **100 million messages** from your devices. 
 We will continue our work on performance improvements and going to publish performance results for cluster of Thingsboard servers in our next blog post.   
 We hope this article will be useful for people who are evaluating the platform and want to execute performance tests on their own.

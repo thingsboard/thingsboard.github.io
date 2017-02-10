@@ -20,11 +20,11 @@ We have chosen [**Gatling**](http://gatling.io/) as a framework to run our test 
  * Easy setup of load scenarios.
  * [**Scalability**](http://gatling.io/docs/2.2.2/cookbook/scaling_out.html) of simulations.
 
-Unfortunately Gatling.io framework from doesn’t support MQTT protocol out-of-the-box. At the same time Gatling is an open-source framework and we have found an unofficial MQTT plugin.
+Unfortunately Gatling.io framework doesn’t support MQTT protocol out-of-the-box. At the same time Gatling is an open-source framework and we have found an unofficial MQTT plugin.
 
 #### Gatling MQTT Plugin
 
-[**Gatling-MQTT**](https://github.com/mnogu/gatling-mqtt) plugin was developed by [**Muneyuki Noguchi**](https://github.com/mnogu) and at the moment it is is hosted on GitHub under Apache 2.0 License. We have started implementation of Thingsboard performance testing project using Gatling and Gatling-MQTT plugin. Some time later we have realized that the plugin doesn’t support scenarios that we would like to verify and the behaviour of default scenario is not something that we have expected.
+[**Gatling-MQTT**](https://github.com/mnogu/gatling-mqtt) plugin was developed by [**Muneyuki Noguchi**](https://github.com/mnogu) and at the moment it is hosted on GitHub under Apache 2.0 License. We have started implementation of Thingsboard performance testing project using Gatling and Gatling-MQTT plugin. Some time later we have realized that plugin doesn’t support scenarios that we would like to verify and the behaviour of default scenario is not something that we have expected.
 
 The problem with the default scenario of the unofficial Gatling-MQTT plugin is that each time when some data is published, client waits for reply from server and sends MQTT disconnect. So, the message sequence looks like this: 
 
@@ -162,7 +162,7 @@ For the guys who prefer Java and Maven there is a maven plugin - **gatling-maven
 </plugin>
 ```
 
-These plugin finds *Simulation* files in your project, compiles and runs them. Results will be stored inside of the target folder in a pretty format that you are able to inspect after the run:
+This plugin finds *Simulation* files in your project, compiles and runs them. Results will be stored inside of the target folder in a pretty format that you are able to inspect after the run:
 
 ![image](/images/reference/performance-tools/gatling-indicators.png)
 
