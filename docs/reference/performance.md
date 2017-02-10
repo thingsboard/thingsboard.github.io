@@ -28,6 +28,8 @@ IoT devices connect to Thingsboard server via MQTT and issue "publish" commands 
 Size of single publish message is approximately 100 bytes. 
 MQTT is light-weight publish/subscribe messaging protocol and offers number of advantages over HTTP request/response protocol.
  
+TODO: ONE MORE DIAGRAM
+
 Thingsboard server process MQTT publish messages and store them to Cassandra asynchronously. 
 Server may also push data to websocket subscriptions from the Web UI dashboards (if present).
 We try to avoid any blocking operations and this is critical for overall system performance.  
@@ -38,7 +40,7 @@ See our separate [article](/docs/reference/performance-tools) about how we impro
 
 ## Performance improvement steps
 
-### Asynchronous Cassandra Driver API 
+### Step 1. Asynchronous Cassandra Driver API 
 
 The results of first performance tests on the modern 4-core laptop with SSD was quite poor. Platform was able to process only 200 messages per second.
 The root cause and main performance bottle-neck was also on the surface. 
@@ -46,12 +48,12 @@ It appears that the processing was not 100% asynchronous and we were executing b
 Quick refactoring of the plugin implementation resulted in more then 10X performance improvement and we received approximately 2500 published messages per second from 1000 devices.
 We would like to recommend [this article](http://www.datastax.com/dev/blog/java-driver-async-queries) about async queries to Cassandra. 
 
-### Connection pooling
+### Step 2. Connection pooling
 
 We have decided to move to AWS EC2 instances to be able to share both results and tests we executed and 
 executed tests on [c4.xlarge](http://www.ec2instances.info/?selected=c4.xlarge) instance (4 vCPUs and 7.5 Gb of RAM) with Cassandra and Thingsboard services co-located.
 
-TODO: DIAGRAM
+![image](/images/reference/performance/performance-diagram-1.png)
 
 Test specification:
 
@@ -131,7 +133,7 @@ The results were much better, but far from even 1 million messages per minute. W
 CPU load was high (80-95%) during entire test. We have done couple thread dumps during testing to verify that cassandra driver doesn’t await available connections 
 and indeed we didn’t see that this issue has been happening anymore.
 
-### Vertical scaling
+### Step 3: Vertical scaling
  
 We have decided to run same tests on twice more powerful node [c4.2xlarge](http://www.ec2instances.info/?selected=c4.2xlarge) with 8 vCPUs and 15Gb of RAM.
 The performance increase was not linear and the CPU was still loaded (80-90%).
@@ -146,10 +148,9 @@ Number of requests per second is arround 10K
 
 ![image](/images/reference/performance/single_node_x2_with_fix_rps.png)
 
+We have also executed test on [c4.4xlarge](http://www.ec2instances.info/?selected=c4.4xlarge) with 16 vCPUs and 30Gb of RAM but have not noticed significant improvements and decided to separate Thingsboard server and move Cassandra to 3-node cluster.
 
-We have also executed test on [c4.4xlarge](http://www.ec2instances.info/?selected=c4.4xlarge) with 16 vCPUs and 30Gb of RAM but have not noticed significant improvements and decided to try horizontal scaling of Cassandra cluster.
-
-### Horizontal scaling
+### Step 4: Horizontal scaling
 
 Our main goal was to identify how much MQTT messages we can handle using single Thingsboard node runing on [c4.2xlarge](http://www.ec2instances.info/?selected=c4.2xlarge).
 We will cover horizontal scalability of Thingsboard cluster in a separate article. 
@@ -157,7 +158,7 @@ So, we decided to move Cassandra to three [c4.xlarge](http://www.ec2instances.in
 and launch gatling stress test tool from two separate [c4.xlarge](http://www.ec2instances.info/?selected=c4.xlarge) instances simultaneously 
 to minimize possible affect on latency and throughput by thirdparty.
 
-TODO: DIAGRAM
+![image](/images/reference/performance/performance-diagram-2.png)
 
 Test specification:
 
@@ -167,20 +168,33 @@ Test specification:
 
 The stats of **two** simultaneous test runs launched on different client machines are listed below.
  
-![image](/images/reference/performance/cluster_tenant1_stats.png)
-![image](/images/reference/performance/cluster_tenant2_stats.png)
-
-![image](/images/reference/performance/cluster_tenant1_rps.png)
-![image](/images/reference/performance/cluster_tenant2_rps.png)
+![image](/images/reference/performance/cluster_stats.png)
+![image](/images/reference/performance/cluster_rps.png)
+![image](/images/reference/performance/cluster_responses_ps.png)
 
 Based on the data from two simultaneous test runs we have reached 30400 published messages per second which is equal to **1.8 million per minute**.
+
+## How to replicate the tests
+
+We have prepared several AWS AMIs for anyone who is interested in replication of this tests. 
+This AMIs contain some tuned OS parameters, for example max amount of process threads and open file descriptors:
+
+ - [Thingsboard AMI]()
+ - [Cassandra AMI]()
+ - [Test Client AMI]()
+ 
+Once you will setup your cluster configuration using Thingsboard and Cassandra AMIs you can execute tests from "client" machines using following command:
+ 
+```bash
+TODO
+```
 
 ## Conclusion
 
 This performance test demonstrates how small Thingsboard cluster that cost approximately **1$ per hour** can easily receive,
-store and visualize more than **100 million messages per hour** from your devices. 
-We will continue our work on performance improvements and going to publish performance results for cluster of Thingsboard servers.   
+store and visualize more than **100 million messages** from your devices. 
+We will continue our work on performance improvements and going to publish performance results for cluster of Thingsboard servers in our next blog post.   
 We hope this article will be useful for people who are evaluating the platform and want to execute performance tests on their own.
 We also hope that performance improvement steps will be useful for any engineers who use similar technologies. 
 
-Please let us know your feedback and follow our project on [**Github**](https://github.com/thingsboard/thingsboard).
+Please let us know your feedback and follow our project on [**Github**](https://github.com/thingsboard/thingsboard) or [**Twitter**](https://twitter.com/thingsboard).
