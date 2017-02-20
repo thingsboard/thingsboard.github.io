@@ -83,3 +83,9 @@ Now for any of your devices send Telemetry message that contains *'temp'* teleme
 ```
 
 You should see **'73.4'** message in appropriate Kafka topic once you'll post this message.
+
+Here is an example of a command that publish single telemetry message to locally installed Thingsboard:
+
+```bash
+mosquitto_pub -d -h "localhost" -p 1883 -t "v1/devices/me/telemetry" -u "$ACCESS_TOKEN" -m '{"temp":73.4}'
+```
