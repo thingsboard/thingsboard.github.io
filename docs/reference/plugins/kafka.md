@@ -42,35 +42,35 @@ Prerequisites before continue Kafka extension configuration:
 
 Let's configure Kafka plugin first. Go to *Plugins* menu and create new plugin:
 
-![image](/images/reference/plugins/kafka-plugin-config-1.png)
+![image](/images/reference/plugins/kafka/kafka-plugin-config-1.png)
 
-![image](/images/reference/plugins/kafka-plugin-config-2.png)
+![image](/images/reference/plugins/kafka/kafka-plugin-config-2.png)
 
 Please set correctly Kafka Bootstrap Servers URL and any other parameters localed in plugin configuration section that are suitable for your case so Kafka extension is able to connect to Kafka broker.
 
 Click on *'Activate'* plugin button:
 
-![image](/images/reference/plugins/kafka-activate-plugin.png)
+![image](/images/reference/plugins/kafka/kafka-activate-plugin.png)
 
 ### Kafka Rule Configuration
 
 Now it's time to create appropriate Rule.
 
-![image](/images/reference/plugins/kafka-rule-config.png)
+![image](/images/reference/plugins/kafka/kafka-rule-config.png)
 
 Add filter for **POST_TELEMETRY** message type:
 
-![image](/images/reference/plugins/post-telemetry-filter.png)
+![image](/images/reference/plugins/kafka/post-telemetry-filter.png)
 
 Click *'Add'* button to add filter.
 
 Then select *'Kafka Plugin'* in the drop-down box for the Plugin field:
 
-![image](/images/reference/plugins/kafka-plugin-selection.png)
+![image](/images/reference/plugins/kafka/kafka-plugin-selection.png)
 
 Add action that will send temperature telemetry of device to particular kafka topic:
 
-![image](/images/reference/plugins/send-temp-telemetry.png)
+![image](/images/reference/plugins/kafka/send-temp-telemetry.png)
 
 Click *'Add'* button and then activate Rule.
 
@@ -83,3 +83,9 @@ Now for any of your devices send Telemetry message that contains *'temp'* teleme
 ```
 
 You should see **'73.4'** message in appropriate Kafka topic once you'll post this message.
+
+Here is an example of a command that publish single telemetry message to locally installed Thingsboard:
+
+```bash
+mosquitto_pub -d -h "localhost" -p 1883 -t "v1/devices/me/telemetry" -u "$ACCESS_TOKEN" -m '{"temp":73.4}'
+```
