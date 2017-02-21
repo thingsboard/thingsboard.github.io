@@ -71,4 +71,4 @@ As a result you should receive following response from device:
 
 ## Example
 
-As a tenant administrator, you are able to review plugin example inside **Plugins->Demo Devie Messaging RPC Plugin**.
+As a tenant administrator, you are able to review plugin example inside **Plugins->Demo Device Messaging RPC Plugin**.
