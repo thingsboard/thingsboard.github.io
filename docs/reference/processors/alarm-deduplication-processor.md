@@ -20,7 +20,7 @@ If processor detects unique alarm, it will add following metadata:
 
 ## Configuration
 
-Template evaultion is done using certain context. This context is populated with values based on device message and attributes.
+Template evaluation is done using certain context. This context is populated with values based on device message and attributes.
 Attribute values are available using maps with following names:
  
  - **cs** - client-side attributes map.
