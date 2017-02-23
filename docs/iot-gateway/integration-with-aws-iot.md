@@ -10,7 +10,7 @@ One of the use cases is to integrate Thingsboard **IoT Gateway** with **AWS IoT*
 
 ### AWS IoT and Thingsboard IoT Gateway Integration
 
-**>>here diagram that shows integration must be inserted<<**
+![image](/images/gateway/aws-iot/aws-iot-gateway-integration.png)
 
 ### Prerequisites before Gateway configuration
 
