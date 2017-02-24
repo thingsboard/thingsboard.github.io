@@ -16,25 +16,32 @@ One of the use cases is to integrate Thingsboard **IoT Gateway** with **AWS IoT*
 
 Before configuration of the Thingsboard **IoT Gateway** we must prepare certificates, policies and copy Rest URL from the **AWS IoT** console.
 
-#### URL of the AWS Thing
+#### Custom Endpoint URL of the AWS IoT
 
-First, you'll need to get Rest URL of the **AWS IoT** *Thing*.
+First, you'll need to get Custom Endpoint URL of the **AWS IoT** that we'll use to publish messages to MQTT topics.
 
-This URL is located in the *Thing* **AWS IoT** details page, in the **Interact** sub-menu.
+This URL is located in the *Setting* **AWS IoT** details page:
 
-![image](/images/gateway/aws-iot/thing-rest-api-endpoint.png)
+![image](/images/gateway/aws-iot/mqtt-url.png)
 
-We'll refer later to this URL as **"$THING_REST_API_ENDPOINT"**.
+We'll refer later to this URL as **"$MQTT_ENDPOINT"**.
 
 #### AWS IoT certificates
 
-Second, we'll need to download certificates from **AWS IoT** that are attached to the *Thing* above and copy them beside  Thingsboard **IoT Gateway**.
+Second, we'll need to download certificates from **AWS IoT** and copy them beside Thingsboard **IoT Gateway** in the configuration folder:
+
+```bash
+Windows: YOUR_INSTALL_DIR/conf
+Linux: /etc/tb-gateway/conf
+```
+
+You can put it inside *conf* folder or create new sub-folder *cert* for example.
 
 ![image](/images/gateway/aws-iot/aws-certificate-creation.png)
 
 We need to copy private key (**2f3b7147dd.private.key** in the example), certificate (**2f3b7147dd.cert.pem** in the example) and root CA certificate that you are able to download from Symantec.
 
-Please copy these three PEM files to machine where Thingsboard **IoT Gateway** is running.
+Please copy these three PEM files to configuration folder of Thingsboard **IoT Gateway** as described above.
 
 Later we'll refer to the path where private key PEM file is located as **"$PRIVATE_KEY"**, certificate as **"$CERTIFICATE"** and root CA as **"$ROOT_CA_CERT"**
 
@@ -76,9 +83,9 @@ here is sample with real values:
 "retryInterval": 3000,
 "credentials": {
     "type": "cert.PEM",
-    "caCert" : "/home/dev/cert/rootCA.pem",
-    "privateKey" : "/home/dev/cert/privateKey.pem",
-    "cert" : "/home/dev/cert/cert.pem"
+    "caCert" : "/etc/tb-gateway/conf/cert/rootCA.pem",
+    "privateKey" : "/etc/tb-gateway/conf/cert/privateKey.pem",
+    "cert" : "/etc/tb-gateway/conf/cert/cert.pem"
 }
 ```
 
