@@ -20,7 +20,7 @@ Before configuration of the Thingsboard **IoT Gateway** we must prepare certific
 
 First, you'll need to get Custom Endpoint URL of the **AWS IoT** that we'll use to publish messages to MQTT topics.
 
-This URL is located in the *Setting* **AWS IoT** details page:
+This URL is located in the **AWS IoT** *Setting* page:
 
 ![image](/images/gateway/aws-iot/mqtt-url.png)
 
@@ -62,7 +62,7 @@ Configuration of the brokers is located in **mqtt-config.json** file.
 You should update it using next values:
 
 ```json
-"host": "$THING_REST_API_ENDPOINT",
+"host": "$MQTT_ENDPOINT",
 "port": 8883,
 "ssl": true,
 "retryInterval": 3000,
