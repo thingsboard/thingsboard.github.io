@@ -47,7 +47,11 @@ For Example:
 
 #### Client identity properties
 
-MQTT extension supports "anonymous" and "basic" client credentials.
+MQTT extension supports next client credentials:
+ - "anonymous"
+ - "basic"
+ - "cert.PEM"
+
 Example of anonymous identity configuration:
 
 ```json
@@ -74,6 +78,22 @@ Example of basic identity configuration:
       ...
 }
       
+```
+
+Example of PEM certificate identity configuration:
+
+```json
+{
+    ...
+    "credentials": {
+        "type": "cert.PEM",
+        "caCert" : "Path to Your CA certificate file",
+        "privateKey" : "Path to Your private key file",
+        "cert" : "Path to Your certificate file"
+    }
+    ...
+}
+
 ```
 
 #### Mapping
