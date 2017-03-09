@@ -19,6 +19,8 @@ toc:
       path: /docs/iot-gateway/install/rpi/
     - title: Building from sources
       path: /docs/iot-gateway/install/building-from-source/
+    - title: Upgrade instructions
+      path: /docs/iot-gateway/install/upgrade-instructions/
 - title: Configuration guide
   section:
   - title: General configuration
@@ -27,3 +29,5 @@ toc:
     path: /docs/iot-gateway/opc-ua/
   - title: MQTT Extension
     path: /docs/iot-gateway/mqtt/
+- title: Integration with AWS IoT
+  path: /docs/iot-gateway/integration-with-aws-iot/

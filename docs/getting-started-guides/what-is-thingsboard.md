@@ -30,6 +30,8 @@ Thingsboard cluster can handle millions of devices.
 
 See [Thingsboard Architecture](/docs/reference/architecture) for more details.
 
+**Note** You can also connect **existing** devices to the platform using **[Thingsboard Gateway](/docs/iot-gateway/what-is-iot-gateway/)**.
+
 ##### Ready to get started?
 
 <p><a href="/docs/getting-started-guides/helloworld" class="button">Hello World Application</a></p>
