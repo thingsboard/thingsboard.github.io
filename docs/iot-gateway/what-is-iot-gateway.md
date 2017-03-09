@@ -15,7 +15,7 @@ Thingsboard is an open-source IoT platform that enables rapid development, manag
 Thingsboard IoT Gateway provides following features:
 
  - **OPC-UA** extension to collect data from devices that are connected to OPC-UA servers.
- - **MQTT** extension to collect data that is published to external MQTT brokers.
+ - **MQTT** extension to control, configure and collect data from devices that are connected to external MQTT brokers using existing protocols.
  - **Persistence** of collected data to guarantee data delivery in case of network and hardware failures.
  - **Automatic reconnect** to Thingsboard cluster.
  - Simple yet powerful **mapping** of incoming data and messages **to unified format**.
@@ -38,11 +38,14 @@ Devices that support other protocols may be connected to gateway by implementing
 
 #### Project Roadmap
 
-The initial Gateway release goal is to bring Thingsboard [data collection](/docs/user-guide/telemetry/) feature to OPC-UA and MQTT enabled devices.  
+The initial Gateway release goal is to bring Thingsboard [data collection](/docs/user-guide/telemetry/) feature to OPC-UA and MQTT enabled devices.
+Thingsboard Gateway 1.2 provides ability to configure and control MQTT enabled devices from Thingsboard through the Gateway.
+
 The Gateway project is currently in active development stage and you should expect following major features in next releases:
 
- - Ability to configure devices connected through the Gateway using Thingsboard [Attributes](/docs/user-guide/attributes) feature.
- - Ability to control devices connected through the Gateway using Thingsboard [RPC](/docs/user-guide/rpc/) feature.
+ - OPC-UA extenstion improvements:
+   - Ability to configure devices connected through the Gateway using Thingsboard [Attributes](/docs/user-guide/attributes) feature.
+   - Ability to control devices connected through the Gateway using Thingsboard [RPC](/docs/user-guide/rpc/) feature.
  - Ability to configure Gateway distantly from Thingsboard [Dashboards](/docs/user-guide/visualization/).
  - Client-side load balancing based on information about Thingsboard cluster.
  - Ability to visualize collected device data on the Gateway Web UI. 
