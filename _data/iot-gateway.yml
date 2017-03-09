@@ -19,6 +19,8 @@ toc:
       path: /docs/iot-gateway/install/rpi/
     - title: Building from sources
       path: /docs/iot-gateway/install/building-from-source/
+    - title: Upgrade instructions
+      path: /docs/iot-gateway/install/upgrade-instructions/
 - title: Configuration guide
   section:
   - title: General configuration

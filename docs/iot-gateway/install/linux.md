@@ -28,15 +28,15 @@ Corresponding instructions are in the same articles listed above.
 Download installation package or [build it from source](/docs/iot-gateway/install/building-from-source).
 
 {% capture tabspec %}tb-gateway-download
-A,Ubuntu,shell,resources/tb-gateway-ubuntu-download.sh,/docs/user-guide/install/resources/tb-gateway-ubuntu-download.sh
-B,CentOS,shell,resources/tb-gateway-centos-download.sh,/docs/user-guide/install/resources/tb-gateway-centos-download.sh{% endcapture %}  
+A,Ubuntu,shell,resources/tb-gateway-ubuntu-download.sh,/docs/iot-gateway/install/resources/tb-gateway-ubuntu-download.sh
+B,CentOS,shell,resources/tb-gateway-centos-download.sh,/docs/iot-gateway/install/resources/tb-gateway-centos-download.sh{% endcapture %}  
 {% include tabs.html %}
 
 ### Step 3. Install gateway as a service
 
 {% capture tabspec %}tb-gateway-installation
-A,Ubuntu,shell,resources/tb-gateway-ubuntu-installation.sh,/docs/user-guide/install/resources/tb-gateway-ubuntu-installation.sh
-B,CentOS,shell,resources/tb-gateway-centos-installation.sh,/docs/user-guide/install/resources/tb-gateway-centos-installation.sh{% endcapture %}  
+A,Ubuntu,shell,resources/tb-gateway-ubuntu-installation.sh,/docs/iot-gateway/install/resources/tb-gateway-ubuntu-installation.sh
+B,CentOS,shell,resources/tb-gateway-centos-installation.sh,/docs/iot-gateway/install/resources/tb-gateway-centos-installation.sh{% endcapture %}  
 {% include tabs.html %}
 
 Congratulations! Thingsboard IoT Gateway is now installed on your Linux machine as a service.
