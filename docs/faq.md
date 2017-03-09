@@ -39,8 +39,9 @@ You can also take a look at [cluster setup])(/docs/user-guide/install/cluster-se
 Thingsboard provides 
 [MQTT](/docs/reference/mqtt-api), 
 [CoAP](/docs/reference/coap-api) and 
-[HTTP](/docs/reference/http-api) protocols support. 
-You can find more information on the [connectivity](/docs/reference/protocols/) page.
+[HTTP](/docs/reference/http-api) protocols support.
+**Existing** devices may be connected to the platform using **[Thingsboard Gateway](/docs/iot-gateway/what-is-iot-gateway/)**.
+You can find more information on the [connectivity](/docs/reference/protocols/) page. 
 
 ## Do I need to use an SDK?
 
@@ -61,7 +62,7 @@ Each device has unique access token credentials that is used to setup connection
 Thingsboard platform is horizontally scalable. Each server node in the cluster is unique. 
 Scalability is achieved using [consistent-hashing](https://dzone.com/articles/simple-magic-consistent) load balancing algorithm between the cluster nodes.
 Actual performance depends on usage scenario of connected devices. 
-For example, small commodity hardware cluster can support several millions of devices connected over MQTT. 
+For example, small commodity hardware cluster can support [several millions](/docs/reference/performance/) of devices connected over MQTT. 
   
 ## Where Thingsboard store data?
 
@@ -74,5 +75,4 @@ It is free for both personal and commercial usage and you can deploy it anywhere
 
 ## How to get support?
 
-You can use troubleshooting instructions and community resources on the [support page](/docs/support/). 
-You can also contact Thingsboard authors directly using [contact us](/docs/support/#contact-us). 
+You can use troubleshooting instructions and community resources or [contact us](/docs/contact-us) and learn more about [services](/docs/services/) we provide.

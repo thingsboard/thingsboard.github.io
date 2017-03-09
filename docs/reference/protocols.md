@@ -14,3 +14,5 @@ Thingsboard supports following protocols for device connectivity:
  
 See protocol specific documentation for more details. More protocols are coming soon.
 
+**Note** You can also connect **existing** devices to the platform using **[Thingsboard Gateway](/docs/iot-gateway/what-is-iot-gateway/)**.
+
