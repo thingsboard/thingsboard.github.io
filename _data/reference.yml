@@ -25,6 +25,8 @@ toc:
     path: /docs/reference/http-api/
   - title: REST API
     path: /docs/reference/rest-api/
+  - title: MQTT Gateway API Reference
+    path: /docs/reference/gateway-mqtt-api/
 - title: Rule Engine components
   section:
   - title: Filters
