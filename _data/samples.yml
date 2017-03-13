@@ -53,3 +53,5 @@ toc:
       path: /docs/samples/alarms/basic-rules/
   - title: Facilities Monitoring PoC
     path: /docs/samples/monitoring/facilities-monitoring-poc/
+  - title: Analytics using Spark integrated with Thingsboard
+    path: /docs/samples/analytics/spark-integration-with-thingsboard/
