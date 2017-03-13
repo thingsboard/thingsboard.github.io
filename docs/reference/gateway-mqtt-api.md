@@ -132,7 +132,7 @@ and expect messages with individual commands in the following format:
 {"device": "Device A", "data": {"id": $request_id, "method": "toggle_gpio", "params": {"pin":1}}}
 ```
 
-Once command is processed by device, gatway can send commands back using following format:
+Once command is processed by device, gateway can send commands back using following format:
 
 ```shell
 {"device": "Device A", "id": $request_id, "data": {"success": true}}
