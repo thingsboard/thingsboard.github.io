@@ -61,39 +61,8 @@ Paste your device id to some place, this value will be used in further steps.
 
 ### Provision your dashboard
 
-This step contains instructions that are necessary to provision new dashboard with map widgets to Thingsboard.
-
-Open "Docker Quickstart Terminal" and download file containing demo dashboard JSON:
-
-```bash
-curl -L http://thingsboard.io/docs/samples/linkit-one/resources/linkit_one_gps_dashboard.json > linkit_one_gps_dashboard.json
-```
-
-Update dashboard configuration with your device Id (obtained in previous step) by issuing the following command:
-
-```bash
-sed -i "s/{DEVICE_ID}/<your device id>/" linkit_one_gps_dashboard.json
-```
-
-Obtain JWT token by issuing login POST command:
-
-```bash
-curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{"username":"tenant@thingsboard.org", "password":"tenant"}' 'http://localhost:8080/api/auth/login'
-```
-
-You will receive response in the following format:
-
-```json
-{"token":"$YOUR_JSON_TOKEN", "refreshToken": "$REFRESH_TOKEN"}
-```
-
-copy $YOUR_JSON_TOKEN to some place. **Note** that it will be valid for 15 minutes by default.
-
-Execute dashboard upload command:
-
-```bash
-curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' --header 'X-Authorization: Bearer $YOUR_JSON_TOKEN' -d "@linkit_one_gps_dashboard.json" 'http://localhost:8080/api/dashboard'
-```
+Download the dashboard file using this [**link**](/docs/samples/linkit-one/resources/linkit_one_gps_dashboard_v2.json). 
+Use import/export [**instructions**](/docs/user-guide/ui/dashboards/#dashboard-importexport) to import the dashboard to your Thingsboard instance.
 
 ## Programming the LinkIt One device
 
