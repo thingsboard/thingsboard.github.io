@@ -1,0 +1,171 @@
+{
+   "title":"LinkIt One GPS Tracking Demo Dashboard",
+   "configuration":{
+      "widgets":[
+         {
+            "isSystemType":true,
+            "bundleAlias":"maps",
+            "typeAlias":"google_maps",
+            "type":"latest",
+            "title":"Google Maps",
+            "sizeX":12,
+            "sizeY":9,
+            "row":0,
+            "col":0,
+            "config":{
+               "datasources":[
+                  {
+                     "type":"device",
+                     "deviceAliasId":"1",
+                     "dataKeys":[
+                        {
+                           "name":"latitude",
+                           "label":"latitude",
+                           "type":"attribute",
+                           "color":"#2196f3",
+                           "settings":{
+
+                           },
+                           "_hash":0.9734855673538936
+                        },
+                        {
+                           "name":"longitude",
+                           "label":"longitude",
+                           "type":"attribute",
+                           "color":"#4caf50",
+                           "settings":{
+
+                           },
+                           "_hash":0.4779243025500368
+                        }
+                     ],
+                     "name":"LinkIt One Demo Device"
+                  }
+               ],
+               "timewindow":{
+                  "realtime":{
+                     "timewindowMs":60000
+                  }
+               },
+               "showTitle":true,
+               "backgroundColor":"#fff",
+               "color":"rgba(0, 0, 0, 0.87)",
+               "padding":"8px",
+               "settings":{
+                  "gmApiKey":"AIzaSyDoEx2kaGz3PxwbI9T7ccTSg5xjdw8Nw8Q",
+                  "markersSettings":[
+                     {
+                        "label":"My LinkIt One",
+                        "color":"#1e88e5",
+                        "latKeyName":"latitude",
+                        "lngKeyName":"longitude",
+                        "showLabel":true
+                     }
+                  ],
+                  "fitMapBounds":true
+               },
+               "title":"Google Maps"
+            }
+         },
+         {
+            "isSystemType":true,
+            "bundleAlias":"digital_gauges",
+            "typeAlias":"digital_vertical_bar",
+            "type":"latest",
+            "title":"Digital vertical bar",
+            "sizeX":5,
+            "sizeY":9,
+            "row":0,
+            "col":12,
+            "config":{
+               "datasources":[
+                  {
+                     "type":"device",
+                     "deviceAliasId":"1",
+                     "dataKeys":[
+                        {
+                           "name":"batteryLevel",
+                           "label":"batteryLevel",
+                           "type":"attribute",
+                           "color":"#2196f3",
+                           "settings":{
+
+                           },
+                           "_hash":0.3717900986230549
+                        }
+                     ],
+                     "name":"LinkIt One Demo Device"
+                  }
+               ],
+               "timewindow":{
+                  "realtime":{
+                     "timewindowMs":60000
+                  }
+               },
+               "showTitle":false,
+               "backgroundColor":"rgba(0, 0, 0, 0.0)",
+               "color":"rgba(0, 0, 0, 0.87)",
+               "padding":"0px",
+               "settings":{
+                  "maxValue":100,
+                  "donutStartAngle":90,
+                  "showValue":true,
+                  "showMinMax":true,
+                  "gaugeWidthScale":0.75,
+                  "levelColors":[
+                     "#3d5afe",
+                     "#f44336"
+                  ],
+                  "refreshAnimationType":"<>",
+                  "refreshAnimationTime":700,
+                  "startAnimationType":"<>",
+                  "startAnimationTime":700,
+                  "titleFont":{
+                     "family":"RobotoDraft",
+                     "size":8,
+                     "style":"normal",
+                     "weight":"500"
+                  },
+                  "labelFont":{
+                     "family":"RobotoDraft",
+                     "size":8,
+                     "style":"normal",
+                     "weight":"500"
+                  },
+                  "valueFont":{
+                     "family":"RobotoDraft",
+                     "style":"normal",
+                     "weight":"500",
+                     "size":14
+                  },
+                  "minMaxFont":{
+                     "family":"Segment7Standard",
+                     "size":8,
+                     "style":"normal",
+                     "weight":"normal"
+                  },
+                  "neonGlowBrightness":0,
+                  "decimals":0,
+                  "showUnitTitle":true,
+                  "gaugeColor":"rgba(48, 86, 128, 0.18)",
+                  "gaugeType":"verticalBar",
+                  "showTitle":true,
+                  "units":"%",
+                  "minValue":0,
+                  "dashThickness":1.2,
+                  "defaultColor":"#305680",
+                  "unitTitle":"Level",
+                  "title":"Battery"
+               },
+               "title":"Digital vertical bar"
+            }
+         }
+      ],
+      "deviceAliases":{
+         "1":{
+            "alias":"LinkIt One Demo Device",
+            "deviceId":"f924db20-d0e1-11e6-ac30-000000000000"
+         }
+      }
+   }
+}

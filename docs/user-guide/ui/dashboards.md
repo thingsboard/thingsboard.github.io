@@ -36,4 +36,28 @@ to prevent user from navigating to different dashboards/screens.
 
 ![image](/images/user-guide/ui/default-dashboard.png)
 
+## Dashboard import/export
+
+#### Dashboard export
+
+You are able to export your dashboard to JSON format and import it to the same or another Thingsboard instance.
+
+In order to export dashboard you should navigate to the **Dashboards** page and click on the export button located on the particular dashboard card.
+ 
+![image](/images/user-guide/ui/export-dashboard.png)
+
+#### Dashboard import
+
+Similar, to import the dashboard you should navigate to the **Dashboards** page and click on the big "+" button in the bottom-right part of the screen and then click on the import button. 
+
+![image](/images/user-guide/ui/import-dashboard.png)
+
+The dashboard import window should popup and you will be propted to upload the json file.
+
+![image](/images/user-guide/ui/import-dashboard-window.png)
+
+Once you click on the "import" button you will need to specify the device aliases. 
+This basically allows you to set what device(s) correspond to dashboard alias.
+
+![image](/images/user-guide/ui/import-dashboard-aliases.png)
 
