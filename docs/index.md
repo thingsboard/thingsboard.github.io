@@ -8,28 +8,50 @@ title: Thingsboard Documentation
 
 <p><a href="/docs/getting-started-guides/what-is-thingsboard" class="button">Thingsboard Overview</a></p>
 
-<h2>Installing Thingsboard</h2>
-
-<p><a href="/docs/user-guide/install/installation-options" class="button">Thingsboard Installation</a></p>
-
 <h2>Hello World</h2>
 
 <p><a href="/docs/getting-started-guides/helloworld" class="button">Your first IoT application using Thingsboard</a></p>
 
-<h2>Guides, Samples and Architecture Docs</h2>
+<h2>Installing Thingsboard</h2>
 
-<p>The Thingsboard documentation contains a number of resources to help you understand and work with Thingsboard.</p>
+<p><a href="/docs/user-guide/install/installation-options" class="button">Thingsboard Installation</a></p>
+
+<h2>Platform Features</h2>
+
 <ul>
-<li><b><a href="/docs/user-guide/">Guides</a></b> provides documentation for Thingsboard features as well as administering and setting up clusters, including examples.</li>
-<li><b><a href="/docs/samples/">Samples</a></b> contains a list of hardware platform specific samples.</li>
-<li><b><a href="/docs/reference/architecture/">Architecture</a></b> provide a deep understanding of how Thingsboard works.</li>
+<li><b><a href="/docs/user-guide/attributes/">Working with device attributes</a></b> - Describes device attributes feature and related use cases.</li>
+<li><b><a href="/docs/user-guide/telemetry/">Working with telemetry data</a></b> - Describes telemetry data collection feature and related use cases.</li>
+<li><b><a href="/docs/user-guide/rpc/">Using RPC capabilities</a></b> - Provides overview of Thingsboard RPC functionality.</li>
+<li><b><a href="/docs/user-guide/rule-engine/">Rule engine</a></b> - Describes rule engine features and capabilities.</li>
+<li><b><a href="/docs/user-guide/visualization/">Data visualization</a></b> - Covers data visualization capabilities: Widgets & Dashboards.</li>
 </ul>
+
+<h2>Integrations cookbook</h2>
+
+<p>Contains receipts and tips on third-party integrations.</p>
+
+<ul>
+<li><b><a href="/docs/iot-gateway/integration-with-aws-iot/">AWS IoT</a></b> - Describes how to persist and visualize data from AWS IoT using Thingsboard.</li>
+<li><b><a href="/docs/samples/analytics/spark-integration-with-thingsboard/">Apache Spark</a></b> - Describes how to use Apache Spark for analysis of device data collected by Thingsboard.</li>
+</ul>
+
+
+<h2>Security</h2>
+
+<p>Contains description of available device authentication <b><a href="/docs/user-guide/device-credentials/">options</a></b>.</p>
+
+<h2>Samples</h2>
+
+<p>Contains a list of hardware platform specific <b><a href="/docs/samples/">samples</a></b>.</p>
+
+<h2>API</h2>
+
+<p>Contains a list of device connectivity and server-side platform specific <b><a href="/docs/samples/">API</a></b>.</p>
+
+<h2>IoT Gateway</h2>
+
+<p>Contains comprehensive documentation about Thingsboard <b><a href="/docs/iot-gateway/">IoT Gateway</a></b>.</p>
 
 <h2>Video Tutorials</h2>
 
 <p>The Thingsboard Youtube <b><a href="https://www.youtube.com/channel/UCDb9fsV-YR4JmnipAMGsVAQ/videos">channel</a></b> contains useful video tutorials that cover various platform features.</p>
-
-<h2>REST API and Device Connectivity Protocols</h2>
-
-<p>The reference documentation provides complete information on the Thingsboard <b><a href="/docs/reference/rest-api">REST APIs</a></b>
-and various supported device connectivity protocols: <b><a href="/docs/reference/mqtt-api">MQTT</a></b>, <b><a href="/docs/reference/coap-api">CoAP</a></b> and <b><a href="/docs/reference/http-api">HTTP</a></b>.</p>

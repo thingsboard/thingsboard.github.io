@@ -3,7 +3,9 @@ abstract: "A collection of example applications that show how to use Thingsboard
 toc:
 - title: Samples
   path: /docs/samples/
-- title: Demo Account
+- title: Live Demo Server
+  path: /docs/user-guide/live-demo/
+- title: Local Demo Account
   path: /docs/samples/demo-account/
 - title: Hardware samples
   section:
@@ -53,5 +55,3 @@ toc:
       path: /docs/samples/alarms/basic-rules/
   - title: Facilities Monitoring PoC
     path: /docs/samples/monitoring/facilities-monitoring-poc/
-  - title: Analytics using Spark integrated with Thingsboard
-    path: /docs/samples/analytics/spark-integration-with-thingsboard/

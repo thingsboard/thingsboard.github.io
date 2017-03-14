@@ -110,8 +110,38 @@ In order to publish device telemetry to Thingsboard server node, send PUBLISH me
 
 ```shell
 Topic: v1/gateway/telemetry
-Message: {"Device A":["ts": 1483228800000. "values":{"temperature":42, "humidity": 80}], 
-          "Device B":["ts": 1483228800000. "values":{"temperature":42, "humidity": 80}]}
+```
+
+Message:
+
+```json
+{
+  "Device A": [
+    {
+      "ts": 1483228800000,
+      "values": {
+        "temperature": 42,
+        "humidity": 80
+      }
+    },
+    {
+      "ts": 1483228801000,
+      "values": {
+        "temperature": 43,
+        "humidity": 82
+      }
+    }
+  ],
+  "Device B": [
+    {
+      "ts": 1483228800000,
+      "values": {
+        "temperature": 42,
+        "humidity": 80
+      }
+    }
+  ]
+}
 ```
 
 where **Device A** and **Device B** are your device names, **temperature** and **humidity** are telemetry keys and **ts** is unix timestamp in milliseconds.

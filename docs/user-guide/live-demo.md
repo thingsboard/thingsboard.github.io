@@ -2,7 +2,7 @@
 layout: docwithnav
 assignees:
 - ashvayka
-title: Live Demo
+title: Live Demo Server
 
 ---
 
