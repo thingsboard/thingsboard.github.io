@@ -115,6 +115,7 @@ For example:
             "type": "json",
             "filterExpression": "",
             "deviceNameJsonExpression": "${$.serialNumber}",
+            "timeout": 60000,
             "attributes": [
               {
                 "type": "string",
@@ -145,7 +146,9 @@ By default, gateway use [Json converter](https://github.com/thingsboard/thingsbo
 The Json converter is based on [**JsonPath**](https://github.com/jayway/JsonPath) library to provide ability of flexible mapping and filtering of JSON structures.
 You can define **filterExpression** based on the [**path**](https://github.com/jayway/JsonPath#path-examples) and [**filter**](https://github.com/jayway/JsonPath#filter-operators) examples.
 
-The **deviceNameJsonExpression** mapping parameter is used to extract device name from the incoming JSON message. 
+The **deviceNameJsonExpression** mapping parameter is used to extract device name from the incoming JSON message.
+
+The **timeout** mapping parameter is optional inactivity timeout in milliseconds. If this parameter is specified, the gateway will report that device is disconnected once there is no new telemetry or attribute updates within particular timeout. 
 
 For example, if you have following message:
 

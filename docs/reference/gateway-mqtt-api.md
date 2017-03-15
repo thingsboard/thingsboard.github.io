@@ -101,7 +101,7 @@ v1/gateway/attributes
 and expect messages with result in the following format:
 
 ```shell
-Message: {"device": "Device A", "data": {"attribute1": "value1", "attribute2": 42}
+Message: {"device": "Device A", "data": {"attribute1": "value1", "attribute2": 42}}
 ```
 
 ## Telemetry upload API
