@@ -1,40 +1,71 @@
 ---
 layout: docwithnav
-title: Spark integration with Thingsboard
+title: IoT data analytics using Apache Spark, Kafka and Thingsboard
 
 ---
 
-## Spark integration with Thingsboard
 
-This tutorial will demonstrate how you can push device telemetry data from Thingsboard to external Kafka instance and then process it in real time using Spark Engine.
+Thingsboard rule engine supports basic analysis of incoming telemetry data, for example, threshold crossing. 
+The idea behind rule engine is to provide functionality to route data from IoT Devices to different plugins, based on device attributes or the data itself.   
 
-This could be useful for different scenarios like Machine Learning, Predictive Analytics etc.
+However, most of the real-life use cases also require support of advanced analytics: machine learning, predictive analytics, etc.
+  
+This tutorial will demonstrate how you can:
 
-We'll show scenario where average temperature for set of different devices is calculated and appropriate 'Average Temp' device is updated.
+ - route telemetry device data from Thingsboard to Kafka topic using built-in plugin.
+ - aggregate data from multiple devices using simple Apache Spark application.
+ - push results of the analytics back to Thingsboard for persistence and visualization. 
 
-Here is a scheme for this scenario:
+Of course, analytics in this tutorial is quite simple, our goal is to highlight the integration steps.
+
+### Overview
 
 ![image](/images/samples/analytics/spark/spark-thingsboard-integration.png)
 
-In this case 3 devices are pushing temperature telemetry data to Thingsboard every 1 second and every 10 seconds Spark Application will update 'Average Temp' Thingsboard device with average temperature from these devices.
+Let's assume we have big amount of weather stations that are located in different geo-location zones. 
+Thingsboard is used to collect, store and visualize wind speed from this stations, but we are also interested in average wind speed in each geo-location zone.
+Once again, this is completely fake scenario just to demonstrate the integration of all components.
 
-## Configuration of Thingsboard
+In this scenario we are going to upload wind speed as a telemetry reading, however, the geo-location zone will be a static attribute of the weather station device.
+This is logical, since telemetry readings are going to change often, and the geo-location is static.
 
-### Configuration of Kafka Plugin
+We will analyze real-time data from multiple devices using [Spark Streaming](http://spark.apache.org/docs/latest/streaming-programming-guide.html) job with 10 seconds batch window.
 
-First we need to configure Kafka Plugin so every telemetry message with temperature from devices will be pushed to Kafka topic as well.
+In order to store and visualize results of the analytics we are going to create one virtual device for each geo-location zone. 
+This is possible using special Thingsboard MQTT Gateway [API](/docs/reference/gateway-mqtt-api/). This API allows to efficiently stream data from multiple devices using single MQTT session.
+So, in our case, the Spark Job itself acts as a gateway that publish data on behalf of several virtual devices. Let's name this gateway as an **Analytics Gateway**. 
 
-Detail description how to configure Kafka Plugin you can find [here](/docs/reference/plugins/kafka/)
+### Prerequisites
+
+We assume you have Thingsboard [instance](/docs/user-guide/install/installation-options/) up and running.
+We also assume you are familiar with Kafka and Spark and have also prepared those environments for this tutorial.
+
+### Thingsboard configuration steps
+
+### Step 1. Configuration of Kafka Plugin
+
+We need to configure Kafka Plugin that will be used to push telemetry data to Kafka. 
+You can find detail description of Kafka Plugin [here](/docs/reference/plugins/kafka/).
+
+Please [**download**](/docs/samples/analytics/resources/kafka_plugin_for_spark_streaming_sample.json) the json with plugin descriptor and use this [**instructions**](TODO) to import it to your instance.
+
+Please note that the plugin configuration expects Kafka to be running on the localhost with port TODO.
+
+### Step 2. Configuration of Telemetry Forwarding Rule
+
+We need to configure Kafka Rule that will be used to push telemetry data to Kafka.
+ 
+Topic name in our case is **'sensors-telemetry'**:
+ 
+![image](/images/samples/analytics/spark/kafka-plugin-action.png)
+
 
 To filter only telemetry messages that contains temperature, please create appropriate filter while configuring Kafka Rule:
 
 ![image](/images/samples/analytics/spark/kafka-temperature-filter.png)
 
-Topic name in our case is **'sensors-telemetry'**:
 
-![image](/images/samples/analytics/spark/kafka-plugin-action.png)
-
-### Configuration of 'Average Temperature Device'
+### Step 3. Configuration of the Analytics Gateway device
 
 Let's create device that we define 'Average Temperature Device' and we'll send average temperature from Spark Application to this device:
 
@@ -44,9 +75,13 @@ Let's create device that we define 'Average Temperature Device' and we'll send a
 
 Please copy 'Access Token' from this device and store it somewhere. We'll use this toke later in Spark Application for sending update temperate messages and we'll refer to it as **$AVERAGE_DEVICE_ACCESS_TOKEN**.
 
-## Spark Application example
+## Spark Application
+
+### Step 4. Download the sample application source code
 
 Feel free to grab the [code from this sample Thingsboard repository](https://github.com/thingsboard/samples/tree/master/spark-kafka-streaming-integration) and follow along.
+
+### Step 5. Dependencies review
 
 Sample application was developed using Spark version **2.1.0**. Please consider this if you'll use different version of Spark because in this case you may need to use different version of Kafka Streaming API.
 
@@ -76,6 +111,8 @@ Dependencies that are used in sample project:
         <version>${paho.client.version}</version>
     </dependency>
 ```
+
+### Step 5. Source code review
 
 Here is a description of particular code snippet from **SparkKafkaStreamingDemoMain** class:
 
@@ -139,17 +176,15 @@ Here is a description of particular code snippet from **SparkKafkaStreamingDemoM
     }
 ```
 
-
 Now let's run **SparkKafkaStreamingDemoMain** class from the IDE or submit it to Spark cluster. Sample app will be fetching all the messages from Kafka topic and send average temperature telemetry to appropriate **'Average Temperature Device'** in *Thingsboard*.
 
-## Sample Run
+## Dry Run
 
 Once *Kafka Plugin* is configured, *'Average Temperature Device'* is provisioned and *Spark Streaming Application* is running please start sending **temperature** telemetry to set of particular devices and you'll be seeing update to 'Average Temperature Device' every *Spark Streaming window* duration.
 
 For testing purposes you can use **mosquitto_pub** for example:
 
 ```bash
-mosquitto_pub -d -h "localhost" -p 1883 -t "v1/devices/me/telemetry" -u "$DEVICE_TOKEN_1" -m '{"temperature":70.0}'
-mosquitto_pub -d -h "localhost" -p 1883 -t "v1/devices/me/telemetry" -u "$DEVICE_TOKEN_2" -m '{"temperature":71.0}'
-mosquitto_pub -d -h "localhost" -p 1883 -t "v1/devices/me/telemetry" -u "$DEVICE_TOKEN_3" -m '{"temperature":72.0}'
+mosquitto_pub -d -h "localhost" -p 1883 -t "v1/devices/me/attributes" -u "E3xOohX92WVe2tnEPtG2" -m '{"deviceType":"WeatherStation", "geoZone":"A"}'
+mosquitto_pub -d -h "localhost" -p 1883 -t "v1/devices/me/telemetry" -u "E3xOohX92WVe2tnEPtG2" -m '{"windSpeed":42}'
 ```

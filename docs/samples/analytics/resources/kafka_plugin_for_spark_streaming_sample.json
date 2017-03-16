@@ -1,0 +1,16 @@
+{
+  "apiToken": "kafka-spark-streaming-sample",
+  "name": "Kafka Plugin for Spark Streaming Sample",
+  "clazz": "org.thingsboard.server.extensions.kafka.plugin.KafkaPlugin",
+  "publicAccess": false,
+  "state": "SUSPENDED",
+  "configuration": {
+    "bootstrapServers": "localhost:9092",
+    "batchSize": 16384,
+    "bufferMemory": 33554432,
+    "acks": -1,
+    "keySerializer": "org.apache.kafka.common.serialization.StringSerializer",
+    "valueSerializer": "org.apache.kafka.common.serialization.StringSerializer"
+  },
+  "additionalInfo": null
+}
