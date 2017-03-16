@@ -37,7 +37,7 @@ So, in our case, the Spark Job itself acts as a gateway that publish data on beh
 
 ### Prerequisites
 
-We assume you have Thingsboard [instance](/docs/user-guide/install/installation-options/) up and running.
+We assume you have Thingsboard [instance](/docs/user-guide/install/installation-options/) is up and running.
 We also assume you are familiar with Kafka and Spark and have also prepared those environments for this tutorial.
 
 ### Thingsboard configuration steps
@@ -47,13 +47,21 @@ We also assume you are familiar with Kafka and Spark and have also prepared thos
 We need to configure Kafka Plugin that will be used to push telemetry data to Kafka. 
 You can find detail description of Kafka Plugin [here](/docs/reference/plugins/kafka/).
 
-Please [**download**](/docs/samples/analytics/resources/kafka_plugin_for_spark_streaming_sample.json) the json with plugin descriptor and use this [**instructions**](TODO) to import it to your instance.
+[**Download**](/docs/samples/analytics/resources/kafka_plugin_for_spark_streaming_sample.json) the json with plugin descriptor 
+and use this [**instructions**](/docs/user-guide/ui/plugins/#plugin-import) to import it to your instance.
 
-Please note that the plugin configuration expects Kafka to be running on the localhost with port TODO.
+Please note that the plugin configuration expects Kafka to be running on the localhost with port 9092.
+
+![image](/images/samples/analytics/spark/kafka-plugin-configuration.png)
+
+Don't forget to **activate** your new plugin instance by clicking on corresponding button in plugin details!
 
 ### Step 2. Configuration of Telemetry Forwarding Rule
 
-We need to configure Kafka Rule that will be used to push telemetry data to Kafka.
+Now we need to configure the Rule that will be used to push wind speed data from the weather stations to Kafka.
+
+[**Download**](/docs/samples/analytics/resources/windspeed_telemetry_rule.json) the json with plugin descriptor 
+and use this [**instructions**](/docs/user-guide/ui/rules/#rule-import) to import it to your instance.
  
 Topic name in our case is **'sensors-telemetry'**:
  
