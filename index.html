@@ -67,23 +67,40 @@ title: Open-source IoT Platform
 		<div class="content">
 			<p class="center">Thingsboard allows you to create rich IoT Dashboards for data visualization and remote device control in real-time.
 			More than 30 customizable widgets allows you to build end-user custom dashboards for most IoT use-cases.</p>
-			<div class="demoDashboardButton">
-				<a target="_blank" href="https://demo.thingsboard.io/demo?dashboardId=e8e409c0-f2b5-11e6-a6ee-bb0136cc33d0&source=realtimeIotDashboards" class="button">Smart energy monitoring</a>
-			</div>
-			<div class="demoDashboardWrapper">
-				<div class="demoDashboard">
-					<img src="images/demo/energy-monitoring-dashboard.png">
+			<div class="demo-dashboards-carousel">
+				<div>
+					<div class="demoDashboardButton">
+						<a target="_blank" href="https://demo.thingsboard.io/demo?dashboardId=e8e409c0-f2b5-11e6-a6ee-bb0136cc33d0&source=realtimeIotDashboards" class="button">Smart energy monitoring</a>
+					</div>
+					<div class="demoDashboardWrapper">
+						<div class="demoDashboard">
+							<img src="images/demo/energy-monitoring-dashboard.png">
+						</div>
+						<a target="_blank" href="https://demo.thingsboard.io/demo?dashboardId=e8e409c0-f2b5-11e6-a6ee-bb0136cc33d0&source=realtimeIotDashboards" class="overlay"></a>
+					</div>
 				</div>
-				<a target="_blank" href="https://demo.thingsboard.io/demo?dashboardId=e8e409c0-f2b5-11e6-a6ee-bb0136cc33d0&source=realtimeIotDashboards" class="overlay"></a>
-			</div>
-			<div class="demoDashboardButton">
-				<a target="_blank" href="https://demo.thingsboard.io/demo?dashboardId=3d0bf910-ee09-11e6-b619-bb0136cc33d0&source=realtimeIotDashboards" class="button">Smart bus tracking</a>
-			</div>
-			<div class="demoDashboardWrapper">
-				<div class="demoDashboard">
-					<img src="images/demo/fleet-monitoring-dashboard.png">
+				<div>
+					<div class="demoDashboardButton">
+						<a target="_blank" href="https://demo.thingsboard.io/demo?dashboardId=1f9828d0-058e-11e7-87f7-bb0136cc33d0&source=realtimeIotDashboards" class="button">Silos monitoring</a>
+					</div>
+					<div class="demoDashboardWrapper">
+						<div class="demoDashboard">
+							<img src="images/demo/silos-monitoring-dashboard.png">
+						</div>
+						<a target="_blank" href="https://demo.thingsboard.io/demo?dashboardId=1f9828d0-058e-11e7-87f7-bb0136cc33d0&source=realtimeIotDashboards" class="overlay"></a>
+					</div>
 				</div>
-				<a target="_blank" href="https://demo.thingsboard.io/demo?dashboardId=3d0bf910-ee09-11e6-b619-bb0136cc33d0&source=realtimeIotDashboards" class="overlay"></a>
+				<div>
+					<div class="demoDashboardButton">
+						<a target="_blank" href="https://demo.thingsboard.io/demo?dashboardId=3d0bf910-ee09-11e6-b619-bb0136cc33d0&source=realtimeIotDashboards" class="button">Smart bus tracking</a>
+					</div>
+					<div class="demoDashboardWrapper">
+						<div class="demoDashboard">
+							<img src="images/demo/fleet-monitoring-dashboard.png">
+						</div>
+						<a target="_blank" href="https://demo.thingsboard.io/demo?dashboardId=3d0bf910-ee09-11e6-b619-bb0136cc33d0&source=realtimeIotDashboards" class="overlay"></a>
+					</div>
+				</div>
 			</div>
 		</div>
 	</main>
@@ -168,6 +185,41 @@ title: Open-source IoT Platform
 		padding: 0;
 	}
 </style>
+
+<script type="text/javascript">
+	jqueryDefer(initSlick);
+	function initSlick() {
+		var scriptsList = [
+			{src: 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css', type: 'css'},
+			{src: 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css', type: 'css'},
+			{src: 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js', type: 'script'}
+		];
+		loadNextScript(0, scriptsList,
+				function() {
+					$(document).ready(function(){
+						$('.demo-dashboards-carousel').slick({
+							slidesToShow: 1,
+							slidesToScroll: 1,
+							autoplay: true,
+							autoplaySpeed: 2500,
+							arrows: true,
+							dots: true,
+							responsive: [
+								{
+									breakpoint: 750,
+									settings: {
+										arrows: false
+									}
+								}
+							]
+						});
+					});
+				}
+		);
+	}
+
+</script>
+
 </body>
 </html>
 
