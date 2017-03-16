@@ -88,10 +88,34 @@ You can fetch list of latest values for particular *device id* using GET request
 http(s)://host:port/api/plugins/telemetry/{deviceId}/values/timeseries?keys=key1,key2,key3
 ```
 
+{% capture tabspec %}get-latest-telemetry-values
+A,get-latest-telemetry-values.sh,shell,resources/get-latest-telemetry-values.sh,/docs/user-guide/resources/get-latest-telemetry-values.sh
+B,get-latest-telemetry-values-result.json,json,resources/get-latest-telemetry-values-result.json,/docs/user-guide/resources/get-latest-telemetry-values-result.json{% endcapture %}
+{% include tabs.html %}
+
+
+You can also fetch list of historical values for particular *device id* using GET request to the following URL  
+ 
+```shell
+http(s)://host:port/api/plugins/telemetry/{deviceId}/values/timeseries?keys=key1,key2,key3&startTs=1479735870785&endTs=1479735871858&interval=60000&limit=100&agg=AVG
+```
+
+The supported parameters are described below:
+
+ - **keys** - comma separated list of telemetry keys to fetch.
+ - **startTs** - unix timestamp that identifies start of the interval in milliseconds.
+ - **endTs** - unix timestamp that identifies end of the interval in milliseconds.
+ - **interval** - the aggregation interval, in milliseconds.
+ - **agg** - the aggregation function. One of MIN, MAX, AVG, SUM, COUNT, NONE.
+ - **limit** - the max amount of data points to return or intervals to process.
+
+Thingsboard will use *startTs*, *endTs* and *interval* to identify aggregation partitions or sub-queries and execute asynchronous queries to Cassandra that levarage built-in aggregation functions.  
+
 {% capture tabspec %}get-telemetry-values
 A,get-telemetry-values.sh,shell,resources/get-telemetry-values.sh,/docs/user-guide/resources/get-telemetry-values.sh
 B,get-telemetry-values-result.json,json,resources/get-telemetry-values-result.json,/docs/user-guide/resources/get-telemetry-values-result.json{% endcapture %}
 {% include tabs.html %}
+
 
 #### Websocket API
 

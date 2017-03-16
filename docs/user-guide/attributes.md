@@ -85,7 +85,7 @@ A,get-attributes-keys.sh,shell,resources/get-attributes-keys.sh,/docs/user-guide
 B,get-attributes-keys-result.json,json,resources/get-attributes-keys-result.json,/docs/user-guide/resources/get-attributes-keys-result.json{% endcapture %}
 {% include tabs.html %}
 
-#### Timeseries data values API
+#### Attribute values API
 
 You can fetch list of latest values for particular *device id* using GET request to the following URL  
  

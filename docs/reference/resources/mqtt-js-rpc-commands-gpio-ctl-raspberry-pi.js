@@ -49,6 +49,8 @@ function updateGpioStatus(pin, enabled, requestId) {
         gpioList[pin] = enabled;
         response[pin] = enabled;
     }
+    console.log('update gpio status');
+    console.log(response);
     client.publish('v1/devices/me/rpc/response/' + requestId, JSON.stringify(response));
     client.publish('v1/devices/me/attributes', JSON.stringify(response));
 }

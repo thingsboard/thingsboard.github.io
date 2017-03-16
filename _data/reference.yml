@@ -13,20 +13,6 @@ toc:
     path: /docs/reference/performance-tools/
   - title: How to repeate the tests
     path: /docs/reference/performance-tests/
-- title: API Reference
-  section:
-  - title: Device Connectivity Protocols
-    path: /docs/reference/protocols/
-  - title: MQTT Device API Reference
-    path: /docs/reference/mqtt-api/
-  - title: CoAP Device API Reference
-    path: /docs/reference/coap-api/
-  - title: HTTP Device API Reference
-    path: /docs/reference/http-api/
-  - title: REST API
-    path: /docs/reference/rest-api/
-  - title: MQTT Gateway API Reference
-    path: /docs/reference/gateway-mqtt-api/
 - title: Rule Engine components
   section:
   - title: Filters
@@ -75,5 +61,7 @@ toc:
         path: /docs/reference/plugins/rest/
       - title: Time RPC Plugin
         path: /docs/reference/plugins/time/
+- title: Customization
+  path: /docs/user-guide/customization/
 - title: Release Notes
   path: https://github.com/thingsboard/thingsboard/releases/

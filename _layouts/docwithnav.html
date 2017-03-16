@@ -13,7 +13,7 @@
     <div id="docsList">
         <ul>
           <li><a href="/docs/" {% if site.data[foundTOC].bigheader == "Thingsboard Documentation" %}class="YAH"{% endif %}>DOCS HOME</a></li>
-          <li><a href="/docs/user-guide/" {% if site.data[foundTOC].bigheader == "Guides" %}class="YAH"{% endif %}>GUIDES</a></li>
+          <li><a href="/docs/api/" {% if site.data[foundTOC].bigheader == "Thingsboard APIs" %}class="YAH"{% endif %}>API</a></li>
           <li><a href="/docs/iot-gateway/" {% if site.data[foundTOC].bigheader == "Thingsboard IoT Gateway" %}class="YAH"{% endif %}>IOT GATEWAY</a></li>
           <li><a href="/docs/reference/" {% if site.data[foundTOC].bigheader == "Reference Documentation" %}class="YAH"{% endif %}>REFERENCE</a></li>
           <li><a href="/docs/samples/" {% if site.data[foundTOC].bigheader == "Samples" %}class="YAH"{% endif %}>SAMPLES</a></li>
@@ -32,7 +32,7 @@
 <section id="encyclopedia">
   <div id="docsToc">
         <div class="pi-accordion">
-        {% if site.data[foundTOC].bigheader != "Thingsboard Documentation" and site.data[foundTOC].hidetoc != "true" %}
+        {% if site.data[foundTOC].hidetoc != "true" %}
         {% assign tree = site.data[foundTOC].toc %}{% include tree.html %}
         {% endif %}
         </div> <!-- /pi-accordion -->

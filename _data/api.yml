@@ -1,0 +1,17 @@
+bigheader: "Thingsboard API reference"
+abstract: "Device connectivity and server-side APIs."
+toc:
+- title: Thingsboard API reference
+  path: /docs/api/
+- title: Device Connectivity Protocols
+  path: /docs/reference/protocols/
+- title: MQTT Device API
+  path: /docs/reference/mqtt-api/
+- title: CoAP Device API
+  path: /docs/reference/coap-api/
+- title: HTTP Device API
+  path: /docs/reference/http-api/
+- title: Administration REST API
+  path: /docs/reference/rest-api/
+- title: MQTT Gateway API Reference
+  path: /docs/reference/gateway-mqtt-api/
