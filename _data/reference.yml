@@ -65,9 +65,3 @@ toc:
   path: /docs/user-guide/customization/
 - title: Release Notes
   path: https://github.com/thingsboard/thingsboard/releases/
-- title: Contribution Documentation
-  section:
-    - title: How to contribute code
-      path: /docs/user-guide/contribution/how-to-contribute/
-    - title: Plugins development
-      path: /docs/user-guide/contribution/plugins-development/
