@@ -4,11 +4,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     {% if !page.no_canonical %}<link rel="canonical" href="http://thingsboard.io{{page.url}}" />{% endif %}
 	<link rel="shortcut icon" type="image/png" href="/images/favicon.png">
-	<link href="//fonts.googleapis.com/css?family=RobotoDraft:100,100italic,300,300italic,400,500,700,900,400italic" rel="stylesheet" type='text/css'>
-	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href='https://fonts.googleapis.com/css?family=Roboto+Mono' type='text/css'>
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
 	<link rel="stylesheet" href="/css/styles.css">
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script type="text/javascript">
 		/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
 		!function(a){"use strict";var b=function(b,c,d){function e(a){return h.body?a():void setTimeout(function(){e(a)})}function f(){i.addEventListener&&i.removeEventListener("load",f),i.media=d||"all"}var g,h=a.document,i=h.createElement("link");if(c)g=c;else{var j=(h.body||h.getElementsByTagName("head")[0]).childNodes;g=j[j.length-1]}var k=h.styleSheets;i.rel="stylesheet",i.href=b,i.media="only x",e(function(){g.parentNode.insertBefore(i,c?g:g.nextSibling)});var l=function(a){for(var b=i.href,c=k.length;c--;)if(k[c].href===b)return a();setTimeout(function(){l(a)})};return i.addEventListener&&i.addEventListener("load",f),i.onloadcssdefined=l,l(f),i};"undefined"!=typeof exports?exports.loadCSS=b:a.loadCSS=b}("undefined"!=typeof global?global:this);
@@ -94,8 +91,6 @@
 
 		loadNextScript(0, initialScriptsList);
 
-		loadScript('https://buttons.github.io/buttons.js');
-
 	</script>
 	<script type="text/javascript">
 		function _gaLt(event) {
@@ -164,7 +159,9 @@
 <header>
 	<a href="/" class="logo"></a>
 	<div id="githubButtonContainer">
-		<a class="github-button" href="https://github.com/thingsboard/thingsboard" data-icon="octicon-star" data-style="mega" data-count-href="/thingsboard/thingsboard/stargazers" data-count-api="/repos/thingsboard/thingsboard#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star thingsboard/thingsboard on GitHub">Star</a>
+		<iframe id="gh-btn-frame" src="https://ghbtns.com/github-btn.html?user=thingsboard&repo=thingsboard&type=star&count=true&size=large"
+				frameborder="0"
+				scrolling="0" width="130px" height="30px"></iframe>
 	</div>
 	<div class="nav-buttons" data-auto-burger="primary">
 		<a href="/docs/" class="button" id="viewDocs" data-auto-burger-exclude>View Documentation</a>
