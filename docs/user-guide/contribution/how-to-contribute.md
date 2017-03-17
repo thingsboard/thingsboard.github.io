@@ -77,18 +77,18 @@ Please refer [here](/docs/user-guide/install/config/) for the detail description
 
 #### Running development environment
 
-##### Running server-side container
-
-To start server-side container please run main method of **org.thingsboard.server.ThingsboardServerApplication** class that is located in *application* module from the *IDE*.
-
 ##### Running UI container
 
 To start UI container you'll need to install **Node.js** first. Once **Node.js** installed you can start container by executing next command:
 
 ```bash
 cd ${FORKED_THINGSBOARD_FOLDER}/ui
-node server.js
+mvn clean install -P npm-start
 ```
+
+##### Running server-side container
+
+To start server-side container please run main method of **org.thingsboard.server.ThingsboardServerApplication** class that is located in *application* module from the *IDE*.
 
 Navigate to http://localhost:3000/ and login into **Thingsboard** using demo data credentials:
 
