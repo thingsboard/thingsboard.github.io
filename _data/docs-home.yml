@@ -47,8 +47,8 @@ toc:
   section:
   - title: Persist and visualize AWS IoT data
     path: /docs/iot-gateway/integration-with-aws-iot/
-##  - title: IoT data analytics using Apache Spark
-##    path: /docs/samples/analytics/spark-integration-with-thingsboard/
+  - title: IoT data analytics using Apache Spark
+    path: /docs/samples/analytics/spark-integration-with-thingsboard/
 - title: Security
   section:
   - title: MQTT over SSL

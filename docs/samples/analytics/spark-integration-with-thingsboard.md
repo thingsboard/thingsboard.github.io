@@ -62,6 +62,34 @@ Now we need to configure the Rule that will be used to push wind speed data from
 
 [**Download**](/docs/samples/analytics/resources/windspeed_telemetry_rule.json) the json with plugin descriptor 
 and use this [**instructions**](/docs/user-guide/ui/rules/#rule-import) to import it to your instance.
+
+Let's review main rule configuration below.
+
+##### Attributes filter
+
+Thingsboard may process data from completely different devices. We will use filter by device attributes in order to filter out data that belongs to Weather Station devices.
+
+The filter expression below validates that two attributes are set for particular device: **deviceType** and **geoZone**. 
+You may notice that we check that **deviceType** is equal to "WeatherStation". The **cs** variable is a map that contains all client-side attributes. 
+See corresponding [**filter**](/docs/reference/filters/device-attributes-filter/) documentation for more details.  
+ 
+![image](/images/samples/analytics/spark/kafka-rule-attributes.png)
+
+
+##### Timeseries data filter
+
+Each device connected to Thingsboard may upload multiple telemetry keys simultaneously on independently. 
+In some use cases you may need to process only certain sub-set of the data. We will use telemetry data filter to achieve this.  
+
+The filter expression below validates that **windSpeed** telemetry is present in the processed message.
+
+![image](/images/samples/analytics/spark/kafka-rule-timeseries.png)
+ 
+See corresponding [**filter**](/docs/reference/filters/device-telemetry-filter/) documentation for more details.  
+ 
+
+##### Kafka plugin action
+
  
 Topic name in our case is **'sensors-telemetry'**:
  
