@@ -20,7 +20,7 @@ This article describes development and configuration steps we have done in order
 
 The prototype is open-source and is also based on open-source technologies, so you are able to use it for building commercial products.
 
-   ![image](/images/samples/monitoring/facilities-management.png)
+   ![image](/images/samples/monitoring/facilities-management.svg)
 
 ## Devices and Connectivity
 

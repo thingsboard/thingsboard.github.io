@@ -20,7 +20,7 @@ We recommend to use second option and will cover basic configuration steps below
 
 ### Overview
 
-![image](/images/gateway/aws-iot/aws-iot-gateway-integration.png)
+![image](/images/gateway/aws-iot/aws-iot-gateway-integration.svg)
 
 Thingsboard IoT Gateway is a light-weight service that connects to both AWS IoT MQTT broker and Thingsboard MQTT server and acts as aproxy or API bridge.
 You are able to configure the Gateway to subscribe to certain AWS IoT topics, convert incoming data to unified format and push it to Thingsboard.
