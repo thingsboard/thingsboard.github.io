@@ -18,7 +18,7 @@ You can host Cassandra on the same nodes where you install Thingsboard or on sep
 
 We assume following topology
  
-![image](/images/user-guide/cluster-topology.png)
+![image](/images/user-guide/cluster-topology.svg)
  
 In this case, both Zookeeper and Cassandra nodes are deployed in cluster mode. 
 We use two nodes clusters only for demonstration purposes. 

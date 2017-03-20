@@ -28,7 +28,7 @@ IoT devices connect to Thingsboard server via MQTT and issue "publish" commands 
 Size of single publish message is approximately 100 bytes. 
 [MQTT](http://mqtt.org/) is light-weight publish/subscribe messaging protocol and offers number of advantages over HTTP request/response protocol.
  
-![image](/images/reference/performance/performance-diagram-0.png)
+![image](/images/reference/performance/performance-diagram-0.svg)
 
 Thingsboard server processes MQTT publish messages and stores them to Cassandra asynchronously.
 Server may also push data to websocket subscriptions from the Web UI dashboards (if present).
@@ -55,7 +55,7 @@ We would like to recommend [this article](http://www.datastax.com/dev/blog/java-
 
 We have decided to move to AWS EC2 instances to be able to share both results and tests we executed. We start running tests on [c4.xlarge](http://www.ec2instances.info/?selected=c4.xlarge) instance (4 vCPUs and 7.5 Gb of RAM) with Cassandra and Thingsboard services co-located.
 
-![image](/images/reference/performance/performance-diagram-1.png)
+![image](/images/reference/performance/performance-diagram-1.svg)
 
 Test specification:
 
@@ -161,7 +161,7 @@ So, we decided to move Cassandra to three [c4.xlarge](http://www.ec2instances.in
 and launch gatling stress test tool from two separate [c4.xlarge](http://www.ec2instances.info/?selected=c4.xlarge) instances simultaneously 
 to minimize possible affect on latency and throughput by thirdparty.
 
-![image](/images/reference/performance/performance-diagram-2.png)
+![image](/images/reference/performance/performance-diagram-2.svg)
 
 Test specification:
 

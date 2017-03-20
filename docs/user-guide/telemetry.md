@@ -22,7 +22,7 @@ Thingsboard provides rich set of features related to telemetry data:
 
 This guide provides overview of the features listed above and some useful links to get more details.  
 
-![image](/images/user-guide/telemetry.png)
+![image](/images/user-guide/telemetry.svg)
 
 ## Device telemetry upload API
 

@@ -50,8 +50,8 @@ $headline-wrapper-margin-bottom: 40px
 $quickstart-button-padding: 0 50px
 $vendor-strip-font-size: 16px
 
-//dashboard
-$dashboard-section-height: 400px
+// ocean nodes
+$ocean-nodes-padding-Y: 40px
 
 //features
 $features-h3-margin-bottom: 40px
@@ -133,7 +133,9 @@ $feature-box-div-width: 45%
 						padding: 0 10px
 						line-height: 40px
 
-	#oceanNodes
+	.oceanNodes
+		padding-top: $ocean-nodes-padding-Y
+		padding-bottom: $ocean-nodes-padding-Y
 		h3
 			text-align: left
 			margin-bottom: 18px
@@ -187,13 +189,6 @@ $feature-box-div-width: 45%
 			img
 				width: 100%
 
-
-	#dashboard
-		height: $dashboard-section-height
-		display: block
-
-		& > .light-text
-			display: block
 
 	#video
 		width: $main-max-width

@@ -26,7 +26,7 @@ In order to use more familiar names, we will name device-originated RPC calls as
 and server-originated RPC calls as **server-side** RPC calls.
   
    {:refdef: style="text-align: center;"}
-   ![image](/images/user-guide/client-side-rpc.png)
+   ![image](/images/user-guide/client-side-rpc.svg)
    {: refdef}  
 
 Server-side RPC calls can be divided into one-way and two-way:
@@ -35,14 +35,14 @@ Server-side RPC calls can be divided into one-way and two-way:
    RPC call may fail only if there is no active connection with the target device within configurable timeout period.
    
    {:refdef: style="text-align: center;"}
-   ![image](/images/user-guide/one-way-rpc.png)
+   ![image](/images/user-guide/one-way-rpc.svg)
    {: refdef}
    
  - Two-way RPC request is sent to the device and expects to receive response from the device within certain timeout. 
    Server-side request is blocked until the target device will reply to the request.
 
    {:refdef: style="text-align: center;"}
-   ![image](/images/user-guide/two-way-rpc.png)
+   ![image](/images/user-guide/two-way-rpc.svg)
    {: refdef}
 
 

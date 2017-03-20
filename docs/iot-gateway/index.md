@@ -17,11 +17,8 @@ See [**What is Thingsboard IoT Gateway?**](/docs/iot-gateway/what-is-iot-gateway
 [**Getting Started**](/docs/iot-gateway/getting-started)
 : Provides an overview of the gateway functionality and classical "Hello World" guide.
 
-[**Installation guide**](/docs/iot-gateway/installation-options/)
+[**Installation guide**](/docs/iot-gateway/installation/)
 : Covers Thingsboard IoT Gateway installation on various platforms.
 
 [**Configuration**](/docs/iot-gateway/configuration/)
 : Describes configuration of the core gateway services and various extensions. 
-
-[**Troubleshooting**](/docs/iot-gateway/troubleshooting/)
-: Covers description of most common installation, configuration and runtime issues.
