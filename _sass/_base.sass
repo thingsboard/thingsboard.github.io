@@ -223,6 +223,9 @@ header
 .demo-dashboards-carousel
 	padding-top: 25px
 
+.dashboard-item
+	outline: none
+
 #dashboard_description
 	padding-top: 15px
 	h3
@@ -231,58 +234,73 @@ header
 #thingsboard_feedbacks
 	padding-top: 30px
 
-.carousel-item
+.overlay-link
 	outline: none
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	opacity: 0
 
 .feedbacks-carousel
-	.carousel-item
-		background: #fff
-		box-shadow: 2px 2px 15px #ccc
-		padding: 10px 20px 20px 25px
-		margin: 10px
-		color: #333
+	.slick-track
+		display: flex
+		.slick-slide
+			display: flex
+			height: auto
+			align-items: center
+			justify-content: center
+
+.feedback-item
+	outline: none
+	background: #fff
+	box-shadow: 2px 2px 15px #ccc
+	padding: 10px 20px 20px 25px
+	margin: 10px
+	color: #333
 	.feedback-logo-container
 		float: top
 		text-align: center
-	.feedback-logo
-		display: inline-block
-		border-radius: 50%
-		box-shadow: 0px 2px 15px #aaa		
-		width: 80px
-		height: 80px
+		.feedback-logo
+			display: inline-block
+			border-radius: 50%
+			box-shadow: 0px 2px 15px #aaa
+			width: 80px
+			height: 80px
 	.feedback-content
 		margin-top: 10px
 		margin-left: 20px
 		margin-right: 20px
-	blockquote
-		quotes: "“" "”" "“" "”"
-		&:before
-			color: #999
-			content: open-quote
-			height: 0
-			font-size: 2em
-			line-height: 0.1em
-			margin-left: -.55em
-			margin-right: 0.15em
-			vertical-align: -0.4em
-		&:after
-			color: #999
-			content: close-quote
-			height: 0
-			font-size: 2em
-			line-height: 0.1em
-			margin-left: 0.15em
-			vertical-align: -0.4em
-		p
-			display: inline
-			color: #555
-			font-style: italic
-			font-size: 16px
-			line-height: 18px
-	.author
-		color: #333
-		padding-top: 5px
-		text-align: right
+		.author
+			color: #333
+			padding-bottom: 10px
+			text-align: center
+		blockquote
+			quotes: "“" "”" "“" "”"
+			&:before
+				color: #999
+				content: open-quote
+				height: 0
+				font-size: 2em
+				line-height: 0.1em
+				margin-left: -.55em
+				margin-right: 0.15em
+				vertical-align: -0.4em
+			&:after
+				color: #999
+				content: close-quote
+				height: 0
+				font-size: 2em
+				line-height: 0.1em
+				margin-left: 0.15em
+				vertical-align: -0.4em
+			p
+				display: inline
+				color: #555
+				font-style: italic
+				font-size: 16px
+				line-height: 18px
 
 .demoDashboardWrapper
 	position: relative

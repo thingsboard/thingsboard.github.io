@@ -37,7 +37,7 @@ title: Open-source IoT Platform
 			<p class="center">Thingsboard allows you to create rich IoT Dashboards for data visualization and remote device control in real-time.
 				More than 30 customizable widgets allows you to build end-user custom dashboards for most IoT use-cases.</p>
 			<div class="demo-dashboards-carousel">
-				<div class="carousel-item">
+				<div class="dashboard-item">
 					<div class="demoDashboardWrapper">
 						<div class="demoDashboard">
 							<img src="images/demo/energy-monitoring-dashboard.png">
@@ -51,7 +51,7 @@ title: Open-source IoT Platform
 						<a target="_blank" href="https://demo.thingsboard.io/demo?dashboardId=e8e409c0-f2b5-11e6-a6ee-bb0136cc33d0&source=realtimeIotDashboards" class="button">Energy monitoring</a>
 					</div>
 				</div>
-				<div class="carousel-item" style="display: none;">
+				<div class="dashboard-item" style="display: none;">
 					<div class="demoDashboardWrapper">
 						<div class="demoDashboard">
 							<img src="images/demo/silos-monitoring-dashboard.png">
@@ -65,7 +65,7 @@ title: Open-source IoT Platform
 						<a target="_blank" href="https://demo.thingsboard.io/demo?dashboardId=1f9828d0-058e-11e7-87f7-bb0136cc33d0&source=realtimeIotDashboards" class="button">Smart agriculture</a>
 					</div>
 				</div>
-				<div class="carousel-item" style="display: none;">
+				<div class="dashboard-item" style="display: none;">
 					<div class="demoDashboardWrapper">
 						<div class="demoDashboard">
 							<img src="images/demo/fleet-monitoring-dashboard.png">
@@ -88,12 +88,14 @@ title: Open-source IoT Platform
 	<main>
 		<div class="content">
 			<div class="feedbacks-carousel">
-				<div class="carousel-item">
+				<div class="feedback-item">
+					<a class="overlay-link" href="/docs/feedback/"></a>
 					<div class="feedback-logo-container">
 						<img class="feedback-logo" src="/images/feedbacks/logo0.jpg">
 						</img>
 					</div>
 					<div class="feedback-content">
+						<p class="author">David Eitzinger, Managing Director at Berliner Energieinstitut GmbH</p>
 						<blockquote>
 							<p>We were struggling trying to implement our own IOT infrastructure when
 								Thingsboard suddenly appeared. Immediately we started testing and were
@@ -110,15 +112,15 @@ title: Open-source IoT Platform
 								quality of Thingsboard as well as the speed of development continues to
 								impress me.</p>
 						</blockquote>
-						<p class="author">David Eitzinger, Managing Director at Berliner Energieinstitut GmbH</p>
 					</div>
 				</div>
-				<div class="carousel-item" style="display: none;">
+				<div class="feedback-item" style="display: none;">
 					<div class="feedback-logo-container">
 						<img class="feedback-logo" src="/images/feedbacks/logo3.jpg">
 						</img>
 					</div>
 					<div class="feedback-content">
+						<p class="author">Manolis Nikiforakis, CEO at EXM.gr</p>
 						<blockquote>
 							<p>Thingsboard is the new kid on the (IoT PaaS) block. Its designed by developers for developers
 								with emphasis to end-customers, with promising features that do not existing on other open source
@@ -130,15 +132,15 @@ title: Open-source IoT Platform
 								We look forward to see Thingsboard being established as a weapon of choice for various IoT use cases
 								and from our end we will try to contribute as much possible to it's success.</p>
 						</blockquote>
-						<p class="author">Manolis Nikiforakis, CEO at EXM.gr</p>
 					</div>
 				</div>
-				<div class="carousel-item" style="display: none;">
+				<div class="feedback-item" style="display: none;">
 					<div class="feedback-logo-container">
 						<img class="feedback-logo" src="/images/feedbacks/logo2.jpg">
 						</img>
 					</div>
 					<div class="feedback-content">
+						<p class="author">Dick Chan, CEO at Knode.co</p>
 						<blockquote>
 							<p>After a month of research, we found and selected Thingsboard. Thingsboard stood out as it is fully integrated and
 								built from industrial strength components like Netty, Cassandra and Akka, which gave us the confidence that it can
@@ -148,21 +150,20 @@ title: Open-source IoT Platform
 							<p>Another thing we love Thingsboard is its user interface/dashboard and its widget library. We can build beautiful and
 								professional IoT dashboard with drag and drop of the widgets. If you see the official demo, you must agree with me.</p>
 						</blockquote>
-						<p class="author">Dick Chan, CEO at Knode.co</p>
 					</div>
 				</div>
-				<div class="carousel-item" style="display: none;">
+				<div class="feedback-item" style="display: none;">
 					<div class="feedback-logo-container">
 						<img class="feedback-logo" src="/images/feedbacks/logo1.jpg">
 						</img>
 					</div>
 					<div class="feedback-content">
+						<p class="author">Simon Judge, Co-founder at BeaconZone</p>
 						<blockquote>
 							<p>Thingsboard offers a secure, scalable IoT solution that, being Open Source, we can control.
 								Having created our own Thingsboard instance, we have found it to be very customisable via widgets,
 								the rule engine and the plugin system allowing it to be used in a variety of specialist situations.</p>
 						</blockquote>
-						<p class="author">Simon Judge, Co-founder at BeaconZone</p>
 					</div>
 				</div>
 			</div>
@@ -295,7 +296,7 @@ title: Open-source IoT Platform
 				function() {
 					$(document).ready(function(){
 						var demoDashboardsCarousel = $('.demo-dashboards-carousel');
-						$('.carousel-item', demoDashboardsCarousel).css('display', 'block');
+						$('.dashboard-item', demoDashboardsCarousel).css('display', 'block');
 						demoDashboardsCarousel.slick({
 							slidesToShow: 1,
 							slidesToScroll: 1,
@@ -313,14 +314,22 @@ title: Open-source IoT Platform
 							]
 						});
 						var feedbacksCarousel = $('.feedbacks-carousel');
-						$('.carousel-item', feedbacksCarousel).css('display', 'block');
+						$('.feedback-item', feedbacksCarousel).css('display', 'block');
 						feedbacksCarousel.slick({
 							slidesToShow: 1,
 							slidesToScroll: 1,
 							autoplay: true,
 							autoplaySpeed: 20000,
-							arrows: false,
-							dots: true
+							arrows: true,
+							dots: true,
+							responsive: [
+								{
+									breakpoint: 750,
+									settings: {
+										arrows: false
+									}
+								}
+							]
 						});
 
 					});
