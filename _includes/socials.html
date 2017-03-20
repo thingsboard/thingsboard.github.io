@@ -1,9 +1,20 @@
 <div id="share"></div>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials.min.js"></script>
 <script>
-    $("#share").jsSocials({
-        shares: ["email", "twitter", "facebook", "googleplus", "linkedin", "pinterest", "stumbleupon", "whatsapp", "telegram"],
-        showLabel: false,
-        showCount: false
-    });
+    jqueryDefer(initSocials);
+    function initSocials() {
+        var scriptsList = [
+            {src: 'https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials.css', type: 'css'},
+            {src: 'https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials-theme-flat.css', type: 'css'},
+            {src: 'https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials.min.js', type: 'script'}
+        ];
+        loadNextScript(0, scriptsList,
+                function() {
+                    $("#share").jsSocials({
+                        shares: ["email", "twitter", "facebook", "googleplus", "linkedin", "pinterest", "stumbleupon", "whatsapp", "telegram"],
+                        showLabel: false,
+                        showCount: false
+                    });
+                }
+        );
+    }
 </script>

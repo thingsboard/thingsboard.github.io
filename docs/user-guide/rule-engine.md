@@ -34,7 +34,7 @@ For example, you may push incoming telemetry data to internal Cassandra DB, and 
 You are able to configure to ignore Kafka errors or report error back to device. 
 In this case, device may either retry the operation, re-send the data to different server or simply ignore the error.
 
- ![image](/images/user-guide/rule-engine.png)
+ ![image](/images/user-guide/rule-engine.svg)
  
 ## Rule vs Plugin
 
@@ -155,7 +155,7 @@ With Plugin you can:
  - communicate between instances of the same plugin in the Thingsboard cluster using asynchronous RPC calls.
  - persist and query events, telemetry data and device attributes.
 
- ![image](/images/user-guide/plugin-api.png)
+ ![image](/images/user-guide/plugin-api.svg)
  
 As we already discussed, Rules may communicate with Plugins using [Actions](#actions). Let's review other Plugin APIs.
  
@@ -180,9 +180,7 @@ Device may be connected via MQTT session to node A.
 Customer users may open a Web UI to observe telemetry data in real time and load balancer will forward their browsers to different nodes (B and C in our case).
 Telemetry plugin need to keep track of websocket subscriptions for particular device in order to push update to customer's browser.
 
-{:refdef: style="text-align: center;"} 
- ![image](/images/user-guide/plugin-rpc.png)
-{: refdef}
+ ![image](/images/user-guide/plugin-rpc.svg)
  
 Thingsboard Clustering and Actor models are covered in Thingsboard Architecture.
   

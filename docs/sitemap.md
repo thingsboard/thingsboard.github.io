@@ -3,18 +3,25 @@ layout: docwithnav
 
 ---
 <script language="JavaScript">
+
 var dropDownsPopulated = false;
-$( document ).ready(function() {
-  // When the document loads, get the metadata JSON, and kick off tbl render
-  $.get("/metadata.txt", function(data, status) {
-    metadata = $.parseJSON(data);
-    metadata.pages.sort(dynamicSort("t"));
-    mainLogic()
-    $(window).bind( 'hashchange', function(e) {
-      mainLogic();
+
+jqueryDefer(initLogic);
+
+function initLogic() {
+    $( document ).ready(function() {
+      // When the document loads, get the metadata JSON, and kick off tbl render
+      $.get("/metadata.txt", function(data, status) {
+        metadata = $.parseJSON(data);
+        metadata.pages.sort(dynamicSort("t"));
+        mainLogic()
+        $(window).bind( 'hashchange', function(e) {
+          mainLogic();
+        });
+      });
     });
-  });
-});
+}
+
 function mainLogic()
 {
   // If there's a tag filter, change the table/drop down output
@@ -38,6 +45,7 @@ function mainLogic()
   renderTable(currentTopics,"output");
 
 }
+
 function populateDropdowns()
 {
   // Keeping mainLogic() brief by functionizing the initialization of the
@@ -76,6 +84,7 @@ function populateDropdowns()
   }
   dropDownsPopulated = true;
 }
+
 function dropFilter(srcobj)
 {
   // process the change of a drop-down value
@@ -89,11 +98,13 @@ function dropFilter(srcobj)
     if($(srcobj).attr('id')!=tagName[i]) selectDropDown(tagName[i],"---");
   }
 }
+
 function selectDropDown(type,tag)
 {
   // change drop-down selection w/o filtering
   $("#" + type).val(tag);
 }
+
 </script>
 <style>
 #filters select{

@@ -20,7 +20,7 @@ Of course, analytics in this tutorial is quite simple, our goal is to highlight 
 
 ### Overview
 
-![image](/images/samples/analytics/spark/spark-thingsboard-integration.png)
+![image](/images/samples/analytics/spark/spark-thingsboard-integration.svg)
 
 Let's assume we have big amount of weather stations that are located in different geo-location zones. 
 Thingsboard is used to collect, store and visualize wind speed from this stations, but we are also interested in average wind speed in each geo-location zone.

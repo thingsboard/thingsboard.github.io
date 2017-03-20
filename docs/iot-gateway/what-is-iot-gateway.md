@@ -23,7 +23,7 @@ Thingsboard IoT Gateway provides following features:
 #### Architecture  
 
 {:refdef: style="text-align: center;"}
-![Thingsboard IoT Gateway architecture](/images/gateway/tb-gateway-opt.svg)
+![Thingsboard IoT Gateway architecture](/images/gateway/tb-gateway.svg)
 {: refdef}
 
 
