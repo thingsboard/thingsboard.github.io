@@ -52,7 +52,7 @@ Similar, to import the dashboard you should navigate to the **Dashboards** page 
 
 ![image](/images/user-guide/ui/import-dashboard.png)
 
-The dashboard import window should popup and you will be propted to upload the json file.
+The dashboard import window should popup and you will be prompted to upload the json file.
 
 ![image](/images/user-guide/ui/import-dashboard-window.png)
 
