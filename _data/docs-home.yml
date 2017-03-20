@@ -85,5 +85,5 @@ toc:
   section:
     - title: How to contribute
       path: /docs/user-guide/contribution/how-to-contribute/
-##    - title: Plugins development
-##      path: /docs/user-guide/contribution/plugins-development/
+    - title: Extensions (Plugins and Actions) development
+      path: /docs/user-guide/contribution/extensions-development/

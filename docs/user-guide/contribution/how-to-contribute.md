@@ -88,11 +88,20 @@ cd ${TB_WORK_DIR}/ui
 mvn clean install -P npm-start
 ```
 
-This will launch special server that will listen on 3000 port. All REST API and websocket requests will be forwarded to 8080 port. 
+This will launch special server that will listen on 3000 port. All REST API and websocket requests will be forwarded to 8080 port.
 
 ##### Running server-side container
 
-To start server-side container please run main method of **org.thingsboard.server.ThingsboardServerApplication** class that is located in *application* module from your *IDE*.
+To start server-side container you can use couple options.
+
+As a first option, you can run main method of **org.thingsboard.server.ThingsboardServerApplication** class that is located in *application* module from your *IDE*.
+
+As a second an option, you can start server-side from command line as a regular **Spring boot** application:
+
+```bash
+cd ${TB_WORK_DIR}
+java -jar application/targer/thingsboard-${VERSION}-boot.jar
+```
 
 ##### Dry run
 
