@@ -20,18 +20,25 @@ This guide provides overview of the features listed above and some useful links 
 Attributes are separated into three main groups:
  
  - **client-side** - attributes are reported and managed by the device application. 
-   For example: current software/firmware version, hardware specification, etc.
-   
-   ![image](/images/user-guide/сlient-side-attributes.png)
- 
+   For example: current software/firmware version, hardware specification, etc.     
+
+   {:refdef: style="text-align: center;"}
+   ![image](/images/user-guide/client-side-attributes.svg)
+   {: refdef}  
+      
  - **server-side** - attributes are reported and managed by the server-side application. Not visible to the device application.
    Some secret data that may be used by thingsboard rules but should not be available to the device.
    
-   ![image](/images/user-guide/server-side-attributes.png)
+   {:refdef: style="text-align: center;"}
+   ![image](/images/user-guide/server-side-attributes.svg)
+   {: refdef}  
+  
  - **shared** - attributes are reported and managed by the server-side application. Visible to the device application.
    For example: customer subscription plan, target software/firmware version.
    
-   ![image](/images/user-guide/shared-attributes.png)
+   {:refdef: style="text-align: center;"}
+   ![image](/images/user-guide/shared-attributes.svg)
+   {: refdef}  
 
 ## Device attributes API
 
