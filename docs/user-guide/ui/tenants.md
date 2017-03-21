@@ -3,6 +3,7 @@ layout: docwithnav
 assignees:
 - ashvayka
 title: Tenants
+description: Thingsboard Tenants management
 
 ---
 

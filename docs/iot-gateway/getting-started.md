@@ -3,6 +3,7 @@ layout: docwithnav
 assignees:
 - ashvayka
 title: Getting started with Thingsboard IoT Gateway
+description: Write your first IoT project using Thingsboard IoT Gateway
 
 ---
 

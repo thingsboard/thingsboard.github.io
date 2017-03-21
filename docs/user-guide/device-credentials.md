@@ -3,6 +3,7 @@ layout: docwithnav
 assignees:
 - vsosliuk
 title: Device authentication options
+description: Thingsboard IoT Device authentication options.
 
 ---
 

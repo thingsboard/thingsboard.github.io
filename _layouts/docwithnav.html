@@ -30,15 +30,15 @@
 </section>
 
 <section id="encyclopedia">
+  {% if site.data[foundTOC].hidetoc != "true" and page.hidetoc != "true" %}
   <div id="docsToc">
         <div class="pi-accordion">
-        {% if site.data[foundTOC].hidetoc != "true" %}
         {% assign tree = site.data[foundTOC].toc %}{% include tree.html %}
-        {% endif %}
         </div> <!-- /pi-accordion -->
     <button class="push-menu-close-button" onclick="tb.toggleToc()"></button>
   </div> <!-- /docsToc -->
-  <div id="docsContent">
+  {% endif %}
+  <div id="docsContent" {% if site.data[foundTOC].hidetoc == "true" or page.hidetoc == "true" %} class="noToc" {% endif %}>
         <!--p><a href="/editdocs#{{ page.path }}" id="editPageButton">Edit This Page</a></p-->
       {% if notitle != "true" %}<h1>{{ title }}</h1>{% endif %}
     {{ content }}
@@ -66,7 +66,9 @@
 
 {% include footer.html %}
 
+{% if site.data[foundTOC].hidetoc != "true" and page.hidetoc != "true" %}
 <button class="flyout-button" onclick="tb.toggleToc()"></button>
+{% endif %}
 
 <style>
   .cse .gsc-control-cse, .gsc-control-cse, {

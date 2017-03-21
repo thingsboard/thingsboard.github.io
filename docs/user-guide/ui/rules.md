@@ -3,6 +3,7 @@ layout: docwithnav
 assignees:
 - ashvayka
 title: Rules
+description: Thingsboard Rules management
 
 ---
 

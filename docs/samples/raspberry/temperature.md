@@ -1,6 +1,7 @@
 ---
 layout: docwithnav
 title: Temperature upload over MQTT using Raspberry Pi and DHT22 sensor
+description: Thingsboard IoT Platform sample for temperature data upload over MQTT using Raspberry Pi and DHT22 sensor.
 
 ---
 

@@ -3,6 +3,7 @@ layout: docwithnav
 assignees:
 - ikulikov
 title: Installing Thingsboard on Windows
+description: Installing Thingsboard on Windows
 
 ---
 

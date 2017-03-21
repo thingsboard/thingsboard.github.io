@@ -2,7 +2,8 @@
 layout: docwithnav
 assignees:
 - ashvayka
-title: Installing Thingsboard on AWS EC2 
+title: Installing Thingsboard on AWS EC2
+description: Installing Thingsboard on AWS EC2
 
 ---
 

@@ -1,6 +1,7 @@
 ---
 layout: docwithnav
 title: ESP8266 GPIO control over MQTT using Thingsboard
+description: Thingsboard IoT Platform sample for ESP8266 GPIO control over MQTT
 
 ---
 

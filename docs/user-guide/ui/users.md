@@ -3,6 +3,7 @@ layout: docwithnav
 assignees:
 - ashvayka
 title: Users
+description: Thingsboard Users management
 
 ---
 

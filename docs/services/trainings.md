@@ -1,6 +1,7 @@
 ---
 layout: docwithnav
 title: Training sessions
+description: Thingsboard training sessions
 
 ---
 

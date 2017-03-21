@@ -1,6 +1,7 @@
 ---
 layout: docwithnav
 title: Thingsboard Architecture
+description: Thingsboard IoT Platform architecture
 
 ---
 

@@ -1,6 +1,7 @@
 ---
 layout: docwithnav
 title: Temperature upload over MQTT using NodeMCU and DHT11 sensor
+description: Thingsboard IoT Platform sample for temperature data upload over MQTT using NodeMCU and DHT11 sensor.
 
 ---
 

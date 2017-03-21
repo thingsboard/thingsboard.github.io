@@ -3,6 +3,7 @@ layout: docwithnav
 assignees:
 - ashvayka
 title: Demo Account
+description: Thingsboard default demo accounts
 
 ---
 

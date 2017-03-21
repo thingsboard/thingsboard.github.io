@@ -1,6 +1,7 @@
 ---
 layout: docwithnav
 title: IoT data analytics using Apache Spark, Kafka and Thingsboard
+description: IoT device data analytics sample using Apache Spark, Kafka and Thingsboard
 
 ---
 

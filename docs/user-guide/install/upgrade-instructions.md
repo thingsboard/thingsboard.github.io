@@ -3,6 +3,7 @@ layout: docwithnav
 assignees:
 - ashvayka
 title: Upgrade instructions
+description: Thingsboard IoT platform upgrade instructions
 
 ---
 
