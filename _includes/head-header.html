@@ -1,8 +1,18 @@
 {% if page.title %}{% assign title=page.title %}{% endif %}
+{% if page.description %}{% assign description=page.description %}{% endif %}
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-    {% if !page.no_canonical %}<link rel="canonical" href="http://thingsboard.io{{page.url}}" />{% endif %}
+
+	{% if page.customTitle == "true" %}
+		<title>{{ title }}</title>
+		{% seo title=false %}
+	{% else %}
+		{% seo %}
+	{% endif %}
+
+
+    {% if !page.no_canonical %}<link rel="canonical" href="https://thingsboard.io{{page.url}}" />{% endif %}
 	<link rel="shortcut icon" type="image/png" href="/images/favicon.png">
 	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
 	<link rel="stylesheet" href="/css/styles.css">
@@ -152,7 +162,6 @@
 		ga('create', 'UA-88383331-1', 'auto');
 		ga('send', 'pageview');
 	</script>
-	<title>Thingsboard - {{ title }}</title>
 </head>
 <body>
 <div id="cellophane" onclick="tb.toggleMenu()"></div>

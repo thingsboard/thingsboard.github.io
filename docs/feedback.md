@@ -1,7 +1,6 @@
 ---
 layout: docwithnav
 title: Customers testimonials and community feedback
-
 ---
 
 <div class="feedback-item">

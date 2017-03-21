@@ -1,16 +1,16 @@
 ---
 layout: docwithnav
 title: Thingsboard Documentation
-
+description: Thingsboard documentation - learn about the platform and get your IoT applications running on Thingsboard
 ---
 
-<p>The Thingsboard documentation can help you set up Thingsboard, learn about the platform and get your applications running on Thingsboard.</p>
+<p>The Thingsboard documentation can help you set up Thingsboard, learn about the platform and get your IoT applications running on Thingsboard.</p>
 
 <p><a href="/docs/getting-started-guides/what-is-thingsboard" class="button">Thingsboard Overview</a></p>
 
 <h2>Hello World</h2>
 
-<p><a href="/docs/getting-started-guides/helloworld" class="button">Your first IoT application using Thingsboard</a></p>
+<p><a href="/docs/getting-started-guides/helloworld" class="button">Your first IoT project using Thingsboard</a></p>
 
 <h2>Installing Thingsboard</h2>
 

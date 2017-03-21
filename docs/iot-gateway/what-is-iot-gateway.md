@@ -6,7 +6,7 @@ title: What is Thingsboard IoT Gateway?
 
 ---
 
-The Thingsboard **IoT Gateway** is an open-source solution that allows you to integrate devices connected to legacy and third-party systems with Thingsboard.
+The Thingsboard **IoT Gateway** is an open-source solution that allows you to integrate IoT devices connected to legacy and third-party systems with Thingsboard.
 
 Thingsboard is an open-source IoT platform that enables rapid development, management and scaling of IoT applications. See [**What is Thingsboard?**](/docs/getting-started-guides/what-is-thingsboard/) if you are new platform user. 
 
@@ -14,8 +14,8 @@ Thingsboard is an open-source IoT platform that enables rapid development, manag
 
 Thingsboard IoT Gateway provides following features:
 
- - **OPC-UA** extension to collect data from devices that are connected to OPC-UA servers.
- - **MQTT** extension to control, configure and collect data from devices that are connected to external MQTT brokers using existing protocols.
+ - **OPC-UA** extension to collect data from IoT devices that are connected to OPC-UA servers.
+ - **MQTT** extension to control, configure and collect data from IoT devices that are connected to external MQTT brokers using existing protocols.
  - **Persistence** of collected data to guarantee data delivery in case of network and hardware failures.
  - **Automatic reconnect** to Thingsboard cluster.
  - Simple yet powerful **mapping** of incoming data and messages **to unified format**.
@@ -34,7 +34,7 @@ Especially, when we are talking about language APIs and existing libraries to wo
 
 The Gateway provides simple integration APIs, and encapsulates common Thingsboard related tasks: device provisioning, local data persistence and delivery, message converters/adaptors and other.
 As an application developer, you are able to choose Python, Go, C/C++ and other languages and connect to Thingsboard Gateway through external MQTT broker or OPC-UA server. 
-Devices that support other protocols may be connected to gateway by implementing custom extensions.
+IoT devices that support other protocols may be connected to gateway by implementing custom extensions.
 
 #### Project Roadmap
 
@@ -44,8 +44,8 @@ Thingsboard Gateway 1.2 provides ability to configure and control MQTT enabled d
 The Gateway project is currently in active development stage and you should expect following major features in next releases:
 
  - OPC-UA extenstion improvements:
-   - Ability to configure devices connected through the Gateway using Thingsboard [Attributes](/docs/user-guide/attributes) feature.
-   - Ability to control devices connected through the Gateway using Thingsboard [RPC](/docs/user-guide/rpc/) feature.
+   - Ability to configure IoT devices connected through the Gateway using Thingsboard [Attributes](/docs/user-guide/attributes) feature.
+   - Ability to control IoT devices connected through the Gateway using Thingsboard [RPC](/docs/user-guide/rpc/) feature.
  - Ability to configure Gateway distantly from Thingsboard [Dashboards](/docs/user-guide/visualization/).
  - Client-side load balancing based on information about Thingsboard cluster.
  - Ability to visualize collected device data on the Gateway Web UI. 
