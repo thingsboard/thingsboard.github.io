@@ -3,6 +3,7 @@ layout: docwithnav
 assignees:
 - ashvayka
 title: MQTT Extension Configuration
+description: MQTT protocol support for Thingsboard IoT Gateway
 
 ---
 

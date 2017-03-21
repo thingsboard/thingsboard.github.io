@@ -1,6 +1,7 @@
 ---
 layout: docwithnav
 title: GPS data upload and visualization using LinkIt ONE and Thingsboard
+description: Thingsboard IoT Platform sample for GPS data upload and visualization using LinkIt ONE
 
 ---
 

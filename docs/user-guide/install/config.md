@@ -3,6 +3,7 @@ layout: docwithnav
 assignees:
 - ashvayka
 title: Configuration
+description: Thingsboard IoT platform configuration guide
 
 ---
 

@@ -3,6 +3,7 @@ layout: docwithnav
 assignees:
 - vbabak
 title: Contribution Guide
+description: Thingsboard IoT Platform contribution guide
 
 ---
 

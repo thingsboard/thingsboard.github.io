@@ -1,6 +1,7 @@
 ---
 layout: docwithnav
 title: NodeMCU overview
+description: Thingsboard IoT Platform hardware samples for NodeMCU devices.
 
 ---
 

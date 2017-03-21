@@ -1,6 +1,7 @@
 ---
 layout: docwithnav
 title: Alarms based on sensor readings
+description: Triggering email alarms based on IoT sensor readings and configurable thresholds
 
 ---
 

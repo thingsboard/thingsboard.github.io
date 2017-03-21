@@ -3,6 +3,7 @@ layout: docwithnav
 assignees:
 - ashvayka
 title: What is Thingsboard IoT Gateway?
+description: Features and advantages of Thingsboard IoT Gateway 
 
 ---
 

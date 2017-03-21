@@ -3,6 +3,7 @@ layout: docwithnav
 assignees:
 - vsosliuk
 title: X.509 Certificate Based Authentication
+description: Thingsboard  X.509 Certificate based authentication for IoT devices and projects.
 
 ---
     

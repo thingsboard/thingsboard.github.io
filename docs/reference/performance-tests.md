@@ -1,6 +1,7 @@
 ---
 layout: docwithnav
 title: How to repeat the tests
+description: Thingsboard IoT Platform performance tests
 
 ---
 

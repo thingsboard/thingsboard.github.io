@@ -3,6 +3,7 @@ layout: docwithnav
 assignees:
 - vsosliuk
 title: MQTT over SSL
+description: Launching Thingsboard with secure MQTT protocol to connect your IoT devices and projects.
 
 ---
 

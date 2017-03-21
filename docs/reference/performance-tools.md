@@ -1,6 +1,7 @@
 ---
 layout: docwithnav
 title: Performance test tools
+description: Thingsboard IoT Platform data collection performance test tools
 
 ---
 

@@ -3,6 +3,7 @@ layout: docwithnav
 assignees:
 - ashvayka
 title: Installing Thingsboard IoT Gateway on Windows
+description: Installing Thingsboard IoT Gateway on Windows
 
 ---
 

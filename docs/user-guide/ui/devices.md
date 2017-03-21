@@ -3,6 +3,7 @@ layout: docwithnav
 assignees:
 - ashvayka
 title: Devices
+description: Thingsboard IoT Device management
 
 ---
 

@@ -3,7 +3,6 @@ abstract: "Services provided by Thingsboard authors."
 toc:
 - title: Services
   path: /docs/services/
-
 - title: Support plans
   path: /docs/services/support/
 - title: Training sessions

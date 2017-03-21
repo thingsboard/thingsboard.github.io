@@ -3,6 +3,7 @@ layout: docwithnav
 assignees:
 - ikulikov
 title: Installing Thingsboard IoT Gateway on Raspberry Pi 3 Model B
+description: Installing Thingsboard IoT Gateway on Raspberry Pi 3 Model B
 
 ---
 

@@ -1,6 +1,7 @@
 ---
 layout: docwithnav
 title: Professional services
+description: Thingsboard professional services for IoT projects implementation
 
 ---
 

@@ -1,6 +1,7 @@
 ---
 layout: docwithnav
 title: Raspberry Pi GPIO control over MQTT using Thingsboard
+description: Thingsboard IoT Platform sample for Raspberry Pi GPIO control over MQTT
 
 ---
 

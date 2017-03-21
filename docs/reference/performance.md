@@ -1,6 +1,7 @@
 ---
 layout: docwithnav
 title: Thingsboard Data Collection Performance
+description: Thingsboard IoT Platform data collection performance overview
 
 ---
 

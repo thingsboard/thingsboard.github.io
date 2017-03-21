@@ -3,6 +3,7 @@ layout: docwithnav
 assignees:
 - ashvayka
 title: Installing Thingsboard on Linux
+description: Installing Thingsboard on Linux
 
 ---
 
