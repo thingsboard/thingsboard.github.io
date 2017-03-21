@@ -3,6 +3,7 @@ layout: docwithnav
 assignees:
 - ashvayka
 title: Widgets Library
+description: Thingsboard Dashboard Widgets Library
 
 ---
 

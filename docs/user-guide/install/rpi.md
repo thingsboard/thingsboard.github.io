@@ -3,6 +3,7 @@ layout: docwithnav
 assignees:
 - ashvayka
 title: Installing Thingsboard on Raspberry Pi 3 Model B
+description: Installing Thingsboard IoT Platform on Raspberry Pi 3 Model B
 
 ---
 

@@ -3,11 +3,11 @@ layout: docwithnav
 assignees:
 - ashvayka
 title: What is Thingsboard?
-
+description: Thingsboard key features and advantages for rapid development of IoT projects and applications.
 ---
 
 
-Thingsboard is an open-source IoT platform that enables rapid development, management and scaling of IoT applications.
+Thingsboard is an open-source IoT platform that enables rapid development, management and scaling of IoT projects.
 
 With Thingsboard, you are able to:
 
@@ -17,7 +17,7 @@ With Thingsboard, you are able to:
  - Deliver device data to other systems.
  - Enable use-case specific features using customizable rules and plugins.  
 
-Our goal is to provide the out-of-the-box IoT solution that will enable server-side infrastructure for your IoT applications.
+Our goal is to provide the out-of-the-box IoT cloud or on-premises solution that will enable server-side infrastructure for your IoT applications.
 
 #### Thingsboard is:
 

@@ -3,6 +3,7 @@ layout: docwithnav
 assignees:
 - ashvayka
 title: Installation options
+description: Thingsboard installation instructions for various operation systems and cloud platforms
 
 ---
 

@@ -2,7 +2,8 @@
 layout: docwithnav
 assignees:
 - ashvayka
-title: Working with device attributes
+title: Working with IoT device attributes
+description: IoT device management using Thingsboard attributes feature
 
 ---
 

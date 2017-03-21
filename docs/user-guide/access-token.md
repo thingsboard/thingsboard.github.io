@@ -3,6 +3,7 @@ layout: docwithnav
 assignees:
 - vsosliuk
 title: Access Token based authentication
+description: Thingsboard Access Token based authentication.
 
 ---
 

@@ -1,6 +1,7 @@
 ---
 layout: docwithnav
 title: Email Plugin Configuration
+description: Triggering email notifications upon IoT Device data thresholds
 
 ---
 

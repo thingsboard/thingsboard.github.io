@@ -1,6 +1,8 @@
 ---
 layout: docwithnav
 title: Reference Documentation
+description: Thingsboard reference documentation and API overview 
+
 ---
 
 In the reference section, you can find reference documentation for Thingsboard APIs as well as our design docs and rule engine components. 

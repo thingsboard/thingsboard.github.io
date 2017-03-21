@@ -3,6 +3,7 @@ layout: docwithnav
 assignees:
 - ashvayka
 title: Getting Started
+description: Getting started with Thingsboard open-source IoT platform and simulated IoT devices
 
 ---
 

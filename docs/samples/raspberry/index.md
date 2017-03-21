@@ -1,6 +1,7 @@
 ---
 layout: docwithnav
 title: Raspberry Pi overview
+description: Thingsboard IoT Platform hardware samples for Raspberry Pi devices.
 
 ---
 

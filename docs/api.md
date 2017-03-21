@@ -1,6 +1,8 @@
 ---
 layout: docwithnav
 title: Thingsboard API reference
+description: Thingsboard API reference and supported IoT Protocols
+
 ---
 
 Thingsboard API consist of two main parts: device API and server-side API. 
