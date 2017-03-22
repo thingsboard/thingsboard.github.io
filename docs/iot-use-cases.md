@@ -10,6 +10,6 @@ Some of the use cases are listed below. Each use case is equipped with PoC dashb
 
  - [**Smart energy**](/docs/iot-use-cases/smart-energy/) 
 
- - [**Smart agriculture**](/docs/iot-use-cases/smart-agriculture/) 
+ - [**Smart farming**](/docs/iot-use-cases/smart-farming/) 
 
  - [**Fleet tracking**](/docs/iot-use-cases/fleet-tracking/) 

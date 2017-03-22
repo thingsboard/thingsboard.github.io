@@ -1,18 +1,20 @@
 ---
 layout: docwithnav
-title: Fleet tracking
-description: Fleet tracking with Thingsboard IoT Platform
+title: Fleet tracking and fleet management
+description: Fleet tracking and fleet management with Thingsboard IoT Platform
 
 ---
 
-* TOC
-{:toc}
+Thingsboard platform provides out-of-the-box components and APIs to dramatically reduce time to market and amount of efforts 
+for fleet tracking solutions and gps vehicle tracking systems.
+Save up to 90% of development time for your fleet tracking project by utilizing following benefits:
+ 
+ - Reliable and fault tolerant data collection for your vehicle trackers and other embedded sensors.
+ - Advanced and flexible IoT data visualization for both real-time and historical vehicle data.
+ - Customizable end-user dashboards to share data from the vehicle tracking system with end users and customers.
+ - Integration with third-party analytics frameworks and solutions for advanced insights and import those insights back to your vehicle tracking system.
 
-## Overview
-
-Thingsboard platform allows to track vehicles state and alerts via various sensors, plot vehicle routes 
-in real-time and browse their sensors reading history at the same time using customizable high quality 
-widgets and dashboards.
+The platform provides production ready server infrastructure to connect your smart cars and vehicles, collect, store and analyze various vehicle data, and share results of the analysis with your customers and end-users.
 
 ## Live dashboard
 
