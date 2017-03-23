@@ -9,4 +9,4 @@ description: SigFox IoT data collection and visualization using Thingsboard IoT 
 {:toc}
 
 
-TODO: sigfox module
+COMING SOON

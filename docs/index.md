@@ -33,6 +33,7 @@ description: Thingsboard documentation - learn about the platform and get your I
 <ul>
 <li><b><a href="/docs/iot-gateway/integration-with-aws-iot/">AWS IoT</a></b> - Describes how to persist and visualize data from AWS IoT using Thingsboard.</li>
 <li><b><a href="/docs/samples/analytics/spark-integration-with-thingsboard/">Apache Spark</a></b> - Describes how to use Apache Spark for analysis of device data collected by Thingsboard.</li>
+<li><b><a href="/docs/iot-gateway/sigfox-iot-data-visualization/">Sigfox</a></b> - SigFox IoT data collection and visualization using Thingsboard.</li>
 </ul>
 
 
