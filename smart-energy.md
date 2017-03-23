@@ -12,6 +12,7 @@ Save up to 90% of development time for your smart energy solution by utilizing f
  - Advanced and flexible data visualization for real-time and historical smart energy monitoring.
  - Customizable end-user dashboards to share results of energy efficiency monitor and analysis.
  - Integration with third-party analytics frameworks and solutions for advanced electricity usage monitoring.
+ - Enable energy management by utilizing Thingsboard API to control and manage smart meters.
 
 The platform provides production ready server infrastructure to connect your smart meter devices, collect, store and analyze energy monitoring data, and share results of the analysis with your customers and end-users.
 
@@ -21,13 +22,13 @@ The following dashboard is a sample of smart energy IoT data visualization that 
 
 <iframe id="demoFrame" src="https://demo.thingsboard.io/demo?dashboardId=e5e72680-0eda-11e7-942c-bb0136cc33d0&source=docs" frameborder="0" height="600px" width="100%"></iframe>
 
-## Smart Energy solution overview
+## Smart energy solution overview
  
-The diagram below identifies data flow and integration points for typical smart energy solution that uses Thingsboard platform to collect and analyze energy monitoring data from smart meters
-  
-TODO: Diagram
+The diagram below identifies data flow and integration points for typical smart energy solution that uses Thingsboard platform to collect and analyze energy monitoring data from smart meters.
 
-## Customer feedback
+![Smart energy solution diagram](/images/iot-use-cases/smart-energy-monitoring.svg)
 
-TODO: David's feedback
+## Learn more
 
+<a style="margin: 10px;" href="/docs/getting-started-guides/helloworld/" class="button">Getting started</a>
+<a style="margin: 10px;" href="/docs/feedback/" class="button">Customer feedback</a>
