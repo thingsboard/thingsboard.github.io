@@ -371,6 +371,22 @@ You can click on the device card and observe delivered attributes and telemetry 
 ![image](/images/gateway/device-opc-telemetry.png)
 {: refdef}
 
+## Step 10. Connect to Sigfox Backend
+
+In this step we will connect to Sigfox Backend in order to start collecting data from sigfox modules.
+
+Navigate to gateway configuration folder and edit **tb-gateway.yml** file.
+Configuration folder location:
+
+```bash
+Windows: YOUR_INSTALL_DIR/conf
+Linux: /etc/tb-gateway/conf
+```
+
+Change **sigfox.enabled** property value to **true**.
+
+/docs/iot-gateway/getting-started/#step-10-connect-to-sigfox-backend
+
 ## Next steps
 
 Explore guides related to main Thingsboard features:
