@@ -21,6 +21,9 @@ The platform provides production ready server infrastructure to connect your sma
 The following dashboard is a sample of vehicle routes and state indicators visualization that may be embedded to your fleet tracking project.
 
 <iframe id="demoFrame" src="https://demo.thingsboard.io/demo?dashboardId=83cbe060-0edc-11e7-942c-bb0136cc33d0&source=docs" frameborder="0" height="620px" width="100%"></iframe>
+<div class="center">
+    <a target="_blank" href="https://demo.thingsboard.io/demo?dashboardId=3d0bf910-ee09-11e6-b619-bb0136cc33d0&source=realtimeIotDashboards" class="button">Live demo</a>
+</div>
 
 ## Fleet tracking solution overview
  

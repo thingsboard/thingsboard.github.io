@@ -24,6 +24,9 @@ The platform provides production ready server infrastructure to connect your IoT
 The following dashboard is a sample of smart farming IoT data visualization that may be embedded to your agriculture project or future farm solution.
 
 <iframe id="demoFrame" src="https://demo.thingsboard.io/demo?dashboardId=198c2b60-0edc-11e7-942c-bb0136cc33d0&source=docs" frameborder="0" height="600px" width="100%"></iframe>
+<div class="center">
+    <a target="_blank" href="https://demo.thingsboard.io/demo?dashboardId=1f9828d0-058e-11e7-87f7-bb0136cc33d0&source=realtimeIotDashboards" class="button">Live demo</a>
+</div>
 
 ## Smart farming solution overview
  

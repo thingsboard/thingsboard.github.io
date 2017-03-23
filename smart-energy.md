@@ -21,6 +21,9 @@ The platform provides production ready server infrastructure to connect your sma
 The following dashboard is a sample of smart energy IoT data visualization that may be embedded to your IoT project or solution. 
 
 <iframe id="demoFrame" src="https://demo.thingsboard.io/demo?dashboardId=e5e72680-0eda-11e7-942c-bb0136cc33d0&source=docs" frameborder="0" height="600px" width="100%"></iframe>
+<div class="center">
+    <a target="_blank" href="https://demo.thingsboard.io/demo?dashboardId=e8e409c0-f2b5-11e6-a6ee-bb0136cc33d0&source=realtimeIotDashboards" class="button">Live demo</a>
+</div>
 
 ## Smart energy solution overview
  
