@@ -19,9 +19,20 @@ Save up to 90% of development time for your smart farming project by utilizing f
 
 The platform provides production ready server infrastructure to connect your IoT devices, store and analyze collected IoT data, optimizing returns on inputs and resources.
 
-## Live dashboard
+## Smart farming dashboard
 
 The following dashboard is a sample of smart farming IoT data visualization that may be embedded to your agriculture project or future farm solution.
 
 <iframe id="demoFrame" src="https://demo.thingsboard.io/demo?dashboardId=198c2b60-0edc-11e7-942c-bb0136cc33d0&source=docs" frameborder="0" height="600px" width="100%"></iframe>
+
+## Smart farming solution overview
+ 
+The diagram below identifies data flow and integration points for typical smart farming solution that uses Thingsboard platform to collect and analyze smart farming data from IoT sensors.
+
+![Smart farming solution diagram](/images/iot-use-cases/smart-farming.svg)
+
+## Learn more
+
+<a style="margin: 10px;" href="/docs/getting-started-guides/helloworld/" class="button">Getting started</a>
+<a style="margin: 10px;" href="/docs/feedback/" class="button">Customer feedback</a>
 
