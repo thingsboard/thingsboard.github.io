@@ -2,6 +2,7 @@
 layout: docwithnav
 title: Smart farming and smart agriculture 
 description: Smart farming, future farming and smart agriculture with Thingsboard IoT Platform
+horizontaltoc: "true"
 
 ---
 
@@ -21,12 +22,21 @@ The platform provides production ready server infrastructure to connect your IoT
 
 ## Smart farming dashboard
 
-The following dashboard is a sample of smart farming IoT data visualization that may be embedded to your agriculture project or future farm solution.
+The following interactive dashboard hosted on live demo server represents smart farming IoT data visualization that may be embedded to your IoT agriculture project or future farm solution. See dashboard description below.
 
-<iframe id="demoFrame" src="https://demo.thingsboard.io/demo?dashboardId=198c2b60-0edc-11e7-942c-bb0136cc33d0&source=docs" frameborder="0" height="600px" width="100%"></iframe>
-<div class="center">
-    <a target="_blank" href="https://demo.thingsboard.io/demo?dashboardId=1f9828d0-058e-11e7-87f7-bb0136cc33d0&source=realtimeIotDashboards" class="button">Live demo</a>
+<iframe class="demoDashboardFrame" src="https://demo.thingsboard.io/demo?dashboardId=198c2b60-0edc-11e7-942c-bb0136cc33d0&source=docs" frameborder="0" width="100%"></iframe>
+<div class="center" style="margin-bottom: 20px;">
+    <a target="_blank" style="padding: 0 40px;" href="https://demo.thingsboard.io/demo?dashboardId=1f9828d0-058e-11e7-87f7-bb0136cc33d0&source=realtimeIotDashboards" class="button">Live demo</a>
 </div>
+
+The attached dashboard demonstrates real-time data from IoT sensors that is collected using Thingsboard MQTT API. The data is stored in Cassandra DB on our demo server.
+
+We would like to highlight following features:
+
+ - low-latency updates using web-sockets.
+ - ability to zoom-in into the charts by selecting time range with the mouse.
+ - advanced tooltips and legend.
+ - dashboard toolbar in the top-right corner enables global time selector and switch between dashboards.
 
 ## Smart farming solution overview
  
@@ -34,8 +44,15 @@ The diagram below identifies data flow and integration points for typical smart 
 
 ![Smart farming solution diagram](/images/iot-use-cases/smart-farming.svg)
 
+You may notice that there is plenty of connectivity options for IoT sensors: either direct connection to the cloud or through the IoT Gateway.
+Platform supports industry standard encryption algorithms (SSL) and device credentials types (X.509 certificates and access tokens).
+The collected data is stored in Cassandra - fault-tolerant and reliable NoSQL database. 
+Thingsboard Rule Engine allows to forward incoming data to various analytics systems, such as Apache Spark or Hadoop using Kafka or other Message bus.  
+
 ## Learn more
 
 <a style="margin: 10px;" href="/docs/getting-started-guides/helloworld/" class="button">Getting started</a>
-<a style="margin: 10px;" href="/docs/feedback/" class="button">Customer feedback</a>
-
+<a style="margin: 10px;" href="/docs/feedback/" class="button">Customers feedback</a>
+<a style="margin: 10px;" href="/docs/#platform-features" class="button">Platform features</a>
+<a style="margin: 10px;" href="/docs/reference/architecture/" class="button">Architecture</a>
+<a style="margin: 10px;" href="/docs/contact-us/" class="button">Contact us</a>

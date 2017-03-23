@@ -2,6 +2,7 @@
 layout: docwithnav
 title: Fleet tracking and fleet management
 description: Fleet tracking and fleet management with Thingsboard IoT Platform
+horizontaltoc: "true"
 
 ---
 
@@ -18,12 +19,21 @@ The platform provides production ready server infrastructure to connect your sma
 
 ## Fleet tracking dashboard
 
-The following dashboard is a sample of vehicle routes and state indicators visualization that may be embedded to your fleet tracking project.
+The following interactive dashboard hosted on live demo server represents vehicle routes and state indicators visualization that may be embedded to your IoT fleet tracking project. See dashboard description below.
 
-<iframe id="demoFrame" src="https://demo.thingsboard.io/demo?dashboardId=83cbe060-0edc-11e7-942c-bb0136cc33d0&source=docs" frameborder="0" height="620px" width="100%"></iframe>
-<div class="center">
-    <a target="_blank" href="https://demo.thingsboard.io/demo?dashboardId=3d0bf910-ee09-11e6-b619-bb0136cc33d0&source=realtimeIotDashboards" class="button">Live demo</a>
+<iframe class="demoDashboardFrame" src="https://demo.thingsboard.io/demo?dashboardId=83cbe060-0edc-11e7-942c-bb0136cc33d0&source=docs" frameborder="0" width="100%"></iframe>
+<div class="center" style="margin-bottom: 20px;">
+    <a target="_blank" style="padding: 0 40px;" href="https://demo.thingsboard.io/demo?dashboardId=3d0bf910-ee09-11e6-b619-bb0136cc33d0&source=realtimeIotDashboards" class="button">Live demo</a>
 </div>
+
+The attached dashboard demonstrates real-time data from vehicle sensors that is collected using Thingsboard MQTT API. The data is stored in Cassandra DB on our demo server.
+
+We would like to highlight following features:
+
+ - low-latency updates using web-sockets.
+ - ability to zoom-in into the charts by selecting time range with the mouse.
+ - advanced tooltips and legend.
+ - dashboard toolbar in the top-right corner enables global time selector and switch between dashboards.
 
 ## Fleet tracking solution overview
  
@@ -31,7 +41,15 @@ The diagram below identifies data flow and integration points for typical fleet 
 
 ![Fleet tracking solution diagram](/images/iot-use-cases/fleet-tracking.svg)
 
+You may notice that there is plenty of connectivity options for vehicle sensors: either direct connection to the cloud or through the IoT Gateway.
+Platform supports industry standard encryption algorithms (SSL) and device credentials types (X.509 certificates and access tokens).
+The collected data is stored in Cassandra - fault-tolerant and reliable NoSQL database. 
+Thingsboard Rule Engine allows to forward incoming data to various analytics systems, such as Apache Spark or Hadoop using Kafka or other Message bus.  
+
 ## Learn more
 
 <a style="margin: 10px;" href="/docs/getting-started-guides/helloworld/" class="button">Getting started</a>
-<a style="margin: 10px;" href="/docs/feedback/" class="button">Customer feedback</a>
+<a style="margin: 10px;" href="/docs/feedback/" class="button">Customers feedback</a>
+<a style="margin: 10px;" href="/docs/#platform-features" class="button">Platform features</a>
+<a style="margin: 10px;" href="/docs/reference/architecture/" class="button">Architecture</a>
+<a style="margin: 10px;" href="/docs/contact-us/" class="button">Contact us</a>

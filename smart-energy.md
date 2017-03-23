@@ -2,6 +2,7 @@
 layout: docwithnav
 title: Smart energy monitoring, data visualization and energy efficiency analysis
 description: Smart energy monitoring and data visualization with Thingsboard IoT Platform
+horizontaltoc: "true"
 
 ---
 
@@ -20,9 +21,9 @@ The platform provides production ready server infrastructure to connect your sma
 
 The following interactive dashboard hosted on live demo server represents smart energy IoT data visualization that may be embedded to your IoT project or solution. See dashboard description below.
 
-<iframe id="demoFrame" src="https://demo.thingsboard.io/demo?dashboardId=e5e72680-0eda-11e7-942c-bb0136cc33d0&source=docs" frameborder="0" height="600px" width="100%"></iframe>
-<div class="center">
-    <a target="_blank" href="https://demo.thingsboard.io/demo?dashboardId=e8e409c0-f2b5-11e6-a6ee-bb0136cc33d0&source=realtimeIotDashboards" class="button">Live demo</a>
+<iframe class="demoDashboardFrame" src="https://demo.thingsboard.io/demo?dashboardId=e5e72680-0eda-11e7-942c-bb0136cc33d0&source=docs" frameborder="0" width="100%"></iframe>
+<div class="center" style="margin-bottom: 20px;">
+    <a target="_blank" style="padding: 0 40px;" href="https://demo.thingsboard.io/demo?dashboardId=e8e409c0-f2b5-11e6-a6ee-bb0136cc33d0&source=realtimeIotDashboards" class="button">Live demo</a>
 </div>
 
 The attached dashboard demonstrates real-time data from smart-meters that is collected using Thingsboard MQTT API. The data is stored in Cassandra DB on our demo server.
@@ -48,6 +49,7 @@ Thingsboard Rule Engine allows to forward incoming data to various analytics sys
 ## Learn more
 
 <a style="margin: 10px;" href="/docs/getting-started-guides/helloworld/" class="button">Getting started</a>
-<a style="margin: 10px;" href="/docs/feedback/" class="button">Customer feedback</a>
+<a style="margin: 10px;" href="/docs/feedback/" class="button">Customers feedback</a>
 <a style="margin: 10px;" href="/docs/#platform-features" class="button">Platform features</a>
-<a style="margin: 10px;" href="/docs/reference/architecture/" class="button">architecture</a>
+<a style="margin: 10px;" href="/docs/reference/architecture/" class="button">Architecture</a>
+<a style="margin: 10px;" href="/docs/contact-us/" class="button">Contact us</a>

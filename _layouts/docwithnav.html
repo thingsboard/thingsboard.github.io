@@ -30,16 +30,24 @@
   </div>
 </section>
 
+{% assign docContentClassList='' %}
+{% if site.data[foundTOC].hidetoc == "true" or page.hidetoc == "true" %}
+{% assign docContentClassList = docContentClassList | append: 'noToc' %}
+{% endif %}
+{% if page.horizontaltoc == "true" %}
+{% assign docContentClassList = docContentClassList | append: ' horizontalToc' %}
+{% endif %}
+
 <section id="encyclopedia">
   {% if site.data[foundTOC].hidetoc != "true" and page.hidetoc != "true" %}
-  <div id="docsToc">
+  <div id="docsToc" {% if page.horizontaltoc == "true" %} class="horizontal" {% endif %}>
         <div class="pi-accordion">
         {% assign tree = site.data[foundTOC].toc %}{% include tree.html %}
         </div> <!-- /pi-accordion -->
     <button class="push-menu-close-button" onclick="tb.toggleToc()"></button>
   </div> <!-- /docsToc -->
   {% endif %}
-  <div id="docsContent" {% if site.data[foundTOC].hidetoc == "true" or page.hidetoc == "true" %} class="noToc" {% endif %}>
+  <div id="docsContent" class="{{ docContentClassList }}">
         <!--p><a href="/editdocs#{{ page.path }}" id="editPageButton">Edit This Page</a></p-->
       {% if notitle != "true" %}<h1>{{ title }}</h1>{% endif %}
     {{ content }}

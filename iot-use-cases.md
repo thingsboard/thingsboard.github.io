@@ -1,7 +1,8 @@
 ---
 layout: docwithnav
 title: IoT use cases
-description: Thingsboard IoT Platform use cases 
+description: Thingsboard IoT Platform use cases
+horizontaltoc: "true"
 
 --- 
 
