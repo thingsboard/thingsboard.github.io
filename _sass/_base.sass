@@ -30,18 +30,16 @@ $header-height: 80px
 
 $logo-width: 220px
 
-$nav-buttons-margin-left: 30px
+$nav-buttons-margin-left: 10px
 
 $hamburger-size: 50px
 
 
 // main nav
-$main-nav-padding: 140px 0 30px
+$main-nav-padding: 120px 0 30px
 $main-nav-h5-margin-bottom: 1em
 $main-nav-h3-margin-bottom: 0.6em
-$nav-box-width: 16%
-$nav-box-sibling-margin-left: calc(10% / 2)
-$main-nav-main-sibling-margin-top: 60px
+$main-nav-main-sibling-margin-top: 40px
 $main-nav-left-button-size: 50px
 $main-nav-left-button-font-size: 18px
 
@@ -186,10 +184,10 @@ header
 .nav-buttons
 	float: right
 
-#viewDocs, #blog, #gettingStarted, #liveDemo, #githubButtonContainer
+#viewDocs, #useCases, #blog, #gettingStarted, #liveDemo, #githubButtonContainer
 	display: none
 
-#viewDocs, #blog
+#viewDocs, #blog, #useCases
 	border: 2px solid white
 	background-color: transparent
 	transition: 0.3s
@@ -366,10 +364,17 @@ header
 		white-space: nowrap
 		overflow: hidden
 		clear: both
+		&.headNav
+			display: flex
+			align-items: center
+			align-content: center
+			justify-content: center
+			flex-direction: row
 
 	.nav-box
-		float: left
 		white-space: normal
+		display: inline-block
+		padding: 0 10px
 
 	h3
 		a
@@ -421,7 +426,7 @@ header
 	header
 		box-shadow: 0 1px 2px $medium-grey
 
-	#viewDocs, #blog
+	#viewDocs, #blog, #useCases
 		border-color: $dark-grey
 		color: $dark-grey
 
@@ -471,9 +476,13 @@ footer
 		padding: 20px 0
 		max-width: 800px
 
-	nav, .newsletter
+	nav
+		display: flex
+		align-items: center
+		align-content: center
+		justify-content: center
+		flex-direction: column
 		a
-			width: 100%
 			text-align: center
 			display: inline-block
 			margin: 10px 0
@@ -482,6 +491,27 @@ footer
 			color: white
 			text-decoration: none
 
+	.newsletterSubsContainer
+		width: 100%
+		display: flex
+		align-items: center
+		align-content: center
+		justify-content: center
+		form#newsletter-form
+			fieldset
+				.newsletterInputs
+					display: flex
+					align-items: center
+					align-content: center
+					justify-content: center
+					flex-direction: column
+			.subsTitle
+				font-weight: 400
+				font-size: 20px
+				text-align: center
+				margin-bottom: 10px
+			#subsEmail
+				margin-bottom: 10px
 
 	.social
 		margin: 20px 0
@@ -502,7 +532,7 @@ footer
 
 
 
-#search, #wishField
+#search, #wishField, #subsEmail
 	background-color: transparent
 	padding: 10px
 	font-size: 16px
@@ -582,7 +612,7 @@ a.facebook
 	&:hover
 		background-position: -350px 100%
 
-#viewDocs, #blog
+#viewDocs, #blog, #useCases
 	display: none
 
 section
@@ -603,7 +633,7 @@ section
 		li
 			display: inline-block
 			height: 100%
-			margin-right: 20px
+			margin-right: 10px
 			float: left
 
 	a
@@ -661,7 +691,6 @@ section
 	padding: 50px 0
 	z-index: 999999
 	transition: 0.3s
-
 
 	.yah
 		& > .title
@@ -842,7 +871,10 @@ dd
 	&:after
 		transform: rotate(-45deg)
 
-
+iframe
+	&.demoDashboardFrame
+		height: 400px
+		padding: 20px 0
 
 #docsContent
 	position: relative
@@ -1329,7 +1361,22 @@ dd
 		font-weight: 500
 		font-size: 26px
 
+@media screen and (min-width: 960px)
+	iframe
+		&.demoDashboardFrame
+			height: 600px
+
+	@media screen and (max-width: 1300px)
+		iframe
+			&.demoDashboardFrame
+				width: 959px
+
 @media screen and (min-width: 1700px)
+
+	iframe
+		&.demoDashboardFrame
+			height: 810px
+
 	#docsContent
 
 		.services
@@ -1391,7 +1438,7 @@ html.search #docsContent
 
 
 // ocean nodes
-$ocean-nodes-padding-Y: 20px
+$ocean-nodes-padding-Y: 10px
 $ocean-nodes-main-margin-bottom: 60px
 $ocean-nodes-h3-margin-bottom: 30px
 
@@ -1443,6 +1490,7 @@ $feature-box-div-margin-bottom: 40px
 			max-width: 160px
 
 	&#intro
+		padding-top: 20px
 		main:first-child
 			.image-wrapper
 				max-width: 100%
@@ -1495,6 +1543,7 @@ $feature-box-div-margin-bottom: 40px
 		float: right
 
 #features
+	margin-top: 20px
 	h3
 		margin-bottom: $features-h3-margin-bottom
 
@@ -1676,47 +1725,6 @@ $feature-box-div-margin-bottom: 40px
 		
 		h5
 			font-size: 20px
-
-
-	#caseStudiesWrapper
-		position: relative
-		text-align: center
-		margin-bottom: 30px
-		
-		div
-			position: relative
-			display: inline-block
-			vertical-align: top
-			width: 100%
-			min-height: 230px
-			padding: 125px 10px 15px
-			margin-bottom: 30px
-			background-position: top center
-			background-repeat: no-repeat
-
-		div:nth-child(1)
-			background-image: url(/images/community_logos/pearson_logo.png)
-
-		div:nth-child(2)
-			background-image: url(/images/community_logos/box_logo.png)
-
-		div:nth-child(3)
-			background-image: url(/images/community_logos/ebay_logo.png)
-
-		div:nth-child(4)
-			background-image: url(/images/community_logos/wikimedia_foundation_logo.png)
-			
-		p
-			font-size: 20px
-			
-		a
-			position: absolute
-			bottom: 0
-			left: 50%
-			transform: translateX(-50%)
-			color: $blue
-			font-weight: 400
-
 
 // jSocials
 

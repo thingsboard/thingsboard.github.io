@@ -49,6 +49,8 @@ toc:
     path: /docs/iot-gateway/integration-with-aws-iot/
   - title: IoT data analytics using Apache Spark
     path: /docs/samples/analytics/spark-integration-with-thingsboard/
+  - title: SigFox IoT data collection and visualization
+    path: /docs/iot-gateway/sigfox-iot-data-visualization/
 - title: Security
   section:
   - title: MQTT over SSL

@@ -121,8 +121,13 @@ The presence of those values on the UI means that your gateway have successfully
   
 ## Step 7. Choose your extension
   
-Based on your use case, you can choose either to connect to external 
-[**MQTT broker**](/docs/iot-gateway/getting-started/#step-8-connect-to-external-mqtt-broker) or [**OPC-UA server**](/docs/iot-gateway/getting-started/#step-9-connect-to-external-opc-ua-server) or follow instruction for both steps.
+Based on your use case, you can choose following options:
+ 
+ - connect to [**MQTT broker**](/docs/iot-gateway/getting-started/#step-8-connect-to-external-mqtt-broker)
+ - connect to [**OPC-UA server**](/docs/iot-gateway/getting-started/#step-9-connect-to-external-opc-ua-server) 
+ - connect to [**Sigfox Backend**](/docs/iot-gateway/getting-started/#step-10-connect-to-sigfox-backend)
+
+or follow instruction for all steps.
   
 ## Step 8. Connect to external MQTT broker
 
@@ -370,6 +375,125 @@ You can click on the device card and observe delivered attributes and telemetry 
 {:refdef: style="text-align: center;"}
 ![image](/images/gateway/device-opc-telemetry.png)
 {: refdef}
+
+## Step 10. Connect to Sigfox Backend
+
+In this step we will connect to Sigfox Backend in order to start collecting data from sigfox modules.
+
+Navigate to gateway configuration folder and edit **tb-gateway.yml** file.
+Configuration folder location:
+
+```bash
+Windows: YOUR_INSTALL_DIR/conf
+Linux: /etc/tb-gateway/conf
+```
+
+Change **sigfox.enabled** property value to **true**.
+
+Restart your gateway using following commands
+
+```bash
+Windows: 
+net stop tb-gateway
+net start tb-gateway
+Linux: 
+sudo service tb-gateway restart
+```
+
+The **sigfox-config.json** contains configuration that allows mapping of JSON messages from Sigfox Backend to Thingsboard telemetry.
+
+### Step 10.1 Sigfox Backend configuration
+
+Let's assume we want to publish coordinates, temperature and humidity data from your Sigfox module to Thingsboard.
+In order to achieve this, you will need to select device type and configure custom callback from Sigfox Backend to our IoT Gateway.
+
+{:refdef: style="text-align: center;"}
+![image](/images/gateway/sigfox/4.sigfox_device_type_callback_configuration.jpg)
+{: refdef}
+
+Few things to notice:
+
+ - This is **UPLINK** data callback;
+ - **URL pattern** contains IoT Gateway host, port and device type id;
+ - **Authorization** header is used to authenticate Sigfox server;
+ - **POST** HTTP method is required;
+ - Message body is a **valid** JSON document;
+ - Message body uses **regular variables**: device, lat, lng;
+ - Message body uses **custom variables** which are case sensitive: Temperature and Humidity.
+
+We assume you have deployed the gateway on some cloud server to get the static IP address or hostname.
+ 
+### Step 10.2 Basic mapping example 
+
+The default mapping listed below will allow to convert data from Sigfox Backend and publish it to Thingsboard.  
+ 
+```json
+{
+  "deviceTypeConfigurations": [
+    {
+      "deviceTypeId": "YOUR_DEVICE_TYPE_ID",
+      "token": "SECURITY_TOKEN",
+      "converter": {
+        "deviceNameJsonExpression": "${$.device}",
+        "attributes": [
+          {
+            "type": "string",
+            "key": "lat",
+            "value": "${$.lat}"
+          },
+          {
+            "type": "string",
+            "key": "lng",
+            "value": "${$.lng}"
+          }
+        ],
+        "timeseries": [
+          {
+            "type": "double",
+            "key": "temperature",
+            "value": "${$.data.temperature}",
+            "transformer": {
+              "type": "intToDouble"
+            }
+          },
+          {
+            "type": "double",
+            "key": "humidity",
+            "value": "${$.data.humidity}",
+            "transformer": {
+              "type": "intToDouble"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
+```
+
+Few things to notice:
+
+ - **YOUR_DEVICE_TYPE_ID** need to be replaced with the actual value ("58cb911a5005742b3b4c41a0" in our case)
+ - **SECURITY_TOKEN** need to be replaced with the random value ("Basic U0lHRk9YX1RFU1RfVE9LRU4=" in our case)
+ - **[JsonPath](https://github.com/jayway/JsonPath)** expression are used to extract values from incoming JSON ("$.data.temperature" in our case).
+ - **All** JsonPath expressions need to be placed into **${}**.
+ - **Transformers** are used to convert data types. For example, integer to double using "(65536-X)/10" formula. You can plugin your own converters.
+
+### Step 10.3 Dry Run
+
+Once your Sigfox Beckend callback is configured, you may observe incoming messages in Thingsboard IoT Gateway logs.
+If everything is configured correctly, you will see new devices in your Tenant Administrator device list.
+
+{:refdef: style="text-align: center;"}
+![image](/images/gateway/sigfox/devices.png)
+{: refdef}
+
+You are able to open particular device and check that telemetry values arrived successfully.
+
+### Step 10.4 Custom Data type transformers
+
+As a gateway developer, you are able to fork and add custom transformers using following [interface](https://github.com/thingsboard/thingsboard-gateway/blob/release-1.2/src/main/java/org/thingsboard/gateway/extensions/sigfox/conf/mapping/DataValueTransformer.java). 
+Feel free to submit PRs with your custom transformer implementations if you believe that they may be useful for Thingsboard community.
 
 ## Next steps
 

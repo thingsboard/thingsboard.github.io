@@ -1,0 +1,11 @@
+bigheader: "Use cases"
+abstract: "IoT use cases where Thingsboard is being successfully utilized."
+toc:
+- title: Use cases
+  path: /iot-use-cases/
+- title: Smart energy
+  path: /smart-energy/
+- title: Smart farming
+  path: /smart-farming/
+- title: Fleet tracking
+  path: /fleet-tracking/

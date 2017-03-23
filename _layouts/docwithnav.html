@@ -17,6 +17,7 @@
           <li><a href="/docs/iot-gateway/" {% if site.data[foundTOC].bigheader == "Thingsboard IoT Gateway" %}class="YAH"{% endif %}>IOT GATEWAY</a></li>
           <li><a href="/docs/reference/" {% if site.data[foundTOC].bigheader == "Reference Documentation" %}class="YAH"{% endif %}>REFERENCE</a></li>
           <li><a href="/docs/samples/" {% if site.data[foundTOC].bigheader == "Samples" %}class="YAH"{% endif %}>SAMPLES</a></li>
+          <li><a href="/iot-use-cases/" {% if site.data[foundTOC].bigheader == "Use cases" %}class="YAH"{% endif %}>USE CASES</a></li>
           <li><a href="/docs/iot-video-tutorials/" {% if site.data[foundTOC].bigheader == "Video Tutorials" %}class="YAH"{% endif %}>VIDEO TUTORIALS</a></li>
           <li><a href="/docs/faq/" {% if site.data[foundTOC].bigheader == "Frequently Asked Questions" %}class="YAH"{% endif %}>FAQ</a></li>
           <li><a href="/docs/services/" {% if site.data[foundTOC].bigheader == "Services" %}class="YAH"{% endif %}>SERVICES</a></li>
@@ -29,39 +30,27 @@
   </div>
 </section>
 
+{% assign docContentClassList='' %}
+{% if site.data[foundTOC].hidetoc == "true" or page.hidetoc == "true" %}
+{% assign docContentClassList = docContentClassList | append: 'noToc' %}
+{% endif %}
+{% if page.horizontaltoc == "true" %}
+{% assign docContentClassList = docContentClassList | append: ' horizontalToc' %}
+{% endif %}
+
 <section id="encyclopedia">
   {% if site.data[foundTOC].hidetoc != "true" and page.hidetoc != "true" %}
-  <div id="docsToc">
+  <div id="docsToc" {% if page.horizontaltoc == "true" %} class="horizontal" {% endif %}>
         <div class="pi-accordion">
         {% assign tree = site.data[foundTOC].toc %}{% include tree.html %}
         </div> <!-- /pi-accordion -->
     <button class="push-menu-close-button" onclick="tb.toggleToc()"></button>
   </div> <!-- /docsToc -->
   {% endif %}
-  <div id="docsContent" {% if site.data[foundTOC].hidetoc == "true" or page.hidetoc == "true" %} class="noToc" {% endif %}>
-        <!--p><a href="/editdocs#{{ page.path }}" id="editPageButton">Edit This Page</a></p-->
-      {% if notitle != "true" %}<h1>{{ title }}</h1>{% endif %}
+  <div id="docsContent" class="{{ docContentClassList }}">
+    {% if notitle != "true" %}<h1>{{ title }}</h1>{% endif %}
     {{ content }}
-        {% if page.url != "/404.html" and page.url != "/docs/search/" %}
-      <div id="docsActions">
-          <div id="pd_rating_holder_8483911"></div>
-          <script type="text/javascript">
-              PDRTJS_settings_8483911 = {
-                  "id" : "8483911",
-                  "unique_id" : "{{page.url}}",
-                  "title" : "{{title}}",
-                  "permalink" : "http://thingsboard.io{{page.url}}"
-              };
-              (function(d,c,j){if(!document.getElementById(j)){var pd=d.createElement(c),s;pd.id=j;pd.src=('https:'==document.location.protocol)?'https://polldaddy.com/js/rating/rating.js':'http://i0.poll.fm/js/rating/rating.js';s=document.getElementsByTagName(c)[0];s.parentNode.insertBefore(pd,s);}}(document,'script','pd-rating-js'));
-          </script>
-          <!--<div id="editPageBtns">-->
-            <!--<a href="" onclick="window.open('https://github.com/thingsboard/thingsboard.github.io/issues/new?title=Issue%20with%20' +-->
-            <!--window.location.pathname)" class="button">Create Issue</a>-->
-            <!--<a href="/editdocs#{{ page.path }}" class="button issue">Edit This Page</a>-->
-          <!--</div>-->
-      </div>
-	{% endif %}
-	</div>
+  </div>
 </section>
 
 {% include footer.html %}
@@ -71,7 +60,7 @@
 {% endif %}
 
 <style>
-  .cse .gsc-control-cse, .gsc-control-cse, {
+  .cse .gsc-control-cse, .gsc-control-cse {
     padding: 0;
   }
   .gsc-control-cse table, .gsc-control-cse-en table {

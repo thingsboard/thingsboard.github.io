@@ -1,6 +1,6 @@
 ---
 layout: docwithnav
-title: Video Tutorials
+title: IoT Video Tutorials
 
 ---
 
