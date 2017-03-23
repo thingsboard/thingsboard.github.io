@@ -15,8 +15,9 @@ Thingsboard is an open-source IoT platform that enables rapid development, manag
 
 Thingsboard IoT Gateway provides following features:
 
- - **OPC-UA** extension to collect data from IoT devices that are connected to OPC-UA servers.
  - **MQTT** extension to control, configure and collect data from IoT devices that are connected to external MQTT brokers using existing protocols.
+ - **OPC-UA** extension to collect data from IoT devices that are connected to OPC-UA servers.
+ - **Sigfox** extension to collect data from IoT devices that are connected to Sigfox Backend.
  - **Persistence** of collected data to guarantee data delivery in case of network and hardware failures.
  - **Automatic reconnect** to Thingsboard cluster.
  - Simple yet powerful **mapping** of incoming data and messages **to unified format**.
@@ -44,9 +45,9 @@ Thingsboard Gateway 1.2 provides ability to configure and control MQTT enabled d
 
 The Gateway project is currently in active development stage and you should expect following major features in next releases:
 
- - OPC-UA extenstion improvements:
-   - Ability to configure IoT devices connected through the Gateway using Thingsboard [Attributes](/docs/user-guide/attributes) feature.
-   - Ability to control IoT devices connected through the Gateway using Thingsboard [RPC](/docs/user-guide/rpc/) feature.
+ - Sigfox and OPC-UA extension improvements:
+    - Ability to configure IoT devices connected through the Gateway using Thingsboard [Attributes](/docs/user-guide/attributes) feature.
+    - Ability to control IoT devices connected through the Gateway using Thingsboard [RPC](/docs/user-guide/rpc/) feature.
  - Ability to configure Gateway distantly from Thingsboard [Dashboards](/docs/user-guide/visualization/).
  - Client-side load balancing based on information about Thingsboard cluster.
  - Ability to visualize collected device data on the Gateway Web UI. 

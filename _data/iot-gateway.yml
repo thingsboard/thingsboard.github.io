@@ -29,3 +29,5 @@ toc:
     path: /docs/iot-gateway/opc-ua/
   - title: MQTT Extension
     path: /docs/iot-gateway/mqtt/
+  - title: Sigfox Extension
+    path: /docs/iot-gateway/sigfox/
