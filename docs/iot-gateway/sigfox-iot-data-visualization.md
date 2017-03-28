@@ -14,9 +14,6 @@ Sigfox is low-cost, low energy consumption connectivity solution that allows to 
 Sigfox Backend allows to provision custom callbacks and push data to your server applications. We will use this feature to push data to Thingsboard IoT Gateway.
 The Gateway will take care of routing tasks: convert data to unified format, device provisioning, data delivery, etc.
 Once data is delivered to Thingsboard we will be able to see it on advanced real-time IoT dashboards and share this IoT dashboards with end-users. 
-
-Sigfox integration is done using Thingsboard IoT Gateway project. Separate article on this is coming soon. 
-Meanwhile you can follow Sigfox connection example in the [**getting started**](/docs/iot-gateway/getting-started/) guide.
  
 ### Prerequisites 
 
