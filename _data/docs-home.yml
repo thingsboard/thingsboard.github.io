@@ -51,6 +51,8 @@ toc:
     path: /docs/samples/analytics/spark-integration-with-thingsboard/
   - title: SigFox IoT data collection and visualization
     path: /docs/iot-gateway/sigfox-iot-data-visualization/
+  - title: Persist and visualize IBM Watson IoT data
+    path: /docs/iot-gateway/integration-with-ibm-watson-iot/
 - title: Security
   section:
   - title: MQTT over SSL
