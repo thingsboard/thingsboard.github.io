@@ -1,0 +1,2 @@
+{% if include.ghlink %}{% capture ghlink %}https://raw.githubusercontent.com/thingsboard/thingsboard.github.io/{{page.docsbranch}}{{include.ghlink}}{% endcapture %}
+<a href="{{ghlink}}" target="_blank" download="{{ghlink}}">{{include.content}}</a>{% endif %}

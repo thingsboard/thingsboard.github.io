@@ -17,7 +17,7 @@ The goal of this guide is for you to collect and visualize some IoT device data 
 This guide will let you:
 
  - Provision your device
- - Create and register device credentials
+ - Manage device credentials
  - Push data from device to your Thingsboard instance using MQTT, CoAP or HTTP protocols
  - Create dashboard to visualize the data
   
@@ -45,10 +45,14 @@ We will use this emulators in advanced tutorials, however, the for the purpose o
  
 ## Login as a tenant administrator 
 
-The first step is to login to administration Web UI using default account: 
-  
+The first step is to login to administration Web UI.
+
+If you are using local Thingsboard installation you can login to administration Web UI using default account:
+ 
   - Username: **tenant@thingsboard.org**
   - Password: **tenant**
+
+If you are using Live Demo you can login to [Live Demo](https://demo.thingsboard.io/login) server using Tenant Administrator account (the one that you created during sign-up).
   
 {:refdef: style="text-align: center;"}
 ![image](/images/helloworld/login.png)
@@ -71,7 +75,7 @@ Click "Add" button will add corresponding device card to the panel.
 {: refdef}
 
 
-## Create and register device credentials
+## Manage device credentials
 
 Click on the "device card" we have created in the previous step. This action will open "device details" panel.
 
@@ -95,7 +99,7 @@ Now you can push some data from this device to Thingsboard for visualization and
 ## Pushing data from the device
 
 In order to simplify this guide, we will push data using MQTT, CoAP or HTTP protocol from your local PC.
-Please refer to <a href="/docs/samples/">samples</a> for advanced examples of for various hardware platforms.
+Please refer to [samples](/docs/samples/) for advanced examples of for various hardware platforms.
 
 ### Client-side libraries installation
 
@@ -112,10 +116,11 @@ ClientF,cURL (macOS),shell,resources/curl-macos.sh,/docs/getting-started-guides/
 
 ### Sample data files
 
-Download or create the following data files:
+**Create some folder** to store all necessary files for this tutorial.
+Download to this folder or create the following data files:
 
- - **attributes-data.json** - contains two device attributes values: firmware version and serial number.
- - **telemetry-data.json** - contains three time-series values: temperature, humidity and active flag.
+ - {% include ghlink.html content='**attributes-data.json**' ghlink='/docs/getting-started-guides/resources/attributes-data.json' %} - contains two device attributes values: firmware version and serial number.
+ - {% include ghlink.html content='**telemetry-data.json**' ghlink='/docs/getting-started-guides/resources/telemetry-data.json' %} - contains three time-series values: temperature, humidity and active flag.
  
 Please note that data in this files is basically in key-value format. You can use your own keys and values. 
 See [MQTT](/docs/reference/mqtt-api/#key-value-format), [CoAP](/docs/reference/coap-api/#key-value-format)
@@ -128,13 +133,33 @@ B,telemetry-data.json,json,resources/telemetry-data.json,/docs/getting-started-g
 
 ### Pushing data using MQTT, CoAP or HTTP
 
-Execute commands in one of the following tabs to push data to the server.
- 
-Don't forget to 
+Download the following files to **previously created folder** according to the preferred client:
+
+ - **MQTT.js (MQTT)**
+   - {% include ghlink.html content='mqtt-js.sh' ghlink='/docs/getting-started-guides/resources/mqtt-js.sh' %} (Ubuntu & MacOS) or {% include ghlink.html content='mqtt-js.bat' ghlink='/docs/getting-started-guides/resources/mqtt-js.bat' %} (Windows)
+   - {% include ghlink.html content='public.js' ghlink='/docs/getting-started-guides/resources/public.js' %}
+ - **Mosquitto (MQTT)**
+   - {% include ghlink.html content='mosquitto.sh' ghlink='/docs/getting-started-guides/resources/mosquitto.sh' %}
+ - **CoAP.js (CoAP)**
+   - {% include ghlink.html content='coap-js.sh' ghlink='/docs/getting-started-guides/resources/coap-js.sh' %}
+ - **cURL (HTTP)**
+   - {% include ghlink.html content='curl.sh' ghlink='/docs/getting-started-guides/resources/curl.sh' %}
+
+If you are using shell script (*.sh) make sure that it is executable:
+
+```shell
+chnod +x *.sh
+```
+
+Before executing script don't forget to: 
 
  - replace **$ACCESS_TOKEN** with one from **Device credentials** window.
  - replace **$THINGSBOARD_HOST** with either **127.0.0.1** (in case of local installation) or **demo.thingsboard.io** (in case of live-demo).
 
+Finally execute corresponding *.sh or *.bat script to push data to the server.
+
+Below are tabs with content of provided scripts. 
+ 
 {% capture tabspec %}mqtt-telemetry-upload
 A,MQTT.js (Ubuntu & MacOS),shell,resources/mqtt-js.sh,/docs/getting-started-guides/resources/mqtt-js.sh
 B,MQTT.js (Windows),shell,resources/mqtt-js.bat,/docs/getting-started-guides/resources/mqtt-js.bat
@@ -201,9 +226,11 @@ Click **Show on widget** and select **Digital gauges** bundle. Use carousel to s
 
 Finally, we are able to see our new dashboard. Now we can edit the dashboard to
 
+ - Configure dashboard settings
  - Tune widget sizes and layout
- - Rename widget alias
- - Modify advanced settings
+ - Modify advanced settings of individual widget
+ - Add new widgets or remove existing
+ - Widgets import/export  
  
 {:refdef: style="text-align: center;"}
 ![image](/images/helloworld/new-dashboard.png)
