@@ -61,7 +61,5 @@ toc:
         path: /docs/reference/plugins/rest/
       - title: Time RPC Plugin
         path: /docs/reference/plugins/time/
-- title: Customization
-  path: /docs/user-guide/customization/
 - title: Release Notes
   path: https://github.com/thingsboard/thingsboard/releases/

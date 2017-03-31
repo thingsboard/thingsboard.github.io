@@ -1,6 +1,7 @@
 ---
 layout: docwithnav
 title: LinkIt ONE overview
+description: Thingsboard IoT Platform hardware samples for LinkIt ONE devices.
 
 ---
 

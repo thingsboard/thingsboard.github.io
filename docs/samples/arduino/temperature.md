@@ -1,6 +1,7 @@
 ---
 layout: docwithnav
 title: Temperature upload over MQTT using Arduino UNO, ESP8266 and DHT22 sensor
+description: Thingsboard IoT Platform sample for temperature data upload over MQTT using Arduino UNO, ESP8266 and DHT22 sensor.
 
 ---
 

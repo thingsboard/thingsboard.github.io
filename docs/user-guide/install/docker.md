@@ -3,6 +3,7 @@ layout: docwithnav
 assignees:
 - ashvayka
 title: Installing Thingsboard using Docker (Linux or Mac OS)
+description: Installing Thingsboard IoT Platform using Docker (Linux or Mac OS)
 
 ---
 

@@ -3,6 +3,7 @@ layout: docwithnav
 assignees:
 - ikulikov
 title: Installing Thingsboard IoT Gateway on Linux
+description: Installing Thingsboard IoT Gateway on Linux
 
 ---
 

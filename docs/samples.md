@@ -1,6 +1,7 @@
 ---
 layout: docwithnav
 title: Samples
+description: Thingsboard IoT Platform hardware samples and tutorials 
 
 --- 
 

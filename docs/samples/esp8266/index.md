@@ -1,6 +1,7 @@
 ---
 layout: docwithnav
 title: ESP8266 overview
+description: Thingsboard IoT Platform hardware samples for ESP8266 devices.
 
 ---
 

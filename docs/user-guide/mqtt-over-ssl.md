@@ -3,6 +3,7 @@ layout: docwithnav
 assignees:
 - vsosliuk
 title: MQTT over SSL
+description: Launching Thingsboard with secure MQTT protocol to connect your IoT devices and projects.
 
 ---
 
@@ -123,4 +124,4 @@ See following resources:
 
  - [Device Authentication options](/docs/user-guide/device-credentials/) for authentication options overview
  - [Access Token based authentication](/docs/user-guide/access-token/) for example of **one-way SSL** connection 
- - [X.509 Certificate based authentication](/docs/user-guide/certificatesn/) for example of **two-way SSL** connection
+ - [X.509 Certificate based authentication](/docs/user-guide/certificates/) for example of **two-way SSL** connection

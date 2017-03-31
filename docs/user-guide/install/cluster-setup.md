@@ -3,6 +3,7 @@ layout: docwithnav
 assignees:
 - ashvayka
 title: Cluster setup
+description: Thingsboard IoT platform cluster setup guide
 
 ---
 

@@ -1,20 +1,14 @@
 ---
 layout: docwithnav
 title: Thingsboard Documentation
-
+description: Thingsboard documentation - learn about the platform and get your IoT projects running on Thingsboard
 ---
 
-<p>The Thingsboard documentation can help you set up Thingsboard, learn about the platform and get your applications running on Thingsboard.</p>
+<p>The Thingsboard documentation can help you set up Thingsboard, learn about the platform and get your IoT projects running on Thingsboard.</p>
 
-<p><a href="/docs/getting-started-guides/what-is-thingsboard" class="button">Thingsboard Overview</a></p>
-
-<h2>Hello World</h2>
-
-<p><a href="/docs/getting-started-guides/helloworld" class="button">Your first IoT application using Thingsboard</a></p>
-
-<h2>Installing Thingsboard</h2>
-
-<p><a href="/docs/user-guide/install/installation-options" class="button">Thingsboard Installation</a></p>
+<a style="margin: 10px;" href="/docs/getting-started-guides/what-is-thingsboard/" class="button">Thingsboard Overview</a>
+<a style="margin: 10px;" href="/docs/getting-started-guides/helloworld/" class="button">Getting started</a>
+<a style="margin: 10px;" href="/docs/user-guide/install/installation-options/" class="button">Thingsboard Installation</a>
 
 <h2>Platform Features</h2>
 
@@ -33,6 +27,7 @@ title: Thingsboard Documentation
 <ul>
 <li><b><a href="/docs/iot-gateway/integration-with-aws-iot/">AWS IoT</a></b> - Describes how to persist and visualize data from AWS IoT using Thingsboard.</li>
 <li><b><a href="/docs/samples/analytics/spark-integration-with-thingsboard/">Apache Spark</a></b> - Describes how to use Apache Spark for analysis of device data collected by Thingsboard.</li>
+<li><b><a href="/docs/iot-gateway/sigfox-iot-data-visualization/">Sigfox</a></b> - SigFox IoT data collection and visualization using Thingsboard.</li>
 </ul>
 
 

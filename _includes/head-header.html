@@ -1,8 +1,18 @@
 {% if page.title %}{% assign title=page.title %}{% endif %}
+{% if page.description %}{% assign description=page.description %}{% endif %}
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-    {% if !page.no_canonical %}<link rel="canonical" href="http://thingsboard.io{{page.url}}" />{% endif %}
+	{% if page.customTitle == "true" %}
+	<title>{{ title }}</title>
+	{% seo title=false %}
+	{% else %}
+	{% seo %}
+	{% endif %}
+	{% if description %}
+	<meta name="twitter:description" content="{{ description }}"/>
+	{% endif %}
+	{% if !page.no_canonical %}<link rel="canonical" href="https://thingsboard.io{{page.url}}" />{% endif %}
 	<link rel="shortcut icon" type="image/png" href="/images/favicon.png">
 	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
 	<link rel="stylesheet" href="/css/styles.css">
@@ -152,7 +162,6 @@
 		ga('create', 'UA-88383331-1', 'auto');
 		ga('send', 'pageview');
 	</script>
-	<title>Thingsboard - {{ title }}</title>
 </head>
 <body>
 <div id="cellophane" onclick="tb.toggleMenu()"></div>
@@ -165,32 +174,31 @@
 	</div>
 	<div class="nav-buttons" data-auto-burger="primary">
 		<a href="/docs/" class="button" id="viewDocs" data-auto-burger-exclude>View Documentation</a>
+		<a href="/iot-use-cases/" class="button" id="useCases" data-auto-burger-exclude>Use cases</a>
 		<a href="/docs/getting-started-guides/helloworld/" class="button" id="gettingStarted" data-auto-burger-exclude>Getting started</a>
-		<a target="_blank" href="https://demo.thingsboard.io/signup" class="button" id="liveDemo" data-auto-burger-exclude>Try it now</a>
+		<a target="_blank" href="https://demo.thingsboard.io/signup" class="button" id="liveDemo" data-auto-burger-exclude>Live demo</a>
 		<button id="hamburger" onclick="tb.toggleMenu()" data-auto-burger-exclude><div></div></button>
 	</div>
 
 	<nav id="mainNav">
-		<main data-auto-burger="primary">
+		<main id="headNav" data-auto-burger="primary">
 			<div class="nav-box">
-				<h3><a href="/docs/getting-started-guides/helloworld/">Getting Started</a></h3>
-				<p>Build an app that collects and visualize your IoT data in 15 minutes.</p>
+				<h3><a href="/docs/getting-started-guides/helloworld/">Get Started</a></h3>
 			</div>
 			<div class="nav-box">
 				<h3><a href="/docs/">Documentation</a></h3>
-				<p>Learn Thingsboard using guides, samples and reference documentation.</p>
+			</div>
+			<div class="nav-box">
+				<h3><a href="/iot-use-cases/">Use cases</a></h3>
 			</div>
 			<div class="nav-box">
 				<h3><a href="http://blog.thingsboard.io/">Blog</a></h3>
-				<p>Read latest blog posts to learn Thingsboard best practices, how-tos and use cases.</p>
 			</div>
 			<div class="nav-box">
 				<h3><a href="/docs/services/">Services</a></h3>
-				<p>Discover services provided by Thingsboard authors to accelerate development of your IoT solution.</p>
 			</div>
 			<div class="nav-box">
 				<h3><a href="/docs/contact-us/">Contact us</a></h3>
-				<p>Feel free to contact Thingsboard authors by sending us an email.</p>
 			</div>
 		</main>
 		<main data-auto-burger="primary">
@@ -201,7 +209,6 @@
 					<a href="https://gitter.im/thingsboard/chat" class="gitter"><span>Gitter</span></a>
 					<a href="http://stackoverflow.com/questions/tagged/thingsboard" class="stack-overflow"><span>Stack Overflow</span></a>
 					<a href="https://groups.google.com/forum/#!forum/thingsboard" class="mailing-list"><span>Mailing List</span></a>
-					<a href="https://calendar.google.com/calendar/b/1/embed?src=thingsboard.io_vvdkrvseju3jjahct9pk00nh0o@group.calendar.google.com" class="calendar"><span>Events Calendar</span></a>
 					<a href="https://www.youtube.com/channel/UCDb9fsV-YR4JmnipAMGsVAQ" class="youtube"><span>YouTube Channel</span></a>
 					<a href="https://www.facebook.com/thingsboard" class="facebook"><span>Facebook Page</span></a>
 				</div>

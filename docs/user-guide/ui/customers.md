@@ -3,6 +3,7 @@ layout: docwithnav
 assignees:
 - ashvayka
 title: Customers
+description: Thingsboard Customers management
 
 ---
 
