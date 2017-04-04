@@ -174,6 +174,13 @@ Consider that we have next configuration of the mapping for **my-device-type** *
 ```
 
 To check that everything is configured correctly you are able to use **mosquitto_pub** tool that is able to publish messages to **IBM Watson IoT**.
+The list of options that we are going to use in **mosquitto_pub**:
+
+ - **'-h'** Specify the host to connect to.
+ - **'-u'** Provide a username to be used for authenticating with the broker.
+ - **'-P'** Provide a password to be used for authenticating with the broker.
+ - **'-i'** The id to use for this client.
+ - **'-t'** The MQTT topic on which to publish the message.
 
 Here is the general command that could be used to publish message of particular device to **IBM Watson** *MQTT* topic:
 
