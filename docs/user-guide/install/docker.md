@@ -7,6 +7,8 @@ description: Installing Thingsboard IoT Platform using Docker (Linux or Mac OS)
 
 ---
 
+{% include templates/live-demo-banner.md %}
+
 * TOC
 {:toc}
 

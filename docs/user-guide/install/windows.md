@@ -7,6 +7,8 @@ description: Installing Thingsboard on Windows
 
 ---
 
+{% include templates/live-demo-banner.md %}
+
 * TOC
 {:toc}
 

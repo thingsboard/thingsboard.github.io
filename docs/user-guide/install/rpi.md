@@ -7,6 +7,8 @@ description: Installing Thingsboard IoT Platform on Raspberry Pi 3 Model B
 
 ---
 
+{% include templates/live-demo-banner.md %}
+
 * TOC
 {:toc}
 

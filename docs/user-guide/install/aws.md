@@ -7,6 +7,8 @@ description: Installing Thingsboard on AWS EC2
 
 ---
 
+{% include templates/live-demo-banner.md %}
+
 * TOC
 {:toc}
 
