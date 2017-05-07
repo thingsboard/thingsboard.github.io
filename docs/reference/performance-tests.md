@@ -31,9 +31,12 @@ In our case we have 3 instances with the following IP addresses:
  - 172.21.12.101, *instance B*
  - 172.21.12.102, *instance C*
 
-Login into every cluster instance and do the following:
+Login into every cluster instance, clean up cassandra data directories and modify cassandra configuration:
 
 ```bash
+sudo rm -rf /var/lib/cassandra/saved_caches/*
+sudo rm -rf /var/lib/cassandra/commitlog/*
+sudo rm -rf /var/lib/cassandra/data/*
 sudo nano /etc/cassandra/cassandra.yaml
 ```
 
@@ -42,7 +45,7 @@ Find in the file next lines and update them accordingly.
 For instance A:
 
 ```bash
-seeds: "172.21.12.100:9042,172.21.12.101:9042,172.21.12.102:9042"
+seeds: "172.21.12.100,172.21.12.101,172.21.12.102"
 
 listen_address: "172.21.12.100"
 
@@ -52,7 +55,7 @@ rpc_address: "172.21.12.100"
 For instance B:
 
 ```bash
-seeds: "172.21.12.100:9042,172.21.12.101:9042,172.21.12.102:9042"
+seeds: "172.21.12.100,172.21.12.101,172.21.12.102"
 
 listen_address: "172.21.12.101"
 
@@ -62,7 +65,7 @@ rpc_address: "172.21.12.101"
 For instance C:
 
 ```bash
-seeds: "172.21.12.100:9042,172.21.12.101:9042,172.21.12.102:9042"
+seeds: "172.21.12.100,172.21.12.101,172.21.12.102"
 
 listen_address: "172.21.12.102"
 
@@ -81,6 +84,27 @@ And verify that Cassandra cluster setup was successful:
 
 ```bash
 nodetool status
+```
+
+In the output should be something similar:
+
+```bash
+Datacenter: datacenter1
+=======================
+Status=Up/Down
+|/ State=Normal/Leaving/Joining/Moving
+--  Address        Load       Tokens       Owns (effective)  Host ID                               Rack
+UN  172.31.28.47   192.99 KiB  256          30.9%             a323e6fb-2e8c-4bb4-82d0-4e621cb7cba8  rack1
+UN  172.31.19.231  132.23 KiB  256          33.9%             6da17a19-2a4b-4f99-9ac7-e38f05ebf7a9  rack1
+UN  172.31.25.178  289.4 KiB  256          35.2%             87f1ab4d-16d4-4969-aea8-b858e62d1d73  rack1
+```
+
+Once the cluster is ready we need to create schema, system and demo data. At any of the Cassandra cluster node (here we use instance A) execute following commands:
+
+```bash
+cqlsh 172.21.12.100 -f /usr/share/thingsboard/data/schema.cql 
+cqlsh 172.21.12.100 -f /usr/share/thingsboard/data/system-data.cql 
+cqlsh 172.21.12.100 -f /usr/share/thingsboard/data/demo-data.cql 
 ```
 
 Once Cassandra cluster setup is done please run Thingsboard AMI instance. You need to update **thingsbaord.yml** config to use Cassandra cluster instead of local instance:
