@@ -3,7 +3,6 @@ layout: docwithnav
 assignees:
 - vbabak
 title: Contribution Guide
-description: Thingsboard IoT Platform contribution guide
 
 ---
 
@@ -82,22 +81,31 @@ By default, Thingsboard UI is served at 8080 port. However, you may want to run 
 
 **NOTE:** This step is optional. It is required only if you are going to do changes to UI.
  
-To start UI container in hot redeploy mode you will need to execute next command:
+To start UI container in hot redeploy mode you will need to install **node.js** first. Once **node.js** is installed you can start container by executing next command:
 
 ```bash
 cd ${TB_WORK_DIR}/ui
 mvn clean install -P npm-start
 ```
 
-This will launch special server that will listen on [http://localhost:3000/](http://localhost:3000/) by default. All REST API and websocket requests will be forwarded to 8080 port. 
+This will launch special server that will listen on 3000 port. All REST API and websocket requests will be forwarded to 8080 port.
 
 ##### Running server-side container
 
-To start server-side container please run main method of **org.thingsboard.server.ThingsboardServerApplication** class that is located in *application* module from your *IDE*.
+To start server-side container you can use couple options.
+
+As a first option, you can run main method of **org.thingsboard.server.ThingsboardServerApplication** class that is located in *application* module from your *IDE*.
+
+As a second an option, you can start server-side from command line as a regular **Spring boot** application:
+
+```bash
+cd ${TB_WORK_DIR}
+java -jar application/targer/thingsboard-${VERSION}-boot.jar
+```
 
 ##### Dry run
 
-Navigate to [http://localhost:8080/](http://localhost:8080/) or [http://localhost:3000/](http://localhost:3000/) (in case of UI hot redeploy mode) and login into Thingsboard using demo data credentials:
+Navigate to http://localhost:3000/ or http://localhost:8080/ and login into Thingsboard using demo data credentials:
 
  - *login* **tenant@thingsboard.org**
  - *password* **tenant**
