@@ -23,9 +23,9 @@ The platform provides production ready server infrastructure to connect your sma
 
 The following interactive dashboard hosted on live demo server represents vehicle routes and state indicators visualization that may be embedded in your IoT fleet tracking project. See dashboard description below.
 
-<iframe class="demoDashboardFrame" src="https://demo.thingsboard.io/demo?dashboardId=83cbe060-0edc-11e7-942c-bb0136cc33d0&source=docs" frameborder="0" width="100%"></iframe>
+<iframe class="demoDashboardFrame" src="https://demo.thingsboard.io/dashboards/83cbe060-0edc-11e7-942c-bb0136cc33d0?publicId=963ab470-34c9-11e7-a7ce-bb0136cc33d0&source=docs" frameborder="0" width="100%"></iframe>
 <div class="center" style="margin-bottom: 20px;">
-    <a target="_blank" style="padding: 0 40px;" href="https://demo.thingsboard.io/demo?dashboardId=3d0bf910-ee09-11e6-b619-bb0136cc33d0&source=realtimeIotDashboards" class="button">Live demo</a>
+    <a target="_blank" style="padding: 0 40px;" href="https://demo.thingsboard.io/dashboards/3d0bf910-ee09-11e6-b619-bb0136cc33d0?publicId=963ab470-34c9-11e7-a7ce-bb0136cc33d0&source=realtimeIotDashboards" class="button">Live demo</a>
 </div>
 
 The attached dashboard demonstrates real-time data from vehicle sensors that is collected using Thingsboard MQTT API. The data is stored in Cassandra DB on our demo server.
