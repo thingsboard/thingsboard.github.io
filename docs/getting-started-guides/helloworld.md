@@ -137,7 +137,7 @@ Download the following files to **previously created folder** according to the p
 
  - **MQTT.js (MQTT)**
    - {% include ghlink.html content='mqtt-js.sh' ghlink='/docs/getting-started-guides/resources/mqtt-js.sh' %} (Ubuntu & MacOS) or {% include ghlink.html content='mqtt-js.bat' ghlink='/docs/getting-started-guides/resources/mqtt-js.bat' %} (Windows)
-   - {% include ghlink.html content='public.js' ghlink='/docs/getting-started-guides/resources/public.js' %}
+   - {% include ghlink.html content='publish.js' ghlink='/docs/getting-started-guides/resources/publish.js' %}
  - **Mosquitto (MQTT)**
    - {% include ghlink.html content='mosquitto.sh' ghlink='/docs/getting-started-guides/resources/mosquitto.sh' %}
  - **CoAP.js (CoAP)**
@@ -148,7 +148,7 @@ Download the following files to **previously created folder** according to the p
 If you are using shell script (*.sh) make sure that it is executable:
 
 ```shell
-chnod +x *.sh
+chmod +x *.sh
 ```
 
 Before executing script don't forget to: 
