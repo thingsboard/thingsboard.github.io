@@ -35,7 +35,13 @@ curl -L https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.2.4/
 - Create cluster using gcloud cli (cluster version minimum 1.6.2 required and for demo purpose 6 standard nodes to properly deploy cluster pods):
 
 ```bash
-gcloud container clusters create YOUR_CLUTER_NAME --cluster-version=1.6.2 --num-nodes=6
+gcloud container clusters create YOUR_CLUSTER_NAME --cluster-version=1.6.2 --node-labels=machinetype=tb --num-nodes=2
+```
+
+- Create additional node pool for Cassandra and Zookeeper PODs:
+
+```bash
+gcloud container node-pools create cassandra-pool --cluster=YOUR_CLUSTER_NAME --node-labels=machinetype=other --num-nodes=3 --disk-size=10
 ```
 
 - Create default credentials file on your local machine:
