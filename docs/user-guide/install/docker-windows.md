@@ -27,30 +27,32 @@ cd <docker-folder>
 ```
 
 - Download the following files from thingsboard repo:
-    1. **[docker-compose.yml](https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.2/docker/docker-compose.yml)** - main docker-compose file.
-    1. **[docker-compose.random.yml](https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.2/docker/docker-compose.random.yml)** - overwrite docker-compose file with thirdparty ports configuration.
-    1. **[.env](https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.2/docker/.env)** - main env file that contains default location of cassandra data folder.
-    1. **[thingsboard.env](https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.2/docker/thingsboard.env)** - default thingsboard environment variables.
-    1. **[thingsboard-db-schema.env](https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.2/docker/thingsboard-db-schema.env)** - default db-schema environment variables.
+    1. **[docker-compose.yml](https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.2.4/docker/docker-compose.yml)** - main docker-compose file.
+    1. **[.env](https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.2.4/docker/.env)** - main env file that contains default location of cassandra data folder.
+    1. **[tb.env](https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.2.4/docker/tb.env)** - default thingsboard environment variables.
       
 ```bash
-curl -L https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.2/docker/docker-compose.yml > docker-compose.yml
-curl -L https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.2/docker/docker-compose.random.yml > docker-compose.random.yml
-curl -L https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.2/docker/.env > .env
-curl -L https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.2/docker/thingsboard.env > thingsboard.env
-curl -L https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.2/docker/thingsboard-db-schema.env > thingsboard-db-schema.env
+curl -L https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.2.4/docker/docker-compose.yml > docker-compose.yml
+curl -L https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.2.4/docker/.env > .env
+curl -L https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.2.4/docker/tb.env > tb.env
 ```
       
 - If you have already installed Thingsboard using docker and want to upgrade or cleanup your installation, please cleanup Cassandra data directory
       
 ```bash
-docker-machine ssh default 'sudo rm -rf /home/docker/cassandra_volume'
+docker-machine ssh default 'rm -rf /home/docker/cassandra_volume'
 ```                  
+
+- If you would like to create system and demo data and to start Thingsboard node and all thirdparty components execute next command 
+ 
+```bash
+ADD_SYSTEM_DATA=true ADD_DEMO_DATA=true bash -c 'docker-compose -f docker-compose.yml up -d'
+```
       
-- Execute docker-compose command to start Thingsboard node and all thirdparty components 
+- In case you would like to skip creation of system and demo data or you already added and you only need to start Thingsboard node and all thirdparty components then execute *docker-compose* command 
 
 ```bash
-docker-compose -f docker-compose.yml -f docker-compose.random.yml up -d
+docker-compose -f docker-compose.yml up -d
 ```
    
 - In order to get access to necessary resources from external IP/Host after Thingsboard docker container installation, 

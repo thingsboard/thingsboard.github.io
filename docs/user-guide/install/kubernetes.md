@@ -21,27 +21,21 @@ This guide will help you to deploy Thingsboard into cluster on Google Cloud Plat
     1. **[common.yaml](https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.2.4/docker/common/common.yaml) - Kubernetes config file for common resources (StorageClass etc.).
     1. **[cassandra.yaml](https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.2.4/docker/cassandra/cassandra.yaml) - Kubernetes config file for Cassandra Service. By Default start 3 nodes.
     1. **[zookeeper.yaml](https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.2.4/docker/zookeeper/zookeeper.yaml) - Kubernetes config file for ZK Service. By Default start 3 nodes.
-    1. **[thingsboard.yaml](https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.2.4/docker/thingsboard/thingsboard.yaml) - Kubernetes config file for Thingsboard Service. By Default start 2 nodes.
-    1. **[thingsboard-db-schema.yaml](https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.2.4/docker/thingsboard-db-schema/thingsboard-db-schema.yaml) - Kubernetes config file for Pod that creates Thingsboard keyspace and tables inside Cassandra storage.
+    1. **[tb.yaml](https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.2.4/docker/tb/tb.yaml) - Kubernetes config file for Thingsboard Service. By Default starts 2 nodes.
+    1. **[tb-cassandra-schema.yaml](https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.2.4/docker/tb-cassandra-schema/tb-cassandra-schema.yaml) - Kubernetes config file for Pod that creates Thingsboard keyspace and tables inside Cassandra storage.
       
 ```bash
 curl -L https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.2.4/docker/common/common.yaml > common.yaml
 curl -L https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.2.4/docker/cassandra/cassandra.yaml > cassandra.yaml
 curl -L https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.2.4/docker/zookeeper/zookeeper.yaml > zookeeper.yaml
-curl -L https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.2.4/docker/thingsboard/thingsboard.yaml > thingsboard.yaml
-curl -L https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.2.4/docker/thingsboard-db-schema/thingsboard-db-schema.yaml > thingsboard-db-schema.yaml
+curl -L https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.2.4/docker/tb/tb.yaml > tb.yaml
+curl -L https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.2.4/docker/tb-cassandra-schema/tb-cassandra-schema.yaml > tb-cassandra-schema.yaml
 ```
 
-- Create cluster using gcloud cli (cluster version minimum 1.6.2 required):
+- Create cluster using gcloud cli (cluster version minimum 1.6.2 required and for demo purpose 6 standard nodes to properly deploy cluster pods):
 
 ```bash
-gcloud container clusters create YOUR_CLUTER_NAME --cluster-version=1.6.2
-```
-
-- Add additional nodes to be able to provision Cassandra cluster (ASK VITALIY regarding labels):
-
-```bash
-gcloud container node-pools create opscenter-pool --cluster=YOUR_CLUTER_NAME --node-labels=insttype=opscenter  --num-nodes=3 --machine-type=n1-standard-1 --disk-size=10
+gcloud container clusters create YOUR_CLUTER_NAME --cluster-version=1.6.2 --num-nodes=6
 ```
 
 - Create default credentials file on your local machine:
@@ -80,7 +74,7 @@ cassandra-2      1/1       Running   0          3s
 - Once Cassandra Pods are running please provision Pod that will create Thingsboard schema and tables inside Cassandra storage:
 
 ```bash
-kubectl create -f thingsboard-db-schema.yaml
+kubectl create -f tb-cassandra-schema.yaml
 ```
 
 - Provision zookeeper Service:
@@ -92,7 +86,7 @@ kubectl create -f zookeeper.yaml
 - Provision Thingsboard Service:
 
 ```bash
-kubectl create -f thingsboard.yaml
+kubectl create -f tb.yaml
 ```
 
 - Execute next command to see status of Thingsboard Pods:
@@ -109,13 +103,13 @@ tb-0      1/1       Running   0          5s
 tb-1      1/1       Running   0          3s
 ```
 
-- Once Thingsboard Pods are in Running status check logs of first Pod to make sure that everything is OK:
+- Once Thingsboard Pods are in 'Running' status check logs of first Pod to make sure that everything is OK:
 
 ```bash
 kubectl logs -f tb-0
 ```
 
-- Thingsboard container successfully started once next line appeared in the log:
+- Thingsboard container is successfully started once similar line appears in the log:
 
 ```bash
 2016-12-13 13:44:52,407 [main] INFO  o.t.s.ThingsboardServerApplication - Started ThingsboardServerApplication in 113.64 seconds (JVM running for 118.624)
@@ -151,7 +145,7 @@ gcloud container clusters delete tb-test-cluster
 ### common.yaml file
 
 Common Kubernetes config file **common.yaml** contains next set of cloud resources:
- - *StorageClass*. This resources is used by Cassandra and ZK Services as volume storage definitions
+ - *StorageClass*. These resources are used by Cassandra and ZK Services as volume storage definitions
  
 ### cassandra.yaml file
 
@@ -159,10 +153,6 @@ Cassandra Kubernetes config file **cassandra.yaml** contains next set of cloud r
  - *Headless Service*. Service exposes 9042 port for the Cassandra Pods and guarantee network identity for them.
  - *StatefulSet*. Set is responsible for provisioning Cassandra Pods onto Cloud Nodes.
    - *podAntiAffinity*. This property guarantees that Cassandra Pods are deployed to different Nodes.
-   - *securityContext:*
-       *capabilities:*
-         *add:*
-           *- IPC_LOCK*. (ASK VITALIY)
 
 ### zookeeper.yaml file
 
@@ -173,16 +163,16 @@ Zookeeper Kubernetes config file **zookeeper.yaml** contains next set of cloud r
  - *StatefulSet*. Set is responsible for provisioning ZK Pods onto Cloud Nodes.
    - *podAntiAffinity*. This property guarantees that ZK Pods are deployed to different Nodes.
 
-### thingsboard.yaml file
+### tb.yaml file
 
-Thingsboard Kubernetes config file **thingsboard.yaml** contains next set of cloud resources:
+Thingsboard Kubernetes config file **tb.yaml** contains next set of cloud resources:
  - *Loadbalancer Service*. Service that exposes 8080, 1883 and 5683 ports of Thingsboard cluster to external world using external IP.
  - *ConfigMap*. Contains set of configurations options that are pushed into Thingsboard images.
  - *PodDisruptionBudget*. Guarantees minimum instances of the cluster that must be up and running.
  - *StatefulSet*. Set is responsible for provisioning Thingsboard Pods onto Cloud Nodes.
    - *podAntiAffinity*. This property guarantees that Thingsboard Pods are deployed to different Nodes.
 
-### thingsboard-db-schema.yaml
+### tb-cassandra-schema.yaml
 
-Thingsboard Kubernetes config file **thingsboard-db-schema.yaml** contains next set of cloud resources:
+Thingsboard Kubernetes config file **tb-cassandra-schema.yaml** contains next set of cloud resources:
  - *Pod* that runs once and creates Thingsboard keyspace and tables inside Cassandra storage
