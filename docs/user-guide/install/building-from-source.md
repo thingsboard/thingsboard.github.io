@@ -3,6 +3,7 @@ layout: docwithnav
 assignees:
 - ashvayka
 title: Building from sources
+description: Building Thingsboard IoT platform from sources
 
 ---
 

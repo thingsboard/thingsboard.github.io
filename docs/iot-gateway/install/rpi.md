@@ -3,6 +3,7 @@ layout: docwithnav
 assignees:
 - ikulikov
 title: Installing Thingsboard IoT Gateway on Raspberry Pi 3 Model B
+description: Installing Thingsboard IoT Gateway on Raspberry Pi 3 Model B
 
 ---
 
@@ -31,14 +32,14 @@ Download installation package or [build it from source](/docs/iot-gateway/instal
 
 ```bash
 # Download the package
-$ wget https://github.com/thingsboard/thingsboard-gateway/releases/download/v1.1/tb-gateway-1.1.deb
+$ wget https://github.com/thingsboard/thingsboard-gateway/releases/download/v1.2.1/tb-gateway-1.2.1.deb
 ```
 
 ### Step 3. Install gateway as a service
 
 ```bash
 # Install gateway as a service
-$ sudo dpkg -i tb-gateway-1.1.deb
+$ sudo dpkg -i tb-gateway-1.2.1.deb
 # Update gateway memory usage and restrict it to 150MB in /etc/tb-gateway/conf/tb-gateway.conf
 export JAVA_OPTS="$JAVA_OPTS -Dplatform=rpi -Xms150M -Xmx150M"
 ```

@@ -1,6 +1,7 @@
 ---
 layout: docwithnav
 title: Integration with AWS IoT
+description: Streaming AWS IoT data to Thingsboard for advanced IoT data visualization
 
 ---
 

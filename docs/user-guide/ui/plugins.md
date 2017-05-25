@@ -3,6 +3,7 @@ layout: docwithnav
 assignees:
 - ashvayka
 title: Plugins
+description: Thingsboard Plugins management
 
 ---
 

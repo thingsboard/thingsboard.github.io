@@ -3,6 +3,7 @@ layout: docwithnav
 assignees:
 - ashvayka
 title: Rule Engine
+description: IoT devices data analytics using Thingsboard Rule engine
 
 ---
 

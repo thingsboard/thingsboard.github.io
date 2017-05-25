@@ -3,6 +3,7 @@ layout: docwithnav
 assignees:
 - ashvayka
 title: OPC-UA Extension Configuration
+description: OPC-UA protocol support for Thingsboard IoT Gateway
 
 ---
 

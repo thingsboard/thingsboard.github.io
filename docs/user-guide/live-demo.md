@@ -3,6 +3,7 @@ layout: docwithnav
 assignees:
 - ashvayka
 title: Live Demo Server
+description: Thingsboard IoT Platform Live Demo Server
 
 ---
 

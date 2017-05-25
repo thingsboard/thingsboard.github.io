@@ -3,6 +3,7 @@ layout: docwithnav
 assignees:
 - ashvayka
 title: Installing Thingsboard IoT Gateway on Windows
+description: Installing Thingsboard IoT Gateway on Windows
 
 ---
 
@@ -17,7 +18,7 @@ IoT Gateway requires Java 8. If you don't have Java installed, please download a
 ### Step 2. Download and unzip installation files
  
 Create working directory, for example "C:\tb-gateway".
-Download and unzip [this installation archive](https://github.com/thingsboard/thingsboard-gateway/releases/download/v1.1/tb-gateway-windows-1.1.zip) to the working directory.
+Download and unzip [this installation archive](https://github.com/thingsboard/thingsboard-gateway/releases/download/v1.2.1/tb-gateway-windows-1.2.1.zip) to the working directory.
 The working directory should look like this after installation
 
  ![image](/images/gateway/windows-folder.png)

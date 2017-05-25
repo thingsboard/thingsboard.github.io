@@ -3,6 +3,7 @@ layout: docwithnav
 assignees:
 - ashvayka
 title: MQTT Extension Configuration
+description: MQTT protocol support for Thingsboard IoT Gateway
 
 ---
 
@@ -28,6 +29,7 @@ The root JSON element should contain "brokers" array. Each broker in the array i
 | truststore         | Path to the Truststore file for encrypted connection | empty             |
 | truststorePassword | Password to the Truststore                           | empty             |
 | retryInterval      | Interval to retry connection in milliseconds         | 3000              |
+| clientId           | MQTT client id. If not set auto-generated UUID used  | random UUID       |
 
 For Example:
 

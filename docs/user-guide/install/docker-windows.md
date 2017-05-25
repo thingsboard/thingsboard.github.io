@@ -3,8 +3,11 @@ layout: docwithnav
 assignees:
 - ashvayka
 title: Installing Thingsboard using Docker (Windows)
+description: Installing Thingsboard IoT Platform using Docker (Windows)
 
 ---
+
+{% include templates/live-demo-banner.md %}
 
 * TOC
 {:toc}

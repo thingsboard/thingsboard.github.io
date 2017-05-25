@@ -1,6 +1,7 @@
 ---
 layout: docwithnav
 title: Arduino overview
+description: Thingsboard IoT Platform hardware samples for Arduino devices.
 
 ---
 

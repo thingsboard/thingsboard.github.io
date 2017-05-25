@@ -1,11 +1,28 @@
 name: Thingsboard
+author: thingsboard
+logo: /images/thingsboard_logo.png
+
+twitter:
+  username: thingsboard
+
+social:
+  name: Thingsboard
+  links:
+    - https://twitter.com/thingsboard
+    - https://github.com/thingsboard/thingsboard
+    - https://www.facebook.com/thingsboard
+    - https://www.youtube.com/channel/UCDb9fsV-YR4JmnipAMGsVAQ
+
+seo:
+  type: WebSite
+
 markdown: kramdown
 kramdown:
   input: GFM
   html_to_native: true
   hard_wrap: false
   syntax_highlighter: rouge
-baseurl: /
+baseurl:
 incremental: true
 
 safe: false
@@ -16,6 +33,10 @@ defaults:
     scope:
       path: ""
     values:
+      image:
+        path: /images/thingsboard_logo.png
+        twitter: /images/thingsboard_logo.png
+        facebook: /images/thingsboard_logo.png
       version: "v1.0"
       githubbranch: "master"
       docsbranch: "master"
@@ -30,3 +51,4 @@ permalink: pretty
 
 gems:
   - jekyll-redirect-from
+  - jekyll-seo-tag

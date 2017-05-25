@@ -3,9 +3,11 @@ layout: docwithnav
 assignees:
 - ashvayka
 title: Installation options
+description: Thingsboard installation instructions for various operation systems and cloud platforms
 
 ---
 
+{% include templates/live-demo-banner.md %}
 
 Thingsboard is designed to run and utilize on majority of hardware, from local Raspberry PI to powerful servers in the cloud.
 Ways to set up a Thingsboard cluster include:

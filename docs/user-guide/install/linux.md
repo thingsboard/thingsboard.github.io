@@ -3,8 +3,11 @@ layout: docwithnav
 assignees:
 - ashvayka
 title: Installing Thingsboard on Linux
+description: Installing Thingsboard on Linux
 
 ---
+
+{% include templates/live-demo-banner.md %}
 
 * TOC
 {:toc}

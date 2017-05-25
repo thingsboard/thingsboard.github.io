@@ -3,8 +3,11 @@ layout: docwithnav
 assignees:
 - ikulikov
 title: Installing Thingsboard on Windows
+description: Installing Thingsboard on Windows
 
 ---
+
+{% include templates/live-demo-banner.md %}
 
 * TOC
 {:toc}
@@ -66,7 +69,7 @@ Instructions listed below will help you to install Cassandra.
 #### Thingsboard service installation
 
 - Create working directory, for example "C:\thingsboard". 
-- Download [installation archive](https://github.com/thingsboard/thingsboard/releases/download/v1.2.1/thingsboard-windows-1.2.1.zip) or [build it from source](/docs/user-guide/install/building-from-source).
+- Download [installation archive](https://github.com/thingsboard/thingsboard/releases/download/v1.2.3/thingsboard-windows-1.2.3.zip) or [build it from source](/docs/user-guide/install/building-from-source).
 - Unzip installation archive to the working directory. The working directory should look like this after installation:
  
   ![image](/images/user-guide/install/windows/windows-folder.png)

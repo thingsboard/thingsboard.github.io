@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: Facilities monitoring system prototype using Thingsboard
-
+description: Facilities monitoring system prototype using IoT Devices and Thingsboard
 ---
 
 * TOC

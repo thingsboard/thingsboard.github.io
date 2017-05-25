@@ -1,6 +1,7 @@
 ---
 layout: docwithnav
 title: Troubleshooting
+description: Thingsboard IoT Platform troubleshooting
 
 ---
 
