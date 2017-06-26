@@ -93,3 +93,5 @@ toc:
       path: /docs/user-guide/contribution/how-to-contribute/
     - title: Extensions (Plugins and Actions) development
       path: /docs/user-guide/contribution/extensions-development/
+    - title: Widgets development
+      path: /docs/user-guide/contribution/widgets-development/
