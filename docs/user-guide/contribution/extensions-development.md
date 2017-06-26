@@ -93,7 +93,33 @@ Here are particular samples:
 - in case of **REST API Call Extenstion**, *Action* will create object that contains information regarding REST request to specific endpoint
 - etc.
 
-To create *Action* for specific extension, you'll need to create class that implements *org.thingsboard.server.extensions.api.plugins.PluginAction* interface.
+To create *Action* for specific extension, you'll need to create class that implements *org.thingsboard.server.extensions.api.plugins.PluginAction* interface:
+
+```java
+public interface PluginAction<T> extends ConfigurableComponent<T>, RuleLifecycleComponent {
+    Optional<RuleToPluginMsg<?>> convert(RuleContext ctx, ToDeviceActorMsg toDeviceActorMsg, RuleProcessingMetaData deviceMsgMd);
+    Optional<ToDeviceMsg> convert(PluginToRuleMsg<?> response);
+    boolean isOneWayAction();
+}
+```
+
+- **convert(RuleContext ctx, ToDeviceActorMsg toDeviceActorMsg, RuleProcessingMetaData deviceMsgMd)** - builds messages that is going to be send to *Plugin*
+- **convert(PluginToRuleMsg<?> response)** - converts responses from *Plugin* notifying regarding result of the *Action* call
+- **isOneWayAction()** - notifies platform that action is going to wait for a it's result before return
+
+and *org.thingsboard.server.extensions.api.rules.RuleLifecycleComponent* interface:
+ 
+```java
+public interface RuleLifecycleComponent {
+    void resume();
+    void suspend();
+    void stop();
+}
+```
+   
+- **resume** method - provides logic that should be done once action resumed, if needed.
+- **suspend** method - provides logic that should be done once action paused, if needed (closes external resources, close connections etc.).
+- **stop** method - provides logic that should be done once action stopped, if needed (closes external resources, close connections etc.).
 
 This class is the core of your *Action* and here you should implement logic where you'll create *Java* object (object that implements *RuleToPluginMsg* interface). 
 And this object is going to be passed to *Plugin* for processing.
@@ -127,10 +153,39 @@ This processing depends on your needs and could be anything:
 
 - send emails
 - send messages to external system
-- send messages to Thingsboard instance
+- send messages to ThingsBoard instance
 - etc.
 
-Development of *Plugin* starts from creating class that implements *org.thingsboard.server.extensions.api.plugins.Plugin* interface.
+Development of *Plugin* starts from creating class that implements *org.thingsboard.server.extensions.api.plugins.Plugin* interface:
+
+```java
+public interface Plugin<T> extends ConfigurableComponent<T> {
+    void process(PluginContext ctx, PluginWebsocketMsg<?> wsMsg);
+    void process(PluginContext ctx, TenantId tenantId, RuleId ruleId, RuleToPluginMsg<?> msg) throws RuleException;
+    void process(PluginContext ctx, PluginRestMsg msg);
+    void process(PluginContext ctx, RpcMsg msg);
+    void process(PluginContext ctx, FromDeviceRpcResponse msg);
+    void process(PluginContext ctx, TimeoutMsg<?> msg);
+    void onServerAdded(PluginContext ctx, ServerAddress server);
+    void onServerRemoved(PluginContext ctx, ServerAddress server);
+    void resume(PluginContext ctx);
+    void suspend(PluginContext ctx);
+    void stop(PluginContext ctx);
+}
+```
+
+- **process(PluginContext ctx, PluginWebsocketMsg<?> wsMsg)** method - TODO
+- **process(PluginContext ctx, TenantId tenantId, RuleId ruleId, RuleToPluginMsg<?> msg) throws RuleException** method - TODO
+- **process(PluginContext ctx, PluginRestMsg msg)** method - TODO
+- **process(PluginContext ctx, RpcMsg msg)** method - TODO
+- **process(PluginContext ctx, FromDeviceRpcResponse msg)** method - TODO
+- **process(PluginContext ctx, TimeoutMsg<?> msg)** method - TODO
+- **onServerAdded** method - provides logic that should be done once new ThingsBoard instance added to the cluster.
+- **onServerRemoved** method - provides logic that should be done once new ThingsBoard instance removed from the cluster.
+- **resume** method - provides logic that should be done once plugin resumed, if needed (re-inits external connections, clean sessions etc.).
+- **suspend** method - provides logic that should be done once action resumed, if needed (closes external connections, resources etc.).
+- **stop** method - provides logic that should be done once action resumed, if needed (closes external connections, resources etc.).
+
 
 This class is the core of your *Plugin* and here you should implement logic regarding to correctly init plugin.
 
@@ -368,6 +423,6 @@ public class RestApiCallPluginAction extends AbstractTemplatePluginAction<RestAp
 
 Now it's time to start **Thingsboard** and verify that **extension** works as you expected.
 
-Here is [configuration](docs/reference/plugins/rest/) and verification of **REST API Call Extension**. 
+Here is [configuration](/docs/reference/plugins/rest/) and verification of **REST API Call Extension**. 
 
 The same steps could be applied for newly added extension, but taking into account new extension configuration and functionality. 
