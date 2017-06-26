@@ -33,6 +33,8 @@ toc:
     path: /docs/user-guide/install/cluster-setup/
 - title: Features
   section:
+  - title: Entities and relations
+    path: /docs/user-guide/entities-and-relations/
   - title: Working with device attributes
     path: /docs/user-guide/attributes/
   - title: Working with telemetry data
