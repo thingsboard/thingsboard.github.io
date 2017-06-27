@@ -174,17 +174,20 @@ public interface Plugin<T> extends ConfigurableComponent<T> {
 }
 ```
 
-- **process(PluginContext ctx, PluginWebsocketMsg<?> wsMsg)** method - TODO
-- **process(PluginContext ctx, TenantId tenantId, RuleId ruleId, RuleToPluginMsg<?> msg) throws RuleException** method - TODO
-- **process(PluginContext ctx, PluginRestMsg msg)** method - TODO
-- **process(PluginContext ctx, RpcMsg msg)** method - TODO
-- **process(PluginContext ctx, FromDeviceRpcResponse msg)** method - TODO
-- **process(PluginContext ctx, TimeoutMsg<?> msg)** method - TODO
+- **process(PluginContext ctx, PluginWebsocketMsg<?> wsMsg)** method - processes messages from the web-sockets. 
+For example, plugin is able to process telemetry web-socket messages and do some actions once they arrived.  
+- **process(PluginContext ctx, TenantId tenantId, RuleId ruleId, RuleToPluginMsg<?> msg) throws RuleException** method - processes messages that are triggered by rules.
+- **process(PluginContext ctx, PluginRestMsg msg)** method - processes messages from REST endpoints. 
+For example, plugin is able to process telemetry or RPC REST messages and do some actions once they arrived. 
+- **process(PluginContext ctx, RpcMsg msg)** method - processes messages from rpc calls from other cluster instances. 
+For example, plugin is able to process telemetry rpc messages from other cluster instances and do some actions once they arrived.
+- **process(PluginContext ctx, FromDeviceRpcResponse msg)** method - processes messages from rpc device responses.
+- **process(PluginContext ctx, TimeoutMsg<?> msg)** method - processes timeout messages once rpc request to device is hanging more than expected.
 - **onServerAdded** method - provides logic that should be done once new ThingsBoard instance added to the cluster.
 - **onServerRemoved** method - provides logic that should be done once new ThingsBoard instance removed from the cluster.
 - **resume** method - provides logic that should be done once plugin resumed, if needed (re-inits external connections, clean sessions etc.).
-- **suspend** method - provides logic that should be done once action resumed, if needed (closes external connections, resources etc.).
-- **stop** method - provides logic that should be done once action resumed, if needed (closes external connections, resources etc.).
+- **suspend** method - provides logic that should be done once plugin suspended, if needed (closes external connections, resources etc.).
+- **stop** method - provides logic that should be done once plugin stopped, if needed (closes external connections, resources etc.).
 
 
 This class is the core of your *Plugin* and here you should implement logic regarding to correctly init plugin.
