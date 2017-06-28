@@ -14,7 +14,7 @@ title: Widgets Development Guide
 **ThingsBoard widgets** are additional UI modules that can be easily integrated into any [IoT Dashboards](/docs/user-guide/ui/dashboards/) and provide end-user functions such as data visualization, remote device control, alarms management and displaying static custom html content.
 According to the provided features each widget definition represents specific [Widget Type](/docs/user-guide/ui/widget-library/#widget-types).
 
-### Creating new widget definition
+## Creating new widget definition
 
 In order to create new widget definition navigate "Widget Library".
 Then open existing "Widgets Bundle" or create new one. In the "Widgets Bundle" view click on the big “+” button in the bottom-right part of the screen and then click on the "Create new widget type" button.
@@ -29,7 +29,7 @@ After that "Widget Edtor" page will be opened pre-populated with the starter wid
 
 ![image](/images/user-guide/contribution/widgets/widget-editor.png)
 
-#### Widget Editor overview
+### Widget Editor overview
 
 Widget Editor view represents mini IDE designed to develop custom widget definitions.
 It consists of [top toolbar](#widget-editor-toolbar) and four main sections:
@@ -39,7 +39,7 @@ It consists of [top toolbar](#widget-editor-toolbar) and four main sections:
  - [Settings schema](#settings-schema-section) 
  - [Widget preview](#widget-preview-section)
 
-##### Widget Editor Toolbar
+#### Widget Editor Toolbar
 
 ![image](/images/user-guide/contribution/widgets/widget-editor-toolbar.png)
 
@@ -52,7 +52,7 @@ Widget Editor Toolbar consists of the following items:
  - **Save** button - saves widget definition
  - **Save as** button - allows to save a new copy of widget definition by specifying new widget type name and target **Widgets Bundle**
  
-##### Resources/HTML/CSS section
+#### Resources/HTML/CSS section
 
 This section consists of three tabs. First **Resources** tab is used to specify external JavaScript/CSS resources used by widget.
 
@@ -66,13 +66,13 @@ Third **CSS** tab contains widget specific CSS style definitions.
 
 ![image](/images/user-guide/contribution/widgets/widget-editor-css.png)
 
-##### JavaScript section
+#### JavaScript section
 
 This section contains all widget related JavaScript code according to the [Widget API](#basic-widget-api).  
 
 ![image](/images/user-guide/contribution/widgets/widget-editor-javascript.png)
 
-##### Settings schema section
+#### Settings schema section
 
 This section consists of two tabs. 
 First **Settings schema** tab is used to specify json schema of widget settings in order to auto-generate UI form using react-schema-form [builder](http://networknt.github.io/react-schema-form/). 
@@ -88,7 +88,7 @@ These settings are accessible from widget JavaScript code.
 
 ![image](/images/user-guide/contribution/widgets/widget-editor-datakey-settings-schema.png)
 
-##### Widget preview section
+#### Widget preview section
 
 This section is used to preview and test widget definition.
 It is presented as mini dashboard containing one widget instantiated from the current widget definition.
@@ -97,7 +97,7 @@ For example there is only "Function" can be selected as datasource type in widge
 
 ![image](/images/user-guide/contribution/widgets/widget-editor-preview.png)
 
-#### Basic widget API
+### Basic widget API
 
 All widget related code is located in the [JavaScript section](#javascript-section).
 There is already available built-in variable **self** that is reference to widget instance.
@@ -140,7 +140,7 @@ In order to implement new widget the following JavaScript functions should be de
 | ``` actionSources() ```            | Retruns object describing available widget action sources used to define user actions. See [Action sources object](#action-sources-object). |
 
 
-##### Subscription object
+#### Subscription object
 
 Widget subscription object contains all subscription information including current data according to the [widget type](/docs/user-guide/ui/widget-library/#widget-types).
 Depending on widget type subscription object provides different data structures.
@@ -250,7 +250,7 @@ For [Alarm widget](/docs/user-guide/ui/widget-library/#alarm-widget) type it pro
 
 For other widget types like [RPC](/docs/user-guide/ui/widget-library/#rpc-control-widget) or [Static](/docs/user-guide/ui/widget-library/#static) subscription object is optional and does not contain necessary information.    
 
-##### Timewindow functions
+#### Timewindow functions
 
 Object with timewindow functions used to manage widget data time frame. Can by used by [Time-series](/docs/user-guide/ui/widget-library/#time-series) or [Alarm](/docs/user-guide/ui/widget-library/#alarm-widget) widgets.
 
@@ -260,7 +260,7 @@ Object with timewindow functions used to manage widget data time frame. Can by u
 | ``` onResetTimewindow() ```                         | Resets subscription time frame to default defined by widget timewindow component or dashboard timewindow depending on widget settings. |
 
 
-##### Control API
+#### Control API
 
 Object that provides API functions for [RPC (Control)](/docs/user-guide/ui/widget-library/#rpc-control-widget) widgets.
 
@@ -270,7 +270,7 @@ Object that provides API functions for [RPC (Control)](/docs/user-guide/ui/widge
 | ``` sendTwoWayCommand(method, params, timeout) ```  | Sends two way (with response) RPC command to the device. Returns command execution promise with response body in success callback. |
 
 
-##### Actions API
+#### Actions API
 
 Set of API functions to work with user defined actions.
 
@@ -280,7 +280,7 @@ Set of API functions to work with user defined actions.
 | ``` handleWidgetAction($event, descriptor, entityId, entityName) ```  | Handles action produced by particular action source. **$event** - event object associated with action, **descriptor** - action descriptor, **entityId** and **entityName** - current entity id and name provided by action source if available. |
 
 
-##### State Controller
+#### State Controller
 
 Reference to Dashboard state controller providing API to manage current dashboard state.
 
@@ -293,7 +293,7 @@ Reference to Dashboard state controller providing API to manage current dashboar
 | ``` getStateParamsByStateId(id) ```                 | Returns state parameters for particular dashboard state identified by **id**. |
 
 
-##### Type parameters object
+#### Type parameters object
 
 Object describing widget datasource parameters. It has the following properties:
 
@@ -304,7 +304,7 @@ Object describing widget datasource parameters. It has the following properties:
     }
 ```
 
-##### Action sources object
+#### Action sources object
 
 Map describing available widget action sources to which user actions can be assigned. It has the following structure:
 
@@ -317,13 +317,13 @@ Map describing available widget action sources to which user actions can be assi
     };   
 ```
 
-#### Creating simple widgets 
+### Creating simple widgets 
 
-Below is set of simple steps how to create minimal widgets of each type.
-In order to minimize amount of code used the Angular approach will be used.
-By the way you can always use pure JavaScript code or use jQuery functions in your widget code.
+Below is the set of simple tutorials how to create minimal widgets of each type.
+In order to minimize amount of code the Angular framework will be used, on which ThingsBoard UI is actually based.
+By the way you can always use pure JavaScript or jQuery API in your widget code.
 
-##### Latest Values widget
+#### Latest Values widget
 
 In the **Widgets Bundle** view click on the big “+” button in the bottom-right part of the screen and then click on the “Create new widget type” button.
 Click on the **Latest Values** button in the **Select widget type** popup.
@@ -360,7 +360,7 @@ The **Widget Editor** will be opened pre-populated with content of default **Lat
 In this example the **data** property of [subscription](#subscription-object) is assigned to the **$scope** and become accessible within HTML template.
 Inside the HTML a special **ng-repeat** angular directive is used in order to iterate over available dataKeys datapoints and render corresponding latest values with their timestamps. 
 
-##### Time-Series widget
+#### Time-Series widget
 
 In the **Widgets Bundle** view click on the big “+” button in the bottom-right part of the screen and then click on the “Create new widget type” button.
 Click on the **Time-Series** button in the **Select widget type** popup.
@@ -434,7 +434,7 @@ Inside each tab the table is rendered using dataKeys data obtained from **dataso
 Each table renders columns by iterating over all **dataKeyData** objects and renders all available datapoints by iterating over **data** array of each **dataKeyData** to render timestamps and values.
 Note that in this code **onDataUpdated** function is implemented with call to angular **$digest** function necessary to perform new rendering cycle when new data is received.   
 
-##### RPC (Control) widget
+#### RPC (Control) widget
 
 In the **Widgets Bundle** view click on the big “+” button in the bottom-right part of the screen and then click on the “Create new widget type” button.
 Click on the **Control Widget** button in the **Select widget type** popup.
@@ -597,27 +597,302 @@ In order to test "Two way" RPC command mode we need to change corresponding widg
 
 ![image](/images/user-guide/contribution/widgets/control-widget-sample-settings.png)   
 
- - Click **Apply changes** button in the widget detals header. Close details and click dashboard **Apply changes** button.
+ - Click **Apply changes** button in the widget details header. Close details and click dashboard **Apply changes** button.
  - Fill widget fields with RPC method name and params like in previous steps. 
  Click **Send RPC command** button. You should see the following response in the widget.
  
 ![image](/images/user-guide/contribution/widgets/control-widget-sample-response-two-way.png)
   
-  - TODO: stop mqtt-js-rpc-from-server.sh ...............
- 
-
-##### Alarm widget
-
-In the “Widgets Bundle” view click on the big “+” button in the bottom-right part of the screen and then click on the “Create new widget type” button.
-Click on the "Alarm Widget" button in the **Select widget type** popup.
-
-##### Static widget
-
-In the “Widgets Bundle” view click on the big “+” button in the bottom-right part of the screen and then click on the “Create new widget type” button.
-Click on the "Static Widget" button in the **Select widget type** popup.
-
-### Integrating existing code to create widget definition 
-
-
-
+  - stop **mqtt-js-rpc-from-server.sh** script.
+ Click **Send RPC command** button. You should see the following response in the widget.
   
+![image](/images/user-guide/contribution/widgets/control-widget-sample-response-timeout.png)  
+  
+In this example **controlApi** is used to send RPC commands. Additionally custom widget settings were introduced in order to configure RPC command mode and RPC request timeout.
+Response from device is handled by **commandPromise** that has success and failed callbacks with corresponding response or rejection objects containing information about request execution result.     
+
+#### Alarm widget
+
+In the **Widgets Bundle** view click on the big “+” button in the bottom-right part of the screen and then click on the “Create new widget type” button.
+Click on the **Alarm Widget** button in the **Select widget type** popup.
+The **Widget Editor** will be opened pre-populated with content of default **Alarm** template widget.
+
+ - Put the following HTML code inside the HTML tab of "Resources" section:
+
+```html
+  {% raw  %}<div flex layout="column" style="height: 100%;">
+      <div>My first Alarm widget.</div>
+      <table style="width: 100%;">
+          <thead>
+              <tr>
+                  <th ng-repeat="dataKey in alarmSource.dataKeys">{{dataKey.label}}</th> 
+              <tr>          
+          </thead>
+          <tbody>
+              <tr ng-repeat="alarm in alarms">
+                  <td ng-repeat="dataKey in alarmSource.dataKeys" 
+                      ng-style="getAlarmCellStyle(alarm, dataKey)">
+                      {{getAlarmValue(alarm, dataKey)}}
+                  </td>
+              </tr>      
+          </tbody>          
+      </table>          
+  </div>{% endraw %}
+```
+
+ - Put the following JSON content inside the "Settings schema" tab of **Settings schema section**:
+ 
+```json
+{
+    "schema": {
+        "type": "object",
+        "title": "AlarmTableSettings",
+        "properties": {
+            "alarmSeverityColorFunction": {
+                "title": "Alarm severity color function: f(severity)",
+                "type": "string",
+                "default": "if(severity == 'CRITICAL') {return 'red';} else if (severity == 'MAJOR') {return 'orange';} else return 'green'; "
+            }
+        },
+        "required": []
+    },
+    "form": [
+        {
+            "key": "alarmSeverityColorFunction",
+            "type": "javascript"
+        }
+    ]
+}
+```
+
+ - Put the following JavaScript code inside the "JavaScript" section:
+ 
+```javascript
+self.onInit = function() {
+    self.ctx.$scope.alarmSource = self.ctx.defaultSubscription.alarmSource;
+    
+    var alarmFields = self.ctx.$scope.$injector.get('types').alarmFields;
+    var $filter = self.ctx.$scope.$injector.get('$filter');
+    
+    var alarmSeverityColorFunctionBody = self.ctx.settings.alarmSeverityColorFunction;
+    if (angular.isUndefined(alarmSeverityColorFunctionBody) || !alarmSeverityColorFunctionBody.length) {
+        alarmSeverityColorFunctionBody = "if(severity == 'CRITICAL') {return 'red';} else if (severity == 'MAJOR') {return 'orange';} else return 'green';";
+    }
+    
+    var alarmSeverityColorFunction = null;
+    try {
+        alarmSeverityColorFunction = new Function('severity', alarmSeverityColorFunctionBody);
+    } catch (e) {
+        alarmSeverityColorFunction = null;
+    }
+
+    self.ctx.$scope.getAlarmValue = function(alarm, dataKey) {
+        var alarmField = alarmFields[dataKey.name];
+        if (alarmField) {
+            var value = alarm[alarmField.value];
+            if (alarmField.time) {
+                return $filter('date')(value, 'yyyy-MM-dd HH:mm:ss');
+            } else {
+                return value;
+            }
+        } else {
+            return alarm[dataKey.name];
+        }
+    }
+    
+    self.ctx.$scope.getAlarmCellStyle = function(alarm, dataKey) {
+        var alarmField = alarmFields[dataKey.name];
+        if (alarmField && alarmField == alarmFields.severity && alarmSeverityColorFunction) {
+            var severity = alarm[alarmField.value];
+            var color = alarmSeverityColorFunction(severity);
+            return {
+                color: color  
+            };
+        }
+        return {};
+    }
+}
+
+self.onDataUpdated = function() {
+    self.ctx.$scope.alarms = self.ctx.defaultSubscription.alarms;
+}
+```
+
+ - Click on the **Run** button in the **Widget Editor Toolbar** in order to see result in **Widget preview** section.
+
+![image](/images/user-guide/contribution/widgets/alarm-widget-sample.png)
+
+In this example the **alarmSource** and **alarms** properties of [subscription](#subscription-object) is assigned to the **$scope** and become accessible within HTML template.
+Inside the HTML a special **ng-repeat** angular directive is used in order to iterate over available alarm **dataKeys** of **alarmSource** and render corresponding columns.
+The table rows are rendered by iterating over **alarms** array and corresponding cells rendered by iterating over **dataKeys**.
+The function **getAlarmValue** is fetching alarm value using special alarmFields constants obtained from **types** which is part of ThingsBoard UI and accessed via Angular **$injector**.
+The function **getAlarmCellStyle** is used to assign custom cell style for each alarm cell. In this example we introduced new settings property called **alarmSeverityColorFunction** that contains function body returning color depending on alarm severity.
+Inside the **getAlarmCellStyle** function there is corresponding invocation of **alarmSeverityColorFunction** with severity value in order to get color for alarm severity cell. 
+Note that in this code **onDataUpdated** function is implemented in order to update **alarms** property with latest alarms from subscription.   
+
+#### Static widget
+
+In the **Widgets Bundle** view click on the big “+” button in the bottom-right part of the screen and then click on the “Create new widget type” button.
+Click on the **Static Widget** button in the **Select widget type** popup.
+The **Widget Editor** will be opened pre-populated with content of default **Static** template widget.
+
+ - Put the following HTML code inside the HTML tab of "Resources" section:
+
+```html
+  {% raw  %}<div flex layout="column" style="height: 100%;" layout-align="space-around stretch">
+      <h3 style="text-align: center;">My first static widget.</h3>
+      <md-button class="md-primary md-raised" ng-click="showAlert()">Click me</md-button>
+  </div>{% endraw %}
+```
+
+ - Put the following JSON content inside the "Settings schema" tab of **Settings schema section**:
+ 
+```json
+{
+    "schema": {
+        "type": "object",
+        "title": "Settings",
+        "properties": {
+            "alertContent": {
+                "title": "Alert content",
+                "type": "string",
+                "default": "Content derived from alertContent property of widget settings."
+            }
+        }
+    },
+    "form": [
+        "alertContent"
+    ]
+}
+``` 
+
+ - Put the following JavaScript code inside the "JavaScript" section:
+ 
+```javascript
+self.onInit = function() {
+
+    self.ctx.$scope.showAlert = function() {
+        var alertContent = self.ctx.settings.alertContent;
+        if (!alertContent) {
+            alertContent = "Content derived from alertContent property of widget settings.";
+        }
+        window.alert(alertContent);  
+    };
+
+}
+```
+
+ - Click on the **Run** button in the **Widget Editor Toolbar** in order to see result in **Widget preview** section.
+
+![image](/images/user-guide/contribution/widgets/static-widget-sample.png)
+
+This is just a static HTML widget so there is no subscription data or special widget API was used.
+Only custom **showAlert** function was implemented showing alert with content of **alertContent** property of widget settings.
+You can switch to dashboard edit mode in **Widget preview** section and change value of **alertContent** by changing widget settings in the "Advanced" tab of widget details.
+Then you can see that new alert content will be displayed. 
+
+## Integrating existing code to create widget definition 
+
+Below is some examples demonstrating how external JavaScript libraries or existing code can be reused/integrated to create new widgets.
+ 
+### Using external JavaScript library
+
+In this example **Latest Values** gauge widget will be created using external [gauge.js](http://bernii.github.io/gauge.js/) library.
+
+In the **Widgets Bundle** view click on the big “+” button in the bottom-right part of the screen and then click on the “Create new widget type” button.
+Click on the **Latest Values** button in the **Select widget type** popup.
+The **Widget Editor** will be opened pre-populated with content of default **Latest Values** template widget.
+
+ - Open **Resources** tab and click "Add" then insert the following link:
+
+```  
+http://bernii.github.io/gauge.js/dist/gauge.min.js  
+```
+
+ - Clear content of the CSS tab of "Resources" section.
+ - Put the following HTML code inside the HTML tab of "Resources" section:
+ 
+```html
+  {% raw  %}<canvas id="my-gauge"></canvas>{% endraw %}
+```
+
+ - Put the following JavaScript code inside the "JavaScript" section:
+ 
+```javascript
+var canvasElement;
+var gauge;
+
+self.onInit = function() {
+    canvasElement = $('#my-gauge', self.ctx.$container)[0];
+    gauge = new Gauge(canvasElement);
+    gauge.minValue = -1000; 
+    gauge.maxValue = 1000; 
+    gauge.animationSpeed = 16; 
+    self.onResize();
+}
+
+self.onResize = function() {
+    canvasElement.width = self.ctx.width;
+    canvasElement.height = self.ctx.height;
+    gauge.update(true);
+    gauge.render();
+}
+
+self.onDataUpdated = function() {
+    var value = self.ctx.defaultSubscription.data[0].data[0][1];
+    gauge.set(value);
+}
+```
+
+ - Click on the **Run** button in the **Widget Editor Toolbar** in order to see result in **Widget preview** section.
+
+![image](/images/user-guide/contribution/widgets/external-js-widget-sample.png)
+
+In this example API of the external JS library was used that become available after injecting corresponding URL in **Resources** section.
+The value displayed was obtained from [subscription](#subscription-object) **data** property for the first dataKey. 
+
+### Using existing JavaScript code
+
+Another approach of creating widgets is to use exiting bundled JavaScript code.
+In this case you can create own JavaScript class or Angular directive and bundle it into the ThingsBoard UI code.
+In order to make this code accessible within the widget you need to register corresponding Angular module or inject JavaScript class to global variable (for ex. window object).
+Some of the ThingsBoard widgets already use this approach. Take a look at the [widget.service.js](https://github.com/thingsboard/thingsboard/tree/master/ui/src/app/api/widget.service.js).
+Here you can find how some bundled classes or modules are registered for later use in ThingsBoard widgets.
+For example "Timeseries - Flot" widget (from "Charts" Widgets Bundle) uses **TbFlot** JavaScript class which is injected as window property inside **widget.service.js**:
+
+```javascript
+...
+
+import TbFlot from '../widget/lib/flot-widget';
+...
+
+    $window.TbFlot = TbFlot;
+...
+
+```
+
+Another example is "Timeseries table" widget (from "Cards" Widgets Bundle) that uses Angular directive **tb-timeseries-table-widget** which is registered as dependency of **'thingsboard.api.widget'** Angular module inside **widget.service.js**.
+Thereby this directive becomes available for usage inside widget template HTML. 
+
+```javascript
+...
+
+import thingsboardTimeseriesTableWidget from '../widget/lib/timeseries-table-widget';
+
+...
+
+export default angular.module('thingsboard.api.widget', ['oc.lazyLoad', thingsboardLedLight, thingsboardTimeseriesTableWidget,
+
+...
+
+```
+
+## Widget code debugging tips
+
+The most simple method of debugging is Web console output.
+Just place [**console.log(...)**](https://developer.mozilla.org/en-US/docs/Web/API/Console/log) function inside any part of widget JavaScript code.
+Then click **Run** button to restart widget code and observe debug information in Web console.
+
+Another and most effective method of debugging is to invoke browser debugger.
+Put [**debugger;**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/debugger) statement into the place of widget code you are interested in and then click **Run** button to restart widget code.
+Browser debugger (if enabled) will automatically pause code execution at the debugger statement and you will be able to analyze script execution using browser debugging tools.
