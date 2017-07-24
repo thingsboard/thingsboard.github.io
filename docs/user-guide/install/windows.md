@@ -29,7 +29,7 @@ If you don't have Java installed, please download and install Java 8 using this 
 ##### Cassandra
 
 Thingsboard requires a database to run.
-Currend Guide describes installing Thingsboard over Cassandra NoSQL database.
+The current guide describes installing Thingsboard over Cassandra NoSQL database.
 
 ##### 
 
@@ -84,32 +84,32 @@ Instructions listed below will help you to install Cassandra.
     type: "${DATABASE_TYPE:cassandra}" # cassandra OR sql
   ```
   
-- Run windows shell (cmd) as Administrator. Chande directory to your working dir.
+- Run windows shell (cmd) as Administrator. Change directory to your working dir.
 - Run **install.bat** script to install Thingsboard as a Windows service. 
   This means it will be automatically started on system startup. 
   Similar, **uninstall.bat** will remove Thingsboard from Windows services.
   
   ```text
-	C:\thingsboard>install.bat
-	Detecting Java version installed.
-	Detecting if it is 64 bit machine
-	CurrentVersion
-	Detecting if it is 32 bit machine
-	CurrentVersion 1.8
-	Java 1.8 found!
-	Installing thingsboard ...
-	 ===================================================
-	 :: ThingsBoard ::       (v1.3.0-SNAPSHOT)
-	 ===================================================
+    C:\thingsboard>install.bat
+    Detecting Java version installed.
+    Detecting if it is 64 bit machine
+    CurrentVersion
+    Detecting if it is 32 bit machine
+    CurrentVersion 1.8
+    Java 1.8 found!
+    Installing thingsboard ...
+     ===================================================
+     :: ThingsBoard ::       (v1.3.0-SNAPSHOT)
+     ===================================================
 
-	Starting ThingsBoard Installation...
-	Installing DataBase schema...
-	Installing Cassandra DataBase schema...
-	Loading system data...
-	Installation finished successfully!
-	2017-07-23 21:47:12,079 INFO  - Starting ServiceWrapper in the CLI mode
-	2017-07-23 21:47:12,317 INFO  - Completed. Exit code is 0
-	ThingsBoard installed successfully!
+    Starting ThingsBoard Installation...
+    Installing DataBase schema...
+    Installing Cassandra DataBase schema...
+    Loading system data...
+    Installation finished successfully!
+    2017-07-23 21:47:12,079 INFO  - Starting ServiceWrapper in the CLI mode
+    2017-07-23 21:47:12,317 INFO  - Completed. Exit code is 0
+    ThingsBoard installed successfully!
   ```
   
   Congratulations! Thingsboard application is now installed on your Windows machine as a service. 
@@ -117,7 +117,7 @@ Instructions listed below will help you to install Cassandra.
 ##### Start Thingsboard service
 
 Now let's start the Thingsboard service!
-Open command prompt as an Administrator and execute following command:
+Open a command prompt as an Administrator and execute the  following command:
 
 ```shell
 net start thingsboard
@@ -145,14 +145,14 @@ http://localhost:8080/
 
 **NOTE**: Please allow up to 90 seconds for the Web UI to start.
 
-Now you can login to Thingsboard using the default user credentials, that were created upon install:
+Now you can login to Thingsboard using the default user credentials, that was created upon install:
 
 ```text
 username: sysadmin@thingsboard.org
 password: sysadmin
 ```
 
-Congradulations! You have successfully installed Thingsboard as a service on your Windows machine!	
+Congratulations! You have successfully installed Thingsboard as a service on your Windows machine!    
 
 ##### Troubleshooting
 
@@ -200,6 +200,6 @@ you need to create a new inbound rule with Windows Firewall with Advanced Securi
 
 ![image](/images/user-guide/install/windows/windows7-firewall-7.png)
 
-- Finally give the name to this rule (for ex. "Thingsboard Service Networking") and click "Finish".
+- Finally, give the name to this rule (for ex. "Thingsboard Service Networking") and click "Finish".
 
 ![image](/images/user-guide/install/windows/windows7-firewall-8.png)
