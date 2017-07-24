@@ -86,8 +86,6 @@ A,Ubuntu,shell,resources/thingsboard-ubuntu-installation.sh,/docs/user-guide/ins
 B,CentOS,shell,resources/thingsboard-centos-installation.sh,/docs/user-guide/install/resources/thingsboard-centos-installation.sh{% endcapture %}  
 {% include tabs.html %}
 
-Install ThingsBoard as a service
-
 ### [Optional] Configure ThingsBoard to use external database
  
 {% include templates/optional-db.md %} 
@@ -98,27 +96,11 @@ Edit ThingsBoard configuration file
 sudo nano /etc/thingsboard/conf/thingsboard.conf
 ```
 
+{% include templates/disable-hsqldb.md %} 
+
+For **PostgreSQL**:
+
 {% include templates/enable-postgresql.md %} 
-
-Uncomment '# PostgreSQL DAO Configuration' block.
-
-```text
-# PostgreSQL DAO Configuration
-spring:
-  data:
-    jpa:
-      repositories:
-        enabled: "true"
-  jpa:
-    hibernate:
-      ddl-auto: "validate"
-    database-platform: "org.hibernate.dialect.PostgreSQLDialect"
-  datasource:
-    driverClassName: "${SPRING_DRIVER_CLASS_NAME:org.postgresql.Driver}"
-    url: "${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/thingsboard}"
-    username: "${SPRING_DATASOURCE_USERNAME:postgres}"
-    password: "${SPRING_DATASOURCE_PASSWORD:postgres}"
-```
 
 For **Cassandra DB**:
 
@@ -129,10 +111,7 @@ database:
   type: "${DATABASE_TYPE:cassandra}" # cassandra OR sql
 ```
 
-### Memory update for slow machines (1GB of RAM)
-
-We recommend to use embedded HSQLDB or PostgreSQL DB in this setup. 
-We don't recommend to use Cassandra on machines with less then 4GB of RAM.
+{% include templates/memory-update-for-slow-machines.md %} 
 
 For ThingsBoard service:
 
