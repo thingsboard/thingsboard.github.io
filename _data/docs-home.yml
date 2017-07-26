@@ -35,6 +35,8 @@ toc:
     path: /docs/user-guide/install/cluster-setup/
 - title: Features
   section:
+  - title: Entities and relations
+    path: /docs/user-guide/entities-and-relations/
   - title: Working with device attributes
     path: /docs/user-guide/attributes/
   - title: Working with telemetry data
@@ -93,3 +95,5 @@ toc:
       path: /docs/user-guide/contribution/how-to-contribute/
     - title: Extensions (Plugins and Actions) development
       path: /docs/user-guide/contribution/extensions-development/
+    - title: Widgets development
+      path: /docs/user-guide/contribution/widgets-development/

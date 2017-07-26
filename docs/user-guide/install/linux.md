@@ -2,8 +2,8 @@
 layout: docwithnav
 assignees:
 - ashvayka
-title: Installing Thingsboard on Linux
-description: Installing Thingsboard on Linux
+title: Installing ThingsBoard on Linux
+description: Installing ThingsBoard on Linux
 
 ---
 
@@ -12,19 +12,19 @@ description: Installing Thingsboard on Linux
 * TOC
 {:toc}
 
-This guide describes how to install Thingsboard on a Linux based server machine.
+This guide describes how to install ThingsBoard on a Linux based server machine.
 Instructions below are provided for Ubuntu 16.04 and CentOS 7. 
 This instructions can be easily adopted to other similar operation systems. 
 
-#### Hardware requirements
+### Hardware requirements
 
-To run Thingsboard and third-party components on a single machine you will need at least 1Gb of RAM.
+To run ThingsBoard and third-party components on a single machine you will need at least 1Gb of RAM.
 
-#### Third-party components installation
+### Third-party components installation
 
-##### Java
+#### Java
 
-Thingsboard service is running on Java 8. 
+ThingsBoard service is running on Java 8. 
 Although you are able to start the service using [OpenJDK](http://openjdk.java.net/), 
 solution is actively tested on [Oracle JDK](http://www.oracle.com/technetwork/java/javase/overview/index.html).
 
@@ -37,9 +37,32 @@ Please don't forget to configure your operation system to use Oracle JDK 8 by de
 Corresponding instructions are in the same articles listed above.
 
 
-##### Cassandra
+#### [Optional] External database installation
 
-Thingsboard service requires Cassandra database.
+{% include templates/install-db.md %}
+
+###### SQL Database: PostgreSQL
+
+{% include templates/optional-db.md %}
+
+Instructions listed below will help you to install PostgreSQL.
+
+{% capture tabspec %}postgresql-installation
+A,Ubuntu,shell,resources/postgresql-ubuntu-installation.sh,/docs/user-guide/install/resources/postgresql-ubuntu-installation.sh
+B,CentOS,shell,resources/postgresql-centos-installation.sh,/docs/user-guide/install/resources/postgresql-centos-installation.sh{% endcapture %}  
+{% include tabs.html %}   
+
+
+Once PostgreSQL is installed you may want to create new user or change password for the main user.
+
+See following guides for more details: 
+[using postgresql roles and databases](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-16-04#using-postgresql-roles-and-databases)
+and [changing the postgres user password](https://blog.2ndquadrant.com/how-to-safely-change-the-postgres-user-password-via-psql/)
+
+###### NoSQL Database: Cassandra
+
+{% include templates/optional-db.md %}
+
 Instructions listed below will help you to install Cassandra.
 
 {% capture tabspec %}cassandra-installation
@@ -47,7 +70,7 @@ A,Ubuntu,shell,resources/cassandra-ubuntu-installation.sh,/docs/user-guide/insta
 B,CentOS,shell,resources/cassandra-centos-installation.sh,/docs/user-guide/install/resources/cassandra-centos-installation.sh{% endcapture %}  
 {% include tabs.html %}
 
-#### Thingsboard service installation
+### ThingsBoard service installation
 
 Download installation package or [build it from source](/docs/user-guide/install/building-from-source).
 
@@ -56,81 +79,56 @@ A,Ubuntu,shell,resources/thingsboard-ubuntu-download.sh,/docs/user-guide/install
 B,CentOS,shell,resources/thingsboard-centos-download.sh,/docs/user-guide/install/resources/thingsboard-centos-download.sh{% endcapture %}  
 {% include tabs.html %}
 
-Install thingsboard as a service
+Install ThingsBoard as a service
 
 {% capture tabspec %}thingsboard-installation
 A,Ubuntu,shell,resources/thingsboard-ubuntu-installation.sh,/docs/user-guide/install/resources/thingsboard-ubuntu-installation.sh
 B,CentOS,shell,resources/thingsboard-centos-installation.sh,/docs/user-guide/install/resources/thingsboard-centos-installation.sh{% endcapture %}  
 {% include tabs.html %}
 
-##### Provision database schema and initial data
-
-Once Cassandra and Thingsboard services are installed, you can execute following scripts:
-
-```bash
-cqlsh -f /usr/share/thingsboard/data/schema.cql
-cqlsh -f /usr/share/thingsboard/data/system-data.cql
-cqlsh -f /usr/share/thingsboard/data/demo-data.cql
-```
-
-##### Memory update for slow machines (1GB of RAM)
-
-In case you are running Cassandra and Thingsboard on a single instance that has only 1 GB of RAM memory you need to update memory usage for these services to avoid being killed by OS kernel once services start consuming a lot of memory
-
-For Cassandra service:
-
-```bash
-# Stop cassandra service
-$ sudo service cassandra stop
-
-# Find and set memory options in /etc/cassandra/cassandra-env.sh
-MAX_HEAP_SIZE="150M"
-HEAP_NEWSIZE="50M"
-
-# Find and set timeout options in /etc/cassandra/cassandra.yaml
-read_request_timeout_in_ms: 20000
-range_request_timeout_in_ms: 20000
-write_request_timeout_in_ms: 20000
-counter_write_request_timeout_in_ms: 50000
-cas_contention_timeout_in_ms: 10000
-truncate_request_timeout_in_ms: 120000
-request_timeout_in_ms: 60000
-
-# Start cassandra service
-$ sudo service cassandra start
-```
-
-For Thingsboard service:
-
-```bash
-# Update Thingsboard memory usage and restrict it to 150MB in /etc/thingsboard/conf/thingsboard.conf
-export JAVA_OPTS="$JAVA_OPTS -Xms150M -Xmx150M"
-```
-
-
-If you are running on a single instance that has 2GB this still can be insufficient for Cassandra under heavy load
-
-In this case if services started to failing please update memory usage accordingly, but with less restrict parameters (for example '300M' instead of '150M')
-
-##### Start Thingsboard service
-
-Execute following command to start Thingsboard:
-
-```bash
-sudo service thingsboard start
-```
+### [Optional] Configure ThingsBoard to use external database
  
-Once started, you will be able to open Web UI using following link:
+{% include templates/optional-db.md %} 
+ 
+Edit ThingsBoard configuration file 
+
+```bash 
+sudo nano /etc/thingsboard/conf/thingsboard.conf
+```
+
+{% include templates/disable-hsqldb.md %} 
+
+For **PostgreSQL**:
+
+{% include templates/enable-postgresql.md %} 
+
+For **Cassandra DB**:
+
+Locate and set database type configuration parameter to 'cassandra'.
+ 
+```text
+database:
+  type: "${DATABASE_TYPE:cassandra}" # cassandra OR sql
+```
+
+{% include templates/memory-update-for-slow-machines.md %} 
+
+For ThingsBoard service:
 
 ```bash
-http://localhost:8080/
+# Update ThingsBoard memory usage and restrict it to 256MB in /etc/thingsboard/conf/thingsboard.conf
+export JAVA_OPTS="$JAVA_OPTS -Xms256M -Xmx256M"
 ```
+
+{% include templates/run-install.md %} 
+
+{% include templates/start-service.md %}
 
 **NOTE**: Please allow up to 90 seconds for the Web UI to start
 
-##### Troubleshooting
+### Troubleshooting
 
-Thingsboard logs are stored in the following directory:
+ThingsBoard logs are stored in the following directory:
  
 ```bash
 /var/log/thingsboard
