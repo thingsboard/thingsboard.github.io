@@ -75,6 +75,7 @@ Edit ThingsBoard configuration file
 ```bash 
 sudo nano /etc/thingsboard/conf/thingsboard.conf
 ```
+{% include templates/disable-hsqldb.md %}
 
 {% include templates/enable-postgresql.md %}
 
