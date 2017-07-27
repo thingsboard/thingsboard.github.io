@@ -37,22 +37,22 @@ curl -L https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.2.4/
 curl -L https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.2.4/docker/tb.env > tb.env
 ```
    
-- If you have already installed Thingsboard using docker and want to upgrade or cleanup your installation, please cleanup Cassandra data directory
+- If you have already installed Thingsboard using docker and want to upgrade or cleanup your installation, please cleanup HSQLDB data directory
       
 ```bash
-rm -rf /home/docker/cassandra_volume
+sudo rm -rf /home/docker/hsqldb_volume
 ```
 
-- If you would like to create system and demo data and to start Thingsboard node and all thirdparty components execute next command 
+- If you would like to create system and demo data and to start Thingsboard node execute next command 
  
 ```bash
-ADD_SYSTEM_DATA=true ADD_DEMO_DATA=true bash -c 'docker-compose -f docker-compose.yml up -d'
+ADD_SCHEMA_AND_SYSTEM_DATA=true ADD_DEMO_DATA=true bash -c 'docker-compose up -d tb'
 ``` 
 
-- In case you would like to skip creation of system and demo data or you already added and you only need to start Thingsboard node and all thirdparty components then execute *docker-compose* command 
+- In case you would like to skip creation of system and demo data or you already added and you only need to start Thingsboard node then execute *docker-compose* command 
 
 ```bash
-docker-compose -f docker-compose.yml up -d
+docker-compose up -d tb
 ```
    
 - Once started, you will be able to open Web UI using following link:
@@ -67,24 +67,16 @@ http://localhost:8080/
 
 One can modify **.env** file to configure following parameters:
 
- - CASSANDRA_DATA_DIR - location of cassandra data folder
- - CREATE_SCHEMA - create cassandra keyspace. by default *true*
- - ADD_SYSTEM_DATA - add system user, plugins and rules. by default *false*
+ - CASSANDRA_DATA_DIR - location of cassandra data folder on host machine
+ - POSTGRES_DATA_DIR - location of postgres data folder on host machine
+ - HSQLDB_DATA_DIR - location of hsqldb data folder on host machine
+ - ADD_SCHEMA_AND_SYSTEM_DATA - create schema and add system user, plugins and rules. by default *false*
  - ADD_DEMO_DATA - add demo accounts, plugins and rules. by default *false*
  - CASSANDRA_URL - url of cassandra container. by default name of the container
- 
+  
 ### tb.env file
 
 One can set thingsboard service environment variables using this file. See [configuration](/docs/user-guide/install/config/#thingsboardyml) for more details.
- 
-### Thirdparty components
- 
-One can start only Thingsboard thirdparty components. This may be useful for Thingsboard contributors in order to launch Thingsboard node from IDE.
-In order to do this, download **[docker-compose.static.yml](https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.2.4/docker/docker-compose.static.yml)** file and replace last installation step with
-
-```bash
-docker-compose -f docker-compose.yml -f docker-compose.static.yml up -d cassandra tb-cassandra-schema
-```
 
 ## Troubleshooting
 

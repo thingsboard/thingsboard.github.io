@@ -18,24 +18,55 @@ This guide will help you to deploy Thingsboard into cluster on Google Cloud Plat
 - Make sure that you have [Google Cloud Platform account](https://console.cloud.google.com/) activated and you have sufficient funds to create clusters and provision instances.
 
 - Download the following files from thingsboard repo:
-    1. **[common.yaml](https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.2.4/docker/common/common.yaml) - Kubernetes config file for common resources (StorageClass etc.).
-    1. **[cassandra.yaml](https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.2.4/docker/cassandra/cassandra.yaml) - Kubernetes config file for Cassandra Service. By Default start 3 nodes.
-    1. **[zookeeper.yaml](https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.2.4/docker/zookeeper/zookeeper.yaml) - Kubernetes config file for ZK Service. By Default start 3 nodes.
-    1. **[tb.yaml](https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.2.4/docker/tb/tb.yaml) - Kubernetes config file for Thingsboard Service. By Default starts 2 nodes.
-    1. **[tb-cassandra-schema.yaml](https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.2.4/docker/tb-cassandra-schema/tb-cassandra-schema.yaml) - Kubernetes config file for Pod that creates Thingsboard keyspace and tables inside Cassandra storage.
+    1. **[common.yaml](https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.2.4/docker/k8s/common.yaml) - Kubernetes config file for common resources (StorageClass etc.).
+    1. **[cassandra.yaml](https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.2.4/docker/k8s/cassandra.yaml) - Kubernetes config file for Cassandra Service. By Default start 2 nodes.
+    1. **[zookeeper.yaml](https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.2.4/docker/k8s/zookeeper.yaml) - Kubernetes config file for ZK Service. By Default start 3 nodes.
+    1. **[tb.yaml](https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.2.4/docker/k8s/tb.yaml) - Kubernetes config file for Thingsboard Service. By Default starts 2 nodes.
+    1. **[cassandra-setup.yaml](https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.2.4/docker/k8s/cassandra-setup.yaml) - Kubernetes config file for Pod that creates Thingsboard keyspace and tables inside Cassandra storage.
       
 ```bash
-curl -L https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.2.4/docker/common/common.yaml > common.yaml
-curl -L https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.2.4/docker/cassandra/cassandra.yaml > cassandra.yaml
-curl -L https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.2.4/docker/zookeeper/zookeeper.yaml > zookeeper.yaml
-curl -L https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.2.4/docker/tb/tb.yaml > tb.yaml
-curl -L https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.2.4/docker/tb-cassandra-schema/tb-cassandra-schema.yaml > tb-cassandra-schema.yaml
+curl -L https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.2.4/docker/k8s/common.yaml > common.yaml
+curl -L https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.2.4/docker/k8s/cassandra.yaml > cassandra.yaml
+curl -L https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.2.4/docker/k8s/zookeeper.yaml > zookeeper.yaml
+curl -L https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.2.4/docker/k8s/tb.yaml > tb.yaml
+curl -L https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.2.4/docker/k8s/cassandra-setup.yaml > cassandra-setup.yaml
 ```
 
-- Create cluster using gcloud cli (cluster version minimum 1.6.2 required and for demo purpose 6 standard nodes to properly deploy cluster pods):
+- Check server config to get available kubernetes cluster versions:
 
 ```bash
-gcloud container clusters create YOUR_CLUSTER_NAME --cluster-version=1.6.2 --node-labels=machinetype=tb --num-nodes=2
+gcloud container get-server-config
+```
+
+- The output will be similar to: 
+
+```bash
+Fetching server config for us-east1-b
+defaultClusterVersion: 1.6.4
+defaultImageType: COS
+validImageTypes:
+- COS
+- CONTAINER_VM
+validMasterVersions:
+- 1.7.1
+- 1.6.7
+- 1.6.4
+validNodeVersions:
+- 1.7.1
+- 1.7.0
+- 1.6.7
+- 1.6.6
+- 1.6.4
+- 1.5.7
+- 1.4.9
+
+```
+
+- Create cluster using gcloud cli (for demo purpose 6 standard nodes are going to be deployed for cluster pods).
+Select from the list above *validMasterVersions* that is higher than 1.6.2 (**VALID_MASTER_VERSION**) and create cluster:
+
+```bash
+gcloud container clusters create YOUR_CLUSTER_NAME --cluster-version=**VALID_MASTER_VERSION** --node-labels=machinetype=tb --num-nodes=2
 ```
 
 - Create additional node pool for Cassandra and Zookeeper PODs:
@@ -68,19 +99,50 @@ kubectl create -f cassandra.yaml
 kubectl get pods -w -l app=cassandra
 ```
 
-- Please wait until all 3 Pods of Cassandra service become *Running*:
+- Please wait until all 2 Pods of Cassandra service become *Running*:
 
 ```bash
 NAME             READY     STATUS    RESTARTS   AGE
 cassandra-0      1/1       Running   0          5s
 cassandra-1      1/1       Running   0          3s
-cassandra-2      1/1       Running   0          3s
 ```
 
 - Once Cassandra Pods are running please provision Pod that will create Thingsboard schema and tables inside Cassandra storage:
 
 ```bash
-kubectl create -f tb-cassandra-schema.yaml
+kubectl create -f cassandra-setup.yaml
+```
+
+- Check logs of the cassandra setup node:
+
+```bash
+kubectl logs -f cassandra-setup
+```
+
+- And wait until message for success install: 
+
+```bash
+Adding group `thingsboard' (GID 102) ...
+Done.
+Unpacking thingsboard (1.3.0~SNAPSHOT-1) ...
+Setting up thingsboard (1.3.0~SNAPSHOT-1) ...
+9042/tcp open  unknown
+Creating 'Thingsboard' schema and system data...
+plus demo data...
+ ===================================================
+ :: ThingsBoard ::       (v1.3.0-SNAPSHOT)
+ ===================================================
+
+log4j:WARN No appenders could be found for logger (hsqldb.db.HSQLDB5D8345905E.ENGINE).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+Starting ThingsBoard Installation...
+Installing DataBase schema...
+Installing SQL DataBase schema...
+Loading system data...
+Loading demo data...
+Installation finished successfully!
+ThingsBoard installed successfully!
 ```
 
 - Provision zookeeper Service:
@@ -143,7 +205,7 @@ http://EXTERNAL-IP:8080/
 - To delete the entire cluster execute following command:
 
 ```bash
-gcloud container clusters delete tb-test-cluster
+gcloud container clusters delete YOUR_CLUSTER_NAME
 ```
 
 ## Advanced usage
@@ -178,7 +240,7 @@ Thingsboard Kubernetes config file **tb.yaml** contains next set of cloud resour
  - *StatefulSet*. Set is responsible for provisioning Thingsboard Pods onto Cloud Nodes.
    - *podAntiAffinity*. This property guarantees that Thingsboard Pods are deployed to different Nodes.
 
-### tb-cassandra-schema.yaml
+### cassandra-setup.yaml
 
-Thingsboard Kubernetes config file **tb-cassandra-schema.yaml** contains next set of cloud resources:
+Thingsboard Kubernetes config file **cassandra-setup.yaml** contains next set of cloud resources:
  - *Pod* that runs once and creates Thingsboard keyspace and tables inside Cassandra storage

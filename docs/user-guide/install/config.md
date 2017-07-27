@@ -50,6 +50,7 @@ We will list only main configuration parameters below to avoid duplication of th
 | cassandra.url                    | Cassandra node list                                                                    | 127.0.0.1:9042    | CASSANDRA_URL                     |
 | security.jwt.tokenExpirationTime | JWT token expiration time in seconds used by Web UI                                    | 900               | JWT_TOKEN_EXPIRATION_TIME         |
 | security.jwt.refreshTokenExpTime | JWT refresh token expiration time in seconds used by Web UI (session expiration time)  | 3600              | JWT_REFRESH_TOKEN_EXPIRATION_TIME |
+| database.type                    | Type of the database to use: sql or cassandra                                          | sql               | DATABASE_TYPE                     |
 
 #### thingsboard.conf
 

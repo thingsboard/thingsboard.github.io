@@ -37,22 +37,22 @@ curl -L https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.2.4/
 curl -L https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.2.4/docker/tb.env > tb.env
 ```
       
-- If you have already installed Thingsboard using docker and want to upgrade or cleanup your installation, please cleanup Cassandra data directory
+- If you have already installed Thingsboard using docker and want to upgrade or cleanup your installation, please cleanup HSQLDB data directory
       
 ```bash
-docker-machine ssh default 'rm -rf /home/docker/cassandra_volume'
+docker-machine ssh default 'rm -rf /home/docker/hsqldb_volume'
 ```                  
 
-- If you would like to create system and demo data and to start Thingsboard node and all thirdparty components execute next command 
+- If you would like to create system and demo data and to start Thingsboard node execute next command 
  
 ```bash
-ADD_SYSTEM_DATA=true ADD_DEMO_DATA=true bash -c 'docker-compose -f docker-compose.yml up -d'
+ADD_SCHEMA_AND_SYSTEM_DATA=true ADD_DEMO_DATA=true bash -c 'docker-compose up -d tb'
 ```
       
-- In case you would like to skip creation of system and demo data or you already added and you only need to start Thingsboard node and all thirdparty components then execute *docker-compose* command 
+- In case you would like to skip creation of system and demo data or you already added and you only need to start Thingsboard node then execute *docker-compose* command 
 
 ```bash
-docker-compose -f docker-compose.yml up -d
+docker-compose up -d tb
 ```
    
 - In order to get access to necessary resources from external IP/Host after Thingsboard docker container installation, 
