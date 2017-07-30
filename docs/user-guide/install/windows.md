@@ -121,7 +121,7 @@ Instructions listed below will help you to install Cassandra.
 Edit ThingsBoard configuration file 
 
 ```bash 
-sudo nano /etc/thingsboard/conf/thingsboard.conf
+sudo nano /etc/thingsboard/conf/thingsboard.yml
 ```
 
 {% include templates/disable-hsqldb.md %} 

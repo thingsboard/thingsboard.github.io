@@ -73,7 +73,7 @@ export JAVA_OPTS="$JAVA_OPTS -Dplatform=rpi -Xms256M -Xmx256M"
 Edit ThingsBoard configuration file 
 
 ```bash 
-sudo nano /etc/thingsboard/conf/thingsboard.conf
+sudo nano /etc/thingsboard/conf/thingsboard.yml
 ```
 {% include templates/disable-hsqldb.md %}
 

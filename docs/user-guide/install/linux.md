@@ -93,7 +93,7 @@ B,CentOS,shell,resources/thingsboard-centos-installation.sh,/docs/user-guide/ins
 Edit ThingsBoard configuration file 
 
 ```bash 
-sudo nano /etc/thingsboard/conf/thingsboard.conf
+sudo nano /etc/thingsboard/conf/thingsboard.yml
 ```
 
 {% include templates/disable-hsqldb.md %} 
