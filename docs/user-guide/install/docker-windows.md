@@ -19,41 +19,15 @@ This guide will help you to install and start Thingsboard using Docker on Window
 
 - [Install Docker Toolbox for Windows](https://docs.docker.com/toolbox/toolbox_install_windows/)
 - Open "Docker Quickstart Terminal"
-- Make folder to store docker files:
-
-```bash
-mkdir <docker-folder>
-cd <docker-folder>
-```
-
-- Download the following files from thingsboard repo:
-    1. **[docker-compose.yml](https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.2.4/docker/docker-compose.yml)** - main docker-compose file.
-    1. **[.env](https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.2.4/docker/.env)** - main env file that contains default location of cassandra data folder.
-    1. **[tb.env](https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.2.4/docker/tb.env)** - default thingsboard environment variables.
-      
-```bash
-curl -L https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.2.4/docker/docker-compose.yml > docker-compose.yml
-curl -L https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.2.4/docker/.env > .env
-curl -L https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.2.4/docker/tb.env > tb.env
-```
+{% include templates/docker-files.md %}
       
 - If you have already installed Thingsboard using docker and want to upgrade or cleanup your installation, please cleanup HSQLDB data directory
       
 ```bash
 docker-machine ssh default 'rm -rf /home/docker/hsqldb_volume'
-```                  
-
-- If you would like to create system and demo data and to start Thingsboard node execute next command 
- 
-```bash
-ADD_SCHEMA_AND_SYSTEM_DATA=true ADD_DEMO_DATA=true bash -c 'docker-compose up -d tb'
 ```
-      
-- In case you would like to skip creation of system and demo data or you already added and you only need to start Thingsboard node then execute *docker-compose* command 
 
-```bash
-docker-compose up -d tb
-```
+{% include templates/start-docker.md %}
    
 - In order to get access to necessary resources from external IP/Host after Thingsboard docker container installation, 
   please execute the following commands on windows host machine:

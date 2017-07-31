@@ -19,23 +19,7 @@ This guide will help you to install and start Thingsboard using Docker on Linux 
 
 - [Install Docker](https://docs.docker.com/engine/installation/)
 - [Install Docker Compose (Linux only)](https://docs.docker.com/compose/install/) - Mac OS Docker installation already contains Docker Compose. 
-- Make folder to store docker files:
-
-```bash
-mkdir <docker-folder>
-cd <docker-folder>
-```
-
-- Download the following files from thingsboard repo:
-    1. **[docker-compose.yml](https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.2.4/docker/docker-compose.yml)** - main docker-compose file.
-    1. **[.env](https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.2.4/docker/.env)** - main env file that contains default location of cassandra data folder and cassandra schema.
-    1. **[tb.env](https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.2.4/docker/tb.env)** - default thingsboard environment variables.
-      
-```bash
-curl -L https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.2.4/docker/docker-compose.yml > docker-compose.yml
-curl -L https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.2.4/docker/.env > .env
-curl -L https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.2.4/docker/tb.env > tb.env
-```
+{% include templates/docker-files.md %}
    
 - If you have already installed Thingsboard using docker and want to upgrade or cleanup your installation, please cleanup HSQLDB data directory
       
@@ -43,17 +27,7 @@ curl -L https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.2.4/
 sudo rm -rf /home/docker/hsqldb_volume
 ```
 
-- If you would like to create system and demo data and to start Thingsboard node execute next command 
- 
-```bash
-ADD_SCHEMA_AND_SYSTEM_DATA=true ADD_DEMO_DATA=true bash -c 'docker-compose up -d tb'
-``` 
-
-- In case you would like to skip creation of system and demo data or you already added and you only need to start Thingsboard node then execute *docker-compose* command 
-
-```bash
-docker-compose up -d tb
-```
+{% include templates/start-docker.md %}
    
 - Once started, you will be able to open Web UI using following link:
    
@@ -72,7 +46,7 @@ One can modify **.env** file to configure following parameters:
  - HSQLDB_DATA_DIR - location of hsqldb data folder on host machine
  - ADD_SCHEMA_AND_SYSTEM_DATA - create schema and add system user, plugins and rules. by default *false*
  - ADD_DEMO_DATA - add demo accounts, plugins and rules. by default *false*
- - CASSANDRA_URL - url of cassandra container. by default name of the container
+ - CASSANDRA_URL - url of cassandra container 
   
 ### tb.env file
 
