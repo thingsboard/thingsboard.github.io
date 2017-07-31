@@ -92,7 +92,7 @@ Instructions listed below will help you to install Cassandra.
   The output should be like:
   
   ```text
-    C:\thingsboard>install.bat
+    C:\thingsboard>install.bat --loadDemo
     Detecting Java version installed.
     Detecting if it is 64 bit machine
     CurrentVersion
@@ -118,10 +118,10 @@ Instructions listed below will help you to install Cassandra.
  
 {% include templates/optional-db.md %} 
  
-Edit ThingsBoard configuration file 
+Edit ThingsBoard configuration file: 
 
-```bash 
-sudo nano /etc/thingsboard/conf/thingsboard.yml
+```text
+C:\thingsboard\conf\thingsboard.yml
 ```
 
 {% include templates/disable-hsqldb.md %} 
