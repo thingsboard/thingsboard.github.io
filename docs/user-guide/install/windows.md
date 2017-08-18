@@ -36,6 +36,10 @@ If you don't have Java installed, please download and install Java 8 using this 
 
 Download the installation file [here](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads#windows) and follow the installation instructions.
 
+Once PostgreSQL is installed you may want to create new user or set password for the main user.
+
+{% include templates/create-tb-db.md %}
+
 ###### NoSQL Database: Cassandra
 
 {% include templates/optional-db.md %}
@@ -92,7 +96,7 @@ Instructions listed below will help you to install Cassandra.
   The output should be like:
   
   ```text
-    C:\thingsboard>install.bat
+    C:\thingsboard>install.bat --loadDemo
     Detecting Java version installed.
     Detecting if it is 64 bit machine
     CurrentVersion
@@ -118,10 +122,10 @@ Instructions listed below will help you to install Cassandra.
  
 {% include templates/optional-db.md %} 
  
-Edit ThingsBoard configuration file 
+Edit ThingsBoard configuration file: 
 
-```bash 
-sudo nano /etc/thingsboard/conf/thingsboard.conf
+```text
+C:\thingsboard\conf\thingsboard.yml
 ```
 
 {% include templates/disable-hsqldb.md %} 
