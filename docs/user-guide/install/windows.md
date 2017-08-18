@@ -26,9 +26,24 @@ To run Thingsboard and third-party components on a single machine you will need 
 Thingsboard service is running on Java 8. 
 If you don't have Java installed, please download and install Java 8 using this [link](https://java.com/en/download/).
 
-##### Cassandra
+#### [Optional] External database installation
 
-Thingsboard service requires Cassandra database.
+{% include templates/install-db.md %}
+
+###### SQL Database: PostgreSQL
+
+{% include templates/optional-db.md %}
+
+Download the installation file [here](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads#windows) and follow the installation instructions.
+
+Once PostgreSQL is installed you may want to create new user or set password for the main user.
+
+{% include templates/create-tb-db.md %}
+
+###### NoSQL Database: Cassandra
+
+{% include templates/optional-db.md %}
+
 Instructions listed below will help you to install Cassandra.
 
 - Download DataStax Community Edition v3.0.9
@@ -69,38 +84,71 @@ Instructions listed below will help you to install Cassandra.
 #### Thingsboard service installation
 
 - Create working directory, for example "C:\thingsboard". 
-- Download [installation archive](https://github.com/thingsboard/thingsboard/releases/download/v1.2.3/thingsboard-windows-1.2.3.zip) or [build it from source](/docs/user-guide/install/building-from-source).
+- Download [installation archive](https://github.com/thingsboard/thingsboard/releases/download/v1.3.0/thingsboard-windows-1.3.0.zip) or [build it from source](/docs/user-guide/install/building-from-source).
 - Unzip installation archive to the working directory. The working directory should look like this after installation:
  
   ![image](/images/user-guide/install/windows/windows-folder.png)
 
+- Run windows shell (cmd) as Administrator. Change directory to your working dir.
 - Run **install.bat** script to install Thingsboard as a Windows service. 
   This means it will be automatically started on system startup. 
   Similar, **uninstall.bat** will remove Thingsboard from Windows services.
-  
-  **NOTE** Scripts listed above should be executed using Administrator Role.
+  The output should be like:
   
   ```text
-  C:\thingsboard>install.bat
-  Detecting if it is 32 bit machine
-  CurrentVersion 1.8
-  Java 1.8 found!
-  Installing thingsboard ...
-  2017-01-31 02:26:50,704 INFO  - Starting ServiceWrapper in the CLI mode
-  2017-01-31 02:26:50,907 INFO  - Completed. Exit code is 0
-  DONE.
+    C:\thingsboard>install.bat --loadDemo
+    Detecting Java version installed.
+    Detecting if it is 64 bit machine
+    CurrentVersion
+    Detecting if it is 32 bit machine
+    CurrentVersion 1.8
+    Java 1.8 found!
+    Installing thingsboard ...
+     ===================================================
+     :: ThingsBoard ::       (v1.3.0-SNAPSHOT)
+     ===================================================
+
+    Starting ThingsBoard Installation...
+    Installing DataBase schema...
+    Installing Cassandra DataBase schema...
+    Loading system data...
+    Installation finished successfully!
+    2017-07-23 21:47:12,079 INFO  - Starting ServiceWrapper in the CLI mode
+    2017-07-23 21:47:12,317 INFO  - Completed. Exit code is 0
+    ThingsBoard installed successfully!
   ```
-  
-  Congratulations! Thingsboard application is now installed on your Windows machine as a service. 
 
-##### Provision database schema and initial data
+#### [Optional] Configure ThingsBoard to use external database
+ 
+{% include templates/optional-db.md %} 
+ 
+Edit ThingsBoard configuration file: 
 
-Once Cassandra and Thingsboard services are installed, open "Cassandra CQL Shell" and execute following scripts:
+```text
+C:\thingsboard\conf\thingsboard.yml
+```
 
-```bash
-cqlsh> source 'c:\thingsboard\data\schema.cql';
-cqlsh> source 'c:\thingsboard\data\system-data.cql';
-cqlsh> source 'c:\thingsboard\data\demo-data.cql';
+{% include templates/disable-hsqldb.md %} 
+
+For **PostgreSQL**:
+
+{% include templates/enable-postgresql.md %} 
+
+For **Cassandra DB**:
+
+Locate and set database type configuration parameter to 'cassandra'.
+ 
+```text
+database:
+  type: "${DATABASE_TYPE:cassandra}" # cassandra OR sql
+```
+
+{% include templates/memory-update-for-slow-machines.md %} 
+
+Go to your environment variables and set JAVA_OPTS variable: 
+
+```text
+JAVA_OPTS=-Xms256M -Xmx256M
 ```
 
 ##### Start Thingsboard service

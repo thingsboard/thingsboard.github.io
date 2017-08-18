@@ -17,6 +17,8 @@ toc:
     path: /docs/user-guide/install/linux/
   - title: Installing Thingsboard on Raspberry Pi 3
     path: /docs/user-guide/install/rpi/
+  - title: Installing Thingsboard using Kubernetes (Google Cloud Platform)
+    path: /docs/user-guide/install/kubernetes/
   - title: Installing Thingsboard using Docker (Linux or Mac OS)
     path: /docs/user-guide/install/docker/
   - title: Installing Thingsboard using Docker (Windows)
@@ -93,3 +95,5 @@ toc:
       path: /docs/user-guide/contribution/how-to-contribute/
     - title: Extensions (Plugins and Actions) development
       path: /docs/user-guide/contribution/extensions-development/
+    - title: Widgets development
+      path: /docs/user-guide/contribution/widgets-development/
