@@ -55,19 +55,29 @@ We are going to setup following hierarchy of assets and devices:
  ![image](/images/user-guide/entities-and-relations.svg)
  
  
-Please review following screen cast to learn how to provision region and fields assets and their relations using ThingsBoard Web UI
+Please review the following screen cast to learn how to provision region and fields assets and their relations using ThingsBoard Web UI
 
-TODO: embed video "region-and-field.webm"
+  
+<div id="video">  
+    <div id="video_wrapper">
+        <iframe src="https://www.youtube.com/embed/C-JoOfTBeT0" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
 
-Please review following screen cast to learn how to provision devices and their relations with assets using ThingsBoard Web UI
 
-TODO: embed video "moisture-and-irrigation.webm"
+Please review the following screen cast to learn how to provision devices and their relations with assets using ThingsBoard Web UI
+
+
+<div id="video">  
+    <div id="video_wrapper">
+        <iframe src="https://www.youtube.com/embed/BUFinxvzIo4" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
 
 You can automate this actions using ThingsBoard REST API. You can provision new asset using POST request to the following URL
 
 ```shell 
-http(s)://host:port/api/plugins/telemetry/{deviceId}/keys/attributes
-
+http(s)://host:port/api/asset
 ```
 
 For example:
@@ -94,16 +104,32 @@ B,create-relation.json,json,resources/create-relation.json,/docs/user-guide/reso
 {% include tabs.html %}
 
 **Note:** Don't forget to replace $FROM_ASSET_ID and $TO_ASSET_ID with valid asset ids. 
+**Note:** One can relate any entities. For example, assets to devices or assets to users.
 You can receive them as a result of previous REST API call or using Web UI.
 
 
 ### Step 2: Assign attributes to the assets
 
+Thingsboard provide ability to assign attributes to entities and manage them. 
+This topic is covered in separate guide.    
+<p><a href="/docs/user-guide/attributes" class="button">Working with device attributes</a></p>
+
 
 ### Step 3: Upload telemetry data from devices
 
+Thingsboard provide ability to work with telemetry data for devices and other entities. 
+This topic is covered in separate guide.    
+<p><a href="/docs/user-guide/telemetry" class="button">Working with telemetry data</a></p>
 
-### Step 4: Design your dashboard
+### Step 4: Creating Rules for Alarms
+
+Thingsboard provide ability to raise alarms using rule engine for devices and other entities. 
+This topic is covered in separate guide.    
+<p><a href="/docs/user-guide/alarms" class="button">Working with alarms</a></p>
+
+### Step 5: Design your dashboard
+
+Please [import](/docs/user-guide/ui/dashboards/#dashboard-import) the following [**dashboard**](/docs/user-guide/resources/region_fields_dashboard.json) that demonstrates Map, Alarm, Entity Table and Charts widgets.
 
 
  

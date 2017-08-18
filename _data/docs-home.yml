@@ -41,6 +41,8 @@ toc:
     path: /docs/user-guide/attributes/
   - title: Working with telemetry data
     path: /docs/user-guide/telemetry/
+  - title: Working with alarms
+    path: /docs/user-guide/alarms/
   - title: Using RPC capabilities
     path: /docs/user-guide/rpc/
   - title: Rule engine
