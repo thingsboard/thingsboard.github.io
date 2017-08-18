@@ -46,12 +46,9 @@ sudo apt-get install postgresql postgresql-contrib
 sudo service postgresql start
 ```
 
-Once PostgreSQL is installed you may want to create new user or change password for the main user.
+{% include templates/postgres-post-install.md %}
 
-See following guides for more details: 
-[using postgresql roles and databases](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-16-04#using-postgresql-roles-and-databases)
-and [changing the postgres user password](https://blog.2ndquadrant.com/how-to-safely-change-the-postgres-user-password-via-psql/)
-
+{% include templates/create-tb-db.md %}
 
 ### Thingsboard service installation
 
