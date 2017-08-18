@@ -52,7 +52,7 @@ We will list only main configuration parameters below to avoid duplication of th
 | security.jwt.refreshTokenExpTime | JWT refresh token expiration time in seconds used by Web UI (session expiration time)  | 3600              | JWT_REFRESH_TOKEN_EXPIRATION_TIME |
 | database.type                    | Type of the database to use: sql or cassandra                                          | sql               | DATABASE_TYPE                     |
 
-#### thingsbDSDSASDoard.conf
+#### thingsboard.conf
 
 Configuration file for startup script. Contains Java options and classpath related parameters.
 
