@@ -90,7 +90,7 @@ Instructions listed below will help you to install Cassandra.
   ![image](/images/user-guide/install/windows/windows-folder.png)
 
 - Run windows shell (cmd) as Administrator. Change directory to your working dir.
-- Run **install.bat** script to install Thingsboard as a Windows service. 
+- Run **install.bat** script to install Thingsboard as a Windows service (or run **"install.bat --loadDemo"** to install and add demo data). 
   This means it will be automatically started on system startup. 
   Similar, **uninstall.bat** will remove Thingsboard from Windows services.
   The output should be like:
