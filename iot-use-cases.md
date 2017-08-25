@@ -12,6 +12,7 @@ Some of the industry use cases where Thingsboard is being successfully utilized 
 
 Should you have any comments or questions please feel free to [Contact US](/docs/contact-us/).
 
+<a style="margin: 10px;" href="/smart-metering/" class="button">Smart metering</a>
 <a style="margin: 10px;" href="/smart-energy/" class="button">Smart energy</a>
 <a style="margin: 10px;" href="/smart-farming/" class="button">Smart farming</a>
 <a style="margin: 10px;" href="/fleet-tracking/" class="button">Fleet tracking</a>
