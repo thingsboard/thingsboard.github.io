@@ -3,6 +3,8 @@ abstract: "IoT use cases where Thingsboard is being successfully utilized."
 toc:
 - title: Use cases
   path: /iot-use-cases/
+- title: Smart metering
+  path: /smart-metering/
 - title: Smart energy
   path: /smart-energy/
 - title: Smart farming
