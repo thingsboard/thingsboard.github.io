@@ -34,7 +34,7 @@ Tenant administrator and customer users are able to copy device id to clipboard 
 ## Assign devices to customers
 
 Tenant administrator is able to assign devices to certain [customer](/docs/user-guide/ui/customers/).
-This will allow Customer users to fetch device data using REST APIs or web ui.
+This will allow Customer users to fetch device data using REST APIs or Web UI.
  
  ![image](/images/user-guide/ui/assign-device-to-customer.png)
 
@@ -50,7 +50,20 @@ Tenant administrator and customer users are able to browse device [telemetry dat
 
  ![image](/images/user-guide/ui/device-telemetry.png)
 
+## Browse device alarms
+
+Tenant administrator and customer users are able to browse device [alarms](/docs/user-guide/alarms).
+
+ ![image](/images/user-guide/ui/device-alarms.png)
+ 
 ## Browse device events
   
-Tenant administrator and customer users are able to browse alarms related to particular device using "Events" tab.
+Tenant administrator and customer users are able to browse events related to particular device using "Events" tab.
 Lifecycle events and statistics are coming soon.
+
+## Manage device relations
+ 
+Tenant administrator and customer users are able to manage device [relations](/docs/user-guide/entities-and-relations).
+
+ ![image](/images/user-guide/ui/device-relations.png)
+ 

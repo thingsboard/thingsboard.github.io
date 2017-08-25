@@ -77,6 +77,8 @@ toc:
     path: /docs/user-guide/ui/customers/
   - title: Users
     path: /docs/user-guide/ui/users/
+  - title: Assets
+    path: /docs/user-guide/ui/assets/
   - title: Devices
     path: /docs/user-guide/ui/devices/
   - title: Rules
