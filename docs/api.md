@@ -16,7 +16,7 @@ Device API is grouped by supported communication protocols:
 [**Gateway MQTT API**](/docs/reference/gateway-mqtt-api) allows you to connect **existing** devices to the platform using **[Thingsboard Gateway](/docs/iot-gateway/what-is-iot-gateway/)** 
 or implement your own gateway.
 
-Server-side API consist of core REST API and a set of specific APIs that are provided by various plugins:
+Server-side API consists of core REST API and a set of specific APIs that are provided by various plugins:
 
 * [**Administration REST API**](/docs/reference/rest-api) - The server-side core APIs.
 * [**Attributes query API**](/docs/user-guide/attributes/#data-query-api) - The server-side APIs provided by [Telemetry plugin](/docs/reference/plugins/telemetry/).

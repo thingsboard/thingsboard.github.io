@@ -9,8 +9,8 @@ description: Thingsboard  X.509 Certificate based authentication for IoT devices
     
 X.509 Certificate Based Authentication is used in Two-Way SSL connection. In this case, the certificate itself is the client's  ID, thus, Access Token is no longer needed.
 
-Instructions below will describe how to generate client-side certificate and connect to the server that is running MQTT over SSL.
-You will need to have public key of server certificate in PEM format. 
+Instructions below will describe how to generate a client-side certificate and connect to the server that is running MQTT over SSL.
+You will need to have the public key of the server certificate in PEM format. 
 See [following instructions](/docs/user-guide/mqtt-over-ssl/#self-signed-certificate-generation) for more details on server-side configuration.
 
 #### Update keygen.properties file
@@ -62,7 +62,7 @@ Alternatively, the same can be done through the REST API.
 #### Run Two-Way MQTT SSL Python Client
 
 Download Python client example [**two-way-ssl-mqtt-client.py**](https://raw.githubusercontent.com/thingsboard/thingsboard/master/tools/src/main/python/two-way-ssl-mqtt-client.py).
-Specify your client-side certificate and path to public key of server certificate.
+Specify your client-side certificate and path to the public key of the server certificate.
 
 ```python
 # Some code omitted
@@ -73,7 +73,7 @@ client.tls_set(ca_certs="mqttserver.pub.pem", certfile="mqttclient.nopass.pem", 
 # Some code omitted
 ```
 
-**Note** Script uses **8883** mqtt port and requires paho mqtt library that you can install using following command: **pip install paho-mqtt**
+**Note** Script uses **8883** MQTT port and requires paho-mqtt library that you can install using the following command: **pip install paho-mqtt**
 
 Run the script:
 

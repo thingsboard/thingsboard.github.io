@@ -1,6 +1,6 @@
 ### Run installation script
 
-Once ThingsBoard service is installed, you can execute following scripts:
+Once ThingsBoard service is installed, you can execute the following scripts:
 
 ```bash
 # --loadDemo option will load demo data: users, devices, assets, rules, widgets.

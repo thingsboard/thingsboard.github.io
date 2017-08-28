@@ -16,7 +16,7 @@ We will describe extension configuration file below.
 
 ### Extension configuration: mqtt-config.json
 
-Extension configuration is a JSON file that contain information about how to connect and monitor list of MQTT brokers.
+Extension configuration is a JSON file that contains information about how to connect and monitor a list of MQTT brokers.
 The root JSON element should contain "brokers" array. Each broker in the array is configured using following properties:
 
 #### Basic connection properties
@@ -100,7 +100,7 @@ Example of PEM certificate identity configuration:
 
 #### Mapping
 
-This section will describe various configuration options that allow to specify mapping between Thingsboard features and existing/legacy device protocols. 
+This section will describe various configuration options that allow specifying the mapping between Thingsboard features and existing/legacy device protocols. 
 
 ##### Attributes & Timeseries data upload 
 
@@ -139,18 +139,18 @@ For example:
 }
 ```
 
-**Note**: You can specify multiple mapping objects inside array.
+**Note**: You can specify multiple mapping objects inside the array.
 
 Mapping process subscribes to the MQTT topics using **topicFilter** parameter of the mapping object. 
 Each message that is published to this topic by other devices or applications is analyzed to extract device name and device data (attributes or timeseries values).
 By default, gateway use [Json converter](https://github.com/thingsboard/thingsboard-gateway/blob/release-1.0/src/main/java/org/thingsboard/gateway/extensions/mqtt/client/conf/mapping/MqttJsonConverter.java), but you can customize this behaviour and implement your own converter. See [converter interface](https://github.com/thingsboard/thingsboard-gateway/blob/release-1.0/src/main/java/org/thingsboard/gateway/extensions/mqtt/client/conf/mapping/MqttDataConverter.java) for more details.
 
-The Json converter is based on [**JsonPath**](https://github.com/jayway/JsonPath) library to provide ability of flexible mapping and filtering of JSON structures.
+The Json converter is based on [**JsonPath**](https://github.com/jayway/JsonPath) library to provide the ability of flexible mapping and filtering of JSON structures.
 You can define **filterExpression** based on the [**path**](https://github.com/jayway/JsonPath#path-examples) and [**filter**](https://github.com/jayway/JsonPath#filter-operators) examples.
 
 The **deviceNameJsonExpression** mapping parameter is used to extract device name from the incoming JSON message.
 
-The **timeout** mapping parameter is optional inactivity timeout in milliseconds. If this parameter is specified, the gateway will report that device is disconnected once there is no new telemetry or attribute updates within particular timeout. 
+The **timeout** mapping parameter is optional inactivity timeout in milliseconds. If this parameter is specified, the gateway will report that device is disconnected once there are no new telemetry or attribute updates within the particular timeout. 
 
 For example, if you have following message:
 
@@ -160,7 +160,7 @@ For example, if you have following message:
 
 The **"${$.serialNumber}"** expression will return **"SN-001"** device name. Similar, **"Device ${$.serialNumber} (${$.model})"** will return **"Device SN-001 (T1000)"** device name.
 
-If device name is a part of the MQTT topic, you can use **deviceNameTopicExpression** parameter, which is basically Java regular expression.
+If the device name is a part of the MQTT topic, you can use **deviceNameTopicExpression** parameter, which is basically Java regular expression.
 
 For example, if you have **"sensor/SN-001/temperature"**" topic, the **"(?<=sensor\/)(.*?)(?=\/temperature)"** expression will return **"SN-001"** device name.
 
@@ -172,12 +172,12 @@ Similar [**JsonPath**](https://github.com/jayway/JsonPath) mapping rules are app
 
 ##### Device connect & disconnect requests
 
-Thingsboard allows to send RPC commands and notifications about device attribute updates to the device. 
-But in order to send them, platform needs to know if the target device is connected and what gateway or session is used to connect device at the moment.
+Thingsboard allows sending RPC commands and notifications about device attribute updates to the device. 
+But in order to send them, the platform needs to know if the target device is connected and what gateway or session is used to connect the device at the moment.
 If your device is constantly sending telemetry data - Thingsboard already knows how to push notifications.
 If your device just connects to MQTT broker and waits for commands/updates, you need to send a message to the Gateway and inform that device is connected to the broker.
  
-The "**connectRequests**" and "**disconnectRequests**" allows to convert MQTT messages to corresponding events that will be delivered to Thingsboard through the Gateway.
+The "**connectRequests**" and "**disconnectRequests**" allows converting MQTT messages to corresponding events that will be delivered to Thingsboard through the Gateway.
 For example:
 
 ```json
@@ -214,7 +214,7 @@ Thingsboard allows to provision device attributes and fetch some of them from th
 You can treat this as a remote configuration for devices. Your devices are able to request client-side and shared attributes from Thingsboard. 
 See [user guide](/docs/user-guide/attributes/) for more details.
 
-The "**attributeRequests**" configuration allows to configure format of corresponding attribute request and response messages. 
+The "**attributeRequests**" configuration allows configuring the format of the corresponding attribute request and response messages. 
 
 For example:
 
@@ -245,7 +245,7 @@ For example:
 }
 ```
 
-Corresponding configuration properties and their description is listed in the table below.
+Corresponding configuration properties and their description are listed in the table below.
  
 | Property | Description | Mandatory | Example |
 |-----------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------|------------------------------------------------------------------------|
@@ -269,9 +269,9 @@ mosquitto_pub -h YOUR_MQTT_BROKER_HOST -p YOUR_MQTT_BROKER_PORT -t "sensors/SN-0
 
 ##### Device attribute updates
 
-Thingsboard allows to subscribe to changes of shared device attributes from the device application. See [user guide](/docs/user-guide/attributes/) for more details.
+Thingsboard allows subscribing to changes of shared device attributes from the device application. See [user guide](/docs/user-guide/attributes/) for more details.
 
-The "**attributeUpdates**" configuration allows to configure format of corresponding subscription messages. 
+The "**attributeUpdates**" configuration allows configuring the format of corresponding subscription messages. 
 
 For example:
 
@@ -294,9 +294,9 @@ The topic and value expressions support following parameters: **${deviceName}**,
 
 ##### Server side RPC commands
 
-Thingsboard allows to send [RPC commands](/docs/user-guide/rpc/) to the device that is connected to Thingsboard directly or via Gateway. 
+Thingsboard allows sending [RPC commands](/docs/user-guide/rpc/) to the device that is connected to Thingsboard directly or via Gateway. 
  
-The "**serverSideRpc**" allows to configure format of request and response MQTT messages.
+The "**serverSideRpc**" allows configuring the format of request and response MQTT messages.
 For example:
 
 ```json
@@ -323,8 +323,8 @@ For example:
 ```
 
 As you can use **deviceNameFilter** and **methodFilter** to apply different mapping rules for different devices/methods.
-Once Gateway receives RPC request from server to device, it will publish corresponding message based on **requestTopicExpression** and **valueExpression**.
-In case you expect reply to the request from device, you should also specify **responseTopicExpression** and **responseTimeout**. 
+Once Gateway receives RPC request from the server to the device, it will publish the corresponding message based on **requestTopicExpression** and **valueExpression**.
+In case you expect the reply to the request from device, you should also specify **responseTopicExpression** and **responseTimeout**. 
 The Gateway will subscribe to the "response" topic and wait for device reply until "timeout" is detected.
  
 Example of device application written in javascript:

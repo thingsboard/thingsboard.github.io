@@ -42,15 +42,15 @@ This instruction is verified on t2.micro which is eligible for free tier.
 
 ##### Step 3. Configure Instance
 
-No specific configuration items here. You can leave this tab without changes or apply configuration that is specific to your use-case.
+No specific configuration items here. You can leave this tab without changes or apply a configuration that is specific to your use-case.
 
 ##### Step 4. Add Storage
 
-Minimum 8 Gb of Storage is required. We recommend to have at least 50 if you plan to upload some data.
+Minimum 8 Gb of Storage is required. We recommend having at least 50 if you plan to upload some data.
 
 ##### Step 5. Add Tags
 
-No specific configuration items here. You can leave this tab without changes or apply configuration that is specific to your use-case.
+No specific configuration items here. You can leave this tab without changes or apply a configuration that is specific to your use-case.
 
 ##### Step 6: Configure Security Group
 
@@ -65,5 +65,5 @@ We recommend to create new security group, for example "Thingsboard". Configure 
 
 ##### Step 7: Review and launch your instance
 
-Once instance is launched, please wait some time for services to boot up and open Administration UI in the browser using public DNS from instance details.
+Once the instance is launched, please wait some time for services to boot up and open Administration UI in the browser using public DNS from instance details.
 

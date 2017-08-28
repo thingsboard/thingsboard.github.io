@@ -7,11 +7,11 @@ description: Thingsboard IoT platform mail settings
 
 ---
 
-Thingsboard System Administrator is able to configure connection to SMTP server that will be used to distribute activation and password reset emails to users.
-This configuration step is required on production environments. 
+Thingsboard System Administrator is able to configure a connection to a SMTP server that will be used to distribute activation and password reset emails to users.
+This configuration step is required in production environments. 
 If you are evaluating the platform, pre-provisioned [**demo accounts**](/docs/samples/demo-account/#demo-tenant) are sufficient in most of the use cases.
   
-**NOTE** System Mail settings are used only during user creation and password reset process and are controlled by system administrator. 
+**NOTE** System Mail settings are used only during user creation and password reset process and are controlled by a system administrator. 
 Tenant administrator is able to [**setup email plugin**](/docs/samples/alarms/mail/) to distribute alarms produced by [**rule engine**](/docs/user-guide/rule-engine/).  
 
 * TOC
@@ -31,15 +31,15 @@ Change 'sysadmin@thingsboard.org' to your email address. Now re-login as adminis
 #### Step 3. Open 'Outgoing Mail' and populate SMTP server settings
 
 Navigate to **System Settings -> Outgoing Mail** and populate the form. Click on 'Send Test Email' button. 
-Test email will be sent to the mail address that you have specified in 'Step 2'.
-In case of error in configuration, you should receive popup with error log.
+A test email will be sent to the email address that you have specified in 'Step 2'.
+In case of error in configuration, you should receive a popup with the error log.
 
 ##### Step 3.1. Sendgrid configuration example
 
-SendGrid configuration is fairly simple and straightforward. First you need to create [SendGrid](https://sendgrid.com/) account. 
+SendGrid configuration is fairly simple and straightforward. First, you need to create [SendGrid](https://sendgrid.com/) account. 
 You can try it for free and the free plan is most likely enough for platform evaluation.
 
-Once you create your account, you will be forwarded to the welcome page. Now you can provision your SMTP Relay credentials. See screen-shoot below. 
+Once you create your account, you will be forwarded to the welcome page. Now you can provision your SMTP Relay credentials. See the screen-shot below. 
 
 {:refdef: style="text-align: center;"}
 ![image](/images/user-guide/ui/mail/sendgrid-welcome.png)
@@ -63,7 +63,7 @@ Copy-paste the settings, update 'Mail From' field and click on 'Send Test Mail' 
 ![image](/images/user-guide/ui/mail/sendgrid-settings.png)
 {: refdef}
 
-Once you receive the notification about successfull test, save populated data. You can also complete verification on the SendGrid website.
+Once you receive the notification about a successfull test, save populated data. You can also complete verification on the SendGrid website.
 
 {:refdef: style="text-align: center;"}
 ![image](/images/user-guide/ui/mail/sendgrid-it-works.png)
@@ -78,19 +78,19 @@ Once you receive the notification about successfull test, save populated data. Y
 In order to use G-mail, you will need to do two extra steps. 
 First, you need to allow [**less secure apps**](https://support.google.com/accounts/answer/6010255?hl=en).
 Second, you need to enable two-step verification and generate an [**app password**](https://support.google.com/accounts/answer/185833?hl=en).
-Although second step is not mandatory, it is highly recommended.
+Although the second step is not mandatory, it is highly recommended.
 
 {:refdef: style="text-align: center;"}
 ![image](/images/user-guide/ui/mail/app-password.png)
 {: refdef}
 
-Once this is ready, you should be able to setup gmail account using the information below
+Once this is ready, you should be able to setup Gmail account using the information below
 
 {:refdef: style="text-align: center;"}
 ![image](/images/user-guide/ui/mail/gmail-settings.png)
 {: refdef}
 
-Similar settings are available for G-suite accounts, however you may need to contact your system administrator to enable less secure apps, etc.
+Similar settings are available for G-suite accounts, however, you may need to contact your system administrator to enable less secure apps, etc.
 Note that you can also enable/disable TLS using checkbox.
 
 {:refdef: style="text-align: center;"}

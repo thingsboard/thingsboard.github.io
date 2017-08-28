@@ -8,9 +8,9 @@ title: Message Type Filter
 
 ## Overview
 
-This component allows to filter incoming messages by type. 
+This component allows filtering incoming messages by type. 
 This filter is very efficient. 
-We recommend to use this filter in almost every rule to quickly ignore irrelevant messages. 
+We recommend using this filter in almost every rule to quickly ignore irrelevant messages. 
 
 ## Configuration
 

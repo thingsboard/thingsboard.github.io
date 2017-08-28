@@ -16,7 +16,7 @@ We will describe extension configuration file below.
 
 ### Extension configuration: opc-config.json
 
-Extension configuration is a JSON file that contain information about how to connect and monitor list of OPC-UA servers.
+Extension configuration is a JSON file that contains information about how to connect and monitor a list of OPC-UA servers.
 The root JSON element should contain "servers" array. Each server in the array is configured using following properties:
 
 #### Basic connection properties
@@ -85,7 +85,7 @@ Example of username identity configuration:
 #### Keystore configuration
 
 Keystore information is used to setup encrypted connection between Gateway OPC-UA client and your OPC-UA server.
-Many OPC-UA servers require provisioning of client key on the server, before client can connect.
+Many OPC-UA servers require provisioning of client key on the server before client can connect.
 Supported keystore types are JKS and PKCS12.
 Example of keystore configuration:
 
@@ -126,8 +126,8 @@ Mapping configuration setup rules of OPC-UA server monitoring and data conversio
 }
 ```
 
-Mapping process periodically travers OPC-UA server node tree and applies regular expression that is configured in **deviceNodePattern** parameter for each mapping configuration.
-List of nodes that match regular expression are stored as device nodes. 
+Mapping process periodically traverse the OPC-UA server node tree and applies the regular expression that is configured in **deviceNodePattern** parameter for each mapping configuration.
+The ist of nodes that match the regular expression is stored as device nodes. 
 Now mapping process will use **deviceNamePattern** to get device name value. 
 You can use OPC-UA tags inside the pattern by specifying their relative (to device node) names. See example below. 
 Similar mapping rules are applied for **attributes** and **timeseries** values:

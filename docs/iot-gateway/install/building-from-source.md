@@ -30,7 +30,7 @@ Use java installation [instructions](#java) to fix this.
 
 #### Source code
 
-You can clone source code of the project from official [github repo](https://github.com/thingsboard/thingsboard-gateway).
+You can clone source code of the project from the official [github repo](https://github.com/thingsboard/thingsboard-gateway).
 
 ```bash
 git clone git@github.com:thingsboard/thingsboard-gateway.git
@@ -41,11 +41,11 @@ git checkout release-1.0
 #### Build prerequisites
 
 We assume you have already build Thingsboard from sources using this [guide](/docs/user-guide/install/building-from-source/). 
-The gateway project requires some maven dependencies that will be available after local Thingsboard build.  
+The gateway project requires some maven dependencies that will be available after a local Thingsboard build.  
 
 #### Build
 
-Following command will build gateway project:
+The following command will build gateway project:
 
 ```bash
 mvn clean install

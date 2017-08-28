@@ -19,7 +19,7 @@ We will describe main configuration files below.
 
 #### tb-gateway.yml
 
-Main configuration file that is used to setup connection to Thingsboard server and enable/disable extensions.
+The main configuration file that is used to setup connection to Thingsboard server and enable/disable extensions.
 
 | **Configuration property**            | **Description**                                                                                                                                                                           |
 |---------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -42,13 +42,13 @@ Main configuration file that is used to setup connection to Thingsboard server a
 | gateway.persistence.bufferSize        | Maximum size of messages in storage.                                                                                                                                                      |
 | **OPC-UA extension**                  |                                                                                                                                                                                           |
 | opc.enabled                           | Either "true" or "false". Boolean flag that enables OPC-UA extension.                                                                                                                     |
-| opc.configuration                     | Absolute or relative pass to OPC-UA extension configuration file. See corresponding section for more details.                                                                             |
+| opc.configuration                     | Absolute or relative pass to OPC-UA extension configuration file. See the corresponding section for more details.                                                                             |
 | **MQTT extension**                    |                                                                                                                                                                                           |
 | mqtt.enabled                          | Either "true" or "false". Boolean flag that enables MQTT extension.                                                                                                                       |
-| mqtt.configuration                    | Absolute or relative pass to MQTT extension configuration file. See corresponding section for more details.                                                                               |
+| mqtt.configuration                    | Absolute or relative pass to MQTT extension configuration file. See the corresponding section for more details.                                                                               |
 | **Sigfox extension**                  |                                                                                                                                                                                           |
 | sigfox.enabled                        | Either "true" or "false". Boolean flag that enables Sigfox extension.                                                                                                                     |
-| sigfox.configuration                  | Absolute or relative pass to Sigfox extension configuration file. See corresponding section for more details.                                                                             |
+| sigfox.configuration                  | Absolute or relative pass to Sigfox extension configuration file. See the corresponding section for more details.                                                                             |
 | **HTTP server properties**            |                                                                                                                                                                                           |
 | server.address                        | HTTP server bind address. Reserved for future usage.                                                                                                                                      |
 | server.port                           | HTTP server bind port. Reserved for future usage                                                                                                                                          |

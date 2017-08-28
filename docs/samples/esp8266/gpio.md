@@ -11,12 +11,12 @@ description: Thingsboard IoT Platform sample for ESP8266 GPIO control over MQTT
 ## Introduction
 {% include templates/what-is-thingsboard.md %}
 
-This sample application will allow you to control GPIO of your ESP8266 device using Thingsboard web UI. We will observe GPIO control using Leds connected to the pins. 
+This sample application will allow you to control GPIO of your ESP8266 device using Thingsboard web UI. We will observe GPIO control using LEDs connected to the pins. 
 The purpose of this application is to demonstrate Thingsboard [RPC capabilities](/docs/user-guide/rpc/).
 
 The application that is running on ESP8266 is written using Arduino SDK which is quite simple and easy to understand.
 ESP8266 offers a complete and self-contained Wi-Fi networking solution.
-ESP8266 push data to Thingsboard server via MQTT protocol by using [PubSubClient](https://github.com/knolleary/pubsubclient) library for Arduino.
+ESP8266 pushes data to Thingsboard server via MQTT protocol by using [PubSubClient](https://github.com/knolleary/pubsubclient) library for Arduino.
 Current GPIO state and GPIO control widget is visualized using built-in customizable dashboard. 
 
 The video below demonstrates the final result of this tutorial.
@@ -55,13 +55,13 @@ The video below demonstrates the final result of this tutorial.
  
  - 7 female-to-male jumper wires
  
- - 2 Leds
+ - 2 LEDs
  
  - 3.3V power source (for example 2 AA batteries)
  
 ## Wiring schemes
 
-### Programming/flashing schema 
+### Programming/flashing scheme 
 
 ESP8266 Pin|USB-TTL Pin
 -----------|-----------
@@ -123,7 +123,7 @@ Open Thingsboard Web UI (http://localhost:8080) in browser and login as tenant a
  - login: tenant@thingsboard.org
  - password: tenant
  
-Goto "Devices" section. Click "+" button and create device with name "ESP8266 Demo Device". 
+Go to "Devices" section. Click "+" button and create a device with the name "ESP8266 Demo Device". 
 
 ![image](/images/samples/esp8266/temperature/device.png)
 
@@ -133,7 +133,7 @@ Copy auto-generated access token from the "Access token" field. Please save this
 ![image](/images/samples/esp8266/temperature/credentials.png)
 
 
-Click "Copy Device ID" in device details to copy your device id to clipboard.
+Click "Copy Device ID" in device details to copy your device id to the clipboard.
 Paste your device id to some place, this value will be used in further steps.
 
 ### Provision your dashboard
@@ -145,22 +145,22 @@ Use import/export [**instructions**](/docs/user-guide/ui/dashboards/#dashboard-i
 
 ### Step 1. ESP8266 and Arduino IDE setup.
 
-In order to start programming ESP8266 device you will need Arduino IDE installed and all related software. 
+In order to start programming ESP8266 device, you will need Arduino IDE installed and all related software. 
 
 Download and install [Arduino IDE](https://www.arduino.cc/en/Main/Software).
 
-After starting arduino, open from the ‘file’ menu the preferences.
+After starting Arduino IDE, open the preferences from the ‘file’ menu.
 
 ![image](/images/samples/esp8266/temperature/arduino-preferences.png)
 
-Fill in the “Additional board managers URL” this url:  http://arduino.esp8266.com/stable/package_esp8266com_index.json
+Paste the following URL to the “Additional board managers URL”:  http://arduino.esp8266.com/stable/package_esp8266com_index.json
 
-Close the screen by the OK button.
+Close the screen by clicking the OK button.
 
 Now we can add the board ESP8266 using the board manager.
 
-Click in the menu tools the menu option Board: “*Most likely Arduino UNO*”. 
-There  you will find the first option  “Board Manager”.
+In the menu tools, click on the menu option Board: “*Most likely Arduino UNO*”. 
+There you will find the first option “Board Manager”.
 
 Type in the search bar the 3 letters ESP. Locate and click on "*esp8266 by ESP8266 Community*". 
 Click on install and wait for a minute to download the board.
@@ -173,12 +173,12 @@ In the menu Tools “Board “*Most likely Arduino UNO*” three new boards are 
 
 Select “Generic ESP8266 Module”.
 
-Prepare your hardware according to the [Programming/flashing schema](#programmingflashing-schema).
+Prepare your hardware according to the [Programming/flashing scheme](#programmingflashing-schema).
 Connect USB-TTL adapter with PC. 
 
-Select in the menu Tools, port the corresponding port of the USB-TTL adapter.
+In the menu Tools, select the corresponding port of the USB-TTL adapter.
 Open the serial monitor (by pressing CTRL-Shift-M or from the menu Tools).
-Set the key emulation to “Both NL & CR” and the speed to 115200 baud. This can be set in the bottom of terminal screen.
+Set the key emulation to “Both NL & CR” and the speed to 115200 baud. This can be set at the bottom of the terminal screen.
 
 ### Step 2. Install Arduino libraries.
 
@@ -193,7 +193,7 @@ Find and install the following libraries:
 - PubSubClient 2.6
 - ArduinoJson 5.8.0
 
-### Step 3. Prepare and upload sketch.
+### Step 3. Prepare and upload a sketch.
 
 Download and open **esp8266-gpio-control.ino** sketch. 
 
@@ -202,24 +202,24 @@ Download and open **esp8266-gpio-control.ino** sketch.
 - WIFI_AP - name of your access point
 - WIFI_PASSWORD - access point password
 - TOKEN - the **$ACCESS_TOKEN** from Thingsboard configuration step.
-- thingsboardServer - Thingsboard HOST/IP address that is accessable within your wifi network. Specify "demo.thingsboard.io" if you are using [live demo](https://demo.thingsboard.io/) server.
+- thingsboardServer - Thingsboard HOST/IP address that is accessible from within your wifi network. Specify "demo.thingsboard.io" if you are using [live demo](https://demo.thingsboard.io/) server.
 
 {% capture tabspec %}arduino-sketch
 esp8266-gpio-control,esp8266-gpio-control.ino,c,resources/esp8266-gpio-control.ino,/docs/samples/esp8266/resources/esp8266-gpio-control.ino{% endcapture %}
 {% include tabs.html %}
 
-Connect USB-TTL adapter to PC and select the corresponding port in Arduino IDE. Compile and Upload your sketch to device using "Upload" button.
+Connect USB-TTL adapter to PC and select the corresponding port in Arduino IDE. Compile and Upload your sketch to the device using "Upload" button.
 
-After application will be uploaded and started it will try to connect to Thingsboard node using mqtt client and upload current GPIOs state.
+After the application is uploaded and started it will try to connect to Thingsboard node using mqtt client and upload current GPIOs state.
 
 ## Autonomous operation
 
-When you have uploaded the sketch, you may remove all the wires required for uploading including USB-TTL adapter and connect your ESP8266 and LEDs directly to power source according to the [Final wiring schema](#final-schema-battery-powered).
+When you have uploaded the sketch, you may remove all the wires required for uploading including USB-TTL adapter and connect your ESP8266 and LEDs directly to the power source according to the [Final wiring schema](#final-schema-battery-powered).
 
 ## Troubleshooting
 
-In order to perform troubleshooting you should assemble your hardware according to the [Programming/flashing schema](#programmingflashing-schema).
-Then connect USB-TTL adapter with PC and select port of the USB-TTL adapter in Arduino IDE. Finally open "Serial Monitor" in order to view debug information produced by serial output.
+In order to perform troubleshooting, you should assemble your hardware according to the [Programming/flashing scheme](#programmingflashing-schema).
+Then connect USB-TTL adapter with PC and select port of the USB-TTL adapter in Arduino IDE. Finally, open "Serial Monitor" in order to view the debug information produced by serial output.
 
 ## Data visualization
 
@@ -238,7 +238,7 @@ In case of live-demo server:
 See **[live-demo](/docs/user-guide/live-demo/)** page for more details how to get your account.
  
 Once logged in, open **Dashboards->ESP8266 GPIO Demo Dashboard** page. You should observe demo dashboard with GPIO control and status panel for your device. 
-Now you can switch status of GPIOs using control panel. As a result you will see LEDs status change on device and on the status panel.
+Now you can switch status of GPIOs using control panel. As a result, you will see LEDs status change on the device and on the status panel.
 
 Below is the screenshot of the "ESP8266 GPIO Demo Dashboard".  
 

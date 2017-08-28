@@ -10,25 +10,25 @@ description: IoT device time-series data collection using various IoT protocols 
 * TOC
 {:toc}
 
-Thingsboard provides rich set of features related to telemetry data:
+Thingsboard provides a rich set of features related to telemetry data:
 
  - **collect** data from devices using MQTT, CoAP or HTTP protocols.
  - **store** timeseries data in Cassandra (efficient, scalable and fault-tolerant NoSQL database).
- - **query** latest timeseries data values or all data within specified time interval.
+ - **query** latest timeseries data values or all data within the specified time interval.
  - **subscribe** to data updates using websockets (for visualization or real-time analytics).
  - **visualize** timeseries data using configurable and highly customizable widgets and dashboards.
  - **filter and analyze** data using flexible Rule Engine (/docs/user-guide/rule-engine/).
  - **generate alarms** based on collected data.
  - **forward** data to external systems using plugins (e.g. Kafka or RabbitMQ plugins).
 
-This guide provides overview of the features listed above and some useful links to get more details.  
+This guide provides an overview of the features listed above and some useful links to get more details.  
 
 ![image](/images/user-guide/telemetry.svg)
 
 ## Device telemetry upload API
 
 Thingsboard provides an API to upload timeseries key-value data. 
-Flexibility and simplicity of key-value format allows easy and seamless integration with almost any IoT device on the market.
+Flexibility and simplicity of key-value format allow easy and seamless integration with almost any IoT device on the market.
 Telemetry upload API is specific for each supported network protocol.
 You can review API and examples in corresponding reference page:
 
@@ -38,26 +38,26 @@ You can review API and examples in corresponding reference page:
   
 ## Telemetry plugin
 
-Thingsboard consist of core services and plug-able modules called plugins. 
+Thingsboard consists of core services and pluggable modules called plugins. 
 Telemetry plugin is responsible for persisting timeseries data to internal data storage; 
-provides server-side api to query and subscribe for data updates. 
-Since Telemetry plugin functionality is critical for data visualization purposes in dashboards, it is configured on the system level by system administrator.
+provides server-side API to query and subscribe for data updates. 
+Since Telemetry plugin functionality is critical for data visualization purposes in dashboards, it is configured on the system level by a system administrator.
 Advanced users or platform developers can customize telemetry plugin functionality.
 
 ### Internal data storage
 
 Thingsboard uses either Cassandra NoSQL database or SQL database to store all data.
 
-Device that is sending data to the server will receive confirmation about data delivery as soon as data is stored in DB.
+A device that is sending data to the server will receive confirmation about data delivery as soon as data is stored in DB.
 Modern MQTT clients allow temporary local storage of undelivered data. 
-Thus, even if one of the Thingsboard nodes goes down, device will not lose the data and will be able to push it to other servers.
+Thus, even if one of the Thingsboard nodes goes down, the device will not lose the data and will be able to push it to other servers.
  
 Server side applications are also able to publish telemetry valued for different entities and entity types.
   
-Although you can query database directly, Thingsboard provide set of RESTful and Websocket API that simplify this process and apply certain security policies:
+Although you can query the database directly, Thingsboard provides set of RESTful and Websocket API that simplify this process and apply certain security policies:
  
- - Tenant Administrator user is able to fetch data for all entities that belong to corresponding tenant.
- - Customer user is able to fetch data only for entities that are assigned to corresponding customer.
+ - Tenant Administrator user is able to fetch data for all entities that belong to the corresponding tenant.
+ - Customer user is able to fetch data only for entities that are assigned to the corresponding customer.
   
 #### Data Query API
 
@@ -119,8 +119,8 @@ Supported entity types are: TENANT, CUSTOMER, USER, RULE, PLUGIN, DASHBOARD, ASS
 
 #### Websocket API
 
-Websockets are actively used by Thingsobard Web UI. Websocket API duplicates REST API functionality and provides ability to subscribe to device data changes.
-You can open a websocket connection to a telemetry plugin using following URL
+Websockets are actively used by Thingsobard Web UI. Websocket API duplicates REST API functionality and provides the ability to subscribe to device data changes.
+You can open a websocket connection to a telemetry plugin using the following URL
 
 ```shell
 ws(s)://host:port/api/ws/plugins/telemetry?token=$JWT_TOKEN
@@ -141,22 +141,22 @@ where
  - **startTs** - start time of fetch interval for historical data query, in milliseconds.
  - **endTs** - end time of fetch interval for historical data query, in milliseconds.
  
-Complete example is coming soon!
+A complete example is coming soon!
 
 ## Data visualization
 
-Thingsboard provide ability to configure and customize dashboards for data visualization. 
-This topic is covered in separate guide.    
+Thingsboard provides the ability to configure and customize dashboards for data visualization. 
+This topic is covered in a separate guide.    
 <p><a href="/docs/user-guide/visualization" class="button">Data Visualization guide</a></p>
 
 ## Rule engine
 
-Thingsboard provide ability to configure data processing rules. 
+Thingsboard provides the ability to configure data processing rules. 
 Each rule consists of
 
  - filters - to filter incoming data feed, 
  - processor - to generate alarms or enrich incoming data with some server-side values
- - action - to apply certain logic to filtered data.
+ - action - to apply a certain logic to filtered data.
 You can find more details in a separate guide.    
 <p><a href="/docs/user-guide/rule-engine" class="button">Rule Engine guide</a></p>
     

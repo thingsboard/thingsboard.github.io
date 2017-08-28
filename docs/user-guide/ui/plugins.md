@@ -30,7 +30,7 @@ Each plugin is a represented as a separate card. You are able to edit plugin con
  
 ![image](/images/user-guide/ui/plugin-details.png)
 
-You are also able to review plugin life-cycle events, stats and errors during message processing.
+You are also able to review plugin life-cycle events, stats, and errors during message processing.
 Please note that in case of frequent errors the error messages are sampled. 
 
 ![image](/images/user-guide/ui/plugin-events.png) 
@@ -41,7 +41,7 @@ Please note that in case of frequent errors the error messages are sampled.
 
 You are able to export your plugin to JSON format and import it to the same or another Thingsboard instance.
 
-In order to export plugin you should navigate to the **Plugins** page and click on the export button located on the particular plugin card.
+In order to export plugin, you should navigate to the **Plugins** page and click on the export button located on the particular plugin card.
  
 ![image](/images/user-guide/ui/plugin-export.png)
 
@@ -51,11 +51,11 @@ Similar, to import the plugin you should navigate to the **Plugins** page and cl
 
 ![image](/images/user-guide/ui/plugin-import.png)
 
-**Note** All imported plugins are in suspended state. Don't forget to **activate** your plugin after import.
+**Note** All imported plugins are in the suspended state. Don't forget to **activate** your plugin after import.
 
 #### Troubleshooting
 
 Possible issues while importing the plugin:
 
- - The corresponding plugin API Token is **already reserved**. You can choose other token and edit it directly in the source json.
+ - The corresponding plugin API Token is **already reserved**. You can choose another token and edit it directly in the source json.
  - The corresponding plugin implementation is **not available** in the server classpath.

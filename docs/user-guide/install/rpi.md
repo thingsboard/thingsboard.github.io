@@ -19,7 +19,7 @@ This guide describes how to install Thingsboard on a Raspberry Pi 3 running Rasp
 #### Java
 
 Thingsboard service is running on Java 8. Oracle Java 8 is already pre-installed on Raspbian. 
-You can check java version using following command
+You can check java version using the following command
 
 ```bash
 $ java -version
@@ -28,7 +28,7 @@ Java(TM) SE Runtime Environment (build 1.8.0_65-b17)
 Java HotSpot(TM) Client VM (build 25.65-b01, mixed mode)
 ```
 
-Any Java version higher then or equal to 1.8 is fine. 
+Any Java version higher than or equal to 1.8 is fine. 
 
 #### [Optional] External database installation
 

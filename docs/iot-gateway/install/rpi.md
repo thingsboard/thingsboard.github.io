@@ -15,7 +15,7 @@ This guide describes how to install Thingsboard IoT Gateway on a Raspberry Pi 3 
 ### Step 1. Install Java 8
 
 IoT Gateway service is running on Java 8. Oracle Java 8 is already pre-installed on Raspbian. 
-You can check java version using following command
+You can check java version using the following command
 
 ```bash
 $ java -version
@@ -24,7 +24,7 @@ Java(TM) SE Runtime Environment (build 1.8.0_65-b17)
 Java HotSpot(TM) Client VM (build 25.65-b01, mixed mode)
 ```
 
-Any Java version higher then or equal to 1.8 is fine. 
+Any Java version higher than or equal to 1.8 is fine. 
 
 ### Step 2. Download installation package
 
@@ -59,7 +59,7 @@ See [**getting started**](/docs/iot-gateway/getting-started/) or [**general conf
 ### Step 5. Launch your gateway
 
 Now let's start the gateway!
-Execute following command to start gateway:
+Execute the following command to start gateway:
 
 ```bash
 sudo service tb-gateway start

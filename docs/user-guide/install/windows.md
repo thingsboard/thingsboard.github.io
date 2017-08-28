@@ -36,7 +36,7 @@ If you don't have Java installed, please download and install Java 8 using this 
 
 Download the installation file [here](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads#windows) and follow the installation instructions.
 
-Once PostgreSQL is installed you may want to create new user or set password for the main user.
+Once PostgreSQL is installed you may want to create the new user or set the password for the main user.
 
 {% include templates/create-tb-db.md %}
 
@@ -154,7 +154,7 @@ JAVA_OPTS=-Xms256M -Xmx256M
 ##### Start Thingsboard service
 
 Now let's start the Thingsboard service!
-Open command prompt as an Administrator and execute following command:
+Open the command prompt as an Administrator and execute the following command:
 
 ```shell
 net start thingsboard
@@ -174,7 +174,7 @@ net stop thingsboard
 net start thingsboard
 ```
 
-Once started, you will be able to open Web UI using following link:
+Once started, you will be able to open Web UI using the following link:
 
 ```bash
 http://localhost:8080/
@@ -228,6 +228,6 @@ you need to create a new inbound rule with Windows Firewall with Advanced Securi
 
 ![image](/images/user-guide/install/windows/windows7-firewall-7.png)
 
-- Finally give the name to this rule (for ex. "Thingsboard Service Networking") and click "Finish".
+- Finally, give the name to this rule (for ex. "Thingsboard Service Networking") and click "Finish".
 
 ![image](/images/user-guide/install/windows/windows7-firewall-8.png)

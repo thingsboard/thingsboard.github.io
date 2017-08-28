@@ -6,7 +6,7 @@ title: IoT Gateway Installation options
 
 ---
 
-Thingsboard IoT Gateway is designed to run and utilize on majority of hardware, from local Raspberry PI to powerful servers.
+Thingsboard IoT Gateway is designed to run and utilize on a majority of hardware, from local Raspberry PI to powerful servers.
 Ways to set up a Thingsboard IoT Gateway include:
 
  - [Windows](/docs/iot-gateway/install/windows/) - install Thingsboard IoT Gateway on Windows.

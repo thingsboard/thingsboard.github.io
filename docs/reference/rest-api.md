@@ -15,7 +15,7 @@ description: Supported REST API Reference for server-side integration of your Io
 Thingsboard REST API may be explored using Swagger UI. 
 You can explore REST API of the live-demo server using this **[Swagger UI link.](https://demo.thingsboard.io/swagger-ui.html)**
 
-Once you will install Thingsboard server you can open UI using following URL:
+Once you will install Thingsboard server you can open UI using the following URL:
     
 ``` 
 http://YOUR_HOST:PORT/swagger-ui.html
@@ -28,7 +28,7 @@ You will need to populate "X-Authorization" header using "Authorize" button in t
 
  ![image](/images/reference/swagger-ui.png)
 
-In order to get the JWT token, you need to execute following request:
+In order to get the JWT token, you need to execute the following request:
 
 In case of local installation:
  
@@ -46,4 +46,4 @@ A,get-token.sh,shell,resources/get-token.sh,/docs/reference/resources/get-token.
 B,resonse.json,json,resources/get-token-response.json,/docs/reference/resources/get-token-response.json{% endcapture %}
 {% include tabs.html %}
 
- - Now, you shoud set  'X-Authorization' to "Bearer $YOUR_JWT_TOKEN"  
+ - Now, you should set  'X-Authorization' to "Bearer $YOUR_JWT_TOKEN"  

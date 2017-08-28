@@ -13,15 +13,14 @@ description: Installing Thingsboard IoT Gateway on Linux
 ### Step 1. Install Java 8
 
 IoT Gateway requires Java 8.
-Although you are able to start the service using [OpenJDK](http://openjdk.java.net/), 
-solution is actively tested on [Oracle JDK](http://www.oracle.com/technetwork/java/javase/overview/index.html).
+Although you are able to start the service using [OpenJDK](http://openjdk.java.net/), the solution is actively tested on [Oracle JDK](http://www.oracle.com/technetwork/java/javase/overview/index.html).
 
 Follow this instructions to install Oracle JDK 8:
 
  - [Ubuntu 16.04](https://www.digitalocean.com/community/tutorials/how-to-install-java-with-apt-get-on-ubuntu-16-04#installing-the-oracle-jdk)
  - [CentOS 7](https://www.digitalocean.com/community/tutorials/how-to-install-java-on-centos-and-fedora#install-oracle-java-8)
 
-Please don't forget to configure your operation system to use Oracle JDK 8 by default. 
+Please don't forget to configure your operating system to use Oracle JDK 8 by default. 
 Corresponding instructions are in the same articles listed above.
 
 ### Step 2. Download installation package
@@ -55,7 +54,7 @@ See [**getting started**](/docs/iot-gateway/getting-started/) or [**general conf
 ### Step 5. Launch your gateway
 
 Now let's start the gateway!
-Execute following command to start gateway:
+Execute the following command to start gateway:
 
 ```bash
 sudo service tb-gateway start

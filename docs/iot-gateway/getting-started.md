@@ -11,7 +11,7 @@ description: Write your first IoT project using Thingsboard IoT Gateway
 {:toc}
 
 This guide covers initial IoT Gateway installation and configuration.
-We will connect IoT Gateway to Thingsboard server and visualize some basic gateway statistics: amount of devices connected and messages processed.
+We will connect IoT Gateway to Thingsboard server and visualize some basic gateway statistics: the amount of devices connected and messages processed.
 We will also configure MQTT and OPC-UA extension in order to subscribe to device data feed from external devices or applications.  
 
 ### Prerequisites
@@ -32,7 +32,7 @@ Follow steps (1-3) in the chosen gateway installation guide. The Gateway configu
  
 ## Step 3: Gateway provisioning
 
-In order to connect your IoT gateway to Thingsboard server you need to provision gateway credentials first. We will use access token credentials as the most simple one. 
+In order to connect your IoT gateway to Thingsboard server, you need to provision gateway credentials first. We will use access token credentials as the most simple one. 
 See [device authentication options](/docs/user-guide/device-credentials/) for more details.
 
 Login as tenant administrator. Use [default credentials](/docs/samples/demo-account/#demo-tenant) in case of local Thingsboard server.
@@ -48,7 +48,7 @@ Populate your gateway name and select "Is gateway" checkbox.
 ![image](/images/gateway/device-add.png)
 {: refdef} 
 
-**NOTE:** Gateway and device names should be unique in scope of tenant.
+**NOTE:** Gateway and device names should be unique in the scope of a tenant.
 
 Open new device card and click on "Copy Access Token" button.
 
@@ -117,7 +117,7 @@ All values should be set to "0".
 ![image](/images/gateway/gateway-statistics.png)
 {: refdef} 
 
-The presence of those values on the UI means that your gateway have successfully connected to Thingsboard server.
+The presence of those values on the UI means that your gateway has successfully connected to Thingsboard server.
   
 ## Step 7. Choose your extension
   
@@ -131,7 +131,7 @@ or follow instruction for all steps.
   
 ## Step 8. Connect to external MQTT broker
 
-In this step we will connect to external MQTT broker in order to start collecting data from legacy or third-party applications and devices.
+In this step, we will connect to the external MQTT broker in order to start collecting data from legacy or third-party applications and devices.
 
 Navigate to gateway configuration folder and edit **tb-gateway.yml** file.
 Configuration folder location:
@@ -145,12 +145,12 @@ Change **mqtt.enabled** property value to **true**.
 
 We will use Mosquitto MQTT broker for the demonstration purposes. See Mosquitto [downloads page](https://mosquitto.org/download/) for instructions how to install this broker.
 
-**NOTE:** Mosquitto and Thingsboard use same port (1883) for MQTT service. If you want to use Thingsboard and Mosquitto on the same host, you need to change mqtt port in one of the servers.
+**NOTE:** Mosquitto and Thingsboard use the same port (1883) for MQTT service. If you want to use Thingsboard and Mosquitto on the same host, you need to change the mqtt port in one of the servers.
 See corresponding [Thingsboard](/docs/user-guide/install/config/) or [Mosquitto](https://mosquitto.org/man/mosquitto-conf-5.html) documentation for more details.
 
-Since we use Thingsboard [demo instance](https://demo.thingsboard.io/signup) hosted in the cloud, we will install Mosquitto MQTT broker locally and use default service configuration.
+Since we use Thingsboard [demo instance](https://demo.thingsboard.io/signup) hosted in the cloud, we will install Mosquitto MQTT broker locally and use the default service configuration.
 
-If you decide to use other MQTT broker that is deployed to external host or has specific security configuration, please edit **mqtt-config.json** file and modify connection parameters.
+If you decide to use other MQTT broker that is deployed to the external host or has specific security configuration, please edit **mqtt-config.json** file and modify connection parameters.
 See MQTT extension [configuration guide](/docs/iot-gateway/mqtt/) for more details.
 
 Restart your gateway using following commands
@@ -230,7 +230,7 @@ mosquitto_pub -h localhost -p 1883 -t "sensors" -m '[{"serialNumber":"SN-002", "
 
 ### Step 8.3 Mapping MQTT topic to device name
 
-In some cases, device name is a part of the MQTT topic. In this case you are able to use regular expression to extract device name value. 
+In some cases, the device name is a part of the MQTT topic. In this case, you are able to use the regular expression to extract device name value. 
 This regular expression is configured in the **deviceNameTopicExpression** field.
 
 See example publish command and mapping (already present in default configuration) below:
@@ -259,13 +259,13 @@ mosquitto_pub -h localhost -p 1883 -t "sensor/SN-004/temperature" -m '{"value":3
 
 ### Step 8.4 Advanced mapping syntax and filtering
 
-Gateway MQTT extension uses [**JsonPath**](https://github.com/jayway/JsonPath) library to provide ability of flexible mapping and filtering of JSON structures.
+Gateway MQTT extension uses [**JsonPath**](https://github.com/jayway/JsonPath) library to provide the ability of flexible mapping and filtering of JSON structures.
 You can define filterExpression based on the [**path**](https://github.com/jayway/JsonPath#path-examples) and [**filter**](https://github.com/jayway/JsonPath#filter-operators) examples.
 
 ### Step 8.5 Custom MQTT message mappers
 
 As a gateway developer, you are able to fork and add custom mappers using following [interface](https://github.com/thingsboard/thingsboard-gateway/blob/release-1.0/src/main/java/org/thingsboard/gateway/extensions/mqtt/client/conf/mapping/MqttDataConverter.java). 
-Feel free to submit PRs with your custom mapper implementations if you believe that they may be useful for Thingsboard community.
+Feel free to submit PRs with your custom mapper implementations if you believe that they may be useful for the Thingsboard community.
 
 ## Step 9. Connect to external OPC-UA server
 
@@ -289,7 +289,7 @@ Windows: YOUR_INSTALL_DIR/conf
 Linux: /etc/tb-gateway/conf
 ```
 
-**NOTE** This certificate is added to the configuration folder for the demonstration purposes. Both certificate and key is in public access, thus it is not secure and is not for production usage.
+**NOTE** This certificate is added to the configuration folder for the demonstration purposes. Both the certificate and the key are in public access, thus it is not secure and is not for production usage.
 You can create and configure your own certificate pair for production usage.
  
 {:refdef: style="text-align: center;"}
@@ -301,7 +301,7 @@ You can create and configure your own certificate pair for production usage.
 
 This step is required if you want to deploy Thingsboard IoT Gateway and KEPServerEX on different hosts. 
 
-KEPServerEX need to be configured to accept remote connections. Open KEPServerEX "OPC UA Configuration Manager" application and navigate to "Server Endpoints" page.
+KEPServerEX needs to be configured to accept remote connections. Open KEPServerEX "OPC UA Configuration Manager" application and navigate to "Server Endpoints" page.
 
 {:refdef: style="text-align: center;"}
 ![image](/images/gateway/server-endpoint.png)
@@ -340,7 +340,7 @@ The **opc-config.json** contains sample configuration that allows mapping of OPC
 Once started, OPC-UA extension will monitor your OPC-UA server using this pre-defined configuration.
  
 For example, the default mapping listed below will force gateway to treat all OPC-UA tags that match **deviceNodePattern** as Thingsboard devices.
-Gateway will use **deviceNamePattern** to calculate the device name based on values of different tags using relative to device node tag (For example, **_System._DeviceId**).
+Gateway will use **deviceNamePattern** to calculate the device name based on values of different tags using relative to the device node tag (For example, **_System._DeviceId**).
 Similar, **Tag1** and **Tag2** relative OPC-UA tags will be mapped to corresponding Thingsboard device attribute and telemetry fields.  
  
 ```json
@@ -378,7 +378,7 @@ You can click on the device card and observe delivered attributes and telemetry 
 
 ## Step 10. Connect to Sigfox Backend
 
-In this step we will connect to Sigfox Backend in order to start collecting data from sigfox modules.
+In this step, we will connect to Sigfox Backend in order to start collecting data from sigfox modules.
 
 Navigate to gateway configuration folder and edit **tb-gateway.yml** file.
 Configuration folder location:
@@ -488,12 +488,12 @@ If everything is configured correctly, you will see new devices in your Tenant A
 ![image](/images/gateway/sigfox/devices.png)
 {: refdef}
 
-You are able to open particular device and check that telemetry values arrived successfully.
+You are able to open a particular device and check that telemetry values arrived successfully.
 
 ### Step 10.4 Custom Data type transformers
 
 As a gateway developer, you are able to fork and add custom transformers using following [interface](https://github.com/thingsboard/thingsboard-gateway/blob/release-1.2/src/main/java/org/thingsboard/gateway/extensions/sigfox/conf/mapping/DataValueTransformer.java). 
-Feel free to submit PRs with your custom transformer implementations if you believe that they may be useful for Thingsboard community.
+Feel free to submit PRs with your custom transformer implementations if you believe that they may be useful for the Thingsboard community.
 
 ## Next steps
 

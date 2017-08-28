@@ -50,12 +50,12 @@ NodeMCU D5|DHT-11 Data (S)
 ## Programming the NodeMCU device
 
 We need to download and build firmware with Lua interpreter for NodeMCU. 
-This process is described in [official documentation](https://nodemcu.readthedocs.io/en/master/en/build/) and there are multiple way to do this.
+This process is described in [official documentation](https://nodemcu.readthedocs.io/en/master/en/build/) and there are multiple ways to do this.
 You can use [cloud build service](http://nodemcu-build.com/) for this purpose, however, we will use [Docker Image](https://hub.docker.com/r/marcelstoer/nodemcu-build/).
 
 ### Firmware download
 
-Use following commands to clone official github repository for NodeMCU firmware.
+Use the following commands to clone the official GitHub repository for NodeMCU firmware.
 
 ```bash
 $ mkdir -p ~/samples/nodemcu
@@ -76,7 +76,7 @@ There is ability to customize firmware by changing two files:
 
  - ~/samples/nodemcu/nodemcu-firmware/app/include/user_modules.h - Contains list of what kind of modules included by default.
 
-In our case all necessary modules included by default. However, please check that these modules are uncommented.
+In our case, all necessary modules included by default. However, please check that these modules are uncommented.
 
 ```
 ...
@@ -92,7 +92,7 @@ The easiest way to build nodemcu firmware is by using prepared docker container 
 
 Please visit [docker installation](https://docs.docker.com/engine/installation/) page and install docker on your machine.
 
-After installation you need to download docker image from docker hub by command:
+After installation you need to download docker image from docker hub by the command:
 
 ```bash
 $ sudo docker pull marcelstoer/nodemcu-build 
@@ -110,11 +110,11 @@ As the result binary firmware located in the **~/samples/nodemcu/nodemcu-firmwar
 
 Our application consists of three *.lua* files:
 
- - config.lua - configuration file, where we define custom configuration. 
+ - config.lua - configuration file, where we define a custom configuration. 
    You need to modify this file in order to setup your wifi network parameters and address of Thingsboard server.
    - your wifi network SSID - name of the wifi network.
    - your wifi network password - password to the network.
-   - thingsboard server ip - host where your thingsboard installation. Use "demo.thingsboard.io" if you are using [live demo](https://demo.thingsboard.io/) server.
+   - thingsboard server IP - host of your thingsboard installation. Use "demo.thingsboard.io" if you are using [live demo](https://demo.thingsboard.io/) server.
    - thingsboard mqtt port - 1883 is the default value.
    - thingsboard access token - DHT11_DEMO_TOKEN is the default value that corresponds to pre-provisioned [demo account](/docs/samples/demo-account/#tenant-devices).
    
@@ -131,7 +131,7 @@ Init,init.lua,lua,resources/init.lua,/docs/samples/nodemcu/resources/init.lua{% 
 
 ### Flashing the firmware
 
-Before flashing firmware we need to figure out what serial interface using to communicate with NodeMCU.
+Before flashing firmware, we need to figure out which serial interface using to communicate with NodeMCU.
 
 ```bash
 $ dmesg
@@ -169,7 +169,7 @@ Sometimes you can observe frequent blinking of the blue led after firmware uploa
 $ sudo ./esptool.py -b 115200 write_flash --flash_mode dio --flash_size 32m 0x3fc000 ~/samples/nodemcu/nodemcu-firmware/bin/esp_init_data_default.bin --verify
 ```
 
-Sometimes you are not able to upload lua files. Try to reset device and executing command again within first 10 seconds after reset. If no success, try to delete init.lua code from NodeMCU:
+Sometimes you are not able to upload lua files. Try to reset the device and execute a command again within the first 10 seconds after reset. If no success, try to delete init.lua code from NodeMCU:
 
 ```bash
 $ sudo ./luatool.py --port /dev/ttyUSB0 -b 115200 --delete init.lua
@@ -177,8 +177,8 @@ $ sudo ./luatool.py --port /dev/ttyUSB0 -b 115200 --delete init.lua
 
 ## Data visualization
 
-In order to simplify this guide we have included "Temperature & Humidity Demo Dashboard" to the [demo data](/docs/samples/demo-account/) that is available in each Thingsboard installation. 
-Of course, you can modify this dashboard: tune, add, delete widgets, etc.
+In order to simplify this guide, we have included "Temperature & Humidity Demo Dashboard" to the [demo data](/docs/samples/demo-account/) that is available in each Thingsboard installation. 
+You still can modify this dashboard: tune, add, delete widgets, etc.
 You can access this dashboard by logging in as a tenant administrator. Use
 
  - login: tenant@thingsboard.org

@@ -54,7 +54,7 @@ We will list only main configuration parameters below to avoid duplication of th
 
 #### thingsboard.conf
 
-Configuration file for startup script. Contains Java options and classpath related parameters.
+The onfiguration file for the startup script. Contains Java options and classpath related parameters.
 
 #### actor-system.conf
 
@@ -63,5 +63,5 @@ Allows performance tuning for specific use cases.
 
 #### logback.xml
 
-Configuration file for logging. Allows to control log level, size of log files and total size/volume of logs.
+The configuration file for logging. Allows controlling the log level, the size of log files and the total size/volume of logs.
 

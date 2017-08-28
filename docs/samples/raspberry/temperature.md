@@ -19,7 +19,7 @@ The DHT22 sensor is connected to [Raspberry Pi](https://en.wikipedia.org/wiki/Ra
 Raspberry Pi offers a complete and self-contained Wi-Fi networking solution.
 Raspberry Pi push data to Thingsboard server via MQTT protocol by using [paho mqtt](https://eclipse.org/paho/clients/python/) python library.
 Data is visualized using built-in customizable dashboard. 
-The application that is running on Raspberry Pi is written on python which is quite simple and easy to understand.
+The application that is running on Raspberry Pi is written in Python which is quite simple and easy to understand.
 
 The video below demonstrates the final result of this tutorial.
 
@@ -84,7 +84,7 @@ Open Thingsboard Web UI (http://localhost:8080) in browser and login as tenant a
  - login: tenant@thingsboard.org
  - password: tenant
  
-Goto "Devices" section. Click "+" button and create device with name "DHT22 Demo Device". 
+Goto "Devices" section. Click "+" button and create a device with the name "DHT22 Demo Device". 
 
 ![image](/images/samples/raspberry/temperature/device.png)
 
@@ -94,7 +94,7 @@ Copy auto-generated access token from the "Access token" field. Please save this
 ![image](/images/samples/raspberry/temperature/credentials.png)
 
 
-Click "Copy Device ID" in device details to copy your device id to clipboard.
+Click "Copy Device ID" in device details to copy your device id to the clipboard.
 Paste your device id to some place, this value will be used in further steps.
 
 ### Provision your dashboard
@@ -106,7 +106,7 @@ Use import/export [**instructions**](/docs/user-guide/ui/dashboards/#dashboard-i
 
 ### MQTT library installation
 
-Following command will install MQTT Python library:
+The following command will install MQTT Python library:
 
 ```bash
 sudo pip install paho-mqtt
@@ -130,7 +130,7 @@ sudo python setup.py install
 
 ### Application source code
 
-Our application consists of single python script that is well commented. 
+Our application consists of a single python script that is well documented. 
 You will need to modify **THINGSBOARD_HOST** constant to match your Thingsboard server installation IP address or hostname. 
 Use "demo.thingsboard.io" if you are using [live demo](https://demo.thingsboard.io/) server.
 

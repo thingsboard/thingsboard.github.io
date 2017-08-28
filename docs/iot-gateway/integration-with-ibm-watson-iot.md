@@ -19,7 +19,7 @@ We will cover basic configuration steps below.
 ![image](/images/gateway/ibm-watson/ibm-watson-iot-gateway-integration.svg)
 
 
-Thingsboard IoT Gateway is a light-weight service that connects to both IBM Watson IoT MQTT broker and Thingsboard MQTT server and acts as aproxy or API bridge.
+Thingsboard IoT Gateway is a light-weight service that connects to both IBM Watson IoT MQTT broker and Thingsboard MQTT server and acts as a proxy or API bridge.
 You are able to configure the Gateway to subscribe to certain IBM Watson IoT topics, convert incoming data to unified format and push it to Thingsboard.
 This article provides basic configuration steps. You can refer to advanced configuration topic for [more details](/docs/iot-gateway/mqtt/).
  
@@ -65,7 +65,7 @@ Please write them down somewhere because later we'll use them.
 
 #### Step 2. IBM Watson IoT API key for applications
 
-Now we need to generate **API key** for the **IBM Watson** *application*. In our case **Thingsboard Gateway** is going to be application that will be subscribed to **IBM Watson** *MQTT* topics.
+Now we need to generate **API key** for the **IBM Watson** *application*. In our case **Thingsboard Gateway** is going to be an application that will be subscribed to **IBM Watson** *MQTT* topics.
 
 Go to **Apps** menu:
 
@@ -87,7 +87,7 @@ Navigate to the gateway configuration folder and edit **tb-gateway.yml** file. P
 
 Now it's time to configure Thingsboard **IoT Gateway** to connect to your **IBM Watson IoT** broker.
 
-**NOTE** If you at this point don't know how devices and applications are connecting to MQTT topics in **IBM Watson** platform please visit these links [Connecting applications, devices, and gateways to Watson IoT Platform](https://console.ng.bluemix.net/docs/services/IoT/reference/security/connect_devices_apps_gw.html) and [MQTT connectivity for applications](https://console.ng.bluemix.net/docs/services/IoT/applications/mqtt.html) before continue.
+**NOTE** If you at this point don't know how devices and applications are connecting to MQTT topics in **IBM Watson** platform please visit these links [Connecting applications, devices, and gateways to Watson IoT Platform](https://console.ng.bluemix.net/docs/services/IoT/reference/security/connect_devices_apps_gw.html) and [MQTT connectivity for applications](https://console.ng.bluemix.net/docs/services/IoT/applications/mqtt.html) before continuing.
 
 We need to compose **host** and **clientId** properties to be able to connect **Thingsboard Gateway** to **IBM Watson** *MQTT* topics. 
 
@@ -115,7 +115,7 @@ You should update it using next values:
 }
 ```
 
-here is sample with real values:
+here is a sample with real values:
 
 ```json
 {
@@ -134,13 +134,13 @@ here is sample with real values:
 ```
 
 
-Configuration of the broker is done. Now you are ready to start Thingsboard **IoT Gateway** and publish messages to **IBM Watson IoT** topics that will be consumed by Thingsboard **IoT Gateway** and republished to **Thingsboard** instance.
+The configuration of the broker is done. Now you are ready to start Thingsboard **IoT Gateway** and publish messages to **IBM Watson IoT** topics that will be consumed by Thingsboard **IoT Gateway** and republished to **Thingsboard** instance.
 
 ### Dry Run
 
-It's time to configure mapping of the **Thingsboard Gateway** to be able to subscribe to **IBM Watson** device topics. 
+It's time to configure the mapping of the **Thingsboard Gateway** to be able to subscribe to **IBM Watson** device topics. 
 
-**NOTE** If you at this point don't know how subscribe to **IBM Watson** *MQTT* topics please visit this [link](https://console.ng.bluemix.net/docs/services/IoT/applications/mqtt.html#subscribe_device_events)
+**NOTE** If you at this point don't know how to subscribe to **IBM Watson** *MQTT* topics please visit this [link](https://console.ng.bluemix.net/docs/services/IoT/applications/mqtt.html#subscribe_device_events)
 
 In general *topic* that we can use to subscribe to device events has next definition: 
 
@@ -148,8 +148,8 @@ In general *topic* that we can use to subscribe to device events has next defini
 
 Here is the detail description of *event_id* and *format_string* properties:
 
-- **event_id** is the ID of the event, for example “status”. The event ID can be any string permitted by MQTT. Subscriber applications must use this string in their subscription topic to receive the events published on this topic if wildcards are not used.
-- **format_string** is the format of the event payload, for example “json”. The format can be any string permitted by MQTT. Subscriber applications must use this string in their subscription topic to receive events published on this topic if wildcards are not used. If the format is not “json”, then messages will not be stored in the Historian.
+- **event_id** is the ID of the event, for example, “status”. The event ID can be any string permitted by MQTT. Subscriber applications must use this string in their subscription topic to receive the events published on this topic if wildcards are not used.
+- **format_string** is the format of the event payload, for example, “json”. The format can be any string permitted by MQTT. Subscriber applications must use this string in their subscription topic to receive events published on this topic if wildcards are not used. If the format is not “json”, then messages will not be stored in the Historian.
 
 Consider that we have next configuration of the mapping for **my-device-type** *Device Type* and would like to get all **temp** events for all the *Device Ids*. *Device Id* is going to be used as *Device Name* in **Thingsboard**:
 
@@ -197,6 +197,6 @@ Thingsboard **IoT Gateway** will receive these values, create or update device *
 mosquitto_pub -h 4p62co.messaging.internetofthings.ibmcloud.com -p 1883 -u 'use-token-auth' -P 'Lw&FJ3F29Rs&xNeuJt' -i "d:4p62co:my-device-type:my-device-id" -t iot-2/evt/temp/fmt/json -m '{"value":64}'
 ```
 
-To validate that data arrived to Thingsboard, please open the administration UI and navigate to **Devices -> MY-DEVICE-ID -> Latest Telemetry**. See screen-shoot attached.
+To validate that data arrived in Thingsboard, please open the administration UI and navigate to **Devices -> MY-DEVICE-ID -> Latest Telemetry**. See screenshot attached.
 
 ![image](/images/gateway/ibm-watson/dry-run.png)

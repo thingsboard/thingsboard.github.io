@@ -29,19 +29,19 @@ Thingsboard IoT Gateway provides following features:
 {: refdef}
 
 
-The IoT Gateway is built on top of **Java**, however is different from similar projects that leverage OSGi technology.
-The idea is distantly similar to microservices architecture.
-There are **other programming languages** (C, C++, Python, Javascript, Go..) that may be more suitable for application development that target IoT devices.
+The IoT Gateway is built on top of **Java**, however, it is different from similar projects that leverage OSGi technology.
+The idea is distantly similar to the microservices architecture.
+There are **other programming languages** (C, C++, Python, Javascript, Go..) that may be more suitable for the development of the applications that target IoT devices.
 Especially, when we are talking about language APIs and existing libraries to work with serial ports, GPIOs, I2C, and new modules and sensors that are released every day. 
 
 The Gateway provides simple integration APIs, and encapsulates common Thingsboard related tasks: device provisioning, local data persistence and delivery, message converters/adaptors and other.
 As an application developer, you are able to choose Python, Go, C/C++ and other languages and connect to Thingsboard Gateway through external MQTT broker or OPC-UA server. 
-IoT devices that support other protocols may be connected to gateway by implementing custom extensions.
+IoT devices that support other protocols may be connected to the gateway by implementing custom extensions.
 
 #### Project Roadmap
 
 The initial Gateway release goal is to bring Thingsboard [data collection](/docs/user-guide/telemetry/) feature to OPC-UA and MQTT enabled devices.
-Thingsboard Gateway 1.2 provides ability to configure and control MQTT enabled devices from Thingsboard through the Gateway.
+Thingsboard Gateway 1.2 provides the ability to configure and control MQTT enabled devices from Thingsboard through the Gateway.
 
 The Gateway project is currently in active development stage and you should expect following major features in next releases:
 

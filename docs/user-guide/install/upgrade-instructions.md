@@ -73,7 +73,7 @@ description: Thingsboard IoT platform upgrade instructions
 
 ## Upgrading to 1.0.3
 
-This steps are applicable for both 1.0, 1.0.1 and 1.0.2 Thingsboard versions.
+These steps are applicable for 1.0, 1.0.1 and 1.0.2 Thingsboard versions.
 
 #### Thingsboard package download
 
@@ -113,7 +113,7 @@ $ sudo service thingsboard start
 
 ## Upgrading to 1.1.0
 
-This steps are applicable for 1.0.3 Thingsboard version.
+These steps are applicable for 1.0.3 Thingsboard version.
 
 #### Thingsboard package download
 
@@ -131,7 +131,7 @@ thingsboard-installation-1-1-0-centos,CentOS,shell,resources/1.1.0/thingsboard-c
 
 #### Database upgrade
 
-Please use following instruction to update your single node instance:
+Please use the following instruction to update your single node instance:
 
 ```bash
 # Download upgrade scripts
@@ -152,7 +152,7 @@ $ sudo service thingsboard start
 
 ## Upgrading to 1.2.0
 
-This steps are applicable for 1.1.0 Thingsboard version.
+These steps are applicable for 1.1.0 Thingsboard version.
 
 ### Ubuntu/CentOS
 
@@ -197,8 +197,8 @@ Download Thingsboard installation archive for Windows: [thingsboard-windows-1.2.
 
 #### Thingsboard service upgrade
 
-* Make backup of previous Thingsboard configuration located in \<Thingsboard install dir\>\conf (for ex. C:\thingsboard\conf).
-* Uninstall previous version of Thingsboard service by running **uninstall.bat** located in Thingsboard install dir.
+* Make a backup of previous Thingsboard configuration located in \<Thingsboard install dir\>\conf (for ex. C:\thingsboard\conf).
+* Uninstall the previous version of Thingsboard service by running **uninstall.bat** located in Thingsboard install dir.
 
 **NOTE** Scripts listed above should be executed using Administrator Role.
 
@@ -207,8 +207,8 @@ C:\thingsboard>uninstall.bat
 ```
 * Remove Thingsboard install dir.
 * Unzip installation archive to Thingsboard install dir.
-* Compare your old Thingsboard configuration files (from backup you made in first step) with new ones.
-* Run **install.bat** script to install new version of Thingsboard as a Windows service.
+* Compare your old Thingsboard configuration files (from the backup you made in the first step) with new ones.
+* Run **install.bat** script to install the new version of Thingsboard as a Windows service.
 
 ```text
 C:\thingsboard>install.bat
@@ -233,7 +233,7 @@ net start thingsboard
 
 ## Upgrading to 1.2.1
 
-This steps are applicable for 1.2.0 Thingsboard version.
+These steps are applicable for 1.2.0 Thingsboard version.
 
 ### Ubuntu/CentOS
 
@@ -279,8 +279,8 @@ Download Thingsboard installation archive for Windows: [thingsboard-windows-1.2.
 
 #### Thingsboard service upgrade
 
-* Make backup of previous Thingsboard configuration located in \<Thingsboard install dir\>\conf (for ex. C:\thingsboard\conf).
-* Uninstall previous version of Thingsboard service by running **uninstall.bat** located in Thingsboard install dir.
+* Make a backup of previous Thingsboard configuration located in \<Thingsboard install dir\>\conf (for ex. C:\thingsboard\conf).
+* Uninstall the previous version of Thingsboard service by running **uninstall.bat** located in Thingsboard install dir.
 
 **NOTE** Scripts listed above should be executed using Administrator Role.
 
@@ -289,8 +289,8 @@ C:\thingsboard>uninstall.bat
 ```
 * Remove Thingsboard install dir.
 * Unzip installation archive to Thingsboard install dir.
-* Compare your old Thingsboard configuration files (from backup you made in first step) with new ones.
-* Run **install.bat** script to install new version of Thingsboard as a Windows service.
+* Compare your old Thingsboard configuration files (from the backup you made in the first step) with new ones.
+* Run **install.bat** script to install the new version of Thingsboard as a Windows service.
 
 ```text
 C:\thingsboard>install.bat
@@ -316,7 +316,7 @@ net start thingsboard
 
 ## Upgrading to 1.2.2
 
-This steps are applicable for 1.2.1 Thingsboard version.
+These steps are applicable for 1.2.1 Thingsboard version.
 
 ### Ubuntu/CentOS
 
@@ -361,8 +361,8 @@ Download Thingsboard installation archive for Windows: [thingsboard-windows-1.2.
 
 #### Thingsboard service upgrade
 
-* Make backup of previous Thingsboard configuration located in \<Thingsboard install dir\>\conf (for ex. C:\thingsboard\conf).
-* Uninstall previous version of Thingsboard service by running **uninstall.bat** located in Thingsboard install dir.
+* Make a backup of previous Thingsboard configuration located in \<Thingsboard install dir\>\conf (for ex. C:\thingsboard\conf).
+* Uninstall the previous version of Thingsboard service by running **uninstall.bat** located in Thingsboard install dir.
 
 **NOTE** Scripts listed above should be executed using Administrator Role.
 
@@ -371,8 +371,8 @@ C:\thingsboard>uninstall.bat
 ```
 * Remove Thingsboard install dir.
 * Unzip installation archive to Thingsboard install dir.
-* Compare your old Thingsboard configuration files (from backup you made in first step) with new ones.
-* Run **install.bat** script to install new version of Thingsboard as a Windows service.
+* Compare your old Thingsboard configuration files (from the backup you made in the first step) with new ones.
+* Run **install.bat** script to install the new version of Thingsboard as a Windows service.
 
 ```text
 C:\thingsboard>install.bat
@@ -397,7 +397,7 @@ net start thingsboard
 
 ## Upgrading to 1.2.3
 
-This steps are applicable for 1.2.2 Thingsboard version.
+These steps are applicable for 1.2.2 Thingsboard version.
 
 ### Ubuntu/CentOS
 
@@ -443,8 +443,8 @@ Download Thingsboard installation archive for Windows: [thingsboard-windows-1.2.
 
 #### Thingsboard service upgrade
 
-* Make backup of previous Thingsboard configuration located in \<Thingsboard install dir\>\conf (for ex. C:\thingsboard\conf).
-* Uninstall previous version of Thingsboard service by running **uninstall.bat** located in Thingsboard install dir.
+* Make a backup of previous Thingsboard configuration located in \<Thingsboard install dir\>\conf (for ex. C:\thingsboard\conf).
+* Uninstall the previous version of Thingsboard service by running **uninstall.bat** located in Thingsboard install dir.
 
 **NOTE** Scripts listed above should be executed using Administrator Role.
 
@@ -453,8 +453,8 @@ C:\thingsboard>uninstall.bat
 ```
 * Remove Thingsboard install dir.
 * Unzip installation archive to Thingsboard install dir.
-* Compare your old Thingsboard configuration files (from backup you made in first step) with new ones.
-* Run **install.bat** script to install new version of Thingsboard as a Windows service.
+* Compare your old Thingsboard configuration files (from the backup you made in the first step) with new ones.
+* Run **install.bat** script to install the new version of Thingsboard as a Windows service.
 
 ```text
 C:\thingsboard>install.bat
@@ -480,7 +480,7 @@ net start thingsboard
 
 ## Upgrading to 1.3.0
 
-This steps are applicable for 1.2.3 Thingsboard version.
+These steps are applicable for 1.2.3 Thingsboard version.
 
 ### Ubuntu/CentOS
 
@@ -531,18 +531,18 @@ Download Thingsboard installation archive for Windows: [thingsboard-windows-1.3.
 net stop thingsboard
 ```
 
-* Make backup of previous Thingsboard configuration located in \<Thingsboard install dir\>\conf (for ex. C:\thingsboard\conf).
+* Make a backup of previous Thingsboard configuration located in \<Thingsboard install dir\>\conf (for ex. C:\thingsboard\conf).
 
 * Remove Thingsboard install dir.
 * Unzip installation archive to Thingsboard install dir.
-* Compare your old Thingsboard configuration files (from backup you made in first step) with new ones.
+* Compare your old Thingsboard configuration files (from the backup you made in the first step) with new ones.
 * Please make sure that you set database.type parameter value (in the file **\<Thingsboard install dir\>\conf\thingsboard.yml**) to "cassandra" instead of "sql" in order to upgrade your cassandra database:
   
   ```
   database:
       type: "${DATABASE_TYPE:cassandra}" # cassandra OR sql
   ```       
-* Run **upgrade.bat** script to upgrade Thingsboard to new version.
+* Run **upgrade.bat** script to upgrade Thingsboard to the new version.
 
 **NOTE** Scripts listed above should be executed using Administrator Role.
 

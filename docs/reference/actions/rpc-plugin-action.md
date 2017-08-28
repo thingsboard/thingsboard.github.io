@@ -8,7 +8,7 @@ title: RPC Plugin Action
 
 ## Overview
 
-This component allows to forward incoming rpc requests to various plugins. 
+This component allows forwarding incoming rpc requests to various plugins. 
 
 ## Configuration
 

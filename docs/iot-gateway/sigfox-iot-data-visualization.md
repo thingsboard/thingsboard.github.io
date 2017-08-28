@@ -12,10 +12,10 @@ description: SigFox IoT data collection and visualization using Thingsboard IoT 
 
 ![Sigfox gateway integration](/images/gateway/sigfox/sigfox-gateway-integration.svg)
 
-Sigfox is low-cost, low energy consumption connectivity solution that allows to collect relatively small amount of data from your IoT devices.
-Sigfox Backend allows to provision custom callbacks and push data to your server applications. We will use this feature to push data to Thingsboard IoT Gateway.
+Sigfox is low-cost, low energy consumption connectivity solution that allows collecting a relatively small amount of data from your IoT devices.
+Sigfox Backend allows provisioning custom callbacks and pushing data to your server applications. We will use this feature to push data to Thingsboard IoT Gateway.
 The Gateway will take care of routing tasks: convert data to unified format, device provisioning, data delivery, etc.
-Once data is delivered to Thingsboard we will be able to see it on advanced real-time IoT dashboards and share this IoT dashboards with end-users. 
+Once data is delivered to Thingsboard we will be able to see it on advanced real-time IoT dashboards and share these IoT dashboards with end-users. 
  
 ### Prerequisites 
 
@@ -147,14 +147,14 @@ If everything is configured correctly, you will see new devices in your Tenant A
 ![image](/images/gateway/sigfox/devices.png)
 {: refdef}
 
-You are able to open particular device and check that telemetry values arrived successfully.
+You are able to open a particular device and check that telemetry values arrived successfully.
 
 #### Step 6. Provision Sigfox dashboard
 
 Download the dashboard file using this [**link**](/docs/samples/sigfox/sigfox_dashboard.json). 
 Use import/export [**instructions**](/docs/user-guide/ui/dashboards/#dashboard-importexport) to import the dashboard to your Thingsboard instance.
 
-**NOTE:** During import you will need to select device that you want to visualize.
+**NOTE:** During import you will need to select a device that you want to visualize.
 
 {:refdef: style="text-align: center;"}
 ![image](/images/gateway/sigfox/dashboard-import.png)

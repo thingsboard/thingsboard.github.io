@@ -10,8 +10,8 @@ description: IoT device management using Thingsboard attributes feature
 * TOC
 {:toc}
 
-Thingsboard provides ability to assign custom attributes to your entities and manage these attributes. 
-Attributes are treated key-value pairs. Flexibility and simplicity of key-value format allows easy and seamless integration with almost any IoT device on the market.
+Thingsboard provides the ability to assign custom attributes to your entities and manage these attributes. 
+Attributes are treated key-value pairs. Flexibility and simplicity of the key-value format allow easy and seamless integration with almost any IoT device on the market.
 
 
 ## Attribute types
@@ -32,20 +32,20 @@ Attributes are separated into three main groups:
 
 ## Device specific Attribute types
 
-All attributes may be used in [Rule Engine](/docs/user-guide/rule-engine) components: filters, processors and actions.
-This guide provides overview of the features listed above and some useful links to get more details.  
+All attributes may be used in [Rule Engine](/docs/user-guide/rule-engine) components: filters, processors, and actions.
+This guide provides the overview of the features listed above and some useful links to get more details.  
 
 Device specific attributes are separated into two main groups:
  
  - **client-side** - attributes are reported and managed by the device application. 
-   For example: current software/firmware version, hardware specification, etc.     
+   For example current software/firmware version, hardware specification, etc.     
 
    {:refdef: style="text-align: center;"}
    ![image](/images/user-guide/client-side-attributes.svg)
    {: refdef}  
         
  - **shared** - attributes are reported and managed by the server-side application. Visible to the device application.
-   For example: customer subscription plan, target software/firmware version.
+   For example customer subscription plan, target software/firmware version.
    
    {:refdef: style="text-align: center;"}
    ![image](/images/user-guide/shared-attributes.svg)
@@ -56,7 +56,7 @@ Device specific attributes are separated into two main groups:
 Thingsboard provides following API to device applications:
  
  - upload *client-side* attributes to the server
- - request *client-side* and *shared* attributes from server.
+ - request *client-side* and *shared* attributes from the server.
  - subscribe to updates of *shared* attributes.
 
 Attributes API is specific for each supported network protocol.
@@ -68,20 +68,20 @@ You can review API and examples in corresponding reference page:
   
 ## Telemetry plugin
 
-Thingsboard consist of core services and plug-able modules called plugins. 
+Thingsboard consists of core services and pluggable modules called plugins. 
 Telemetry plugin is responsible for persisting attributes data to internal data storage; 
-provides server-side api to query and subscribe for attribute updates. 
-Since Telemetry plugin functionality is critical for data visualization purposes in dashboards, it is configured on the system level by system administrator.
+provides server-side API to query and subscribe for attribute updates. 
+Since Telemetry plugin functionality is critical for data visualization purposes in dashboards, it is configured on the system level by a system administrator.
 Advanced users or platform developers can customize telemetry plugin functionality.
 
 ### Internal data storage
 
 Thingsboard uses either Cassandra NoSQL database or SQL database to store all data.
   
-Although you can query database directly, Thingsboard provide set of RESTful and Websocket API that simplify this process and apply certain security policies:
+Although you can query the database directly, Thingsboard provides a set of RESTful and Websocket API that simplify this process and apply certain security policies:
  
- - Tenant Administrator user is able to manage attributes for all entities that belong to corresponding tenant.
- - Customer user is able to manage attributes only for entities that are assigned to corresponding customer.
+ - Tenant Administrator user is able to manage attributes for all entities that belong to the corresponding tenant.
+ - Customer user is able to manage attributes only for entities that are assigned to the corresponding customer.
   
 ### Data Query API
 
@@ -119,14 +119,14 @@ Supported entity types are: TENANT, CUSTOMER, USER, RULE, PLUGIN, DASHBOARD, ASS
 
 ## Data visualization
 
-Thingsboard provide ability to configure and customize dashboards for data visualization. 
-This topic is covered in separate guide.    
+Thingsboard provides the ability to configure and customize dashboards for data visualization. 
+This topic is covered in a separate guide.    
 <p><a href="/docs/user-guide/visualization" class="button">Data Visualization guide</a></p>
 
 ## Rule engine
 
-Thingsboard provide ability to configure data processing rules.
-Device attributes can be used inside rule filters. This allows to apply rules based on certain device properties.
+Thingsboard provides the ability to configure data processing rules.
+Device attributes can be used inside rule filters. This allows applying rules based on certain device properties.
 You can find more details in a separate guide.
 <p><a href="/docs/user-guide/rule-engine" class="button">Rule Engine guide</a></p>
     

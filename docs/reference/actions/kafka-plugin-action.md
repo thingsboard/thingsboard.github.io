@@ -8,7 +8,7 @@ title: Kafka Plugin Action
 
 ## Overview
 
-This component allows to create kafka message by substitution of device attributes and message data into configurable templates.
+This component allows creating a kafka message by substitution of device attributes and message data into configurable templates.
 
 ## Configuration
 

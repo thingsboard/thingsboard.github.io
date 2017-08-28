@@ -30,9 +30,9 @@ This plugin does not provide any server-side API.
 
 ## Example
 
-In this example we are going to demonstrate how you can configure RabbitMQ extension to be able to send messages to particular queue every time new telemetry message for the device arrives.
+In this example, we are going to demonstrate how you can configure RabbitMQ extension to be able to send messages to particular queue every time new telemetry message for the device arrives.
 
-Prerequisites before continue RabbitMQ extension configuration:
+Prerequisites before continuing RabbitMQ extension configuration:
 
  - Thingsboard is up and running
  - RabbitMQ instance is up and running
@@ -45,7 +45,7 @@ Let's configure RabbitMQ plugin first. Go to *Plugins* menu, click on a '+' butt
 
 ![image](/images/reference/plugins/rabbitmq/rabbitmq-plugin-config-2.png)
 
-Please set correctly host, port and credentials so extensian is able to connect to RabbitMQ broker.
+Please set host, port and credentials correctly so extension is able to connect to RabbitMQ broker.
 
 Save plugin and click on *'Activate'* plugin button:
 
@@ -61,7 +61,7 @@ Add filter for **POST_TELEMETRY** message type:
 
 ![image](/images/reference/plugins/rabbitmq/post-telemetry-filter.png)
 
-Click *'Add'* button to add filter.
+Click *'Add'* button to add the filter.
 
 Then select *'RabbitMQ Plugin'* in the drop-down box for the Plugin field:
 

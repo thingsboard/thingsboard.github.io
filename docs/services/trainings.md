@@ -23,9 +23,9 @@ Thingsboard training sessions are on-demand online events for up to 8 people. On
 
 ### Thingsboard Basics
 
-Learn how Thingsboard platfom helps businesses implement IoT use cases and support IoT solutions.
+Learn how Thingsboard platform helps businesses to implement IoT use cases and support IoT solutions.
 
-This training session will provide you with basic understanding of Thingsboard features and how they can be used in your IoT product.
+This training session will provide you with the basic understanding of Thingsboard features and how they can be used in your IoT product.
 
 **Agenda:**
 
@@ -44,7 +44,7 @@ This training session will provide you with basic understanding of Thingsboard f
 - Thingsboard API
     - Explain Thingsboard API for device connectivity and integration with server-side applications.
     - **Exercise:** create device firmware to publish telemetry and attributes over MQTT.
-    - **Exercise:** add widgets to the Dashboard to visualize data from previous exercise.
+    - **Exercise:** add widgets to the Dashboard to visualize data from the previous exercise.
 - Rule Engine
     - Explain Rule engine data flow.
     - Review Rule components: filters, processors and actions and their available implementations.
@@ -74,15 +74,15 @@ This training session will provide you with basic understanding of Thingsboard f
 
 ### Thingsboard Data Visualization
 
-Learn how Thingsboard platfom helps to collect and visualize IoT data and use this knowledge to improve customer experience.
+Learn how Thingsboard platform helps to collect and visualize IoT data and use this knowledge to improve customer experience.
 
-This training session will provide you with in-depth understanding of Thingsboard visualization capabilities, widget customization, user roles and permissions.
+This training session will provide you with the in-depth understanding of Thingsboard visualization capabilities, widget customization, user roles, and permissions.
 
 
 **Agenda:**
 
 - Web UI
-    - Explain web UI capabilities and main business entities: Devices, Customers, Users and Dashboards.
+    - Explain web UI capabilities and main business entities: Devices, Customers, Users, and Dashboards.
     - Explain Thingsboard user roles and their permissions.
     - **Exercise:** create Device and provision Device Credentials
 - Dashboards
@@ -129,9 +129,9 @@ This training session will provide you with in-depth understanding of Thingsboar
 
 ### Device connectivity and application development using Thingsboard
 
-Learn how to use Thingsboard platfom APIs to build connected applications for your IoT devices.
+Learn how to use Thingsboard platform APIs to build connected applications for your IoT devices.
 
-This training session will provide you with in-depth understanding of supported network protocols and device APIs.
+This training session will provide you with the in-depth understanding of supported network protocols and device APIs.
 
 
 **Agenda:**
@@ -160,7 +160,7 @@ This training session will provide you with in-depth understanding of supported 
 - Messaging between Devices
     - Messaging plugin overview
     - **Exercise:** Send message from one device application to another
-- Load Balancing, Scalability and Failover
+- Load Balancing, Scalability, and Failover
     - Use cases and platform capabilities overview
 
 
@@ -186,7 +186,7 @@ This training session will provide you with in-depth understanding of supported 
 
 ### Server-side application development using Thingsboard API
 
-Learn how to connect your cloud applications with your IoT devices using Thingsboard platfom APIs.
+Learn how to connect your cloud applications with your IoT devices using Thingsboard platform APIs.
 
 This training session will provide you with in-depth understanding platform REST and websocket APIs, rule engine, data collection and analytics use cases.
 
@@ -241,9 +241,9 @@ This training session will provide you with in-depth understanding platform REST
 
 ### Thingsboard Administration
 
-Learn how to provision, monitor and scale yout Thingsboard cluster.
+Learn how to provision, monitor and scale your Thingsboard cluster.
 
-This training session will provide you with in-depth understanding platform configuration, troubleshooring and scalability. We will also cover security and load balancing topics.
+This training session will provide you with in-depth understanding platform configuration, troubleshooting and scalability. We will also cover security and load balancing topics.
 
 
 **Agenda:**
@@ -265,7 +265,7 @@ This training session will provide you with in-depth understanding platform conf
     - Explain cluster deployment options and configuration
     - **Exercise:** Thingsboard cluster setup
     - **Exercise:** Thingsboard cluster setup troubleshooting
-- Load Balancing, Scalability and Failover
+- Load Balancing, Scalability, and Failover
     - Use cases and platform capabilities overview
     - Thingsboard architecture overview
     - **Exercise:** Tuning cluster performance

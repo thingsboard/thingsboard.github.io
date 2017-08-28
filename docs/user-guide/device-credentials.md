@@ -16,8 +16,8 @@ Thingsboard is designed to support different device credentials. There are two s
    - **Disadvantages:** may be easily intercepted while using un-encrypted network connection (HTTP instead of HTTPS, MQTT without TLS/SSL, etc).
  - [**X.509 Certificates**](/docs/user-guide/certificates/) - [PKI](https://en.wikipedia.org/wiki/Public_key_infrastructure) and [TLS](https://en.wikipedia.org/wiki/Transport_Layer_Security) standard. 
  X.509 Certificate based authentication is used in two-way SSL mode.
-   - **Advantages:** high level of security using encrypted network connection and public key infrastructure.
-   - **Disadvantages:** not supported by some resource constrained devices. Affect battery and CPU usage.
+   - **Advantages:** high level of security using the encrypted network connection and public key infrastructure.
+   - **Disadvantages:** not supported by some resource constrained devices. Affects battery and CPU usage.
 
 Device credentials need to be provisioned to corresponding device entity on the server. 
 There are multiple ways to do this:

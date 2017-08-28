@@ -14,16 +14,16 @@ For example, you can collect data using AWS IoT and then push it to Thingsboard 
 There are two options how one can integrate AWS IoT and Thingsboard. 
 
 **First option** is to write custom [lambda function](http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction-function.html) based on Thingsboard [APIs](/docs/reference/gateway-mqtt-api/). 
-This is quite simple solution, however, it allows only to push data to Thingsboard and does not provide ability to control your devices using Thingsboard widgets.
+This is quite a simple solution, however, it allows only to push data to Thingsboard and does not provide an ability to control your devices using Thingsboard widgets.
   
 **Second option** is to use Thingsboard **[IoT Gateway](/docs/iot-gateway/what-is-iot-gateway/)**, which is an open-source solution that allows you to integrate devices connected to legacy and third-party systems with Thingsboard.
-We recommend to use second option and will cover basic configuration steps below.
+We recommend to use the second option and will cover basic configuration steps below.
 
 ### Overview
 
 ![image](/images/gateway/aws-iot/aws-iot-gateway-integration.svg)
 
-Thingsboard IoT Gateway is a light-weight service that connects to both AWS IoT MQTT broker and Thingsboard MQTT server and acts as aproxy or API bridge.
+Thingsboard IoT Gateway is a light-weight service that connects to both AWS IoT MQTT broker and Thingsboard MQTT server and acts as a proxy or API bridge.
 You are able to configure the Gateway to subscribe to certain AWS IoT topics, convert incoming data to unified format and push it to Thingsboard.
 This article provides basic configuration steps. You can refer to advanced configuration topic for [more details](/docs/iot-gateway/mqtt/).
  
@@ -80,7 +80,7 @@ Navigate to the gateway configuration folder and edit **tb-gateway.yml** file. P
 
 Now it's time to configure Thingsboard **IoT Gateway** to connect to your **AWS IoT** broker.
 
-Configuration of the brokers is located in **mqtt-config.json** file.
+The configuration of the brokers is located in **mqtt-config.json** file.
 
 You should update it using next values:
 
@@ -119,7 +119,7 @@ here is sample with real values:
 ```
 
 
-Configuration of the broker is done. Now you are ready to start Thingsboard **IoT Gateway** and publish messages to **AWS IoT** topics that will be consumed by Thingsboard **IoT Gateway** and republished to **Thingsboard** instance.
+The configuration of the broker is done. Now you are ready to start Thingsboard **IoT Gateway** and publish messages to **AWS IoT** topics that will be consumed by Thingsboard **IoT Gateway** and republished to **Thingsboard** instance.
 
 ### Dry Run
 
@@ -152,6 +152,6 @@ Thingsboard **IoT Gateway** will receive this values, create or update device **
 mosquitto_pub --cert ./cert/cert.pem --key ./cert/privateKey.pem --cafile ./cert/rootCA.pem -h a2ljyhf3dvipme.iot.us-east-1.amazonaws.com -p 8883 -t sensor/SN-001/temperature -m '{"value":73.8}'
 ```
 
-To validate that data arrived to Thingsboard, please open the administration UI and navigate to **Devices->SN-001->Latest Telemetry**. See screen-shoot attached.
+To validate that data arrived in Thingsboard, please open the administration UI and navigate to **Devices->SN-001->Latest Telemetry**. See the  screenshot attached.
 
 ![image](/images/gateway/aws-iot/dry-run.png)

@@ -34,7 +34,7 @@ Use java installation [instructions](#java) to fix this.
 
 #### Source code
 
-You can clone source code of the project from official [github repo](https://github.com/thingsboard/thingsboard).
+You can clone source code of the project from the official [github repo](https://github.com/thingsboard/thingsboard).
 
 ```bash
 git clone git@github.com:thingsboard/thingsboard.git
@@ -44,7 +44,7 @@ git checkout release-1.3
 
 #### Build
 
-Following command will build thingsboard project:
+The following command will build thingsboard project:
 
 ```bash
 mvn clean install

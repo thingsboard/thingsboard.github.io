@@ -5,13 +5,13 @@ description: Thingsboard professional services for IoT projects implementation
 
 ---
 
-Professional services from Thingsboard authors and members of core team will help you build and optimize your IoT solutions. Our primary goal is to ensure the success of your project on every stage.
+Professional services from Thingsboard authors and members of the core team will help you to build and optimize your IoT solutions. Our primary goal is to ensure the success of your project on every stage.
 
 ### Core services
 
  - **Implementation.** Our professional services team will review your use cases, existing environment, system throughput and SLA requirements and then will install, setup and optimize Thingsboard cluster for your project needs.
 
- - **Platform upgrade.** Members of core team will assist your system administrators during upgrade of your Thingsboard platform installation to the latest versions.
+ - **Platform upgrade.** Members of the core team will assist your system administrators during the upgrade of your Thingsboard platform installation to the latest versions.
 
 ### Engineering
 
@@ -23,6 +23,6 @@ Professional services from Thingsboard authors and members of core team will hel
 
 ### Managed Services
 
- - We are able to completely take over administration of your Thingsboard cluster that is deployed in the cloud or on premises. Our engineers will be responsible for monitoring, elastic scalability and optimization of your Thingsboard cluster.
+ - We are able to completely take over the administration of your Thingsboard cluster that is deployed in the cloud or on premises. Our engineers will be responsible for monitoring, elastic scalability and optimization of your Thingsboard cluster.
  
 <a class="button" href="/docs/contact-us/">Contact us</a> 

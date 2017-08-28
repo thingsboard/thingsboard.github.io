@@ -3,7 +3,7 @@ layout: docwithnav
 assignees:
 - ashvayka
 title: What is Thingsboard?
-description: Thingsboard key features and advantages for rapid development of IoT projects and applications.
+description: Thingsboard key features and advantages for the rapid development of IoT projects and applications.
 ---
 
 
@@ -25,7 +25,7 @@ Our goal is to provide the out-of-the-box IoT cloud or on-premises solution that
 * **fault-tolerant**: no single-point-of-failure, every node in the cluster is identical.
 * **robust and efficient**: single server node can handle tens or even hundreds thousands of devices depending on use-case. 
 Thingsboard cluster can handle millions of devices.
-* **customizable**: adding new functionality is easy with customizable widgets, rule engine and plugin system.
+* **customizable**: adding new functionality is easy with customizable widgets, rule engine, and plugin system.
 * **durable**: never lose your data.
 
 See [Thingsboard Architecture](/docs/reference/architecture) for more details.

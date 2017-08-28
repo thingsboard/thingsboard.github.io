@@ -10,17 +10,17 @@ description: Launching Thingsboard with secure MQTT protocol to connect your IoT
 * TOC
 {:toc}
 
-Thingsboard provides ability to run MQTT server over SSL. Both one-way and two-way SSL are supported.
-To enable SSL, you will need to obtain valid or generate self-signed SSL certificate and add it to keystore.
-Once added, you will need to specify keystore information in **thingsboard.yml** file.
-See instructions below how to generate SSL certificate and use it in your Thingsboard installation.
-You can skip certificate generation step if you already have certificate.
+Thingsboard provides the ability to run MQTT server over SSL. Both one-way and two-way SSL are supported.
+To enable SSL, you will need to obtain a valid or generate a self-signed SSL certificate and add it to the keystore.
+Once added, you will need to specify the keystore information in **thingsboard.yml** file.
+See the instructions on how to generate SSL certificate and use it in your Thingsboard installation below.
+You can skip certificate generation step if you already have a certificate.
 
 ### Self-signed certificate generation
 
 **Note** This step requires Linux based OS with Java installed.
 
-Download [**server.keygen.sh**](https://raw.githubusercontent.com/thingsboard/thingsboard/master/tools/src/main/shell/server.keygen.sh) from official Thingsboard repository to your working directory.
+Download [**server.keygen.sh**](https://raw.githubusercontent.com/thingsboard/thingsboard/master/tools/src/main/shell/server.keygen.sh) from the official Thingsboard repository to your working directory.
 
 Download [**keygen.properties**](https://raw.githubusercontent.com/thingsboard/thingsboard/master/tools/src/main/shell/keygen.properties) file to your working directory and populate it with desired values. 
 For example:
@@ -62,9 +62,9 @@ where
  - **SERVER_FILE_PREFIX** - Prefix to all server keygen-related output files
  - **SERVER_KEYSTORE_DIR** - The default location where the key would be optionally copied. Can be overriden by -d option in **server.keygen.sh** script or entered manually upon the scrip run
 
-The rest of the values are not important for server keystore generation 
+The rest of the values are not important for the server keystore generation 
 
-To run server keystore generation, use following commands.
+To run the server keystore generation, use following commands.
  
 ```bash
 chmod +x server.keygen.sh

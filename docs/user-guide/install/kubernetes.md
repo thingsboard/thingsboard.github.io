@@ -9,7 +9,7 @@ title: Installing Thingsboard using Kubernetes (on Google Cloud Platform)
 * TOC
 {:toc}
 
-This guide will help you to deploy Thingsboard into cluster on Google Cloud Platform using [Kubernetes](https://kubernetes.io/).
+This guide will help you to deploy Thingsboard into a cluster on Google Cloud Platform using [Kubernetes](https://kubernetes.io/).
 
 ## Installation steps
 
@@ -75,7 +75,7 @@ gcloud container clusters create YOUR_CLUSTER_NAME --cluster-version=VALID_MASTE
 gcloud container node-pools create cassandra-pool --cluster=YOUR_CLUSTER_NAME --node-labels=machinetype=other --num-nodes=3 --disk-size=10
 ```
 
-- Create default credentials file on your local machine:
+- Create the default credentials file on your local machine:
 
 ```bash
 gcloud auth application-default login
@@ -119,7 +119,7 @@ kubectl create -f cassandra-setup.yaml
 kubectl logs -f cassandra-setup
 ```
 
-- And wait until message for success install: 
+- Wait for successful installation message: 
 
 ```bash
 Adding group `thingsboard' (GID 102) ...
@@ -157,7 +157,7 @@ kubectl create -f zookeeper.yaml
 kubectl create -f tb.yaml
 ```
 
-- Execute next command to see status of Thingsboard Pods:
+- Execute the next command to see the status of Thingsboard Pods:
 
 ```bash
 kubectl get pods -w -l app=tb
@@ -171,7 +171,7 @@ tb-0      1/1       Running   0          5s
 tb-1      1/1       Running   0          3s
 ```
 
-- Once Thingsboard Pods are in 'Running' status check logs of first Pod to make sure that everything is OK:
+- Once Thingsboard Pods are in 'Running' status check logs of the first Pod to make sure that everything is OK:
 
 ```bash
 kubectl logs -f tb-0
@@ -196,13 +196,13 @@ NAME             CLUSTER-IP     EXTERNAL-IP    PORT(S)                          
 tb-service      10.3.251.137   35.185.81.65   8080:31099/TCP,1883:32314/TCP,5683:30062/TCP   1m
 ```
 
-- Now you are be able to open Web UI using following link:
+- Now you are able to open Web UI using following link:
    
 ```bash
 http://EXTERNAL-IP:8080/
 ```
 
-- To delete the entire cluster execute following command:
+- To delete the entire cluster execute the following command:
 
 ```bash
 gcloud container clusters delete YOUR_CLUSTER_NAME
@@ -219,7 +219,7 @@ Common Kubernetes config file **common.yaml** contains next set of cloud resourc
 
 Cassandra Kubernetes config file **cassandra.yaml** contains next set of cloud resources:
 
-- *Headless Service*. Service exposes 9042 port for the Cassandra Pods and guarantee network identity for them.
+- *Headless Service*. Service exposes 9042 port for the Cassandra Pods and guarantees network identity for them.
 - *StatefulSet*. Set is responsible for provisioning Cassandra Pods onto Cloud Nodes.
   - *podAntiAffinity*. This property guarantees that Cassandra Pods are deployed to different Nodes.
 
@@ -227,7 +227,7 @@ Cassandra Kubernetes config file **cassandra.yaml** contains next set of cloud r
 
 Zookeeper Kubernetes config file **zookeeper.yaml** contains next set of cloud resources:
 
-- *Headless Service*. Service exposes 2888 and 3888 ports for the ZK Pods and guarantee network identity for them.
+- *Headless Service*. Service exposes 2888 and 3888 ports for the ZK Pods and guarantees network identity for them.
 - *ConfigMap*. Contains set of configurations options that are pushed into ZK images.
 - *PodDisruptionBudget*. Guarantees minimum instances of the cluster that must be up and running.
 - *StatefulSet*. Set is responsible for provisioning ZK Pods onto Cloud Nodes.

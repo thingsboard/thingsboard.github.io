@@ -11,14 +11,14 @@ description: Thingsboard IoT Platform sample for GPS data upload and visualizati
 ## Introduction
 {% include templates/what-is-thingsboard.md %}
 
-This sample application shows capability to track GPS location of LinkIt ONE device and further visualization on the map. 
+This sample application shows the capability to track GPS location of LinkIt ONE device and perform further visualization on the map. 
 It performs collection of latitude and longitude values produced by GPS module. 
 Collected data is pushed to Thingsboard for storage and visualization. 
 The purpose of this application is to demonstrate Thingsboard data collection API and visualization capabilities.
 
-The GPS module is built-in module of [LinkIt ONE](http://wiki.seeed.cc/LinkIt_ONE/). 
+The GPS module is a built-in module of [LinkIt ONE](http://wiki.seeed.cc/LinkIt_ONE/). 
 LinkIt ONE pushes data to Thingsboard server via MQTT protocol by using [PubSubClient](https://github.com/knolleary/pubsubclient) library for Arduino. 
-Data is visualized using map widget which is part of customizable dashboard. 
+Data is visualized using the map widget which is a part of a customizable dashboard. 
 The application that is running on LinkIt ONE is written using Arduino SDK which is quite simple and easy to understand.
 
 Once you complete this sample/tutorial, you will see your device GPS and battery data on the following dashboard.
@@ -27,13 +27,13 @@ Once you complete this sample/tutorial, you will see your device GPS and battery
 
 {% include templates/prerequisites.md %}
 
-This tutorial was prepared for Windows OS users. However it is possible to run it on other OS (Linux or MacOS).
+This tutorial was prepared for Windows OS users. However, it is possible to run it on other OS (Linux or MacOS).
  
 ## List of hardware
 
  - [LinkIt One](https://www.seeedstudio.com/LinkIt-ONE-p-2017.html) 
    
-   GPS and WIFI Antenna are shipped with board.
+   GPS and WIFI Antenna are shipped with a board.
  
 {% include templates/thingsboard-configuration.md %}
 
@@ -46,7 +46,7 @@ Open Thingsboard Web UI (http://localhost:8080) in browser and login as tenant a
  - login: tenant@thingsboard.org
  - password: tenant
  
-Goto "Devices" section. Click "+" button and create device with name "LinkIt One Demo Device". 
+Go to "Devices" section. Click "+" button and create a device with the name "LinkIt One Demo Device". 
 
 ![image](/images/samples/linkit-one/gps/device.png)
 
@@ -57,7 +57,7 @@ Copy auto-generated access token from the "Access token" field. Please save this
 ![image](/images/samples/linkit-one/gps/credentials.png)
 
 
-Click "Copy Device ID" in device details to copy your device id to clipboard.
+Click "Copy Device ID" in device details to copy your device id to the clipboard.
 Paste your device id to some place, this value will be used in further steps.
 
 ### Provision your dashboard
@@ -70,7 +70,7 @@ Use import/export [**instructions**](/docs/user-guide/ui/dashboards/#dashboard-i
 If you already familiar with basics of LinkIt One programming using Arduino IDE you can skip the following step and proceed with step 2.
 
 ### Step 1. LinkIt ONE and Arduino IDE setup.
-In order to start programming LinkIt One device you will need Arduino IDE installed and all related libraries. Please follow this [guide](http://labs.mediatek.com/site/global/developer_tools/mediatek_linkit/get-started/windows_os_stream/install/index.gsp) in order to install the Arduino IDE and LinkIt One SDK:
+In order to start programming LinkIt One device, you will need Arduino IDE installed and all related libraries. Please follow this [guide](http://labs.mediatek.com/site/global/developer_tools/mediatek_linkit/get-started/windows_os_stream/install/index.gsp) in order to install the Arduino IDE and LinkIt One SDK:
 
 It's recommended to update your firmware by following [this guide](http://labs.mediatek.com/site/global/developer_tools/mediatek_linkit/get-started/windows_os_stream/update_firmware/index.gsp).
 To try your first LinkIt One sample, please follow [this guide](http://labs.mediatek.com/site/global/developer_tools/mediatek_linkit/get-started/windows_os_stream/configure/index.gsp).
@@ -89,19 +89,19 @@ Download and open **gps_tracker.ino** sketch.
  - WIFI_PASSWORD - access point password
  - WIFI_AUTH - choose one of LWIFI_OPEN, LWIFI_WPA, or LWIFI_WEP.
  - TOKEN - the **$ACCESS_TOKEN** from Thingsboard configuration step. 
- - thingsboardServer - Thingsboard HOST/IP address that is accessable within your wifi network. Specify "demo.thingsboard.io" if you are using [live demo](https://demo.thingsboard.io/) server.
+ - thingsboardServer - Thingsboard HOST/IP address that is accessible within your wifi network. Specify "demo.thingsboard.io" if you are using [live demo](https://demo.thingsboard.io/) server.
 
 {% capture tabspec %}gps-arduino
 gps,gps_tracker.ino,c,resources/gps_tracker.ino,/docs/samples/linkit-one/resources/gps_tracker.ino{% endcapture %}
 {% include tabs.html %}
 
-Connect your LinkIt One device via USB cable and select Serial Debug COM port in Arduino IDE. Compile and Upload your sketch to device using "Upload" button.
+Connect your LinkIt One device via USB cable and select Serial Debug COM port in Arduino IDE. Compile and Upload your sketch to the device using "Upload" button.
 
 After application will be uploaded and started it will try to connect to Thingsboard node using mqtt client and upload "latitude" and "longitude" attributes once per second.
 
 ## Troubleshooting
 
-When application is running you can connect your device to Serial Debug COM port in Arduino IDE and open "Serial Monitor" in order to view debug information produced by serial output.
+When the application is running you can connect your device to Serial Debug COM port in Arduino IDE and open "Serial Monitor" in order to view debug information produced by serial output.
 
 ## Data visualization
 
@@ -113,12 +113,12 @@ Finally, open Thingsboard Web UI. You can access this dashboard by logging in as
 in case of local Thingsboard installation.
   
 Go to **"Devices"** section and locate **"LinkIt One Demo Device"**, open device details and switch to **"Attributes"** tab. 
-If all is configured correctly you should be able to see *"latitude"*, *"longitude"* and battery status attributes and theirs latest values in the table.
+If all is configured correctly you should be able to see *"latitude"*, *"longitude"* and battery status attributes and their latest values in the table.
 
 ![image](/images/samples/linkit-one/gps/attributes.png)
 
 After, open **"Dashboards"** section then locate and open **"LinkIt One GPS Tracking Demo Dashboard"**. 
-As a result you will see the map widget with pointer indicating your device location and battery level widget (similar to dashboard image in the introduction).
+As a result, you will see the map widget with a pointer indicating your device location and a battery level widget (similar to dashboard image in the introduction).
 
 ## Next steps
 

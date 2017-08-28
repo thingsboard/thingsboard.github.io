@@ -27,7 +27,7 @@ Current release supports Access Token and X.509 Certificates based credentials.
 
 ## Get Device Id
   
-Tenant administrator and customer users are able to copy device id to clipboard using "Copy Device Id" button.
+Tenant administrator and customer users are able to copy device id to the clipboard using "Copy Device Id" button.
 
  ![image](/images/user-guide/ui/device-id.png)
 
@@ -52,5 +52,5 @@ Tenant administrator and customer users are able to browse device [telemetry dat
 
 ## Browse device events
   
-Tenant administrator and customer users are able to browse alarms related to particular device using "Events" tab.
+Tenant administrator and customer users are able to browse alarms related to a particular device using "Events" tab.
 Lifecycle events and statistics are coming soon.

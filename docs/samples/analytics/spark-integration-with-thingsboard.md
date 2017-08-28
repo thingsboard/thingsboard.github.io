@@ -12,11 +12,11 @@ description: IoT device data analytics sample using Apache Spark, Kafka and Thin
 Thingsboard rule engine supports basic analysis of incoming telemetry data, for example, threshold crossing. 
 The idea behind rule engine is to provide functionality to route data from IoT Devices to different plugins, based on device attributes or the data itself.   
 
-However, most of the real-life use cases also require support of advanced analytics: machine learning, predictive analytics, etc.
+However, most of the real-life use cases also require the support of advanced analytics: machine learning, predictive analytics, etc.
   
 This tutorial will demonstrate how you can:
 
- - route telemetry device data from Thingsboard to Kafka topic using built-in plugin.
+ - route telemetry device data from Thingsboard to Kafka topic using the built-in plugin.
  - aggregate data from multiple devices using simple Apache Spark application.
  - push results of the analytics back to Thingsboard for persistence and visualization. 
 
@@ -26,23 +26,23 @@ Of course, analytics in this tutorial is quite simple, our goal is to highlight 
 
 ![image](/images/samples/analytics/spark/spark-thingsboard-integration.svg)
 
-Let's assume we have big amount of weather stations that are located in different geo-location zones. 
-Thingsboard is used to collect, store and visualize wind speed from this stations, but we are also interested in average wind speed in each geo-location zone.
-Once again, this is completely fake scenario just to demonstrate the integration of all components.
+Let's assume we have a large number of weather stations that are located in different geo-location zones. 
+Thingsboard is used to collect, store and visualize wind speed from these stations, but we are also interested in average wind speed in each geo-location zone.
+Once again, this is a completely fake scenario just to demonstrate the integration of all components.
 
 In this scenario we are going to upload wind speed as a telemetry reading, however, the geo-location zone will be a static attribute of the weather station device.
 This is logical, since telemetry readings are going to change often, and the geo-location is static.
 
 We will analyze real-time data from multiple devices using [Spark Streaming](http://spark.apache.org/docs/latest/streaming-programming-guide.html) job with 10 seconds batch window.
 
-In order to store and visualize results of the analytics we are going to create one virtual device for each geo-location zone. 
+In order to store and visualize the results of the analytics, we are going to create one virtual device for each geo-location zone. 
 This is possible using special Thingsboard MQTT Gateway [API](/docs/reference/gateway-mqtt-api/). This API allows to efficiently stream data from multiple devices using single MQTT session.
-So, in our case, the Spark Job itself acts as a gateway that publish data on behalf of several virtual devices. Let's name this gateway as an **Analytics Gateway**. 
+So, in our case, the Spark Job itself acts as a gateway that publishes data on behalf of several virtual devices. Let's name this gateway as an **Analytics Gateway**. 
 
 ### Prerequisites
 
-We assume you have Thingsboard [instance](/docs/user-guide/install/installation-options/) is up and running.
-We also assume you are familiar with Kafka and Spark and have also prepared those environments for this tutorial.
+We assume that you have a Thingsboard [instance](/docs/user-guide/install/installation-options/) up and running.
+We also assume that you are familiar with Kafka and Spark and have also prepared those environments for this tutorial.
 
 ### Thingsboard configuration steps
 
@@ -54,11 +54,11 @@ You can find detail description of Kafka Plugin [here](/docs/reference/plugins/k
 [**Download**](/docs/samples/analytics/resources/kafka_plugin_for_spark_streaming_sample.json) the json with plugin descriptor 
 and use this [**instructions**](/docs/user-guide/ui/plugins/#plugin-import) to import it to your instance.
 
-Please note that the plugin configuration expects Kafka to be running on the localhost with port 9092.
+Please note that the plugin configuration expects Kafka to be running on the localhost on port 9092.
 
 ![image](/images/samples/analytics/spark/kafka-plugin-configuration.png)
 
-Don't forget to **activate** your new plugin instance by clicking on corresponding button in plugin details!
+Don't forget to **activate** your new plugin instance by clicking on the corresponding button in plugin details!
 
 ### Step 2. Configuration of Telemetry Forwarding Rule
 
@@ -67,15 +67,15 @@ Now we need to configure the Rule that will be used to push wind speed data from
 [**Download**](/docs/samples/analytics/resources/windspeed_telemetry_rule.json) the json with plugin descriptor 
 and use this [**instructions**](/docs/user-guide/ui/rules/#rule-import) to import it to your instance.
 
-Don't forget to **activate** your new rule instance by clicking on corresponding button in plugin details!
+Don't forget to **activate** your new rule instance by clicking on the corresponding button in plugin details!
 
-Let's review main rule configuration below.
+Let's review the main rule configuration below.
 
 ##### Attributes filter
 
 Thingsboard may process data from completely different devices. We will use filter by device attributes in order to filter out data that belongs to Weather Station devices.
 
-The filter expression below validates that two attributes are set for particular device: **deviceType** and **geoZone**. 
+The filter expression below validates that two attributes are set for a particular device: **deviceType** and **geoZone**. 
 You may notice that we check that **deviceType** is equal to "WeatherStation". The **cs** variable is a map that contains all client-side attributes. 
 See corresponding [**filter**](/docs/reference/filters/device-attributes-filter/) documentation for more details.  
  
@@ -85,7 +85,7 @@ See corresponding [**filter**](/docs/reference/filters/device-attributes-filter/
 ##### Timeseries data filter
 
 Each device connected to Thingsboard may upload multiple telemetry keys simultaneously on independently. 
-In some use cases you may need to process only certain sub-set of the data. We will use telemetry data filter to achieve this.  
+In some use cases, you may need to process only a certain sub-set of the data. We will use telemetry data filter to achieve this.  
 
 The filter expression below validates that **windSpeed** telemetry is present in the processed message.
 
@@ -101,7 +101,7 @@ Topic name in our case is **'weather-stations-data'** and the message is a valid
 
 ### Step 3. Configuration of the Analytics Gateway device
 
-Let's create device that we define 'Analytics Gateway' and we'll send average temperature from Spark Application to this device:
+Let's create a device that we define 'Analytics Gateway' and we'll send average temperature from Spark Application to this device:
 
 ![image](/images/samples/analytics/spark/gateway-device.png)
 
@@ -119,9 +119,9 @@ Feel free to grab the [code from this sample Thingsboard repository](https://git
 
 ### Step 5. Dependencies review
 
-Sample application was developed using Spark version **2.1.0**. Please consider this if you'll use different version of Spark because in this case you may need to use different version of Kafka Streaming API.
+The sample application was developed using Spark version **2.1.0**. Please consider this if you use a different version of Spark because in this case you may need to use a different version of Kafka Streaming API as well.
 
-Dependencies that are used in sample project:
+Dependencies that are used in the sample project:
 
 ```xml
 <!-- Spark, Spark Streaming and Kafka Dependencies -->
@@ -227,7 +227,7 @@ The following command will provision **deviceType** and **geoZone** attributes. 
 mosquitto_pub -d -h "localhost" -p 1883 -t "v1/devices/me/attributes" -u "$YOUR_DEVICE_ACCESS_TOKEN" -m '{"deviceType":"WeatherStation", "geoZone":"Zone A"}'
 ```
 
-The following command will report **windSpeed** telemetry for particular device.
+The following command will report **windSpeed** telemetry for a particular device.
 
 ```bash
 mosquitto_pub -d -h "localhost" -p 1883 -t "v1/devices/me/telemetry" -u "$YOUR_DEVICE_ACCESS_TOKEN" -m '{"windSpeed":42}'
