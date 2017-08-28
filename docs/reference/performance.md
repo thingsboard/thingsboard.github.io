@@ -1,21 +1,21 @@
 ---
 layout: docwithnav
-title: Thingsboard Data Collection Performance
-description: Thingsboard IoT Platform data collection performance overview
+title: ThingsBoard Data Collection Performance
+description: ThingsBoard IoT Platform data collection performance overview
 
 ---
 
 * TOC
 {:toc}
 
-One of the key features of Thingsboard open-source IoT Platform is data collection and this is a crucial feature that must work reliably under high load. 
-In this article, we are going to describe steps and improvements that we have made to ensure that single instance of Thingsboard server 
+One of the key features of ThingsBoard open-source IoT Platform is data collection and this is a crucial feature that must work reliably under high load.
+In this article, we are going to describe steps and improvements that we have made to ensure that single instance of ThingsBoard server
 can constantly handle **20,000+** devices and **30,000+** MQTT publish messages per second,
 which in summary gives us around **2 million published messages per minute**.
 
 ## Architecture
 
-Thingsboard performance leverages three main projects: 
+ThingsBoard performance leverages three main projects:
 
  - [Netty](http://netty.io/) for high-performance MQTT server/broker for IoT devices.
  - [Akka](http://akka.io/) for high-performance actor system to coordinate messages between millions of devices.
@@ -25,16 +25,16 @@ We also use [Zookeeper](https://zookeeper.apache.org/) for coordination and [gRP
 
 ## Data flow and test tools
  
-IoT devices connect to Thingsboard server via MQTT and issue "publish" commands with JSON payload. 
+IoT devices connect to ThingsBoard server via MQTT and issue "publish" commands with JSON payload.
 Size of single publish message is approximately 100 bytes. 
 [MQTT](http://mqtt.org/) is lightweight publish/subscribe messaging protocol and offers a number of advantages over HTTP request/response protocol.
  
 ![image](/images/reference/performance/performance-diagram-0.svg)
 
-Thingsboard server processes MQTT publish messages and stores them to Cassandra asynchronously.
+ThingsBoard server processes MQTT publish messages and stores them to Cassandra asynchronously.
 The server may also push data to websocket subscriptions from the Web UI dashboards (if present).
 We try to avoid any blocking operations and this is critical for overall system performance.
-Thingsboard supports MQTT QoS level 1, which means that a client receives a response to the publish message only after data is stored to Cassandra DB.
+ThingsBoard supports MQTT QoS level 1, which means that a client receives a response to the publish message only after data is stored to Cassandra DB.
 Data duplicates which are possible with QoS level 1 are just the overwrites to the corresponding Cassandra row and thus are not present in persisted data. 
 This functionality provides reliable data delivery and persistence. 
 
@@ -54,7 +54,7 @@ We would like to recommend [this article](http://www.datastax.com/dev/blog/java-
 
 ### Step 2. Connection pooling
 
-We have decided to move to AWS EC2 instances to be able to share both results and tests we executed. We start running tests on [c4.xlarge](http://www.ec2instances.info/?selected=c4.xlarge) instance (4 vCPUs and 7.5 Gb of RAM) with Cassandra and Thingsboard services co-located.
+We have decided to move to AWS EC2 instances to be able to share both results and tests we executed. We start running tests on [c4.xlarge](http://www.ec2instances.info/?selected=c4.xlarge) instance (4 vCPUs and 7.5 Gb of RAM) with Cassandra and ThingsBoard services co-located.
 
 ![image](/images/reference/performance/performance-diagram-1.svg)
 
@@ -152,12 +152,12 @@ Number of requests per second was around 10K
 
 ![image](/images/reference/performance/single_node_x2_with_fix_rps.png)
 
-We have also executed test on [c4.4xlarge](http://www.ec2instances.info/?selected=c4.4xlarge) with 16 vCPUs and 30Gb of RAM but have not noticed significant improvements and decided to separate Thingsboard server and move Cassandra to three nodes cluster.
+We have also executed test on [c4.4xlarge](http://www.ec2instances.info/?selected=c4.4xlarge) with 16 vCPUs and 30Gb of RAM but have not noticed significant improvements and decided to separate ThingsBoard server and move Cassandra to three nodes cluster.
 
 ### Step 4: Horizontal scaling
 
-Our main goal was to identify how much MQTT messages we can handle using single Thingsboard server running on [c4.2xlarge](http://www.ec2instances.info/?selected=c4.2xlarge).
-We will cover horizontal scalability of Thingsboard cluster in a separate article. 
+Our main goal was to identify how much MQTT messages we can handle using single ThingsBoard server running on [c4.2xlarge](http://www.ec2instances.info/?selected=c4.2xlarge).
+We will cover horizontal scalability of ThingsBoard cluster in a separate article.
 So, we decided to move Cassandra to three [c4.xlarge](http://www.ec2instances.info/?selected=c4.xlarge) separate instances with default configuration 
 and launch gatling stress test tool from two separate [c4.xlarge](http://www.ec2instances.info/?selected=c4.xlarge) instances simultaneously 
 to minimize the possible affect on latency and throughput by thirdparty.
@@ -184,9 +184,9 @@ We have prepared several AWS AMIs for anyone who is interested in replication of
 
 ## Conclusion
 
-This performance test demonstrates how a small Thingsboard cluster, that costs approximately **1$ per hour**, can easily receive,
+This performance test demonstrates how a small ThingsBoard cluster, that costs approximately **1$ per hour**, can easily receive,
 store and visualize more than **100 million messages** from your devices. 
-We will continue our work on performance improvements and are going to publish performance results for the cluster of Thingsboard servers in our next blog post.   
+We will continue our work on performance improvements and are going to publish performance results for the cluster of ThingsBoard servers in our next blog post.
 We hope this article will be useful for people who are evaluating the platform and want to execute performance tests on their own.
 We also hope that performance improvement steps will be useful for any engineers who use similar technologies. 
 

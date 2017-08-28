@@ -3,14 +3,14 @@ layout: docwithnav
 assignees:
 - ashvayka
 title: Working with IoT device attributes
-description: IoT device management using Thingsboard attributes feature
+description: IoT device management using ThingsBoard attributes feature
 
 ---
 
 * TOC
 {:toc}
 
-Thingsboard provides the ability to assign custom attributes to your entities and manage these attributes. 
+ThingsBoard provides the ability to assign custom attributes to your entities and manage these attributes.
 Attributes are treated key-value pairs. Flexibility and simplicity of the key-value format allow easy and seamless integration with almost any IoT device on the market.
 
 
@@ -53,7 +53,7 @@ Device specific attributes are separated into two main groups:
 
 ## Device attributes API
 
-Thingsboard provides following API to device applications:
+ThingsBoard provides following API to device applications:
  
  - upload *client-side* attributes to the server
  - request *client-side* and *shared* attributes from the server.
@@ -68,7 +68,7 @@ You can review API and examples in corresponding reference page:
   
 ## Telemetry plugin
 
-Thingsboard consists of core services and pluggable modules called plugins. 
+ThingsBoard consists of core services and pluggable modules called plugins.
 Telemetry plugin is responsible for persisting attributes data to internal data storage; 
 provides server-side API to query and subscribe for attribute updates. 
 Since Telemetry plugin functionality is critical for data visualization purposes in dashboards, it is configured on the system level by a system administrator.
@@ -76,9 +76,9 @@ Advanced users or platform developers can customize telemetry plugin functionali
 
 ### Internal data storage
 
-Thingsboard uses either Cassandra NoSQL database or SQL database to store all data.
+ThingsBoard uses either Cassandra NoSQL database or SQL database to store all data.
   
-Although you can query the database directly, Thingsboard provides a set of RESTful and Websocket API that simplify this process and apply certain security policies:
+Although you can query the database directly, ThingsBoard provides a set of RESTful and Websocket API that simplify this process and apply certain security policies:
  
  - Tenant Administrator user is able to manage attributes for all entities that belong to the corresponding tenant.
  - Customer user is able to manage attributes only for entities that are assigned to the corresponding customer.
@@ -119,13 +119,13 @@ Supported entity types are: TENANT, CUSTOMER, USER, RULE, PLUGIN, DASHBOARD, ASS
 
 ## Data visualization
 
-Thingsboard provides the ability to configure and customize dashboards for data visualization. 
+ThingsBoard provides the ability to configure and customize dashboards for data visualization.
 This topic is covered in a separate guide.    
 <p><a href="/docs/user-guide/visualization" class="button">Data Visualization guide</a></p>
 
 ## Rule engine
 
-Thingsboard provides the ability to configure data processing rules.
+ThingsBoard provides the ability to configure data processing rules.
 Device attributes can be used inside rule filters. This allows applying rules based on certain device properties.
 You can find more details in a separate guide.
 <p><a href="/docs/user-guide/rule-engine" class="button">Rule Engine guide</a></p>

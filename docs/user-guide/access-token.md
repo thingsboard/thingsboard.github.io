@@ -3,12 +3,12 @@ layout: docwithnav
 assignees:
 - vsosliuk
 title: Access Token based authentication
-description: Thingsboard Access Token based authentication.
+description: ThingsBoard Access Token based authentication.
 
 ---
 
 
-Access Token Based Authentication is the default device authentication type. Once the device is created in Thingsboard, the default access token is generated. It can be changed afterwards.
+Access Token Based Authentication is the default device authentication type. Once the device is created in ThingsBoard, the default access token is generated. It can be changed afterwards.
 In order to connect the device to a server using Access Token based authentication, the client must specify the access token as part of request URL (for HTTP and CoAP) or as a user name in MQTT connect message. 
 See [supported protocols](/docs/reference/protocols/) API for more details.
 
@@ -20,7 +20,7 @@ Otherwise, a connection will fail with the 'Unknown CA' error.
 
 #### Run One-Way MQTT SSL Python Client
 
-The example below demonstrates how to connect to a Thingsboard MQTT server that uses a self-signed certificate. 
+The example below demonstrates how to connect to a ThingsBoard MQTT server that uses a self-signed certificate.
 You will need to have the public key of server certificate in PEM format. 
 See [following instructions](/docs/user-guide/mqtt-over-ssl/#self-signed-certificate-generation) for more details on server-side configuration.
 

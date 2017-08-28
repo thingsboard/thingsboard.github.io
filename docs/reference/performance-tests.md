@@ -1,14 +1,14 @@
 ---
 layout: docwithnav
 title: How to repeat the tests
-description: Thingsboard IoT Platform performance tests
+description: ThingsBoard IoT Platform performance tests
 
 ---
 
 We have prepared several AWS AMIs for anyone who is interested in replication of these tests.
 These AMIs contain some tuned OS parameters, for example, the maximum amount of threads per process and open file descriptors:
 
- - [Thingsboard AMI](https://console.aws.amazon.com/ec2/v2/home?region=us-west-1#LaunchInstanceWizard:ami=ami-09b1ed69) (username **ubuntu**)
+ - [ThingsBoard AMI](https://console.aws.amazon.com/ec2/v2/home?region=us-west-1#LaunchInstanceWizard:ami=ami-09b1ed69) (username **ubuntu**)
 
     **Following ports must be accessible for the cluster nodes: 8080, 1883**
 
@@ -19,10 +19,10 @@ These AMIs contain some tuned OS parameters, for example, the maximum amount of 
  - [Test Client AMI](https://console.aws.amazon.com/ec2/v2/home?region=us-west-1#LaunchInstanceWizard:ami=ami-30b0ec50) (username **ubuntu**)
 
 
-If you would like to verify performance for all components hosted on a single server instance, simply run Thingsboard AMI instance. 
+If you would like to verify performance for all components hosted on a single server instance, simply run ThingsBoard AMI instance.
 By default this instance will be using Cassandra that runs locally.
 
-If you would like to verify performance for standalone Thingsboard server that uses external Cassandra Cluster, please init Cassandra cluster using provided Cassandra AMI first.
+If you would like to verify performance for standalone ThingsBoard server that uses external Cassandra Cluster, please init Cassandra cluster using provided Cassandra AMI first.
 For example, let's do the configuration for three Cassandra instances.
 Once you have launched 3 AWS instances using Cassandra AMI please update **cassandra.yml** file to make them run in a cluster.
 In our case we have 3 instances with the following IP addresses:
@@ -107,7 +107,7 @@ cqlsh 172.21.12.100 -f /usr/share/thingsboard/data/system-data.cql
 cqlsh 172.21.12.100 -f /usr/share/thingsboard/data/demo-data.cql 
 ```
 
-Once Cassandra cluster setup is done please run Thingsboard AMI instance. You need to update **thingsbaord.yml** config to use Cassandra cluster instead of a local instance:
+Once Cassandra cluster setup is done please run ThingsBoard AMI instance. You need to update **thingsbaord.yml** config to use Cassandra cluster instead of a local instance:
 
 ```bash
 sudo nano /etc/thingsboard/conf/thingsboard.yml
@@ -119,20 +119,20 @@ And update the cassandra url from localhost to IPs of cassandra ring:
 url: "${CASSANDRA_URL:172.21.12.100:9042,172.21.12.101:9042,172.21.12.102:9042}"
 ```
 
-After configuration update, restart Thingsboard service:
+After configuration update, restart ThingsBoard service:
 
 ```bash
 sudo service thingsboard stop
 sudo service thingsboard start
 ```
 
-Once you will setup your cluster configuration using Thingsboard and Cassandra AMIs you can execute tests from "client" machines (Thingsboard Performance Test AMIs) using following commands:
+Once you will setup your cluster configuration using ThingsBoard and Cassandra AMIs you can execute tests from "client" machines (ThingsBoard Performance Test AMIs) using following commands:
  
 ```bash
 cd projects/performance-tests
 ```
 
-Update **mqttUrls** and **restUrl** and set private IPs of AWS instance where Thingsboard service is deployed in **test.properties** file:
+Update **mqttUrls** and **restUrl** and set private IPs of AWS instance where ThingsBoard service is deployed in **test.properties** file:
 
 ```bash
 nano src/main/resources/test.properties

@@ -11,33 +11,33 @@ title: Extensions (Plugins and Actions) Development Guide
 
 #### Introduction
 
-**Thingsboard extensions** are custom modules that provide additional functionality to the Thingsboard core components.
+**ThingsBoard extensions** are custom modules that provide additional functionality to the ThingsBoard core components.
 
 They can be easily developed based on your business needs.
 
-For example, a custom **extension** can be added to send messages from **Thingsboard** to any other external system once **Thingsboard** receives *telemetry* (timeseries or attributes). 
+For example, a custom **extension** can be added to send messages from **ThingsBoard** to any other external system once **ThingsBoard** receives *telemetry* (timeseries or attributes).
 Additionally, an **extension** can apply some transformations to the telemetry before forwarding a message.
 
-Alternatively, an **extension** can forward the same device *telemetry* data to your *RESTfull* microservice. The microservice itself does the stream analytics on data and pushes the aggregated result back to **Thingsboard** as new *telemetry* data for this device.
+Alternatively, an **extension** can forward the same device *telemetry* data to your *RESTfull* microservice. The microservice itself does the stream analytics on data and pushes the aggregated result back to **ThingsBoard** as new *telemetry* data for this device.
 
-Here is the high level design flow of **Thingsboard extensions**:
+Here is the high level design flow of **ThingsBoard extensions**:
 
 ![image](/images/user-guide/contribution/extension-design.png)
 
 #### Design
 
-Extensions are designed as additional *components* that can be easily added to **Thingsboard**. 
+Extensions are designed as additional *components* that can be easily added to **ThingsBoard**.
 
 In order to achieve this goal, extensions are implemented as separate project dependencies.
 
-You can check the list of the extensions that are included into **Thingsboard** by default [here](https://github.com/thingsboard/thingsboard/tree/master/extensions).
+You can check the list of the extensions that are included into **ThingsBoard** by default [here](https://github.com/thingsboard/thingsboard/tree/master/extensions).
 
-**Thingsboard** scans the dependency classes, and adds new extensions that are marked with the predefined set of *Thingsboard Plugin and Action Annotations* to the platform.
+**ThingsBoard** scans the dependency classes, and adds new extensions that are marked with the predefined set of *ThingsBoard Plugin and Action Annotations* to the platform.
 This is done during the application startup. 
 
-Adding an extension is as easy as annotating custom classes with special annotations and adding your jar file to the classpath of the **Thingsboard** server instance. Everything else will be done by **Thingsboard**. 
+Adding an extension is as easy as annotating custom classes with special annotations and adding your jar file to the classpath of the **ThingsBoard** server instance. Everything else will be done by **ThingsBoard**.
 
-The Approach that we prefer to use in the [thingsboard.io](https://thingsboard.io/) and strongly advise to follow is every new extension that is added has to be a separate *maven* module that resides in *extensions* sub-module of the [core module of Thingsboard project](https://github.com/thingsboard/thingsboard).
+The Approach that we prefer to use in the [thingsboard.io](https://thingsboard.io/) and strongly advise to follow is every new extension that is added has to be a separate *maven* module that resides in *extensions* sub-module of the [core module of ThingsBoard project](https://github.com/thingsboard/thingsboard).
 
 This new *maven* module should be added as a dependency to the *application* module dependencies.
 
@@ -56,7 +56,7 @@ Here is an example how *Kafka Extension* can be added as dependency to *applicat
 ...
 ```
 
-During the start-up, **Thingsboard** will parse *classes* in the classpath, find the ones that are annotated with custom *Thingsboard Plugin and Action Annotations* and add a new extension to the platform.
+During the start-up, **ThingsBoard** will parse *classes* in the classpath, find the ones that are annotated with custom *ThingsBoard Plugin and Action Annotations* and add a new extension to the platform.
 
 The extension becomes ready and can be used by users.
 
@@ -124,7 +124,7 @@ public interface RuleLifecycleComponent {
 This class is the core of your *Action* and here you should implement logic where you will create a *Java* object (an object that implements *RuleToPluginMsg* interface). 
 This object is going to be passed to *Plugin* for processing.
 
-*Action* class must be annotated with *org.thingsboard.server.extensions.api.component.Action* so **Thingsboard** will correctly process this class during start-up.
+*Action* class must be annotated with *org.thingsboard.server.extensions.api.component.Action* so **ThingsBoard** will correctly process this class during start-up.
 
 In case of **REST API Call Extension** sample class is *org.thingsboard.server.extensions.rest.action.RestApiCallPluginAction*.
 In this extension *Action* is responsible for creating a *Java* object that contains information regarding the *REST* request.
@@ -192,7 +192,7 @@ For example, plugin is able to process telemetry RPC messages from other cluster
 
 This class is the core of your *Plugin* and here you should implement the logic in order to init the plugin correctly.
 
-It must be annotated with *org.thingsboard.server.extensions.api.component.Plugin* annotation so **Thingsboard** will correctly process this class during start-up.
+It must be annotated with *org.thingsboard.server.extensions.api.component.Plugin* annotation so **ThingsBoard** will correctly process this class during start-up.
 
 In case of **REST API Call Extension** sample class is *org.thingsboard.server.extensions.rest.plugin.RestApiCallPlugin*.
 In this extension *Plugin* is responsible for setting URL and headers for the REST request.
@@ -424,7 +424,7 @@ public class RestApiCallPluginAction extends AbstractTemplatePluginAction<RestAp
 
 #### Extension testing and verification
 
-Now it's time to start **Thingsboard** and verify that **extension** works as you expected.
+Now it's time to start **ThingsBoard** and verify that **extension** works as you expected.
 
 Here is [configuration](/docs/reference/plugins/rest/) and verification of **REST API Call Extension**. 
 

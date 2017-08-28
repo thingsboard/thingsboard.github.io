@@ -2,8 +2,8 @@
 layout: docwithnav
 assignees:
 - ashvayka
-title: Installing Thingsboard using Docker (Windows)
-description: Installing Thingsboard IoT Platform using Docker (Windows)
+title: Installing ThingsBoard using Docker (Windows)
+description: Installing ThingsBoard IoT Platform using Docker (Windows)
 
 ---
 
@@ -12,7 +12,7 @@ description: Installing Thingsboard IoT Platform using Docker (Windows)
 * TOC
 {:toc}
 
-This guide will help you to install and start Thingsboard using Docker on Windows.
+This guide will help you to install and start ThingsBoard using Docker on Windows.
 
 
 ## Installation steps
@@ -21,7 +21,7 @@ This guide will help you to install and start Thingsboard using Docker on Window
 - Open "Docker Quickstart Terminal"
 {% include templates/docker-files.md %}
       
-- If you have already installed Thingsboard using docker and want to upgrade or cleanup your installation, please cleanup HSQLDB data directory
+- If you have already installed ThingsBoard using docker and want to upgrade or cleanup your installation, please cleanup HSQLDB data directory
       
 ```bash
 docker-machine ssh default 'rm -rf /home/docker/hsqldb_volume'
@@ -29,7 +29,7 @@ docker-machine ssh default 'rm -rf /home/docker/hsqldb_volume'
 
 {% include templates/start-docker.md %}
    
-- In order to get access to necessary resources from external IP/Host after Thingsboard docker container installation, 
+- In order to get access to necessary resources from external IP/Host after ThingsBoard docker container installation,
   please execute the following commands on windows host machine:
 
 ```bash

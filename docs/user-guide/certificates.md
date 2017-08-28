@@ -3,7 +3,7 @@ layout: docwithnav
 assignees:
 - vsosliuk
 title: X.509 Certificate Based Authentication
-description: Thingsboard  X.509 Certificate based authentication for IoT devices and projects.
+description: ThingsBoard  X.509 Certificate based authentication for IoT devices and projects.
 
 ---
     
@@ -19,8 +19,8 @@ Open the keygen.properties file, and update the values if needed:
 
 ```bash
 DOMAIN_SUFFIX="$(hostname)"
-ORGANIZATIONAL_UNIT=Thingsboard
-ORGANIZATION=Thingsboard
+ORGANIZATIONAL_UNIT=ThingsBoard
+ORGANIZATION=ThingsBoard
 CITY=San Francisco
 STATE_OR_PROVINCE=CA
 TWO_LETTER_COUNTRY_CODE=US
@@ -56,7 +56,7 @@ The script outputs the following files:
 
 #### Provision Client Public Key as Device Credentials
 
-Go to **Thingsboard Web UI -> Devices -> Your Device -> Device Credentials**. Select **X.509 Certificate** device credentials, insert the contents of  **CLIENT_FILE_PREFIX.pub.pem** file and click save.
+Go to **ThingsBoard Web UI -> Devices -> Your Device -> Device Credentials**. Select **X.509 Certificate** device credentials, insert the contents of  **CLIENT_FILE_PREFIX.pub.pem** file and click save.
 Alternatively, the same can be done through the REST API.
 
 #### Run Two-Way MQTT SSL Python Client

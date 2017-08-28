@@ -1,19 +1,19 @@
 ---
 layout: docwithnav
 title: Reference Documentation
-description: Thingsboard reference documentation and API overview 
+description: ThingsBoard reference documentation and API overview
 
 ---
 
-In the reference section, you can find reference documentation for Thingsboard APIs as well as our design docs and rule engine components. 
+In the reference section, you can find reference documentation for ThingsBoard APIs as well as our design docs and rule engine components.
 
 ## Architecture
 
-Thingsboard design documentation, clustering mode and actor models are covered in Thingsboard [Architecture](/docs/reference/architecture).
+ThingsBoard design documentation, clustering mode and actor models are covered in ThingsBoard [Architecture](/docs/reference/architecture).
 
 ## API References
 
-Thingsboard API consist of two main parts: device API and server-side API. 
+ThingsBoard API consist of two main parts: device API and server-side API.
 
 Device API is grouped by supported communication protocols:
 

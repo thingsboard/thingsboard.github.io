@@ -1,6 +1,6 @@
 ### Start ThingsBoard service
 
-Execute the following command to start Thingsboard:
+Execute the following command to start ThingsBoard:
 
 ```bash
 sudo service thingsboard start

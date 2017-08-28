@@ -3,17 +3,17 @@ layout: docwithnav
 assignees:
 - ashvayka
 title: Using RPC capabilities
-description: Remote control of IoT devices from the Thingsboard IoT cloud using RPC feature
+description: Remote control of IoT devices from the ThingsBoard IoT cloud using RPC feature
 
 ---
 
 * TOC
 {:toc}
 
-Thingsboard allows you to send remote procedure calls (RPC) from server side applications to devices and vice versa. 
+ThingsBoard allows you to send remote procedure calls (RPC) from server side applications to devices and vice versa.
 Basically, this feature allows you to send commands to devices and receive results of commands execution. 
 Similar, you can execute request from the device, apply some calculations or other server-side logic on the back-end and push the response back to the device.
-This guide covers Thingsboard RPC capabilities. After reading this guide, you will get familiar with following topics:
+This guide covers ThingsBoard RPC capabilities. After reading this guide, you will get familiar with following topics:
 
 - RPC call types
 - Basic RPC use-cases
@@ -49,7 +49,7 @@ Server-side RPC calls can be divided into one-way and two-way:
 
 ## Device RPC API
 
-Thingsboard provides convenient API to send and receive RPC commands from applications running on the device. 
+ThingsBoard provides convenient API to send and receive RPC commands from applications running on the device.
 This API is specific for each supported network protocol.
 You can review API and examples in corresponding reference page:
 
@@ -59,7 +59,7 @@ You can review API and examples in corresponding reference page:
 
 ## Server-side RPC API
 
-Thingsboard provides **System RPC Plugin** that allows you to send RPC calls from server-side applications to the device.
+ThingsBoard provides **System RPC Plugin** that allows you to send RPC calls from server-side applications to the device.
 In order to send RPC request you need execute HTTP POST request to the following URL:
 
 ```shell

@@ -3,18 +3,18 @@ layout: docwithnav
 assignees:
 - ashvayka
 title: Devices
-description: Thingsboard IoT Device management
+description: ThingsBoard IoT Device management
 
 ---
 
-Thingsboard support following device management features using Web UI and [REST API](/docs/reference/rest-api/).
+ThingsBoard support following device management features using Web UI and [REST API](/docs/reference/rest-api/).
 
 * TOC
 {:toc}
 
 ## Add and delete devices
 
-Tenant administrator is able to register new devices or delete them from Thingsboard.
+Tenant administrator is able to register new devices or delete them from ThingsBoard.
 
 ![image](/images/user-guide/ui/devices.png)
 

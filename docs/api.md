@@ -1,11 +1,11 @@
 ---
 layout: docwithnav
-title: Thingsboard API reference
-description: Thingsboard API reference and supported IoT Protocols
+title: ThingsBoard API reference
+description: ThingsBoard API reference and supported IoT Protocols
 
 ---
 
-Thingsboard API consist of two main parts: device API and server-side API. 
+ThingsBoard API consists of two main parts: device API and server-side API.
 
 Device API is grouped by supported communication protocols:
 
@@ -13,7 +13,7 @@ Device API is grouped by supported communication protocols:
 * [**CoAP API**](/docs/reference/coap-api)
 * [**HTTP API**](/docs/reference/http-api)
 
-[**Gateway MQTT API**](/docs/reference/gateway-mqtt-api) allows you to connect **existing** devices to the platform using **[Thingsboard Gateway](/docs/iot-gateway/what-is-iot-gateway/)** 
+[**Gateway MQTT API**](/docs/reference/gateway-mqtt-api) allows you to connect **existing** devices to the platform using **[ThingsBoard Gateway](/docs/iot-gateway/what-is-iot-gateway/)**
 or implement your own gateway.
 
 Server-side API consists of core REST API and a set of specific APIs that are provided by various plugins:

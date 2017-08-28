@@ -2,8 +2,8 @@
 layout: docwithnav
 assignees:
 - ashvayka
-title: Installing Thingsboard IoT Gateway on Windows
-description: Installing Thingsboard IoT Gateway on Windows
+title: Installing ThingsBoard IoT Gateway on Windows
+description: Installing ThingsBoard IoT Gateway on Windows
 
 ---
 
@@ -42,16 +42,16 @@ Installing tb-gateway ...
 DONE.
 ```
 
-Congratulations! Thingsboard IoT Gateway is now installed on your Windows machine as a service. 
+Congratulations! ThingsBoard IoT Gateway is now installed on your Windows machine as a service.
 
 ### Step 4. Configure your gateway
 
 Let's configure your gateway before we start it! 
 
 Let's skip extension configuration for now. 
-We need to validate that gateway is able to successfully connect to Thingsboard server first.
+We need to validate that gateway is able to successfully connect to ThingsBoard server first.
 
-Navigate to the configuration folder ("C:\tb-gateway\conf" in our case) and configure the connection to Thingsboard server.
+Navigate to the configuration folder ("C:\tb-gateway\conf" in our case) and configure the connection to ThingsBoard server.
 See [**getting started**](/docs/iot-gateway/getting-started/) or [**general configuration**](/docs/iot-gateway/configuration/) for more details.
 
 ### Step 5. Launch your gateway
@@ -66,8 +66,8 @@ net start tb-gateway
 Expected output:
 
 ```text
-The Thingsboard Gateway service is starting.
-The Thingsboard Gateway service was started successfully.
+The ThingsBoard Gateway service is starting.
+The ThingsBoard Gateway service was started successfully.
 ```
 
 In order to restart the gateway you can execute following commands
@@ -92,4 +92,4 @@ In case of any unclear errors, use general [troubleshooting guide](/docs/user-gu
   
 ### Next Steps
 
-Use [**OPC-UA**](/docs/iot-gateway/getting-started/#step-9-connect-to-external-opc-ua-server) or [**MQTT**](/docs/iot-gateway/getting-started/#step-8-connect-to-external-mqtt-broker) extensions to integrate your devices with Thingsboard platform. 
+Use [**OPC-UA**](/docs/iot-gateway/getting-started/#step-9-connect-to-external-opc-ua-server) or [**MQTT**](/docs/iot-gateway/getting-started/#step-8-connect-to-external-mqtt-broker) extensions to integrate your devices with ThingsBoard platform.

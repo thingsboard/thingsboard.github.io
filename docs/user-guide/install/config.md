@@ -3,13 +3,13 @@ layout: docwithnav
 assignees:
 - ashvayka
 title: Configuration
-description: Thingsboard IoT platform configuration guide
+description: ThingsBoard IoT platform configuration guide
 
 ---
 
-This guide will help you to get familiar with Thingsboard configuration files and parameters.
+This guide will help you to get familiar with ThingsBoard configuration files and parameters.
  
-Once you have installed Thingsboard, you can find configuration files in the following directory:
+Once you have installed ThingsBoard, you can find configuration files in the following directory:
 
 ```bash
 Windows: YOUR_INSTALL_DIR/conf

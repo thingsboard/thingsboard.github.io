@@ -3,14 +3,14 @@ layout: docwithnav
 assignees:
 - ashvayka
 title: Sigfox IoT Extension Configuration
-description: Sigfox support for Thingsboard IoT Gateway
+description: Sigfox support for ThingsBoard IoT Gateway
 
 ---
 
 * TOC
 {:toc}
 
-This guide will help you to get familiar with Sigfox extension configuration for Thingsboard IoT Gateway.
+This guide will help you to get familiar with Sigfox extension configuration for ThingsBoard IoT Gateway.
 Use [general configuration](/docs/iot-gateway/configuration/) to enable this extension.
 We will describe extension configuration file below.
 
@@ -45,11 +45,11 @@ For Example:
 
 #### Sigfox converter
 
-This section will describe various configuration options that allow specifying the mapping between Thingsboard features and Sigfox device data. 
+This section will describe various configuration options that allow specifying the mapping between ThingsBoard features and Sigfox device data.
 
 ##### Attributes & Timeseries data upload 
 
-The "**converter**" configuration setup rules of MQTT topics monitoring and data conversion to Thingsboard Key-Value format. 
+The "**converter**" configuration setup rules of MQTT topics monitoring and data conversion to ThingsBoard Key-Value format.
 For example:
 
 ```json
@@ -108,12 +108,12 @@ The **"${$.serialNumber}"** expression will return **"SN-001"** device name. Sim
 
 Similar [**JsonPath**](https://github.com/jayway/JsonPath) mapping rules are applied for **attributes** and **timeseries** values:
 
- - **key** - constant Attribute or Timeseries Thingsboard key.
+ - **key** - constant Attribute or Timeseries ThingsBoard key.
  - **type** - either boolean, long, double or string.
  - **value** - expression based on JsonPath syntax that may be specified inside **${}**
   
 As a gateway developer, you are able to fork and add custom transformers using following [interface](https://github.com/thingsboard/thingsboard-gateway/blob/release-1.2/src/main/java/org/thingsboard/gateway/extensions/sigfox/conf/mapping/DataValueTransformer.java). 
-Feel free to submit PRs with your custom transformer implementations if you believe that they may be useful for the Thingsboard community.
+Feel free to submit PRs with your custom transformer implementations if you believe that they may be useful for the ThingsBoard community.
  
 ## Next steps
 
@@ -121,7 +121,7 @@ Explore examples:
  
  - [Sigfox Beckend connection example](/docs/iot-gateway/getting-started/#step-10-connect-to-sigfox-backend)
 
-Explore guides related to main Thingsboard features:
+Explore guides related to main ThingsBoard features:
 
  - [Data Visualization](/docs/user-guide/visualization/) - how to visualize collected data.
  - [Device attributes](/docs/user-guide/attributes/) - how to use device attributes.

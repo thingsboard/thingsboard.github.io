@@ -1,5 +1,5 @@
 bigheader: "Samples"
-abstract: "A collection of example applications that show how to use Thingsboard."
+abstract: "A collection of example applications that show how to use ThingsBoard."
 toc:
 - title: Samples
   path: /docs/samples/
@@ -21,7 +21,7 @@ toc:
       path: /docs/samples/esp8266/
     - title: Temperature upload over MQTT using ESP8266 and DHT22 sensor
       path: /docs/samples/esp8266/temperature/
-    - title: ESP8266 GPIO control over MQTT using Thingsboard
+    - title: ESP8266 GPIO control over MQTT using ThingsBoard
       path: /docs/samples/esp8266/gpio/
   - title: NodeMCU
     section:
@@ -33,9 +33,9 @@ toc:
     section:
     - title: Raspberry Pi overview
       path: /docs/samples/raspberry/
-    - title: Raspberry Pi GPIO control over MQTT using Thingsboard
+    - title: Raspberry Pi GPIO control over MQTT using ThingsBoard
       path: /docs/samples/raspberry/gpio/
-    - title: Raspberry Pi GPIO control using Android Things and Thingsboard
+    - title: Raspberry Pi GPIO control using Android Things and ThingsBoard
       path: /docs/samples/raspberry/gpio-android-things/
     - title: Temperature upload over MQTT using Raspberry Pi and DHT22 sensor
       path: /docs/samples/raspberry/temperature/
@@ -43,7 +43,7 @@ toc:
     section:
     - title: LinkIt ONE overview
       path: /docs/samples/linkit-one/
-    - title: GPS data upload and visualization using LinkIt ONE and Thingsboard
+    - title: GPS data upload and visualization using LinkIt ONE and ThingsBoard
       path: /docs/samples/linkit-one/gps/
 - title: Tutorials
   section:

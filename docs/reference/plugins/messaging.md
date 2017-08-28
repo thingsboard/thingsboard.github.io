@@ -8,7 +8,7 @@ title: Device Messaging Plugin
 
 ## Overview
 
-This RPC plugin enables communication between various IoT devices through the Thingsboard cluster.
+This RPC plugin enables communication between various IoT devices through the ThingsBoard cluster.
 The plugin introduces basic security features: devices are able to exchange messages only if they belong to the same customer.
 The plugin implementation can be customized to cover more complex security features. 
 

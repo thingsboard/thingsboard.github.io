@@ -10,7 +10,7 @@ description: IoT data visualization for various IoT projects using iot dashboard
 * TOC
 {:toc}
 
-Thingsboard allows you to configure customizable IoT dashboards. 
+ThingsBoard allows you to configure customizable IoT dashboards.
 Each IoT Dashboard may contain multiple dashboard widgets that visualize data from multiple IoT devices.
 Once IoT Dashboard is created, you may assign it to one of the customers of you IoT project.
  

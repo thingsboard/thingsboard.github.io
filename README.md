@@ -32,7 +32,7 @@ Clone our site:
 Make any changes you want. Then, to see your changes locally:
 
 	cd thingsboard.github.io
-	jekyll serve
+	bundle exec jekyll serve
 
 Your copy of the site will then be viewable at: [http://localhost:4000](http://localhost:4000)
 (or wherever Jekyll tells you).

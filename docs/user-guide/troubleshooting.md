@@ -1,11 +1,11 @@
 ---
 layout: docwithnav
 title: Troubleshooting
-description: Thingsboard IoT Platform troubleshooting
+description: ThingsBoard IoT Platform troubleshooting
 
 ---
 
-Thingsboard logs are stored in the following directory:
+ThingsBoard logs are stored in the following directory:
  
 ```bash
 /var/log/thingsboard
@@ -32,12 +32,12 @@ cat /var/log/thingsboard/thingsboard.log | grep ERROR
             </div>
             <div>
                 <a href="http://stackoverflow.com/questions/tagged/thingsboard">Stack Overflow</a>
-                <p>The Thingsboard team will also monitor posts tagged thingsboard. If there aren’t any existing questions that help, please ask a new one!</p>
+                <p>The ThingsBoard team will also monitor posts tagged thingsboard. If there aren’t any existing questions that help, please ask a new one!</p>
             </div>
         </div>
     </main>
 </section>
 
-If your problem isn't answered by any of the guides above, feel free to contact Thingsboard team.
+If your problem isn't answered by any of the guides above, feel free to contact ThingsBoard team.
 
 <a class="button" href="/docs/contact-us/">Contact us</a>

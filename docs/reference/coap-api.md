@@ -17,7 +17,7 @@ title: CoAP Device API Reference
 CoAP protocol is UDP based, but similar to HTTP it uses request-response model. 
 CoAP observes [option](https://tools.ietf.org/html/rfc7641) allows to subscribe to resources and receive notifications on resource change.
 
-Thingsboard server nodes act as a CoAP Server that supports both regular and observe requests.  
+ThingsBoard server nodes act as a CoAP Server that supports both regular and observe requests.
 
 ##### Client libraries setup
 
@@ -36,7 +36,7 @@ Possible error codes and their reasons:
 
 ## Key-value format
 
-By default, Thingsboard supports key-value content in JSON. Key is always a string, while value can be either string, boolean, double or long.
+By default, ThingsBoard supports key-value content in JSON. Key is always a string, while value can be either string, boolean, double or long.
 Using custom binary format or some serialization framework is also possible. See [protocol customization](#protocol-customization) for more details.
 For example:
 
@@ -46,7 +46,7 @@ For example:
 
 ## Telemetry upload API
 
-In order to publish telemetry data to Thingsboard server node, send POST request to the following URL:
+In order to publish telemetry data to ThingsBoard server node, send POST request to the following URL:
  
 ```shell
 coap://host:port/api/v1/$ACCESS_TOKEN/telemetry
@@ -86,7 +86,7 @@ D,telemetry-data-with-ts.json,json,resources/telemetry-data-with-ts.json,/docs/r
  
 ## Attributes API
 
-Thingsboard attributes API allows devices to 
+ThingsBoard attributes API allows devices to
 
 * Upload [client-side](/docs/user-guide/attributes/#attribute-types) device attributes to the server.
 * Request [client-side](/docs/user-guide/attributes/#attribute-types) and [shared](/docs/user-guide/attributes/#attribute-types) device attributes from the server.
@@ -94,7 +94,7 @@ Thingsboard attributes API allows devices to
  
 ##### Publish attribute update to the server
 
-In order to publish client-side device attributes to Thingsboard server node, send POST request to the following URL:
+In order to publish client-side device attributes to ThingsBoard server node, send POST request to the following URL:
 
 ```shell
 coap://host:port/api/v1/$ACCESS_TOKEN/attributes
@@ -107,7 +107,7 @@ B,new-attributes-values.json,json,resources/new-attributes-values.json,/docs/ref
 
 ##### Request attribute values from the server
 
-In order to request client-side or shared device attributes to Thingsboard server node, send GET request to the following URL:
+In order to request client-side or shared device attributes to ThingsBoard server node, send GET request to the following URL:
 
 ```shell
 coap://host:port/api/v1/$ACCESS_TOKEN/attributes?clientKeys=attribute1,attribute2&sharedKeys=shared1,shared2

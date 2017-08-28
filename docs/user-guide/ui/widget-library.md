@@ -3,7 +3,7 @@ layout: docwithnav
 assignees:
 - ashvayka
 title: Widgets Library
-description: Thingsboard Dashboard Widgets Library
+description: ThingsBoard Dashboard Widgets Library
 
 ---
 
@@ -154,7 +154,7 @@ Useful for visualization of alarms for specific entities both in real-time and h
 
 #### Widgets Bundle export
 
-You are able to export widgets bundle to JSON format and import it to the same or another Thingsboard instance.
+You are able to export widgets bundle to JSON format and import it to the same or another ThingsBoard instance.
 
 In order to export widgets bundle, you should navigate to the **Widgets Library** page and click on the export button located on the particular widgets bundle card.
  
@@ -174,7 +174,7 @@ The widgets bundle import window should a popup and you will be prompted to uplo
 
 #### Widget Type export
 
-You are able to export particular widget type from widgets bundle to JSON format and import it to the same or another Thingsboard instance.
+You are able to export particular widget type from widgets bundle to JSON format and import it to the same or another ThingsBoard instance.
 
 In order to export widget type, you should navigate to the **Widgets Library** page, then open desired widgets bundle and finally click on the export button located on the particular widget type card.
  

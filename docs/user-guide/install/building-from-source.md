@@ -3,14 +3,14 @@ layout: docwithnav
 assignees:
 - ashvayka
 title: Building from sources
-description: Building Thingsboard IoT platform from sources
+description: Building ThingsBoard IoT platform from sources
 
 ---
 
 * TOC
 {:toc}
 
-This guide will help you to download and build Thingsboard from sources. Instructions listed below are tested on Ubuntu 16.04 and CentOS 7.1
+This guide will help you to download and build ThingsBoard from sources. Instructions listed below are tested on Ubuntu 16.04 and CentOS 7.1
 
 #### Required tools
 
@@ -18,11 +18,11 @@ This section contains installation instructions for build tools.
 
 ##### Java
 
-Thingsboard is build using Java 8. You can use [following instructions](/docs/user-guide/install/linux#java) to install Java 8.
+ThingsBoard is build using Java 8. You can use [following instructions](/docs/user-guide/install/linux#java) to install Java 8.
 
 ##### Maven
 
-Thingsboard build requires Maven 3.1.0+.
+ThingsBoard build requires Maven 3.1.0+.
 
 {% capture tabspec %}maven-installation
 A,Ubuntu,shell,resources/maven-ubuntu-installation.sh,/docs/user-guide/install/resources/maven-ubuntu-installation.sh

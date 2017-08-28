@@ -1,17 +1,17 @@
 ---
 layout: docwithnav
 title: Integration with IBM Watson IoT
-description: Streaming IBM Watson IoT data to Thingsboard for advanced IoT data visualization
+description: Streaming IBM Watson IoT data to ThingsBoard for advanced IoT data visualization
 
 ---
 
 * TOC
 {:toc}
 
-While some of the IBM Watson IoT and Thingsboard features overlap, you are able to integrate them and leverage best features from both.
-For example, you can collect data using IBM Watson IoT and then push it to Thingsboard for storage and data visualization on customizable end-user dashboards.
+While some of the IBM Watson IoT and ThingsBoard features overlap, you are able to integrate them and leverage best features from both.
+For example, you can collect data using IBM Watson IoT and then push it to ThingsBoard for storage and data visualization on customizable end-user dashboards.
   
-To integrate IBM Watson IoT and Thingsboard the best option is to use Thingsboard **[IoT Gateway](/docs/iot-gateway/what-is-iot-gateway/)**, which is an open-source solution that allows you to integrate devices connected to legacy and third-party systems with Thingsboard.
+To integrate IBM Watson IoT and ThingsBoard the best option is to use ThingsBoard **[IoT Gateway](/docs/iot-gateway/what-is-iot-gateway/)**, which is an open-source solution that allows you to integrate devices connected to legacy and third-party systems with ThingsBoard.
 We will cover basic configuration steps below.
 
 ### Overview
@@ -19,13 +19,13 @@ We will cover basic configuration steps below.
 ![image](/images/gateway/ibm-watson/ibm-watson-iot-gateway-integration.svg)
 
 
-Thingsboard IoT Gateway is a light-weight service that connects to both IBM Watson IoT MQTT broker and Thingsboard MQTT server and acts as a proxy or API bridge.
-You are able to configure the Gateway to subscribe to certain IBM Watson IoT topics, convert incoming data to unified format and push it to Thingsboard.
+ThingsBoard IoT Gateway is a light-weight service that connects to both IBM Watson IoT MQTT broker and ThingsBoard MQTT server and acts as a proxy or API bridge.
+You are able to configure the Gateway to subscribe to certain IBM Watson IoT topics, convert incoming data to unified format and push it to ThingsBoard.
 This article provides basic configuration steps. You can refer to advanced configuration topic for [more details](/docs/iot-gateway/mqtt/).
  
 ### Prerequisites
  
-We assume you have already [**installed**](/docs/iot-gateway/installation/) Thingsboard IoT Gateway and [**provisioned**](/docs/iot-gateway/getting-started/#step-3-gateway-provisioning) it within your local or demo Thingsboard instance.
+We assume you have already [**installed**](/docs/iot-gateway/installation/) ThingsBoard IoT Gateway and [**provisioned**](/docs/iot-gateway/getting-started/#step-3-gateway-provisioning) it within your local or demo ThingsBoard instance.
 
 As well we assume that you have **IBM Account** already and have access to **IBM Watson IoT Platform**.
 
@@ -41,7 +41,7 @@ Select **Internet of Things Platform** and following instructions to create this
 
 ### IBM Watson IoT configuration steps
 
-Before configuration of the Thingsboard **IoT Gateway** we must configure **IBM Watson** IoT Platform service and generate access tokens.
+Before configuration of the ThingsBoard **IoT Gateway** we must configure **IBM Watson** IoT Platform service and generate access tokens.
 
 #### Step 1. IBM Watson IoT platform device
 
@@ -65,7 +65,7 @@ Please write them down somewhere because later we'll use them.
 
 #### Step 2. IBM Watson IoT API key for applications
 
-Now we need to generate **API key** for the **IBM Watson** *application*. In our case **Thingsboard Gateway** is going to be an application that will be subscribed to **IBM Watson** *MQTT* topics.
+Now we need to generate **API key** for the **IBM Watson** *application*. In our case **ThingsBoard Gateway** is going to be an application that will be subscribed to **IBM Watson** *MQTT* topics.
 
 Go to **Apps** menu:
 
@@ -77,7 +77,7 @@ If you have key already created you can use it, in other case click **Generate A
 
 Please write down from this screen *API Key* that we'll later refer to as **$IBM_WATSON_APP_NAME** and *Authentication Token* as **$IBM_WATSON_APP_TOKEN**.
 
-### Thingsboard IoT Gateway configuration steps
+### ThingsBoard IoT Gateway configuration steps
 
 #### Step 3. Enable MQTT extension
 
@@ -85,11 +85,11 @@ Navigate to the gateway configuration folder and edit **tb-gateway.yml** file. P
 
 #### Step 4. MQTT extension configuration
 
-Now it's time to configure Thingsboard **IoT Gateway** to connect to your **IBM Watson IoT** broker.
+Now it's time to configure ThingsBoard **IoT Gateway** to connect to your **IBM Watson IoT** broker.
 
 **NOTE** If you at this point don't know how devices and applications are connecting to MQTT topics in **IBM Watson** platform please visit these links [Connecting applications, devices, and gateways to Watson IoT Platform](https://console.ng.bluemix.net/docs/services/IoT/reference/security/connect_devices_apps_gw.html) and [MQTT connectivity for applications](https://console.ng.bluemix.net/docs/services/IoT/applications/mqtt.html) before continuing.
 
-We need to compose **host** and **clientId** properties to be able to connect **Thingsboard Gateway** to **IBM Watson** *MQTT* topics. 
+We need to compose **host** and **clientId** properties to be able to connect **ThingsBoard Gateway** to **IBM Watson** *MQTT* topics.
 
 According to **IBM Watson** [documentation](https://console.ng.bluemix.net/docs/services/IoT/applications/mqtt.html) **host** should be create as **$IBM_WATSON_ORGANIZATION_ID**.*messaging.internetofthings.ibmcloud.com*. We'll later refer to this as **$IBM_WATSON_MQTT_ENDPOINT**.
 
@@ -134,11 +134,11 @@ here is a sample with real values:
 ```
 
 
-The configuration of the broker is done. Now you are ready to start Thingsboard **IoT Gateway** and publish messages to **IBM Watson IoT** topics that will be consumed by Thingsboard **IoT Gateway** and republished to **Thingsboard** instance.
+The configuration of the broker is done. Now you are ready to start ThingsBoard **IoT Gateway** and publish messages to **IBM Watson IoT** topics that will be consumed by ThingsBoard **IoT Gateway** and republished to **ThingsBoard** instance.
 
 ### Dry Run
 
-It's time to configure the mapping of the **Thingsboard Gateway** to be able to subscribe to **IBM Watson** device topics. 
+It's time to configure the mapping of the **ThingsBoard Gateway** to be able to subscribe to **IBM Watson** device topics.
 
 **NOTE** If you at this point don't know how to subscribe to **IBM Watson** *MQTT* topics please visit this [link](https://console.ng.bluemix.net/docs/services/IoT/applications/mqtt.html#subscribe_device_events)
 
@@ -151,7 +151,7 @@ Here is the detail description of *event_id* and *format_string* properties:
 - **event_id** is the ID of the event, for example, “status”. The event ID can be any string permitted by MQTT. Subscriber applications must use this string in their subscription topic to receive the events published on this topic if wildcards are not used.
 - **format_string** is the format of the event payload, for example, “json”. The format can be any string permitted by MQTT. Subscriber applications must use this string in their subscription topic to receive events published on this topic if wildcards are not used. If the format is not “json”, then messages will not be stored in the Historian.
 
-Consider that we have next configuration of the mapping for **my-device-type** *Device Type* and would like to get all **temp** events for all the *Device Ids*. *Device Id* is going to be used as *Device Name* in **Thingsboard**:
+Consider that we have next configuration of the mapping for **my-device-type** *Device Type* and would like to get all **temp** events for all the *Device Ids*. *Device Id* is going to be used as *Device Name* in **ThingsBoard**:
 
 ```json
 {
@@ -191,12 +191,12 @@ mosquitto_pub -h $IBM_WATSON_ORGANIZATION_ID.messaging.internetofthings.ibmcloud
 **NOTE** For the details how to connect to **IBM Watson** *MQTT* topics please visit this [link](https://console.ng.bluemix.net/docs/services/IoT/applications/mqtt.html)
 
 And this is a sample of the command that will publish temperature readings to IBM Watson IoT topic **iot-2/evt/temp/fmt/json**. 
-Thingsboard **IoT Gateway** will receive these values, create or update device **MY-DEVICE-ID** inside **Thingsboard**, and publish telemetry *'temperature'* using value **64**
+ThingsBoard **IoT Gateway** will receive these values, create or update device **MY-DEVICE-ID** inside **ThingsBoard**, and publish telemetry *'temperature'* using value **64**
 
 ```bash
 mosquitto_pub -h 4p62co.messaging.internetofthings.ibmcloud.com -p 1883 -u 'use-token-auth' -P 'Lw&FJ3F29Rs&xNeuJt' -i "d:4p62co:my-device-type:my-device-id" -t iot-2/evt/temp/fmt/json -m '{"value":64}'
 ```
 
-To validate that data arrived in Thingsboard, please open the administration UI and navigate to **Devices -> MY-DEVICE-ID -> Latest Telemetry**. See screenshot attached.
+To validate that data arrived in ThingsBoard, please open the administration UI and navigate to **Devices -> MY-DEVICE-ID -> Latest Telemetry**. See screenshot attached.
 
 ![image](/images/gateway/ibm-watson/dry-run.png)

@@ -60,7 +60,7 @@ client.on_connect = on_connect
 client.on_message = on_message
 # Set access token
 client.username_pw_set(ACCESS_TOKEN)
-# Connect to Thingsboard using default MQTT port and 60 seconds keepalive interval
+# Connect to ThingsBoard using default MQTT port and 60 seconds keepalive interval
 client.connect(THINGSBOARD_HOST, 1883, 60)
 
 try:

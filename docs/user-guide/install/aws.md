@@ -2,8 +2,8 @@
 layout: docwithnav
 assignees:
 - ashvayka
-title: Installing Thingsboard on AWS EC2
-description: Installing Thingsboard on AWS EC2
+title: Installing ThingsBoard on AWS EC2
+description: Installing ThingsBoard on AWS EC2
 
 ---
 
@@ -12,7 +12,7 @@ description: Installing Thingsboard on AWS EC2
 * TOC
 {:toc}
 
-This guide describes how to install Thingsboard on AWS EC2 using public AWS AMIs.
+This guide describes how to install ThingsBoard on AWS EC2 using public AWS AMIs.
 
 ##### Step 1. Choose AMI
 
@@ -37,7 +37,7 @@ Use one of the following links to start the installation:
  
 ##### Step 2. Choose Instance Type
 
-You can choose **any** instance type **except t1.micro and t2.nano**, since Thingsboard server and related third-party requires 1Gb of RAM.
+You can choose **any** instance type **except t1.micro and t2.nano**, since ThingsBoard server and related third-party requires 1Gb of RAM.
 This instruction is verified on t2.micro which is eligible for free tier.   
 
 ##### Step 3. Configure Instance
@@ -54,7 +54,7 @@ No specific configuration items here. You can leave this tab without changes or 
 
 ##### Step 6: Configure Security Group
 
-We recommend to create new security group, for example "Thingsboard". Configure following inbound rules:
+We recommend to create new security group, for example "ThingsBoard". Configure following inbound rules:
 
 | Type            | Protocol | Port Range | Source    |
 |-----------------|----------|------------|-----------|

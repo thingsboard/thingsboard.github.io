@@ -3,12 +3,12 @@ layout: docwithnav
 assignees:
 - vsosliuk
 title: Device authentication options
-description: Thingsboard IoT Device authentication options.
+description: ThingsBoard IoT Device authentication options.
 
 ---
 
-Device credentials are used in order to connect to the Thingsboard server by applications that are running on the device.
-Thingsboard is designed to support different device credentials. There are two supported credentials types at the moment:  
+Device credentials are used in order to connect to the ThingsBoard server by applications that are running on the device.
+ThingsBoard is designed to support different device credentials. There are two supported credentials types at the moment:
 
  - [**Access Tokens**](/docs/user-guide/access-token/) - general purpose credentials that are suitable for wide range of devices. 
  Access Token based authentication may be used in not encrypted or one-way SSL mode.
@@ -22,7 +22,7 @@ Thingsboard is designed to support different device credentials. There are two s
 Device credentials need to be provisioned to corresponding device entity on the server. 
 There are multiple ways to do this:
 
- - **Automatically**, using Thingsboard [REST API](/docs/reference/rest-api/). For example during manufacturing, QA or purchase order fulfilment.
- - **Manually**, using Thingsboard [Web UI](/docs/user-guide/ui/devices/#manage-device-credentials). For example for development purposes, or by system administrator.
+ - **Automatically**, using ThingsBoard [REST API](/docs/reference/rest-api/). For example during manufacturing, QA or purchase order fulfilment.
+ - **Manually**, using ThingsBoard [Web UI](/docs/user-guide/ui/devices/#manage-device-credentials). For example for development purposes, or by system administrator.
 
 

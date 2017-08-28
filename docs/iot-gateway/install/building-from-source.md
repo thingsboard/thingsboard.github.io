@@ -6,7 +6,7 @@ title: Building from sources
 
 ---
 
-This guide will help you to download and build Thingsboard IoT Gateway from sources. Instructions listed below are tested on Ubuntu 16.04 and CentOS 7.1
+This guide will help you to download and build ThingsBoard IoT Gateway from sources. Instructions listed below are tested on Ubuntu 16.04 and CentOS 7.1
 
 #### Required tools
 
@@ -14,11 +14,11 @@ This section contains installation instructions for build tools.
 
 ##### Java
 
-Thingsboard IoT Gateway is build using Java 8. You can use [following instructions](/docs/iot-gateway/install/linux#step-1-install-java-8) to install Java 8.
+ThingsBoard IoT Gateway is build using Java 8. You can use [following instructions](/docs/iot-gateway/install/linux#step-1-install-java-8) to install Java 8.
 
 ##### Maven
 
-Thingsboard IoT Gateway build requires Maven 3.1.0+.
+ThingsBoard IoT Gateway build requires Maven 3.1.0+.
 
 {% capture tabspec %}maven-installation
 A,Ubuntu,shell,resources/maven-ubuntu-installation.sh,/docs/iot-gateway/install/resources/maven-ubuntu-installation.sh
@@ -40,8 +40,8 @@ git checkout release-1.0
 
 #### Build prerequisites
 
-We assume you have already build Thingsboard from sources using this [guide](/docs/user-guide/install/building-from-source/). 
-The gateway project requires some maven dependencies that will be available after a local Thingsboard build.  
+We assume you have already build ThingsBoard from sources using this [guide](/docs/user-guide/install/building-from-source/).
+The gateway project requires some maven dependencies that will be available after a local ThingsBoard build.
 
 #### Build
 

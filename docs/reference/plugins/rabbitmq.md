@@ -34,7 +34,7 @@ In this example, we are going to demonstrate how you can configure RabbitMQ exte
 
 Prerequisites before continuing RabbitMQ extension configuration:
 
- - Thingsboard is up and running
+ - ThingsBoard is up and running
  - RabbitMQ instance is up and running
 
 ### RabbitMQ Plugin Configuration
@@ -83,7 +83,7 @@ Now for any of your devices send Telemetry message that contains *'temp'* teleme
 
 You should receive message **'73.4'** in appropriate RabbitMQ queue once you'll post this message.
 
-Here is an example of a command that publish single telemetry message to locally installed Thingsboard:
+Here is an example of a command that publish single telemetry message to locally installed ThingsBoard:
 
 ```bash
 mosquitto_pub -d -h "localhost" -p 1883 -t "v1/devices/me/telemetry" -u "$ACCESS_TOKEN" -m '{"temp":73.4}'

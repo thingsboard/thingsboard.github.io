@@ -1,28 +1,28 @@
 ---
 layout: docwithnav
 title: Professional services
-description: Thingsboard professional services for IoT projects implementation
+description: ThingsBoard professional services for IoT projects implementation
 
 ---
 
-Professional services from Thingsboard authors and members of the core team will help you to build and optimize your IoT solutions. Our primary goal is to ensure the success of your project on every stage.
+Professional services from ThingsBoard authors and members of the core team will help you to build and optimize your IoT solutions. Our primary goal is to ensure the success of your project on every stage.
 
 ### Core services
 
- - **Implementation.** Our professional services team will review your use cases, existing environment, system throughput and SLA requirements and then will install, setup and optimize Thingsboard cluster for your project needs.
+ - **Implementation.** Our professional services team will review your use cases, existing environment, system throughput and SLA requirements and then will install, setup and optimize ThingsBoard cluster for your project needs.
 
- - **Platform upgrade.** Members of the core team will assist your system administrators during the upgrade of your Thingsboard platform installation to the latest versions.
+ - **Platform upgrade.** Members of the core team will assist your system administrators during the upgrade of your ThingsBoard platform installation to the latest versions.
 
 ### Engineering
 
- - **Solution architecture.** Thingsboard architects will review and improve your current solution architecture or design it completely from scratch based on your requirements and ideas.
+ - **Solution architecture.** ThingsBoard architects will review and improve your current solution architecture or design it completely from scratch based on your requirements and ideas.
 
- - **Platform customization.** Thingsboard engineers will analyze and implement extensions to the platform based on your use cases and requirements.
+ - **Platform customization.** ThingsBoard engineers will analyze and implement extensions to the platform based on your use cases and requirements.
 
- - **Custom software development.** Our experienced engineering team enables rapid application development for your software solutions. Thingsboard engineers may join your existing software development team to share their experience or work offshore.
+ - **Custom software development.** Our experienced engineering team enables rapid application development for your software solutions. ThingsBoard engineers may join your existing software development team to share their experience or work offshore.
 
 ### Managed Services
 
- - We are able to completely take over the administration of your Thingsboard cluster that is deployed in the cloud or on premises. Our engineers will be responsible for monitoring, elastic scalability and optimization of your Thingsboard cluster.
+ - We are able to completely take over the administration of your ThingsBoard cluster that is deployed in the cloud or on premises. Our engineers will be responsible for monitoring, elastic scalability and optimization of your ThingsBoard cluster.
  
 <a class="button" href="/docs/contact-us/">Contact us</a> 

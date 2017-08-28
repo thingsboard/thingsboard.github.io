@@ -3,7 +3,7 @@ layout: docwithnav
 assignees:
 - ashvayka
 title: Getting Started
-description: Getting started with Thingsboard open-source IoT platform and simulated IoT devices
+description: Getting started with ThingsBoard open-source IoT platform and simulated IoT devices
 
 ---
 
@@ -13,12 +13,12 @@ description: Getting started with Thingsboard open-source IoT platform and simul
 
 ## Introduction
 
-The goal of this guide is for you to collect and visualize some IoT device data using Thingsboard. 
+The goal of this guide is for you to collect and visualize some IoT device data using ThingsBoard.
 This guide will let you:
 
  - Provision your device
  - Manage device credentials
- - Push data from device to your Thingsboard instance using MQTT, CoAP or HTTP protocols
+ - Push data from device to your ThingsBoard instance using MQTT, CoAP or HTTP protocols
  - Create dashboard to visualize the data
   
 <div id="video">  
@@ -29,17 +29,17 @@ This guide will let you:
 
 ## Setup and Requirements
 
-If you don't have access to a running Thingsboard instance, use either [Live Demo](https://demo.thingsboard.io/signup) or 
+If you don't have access to a running ThingsBoard instance, use either [Live Demo](https://demo.thingsboard.io/signup) or
 [Installation Guide](/docs/user-guide/install/installation-options/) 
 to fix this.
 
 ## Demo account
 
-All Thingsboard installations are equipped with a demo account that simplifies the first user experience.
+All ThingsBoard installations are equipped with a demo account that simplifies the first user experience.
 This demo account contains several pre-provisioned devices, dashboards, rules, and plugins installed.
 Please note that you are free to delete this account in the production deployment.
 
-You can use Thingsboard device emulators to simulate real-life devices and play-around with server-side APIs, data visualization, and processing logic.
+You can use ThingsBoard device emulators to simulate real-life devices and play-around with server-side APIs, data visualization, and processing logic.
    
 We will use these emulators in advanced tutorials, however, the for the purpose of this guide, we will just use pre-provisioned tenant administrator account.
  
@@ -47,7 +47,7 @@ We will use these emulators in advanced tutorials, however, the for the purpose 
 
 The first step is to login into administration Web UI.
 
-If you are using local Thingsboard installation you can login to administration Web UI using default account:
+If you are using local ThingsBoard installation you can login to administration Web UI using default account:
  
   - Username: **tenant@thingsboard.org**
   - Password: **tenant**
@@ -94,7 +94,7 @@ Please save this device token. It will be referred to later as **$ACCESS_TOKEN**
 
 
 Congratulations! You have just provisioned your first device! 
-Now you can push some data from this device to Thingsboard for visualization and analysis.
+Now you can push some data from this device to ThingsBoard for visualization and analysis.
 
 ## Pushing data from the device
 
@@ -239,7 +239,7 @@ Finally, we are able to see our new dashboard. Now we can edit the dashboard to
  
 ## Next steps
 
-Explore guides related to main Thingsboard features:
+Explore guides related to main ThingsBoard features:
 
  - [Device attributes](/docs/user-guide/attributes/) - how to use device attributes.
  - [Telemetry data collection](/docs/user-guide/telemetry/) - how to collect telemetry data.
@@ -250,5 +250,5 @@ Explore guides related to main Thingsboard features:
 
 ## Your feedback
 
-Don't hesitate to star Thingsboard on **[github](https://github.com/thingsboard/thingsboard)** to help us spread the word.
+Don't hesitate to star ThingsBoard on **[github](https://github.com/thingsboard/thingsboard)** to help us spread the word.
 If you have some questions about this sample - post it on the **[forum](https://groups.google.com/forum/#!forum/thingsboard)**.

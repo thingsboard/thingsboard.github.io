@@ -9,7 +9,7 @@ title: Platform Customization
 * TOC
 {:toc}
 
-There are multiple ways to customize Thingsboard platform to suit your needs:
+There are multiple ways to customize ThingsBoard platform to suit your needs:
 
  - [Rule Engine](/docs/user-guide/rule-engine/) - allows to adding processing logic and invoking built-in plugins. If you can't find a suitable rule or plugin you can always implement it
    - Add new Rule Filter based on following [examples](https://github.com/thingsboard/thingsboard/tree/master/extensions-core/src/main/java/org/thingsboard/server/extensions/core/filter)

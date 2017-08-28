@@ -2,8 +2,8 @@
 layout: docwithnav
 assignees:
 - ikulikov
-title: Installing Thingsboard IoT Gateway on Linux
-description: Installing Thingsboard IoT Gateway on Linux
+title: Installing ThingsBoard IoT Gateway on Linux
+description: Installing ThingsBoard IoT Gateway on Linux
 
 ---
 
@@ -39,16 +39,16 @@ A,Ubuntu,shell,resources/tb-gateway-ubuntu-installation.sh,/docs/iot-gateway/ins
 B,CentOS,shell,resources/tb-gateway-centos-installation.sh,/docs/iot-gateway/install/resources/tb-gateway-centos-installation.sh{% endcapture %}  
 {% include tabs.html %}
 
-Congratulations! Thingsboard IoT Gateway is now installed on your Linux machine as a service.
+Congratulations! ThingsBoard IoT Gateway is now installed on your Linux machine as a service.
 
 ### Step 4. Configure your gateway
 
 Let's configure your gateway before we start it! 
 
 Let's skip extension configuration for now. 
-We need to validate that gateway is able to successfully connect to Thingsboard server first.
+We need to validate that gateway is able to successfully connect to ThingsBoard server first.
 
-Navigate to the configuration folder **/etc/tb-gateway/conf** and configure connection to Thingsboard server.
+Navigate to the configuration folder **/etc/tb-gateway/conf** and configure connection to ThingsBoard server.
 See [**getting started**](/docs/iot-gateway/getting-started/) or [**general configuration**](/docs/iot-gateway/configuration/) for more details.
 
 ### Step 5. Launch your gateway
@@ -87,5 +87,5 @@ In case of any unclear errors, use general [troubleshooting guide](/docs/user-gu
   
 ### Next Steps
 
-Use [**OPC-UA**](/docs/iot-gateway/getting-started/#step-9-connect-to-external-opc-ua-server) or [**MQTT**](/docs/iot-gateway/getting-started/#step-8-connect-to-external-mqtt-broker) extensions to integrate your devices with Thingsboard platform. 
+Use [**OPC-UA**](/docs/iot-gateway/getting-started/#step-9-connect-to-external-opc-ua-server) or [**MQTT**](/docs/iot-gateway/getting-started/#step-8-connect-to-external-mqtt-broker) extensions to integrate your devices with ThingsBoard platform.
  

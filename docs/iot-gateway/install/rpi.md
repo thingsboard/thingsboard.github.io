@@ -2,15 +2,15 @@
 layout: docwithnav
 assignees:
 - ikulikov
-title: Installing Thingsboard IoT Gateway on Raspberry Pi 3 Model B
-description: Installing Thingsboard IoT Gateway on Raspberry Pi 3 Model B
+title: Installing ThingsBoard IoT Gateway on Raspberry Pi 3 Model B
+description: Installing ThingsBoard IoT Gateway on Raspberry Pi 3 Model B
 
 ---
 
 * TOC
 {:toc}
 
-This guide describes how to install Thingsboard IoT Gateway on a Raspberry Pi 3 running Raspbian Jessie.
+This guide describes how to install ThingsBoard IoT Gateway on a Raspberry Pi 3 running Raspbian Jessie.
 
 ### Step 1. Install Java 8
 
@@ -44,16 +44,16 @@ $ sudo dpkg -i tb-gateway-1.2.1.deb
 export JAVA_OPTS="$JAVA_OPTS -Dplatform=rpi -Xms150M -Xmx150M"
 ```
 
-Congratulations! Thingsboard IoT Gateway is now installed on your Raspberry as a service.
+Congratulations! ThingsBoard IoT Gateway is now installed on your Raspberry as a service.
 
 ### Step 4. Configure your gateway
 
 Let's configure your gateway before we start it! 
 
 Let's skip extension configuration for now. 
-We need to validate that gateway is able to successfully connect to Thingsboard server first.
+We need to validate that gateway is able to successfully connect to ThingsBoard server first.
 
-Navigate to the configuration folder **/etc/tb-gateway/conf** and configure connection to Thingsboard server.
+Navigate to the configuration folder **/etc/tb-gateway/conf** and configure connection to ThingsBoard server.
 See [**getting started**](/docs/iot-gateway/getting-started/) or [**general configuration**](/docs/iot-gateway/configuration/) for more details.
 
 ### Step 5. Launch your gateway
@@ -92,5 +92,5 @@ In case of any unclear errors, use general [troubleshooting guide](/docs/user-gu
   
 ### Next Steps
 
-Use [**OPC-UA**](/docs/iot-gateway/getting-started/#step-9-connect-to-external-opc-ua-server) or [**MQTT**](/docs/iot-gateway/getting-started/#step-8-connect-to-external-mqtt-broker) extensions to integrate your devices with Thingsboard platform. 
+Use [**OPC-UA**](/docs/iot-gateway/getting-started/#step-9-connect-to-external-opc-ua-server) or [**MQTT**](/docs/iot-gateway/getting-started/#step-8-connect-to-external-mqtt-broker) extensions to integrate your devices with ThingsBoard platform.
  

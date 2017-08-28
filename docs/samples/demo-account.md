@@ -3,14 +3,14 @@ layout: docwithnav
 assignees:
 - ashvayka
 title: Demo Account
-description: Thingsboard default demo accounts
+description: ThingsBoard default demo accounts
 
 ---
 
 * TOC
 {:toc}
 
-Thingsboard installation contains single tenant account that is used in sample applications and contains a lot of pre-provisioned entities for demonstration purposes.
+ThingsBoard installation contains single tenant account that is used in sample applications and contains a lot of pre-provisioned entities for demonstration purposes.
 
 ## System Administrator
  

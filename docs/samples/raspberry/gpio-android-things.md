@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
-title: Raspberry Pi GPIO control using Android Things and Thingsboard
-description: Thingsboard IoT Platform sample for Raspberry Pi GPIO control over MQTT running Android Things
+title: Raspberry Pi GPIO control using Android Things and ThingsBoard
+description: ThingsBoard IoT Platform sample for Raspberry Pi GPIO control over MQTT running Android Things
 
 ---
 
@@ -11,10 +11,10 @@ description: Thingsboard IoT Platform sample for Raspberry Pi GPIO control over 
 ## Introduction
 {% include templates/what-is-thingsboard.md %}
 
-This sample application will allow you to control GPIO of your Raspberry Pi device using Thingsboard RPC widgets. We will observe GPIO control using LEDs connected to the pins. 
-The purpose of this application is to demonstrate Thingsboard [RPC capabilities](/docs/user-guide/rpc/).
+This sample application will allow you to control GPIO of your Raspberry Pi device using ThingsBoard RPC widgets. We will observe GPIO control using LEDs connected to the pins.
+The purpose of this application is to demonstrate ThingsBoard [RPC capabilities](/docs/user-guide/rpc/).
 
-Raspberry Pi will use simple [Android Things](https://developer.android.com/things/index.html) application that will connect to Thingsboard server via [MQTT](https://en.wikipedia.org/wiki/MQTT) and listen to RPC commands.
+Raspberry Pi will use simple [Android Things](https://developer.android.com/things/index.html) application that will connect to ThingsBoard server via [MQTT](https://en.wikipedia.org/wiki/MQTT) and listen to RPC commands.
 Current GPIO state and GPIO control widget is visualized using built-in customizable dashboard. 
 
 The video below demonstrates the final result of this tutorial.
@@ -61,7 +61,7 @@ Follow instructions from the official [**guide**](https://developer.android.com/
 
 ### Application source code
 
-Now you should obtain the source code of the GpioControlSample application from Thingsboard samples GitHub repository. 
+Now you should obtain the source code of the GpioControlSample application from ThingsBoard samples GitHub repository.
 You can do this by issuing the following git clone command:
 
 ```bash
@@ -72,7 +72,7 @@ Open cloned samples folder and navigate to **android-things/GpioControlSample**.
  
 Open **GpioControlActivity.java** file located at **app/src/main/java/org/thingsboard/sample/gpiocontrol** folder.
 
-You will need to modify **THINGSBOARD_HOST** constant to match your Thingsboard server installation IP address or hostname. 
+You will need to modify **THINGSBOARD_HOST** constant to match your ThingsBoard server installation IP address or hostname.
 Use "demo.thingsboard.io" if you are using [live demo](https://demo.thingsboard.io/) server.
 
 The value of **ACCESS_TOKEN** constant corresponds to sample Raspberry Pi device in pre-provisioned [demo data](/docs/samples/demo-account/#tenant-devices).
@@ -132,7 +132,7 @@ Below is the screenshot of the "Raspberry PI GPIO Demo Dashboard".
  
 ## Next steps
 
-Browse other [samples](/docs/samples) or explore guides related to main Thingsboard features:
+Browse other [samples](/docs/samples) or explore guides related to main ThingsBoard features:
 
  - [Device attributes](/docs/user-guide/attributes/) - how to use device attributes.
  - [Telemetry data collection](/docs/user-guide/telemetry/) - how to collect telemetry data.

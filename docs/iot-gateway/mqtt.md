@@ -3,14 +3,14 @@ layout: docwithnav
 assignees:
 - ashvayka
 title: MQTT Extension Configuration
-description: MQTT protocol support for Thingsboard IoT Gateway
+description: MQTT protocol support for ThingsBoard IoT Gateway
 
 ---
 
 * TOC
 {:toc}
 
-This guide will help you to get familiar with OPC-UA extension configuration for Thingsboard IoT Gateway.
+This guide will help you to get familiar with OPC-UA extension configuration for ThingsBoard IoT Gateway.
 Use [general configuration](/docs/iot-gateway/configuration/) to enable this extension.
 We will describe extension configuration file below.
 
@@ -100,11 +100,11 @@ Example of PEM certificate identity configuration:
 
 #### Mapping
 
-This section will describe various configuration options that allow specifying the mapping between Thingsboard features and existing/legacy device protocols. 
+This section will describe various configuration options that allow specifying the mapping between ThingsBoard features and existing/legacy device protocols.
 
 ##### Attributes & Timeseries data upload 
 
-The "**mapping**" configuration setup rules of MQTT topics monitoring and data conversion to Thingsboard Key-Value format. 
+The "**mapping**" configuration setup rules of MQTT topics monitoring and data conversion to ThingsBoard Key-Value format.
 For example:
 
 ```json
@@ -166,18 +166,18 @@ For example, if you have **"sensor/SN-001/temperature"**" topic, the **"(?<=sens
 
 Similar [**JsonPath**](https://github.com/jayway/JsonPath) mapping rules are applied for **attributes** and **timeseries** values:
 
- - **key** - constant Attribute or Timeseries Thingsboard key.
+ - **key** - constant Attribute or Timeseries ThingsBoard key.
  - **type** - either boolean, long, double or string.
  - **value** - expression based on JsonPath syntax that may be specified inside **${}** 
 
 ##### Device connect & disconnect requests
 
-Thingsboard allows sending RPC commands and notifications about device attribute updates to the device. 
+ThingsBoard allows sending RPC commands and notifications about device attribute updates to the device.
 But in order to send them, the platform needs to know if the target device is connected and what gateway or session is used to connect the device at the moment.
-If your device is constantly sending telemetry data - Thingsboard already knows how to push notifications.
+If your device is constantly sending telemetry data - ThingsBoard already knows how to push notifications.
 If your device just connects to MQTT broker and waits for commands/updates, you need to send a message to the Gateway and inform that device is connected to the broker.
  
-The "**connectRequests**" and "**disconnectRequests**" allows converting MQTT messages to corresponding events that will be delivered to Thingsboard through the Gateway.
+The "**connectRequests**" and "**disconnectRequests**" allows converting MQTT messages to corresponding events that will be delivered to ThingsBoard through the Gateway.
 For example:
 
 ```json
@@ -210,8 +210,8 @@ mosquitto_pub -h YOUR_MQTT_BROKER_HOST -p YOUR_MQTT_BROKER_PORT -t "sensor/SN-00
 
 ##### Device attributes requests
 
-Thingsboard allows to provision device attributes and fetch some of them from the device application. 
-You can treat this as a remote configuration for devices. Your devices are able to request client-side and shared attributes from Thingsboard. 
+ThingsBoard allows to provision device attributes and fetch some of them from the device application.
+You can treat this as a remote configuration for devices. Your devices are able to request client-side and shared attributes from ThingsBoard.
 See [user guide](/docs/user-guide/attributes/) for more details.
 
 The "**attributeRequests**" configuration allows configuring the format of the corresponding attribute request and response messages. 
@@ -269,7 +269,7 @@ mosquitto_pub -h YOUR_MQTT_BROKER_HOST -p YOUR_MQTT_BROKER_PORT -t "sensors/SN-0
 
 ##### Device attribute updates
 
-Thingsboard allows subscribing to changes of shared device attributes from the device application. See [user guide](/docs/user-guide/attributes/) for more details.
+ThingsBoard allows subscribing to changes of shared device attributes from the device application. See [user guide](/docs/user-guide/attributes/) for more details.
 
 The "**attributeUpdates**" configuration allows configuring the format of corresponding subscription messages. 
 
@@ -294,7 +294,7 @@ The topic and value expressions support following parameters: **${deviceName}**,
 
 ##### Server side RPC commands
 
-Thingsboard allows sending [RPC commands](/docs/user-guide/rpc/) to the device that is connected to Thingsboard directly or via Gateway. 
+ThingsBoard allows sending [RPC commands](/docs/user-guide/rpc/) to the device that is connected to ThingsBoard directly or via Gateway.
  
 The "**serverSideRpc**" allows configuring the format of request and response MQTT messages.
 For example:
@@ -387,7 +387,7 @@ Explore examples:
  
  - [Mosquitto connection example](/docs/iot-gateway/getting-started/#step-8-connect-to-external-mqtt-broker)
 
-Explore guides related to main Thingsboard features:
+Explore guides related to main ThingsBoard features:
 
  - [Data Visualization](/docs/user-guide/visualization/) - how to visualize collected data.
  - [Device attributes](/docs/user-guide/attributes/) - how to use device attributes.

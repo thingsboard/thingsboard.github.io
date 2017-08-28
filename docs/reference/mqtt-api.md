@@ -16,7 +16,7 @@ description: Supported MQTT API Reference for IoT Devices
 
 [MQTT](https://en.wikipedia.org/wiki/MQTT) is a lightweight publish-subscribe messaging protocol which probably makes it the most suitable for various IoT devices. You can find more information about MQTT [here](http://mqtt.org/).
 
-Thingsboard server nodes act as an MQTT Broker that supports QoS levels 0 (at most once) and 1 (at least once) and a set of predefined topics. 
+ThingsBoard server nodes act as an MQTT Broker that supports QoS levels 0 (at most once) and 1 (at least once) and a set of predefined topics.
 
 ##### Client libraries setup
 
@@ -29,13 +29,13 @@ We will use *access token* device credentials in this article and they will be r
 The application needs to send MQTT CONNECT message with username that contains **$ACCESS_TOKEN**.
 Possible return codes and their reasons during connect sequence:
 
-* **0x00 Connected** - Successfully connected to Thingsboard MQTT server.
+* **0x00 Connected** - Successfully connected to ThingsBoard MQTT server.
 * **0x04 Connection Refused, bad user name or password** - Username is empty.
 * **0x05 Connection Refused, not authorized** - Username contains invalid **$ACCESS_TOKEN**. 
 
 ## Key-value format
 
-By default, Thingsboard supports key-value content in JSON. Key is always a string, while value can be either string, boolean, double or long.
+By default, ThingsBoard supports key-value content in JSON. Key is always a string, while value can be either string, boolean, double or long.
 Using custom binary format or some serialization framework is also possible. See [protocol customization](#protocol-customization) for more details.
 For example:
 
@@ -45,7 +45,7 @@ For example:
 
 ## Telemetry upload API
 
-In order to publish telemetry data to Thingsboard server node, send PUBLISH message to the following topic:
+In order to publish telemetry data to ThingsBoard server node, send PUBLISH message to the following topic:
  
 ```shell
 v1/devices/me/telemetry
@@ -86,7 +86,7 @@ E,telemetry-data-with-ts.json,json,resources/telemetry-data-with-ts.json,/docs/r
  
 ## Attributes API
 
-Thingsboard attributes API allows devices to 
+ThingsBoard attributes API allows devices to
 
 * Upload [client-side](/docs/user-guide/attributes/#attribute-types) device attributes to the server.
 * Request [client-side](/docs/user-guide/attributes/#attribute-types) and [shared](/docs/user-guide/attributes/#attribute-types) device attributes from the server.
@@ -94,7 +94,7 @@ Thingsboard attributes API allows devices to
  
 ##### Publish attribute update to the server
 
-In order to publish client-side device attributes to Thingsboard server node, send PUBLISH message to the following topic:
+In order to publish client-side device attributes to ThingsBoard server node, send PUBLISH message to the following topic:
 
 ```shell
 v1/devices/me/attributes
@@ -108,7 +108,7 @@ C,new-attributes-values.json,json,resources/new-attributes-values.json,/docs/ref
 
 ##### Request attribute values from the server
 
-In order to request client-side or shared device attributes to Thingsboard server node, send PUBLISH message to the following topic:
+In order to request client-side or shared device attributes to ThingsBoard server node, send PUBLISH message to the following topic:
 
 ```shell
 v1/devices/me/attributes/request/$request_id

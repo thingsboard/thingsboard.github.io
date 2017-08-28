@@ -3,11 +3,11 @@ layout: docwithnav
 assignees:
 - ashvayka
 title: Mail Settings
-description: Thingsboard IoT platform mail settings
+description: ThingsBoard IoT platform mail settings
 
 ---
 
-Thingsboard System Administrator is able to configure a connection to a SMTP server that will be used to distribute activation and password reset emails to users.
+ThingsBoard System Administrator is able to configure a connection to a SMTP server that will be used to distribute activation and password reset emails to users.
 This configuration step is required in production environments. 
 If you are evaluating the platform, pre-provisioned [**demo accounts**](/docs/samples/demo-account/#demo-tenant) are sufficient in most of the use cases.
   
@@ -21,7 +21,7 @@ Following steps are required to configure system mail settings.
 
 #### Step 1. Login as system administrator
 
-Login to your Thingsboard instance WEB UI as a system administrator using default [**account**](/docs/samples/demo-account/#system-administrator).
+Login to your ThingsBoard instance WEB UI as a system administrator using default [**account**](/docs/samples/demo-account/#system-administrator).
 
 #### Step 2. Change administrator email address 
 
@@ -51,7 +51,7 @@ Please choose SMTP relay on the next page.
 ![image](/images/user-guide/ui/mail/sendgrid-smtp-relay.png)
 {: refdef}
 
-Once you populate the API key name and generate it, you will be able to copy-paste settings from the screen to Thingsboard mail settings form.
+Once you populate the API key name and generate it, you will be able to copy-paste settings from the screen to ThingsBoard mail settings form.
 
 {:refdef: style="text-align: center;"}
 ![image](/images/user-guide/ui/mail/sendgrid-token.png)

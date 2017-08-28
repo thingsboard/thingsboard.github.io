@@ -3,7 +3,7 @@ layout: docwithnav
 assignees:
 - ashvayka
 title: Entities and relations
-description: IoT asset management using Thingsboard entities and relations feature
+description: IoT asset management using ThingsBoard entities and relations feature
 
 ---
 
@@ -12,7 +12,7 @@ description: IoT asset management using Thingsboard entities and relations featu
 
 ## Entities Overview
 
-Thingsboard provides the user interface and REST APIs to provision and manage multiple entity types and their relations in your IoT application. 
+ThingsBoard provides the user interface and REST APIs to provision and manage multiple entity types and their relations in your IoT application.
 Supported entities are:
  
  - **Tenants** - you can treat tenant as a separate business-entity: individual or organization who owns or produce devices and assets;
@@ -58,17 +58,16 @@ We are going to setup following hierarchy of assets and devices:
 Please review the following screen cast to learn how to provision region and fields assets and their relations using ThingsBoard Web UI
 
   
-<div id="video">  
+<div id="video">
     <div id="video_wrapper">
         <iframe src="https://www.youtube.com/embed/C-JoOfTBeT0" frameborder="0" allowfullscreen></iframe>
     </div>
 </div>
 
-
 Please review the following screen cast to learn how to provision devices and their relations with assets using ThingsBoard Web UI
 
 
-<div id="video">  
+<div id="video">
     <div id="video_wrapper">
         <iframe src="https://www.youtube.com/embed/BUFinxvzIo4" frameborder="0" allowfullscreen></iframe>
     </div>
@@ -80,7 +79,7 @@ You can automate this actions using ThingsBoard REST API. You can provision new 
 http(s)://host:port/api/asset
 ```
 
-For example
+For example:
 
 {% capture tabspec %}create-asset
 A,create-asset.sh,shell,resources/create-asset.sh,/docs/user-guide/resources/create-asset.sh
@@ -110,20 +109,20 @@ You can receive them as a result of previous REST API call or use Web UI.
 
 ### Step 2: Assign attributes to the assets
 
-Thingsboard provides the ability to assign attributes to entities and manage them. 
+ThingsBoard provides the ability to assign attributes to entities and manage them.
 This topic is covered in separate guide.    
 <p><a href="/docs/user-guide/attributes" class="button">Working with device attributes</a></p>
 
 
 ### Step 3: Upload telemetry data from devices
 
-Thingsboard provides the ability to work with telemetry data for devices and other entities. 
+ThingsBoard provides the ability to work with telemetry data for devices and other entities.
 This topic is covered in separate guide.    
 <p><a href="/docs/user-guide/telemetry" class="button">Working with telemetry data</a></p>
 
 ### Step 4: Creating Rules for Alarms
 
-Thingsboard provides the ability to raise alarms using rule engine for devices and other entities. 
+ThingsBoard provides the ability to raise alarms using rule engine for devices and other entities.
 This topic is covered in the separate guide.    
 <p><a href="/docs/user-guide/alarms" class="button">Working with alarms</a></p>
 

@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
-title: ESP8266 GPIO control over MQTT using Thingsboard
-description: Thingsboard IoT Platform sample for ESP8266 GPIO control over MQTT
+title: ESP8266 GPIO control over MQTT using ThingsBoard
+description: ThingsBoard IoT Platform sample for ESP8266 GPIO control over MQTT
 
 ---
 
@@ -11,12 +11,12 @@ description: Thingsboard IoT Platform sample for ESP8266 GPIO control over MQTT
 ## Introduction
 {% include templates/what-is-thingsboard.md %}
 
-This sample application will allow you to control GPIO of your ESP8266 device using Thingsboard web UI. We will observe GPIO control using LEDs connected to the pins. 
-The purpose of this application is to demonstrate Thingsboard [RPC capabilities](/docs/user-guide/rpc/).
+This sample application will allow you to control GPIO of your ESP8266 device using ThingsBoard web UI. We will observe GPIO control using LEDs connected to the pins.
+The purpose of this application is to demonstrate ThingsBoard [RPC capabilities](/docs/user-guide/rpc/).
 
 The application that is running on ESP8266 is written using Arduino SDK which is quite simple and easy to understand.
 ESP8266 offers a complete and self-contained Wi-Fi networking solution.
-ESP8266 pushes data to Thingsboard server via MQTT protocol by using [PubSubClient](https://github.com/knolleary/pubsubclient) library for Arduino.
+ESP8266 pushes data to ThingsBoard server via MQTT protocol by using [PubSubClient](https://github.com/knolleary/pubsubclient) library for Arduino.
 Current GPIO state and GPIO control widget is visualized using built-in customizable dashboard. 
 
 The video below demonstrates the final result of this tutorial.
@@ -116,9 +116,9 @@ The final picture:
 
 ### Provision your device
 
-This step contains instructions that are necessary to connect your device to Thingsboard.
+This step contains instructions that are necessary to connect your device to ThingsBoard.
 
-Open Thingsboard Web UI (http://localhost:8080) in browser and login as tenant administrator
+Open ThingsBoard Web UI (http://localhost:8080) in browser and login as tenant administrator
 
  - login: tenant@thingsboard.org
  - password: tenant
@@ -139,7 +139,7 @@ Paste your device id to some place, this value will be used in further steps.
 ### Provision your dashboard
 
 Download the dashboard file using this [**link**](/docs/samples/esp8266/resources/esp8266_gpio_dashboard_v2.json). 
-Use import/export [**instructions**](/docs/user-guide/ui/dashboards/#dashboard-importexport) to import the dashboard to your Thingsboard instance.
+Use import/export [**instructions**](/docs/user-guide/ui/dashboards/#dashboard-importexport) to import the dashboard to your ThingsBoard instance.
 
 ## Programming the ESP8266
 
@@ -201,8 +201,8 @@ Download and open **esp8266-gpio-control.ino** sketch.
 
 - WIFI_AP - name of your access point
 - WIFI_PASSWORD - access point password
-- TOKEN - the **$ACCESS_TOKEN** from Thingsboard configuration step.
-- thingsboardServer - Thingsboard HOST/IP address that is accessible from within your wifi network. Specify "demo.thingsboard.io" if you are using [live demo](https://demo.thingsboard.io/) server.
+- TOKEN - the **$ACCESS_TOKEN** from ThingsBoard configuration step.
+- thingsboardServer - ThingsBoard HOST/IP address that is accessible from within your wifi network. Specify "demo.thingsboard.io" if you are using [live demo](https://demo.thingsboard.io/) server.
 
 {% capture tabspec %}arduino-sketch
 esp8266-gpio-control,esp8266-gpio-control.ino,c,resources/esp8266-gpio-control.ino,/docs/samples/esp8266/resources/esp8266-gpio-control.ino{% endcapture %}
@@ -210,7 +210,7 @@ esp8266-gpio-control,esp8266-gpio-control.ino,c,resources/esp8266-gpio-control.i
 
 Connect USB-TTL adapter to PC and select the corresponding port in Arduino IDE. Compile and Upload your sketch to the device using "Upload" button.
 
-After the application is uploaded and started it will try to connect to Thingsboard node using mqtt client and upload current GPIOs state.
+After the application is uploaded and started it will try to connect to ThingsBoard node using mqtt client and upload current GPIOs state.
 
 ## Autonomous operation
 
@@ -223,7 +223,7 @@ Then connect USB-TTL adapter with PC and select port of the USB-TTL adapter in A
 
 ## Data visualization
 
-Finally, open Thingsboard Web UI. You can access this dashboard by logging in as a tenant administrator.
+Finally, open ThingsBoard Web UI. You can access this dashboard by logging in as a tenant administrator.
 
 In case of local installation:
  
@@ -246,7 +246,7 @@ Below is the screenshot of the "ESP8266 GPIO Demo Dashboard".
  
 ## Next steps
 
-Browse other [samples](/docs/samples) or explore guides related to main Thingsboard features:
+Browse other [samples](/docs/samples) or explore guides related to main ThingsBoard features:
 
  - [Device attributes](/docs/user-guide/attributes/) - how to use device attributes.
  - [Telemetry data collection](/docs/user-guide/telemetry/) - how to collect telemetry data.

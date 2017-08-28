@@ -3,7 +3,7 @@ layout: docwithnav
 assignees:
 - ashvayka
 title: Rules
-description: Thingsboard Rules management
+description: ThingsBoard Rules management
 
 ---
 
@@ -39,7 +39,7 @@ Please note that in case of frequent errors the error messages are sampled.
 
 #### Rule export
 
-You are able to export your rule to JSON format and import it to the same or another Thingsboard instance.
+You are able to export your rule to JSON format and import it to the same or another ThingsBoard instance.
 
 In order to export rule, you should navigate to the **Rules** page and click on the export button located on the particular rule card.
  

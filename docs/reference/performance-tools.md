@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: Performance test tools
-description: Thingsboard IoT Platform data collection performance test tools
+description: ThingsBoard IoT Platform data collection performance test tools
 
 ---
 
@@ -25,7 +25,7 @@ Unfortunately Gatling.io framework doesn’t support MQTT protocol out-of-the-bo
 
 #### Gatling MQTT Plugin
 
-[**Gatling-MQTT**](https://github.com/mnogu/gatling-mqtt) plugin was developed by [**Muneyuki Noguchi**](https://github.com/mnogu) and at the moment it is hosted on GitHub under Apache 2.0 License. We have started implementation of Thingsboard performance testing project using Gatling and Gatling-MQTT plugin. Sometime later we have realized that plugin doesn’t support scenarios that we would like to verify and the behaviour of the default scenario is not something that we have expected.
+[**Gatling-MQTT**](https://github.com/mnogu/gatling-mqtt) plugin was developed by [**Muneyuki Noguchi**](https://github.com/mnogu) and at the moment it is hosted on GitHub under Apache 2.0 License. We have started implementation of ThingsBoard performance testing project using Gatling and Gatling-MQTT plugin. Sometime later we have realized that plugin doesn’t support scenarios that we would like to verify and the behaviour of the default scenario is not something that we have expected.
 
 The problem with the default scenario of the unofficial Gatling-MQTT plugin is that each time when some data is published, a client waits for reply from server and sends MQTT disconnect. So, the message sequence looks like this: 
 
@@ -86,7 +86,7 @@ class MqttSimulation extends Simulation {
 
 ## Performance tests project
 
-Our performance test project is [**hosted on GitHub**](https://github.com/thingsboard/performance-tests). It is mainly written in Java and uses Maven as a build tool. Gatling and Gatling-MQTT plugin are written in Scala, and use SBT tool for building sources and running tests. But here, at Thingsboard, we are more Java guys than Scala, that’s why we have implemented custom Java code that connects to the platform, creates a device, warms it up and provides the **credentials id** string back:
+Our performance test project is [**hosted on GitHub**](https://github.com/thingsboard/performance-tests). It is mainly written in Java and uses Maven as a build tool. Gatling and Gatling-MQTT plugin are written in Scala, and use SBT tool for building sources and running tests. But here, at ThingsBoard, we are more Java guys than Scala, that’s why we have implemented custom Java code that connects to the platform, creates a device, warms it up and provides the **credentials id** string back:
 
 **MqttSimulation.scala**
 
@@ -99,7 +99,7 @@ val deviceCredentialsIds: Array[String] = MqttStressTestTool.createDevices(testP
 
 ```java
 RestClient restClient = new RestClient(params.getRestApiUrl());
-// login to the Thingsboard server
+// login to the ThingsBoard server
 restClient.login(params.getUsername(), params.getPassword());
 for (int i = 0; i < params.getDeviceCount(); i++) {
     // create device using REST API
@@ -125,7 +125,7 @@ The list of credential ids is used in **MqttSimulation.scala** file to do the st
 // get the device credential ids of the created devices
 val deviceCredentialsIds: Array[String] = MqttStressTestTool.createDevices(testParams).asScala.toArray
 
-// provide device credential id as username during the connection phase to the Thingsboard server
+// provide device credential id as username during the connection phase to the ThingsBoard server
 val mqttConf = mqtt
     .host(testParams.getMqttUrls.head)
     .userName("${deviceCredentialsId}")
@@ -183,7 +183,7 @@ mvn clean install gatling:execute
 
 In general, we have described our approach how we have generated high load on our IoT platform and verified that it provides good results. 
 
-We will share the results of Thingsboard IoT platform performance tests in the next post. 
+We will share the results of ThingsBoard IoT platform performance tests in the next post.
 
 Also, we’ll describe code changes, improvements and instances tuning that we have done to achieve processing of more than 1 million MQTT messages per minute. These are basically the first steps for us in the direction of performance testing of the platform, and any feedback regarding this approach is more than welcome. 
 

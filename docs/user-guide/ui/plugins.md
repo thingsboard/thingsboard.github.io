@@ -3,7 +3,7 @@ layout: docwithnav
 assignees:
 - ashvayka
 title: Plugins
-description: Thingsboard Plugins management
+description: ThingsBoard Plugins management
 
 ---
 
@@ -39,7 +39,7 @@ Please note that in case of frequent errors the error messages are sampled.
 
 #### Plugin export
 
-You are able to export your plugin to JSON format and import it to the same or another Thingsboard instance.
+You are able to export your plugin to JSON format and import it to the same or another ThingsBoard instance.
 
 In order to export plugin, you should navigate to the **Plugins** page and click on the export button located on the particular plugin card.
  
