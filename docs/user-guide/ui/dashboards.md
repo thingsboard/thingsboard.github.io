@@ -3,7 +3,7 @@ layout: docwithnav
 assignees:
 - ashvayka
 title: Dashboards
-description: Thingsboard IoT Dashboards
+description: ThingsBoard IoT Dashboards
 
 ---
 
@@ -20,7 +20,7 @@ description: Thingsboard IoT Dashboards
 
 ## Default IoT dashboard for customer user
 
-Since Thingsboard 1.2 you are now able to define default IoT dashboard for your customer users in 2 simple steps:
+Since ThingsBoard 1.2 you are now able to define default IoT dashboard for your customer users in 2 simple steps:
 
 #### Step 1. Assign IoT dashboard to customer
 
@@ -32,8 +32,7 @@ Navigate to "**Customers** -> Your customer -> **Customer Users**" and toggle ed
 
 #### Step 3. Select IoT dashboard 
 
-select the IoT dashboard from the list and apply changes. Please note that you can also check the "Always Fullscreen" mode 
-to prevent user from navigating to different dashboards/screens. 
+select the IoT dashboard from the list and apply changes. Please note that you can also check the "Always Fullscreen" mode to prevent a user from navigating to different dashboards/screens. 
 
 ![image](/images/user-guide/ui/default-dashboard.png)
 
@@ -41,9 +40,9 @@ to prevent user from navigating to different dashboards/screens.
 
 #### Dashboard export
 
-You are able to export your dashboard to JSON format and import it to the same or another Thingsboard instance.
+You are able to export your dashboard to JSON format and import it to the same or another ThingsBoard instance.
 
-In order to export dashboard you should navigate to the **Dashboards** page and click on the export button located on the particular dashboard card.
+In order to export dashboard, you should navigate to the **Dashboards** page and click on the export button located on the particular dashboard card.
  
 ![image](/images/user-guide/ui/export-dashboard.png)
 

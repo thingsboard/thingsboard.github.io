@@ -14,13 +14,13 @@ RPC plugin is responsible for:
  - pushing RPC request to devices via one of available protocols: 
  [MQTT](/docs/reference/mqtt-api/#rpc-api), [CoAP](/docs/reference/coap-api/#rpc-api) or [HTTP](/docs/reference/http-api/#rpc-api);  
  
-By default, this plugin is configured on the system level by system administrator. 
-You are able to configure your own instance of of the plugin on tenant level.
+By default, this plugin is configured on the system level by a system administrator. 
+You are able to configure your own instance of the plugin on tenant level.
 Advanced users or platform developers can customize rpc plugin functionality.
 
 ## Configuration
 
-You can specify default RPC timeout for plugin instance in plugin configuration.
+You can specify default RPC timeout for plugin instance in the plugin configuration.
 
 ## Server-side API
 

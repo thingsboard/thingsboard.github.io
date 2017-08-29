@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: Temperature upload over MQTT using Arduino UNO, ESP8266 and DHT22 sensor
-description: Thingsboard IoT Platform sample for temperature data upload over MQTT using Arduino UNO, ESP8266 and DHT22 sensor.
+description: ThingsBoard IoT Platform sample for temperature data upload over MQTT using Arduino UNO, ESP8266 and DHT22 sensor.
 
 ---
 
@@ -12,12 +12,12 @@ description: Thingsboard IoT Platform sample for temperature data upload over MQ
 {% include templates/what-is-thingsboard.md %}
 
 This sample application performs collection of temperature and humidity values produced by [DHT22 sensor](https://www.adafruit.com/product/385) and further visualization on the real-time web dashboard.
-Collected data is pushed via MQTT to Thingsboard server for storage and visualization.
-The purpose of this application is to demonstrate Thingsboard [data collection API](/docs/user-guide/telemetry/) and [visualization capabilities](/docs/user-guide/visualization/).
+Collected data is pushed via MQTT to ThingsBoard server for storage and visualization.
+The purpose of this application is to demonstrate ThingsBoard [data collection API](/docs/user-guide/telemetry/) and [visualization capabilities](/docs/user-guide/visualization/).
 
 The DHT22 sensor is connected to [Arduino UNO](https://en.wikipedia.org/wiki/Arduino).
 Arduino UNO connects to the WiFi network using [ESP8266](https://en.wikipedia.org/wiki/ESP8266). 
-Arduino UNO push data to Thingsboard server via MQTT protocol by using [PubSubClient](https://github.com/knolleary/pubsubclient) library for Arduino.
+Arduino UNO pushes data to ThingsBoard server via MQTT protocol by using [PubSubClient](https://github.com/knolleary/pubsubclient) library for Arduino.
 Data is visualized using built-in customizable dashboard. 
 The application that is running on Arduino UNO is written using Arduino SDK which is quite simple and easy to understand.
 
@@ -63,7 +63,7 @@ Please note that serial baud rate of ESP8266 should be set to 9600 by the follow
 AT+UART_DEF=9600,8,1,0,0
 ```
  
-## Wiring schema
+## Wiring scheme
  
 Arduino UNO Pin| ESP8266 Pin
 -----------|-----------
@@ -89,14 +89,14 @@ The following picture summarizes the connections for this project:
 
 ### Provision your device
 
-This step contains instructions that are necessary to connect your device to Thingsboard.
+This step contains instructions that are necessary to connect your device to ThingsBoard.
 
-Open Thingsboard Web UI (http://localhost:8080) in browser and login as tenant administrator
+Open ThingsBoard Web UI (http://localhost:8080) in browser and login as tenant administrator
 
  - login: tenant@thingsboard.org
  - password: tenant
  
-Goto "Devices" section. Click "+" button and create device with name "Arduino UNO Demo Device". 
+Go to "Devices" section. Click "+" button and create a device with the name "Arduino UNO Demo Device". 
 
 ![image](/images/samples/arduino/temperature/device.png)
 
@@ -109,14 +109,14 @@ Copy auto-generated access token from the "Access token" field. Please save this
 ### Provision your dashboard
 
 Download the dashboard file using this [**link**](/docs/samples/arduino/resources/arduino_dht_temp_dashboard_v2.json). 
-Use import/export [**instructions**](/docs/user-guide/ui/dashboards/#dashboard-importexport) to import the dashboard to your Thingsboard instance.
+Use import/export [**instructions**](/docs/user-guide/ui/dashboards/#dashboard-importexport) to import the dashboard to your ThingsBoard instance.
 
 ## Programming the Arduino UNO device
 
 If you already familiar with basics of Arduino UNO programming using Arduino IDE you can skip the following step and proceed with step 2.
 
 ### Step 1. Arduino UNO and Arduino IDE setup.
-In order to start programming Arduino UNO device you will need Arduino IDE installed and all related software. 
+In order to start programming the Arduino UNO device, you will need Arduino IDE and all related software installed. 
 
 Download and install [Arduino IDE](https://www.arduino.cc/en/Main/Software).
 
@@ -139,7 +139,7 @@ Find and install the following libraries:
 - Adafruit Unified Sensor 1.0.2
 - DHT sensor library 1.3.0
 
-### Step 3. Prepare and upload sketch.
+### Step 3. Prepare and upload a sketch.
 
 Download and open **arduino-dht-esp8266-mqtt.ino** sketch. 
 
@@ -147,29 +147,29 @@ Download and open **arduino-dht-esp8266-mqtt.ino** sketch.
 
 - WIFI_AP - name of your access point
 - WIFI_PASSWORD - access point password
-- TOKEN - the **$ACCESS_TOKEN** from Thingsboard configuration step.
-- thingsboardServer - Thingsboard HOST/IP address that is accessible within your wifi network. Specify "demo.thingsboard.io" if you are using [live demo](https://demo.thingsboard.io/) server.
+- TOKEN - the **$ACCESS_TOKEN** from ThingsBoard configuration step.
+- thingsboardServer - ThingsBoard HOST/IP address that is accessible from within your wifi network. Specify "demo.thingsboard.io" if you are using [live demo](https://demo.thingsboard.io/) server.
 
 {% capture tabspec %}arduino-sketch
 arduino-dht-esp8266-mqtt,arduino-dht-esp8266-mqtt.ino,c,resources/arduino-dht-esp8266-mqtt.ino,/docs/samples/arduino/resources/arduino-dht-esp8266-mqtt.ino{% endcapture %}
 {% include tabs.html %}
 
-Connect your Arduino UNO device via USB cable and select "Arduino/Genuino Uno" port in Arduino IDE. Compile and Upload your sketch to device using "Upload" button.
+Connect your Arduino UNO device via USB cable and select "Arduino/Genuino Uno" port in Arduino IDE. Compile and Upload your sketch to the device using "Upload" button.
 
-After application will be uploaded and started it will try to connect to Thingsboard node using mqtt client and upload "temperature" and "humidity" timeseries data once per second.
+After application will be uploaded and started it will try to connect to ThingsBoard node using mqtt client and upload "temperature" and "humidity" timeseries data once per second.
 
 ## Troubleshooting
 
-When application is running you can select "Arduino/Genuino Uno" port in Arduino IDE and open "Serial Monitor" in order to view debug information produced by serial output.
+When the application is running you can select "Arduino/Genuino Uno" port in Arduino IDE and open "Serial Monitor" in order to view debug information produced by serial output.
 
 ## Data visualization
 
-Finally, open Thingsboard Web UI. You can access this dashboard by logging in as a tenant administrator. Use
+Finally, open ThingsBoard Web UI. You can access this dashboard by logging in as a tenant administrator. Use
 
  - login: tenant@thingsboard.org
  - password: tenant
  
-in case of local Thingsboard installation.
+in case of local ThingsBoard installation.
   
 Go to **"Devices"** section and locate **"Arduino UNO Demo Device"**, open device details and switch to **"Latest telemetry"** tab. 
 If all is configured correctly you should be able to see latest values of *"temperature"* and *"humidity"* in the table.
@@ -177,11 +177,11 @@ If all is configured correctly you should be able to see latest values of *"temp
 ![image](/images/samples/arduino/temperature/attributes.png)
 
 After, open **"Dashboards"** section then locate and open **"Arduino DHT22: Temperature & Humidity Demo Dashboard"**. 
-As a result you will see two time-series charts and two digital gauges displaying temperature and humidity level (similar to dashboard image in the introduction).
+As a result, you will see two time-series charts and two digital gauges displaying temperature and humidity level (similar to dashboard image in the introduction).
 
 ## Next steps
 
-Browse other [samples](/docs/samples) or explore guides related to main Thingsboard features:
+Browse other [samples](/docs/samples) or explore guides related to main ThingsBoard features:
 
  - [Device attributes](/docs/user-guide/attributes/) - how to use device attributes.
  - [Telemetry data collection](/docs/user-guide/telemetry/) - how to collect telemetry data.

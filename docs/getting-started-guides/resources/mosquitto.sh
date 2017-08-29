@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Set Thingsboard host to "demo.thingsboard.io" or "localhost"
+# Set ThingsBoard host to "demo.thingsboard.io" or "localhost"
 THINGSBOARD_HOST="demo.thingsboard.io"
 # Replace YOUR_ACCESS_TOKEN with one from Device credentials window.
 ACCESS_TOKEN="YOUR_ACCESS_TOKEN"

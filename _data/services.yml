@@ -1,5 +1,5 @@
 bigheader: "Services"
-abstract: "Services provided by Thingsboard authors."
+abstract: "Services provided by ThingsBoard authors."
 toc:
 - title: Services
   path: /docs/services/

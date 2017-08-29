@@ -8,7 +8,7 @@ title: Alarm Deduplication Processor
 
 ## Overview
 
-This component allows to generate unique alarms. You are able to specify *alarm ID* and *alarm body* templates.
+This component allows generating unique alarms. You are able to specify *alarm ID* and *alarm body* templates.
 Template evaluation is based on [velocity engine](http://velocity.apache.org/).
 When component process incoming device messages it substitutes message values and device attributes into template.
 Alarm uniqueness is controlled by result value of *alarm ID*.
@@ -52,8 +52,8 @@ and telemetry message
 {"temperature":100}
 ``` 
 
-We recommend to include truncated date and some unique device attribute into alarm id template. 
-This will ensure that you will not generate alarms for the same device problem to often. 
+We recommend to include the truncated date and some unique device attribute into alarm id template. 
+This will ensure that you will not generate alarms for the same device problem too often. 
 
 ## Example
 

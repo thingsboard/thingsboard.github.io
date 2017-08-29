@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: SigFox IoT data collection and visualization
-description: SigFox IoT data collection and visualization using Thingsboard IoT Gateway
+description: SigFox IoT data collection and visualization using ThingsBoard IoT Gateway
 
 ---
 
@@ -12,27 +12,27 @@ description: SigFox IoT data collection and visualization using Thingsboard IoT 
 
 ![Sigfox gateway integration](/images/gateway/sigfox/sigfox-gateway-integration.svg)
 
-Sigfox is low-cost, low energy consumption connectivity solution that allows to collect relatively small amount of data from your IoT devices.
-Sigfox Backend allows to provision custom callbacks and push data to your server applications. We will use this feature to push data to Thingsboard IoT Gateway.
+Sigfox is low-cost, low energy consumption connectivity solution that allows collecting a relatively small amount of data from your IoT devices.
+Sigfox Backend allows provisioning custom callbacks and pushing data to your server applications. We will use this feature to push data to ThingsBoard IoT Gateway.
 The Gateway will take care of routing tasks: convert data to unified format, device provisioning, data delivery, etc.
-Once data is delivered to Thingsboard we will be able to see it on advanced real-time IoT dashboards and share this IoT dashboards with end-users. 
+Once data is delivered to ThingsBoard we will be able to see it on advanced real-time IoT dashboards and share these IoT dashboards with end-users.
  
 ### Prerequisites 
 
- - **Thingsboard**. We assume you already have access to Thingsboard instance. 
-You can use either our [**live demo**](/docs/user-guide/live-demo/) server or install your own Thingsboard instance using one of the [**installation options**](/docs/user-guide/install/installation-options/).
+ - **ThingsBoard**. We assume you already have access to ThingsBoard instance.
+You can use either our [**live demo**](/docs/user-guide/live-demo/) server or install your own ThingsBoard instance using one of the [**installation options**](/docs/user-guide/install/installation-options/).
 
- - **Thingsboard IoT Gateway**. We also assume you already installed Thingsboard IoT Gateway using one of the [**installation options**](/docs/iot-gateway/installation/) and [**provisioned**](/docs/iot-gateway/getting-started/#step-3-gateway-provisioning) it within your Thingsboard instance.
+ - **ThingsBoard IoT Gateway**. We also assume you already installed ThingsBoard IoT Gateway using one of the [**installation options**](/docs/iot-gateway/installation/) and [**provisioned**](/docs/iot-gateway/getting-started/#step-3-gateway-provisioning) it within your ThingsBoard instance.
   
  - **Sigfox**. We also expect you have your Sigfox devices registered in Sigfox Backend.
  
-**NOTE**: Both Thingsboard and Thingsboard IoT Gateway need to be installed in the cloud to be accessible by Sigfox Gateway. 
+**NOTE**: Both ThingsBoard and ThingsBoard IoT Gateway need to be installed in the cloud to be accessible by Sigfox Gateway.
 
 ### Sigfox configuration steps
 
 #### Step 1. Configure UPLINK callback
 
-Let's assume we want to publish coordinates, temperature and humidity data from your Sigfox module to Thingsboard.
+Let's assume we want to publish coordinates, temperature and humidity data from your Sigfox module to ThingsBoard.
 In order to achieve this, you will need to select device type and configure custom callback from Sigfox Backend to our IoT Gateway.
 
 {:refdef: style="text-align: center;"}
@@ -51,7 +51,7 @@ Few things to notice:
 
 Once again, we assume you have deployed the gateway on some cloud server to get the static IP address or hostname.
 
-### Thingsboard IoT Gateway configuration steps
+### ThingsBoard IoT Gateway configuration steps
 
 #### Step 2. Enable Sigfox extension
 
@@ -67,8 +67,8 @@ Change **sigfox.enabled** property value to **true**.
 
 #### Step 3. Configure Sigfox extension
 
-The **sigfox-config.json** contains configuration that allows mapping of JSON messages from Sigfox Backend to Thingsboard telemetry.
-The default mapping listed below will allow to convert data from Sigfox Backend and publish it to Thingsboard.  
+The **sigfox-config.json** contains configuration that allows mapping of JSON messages from Sigfox Backend to ThingsBoard telemetry.
+The default mapping listed below will allow to convert data from Sigfox Backend and publish it to ThingsBoard.
  
 ```json
 {
@@ -124,7 +124,7 @@ Few things to notice:
  
 See Sigfox extension [**configuration**](/docs/iot-gateway/sigfox/) for more details.
 
-#### Step 4. Restart Thingsboard Gateway
+#### Step 4. Restart ThingsBoard Gateway
 
 Restart your gateway using following commands
 
@@ -136,25 +136,25 @@ Linux:
 sudo service tb-gateway restart
 ```
 
-### Thingsboard configuration steps
+### ThingsBoard configuration steps
 
 #### Step 5. Observe Sigfox devices
 
-Once your Sigfox Backend callback is configured, you may observe incoming messages in Thingsboard IoT Gateway logs.
+Once your Sigfox Backend callback is configured, you may observe incoming messages in ThingsBoard IoT Gateway logs.
 If everything is configured correctly, you will see new devices in your Tenant Administrator device list.
 
 {:refdef: style="text-align: center;"}
 ![image](/images/gateway/sigfox/devices.png)
 {: refdef}
 
-You are able to open particular device and check that telemetry values arrived successfully.
+You are able to open a particular device and check that telemetry values arrived successfully.
 
 #### Step 6. Provision Sigfox dashboard
 
 Download the dashboard file using this [**link**](/docs/samples/sigfox/sigfox_dashboard.json). 
-Use import/export [**instructions**](/docs/user-guide/ui/dashboards/#dashboard-importexport) to import the dashboard to your Thingsboard instance.
+Use import/export [**instructions**](/docs/user-guide/ui/dashboards/#dashboard-importexport) to import the dashboard to your ThingsBoard instance.
 
-**NOTE:** During import you will need to select device that you want to visualize.
+**NOTE:** During import you will need to select a device that you want to visualize.
 
 {:refdef: style="text-align: center;"}
 ![image](/images/gateway/sigfox/dashboard-import.png)

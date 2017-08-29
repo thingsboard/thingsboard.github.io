@@ -3,14 +3,14 @@ layout: docwithnav
 assignees:
 - ashvayka
 title: Demo Account
-description: Thingsboard default demo accounts
+description: ThingsBoard default demo accounts
 
 ---
 
 * TOC
 {:toc}
 
-Thingsboard installation contains single tenant account that is used in sample applications and contains a lot of pre-provisioned entities for demonstration purposes.
+ThingsBoard installation contains single tenant account that is used in sample applications and contains a lot of pre-provisioned entities for demonstration purposes.
 
 ## System Administrator
  
@@ -51,9 +51,9 @@ Demo tenant customers:
  
 ## Rules
 
- - Demo Alarm Rule - creates alarm when uploaded temperature is greater then or equal to 100.
- - Demo Time RPC Rule - allows device to send *getTime* RPC requests to fetch current server time.
- - Demo Messaging RPC Rule - allows device to send *getDevices* and *sendMsg* RPC requests to enable messaging between devices.
+ - Demo Alarm Rule - creates an alarm when uploaded temperature is greater than or equal to 100.
+ - Demo Time RPC Rule - allows a device to send *getTime* RPC requests to fetch current server time.
+ - Demo Messaging RPC Rule - allows a device to send *getDevices* and *sendMsg* RPC requests to enable messaging between devices.
  
 ## Plugins
 

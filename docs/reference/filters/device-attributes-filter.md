@@ -8,8 +8,8 @@ title: Device Attributes Filter
 
 ## Overview
 
-This component allows to filter incoming messages by attributes of the device. 
-This filter is very useful if you want to apply rule only to certain sub-set of your device. 
+This component allows filtering incoming messages by attributes of the device. 
+This filter is very useful if you want to apply the rule only to the certain sub-set of your device. 
 Filter expression is a javascript expression and basically defines this sub-set. You are able to use any [attribute types](/docs/user-guide/attributes#attribute-types).
 
 ## Configuration
@@ -35,13 +35,13 @@ Assuming following device attributes and their types
  - subscription_plan - shared
  - balance - server-side
  
-Following filter will match all premium subscription devices with positive balance that are located in USA with firmware version equal to 1.1.0
+The following filter will match all premium subscription devices with positive balance that are located in the USA with firmware version equal to 1.1.0
 
 ```javascript
 cs.firmware_version=='1.1.0' && cs.country=='USA' && shared.subscription_plan=='premium' && ss.balance > 0
 ```
 
-If you are not sure that all attributes are present for your device, you should use following syntax that adds all necessary "null" checks
+If you are not sure that all attributes are present for your device, you should use the following syntax that adds all necessary "null" checks
 
 ```javascript
 typeof cs.firmware_version !== 'undefined' && 

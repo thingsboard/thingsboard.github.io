@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: Services
-description: Thingsboard support plans, services and training sessions
+description: ThingsBoard support plans, services and training sessions
 
 ---
 

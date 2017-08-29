@@ -3,9 +3,9 @@ abstract: "Design docs, concept definitions, and references for APIs and CLIs."
 toc:
 - title: Reference Documentation
   path: /docs/reference/
-- title: Thingsboard Architecture
+- title: ThingsBoard Architecture
   path: /docs/reference/architecture/
-- title: Thingsboard Performance
+- title: ThingsBoard Performance
   section:
   - title: Data Collection Performance
     path: /docs/reference/performance/

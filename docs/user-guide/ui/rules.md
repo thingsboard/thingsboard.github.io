@@ -3,7 +3,7 @@ layout: docwithnav
 assignees:
 - ashvayka
 title: Rules
-description: Thingsboard Rules management
+description: ThingsBoard Rules management
 
 ---
 
@@ -30,7 +30,7 @@ Each rule is a represented as a separate card. You are able to edit rule compone
  
 ![image](/images/user-guide/ui/rule-details.png)
 
-You are also able to review rule life-cycle events, rule stats and errors during message processing.
+You are also able to review rule life-cycle events, rule stats, and errors during message processing.
 Please note that in case of frequent errors the error messages are sampled. 
 
 ![image](/images/user-guide/ui/rule-events.png) 
@@ -39,9 +39,9 @@ Please note that in case of frequent errors the error messages are sampled.
 
 #### Rule export
 
-You are able to export your rule to JSON format and import it to the same or another Thingsboard instance.
+You are able to export your rule to JSON format and import it to the same or another ThingsBoard instance.
 
-In order to export rule you should navigate to the **Rules** page and click on the export button located on the particular rule card.
+In order to export rule, you should navigate to the **Rules** page and click on the export button located on the particular rule card.
  
 ![image](/images/user-guide/ui/rule-export.png)
 
@@ -51,7 +51,7 @@ Similar, to import the rule you should navigate to the **Rules** page and click 
 
 ![image](/images/user-guide/ui/rule-import.png)
 
-**Note** All imported rules are in suspended state. Don't forget to **activate** your rule after import.
+**Note** All imported rules are in the suspended state. Don't forget to **activate** your rule after import.
 
 #### Troubleshooting
 

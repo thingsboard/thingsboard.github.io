@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: ESP8266 overview
-description: Thingsboard IoT Platform hardware samples for ESP8266 devices.
+description: ThingsBoard IoT Platform hardware samples for ESP8266 devices.
 
 ---
 
@@ -14,7 +14,7 @@ The applications in this samples that are running on ESP8266 core for Arduino an
 ## Samples
 
  - [Temperature upload over MQTT using ESP8266 and DHT22 sensor](/docs/samples/esp8266/temperature/)
- - [ESP8266 GPIO control over MQTT using Thingsboard](/docs/samples/esp8266/gpio/)
+ - [ESP8266 GPIO control over MQTT using ThingsBoard](/docs/samples/esp8266/gpio/)
 
 ## Documentation
 

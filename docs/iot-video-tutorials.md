@@ -7,7 +7,7 @@ title: IoT Video Tutorials
 * TOC
 {:toc}
 
-The Thingsboard Youtube [channel](https://www.youtube.com/channel/UCDb9fsV-YR4JmnipAMGsVAQ/videos) contains useful video tutorials that cover various platform features.
+The ThingsBoard Youtube [channel](https://www.youtube.com/channel/UCDb9fsV-YR4JmnipAMGsVAQ/videos) contains useful video tutorials that cover various platform features.
 We recommend to subscribe to this channel in order to receive latest updates. Some of the video tutorials are listed below.
 Non-video tutorials are available on the [samples](/docs/samples/) page.
 
@@ -42,7 +42,7 @@ You will learn how to:
 </div>
 
 
-#### Device data management using Thingsboard 
+#### Device data management using ThingsBoard
 
 This tutorial covers basic operations with Devices attributes that allow to implement practical device management use cases.
 

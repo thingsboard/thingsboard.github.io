@@ -1,4 +1,4 @@
-- Make folder to store docker files:
+- Make a folder to store docker files:
 
 ```bash
 mkdir <docker-folder>

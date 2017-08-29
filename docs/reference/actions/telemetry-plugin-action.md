@@ -8,7 +8,7 @@ title: Telemetry Plugin Action
 
 ## Overview
 
-This component allows to forward incoming attributes and timeseries requests to telemetry plugin. 
+This component allows forwarding incoming attributes and timeseries requests to telemetry plugin. 
 
 ## Configuration
 

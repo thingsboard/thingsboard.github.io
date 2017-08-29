@@ -8,7 +8,7 @@ description: Triggering email notifications upon IoT Device data thresholds
 * TOC
 {:toc}
 
-In this short tutorial we will explain how to configure Email Plugin to distribute alarms to recepients via email.
+In this short tutorial, we will explain how to configure Email Plugin to distribute alarms to recipients via email.
 We will use [Live Demo](https://demo.thingsboard.io) Thignsboard server and [SendGrid](http://www.sendgrid.com) SMTP API in this tutorial. 
 The Email plugin implementation is based on [Java Mail](https://en.wikipedia.org/wiki/JavaMail) and may be easily configured to other mail servers.
   
@@ -42,7 +42,7 @@ Once you choose the corresponding plugin type, the form will expand. Populate va
 
 ![image](/images/samples/alarms/plugin-configuration.png)
 
-Don't forget to add other mail properties that will force secure connection.
+Don't forget to add other email properties that will force a secure connection.
 
 ![image](/images/samples/alarms/plugin-configuration-other.png)
 
@@ -50,7 +50,7 @@ Click on "Add" button.
 
 ### Step 5. Activate new plugin
 
-Once plugin is saved successfully, don't forget to activate it by clicking on "Activate" button.
+Once a plugin is saved successfully, don't forget to activate it by clicking on "Activate" button.
 
 ![image](/images/samples/alarms/activate-plugin.png)
 
@@ -60,7 +60,7 @@ Explore next [tutorial](/docs/samples/alarms/basic-rules/) to provision basic ru
   
 ## Troubleshooting
 
-Once you configure you plugin and corresponding rules, you may review statistics and events on plugin details page.
+Once you configure your plugin and corresponding rules, you may review statistics and events on plugin details page.
 If you have configured something wrong, you should see errors logged on the corresponding tab:
 
   ![image](/images/samples/alarms/plugin-events.png)

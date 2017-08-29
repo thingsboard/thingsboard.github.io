@@ -1,4 +1,4 @@
-name: Thingsboard
+name: ThingsBoard
 author: thingsboard
 logo: /images/thingsboard_logo.png
 
@@ -6,7 +6,7 @@ twitter:
   username: thingsboard
 
 social:
-  name: Thingsboard
+  name: ThingsBoard
   links:
     - https://twitter.com/thingsboard
     - https://github.com/thingsboard/thingsboard
@@ -27,6 +27,9 @@ incremental: true
 
 safe: false
 lsi: false
+
+sass:
+  style: compressed
 
 defaults:
   -

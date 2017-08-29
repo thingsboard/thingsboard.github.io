@@ -8,7 +8,7 @@ title: REST API Call Plugin Action
 
 ## Overview
 
-This component allows to create POST/PUT body request by substitution of device attributes and message data into configurable templates.
+This component allows creating a POST/PUT request body by substitution of device attributes and message data into configurable templates.
 
 ## Configuration
 

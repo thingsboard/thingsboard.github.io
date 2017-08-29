@@ -3,15 +3,15 @@ layout: docwithnav
 assignees:
 - ashvayka
 title: Tenants
-description: Thingsboard Tenants management
+description: ThingsBoard Tenants management
 
 ---
 
 * TOC
 {:toc}
 
-Thingsboard support [Multitenancy](https://en.wikipedia.org/wiki/Multitenancy) out-of-the-box. 
-You can treat Thingsboard tenant as a separate business-entity: individual or organization who owns or produce devices.
+ThingsBoard support [Multitenancy](https://en.wikipedia.org/wiki/Multitenancy) out-of-the-box.
+You can treat ThingsBoard tenant as a separate business-entity: individual or organization who owns or produce devices.
 
 **System administrator** is able to create tenant entities.
 

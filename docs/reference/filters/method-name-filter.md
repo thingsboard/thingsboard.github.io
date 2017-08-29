@@ -8,15 +8,15 @@ title: Method Name Filter
 
 ## Overview
 
-This component allows to filter incoming RPC request messages by method name. 
+This component allows filtering incoming RPC request messages by method name. 
 This filter is very efficient and useful to forward RPC request to particular plugins that handle them.
 
 ## Configuration
 
 You are able to select multiple method names in one filter. 
 For example, if you want to have two plugins (their functionality is just for the demo purposes):
- - plugin A allows to get current time
- - plugin B allows to get weather forecast
+ - plugin A allows getting current time
+ - plugin B allows getting the weather forecast
 You may implement plugin A to handle *getTime* method and plugin B to handle *getWeather* method.
 In this case you will need to configure two rules:
  - rule A that points to plugin A based on "getTime" method filter 

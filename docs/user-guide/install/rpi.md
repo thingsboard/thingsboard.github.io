@@ -2,8 +2,8 @@
 layout: docwithnav
 assignees:
 - ashvayka
-title: Installing Thingsboard on Raspberry Pi 3 Model B
-description: Installing Thingsboard IoT Platform on Raspberry Pi 3 Model B
+title: Installing ThingsBoard on Raspberry Pi 3 Model B
+description: Installing ThingsBoard IoT Platform on Raspberry Pi 3 Model B
 
 ---
 
@@ -12,14 +12,14 @@ description: Installing Thingsboard IoT Platform on Raspberry Pi 3 Model B
 * TOC
 {:toc}
 
-This guide describes how to install Thingsboard on a Raspberry Pi 3 running Raspbian Jessie.
+This guide describes how to install ThingsBoard on a Raspberry Pi 3 running Raspbian Jessie.
 
 ### Third-party components installation
 
 #### Java
 
-Thingsboard service is running on Java 8. Oracle Java 8 is already pre-installed on Raspbian. 
-You can check java version using following command
+ThingsBoard service is running on Java 8. Oracle Java 8 is already pre-installed on Raspbian.
+You can check java version using the following command
 
 ```bash
 $ java -version
@@ -28,7 +28,7 @@ Java(TM) SE Runtime Environment (build 1.8.0_65-b17)
 Java HotSpot(TM) Client VM (build 25.65-b01, mixed mode)
 ```
 
-Any Java version higher then or equal to 1.8 is fine. 
+Any Java version higher than or equal to 1.8 is fine. 
 
 #### [Optional] External database installation
 
@@ -50,16 +50,16 @@ sudo service postgresql start
 
 {% include templates/create-tb-db.md %}
 
-### Thingsboard service installation
+### ThingsBoard service installation
 
 Download installation package or [build it from source](/docs/user-guide/install/building-from-source).
 
 ```bash
 # Download the package
 $ wget https://github.com/thingsboard/thingsboard/releases/download/v1.3/thingsboard-1.3.deb
-# Install Thingsboard as a service
+# Install ThingsBoard as a service
 $ sudo dpkg -i thingsboard-1.3.deb
-# Update Thingsboard memory usage and restrict it to 150MB in /etc/thingsboard/conf/thingsboard.conf
+# Update ThingsBoard memory usage and restrict it to 150MB in /etc/thingsboard/conf/thingsboard.conf
 export JAVA_OPTS="$JAVA_OPTS -Dplatform=rpi -Xms256M -Xmx256M"
 ```
 
@@ -84,7 +84,7 @@ sudo nano /etc/thingsboard/conf/thingsboard.yml
 
 ### Troubleshooting
 
-Thingsboard logs are stored in the following directory:
+ThingsBoard logs are stored in the following directory:
  
 ```bash
 /var/log/thingsboard

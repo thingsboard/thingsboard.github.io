@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: Temperature upload over MQTT using ESP8266 and DHT22 sensor
-description: Thingsboard IoT Platform sample for temperature data upload over MQTT using ESP8266 and DHT22 sensor.
+description: ThingsBoard IoT Platform sample for temperature data upload over MQTT using ESP8266 and DHT22 sensor.
 
 ---
 
@@ -12,12 +12,12 @@ description: Thingsboard IoT Platform sample for temperature data upload over MQ
 {% include templates/what-is-thingsboard.md %}
 
 This sample application performs collection of temperature and humidity values produced by [DHT22 sensor](https://www.adafruit.com/product/385) and further visualization on the real-time web dashboard.
-Collected data is pushed via MQTT to Thingsboard server for storage and visualization.
-The purpose of this application is to demonstrate Thingsboard [data collection API](/docs/user-guide/telemetry/) and [visualization capabilities](/docs/user-guide/visualization/).
+Collected data is pushed via MQTT to ThingsBoard server for storage and visualization.
+The purpose of this application is to demonstrate ThingsBoard [data collection API](/docs/user-guide/telemetry/) and [visualization capabilities](/docs/user-guide/visualization/).
 
 The DHT22 sensor is connected to [ESP8266](https://en.wikipedia.org/wiki/ESP8266).
 ESP8266 offers a complete and self-contained Wi-Fi networking solution.
-ESP8266 push data to Thingsboard server via MQTT protocol by using [PubSubClient](https://github.com/knolleary/pubsubclient) library for Arduino.
+ESP8266 push data to ThingsBoard server via MQTT protocol by using [PubSubClient](https://github.com/knolleary/pubsubclient) library for Arduino.
 Data is visualized using built-in customizable dashboard. 
 The application that is running on ESP8266 is written using Arduino SDK which is quite simple and easy to understand.
 
@@ -124,14 +124,14 @@ The final picture:
 
 ### Provision your device
 
-This step contains instructions that are necessary to connect your device to Thingsboard.
+This step contains instructions that are necessary to connect your device to ThingsBoard.
 
-Open Thingsboard Web UI (http://localhost:8080) in browser and login as tenant administrator
+Open ThingsBoard Web UI (http://localhost:8080) in browser and login as tenant administrator
 
  - login: tenant@thingsboard.org
  - password: tenant
  
-Goto "Devices" section. Click "+" button and create device with name "ESP8266 Demo Device". 
+Go to "Devices" section. Click "+" button and create a device with the name "ESP8266 Demo Device". 
 
 ![image](/images/samples/esp8266/temperature/device.png)
 
@@ -141,34 +141,34 @@ Copy auto-generated access token from the "Access token" field. Please save this
 ![image](/images/samples/esp8266/temperature/credentials.png)
 
 
-Click "Copy Device ID" in device details to copy your device id to clipboard.
+Click "Copy Device ID" in device details to copy your device id to the clipboard.
 Paste your device id to some place, this value will be used in further steps.
 
 ### Provision your dashboard
 
 Download the dashboard file using this [**link**](/docs/samples/esp8266/resources/esp8266_dht_temp_dashboard_v2.json). 
-Use import/export [**instructions**](/docs/user-guide/ui/dashboards/#dashboard-importexport) to import the dashboard to your Thingsboard instance.
+Use import/export [**instructions**](/docs/user-guide/ui/dashboards/#dashboard-importexport) to import the dashboard to your ThingsBoard instance.
 
 ## Programming the ESP8266
 
 ### Step 1. ESP8266 and Arduino IDE setup.
 
-In order to start programming ESP8266 device you will need Arduino IDE installed and all related software. 
+In order to start programming ESP8266 device, you will need Arduino IDE installed and all related software. 
 
 Download and install [Arduino IDE](https://www.arduino.cc/en/Main/Software).
 
-After starting arduino, open from the ‘file’ menu the preferences.
+After starting Arduino IDE, open the preferences from the ‘file’ menu.
 
 ![image](/images/samples/esp8266/temperature/arduino-preferences.png)
 
-Fill in the “Additional board managers URL” this url:  http://arduino.esp8266.com/stable/package_esp8266com_index.json
+Paste the following URL to the “Additional board managers URL”:  http://arduino.esp8266.com/stable/package_esp8266com_index.json
 
-Close the screen by the OK button.
+Close the screen by clicking the OK button.
 
 Now we can add the board ESP8266 using the board manager.
 
-Click in the menu tools the menu option Board: “*Most likely Arduino UNO*”. 
-There  you will find the first option  “Board Manager”.
+In the menu tools, click on the menu option Board: “*Most likely Arduino UNO*”. 
+There you will find the first option “Board Manager”.
 
 Type in the search bar the 3 letters ESP. Locate and click on "*esp8266 by ESP8266 Community*". 
 Click on install and wait for a minute to download the board.
@@ -184,7 +184,7 @@ Select “Generic ESP8266 Module”.
 Prepare your hardware according to the [Programming/flashing schema](#programmingflashing-schema).
 Connect USB-TTL adapter with PC. 
 
-Select in the menu Tools, port the corresponding port of the USB-TTL adapter.
+In the menu Tools, select the corresponding port of the USB-TTL adapter.
 Open the serial monitor (by pressing CTRL-Shift-M or from the menu Tools).
 Set the key emulation to “Both NL & CR” and the speed to 115200 baud. This can be set in the bottom of terminal screen.
 
@@ -203,7 +203,7 @@ Find and install the following libraries:
 - Adafruit Unified Sensor 1.0.2
 - DHT sensor library 1.3.0
 
-### Step 3. Prepare and upload sketch.
+### Step 3. Prepare and upload a sketch.
 
 Download and open **esp8266-dht-mqtt.ino** sketch. 
 
@@ -211,34 +211,34 @@ Download and open **esp8266-dht-mqtt.ino** sketch.
 
 - WIFI_AP - name of your access point
 - WIFI_PASSWORD - access point password
-- TOKEN - the **$ACCESS_TOKEN** from Thingsboard configuration step.
-- thingsboardServer - Thingsboard HOST/IP address that is accessable within your wifi network. Specify "demo.thingsboard.io" if you are using [live demo](https://demo.thingsboard.io/) server.
+- TOKEN - the **$ACCESS_TOKEN** from ThingsBoard configuration step.
+- thingsboardServer - ThingsBoard HOST/IP address that is accessible within your wifi network. Specify "demo.thingsboard.io" if you are using [live demo](https://demo.thingsboard.io/) server.
 
 {% capture tabspec %}arduino-sketch
 esp8266-dht-mqtt,esp8266-dht-mqtt.ino,c,resources/esp8266-dht-mqtt.ino,/docs/samples/esp8266/resources/esp8266-dht-mqtt.ino{% endcapture %}
 {% include tabs.html %}
 
-Connect USB-TTL adapter to PC and select the corresponding port in Arduino IDE. Compile and Upload your sketch to device using "Upload" button.
+Connect USB-TTL adapter to PC and select the corresponding port in Arduino IDE. Compile and Upload your sketch to the device using "Upload" button.
 
-After application will be uploaded and started it will try to connect to Thingsboard node using mqtt client and upload "temperature" and "humidity" timeseries data once per second.
+After application will be uploaded and started it will try to connect to ThingsBoard node using mqtt client and upload "temperature" and "humidity" timeseries data once per second.
 
 ## Autonomous operation
 
-When you have uploaded the sketch, you may remove all the wires required for uploading including USB-TTL adapter and connect your ESP8266 and DHT sensor directly to power source according to the [Final wiring schema](#final-schema-battery-powered).
+When you have uploaded the sketch, you may remove all the wires required for uploading including USB-TTL adapter and connect your ESP8266 and DHT sensor directly to the power source according to the [Final wiring schema](#final-schema-battery-powered).
 
 ## Troubleshooting
 
-In order to perform troubleshooting you should assemble your hardware according to the [Programming/flashing schema](#programmingflashing-schema).
-Then connect USB-TTL adapter with PC and select port of the USB-TTL adapter in Arduino IDE. Finally open "Serial Monitor" in order to view debug information produced by serial output.
+In order to perform troubleshooting, you should assemble your hardware according to the [Programming/flashing schema](#programmingflashing-schema).
+Then connect USB-TTL adapter with PC and select port of the USB-TTL adapter in Arduino IDE. Finally, open "Serial Monitor" in order to view debug information produced by serial output.
 
 ## Data visualization
 
-Finally, open Thingsboard Web UI. You can access this dashboard by logging in as a tenant administrator. Use:
+Finally, open ThingsBoard Web UI. You can access this dashboard by logging in as a tenant administrator. Use:
 
  - login: tenant@thingsboard.org
  - password: tenant
  
-in case of local Thingsboard installation. 
+in case of local ThingsBoard installation.
   
 Go to **"Devices"** section and locate **"ESP8266 Demo Device"**, open device details and switch to **"Latest telemetry"** tab. 
 If all is configured correctly you should be able to see latest values of *"temperature"* and *"humidity"* in the table.
@@ -246,11 +246,11 @@ If all is configured correctly you should be able to see latest values of *"temp
 ![image](/images/samples/esp8266/temperature/attributes.png)
 
 After, open **"Dashboards"** section then locate and open **"ESP8266 DHT22: Temperature & Humidity Demo Dashboard"**. 
-As a result you will see two digital gauges and two time-series charts displaying temperature and humidity level (similar to dashboard image in the introduction).
+As a result, you will see two digital gauges and two time-series charts displaying temperature and humidity level (similar to dashboard image in the introduction).
 
 ## Next steps
 
-Browse other [samples](/docs/samples) or explore guides related to main Thingsboard features:
+Browse other [samples](/docs/samples) or explore guides related to main ThingsBoard features:
 
  - [Device attributes](/docs/user-guide/attributes/) - how to use device attributes.
  - [Telemetry data collection](/docs/user-guide/telemetry/) - how to collect telemetry data.
