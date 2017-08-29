@@ -109,14 +109,15 @@ On *Linux*:
 
 ```bash
 cd ${TB_WORK_DIR}/application/target/bin/install
+chmod +x install_dev_db.sh
 ./install_dev_db.sh
 ```
 
 On *Windows*:
 
-```bash
-cd ${TB_WORK_DIR}/application/target/windows
-./install_dev_db.bat
+```bat
+cd %TB_WORK_DIR%\application\target\windows
+install_dev_db.bat
 ```
 
 #### Running development environment
