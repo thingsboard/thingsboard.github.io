@@ -29,6 +29,12 @@ Now you can clone source code of the forked project.
 
 **NOTE:** We will refer later to the folder where you have cloned repository as **${TB_WORK_DIR}**.
 
+If are building on Windows for the first time, you may need to run these commands to ensure the required npm dependencies are available: 
+```bat 
+npm install -g cross-env 
+npm install -g webpack 
+``` 
+
 Before importing the project into the *IDE* please build it using **Maven** tool from the root folder:
 
 ```bash
