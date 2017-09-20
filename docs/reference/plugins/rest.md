@@ -65,7 +65,7 @@ Then select *'REST API Call Plugin'* in the drop-down box for the Plugin field:
 
 ![image](/images/reference/plugins/rest-api-call/rest-api-call-plugin-selection.png)
 
-Add an action that will send temperature telemetry of dthe evice to the particular REST action-path. In the action you can provide request type and result code that you expected from the REST endpoint in case of a successful call.
+Add an action that will send temperature telemetry of the device to the particular REST action-path. In the action you can provide request type and result code that you expected from the REST endpoint in case of a successful call.
 
 ![image](/images/reference/plugins/rest-api-call/rest-api-call-rule-action-config-1.png)
 
