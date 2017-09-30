@@ -17,10 +17,10 @@ However, most of the real-life use cases also require the support of advanced an
 This tutorial will demonstrate how you can:
 
  - route telemetry device data from ThingsBoard to Kafka topic using the built-in plugin.
- - aggregate data from multiple devices using simple Apache Spark application.
+ - aggregate data from multiple devices using a simple Apache Spark application.
  - push results of the analytics back to ThingsBoard for persistence and visualization.
 
-Of course, analytics in this tutorial is quite simple, our goal is to highlight the integration steps.
+The analytics in this tutorial is, of course, quite simple, but our goal is to highlight the integration steps.
 
 ### Overview
 
@@ -46,10 +46,10 @@ We also assume that you are familiar with Kafka and Spark and have also prepared
 
 ### ThingsBoard configuration steps
 
-### Step 1. Configuration of Kafka Plugin
+### Step 1. Kafka Plugin Configuration
 
 We need to configure Kafka Plugin that will be used to push telemetry data to Kafka. 
-You can find detail description of Kafka Plugin [here](/docs/reference/plugins/kafka/).
+You can find the detailed description of Kafka Plugin [here](/docs/reference/plugins/kafka/).
 
 [**Download**](/docs/samples/analytics/resources/kafka_plugin_for_spark_streaming_sample.json) the json with plugin descriptor 
 and use this [**instructions**](/docs/user-guide/ui/plugins/#plugin-import) to import it to your instance.
