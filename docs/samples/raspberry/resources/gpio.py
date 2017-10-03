@@ -11,7 +11,7 @@ gpio_state = {7: False, 11: False, 12: False, 13: False, 15: False, 16: False, 1
 
 
 # The callback for when the client receives a CONNACK response from the server.
-def on_connect(client, userdata, rc):
+def on_connect(client, userdata, rc, *extra_params):
     print('Connected with result code ' + str(rc))
     # Subscribing to receive RPC requests
     client.subscribe('v1/devices/me/rpc/request/+')
