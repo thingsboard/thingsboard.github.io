@@ -59,6 +59,8 @@ toc:
     path: /docs/iot-gateway/sigfox-iot-data-visualization/
   - title: Persist and visualize IBM Watson IoT data
     path: /docs/iot-gateway/integration-with-ibm-watson-iot/
+  - title: Notifications and Alarms on your smartphone using Telegram Bot
+    path: /docs/iot-gateway/integration-with-telegram-bot/
 - title: Security
   section:
   - title: MQTT over SSL
