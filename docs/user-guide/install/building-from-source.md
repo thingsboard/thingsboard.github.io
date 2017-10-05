@@ -44,7 +44,7 @@ git checkout release-1.3
 
 #### Build
 
-The following command will build thingsboard project:
+Run the following command from the thingsboard folder to build the project:
 
 ```bash
 mvn clean install
