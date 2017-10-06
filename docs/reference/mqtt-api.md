@@ -20,7 +20,7 @@ ThingsBoard server nodes act as an MQTT Broker that supports QoS levels 0 (at mo
 
 ##### Client libraries setup
 
-You can find a huge amount of MQTT client libraries on the web. Examples in this article will be based on Mosquitto and MQTT.js.
+You can find a huge number of MQTT client libraries on the web. Examples in this article will be based on Mosquitto and MQTT.js.
 In order to setup one of those tools, you can use instructions in our [Hello World](/docs/getting-started-guides/helloworld/) guide.
 
 ##### MQTT Connect
