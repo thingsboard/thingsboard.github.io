@@ -24,6 +24,7 @@ System administrator is also able to create multiple [users](/docs/user-guide/ui
 Tenant Administrator is able to do following actions:
  
  - Provision and Manage [Devices](/docs/user-guide/ui/devices).
+ - Provision and Manage [Assets](/docs/user-guide/ui/assets).
  - Create and Manage [Customers](/docs/user-guide/ui/customers).
  - Create and Manage [Dashboards](/docs/user-guide/ui/dashboards).
  - Configure [Rules](/docs/user-guide/ui/rules) and [Plugins](/docs/user-guide/ui/plugins)

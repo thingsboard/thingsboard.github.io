@@ -132,6 +132,12 @@ Useful for visualization and control of GPIO state for target devices.
 
 ![image](/images/user-guide/ui/gpio-widgets.png)
 
+### Control widgets
+ 
+Useful for visualize current state and send RPC commands to target devices.
+
+![image](/images/user-guide/ui/control-widgets.png)
+
 ### Maps widgets
  
 Useful for visualization of devices geo locations and track devices routes both in real-time and history mode.

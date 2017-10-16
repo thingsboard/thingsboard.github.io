@@ -191,8 +191,9 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 	<main>
 		<div class="image-wrapper"><img src="images/device_management.png"></div>
 		<div class="content">
-			<h4>Provision and manage devices</h4>
-			<p>Provision, monitor and control your devices in secure way using rich server-side APIs.</p>
+			<h4>Provision and manage devices and assets</h4>
+			<p>Provision, monitor and control your IoT entities in secure way using rich server-side APIs.
+				Define relations between your devices, assets, customers or any other entities.</p>
 		</div>
 	</main>
 	<main>
@@ -208,7 +209,7 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 		<div class="image-wrapper"><img src="images/process_react.png"></div>
 		<div class="content">
 			<h4>Process and React</h4>
-			<p>Define data processing rules and trigger reactions using plugins.</p>
+			<p>Define data processing rules and trigger reactions using plugins. Raise alarms on incoming telemetry events or attribute updates.</p>
 		</div>
 	</main>
 	<main>
@@ -231,9 +232,8 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 					Access collected data using customizable web dashboards or server-side APIs.</p>
 			</div>
 			<div>
-				<h4><a href="docs/reference/architecture/#clustering-mode">Horizontal scalability</a></h4>
-				<p>Amount of supported server-side requests and devices increase linearly as new thingsboard servers are added in clustering mode.
-					No downtime, server restarts or application errors.</p>
+				<h4><a href="/docs/user-guide/ui/tenants/">Multi-tenancy</a></h4>
+				<p>Support multi-tenant installations out-of-the-box. Single tenant may have multiple tenant administrators and millions of devices and customers.</p>
 			</div>
 		</div>
 
@@ -244,9 +244,9 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 					Built-in line-charts, digital and analog gauges, maps and much more.</p>
 			</div>
 			<div>
-				<h4><a href="docs/reference/architecture/#service-discovery">Fault-tolerance</a></h4>
-				<p>All thingsboard servers are identical. No master-workers or hot standby. Node failure is automatically detected.
-					Failed nodes can be replaced without downtime. Persisted data is replicated using reliable NoSQL database.</p>
+				<h4><a href="docs/reference/architecture/#clustering-mode">Horizontal scalability</a></h4>
+				<p>Amount of supported server-side requests and devices increase linearly as new thingsboard servers are added in clustering mode.
+					No downtime, server restarts or application errors.</p>
 			</div>
 		</div>
 
@@ -257,9 +257,11 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 					Forward data to external systems or trigger alarms using rules.
 					Enrich server-side functionality or send commands to devices using plugins.</p>
 			</div>
+
 			<div>
-				<h4><a href="/docs/reference/architecture/#security">Security</a></h4>
-				<p>Supports transport encryption for both MQTT and HTTP(s) protocols. Supports device authentication and device credentials management.</p>
+				<h4><a href="docs/reference/architecture/#service-discovery">Fault-tolerance</a></h4>
+				<p>All thingsboard servers are identical. No master-workers or hot standby. Node failure is automatically detected.
+					Failed nodes can be replaced without downtime. Persisted data is replicated using reliable NoSQL database.</p>
 			</div>
 		</div>
         
@@ -268,6 +270,19 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 				<h4><a href="/docs/user-guide/ui/devices/">Device Management</a></h4>
 				<p>Provides ability to register and manage <a href="/docs/user-guide/ui/devices/">devices</a>. Allows to monitor client-side and provision server-side <a href="/docs/user-guide/attributes/">device attributes</a>.
 					Provides API for server-side applications to send <a href="/docs/user-guide/rpc/">RPC commands</a> to devices and vice-versa.</p>
+			</div>
+
+			<div>
+				<h4><a href="/docs/reference/architecture/#security">Security</a></h4>
+				<p>Supports transport encryption for both MQTT and HTTP(s) protocols. Supports device authentication and device credentials management.</p>
+			</div>
+		</div>
+
+		<div class="feature-box">
+			<div>
+				<h4><a href="/docs/user-guide/ui/assets/">Asset Management</a></h4>
+				<p>Provides ability to register and manage <a href="/docs/user-guide/ui/assets/">assets</a>. Allows to provision server-side <a href="/docs/user-guide/attributes/">asset attributes</a>
+					and monitor related <a href="docs/user-guide/alarms/">alarms</a>. Ability to build hierarchy of entities using <a href="/docs/user-guide/entities-and-relations/">relations</a>.
 			</div>
 			<div>
 				<h4><a href="/docs/user-guide/customization/">Customization and Integration</a></h4>
@@ -279,23 +294,14 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 
 		<div class="feature-box">
 			<div>
-				<h4><a href="/docs/user-guide/ui/assets/">Asset Management</a></h4>
-				<p>Provides ability to register and manage <a href="/docs/user-guide/ui/assets/">assets</a>. Allows to provision server-side <a href="/docs/user-guide/attributes/">asset attributes</a>
-					and monitor <a href="docs/user-guide/alarms/">alarms</a>.
+				<h4><a href="/docs/user-guide/alarms/">Alarms Management</a></h4>
+				<p>Provides ability to create and manage <a href="/docs/user-guide/alarms/">alarms</a> related to your entities: devices, assets, customers, etc.
+					Allows real-time alarms monitoring and alarms propagation to related entities hierarchy.
 			</div>
 			<div>
 				<h4><a href="https://github.com/thingsboard/thingsboard">100&#37; Open-source</a></h4>
 				<p>ThingsBoard is licensed under Apache License 2.0, so you can use any it in your commercial products for free.
 					You can even host it as a SaaS or PaaS solution.</p>
-			</div>
-		</div>
-
-		<div class="feature-box">
-			<div>
-				<h4><a href="/docs/user-guide/ui/tenants/">Multi-tenancy</a></h4>
-				<p>Support multi-tenant installations out-of-the-box. Single tenant may have multiple tenant administrators and millions of devices and customers.</p>
-			</div>
-			<div>
 			</div>
 		</div>
 
