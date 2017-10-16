@@ -8,7 +8,7 @@ title: RabbitMQ Plugin Action
 
 ## Overview
 
-This component allows to create RabbitMQ message by substitution of device attributes and message data into configurable templates.
+This component allows creating RabbitMQ message by substitution of device attributes and message data into configurable templates.
 
 ## Configuration
 

@@ -2,8 +2,8 @@
 layout: docwithnav
 assignees:
 - ashvayka
-title: Installing Thingsboard using Docker (Linux or Mac OS)
-description: Installing Thingsboard IoT Platform using Docker (Linux or Mac OS)
+title: Installing ThingsBoard using Docker (Linux or Mac OS)
+description: Installing ThingsBoard IoT Platform using Docker (Linux or Mac OS)
 
 ---
 
@@ -12,7 +12,7 @@ description: Installing Thingsboard IoT Platform using Docker (Linux or Mac OS)
 * TOC
 {:toc}
 
-This guide will help you to install and start Thingsboard using Docker on Linux or Mac OS.
+This guide will help you to install and start ThingsBoard using Docker on Linux or Mac OS.
 
 
 ## Installation steps
@@ -21,7 +21,7 @@ This guide will help you to install and start Thingsboard using Docker on Linux 
 - [Install Docker Compose (Linux only)](https://docs.docker.com/compose/install/) - Mac OS Docker installation already contains Docker Compose. 
 {% include templates/docker-files.md %}
    
-- If you have already installed Thingsboard using docker and want to upgrade or cleanup your installation, please cleanup HSQLDB data directory
+- If you have already installed ThingsBoard using docker and want to upgrade or cleanup your installation, please cleanup HSQLDB data directory
       
 ```bash
 sudo rm -rf /home/docker/hsqldb_volume

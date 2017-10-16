@@ -1,6 +1,6 @@
 @echo off
 
-REM Set Thingsboard host to "demo.thingsboard.io" or "localhost"
+REM Set ThingsBoard host to "demo.thingsboard.io" or "localhost"
 set THINGSBOARD_HOST=demo.thingsboard.io
 
 REM Replace YOUR_ACCESS_TOKEN with one from Device credentials window.

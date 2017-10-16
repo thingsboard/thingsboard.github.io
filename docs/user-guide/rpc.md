@@ -3,17 +3,17 @@ layout: docwithnav
 assignees:
 - ashvayka
 title: Using RPC capabilities
-description: Remote control of IoT devices from the Thingsboard IoT cloud using RPC feature
+description: Remote control of IoT devices from the ThingsBoard IoT cloud using RPC feature
 
 ---
 
 * TOC
 {:toc}
 
-Thingsboard allows you to send remote procedure calls (RPC) from server side applications to devices and vise versa. 
+ThingsBoard allows you to send remote procedure calls (RPC) from server side applications to devices and vice versa.
 Basically, this feature allows you to send commands to devices and receive results of commands execution. 
-Similar, you can execute request from the device, apply some calculations or other server-side logic on back-end and push response back to the device.
-This guide covers Thingsboard RPC capabilities. After reading this guide, you will get familiar with following topics:
+Similar, you can execute request from the device, apply some calculations or other server-side logic on the back-end and push the response back to the device.
+This guide covers ThingsBoard RPC capabilities. After reading this guide, you will get familiar with following topics:
 
 - RPC call types
 - Basic RPC use-cases
@@ -32,15 +32,15 @@ and server-originated RPC calls as **server-side** RPC calls.
 
 Server-side RPC calls can be divided into one-way and two-way:
  
- - One-way RPC request is sent to the device without delivery confirmation and obviously, does not provide response from device. 
-   RPC call may fail only if there is no active connection with the target device within configurable timeout period.
+ - One-way RPC request is sent to the device without delivery confirmation and obviously, does not provide any response from the device. 
+   RPC call may fail only if there is no active connection with the target device within a configurable timeout period.
    
    {:refdef: style="text-align: center;"}
    ![image](/images/user-guide/one-way-rpc.svg)
    {: refdef}
    
- - Two-way RPC request is sent to the device and expects to receive response from the device within certain timeout. 
-   Server-side request is blocked until the target device will reply to the request.
+ - Two-way RPC request is sent to the device and expects to receive a response from the device within the certain timeout. 
+   The Server-side request is blocked until the target device replies to the request.
 
    {:refdef: style="text-align: center;"}
    ![image](/images/user-guide/two-way-rpc.svg)
@@ -49,7 +49,7 @@ Server-side RPC calls can be divided into one-way and two-way:
 
 ## Device RPC API
 
-Thingsboard provides convenient API to send and receive RPC commands from applications running on the device. 
+ThingsBoard provides convenient API to send and receive RPC commands from applications running on the device.
 This API is specific for each supported network protocol.
 You can review API and examples in corresponding reference page:
 
@@ -59,7 +59,7 @@ You can review API and examples in corresponding reference page:
 
 ## Server-side RPC API
 
-Thingsboard provides **System RPC Plugin** that allows you to send RPC calls from server-side applications to the device.
+ThingsBoard provides **System RPC Plugin** that allows you to send RPC calls from server-side applications to the device.
 In order to send RPC request you need execute HTTP POST request to the following URL:
 
 ```shell

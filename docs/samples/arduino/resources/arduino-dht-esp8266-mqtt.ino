@@ -136,7 +136,7 @@ void InitWiFi()
 void reconnect() {
   // Loop until we're reconnected
   while (!client.connected()) {
-    Serial.print("Connecting to Thingsboard node ...");
+    Serial.print("Connecting to ThingsBoard node ...");
     // Attempt to connect (clientId, username, password)
     if ( client.connect("Arduino Uno Device", TOKEN, NULL) ) {
       Serial.println( "[DONE]" );

@@ -3,18 +3,18 @@ layout: docwithnav
 assignees:
 - ashvayka
 title: Devices
-description: Thingsboard IoT Device management
+description: ThingsBoard IoT Device management
 
 ---
 
-Thingsboard support following device management features using Web UI and [REST API](/docs/reference/rest-api/).
+ThingsBoard support following device management features using Web UI and [REST API](/docs/reference/rest-api/).
 
 * TOC
 {:toc}
 
 ## Add and delete devices
 
-Tenant administrator is able to register new devices or delete them from Thingsboard.
+Tenant administrator is able to register new devices or delete them from ThingsBoard.
 
 ![image](/images/user-guide/ui/devices.png)
 
@@ -27,7 +27,7 @@ Current release supports Access Token and X.509 Certificates based credentials.
 
 ## Get Device Id
   
-Tenant administrator and customer users are able to copy device id to clipboard using "Copy Device Id" button.
+Tenant administrator and customer users are able to copy device id to the clipboard using "Copy Device Id" button.
 
  ![image](/images/user-guide/ui/device-id.png)
 
@@ -58,7 +58,7 @@ Tenant administrator and customer users are able to browse device [alarms](/docs
  
 ## Browse device events
   
-Tenant administrator and customer users are able to browse events related to particular device using "Events" tab.
+Tenant administrator and customer users are able to browse events related to a particular device using "Events" tab.
 Lifecycle events and statistics are coming soon.
 
 ## Manage device relations

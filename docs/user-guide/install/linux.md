@@ -14,7 +14,7 @@ description: Installing ThingsBoard on Linux
 
 This guide describes how to install ThingsBoard on a Linux based server machine.
 Instructions below are provided for Ubuntu 16.04 and CentOS 7. 
-This instructions can be easily adopted to other similar operation systems. 
+These instructions can be easily adapted to other similar operating	 systems. 
 
 ### Hardware requirements
 
@@ -26,14 +26,14 @@ To run ThingsBoard and third-party components on a single machine you will need 
 
 ThingsBoard service is running on Java 8. 
 Although you are able to start the service using [OpenJDK](http://openjdk.java.net/), 
-solution is actively tested on [Oracle JDK](http://www.oracle.com/technetwork/java/javase/overview/index.html).
+the solution is actively tested on [Oracle JDK](http://www.oracle.com/technetwork/java/javase/overview/index.html).
 
 Follow this instructions to install Oracle JDK 8:
 
  - [Ubuntu 16.04](https://www.digitalocean.com/community/tutorials/how-to-install-java-with-apt-get-on-ubuntu-16-04#installing-the-oracle-jdk)
  - [CentOS 7](https://www.digitalocean.com/community/tutorials/how-to-install-java-on-centos-and-fedora#install-oracle-java-8)
 
-Please don't forget to configure your operation system to use Oracle JDK 8 by default. 
+Please don't forget to configure your operating system to use Oracle JDK 8 by default. 
 Corresponding instructions are in the same articles listed above.
 
 
@@ -84,7 +84,7 @@ A,Ubuntu,shell,resources/thingsboard-ubuntu-installation.sh,/docs/user-guide/ins
 B,CentOS,shell,resources/thingsboard-centos-installation.sh,/docs/user-guide/install/resources/thingsboard-centos-installation.sh{% endcapture %}  
 {% include tabs.html %}
 
-### [Optional] Configure ThingsBoard to use external database
+### [Optional] Configure ThingsBoard to use the external database
  
 {% include templates/optional-db.md %} 
  

@@ -1,21 +1,21 @@
 ---
 layout: docwithnav
 title: Smart energy monitoring, data visualization and energy efficiency analysis
-description: Smart energy monitoring and data visualization with Thingsboard IoT Platform
+description: Smart energy monitoring and data visualization with ThingsBoard IoT Platform
 horizontaltoc: "true"
 
 ---
 
 ## Overview
 
-Thingsboard platform provides out-of-the-box components and APIs to dramatically reduce time to market and your effort to create smart energy solutions and energy monitoring systems.
+ThingsBoard platform provides out-of-the-box components and APIs to dramatically reduce time to market and your effort to create smart energy solutions and energy monitoring systems.
 Save up to 90% of development time for your smart energy solution by utilizing following benefits:
 
  - Reliable and fault tolerant data collection for your smart meters and energy monitors;
  - Advanced and flexible data visualization for real-time and historical smart energy monitoring;
  - Customizable end-user dashboards to analyze and share the results of energy efficiency monitoring;
  - Integration with third-party analytics frameworks and solutions for advanced electricity usage monitoring;
- - Enable energy management by utilizing Thingsboard API to control and manage smart meters.
+ - Enable energy management by utilizing ThingsBoard API to control and manage smart meters.
  
 The platform provides production ready server infrastructure to connect your smart meter devices, collect, store and analyze energy monitoring data, and share results of the analysis with your customers and end-users.
 
@@ -28,7 +28,7 @@ The following interactive dashboard hosted on live demo server represents smart 
     <a target="_blank" style="padding: 0 40px;" href="https://demo.thingsboard.io/dashboards/e8e409c0-f2b5-11e6-a6ee-bb0136cc33d0?publicId=963ab470-34c9-11e7-a7ce-bb0136cc33d0&source=realtimeIotDashboards" class="button">Live demo</a>
 </div>
 
-The attached dashboard demonstrates real-time data from smart-meters that is collected using Thingsboard MQTT API. The data is stored in Cassandra DB on our demo server.
+The attached dashboard demonstrates real-time data from smart-meters that is collected using ThingsBoard MQTT API. The data is stored in Cassandra DB on our demo server.
 
 We would like to highlight following features:
 
@@ -39,14 +39,14 @@ We would like to highlight following features:
 
 ## Smart energy solution overview
  
-The diagram below identifies data flow and integration points for typical smart energy solution that uses Thingsboard platform to collect and analyze energy monitoring data from smart meters.
+The diagram below identifies data flow and integration points for typical smart energy solution that uses ThingsBoard platform to collect and analyze energy monitoring data from smart meters.
 
 ![Smart energy solution diagram](/images/iot-use-cases/smart-energy-monitoring.svg)
 
 You may notice that there are plenty of connectivity options for smart meters: either direct connection to the cloud or through the IoT Gateway.
 Platform supports industry standard encryption algorithms (SSL) and device credentials types (X.509 certificates and access tokens).
 The collected data is stored in Cassandra - fault-tolerant and reliable NoSQL database.
-Thingsboard Rule Engine allows to forward incoming data to various analytics systems, such as Apache Spark or Hadoop using Kafka or other Message buses.
+ThingsBoard Rule Engine allows to forward incoming data to various analytics systems, such as Apache Spark or Hadoop using Kafka or other Message buses.
 
 ## Learn more
 

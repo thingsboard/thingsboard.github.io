@@ -3,27 +3,27 @@ layout: docwithnav
 assignees:
 - ashvayka
 title: OPC-UA Extension Configuration
-description: OPC-UA protocol support for Thingsboard IoT Gateway
+description: OPC-UA protocol support for ThingsBoard IoT Gateway
 
 ---
 
 * TOC
 {:toc}
 
-This guide will help you to get familiar with OPC-UA extension configuration for Thingsboard IoT Gateway.
+This guide will help you to get familiar with OPC-UA extension configuration for ThingsBoard IoT Gateway.
 Use [general configuration](/docs/iot-gateway/configuration/) to enable this extension.
 We will describe extension configuration file below.
 
 ### Extension configuration: opc-config.json
 
-Extension configuration is a JSON file that contain information about how to connect and monitor list of OPC-UA servers.
+Extension configuration is a JSON file that contains information about how to connect and monitor a list of OPC-UA servers.
 The root JSON element should contain "servers" array. Each server in the array is configured using following properties:
 
 #### Basic connection properties
 
 | **Property**        | **Description**                                                                                                                                                                                                  | **Default Value**         |
 |---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------|
-| applicationName     | Name of the client application, used for OPC-UA connection.                                                                                                                                                      | Thingsboard OPC-UA client |
+| applicationName     | Name of the client application, used for OPC-UA connection.                                                                                                                                                      | ThingsBoard OPC-UA client |
 | applicationUri      | URI of the client application, used for OPC-UA connection.                                                                                                                                                       |     |
 | host                | OPC-UA server host                                                                                                                                                                                               | localhost                 |
 | port                | OPC-UA server port                                                                                                                                                                                               | 49320                     |
@@ -37,7 +37,7 @@ For Example:
 {
   "servers": [
     {
-      "applicationName": "Thingsboard OPC-UA client",
+      "applicationName": "ThingsBoard OPC-UA client",
       "applicationUri": "urn:thingsboard:client",
       "host": "localhost",
       "port": 49320,
@@ -85,7 +85,7 @@ Example of username identity configuration:
 #### Keystore configuration
 
 Keystore information is used to setup encrypted connection between Gateway OPC-UA client and your OPC-UA server.
-Many OPC-UA servers require provisioning of client key on the server, before client can connect.
+Many OPC-UA servers require provisioning of client key on the server before client can connect.
 Supported keystore types are JKS and PKCS12.
 Example of keystore configuration:
 
@@ -105,7 +105,7 @@ Example of keystore configuration:
 
 #### Mapping
 
-Mapping configuration setup rules of OPC-UA server monitoring and data conversion to Thingsboard Key-Value format. For example:
+Mapping configuration setup rules of OPC-UA server monitoring and data conversion to ThingsBoard Key-Value format. For example:
 
 ```json
 {
@@ -126,13 +126,13 @@ Mapping configuration setup rules of OPC-UA server monitoring and data conversio
 }
 ```
 
-Mapping process periodically travers OPC-UA server node tree and applies regular expression that is configured in **deviceNodePattern** parameter for each mapping configuration.
-List of nodes that match regular expression are stored as device nodes. 
+Mapping process periodically traverse the OPC-UA server node tree and applies the regular expression that is configured in **deviceNodePattern** parameter for each mapping configuration.
+The ist of nodes that match the regular expression is stored as device nodes. 
 Now mapping process will use **deviceNamePattern** to get device name value. 
 You can use OPC-UA tags inside the pattern by specifying their relative (to device node) names. See example below. 
 Similar mapping rules are applied for **attributes** and **timeseries** values:
 
- - **key** - constant Attribute or Timeseries Thingsboard key.
+ - **key** - constant Attribute or Timeseries ThingsBoard key.
  - **type** - either boolean, long, double or string.
  - **value** - expression based on relative tag values specified inside **${}** 
 
@@ -143,7 +143,7 @@ Explore examples:
  
  - [KEPServerEX connection example](/docs/iot-gateway/getting-started/#step-9-connect-to-external-opc-ua-server)
 
-Explore guides related to main Thingsboard features:
+Explore guides related to main ThingsBoard features:
 
  - [Data Visualization](/docs/user-guide/visualization/) - how to visualize collected data.
  - [Device attributes](/docs/user-guide/attributes/) - how to use device attributes.

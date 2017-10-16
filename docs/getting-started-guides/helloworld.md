@@ -3,7 +3,7 @@ layout: docwithnav
 assignees:
 - ashvayka
 title: Getting Started
-description: Getting started with Thingsboard open-source IoT platform and simulated IoT devices
+description: Getting started with ThingsBoard open-source IoT platform and simulated IoT devices
 
 ---
 
@@ -13,12 +13,12 @@ description: Getting started with Thingsboard open-source IoT platform and simul
 
 ## Introduction
 
-The goal of this guide is for you to collect and visualize some IoT device data using Thingsboard. 
+The goal of this guide is for you to collect and visualize some IoT device data using ThingsBoard.
 This guide will let you:
 
  - Provision your device
  - Manage device credentials
- - Push data from device to your Thingsboard instance using MQTT, CoAP or HTTP protocols
+ - Push data from device to your ThingsBoard instance using MQTT, CoAP or HTTP protocols
  - Create dashboard to visualize the data
   
 <div id="video">  
@@ -29,25 +29,25 @@ This guide will let you:
 
 ## Setup and Requirements
 
-If you don't have access to a running Thingsboard instance, use either [Live Demo](https://demo.thingsboard.io/signup) or 
+If you don't have access to a running ThingsBoard instance, use either [Live Demo](https://demo.thingsboard.io/signup) or
 [Installation Guide](/docs/user-guide/install/installation-options/) 
 to fix this.
 
 ## Demo account
 
-All Thingsboard installations are equipped with demo account that simplifies first user experience.
-This demo account contains several pre-provisioned devices, dashboards, rules and plugins installed.
-Please note that you are free to delete this account in production deployment.
+All ThingsBoard installations are equipped with a demo account that simplifies the first user experience.
+This demo account contains several pre-provisioned devices, dashboards, rules, and plugins installed.
+Please note that you are free to delete this account in the production deployment.
 
-You can use Thingsboard device emulators to simulate real-life devices and play-around with server-side APIs, data visualization and processing logic.
+You can use ThingsBoard device emulators to simulate real-life devices and play-around with server-side APIs, data visualization, and processing logic.
    
-We will use this emulators in advanced tutorials, however, the for the purpose of this guide, we will just use pre-provisioned tenant administrator account.
+We will use these emulators in advanced tutorials, however, the for the purpose of this guide, we will just use pre-provisioned tenant administrator account.
  
 ## Login as a tenant administrator 
 
-The first step is to login to administration Web UI.
+The first step is to login into administration Web UI.
 
-If you are using local Thingsboard installation you can login to administration Web UI using default account:
+If you are using local ThingsBoard installation you can login to administration Web UI using default account:
  
   - Username: **tenant@thingsboard.org**
   - Password: **tenant**
@@ -67,7 +67,7 @@ Open Devices panel and click on "+" button in the bottom-right corner of the pag
 {: refdef}
 
 Populate and save device name (for example, "SN-001"). It will be referred to later as $DEVICE_NAME.
-Device names must be unique. Populating device name based on unique serial number or other device identifier is generally a good idea.
+Device names must be unique. Populating device name based on a unique serial number or other device identifier is generally a good idea.
 Click "Add" button will add corresponding device card to the panel.
 
 {:refdef: style="text-align: center;"}
@@ -79,7 +79,7 @@ Click "Add" button will add corresponding device card to the panel.
 
 Click on the "device card" we have created in the previous step. This action will open "device details" panel.
 
-Click on the "manage credentials" button on the top of the panel. This action will open popup window with device credentials.
+Click on the "manage credentials" button on the top of the panel. This action will open a popup window with device credentials.
 
 {:refdef: style="text-align: center;"}
 ![image](/images/helloworld/manage-credentials.png)
@@ -94,7 +94,7 @@ Please save this device token. It will be referred to later as **$ACCESS_TOKEN**
 
 
 Congratulations! You have just provisioned your first device! 
-Now you can push some data from this device to Thingsboard for visualization and analysis.
+Now you can push some data from this device to ThingsBoard for visualization and analysis.
 
 ## Pushing data from the device
 
@@ -145,7 +145,7 @@ Download the following files to **previously created folder** according to the p
  - **cURL (HTTP)**
    - {% include ghlink.html content='curl.sh' ghlink='/docs/getting-started-guides/resources/curl.sh' %}
 
-If you are using shell script (*.sh) make sure that it is executable:
+If you are using a shell script (*.sh) make sure that it is executable:
 
 ```shell
 chmod +x *.sh
@@ -156,9 +156,9 @@ Before executing script don't forget to:
  - replace **$ACCESS_TOKEN** with one from **Device credentials** window.
  - replace **$THINGSBOARD_HOST** with either **127.0.0.1** (in case of local installation) or **demo.thingsboard.io** (in case of live-demo).
 
-Finally execute corresponding *.sh or *.bat script to push data to the server.
+Finally, execute corresponding *.sh or *.bat script to push data to the server.
 
-Below are tabs with content of provided scripts. 
+Below are tabs with the content of the scripts provided. 
  
 {% capture tabspec %}mqtt-telemetry-upload
 A,MQTT.js (Ubuntu & MacOS),shell,resources/mqtt-js.sh,/docs/getting-started-guides/resources/mqtt-js.sh
@@ -218,7 +218,7 @@ Click **Show on widget** and select **Digital gauges** bundle. Use carousel to s
 ![image](/images/helloworld/termometer-widget.png)
 {: refdef}
 
-**Please note** that in this case we will add widget to already existing dashboard. We will also select "Open dashboard" option to see results of our work.
+**Please note** that in this case, we will add a widget to an already existing dashboard. We will also select "Open dashboard" option to see results of our work.
 
 {:refdef: style="text-align: center;"}
 ![image](/images/helloworld/add-termometer.png)
@@ -239,7 +239,7 @@ Finally, we are able to see our new dashboard. Now we can edit the dashboard to
  
 ## Next steps
 
-Explore guides related to main Thingsboard features:
+Explore guides related to main ThingsBoard features:
 
  - [Device attributes](/docs/user-guide/attributes/) - how to use device attributes.
  - [Telemetry data collection](/docs/user-guide/telemetry/) - how to collect telemetry data.
@@ -250,5 +250,5 @@ Explore guides related to main Thingsboard features:
 
 ## Your feedback
 
-Don't hesitate to star Thingsboard on **[github](https://github.com/thingsboard/thingsboard)** to help us spread the word.
+Don't hesitate to star ThingsBoard on **[github](https://github.com/thingsboard/thingsboard)** to help us spread the word.
 If you have some questions about this sample - post it on the **[forum](https://groups.google.com/forum/#!forum/thingsboard)**.

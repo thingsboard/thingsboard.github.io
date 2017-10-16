@@ -30,13 +30,13 @@ This plugin does not provide any server-side API.
 
 ## Example
 
-In this example we are going to demonstrate how you can configure this extension to be able to send message to Kafka topic every time new telemetry message for the device arrives.
+In this example, we are going to demonstrate how you can configure this extension to be able to send a message to Kafka topic every time new telemetry message for the device arrives.
 
-Prerequisites before continue Kafka extension configuration:
+Prerequisites before contining Kafka extension configuration:
 
  - Kafka broker is up and running
  - Appropriate Kafka Topic created
- - Thingsboard is up and running
+ - ThingsBoard is up and running
 
 ### Kafka Plugin Configuration
 
@@ -46,7 +46,7 @@ Let's configure Kafka plugin first. Go to *Plugins* menu and create new plugin:
 
 ![image](/images/reference/plugins/kafka/kafka-plugin-config-2.png)
 
-Please set correctly Kafka Bootstrap Servers URL and any other parameters localed in plugin configuration section that are suitable for your case so Kafka extension is able to connect to Kafka broker.
+Please set correctly Kafka Bootstrap Servers URL and any other parameters located in plugin configuration section that is suitable for your case so Kafka extension is able to connect to Kafka broker.
 
 Click on *'Activate'* plugin button:
 
@@ -84,7 +84,7 @@ Now for any of your devices send Telemetry message that contains *'temp'* teleme
 
 You should see **'73.4'** message in appropriate Kafka topic once you'll post this message.
 
-Here is an example of a command that publish single telemetry message to locally installed Thingsboard:
+Here is an example of a command that publish single telemetry message to locally installed ThingsBoard:
 
 ```bash
 mosquitto_pub -d -h "localhost" -p 1883 -t "v1/devices/me/telemetry" -u "$ACCESS_TOKEN" -m '{"temp":73.4}'

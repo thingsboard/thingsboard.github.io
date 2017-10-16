@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
-title: Raspberry Pi GPIO control using Android Things and Thingsboard
-description: Thingsboard IoT Platform sample for Raspberry Pi GPIO control over MQTT running Android Things
+title: Raspberry Pi GPIO control using Android Things and ThingsBoard
+description: ThingsBoard IoT Platform sample for Raspberry Pi GPIO control over MQTT running Android Things
 
 ---
 
@@ -11,10 +11,10 @@ description: Thingsboard IoT Platform sample for Raspberry Pi GPIO control over 
 ## Introduction
 {% include templates/what-is-thingsboard.md %}
 
-This sample application will allow you to control GPIO of your Raspberry Pi device using Thingsboard RPC widgets. We will observe GPIO control using Leds connected to the pins. 
-The purpose of this application is to demonstrate Thingsboard [RPC capabilities](/docs/user-guide/rpc/).
+This sample application will allow you to control GPIO of your Raspberry Pi device using ThingsBoard RPC widgets. We will observe GPIO control using LEDs connected to the pins.
+The purpose of this application is to demonstrate ThingsBoard [RPC capabilities](/docs/user-guide/rpc/).
 
-Raspberry Pi will use simple [Android Things](https://developer.android.com/things/index.html) application that will connect to Thingsboard server via [MQTT](https://en.wikipedia.org/wiki/MQTT) and listen to RPC commands.
+Raspberry Pi will use simple [Android Things](https://developer.android.com/things/index.html) application that will connect to ThingsBoard server via [MQTT](https://en.wikipedia.org/wiki/MQTT) and listen to RPC commands.
 Current GPIO state and GPIO control widget is visualized using built-in customizable dashboard. 
 
 The video below demonstrates the final result of this tutorial.
@@ -35,13 +35,13 @@ The video below demonstrates the final result of this tutorial.
 
  - [Raspberry Pi](https://en.wikipedia.org/wiki/Raspberry_Pi) - we will use Raspberry Pi 3 Model B but you can use any other model.
  
- - 11 Leds with corresponding resistors
+ - 11 LEDs with corresponding resistors
 
  - 13 female-to-male jumper wires
 
 ## Wiring schema
 
- Since our application will allow to control state of all available GPIO pins, we recommend to attach some LEDs to those pins for visibility.
+ Since our application will allow us to control the state of all available GPIO pins, we recommend attaching some LEDs to those pins for visibility.
  You can use this [basic instruction](https://www.raspberrypi.org/documentation/usage/gpio/) or [another one](https://projects.drogon.net/raspberry-pi/gpio-examples/tux-crossing/gpio-examples-1-a-single-led/) to wire some LEDs.
  Below is sample wiring schema used in this tutorial.
 
@@ -51,7 +51,7 @@ The video below demonstrates the final result of this tutorial.
 
 ### Flashing the Android Things image 
 
-First you need to flash Android Things image to your Raspberry Pi board using this [**guide**](https://developer.android.com/things/hardware/raspberrypi.html#flashing_the_image).
+First, you need to flash Android Things image to your Raspberry Pi board using this [**guide**](https://developer.android.com/things/hardware/raspberrypi.html#flashing_the_image).
 After finishing this guide make sure that your board has Internet access and accessible via adb tool. 
 
 ### Android Things development environment
@@ -61,7 +61,7 @@ Follow instructions from the official [**guide**](https://developer.android.com/
 
 ### Application source code
 
-Now you should obtain source code of the GpioControlSample application from Thingsboard sanples GitHub repository. 
+Now you should obtain the source code of the GpioControlSample application from ThingsBoard samples GitHub repository.
 You can do this by issuing the following git clone command:
 
 ```bash
@@ -72,7 +72,7 @@ Open cloned samples folder and navigate to **android-things/GpioControlSample**.
  
 Open **GpioControlActivity.java** file located at **app/src/main/java/org/thingsboard/sample/gpiocontrol** folder.
 
-You will need to modify **THINGSBOARD_HOST** constant to match your Thingsboard server installation IP address or hostname. 
+You will need to modify **THINGSBOARD_HOST** constant to match your ThingsBoard server installation IP address or hostname.
 Use "demo.thingsboard.io" if you are using [live demo](https://demo.thingsboard.io/) server.
 
 The value of **ACCESS_TOKEN** constant corresponds to sample Raspberry Pi device in pre-provisioned [demo data](/docs/samples/demo-account/#tenant-devices).
@@ -94,7 +94,7 @@ adb push ./app/build/outputs/apk/app-debug.apk /data/local/tmp/org.thingsboard.s
 adb shell pm install -r "/data/local/tmp/org.thingsboard.sample.gpiocontrol"
 ```
 
-Or you can use other options to deploy Android application: 
+Or you can use other options to deploy the Android application: 
 
 - [Using Android Studio](https://developer.android.com/studio/run/index.html)
 - [Using Command Line](https://developer.android.com/studio/build/building-cmdline.html)
@@ -107,7 +107,7 @@ adb shell am start -n "org.thingsboard.sample.gpiocontrol/org.thingsboard.sample
 
 ## Data visualization
 
-In order to simplify this guide we have included "Raspberry PI GPIO Demo Dashboard" to the [demo data](/docs/samples/demo-account/#dashboards) that is available in each thingboard installation. 
+In order to simplify this guide, we have included "Raspberry PI GPIO Demo Dashboard" to the [demo data](/docs/samples/demo-account/#dashboards) that is available in each Thingboard installation. 
 Of course, you can modify this dashboard: tune, add, delete widgets, etc.
 You can access this dashboard by logging in as a tenant administrator.
 
@@ -124,7 +124,7 @@ In case of live-demo server:
 See **[live-demo](/docs/user-guide/live-demo/)** page for more details how to get your account.
  
 Once logged in, open **Dashboards->Raspberry PI GPIO Demo Dashboard** page. You should observe demo dashboard with GPIO control and status panel for your device. 
-Now you can switch status of GPIOs using control panel. As a result you will see LEDs status change on device and on the status panel.
+Now you can switch status of GPIOs using control panel. As a result, you will see LEDs status change on the device and on the status panel.
 
 Below is the screenshot of the "Raspberry PI GPIO Demo Dashboard".  
 
@@ -132,7 +132,7 @@ Below is the screenshot of the "Raspberry PI GPIO Demo Dashboard".
  
 ## Next steps
 
-Browse other [samples](/docs/samples) or explore guides related to main Thingsboard features:
+Browse other [samples](/docs/samples) or explore guides related to main ThingsBoard features:
 
  - [Device attributes](/docs/user-guide/attributes/) - how to use device attributes.
  - [Telemetry data collection](/docs/user-guide/telemetry/) - how to collect telemetry data.

@@ -1,9 +1,9 @@
-bigheader: "Thingsboard Documentation"
-abstract: "Documentation for using Thingsboard IoT Platform."
+bigheader: "ThingsBoard Documentation"
+abstract: "Documentation for using ThingsBoard IoT Platform."
 toc:
-- title: Thingsboard Documentation
+- title: ThingsBoard Documentation
   path: /docs/
-- title: What is Thingsboard?
+- title: What is ThingsBoard?
   path: /docs/getting-started-guides/what-is-thingsboard/
 - title: Getting Started
   path: /docs/getting-started-guides/helloworld/
@@ -11,19 +11,19 @@ toc:
   section:
   - title: Installation options
     path: /docs/user-guide/install/installation-options/
-  - title: Installing Thingsboard on Windows
+  - title: Installing ThingsBoard on Windows
     path: /docs/user-guide/install/windows/
-  - title: Installing Thingsboard on Linux (Ubuntu & CentOS)
+  - title: Installing ThingsBoard on Linux (Ubuntu & CentOS)
     path: /docs/user-guide/install/linux/
-  - title: Installing Thingsboard on Raspberry Pi 3
+  - title: Installing ThingsBoard on Raspberry Pi 3
     path: /docs/user-guide/install/rpi/
-  - title: Installing Thingsboard using Kubernetes (Google Cloud Platform)
+  - title: Installing ThingsBoard using Kubernetes (Google Cloud Platform)
     path: /docs/user-guide/install/kubernetes/
-  - title: Installing Thingsboard using Docker (Linux or Mac OS)
+  - title: Installing ThingsBoard using Docker (Linux or Mac OS)
     path: /docs/user-guide/install/docker/
-  - title: Installing Thingsboard using Docker (Windows)
+  - title: Installing ThingsBoard using Docker (Windows)
     path: /docs/user-guide/install/docker-windows/
-  - title: Installing Thingsboard on AWS EC2
+  - title: Installing ThingsBoard on AWS EC2
     path: /docs/user-guide/install/aws/
   - title: Building from sources
     path: /docs/user-guide/install/building-from-source/
@@ -59,6 +59,8 @@ toc:
     path: /docs/iot-gateway/sigfox-iot-data-visualization/
   - title: Persist and visualize IBM Watson IoT data
     path: /docs/iot-gateway/integration-with-ibm-watson-iot/
+  - title: Notifications and Alarms on your smartphone using Telegram Bot
+    path: /docs/iot-gateway/integration-with-telegram-bot/
 - title: Security
   section:
   - title: MQTT over SSL
