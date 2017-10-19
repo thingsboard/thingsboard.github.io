@@ -127,9 +127,9 @@ ws(s)://host:port/api/ws/plugins/telemetry?token=$JWT_TOKEN
 ```
 
 Once opened, you can send 
-[subscription commands](https://github.com/thingsboard/thingsboard/blob/master/extensions/extensions-core/src/main/java/org/thingsboard/server/extensions/core/plugin/telemetry/cmd/TelemetryPluginCmdsWrapper.java) 
+[subscription commands](https://github.com/thingsboard/thingsboard/blob/master/extensions-core/src/main/java/org/thingsboard/server/extensions/core/plugin/telemetry/cmd/TelemetryPluginCmdsWrapper.java) 
 and receive 
-[subscription updates](https://github.com/thingsboard/thingsboard/blob/master/extensions/extensions-core/src/main/java/org/thingsboard/server/extensions/core/plugin/telemetry/sub/SubscriptionUpdate.java):
+[subscription updates](https://github.com/thingsboard/thingsboard/blob/master/extensions-core/src/main/java/org/thingsboard/server/extensions/core/plugin/telemetry/sub/SubscriptionUpdate.java):
 
 where 
 
