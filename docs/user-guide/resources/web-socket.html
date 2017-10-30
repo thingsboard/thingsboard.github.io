@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+    <script type="text/javascript">
+        function WebSocketTest() {
+            if ("WebSocket" in window) {
+                alert("WebSocket is supported by your Browser!");
+
+                var token = "YOUR_JWT_TOKEN";
+                var entityId = "YOUR_DEVICE_ID";
+                var webSocket = new WebSocket("ws(s)://host:port/api/ws/plugins/telemetry?token=" + token);
+
+                if (entityId === "YOUR_DEVICE_ID" || token === "YOUR_JWT_TOKEN") {
+                    alert("Invalid token or device id!");
+                    webSocket.close();
+                }
+
+                webSocket.onopen = function () {
+                    var object = {
+                        tsSubCmds: [
+                            {
+                                entityType: "DEVICE",
+                                entityId: entityId,
+                                scope: "LATEST_TELEMETRY",
+                                cmdId: 10
+                            }
+                        ],
+                        historyCmds: [],
+                        attrSubCmds: []
+                    };
+                    var data = JSON.stringify(object);
+                    webSocket.send(data);
+                    alert("Message is sent: " + data);
+                };
+
+                webSocket.onmessage = function (event) {
+                    var received_msg = event.data;
+                    alert("Message is received: " + received_msg);
+                };
+
+                webSocket.onclose = function (event) {
+                    alert("Connection is closed!");
+                };
+
+                window.onbeforeunload = function (event) {
+                    webSocket.close();
+                };
+            }
+
+            else {
+                alert("WebSocket is NOT supported by your Browser!");
+            }
+        }
+    </script>
+
+</head>
+<body>
+
+<div id="sse">
+    <a href="javascript:WebSocketTest()">Run WebSocket</a>
+</div>
+
+</body>
+</html>

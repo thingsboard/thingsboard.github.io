@@ -10,7 +10,7 @@ description: MQTT protocol support for ThingsBoard IoT Gateway
 * TOC
 {:toc}
 
-This guide will help you to get familiar with OPC-UA extension configuration for ThingsBoard IoT Gateway.
+This guide will help you to get familiar with MQTT extension configuration for ThingsBoard IoT Gateway.
 Use [general configuration](/docs/iot-gateway/configuration/) to enable this extension.
 We will describe extension configuration file below.
 
