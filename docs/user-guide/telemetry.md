@@ -141,7 +141,25 @@ where
  - **startTs** - start time of fetch interval for historical data query, in milliseconds.
  - **endTs** - end time of fetch interval for historical data query, in milliseconds.
  
-A complete example is coming soon!
+##### Example 
+
+Change values of the following variables : 
+
+ - **token** - to the JWT token which you can get using the [following link](https://thingsboard.io/docs/reference/rest-api/#rest-api-auth).
+
+ - **entityId** - to your device id.
+ 
+ In case of live-demo server : 
+ 
+ - replace **host:port** with **demo-thingsboard.io** and choose secure connection - **wss://**
+ 
+ In case of local installation :
+ 
+ - replace **host:port** with **127.0.0.1:8080** and choose **ws://**
+ 
+{% capture tabspec %}web-socket
+A,web-socket.html,html,resources/web-socket.html,/docs/user-guide/resources/web-socket.html{% endcapture %}  
+{% include tabs.html %}
 
 ## Data visualization
 
