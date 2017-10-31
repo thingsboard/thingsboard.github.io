@@ -5,14 +5,13 @@ import random
 broker="test.mosquitto.org"
 topic_pub='v1/devices/me/telemetry'
 
-
 client = mqtt.Client()
 
-client.username_pw_set("$YOUR_DEVICE_ACCESS_TOKEN")
+client.username_pw_set("$WIND_TURBINE_2_ACCESS_TOKEN")
 client.connect('127.0.0.1', 1883, 1)
 
-for i in range(100):
-    x = random.randrange(20, 100)
+while True:
+    x = random.randrange(45, 51)
     print x
     msg = '{"windSpeed":"'+ str(x) + '"}'
     client.publish(topic_pub, msg)
