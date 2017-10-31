@@ -153,7 +153,7 @@ Change values of the following variables :
  
  - replace **host:port** with **demo-thingsboard.io** and choose secure connection - **wss://**
  
- In case of local instalation :
+ In case of local installation :
  
  - replace **host:port** with **127.0.0.1:8080** and choose **ws://**
  
