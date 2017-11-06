@@ -67,22 +67,22 @@ Also, you'll need to implement JSON descriptors for the UI forms of the *Plugin*
 
 We are going to provide the details on how to create new extensions to the system based on the [REST API Call Extension](/docs/reference/plugins/rest/) that is already placed in the system.
 
-*Extension* is responsible for sending HTTP requests to specific endpoints. Here is extension [code](https://github.com/thingsboard/thingsboard/tree/master/extensions/extension-rest-api-call/src/main/java/org/thingsboard/server/extensions/rest).
+*Extension* is responsible for sending HTTP requests to specific endpoints. [Here](https://github.com/thingsboard/thingsboard/tree/master/extensions/extension-rest-api-call/src/main/java/org/thingsboard/server/extensions/rest) is the extension code.
 
-Developing of the extension consists of two stages:
+Extension Development consists of two stages:
 
-- Implement server side classes of *Plugin* and *Action*. Classes are responsible for handling telemetry messages and doing job by connecting to other 3rd party systems, sending messages there etc.
-- Add JSON descriptors that used to generate UI forms for *Plugin* and *Action* configuration.
+- *Plugin* and *Action* server-side classes implementation. These classes are responsible for handling telemetry messages and doing job by connecting to 3rd party systems, sending messages etc.
+- Creating JSON descriptors that are used to generate UI forms for *Plugin* and *Action* configuration.
 
-#### Server-side classes development
+#### Server-side classes implementation
 
-The server-side development contains two parts - *Action* and *Plugin* classes coding.
+The server-side classes implementation contains of two parts - creating *Action* classes ans *Plugin* classes.
 
 ![image](/images/user-guide/contribution/action-plugin-communication.png)
 
 ##### Action Development Guide
 
-*Action* is responsible for processing messages that have been sent from device (timeseries or attribute data) and converting it into a *Java* object (an object must implement *RuleToPluginMsg* interface) that is going to be processed by *Plugin*.
+*Action* is responsible for processing a message that  was sent from a device (timeseries or attribute data) and converting it into a *Java* object (an object must implement *RuleToPluginMsg* interface) that is going to be processed by *Plugin*.
 This *Java* object contains payload data that is created from the device telemetry message data (timeseries or attribute) and *Action* configuration. 
 The payload contains data that is going to be sent to external systems, for example, message body for the email or message that is going to be sent to Kafka topic.
 
@@ -93,7 +93,7 @@ Here are particular samples:
 - in case of **REST API Call Extension**, *Action* will create object that contains information regarding REST request to specific endpoint
 - etc.
 
-To create *Action* for specific extension, you'll need to create class that implements *org.thingsboard.server.extensions.api.plugins.PluginAction* interface:
+To create an *Action* for a specific extension, you'll need to create a class that implements *org.thingsboard.server.extensions.api.plugins.PluginAction* interface:
 
 ```java
 public interface PluginAction<T> extends ConfigurableComponent<T>, RuleLifecycleComponent {
@@ -103,9 +103,9 @@ public interface PluginAction<T> extends ConfigurableComponent<T>, RuleLifecycle
 }
 ```
 
-- **convert(RuleContext ctx, ToDeviceActorMsg toDeviceActorMsg, RuleProcessingMetaData deviceMsgMd)** - builds messages that is going to be send to *Plugin*
-- **convert(PluginToRuleMsg<?> response)** - converts responses from *Plugin* notifying regarding result of the *Action* call
-- **isOneWayAction()** - notifies platform that action is going to wait for a it's result before return
+- **convert(RuleContext ctx, ToDeviceActorMsg toDeviceActorMsg, RuleProcessingMetaData deviceMsgMd)** - builds messages that are going to be sent to a *Plugin*
+- **convert(PluginToRuleMsg<?> response)** - converts responses from *Plugin* notifying regarding of the result of the *Action* call
+- **isOneWayAction()** - notifies platform that action is going to wait for it's result before return
 
 and *org.thingsboard.server.extensions.api.rules.RuleLifecycleComponent* interface:
  
@@ -117,11 +117,11 @@ public interface RuleLifecycleComponent {
 }
 ```
    
-- **resume** method - provides logic that should be done once the action resumed if needed.
-- **suspend** method - provides logic that should be done once the action paused if needed (closes external resources, close connections etc.).
-- **stop** method - provides logic that should be done once the action stopped if needed (closes external resources, close connections etc.).
+- **resume** method - provides logic that should be performed once the action resumed if needed.
+- **suspend** method - provides logic that should be performed once the action paused if needed (closes external resources, connections etc.).
+- **stop** method - provides logic that should be performed once the action stopped if needed (closes external resources, connections etc.).
 
-This class is the core of your *Action* and here you should implement logic where you will create a *Java* object (an object that implements *RuleToPluginMsg* interface). 
+This class is the core of your *Action* and here you should implement the logic for creating a *Java* object (an object that implements *RuleToPluginMsg* interface). 
 This object is going to be passed to *Plugin* for processing.
 
 *Action* class must be annotated with *org.thingsboard.server.extensions.api.component.Action* so **ThingsBoard** will correctly process this class during start-up.
@@ -135,11 +135,11 @@ In case of **REST API Call Extension** sample class is *org.thingsboard.server.e
 It holds information regarding REST request - *body*, *http method*, *result code*, etc. 
 This class must implement *Serializable* interface to be able to be transferred to *Plugin*.
 
-Payload object *above* must be wrapped to a class that extends *org.thingsboard.server.extensions.api.plugins.msg.AbstractRuleToPluginMsg* class. 
-Basically, this is needed to pass objects between the *Plugin* and *Action* components and contains technical metadata.
+The payload object *above* must be wrapped in a class that extends *org.thingsboard.server.extensions.api.plugins.msg.AbstractRuleToPluginMsg* class. 
+Basically, this is needed to pass objects between the *Plugin* and *Action* components. The supeclass also contains technical metadata.
 
 To finish with *Action* implementation you'll need to add *POJO Java* class that contains the configuration of the *UI Action* form.
-It contains fields that are mapped to the UI form of *Action*. In this form, user will provide details regarding the configuration of your *Action*.
+Should have fields that are mapped to the UI form of *Action*. In this form, user will provide details regarding the configuration of your *Action*.
 
 In case of **REST API Call Extension** sample class is *org.thingsboard.server.extensions.rest.action.RestApiCallPluginActionConfiguration*.
 It holds information regarding the template of the *REST* request, *expected result code* etc.
@@ -156,7 +156,7 @@ This processing depends on your needs and could be anything like:
 - send messages to ThingsBoard instance
 - etc.
 
-Development of *Plugin* starts from creating a class that implements *org.thingsboard.server.extensions.api.plugins.Plugin* interface:
+Development of the *Plugin* starts from creating a class that implements *org.thingsboard.server.extensions.api.plugins.Plugin* interface:
 
 ```java
 public interface Plugin<T> extends ConfigurableComponent<T> {
@@ -197,15 +197,15 @@ It must be annotated with *org.thingsboard.server.extensions.api.component.Plugi
 In case of **REST API Call Extension** sample class is *org.thingsboard.server.extensions.rest.plugin.RestApiCallPlugin*.
 In this extension *Plugin* is responsible for setting URL and headers for the REST request.
 
-Alos, you need to create class that implements *org.thingsboard.server.extensions.api.plugins.handlers.RuleMsgHandler* interface.
+Also, you need to create a class that implements *org.thingsboard.server.extensions.api.plugins.handlers.RuleMsgHandler* interface.
 
-This class is actually doing 'real' work - send messages to HTTP endpoints, Kafka topics, etc.
+This class is actually doing 'real' work - sends messages to HTTP endpoints, Kafka topics, etc.
 
 In case of **REST API Call Extension** the sample class is *org.thingsboard.server.extensions.rest.plugin.RestApiCallMsgHandler*.
 This class is responsible for creating *Spring REST template* and sending HTTP requests.
 
 To finish with *Plugin* implementation you'll need to add a *POJO Java* class that contains the configuration of the *UI Plugin* form.
-It contains fields that are mapped to the UI form of *Plugin*. In this form, user will provide details regarding the configuration of your *Plugin*.
+It shold have fields that are mapped to the UI form of *Plugin*. In this form, user will provide details regarding the configuration of your *Plugin*.
 
 In case of **REST API Call Extension** sample class is *org.thingsboard.server.extensions.rest.plugin.RestApiCallPluginConfiguration*.
 It holds information regarding the host of the REST endpoint, base path, authentication details, etc.
@@ -428,4 +428,4 @@ Now it's time to start **ThingsBoard** and verify that **extension** works as yo
 
 Here is [configuration](/docs/reference/plugins/rest/) and verification of **REST API Call Extension**. 
 
-The same steps could be applied for the newly added extension, but taking into account new extension configuration and functionality. 
+The same steps could be applied for the newly added extension, but taking into account the new extension configuration and functionality. 
