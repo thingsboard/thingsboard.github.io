@@ -68,10 +68,10 @@ Don't forget to **activate** your new plugin instance by clicking on the corresp
 
 Now we need to configure the Rule that will be used to push wind speed data from the weather stations to Kafka.
 
-[**Download**](/docs/samples/analytics/resources/windspeed_telemetry_rule.json) the json with plugin descriptor 
+[**Download**](/docs/samples/analytics/resources/windspeed_telemetry_rule.json) the json with rule descriptor 
 and use these [**instructions**](/docs/user-guide/ui/rules/#rule-import) to import it to your instance.
 
-Don't forget to **activate** your new rule instance by clicking on the corresponding button in plugin details!
+Don't forget to **activate** your new rule instance by clicking on the corresponding button in rule details!
 
 ![image](/images/samples/analytics/spark/kafka-rule-activation.png)
 
