@@ -161,14 +161,14 @@ var tb = (function () {
 		classOnCondition(body, 'fixed', windowHeight - footerHeight > bodyHeight);
 	}
 
-	function resetTheView() {
-		if (html.hasClass('open-nav')) {
+	function resetTheView(event) {
+		if (html.hasClass('open-nav') && event.type !== "scroll") {
 			toggleMenu();
 		} else {
 			HEADER_HEIGHT = header.outerHeight();
 		}
 
-		if (html.hasClass('open-toc')) {
+		if (html.hasClass('open-toc') && event.type !== "scroll") {
 			toggleToc();
 		}
 
