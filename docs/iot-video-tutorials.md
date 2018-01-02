@@ -17,7 +17,7 @@ This tutorial covers brief introduction to the platform and hands-on part.
 
 You will learn how to provision new Device, collect data using MQTT and visualize it on the real-time dashboard.
 
-
+<br>
 <div id="video">  
     <div id="video_wrapper">
         <iframe src="https://www.youtube.com/embed/dIKXFxpfB_Q" frameborder="0" allowfullscreen></iframe>
@@ -57,3 +57,57 @@ You will learn how to:
         <iframe src="https://www.youtube.com/embed/JCW_hShAp7I" frameborder="0" allowfullscreen></iframe>
     </div>
 </div>
+
+
+#### Dashboard development guide, Part 1: Visualizing Assets data using Maps and Tables
+
+The first part of this tutorial provides preparations for the creating a new dashboard and visualizing data from asset attributes.
+
+You will learn how to:
+
+- create assets, devices, and relations between them. 
+- add [server attributes](/docs/user-guide/attributes/#attribute-types) and create a new dashboard.
+- visualize data from asset attributes using Entities Table and Map widgets.
+
+<div id="video">  
+    <div id="video_wrapper">
+        <iframe src="https://www.youtube.com/embed/BhYnKtbUHHI" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
+
+
+#### Dashboard development guide, Part 2: Dashboard states, Aliases and Widget actions
+
+The second part of this tutorial covers basic operations with dashboard states and actions, introduces us to entity aliases and image map widget.
+
+You will learn how to:
+
+- add and configure new dashboard states.
+- create various aliases.
+- visualize attributes data using Image Map widget.
+- create actions in different widgets in order to navigate between states.
+- visualize telemetry data using Analogue and Digital gauges, Timeseries widget.
+
+<div id="video">  
+    <div id="video_wrapper">
+        <iframe src="https://www.youtube.com/embed/DjoAsg3F8OM" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
+
+
+#### Dashboard development guide, Part 3: Remote Device control and Alarm management
+
+The third part of this tutorial covers usage of the device control widget and basic operations with rules and alarms.
+
+You will learn how to:
+
+- add and use Knob Control widget.
+- create alarm rules.
+- handle alarms using Alarms widget.
+- make a dashboard public.
+
+<div id="video">  
+    <div id="video_wrapper">
+        <iframe src="https://www.youtube.com/embed/Efvr4vlvU1E" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div><br>
