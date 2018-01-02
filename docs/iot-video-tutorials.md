@@ -66,7 +66,7 @@ The first part of this tutorial provides preparations for the creating a new das
 You will learn how to:
 
 - create assets, devices, and relations between them. 
-- add [server attributes](/docs/user-guide/attributes) and create a new dashboard.
+- add [server attributes](/docs/user-guide/attributes/#attribute-types) and create a new dashboard.
 - visualize data from asset attributes using Entities Table and Map widgets.
 
 <div id="video">  
