@@ -61,13 +61,13 @@ You will learn how to:
 
 #### Dashboard development guide, Part 1: Visualizing Assets data using Maps and Tables
 
-The first part of this tutorial provides preparations for the creating a new dashboard, visualizing attributes data.
+The first part of this tutorial provides preparations for the creating a new dashboard and visualizing data from asset attributes.
 
 You will learn how to:
 
-- create assets and devices, build relations between them. 
-- add server attributes and create a new dashboard.
-- visualize attributes data using Entities Table and Map widgets.
+- create assets, devices, and relations between them. 
+- add [server attributes](/docs/user-guide/attributes) and create a new dashboard.
+- visualize data from asset attributes using Entities Table and Map widgets.
 
 <div id="video">  
     <div id="video_wrapper">
@@ -78,7 +78,7 @@ You will learn how to:
 
 #### Dashboard development guide, Part 2: Dashboard states, Aliases and Widget actions
 
-The second part of this tutorial covers basic operations with dashboard states and actions, introduces us to aliases and some other widgets.
+The second part of this tutorial covers basic operations with dashboard states and actions, introduces us to entity aliases and image map widget.
 
 You will learn how to:
 
@@ -97,7 +97,7 @@ You will learn how to:
 
 #### Dashboard development guide, Part 3: Remote Device control and Alarm management
 
-The third part of this tutorial covers usage of the device control widget, introduces us to rules and alarms.
+The third part of this tutorial covers usage of the device control widget and basic operations with rules and alarms.
 
 You will learn how to:
 
