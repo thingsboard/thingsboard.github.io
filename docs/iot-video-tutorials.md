@@ -71,7 +71,7 @@ You will learn how to:
 
 <div id="video">  
     <div id="video_wrapper">
-        <iframe src="https://www.youtube.com/embed/BhYnKtbUHHI" frameborder="0" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/5qZRSBYTDN4" frameborder="0" allowfullscreen></iframe>
     </div>
 </div>
 
@@ -90,7 +90,7 @@ You will learn how to:
 
 <div id="video">  
     <div id="video_wrapper">
-        <iframe src="https://www.youtube.com/embed/DjoAsg3F8OM" frameborder="0" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/Wau2icogLrw" frameborder="0" allowfullscreen></iframe>
     </div>
 </div>
 
@@ -108,6 +108,6 @@ You will learn how to:
 
 <div id="video">  
     <div id="video_wrapper">
-        <iframe src="https://www.youtube.com/embed/Efvr4vlvU1E" frameborder="0" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/6DOyA3i5NGc" frameborder="0" allowfullscreen></iframe>
     </div>
 </div><br>
