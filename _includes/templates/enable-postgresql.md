@@ -1,4 +1,4 @@
-Uncomment '# PostgreSQL DAO Configuration' block.
+Uncomment '# PostgreSQL DAO Configuration' block.  Be sure to update the postgres databases username and password in the bottom two lines of the block (here, as shown, they are both "postgres").
 
 ```text
 # PostgreSQL DAO Configuration
