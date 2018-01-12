@@ -1,0 +1,6 @@
+bigheader: "Products"
+abstract: "Lorem ipsum dolor sit amet"
+hidetoc: "true"
+toc:
+- title: Products
+  path: /products/

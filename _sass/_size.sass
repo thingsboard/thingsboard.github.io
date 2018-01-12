@@ -61,7 +61,10 @@ header
 		line-height: $main-nav-left-button-size
 		font-size: $main-nav-left-button-font-size
 
-.open-nav, .y-enough
+nav.nav-menu
+	padding: $nav-menu-padding
+
+//.open-nav, .y-enough
 	#gettingStarted, #liveDemo
 		margin-left: $nav-buttons-margin-left
 
@@ -78,3 +81,11 @@ header
 	height: $vendor-strip-height
 	line-height: $vendor-strip-height
 	font-size: $vendor-strip-font-size
+
+@media screen and (min-width: 1500px)
+	#docs
+		#hero
+			h1, h5
+				padding-left: $full-width-paddingX-large
+				padding-right: $full-width-paddingX-large
+

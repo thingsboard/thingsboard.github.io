@@ -6,23 +6,52 @@ $nav-buttons-margin-left: 30px
 @media screen and (min-width: 1025px)
 
 	.nav-buttons
+		.nav-items
+			display: inline-block
+
+	.nav-buttons
 		.button + *
 			margin-left: $nav-buttons-margin-left
 
-	.open-nav, .y-enough
-		#gettingStarted, #liveDemo
+	//.open-nav, .y-enough
+		//#gettingStarted, #liveDemo
 			margin-left: $nav-buttons-margin-left
 
 	#mainNav
 		.nav-box
 			padding: 0 20px
+		main
+			&#headNav
+				h3
+					font-size: 28px
+					line-height: 36px
 
 	#vendorStrip
 		height: $vendor-strip-height
 		line-height: $vendor-strip-height
 		#docsList
 			li
-				a.YAH
+				a
+					position: relative
+					&:hover
+						text-decoration: none !important
+					&::before
+						content: ''
+						position: absolute
+						left: 0px
+						bottom: 8px
+						width: 100%
+						height: 3px
+						background-color: #f5f6f7
+						transform: scale(0, 1)
+						transform-origin: 0 50%
+						transition: 250ms
+					&:not(.YAH):hover::before
+						transform: scale(0.25, 1)
+					&.YAH::before
+						background-color: $light-blue
+						transform: scale(1, 1)
+				//a.YAH
 					&:after
 						content: ""
 						display: block
@@ -68,16 +97,16 @@ $nav-buttons-margin-left: 30px
 			position: relative
 			float: left
 			display: block
-			width: 220px
-			height: 80px
+			width: 180px
+			height: 60px
 			top: 0
 			left: 0
 			transform: none
-			background-image: url(../images/thingsboard_logo_white.svg)
+			background-image: url(../images/thingsboard_with_title_white.png)
 
-		&.flip-nav, &.open-nav
-			.logo
-				background-image: url(../images/thingsboard_logo_blue.svg)
+		//&.flip-nav, &.open-nav
+		//	.logo
+		//		background-image: url(../images/thingsboard_logo_blue.svg)
 
 	@media screen and (min-width: 1250px)
 		#docs
@@ -87,12 +116,33 @@ $nav-buttons-margin-left: 30px
 						li
 							margin-right: 20px
 
+		//.nav-item
+			padding: 15px 30px
+			&::before
+				left: 30px
+				width: calc(100% - 60px)
+
 	@media screen and (min-width: 1500px)
 		#docs
 			#hero
 				#vendorStrip
 					#searchBox
 						width: 25%
+			#liveDemo
+				display: inline-block
+		#home
+			//#viewDocs, #blog, #gettingStarted, #liveDemo, #useCases
+			.center-button
+				display: inline-block
+
+		section, header, #vendorStrip
+			padding-left: $full-width-paddingX-large
+			padding-right: $full-width-paddingX-large
+
+	@media screen and (min-width: 1600px)
+		#home, #docs
+			#gettingStarted.center-button
+				display: inline-block
 
 	#encyclopedia
 		padding: 50px 50px 20px 20px
@@ -337,7 +387,7 @@ $nav-buttons-margin-left: 30px
 			h1
 				padding: 20px
 
-		#gettingStarted, #liveDemo
+		//#gettingStarted, #liveDemo
 			width: auto
 			background-color: $blue
 			padding: 0 20px

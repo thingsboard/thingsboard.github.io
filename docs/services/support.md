@@ -43,41 +43,6 @@ description: ThingsBoard support plans for IoT projects cloud infrastructure sup
     <div class="supportPlan">
         <ul class="pricingTable">
             <li class="heading-row">
-                <div>BASIC</div>
-            </li>
-            <li class="pricing-row">
-                <div class="old-price">
-                    ( $199 /month )
-                </div>
-                <div class="price">
-                    $99<span class="small"> / mo</span>
-                </div>                
-            </li>            
-            <li>
-                Online forum and chat
-            </li>
-            <li>
-                2 server instances
-            </li>
-            <li> 
-                Max 3 incidents per month           
-            </li>
-            <li>
-                E-mail support in less than 24 hours
-            </li>
-            <li>
-                Phone support on business hours
-            </li>            
-            <li class="empty">
-            </li>
-            <li>
-                <a href="/docs/contact-us" class="button">Contact us</a>
-            </li>
-        </ul>
-    </div>
-    <div class="supportPlan">
-        <ul class="pricingTable">
-            <li class="heading-row">
                 <div>PROFESSIONAL</div>
             </li>
             <li class="pricing-row">
@@ -117,12 +82,9 @@ description: ThingsBoard support plans for IoT projects cloud infrastructure sup
                 <div>ENTERPRISE</div>
             </li>
             <li class="pricing-row">
-                <div class="old-price" style="text-decoration: none;">
-                    &nbsp;
+                <div class="price-contact-us">
+                    <a href="/docs/contact-us" class="button accent">Contact us</a>
                 </div>
-                <div class="price" style="margin-top: -14px;">
-                    $2499<span class="small"> / mo</span>
-                </div>                
             </li>        
             <li>
                 Online forum and chat

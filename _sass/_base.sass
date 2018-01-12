@@ -22,26 +22,35 @@ $p-line-height: 22px
 
 // header
 $full-width-paddingX: 20px
+$full-width-paddingX-large: 100px
 
 $main-width: 100%
 $main-max-width: 100%
 
-$header-height: 80px
+$header-height: 60px
 
 $logo-width: 220px
 
 $nav-buttons-margin-left: 10px
 
-$hamburger-size: 50px
+$hamburger-size: 40px
 
 
 // main nav
-$main-nav-padding: 120px 0 30px
+$main-nav-padding: 100px 0 0
 $main-nav-h5-margin-bottom: 1em
 $main-nav-h3-margin-bottom: 0.6em
 $main-nav-main-sibling-margin-top: 40px
 $main-nav-left-button-size: 50px
 $main-nav-left-button-font-size: 18px
+
+// nav menu
+$nav-menu-padding: 80px 0 0
+//$main-nav-h5-margin-bottom: 1em
+//$main-nav-h3-margin-bottom: 0.6em
+//$main-nav-main-sibling-margin-top: 40px
+//$main-nav-left-button-size: 50px
+//$main-nav-left-button-font-size: 18px
 
 
 // hero
@@ -100,6 +109,32 @@ p
 		&:focus
 			background-color: $orange-02
 
+.nav-item
+	text-transform: uppercase
+	color: #fff
+	padding: 15px 12.5px
+	position: relative
+	cursor: pointer
+	&:hover
+		text-decoration: none !important
+	&::before
+		content: ''
+		position: absolute
+		left: 12.5px
+		bottom: 12px
+		width: calc(100% - 25px)
+		height: 3px
+		background-color: #f5f6f7
+		transform: scale(0, 1)
+		transform-origin: 0 50%
+		transition: 250ms
+	&:not(.nav-item-on):hover::before
+		transform: scale(0.25, 1)
+	&.nav-item-on::before
+		background-color: $light-blue
+		transform: scale(1, 1)
+
+
 #cellophane
 	position: fixed
 	top: 0
@@ -116,23 +151,36 @@ header
 	left: 0
 	width: 100%
 	z-index: 8888
-	background-color: transparent
-	box-shadow: 0 0 0 transparent
+	//background-image: url(/images/texture.png)
+	//background-color: $dark-grey
+	//opacity: 0.95
+	//background-color: transparent
+	//box-shadow: 0 0 0 transparent
+	//box-shadow: 0 1px 2px $medium-grey
 	overflow: hidden
 	transition: 0.3s
 	text-align: center
-
+	&::after
+		content: ""
+		background: $dark-grey url(/images/texture.png)
+		opacity: 0.95
+		top: 0
+		left: 0
+		bottom: 0
+		right: 0
+		position: absolute
+		z-index: -1
 
 .logo
 	position: relative
 	float: left
 	display: block
-	width: 220px
-	height: 80px
+	width: 180px
+	height: 60px
 	top: 0
 	left: 0
 	transform: none
-	background-image: url(/images/thingsboard_logo_white.svg)
+	background-image: url(/images/thingsboard_with_title_white.png)
 	background-size: contain
 	background-position: center center
 	background-repeat: no-repeat
@@ -141,10 +189,10 @@ header
 #docs
 	.flyout-button
 		position: fixed
-		top: 20px
+		top: 10px
 		left: 20px
-		width: 50px
-		height: 50px
+		width: 40px
+		height: 40px
 		background-image: url(/images/toc_icon.png)
 		background-position: center center
 		background-repeat: no-repeat
@@ -158,36 +206,56 @@ header
 
 	.logo
 		position: absolute
-		top: 40px
+		top: 30px
 		left: 50%
 		transform: translate(-50%, -50%)
 		display: block
-		width: 45px
-		height: 44px
-		background-image: url(/images/favicon.png)
+		width: 35px
+		height: 35px
+		background-image: url(/images/favicon_white.png)
 
 
-	&.flip-nav .flyout-button
+//	&.flip-nav .flyout-button
 		background-image: url(/images/toc_icon_grey.png)
 
 #githubButtonContainer
+	display: none
 	position: relative
 	padding-left: 12px
+	margin-right: 158px
 	float: left
 	vertical-align: middle
-	height: 80px
+	height: 60px
 	iframe
 		position: absolute
 		top: 50%
 		transform: translateY(-50%) scale(0.7)
 
 .nav-buttons
+	display: inline-flex
+	flex-direction: row
+	align-items: center
+	align-content: center
+	.nav-items
+		display: none
+		padding-right: 20px
+
+.nav-buttons-left
+	float: left
+
+.nav-buttons-right
 	float: right
 
-#viewDocs, #useCases, #blog, #gettingStarted, #liveDemo, #githubButtonContainer
+.nav-buttons-center
+	float: none
+
+//#viewDocs, #useCases, #blog, #gettingStarted, #liveDemo, #githubButtonContainer
 	display: none
 
-#viewDocs, #blog, #useCases
+//#viewDocs, #blog, #useCases
+.center-button
+	display: none
+	line-height: 30px
 	border: 2px solid white
 	background-color: transparent
 	transition: 0.3s
@@ -197,16 +265,25 @@ header
 		color: $dark-grey
 
 
-#gettingStarted, #liveDemo
-	width: 0
-	padding: 0 0
+//#gettingStarted, #liveDemo
+	//width: 0
+	//padding: 0 0
 	border: 0px solid transparent
 	background-color: transparent
 	text-align: center
 	white-space: nowrap
 	vertical-align: middle
 	overflow: hidden
-	transition: 0.3s
+	//transition: 0.3s
+
+//.open-nav, .y-enough
+
+//#gettingStarted, #liveDemo
+	//width: 150px
+	border-width: 1px
+	background-color: $blue
+	border-color: $blue
+
 
 .demoDashboardButton
 	text-align: center
@@ -336,9 +413,9 @@ header
 	div, &:before, &:after
 		position: absolute
 		left: 15%
-		width: 70%
+		width: 65%
 		height: 2px
-		background-color: $blue
+		background-color: $white
 		transition: 0.3s
 		content: ""
 
@@ -353,7 +430,7 @@ header
 
 	&:hover
 		div, &:before, &:after
-			background-color: white
+			background-color: $light-blue
 
 #mainNav
 	h5
@@ -364,12 +441,15 @@ header
 		white-space: nowrap
 		overflow: hidden
 		clear: both
-		&.headNav
+		&#headNav
 			display: flex
 			align-items: center
 			align-content: center
 			justify-content: center
 			flex-direction: row
+			h3
+				font-size: 20px
+				line-height: 28px
 
 	.nav-box
 		white-space: normal
@@ -378,26 +458,70 @@ header
 
 	h3
 		a
-			color: $blue
+			color: #fff
 			text-decoration: none
+			transition: 300ms
+			&:hover
+				color: $light-blue
+
+.nav-menu
+	main
+		white-space: nowrap
+		overflow: hidden
+		clear: both
+		display: flex
+		flex-direction: row
+		justify-content: space-around
+		align-items: flex-start
+		.nav-box
+			width: 280px
+			white-space: normal
+			display: inline-block
+			padding: 0 10px
+		ul
+			li
+				text-align: left
+				padding: 4px
+				font-size: 16px
+				color: #fff
+				transition: 300ms
+				&:hover
+					color: $light-blue
+				strong
+					position: relative
+					color: $light-blue
+					font-size: 18px
+					&::before
+						content: ''
+						position: absolute
+						bottom: -4px
+						width: 100%
+						height: 1px
+						background-color: $light-blue
+						transform: scale(0, 1)
+						transform-origin: 0 50%
+						transition: 250ms
+					&:hover::before
+						transform: scale(1, 1)
 
 // FLIP NAV
-.flip-nav
+//.flip-nav
 	header
-		background-color: white
+		//background-color: white
 
 
 // OPEN NAV
 .open-nav
-	body
-		overflow: hidden
+	//body
+	//	overflow: hidden
 
 	#cellophane
 		display: block
 		z-index: 9998
 
 	header
-		background-color: #e0e7ea
+		//background-color: #e0e7ea
+		//background-color: rgba(51,66,80,0.95)
 		z-index: 9999
 
 	#hamburger
@@ -414,19 +538,13 @@ header
 		&:after
 			transform: rotate(-45deg)
 
-.open-nav, .y-enough
-	#gettingStarted, #liveDemo
-		width: 150px
-		border-width: 1px
-		background-color: $blue
-		border-color: $blue
 
 
 .flip-nav, .open-nav
-	header
-		box-shadow: 0 1px 2px $medium-grey
+	//header
+	//	box-shadow: 0 1px 2px $medium-grey
 
-	#viewDocs, #blog, #useCases
+	//#viewDocs, #blog, #useCases
 		border-color: $dark-grey
 		color: $dark-grey
 
@@ -435,20 +553,31 @@ header
 			background-color: $blue
 			color: white
 
-	#hamburger:hover
-		div, &:before, &:after
-			background-color: $dark-grey
+	//#hamburger:hover
+	//	div, &:before, &:after
+	//		background-color: $dark-grey
 
 
 
 // HERO
 #hero
-	background-image: url(/images/texture.png)
-	background-color: $dark-grey
+	//background-image: url(/images/texture.png)
+	//background-color: $dark-grey
 	text-align: center
 	padding-left: 0
 	padding-right: 0
 	margin-bottom: 0
+
+#docs
+	#hero
+		background-image: url(/images/texture.png)
+		background-color: $dark-grey
+	&.open-nav
+		#hero
+			#hero-content
+				visibility: hidden
+				#search
+					transition: 0ms
 
 // VENDOR STRIP
 #vendorStrip
@@ -490,6 +619,9 @@ footer
 			font-weight: 300
 			color: white
 			text-decoration: none
+			transition: 300ms
+			&:hover
+				color: $light-blue
 
 	.newsletterSubsContainer
 		#mlb2-7341216
@@ -628,14 +760,14 @@ a.facebook
 	&:hover
 		background-position: -350px 100%
 
-#viewDocs, #blog, #useCases
+//#viewDocs, #blog, #useCases
 	display: none
 
 section
 	background-color: white
 
 #hero
-	background-color: $dark-grey
+	//background-color: $dark-grey
 
 	h5
 		margin: 20px 0
@@ -754,6 +886,15 @@ section
 		&:hover
 			color: $blue
 
+	a.item.item-pe > .title
+		&::after
+			content: "PE"
+			font-size: 12px
+			font-weight: bold
+			color: $blue
+			transform: translate(5px,-10px)
+			display: inline-block
+
 	div.item > .title
 		&:before
 			content: ""
@@ -765,6 +906,15 @@ section
 			border-color: transparent transparent transparent $blue
 			transform: rotate(0deg)
 			transition: 0.3s
+
+	div.item.item-pe > .title
+		&::after
+			content: "PE"
+			font-size: 12px
+			font-weight: bold
+			color: $blue
+			transform: translate(5px,-10px)
+			display: inline-block
 
 	.wrapper
 		position: relative
@@ -831,13 +981,13 @@ dd
 	ul
 		margin-top: 25px
 
-	li
-		position: relative
-		display: block
-		width: 100%
-		min-height: 45px
-		padding: 0 60px 0 20px
-		border-bottom: 1px solid #cccccc
+		& > li
+			position: relative
+			display: block
+			width: 100%
+			min-height: 45px
+			padding: 0 60px 0 20px
+			border-bottom: 1px solid #cccccc
 
 	a
 		display: inline-block
@@ -1271,6 +1421,12 @@ iframe
 							justify-content: center
 							align-items: center
 
+					.price-contact-us
+						height: 100%
+						display: flex
+						align-items: center
+						justify-content: center
+
 					.currency-symbol
 						text-decoration: none
 						opacity: 0.4
@@ -1468,9 +1624,13 @@ $feature-box-div-margin-bottom: 40px
 // Home-specific
 
 #home
+
+	#gettingStarted.center-button
+		display: none
+
 	&.flip-nav, &.open-nav
-		.logo
-			background-image: url(/images/thingsboard_logo_blue.svg)
+		//.logo
+		//	background-image: url(/images/thingsboard_logo_blue.svg)
 
 	#hero
 		margin-bottom: 0

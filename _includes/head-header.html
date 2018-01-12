@@ -173,11 +173,18 @@
 				frameborder="0"
 				scrolling="0" width="150px" height="30px"></iframe>
 	</div>
-	<div class="nav-buttons" data-auto-burger="primary">
-		<a href="/docs/" class="button" id="viewDocs" data-auto-burger-exclude>View Documentation</a>
-		<a href="/iot-use-cases/" class="button" id="useCases" data-auto-burger-exclude>Use cases</a>
-		<a href="/docs/getting-started-guides/helloworld/" class="button" id="gettingStarted" data-auto-burger-exclude>Getting started</a>
-		<a target="_blank" href="https://demo.thingsboard.io/signup" class="button" id="liveDemo" data-auto-burger-exclude>Live demo</a>
+	<div class="nav-buttons nav-buttons-left" data-auto-burger="primary">
+		<a href="/docs/" class="button center-button" id="viewDocs" data-auto-burger-exclude>Docs</a>
+		<a href="/docs/getting-started-guides/helloworld/" class="button center-button" id="gettingStarted" data-auto-burger-exclude>Getting started</a>
+		<a target="_blank" href="https://demo.thingsboard.io/signup" class="button center-button" id="liveDemo" data-auto-burger-exclude>Live demo</a>
+	</div>
+	<div class="nav-buttons nav-buttons-right" data-auto-burger="primary">
+		<div class="nav-items">
+			<a href="javascript:void(0);" class="nav-item" id="solutions" onclick="tb.openMenu('solutionsNav', 'solutions')" data-auto-burger-exclude>Solutions</a>
+			<a href="javascript:void(0);" class="nav-item" id="customers" onclick="tb.openMenu('customersNav', 'customers')" data-auto-burger-exclude>Customers</a>
+			<a href="javascript:void(0);" class="nav-item" id="use_cases" onclick="tb.openMenu('useCasesNav', 'use_cases')" data-auto-burger-exclude>Use Cases</a>
+			<a href="javascript:void(0);" class="nav-item" id="about_us" onclick="tb.openMenu('aboutUsNav', 'about_us')" data-auto-burger-exclude>About Us</a>
+		</div>
 		<button id="hamburger" onclick="tb.toggleMenu()" data-auto-burger-exclude><div></div></button>
 	</div>
 
@@ -215,6 +222,129 @@
 				</div>
 			</div>
 			<div class="clear" style="clear: both"></div>
+		</main>
+	</nav>
+	<nav id="solutionsNav" class="nav-menu">
+		<main data-auto-burger="primary">
+			<div class="nav-box">
+			</div>
+			<div class="nav-box">
+				<ul>
+					<a href="/products/" target="_self">
+						<li><strong>Products</strong></li>
+					</a>
+					<a href="/docs/getting-started-guides/what-is-thingsboard/" target="_self">
+						<li><span>ThingsBoard Community Edition</span></li>
+					</a>
+					<a href="/products/thingsboard-pe/" target="_self">
+						<li><span>ThingsBoard Professional Edition</span></li>
+					</a>
+					<a href="/docs/iot-gateway/what-is-iot-gateway/" target="_self">
+						<li><span>ThingsBoard IoT Gateway</span></li>
+					</a>
+				</ul>
+			</div>
+			<div class="nav-box">
+				<ul>
+					<a href="/docs/services/" target="_self">
+						<li><strong>Services</strong></li>
+					</a>
+					<a href="/docs/services/support/" target="_self">
+						<li><span>Support</span></li>
+					</a>
+					<a href="/docs/services/trainings/" target="_self">
+						<li><span>Trainings</span></li>
+					</a>
+					<a href="/docs/services/professional-services/" target="_self">
+						<li><span>Professional services</span></li>
+					</a>
+					<a href="/docs/services/consulting/" target="_self">
+						<li><span>Consulting</span></li>
+					</a>
+				</ul>
+			</div>
+		</main>
+	</nav>
+	<nav id="customersNav" class="nav-menu">
+		<main data-auto-burger="primary">
+			<div class="nav-box">
+			</div>
+			<div class="nav-box">
+			</div>
+			<div class="nav-box">
+				<ul>
+					<a href="/industries/" target="_self">
+						<li><strong>Industries</strong></li>
+					</a>
+					<a href="/industries/smart-energy/" target="_self">
+						<li><span>Smart Energy</span></li>
+					</a>
+					<a href="/industries/agriculture/" target="_self">
+						<li><span>Agriculture</span></li>
+					</a>
+					<a href="/industries/smart-buildings/" target="_self">
+						<li><span>Smart Buildings</span></li>
+					</a>
+					<a href="/industries/smart-city/" target="_self">
+						<li><span>Smart City</span></li>
+					</a>
+					<a href="/industries/fleet-tracking/" target="_self">
+						<li><span>Fleet Tracking</span></li>
+					</a>
+				</ul>
+			</div>
+		</main>
+	</nav>
+	<nav id="useCasesNav" class="nav-menu">
+		<main data-auto-burger="primary">
+			<div class="nav-box">
+			</div>
+			<div class="nav-box">
+			</div>
+			<div class="nav-box">
+				<ul>
+					<a href="/iot-use-cases/" target="_self">
+						<li><strong>IoT use cases</strong></li>
+					</a>
+					<a href="/smart-metering/" target="_self">
+						<li><span>Smart Metering</span></li>
+					</a>
+					<a href="/smart-energy/" target="_self">
+						<li><span>Smart Energy</span></li>
+					</a>
+					<a href="/smart-farming/" target="_self">
+						<li><span>Smart Farming</span></li>
+					</a>
+					<a href="/fleet-tracking/" target="_self">
+						<li><span>Fleet Tracking</span></li>
+					</a>
+				</ul>
+			</div>
+		</main>
+	</nav>
+	<nav id="aboutUsNav" class="nav-menu">
+		<main data-auto-burger="primary">
+			<div class="nav-box">
+			</div>
+			<div class="nav-box">
+			</div>
+			<div class="nav-box">
+				<ul>
+					<a href="/company/" target="_self">
+						<li><strong>Our Company</strong></li>
+					</a>
+					<a href="/docs/contact-us/" target="_self">
+						<li><span>Contact Us</span></li>
+					</a>
+					<a href="/pressroom/" target="_self">
+						<li><span>Press Room</span></li>
+					</a>
+					<a href="https://blog.thingsboard.io/">
+						<li><span>Blog</span></li>
+					</a>
+				</ul>
+			</div>
+
 		</main>
 	</nav>
 </header>

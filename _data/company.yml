@@ -1,0 +1,6 @@
+bigheader: "Our Company"
+abstract: "Lorem ipsum dolor sit amet"
+hidetoc: "true"
+toc:
+- title: Our Company
+  path: /company/

@@ -9,30 +9,34 @@ toc:
   path: /docs/getting-started-guides/helloworld/
 - title: Installation
   section:
-  - title: Installation options
-    path: /docs/user-guide/install/installation-options/
-  - title: Installing ThingsBoard on Windows
-    path: /docs/user-guide/install/windows/
-  - title: Installing ThingsBoard on Linux (Ubuntu & CentOS)
-    path: /docs/user-guide/install/linux/
-  - title: Installing ThingsBoard on Raspberry Pi 3
-    path: /docs/user-guide/install/rpi/
-  - title: Installing ThingsBoard using Kubernetes (Google Cloud Platform)
-    path: /docs/user-guide/install/kubernetes/
-  - title: Installing ThingsBoard using Docker (Linux or Mac OS)
-    path: /docs/user-guide/install/docker/
-  - title: Installing ThingsBoard using Docker (Windows)
-    path: /docs/user-guide/install/docker-windows/
-  - title: Installing ThingsBoard on AWS EC2
-    path: /docs/user-guide/install/aws/
-  - title: Building from sources
-    path: /docs/user-guide/install/building-from-source/
-  - title: Upgrade instructions
-    path: /docs/user-guide/install/upgrade-instructions/
-  - title: Configuration
-    path: /docs/user-guide/install/config/
-  - title: Cluster setup
-    path: /docs/user-guide/install/cluster-setup/
+  - title: ThingsBoard Community Edition
+    section:
+    - title: Installation options
+      path: /docs/user-guide/install/installation-options/
+    - title: Installing ThingsBoard on Windows
+      path: /docs/user-guide/install/windows/
+    - title: Installing ThingsBoard on Linux (Ubuntu & CentOS)
+      path: /docs/user-guide/install/linux/
+    - title: Installing ThingsBoard on Raspberry Pi 3
+      path: /docs/user-guide/install/rpi/
+    - title: Installing ThingsBoard using Kubernetes (Google Cloud Platform)
+      path: /docs/user-guide/install/kubernetes/
+    - title: Installing ThingsBoard using Docker (Linux or Mac OS)
+      path: /docs/user-guide/install/docker/
+    - title: Installing ThingsBoard using Docker (Windows)
+      path: /docs/user-guide/install/docker-windows/
+    - title: Installing ThingsBoard on AWS EC2
+      path: /docs/user-guide/install/aws/
+    - title: Building from sources
+      path: /docs/user-guide/install/building-from-source/
+    - title: Upgrade instructions
+      path: /docs/user-guide/install/upgrade-instructions/
+    - title: Configuration
+      path: /docs/user-guide/install/config/
+    - title: Cluster setup
+      path: /docs/user-guide/install/cluster-setup/
+  - title: ThingsBoard Professional Edition
+    path: /products/thingsboard-pe/install/
 - title: Features
   section:
   - title: Entities and relations
@@ -49,6 +53,36 @@ toc:
     path: /docs/user-guide/rule-engine/
   - title: Data visualization
     path: /docs/user-guide/visualization/
+  - title: White-labeling
+    path: /docs/user-guide/white-labeling/
+    pe: true
+  - title: Device & Asset Groups
+    path: /docs/user-guide/groups/
+    pe: true
+  - title: Data Import/Export
+    path: /docs/user-guide/data-import-export/
+    pe: true
+  - title: Platform Integrations
+    pe: true
+    section:
+    - title: Overview
+      path: /docs/user-guide/integrations/
+    - title: HTTP
+      path: /docs/user-guide/integrations/http/
+    - title: Ocean Connect
+      path: /docs/user-guide/integrations/ocean-connect/
+    - title: SigFox
+      path: /docs/user-guide/integrations/sigfox/
+    - title: ThingPark
+      path: /docs/user-guide/integrations/thingpark/
+    - title: MQTT
+      path: /docs/user-guide/integrations/mqtt/
+    - title: AWS IoT
+      path: /docs/user-guide/integrations/aws-iot/
+    - title: IBM Watson IoT
+      path: /docs/user-guide/integrations/ibm-watson-iot/
+    - title: Azure Event Hub
+      path: /docs/user-guide/integrations/azure-event-hub/
 - title: Integrations Cookbook
   section:
   - title: Persist and visualize AWS IoT data
@@ -93,6 +127,18 @@ toc:
     path: /docs/user-guide/ui/dashboards/
   - title: Mail Settings
     path: /docs/user-guide/ui/mail-settings/
+  - title: White-labeling
+    path: /docs/user-guide/ui/white-labeling/
+    pe: true
+  - title: Device & Asset Groups
+    path: /docs/user-guide/ui/groups/
+    pe: true
+  - title: Platform Integrations
+    path: /docs/user-guide/ui/integrations/
+    pe: true
+  - title: Data Converters
+    path: /docs/user-guide/ui/converters/
+    pe: true
 - title: Troubleshooting
   path: /docs/user-guide/troubleshooting/
 - title: Contribution Guide
