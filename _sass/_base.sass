@@ -171,6 +171,16 @@ header
 		position: absolute
 		z-index: -1
 
+#thingsboard-pe
+	&:not(.open-nav):not(.flip-nav)
+		header
+			&::after
+				opacity: 0.3
+	//&.open-nav
+		header
+			&::after
+				opacity: 0.3
+
 .logo
 	position: relative
 	float: left
@@ -255,6 +265,7 @@ header
 //#viewDocs, #blog, #useCases
 .center-button
 	display: none
+	cursor: pointer
 	line-height: 30px
 	border: 2px solid white
 	background-color: transparent
@@ -578,6 +589,139 @@ header
 				visibility: hidden
 				#search
 					transition: 0ms
+
+#thingsboard-pe
+	#hero
+		height: 100vh //calc(100vh + 5px)
+		padding-top: 0px
+		position: relative
+		//margin-top: 60px
+		//background-image: url(/images/texture.png)
+		//background-color: $dark-grey
+		overflow: hidden
+		background-size: cover
+		background-position: center center
+		background-repeat: no-repeat
+		background-image: url(/video/pe-back-poster.png)
+		#hero-video
+			min-width: auto
+			min-height: auto
+			width: 100%
+			height: 100%
+			position: absolute
+			left: 50%
+			top: 0
+			//transform: translate(-50%, -50%)
+			transform: translateX(-50%)
+			object-fit: cover
+			transition-duration: 500ms
+		#hero-content
+			height: 100%
+			display: flex
+			flex-direction: column
+			justify-content: center
+			align-content: center
+			.pe-title
+				//height: 60px
+				margin-bottom: 20px
+				font-size: 22px
+				font-weight: 400
+				text-shadow: 0 0 18px rgba(0,0,0,.37)
+			.try-pe
+				cursor: pointer
+				line-height: 40px
+				font-size: 16px
+				padding: 0 15px
+				border: 1px solid white
+				background-color: transparent
+				transition: 0.6s
+				text-shadow: 0 0 18px rgba(0,0,0,.37)
+				&:hover
+					background-color: white
+					color: $dark-grey
+			.pe-arrow
+				position: absolute
+				bottom: 40px
+				left: 0
+				right: 0
+				margin: auto
+				width: 40px
+				height: 40px
+				opacity: 1
+				z-index: 24
+				color: #fff
+				a
+					color: #fff
+	#docsContent
+		color: #424242
+		h2
+			border: none
+			text-align: center
+			font-weight: 400
+		h3
+			border: none
+			font-weight: 400
+		p
+			line-height: 1.5em
+
+		table#feature-comparison
+			border: 1px solid #999
+			font-size: 16px
+			td
+				border-top: 1px solid #999
+			th, td
+				font-size: 16px
+			thead
+				background: $blue
+				color: #fff
+			th
+				font-weight: 500
+			th, td:nth-child(2), td:nth-child(3)
+				text-align: center
+			td:nth-child(2)
+				color: $blue
+			td:nth-child(3)
+				color: #45818e
+	.flyout-button
+		display: none
+
+
+	//&.open-nav
+		#hero
+			#hero-content
+				visibility: hidden
+	.header-animation
+		max-width: 100%
+		opacity: 0
+		transform: translate3d(0, 45px, 0)
+		animation-name: slideup-in
+		animation-duration: 600ms
+		animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94)
+		animation-fill-mode: forwards
+
+	.header-animation:nth-child(1)
+		animation-delay: 0ms
+
+	.header-animation:nth-child(2)
+		animation-delay: 300ms
+
+	.header-animation:nth-child(3)
+		animation-delay: 600ms
+
+	.header-animation:nth-child(4)
+		animation-delay: 900ms
+
+	.header-animation:nth-child(5)
+		animation-delay: 1200ms
+
+	@keyframes slideup-in
+		from
+			opacity: 0
+			transform: translate3d(0, 45px, 0)
+		to
+			opacity: 1
+			transform: translate3d(0, 0, 0)
+
 
 // VENDOR STRIP
 #vendorStrip

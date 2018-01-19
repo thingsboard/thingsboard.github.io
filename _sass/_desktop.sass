@@ -108,6 +108,10 @@ $nav-buttons-margin-left: 30px
 		//	.logo
 		//		background-image: url(../images/thingsboard_logo_blue.svg)
 
+	#thingsboard-pe
+		#docsContent
+			width: calc(100% - 400px)
+
 	@media screen and (min-width: 1250px)
 		#docs
 			#hero
@@ -116,6 +120,22 @@ $nav-buttons-margin-left: 30px
 						li
 							margin-right: 20px
 
+		#thingsboard-pe
+			#hero
+				#hero-video
+					width: 100%
+					height: auto
+				#hero-content
+					.pe-title
+						//height: 100px
+						margin-bottom: 60px
+						font-size: 64px
+					.try-pe
+						line-height: 60px
+						font-size: 28px
+						padding: 0 40px
+						border: 3px solid white
+
 		//.nav-item
 			padding: 15px 30px
 			&::before
@@ -123,6 +143,11 @@ $nav-buttons-margin-left: 30px
 				width: calc(100% - 60px)
 
 	@media screen and (min-width: 1500px)
+
+		#thingsboard-pe
+			#docsContent
+				width: calc(100% - 700px)
+
 		#docs
 			#hero
 				#vendorStrip
@@ -130,7 +155,7 @@ $nav-buttons-margin-left: 30px
 						width: 25%
 			#liveDemo
 				display: inline-block
-		#home
+		#home, #thingsboard-pe
 			//#viewDocs, #blog, #gettingStarted, #liveDemo, #useCases
 			.center-button
 				display: inline-block

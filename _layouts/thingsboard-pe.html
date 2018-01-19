@@ -1,0 +1,82 @@
+<!Doctype html>
+<html id="thingsboard-pe">
+
+{% include head-header.html %}
+<!--  HERO  -->
+<section id="hero" class="light-text">
+    <video id="hero-video" autoplay loop muted poster="/video/pe-cover.png">
+        <source src="/video/pe-cover.mp4" type="video/mp4" />
+        <source src="/video/pe-cover.webm" type="video/webm" />
+        Your browser does not support the video tag. I suggest you upgrade your browser.
+    </video>
+    <div id="hero-content">
+        <h1 class="header-animation pe-title">ThingsBoard Professional Edition</h1>
+        <div class="header-animation">
+            <a href="/products/thingsboard-pe/install/" class="button try-pe">Try it now</a>
+        </div>
+        <div class="pe-arrow">
+            <a href="#docsContent"><i class="fa fa-chevron-down fa-2x" aria-hidden="true"></i></a>
+        </div>
+    </div>
+</section>
+
+<section id="encyclopedia">
+    <div id="docsContent" class="noToc">
+        {{ content }}
+    </div>
+</section>
+
+{% include footer.html %}
+
+{% if site.data[foundTOC].hidetoc != "true" and page.hidetoc != "true" %}
+<button class="flyout-button" onclick="tb.toggleToc()"></button>
+{% endif %}
+
+<script type="text/javascript">
+    jqueryDefer(function () {
+        vis(function() {
+            if (vis()) {
+                slideUp();
+            }
+        });
+        $( document ).ready(function() {
+            scaleVideoContainer();
+        });
+        $(window).on('resize', function() {
+            scaleVideoContainer();
+        });
+
+        $('#hero-content > .pe-arrow > a').click(function(event) {
+            event.preventDefault();
+            var target = $('#encyclopedia');
+            $('html, body').animate({
+                scrollTop: target.offset().top - 60 //header height
+            }, 1000, "easeOutCirc");
+        });
+
+    });
+
+    function slideUp() {
+        var headAnimations = $('#hero-content').find('.header-animation');
+        for (var i=0;i<headAnimations.length;i++) {
+            reinsert($(headAnimations[i]));
+        }
+    }
+
+    function reinsert(el) {
+        var newone = el.clone(true);
+        el.before(newone);
+        el.remove();
+    }
+
+    function scaleVideoContainer() {
+
+        var height = $(window).height() + 5;
+        var unitHeight = parseInt(height) + 'px';
+        $('#hero').css('height',unitHeight);
+
+    }
+
+</script>
+</body>
+</html>
