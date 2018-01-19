@@ -5,34 +5,38 @@ description: Lorem ipsum dolor sit amet
 
 ---
 
-Lorem ipsum dolor sit amet, utamur constituto mea id, error definiebas in ius. Tale postulant mei ne, ex mei sumo prodesset. Sed feugiat insolens constituto ut. Pro ut graecis temporibus. Sit agam maiestatis te.
+## Lorem ipsum dolor sit amet, utamur constituto mea id
 
-Pro offendit facilisis ea, te affert alienum gubergren eos, at eum hinc consul lobortis? Modo ceteros accumsan ex vix, decore timeam pri ad. Te nam quodsi imperdiet voluptatum, mei verear bonorum percipitur eu. Usu ut animal adversarium, nec ullum abhorreant in. Cu iudico percipitur nec! Ludus affert eam te. Vocent civibus eloquentiam ad vix, pro percipit disputationi id, ei solet partem vix.
-
-### White-labeling
-
-In graeco mandamus expetenda vel, id eam dicant tantas possit, est modo tale id. Intellegam definitionem vim ad, ius ne consul dolores lobortis. Id nostrum recteque consetetur sea, ex ius latine alienum. Ei usu maluisset intellegat. Duo ei laoreet noluisse, ea decore ullamcorper quo, mel ad ullum dolor minimum.
-
-Regione aliquam definiebas no sea? Ius suas evertitur ut, vis diam sint congue at, vix utinam causae civibus at. Sea causae animal ei! Duo in nullam abhorreant intellegam, at docendi vulputate eam? Duo te solum mollis petentium.
-
-### Device & Asset Groups
-
-Appetere atomorum in nec! Per at dicant animal assueverit, alii democritum id sea. Oporteat lucilius at per. Eius inani duo ne. Audiam qualisque intellegat vim in, eum in mucius expetenda.
-
-Conceptam reprimique pri ea, eu per aperiam expetendis delicatissimi, antiopam erroribus ea vis. Eu vidit offendit noluisse mei, mei facer iusto sententiae te, ex alienum splendide vix! Facilis oportere patrioque sit ne, his ne prima prodesset moderatius. Pri prompta constituam et.
-
-### Data Import/Export 
-
-Meis consul cum id, no prima novum eum! Sit no reque velit nonumy, aeque quando has eu. An mutat munere delenit mel, facilis ponderum id vim! Est partem alterum no, liber erant moderatius te vis. His ex ornatus deserunt, ei sit dicat noster prompta, altera gubergren nam ei. Iuvaret senserit id quo, ancillae periculis ei mel, putent eligendi adipiscing ut eum!
-
-Ei dicunt vocent usu, te mollis luptatum mea, no pro libris concludaturque. Solum facer eruditi per ei. Vel an quot iriure oporteat. Vide maiestatis rationibus ius cu.
-
-### Platform Integrations
-
-Vel minim vitae at, audiam maluisset at pri. Mazim elaboraret ad sed. Eos ex lorem omnium, sit id case iracundia hendrerit, vim ornatus probatus te? An ferri salutandi eam? In illum sanctus est, ipsum consetetur scribentur cu pri, ut rebum lorem omnes vix! Vis nostrum legendos ad, unum electram sea ad?
-
-Principes omittantur pri at, pro id facilis ceteros. Te mel fugit error doming. Diam ceteros est an, ei quis probo vix. At vis rebum inani praesent, et altera corpora voluptatibus eam, eum meis eripuit sapientem in. Et partem scriptorem eloquentiam vel. At dolorum blandit vis, an eam persecuti disputationi, dolorem percipitur est no.
-
+<section id="pe-features" class="oceanNodes">
+    <main>
+        <div class="image-wrapper"><img src="/images/device_management.png"></div>
+        <div class="content">
+            <h3>White-labeling</h3>
+            <p>In graeco mandamus expetenda vel, id eam dicant tantas possit, est modo tale id. Intellegam definitionem vim ad, ius ne consul dolores lobortis. Id nostrum recteque consetetur sea, ex ius latine alienum. Ei usu maluisset intellegat. Duo ei laoreet noluisse, ea decore ullamcorper quo, mel ad ullum dolor minimum.</p>
+        </div>
+    </main>
+    <main>
+        <div class="image-wrapper"><img src="/images/device_management.png"></div>
+        <div class="content">
+            <h3>Device & Asset Groups</h3>
+            <p>Appetere atomorum in nec! Per at dicant animal assueverit, alii democritum id sea. Oporteat lucilius at per. Eius inani duo ne. Audiam qualisque intellegat vim in, eum in mucius expetenda.</p>
+        </div>
+    </main>
+    <main>
+        <div class="image-wrapper"><img src="/images/device_management.png"></div>
+        <div class="content">
+            <h3>Data Import/Export</h3>
+            <p>Meis consul cum id, no prima novum eum! Sit no reque velit nonumy, aeque quando has eu. An mutat munere delenit mel, facilis ponderum id vim! Est partem alterum no, liber erant moderatius te vis. His ex ornatus deserunt, ei sit dicat noster prompta, altera gubergren nam ei. Iuvaret senserit id quo, ancillae periculis ei mel, putent eligendi adipiscing ut eum!</p>
+        </div>
+    </main>
+    <main>
+        <div class="image-wrapper"><img src="/images/device_management.png"></div>
+        <div class="content">
+            <h3>Platform Integrations</h3>
+            <p>Vel minim vitae at, audiam maluisset at pri. Mazim elaboraret ad sed. Eos ex lorem omnium, sit id case iracundia hendrerit, vim ornatus probatus te? An ferri salutandi eam? In illum sanctus est, ipsum consetetur scribentur cu pri, ut rebum lorem omnes vix! Vis nostrum legendos ad, unum electram sea ad?</p>
+        </div>
+    </main>
+</section>
 
 ## Feature Comparison Matrix
 

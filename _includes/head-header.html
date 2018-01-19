@@ -123,6 +123,33 @@
 
 		loadNextScript(0, initialScriptsList);
 
+		jqueryDefer(function() {
+			(function ($, win) {
+				$.fn.inViewport = function (cb) {
+					return this.each(function (i, el) {
+						function visPx() {
+							var H = $(this).height(),
+									r = el.getBoundingClientRect(), t = r.top, b = r.bottom;
+							return cb.call(el, Math.max(0, t > 0 ? H - t : (b < H ? b : H)));
+						}
+
+						visPx();
+						$(win).on("resize scroll", visPx);
+					});
+				};
+			}(jQuery, window));
+		});
+
+		function inViewportDefer(method) {
+			if (window.jQuery && $.fn.inViewport) {
+				method();
+			} else {
+				setTimeout(function() {
+					inViewportDefer(method)
+				}, 50);
+			}
+		}
+
 	</script>
 	<script type="text/javascript">
 		function _gaLt(event) {

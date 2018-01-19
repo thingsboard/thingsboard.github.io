@@ -602,7 +602,7 @@ header
 		background-size: cover
 		background-position: center center
 		background-repeat: no-repeat
-		background-image: url(/video/pe-back-poster.png)
+		background-image: url(/video/pe-cover.png)
 		#hero-video
 			min-width: auto
 			min-height: auto
@@ -652,7 +652,7 @@ header
 				color: #fff
 				a
 					color: #fff
-	#docsContent
+	#peContent
 		color: #424242
 		h2
 			border: none
@@ -663,6 +663,25 @@ header
 			font-weight: 400
 		p
 			line-height: 1.5em
+
+		#pe-features
+			padding-top: 25px
+
+			main
+				.image-wrapper, .content
+					transition: 0.6s
+					transition-timing-function: ease-out
+					opacity: 0
+					&.anim
+						opacity: 1
+				&:nth-child(odd) .image-wrapper, &:nth-child(even) .content
+					right: -1000px
+					&.anim
+						right: 0
+				&:nth-child(even) .image-wrapper, &:nth-child(odd) .content
+					left: -1000px
+					&.anim
+						left: 0
 
 		table#feature-comparison
 			border: 1px solid #999
@@ -1185,6 +1204,42 @@ iframe
 	&.demoDashboardFrame
 		height: 400px
 		padding: 20px 0
+
+#peContent
+	position: relative
+	width: 100%
+	margin: auto
+	* + h2, * + h3, * + h4, * + h5, * + h6
+		margin-top: 30px
+
+	section
+		padding-left: 0
+		padding-right: 0
+
+	table
+		width: 100%
+		border: 1px solid #ccc
+		border-spacing: 0
+		margin-top: 30px
+		margin-bottom: 30px
+
+	thead, tr:nth-child(even)
+		background-color: $light-grey
+
+	thead
+		background-color: #555
+		color: white
+
+	th, td
+		padding: 8px
+		text-align: left
+		margin: 0
+
+	th
+		font-weight: normal
+
+	td
+		font-size: 0.85em
 
 #docsContent
 	position: relative

@@ -21,7 +21,7 @@
 </section>
 
 <section id="encyclopedia">
-    <div id="docsContent" class="noToc">
+    <div id="peContent" class="noToc">
         {{ content }}
     </div>
 </section>
@@ -54,6 +54,16 @@
             }, 1000, "easeOutCirc");
         });
 
+    });
+
+    inViewportDefer(function() {
+        $("#pe-features .image-wrapper, #pe-features .content").inViewport(function(px){
+            if(px >= 80) {
+                $(this).addClass("anim");
+            } else {
+                $(this).removeClass("anim");
+            }
+        });
     });
 
     function slideUp() {
