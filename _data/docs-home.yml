@@ -59,8 +59,8 @@ toc:
   - title: Device & Asset Groups
     path: /docs/user-guide/groups/
     pe: true
-  - title: Data Import/Export
-    path: /docs/user-guide/data-import-export/
+  - title: CSV/XLS data export
+    path: /docs/user-guide/csv-xls-data-export/
     pe: true
   - title: Platform Integrations
     pe: true

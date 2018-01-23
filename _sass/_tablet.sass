@@ -74,6 +74,10 @@ $feature-box-div-width: 45%
 		font-size: 36px
 		line-height: 44px
 
+	h2
+		font-size: 28px
+		line-height: 60px
+
 	h3
 		font-size: 28px
 		line-height: 36px
@@ -81,6 +85,7 @@ $feature-box-div-width: 45%
 	h4
 		font-size: 24px
 		line-height: 40px
+		padding-bottom: 0px
 
 
 	//#home
@@ -188,6 +193,16 @@ $feature-box-div-width: 45%
 					transform: none
 				.content
 					display: block
+
+		&#pe-features
+			main
+				&:nth-child(odd)
+					padding-right: 300px
+				&:nth-child(even)
+					padding-left: 300px
+			img
+				max-width: 220px
+				width: 220px
 
 	#video
 		width: $main-max-width
