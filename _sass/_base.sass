@@ -683,6 +683,8 @@ header
 			padding-top: 25px
 
 			main
+				padding-top: 25px
+				min-height: 220px
 				.image-wrapper
 					padding: 16px
 					box-shadow: 0 1px 8px 0 rgba(0,0,0,.2), 0 3px 4px 0 rgba(0,0,0,.14), 0 3px 3px -2px rgba(0,0,0,.12)
@@ -701,25 +703,86 @@ header
 					&.anim
 						left: 0
 
-		table#feature-comparison
-			box-shadow: 0 1px 8px 0 rgba(0,0,0,0.2), 0 3px 4px 0 rgba(0,0,0,0.14), 0 3px 3px -2px rgba(0,0,0,0.12)
-			border: 1px solid #999
-			font-size: 16px
-			td
-				border-top: 1px solid #999
-			th, td
-				font-size: 16px
-			thead
-				background: $blue
-				color: #fff
-			th
-				font-weight: 500
-			th, td:nth-child(2), td:nth-child(3)
-				text-align: center
-			td:nth-child(2)
-				color: $blue
-			td:nth-child(3)
-				color: #45818e
+		h2#feature-comparison-matrix
+			padding-top: 0px
+			padding-bottom: 30px
+			font-size: 28px
+
+		#feature-comparison
+			background: $dark-grey url(/images/texture.png)
+			background-size: auto 100%
+			margin-top: 70px
+			width: 100vw
+			margin-left: calc(-50vw + 50%)
+			&.anim
+				table
+					th:nth-child(2), th:nth-child(4), td:nth-child(2), td:nth-child(4)
+						transform: rotate3d(0, 1, 0, 0deg)
+						opacity: 1
+			table
+				margin: auto
+				border: none
+				max-width: 100%
+				transform: translateY(-70px)
+				th:nth-child(2), th:nth-child(4), td:nth-child(2), td:nth-child(4)
+					transform: rotate3d(0, 1, 0, 90deg)
+					opacity: 0
+					transition: 0.6s
+					transition-timing-function: ease-out
+				th:nth-child(2), td:nth-child(2)
+					transition-delay: 0.3s
+				th:nth-child(4), td:nth-child(4)
+					transition-delay: 0.6s
+				thead
+					background: none
+					color: #fff
+				th
+					font-weight: 500
+					height: 70px
+				th, td:nth-child(2), td:nth-child(3), td:nth-child(4), td:nth-child(5)
+					text-align: center
+				th:nth-child(1)
+					width: 120px
+				th:nth-child(3), th:nth-child(5)
+					width: 20px
+				th:nth-child(2), th:nth-child(4)
+					font-size: 14px
+					padding: 0 0 10px 0
+					width: 100px
+					.product-header
+						height: 100%
+						padding: 4px
+						background: rgba(0, 0, 0, 0.33)
+				th:nth-child(2)
+					background: #5389c5
+				th:nth-child(4)
+					background: #45818e
+				tr
+					background: none
+					height: 60px
+				tr:nth-child(1)
+					height: 10px
+				td
+					border-top: none
+					background: none
+					color: #fff
+					padding: 10px
+				td:nth-child(1)
+					font-size: 12px
+				td:nth-child(2), td:nth-child(4)
+					font-size: 16px
+					&.checked, &.unchecked
+						background-size: auto 15px
+						background-position: center center
+						background-repeat: no-repeat
+					&.checked
+						background-image: url(/images/pe/feature-checked.svg)
+					&.unchecked
+						background-image: url(/images/pe/feature-unchecked.svg)
+				td:nth-child(2)
+					background: #5389c5
+				td:nth-child(4)
+					background: #45818e
 
 		#pe-customers
 			display: flex
@@ -864,6 +927,7 @@ footer
 
 	.social
 		margin: 20px 0
+		display: inline-block
 
 		div
 			text-align: center
@@ -1532,7 +1596,7 @@ iframe
 					position: absolute
 					top: 0px
 					left: 0px
-					background-color: #334250
+					background-color: $dark-grey
 					background-image: url(/images/texture.png)
 					display: flex
 					text-align: center
@@ -1636,7 +1700,7 @@ iframe
 					height: auto
 
 				li.heading-row
-					background-color: #334250
+					background-color: $dark-grey
 					background-image: url(/images/texture.png)
 					color: #ffffff
 					border-color: #545454
@@ -1756,7 +1820,7 @@ iframe
 			border-bottom: 1px solid #ffffff
 		td:nth-child(1)
 			width: 25%
-			background-color: #334250
+			background-color: $dark-grey
 			background-image: url(/images/texture.png)
 			font-size: 14px
 			text-transform: uppercase

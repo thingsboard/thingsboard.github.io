@@ -40,72 +40,108 @@ description: Lorem ipsum dolor sit amet
 
 ## Feature Comparison Matrix
 
-<table id="feature-comparison">
-    <thead>
-        <tr>
-            <th>Feature</th>
-            <th>ThingsBoard Community Edition</th>
-            <th>ThingsBoard Professional Edition</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Asset management & Data collection</td>
-            <td>✔</td>
-            <td>✔</td>
-        </tr>
-        <tr>
-            <td>End-user real-time dashboards</td>
-            <td>✔</td>
-            <td>✔</td>
-        </tr>
-        <tr>
-            <td>Data processing rules & alarms</td>
-            <td>✔</td>
-            <td>✔</td>
-        </tr>
-        <tr>
-            <td>Customizable rules, plugins, widgets</td>
-            <td>✔</td>
-            <td>✔</td>
-        </tr>
-        <tr>
-            <td>MQTT, HTTP, CoAP, OPC-UA transport</td>
-            <td>✔</td>
-            <td>✔</td>
-        </tr>
-        <tr>
-            <td>Integrations with BigData systems</td>
-            <td>✔</td>
-            <td>✔</td>
-        </tr>
-        <tr>
-            <td>NB-IoT, SigFox, LoRaWAN support</td>
-            <td>Basic</td>
-            <td>Advanced</td>
-        </tr>
-        <tr>
-            <td>Device, assets and customer groups</td>
-            <td></td>
-            <td>✔</td>
-        </tr>
-        <tr>
-            <td>Multi-tenant configurable white-labeling</td>
-            <td></td>
-            <td>✔</td>
-        </tr>
-        <tr>
-            <td>CSV/XLS data export</td>
-            <td></td>
-            <td>✔</td>
-        </tr>
-        <tr>
-            <td>Platform Integrations</td>
-            <td></td>
-            <td>✔</td>
-        </tr>
-    </tbody>
-</table>            
+<div id="feature-comparison">
+    <table>
+        <thead>
+            <tr>
+                <th></th>
+                <th><div class="product-header">ThingsBoard<br/>Community Edition</div></th>
+                <th></th>
+                <th><div class="product-header">ThingsBoard<br/>Professional Edition</div></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Asset management & Data collection</td>
+                <td class="checked"></td>
+                <td></td>
+                <td class="checked"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>End-user real-time dashboards</td>
+                <td class="checked"></td>
+                <td></td>
+                <td class="checked"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Data processing rules & alarms</td>
+                <td class="checked"></td>
+                <td></td>
+                <td class="checked"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Customizable rules, plugins, widgets</td>
+                <td class="checked"></td>
+                <td></td>
+                <td class="checked"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>MQTT, HTTP, CoAP, OPC-UA transport</td>
+                <td class="checked"></td>
+                <td></td>
+                <td class="checked"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Integrations with BigData systems</td>
+                <td class="checked"></td>
+                <td></td>
+                <td class="checked"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>NB-IoT, SigFox, LoRaWAN support</td>
+                <td>Basic</td>
+                <td></td>
+                <td>Advanced</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Device, assets and customer groups</td>
+                <td class="unchecked"></td>
+                <td></td>
+                <td class="checked"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Multi-tenant configurable white-labeling</td>
+                <td class="unchecked"></td>
+                <td></td>
+                <td class="checked"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>CSV/XLS data export</td>
+                <td class="unchecked"></td>
+                <td></td>
+                <td class="checked"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Platform Integrations</td>
+                <td class="unchecked"></td>
+                <td></td>
+                <td class="checked"></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>            
+</div>
+            
+<br/>            
+<br/>
             
 Lorem ipsum dolor sit amet, utamur constituto mea id, error definiebas in ius. Tale postulant mei ne, ex mei sumo prodesset. Sed feugiat insolens constituto ut. Pro ut graecis temporibus. Sit agam maiestatis te.
 

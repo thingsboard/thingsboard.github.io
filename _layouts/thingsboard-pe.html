@@ -57,7 +57,7 @@
     });
 
     inViewportDefer(function() {
-        $("#pe-features .image-wrapper, #pe-features .content").inViewport(function(px){
+        $("#pe-features .image-wrapper, #pe-features .content, #feature-comparison").inViewport(function(px){
             if(px >= 80) {
                 $(this).addClass("anim");
             } /*else {
