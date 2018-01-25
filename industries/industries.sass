@@ -1,3 +1,44 @@
+#docsContent
+	.customer-block
+		color: #424242
+		display: flex
+		flex-direction: column
+		.customer-logo
+			margin-bottom: 20px
+			width: 200px
+			height: 120px
+			min-width: 200px
+			margin-right: 20px
+		.customer-content
+			max-width: 800px
+			font-size: 16px
+			line-height: 1.5em
+			h4
+				border-bottom: none
+			.person-logo-container
+				margin-top: 20px
+				display: flex
+				flex-direction: row
+				align-items: center
+				align-content: center
+				.person-logo
+					display: inline-block
+					border-radius: 50%
+					box-shadow: 0px 2px 15px #aaa
+					width: 80px
+					height: 80px
+					margin-right: 20px
+				.person-title
+					display: inline-block
+					font-style: italic
+
+@media screen and (min-width: 1025px)
+	#docsContent
+		.customer-block
+			flex-direction: row
+			.customer-logo
+				margin-bottom: 0px
+
 .industries
 	position: relative
 	display: flex

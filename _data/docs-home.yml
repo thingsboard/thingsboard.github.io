@@ -56,12 +56,6 @@ toc:
   - title: White-labeling
     path: /docs/user-guide/white-labeling/
     pe: true
-  - title: Device & Asset Groups
-    path: /docs/user-guide/groups/
-    pe: true
-  - title: CSV/XLS data export
-    path: /docs/user-guide/csv-xls-data-export/
-    pe: true
   - title: Platform Integrations
     pe: true
     section:
@@ -83,6 +77,12 @@ toc:
       path: /docs/user-guide/integrations/ibm-watson-iot/
     - title: Azure Event Hub
       path: /docs/user-guide/integrations/azure-event-hub/
+  - title: Device & Asset Groups
+    path: /docs/user-guide/groups/
+    pe: true
+  - title: CSV/XLS data export
+    path: /docs/user-guide/csv-xls-data-export/
+    pe: true
 - title: Integrations Cookbook
   section:
   - title: Persist and visualize AWS IoT data
@@ -127,18 +127,6 @@ toc:
     path: /docs/user-guide/ui/dashboards/
   - title: Mail Settings
     path: /docs/user-guide/ui/mail-settings/
-  - title: White-labeling
-    path: /docs/user-guide/ui/white-labeling/
-    pe: true
-  - title: Device & Asset Groups
-    path: /docs/user-guide/ui/groups/
-    pe: true
-  - title: Platform Integrations
-    path: /docs/user-guide/ui/integrations/
-    pe: true
-  - title: Data Converters
-    path: /docs/user-guide/ui/converters/
-    pe: true
 - title: Troubleshooting
   path: /docs/user-guide/troubleshooting/
 - title: Contribution Guide

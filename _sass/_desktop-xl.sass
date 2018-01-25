@@ -1,5 +1,12 @@
 
 @media screen and (min-width: 1250px)
+    #home, #docs
+        #tryItNow.center-button, #viewDocs.center-button
+            display: inline-block
+    #installations
+        #viewDocs.center-button, #services.center-button
+            display: inline-block
+            margin-left: 0px
     #docs
         #hero
             #vendorStrip
@@ -8,6 +15,8 @@
                         margin-right: 20px
 
     #thingsboard-pe
+        #viewDocs.center-button
+            display: inline-block
         #hero
             #hero-video
                 width: 100%
@@ -29,6 +38,15 @@
                 left: 30px
                 width: calc(100% - 60px)
 
+@media screen and (min-width: 1300px)
+    #home, #docs, #thingsboard-pe
+        #services.center-button
+            display: inline-block
+    #thingsboard-pe
+        #services.center-button
+            margin-left: 0px
+
+
 @media screen and (min-width: 1500px)
     #thingsboard-pe
         #peContent
@@ -43,7 +61,7 @@
                     width: 25%
             #liveDemo
                 display: inline-block
-    #home, #thingsboard-pe
+    //#home, #thingsboard-pe
         //#viewDocs, #blog, #gettingStarted, #liveDemo, #useCases
         .center-button
             display: inline-block
@@ -51,7 +69,7 @@
         padding-left: $full-width-paddingX-large
         padding-right: $full-width-paddingX-large
 
-@media screen and (min-width: 1600px)
+//@media screen and (min-width: 1600px)
     #home, #docs
-        #gettingStarted.center-button
+        #tryItNow.center-button
             display: inline-block

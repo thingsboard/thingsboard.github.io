@@ -57,12 +57,25 @@
     });
 
     inViewportDefer(function() {
-        $("#pe-features .image-wrapper, #pe-features .content, #feature-comparison").inViewport(function(px){
+        $("#pe-features main:nth-child(odd) .image-wrapper, #pe-features main:nth-child(even) .content").inViewport(function(px){
             if(px >= 80) {
-                $(this).addClass("anim");
-            } /*else {
-                $(this).removeClass("anim");
-            }*/
+                $(this).addClass("animated bounceInRight");
+            }
+        });
+
+        $("#pe-features main:nth-child(even) .image-wrapper, #pe-features main:nth-child(odd) .content").inViewport(function(px){
+            if(px >= 80) {
+                $(this).addClass("animated bounceInLeft");
+            }
+        });
+
+        $("#feature-comparison table th:nth-child(2), " +
+                "#feature-comparison table th:nth-child(4), " +
+                "#feature-comparison table td:nth-child(2), " +
+                "#feature-comparison table td:nth-child(4)").inViewport(function(px){
+            if(px >= 80) {
+                $(this).addClass("animated flipInY");
+            }
         });
     });
 

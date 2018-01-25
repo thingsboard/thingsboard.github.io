@@ -162,6 +162,7 @@ header
 	transition: 0.3s
 	text-align: center
 	&::after
+		transition: 0.3s
 		content: ""
 		background: $dark-grey url(/images/texture.png)
 		opacity: 0.95
@@ -176,7 +177,7 @@ header
 	&:not(.open-nav):not(.flip-nav)
 		header
 			&::after
-				opacity: 0.3
+				opacity: 0
 	//&.open-nav
 		header
 			&::after
@@ -191,7 +192,7 @@ header
 	top: 0
 	left: 0
 	transform: none
-	background-image: url(/images/thingsboard_with_title_white.png)
+	background-image: url(/images/thingsboard_with_title_white.svg)
 	background-size: contain
 	background-position: center center
 	background-repeat: no-repeat
@@ -223,7 +224,7 @@ header
 		display: block
 		width: 35px
 		height: 35px
-		background-image: url(/images/favicon_white.png)
+		background-image: url(/images/thingsboard_min_white.svg)
 
 
 //	&.flip-nav .flyout-button
@@ -584,6 +585,28 @@ header
 	#hero
 		background-image: url(/images/texture.png)
 		background-color: $dark-grey
+	#pe-docs-banner
+		font-size: 18px
+		display: flex
+		flex-direction: column
+		align-items: center
+		align-content: center
+		img
+			display: inline-block
+			width: 40px
+			height: 40px
+		div
+			display: inline-block
+			padding-top: 10px
+			a
+				&.pe-link
+					color: #fff
+					font-weight: 500
+				&.pe-learn-more
+					font-weight: 500
+					color: #50b1ff
+				&:hover
+					text-decoration: underline
 	&.open-nav
 		#hero
 			#hero-content
@@ -592,8 +615,10 @@ header
 					transition: 0ms
 
 .customer-logo
-	border: 1px solid #bec5cb
-	width: 100%
+	box-shadow: 0 1px 8px 0 rgba(0,0,0,0.2), 0 3px 4px 0 rgba(0,0,0,0.14), 0 3px 3px -2px rgba(0,0,0,0.12)
+	width: 200px
+	height: 120px
+	min-width: 200px
 	display: flex
 	justify-content: center
 	align-items: center
@@ -686,22 +711,26 @@ header
 				padding-top: 25px
 				min-height: 220px
 				.image-wrapper
+					top: 0
+					transform: translateY(0)
 					padding: 16px
 					box-shadow: 0 1px 8px 0 rgba(0,0,0,.2), 0 3px 4px 0 rgba(0,0,0,.14), 0 3px 3px -2px rgba(0,0,0,.12)
 				.image-wrapper, .content
-					transition: 0.6s
-					transition-timing-function: ease-out
 					opacity: 0
-					&.anim
+					animation-duration: 1.2s
+					&.animated
 						opacity: 1
-				&:nth-child(odd) .image-wrapper, &:nth-child(even) .content
-					right: -1000px
-					&.anim
-						right: 0
-				&:nth-child(even) .image-wrapper, &:nth-child(odd) .content
-					left: -1000px
-					&.anim
-						left: 0
+
+			a.button
+				cursor: pointer
+				line-height: 30px
+				border: 2px solid $dark-grey
+				background-color: transparent
+				transition: 0.3s
+
+				&:hover
+					background-color: $dark-grey
+					color: white
 
 		h2#feature-comparison-matrix
 			padding-top: 0px
@@ -714,21 +743,15 @@ header
 			margin-top: 70px
 			width: 100vw
 			margin-left: calc(-50vw + 50%)
-			&.anim
-				table
-					th:nth-child(2), th:nth-child(4), td:nth-child(2), td:nth-child(4)
-						transform: rotate3d(0, 1, 0, 0deg)
-						opacity: 1
 			table
+				th:nth-child(2), th:nth-child(4), td:nth-child(2), td:nth-child(4)
+					opacity: 0
+					&.animated
+						opacity: 1
 				margin: auto
 				border: none
 				max-width: 100%
 				transform: translateY(-70px)
-				th:nth-child(2), th:nth-child(4), td:nth-child(2), td:nth-child(4)
-					transform: rotate3d(0, 1, 0, 90deg)
-					opacity: 0
-					transition: 0.6s
-					transition-timing-function: ease-out
 				th:nth-child(2), td:nth-child(2)
 					transition-delay: 0.3s
 				th:nth-child(4), td:nth-child(4)
@@ -1546,7 +1569,7 @@ iframe
 			max-width: 75%
 			max-height: 85%
 
-	.pressroom-block
+	.mediakit-block
 		display: inline-block
 		a
 			cursor: pointer
@@ -1943,9 +1966,6 @@ $feature-box-div-margin-bottom: 40px
 
 #home
 
-	#gettingStarted.center-button
-		display: none
-
 	&.flip-nav, &.open-nav
 		//.logo
 		//	background-image: url(/images/thingsboard_logo_blue.svg)
@@ -2021,10 +2041,10 @@ $feature-box-div-margin-bottom: 40px
 #features
 	padding-top: 140px
 	background-color: $light-grey
-	background-image: url(/images/logo_small.png)
+	background-image: url(/images/thingsboard_blue.svg)
 	background-position: center 64px
 	background-repeat: no-repeat
-	background-size: auto
+	background-size: 64px
 
 .feature-box
 	//padding: 50px 0
@@ -2059,7 +2079,7 @@ $feature-box-div-margin-bottom: 40px
 
 // Community
 
-#community, .gridPage
+//#community, .gridPage
 	&.open-nav, &.flip-nav
 		.logo
 			background-image: url(/images/thingsboard_logo_blue.svg)
