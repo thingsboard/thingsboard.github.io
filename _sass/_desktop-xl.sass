@@ -1,13 +1,15 @@
+@media screen and (min-width: 1120px)
+    #githubButtonContainer
+        display: inline-block
+    #tryItNow.center-button
+        margin-left: 0px
 
 @media screen and (min-width: 1250px)
-    #home, #docs
-        #tryItNow.center-button, #viewDocs.center-button
-            display: inline-block
-    #installations
-        #viewDocs.center-button, #services.center-button
-            display: inline-block
-            margin-left: 0px
+    #viewDocs.center-button
+        display: inline-block
     #docs
+        #viewDocs.center-button
+            display: none
         #hero
             #vendorStrip
                 #docsList
@@ -39,13 +41,8 @@
                 width: calc(100% - 60px)
 
 @media screen and (min-width: 1300px)
-    #home, #docs, #thingsboard-pe
-        #services.center-button
-            display: inline-block
-    #thingsboard-pe
-        #services.center-button
-            margin-left: 0px
-
+    #services.center-button
+        display: inline-block
 
 @media screen and (min-width: 1500px)
     #thingsboard-pe
@@ -59,8 +56,6 @@
             #vendorStrip
                 #searchBox
                     width: 25%
-            #liveDemo
-                display: inline-block
     //#home, #thingsboard-pe
         //#viewDocs, #blog, #gettingStarted, #liveDemo, #useCases
         .center-button

@@ -145,7 +145,8 @@ var tb = (function () {
 			}
 
 			case 'home':
-			// case 'caseStudies':
+			case 'thingsboard-pe':
+			case 'installations':
 				bodyHeight = windowHeight;
 				break;
 
