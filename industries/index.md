@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: Industries
-description: Lorem ipsum dolor sit amet
+description: 
 
 ---
 
