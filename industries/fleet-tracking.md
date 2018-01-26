@@ -1,8 +1,8 @@
 ---
 layout: docwithnav
 title: Fleet Tracking
-description: Lorem ipsum dolor sit amet
+description: 
 
 ---
 
-Lorem ipsum dolor sit amet
+
