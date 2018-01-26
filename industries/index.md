@@ -5,49 +5,49 @@ description: Lorem ipsum dolor sit amet
 
 ---
 
-<div class="industries">
-    <a href="/industries/smart-energy/" class="accent industry">
-        <div class="title">
-            Smart Energy
+<div class="cards">
+    <a href="/industries/smart-energy/" class="accent card">
+        <div class="card-title">
+            <span class="title-text">Smart Energy</span>
         </div>
-        <div class="service-img smart-energy-bg"></div>
-        <div class="description">
+        <div class="card-img smart-energy-bg"></div>
+        <div class="card-description">
             Lorem ipsum dolor sit amet
         </div>
     </a>
-    <a href="/industries/agriculture/" class="accent industry">
-        <div class="title">
-            Agriculture
+    <a href="/industries/agriculture/" class="accent card">
+        <div class="card-title">
+            <span class="title-text">Agriculture</span>
         </div>
-        <div class="service-img agriculture-bg"></div>
-        <div class="description">  
-            Lorem ipsum dolor sit amet
-        </div>        
-    </a>
-    <a href="/industries/smart-buildings/" class="accent industry">            
-        <div class="title">
-            Smart Buildings
-        </div>
-        <div class="service-img smart-building-bg"></div>
-        <div class="description">
+        <div class="card-img agriculture-bg"></div>
+        <div class="card-description">  
             Lorem ipsum dolor sit amet
         </div>        
     </a>
-    <a href="/industries/smart-city/" class="accent industry">            
-        <div class="title">
-            Smart City
+    <a href="/industries/smart-buildings/" class="accent card">            
+        <div class="card-title">
+            <span class="title-text">Smart Buildings</span>
         </div>
-        <div class="service-img smart-city-bg"></div>
-        <div class="description">
+        <div class="card-img smart-building-bg"></div>
+        <div class="card-description">
             Lorem ipsum dolor sit amet
         </div>        
     </a>
-    <a href="/industries/fleet-tracking/" class="accent industry">            
-        <div class="title">
-            Fleet Tracking
+    <a href="/industries/smart-city/" class="accent card">            
+        <div class="card-title">
+            <span class="title-text">Smart City</span>
         </div>
-        <div class="service-img fleet-tracking-bg"></div>
-        <div class="description">
+        <div class="card-img smart-city-bg"></div>
+        <div class="card-description">
+            Lorem ipsum dolor sit amet
+        </div>        
+    </a>
+    <a href="/industries/fleet-tracking/" class="accent card">            
+        <div class="card-title">
+            <span class="title-text">Fleet Tracking</span>
+        </div>
+        <div class="card-img fleet-tracking-bg"></div>
+        <div class="card-description">
             Lorem ipsum dolor sit amet
         </div>        
     </a>

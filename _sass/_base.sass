@@ -1600,72 +1600,124 @@ iframe
 		width: 100%
 		margin: 0
 
-	.services
-		width: 100%
-		margin: 30px 0
+	.cards
 		position: relative
-		display: block
+		display: flex
 		font-size: 16px
-		.service
+		justify-content: space-around
+		flex-wrap: wrap
+
+		.card
 			position: relative
-			padding-bottom: 25px
-			padding-left: 0px
+			margin-bottom: 49px
+			padding-left: 0
 			display: block
-			.service-card
+			width: 300px
+			height: 300px
+			border-radius: 3px
+			box-shadow: 0 2px 5px 0 rgba(0,0,0,.26)
+			color: #ffffff
+			background: $blue
+			overflow: hidden
+
+			.card-img
+				position: absolute
+				width: 100%
+				height: 170px
+				opacity: .5
+				top: 92px
+				left: 0
+				z-index: 90
+				background-size: contain
+				background-repeat: no-repeat
+				background-position: center
+				transition: opacity .3s ease,left .3s ease,top .4s ease, height .4s ease
+
+				&.agriculture-bg
+					background-image: url(/images/industries/agriculture.svg)
+				&.smart-energy-bg
+					background-image: url(/images/industries/smart_energy.svg)
+				&.fleet-tracking-bg
+					background-image: url(/images/industries/fleet_tracking.svg)
+				&.smart-building-bg
+					background-image: url(/images/industries/smart_building.svg)
+				&.smart-city-bg
+					background-image: url(/images/industries/smart_city.svg)
+
+				&.support-plans-bg
+					background-image: url(/images/services/support_plans.svg)
+				&.training-sessions-bg
+					background-image: url(/images/services/training_sessions.svg)
+				&.professional-services-bg
+					background-image: url(/images/services/professiona_services.svg)
+				&.consulting-bg
+					background-image: url(/images/services/consulting.svg)
+
+				&.professional-edition-bg
+					background-image: url(/images/services/professional_edition.svg)
+				&.community-edition-bg
+					background-image: url(/images/services/community_edition.svg)
+				&.gateway-bg
+					background-image: url(/images/services/gateway.svg)
+
+			.card-title
+				background-color: $dark-grey
+				background-image: url(/images/texture.png)
+				display: flex
+				text-align: center
+				align-items: center
+				justify-content: center
+				text-transform: uppercase
+				width: 100%
+				border-top-left-radius: 3px
+				border-top-right-radius: 3px
+				padding: 15px
+				font-size: 24px
+				height: 86px
+
+			.title-text
+				z-index: 90
 				position: relative
-				border-radius: 3px
-				padding: 20px 15px
-				box-shadow: 0 2px 5px 0 rgba(0,0,0,.26)
-				height: 360px
-				display: block
-				color: #ffffff
-				.title
+				&:after
+					content: ''
+					width: 0
+					height: 2px
 					position: absolute
-					top: 0px
-					left: 0px
-					background-color: $dark-grey
-					background-image: url(/images/texture.png)
-					display: flex
-					text-align: center
-					align-items: center
-					justify-content: center
-					text-transform: uppercase
-					width: 100%
-					border-top-left-radius: 3px
-					border-top-right-radius: 3px
-					padding: 15px
-					font-size: 28px
-					height: 86px
-				.description
-					position: absolute
-					top: 86px
-					bottom: 87px
-					background-color: $blue
-					display: flex
-					text-align: center
-					align-items: center
-					justify-content: center
-					width: 100%
-					color: rgba(255,255,255,0.87)
-					left: 0px
-					padding: 15px
-					font-size: 26px
-				.service-button
-					position: absolute
-					bottom: 0px
-					left: 0px
-					padding: 10px 0
-					display: flex
-					align-items: center
-					justify-content: center
-					width: 100%
-					border-top: 1px solid rgba(0,0,0,0.25)
-					border-bottom-left-radius: 3px
-					border-bottom-right-radius: 3px
-					background: #f8f8f8
-					a.button
-						padding: 14px 30px 12px
-						font-size: 18px
+					bottom: -4px
+					left: 0
+					transition: all .3s ease
+					background: #fff
+					z-index: 90
+
+			.card-description
+				position: absolute
+				top: 100%
+				bottom: 0
+				background-color: $orange
+				text-align: center
+				width: 100%
+				color: rgba(255,255,255,0.87)
+				left: 0
+				padding: 173px 15px 15px 15px
+				opacity: 0
+				transition: background-color .3s ease,top .4s ease, opacity .2s
+				font-size: 18px
+				z-index: 70
+
+
+			&:hover
+				.title-text
+					&:after
+						width: 100%
+
+
+				.card-img
+					height: 70px
+					opacity: 1
+
+				.card-description
+					top: 0
+					opacity: 1
 
 	.supportPlans
 		width: 100%
