@@ -1,7 +1,7 @@
 ---
 layout: thingsboard-pe
 title: ThingsBoard Professional Edition
-description: Lorem ipsum dolor sit amet
+description: 
 
 ---
 
