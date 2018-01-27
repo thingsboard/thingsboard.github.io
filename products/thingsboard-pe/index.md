@@ -5,14 +5,15 @@ description: Lorem ipsum dolor sit amet
 
 ---
 
-## Lorem ipsum dolor sit amet, utamur constituto mea id
+## Advanced ThingsBoard IoT Platform distribution with value added features
 
 <section id="pe-features" class="oceanNodes">
     <main>
         <div class="image-wrapper"><img src="/images/pe/white-labeling.svg"></div>
         <div class="content">
             <h3>White-labeling</h3>
-            <p>In graeco mandamus expetenda vel, id eam dicant tantas possit, est modo tale id. Intellegam definitionem vim ad, ius ne consul dolores lobortis. Id nostrum recteque consetetur sea, ex ius latine alienum. Ei usu maluisset intellegat. Duo ei laoreet noluisse, ea decore ullamcorper quo, mel ad ullum dolor minimum.</p>
+            <p>Rebrand ThingsBoard platform web interface with your company or product logo and color scheme in 2 minutes. No coding or service restart required.  
+            Allow your customers and their sub-customers to white-label their interface as well.</p>
             <br/>
             <p><a href="/docs/user-guide/white-labeling/" class="button">Read more</a></p>
         </div>
@@ -21,7 +22,8 @@ description: Lorem ipsum dolor sit amet
         <div class="image-wrapper"><img src="/images/pe/platform-integrations.svg"></div>
         <div class="content">
             <h3>Platform Integrations</h3>
-            <p>Vel minim vitae at, audiam maluisset at pri. Mazim elaboraret ad sed. Eos ex lorem omnium, sit id case iracundia hendrerit, vim ornatus probatus te? An ferri salutandi eam? In illum sanctus est, ipsum consetetur scribentur cu pri, ut rebum lorem omnes vix! Vis nostrum legendos ad, unum electram sea ad?</p>
+            <p>Stream data from devices connected to existing IoT Platforms to enable real-time interactive dashboards and efficient data processing.
+            Connect NB IoT, LoRaWAN and SigFox devices with specific payload formats using highly customizable data converters. Design and plugin your own converter as a JavaScript functions in real-time.</p>
             <br/>
             <p><a href="/docs/user-guide/integrations/" class="button">Read more</a></p>
         </div>
@@ -30,7 +32,7 @@ description: Lorem ipsum dolor sit amet
         <div class="image-wrapper"><img src="/images/pe/device-asset-groups.svg"></div>
         <div class="content">
             <h3>Device & Asset Groups</h3>
-            <p>Appetere atomorum in nec! Per at dicant animal assueverit, alii democritum id sea. Oporteat lucilius at per. Eius inani duo ne. Audiam qualisque intellegat vim in, eum in mucius expetenda.</p>
+            <p>Group your assets and devices to simplify administration tasks. Customize set of columns for each group and trigger actions on devices directly from administration interface.</p>
             <br/>
             <p><a href="/docs/user-guide/groups/" class="button">Read more</a></p>
         </div>
@@ -39,7 +41,7 @@ description: Lorem ipsum dolor sit amet
         <div class="image-wrapper"><img src="/images/pe/csv-xls-data-export.svg"></div>
         <div class="content">
             <h3>CSV/XLS data export</h3>
-            <p>Meis consul cum id, no prima novum eum! Sit no reque velit nonumy, aeque quando has eu. An mutat munere delenit mel, facilis ponderum id vim! Est partem alterum no, liber erant moderatius te vis. His ex ornatus deserunt, ei sit dicat noster prompta, altera gubergren nam ei. Iuvaret senserit id quo, ancillae periculis ei mel, putent eligendi adipiscing ut eum!</p>
+            <p>Export any dashboard widget data to CSV or XLS format. Allow your customers to download valuable insights from their device's data and review them in offline mode.</p>
             <br/>
             <p><a href="/docs/user-guide/csv-xls-data-export/" class="button">Read more</a></p>
         </div>
@@ -177,12 +179,24 @@ description: Lorem ipsum dolor sit amet
             
 <br/>            
 <br/>
+
+## Flexible deployment options (TODO: Icons of the cloud providers)
             
-Lorem ipsum dolor sit amet, utamur constituto mea id, error definiebas in ius. Tale postulant mei ne, ex mei sumo prodesset. Sed feugiat insolens constituto ut. Pro ut graecis temporibus. Sit agam maiestatis te.
+Deploy ThingsBoard platform in the cloud or on premises. Use commodity hardware to scale out horizontally by adding new nodes to your cluster. Single ThingsBoard server can support 10 000+ devices and 100M messages per hour,
+while simple cluster can support millions of devices and billions of messages.
 
-## RoadMap
+## Simple and predictable pricing models (TODO: Make two pretty cards or columns with icons)
 
-Lorem ipsum dolor sit amet, utamur constituto mea id, error definiebas in ius. Tale postulant mei ne, ex mei sumo prodesset. Sed feugiat insolens constituto ut. Pro ut graecis temporibus. Sit agam maiestatis te.
+Say "No!" to per message or per device pricing that turns to a monster bills in production system. 
+ThingsBoard PE supports two simple and predictable pricing models depending on your product life-cycle stage.
 
+#### For small start-ups and early evaluation phase
 
+Install ThingsBoard PE in two minutes on the AWS cloud and pay hourly rate per server only when you use the platform. 
+  
+#### For production installations in the cloud or on premises  
+
+Install ThingsBoard PE on any cloud or on premises and pay one-time license fee per server and optional software updates subscription for subsequent years of usage. Save up to 80% comparing to per hour rate on license fee and hardware cost.  
+
+## TODO: "Try it now" Button.
 
