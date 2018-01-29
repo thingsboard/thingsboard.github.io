@@ -8,27 +8,35 @@ description: Lorem ipsum dolor sit amet
 <section id="install-pe">
     <div class="tabs">
         <input name="tabs" type="radio" id="tab-cloud" checked="checked" class="tab-input"/>
-        <label for="tab-cloud" class="tab-label">Deploy on cloud</label>
+        <label for="tab-cloud" class="tab-label label-cloud">Deploy on cloud</label>
         <div class="tab-panel">
-            <div id="mlb2-7520964" class="ml-subscribe-form ml-subscribe-form-7520964">
+            <div id="mlb2-7520964" class="deploy-form deploy-cloud ml-subscribe-form ml-subscribe-form-7520964">
                 <div class="ml-vertical-align-center">
                     <div class="subscribe-form ml-block-success" style="display:none">
                         <div class="form-section">
-                            <h4>Deploy on cloud</h4>
+                            <h4>Deploy on Cloud</h4>
                             <p>Thank you! You will receive your instructions shortly.</p>
                         </div>
                     </div>
                     <form class="ml-block-form" action="https://app.mailerlite.com/webforms/submit/a6j3w6" data-id="731316" data-code="a6j3w6" method="POST" target="_blank">
                         <div class="subscribe-form">
-                            <div class="form-section mb10">
-                                <h4>Deploy on cloud</h4>
-                                <p>Please fill this form to get deployment instructions.</p>
+                            <div class="form-section mb20">
+                                <div class="cloud-provider">
+                                    <div class="logo-container">
+                                        <img src="/images/pe/aws_logo.svg">
+                                    </div>
+                                    <div class="cloud-provider-desc">
+                                        <p>Deploy from AWS marketplace.</p>
+                                        <p>Starting from <span class="cloud-price">$0.49/hr</span></p>
+                                    </div>
+                                </div>                                                            
                             </div>
-                            <div class="form-section">
+                            <div class="form-section mb30">
+                                <p>Please fill this form to get deployment instructions.</p>        
                                 <div class="form-group ml-field-email ml-validate-required ml-validate-email">
                                     <label for="fields[email]">
                                         <input type="email" name="fields[email]" class="form-control" value="" autocomplete="email" x-autocompletetype="email" spellcheck="false" autocapitalize="off" autocorrect="off">
-                                        <p>Email*</p>
+                                        <p>Email Address*</p>
                                     </label>
                                 </div>
                                 <div class="form-group ml-field-first_name ml-validate-required">
@@ -52,7 +60,7 @@ description: Lorem ipsum dolor sit amet
                                 <div class="form-group ml-field-phone">
                                     <label for="fields[phone]">
                                         <input type="text" name="fields[phone]" class="form-control" value="" spellcheck="false" autocapitalize="off" autocorrect="off">
-                                        <p>Phone</p>
+                                        <p>Phone Number</p>
                                     </label>    
                                 </div>
                             </div>                            
@@ -76,9 +84,9 @@ description: Lorem ipsum dolor sit amet
             </div>
         </div>
         <input name="tabs" type="radio" id="tab-on-premise" class="tab-input"/>
-        <label for="tab-on-premise" class="tab-label">Deploy on premise</label>
+        <label for="tab-on-premise" class="tab-label label-premise">Deploy on premise</label>
         <div class="tab-panel">
-            <div id="mlb2-7556612" class="ml-subscribe-form ml-subscribe-form-7556612">
+            <div id="mlb2-7556612" class="deploy-form deploy-premise ml-subscribe-form ml-subscribe-form-7556612">
                 <div class="ml-vertical-align-center">
                     <div class="subscribe-form ml-block-success" style="display:none">
                         <div class="form-section">
@@ -88,15 +96,23 @@ description: Lorem ipsum dolor sit amet
                     </div>
                     <form class="ml-block-form" action="https://app.mailerlite.com/webforms/submit/p3l3g2" data-id="736152" data-code="p3l3g2" method="POST" target="_blank">
                         <div class="subscribe-form">
-                            <div class="form-section mb10">
-                                <h4>Deploy on premise</h4>
-                                <p>Please fill this form to get deployment instructions.</p>
+                            <div class="form-section mb20">
+                                <div class="cloud-provider">
+                                    <div class="logo-container">
+                                        <img src="/images/pe/cloud-providers.svg">
+                                    </div>
+                                    <div class="cloud-provider-desc">
+                                        <p>Deploy on any cloud provider or in your local network.</p>
+                                        <p>Starting from <span class="cloud-price">$1,399.00/server</span></p>
+                                    </div>
+                                </div>                                       
                             </div>
-                            <div class="form-section">
+                            <div class="form-section mb30">
+                                <p>Please fill this form to get deployment instructions.</p>
                                 <div class="form-group ml-field-email ml-validate-required ml-validate-email">
                                     <label for="fields[email]">
                                         <input type="email" name="fields[email]" class="form-control" value="" autocomplete="email" x-autocompletetype="email" spellcheck="false" autocapitalize="off" autocorrect="off">
-                                        <p>Email*</p>
+                                        <p>Email Address*</p>
                                     </label>
                                 </div>
                                 <div class="form-group ml-field-first_name ml-validate-required">
@@ -120,7 +136,7 @@ description: Lorem ipsum dolor sit amet
                                 <div class="form-group ml-field-phone">
                                     <label for="fields[phone]">
                                         <input type="text" name="fields[phone]" class="form-control" value="" spellcheck="false" autocapitalize="off" autocorrect="off">
-                                        <p>Phone</p>
+                                        <p>Phone Number</p>
                                     </label>    
                                 </div>
                             </div>                            
@@ -170,8 +186,10 @@ description: Lorem ipsum dolor sit amet
                  var deployType = $.urlParam('deploy');
                  if ("cloud" == deployType) {
                     $('#tab-cloud').attr("checked", "checked");
+                    $(window).scrollTop($('#tab-cloud').position().top);
                  } else if ("premise" == deployType) {
                     $('#tab-on-premise').attr("checked", "checked");
+                    $(window).scrollTop($('#tab-on-premise').position().top);
                  }
             });
         }
