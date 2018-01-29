@@ -165,6 +165,9 @@ description: Lorem ipsum dolor sit amet
             </div>
         </div>
     </div>
+    <div class="question-contact center">
+        <small>Questions about deployment options? <a href="/docs/contact-us/">Contact us.</a></small>
+    </div>
 </section>
 <script type="text/javascript" src="https://static.mailerlite.com/js/w/webforms.min.js?v3772b61f1ec61c541c401d4eadfdd02f"></script>
 <script type="text/javascript">
@@ -187,9 +190,15 @@ description: Lorem ipsum dolor sit amet
                  if ("cloud" == deployType) {
                     $('#tab-cloud').attr("checked", "checked");
                     $(window).scrollTop($('#tab-cloud').position().top);
+                    $('html, body').animate({
+                        scrollTop: $('#tab-cloud').offset().top - 100
+                      }, 0);
                  } else if ("premise" == deployType) {
                     $('#tab-on-premise').attr("checked", "checked");
                     $(window).scrollTop($('#tab-on-premise').position().top);
+                    $('html, body').animate({
+                        scrollTop: $('#tab-on-premise').offset().top - 100
+                      }, 0);
                  }
             });
         }
