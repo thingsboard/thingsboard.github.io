@@ -1,0 +1,185 @@
+
+section#install-pe
+    .tabs
+        display: flex
+        flex-wrap: wrap
+        max-width: 700px
+        background: #efefef
+        box-shadow: 0 1px 8px 0 rgba(0,0,0,0.2), 0 3px 4px 0 rgba(0,0,0,0.14), 0 3px 3px -2px rgba(0,0,0,0.12)
+    .tab-input
+        position: absolute
+        opacity: 0
+    .tab-label
+        width: 100%
+        padding: 20px 30px
+        background: #e5e5e5
+        cursor: pointer
+        font-weight: bold
+        font-size: 18px
+        color: #7f7f7f
+        transition: background 0.1s, color 0.1s
+        &:hover
+            background: #d8d8d8
+        &:active
+            color: #fff
+            background: $professional-color
+    .tab-input:focus + .tab-label
+        z-index: 1
+    .tab-input:checked + .tab-label
+        color: #fff
+        background: $professional-color
+    @media (min-width: 600px)
+        .tab-label
+            width: auto
+    .tab-panel
+        background: $professional-color
+        color: #fff
+        width: 100%
+        display: none
+    @media (min-width: 600px)
+        .tab-panel
+            order: 99
+    .tab-input:checked + .tab-label + .tab-panel
+        display: block
+    #mlb2-7520964, #mlb2-7556612
+        a:hover
+            cursor: pointer
+        h4
+            font-weight: normal
+            border: none
+        .ml-block-form
+            margin-bottom: 0px
+        .subscribe-form
+            padding: 40px
+            width: 350px
+            background: none
+            box-sizing: border-box
+            .form-section
+                display: inline-block
+                margin-bottom: 20px
+                width: 100%
+                &.mb10
+                    margin-bottom: 10px
+                    float: left
+                &.mb0
+                    margin-bottom: 0px
+                h4
+                    margin: 0px 0px 10px 0px
+                    padding: 0px
+                    font-size: 28px
+                    line-height: 100%
+                    text-align: left
+                p, li
+                    line-height: 150%
+                    padding: 0px
+                    margin: 0px 0px 10px 0px
+                    font-size: 14px
+                a
+                    font-size: 14px
+                .confirmation_checkbox
+                    line-height: 150%
+                    padding: 0px
+                    margin: 0px 0px 15px 0px
+                    color: #000000
+                    font-size: 12px
+                    font-weight: normal
+                .confirmation_checkbox input[type="checkbox"]
+                    margin-right: 5px
+                .form-group
+                    margin-bottom: 15px
+                    label
+                        float: left
+                        width: 100%
+                        line-height: 100%
+                        font-size: 14px
+                        p
+                            cursor: text
+                            position: absolute
+                            margin: 0 0 0 10px
+                            padding: 11px 0
+                            font-size: 16px
+                            color: #777
+                            transition: 150ms
+                            transform: scale(1) translate(0, -44px)
+                    input
+                        margin: 24px 0 0 0
+                        padding: 11px
+                        border: 1px solid #fff
+                        font-size: 16px
+                        height: 42px
+                    input:focus + p, input:not(.input--empty) + p
+                        color: inherit
+                        transform: translate(-18px, -75px) scale(0.7)
+                .checkbox
+                    width: 100%
+                    margin: 0px 0px 10px 0px
+                .checkbox label
+                    color: #000000
+                    font-size: 14px
+                .checkbox input
+                    margin: 0px 5px 0px 0px
+                .checkbox input[type=checkbox]
+                    -webkit-appearance: checkbox
+                    opacity: 1
+        &.ml-subscribe-form
+            .form-group .form-control
+                width: 100%
+                font-size: 13px
+                padding: 10px 10px
+                height: auto
+                border-radius: 0px
+                border: 1px solid #cccccc
+                color: #000000
+                background-color: #FFFFFF
+                -webkit-box-sizing: border-box
+                -moz-box-sizing: border-box
+                box-sizing: border-box
+                clear: left
+            button
+                min-width: 150px
+                text-align: center
+                padding: 0.3rem 1.5rem
+                line-height: 30px
+                border: 2px solid #fff
+                border-radius: 3px
+                background-color: #fff
+                color: $professional-color
+                display: inline-block
+                text-decoration: none
+                text-transform: uppercase
+                font-size: 14px
+                font-weight: 500
+                box-shadow: 0 2px 5px 0 rgba(0,0,0,0.26)
+                transition: 0.3s
+                &:hover
+                    background-color: #3c6c79
+                    color: white
+                &:focus
+                    background-color: #3c6c79
+                    color: white
+                &.loading
+                    background-color: #3c6c79
+                    img
+                        vertical-align: middle
+            button[disabled]
+                cursor: not-allowed
+            .form-section.ml-error, .form-group.ml-error
+                label
+                    color: red!important
+                    p
+                        color: red!important
+            .form-group.ml-error .form-control
+                border-color: red!important
+        .ml-vertical-align-center
+            text-align: left
+            display: block
+        .ml-block-success,
+        form.ml-block-form
+            display: inline-block
+            width: 350px
+        form.ml-block-form,
+        &.ml-subscribe-form .subscribe-form
+            width: 100%
+    @media (max-width: 768px)
+        #mlb2-7520964, #mlb2-7556612
+            width: 100%
