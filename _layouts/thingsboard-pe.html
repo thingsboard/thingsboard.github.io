@@ -57,13 +57,13 @@
     });
 
     inViewportDefer(function() {
-        $("#pe-features main:nth-child(odd) .image-wrapper, #pe-features main:nth-child(even) .content").inViewport(function(px){
+        $(".pe-features main:nth-child(odd) .image-wrapper, .pe-features main:nth-child(even) .content").inViewport(function(px){
             if(px >= 80) {
                 $(this).addClass("animated bounceInRight");
             }
         });
 
-        $("#pe-features main:nth-child(even) .image-wrapper, #pe-features main:nth-child(odd) .content").inViewport(function(px){
+        $(".pe-features main:nth-child(even) .image-wrapper, .pe-features main:nth-child(odd) .content").inViewport(function(px){
             if(px >= 80) {
                 $(this).addClass("animated bounceInLeft");
             }

@@ -8,13 +8,13 @@ description: Lorem ipsum dolor sit amet
 <section id="install-pe">
     <div class="tabs">
         <input name="tabs" type="radio" id="tab-cloud" checked="checked" class="tab-input"/>
-        <label for="tab-cloud" class="tab-label label-cloud">Deploy on cloud</label>
+        <label for="tab-cloud" class="tab-label label-cloud">Deploy in Cloud</label>
         <div class="tab-panel">
             <div id="mlb2-7520964" class="deploy-form deploy-cloud ml-subscribe-form ml-subscribe-form-7520964">
                 <div class="ml-vertical-align-center">
                     <div class="subscribe-form ml-block-success" style="display:none">
                         <div class="form-section">
-                            <h4>Deploy on Cloud</h4>
+                            <h4>Deploy in Cloud</h4>
                             <p>Thank you! You will receive your instructions shortly.</p>
                         </div>
                     </div>
@@ -84,13 +84,13 @@ description: Lorem ipsum dolor sit amet
             </div>
         </div>
         <input name="tabs" type="radio" id="tab-on-premise" class="tab-input"/>
-        <label for="tab-on-premise" class="tab-label label-premise">Deploy on premise</label>
+        <label for="tab-on-premise" class="tab-label label-premise">Deploy on Premise</label>
         <div class="tab-panel">
             <div id="mlb2-7556612" class="deploy-form deploy-premise ml-subscribe-form ml-subscribe-form-7556612">
                 <div class="ml-vertical-align-center">
                     <div class="subscribe-form ml-block-success" style="display:none">
                         <div class="form-section">
-                            <h4>Deploy on premise</h4>
+                            <h4>Deploy on Premise</h4>
                             <p>Thank you! You will receive your instructions shortly.</p>
                         </div>
                     </div>
@@ -166,7 +166,7 @@ description: Lorem ipsum dolor sit amet
         </div>
     </div>
     <div class="question-contact center">
-        <small>Questions about deployment options? <a href="/docs/contact-us/">Contact us.</a></small>
+        <small>Questions about deployment options? <a href="/docs/contact-us/?subject=Deployment%20Options">Contact us.</a></small>
     </div>
 </section>
 <script type="text/javascript" src="https://static.mailerlite.com/js/w/webforms.min.js?v3772b61f1ec61c541c401d4eadfdd02f"></script>

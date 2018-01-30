@@ -7,7 +7,7 @@ description:
 
 ## Advanced ThingsBoard IoT Platform distribution with value added features
 
-<section id="pe-features" class="oceanNodes">
+<section class="oceanNodes pe-features">
     <main>
         <div class="image-wrapper"><img src="/images/pe/white-labeling.svg"></div>
         <div class="content">
@@ -176,27 +176,74 @@ description:
         </tbody>
     </table>            
 </div>
-            
-<br/>            
+
+<section class="oceanNodes pe-features">
+    <main>
+        <div class="image-wrapper"><img src="/images/pe/cloud-providers.svg"></div>
+        <div class="content">
+            <h3>Flexible deployment options</h3>
+            <p>Deploy ThingsBoard platform in the cloud or on premises. Use commodity hardware to scale out horizontally by adding new nodes to your cluster.  
+            Single ThingsBoard server can support 10 000+ devices and 100M messages per hour, while simple cluster can support millions of devices and billions of messages.</p>
+        </div>
+    </main>
+    <main>
+        <div class="image-wrapper"><img src="/images/pe/pricing-options.svg"></div>
+        <div class="content">
+            <h3>Simple and predictable pricing models</h3>
+            <p>Say "No!" to per message or per device pricing that turns to a monster bills in production system.
+            ThingsBoard PE supports two simple and predictable pricing models depending on your product life-cycle stage.</p>
+        </div>
+    </main>
+</section>
+<br/>
+<br/>
+<section id="pricing-models-cards">
+    <main id="cloud-pricing">
+		<div class="content">
+			<div class="content-block pb-0x">
+				<h3 class="content-title">For small start-ups and early evaluation phase</h3>
+			</div>
+			<div class="content-block pb-0x">
+				<h4>Install ThingsBoard PE in two minutes on the AWS cloud and pay hourly rate per server only when you use the platform.</h4>
+			</div>
+			<div style="flex: 1;"></div>
+			<div class="content-block">
+			    <div class="pricing-image-wrapper">
+			        <img src="/images/pe/aws-marketplace.svg">
+			    </div>
+			</div>
+			<div class="center content-block">
+				<p><a href="/products/thingsboard-pe/install/?deploy=cloud" class="button">Deploy in Cloud</a></p>
+			</div>
+        </div>
+    </main>
+    <main id="on-premise-pricing">
+		<div class="content">
+			<div class="content-block pb-0x">
+				<h3 class="content-title">For production installations in the cloud or on premises </h3>
+			</div>
+			<div class="content-block pb-0x">
+				<h4>Install ThingsBoard PE on any cloud or on premises and pay one-time license fee per server and optional software updates subscription for subsequent years of usage. Save up to 80% comparing to per hour rate on license fee and hardware cost.</h4>
+			</div>
+			<div style="flex: 1;"></div>
+			<div class="content-block">
+			    <div class="pricing-image-wrapper">
+			        <img src="/images/pe/premise-deployment.svg">
+			    </div>
+			</div>
+			<div class="center content-block">
+				<p><a href="/products/thingsboard-pe/install/?deploy=premise" class="button">Deploy on Premise</a></p>
+			</div>
+        </div>
+    </main>
+</section>
+
+<br/>
 <br/>
 
-## Flexible deployment options (TODO: Icons of the cloud providers)
-            
-Deploy ThingsBoard platform in the cloud or on premises. Use commodity hardware to scale out horizontally by adding new nodes to your cluster. Single ThingsBoard server can support 10 000+ devices and 100M messages per hour,
-while simple cluster can support millions of devices and billions of messages.
+<p align="center">
+    <a href="/products/thingsboard-pe/install/" class="button try-pe">Try it now</a>
+</p>
 
-## Simple and predictable pricing models (TODO: Make two pretty cards or columns with icons)
-
-Say "No!" to per message or per device pricing that turns to a monster bills in production system. 
-ThingsBoard PE supports two simple and predictable pricing models depending on your product life-cycle stage.
-
-#### For small start-ups and early evaluation phase
-
-Install ThingsBoard PE in two minutes on the AWS cloud and pay hourly rate per server only when you use the platform. 
-  
-#### For production installations in the cloud or on premises  
-
-Install ThingsBoard PE on any cloud or on premises and pay one-time license fee per server and optional software updates subscription for subsequent years of usage. Save up to 80% comparing to per hour rate on license fee and hardware cost.  
-
-## TODO: "Try it now" Button.
-
+<br/>
+<br/>
