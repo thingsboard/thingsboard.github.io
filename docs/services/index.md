@@ -24,7 +24,7 @@ description: ThingsBoard support plans, services and training sessions
             Adopt our experience to boost development of your IoT solutions
         </div>
     </a>
-    <a href="/docs/services/professional-" class="card">
+    <a href="/docs/services/professional-services" class="card">
         <div class="card-title">
             <span class="title-text">Professional services</span>
         </div>

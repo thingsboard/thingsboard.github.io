@@ -24,8 +24,9 @@ Coming soon features:
   - Allow Tenant administrator to enable/disable white-labeling for each customer
   - [Contact us](/docs/contact-us/) to suggest missing feature for your use case.
 
-See video tutorial below for step-by-step instruction hot to use this feature.
- 
+See video tutorial below for step-by-step instruction how to use this feature.
+
+<br/>
 <div id="video">  
     <div id="video_wrapper">
         <iframe src="https://www.youtube.com/embed/K64rRA8WEF8" frameborder="0" allowfullscreen></iframe>

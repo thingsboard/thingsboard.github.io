@@ -130,6 +130,9 @@ title: Contact us
     jqueryDefer(
         function () {
             $( document ).ready(function() {
+                 $('html, body').animate({
+                            scrollTop: $('#contact-form').offset().top - 200
+                          }, 0);
                  $('#contact-form .form-element .form-control').addClass("input--empty");
                  $('#contact-form .form-element .form-control').on('input', function() {
                       if( !$(this).val() ) {

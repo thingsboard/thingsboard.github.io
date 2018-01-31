@@ -18,8 +18,9 @@ For each entity group, ThingsBoard user may configure different columns to visua
 ThingsBoard user may also define custom actions to be present for each entity: open dashboard or send RPC call, etc. 
 Bulk operations to assign devices, add them to the group or remove are also supported.  
    
-See video tutorial below for step-by-step instruction hot to use this feature.
- 
+See video tutorial below for step-by-step instruction how to use this feature.
+
+<br/>
 <div id="video">  
     <div id="video_wrapper">
         <iframe src="https://www.youtube.com/embed/K64rRA8WEF8" frameborder="0" allowfullscreen></iframe>

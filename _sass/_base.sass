@@ -208,7 +208,7 @@ header
 	.logo
 		position: absolute
 		top: 30px
-		left: 50%
+		left: 55%
 		transform: translate(-50%, -50%)
 		display: block
 		width: 35px
@@ -1370,22 +1370,39 @@ iframe
 			border-radius: 3px
 			box-shadow: 0 2px 5px 0 rgba(0,0,0,.26)
 			color: #ffffff
-			background: $blue
+			background: $professional-color
 			overflow: hidden
+			&.thingsboard-ce
+				background: #3a6a9e
+			&.thingsboard-pe
+				background: #3c7a88
+			&.thingsboard-gw
+				background: #48886e
 
 			.card-img
 				position: absolute
-				width: 100%
-				height: 170px
+				width: 60%
+				height: 60%
 				opacity: .5
 				top: 92px
-				left: 0
+				left: 20%
 				z-index: 90
-				background-size: contain
+				background-size: 65% 65%
 				background-repeat: no-repeat
 				background-position: center
-				transition: opacity .3s ease,left .3s ease,top .4s ease, height .4s ease
-
+				background-color: rgba(0,0,0,0.8)
+				box-shadow: 0 1px 8px 0 rgba(0,0,0,0.2), 0 3px 4px 0 rgba(0,0,0,0.14), 0 3px 3px -2px rgba(0,0,0,0.12)
+				border-radius: 50%
+				transition: opacity .3s ease,left .4s ease,top .4s ease, height .4s ease, width .4s ease, background-color .4s ease
+				&.product
+					background-size: contain
+					width: 100%
+					height: 170px
+					left: 0px
+					opacity: .7
+					border-radius: initial
+					background-color: initial
+					box-shadow: none
 				&.agriculture-bg
 					background-image: url(/images/industries/agriculture.svg)
 				&.smart-energy-bg
@@ -1414,8 +1431,6 @@ iframe
 					background-image: url(/images/services/gateway.svg)
 
 			.card-title
-				background-color: $dark-grey
-				background-image: url(/images/texture.png)
 				display: flex
 				text-align: center
 				align-items: center
@@ -1425,7 +1440,8 @@ iframe
 				border-top-left-radius: 3px
 				border-top-right-radius: 3px
 				padding: 15px
-				font-size: 24px
+				font-size: 20px
+				font-weight: 500
 				height: 86px
 
 			.title-text
@@ -1459,14 +1475,24 @@ iframe
 
 
 			&:hover
+				.card-title
+					color: #fff
+
 				.title-text
 					&:after
 						width: 100%
 
-
 				.card-img
-					height: 70px
+					height: 25%
+					width: 25%
+					left: 37.5%
+					background-color: transparent
+					box-shadow: none
 					opacity: 1
+					&.product
+						width: 100%
+						height: 80px
+						left: 0px
 
 				.card-description
 					top: 0
@@ -1483,9 +1509,57 @@ iframe
 		.supportPlan
 			display: block
 			padding-bottom: 15px
+			&.free
+				.pricingTable
+					li.heading-row
+						background-color: #2a5079
+						border-color: #2a5079
+					li.pricing-row
+						background-color: #69a0dc
+						border-color: #69a0dc
+					li
+						background-color: #5389c5
+						border-color: #5389c5
+						a.button
+							color: #5389c5
+							&:hover
+								background-color: #2a5079
+			&.professional
+				.pricingTable
+					li.heading-row
+						background-color: #2b5963
+						border-color: #2b5963
+					li.pricing-row
+						background-color: #5d9aa7
+						border-color: #5d9aa7
+					li
+						background-color: #45818e
+						border-color: #45818e
+						a.button
+							color: #45818e
+							&:hover
+								background-color: #2b5963
+
+			&.enterprise
+				.pricingTable
+					li.heading-row
+						background-color: #315245
+						border-color: #315245
+					li.pricing-row
+						background-color: #7bb39c
+						border-color: #7bb39c
+					li
+						background-color: #48886e
+						border-color: #48886e
+						a.button
+							color: #48886e
+							&:hover
+								background-color: #315245
 
 			.pricingTable
-				margin: 10px
+				margin: 20px
+				padding-left: 0px
+				box-shadow: 0 1px 8px 0 rgba(0,0,0,0.2), 0 3px 4px 0 rgba(0,0,0,0.14), 0 3px 3px -2px rgba(0,0,0,0.12)
 
 				li.empty
 					display: none
@@ -1497,45 +1571,34 @@ iframe
 					padding: 14px 17px
 					margin: 0
 					position: relative
-					border-color: #e1e1e1
-					border-top-style: solid
-					border-top-width: 1px
-					border-left-style: solid
-					border-left-width: 1px
-					border-right-style: solid
-					border-right-width: 1px
 					height: 48px
 					display: flex
 					align-items: center
 					justify-content: center
+					color: #fff
+					font-size: 16px
 
 					a.button
 						padding: 14px 30px 12px
 						font-size: 18px
-
-				li:first-child
-					border-top-left-radius: 3px
-					border-top-right-radius: 3px
-
-				li:nth-child(odd)
-					background: #f8f8f8
-
-				li:nth-child(even)
-					background: #ffffff
+						border: 2px solid #fff
+						background-color: #fff
+						transition: 0.3s
+						color: $blue
+						&:hover
+							background-color: $blue
+							color: #fff
 
 				li:last-child
-					border-bottom-left-radius: 3px
-					border-bottom-right-radius: 3px
-					border-bottom-style: solid
-					border-bottom-width: 1px
 					display: block
-					height: auto
+					height: 146px
+
+				li:nth-child(3)
+					padding-top: 30px
+					height: 60px
 
 				li.heading-row
-					background-color: $dark-grey
-					background-image: url(/images/texture.png)
 					color: #ffffff
-					border-color: #545454
 					height: auto
 					font-size: 28px
 
@@ -1543,12 +1606,11 @@ iframe
 					line-height: 1em
 					padding: 10px 12px
 					color: #ffffff
-					background-color: $blue
 					border: 1px solid $blue
 					height: 146px
 					display: block
 					text-align: center
-
+				li
 					.old-price
 						line-height: 30px
 						opacity: 0.85

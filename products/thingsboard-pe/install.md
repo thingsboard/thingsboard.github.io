@@ -188,10 +188,11 @@ description: Lorem ipsum dolor sit amet
                     return results ? results[1] : null;
                  };                 
                  var deployType = $.urlParam('deploy');
-                 if ("cloud" == deployType) {
+                 if (!deployType || "cloud" == deployType) {
                     $('#tab-cloud').attr("checked", "checked");
+                    var offset = !deployType ? 200 : 100;
                     $('html, body').animate({
-                        scrollTop: $('#tab-cloud').offset().top - 100
+                        scrollTop: $('#tab-cloud').offset().top - offset
                       }, 0);
                  } else if ("premise" == deployType) {
                     $('#tab-on-premise').attr("checked", "checked");

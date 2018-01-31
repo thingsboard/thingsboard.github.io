@@ -6,7 +6,7 @@ description: ThingsBoard support plans for IoT projects cloud infrastructure sup
 ---
 
 <div class="supportPlans">
-    <div class="supportPlan">
+    <div class="supportPlan free">
         <ul class="pricingTable">
             <li class="heading-row">
                 <div>FREE</div>
@@ -36,11 +36,13 @@ description: ThingsBoard support plans for IoT projects cloud infrastructure sup
             <li class="empty">                
             </li>
             <li>
-                <a href="/docs/user-guide/troubleshooting/#getting-help" class="button accent">Getting help</a>
+                <div class="price-contact-us">
+                    <a href="/docs/user-guide/troubleshooting/#getting-help" class="button accent">Getting help</a>
+                </div>    
             </li>
         </ul>
     </div>
-    <div class="supportPlan">
+    <div class="supportPlan professional">
         <ul class="pricingTable">
             <li class="heading-row">
                 <div>PROFESSIONAL</div>
@@ -57,7 +59,7 @@ description: ThingsBoard support plans for IoT projects cloud infrastructure sup
                 Online forum and chat
             </li>
             <li>
-                10 server instances
+                5 server instances
             </li>
             <li>
                 Max 10 incidents per month           
@@ -72,11 +74,13 @@ description: ThingsBoard support plans for IoT projects cloud infrastructure sup
                 1 Named contact
             </li>
             <li>
-                <a href="/docs/contact-us" class="button">Contact us</a>
+                <div class="price-contact-us">
+                    <a href="/docs/contact-us" class="button">Contact us</a>
+                </div>    
             </li>
         </ul>
     </div>
-    <div class="supportPlan">
+    <div class="supportPlan enterprise">
         <ul class="pricingTable">
             <li class="heading-row">
                 <div>ENTERPRISE</div>
@@ -105,7 +109,9 @@ description: ThingsBoard support plans for IoT projects cloud infrastructure sup
                 2+ Named contacts
             </li>            
             <li>
-                <a href="/docs/contact-us" class="button accent">Contact us</a>
+                <div class="price-contact-us">
+                    <a href="/docs/contact-us" class="button accent">Contact us</a>
+                </div>
             </li>                                    
         </ul>
     </div>
