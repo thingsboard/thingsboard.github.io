@@ -77,6 +77,11 @@
                 $(this).addClass("animated flipInY");
             }
         });
+        $("#pricing-models-cards main, #peContent .button.try-pe, #pe-customers .customer-block").inViewport(function(px){
+            if(px >= 80) {
+                $(this).addClass("animated zoomIn");
+            }
+        });
     });
 
     function slideUp() {

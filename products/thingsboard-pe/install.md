@@ -13,9 +13,10 @@ description: Lorem ipsum dolor sit amet
             <div id="mlb2-7520964" class="deploy-form deploy-cloud ml-subscribe-form ml-subscribe-form-7520964">
                 <div class="ml-vertical-align-center">
                     <div class="subscribe-form ml-block-success" style="display:none">
-                        <div class="form-section">
-                            <h4>Deploy in Cloud</h4>
-                            <p>Thank you! You will receive your instructions shortly.</p>
+                        <div class="form-section center">
+                            <i class="fa fa-check" aria-hidden="true"></i> 
+                            <p>Thank you!</p>
+                            <p>Please check your email for further instructions.</p>
                         </div>
                     </div>
                     <form class="ml-block-form" action="https://app.mailerlite.com/webforms/submit/a6j3w6" data-id="731316" data-code="a6j3w6" method="POST" target="_blank">
@@ -73,13 +74,6 @@ description: Lorem ipsum dolor sit amet
                             </button>
                         </div>
                     </form>
-                    <script>
-                        function ml_webform_success_7520964() {
-                            var $ = ml_jQuery || jQuery;            
-                            $('.ml-subscribe-form-7520964 .ml-block-success').show();
-                            $('.ml-subscribe-form-7520964 .ml-block-form').hide();
-                        };
-                    </script>
                 </div>
             </div>
         </div>
@@ -89,9 +83,10 @@ description: Lorem ipsum dolor sit amet
             <div id="mlb2-7556612" class="deploy-form deploy-premise ml-subscribe-form ml-subscribe-form-7556612">
                 <div class="ml-vertical-align-center">
                     <div class="subscribe-form ml-block-success" style="display:none">
-                        <div class="form-section">
-                            <h4>Deploy on Premise</h4>
-                            <p>Thank you! You will receive your instructions shortly.</p>
+                        <div class="form-section center">
+                            <i class="fa fa-check" aria-hidden="true"></i>
+                            <p>Thank you!</p>
+                            <p>Please check your email for further instructions.</p>
                         </div>
                     </div>
                     <form class="ml-block-form" action="https://app.mailerlite.com/webforms/submit/p3l3g2" data-id="736152" data-code="p3l3g2" method="POST" target="_blank">
@@ -149,18 +144,6 @@ description: Lorem ipsum dolor sit amet
                             </button>
                         </div>
                     </form>
-                    <script>
-                        function ml_webform_success_7520964() {
-                            var $ = ml_jQuery || jQuery;            
-                            $('.ml-subscribe-form-7520964 .ml-block-success').show();
-                            $('.ml-subscribe-form-7520964 .ml-block-form').hide();
-                        };
-                        function ml_webform_success_7556612() {
-                            var $ = ml_jQuery || jQuery;            
-                            $('.ml-subscribe-form-7556612 .ml-block-success').show();
-                            $('.ml-subscribe-form-7556612 .ml-block-form').hide();
-                        };                        
-                    </script>
                 </div>
             </div>
         </div>
@@ -171,6 +154,24 @@ description: Lorem ipsum dolor sit amet
 </section>
 <script type="text/javascript" src="https://static.mailerlite.com/js/w/webforms.min.js?v3772b61f1ec61c541c401d4eadfdd02f"></script>
 <script type="text/javascript">
+    function ml_webform_success_7520964() {
+        var $ = ml_jQuery || jQuery;            
+        $('.ml-subscribe-form-7520964 .ml-block-success').show();
+        $('.ml-subscribe-form-7520964 .ml-block-form').hide();
+        $('html, body').animate({
+            scrollTop: $('#tab-cloud').offset().top - 100
+          }, 0);
+        $('.ml-subscribe-form-7520964 .ml-block-success').addClass("animated zoomIn");
+    };
+    function ml_webform_success_7556612() {
+        var $ = ml_jQuery || jQuery;            
+        $('.ml-subscribe-form-7556612 .ml-block-success').show();
+        $('.ml-subscribe-form-7556612 .ml-block-form').hide();
+        $('html, body').animate({
+            scrollTop: $('#tab-on-premise').offset().top - 100
+          }, 0);
+        $('.ml-subscribe-form-7556612 .ml-block-success').addClass("animated zoomIn");
+    };                       
     jqueryDefer(
         function () {
             $( document ).ready(function() {
@@ -189,13 +190,11 @@ description: Lorem ipsum dolor sit amet
                  var deployType = $.urlParam('deploy');
                  if ("cloud" == deployType) {
                     $('#tab-cloud').attr("checked", "checked");
-                    $(window).scrollTop($('#tab-cloud').position().top);
                     $('html, body').animate({
                         scrollTop: $('#tab-cloud').offset().top - 100
                       }, 0);
                  } else if ("premise" == deployType) {
                     $('#tab-on-premise').attr("checked", "checked");
-                    $(window).scrollTop($('#tab-on-premise').position().top);
                     $('html, body').animate({
                         scrollTop: $('#tab-on-premise').offset().top - 100
                       }, 0);

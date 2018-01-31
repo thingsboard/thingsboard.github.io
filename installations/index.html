@@ -159,6 +159,16 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 
 {% include footer.html %}
 
+<script type="text/javascript">
+	inViewportDefer(function() {
+		$("#install-cards main").inViewport(function(px){
+			if(px >= 80) {
+				$(this).addClass("animated zoomIn");
+			}
+		});
+	});
+</script>
+
 </body>
 </html>
 
