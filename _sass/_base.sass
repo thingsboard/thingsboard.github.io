@@ -484,6 +484,8 @@ header
 			white-space: normal
 			display: inline-block
 			padding: 0 10px
+			img
+				height: 170px
 		ul
 			li
 				text-align: left
@@ -1326,17 +1328,55 @@ iframe
 			max-width: 75%
 			max-height: 85%
 
+	table.company-contacts
+		width: auto
+		background: $professional-color
+		color: #fff
+		padding: 15px
+		border: none
+		box-shadow: 0 1px 8px 0 rgba(0,0,0,0.2), 0 3px 4px 0 rgba(0,0,0,0.14), 0 3px 3px -2px rgba(0,0,0,0.12)
+		tr
+			background: none
+		td
+			font-size: 18px
+			&:first-child
+				text-align: center
+			a.mail
+				font-weight: 500
+				color: #fff
+				&:hover
+					text-decoration: underline
+			a.button
+				background-color: #fff
+				color: $professional-color
+				line-height: 30px
+				padding: 0.3rem 1.5rem
+				border: 2px solid #fff
+				&:hover
+					background-color: #3c6c79
+					color: white
+					border: 2px solid #fff
+					transition: 0.3s
+			&.contact-us
+				padding-top: 20px
+		.fa
+			color: $professional-color
+			font-size: 28px
+			margin-right: 10px
+			background: rgba(255,255,255,0.8)
+			box-shadow: 0 1px 8px 0 rgba(0,0,0,0.2), 0 3px 4px 0 rgba(0,0,0,0.14), 0 3px 3px -2px rgba(0,0,0,0.12)
+			border-radius: 20%
+			width: 40px
+			height: 40px
+			line-height: 40px
+
 	.mediakit-block
-		display: inline-block
-		a
-			cursor: pointer
-			color: $blue-03
-			text-decoration: none
-			&:hover
-				text-decoration: underline
-		p
-			color: $blue-03
-			margin: 15px 0
+		a.button
+			padding: 14px 15px 12px
+			font-size: 14px
+			img
+				vertical-align: middle
+				margin-right: 15px
 
 	a.button
 		border-radius: 2px
