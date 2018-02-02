@@ -290,124 +290,6 @@ header
 	background-color: $blue
 	border-color: $blue
 
-
-.demoDashboardButton
-	text-align: center
-	padding: 20px 0
-
-.demo-dashboards-carousel, .feedbacks-carousel
-	.slick-next, .slick-prev
-		top: 40%
-	.slick-next:before, .slick-prev:before
-		color: rgba(0,0,0,0.67)
-
-.demo-dashboards-carousel
-	padding-top: 25px
-
-.dashboard-item
-	outline: none
-
-#dashboard_description
-	padding-top: 15px
-	h3
-		margin-bottom: 18px
-
-#thingsboard_feedbacks
-	padding-top: 30px
-
-.overlay-link
-	outline: none
-	position: absolute
-	top: 0
-	left: 0
-	width: 100%
-	height: 100%
-	opacity: 0
-
-.feedbacks-carousel
-	.slick-track
-		display: flex
-		.slick-slide
-			display: flex
-			height: auto
-			align-items: center
-			justify-content: center
-
-.feedback-item
-	outline: none
-	background: #fff
-	box-shadow: 2px 2px 15px #ccc
-	padding: 10px 20px 20px 25px
-	margin: 10px
-	color: #333
-	.feedback-logo-container
-		float: top
-		text-align: center
-		.feedback-logo
-			display: inline-block
-			border-radius: 50%
-			box-shadow: 0px 2px 15px #aaa
-			width: 80px
-			height: 80px
-	.feedback-content
-		margin-top: 10px
-		margin-left: 20px
-		margin-right: 20px
-		.author
-			color: #333
-			padding-bottom: 10px
-			text-align: center
-		blockquote
-			quotes: "“" "”" "“" "”"
-			&:before
-				color: #999
-				content: open-quote
-				height: 0
-				font-size: 2em
-				line-height: 0.1em
-				margin-left: -.55em
-				margin-right: 0.15em
-				vertical-align: -0.4em
-			&:after
-				color: #999
-				content: close-quote
-				height: 0
-				font-size: 2em
-				line-height: 0.1em
-				margin-left: 0.15em
-				vertical-align: -0.4em
-			p
-				display: inline
-				color: #555
-				font-style: italic
-				font-size: 16px
-				line-height: 18px
-
-.demoDashboardWrapper
-	position: relative
-	padding-bottom: 15px
-	.demoDashboard
-		display: block
-		position: relative
-		width: 100%
-		height: 100%
-		img
-			width: 100%
-	.overlay
-		outline: none
-		position: absolute
-		top: 0
-		left: 0
-		width: 100%
-		height: 100%
-		background: #ffffff url(/images/eye_gray.svg) no-repeat scroll center
-		background-size: 88px
-		opacity: 0
-		transition: 0.5s
-		&:hover
-			opacity: 0.5
-			transition: 0.5s
-
 #hamburger
 	display: inline-block
 	position: relative
@@ -1371,14 +1253,6 @@ iframe
 			height: 40px
 			line-height: 40px
 
-	.mediakit-block
-		a.button
-			padding: 14px 15px 12px
-			font-size: 14px
-			img
-				vertical-align: middle
-				margin-right: 15px
-
 	a.button
 		border-radius: 2px
 
@@ -1811,42 +1685,10 @@ html.search #docsContent
 		padding-bottom: 0
 		padding-left: 8px
 
-
-
-
-
-
 // ocean nodes
 $ocean-nodes-padding-Y: 10px
 $ocean-nodes-main-margin-bottom: 60px
 $ocean-nodes-h3-margin-bottom: 30px
-
-// features
-$features-h3-margin-bottom: 20px
-$feature-box-div-width: 100%
-$feature-box-margin-bottom: 0
-$feature-box-div-margin-bottom: 40px
-
-
-// Home-specific
-
-#home
-
-	&.flip-nav, &.open-nav
-		//.logo
-		//	background-image: url(/images/thingsboard_logo_blue.svg)
-
-	#hero
-		margin-bottom: 0
-		padding-bottom: 1px
-
-		main
-			padding: 0 10px
-			margin-bottom: 30px
-
-		#vendorStrip
-			display: none
-
 
 // OCEAN NODES
 .oceanNodes
@@ -1864,19 +1706,9 @@ $feature-box-div-margin-bottom: 40px
 		max-width: 75%
 		margin: 0 auto 20px
 		text-align: center
-
 		img
 			width: 100%
 			max-width: 160px
-
-	&#intro
-		padding-top: 20px
-		main:first-child
-			.image-wrapper
-				max-width: 100%
-
-				img
-					max-width: 491px
 
 	h3
 		margin-bottom: $ocean-nodes-h3-margin-bottom
@@ -1896,45 +1728,6 @@ $feature-box-div-margin-bottom: 40px
 			left: 0
 			width: 100%
 			height: 100%
-
-// Features
-#features
-	padding-top: 140px
-	background-color: $light-grey
-	background-image: url(/images/thingsboard_blue.svg)
-	background-position: center 64px
-	background-repeat: no-repeat
-	background-size: 64px
-
-.feature-box
-	//padding: 50px 0
-	width: 100%
-	overflow: hidden
-	clear: both
-
-	h4
-		line-height: normal
-		margin-bottom: 15px
-
-	& > div:first-child
-		float: left
-
-	& > div:last-child
-		float: right
-
-#features
-	margin-top: 20px
-	h3
-		margin-bottom: $features-h3-margin-bottom
-
-	.feature-box
-		margin-bottom: $feature-box-margin-bottom
-
-		& > div
-			width: $feature-box-div-width
-			margin-bottom: $feature-box-div-margin-bottom
-
-
 
 
 // Community
@@ -2096,15 +1889,6 @@ $feature-box-div-margin-bottom: 40px
 
 		div:nth-child(3)
 			background-image: url(/images/stackoverflow_icon.png)
-
-
-#home
-	#talkToUs
-		main
-			padding: 30px 0
-		
-		h5
-			font-size: 20px
 
 // jSocials
 

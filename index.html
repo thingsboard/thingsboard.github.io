@@ -11,13 +11,20 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 
 <!--  HERO  -->
 <section id="hero" class="light-text">
-	<!--main>
-		<div id="headlineWrapper">
-			<h1>Open-source IoT Platform</h1>
-			<h5>Device management, data collection, processing and visualization <br/> for your IoT projects</h5>
+	<video id="hero-video" autoplay loop muted poster="/video/tb-cover.jpg">
+		<source src="/video/tb-cover.mp4" type="video/mp4" />
+		<source src="/video/tb-cover.webm" type="video/webm" />
+		Your browser does not support the video tag. I suggest you upgrade your browser.
+	</video>
+	<div id="hero-content">
+		<h1 class="header-animation tb-title">ThingsBoard IoT Platform</h1>
+		<div class="header-animation">
+			<a href="#intro" class="button learn-tb">Learn More</a>
 		</div>
-		<a href="/docs/getting-started-guides/helloworld/" id="quickstartButton" class="button">Getting Started</a>
-	</main-->
+		<div class="tb-arrow">
+			<a href="#intro"><i class="fa fa-chevron-down fa-2x" aria-hidden="true"></i></a>
+		</div>
+	</div>
 </section>
 
 <section id="intro" class="oceanNodes">
@@ -31,75 +38,39 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 		</div>
 	</main>
 </section>
-
-<section id="dashboard_description">
+<section id="main-features" class="oceanNodes">
 	<main>
-		<h3 class="center">Real-Time IoT Dashboards</h3>
+		<div class="image-wrapper"><img src="images/device_management.svg"></div>
 		<div class="content">
-			<p class="center">ThingsBoard allows you to create rich IoT Dashboards for data visualization and remote device control in real-time.
-				More than 30 customizable widgets allows you to build end-user custom dashboards for most IoT use-cases.</p>
-			<div class="demo-dashboards-carousel">
-				<div class="dashboard-item">
-					<div class="demoDashboardWrapper">
-						<div class="demoDashboard">
-							<img src="images/demo/smart-metering-dashboard.png">
-						</div>
-						<a href="/smart-metering/" class="overlay"></a>
-					</div>
-					<p class="center">Deliver and store data from smart meters in reliable and fault-tolerant way,
-						visualize real-time and historical energy consumption data on customizable end-user dashboards,
-						integrate with third-party analytics frameworks and solutions.</p>
-					<div class="demoDashboardButton">
-						<a href="/smart-metering/" class="button">Smart metering</a>
-					</div>
-				</div>
-				<div class="dashboard-item" style="display: none;">
-					<div class="demoDashboardWrapper">
-						<div class="demoDashboard">
-							<img src="images/demo/energy-monitoring-dashboard.png">
-						</div>
-						<a href="/smart-energy/" class="overlay"></a>
-					</div>
-					<p class="center">Deliver and store data from smart meters in reliable and fault-tolerant way,
-						visualize real-time and historical energy consumption data on customizable end-user dashboards,
-						integrate with third-party analytics frameworks and solutions.</p>
-					<div class="demoDashboardButton">
-						<a href="/smart-energy/" class="button">Smart energy</a>
-					</div>
-				</div>
-				<div class="dashboard-item" style="display: none;">
-					<div class="demoDashboardWrapper">
-						<div class="demoDashboard">
-							<img src="images/demo/silos-monitoring-dashboard.png">
-						</div>
-						<a href="/smart-farming/" class="overlay"></a>
-					</div>
-					<p class="center">Collect important indicators for your agricultural production such as weather conditions
-						or facilities state via IoT sensors and visualize them using end-user customizable dashboards
-						provided by ThingsBoard platform.</p>
-					<div class="demoDashboardButton">
-						<a href="/smart-farming/" class="button">Smart farming</a>
-					</div>
-				</div>
-				<div class="dashboard-item" style="display: none;">
-					<div class="demoDashboardWrapper">
-						<div class="demoDashboard">
-							<img src="images/demo/fleet-monitoring-dashboard.png">
-						</div>
-						<a href="/fleet-tracking/" class="overlay"></a>
-					</div>
-					<p class="center">ThingsBoard platform allows to track vehicles state and alerts via various sensors,
-						plot vehicle routes in real-time and browse their sensors reading history at the same time
-						using customizable high quality widgets and dashboards.</p>
-					<div class="demoDashboardButton">
-						<a href="/fleet-tracking/" class="button">Fleet tracking</a>
-					</div>
-				</div>
-			</div>
+			<h4>Provision and manage devices and assets</h4>
+			<p>Provision, monitor and control your IoT entities in secure way using rich server-side APIs.
+				Define relations between your devices, assets, customers or any other entities.</p>
+		</div>
+	</main>
+	<main>
+		<div class="image-wrapper"><img src="images/visualize.svg"></div>
+		<div class="content">
+			<h4>Collect and visualize data</h4>
+			<p>Collect and store telemetry data in scalable and fault-tolerant way.
+				Visualize your data with built-in or custom widgets and flexible dashboards.
+				Share dashboards with your customers.</p>
+		</div>
+	</main>
+	<main>
+		<div class="image-wrapper"><img src="images/process_react.svg"></div>
+		<div class="content">
+			<h4>Process and React</h4>
+			<p>Define data processing rules and trigger reactions using plugins. Raise alarms on incoming telemetry events or attribute updates.</p>
+		</div>
+	</main>
+	<main>
+		<div class="image-wrapper"><img src="images/iot-gateway.svg"></div>
+		<div class="content">
+			<h4><a href="/docs/iot-gateway/what-is-iot-gateway/">IoT Gateway</a></h4>
+			<p>Integrate devices connected to legacy and third-party systems using existing protocols. Connect to your OPC-UA server or MQTT broker in minutes by following <a href="/docs/iot-gateway/getting-started/">this guide</a>.</p>
 		</div>
 	</main>
 </section>
-
 <section id="thingsboard_feedbacks">
 	<main>
 		<div class="content">
@@ -186,37 +157,70 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 		</div>
 	</main>
 </section>
-
-<section id="main-features" class="oceanNodes">
+<section id="dashboard_description">
 	<main>
-		<div class="image-wrapper"><img src="images/device_management.svg"></div>
+		<h3 class="center">Real-Time IoT Dashboards</h3>
 		<div class="content">
-			<h4>Provision and manage devices and assets</h4>
-			<p>Provision, monitor and control your IoT entities in secure way using rich server-side APIs.
-				Define relations between your devices, assets, customers or any other entities.</p>
-		</div>
-	</main>
-	<main>
-		<div class="image-wrapper"><img src="images/visualize.svg"></div>
-		<div class="content">
-			<h4>Collect and visualize data</h4>
-			<p>Collect and store telemetry data in scalable and fault-tolerant way.
-				Visualize your data with built-in or custom widgets and flexible dashboards.
-				Share dashboards with your customers.</p>
-		</div>
-	</main>
-	<main>
-		<div class="image-wrapper"><img src="images/process_react.svg"></div>
-		<div class="content">
-			<h4>Process and React</h4>
-			<p>Define data processing rules and trigger reactions using plugins. Raise alarms on incoming telemetry events or attribute updates.</p>
-		</div>
-	</main>
-	<main>
-		<div class="image-wrapper"><img src="images/iot-gateway.svg"></div>
-		<div class="content">
-			<h4><a href="/docs/iot-gateway/what-is-iot-gateway/">IoT Gateway</a></h4>
-			<p>Integrate devices connected to legacy and third-party systems using existing protocols. Connect to your OPC-UA server or MQTT broker in minutes by following <a href="/docs/iot-gateway/getting-started/">this guide</a>.</p>
+			<p class="center">ThingsBoard allows you to create rich IoT Dashboards for data visualization and remote device control in real-time.
+				More than 30 customizable widgets allows you to build end-user custom dashboards for most IoT use-cases.</p>
+			<div class="demo-dashboards-carousel">
+				<div class="dashboard-item">
+					<div class="demoDashboardWrapper">
+						<div class="demoDashboard">
+							<img src="images/demo/smart-metering-dashboard.png">
+						</div>
+						<a href="/smart-metering/" class="overlay"></a>
+					</div>
+					<p class="center">Deliver and store data from smart meters in reliable and fault-tolerant way,
+						visualize real-time and historical energy consumption data on customizable end-user dashboards,
+						integrate with third-party analytics frameworks and solutions.</p>
+					<div class="demoDashboardButton">
+						<a href="/smart-metering/" class="button">Smart metering</a>
+					</div>
+				</div>
+				<div class="dashboard-item" style="display: none;">
+					<div class="demoDashboardWrapper">
+						<div class="demoDashboard">
+							<img src="images/demo/energy-monitoring-dashboard.png">
+						</div>
+						<a href="/smart-energy/" class="overlay"></a>
+					</div>
+					<p class="center">Deliver and store data from smart meters in reliable and fault-tolerant way,
+						visualize real-time and historical energy consumption data on customizable end-user dashboards,
+						integrate with third-party analytics frameworks and solutions.</p>
+					<div class="demoDashboardButton">
+						<a href="/smart-energy/" class="button">Smart energy</a>
+					</div>
+				</div>
+				<div class="dashboard-item" style="display: none;">
+					<div class="demoDashboardWrapper">
+						<div class="demoDashboard">
+							<img src="images/demo/silos-monitoring-dashboard.png">
+						</div>
+						<a href="/smart-farming/" class="overlay"></a>
+					</div>
+					<p class="center">Collect important indicators for your agricultural production such as weather conditions
+						or facilities state via IoT sensors and visualize them using end-user customizable dashboards
+						provided by ThingsBoard platform.</p>
+					<div class="demoDashboardButton">
+						<a href="/smart-farming/" class="button">Smart farming</a>
+					</div>
+				</div>
+				<div class="dashboard-item" style="display: none;">
+					<div class="demoDashboardWrapper">
+						<div class="demoDashboard">
+							<img src="images/demo/fleet-monitoring-dashboard.png">
+						</div>
+						<a href="/fleet-tracking/" class="overlay"></a>
+					</div>
+					<p class="center">ThingsBoard platform allows to track vehicles state and alerts via various sensors,
+						plot vehicle routes in real-time and browse their sensors reading history at the same time
+						using customizable high quality widgets and dashboards.</p>
+					<div class="demoDashboardButton">
+						<a href="/fleet-tracking/" class="button">Fleet tracking</a>
+					</div>
+				</div>
+			</div>
 		</div>
 	</main>
 </section>
@@ -317,7 +321,81 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 </style>
 
 <script type="text/javascript">
+
 	jqueryDefer(initSlick);
+
+	jqueryDefer(function () {
+		vis(function() {
+			if (vis()) {
+				slideUp();
+			}
+		});
+		$( document ).ready(function() {
+			scaleVideoContainer();
+		});
+		$(window).on('resize', function() {
+			scaleVideoContainer();
+		});
+
+		$('#hero-content > .tb-arrow > a, #hero-content a.learn-tb').click(function(event) {
+			event.preventDefault();
+			var target = $('#intro');
+			$('html, body').animate({
+				scrollTop: target.offset().top - 60 //header height
+			}, 1000, "easeOutCirc");
+		});
+
+	});
+
+	inViewportDefer(function() {
+		/*$(".pe-features main:nth-child(odd) .image-wrapper, .pe-features main:nth-child(even) .content").inViewport(function(px){
+			if(px >= 80) {
+				$(this).addClass("animated bounceInRight");
+			}
+		});
+
+		$(".pe-features main:nth-child(even) .image-wrapper, .pe-features main:nth-child(odd) .content").inViewport(function(px){
+			if(px >= 80) {
+				$(this).addClass("animated bounceInLeft");
+			}
+		});
+
+		$("#feature-comparison table th:nth-child(2), " +
+				"#feature-comparison table th:nth-child(4), " +
+				"#feature-comparison table td:nth-child(2), " +
+				"#feature-comparison table td:nth-child(4)").inViewport(function(px){
+			if(px >= 80) {
+				$(this).addClass("animated flipInY");
+			}
+		});
+		$("#pricing-models-cards main, #peContent .button.try-pe, #pe-customers .customer-block").inViewport(function(px){
+			if(px >= 80) {
+				$(this).addClass("animated zoomIn");
+			}
+		});*/
+	});
+
+	function slideUp() {
+		var headAnimations = $('#hero-content').find('.header-animation');
+		for (var i=0;i<headAnimations.length;i++) {
+			reinsert($(headAnimations[i]));
+		}
+	}
+
+	function reinsert(el) {
+		var newone = el.clone(true);
+		el.before(newone);
+		el.remove();
+	}
+
+	function scaleVideoContainer() {
+
+		var height = $(window).height() + 5;
+		var unitHeight = parseInt(height) + 'px';
+		$('#hero').css('height',unitHeight);
+
+	}
+
 	function initSlick() {
 		var scriptsList = [
 			{src: '/css/slick.min.css', type: 'css'},
