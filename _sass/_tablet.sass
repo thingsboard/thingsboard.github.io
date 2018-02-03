@@ -50,14 +50,6 @@ $vendor-strip-font-size: 16px
 // ocean nodes
 $ocean-nodes-padding-Y: 0px
 
-//features
-$features-h3-margin-bottom: 40px
-$feature-box-margin-bottom: 60px
-$feature-box-div-margin-bottom: 0
-$feature-box-div-width: 45%
-
-
-
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -88,10 +80,6 @@ $feature-box-div-width: 45%
 		padding-bottom: 0px
 
 
-	//#home
-	//	#viewDocs, #blog, #gettingStarted, #liveDemo, #useCases
-	//		display: inline-block
-
 	#vendorStrip
 		display: block
 		text-align: center
@@ -111,38 +99,6 @@ $feature-box-div-width: 45%
 
 					li
 						margin-right: 60px
-
-	#thingsboard-pe
-		#hero
-			#hero-content
-				.pe-title
-					font-size: 36px
-		#peContent
-			h2#feature-comparison-matrix
-				padding-top: 50px
-				padding-bottom: 50px
-				font-size: 46px
-			#feature-comparison
-				table
-					max-width: 80%
-					th
-						height: 80px
-					th:nth-child(1)
-						width: 320px
-					th:nth-child(3), th:nth-child(5)
-						width: 15px
-					th:nth-child(2), th:nth-child(4)
-						font-size: 18px
-						padding: 0 0 20px 0
-						width: 200px
-						.product-header
-							padding: 8px
-					td:nth-child(1)
-						font-size: 16px
-					td:nth-child(2), td:nth-child(4)
-						font-size: 20px
-						&.checked, &.unchecked
-							background-size: auto 20px
 
 	#docsContent
 		.trainings-info
@@ -205,56 +161,9 @@ $feature-box-div-width: 45%
 			img
 				width: 100%
 
-		&#intro
-			main:nth-child(1)
-				padding-right: 0
-				h3, p
-					text-align: center
-				.image-wrapper
-					position: relative
-					display: block
-					float: none
-					max-width: 100%
-					transform: none
-				.content
-					display: block
-
-		&#pe-features
-			main
-				padding-top: 0px
-				&:nth-child(odd)
-					padding-right: 300px
-				&:nth-child(even)
-					padding-left: 300px
-			img
-				max-width: 220px
-				width: 220px
-
-		&#main-features
-			main
-				.image-wrapper
-					max-width: 25%
-
 	#video
 		width: $main-max-width
 		display: block
-
-	#features
-		padding-bottom: 60px
-
-		.feature-box
-			margin-bottom: 30px
-
-			&:last-child
-				margin-bottom: 0
-
-		h3
-			margin-bottom: $features-h3-margin-bottom
-
-		.feature-box
-			& > div
-				width: $feature-box-div-width
-				margin-bottom: $feature-box-div-margin-bottom
 
 	#talkToUs
 		#bigSocial, #gettingHelp

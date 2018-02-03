@@ -31,7 +31,13 @@ On the other hand, AWS IoT, IBM Watson and Azure Event Hub allows to subscribe t
 Once message arrives from External Platform to ThingsBoard it passes validation according to platform specific payload format and security rules. Once message is validated ThingsBoard Integration invokes
 assigned Data Converter to extract sub-set of meaningful information out of the incoming message. The message is basically transformed from device and platform specific payload to the format that ThingsBoard uses.    
 
-TODO: Diagram
+<br/>
+
+ ![image](/images/user-guide/integrations-overview.svg)
+
+### Data Converters
+
+TODO: Add video with complex data converters use-case (with metadata)
 
 ### Debug mode
 

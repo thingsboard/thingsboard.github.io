@@ -172,17 +172,6 @@ header
 		right: 0
 		position: absolute
 		z-index: -1
-
-#thingsboard-pe
-	&:not(.open-nav):not(.flip-nav)
-		header
-			&::after
-				opacity: 0
-	//&.open-nav
-		header
-			&::after
-				opacity: 0.3
-
 .logo
 	position: relative
 	float: left
@@ -219,7 +208,7 @@ header
 	.logo
 		position: absolute
 		top: 30px
-		left: 50%
+		left: 55%
 		transform: translate(-50%, -50%)
 		display: block
 		width: 35px
@@ -301,124 +290,6 @@ header
 	background-color: $blue
 	border-color: $blue
 
-
-.demoDashboardButton
-	text-align: center
-	padding: 20px 0
-
-.demo-dashboards-carousel, .feedbacks-carousel
-	.slick-next, .slick-prev
-		top: 40%
-	.slick-next:before, .slick-prev:before
-		color: rgba(0,0,0,0.67)
-
-.demo-dashboards-carousel
-	padding-top: 25px
-
-.dashboard-item
-	outline: none
-
-#dashboard_description
-	padding-top: 15px
-	h3
-		margin-bottom: 18px
-
-#thingsboard_feedbacks
-	padding-top: 30px
-
-.overlay-link
-	outline: none
-	position: absolute
-	top: 0
-	left: 0
-	width: 100%
-	height: 100%
-	opacity: 0
-
-.feedbacks-carousel
-	.slick-track
-		display: flex
-		.slick-slide
-			display: flex
-			height: auto
-			align-items: center
-			justify-content: center
-
-.feedback-item
-	outline: none
-	background: #fff
-	box-shadow: 2px 2px 15px #ccc
-	padding: 10px 20px 20px 25px
-	margin: 10px
-	color: #333
-	.feedback-logo-container
-		float: top
-		text-align: center
-		.feedback-logo
-			display: inline-block
-			border-radius: 50%
-			box-shadow: 0px 2px 15px #aaa
-			width: 80px
-			height: 80px
-	.feedback-content
-		margin-top: 10px
-		margin-left: 20px
-		margin-right: 20px
-		.author
-			color: #333
-			padding-bottom: 10px
-			text-align: center
-		blockquote
-			quotes: "“" "”" "“" "”"
-			&:before
-				color: #999
-				content: open-quote
-				height: 0
-				font-size: 2em
-				line-height: 0.1em
-				margin-left: -.55em
-				margin-right: 0.15em
-				vertical-align: -0.4em
-			&:after
-				color: #999
-				content: close-quote
-				height: 0
-				font-size: 2em
-				line-height: 0.1em
-				margin-left: 0.15em
-				vertical-align: -0.4em
-			p
-				display: inline
-				color: #555
-				font-style: italic
-				font-size: 16px
-				line-height: 18px
-
-.demoDashboardWrapper
-	position: relative
-	padding-bottom: 15px
-	.demoDashboard
-		display: block
-		position: relative
-		width: 100%
-		height: 100%
-		img
-			width: 100%
-	.overlay
-		outline: none
-		position: absolute
-		top: 0
-		left: 0
-		width: 100%
-		height: 100%
-		background: #ffffff url(/images/eye_gray.svg) no-repeat scroll center
-		background-size: 88px
-		opacity: 0
-		transition: 0.5s
-		&:hover
-			opacity: 0.5
-			transition: 0.5s
-
 #hamburger
 	display: inline-block
 	position: relative
@@ -495,6 +366,8 @@ header
 			white-space: normal
 			display: inline-block
 			padding: 0 10px
+			img
+				height: 170px
 		ul
 			li
 				text-align: left
@@ -633,242 +506,6 @@ header
 		max-width: 75%
 		max-height: 85%
 		vertical-align: middle
-
-#thingsboard-pe
-	#hero
-		height: 100vh //calc(100vh + 5px)
-		padding-top: 0px
-		position: relative
-		//margin-top: 60px
-		//background-image: url(/images/texture.png)
-		//background-color: $dark-grey
-		overflow: hidden
-		background-size: cover
-		background-position: center center
-		background-repeat: no-repeat
-		background-image: url(/video/pe-cover.png)
-		#hero-video
-			min-width: auto
-			min-height: auto
-			width: 100%
-			height: 100%
-			position: absolute
-			left: 50%
-			top: 0
-			//transform: translate(-50%, -50%)
-			transform: translateX(-50%)
-			object-fit: cover
-			transition-duration: 500ms
-		#hero-content
-			height: 100%
-			display: flex
-			flex-direction: column
-			justify-content: center
-			align-content: center
-			.pe-title
-				//height: 60px
-				margin-bottom: 20px
-				font-size: 22px
-				font-weight: 400
-				text-shadow: 0 0 18px rgba(0,0,0,.37)
-			.try-pe
-				cursor: pointer
-				line-height: 40px
-				font-size: 16px
-				padding: 0 15px
-				border: 1px solid white
-				background-color: transparent
-				transition: 0.6s
-				text-shadow: 0 0 18px rgba(0,0,0,.37)
-				&:hover
-					background-color: white
-					color: $dark-grey
-			.pe-arrow
-				position: absolute
-				bottom: 40px
-				left: 0
-				right: 0
-				margin: auto
-				width: 40px
-				height: 40px
-				opacity: 1
-				z-index: 24
-				color: #fff
-				a
-					color: #fff
-	#peContent
-		color: #424242
-		h2
-			border: none
-			text-align: center
-			font-weight: 400
-		h3
-			border: none
-			font-weight: 400
-		p
-			line-height: 1.5em
-
-		#pe-features
-			padding-top: 25px
-
-			main
-				padding-top: 25px
-				min-height: 220px
-				.image-wrapper
-					top: 0
-					transform: translateY(0)
-					padding: 16px
-					box-shadow: 0 1px 8px 0 rgba(0,0,0,.2), 0 3px 4px 0 rgba(0,0,0,.14), 0 3px 3px -2px rgba(0,0,0,.12)
-				.image-wrapper, .content
-					opacity: 0
-					animation-duration: 1.2s
-					&.animated
-						opacity: 1
-
-			a.button
-				cursor: pointer
-				line-height: 30px
-				border: 2px solid $dark-grey
-				background-color: transparent
-				transition: 0.3s
-
-				&:hover
-					background-color: $dark-grey
-					color: white
-
-		h2#feature-comparison-matrix
-			padding-top: 0px
-			padding-bottom: 30px
-			font-size: 28px
-
-		#feature-comparison
-			background: $dark-grey url(/images/texture.png)
-			background-size: auto 100%
-			margin-top: 70px
-			width: 100vw
-			margin-left: calc(-50vw + 50%)
-			table
-				th:nth-child(2), th:nth-child(4), td:nth-child(2), td:nth-child(4)
-					opacity: 0
-					&.animated
-						opacity: 1
-				margin: auto
-				border: none
-				max-width: 100%
-				transform: translateY(-70px)
-				th:nth-child(2), td:nth-child(2)
-					transition-delay: 0.3s
-				th:nth-child(4), td:nth-child(4)
-					transition-delay: 0.6s
-				thead
-					background: none
-					color: #fff
-				th
-					font-weight: 500
-					height: 70px
-				th, td:nth-child(2), td:nth-child(3), td:nth-child(4), td:nth-child(5)
-					text-align: center
-				th:nth-child(1)
-					width: 120px
-				th:nth-child(3), th:nth-child(5)
-					width: 20px
-				th:nth-child(2), th:nth-child(4)
-					font-size: 14px
-					padding: 0 0 10px 0
-					width: 100px
-					.product-header
-						height: 100%
-						padding: 4px
-						background: rgba(0, 0, 0, 0.33)
-				th:nth-child(2)
-					background: $community-color
-				th:nth-child(4)
-					background: $professional-color
-				tr
-					background: none
-					height: 60px
-				tr:nth-child(1)
-					height: 10px
-				td
-					border-top: none
-					background: none
-					color: #fff
-					padding: 10px
-				td:nth-child(1)
-					font-size: 12px
-				td:nth-child(2), td:nth-child(4)
-					font-size: 16px
-					&.checked, &.unchecked
-						background-size: auto 15px
-						background-position: center center
-						background-repeat: no-repeat
-					&.checked
-						background-image: url(/images/pe/feature-checked.svg)
-					&.unchecked
-						background-image: url(/images/pe/feature-unchecked.svg)
-				td:nth-child(2)
-					background: #5389c5
-				td:nth-child(4)
-					background: #45818e
-
-		#pe-customers
-			display: flex
-			flex-wrap: wrap
-			justify-content: center
-
-			.customer-block
-				max-width: 100%
-				padding: 20px 30px
-				width: 270px
-				a
-					cursor: pointer
-					color: $blue-03
-					text-decoration: none
-					&:hover
-						text-decoration: underline
-				p
-					margin: 15px 0
-
-	.flyout-button
-		display: none
-
-
-	//&.open-nav
-		#hero
-			#hero-content
-				visibility: hidden
-	.header-animation
-		max-width: 100%
-		opacity: 0
-		transform: translate3d(0, 45px, 0)
-		animation-name: slideup-in
-		animation-duration: 600ms
-		animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94)
-		animation-fill-mode: forwards
-
-	.header-animation:nth-child(1)
-		animation-delay: 0ms
-
-	.header-animation:nth-child(2)
-		animation-delay: 300ms
-
-	.header-animation:nth-child(3)
-		animation-delay: 600ms
-
-	.header-animation:nth-child(4)
-		animation-delay: 900ms
-
-	.header-animation:nth-child(5)
-		animation-delay: 1200ms
-
-	@keyframes slideup-in
-		from
-			opacity: 0
-			transform: translate3d(0, 45px, 0)
-		to
-			opacity: 1
-			transform: translate3d(0, 0, 0)
-
 
 // VENDOR STRIP
 #vendorStrip
@@ -1573,17 +1210,48 @@ iframe
 			max-width: 75%
 			max-height: 85%
 
-	.mediakit-block
-		display: inline-block
-		a
-			cursor: pointer
-			color: $blue-03
-			text-decoration: none
-			&:hover
-				text-decoration: underline
-		p
-			color: $blue-03
-			margin: 15px 0
+	table.company-contacts
+		width: auto
+		background: $professional-color
+		color: #fff
+		padding: 15px
+		border: none
+		box-shadow: 0 1px 8px 0 rgba(0,0,0,0.2), 0 3px 4px 0 rgba(0,0,0,0.14), 0 3px 3px -2px rgba(0,0,0,0.12)
+		tr
+			background: none
+		td
+			font-weight: 500
+			font-size: 18px
+			&:first-child
+				text-align: center
+			a.mail
+				font-weight: 500
+				color: #fff
+				&:hover
+					text-decoration: underline
+			a.button
+				background-color: #fff
+				color: $professional-color
+				line-height: 30px
+				padding: 0.3rem 1.5rem
+				border: 2px solid #fff
+				&:hover
+					background-color: #3c6c79
+					color: white
+					border: 2px solid #fff
+					transition: 0.3s
+			&.contact-us
+				padding-top: 20px
+		.fa
+			color: $professional-color
+			font-size: 28px
+			margin-right: 10px
+			background: rgba(255,255,255,0.8)
+			box-shadow: 0 1px 8px 0 rgba(0,0,0,0.2), 0 3px 4px 0 rgba(0,0,0,0.14), 0 3px 3px -2px rgba(0,0,0,0.12)
+			border-radius: 20%
+			width: 40px
+			height: 40px
+			line-height: 40px
 
 	a.button
 		border-radius: 2px
@@ -1617,22 +1285,39 @@ iframe
 			border-radius: 3px
 			box-shadow: 0 2px 5px 0 rgba(0,0,0,.26)
 			color: #ffffff
-			background: $blue
+			background: $professional-color
 			overflow: hidden
+			&.thingsboard-ce
+				background: #3a6a9e
+			&.thingsboard-pe
+				background: #3c7a88
+			&.thingsboard-gw
+				background: #48886e
 
 			.card-img
 				position: absolute
-				width: 100%
-				height: 170px
+				width: 60%
+				height: 60%
 				opacity: .5
 				top: 92px
-				left: 0
+				left: 20%
 				z-index: 90
-				background-size: contain
+				background-size: 65% 65%
 				background-repeat: no-repeat
 				background-position: center
-				transition: opacity .3s ease,left .3s ease,top .4s ease, height .4s ease
-
+				background-color: rgba(0,0,0,0.8)
+				box-shadow: 0 1px 8px 0 rgba(0,0,0,0.2), 0 3px 4px 0 rgba(0,0,0,0.14), 0 3px 3px -2px rgba(0,0,0,0.12)
+				border-radius: 50%
+				transition: opacity .3s ease,left .4s ease,top .4s ease, height .4s ease, width .4s ease, background-color .4s ease
+				&.product
+					background-size: contain
+					width: 100%
+					height: 170px
+					left: 0px
+					opacity: .7
+					border-radius: initial
+					background-color: initial
+					box-shadow: none
 				&.agriculture-bg
 					background-image: url(/images/industries/agriculture.svg)
 				&.smart-energy-bg
@@ -1661,8 +1346,6 @@ iframe
 					background-image: url(/images/services/gateway.svg)
 
 			.card-title
-				background-color: $dark-grey
-				background-image: url(/images/texture.png)
 				display: flex
 				text-align: center
 				align-items: center
@@ -1672,7 +1355,8 @@ iframe
 				border-top-left-radius: 3px
 				border-top-right-radius: 3px
 				padding: 15px
-				font-size: 24px
+				font-size: 20px
+				font-weight: 500
 				height: 86px
 
 			.title-text
@@ -1706,14 +1390,24 @@ iframe
 
 
 			&:hover
+				.card-title
+					color: #fff
+
 				.title-text
 					&:after
 						width: 100%
 
-
 				.card-img
-					height: 70px
+					height: 25%
+					width: 25%
+					left: 37.5%
+					background-color: transparent
+					box-shadow: none
 					opacity: 1
+					&.product
+						width: 100%
+						height: 80px
+						left: 0px
 
 				.card-description
 					top: 0
@@ -1730,9 +1424,57 @@ iframe
 		.supportPlan
 			display: block
 			padding-bottom: 15px
+			&.free
+				.pricingTable
+					li.heading-row
+						background-color: #2a5079
+						border-color: #2a5079
+					li.pricing-row
+						background-color: #69a0dc
+						border-color: #69a0dc
+					li
+						background-color: #5389c5
+						border-color: #5389c5
+						a.button
+							color: #5389c5
+							&:hover
+								background-color: #2a5079
+			&.professional
+				.pricingTable
+					li.heading-row
+						background-color: #2b5963
+						border-color: #2b5963
+					li.pricing-row
+						background-color: #5d9aa7
+						border-color: #5d9aa7
+					li
+						background-color: #45818e
+						border-color: #45818e
+						a.button
+							color: #45818e
+							&:hover
+								background-color: #2b5963
+
+			&.enterprise
+				.pricingTable
+					li.heading-row
+						background-color: #315245
+						border-color: #315245
+					li.pricing-row
+						background-color: #7bb39c
+						border-color: #7bb39c
+					li
+						background-color: #48886e
+						border-color: #48886e
+						a.button
+							color: #48886e
+							&:hover
+								background-color: #315245
 
 			.pricingTable
-				margin: 10px
+				margin: 20px
+				padding-left: 0px
+				box-shadow: 0 1px 8px 0 rgba(0,0,0,0.2), 0 3px 4px 0 rgba(0,0,0,0.14), 0 3px 3px -2px rgba(0,0,0,0.12)
 
 				li.empty
 					display: none
@@ -1744,45 +1486,34 @@ iframe
 					padding: 14px 17px
 					margin: 0
 					position: relative
-					border-color: #e1e1e1
-					border-top-style: solid
-					border-top-width: 1px
-					border-left-style: solid
-					border-left-width: 1px
-					border-right-style: solid
-					border-right-width: 1px
 					height: 48px
 					display: flex
 					align-items: center
 					justify-content: center
+					color: #fff
+					font-size: 16px
 
 					a.button
 						padding: 14px 30px 12px
 						font-size: 18px
-
-				li:first-child
-					border-top-left-radius: 3px
-					border-top-right-radius: 3px
-
-				li:nth-child(odd)
-					background: #f8f8f8
-
-				li:nth-child(even)
-					background: #ffffff
+						border: 2px solid #fff
+						background-color: #fff
+						transition: 0.3s
+						color: $blue
+						&:hover
+							background-color: $blue
+							color: #fff
 
 				li:last-child
-					border-bottom-left-radius: 3px
-					border-bottom-right-radius: 3px
-					border-bottom-style: solid
-					border-bottom-width: 1px
 					display: block
-					height: auto
+					height: 146px
+
+				li:nth-child(3)
+					padding-top: 30px
+					height: 60px
 
 				li.heading-row
-					background-color: $dark-grey
-					background-image: url(/images/texture.png)
 					color: #ffffff
-					border-color: #545454
 					height: auto
 					font-size: 28px
 
@@ -1790,12 +1521,11 @@ iframe
 					line-height: 1em
 					padding: 10px 12px
 					color: #ffffff
-					background-color: $blue
 					border: 1px solid $blue
 					height: 146px
 					display: block
 					text-align: center
-
+				li
 					.old-price
 						line-height: 30px
 						opacity: 0.85
@@ -1845,50 +1575,6 @@ iframe
 						line-height: 1.4em
 						font-weight: normal
 						letter-spacing: 1px
-
-	.contact-form
-		.form-element
-			position: relative
-			width: 100%
-			margin: 7px 0
-			float: none
-			clear: both
-			&.half
-				width: 100%
-				float: left
-				margin-left: 0
-				clear: both
-			&.first
-				clear: both
-				margin-left: 0
-			label
-				display: block
-				position: relative
-				margin-bottom: 5px
-				margin-left: 2px
-				font-weight: bold
-				font-size: 16px
-			.text-input, .text-area, .select
-				outline: none
-				font-size: 16px
-				margin-bottom: 0
-				background-color: #f8f8f8
-				border: 2px solid #e1e1e1
-				color: #666666
-				width: 100%
-				display: inline
-				min-width: 50px
-				padding: 6px
-				border-radius: 4px
-				box-shadow: none
-				transition: 0.3s
-				&:focus
-					background-color: $light-grey
-					color: $dark-grey
-					border-color: #2fd1ff
-					box-shadow: 0 0 8px rgba(0, 201, 255, .5)
-			input.button
-				width: 150px
 
 	.trainings-info
 		width: 100%
@@ -1967,8 +1653,6 @@ iframe
 				.pricingTable
 					li.empty
 						display: flex
-		.contact-form
-			width: 50%
 
 .fixed footer
 	position: fixed
@@ -2001,42 +1685,10 @@ html.search #docsContent
 		padding-bottom: 0
 		padding-left: 8px
 
-
-
-
-
-
 // ocean nodes
 $ocean-nodes-padding-Y: 10px
 $ocean-nodes-main-margin-bottom: 60px
 $ocean-nodes-h3-margin-bottom: 30px
-
-// features
-$features-h3-margin-bottom: 20px
-$feature-box-div-width: 100%
-$feature-box-margin-bottom: 0
-$feature-box-div-margin-bottom: 40px
-
-
-// Home-specific
-
-#home
-
-	&.flip-nav, &.open-nav
-		//.logo
-		//	background-image: url(/images/thingsboard_logo_blue.svg)
-
-	#hero
-		margin-bottom: 0
-		padding-bottom: 1px
-
-		main
-			padding: 0 10px
-			margin-bottom: 30px
-
-		#vendorStrip
-			display: none
-
 
 // OCEAN NODES
 .oceanNodes
@@ -2054,28 +1706,12 @@ $feature-box-div-margin-bottom: 40px
 		max-width: 75%
 		margin: 0 auto 20px
 		text-align: center
-
 		img
 			width: 100%
 			max-width: 160px
 
-	&#intro
-		padding-top: 20px
-		main:first-child
-			.image-wrapper
-				max-width: 100%
-
-				img
-					max-width: 491px
-
 	h3
 		margin-bottom: $ocean-nodes-h3-margin-bottom
-
-	&#pe-features
-		img
-			max-width: 200px
-			width: 200px
-			height: 150px
 
 // Video
 #video
@@ -2092,45 +1728,6 @@ $feature-box-div-margin-bottom: 40px
 			left: 0
 			width: 100%
 			height: 100%
-
-// Features
-#features
-	padding-top: 140px
-	background-color: $light-grey
-	background-image: url(/images/thingsboard_blue.svg)
-	background-position: center 64px
-	background-repeat: no-repeat
-	background-size: 64px
-
-.feature-box
-	//padding: 50px 0
-	width: 100%
-	overflow: hidden
-	clear: both
-
-	h4
-		line-height: normal
-		margin-bottom: 15px
-
-	& > div:first-child
-		float: left
-
-	& > div:last-child
-		float: right
-
-#features
-	margin-top: 20px
-	h3
-		margin-bottom: $features-h3-margin-bottom
-
-	.feature-box
-		margin-bottom: $feature-box-margin-bottom
-
-		& > div
-			width: $feature-box-div-width
-			margin-bottom: $feature-box-div-margin-bottom
-
-
 
 
 // Community
@@ -2292,15 +1889,6 @@ $feature-box-div-margin-bottom: 40px
 
 		div:nth-child(3)
 			background-image: url(/images/stackoverflow_icon.png)
-
-
-#home
-	#talkToUs
-		main
-			padding: 30px 0
-		
-		h5
-			font-size: 20px
 
 // jSocials
 
