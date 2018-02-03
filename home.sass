@@ -40,11 +40,14 @@ $feature-box-div-margin-bottom: 40px
             justify-content: center
             align-content: center
             .tb-title
-                //height: 60px
                 margin-bottom: 20px
                 font-size: 22px
                 font-weight: 400
                 text-shadow: 0 0 18px rgba(0,0,0,.37)
+            .tb-sub-title
+                margin-bottom: 40px
+                font-size: 14px
+                line-height: 16px
             .learn-tb
                 cursor: pointer
                 line-height: 40px
@@ -91,6 +94,10 @@ $feature-box-div-margin-bottom: 40px
 
     #thingsboard_feedbacks
         padding-top: 30px
+        .content
+            opacity: 0
+            &.animated
+                opacity: 1
 
     .oceanNodes
         &#intro
@@ -101,6 +108,16 @@ $feature-box-div-margin-bottom: 40px
                     max-width: 100%
                     img
                         max-width: 491px
+        &#main-features
+            .image-wrapper
+                top: 0
+                transform: translateY(0)
+            .image-wrapper, .content
+                animation-duration: 1.5s
+        .image-wrapper, .content
+            opacity: 0
+            &.animated
+                opacity: 1
 
     .feedbacks-carousel
         .slick-track
@@ -212,29 +229,41 @@ $feature-box-div-margin-bottom: 40px
             width: 100%
 
     #dashboard_description
+        main
+            opacity: 0
+            &.animated
+                opacity: 1
         padding-top: 15px
         h3
             margin-bottom: 18px
 
     // Features
     #features
-        padding-top: 140px
         background-color: $light-grey
-        background-image: url(/images/thingsboard_blue.svg)
-        background-position: center 64px
-        background-repeat: no-repeat
-        background-size: 64px
-        margin-top: 20px
-        h3
-            margin-bottom: $features-h3-margin-bottom
+        .features-title
+            padding-top: 100px
+            background-image: url(/images/thingsboard_blue.svg)
+            background-position: center 24px
+            background-repeat: no-repeat
+            background-size: 64px
+            margin-top: 20px
+            h3
+                margin-bottom: $features-h3-margin-bottom
+            opacity: 0
+            &.animated
+                opacity: 1
 
         .feature-box
             margin-bottom: $feature-box-margin-bottom
             & > div
                 width: $feature-box-div-width
                 margin-bottom: $feature-box-div-margin-bottom
+                opacity: 0
+                &.animated
+                    opacity: 1
             width: 100%
-            overflow: hidden
+            //overflow: hidden
+            display: inline-block
             clear: both
             h4
                 line-height: normal
@@ -289,6 +318,9 @@ $feature-box-div-margin-bottom: 40px
             #hero-content
                 .tb-title
                     font-size: 36px
+                .tb-sub-title
+                    font-size: 20px
+                    margin-bottom: 60px
         .oceanNodes
             &#intro
                 main:nth-child(1)
@@ -310,6 +342,9 @@ $feature-box-div-margin-bottom: 40px
 
         #features
             padding-bottom: 60px
+            .features-title
+                padding-top: 120px
+                background-position: center 34px
             .feature-box
                 margin-bottom: 30px
                 &:last-child
@@ -358,9 +393,11 @@ $feature-box-div-margin-bottom: 40px
                 height: auto
             #hero-content
                 .tb-title
-                    //height: 100px
-                    margin-bottom: 60px
+                    margin-bottom: 40px
                     font-size: 64px
+                .tb-sub-title
+                    font-size: 28px
+                    margin-bottom: 80px
                 .learn-tb
                     line-height: 60px
                     font-size: 28px
