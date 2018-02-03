@@ -55,6 +55,17 @@ description:
         <a href="/industries/smart-energy#environmental-energy-controls">
             <span>
                 <div class="customer-logo" style="height:134px">
+                    <img width="" src="/images/customers/walt-tech.gif" alt="Walt Technologies">
+                 </div>
+                 <p><strong>Walt Technologies</strong></p>
+            </span>
+        </a>
+        <p>Delivers turnkey "End-to-End" solutions relating to Building Energy Management Systems (BEMS)</p>
+    </div>
+    <div class="customer-block">
+        <a href="/industries/smart-energy#environmental-energy-controls">
+            <span>
+                <div class="customer-logo" style="height:134px">
                     <img width="" src="/images/customers/e2c.png" alt="Environmental Energy Controls">
                  </div>
                  <p><strong>Environmental Energy Controls</strong></p>
