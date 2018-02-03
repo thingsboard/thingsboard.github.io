@@ -11,9 +11,9 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 
 <!--  HERO  -->
 <section id="hero" class="light-text">
-	<video id="hero-video" autoplay loop muted poster="/video/tb-cover.jpg">
-		<source src="/video/tb-cover.mp4" type="video/mp4" />
+	<video id="hero-video" playsinline autoplay loop muted poster="/video/tb-cover.jpg">
 		<source src="/video/tb-cover.webm" type="video/webm" />
+		<source src="/video/tb-cover.mp4" type="video/mp4" />
 		Your browser does not support the video tag. I suggest you upgrade your browser.
 	</video>
 	<div id="hero-content">
@@ -332,6 +332,7 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 				slideUp();
 			}
 		});
+
 		$( document ).ready(function() {
 			scaleVideoContainer();
 		});
