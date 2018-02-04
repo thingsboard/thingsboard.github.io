@@ -11,13 +11,14 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 
 <!--  HERO  -->
 <section id="hero" class="light-text">
-	<video id="hero-video" autoplay loop muted poster="/video/tb-cover.jpg">
-		<source src="/video/tb-cover.mp4" type="video/mp4" />
+	<video id="hero-video" playsinline autoplay loop muted poster="/video/tb-cover.jpg">
 		<source src="/video/tb-cover.webm" type="video/webm" />
+		<source src="/video/tb-cover.mp4" type="video/mp4" />
 		Your browser does not support the video tag. I suggest you upgrade your browser.
 	</video>
 	<div id="hero-content">
 		<h1 class="header-animation tb-title">ThingsBoard IoT Platform</h1>
+		<h4 class="header-animation tb-sub-title">Device management, data collection, processing and visualization for your IoT solution</h4>
 		<div class="header-animation">
 			<a href="#intro" class="button learn-tb">Learn More</a>
 		</div>
@@ -227,8 +228,9 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 
 <section id="features">
 	<main>
-		<h3 class="center">ThingsBoard Features</h3>
-
+		<div class="features-title center">
+			<h3>ThingsBoard Features</h3>
+		</div>
 		<div class="feature-box">
 			<div>
 				<h4><a href="/docs/user-guide/telemetry/">Telemetry Data Collection</a></h4>
@@ -330,6 +332,7 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 				slideUp();
 			}
 		});
+
 		$( document ).ready(function() {
 			scaleVideoContainer();
 		});
@@ -348,31 +351,42 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 	});
 
 	inViewportDefer(function() {
-		/*$(".pe-features main:nth-child(odd) .image-wrapper, .pe-features main:nth-child(even) .content").inViewport(function(px){
+		$("#intro .image-wrapper, #intro .content").inViewport(function(px){
+			if(px >= 80) {
+				$(this).addClass("animated zoomIn");
+			}
+		});
+
+		$("#main-features main:nth-child(odd) .image-wrapper, #main-features main:nth-child(even) .content").inViewport(function(px){
 			if(px >= 80) {
 				$(this).addClass("animated bounceInRight");
 			}
 		});
 
-		$(".pe-features main:nth-child(even) .image-wrapper, .pe-features main:nth-child(odd) .content").inViewport(function(px){
+		$("#main-features main:nth-child(even) .image-wrapper, #main-features main:nth-child(odd) .content").inViewport(function(px){
 			if(px >= 80) {
 				$(this).addClass("animated bounceInLeft");
 			}
 		});
 
-		$("#feature-comparison table th:nth-child(2), " +
-				"#feature-comparison table th:nth-child(4), " +
-				"#feature-comparison table td:nth-child(2), " +
-				"#feature-comparison table td:nth-child(4)").inViewport(function(px){
-			if(px >= 80) {
-				$(this).addClass("animated flipInY");
-			}
-		});
-		$("#pricing-models-cards main, #peContent .button.try-pe, #pe-customers .customer-block").inViewport(function(px){
-			if(px >= 80) {
+		$("#thingsboard_feedbacks .content, #dashboard_description main").inViewport(function(px){
+			if(px >= 200) {
 				$(this).addClass("animated zoomIn");
 			}
-		});*/
+		});
+
+		$("#features .features-title").inViewport(function(px){
+			if(px >= 150) {
+				$(this).addClass("animated zoomIn");
+			}
+		});
+
+		$("#features .feature-box div").inViewport(function(px){
+			if(px >= 150) {
+				$(this).addClass("animated fadeInUp");
+			}
+		});
+
 	});
 
 	function slideUp() {
