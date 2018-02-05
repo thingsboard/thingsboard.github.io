@@ -8,21 +8,20 @@
         padding-top: 0px
         position: relative
         overflow: hidden
-        #hero-video
+        background: none
+        .video-cover
             position: absolute
-            top: 50%
-            left: 50%
-            min-width: 100%
-            min-height: 100%
-            width: auto
-            height: auto
-            -ms-transform: translateX(-50%) translateY(-50%)
-            -moz-transform: translateX(-50%) translateY(-50%)
-            -webkit-transform: translateX(-50%) translateY(-50%)
-            transform: translateX(-50%) translateY(-50%)
-            background: #000 url(/video/pe-cover.png) no-repeat
+            z-index: -2
+            top: 0px
+            left: 0px
+            bottom: 0px
+            right: 0px
+            overflow: hidden
             background-size: cover
-            transition-duration: 500ms
+            background-color: #000
+            background-repeat: no-repeat
+            background-position: 50% 50%
+            background-image: url(/video/pe-cover.jpg)
         #hero-content
             height: 100%
             display: flex
@@ -48,7 +47,7 @@
                     background-color: white
                     color: $dark-grey
             .pe-arrow
-                position: absolute
+                position: fixed
                 bottom: 40px
                 left: 0
                 right: 0
@@ -60,6 +59,9 @@
                 color: #fff
                 a
                     color: #fff
+            &.arrow-hidden
+                .pe-arrow
+                    display: none
 
     .oceanNodes
         &.pe-features
@@ -412,13 +414,6 @@
                     padding: 16px
                     flex: 0 0 50%
                     max-width: 50%
-
-@media screen and (max-width: 1025px) and (min-height: 500px)
-    #thingsboard-pe
-        #hero
-            #hero-video
-                width: auto
-                height: 100%
 
 @media screen and (min-width: 1250px)
     #thingsboard-pe

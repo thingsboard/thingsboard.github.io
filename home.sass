@@ -14,21 +14,20 @@ $feature-box-div-margin-bottom: 40px
         padding-top: 0px
         position: relative
         overflow: hidden
-        #hero-video
+        background: none
+        .video-cover
             position: absolute
-            top: 50%
-            left: 50%
-            min-width: 100%
-            min-height: 100%
-            width: auto
-            height: auto
-            -ms-transform: translateX(-50%) translateY(-50%)
-            -moz-transform: translateX(-50%) translateY(-50%)
-            -webkit-transform: translateX(-50%) translateY(-50%)
-            transform: translateX(-50%) translateY(-50%)
-            background: #000 url(/video/tb-cover.jpg) no-repeat
+            z-index: -2
+            top: 0px
+            left: 0px
+            bottom: 0px
+            right: 0px
+            overflow: hidden
             background-size: cover
-            transition-duration: 500ms
+            background-color: #000
+            background-repeat: no-repeat
+            background-position: 50% 50%
+            background-image: url(/video/tb-cover.jpg)
         #hero-content
             height: 100%
             display: flex
@@ -57,7 +56,7 @@ $feature-box-div-margin-bottom: 40px
                     background-color: white
                     color: $dark-grey
             .tb-arrow
-                position: absolute
+                position: fixed
                 bottom: 40px
                 left: 0
                 right: 0
@@ -69,6 +68,9 @@ $feature-box-div-margin-bottom: 40px
                 color: #fff
                 a
                     color: #fff
+            &.arrow-hidden
+                .tb-arrow
+                    display: none
 
     #talkToUs
         main
@@ -380,13 +382,6 @@ $feature-box-div-margin-bottom: 40px
 
                         img
                             max-width: 425px
-
-@media screen and (max-width: 1025px) and (min-height: 500px)
-    #home
-        #hero
-            #hero-video
-                width: auto
-                height: 100%
 
 @media screen and (min-width: 1250px)
     #home

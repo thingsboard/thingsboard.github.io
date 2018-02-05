@@ -10,12 +10,10 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 {% include head-header.html %}
 
 <!--  HERO  -->
-<section id="hero" class="light-text">
-	<video id="hero-video" playsinline autoplay loop muted poster="/video/tb-cover.jpg">
-		<source src="/video/tb-cover.webm" type="video/webm" />
-		<source src="/video/tb-cover.mp4" type="video/mp4" />
-		Your browser does not support the video tag. I suggest you upgrade your browser.
-	</video>
+<section id="hero" class="light-text"
+		 data-vide-bg="mp4: /video/tb-cover.mp4, webm: /video/tb-cover.webm, poster: /video/tb-cover.jpg"
+		 data-vide-options="posterType: jpg">
+	<div class="video-cover"></div>
 	<div id="hero-content">
 		<h1 class="header-animation tb-title">ThingsBoard IoT Platform</h1>
 		<h4 class="header-animation tb-sub-title">Device management, data collection, processing and visualization for your IoT solution</h4>
@@ -333,13 +331,6 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 			}
 		});
 
-		$( document ).ready(function() {
-			scaleVideoContainer();
-		});
-		$(window).on('resize', function() {
-			scaleVideoContainer();
-		});
-
 		$('#hero-content > .tb-arrow > a, #hero-content a.learn-tb').click(function(event) {
 			event.preventDefault();
 			var target = $('#intro');
@@ -351,6 +342,15 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 	});
 
 	inViewportDefer(function() {
+
+		$("#hero-content").inViewport(function(px){
+			if($(this).height()-px >= 60) {
+				$(this).addClass("arrow-hidden");
+			} else {
+				$(this).removeClass("arrow-hidden");
+			}
+		});
+
 		$("#intro .image-wrapper, #intro .content").inViewport(function(px){
 			if(px >= 80) {
 				$(this).addClass("animated zoomIn");
@@ -400,14 +400,6 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 		var newone = el.clone(true);
 		el.before(newone);
 		el.remove();
-	}
-
-	function scaleVideoContainer() {
-
-		var height = $(window).height() + 5;
-		var unitHeight = parseInt(height) + 'px';
-		$('#hero').css('height',unitHeight);
-
 	}
 
 	function initSlick() {
