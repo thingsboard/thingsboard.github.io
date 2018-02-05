@@ -6,14 +6,55 @@ description:
 ---
 
 <div class="customer-block">
+    <a href="http://www.e2cbms.com/">
+        <div id="environmental-energy-controls" class="customer-logo">
+            <img width="" src="/images/customers/e2c.png" alt="Environmental Energy Controls">
+        </div>
+    </a>
+    <div class="customer-content">
+        <h3>
+        Environmental Energy Controls
+        </h3>
+        <h4>
+        Environmental Energy Controls delivers turnkey "End-to-End" solutions relating to Building Energy Management Systems (BEMS)
+        </h4>
+        <p>
+        Our company operates with the Smart Building Technology sector and were looking for a solution that was adaptable, programmable and easy to use for providing complete solutions to our existing customers with good clear visualisations of their data. 
+        We had researched and tried other solutions but no other could match this platform in terms of its capability.
+        Once learning the basics, we could quickly deploy and add customers sites without the need for continual support. 
+        </p>
+        <p>
+        What we especially like from the Thingsboard team are the updates and continual evolving development cycles, real people you can talk to and understand ideas, concepts and future use cases. 
+        Features to the system are being updated and new functionality added where, in the modern age of new technology, is essential to offer new services when they occur. 
+        </p>
+        <p>
+        The support levels received from initial contact to ongoing projects has been excellent from the entire team and we look forward to expanding our future solutions to all customers with the support from the Thingsboard team. 
+        </p>
+        <p>
+        If you haven’t tried this solution we 100% recommend it to anyone interested in emerging IOT platforms and what the value collected data can truly bring.
+        </p> 
+        <div class="person-logo-container">
+            <!--img class="person-logo" src="/images/customers/x-telia-person.jpg"/-->
+            <div class="person-title">
+                Nairn Harrison<br/>
+                Director
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="customer-block">
     <a href="https://www.beaconzone.co.uk/">
         <div id="beaconzone" class="customer-logo">
             <img width="" src="/images/customers/beaconzone.png" alt="Specialists in Bluetooth® Beacon Solutions">
         </div>
     </a>
     <div class="customer-content">
+        <h3>
+        BeaconZone
+        </h3>
         <h4>
-        BeaconZone, specialists in Bluetooth® Beacon Solutions
+        Specialists in Bluetooth® Beacon Solutions
         </h4>
         <p>
         ThingsBoard offers a secure, scalable IoT solution that, being Open Source, we can control. Having created our own ThingsBoard instance, we have found it to be very customisable via widgets, the rule engine and the plugin system allowing it to be used in a variety of specialist situations.
@@ -27,3 +68,4 @@ description:
         </div>
     </div>
 </div>
+

@@ -1,9 +1,32 @@
 ---
 layout: docwithnav
-title: Smart City
+title: Fleet Tracking
 description: 
 
 ---
+
+<div class="customer-block">
+    <a href="https://tektelic.com/">
+        <div id="tektelic" class="customer-logo">
+            <img width="" src="/images/customers/tektelic.png" alt="Tektelic">
+        </div>
+    </a>
+    <div class="customer-content">
+        <h3>
+            Tektelic Communications Inc. 
+        </h3>
+        <h4>
+            Provider of Best-In-Class IoT Gateways Sensors and Applications deployed globally.
+        </h4>
+        <div class="person-logo-container">
+            <img class="person-logo" src="/images/customers/tektelic-person.png"/>
+            <div class="person-title">
+                Eric Bourbeau <br/>
+                Président fondateur / Founder and CEO
+            </div>
+        </div>
+    </div>
+</div>
 
 <div class="customer-block">
     <a href="https://x-telia.com/">
@@ -35,32 +58,6 @@ description:
             <div class="person-title">
                 Eric Bourbeau <br/>
                 Président fondateur / Founder and CEO
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<div class="customer-block">
-    <a href="https://www.ositech.com/">
-        <div id="bei" class="customer-logo">
-            <img width="" src="/images/customers/ositech.png" alt="BEI">
-        </div>
-    </a>
-    <div class="customer-content">
-        <h3>
-            Ositech Communications, Inc.
-        </h3>
-        <h4>
-            Provides wireless data communication solutions for use in Healthcare, EMS, Transportation, Fire/Rescue, Food Supply Chain Safety and like segments.
-        </h4>  
-        <p>
-        A special thank you to Thingsboard for their professional services in helping create a dashboard in a short period of time customized to our specific requirements. They were responsive to our needs and worked diligently to resolve any issues. Work well done. 
-        </p> 
-        <div class="person-logo-container">
-            <div class="person-title">
-                Daniel Bartozzi <br/>
-                VP Engineering
             </div>
         </div>
     </div>

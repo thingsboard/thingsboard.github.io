@@ -12,7 +12,7 @@ description:
         </div>
         <div class="card-img smart-energy-bg"></div>
         <div class="card-description">
-            Lorem ipsum dolor sit amet
+            Learn more
         </div>
     </a>
     <a href="/industries/agriculture/" class="accent card">
@@ -21,7 +21,7 @@ description:
         </div>
         <div class="card-img agriculture-bg"></div>
         <div class="card-description">  
-            Lorem ipsum dolor sit amet
+            Learn more
         </div>        
     </a>
     <a href="/industries/smart-buildings/" class="accent card">            
@@ -30,7 +30,7 @@ description:
         </div>
         <div class="card-img smart-building-bg"></div>
         <div class="card-description">
-            Lorem ipsum dolor sit amet
+            Learn more
         </div>        
     </a>
     <a href="/industries/smart-city/" class="accent card">            
@@ -39,16 +39,16 @@ description:
         </div>
         <div class="card-img smart-city-bg"></div>
         <div class="card-description">
-            Lorem ipsum dolor sit amet
+            Learn more
         </div>        
     </a>
-    <a href="/industries/fleet-tracking/" class="accent card">            
+    <a href="/industries/telecom/" class="accent card">            
         <div class="card-title">
-            <span class="title-text">Fleet Tracking</span>
+            <span class="title-text">Telecommunications</span>
         </div>
         <div class="card-img fleet-tracking-bg"></div>
         <div class="card-description">
-            Lorem ipsum dolor sit amet
+            Learn more
         </div>        
     </a>
 </div>
