@@ -7,13 +7,13 @@ description:
 
 <div class="customer-block">
     <a href="http://www.berliner-energieinstitut.de/">
-        <div id="bei" class="customer-logo">
+        <div class="customer-logo">
             <img width="" src="/images/customers/bei.png" alt="BEI">
         </div>
     </a>
     <div class="customer-content">
-        <h3>
-        Berliner Energieinstitut GmbH 
+        <h3 id="bei">
+            Berliner Energieinstitut GmbH 
         </h3>    
         <p>
         We were struggling trying to implement our own IOT infrastructure when ThingsBoard suddenly appeared. Immediately we started testing and were amazed with the feature completeness, stability and ease of use of this great platform, although it was only in version 1.0 and had been released just days prior. 
@@ -34,12 +34,12 @@ description:
 <div class="customer-block">
     <a href="www.visiblenergy.com">
         <div class="customer-logo">
-            <img width="" src="/images/customers/visible-energy.png" alt="Visible Energy">
+            <img width="" src="/images/customers/visible-energy.svg" alt="Visible Energy">
         </div>
     </a>
     <div class="customer-content">
         <h3 id="visible-energy">
-        Visible Energy, Inc. 
+            Visible Energy, Inc. 
         </h3>    
         <p>
         The reason we have decided to use TB for our product line of IoT for commercial refrigeration CloudFridge is not just the technology but the people behind the technology. 
@@ -62,7 +62,7 @@ description:
     </a>
     <div class="customer-content">
         <h3 id="environmental-energy-controls">
-        Environmental Energy Controls
+            Environmental Energy Controls
         </h3>
         <h4>
         Environmental Energy Controls delivers turnkey "End-to-End" solutions relating to Building Energy Management Systems (BEMS)
