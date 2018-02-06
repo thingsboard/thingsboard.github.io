@@ -52,6 +52,15 @@ description:
 
 <section id="pe-customers">
     <main class="customers-container">
+		<div class="customer-block">
+			<a href="/industries/telecom#tektelic">
+				<span>
+					<div class="customer-logo" style="height:134px">
+						<img width="" src="/images/customers/tektelic.png" alt="Tektelic Communications Inc.">
+					 </div>
+				</span>
+			</a>
+		</div>
         <div class="customer-block">
             <a href="/industries/smart-energy#environmental-energy-controls">
                 <span>

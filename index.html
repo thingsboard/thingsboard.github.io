@@ -134,7 +134,7 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 			<a href="/industries/agriculture#agrolog">
 				<span>
 					<div class="customer-logo" style="height:134px">
-						<img width="" src="/images/customers/agrolog.svg" alt="Supertech Agroline">
+						<img width="" src="/images/customers/supertech-agroline.png" alt="Supertech Agroline">
 					 </div>
 				</span>
 			</a>
@@ -348,42 +348,49 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 		$("#intro .image-wrapper, #intro .content").inViewport(function(px){
 			if(px >= 80) {
 				$(this).addClass("animated zoomIn");
+				return true;
 			}
 		});
 
 		$("#main-features main:nth-child(odd) .image-wrapper, #main-features main:nth-child(even) .content").inViewport(function(px){
 			if(px >= 80) {
 				$(this).addClass("animated bounceInRight");
+				return true;
 			}
 		});
 
 		$("#main-features main:nth-child(even) .image-wrapper, #main-features main:nth-child(odd) .content").inViewport(function(px){
 			if(px >= 80) {
 				$(this).addClass("animated bounceInLeft");
+				return true;
 			}
 		});
 
 		$("#dashboard_description main").inViewport(function(px){
 			if(px >= 100) {
 				$(this).addClass("animated zoomIn");
+				return true;
 			}
 		});
 
 		$("#tb-customers .customers-container .customer-block").inViewport(function(px){
 			if(px >= 80) {
 				$(this).addClass("animated zoomIn");
+				return true;
 			}
 		});
 
 		$("#features .features-title").inViewport(function(px){
 			if(px >= 150) {
 				$(this).addClass("animated zoomIn");
+				return true;
 			}
 		});
 
 		$("#features .feature-box div").inViewport(function(px){
 			if(px >= 150) {
 				$(this).addClass("animated fadeInUp");
+				return true;
 			}
 		});
 

@@ -8,7 +8,7 @@ description:
 <div class="customer-block">
     <a href="http://agrolog.io">
         <div class="customer-logo">
-            <img width="" src="/images/customers/agrolog.svg" alt="SuperTech Agroline">
+            <img width="" src="/images/customers/supertech-agroline.png" alt="SuperTech Agroline">
         </div>
     </a>
     <div class="customer-content">

@@ -61,12 +61,14 @@
         $(".pe-features main:nth-child(odd) .image-wrapper, .pe-features main:nth-child(even) .content").inViewport(function(px){
             if(px >= 80) {
                 $(this).addClass("animated bounceInRight");
+                return true;
             }
         });
 
         $(".pe-features main:nth-child(even) .image-wrapper, .pe-features main:nth-child(odd) .content").inViewport(function(px){
             if(px >= 80) {
                 $(this).addClass("animated bounceInLeft");
+                return true;
             }
         });
 
@@ -76,11 +78,13 @@
                 "#feature-comparison table td:nth-child(4)").inViewport(function(px){
             if(px >= 80) {
                 $(this).addClass("animated flipInY");
+                return true;
             }
         });
         $("#pricing-models-cards main, #peContent .button.try-pe, #pe-customers .customers-container .customer-block").inViewport(function(px){
             if(px >= 80) {
                 $(this).addClass("animated zoomIn");
+                return true;
             }
         });
     });
