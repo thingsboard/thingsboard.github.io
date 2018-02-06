@@ -7,12 +7,12 @@ description:
 
 <div class="customer-block">
     <a href="https://tektelic.com/">
-        <div id="tektelic" class="customer-logo">
+        <div class="customer-logo">
             <img width="" src="/images/customers/tektelic.png" alt="Tektelic">
         </div>
     </a>
     <div class="customer-content">
-        <h3>
+        <h3 id="tektelic">
             Tektelic Communications Inc. 
         </h3>
         <h4>
@@ -30,12 +30,12 @@ description:
 
 <div class="customer-block">
     <a href="https://x-telia.com/">
-        <div id="x-telia" class="customer-logo">
+        <div class="customer-logo">
             <img width="" src="/images/customers/x-telia.png" alt="X-Telia">
         </div>
     </a>
     <div class="customer-content">
-        <h3>
+        <h3 id="x-telia">
             X-TELIA 
         </h3>
         <h4>
