@@ -7,12 +7,12 @@ description:
 
 <div class="customer-block">
     <a href="http://agrolog.io">
-        <div id="x-telia" class="customer-logo">
+        <div class="customer-logo">
             <img width="" src="/images/customers/agrolog.svg" alt="SuperTech Agroline">
         </div>
     </a>
     <div class="customer-content">
-        <h3>
+        <h3 id="agrolog">
             Supertech Agroline
         </h3>
         <h4>

@@ -7,12 +7,12 @@ description:
 
 <div class="customer-block">
     <a href="http://www.e2cbms.com/">
-        <div id="environmental-energy-controls" class="customer-logo">
+        <div class="customer-logo">
             <img width="" src="/images/customers/e2c.png" alt="Environmental Energy Controls">
         </div>
     </a>
     <div class="customer-content">
-        <h3>
+        <h3 id="environmental-energy-controls" >
         Environmental Energy Controls
         </h3>
         <h4>
@@ -45,12 +45,12 @@ description:
 
 <div class="customer-block">
     <a href="https://www.beaconzone.co.uk/">
-        <div id="beaconzone" class="customer-logo">
+        <div class="customer-logo">
             <img width="" src="/images/customers/beaconzone.png" alt="Specialists in Bluetooth® Beacon Solutions">
         </div>
     </a>
     <div class="customer-content">
-        <h3>
+        <h3 id="beaconzone">
         BeaconZone
         </h3>
         <h4>

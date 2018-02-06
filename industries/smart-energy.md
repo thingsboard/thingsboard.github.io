@@ -31,15 +31,37 @@ description:
     </div>
 </div>
 
+<div class="customer-block">
+    <a href="www.visiblenergy.com">
+        <div class="customer-logo">
+            <img width="" src="/images/customers/visible-energy.png" alt="Visible Energy">
+        </div>
+    </a>
+    <div class="customer-content">
+        <h3 id="visible-energy">
+        Visible Energy, Inc. 
+        </h3>    
+        <p>
+        The reason we have decided to use TB for our product line of IoT for commercial refrigeration CloudFridge is not just the technology but the people behind the technology. 
+        The TB team has proven competence, high ethical standards and dedication to their platform. We will definitely adopt TB for our future blockchain products as well. 
+        </p> 
+        <div class="person-logo-container">
+            <div class="person-title">
+                Marco Graziano <br/>
+                CEO & Founder
+            </div>
+        </div>
+    </div>
+</div>
 
 <div class="customer-block">
     <a href="http://www.e2cbms.com/">
-        <div id="environmental-energy-controls" class="customer-logo">
+        <div class="customer-logo">
             <img width="" src="/images/customers/e2c.png" alt="Environmental Energy Controls">
         </div>
     </a>
     <div class="customer-content">
-        <h3>
+        <h3 id="environmental-energy-controls">
         Environmental Energy Controls
         </h3>
         <h4>
