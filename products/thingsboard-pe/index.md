@@ -50,35 +50,37 @@ description:
 
 ## Clients
 
-<div id="pe-customers">
-    <div class="customer-block">
-        <a href="/industries/smart-energy#environmental-energy-controls">
-            <span>
-                <div class="customer-logo" style="height:134px">
-                    <img width="" src="/images/customers/walt-tech.gif" alt="Walt Technologies">
-                 </div>
-            </span>
-        </a>
-    </div>
-    <div class="customer-block">
-        <a href="/industries/smart-energy#environmental-energy-controls">
-            <span>
-                <div class="customer-logo" style="height:134px">
-                    <img width="" src="/images/customers/e2c.png" alt="Environmental Energy Controls">
-                 </div>
-            </span>
-        </a>
-    </div>
-    <div class="customer-block">
-        <a href="/industries/smart-city#x-telia">
-            <span>
-                <div class="customer-logo" style="height:134px">
-                    <img width="" src="/images/customers/x-telia.png" alt="X-Telia">
-                 </div>
-            </span>
-        </a>
-    </div>
-</div>    
+<section id="pe-customers">
+    <main class="customers-container">
+        <div class="customer-block">
+            <a href="/industries/smart-energy#environmental-energy-controls">
+                <span>
+                    <div class="customer-logo" style="height:134px">
+                        <img width="" src="/images/customers/walt-tech.gif" alt="Walt Technologies">
+                     </div>
+                </span>
+            </a>
+        </div>
+        <div class="customer-block">
+            <a href="/industries/smart-energy#environmental-energy-controls">
+                <span>
+                    <div class="customer-logo" style="height:134px">
+                        <img width="" src="/images/customers/e2c.png" alt="Environmental Energy Controls">
+                     </div>
+                </span>
+            </a>
+        </div>
+        <div class="customer-block">
+            <a href="/industries/smart-city#x-telia">
+                <span>
+                    <div class="customer-logo" style="height:134px">
+                        <img width="" src="/images/customers/x-telia.png" alt="X-Telia">
+                     </div>
+                </span>
+            </a>
+        </div>
+    </main>
+</section>    
 
 ## Feature Comparison Matrix
 

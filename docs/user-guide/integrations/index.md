@@ -33,7 +33,7 @@ assigned Data Converter to extract sub-set of meaningful information out of the 
 
 <br/>
 
- ![image](/images/user-guide/integrations-overview.svg)
+ ![image](/images/user-guide/integrations/integrations-overview.svg)
 
 ### Data Converters
 

@@ -188,25 +188,25 @@
                     background: #45818e
 
         #pe-customers
-            display: flex
-            flex-wrap: wrap
-            justify-content: center
-
-            .customer-block
-                opacity: 0
-                &.animated
-                    opacity: 1
-                max-width: 100%
-                padding: 20px 30px
-                width: 270px
-                a
-                    cursor: pointer
-                    color: $blue-03
-                    text-decoration: none
-                    &:hover
-                        text-decoration: underline
-                p
-                    margin: 15px 0
+            .customers-container
+                display: flex
+                flex-wrap: wrap
+                justify-content: center
+                .customer-block
+                    opacity: 0
+                    &.animated
+                        opacity: 1
+                    max-width: 100%
+                    padding: 20px 30px
+                    width: 270px
+                    a
+                        cursor: pointer
+                        color: $blue-03
+                        text-decoration: none
+                        &:hover
+                            text-decoration: underline
+                    p
+                        margin: 15px 0
 
         .pricing-prompt
             display: flex

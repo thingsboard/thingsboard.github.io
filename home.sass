@@ -80,7 +80,7 @@ $feature-box-div-margin-bottom: 40px
         h5
             font-size: 20px
 
-    #intro, #main-features, #dashboard_description
+    #intro, #main-features, #dashboard_description, #tb-customers
         color: #424242
         h2
             border: none
@@ -92,12 +92,28 @@ $feature-box-div-margin-bottom: 40px
         p
             line-height: 1.5em
 
-    #thingsboard_feedbacks
-        padding-top: 30px
-        .content
-            opacity: 0
-            &.animated
-                opacity: 1
+    #tb-customers
+        padding-top: 40px
+        padding-bottom: 40px
+        .customers-container
+            display: flex
+            flex-wrap: wrap
+            justify-content: center
+            .customer-block
+                opacity: 0
+                &.animated
+                    opacity: 1
+                max-width: 100%
+                padding: 20px 30px
+                width: 270px
+                a
+                    cursor: pointer
+                    color: $blue-03
+                    text-decoration: none
+                    &:hover
+                        text-decoration: underline
+                p
+                    margin: 15px 0
 
     .oceanNodes
         &#intro
@@ -118,73 +134,6 @@ $feature-box-div-margin-bottom: 40px
             opacity: 0
             &.animated
                 opacity: 1
-
-    .feedbacks-carousel
-        .slick-track
-            display: flex
-            .slick-slide
-                display: flex
-                height: auto
-                align-items: center
-                justify-content: center
-
-    .feedback-item
-        outline: none
-        background: #fff
-        box-shadow: 2px 2px 15px #ccc
-        padding: 10px 20px 20px 25px
-        margin: 10px
-        color: #333
-        .overlay-link
-            outline: none
-            position: absolute
-            top: 0
-            left: 0
-            width: 100%
-            height: 100%
-            opacity: 0
-        .feedback-logo-container
-            float: top
-            text-align: center
-            .feedback-logo
-                display: inline-block
-                border-radius: 50%
-                box-shadow: 0px 2px 15px #aaa
-                width: 80px
-                height: 80px
-        .feedback-content
-            margin-top: 10px
-            margin-left: 20px
-            margin-right: 20px
-            .author
-                color: #333
-                padding-bottom: 10px
-                text-align: center
-            blockquote
-                quotes: "“" "”" "“" "”"
-                &:before
-                    color: #999
-                    content: open-quote
-                    height: 0
-                    font-size: 2em
-                    line-height: 0.1em
-                    margin-left: -.55em
-                    margin-right: 0.15em
-                    vertical-align: -0.4em
-                &:after
-                    color: #999
-                    content: close-quote
-                    height: 0
-                    font-size: 2em
-                    line-height: 0.1em
-                    margin-left: 0.15em
-                    vertical-align: -0.4em
-                p
-                    display: inline
-                    color: #555
-                    font-style: italic
-                    font-size: 16px
-                    line-height: 18px
 
     .demoDashboardButton
         text-align: center
