@@ -162,28 +162,28 @@ description:
                 <td></td>
             </tr>
             <tr>
-                <td>Device, assets and customer groups</td>
+                <td><a class="feature-link" href="/docs/user-guide/groups/">Device, assets and customer <span class="info">groups</span></a></td>
                 <td class="unchecked"></td>
                 <td></td>
                 <td class="checked"></td>
                 <td></td>
             </tr>
             <tr>
-                <td>Multi-tenant configurable white-labeling</td>
+                <td><a class="feature-link" href="/docs/user-guide/white-labeling/">Multi-tenant configurable <span class="info">white-labeling</span></a></td>
                 <td class="unchecked"></td>
                 <td></td>
                 <td class="checked"></td>
                 <td></td>
             </tr>
             <tr>
-                <td>CSV/XLS data export</td>
+                <td><a class="feature-link" href="/docs/user-guide/csv-xls-data-export/">CSV/XLS data <span class="info">export</span></a></td>
                 <td class="unchecked"></td>
                 <td></td>
                 <td class="checked"></td>
                 <td></td>
             </tr>
             <tr>
-                <td>Platform Integrations</td>
+                <td><a class="feature-link" href="/docs/user-guide/integrations/">Platform <span class="info">Integrations</span></a></td>
                 <td class="unchecked"></td>
                 <td></td>
                 <td class="checked"></td>
