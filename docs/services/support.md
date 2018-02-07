@@ -81,15 +81,18 @@ description: ThingsBoard support plans for IoT projects cloud infrastructure sup
         </ul>
     </div>
     <div class="supportPlan enterprise">
-        <ul class="pricingTable">
+        <ul class="pricingTable"> 
             <li class="heading-row">
                 <div>ENTERPRISE</div>
             </li>
             <li class="pricing-row">
-                <div class="price-contact-us">
-                    <a href="/docs/contact-us" class="button accent">Contact us</a>
+                <div class="old-price" style="text-decoration: none;">
+                    &nbsp;
                 </div>
-            </li>        
+                <div class="price" style="margin-top: -18px;">
+                    <a href="/docs/contact-us" class="button accent">Contact us</a>
+                </div> 
+            </li>    
             <li>
                 Online forum and chat
             </li>
@@ -112,7 +115,7 @@ description: ThingsBoard support plans for IoT projects cloud infrastructure sup
                 <div class="price-contact-us">
                     <a href="/docs/contact-us" class="button accent">Contact us</a>
                 </div>
-            </li>                                    
+            </li>                        
         </ul>
     </div>
 </div>
