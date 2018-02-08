@@ -13,7 +13,7 @@ description:
     </a>
     <div class="customer-content">
         <h3 id="tektelic">
-            Tektelic Communications Inc. 
+            TEKTELIC Communications Inc. 
         </h3>
         <h4>
             Provider of Best-In-Class IoT Gateways Sensors and Applications deployed globally.
@@ -21,8 +21,8 @@ description:
         <div class="person-logo-container">
             <img class="person-logo" src="/images/customers/tektelic-person.png"/>
             <div class="person-title">
-                Eric Bourbeau <br/>
-                Président fondateur / Founder and CEO
+                Roman Nemish <br/>
+                President
             </div>
         </div>
     </div>

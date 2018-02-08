@@ -65,6 +65,33 @@ description:
                 Simon Judge <br/>
                 Co-founder at BeaconZone
             </div>
+        </div> 
+    </div>
+</div>
+<div class="customer-block">
+    <a href="https://www.conbee.eu/">
+        <div class="customer-logo">
+            <img width="" src="/images/customers/conbee.svg" alt="Conbee GmbH">
+        </div>
+    </a>
+    <div class="customer-content">
+        <h3 id="conbee">
+            Conbee GmbH
+        </h3>
+        <h4>
+            Optimization of logistics and production processes.
+        </h4>  
+        <p>
+            As a number of IOT dashboard available, It is hard to find one which can fulfill all requirements, robust and scalable for the industrial use case.  
+        </p>
+        <p>
+            ThingsBoard is the platform which fulfilled our requirements and It is easy to adapt, flexible and have the ability to present data on different widgets in an attractive way with easy access. In addition, we are thankful to the ThingsBoard team for their tremendous service and we are looking forward to making more IOT solutions with ThingsBoard in future.
+        </p> 
+        <div class="person-logo-container">
+            <div class="person-title">
+                MIchael Nickolai <br/>
+                Co-Founder & Executive Manager
+            </div>
         </div>
     </div>
 </div>

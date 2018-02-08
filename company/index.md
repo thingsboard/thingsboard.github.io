@@ -7,7 +7,7 @@ description: Lorem ipsum dolor sit amet
 ---
 
 <div class="company-logo">
-    <img src="/images/thingsboard_with_title_blue.svg">
+    <img src="/images/thingsboard_logo_blue.svg">
 </div>
 
 <br/>

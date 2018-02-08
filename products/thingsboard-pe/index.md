@@ -48,7 +48,7 @@ description:
     </main>
 </section>
 
-## Clients
+## Customers
 
 <section id="pe-customers">
     <main class="customers-container">
@@ -56,20 +56,20 @@ description:
 			<a href="/industries/telecom#tektelic">
 				<span>
 					<div class="customer-logo" style="height:134px">
-						<img width="" src="/images/customers/tektelic.png" alt="Tektelic Communications Inc.">
+						<img width="" src="/images/customers/tektelic.png" alt="TEKTELIC Communications Inc.">
 					 </div>
 				</span>
 			</a>
 		</div>
-        <div class="customer-block">
-            <a href="https://walt-tech.com.au/">
-                <span>
-                    <div class="customer-logo" style="height:134px">
-                        <img width="" src="/images/customers/walt-tech.gif" alt="Walt Technologies">
-                     </div>
-                </span>
-            </a>
-        </div>
+		<div class="customer-block">
+			<a href="/industries/smart-city#conbee">
+				<span>
+					<div class="customer-logo" style="height:134px">
+						<img width="" src="/images/customers/conbee.svg" alt="Conbee GmbH">
+					 </div>
+				</span>
+			</a>
+		</div>
         <div class="customer-block">
             <a href="/industries/smart-energy#environmental-energy-controls">
                 <span>
@@ -83,7 +83,7 @@ description:
             <a href="/industries/smart-city#x-telia">
                 <span>
                     <div class="customer-logo" style="height:134px">
-                        <img width="" src="/images/customers/x-telia.png" alt="X-Telia">
+                        <img width="" src="/images/customers/x-telia.png" alt="X-TELIA">
                      </div>
                 </span>
             </a>
