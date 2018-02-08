@@ -37,7 +37,16 @@ assigned Data Converter to extract sub-set of meaningful information out of the 
 
 ### Data Converters
 
-TODO: Add video with complex data converters use-case (with metadata)
+Data Converters is a part of the Platform Integrations feature. The main function of Data Converter is to parse payload of the incoming message and transform it to format that ThingsBoard uses.  
+
+See video tutorial below for step-by-step instruction how to setup Data Converters.
+
+<br/>
+<div id="video">  
+    <div id="video_wrapper">
+        <iframe src="https://www.youtube.com/embed/CojStpYCTGI" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div> 
 
 ### Debug mode
 

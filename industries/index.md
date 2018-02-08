@@ -46,7 +46,7 @@ description:
         <div class="card-title">
             <span class="title-text">Telecommunications</span>
         </div>
-        <div class="card-img fleet-tracking-bg"></div>
+        <div class="card-img telecom-bg"></div>
         <div class="card-description">
             Learn more
         </div>        
