@@ -62,7 +62,7 @@ description:
 			</a>
 		</div>
         <div class="customer-block">
-            <a href="/industries/smart-energy#environmental-energy-controls">
+            <a href="https://walt-tech.com.au/">
                 <span>
                     <div class="customer-logo" style="height:134px">
                         <img width="" src="/images/customers/walt-tech.gif" alt="Walt Technologies">

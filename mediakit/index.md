@@ -13,17 +13,17 @@ description: Lorem ipsum dolor sit amet
 <div class="mediakit-logos">
     <div class="mediakit-logo">
         <div class="logo-container logo-blue">
-            <img src="/images/thingsboard_with_title_blue.svg">
+            <img src="/images/thingsboard_logo_blue.svg">
         </div>    
     </div>
     <div class="mediakit-logo">
         <div class="logo-container logo-white">
-            <img src="/images/thingsboard_with_title_white.svg">
+            <img src="/images/thingsboard_logo_white.svg">
         </div>    
     </div>
     <div class="mediakit-logo">
         <div class="logo-container logo-black">
-            <img src="/images/thingsboard_with_title_black.svg">
+            <img src="/images/thingsboard_logo_black.svg">
         </div>
     </div>
 </div>
