@@ -12,7 +12,7 @@ description: Lorem ipsum dolor sit amet
         </div>
         <div class="card-img product community-edition-bg"></div>
         <div class="card-description">
-            Lorem ipsum dolor sit amet
+            Learn more
         </div>
     </a>
     <a href="/products/thingsboard-pe/" class="card thingsboard-pe">
@@ -21,7 +21,7 @@ description: Lorem ipsum dolor sit amet
         </div>
         <div class="card-img product professional-edition-bg"></div>
         <div class="card-description">  
-            Lorem ipsum dolor sit amet
+            Learn more
         </div>
     </a>
     <a href="/docs/iot-gateway/what-is-iot-gateway/" class="card thingsboard-gw">
@@ -30,7 +30,7 @@ description: Lorem ipsum dolor sit amet
         </div>
         <div class="card-img product gateway-bg"></div>
         <div class="card-description">
-            Lorem ipsum dolor sit amet
+            Learn more
         </div>
     </a>
 </div>

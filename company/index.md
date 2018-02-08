@@ -2,7 +2,7 @@
 layout: docwithnav
 title: Our Company
 notitle: "true"
-description: Lorem ipsum dolor sit amet
+description: 
 
 ---
 
@@ -12,11 +12,15 @@ description: Lorem ipsum dolor sit amet
 
 <br/>
 
-ThingsBoard OÜ is a software development company founded in 2017 that is a main contributor and maintainer of ThingsBoard - the leading IoT platform.
+## Who we are?
 
-ThingsBoard OÜ is a private Estonian company with registration code 14257777.
-
-The main headquarters are located in Kiev, Ukraine. 
+ThingsBoard OU is a private Estonian company founded in 2016 with RnD center in Kyiv, Ukraine. 
+We are main contributor and maintainer of ThingsBoard open-source IoT Platform.
+ 
+## Our mission
+ 
+We deliver and constantly improve scalable, robust and affordable IoT Platform that dramatically reduces time-to-market for life-changing IoT solutions. 
+We also help companies to deliver great IoT products based on ThingsBoard.
 
 <br/>
 
