@@ -1,12 +1,14 @@
 ---
 layout: docwithnav
 title: IBM Watson IoT Integration
-description: Lorem ipsum dolor sit amet 
+description: IBM Watson IoT Integration Guide 
 
 ---
 
 * TOC
 {:toc}
+
+IBM Watson IoT Integration allows to stream data from IBM Watson IoT to ThingsBoard and converts device payloads to the ThingsBoard format.
 
  ![image](/images/user-guide/integrations/ibm-watson-integration.svg)
  

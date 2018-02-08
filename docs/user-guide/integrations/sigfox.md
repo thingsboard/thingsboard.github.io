@@ -1,12 +1,14 @@
 ---
 layout: docwithnav
 title: SigFox Integration
-description: Lorem ipsum dolor sit amet 
+description: SigFox integration guide
 
 ---
 
 * TOC
 {:toc}
+
+Sigfox Integration allows to stream data from Sigfox Backend to ThingsBoard and converts binary device payloads to the ThingsBoard format.
 
  ![image](/images/user-guide/integrations/sigfox-integration.svg)
  
