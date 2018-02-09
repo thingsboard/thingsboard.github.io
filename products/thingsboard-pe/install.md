@@ -1,14 +1,14 @@
 ---
 layout: docwithnav
 title: Get ThingsBoard Professional Edition
-description: Lorem ipsum dolor sit amet
+description: ThingsBoard Professional Edition Installation
 
 ---
 
 <section id="install-pe">
     <div class="tabs">
         <input name="tabs" type="radio" id="tab-cloud" checked="checked" class="tab-input"/>
-        <label for="tab-cloud" class="tab-label label-cloud">Deploy in Cloud</label>
+        <label for="tab-cloud" class="tab-label label-cloud">Pay as you go</label>
         <div class="tab-panel">
             <div id="mlb2-7520964" class="deploy-form deploy-cloud ml-subscribe-form ml-subscribe-form-7520964">
                 <div class="ml-vertical-align-center">
@@ -27,8 +27,8 @@ description: Lorem ipsum dolor sit amet
                                         <img src="/images/pe/aws_logo.svg">
                                     </div>
                                     <div class="cloud-provider-desc">
-                                        <p>Deploy from AWS marketplace.</p>
-                                        <p>Starting from <span class="cloud-price">$0.49/hr</span></p>
+                                        <p>Deploy using AWS marketplace. Pay only when you use the platform. Ideal for evaluation and PoCs.</p>
+                                        <p><span class="cloud-price">$0.49/hr</span><span class="cloud-price-desc"> for software + AWS usage fees</span></p>
                                     </div>
                                 </div>                                                            
                             </div>
@@ -78,7 +78,7 @@ description: Lorem ipsum dolor sit amet
             </div>
         </div>
         <input name="tabs" type="radio" id="tab-on-premise" class="tab-input"/>
-        <label for="tab-on-premise" class="tab-label label-premise">Deploy on Premise</label>
+        <label for="tab-on-premise" class="tab-label label-premise">Pay yearly</label>
         <div class="tab-panel">
             <div id="mlb2-7556612" class="deploy-form deploy-premise ml-subscribe-form ml-subscribe-form-7556612">
                 <div class="ml-vertical-align-center">
@@ -97,8 +97,10 @@ description: Lorem ipsum dolor sit amet
                                         <img src="/images/pe/cloud-providers.svg">
                                     </div>
                                     <div class="cloud-provider-desc">
-                                        <p>Deploy on any cloud provider or in your local network.</p>
-                                        <p>Starting from <span class="cloud-price">$1,399.00/server</span></p>
+                                        <p>Install ThingsBoard PE on any cloud or on premises and pay one-time license fee per server and optional software updates subscription for subsequent years of usage.
+                                         Save up to 70% comparing to per hour rate on the license fee.</p>
+                                        <p><span class="cloud-price">$1,399.00/server</span><span class="cloud-price-desc"> for the 1st year</span><br/>
+                                        <span class="cloud-price-onwards">$499.00/server</span><span class="cloud-price-onwards-desc"> for optional software updates starting 2nd year</span></p>
                                     </div>
                                 </div>                                       
                             </div>

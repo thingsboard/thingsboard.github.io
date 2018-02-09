@@ -8,6 +8,7 @@ description: ThingsBoard FAQ
 * TOC
 {:toc}
 
+
 ## What is ThingsBoard?
 
 ThingsBoard is an open-source server-side platform that allows you to monitor and control your IoT devices.
@@ -28,12 +29,12 @@ You can find more information by browsing [guides](/docs/user-guide/) and [sampl
 
 ## Where can I host ThingsBoard?
 
-You can host ThingsBoard in the cloud, on-premises or locally on your laptop, PC or event Raspberry Pi. We recommend to get started with Docker installation
+You can host ThingsBoard in the cloud, on-premises or locally on your laptop, PC or even Raspberry Pi. We recommend to get started with Docker installation
   
   - [Linux & Mac OS](/docs/user-guide/install/docker/) 
   - [Windows](/docs/user-guide/install/docker-windows/)
 
-You can also take a look at [cluster setup])(/docs/user-guide/install/cluster-setup/) guide.
+You can also take a look at [cluster setup](/docs/user-guide/install/cluster-setup/) guide.
 
 ## How to connect my device?
 

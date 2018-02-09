@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: Products
-description: Lorem ipsum dolor sit amet
+description: ThingsBoard Products
 
 ---
 

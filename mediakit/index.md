@@ -2,7 +2,7 @@
 layout: docwithnav
 title: Media Kit
 notitle: "true"
-description: Lorem ipsum dolor sit amet
+description: ThingsBoard Media Kit
 
 ---
 

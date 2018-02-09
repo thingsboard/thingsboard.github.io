@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: Device & Asset Groups
-description: Lorem ipsum dolor sit amet 
+description: Device & Asset Groups Guide 
 
 ---
 
