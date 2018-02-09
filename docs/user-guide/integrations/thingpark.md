@@ -5,6 +5,8 @@ description: ThingPark Integration Guide
 
 ---
 
+{% assign feature = "Platform Integrations" %}{% include templates/pe-feature-banner.md %}
+
 * TOC
 {:toc}
 

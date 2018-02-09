@@ -81,16 +81,18 @@ section#install-pe
                     background: #fff
                     color: $professional-color
                     display: flex
-                    flex-direction: row
+                    flex-direction: column
                     align-content: center
                     align-items: center
                     .logo-container
                         margin-right: 15px
                         padding: 10px
                         img
+                            min-width: 100px
                             width: 100px
                             height: 80px
                     .cloud-provider-desc
+                        padding: 20px
                         p
                             font-size: 14px
                             span.cloud-price
@@ -226,7 +228,10 @@ section#install-pe
                 padding: 40px
                 .form-section
                     .cloud-provider
+                        flex-direction: row
                         .cloud-provider-desc
+                            padding-left: 0px
+                            padding-right: 0px
                             p
                                 font-size: 18px
                                 span.cloud-price

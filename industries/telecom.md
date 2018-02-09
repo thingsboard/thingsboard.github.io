@@ -1,11 +1,11 @@
 ---
 layout: docwithnav
-title: Fleet Tracking
+title: Telecommunications
 description: 
 
 ---
 
-<div class="customer-block">
+<!--div class="customer-block">
     <a href="https://tektelic.com/">
         <div class="customer-logo">
             <img width="" src="/images/customers/tektelic.png" alt="Tektelic">
@@ -26,7 +26,7 @@ description:
             </div>
         </div>
     </div>
-</div>
+</div-->
 
 <div class="customer-block">
     <a href="https://x-telia.com/">

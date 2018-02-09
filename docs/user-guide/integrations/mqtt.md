@@ -5,6 +5,8 @@ description: MQTT Integration guide
 
 ---
 
+{% assign feature = "Platform Integrations" %}{% include templates/pe-feature-banner.md %}
+
 * TOC
 {:toc}
 
