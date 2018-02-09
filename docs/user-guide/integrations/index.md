@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: Platform Integrations
-description: Lorem ipsum dolor sit amet 
+description: Platform Integrations Documentation 
 
 ---
 

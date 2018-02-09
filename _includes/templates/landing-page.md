@@ -97,19 +97,19 @@ cards:
 - card:
   title: Mean Stack
   image: /docs/meanstack/image_0.png
-  description: Lorem ipsum dolor it verberum.
+  description: 
 - card:
   title: Guestbook + Redis
   image: /images/docs/redis.svg
-  description: Lorem ipsum dolor it verberum.
+  description: 
 - card:
   title: Cloud Native Cassandra
   image: /images/docs/cassandra.svg
-  description: Lorem ipsum dolor it verberum.
+  description: 
 - card:
   title: WordPress + MySQL
   image: /images/docs/wordpress.svg
-  description: Lorem ipsum dolor it verberum. 
+  description:  
 ---
 ```
 

@@ -217,10 +217,10 @@ description:
     <main id="cloud-pricing">
 		<div class="content">
 			<div class="content-block pb-0x">
-				<h3 class="content-title">For small start-ups and early evaluation phase</h3>
+				<h3 class="content-title">Pay as you go</h3>
 			</div>
 			<div class="content-block pb-0x">
-				<h4>Install ThingsBoard PE in two minutes on the AWS cloud and pay hourly rate per server only when you use the platform.</h4>
+				<h4>Install ThingsBoard PE in two minutes on the AWS cloud and pay hourly rate per server only when you use the platform. Best suite for early evaluation phase or PoCs.</h4>
 			</div>
 			<div style="flex: 1;"></div>
 			<div class="content-block">
@@ -229,17 +229,18 @@ description:
 			    </div>
 			</div>
 			<div class="center content-block">
-				<p><a href="/products/thingsboard-pe/install/?deploy=cloud" class="button">Deploy in Cloud</a></p>
+				<p><a href="/products/thingsboard-pe/install/?deploy=cloud" class="button">Pay as you go</a></p>
 			</div>
         </div>
     </main>
     <main id="on-premise-pricing">
 		<div class="content">
 			<div class="content-block pb-0x">
-				<h3 class="content-title">For production installations in the cloud or on premises </h3>
+				<h3 class="content-title">Pay yearly</h3>
 			</div>
 			<div class="content-block pb-0x">
-				<h4>Install ThingsBoard PE on any cloud or on premises and pay one-time license fee per server and optional software updates subscription for subsequent years of usage. Save up to 80% comparing to per hour rate on license fee and hardware cost.</h4>
+				<h4>Install ThingsBoard PE on any cloud or on premises and pay one-time license fee per server and optional software updates subscription for subsequent years of usage. 
+				Save up to 70% comparing to pay-as-you-go per hour rate on the license fee.</h4>
 			</div>
 			<div style="flex: 1;"></div>
 			<div class="content-block">
@@ -248,7 +249,7 @@ description:
 			    </div>
 			</div>
 			<div class="center content-block">
-				<p><a href="/products/thingsboard-pe/install/?deploy=premise" class="button">Deploy on Premise</a></p>
+				<p><a href="/products/thingsboard-pe/install/?deploy=premise" class="button">Pay yearly</a></p>
 			</div>
         </div>
     </main>

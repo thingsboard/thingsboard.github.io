@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: CSV/XLS data export
-description: Lorem ipsum dolor sit amet 
+description: CSV/XLS data export guide
 
 ---
 
