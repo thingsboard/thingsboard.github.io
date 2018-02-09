@@ -1,0 +1,7 @@
+bigheader: "ThingsBoard Media Kit"
+abstract: "Lorem ipsum dolor sit amet"
+hidetoc: "true"
+notitle: "true"
+toc:
+- title: Media Kit
+  path: /mediakit/

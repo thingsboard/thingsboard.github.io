@@ -66,9 +66,8 @@ This training session will provide you with the basic understanding of ThingsBoa
         <td colspan="2">basic understanding of IoT and programming concepts</td>
     </tr>
     <tr>
-        <td>Cost</td>
-        <td class="price"><span class="old-price">( $599 )</span> $299</td>
-        <td><a href="/docs/contact-us/" class="button accent">Contact us</a></td>
+        <td></td>
+        <td colspan="2"><a href="/docs/contact-us/" class="button accent">Contact us</a></td>
     </tr>
 </table>
 
@@ -121,9 +120,8 @@ This training session will provide you with the in-depth understanding of Things
         <td colspan="2">basic concepts of ThingsBoard platform</td>
     </tr>
     <tr>
-        <td>Cost</td>
-        <td class="price"><span class="old-price">( $599 )</span> $299</td>
-        <td><a href="/docs/contact-us/" class="button accent">Contact us</a></td>
+        <td></td>
+        <td colspan="2"><a href="/docs/contact-us/" class="button accent">Contact us</a></td>
     </tr>
 </table>
 
@@ -178,9 +176,8 @@ This training session will provide you with the in-depth understanding of suppor
         <td colspan="2">basic concepts of ThingsBoard platform</td>
     </tr>
     <tr>
-        <td>Cost</td>
-        <td class="price">$599</td>
-        <td><a href="/docs/contact-us/" class="button accent">Contact us</a></td>
+        <td></td>
+        <td colspan="2"><a href="/docs/contact-us/" class="button accent">Contact us</a></td>
     </tr>
 </table>
 
@@ -233,9 +230,8 @@ This training session will provide you with in-depth understanding platform REST
         <td colspan="2">basic concepts of ThingsBoard platform</td>
     </tr>
     <tr>
-        <td>Cost</td>
-        <td class="price">$599</td>
-        <td><a href="/docs/contact-us/" class="button accent">Contact us</a></td>
+        <td></td>
+        <td colspan="2"><a href="/docs/contact-us/" class="button accent">Contact us</a></td>
     </tr>
 </table>
 
@@ -292,8 +288,7 @@ This training session will provide you with in-depth understanding platform conf
         <td colspan="2">basic understanding of IoT and system administration</td>
     </tr>
     <tr>
-        <td>Cost</td>
-        <td class="price"><span class="old-price">( $799 )</span> $399</td>
-        <td><a href="/docs/contact-us/" class="button accent">Contact us</a></td>
+        <td></td>
+        <td colspan="2"><a href="/docs/contact-us/" class="button accent">Contact us</a></td>
     </tr>
 </table>

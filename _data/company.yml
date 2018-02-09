@@ -1,0 +1,7 @@
+bigheader: "Our Company"
+abstract: "About ThingsBoard Company"
+hidetoc: "true"
+notitle: "true"
+toc:
+- title: Our Company
+  path: /company/

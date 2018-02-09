@@ -33,10 +33,16 @@ title: Contact us
             return false;
         }
         
-        if (subject === 'Please Select') {
+        if (isEmpty(subject)) {
             window.alert("Please select Subject.");
             return false;
         }
+        
+        /*if (subject === 'Please Select') {
+            window.alert("Please select Subject.");
+            return false;
+        }*/
+        
         if (!validateValue('Message', message)) {
             return false;
         }
@@ -59,62 +65,60 @@ title: Contact us
 
 <form id="contact-form" method="post" class="contact-form" onsubmit="return validateContactForm(this)">
     <fieldset>
-        <p class="form-element first half">
-            <label for="first-name">
-                First Name
-                <abbr class="required" title="required">*</abbr>
-            </label>
-            <input class="text-input" name="first-name" type="text" size="40" maxlength="50">
-        </p>
-        <p class="form-element half">
-            <label for="last-name">
-                Last Name
-                <abbr class="required" title="required">*</abbr>
-            </label>
-            <input class="text-input" name="last-name" type="text" size="40" maxlength="50">
-        </p>
-        <p class="form-element first half">
-            <label for="email">
-                Email Address
-                <abbr class="required" title="required">*</abbr> 
-            </label>
-            <input class="text-input" name="email" type="text" size="40" maxlength="80">
-        </p>
-        <p class="form-element half">
-            <label for="company">
-                Company
-                <abbr class="required" title="required">*</abbr> 
-            </label>
-            <input class="text-input" name="company" type="text" size="40" maxlength="80">
-        </p>
-        <p class="form-element">
-            <label for="subject">
-                Subject
-                <abbr class="required" title="required">*</abbr>
-            </label>
-            <select class="select" name="subject">
-                <option value="Please Select">Please Select</option>
-                <option value="Technical Support">Technical Support</option>
-                <option value="Training">Training</option>
-                <option value="Professional Services">Professional Services</option>
-                <option value="Partnership">Partnership</option>
-                <option value="Press or Analyst Inquiry">Press or Analyst Inquiry</option>
-                <option value="General Feedback">General Feedback</option>
-                <option value="Other">Other</option>
-            </select>            
-        </p>        
-        <p class="form-element">
-            <label for="message">
-                Message
-                <abbr class="required" title="required">*</abbr>
-            </label>
-            <textarea class="text-area" name="message" cols="50" rows="8" maxlength="3000"></textarea>
-        </p>
-        <input type="hidden" name="_next" value="/docs/contact-us-thanks/" />
-        <input type="text" name="_gotcha" style="display:none" />
-        <p class="form-element">
+        <div class="form-section mb30">
+            <div class="form-element first half">
+                <label for="first-name">
+                    <input class="form-control" value="" name="first-name" type="text" size="40" maxlength="50">
+                    <p>First Name*</p>
+                </label>
+            </div>
+            <div class="form-element half">
+                <label for="last-name">
+                    <input class="form-control" value="" name="last-name" type="text" size="40" maxlength="50">
+                    <p>Last Name*</p>
+                </label>
+            </div>
+            <div class="form-element first half">
+                <label for="email">
+                    <input class="form-control" value="" name="email" type="email" size="40" maxlength="80">
+                    <p>Email Address*</p>
+                </label>
+            </div>
+            <div class="form-element half">
+                <label for="company">
+                    <input class="form-control" value="" name="company" type="text" size="40" maxlength="80">
+                    <p>Company*</p>
+                </label>
+            </div>
+            <div class="form-element">
+                <label for="subject">
+                    <select class="form-control select" name="subject">
+                        <option value=""></option>
+                        <option value="Technical Support">Technical Support</option>
+                        <option value="ThingsBoard Products">ThingsBoard Products</option>
+                        <option value="Deployment Options">Deployment Options</option>
+                        <option value="Training">Training</option>
+                        <option value="Professional Services">Professional Services</option>
+                        <option value="Partnership">Partnership</option>
+                        <option value="Press or Analyst Inquiry">Press or Analyst Inquiry</option>
+                        <option value="General Feedback">General Feedback</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    <p>Subject*</p>
+                </label>
+            </div>        
+            <div class="form-element">
+                <label for="message">
+                    <textarea class="form-control text-area" name="message" cols="50" rows="8" maxlength="3000"></textarea>
+                    <p class="text-area-label">Message*</p>
+                </label>
+            </div>
+            <input type="hidden" name="_next" value="/docs/contact-us-thanks/" />
+            <input type="text" name="_gotcha" style="display:none" />
+        </div>    
+        <div class="form-element">
              <input class="button" value="Submit" type="submit">
-        </p>
+        </div>
     </fieldset>
 </form>
 
@@ -123,4 +127,31 @@ title: Contact us
     var contactform =  document.getElementById('contact-form');
     contactform.setAttribute('action', 'https://formspree.io/' + 'support' + '@' + 'thingsboard' + '.' + 'io');
 
+    jqueryDefer(
+        function () {
+            $( document ).ready(function() {
+                 $('html, body').animate({
+                            scrollTop: $('#contact-form').offset().top - 200
+                          }, 0);
+                 $('#contact-form .form-element .form-control').addClass("input--empty");
+                 $('#contact-form .form-element .form-control').on('input', function() {
+                      if( !$(this).val() ) {
+                         $(this).addClass("input--empty");
+                      } else {
+                         $(this).removeClass("input--empty");
+                      }
+                 });
+                 
+                 $.urlParam = function (name) {
+                     var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+                     return results ? results[1] : null;
+                 };
+                 var subjectValue = $.urlParam('subject');
+                 if (subjectValue != undefined && subjectValue.trim().length > 0) {                    
+                    $('#contact-form select[name=subject]').val(decodeURIComponent(subjectValue));
+                    $('#contact-form select[name=subject]').removeClass("input--empty");
+                 }
+            });
+        }
+    );
 </script>
