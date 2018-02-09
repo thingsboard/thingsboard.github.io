@@ -78,6 +78,7 @@ section, header, footer
 	main
 		position: relative
 		margin: auto
+		display: block
 
 p
 	font-size: 14px
@@ -564,10 +565,19 @@ footer
 					font-family: "Roboto",sans-serif
 					padding: 10px
 					font-size: 16px
+					line-height: 16px
 					font-weight: 100
 					color: #fff
 					border: 1px solid #fff
 					transition: .3s
+					&::-webkit-input-placeholder
+						color: #999 !important
+					&::-moz-placeholder
+						color: #999 !important
+					&:-ms-input-placeholder
+						color: #999 !important
+					&:-moz-placeholder
+						color: #999 !important
 		width: 100%
 		display: flex
 		align-items: center
@@ -617,6 +627,14 @@ footer
 	color: white
 	border: 1px solid white
 	transition: 0.3s
+	&::-webkit-input-placeholder
+		color: #999 !important
+	&::-moz-placeholder
+		color: #999 !important
+	&:-ms-input-placeholder
+		color: #999 !important
+	&:-moz-placeholder
+		color: #999 !important
 
 	&:focus
 		background-color: $light-grey
@@ -745,7 +763,6 @@ section
 			line-height: 30px
 			font-size: 16px
 			vertical-align: top
-
 
 #encyclopedia
 	position: relative
