@@ -16,6 +16,7 @@
 	<link rel="shortcut icon" type="image/png" href="/images/favicon.png">
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="/css/styles.css">
 	<script type="text/javascript">
 		/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
@@ -44,6 +45,27 @@
 				}, 50);
 			}
 		}
+
+		window.vis = (function(){
+			var stateKey,
+					eventKey,
+					keys = {
+						hidden: "visibilitychange",
+						webkitHidden: "webkitvisibilitychange",
+						mozHidden: "mozvisibilitychange",
+						msHidden: "msvisibilitychange"
+					};
+			for (stateKey in keys) {
+				if (stateKey in document) {
+					eventKey = keys[stateKey];
+					break;
+				}
+			}
+			return function(c) {
+				if (c) document.addEventListener(eventKey, c);
+				return !document[stateKey];
+			}
+		})();
 
 		function loadScript(src, callback)
 		{
@@ -95,12 +117,43 @@
 			{src: '/js/jquery-2.2.0.min.js', type: 'script'},
 			{src: '/css/jquery-ui.min.css', type: 'css'},
 			{src: '/js/jquery-ui.min.js', type: 'script'},
+			{src: '/js/jquery.vide.js', type: 'script'},
 			{src: '/js/script.js', type: 'script'},
 			{src: '/css/sweetalert.css', type: 'css'},
 			{src: '/js/sweetalert.min.js', type: 'script'}
 		];
 
 		loadNextScript(0, initialScriptsList);
+
+		jqueryDefer(function() {
+			(function ($, win) {
+				$.fn.inViewport = function (cb) {
+					return this.each(function (i, el) {
+						function visPx() {
+							var H = $(this).height(),
+									r = el.getBoundingClientRect(), t = r.top, b = r.bottom;
+							var result = cb.call(el, Math.max(0, t > 0 ? H - t : (b < H ? b : H)));
+							if (result) {
+								$(win).off("resize scroll", visPx);
+							}
+						}
+
+						visPx();
+						$(win).on("resize scroll", visPx);
+					});
+				};
+			}(jQuery, window));
+		});
+
+		function inViewportDefer(method) {
+			if (window.jQuery && $.fn.inViewport) {
+				method();
+			} else {
+				setTimeout(function() {
+					inViewportDefer(method)
+				}, 50);
+			}
+		}
 
 	</script>
 	<script type="text/javascript">
@@ -173,11 +226,19 @@
 				frameborder="0"
 				scrolling="0" width="150px" height="30px"></iframe>
 	</div>
-	<div class="nav-buttons" data-auto-burger="primary">
-		<a href="/docs/" class="button" id="viewDocs" data-auto-burger-exclude>View Documentation</a>
-		<a href="/iot-use-cases/" class="button" id="useCases" data-auto-burger-exclude>Use cases</a>
-		<a href="/docs/getting-started-guides/helloworld/" class="button" id="gettingStarted" data-auto-burger-exclude>Getting started</a>
-		<a target="_blank" href="https://demo.thingsboard.io/signup" class="button" id="liveDemo" data-auto-burger-exclude>Live demo</a>
+	<div class="nav-buttons nav-buttons-left" data-auto-burger="primary">
+		<a href="/installations/" class="button center-button" id="tryItNow" data-auto-burger-exclude>Try it now</a>
+		<a href="/docs/services/" class="button center-button" id="services" data-auto-burger-exclude>Services</a>
+		<!--a target="_blank" href="https://demo.thingsboard.io/signup" class="button center-button" id="liveDemo" data-auto-burger-exclude>Live demo</a-->
+	</div>
+	<div class="nav-buttons nav-buttons-right" data-auto-burger="primary">
+		<div class="nav-items">
+			<a href="javascript:void(0);" class="nav-item" id="solutions" onclick="tb.openMenu('solutionsNav', 'solutions')" data-auto-burger-exclude>Solutions</a>
+			<a href="javascript:void(0);" class="nav-item" id="customers" onclick="tb.openMenu('customersNav', 'customers')" data-auto-burger-exclude>Customers</a>
+			<a href="javascript:void(0);" class="nav-item" id="use_cases" onclick="tb.openMenu('useCasesNav', 'use_cases')" data-auto-burger-exclude>Use Cases</a>
+			<a href="javascript:void(0);" class="nav-item" id="about_us" onclick="tb.openMenu('aboutUsNav', 'about_us')" data-auto-burger-exclude>About Us</a>
+		</div>
+		<a href="/docs/" class="button center-button" id="viewDocs" data-auto-burger-exclude>Docs</a>
 		<button id="hamburger" onclick="tb.toggleMenu()" data-auto-burger-exclude><div></div></button>
 	</div>
 
@@ -210,11 +271,135 @@
 					<a href="https://gitter.im/thingsboard/chat" class="gitter"><span>Gitter</span></a>
 					<a href="http://stackoverflow.com/questions/tagged/thingsboard" class="stack-overflow"><span>Stack Overflow</span></a>
 					<a href="https://groups.google.com/forum/#!forum/thingsboard" class="mailing-list"><span>Mailing List</span></a>
-					<a href="https://www.youtube.com/channel/UCDb9fsV-YR4JmnipAMGsVAQ" class="youtube"><span>YouTube Channel</span></a>
+					<a href="https://www.youtube.com/thingsboard" class="youtube"><span>YouTube Channel</span></a>
 					<a href="https://www.facebook.com/thingsboard" class="facebook"><span>Facebook Page</span></a>
 				</div>
 			</div>
 			<div class="clear" style="clear: both"></div>
+		</main>
+	</nav>
+	<nav id="solutionsNav" class="nav-menu">
+		<main data-auto-burger="primary">
+			<div class="nav-box">
+				<img src="/images/head-solutions.svg">
+			</div>
+			<div class="nav-box">
+				<ul>
+					<a href="/products/" target="_self">
+						<li><strong>Products</strong></li>
+					</a>
+					<a href="/docs/getting-started-guides/what-is-thingsboard/" target="_self">
+						<li><span>ThingsBoard Community Edition</span></li>
+					</a>
+					<a href="/products/thingsboard-pe/" target="_self">
+						<li><span>ThingsBoard Professional Edition</span></li>
+					</a>
+					<a href="/docs/iot-gateway/what-is-iot-gateway/" target="_self">
+						<li><span>ThingsBoard IoT Gateway</span></li>
+					</a>
+				</ul>
+			</div>
+			<div class="nav-box">
+				<ul>
+					<a href="/docs/services/" target="_self">
+						<li><strong>Services</strong></li>
+					</a>
+					<a href="/docs/services/support/" target="_self">
+						<li><span>Support</span></li>
+					</a>
+					<a href="/docs/services/trainings/" target="_self">
+						<li><span>Trainings</span></li>
+					</a>
+					<a href="/docs/services/consulting/" target="_self">
+						<li><span>Professional services</span></li>
+					</a>
+				</ul>
+			</div>
+		</main>
+	</nav>
+	<nav id="customersNav" class="nav-menu">
+		<main data-auto-burger="primary">
+			<div class="nav-box">
+				<img src="/images/head-customers.svg">
+			</div>
+			<div class="nav-box">
+			</div>
+			<div class="nav-box">
+				<ul>
+					<a href="/industries/" target="_self">
+						<li><strong>Industries</strong></li>
+					</a>
+					<a href="/industries/smart-energy/" target="_self">
+						<li><span>Smart Energy</span></li>
+					</a>
+					<a href="/industries/agriculture/" target="_self">
+						<li><span>Agriculture</span></li>
+					</a>
+					<a href="/industries/smart-buildings/" target="_self">
+						<li><span>Smart Buildings</span></li>
+					</a>
+					<a href="/industries/smart-city/" target="_self">
+						<li><span>Smart City</span></li>
+					</a>
+					<a href="/industries/telecom/" target="_self">
+						<li><span>Telecom</span></li>
+					</a>
+				</ul>
+			</div>
+		</main>
+	</nav>
+	<nav id="useCasesNav" class="nav-menu">
+		<main data-auto-burger="primary">
+			<div class="nav-box">
+				<img src="/images/head-use-cases.svg">
+			</div>
+			<div class="nav-box">
+			</div>
+			<div class="nav-box">
+				<ul>
+					<a href="/iot-use-cases/" target="_self">
+						<li><strong>IoT use cases</strong></li>
+					</a>
+					<a href="/smart-metering/" target="_self">
+						<li><span>Smart Metering</span></li>
+					</a>
+					<a href="/smart-energy/" target="_self">
+						<li><span>Smart Energy</span></li>
+					</a>
+					<a href="/smart-farming/" target="_self">
+						<li><span>Smart Farming</span></li>
+					</a>
+					<a href="/fleet-tracking/" target="_self">
+						<li><span>Fleet Tracking</span></li>
+					</a>
+				</ul>
+			</div>
+		</main>
+	</nav>
+	<nav id="aboutUsNav" class="nav-menu">
+		<main data-auto-burger="primary">
+			<div class="nav-box">
+				<img src="/images/head-about-us.svg">
+			</div>
+			<div class="nav-box">
+			</div>
+			<div class="nav-box">
+				<ul>
+					<a href="/company/" target="_self">
+						<li><strong>Our Company</strong></li>
+					</a>
+					<a href="/docs/contact-us/" target="_self">
+						<li><span>Contact Us</span></li>
+					</a>
+					<a href="/mediakit/" target="_self">
+						<li><span>Media Kit</span></li>
+					</a>
+					<a href="https://blog.thingsboard.io/">
+						<li><span>Blog</span></li>
+					</a>
+				</ul>
+			</div>
+
 		</main>
 	</nav>
 </header>

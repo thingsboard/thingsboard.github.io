@@ -10,14 +10,23 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 {% include head-header.html %}
 
 <!--  HERO  -->
-<section id="hero" class="light-text">
-	<main>
-		<div id="headlineWrapper">
-			<h1>Open-source IoT Platform</h1>
-			<h5>Device management, data collection, processing and visualization <br/> for your IoT projects</h5>
+<section id="hero" class="light-text"
+		 data-vide-bg="mp4: https://s3-us-west-1.amazonaws.com/tb-videos/tb-cover.mp4,
+                       webm: https://s3-us-west-1.amazonaws.com/tb-videos/tb-cover.webm,
+                       ogv: https://s3-us-west-1.amazonaws.com/tb-videos/tb-cover.ogv,
+                       poster: /video/tb-cover.jpg"
+		 data-vide-options="bgColor: #000000, loop: true, muted: true, posterType: jpg">
+	<div class="video-cover"></div>
+	<div id="hero-content">
+		<h1 class="header-animation tb-title">ThingsBoard IoT Platform</h1>
+		<h4 class="header-animation tb-sub-title">Device management, data collection, processing and visualization for your IoT solution</h4>
+		<div class="header-animation">
+			<a href="#intro" class="button learn-tb">Learn More</a>
 		</div>
-		<a href="/docs/getting-started-guides/helloworld/" id="quickstartButton" class="button">Getting Started</a>
-	</main>
+		<div class="tb-arrow">
+			<a href="#intro"><i class="fa fa-chevron-down fa-2x" aria-hidden="true"></i></a>
+		</div>
+	</div>
 </section>
 
 <section id="intro" class="oceanNodes">
@@ -31,7 +40,143 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 		</div>
 	</main>
 </section>
-
+<section id="main-features" class="oceanNodes">
+	<main>
+		<div class="image-wrapper"><img src="images/device_management.svg"></div>
+		<div class="content">
+			<h4>Provision and manage devices and assets</h4>
+			<p>Provision, monitor and control your IoT entities in secure way using rich server-side APIs.
+				Define relations between your devices, assets, customers or any other entities.</p>
+		</div>
+	</main>
+	<main>
+		<div class="image-wrapper"><img src="images/visualize.svg"></div>
+		<div class="content">
+			<h4>Collect and visualize data</h4>
+			<p>Collect and store telemetry data in scalable and fault-tolerant way.
+				Visualize your data with built-in or custom widgets and flexible dashboards.
+				Share dashboards with your customers.</p>
+		</div>
+	</main>
+	<main>
+		<div class="image-wrapper"><img src="images/process_react.svg"></div>
+		<div class="content">
+			<h4>Process and React</h4>
+			<p>Define data processing rules and trigger reactions using plugins. Raise alarms on incoming telemetry events or attribute updates.</p>
+		</div>
+	</main>
+	<main>
+		<div class="image-wrapper"><img src="images/iot-gateway.svg"></div>
+		<div class="content">
+			<h4><a href="/docs/iot-gateway/what-is-iot-gateway/">IoT Gateway</a></h4>
+			<p>Integrate devices connected to legacy and third-party systems using existing protocols. Connect to your OPC-UA server or MQTT broker in minutes by following <a href="/docs/iot-gateway/getting-started/">this guide</a>.</p>
+		</div>
+	</main>
+</section>
+<section id="tb-customers">
+	<h3 class="center">Trusted by</h3>
+	<main class="customers-container">
+		<div class="customer-block">
+			<a href="https://tektelic.com/">
+				<span>
+					<div class="customer-logo" style="height:134px">
+						<img width="" src="/images/customers/tektelic.png" alt="TEKTELIC Communications Inc.">
+					 </div>
+				</span>
+			</a>
+		</div>
+		<div class="customer-block">
+			<a href="/industries/smart-city#x-telia">
+				<span>
+					<div class="customer-logo" style="height:134px">
+						<img width="" src="/images/customers/x-telia.png" alt="X-TELIA">
+					 </div>
+				</span>
+			</a>
+		</div>
+		<div class="customer-block">
+			<a href="/industries/smart-city#ositech">
+				<span>
+					<div class="customer-logo" style="height:134px">
+						<img width="" src="/images/customers/ositech.png" alt="Ositech Communications, Inc.">
+					 </div>
+				</span>
+			</a>
+		</div>
+		<div class="customer-block">
+			<a href="/industries/smart-energy#bei">
+				<span>
+					<div class="customer-logo" style="height:134px">
+						<img width="" src="/images/customers/bei.png" alt="Berliner Energieinstitut GmbH">
+					 </div>
+				</span>
+			</a>
+		</div>
+		<div class="customer-block">
+			<a href="/industries/smart-buildings#beaconzone">
+				<span>
+					<div class="customer-logo" style="height:134px">
+						<img width="" src="/images/customers/beaconzone.png" alt="BeaconZone">
+					 </div>
+				</span>
+			</a>
+		</div>
+		<div class="customer-block">
+			<a href="/industries/smart-energy#visible-energy">
+				<span>
+					<div class="customer-logo" style="height:134px">
+						<img width="" src="/images/customers/visible-energy.svg" alt="Visible Energy, Inc.">
+					 </div>
+				</span>
+			</a>
+		</div>
+		<div class="customer-block">
+			<a href="/industries/agriculture#agrolog">
+				<span>
+					<div class="customer-logo" style="height:134px">
+						<img width="" src="/images/customers/supertech-agroline.png" alt="Supertech Agroline">
+					 </div>
+				</span>
+			</a>
+		</div>
+		<div class="customer-block">
+			<a href="/industries/smart-energy#environmental-energy-controls">
+				<span>
+					<div class="customer-logo" style="height:134px">
+						<img width="" src="/images/customers/e2c.png" alt="Environmental Energy Controls">
+					 </div>
+				</span>
+			</a>
+		</div>
+		<div class="customer-block">
+			<a href="/industries/smart-city#conbee">
+				<span>
+					<div class="customer-logo" style="height:134px">
+						<img width="" src="/images/customers/conbee.svg" alt="Conbee GmbH">
+					 </div>
+				</span>
+			</a>
+		</div>
+		<div class="customer-block">
+			<a href="https://www.rtaautomation.com">
+				<span>
+					<div class="customer-logo" style="height:134px">
+						<img width="" src="/images/customers/rta.svg" alt="RTA, Inc.">
+					 </div>
+				</span>
+			</a>
+		</div>
+		<!--div class="customer-block">
+			<a href="https://walt-tech.com.au/">
+                <span>
+                    <div class="customer-logo" style="height:134px">
+                        <img width="" src="/images/customers/walt-tech.gif" alt="Walt Technologies">
+                     </div>
+                </span>
+			</a>
+		</div-->
+	</main>
+</section>
 <section id="dashboard_description">
 	<main>
 		<h3 class="center">Real-Time IoT Dashboards</h3>
@@ -100,131 +245,11 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 	</main>
 </section>
 
-<section id="thingsboard_feedbacks">
-	<main>
-		<div class="content">
-			<div class="feedbacks-carousel">
-				<div class="feedback-item">
-					<a class="overlay-link" href="/docs/feedback/"></a>
-					<div class="feedback-logo-container">
-						<img class="feedback-logo" src="/images/feedbacks/logo0.jpg">
-						</img>
-					</div>
-					<div class="feedback-content">
-						<p class="author">David Eitzinger, Managing Director at Berliner Energieinstitut GmbH</p>
-						<blockquote>
-							<p>We were struggling trying to implement our own IOT infrastructure when
-								ThingsBoard suddenly appeared. Immediately we started testing and were
-								amazed with the feature completeness, stability and ease of use of this
-								great platform, although it was only in version 1.0 and had been
-								released just days prior.</p>
-							<br/><br/>
-							<p>Our business needed some special features on the frontend and some major
-								modifications on the backend but after exchanging a few emails it was
-								clear that ThingsBoard was the way to go. The necessary changes were
-								implemented in a matter of a few weeks and the quality and thoroughness
-								of the implementation far exceed our expectations. I've been working
-								with OSS since the mid 1990s and know of it's many benefits but the
-								quality of ThingsBoard as well as the speed of development continues to
-								impress me.</p>
-						</blockquote>
-					</div>
-				</div>
-				<div class="feedback-item" style="display: none;">
-					<div class="feedback-logo-container">
-						<img class="feedback-logo" src="/images/feedbacks/logo3.jpg">
-						</img>
-					</div>
-					<div class="feedback-content">
-						<p class="author">Manolis Nikiforakis, CEO at EXM.gr</p>
-						<blockquote>
-							<p>ThingsBoard is the new kid on the (IoT PaaS) block. Its designed by developers for developers
-								with emphasis to end-customers, with promising features that do not existing on other open source
-								IoT platforms yet. It's build on proven, no-bullshit enterprise open source technologies and has
-								progressed very fast since it's public launch thanks to its committed kick-ass senior dev team.</p>
-							<br/><br/>
-							<p>In my company, we are currently merging our current LoRaWAN and Big Data Analytics solutions
-								with ThingsBoard, to have both of best worlds, and so far we are very happy with the results.
-								We look forward to see ThingsBoard being established as a weapon of choice for various IoT use cases
-								and from our end we will try to contribute as much possible to it's success.</p>
-						</blockquote>
-					</div>
-				</div>
-				<div class="feedback-item" style="display: none;">
-					<div class="feedback-logo-container">
-						<img class="feedback-logo" src="/images/feedbacks/logo2.jpg">
-						</img>
-					</div>
-					<div class="feedback-content">
-						<p class="author">Dick Chan, CEO at Knode.co</p>
-						<blockquote>
-							<p>After a month of research, we found and selected ThingsBoard. ThingsBoard stood out as it is fully integrated and
-								built from industrial strength components like Netty, Cassandra and Akka, which gave us the confidence that it can
-								scale out and up. That is important as we don’t want a system upgrade and migration if the system fails to scale out
-								or gives a poor performance after production.</p>
-							<br/><br/>
-							<p>Another thing we love ThingsBoard is its user interface/dashboard and its widget library. We can build beautiful and
-								professional IoT dashboard with drag and drop of the widgets. If you see the official demo, you must agree with me.</p>
-						</blockquote>
-					</div>
-				</div>
-				<div class="feedback-item" style="display: none;">
-					<div class="feedback-logo-container">
-						<img class="feedback-logo" src="/images/feedbacks/logo1.jpg">
-						</img>
-					</div>
-					<div class="feedback-content">
-						<p class="author">Simon Judge, Co-founder at BeaconZone</p>
-						<blockquote>
-							<p>ThingsBoard offers a secure, scalable IoT solution that, being Open Source, we can control.
-								Having created our own ThingsBoard instance, we have found it to be very customisable via widgets,
-								the rule engine and the plugin system allowing it to be used in a variety of specialist situations.</p>
-						</blockquote>
-					</div>
-				</div>
-			</div>
-		</div>
-	</main>
-</section>
-
-<section id="main-features" class="oceanNodes">
-	<main>
-		<div class="image-wrapper"><img src="images/device_management.png"></div>
-		<div class="content">
-			<h4>Provision and manage devices and assets</h4>
-			<p>Provision, monitor and control your IoT entities in secure way using rich server-side APIs.
-				Define relations between your devices, assets, customers or any other entities.</p>
-		</div>
-	</main>
-	<main>
-		<div class="image-wrapper"><img src="images/visualize.png"></div>
-		<div class="content">
-			<h4>Collect and visualize data</h4>
-			<p>Collect and store telemetry data in scalable and fault-tolerant way.
-				Visualize your data with built-in or custom widgets and flexible dashboards.
-				Share dashboards with your customers.</p>
-		</div>
-	</main>
-	<main>
-		<div class="image-wrapper"><img src="images/process_react.png"></div>
-		<div class="content">
-			<h4>Process and React</h4>
-			<p>Define data processing rules and trigger reactions using plugins. Raise alarms on incoming telemetry events or attribute updates.</p>
-		</div>
-	</main>
-	<main>
-		<div class="image-wrapper"><img src="images/iot-gateway.png"></div>
-		<div class="content">
-			<h4><a href="/docs/iot-gateway/what-is-iot-gateway/">IoT Gateway</a></h4>
-			<p>Integrate devices connected to legacy and third-party systems using existing protocols. Connect to your OPC-UA server or MQTT broker in minutes by following <a href="/docs/iot-gateway/getting-started/">this guide</a>.</p>
-		</div>
-	</main>
-</section>
-
 <section id="features">
 	<main>
-		<h3 class="center">ThingsBoard Features</h3>
-
+		<div class="features-title center">
+			<h3>ThingsBoard Features</h3>
+		</div>
 		<div class="feature-box">
 			<div>
 				<h4><a href="/docs/user-guide/telemetry/">Telemetry Data Collection</a></h4>
@@ -317,7 +342,100 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 </style>
 
 <script type="text/javascript">
+
 	jqueryDefer(initSlick);
+
+	jqueryDefer(function () {
+		vis(function() {
+			if (vis()) {
+				slideUp();
+			}
+		});
+
+		$('#hero-content > .tb-arrow > a, #hero-content a.learn-tb').click(function(event) {
+			event.preventDefault();
+			var target = $('#intro');
+			$('html, body').animate({
+				scrollTop: target.offset().top - 60 //header height
+			}, 1000, "easeOutCirc");
+		});
+
+	});
+
+	inViewportDefer(function() {
+
+		$("#hero-content").inViewport(function(px){
+			if($(this).height()-px >= 60) {
+				$(this).addClass("arrow-hidden");
+			} else {
+				$(this).removeClass("arrow-hidden");
+			}
+		});
+
+		$("#intro .image-wrapper, #intro .content").inViewport(function(px){
+			if(px >= 80) {
+				$(this).addClass("animated zoomIn");
+				return true;
+			}
+		});
+
+		$("#main-features main:nth-child(odd) .image-wrapper, #main-features main:nth-child(even) .content").inViewport(function(px){
+			if(px >= 80) {
+				$(this).addClass("animated bounceInRight");
+				return true;
+			}
+		});
+
+		$("#main-features main:nth-child(even) .image-wrapper, #main-features main:nth-child(odd) .content").inViewport(function(px){
+			if(px >= 80) {
+				$(this).addClass("animated bounceInLeft");
+				return true;
+			}
+		});
+
+		$("#dashboard_description main").inViewport(function(px){
+			if(px >= 100) {
+				$(this).addClass("animated zoomIn");
+				return true;
+			}
+		});
+
+		$("#tb-customers .customers-container .customer-block").inViewport(function(px){
+			if(px >= 80) {
+				$(this).addClass("animated zoomIn");
+				return true;
+			}
+		});
+
+		$("#features .features-title").inViewport(function(px){
+			if(px >= 150) {
+				$(this).addClass("animated zoomIn");
+				return true;
+			}
+		});
+
+		$("#features .feature-box div").inViewport(function(px){
+			if(px >= 150) {
+				$(this).addClass("animated fadeInUp");
+				return true;
+			}
+		});
+
+	});
+
+	function slideUp() {
+		var headAnimations = $('#hero-content').find('.header-animation');
+		for (var i=0;i<headAnimations.length;i++) {
+			reinsert($(headAnimations[i]));
+		}
+	}
+
+	function reinsert(el) {
+		var newone = el.clone(true);
+		el.before(newone);
+		el.remove();
+	}
+
 	function initSlick() {
 		var scriptsList = [
 			{src: '/css/slick.min.css', type: 'css'},
@@ -345,25 +463,6 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 								}
 							]
 						});
-						var feedbacksCarousel = $('.feedbacks-carousel');
-						$('.feedback-item', feedbacksCarousel).css('display', 'block');
-						feedbacksCarousel.slick({
-							slidesToShow: 1,
-							slidesToScroll: 1,
-							autoplay: true,
-							autoplaySpeed: 20000,
-							arrows: true,
-							dots: true,
-							responsive: [
-								{
-									breakpoint: 750,
-									settings: {
-										arrows: false
-									}
-								}
-							]
-						});
-
 					});
 				}
 		);

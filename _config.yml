@@ -1,6 +1,8 @@
+title: ThingsBoard
 name: ThingsBoard
 author: thingsboard
 logo: /images/thingsboard_logo.png
+url: https://thingsboard.io
 
 twitter:
   username: thingsboard
@@ -11,7 +13,7 @@ social:
     - https://twitter.com/thingsboard
     - https://github.com/thingsboard/thingsboard
     - https://www.facebook.com/thingsboard
-    - https://www.youtube.com/channel/UCDb9fsV-YR4JmnipAMGsVAQ
+    - https://www.youtube.com/channel/thingsboard
 
 seo:
   type: WebSite

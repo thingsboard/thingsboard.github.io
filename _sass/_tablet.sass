@@ -18,19 +18,18 @@
 //$p-line-height: 28px
 
 
-// header
-$full-width-paddingX: 20px
+$full-width-paddingX: 50px
 
 $main-width: 100%
 $main-max-width: 100%
 
-$header-height: 80px
+$header-height: 60px
 
 $logo-width: 180px
 
 $nav-buttons-margin-left: 10px
 
-$hamburger-size: 50px
+$hamburger-size: 40px
 
 
 // main nav
@@ -51,14 +50,6 @@ $vendor-strip-font-size: 16px
 // ocean nodes
 $ocean-nodes-padding-Y: 0px
 
-//features
-$features-h3-margin-bottom: 40px
-$feature-box-margin-bottom: 60px
-$feature-box-div-margin-bottom: 0
-$feature-box-div-width: 45%
-
-
-
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -75,6 +66,10 @@ $feature-box-div-width: 45%
 		font-size: 36px
 		line-height: 44px
 
+	h2
+		font-size: 28px
+		line-height: 60px
+
 	h3
 		font-size: 28px
 		line-height: 36px
@@ -82,12 +77,8 @@ $feature-box-div-width: 45%
 	h4
 		font-size: 24px
 		line-height: 40px
+		padding-bottom: 0px
 
-
-
-	#home
-		#viewDocs, #blog, #gettingStarted, #liveDemo, #useCases
-			display: inline-block
 
 	#vendorStrip
 		display: block
@@ -152,8 +143,7 @@ $feature-box-div-width: 45%
 			.image-wrapper
 				position: absolute
 				top: 50%
-				max-width: 25%
-				max-height: 100%
+				//max-height: 100%
 				transform: translateY(-50%)
 
 			&:nth-child(odd)
@@ -168,46 +158,12 @@ $feature-box-div-width: 45%
 				.image-wrapper
 					left: 0
 
-			&:nth-child(1)
-				padding-right: 0
-
-				h3, p
-					text-align: center
-
-				.image-wrapper
-					position: relative
-					display: block
-					float: none
-					max-width: 100%
-					transform: none
-
-				.content
-					display: block
-
 			img
 				width: 100%
-
 
 	#video
 		width: $main-max-width
 		display: block
-
-	#features
-		padding-bottom: 60px
-
-		.feature-box
-			margin-bottom: 30px
-
-			&:last-child
-				margin-bottom: 0
-
-		h3
-			margin-bottom: $features-h3-margin-bottom
-
-		.feature-box
-			& > div
-				width: $feature-box-div-width
-				margin-bottom: $feature-box-div-margin-bottom
 
 	#talkToUs
 		#bigSocial, #gettingHelp
