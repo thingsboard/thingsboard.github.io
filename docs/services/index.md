@@ -26,7 +26,7 @@ description: ThingsBoard support plans, services and training sessions
     </a>
     <a href="/docs/services/consulting" class="card">
         <div class="card-title">
-            <span class="title-text">Consulting</span>
+            <span class="title-text">Professional services</span>
         </div>
         <div class="card-img consulting-bg"></div>
         <div class="card-description">

@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
-title: Consulting
-description: Consulting Service
+title: Professional services
+description: Professional services
 
 ---
 
@@ -11,7 +11,7 @@ In short terms, our team will implement your most critical business processes on
 ### DevOps services
 Our experienced DevOps team take over the administration of your ThingsBoard cluster that is deployed in the cloud or on premises. It includes installation and upgrades to latest versions, platform maintenance and optimization.
 
-### Professional services
+### Consulting
 Our core team will review your business use cases, existing environment,  SLA requirements and develop solution architecture based on a synergy of existing infrastructure and ThignsBoard platform.
 
 ### Solution Development
