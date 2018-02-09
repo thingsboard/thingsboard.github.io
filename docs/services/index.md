@@ -24,22 +24,13 @@ description: ThingsBoard support plans, services and training sessions
             Adopt our experience to boost development of your IoT solutions
         </div>
     </a>
-    <a href="/docs/services/professional-services" class="card">
-        <div class="card-title">
-            <span class="title-text">Professional services</span>
-        </div>
-        <div class="card-img professional-services-bg"></div>
-        <div class="card-description">
-            Ensure the success of your IoT product on every stage
-        </div>
-    </a>
-    <a href="/docs/services/consulting/" class="card">
+    <a href="/docs/services/consulting" class="card">
         <div class="card-title">
             <span class="title-text">Consulting</span>
         </div>
         <div class="card-img consulting-bg"></div>
         <div class="card-description">
-            Lorem ipsum dolor sit amet
+            Ensure the success of your IoT product on every stage
         </div>
-    </a>
+    </a>    
 </div>
