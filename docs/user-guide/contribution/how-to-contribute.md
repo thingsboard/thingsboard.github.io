@@ -17,7 +17,7 @@ Before you start any implementation please wait from the ThingsBoard team to com
 
 #### Required tools
 
-To build and run ThingsBoard instance make sure that you have **Java** and **Maven** installed onto your system.
+To build and run ThingsBoard instance make sure that you have **Java**, **Maven**, and **Git** installed onto your system.
 
 Please refer to [**Building from sources**](/docs/user-guide/install/building-from-source) section where [**Java**](/docs/user-guide/install/building-from-source/#java) and [**Maven**](/docs/user-guide/install/building-from-source/#maven) install processes are described.
 
@@ -31,8 +31,7 @@ Now you can clone source code of the forked project.
 
 If are building on Windows for the first time, you may need to run these commands to ensure the required npm dependencies are available: 
 ```bat 
-npm install -g cross-env 
-npm install -g webpack 
+npm install cross-env webpack 
 ``` 
 
 Before importing the project into the *IDE* please build it using **Maven** tool from the root folder:
