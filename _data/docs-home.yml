@@ -85,6 +85,8 @@ toc:
     pe: true
   - title: Audit Log
     path: /docs/user-guide/audit-log/
+  - title: API Limits
+    path: /docs/user-guide/api-limits/
 - title: Integrations Cookbook
   section:
   - title: Persist and visualize AWS IoT data
