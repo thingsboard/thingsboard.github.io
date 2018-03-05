@@ -59,6 +59,10 @@ toc:
         path: /docs/reference/plugins/rabbitmq/
       - title: REST API Call Plugin
         path: /docs/reference/plugins/rest/
+      - title: SNS Plugin
+        path: /docs/reference/plugins/sns/
+      - title: SQS Plugin
+        path: /docs/reference/plugins/sqs/
       - title: Time RPC Plugin
         path: /docs/reference/plugins/time/
 - title: Release Notes
