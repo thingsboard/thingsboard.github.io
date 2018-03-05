@@ -2,12 +2,72 @@
 layout: docwithnav
 title: Get ThingsBoard Professional Edition
 description: ThingsBoard Professional Edition Installation
+hidetoc: "true"
 
 ---
 
 <section id="install-pe">
     <div class="tabs">
-        <input name="tabs" type="radio" id="tab-on-premise" checked="checked" class="tab-input"/>
+        <input name="tabs" type="radio" id="tab-trial" checked="checked" class="tab-input"/>
+        <label for="tab-trial" class="tab-label label-premise">Free trial</label>
+        <div class="tab-panel">
+            <div id="mlb2-7972110" class="deploy-form deploy-trial ml-subscribe-form ml-subscribe-form-7972110">
+                <div class="ml-vertical-align-center">
+                    <div class="subscribe-form ml-block-success" style="display:none">
+                        <div class="form-section center">
+                            <i class="fa fa-check" aria-hidden="true"></i>
+                            <p>Thank you!</p>
+                            <p>Please check your email for further instructions.</p>
+                        </div>
+                    </div>
+                    <form class="ml-block-form" action="https://app.mailerlite.com/webforms/submit/k8u7a2" data-id="784406" data-code="k8u7a2" method="POST" target="_blank">
+                        <div class="subscribe-form">
+                            <div class="form-section mb30">
+                                <p>Please fill this form in order to get your free trial account on our demo server.</p>
+                                <div class="form-group ml-field-email ml-validate-required ml-validate-email">
+                                    <label for="fields[email]">
+                                        <input type="email" name="fields[email]" class="form-control" value="" autocomplete="email" x-autocompletetype="email" spellcheck="false" autocapitalize="off" autocorrect="off">
+                                        <p>Email Address*</p>
+                                    </label>
+                                </div>
+                                <div class="form-group ml-field-first_name ml-validate-required">
+                                    <label for="fields[first_name]">
+                                        <input type="text" name="fields[first_name]" class="form-control" value="" spellcheck="false" autocapitalize="off" autocorrect="off">
+                                        <p>First name*</p>
+                                    </label>    
+                                </div>
+                                <div class="form-group ml-field-last_name ml-validate-required">
+                                    <label for="fields[last_name]">
+                                        <input type="text" name="fields[last_name]" class="form-control" value="" spellcheck="false" autocapitalize="off" autocorrect="off">
+                                        <p>Last name*</p>
+                                    </label>
+                                </div>
+                                <div class="form-group ml-field-company ml-validate-required">
+                                    <label for="fields[company]">
+                                        <input type="text" name="fields[company]" class="form-control" value="" spellcheck="false" autocapitalize="off" autocorrect="off">
+                                        <p>Company*</p>
+                                    </label>                                    
+                                </div>
+                                <div class="form-group ml-field-phone">
+                                    <label for="fields[phone]">
+                                        <input type="text" name="fields[phone]" class="form-control" value="" spellcheck="false" autocapitalize="off" autocorrect="off">
+                                        <p>Phone Number</p>
+                                    </label>    
+                                </div>
+                            </div>                            
+                            <input type="hidden" name="ml-submit" value="1" />
+                            <button class="button" type="submit" class="primary">
+                                Submit
+                            </button>
+                            <button disabled="disabled" style="display: none;" type="button" class="loading">
+                                <img src="https://static.mailerlite.com/images/rolling@2x.gif" width="20" height="20" style="width: 20px; height: 20px;">
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>        
+        </div>
+        <input name="tabs" type="radio" id="tab-on-premise" class="tab-input"/>
         <label for="tab-on-premise" class="tab-label label-premise">Pay yearly</label>
         <div class="tab-panel">
             <div id="mlb2-7556612" class="deploy-form deploy-premise ml-subscribe-form ml-subscribe-form-7556612">
@@ -156,23 +216,35 @@ description: ThingsBoard Professional Edition Installation
 </section>
 <script type="text/javascript" src="https://static.mailerlite.com/js/w/webforms.min.js?v3772b61f1ec61c541c401d4eadfdd02f"></script>
 <script type="text/javascript">
+     function ml_webform_success_7972110() {
+        var $ = ml_jQuery || jQuery;        
+        $(location).attr('href', '/products/thingsboard-pe/install-thanks/?deploy=trial');
+        //$('.ml-subscribe-form-7972110 .ml-block-success').show();
+        //$('.ml-subscribe-form-7972110 .ml-block-form').hide();
+        //$('html, body').animate({
+        //    scrollTop: $('#tab-cloud').offset().top - 100
+        //  }, 0);
+        //$('.ml-subscribe-form-7520964 .ml-block-success').addClass("animated zoomIn");
+    };
     function ml_webform_success_7520964() {
-        var $ = ml_jQuery || jQuery;            
-        $('.ml-subscribe-form-7520964 .ml-block-success').show();
-        $('.ml-subscribe-form-7520964 .ml-block-form').hide();
-        $('html, body').animate({
-            scrollTop: $('#tab-cloud').offset().top - 100
-          }, 0);
-        $('.ml-subscribe-form-7520964 .ml-block-success').addClass("animated zoomIn");
+        var $ = ml_jQuery || jQuery;        
+        $(location).attr('href', '/products/thingsboard-pe/install-thanks/?deploy=cloud');
+        //$('.ml-subscribe-form-7520964 .ml-block-success').show();
+        //$('.ml-subscribe-form-7520964 .ml-block-form').hide();
+        //$('html, body').animate({
+        //    scrollTop: $('#tab-cloud').offset().top - 100
+        //  }, 0);
+        //$('.ml-subscribe-form-7520964 .ml-block-success').addClass("animated zoomIn");
     };
     function ml_webform_success_7556612() {
-        var $ = ml_jQuery || jQuery;            
-        $('.ml-subscribe-form-7556612 .ml-block-success').show();
-        $('.ml-subscribe-form-7556612 .ml-block-form').hide();
-        $('html, body').animate({
-            scrollTop: $('#tab-on-premise').offset().top - 100
-          }, 0);
-        $('.ml-subscribe-form-7556612 .ml-block-success').addClass("animated zoomIn");
+        var $ = ml_jQuery || jQuery;       
+        $(location).attr('href', '/products/thingsboard-pe/install-thanks/?deploy=premise');
+        //$('.ml-subscribe-form-7556612 .ml-block-success').show();
+        //$('.ml-subscribe-form-7556612 .ml-block-form').hide();
+        //$('html, body').animate({
+        //    scrollTop: $('#tab-on-premise').offset().top - 100
+        //  }, 0);
+        //$('.ml-subscribe-form-7556612 .ml-block-success').addClass("animated zoomIn");
     };                       
     jqueryDefer(
         function () {
@@ -201,6 +273,11 @@ description: ThingsBoard Professional Edition Installation
                     $('html, body').animate({
                         scrollTop: $('#tab-cloud').offset().top - 100
                       }, 0);
+                 } else if ("trial" == deployType) {
+                    $('#tab-trial').attr("checked", "checked"); 
+                    $('html, body').animate({
+                       scrollTop: $('#tab-trial').offset().top - 100
+                     }, 0);
                  }
             });
         }
