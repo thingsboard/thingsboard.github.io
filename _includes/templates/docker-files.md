@@ -6,12 +6,12 @@ cd <docker-folder>
 ```
 
 - Download the following files from thingsboard repo:
-    1. **[docker-compose.yml](https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.3/docker/docker-compose.yml)** - main docker-compose file.
-    1. **[.env](https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.3/docker/.env)** - main env file that contains default location of cassandra data folder and cassandra schema.
-    1. **[tb.env](https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.3/docker/tb.env)** - default thingsboard environment variables.
+    1. **[docker-compose.yml](https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.4/docker/docker-compose.yml)** - main docker-compose file.
+    1. **[.env](https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.4/docker/.env)** - main env file that contains default location of cassandra data folder and cassandra schema.
+    1. **[tb.env](https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.4/docker/tb.env)** - default thingsboard environment variables.
       
 ```bash
-curl -L https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.3/docker/docker-compose.yml > docker-compose.yml
-curl -L https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.3/docker/.env > .env
-curl -L https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.3/docker/tb.env > tb.env
+curl -L https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.4/docker/docker-compose.yml > docker-compose.yml
+curl -L https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.4/docker/.env > .env
+curl -L https://raw.githubusercontent.com/thingsboard/thingsboard/release-1.4/docker/tb.env > tb.env
 ```
