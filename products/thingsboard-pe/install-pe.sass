@@ -32,7 +32,7 @@ section#install-pe
         background: $professional-color
     @media (min-width: 1025px)
         .tab-label
-            width: 50%
+            width: calc(100% / 3)
     .tab-panel
         background: $professional-color
         color: #fff
@@ -245,3 +245,21 @@ section#install-pe
             &:hover
                 text-decoration: underline
 
+#install-thanks
+    max-width: 700px
+    margin: auto
+    padding: 30px
+    background: $professional-color
+    color: #fff
+    box-shadow: 0 1px 8px 0 rgba(0,0,0,0.2), 0 3px 4px 0 rgba(0,0,0,0.14), 0 3px 3px -2px rgba(0,0,0,0.12)
+    .thanks-content
+        opacity: 0
+        &.animated
+            opacity: 1
+        .fa
+            font-size: 36px
+            margin-bottom: 15px
+        p
+            font-size: 20px
+            &.thank-you
+                font-size: 32px

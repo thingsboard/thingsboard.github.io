@@ -228,8 +228,9 @@ description:
 			        <img src="/images/pe/aws-marketplace.svg">
 			    </div>
 			</div>
-			<div class="center content-block">
+			<div class="center content-block deploy-buttons">
 				<p><a href="/products/thingsboard-pe/install/?deploy=cloud" class="button">Pay as you go</a></p>
+				<p><a href="/products/thingsboard-pe/install/?deploy=trial" class="button">Free trial</a></p>
 			</div>
         </div>
     </main>
@@ -248,8 +249,9 @@ description:
 			        <img src="/images/pe/premise-deployment.svg">
 			    </div>
 			</div>
-			<div class="center content-block">
+			<div class="center content-block deploy-buttons">
 				<p><a href="/products/thingsboard-pe/install/?deploy=premise" class="button">Pay yearly</a></p>
+				<p><a href="/products/thingsboard-pe/install/?deploy=trial" class="button">Free trial</a></p>
 			</div>
         </div>
     </main>
@@ -259,7 +261,7 @@ description:
 <br/>
 
 <p align="center">
-    <a href="/products/thingsboard-pe/install/" class="button try-pe">Try it now</a>
+    <a href="/products/thingsboard-pe/install/?deploy=trial" class="button try-pe">Try it now</a>
 </p>
 
 <br/>
