@@ -140,11 +140,37 @@ In this step, we will connect to the external MQTT broker in order to start coll
 
 There are two options available:
 
- - [**GUI configuration**](/docs/iot-gateway/getting-started/#step-81-mqtt-broker-gui-configuration)
- - [**File configuration**](/docs/iot-gateway/getting-started/#step-82-mqtt-broker-file-configuration)
+ - [**File configuration**](/docs/iot-gateway/getting-started/#step-81-mqtt-broker-file-configuration)
+ - [**GUI configuration**](/docs/iot-gateway/getting-started/#step-82-mqtt-broker-gui-configuration)
 
 
-### Step 8.1 MQTT broker GUI configuration
+### Step 8.1 MQTT broker file configuration
+ 
+Navigate to gateway configuration folder and edit **tb-gateway.yml** file.
+Configuration folder location:
+
+```bash
+Windows: YOUR_INSTALL_DIR/conf
+Linux: /etc/tb-gateway/conf
+```
+
+Change **mqtt.enabled** property value to **true**.
+
+{% include templates/gateway-mosquitto.md %}
+
+Restart your gateway using the following commands
+
+```bash
+Windows: 
+net stop tb-gateway
+net start tb-gateway
+Linux: 
+sudo service tb-gateway restart
+```
+
+The **mqtt-config.json** contains sample configuration that allows mapping of JSON messages from external MQTT broker to ThingsBoard device attributes and telemetry.
+
+### Step 8.2 MQTT broker GUI configuration
 
 To configure ThingsBoard Gateway through ThingsBoard GUI, **remoteConfiguration** must be enabled in **tb-gateway.yaml**:
 
@@ -157,7 +183,6 @@ gateways:
       remoteConfiguration: true
 ```
 If **remoteConfiguration** is set to **false**, GUI configuration will not take effect and ThingsBoard Gateway will look for configuration in config files. 
-See [**file configuration**](/docs/iot-gateway/getting-started/#step-82-mqtt-broker-file-configuration) for more details.
 
 {% include templates/gateway-mosquitto.md %}
 
@@ -207,31 +232,6 @@ ThingsBoard server connection settings from tb-gateway.yml file as was described
 Mapping described in detail in 
 [**MQTT Extension Configuration Details**](/docs/iot-gateway/getting-started/#step-83-mqtt-extension-configuration-details) section 
 
-### Step 8.2 MQTT broker file configuration
- 
-Navigate to gateway configuration folder and edit **tb-gateway.yml** file.
-Configuration folder location:
-
-```bash
-Windows: YOUR_INSTALL_DIR/conf
-Linux: /etc/tb-gateway/conf
-```
-
-Change **mqtt.enabled** property value to **true**.
-
-{% include templates/gateway-mosquitto.md %}
-
-Restart your gateway using following commands
-
-```bash
-Windows: 
-net stop tb-gateway
-net start tb-gateway
-Linux: 
-sudo service tb-gateway restart
-```
-
-The **mqtt-config.json** contains sample configuration that allows mapping of JSON messages from external MQTT broker to ThingsBoard device attributes and telemetry.
 
 ### Step 8.3 MQTT Extension Configuration Details
 
@@ -389,6 +389,18 @@ Linux: /etc/tb-gateway/conf
 
 **NOTE** This certificate is added to the configuration folder for the demonstration purposes. Both the certificate and the key are in public access, thus it is not secure and is not for production usage.
 You can create and configure your own certificate pair for production usage.
+
+**NOTE** If the provided example.der certificate has expired or you decide to generate a new certificate, you can use the following 
+commands to get a new **example.der**:
+
+```bash
+keytool -genkeypair -v -alias gateway -dname "CN=Thingsboard Gateway, OU=TB, O=ThingsBoard, L=San Francisco, ST=CA, C=US" -keystore example.jks -keypass secret -storepass secret -keyalg RSA -keysize 2048 -validity 9999
+
+keytool -importkeystore -srckeystore example.jks -destkeystore example.pfx  -srcstoretype JKS -deststoretype PKCS12 -srcstorepass secret -deststorepass secret -srcalias gateway -destalias gateway -srckeypass secret -destkeypass secret -noprompt
+
+keytool -exportcert -alias gateway -keypass secret -keystore example.pfx -storepass secret -file example.der  
+```
+
  
 {:refdef: style="text-align: center;"}
 ![image](/images/gateway/certificate-import.png)
@@ -404,6 +416,7 @@ KEPServerEX needs to be configured to accept remote connections. Open KEPServerE
 {:refdef: style="text-align: center;"}
 ![image](/images/gateway/server-endpoint.png)
 {: refdef}
+
 
 **NOTE** KEPServerEX restart is required.
 
@@ -432,16 +445,21 @@ Restart your gateway using following commands
 Windows: 
 net stop tb-gateway
 net start tb-gateway
+
 Linux: 
 sudo service tb-gateway restart
 ```
 
-#### Step 9.3.1 OPC-UA extension GUI configuration
+#### Step 9.3.2 OPC-UA extension GUI configuration
 
-You can import sample configuration  
+You can import sample configuration:  
 [opc-ua-gui-extension-configuration.json](/docs/iot-gateway/resources/opc-ua-gui-extension-configuration.json){:target="_blank"}
 
 or configure OPC-UA extension manually. In GUI the extension configuration looks like:
+
+{:refdef: style="text-align: center;"}
+![image](/images/gateway/gateway-opc-gui-config.png)
+{: refdef}
 
 
 ### Step 9.4. Explore data from devices
@@ -464,6 +482,13 @@ Similar, **Tag1** and **Tag2** relative OPC-UA tags will be mapped to correspond
 }
 ```
 
+The same mapping in GUI looks like:
+
+{:refdef: style="text-align: center;"}
+![image](/images/gateway/gateway-opc-gui-mapping.png)
+{: refdef}
+
+
 You should observe following log message in the gateway logs:
  
 ```text
@@ -481,12 +506,18 @@ Now you can navigate to the ThingsBoard Web UI and observe new device **Device 1
 You can click on the device card and observe delivered attributes and telemetry in the corresponding tabs.
 
 {:refdef: style="text-align: center;"}
+![image](/images/gateway/device-opc-attributes.png)
+{: refdef}
+
+{:refdef: style="text-align: center;"}
 ![image](/images/gateway/device-opc-telemetry.png)
 {: refdef}
 
 ## Step 10. Connect to Sigfox Backend
 
 In this step, we will connect to Sigfox Backend in order to start collecting data from sigfox modules.
+
+### Step 10.1 Sigfox Extension file configuration:
 
 Navigate to gateway configuration folder and edit **tb-gateway.yml** file.
 Configuration folder location:
@@ -504,13 +535,20 @@ Restart your gateway using following commands
 Windows: 
 net stop tb-gateway
 net start tb-gateway
+
 Linux: 
 sudo service tb-gateway restart
 ```
 
 The **sigfox-config.json** contains configuration that allows mapping of JSON messages from Sigfox Backend to ThingsBoard telemetry.
 
-### Step 10.1 Sigfox Backend configuration
+### Step 10.2 Sigfox Extension GUI configuration:
+
+You can import sample Sigfox Extension configuration file:  
+[sigfox-gui-extension-configuration.json](/docs/iot-gateway/resources/sigfox-gui-extension-configuration.json){:target="_blank"}
+
+
+### Step 10.3 Sigfox Backend configuration
 
 Let's assume we want to publish coordinates, temperature and humidity data from your Sigfox module to ThingsBoard.
 In order to achieve this, you will need to select device type and configure custom callback from Sigfox Backend to our IoT Gateway.
@@ -531,7 +569,7 @@ Few things to notice:
 
 We assume you have deployed the gateway on some cloud server to get the static IP address or hostname.
  
-### Step 10.2 Basic mapping example 
+### Step 10.4 Basic mapping example 
 
 The default mapping listed below will allow to convert data from Sigfox Backend and publish it to ThingsBoard.
  
@@ -587,7 +625,7 @@ Few things to notice:
  - **All** JsonPath expressions need to be placed into **${}**.
  - **Transformers** are used to convert data types. For example, integer to double using "(65536-X)/10" formula. You can plugin your own converters.
 
-### Step 10.3 Dry Run
+### Step 10.5 Dry Run
 
 Once your Sigfox Beckend callback is configured, you may observe incoming messages in ThingsBoard IoT Gateway logs.
 If everything is configured correctly, you will see new devices in your Tenant Administrator device list.
@@ -598,7 +636,7 @@ If everything is configured correctly, you will see new devices in your Tenant A
 
 You are able to open a particular device and check that telemetry values arrived successfully.
 
-### Step 10.4 Custom Data type transformers
+### Step 10.6 Custom Data type transformers
 
 As a gateway developer, you are able to fork and add custom transformers using following [interface](https://github.com/thingsboard/thingsboard-gateway/blob/release-1.2/src/main/java/org/thingsboard/gateway/extensions/sigfox/conf/mapping/DataValueTransformer.java). 
 Feel free to submit PRs with your custom transformer implementations if you believe that they may be useful for the ThingsBoard community.
