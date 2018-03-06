@@ -23,13 +23,7 @@ hidetoc: "true"
                     <form class="ml-block-form" action="https://app.mailerlite.com/webforms/submit/k8u7a2" data-id="784406" data-code="k8u7a2" method="POST" target="_blank">
                         <div class="subscribe-form">
                             <div class="form-section mb30">
-                                <p>Please fill this form in order to get your free trial account on our demo server.</p>
-                                <div class="form-group ml-field-email ml-validate-required ml-validate-email">
-                                    <label for="fields[email]">
-                                        <input type="email" name="fields[email]" class="form-control" value="" autocomplete="email" x-autocompletetype="email" spellcheck="false" autocapitalize="off" autocorrect="off">
-                                        <p>Email Address*</p>
-                                    </label>
-                                </div>
+                                <p>Please fill this form in order to get your free 10 days trial account on our demo server.</p>
                                 <div class="form-group ml-field-first_name ml-validate-required">
                                     <label for="fields[first_name]">
                                         <input type="text" name="fields[first_name]" class="form-control" value="" spellcheck="false" autocapitalize="off" autocorrect="off">
@@ -42,12 +36,24 @@ hidetoc: "true"
                                         <p>Last name*</p>
                                     </label>
                                 </div>
+                                <div class="form-group ml-field-email ml-validate-required ml-validate-email">
+                                    <label for="fields[email]">
+                                        <input type="email" name="fields[email]" class="form-control" value="" autocomplete="email" x-autocompletetype="email" spellcheck="false" autocapitalize="off" autocorrect="off">
+                                        <p>Corporate Email*</p>
+                                    </label>
+                                </div>
                                 <div class="form-group ml-field-company ml-validate-required">
                                     <label for="fields[company]">
                                         <input type="text" name="fields[company]" class="form-control" value="" spellcheck="false" autocapitalize="off" autocorrect="off">
                                         <p>Company*</p>
                                     </label>                                    
                                 </div>
+                                <div class="form-group ml-field-company_website">
+                                    <label for="fields[company_website]">
+                                        <input type="text" name="fields[company_website]" class="form-control" value="" spellcheck="false" autocapitalize="off" autocorrect="off">
+                                        <p>Company Website</p>
+                                    </label>
+                                </div>                                
                                 <div class="form-group ml-field-phone">
                                     <label for="fields[phone]">
                                         <input type="text" name="fields[phone]" class="form-control" value="" spellcheck="false" autocapitalize="off" autocorrect="off">
