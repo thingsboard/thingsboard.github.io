@@ -29,24 +29,13 @@ For example, SigFox Backend uses HTTP to push data to ThingsBoard or any other s
 On the other hand, AWS IoT, IBM Watson and Azure Event Hub allows to subscribe to the data feed from devices via MQTT. Similar, some LoRaWAN and NB IoT platforms allow both HTTP and MQTT interfaces.
 
 Once message arrives from External Platform to ThingsBoard it passes validation according to platform specific payload format and security rules. Once message is validated ThingsBoard Integration invokes
-assigned Data Converter to extract sub-set of meaningful information out of the incoming message. The message is basically transformed from device and platform specific payload to the format that ThingsBoard uses.    
+assigned [Uplink Data Converter](/docs/user-guide/data-converters/#uplink-data-converters) to extract sub-set of meaningful information out of the incoming message. The message is basically transformed from device and platform specific payload to the format that ThingsBoard uses.
+Each Platform Integration can be configured to support downlink message processing which can be triggered by ThingsBoard on device shared attribute update or RPC call. In this case ThingsBoard Integration invokes 
+assigned [Downlink Data Converter](/docs/user-guide/data-converters/#downlink-data-converters) to transform ThingsBoard downlink message to device specific payload and forwards it to the configured downlink endpoint according to the Platform Integration rules.       
 
 <br/>
 
  ![image](/images/user-guide/integrations/integrations-overview.svg)
-
-### Data Converters
-
-Data Converters is a part of the Platform Integrations feature. The main function of Data Converter is to parse payload of the incoming message and transform it to format that ThingsBoard uses.  
-
-See video tutorial below for step-by-step instruction how to setup Data Converters.
-
-<br/>
-<div id="video">  
-    <div id="video_wrapper">
-        <iframe src="https://www.youtube.com/embed/CojStpYCTGI" frameborder="0" allowfullscreen></iframe>
-    </div>
-</div> 
 
 ### Debug mode
 
@@ -73,19 +62,13 @@ As you can see, both systems are important and applicable in different use cases
 
 ### Feature Roadmap
 
-#### Downlink capabilities
-
-At the moment integrations support uplink message processing from external platforms to ThingsBoard. We are actively working to enable downlink capabilities as well. 
-To enable this feature we will introduce the downlink message queue in latest open-source release that will hold all attribute updates and RPC calls.
-Similar we will extend the Data Converter interface to allow converting this messages to the device specific payloads. This feature is scheduled for the next minor release. 
-
-#### Usage statistics
+#### API limits
  
-We plan to log statistics for amount of messages processed by each integration with possible limitations of messages processed on a tenant / system levels.
+We plan to introduce API to control limitations of messages processed on a tenant / system levels.
 
 #### More integrations and protocols
 
-We plan to provide specific integrations for different platforms, like The Things Network and also for different communication protocols, like gRPC.
+We plan to provide specific integrations for new platforms and different communication protocols, like gRPC.
 
 #### More data converters
 
@@ -102,6 +85,7 @@ Explore guides and video tutorials related to specific integrations:
  - [MQTT](/docs/user-guide/integrations/mqtt/)
  - [AWS IoT](/docs/user-guide/integrations/aws-iot/)
  - [IBM Watson IoT](/docs/user-guide/integrations/ibm-watson-iot/)
+ - [The Things Network](/docs/user-guide/integrations/ttn/)
  - [Azure Event Hub](/docs/user-guide/integrations/azure-event-hub/)
  - [Actility ThingPark](/docs/user-guide/integrations/thingpark/)
  - [SigFox](/docs/user-guide/integrations/sigfox/)
