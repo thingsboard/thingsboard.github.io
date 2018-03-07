@@ -40,6 +40,7 @@ hidetoc: "true"
                                     <label for="fields[email]">
                                         <input type="email" name="fields[email]" class="form-control" value="" autocomplete="email" x-autocompletetype="email" spellcheck="false" autocapitalize="off" autocorrect="off">
                                         <p>Corporate Email*</p>
+                                        <div class="corporate-email-error">Please Enter Business Email Address.</div>
                                     </label>
                                 </div>
                                 <div class="form-group ml-field-company ml-validate-required">
@@ -255,6 +256,64 @@ hidetoc: "true"
     jqueryDefer(
         function () {
             $( document ).ready(function() {
+            
+                 var freeMailList = [
+                    'gmail.com',
+                    'yahoo.com',
+                    'hotmail.com',
+                    'yahoo.co.in',
+                    'aol.com',
+                    'abc.com',
+                    'xyz.com',
+                    'pqr.com',
+                    'rediffmail.com',
+                    'live.com',
+                    'outlook.com',
+                    'me.com',
+                    'msn.com',
+                    'ymail.com',
+                    'qq.com',
+                    'yandex',
+                    'mail.ru'
+                 ]; 
+                 
+                 var corporateEmailRegexString = '^([\\w-\\.]+@';
+                 for (var i=0;i<freeMailList.length;i++) {
+                    var freeMail = freeMailList[i];
+                    corporateEmailRegexString += '(?!'+freeMail+')';
+                 }                 
+                 corporateEmailRegexString += '([\\w-]+\\.)+[\\w-]{2,4})?$';
+                 var corporateEmailRegex = new RegExp(corporateEmailRegexString);
+            
+                 function validateEmail(email) {
+                    if (!email || !email.length) {
+                        return false;
+                    }
+                    return /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]){2,40}$/.test(email.trim());
+                 }
+                 
+                 function validateCorporateEmail(email) {
+                    return corporateEmailRegex.test(email.trim());
+                 }
+            
+                 $('#mlb2-7972110 button.primary').click(function(e) {
+                        var emailContainer = $('#mlb2-7972110 .ml-field-email');
+                        var emailInput = emailContainer.find('input[type="email"]');
+                        emailInput.keydown(function() {
+                            emailContainer.find('.corporate-email-error').css('display', 'none');
+                        });
+                        var email = emailInput.val();
+                        emailContainer.removeClass('ml-error');  
+                        emailContainer.find('.corporate-email-error').css('display', 'none');
+                        if (validateEmail(email)) {
+                            if (!validateCorporateEmail(email)) { 
+                                emailContainer.addClass('ml-error');  
+                                emailContainer.find('.corporate-email-error').css('display', 'block');
+                                e.preventDefault();
+                            }
+                        }
+                 });
+                
                  $('.subscribe-form .form-section .form-group input').addClass("input--empty");
                  $('.subscribe-form .form-section .form-group input').on('input', function() {
                       if( !$(this).val() ) {
