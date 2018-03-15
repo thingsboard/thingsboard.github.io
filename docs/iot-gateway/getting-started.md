@@ -461,6 +461,19 @@ or configure OPC-UA extension manually. In GUI the extension configuration looks
 ![image](/images/gateway/gateway-opc-gui-config.png)
 {: refdef}
 
+**NOTE** When using remote configuration, the keystore file is not looked up by the Gateway on the file system, but it is read directly from the 
+configuration that is received from ThingsBoard server. The sample **opc-ua-gui-extension-configuration.json** does not contain the keystore data.
+After importing the sample configuration, you need to add the keystore manually by clicking **Edit Extension**:
+
+{:refdef: style="text-align: center;"}
+![image](/images/gateway/gateway-opc-edit-extension.png)
+{: refdef}
+
+and then **Drop a file or click to select a file to upload**: 
+
+{:refdef: style="text-align: center;"}
+![image](/images/gateway/gateway-opc-add-keystore.png)
+{: refdef}
 
 ### Step 9.4. Explore data from devices
 
