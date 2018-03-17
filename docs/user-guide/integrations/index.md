@@ -24,7 +24,7 @@ The job of ThingsBoard Integration is to provide secure and reliable API bridge 
 
 ### How it works?
 
-At the moment ThingsBoard support two main integration protocols: HTTP and MQTT. 
+At the moment ThingsBoard supports two main integration protocols: HTTP and MQTT. 
 For example, SigFox Backend uses HTTP to push data to ThingsBoard or any other system. 
 On the other hand, AWS IoT, IBM Watson and Azure Event Hub allows to subscribe to the data feed from devices via MQTT. Similar, some LoRaWAN and NB IoT platforms allow both HTTP and MQTT interfaces.
 
@@ -63,7 +63,7 @@ This feature allows to validate your configuration setup and should be used only
 ### Platform Integrations vs IoT Gateway
 
 Experienced ThingsBoard users may notice that functionality of Integrations feature partially overlap with functionality of [IoT Gateway](/docs/iot-gateway/what-is-iot-gateway/).
-However, there is a key differences between this two systems/features:
+However, there are key differences between these two systems/features:
 
   - IoT Gateway is designed for local network deployments, Integrations are designed for server-to-server integrations.
   - IoT Gateway is designed to support < 1000 devices, while Integrations are designed for high throughput, scalability and cluster deployments as part of ThingsBoard server.
@@ -77,7 +77,7 @@ As you can see, both systems are important and applicable in different use cases
 
 At the moment integrations support uplink message processing from external platforms to ThingsBoard. We are actively working to enable downlink capabilities as well. 
 To enable this feature we will introduce the downlink message queue in latest open-source release that will hold all attribute updates and RPC calls.
-Similar we will extend the Data Converter interface to allow converting this messages to the device specific payloads. This feature is scheduled for the next minor release. 
+Similar we will extend the Data Converter interface to allow converting these messages to the device specific payloads. This feature is scheduled for the next minor release. 
 
 #### Usage statistics
  
