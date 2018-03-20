@@ -119,7 +119,7 @@ We'll use these tokens later in Python scripts sending MQTT data to ThingsBoard.
 
 ### Step 4: Create an Asset
 
-Now we have to create an Asset which will receive the aggregated data from Sparkk Application.
+Now we have to create an Asset which will receive the aggregated data from Spark Application.
 Add new Asset on the Assets screen. Please, make sure to set the Asset type to WeatherStation:
 
 ![image](/images/samples/analytics/spark/create-asset.png)
