@@ -241,7 +241,7 @@ description:
 			</div>
 			<div class="content-block pb-0x">
 				<h4>Install ThingsBoard PE on any cloud or on premises and pay one-time license fee per server and optional software updates subscription for subsequent years of usage. 
-				Save up to 70% comparing to pay-as-you-go per hour rate on the license fee.</h4>
+				Save up to 40% comparing to pay-as-you-go per hour rate on the license fee.</h4>
 			</div>
 			<div style="flex: 1;"></div>
 			<div class="content-block">
