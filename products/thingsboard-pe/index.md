@@ -53,7 +53,7 @@ description:
 <section id="pe-customers">
     <main class="customers-container">
 		<div class="customer-block">
-			<a href="https://tektelic.com/">
+			<a href="/industries/telecom/#tektelic">
 				<span>
 					<div class="customer-logo" style="height:134px">
 						<img width="" src="/images/customers/tektelic.png" alt="TEKTELIC Communications Inc.">
