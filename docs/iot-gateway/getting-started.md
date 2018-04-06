@@ -131,6 +131,7 @@ Based on your use case, you can choose following options:
  - connect to [**MQTT broker**](/docs/iot-gateway/getting-started/#step-8-connect-to-external-mqtt-broker)
  - connect to [**OPC-UA server**](/docs/iot-gateway/getting-started/#step-9-connect-to-external-opc-ua-server) 
  - connect to [**Sigfox Backend**](/docs/iot-gateway/getting-started/#step-10-connect-to-sigfox-backend)
+ - connect to [**Modbus slave**](/docs/iot-gateway/getting-started/#step-11-connect-to-modbus-slave)
 
 or follow instruction for all steps.
   
@@ -653,6 +654,10 @@ You are able to open a particular device and check that telemetry values arrived
 
 As a gateway developer, you are able to fork and add custom transformers using following [interface](https://github.com/thingsboard/thingsboard-gateway/blob/release-1.2/src/main/java/org/thingsboard/gateway/extensions/sigfox/conf/mapping/DataValueTransformer.java). 
 Feel free to submit PRs with your custom transformer implementations if you believe that they may be useful for the ThingsBoard community.
+
+## Step 11. Connect to Modbus slave
+
+Modbus Extension configuration is covered on the corresponding [extension page](/docs/iot-gateway/modbus/).
 
 ## Next steps
 
