@@ -56,7 +56,7 @@ We need to configure Kafka Plugin that will be used to push telemetry data to Ka
 You can find the detailed description of Kafka Plugin [here](/docs/reference/plugins/kafka/).
 
 [**Download**](/docs/samples/analytics/resources/kafka_plugin_for_spark_streaming_sample.json) the json with plugin descriptor 
-and use these [**instructions**](/docs/user-guide/ui/plugins/#plugin-import) to import it to your instance.
+and use [**these instructions**](/docs/user-guide/ui/plugins/#plugin-import) to import it to your instance.
 
 ![image](/images/samples/analytics/spark/kafka-plugin-configuration.png)
 
