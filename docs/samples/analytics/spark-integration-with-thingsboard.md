@@ -48,12 +48,31 @@ The following services must be up and running:
 
 We also assume that you are familiar with Kafka and Spark and have also prepared those environments for this tutorial.
 
+The [sample application](https://github.com/thingsboard/samples/tree/master/spark-kafka-streaming-integration) used in ths tutorial has a dependency on **org.thingsboard.common.data** project. 
+It is not in the public maven repository, so you need to [build ThingsBoard from source](/docs/user-guide/install/building-from-source/) before proceeding with this tutorial.  
+
 ### ThingsBoard configuration steps
 
 ### Step 1. Kafka Plugin Configuration
 
 We need to configure Kafka Plugin that will be used to push telemetry data to Kafka. 
 You can find the detailed description of Kafka Plugin [here](/docs/reference/plugins/kafka/).
+
+**NOTE** If you are running ThingsBoard from your IDE, you need to add Kafka plugin dependency to **application/pom.xml**
+
+```xml
+<dependencies>
+...
+    <dependency>
+       <groupId>org.thingsboard.extensions</groupId>
+        <artifactId>extension-kafka</artifactId>
+        <version>${project.version}</version>
+    </dependency>
+...
+</dependencies>
+```
+
+The reason is that when ThingsBoard is run as a service, it dynamically adds Kafka along with other plugins to classpath, which is not the case when running from IDE
 
 [**Download**](/docs/samples/analytics/resources/kafka_plugin_for_spark_streaming_sample.json) the json with plugin descriptor 
 and use [**these instructions**](/docs/user-guide/ui/plugins/#plugin-import) to import it to your instance.
@@ -107,7 +126,7 @@ Topic name in our case is **'weather-stations-data'** and the message is a valid
 
 ### Step 3. Wind Turbine Device Configuration
 
-Now let us create three devices that we define as **Wind Turbine 1**, **Wind Turbine 2** and **Wind Turbine 3**. We will send the telemetry data from these devices via MQTT later. 
+Now let us create three devices that we define as **Wind Turbine 1**, **Wind Turbine 2** and **Wind Turbine 3** with the Device Type of **WeatherStation**. We will send the telemetry data from these devices via MQTT later. 
 Please, make sure to set the device type to 'WeatherStation' for all three devices:
 
 ![image](/images/samples/analytics/spark/create-devices.png)
@@ -120,7 +139,7 @@ We'll use these tokens later in Python scripts sending MQTT data to ThingsBoard.
 ### Step 4: Create an Asset
 
 Now we have to create an Asset which will receive the aggregated data from Spark Application.
-Add new Asset on the Assets screen. Please, make sure to set the Asset type to WeatherStation:
+Add a new Asset on the Assets screen. Please, make sure to set the Asset type to WeatherStation:
 
 ![image](/images/samples/analytics/spark/create-asset.png)
 
@@ -128,8 +147,13 @@ Add new Asset on the Assets screen. Please, make sure to set the Asset type to W
 
 ### Step 5. Download the sample application source code
 
-Feel free to grab the [code from this sample ThingsBoard repository](https://github.com/thingsboard/samples/tree/master/spark-kafka-streaming-integration) and follow along.
+Feel free to grab the [code from this sample ThingsBoard repository](https://github.com/thingsboard/samples/) and build the samples project with maven:
 
+```bash
+mvn clean install
+```
+
+The sample application that we are interested in is in the **samples/spark-kafka-streaming-integration**. Go ahead and add that maven project to your favorite IDE.
 ### Step 6. Dependencies review
 
 The sample application was developed using Spark version **2.1.0**. Please consider this if you use a different version of Spark because in this case you may need to use a different version of Kafka Streaming API as well.
@@ -283,16 +307,17 @@ Once *Kafka Plugin* is configured, *'Analytics Gateway device'* is provisioned a
 The following commands will provision **deviceType** and **geoZone** attributes for the devices. 
 Let us provision the **"geozone":"Zone A"** for **Wind Turbine 1** and **Wind Turbine 2**:
  
-```bash
-mosquitto_pub -d -h "localhost" -p 1883 -t "v1/devices/me/attributes" -u "$WIND_TURBINE_1_ACCESS_TOKEN" -m '{"deviceType":"WeatherStation", "geoZone":"Zone A"}'
-mosquitto_pub -d -h "localhost" -p 1883 -t "v1/devices/me/attributes" -u "$WIND_TURBINE_2_ACCESS_TOKEN" -m '{"deviceType":"WeatherStation", "geoZone":"Zone A"}'
-```
+{% capture tabspec %}populate-attributes-geo-zone-a
+A,Linux,shell,resources/populate-attributes-geo-zone-a-linux.sh,/docs/samples/analytics/resources/populate-attributes-geo-zone-a-linux.sh
+B,Windows,shell,resources/populate-attributes-geo-zone-a-windows.bat,/docs/samples/analytics/resources/populate-attributes-geo-zone-a-windows.bat{% endcapture %}
+{% include tabs.html %}     
 
 For **Wind Turbine 3** let us set **"geozone" to "Zone B"**:
 
-```bash
-mosquitto_pub -d -h "localhost" -p 1883 -t "v1/devices/me/attributes" -u "$WIND_TURBINE_3_ACCESS_TOKEN" -m '{"deviceType":"WeatherStation", "geoZone":"Zone B"}'
-```
+{% capture tabspec %}populate-attributes-geo-zone-b
+A,Linux,shell,resources/populate-attributes-geo-zone-b-linux.sh,/docs/samples/analytics/resources/populate-attributes-geo-zone-b-linux.sh
+B,Windows,shell,resources/populate-attributes-geo-zone-b-windows.bat,/docs/samples/analytics/resources/populate-attributes-geo-zone-b-windows.bat{% endcapture %}
+{% include tabs.html %}     
 
 Now let us send the telemetry for the **Wind Turbine 1**.
 The following [**send-randomized-windspeed-1.py**](/docs/samples/analytics/resources/send-randomized-windspeed-1.py) script will send randomized windSpeed values in the range between 30 and 35 inclusively. Just replace the **$WIND_TURBINE_1_ACCESS_TOKEN** with the actual value or set the environment variable:
