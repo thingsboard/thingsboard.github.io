@@ -32,7 +32,7 @@ Download installation package or [build it from source](/docs/iot-gateway/instal
 
 ```bash
 # Download the package
-$ wget https://github.com/thingsboard/thingsboard-gateway/releases/download/v1.2.1/tb-gateway-1.2.1.deb
+$ wget https://github.com/thingsboard/thingsboard-gateway/releases/download/v1.4.0.1/tb-gateway-1.4.0.deb
 ```
 
 ### Step 3. Install gateway as a service

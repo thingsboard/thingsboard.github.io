@@ -5,19 +5,41 @@ description:
 
 ---
 
-<!--div class="customer-block">
+<div class="customer-block">
     <a href="https://tektelic.com/">
         <div class="customer-logo">
-            <img width="" src="/images/customers/tektelic.png" alt="Tektelic">
+            <img width="" src="/images/customers/tektelic.png" alt="X-Telia">
         </div>
     </a>
     <div class="customer-content">
         <h3 id="tektelic">
-            TEKTELIC Communications Inc. 
+            TEKTELIC Communications Inc.
         </h3>
         <h4>
-            Provider of Best-In-Class IoT Gateways Sensors and Applications deployed globally.
-        </h4>
+            TEKTELIC is a leading supplier of LoRaWAN IoT equipment including best-in-class gateways and end
+            devices.
+        </h4>    
+        <p>
+        We engaged ThingsBoard to complete our end-to-end solution and to address several of our
+        clients’ LoRaWAN IoT applications and Proof-of-Concept trials. Working with ThingsBoard we were able
+        to dramatically reduce time to market, de-risk our technology investment and delight our customers by
+        delivering a complete, high-quality applications which exceeded ours and our client’s expectations.
+        </p> 
+        <p>
+        The ThingsBoard team is made up of highly skilled engineers who have solid experience in building
+        complex systems. In our case the ThingsBoard team had to incorporate and render data from a number
+        our multifunction sensors, including our Industrial and All-in- One Home sensors to create an integrated,
+        user friendly and visually appealing application. The application had to provide triggers and alarms,
+        real-time and historical data visualization and the ability to send control commands to the end devices.
+        Moreover, it also had to be seamlessly integrated with our Network Server. Despite these varied and
+        complicated requirements, the ThingsBoard team developed the application on budget and in a very
+        short time.
+        </p> 
+        <p>
+        The ThingsBoard team is responsive, easy to work with and extremely professional. They have been a
+        great partner in the development of our end-to- end IoT solution. We highly recommend them for
+        addressing your complete IoT applications requirements in a cost effective and timely manner.
+        </p> 
         <div class="person-logo-container">
             <img class="person-logo" src="/images/customers/tektelic-person.png"/>
             <div class="person-title">
@@ -26,7 +48,7 @@ description:
             </div>
         </div>
     </div>
-</div-->
+</div>
 
 <div class="customer-block">
     <a href="https://x-telia.com/">
@@ -62,3 +84,4 @@ description:
         </div>
     </div>
 </div>
+    
