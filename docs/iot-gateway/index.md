@@ -9,7 +9,7 @@ description: ThingsBoard IoT Gateway to connect existing and legacy IoT devices 
 
 The ThingsBoard **IoT Gateway** will help you to integrate devices that are connected to legacy and third-party systems with ThingsBoard IoT platform.
 
-For example, you can extract data from devices that are connected to external **MQTT brokers** or **OPC-UA servers**.
+For example, you can extract data from devices that are connected to external **MQTT brokers**, **OPC-UA servers**, **Sigfox Backend** or **Modbus slaves**.
  
 See [**What is ThingsBoard IoT Gateway?**](/docs/iot-gateway/what-is-iot-gateway/) for more details.
 

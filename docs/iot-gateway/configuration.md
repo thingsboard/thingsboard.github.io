@@ -73,6 +73,14 @@ OPC-UA Extension configuration is covered on the corresponding [extension page](
 
 MQTT Extension configuration is covered on the corresponding [extension page](/docs/iot-gateway/mqtt/).
 
+#### Sigfox Extension
+
+SIGFOX Extension configuration is covered on the corresponding [extension page](/docs/iot-gateway/sigfox/).
+
+#### Modbus Extension
+
+Modbus Extension configuration is covered on the corresponding [extension page](/docs/iot-gateway/modbus/).
+
 #### Multi-tenant configuration
 
 Multi-tenant configuration is covered on the corresponding [**multi-tenant configuration page**](/docs/iot-gateway/multi-tenant-configuration/)
