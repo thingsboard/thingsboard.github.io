@@ -17,7 +17,7 @@ and
 
 **WHEREAS**, the Licensor is ready to provide such the License for usage of the Software under the terms and conditions set forth herein, the Parties, in consideration of the foregoing premises and realizing reciprocal obligations, contained in this Agreement, have agreed as follows:
 
-In compliance with the terms and conditions of this End­ User License Agreement (hereinafter referred to as the “License agreement”/“Agreement”), ThingsBoard OU (hereinafter referred to as the “Licensor”/“We”) hereby grants Licensee (hereinafter referred to as the “Licensee”/“You”)      (hereinafter collectively referred to as “Parties”) a limited, personal, non-sublicensable, non-transferable, royalty-free, nonexclusive right  to use the Software on the territory only for Licensee’s personal use in accordance with any documentation that accompanies the License and under the terms set forth herein (hereinafter referred to as the “License”). Herewith, under the territory must be understood a territory of the whole world. This Agreement cannot be understood as an agreement for sale in any way.
+In compliance with the terms and conditions of this End­ User License Agreement (hereinafter referred to as the “License agreement”/“Agreement”), ThingsBoard, Inc. (hereinafter referred to as the “Licensor”/“We”) hereby grants Licensee (hereinafter referred to as the “Licensee”/“You”)      (hereinafter collectively referred to as “Parties”) a limited, personal, non-sublicensable, non-transferable, royalty-free, nonexclusive right  to use the Software on the territory only for Licensee’s personal use in accordance with any documentation that accompanies the License and under the terms set forth herein (hereinafter referred to as the “License”). Herewith, under the territory must be understood a territory of the whole world. This Agreement cannot be understood as an agreement for sale in any way.
 
 <p style="text-align: center; font-size: 1.17em; font-weight: bold;">GENERAL USE CONDITIONS</p>
 
@@ -120,8 +120,8 @@ The Licensor shall indemnify the Licensee from damages, reasonable legal fees, a
 
 <p style="text-align: center; font-size: 1.17em; font-weight: bold;">DISPUTES RESOLUTIONS</p>
 
-All issues arising out of or related to this Agreement shall be resolved in accordance with the laws of the Republic of Estonia.
-All disputes, arising from this Agreement shall be settled by the Parties by negotiating. In a case the Parties cannot manage to reach agreement on the appropriate dispute, it shall be submitted to the corresponding court within the Republic of Estonia. Each party hereby unconditionally agrees on the exclusive jurisdiction and the place of trial venue. Herewith, the Licensee hereby agrees to service of process in accordance with the rules of such court.
+All issues arising out of or related to this Agreement shall be resolved in accordance with the laws of the United States.
+All disputes, arising from this Agreement shall be settled by the Parties by negotiating. In a case the Parties cannot manage to reach agreement on the appropriate dispute, it shall be submitted to the corresponding court within the United States. Each party hereby unconditionally agrees on the exclusive jurisdiction and the place of trial venue. Herewith, the Licensee hereby agrees to service of process in accordance with the rules of such court.
 
 <p style="text-align: center; font-size: 1.17em; font-weight: bold;">SUPPORT</p>
 
