@@ -23,7 +23,7 @@ hidetoc: "true"
                     <form class="ml-block-form" action="https://app.mailerlite.com/webforms/submit/k8u7a2" data-id="784406" data-code="k8u7a2" method="POST" target="_blank">
                         <div class="subscribe-form">
                             <div class="form-section mb30">
-                                <p>Please fill this form in order to get your free 10 days trial account on our demo server.</p>
+                                <p>Please fill this form in order to get your instance on AWS marketplace with free 5 days trial.</p>
                                 <div class="form-group ml-field-first_name ml-validate-required">
                                     <label for="fields[first_name]">
                                         <input type="text" name="fields[first_name]" class="form-control" value="" spellcheck="false" autocapitalize="off" autocorrect="off">
