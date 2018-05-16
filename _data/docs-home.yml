@@ -37,6 +37,8 @@ toc:
       path: /docs/user-guide/install/cluster-setup/
   - title: ThingsBoard Professional Edition
     path: /products/thingsboard-pe/install/
+  - title: ThingsBoard Professional Edition on AWS Marketplace
+    path: /docs/user-guide/install/aws-marketplace-pe/
 - title: Features
   section:
   - title: Entities and relations
