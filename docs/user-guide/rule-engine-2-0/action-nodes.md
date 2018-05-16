@@ -56,11 +56,33 @@ You can define:
 
 After pressing **Test** output will be returned in left **Output** section.
 
+You can see real life example, how to use this node in those tutorials:
+
+- [Reply to RPC Calls](/docs/user-guide/rule-engine-2-0/tutorials/rpc-reply-tutorial.md#log-unknown-request)
+
 # RPC Call Reply Node
+Sends responce to the RPC Call originator. All incoming RPC requests are passed through Rule Chain as Messages.
+Also all RPC request have request ID field. It is used for mapping requests and responses.
 
-**!!! TODO-RE - add description and link to tutorial**
-{: style="color:red" }
+RPC request can be received via different channels:
 
+- MQTT
+- HTTP
+- CoAP  
+
+For more details how RPC works in the Thignsboard, please read [RPC capabilities](/docs/user-guide/rpc/) Article.
+
+Message payload contains:
+
+- method name
+- array of parameters
+
+Message Type is **RPC Request**
+
+
+You can see real life example, how to use this node in those tutorials:
+
+- [Reply to RPC Calls](/docs/user-guide/rule-engine-2-0/tutorials/rpc-reply-tutorial.md)
 
 # RPC Call Request Node
 

@@ -80,8 +80,9 @@ Outbound Message Metadata will contain configured attributes if they exist.
 
 To access fetched attributes in other nodes you can use this template '<code>metadata.temperature</code>'
 
-**!!! TODO-RE - add link to tutorial with this node**
-{: style="color:red" }
+You can see real life example, how to use this node in those tutorials:
+
+- [Reply to RPC Calls](/docs/user-guide/rule-engine-2-0/tutorials/rpc-reply-tutorial.md#add-related-attributes-node)
 
 ##### Tenant attributes
 Node finds Tenant of the Message Originator entity and adds Tenant Attributes or Latest Telemetry value into Message Metadata. 

@@ -59,6 +59,11 @@ You can define:
 
 After pressing **Test** output will be returned in left **Output** section.
 
+You can see real life example, how to use this node in those tutorials:
+
+- [Reply to RPC Calls](/docs/user-guide/rule-engine-2-0/tutorials/rpc-reply-tutorial.md#add-filter-script-node)
+
+
 ##### Switch Node
 Route incoming Message to one OR multiple output chains. Node executes configured JS script.
  

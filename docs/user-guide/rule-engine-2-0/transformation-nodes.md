@@ -105,6 +105,10 @@ return {msg: msg, metadata: metadata, msgType: newType};
 
 <br/><br/>
 
+You can see real life example, how to use this node in those tutorials:
+
+- [Reply to RPC Calls](/docs/user-guide/rule-engine-2-0/tutorials/rpc-reply-tutorial.md#add-transform-script-node)
+
 # To Email Node
 
 **!!! TODO-RE - add description and link to tutorial**
