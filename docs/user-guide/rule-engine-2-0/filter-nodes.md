@@ -36,6 +36,10 @@ Here is the list of known Message Types:
 If you use Custom Message Types than you can route those messages via **Other** chain of **Message Type Switch Node** 
 to the **Switch Node** or **Message Type Filter Node** configured with required routing logic.
 
+##### Originator Type Switch Node
+
+Route incoming messages by Originator [Entity](http://localhost:4000/docs/user-guide/entities-and-relations/) type. 
+
 ##### Script Filter Node
 Evaluate incoming Message with configured JS condition. Script must return Boolean value. If **True** - send Message via **True** chain, otherwise **False** chain is used.
  

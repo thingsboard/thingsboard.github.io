@@ -5,7 +5,7 @@ description: Rule Engine 2.0 Transformation Nodes
 
 ---
 
-Transformation Nodes are used for changing incoming Message fields like Originator, Message Type, Message Payload, Message Metadata.
+Transformation Nodes are used for changing incoming Message fields like Originator, Type, Body, Metadata.
 
 * TOC
 {:toc}

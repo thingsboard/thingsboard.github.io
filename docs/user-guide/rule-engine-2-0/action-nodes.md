@@ -5,7 +5,7 @@ description: Rule Engine 2.0 Action Nodes
 
 ---
 
-Action Nodes execute different actions based on incoming Message.
+Action Nodes execute various actions based on incoming Message.
 
 * TOC
 {:toc}
