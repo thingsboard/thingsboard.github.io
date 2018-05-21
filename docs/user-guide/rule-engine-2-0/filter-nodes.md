@@ -45,8 +45,17 @@ Message type can be accessed via <code>msgType</code> property. For example <cod
 
 Full script example:
 
-**!!! TODO-RE - add full script example**
-{: style="color:red" }
+{% highlight javascript %}
+if(msgType === 'POST_TELEMETRY_REQUEST') {
+    if(metadata.deviceType === 'vehicle') {
+        return msg.humidity > 50;
+    } else if(metadata.deviceType === 'controller') {
+        return msg.temperature > 20 && msg.humidity > 60;;
+    }
+}
+
+return false;
+{% endhighlight %}
 
 During Node configuration, Administrator can make test executions of configured Script. Just press **Test script function** 
 button and new test window will be opened.

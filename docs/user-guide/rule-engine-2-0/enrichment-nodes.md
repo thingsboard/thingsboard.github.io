@@ -36,9 +36,33 @@ If Originator does not have assigned Customer Entity **Failure** chain is used, 
 {: style="color:red" }
 
 ##### Device attributes
+Node finds Related Device of the Message Originator entity using configured query and adds Attributes (client\shared\server scope) 
+and Latest Telemetry value into Message Metadata.
 
-**!!! TODO-RE - add description**
-{: style="color:red" }
+Attributes are added into metadata with scope prefix:
+- shared attribute -> <code>shared_</code>
+- client attribute -> <code>cs_</code>
+- server attribute -> <code>ss_</code>
+- telemetry -> no prefix used 
+
+For example, shared attribute 'version' will be added into Metadata with the name 'shared_version'. Client attributes will use 'cs_' prefix. 
+Server attributes use 'ss_' prefix. Latest telemetry value added into Message Metadata as is, without prefix.
+
+In relation query configuration Administrator can select required **Direction** and **relation depth level**. 
+Also set of **Relation filters** can be configured with required Relation type and Device Types.
+
+If multiple Related Entities are found, **_only first Entity is used_** for attributes enrichment, other entities are discarded.
+
+If no Related Entity found **Failure** chain is used, otherwise **Success** chain.
+
+If attribute or telemetry was not found, it is not added into Message Metadata and still routed via **Success** chain.
+
+There is **Latest Telemetry** checkbox in the Node configuration. If this checkbox selected, Node will fetch Latest telemetry for configured keys. 
+Otherwise, Node will fetch server scope attributes.
+
+Outbound Message Metadata will contain configured attributes if they exist.
+
+To access fetched attributes in other nodes you can use this template '<code>metadata.temperature</code>'
 
 ##### Originator attributes
 Add Message Originator Attributes (client\shared\server scope) and Latest Telemetry value into Message Metadata. 
