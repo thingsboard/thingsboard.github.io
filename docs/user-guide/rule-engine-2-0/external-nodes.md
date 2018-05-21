@@ -5,7 +5,7 @@ description: Rule Engine 2.0 External Nodes
 
 ---
 
-External Nodes used to connect Thingsboard with External Services.
+External Nodes used are used to interact with external systems.
 
 * TOC
 {:toc}

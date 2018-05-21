@@ -5,7 +5,7 @@ description: Rule Engine 2.0 Enrichment Nodes
 
 ---
 
-Enrichment Nodes are used for adding additional data into incoming Message.
+Enrichment Nodes are used to update meta-data of the incoming Message.
 
 * TOC
 {:toc}

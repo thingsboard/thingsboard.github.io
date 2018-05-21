@@ -18,32 +18,32 @@ You are also able to trigger various actions, for example, notifications or comm
 
 Rule Engine Message is a serializable, immutable data structure that represent various messages in the system. For example:
 
-  * Incoming [telemetry](/docs/user-guide/telemetry/), [attribute update](/docs/user-guide/attributes/) or [RPC call](/docs/user-guide/rpc/);
-  * Entity life-cycle event: created, updated, deleted, assigned, unassigned;
+  * Incoming [telemetry](/docs/user-guide/telemetry/), [attribute update](/docs/user-guide/attributes/) or [RPC call](/docs/user-guide/rpc/) from device;
+  * Entity life-cycle event: created, updated, deleted, assigned, unassigned, attributes updated;
   * Device status event: connected, disconnected, active, inactive, etc;
   * Other system events.
   
 Rule Engine Message contains the following information:
 
   * Message ID: time based, universally unique identifier;
-  * Originator of the message: Device, Asset or other [Entity](http://localhost:4000/docs/user-guide/entities-and-relations/) identifier;
-  * Type of the message: "Telemetry Upload Request" or "Inactivity Alarm", etc;
+  * Originator of the message: Device, Asset or other [Entity](/docs/user-guide/entities-and-relations/) identifier;
+  * Type of the message: "Telemetry Upload Request" or "Inactivity Event", etc;
   * Payload of the message: JSON body with actual message payload;
   * Metadata: List of key-value pairs with additional data about the message. 
 
 #### Rule Node
 
 Rule Node is a basic component of Rule Engine that process single incoming message at a time and produce one or more outgoing messages. 
-Rule Node is a main logical unit of the Rule Engine. Rule Node can filter, enrich and transform incoming messages or communicate with external systems.
+Rule Node is a main logical unit of the Rule Engine. Rule Node can filter, enrich, transform incoming messages, perform action or communicate with external systems.
 
 #### Rule Node Relation
 
 Rule Nodes may be related to other rule nodes. Each relation has relation type, a label used to identify logical meaning of the relation. 
-When rule node produces the outgoing relation it always specifies the relation type which is used to route messages between the nodes.
+When rule node produces the outgoing message it always specifies the relation type which is used to route message to next nodes.
  
 Typical rule node relations are "Success" and "Failure". 
 Rule nodes that represent logical operations may use "True" or "False". 
-Some specific rule nodes may use completely different relation types, for example: "Connected", "Disconnected", "Active", etc. 
+Some specific rule nodes may use completely different relation types, for example: "Post Telemetry", "Attributes Updated", "Entity Created", etc. 
 
 #### Rule Chain
 
@@ -52,7 +52,7 @@ Rule Chain is a logical group of rule nodes and their relations. For example, th
   * save all telemetry messages to the database;
   * raise "High Temperature Alarm" if temperature field in the message will be higher then 50 degrees;
   * raise "Low Temperature Alarm" if temperature field in the message will be lower then -40 degrees;
-  * log failure to execute the temperature check scripts to console. 
+  * log failure to execute the temperature check scripts to console in case of logical or syntax error in the script. 
 
 ![image](/images/user-guide/rule-engine-2-0/rule-node-relations.png)
 
@@ -62,10 +62,9 @@ Root rule chain handles all incoming messages and may forward them to other rule
 
 For example, the rule chain below will:
 
-  * save all telemetry messages to the database;
   * raise "High Temperature Alarm" if temperature field in the message will be higher then 50 degrees;
-  * clear "High Temperature Alarm" if temperature field in the message will be higher then 50 degrees;
-  * forward events about "Created" and "Cleared" alarms to external rule chain that handles notifications to corresponding users;
+  * clear "High Temperature Alarm" if temperature field in the message will be less then 50 degrees;
+  * forward events about "Created" and "Cleared" alarms to external rule chain that handles notifications to corresponding users.
  
 ![image](/images/user-guide/rule-engine-2-0/rule-chain-references.png)
  
@@ -80,23 +79,24 @@ To learn more about message queue, acknowledgement criteria and internals of the
 
 All available rule nodes are grouped in correspondence with their nature:
 
-  * [**Filter Nodes**](/docs/user-guide/rule-engine-2-0/filter-nodes/) are used for message filtering and routing.
-  * [**Enrichment Nodes**](/docs/user-guide/rule-engine-2-0/enrichment-nodes/) are used to add meta-data into incoming Message.
-  * [**Transformation Nodes**](/docs/user-guide/rule-engine-2-0/transformation-nodes/) are used for changing incoming Message fields like Originator, Type, Payload, Metadata.
-  * [**Action Nodes**](/docs/user-guide/rule-engine-2-0/action-nodes/) execute various actions based on incoming Message..
-  * [**External Nodes**](/docs/user-guide/rule-engine-2-0/external-nodes/) are used to connect Thingsboard with External Services.
+  * [**Filter Nodes**](/docs/user-guide/rule-engine-2-0/filter-nodes/) are used for message filtering and routing;
+  * [**Enrichment Nodes**](/docs/user-guide/rule-engine-2-0/enrichment-nodes/) are used to update meta-data of the incoming Message;
+  * [**Transformation Nodes**](/docs/user-guide/rule-engine-2-0/transformation-nodes/) are used for changing incoming Message fields like Originator, Type, Payload, Metadata;
+  * [**Action Nodes**](/docs/user-guide/rule-engine-2-0/action-nodes/) execute various actions based on incoming Message;
+  * [**External Nodes**](/docs/user-guide/rule-engine-2-0/external-nodes/) are used to interact with external systems.
 
 ## Configuration
 
 Each Rule Node may have specific configuration parameters that depend on the Rule Node Implementation. 
-For example, "Filter - Script" rule node is configurable via custom JS function that process incoming data. "External - Send email" node allows to configure mail server connection parameters.
+For example, "Filter - script" rule node is configurable via custom JS function that process incoming data. 
+"External - send email" node configuration allows to specify mail server connection parameters.
   
-One can open configuration window for particular Rule Node by double-clicking on the node in the Rule Chain editor:    
+Rule Node configuration window may be opened by double-clicking on the node in the Rule Chain editor:    
   
 ![image](/images/user-guide/rule-engine-2-0/rule-node-configuration.png)
 
 Some rule nodes have specific UI feature that allow users to test JS functions. 
-Once you click on the "Test Filter Function" you will see the JS Editor that allows you to substitute input parameters and verify the ouput of the function.
+Once you click on the "Test Filter Function" you will see the JS Editor that allows you to substitute input parameters and verify the output of the function.
     
 ![image](/images/user-guide/rule-engine-2-0/rule-node-test-function.png)
 
