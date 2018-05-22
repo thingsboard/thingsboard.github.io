@@ -27,9 +27,121 @@ Rule Engine Message contains the following information:
 
   * Message ID: time based, universally unique identifier;
   * Originator of the message: Device, Asset or other [Entity](/docs/user-guide/entities-and-relations/) identifier;
-  * Type of the message: "Telemetry Upload Request" or "Inactivity Event", etc;
+  * Type of the message: "Post telemetry" or "Inactivity Event", etc;
   * Payload of the message: JSON body with actual message payload;
   * Metadata: List of key-value pairs with additional data about the message. 
+
+##### Predefined Message Types
+
+List of the predefined Message Types is presented in the following table:
+
+<table>
+  <thead>
+      <tr>
+          <td><b>Message Type</b></td><td><b>Display Name</b></td><td><b>Description</b></td><td><b>Message metadata</b></td><td><b>Message payload</b></td>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>POST_ATTRIBUTES_REQUEST</td>
+          <td><b>Post attributes</b></td>
+          <td>Request from device to publish <a href="/docs/user-guide/attributes/#attribute-types">client side</a> attributes (see <a href="/docs/reference/mqtt-api/#publish-attribute-update-to-the-server">attributes api</a> for reference)</td>
+          <td><b>deviceName</b> - originator device name,<br><b>deviceType</b> - originator device type</td>
+          <td>key/value json, ex.: <br> <code style="font-size: 12px;">{ <br> &nbsp;&nbsp;"currentState": "IDLE" <br> }</code></td>
+      </tr>
+      <tr>
+          <td>POST_TELEMETRY_REQUEST</td>
+          <td><b>Post telemetry</b></td>
+          <td>Request from device to publish telemetry (see <a href="/docs/reference/mqtt-api/#telemetry-upload-api">telemetry upload api</a> for reference)</td>
+          <td><b>deviceName</b> - originator device name,<br><b>deviceType</b> - originator device type,<br><b>ts</b> - timestamp (milliseconds)</td>
+          <td>key/value json, ex.: <br> <code style="font-size: 12px;">{ <br> &nbsp;&nbsp;"temperature": 22.7 <br> }</code></td>
+      </tr>
+      <tr>
+          <td>TO_SERVER_RPC_REQUEST</td>
+          <td><b>RPC Request</b></td>
+          <td>RPC request from device (see <a href="/docs/reference/mqtt-api/#client-side-rpc">client side rpc</a> for reference)</td>
+          <td><b>deviceName</b> - originator device name,<br><b>deviceType</b> - originator device type,<br><b>requestId</b> - RPC request Id provided by client</td>
+          <td>json containing <b>method</b> and <b>params</b>, ex.: <br> <code style="font-size: 12px;">{ <br> &nbsp;&nbsp;"method": "getTime", <br>&nbsp;&nbsp;"params": { "param1": "val1" } <br> }</code></td>
+      </tr>
+      <tr>
+          <td>ACTIVITY_EVENT</td>
+          <td><b>Activity Event</b></td>
+          <td>Event indicating that device becomes active</td>
+          <td><b>deviceName</b> - originator device name,<br><b>deviceType</b> - originator device type</td>
+          <td>json containing device activity information, ex.: <br> <code style="font-size: 12px;">{<br> &nbsp;&nbsp;"active": true,<br> &nbsp;&nbsp;"lastConnectTime": 1526979083267,<br> &nbsp;&nbsp;"lastActivityTime": 1526979083270,<br> &nbsp;&nbsp;"lastDisconnectTime": 1526978493963,<br> &nbsp;&nbsp;"lastInactivityAlarmTime": 1526978512339,<br> &nbsp;&nbsp;"inactivityTimeout": 10000<br>}</code></td>
+      </tr>
+      <tr>
+          <td>INACTIVITY_EVENT</td>
+          <td><b>Inactivity Event</b></td>
+          <td>Event indicating that device becomes inactive</td>
+          <td><b>deviceName</b> - originator device name,<br><b>deviceType</b> - originator device type</td>
+          <td>json containing device activity information, see <b>Activity Event</b> payload for ex.</td>
+      </tr>
+      <tr>
+          <td>CONNECT_EVENT</td>
+          <td><b>Connect Event</b></td>
+          <td>Event produced when device is connected</td>
+          <td><b>deviceName</b> - originator device name,<br><b>deviceType</b> - originator device type</td>
+          <td>json containing device activity information, see <b>Activity Event</b> payload for ex.</td>
+      </tr>
+      <tr>
+          <td>DISCONNECT_EVENT</td>
+          <td><b>Disconnect Event</b></td>
+          <td>Event produced when device is disconnected</td>
+          <td><b>deviceName</b> - originator device name,<br><b>deviceType</b> - originator device type</td>
+          <td>json containing device activity information, see <b>Activity Event</b> payload for ex.</td>
+      </tr>
+      <tr>
+          <td>ENTITY_CREATED</td>
+          <td><b>Entity Created</b></td>
+          <td>Event produced when new entity was created in system</td>
+          <td><b>userName</b> - name of the user who created the entity,<br><b>userId</b> - the user Id</td>
+          <td>json containing created entity details, for ex.: <br> <code style="font-size: 12px;">{<br> &nbsp;&nbsp;"id": {<br> &nbsp;&nbsp;&nbsp;&nbsp;"entityType": "DEVICE",<br> &nbsp;&nbsp;&nbsp;&nbsp;"id": "efc4b9e0-5d0f-11e8-8559-37a7f8cdca74"<br> &nbsp;&nbsp;},<br> &nbsp;&nbsp;"createdTime": 1526918366334,<br> &nbsp;&nbsp;...<br> &nbsp;&nbsp;"name": "my-device",<br> &nbsp;&nbsp;"type": "temp-sensor"<br>}</code></td>
+      </tr>
+      <tr>
+          <td>ENTITY_UPDATED</td>
+          <td><b>Entity Updated</b></td>
+          <td>Event produced when existing entity was updated</td>
+          <td><b>userName</b> - name of the user who updated the entity,<br><b>userId</b> - the user Id</td>
+          <td>json containing updated entity details, see <b>Entity Created</b> payload for ex.</td>
+      </tr>
+      <tr>
+          <td>ENTITY_DELETED</td>
+          <td><b>Entity Deleted</b></td>
+          <td>Event produced when existing entity was deleted</td>
+          <td><b>userName</b> - name of the user who deleted the entity,<br><b>userId</b> - the user Id</td>
+          <td>json containing deleted entity details, see <b>Entity Created</b> payload for ex.</td>
+      </tr>
+      <tr>
+          <td>ENTITY_ASSIGNED</td>
+          <td><b>Entity Assigned</b></td>
+          <td>Event produced when existing entity was assigned to customer</td>
+          <td><b>userName</b> - name of the user who performed assignment operation,<br><b>userId</b> - the user Id,<br><b>assignedCustomerName</b> - assigned customer name,<br><b>assignedCustomerId</b> - Id of assigned customer</td>
+          <td>json containing assigned entity details, see <b>Entity Created</b> payload for ex.</td>
+      </tr>
+      <tr>
+          <td>ENTITY_UNASSIGNED</td>
+          <td><b>Entity Unassigned</b></td>
+          <td>Event produced when existing entity was unassigned from customer</td>
+          <td><b>userName</b> - name of the user who performed unassignment operation,<br><b>userId</b> - the user Id,<br><b>unassignedCustomerName</b> - unassigned customer name,<br><b>unassignedCustomerId</b> - Id of unassigned customer</td>
+          <td>json containing unassigned entity details, see <b>Entity Created</b> payload for ex.</td>
+      </tr>
+      <tr>
+          <td>ATTRIBUTES_UPDATED</td>
+          <td><b>Attributes Updated</b></td>
+          <td>Event produced when entity attributes update was performed</td>
+          <td><b>userName</b> - name of the user who performed attributes update,<br><b>userId</b> - the user Id,<br><b>scope</b> - updated attributes scope (can be either <b>SERVER_SCOPE</b> or <b>SHARED_SCOPE</b>)</td>
+          <td>key/value json with updated attributes, ex.: <br> <code style="font-size: 12px;">{ <br> &nbsp;&nbsp;"softwareVersion": "1.2.3" <br> }</code></td>
+      </tr>
+      <tr>
+          <td>ATTRIBUTES_DELETED</td>
+          <td><b>Attributes Deleted</b></td>
+          <td>Event produced when some of entity attributes were deleted</td>
+          <td><b>userName</b> - name of the user who deleted attributes,<br><b>userId</b> - the user Id,<br><b>scope</b> - deleted attributes scope (can be either <b>SERVER_SCOPE</b> or <b>SHARED_SCOPE</b>)</td>
+          <td>json with <b>attributes</b> field containing list of deleted attributes keys, ex.: <br> <code style="font-size: 12px;">{ <br> &nbsp;&nbsp;"attributes": ["modelNumber", "serial"] <br> }</code></td>
+      </tr>
+   </tbody>
+</table>
 
 #### Rule Node
 
@@ -95,10 +207,21 @@ Rule Node configuration window may be opened by double-clicking on the node in t
   
 ![image](/images/user-guide/rule-engine-2-0/rule-node-configuration.png)
 
+### Test JavaScript functions
+
 Some rule nodes have specific UI feature that allow users to test JS functions. 
-Once you click on the "Test Filter Function" you will see the JS Editor that allows you to substitute input parameters and verify the output of the function.
+Once you click on the **Test Filter Function** you will see the JS Editor that allows you to substitute input parameters and verify the output of the function.
     
 ![image](/images/user-guide/rule-engine-2-0/rule-node-test-function.png)
+
+You can define:
+
+- **Message Type** in the top left field.
+- **Message payload** in the left Message section.
+- **Metadata** in right Metadata section.
+- Actual **JS script** in Filter section.
+
+After pressing **Test** output will be returned in left **Output** section.
 
 ## Debugging
 
