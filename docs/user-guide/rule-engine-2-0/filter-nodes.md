@@ -42,13 +42,22 @@ Route incoming messages by Originator [Entity](/docs/user-guide/entities-and-rel
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/filter-script.png)
 
-Evaluate incoming Message with configured JS condition. Script must return Boolean value. If **True** - send Message via **True** chain, otherwise **False** chain is used.
+Evaluate incoming Message with configured JavaScript condition. 
+
+JavaScript function receive 3 input parameters: 
+
+- <code>msg</code> - is a Message payload.
+- <code>metadata</code> - is a Message metadata.
+- <code>msgType</code> - is a Message type.
+
+Script should return Boolean value.
+If **True** - send Message via **True** chain, otherwise **False** chain is used.
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/filter-script-config.png)
  
-Message payload can be accessed via <code>msg</code> property. For example <code>msg.temperature < 10;</code><br/> 
-Message metadata can be accessed via <code>metadata</code> property. For example <code>metadata.customerName === 'John';</code><br/> 
-Message type can be accessed via <code>msgType</code> property. For example <code>msgType === 'POST_TELEMETRY_REQUEST'</code><br/> 
+Message payload can be accessed via <code>msg</code> variable. For example <code>msg.temperature < 10;</code><br/> 
+Message metadata can be accessed via <code>metadata</code> variable. For example <code>metadata.customerName === 'John';</code><br/> 
+Message type can be accessed via <code>msgType</code> variable. For example <code>msgType === 'POST_TELEMETRY_REQUEST'</code><br/> 
 
 Full script example:
 
@@ -68,22 +77,28 @@ JavaScript condition can be verified using [Test JavaScript function](/docs/user
 
 You can see real life example, how to use this node in those tutorials:
 
-- [Reply to RPC Calls](/docs/user-guide/rule-engine-2-0/tutorials/rpc-reply-tutorial.md#add-filter-script-node)
+- [Reply to RPC Calls](/docs/user-guide/rule-engine-2-0/tutorials/rpc-reply-tutorial/#add-filter-script-node)
 
 ##### Switch Node
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/filter-switch.png)
 
-Route incoming Message to one OR multiple output chains. Node executes configured JS script.
+Route incoming Message to one OR multiple output chains. Node executes configured JavaScript function.
+
+JavaScript function receive 3 input parameters: 
+
+- <code>msg</code> - is a Message payload.
+- <code>metadata</code> - is a Message metadata.
+- <code>msgType</code> - is a Message type.
  
 The script should return **_an array of next Relation names_** where Message should be routed.
-If returned array is empty - message not routed to next Node and discarded.
+If returned array is empty - message will not be routed to any Node and discarded.
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/filter-switch-config.png)
 
-Message payload can be accessed via <code>msg</code> property. For example <code>msg.temperature < 10;</code><br/> 
-Message metadata can be accessed via <code>metadata</code> property. For example <code>metadata.customerName === 'John';</code><br/> 
-Message type can be accessed via <code>msgType</code> property. For example <code>msgType === 'POST_TELEMETRY_REQUEST'</code><br/> 
+Message payload can be accessed via <code>msg</code> variable. For example <code>msg.temperature < 10;</code><br/> 
+Message metadata can be accessed via <code>metadata</code> variable. For example <code>metadata.customerName === 'John';</code><br/> 
+Message type can be accessed via <code>msgType</code> variable. For example <code>msgType === 'POST_TELEMETRY_REQUEST'</code><br/> 
 
 Full script example:
 
