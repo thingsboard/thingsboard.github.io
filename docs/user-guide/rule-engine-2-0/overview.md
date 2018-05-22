@@ -106,7 +106,7 @@ ThingsBoard provides ability to review incoming and outgoing messages for each R
 To enable debug, user need to ensure that "Debug mode" checkbox is selected in the main configuration window 
 (see first image in the [Configuration](/docs/user-guide/rule-engine-2-0/overview/#configuration) section). 
 
-Once debug is enabled, user is able to see incoming and outgoing messages info as long as corresponding relation types to producing and target sibling nodes.
+Once debug is enabled, user is able to see incoming and outgoing messages info as long as corresponding relation types.
 See image below for a sample debug messages view:
   
 ![image](/images/user-guide/rule-engine-2-0/rule-node-debug.png)  
