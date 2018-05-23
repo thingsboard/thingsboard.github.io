@@ -167,43 +167,54 @@ otherwise **Failure** chain is used.
 <br/>
 
 # RabbitMQ Node
+
+![image](/images/user-guide/rule-engine-2-0/nodes/external-rabbitmq.png)
+
 Publish incoming message payload to the RabbitMQ.
 
-Configuration parameters:
+Configuration:
+
+![image](/images/user-guide/rule-engine-2-0/nodes/external-rabbitmq-config.png)
 
 - **Exchange name pattern** - the exchange to publish the message to. Can be a static string, or pattern that is resolved using Message Metadata properties. For example <code>${deviceType}</code> .
 - **Routing key pattern** - the routing key. Can be a static string, or pattern that is resolved using Message Metadata properties. For example <code>${deviceType}</code> .
-- **Message properties** - routing headers. Supported headers **{BASIC \| TEXT_PLAIN \| MINIMAL_BASIC \| MINIMAL_PERSISTENT_BASIC \| PERSISTENT_BASIC \| PERSISTENT_TEXT_PLAIN}**
-- **Host**
-- **Port**
+- **Message properties** - optional routing headers. Supported headers *BASIC*, *TEXT_PLAIN*, *MINIMAL_BASIC*, *MINIMAL_PERSISTENT_BASIC*, *PERSISTENT_BASIC*, *PERSISTENT_TEXT_PLAIN*
+- **Host** - default host to use for connections
+- **Port** - default port to use for connections
 - **Virtual host** - the virtual host to use when connecting to the broker
 - **Username** - AMQP user name to use when connecting to the broker
 - **Password** - AMQP password to use when connecting to the broker
 - **Automatic recovery** - enables or disables automatic connection recovery
-- **Connection timeout** - timeout in seconds for connecting to MQTT broker
-- **Handshake timeout** - timeout in seconds for connecting to MQTT broker
+- **Connection timeout** - connection TCP establishment timeout in milliseconds; zero for infinite
+- **Handshake timeout** - the AMQP0-9-1 protocol handshake timeout, in milliseconds
 - **Client properties** - additional properties that are sent to the server during connection startup 
 
-**Published body** - Node will send full Message payload to the RabbitMQ. If required, Administrator can configure Chain of Transformation Nodes for sending correct Payload.
+**Published body** - Node will send full Message payload to the RabbitMQ. 
+If required, Rule Chain can be configured to use chain of Transformation Nodes for sending correct Payload.
 
-In case of successful message publishing, original Message will be passed to the next nodes via **Successful** chain, 
+In case of successful message publishing, original Message will be passed to the next nodes via **Success** chain, 
 otherwise **Failure** chain is used.
 
 <br/>
 
-# Rest API Call Node
+# REST API Call Node
+
+![image](/images/user-guide/rule-engine-2-0/nodes/external-rest-api-call.png)
+
 Invoke REST API calls to the external REST server.
 
-Configuration parameters:
+Configuration:
+
+![image](/images/user-guide/rule-engine-2-0/nodes/external-rest-api-call-config.png)
 
 - **Endpoint URL pattern** - Can be a static string, or pattern that is resolved using Message Metadata properties. For example <code>${deviceType}</code>
-- **Request method** - **{GET \| POST \| PUT \| DELETE}**
-- **Headers** - request headers, constructed from Message Metadata
+- **Request method** - *GET*, *POST*, *PUT*, *DELETE*
+- **Headers** - request headers, header or value can be a static string, or pattern that is resolved using Message Metadata properties.
 
 **Endpoint URL**
 
 URL can be a static string or a pattern. Only Message metadata is used for resolving patterns. 
-So property names that are used in the patterns must exist in the Message Metadata, otherwise raw pattern will be added into header.
+So property names that are used in the patterns must exist in the Message Metadata, otherwise raw pattern will be added into URL.
 
 For example, if Message payload contains property **deviceType** with value **container**, then this pattern: 
 
@@ -219,12 +230,13 @@ Collection of header name/value can be configured. Those headers will be added i
 For example <code>${deviceType}</code>. Only Message metadata is used for resolving patterns. 
 So property names that are used in the pattern must exist in the Message Metadata, otherwise raw pattern will be added into header. 
 
-**Request body** - Node will send full Message payload to the configured REST endpoint. If required, Administrator can configure Chain of Transformation Nodes for sending correct Payload.
+**Request body** - Node will send full Message payload to the configured REST endpoint. 
+If required, Rule Chain can be configured to use chain of Transformation Nodes for sending correct Payload.
 
-*Outbound message* from this node will contain responce **status**, **statusCode**, **statusReason** and responce **headers** in the Message metadata.
-Outbound Message payload will be the same as responce body. Original Message type and originator will not be changed.
+**Outbound message** from this node will contain response **status**, **statusCode**, **statusReason** and responce **headers** in the Message metadata.
+Outbound Message payload will be the same as response body. Original Message type and originator will not be changed.
 
-In case of successful request, outbound message will be passed to the next nodes via **Successful** chain, 
+In case of successful request, outbound message will be passed to the next nodes via **Success** chain, 
 otherwise **Failure** chain is used.
 
 **!!! TODO-RE - add link to tutorial**
@@ -233,26 +245,31 @@ otherwise **Failure** chain is used.
 <br/>
 
 # Send Email Node
+
+![image](/images/user-guide/rule-engine-2-0/nodes/external-send-email.png)
+
 Node sends incoming message using configured Mail Server. This Node works only with messages that where created using 
-**to Email** transformation Node, please connect this Node with **to Email** Node using **Successful** chain.
+[**To Email**](/docs/user-guide/rule-engine-2-0/transformation-nodes/#to-email-node) transformation Node, please connect this Node with **To Email** Node using **Success** chain.
 
-Configuration parameters:
+Configuration:
 
-- **Use system SMTP settings**
-- **SMTP protocol** - **{SMTP \| SMTPS}**
-- **SMTP host**
-- **SMTP port**
-- **Timeout ms**
-- **Enable TLS** - Enable \ Disable TLS
-- **Username** -
-- **Password**
+![image](/images/user-guide/rule-engine-2-0/nodes/external-send-email-config.png)
 
-This Node can work with default System SMTP Settings.
+- **Use system SMTP settings** - if enabled default Mail Server configured on System level will be used
+- **Protocol** - Mail Server transport protocol: *SMTP* or *SMTPS*
+- **SMTP host** - Mail Server host
+- **SMTP port** - Mail Server port
+- **Timeout ms** - read timeout in milliseconds
+- **Enable TLS** - if true, enables the use of the STARTTLS command (if supported by the server)
+- **Username** - username for the account at the mail host, if any
+- **Password** - password for the account at the mail host, if any
+
+This Node can work with default Mail Server configured on System level.
 Please find more details about [how to configure default System SMTP Settings.](/docs/user-guide/ui/mail-settings/)
 
-If another SMTP server required for this node - disable **Use system SMTP settings** checkbox and configure SMTP server manually.
+If specific Mail Server is required for this node - disable **Use system SMTP settings** checkbox and configure Mail Server manually.
 
-In case of successful mail sending, original Message will be passed to the next nodes via **Successful** chain, 
+In case of successful mail sending, original Message will be passed to the next nodes via **Success** chain, 
 otherwise **Failure** chain is used.
 
 **!!! TODO-RE - add link to tutorial**
