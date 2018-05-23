@@ -77,6 +77,7 @@ JavaScript condition can be verified using [Test JavaScript function](/docs/user
 
 You can see real life example, how to use this node in those tutorials:
 
+- [Create and Clear Alarms](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/)
 - [Reply to RPC Calls](/docs/user-guide/rule-engine-2-0/tutorials/rpc-reply-tutorial/#add-filter-script-node)
 
 ##### Switch Node

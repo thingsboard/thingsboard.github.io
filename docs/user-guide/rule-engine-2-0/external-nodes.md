@@ -69,7 +69,7 @@ Can be set direct Queue URL for message publishing or pattern can be used, that 
 
 In the following example, Queue URL depends on Device Type and there is a Message that contains **deviceType** field in Metadata:
 
-{% highlight javascript %}
+{% highlight json %}
 {
     deviceType: controller
 }
