@@ -28,7 +28,7 @@ We assume you have completed the following guides and reviewed the articles list
 
 ## Step 1: Adding temperature transformation node
 
-We will modify default rule chain and will add filter rule node with temperature validation script. 
+We will modify default rule chain and will add [**transformation**](/docs/user-guide/rule-engine-2-0/transformation-nodes/#script-transformation-node) rule node with temperature transformation script. 
 We will place this rule node between default "message type switch" and "save timeseries" rule nodes.
 Please note that we have removed irrelevant rule nodes from the root rule chain as well.
 

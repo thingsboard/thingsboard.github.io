@@ -1,0 +1,141 @@
+{
+  "title": "Test Dashboard",
+  "configuration": {
+    "widgets": {
+      "62afee62-3fa4-07a4-83e1-673b2a5b25ca": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "timeseries_table",
+        "type": "timeseries",
+        "title": "New widget",
+        "sizeX": 23,
+        "sizeY": 10,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "dataKeys": [
+                {
+                  "name": "counter",
+                  "type": "timeseries",
+                  "label": "Counter",
+                  "color": "#2196f3",
+                  "settings": {
+                    "useCellStyleFunction": false,
+                    "useCellContentFunction": false
+                  },
+                  "_hash": 0.7568139374060181
+                },
+                {
+                  "name": "delta",
+                  "type": "timeseries",
+                  "label": "Delta",
+                  "color": "#4caf50",
+                  "settings": {
+                    "useCellStyleFunction": false,
+                    "useCellContentFunction": false
+                  },
+                  "_hash": 0.000592052056303638
+                }
+              ],
+              "entityAliasId": "66dad11e-4950-a246-0aaa-7d420885f889"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "interval": 1000,
+              "timewindowMs": 60000
+            },
+            "aggregation": {
+              "type": "NONE",
+              "limit": 200
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "showTimestamp": true,
+            "displayPagination": true,
+            "defaultPageSize": 10
+          },
+          "title": "New Timeseries table",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "useDashboardTimewindow": false,
+          "showLegend": false,
+          "widgetStyle": {},
+          "actions": {}
+        },
+        "id": "62afee62-3fa4-07a4-83e1-673b2a5b25ca"
+      }
+    },
+    "states": {
+      "default": {
+        "name": "Test Dashboard",
+        "root": true,
+        "layouts": {
+          "main": {
+            "widgets": {
+              "62afee62-3fa4-07a4-83e1-673b2a5b25ca": {
+                "sizeX": 23,
+                "sizeY": 10,
+                "row": 0,
+                "col": 0
+              }
+            },
+            "gridSettings": {
+              "backgroundColor": "#eeeeee",
+              "color": "rgba(0,0,0,0.870588)",
+              "columns": 24,
+              "margins": [
+                10,
+                10
+              ],
+              "backgroundSizeMode": "100%"
+            }
+          }
+        }
+      }
+    },
+    "entityAliases": {
+      "66dad11e-4950-a246-0aaa-7d420885f889": {
+        "id": "66dad11e-4950-a246-0aaa-7d420885f889",
+        "alias": "Test Device",
+        "filter": {
+          "type": "singleEntity",
+          "singleEntity": {
+            "entityType": "DEVICE",
+            "id": "19cfe740-5e6a-11e8-a5e9-2793241e55f7"
+          },
+          "resolveMultiple": false
+        }
+      }
+    },
+    "timewindow": {
+      "realtime": {
+        "interval": 10000,
+        "timewindowMs": 3600000
+      },
+      "aggregation": {
+        "type": "NONE",
+        "limit": 200
+      }
+    },
+    "settings": {
+      "stateControllerId": "entity",
+      "showTitle": false,
+      "showDashboardsSelect": true,
+      "showEntitiesSelect": true,
+      "showDashboardTimewindow": true,
+      "showDashboardExport": true,
+      "toolbarAlwaysOpen": true
+    }
+  },
+  "name": "Test Dashboard"
+}

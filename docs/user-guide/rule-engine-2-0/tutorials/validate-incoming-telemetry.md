@@ -13,8 +13,7 @@ description: Validate incoming telemetry
 Let's assume your device is using DHT22 sensor to collect and push temperature readings to ThingsBoard. 
 DHT22 sensor is good for -40 to 80°C temperature readings.
 
-In this tutorial we will configure ThingsBoard Rule Engine to store all temperature within -40 to 80°C range 
-and will log all other readings to system log. 
+In this tutorial we will configure ThingsBoard Rule Engine to store all temperature within -40 to 80°C range and will discard all other readings.
 Although this scenario is fictional, you will learn how to define JS functions to validate incoming data and use this knowledge in real-life applications.     
 
 ## Prerequisites 
@@ -26,7 +25,7 @@ We assume you have completed the following guides and reviewed the articles list
 
 ## Step 1: Adding temperature validation node
 
-We will modify default rule chain and will add filter rule node with temperature validation script. 
+We will modify default rule chain and will add [**filter**](/docs/user-guide/rule-engine-2-0/filter-nodes/#script-filter-node) rule node with temperature validation script. 
 We will place this rule node between default "message type switch" and "save timeseries" rule nodes.
 Please note that we have removed irrelevant rule nodes from the root rule chain as well.
 
@@ -51,7 +50,7 @@ You can check few more cases when temperature is not set or it exceeded the spec
 
 ## TL;DR
 
-Download and import attached json [file](/docs/user-guide/resources/validation-rule-chain.json) with a rule chain from this tutorial. Don't forget to mark new rule chain as "root".
+Download and import attached json [**file**](/docs/user-guide/resources/validation-rule-chain.json) with a rule chain from this tutorial. Don't forget to mark new rule chain as "root".
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/make-root.png)
 
