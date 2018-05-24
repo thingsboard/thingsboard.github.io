@@ -27,7 +27,7 @@ We assume you have completed the following guides and reviewed the articles list
   * [Getting Started](/docs/getting-started-guides/helloworld/) guide.
   * [Rule Engine Overview](/docs/user-guide/rule-engine-2-0/overview/).
 
-## Step 1: Adding temperature threshold check field
+## Step 1: Adding temperature threshold check node
 Here is how our initial Root Rule Chain should look like. Please note that we have removed irrelevant rule nodes from the root rule chain.
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/alarms/initial root chain.png)
@@ -108,6 +108,8 @@ Connect it with **script** node using **False** relation.
 
 If **Clear Alarm** node could not find existing Alarm, nothing is changed and original message is passed to other nodes via relation **False** if they exist. 
 If Alarm do exist - it is cleared and passed to other nodes via relation **Cleared**.
+
+Chain configuration is finished and we need to **save it**.
 
 ## Step 3: Verify Results
 

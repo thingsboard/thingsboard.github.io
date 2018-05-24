@@ -32,8 +32,12 @@ If unsupported Originator type found, an error is thrown.
 
 If Originator does not have assigned Customer Entity **Failure** chain is used, otherwise **Success** chain.
 
-**!!! TODO-RE - add link to tutorial with this node**
-{: style="color:red" }
+You can see real life example, how to use this node in those tutorials:
+
+- [Send Email](/docs/user-guide/rule-engine-2-0/tutorials/send-email/)
+
+
+
 
 ##### Device attributes
 
