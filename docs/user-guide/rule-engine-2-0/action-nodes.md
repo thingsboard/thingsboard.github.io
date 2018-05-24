@@ -120,8 +120,9 @@ Here is an example of Outbound Message **payload**
 
 More details about Alarms in the Thingsboard can be found in [this tutorial](/docs/user-guide/alarms/)
 
-**!!! TODO-RE - add link to tutorial**
-{: style="color:red" }
+You can see real life example, how to use this node in those tutorials:
+
+- [Create and Clear Alarms](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/)
 
 <br/>
 
@@ -227,8 +228,9 @@ Here is an example of Outbound Message **payload**
 
 More details about Alarms in the Thingsboard can be found in [this tutorial](/docs/user-guide/alarms/)
 
-**!!! TODO-RE - add link to tutorial**
-{: style="color:red" }
+You can see real life example, how to use this node in those tutorials:
+
+- [Create and Clear Alarms](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/)
 
 <br/>
 
