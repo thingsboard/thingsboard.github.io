@@ -16,7 +16,7 @@ description: ThingsBoard documentation - learn about the platform and get your I
 <li><b><a href="/docs/user-guide/attributes/">Working with device attributes</a></b> - Describes device attributes feature and related use cases.</li>
 <li><b><a href="/docs/user-guide/telemetry/">Working with telemetry data</a></b> - Describes telemetry data collection feature and related use cases.</li>
 <li><b><a href="/docs/user-guide/rpc/">Using RPC capabilities</a></b> - Provides overview of ThingsBoard RPC functionality.</li>
-<li><b><a href="/docs/user-guide/rule-engine/">Rule engine</a></b> - Describes rule engine features and capabilities.</li>
+<li><b><a href="/docs/user-guide/rule-engine-2-0/re-getting-started/">Rule engine</a></b> - Describes rule engine features and capabilities.</li>
 <li><b><a href="/docs/user-guide/visualization/">Data visualization</a></b> - Covers data visualization capabilities: Widgets & Dashboards.</li>
 </ul>
 
