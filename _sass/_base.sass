@@ -841,6 +841,15 @@ section
 			transform: translate(5px,-10px)
 			display: inline-block
 
+	a.item.item-new > .title
+		&::after
+			content: "NEW"
+			font-size: 12px
+			font-weight: bold
+			color: $green
+			transform: translate(5px,-10px)
+			display: inline-block
+
 	div.item > .title
 		&:before
 			content: ""
@@ -859,6 +868,15 @@ section
 			font-size: 12px
 			font-weight: bold
 			color: $blue
+			transform: translate(5px,-10px)
+			display: inline-block
+
+	div.item.item-new > .title
+		&::after
+			content: "NEW"
+			font-size: 12px
+			font-weight: bold
+			color: $green
 			transform: translate(5px,-10px)
 			display: inline-block
 

@@ -1,5 +1,5 @@
 {% for item in tree %}
-{% if item.pe %}{% assign itemClass="item item-pe" %}{% else %}{% assign itemClass="item" %}{% endif %}
+{% if item.pe %}{% assign itemClass="item item-pe" %}{% elsif item.new %}{% assign itemClass="item item-new" %}{% else %}{% assign itemClass="item" %}{% endif %}
 {% if item.section %}
 <div class="{{ itemClass }}" data-title="{{ item.title }}">
   <div class="container">{% assign tree = item.section %}{% include tree.html %}
