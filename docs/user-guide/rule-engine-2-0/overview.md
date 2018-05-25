@@ -171,6 +171,7 @@ Rule Chain is a logical group of rule nodes and their relations. For example, th
 
 Tenant administrator is able to define one **Root Rule Chain** and optionally multiple other rule chains. 
 Root rule chain handles all incoming messages and may forward them to other rule chains for additional processing.
+Other rule chains may also forward messages to different rule chains.
 
 For example, the rule chain below will:
 
