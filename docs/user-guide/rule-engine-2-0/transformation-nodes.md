@@ -109,6 +109,7 @@ return {msg: msg, metadata: metadata, msgType: newType};
 
 You can see real life example, how to use this node in those tutorials:
 
+- [Transform incoming telemetry](/docs/user-guide/rule-engine-2-0/tutorials/transform-incoming-telemetry/)
 - [Reply to RPC Calls](/docs/user-guide/rule-engine-2-0/tutorials/rpc-reply-tutorial.md#add-transform-script-node)
 
 # To Email Node
@@ -129,6 +130,8 @@ In this case value of **deviceName** can be referenced as <code>${deviceName}</c
  Device ${deviceName} has high temperature
  ```
 
-**!!! TODO-RE - add link to tutorial with this node**
-{: style="color:red" }
+You can see real life example, how to use this node in those tutorials:
+
+- [Send Email](/docs/user-guide/rule-engine-2-0/tutorials/send-email/)
+
 

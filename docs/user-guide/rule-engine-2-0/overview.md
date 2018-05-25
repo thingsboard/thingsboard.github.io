@@ -253,5 +253,9 @@ To learn more about internals of the rule engine, see [architecture](/docs/user-
 
 ThingsBoard authors have prepared several tutorials to help you get started with designing rule chains by example:
 
-  * [**Device RPC Call to fetch data from related Device**](/docs/user-guide/rule-engine-2-0/tutorials/rpc-reply-tutorial/) TODO.
+  * [**Transform incoming telemetry**](/docs/user-guide/rule-engine-2-0/tutorials/transform-incoming-telemetry/) 
+  * [**Transform telemetry using previous record**](/docs/user-guide/rule-engine-2-0/tutorials/transform-telemetry-using-previous-record/) 
+  * [**Create And Clear Alarms**](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/)
+  * [**Send Email**](/docs/user-guide/rule-engine-2-0/tutorials/send-email/) 
+  * [**RPC Reply With data from Related Device**](/docs/user-guide/rule-engine-2-0/tutorials/rpc-reply-tutorial/) 
 
