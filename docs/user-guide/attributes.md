@@ -66,13 +66,9 @@ You can review API and examples in corresponding reference page:
  - [CoAP API reference](/docs/reference/coap-api/#attributes-api)
  - [HTTP API reference](/docs/reference/http-api/#attributes-api)
   
-## Telemetry plugin
-
-ThingsBoard consists of core services and pluggable modules called plugins.
-Telemetry plugin is responsible for persisting attributes data to internal data storage; 
+## Telemetry Service
+Telemetry Service is responsible for persisting attributes data to internal data storage; 
 provides server-side API to query and subscribe for attribute updates. 
-Since Telemetry plugin functionality is critical for data visualization purposes in dashboards, it is configured on the system level by a system administrator.
-Advanced users or platform developers can customize telemetry plugin functionality.
 
 ### Internal data storage
 
@@ -85,7 +81,7 @@ Although you can query the database directly, ThingsBoard provides a set of REST
   
 ### Data Query API
 
-Telemetry plugin provides following API to fetch device attributes:
+Telemetry Service provides following API to fetch device attributes:
 
 #### Attribute keys API
 
@@ -100,7 +96,7 @@ A,get-attributes-keys.sh,shell,resources/get-attributes-keys.sh,/docs/user-guide
 B,get-attributes-keys-result.json,json,resources/get-attributes-keys-result.json,/docs/user-guide/resources/get-attributes-keys-result.json{% endcapture %}
 {% include tabs.html %}
 
-Supported entity types are: TENANT, CUSTOMER, USER, RULE, PLUGIN, DASHBOARD, ASSET, DEVICE, ALARM
+Supported entity types are: TENANT, CUSTOMER, USER, RULE, DASHBOARD, ASSET, DEVICE, ALARM
 
 #### Attribute values API
 
@@ -115,7 +111,15 @@ A,get-attributes-values.sh,shell,resources/get-attributes-values.sh,/docs/user-g
 B,get-attributes-values-result.json,json,resources/get-attributes-values-result.json,/docs/user-guide/resources/get-attributes-values-result.json{% endcapture %}
 {% include tabs.html %}
 
-Supported entity types are: TENANT, CUSTOMER, USER, RULE, PLUGIN, DASHBOARD, ASSET, DEVICE, ALARM
+Supported entity types are: TENANT, CUSTOMER, USER, RULE, DASHBOARD, ASSET, DEVICE, ALARM
+
+### Telemetry Rule Node
+
+There are Rule Nodes in the Rule Engine that allows to work with Telemetry Service. Please find more details in node description:
+
+- [**Enrichment Nodes - load latest telemetry for entity**](/docs/user-guide/rule-engine-2-0/enrichment-nodes/)
+- [**Save Timeseries**](/docs/user-guide/rule-engine-2-0/action-nodes/#save-timeseries-node)
+- [**Save Attributes**](/docs/user-guide/rule-engine-2-0/action-nodes/#save-attributes-node)
 
 ## Data visualization
 

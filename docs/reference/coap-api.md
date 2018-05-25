@@ -130,7 +130,7 @@ In order to subscribe to shared device attribute changes, send GET request with 
 coap://host:port/api/v1/$ACCESS_TOKEN/attributes
 ```
 
-Once shared attribute will be changed by one of the server-side components (REST API or custom plugins) the client will receive the following update: 
+Once shared attribute will be changed by one of the server-side components (REST API or Rule Chain) the client will receive the following update: 
 
 {% capture tabspec %}coap-attributes-subscribe
 A,Example,shell,resources/coap-attributes-subscribe.sh,/docs/reference/resources/coap-attributes-subscribe.sh

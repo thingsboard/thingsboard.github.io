@@ -13,9 +13,10 @@ With ThingsBoard, you are able to:
 
  - Provision and control devices.
  - Collect and visualize data from devices.
- - Analyze device data and trigger alarms.
+ - Analyze device data and trigger alarms with complex event processing.
  - Deliver device data to other systems.
- - Enable use-case specific features using customizable rules and plugins.  
+ - Build workflows based on device life-cycle event, REST API event, RPC request, etc
+ - Enable use-case specific features using customizable rule chains.  
 
 Our goal is to provide the out-of-the-box IoT cloud or on-premises solution that will enable server-side infrastructure for your IoT applications.
 

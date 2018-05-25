@@ -11,9 +11,9 @@ description: Getting Started with Rule Engine
 ## What is Rule Engine
 Rule Engine is a easy to use framework for building event based workflows . There are 3 main components:
 
-- **Message** - any incoming event inside the Thingsboard. It can be an incoming data form devices, device life-cycle event, REST API event, RPC request, etc.
-- **Rule Node** - function that is executed on incoming message. There are many different Node that can filter, transform or execute some action on incoming Message. 
-- **Rule Chain** - codes are connected with each other with relations, so outbound message from node is sent to next connected nodes.
+- **Message** - any incoming event. It can be an incoming data form devices, device life-cycle event, REST API event, RPC request, etc.
+- **Rule Node** - function that is executed on incoming message. There are many different Node types that can filter, transform or execute some action on incoming Message. 
+- **Rule Chain** - nodes are connected with each other with relations, so outbound message from node is sent to next connected nodes.
 
 
 ## What can be done with Rule Engine 
@@ -21,28 +21,28 @@ ThingsBoard Rule Engine is a highly customizable framework for complex event pro
 
 - Data validation and modification for incoming telemetry or attributes before saving.
 - Copy telemetry or attributes from devices to related assets so you can aggregate telemetry. For example data from multiple devices can be aggregated
-in related Asset (building).
-- Create/Update/Clear alarms based on defined condition
-- Trigger actions based on device life-cycle events. For example create alerts if Device is Online/Offline
+in related Asset.
+- Create/Update/Clear alarms based on defined condition.
+- Trigger actions based on device life-cycle events. For example create alerts if Device is Online/Offline.
 - Load additional data required for processing. For example load temperature threshold value for a device that is defined in Device's Customer or Tenant attribute.
-- Trigger REST API calls to external systems
-- Send emails when complex event occur and use attributes of another entities inside Email Template
-- Take in account User preferences during event processing
-- Make RPC calls based on defined condition
-- Integrate with external pipelines like Kafka, Spark, AWS services, etc
+- Trigger REST API calls to external systems.
+- Send emails when complex event occur and use attributes of another entities inside Email Template.
+- Take into account User preferences during event processing.
+- Make RPC calls based on defined condition.
+- Integrate with external pipelines like Kafka, Spark, AWS services, etc.
 
 ## Hello-World Example
-Let’s assume your device is using DHT22 sensor to collect and push temperature readings to ThingsBoard. 
-DHT22 sensor is good for -40 to 80°C temperature readings.
+Let’s assume your device is using DHT22 sensor to collect and push temperature to the ThingsBoard. 
+DHT22 sensor can measure temperature from -40°C to +80°C.
 
-In this tutorial we will configure ThingsBoard Rule Engine to store all temperature within -40 to 80°C range and will log all other readings to the system log.
+In this tutorial we will configure ThingsBoard Rule Engine to store all temperature within -40 to 80°C range and log all other readings to the system log.
 
 #### Adding temperature validation node
 In Thingsboard UI go to **Rule Chains** section and open **Root Rule Chain**.
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/getting-started/initial-root-chain.png)
 
-Drug and Drop **Script Filter** rule node to the chain. Node configuration window will be opened. We will use this script for data validation:
+Drag and Drop **Script Filter** rule node to the chain. Node configuration window will be opened. We will use this script for data validation:
 
 {% highlight javascript %}
 return typeof msg.temperature === 'undefined' 
@@ -80,8 +80,8 @@ For validating results we will need to create Device and submit telemetry to the
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/getting-started/create-device.png)
 
-For posting device telemetry we will use Rest API ([link](/docs/reference/http-api/#telemetry-upload-api)). For this we will need to
-copy device access token from then device **Thermostat Home**. 
+For posting device telemetry we will use [Rest API](/docs/reference/http-api/#telemetry-upload-api). For this we will need to
+copy device access token from the device **Thermostat Home**. 
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/getting-started/copy-access-token.png)
 
@@ -107,7 +107,7 @@ curl -v -X POST -d '{"temperature":24}' http://localhost:8080/api/v1/$ACCESS_TOK
 
 ## Next steps:
 
-You can use this links for learning more about Thingsboard Rule Engine:
+You can use the next links for learning more about Thingsboard Rule Engine:
 
 - [Rule Engine Overview](/docs/user-guide/rule-engine-2-0/overview/)
 - [Rule Engine Architecture](/docs/user-guide/rule-engine-2-0/architecture/)

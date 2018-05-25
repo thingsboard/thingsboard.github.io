@@ -131,7 +131,7 @@ In order to subscribe to shared device attribute changes, send GET request with 
 http(s)://host:port/api/v1/$ACCESS_TOKEN/attributes/updates
 ```
 
-Once shared attribute will be changed by one of the server-side components (REST API or custom plugins) the client will receive the following update: 
+Once shared attribute will be changed by one of the server-side components (REST API or Rule Chain) the client will receive the following update: 
 
 {% capture tabspec %}http-attributes-subscribe
 A,Example,shell,resources/http-attributes-subscribe.sh,/docs/reference/resources/http-attributes-subscribe.sh

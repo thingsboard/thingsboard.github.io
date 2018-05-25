@@ -19,7 +19,7 @@ ThingsBoard provides a rich set of features related to telemetry data:
  - **visualize** timeseries data using configurable and highly customizable widgets and dashboards.
  - **filter and analyze** data using flexible Rule Engine (/docs/user-guide/rule-engine/).
  - **generate alarms** based on collected data.
- - **forward** data to external systems using plugins (e.g. Kafka or RabbitMQ plugins).
+ - **forward** data to external systems using Rule Nodes (e.g. Kafka or RabbitMQ Rule Nodes).
 
 This guide provides an overview of the features listed above and some useful links to get more details.  
 
@@ -36,13 +36,10 @@ You can review API and examples in corresponding reference page:
  - [CoAP API reference](/docs/reference/coap-api/#telemetry-upload-api)
  - [HTTP API reference](/docs/reference/http-api/#telemetry-upload-api)
   
-## Telemetry plugin
+## Telemetry Service
 
-ThingsBoard consists of core services and pluggable modules called plugins.
-Telemetry plugin is responsible for persisting timeseries data to internal data storage; 
+Telemetry Service is responsible for persisting timeseries data to internal data storage; 
 provides server-side API to query and subscribe for data updates. 
-Since Telemetry plugin functionality is critical for data visualization purposes in dashboards, it is configured on the system level by a system administrator.
-Advanced users or platform developers can customize telemetry plugin functionality.
 
 ### Internal data storage
 
@@ -61,7 +58,7 @@ Although you can query the database directly, ThingsBoard provides set of RESTfu
   
 #### Data Query API
 
-Telemetry plugin provides following API to fetch entity data:
+Telemetry Service provides following API to fetch entity data:
 
 ##### Timeseries data keys API
 
@@ -76,7 +73,7 @@ A,get-telemetry-keys.sh,shell,resources/get-telemetry-keys.sh,/docs/user-guide/r
 B,get-telemetry-keys-result.json,json,resources/get-telemetry-keys-result.json,/docs/user-guide/resources/get-telemetry-keys-result.json{% endcapture %}
 {% include tabs.html %}
 
-Supported entity types are: TENANT, CUSTOMER, USER, RULE, PLUGIN, DASHBOARD, ASSET, DEVICE, ALARM
+Supported entity types are: TENANT, CUSTOMER, USER, DASHBOARD, ASSET, DEVICE, ALARM
 
 ##### Timeseries data values API
 
@@ -91,7 +88,7 @@ A,get-latest-telemetry-values.sh,shell,resources/get-latest-telemetry-values.sh,
 B,get-latest-telemetry-values-result.json,json,resources/get-latest-telemetry-values-result.json,/docs/user-guide/resources/get-latest-telemetry-values-result.json{% endcapture %}
 {% include tabs.html %}
 
-Supported entity types are: TENANT, CUSTOMER, USER, RULE, PLUGIN, DASHBOARD, ASSET, DEVICE, ALARM
+Supported entity types are: TENANT, CUSTOMER, USER, DASHBOARD, ASSET, DEVICE, ALARM
 
 You can also fetch list of historical values for particular *entity type* and *entity id* using GET request to the following URL  
  
@@ -115,12 +112,12 @@ A,get-telemetry-values.sh,shell,resources/get-telemetry-values.sh,/docs/user-gui
 B,get-telemetry-values-result.json,json,resources/get-telemetry-values-result.json,/docs/user-guide/resources/get-telemetry-values-result.json{% endcapture %}
 {% include tabs.html %}
 
-Supported entity types are: TENANT, CUSTOMER, USER, RULE, PLUGIN, DASHBOARD, ASSET, DEVICE, ALARM
+Supported entity types are: TENANT, CUSTOMER, USER, DASHBOARD, ASSET, DEVICE, ALARM
 
 #### Websocket API
 
 Websockets are actively used by Thingsobard Web UI. Websocket API duplicates REST API functionality and provides the ability to subscribe to device data changes.
-You can open a websocket connection to a telemetry plugin using the following URL
+You can open a websocket connection to a telemetry service using the following URL
 
 ```shell
 ws(s)://host:port/api/ws/plugins/telemetry?token=$JWT_TOKEN
@@ -134,7 +131,7 @@ and receive
 where 
 
  - **cmdId** - unique command id (within corresponding websocket connection)
- - **entityType** - unique entity type. Supported entity types are: TENANT, CUSTOMER, USER, RULE, PLUGIN, DASHBOARD, ASSET, DEVICE, ALARM
+ - **entityType** - unique entity type. Supported entity types are: TENANT, CUSTOMER, USER, DASHBOARD, ASSET, DEVICE, ALARM
  - **entityId** - unique entity identifier
  - **keys** - comma separated list of data keys
  - **timeWindow** - fetch interval for timeseries subscriptions, in milliseconds. Data will be fetch within following interval **[now()-timeWindow, now()]**

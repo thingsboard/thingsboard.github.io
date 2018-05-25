@@ -127,7 +127,7 @@ description:
                 <td></td>
             </tr>
             <tr>
-                <td>Customizable rules, plugins, widgets</td>
+                <td>Customizable rule chains, widgets</td>
                 <td class="checked"></td>
                 <td></td>
                 <td class="checked"></td>

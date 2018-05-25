@@ -47,8 +47,7 @@ This training session will provide you with the basic understanding of ThingsBoa
     - **Exercise:** add widgets to the Dashboard to visualize data from the previous exercise.
 - Rule Engine
     - Explain Rule engine data flow.
-    - Review Rule components: filters, processors and actions and their available implementations.
-    - Explain available plugins and their implementations.
+    - Review Rule components: messages, relations, nodes and their available implementations.
     - **Exercise:** configure alerting rule based on device attributes and timeseries values.
 - Use-cases and Q&A session
 
