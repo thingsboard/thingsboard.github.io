@@ -239,6 +239,7 @@ Finally, we are able to see our new dashboard. Now we can edit the dashboard to
  
 ## Next steps
 
+Get started with the new [**Rule Engine**](/docs/user-guide/rule-engine-2-0/re-getting-started/) to process your data.
 Explore guides related to main ThingsBoard features:
 
  - [Device attributes](/docs/user-guide/attributes/) - how to use device attributes.

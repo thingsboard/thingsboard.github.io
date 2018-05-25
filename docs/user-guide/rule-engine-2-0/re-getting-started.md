@@ -93,7 +93,7 @@ curl -v -X POST -d '{"temperature":99}' http://localhost:8080/api/v1/$ACCESS_TOK
 
 ***you need to replace $ACCESS_TOKEN with actual device token**
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/alarms/empty-telemetry.png)
+![image](/images/user-guide/rule-engine-2-0/tutorials/getting-started/empty-telemetry.png)
 
 
 Lets post temperature = 24. We will see that telemetry was saved successfully.
@@ -102,7 +102,7 @@ Lets post temperature = 24. We will see that telemetry was saved successfully.
 curl -v -X POST -d '{"temperature":24}' http://localhost:8080/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
 {% endhighlight %}
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/alarms/saved-ok.png)
+![image](/images/user-guide/rule-engine-2-0/tutorials/getting-started/saved-ok.png)
 
 
 ## Next steps:
