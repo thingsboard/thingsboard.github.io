@@ -34,15 +34,15 @@ Alarm entity may be updated by external applications or ThingsBoard rules. Alarm
 ThingsBoard provides REST API to manage and query alarms. See demo environment [Alarm REST API](https://demo.thingsboard.io/swagger-ui.html#/alarm-controller) and general [REST API](/docs/reference/rest-api/) documentation for more details.
 
 ### Alarm Rules
+It is possible to create, update and clear alarm using ThingsBoard [rule engine](/docs/user-guide/rule-engine-2-0/re-getting-started/).
 
-It is possible to generate alarm using ThingsBoard [rule engine](/docs/user-guide/rule-engine/).
-Please review the following screen cast to learn how to provision this [**simple rule**](/docs/user-guide/resources/moisture_threshold_rule.json) that generates an alarm when moisture is below or above a certain threshold for a device with type "moisture-temperature". 
-  
-<div id="video">  
-    <div id="video_wrapper">
-        <iframe src="https://www.youtube.com/embed/K64rRA8WEF8" frameborder="0" allowfullscreen></iframe>
-    </div>
-</div>
+Please find more details about Alarm Rule Nodes:
 
+- [Create Alarm](/docs/user-guide/rule-engine-2-0/action-nodes/#create-alarm-node).
+- [Clear Alarm](/docs/user-guide/rule-engine-2-0/action-nodes/#clear-alarm-node).
+
+Also, in this step-by-step guide you can see how to create/update/clear Alarms in real-life scenarios:
+
+- [Work with Alarms](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/).
 
     
