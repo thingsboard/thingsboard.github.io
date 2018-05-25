@@ -54,7 +54,7 @@ We will list only main configuration parameters below to avoid duplication of th
 
 #### thingsboard.conf
 
-The onfiguration file for the startup script. Contains Java options and classpath related parameters.
+The configuration file for the startup script. Contains Java options and classpath related parameters.
 
 #### actor-system.conf
 
