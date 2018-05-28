@@ -4,6 +4,8 @@ title: Notifications and Alarms on your smartphone using Telegram Bot
 
 ---
 
+{% include templates/old-guide-notice.md %}
+
 * TOC
 {:toc}
 
@@ -11,7 +13,6 @@ title: Notifications and Alarms on your smartphone using Telegram Bot
 
 Telegram provides possibility to create Telegram Bots, which are considered as a third-party applications. 
 You can send them messages, telemetry data or alarms using Rest API Call Plugin.
-
 
 ## Example
 

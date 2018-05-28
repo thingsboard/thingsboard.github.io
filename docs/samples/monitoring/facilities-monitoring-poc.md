@@ -4,6 +4,8 @@ title: Facilities monitoring system prototype using ThingsBoard
 description: Facilities monitoring system prototype using IoT Devices and ThingsBoard
 ---
 
+{% include templates/old-guide-notice.md %}
+
 * TOC
 {:toc}
 

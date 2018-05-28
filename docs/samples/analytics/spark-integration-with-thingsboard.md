@@ -5,9 +5,10 @@ description: IoT device data analytics sample using Apache Spark, Kafka and Thin
 
 ---
 
+{% include templates/old-guide-notice.md %}
+
 * TOC
 {:toc}
-
 
 ThingsBoard rule engine supports basic analysis of incoming telemetry data, for example, threshold crossing.
 The idea behind rule engine is to provide functionality to route data from IoT Devices to different plugins, based on device attributes or the data itself.   

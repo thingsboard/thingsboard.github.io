@@ -26,7 +26,7 @@ Our goal is to provide the out-of-the-box IoT cloud or on-premises solution that
 * **fault-tolerant**: no single-point-of-failure, every node in the cluster is identical.
 * **robust and efficient**: single server node can handle tens or even hundreds thousands of devices depending on use-case. 
 ThingsBoard cluster can handle millions of devices.
-* **customizable**: adding new functionality is easy with customizable widgets, rule engine, and plugin system.
+* **customizable**: adding new functionality is easy with customizable widgets and rule engine nodes.
 * **durable**: never lose your data.
 
 See [ThingsBoard Architecture](/docs/reference/architecture) for more details.

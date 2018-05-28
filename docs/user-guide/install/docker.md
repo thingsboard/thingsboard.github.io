@@ -45,7 +45,7 @@ One can modify **.env** file to configure following parameters:
  - POSTGRES_DATA_DIR - location of postgres data folder on host machine
  - HSQLDB_DATA_DIR - location of hsqldb data folder on host machine
  - ADD_SCHEMA_AND_SYSTEM_DATA - create schema and add system user and rule chains. by default *false*
- - ADD_DEMO_DATA - add demo accounts, plugins and rules. by default *false*
+ - ADD_DEMO_DATA - add demo accounts, dashboards and devices. by default *false*
  - CASSANDRA_URL - url of cassandra container 
   
 ### tb.env file

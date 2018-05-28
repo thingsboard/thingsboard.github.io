@@ -58,7 +58,12 @@ Although you can query the database directly, ThingsBoard provides set of RESTfu
   
 #### Data Query API
 
-Telemetry Service provides following API to fetch entity data:
+Telemetry Service provides following REST API to fetch entity data:
+
+![image](/images/user-guide/telemetry-service/rest-api.png)
+
+**NOTE:** The API listed above is available via Swagger UI, please review general [REST API](/docs/reference/rest-api/) documentation for more details.
+The API is backward compatible with TB v1.0+ and this is the main reason why API call URLs contain "plugin".
 
 ##### Timeseries data keys API
 
@@ -124,9 +129,10 @@ ws(s)://host:port/api/ws/plugins/telemetry?token=$JWT_TOKEN
 ```
 
 Once opened, you can send 
-[subscription commands](https://github.com/thingsboard/thingsboard/blob/master/extensions-core/src/main/java/org/thingsboard/server/extensions/core/plugin/telemetry/cmd/TelemetryPluginCmdsWrapper.java) 
+
+[subscription commands](https://github.com/thingsboard/thingsboard/blob/master/application/src/main/java/org/thingsboard/server/service/telemetry/cmd/TelemetryPluginCmdsWrapper.java) 
 and receive 
-[subscription updates](https://github.com/thingsboard/thingsboard/blob/master/extensions-core/src/main/java/org/thingsboard/server/extensions/core/plugin/telemetry/sub/SubscriptionUpdate.java):
+[subscription updates](https://github.com/thingsboard/thingsboard/blob/master/application/src/main/java/org/thingsboard/server/service/telemetry/sub/SubscriptionUpdate.java):
 
 where 
 

@@ -12,7 +12,7 @@ This configuration step is required in production environments.
 If you are evaluating the platform, pre-provisioned [**demo accounts**](/docs/samples/demo-account/#demo-tenant) are sufficient in most of the use cases.
   
 **NOTE** System Mail settings are used only during user creation and password reset process and are controlled by a system administrator. 
-Tenant administrator is able to [**setup email plugin**](/docs/samples/alarms/mail/) to distribute alarms produced by [**rule engine**](/docs/user-guide/rule-engine/).  
+Tenant administrator is able to [**setup email rule node**](/docs/user-guide/rule-engine-2-0/tutorials/send-email/) to distribute alarms produced by [**rule engine**](/docs/user-guide/rule-engine-2-0/re-getting-started/).  
 
 * TOC
 {:toc}

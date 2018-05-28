@@ -67,6 +67,7 @@ You can review API and examples in corresponding reference page:
  - [HTTP API reference](/docs/reference/http-api/#attributes-api)
   
 ## Telemetry Service
+
 Telemetry Service is responsible for persisting attributes data to internal data storage; 
 provides server-side API to query and subscribe for attribute updates. 
 
@@ -81,7 +82,12 @@ Although you can query the database directly, ThingsBoard provides a set of REST
   
 ### Data Query API
 
-Telemetry Service provides following API to fetch device attributes:
+Telemetry Service provides following REST API to fetch entity data:
+
+![image](/images/user-guide/telemetry-service/rest-api.png)
+
+**NOTE:** The API listed above is available via Swagger UI, please review general [REST API](/docs/reference/rest-api/) documentation for more details.
+The API is backward compatible with TB v1.0+ and this is the main reason why API call URLs contain "plugin".
 
 #### Attribute keys API
 

@@ -49,6 +49,9 @@ toc:
     path: /docs/user-guide/telemetry/
   - title: Working with alarms
     path: /docs/user-guide/alarms/
+  - title: Device Connectivity Status
+    new: true
+    path: /docs/user-guide/device-connectivity-status/
   - title: Using RPC capabilities
     path: /docs/user-guide/rpc/
   - title: Data visualization
@@ -162,10 +165,8 @@ toc:
     path: /docs/user-guide/ui/assets/
   - title: Devices
     path: /docs/user-guide/ui/devices/
-  - title: Rules
-    path: /docs/user-guide/ui/rules/
-  - title: Plugins
-    path: /docs/user-guide/ui/plugins/
+#  - title: Rule Chains
+#    path: /docs/user-guide/ui/rule-chains/
   - title: Widgets Library
     path: /docs/user-guide/ui/widget-library/
   - title: Dashboards
@@ -178,7 +179,5 @@ toc:
   section:
     - title: How to contribute
       path: /docs/user-guide/contribution/how-to-contribute/
-    - title: Extensions (Plugins and Actions) development
-      path: /docs/user-guide/contribution/extensions-development/
     - title: Widgets development
       path: /docs/user-guide/contribution/widgets-development/
