@@ -181,3 +181,9 @@ Finally we can see that email was received with correct values. (Please check yo
 
 <br/>
 
+## TL;DR
+
+Download and import attached [**rule chain json file**](/docs/user-guide/resources/send_email_rule_chain.json) with a rule chain from this tutorial. Don't forget to mark new rule chain as "root".
+
+![image](/images/user-guide/rule-engine-2-0/tutorials/make-root.png)
+
