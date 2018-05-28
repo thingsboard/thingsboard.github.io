@@ -245,6 +245,22 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 	</main>
 </section>
 
+<section id="rule_engine">
+	<main>
+		<h3 class="center">IoT Rule Engine</h3>
+		<div class="content">
+			<p class="center">ThingsBoard allows you to create complex <a href="/docs/user-guide/rule-engine-2-0/re-getting-started/">Rule Chains<a> to process data from your devices and match your application specific use cases.</p>
+			<p class="center">&nbsp;</p>
+			<div class="demoDashboardWrapper">
+				<div class="demoRuleChain">
+					<img src="images/demo/send-email-rule-chain.png">
+				</div>
+				<a href="/docs/user-guide/rule-engine-2-0/re-getting-started/" class="overlay"></a>
+			</div>
+		</div>
+	</main>
+</section>
+
 <section id="features">
 	<main>
 		<div class="features-title center">
@@ -396,6 +412,13 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 		});
 
 		$("#dashboard_description main").inViewport(function(px){
+			if(px >= 100) {
+				$(this).addClass("animated zoomIn");
+				return true;
+			}
+		});
+
+		$("#rule_engine main").inViewport(function(px){
 			if(px >= 100) {
 				$(this).addClass("animated zoomIn");
 				return true;
