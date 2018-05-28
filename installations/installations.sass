@@ -1,0 +1,159 @@
+#installations
+    color: #424242
+    section#install-title
+        margin-top: 30px
+        margin-bottom: 40px
+        h1
+            color: #000
+        h1, h2
+            margin-bottom: 0.75rem
+    section#install-cards
+        padding-left: 0px
+        margin-bottom: 15px
+        display: flex
+        justify-content: center
+        flex-direction: column
+        main
+            opacity: 0
+            &.animated
+                opacity: 1
+            color: #fff
+            margin: 10px
+            padding: 2rem 1rem
+            box-shadow: 0 1px 8px 0 rgba(0,0,0,0.2), 0 3px 4px 0 rgba(0,0,0,0.14), 0 3px 3px -2px rgba(0,0,0,0.12)
+            flex: 0 0 100%
+            max-width: 100%
+            .content
+                display: flex
+                flex-direction: column
+                height: 100%
+                .content-title
+                    margin-bottom: 0.75rem
+                h4
+                    color: #eee
+                    font-size: 21px
+                    font-weight: 400
+                    line-height: 28px
+                    margin-bottom: 1.2rem
+                p+p
+                    margin-top: 10px
+                .content-block
+                    padding: 1.25rem
+                    &.py-0x
+                        padding-top: 0
+                        padding-bottom: 0
+                    &.pb-0x
+                        padding-bottom: 0
+                .content-list
+                    display: flex
+                    flex-direction: column
+                    .content-list-item
+                        padding: .5rem 2rem
+                        .item-row
+                            display: flex
+                            flex-direction: row
+                        .item-img
+                            background: rgba(255, 255, 255, 0.8)
+                            box-shadow: 0 1px 8px 0 rgba(0,0,0,.2), 0 3px 4px 0 rgba(0,0,0,.14), 0 3px 3px -2px rgba(0,0,0,.12)
+                            border-radius: 20%
+                            width: 48px
+                            height: 48px
+                            img
+                                padding: 8px
+                                width: 100%
+                                height: 100%
+                        .item-text
+                            padding-right: 16px
+                            padding-left: 16px
+                            flex: 0 0 auto
+                            width: auto
+                            max-width: 80%
+                            p.item-title
+                                font-size: 17px
+                                line-height: 24px
+                                margin-bottom: .5rem
+                a.button
+                    width: 100%
+                    text-align: center
+                    padding: 0.3rem 1.5rem
+                    color: $blue
+                    cursor: pointer
+                    line-height: 30px
+                    border: 2px solid #fff
+                    background-color: #fff
+                    transition: 0.3s
+                    &:hover
+                        background-color: $blue
+                        color: #fff
+                    &.pe-learn-more
+                        padding-top: 2rem
+                        padding-bottom: 2rem
+                        font-size: 24px
+            &#thingsboard-community
+                background: $community-color
+                a.button
+                    background-color: #fff
+                    color: $community-color
+                    &:hover
+                        background-color: #5375b1
+                        color: #fff
+            &#thingsboard-pe
+                background: $professional-color
+                a.button
+                    background-color: #fff
+                    color: $professional-color
+                    &:hover
+                        background-color: #3c6c79
+                        color: white
+
+    .question-contact
+        margin-bottom: 30px
+        a
+            font-weight: 500
+            color: $professional-color
+            &:hover
+                text-decoration: underline
+
+@media screen and (min-width: 1025px)
+    #installations
+        section#install-cards
+            padding-left: 100px
+            flex-direction: row
+            main
+                margin: 15px
+                flex: 0 0 50%
+                max-width: 50%
+                .content
+                    .content-list
+                        .content-list-item
+                            .item-img
+                                width: 104px
+                                height: 104px
+                                img
+                                    padding: 16px
+                            .item-text
+                                max-width: 70%
+
+@media screen and (min-width: 1250px)
+    #installations
+        section#install-cards
+            flex-direction: row
+            align-items: stretch
+            align-content: stretch
+            main
+                flex: 0 0 40%
+                max-width: 40%
+
+@media screen and (min-width: 1500px)
+    #installations
+        section#install-cards
+            main
+                flex: 0 0 35%
+                max-width: 35%
+
+@media screen and (min-width: 1700px)
+    #installations
+        section#install-cards
+            main
+                flex: 0 0 30%
+                max-width: 30%

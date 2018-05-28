@@ -3,7 +3,7 @@ layout: docwithnav
 assignees:
 - ashvayka
 title: Upgrade instructions
-description: Thingsboard IoT platform upgrade instructions
+description: ThingsBoard IoT platform upgrade instructions
 
 ---
 
@@ -58,20 +58,53 @@ description: Thingsboard IoT platform upgrade instructions
         </li>
     </ul>
   </li>
+  <li>
+    <a href="#upgrading-to-130" id="markdown-toc-upgrading-to-130">Upgrading to 1.3.0</a>
+    <ul>
+        <li>
+            <a href="#ubuntucentos-4" id="markdown-toc-ubuntucentos-4">Ubuntu/CentOS</a>        
+        </li>
+        <li>
+            <a href="#windows-4" id="markdown-toc-windows-4">Windows</a>        
+        </li>
+    </ul>
+  </li>  
+  <li>
+    <a href="#upgrading-to-131" id="markdown-toc-upgrading-to-131">Upgrading to 1.3.1</a>
+    <ul>
+        <li>
+            <a href="#ubuntucentos-5" id="markdown-toc-ubuntucentos-5">Ubuntu/CentOS</a>        
+        </li>
+        <li>
+            <a href="#windows-5" id="markdown-toc-windows-5">Windows</a>        
+        </li>
+    </ul>
+  </li>  
+  <li>
+    <a href="#upgrading-to-140" id="markdown-toc-upgrading-to-140">Upgrading to 1.4.0</a>
+    <ul>
+        <li>
+            <a href="#ubuntucentos-6" id="markdown-toc-ubuntucentos-6">Ubuntu/CentOS</a>        
+        </li>
+        <li>
+            <a href="#windows-6" id="markdown-toc-windows-6">Windows</a>        
+        </li>
+    </ul>
+  </li>  
 </ul>
 
 ## Upgrading to 1.0.3
 
-This steps are applicable for both 1.0, 1.0.1 and 1.0.2 Thingsboard versions.
+These steps are applicable for 1.0, 1.0.1 and 1.0.2 ThingsBoard versions.
 
-#### Thingsboard package download
+#### ThingsBoard package download
 
 {% capture tabspec %}thingsboard-download-1-0-3
 thingsboard-download-1-0-3-ubuntu,Ubuntu,shell,resources/1.0.3/thingsboard-ubuntu-download.sh,/docs/user-guide/install/resources/1.0.3/thingsboard-ubuntu-download.sh
 thingsboard-download-1-0-3-centos,CentOS,shell,resources/1.0.3/thingsboard-centos-download.sh,/docs/user-guide/install/resources/1.0.3/thingsboard-centos-download.sh{% endcapture %}  
 {% include tabs.html %}
 
-#### Thingsboard service upgrade
+#### ThingsBoard service upgrade
 
 {% capture tabspec %}thingsboard-installation-1-0-3
 thingsboard-installation-1-0-3-ubuntu,Ubuntu,shell,resources/1.0.3/thingsboard-ubuntu-installation.sh,/docs/user-guide/install/resources/1.0.3/thingsboard-ubuntu-installation.sh
@@ -102,16 +135,16 @@ $ sudo service thingsboard start
 
 ## Upgrading to 1.1.0
 
-This steps are applicable for 1.0.3 Thingsboard version.
+These steps are applicable for 1.0.3 ThingsBoard version.
 
-#### Thingsboard package download
+#### ThingsBoard package download
 
 {% capture tabspec %}thingsboard-download-1-1-0
 thingsboard-download-1-1-0-ubuntu,Ubuntu,shell,resources/1.1.0/thingsboard-ubuntu-download.sh,/docs/user-guide/install/resources/1.1.0/thingsboard-ubuntu-download.sh
 thingsboard-download-1-1-0-centos,CentOS,shell,resources/1.1.0/thingsboard-centos-download.sh,/docs/user-guide/install/resources/1.1.0/thingsboard-centos-download.sh{% endcapture %}  
 {% include tabs.html %}
 
-#### Thingsboard service upgrade
+#### ThingsBoard service upgrade
 
 {% capture tabspec %}thingsboard-installation-1-1-0
 thingsboard-installation-1-1-0-ubuntu,Ubuntu,shell,resources/1.1.0/thingsboard-ubuntu-installation.sh,/docs/user-guide/install/resources/1.1.0/thingsboard-ubuntu-installation.sh
@@ -120,7 +153,7 @@ thingsboard-installation-1-1-0-centos,CentOS,shell,resources/1.1.0/thingsboard-c
 
 #### Database upgrade
 
-Please use following instruction to update your single node instance:
+Please use the following instruction to update your single node instance:
 
 ```bash
 # Download upgrade scripts
@@ -141,18 +174,18 @@ $ sudo service thingsboard start
 
 ## Upgrading to 1.2.0
 
-This steps are applicable for 1.1.0 Thingsboard version.
+These steps are applicable for 1.1.0 ThingsBoard version.
 
 ### Ubuntu/CentOS
 
-#### Thingsboard package download
+#### ThingsBoard package download
 
 {% capture tabspec %}thingsboard-download-1-2-0
 thingsboard-download-1-2-0-ubuntu,Ubuntu,shell,resources/1.2.0/thingsboard-ubuntu-download.sh,/docs/user-guide/install/resources/1.2.0/thingsboard-ubuntu-download.sh
 thingsboard-download-1-2-0-centos,CentOS,shell,resources/1.2.0/thingsboard-centos-download.sh,/docs/user-guide/install/resources/1.2.0/thingsboard-centos-download.sh{% endcapture %}  
 {% include tabs.html %}
 
-#### Thingsboard service upgrade
+#### ThingsBoard service upgrade
 
 {% capture tabspec %}thingsboard-installation-1-2-0
 thingsboard-installation-1-2-0-ubuntu,Ubuntu,shell,resources/1.2.0/thingsboard-ubuntu-installation.sh,/docs/user-guide/install/resources/1.2.0/thingsboard-ubuntu-installation.sh
@@ -180,24 +213,24 @@ $ sudo service thingsboard start
 
 ### Windows
 
-#### Thingsboard package download
+#### ThingsBoard package download
 
-Download Thingsboard installation archive for Windows: [thingsboard-windows-1.2.zip](https://github.com/thingsboard/thingsboard/releases/download/v1.2/thingsboard-windows-1.2.zip).
+Download ThingsBoard installation archive for Windows: [thingsboard-windows-1.2.zip](https://github.com/thingsboard/thingsboard/releases/download/v1.2/thingsboard-windows-1.2.zip).
 
-#### Thingsboard service upgrade
+#### ThingsBoard service upgrade
 
-* Make backup of previous Thingsboard configuration located in \<Thingsboard install dir\>\conf (for ex. C:\thingsboard\conf).
-* Uninstall previous version of Thingsboard service by running **uninstall.bat** located in Thingsboard install dir.
+* Make a backup of previous ThingsBoard configuration located in \<ThingsBoard install dir\>\conf (for ex. C:\thingsboard\conf).
+* Uninstall the previous version of ThingsBoard service by running **uninstall.bat** located in ThingsBoard install dir.
 
 **NOTE** Scripts listed above should be executed using Administrator Role.
 
 ```text
 C:\thingsboard>uninstall.bat
 ```
-* Remove Thingsboard install dir.
-* Unzip installation archive to Thingsboard install dir.
-* Compare your old Thingsboard configuration files (from backup you made in first step) with new ones.
-* Run **install.bat** script to install new version of Thingsboard as a Windows service.
+* Remove ThingsBoard install dir.
+* Unzip installation archive to ThingsBoard install dir.
+* Compare your old ThingsBoard configuration files (from the backup you made in the first step) with new ones.
+* Run **install.bat** script to install the new version of ThingsBoard as a Windows service.
 
 ```text
 C:\thingsboard>install.bat
@@ -222,18 +255,18 @@ net start thingsboard
 
 ## Upgrading to 1.2.1
 
-This steps are applicable for 1.2.0 Thingsboard version.
+These steps are applicable for 1.2.0 ThingsBoard version.
 
 ### Ubuntu/CentOS
 
-#### Thingsboard package download
+#### ThingsBoard package download
 
 {% capture tabspec %}thingsboard-download-1-2-1
 thingsboard-download-1-2-1-ubuntu,Ubuntu,shell,resources/1.2.1/thingsboard-ubuntu-download.sh,/docs/user-guide/install/resources/1.2.1/thingsboard-ubuntu-download.sh
 thingsboard-download-1-2-1-centos,CentOS,shell,resources/1.2.1/thingsboard-centos-download.sh,/docs/user-guide/install/resources/1.2.1/thingsboard-centos-download.sh{% endcapture %}  
 {% include tabs.html %}
 
-#### Thingsboard service upgrade
+#### ThingsBoard service upgrade
 
 {% capture tabspec %}thingsboard-installation-1-2-1
 thingsboard-installation-1-2-1-ubuntu,Ubuntu,shell,resources/1.2.1/thingsboard-ubuntu-installation.sh,/docs/user-guide/install/resources/1.2.1/thingsboard-ubuntu-installation.sh
@@ -262,24 +295,24 @@ $ sudo service thingsboard start
 
 ### Windows
 
-#### Thingsboard package download
+#### ThingsBoard package download
 
-Download Thingsboard installation archive for Windows: [thingsboard-windows-1.2.1.zip](https://github.com/thingsboard/thingsboard/releases/download/v1.2.1/thingsboard-windows-1.2.1.zip).
+Download ThingsBoard installation archive for Windows: [thingsboard-windows-1.2.1.zip](https://github.com/thingsboard/thingsboard/releases/download/v1.2.1/thingsboard-windows-1.2.1.zip).
 
-#### Thingsboard service upgrade
+#### ThingsBoard service upgrade
 
-* Make backup of previous Thingsboard configuration located in \<Thingsboard install dir\>\conf (for ex. C:\thingsboard\conf).
-* Uninstall previous version of Thingsboard service by running **uninstall.bat** located in Thingsboard install dir.
+* Make a backup of previous ThingsBoard configuration located in \<ThingsBoard install dir\>\conf (for ex. C:\thingsboard\conf).
+* Uninstall the previous version of ThingsBoard service by running **uninstall.bat** located in ThingsBoard install dir.
 
 **NOTE** Scripts listed above should be executed using Administrator Role.
 
 ```text
 C:\thingsboard>uninstall.bat
 ```
-* Remove Thingsboard install dir.
-* Unzip installation archive to Thingsboard install dir.
-* Compare your old Thingsboard configuration files (from backup you made in first step) with new ones.
-* Run **install.bat** script to install new version of Thingsboard as a Windows service.
+* Remove ThingsBoard install dir.
+* Unzip installation archive to ThingsBoard install dir.
+* Compare your old ThingsBoard configuration files (from the backup you made in the first step) with new ones.
+* Run **install.bat** script to install the new version of ThingsBoard as a Windows service.
 
 ```text
 C:\thingsboard>install.bat
@@ -305,18 +338,18 @@ net start thingsboard
 
 ## Upgrading to 1.2.2
 
-This steps are applicable for 1.2.1 Thingsboard version.
+These steps are applicable for 1.2.1 ThingsBoard version.
 
 ### Ubuntu/CentOS
 
-#### Thingsboard package download
+#### ThingsBoard package download
 
 {% capture tabspec %}thingsboard-download-1-2-2
 thingsboard-download-1-2-2-ubuntu,Ubuntu,shell,resources/1.2.2/thingsboard-ubuntu-download.sh,/docs/user-guide/install/resources/1.2.2/thingsboard-ubuntu-download.sh
 thingsboard-download-1-2-2-centos,CentOS,shell,resources/1.2.2/thingsboard-centos-download.sh,/docs/user-guide/install/resources/1.2.2/thingsboard-centos-download.sh{% endcapture %}  
 {% include tabs.html %}
 
-#### Thingsboard service upgrade
+#### ThingsBoard service upgrade
 
 {% capture tabspec %}thingsboard-installation-1-2-2
 thingsboard-installation-1-2-2-ubuntu,Ubuntu,shell,resources/1.2.2/thingsboard-ubuntu-installation.sh,/docs/user-guide/install/resources/1.2.2/thingsboard-ubuntu-installation.sh
@@ -344,24 +377,24 @@ $ sudo service thingsboard start
 
 ### Windows
 
-#### Thingsboard package download
+#### ThingsBoard package download
 
-Download Thingsboard installation archive for Windows: [thingsboard-windows-1.2.2.zip](https://github.com/thingsboard/thingsboard/releases/download/v1.2.2/thingsboard-windows-1.2.2.zip).
+Download ThingsBoard installation archive for Windows: [thingsboard-windows-1.2.2.zip](https://github.com/thingsboard/thingsboard/releases/download/v1.2.2/thingsboard-windows-1.2.2.zip).
 
-#### Thingsboard service upgrade
+#### ThingsBoard service upgrade
 
-* Make backup of previous Thingsboard configuration located in \<Thingsboard install dir\>\conf (for ex. C:\thingsboard\conf).
-* Uninstall previous version of Thingsboard service by running **uninstall.bat** located in Thingsboard install dir.
+* Make a backup of previous ThingsBoard configuration located in \<ThingsBoard install dir\>\conf (for ex. C:\thingsboard\conf).
+* Uninstall the previous version of ThingsBoard service by running **uninstall.bat** located in ThingsBoard install dir.
 
 **NOTE** Scripts listed above should be executed using Administrator Role.
 
 ```text
 C:\thingsboard>uninstall.bat
 ```
-* Remove Thingsboard install dir.
-* Unzip installation archive to Thingsboard install dir.
-* Compare your old Thingsboard configuration files (from backup you made in first step) with new ones.
-* Run **install.bat** script to install new version of Thingsboard as a Windows service.
+* Remove ThingsBoard install dir.
+* Unzip installation archive to ThingsBoard install dir.
+* Compare your old ThingsBoard configuration files (from the backup you made in the first step) with new ones.
+* Run **install.bat** script to install the new version of ThingsBoard as a Windows service.
 
 ```text
 C:\thingsboard>install.bat
@@ -386,18 +419,18 @@ net start thingsboard
 
 ## Upgrading to 1.2.3
 
-This steps are applicable for 1.2.2 Thingsboard version.
+These steps are applicable for 1.2.2 ThingsBoard version.
 
 ### Ubuntu/CentOS
 
-#### Thingsboard package download
+#### ThingsBoard package download
 
 {% capture tabspec %}thingsboard-download-1-2-3
 thingsboard-download-1-2-3-ubuntu,Ubuntu,shell,resources/1.2.3/thingsboard-ubuntu-download.sh,/docs/user-guide/install/resources/1.2.3/thingsboard-ubuntu-download.sh
 thingsboard-download-1-2-3-centos,CentOS,shell,resources/1.2.3/thingsboard-centos-download.sh,/docs/user-guide/install/resources/1.2.3/thingsboard-centos-download.sh{% endcapture %}  
 {% include tabs.html %}
 
-#### Thingsboard service upgrade
+#### ThingsBoard service upgrade
 
 {% capture tabspec %}thingsboard-installation-1-2-3
 thingsboard-installation-1-2-3-ubuntu,Ubuntu,shell,resources/1.2.3/thingsboard-ubuntu-installation.sh,/docs/user-guide/install/resources/1.2.3/thingsboard-ubuntu-installation.sh
@@ -426,24 +459,24 @@ $ sudo service thingsboard start
 
 ### Windows
 
-#### Thingsboard package download
+#### ThingsBoard package download
 
-Download Thingsboard installation archive for Windows: [thingsboard-windows-1.2.3.zip](https://github.com/thingsboard/thingsboard/releases/download/v1.2.3/thingsboard-windows-1.2.3.zip).
+Download ThingsBoard installation archive for Windows: [thingsboard-windows-1.2.3.zip](https://github.com/thingsboard/thingsboard/releases/download/v1.2.3/thingsboard-windows-1.2.3.zip).
 
-#### Thingsboard service upgrade
+#### ThingsBoard service upgrade
 
-* Make backup of previous Thingsboard configuration located in \<Thingsboard install dir\>\conf (for ex. C:\thingsboard\conf).
-* Uninstall previous version of Thingsboard service by running **uninstall.bat** located in Thingsboard install dir.
+* Make a backup of previous ThingsBoard configuration located in \<ThingsBoard install dir\>\conf (for ex. C:\thingsboard\conf).
+* Uninstall the previous version of ThingsBoard service by running **uninstall.bat** located in ThingsBoard install dir.
 
 **NOTE** Scripts listed above should be executed using Administrator Role.
 
 ```text
 C:\thingsboard>uninstall.bat
 ```
-* Remove Thingsboard install dir.
-* Unzip installation archive to Thingsboard install dir.
-* Compare your old Thingsboard configuration files (from backup you made in first step) with new ones.
-* Run **install.bat** script to install new version of Thingsboard as a Windows service.
+* Remove ThingsBoard install dir.
+* Unzip installation archive to ThingsBoard install dir.
+* Compare your old ThingsBoard configuration files (from the backup you made in the first step) with new ones.
+* Run **install.bat** script to install the new version of ThingsBoard as a Windows service.
 
 ```text
 C:\thingsboard>install.bat
@@ -459,6 +492,240 @@ C:\thingsboard>install.bat
 
 ```text
 upgrade_1.2.2_1.2.3.bat
+```
+  
+#### Start the service
+
+```text
+net start thingsboard
+```
+
+## Upgrading to 1.3.0
+
+These steps are applicable for 1.2.3 ThingsBoard version.
+
+### Ubuntu/CentOS
+
+#### ThingsBoard package download
+
+{% capture tabspec %}thingsboard-download-1-3-0
+thingsboard-download-1-3-0-ubuntu,Ubuntu,shell,resources/1.3.0/thingsboard-ubuntu-download.sh,/docs/user-guide/install/resources/1.3.0/thingsboard-ubuntu-download.sh
+thingsboard-download-1-3-0-centos,CentOS,shell,resources/1.3.0/thingsboard-centos-download.sh,/docs/user-guide/install/resources/1.3.0/thingsboard-centos-download.sh{% endcapture %}  
+{% include tabs.html %}
+
+#### ThingsBoard service upgrade
+
+{% capture tabspec %}thingsboard-installation-1-3-0
+thingsboard-installation-1-3-0-ubuntu,Ubuntu,shell,resources/1.3.0/thingsboard-ubuntu-installation.sh,/docs/user-guide/install/resources/1.3.0/thingsboard-ubuntu-installation.sh
+thingsboard-installation-1-3-0-centos,CentOS,shell,resources/1.3.0/thingsboard-centos-installation.sh,/docs/user-guide/install/resources/1.3.0/thingsboard-centos-installation.sh{% endcapture %}  
+{% include tabs.html %}
+
+**NOTE:** Package installer will ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.  
+Please make sure that you set database.type parameter value (in the file **/etc/thingsboard/conf/thingsboard.yml**) to "cassandra" instead of "sql" in order to upgrade your cassandra database:
+ 
+```
+database:
+    type: "${DATABASE_TYPE:cassandra}" # cassandra OR sql
+```       
+
+```bash
+# Execute upgrade script
+$ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=1.2.3 
+```
+
+#### Start the service
+
+```bash
+$ sudo service thingsboard start
+```
+
+### Windows
+
+#### ThingsBoard package download
+
+Download ThingsBoard installation archive for Windows: [thingsboard-windows-1.3.zip](https://github.com/thingsboard/thingsboard/releases/download/v1.3/thingsboard-windows-1.3.zip).
+
+#### ThingsBoard service upgrade
+
+* Stop ThingsBoard service if it is running.
+ 
+```text
+net stop thingsboard
+```
+
+* Make a backup of previous ThingsBoard configuration located in \<ThingsBoard install dir\>\conf (for ex. C:\thingsboard\conf).
+
+* Remove ThingsBoard install dir.
+* Unzip installation archive to ThingsBoard install dir.
+* Compare your old ThingsBoard configuration files (from the backup you made in the first step) with new ones.
+* Please make sure that you set database.type parameter value (in the file **\<ThingsBoard install dir\>\conf\thingsboard.yml**) to "cassandra" instead of "sql" in order to upgrade your cassandra database:
+  
+  ```
+  database:
+      type: "${DATABASE_TYPE:cassandra}" # cassandra OR sql
+  ```       
+* Run **upgrade.bat** script to upgrade ThingsBoard to the new version.
+
+**NOTE** Scripts listed above should be executed using Administrator Role.
+
+```text
+C:\thingsboard>upgrade.bat --fromVersion=1.2.3
+```
+  
+#### Start the service
+
+```text
+net start thingsboard
+```
+
+## Upgrading to 1.3.1
+
+These steps are applicable for 1.3.0 ThingsBoard version.
+
+### Ubuntu/CentOS
+
+#### ThingsBoard package download
+
+{% capture tabspec %}thingsboard-download-1-3-1
+thingsboard-download-1-3-1-ubuntu,Ubuntu,shell,resources/1.3.1/thingsboard-ubuntu-download.sh,/docs/user-guide/install/resources/1.3.1/thingsboard-ubuntu-download.sh
+thingsboard-download-1-3-1-centos,CentOS,shell,resources/1.3.1/thingsboard-centos-download.sh,/docs/user-guide/install/resources/1.3.1/thingsboard-centos-download.sh{% endcapture %}  
+{% include tabs.html %}
+
+#### ThingsBoard service upgrade
+
+{% capture tabspec %}thingsboard-installation-1-3-1
+thingsboard-installation-1-3-1-ubuntu,Ubuntu,shell,resources/1.3.1/thingsboard-ubuntu-installation.sh,/docs/user-guide/install/resources/1.3.1/thingsboard-ubuntu-installation.sh
+thingsboard-installation-1-3-1-centos,CentOS,shell,resources/1.3.1/thingsboard-centos-installation.sh,/docs/user-guide/install/resources/1.3.1/thingsboard-centos-installation.sh{% endcapture %}  
+{% include tabs.html %}
+
+**NOTE:** Package installer may ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.  
+Please make sure that you set database.type parameter value (in the file **/etc/thingsboard/conf/thingsboard.yml**) to "cassandra" instead of "sql" in order to upgrade your cassandra database:
+ 
+```
+database:
+    type: "${DATABASE_TYPE:cassandra}" # cassandra OR sql
+```       
+
+```bash
+# Execute upgrade script
+$ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=1.3.0 
+```
+
+#### Start the service
+
+```bash
+$ sudo service thingsboard start
+```
+
+### Windows
+
+#### ThingsBoard package download
+
+Download ThingsBoard installation archive for Windows: [thingsboard-windows-1.3.1.zip](https://github.com/thingsboard/thingsboard/releases/download/v1.3.1/thingsboard-windows-1.3.1.zip).
+
+#### ThingsBoard service upgrade
+
+* Stop ThingsBoard service if it is running.
+ 
+```text
+net stop thingsboard
+```
+
+* Make a backup of previous ThingsBoard configuration located in \<ThingsBoard install dir\>\conf (for ex. C:\thingsboard\conf).
+
+* Remove ThingsBoard install dir.
+* Unzip installation archive to ThingsBoard install dir.
+* Compare your old ThingsBoard configuration files (from the backup you made in the first step) with new ones.
+* Please make sure that you set database.type parameter value (in the file **\<ThingsBoard install dir\>\conf\thingsboard.yml**) to "cassandra" instead of "sql" in order to upgrade your cassandra database:
+  
+  ```
+  database:
+      type: "${DATABASE_TYPE:cassandra}" # cassandra OR sql
+  ```       
+* Run **upgrade.bat** script to upgrade ThingsBoard to the new version.
+
+**NOTE** Scripts listed above should be executed using Administrator Role.
+
+```text
+C:\thingsboard>upgrade.bat --fromVersion=1.3.0
+```
+  
+#### Start the service
+
+```text
+net start thingsboard
+```
+
+## Upgrading to 1.4.0
+
+These steps are applicable for 1.3.1 ThingsBoard version.
+
+### Ubuntu/CentOS
+
+#### ThingsBoard package download
+
+{% capture tabspec %}thingsboard-download-1-4-0
+thingsboard-download-1-4-0-ubuntu,Ubuntu,shell,resources/1.4.0/thingsboard-ubuntu-download.sh,/docs/user-guide/install/resources/1.4.0/thingsboard-ubuntu-download.sh
+thingsboard-download-1-4-0-centos,CentOS,shell,resources/1.4.0/thingsboard-centos-download.sh,/docs/user-guide/install/resources/1.4.0/thingsboard-centos-download.sh{% endcapture %}  
+{% include tabs.html %}
+
+#### ThingsBoard service upgrade
+
+{% capture tabspec %}thingsboard-installation-1-4-0
+thingsboard-installation-1-4-0-ubuntu,Ubuntu,shell,resources/1.4.0/thingsboard-ubuntu-installation.sh,/docs/user-guide/install/resources/1.4.0/thingsboard-ubuntu-installation.sh
+thingsboard-installation-1-4-0-centos,CentOS,shell,resources/1.4.0/thingsboard-centos-installation.sh,/docs/user-guide/install/resources/1.4.0/thingsboard-centos-installation.sh{% endcapture %}  
+{% include tabs.html %}
+
+**NOTE:** Package installer will ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.  
+Please make sure that you set database.type parameter value (in the file **/etc/thingsboard/conf/thingsboard.yml**) to "cassandra" instead of "sql" in order to upgrade your cassandra database:
+ 
+```
+database:
+    type: "${DATABASE_TYPE:cassandra}" # cassandra OR sql
+```       
+
+```bash
+# Execute upgrade script
+$ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=1.3.1 
+```
+
+#### Start the service
+
+```bash
+$ sudo service thingsboard start
+```
+
+### Windows
+
+#### ThingsBoard package download
+
+Download ThingsBoard installation archive for Windows: [thingsboard-windows-1.4.zip](https://github.com/thingsboard/thingsboard/releases/download/v1.4/thingsboard-windows-1.4.zip).
+
+#### ThingsBoard service upgrade
+
+* Stop ThingsBoard service if it is running.
+ 
+```text
+net stop thingsboard
+```
+
+* Make a backup of previous ThingsBoard configuration located in \<ThingsBoard install dir\>\conf (for ex. C:\thingsboard\conf).
+
+* Remove ThingsBoard install dir.
+* Unzip installation archive to ThingsBoard install dir.
+* Compare your old ThingsBoard configuration files (from the backup you made in the first step) with new ones.
+* Please make sure that you set database.type parameter value (in the file **\<ThingsBoard install dir\>\conf\thingsboard.yml**) to "cassandra" instead of "sql" in order to upgrade your cassandra database:
+  
+  ```
+  database:
+      type: "${DATABASE_TYPE:cassandra}" # cassandra OR sql
+  ```       
+* Run **upgrade.bat** script to upgrade ThingsBoard to the new version.
+
+**NOTE** Scripts listed above should be executed using Administrator Role.
+
+```text
+C:\thingsboard>upgrade.bat --fromVersion=1.3.1
 ```
   
 #### Start the service

@@ -8,7 +8,7 @@ title: Alarm Deduplication Processor
 
 ## Overview
 
-This component allows to generate unique alarms. You are able to specify *alarm ID* and *alarm body* templates.
+This component allows generating unique alarms. You are able to specify *alarm ID* and *alarm body* templates.
 Template evaluation is based on [velocity engine](http://velocity.apache.org/).
 When component process incoming device messages it substitutes message values and device attributes into template.
 Alarm uniqueness is controlled by result value of *alarm ID*.
@@ -28,17 +28,18 @@ Attribute values are available using maps with following names:
  - **shared** - shared attributes map.
 
 Telemetry values are pushed directly to the context using their keys.
-Context is also populated with reserved *date* object.
+You can also use *date*, *deviceId*, *deviceName*, and *deviceType*.
+
 For example, following template:
 
 ``` javascript
-[$date.get('yyyy-MM-dd HH:mm:ss')] Device $cs.get('serialNumber')($cs.get('model')) temperature is $temperature.valueAsString!
+[$date.get('yyyy-MM-dd HH:mm:ss')] Device $deviceType+$cs.get('serialNumber')($cs.get('model')) temperature is $temperature.valueAsString!
 ```
 
 Will be evaluated into 
 
 ``` 
-[2016-01-02 03:04:05] Device SN-001(A) temperature is 100!
+[2016-01-02 03:04:05] Device Killbot4000+SN-001(A) temperature is 100!
 ```
 
 for Device with 
@@ -52,8 +53,8 @@ and telemetry message
 {"temperature":100}
 ``` 
 
-We recommend to include truncated date and some unique device attribute into alarm id template. 
-This will ensure that you will not generate alarms for the same device problem to often. 
+We recommend to include the truncated date and some unique device attribute into alarm id template. 
+This will ensure that you will not generate alarms for the same device problem too often. 
 
 ## Example
 

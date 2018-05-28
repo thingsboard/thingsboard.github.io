@@ -17,6 +17,9 @@ Install Ruby 2.2 or higher. If you're on Linux, run these commands:
     sudo apt-get update
     sudo apt-get install ruby2.2
     sudo apt-get install ruby2.2-dev
+    sudo gem install github-pages
+    sudo gem install jekyll bundler
+    sudo bundle install
 
 * If you're on a Mac, follow [these instructions](https://gorails.com/setup/osx/).
 * If you're on a Windows machine you can use the [Ruby Installer](http://rubyinstaller.org/downloads/). During the installation make sure to check the option for *Add Ruby executables to your PATH*.
@@ -32,7 +35,7 @@ Clone our site:
 Make any changes you want. Then, to see your changes locally:
 
 	cd thingsboard.github.io
-	jekyll serve
+	bundle exec jekyll serve
 
 Your copy of the site will then be viewable at: [http://localhost:4000](http://localhost:4000)
 (or wherever Jekyll tells you).

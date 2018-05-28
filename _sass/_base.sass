@@ -5,13 +5,14 @@ $h1-font-size: 32px
 $h1-line-height: 40px
 
 $h2-font-size: 28px
-$h2-line-height: 60px
+$h2-line-height: 40px
 
 $h3-font-size: 24px
 $h3-line-height: 32px
 
 $h4-font-size: 20px
-$h4-line-height: 40px
+$h4-line-height: 30px
+$h4-padding-bottom: 10px
 
 $h5-font-size: 16px
 $h5-line-height: 36px
@@ -22,26 +23,35 @@ $p-line-height: 22px
 
 // header
 $full-width-paddingX: 20px
+$full-width-paddingX-large: 100px
 
 $main-width: 100%
 $main-max-width: 100%
 
-$header-height: 80px
+$header-height: 60px
 
 $logo-width: 220px
 
 $nav-buttons-margin-left: 10px
 
-$hamburger-size: 50px
+$hamburger-size: 40px
 
 
 // main nav
-$main-nav-padding: 120px 0 30px
+$main-nav-padding: 100px 0 0
 $main-nav-h5-margin-bottom: 1em
 $main-nav-h3-margin-bottom: 0.6em
 $main-nav-main-sibling-margin-top: 40px
 $main-nav-left-button-size: 50px
 $main-nav-left-button-font-size: 18px
+
+// nav menu
+$nav-menu-padding: 80px 0 0
+//$main-nav-h5-margin-bottom: 1em
+//$main-nav-h3-margin-bottom: 0.6em
+//$main-nav-main-sibling-margin-top: 40px
+//$main-nav-left-button-size: 50px
+//$main-nav-left-button-font-size: 18px
 
 
 // hero
@@ -68,6 +78,7 @@ section, header, footer
 	main
 		position: relative
 		margin: auto
+		display: block
 
 p
 	font-size: 14px
@@ -100,6 +111,32 @@ p
 		&:focus
 			background-color: $orange-02
 
+.nav-item
+	text-transform: uppercase
+	color: #fff
+	padding: 15px 12.5px
+	position: relative
+	cursor: pointer
+	&:hover
+		text-decoration: none !important
+	&::before
+		content: ''
+		position: absolute
+		left: 12.5px
+		bottom: 12px
+		width: calc(100% - 25px)
+		height: 3px
+		background-color: #f5f6f7
+		transform: scale(0, 1)
+		transform-origin: 0 50%
+		transition: 250ms
+	&:not(.nav-item-on):hover::before
+		transform: scale(0.25, 1)
+	&.nav-item-on::before
+		background-color: $light-blue
+		transform: scale(1, 1)
+
+
 #cellophane
 	position: fixed
 	top: 0
@@ -116,19 +153,32 @@ header
 	left: 0
 	width: 100%
 	z-index: 8888
-	background-color: transparent
-	box-shadow: 0 0 0 transparent
+	//background-image: url(/images/texture.png)
+	//background-color: $dark-grey
+	//opacity: 0.95
+	//background-color: transparent
+	//box-shadow: 0 0 0 transparent
+	//box-shadow: 0 1px 2px $medium-grey
 	overflow: hidden
 	transition: 0.3s
 	text-align: center
-
-
+	&::after
+		transition: 0.3s
+		content: ""
+		background: $dark-grey url(/images/texture.png)
+		opacity: 0.95
+		top: 0
+		left: 0
+		bottom: 0
+		right: 0
+		position: absolute
+		z-index: -1
 .logo
 	position: relative
 	float: left
 	display: block
-	width: 220px
-	height: 80px
+	width: 140px
+	height: 60px
 	top: 0
 	left: 0
 	transform: none
@@ -141,10 +191,10 @@ header
 #docs
 	.flyout-button
 		position: fixed
-		top: 20px
+		top: 10px
 		left: 20px
-		width: 50px
-		height: 50px
+		width: 40px
+		height: 40px
 		background-image: url(/images/toc_icon.png)
 		background-position: center center
 		background-repeat: no-repeat
@@ -158,36 +208,58 @@ header
 
 	.logo
 		position: absolute
-		top: 40px
-		left: 50%
+		top: 30px
+		left: 55%
 		transform: translate(-50%, -50%)
 		display: block
-		width: 45px
-		height: 44px
-		background-image: url(/images/favicon.png)
+		width: 35px
+		height: 35px
+		background-image: url(/images/thingsboard_min_white.svg)
+	#tryItNow.center-button
+		margin-left: 45px
 
-
-	&.flip-nav .flyout-button
+//	&.flip-nav .flyout-button
 		background-image: url(/images/toc_icon_grey.png)
 
 #githubButtonContainer
+	display: none
 	position: relative
 	padding-left: 12px
+	margin-right: 158px
 	float: left
 	vertical-align: middle
-	height: 80px
+	height: 60px
 	iframe
 		position: absolute
 		top: 50%
 		transform: translateY(-50%) scale(0.7)
 
 .nav-buttons
+	display: inline-flex
+	flex-direction: row
+	align-items: center
+	align-content: center
+	.nav-items
+		display: none
+		padding-right: 20px
+
+.nav-buttons-left
+	float: left
+
+.nav-buttons-right
 	float: right
 
-#viewDocs, #useCases, #blog, #gettingStarted, #liveDemo, #githubButtonContainer
+.nav-buttons-center
+	float: none
+
+//#viewDocs, #useCases, #blog, #gettingStarted, #liveDemo, #githubButtonContainer
 	display: none
 
-#viewDocs, #blog, #useCases
+//#viewDocs, #blog, #useCases
+.center-button
+	display: none
+	cursor: pointer
+	line-height: 30px
 	border: 2px solid white
 	background-color: transparent
 	transition: 0.3s
@@ -196,134 +268,28 @@ header
 		background-color: white
 		color: $dark-grey
 
+#tryItNow.center-button
+	display: inline-block
+	margin-left: 20px
 
-#gettingStarted, #liveDemo
-	width: 0
-	padding: 0 0
+//#gettingStarted, #liveDemo
+	//width: 0
+	//padding: 0 0
 	border: 0px solid transparent
 	background-color: transparent
 	text-align: center
 	white-space: nowrap
 	vertical-align: middle
 	overflow: hidden
-	transition: 0.3s
+	//transition: 0.3s
 
-.demoDashboardButton
-	text-align: center
-	padding: 20px 0
+//.open-nav, .y-enough
 
-.demo-dashboards-carousel, .feedbacks-carousel
-	.slick-next, .slick-prev
-		top: 40%
-	.slick-next:before, .slick-prev:before
-		color: rgba(0,0,0,0.67)
-
-.demo-dashboards-carousel
-	padding-top: 25px
-
-.dashboard-item
-	outline: none
-
-#dashboard_description
-	padding-top: 15px
-	h3
-		margin-bottom: 18px
-
-#thingsboard_feedbacks
-	padding-top: 30px
-
-.overlay-link
-	outline: none
-	position: absolute
-	top: 0
-	left: 0
-	width: 100%
-	height: 100%
-	opacity: 0
-
-.feedbacks-carousel
-	.slick-track
-		display: flex
-		.slick-slide
-			display: flex
-			height: auto
-			align-items: center
-			justify-content: center
-
-.feedback-item
-	outline: none
-	background: #fff
-	box-shadow: 2px 2px 15px #ccc
-	padding: 10px 20px 20px 25px
-	margin: 10px
-	color: #333
-	.feedback-logo-container
-		float: top
-		text-align: center
-		.feedback-logo
-			display: inline-block
-			border-radius: 50%
-			box-shadow: 0px 2px 15px #aaa
-			width: 80px
-			height: 80px
-	.feedback-content
-		margin-top: 10px
-		margin-left: 20px
-		margin-right: 20px
-		.author
-			color: #333
-			padding-bottom: 10px
-			text-align: center
-		blockquote
-			quotes: "“" "”" "“" "”"
-			&:before
-				color: #999
-				content: open-quote
-				height: 0
-				font-size: 2em
-				line-height: 0.1em
-				margin-left: -.55em
-				margin-right: 0.15em
-				vertical-align: -0.4em
-			&:after
-				color: #999
-				content: close-quote
-				height: 0
-				font-size: 2em
-				line-height: 0.1em
-				margin-left: 0.15em
-				vertical-align: -0.4em
-			p
-				display: inline
-				color: #555
-				font-style: italic
-				font-size: 16px
-				line-height: 18px
-
-.demoDashboardWrapper
-	position: relative
-	padding-bottom: 15px
-	.demoDashboard
-		display: block
-		position: relative
-		width: 100%
-		height: 100%
-		img
-			width: 100%
-	.overlay
-		outline: none
-		position: absolute
-		top: 0
-		left: 0
-		width: 100%
-		height: 100%
-		background: #ffffff url(/images/eye_gray.svg) no-repeat scroll center
-		background-size: 88px
-		opacity: 0
-		transition: 0.5s
-		&:hover
-			opacity: 0.5
-			transition: 0.5s
+//#gettingStarted, #liveDemo
+	//width: 150px
+	border-width: 1px
+	background-color: $blue
+	border-color: $blue
 
 #hamburger
 	display: inline-block
@@ -336,9 +302,9 @@ header
 	div, &:before, &:after
 		position: absolute
 		left: 15%
-		width: 70%
+		width: 65%
 		height: 2px
-		background-color: $blue
+		background-color: $white
 		transition: 0.3s
 		content: ""
 
@@ -353,7 +319,7 @@ header
 
 	&:hover
 		div, &:before, &:after
-			background-color: white
+			background-color: $light-blue
 
 #mainNav
 	h5
@@ -364,12 +330,15 @@ header
 		white-space: nowrap
 		overflow: hidden
 		clear: both
-		&.headNav
+		&#headNav
 			display: flex
 			align-items: center
 			align-content: center
 			justify-content: center
 			flex-direction: row
+			h3
+				font-size: 20px
+				line-height: 28px
 
 	.nav-box
 		white-space: normal
@@ -378,26 +347,72 @@ header
 
 	h3
 		a
-			color: $blue
+			color: #fff
 			text-decoration: none
+			transition: 300ms
+			&:hover
+				color: $light-blue
+
+.nav-menu
+	main
+		white-space: nowrap
+		overflow: hidden
+		clear: both
+		display: flex
+		flex-direction: row
+		justify-content: space-around
+		align-items: flex-start
+		.nav-box
+			width: 280px
+			white-space: normal
+			display: inline-block
+			padding: 0 10px
+			img
+				height: 170px
+		ul
+			li
+				text-align: left
+				padding: 4px
+				font-size: 16px
+				color: #fff
+				transition: 300ms
+				&:hover
+					color: $light-blue
+				strong
+					position: relative
+					color: $light-blue
+					font-size: 18px
+					&::before
+						content: ''
+						position: absolute
+						bottom: -4px
+						width: 100%
+						height: 1px
+						background-color: $light-blue
+						transform: scale(0, 1)
+						transform-origin: 0 50%
+						transition: 250ms
+					&:hover::before
+						transform: scale(1, 1)
 
 // FLIP NAV
-.flip-nav
+//.flip-nav
 	header
-		background-color: white
+		//background-color: white
 
 
 // OPEN NAV
 .open-nav
-	body
-		overflow: hidden
+	//body
+	//	overflow: hidden
 
 	#cellophane
 		display: block
 		z-index: 9998
 
 	header
-		background-color: #e0e7ea
+		//background-color: #e0e7ea
+		//background-color: rgba(51,66,80,0.95)
 		z-index: 9999
 
 	#hamburger
@@ -414,19 +429,13 @@ header
 		&:after
 			transform: rotate(-45deg)
 
-.open-nav, .y-enough
-	#gettingStarted, #liveDemo
-		width: 150px
-		border-width: 1px
-		background-color: $blue
-		border-color: $blue
 
 
 .flip-nav, .open-nav
-	header
-		box-shadow: 0 1px 2px $medium-grey
+	//header
+	//	box-shadow: 0 1px 2px $medium-grey
 
-	#viewDocs, #blog, #useCases
+	//#viewDocs, #blog, #useCases
 		border-color: $dark-grey
 		color: $dark-grey
 
@@ -435,20 +444,69 @@ header
 			background-color: $blue
 			color: white
 
-	#hamburger:hover
-		div, &:before, &:after
-			background-color: $dark-grey
+	//#hamburger:hover
+	//	div, &:before, &:after
+	//		background-color: $dark-grey
 
 
 
 // HERO
 #hero
-	background-image: url(/images/texture.png)
-	background-color: $dark-grey
+	//background-image: url(/images/texture.png)
+	//background-color: $dark-grey
 	text-align: center
 	padding-left: 0
 	padding-right: 0
 	margin-bottom: 0
+
+#docs
+	#hero
+		background-image: url(/images/texture.png)
+		background-color: $dark-grey
+	#pe-docs-banner
+		font-size: 18px
+		display: flex
+		flex-direction: column
+		align-items: center
+		align-content: center
+		img
+			display: inline-block
+			width: 40px
+			height: 40px
+		div
+			display: inline-block
+			padding-top: 10px
+			a
+				&.pe-link
+					color: #fff
+					font-weight: 500
+				&.pe-learn-more
+					font-weight: 500
+					color: #50b1ff
+				&:hover
+					text-decoration: underline
+	&.open-nav
+		#hero
+			#hero-content
+				visibility: hidden
+				#search
+					transition: 0ms
+
+.customer-logo
+	box-shadow: 0 1px 8px 0 rgba(0,0,0,0.2), 0 3px 4px 0 rgba(0,0,0,0.14), 0 3px 3px -2px rgba(0,0,0,0.12)
+	width: 200px
+	height: 120px
+	min-width: 200px
+	display: flex
+	justify-content: center
+	align-items: center
+	align-content: center
+	img
+		flex: 0 0 auto
+		object-fit: scale-down
+		max-width: 90%
+		max-height: 85%
+		vertical-align: middle
 
 // VENDOR STRIP
 #vendorStrip
@@ -490,8 +548,36 @@ footer
 			font-weight: 300
 			color: white
 			text-decoration: none
+			transition: 300ms
+			&:hover
+				color: $light-blue
 
 	.newsletterSubsContainer
+		#mlb2-7341216
+			.subscribe-form
+				background: none !important
+				border: none !important
+
+		#mlb2-7341216.ml-subscribe-form
+			.form-group
+				.form-control
+					background-color: transparent !important
+					font-family: "Roboto",sans-serif
+					padding: 10px
+					font-size: 16px
+					line-height: 16px
+					font-weight: 100
+					color: #fff
+					border: 1px solid #fff
+					transition: .3s
+					&::-webkit-input-placeholder
+						color: #999 !important
+					&::-moz-placeholder
+						color: #999 !important
+					&:-ms-input-placeholder
+						color: #999 !important
+					&:-moz-placeholder
+						color: #999 !important
 		width: 100%
 		display: flex
 		align-items: center
@@ -515,6 +601,7 @@ footer
 
 	.social
 		margin: 20px 0
+		display: inline-block
 
 		div
 			text-align: center
@@ -540,6 +627,14 @@ footer
 	color: white
 	border: 1px solid white
 	transition: 0.3s
+	&::-webkit-input-placeholder
+		color: #999 !important
+	&::-moz-placeholder
+		color: #999 !important
+	&:-ms-input-placeholder
+		color: #999 !important
+	&:-moz-placeholder
+		color: #999 !important
 
 	&:focus
 		background-color: $light-grey
@@ -612,14 +707,14 @@ a.facebook
 	&:hover
 		background-position: -350px 100%
 
-#viewDocs, #blog, #useCases
+//#viewDocs, #blog, #useCases
 	display: none
 
 section
 	background-color: white
 
 #hero
-	background-color: $dark-grey
+	//background-color: $dark-grey
 
 	h5
 		margin: 20px 0
@@ -668,7 +763,6 @@ section
 			line-height: 30px
 			font-size: 16px
 			vertical-align: top
-
 
 #encyclopedia
 	position: relative
@@ -738,6 +832,15 @@ section
 		&:hover
 			color: $blue
 
+	a.item.item-pe > .title
+		&::after
+			content: "PE"
+			font-size: 12px
+			font-weight: bold
+			color: $blue
+			transform: translate(5px,-10px)
+			display: inline-block
+
 	div.item > .title
 		&:before
 			content: ""
@@ -749,6 +852,15 @@ section
 			border-color: transparent transparent transparent $blue
 			transform: rotate(0deg)
 			transition: 0.3s
+
+	div.item.item-pe > .title
+		&::after
+			content: "PE"
+			font-size: 12px
+			font-weight: bold
+			color: $blue
+			transform: translate(5px,-10px)
+			display: inline-block
 
 	.wrapper
 		position: relative
@@ -815,13 +927,13 @@ dd
 	ul
 		margin-top: 25px
 
-	li
-		position: relative
-		display: block
-		width: 100%
-		min-height: 45px
-		padding: 0 60px 0 20px
-		border-bottom: 1px solid #cccccc
+		& > li
+			position: relative
+			display: block
+			width: 100%
+			min-height: 45px
+			padding: 0 60px 0 20px
+			border-bottom: 1px solid #cccccc
 
 	a
 		display: inline-block
@@ -875,6 +987,42 @@ iframe
 	&.demoDashboardFrame
 		height: 400px
 		padding: 20px 0
+
+#peContent
+	position: relative
+	width: 100%
+	margin: auto
+	* + h2, * + h3, * + h4, * + h5, * + h6
+		margin-top: 30px
+
+	section
+		padding-left: 0
+		padding-right: 0
+
+	table
+		width: 100%
+		border: 1px solid #ccc
+		border-spacing: 0
+		margin-top: 30px
+		margin-bottom: 30px
+
+	thead, tr:nth-child(even)
+		background-color: $light-grey
+
+	thead
+		background-color: #555
+		color: white
+
+	th, td
+		padding: 8px
+		text-align: left
+		margin: 0
+
+	th
+		font-weight: normal
+
+	td
+		font-size: 0.85em
 
 #docsContent
 	position: relative
@@ -1074,6 +1222,54 @@ iframe
 	img
 		max-width: 100%
 
+	.customer-logo
+		img
+			max-width: 75%
+			max-height: 85%
+
+	table.company-contacts
+		width: auto
+		background: $professional-color
+		color: #fff
+		padding: 15px
+		border: none
+		box-shadow: 0 1px 8px 0 rgba(0,0,0,0.2), 0 3px 4px 0 rgba(0,0,0,0.14), 0 3px 3px -2px rgba(0,0,0,0.12)
+		tr
+			background: none
+		td
+			font-weight: 500
+			font-size: 18px
+			&:first-child
+				text-align: center
+			a.mail
+				font-weight: 500
+				color: #fff
+				&:hover
+					text-decoration: underline
+			a.button
+				background-color: #fff
+				color: $professional-color
+				line-height: 30px
+				padding: 0.3rem 1.5rem
+				border: 2px solid #fff
+				&:hover
+					background-color: #3c6c79
+					color: white
+					border: 2px solid #fff
+					transition: 0.3s
+			&.contact-us
+				padding-top: 20px
+		.fa
+			color: $professional-color
+			font-size: 28px
+			margin-right: 10px
+			background: rgba(255,255,255,0.8)
+			box-shadow: 0 1px 8px 0 rgba(0,0,0,0.2), 0 3px 4px 0 rgba(0,0,0,0.14), 0 3px 3px -2px rgba(0,0,0,0.12)
+			border-radius: 20%
+			width: 40px
+			height: 40px
+			line-height: 40px
+
 	a.button
 		border-radius: 2px
 
@@ -1089,72 +1285,152 @@ iframe
 		width: 100%
 		margin: 0
 
-	.services
-		width: 100%
-		margin: 30px 0
+	.cards
 		position: relative
-		display: block
+		display: flex
 		font-size: 16px
-		.service
+		justify-content: space-around
+		flex-wrap: wrap
+
+		.card
 			position: relative
-			padding-bottom: 25px
-			padding-left: 0px
+			margin-bottom: 49px
+			padding-left: 0
 			display: block
-			.service-card
+			width: 300px
+			height: 300px
+			border-radius: 3px
+			box-shadow: 0 2px 5px 0 rgba(0,0,0,.26)
+			color: #ffffff
+			background: $professional-color
+			overflow: hidden
+			&.thingsboard-ce
+				background: #3a6a9e
+			&.thingsboard-pe
+				background: #3c7a88
+			&.thingsboard-gw
+				background: #48886e
+
+			.card-img
+				position: absolute
+				width: 60%
+				height: 60%
+				opacity: .5
+				top: 92px
+				left: 20%
+				z-index: 90
+				background-size: 65% 65%
+				background-repeat: no-repeat
+				background-position: center
+				background-color: rgba(0,0,0,0.8)
+				box-shadow: 0 1px 8px 0 rgba(0,0,0,0.2), 0 3px 4px 0 rgba(0,0,0,0.14), 0 3px 3px -2px rgba(0,0,0,0.12)
+				border-radius: 50%
+				transition: opacity .3s ease,left .4s ease,top .4s ease, height .4s ease, width .4s ease, background-color .4s ease
+				&.product
+					background-size: contain
+					width: 100%
+					height: 170px
+					left: 0px
+					opacity: .7
+					border-radius: initial
+					background-color: initial
+					box-shadow: none
+				&.agriculture-bg
+					background-image: url(/images/industries/agriculture.svg)
+				&.smart-energy-bg
+					background-image: url(/images/industries/smart_energy.svg)
+				&.fleet-tracking-bg
+					background-image: url(/images/industries/fleet_tracking.svg)
+				&.telecom-bg
+					background-image: url(/images/industries/telecom.svg)
+				&.smart-building-bg
+					background-image: url(/images/industries/smart_building.svg)
+				&.smart-city-bg
+					background-image: url(/images/industries/smart_city.svg)
+
+				&.support-plans-bg
+					background-image: url(/images/services/support_plans.svg)
+				&.training-sessions-bg
+					background-image: url(/images/services/training_sessions.svg)
+				&.professional-services-bg
+					background-image: url(/images/services/professiona_services.svg)
+				&.consulting-bg
+					background-image: url(/images/services/consulting.svg)
+
+				&.professional-edition-bg
+					background-image: url(/images/services/professional_edition.svg)
+				&.community-edition-bg
+					background-image: url(/images/services/community_edition.svg)
+				&.gateway-bg
+					background-image: url(/images/services/gateway.svg)
+
+			.card-title
+				display: flex
+				text-align: center
+				align-items: center
+				justify-content: center
+				text-transform: uppercase
+				width: 100%
+				border-top-left-radius: 3px
+				border-top-right-radius: 3px
+				padding: 15px
+				font-size: 20px
+				font-weight: 500
+				height: 86px
+
+			.title-text
+				z-index: 90
 				position: relative
-				border-radius: 3px
-				padding: 20px 15px
-				box-shadow: 0 2px 5px 0 rgba(0,0,0,.26)
-				height: 360px
-				display: block
-				color: #ffffff
-				.title
+				&:after
+					content: ''
+					width: 0
+					height: 2px
 					position: absolute
-					top: 0px
-					left: 0px
-					background-color: #334250
-					background-image: url(/images/texture.png)
-					display: flex
-					text-align: center
-					align-items: center
-					justify-content: center
-					text-transform: uppercase
-					width: 100%
-					border-top-left-radius: 3px
-					border-top-right-radius: 3px
-					padding: 15px
-					font-size: 28px
-					height: 86px
-				.description
-					position: absolute
-					top: 86px
-					bottom: 87px
-					background-color: $blue
-					display: flex
-					text-align: center
-					align-items: center
-					justify-content: center
-					width: 100%
-					color: rgba(255,255,255,0.87)
-					left: 0px
-					padding: 15px
-					font-size: 26px
-				.service-button
-					position: absolute
-					bottom: 0px
-					left: 0px
-					padding: 10px 0
-					display: flex
-					align-items: center
-					justify-content: center
-					width: 100%
-					border-top: 1px solid rgba(0,0,0,0.25)
-					border-bottom-left-radius: 3px
-					border-bottom-right-radius: 3px
-					background: #f8f8f8
-					a.button
-						padding: 14px 30px 12px
-						font-size: 18px
+					bottom: -4px
+					left: 0
+					transition: all .3s ease
+					background: #fff
+					z-index: 90
+
+			.card-description
+				position: absolute
+				top: 100%
+				bottom: 0
+				background-color: $orange
+				text-align: center
+				width: 100%
+				color: rgba(255,255,255,0.87)
+				left: 0
+				padding: 173px 15px 15px 15px
+				opacity: 0
+				transition: background-color .3s ease,top .4s ease, opacity .2s
+				font-size: 18px
+				z-index: 70
+
+
+			&:hover
+				.card-title
+					color: #fff
+
+				.title-text
+					&:after
+						width: 100%
+
+				.card-img
+					height: 25%
+					width: 25%
+					left: 37.5%
+					background-color: transparent
+					box-shadow: none
+					opacity: 1
+					&.product
+						width: 100%
+						height: 80px
+						left: 0px
+
+				.card-description
+					top: 0
+					opacity: 1
 
 	.supportPlans
 		width: 100%
@@ -1167,9 +1443,57 @@ iframe
 		.supportPlan
 			display: block
 			padding-bottom: 15px
+			&.free
+				.pricingTable
+					li.heading-row
+						background-color: #2a5079
+						border-color: #2a5079
+					li.pricing-row
+						background-color: #69a0dc
+						border-color: #69a0dc
+					li
+						background-color: #5389c5
+						border-color: #5389c5
+						a.button
+							color: #5389c5
+							&:hover
+								background-color: #2a5079
+			&.professional
+				.pricingTable
+					li.heading-row
+						background-color: #2b5963
+						border-color: #2b5963
+					li.pricing-row
+						background-color: #5d9aa7
+						border-color: #5d9aa7
+					li
+						background-color: #45818e
+						border-color: #45818e
+						a.button
+							color: #45818e
+							&:hover
+								background-color: #2b5963
+
+			&.enterprise
+				.pricingTable
+					li.heading-row
+						background-color: #315245
+						border-color: #315245
+					li.pricing-row
+						background-color: #7bb39c
+						border-color: #7bb39c
+					li
+						background-color: #48886e
+						border-color: #48886e
+						a.button
+							color: #48886e
+							&:hover
+								background-color: #315245
 
 			.pricingTable
-				margin: 10px
+				margin: 20px
+				padding-left: 0px
+				box-shadow: 0 1px 8px 0 rgba(0,0,0,0.2), 0 3px 4px 0 rgba(0,0,0,0.14), 0 3px 3px -2px rgba(0,0,0,0.12)
 
 				li.empty
 					display: none
@@ -1181,45 +1505,34 @@ iframe
 					padding: 14px 17px
 					margin: 0
 					position: relative
-					border-color: #e1e1e1
-					border-top-style: solid
-					border-top-width: 1px
-					border-left-style: solid
-					border-left-width: 1px
-					border-right-style: solid
-					border-right-width: 1px
 					height: 48px
 					display: flex
 					align-items: center
 					justify-content: center
+					color: #fff
+					font-size: 16px
 
 					a.button
 						padding: 14px 30px 12px
 						font-size: 18px
-
-				li:first-child
-					border-top-left-radius: 3px
-					border-top-right-radius: 3px
-
-				li:nth-child(odd)
-					background: #f8f8f8
-
-				li:nth-child(even)
-					background: #ffffff
+						border: 2px solid #fff
+						background-color: #fff
+						transition: 0.3s
+						color: $blue
+						&:hover
+							background-color: $blue
+							color: #fff
 
 				li:last-child
-					border-bottom-left-radius: 3px
-					border-bottom-right-radius: 3px
-					border-bottom-style: solid
-					border-bottom-width: 1px
 					display: block
-					height: auto
+					height: 146px
+
+				li:nth-child(3)
+					padding-top: 30px
+					height: 60px
 
 				li.heading-row
-					background-color: #334250
-					background-image: url(/images/texture.png)
 					color: #ffffff
-					border-color: #545454
 					height: auto
 					font-size: 28px
 
@@ -1227,12 +1540,11 @@ iframe
 					line-height: 1em
 					padding: 10px 12px
 					color: #ffffff
-					background-color: $blue
 					border: 1px solid $blue
 					height: 146px
 					display: block
 					text-align: center
-
+				li
 					.old-price
 						line-height: 30px
 						opacity: 0.85
@@ -1254,6 +1566,12 @@ iframe
 							display: flex
 							justify-content: center
 							align-items: center
+
+					.price-contact-us
+						height: 100%
+						display: flex
+						align-items: center
+						justify-content: center
 
 					.currency-symbol
 						text-decoration: none
@@ -1277,50 +1595,6 @@ iframe
 						font-weight: normal
 						letter-spacing: 1px
 
-	.contact-form
-		.form-element
-			position: relative
-			width: 100%
-			margin: 7px 0
-			float: none
-			clear: both
-			&.half
-				width: 100%
-				float: left
-				margin-left: 0
-				clear: both
-			&.first
-				clear: both
-				margin-left: 0
-			label
-				display: block
-				position: relative
-				margin-bottom: 5px
-				margin-left: 2px
-				font-weight: bold
-				font-size: 16px
-			.text-input, .text-area, .select
-				outline: none
-				font-size: 16px
-				margin-bottom: 0
-				background-color: #f8f8f8
-				border: 2px solid #e1e1e1
-				color: #666666
-				width: 100%
-				display: inline
-				min-width: 50px
-				padding: 6px
-				border-radius: 4px
-				box-shadow: none
-				transition: 0.3s
-				&:focus
-					background-color: $light-grey
-					color: $dark-grey
-					border-color: #2fd1ff
-					box-shadow: 0 0 8px rgba(0, 201, 255, .5)
-			input.button
-				width: 150px
-
 	.trainings-info
 		width: 100%
 		color: #ffffff
@@ -1330,7 +1604,7 @@ iframe
 			border-bottom: 1px solid #ffffff
 		td:nth-child(1)
 			width: 25%
-			background-color: #334250
+			background-color: $dark-grey
 			background-image: url(/images/texture.png)
 			font-size: 14px
 			text-transform: uppercase
@@ -1398,8 +1672,6 @@ iframe
 				.pricingTable
 					li.empty
 						display: flex
-		.contact-form
-			width: 50%
 
 .fixed footer
 	position: fixed
@@ -1432,41 +1704,10 @@ html.search #docsContent
 		padding-bottom: 0
 		padding-left: 8px
 
-
-
-
-
-
 // ocean nodes
 $ocean-nodes-padding-Y: 10px
 $ocean-nodes-main-margin-bottom: 60px
 $ocean-nodes-h3-margin-bottom: 30px
-
-// features
-$features-h3-margin-bottom: 20px
-$feature-box-div-width: 100%
-$feature-box-margin-bottom: 0
-$feature-box-div-margin-bottom: 40px
-
-
-// Home-specific
-
-#home
-	&.flip-nav, &.open-nav
-		.logo
-			background-image: url(/images/thingsboard_logo_blue.svg)
-
-	#hero
-		margin-bottom: 0
-		padding-bottom: 1px
-
-		main
-			padding: 0 10px
-			margin-bottom: 30px
-
-		#vendorStrip
-			display: none
-
 
 // OCEAN NODES
 .oceanNodes
@@ -1484,19 +1725,9 @@ $feature-box-div-margin-bottom: 40px
 		max-width: 75%
 		margin: 0 auto 20px
 		text-align: center
-
 		img
 			width: 100%
 			max-width: 160px
-
-	&#intro
-		padding-top: 20px
-		main:first-child
-			.image-wrapper
-				max-width: 100%
-
-				img
-					max-width: 491px
 
 	h3
 		margin-bottom: $ocean-nodes-h3-margin-bottom
@@ -1517,49 +1748,10 @@ $feature-box-div-margin-bottom: 40px
 			width: 100%
 			height: 100%
 
-// Features
-#features
-	padding-top: 140px
-	background-color: $light-grey
-	background-image: url(/images/logo_small.png)
-	background-position: center 64px
-	background-repeat: no-repeat
-	background-size: auto
-
-.feature-box
-	//padding: 50px 0
-	width: 100%
-	overflow: hidden
-	clear: both
-
-	h4
-		line-height: normal
-		margin-bottom: 15px
-
-	& > div:first-child
-		float: left
-
-	& > div:last-child
-		float: right
-
-#features
-	margin-top: 20px
-	h3
-		margin-bottom: $features-h3-margin-bottom
-
-	.feature-box
-		margin-bottom: $feature-box-margin-bottom
-
-		& > div
-			width: $feature-box-div-width
-			margin-bottom: $feature-box-div-margin-bottom
-
-
-
 
 // Community
 
-#community, .gridPage
+//#community, .gridPage
 	&.open-nav, &.flip-nav
 		.logo
 			background-image: url(/images/thingsboard_logo_blue.svg)
@@ -1716,15 +1908,6 @@ $feature-box-div-margin-bottom: 40px
 
 		div:nth-child(3)
 			background-image: url(/images/stackoverflow_icon.png)
-
-
-#home
-	#talkToUs
-		main
-			padding: 30px 0
-		
-		h5
-			font-size: 20px
 
 // jSocials
 

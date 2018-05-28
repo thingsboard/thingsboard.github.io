@@ -3,9 +3,9 @@ abstract: "Design docs, concept definitions, and references for APIs and CLIs."
 toc:
 - title: Reference Documentation
   path: /docs/reference/
-- title: Thingsboard Architecture
+- title: ThingsBoard Architecture
   path: /docs/reference/architecture/
-- title: Thingsboard Performance
+- title: ThingsBoard Performance
   section:
   - title: Data Collection Performance
     path: /docs/reference/performance/
@@ -59,6 +59,10 @@ toc:
         path: /docs/reference/plugins/rabbitmq/
       - title: REST API Call Plugin
         path: /docs/reference/plugins/rest/
+      - title: SNS Plugin
+        path: /docs/reference/plugins/sns/
+      - title: SQS Plugin
+        path: /docs/reference/plugins/sqs/
       - title: Time RPC Plugin
         path: /docs/reference/plugins/time/
 - title: Release Notes

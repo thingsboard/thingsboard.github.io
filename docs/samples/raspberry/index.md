@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: Raspberry Pi overview
-description: Thingsboard IoT Platform hardware samples for Raspberry Pi devices.
+description: ThingsBoard IoT Platform hardware samples for Raspberry Pi devices.
 
 ---
 
@@ -15,8 +15,8 @@ However, you are able to use other programming languages and OS.
 
 ## Samples
 
- - [Raspberry Pi GPIO control over MQTT using Thingsboard](/docs/samples/raspberry/gpio/)
- - [Raspberry Pi GPIO control using Android Things and Thingsboard](/docs/samples/raspberry/gpio-android-things/) 
+ - [Raspberry Pi GPIO control over MQTT using ThingsBoard](/docs/samples/raspberry/gpio/)
+ - [Raspberry Pi GPIO control using Android Things and ThingsBoard](/docs/samples/raspberry/gpio-android-things/)
  - [Temperature upload over MQTT using Raspberry Pi and DHT22 sensor](/docs/samples/raspberry/temperature/) 
 
 ## Documentation

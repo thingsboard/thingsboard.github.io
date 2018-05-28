@@ -1,0 +1,7 @@
+bigheader: "ThingsBoard Media Kit"
+abstract: "ThingsBoard media resources"
+hidetoc: "true"
+notitle: "true"
+toc:
+- title: Media Kit
+  path: /mediakit/

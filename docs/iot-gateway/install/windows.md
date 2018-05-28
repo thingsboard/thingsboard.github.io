@@ -2,8 +2,8 @@
 layout: docwithnav
 assignees:
 - ashvayka
-title: Installing Thingsboard IoT Gateway on Windows
-description: Installing Thingsboard IoT Gateway on Windows
+title: Installing ThingsBoard IoT Gateway on Windows
+description: Installing ThingsBoard IoT Gateway on Windows
 
 ---
 
@@ -17,8 +17,8 @@ IoT Gateway requires Java 8. If you don't have Java installed, please download a
  
 ### Step 2. Download and unzip installation files
  
-Create working directory, for example "C:\tb-gateway".
-Download and unzip [this installation archive](https://github.com/thingsboard/thingsboard-gateway/releases/download/v1.2.1/tb-gateway-windows-1.2.1.zip) to the working directory.
+Create a working directory, for example, "C:\tb-gateway".
+Download and unzip [this installation archive](https://github.com/thingsboard/thingsboard-gateway/releases/download/v1.4.0.1/tb-gateway-windows-1.4.0.zip) to the working directory.
 The working directory should look like this after installation
 
  ![image](/images/gateway/windows-folder.png)
@@ -33,7 +33,7 @@ Similar, **uninstall.bat** will remove Gateway from Windows services.
 
 ```text
 C:\tb-gateway>install.bat
-Detecting if it is 64 bit machine
+Detecting if it is 64-bit machine
 CurrentVersion 1.8
 Java 1.8 found!
 Installing tb-gateway ...
@@ -42,22 +42,22 @@ Installing tb-gateway ...
 DONE.
 ```
 
-Congratulations! Thingsboard IoT Gateway is now installed on your Windows machine as a service. 
+Congratulations! ThingsBoard IoT Gateway is now installed on your Windows machine as a service.
 
 ### Step 4. Configure your gateway
 
 Let's configure your gateway before we start it! 
 
 Let's skip extension configuration for now. 
-We need to validate that gateway is able to successfully connect to Thingsboard server first.
+We need to validate that gateway is able to successfully connect to ThingsBoard server first.
 
-Navigate to the configuration folder ("C:\tb-gateway\conf" in our case) and configure connection to Thingsboard server.
+Navigate to the configuration folder ("C:\tb-gateway\conf" in our case) and configure the connection to ThingsBoard server.
 See [**getting started**](/docs/iot-gateway/getting-started/) or [**general configuration**](/docs/iot-gateway/configuration/) for more details.
 
 ### Step 5. Launch your gateway
 
 Now let's start the gateway!
-Open command prompt as an Administrator and execute following command
+Open command prompt as an Administrator and execute the following command
 
 ```shell
 net start tb-gateway
@@ -66,8 +66,8 @@ net start tb-gateway
 Expected output:
 
 ```text
-The Thingsboard Gateway service is starting.
-The Thingsboard Gateway service was started successfully.
+The ThingsBoard Gateway service is starting.
+The ThingsBoard Gateway service was started successfully.
 ```
 
 In order to restart the gateway you can execute following commands
@@ -92,4 +92,4 @@ In case of any unclear errors, use general [troubleshooting guide](/docs/user-gu
   
 ### Next Steps
 
-Use [**OPC-UA**](/docs/iot-gateway/getting-started/#step-9-connect-to-external-opc-ua-server) or [**MQTT**](/docs/iot-gateway/getting-started/#step-8-connect-to-external-mqtt-broker) extensions to integrate your devices with Thingsboard platform. 
+Use [**OPC-UA**](/docs/iot-gateway/getting-started/#step-9-connect-to-external-opc-ua-server), [**MQTT**](/docs/iot-gateway/getting-started/#step-8-connect-to-external-mqtt-broker), [**Sigfox Backend**](/docs/iot-gateway/getting-started/#step-10-connect-to-sigfox-backend) or [**Modbus slave**](/docs/iot-gateway/getting-started/#step-11-connect-to-modbus-slave) extensions to integrate your devices with ThingsBoard platform.

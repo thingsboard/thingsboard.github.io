@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: Temperature upload over MQTT using Raspberry Pi and DHT22 sensor
-description: Thingsboard IoT Platform sample for temperature data upload over MQTT using Raspberry Pi and DHT22 sensor.
+description: ThingsBoard IoT Platform sample for temperature data upload over MQTT using Raspberry Pi and DHT22 sensor.
 
 ---
 
@@ -12,14 +12,14 @@ description: Thingsboard IoT Platform sample for temperature data upload over MQ
 {% include templates/what-is-thingsboard.md %}
 
 This sample application performs collection of temperature and humidity values produced by [DHT22 sensor](https://www.adafruit.com/product/385) and further visualization on the real-time web dashboard.
-Collected data is pushed via MQTT to Thingsboard server for storage and visualization.
-The purpose of this application is to demonstrate Thingsboard [data collection API](/docs/user-guide/telemetry/) and [visualization capabilities](/docs/user-guide/visualization/).
+Collected data is pushed via MQTT to ThingsBoard server for storage and visualization.
+The purpose of this application is to demonstrate ThingsBoard [data collection API](/docs/user-guide/telemetry/) and [visualization capabilities](/docs/user-guide/visualization/).
 
 The DHT22 sensor is connected to [Raspberry Pi](https://en.wikipedia.org/wiki/Raspberry_Pi).
 Raspberry Pi offers a complete and self-contained Wi-Fi networking solution.
-Raspberry Pi push data to Thingsboard server via MQTT protocol by using [paho mqtt](https://eclipse.org/paho/clients/python/) python library.
+Raspberry Pi push data to ThingsBoard server via MQTT protocol by using [paho mqtt](https://eclipse.org/paho/clients/python/) python library.
 Data is visualized using built-in customizable dashboard. 
-The application that is running on Raspberry Pi is written on python which is quite simple and easy to understand.
+The application that is running on Raspberry Pi is written in Python which is quite simple and easy to understand.
 
 The video below demonstrates the final result of this tutorial.
 
@@ -77,14 +77,14 @@ The following picture summarizes the connections for this project:
 
 ### Provision your device
 
-This step contains instructions that are necessary to connect your device to Thingsboard.
+This step contains instructions that are necessary to connect your device to ThingsBoard.
 
-Open Thingsboard Web UI (http://localhost:8080) in browser and login as tenant administrator
+Open ThingsBoard Web UI (http://localhost:8080) in browser and login as tenant administrator
 
  - login: tenant@thingsboard.org
  - password: tenant
  
-Goto "Devices" section. Click "+" button and create device with name "DHT22 Demo Device". 
+Goto "Devices" section. Click "+" button and create a device with the name "DHT22 Demo Device". 
 
 ![image](/images/samples/raspberry/temperature/device.png)
 
@@ -94,19 +94,19 @@ Copy auto-generated access token from the "Access token" field. Please save this
 ![image](/images/samples/raspberry/temperature/credentials.png)
 
 
-Click "Copy Device ID" in device details to copy your device id to clipboard.
+Click "Copy Device ID" in device details to copy your device id to the clipboard.
 Paste your device id to some place, this value will be used in further steps.
 
 ### Provision your dashboard
 
 Download the dashboard file using this [**link**](/docs/samples/raspberry/resources/dht22_temp_dashboard_v2.json). 
-Use import/export [**instructions**](/docs/user-guide/ui/dashboards/#dashboard-importexport) to import the dashboard to your Thingsboard instance.
+Use import/export [**instructions**](/docs/user-guide/ui/dashboards/#dashboard-importexport) to import the dashboard to your ThingsBoard instance.
 
 ## Programming the Raspberry Pi
 
 ### MQTT library installation
 
-Following command will install MQTT Python library:
+The following command will install MQTT Python library:
 
 ```bash
 sudo pip install paho-mqtt
@@ -130,8 +130,8 @@ sudo python setup.py install
 
 ### Application source code
 
-Our application consists of single python script that is well commented. 
-You will need to modify **THINGSBOARD_HOST** constant to match your Thingsboard server installation IP address or hostname. 
+Our application consists of a single python script that is well documented. 
+You will need to modify **THINGSBOARD_HOST** constant to match your ThingsBoard server installation IP address or hostname.
 Use "demo.thingsboard.io" if you are using [live demo](https://demo.thingsboard.io/) server.
 
 The value of **ACCESS_TOKEN** constant corresponds to sample DHT22 demo device.
@@ -151,7 +151,7 @@ python mqtt-dht22.py
 
 ## Data visualization
 
-Finally, open Thingsboard Web UI. You can access this dashboard by logging in as a tenant administrator.
+Finally, open ThingsBoard Web UI. You can access this dashboard by logging in as a tenant administrator.
 
 In case of local installation:
  
@@ -175,7 +175,7 @@ As a result you will see two digital gauges and two time-series charts displayin
 
 ## Next steps
 
-Browse other [samples](/docs/samples) or explore guides related to main Thingsboard features:
+Browse other [samples](/docs/samples) or explore guides related to main ThingsBoard features:
 
  - [Device attributes](/docs/user-guide/attributes/) - how to use device attributes.
  - [Telemetry data collection](/docs/user-guide/telemetry/) - how to collect telemetry data.

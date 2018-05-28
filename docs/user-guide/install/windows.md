@@ -2,8 +2,8 @@
 layout: docwithnav
 assignees:
 - ikulikov
-title: Installing Thingsboard on Windows
-description: Installing Thingsboard on Windows
+title: Installing ThingsBoard on Windows
+description: Installing ThingsBoard on Windows
 
 ---
 
@@ -12,23 +12,38 @@ description: Installing Thingsboard on Windows
 * TOC
 {:toc}
 
-This guide describes how to install Thingsboard on a Windows machine.
+This guide describes how to install ThingsBoard on a Windows machine.
 Instructions below are provided for Windows 10/8.1/8/7 32-bit/64-bit. 
 
 #### Hardware requirements
 
-To run Thingsboard and third-party components on a single machine you will need at least 2Gb of RAM (4Gb recommended).
+To run ThingsBoard and third-party components on a single machine you will need at least 2Gb of RAM (4Gb recommended).
 
 #### Third-party components installation
 
 ##### Java
 
-Thingsboard service is running on Java 8. 
+ThingsBoard service is running on Java 8.
 If you don't have Java installed, please download and install Java 8 using this [link](https://java.com/en/download/).
 
-##### Cassandra
+#### [Optional] External database installation
 
-Thingsboard service requires Cassandra database.
+{% include templates/install-db.md %}
+
+###### SQL Database: PostgreSQL
+
+{% include templates/optional-db.md %}
+
+Download the installation file [here](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads#windows) and follow the installation instructions.
+
+Once PostgreSQL is installed you may want to create the new user or set the password for the main user.
+
+{% include templates/create-tb-db.md %}
+
+###### NoSQL Database: Cassandra
+
+{% include templates/optional-db.md %}
+
 Instructions listed below will help you to install Cassandra.
 
 - Download DataStax Community Edition v3.0.9
@@ -66,47 +81,80 @@ Instructions listed below will help you to install Cassandra.
  
 - The primary interface into Cassandra is the CQL (Cassandra Query Language) shell utility, which can be used to execute CQL commands for the new Cassandra server.
  
-#### Thingsboard service installation
+#### ThingsBoard service installation
 
 - Create working directory, for example "C:\thingsboard". 
-- Download [installation archive](https://github.com/thingsboard/thingsboard/releases/download/v1.2.3/thingsboard-windows-1.2.3.zip) or [build it from source](/docs/user-guide/install/building-from-source).
+- Download [installation archive](https://github.com/thingsboard/thingsboard/releases/download/v1.4/thingsboard-windows-1.4.zip) or [build it from source](/docs/user-guide/install/building-from-source).
 - Unzip installation archive to the working directory. The working directory should look like this after installation:
  
   ![image](/images/user-guide/install/windows/windows-folder.png)
 
-- Run **install.bat** script to install Thingsboard as a Windows service. 
+- Run windows shell (cmd) as Administrator. Change directory to your working dir.
+- Run **install.bat** script to install ThingsBoard as a Windows service (or run **"install.bat --loadDemo"** to install and add demo data).
   This means it will be automatically started on system startup. 
-  Similar, **uninstall.bat** will remove Thingsboard from Windows services.
-  
-  **NOTE** Scripts listed above should be executed using Administrator Role.
+  Similar, **uninstall.bat** will remove ThingsBoard from Windows services.
+  The output should be like:
   
   ```text
-  C:\thingsboard>install.bat
-  Detecting if it is 32 bit machine
-  CurrentVersion 1.8
-  Java 1.8 found!
-  Installing thingsboard ...
-  2017-01-31 02:26:50,704 INFO  - Starting ServiceWrapper in the CLI mode
-  2017-01-31 02:26:50,907 INFO  - Completed. Exit code is 0
-  DONE.
+    C:\thingsboard>install.bat --loadDemo
+    Detecting Java version installed.
+    Detecting if it is 64 bit machine
+    CurrentVersion
+    Detecting if it is 32 bit machine
+    CurrentVersion 1.8
+    Java 1.8 found!
+    Installing thingsboard ...
+     ===================================================
+     :: ThingsBoard ::       (v1.4)
+     ===================================================
+
+    Starting ThingsBoard Installation...
+    Installing DataBase schema...
+    Installing Cassandra DataBase schema...
+    Loading system data...
+    Installation finished successfully!
+    2017-07-23 21:47:12,079 INFO  - Starting ServiceWrapper in the CLI mode
+    2017-07-23 21:47:12,317 INFO  - Completed. Exit code is 0
+    ThingsBoard installed successfully!
   ```
-  
-  Congratulations! Thingsboard application is now installed on your Windows machine as a service. 
 
-##### Provision database schema and initial data
+#### [Optional] Configure ThingsBoard to use external database
+ 
+{% include templates/optional-db.md %} 
+ 
+Edit ThingsBoard configuration file: 
 
-Once Cassandra and Thingsboard services are installed, open "Cassandra CQL Shell" and execute following scripts:
-
-```bash
-cqlsh> source 'c:\thingsboard\data\schema.cql';
-cqlsh> source 'c:\thingsboard\data\system-data.cql';
-cqlsh> source 'c:\thingsboard\data\demo-data.cql';
+```text
+C:\thingsboard\conf\thingsboard.yml
 ```
 
-##### Start Thingsboard service
+{% include templates/disable-hsqldb.md %} 
 
-Now let's start the Thingsboard service!
-Open command prompt as an Administrator and execute following command:
+For **PostgreSQL**:
+
+{% include templates/enable-postgresql.md %} 
+
+For **Cassandra DB**:
+
+Locate and set database type configuration parameter to 'cassandra'.
+ 
+```text
+database:
+  type: "${DATABASE_TYPE:cassandra}" # cassandra OR sql
+```
+
+{% include templates/memory-update-for-slow-machines.md %} 
+
+Go to your environment variables and set JAVA_OPTS variable: 
+
+```text
+JAVA_OPTS=-Xms256M -Xmx256M
+```
+
+##### Start ThingsBoard service
+
+Now let's start the ThingsBoard service!
+Open the command prompt as an Administrator and execute the following command:
 
 ```shell
 net start thingsboard
@@ -115,18 +163,18 @@ net start thingsboard
 Expected output:
 
 ```text
-The Thingsboard Server Application service is starting.
-The Thingsboard Server Application service was started successfully.
+The ThingsBoard Server Application service is starting.
+The ThingsBoard Server Application service was started successfully.
 ```
 
-In order to restart the Thingsboard service you can execute following commands:
+In order to restart the ThingsBoard service you can execute following commands:
 
 ```shell
 net stop thingsboard
 net start thingsboard
 ```
 
-Once started, you will be able to open Web UI using following link:
+Once started, you will be able to open Web UI using the following link:
 
 ```bash
 http://localhost:8080/
@@ -149,7 +197,7 @@ In case of any unclear errors, use general [troubleshooting guide](/docs/user-gu
 
 ##### Windows firewall settings
 
-In order to have external access to Thingsboard Web UI and device connectivity (HTTP, MQTT, CoAP)
+In order to have external access to ThingsBoard Web UI and device connectivity (HTTP, MQTT, CoAP)
 you need to create a new inbound rule with Windows Firewall with Advanced Security.
  
 - Open "Windows Firewall" from "Control Panel":
@@ -180,6 +228,6 @@ you need to create a new inbound rule with Windows Firewall with Advanced Securi
 
 ![image](/images/user-guide/install/windows/windows7-firewall-7.png)
 
-- Finally give the name to this rule (for ex. "Thingsboard Service Networking") and click "Finish".
+- Finally, give the name to this rule (for ex. "ThingsBoard Service Networking") and click "Finish".
 
 ![image](/images/user-guide/install/windows/windows7-firewall-8.png)

@@ -1,9 +1,9 @@
-bigheader: "Thingsboard IoT Gateway"
-abstract: "Integrate legacy and third-party systems with Thingsboard platform using IoT Gateway."
+bigheader: "ThingsBoard IoT Gateway"
+abstract: "Integrate legacy and third-party systems with ThingsBoard platform using IoT Gateway."
 toc:
 - title: IoT Gateway
   path: /docs/iot-gateway/
-- title: What is Thingsboard IoT Gateway?
+- title: What is ThingsBoard IoT Gateway?
   path: /docs/iot-gateway/what-is-iot-gateway/
 - title: Getting Started
   path: /docs/iot-gateway/getting-started/
@@ -31,3 +31,7 @@ toc:
     path: /docs/iot-gateway/mqtt/
   - title: Sigfox Extension
     path: /docs/iot-gateway/sigfox/
+  - title: Modbus Extension
+    path: /docs/iot-gateway/modbus/
+  - title: Multi-tenant configuration 
+    path: /docs/iot-gateway/multi-tenant-configuration/

@@ -8,7 +8,7 @@ title: Send Mail Action
 
 ## Overview
 
-This component allows to build email message by substitution of device attributes and message data into configurable templates.
+This component allows building email message by substitution of device attributes and message data into configurable templates.
 
 ## Configuration
 

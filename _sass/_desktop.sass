@@ -5,24 +5,57 @@ $nav-buttons-margin-left: 30px
 
 @media screen and (min-width: 1025px)
 
+	.logo
+		width: 180px
+		height: 60px
+
+	.nav-buttons
+		.nav-items
+			display: inline-block
+
 	.nav-buttons
 		.button + *
 			margin-left: $nav-buttons-margin-left
 
-	.open-nav, .y-enough
-		#gettingStarted, #liveDemo
+	//.open-nav, .y-enough
+		//#gettingStarted, #liveDemo
 			margin-left: $nav-buttons-margin-left
 
 	#mainNav
 		.nav-box
 			padding: 0 20px
+		main
+			&#headNav
+				h3
+					font-size: 28px
+					line-height: 36px
 
 	#vendorStrip
 		height: $vendor-strip-height
 		line-height: $vendor-strip-height
 		#docsList
 			li
-				a.YAH
+				a
+					position: relative
+					&:hover
+						text-decoration: none !important
+					&::before
+						content: ''
+						position: absolute
+						left: 0px
+						bottom: 8px
+						width: 100%
+						height: 3px
+						background-color: #f5f6f7
+						transform: scale(0, 1)
+						transform-origin: 0 50%
+						transition: 250ms
+					&:not(.YAH):hover::before
+						transform: scale(0.25, 1)
+					&.YAH::before
+						background-color: $light-blue
+						transform: scale(1, 1)
+				//a.YAH
 					&:after
 						content: ""
 						display: block
@@ -37,18 +70,16 @@ $nav-buttons-margin-left: 30px
 		#searchBox
 			float: right
 
-	#githubButtonContainer
-		display: inline-block
-
-	#home
-		#hero
-			#vendorStrip
-				display: block
-
 	#docs
 		#hero
 			h1, h5
 				text-align: left
+
+			#pe-docs-banner
+				flex-direction: row
+				div
+					padding-left: 10px
+					padding-top: 0px
 
 			#vendorStrip
 				#docsList
@@ -68,31 +99,18 @@ $nav-buttons-margin-left: 30px
 			position: relative
 			float: left
 			display: block
-			width: 220px
-			height: 80px
+			width: 180px
+			height: 60px
 			top: 0
 			left: 0
 			transform: none
 			background-image: url(../images/thingsboard_logo_white.svg)
+		#tryItNow.center-button
+			margin-left: 20px
 
-		&.flip-nav, &.open-nav
-			.logo
-				background-image: url(../images/thingsboard_logo_blue.svg)
-
-	@media screen and (min-width: 1250px)
-		#docs
-			#hero
-				#vendorStrip
-					#docsList
-						li
-							margin-right: 20px
-
-	@media screen and (min-width: 1500px)
-		#docs
-			#hero
-				#vendorStrip
-					#searchBox
-						width: 25%
+		//&.flip-nav, &.open-nav
+		//	.logo
+		//		background-image: url(../images/thingsboard_logo_blue.svg)
 
 	#encyclopedia
 		padding: 50px 50px 20px 20px
@@ -122,7 +140,7 @@ $nav-buttons-margin-left: 30px
 		.push-menu-close-button
 			display: none
 
-	#docsContent
+	#docsContent, #peContent
 		width: calc(100% - 400px)
 		&.horizontalToc
 			width: calc(100% - 50px)
@@ -134,53 +152,24 @@ $nav-buttons-margin-left: 30px
 		#video
 			width: 50%
 
-		.contact-form
-			.form-element
-				float: left
-				&.half
-					width: 49.5%
-					float: left
-					margin-left: 1%
-					clear: none
-				&.first
-					clear: both
-					margin-left: 0
+	#docsContent
+		.supportPlans
+			.supportPlan
+				.pricingTable
+					li
+						font-size: 18px
+		.company-logo
+			img
+				max-width: 400px
 
 	section, header, footer
 		main
 			max-width: $main-max-width
 
-	#home
-		section, header
-			main
-				max-width: 1000px
-		footer
-			main
-				max-width: 1000px
-
 	.oceanNodes
 		main
 			position: relative
 			max-width: 830px
-
-			&:nth-child(1)
-				max-width: 1000px
-				padding-right: 475px
-
-				h3, p
-					text-align: left
-
-				.image-wrapper
-					position: absolute
-					max-width: 48%
-					transform: translateY(-50%)
-
-					img
-						max-width: 425px
-
-				//.content
-				//	width: 50%
-
 
 	#video
 		width: $main-max-width
@@ -201,13 +190,6 @@ $nav-buttons-margin-left: 30px
 			//div:nth-child(3), div:nth-child(4)
 			//	margin-top: 0
 
-
-	//#home #bigSocial
-	//	div
-	//		width: calc(33% - 15px)
-	//
-	//	div:nth-child(3)
-	//		margin-top: inherit
 
 	// FOOTER
 	footer
@@ -337,7 +319,7 @@ $nav-buttons-margin-left: 30px
 			h1
 				padding: 20px
 
-		#gettingStarted, #liveDemo
+		//#gettingStarted, #liveDemo
 			width: auto
 			background-color: $blue
 			padding: 0 20px

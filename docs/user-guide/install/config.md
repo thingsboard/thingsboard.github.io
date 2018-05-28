@@ -3,13 +3,13 @@ layout: docwithnav
 assignees:
 - ashvayka
 title: Configuration
-description: Thingsboard IoT platform configuration guide
+description: ThingsBoard IoT platform configuration guide
 
 ---
 
-This guide will help you to get familiar with Thingsboard configuration files and parameters.
+This guide will help you to get familiar with ThingsBoard configuration files and parameters.
  
-Once you have installed Thingsboard, you can find configuration files in the following directory:
+Once you have installed ThingsBoard, you can find configuration files in the following directory:
 
 ```bash
 Windows: YOUR_INSTALL_DIR/conf
@@ -50,10 +50,11 @@ We will list only main configuration parameters below to avoid duplication of th
 | cassandra.url                    | Cassandra node list                                                                    | 127.0.0.1:9042    | CASSANDRA_URL                     |
 | security.jwt.tokenExpirationTime | JWT token expiration time in seconds used by Web UI                                    | 900               | JWT_TOKEN_EXPIRATION_TIME         |
 | security.jwt.refreshTokenExpTime | JWT refresh token expiration time in seconds used by Web UI (session expiration time)  | 3600              | JWT_REFRESH_TOKEN_EXPIRATION_TIME |
+| database.type                    | Type of the database to use: sql or cassandra                                          | sql               | DATABASE_TYPE                     |
 
 #### thingsboard.conf
 
-Configuration file for startup script. Contains Java options and classpath related parameters.
+The onfiguration file for the startup script. Contains Java options and classpath related parameters.
 
 #### actor-system.conf
 
@@ -62,5 +63,5 @@ Allows performance tuning for specific use cases.
 
 #### logback.xml
 
-Configuration file for logging. Allows to control log level, size of log files and total size/volume of logs.
+The configuration file for logging. Allows controlling the log level, the size of log files and the total size/volume of logs.
 

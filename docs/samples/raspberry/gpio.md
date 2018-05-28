@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
-title: Raspberry Pi GPIO control over MQTT using Thingsboard
-description: Thingsboard IoT Platform sample for Raspberry Pi GPIO control over MQTT
+title: Raspberry Pi GPIO control over MQTT using ThingsBoard
+description: ThingsBoard IoT Platform sample for Raspberry Pi GPIO control over MQTT
 
 ---
 
@@ -11,10 +11,10 @@ description: Thingsboard IoT Platform sample for Raspberry Pi GPIO control over 
 ## Introduction
 {% include templates/what-is-thingsboard.md %}
 
-This sample application will allow you to control GPIO of your Raspberry Pi device using Thingsboard web UI. We will observe GPIO control using Led connected to one of the pins. 
-The purpose of this application is to demonstrate Thingsboard [RPC capabilities](/docs/user-guide/rpc/).
+This sample application will allow you to control GPIO of your Raspberry Pi device using ThingsBoard web UI. We will observe GPIO control using Led connected to one of the pins.
+The purpose of this application is to demonstrate ThingsBoard [RPC capabilities](/docs/user-guide/rpc/).
 
-Raspberry Pi will use simple application written in Python that will connect to Thingsboard server via [MQTT](https://en.wikipedia.org/wiki/MQTT) and listen to RPC commands.
+Raspberry Pi will use simple application written in Python that will connect to ThingsBoard server via [MQTT](https://en.wikipedia.org/wiki/MQTT) and listen to RPC commands.
 Current GPIO state and GPIO control widget is visualized using built-in customizable dashboard. 
 
 The video below demonstrates the final result of this tutorial.
@@ -41,14 +41,14 @@ The video below demonstrates the final result of this tutorial.
 
 ## Wiring schema
 
- Since our application will allow to control state of all available GPIO pins, we recommend to attach some LEDs to those pins for visibility.
+ Since our application will allow controlling the state of all available GPIO pins, we recommend attaching some LEDs to those pins for visibility.
  You can use this [basic instruction](https://www.raspberrypi.org/documentation/usage/gpio/) or [another one](https://projects.drogon.net/raspberry-pi/gpio-examples/tux-crossing/gpio-examples-1-a-single-led/) to wire some LEDs.
 
 ## Programming the Raspberry Pi
 
 ### MQTT library installation
 
-Following command will install MQTT Python library:
+The following command will install MQTT Python library:
 
 ```bash
 sudo pip install paho-mqtt
@@ -56,8 +56,8 @@ sudo pip install paho-mqtt
 
 ### Application source code
 
-Our application consists of single python script that is well commented. 
-You will need to modify **THINGSBOARD_HOST** constant to match your Thingsboard server installation IP address or hostname. 
+Our application consists of a single python script that is well documented. 
+You will need to modify **THINGSBOARD_HOST** constant to match your ThingsBoard server installation IP address or hostname.
 Use "demo.thingsboard.io" if you are using [live demo](https://demo.thingsboard.io/) server.
 
 The value of **ACCESS_TOKEN** constant corresponds to sample Raspberry Pi device in pre-provisioned [demo data](/docs/samples/demo-account/#tenant-devices).
@@ -77,17 +77,17 @@ python gpio.py
 
 ## Data visualization
 
-In order to simplify this guide we have included "Raspberry PI GPIO Demo Dashboard" to the [demo data](/docs/samples/demo-account/#dashboards) that is available in each thingboard installation. 
-Of course, you can modify this dashboard: tune, add, delete widgets, etc.
+In order to simplify this guide, we have included "Raspberry PI GPIO Demo Dashboard" to the [demo data](/docs/samples/demo-account/#dashboards) that is available in each Thingboard installation. 
+You still can modify this dashboard: tune, add, delete widgets, etc.
 You can access this dashboard by logging in as a tenant administrator. Use
 
  - login: tenant@thingsboard.org
  - password: tenant
  
-in case of local Thingsboard installation. 
+in case of local ThingsBoard installation.
  
 Once logged in, open **Dashboards->Raspberry PI GPIO Demo Dashboard** page. You should observe demo dashboard with GPIO control and status panel for your device. 
-Now you can switch status of GPIOs using control panel. As a result you will see LEDs status change on device and on the status panel.
+Now you can switch status of GPIOs using control panel. As a result, you will see LEDs status change on the device and on the status panel.
 
 Below is the screenshot of the "Raspberry PI GPIO Demo Dashboard".  
 
@@ -95,7 +95,7 @@ Below is the screenshot of the "Raspberry PI GPIO Demo Dashboard".
  
 ## Next steps
 
-Browse other [samples](/docs/samples) or explore guides related to main Thingsboard features:
+Browse other [samples](/docs/samples) or explore guides related to main ThingsBoard features:
 
  - [Device attributes](/docs/user-guide/attributes/) - how to use device attributes.
  - [Telemetry data collection](/docs/user-guide/telemetry/) - how to collect telemetry data.

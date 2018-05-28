@@ -17,6 +17,6 @@
 http://thingsboard.io/...
 
 <!--Optional Information (remove the comment tags around information you would like to include)-->
-<!--Thingsboard Version:-->
+<!--ThingsBoard Version:-->
 
 <!--Additional Information:-->

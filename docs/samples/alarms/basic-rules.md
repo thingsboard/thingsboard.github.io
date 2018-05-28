@@ -10,19 +10,19 @@ description: Triggering email alarms based on IoT sensor readings and configurab
 
 This tutorial will demonstrate how to configure Rule that will generate Alarm when certain device reports temperature or humidity that exceeds certain thresholds.
 
-Lets assume that we have devices that are able to report humidity and temperature values. 
+Let's assume that we have devices that are able to report humidity and temperature values. 
 We have one device per room (zone) in the building or other facility and we want to specify different rules based on zone type.
 
 ## Assumptions
 
-We assume you have already configured email plugin that will distribute generated alarms to recepients. You can follow previous [tutorial](/docs/samples/alarms/mail/) to do this. 
+We assume you have already configured email plugin that will distribute generated alarms to recipients. You can follow previous [tutorial](/docs/samples/alarms/mail/) to do this. 
 
 ## How it works?
 
 We will provision simple rule that filters incoming data using:
  
  - "Message type" filter to react on telemetry data.
- - "Device Attributes" filter to process data from device that has certain room type as a server side attribute.
+ - "Device Attributes" filter to process data from a device that has certain room type as a server side attribute.
  - "Device Telemetry" filter to detect humidity and temperature values that are out of pre-configured range.
 
 ## Device provisioning
@@ -111,26 +111,26 @@ Humidity - $humidity.valueAsString (%)!
 ![image](/images/samples/alarms/add-processor.png)
 
 **NOTE** Alarm Id is a unique identifier. If there will be multiple events that match filters, alarms will be de-duplicated based on the Alarm Id. 
-Email will be sent once per alarm. 
+An email will be sent once per alarm. 
 
-In our case we use timestamp that is truncated to minutes to make sure that we will send email once per minute or less frequently. 
+In our case, we use a timestamp that is truncated to minutes to make sure that we will send an email once per minute or less frequently. 
 
 #### Step 8. Rule Action
 
 Select "SendGrid Email Plugin" from previous [tutorial](/docs/samples/alarms/mail/) and click on "Create" button.
-Don't forget to replace "thingsboard@gmail.com" with your mail address.
+Don't forget to replace "thingsboard@gmail.com" with your email address.
 
 ![image](/images/samples/alarms/add-action.png)
 
 #### Step 9. Save and Activate Rule
 
-Once rule is saved successfully, don't forget to activate it by clicking on "Activate" button (see image below).
+Once a rule is saved successfully, don't forget to activate it by clicking on "Activate" button (see image below).
 
 ![image](/images/samples/alarms/activate-rule.png)
 
 ## Dry run
 
-Let's check our configuration by publishing some telemetry data. We will use access token from the device that we have created on the [first step](#step1-create-device).
+Let's check our configuration by publishing some telemetry data. We will use access token from the device that we have created in the [first step](#step1-create-device).
  
 ```shell
 mosquitto_pub -d -h "demo.thingsboard.io" -t "v1/devices/me/telemetry" -u "$YOUR_ACCESS_TOKEN" -m "{'temperature':42, 'humidity':74}"

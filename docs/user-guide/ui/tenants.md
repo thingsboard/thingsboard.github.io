@@ -3,15 +3,15 @@ layout: docwithnav
 assignees:
 - ashvayka
 title: Tenants
-description: Thingsboard Tenants management
+description: ThingsBoard Tenants management
 
 ---
 
 * TOC
 {:toc}
 
-Thingsboard support [Multitenancy](https://en.wikipedia.org/wiki/Multitenancy) out-of-the-box. 
-You can treat Thingsboard tenant as a separate business-entity: individual or organization who owns or produce devices.
+ThingsBoard support [Multitenancy](https://en.wikipedia.org/wiki/Multitenancy) out-of-the-box.
+You can treat ThingsBoard tenant as a separate business-entity: individual or organization who owns or produce devices.
 
 **System administrator** is able to create tenant entities.
 
@@ -24,6 +24,7 @@ System administrator is also able to create multiple [users](/docs/user-guide/ui
 Tenant Administrator is able to do following actions:
  
  - Provision and Manage [Devices](/docs/user-guide/ui/devices).
+ - Provision and Manage [Assets](/docs/user-guide/ui/assets).
  - Create and Manage [Customers](/docs/user-guide/ui/customers).
  - Create and Manage [Dashboards](/docs/user-guide/ui/dashboards).
  - Configure [Rules](/docs/user-guide/ui/rules) and [Plugins](/docs/user-guide/ui/plugins)

@@ -14,21 +14,21 @@ description: Supported HTTP API Reference for IoT Devices
 
 ##### HTTP basics
 
-[HTTP](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol) is a general-purpose network protocol that can be use in IoT applications. 
+[HTTP](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol) is a general-purpose network protocol that can be used in IoT applications. 
 You can find more information about HTTP [here](https://www.w3.org/Protocols/rfc2616/rfc2616.txt).
-HTTP protocol is TCP based, and uses request-response model.  
+HTTP protocol is TCP based and uses request-response model.  
 
-Thingsboard server nodes act as a HTTP Server that supports both HTTP and HTTPS protocols.  
+ThingsBoard server nodes act as an HTTP Server that supports both HTTP and HTTPS protocols.
 
 ##### Client libraries setup
 
-You can find HTTP client libraries for different programming languages in the web. Examples in this article will be based on [curl](https://en.wikipedia.org/wiki/CURL).
+You can find HTTP client libraries for different programming languages on the web. Examples in this article will be based on [curl](https://en.wikipedia.org/wiki/CURL).
 In order to setup this tool, you can use instructions in our [Hello World](/docs/getting-started-guides/helloworld/) guide.
 
 ##### HTTP Authentication and error codes
 
 We will use *access token* device credentials in this article and they will be referred to later as **$ACCESS_TOKEN**.
-Application need to include **$ACCESS_TOKEN** as a path parameter into each HTTP request.
+The application needs to include **$ACCESS_TOKEN** as a path parameter in each HTTP request.
 Possible error codes and their reasons:
 
 * **400 Bad Request** - Invalid URL, request parameters or body.
@@ -37,7 +37,7 @@ Possible error codes and their reasons:
 
 ## Key-value format
 
-By default, Thingsboard supports key-value content in JSON. Key is always a string, while value can be either string, boolean, double or long.
+By default, ThingsBoard supports key-value content in JSON. Key is always a string, while value can be either string, boolean, double or long.
 Using custom binary format or some serialization framework is also possible. See [protocol customization](#protocol-customization) for more details.
 For example:
 
@@ -47,7 +47,7 @@ For example:
 
 ## Telemetry upload API
 
-In order to publish telemetry data to Thingsboard server node, send POST request to the following URL:
+In order to publish telemetry data to ThingsBoard server node, send POST request to the following URL:
  
 ```shell
 http(s)://host:port/api/v1/$ACCESS_TOKEN/telemetry
@@ -65,7 +65,7 @@ or
 [{"key1":"value1"}, {"key2":"value2"}]
 ```
 
-**Please note** that in this case, server-side timestamp will be assigned to uploaded data!
+**Please note** that in this case, the server-side timestamp will be assigned to uploaded data!
 
 In case your device is able to get the client-side timestamp, you can use following format:
 
@@ -87,7 +87,7 @@ D,telemetry-data-with-ts.json,json,resources/telemetry-data-with-ts.json,/docs/r
  
 ## Attributes API
 
-Thingsboard attributes API allows devices to 
+ThingsBoard attributes API allows devices to
 
 * Upload [client-side](/docs/user-guide/attributes/#attribute-types) device attributes to the server.
 * Request [client-side](/docs/user-guide/attributes/#attribute-types) and [shared](/docs/user-guide/attributes/#attribute-types) device attributes from the server.
@@ -95,7 +95,7 @@ Thingsboard attributes API allows devices to
  
 ##### Publish attribute update to the server
 
-In order to publish client-side device attributes to Thingsboard server node, send POST request to the following URL:
+In order to publish client-side device attributes to ThingsBoard server node, send POST request to the following URL:
 
 ```shell
 http(s)://host:port/api/v1/$ACCESS_TOKEN/attributes
@@ -108,7 +108,7 @@ C,new-attributes-values.json,json,resources/new-attributes-values.json,/docs/ref
 
 ##### Request attribute values from the server
 
-In order to request client-side or shared device attributes to Thingsboard server node, send GET request to the following URL:
+In order to request client-side or shared device attributes to ThingsBoard server node, send GET request to the following URL:
 
 ```shell
 http(s)://host:port/api/v1/$ACCESS_TOKEN/attributes?clientKeys=attribute1,attribute2&sharedKeys=shared1,shared2
@@ -120,7 +120,7 @@ A,Example,shell,resources/http-attributes-request.sh,/docs/reference/resources/h
 B,Result,json,resources/attributes-response.json,/docs/reference/resources/attributes-response.json{% endcapture %}
 {% include tabs.html %}
 
-**Please note**, intersection of client-side and shared device attribute keys is a bad practise! 
+**Please note**, the intersection of client-side and shared device attribute keys is a bad practice! 
 However, it is still possible to have same keys for client, shared or even server-side attributes.
 
 ##### Subscribe to attribute updates from the server
@@ -131,8 +131,7 @@ In order to subscribe to shared device attribute changes, send GET request with 
 http(s)://host:port/api/v1/$ACCESS_TOKEN/attributes/updates
 ```
 
-Once shared attribute will be changed by one of the server-side components (REST API or custom plugins)
-client will receive following update: 
+Once shared attribute will be changed by one of the server-side components (REST API or custom plugins) the client will receive the following update: 
 
 {% capture tabspec %}http-attributes-subscribe
 A,Example,shell,resources/http-attributes-subscribe.sh,/docs/reference/resources/http-attributes-subscribe.sh
@@ -143,13 +142,13 @@ B,Result,json,resources/attributes-response.json,/docs/reference/resources/attri
 
 ### Server-side RPC
 
-In order to subscribe to RPC commands from server, send GET request with optional "timeout" request parameter to the following URL:
+In order to subscribe to RPC commands from the server, send GET request with optional "timeout" request parameter to the following URL:
 
 ```shell
 http(s)://host:port/api/v1/$ACCESS_TOKEN/rpc
 ```
 
-Once subscribed, client may receive rpc request or timeout message if there is no requests to particular device.
+Once subscribed, a client may receive rpc request or a timeout message if there are no requests to a particular device.
 An example of RPC request body is shown below:
 
 ```json
@@ -185,13 +184,13 @@ C,Reply Body,shell,resources/rpc-response.json,/docs/reference/resources/rpc-res
 
 ### Client-side RPC
 
-In order to send RPC commands to server, send POST request to the following URL:
+In order to send RPC commands to the server, send POST request to the following URL:
 
 ```shell
 http://host:port/api/v1/$ACCESS_TOKEN/rpc
 ```
 
-Both request and response body should be a valid JSON documents. Content of the documents is specific to the plugin that will handle your request.
+Both request and response body should be valid JSON documents. Theh content of the documents is specific to the plugin that will handle your request.
 
 {% capture tabspec %}http-rpc-from-client
 A,Example Request,shell,resources/http-rpc-from-client.sh,/docs/reference/resources/http-rpc-from-client.sh

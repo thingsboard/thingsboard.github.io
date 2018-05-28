@@ -11,133 +11,390 @@ title: Extensions (Plugins and Actions) Development Guide
 
 #### Introduction
 
-**Thingsboard extensions** are additional modules that could be developed and fitted to the platform to provide new functionality required by your needs.
-As an example, you can easily add your custom **extension** that could send messages from **Thingsboard** to any other external system, additionally applying your specific business logic calculations before send.
-Or you can add **extension** that do specific stream analytics on device *telemetry* stream data and pushes result back to **Thingsboard** instance.
+**ThingsBoard extensions** are custom modules that provide additional functionality to the ThingsBoard core components.
 
-Here is high level design flow of **Thingsboard extensions**:
+They can be easily developed based on your business needs.
+
+For example, a custom **extension** can be added to send messages from **ThingsBoard** to any other external system once **ThingsBoard** receives *telemetry* (timeseries or attributes).
+Additionally, an **extension** can apply some transformations to the telemetry before forwarding a message.
+
+Alternatively, an **extension** can forward the same device *telemetry* data to your *RESTfull* microservice. The microservice itself does the stream analytics on data and pushes the aggregated result back to **ThingsBoard** as new *telemetry* data for this device.
+
+Here is the high level design flow of **ThingsBoard extensions**:
 
 ![image](/images/user-guide/contribution/extension-design.png)
 
-#### Maven module
+#### Design
 
-Custom extensions are separate *maven* modules in **Thingsboard** [github repository](https://github.com/thingsboard/thingsboard/tree/master/extensions).
-New *maven* module must be created inside *extensions* module to add new extension.
-Then this new *maven* module should be added as dependency to the *application* module dependencies.
+Extensions are designed as additional *components* that can be easily added to **ThingsBoard**.
 
-*** TODO - ADD DETAILS REGARDING WHERE INCLUDE THIS  ***
+In order to achieve this goal, extensions are implemented as separate project dependencies.
 
-During the start-up **Thingsboard** parses *classes* inside classpath, finds annotated with custom *Thingsboard Plugin and Action Annotations* and adds new extension to the platform.
+You can check the list of the extensions that are included into **ThingsBoard** by default [here](https://github.com/thingsboard/thingsboard/tree/master/extensions).
 
-Once it's done you are able to use your custom extension as any other extension in the system.
+**ThingsBoard** scans the dependency classes, and adds new extensions that are marked with the predefined set of *ThingsBoard Plugin and Action Annotations* to the platform.
+This is done during the application startup. 
 
-#### API
+Adding an extension is as easy as annotating custom classes with special annotations and adding your jar file to the classpath of the **ThingsBoard** server instance. Everything else will be done by **ThingsBoard**.
 
-To properly construct new extension you'll need to develop **Action** and **Plugin** functionality using predefined set of *Classes*, *Interfaces* and *Annotations*.
-As well, you'll need to provide JSON descriptor for the UI forms of the **Plugin** and **Action**.
+The Approach that we prefer to use in the [thingsboard.io](https://thingsboard.io/) and strongly advise to follow is every new extension that is added has to be a separate *maven* module that resides in *extensions* sub-module of the [core module of ThingsBoard project](https://github.com/thingsboard/thingsboard).
 
-We'll provide details how to create new extensions to the system using as a reference [REST API Call Extension](/docs/reference/plugins/rest/) that is already placed to the system.
+This new *maven* module should be added as a dependency to the *application* module dependencies.
 
-Plugin is responsible for sending HTTP requests to specific endpoints and code for this plugin is located [here](https://github.com/thingsboard/thingsboard/tree/master/extensions/extension-rest-api-call/src/main/java/org/thingsboard/server/extensions/rest).
+Here is an example how *Kafka Extension* can be added as dependency to *application/pom.xml* file:
 
-#### Server-side development
+```xml
+...
+<dependencies>
+    ...
+    <dependency>
+        <groupId>org.thingsboard.extensions</groupId>
+        <artifactId>extension-kafka</artifactId>
+        <classifier>extension</classifier>
+    </dependency>
+</dependencies>
+...
+```
 
-Server-side development contains of two parts - **Action** and **Plugin** coding.
+During the start-up, **ThingsBoard** will parse *classes* in the classpath, find the ones that are annotated with custom *ThingsBoard Plugin and Action Annotations* and add a new extension to the platform.
+
+The extension becomes ready and can be used by users.
+
+#### API details
+
+In order to properly build a new extension you'll need to develop *Action* and *Plugin* functionality using the predefined set of *Classes*, *Interfaces* and *Annotations*.
+Also, you'll need to implement JSON descriptors for the UI forms of the *Plugin* and *Action* components.
+
+We are going to provide the details on how to create new extensions to the system based on the [REST API Call Extension](/docs/reference/plugins/rest/) that is already placed in the system.
+
+*Extension* is responsible for sending HTTP requests to specific endpoints. [Here](https://github.com/thingsboard/thingsboard/tree/master/extensions/extension-rest-api-call/src/main/java/org/thingsboard/server/extensions/rest) is the extension code.
+
+Extension Development consists of two stages:
+
+- *Plugin* and *Action* server-side classes implementation. These classes are responsible for handling telemetry messages and doing job by connecting to 3rd party systems, sending messages etc.
+- Creating JSON descriptors that are used to generate UI forms for *Plugin* and *Action* configuration.
+
+#### Server-side classes implementation
+
+The server-side classes implementation contains of two parts - creating *Action* classes ans *Plugin* classes.
 
 ![image](/images/user-guide/contribution/action-plugin-communication.png)
 
-##### Action guide development
+##### Action Development Guide
 
-Action is responsible for processing messages that have been delivered from the devices (telemetry or attribute data) and converting it into **RuleToPluginMsg** object that is going to be processed by **Plugin**.
+*Action* is responsible for processing a message that  was sent from a device (timeseries or attribute data) and converting it into a *Java* object (an object must implement *RuleToPluginMsg* interface) that is going to be processed by *Plugin*.
+This *Java* object contains payload data that is created from the device telemetry message data (timeseries or attribute) and *Action* configuration. 
+The payload contains data that is going to be sent to external systems, for example, message body for the email or message that is going to be sent to Kafka topic.
+
 Here are particular samples:
 
-    - in case of Email extension, action will create email object
-    - in case of Kafka extenstion, action will create message object that will be published to Kafka topic
-    - in case of REST API Call extenstion, action will create object that contains information reqarding REST request to specific endpoint
-    - etc.
+- in case of **Email Extension**, *Action* will create email object
+- in case of **Kafka Extension**, *Action* will create message object that will be published to Kafka topic
+- in case of **REST API Call Extension**, *Action* will create object that contains information regarding REST request to specific endpoint
+- etc.
 
-First, you'll need to create class that implements **org.thingsboard.server.extensions.api.plugins.PluginAction** interface.
+To create an *Action* for a specific extension, you'll need to create a class that implements *org.thingsboard.server.extensions.api.plugins.PluginAction* interface:
 
-This class is the core of your **Action** and here you should implement logic where you'll create object that is going to be passed to **Plugin** for processing.
+```java
+public interface PluginAction<T> extends ConfigurableComponent<T>, RuleLifecycleComponent {
+    Optional<RuleToPluginMsg<?>> convert(RuleContext ctx, ToDeviceActorMsg toDeviceActorMsg, RuleProcessingMetaData deviceMsgMd);
+    Optional<ToDeviceMsg> convert(PluginToRuleMsg<?> response);
+    boolean isOneWayAction();
+}
+```
 
-It must be annotated with **org.thingsboard.server.extensions.api.component.Action** so **Thingsboard** will correctly process this class during start-up.
+- **convert(RuleContext ctx, ToDeviceActorMsg toDeviceActorMsg, RuleProcessingMetaData deviceMsgMd)** - builds messages that are going to be sent to a *Plugin*
+- **convert(PluginToRuleMsg<?> response)** - converts responses from *Plugin* notifying regarding of the result of the *Action* call
+- **isOneWayAction()** - notifies platform that action is going to wait for it's result before return
 
-In case of **REST API Call** extension sample class is **org.thingsboard.server.extensions.rest.action.RestApiCallPluginAction**.
-In this extension **Action** is responsible for creating object that contains information regarding REST request - body, http method, result code, etc.
+and *org.thingsboard.server.extensions.api.rules.RuleLifecycleComponent* interface:
+ 
+```java
+public interface RuleLifecycleComponent {
+    void resume();
+    void suspend();
+    void stop();
+}
+```
+   
+- **resume** method - provides logic that should be performed once the action resumed if needed.
+- **suspend** method - provides logic that should be performed once the action paused if needed (closes external resources, connections etc.).
+- **stop** method - provides logic that should be performed once the action stopped if needed (closes external resources, connections etc.).
 
-Object that **Action** creates is a simple POJO class that holds needed information.
+This class is the core of your *Action* and here you should implement the logic for creating a *Java* object (an object that implements *RuleToPluginMsg* interface). 
+This object is going to be passed to *Plugin* for processing.
 
-In case of **REST API Call** extension sample class is **org.thingsboard.server.extensions.rest.action.RestApiCallActionPayload**.
-It holds information regarding REST request. This class must implements **Serializable** interface to be able to be received by **Plugin**.
+*Action* class must be annotated with *org.thingsboard.server.extensions.api.component.Action* so **ThingsBoard** will correctly process this class during start-up.
 
-*** TODO - ADD WHAT IS RestApiCallActionMsg ***
+In case of **REST API Call Extension** sample class is *org.thingsboard.server.extensions.rest.action.RestApiCallPluginAction*.
+In this extension *Action* is responsible for creating a *Java* object that contains information regarding the *REST* request.
 
-To finish with **Action** implementation you'll need to add POJO class that contains configuration of the *UI Action* form.
-It basically contains fields that are mapped to the UI form of **Action**. In this form user will provide details regarding configuration of your **Action**.
+A *Java* object that *Action* creates is a simple instance of a POJO Java class that holds the necessary information.
 
-In case of **REST API Call** extension sample class is **org.thingsboard.server.extensions.rest.action.RestApiCallPluginActionConfiguration**.
-It holds information regarding template of the REST request, expected result code etc.
-Please refer to the [UI development part](/docs/user-guide/contribution/extensions-development/#ui-development) to get details regarding how *UI* forms are generated.
+In case of **REST API Call Extension** sample class is *org.thingsboard.server.extensions.rest.action.RestApiCallActionPayload*.
+It holds information regarding REST request - *body*, *http method*, *result code*, etc. 
+This class must implement *Serializable* interface to be able to be transferred to *Plugin*.
 
+The payload object *above* must be wrapped in a class that extends *org.thingsboard.server.extensions.api.plugins.msg.AbstractRuleToPluginMsg* class. 
+Basically, this is needed to pass objects between the *Plugin* and *Action* components. The supeclass also contains technical metadata.
 
-##### Plugin guide development
+To finish with *Action* implementation you'll need to add *POJO Java* class that contains the configuration of the *UI Action* form.
+Should have fields that are mapped to the UI form of *Action*. In this form, user will provide details regarding the configuration of your *Action*.
 
-Plugin is responsible for receiving **RuleToPluginMsg** object that was created by **Action** and process it accordingly. This processing depends on your needs and could be anything:
-
-    - send emails
-    - send messages to external system
-    - send messages to Thingsboard instance
-    - etc.
-
-First, you'll need to create class that implements **org.thingsboard.server.extensions.api.plugins.Plugin** interface.
-
-This class is the core of your **Plugin** and here you should implement logic regarding to correctly init plugin.
-
-It must be annotated with **org.thingsboard.server.extensions.api.component.Plugin** so **Thingsboard** will correctly process this class during start-up.
-
-In case of **REST API Call** extension sample class is **org.thingsboard.server.extensions.rest.plugin.RestApiCallPlugin**.
-In this extension **Plugin** is responsible for setting URL and headers for the REST request.
-
-Secondly, you need to add class that implements **org.thingsboard.server.extensions.api.plugins.handlers.RuleMsgHandler** interface.
-
-This class actually doing 'real' work - send messages to http endpoints, kafka topics, etc.
-
-In case of **REST API Call** extension sample class is **org.thingsboard.server.extensions.rest.plugin.RestApiCallMsgHandler**.
-This message handler is responsible for creating **Spring REST template** and sending HTTP request.
-
-To finish with **Plugin** implementation you'll need to add POJO class that contains configuration of the *UI Plugin* form.
-It basically contains fields that are mapped to the UI form of **Plugin**. In this form user will provide details regarding configuration of your **Plugin**.
-
-In case of **REST API Call** extension sample class is **org.thingsboard.server.extensions.rest.plugin.RestApiCallPluginConfiguration**.
-It holds information regarding host of the REST endpoint, base path, authentication details, etc.
-Please refer to the [UI development part](/docs/user-guide/contribution/extensions-development/#ui-development) to get details regarding how *UI* forms are generated.
+In case of **REST API Call Extension** sample class is *org.thingsboard.server.extensions.rest.action.RestApiCallPluginActionConfiguration*.
+It holds information regarding the template of the *REST* request, *expected result code* etc.
+Please refer to the [UI development part](/docs/user-guide/contribution/extensions-development/#ui-json-descriptors-development) to get details regarding how *UI* forms are generated.
 
 
-#### UI development
+##### Plugin Development Guide
 
-**Plugin** and **Action** UI forms are auto-generated using *react-schema-form* [builder](http://networknt.github.io/react-schema-form/).
-It allows to build UI forms from pre-defined JSON configuration.
+A *Plugin* is responsible for receiving a *Java* object (implements *org.thingsboard.server.extensions.api.plugins.msgRuleToPluginMsg*) that was created by *Action* and process it accordingly. 
+This processing depends on your needs and could be anything like:
+
+- send emails
+- send messages to an external system
+- send messages to ThingsBoard instance
+- etc.
+
+Development of the *Plugin* starts from creating a class that implements *org.thingsboard.server.extensions.api.plugins.Plugin* interface:
+
+```java
+public interface Plugin<T> extends ConfigurableComponent<T> {
+    void process(PluginContext ctx, PluginWebsocketMsg<?> wsMsg);
+    void process(PluginContext ctx, TenantId tenantId, RuleId ruleId, RuleToPluginMsg<?> msg) throws RuleException;
+    void process(PluginContext ctx, PluginRestMsg msg);
+    void process(PluginContext ctx, RpcMsg msg);
+    void process(PluginContext ctx, FromDeviceRpcResponse msg);
+    void process(PluginContext ctx, TimeoutMsg<?> msg);
+    void onServerAdded(PluginContext ctx, ServerAddress server);
+    void onServerRemoved(PluginContext ctx, ServerAddress server);
+    void resume(PluginContext ctx);
+    void suspend(PluginContext ctx);
+    void stop(PluginContext ctx);
+}
+```
+
+- **process(PluginContext ctx, PluginWebsocketMsg<?> wsMsg)** method - processes messages from the web-sockets. 
+For example, a plugin is able to process telemetry web-socket messages and do some actions once they arrive.  
+- **process(PluginContext ctx, TenantId tenantId, RuleId ruleId, RuleToPluginMsg<?> msg) throws RuleException** method - processes messages that are triggered by rules.
+- **process(PluginContext ctx, PluginRestMsg msg)** method - processes messages from REST endpoints. 
+For example, a plugin is able to process telemetry or RPC REST messages and do some actions once they arrive. 
+- **process(PluginContext ctx, RpcMsg msg)** method - processes messages from RPC calls from other cluster instances. 
+For example, plugin is able to process telemetry RPC messages from other cluster instances and do some actions once they arrived.
+- **process(PluginContext ctx, FromDeviceRpcResponse msg)** method - processes messages from RPC device responses.
+- **process(PluginContext ctx, TimeoutMsg<?> msg)** method - processes timeout messages once RPC request to device is hanging more than expected.
+- **onServerAdded** method - provides logic that should be executed once new ThingsBoard instance added to the cluster.
+- **onServerRemoved** method - provides logic that should be executed once new ThingsBoard instance removed from the cluster.
+- **resume** method - provides logic that should be executed once plugin resumed, if needed (re-inits external connections, clean sessions etc.).
+- **suspend** method - provides logic that should be executed once plugin suspended, if needed (closes external connections, resources etc.).
+- **stop** method - provides logic that should be executed once plugin stopped, if needed (closes external connections, resources etc.).
+
+
+This class is the core of your *Plugin* and here you should implement the logic in order to init the plugin correctly.
+
+It must be annotated with *org.thingsboard.server.extensions.api.component.Plugin* annotation so **ThingsBoard** will correctly process this class during start-up.
+
+In case of **REST API Call Extension** sample class is *org.thingsboard.server.extensions.rest.plugin.RestApiCallPlugin*.
+In this extension *Plugin* is responsible for setting URL and headers for the REST request.
+
+Also, you need to create a class that implements *org.thingsboard.server.extensions.api.plugins.handlers.RuleMsgHandler* interface.
+
+This class is actually doing 'real' work - sends messages to HTTP endpoints, Kafka topics, etc.
+
+In case of **REST API Call Extension** the sample class is *org.thingsboard.server.extensions.rest.plugin.RestApiCallMsgHandler*.
+This class is responsible for creating *Spring REST template* and sending HTTP requests.
+
+To finish with *Plugin* implementation you'll need to add a *POJO Java* class that contains the configuration of the *UI Plugin* form.
+It shold have fields that are mapped to the UI form of *Plugin*. In this form, user will provide details regarding the configuration of your *Plugin*.
+
+In case of **REST API Call Extension** sample class is *org.thingsboard.server.extensions.rest.plugin.RestApiCallPluginConfiguration*.
+It holds information regarding the host of the REST endpoint, base path, authentication details, etc.
+Please refer to the [UI development part](/docs/user-guide/contribution/extensions-development/#ui-json-descriptors-development) to get details regarding how *UI* forms are generated.
+
+
+#### UI JSON descriptors development
+
+*Plugin* and *Action* UI forms are auto-generated using *react-schema-form* [builder](http://networknt.github.io/react-schema-form/).
+It allows building UI forms from pre-defined JSON configuration.
 JSON file contains description for the *schema* and *form* components.
-*Schema* and *form* components are used to describe what type of elements are going to be on the form and how exactly they are located.
+*Schema* and *form* components are used to describe what types of elements will be on the form and how are they located.
 
 **NOTE**
-*For the drop-down box with pre-defined set of options, but without multi-select feature use this [sample configuration](http://networknt.github.io/react-schema-form-rc-select/).*
+*For the drop-down box with predefined set of options, but without multi-select feature use this [sample configuration](http://networknt.github.io/react-schema-form-rc-select/).*
 
-For the extension you'll need to define two UI configurations - **Plugin** and **Action** JSON configurations.
+For the extension you'll need to define two UI configurations - *Plugin* and *Action* JSON descriptor configurations.
 
-#### Plugin JSON configuration
+#### Plugin JSON descriptor configuration
 
-This JSON file contains schema and form definition for the **Plugin** form generation. Must be located in the *resources* folder. We'll later refer to this file as **${PLUGIN_FORM_DESCRIPTOR_JSON_FILE}**.
+This JSON file contains schema and form definition for the *Plugin* form generation. It must be located in the *resources* folder. This file will be later refernced as **${PLUGIN_FORM_DESCRIPTOR_JSON_FILE}**.
 
-#### Action JSON configuration
+Here is a sample: 
 
-This JSON file contains schema and form definition for the **Action** form generation. Must be located in the *resources* folder. We'll later refer to this file as **${ACTION_FORM_DESCRIPTOR_JSON_FILE}**.
+```xml
+{
+  "schema": {
+    "title": "REST API Call Plugin Configuration",
+    "type": "object",
+    "properties": {
+      "host": {
+        "title": "Host",
+        "type": "string"
+      },
+      "port": {
+        "title": "Port",
+        "type": "integer",
+        "default": 8080,
+        "minimum": 0,
+        "maximum": 65536
+      },
+      "basePath": {
+        "title": "Base Path",
+        "type": "string",
+        "default": "/"
+      },
+      "authMethod": {
+        "title": "Authentication method",
+        "type": "string"
+      },
+      "userName": {
+        "title": "Username",
+        "type": "string"
+      },
+      "password": {
+        "title": "Password",
+        "type": "string"
+      },
+      "headers": {
+        "title": "Request Headers",
+        "type": "array",
+        "items": {
+          "title": "Request Header",
+          "type": "object",
+          "properties": {
+            "key": {
+              "title": "Key",
+              "type": "string"
+            },
+            "value": {
+              "title": "Value",
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "required": [
+      "host",
+      "port",
+      "basePath",
+      "authMethod"
+    ]
+  },
+  "form": [
+    "host",
+    "port",
+    "basePath",
+    {
+      "key": "authMethod",
+      "type": "rc-select",
+      "multiple": false,
+      "items": [
+        {
+          "value": "NO_AUTH",
+          "label": "No authentication"
+        },
+        {
+          "value": "BASIC_AUTH",
+          "label": "Basic authentication"
+        }
+      ]
+    },
+    "userName",
+    {
+      "key": "password",
+      "type": "password"
+    },
+    "headers"
+  ]
+}
+```
 
-Here is sample of the **REST API Call** Plugin and Action form configuration files:
+
+#### JSON Action Descriptor Configuration
+
+This JSON file contains schema and form definition for the *Action* form generation. It has to be located in the *resources* folder. This file will be refernced later as **${ACTION_FORM_DESCRIPTOR_JSON_FILE}**.
+
+Here is a sample: 
+
+```xml
+{
+  "schema": {
+    "title": "REST API Call Action Configuration",
+    "type": "object",
+    "properties": {
+      "sync": {
+        "title": "Requires delivery confirmation",
+        "type": "boolean"
+      },
+      "template": {
+        "title": "Body Template",
+        "type": "string"
+      },
+      "actionPath": {
+        "title": "Action Path",
+        "type": "string",
+        "default": "/"
+      },
+      "requestMethod": {
+        "title": "Request method",
+        "type": "string"
+      },
+      "expectedResultCode": {
+        "title": "Expected Result Code",
+        "type": "integer"
+      }
+    },
+    "required": [
+      "sync",
+      "template",
+      "actionPath",
+      "expectedResultCode",
+      "requestMethod"
+    ]
+  },
+  "form": [
+    "sync",
+    {
+      "key": "template",
+      "type": "textarea",
+      "rows": 5
+    },
+    "actionPath",
+    {
+      "key": "requestMethod",
+      "type": "rc-select",
+      "multiple": false,
+      "items": [
+        {
+          "value": "POST",
+          "label": "POST"
+        },
+        {
+          "value": "PUT",
+          "label": "PUT"
+        }
+      ]
+    },
+    "expectedResultCode"
+  ]
+}
+```
+
+Here is sample of the **REST API Call Extension** *Plugin* and *Action* form configuration files location:
 
 ![image](/images/user-guide/contribution/plugin-action-json-location.png)
 
-Once appropriate *JSON* files are created and placed in *resources* project directory they should be provided to the **Plugin** and **Action** annotations accordingly:
+Once the *JSON* files are created and placed in the *resources* directory, the *Plugin* and *Action* annotations have to be set with the corresponding JSON file names:
 
 ```java
 @Plugin(name = "${PLUGIN_NAME}", actions = {"${ACTION_CLASS_NAME}".class},
@@ -149,6 +406,26 @@ Once appropriate *JSON* files are created and placed in *resources* project dire
         descriptor = "${ACTION_FORM_DESCRIPTOR_JSON_FILE}", configuration =  "${ACTION_CONFIGURATION_CLASS_NAME}".class)
 ```
 
+Sample for **REST API Call Extension**:
+
+```java
+@Plugin(name = "REST API Call Plugin", actions = {RestApiCallPluginAction.class},
+        descriptor = "RestApiCallPluginDescriptor.json", configuration = RestApiCallPluginConfiguration.class)
+@Slf4j
+public class RestApiCallPlugin extends AbstractPlugin<RestApiCallPluginConfiguration> {
+```
+    
+```java
+@Action(name = "REST API Call Plugin Action",
+        descriptor = "RestApiCallActionDescriptor.json", configuration = RestApiCallPluginActionConfiguration.class)
+@Slf4j
+public class RestApiCallPluginAction extends AbstractTemplatePluginAction<RestApiCallPluginActionConfiguration> {
+```
+
 #### Extension testing and verification
 
-Now it's time to start **Thingsboard** and verify that your **Extension** works as you expected.
+Now it's time to start **ThingsBoard** and verify that **extension** works as you expected.
+
+Here is [configuration](/docs/reference/plugins/rest/) and verification of **REST API Call Extension**. 
+
+The same steps could be applied for the newly added extension, but taking into account the new extension configuration and functionality. 

@@ -119,7 +119,7 @@ void reconnect() {
       }
       Serial.println("Connected to AP");
     }
-    Serial.print("Connecting to Thingsboard node ...");
+    Serial.print("Connecting to ThingsBoard node ...");
     // Attempt to connect (clientId, username, password)
     if ( client.connect("ESP8266 Device", TOKEN, NULL) ) {
       Serial.println( "[DONE]" );

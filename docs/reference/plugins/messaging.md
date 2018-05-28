@@ -8,9 +8,9 @@ title: Device Messaging Plugin
 
 ## Overview
 
-This RPC plugin enables communication between various IoT devices through the Thingsboard cluster.
-Plugin introduce basic security features: devices are able to exchange messages only if they belong to the same customer.
-Plugin implementation can be customized to cover more complex security features. 
+This RPC plugin enables communication between various IoT devices through the ThingsBoard cluster.
+The plugin introduces basic security features: devices are able to exchange messages only if they belong to the same customer.
+The plugin implementation can be customized to cover more complex security features. 
 
 ## Configuration
 
@@ -22,15 +22,15 @@ You can specify following configuration parameters:
 
 ## Device RPC API
 
-Plugin handles two rpc methods: *getDevices* and *sendMsg*.
+The plugin handles two rpc methods: *getDevices* and *sendMsg*.
 The examples listed below will be based on [demo account](/docs/samples/demo-account/) and [MQTT](/docs/reference/mqtt-api/#client-side-rpc) protocol. 
 Please note that you are able to use other protocols - 
 [CoAP](/docs/reference/coap-api/#client-side-rpc) and [HTTP](/docs/reference/http-api/#client-side-rpc).
  
 ##### Get Device List API
 
-In order to send a message to other devices you will need to their identifiers.
-Device can request a list of other devices that belong to the same customer using *getDevices* RPC call.
+In order to send a message to other devices, you will need to know their identifiers.
+A device can request a list of other devices that belong to the same customer using *getDevices* RPC call.
 
 {% capture tabspec %}mqtt-get-device-list
 A,mqtt-get-device-list.sh,shell,resources/mqtt-get-device-list.sh,/docs/reference/plugins/resources/mqtt-get-device-list.sh
@@ -40,19 +40,19 @@ C,response.json,javascript,resources/mqtt-get-device-list.json,/docs/reference/p
 
 ##### Send Message API
 
-Device can send a message to other device that belong to the same customer using *sendMsg* RPC call.
+A device can send a message to other device that belongs to the same customer using *sendMsg* RPC call.
 
-Example below will attempt to send message from device "Test Device A1" to device "Test Device A2". 
+The example below will attempt to send a message from device "Test Device A1" to device "Test Device A2". 
 
 {% capture tabspec %}mqtt-send-msg-fail
 A,mqtt-send-msg.sh,shell,resources/mqtt-send-msg.sh,/docs/reference/plugins/resources/mqtt-send-msg.sh
 B,mqtt-send-msg.js,javascript,resources/mqtt-send-msg.js,/docs/reference/plugins/resources/mqtt-send-msg.js{% endcapture %}
 {% include tabs.html %}
 
-As a result you should receive following error:
+As a result, you should receive the following error:
 
 ```json
-{"error":"No active connection to remote device!"}
+{"error":"No active connection to the remote device!"}
 ```
 
 Let's launch emulator of target device and send message again:
@@ -61,7 +61,7 @@ A,mqtt-receive-msg.sh,shell,resources/mqtt-receive-msg.sh,/docs/reference/plugin
 B,mqtt-receive-msg.js,javascript,resources/mqtt-receive-msg.js,/docs/reference/plugins/resources/mqtt-receive-msg.js{% endcapture %}
 {% include tabs.html %}
 
-As a result you should receive following response from device:
+As a result, you should receive following response from device:
 
 ```json
 {"status":"ok"}

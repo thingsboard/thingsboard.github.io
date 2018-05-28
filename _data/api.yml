@@ -1,7 +1,7 @@
-bigheader: "Thingsboard API reference"
+bigheader: "ThingsBoard API reference"
 abstract: "Device connectivity and server-side APIs."
 toc:
-- title: Thingsboard API reference
+- title: ThingsBoard API reference
   path: /docs/api/
 - title: Device Connectivity Protocols
   path: /docs/reference/protocols/

@@ -9,17 +9,7 @@
 			<a href="/docs/contact-us/">Contact us</a>
 		</nav>
 		<div class="newsletterSubsContainer">
-			<form id="newsletter-form" method="post" onsubmit="return validateNewsletterForm(this)">
-				<fieldset>
-					<div class="newsletterInputs">
-						<p class="subsTitle">Sign up for Thingsboard IoT newsletter</p>
-						<input id="subsEmail" placeholder="Email" class="text-input" name="email" type="text" size="20" maxlength="80">
-						<input type="hidden" name="_next" value="/docs/newsletter-thanks/" />
-						<input type="text" name="_gotcha" style="display:none" />
-						<input class="button" value="Submit" type="submit">
-					</div>
-				</fieldset>
-			</form>
+			<script type="text/javascript" src="https://app.mailerlite.com/data/webforms/708170/r9r9x7.js?v5"></script>
 		</div>
 		<div class="center">
 			<div class="social">
@@ -31,50 +21,11 @@
 				</div>
 				<div>
 					<a href="https://groups.google.com/forum/#!forum/thingsboard" class="mailing-list"><span>Mailing List</span></a>
-					<a href="https://www.youtube.com/channel/UCDb9fsV-YR4JmnipAMGsVAQ" class="youtube"><span>YouTube Channel</span></a>
+					<a href="https://www.youtube.com/thingsboard" class="youtube"><span>YouTube Channel</span></a>
 					<a href="https://www.facebook.com/thingsboard" class="facebook"><span>Facebook Page</span></a>
 				</div>
 			</div>
 		</div>
-		<div id="miceType" class="center">&copy; {{ 'now' | date: "%Y" }} The Thingsboard Authors</div>
+		<div id="miceType" class="center">&copy; {{ 'now' | date: "%Y" }} The ThingsBoard Authors</div>
 	</main>
-
-	<script type="text/javascript">
-
-		function validateNewsletterForm(form) {
-			var email = $('input[name=email]', form).val();
-
-			if (!validateValue('Email Address', email)) {
-				return false;
-			}
-
-			var emailExp = /^[a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-			if(email.match(emailExp)==null) {
-				window.alert("Entered Email Address is not valid.");
-				return false;
-			}
-			return true;
-		}
-
-		function validateValue(name, val) {
-			if (isEmpty(val)) {
-				window.alert("Please fill '" + name + "' field.");
-				return false;
-			}
-			return true;
-		}
-
-		function isEmpty(val) {
-			return val === undefined || val.trim().length == 0;
-		}
-
-	</script>
-
-	<script type="text/javascript">
-
-		var newsletterform =  document.getElementById('newsletter-form');
-		newsletterform.setAttribute('action', 'https://formspree.io/' + 'newsletter' + '@' + 'thingsboard' + '.' + 'io');
-
-	</script>
-
 </footer>

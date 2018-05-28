@@ -12,10 +12,10 @@ Telemetry plugin is responsible for:
 
  - persisting attribute updates to internal data storage;
  - persisting timeseries data to internal data storage; 
- - provides server-side api to query and subscribe for data updates. 
+ - provides server-side API to query and subscribe for data updates. 
  
 Since Telemetry plugin functionality is critical for data visualization purposes in dashboards, 
-it is configured on the system level by system administrator. 
+it is configured on the system level by a system administrator. 
 Advanced users or platform developers can customize telemetry plugin functionality.
 
 ## Configuration

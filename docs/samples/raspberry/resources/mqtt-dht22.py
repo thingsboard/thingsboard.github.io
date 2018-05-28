@@ -20,7 +20,7 @@ client = mqtt.Client()
 # Set access token
 client.username_pw_set(ACCESS_TOKEN)
 
-# Connect to Thingsboard using default MQTT port and 60 seconds keepalive interval
+# Connect to ThingsBoard using default MQTT port and 60 seconds keepalive interval
 client.connect(THINGSBOARD_HOST, 1883, 60)
 
 client.loop_start()
@@ -34,7 +34,7 @@ try:
         sensor_data['temperature'] = temperature
         sensor_data['humidity'] = humidity
 
-        # Sending humidity and temperature data to Thingsboard
+        # Sending humidity and temperature data to ThingsBoard
         client.publish('v1/devices/me/telemetry', json.dumps(sensor_data), 1)
 
         next_reading += INTERVAL

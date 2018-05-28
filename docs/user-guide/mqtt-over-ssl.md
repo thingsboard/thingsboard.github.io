@@ -3,32 +3,32 @@ layout: docwithnav
 assignees:
 - vsosliuk
 title: MQTT over SSL
-description: Launching Thingsboard with secure MQTT protocol to connect your IoT devices and projects.
+description: Launching ThingsBoard with secure MQTT protocol to connect your IoT devices and projects.
 
 ---
 
 * TOC
 {:toc}
 
-Thingsboard provides ability to run MQTT server over SSL. Both one-way and two-way SSL are supported.
-To enable SSL, you will need to obtain valid or generate self-signed SSL certificate and add it to keystore.
-Once added, you will need to specify keystore information in **thingsboard.yml** file.
-See instructions below how to generate SSL certificate and use it in your Thingsboard installation.
-You can skip certificate generation step if you already have certificate.
+ThingsBoard provides the ability to run MQTT server over SSL. Both one-way and two-way SSL are supported.
+To enable SSL, you will need to obtain a valid or generate a self-signed SSL certificate and add it to the keystore.
+Once added, you will need to specify the keystore information in **thingsboard.yml** file.
+See the instructions on how to generate SSL certificate and use it in your ThingsBoard installation below.
+You can skip certificate generation step if you already have a certificate.
 
 ### Self-signed certificate generation
 
 **Note** This step requires Linux based OS with Java installed.
 
-Download [**server.keygen.sh**](https://raw.githubusercontent.com/thingsboard/thingsboard/master/tools/src/main/shell/server.keygen.sh) from official Thingsboard repository to your working directory.
+Download [**server.keygen.sh**](https://raw.githubusercontent.com/thingsboard/thingsboard/master/tools/src/main/shell/server.keygen.sh) from the official ThingsBoard repository to your working directory.
 
 Download [**keygen.properties**](https://raw.githubusercontent.com/thingsboard/thingsboard/master/tools/src/main/shell/keygen.properties) file to your working directory and populate it with desired values. 
 For example:
 
 ```bash
 DOMAIN_SUFFIX="$(hostname)"
-ORGANIZATIONAL_UNIT=Thingsboard
-ORGANIZATION=Thingsboard
+ORGANIZATIONAL_UNIT=ThingsBoard
+ORGANIZATION=ThingsBoard
 CITY=San Francisco
 STATE_OR_PROVINCE=CA
 TWO_LETTER_COUNTRY_CODE=US
@@ -62,9 +62,9 @@ where
  - **SERVER_FILE_PREFIX** - Prefix to all server keygen-related output files
  - **SERVER_KEYSTORE_DIR** - The default location where the key would be optionally copied. Can be overriden by -d option in **server.keygen.sh** script or entered manually upon the scrip run
 
-The rest of the values are not important for server keystore generation 
+The rest of the values are not important for the server keystore generation 
 
-To run server keystore generation, use following commands.
+To run the server keystore generation, use following commands.
  
 ```bash
 chmod +x server.keygen.sh
@@ -79,7 +79,7 @@ You may run this script with no arguments, or alternatively, you can specify the
 
 This script will run keytool using the configuration specified. It will generate the following output files:
 
- - **SERVER_FILE_PREFIX.jks** - Java keystore file. This is the file which will be used by Thingsboard MQTT Service
+ - **SERVER_FILE_PREFIX.jks** - Java keystore file. This is the file which will be used by ThingsBoard MQTT Service
  - **SERVER_FILE_PREFIX.cer** - Server public key file. It will be then imported to client's .jks keystore file.
  - **SERVER_FILE_PREFIX.pub.pem** - Server public key in **PEM** format, which can be then used as a keystore or imported by non-Java clients.   
 
@@ -114,7 +114,7 @@ You may also want to change **mqtt.bind_port** to 8883 which is recommended for 
 
 The **key_store** Property must point to the **.jks** file location. **key_store_password** and **key_password** must be the same as were used in keystore generation.
 
-**NOTE:** Thingsboard supports **.p12** keystores as well. if this is the case, set **key_store_type** value to **'PKCS12'**
+**NOTE:** ThingsBoard supports **.p12** keystores as well. if this is the case, set **key_store_type** value to **'PKCS12'**
 
 After these values are set, launch or restart your thingsboard server.
 

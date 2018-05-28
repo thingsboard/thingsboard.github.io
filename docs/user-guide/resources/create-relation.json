@@ -1,0 +1,1 @@
+{"from":{"id":"$FROM_ASSET_ID","entityType":"ASSET"},"type":"Contains","to":{"entityType":"ASSET","id":"$TO_ASSET_ID"}}

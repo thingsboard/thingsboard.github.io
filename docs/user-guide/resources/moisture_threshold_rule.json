@@ -1,0 +1,50 @@
+{
+  "name": "Moisture Threshold Rule",
+  "state": "ACTIVE",
+  "weight": 0,
+  "pluginToken": null,
+  "filters": [
+    {
+      "configuration": {
+        "messageTypes": [
+          "POST_TELEMETRY"
+        ]
+      },
+      "clazz": "org.thingsboard.server.extensions.core.filter.MsgTypeFilter",
+      "name": "TelemetryFilter"
+    },
+    {
+      "configuration": {
+        "deviceTypes": [
+          {
+            "name": "moisture-temperature"
+          }
+        ]
+      },
+      "clazz": "org.thingsboard.server.extensions.core.filter.DeviceTypeFilter",
+      "name": "DeviceTypeFilter"
+    },
+    {
+      "configuration": {
+        "filter": "typeof moisture !== 'undefined'"
+      },
+      "clazz": "org.thingsboard.server.extensions.core.filter.DeviceTelemetryFilter",
+      "name": "MoistureFilter"
+    }
+  ],
+  "processor": {
+    "configuration": {
+      "alarmPropagateFlag": true,
+      "newAlarmExpression": "moisture <= 20 || moisture >= 70 ",
+      "clearAlarmExpression": "moisture > 20 && moisture < 70 ",
+      "alarmSeverity": "CRITICAL",
+      "alarmStatus": "ACTIVE_UNACK",
+      "alarmTypeTemplate": "MoistureAlarm",
+      "alarmDetailsTemplate": "{\"message\": \"Moisture alarm detected!\"}"
+    },
+    "name": "MoistureAlarmProcessor",
+    "clazz": "org.thingsboard.server.extensions.core.processor.AlarmProcessor"
+  },
+  "action": null,
+  "additionalInfo": null
+}
