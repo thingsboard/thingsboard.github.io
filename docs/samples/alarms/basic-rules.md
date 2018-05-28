@@ -5,6 +5,8 @@ description: Triggering email alarms based on IoT sensor readings and configurab
 
 ---
 
+{% include templates/old-guide-notice.md %}
+
 * TOC
 {:toc}
 

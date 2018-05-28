@@ -27,7 +27,7 @@ Tenant Administrator is able to do following actions:
  - Provision and Manage [Assets](/docs/user-guide/ui/assets).
  - Create and Manage [Customers](/docs/user-guide/ui/customers).
  - Create and Manage [Dashboards](/docs/user-guide/ui/dashboards).
- - Configure [Rules](/docs/user-guide/ui/rules) and [Plugins](/docs/user-guide/ui/plugins)
+ - Configure [Rule Engine](/docs/user-guide/rule-engine-2-0/re-getting-started/)
  - Add or modify default widgets using [Widget Library](/docs/user-guide/ui/widget-library).
  
  All actions listed above are available using [REST API](/docs/reference/rest-api/)

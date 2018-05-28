@@ -127,14 +127,7 @@ description:
                 <td></td>
             </tr>
             <tr>
-                <td>Data processing rules & alarms</td>
-                <td class="checked"></td>
-                <td></td>
-                <td class="checked"></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>Customizable rules, plugins, widgets</td>
+                <td>Customizable rule chains, widgets</td>
                 <td class="checked"></td>
                 <td></td>
                 <td class="checked"></td>
@@ -159,6 +152,20 @@ description:
                 <td>Basic</td>
                 <td></td>
                 <td>Advanced</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><a class="feature-link" href="/docs/user-guide/rule-engine-2-0/architecture/#message-queue">Rule Engine: Components<span class="info"></span></a></td>
+                <td>Basic</td>
+                <td></td>
+                <td>Advanced</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><a class="feature-link" href="/docs/user-guide/rule-engine-2-0/overview/">Rule Engine: Persistent Message Queue <span class="info"></span></a></td>
+                <td class="unchecked"></td>
+                <td></td>
+                <td class="checked"></td>
                 <td></td>
             </tr>
             <tr>

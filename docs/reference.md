@@ -21,10 +21,6 @@ Device API is grouped by supported communication protocols:
 * [CoAP API](/docs/reference/coap-api)
 * [HTTP API](/docs/reference/http-api)
 
-Server-side API consist of core REST API and a set of specific APIs that are provided by various plugins:
+Server-side API consist of core REST API and a set of specific APIs that are provided by various system services:
 
 * [REST API](/docs/reference/rest-api) - The server-side core APIs.
-
-## Rule Engine Components
-
-Explore list of available Rule Engine components: filters, processors, actions and plugins. 

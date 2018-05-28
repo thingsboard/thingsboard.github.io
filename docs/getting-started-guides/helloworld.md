@@ -36,7 +36,7 @@ to fix this.
 ## Demo account
 
 All ThingsBoard installations are equipped with a demo account that simplifies the first user experience.
-This demo account contains several pre-provisioned devices, dashboards, rules, and plugins installed.
+This demo account contains several pre-provisioned devices, dashboards, and rule chains installed.
 Please note that you are free to delete this account in the production deployment.
 
 You can use ThingsBoard device emulators to simulate real-life devices and play-around with server-side APIs, data visualization, and processing logic.
@@ -239,6 +239,7 @@ Finally, we are able to see our new dashboard. Now we can edit the dashboard to
  
 ## Next steps
 
+Get started with the new [**Rule Engine**](/docs/user-guide/rule-engine-2-0/re-getting-started/) to process your data.
 Explore guides related to main ThingsBoard features:
 
  - [Device attributes](/docs/user-guide/attributes/) - how to use device attributes.

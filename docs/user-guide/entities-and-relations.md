@@ -24,8 +24,9 @@ Supported entities are:
  - **Assets** - abstract IoT entities that may be related to other devices and assets. For example factory, field, vehicle;      
  - **Alarms** - events that identify issues with your assets, devices or other entities;
  - **Dashboards** - visualization of your IoT data and ability to control particular devices through user interface; 
- - **Rules** - processing units for incoming messages, entity lifecycle events, etc;
- - **Plugins** - extensions to the platform that process IoT data and help to integrate with other server applications
+ - **Rule Node** - processing units for incoming messages, entity lifecycle events, etc;
+ - **Rule Chain** - logic unit of related Rule Nodes;
+
 
 Each entity supports:
 

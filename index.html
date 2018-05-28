@@ -11,9 +11,9 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 
 <!--  HERO  -->
 <section id="hero" class="light-text"
-		 data-vide-bg="mp4: https://s3-us-west-1.amazonaws.com/tb-videos/tb-cover.mp4,
-                       webm: https://s3-us-west-1.amazonaws.com/tb-videos/tb-cover.webm,
-                       ogv: https://s3-us-west-1.amazonaws.com/tb-videos/tb-cover.ogv,
+		 data-vide-bg="mp4: https://s3-us-west-1.amazonaws.com/tb-videos/tb-cover2.mp4,
+                       webm: https://s3-us-west-1.amazonaws.com/tb-videos/tb-cover2.webm,
+                       ogv: https://s3-us-west-1.amazonaws.com/tb-videos/tb-cover2.ogv,
                        poster: /video/tb-cover.jpg"
 		 data-vide-options="bgColor: #000000, loop: true, muted: true, posterType: jpg">
 	<div class="video-cover"></div>
@@ -62,7 +62,7 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 		<div class="image-wrapper"><img src="images/process_react.svg"></div>
 		<div class="content">
 			<h4>Process and React</h4>
-			<p>Define data processing rules and trigger reactions using plugins. Raise alarms on incoming telemetry events or attribute updates.</p>
+			<p>Define data processing rule chains. Transform and normalize your device data. Raise alarms on incoming telemetry events, attribute updates, device inactivity and user actions.</p>
 		</div>
 	</main>
 	<main>
@@ -245,6 +245,22 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 	</main>
 </section>
 
+<section id="rule_engine">
+	<main>
+		<h3 class="center">IoT Rule Engine</h3>
+		<div class="content">
+			<p class="center">ThingsBoard allows you to create complex <a href="/docs/user-guide/rule-engine-2-0/re-getting-started/">Rule Chains<a> to process data from your devices and match your application specific use cases.</p>
+			<p class="center">&nbsp;</p>
+			<div class="demoDashboardWrapper">
+				<div class="demoRuleChain">
+					<img src="images/demo/send-email-rule-chain.png">
+				</div>
+				<a href="/docs/user-guide/rule-engine-2-0/re-getting-started/" class="overlay"></a>
+			</div>
+		</div>
+	</main>
+</section>
+
 <section id="features">
 	<main>
 		<div class="features-title center">
@@ -277,10 +293,12 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 
 		<div class="feature-box">
 			<div>
-				<h4><a href="docs/user-guide/rule-engine/">IoT Rule Engine</a></h4>
-				<p>Process incoming device data with flexible rules and plugins based on device attributes or message content.
-					Forward data to external systems or trigger alarms using rules.
-					Enrich server-side functionality or send commands to devices using plugins.</p>
+				<h4><a href="docs/user-guide/rule-engine-2-0/re-getting-started/">IoT Rule Engine</a></h4>
+				<p>Process incoming device data with flexible rule chains based on entity attributes or message content.
+					Forward data to external systems or trigger alarms using custom logic. Configure complex notification chains on alarms.
+					Enrich server-side functionality or manipulate your devices with highly customizable rules.
+					Define your application logic with drag-n-drop rule chain designer.
+				</p>
 			</div>
 
 			<div>
@@ -311,8 +329,7 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 			</div>
 			<div>
 				<h4><a href="/docs/user-guide/customization/">Customization and Integration</a></h4>
-				<p>Extend default platform functionality using customizable <a href="docs/user-guide/rule-engine/#rules">rules</a>,
-					<a href="docs/user-guide/rule-engine/#plugins">plugins</a>, <a href="docs/user-guide/ui/widget-library/">widgets</a> and <a href="docs/reference/protocols/">transport implementations</a>.
+				<p>Extend default platform functionality using customizable <a href="/docs/user-guide/rule-engine-2-0/re-getting-started/">rule chains</a>, <a href="docs/user-guide/ui/widget-library/">widgets</a> and <a href="docs/reference/protocols/">transport implementations</a>.
 					In addition to MQTT, CoAP and HTTP support, ThingsBoard users can use their own transport implementations or customize behaviour of existing protocols.</p>
 			</div>
 		</div>
@@ -322,6 +339,7 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 				<h4><a href="/docs/user-guide/alarms/">Alarms Management</a></h4>
 				<p>Provides ability to create and manage <a href="/docs/user-guide/alarms/">alarms</a> related to your entities: devices, assets, customers, etc.
 					Allows real-time alarms monitoring and alarms propagation to related entities hierarchy.
+				    Raise alarms on device disconnect or inactivity events.
 			</div>
 			<div>
 				<h4><a href="https://github.com/thingsboard/thingsboard">100&#37; Open-source</a></h4>
@@ -394,6 +412,13 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 		});
 
 		$("#dashboard_description main").inViewport(function(px){
+			if(px >= 100) {
+				$(this).addClass("animated zoomIn");
+				return true;
+			}
+		});
+
+		$("#rule_engine main").inViewport(function(px){
 			if(px >= 100) {
 				$(this).addClass("animated zoomIn");
 				return true;

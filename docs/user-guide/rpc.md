@@ -59,7 +59,7 @@ You can review API and examples in corresponding reference page:
 
 ## Server-side RPC API
 
-ThingsBoard provides **System RPC Plugin** that allows you to send RPC calls from server-side applications to the device.
+ThingsBoard provides **System RPC Service** that allows you to send RPC calls from server-side applications to the device.
 In order to send RPC request you need execute HTTP POST request to the following URL:
 
 ```shell
@@ -90,6 +90,12 @@ This token should belong to either
  - user with **CUSTOMER_USER** role that owns the device identified by **$DEVICE_ID**
  
 You can use following [guide](/docs/reference/rest-api/#rest-api-auth) to get the token.
+
+## RPC Rule Nodes
+It is possible to integrate RPC actions into processing workflow. There are 2 Rule Nodes for working with RPC requests. 
+
+-  [RPC reply](/docs/user-guide/rule-engine-2-0/action-nodes/#rpc-call-reply-node) 
+-  [RPC request](/docs/user-guide/rule-engine-2-0/action-nodes/#rpc-call-request-node) 
 
 ## RPC widgets
 

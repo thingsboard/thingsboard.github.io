@@ -8,7 +8,7 @@ description: IoT device management Audit Log
 ---
 
 ThingsBoard provides the ability to track user actions in order to keep audit log. 
-It is possible to log user actions related to main entities: assets, devices, dashboard, rules, plugins, etc. 
+It is possible to log user actions related to main entities: assets, devices, dashboard, rules, etc. 
 
 ### User Interface
 
@@ -51,7 +51,7 @@ audit_log:
       "plugin": "${AUDIT_LOG_MASK_PLUGIN:RW}"
 ```
 
-This configuration sample disables the logging of any actions related to dashboards and logs read operations for users, rules, and plugins. 
+This configuration sample disables the logging of any actions related to dashboards and logs read operations for users and rules. 
 For all other entities, ThingsBoard will log only write level operations.
 
 We recommend to modify "by_tenant_partitioning" parameter based on the number of devices and user actions that will be logged. 

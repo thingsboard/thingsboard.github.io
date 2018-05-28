@@ -47,8 +47,7 @@ This training session will provide you with the basic understanding of ThingsBoa
     - **Exercise:** add widgets to the Dashboard to visualize data from the previous exercise.
 - Rule Engine
     - Explain Rule engine data flow.
-    - Review Rule components: filters, processors and actions and their available implementations.
-    - Explain available plugins and their implementations.
+    - Review Rule components: messages, relations, nodes and their available implementations.
     - **Exercise:** configure alerting rule based on device attributes and timeseries values.
 - Use-cases and Q&A session
 
@@ -156,7 +155,7 @@ This training session will provide you with the in-depth understanding of suppor
     - **Exercise:** Send two-way RPC command to Device
     - **Exercise:** Send RPC command from Device to Server
 - Messaging between Devices
-    - Messaging plugin overview
+    - Messaging rule nodes overview
     - **Exercise:** Send message from one device application to another
 - Load Balancing, Scalability, and Failover
     - Use cases and platform capabilities overview
@@ -203,7 +202,7 @@ This training session will provide you with in-depth understanding platform REST
 - Rule engine
     - Explain Rule engine data flow.
     - Review Rule components: filters, processors and actions and their available implementations.
-    - Explain available plugins and their implementations.
+    - Explain available rule nodes and their implementations.
 - Data collection and analytics
     - Use cases and data flow overview
     - **Exercise:** Pushing telemetry and attributes data to Kafka

@@ -49,18 +49,11 @@ Demo tenant customers:
  - Temperature & Humidity Demo Dashboard - created for temperature and humidity upload [sample applications](/docs/samples/nodemcu/temperature/).
  - Raspberry PI GPIO Demo Dashboard - created for Raspberry Pi GPIO control [sample application](/docs/samples/raspberry/gpio/).
  
-## Rules
+## Rule Chains
+There is predefined Rule Chain for storing all incoming telemetry and attribute updates. All other incoming requests just logged.
+For adding additional Rule Nodes, like Send Email, Create Alarms, etc. please read related articles:
 
- - Demo Alarm Rule - creates an alarm when uploaded temperature is greater than or equal to 100.
- - Demo Time RPC Rule - allows a device to send *getTime* RPC requests to fetch current server time.
- - Demo Messaging RPC Rule - allows a device to send *getDevices* and *sendMsg* RPC requests to enable messaging between devices.
- 
-## Plugins
-
- - [Demo Email Plugin](/docs/reference/plugins/mail/) - allows to publish emails. Requires update of username and password to match your account.
- - [Demo Device Messaging RPC Plugin](/docs/reference/plugins/messaging/) - enables messaging between devices.
- - [Demo Time RPC Plugin](/docs/reference/plugins/time/) - allows devices to get current time from server.
- - [System RPC Plugin](/docs/reference/plugins/rpc/) - provides REST API to send RPC request from server-side applications to devices.
- - [System Telemetry Plugin](/docs/reference/plugins/telemetry/) - stores attributes and telemetry data to internal database and handles server-side data queries and subscriptions.
-
-
+- [Rule Engine Getting Started](/docs/user-guide/rule-engine-2-0/re-getting-started/)
+- [Rule Engine Overview](/docs/user-guide/rule-engine-2-0/overview/)
+- [Rule Engine Tutorials](/docs/user-guide/rule-engine-2-0/overview/#tutorials)
+  
