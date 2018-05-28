@@ -165,8 +165,8 @@ toc:
     path: /docs/user-guide/ui/assets/
   - title: Devices
     path: /docs/user-guide/ui/devices/
-#  - title: Rule Chains
-#    path: /docs/user-guide/ui/rule-chains/
+  - title: Rule Chains
+    path: /docs/user-guide/ui/rule-chains/
   - title: Widgets Library
     path: /docs/user-guide/ui/widget-library/
   - title: Dashboards
