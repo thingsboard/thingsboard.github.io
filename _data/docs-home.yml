@@ -162,10 +162,8 @@ toc:
     path: /docs/user-guide/ui/assets/
   - title: Devices
     path: /docs/user-guide/ui/devices/
-  - title: Rules
-    path: /docs/user-guide/ui/rules/
-  - title: Plugins
-    path: /docs/user-guide/ui/plugins/
+  - title: Rule Chains
+    path: /docs/user-guide/ui/rule-chains/
   - title: Widgets Library
     path: /docs/user-guide/ui/widget-library/
   - title: Dashboards
