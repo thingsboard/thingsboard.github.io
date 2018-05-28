@@ -8,7 +8,11 @@ description: Rule Engine Architecture
 * TOC
 {:toc}
 
-ThingsBoard rule engine is based on two main components: the actor model and message queue. [TODO: Add picture]
+ThingsBoard rule engine is based on two main components: the actor model and message queue.
+
+<br/>
+
+![image](/images/user-guide/rule-engine-2-0/rule-engine-architecture.svg)
  
 ### Actor model
 
@@ -44,10 +48,13 @@ Message queue also has throttling capabilities to limit number of the messages t
 Message is acknowledged by the rule engine in two cases:
 
   * Message is processed by the last rule node in a chain
-        [TODO: Add picture]
+        
+    ![image](/images/user-guide/rule-engine-2-0/rule-engine-ack-case1.svg)
+
   * Message is pushed by the rule node to multiple other rule nodes. In this case rule chain actor will copy the incoming message to multiple outgoing messages. 
     Outgoing messages will be separately pushed to the queue and incoming message will be acknowledged 
-        [TODO: Add picture]
+
+    ![image](/images/user-guide/rule-engine-2-0/rule-engine-ack-case2.svg)
   
 #### In memory message queue
   
