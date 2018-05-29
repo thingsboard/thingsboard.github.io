@@ -36,13 +36,13 @@ to the **Switch Node** or **Message Type Filter Node** configured with required 
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/filter-originator-type-switch.png)
 
-Route incoming messages by Originator [Entity](/docs/user-guide/entities-and-relations/) type. 
+Routes incoming messages by Originator [Entity](/docs/user-guide/entities-and-relations/) type. 
 
 ##### Script Filter Node
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/filter-script.png)
 
-Evaluate incoming Message with configured JavaScript condition. 
+Evaluates incoming Message with configured JavaScript condition. 
 
 JavaScript function receive 3 input parameters: 
 
@@ -66,7 +66,7 @@ if(msgType === 'POST_TELEMETRY_REQUEST') {
     if(metadata.deviceType === 'vehicle') {
         return msg.humidity > 50;
     } else if(metadata.deviceType === 'controller') {
-        return msg.temperature > 20 && msg.humidity > 60;;
+        return msg.temperature > 20 && msg.humidity > 60;
     }
 }
 
@@ -75,7 +75,7 @@ return false;
 
 JavaScript condition can be verified using [Test JavaScript function](/docs/user-guide/rule-engine-2-0/overview/#test-javascript-functions).
 
-You can see real life example, how to use this node in those tutorials:
+You can see the real life examples, where this node is used, in the next tutorials:
 
 - [Create and Clear Alarms](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/)
 - [Reply to RPC Calls](/docs/user-guide/rule-engine-2-0/tutorials/rpc-reply-tutorial/#add-filter-script-node)
@@ -84,7 +84,7 @@ You can see real life example, how to use this node in those tutorials:
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/filter-switch.png)
 
-Route incoming Message to one OR multiple output chains. Node executes configured JavaScript function.
+Routes incoming Message to one OR multiple output chains. Node executes configured JavaScript function.
 
 JavaScript function receive 3 input parameters: 
 

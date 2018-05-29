@@ -32,7 +32,7 @@ If unsupported Originator type found, an error is thrown.
 
 If Originator does not have assigned Customer Entity **Failure** chain is used, otherwise **Success** chain.
 
-You can see real life example, how to use this node in those tutorials:
+You can see the real life example, where this node is used, in the next tutorial:
 
 - [Send Email](/docs/user-guide/rule-engine-2-0/tutorials/send-email/)
 
@@ -61,13 +61,13 @@ Also **Relation type** can be configured with required set of **Device types**.
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-device-attributes-config.png)
 
-If multiple Related Entities are found, **_only first Entity is used_** for attributes enrichment, other entities are discarded.
+If multiple Related Entities were found, **_only the first Entity is used_** for attributes enrichment, other entities will be discarded.
 
-If no Related Entity found **Failure** chain is used, otherwise **Success** chain.
+**Failure** chain is used if no Related Entity was found, otherwise - **Success** chain.
 
 If attribute or telemetry was not found, it is not added into Message Metadata and still routed via **Success** chain.
 
-Outbound Message Metadata will contain configured attributes if they exist.
+Outbound Message Metadata will contain configured attributes only if they exist.
 
 To access fetched attributes in other nodes you can use this template '<code>metadata.temperature</code>'
 
@@ -120,9 +120,9 @@ If no Related Entity found **Failure** chain is used, otherwise **Success** chai
 
 Outbound Message Metadata will contain configured attributes if they exist.
 
-To access fetched attributes in other nodes you can use this template '<code>metadata.temperature</code>'
+To access fetched attributes in other nodes you can use this template '<code>metadata.tempo</code>'
 
-You can see real life example, how to use this node in those tutorials:
+You can see the real life example, where this node is used, in the next tutorial:
 
 - [Reply to RPC Calls](/docs/user-guide/rule-engine-2-0/tutorials/rpc-reply-tutorial/#add-related-attributes-node)
 
@@ -138,13 +138,13 @@ There is **Latest Telemetry** checkbox in the Node configuration. If this checkb
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-tenant-attributes-config.png)
 
-Outbound Message Metadata will contain configured attributes if they exist. To access fetched attributes in other nodes you can use this template '<code>metadata.temperature</code>'
+Outbound Message Metadata will contain configured attributes if they exist. To access fetched attributes in other nodes you can use this template '<code>metadata.tempo</code>'
 
 Following Message Originator types are allowed: **Tenant**, **Customer**, **User**, **Asset**, **Device**, **Alarm**, **Rule Chain**.
 
 If unsupported Originator type found, an error is thrown.
 
-If Originator does not have assigned Tenant Entity **Failure** chain is used, otherwise **Success** chain.
+**Failure** chain is used if Originator does not have assigned Tenant Entity, otherwise - **Success** chain.
 
 **!!! TODO-RE - add link to tutorial with this node**
 {: style="color:red" }

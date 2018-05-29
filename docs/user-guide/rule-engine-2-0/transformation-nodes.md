@@ -33,9 +33,9 @@ Also set of **Relation filters** can be configured with required Relation type a
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/transformation-change-originator-config.png)
 
-If multiple Related Entities are found, **_only first Entity is used_** as new originator, other entities are discarded.
+If multiple Related Entities are found, **_only the first Entity is used_** as new originator, other entities are discarded.
 
-If no Related Entity / Customer / Tenant found **Failure** chain is used, otherwise **Success** chain.
+**Failure** chain is used if no Related Entity / Customer / Tenant was found, otherwise - **Success** chain.
 
 Outbound Message will have new originator Id.
 
@@ -48,9 +48,9 @@ Outbound Message will have new originator Id.
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/transformation-script.png)
 
-Change Message payload, Metadata or Message type using configured JavaScript function.
+Changes Message payload, Metadata or Message type using configured JavaScript function.
 
-JavaScript function receive 3 input parameters: 
+JavaScript function receives 3 input parameters: 
 
 - <code>msg</code> - is a Message payload.
 - <code>metadata</code> - is a Message metadata.
@@ -130,7 +130,7 @@ In this case value of **deviceName** can be referenced as <code>${deviceName}</c
  Device ${deviceName} has high temperature
  ```
 
-You can see real life example, how to use this node in those tutorials:
+You can see the real life example, where this node is used, in the next tutorial:
 
 - [Send Email](/docs/user-guide/rule-engine-2-0/tutorials/send-email/)
 
