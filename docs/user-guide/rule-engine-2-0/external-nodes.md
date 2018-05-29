@@ -272,6 +272,6 @@ If specific Mail Server is required for this node - disable **Use system SMTP se
 In case of successful mail sending, original Message will be passed to the next nodes via **Success** chain, 
 otherwise **Failure** chain is used.
 
-You can see real life example, how to use this node in those tutorials:
+You can see the real life example, where this node is used, in the next tutorial:
 
 - [Send Email](/docs/user-guide/rule-engine-2-0/tutorials/send-email/)

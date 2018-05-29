@@ -94,7 +94,7 @@ Now we are ready to define Email template. We should use **To email** node that 
 Configuration notes:
 
 - **From email** - we use static email **info@testmail.org**. Please change it to something meaningful for your company.
-- **To template** - **${customerEmail}** : node will take value of this property from Message metadata. We have saved thif field in step 2.
+- **To template** - **${customerEmail}** : node will take value of this property from Message metadata. We have saved this field in step 2.
 - **Subject template** - **Device ${deviceType} temperature high** : deviceType property is stored in the Message Metadata for all messages from devices.
 - **Body tempalte** - **Device ${deviceName} has high temperature ${temperature}. Device address is ${ss_address}.**. Temperature field was saved in step 4
 and ss_address field was saved in step 3 

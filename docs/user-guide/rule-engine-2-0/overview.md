@@ -140,6 +140,43 @@ List of the predefined Message Types is presented in the following table:
           <td><b>userName</b> - name of the user who deleted attributes,<br><b>userId</b> - the user Id,<br><b>scope</b> - deleted attributes scope (can be either <b>SERVER_SCOPE</b> or <b>SHARED_SCOPE</b>)</td>
           <td>json with <b>attributes</b> field containing list of deleted attributes keys: <br> <code style="font-size: 12px;">{ <br> &nbsp;&nbsp;"attributes": ["modelNumber", "serial"] <br> }</code></td>
       </tr>
+      <tr>
+        <td>ALARM</td>
+        <td><b>Alarm event</b></td>
+        <td>Event produced when an alarm was created, updated or deleted</td>
+        <td> 
+            All fields from original Message Metadata
+            <br><b>isNewAlarm</b> - true if a new alram was just created
+            <br><b>isExistingAlarm</b> - true if an alarm is existing already
+            <br><b>isClearedAlarm</b> - true if an alarm was cleared
+        </td>
+        <td>json containing created alarm details: <br><code style="font-size: 12px;">
+        {
+          <br> &nbsp;&nbsp;"tenantId": {
+            <br> &nbsp;&nbsp;&nbsp;&nbsp; ...
+          <br> &nbsp;&nbsp;},
+          <br> &nbsp;&nbsp;"type": "High Temperature Alarm",
+          <br> &nbsp;&nbsp;"originator": {
+            <br> &nbsp;&nbsp;&nbsp;&nbsp; ...
+          <br> &nbsp;&nbsp;},
+          <br> &nbsp;&nbsp;"severity": "CRITICAL",
+          <br> &nbsp;&nbsp;"status": "CLEARED_UNACK",
+          <br> &nbsp;&nbsp;"startTs": 1526985698000,
+          <br> &nbsp;&nbsp;"endTs": 1526985698000,
+          <br> &nbsp;&nbsp;"ackTs": 0,
+          <br> &nbsp;&nbsp;"clearTs": 1526985712000,
+          <br> &nbsp;&nbsp;"details": {
+            <br> &nbsp;&nbsp;&nbsp;&nbsp;"temperature": 70,
+            <br> &nbsp;&nbsp;&nbsp;&nbsp;"ts": 1526985696000
+          <br> &nbsp;&nbsp;},
+          <br> &nbsp;&nbsp;"propagate": true,
+          <br> &nbsp;&nbsp;"id": "33cd8999-5dac-11e8-bbab-ad47060c9431",
+          <br> &nbsp;&nbsp;"createdTime": 1526985698000,
+          <br> &nbsp;&nbsp;"name": "High Temperature Alarm"
+        <br>}
+        </code>
+        </td>
+      </tr>
    </tbody>
 </table>
 

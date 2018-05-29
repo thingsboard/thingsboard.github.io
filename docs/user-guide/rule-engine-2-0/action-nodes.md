@@ -15,7 +15,7 @@ Action Nodes execute various actions based on incoming Message.
 ![image](/images/user-guide/rule-engine-2-0/nodes/action-create-alarm.png)
 
 This Node tries to load latest Alarm with configured **Alarm Type** for Message Originator.
-If **Uncleared** Alarm exist, then this Alarm will be updated, otherwise new Alarm will be created.
+If **Uncleared** Alarm exist, then this Alarm will be updated, otherwise a new Alarm will be created.
 
 Node Configuration:
 
@@ -73,21 +73,21 @@ return details;
 - Severity - value from Node Configuration
 - Propagation - value from Node Configuration
 - Alarm type - value from Node Configuration
-- Alarm start time - if **new alarm** -> *current system Time*. If **existing Alarm** -> does not changed
-- Alarm end time - *current system Time*
+- Alarm start time - if **new alarm** -> *current system time*. If **existing Alarm** -> does not changed
+- Alarm end time - *current system time*
 
 **Outbound message will have the following structure:**
 
 - **Message Type** - *ALARM*
-- **Originator** - same originator from inbound Message
+- **Originator** - the same originator from inbound Message
 - **Payload** - JSON representation of new Alarm that was created/updated
 - **Metadata** - all fields from original Message Metadata  
 
 After new Alarm **_created_**, Outbound message will contain additional property inside Metadata - **isNewAlarm** with **true** value.
-Message passed via **Created** chain.
+Message will be passed via **Created** chain.
 
 After existing Alarm **_updated_**, Outbound message will contain additional property inside Metadata - **isExistingAlarm** with **true** value.
-Message passed via **Updated** chain.
+Message will be passed via **Updated** chain.
 
 Here is an example of Outbound Message **payload**
 {% highlight json %}
@@ -120,7 +120,7 @@ Here is an example of Outbound Message **payload**
 
 More details about Alarms in the Thingsboard can be found in [this tutorial](/docs/user-guide/alarms/)
 
-You can see real life example, how to use this node in those tutorials:
+You can see the real life example, where this node is used, in the next tutorial:
 
 - [Create and Clear Alarms](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/)
 
@@ -130,7 +130,7 @@ You can see real life example, how to use this node in those tutorials:
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/action-clear-alarm.png)
 
-This Node loads latest Alarm with configured **Alarm Type** for Message Originator and Clear this Alarm if it exist.
+This Node loads the latest Alarm with configured **Alarm Type** for Message Originator and Clear the Alarm if it exist.
 
 Node Configuration:
 
@@ -192,7 +192,7 @@ Otherwise new Message will be passed via **Cleared** chain.
 **Outbound message will have the following structure:**
 
 - **Message Type** - *ALARM*
-- **Originator** - same originator from inbound Message
+- **Originator** - the same originator from inbound Message
 - **Payload** - JSON representation of Alarm that was cleared
 - **Metadata** - all fields from original Message Metadata. Also additional property inside Metadata will be added -> **isClearedAlarm** with **true** value.
 
@@ -209,7 +209,7 @@ Here is an example of Outbound Message **payload**
     "id": "11cd8777-5dac-11e8-bbab-ad55560c9ccc"
   },
   "severity": "CRITICAL",
-  "status": "ACTIVE_UNACK",
+  "status": "CLEARED_UNACK",
   "startTs": 1526985698000,
   "endTs": 1526985698000,
   "ackTs": 0,
@@ -228,7 +228,7 @@ Here is an example of Outbound Message **payload**
 
 More details about Alarms in the Thingsboard can be found in [this tutorial](/docs/user-guide/alarms/)
 
-You can see real life example, how to use this node in those tutorials:
+You can see the real life example, where this node is used, in the next tutorial:
 
 - [Create and Clear Alarms](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/)
 
@@ -293,7 +293,7 @@ Script should return String value.
 
 JavaScript transform function can be verified using [Test JavaScript function](/docs/user-guide/rule-engine-2-0/overview/#test-javascript-functions).
 
-You can see real life example, how to use this node in those tutorials:
+You can see the real life example, where this node is used, in the next tutorial:
 
 - [Reply to RPC Calls](/docs/user-guide/rule-engine-2-0/tutorials/rpc-reply-tutorial.md#log-unknown-request)
 
@@ -305,7 +305,7 @@ Sends response to the RPC Call originator. All incoming RPC requests are passed 
 Also all RPC requests have request ID field. It is used for mapping requests and responses.
 Message Originator must be a **Device** entity because RPC response is initiated to the Message Originator.
 
-Node configuration has special request ID field mapping. If mapping is not specified **requestId** metadata field is used by default. 
+Node configuration has special request ID field mapping. If the mapping is not specified, **requestId** metadata field is used by default. 
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/action-rpc-call-reply-config.png)
 
@@ -334,7 +334,7 @@ Message will be routed via **Failure** chain in the following cases:
 
 For more details how RPC works in the Thingsboard, please read [RPC capabilities](/docs/user-guide/rpc/) Article.
 
-You can see real life example, how to use this node in those tutorials:
+You can see the real life example, where this node is used, in the next tutorial:
 
 - [Reply to RPC Calls](/docs/user-guide/rule-engine-2-0/tutorials/rpc-reply-tutorial.md)
 
@@ -342,7 +342,7 @@ You can see real life example, how to use this node in those tutorials:
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/action-rpc-call-request.png)
 
-Used for sending RPC requests to the Device and routing response to the next Rule nodes.
+Sends RPC requests to the Device and routing response to the next Rule nodes.
 Message Originator must be a **Device** entity as RPC request can be initiated only to device.
 
 Node configuration has **Timeout** field used to specify timeout waiting for response from device.
@@ -370,12 +370,12 @@ Outbound Message will have same originator and metadata as in inbound Message. R
 Message will be routed via **Failure** chain in the following cases:
 
 - Inbound Message originator is not a **Device** entity
-- Inbound Message is missing **method** or **params** fields
-- If Node will not receive response during configured timeout
+- Inbound Message has missed **method** or **params** fields
+- If Node will not receive a response during configured timeout
  
 Otherwise Message will be routed via **Success** chain.
 
-For more details how RPC works in the Thingsboard, please read [RPC capabilities](/docs/user-guide/rpc/) Article.
+For more details how RPC works in the Thingsboard, please read [RPC capabilities](/docs/user-guide/rpc/) article.
 
 <br/>
 
@@ -397,7 +397,7 @@ Supported scope types:
 Expects messages with **POST_ATTRIBUTES_REQUEST** message type.
 If message Type is not **POST_ATTRIBUTES_REQUEST**, Message will be routed via **Failure** chain. 
 
-When attributes are uploaded over existing API (HTTP / MQTT / CoAP / etc) Message with correct payload and type will be passed into **Input** node of the **Root Rule Chain**.
+When attributes are uploaded over existing API (HTTP / MQTT / CoAP / etc.) Message with correct payload and type will be passed into **Input** node of the **Root Rule Chain**.
 
 In cases when it is required to trigger attributes saving inside Rule Chain, the Rule Chain should be configured to transform Message payload 
 to the expected format and set message type to **POST_ATTRIBUTES_REQUEST**. It could be done using [**Script Transformation Node**](/docs/user-guide/rule-engine-2-0/transformation-nodes/#script-transformation-node).
@@ -427,7 +427,7 @@ Configured **TTL** seconds is used for timeseries data expiration. **0** value m
 Expects messages with **POST_TELEMETRY_REQUEST** message type. 
 If message Type is not **POST_TELEMETRY_REQUEST**, Message will be routed via **Failure** chain.
  
-When timeseries data is published over existing API (HTTP / MQTT / CoAP / etc) Message with correct payload and type will be passed into **Input** node of the **Root Rule Chain**.
+When timeseries data is published over existing API (HTTP / MQTT / CoAP / etc.) Message with correct payload and type will be passed into **Input** node of the **Root Rule Chain**.
 
 In cases when it is required to trigger timeseries data saving inside Rule Chain, the Rule Chain should be configured to transform Message payload  
 to the expected format and set message type to **POST_TELEMETRY_REQUEST**. It could be done using [**Script Transformation Node**](/docs/user-guide/rule-engine-2-0/transformation-nodes/#script-transformation-node).
