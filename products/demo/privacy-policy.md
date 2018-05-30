@@ -25,13 +25,14 @@ Your privacy is important to us, and so is being transparent about how we collec
 
 How we use the information we collect depends in part on which Services you use, how you use them, and any preferences you have communicated to us. Below are the specific purposes for which we use the information we collect about you:
 
-To personalize your experience - your information helps us to better respond to your individual needs
-To improve our website - we continually strive to improve our website offerings based on the information and feedback we receive from you
-To improve customer service - your information helps us to more effectively respond to your customer service requests and support needs
-To process transactions - Your information, whether public or private, will not be sold, exchanged, transferred, or given to any other company for any reason whatsoever, without your consent, other than for the express purpose of delivering the purchased product or service requested.
-To send periodic emails - The email address you provide for registration, subscription or order, may be used to send you information and updates pertaining to your order, in addition to receiving occasional company news, updates, related product or service information, etc.
-To comply with applicable laws, safety, and property, and respond to lawful requests from public authorities
-If you post content on our social media channels, your participation may be shared on our website or our channels
+- To personalize your experience - your information helps us to better respond to your individual needs
+- To improve our website - we continually strive to improve our website offerings based on the information and feedback we receive from you
+- To improve customer service - your information helps us to more effectively respond to your customer service requests and support needs
+- To process transactions - Your information, whether public or private, will not be sold, exchanged, transferred, or given to any other company for any reason whatsoever, without your consent, other than for the express purpose of delivering the purchased product or service requested.
+- To send periodic emails - The email address you provide for registration, subscription or order, may be used to send you information and updates pertaining to your order, in addition to receiving occasional company news, updates, related product or service information, etc.
+- To comply with applicable laws, safety, and property, and respond to lawful requests from public authorities
+- If you post content on our social media channels, your participation may be shared on our website or our channels
+
 We generally retain information for so long as it is relevant to serve you. Data may persist in copies made for backup purposes.
 
 Thignsboard will respect your wishes not to receive marketing communications. You can change your marketing preferences at any time by contacting us at support@thingsboard.io
