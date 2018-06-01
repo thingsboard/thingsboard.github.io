@@ -36,9 +36,6 @@ You can see the real life example, where this node is used, in the next tutorial
 
 - [Send Email](/docs/user-guide/rule-engine-2-0/tutorials/send-email/)
 
-
-
-
 ##### Device attributes
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-device-attributes.png)
@@ -95,8 +92,30 @@ If attribute or telemetry was not found, it is not added into Message Metadata a
 
 To access fetched attributes in other nodes you can use this template '<code>metadata.cs_temperature</code>'
 
-**!!! TODO-RE - add link to tutorial with this node**
-{: style="color:red" }
+You can see the real life example, where this node is used, in the following tutorials:
+
+- [Transform telemetry using previous record](/docs/user-guide/rule-engine-2-0/tutorials/transform-telemetry-using-previous-record/)
+- [Send Email](/docs/user-guide/rule-engine-2-0/tutorials/send-email/)
+
+##### Originator fields
+
+![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-originator-fields.png)
+
+Node fetches fields values of the Message Originator entity and adds them into Message Metadata. 
+Administrator can configure the mapping between field name and Metadata attribute name.
+If specified field is not part of Message Originator entity fields it will be ignored.
+
+![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-originator-fields-config.png)
+
+Following Message Originator types are allowed: **Tenant**, **Customer**, **User**, **Asset**, **Device**, **Alarm**, **Rule Chain**.
+
+**Failure** chain is used If unsupported Originator type found, otherwise - **Success** chain.
+
+If field value was not found, it is not added into Message Metadata and still routed via **Success** chain.
+
+Outbound Message Metadata will contain configured attributes only if they exist.
+
+To access fetched attributes in other nodes you can use this template '<code>metadata.devType</code>'
 
 ##### Related attributes
 
@@ -145,6 +164,3 @@ Following Message Originator types are allowed: **Tenant**, **Customer**, **User
 If unsupported Originator type found, an error is thrown.
 
 **Failure** chain is used if Originator does not have assigned Tenant Entity, otherwise - **Success** chain.
-
-**!!! TODO-RE - add link to tutorial with this node**
-{: style="color:red" }

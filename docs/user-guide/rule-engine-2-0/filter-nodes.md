@@ -10,6 +10,16 @@ Filter Nodes are used for Message filtering and routing.
 * TOC
 {:toc}
 
+##### Check Relation Filter Node
+
+![image](/images/user-guide/rule-engine-2-0/nodes/filter-check-relation.png)
+
+Checks the relation from the selected entity to originator of the message by type and direction.
+
+![image](/images/user-guide/rule-engine-2-0/nodes/filter-check-relation-config.png)
+
+If relation exists - Message is sent via **True** chain, otherwise **False** chain is used.
+
 ##### Message Type Filter Node
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/filter-message-type.png)

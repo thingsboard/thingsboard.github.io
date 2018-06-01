@@ -239,9 +239,6 @@ Outbound Message payload will be the same as response body. Original Message typ
 In case of successful request, outbound message will be passed to the next nodes via **Success** chain, 
 otherwise **Failure** chain is used.
 
-**!!! TODO-RE - add link to tutorial**
-{: style="color:red" }
-
 <br/>
 
 # Send Email Node

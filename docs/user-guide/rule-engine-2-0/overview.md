@@ -58,10 +58,17 @@ List of the predefined Message Types is presented in the following table:
       </tr>
       <tr>
           <td>TO_SERVER_RPC_REQUEST</td>
-          <td><b>RPC Request</b></td>
+          <td><b>RPC Request from Device</b></td>
           <td>RPC request from device (see <a href="/docs/reference/mqtt-api/#client-side-rpc">client side rpc</a> for reference)</td>
           <td><b>deviceName</b> - originator device name,<br><b>deviceType</b> - originator device type,<br><b>requestId</b> - RPC request Id provided by client</td>
           <td>json containing <b>method</b> and <b>params</b>: <br> <code style="font-size: 12px;">{ <br> &nbsp;&nbsp;"method": "getTime", <br>&nbsp;&nbsp;"params": { "param1": "val1" } <br> }</code></td>
+      </tr>
+      <tr>
+          <td>RPC_CALL_FROM_SERVER_TO_DEVICE</td>
+          <td><b>RPC Request to Device</b></td>
+          <td>RPC request from server to device (see <a href="/docs/user-guide/rpc/#server-side-rpc-api">server side rpc api</a> for reference)</td>
+          <td><b>requestUUID</b> - internal request id used by sustem to identify reply target,<br><b>expirationTime</b> - time when request will be expired,<br><b>oneway</b> - specifies request type: <i>true</i> - without response, <i>false</i> - with response</td>
+          <td>json containing <b>method</b> and <b>params</b>: <br> <code style="font-size: 12px;">{ <br> &nbsp;&nbsp;"method": "getGpioStatus", <br>&nbsp;&nbsp;"params": { "param1": "val1" } <br> }</code></td>
       </tr>
       <tr>
           <td>ACTIVITY_EVENT</td>

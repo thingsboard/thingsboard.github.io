@@ -39,9 +39,6 @@ If multiple Related Entities are found, **_only the first Entity is used_** as n
 
 Outbound Message will have new originator Id.
 
-**!!! TODO-RE - add link to tutorial with this node**
-{: style="color:red" }
-
 <br/>
 
 # Script Transformation Node
