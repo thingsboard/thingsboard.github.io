@@ -200,7 +200,7 @@ Converter output should be a valid JSON document with the following structure:
 ```json
 {
     "contentType": "JSON",
-    "data": "{\"tempFreq\":60,\"humFreq\":30,\"firmwareVersion\":\"1.2.2\"}",
+    "data": "{\"tempFreq\":60,\"firmwareVersion\":\"1.2.3\"}",
     "metadata": {
         "topic": "temp-sensor/sensorA/upload"
     }
@@ -227,7 +227,9 @@ The full source code of javascript function used in converter is available [**he
 
 In order to invoke the downlink processing by the integration, tenant administrator should configure the rule chain similar to the one below:
 
+![image](/images/user-guide/integrations/downlink-rule-chain-example.png)
 
+The full rule chain configuration is available [**here**](/docs/user-guide/resources/downlink_example_rule_chain.json).
 
 ##### Synchronous vs Asynchronous Downlinks 
 
