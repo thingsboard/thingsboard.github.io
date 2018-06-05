@@ -272,7 +272,7 @@ We plan to log statistics for amount of messages processed by each integration w
 
 #### More integrations and protocols
 
-We plan to provide specific integrations for different platforms, like The Things Network and also for different communication protocols, like gRPC.
+We plan to provide specific integrations for different platforms, and also for different communication protocols, like gRPC.
 
 #### More data converters
 
