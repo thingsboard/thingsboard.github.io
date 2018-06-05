@@ -84,7 +84,7 @@ Instructions listed below will help you to install Cassandra.
 #### ThingsBoard service installation
 
 - Create working directory, for example "C:\thingsboard". 
-- Download [installation archive](https://github.com/thingsboard/thingsboard/releases/download/v2.0.1/thingsboard-windows-2.0.1.zip) or [build it from source](/docs/user-guide/install/building-from-source).
+- Download [installation archive](https://github.com/thingsboard/thingsboard/releases/download/v2.0.2/thingsboard-windows-2.0.2.zip) or [build it from source](/docs/user-guide/install/building-from-source).
 - Unzip installation archive to the working directory. The working directory should look like this after installation:
  
   ![image](/images/user-guide/install/windows/windows-folder.png)
@@ -105,7 +105,7 @@ Instructions listed below will help you to install Cassandra.
     Java 1.8 found!
     Installing thingsboard ...
      ===================================================
-     :: ThingsBoard ::       (v2.0.1)
+     :: ThingsBoard ::       (v2.0.2)
      ===================================================
 
     Starting ThingsBoard Installation...
