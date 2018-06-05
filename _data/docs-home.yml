@@ -78,6 +78,8 @@ toc:
       path: /docs/user-guide/integrations/aws-iot/
     - title: IBM Watson IoT
       path: /docs/user-guide/integrations/ibm-watson-iot/
+    - title: TheThingsNetwork
+      path: /docs/user-guide/integrations/ttn/
     - title: Azure Event Hub
       path: /docs/user-guide/integrations/azure-event-hub/
   - title: Device & Asset Groups

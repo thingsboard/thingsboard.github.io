@@ -291,6 +291,7 @@ Explore guides and video tutorials related to specific integrations:
  - [Actility ThingPark](/docs/user-guide/integrations/thingpark/)
  - [SigFox](/docs/user-guide/integrations/sigfox/)
  - [OceanConnect](/docs/user-guide/integrations/ocean-connect/)
+ - [TheThingsNetwork](/docs/user-guide/integrations/ttn/)
 
 
 
