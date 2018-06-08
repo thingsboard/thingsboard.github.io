@@ -38,7 +38,11 @@ toc:
   - title: ThingsBoard Professional Edition
     path: /products/thingsboard-pe/install/
   - title: ThingsBoard Professional Edition on AWS Marketplace
-    path: /docs/user-guide/install/aws-marketplace-pe/
+    section:
+    - title: Installation
+      path: /docs/user-guide/install/aws-marketplace-pe/
+    - title: Upgrade instructions
+      path: /docs/user-guide/install/aws-marketplace-pe-upgrade/
 - title: Features
   section:
   - title: Entities and relations
