@@ -142,7 +142,7 @@ In general, output from Downlink converter should have the following structure:
 }
 {% endhighlight %}
 
-- **contentType** - defines how data will be encoded {TEXT | JSON | BINARY}
+- **contentType** - defines how data will be encoded {TEXT \| JSON \| BINARY}
 - **data** - actual data that will be sent to the device in TTN. More details about API can be foind in this [TTN API](https://www.thethingsnetwork.org/docs/applications/mqtt/api.html){:target="_blank"}
 - **metadata** - in this object you should place correct devId value that will be used to identify target device in TTN
 
