@@ -54,29 +54,29 @@ return typeof msg.temperature === 'undefined'
 If temperature property not defined or temperature is valid - script will return **True**, otherwise it will return **False**.
 If script returns **True** incoming message will be routed to the next nodes that are connected with **True** relation.
  
-No we want that all **telemetry requests** pass through this validation script. We need to remove existing **Post Telemetry** 
+We want all **telemetry requests** to pass through this validation script. We need to remove existing **Post Telemetry** 
 relation between **Message Type Switch** node and **Save Telemetry** node:
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/getting-started/remove-relation.png)
   
-And connect **Message Type Switch** node with **Script Filter** node using **Post Telemetry** relation:
+And connect **Message Type Switch** node with **Script Filter** node the using **Post Telemetry** relation:
    
 ![image](/images/user-guide/rule-engine-2-0/tutorials/getting-started/realtion-window.png)
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/getting-started/connect-script.png)
 
-Next we need to connect **Script Filter** node with **Save Telemetry** node using **True** relation. So all valid telemetry will be saved:
+Next we need to connect **Script Filter** node with **Save Telemetry** node using the **True** relation, so all valid telemetry will be saved:
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/getting-started/script-to-save.png)
 
-Also we will connect **Script Filter** node with **Log Other** node using **False** relation. So all not valid telemetry will be logged in the system log:
+Also we will connect **Script Filter** node with **Log Other** node using the **False** relation, so all invalid telemetry will be logged in the system log:
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/getting-started/false-log.png)
 
-Press Save button to apply changes.
+Press the Save button to apply changes.
 
 #### Validate results
-For validating results we will need to create Device and submit telemetry to the Thingsboard. So go in **Devices** section and create new Device:
+For validating results we will need to create Device and submit telemetry to the Thingsboard. In the **Devices** section, create a new Device:
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/getting-started/create-device.png)
 
