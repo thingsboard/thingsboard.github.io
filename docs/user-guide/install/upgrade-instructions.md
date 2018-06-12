@@ -124,6 +124,17 @@ description: ThingsBoard IoT platform upgrade instructions
         </li>
     </ul>
   </li>  
+  <li>
+    <a href="#upgrading-to-203" id="markdown-toc-upgrading-to-203">Upgrading to 2.0.3</a>
+    <ul>
+        <li>
+            <a href="#ubuntucentos-10" id="markdown-toc-ubuntucentos-10">Ubuntu/CentOS</a>        
+        </li>
+        <li>
+            <a href="#windows-10" id="markdown-toc-windows-10">Windows</a>        
+        </li>
+    </ul>
+  </li>  
 </ul>
 
 ## Upgrading to 1.0.3
@@ -954,6 +965,72 @@ $ sudo service thingsboard start
 #### ThingsBoard package download
 
 Download ThingsBoard installation archive for Windows: [thingsboard-windows-2.0.2.zip](https://github.com/thingsboard/thingsboard/releases/download/v2.0.2/thingsboard-windows-2.0.2.zip).
+
+#### ThingsBoard service upgrade
+
+* Stop ThingsBoard service if it is running.
+ 
+```text
+net stop thingsboard
+```
+
+* Make a backup of previous ThingsBoard configuration located in \<ThingsBoard install dir\>\conf (for ex. C:\thingsboard\conf).
+
+* Remove ThingsBoard install dir.
+* Unzip installation archive to ThingsBoard install dir.
+* Compare your old ThingsBoard configuration files (from the backup you made in the first step) with new ones.
+* Please make sure that you set database.type parameter value (in the file **\<ThingsBoard install dir\>\conf\thingsboard.yml**) to "cassandra" instead of "sql" in order to upgrade your cassandra database:
+  
+  ```
+  database:
+      type: "${DATABASE_TYPE:cassandra}" # cassandra OR sql
+  ```       
+  
+#### Start the service
+
+```text
+net start thingsboard
+```
+
+## Upgrading to 2.0.3
+
+These steps are applicable for 2.0.2 ThingsBoard version.
+
+### Ubuntu/CentOS
+
+#### ThingsBoard package download
+
+{% capture tabspec %}thingsboard-download-2-0-3
+thingsboard-download-2-0-3-ubuntu,Ubuntu,shell,resources/2.0.3/thingsboard-ubuntu-download.sh,/docs/user-guide/install/resources/2.0.3/thingsboard-ubuntu-download.sh
+thingsboard-download-2-0-3-centos,CentOS,shell,resources/2.0.3/thingsboard-centos-download.sh,/docs/user-guide/install/resources/2.0.3/thingsboard-centos-download.sh{% endcapture %}  
+{% include tabs.html %}
+
+#### ThingsBoard service upgrade
+
+{% capture tabspec %}thingsboard-installation-2-0-3
+thingsboard-installation-2-0-3-ubuntu,Ubuntu,shell,resources/2.0.3/thingsboard-ubuntu-installation.sh,/docs/user-guide/install/resources/2.0.3/thingsboard-ubuntu-installation.sh
+thingsboard-installation-2-0-3-centos,CentOS,shell,resources/2.0.3/thingsboard-centos-installation.sh,/docs/user-guide/install/resources/2.0.3/thingsboard-centos-installation.sh{% endcapture %}  
+{% include tabs.html %}
+
+**NOTE:** Package installer will ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.  
+Please make sure that you set database.type parameter value (in the file **/etc/thingsboard/conf/thingsboard.yml**) to "cassandra" instead of "sql" in order to upgrade your cassandra database:
+ 
+```
+database:
+    type: "${DATABASE_TYPE:cassandra}" # cassandra OR sql
+```       
+
+#### Start the service
+
+```bash
+$ sudo service thingsboard start
+```
+
+### Windows
+
+#### ThingsBoard package download
+
+Download ThingsBoard installation archive for Windows: [thingsboard-windows-2.0.3.zip](https://github.com/thingsboard/thingsboard/releases/download/v2.0.3/thingsboard-windows-2.0.3.zip).
 
 #### ThingsBoard service upgrade
 

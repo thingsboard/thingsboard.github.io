@@ -96,3 +96,33 @@ description:
     </div>
 </div>
 
+<div class="customer-block">
+    <a href="https://www.oneserve.co.uk/">
+        <div class="customer-logo">
+            <img width="" src="/images/customers/oneserve.svg" alt="Oneserve">
+        </div>
+    </a>
+    <div class="customer-content">
+        <h3 id="oneserve">
+            Oneserve Limited 
+        </h3>    
+        <h4>An award winning Field Service Management platform</h4>
+        <p>
+        We operate in highly competitive markets; from housing management to utilities and manufacturing sectors. Technology innovation is at the heart of our product strategy and service delivery approach. As we grow and extend our field service management solution, we recognised that we needed a flexible IoT platform that enables our delivery needs with lower complexity and cost without sacrificing functionality and extensibility. 
+        </p> 
+        <p>
+        The ThingsBoard platform has, within a short space of time, easily fulfilled our requirements. It is easy to adapt, has highly flexible implementation options and includes a broad suite of integration and visualization capabilities out of the box.
+        </p> 
+        <p>
+        The platform is continually being extended and improved, with the ThingsBoard Team both accessible and supportive to all of our needs. We now have a robust industrial platform that unlocks our IoT service goals.
+        </p> 
+        <div class="person-logo-container">
+            <img class="person-logo" src="/images/customers/oneserve-person.png"/>
+            <div class="person-title">
+                Mark Hunt <br/>
+                CTO
+            </div>
+        </div>
+    </div>
+</div>
+

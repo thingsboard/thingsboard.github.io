@@ -53,6 +53,24 @@ description:
 <section id="pe-customers">
     <main class="customers-container">
 		<div class="customer-block">
+			<a href="/industries/smart-energy/#oneserve">
+				<span>
+					<div class="customer-logo" style="height:134px">
+						<img width="" src="/images/customers/oneserve.svg" alt="Oneserve Limited">
+					 </div>
+				</span>
+			</a>
+		</div>
+		<div class="customer-block">
+			<a href="/industries/smart-energy/#nettra">
+				<span>
+					<div class="customer-logo" style="height:134px">
+						<img width="" src="/images/customers/nettra.png" alt="Nettra">
+					 </div>
+				</span>
+			</a>
+		</div>
+		<div class="customer-block">
 			<a href="/industries/telecom/#tektelic">
 				<span>
 					<div class="customer-logo" style="height:134px">
