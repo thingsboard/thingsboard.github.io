@@ -71,6 +71,15 @@ description:
 			</a>
 		</div>
 		<div class="customer-block">
+			<a href="/industries/agriculture/#enviroeye">
+				<span>
+					<div class="customer-logo" style="height:134px">
+						<img width="" src="/images/customers/enviroeye.png" alt="Enviroeye">
+					 </div>
+				</span>
+			</a>
+		</div>
+		<div class="customer-block">
 			<a href="/industries/telecom/#tektelic">
 				<span>
 					<div class="customer-logo" style="height:134px">

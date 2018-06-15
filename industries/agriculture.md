@@ -37,3 +37,29 @@ description:
     </div>
 </div>
 
+<div class="customer-block">
+    <a href="https://www.enviroeye.com.au/">
+        <div class="customer-logo">
+            <img width="" src="/images/customers/enviroeye.png" alt="Enviroeye">
+        </div>
+    </a>
+    <div class="customer-content">
+        <h3 id="enviroeye">
+            Enviroeye
+        </h3>
+        <h4>
+            Developers of VineHub, the industry's first integrated vineyard management and automation platform.
+        </h4>     
+        <p>
+        ThingsBoard (TB) has been an amazing discovery after much searching. The thought and architectural maturity of the platform is unmatched in the market. It’s allowed us to bring our platform to market a full 18 months sooner, than if we had embarked on developing our own backend and visualisation capabilities. With such a flexible UI, even with just a basic understanding of HTML and Javascript one can quickly and easily begin customising and designing they’re own widgets. This has provided great value to our growers since we can build them customised dashboards with very little time and effort on our part. The ability to ingest data directly from our LoRaWAN MQTT broker, via the platform’s IoT Gateway feature, has eliminated the need for us to maintain a seperate middleware layer, improving our operational efficiencies.
+        </p>
+        <p>
+        All in all, Andrew and all the amazingly helpful guys at ThingsBoard, have developed a highly capable and scalable solution for just about any IoT application and we say look no further for your next IoT project. 
+        </p>
+        <div class="person-logo-container">
+            <div class="person-title">
+                Mark Morris<br/>Founder & Managing Director
+            </div>
+        </div>
+    </div>
+</div>
