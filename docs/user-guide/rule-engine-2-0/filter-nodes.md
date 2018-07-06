@@ -42,6 +42,16 @@ otherwise, message is sent to **Other** chain.
 If you use Custom Message Types than you can route those messages via **Other** chain of **Message Type Switch Node** 
 to the **Switch Node** or **Message Type Filter Node** configured with required routing logic.
 
+##### Originator Type Filter Node
+
+![image](/images/user-guide/rule-engine-2-0/nodes/filter-originator-type.png)
+
+In the Node configuration, administrator defines set of allowed Originator [Entity](/docs/user-guide/entities-and-relations/) types for incoming Message. 
+
+![image](/images/user-guide/rule-engine-2-0/nodes/filter-originator-type-config.png)
+
+If incoming Originator Type is expected - Message is sent via **True** chain, otherwise **False** chain is used.
+
 ##### Originator Type Switch Node
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/filter-originator-type-switch.png)

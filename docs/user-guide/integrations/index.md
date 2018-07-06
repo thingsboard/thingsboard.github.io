@@ -294,6 +294,7 @@ Explore guides and video tutorials related to specific integrations:
  - [SigFox](/docs/user-guide/integrations/sigfox/)
  - [OceanConnect](/docs/user-guide/integrations/ocean-connect/)
  - [TheThingsNetwork](/docs/user-guide/integrations/ttn/)
+ - [OPC-UA](/docs/user-guide/integrations/opc-ua/)
 
 
 

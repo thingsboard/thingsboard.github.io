@@ -86,6 +86,8 @@ toc:
       path: /docs/user-guide/integrations/ttn/
     - title: Azure Event Hub
       path: /docs/user-guide/integrations/azure-event-hub/
+    - title: OPC-UA
+      path: /docs/user-guide/integrations/opc-ua/
   - title: Device & Asset Groups
     path: /docs/user-guide/groups/
     pe: true
@@ -120,6 +122,8 @@ toc:
   - title: PE Nodes
     pe: true
     section:
+    - title: Transformation Nodes
+      path: /docs/user-guide/rule-engine-2-0/pe/transformation-nodes/
     - title: Action Nodes
       path: /docs/user-guide/rule-engine-2-0/pe/action-nodes/
   - title: Tutorials
