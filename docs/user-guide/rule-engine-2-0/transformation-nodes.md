@@ -126,6 +126,14 @@ In this case value of **deviceName** can be referenced as <code>${deviceName}</c
  ```
  Device ${deviceName} has high temperature
  ```
+ 
+<br/>
+
+Additionally this node can prepare email attachments if incoming message metadata contains **attachments** field with reference to files stored in DataBase. 
+
+**NOTE**: This is part of [File Storage](TBD-2.1) feature supported by [ThingsBoard Professional Edition](/products/thingsboard-pe/).
+
+<br/>
 
 You can see the real life example, where this node is used, in the next tutorial:
 

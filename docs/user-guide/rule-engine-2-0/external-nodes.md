@@ -266,6 +266,14 @@ Please find more details about [how to configure default System SMTP Settings.](
 
 If specific Mail Server is required for this node - disable **Use system SMTP settings** checkbox and configure Mail Server manually.
 
+<br/>
+
+Additionally this node can create email attachments if incoming message has prepared **attachments** field with reference to files stored in DataBase. 
+
+**NOTE**: This is part of [File Storage](TBD-2.1) feature supported by [ThingsBoard Professional Edition](/products/thingsboard-pe/).
+
+<br/>
+
 In case of successful mail sending, original Message will be passed to the next nodes via **Success** chain, 
 otherwise **Failure** chain is used.
 
