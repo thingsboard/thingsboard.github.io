@@ -91,8 +91,17 @@ toc:
   - title: Device & Asset Groups
     path: /docs/user-guide/groups/
     pe: true
+  - title: Scheduler
+    path: /docs/user-guide/scheduler/
+    pe: true
+  - title: Reporting
+    path: /docs/user-guide/reporting/
+    pe: true
   - title: CSV/XLS data export
     path: /docs/user-guide/csv-xls-data-export/
+    pe: true
+  - title: File Storage
+    path: /docs/user-guide/file-storage/
     pe: true
   - title: Audit Log
     path: /docs/user-guide/audit-log/

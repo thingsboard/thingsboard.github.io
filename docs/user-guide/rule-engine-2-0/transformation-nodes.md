@@ -131,7 +131,7 @@ In this case value of **deviceName** can be referenced as <code>${deviceName}</c
 
 Additionally this node can prepare email attachments if incoming message metadata contains **attachments** field with reference to files stored in DataBase. 
 
-**NOTE**: This is part of [File Storage](TBD-2.1) feature supported by [ThingsBoard Professional Edition](/products/thingsboard-pe/).
+**NOTE**: This is part of [File Storage](/docs/user-guide/file-storage/) feature supported by [ThingsBoard Professional Edition](/products/thingsboard-pe/).
 
 <br/>
 
