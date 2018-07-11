@@ -38,6 +38,24 @@ description:
         </div>
     </main>
     <main>
+        <div class="image-wrapper"><img src="/images/pe/scheduler-banner.svg"></div>
+        <div class="content">
+            <h3>Scheduler</h3>
+            <p>Schedule various types of events including report generation, commands to devices and configuration updates with flexible schedule configuration.</p>
+            <br/>
+            <p><a href="/docs/user-guide/scheduler/" class="button">Read more</a></p>
+        </div>
+    </main>
+    <main>
+        <div class="image-wrapper"><img src="/images/pe/reporting-banner.svg"></div>
+        <div class="content">
+            <h3>Reporting</h3>
+            <p>Generate great looking reports using dashboards visualization capabilities. Generate reports by schedule or export by demand.</p>
+            <br/>
+            <p><a href="/docs/user-guide/reporting/" class="button">Read more</a></p>
+        </div>
+    </main>
+    <main>
         <div class="image-wrapper"><img src="/images/pe/csv-xls-data-export.svg"></div>
         <div class="content">
             <h3>CSV/XLS data export</h3>
@@ -197,6 +215,20 @@ description:
             </tr>
             <tr>
                 <td><a class="feature-link" href="/docs/user-guide/groups/">Device, assets and customer <span class="info">groups</span></a></td>
+                <td class="unchecked"></td>
+                <td></td>
+                <td class="checked"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><a class="feature-link" href="/docs/user-guide/scheduler/"><span class="info">Scheduler</span></a></td>
+                <td class="unchecked"></td>
+                <td></td>
+                <td class="checked"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><a class="feature-link" href="/docs/user-guide/reporting/"><span class="info">Reporting</span></a></td>
                 <td class="unchecked"></td>
                 <td></td>
                 <td class="checked"></td>
