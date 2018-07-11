@@ -15,6 +15,10 @@ description: Reporting Guide
 ThingsBoard allows you to generate reports using existing dashboards.
 Reports can be generated from currently opened dashboard or can be scheduled using [Scheduler](/docs/user-guide/scheduler/#generate-report) capabilities.
 
+<br/>
+
+![image](/images/user-guide/reporting.svg)
+
 ### Reports Server
 
 Reports Server is standalone service used to generate reports by rendering dashboards in headless browser.

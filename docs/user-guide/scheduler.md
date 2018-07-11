@@ -17,7 +17,11 @@ ThingsBoard Scheduler fires configured scheduler events according to their sched
 When scheduler event is fired the [Rule Engine Message](/docs/user-guide/rule-engine-2-0/overview/#rule-engine-message) is generated
 from the event configuration which has a similar structure with a Rule Engine Message.
 Generated message is then forwarded to [Rule Engine](/docs/user-guide/rule-engine-2-0/re-getting-started/) and processed starting from
-[Root Rule Chain](/docs/user-guide/rule-engine-2-0/overview/#rule-chain).
+the [Root Rule Chain](/docs/user-guide/rule-engine-2-0/overview/#rule-chain).
+
+<br/>
+
+![image](/images/user-guide/scheduler.svg)
 
 ### Scheduler Administration
 

@@ -1,0 +1,900 @@
+{
+  "title": "Airconditioners",
+  "configuration": {
+    "widgets": {
+      "32bb1009-f21d-dfa8-b79f-cf4fc8c1ff22": {
+        "isSystemType": true,
+        "bundleAlias": "charts",
+        "typeAlias": "basic_timeseries",
+        "type": "timeseries",
+        "title": "New widget",
+        "sizeX": 11,
+        "sizeY": 5,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "dataKeys": [
+                {
+                  "name": "temperature",
+                  "type": "timeseries",
+                  "label": "temperature",
+                  "color": "#2196f3",
+                  "settings": {
+                    "showLines": true,
+                    "fillLines": false,
+                    "showPoints": false,
+                    "tooltipValueFormatter": "",
+                    "showSeparateAxis": false,
+                    "axisTitle": "",
+                    "axisPosition": "left",
+                    "axisTicksFormatter": ""
+                  },
+                  "_hash": 0.8511494859403264
+                }
+              ],
+              "entityAliasId": "1ae06434-80eb-bcf4-ec52-3679f1ec24c8"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "shadowSize": 4,
+            "fontColor": "#545454",
+            "fontSize": 10,
+            "xaxis": {
+              "showLabels": true,
+              "color": "#545454"
+            },
+            "yaxis": {
+              "showLabels": true,
+              "color": "#545454"
+            },
+            "grid": {
+              "color": "#545454",
+              "tickColor": "#DDDDDD",
+              "verticalLines": true,
+              "horizontalLines": true,
+              "outlineWidth": 1
+            },
+            "stack": false,
+            "tooltipIndividual": false
+          },
+          "title": "Temperature",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "mobileHeight": null,
+          "enableDataExport": true,
+          "widgetStyle": {},
+          "useDashboardTimewindow": true,
+          "showLegend": true,
+          "legendConfig": {
+            "position": "left",
+            "showMin": false,
+            "showMax": false,
+            "showAvg": true,
+            "showTotal": false
+          },
+          "actions": {}
+        },
+        "id": "32bb1009-f21d-dfa8-b79f-cf4fc8c1ff22"
+      },
+      "03f8af1b-40e5-43bb-1bdf-c436c5abbf27": {
+        "isSystemType": true,
+        "bundleAlias": "charts",
+        "typeAlias": "basic_timeseries",
+        "type": "timeseries",
+        "title": "New widget",
+        "sizeX": 13,
+        "sizeY": 5,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "dataKeys": [
+                {
+                  "name": "humidity",
+                  "type": "timeseries",
+                  "label": "${entityName}: humidity",
+                  "color": "#2196f3",
+                  "settings": {
+                    "showLines": true,
+                    "fillLines": false,
+                    "showPoints": false,
+                    "showSeparateAxis": false,
+                    "axisPosition": "left"
+                  },
+                  "_hash": 0.6378961947495461
+                }
+              ],
+              "entityAliasId": "1ae06434-80eb-bcf4-ec52-3679f1ec24c8"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "shadowSize": 4,
+            "fontColor": "#545454",
+            "fontSize": 10,
+            "xaxis": {
+              "showLabels": true,
+              "color": "#545454"
+            },
+            "yaxis": {
+              "showLabels": true,
+              "color": "#545454"
+            },
+            "grid": {
+              "color": "#545454",
+              "tickColor": "#DDDDDD",
+              "verticalLines": true,
+              "horizontalLines": true,
+              "outlineWidth": 1
+            },
+            "stack": false,
+            "tooltipIndividual": false
+          },
+          "title": "Humidity",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "mobileHeight": null,
+          "enableDataExport": true,
+          "widgetStyle": {},
+          "useDashboardTimewindow": true,
+          "showLegend": true,
+          "legendConfig": {
+            "position": "left",
+            "showMin": false,
+            "showMax": false,
+            "showAvg": true,
+            "showTotal": false
+          },
+          "actions": {}
+        },
+        "id": "03f8af1b-40e5-43bb-1bdf-c436c5abbf27"
+      },
+      "2f642221-5877-e0cc-3bab-781d3245bc54": {
+        "isSystemType": true,
+        "bundleAlias": "charts",
+        "typeAlias": "basic_timeseries",
+        "type": "timeseries",
+        "title": "New widget",
+        "sizeX": 11,
+        "sizeY": 6,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "dataKeys": [
+                {
+                  "name": "powerConsumption",
+                  "type": "timeseries",
+                  "label": "powerConsumption",
+                  "color": "#2196f3",
+                  "settings": {
+                    "showLines": true,
+                    "fillLines": false,
+                    "showPoints": false,
+                    "tooltipValueFormatter": "",
+                    "showSeparateAxis": false,
+                    "axisTitle": "",
+                    "axisPosition": "left",
+                    "axisTicksFormatter": ""
+                  },
+                  "_hash": 0.11745555134135666
+                }
+              ],
+              "entityAliasId": "1ae06434-80eb-bcf4-ec52-3679f1ec24c8"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "shadowSize": 4,
+            "fontColor": "#545454",
+            "fontSize": 10,
+            "xaxis": {
+              "showLabels": true,
+              "color": "#545454"
+            },
+            "yaxis": {
+              "showLabels": true,
+              "color": "#545454"
+            },
+            "grid": {
+              "color": "#545454",
+              "tickColor": "#DDDDDD",
+              "verticalLines": true,
+              "horizontalLines": true,
+              "outlineWidth": 1
+            },
+            "stack": false,
+            "tooltipIndividual": false
+          },
+          "title": "Power Consumption",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "mobileHeight": null,
+          "enableDataExport": true,
+          "widgetStyle": {},
+          "useDashboardTimewindow": true,
+          "showLegend": true,
+          "legendConfig": {
+            "position": "left",
+            "showMin": false,
+            "showMax": false,
+            "showAvg": true,
+            "showTotal": false
+          },
+          "actions": {}
+        },
+        "id": "2f642221-5877-e0cc-3bab-781d3245bc54"
+      },
+      "61e07e9d-4b75-9b7c-4f55-b687f40ade58": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "entities_table",
+        "type": "latest",
+        "title": "New widget",
+        "sizeX": 13,
+        "sizeY": 6,
+        "config": {
+          "timewindow": {
+            "realtime": {
+              "interval": 1000,
+              "timewindowMs": 86400000
+            },
+            "aggregation": {
+              "type": "NONE",
+              "limit": 200
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "4px",
+          "settings": {
+            "enableSearch": true,
+            "displayPagination": true,
+            "defaultPageSize": 10,
+            "defaultSortOrder": "entityName",
+            "displayEntityName": true,
+            "displayEntityType": true
+          },
+          "title": "New Entities table",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400,
+            "padding": "5px 10px 5px 10px"
+          },
+          "useDashboardTimewindow": false,
+          "showLegend": false,
+          "datasources": [
+            {
+              "type": "entity",
+              "dataKeys": [
+                {
+                  "name": "temperature",
+                  "type": "timeseries",
+                  "label": "temperature",
+                  "color": "#2196f3",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "cellStyleFunction": "",
+                    "useCellContentFunction": false,
+                    "cellContentFunction": ""
+                  },
+                  "_hash": 0.655807196821871
+                },
+                {
+                  "name": "humidity",
+                  "type": "timeseries",
+                  "label": "humidity",
+                  "color": "#4caf50",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "cellStyleFunction": "",
+                    "useCellContentFunction": false,
+                    "cellContentFunction": ""
+                  },
+                  "_hash": 0.6367219618323776
+                },
+                {
+                  "name": "powerConsumption",
+                  "type": "timeseries",
+                  "label": "powerConsumption",
+                  "color": "#f44336",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "cellStyleFunction": "",
+                    "useCellContentFunction": false,
+                    "cellContentFunction": ""
+                  },
+                  "_hash": 0.9156114835726441
+                },
+                {
+                  "name": "state",
+                  "type": "attribute",
+                  "label": "state",
+                  "color": "#ffc107",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "cellStyleFunction": "",
+                    "useCellContentFunction": false,
+                    "cellContentFunction": ""
+                  },
+                  "_hash": 0.6388018932765092
+                }
+              ],
+              "entityAliasId": "1ae06434-80eb-bcf4-ec52-3679f1ec24c8"
+            }
+          ],
+          "enableDataExport": true,
+          "widgetStyle": {},
+          "actions": {
+            "actionCellButton": [
+              {
+                "id": "951e2f7a-c9d1-d0f1-a329-eac06addb9b9",
+                "name": "settings",
+                "icon": "settings",
+                "type": "openDashboardState",
+                "targetDashboardStateId": "airconditioner",
+                "setEntityId": true
+              }
+            ]
+          }
+        },
+        "id": "61e07e9d-4b75-9b7c-4f55-b687f40ade58"
+      },
+      "e5ead9c9-6869-a5f5-aa09-25c84beecf73": {
+        "isSystemType": true,
+        "bundleAlias": "control_widgets",
+        "typeAlias": "led_indicator",
+        "type": "rpc",
+        "title": "New widget",
+        "sizeX": 4,
+        "sizeY": 4,
+        "config": {
+          "targetDeviceAliases": [],
+          "showTitle": false,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "0px",
+          "settings": {
+            "requestTimeout": 500,
+            "initialValue": true,
+            "title": "Airconditioner status",
+            "ledColor": "#4caf50",
+            "valueAttribute": "state",
+            "retrieveValueMethod": "attribute",
+            "parseValueFunction": "return data;",
+            "performCheckStatus": false,
+            "checkStatusMethod": "checkStatus"
+          },
+          "title": "New Led indicator",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "useDashboardTimewindow": true,
+          "showLegend": false,
+          "actions": {},
+          "decimals": 2,
+          "datasources": [],
+          "enableDataExport": true,
+          "targetDeviceAliasIds": [
+            "2fc05fae-870f-5486-ce8f-2b21a000a5e3"
+          ]
+        },
+        "id": "e5ead9c9-6869-a5f5-aa09-25c84beecf73"
+      },
+      "63592c14-643b-587e-833a-75e2dde0024c": {
+        "isSystemType": true,
+        "bundleAlias": "control_widgets",
+        "typeAlias": "round_switch",
+        "type": "rpc",
+        "title": "New widget",
+        "sizeX": 4,
+        "sizeY": 4,
+        "config": {
+          "targetDeviceAliases": [],
+          "showTitle": false,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "0px",
+          "settings": {
+            "requestTimeout": 500,
+            "initialValue": false,
+            "getValueMethod": "getValue",
+            "setValueMethod": "setState",
+            "title": "Round switch",
+            "retrieveValueMethod": "attribute",
+            "valueKey": "state",
+            "parseValueFunction": "return data;",
+            "convertValueFunction": "return value;"
+          },
+          "title": "New Round switch",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "useDashboardTimewindow": true,
+          "showLegend": false,
+          "actions": {},
+          "decimals": 2,
+          "datasources": [],
+          "enableDataExport": true,
+          "targetDeviceAliasIds": [
+            "2fc05fae-870f-5486-ce8f-2b21a000a5e3"
+          ]
+        },
+        "id": "63592c14-643b-587e-833a-75e2dde0024c"
+      },
+      "9cb7dfb0-596f-6ce6-9c6a-9dbf947fd264": {
+        "isSystemType": true,
+        "bundleAlias": "charts",
+        "typeAlias": "basic_timeseries",
+        "type": "timeseries",
+        "title": "New widget",
+        "sizeX": 7,
+        "sizeY": 4,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "dataKeys": [
+                {
+                  "name": "temperature",
+                  "type": "timeseries",
+                  "label": "${entityName}: temperature",
+                  "color": "#2196f3",
+                  "settings": {
+                    "showLines": true,
+                    "fillLines": false,
+                    "showPoints": false,
+                    "showSeparateAxis": false,
+                    "axisPosition": "left"
+                  },
+                  "_hash": 0.8511494859403264
+                }
+              ],
+              "entityAliasId": "2fc05fae-870f-5486-ce8f-2b21a000a5e3"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "shadowSize": 4,
+            "fontColor": "#545454",
+            "fontSize": 10,
+            "xaxis": {
+              "showLabels": true,
+              "color": "#545454"
+            },
+            "yaxis": {
+              "showLabels": true,
+              "color": "#545454"
+            },
+            "grid": {
+              "color": "#545454",
+              "tickColor": "#DDDDDD",
+              "verticalLines": true,
+              "horizontalLines": true,
+              "outlineWidth": 1
+            },
+            "stack": false,
+            "tooltipIndividual": false
+          },
+          "title": "Temperature",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "mobileHeight": null,
+          "enableDataExport": true,
+          "widgetStyle": {},
+          "useDashboardTimewindow": true,
+          "showLegend": true,
+          "legendConfig": {
+            "position": "bottom",
+            "showMin": false,
+            "showMax": false,
+            "showAvg": true,
+            "showTotal": false
+          },
+          "actions": {}
+        },
+        "id": "9cb7dfb0-596f-6ce6-9c6a-9dbf947fd264"
+      },
+      "659238ac-eefe-5f78-d0b0-519d44a9a002": {
+        "isSystemType": true,
+        "bundleAlias": "charts",
+        "typeAlias": "basic_timeseries",
+        "type": "timeseries",
+        "title": "New widget",
+        "sizeX": 8,
+        "sizeY": 4,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "dataKeys": [
+                {
+                  "name": "humidity",
+                  "type": "timeseries",
+                  "label": "humidity",
+                  "color": "#2196f3",
+                  "settings": {
+                    "showLines": true,
+                    "fillLines": false,
+                    "showPoints": false,
+                    "tooltipValueFormatter": "",
+                    "showSeparateAxis": false,
+                    "axisTitle": "",
+                    "axisPosition": "left",
+                    "axisTicksFormatter": ""
+                  },
+                  "_hash": 0.1878966006649072
+                }
+              ],
+              "entityAliasId": "2fc05fae-870f-5486-ce8f-2b21a000a5e3"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "shadowSize": 4,
+            "fontColor": "#545454",
+            "fontSize": 10,
+            "xaxis": {
+              "showLabels": true,
+              "color": "#545454"
+            },
+            "yaxis": {
+              "showLabels": true,
+              "color": "#545454"
+            },
+            "grid": {
+              "color": "#545454",
+              "tickColor": "#DDDDDD",
+              "verticalLines": true,
+              "horizontalLines": true,
+              "outlineWidth": 1
+            },
+            "stack": false,
+            "tooltipIndividual": false
+          },
+          "title": "Humidity",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "mobileHeight": null,
+          "enableDataExport": true,
+          "widgetStyle": {},
+          "useDashboardTimewindow": true,
+          "showLegend": true,
+          "legendConfig": {
+            "position": "bottom",
+            "showMin": false,
+            "showMax": false,
+            "showAvg": true,
+            "showTotal": false
+          },
+          "actions": {}
+        },
+        "id": "659238ac-eefe-5f78-d0b0-519d44a9a002"
+      },
+      "6d45d9d2-a7bd-c935-4a71-91ef69638743": {
+        "isSystemType": true,
+        "bundleAlias": "charts",
+        "typeAlias": "basic_timeseries",
+        "type": "timeseries",
+        "title": "New widget",
+        "sizeX": 15,
+        "sizeY": 4,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "dataKeys": [
+                {
+                  "name": "powerConsumption",
+                  "type": "timeseries",
+                  "label": "powerConsumption",
+                  "color": "#2196f3",
+                  "settings": {
+                    "showLines": true,
+                    "fillLines": false,
+                    "showPoints": false,
+                    "tooltipValueFormatter": "",
+                    "showSeparateAxis": false,
+                    "axisTitle": "",
+                    "axisPosition": "left",
+                    "axisTicksFormatter": ""
+                  },
+                  "_hash": 0.11745555134135666
+                }
+              ],
+              "entityAliasId": "2fc05fae-870f-5486-ce8f-2b21a000a5e3"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "shadowSize": 4,
+            "fontColor": "#545454",
+            "fontSize": 10,
+            "xaxis": {
+              "showLabels": true,
+              "color": "#545454"
+            },
+            "yaxis": {
+              "showLabels": true,
+              "color": "#545454"
+            },
+            "grid": {
+              "color": "#545454",
+              "tickColor": "#DDDDDD",
+              "verticalLines": true,
+              "horizontalLines": true,
+              "outlineWidth": 1
+            },
+            "stack": false,
+            "tooltipIndividual": false
+          },
+          "title": "Power Consumption",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "mobileHeight": null,
+          "enableDataExport": true,
+          "widgetStyle": {},
+          "useDashboardTimewindow": true,
+          "showLegend": true,
+          "legendConfig": {
+            "position": "bottom",
+            "showMin": false,
+            "showMax": false,
+            "showAvg": true,
+            "showTotal": false
+          },
+          "actions": {}
+        },
+        "id": "6d45d9d2-a7bd-c935-4a71-91ef69638743"
+      }
+    },
+    "states": {
+      "default": {
+        "name": "Airconditioners",
+        "root": true,
+        "layouts": {
+          "main": {
+            "widgets": {
+              "32bb1009-f21d-dfa8-b79f-cf4fc8c1ff22": {
+                "sizeX": 11,
+                "sizeY": 5,
+                "mobileHeight": null,
+                "row": 0,
+                "col": 0
+              },
+              "03f8af1b-40e5-43bb-1bdf-c436c5abbf27": {
+                "sizeX": 13,
+                "sizeY": 5,
+                "mobileHeight": null,
+                "row": 0,
+                "col": 11
+              },
+              "2f642221-5877-e0cc-3bab-781d3245bc54": {
+                "sizeX": 11,
+                "sizeY": 6,
+                "mobileHeight": null,
+                "row": 5,
+                "col": 0
+              },
+              "61e07e9d-4b75-9b7c-4f55-b687f40ade58": {
+                "sizeX": 13,
+                "sizeY": 6,
+                "row": 5,
+                "col": 11
+              }
+            },
+            "gridSettings": {
+              "backgroundColor": "#eeeeee",
+              "color": "rgba(0,0,0,0.870588)",
+              "columns": 24,
+              "margins": [
+                10,
+                10
+              ],
+              "backgroundSizeMode": "100%",
+              "autoFillHeight": true,
+              "mobileAutoFillHeight": false,
+              "mobileRowHeight": 70
+            }
+          }
+        }
+      },
+      "airconditioner": {
+        "name": "${entityName}",
+        "root": false,
+        "layouts": {
+          "main": {
+            "widgets": {
+              "e5ead9c9-6869-a5f5-aa09-25c84beecf73": {
+                "sizeX": 4,
+                "sizeY": 4,
+                "row": 4,
+                "col": 0
+              },
+              "63592c14-643b-587e-833a-75e2dde0024c": {
+                "sizeX": 4,
+                "sizeY": 4,
+                "row": 0,
+                "col": 0
+              },
+              "9cb7dfb0-596f-6ce6-9c6a-9dbf947fd264": {
+                "sizeX": 7,
+                "sizeY": 4,
+                "mobileHeight": null,
+                "row": 0,
+                "col": 4
+              },
+              "659238ac-eefe-5f78-d0b0-519d44a9a002": {
+                "sizeX": 8,
+                "sizeY": 4,
+                "mobileHeight": null,
+                "row": 0,
+                "col": 11
+              },
+              "6d45d9d2-a7bd-c935-4a71-91ef69638743": {
+                "sizeX": 15,
+                "sizeY": 4,
+                "mobileHeight": null,
+                "row": 4,
+                "col": 4
+              }
+            },
+            "gridSettings": {
+              "backgroundColor": "#eeeeee",
+              "color": "rgba(0,0,0,0.870588)",
+              "columns": 24,
+              "margins": [
+                10,
+                10
+              ],
+              "backgroundSizeMode": "100%"
+            }
+          }
+        }
+      }
+    },
+    "entityAliases": {
+      "1ae06434-80eb-bcf4-ec52-3679f1ec24c8": {
+        "id": "1ae06434-80eb-bcf4-ec52-3679f1ec24c8",
+        "alias": "airconditioners",
+        "filter": {
+          "type": "deviceType",
+          "resolveMultiple": true,
+          "deviceType": "airconditioner",
+          "deviceNameFilter": ""
+        }
+      },
+      "2fc05fae-870f-5486-ce8f-2b21a000a5e3": {
+        "id": "2fc05fae-870f-5486-ce8f-2b21a000a5e3",
+        "alias": "airconditioner",
+        "filter": {
+          "type": "stateEntity",
+          "resolveMultiple": false,
+          "stateEntityParamName": null,
+          "defaultStateEntity": null
+        }
+      }
+    },
+    "timewindow": {
+      "displayValue": "",
+      "selectedTab": 0,
+      "realtime": {
+        "interval": 1000,
+        "timewindowMs": 60000
+      },
+      "history": {
+        "historyType": 0,
+        "interval": 1000,
+        "timewindowMs": 60000,
+        "fixedTimewindow": {
+          "startTimeMs": 1528873128491,
+          "endTimeMs": 1528959528491
+        }
+      },
+      "aggregation": {
+        "type": "AVG",
+        "limit": 200
+      }
+    },
+    "settings": {
+      "stateControllerId": "entity",
+      "showTitle": false,
+      "showDashboardsSelect": true,
+      "showEntitiesSelect": true,
+      "showDashboardTimewindow": true,
+      "showDashboardExport": true,
+      "toolbarAlwaysOpen": true,
+      "titleColor": "rgba(0,0,0,0.870588)"
+    }
+  },
+  "name": "Airconditioners"
+}
