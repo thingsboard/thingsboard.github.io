@@ -12,20 +12,6 @@ Transformation Nodes that are specific to ThingsBoard PE. Used for changing inco
 * TOC
 {:toc}
 
-# Aggregation Node
-
-![image](/images/user-guide/rule-engine-2-0/pe/nodes/transformation-aggregation.png)
-
-Calculates MIN/MAX/AVG/SUM based on the incoming data.
-
-Configuration:
-
-![image](/images/user-guide/rule-engine-2-0/pe/nodes/transformation-aggregation-config.png)
-
-TBD-2.1
-
-<br/>
-
 # Duplicate To Group Node
 
 ![image](/images/user-guide/rule-engine-2-0/pe/nodes/transformation-duplicate-to-group.png)
