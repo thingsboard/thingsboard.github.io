@@ -198,6 +198,13 @@ List of the predefined Message Types is presented in the following table:
         </code>
         </td>
       </tr>
+      <tr>
+          <td>REST_API_REQUEST</td>
+          <td><b>REST API Request to Rule Engine</b></td>
+          <td>Event produced when user executes REST API call</td>
+          <td><b>requestUUID</b> - the unique request id,<br><b>expirationTime</b> - the expiration time of the request</td>
+          <td>json with request payload</td>
+      </tr>
    </tbody>
 </table>
 
@@ -307,6 +314,23 @@ Similar, to import the rule chain you should navigate to the **Rules Chains** pa
 
 To learn more about internals of the rule engine, see [architecture](/docs/user-guide/rule-engine-2-0/architecture/) page.
 
+## Custom REST API calls to Rule Engine
+
+{% assign feature = "Custom Rule Engine REST API calls" %}{% include templates/pe-feature-banner.md %}
+
+ThingsBoard provides API to send custom REST API calls to the rule engine, process the payload of the request and return result of the processing in response body. 
+This is useful for a number of use cases. For example:
+ 
+ - extend existing REST API of the platform with custom API calls;
+ - enrich REST API call with the attributes of device/asset/customer and forward to external system for complex processing;
+ - provide custom API for your custom widgets.
+ 
+To execute the REST API call, you may use rule-engine-controller [REST APIs](/docs/reference/rest-api/): 
+ 
+![image](/images/user-guide/rule-engine-2-0/rest-api.png) 
+
+Note: the entity id you have specified in the call will be the originator of Rule Engine message. If you do not specify the entity id parameters, your user entity will become an originator of the message.
+
 ## Tutorials
 
 ThingsBoard authors have prepared several tutorials to help you get started with designing rule chains by example:
@@ -314,6 +338,32 @@ ThingsBoard authors have prepared several tutorials to help you get started with
   * [**Transform incoming telemetry**](/docs/user-guide/rule-engine-2-0/tutorials/transform-incoming-telemetry/) 
   * [**Transform telemetry using previous record**](/docs/user-guide/rule-engine-2-0/tutorials/transform-telemetry-using-previous-record/) 
   * [**Create And Clear Alarms**](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/)
-  * [**Send Email**](/docs/user-guide/rule-engine-2-0/tutorials/send-email/) 
-  * [**RPC Reply With data from Related Device**](/docs/user-guide/rule-engine-2-0/tutorials/rpc-reply-tutorial/) 
+  * [**Send Email to Customer**](/docs/user-guide/rule-engine-2-0/tutorials/send-email/) 
+  * [**RPC Reply with data from Related Device**](/docs/user-guide/rule-engine-2-0/tutorials/rpc-reply-tutorial/)
+  
+## NEW
+  
+  * [**Delay actions on incoming telemetry**] - Learn how to raise alarms when telemetry is violating thresholds for some time. 
+  * [**Flexible processing thresholds**] - Learn how to raise alarms when device telemetry is violating thresholds set on the customer or parent asset level.
+  * [**Check relation**] - Learn how to filter messages based on the relation to parent asset.
+  * [**Combine telemetry**] - Learn how to combine messages from different devices and make decisions based on complex functions.
+  
+## Pushing telemetry to External systems  
+  
+  * [**Push incoming telemetry to Kafka**](/docs/user-guide/rule-engine-2-0/tutorials/push-telemetry-to-kafka/);
+  * [**Push incoming telemetry to RabbitMQ**](/docs/user-guide/rule-engine-2-0/tutorials/push-telemetry-to-rabbitmq/);
+  * [**Push incoming telemetry to AWS SQS**](/docs/user-guide/rule-engine-2-0/tutorials/push-telemetry-to-aws-sqs/);
+  * [**Push incoming telemetry to AWS SNS**](/docs/user-guide/rule-engine-2-0/tutorials/push-telemetry-to-aws-sns/);
+  * [**Push incoming telemetry to External MQTT Broker**](/docs/user-guide/rule-engine-2-0/tutorials/push-telemetry-to-mqtt/);
+  * [**Execute REST API call to External system**](/docs/user-guide/rule-engine-2-0/tutorials/rest-api-call-to-external-system/);
 
+## PE
+
+  * [**Add & remove devices from a group**] - Learn how to dynamically add & remove devices from a group based on incoming attributes or telemetry;
+  * [**Aggregate data stream**] - Learn how to aggregate incoming telemetry values (e.g. calculate total energy consumption on a building, district or customer level);
+  * [**Aggregate latest values**] - Learn how to aggregate latest telemetry values (e.g. calculate average temperature in the office area);
+  * [**Alarm count visualization**] - Calculate and visualize amount of active alarms on device, apartment, building levels;
+  * [**Alarm count thresholds**] - Raise high priority alarms when threshold of low priority alarms reached;
+  
+  * [**Schedule reports**] - schedule beautiful reports to be sent to your end-users (e.g. turn on air conditioning at 7 am);
+  * [**Schedule device updates**] - schedule periodic configuration updates to a group of devices (e.g. turn on air conditioning at 7 am);
