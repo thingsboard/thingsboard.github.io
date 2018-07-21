@@ -59,7 +59,7 @@ relation between **Message Type Switch** node and **Save Telemetry** node:
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/getting-started/remove-relation.png)
   
-And connect **Message Type Switch** node with **Script Filter** node the using **Post Telemetry** relation:
+And connect **Message Type Switch** node with **Script Filter** node using the **Post Telemetry** relation:
    
 ![image](/images/user-guide/rule-engine-2-0/tutorials/getting-started/realtion-window.png)
 
