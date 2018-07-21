@@ -141,7 +141,7 @@ In order to subscribe to shared device attribute changes, send SUBSCRIBE message
 v1/devices/me/attributes
 ```
 
-Once shared attribute will be changed by one of the server-side components (REST API or Rule Chain) the client will receive the following update: 
+When a shared attribute is changed by one of the server-side components (such as the REST API or the Rule Chain), the client will receive the following update: 
 
 ```json
 {"key1":"value1"}
