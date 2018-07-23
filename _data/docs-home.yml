@@ -132,6 +132,8 @@ toc:
         path: /docs/user-guide/rule-engine-2-0/tutorials/transform-incoming-telemetry/
       - title: Transform telemetry using previous record
         path: /docs/user-guide/rule-engine-2-0/tutorials/transform-telemetry-using-previous-record/
+      - title: Create alarm when device is offline for some time
+        path: /docs/user-guide/rule-engine-2-0/tutorials/create-Inactivity-alarm/
     - title: Advanced
       section:
       - title: RPC Reply With data from Related Device

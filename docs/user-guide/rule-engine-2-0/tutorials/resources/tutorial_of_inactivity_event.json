@@ -1,0 +1,102 @@
+{
+  "ruleChain": {
+    "additionalInfo": null,
+    "name": "Tutorial of Inactivity Event",
+    "firstRuleNodeId": null,
+    "root": false,
+    "debugMode": false,
+    "configuration": null
+  },
+  "metadata": {
+    "firstNodeIndex": 0,
+    "nodes": [
+      {
+        "additionalInfo": {
+          "layoutX": 291,
+          "layoutY": 149
+        },
+        "type": "org.thingsboard.rule.engine.filter.TbMsgTypeSwitchNode",
+        "name": "Message Type Switch",
+        "debugMode": false,
+        "configuration": {
+          "version": 0
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 635,
+          "layoutY": 151
+        },
+        "type": "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode",
+        "name": "Save Timeseries",
+        "debugMode": true,
+        "configuration": {
+          "defaultTTL": 0
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 639,
+          "layoutY": 392
+        },
+        "type": "org.thingsboard.rule.engine.action.TbCreateAlarmNode",
+        "name": "Create Inactivity Alarm",
+        "debugMode": true,
+        "configuration": {
+          "alarmType": "lnactivity TimeOut",
+          "alarmDetailsBuildJs": "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n}\nreturn details;",
+          "severity": "CRITICAL",
+          "propagate": true
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 638,
+          "layoutY": 30
+        },
+        "type": "org.thingsboard.rule.engine.action.TbClearAlarmNode",
+        "name": "Clear Inactivity Alarm",
+        "debugMode": true,
+        "configuration": {
+          "alarmType": "lnactivity TimeOut",
+          "alarmDetailsBuildJs": "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n}\nreturn details;"
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 635,
+          "layoutY": 272
+        },
+        "type": "org.thingsboard.rule.engine.telemetry.TbMsgAttributesNode",
+        "name": "Save Server Attributes",
+        "debugMode": true,
+        "configuration": {
+          "scope": "SERVER_SCOPE"
+        }
+      }
+    ],
+    "connections": [
+      {
+        "fromIndex": 0,
+        "toIndex": 3,
+        "type": "Activity Event"
+      },
+      {
+        "fromIndex": 0,
+        "toIndex": 2,
+        "type": "Inactivity Event"
+      },
+      {
+        "fromIndex": 0,
+        "toIndex": 4,
+        "type": "Post attributes"
+      },
+      {
+        "fromIndex": 0,
+        "toIndex": 1,
+        "type": "Post telemetry"
+      }
+    ],
+    "ruleChainConnections": null
+  }
+}
