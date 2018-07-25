@@ -1,7 +1,7 @@
 {
   "ruleChain": {
     "additionalInfo": null,
-    "name": "Root Rule Chain",
+    "name": "Tutorial of Inactivity Event",
     "firstRuleNodeId": null,
     "root": false,
     "debugMode": false,
