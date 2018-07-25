@@ -1,108 +1,135 @@
 ---
 layout: docwithnav
-title: Create alarm when device is offline for some time
-description: Create device connectivity alarm using the rule engine.
+title: Create Alarm when the Device is offline.
+description: To create an alarm when the device is offline for a certain period of time using the Rule Engine.
 
 ---
+
+
+To create an alarm when the device is offline for a certain period of time using RuleEngine.
 
 * TOC
 {:toc}
 
 
-ThingsBoard Device State service is responsible for monitoring of the device connectivity state and triggering device connectivity events that are pushed to the Rule Engine.
-
-For today exist four types of events:
-
- - Connect event - triggered when device connects to ThingsBoard; 
-
- - Disconnect event - triggered when device disconnects from ThingsBoard; 
-
- - Activity event - triggered when device pushes telemetry, attribute update or rpc command;
-
- - Inactivity event - triggered when device was inactive for a certain period of time. 
- 
-
-
-In this tutorial, we will explain in more detail about the Inactivity event and also how:
-
- - create Inactivity alarms using the rule engine;
-
- - configure parameter for inactivity timeout;
-   
-
-<br/> 
-<br/> 
-
 # Use Case
 
-Let’s assume your device using a temperature sensor to collect and push telemetry was connected to ThingsBoard.
-Also, suppose that the sensor may stop push the telemetry due to certain faults.
+Let’s assume the following use case:
 
-We want to generate inactivity alarms if the device inactive for the defined period.
+ - you have a device connected to ThingsBoard and this device has a temperature sensor to collect and push the telemetry data.
 
-In this tutorial we will configure ThingsBoard Rule Engine to:
+ - the temperature sensor may stop pushing the telemetry data due to any kind of faults.
 
- - Creating Alarm if the device inactive for the defined period that may set in two ways:
+
+Therefore, in this case, you will need to configure ThingsBoard Rule Engine to: 
+
+ - create an alarm if the device remains inactive for a certain period of time. This period of time can be defined in either of two ways:
  
-    - first way: change the global configuration parameter for inactivity timeout. This parameter is defined in **thingsboard.yml** (state.defaultInactivityTimeoutInSec) and by default it is set to 10 seconds.
+    - The first way: by changing the global configuration parameter for the inactivity timeout. <br>
+      This parameter is defined in **thingsboard.yml** (state.defaultInactivityTimeoutInSec) and by default it is set to 10 seconds.
     
-    - second way: overwrite this parameter for the individual device by setting **“inactivityTimeout”** server-side attribute (value is set in milliseconds).
-    
-     The second way described below.
+    - The second way: by overwriting this parameter for a particular device by setting the **“inactivityTimeout”** server-side attribute (value is set in milliseconds). <br>
+      This way will be described in the following sections.
  
- - Clearing Alarm if the device is active.
+ - clear the alarm if the device becomes active.
 
-# Model definition
 
-The device is represented as Device with the name **Temperature device** and Device type **Temperature sensor**. 
+# Background
+The ThingsBoard Device State service is responsible for monitoring the device connectivity state and triggering the device connectivity events that are pushed to Rule Engine.
+
+ThingsBoard supports four types of events:
+<table>
+  <thead>
+      <tr>
+          <td><b>Event Type</b></td><td><b>Description</b></td>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Connect</td>
+          <td>triggered when the device connects to ThingsBoard.</td>
+      </tr>
+      <tr>
+          <td>Disconnect</td>
+          <td>triggered when the device disconnects from ThingsBoard.</td>
+      </tr>
+      <tr>
+          <td>Activity</td>
+          <td>triggered when the device pushes a telemetry, an attribute update or RPC command.</td>
+      </tr>
+      <tr>
+          <td>Inactivity</td>
+          <td>triggered when the device is inactive for a certain period of time.</td>
+      </tr>
+   </tbody>
+</table>
+
+
+This tutorial will explain in details the device Inactivity event and it will show you how to:
+
+ - create Inactivity alarms using Rule Engine.
+
+ - configure a parameter for the inactivity timeout.
+
+
+<br/>
+<br/>
+
+
+
+# Adding the Device
+
+ - Add a Device entity in ThingsBoard.
+ - Enter the Device name as **Temperature device**, and the Device type as **Temperature sensor**:
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/inactivity alarms/add device.png)    
 
 <br/>
 <br/>
 
-# Configure Device
+# Configuring the Device
 
  - Go to **Devices** -> **Temperature device** -> **Attributes** -> **Server attributes** and Press **Add** button;
 
- - Set **“inactivityTimeout”** attribute, for example, with value 60000 milliseconds.
+ - Set **“inactivityTimeout”** attribute, for example, to a value equals 60000 milliseconds.
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/inactivity alarms/add attribute.png)    
 
 <br/>
 <br/>
 
-# Configure Rule Chain
+# Configuring the Rule Chain
 
-Here is how **Tutorial of Inactivity Event** Rule Chain should look like:
+The following screenshot shows how the **Tutorial of Inactivity Event** Rule Chain should look like:
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/inactivity alarms/chain.png)
 
 
-- Download attached json [**file**](/docs/user-guide/rule-engine-2-0/tutorials/resources/tutorial_of_inactivity_event.json) with a rule chain from this tutorial and import it.
+- Download the attached json [**file**](/docs/user-guide/rule-engine-2-0/tutorials/resources/tutorial_of_inactivity_event.json) for the rule chain indicated above and import it.
 
-- Don't forget to mark new rule chain as "root".  
+- Don't forget to mark the new rule chain as "root".  
 
-Also, you can create new Rule Chain from scratch. Below you can see how to do it.
+Also, you can create the new Rule Chain from scratch. The following section shows you how to create it.
 
 
-#### Create new Rule Chain **Tutorial of RPC Call Request**
+#### Creating a new Rule Chain (**Tutorial of Inactivity Event**)
 
 - Go to **Rule Chains** -> **Add new Rule Chain** 
 
-Configuration:
-
-- Name : **Tutorial of Inactivity Event**
+- Enter the Name field as **Tutorial of Inactivity Event**, then click the **ADD** button.
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/inactivity alarms/add chain.png) 
 
-New Rule Chain is created. Press **Edit** button and configure Chain.
+- The new Rule Chain is created. Click the **Edit** button and configure the Chain.
 
+##### Adding the required nodes
 
-###### Add **Message Type Switch** node
-Add **Message Type Switch** node and connect it to the **Input** node.
+In this tutorial, you will create 5 nodes as it will be explained in the following sections:
+
+###### **Message Type Switch** node
+Add the **Message Type Switch** node and connect it to the **Input** node.
  
-This node will route incoming messages according to the message type, namely: 
+This node will route the incoming messages according to the message type, namely: 
 
 - **POST_TELEMETRY_REQUEST**;
 
@@ -112,97 +139,87 @@ This node will route incoming messages according to the message type, namely:
 
 - **POST_ATTRIBUTES_REQUEST**.
 
-Configuration:
 
-- Name: **Message Type Switch**.
+Enter the Name field as **Message Type Switch**, then click the ¨ADD¨ button.
 
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/inactivity alarms/messageTypeSwitch.png)
 
-###### Add **Save Timeseries** node 
-Add **Save TimeSeries** node and connect it to the **Message Type Switch** node with relation type **Post telemetry**.
+###### **Save Timeseries** node 
+Add the **Save TimeSeries** node and connect it to the **Message Type Switch** node with a relationship type **Post telemetry**.
 
-This node will store TimeSeries data from incoming Message payload to the database and associate them to the Device, that is identified by the Message Originator.
+This node will store the TimeSeries data from the incoming Message payload into the database and link it to the Device that is identified by the Message Originator.data
 
-Configuration:
-
-- Name: **Save Time Series**.
+Enter the Name field as **Save Time Series**.
 
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/inactivity alarms/save ts.png)
 
 
-###### Add **Save Server Attributes** node 
-Add **Save Attributes** node and connect it to the **Message Type Switch** node with relation type **Post attributes**.
+###### **Save Server Attributes** node 
+Add the **Save Attributes** node and connect it to the **Message Type Switch** node with a relationship type **Post attributes**.
 
-This node will store attributes from incoming Message payload to the database and associate them to the Entity, that is identified by the Message Originator. 
-Configuration:
+This node will store attributes from the incoming Message payload into the database and link them to the Entity that is identified by the Message Originator. 
 
-- Name: **Save Server Attributes**.
+Enter the Name field as **Save Server Attributes**.
 
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/inactivity alarms/save attributes.png)
 
 
-###### Add **Create Inactivity alarm** node 
-Add **Create alarm** node and connect it to the **Message Type Switch** node with relation type **Inactivity Event**.
+###### **Create Inactivity alarm** node 
+Add the **Create alarm** node and connect it to the **Message Type Switch** node with a relationship type **Inactivity Event**.
 
-This node tries to load the latest Alarm with configured Alarm Type for Message Originator. If Uncleared Alarm exists, then this Alarm will be updated, otherwise, a new Alarm will be created.
-Configuration:
+This node tries to load the latest Alarm with the configured Alarm Type for the Message Originator. If Uncleared Alarm exists, then this Alarm will be updated, otherwise, a new Alarm will be created.
 
-- Name: **Create Inactivity Alarm**;
 
-- Alarm type: **Inactivity TimeOut**.
-
+- Enter the Name field as **Create Inactivity Alarm** and the Alarm type as **Inactivity TimeOut**.
 
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/inactivity alarms/create alarm.png)
 
 
-###### Add **Clear Inactivity alarm** node 
-Add **Clear alarm** node and connect it to the **Message Type Switch** node with relation type **Activity Event**.
+###### **Clear Inactivity alarm** node 
+Add the **Clear alarm** node and connect it to the **Message Type Switch** node with a relationship type **Activity Event**.
 
-This Node loads the latest Alarm with configured Alarm Type for Message Originator and Clear the Alarm if it exist.
-Configuration:
+This Node loads the latest Alarm with the configured Alarm Type for the Message Originator and Clear the Alarm if it exist.
 
-- Name: **Clear Inactivity Alarm**;
-
-- Alarm type: **Inactivity TimeOut**.
+- Enter the Name field as **Clear Inactivity Alarm** and the Alarm type as **Inactivity TimeOut**.
 
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/inactivity alarms/clear alarm.png)
 
 <br/>
 
-This Rule chain is ready and we should save it. 
+This Rule chain is now ready and you need to save it. 
 
 <br/>
 <br/>
 
-# Verify Rule Chain and Post telemetry
-Configuration is finished and we can verify that Rule Chain works as we expect.
+# How to verify the Rule Chain and Post telemetry
 
-- We will use Rest API ([link](/docs/reference/http-api/#telemetry-upload-api)) for posting device telemetry. For this we will need to
-copy device access token from then device **Temperature device**. 
+- Use the Rest APIs, [Telemetry upload APIs](/docs/reference/http-api/#telemetry-upload-api), for posting the device telemetry. <br>
+  Please, note that you will need to copy the device access token from the device, **Temperature device**, as shown in the following screenshot. 
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/inactivity alarms/access token.png)
 
-***you need to replace $ACCESS_TOKEN with actual device token**
 
-Lets post temperature = 20. Alarm should be created a minute after the telemetry post:
+Try to post temperature = 20. Alarm should be created a minute after the telemetry post:
 
 {% highlight bash %}
 curl -v -X POST -d '{"temperature":20}' http://localhost:8080/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
+
+***you need to replace $ACCESS_TOKEN with the actual device token**
 {% endhighlight %}
+
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/inactivity alarms/telemetry.png)
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/inactivity alarms/created alarm.png)
 
 <br/>
-<br/>
 
-
-For more details about Device Connectivity state in the Thignsboard, please read [Device Connectivity Status](/docs/user-guide/device-connectivity-status/) Article. 
+# See Also
+For more details about the Device Connectivity state in Thignsboard, please refer to [Device Connectivity Status](/docs/user-guide/device-connectivity-status/) guide. 
 <br/>
 <br/>
