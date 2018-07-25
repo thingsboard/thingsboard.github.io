@@ -100,10 +100,20 @@ This tutorial will explain in details the device Inactivity event and it will sh
 
 # Configuring the Rule Chain
 
+Here is how our initial Root Rule Chain should look like. Please note that we have removed irrelevant rule nodes from the root rule chain.
+
+![image](/images/user-guide/rule-engine-2-0/tutorials/inactivity alarms/initial chain.png)
+
+
+We will modify default rule chain and will add two action nodes:
+
+ - **Create alarm** node and connect it to the **Message Type Switch** node with a relationship type **Inactivity Event**;
+ 
+ - **Clear alarm** node and connect it to the **Message Type Switch** node with a relationship type **Activity Event**.
+
 The following screenshot shows how the **Tutorial of Inactivity Event** Rule Chain should look like:
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/inactivity alarms/chain.png)
-
 
 - Download the attached json [**file**](/docs/user-guide/rule-engine-2-0/tutorials/resources/tutorial_of_inactivity_event.json) for the rule chain indicated above and import it.
 
@@ -111,16 +121,15 @@ The following screenshot shows how the **Tutorial of Inactivity Event** Rule Cha
 
 Also, you can create the new Rule Chain from scratch. The following section shows you how to create it.
 
-
 #### Creating a new Rule Chain (**Tutorial of Inactivity Event**)
-
-- Go to **Rule Chains** -> **Add new Rule Chain** 
-
-- Enter the Name field as **Tutorial of Inactivity Event**, then click the **ADD** button.
-
-![image](/images/user-guide/rule-engine-2-0/tutorials/inactivity alarms/add chain.png) 
-
-- The new Rule Chain is created. Click the **Edit** button and configure the Chain.
+  
+  - Go to **Rule Chains** -> **Add new Rule Chain** 
+  	
+ - Enter the Name field as **Tutorial of Inactivity Event**, then click the **ADD** button.
+ 
+  - The new Rule Chain is created. Don’t forget to mark it as “root”.
+  
+  ![image](/images/user-guide/rule-engine-2-0/tutorials/inactivity alarms/add chain.png)  ![image](/images/user-guide/rule-engine-2-0/tutorials/inactivity alarms/root chain.png) 
 
 ##### Adding the required nodes
 
@@ -128,45 +137,40 @@ In this tutorial, you will create 5 nodes as it will be explained in the followi
 
 ###### **Message Type Switch** node
 Add the **Message Type Switch** node and connect it to the **Input** node.
- 
+
 This node will route the incoming messages according to the message type, namely: 
+  
+  - **POST_TELEMETRY_REQUEST**;
 
-- **POST_TELEMETRY_REQUEST**;
-
-- **ACTIVITY_EVENT**;
-
-- **INACTIVITY_EVENT**;
-
-- **POST_ATTRIBUTES_REQUEST**.
-
-
-Enter the Name field as **Message Type Switch**, then click the ¨ADD¨ button.
-
-
+  - **POST_ATTRIBUTES_REQUEST**;
+  
+  - **ACTIVITY_EVENT**;
+  
+  - **INACTIVITY_EVENT**.
+  
+Enter the Name field as **Message Type Switch**, then click the **ADD** button.
+ 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/inactivity alarms/messageTypeSwitch.png)
+  
 
 ###### **Save Timeseries** node 
-Add the **Save TimeSeries** node and connect it to the **Message Type Switch** node with a relationship type **Post telemetry**.
+Add the **Save TimeSeries** node and connect it to the **Message Type Switch** node with a relationship type **Post telemetry**.  
 
-This node will store the TimeSeries data from the incoming Message payload into the database and link it to the Device that is identified by the Message Originator.data
+This node will store the TimeSeries data from the incoming Message payload into the database and link it to the Device that is identified by the Message Originator.data  
 
 Enter the Name field as **Save Time Series**.
-
-
+  
 ![image](/images/user-guide/rule-engine-2-0/tutorials/inactivity alarms/save ts.png)
-
-
+  
 ###### **Save Server Attributes** node 
-Add the **Save Attributes** node and connect it to the **Message Type Switch** node with a relationship type **Post attributes**.
+Add the **Save Attributes** node and connect it to the **Message Type Switch** node with a relationship type **Post attributes**.  
 
-This node will store attributes from the incoming Message payload into the database and link them to the Entity that is identified by the Message Originator. 
+This node will store attributes from the incoming Message payload into the database and link them to the Entity that is identified by the Message Originator.
 
 Enter the Name field as **Save Server Attributes**.
-
-
-![image](/images/user-guide/rule-engine-2-0/tutorials/inactivity alarms/save attributes.png)
-
-
+  
+![image](/images/user-guide/rule-engine-2-0/tutorials/inactivity alarms/save attributes.png)  
+  
 ###### **Create Inactivity alarm** node 
 Add the **Create alarm** node and connect it to the **Message Type Switch** node with a relationship type **Inactivity Event**.
 
@@ -217,6 +221,22 @@ curl -v -X POST -d '{"temperature":20}' http://localhost:8080/api/v1/$ACCESS_TOK
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/inactivity alarms/created alarm.png)
 
+<br/>
+
+Also, you can:
+
+  - configure the Dashboard by adding an alarm widget to visualize alarms ;
+  
+  - define additional logic for alarm processing, for example, send an email.
+
+Please use the following links, to see how to do this:
+
+- [Create & Clear Alarms: configure dashboard](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/#configure-device-and-dashboard) guide;
+
+- [Send Email](/docs/user-guide/rule-engine-2-0/tutorials/send-email/) guide;
+
+    
+<br/>
 <br/>
 
 # See Also
