@@ -6,7 +6,7 @@ description: To create an alarm when the device is offline for a certain period 
 ---
 
 
-To create an alarm when the device is offline for a certain period of time using RuleEngine.
+This tutorial is to show you how to create an alarm when the device is offline for a certain period of time using RuleEngine.
 
 * TOC
 {:toc}
@@ -38,7 +38,7 @@ Therefore, in this case, you will need to configure ThingsBoard Rule Engine to:
 The ThingsBoard Device State service is responsible for monitoring the device connectivity state and triggering the device connectivity events that are pushed to Rule Engine.
 
 ThingsBoard supports four types of events:
-<table>
+<table style="width: 70%">
   <thead>
       <tr>
           <td><b>Event Type</b></td><td><b>Description</b></td>
@@ -100,18 +100,18 @@ This tutorial will explain in details the device Inactivity event and it will sh
 
 # Configuring the Rule Chain
 
-Here is how our initial Root Rule Chain should look like. Please note that we have removed irrelevant rule nodes from the root rule chain.
+The following screenshot shows the initial Root Rule Chain. Please, note that the irrelevant rule nodes have been removed from the Root Rule Chain.
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/inactivity alarms/initial chain.png)
 
 
-We will modify default rule chain and will add two action nodes:
+The default rule chain has been modified by adding the following two action nodes:
 
- - **Create alarm** node and connect it to the **Message Type Switch** node with a relationship type **Inactivity Event**;
+ - The **Create alarm** node: connected to the **Message Type Switch** node with a relationship type **Inactivity Event**;
  
- - **Clear alarm** node and connect it to the **Message Type Switch** node with a relationship type **Activity Event**.
+ - The **Clear alarm** node: connected to the **Message Type Switch** node with a relationship type **Activity Event**.
 
-The following screenshot shows how the **Tutorial of Inactivity Event** Rule Chain should look like:
+The following screenshot shows how the final **Tutorial of Inactivity Event** Rule Chain should look like:
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/inactivity alarms/chain.png)
 
@@ -225,21 +225,24 @@ curl -v -X POST -d '{"temperature":20}' http://localhost:8080/api/v1/$ACCESS_TOK
 
 Also, you can:
 
-  - configure the Dashboard by adding an alarm widget to visualize alarms ;
+  - configure the Dashboard by adding an alarm widget to visualize the alarms.
   
-  - define additional logic for alarm processing, for example, send an email.
+  - define an additional logic for alarm processing, for example, sending an email.
 
-Please use the following links, to see how to do this:
+Please refer to the first two links under the **See Also** section to see how to do this.
 
-- [Create & Clear Alarms: configure dashboard](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/#configure-device-and-dashboard) guide;
-
-- [Send Email](/docs/user-guide/rule-engine-2-0/tutorials/send-email/) guide;
 
     
 <br/>
 <br/>
 
 # See Also
-For more details about the Device Connectivity state in Thignsboard, please refer to [Device Connectivity Status](/docs/user-guide/device-connectivity-status/) guide. 
+
+- [Create & Clear Alarms: configure dashboard](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/#configure-device-and-dashboard) guide - to learn how to add an Alarm widget to the dashboard.
+
+- [Send Email](/docs/user-guide/rule-engine-2-0/tutorials/send-email/) guide.
+
+- [Device Connectivity Status](/docs/user-guide/device-connectivity-status/) guide.
+
 <br/>
 <br/>
