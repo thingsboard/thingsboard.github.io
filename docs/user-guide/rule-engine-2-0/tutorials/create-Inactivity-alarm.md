@@ -111,7 +111,7 @@ The default rule chain has been modified by adding the following two action node
  
  - The **Clear alarm** node: connected to the **Message Type Switch** node with a relationship type **Activity Event**.
 
-The following screenshot shows how the final **Tutorial of Inactivity Event** Rule Chain should look like:
+The following screenshot shows how the final Rule Chain should look like:
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/inactivity alarms/chain.png)
 
