@@ -4,6 +4,14 @@ title: Check relationship
 description: Check relationship
 
 ---
+The purpose of this tutorial is to show how the **Relationship Filter** node can be used to check the relationship.
+
+However, there are different ways to check the relationship, for example, the relationship can be checked using the **Script Filter** node by
+
+adding the appropriate condition to the script. Messages from the devices will be processed in different ways based on this condition.
+
+For more information about how to use the **Script Filter** node, please check the link to **Validate incoming telemetry** in the **See Also** section.
+
 
 * TOC
 {:toc}
@@ -63,7 +71,7 @@ The default rule chain will be modified to add the following:
  
  - The **Script Transformation** node with a temperature transformation script. This rule node will be connected to the **Check Relationship Filter** node with a relationship type **True**  and then it will be connected to the **Save Timeseries** default rule node with a relationship type **Success** .
  
- - The **Save Timeseries** node and it will be connected to the **Check Relation Filter** node with a relationship type **False**.
+ - The **Save Timeseries** node and it will be connected to the **Check Relationship Filter** node with a relationship type **False**.
   
  Please, note that the irrelevant rule nodes have been removed from the root rule chain.
 
@@ -191,6 +199,9 @@ Also, you can configure the Dashboard by adding a Digital or Analogue gauges wid
 # See Also
 
 [Transform incoming telemetry](/docs/user-guide/rule-engine-2-0/tutorials/transform-incoming-telemetry/) - for more information about how to transform an incoming telemetry in Thignsboard.
+
+[Validate incoming telemetry](/docs/user-guide/rule-engine-2-0/tutorials/validate-incoming-telemetry/#step-1-adding-temperature-validation-node) - for more information about how to validate an incoming telemetry using the Script Filter node.
+
 <br/>
 <br/>
 
