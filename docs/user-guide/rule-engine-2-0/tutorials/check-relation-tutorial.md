@@ -1,81 +1,94 @@
 ---
 layout: docwithnav
-title: Check relation
-description: Check relation
+title: Check relationship
+description: Check relationship
 
 ---
+The purpose of this tutorial is to show how the **Relationship Filter** node can be used to check the relationship.
+
+However, there are different ways to check the relationship, for example, the relationship can be checked using the **Script Filter** node by
+
+adding the appropriate condition to the script. Messages from the devices will be processed in different ways based on this condition.
+
+For more information about how to use the **Script Filter** node, please check the link to **Validate incoming telemetry** in the **See Also** section.
+
 
 * TOC
 {:toc}
 
 ## Use case
 
-Let’s assume that we have 2 groups of devices wich using the sensors to collect and push temperature readings to ThingsBoard:
+Let’s assume the following use case:
 
- - first group - devices with sensors that collect temperature readings in °F;  
- 
- - second group - devices with sensors that collect temperature readings in °C;
+ - You have 2 groups of devices that uses sensors to collect and push temperature readings to ThingsBoard:
 
-In this tutorial we will explain how to:
+    - The first group - devices with sensors collecting temperature readings in °F.
+    - The second group - devices with sensors collecting temperature readings in °C.
 
- - check devices that collect data in °F;
- 
- - transform incoming data from this devices to °C;
- 
 
-## Prerequisites 
+This tutorial will explain how to:
 
-We assume you have completed the following guides and reviewed the articles listed below:
+ - check the devices that collect data in °F.
+ - transform the incoming data from these devices to °C.
 
-  * [Getting Started](/docs/getting-started-guides/helloworld/) guide.
+
+## Prerequisites
+
+You need to read the following guides before you start this tutorial:
+
+  * [Getting Started](/docs/getting-started-guides/helloworld/).
   * [Rule Engine Overview](/docs/user-guide/rule-engine-2-0/overview/).
   
   
 # Model definition
-There are 2 Assets in each of which there are two devices are installed: 
+There are 2 Assets, in each of which there are two devices are installed:
 
- - First Asset is represented as Asset with the name **Fahrenheit devices** and Asset type **Temperature sensors**;
+ - The first Asset is represented as an Asset. Its name is **Fahrenheit devices** and its type is **Temperature sensors**:
  
-    - Fahrenheit device A is represented as Device with the name **Fahrenheit device A** and type **Temperature sensor**;
+    - Fahrenheit device A is represented as a Device. Its name is **Fahrenheit device A** and its type is **Temperature sensor**.
   
-    - Fahrenheit device B is represented as Device with the name **Fahrenheit device B** and type **Temperature sensor**.
+    - Fahrenheit device B is represented as a Device. Its name is **Fahrenheit device B** and its type is **Temperature sensor**.
 
- - Second Asset is represented as Asset with the name **Celsius devices** and Asset type **Temperature sensors**;
+ - The second Asset is represented as an Asset. Its name is **Celsius devices** and its type is **Temperature sensors**:
 
-    - Celsius device A is represented as Device with the name **Celsius device A** and type **Temperature sensor**;
+    - Celsius device A is represented as a Device. Its name is **Celsius device A** and its type is **Temperature sensor**.
   
-    - Celsius device B is represented as Device with the name **Celsius device B** and type **Temperature sensor**. 
+    - Celsius device B is represented as a Device. Its name is **Celsius device B** and its type is **Temperature sensor**.
     
- - Create relation from **Fahrenheit devices** to **Fahrenheit device A** and **Fahrenheit device B** via relation **Contains**;
-   
- - Create relation from **Celsius devices** to **Celsius device A** and **Celsius device B** via relation **Contains**.      
+- Create a relationship of the type **Contains**:
+   - from **Fahrenheit devices** to **Fahrenheit device A**;
+   - from **Fahrenheit devices** to **Fahrenheit device B**.
+
+- Create a relationship of the type **Contains**
+	- from **Celsius devices** to **Celsius device A**;
+	- from **Celsius devices** to **Celsius device B**.
      
-# Configure Rule Chain
+# Configure the Rule Chain
 
-We will modify default rule chain and will add:
+The default rule chain will be modified to add the following:
 
- - **Check Relation Filter** node that check the relation from the Asset **Fahrenheit devices** to originator of the message by type and direction. We will place this rule node next after **Message Type Switch** default rule node with relationship **Post telemtry**.
+ - The **Check Relationship Filter** node that checks the relationship from the Asset **Fahrenheit devices** to the originator of the message by type and direction. This rule node will be added next after the **Message Type Switch** default rule node with a relationship type **Post telemtry**.
  
- - **Script Transformation** node with temperature transformation script. We will connect this rule node to **Check Relation Filter** node with a relationship type **True**  and then connected to **Save Timeseries** default rule node with a relationship type **Success** .
+ - The **Script Transformation** node with a temperature transformation script. This rule node will be connected to the **Check Relationship Filter** node with a relationship type **True**  and then it will be connected to the **Save Timeseries** default rule node with a relationship type **Success** .
  
- - **Save Timeseries** node and connect it to the **Check Relation Filter** node with a relationship type **False**.
+ - The **Save Timeseries** node and it will be connected to the **Check Relationship Filter** node with a relationship type **False**.
   
- Please note that we have removed irrelevant rule nodes from the root rule chain as well.
+ Please, note that the irrelevant rule nodes have been removed from the root rule chain.
 
 The following screenshot shows how the final Rule Chain should look like:
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/check relation/chain.png)
 
-- Download attached json [**file**](/docs/user-guide/rule-engine-2-0/tutorials/resources/check_relation_tutorial.json) with a rule chain from this tutorial and import it.
+- Download the attached json [**file**](/docs/user-guide/rule-engine-2-0/tutorials/resources/check_relation_tutorial.json) for the rule chain from indicated above.
 - Don't forget to mark new rule chain as "root".  
 
 Also, you can create the new Rule Chain from scratch. The following section shows you how to create it.
 
-#### Creating a new Rule Chain (**Check Relation Tutorial**)
+#### Creating a new Rule Chain (**Check Relationship Tutorial**)
   
   - Go to **Rule Chains** -> **Add new Rule Chain** 
   	
- - Enter the Name field as **Check Relation Tutorial**, then click the **ADD** button.
+ - Enter the Name field as **Check Relationship Tutorial**, then click the **ADD** button.
  
   - The new Rule Chain is created. Don’t forget to mark it as “root”.
   
@@ -83,34 +96,34 @@ Also, you can create the new Rule Chain from scratch. The following section show
 
 ##### Adding the required nodes
 
-In this tutorial, you will create 5 nodes as it will be explained in the following sections:
+In this tutorial, you will create 4 nodes as it will be explained in the following sections:
 
 ###### **Message Type Switch** node
-Add the **Message Type Switch** node and connect it to the **Input** node.
+ - Add the **Message Type Switch** node and connect it to the **Input** node.
 
-This node will route the incoming messages according to the message type: **POST_TELEMETRY_REQUEST**;
+ - This node will route the incoming messages according to the message type: **POST_TELEMETRY_REQUEST**;
   
-Enter the Name field as **Message Type Switch**, then click the **ADD** button.
+ - Enter the Name field as **Message Type Switch**, then click the **ADD** button.
  
 ![image](/images/user-guide/rule-engine-2-0/tutorials/check relation/messageTypeSwitch.png)
  
-###### **Check Relation Filter** node 
-Add the **Check Relation** node and connect it to the **Message Type Switch** node with a relationship type **Post telemetry**.  
+###### **Check Relationship Filter** node
+ - Add the **Check Relationship** node and connect it to the **Message Type Switch** node with a relationship type **Post telemetry**.
 
-This node will check the relation from the Asset **Fahrenheit devices** to the originator of the message by type and direction.
+ - This node will check the relationship from the Asset, **Fahrenheit devices**, to the originator of the message using the type and direction.
 
-If the relation exists - Message is sent via True chain, otherwise, the False chain is used.
+ - If the relationship exists, the message will be sent through the True chain, otherwise, the False chain will be used.
 
-Enter the Name field as **Check Relation**.
+ - Enter the Name field as **Check Relationship**.
   
 ![image](/images/user-guide/rule-engine-2-0/tutorials/check relation/check relation.png)
   
  
 ###### **Script Transformation** node 
-Add the **Script Transformation** node and connect it to **Check Relation Filter** node with a relationship type **True**. 
+ - Add the **Script Transformation** node and connect it to the **Check Relationship Filter** node with a relationship type **True**.
 
-This node Changes Message payload using the configured JavaScript function namely transform, the temperature in Fahrenheit to temperature in Celsius degrees.
-In order to do this we will use the following function:
+ - This node changes the message payload using the configured JavaScript function to transform the temperature degree from Fahrenheit to its equivalent in Celsius.
+ - In order to do this, use the following function:
 
 ```javascript
 function precisionRound(number, precision) {
@@ -125,20 +138,20 @@ if (typeof msg.temperature !== 'undefined'){
 return {msg: msg, metadata: metadata, msgType: msgType};
 ```
 
-Enter the Name field as **Transform From °F to °C**.
+ - Enter the Name field as **Transform From °F to °C**.
   
 ![image](/images/user-guide/rule-engine-2-0/tutorials/check relation/transformation.png)  
 
-###### **Save Timeseries** nodes
-Add two **Save TimeSeries** node and connect it to the next nodes:
+###### **Save Timeseries** node
+ - Add two **Save TimeSeries** node and connect it to the next nodes:
 
-- **Script Transformation** node with a relationship type **Success**.  
+    - the **Script Transformation** node with a relationship type **Success**.
 
-- **Check Relation Filter** node with a relationship type **False**.  
+    - the **Check Relationship Filter** node with a relationship type **False**.
 
-These nodes will store the TimeSeries data from the incoming Message payload into the database and link it to the Device that is identified by the Message Originator.  
+ - These nodes will store the TimeSeries data from the incoming Message payload into the database and link it to the Device that is identified by the Message Originator.
 
-Enter the Name field as **Save Time Series**.
+ - Enter the Name field as **Save Time Series**.
       
 ![image](/images/user-guide/rule-engine-2-0/tutorials/check relation/save ts.png)
   
@@ -185,7 +198,10 @@ Also, you can configure the Dashboard by adding a Digital or Analogue gauges wid
 
 # See Also
 
-For more details about the Transform incoming telemetry in Thignsboard, please refer to [Transform incoming telemetry](/docs/user-guide/rule-engine-2-0/tutorials/transform-incoming-telemetry/) guide. 
+[Transform incoming telemetry](/docs/user-guide/rule-engine-2-0/tutorials/transform-incoming-telemetry/) - for more information about how to transform an incoming telemetry in Thignsboard.
+
+[Validate incoming telemetry](/docs/user-guide/rule-engine-2-0/tutorials/validate-incoming-telemetry/#step-1-adding-temperature-validation-node) - for more information about how to validate an incoming telemetry using the Script Filter node.
+
 <br/>
 <br/>
 
