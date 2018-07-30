@@ -62,7 +62,16 @@ There are 2 Assets, in each of which there are two devices are installed:
 - Create a relationship of the type **Contains**
 	- from **Celsius devices** to **Celsius device A**;
 	- from **Celsius devices** to **Celsius device B**.
-     
+
+The following screenshot shows the **Fahrenheit devices** asset and its devices
+
+ ![image](/images/user-guide/rule-engine-2-0/tutorials/check relation/Fahrenheit devices.png)
+
+The following screenshot shows the **Celsius devices** asset and its devices
+
+ ![image](/images/user-guide/rule-engine-2-0/tutorials/check relation/celsius devices.png)
+
+
 # Configure the Rule Chain
 
 The default rule chain will be modified to add the following:
