@@ -90,9 +90,9 @@ Also, you can create the new Rule Chain from scratch. The following section show
 - Go to **Rule Chains** -> **Add new Rule Chain** 
 - Enter the Name field as **Tutorial of RPC Call Request**, then click the **ADD** button.
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-request/create chain.png) 
+![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-request/create chain.png) ![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-request/root chain.png) 
 
-- The new Rule Chain is now created. Click the **Edit** button and configure the Chain.
+- The new Rule Chain is now created. Don’t forget to mark it as “root”.
 
 ##### Adding the required nodes
 
