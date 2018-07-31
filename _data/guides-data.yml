@@ -1,0 +1,35 @@
+- title: Section 1
+  subtitle: Description 1
+  section:
+    - path: /docs/user-guide/rule-engine-2-0/tutorials/validate-incoming-telemetry/
+      title: Validate incoming telemetry
+      subtitle: Learn how to validate incoming telemetry
+      keywords: key1 key2 key3
+      video: true
+      pe: true
+    - path: /docs/user-guide/rule-engine-2-0/tutorials/transform-incoming-telemetry/
+      title: Transform incoming telemetry
+      subtitle: Learn how to transform incoming telemetry
+      keywords: key1 key2 key3
+    - path: /docs/user-guide/rule-engine-2-0/tutorials/transform-telemetry-using-previous-record/
+      title: Transform telemetry using previous record
+      subtitle: Learn how to transform telemetry using previous record
+      keywords: key1 key2 key3
+      video: true
+    - path: /docs/user-guide/rule-engine-2-0/tutorials/rpc-reply-tutorial/
+      title: RPC Reply With data from Related Device
+      subtitle: Learn how to make RPC Reply With data from Related Device
+      keywords: key1 key2 key3
+      pe: true
+- title: Section 2
+  subtitle: Description 2
+  section:
+    - path: /docs/user-guide/rule-engine-2-0/tutorials/validate-incoming-telemetry/
+      title: Validate incoming telemetry
+      subtitle: Learn how to validate incoming telemetry
+      keywords: key1 key2 key3
+      pe: true
+    - path: /docs/user-guide/rule-engine-2-0/tutorials/transform-incoming-telemetry/
+      title: Transform incoming telemetry
+      subtitle: Learn how to transform incoming telemetry
+      keywords: key1 key2 key3
