@@ -1,6 +1,0 @@
-bigheader: "Video Tutorials"
-abstract: "Series of video tutorials showing how to use ThingsBoard."
-hidetoc: "true"
-toc:
-- title: Video Tutorials
-  path: /docs/iot-video-tutorials/

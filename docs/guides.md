@@ -63,10 +63,135 @@ title: Guides
             <img class="guides-img" src="/images/tb-guide.svg"/> 
             <div class="guides-text">
                 <p class="guides-title">
-                    Section 1
+                    Getting Started Guides
                 </p>
                 <p class="guides-subtitle">
-                    Description 1
+                    This guides provide quick overview of main ThingsBoard features. Designed to be completed in 15-30 minutes.
+                </p>
+            </div>
+        </div>
+        <ul class="guides-list">
+            <li class="guide-container">
+                <a class="guide-title" href="/docs/getting-started-guides/helloworld/">
+                    <p class="guide-title">
+                        Hello World
+                    </p>
+                    <p class="guide-subtitle">
+                        Learn how to collect IoT device data using MQTT, HTTP or CoAP and visualize it on a simple dashboard.<br/>
+                        Provides variety of sample scripts that you can run on your PC or laptop to simulate the device.
+                    </p>
+                    <p class="guide-keywords">
+                        mqtt http coap visualization helloworld
+                    </p>
+                </a>
+            </li>
+            <li class="guide-container">
+                <a class="guide-title" href="/docs/iot-video-tutorials/#working-with-users-devices-and-dashboards">
+                    <p class="guide-title">
+                        End User IoT Dashboards
+                    </p>
+                    <p class="guide-subtitle">
+                        Learn how to perform basic operations over Devices, Customers, and Dashboards
+                    </p>
+                    <p class="guide-keywords">
+                        devices customers dashboards
+                    </p>
+                </a>
+            </li>
+            <li class="guide-container">
+                <a class="guide-title" href="/docs/iot-video-tutorials/#device-data-management-using-thingsboard">
+                    <p class="guide-title">
+                        Device data management
+                    </p>
+                    <p class="guide-subtitle">
+                        Learn how to perform basic operations over device attributes to implement practical device management use cases.
+                    </p>
+                    <p class="guide-keywords">
+                        device management attributes
+                    </p>
+                </a>
+            </li>
+            <li class="guide-container">
+                <a class="guide-title" href="/docs/iot-video-tutorials/#device-data-management-using-thingsboard">
+                    <p class="guide-title">
+                        Getting Started with Rule Engine
+                    </p>
+                    <p class="guide-subtitle">
+                        Learn about ThingsBoard rule engine and typical use cases you can implement.<br/>
+                        Review Hello World example and learn how-to enable filtering of incoming telemetry messages.
+                    </p>
+                    <p class="guide-keywords">
+                        device management attributes
+                    </p>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="guides-block">
+        <div class="guides-title-panel">
+            <img class="guides-img" src="/images/tb-guide.svg"/> 
+            <div class="guides-text">
+                <p class="guides-title">
+                    Installation Guides
+                </p>
+                <p class="guides-subtitle">
+                    This section contains instructions how to setup ThingsBoard on various available operating systems
+                </p>
+            </div>
+        </div>
+        <ul class="guides-list">
+            <li class="guide-container">
+                <a class="guide-title" href="/docs/user-guide/rule-engine-2-0/tutorials/validate-incoming-telemetry/">
+                    <p class="guide-title">
+                        Validate incoming telemetry
+                    </p>
+                    <p class="guide-subtitle">
+                        Learn how to validate incoming telemetry
+                    </p>
+                    <p class="guide-keywords">
+                        key1 key2 key3
+                    </p>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="guides-block">
+        <div class="guides-title-panel">
+            <img class="guides-img" src="/images/tb-guide.svg"/> 
+            <div class="guides-text">
+                <p class="guides-title">
+                    Connecting your device
+                </p>
+                <p class="guides-subtitle">
+                    OLOLO
+                </p>
+            </div>
+        </div>
+        <ul class="guides-list">
+            <li class="guide-container">
+                <a class="guide-title" href="/docs/user-guide/rule-engine-2-0/tutorials/validate-incoming-telemetry/">
+                    <p class="guide-title">
+                        Validate incoming telemetry
+                    </p>
+                    <p class="guide-subtitle">
+                        Learn how to validate incoming telemetry
+                    </p>
+                    <p class="guide-keywords">
+                        key1 key2 key3
+                    </p>
+                </a>
+            </li>
+        </ul>
+    </div>    
+    <div class="guides-block">
+        <div class="guides-title-panel">
+            <img class="guides-img" src="/images/tb-guide.svg"/> 
+            <div class="guides-text">
+                <p class="guides-title">
+                    Data Visualization
+                </p>
+                <p class="guides-subtitle">
+                    OLOLO
                 </p>
             </div>
         </div>
@@ -130,10 +255,10 @@ title: Guides
             <img class="guides-img" src="/images/tb-guide.svg"/> 
             <div class="guides-text">
                 <p class="guides-title">
-                    Section 2
+                    Data processing
                 </p>
                 <p class="guides-subtitle">
-                    Description 2
+                    OLOLO
                 </p>
             </div>
         </div>
@@ -151,13 +276,28 @@ title: Guides
                     </p>
                 </a>
             </li>
+        </ul>
+    </div>    
+    <div class="guides-block">
+        <div class="guides-title-panel">
+            <img class="guides-img" src="/images/tb-guide.svg"/> 
+            <div class="guides-text">
+                <p class="guides-title">
+                    IoT Data analytics
+                </p>
+                <p class="guides-subtitle">
+                    OLOLO
+                </p>
+            </div>
+        </div>
+        <ul class="guides-list">
             <li class="guide-container">
-                <a href="/docs/user-guide/rule-engine-2-0/tutorials/transform-incoming-telemetry/">
+                <a class="guide-title" href="/docs/user-guide/rule-engine-2-0/tutorials/validate-incoming-telemetry/">
                     <p class="guide-title">
-                        Transform incoming telemetry
+                        Validate incoming telemetry
                     </p>
                     <p class="guide-subtitle">
-                        Learn how to transform incoming telemetry
+                        Learn how to validate incoming telemetry
                     </p>
                     <p class="guide-keywords">
                         key1 key2 key3
@@ -166,4 +306,89 @@ title: Guides
             </li>
         </ul>
     </div>    
+    <div class="guides-block">
+        <div class="guides-title-panel">
+            <img class="guides-img" src="/images/tb-guide.svg"/> 
+            <div class="guides-text">
+                <p class="guides-title">
+                    Pushing data to external systems
+                </p>
+                <p class="guides-subtitle">
+                    OLOLO
+                </p>
+            </div>
+        </div>
+        <ul class="guides-list">
+            <li class="guide-container">
+                <a class="guide-title" href="/docs/user-guide/rule-engine-2-0/tutorials/validate-incoming-telemetry/">
+                    <p class="guide-title">
+                        Validate incoming telemetry
+                    </p>
+                    <p class="guide-subtitle">
+                        Learn how to validate incoming telemetry
+                    </p>
+                    <p class="guide-keywords">
+                        key1 key2 key3
+                    </p>
+                </a>
+            </li>
+        </ul>
+    </div>    
+    <div class="guides-block">
+        <div class="guides-title-panel">
+            <img class="guides-img" src="/images/tb-guide.svg"/> 
+            <div class="guides-text">
+                <p class="guides-title">
+                    Hardware samples
+                </p>
+                <p class="guides-subtitle">
+                    OLOLO
+                </p>
+            </div>
+        </div>
+        <ul class="guides-list">
+            <li class="guide-container">
+                <a class="guide-title" href="/docs/user-guide/rule-engine-2-0/tutorials/validate-incoming-telemetry/">
+                    <p class="guide-title">
+                        Validate incoming telemetry
+                    </p>
+                    <p class="guide-subtitle">
+                        Learn how to validate incoming telemetry
+                    </p>
+                    <p class="guide-keywords">
+                        key1 key2 key3
+                    </p>
+                </a>
+            </li>
+        </ul>
+    </div>    
+    <div class="guides-block">
+        <div class="guides-title-panel">
+            <img class="guides-img" src="/images/tb-guide.svg"/> 
+            <div class="guides-text">
+                <p class="guides-title">
+                    Advanced features
+                </p>
+                <p class="guides-subtitle">
+                    OLOLO
+                </p>
+            </div>
+        </div>
+        <ul class="guides-list">
+            <li class="guide-container">
+                <a class="guide-title" href="/docs/user-guide/rule-engine-2-0/tutorials/validate-incoming-telemetry/">
+                    <p class="guide-title">
+                        Validate incoming telemetry
+                    </p>
+                    <p class="guide-subtitle">
+                        Learn how to validate incoming telemetry
+                    </p>
+                    <p class="guide-keywords">
+                        key1 key2 key3
+                    </p>
+                </a>
+            </li>
+        </ul>
+    </div>    
+        
 </div>
