@@ -72,55 +72,74 @@ title: Guides
         </div>
         <ul class="guides-list">
             <li class="guide-container">
-                <a class="guide-title" href="/docs/user-guide/rule-engine-2-0/tutorials/validate-incoming-telemetry/">
-                    <p class="guide-title">
-                        Validate incoming telemetry
-                    </p>
-                    <p class="guide-subtitle">
-                        Learn how to validate incoming telemetry
-                    </p>
-                    <p class="guide-keywords">
-                        key1 key2 key3
-                    </p>
+                <a href="/docs/user-guide/rule-engine-2-0/tutorials/validate-incoming-telemetry/">
+                    <div class="guide-text">
+                        <p class="guide-title">
+                            Validate incoming telemetry
+                        </p>
+                        <p class="guide-subtitle">
+                            Learn how to validate incoming telemetry
+                        </p>
+                        <p class="guide-keywords">
+                            key1 key2 key3
+                        </p>
+                    </div>
+                    <div class="guide-icons">
+                        <span class="video"></span>
+                        <span class="pe"></span>
+                    </div>
                 </a>
             </li>
             <li class="guide-container">
                 <a href="/docs/user-guide/rule-engine-2-0/tutorials/transform-incoming-telemetry/">
-                    <p class="guide-title">
-                        Transform incoming telemetry
-                    </p>
-                    <p class="guide-subtitle">
-                        Learn how to transform incoming telemetry
-                    </p>
-                    <p class="guide-keywords">
-                        key1 key2 key3
-                    </p>
+                    <div class="guide-text">
+                        <p class="guide-title">
+                            Transform incoming telemetry
+                        </p>
+                        <p class="guide-subtitle">
+                            Learn how to transform incoming telemetry
+                        </p>
+                        <p class="guide-keywords">
+                            key1 key2 key3
+                        </p>
+                    </div>
+                    <div class="guide-icons">
+                        <span class="pe"></span>
+                    </div>
                 </a>
             </li>
             <li class="guide-container">
                 <a href="/docs/user-guide/rule-engine-2-0/tutorials/transform-telemetry-using-previous-record/">
-                    <p class="guide-title">
-                        Transform telemetry using previous record
-                    </p>
-                    <p class="guide-subtitle">
-                        Learn how to transform telemetry using previous record
-                    </p>
-                    <p class="guide-keywords">
-                        key1 key2 key3
-                    </p>
+                    <div class="guide-text">
+                        <p class="guide-title">
+                            Transform telemetry using previous record
+                        </p>
+                        <p class="guide-subtitle">
+                            Learn how to transform telemetry using previous record
+                        </p>
+                        <p class="guide-keywords">
+                            key1 key2 key3
+                        </p>
+                    </div>
+                    <div class="guide-icons">
+                        <span class="video"></span>
+                        <span class="pe"></span>
+                    </div>
                 </a>
             </li>
             <li class="guide-container">
                 <a href="/docs/user-guide/rule-engine-2-0/tutorials/rpc-reply-tutorial/">
-                    <p class="guide-title">
-                        RPC Reply With data from Related Device
-                    </p>
-                    <p class="guide-subtitle">
-                        Learn how to make RPC Reply With data from Related Device
-                    </p>
-                    <p class="guide-keywords">
-                        key1 key2 key3
-                    </p>
+                    <div class="guide-text">
+                        <p class="guide-title">
+                            RPC Reply With data from Related Device
+                        </p>
+                        <p class="guide-subtitle">
+                            Learn how to make RPC Reply With data from Related Device
+                        </p>
+                        <p class="guide-keywords">
+                            key1 key2 key3
+                        </p>
+                    </div>
                 </a>
             </li>
         </ul>
@@ -140,28 +159,32 @@ title: Guides
         <ul class="guides-list">
             <li class="guide-container">
                 <a class="guide-title" href="/docs/user-guide/rule-engine-2-0/tutorials/validate-incoming-telemetry/">
-                    <p class="guide-title">
-                        Validate incoming telemetry
-                    </p>
-                    <p class="guide-subtitle">
-                        Learn how to validate incoming telemetry
-                    </p>
-                    <p class="guide-keywords">
-                        key1 key2 key3
-                    </p>
+                    <div class="guide-text">
+                        <p class="guide-title">
+                            Validate incoming telemetry
+                        </p>
+                        <p class="guide-subtitle">
+                            Learn how to validate incoming telemetry
+                        </p>
+                        <p class="guide-keywords">
+                            key1 key2 key3
+                        </p>
+                    </div>
                 </a>
             </li>
             <li class="guide-container">
                 <a href="/docs/user-guide/rule-engine-2-0/tutorials/transform-incoming-telemetry/">
-                    <p class="guide-title">
-                        Transform incoming telemetry
-                    </p>
-                    <p class="guide-subtitle">
-                        Learn how to transform incoming telemetry
-                    </p>
-                    <p class="guide-keywords">
-                        key1 key2 key3
-                    </p>
+                    <div class="guide-text">
+                        <p class="guide-title">
+                            Transform incoming telemetry
+                        </p>
+                        <p class="guide-subtitle">
+                            Learn how to transform incoming telemetry
+                        </p>
+                        <p class="guide-keywords">
+                            key1 key2 key3
+                        </p>
+                    </div>
                 </a>
             </li>
         </ul>
