@@ -1,0 +1,6 @@
+bigheader: "Guides"
+abstract: "Find guide."
+hidetoc: "true"
+toc:
+- title: Guides
+  path: /docs/guides/

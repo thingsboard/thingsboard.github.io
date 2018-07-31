@@ -1,0 +1,98 @@
+#docsContent
+  .guides
+    border: solid 1px $dark-grey
+    background-color: #eee
+    .filter-panel
+      background-color: $dark-grey
+      #searchGuideBox
+        #searchGuideInput
+          width: 300px
+          margin: 9px 20px
+          padding: 8px
+          height: 40px
+          line-height: 40px
+          background-color: #fafafa
+          font-size: 20px
+          font-weight: 500
+          color: $dark-grey
+          border: 1px solid white
+          transition: 0.3s
+          &::-webkit-input-placeholder
+            color: #999 !important
+          &::-moz-placeholder
+            color: #999 !important
+          &:-ms-input-placeholder
+            color: #999 !important
+          &:-moz-placeholder
+            color: #999 !important
+          &:focus
+            background-color: white
+            color: $dark-grey
+    .guides-block
+      &.hidden
+        display: none
+      .guides-title-panel
+        min-height: 150px
+        margin: 30px 35px 0px 35px
+        padding: 20px 20px 30px
+        box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12)
+        background-color: white
+        .guides-img
+          float: left
+          width: 100px
+          padding-right: 20px
+        .guides-title
+          padding-top: 6px
+          padding-bottom: 15px
+          font-size: 20px
+          font-weight: bold
+          color: #308c80 //$dark-grey
+          line-height: 22px
+        .guides-subtitle
+          font-size: 18px
+          color: $dark-grey
+      ul.guides-list
+        padding: 15px 25px 15px 25px
+        margin: 0
+        display: flex
+        flex-wrap: wrap
+        li.guide-container
+          cursor: pointer
+          display: inline-block
+          width: 100%
+          margin: 10px
+          box-shadow: 0 1px 8px 0 rgba(0,0,0,.2), 0 3px 4px 0 rgba(0,0,0,.14), 0 3px 3px -2px rgba(0,0,0,.12)
+          background-color: white
+          padding: 16px
+          &.hidden
+            display: none
+          a
+            display: block
+            .guide-title
+              font-weight: bold
+              font-size: 18px
+              color: #4268ff
+              line-height: 22px
+            .guide-subtitle
+              color: #333
+              margin-top: 5px
+              font-size: 16px
+              line-height: 20px
+            .guide-keywords
+              display: none
+
+@media screen and (min-width: 1025px)
+  #docsContent
+    .guides
+      .guides-block
+        ul.guides-list
+          li.guide-container
+            width: calc(50% - 20px)
+
+@media screen and (min-width: 1700px)
+  #docsContent
+    .guides
+      .guides-block
+        ul.guides-list
+          li.guide-container
+            width: calc(100% / 3 - 20px)
