@@ -1,0 +1,176 @@
+{
+  "ruleChain": {
+    "additionalInfo": null,
+    "name": "Tutorial of RPC Call Request",
+    "firstRuleNodeId": null,
+    "root": false,
+    "debugMode": false,
+    "configuration": null
+  },
+  "metadata": {
+    "firstNodeIndex": 0,
+    "nodes": [
+      {
+        "additionalInfo": {
+          "layoutX": 273,
+          "layoutY": 151
+        },
+        "type": "org.thingsboard.rule.engine.filter.TbMsgTypeSwitchNode",
+        "name": "Message Type Switch",
+        "debugMode": true,
+        "configuration": {
+          "version": 0
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 648,
+          "layoutY": 196
+        },
+        "type": "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode",
+        "name": "Save Time Series",
+        "debugMode": true,
+        "configuration": {
+          "defaultTTL": 0
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 959,
+          "layoutY": 318
+        },
+        "type": "org.thingsboard.rule.engine.metadata.TbGetRelatedAttributeNode",
+        "name": "Fetch Wind Sensor Telemetry",
+        "debugMode": true,
+        "configuration": {
+          "attrMapping": {
+            "windDirection": "windDirection"
+          },
+          "relationsQuery": {
+            "direction": "FROM",
+            "maxLevel": 1,
+            "filters": [
+              {
+                "relationType": "Uses",
+                "entityTypes": [
+                  "DEVICE"
+                ]
+              }
+            ]
+          },
+          "telemetry": true
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 1160,
+          "layoutY": 146
+        },
+        "type": "org.thingsboard.rule.engine.transform.TbTransformMsgNode",
+        "name": "New RPC Message",
+        "debugMode": true,
+        "configuration": {
+          "jsScript": "var newMsg = {};\nvar value = Math.abs(msg.turbineDirection - metadata.windDirection);\nif ((value < 180 && msg.turbineDirection < metadata.windDirection)||\n    (value > 180 && msg.turbineDirection > metadata.windDirection)) {\n    newMsg.method = 'spinLeft';\n}\n\nif ((value < 180 && msg.turbineDirection > metadata.windDirection)||\n    (value > 180 && msg.turbineDirection < metadata.windDirection)) {\n    newMsg.method = 'spinRight';\n\n}\nnewMsg.params = Math.round(value * 100) / 100;\nreturn {msg: newMsg, metadata: metadata, msgType: msgType};"
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 1311,
+          "layoutY": 305
+        },
+        "type": "org.thingsboard.rule.engine.filter.TbJsFilterNode",
+        "name": "Check Request Validity",
+        "debugMode": true,
+        "configuration": {
+          "jsScript": "return typeof msg.method !== 'undefined';\n"
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 1336,
+          "layoutY": 495
+        },
+        "type": "org.thingsboard.rule.engine.rpc.TbSendRPCRequestNode",
+        "name": "Rotating System",
+        "debugMode": true,
+        "configuration": {
+          "timeoutInSeconds": 60
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 942,
+          "layoutY": 47
+        },
+        "type": "org.thingsboard.rule.engine.transform.TbChangeOriginatorNode",
+        "name": "Create New Telemetry",
+        "debugMode": true,
+        "configuration": {
+          "originatorSource": "RELATED",
+          "relationsQuery": {
+            "direction": "TO",
+            "maxLevel": 1,
+            "filters": [
+              {
+                "relationType": "Contains",
+                "entityTypes": [
+                  "ASSET"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 1325,
+          "layoutY": 47
+        },
+        "type": "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode",
+        "name": "Save Time Series",
+        "debugMode": true,
+        "configuration": {
+          "defaultTTL": 0
+        }
+      }
+    ],
+    "connections": [
+      {
+        "fromIndex": 0,
+        "toIndex": 1,
+        "type": "Post telemetry"
+      },
+      {
+        "fromIndex": 1,
+        "toIndex": 2,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 1,
+        "toIndex": 6,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 2,
+        "toIndex": 3,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 3,
+        "toIndex": 4,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 4,
+        "toIndex": 5,
+        "type": "True"
+      },
+      {
+        "fromIndex": 6,
+        "toIndex": 7,
+        "type": "Success"
+      }
+    ],
+    "ruleChainConnections": null
+  }
+}
