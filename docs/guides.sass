@@ -4,10 +4,11 @@
     background-color: #eee
     .filter-panel
       background-color: $dark-grey
+      margin-bottom: 20px
       #searchGuideBox
         #searchGuideInput
           width: 300px
-          margin: 9px 20px
+          margin: 16px 20px
           padding: 8px
           height: 40px
           line-height: 40px
@@ -32,24 +33,24 @@
       &.hidden
         display: none
       .guides-title-panel
-        min-height: 150px
-        margin: 30px 35px 0px 35px
+        min-height: 110px
+        margin: 0px 35px 0px 35px
         padding: 20px 20px 30px
         box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12)
         background-color: white
         .guides-img
           float: left
-          width: 100px
+          width: 75px
           padding-right: 20px
         .guides-title
           padding-top: 6px
           padding-bottom: 15px
-          font-size: 20px
+          font-size: 32px
           font-weight: bold
           color: #308c80 //$dark-grey
           line-height: 22px
         .guides-subtitle
-          font-size: 18px
+          font-size: 22px
           color: $dark-grey
       ul.guides-list
         padding: 15px 25px 15px 25px
@@ -57,6 +58,7 @@
         display: flex
         flex-wrap: wrap
         li.guide-container
+          position: relative
           cursor: pointer
           display: inline-block
           width: 100%
@@ -67,19 +69,34 @@
           &.hidden
             display: none
           a
-            display: block
-            .guide-title
-              font-weight: bold
-              font-size: 18px
-              color: #4268ff
-              line-height: 22px
-            .guide-subtitle
-              color: #333
-              margin-top: 5px
-              font-size: 16px
-              line-height: 20px
-            .guide-keywords
-              display: none
+            display: flex
+            flex-direction: row
+            .guide-text
+              flex: 1
+              .guide-title
+                font-weight: bold
+                font-size: 18px
+                color: #308c80
+                line-height: 22px
+              .guide-subtitle
+                color: #333
+                margin-top: 5px
+                font-size: 16px
+                line-height: 20px
+              .guide-keywords
+                display: none
+            .guide-icons
+              position: relative
+              .video:after
+                content: url('/images/guide-video.svg')
+                display: inline-block
+              .pe:after
+                display: inline-block
+                content: "PE"
+                font-size: 16px
+                font-weight: bold
+                color: #308c80
+                transform: translate(0px,-5px)
 
 @media screen and (min-width: 1025px)
   #docsContent

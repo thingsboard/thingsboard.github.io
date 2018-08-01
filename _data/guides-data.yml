@@ -1,0 +1,184 @@
+- title: Getting Started Guides
+  subtitle: This guides provide quick overview of main ThingsBoard features. Designed to be completed in 15-30 minutes.
+  section:
+    - path: /docs/getting-started-guides/helloworld/
+      title: Hello World
+      subtitle: Learn how to collect IoT device data using MQTT, HTTP or CoAP and visualize it on a simple dashboard. Provides variety of sample scripts that you can run on your PC or laptop to simulate the device.
+      keywords: mqtt http coap visualization helloworld
+      video: true
+      pe: false
+    - path: /docs/iot-video-tutorials/#working-with-users-devices-and-dashboards
+      title: End User IoT Dashboards
+      subtitle: Learn how to perform basic operations over Devices, Customers, and Dashboards
+      keywords: devices customers dashboards
+    - path: /docs/iot-video-tutorials/#device-data-management-using-thingsboard
+      title: Device data management
+      subtitle: Learn how to perform basic operations over device attributes to implement practical device management use cases.
+      keywords: device management attributes
+      video: true
+    - path: /docs/user-guide/rule-engine-2-0/re-getting-started/
+      title: Getting Started with Rule Engine
+      subtitle: Learn about ThingsBoard rule engine and typical use cases you can implement. Review Hello World example and learn how-to enable filtering of incoming telemetry messages.
+      keywords: device management attributes
+      pe: false
+- title: Installation Guides
+  subtitle: This guides contain instructions how to setup ThingsBoard on various available operating systems
+  section:
+    - path: /docs/user-guide/install/windows/
+      title: Installing ThingsBoard on Windows
+      subtitle: Learn how to install ThingsBoard platform and all third-party on Windows OS
+      keywords: install windows
+      pe: false
+    - path: /docs/user-guide/install/linux/
+      title: Installing ThingsBoard on Linux
+      subtitle: Learn how to install ThingsBoard platform and all third-party on Ubuntu or CentOS
+      keywords: install linux ubuntu centos
+      pe: false
+    - path: /docs/user-guide/install/rpi/
+      title: Installing ThingsBoard on Raspberry Pi 3
+      subtitle: Learn how to install ThingsBoard platform and all third-party on Raspberry Pi 3 Model B
+      keywords: install linux rpi raspberry pi
+      pe: false
+    - path: /docs/user-guide/install/kubernetes/
+      title: Installing ThingsBoard on Kubernetes
+      subtitle: Learn how to install ThingsBoard platform on Kubernetes
+      keywords: install linux kubernetes
+      pe: false
+    - path: /docs/user-guide/install/docker/
+      title: Installing ThingsBoard on Docker
+      subtitle: Learn how to install ThingsBoard platform on Docker
+      keywords: install docker
+      pe: false
+    - path: /docs/user-guide/install/docker/
+      title: Installing ThingsBoard on Docker (Windows)
+      subtitle: Learn how to install ThingsBoard platform on Docker (Windows)
+      keywords: install docker windows
+      pe: false
+    - path: /docs/user-guide/install/upgrade-instructions/
+      title: Upgrade your ThingsBoard instance
+      subtitle: Learn how to upgrade ThingsBoard platform to a newer version
+      keywords: install upgrade
+      pe: false
+    - path: /docs/user-guide/install/cluster-setup/
+      title: Cluster setup
+      subtitle: Learn how to setup ThingsBoard cluster
+      keywords: install cluster
+      pe: false
+- title: Connect your device
+  subtitle: Learn how to connect devices based on your connectivity technology or solution
+  section:
+    - path: /docs/reference/http-api/
+      title: Connect devices using ThingsBoard HTTP API
+      subtitle: Learn how to connect your devices using HTTP protocol and ThingsBoard built-in payload format
+      keywords: http connect
+      pe: false
+      video: false
+    - path: /docs/reference/mqtt-api/
+      title: Connect devices using ThingsBoard MQTT API
+      subtitle: Learn how to connect your devices using MQTT protocol and ThingsBoard built-in payload format
+      keywords: mqtt connect
+      pe: false
+      video: false
+    - path: /docs/reference/coap-api/
+      title: Connect devices using ThingsBoard CoAP API
+      subtitle: Learn how to connect your devices using CoAP protocol and ThingsBoard built-in payload format
+      keywords: coap connect
+      pe: false
+      video: false
+    - path: /docs/iot-gateway/getting-started/
+      title: Connect devices through ThingsBoard IoT Gateway
+      subtitle: Learn how to deploy IoT Gateway in your local network and route messages from your devices to the cloud
+      keywords: gateway connect
+      pe: false
+      video: false
+    - path: /docs/user-guide/integrations/#platform-integrations-vs-iot-gateway
+      title: ThingsBoard Integrations vs IoT Gateway
+      subtitle: Learn the differences between the Platform Integrations and IoT Gateway
+      keywords:
+      pe: false
+      video: false
+    - path: /docs/user-guide/integrations/sigfox/
+      title: Connect SigFox devices using TB PE Integration
+      subtitle: Learn how to route messages from Sigfox backend to ThingsBoard and decode binary device payloads
+      keywords: sigfox connect
+      pe: true
+      video: trues
+    - path: /docs/user-guide/integrations/ttn/
+      title: Connect LoRaWAN devices using TheThingsNetwork & ThingsBoard
+      subtitle: Learn how to route messages from TheThingsNetwork backend to ThingsBoard and decode binary device payloads
+      keywords: ttn connect
+      pe: true
+      video: false
+    - path: /docs/user-guide/integrations/opc-ua/
+      title: Connect OPC-UA servers to ThingsBoard
+      subtitle: Learn how to connect OPC-UA devices to ThingsBoard
+      keywords: opcua connect
+      pe: true
+      video: true
+    - path: /docs/user-guide/integrations/opc-ua/
+      title: Connect OPC-UA servers to ThingsBoard
+      subtitle: Learn how to connect OPC-UA devices to ThingsBoard
+      keywords: opcua connect
+      pe: true
+      video: true
+- title: Data Visualization
+  subtitle: This guides contain instructions how to configure complex ThingsBoard dashboards
+  section:
+    - path: /docs/iot-video-tutorials/#dashboard-development-guide-part-1-of-3-visualizing-assets-data-using-maps-and-tables
+      title: Visualizing Assets data using Maps and Tables
+      subtitle: "Learn how to: create assets and devices and define their relationships; add the server attributes and create a new dashboard; visualize data from the asset attributes using “Entities Table” and “Map” widgets."
+      keywords: key1 key2 key3
+      pe: false
+      video: true
+    - path: /docs/iot-video-tutorials/#dashboard-development-guide-part-2-of-3-dashboard-states-aliases-and-widget-actions
+      title: Dashboard states, Aliases and Widget actions
+      subtitle: "Learn how to: add and configure new dashboard states; create various aliases; visualize the attributes data using the Image Map widget; create actions in different widgets in order to navigate between states; visualize the telemetry data using Analogue and Digital gauges and the Timeseries widget."
+      keywords: key1 key2 key3
+      pe: false
+      video: true
+    - path: /docs/iot-video-tutorials/#dashboard-development-guide-part-3-of-3-remote-device-control-and-alarm-management
+      title: Remote Device control and Alarm management
+      subtitle: "Learn how to: add and use the Knob Control widget; create alarm rules; handle alarms using the Alarms widget; make a dashboard public."
+      keywords: key1 key2 key3
+      pe: false
+      video: true
+- title: Data processing
+  subtitle: lorem ipsum dolor
+  section:
+    - path: /docs/user-guide/rule-engine-2-0/tutorials/validate-incoming-telemetry/
+      title: lorem ipsum dolor
+      subtitle: lorem ipsum dolor
+      keywords: key1 key2 key3
+      pe: false
+- title: IoT Data analytics
+  subtitle: lorem ipsum dolor
+  section:
+    - path: /docs/user-guide/rule-engine-2-0/tutorials/validate-incoming-telemetry/
+      title: lorem ipsum dolor
+      subtitle: lorem ipsum dolor
+      keywords: key1 key2 key3
+      pe: false
+- title: Pushing data to external systems
+  subtitle: lorem ipsum dolor
+  section:
+    - path: /docs/user-guide/rule-engine-2-0/tutorials/validate-incoming-telemetry/
+      title: lorem ipsum dolor
+      subtitle: lorem ipsum dolor
+      keywords: key1 key2 key3
+      pe: false
+- title: Hardware samples
+  subtitle: lorem ipsum dolor
+  section:
+    - path: /docs/user-guide/rule-engine-2-0/tutorials/validate-incoming-telemetry/
+      title: lorem ipsum dolor
+      subtitle: lorem ipsum dolor
+      keywords: key1 key2 key3
+      pe: false
+- title: Advanced features
+  subtitle: lorem ipsum dolor
+  section:
+    - path: /docs/user-guide/rule-engine-2-0/tutorials/validate-incoming-telemetry/
+      title: lorem ipsum dolor
+      subtitle: lorem ipsum dolor
+      keywords: key1 key2 key3
+      pe: false
