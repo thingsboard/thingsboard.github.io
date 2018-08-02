@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: Guides
-
+notitle: "true"
 ---
 <script type="text/javascript">
 
