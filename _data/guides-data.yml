@@ -1,4 +1,4 @@
-- title: Getting Started Guides
+- title: Getting started guides
   subtitle: These guides provide quick overview of main ThingsBoard features. Designed to be completed in 15-30 minutes.
   section:
     - path: /docs/getting-started-guides/helloworld/
@@ -25,7 +25,7 @@
       keywords: device management attributes
       video: false
       pe: false
-- title: Installation Guides
+- title: Installation guides
   subtitle: Learn how to setup ThingsBoard on various available operating systems.
   section:
     - path: /docs/user-guide/install/windows/
@@ -169,7 +169,7 @@
       keywords:
       pe: true
       video: true
-- title: Data Visualization
+- title: Data visualization
   subtitle: These guides contain instructions how to configure complex ThingsBoard dashboards
   section:
     - path: /docs/iot-video-tutorials/#dashboard-development-guide-part-1-of-3-visualizing-assets-data-using-maps-and-tables
@@ -208,7 +208,7 @@
       keywords:
       pe: false
       video: true
-- title: Data processing
+- title: Data processing & actions
   subtitle: Learn how to use ThingsBoard Rule Engine.
   section:
     - path: /docs/user-guide/rule-engine-2-0/tutorials/validate-incoming-telemetry/
@@ -236,6 +236,16 @@
       subtitle: Learn how to create an alarm when the device is offline for a certain period of time using RuleEngine.
       keys: active inactive connected disconnected online offline
       pe: false
+    - path: /docs/user-guide/rule-engine-2-0/tutorials/create-inactivity-alarm/
+      title: Create alarm when the device is offline
+      subtitle: Learn how to create an alarm when the device is offline for a certain period of time using RuleEngine.
+      keys: active inactive connected disconnected online offline
+      pe: false
+    - path: /docs/user-guide/rule-engine-2-0/tutorials/add-devices-to-group/
+      title: Add & remove devices to group dynamically
+      subtitle: Learn how to how to dynamically add & remove device from the device group based on incoming data from device.
+      keys: device group dynamic relation
+      pe: trues
 #- title: IoT Data analytics
 #  subtitle: lorem ipsum dolor
 #  section:
