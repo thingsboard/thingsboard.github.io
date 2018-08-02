@@ -137,24 +137,6 @@ toc:
       path: /docs/user-guide/rule-engine-2-0/pe/action-nodes/
     - title: Analytics Nodes
       path: /docs/user-guide/rule-engine-2-0/pe/analytics-nodes/
-  - title: Tutorials
-    section:
-    - title: Basics
-      section:
-      - title: Validate incoming telemetry
-        path: /docs/user-guide/rule-engine-2-0/tutorials/validate-incoming-telemetry/
-      - title: Transform incoming telemetry
-        path: /docs/user-guide/rule-engine-2-0/tutorials/transform-incoming-telemetry/
-      - title: Transform telemetry using previous record
-        path: /docs/user-guide/rule-engine-2-0/tutorials/transform-telemetry-using-previous-record/
-    - title: Advanced
-      section:
-      - title: RPC Reply With data from Related Device
-        path: /docs/user-guide/rule-engine-2-0/tutorials/rpc-reply-tutorial/
-      - title: Create & Clear Alarms
-        path: /docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/
-      - title: Send Email
-        path: /docs/user-guide/rule-engine-2-0/tutorials/send-email/
 - title: Integrations Cookbook
   section:
   - title: Persist and visualize AWS IoT data

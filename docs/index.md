@@ -8,7 +8,7 @@ description: ThingsBoard documentation - learn about the platform and get your I
 
 <a style="margin: 10px;" href="/docs/getting-started-guides/what-is-thingsboard/" class="button">ThingsBoard Overview</a>
 <a style="margin: 10px;" href="/docs/getting-started-guides/helloworld/" class="button">Getting started</a>
-<a style="margin: 10px;" href="/docs/user-guide/install/installation-options/" class="button">ThingsBoard Installation</a>
+<a style="margin: 10px;" href="/docs/guides/" class="button">&nbsp;&nbsp;&nbsp;Guides&nbsp;&nbsp;&nbsp;</a>
 
 <h2>Platform Features</h2>
 

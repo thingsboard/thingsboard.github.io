@@ -1,6 +1,37 @@
-bigheader: "Samples"
-abstract: "A collection of example applications that show how to use ThingsBoard."
+bigheader: "Guides"
+abstract: "Explore ThingsBoard tutorials and guides."
+hidetoc: "true"
 toc:
+- title: Guides
+  path: /docs/guides/
+- title: Tutorials
+  section:
+  - title: Basics
+    section:
+    - title: Validate incoming telemetry
+      path: /docs/user-guide/rule-engine-2-0/tutorials/validate-incoming-telemetry/
+    - title: Transform incoming telemetry
+      path: /docs/user-guide/rule-engine-2-0/tutorials/transform-incoming-telemetry/
+    - title: Transform telemetry using previous record
+      path: /docs/user-guide/rule-engine-2-0/tutorials/transform-telemetry-using-previous-record/
+    - title: Create Alarm when the Device is offline
+      path: /docs/user-guide/rule-engine-2-0/tutorials/create-inactivity-alarm/
+  - title: Advanced
+    section:
+    - title: RPC Reply With data from Related Device
+      path: /docs/user-guide/rule-engine-2-0/tutorials/rpc-reply-tutorial/
+    - title: RPC Request to Related Device
+      path: /docs/user-guide/rule-engine-2-0/tutorials/rpc-request-tutorial/
+    - title: Create & Clear Alarms
+      path: /docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/
+    - title: Send Email To Customer
+      path: /docs/user-guide/rule-engine-2-0/tutorials/send-email/
+  - title: PE
+    section:
+    - title: Add & remove devices from groups dynamically
+      path: /docs/user-guide/rule-engine-2-0/tutorials/add-devices-to-group/
+- title: Video Tutorials
+  path: /docs/iot-video-tutorials/
 - title: Samples
   path: /docs/samples/
 - title: Live Demo Server
@@ -45,25 +76,3 @@ toc:
       path: /docs/samples/linkit-one/
     - title: GPS data upload and visualization using LinkIt ONE and ThingsBoard
       path: /docs/samples/linkit-one/gps/
-- title: Tutorials
-  section:
-  - title: Basics
-    section:
-    - title: Validate incoming telemetry
-      path: /docs/user-guide/rule-engine-2-0/tutorials/validate-incoming-telemetry/
-    - title: Transform incoming telemetry
-      path: /docs/user-guide/rule-engine-2-0/tutorials/transform-incoming-telemetry/
-    - title: Transform telemetry using previous record
-      path: /docs/user-guide/rule-engine-2-0/tutorials/transform-telemetry-using-previous-record/
-  - title: Advanced
-    section:
-    - title: RPC Reply With data from Related Device
-      path: /docs/user-guide/rule-engine-2-0/tutorials/rpc-reply-tutorial/
-    - title: Create & Clear Alarms
-      path: /docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/
-    - title: Send Email
-      path: /docs/user-guide/rule-engine-2-0/tutorials/send-email/
-  - title: Old Rule Engine (before v2.0)
-    section:
-    - title: Facilities Monitoring PoC
-      path: /docs/samples/monitoring/facilities-monitoring-poc/

@@ -1,0 +1,44 @@
+{% for item in guides %}
+{% if item.section %}
+<div class="guides-block">
+    <div class="guides-title-panel">
+        <img class="guides-img" src="/images/tb-guide.svg"/>
+        <div class="guides-text">
+            <p class="guides-title">
+                {{ item.title }}
+            </p>
+            <p class="guides-subtitle">
+                {{ item.subtitle }}
+            </p>
+        </div>
+    </div>
+    <ul class="guides-list">
+        {% assign guides = item.section %}{% include guides.html %}
+    </ul>
+</div>
+{% else %}
+<li class="guide-container">
+    <a href="{{ item.path }}">
+        <div class="guide-text">
+            <p class="guide-title">
+                {{ item.title }}
+            </p>
+            <p class="guide-subtitle">
+                {{ item.subtitle }}
+            </p>
+            <p class="guide-keywords">
+                {{ item.keywords }}
+            </p>
+        </div>
+        <div class="guide-icons">
+            {% if item.video %}
+            <span class="video"></span>
+            {% endif %}
+            {% if item.pe %}
+            <span class="pe"></span>
+            {% endif %}
+        </div>
+    </a>
+</li>
+{% endif %}
+{% endfor %}
