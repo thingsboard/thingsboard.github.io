@@ -1,4 +1,4 @@
-- title: Getting Started Guides
+- title: Getting started guides
   subtitle: These guides provide quick overview of main ThingsBoard features. Designed to be completed in 15-30 minutes.
   section:
     - path: /docs/getting-started-guides/helloworld/
@@ -25,7 +25,7 @@
       keywords: device management attributes
       video: false
       pe: false
-- title: Installation Guides
+- title: Installation guides
   subtitle: Learn how to setup ThingsBoard on various available operating systems.
   section:
     - path: /docs/user-guide/install/windows/
@@ -169,7 +169,7 @@
       keywords:
       pe: true
       video: true
-- title: Data Visualization
+- title: Data visualization
   subtitle: These guides contain instructions how to configure complex ThingsBoard dashboards
   section:
     - path: /docs/iot-video-tutorials/#dashboard-development-guide-part-1-of-3-visualizing-assets-data-using-maps-and-tables
