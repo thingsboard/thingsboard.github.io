@@ -5,9 +5,8 @@ description: Send RPC Request to a Device
 
 ---
 
-ThingsBoard allows you to send remote procedure calls (RPC) from server side applications to devices and vice versa. <br>
-You can send commands or requests to the device and receive data from it <br>
-This Tutorial is to show you how to send a remote procedure call (RPC) Request to a particular Device.
+ThingsBoard allows you to send remote procedure calls [**RPC**](/docs/user-guide/rpc/#server-side-rpc-api) from server-side applications to devices and vice versa. <br>
+This Tutorial is to show you how to send a remote request call to a Related Device using Rule Engine.
 
 
 * TOC
@@ -16,15 +15,12 @@ This Tutorial is to show you how to send a remote procedure call (RPC) Request t
 # Use case
 Let’s assume the following use case:
 
-  - you have the following entities connected to ThingsBoard:
-	- Two devices
-		- Wind Direction Sensor.
-		- Rotating System.
-	- One asset
-		- Wind Turbine.
-
+  - you have the following devices connected to ThingsBoard:	
+	- Wind Direction Sensor.	
+	- Rotating System.	
+  - also, you have one asset:
+	- Wind Turbine. 
  - You want to initiate an RPC request to the Rotating System and change the direction of the Wind Turbine according to the direction of the wind.
-
  - The RPC call will have two properties:
 	- method: **spinLeft** or **spinRight**.
 	- params: **value**.
@@ -45,17 +41,14 @@ Let’s assume the following use case:
 </table>
 
 
-# Background
-This tutorial will explain how to work with **RPC call request** Rule Nodes. In addition, it will show you how to:
+## Prerequisites
 
-- Route incoming messages based on the message type using the **Message Type Switch** node.
-- Store Timeseries data from the incoming Message payload into the database and link it to the Entity using the **Save Timeseries** node.
-- Store attributes from the incoming Message payload into the database and link them to the Entity using the **Save Timeseries** node.
-- Fetch the attributes of the related entities using the **Related Attributes** node.
-- Transform incoming messages using the **Script** node.
-- Process the submitted message as a message from another entity using the **Change originator** node.
-- Filter messages using the **Script** node.
+We assume you have completed the following guides and reviewed the articles listed below:
 
+ * [Getting Started](/docs/getting-started-guides/helloworld/) guide.
+ * [Rule Engine Overview](/docs/user-guide/rule-engine-2-0/overview/).
+ 
+ 
 
 # Model definition
 The Wind Turbine has two devices installed: Wind Direction Sensor and Rotating System.
@@ -63,12 +56,33 @@ The Wind Turbine has two devices installed: Wind Direction Sensor and Rotating S
 - The Wind turbine is represented as an Asset. Its name is **Wind Turbine** and its type is **Wind turbine**. 
 - The Wind Direction Sensor is represented as a Device. Its name is **Wind Direction Sensor** and its type is **Direction Sensor**.
 - The Rotating System is represented as a Device. Its name is **Rotating System** and its type is **Rotating System**.
-- Create a relationship of the type **Contains**:
+- Create a relation of the type **Contains**:
 	- from **Wind Turbine** to **Wind Direction Sensor**, and
 	- from **Wind Turbine** to **Rotating System**.
-- Create a relationship of the type **Uses**:
+- Create a relation of the type **Uses**:
 	- from **Rotating System** to **Wind Direction Sensor**.
 
+
+# Message Flow
+In this section, we explain the purpose of each node in this tutorial:
+
+- Node A: [**Message Type Switch**](/docs/user-guide/rule-engine-2-0/filter-nodes/#message-type-switch-node) node.
+  - Route incoming messages based on the message type.
+- Node B: [**Save Timeseries**](/docs/user-guide/rule-engine-2-0/action-nodes/#save-timeseries-node) node.
+  - Stores messages telemetry from **Wind Direction Sensor** and **Rotating System** into the database. 
+- Node C: [**Related attributes**](/docs/user-guide/rule-engine-2-0/enrichment-nodes/#related-attributes).
+  - Load the source telemetry **windDirection** of the related **Wind Direction Sensor** and save it into the Message metadata with the name **windDirection**.
+- Node D: [**Change originator**](/docs/user-guide/rule-engine-2-0/transformation-nodes/#change-originator) node.
+  - Change the originator from Devices **Wind Direction Sensor** and **Rotating System** to the Related Asset **Wind Turbine** and the submitted message will be processed as a message from Asset.
+- Node E: [**Save Timeseries**](/docs/user-guide/rule-engine-2-0/action-nodes/#save-timeseries-node) node.
+  - Stores messages telemetry from Asset **Wind Turbine** into the database. 
+- Node F: [**Transformation Script**](/docs/user-guide/rule-engine-2-0/transformation-nodes/#script-transformation-node).
+  - Transform an original message into RPC request message. 
+- Node G: [**Filter Script**](/docs/user-guide/rule-engine-2-0/filter-nodes/#script-filter-node) node.
+  - This node will check if msgType of incoming message is **RPC message**.
+- Node H: [**RPC call request**](/docs/user-guide/rule-engine-2-0/action-nodes/#rpc-call-request-node) node.
+  - Takes the message payload and sends it as a response to the **Rotating System**.
+  
 
 <br/>
 <br/>
@@ -90,7 +104,7 @@ Also, you can create the new Rule Chain from scratch. The following section show
 - Go to **Rule Chains** -> **Add new Rule Chain** 
 - Enter the Name field as **Tutorial of RPC Call Request**, then click the **ADD** button.
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-request/create chain.png) ![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-request/root chain.png) 
+![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-request/create-chain.png) ![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-request/root-chain.png) 
 
 - The new Rule Chain is now created. Don’t forget to mark it as “root”.
 
@@ -98,27 +112,27 @@ Also, you can create the new Rule Chain from scratch. The following section show
 
 In this tutorial, you will create 8 nodes as it will be explained in the following sections:
 
-###### **Message Type Switch** node
+###### Node A
 - Add the **Message Type Switch** node and connect it to the **Input** node. <br>
   This node will route the incoming messages according to the message type, namely **POST_TELEMETRY_REQUEST**.
 
 - Enter the Name field as **Message Type Switch**.
 
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-request/messageTypeSwitch.png)
+![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-request/message-type-switch.png)
 
-###### **Save Timeseries** node 
-- Add the **Save TimeSeries** node and connect it to the **Message Type Switch** node with a relationship type **Post telemetry**. <br>
-  This node will store TimeSeries data from incoming Message payload to the database and associate them to the Device, that is identified by the Message Originator.
-
+######  Node B
+- Add the **Save TimeSeries** node and connect it to the **Message Type Switch** node with a relation type **Post telemetry**. <br>
+  This node will store TimeSeries data from incoming Message payload to the database and associate them to the Device, that is identified by the Message Originator, namely **Wind Direction Sensor** and **Rotating System**.
+  
 - Enter the Name field as **Save Time Series**.
 
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-request/save ts.png)
+![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-request/save-ts.png)
 
-###### **Related attributes** node
-- Add the **Related attributes** node and connect it to the **Save TimeSeries** node with a relationship type **Success**. <br>
-  This node will load the source telemetry **wind Direction** of the related Wind Direction Sensor and save it into the Message metadata with the name **windDirection**.
+###### Node C
+- Add the **Related attributes** node and connect it to the **Save TimeSeries** node with a relation type **Success**. <br>
+  This node will load the source telemetry **windDirection** from the related **Wind Direction Sensor** to **Rotating System** and save it into the Message metadata with the name **windDirection**.
 - Fill in the fields with the input data shown in the following table: 
 
 <table style="width: 25%">
@@ -165,11 +179,12 @@ In this tutorial, you will create 8 nodes as it will be explained in the followi
 
 
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-request/get related.png)
+![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-request/get-related.png)
 
-###### **Change Orignator** node 
-- Add the **Change Orignator** node and connect it to the **Save TimeSeries** node with a relationship type **Success**. <br>
-  This node will change the originator from the Related Device to the Asset and the submitted message will be processed as a message from another entity.
+###### Node D
+- Add the **Change Orignator** node and connect it to the **Save TimeSeries** node with a relation type **Success**. <br>
+  This node will change the originator from Devices **Wind Direction Sensor** and **Rotating System** to the Related Asset **Wind Turbine** that has a relation of the type **Contains** from each of them. 
+  <br/>As a result, the submitted message will be processed as a message from this Entity
 - Fill in the fields with the input data shown in the following table: 
 
 <table style="width: 25%">
@@ -206,25 +221,25 @@ In this tutorial, you will create 8 nodes as it will be explained in the followi
    </tbody>
 </table>
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-request/change originator.png)
+![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-request/change-originator.png)
 
-###### **Save Timeseries** node 
-- Add the **Save TimeSeries** node and connect it to the **Change Orignator** node with a relationship type **Success**. <br>
-  This node will store the TimeSeries data from the incoming Message payload into the database and link it to the Asset that is identified by the Message Originator.
+###### Node E
+- Add the **Save TimeSeries** node and connect it to the **Change Orignator** node with a relation type **Success**. <br>
+  This node will store the TimeSeries data from the incoming Message payload into the database from the Asset **Wind Turbine** that is Message Originator.
 - Enter the Name field as **Save Time Series**.
 
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-request/save ts.png)
+![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-request/save-ts.png)
 
-###### **Transform Script** node 
-- Add the **Transform Script** node and connect it to the **Related attributes** node with a relationship type **Success**. <br>
+###### Node F
+- Add the **Transform Script** node and connect it to the **Related attributes** node with a relation type **Success**. <br>
 This node will transform an original message into RPC request message. 
 - The RPC call will have 2 properties:
 	- method: **spinLeft** or **spinRight**.
 	- params: **value**.
 
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-request/rpc message.png)
+![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-request/rpc-message.png)
 
 - Enter the Name field as **New RPC Message**.
 - Add the following Script: {% highlight javascript %}
@@ -245,19 +260,19 @@ This node will transform an original message into RPC request message.
  return {msg: newMsg, metadata: metadata, msgType: msgType}; {% endhighlight %}
 
 
-###### **Filter Script** node 
+###### Node G 
 
-- Add the the **Filter Script** node and connect it to the **Transform Script** node with a relationship type **Success**. <br> 
+- Add the the **Filter Script** node and connect it to the **Transform Script** node with a relation type **Success**. <br> 
   This node will check if msgType of incoming message is **RPC message**.
 
 - Enter the Name field as **Check RPC Message**.
 - Add the following Script: {% highlight javascript %}: return msgType == 'RPC message'; {% endhighlight %}
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-request/check validity.png)
+![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-request/check-validity.png)
 
 
-###### **RPC call request** node
-- Add the **RPC call request** node and connect it to the **Filter Script** node with a relationship type **True**. <br>
+###### Node H
+- Add the **RPC call request** node and connect it to the **Filter Script** node with a relation type **True**. <br>
   This node takes the message payload and sends it as a response to the Message Originator.
 - Enter the Name field as **Rotating System**.
 - Enter the Timeout value as 60 seconds.
@@ -290,7 +305,7 @@ To run the scripts, you need to do the following steps:
 
   However, these access tokens are unique and you will need to copy the access tokens of your devices.
 
- ![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-request/wind token.png) ![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-request/rs token.png)
+ ![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-request/wind-token.png) ![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-request/rs-token.png)
 
 - Open the terminal and go to the folder that contains these emulator scripts, then run the following commands:
     - node WindDirectionEmulator.js
@@ -389,11 +404,21 @@ Click the **Edit alias** button and enter the input data shown in the following 
 
 
 The configuration of the dashboard is now completed and you can verify that it works as expected.
-<br>
-<br>
 
+Also, you can see:
+
+  - how to work with **RPC call reply** Rule Node
+
+Please refer to the second link under the **See Also** section to see how to do this.
+
+<br>
+<br>
 
 # See Also
-For more details about how RPC works in Thignsboard, please refer to the [RPC capabilities](/docs/user-guide/rpc/#server-side-rpc-api) guide.
+
+ - For more details about how RPC works in Thignsboard, please refer to the [RPC capabilities](/docs/user-guide/rpc/#server-side-rpc-api) guide.
+
+ - [RPC Reply With data from Related Device](/docs/user-guide/rule-engine-2-0/tutorials/rpc-reply-tutorial/) guide.
+ 
 <br/>
 <br/>

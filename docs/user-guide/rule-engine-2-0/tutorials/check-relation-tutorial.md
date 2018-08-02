@@ -61,8 +61,8 @@ Create a relation of the type Uses:
 
 The following screenshots show how to do this:
 
- ![image](/images/user-guide/rule-engine-2-0/tutorials/check relation/smoke sensor.png) ![image](/images/user-guide/rule-engine-2-0/tutorials/check relation/fire alarm system.png) <br/>
- ![image](/images/user-guide/rule-engine-2-0/tutorials/check relation/add relation.png)
+ ![image](/images/user-guide/rule-engine-2-0/tutorials/check%20relation/smoke-sensor.png) ![image](/images/user-guide/rule-engine-2-0/tutorials/check%20relation/fire-alarm-system.png) <br/>
+ ![image](/images/user-guide/rule-engine-2-0/tutorials/check%20relation/add-relation.png)
  
 <br/> 
 
@@ -70,11 +70,16 @@ The following screenshots show how to do this:
 
 The default rule chain will be modified to add the following:
 
- - The **Script Filter** node that that evaluates incoming Message with configured JavaScript condition. This rule node will be added next after the **Save Timeseries** default rule node with a relation type **Success**.
+ - The [**Script Filter**](/docs/user-guide/rule-engine-2-0/filter-nodes/#script-filter-node) node that that evaluates incoming Message with configured JavaScript condition. This rule node will be added next after the **Save Timeseries** default rule node with a relation type **Success**.
+   
+   ```javascript
+   return msg.Smoke== 'true';
+   ```
+  - Enter the Name field as **Smoke Alarm Filter**.
  
- - The **Create alarm** node that tries to load the latest Alarm with configured Alarm Type for Message Originator. This rule node will be connected to the **Script Filter** node with a relation type **True**;
+ - The [**Create alarm**](/docs/user-guide/rule-engine-2-0/action-nodes/#create-alarm-node  ) node that tries to load the latest Alarm with configured Alarm Type for Message Originator. This rule node will be connected to the **Script Filter** node with a relation type **True**;
   
- - The **Create alarm** node that loads the latest Alarm with configured Alarm Type for Message Originator and Clears the Alarm if it exists. This rule node will be connected to the **Script Filter** node with a relation type **False**.
+ - The [**Create alarm**](/docs/user-guide/rule-engine-2-0/action-nodes/#clear-alarm-node) node that loads the latest Alarm with configured Alarm Type for Message Originator and Clears the Alarm if it exists. This rule node will be connected to the **Script Filter** node with a relation type **False**.
   
  - The **Rule Chain** node that forwards incoming Message to specified Rule Chain **Fire Alarm System**. This rule node will be connected to the **Script Filter** node with a relation type **True**.
   
@@ -100,7 +105,7 @@ Configuration:
 
 - Name : **Fire Alarm System**
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/check relation/add fire alarm chain.png)
+![image](/images/user-guide/rule-engine-2-0/tutorials/check%20relation/add-fire-alarm-chain.png)
 
 New Rule Chain is created. Press **Edit** button and configure Chain.
 
@@ -114,130 +119,177 @@ In this rule chain, you will create 4 nodes as it will be explained in the follo
 
  - This node will check the relationship from the Device, **Fire Alarm System**, to the originator of the message - **Smoke Detector** using the type and direction.
 
- - If the relation exists, the message will be sent through the True chain.
+  <br/>If the relation exists, the message will be sent through the True chain.
 
- - Enter the Name field as **Check Relation**.
-  
-![image](/images/user-guide/rule-engine-2-0/tutorials/check relation/check relation.png)
-
-
-#### Creating a new Rule Chain (**Check Relation Tutorial**)
-  
-  - Go to **Rule Chains** -> **Add new Rule Chain** 
-  	
- - Enter the Name field as **Check Relation Tutorial**, then click the **ADD** button.
+ - Fill in the fields with the input data shown in the following table: 
  
-  - The new Rule Chain is created. Don’t forget to mark it as “root”.
+ <table style="width: 25%">
+   <thead>
+       <tr>
+           <td><b>Field</b></td><td><b>Input Data</b></td>
+       </tr>
+   </thead>
+   <tbody>
+       <tr>
+           <td>Name</td>
+           <td>Check Relation</td>
+       </tr>     
+       <tr>
+           <td>Direction</td>
+           <td>To</td>
+       </tr>
+       <tr>
+           <td>Type</td>
+           <td>Device</td>
+       </tr>
+        <tr>
+           <td>Device</td>
+           <td>Fire Alarm System</td>
+        </tr>
+       <tr>
+           <td>Relation type</td>
+           <td>Uses</td>
+       </tr>
+    </tbody>
+ </table>
   
-  ![image](/images/user-guide/rule-engine-2-0/tutorials/check relation/add chain.png)  ![image](/images/user-guide/rule-engine-2-0/tutorials/check relation/root chain.png) 
+![image](/images/user-guide/rule-engine-2-0/tutorials/check%20relation/check-relation.png)
 
-##### Adding the required nodes
+###### **Change Orignator** node 
 
-In this tutorial, you will create 4 nodes as it will be explained in the following sections:
-
-###### **Message Type Switch** node
- - Add the **Message Type Switch** node and connect it to the **Input** node.
-
- - This node will route the incoming messages according to the message type: **POST_TELEMETRY_REQUEST**;
+- Add the **Change Orignator** node and connect it to the **Check Relation** node with a relation type **True**. <br>
+  This node will change the originator from the Related Device **Smoke Detector** to the Device **Fire Alarm System** and the submitted message will be processed as a message from another entity, namely **Fire Alarm System**.
   
- - Enter the Name field as **Message Type Switch**, then click the **ADD** button.
- 
-![image](/images/user-guide/rule-engine-2-0/tutorials/check relation/messageTypeSwitch.png)
- 
-###### **Check Relationship Filter** node
- - Add the **Check Relationship** node and connect it to the **Message Type Switch** node with a relationship type **Post telemetry**.
+- Fill in the fields with the input data shown in the following table: 
 
- - This node will check the relationship from the Asset, **Fahrenheit devices**, to the originator of the message using the type and direction.
+<table style="width: 25%">
+  <thead>
+      <tr>
+          <td><b>Field</b></td><td><b>Input Data</b></td>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Name</td>
+          <td>Change Originator</td>
+      </tr>
+      <tr>
+          <td>Originator source</td>
+          <td>Related</td>
+      </tr>
+      <tr>
+          <td>Direction</td>
+          <td>From</td>
+      </tr>
+      <tr>
+          <td>Max relationship level</td>
+          <td>1</td>
+      </tr>
+      <tr>
+          <td>Relation type</td>
+          <td>Uses</td>
+      </tr>
+      <tr>
+          <td>Entity type</td>
+          <td>Device</td>
+      </tr>
+   </tbody>
+</table>
 
- - If the relationship exists, the message will be sent through the True chain, otherwise, the False chain will be used.
-
- - Enter the Name field as **Check Relationship**.
-  
-![image](/images/user-guide/rule-engine-2-0/tutorials/check relation/check relation.png)
-  
+![image](/images/user-guide/rule-engine-2-0/tutorials/check%20relation/change-originator.png)
  
 ###### **Script Transformation** node 
- - Add the **Script Transformation** node and connect it to the **Check Relationship Filter** node with a relationship type **True**.
+ - Add the **Script Transformation** node and connect it to the **Change Orignator** node with a relationship type **Success**.
 
- - This node changes the message payload using the configured JavaScript function to transform the temperature degree from Fahrenheit to its equivalent in Celsius.
- - In order to do this, use the following function:
+This node will transform an original message into RPC request message. 
+
+- The RPC call will have 2 properties:
+
+	- method: **ON**.
+	
+	- params: **{}**.
+	
+ - In order to do this, add the following Script:
 
 ```javascript
-function precisionRound(number, precision) {
-  var factor = Math.pow(10, precision);
-  return Math.round(number * factor) / factor;
-}
-
-if (typeof msg.temperature !== 'undefined'){
-    msg.temperature = precisionRound((msg.temperature -32) * 5 / 9, 2);
-}
-
-return {msg: msg, metadata: metadata, msgType: msgType};
+var newMsg = {};
+if(msg.Smoke == 'true'){
+      newMsg.method = 'ON';  
+} 
+newMsg.params={};
+return {msg: newMsg, metadata: metadata, msgType: msgType};
 ```
 
- - Enter the Name field as **Transform From °F to °C**.
+ - Enter the Name field as **New RPC message**.
   
-![image](/images/user-guide/rule-engine-2-0/tutorials/check relation/transformation.png)  
+![image](/images/user-guide/rule-engine-2-0/tutorials/check relation/transformation-node.png)  
 
-###### **Save Timeseries** node
- - Add two **Save TimeSeries** node and connect it to the next nodes:
+###### **RPC call request** node
+- Add the **RPC call request** node and connect it to the **Script Transformation** node with a relation type **Success**. <br>
+  This node takes the message payload and sends it as a response to the Message Originator.
+- Enter the Name field as **Fire Alarm System**.
+- Enter the Timeout value as 60 seconds.
 
-    - the **Script Transformation** node with a relationship type **Success**.
+![image](/images/user-guide/rule-engine-2-0/tutorials/check%20relation/rpc-call-request.png)
 
-    - the **Check Relationship Filter** node with a relationship type **False**.
-
- - These nodes will store the TimeSeries data from the incoming Message payload into the database and link it to the Device that is identified by the Message Originator.
-
- - Enter the Name field as **Save Time Series**.
-      
-![image](/images/user-guide/rule-engine-2-0/tutorials/check relation/save ts.png)
-  
 <br/>
 
-This Rule chain is now ready and you need to save it. 
+This Rule chain is ready and we should save it. The following screenshots show how the **Fire Alarm System** Rule Chain should look like: 
+
+![image](/images/user-guide/rule-engine-2-0/tutorials/check%20relation/fire-alarm-chain.png)
+
+#### Connect Rule Chains
+Now we will connect our new chain with the **Root Chain**. 
+
+We want to route incoming message from **Script Filter** to our new rule chain (**Fire Alarm System**) via **true** relation.
+
+Let's return to the **Root Rule Chain**, press **Edit** button and make required changes.
 
 <br/>
 <br/>
 
 # How to verify the Rule Chain and Post telemetry
 
-- Use the Rest APIs, [Telemetry upload APIs](/docs/reference/http-api/#telemetry-upload-api), for posting the devices telemetry. <br>
+- Use the following javascript code to emulate the **Fire Alarm System** device.
 
-Please, note that you will need to copy the devices access token from the devices, for example, **Fahrenheit device A** and **Celsius device B** as shown in the following screenshot. 
+  - [**FireAlarmEmulator.js**](/docs/user-guide/rule-engine-2-0/tutorials/resources/FireAlarmEmulator.js).
+  
+  - To run the script, you need to do the following steps:
+  
+  - Copy the **Fire Alarm System** device access token, then paste them in the script.  <br>
+  You can copy the access token from the Device page. <br> <br>  
+  
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/check relation/fahrenheit access token.png) ![image](/images/user-guide/rule-engine-2-0/tutorials/check relation/celsius access token.png)
-
-
-
-Try to post temperature = 68 for **Fahrenheit device A** and temperature = 20 for **Celsius device B**. <br/> The temperature from **Fahrenheit device A** should be converted from 68 ° F to 20 ° C and the temperature from **Celsius device B** will remain unchanged.
+- Use the Rest APIs, [Telemetry upload APIs](/docs/reference/http-api/#telemetry-upload-api), for posting telemetry from the device **Smoke Detector**. <br>
 
 {% highlight bash %}
+curl -v -X POST -d '{"Smoke":"true"}' http://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
 
-curl -v -X POST -d '{"temperature":68}' http://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
-
-curl -v -X POST -d '{"temperature":20}' http://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
-
-***you need to replace $ACCESS_TOKEN with the actual devices tokens**
+***you need to replace $ACCESS_TOKEN with the actual device token**
 {% endhighlight %}
-
-
-
-
-![image](/images/user-guide/rule-engine-2-0/tutorials/check relation/telemetry A.png)
-
-![image](/images/user-guide/rule-engine-2-0/tutorials/check relation/telemetry B.png)
-
 <br/>
 
-Also, you can configure the Dashboard by adding a Digital or Analogue gauges widgets to visualize changes in temperature;
+Also, you can:
+
+  - configure the Dashboard by adding an alarm widget to visualize the alarms.
+  
+  - define an additional logic for alarm processing, for example, sending an email.
+
+Please refer to the third and fourth links under the **See Also** section to see how to do this.
   
 <br/>
 
 # See Also
 
-[**Switch Node**](//docs/user-guide/rule-engine-2-0/filter-nodes/#switch-node) - for more information about how to use  Switch Node in Thignsboard.
+- [Switch Node](//docs/user-guide/rule-engine-2-0/filter-nodes/#switch-node) guide - for more information about how to use Switch Node in Thignsboard.
 
-[Validate incoming telemetry](/docs/user-guide/rule-engine-2-0/tutorials/validate-incoming-telemetry/#step-1-adding-temperature-validation-node) - for more information about how to validate an incoming telemetry using the Script Filter node.
+- [Validate incoming telemetry](/docs/user-guide/rule-engine-2-0/tutorials/validate-incoming-telemetry/#step-1-adding-temperature-validation-node) tutorial - for more information about how to validate an incoming telemetry using the Script Filter node.
+
+- [Create & Clear Alarms: configure dashboard](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/#configure-device-and-dashboard) guide - to learn how to add an Alarm widget to the dashboard.
+
+- [Send Email](/docs/user-guide/rule-engine-2-0/tutorials/send-email/) tutorial.
+
+- [RPC capabilities](/docs/user-guide/rpc/#server-side-rpc-api) guide - for more information about how RPC works in Thignsboard, please refer to the RPC capabilities guide.
 
 <br/>
 <br/>
