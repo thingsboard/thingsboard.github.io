@@ -6,10 +6,6 @@ description: Check relationship
 ---
 The purpose of this tutorial is to show how the **Check Relation** node can be used to check the relation between Entities.
 
-However, there are different ways to check the relationship, for example, the relationship can be checked using the **Switch** node that routes incoming Message to one or multiple output chains.
-
-For more information about how to use the **Switch** node, please check the link to **The article of Switch Node** in the  [**See Also**](/docs/user-guide/rule-engine-2-0/tutorials/check-relation-tutorial/#see-also) section.
-
 * TOC
 {:toc}
 
@@ -19,11 +15,39 @@ Let’s assume the following use case:
 
  - You have 2 devices:
  
-   - The first device - is the device with the smoke sensor which sends data to ThingsBoard when it appears.
+   - **Smoke Detector** with the **Smoke Sensor** which sends data to ThingsBoard when it appears.
    
-   - The second device - is the device which provides a fire alarm, when the smoke is present.
+   - **Fire Alarm System** which provides a fire alarm, when the smoke is present.
+   
+However, there are different ways for the realization of this case, for example, it can be implemented using the **Switch** node that routes incoming Message to one or multiple output chains.<br/>
+For more information about how to use the **Switch** node, please check the link to **The article of Switch Node** in the  [**See Also**](/docs/user-guide/rule-engine-2-0/tutorials/check-relation-tutorial/#see-also) section.   
  
-<br/>
+## Prerequisites
+
+You need to read the following guides before you start this tutorial:
+
+  * [Getting Started](/docs/getting-started-guides/helloworld/).
+  * [Rule Engine Overview](/docs/user-guide/rule-engine-2-0/overview/).
+  
+# Adding the devices and creating the relation between them
+  
+  Add two Device entity in ThingsBoard:
+  
+   - Smoke Detector is represented as a Device. Its name is **Smoke Detector** and its type is **Smoke Sensor**.
+  
+   - Fire Alarm System is represented as a Device. Its name is **Fire Alarm System** and its type is **Fire Alarm Device**.
+  
+  Create a relation of the type Uses:
+  
+   - from Smoke Detector to Fire Alarm System;
+  
+  The following screenshots show how to do this:
+  
+   ![image](/images/user-guide/rule-engine-2-0/tutorials/check%20relation/smoke-sensor.png) ![image](/images/user-guide/rule-engine-2-0/tutorials/check%20relation/fire-alarm-system.png) <br/>
+   ![image](/images/user-guide/rule-engine-2-0/tutorials/check%20relation/add-relation.png)
+   
+
+# Message Flow  
    
 This tutorial will explain how to check the relation between Entities using Rule Engine, and also how to:
 
@@ -39,33 +63,7 @@ This tutorial will explain how to check the relation between Entities using Rule
  
  - Creating and Clearing Alarms using **Create Alarm** and **Clear Alarm**  nodes.
 
-## Prerequisites
-
-You need to read the following guides before you start this tutorial:
-
-  * [Getting Started](/docs/getting-started-guides/helloworld/).
-  * [Rule Engine Overview](/docs/user-guide/rule-engine-2-0/overview/).
-  
-  
-# Adding the Devices and Creating the Relation between Them
-
-Add two Device entity in ThingsBoard:
-
- - Smoke Detector is represented as a Device. Its name is **Smoke Detector** and its type is **Smoke Sensor**.
-
- - Fire Alarm System is represented as a Device. Its name is **Fire Alarm System** and its type is **Fire Alarm Device**.
-
-Create a relation of the type Uses:
-
- - from Smoke Detector to Fire Alarm System;
-
-The following screenshots show how to do this:
-
- ![image](/images/user-guide/rule-engine-2-0/tutorials/check%20relation/smoke-sensor.png) ![image](/images/user-guide/rule-engine-2-0/tutorials/check%20relation/fire-alarm-system.png) <br/>
- ![image](/images/user-guide/rule-engine-2-0/tutorials/check%20relation/add-relation.png)
- 
-<br/> 
-
+    
 # Configure Rule Chain
 
 The default rule chain will be modified to add the following:

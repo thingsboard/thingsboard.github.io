@@ -49,7 +49,6 @@ We assume you have completed the following guides and reviewed the articles list
  * [Rule Engine Overview](/docs/user-guide/rule-engine-2-0/overview/).
  
  
-
 # Model definition
 The Wind Turbine has two devices installed: Wind Direction Sensor and Rotating System.
 
