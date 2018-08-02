@@ -15,15 +15,16 @@ title: Guides
         if (checkMouseMoved()) {
             checkSearchInput();
         }
-    }
+    };
 
     jqueryDefer(function () {
-        $('#searchGuideInput').keyup(function() {
+        var searchInput = $('#searchGuideInput');
+        searchInput.keyup(function() {
             window.typeMouseX = window.mouseX;
             window.typeMouseY = window.mouseY;
             filterGuides();
         });
-        $('#searchGuideInput').blur(function() {
+        searchInput.blur(function() {
             checkSearchInput();
         });
         filterGuides();
@@ -33,16 +34,13 @@ title: Guides
         if (typeof window.typeMouseX === "undefined" || typeof window.typeMouseY === "undefined") {
             return false;
         }
-        if (window.typeMouseX != window.mouseX && window.typeMouseY != window.mouseY) {
-            return true;
-        } else {
-            return false;
-        }
+        return window.typeMouseX !== window.mouseX && window.typeMouseY !== window.mouseY;
     }
 
     function filterGuides() {
         $('.guides-list').find('.guide-container').removeClass('hidden');
-        $('.guides-block').removeClass('hidden');
+        var guidesBlock = $('.guides-block');
+        guidesBlock.removeClass('hidden');
         searchPageCount = 0;
         var searchText = $('#searchGuideInput').val();
 
@@ -54,13 +52,13 @@ title: Guides
                     keyRegexps.push(new RegExp(keywords[i].toLowerCase()));
                 }
             }
-            $('.guides-block').each( function( index, element ) {
+            guidesBlock.each( function() {
                 var containers = $( this ).find('.guide-container');
                 var total = containers.length;
-                containers.each( function( index, element ) {
+                containers.each( function() {
                     var paragraphs = $(this).find('p');
                     var text = '';
-                    paragraphs.each( function( index, element ) {
+                    paragraphs.each( function() {
                         text += $(this).html();
                         text += ' ';
                     });
@@ -96,7 +94,7 @@ title: Guides
 
     function reportSearchInput(searchText) {
 
-        if (!ga.hasOwnProperty("loaded") || ga.loaded != true) {
+        if (!ga.hasOwnProperty("loaded") || ga.loaded !== true) {
             return;
         }
 
