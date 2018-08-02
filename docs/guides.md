@@ -6,6 +6,7 @@ title: Guides
 <script type="text/javascript">
 
     var reportedSearchInputs = [];
+    var searchPageCount = 0;
 
     document.onmousemove = function(e) {
         var event = e || window.event;
@@ -42,7 +43,7 @@ title: Guides
     function filterGuides() {
         $('.guides-list').find('.guide-container').removeClass('hidden');
         $('.guides-block').removeClass('hidden');
-
+        searchPageCount = 0;
         var searchText = $('#searchGuideInput').val();
 
         var keywords = searchText.split(' ');
@@ -69,6 +70,7 @@ title: Guides
                         total--;
                     }
                 });
+                searchPageCount += total;
                 if (!total) {
                     $( this ).addClass('hidden');
                 }
@@ -98,17 +100,9 @@ title: Guides
             return;
         }
 
-        var pageCount = 0;
-
-        $('.guides-list').find('.guide-container').each( function( index, element ) {
-            if (!$( this ).hasClass('hidden')) {
-                pageCount++;
-            }
-        });
-
         ga(
             "send", "event", "Guides", "search",
-            searchText, pageCount
+            searchText, searchPageCount
         );
     }
     
