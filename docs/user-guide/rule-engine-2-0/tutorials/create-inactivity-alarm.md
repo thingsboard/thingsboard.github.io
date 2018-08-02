@@ -1,6 +1,6 @@
 ---
 layout: docwithnav
-title: Create Alarm when the Device is offline.
+title: Create Alarm when the Device is offline
 description: To create an alarm when the device is offline for a certain period of time using the Rule Engine.
 
 ---

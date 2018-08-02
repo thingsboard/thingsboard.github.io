@@ -5,19 +5,19 @@ description: Add & remove devices to group
 
 ---
 
+{% assign feature = "Device & Asset Groups" %}{% include templates/pe-feature-banner.md %}
+
+This tutorial will show how to dynamically add & remove device from the device group based on incoming data from device. 
+
 * TOC
 {:toc}
 
 ## Use case
 
-Let's assume your device is reporting temperature readings to ThingsBoard and you would like to . 
-This sensor collects temperature readings in °F and you would like to convert them to °C before storage into the database and visualization.
+Let's assume your device is reporting temperature readings to ThingsBoard and you would like to visualize devices that have reported temperature > 50°C. 
 
-In this tutorial we will configure ThingsBoard Rule Engine to modify temperature readings according to a formula:
-
-```code
-[°C] = ([°F] - 32) × 5/9.
-```
+In this tutorial we will configure ThingsBoard Rule Engine to automatically update "High temperature devices" group members based on incoming temperature readings from the device.
+You can use this tutorial as a basis for much more complex filtering.  
 
 ## Prerequisites 
 
@@ -25,46 +25,71 @@ We assume you have completed the following guides and reviewed the articles list
 
   * [Getting Started](/docs/getting-started-guides/helloworld/) guide.
   * [Rule Engine Overview](/docs/user-guide/rule-engine-2-0/overview/).
+  
+## Model definition
+  
+We will operate with Temperature sensor device that has name "Sensor A" and type "DHT22".
 
-## Step 1: Adding temperature transformation node
+![image](/images/user-guide/rule-engine-2-0/tutorials/groups/add-device.png)
 
-We will modify default rule chain and will add [**transformation**](/docs/user-guide/rule-engine-2-0/transformation-nodes/#script-transformation-node) rule node with temperature transformation script. 
-We will place this rule node between default "message type switch" and "save timeseries" rule nodes.
-Please note that we have removed irrelevant rule nodes from the root rule chain as well.
+## Message Flow
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/transformation/rule-chain.png)
+In this section, we explain the purpose of each node in this tutorial.
 
-Let's assume the data that arrive to a system may or may not have the "temperature" field. 
-We will treat all data that does not have "temperature" field as valid. In order to do this we will use the following function
+### Root rule chain
 
-```javascript
-function precisionRound(number, precision) {
-  var factor = Math.pow(10, precision);
-  return Math.round(number * factor) / factor;
-}
+![image](/images/user-guide/rule-engine-2-0/tutorials/groups/root-rule-chain.png)
 
-if (typeof msg.temperature !== 'undefined'){
-    msg.temperature = precisionRound((msg.temperature -32) * 5 / 9, 2);
-}
+  * **Node A**: Rule Chain node
+  
+    * We modify the default root rule chain to forward all telemetry to new "Add device to group" rule chain
 
-return {msg: msg, metadata: metadata, msgType: msgType};
-```
+### New "Add device to group" rule chain
 
-## Step 2: Validation script debugging
+![image](/images/user-guide/rule-engine-2-0/tutorials/groups/rule-chain.png)
 
-Let's check that our script is correct by using built-in "Test transformer function" button
+  * **Node B**: Script filter node
+  
+    * Checks that the incoming message from device contains temperature readings
+    * If message from device contains temperature readings it is forwarded to Node C
+    
+![image](/images/user-guide/rule-engine-2-0/tutorials/groups/has-temperature-node.png)    
+     
+  * **Node C**: Script filter node
+  
+    * Checks that the incoming message temperature is > 50°C
+    * If temperature > 50°C message is forwarded to Node D
+    * If temperature <= 50°C message is forwarded to Node E
+    
+![image](/images/user-guide/rule-engine-2-0/tutorials/groups/high-temperature-node.png)    
+    
+  * **Node D**: Add to Group node
+      
+    * Adds device to the group
+    * Constructs group name by substituting deviceType metadata value
+    * Automatically creates device group if needed
+    
+![image](/images/user-guide/rule-engine-2-0/tutorials/groups/add-group-node.png)    
+      
+  * **Node E**: Remove from Group node
+      
+    * Removes device from the group
+    * Constructs group name by substituting deviceType metadata value
+    
+![image](/images/user-guide/rule-engine-2-0/tutorials/groups/remove-group-node.png)    
+     
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/transformation/node-config.png)
+## Configuring the Rule Chain
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/transformation/test-function.png)
+Download and [**import**](/docs/user-guide/ui/rule-chains/#rule-chains-importexport) attached json [**file**](/docs/user-guide/rule-engine-2-0/pe/tutorials/add_device_to_group.json) as a new "Add device to group" rule chain. 
+Please note that all nodes have debug enabled. This affects performance. Create Node A as shown on the image above in the root rule chain to forward telemetry to new rule chain.
 
-You can check few more cases, for example when temperature is not set.
+## Validating the flow
 
-## TL;DR
+[Publish](/docs/getting-started-guides/helloworld/#pushing-data-from-the-device) temperature readings on behalf of the new device and observe new group automatically created: 
 
-Download and import attached json [**file**](/docs/user-guide/resources/transformation-rule-chain.json) with a rule chain from this tutorial. Don't forget to mark new rule chain as "root".
+![image](/images/user-guide/rule-engine-2-0/tutorials/groups/results.png)   
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/make-root.png)
 
  
 

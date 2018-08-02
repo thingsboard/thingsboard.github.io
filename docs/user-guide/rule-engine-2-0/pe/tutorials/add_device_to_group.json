@@ -1,0 +1,84 @@
+{
+  "ruleChain": {
+    "additionalInfo": null,
+    "name": "Add device to group",
+    "firstRuleNodeId": null,
+    "root": false,
+    "debugMode": false,
+    "configuration": null
+  },
+  "metadata": {
+    "firstNodeIndex": 0,
+    "nodes": [
+      {
+        "additionalInfo": {
+          "layoutX": 351,
+          "layoutY": 150
+        },
+        "type": "org.thingsboard.rule.engine.filter.TbJsFilterNode",
+        "name": "Has Temperature",
+        "debugMode": true,
+        "configuration": {
+          "jsScript": "return typeof msg.temperature !== undefined;"
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 668,
+          "layoutY": 151
+        },
+        "type": "org.thingsboard.rule.engine.filter.TbJsFilterNode",
+        "name": "High Temperature Filter",
+        "debugMode": true,
+        "configuration": {
+          "jsScript": "return msg.temperature > 50;"
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 992,
+          "layoutY": 68
+        },
+        "type": "org.thingsboard.rule.engine.action.TbAddToGroupNode",
+        "name": "High Temperature Group",
+        "debugMode": true,
+        "configuration": {
+          "groupNamePattern": "High Temperature Group (${deviceType})",
+          "groupCacheExpiration": 300,
+          "createGroupIfNotExists": true
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 995,
+          "layoutY": 204
+        },
+        "type": "org.thingsboard.rule.engine.action.TbRemoveFromGroupNode",
+        "name": "High Temperature Group",
+        "debugMode": true,
+        "configuration": {
+          "groupNamePattern": "High Temperature Group (${deviceType})",
+          "groupCacheExpiration": 300
+        }
+      }
+    ],
+    "connections": [
+      {
+        "fromIndex": 0,
+        "toIndex": 1,
+        "type": "True"
+      },
+      {
+        "fromIndex": 1,
+        "toIndex": 3,
+        "type": "False"
+      },
+      {
+        "fromIndex": 1,
+        "toIndex": 2,
+        "type": "True"
+      }
+    ],
+    "ruleChainConnections": null
+  }
+}
