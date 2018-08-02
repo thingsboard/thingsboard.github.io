@@ -1,6 +1,5 @@
 bigheader: "Guides"
-title: false
-abstract: "Find guide."
+abstract: "Explore ThingsBoard tutorials and guides."
 hidetoc: "true"
 toc:
 - title: Guides
