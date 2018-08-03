@@ -330,6 +330,9 @@ curl -v -X POST -d '{"smoke":"true"}' http://demo.thingsboard.io/api/v1/$ACCESS_
 {% endhighlight %}
 <br/>
 
+  ![image](/images/user-guide/rule-engine-2-0/tutorials/check relation/smoke-telemetry.png)![image](/images/user-guide/rule-engine-2-0/tutorials/check relation/fire-alarm-telemetry.png)
+
+<br/>
 Also, you can:
 
   - configure the Dashboard by adding an alarm widget to visualize the alarms.
