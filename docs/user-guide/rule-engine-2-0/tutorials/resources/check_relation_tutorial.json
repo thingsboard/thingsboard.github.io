@@ -31,7 +31,7 @@
         "name": "Smoke Alarm Filter",
         "debugMode": false,
         "configuration": {
-          "jsScript": "return msg.Smoke== 'true';"
+          "jsScript": "return msg.smoke== 'true';"
         }
       },
       {

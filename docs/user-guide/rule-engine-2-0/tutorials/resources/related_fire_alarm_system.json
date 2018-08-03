@@ -1,7 +1,7 @@
 {
   "ruleChain": {
     "additionalInfo": null,
-    "name": "Fire Alarm System",
+    "name": "Related Fire Alarm System",
     "firstRuleNodeId": null,
     "root": false,
     "debugMode": false,
@@ -58,7 +58,7 @@
         "name": "New RPC message",
         "debugMode": false,
         "configuration": {
-          "jsScript": "var newMsg = {};\nif(msg.Smoke == 'true'){\n      newMsg.method = 'ON';  \n} \nnewMsg.params={};\nreturn {msg: newMsg, metadata: metadata, msgType: msgType};"
+          "jsScript": "var newMsg = {};\nif(msg.smoke == 'true'){\n      newMsg.method = 'ON';  \n} \nnewMsg.params={};\nreturn {msg: newMsg, metadata: metadata, msgType: msgType};"
         }
       },
       {
