@@ -52,46 +52,42 @@ You need to read the following guides before you start this tutorial:
 
 In this section, we explain the purpose of each node in this tutorial:
 
-- Node A: [**Message Type Switch**](/docs/user-guide/rule-engine-2-0/filter-nodes/#message-type-switch-node) node.
-  - Routes incoming messages based on the message type.
-- Node B: [**Save Timeseries**](/docs/user-guide/rule-engine-2-0/action-nodes/#save-timeseries-node) node.
-  - Stores messages telemetry from **Smoke Detector** and **Fire Alarm System** into the database.
-- Node C: [**Filter Script**](/docs/user-guide/rule-engine-2-0/filter-nodes/#script-filter-node) node.
-  - Checks if data of incoming message is **smoke**.
-- Node D: [**Create alarm**](/docs/user-guide/rule-engine-2-0/action-nodes/#create-alarm-node) node.
-  - Tries to load the latest Alarm with configured Alarm Type for Message Originator, namely **Smoke Detector**.  
-- Node E: [**Clear alarm**](/docs/user-guide/rule-engine-2-0/action-nodes/#clear-alarm-node) node.
-  - Loads the latest Alarm with configured Alarm Type for Message Originator **Smoke Detector** and Clears the Alarm if it exists.
-- Node F: **Rule Chain** node.
-  - Forwards incoming Message to specified Rule Chain **Related Fire Alarm System**. 
-- Node G: [**Check Relation**](/docs/user-guide/rule-engine-2-0/filter-nodes/#check-relation-filter-node) node.
+- Node A: [**Check Relation**](/docs/user-guide/rule-engine-2-0/filter-nodes/#check-relation-filter-node) node.
   - Checks the relation from the Device, **Fire Alarm System**, to the originator of the message **Smoke Detector** using the type and direction of relation. 
-- Node H: [**Change originator**](/docs/user-guide/rule-engine-2-0/transformation-nodes/#change-originator) node.
+- Node B: [**Change originator**](/docs/user-guide/rule-engine-2-0/transformation-nodes/#change-originator) node.
   - Change the originator from Devices **Smoke Detector** to the related Device **Fire Alarm System** and the submitted message will be processed as a message from Device **Fire Alarm System**.
-- Node I: [**Transformation Script**](/docs/user-guide/rule-engine-2-0/transformation-nodes/#script-transformation-node).
+- Node C: [**Transformation Script**](/docs/user-guide/rule-engine-2-0/transformation-nodes/#script-transformation-node).
   - Transform an original message into RPC request message. 
-- Node J: [**RPC call request**](/docs/user-guide/rule-engine-2-0/action-nodes/#rpc-call-request-node) node.
+- Node D: [**RPC call request**](/docs/user-guide/rule-engine-2-0/action-nodes/#rpc-call-request-node) node.
   - Takes the message payload and sends it as a response to the **Fire Alarm System**.
+- Node E: [**Filter Script**](/docs/user-guide/rule-engine-2-0/filter-nodes/#script-filter-node) node.
+  - Checks if data of incoming message is **smoke**.
+- Node F: [**Clear alarm**](/docs/user-guide/rule-engine-2-0/action-nodes/#clear-alarm-node) node.
+  - Loads the latest Alarm with configured Alarm Type for Message Originator **Smoke Detector** and Clears the Alarm if it exists.  
+- Node G: [**Create alarm**](/docs/user-guide/rule-engine-2-0/action-nodes/#create-alarm-node) node.
+  - Tries to load the latest Alarm with configured Alarm Type for Message Originator, namely **Smoke Detector**.  
+- Node H: **Rule Chain** node.
+  - Forwards incoming Message to specified Rule Chain **Related Fire Alarm System**. 
 
 <br/>
   
 # Configure Rule Chains
 
-In this tutorial, we modified our Root Rule Chain **Check Relation Tutorial** and also created Rule Chain **Related Fire Alarm System**
+In this tutorial, we modified our **Root Rule Chain** and also created Rule Chain **Related Fire Alarm System**
 
 <br/>The following screenshots show how the above Rule Chains should look like:
-
-  - **Check Relation Tutorial:**
-
-![image](/images/user-guide/rule-engine-2-0/tutorials/check relation/chain.png)
-
+ 
   - **Related Fire Alarm System:**
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/check relation/fire-alarm-chain.png)
 
+ - **Root Rule Chain:**
+
+![image](/images/user-guide/rule-engine-2-0/tutorials/check relation/chain.png)
+
 <br/> 
 
-Download the attached json [**file**](/docs/user-guide/rule-engine-2-0/tutorials/resources/check_relation_tutorial.json) for the **Check Relation Tutorial** Rule Chain. Don't forget to mark this rule chain as **root**.    
+Download the attached json [**file**](/docs/user-guide/rule-engine-2-0/tutorials/resources/check_relation_tutorial.json) for the **Root Rule Chain**. Don't forget to mark this rule chain as **root**.    
 
 <br/> 
   
@@ -119,7 +115,7 @@ New Rule Chain is created. Press **Edit** button and configure Chain.
 
 In this rule chain, you will create 4 nodes as it will be explained in the following sections:
 
-###### Node G: **Check Relation**
+###### Node A: **Check Relation**
 
  - Add the **Check Relation** node and connect it to the **Input** node.<br/>
 
@@ -160,7 +156,7 @@ In this rule chain, you will create 4 nodes as it will be explained in the follo
   
 ![image](/images/user-guide/rule-engine-2-0/tutorials/check%20relation/check-relation.png)
 
-###### Node H: **Change Orignator**
+###### Node B: **Change Orignator**
 
 - Add the **Change Orignator** node and connect it to the **Check Relation** node with a relation type **True**. <br>
   This node will change the originator from the Device **Smoke Detector** to the related Device **Fire Alarm System** and the submitted message will be processed as a message from another entity, namely **Fire Alarm System**.
@@ -203,7 +199,7 @@ In this rule chain, you will create 4 nodes as it will be explained in the follo
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/check%20relation/change-originator.png)
  
-###### Node I: **Script Transformation**
+###### Node C: **Script Transformation**
  - Add the **Script Transformation** node and connect it to the **Change Orignator** node with a relation type **Success**.
 
 This node will transform an original message into RPC request message. 
@@ -236,15 +232,14 @@ This node will transform an original message into RPC request message.
           newMsg.method = 'ON';  
     } 
     newMsg.params={};
-    return {msg: newMsg, metadata: metadata, msgType: msgType};
-  {% endhighlight %}
+    return {msg: newMsg, metadata: metadata, msgType: msgType};{% endhighlight %}
 
 
  - Enter the Name field as **New RPC message**.
   
 ![image](/images/user-guide/rule-engine-2-0/tutorials/check relation/transformation-node.png)  
 
-###### Node J: **RPC call request** node
+###### Node D: **RPC call request** node
 - Add the **RPC call request** node and connect it to the **Script Transformation** node with a relation type **Success**. <br>
   This node takes the message payload and sends it as a response to the Message Originator **Fire Alarm System**.
 - Enter the Name field as **Fire Alarm System**.
@@ -255,27 +250,33 @@ This node will transform an original message into RPC request message.
 This Rule chain is ready and we should save it.
 
 
-#### Modify Root Rule Chain (**Check Relation Tutorial**)
+#### Modify Root Rule Chain
 
-The following screenshot shows the initial Root Rule Chain. Please, note that the irrelevant rule nodes have been removed from the Root Rule Chain.
+The following screenshot shows the initial Root Rule Chain.
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/check relation/initial-chain.png)
 
-The default Rule Chain has been modified by adding the following nodes:
+The initial Rule Chain has been modified by adding the following nodes:
 
-###### Node C: **Filter Script**
+###### Node E: **Filter Script**
 - Add the **Filter Script** node and connect it to the **Save Timeseries** node with a relation type **Success**. <br>
   This node will check if data of incoming message is **smoke** using the following script:
   
-  {% highlight javascript %}
-    return msg.smoke== 'true';
-  {% endhighlight %}
+  {% highlight javascript %}return msg.smoke== 'true';{% endhighlight %}
   
 - Enter the Name field as **Smoke Alarm Filter**.  
   
 ![image](/images/user-guide/rule-engine-2-0/tutorials/check relation/alarm-filter.png)
  
-###### Node D: **Create alarm**
+###### Node F: **Clear Alarm**
+- Add the **Clear Alarm** node and connect it to the **Filter Script** node with a relation type **False**. <br>
+  This node loads the latest Alarm with configured Alarm Type for Message Originator **Smoke Detector** and Clears the Alarm if it exists.
+  
+- Enter the Name field as **Clear Smoke Alarm** and the Alarm type as **Smoke Alarm**.
+
+![image](/images/user-guide/rule-engine-2-0/tutorials/check relation/clear-alarm.png)
+  
+###### Node G: **Create alarm**
 - Add the **Create alarm** node and connect it to the **Filter Script** node with a relation type **True**. <br>
   This node tries to load the latest Alarm with configured Alarm Type for Message Originator, namely **Smoke Detector**.  
   
@@ -283,16 +284,7 @@ The default Rule Chain has been modified by adding the following nodes:
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/check relation/create-alarm.png)
 
-###### Node E: **Clear Alarm**
-- Add the **Clear Alarm** node and connect it to the **Filter Script** node with a relation type **False**. <br>
-  This node loads the latest Alarm with configured Alarm Type for Message Originator **Smoke Detector** and Clears the Alarm if it exists.
-  
-- Enter the Name field as **Clear Smoke Alarm** and the Alarm type as **Smoke Alarm**.
-
-
-![image](/images/user-guide/rule-engine-2-0/tutorials/check relation/clear-alarm.png)
-
-###### Node F: **Rule Chain**
+###### Node H: **Rule Chain**
 - Add the **Rule Chain** node and connect it to the **Filter Script** node with a relation type **True**. <br>
   This node forwards incoming Message to specified Rule Chain **Related Fire Alarm System**.
 
@@ -302,9 +294,9 @@ The default Rule Chain has been modified by adding the following nodes:
   
 
 
-The following screenshot shows how the final **Check Relation Tutorial** should look like:
+The following screenshot shows how the final **Root Rule Chain** should look like:
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/check relation/chain.png)
+![image](/images/user-guide/rule-engine-2-0/tutorials/check relation/view-chain.png)
 
 <br/>
 <br/>
