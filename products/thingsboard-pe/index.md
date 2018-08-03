@@ -286,12 +286,17 @@ description:
 				<h3 class="content-title">Pay as you go</h3>
 			</div>
 			<div class="content-block pb-0x">
-				<h4>Install ThingsBoard PE in two minutes on the AWS cloud and pay hourly rate per server only when you use the platform. Best suite for early evaluation phase or PoCs.</h4>
+				<h4>Install ThingsBoard PE in two minutes on the AWS or Azure cloud and pay hourly rate per server only when you use the platform. Best suite for early evaluation phase or PoCs.</h4>
 			</div>
 			<div style="flex: 1;"></div>
 			<div class="content-block">
-			    <div class="pricing-image-wrapper">
-			        <img src="/images/pe/aws-marketplace.svg">
+			    <div class="marketplace">
+                    <div class="pricing-image-wrapper">
+                        <img src="/images/pe/aws_logo.svg">
+                    </div>
+                    <div class="pricing-image-wrapper">
+                        <img src="/images/pe/azure_logo.svg">
+                    </div>
 			    </div>
 			</div>
 			<div class="center content-block deploy-buttons">

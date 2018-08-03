@@ -38,6 +38,29 @@ section#install-pe
         color: #fff
         width: 100%
         display: none
+        .choose-marketplace
+            p
+                font-size: 24px
+                padding-left: 50px
+                padding-top: 40px
+            .marketplace
+                padding: 30px 50px 60px
+                display: flex
+                .pricing-image-wrapper
+                    cursor: pointer
+                    flex: 1
+                    margin: 16px
+                    display: flex
+                    align-items: center
+                    background: rgba(255, 255, 255, 0.95)
+                    padding: 20px
+                    box-shadow: 0 1px 8px 0 rgba(0,0,0,0.2), 0 3px 4px 0 rgba(0,0,0,0.14), 0 3px 3px -2px rgba(0,0,0,0.12)
+                    border-radius: 10px
+                    transition: background-color linear 250ms
+                    img
+                        width: 100%
+                    &:hover
+                        background: rgba(255, 255, 255, 0.6)
     @media (min-width: 1025px)
         .tab-panel
             order: 99
@@ -91,6 +114,11 @@ section#install-pe
                             min-width: 100px
                             width: 100px
                             height: 80px
+                        &.azure
+                            img
+                                min-width: 120px
+                                width: 120px
+                                height: 80px
                     .cloud-provider-desc
                         padding: 20px
                         p
@@ -240,7 +268,7 @@ section#install-pe
                         flex-direction: row
                         .cloud-provider-desc
                             padding-left: 0px
-                            padding-right: 0px
+                            padding-right: 6px
                             p
                                 font-size: 18px
                                 span.cloud-price
