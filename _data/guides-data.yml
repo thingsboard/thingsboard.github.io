@@ -246,14 +246,14 @@
       subtitle: Learn how to how to dynamically add & remove device from the device group based on incoming data from device.
       keys: device group dynamic relation
       pe: trues
-#- title: IoT Data analytics
-#  subtitle: lorem ipsum dolor
-#  section:
-#    - path: /docs/user-guide/rule-engine-2-0/tutorials/validate-incoming-telemetry/
-#      title: lorem ipsum dolor
-#      subtitle: lorem ipsum dolor
-#      keywords: key1 key2 key3
-#      pe: false
+- title: IoT Data analytics
+  subtitle: Learn how to use rule engine to perform basic analytics tasks.
+  section:
+    - path: /docs/user-guide/rule-engine-2-0/tutorials/aggregate-incoming-data-stream/
+      title: Aggregate incoming data stream
+      subtitle: Learn how to configure Rule Engine to aggregate incoming data stream from your devices.
+      keywords: aggregation water meter analytics
+      pe: true
 #- title: Pushing data to external systems
 #  subtitle: lorem ipsum dolor
 #  section:
