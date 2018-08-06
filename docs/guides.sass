@@ -7,7 +7,7 @@
       margin-bottom: 20px
       #searchGuideBox
         #searchGuideInput
-          width: 300px
+          width: 250px
           margin: 16px 20px
           padding: 8px
           height: 40px
@@ -33,24 +33,25 @@
       &.hidden
         display: none
       .guides-title-panel
+        display: flex
+        align-items: flex-start
         min-height: 110px
         margin: 0px 35px 0px 35px
-        padding: 20px 20px 30px
+        padding: 20px
         box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12)
         background-color: white
         .guides-img
           float: left
-          width: 75px
-          padding-right: 20px
+          width: 45px
+          padding-right: 10px
         .guides-title
-          padding-top: 6px
-          padding-bottom: 15px
-          font-size: 32px
+          padding-bottom: 8px
+          font-size: 20px
+          line-height: 22px
           font-weight: bold
           color: #308c80 //$dark-grey
-          line-height: 22px
         .guides-subtitle
-          font-size: 22px
+          font-size: 16px
           color: $dark-grey
       ul.guides-list
         padding: 15px 25px 15px 25px
@@ -75,14 +76,14 @@
               flex: 1
               .guide-title
                 font-weight: bold
-                font-size: 18px
-                color: #308c80
-                line-height: 22px
-              .guide-subtitle
-                color: #333
-                margin-top: 5px
                 font-size: 16px
                 line-height: 20px
+                color: #308c80
+              .guide-subtitle
+                margin-top: 5px
+                font-size: 14px
+                line-height: 16px
+                color: #333
               .guide-keywords
                 display: none
             .guide-icons
@@ -98,13 +99,38 @@
                 color: #308c80
                 transform: translate(0px,-5px)
 
+@media screen and (min-width: 750px)
+  #docsContent
+    .guides
+      .filter-panel
+        #searchGuideBox
+          #searchGuideInput
+            width: 300px
+
 @media screen and (min-width: 1025px)
   #docsContent
     .guides
       .guides-block
+        .guides-title-panel
+          .guides-img
+            width: 75px
+            padding-right: 20px
+          .guides-title
+            font-size: 32px
+            line-height: 32px
+            padding-bottom: 4px
+          .guides-subtitle
+            font-size: 22px
         ul.guides-list
           li.guide-container
             width: calc(50% - 20px)
+            a
+              .guide-text
+                .guide-title
+                  font-size: 18px
+                .guide-subtitle
+                  font-size: 16px
+                  line-height: 20px
 
 @media screen and (min-width: 1700px)
   #docsContent
