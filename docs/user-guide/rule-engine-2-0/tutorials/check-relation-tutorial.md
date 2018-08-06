@@ -43,8 +43,8 @@ You need to read the following guides before you start this tutorial:
   
   The following screenshots show how to do this:
   
-   ![image](/images/user-guide/rule-engine-2-0/tutorials/check%20relation/smoke-sensor.png) ![image](/images/user-guide/rule-engine-2-0/tutorials/check%20relation/fire-alarm-system.png) <br/>
-   ![image](/images/user-guide/rule-engine-2-0/tutorials/check%20relation/add-relation.png)
+   ![image](/images/user-guide/rule-engine-2-0/tutorials/check relation/smoke-sensor.png) ![image](/images/user-guide/rule-engine-2-0/tutorials/check relation/fire-alarm-system.png) <br/>
+   ![image](/images/user-guide/rule-engine-2-0/tutorials/check relation/add-relation.png)
    
 <br/>
 
@@ -107,7 +107,7 @@ Configuration:
 
 - Name : **Related Fire Alarm System**
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/check%20relation/add-fire-alarm-chain.png)
+![image](/images/user-guide/rule-engine-2-0/tutorials/check relation/add-fire-alarm-chain.png)
 
 New Rule Chain is created. Press **Edit** button and configure Chain.
 
@@ -154,7 +154,7 @@ In this rule chain, you will create 4 nodes as it will be explained in the follo
     </tbody>
  </table>
   
-![image](/images/user-guide/rule-engine-2-0/tutorials/check%20relation/check-relation.png)
+![image](/images/user-guide/rule-engine-2-0/tutorials/check relation/check-relation.png)
 
 ###### Node B: **Change Orignator**
 
@@ -197,7 +197,7 @@ In this rule chain, you will create 4 nodes as it will be explained in the follo
    </tbody>
 </table>
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/check%20relation/change-originator.png)
+![image](/images/user-guide/rule-engine-2-0/tutorials/check relation/change-originator.png)
  
 ###### Node C: **Script Transformation**
  - Add the **Script Transformation** node and connect it to the **Change Orignator** node with a relation type **Success**.
