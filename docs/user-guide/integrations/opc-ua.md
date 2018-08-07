@@ -13,33 +13,33 @@ description: OPC-UA Integration Guide
 
 ## Overview
 
-OPC UA Integration allows to stream data from OPC UA server to ThingsBoard and converts device payloads to the ThingsBoard format.
+OPC UA Integration allows to stream data from the OPC UA server to ThingsBoard and converts the device payloads to the ThingsBoard format.
 
 ![image](/images/user-guide/integrations/opc-ua-integration.svg)
 
 ### OPC-UA Integration Tutorial
 
-In this tutorial we will configure ThingsBoard with OPC-UA Integration 
-to get Airconditioners data from [OPC UA C++ Demo Server](https://www.unified-automation.com/downloads/opc-ua-servers/file/download/details/opc-ua-c-demo-server-v161-windows.html)
-and ability to switch on/off Airconditioners using Integration downlink feature.
+In this tutorial, we will configure the integration between ThingsBoard and OPC-UA
+to get the Airconditioners data from the [OPC UA C++ Demo Server](https://www.unified-automation.com/downloads/opc-ua-servers/file/download/details/opc-ua-c-demo-server-v161-windows.html)
+and allow the user to switch on/off any Airconditioner using the Integration downlink feature.
 
 #### Prerequisites
 
-Download and install [OPC UA C++ Demo Server](https://www.unified-automation.com/downloads/opc-ua-servers/file/download/details/opc-ua-c-demo-server-v161-windows.html).
-After installation launch **UA Admin Dialog**. 
-Verify that **Endpoint URL** is set correctly and remember values of **Endpoint Host** and **Endpoint Port**. These values will be needed during OPC-UA Integration setup. 
+- Download and install the [OPC UA C++ Demo Server](https://www.unified-automation.com/downloads/opc-ua-servers/file/download/details/opc-ua-c-demo-server-v161-windows.html).
+- After installation, launch the **UA Admin Dialog**.
+- Verify that the **Endpoint URL** is set correctly and remember the values of **Endpoint Host** and **Endpoint Port**. These values will be needed during the OPC-UA Integration setup.
 
 ![image](/images/user-guide/integrations/opc-ua/opc-ua-server-config.png)
 
-Launch **UaCPPServer**. Console dialog with server endpoints URLs will be opened. 
+- Launch the **UaCPPServer**. The console dialog will open showing the server endpoints URLs.
 
 #### ThingsBoard setup
 
 ##### Uplink Data Converter
 
-First, we need to create Uplink Data converter that will be used for receiving messaged from the OPC UA server. The converter should transform incoming payload into the required message format. 
-Message must contain **deviceName** and **deviceType**. Those fields are used for submitting data to the correct device. If a device was not found then new device will be created.
-Here is how payload from OPC UA integration will look like:
+First, we need to create the Uplink Data converter that will be used for receiving the messages from the OPC UA server. The converter should transform the incoming payload into the required message format.
+The message must contain the **deviceName** and **deviceType**. These fields are used to submit the data to the correct device. If a device cannot not be found, a new device will be created.
+Here is how the payload from the OPC UA integration will look like:
 
 Payload:
 {% highlight json %}
@@ -59,11 +59,13 @@ Metadata:
 }
 {% endhighlight %}
 
-We will take **opcUaNode_name** metadata value and map it to the **deviceName** and set **airconditioner** to the **deviceType**.
-But you can use another mapping in your specific use cases.
-Also, we will take the values of **temperature**, **humidity** and **powerConsumption** fields and use them as a device telemetry.
+We will take the **opcUaNode_name** metadata value and map it to the **deviceName** and set the **deviceType** as **airconditioner**.
 
-Go to **Data Converters** and create new **uplink** Converter with this function:
+However, you can use another mapping in your specific use cases.
+
+Also, we will retrieve the values of the **temperature**, **humidity** and **powerConsumption** fields and use them as device telemetries.
+
+Go to the **Data Converters** and create a new **uplink** Converter using this function:
 {% highlight javascript %}
 
 var data = decodeToJson(payload);
@@ -112,8 +114,10 @@ return result;
 
 ##### Downlink Data Converter
 
-For sending Downlink messages from the Thingsboard to the OPC UA node, we need to define 
-downlink Converter. In general, output from Downlink converter should have the following structure:
+For sending Downlink messages from the Thingsboard to the OPC UA node, we need to define a
+downlink Converter.
+
+ In general, the output from a Downlink converter should have the following structure:
 
 {% highlight json %}
 [{
@@ -134,7 +138,7 @@ downlink Converter. In general, output from Downlink converter should have the f
         - **args** - array of method input values
 - **metadata** - not used in case of OPC UA Integration and can be empty.
 
-Go to **Data Converters** and create new **downlink** Converter with this function: 
+Go to **Data Converters** and create a new **downlink** Converter using this function:
 
 {% highlight javascript %}
 var data = {
@@ -163,16 +167,17 @@ var result = {
 return result;
 {% endhighlight %}
 
-This converter will process RPC command to device with method **setState** 
-and boolean **params** value to call 'Start' or 'Stop' method of Airconditioner. 
-Destination node is detected using **deviceName** field of incoming message metadata.
+This converter will process the RPC command to the device using the method **setState**
+and a boolean **params** value to call the 'Start' or 'Stop' method of the Airconditioner.
+
+Destination node is detected using the **deviceName** field of the incoming message metadata.
 
 ![image](/images/user-guide/integrations/opc-ua/downlink-converter.png)
 
 ##### OPC-UA Integration
 
-Next we will create Integration with OPC UA server inside the ThingsBoard.
-Open **Integrations** section and add new Integration with type **OPC-UA**
+Next, we will create Integration with OPC UA server inside the ThingsBoard.
+Open the **Integrations** section and add a new Integration with a type **OPC-UA**
 
 - Name: OPC-UA Airconditioners
 - Type: OPC-UA
@@ -199,52 +204,60 @@ Open **Integrations** section and add new Integration with type **OPC-UA**
 
 ##### Airconditioners Rule Chain
 
-To demonstrate OPC-UA Integration and Rule Engine capabilities we will create separate Rule Chain
-to process uplink and downlink messages related to OPC-UA Integration.
-Lets create **Airconditioners** Rule Chain.
-Download [**airconditioners.json**](/docs/user-guide/resources/airconditioners.json). Import this json file by pressing `+` 
-button in bottom right corner of **Rule Chains** page and selecting **Import rule chain**. 
-Then double-click on **Airconditioners** integration downlink node and select **OPC-UA Airconditioners** in **Integrations** field.
-Apply and save all changes.   
- 
+To demonstrate OPC-UA Integration and Rule Engine capabilities, we will create a separate Rule Chain
+to process the uplink and downlink messages related to the OPC-UA Integration.
+
+Let´s create the **Airconditioners** Rule Chain.
+
+ - Download the [**airconditioners.json**](/docs/user-guide/resources/airconditioners.json) file.
+ - Import this json file by clicking the `+` button at the bottom right corner of the **Rule Chains** page and selecting **Import rule chain**.
+ - double-click on the **Airconditioners** integration downlink node and select **OPC-UA Airconditioners** in **Integrations** field.
+ - Apply and save all changes.
+
+
 ![image](/images/user-guide/integrations/opc-ua/airconditioners-rule-chain.png)
 ![image](/images/user-guide/integrations/opc-ua/airconditioners-integration-downlink.png)
 
-Open and edit **Root Rule Chain**. 
-Add **rule chain** node, select **Airconditioners** Rule Chain and connect it with the Message Type Switch Node using the following relation labels:
+ - Open and edit the **Root Rule Chain**.
+ - Add the **rule chain** node.
+ - Select the **Airconditioners** Rule Chain and connect it to the Message Type Switch Node using the following links labels:
 **Attributes Updated** / **Post telemetry** / **RPC Request to Device**.
 
 ![image](/images/user-guide/integrations/opc-ua/root-rule-chain.png)
 
 ##### Airconditioners Dashboard
 
-To visualize Airconditioners data and test RPC commands we will create **Airconditioners** dashboard.
-Download [**airconditioners_dashboard.json**](/docs/user-guide/resources/airconditioners_dashboard.json). Import this json file by pressing `+` 
-button in bottom right corner of **Dashboards** page and selecting **Import dashboard**. 
+To visualize the Airconditioners data and test RPC commands, we will create the **Airconditioners** dashboard.
+
+ - Download the [**airconditioners_dashboard.json**](/docs/user-guide/resources/airconditioners_dashboard.json) file.
+ - Import this json file by pressing `+` button at the bottom right corner of the **Dashboards** page and selecting **Import dashboard**.
 
 #### Validation
 
-Lets verify our integration. Go to **Device groups** page. You should see now **Airconditioners** group.
-When you open this group you should see 10 Airconditioner devices. 
+To verify our integration,
+
+ - Go to the **Device groups** page. You should see now the **Airconditioners** group.
+ - When you open this group, you will see the 10 Airconditioner devices.
 
 ![image](/images/user-guide/integrations/opc-ua/airconditioners-group.png)
 
-Open details for one of the Airconditioners and select **Latest Telemetry** tab.
-You should see that telemetry values are constantly updated.
+ - Open the details of one of the Airconditioners and select the **Latest Telemetry** tab.
+ - You will see that telemetry values are constantly updated.
 
 ![image](/images/user-guide/integrations/opc-ua/airconditioner-latest-telemetry.png)
 
-Goto **Dashboards** and open **Airconditioners** dashboard. 
-You should see telemetry for last minute from all 10 airconditioners.   
+ - Go to **Dashboards** and open the **Airconditioners** dashboard.
+ - You will see the telemetry till the last minute from all the 10 airconditioners.
 
 ![image](/images/user-guide/integrations/opc-ua/airconditioners-dashboard.png)
 
-Open Airconditioner details page by clicking on the details button in the Entities widget.
+ - Open the Airconditioner details page by clicking on the details button in the Entities widget.
 
 ![image](/images/user-guide/integrations/opc-ua/airconditioners-dashboard-click-details.png)
 
-Airconditioner status light should be green. Try to switch off airconditioner by clicking on **Round switch** button.
-Airconditioner status light should become gray, temperature and humidity should start growing and power consumption will be stopped. 
+ - You will find the Airconditioner status light green.
+ - Try to switch off the airconditioner by clicking on the **On/Off Round switch**.
+ - The Airconditioner status light will turn into grey, the temperature will start rising, the humidity will start increasing and the power consumption will stop.
 
 ![image](/images/user-guide/integrations/opc-ua/airconditioners-dashboard-details.png)
 
