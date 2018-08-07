@@ -13,7 +13,7 @@ description: OPC-UA Integration Guide
 
 ## Overview
 
-OPC UA Integration allows to stream data from the OPC UA server to ThingsBoard and converts the device payloads to the ThingsBoard format.
+OPC UA Integration allows you to stream data from the OPC UA server to ThingsBoard and converts the device payloads to the ThingsBoard format.
 
 ![image](/images/user-guide/integrations/opc-ua-integration.svg)
 
@@ -127,8 +127,8 @@ downlink Converter.
 }]
 {% endhighlight %}
 
-- **contentType** - defines how data will be encoded {TEXT \| JSON \| BINARY}. In case of OPC UA Integration JSON is used by default. 
-- **data** - actual data that will be processed by OPC UA Integration and sent to the target OPC UA nodes:
+- **contentType** - defines how data will be encoded {TEXT \| JSON \| BINARY}. In case of OPC UA Integration, JSON is used by default.
+- **data** - the actual data that will be processed by OPC UA Integration and sent to the target OPC UA nodes:
     - **writeValues** - array of write values methods:
         - **nodeId** - target node in [OPC UA NodeId format](http://documentation.unified-automation.com/uasdkhp/1.0.0/html/_l2_ua_node_ids.html#UaNodeIdsConcept) (`ns=<namespaceIndex>;<identifiertype>=<identifier>`)
         - **value** - value to write
@@ -194,7 +194,7 @@ Open the **Integrations** section and add a new Integration with a type **OPC-UA
 - Mapping:
      - Device Node Pattern: `Objects\.BuildingAutomation\.AirConditioner_\d+$` (regular expression used to match scanned OPC UA Node FQNs/IDs to device name.)
      - MappingType: Fully Qualified Name (can be *Fully Qualified Name* / *ID*)
-     - Subscription tags (list of node tags (**Path**) to subscribe with mappings to keys (**Key**) used in output message):
+     - Subscription tags (list of node tags (**Path**) to subscribe with mappings to keys (**Key**) used in the output message):
         - state - State
         - temperature - Temperature
         - humidity - Humidity
@@ -210,8 +210,8 @@ to process the uplink and downlink messages related to the OPC-UA Integration.
 Let´s create the **Airconditioners** Rule Chain.
 
  - Download the [**airconditioners.json**](/docs/user-guide/resources/airconditioners.json) file.
- - Import this json file by clicking the `+` button at the bottom right corner of the **Rule Chains** page and selecting **Import rule chain**.
- - double-click on the **Airconditioners** integration downlink node and select **OPC-UA Airconditioners** in **Integrations** field.
+ - To import this JSON file, click the `+` button at the bottom right corner of the **Rule Chains** page and select the **Import rule chain**.
+ - double-click on the **Airconditioners** integration downlink node and select **OPC-UA Airconditioners** in the **Integrations** field.
  - Apply and save all changes.
 
 
@@ -220,7 +220,7 @@ Let´s create the **Airconditioners** Rule Chain.
 
  - Open and edit the **Root Rule Chain**.
  - Add the **rule chain** node.
- - Select the **Airconditioners** Rule Chain and connect it to the Message Type Switch Node using the following links labels:
+ - Select the **Airconditioners** Rule Chain and connect it to the Message Type Switch Node using the following link labels:
 **Attributes Updated** / **Post telemetry** / **RPC Request to Device**.
 
 ![image](/images/user-guide/integrations/opc-ua/root-rule-chain.png)
@@ -230,19 +230,19 @@ Let´s create the **Airconditioners** Rule Chain.
 To visualize the Airconditioners data and test RPC commands, we will create the **Airconditioners** dashboard.
 
  - Download the [**airconditioners_dashboard.json**](/docs/user-guide/resources/airconditioners_dashboard.json) file.
- - Import this json file by pressing `+` button at the bottom right corner of the **Dashboards** page and selecting **Import dashboard**.
+ - To import this JSON file, click the `+` button at the bottom right corner of the **Dashboards** page and select **Import dashboard**.
 
 #### Validation
 
 To verify our integration,
 
- - Go to the **Device groups** page. You should see now the **Airconditioners** group.
+ - Go to the **Device groups** page. You will see the **Airconditioners** group.
  - When you open this group, you will see the 10 Airconditioner devices.
 
 ![image](/images/user-guide/integrations/opc-ua/airconditioners-group.png)
 
  - Open the details of one of the Airconditioners and select the **Latest Telemetry** tab.
- - You will see that telemetry values are constantly updated.
+ - You will see that telemetry values are frequently updated.
 
 ![image](/images/user-guide/integrations/opc-ua/airconditioner-latest-telemetry.png)
 
