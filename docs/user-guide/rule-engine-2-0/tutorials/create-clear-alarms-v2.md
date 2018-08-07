@@ -150,16 +150,19 @@ The following screenshot shows how the final **Root Rule Chain** should look lik
 
 # How to verify the Rule Chain and Post telemetry
 
-- Use the Rest APIs, [Telemetry upload APIs](/docs/reference/http-api/#telemetry-upload-api), for posting telemetry from the device **Thermostat Home**. <br>
-
-For posting device telemetry we will use the Rest APIs, [Telemetry upload APIs](/docs/reference/http-api/#telemetry-upload-api) For this we will need to
+For posting device telemetry we will use the Rest APIs, [Telemetry upload APIs](/docs/reference/http-api/#telemetry-upload-api). For this we will need to
 copy device access token from then device **Thermostat Home**. 
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/alarms v2/copy-token.png)
 
 {% highlight bash %}**you need to replace $ACCESS_TOKEN with actual device token**{% endhighlight %}
 
-Let's pushed debug mode button in Clear Alarm and Create alarm node and sent temperature = 99. Alarm should be created:
+Let's pushed debug mode button in Clear Alarm and Create Alarm node to verify the results.
+
+![image](/images/user-guide/rule-engine-2-0/tutorials/alarms v2/debug-mode-clear-alarm.png)<br/>
+![image](/images/user-guide/rule-engine-2-0/tutorials/alarms v2/debug-mode-create-alarm.png)
+
+sent temperature = 99. Alarm should be created:
 
 {% highlight bash %}
 curl -v -X POST -d '{"temperature":99}' http://localhost:8080/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
