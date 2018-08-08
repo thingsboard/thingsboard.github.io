@@ -92,7 +92,7 @@
           "smtpHost": "smtp.sendgrid.net",
           "smtpPort": 25,
           "username": "apikey",
-          "password": "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",
+          "password": "qwerty12345qwerty12345",
           "smtpProtocol": "smtp",
           "timeout": 10000,
           "enableTls": false
