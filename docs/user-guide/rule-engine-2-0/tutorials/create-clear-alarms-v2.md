@@ -96,7 +96,7 @@ In this rule chain, you will create 3 nodes as it will be explained in the follo
  
 ###### Node A: **Filter Script**
 - Add the **Filter Script** node and connect it to the **Input** node with a relation type **Success**.
- <br>This node with will verify: "if the temperature is in the expected interval" using the following script:
+ <br>This node will verify: "if the temperature is in the expected interval" using the following script:
   
    {% highlight javascript %}return msg.temperature < -40 || msg.temperature > 80;{% endhighlight %}
   
