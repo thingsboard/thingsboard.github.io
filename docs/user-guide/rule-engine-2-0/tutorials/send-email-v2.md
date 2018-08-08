@@ -207,9 +207,10 @@ Also, you can see the more information about how to:
  -  Send an email to the Customer of the Device.
  -  Add additional data to the email body from the incoming message.
 
-<br/>
-
 Please refer to the link under the **See Also** section to see how to do this.
+
+<br/>
+<br/>
 
 # See Also
 
