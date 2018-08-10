@@ -34,7 +34,7 @@ We will operate with Temperature sensor device that has name "Sensor A" and type
 
 ## Message Flow
 
-In this section, we explain the purpose of each node in this tutorial.
+In this section, we explain the purpose of each node in this tutorial. 
 
 ### Root rule chain
 

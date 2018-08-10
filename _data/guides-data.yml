@@ -163,7 +163,7 @@
       keywords:
       pe: true
       video: true
-    - path: /docs/user-guide/integrations/ibm-watson-iot/
+    - path: /docs/user-guide/integrations/azure-event-hub/
       title: Connect devices through Azure Event Hub
       subtitle: Learn how to connect to Azure Event Hub, transform the incoming messages and generate the downlinks using ThingsBoard.
       keywords:
@@ -228,32 +228,36 @@
       subtitle: Learn how to configure Rule Engine to create and clear alarms based on incoming data from devices.
       pe: false
     - path: /docs/user-guide/rule-engine-2-0/tutorials/send-email/
-      title: Send email to сustomer
-      subtitle: Learn how to configure Rule Engine to send email to Customer if device sends invalid telemetry readings.
+      title: Send email on alarm
+      subtitle: Learn how to configure Rule Engine to send email when new alarm is created.
       pe: false
     - path: /docs/user-guide/rule-engine-2-0/tutorials/create-inactivity-alarm/
       title: Create alarm when the device is offline
       subtitle: Learn how to create an alarm when the device is offline for a certain period of time using RuleEngine.
       keys: active inactive connected disconnected online offline
       pe: false
-    - path: /docs/user-guide/rule-engine-2-0/tutorials/create-inactivity-alarm/
-      title: Create alarm when the device is offline
-      subtitle: Learn how to create an alarm when the device is offline for a certain period of time using RuleEngine.
-      keys: active inactive connected disconnected online offline
+    - path: /docs/user-guide/rule-engine-2-0/tutorials/check-relation-tutorial/
+      title: Check relation between Entities
+      subtitle: Learn how the Check Relation node can be used to check the relation between Entities.
+      pe: false
+    - path: /docs/user-guide/rule-engine-2-0/tutorials/rpc-request-tutorial/
+      title: RPC Request to related Device
+      subtitle: Learn how to send a remote request call to a Related Device using Rule Engine.
+      keys: rpc Request
       pe: false
     - path: /docs/user-guide/rule-engine-2-0/tutorials/add-devices-to-group/
       title: Add & remove devices to group dynamically
       subtitle: Learn how to how to dynamically add & remove device from the device group based on incoming data from device.
       keys: device group dynamic relation
       pe: trues
-#- title: IoT Data analytics
-#  subtitle: lorem ipsum dolor
-#  section:
-#    - path: /docs/user-guide/rule-engine-2-0/tutorials/validate-incoming-telemetry/
-#      title: lorem ipsum dolor
-#      subtitle: lorem ipsum dolor
-#      keywords: key1 key2 key3
-#      pe: false
+- title: IoT Data analytics
+  subtitle: Learn how to use rule engine to perform basic analytics tasks.
+  section:
+    - path: /docs/user-guide/rule-engine-2-0/tutorials/aggregate-incoming-data-stream/
+      title: Aggregate incoming data stream
+      subtitle: Learn how to configure Rule Engine to aggregate incoming data stream from your devices.
+      keywords: aggregation water meter analytics
+      pe: true
 #- title: Pushing data to external systems
 #  subtitle: lorem ipsum dolor
 #  section:

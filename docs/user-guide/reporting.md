@@ -13,7 +13,8 @@ description: Reporting Guide
 ### Overview
 
 ThingsBoard allows you to generate reports using existing dashboards.
-Reports can be generated from currently opened dashboard or can be scheduled using [Scheduler](/docs/user-guide/scheduler/#generate-report) capabilities.
+
+Reports can be generated either from the currently opened dashboard or scheduled using the [Scheduler](/docs/user-guide/scheduler/#generate-report) capabilities.
 
 <br/>
 
@@ -21,13 +22,16 @@ Reports can be generated from currently opened dashboard or can be scheduled usi
 
 ### Reports Server
 
-Reports Server is standalone service used to generate reports by rendering dashboards in headless browser.
+The Reports Server is a standalone service used to generate reports by rendering dashboards in a headless browser.
 
-On each generate report request ThingsBoard node sends request to Reports Server using configured endpoint URL. 
-Reports Server opens web page with target dashboard url in the headless browser and waits until page renders.
-Then it captures dashboard web page to specified format (*PDF \| PNG \| JPEG*) and sends captured data as response to ThingsBoard.
+On each generate report request, ThingsBoard node sends a request to the Reports Server using the configured endpoint URL.
 
-System administrator is able to configure Reports Server endpoint URL using [thingsboard.yml](/docs/user-guide/install/config/). You can find sample configuration below:
+The Reports Server opens a web page with the target dashboard URL in the headless browser and waits until the page renders,
+then it captures the dashboard web page into the specified format (*PDF \| PNG \| JPEG*) and sends the captured data as a response to ThingsBoard.
+
+The system administrator can configure the Reports Server endpoint URL using [thingsboard.yml](/docs/user-guide/install/config/).
+
+The following is a sample configuration:
 
 ```yaml
 # Reports parameters
@@ -38,44 +42,50 @@ reports:
 
 ### Generate Report from Dashboard
 
-Tenant Administrator or Customer User is able to generate report from the currently opened dashboard.
+The Tenant Administrator or Customer User can generate a report from the currently opened dashboard.
 
-- Click to **Export Dashboard** button located in the right side of dashboard toolbar  
+- Click the **Export Dashboard** button located at the right side of the dashboard toolbar
 
 ![image](/images/user-guide/ui/reporting-export-dashboard-button.png)
 
-- In the expanded drop-down menu select desired dashboard export option 
+- In the expanded drop-down menu, select the desired dashboard export option
 
 ![image](/images/user-guide/ui/reporting-export-dashboard-options.png)
 
-- After report generation will be started
+- The report generation will start.
 
 ![image](/images/user-guide/ui/reporting-export-dashboard-progress.png)
 
-- Finally, report file in the selected format will be automatically downloaded.  
+- And finally, the report file will be automatically downloaded in the format selected.
 
 ### Generate Report by schedule
 
-Report generation can be invoked by schedule using [**Generate Report** Scheduler Event](/docs/user-guide/scheduler/#generate-report).
+Report generation can be invoked by a schedule using the [**Generate Report** Scheduler Event](/docs/user-guide/scheduler/#generate-report).
 
 ### Generate Report Rule Chain
 
-Scheduled reports generation is supported by default **Root Rule Chain** of ThingsBoard PE. By default message with type **Generat Report** is routed to **Generate Report Rule Chain**.   
+Scheduled reports generation is supported by the default **Root Rule Chain** of ThingsBoard PE.
+By default, a message of type **Generate Report** is routed to the **Generate Report Rule Chain**.
 
 ![image](/images/user-guide/ui/reporting-pe-root-rule-chain-switch.png)
 
-**Generate Report Rule Chain** has [**Generate Report** Rule Node](/docs/user-guide/rule-engine-2-0/pe/action-nodes/#generate-report-node)
-which performs report generation according to report configuration taken from message body. If message body has field ```sendEmail``` with value ```true``` 
-the message with report file reference in ```attachments``` field of metadata is routed to email related Rule Nodes.
-Email Rule Nodes prepare email message with report file in attachments and send it to configured recipients.  
+The **Generate Report Rule Chain** has a [**Generate Report** Rule Node](/docs/user-guide/rule-engine-2-0/pe/action-nodes/#generate-report-node)
+that performs the report generation according to the report configuration retrieved from the message body.
+
+If the message body has a field ```sendEmail``` and its value is set to ```true```,
+the message with a report file reference in the ```attachments``` field of the metadata will be routed to the email related Rule Nodes.
+The Email Rule Nodes will prepare the email message with a report file in the attachments and send it to the configured recipients.
 
 ![image](/images/user-guide/ui/reporting-generate-report-rule-chain.png)
 
 ### Reports Widget
 
-ThingsBoard provides access to generated report files via **Reports** Widget which is part of **Files** Widgets Bundle.
+ThingsBoard provides access to the generated report files via the **Reports** Widget that is a part of the **Files** Widgets Bundle.
 
 ![image](/images/user-guide/ui/reporting-reports-widget.png)
  
-The widget has ability to filter report files using time range component and ability to search files by name.
-Each report file can be downloaded by clicking on **Download file** button. 
+The widget has the ability to filter the reports using the time range component.
+
+Also, the widget has the ability to search the reports by name.
+
+Each report can be downloaded by clicking on the **Download file** button.

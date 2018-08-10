@@ -1,0 +1,96 @@
+{
+  "ruleChain": {
+    "additionalInfo": null,
+    "name": "Related Fire Alarm System",
+    "firstRuleNodeId": null,
+    "root": false,
+    "debugMode": false,
+    "configuration": null
+  },
+  "metadata": {
+    "firstNodeIndex": 1,
+    "nodes": [
+      {
+        "additionalInfo": {
+          "layoutX": 650,
+          "layoutY": 150
+        },
+        "type": "org.thingsboard.rule.engine.transform.TbChangeOriginatorNode",
+        "name": "Change Originator",
+        "debugMode": false,
+        "configuration": {
+          "originatorSource": "RELATED",
+          "relationsQuery": {
+            "direction": "FROM",
+            "maxLevel": 1,
+            "filters": [
+              {
+                "relationType": "Uses",
+                "entityTypes": [
+                  "DEVICE"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 342,
+          "layoutY": 151
+        },
+        "type": "org.thingsboard.rule.engine.filter.TbCheckRelationNode",
+        "name": "Check Relation",
+        "debugMode": false,
+        "configuration": {
+          "direction": "TO",
+          "entityId": "f299bb30-94db-11e8-87f7-658dba90fbae",
+          "entityType": "DEVICE",
+          "relationType": "Uses"
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 973,
+          "layoutY": 151
+        },
+        "type": "org.thingsboard.rule.engine.transform.TbTransformMsgNode",
+        "name": "New RPC message",
+        "debugMode": false,
+        "configuration": {
+          "jsScript": "var newMsg = {};\nif(msg.smoke == 'true'){\n      newMsg.method = 'ON';  \n} \nnewMsg.params={};\nreturn {msg: newMsg, metadata: metadata, msgType: msgType};"
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 1298,
+          "layoutY": 149
+        },
+        "type": "org.thingsboard.rule.engine.rpc.TbSendRPCRequestNode",
+        "name": "Fire Alarm System",
+        "debugMode": false,
+        "configuration": {
+          "timeoutInSeconds": 60
+        }
+      }
+    ],
+    "connections": [
+      {
+        "fromIndex": 0,
+        "toIndex": 2,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 1,
+        "toIndex": 0,
+        "type": "True"
+      },
+      {
+        "fromIndex": 2,
+        "toIndex": 3,
+        "type": "Success"
+      }
+    ],
+    "ruleChainConnections": null
+  }
+}
