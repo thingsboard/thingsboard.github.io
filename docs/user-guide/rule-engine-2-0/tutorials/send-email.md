@@ -14,7 +14,7 @@ This Tutorial is to show you how to send an Email to the user using the Rule Eng
 ## Use case
 
 
-In this tutorial we will implement the use case from the tutorial: [create & clear alarms v2](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms-v2/#use-case):
+In this tutorial we will implement the use case from the tutorial: [create & clear alarms](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/#use-case):
 
 Let's assume your device is using DHT22 sensor to collect and push temperature readings to ThingsBoard. 
 DHT22 sensor is good for -40 to 80°C temperature readings.We want to generate Alarms if temperature is out of good range and send the email when the alarm was created.
@@ -48,8 +48,9 @@ In this section, we explain the purpose of each node in this tutorial:
 
 # Configure Rule Chains
 
-In this tutorial, we modified Rule Chain **Create & Clear Alarms** from tutorial [create & clear alarms v2](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms-v2) by adding nodes that was described above in the section [Message flow](/docs/user-guide/rule-engine-2-0/tutorials/send-email-v2/#message-flow)<br>
- and renamed this rule chain to: **Create/Clear Alarm & Send Email**
+In this tutorial, we used Rule Chains from [create & clear alarms](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms) tutorial.
+We modified Rule Chain **Create & Clear Alarms** by adding nodes that was described above in the section [Message flow](/docs/user-guide/rule-engine-2-0/tutorials/send-email/#message-flow)<br>
+ and renamed this rule chain to: **Create/Clear Alarm & Send Email**.
 
 <br/>The following screenshots show how the above Rule Chains should look like:
  
@@ -63,17 +64,10 @@ In this tutorial, we modified Rule Chain **Create & Clear Alarms** from tutorial
 
 <br/> 
 
-Download the attached json [**file**](/docs/user-guide/rule-engine-2-0/tutorials/resources/root_rule_chain_email.json) for the **Root Rule Chain**. Don't forget to mark this rule chain as **root**.    
+Download the attached json [**file**](/docs/user-guide/rule-engine-2-0/tutorials/resources/create_clear_alarm___send_email.json) for the **Create/Clear Alarm & Send Email** rule chain.
 
+The following section shows you how to modify this rule chain from scratch.
 <br/> 
-  
-![image](/images/user-guide/rule-engine-2-0/tutorials/email v2/make-root.png)
-
-Also, you need to modify **Create/Clear Alarm & Send Email** Rule Chain or you can download the attached json [**file**](/docs/user-guide/rule-engine-2-0/tutorials/resources/create_clear_alarm___send_email.json) for this Chain and import it.
-<br/>
-<br/>
-
-The following section shows you how to modify it.
  
 #### Modify **Create/Clear Alarm & Send Email**
 
@@ -90,7 +84,7 @@ In this rule chain, you will create 3 nodes as it will be explained in the follo
  metadata.temperature = msg.temperature;
  return {msg: msg, metadata: metadata, msgType: msgType};{% endhighlight %}
       
-- Enter the Name field as **Put Temperature in Metadata**.  
+- Enter the Name field as **Add temperature to metadata**.  
   
 ![image](/images/user-guide/rule-engine-2-0/tutorials/email v2/transform-script.png)
    
@@ -130,23 +124,29 @@ In this rule chain, you will create 3 nodes as it will be explained in the follo
         </tr>
      </tbody>
   </table>
-
-in this rule node in section **to template**: was set email **dshvaika@thingsboard.io** but you need to change it to your email address.
      
-
 ![image](/images/user-guide/rule-engine-2-0/tutorials/email v2/to-email.png)
 
 ###### Node C: **Send Email**
 - Add the **Send Email** node and connect it to the **To Email** node with a relation type **Success**. <br>
   This node will actually send email from the inbound message using the system SMTP settings.<br>
-  The instructions of how to configure these settings will be explained in the section below.
-  
+
 - Enter the Name field as **SendGrid SMTP**.
 
-- mark **Use system SMTP settings**.
+- If you don't have access the system administrator account you need make your own SMTP configuration for this node.  
+
+- otherwise, mark a field **Use system SMTP settings**.
+
+
+ Please note that at Demo Server was already configured SendGrid provider as system SMTP. <br/>
+
+The instructions of how to configure these settings will be explained in the section below.
+
+<br/>
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/email v2/send-email.png)
 
+<br/>
 
 Chain configuration is finished and we need to save it.
 
@@ -160,15 +160,14 @@ In this section, we explain to you how  to configure system SMTP settings and tr
    
   ![image](/images/user-guide/rule-engine-2-0/tutorials/email v2/sendgrid-config.png)
   
+If you have permission to log in to ThingsBoard, with using system administrator account you can customize SMTP settings and send Test Email.
+ - For the default system administrator account:
 
- - Log in to ThingsBoard, using  system administrator account. For default system administrator account:
-
-    - login - **sysadmin@thingsboard.org**.
-    - password - **sysadmin**.
+   - login - **sysadmin@thingsboard.org**.
+   - password - **sysadmin**.
     
-- Go to **System Settings** -> **Outgoing Mail**  and configure **Outgoing Mail Settings**
- 
- The following screenshot shows you how to do it:
+- Go to **System Settings** -> **Outgoing Mail**  and configure **Outgoing Mail Settings** as described in the following screenshot:
+
  
 ![image](/images/user-guide/rule-engine-2-0/tutorials/email v2/test-email.png)
 
@@ -177,6 +176,8 @@ In this section, we explain to you how  to configure system SMTP settings and tr
 
 If the System SMTP configure all right: you will see a pop-up message as shown in the screenshot above.<br>
 System SMTP settings configuration is finished. Don’t forget to press button **Save**.
+
+If you can't access to the account of the System administrator you could configured SMTP settings right in the node but you can't be checked that email was successfully sent.
 
 <br/>
 
@@ -207,15 +208,18 @@ Also, you can see the more information about how to:
  -  Send an email to the Customer of the Device.
  -  Add additional data to the email body from the incoming message.
 
-Please refer to the link under the **See Also** section to see how to do this.
+Please refer to the first link under the **See Also** section to see how to do this.
 
 <br/>
 <br/>
 
 # See Also
 
-- [Send email to customer](/docs/user-guide/rule-engine-2-0/tutorials/send-email/) tutorial.
+- [Send email to customer](/docs/user-guide/rule-engine-2-0/tutorials/send-email-to-customer/) guide.
 
+- [Create Alarm when the Device is offline](/docs/user-guide/rule-engine-2-0/tutorials/create-inactivity-alarm/) guide.
+
+- [Create alarm with details](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms-with-details/) guide.
 
 <br/>
 <br/>

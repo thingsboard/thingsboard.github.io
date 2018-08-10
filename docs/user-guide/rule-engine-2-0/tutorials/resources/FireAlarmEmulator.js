@@ -17,6 +17,7 @@ client.on('message', function (topic, message) {
     var tmp = JSON.parse(message.toString());
     if (tmp.method == "ON") {
         alarmSystem = tmp;
+        // Uploads telemetry data using 'v1/devices/me/telemetry' MQTT topic
         client.publish('v1/devices/me/telemetry', JSON.stringify({alarmSystem: "Fire alarm: ON"}));
     }
     var requestId = topic.slice('v1/devices/me/rpc/request/'.length);
@@ -24,6 +25,7 @@ client.on('message', function (topic, message) {
     client.publish('v1/devices/me/rpc/response/' + requestId, message);
 });
 
+// Triggers when client is successfully connected to the Thingsboard server
 client.on('connect', function () {
     console.log('Client connected!');
     client.subscribe('v1/devices/me/rpc/request/+');

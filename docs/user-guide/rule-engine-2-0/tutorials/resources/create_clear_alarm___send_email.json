@@ -56,7 +56,7 @@
           "layoutY": 63
         },
         "type": "org.thingsboard.rule.engine.transform.TbTransformMsgNode",
-        "name": "Put Temperature in Metadata",
+        "name": "Add temperature to metadata",
         "debugMode": false,
         "configuration": {
           "jsScript": "metadata.temperature = msg.temperature;\nreturn {msg: msg, metadata: metadata, msgType: msgType};"
@@ -72,7 +72,7 @@
         "debugMode": false,
         "configuration": {
           "fromTemplate": "info@testmail.org",
-          "toTemplate": "dshvaika@thingsboard.io",
+          "toTemplate": "**Your Email**",
           "ccTemplate": null,
           "bccTemplate": null,
           "subjectTemplate": "Device ${deviceType} temperature unacceptable",
