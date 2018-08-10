@@ -9,7 +9,7 @@ description: RPC Reply With data from Related Device
 {:toc}
 
 
-In this tutorial, we will explain how to work with **RPC call reply** Rule Nodes and also how to:
+In this tutorial, we will explain how to work with **RPC call reply** Rule Node and also how to:
 
 - Create and connect different Rule Chains using **Rule Chain** node
 - Filter messages using **Script** node
@@ -50,7 +50,7 @@ Configuration:
 
 - Name : **Related thermostat temperature**
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-reply/create chain.png)
+![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-reply/create-chain.png)
 
 New Rule Chain is created. Press **Edit** button and configure Chain.
 
@@ -70,7 +70,7 @@ Configuration:
 - Source attribute : **temperature**
 - Target attribute : **temp**
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-reply/get related.png)
+![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-reply/get-related.png)
 
 ###### Add **Transform Script** node 
 Add **Transform Script** node and connect it to the **Related attributes** node.
@@ -102,7 +102,7 @@ Configuration:
 
 This Rule chain is ready and we should save it. Here is how **Related thermostat temperature** Rule Chain should look like:
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-reply/rpc chain view.png)
+![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-reply/rpc-chain-view.png)
 
 
 #### Connect Rule Chains
@@ -119,7 +119,7 @@ Configuration:
 - Name : filter getTemperature
 - Script: {% highlight javascript %} return msg.method === 'getTemperature'; {% endhighlight %}
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-reply/root filter.png)
+![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-reply/root-filter.png)
 
 After this, all incoming messages with Message Type **RPC Request** will be routed to this node. 
 Inside this node, function will filter only allowed RPC requests with **method** = **getTemperature**
@@ -131,7 +131,7 @@ Configuration:
 
 - Rule Chain: **Related thermostat temperature**
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-reply/connect Rule Chain.png)
+![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-reply/connect-Rule-Chain.png)
 
 Now, all messages that satisfy configured filter will be routed to **Related thermostat temperature** Rule Chain
 
@@ -146,14 +146,14 @@ Configuration:
 - Name : log others
 - Script : {% highlight javascript %} return 'Unexpected RPC call request message:\n' + JSON.stringify(msg) + '\metadata:\n' + JSON.stringify(metadata); {% endhighlight %}
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-reply/log unexpected.png)
+![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-reply/log-unexpected.png)
 
 <br/>
 <br/>
 
 Changes in the **Root Rule Chain** are finished and we should save it. Here is how **Root Rule Chain** should look like:
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-reply/root chain view.png)
+![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-reply/root-chain-view.png)
 
 
 # Verify configuration
@@ -168,7 +168,7 @@ For triggering RPC request, we need to:
 
 - Take **Controller A** device API token. We can copy token from Device page. In this tutorial it is **IAkHBb9N7kKD9ieLRMFN** but it is unique and you need to copy your device token.
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-reply/copy token.png)
+![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-reply/copy-token.png)
 
 - Make **POST** request to the Thingsboard URL - http://localhost:8080/api/v1/**$ACCESS_TOKEN**/rpc 
 with content type = **application/json** and payload <code>{"method": "getTemperature", "params":{}}</code>
