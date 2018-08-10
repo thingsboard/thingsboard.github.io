@@ -252,10 +252,6 @@ This Rule chain is ready and we should save it.
 
 #### Modify Root Rule Chain
 
-The following screenshot shows the initial Root Rule Chain.
-
-![image](/images/user-guide/rule-engine-2-0/tutorials/check relation/initial-chain.png)
-
 The initial Rule Chain has been modified by adding the following nodes:
 
 ###### Node E: **Filter Script**

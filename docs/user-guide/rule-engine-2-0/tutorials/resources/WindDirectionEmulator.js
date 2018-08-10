@@ -16,7 +16,7 @@ var client  = mqtt.connect('mqtt://'+ thingsboardHost, { username: ACCESS_TOKEN 
 // Triggers when client is successfully connected to the Thingsboard server
 client.on('connect', function () {
     console.log('Client connected!');
-    // Schedules telemetry data upload once per second
+    // Schedules telemetry data upload once per five second
     console.log('Uploading  wind direction data once per second...');
     setInterval(publishTelemetry, 5000);
 });

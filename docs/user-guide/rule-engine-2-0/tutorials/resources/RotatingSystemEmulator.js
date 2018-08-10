@@ -38,7 +38,7 @@ client.on('message', function (topic, message) {
 client.on('connect', function () {
     console.log('Client connected!');
     client.subscribe('v1/devices/me/rpc/request/+');
-    // Schedules telemetry data upload once per second
+    // Schedules telemetry data upload once per five second
     console.log('Uploading data once per second...');
     setInterval(publishTelemetry, 5000);
 });
