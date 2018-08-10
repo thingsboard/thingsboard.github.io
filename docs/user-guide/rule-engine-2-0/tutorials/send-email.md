@@ -215,10 +215,11 @@ Please refer to the first link under the **See Also** section to see how to do t
 
 # See Also
 
-- [Send email to customer](/docs/user-guide/rule-engine-2-0/tutorials/send-email/) tutorial.
+- [Send email to customer](/docs/user-guide/rule-engine-2-0/tutorials/send-email-to-customer/) guide.
 
-- []().
+- [Create Alarm when the Device is offline](/docs/user-guide/rule-engine-2-0/tutorials/create-inactivity-alarm/) guide.
 
+- [Create alarm with details](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms-with-details/) guide.
 
 <br/>
 <br/>
