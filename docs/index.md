@@ -10,26 +10,41 @@ description: ThingsBoard documentation - learn about the platform and get your I
 <a style="margin: 10px;" href="/docs/getting-started-guides/helloworld/" class="button">Getting started</a>
 <a style="margin: 10px;" href="/docs/guides/" class="button">&nbsp;&nbsp;&nbsp;Guides&nbsp;&nbsp;&nbsp;</a>
 
-<h2>Platform Features</h2>
+<h2>Community Edition Features</h2>
 
 <ul>
-<li><b><a href="/docs/user-guide/attributes/">Working with device attributes</a></b> - Describes device attributes feature and related use cases.</li>
-<li><b><a href="/docs/user-guide/telemetry/">Working with telemetry data</a></b> - Describes telemetry data collection feature and related use cases.</li>
-<li><b><a href="/docs/user-guide/rpc/">Using RPC capabilities</a></b> - Provides overview of ThingsBoard RPC functionality.</li>
-<li><b><a href="/docs/user-guide/rule-engine-2-0/re-getting-started/">Rule engine</a></b> - Describes rule engine features and capabilities.</li>
-<li><b><a href="/docs/user-guide/visualization/">Data visualization</a></b> - Covers data visualization capabilities: Widgets & Dashboards.</li>
+<li><b><a href="/docs/user-guide/attributes/">Attributes</a></b> - platform ability to assign custom key-value attributes to your entities (e.g configuration, data processing, visualization parameters).</li>
+<li><b><a href="/docs/user-guide/telemetry/">Telemetry</a></b> - API for collection of time-series data and related use cases.</li>
+<li><b><a href="/docs/user-guide/rpc/">Entities and relations</a></b> - platform ability to model physical world objects (e.g. devices and assets) and relations between them.</li>
+<li><b><a href="/docs/user-guide/visualization/">Data visualization</a></b> - covers data visualization capabilities: Widgets, Dashboards, Dashboard states.</li>
+<li><b><a href="/docs/user-guide/rule-engine-2-0/re-getting-started/">Rule engine</a></b> - covers data processing & actions on incoming telemetry and events.</li>
+<li><b><a href="/docs/user-guide/rpc/">RPC</a></b> - API and widgets to push commands from your apps and dashboards to devices and vice versa.</li>
+<li><b><a href="/docs/user-guide/audit-log/">Audit log</a></b> - tracking of user activity and API calls usage.</li>
+<li><b><a href="/docs/user-guide/api-limits/">API Limits</a></b> - controlling API usage, by limiting number of requests from single host during single time unit.</li>
 </ul>
 
-<h2>Integrations cookbook</h2>
-
-<p>Contains receipts and tips on third-party integrations.</p>
+<h2>Professional Edition Features</h2>
 
 <ul>
-<li><b><a href="/docs/iot-gateway/integration-with-aws-iot/">AWS IoT</a></b> - Describes how to persist and visualize data from AWS IoT using ThingsBoard.</li>
-<li><b><a href="/docs/samples/analytics/spark-integration-with-thingsboard/">Apache Spark</a></b> - Describes how to use Apache Spark for analysis of device data collected by ThingsBoard.</li>
-<li><b><a href="/docs/iot-gateway/sigfox-iot-data-visualization/">Sigfox</a></b> - SigFox IoT data collection and visualization using ThingsBoard.</li>
+<li><b><a href="/docs/user-guide/white-labeling/">White-labeling</a></b> - configure your company or product logo, color scheme and mail tempates in 2 minutes.</li>
+<li><b><a href="/docs/user-guide/integrations/">Platform Integrations</a></b> - connect devices using connectivity solutions like NB IoT, LoRaWAN and SigFox, specific payload formats or various IoT Platforms</li>
+    <ul>
+        <li><b><a href="/docs/user-guide/integrations/http/">HTTP</a></b></li>
+        <li><b><a href="/docs/user-guide/integrations/mqtt/">MQTT</a></b></li>
+        <li><b><a href="/docs/user-guide/integrations/opc-ua/">OPC-UA</a></b></li>
+        <li><b><a href="/docs/user-guide/integrations/sigfox/">SigFox</a></b></li>
+        <li><b><a href="/docs/user-guide/integrations/thingpark/">ThingPark</a></b></li>
+        <li><b><a href="/docs/user-guide/integrations/ttn/">TheThingsNetwork</a></b></li>
+        <li><b><a href="/docs/user-guide/integrations/azure-event-hub/">Azure Event Hub</a></b></li>
+        <li><b><a href="/docs/user-guide/integrations/ibm-watson-iot/">IBM Watson IoT</a></b></li>
+        <li><b><a href="/docs/user-guide/integrations/aws-iot/">AWS IoT</a></b></li>
+    </ul>
+<li><b><a href="/docs/user-guide/groups/">Device & asset groups</a></b> - configure multiple custom device & asset groups.</li>
+<li><b><a href="/docs/user-guide/scheduler/">Scheduler</a></b> - schedule various types of events (i.e. configuration updates, report generation, rpc commands) with flexible configuration options.</li>
+<li><b><a href="/docs/user-guide/reporting/">Reporting</a></b> - generate reports using existing dashboards and distribute them to end-users via email.</li>
+<li><b><a href="/docs/user-guide/csv-xls-data-export/">CSV/XLS data export</a></b> - export data from widgets to CSV or XLS.</li>
+<li><b><a href="/docs/user-guide/file-storage/">File Storage</a></b> - ability to store binary content (files) in the DB.</li>
 </ul>
-
 
 <h2>Security</h2>
 
