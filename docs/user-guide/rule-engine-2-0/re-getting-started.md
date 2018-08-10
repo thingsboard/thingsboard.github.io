@@ -111,7 +111,6 @@ You can use the next links for learning more about Thingsboard Rule Engine:
 
 - [Rule Engine Overview](/docs/user-guide/rule-engine-2-0/overview/)
 - [Rule Engine Architecture](/docs/user-guide/rule-engine-2-0/architecture/)
-- [Tutorials](/docs/user-guide/rule-engine-2-0/overview/#tutorials)
 - [Debug Node Execution](/docs/user-guide/rule-engine-2-0/overview/#debugging)
 - [Validate incoming telemetry](/docs/user-guide/rule-engine-2-0/tutorials/validate-incoming-telemetry/)
 - [Transform incoming telemetry](/docs/user-guide/rule-engine-2-0/tutorials/transform-incoming-telemetry/)
