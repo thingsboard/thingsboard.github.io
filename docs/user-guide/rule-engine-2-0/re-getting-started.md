@@ -105,7 +105,7 @@ curl -v -X POST -d '{"temperature":24}' http://localhost:8080/api/v1/$ACCESS_TOK
 ![image](/images/user-guide/rule-engine-2-0/tutorials/getting-started/saved-ok.png)
 
 
-## Next steps:
+## See Also:
 
 You can use the next links for learning more about Thingsboard Rule Engine:
 
@@ -122,3 +122,14 @@ You can use the next links for learning more about Thingsboard Rule Engine:
 - [RPC Request to Related Device](/docs/user-guide/rule-engine-2-0/tutorials/rpc-request-tutorial/)
 - [Add & remove devices to group dynamically](/docs/user-guide/rule-engine-2-0/tutorials/add-devices-to-group/)
 - [Aggregate incoming data stream](/docs/user-guide/rule-engine-2-0/tutorials/aggregate-incoming-data-stream/)
+
+<br/>
+<br/>
+
+## Next steps
+
+{% assign currentGuide = "GettingStartedGuides" %}{% include templates/guides-banner.md %}
+
+
+<br/>
+<br/>

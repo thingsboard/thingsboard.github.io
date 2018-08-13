@@ -244,7 +244,7 @@ Below is the screenshot of the "ESP8266 GPIO Demo Dashboard".
 
  ![image](/images/samples/esp8266/gpio/dashboard.png)
  
-## Next steps
+## See also
 
 Browse other [samples](/docs/samples) or explore guides related to main ThingsBoard features:
 
@@ -257,3 +257,11 @@ Browse other [samples](/docs/samples) or explore guides related to main ThingsBo
 {% include templates/feedback.md %}
  
 {% include socials.html %}
+
+
+## Next steps
+
+{% assign currentGuide = "HardwareSamples" %}{% include templates/guides-banner.md %}
+
+<br/>
+<br/>

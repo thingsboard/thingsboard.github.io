@@ -244,5 +244,9 @@ Please refer to the first two links under the **See Also** section to see how to
 
 - [Device Connectivity Status](/docs/user-guide/device-connectivity-status/) guide.
 
+## Next steps
+
+{% assign currentGuide = "DataProcessing" %}{% include templates/guides-banner.md %}
+
 <br/>
 <br/>

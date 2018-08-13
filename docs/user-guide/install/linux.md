@@ -137,3 +137,10 @@ You can issue the following command in order to check if there are any errors on
 ```bash
 cat /var/log/thingsboard/thingsboard.log | grep ERROR
 ```
+
+## Next steps
+
+{% assign currentGuide = "InstallationGuides" %}{% include templates/guides-banner.md %}
+
+<br/>
+<br/>

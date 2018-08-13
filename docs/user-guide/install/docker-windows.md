@@ -63,3 +63,10 @@ See corresponding page in [linux guide](/docs/user-guide/install/docker/#advance
 
 You may configure your system to use [Google public DNS servers](https://developers.google.com/speed/public-dns/docs/using#windows)
 
+
+## Next steps
+
+{% assign currentGuide = "InstallationGuides" %}{% include templates/guides-banner.md %}
+
+<br/>
+<br/>

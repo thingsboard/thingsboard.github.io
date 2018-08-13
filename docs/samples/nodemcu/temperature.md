@@ -188,7 +188,7 @@ in case of local ThingsBoard installation.
  
 Once logged in, open **Dashboards->Temperature & Humidity Demo Dashboard** page. You should observe demo dashboard with live data from your device (similar to dashboard image in the introduction).
  
-## Next steps
+## See also
 
 Browse other [samples](/docs/samples) or explore guides related to main ThingsBoard features:
 
@@ -201,3 +201,11 @@ Browse other [samples](/docs/samples) or explore guides related to main ThingsBo
 {% include templates/feedback.md %}
  
 {% include socials.html %}
+
+
+## Next steps
+
+{% assign currentGuide = "HardwareSamples" %}{% include templates/guides-banner.md %}
+
+<br/>
+<br/>

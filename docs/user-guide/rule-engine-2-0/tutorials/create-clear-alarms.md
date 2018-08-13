@@ -206,5 +206,10 @@ Please refer to the links from the second to the fourth under the **See Also** s
 
 - [Send Email](/docs/user-guide/rule-engine-2-0/tutorials/send-email/) tutorial.
 
+## Next steps
+
+{% assign currentGuide = "DataProcessing" %}{% include templates/guides-banner.md %}
+
+
 <br/>
 <br/>

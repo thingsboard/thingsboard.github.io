@@ -65,3 +65,10 @@ One can set thingsboard service environment variables using this file. See [conf
 You may configure your system to use Google public DNS servers. 
 See corresponding [Linux](https://developers.google.com/speed/public-dns/docs/using#linux) and [Mac OS](https://developers.google.com/speed/public-dns/docs/using#mac_os) instructions.
 
+
+## Next steps
+
+{% assign currentGuide = "InstallationGuides" %}{% include templates/guides-banner.md %}
+
+<br/>
+<br/>

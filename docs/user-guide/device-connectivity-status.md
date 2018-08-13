@@ -43,6 +43,13 @@ Device State service uses global configuration parameter to detect inactivity ev
 This parameter is defined in **thingsboard.yml** (state.defaultStateCheckIntervalInSec) and by default it is set to 10 seconds.
 
 
+## Next steps
+
+{% assign currentGuide = "AdvancedFeatures" %}{% include templates/guides-banner.md %}
+
+<br/>
+<br/>
+
 
  
 

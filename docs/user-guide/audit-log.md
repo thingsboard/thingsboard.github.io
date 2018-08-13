@@ -81,3 +81,11 @@ The configuration parameters are well documented inline.
     user_name: "${AUDIT_LOG_SINK_USER_NAME:}"
     password: "${AUDIT_LOG_SINK_PASSWORD:}"      
 ```
+
+
+## Next steps
+
+{% assign currentGuide = "AdvancedFeatures" %}{% include templates/guides-banner.md %}
+
+<br/>
+<br/>   

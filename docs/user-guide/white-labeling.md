@@ -32,3 +32,11 @@ See video tutorial below for step-by-step instruction how to use this feature.
         <iframe src="https://www.youtube.com/embed/4dkbVASJ1JU" frameborder="0" allowfullscreen></iframe>
     </div>
 </div> 
+
+
+## Next steps
+
+{% assign currentGuide = "AdvancedFeatures" %}{% include templates/guides-banner.md %}
+
+<br/>
+<br/>

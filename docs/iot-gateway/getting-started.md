@@ -659,7 +659,7 @@ Feel free to submit PRs with your custom transformer implementations if you beli
 
 Modbus Extension configuration is covered on the corresponding [extension page](/docs/iot-gateway/modbus/).
 
-## Next steps
+## See Also
 
 Explore guides related to main ThingsBoard features:
 
@@ -669,5 +669,12 @@ Explore guides related to main ThingsBoard features:
  - [Using RPC capabilities](/docs/user-guide/rpc/) - how to send commands to/from devices.
  - [Rule Engine](/docs/user-guide/rule-engine/) - how to use rule engine to analyze data from devices.
 
+
+## Next steps
+
+{% assign currentGuide = "ConnectYourDevice" %}{% include templates/guides-banner.md %}
+
+<br/>
+<br/>
 
 

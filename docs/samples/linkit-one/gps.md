@@ -120,7 +120,7 @@ If all is configured correctly you should be able to see *"latitude"*, *"longitu
 After, open **"Dashboards"** section then locate and open **"LinkIt One GPS Tracking Demo Dashboard"**. 
 As a result, you will see the map widget with a pointer indicating your device location and a battery level widget (similar to dashboard image in the introduction).
 
-## Next steps
+## See also
 
 Browse other [samples](/docs/samples) or explore guides related to main ThingsBoard features:
 
@@ -133,3 +133,11 @@ Browse other [samples](/docs/samples) or explore guides related to main ThingsBo
 {% include templates/feedback.md %}
  
 {% include socials.html %}
+
+## Next steps
+
+{% assign currentGuide = "HardwareSamples" %}{% include templates/guides-banner.md %}
+
+<br/>
+<br/>
+

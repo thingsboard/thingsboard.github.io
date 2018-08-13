@@ -231,3 +231,11 @@ you need to create a new inbound rule with Windows Firewall with Advanced Securi
 - Finally, give the name to this rule (for ex. "ThingsBoard Service Networking") and click "Finish".
 
 ![image](/images/user-guide/install/windows/windows7-firewall-8.png)
+
+
+## Next steps
+
+{% assign currentGuide = "InstallationGuides" %}{% include templates/guides-banner.md %}
+
+<br/>
+<br/>

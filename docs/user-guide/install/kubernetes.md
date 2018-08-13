@@ -248,3 +248,11 @@ ThingsBoard Kubernetes config file **tb.yaml** contains next set of cloud resour
 ThingsBoard Kubernetes config file **cassandra-setup.yaml** contains next set of cloud resources:
 
 - *Pod* that runs once and creates ThingsBoard keyspace and tables inside Cassandra storage
+
+
+## Next steps
+
+{% assign currentGuide = "InstallationGuides" %}{% include templates/guides-banner.md %}
+
+<br/>
+<br/>

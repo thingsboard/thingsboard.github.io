@@ -1134,3 +1134,10 @@ net stop thingsboard
 ```text
 net start thingsboard
 ```
+
+## Next steps
+
+{% assign currentGuide = "InstallationGuides" %}{% include templates/guides-banner.md %}
+
+<br/>
+<br/>

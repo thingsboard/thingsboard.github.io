@@ -202,3 +202,11 @@ C,Response Body,shell,resources/rpc-server-response.json,/docs/reference/resourc
 ## Protocol customization
 
 HTTP transport can be fully customized for specific use-case by changing the corresponding [module](https://github.com/thingsboard/thingsboard/tree/master/transport/http).
+
+
+## Next steps
+
+{% assign currentGuide = "ConnectYourDevice" %}{% include templates/guides-banner.md %}
+
+<br/>
+<br/>

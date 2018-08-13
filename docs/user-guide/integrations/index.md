@@ -281,7 +281,7 @@ Please note that you can share your converters with community and send them to u
 
 [Contact us](/docs/contact-us/) to suggest missing feature for your use case.
 
-### Next Steps
+### See Also
 
 Explore guides and video tutorials related to specific integrations:
 
@@ -297,7 +297,12 @@ Explore guides and video tutorials related to specific integrations:
  - [OPC-UA](/docs/user-guide/integrations/opc-ua/)
 
 
+## Next steps
 
+{% assign currentGuide = "ConnectYourDevice" %}{% include templates/guides-banner.md %}
+
+<br/>
+<br/>
 
 
 
