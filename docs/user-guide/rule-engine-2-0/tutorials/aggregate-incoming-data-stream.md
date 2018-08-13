@@ -90,7 +90,7 @@ In this section, we explain the purpose of each node in this tutorial. There wil
     
     ![image](/images/user-guide/rule-engine-2-0/tutorials/aggregation/node-e.png)
     
-  * **Node F**: Aggregagte stream node
+  * **Node F**: Aggregate stream node
 
     * Transforms aggregated incoming data stream of "waterConsumption" readings to "totalWaterConsumption" value once per 10 seconds.
     * Persists new telemetry after particular interval is over and on each new message that belongs to this interval afterwards. 
@@ -111,8 +111,13 @@ Please note that some nodes have debug enabled. This affects performance. Create
 
 ## Validating the flow
 
+Download and [**import**](/docs/user-guide/ui/dashboards/#iot-dashboard-importexport) attached dashboard [**file**](/docs/user-guide/rule-engine-2-0/pe/tutorials/building_water_meters.json) as a new "Building Water Meters" dashboard.
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/groups/results.png)   
+![image](/images/user-guide/rule-engine-2-0/tutorials/aggregation/dashboard-part1.png)
+
+Note that you can drill down to the chart for particular warehouse by clicking on the corresponding row.
+
+![image](/images/user-guide/rule-engine-2-0/tutorials/aggregation/dashboard-part2.png)
 
 
  

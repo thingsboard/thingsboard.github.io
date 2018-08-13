@@ -1,0 +1,305 @@
+{
+  "title": "Building Water Meters",
+  "configuration": {
+    "widgets": {
+      "f20d96b9-967e-29fa-301b-a7c748882d3a": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "entities_table",
+        "type": "latest",
+        "title": "New widget",
+        "sizeX": 24,
+        "sizeY": 12,
+        "config": {
+          "timewindow": {
+            "realtime": {
+              "interval": 1000,
+              "timewindowMs": 86400000
+            },
+            "aggregation": {
+              "type": "NONE",
+              "limit": 200
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "4px",
+          "settings": {
+            "enableSearch": true,
+            "displayPagination": true,
+            "defaultPageSize": 10,
+            "defaultSortOrder": "entityName",
+            "displayEntityName": true,
+            "displayEntityType": true
+          },
+          "title": "New Entities table",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400,
+            "padding": "5px 10px 5px 10px"
+          },
+          "useDashboardTimewindow": false,
+          "showLegend": false,
+          "datasources": [
+            {
+              "type": "entity",
+              "dataKeys": [
+                {
+                  "name": "totalWaterConsumption",
+                  "type": "timeseries",
+                  "label": "totalWaterConsumption",
+                  "color": "#2196f3",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "cellStyleFunction": "",
+                    "useCellContentFunction": false,
+                    "cellContentFunction": ""
+                  },
+                  "_hash": 0.9692703775061959
+                }
+              ],
+              "entityAliasId": "3fe317a1-2c1c-fcb4-7843-e76390215d9b"
+            }
+          ],
+          "enableDataExport": true,
+          "widgetStyle": {},
+          "actions": {
+            "rowClick": [
+              {
+                "id": "baa7e564-09f3-5671-61ea-473517ad3947",
+                "name": "Open Details",
+                "icon": "more_horiz",
+                "type": "openDashboardState",
+                "targetDashboardStateId": "building_details",
+                "openRightLayout": false,
+                "setEntityId": true
+              }
+            ]
+          }
+        },
+        "id": "f20d96b9-967e-29fa-301b-a7c748882d3a"
+      },
+      "42daaceb-64db-9b19-43c9-6f3e9c708e10": {
+        "isSystemType": true,
+        "bundleAlias": "charts",
+        "typeAlias": "basic_timeseries",
+        "type": "timeseries",
+        "title": "New widget",
+        "sizeX": 24,
+        "sizeY": 9,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "dataKeys": [
+                {
+                  "name": "totalWaterConsumption",
+                  "type": "timeseries",
+                  "label": "${entityName} Total",
+                  "color": "#2196f3",
+                  "settings": {
+                    "showLines": true,
+                    "fillLines": false,
+                    "showPoints": false,
+                    "showSeparateAxis": false,
+                    "axisPosition": "left"
+                  },
+                  "_hash": 0.8776611065970759
+                }
+              ],
+              "entityAliasId": "9c9e1aec-b480-f32d-56cc-a6fa6c48b8e3"
+            },
+            {
+              "type": "entity",
+              "dataKeys": [
+                {
+                  "name": "waterConsumption",
+                  "type": "timeseries",
+                  "label": "${entityName} reading",
+                  "color": "#4caf50",
+                  "settings": {
+                    "showLines": true,
+                    "fillLines": false,
+                    "showPoints": false,
+                    "showSeparateAxis": false,
+                    "axisPosition": "left"
+                  },
+                  "_hash": 0.22474866132810467
+                }
+              ],
+              "entityAliasId": "095593ea-da01-9f67-adf3-e62678962de6"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "shadowSize": 4,
+            "fontColor": "#545454",
+            "fontSize": 10,
+            "xaxis": {
+              "showLabels": true,
+              "color": "#545454"
+            },
+            "yaxis": {
+              "showLabels": true,
+              "color": "#545454"
+            },
+            "grid": {
+              "color": "#545454",
+              "tickColor": "#DDDDDD",
+              "verticalLines": true,
+              "horizontalLines": true,
+              "outlineWidth": 1
+            },
+            "stack": false,
+            "tooltipIndividual": false,
+            "smoothLines": true
+          },
+          "title": "Total vs individual water consumption",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "mobileHeight": null,
+          "enableDataExport": true,
+          "widgetStyle": {},
+          "useDashboardTimewindow": true,
+          "showLegend": true,
+          "actions": {}
+        },
+        "id": "42daaceb-64db-9b19-43c9-6f3e9c708e10"
+      }
+    },
+    "states": {
+      "default": {
+        "name": "Building Water Meters",
+        "root": true,
+        "layouts": {
+          "main": {
+            "widgets": {
+              "f20d96b9-967e-29fa-301b-a7c748882d3a": {
+                "sizeX": 24,
+                "sizeY": 12,
+                "row": 0,
+                "col": 0
+              }
+            },
+            "gridSettings": {
+              "backgroundColor": "#eeeeee",
+              "color": "rgba(0,0,0,0.870588)",
+              "columns": 24,
+              "margins": [
+                10,
+                10
+              ],
+              "backgroundSizeMode": "100%",
+              "autoFillHeight": true,
+              "mobileAutoFillHeight": false,
+              "mobileRowHeight": 70
+            }
+          }
+        }
+      },
+      "building_details": {
+        "name": "Building Details",
+        "root": false,
+        "layouts": {
+          "main": {
+            "widgets": {
+              "42daaceb-64db-9b19-43c9-6f3e9c708e10": {
+                "sizeX": 24,
+                "sizeY": 9,
+                "mobileHeight": null,
+                "row": 0,
+                "col": 0
+              }
+            },
+            "gridSettings": {
+              "backgroundColor": "#eeeeee",
+              "color": "rgba(0,0,0,0.870588)",
+              "columns": 24,
+              "margins": [
+                10,
+                10
+              ],
+              "backgroundSizeMode": "100%"
+            }
+          }
+        }
+      }
+    },
+    "entityAliases": {
+      "3fe317a1-2c1c-fcb4-7843-e76390215d9b": {
+        "id": "3fe317a1-2c1c-fcb4-7843-e76390215d9b",
+        "alias": "Buildings",
+        "filter": {
+          "type": "assetType",
+          "resolveMultiple": true,
+          "assetType": "building",
+          "assetNameFilter": ""
+        }
+      },
+      "095593ea-da01-9f67-adf3-e62678962de6": {
+        "id": "095593ea-da01-9f67-adf3-e62678962de6",
+        "alias": "Water meters",
+        "filter": {
+          "type": "deviceSearchQuery",
+          "resolveMultiple": true,
+          "rootStateEntity": true,
+          "stateEntityParamName": null,
+          "defaultStateEntity": null,
+          "rootEntity": null,
+          "direction": "FROM",
+          "maxLevel": 1,
+          "relationType": "Contains",
+          "deviceTypes": [
+            "water-meter"
+          ]
+        }
+      },
+      "9c9e1aec-b480-f32d-56cc-a6fa6c48b8e3": {
+        "id": "9c9e1aec-b480-f32d-56cc-a6fa6c48b8e3",
+        "alias": "Building",
+        "filter": {
+          "type": "stateEntity",
+          "resolveMultiple": false,
+          "stateEntityParamName": null,
+          "defaultStateEntity": null
+        }
+      }
+    },
+    "timewindow": {
+      "realtime": {
+        "interval": 10000,
+        "timewindowMs": 300000
+      },
+      "aggregation": {
+        "type": "NONE",
+        "limit": 500
+      }
+    },
+    "settings": {
+      "stateControllerId": "entity",
+      "showTitle": false,
+      "showDashboardsSelect": true,
+      "showEntitiesSelect": true,
+      "showDashboardTimewindow": true,
+      "showDashboardExport": true,
+      "toolbarAlwaysOpen": true
+    }
+  },
+  "name": "Building Water Meters"
+}
