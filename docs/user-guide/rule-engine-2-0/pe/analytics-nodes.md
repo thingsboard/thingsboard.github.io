@@ -76,7 +76,9 @@ with failure reason and parent entity as originator. Failure message is forwarde
 
 ![image](/images/user-guide/rule-engine-2-0/pe/nodes/analytics-aggregate-stream.png)
 
-Calculates MIN/MAX/SUM/AVG/COUNT/UNIQUE based on the incoming data stream. Groups incoming data stream based on originator id of the message (i.e. particular device, asset, customer) and **aggregation interval value** into **Intervals**.
+Calculates MIN/MAX/SUM/AVG/COUNT/UNIQUE based on the incoming data stream. 
+Groups incoming data stream based on originator id of the message (i.e. particular device, asset, customer), 
+**aggregation function** (e.g. "Average", "Sum", "Min", "Max"), **aggregation interval value** (e.g. 1 minute, 6 hours) into **Intervals**.
 
 
 Intervals are periodically persisted based on **interval persistence policy** and **interval check value**. Intervals are cached in memory based on **Interval TTL value**.

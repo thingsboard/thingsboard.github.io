@@ -255,8 +255,13 @@
   section:
     - path: /docs/user-guide/rule-engine-2-0/tutorials/aggregate-incoming-data-stream/
       title: Aggregate incoming data stream
-      subtitle: Learn how to configure Rule Engine to aggregate incoming data stream from your devices.
-      keywords: aggregation water meter analytics
+      subtitle: Calculate total water consumption in the building based on readings from multiple water meters within a building.
+      keywords: aggregation water meter analytics rule engine
+      pe: true
+    - path: /docs/user-guide/rule-engine-2-0/tutorials/aggregate-latest-data/
+      title: Aggregate latest telemetry values periodically
+      subtitle: Calculate average temperature in the warehouse based on readings from multiple temperature sensors.
+      keywords: average temperature analytics rule engine
       pe: true
 #- title: Pushing data to external systems
 #  subtitle: lorem ipsum dolor
