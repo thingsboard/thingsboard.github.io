@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
-title: TheThingsNetwork Integration
-description: TheThingsNetwork Integration Guide 
+title: The Things Network (TTN) Integration
+description: The Things Network (TTN) Integration Guide
 
 ---
 
@@ -12,44 +12,48 @@ description: TheThingsNetwork Integration Guide
 
 
 ## Overview
-TheThingsNetwork is LoRaWAN network designed for connecting your devices using LoRaWAN stack. 
-After integrating TheThingsNetwork with the Thingsboard, you can connect, communicate, process and visualize data from devices in the Thingsboard IoT platform.
+The Things Network (TTN) is a LoRaWAN network designed for connecting your devices using the LoRaWAN stack.
+
+After integrating TTN with ThingsBoard, you can connect, communicate, process and visualize data from the devices in the ThingsBoard IoT platform.
 
 
-## TheThingsNetwork setup
+## The Things Network (TTN) Setup
 
-##### Register Application
-The first step is to create an **application** in TheThingsNetwork console. Go to [console](https://console.thethingsnetwork.org/){:target="_blank"}, open 
-**Applications** section, press **add application** button and fill required fields.
+##### Registering an Application
+The first step is to create an **application**:
 
-- **Application ID** - tb_applciation
-- **Handler registration** - ttn-handler-eu
-
-Handler registration - used to identify region where application will be registered. In our example it will be *eu* region.
+  - Go to the [TTN console](https://console.thethingsnetwork.org/){:target="_blank"}.
+  - Open the **Applications** section.
+  - Click the **add application** button and fill in the required fields.
+    - **Application ID**: tb_applciation.
+    - **Handler registration**: ttn-handler-eu. <br>
+    <em>Note: </em>Handler registration is used to identify the region where the application will be registered. In our example, it will be the *eu* region.
 
 ![image](/images/user-guide/integrations/ttn/ttn-add-application.png)
 
 
 ##### Payload Decoder
-Our device submits data in binary format. We have 2 options where to decode this data:
+Our device submits data in a binary format. We have 2 options to decode this data:
 
-- **TheThingsNetwork decoder** - data will be decoded before entering the Thingsboard
-- **Thingsboard converters** - uplink/downlink converters will be used to decode data from binary format into JSON
+- Using **The Things Network (TTN) decoder** - data will be decoded before entering ThingsBoard
+- Using the **ThingsBoard converters** - uplink/downlink converters will be used to decode data from the binary format to JSON
 
-In this tutorial, we will make an initial transformation into JSON with TTN decoder and then use Thingsboard converters for correct data processing.
-In real life scenario, it is up to you where to decode/encode data, because it is possible to do this on any side.
+In this tutorial, we will make an initial transformation into JSON with the TTN decoder and then use the ThingsBoard converters for correct data processing.
 
-After application registered in TTN, go to **payload_formats**, select decoder function. We will take the first byte as a temperature value from a device 
-and transform it into JSON.
+In a real life scenario, it is up to you where to decode/encode the data because it is possible to be done on any side.
 
-Decode Function {% highlight javascript %}
+- After registering the application in TTN, go to the **Payload Formats** tab and select the decoder function.
+
+- We will take the first byte as the temperature value from the device and transform it into JSON.
+
+The decoder function: {% highlight javascript %}
 function Decoder(bytes, port) {
   var decoded = {temperature: bytes[0]};
   return decoded;
 }
 {% endhighlight %}
- 
-Output json:
+
+The output in JSON format:
 {% highlight json %}
 {
   "temperature": 15
@@ -58,28 +62,33 @@ Output json:
 
 ![image](/images/user-guide/integrations/ttn/ttn-decoder.png)
 
-Press **Save payload function**
+- Click **Save payload function**
 
-##### Device Registration in TheThingsNetwork
+##### Device Registration in The Things Network (TTN)
 
-Next step is a Device creation in the TTN. Open **Devices** page and press **register device**
+The next step is to create a device in TTN.
 
-- Device ID - thermostat_a
-- Device EUI - press **generate** button for generating random identified
+- Open the **Devices** page and click **register device**
+    - Device ID: thermostat_a
+    - Device EUI: click the **Generate** button to generate a random identifier number.
 
 ![image](/images/user-guide/integrations/ttn/ttn-add-device.png)
 
-Press **Register** button.
+- Click the **Register** button.
 
 
-## Integration with the Thingsboard
-In the TheThingsNetwork, we already make all required configuration (register device, decoder function, and register application). Now we can start configuring the Thingsboard.
+## Integration with ThingsBoard
+Next, we will start to configure ThingsBoard by creating:
 
-##### Thingsboard Uplink Data Converter
+ - the Uplink Data Converter.
+ - the Downlink Data Converter
+ - the TTN Integration in ThingsBoard.
 
-First, we need to create Uplink Data converter that will be used for receiving messaged from the TTN. The converter should transform incoming payload into the required message format.
-Message must contains **deviceName** and **deviceType**. Those fields are used for submitting data to the correct device. If a device was not found then new device will be created.
-Here is how payload from TheThingsNetwork will look like:
+##### ThingsBoard Uplink Data Converter
+
+First, we need to create the Uplink Data converter that will be used for receiving the messages from TTN. The converter should transform the incoming payload into the required message format.
+The Message must contains the **deviceName** and **deviceType**. These fields are used to submit the data to the correct device. If a device cannot be found, a new device will be created.
+Here is how the payload from The Things Network (TTN) will look like:
 {% highlight json %}
 {
     "app_id": "tb_platform",
@@ -97,10 +106,11 @@ Here is how payload from TheThingsNetwork will look like:
 }
 {% endhighlight %}
 
-We will take **dev_id** and map it to the **deviceName** and **app_id** map to the **deviceType**. But you can use another mapping in your specific use cases.
-Also, we will take the value of the **temperature** field and use it as a device telemetry. 
+ - We will take the **dev_id** and **app_id** and map them to the **deviceName** and **deviceType** respectively. <br>
+   However, you can use another mapping in your specific use cases.
+ - Also, we will take the value of the **temperature** field and use it as a device telemetry.
+ - Go to **Data Converters** and create a new **Uplink** Data Converter using this function: {% highlight javascript %}
 
-Go to **Data Converters** and create new **uplink** Converter with this function: {% highlight javascript %}
 var data = decodeToJson(payload);
 var deviceName = data.dev_id;
 var deviceType = data.app_id;
@@ -129,9 +139,11 @@ return result;
 ![image](/images/user-guide/integrations/ttn/tb-converter.png)
 
 
-##### Thingsboard Downlink Data Converter
-For sending Downlink messages from the Thingsboard to the device inside TTN, we need to define downlink Converter.
-In general, output from Downlink converter should have the following structure:
+##### ThingsBoard Downlink Data Converter
+To send Downlink messages from ThingsBoard to the device inside TTN, we need to define a downlink data Converter.
+
+In general, the output from the downlink data converter should have the following structure:
+
 {% highlight json %}
 {
     "contentType": "JSON",
@@ -142,11 +154,11 @@ In general, output from Downlink converter should have the following structure:
 }
 {% endhighlight %}
 
-- **contentType** - defines how data will be encoded {TEXT \| JSON \| BINARY}
-- **data** - actual data that will be sent to the device in TTN. More details about API can be foind in this [TTN API](https://www.thethingsnetwork.org/docs/applications/mqtt/api.html){:target="_blank"}
-- **metadata** - in this object you should place correct devId value that will be used to identify target device in TTN
+- **contentType** - defines how data will be encoded {TEXT \| JSON \| BINARY}.
+- **data** - the actual data that will be sent to the device in TTN. More details about APIs can be found in the [TTN API](https://www.thethingsnetwork.org/docs/applications/mqtt/api.html){:target="_blank"} reference.
+- **metadata** - in this object, you should place the correct devId value that will be used to identify the target device in TTN.
 
-Go to **Data Converters** and create new **downlink** Converter with this function: {% highlight javascript %}
+Go to the **Data Converters** and create a new **Downlink** Data Converter using this function: {% highlight javascript %}
 var data = {
       port: 1,                
       confirmed: false,      
@@ -167,14 +179,17 @@ var result = {
 return result;
 {% endhighlight %}
 
-This converter will take **version** field from the incoming message and add it is a payload field in the outbound message. Destination device is a **thermostat_a** device.
+This converter will take the **version** field from the incoming message and add it as a payload field in the outbound message.
+
+The Destination device is the **thermostat_a** device.
 
 ![image](/images/user-guide/integrations/ttn/tb-downlink-converter.png)
 
 ##### TTN Integration
 
-Next we will create Integration with TheThingsNetwork inside the Thingsboard. Open **Integrations** section and add new Integration with type
-**TheThingsNetwork**
+Next, we will create an Integration with The Things Network (TTN) inside ThingsBoard. <br>
+
+Open the **Integrations** section and add a new Integration of type **TheThingsNetwork**
 
 - Name: ttn_integration
 - Type: TheThingsNetwork
@@ -188,42 +203,45 @@ Next we will create Integration with TheThingsNetwork inside the Thingsboard. Op
 
 ## Validation
 
-##### Validate Uplink Messages
-Lets verify our integration. Go to the device **thermostat_a** page in TheThingsNetwork. Scroll to the **Simulate Uplink** section.
-Our device will publish temperature **0F** (15). So enter **0F** into payload field and press **Send** button.
+##### Validate the Uplink Messages
+Let´s verify our integration:
+
+- Go to the device **thermostat_a** page in TTN.
+- Scroll to the **Simulate Uplink** section.
+- Our device will publish a temperature **0F** (15), so enter **0F** into the payload field and click the **Send** button.
 
 ![image](/images/user-guide/integrations/ttn/ttn-send-payload.png)
 
-Go to **Device Group** -> **All** -> **thermostat_a** - you can see that 
-
-- new device was registered in the thingsboard
-- In the **Latest Telemetry** section you will see that last submitted temperature = 15.
+- Go to the **Device Group** -> **All** -> **thermostat_a**, and you will see that:
+    - a new device has been registered in ThingsBoard
+    - In the **Latest Telemetry** section, you will see the last submitted temperature = 15.
 
 ![image](/images/user-guide/integrations/ttn/tb-device-telemetry.png)
 
-##### Validate Downlink Messages
-For testing Downlink Messages, we will update our Root Rule Chain to send downlink message when device attribute is changed.
-Open and edit **Root Rule Chain**. Add **Integration Downlink** Action node and connect it with the **Message Type Switch** Node using relation 
-**Attributes Updated**
+##### Validate the Downlink Messages
+To test the Downlink Messages, we will update the Root Rule Chain to send a downlink message when a device attribute is changed.
+
+- Open the **Root Rule Chain**.
+- Add the **Integration Downlink** Action node and connect it to the **Message Type Switch** Node using the **Attributes Updated** relationship.
  
 ![image](/images/user-guide/integrations/ttn/tb-add-rule-downlink.png)
 
 ![image](/images/user-guide/integrations/ttn/tb-route-to-downlink.png)
 
-Save Changes.
+- Save the Changes.
 
-Go to **Device Group** -> **All** -> **thermostat_a** -> attributes section. We will add **Shared attribute** with name **version** and
-value **v.0.11**
+- Go to the **Device Group** -> **All** -> **thermostat_a** -> attributes section.
+- Add a **Shared attribute**. Its key is **version** and its value is **v.0.11**
 
 ![image](/images/user-guide/integrations/ttn/tb-add-version.png)
 
-By making this step, we triggered downlink message to the device **thermostat_a** and this message should contains version field value. 
-Open TTN Console, navigate to **tb_platfrom** application, to the section **Data**. And we see that Downlink message was received.
+- By this step, we trigger a downlink message to the device **thermostat_a** and this message contains the version field value.
+- Open the TTN Console, navigate to the **tb_platfrom** application, and go to the **Data** section. We will see the Downlink message has been received.
 
 ![image](/images/user-guide/integrations/ttn/ttn-downlink-verified.png)
 
 ## Next steps
-With this integration you can also configure Downlink converters and trigger required actions using Rule Engine nodes.
+With this integration, you can also configure Downlink converters and trigger the required actions using Rule Engine nodes.
 
 - [Integration Overview](/docs/user-guide/integrations/) 
 - [Uplink Converters](/docs/user-guide/integrations/#uplink-data-converter) 
