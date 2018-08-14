@@ -248,7 +248,7 @@ If all is configured correctly you should be able to see latest values of *"temp
 After, open **"Dashboards"** section then locate and open **"ESP8266 DHT22: Temperature & Humidity Demo Dashboard"**. 
 As a result, you will see two digital gauges and two time-series charts displaying temperature and humidity level (similar to dashboard image in the introduction).
 
-## Next steps
+## See also
 
 Browse other [samples](/docs/samples) or explore guides related to main ThingsBoard features:
 
@@ -261,3 +261,8 @@ Browse other [samples](/docs/samples) or explore guides related to main ThingsBo
 {% include templates/feedback.md %}
  
 {% include socials.html %}
+
+## Next steps
+
+{% assign currentGuide = "HardwareSamples" %}{% include templates/guides-banner.md %}
+

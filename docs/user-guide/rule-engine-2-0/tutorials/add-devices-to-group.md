@@ -90,6 +90,10 @@ Please note that all nodes have debug enabled. This affects performance. Create 
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/groups/results.png)   
 
+## Next steps
+
+{% assign currentGuide = "DataProcessing" %}{% include templates/guides-banner.md %}
+
 
  
 

@@ -199,3 +199,8 @@ C,Response Body,shell,resources/rpc-server-response.json,/docs/reference/resourc
 ## Protocol customization
 
 CoAP transport can be fully customized for specific use-case by changing the corresponding [module](https://github.com/thingsboard/thingsboard/tree/master/transport/coap).
+
+
+## Next steps
+
+{% assign currentGuide = "ConnectYourDevice" %}{% include templates/guides-banner.md %}

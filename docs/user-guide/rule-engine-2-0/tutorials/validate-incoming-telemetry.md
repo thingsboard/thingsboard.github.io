@@ -55,6 +55,9 @@ Download and import attached json [**file**](/docs/user-guide/resources/validati
 ![image](/images/user-guide/rule-engine-2-0/tutorials/make-root.png)
 
  
+## Next steps
+
+{% assign currentGuide = "DataProcessing" %}{% include templates/guides-banner.md %}
 
 
 
