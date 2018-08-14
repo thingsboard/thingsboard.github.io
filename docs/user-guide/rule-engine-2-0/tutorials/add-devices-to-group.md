@@ -94,8 +94,6 @@ Please note that all nodes have debug enabled. This affects performance. Create 
 
 {% assign currentGuide = "DataProcessing" %}{% include templates/guides-banner.md %}
 
-<br/>
-<br/>
 
  
 

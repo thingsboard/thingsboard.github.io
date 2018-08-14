@@ -428,8 +428,3 @@ You will learn how to:
 ## Next steps
 
 {% assign currentGuide = "Common State" %}{% include templates/guides-banner.md %}
-
-
-<br/>
-<br/>
-

@@ -225,5 +225,3 @@ Please refer to the first link under the **See Also** section to see how to do t
 
 {% assign currentGuide = "DataProcessing" %}{% include templates/guides-banner.md %}
 
-<br/>
-<br/>

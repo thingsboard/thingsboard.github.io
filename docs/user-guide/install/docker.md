@@ -69,6 +69,3 @@ See corresponding [Linux](https://developers.google.com/speed/public-dns/docs/us
 ## Next steps
 
 {% assign currentGuide = "InstallationGuides" %}{% include templates/guides-banner.md %}
-
-<br/>
-<br/>

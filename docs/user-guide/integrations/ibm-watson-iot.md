@@ -27,6 +27,3 @@ See video tutorial below for step-by-step instruction how to setup IBM Watson Io
 ## Next steps
 
 {% assign currentGuide = "ConnectYourDevice" %}{% include templates/guides-banner.md %}
-
-<br/>
-<br/>

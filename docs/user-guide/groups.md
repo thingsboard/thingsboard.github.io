@@ -27,10 +27,6 @@ See video tutorial below for step-by-step instruction how to use this feature.
     </div>
 </div> 
 
-
 ## Next steps
 
 {% assign currentGuide = "AdvancedFeatures" %}{% include templates/guides-banner.md %}
-
-<br/>
-<br/>

@@ -80,6 +80,3 @@ Following ThingsBoard server ports need to be accessible outside cluster for dev
 ## Next steps
 
 {% assign currentGuide = "InstallationGuides" %}{% include templates/guides-banner.md %}
-
-<br/>
-<br/>

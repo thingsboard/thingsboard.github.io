@@ -192,5 +192,3 @@ Download and import attached [**rule chain json file**](/docs/user-guide/resourc
 
 {% assign currentGuide = "DataProcessing" %}{% include templates/guides-banner.md %}
 
-<br/>
-<br/>

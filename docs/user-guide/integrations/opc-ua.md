@@ -272,6 +272,3 @@ To verify our integration,
 ## Next steps
 
 {% assign currentGuide = "ConnectYourDevice" %}{% include templates/guides-banner.md %}
-
-<br/>
-<br/>

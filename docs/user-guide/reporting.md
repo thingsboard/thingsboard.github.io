@@ -90,10 +90,6 @@ Also, the widget has the ability to search the reports by name.
 
 Each report can be downloaded by clicking on the **Download file** button.
 
-
 ## Next steps
 
 {% assign currentGuide = "AdvancedFeatures" %}{% include templates/guides-banner.md %}
-
-<br/>
-<br/>

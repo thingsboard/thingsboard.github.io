@@ -109,9 +109,6 @@ Note that you can drill down to the chart for particular warehouse by clicking o
 
 {% assign currentGuide = "DataAnalytics" %}{% include templates/guides-banner.md %}
 
-<br/>
-<br/>
-
  
 
 

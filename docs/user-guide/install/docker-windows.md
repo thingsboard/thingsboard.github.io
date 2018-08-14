@@ -67,6 +67,3 @@ You may configure your system to use [Google public DNS servers](https://develop
 ## Next steps
 
 {% assign currentGuide = "InstallationGuides" %}{% include templates/guides-banner.md %}
-
-<br/>
-<br/>

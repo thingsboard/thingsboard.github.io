@@ -193,10 +193,7 @@ Browse other [samples](/docs/samples) or explore guides related to main ThingsBo
  
 {% include socials.html %}
 
-
 ## Next steps
 
 {% assign currentGuide = "HardwareSamples" %}{% include templates/guides-banner.md %}
 
-<br/>
-<br/>

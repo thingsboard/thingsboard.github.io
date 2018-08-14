@@ -129,7 +129,3 @@ You can use the next links for learning more about Thingsboard Rule Engine:
 ## Next steps
 
 {% assign currentGuide = "GettingStartedGuides" %}{% include templates/guides-banner.md %}
-
-
-<br/>
-<br/>

@@ -674,7 +674,5 @@ Explore guides related to main ThingsBoard features:
 
 {% assign currentGuide = "ConnectYourDevice" %}{% include templates/guides-banner.md %}
 
-<br/>
-<br/>
 
 

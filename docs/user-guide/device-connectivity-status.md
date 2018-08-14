@@ -42,13 +42,10 @@ User can overwrite this parameter for individual device by setting "inactivityTi
 Device State service uses global configuration parameter to detect inactivity events.
 This parameter is defined in **thingsboard.yml** (state.defaultStateCheckIntervalInSec) and by default it is set to 10 seconds.
 
-
 ## Next steps
 
 {% assign currentGuide = "AdvancedFeatures" %}{% include templates/guides-banner.md %}
 
-<br/>
-<br/>
 
 
  

@@ -59,8 +59,6 @@ Download and import attached json [**file**](/docs/user-guide/resources/validati
 
 {% assign currentGuide = "DataProcessing" %}{% include templates/guides-banner.md %}
 
-<br/>
-<br/>
 
 
 

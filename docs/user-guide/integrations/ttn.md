@@ -234,6 +234,3 @@ With this integration you can also configure Downlink converters and trigger req
 ## Next steps
 
 {% assign currentGuide = "ConnectYourDevice" %}{% include templates/guides-banner.md %}
-
-<br/>
-<br/>

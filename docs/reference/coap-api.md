@@ -204,6 +204,3 @@ CoAP transport can be fully customized for specific use-case by changing the cor
 ## Next steps
 
 {% assign currentGuide = "ConnectYourDevice" %}{% include templates/guides-banner.md %}
-
-<br/>
-<br/>

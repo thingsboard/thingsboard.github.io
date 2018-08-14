@@ -141,6 +141,3 @@ cat /var/log/thingsboard/thingsboard.log | grep ERROR
 ## Next steps
 
 {% assign currentGuide = "InstallationGuides" %}{% include templates/guides-banner.md %}
-
-<br/>
-<br/>

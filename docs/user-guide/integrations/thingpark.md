@@ -31,6 +31,3 @@ Configuration steps:
 ## Next steps
  
  {% assign currentGuide = "ConnectYourDevice" %}{% include templates/guides-banner.md %}
- 
- <br/>
- <br/>

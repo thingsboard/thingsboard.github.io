@@ -209,7 +209,3 @@ Please refer to the links from the second to the fourth under the **See Also** s
 ## Next steps
 
 {% assign currentGuide = "DataProcessing" %}{% include templates/guides-banner.md %}
-
-
-<br/>
-<br/>

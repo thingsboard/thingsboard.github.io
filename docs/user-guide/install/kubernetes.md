@@ -253,6 +253,3 @@ ThingsBoard Kubernetes config file **cassandra-setup.yaml** contains next set of
 ## Next steps
 
 {% assign currentGuide = "InstallationGuides" %}{% include templates/guides-banner.md %}
-
-<br/>
-<br/>

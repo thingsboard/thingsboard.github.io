@@ -301,8 +301,6 @@ Explore guides and video tutorials related to specific integrations:
 
 {% assign currentGuide = "ConnectYourDevice" %}{% include templates/guides-banner.md %}
 
-<br/>
-<br/>
 
 
 
