@@ -11,11 +11,12 @@ title: Notifications and Alarms on your smartphone using Telegram Bot
 
 Telegram provides a possibility to create Telegram Bots, which are considered as third-party applications. 
 So, In this tutorial, we are going to demonstrate how you can create a Telegram Bot<br>
-and configure your rule engine to be able to send notifications to Telegram App using Rest API Call extension.
+and configure your ThingsBoard rule engine to be able to send notifications to Telegram App using Rest API Call extension.
 
 ## Use case
 
-In this tutorial we will implement the use case from the tutorial: [create & clear alarms](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/#use-case):
+This tutorial is based on the [create & clear alarms](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/#use-case) tutorial and it's use case. 
+We will reuse the rule chain from above mentioned tutorial and will add few more rule nodes to integrate with Telegram   
 
 Let's assume your device is using DHT22 sensor to collect and push temperature readings to ThingsBoard. 
 DHT22 sensor is good for -40 to 80°C temperature readings.We want to generate Alarms if temperature is out of good range and send notifications to Telegram App when the alarm was created.
@@ -32,17 +33,18 @@ We assume you have completed the following guides and reviewed the articles list
 
   * [Getting Started](/docs/getting-started-guides/helloworld/) guide.
   * [Rule Engine Overview](/docs/user-guide/rule-engine-2-0/overview/).
+  * [Create & clear alarms](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/#use-case) guide.
 
 ## Message flow  
 
 In this section, we explain the purpose of each node in this tutorial:
 
 - Node A: [**Transform Script**](/docs/user-guide/rule-engine-2-0/transformation-nodes/#script-transformation-node) node.
-  - This node will use for creating a body of the message notification.  
+  - This node will be used to creating a body of the Telegram message notification.  
 - Node B: [**REST API Call**](/docs/user-guide/rule-engine-2-0/external-nodes/#rest-api-call-node) node.
-  - this node will send full Message payload to the configured REST endpoint. In our case, it is Telegram REST API.
+  - This node will send Telegram message payload to the configured REST endpoint. In our case, it is Telegram REST API.
 
-# Creation of the Telegram Bot
+## Creation of the Telegram Bot
 
 [The BotFather](https://telegram.me/botfather) is the main bot that will help you to [create](https://core.telegram.org/bots#6-botfather) new bots and change their settings.
 
@@ -54,11 +56,11 @@ Prerequisites :
  - ThingsBoard is up and running
  - Telegram Bot is created
 
-## How to get necessary Chat_ID
+### Getting the Chat ID
 
-At the next step, we need to retrieve a chat_id. The chat_id is necessary to send messages via the HTTP API. 
+At the next step, we need to retrieve a Chat ID. The Chat ID is necessary to send messages via the HTTP API. 
 
-There are several ways to get the chat_id:
+There are several ways to get the Chat ID:
 
  - First of all, you need send some message to your Bot:
  
