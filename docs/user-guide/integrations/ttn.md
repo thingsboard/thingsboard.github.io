@@ -240,10 +240,15 @@ To test the Downlink Messages, we will update the Root Rule Chain to send a down
 
 ![image](/images/user-guide/integrations/ttn/ttn-downlink-verified.png)
 
-## Next steps
-With this integration, you can also configure Downlink converters and trigger the required actions using Rule Engine nodes.
+## See also
+With this integration you can also configure Downlink converters and trigger required actions using Rule Engine nodes.
 
 - [Integration Overview](/docs/user-guide/integrations/) 
 - [Uplink Converters](/docs/user-guide/integrations/#uplink-data-converter) 
 - [DownLink Converters](/docs/user-guide/integrations/#downlink-data-converter) 
-- [Rule Engine](/docs/user-guide/rule-engine-2-0/re-getting-started/) 
+- [Rule Engine](/docs/user-guide/rule-engine-2-0/re-getting-started/)
+
+
+## Next steps
+
+{% assign currentGuide = "ConnectYourDevice" %}{% include templates/guides-banner.md %}
