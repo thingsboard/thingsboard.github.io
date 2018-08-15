@@ -78,3 +78,9 @@ Download and import attached json [**file**](/docs/user-guide/resources/previous
 ![image](/images/user-guide/rule-engine-2-0/tutorials/make-root.png)
 
 Download and import attached json [**file**](/docs/user-guide/resources/previous-telemetry-dashboard.json) with a dashboard from this tutorial. 
+
+
+## Next steps
+
+{% assign currentGuide = "DataProcessing" %}{% include templates/guides-banner.md %}
+

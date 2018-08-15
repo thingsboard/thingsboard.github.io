@@ -28,3 +28,7 @@ See video tutorial below for step-by-step instruction how to setup MQTT Integrat
      <iframe src="https://www.youtube.com/embed/OPkE5FXGPrs" frameborder="0" allowfullscreen></iframe>
  </div>
 </div> 
+
+## Next steps
+
+{% assign currentGuide = "ConnectYourDevice" %}{% include templates/guides-banner.md %}
