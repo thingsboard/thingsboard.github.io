@@ -205,7 +205,9 @@ Finally we can see that email was received with correct values. (Please check yo
 
 
 Also, you can see the more information about how to:
+
  -  Send an email to the Customer of the Device.
+ 
  -  Add additional data to the email body from the incoming message.
 
 Please refer to the first link under the **See Also** section to see how to do this.

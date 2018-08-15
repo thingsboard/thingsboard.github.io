@@ -16,7 +16,7 @@ description: ThingsBoard documentation - learn about the platform and get your I
 <li><b><a href="/docs/user-guide/attributes/">Attributes</a></b> - platform ability to assign custom key-value attributes to your entities (e.g configuration, data processing, visualization parameters).</li>
 <li><b><a href="/docs/user-guide/telemetry/">Telemetry</a></b> - API for collection of time-series data and related use cases.</li>
 <li><b><a href="/docs/user-guide/rpc/">Entities and relations</a></b> - platform ability to model physical world objects (e.g. devices and assets) and relations between them.</li>
-<li><b><a href="/docs/guides/#AnchorIDData visualization">Data visualization</a></b> - covers data visualization capabilities: Widgets, Dashboards, Dashboard states.</li>
+<li><b><a href="/docs/guides#AnchorIDDataVisualization">Data visualization</a></b> - covers data visualization capabilities: Widgets, Dashboards, Dashboard states.</li>
 <li><b><a href="/docs/user-guide/rule-engine-2-0/re-getting-started/">Rule engine</a></b> - covers data processing & actions on incoming telemetry and events.</li>
 <li><b><a href="/docs/user-guide/rpc/">RPC</a></b> - API and widgets to push commands from your apps and dashboards to devices and vice versa.</li>
 <li><b><a href="/docs/user-guide/audit-log/">Audit log</a></b> - tracking of user activity and API calls usage.</li>

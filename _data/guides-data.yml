@@ -236,6 +236,10 @@
       title: Send email on alarm
       subtitle: Learn how to configure Rule Engine to send email when new alarm is created.
       pe: false
+    - path: /docs/iot-gateway/integration-with-telegram-bot/
+      title: Notifications and Alarms on your smartphone using Telegram Bot
+      subtitle: Learn how to configure Rule Engine to send notification using Telegram Bot when new alarm is created.
+      pe: false
     - path: /docs/user-guide/rule-engine-2-0/tutorials/create-inactivity-alarm/
       title: Create alarm when the device is offline
       subtitle: Learn how to create an alarm when the device is offline for a certain period of time using RuleEngine.
