@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: Aggregate incoming data stream 
-description: Aggregate data about water cosumption in the building
+description: Aggregate data about water consumption in the building
 
 ---
 
@@ -119,8 +119,14 @@ Note that you can drill down to the chart for particular warehouse by clicking o
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/aggregation/dashboard-part2.png)
 
+## Next steps
 
- 
+{% assign currentGuide = "DataAnalytics" %}{% include templates/guides-banner.md %}
+
+
+
+
+
 
 
 

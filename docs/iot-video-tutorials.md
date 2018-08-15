@@ -425,4 +425,6 @@ You will learn how to:
     </div>
 </div><br>
 
+## Next steps
 
+{% assign currentGuide = "Common State" %}{% include templates/guides-banner.md %}

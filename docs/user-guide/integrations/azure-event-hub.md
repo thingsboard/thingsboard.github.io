@@ -22,3 +22,8 @@ See video tutorial below for step-by-step instruction how to setup Azure Event H
      <iframe src="https://www.youtube.com/embed/Pl1_oXCnP-8" frameborder="0" allowfullscreen></iframe>
  </div>
 </div> 
+
+
+## Next steps
+
+{% assign currentGuide = "ConnectYourDevice" %}{% include templates/guides-banner.md %}

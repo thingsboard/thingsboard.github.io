@@ -75,3 +75,8 @@ Following ThingsBoard server ports need to be accessible outside cluster for dev
 
 ### Load Balancing
 
+
+
+## Next steps
+
+{% assign currentGuide = "InstallationGuides" %}{% include templates/guides-banner.md %}

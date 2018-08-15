@@ -343,8 +343,10 @@ Please refer to the third and fourth links under the **See Also** section to see
 
 - [RPC capabilities](/docs/user-guide/rpc/#server-side-rpc-api) guide - for more information about how RPC works in Thignsboard, please refer to the RPC capabilities guide.
 
-<br/>
-<br/>
+## Next steps
+
+{% assign currentGuide = "DataProcessing" %}{% include templates/guides-banner.md %}
+
 
 
 

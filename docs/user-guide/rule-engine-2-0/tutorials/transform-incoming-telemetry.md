@@ -68,6 +68,9 @@ Download and import attached json [**file**](/docs/user-guide/resources/transfor
 
  
 
+## Next steps
+
+{% assign currentGuide = "DataProcessing" %}{% include templates/guides-banner.md %}
 
 
 

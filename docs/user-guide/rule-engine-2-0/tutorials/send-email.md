@@ -221,5 +221,7 @@ Please refer to the first link under the **See Also** section to see how to do t
 
 - [Create alarm with details](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms-with-details/) guide.
 
-<br/>
-<br/>
+## Next steps
+
+{% assign currentGuide = "DataProcessing" %}{% include templates/guides-banner.md %}
+

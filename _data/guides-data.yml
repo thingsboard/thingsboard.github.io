@@ -1,5 +1,6 @@
 - title: Getting started guides
   subtitle: These guides provide quick overview of main ThingsBoard features. Designed to be completed in 15-30 minutes.
+  id: GettingStartedGuides
   section:
     - path: /docs/getting-started-guides/helloworld/
       title: Hello world
@@ -27,6 +28,7 @@
       pe: false
 - title: Installation guides
   subtitle: Learn how to setup ThingsBoard on various available operating systems.
+  id: InstallationGuides
   section:
     - path: /docs/user-guide/install/windows/
       title: Installing ThingsBoard on Windows
@@ -78,6 +80,7 @@
       pe: false
 - title: Connect your device
   subtitle: Learn how to connect devices based on your connectivity technology or solution.
+  id: ConnectYourDevice
   section:
     - path: /docs/reference/http-api/
       title: Connect devices using ThingsBoard HTTP API
@@ -171,6 +174,7 @@
       video: true
 - title: Data visualization
   subtitle: These guides contain instructions how to configure complex ThingsBoard dashboards
+  id: DataVisualization
   section:
     - path: /docs/iot-video-tutorials/#dashboard-development-guide-part-1-of-3-visualizing-assets-data-using-maps-and-tables
       title: Visualizing assets data using Maps and Tables
@@ -210,6 +214,7 @@
       video: true
 - title: Data processing & actions
   subtitle: Learn how to use ThingsBoard Rule Engine.
+  id: DataProcessing
   section:
     - path: /docs/user-guide/rule-engine-2-0/tutorials/validate-incoming-telemetry/
       title: Validate incoming telemetry
@@ -252,6 +257,7 @@
       pe: trues
 - title: IoT Data analytics
   subtitle: Learn how to use rule engine to perform basic analytics tasks.
+  id: DataAnalytics
   section:
     - path: /docs/user-guide/rule-engine-2-0/tutorials/aggregate-incoming-data-stream/
       title: Aggregate incoming data stream
@@ -273,6 +279,7 @@
 #      pe: false
 - title: Hardware samples
   subtitle: Learn how to connect various hardware platforms to ThingsBoard.
+  id: HardwareSamples
   section:
     - path: /docs/samples/arduino/temperature/
       title: Temperature upload over MQTT using Arduino UNO, ESP8266 and DHT22 sensor
@@ -315,6 +322,7 @@
       video: false
 - title: Advanced features
   subtitle: Learn about advanced ThingsBoard features
+  id: AdvancedFeatures
   section:
     - path: /docs/user-guide/device-connectivity-status/
       title: Connectivity status
@@ -326,7 +334,7 @@
       subtitle: Learn how to track user actions in order to keep audit log.
       pe: false
       video: false
-    - path: /docs/user-guide/audit-log/
+    - path: /docs/user-guide/api-limits/
       title: API limits
       subtitle: Learn how to control API usage, by limiting number of requests from single host during single time unit (Minutes, Hours, etc.)
       pe: false
