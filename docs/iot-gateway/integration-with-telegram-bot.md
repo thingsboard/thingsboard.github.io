@@ -33,7 +33,7 @@ We assume you have completed the following guides and reviewed the articles list
 
   * [Getting Started](/docs/getting-started-guides/helloworld/) guide.
   * [Rule Engine Overview](/docs/user-guide/rule-engine-2-0/overview/).
-  * [Create & clear alarms](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/#use-case) guide.
+  * [Create & clear alarms](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/) guide.
 
 ## Message flow  
 
@@ -58,7 +58,7 @@ Prerequisites :
 
 ### Getting the Chat ID
 
-At the next step, we need to retrieve a Chat ID. The Chat ID is necessary to send messages via the HTTP API. 
+In the next step, we need to retrieve a Chat ID. The Chat ID is needed to send messages via the HTTP API. 
 
 There are several ways to get the Chat ID:
 
@@ -66,13 +66,15 @@ There are several ways to get the Chat ID:
  
     - in the private chat; 
     
+       ![image](/images/gateway/telegram-bot/private-msg-to-bot.png)    
+    
     - in the group where your Bot was added as a member.
+    
+       ![image](/images/gateway/telegram-bot/msg-to-bot-in-chat.png)    
       
-```bash 
-using /BotName "some_text", so that your bot understood you are referring to him. 
-```    
+    <br> where **ThingsBoard_Bot** is name of the Telegram bot.
 
- - Then, open your web browser and enter the following URL:
+ - Next, open your web browser and enter the following URL:
 
 ```bash
 https://api.telegram.org/bot"YOUR_BOT_TOKEN"/getUpdates
@@ -80,27 +82,19 @@ https://api.telegram.org/bot"YOUR_BOT_TOKEN"/getUpdates
 "YOUR_BOT_TOKEN" has to be replaced by the authentication token of your bot
 ```
 
+
+
 From the outcoming data you can find field **'id'**. This is the so-called chat_id. 
 
-  - First option : "message" : {"message_id" : "some_id", "from" : {"**id**" : **337878729**, ...} 
-  - Second option : "chat" : {"**id**" : **-236746831**, "title" : ...}
+ - First option:
 
+![image](/images/gateway/telegram-bot/first-option.png)
 
-Body Template must have 2 parameters: 
+ - Second option:
 
- - chat_id;
+![image](/images/gateway/telegram-bot/second-option.png)
 
- -  text.
-
-this is an example:
-
-```json
-{"chat_id" : "PUT YOUR CHOSEN CHAT_ID", "text" : "SOME MESSAGE YOU WANT TO RECEIVE"}
-```
 After that, you can start to configure Rule engine to use Rest API Call extension.
-
-<br/>
-<br/>
 
 ## Configure Rule Chains
 
@@ -110,7 +104,7 @@ We modified Rule Chain **Create & Clear Alarms** by adding nodes that was descri
 
 <br/>The following screenshots show how the above Rule Chains should look like:
  
-  - **Create/Clear Alarm & Send Email:**
+  - **Create/Clear Alarms & send notifications to Telgram:**
 
 ![image](/images/gateway/telegram-bot/send-to-telegram-chain.png)
 
@@ -120,21 +114,34 @@ We modified Rule Chain **Create & Clear Alarms** by adding nodes that was descri
 
 <br/> 
 
-Download the attached json [**file**](/docs/iot-gateway/resources/create_clear_alarms___send_notifications_to_telgram.json) for the **Create/Clear Alarm & Send Email** rule chain.
+Download the attached json [**file**](/docs/iot-gateway/resources/create_clear_alarms___send_notifications_to_telgram.json) for the **Create/Clear Alarms & send notifications to Telgram** rule chain.
 
 The following section shows you how to modify this rule chain from scratch.
 <br/> 
 
 ### Modify **Create/Clear Alarm & Send Email**
 
-##### Adding the required nodes
+#### Adding the required nodes
 
 In this rule chain, you will create 2 nodes as it will be explained in the following sections:
  
-###### Node A: **Transform Script**
+##### Node A: **Transform Script**
 
 - Add the **Transform Script** node and connect it to the **Create Alarm** node with a relation type **Created**.
- <br>This node will use for creating a body of the message notification using the following script:
+ <br>This node will use for creating a body of the message notification.
+ <br>Body Template must have 2 parameters: 
+  
+   - chat_id;
+  
+   -  text.
+  
+   this is an example of the outbound message:
+  
+```json
+{"chat_id" : "PUT YOUR CHOSEN CHAT_ID", "text" : "SOME MESSAGE YOU WANT TO RECEIVE"}
+```
+  
+ - To do this use the following script: 
  
  {% highlight javascript %}
  var newMsg ={};
@@ -146,7 +153,7 @@ In this rule chain, you will create 2 nodes as it will be explained in the follo
   
 ![image](/images/gateway/telegram-bot/transform-script.png)
    
-###### Node B: **REST API Call**
+##### Node B: **REST API Call**
 - Add the **REST API Call** node and connect it to the **Transform Script** node with a relation type **Success**.
   <br>This node will send full Message payload to the configured REST endpoint. In our case, it is the Telegram REST API.
   <br>At the scope of this tutorial, we will use **'/sendMessage'** action path to refer to Telegram Bot API to send a message.
@@ -205,10 +212,16 @@ curl -v -X POST -d '{"temperature":99}' http://localhost:8080/api/v1/$ACCESS_TOK
 
 You should understand that message won't be sent to the Telegram App when the alarm was updated, only in the case when the alarm will be created. 
 
-Finally, we can see that the message was received with the correct values. 
+Finally, we can see that the message was received with the correct values:
+
+- first option:
+
+![image](/images/gateway/telegram-bot/msg-received-first-way.png)
 
 
-![image](/images/gateway/telegram-bot/msg-received.png)
+- second option: 
+
+![image](/images/gateway/telegram-bot/msg-received-second-way.png)
 
 
 Also, you can:
@@ -223,7 +236,7 @@ Please refer to the links under the **See Also** section to see how to do this.
   
 <br/>
 
-# See Also
+## See Also
 
 - [Create & Clear Alarms: alarm details:](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms-with-details/#step-2-createupdate-alarm) guide - to learn how to configure Alarm Details function in Alarm nodes.
 
