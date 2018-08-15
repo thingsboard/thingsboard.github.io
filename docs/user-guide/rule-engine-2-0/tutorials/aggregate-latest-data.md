@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
-title: Aggregate incoming data stream 
-description: Aggregate data about water cosumption in the building
+title: Aggregate latest telemetry values periodically
+description: Calculate average temperature in the warehouse
 
 ---
 

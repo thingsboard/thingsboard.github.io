@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: Aggregate incoming data stream 
-description: Aggregate data about water cosumption in the building
+description: Aggregate data about water consumption in the building
 
 ---
 
