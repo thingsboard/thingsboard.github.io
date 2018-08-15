@@ -222,10 +222,15 @@ Open TTN Console, navigate to **tb_platfrom** application, to the section **Data
 
 ![image](/images/user-guide/integrations/ttn/ttn-downlink-verified.png)
 
-## Next steps
+## See also
 With this integration you can also configure Downlink converters and trigger required actions using Rule Engine nodes.
 
 - [Integration Overview](/docs/user-guide/integrations/) 
 - [Uplink Converters](/docs/user-guide/integrations/#uplink-data-converter) 
 - [DownLink Converters](/docs/user-guide/integrations/#downlink-data-converter) 
 - [Rule Engine](/docs/user-guide/rule-engine-2-0/re-getting-started/) 
+
+
+## Next steps
+
+{% assign currentGuide = "ConnectYourDevice" %}{% include templates/guides-banner.md %}

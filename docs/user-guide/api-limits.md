@@ -51,3 +51,7 @@ Other requests from same host in this time interval would be rejected.
 
 - Requests from localhost and from 127.0.0.1 are not limited.
 - All requests from eveldomain.com are rejected.
+
+## Next steps
+
+{% assign currentGuide = "AdvancedFeatures" %}{% include templates/guides-banner.md %}

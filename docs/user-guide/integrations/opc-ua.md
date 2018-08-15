@@ -261,7 +261,7 @@ To verify our integration,
 
 ![image](/images/user-guide/integrations/opc-ua/airconditioners-dashboard-details.png)
 
-## Next steps
+## See also
 
 - [Integration Overview](/docs/user-guide/integrations/) 
 - [Uplink Converters](/docs/user-guide/integrations/#uplink-data-converter) 
@@ -269,3 +269,6 @@ To verify our integration,
 - [Rule Engine](/docs/user-guide/rule-engine-2-0/re-getting-started/) 
 
   
+## Next steps
+
+{% assign currentGuide = "ConnectYourDevice" %}{% include templates/guides-banner.md %}

@@ -236,18 +236,11 @@ Finally, we are able to see our new dashboard. Now we can edit the dashboard to
 ![image](/images/helloworld/new-dashboard.png)
 {: refdef}
 
+
  
 ## Next steps
 
-Get started with the new [**Rule Engine**](/docs/user-guide/rule-engine-2-0/re-getting-started/) to process your data.
-Explore guides related to main ThingsBoard features:
-
- - [Device attributes](/docs/user-guide/attributes/) - how to use device attributes.
- - [Telemetry data collection](/docs/user-guide/telemetry/) - how to collect telemetry data.
- - [Using RPC capabilities](/docs/user-guide/rpc/) - how to send commands to/from devices.
- - [Rule Engine](/docs/user-guide/rule-engine/) - how to use rule engine to analyze data from devices.
- - [Data Visualization](/docs/user-guide/visualization/) - how to visualize collected data.
-
+{% assign currentGuide = "GettingStartedGuides" %}{% include templates/guides-banner.md %}
 
 ## Your feedback
 
