@@ -1,24 +1,25 @@
 ---
 layout: docwithnav
 title: Create and Clear Alarms with details
-description: Create and Clear Alarms
+description: Create and Clear Alarms with details
 
 ---
 
 * TOC
 {:toc}
 
+
 ## Use case
 
+This tutorial is based on the [create & clear alarms](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/#use-case) tutorial and it's use case. 
+We will reuse the rule chain from the above-mentioned tutorial and will configure the Alarm Details function in the Create and Clear Alarm nodes.
 Let's assume your device is using DHT22 sensor to collect and push temperature readings to ThingsBoard. 
 DHT22 sensor is good for -40 to 80°C temperature readings. We want generate Alarms if temperature is out of good range.
 
-In this tutorial we will configure ThingsBoard Rule Engine to 
+In this tutorial we will configure ThingsBoard Rule Engine to: 
 
-- Create or Update existing Alarm if temperature > 80°C or temperature < -40°C
-- Clear Alarm if temperature > -40°C and < 80°C
 - Count number of critical temperature updates for each device and save this info in Alarm details.
-- Save latest critical temperature value and timestamp in Alarm details
+- Save latest critical temperature value and timestamp in Alarm details.
 
 ## Prerequisites 
 
@@ -26,38 +27,60 @@ We assume you have completed the following guides and reviewed the articles list
 
   * [Getting Started](/docs/getting-started-guides/helloworld/) guide.
   * [Rule Engine Overview](/docs/user-guide/rule-engine-2-0/overview/).
+  * [Create & clear alarms](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/) guide.
+  
+# Message flow  
 
-## Step 1: Adding temperature threshold check node
-Here is how our initial Root Rule Chain should look like. Please note that we have removed irrelevant rule nodes from the root rule chain.
+In this section, we explain the purpose of each node in this tutorial:
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/alarms/initial root chain.png)
+- Node A: [**Create alarm**](/docs/user-guide/rule-engine-2-0/action-nodes/#create-alarm-node) node.
+  - Creates or Updates an  alarm if the published temperature is not at expected time range (filter script node returns True).    
+- Node B: [**Clear alarm**](/docs/user-guide/rule-engine-2-0/action-nodes/#clear-alarm-node) node.
+  - Clears alarm if it exists in case if the published temperature is in expected time range (script node returns False). 
+- Node C: **Rule Chain** node.
+  - Forwards incoming Message to specified Rule Chain **Create & Clear Alarms with details**.     
 
-We will modify default rule chain and will add **script** filter node with temperature threshold check script. 
-If **temperature** is in expected interval, script will return **False**, otherwise **True** will be returned.
-{% highlight javascript %}
-return msg.temperature < -40 || msg.temperature > 80;
-{% endhighlight %}
+<br/>  
+  
+# Configure Rule Chains  
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/alarms/script-threshold.png)
+In this tutorial, we only modified **Create & Clear Alarms** rule chain, namely configured Alarm Details function in nodes that was described above in the section [Message flow](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms-with-details/#message-flow)<br> Also, we renamed this Rule Chain to **Create & Clear Alarms with details**.
 
-**Script** node should be connected with **Save timeseries** node with relation **Success**. 
-After telemetry from device will be saved into the database, original message will be passed to our script node. 
-
-![image](/images/user-guide/rule-engine-2-0/tutorials/alarms/script-added.png)
+<br/>The following screenshots show how the above Rule Chains should look like:
  
-## Step 2: Create/Update Alarm
+  - **Create & Clear Alarms with details:**
+
+![image](/images/user-guide/rule-engine-2-0/tutorials/alarms/create-clear-alarm-chain.png)
+
+  - **Root Rule Chain:**
+
+![image](/images/user-guide/rule-engine-2-0/tutorials/alarms/root-rule-chain.png)
+
+<br/> 
+
+Download the attached json [**file**](/docs/user-guide/rule-engine-2-0/tutorials/resources/create___clear_alarms_with_details.json) for the **Create & Clear Alarms with details:** rule chain. 
+Create Node **C** as shown on the image above in the root rule chain to forward telemetry to the imported rule chain.
+<br/>
+<br/>
+
+The following section shows you how to modify this rule chain, specifically: rule nodes [**A**](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms-with-details/#node-a-create-alarm) and [**B**](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms-with-details/#node-b-clear-alarm).
+
+
+## Modify **Create & Clear Alarms with details:**
+
+### Modify the required nodes
+
+In this rule chain, you will modify 2 nodes as it will be explained in the following sections:
+
+#### Node A: **Create alarm**
+
 If published temperature **is not in** expected time range (**script** node returns **True**) we want to create an Alarm.
 We want to add current **temperature** and **timestamp** into Alarm Details field.
 Also we want to increment **count** field in Alarm Details if alarm already exist, otherwise set count to 1.
  
-For making it we will add **Create Alarm** node.
+For making it we will overwrite **Details** function:
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/alarms/add-create-alarm.png)
-
-
-**Alarm Type** - **Critical Temperature**
-
-**Alarm Details** function:
+**Details** function:
 {% highlight javascript %}
 var details = {};
 details.temperature = msg.temperature;
@@ -73,23 +96,20 @@ if (metadata.prevAlarmDetails) {
 return details;
 {% endhighlight %}
 
-**Alarm Details** function create required **deatils** object with initial parameters. Then, in **if** statement, we verify is it a new Alarm or Alarm already exist.
+**Details** function create required **deatils** object with initial parameters. Then, in **if** statement, we verify is it a new Alarm or Alarm already exist.
 If exist - take previous **count** field and increment it.
 
-Connect it with **script** node using **True** relation.
-
-![image](/images/user-guide/rule-engine-2-0/tutorials/alarms/create-added.png)
+![image](/images/user-guide/rule-engine-2-0/tutorials/alarms/create-alarm.png)
 
 If new Alarm was created in **Create Alarm** node it is passed to other nodes via relation **Created** if they exist. 
 If Alarm was updated - it is passed to other nodes via relation **Updated** if they exist. 
 
-## Step 2: Clear Alarm
+#### Node B: **Clear Alarm**
+
 If published temperature **is in** expected time range (**script** node returns **False**) we want to clear an existing Alarm.
 Also during clearing, we want to add latest **temperature** to the existing Alarm details.
 
-For making it we will add **Create Alarm** node.
-
-![image](/images/user-guide/rule-engine-2-0/tutorials/alarms/add-clear-alarm.png)
+For making it we will overwrite **Details** function:
 
 **Alarm Details** function:
 {% highlight javascript %}
@@ -102,24 +122,27 @@ details.clearedTemperature = msg.temperature;
 return details;
 {% endhighlight %}
 
-Connect it with **script** node using **False** relation.
-
-![image](/images/user-guide/rule-engine-2-0/tutorials/alarms/clear-added.png)
+![image](/images/user-guide/rule-engine-2-0/tutorials/alarms/clear-alarm.png)
 
 If **Clear Alarm** node could not find existing Alarm, nothing is changed and original message is passed to other nodes via relation **False** if they exist. 
 If Alarm do exist - it is cleared and passed to other nodes via relation **Cleared**.
 
+
 Chain configuration is finished and we need to **save it**.
 
-## Step 3: Verify Results
+<br/>
 
-### Configure Device and Dashboard 
-We need to create Device **Thermostat Home**:
+# Configure Dashboard 
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/alarms/create-device.png)
+Download the attached json [**file**](/docs/user-guide/resources/thermostat_dashboard.json) for the dashboard indicated in this tutorial and import it.
 
+- Go to **Dashboards** -> **Add new Dashboard** -> **Import Dashboard** and drop the downloaded json file.
 
-Next we will create Dashboard for all **Thermostat** devices and add Alarm widget on it. Create new Dashboard:
+Also you can Create Dashboard from scratch and the following section show you how to do this:
+
+## Creating Dashboard 
+
+We will create Dashboard for all **Thermostat** devices and add Alarm widget on it. Create new Dashboard:
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/alarms/add-dashboard.png)
 
@@ -137,7 +160,8 @@ Also add additional **alarm fields**:
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/alarms/alarm-widget-config.png)
 
-### Post telemetry and verify
+# Post telemetry and verify
+
 For posting device telemetry we will use Rest API ([link](/docs/reference/http-api/#telemetry-upload-api)). For this we will need to
 copy device access token from then device **Thermostat Home**. 
 
@@ -169,11 +193,20 @@ curl -v -X POST -d '{"temperature":30}' http://localhost:8080/api/v1/$ACCESS_TOK
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/alarms/alarm-cleared.png)
 
-## TL;DR
+Also, you can see how to:
 
-Download and import attached [**rule chain json file**](/docs/user-guide/resources/temperature_alarm_chain.json) with a rule chain from this tutorial. Don't forget to mark new rule chain as "root".
+ - Define an additional logic for alarm processing, for example, sending an email or sending notification to Telegram App.
+ 
+ Please refer links under the **See Also** section to see how to do this.
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/make-root.png)
+<br>
 
-Also you can import attached [**thermostat dashboard**](/docs/user-guide/resources/thermostat_dashboard.json)
+# See Also
 
+ - [Send Email](/docs/user-guide/rule-engine-2-0/tutorials/send-email/) guide.
+ 
+ - [Notifications and Alarms on your smartphone using Telegram Bot](/docs/iot-gateway/integration-with-telegram-bot/) guide.
+
+# Next steps
+
+{% assign currentGuide = "DataProcessing" %}{% include templates/guides-banner.md %}
