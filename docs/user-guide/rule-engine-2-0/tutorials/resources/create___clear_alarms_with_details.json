@@ -32,7 +32,7 @@
         "debugMode": false,
         "configuration": {
           "alarmType": "Critical Temperature",
-          "alarmDetailsBuildJs": "var details = {};\ndetails.temperature = msg.temperature;\ndetails.ts = metadata.ts;\n\nif (metadata.prevAlarmDetails) {\n    var prevDetails = JSON.parse(metadata.prevAlarmDetails);\n    details.count = prevDetails.count + 1;\n} else {\n    details.count = 1;\n}\n\nreturn details;",
+          "alarmDetailsBuildJs": "var details = {};\ndetails.temperature = msg.temperature;\n\nif (metadata.prevAlarmDetails) {\n    var prevDetails = JSON.parse(metadata.prevAlarmDetails);\n    details.count = prevDetails.count + 1;\n} else {\n    details.count = 1;\n}\n\nreturn details;",
           "severity": "CRITICAL",
           "propagate": true
         }

@@ -1,6 +1,6 @@
 ---
 layout: docwithnav
-title: Create and Clear Alarms with details
+title: Working with Alarm details
 description: Create and Clear Alarms with details
 
 ---
@@ -19,7 +19,7 @@ DHT22 sensor is good for -40 to 80°C temperature readings. We want generate Ala
 In this tutorial we will configure ThingsBoard Rule Engine to: 
 
 - Count number of critical temperature updates for each device and save this info in Alarm details.
-- Save latest critical temperature value and timestamp in Alarm details.
+- Save latest critical temperature value in Alarm details.
 
 ## Prerequisites 
 
@@ -75,7 +75,7 @@ In this rule chain, you will modify 2 nodes as it will be explained in the follo
 #### Node A: **Create alarm**
 
 If published temperature **is not in** expected time range (**script** node returns **True**) we want to create an Alarm.
-We want to add current **temperature** and **timestamp** into Alarm Details field.
+We want to add current **temperature** into Alarm Details field.
 Also we want to increment **count** field in Alarm Details if alarm already exist, otherwise set count to 1.
  
 For making it we will overwrite **Details** function:
@@ -84,7 +84,6 @@ For making it we will overwrite **Details** function:
 {% highlight javascript %}
 var details = {};
 details.temperature = msg.temperature;
-details.ts = metadata.ts;
 
 if (metadata.prevAlarmDetails) {
     var prevDetails = JSON.parse(metadata.prevAlarmDetails);
@@ -96,7 +95,7 @@ if (metadata.prevAlarmDetails) {
 return details;
 {% endhighlight %}
 
-**Details** function create required **deatils** object with initial parameters. Then, in **if** statement, we verify is it a new Alarm or Alarm already exist.
+**Details** function create required **details** object with initial parameters. Then, in **if** statement, we verify is it a new Alarm or Alarm already exist.
 If exist - take previous **count** field and increment it.
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/alarms/create-alarm.png)
@@ -151,12 +150,19 @@ Press **Edit** dashboard and **add alias** that will be resolved to all devices 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/alarms/add-alias.png)
 
 Add **Alarm widget** to the Dashboard (Add new widget -> Alarm widget bundle -> Alarms). Select configured alias **entity alarm source**. 
-Also add additional **alarm fields**:
+Also, add additional **alarm fields**.
 
-- details.ts
-- details.temperature
-- details.count
-- details.clearedTemperature
+- details.temperature.
+- details.count.
+- details.clearedTemperature. 
+
+And rename label of each field by press **edit** button on the field:
+
+ - From: -> To:
+ 
+   - details.temperature        -> Event Temperature.
+   - details.count              -> Events count.
+   - details.clearedTemperature -> Clear Temperature.
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/alarms/alarm-widget-config.png)
 
