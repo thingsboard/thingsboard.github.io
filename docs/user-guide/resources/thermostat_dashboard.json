@@ -2,7 +2,7 @@
   "title": "Thermostat Dashboard",
   "configuration": {
     "widgets": {
-      "4a1c2333-3960-8322-9f44-bebfea6e04da": {
+      "15e8f40c-dda0-7544-033a-4caa93de9156": {
         "isSystemType": true,
         "bundleAlias": "alarm_widgets",
         "typeAlias": "alarms_table",
@@ -54,7 +54,7 @@
                 "label": "Created time",
                 "color": "#2196f3",
                 "settings": {},
-                "_hash": 0.4508271956422951
+                "_hash": 0.6039882695780543
               },
               {
                 "name": "originator",
@@ -62,7 +62,7 @@
                 "label": "Originator",
                 "color": "#4caf50",
                 "settings": {},
-                "_hash": 0.0285528552528842
+                "_hash": 0.6932374929882379
               },
               {
                 "name": "type",
@@ -70,7 +70,7 @@
                 "label": "Type",
                 "color": "#f44336",
                 "settings": {},
-                "_hash": 0.35919431423695647
+                "_hash": 0.7067168207535319
               },
               {
                 "name": "severity",
@@ -78,7 +78,7 @@
                 "label": "Severity",
                 "color": "#ffc107",
                 "settings": {},
-                "_hash": 0.13515161923658692
+                "_hash": 0.8730886704001681
               },
               {
                 "name": "status",
@@ -86,63 +86,43 @@
                 "label": "Status",
                 "color": "#607d8b",
                 "settings": {},
-                "_hash": 0.3662952889020954
-              },
-              {
-                "name": "details.ts",
-                "type": "alarm",
-                "label": "details.ts",
-                "color": "#9c27b0",
-                "settings": {
-                  "columnWidth": "0px",
-                  "useCellStyleFunction": false,
-                  "cellStyleFunction": "",
-                  "useCellContentFunction": false,
-                  "cellContentFunction": ""
-                },
-                "_hash": 0.5354567914602282
+                "_hash": 0.6517612369844434
               },
               {
                 "name": "details.temperature",
                 "type": "alarm",
-                "label": "details.temperature",
-                "color": "#8bc34a",
+                "label": "Event Temperature",
+                "color": "#9c27b0",
                 "settings": {
                   "columnWidth": "0px",
                   "useCellStyleFunction": false,
-                  "cellStyleFunction": "",
-                  "useCellContentFunction": false,
-                  "cellContentFunction": ""
+                  "useCellContentFunction": false
                 },
-                "_hash": 0.9622496122447106
+                "_hash": 0.7917790026159572
               },
               {
                 "name": "details.count",
                 "type": "alarm",
-                "label": "details.count",
-                "color": "#3f51b5",
+                "label": "Events count",
+                "color": "#8bc34a",
                 "settings": {
                   "columnWidth": "0px",
                   "useCellStyleFunction": false,
-                  "cellStyleFunction": "",
-                  "useCellContentFunction": false,
-                  "cellContentFunction": ""
+                  "useCellContentFunction": false
                 },
-                "_hash": 0.2101579113129879
+                "_hash": 0.13933286945015033
               },
               {
                 "name": "details.clearedTemperature",
                 "type": "alarm",
-                "label": "details.clearedTemperature",
-                "color": "#e91e63",
+                "label": "Clear Temperature",
+                "color": "#3f51b5",
                 "settings": {
                   "columnWidth": "0px",
                   "useCellStyleFunction": false,
-                  "cellStyleFunction": "",
-                  "useCellContentFunction": false,
-                  "cellContentFunction": ""
+                  "useCellContentFunction": false
                 },
-                "_hash": 0.6214778857016892
+                "_hash": 0.8914208568345217
               }
             ],
             "entityAliasId": "b304eb04-fa97-165e-c623-bacfe9f59f97",
@@ -154,7 +134,7 @@
           "widgetStyle": {},
           "actions": {}
         },
-        "id": "4a1c2333-3960-8322-9f44-bebfea6e04da"
+        "id": "15e8f40c-dda0-7544-033a-4caa93de9156"
       }
     },
     "states": {
@@ -164,7 +144,7 @@
         "layouts": {
           "main": {
             "widgets": {
-              "4a1c2333-3960-8322-9f44-bebfea6e04da": {
+              "15e8f40c-dda0-7544-033a-4caa93de9156": {
                 "sizeX": 24,
                 "sizeY": 13,
                 "row": 0,

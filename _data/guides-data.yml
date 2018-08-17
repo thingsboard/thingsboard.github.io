@@ -232,9 +232,17 @@
       title: Create & clear alarms
       subtitle: Learn how to configure Rule Engine to create and clear alarms based on incoming data from devices.
       pe: false
+    - path: /docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms-with-details/
+      title: Working with Alarm details
+      subtitle: Learn how to configure Alarm Details function in Alarm nodes and how to add an Alarm widget to the dashboard.
+      pe: false
     - path: /docs/user-guide/rule-engine-2-0/tutorials/send-email/
       title: Send email on alarm
       subtitle: Learn how to configure Rule Engine to send email when new alarm is created.
+      pe: false
+    - path: /docs/user-guide/rule-engine-2-0/tutorials/send-email-to-customer/
+      title: Send email to customer
+      subtitle: Learn how to configure Rule Engine to send email to the customer of the assigned device.
       pe: false
     - path: /docs/iot-gateway/integration-with-telegram-bot/
       title: Notifications and Alarms on your smartphone using Telegram Bot
