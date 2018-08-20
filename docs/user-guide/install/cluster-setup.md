@@ -14,8 +14,8 @@ This guide will help you to setup ThingsBoard in cluster mode.
 
 ### Assumptions
 
-ThingsBoard requires Zookeeper for cluster coordination , Cassandra as a NoSQL database and Redis for cluster cache.
-You can host Cassandra and Redis  on the same nodes where you install ThingsBoard or on separate nodes.
+ThingsBoard requires Zookeeper for cluster coordination, Cassandra as a NoSQL database and Redis for cluster cache.
+You can host Cassandra and Redis on the same nodes where you install ThingsBoard or on separate nodes.
 
 We assume following topology
  
@@ -32,7 +32,7 @@ Let's assume following hostnames:
  - **c1** and **c2** - Cassandra hosts 
  - **r1** and/or **r2** (for redis cluster)
  
-We will use default ports for Cassandra (9042) , Zookeeper(2181)i and Redis(6379).
+We will use default ports for Cassandra (9042), Zookeeper(2181) and Redis(6379).
 
 ### Installation
 
