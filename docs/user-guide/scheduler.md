@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: Scheduler
-description: Scheduler Guide 
+description: Scheduler Guide
 
 ---
 
