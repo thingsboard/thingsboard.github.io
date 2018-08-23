@@ -3,7 +3,7 @@
 REM Set ThingsBoard host to "demo.thingsboard.io" or "localhost"
 set THINGSBOARD_HOST=demo.thingsboard.io
 
-REM Replace YOUR_ACCESS_TOKEN with one from Device credentials window.
+REM Replace YOUR_ACCESS_TOKEN with one from Device details panel.
 set ACCESS_TOKEN=YOUR_ACCESS_TOKEN
 
 REM Read serial number and firmware version attributes
