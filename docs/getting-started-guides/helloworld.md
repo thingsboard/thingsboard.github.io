@@ -36,11 +36,11 @@ All the resources used in this tutorial are listed below for your convenience.
   
 <div id="video">  
     <div id="video_wrapper">
-        <iframe src="https://www.youtube.com/embed/dIKXFxpfB_Q" frameborder="0" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/TwJJbxwQX5k" frameborder="0" allowfullscreen></iframe>
     </div>
 </div>
 
-## Video tutorial resources
+## Tutorial resources
 
 #### Live Demo and the installation guides
 
