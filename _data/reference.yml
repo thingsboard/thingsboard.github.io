@@ -13,5 +13,7 @@ toc:
     path: /docs/reference/performance-tools/
   - title: How to repeate the tests
     path: /docs/reference/performance-tests/
+- title: PE Demo Getting Started
+  path: /docs/reference/pe-demo-getting-started/
 - title: Release Notes
   path: https://github.com/thingsboard/thingsboard/releases/
