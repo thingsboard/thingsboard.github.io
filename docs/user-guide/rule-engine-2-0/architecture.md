@@ -29,7 +29,7 @@ Each Rule Chain Actor represent single rule chain configured by the user. Rule C
 
 Rule Node actor is responsible for processing of the incoming messages. The logic of message processing is highly customizable.
 There are many built-in implementations of the RuleNodes and you can develop your own, custom rule node implementations as well.
-See [Customization Guide](/docs/user-guide/rule-engine-2-0/architecture/#customization-guide) for more details.
+See [Customization Guide](/docs/user-guide/contribution/customization-guide/) for more details.
  
 ### Message Queue
 
@@ -72,29 +72,3 @@ Persistent message queue that stores all data in PostgreSQL DB. Available in Thi
 #### Custom message queue implementations
  
 You can implement own Message Queue since the project is open-source.   
-
-### Customization guide
-
-In order to create new rule node, you should implement the TbNode interface
-
-```java
-package org.thingsboard.rule.engine.api;
-
-...
-
-public interface TbNode {
-
-    void init(TbContext ctx, TbNodeConfiguration configuration) throws TbNodeException;
-
-    void onMsg(TbContext ctx, TbMsg msg) throws ExecutionException, InterruptedException, TbNodeException;
-
-    void destroy();
-
-}
-```
-
-and annotate your implementation with the following annotation:
-
-```java
-org.thingsboard.rule.engine.api.RuleNode 
-```
