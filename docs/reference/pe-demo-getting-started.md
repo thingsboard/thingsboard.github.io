@@ -1,14 +1,14 @@
 ---
 layout: docwithnav
-title: ThingsBoard PE Live Demo
-description: ThingsBoard PE Live Demo Overview
+title: ThingsBoard PE Cloud Getting Started
+description: ThingsBoard PE Cloud Overview
 
 ---
 
-Once you signed-up to Thingsboard PE [Live Demo](https://cloud.thingsboard.io/) we automatically create separate Tenant account for you.
+Once you signed-up to [ThingsBoard PE Cloud](https://cloud.thingsboard.io/) we automatically create separate Tenant account for you.
 The email and password you have specified allows you to login as Tenant Administrator. 
 Also, we automatically provision sample Smart Metering application for your Tenant.
-The purpose of this application is to show how different Thingsboard features are used to implement smart metering use cases.
+The purpose of this application is to show how different ThingsBoard features are used to implement smart metering use cases.
 Let's briefly review those use cases one-by-one:
 
  * [**Provisioning of devices and assets**](/docs/reference/pe-demo-getting-started/#smart-metering-model-definition) - we have modeled two Buildings, four Apartments and 12 smart devices 
@@ -62,7 +62,7 @@ Asset and Device Groups can be used for resolving dashboard aliases.
 More information can be found in [Device & Asset groups](/docs/user-guide/groups/) documentation.
 
 In device details page, in the 'Attributes' tab, you can find server attributes that are responsible for handling device lifecycle events. 
-Thingsboard monitors device state (online/offline) and generates device offline events if a device is offline is more then 60 seconds.
+ThingsBoard monitors device state (online/offline) and generates device offline events if a device is offline is more then 60 seconds.
 You can generate alarms and send notifications when your critical devices are going offline.
 
 More information about Device Connectivity Status events can be found in [Device Connectivity Status](/docs/user-guide/device-connectivity-status/) documentation.   
@@ -202,7 +202,7 @@ More information about RPC feature you can find in [RPC Guide](/docs/user-guide/
 This Event will update 'State' attribute for all Apartments with the 'silent' value. This action repeated every day. 
 
 
-More information about Thingsboard Scheduler you can find in [Scheduler Guide](/docs/user-guide/scheduler/).
+More information about ThingsBoard Scheduler you can find in [Scheduler Guide](/docs/user-guide/scheduler/).
 
 ## White Labeling
 
@@ -281,11 +281,11 @@ You can find list of all supported integration types in [Integration Tutorials](
 More information about Integrations & Converters you can find in [Platform Integrations Overview](/docs/user-guide/integrations/).
 
 ## Configure mail settings
-Some Thingsboard features are using Tenant Email Settings for sending emails - for reporting, send alert notifications, etc. 
-By default, Tenant Email Settings are blank and if you want to receive emails from the Thingsboard you will need to connect Thingsboard to external Email Server.
+Some ThingsBoard features are using Tenant Email Settings for sending emails - for reporting, send alert notifications, etc. 
+By default, Tenant Email Settings are blank and if you want to receive emails from the ThingsBoard you will need to connect ThingsBoard to external Email Server.
 It can be a Gmail or SendGrid or any other SMTP provider. Just open 'System Settings' -> 'Mail Server' and clear 'Use System Mail Server Settings' checkbox.
 
-**Important** - if you will not make this configuration, you will not be able to send emails from the Thingsboard.
+**Important** - if you will not make this configuration, you will not be able to send emails from the ThingsBoard.
  
 ![image](/images/reference/pe-demo/smtp-settings.png)
  

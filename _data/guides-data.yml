@@ -26,6 +26,12 @@
       keywords: device management attributes
       video: false
       pe: false
+    - path: /docs/reference/pe-demo-getting-started/
+      title: ThingsBoard PE Cloud Getting Started
+      subtitle: Learn about different ThingsBoard PE features using Demo Smart Metering application.
+      keywords: professional edition
+      video: true
+      pe: true
 - title: Installation guides
   subtitle: Learn how to setup ThingsBoard on various available operating systems.
   id: InstallationGuides
