@@ -5,11 +5,29 @@ description: ThingsBoard PE Live Demo Overview
 
 ---
 
-* TOC
-{:toc}
+Once you signed-up to Thingsboard PE [Live Demo](https://cloud.thingsboard.io/) we automatically create separate Tenant account for you.
+The email and password you have specified allows you to login as Tenant Administrator. 
+Also, we automatically provision sample Smart Metering application for your Tenant.
+The purpose of this application is to show how different Thingsboard features are used to implement smart metering use cases.
+Let's briefly review those use cases one-by-one:
 
-After you have signed-up to Thingsboard PE [Live Demo](https://cloud.thingsboard.io/) you will have Smart Metering Demo configured for your Tenant.
-The purpose of this guide is to show how different Thingsboard features are used in the scope of the Smart Metering Demo.
+ * [**Provisioning of devices and assets**](/docs/reference/pe-demo-getting-started/#smart-metering-model-definition) - we have modeled two Buildings, four Apartments and 12 smart devices 
+ in those apartments. We have created realistic data emulators that are launched and periodically generate data used by the dashboards and analytics.
+ * [**Grouping the devices and assets**](/docs/reference/pe-demo-getting-started/#device--asset-groups) - we have grouped devices and assets based on their type for convenience.
+ * [**Data visualization**](/docs/reference/pe-demo-getting-started/#dashboards) - we have created complex multi-page navigation Dashboard that visualizes Buildings, Apartments, and data from Devices. 
+ * [**Scheduling**](/docs/reference/pe-demo-getting-started/#scheduling) - we have scheduled configuration updates to the devices.
+ * [**Reporting**](/docs/reference/pe-demo-getting-started/#demo-reporting) - we have scheduled reports to be generated.
+ * [**Data Export**](/docs/reference/pe-demo-getting-started/#exporting) - platform allows to export data from the dashboards.
+ * [**White labeling**](/docs/reference/pe-demo-getting-started/#exporting) - platform web interface allows you to customize your logo, color scheme, login page and apply custom translations.
+ * [**Customer Dashboards**](/docs/reference/pe-demo-getting-started/#customers) - we have automatically created multiple customer accounts and assign certain devices to those accounts. 
+ You can login and review the dashboards from the customer point of view.
+ * [**Aggregation and alarms**](/docs/reference/pe-demo-getting-started/#rule-chains) - application automatically collect statistics about total power/water consumption and generate alarms 
+ if certain thresholds are violated.
+ * [**Integrations and converters**](/docs/reference/pe-demo-getting-started/#integrations--converters) - entry point to quickly connect physical devices using 
+ NB IoT, SigFox, LoRaWAN or other connectivity solutions and platforms.
+ * [**Custom widgets**](/docs/reference/pe-demo-getting-started/#custom-widgets) - platform contains few examples of custom data visualization widgets.
+ * [**Custom mail settings**](/docs/reference/pe-demo-getting-started/#custom-widgets) - learn how to configure your own email server to start receiving email alerts and reports.
+ 
 
 ## Smart Metering Model Definition
 
@@ -22,8 +40,8 @@ Devices submit telemetry every 30 seconds.
 
 We want to know how much water/energy was consumed on Building level. Buildings and Apartments have aggregation telemetry that represents an aggregated value from all related devices.
 
-If Energy consumption during the last 20 minutes is more than 40 kWh then we want to generate a Critical Alert for that Building. Otherwise, if consumption 
-is lower then 10 kWh - we want to clear current Building Alert if it exists.
+If Energy consumption during the last 20 minutes is more than 40 kWh then we want to generate a Critical Alarm for that Building. Otherwise, if consumption 
+is lower then 10 kWh - we want to clear current Building Alarm if it exists.
 
 
 ## Device & Asset Groups
@@ -45,7 +63,7 @@ More information can be found in [Device & Asset groups](/docs/user-guide/groups
 
 In device details page, in the 'Attributes' tab, you can find server attributes that are responsible for handling device lifecycle events. 
 Thingsboard monitors device state (online/offline) and generates device offline events if a device is offline is more then 60 seconds.
-You can generate alerts and send notifications when your critical devices are going offline.
+You can generate alarms and send notifications when your critical devices are going offline.
 
 More information about Device Connectivity Status events can be found in [Device Connectivity Status](/docs/user-guide/device-connectivity-status/) documentation.   
 
@@ -212,7 +230,7 @@ to the 'Smart Metering Aggregation' Rule Chain.
 For each Device 'Generator Node' is created that generates device's telemetry and forward it to the 'Root Rule Chain'.
 
 
-#### Aggregation:
+#### Aggregation
 In our Demo scenario, devices submit their telemetry (water & energy consumption) every 30 seconds. And we want to know 
 how much water/energy was consumed on Building level. So we want to sum all the measurements from all devices in the building within 20 minutes intervals.
 'Smart Metering Aggregation' Rule Chain perform this aggregation using this algorithm:
@@ -226,7 +244,7 @@ how much water/energy was consumed on Building level. So we want to sum all the 
 
 After Aggregated telemetry saved, a message is routed to the 'Smart Metering Alerts' Rule Chain for generating Alerts if consumption threshold is reached.   
 
-#### Alerts:
+#### Alerts
 If Energy consumption during the last 20 minutes is more than 40 kWh then we want to generate a Critical Alert for that Building. Otherwise, if consumption 
 is lower then 10 kWh - we want to clear current Building Alert if it exists.
 'Smart Metering Alerts' Rule Chain implements this logic.
