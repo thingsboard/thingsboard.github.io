@@ -372,7 +372,7 @@ hidetoc: "true"
                                     </div>
                                     <div class="cloud-provider-desc">
                                         <p>Deploy using Azure marketplace. Pay only when you use the platform. Ideal for evaluation and PoCs.</p>
-                                        <p><span class="cloud-price">$0.39/hr</span><span class="cloud-price-desc"> for software + infrastructure usage fees</span></p>
+                                        <p><span class="cloud-price">$0.78/hr</span><span class="cloud-price-desc"> for software + infrastructure usage fees</span></p>
                                     </div>
                                 </div>                                                            
                             </div>
