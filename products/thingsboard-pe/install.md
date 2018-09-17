@@ -222,8 +222,8 @@ hidetoc: "true"
                                     <div class="cloud-provider-desc">
                                         <p>Install ThingsBoard PE on any cloud or on premises and pay one-time license fee per server and optional software updates subscription for subsequent years of usage.
                                          Save up to 40% comparing to per hour rate on the license fee.</p>
-                                        <p><span class="cloud-price">$1,999.00/server</span><span class="cloud-price-desc"> for the 1st year</span><br/>
-                                        <span class="cloud-price-onwards">$799.00/server</span><span class="cloud-price-onwards-desc"> for optional software updates starting 2nd year</span></p>
+                                        <p><span class="cloud-price">$2,999.00/server</span><span class="cloud-price-desc"> for the 1st year</span><br/>
+                                        <span class="cloud-price-onwards">$1199.00/server</span><span class="cloud-price-onwards-desc"> for optional software updates starting 2nd year</span></p>
                                     </div>
                                 </div>                                       
                             </div>
