@@ -56,6 +56,8 @@ By default, ThingsBoard uses embedded HSQLDB instance which is very convenient f
 Alternatively, you can configure your platform to use either scalable Cassandra DB cluster or various SQL databases. 
 If you prefer to use an SQL database, we recommend PostgreSQL.
 
+Additionally, starting from 2.1.2 version, you can configure your platform to use two databases - SQL database for entities data and Cassandra DB cluster for timeseries data. 
+
 ##### [Optional] SQL Database: PostgreSQL
 
 {% include templates/optional-db.md %}
@@ -93,11 +95,8 @@ For **PostgreSQL**:
 For **Cassandra DB**:
 
 Locate and set database type configuration parameter to 'cassandra'.
- 
-```text
-database:
-  type: "${DATABASE_TYPE:cassandra}" # cassandra OR sql
-```
+
+{% include templates/db-configuration.md %}
 
 **NOTE:** If your Cassandra server is installed on the remote machine or it is bind to custom interface/port, you need to specify it in thingsboard.yml as well.
 Please, tefer to the [**configuration guide**](/docs/user-guide/install/config/) for the detailed description of **thingsboard.yml** file and what properties are used for cassandra connection configuration.

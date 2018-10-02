@@ -117,19 +117,7 @@ $ sudo vi /usr/share/thingsboard/conf/thingsboard.conf
 $ sudo vi /usr/share/thingsboard/conf/thingsboard.yml
 ```
 
-- locate the following lines:
-
-```
-   database:
-     type: "${DATABASE_TYPE:sql}" # cassandra OR sql
-```
-
-- change ```database.type``` value from ```sql``` to ```cassandra```:
-
-```
-   database:
-     type: "${DATABASE_TYPE:cassandra}" # cassandra OR sql
-```
+{% include templates/db-configuration-aws.md %}
 
 #### Upgrade Database
 
@@ -278,19 +266,7 @@ $ sudo vi /usr/share/thingsboard/conf/thingsboard.conf
 $ sudo vi /usr/share/thingsboard/conf/thingsboard.yml
 ```
 
-- locate the following lines:
-
-```
-   database:
-     type: "${DATABASE_TYPE:sql}" # cassandra OR sql
-```
-
-- change ```database.type``` value from ```sql``` to ```cassandra```:
-
-```
-   database:
-     type: "${DATABASE_TYPE:cassandra}" # cassandra OR sql
-```
+{% include templates/db-configuration-aws.md %}
 
 #### Upgrade Database
 

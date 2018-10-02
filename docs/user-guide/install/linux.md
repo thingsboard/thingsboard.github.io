@@ -103,11 +103,8 @@ For **PostgreSQL**:
 For **Cassandra DB**:
 
 Locate and set database type configuration parameter to 'cassandra'.
- 
-```text
-database:
-  type: "${DATABASE_TYPE:cassandra}" # cassandra OR sql
-```
+
+{% include templates/db-configuration.md %}
 
 {% include templates/memory-update-for-slow-machines.md %} 
 

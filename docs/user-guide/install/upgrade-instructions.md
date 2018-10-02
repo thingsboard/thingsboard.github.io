@@ -578,10 +578,7 @@ thingsboard-installation-1-3-0-centos,CentOS,shell,resources/1.3.0/thingsboard-c
 **NOTE:** Package installer will ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.  
 Please make sure that you set database.type parameter value (in the file **/etc/thingsboard/conf/thingsboard.yml**) to "cassandra" instead of "sql" in order to upgrade your cassandra database:
  
-```
-database:
-    type: "${DATABASE_TYPE:cassandra}" # cassandra OR sql
-```       
+{% include templates/db-configuration.md %}       
 
 ```bash
 # Execute upgrade script
@@ -614,11 +611,9 @@ net stop thingsboard
 * Unzip installation archive to ThingsBoard install dir.
 * Compare your old ThingsBoard configuration files (from the backup you made in the first step) with new ones.
 * Please make sure that you set database.type parameter value (in the file **\<ThingsBoard install dir\>\conf\thingsboard.yml**) to "cassandra" instead of "sql" in order to upgrade your cassandra database:
+
+{% include templates/db-configuration.md %}   
   
-  ```
-  database:
-      type: "${DATABASE_TYPE:cassandra}" # cassandra OR sql
-  ```       
 * Run **upgrade.bat** script to upgrade ThingsBoard to the new version.
 
 **NOTE** Scripts listed above should be executed using Administrator Role.
@@ -656,10 +651,7 @@ thingsboard-installation-1-3-1-centos,CentOS,shell,resources/1.3.1/thingsboard-c
 **NOTE:** Package installer may ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.  
 Please make sure that you set database.type parameter value (in the file **/etc/thingsboard/conf/thingsboard.yml**) to "cassandra" instead of "sql" in order to upgrade your cassandra database:
  
-```
-database:
-    type: "${DATABASE_TYPE:cassandra}" # cassandra OR sql
-```       
+{% include templates/db-configuration.md %}   
 
 ```bash
 # Execute upgrade script
@@ -692,11 +684,9 @@ net stop thingsboard
 * Unzip installation archive to ThingsBoard install dir.
 * Compare your old ThingsBoard configuration files (from the backup you made in the first step) with new ones.
 * Please make sure that you set database.type parameter value (in the file **\<ThingsBoard install dir\>\conf\thingsboard.yml**) to "cassandra" instead of "sql" in order to upgrade your cassandra database:
-  
-  ```
-  database:
-      type: "${DATABASE_TYPE:cassandra}" # cassandra OR sql
-  ```       
+
+{% include templates/db-configuration.md %}     
+     
 * Run **upgrade.bat** script to upgrade ThingsBoard to the new version.
 
 **NOTE** Scripts listed above should be executed using Administrator Role.
@@ -734,10 +724,7 @@ thingsboard-installation-1-4-0-centos,CentOS,shell,resources/1.4.0/thingsboard-c
 **NOTE:** Package installer will ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.  
 Please make sure that you set database.type parameter value (in the file **/etc/thingsboard/conf/thingsboard.yml**) to "cassandra" instead of "sql" in order to upgrade your cassandra database:
  
-```
-database:
-    type: "${DATABASE_TYPE:cassandra}" # cassandra OR sql
-```       
+{% include templates/db-configuration.md %}         
 
 ```bash
 # Execute upgrade script
@@ -771,10 +758,8 @@ net stop thingsboard
 * Compare your old ThingsBoard configuration files (from the backup you made in the first step) with new ones.
 * Please make sure that you set database.type parameter value (in the file **\<ThingsBoard install dir\>\conf\thingsboard.yml**) to "cassandra" instead of "sql" in order to upgrade your cassandra database:
   
-  ```
-  database:
-      type: "${DATABASE_TYPE:cassandra}" # cassandra OR sql
-  ```       
+{% include templates/db-configuration.md %}   
+
 * Run **upgrade.bat** script to upgrade ThingsBoard to the new version.
 
 **NOTE** Scripts listed above should be executed using Administrator Role.
@@ -814,10 +799,7 @@ thingsboard-installation-2-0-0-centos,CentOS,shell,resources/2.0.0/thingsboard-c
 **NOTE:** Package installer will ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.  
 Please make sure that you set database.type parameter value (in the file **/etc/thingsboard/conf/thingsboard.yml**) to "cassandra" instead of "sql" in order to upgrade your cassandra database:
  
-```
-database:
-    type: "${DATABASE_TYPE:cassandra}" # cassandra OR sql
-```       
+{% include templates/db-configuration.md %}      
 
 ```bash
 # Execute upgrade script
@@ -853,10 +835,8 @@ net stop thingsboard
 * Compare your old ThingsBoard configuration files (from the backup you made in the first step) with new ones.
 * Please make sure that you set database.type parameter value (in the file **\<ThingsBoard install dir\>\conf\thingsboard.yml**) to "cassandra" instead of "sql" in order to upgrade your cassandra database:
   
-  ```
-  database:
-      type: "${DATABASE_TYPE:cassandra}" # cassandra OR sql
-  ```       
+{% include templates/db-configuration.md %}
+
 * Run **upgrade.bat** script to upgrade ThingsBoard to the new version.
 
 **NOTE** Scripts listed above should be executed using Administrator Role.
@@ -894,10 +874,7 @@ thingsboard-installation-2-0-1-centos,CentOS,shell,resources/2.0.1/thingsboard-c
 **NOTE:** Package installer will ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.  
 Please make sure that you set database.type parameter value (in the file **/etc/thingsboard/conf/thingsboard.yml**) to "cassandra" instead of "sql" in order to upgrade your cassandra database:
  
-```
-database:
-    type: "${DATABASE_TYPE:cassandra}" # cassandra OR sql
-```       
+{% include templates/db-configuration.md %}
 
 #### Start the service
 
@@ -926,10 +903,7 @@ net stop thingsboard
 * Compare your old ThingsBoard configuration files (from the backup you made in the first step) with new ones.
 * Please make sure that you set database.type parameter value (in the file **\<ThingsBoard install dir\>\conf\thingsboard.yml**) to "cassandra" instead of "sql" in order to upgrade your cassandra database:
   
-  ```
-  database:
-      type: "${DATABASE_TYPE:cassandra}" # cassandra OR sql
-  ```       
+{% include templates/db-configuration.md %}
   
 #### Start the service
 
@@ -960,10 +934,7 @@ thingsboard-installation-2-0-2-centos,CentOS,shell,resources/2.0.2/thingsboard-c
 **NOTE:** Package installer will ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.  
 Please make sure that you set database.type parameter value (in the file **/etc/thingsboard/conf/thingsboard.yml**) to "cassandra" instead of "sql" in order to upgrade your cassandra database:
  
-```
-database:
-    type: "${DATABASE_TYPE:cassandra}" # cassandra OR sql
-```       
+{% include templates/db-configuration.md %}
 
 #### Start the service
 
@@ -992,10 +963,7 @@ net stop thingsboard
 * Compare your old ThingsBoard configuration files (from the backup you made in the first step) with new ones.
 * Please make sure that you set database.type parameter value (in the file **\<ThingsBoard install dir\>\conf\thingsboard.yml**) to "cassandra" instead of "sql" in order to upgrade your cassandra database:
   
-  ```
-  database:
-      type: "${DATABASE_TYPE:cassandra}" # cassandra OR sql
-  ```       
+{% include templates/db-configuration.md %}
   
 #### Start the service
 
@@ -1026,10 +994,7 @@ thingsboard-installation-2-0-3-centos,CentOS,shell,resources/2.0.3/thingsboard-c
 **NOTE:** Package installer will ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.  
 Please make sure that you set database.type parameter value (in the file **/etc/thingsboard/conf/thingsboard.yml**) to "cassandra" instead of "sql" in order to upgrade your cassandra database:
  
-```
-database:
-    type: "${DATABASE_TYPE:cassandra}" # cassandra OR sql
-```       
+{% include templates/db-configuration.md %}
 
 #### Start the service
 
@@ -1058,10 +1023,7 @@ net stop thingsboard
 * Compare your old ThingsBoard configuration files (from the backup you made in the first step) with new ones.
 * Please make sure that you set database.type parameter value (in the file **\<ThingsBoard install dir\>\conf\thingsboard.yml**) to "cassandra" instead of "sql" in order to upgrade your cassandra database:
   
-  ```
-  database:
-      type: "${DATABASE_TYPE:cassandra}" # cassandra OR sql
-  ```       
+{% include templates/db-configuration.md %}
   
 #### Start the service
 
@@ -1092,10 +1054,7 @@ thingsboard-installation-2-1-0-centos,CentOS,shell,resources/2.1.0/thingsboard-c
 **NOTE:** Package installer will ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.  
 Please make sure that you set database.type parameter value (in the file **/etc/thingsboard/conf/thingsboard.yml**) to "cassandra" instead of "sql" in order to upgrade your cassandra database:
  
-```
-database:
-    type: "${DATABASE_TYPE:cassandra}" # cassandra OR sql
-```       
+{% include templates/db-configuration.md %}
 
 #### Start the service
 
@@ -1124,10 +1083,7 @@ net stop thingsboard
 * Compare your old ThingsBoard configuration files (from the backup you made in the first step) with new ones.
 * Please make sure that you set database.type parameter value (in the file **\<ThingsBoard install dir\>\conf\thingsboard.yml**) to "cassandra" instead of "sql" in order to upgrade your cassandra database:
   
-  ```
-  database:
-      type: "${DATABASE_TYPE:cassandra}" # cassandra OR sql
-  ```       
+{% include templates/db-configuration.md %}   
   
 #### Start the service
 
