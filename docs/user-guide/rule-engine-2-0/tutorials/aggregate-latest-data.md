@@ -97,7 +97,7 @@ Please note that some nodes have debug enabled. This affects performance. Create
 
 ## Validating the flow
 
-Download and [**import**](/docs/user-guide/ui/dashboards/#iot-dashboard-importexport) attached dashboard [**file**](/docs/user-guide/rule-engine-2-0/pe/tutorials/warehouse_temperature.json) as a new "Warehouse Temperature" dashboard.
+Download and [**import**](/docs/user-guide/ui/dashboards/#iot-dashboard-importexport) attached dashboard [**file**](/docs/user-guide/rule-engine-2-0/pe/tutorials/warehouse_thermometers.json) as a new "Warehouse Temperature" dashboard.
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/aggregation-latest/dashboard-part1.png)
 

@@ -220,6 +220,10 @@
       title: Validate incoming telemetry
       subtitle: Learn how to configure Rule Engine to discard invalid telemetry readings based on JavaScript filter function.
       pe: false
+    - path: /docs/user-guide/rule-engine-2-0/tutorials/function-based-on-telemetry-from-two-devices/
+      title: Data function based on telemetry from 2 devices
+      subtitle: Learn how to configure Rule Engine to create new telemetry based on telemetry readings from multiple devices.
+      pe: false
     - path: /docs/user-guide/rule-engine-2-0/tutorials/transform-incoming-telemetry/
       title: Transform incoming telemetry
       subtitle: Learn how to configure Rule Engine to transform incoming telemetry based on JavaScript function before it is stored to the database.

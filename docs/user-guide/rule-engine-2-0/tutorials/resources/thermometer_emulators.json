@@ -1,0 +1,76 @@
+{
+  "ruleChain": {
+    "additionalInfo": null,
+    "name": "Thermometer Emulators",
+    "firstRuleNodeId": null,
+    "root": false,
+    "debugMode": false,
+    "configuration": null
+  },
+  "metadata": {
+    "firstNodeIndex": null,
+    "nodes": [
+      {
+        "additionalInfo": {
+          "layoutX": 278,
+          "layoutY": 104
+        },
+        "type": "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode",
+        "name": "Inside Thermometer Emalator",
+        "debugMode": true,
+        "configuration": {
+          "msgCount": 1,
+          "periodInSeconds": 10,
+          "originatorId": "93bf7630-c899-11e8-b555-c9ee4be8c9f5",
+          "originatorType": "DEVICE",
+          "jsScript": "var msg = {\n    insideTemperature: (20 + 5*Math.random()).toFixed(2)\n};\n\nreturn {\n    msg: msg, metadata: {deviceType: \"inside thermometer\"}, msgType:\"POST_TELEMETRY_REQUEST\"\n    };"
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 279,
+          "layoutY": 203
+        },
+        "type": "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode",
+        "name": "Outside Thermometer Emalator",
+        "debugMode": true,
+        "configuration": {
+          "msgCount": 1,
+          "periodInSeconds": 10,
+          "originatorId": "c7cde0b0-c899-11e8-b555-c9ee4be8c9f5",
+          "originatorType": "DEVICE",
+          "jsScript": "var msg = {\n    outsideTemperature: (18 + 5*Math.random()).toFixed(2)\n};\n\nreturn {\n    msg: msg, metadata: {deviceType: \"outside thermometer\"}, msgType:\"POST_TELEMETRY_REQUEST\"\n    };\n"
+        }
+      }
+    ],
+    "connections": null,
+    "ruleChainConnections": [
+      {
+        "fromIndex": 0,
+        "targetRuleChainId": {
+          "entityType": "RULE_CHAIN",
+          "id": "baa86770-c7ef-11e8-b555-c9ee4be8c9f5"
+        },
+        "additionalInfo": {
+          "layoutX": 580,
+          "layoutY": 153,
+          "ruleChainNodeId": "rule-chain-node-4"
+        },
+        "type": "Success"
+      },
+      {
+        "fromIndex": 1,
+        "targetRuleChainId": {
+          "entityType": "RULE_CHAIN",
+          "id": "baa86770-c7ef-11e8-b555-c9ee4be8c9f5"
+        },
+        "additionalInfo": {
+          "layoutX": 580,
+          "layoutY": 153,
+          "ruleChainNodeId": "rule-chain-node-4"
+        },
+        "type": "Success"
+      }
+    ]
+  }
+}

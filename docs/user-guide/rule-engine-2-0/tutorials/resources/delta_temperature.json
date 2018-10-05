@@ -1,0 +1,108 @@
+{
+  "ruleChain": {
+    "additionalInfo": null,
+    "name": "Delta Temperature",
+    "firstRuleNodeId": null,
+    "root": false,
+    "debugMode": false,
+    "configuration": null
+  },
+  "metadata": {
+    "firstNodeIndex": 2,
+    "nodes": [
+      {
+        "additionalInfo": {
+          "layoutX": 1219,
+          "layoutY": 152
+        },
+        "type": "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode",
+        "name": "Save Timeseries",
+        "debugMode": true,
+        "configuration": {
+          "defaultTTL": 0
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 627,
+          "layoutY": 153
+        },
+        "type": "org.thingsboard.rule.engine.transform.TbTransformMsgNode",
+        "name": "Temperature delta",
+        "debugMode": true,
+        "configuration": {
+          "jsScript": "var newMsg = {};\n\n\nfunction delta(inside, outside) {\n\tif (inside >= outside) {\n\t\treturn parseFloat((inside - outside).toFixed(2));\n\t} else {\n\t\treturn parseFloat((outside - inside).toFixed(2));\n\t}\n}\n\nnewMsg.deltaTemperature = delta(msg.insideTemperature, metadata.outsideTemperature);\n\n\nreturn {\n\tmsg: newMsg,\n\tmetadata: {},\n\tmsgType: msgType\n};"
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 315,
+          "layoutY": 151
+        },
+        "type": "org.thingsboard.rule.engine.metadata.TbGetRelatedAttributeNode",
+        "name": "Fetch latest outside temperature",
+        "debugMode": true,
+        "configuration": {
+          "attrMapping": {
+            "outsideTemperature": "outsideTemperature"
+          },
+          "relationsQuery": {
+            "direction": "FROM",
+            "maxLevel": 1,
+            "filters": [
+              {
+                "relationType": "Contains",
+                "entityTypes": [
+                  "DEVICE"
+                ]
+              }
+            ]
+          },
+          "telemetry": true
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 905,
+          "layoutY": 153
+        },
+        "type": "org.thingsboard.rule.engine.transform.TbChangeOriginatorNode",
+        "name": "Change originator to asset",
+        "debugMode": true,
+        "configuration": {
+          "originatorSource": "RELATED",
+          "relationsQuery": {
+            "direction": "TO",
+            "maxLevel": 1,
+            "filters": [
+              {
+                "relationType": "Contains",
+                "entityTypes": [
+                  "ASSET"
+                ]
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "connections": [
+      {
+        "fromIndex": 1,
+        "toIndex": 3,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 2,
+        "toIndex": 1,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 3,
+        "toIndex": 0,
+        "type": "Success"
+      }
+    ],
+    "ruleChainConnections": null
+  }
+}

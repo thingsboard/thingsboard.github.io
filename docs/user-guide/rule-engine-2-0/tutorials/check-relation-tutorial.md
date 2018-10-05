@@ -87,7 +87,7 @@ In this tutorial, we modified our **Root Rule Chain** and also created Rule Chai
 
 <br/> 
 
-Download the attached json [**file**](/docs/user-guide/rule-engine-2-0/tutorials/resources/check_relation_tutorial.json) for the **Root Rule Chain**. Don't forget to mark this rule chain as **root**.    
+Download the attached json [**file**](/docs/user-guide/rule-engine-2-0/tutorials/resources/check-relation-tutorial.json) for the **Root Rule Chain**. Don't forget to mark this rule chain as **root**.
 
 <br/> 
   
