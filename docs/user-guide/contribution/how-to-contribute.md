@@ -56,7 +56,7 @@ By default, ThingsBoard uses embedded HSQLDB instance which is very convenient f
 Alternatively, you can configure your platform to use either scalable Cassandra DB cluster or various SQL databases. 
 If you prefer to use an SQL database, we recommend PostgreSQL.
 
-Additionally, starting from 2.1.2 version, you can configure your platform to use two databases - SQL database for entities data and Cassandra DB cluster for timeseries data. 
+Additionally, starting from **2.1.1** version, you can configure your platform to use two databases - SQL database for entities data and Cassandra DB cluster for timeseries data. 
 
 ##### [Optional] SQL Database: PostgreSQL
 

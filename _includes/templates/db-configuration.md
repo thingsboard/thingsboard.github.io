@@ -1,11 +1,11 @@
-prior **2.1.2** version:
+prior **2.1.1** version:
 
 ```text
 database:
   type: "${DATABASE_TYPE:cassandra}" # cassandra OR sql
 ``` 
 
-after **2.1.2** version:
+after **2.1.1** version:
  
 ```text
 database:
