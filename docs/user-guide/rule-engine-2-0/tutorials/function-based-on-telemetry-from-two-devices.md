@@ -5,15 +5,14 @@ description: Data function based on telemetry from 2 devices
 
 ---
 
-This tutorial will show how to calculate delta-function based on readings from two temperature sensors that placed inside and otherside the warehouse. 
+This tutorial will show how to calculate temperature delta based on readings from the indoor warehouse thermometer and outdoor warehouse thermometer. 
 
 * TOC
 {:toc}
 
 ## Use case
 
-Let's assume you have a warehouse with two temperature sensors. For example, one of them is placed inside the warehouse and another one outside.
-In this tutorial, we will configure ThingsBoard Rule Engine to automatically calculate the delta of temperatures in the warehouse and outside based on the latest readings from temperature sensors.
+Let's assume you have a warehouse with two thermometers: indoor and outdoor. In this tutorial, we will configure ThingsBoard Rule Engine to automatically calculate the delta of temperatures inside and outside the warehouse based on the latest readings from temperature sensors.
 Please note that this is just a simple theoretical use case to demonstrate the capabilities of the platform. You can use this tutorial as a basis for much more complex scenarios.
  
 ## Prerequisites 
