@@ -156,7 +156,7 @@ Enter the Name field as **Message Type Switch**, then click the **ADD** button.
 ###### **Save Timeseries** node 
 Add the **Save TimeSeries** node and connect it to the **Message Type Switch** node with a relationship type **Post telemetry**.  
 
-This node will store the TimeSeries data from the incoming Message payload into the database and link it to the Device that is identified by the Message Originator.data  
+This node will store the TimeSeries data from the incoming Message payload into the database and link it to the Device that is identified by the Message Originator.  
 
 Enter the Name field as **Save Time Series**.
   

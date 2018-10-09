@@ -11,11 +11,12 @@ This Tutorial is to show you how to send an Email to the customer using the Rule
 {:toc}
 
 
+#### **Note:**
+ This tutorial is based on the [send email on alarm](/docs/user-guide/rule-engine-2-0/tutorials/send-email/#use-case) tutorial and it's use case. We will reuse the rule chains from the above-mentioned tutorial and will add a few more rule nodes to send email to the customer of the assigned device.  
+
+<br>
 
 # Use case
-
-This tutorial is based on the [send email on alarm](/docs/user-guide/rule-engine-2-0/tutorials/send-email/#use-case) tutorial and it's use case. 
-We will reuse the rule chains from the above-mentioned tutorial and will add a few more rule nodes to send email to the customer of the assigned device.  
 
 Let's assume your device is using DHT22 sensor to collect and push temperature readings to ThingsBoard. 
 DHT22 sensor is good for -40 to 80°C temperature readings.We want to generate Alarms if temperature is out of good range and send the email when the alarm was created.
@@ -38,9 +39,9 @@ We assume you have completed the following guides and reviewed the articles list
   * [Send email on alarm](/docs/user-guide/rule-engine-2-0/tutorials/send-email/) guide.
   
   
-# Create customer and assign device to him 
+# Create customer and assign device 
 
-First of all, we need to create Customer and assign device to him. The following screenshots show you how to do this:
+First of all, we need to create Customer and assign device to customer. The following screenshots show you how to do this:
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/email/create-customer.png)
 

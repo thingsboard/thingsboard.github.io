@@ -1,0 +1,172 @@
+{
+  "ruleChain": {
+    "additionalInfo": null,
+    "name": "Delta Temperature",
+    "firstRuleNodeId": null,
+    "root": false,
+    "debugMode": false,
+    "configuration": null
+  },
+  "metadata": {
+    "firstNodeIndex": 3,
+    "nodes": [
+      {
+        "additionalInfo": {
+          "layoutX": 170,
+          "layoutY": 432
+        },
+        "type": "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode",
+        "name": "Save Timeseries",
+        "debugMode": true,
+        "configuration": {
+          "defaultTTL": 0
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 779,
+          "layoutY": 432
+        },
+        "type": "org.thingsboard.rule.engine.transform.TbTransformMsgNode",
+        "name": "Temperature delta",
+        "debugMode": true,
+        "configuration": {
+          "jsScript": "var newMsg = {};\n\nnewMsg.deltaTemperature = parseFloat(Math.abs(metadata.indoorTemperature - metadata.outdoorTemperature).toFixed(2));\n\nreturn {\n\tmsg: newMsg,\n\tmetadata: metadata,\n\tmsgType: msgType\n};"
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 807,
+          "layoutY": 141
+        },
+        "type": "org.thingsboard.rule.engine.transform.TbChangeOriginatorNode",
+        "name": "To Asset",
+        "debugMode": true,
+        "configuration": {
+          "originatorSource": "RELATED",
+          "relationsQuery": {
+            "direction": "TO",
+            "maxLevel": 1,
+            "filters": [
+              {
+                "relationType": "Contains",
+                "entityTypes": [
+                  "ASSET"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 315,
+          "layoutY": 151
+        },
+        "type": "org.thingsboard.rule.engine.filter.TbJsSwitchNode",
+        "name": "Switch By Type",
+        "debugMode": true,
+        "configuration": {
+          "jsScript": "function nextRelation(metadata, msg){\n\tif(metadata.deviceType === 'indoor thermometer'){\n\t\treturn ['indoor'];\n\t}else if(metadata.deviceType === 'outdoor thermometer')\n\t\treturn ['outdoor'];\n}\n\nreturn nextRelation(metadata, msg);"
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 552,
+          "layoutY": 203
+        },
+        "type": "org.thingsboard.rule.engine.transform.TbTransformMsgNode",
+        "name": "Change to Indoor",
+        "debugMode": true,
+        "configuration": {
+          "jsScript": "var newMsg = {};\n\nnewMsg.indoorTemperature = msg.temperature;\n\nreturn {msg: newMsg, metadata: metadata, msgType: msgType};"
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 550,
+          "layoutY": 79
+        },
+        "type": "org.thingsboard.rule.engine.transform.TbTransformMsgNode",
+        "name": "Change to Outdoor",
+        "debugMode": true,
+        "configuration": {
+          "jsScript": "var newMsg = {};\n\nnewMsg.outdoorTemperature = msg.temperature;\n\nreturn {msg: newMsg, metadata: metadata, msgType: msgType};"
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 469,
+          "layoutY": 432
+        },
+        "type": "org.thingsboard.rule.engine.metadata.TbGetAttributesNode",
+        "name": "Fetch latest Timeseries",
+        "debugMode": true,
+        "configuration": {
+          "clientAttributeNames": [],
+          "sharedAttributeNames": [],
+          "serverAttributeNames": [],
+          "latestTsKeyNames": [
+            "indoorTemperature",
+            "outdoorTemperature"
+          ]
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 1077,
+          "layoutY": 431
+        },
+        "type": "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode",
+        "name": "Save Timeseries",
+        "debugMode": true,
+        "configuration": {
+          "defaultTTL": 0
+        }
+      }
+    ],
+    "connections": [
+      {
+        "fromIndex": 0,
+        "toIndex": 6,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 1,
+        "toIndex": 7,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 2,
+        "toIndex": 0,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 3,
+        "toIndex": 4,
+        "type": "indoor"
+      },
+      {
+        "fromIndex": 3,
+        "toIndex": 5,
+        "type": "outdoor"
+      },
+      {
+        "fromIndex": 4,
+        "toIndex": 2,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 5,
+        "toIndex": 2,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 6,
+        "toIndex": 1,
+        "type": "Success"
+      }
+    ],
+    "ruleChainConnections": null
+  }
+}
