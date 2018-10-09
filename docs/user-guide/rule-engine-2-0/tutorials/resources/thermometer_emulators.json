@@ -19,7 +19,7 @@
         "name": "Indoor Thermometer Emalator",
         "debugMode": true,
         "configuration": {
-          "msgCount": 1,
+          "msgCount": 0,
           "periodInSeconds": 10,
           "originatorId": "9c2f8c40-cb89-11e8-9c92-4fb776d1b699",
           "originatorType": "DEVICE",
@@ -35,8 +35,8 @@
         "name": "Outdoor Thermometer Emalator",
         "debugMode": true,
         "configuration": {
-          "msgCount": 1,
-          "periodInSeconds": 10,
+          "msgCount": 0,
+          "periodInSeconds": 60,
           "originatorId": "3270a000-cb89-11e8-9c92-4fb776d1b699",
           "originatorType": "DEVICE",
           "jsScript": "var msg = {\n    temperature: (18 + 5*Math.random()).toFixed(1)\n};\n\nreturn {\n    msg: msg, metadata: {deviceType: \"outdoor thermometer\"}, msgType:\"POST_TELEMETRY_REQUEST\"\n    };\n"
@@ -54,7 +54,7 @@
         "additionalInfo": {
           "layoutX": 546,
           "layoutY": 147,
-          "ruleChainNodeId": "rule-chain-node-4"
+          "ruleChainNodeId": "rule-chain-node-5"
         },
         "type": "Success"
       },
@@ -67,7 +67,7 @@
         "additionalInfo": {
           "layoutX": 546,
           "layoutY": 147,
-          "ruleChainNodeId": "rule-chain-node-4"
+          "ruleChainNodeId": "rule-chain-node-5"
         },
         "type": "Success"
       }
