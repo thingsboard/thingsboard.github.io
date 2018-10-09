@@ -32,6 +32,7 @@ We assume you have completed the following guides and reviewed the articles list
 
   * [Getting Started](/docs/getting-started-guides/helloworld/) guide.
   * [Rule Engine Overview](/docs/user-guide/rule-engine-2-0/overview/).
+  * [Create & Clear alarms](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/) guide.
 
 # Message flow  
 
@@ -69,13 +70,13 @@ Download the attached json [**file**](/docs/user-guide/rule-engine-2-0/tutorials
 The following section shows you how to modify this rule chain from scratch.
 <br/> 
  
-#### Modify **Create/Clear Alarm & Send Email**
+## Modify **Create/Clear Alarm & Send Email**
 
-###### Adding the required nodes
+### Adding the required nodes
 
 In this rule chain, you will create 3 nodes as it will be explained in the following sections:
  
-###### Node A: **Transform Script**
+#### Node A: **Transform Script**
 
 - Add the **Transform Script** node and place it after the **Filter Script** node with a relation type **True** and than connect it to **Create Alarm** node via relation **Success**.
  <br>This node will use for saving current temperature from Message Data to the Message Metadata using the following script:
@@ -88,7 +89,7 @@ In this rule chain, you will create 3 nodes as it will be explained in the follo
   
 ![image](/images/user-guide/rule-engine-2-0/tutorials/email v2/transform-script.png)
    
-###### Node B: **To Email**
+#### Node B: **To Email**
 - Add the **To Email** node and connect it to the **Create Alarm** node with a relation type **Created**.
   <br>This node does not send actual email it only construct email from configured template.
   <br>So you can use references to any fields that exist in Message Metadata.
@@ -127,7 +128,7 @@ In this rule chain, you will create 3 nodes as it will be explained in the follo
      
 ![image](/images/user-guide/rule-engine-2-0/tutorials/email v2/to-email.png)
 
-###### Node C: **Send Email**
+#### Node C: **Send Email**
 - Add the **Send Email** node and connect it to the **To Email** node with a relation type **Success**. <br>
   This node will actually send email from the inbound message using the system SMTP settings.<br>
 
@@ -150,7 +151,7 @@ The instructions of how to configure these settings will be explained in the sec
 
 Chain configuration is finished and we need to save it.
 
-###### Configuring  system SMTP settings
+#### Configuring  system SMTP settings
 
 In this section, we explain to you how  to configure system SMTP settings and try to send the test email:
 
@@ -181,7 +182,7 @@ If you can't access to the account of the System administrator you could configu
 
 <br/>
 
-### Post telemetry and verify
+# Post telemetry and verify
 For posting device telemetry we will use the Rest APIs, [Telemetry upload APIs](/docs/reference/http-api/#telemetry-upload-api). For this we will need to
 copy device access token from then device **Thermostat Home**. 
 
@@ -223,7 +224,7 @@ Please refer to the first link under the **See Also** section to see how to do t
 
 - [Create alarm with details](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms-with-details/) guide.
 
-## Next steps
+# Next steps
 
 {% assign currentGuide = "DataProcessing" %}{% include templates/guides-banner.md %}
 

@@ -16,7 +16,7 @@ and configure your ThingsBoard rule engine to be able to send notifications to T
 ## Use case
 
 This tutorial is based on the [create & clear alarms](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/#use-case) tutorial and it's use case. 
-We will reuse the rule chain from above mentioned tutorial and will add few more rule nodes to integrate with Telegram   
+We will reuse the rule chains from above mentioned tutorial and will add few more rule nodes to integrate with Telegram   
 
 Let's assume your device is using DHT22 sensor to collect and push temperature readings to ThingsBoard. 
 DHT22 sensor is good for -40 to 80°C temperature readings.We want to generate Alarms if temperature is out of good range and send notifications to Telegram App when the alarm was created.
