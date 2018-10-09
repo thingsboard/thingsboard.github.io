@@ -81,26 +81,9 @@
         "configuration": {
           "timeoutInSeconds": 60
         }
-      },
-      {
-        "additionalInfo": {
-          "layoutX": 1082,
-          "layoutY": 120
-        },
-        "type": "org.thingsboard.rule.engine.filter.TbJsFilterNode",
-        "name": "Validate incoming devices",
-        "debugMode": true,
-        "configuration": {
-          "jsScript": "return metadata.deviceType == \"inside thermometer\";"
-        }
       }
     ],
     "connections": [
-      {
-        "fromIndex": 0,
-        "toIndex": 6,
-        "type": "Success"
-      },
       {
         "fromIndex": 2,
         "toIndex": 4,
@@ -129,17 +112,17 @@
     ],
     "ruleChainConnections": [
       {
-        "fromIndex": 6,
+        "fromIndex": 0,
         "targetRuleChainId": {
           "entityType": "RULE_CHAIN",
           "id": "a80b65b0-c7d9-11e8-b054-fbabc61128a9"
         },
         "additionalInfo": {
-          "layoutX": 1368,
-          "layoutY": 121,
+          "layoutX": 1101,
+          "layoutY": 120,
           "ruleChainNodeId": "rule-chain-node-9"
         },
-        "type": "True"
+        "type": "Success"
       }
     ]
   }

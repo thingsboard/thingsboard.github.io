@@ -27,7 +27,7 @@
                     "showSeparateAxis": false,
                     "axisPosition": "left"
                   },
-                  "_hash": 0.32340399602290804
+                  "_hash": 0.433021839025705
                 }
               ],
               "entityAliasId": "a9f119b6-1a0d-56ef-de70-d312eea1893a"
@@ -104,7 +104,7 @@
                     "useCellStyleFunction": false,
                     "useCellContentFunction": false
                   },
-                  "_hash": 0.3986935613547151
+                  "_hash": 0.7476941591178712
                 }
               ],
               "entityAliasId": "a9f119b6-1a0d-56ef-de70-d312eea1893a"
@@ -191,7 +191,7 @@
           "resolveMultiple": false,
           "singleEntity": {
             "entityType": "ASSET",
-            "id": "80c8de90-c88a-11e8-b555-c9ee4be8c9f5"
+            "id": "1b64b3f0-cb8a-11e8-9c92-4fb776d1b699"
           }
         }
       }

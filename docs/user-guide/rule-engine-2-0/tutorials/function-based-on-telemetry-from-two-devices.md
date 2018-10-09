@@ -5,16 +5,14 @@ description: Data function based on telemetry from 2 devices
 
 ---
 
-This tutorial will show how to calculate delta-function based on readings from two temperature sensors that placed inside and otherside the warehouse. 
+This tutorial will show how to calculate temperature delta based on readings from the indoor warehouse thermometer and outdoor warehouse thermometer. 
 
 * TOC
 {:toc}
 
 ## Use case
 
-Let's assume you have a warehouse with two temperature sensors. For example, one of them is placed inside the warehouse and another one outside.
-In this tutorial, we will configure ThingsBoard Rule Engine to automatically calculate the delta of temperatures in the warehouse and outside based on the latest readings from temperature sensors.
-Please note that this is just a simple theoretical use case to demonstrate the capabilities of the platform. You can use this tutorial as a basis for much more complex scenarios.
+Let's assume you have a warehouse with two thermometers: indoor and outdoor. In this tutorial, we will configure ThingsBoard Rule Engine to automatically calculate the delta of temperatures inside and outside the warehouse based on the latest readings from temperature sensors.
  
 ## Prerequisites 
 
@@ -31,8 +29,8 @@ We will create one asset that has name "Warehouse A" and type "warehouse".
 
 We will create two devices that have names "Inside Thermometer" and "Outside Thermometer" and accordingly with types "inside thermometer" and "outside thermometer". 
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/data-function/add-inside-thermometer.png)
-![image](/images/user-guide/rule-engine-2-0/tutorials/data-function/add-outside-thermometer.png)
+![image](/images/user-guide/rule-engine-2-0/tutorials/data-function/add-indoor-thermometer.png)
+![image](/images/user-guide/rule-engine-2-0/tutorials/data-function/add-outdoor-thermometer.png)
 
 We must also create the relation between asset "Warehouse A" and device "Inside Thermometer".
 This relation will be used in the rule chain to change originator of the messages from the thermometer to the warehouse itself
@@ -40,7 +38,6 @@ and also the relation from device "Inside Thermometer" to device "Outside Thermo
 
  
 ![image](/images/user-guide/rule-engine-2-0/tutorials/data-function/add-relation-from-asset.png)
-![image](/images/user-guide/rule-engine-2-0/tutorials/data-function/add-relation-from-device.png)
 
 <br>
 
@@ -61,84 +58,162 @@ In this section, we explain the purpose of each node in this tutorial. There wil
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/data-function/thermostats-emulators-chain.png)
 
-  * **Nodes A and B**: Generator nodes
+  - **Nodes A and B**: Generator nodes
   
-    * Two similar nodes that periodically generate a very simple message with random temperature reading.
+    - Two similar nodes that periodically generate a very simple message with random temperature reading.
     
-    ![image](/images/user-guide/rule-engine-2-0/tutorials/data-function/inside-generator.png)
+  - **Node A: Indoor Thermometer emulator** 
+           
+             {% highlight javascript %}
+             var msg = {
+             	temperature: (20 + 5 * Math.random()).toFixed(1)
+             };
+             
+             return {
+             	msg: msg,
+             	metadata: {
+             		deviceType: "indoor thermometer"
+             	},
+             	msgType: "POST_TELEMETRY_REQUEST"
+             };
+             {% endhighlight %}
     
-    ![image](/images/user-guide/rule-engine-2-0/tutorials/data-function/outside-generator.png)
+  - **Node B: Outdoor Thermometer emulator**
+            
+             {% highlight javascript %}
+             var msg = {
+             	temperature: (18 + 5 * Math.random()).toFixed(1)
+             };
+             
+             return {
+             	msg: msg,
+             	metadata: {
+             		deviceType: "outdoor thermometer"
+             	},
+             	msgType: "POST_TELEMETRY_REQUEST"
+             };
+             {% endhighlight %}
     
-  * **Node C**: Rule Chain node
+  ![image](/images/user-guide/rule-engine-2-0/tutorials/data-function/indoor-thermometer-emulator.png)
+    
+  ![image](/images/user-guide/rule-engine-2-0/tutorials/data-function/outdoor-thermometer-emulator.png)
+  
+<br>  
+  
+**Note**: in the real case, the device type is set to the message metadata by default.
+    
+    
+  - **Node C**: Rule Chain node
 
-    * Forwards all messages to default rule chain.
+    - Forwards all messages to default root rule chain.
     
+<br>
    
 ### Root rule chain
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/data-function/root-rule-chain.png)
 
-
-   - **Nodes D**: Filter script node
-  
-     - Filter node that checks incoming messages device type. If the device type is "inside thermometer" messages are routing via "true" chain.
-     
-
-![image](/images/user-guide/rule-engine-2-0/tutorials/data-function/validate-incoming-devices-node.png)
-    
-   - **Nodes E**: Rule Chain node
-    
+   - **Nodes D**: Rule Chain node
+ 
      - Forwards incoming Message to specified rule chain "Delta Temperature". 
+
+<br>
       
 ### Delta Temperature rule chain
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/data-function/delta-temperature-chain.png)
 
-  - **Node F**: Related attributes node.
+  - **Node E**: Switch node.
   
-    -  Fetches the latest outside temperature reading from device related to the "Inside Thermometer" device using "Contains" relation.
+    -  Routes incoming messages by deviceType fetched from message metadata. If deviceType from incoming message is "indoor thermometer" switches to the chain via "indoor" relation type, else if deviceType from incoming message is "outdoor thermometer" switches to the chain via "outdoor" relation type.
+    
+        {% highlight javascript %}
+        function nextRelation(metadata, msg) {
+        	if (metadata.deviceType === 'indoor thermometer') {
+        		return ['indoor'];
+        	} else if (metadata.deviceType === 'outdoor thermometer')
+        		return ['outdoor'];
+        }
+        
+        return nextRelation(metadata, msg);
+        {% endhighlight %}
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/data-function/fetch-latest-outside-temperature.png)   
+![image](/images/user-guide/rule-engine-2-0/tutorials/data-function/switch-by-type.png)   
     
-  - **Node G**: Temperature delta
+  - **Nodes F and G**: Transform script nodes
   
-    -  Calculates delta between fetched inside temperature from message payload and outside temperature from message metadata
-  
-    - Creates a new outbound message in which it puts the calculated delta. 
+    - Two similar nodes that changes key names from message payload from "temperature" to "indoorTemperature" or "outdoorTemperature" depending on relation type from the previous node.  
     
-     {% highlight javascript %}
-     
-     var newMsg = {};    
-     
-     function delta(inside, outside) {
-     	if (inside >= outside) {
-     		return parseFloat((inside - outside).toFixed(2));
-     	} else {
-     		return parseFloat((outside - inside).toFixed(2));
-     	}
-     }
-     
-     newMsg.deltaTemperature = delta(msg.insideTemperature, metadata.outsideTemperature);
-     
-     return {
-     	msg: newMsg,
-     	metadata: {},
-     	msgType: msgType
-     };{% endhighlight %}
+    - Creates a new outbound message in which it puts the new telemetry. <br>
+    
+  - **Node F: Change to Outdoor** 
+       
+         {% highlight javascript %}
+         var newMsg = {};
+               
+         newMsg.outdoorTemperature = msg.temperature;
+               
+         return {
+            msg: newMsg,
+           	metadata: metadata,
+           	msgType: msgType
+         };
+         {% endhighlight %}
+
+  - **Node G: Change to Indoor**
+        
+         {% highlight javascript %}
+         var newMsg = {};
+          
+         newMsg.indoorTemperature = msg.temperature;
+          
+         return {
+          	msg: newMsg,
+          	metadata: metadata,
+          	msgType: msgType
+         };
+         {% endhighlight %}
+
    
-![image](/images/user-guide/rule-engine-2-0/tutorials/data-function/temperature-delta.png)   
-
  - **Node H**: Change originator node.
   
     -  Changes the originator from "Inside Thermometer" to the related Asset "Warehouse A" and the submitted message will be processed as a message from the Asset.
         
-![image](/images/user-guide/rule-engine-2-0/tutorials/data-function/change-originator-to-asset.png) 
+![image](/images/user-guide/rule-engine-2-0/tutorials/data-function/to-asset.png) 
     
  - **Node I**: Save Timeseries node.
   
     -  Saves the TimeSeries data from the incoming Message payload into the database.
          
+ - **Node J**: Originator attributes node.
+   
+    -  Adds message originator latest telemetry values into message metadata.
     
+![image](/images/user-guide/rule-engine-2-0/tutorials/data-function/fetch-latest-timeseries.png) 
+
+ - **Node K**: Transform script node.
+  
+    - Creates a new outbound message in which it puts the new telemetry "deltaTemperature" that calculated like the absolute value between the difference of message metadata telemetry values namely, "indoorTemperature" and "outdoorTemperature". <br>
+    
+        {% highlight javascript %}
+        var newMsg = {};
+        
+        newMsg.deltaTemperature = parseFloat(Math.abs(metadata.indoorTemperature - metadata.outdoorTemperature).toFixed(2));
+        
+        return {
+        	msg: newMsg,
+        	metadata: metadata,
+        	msgType: msgType
+        };
+        {% endhighlight %}
+
+![image](/images/user-guide/rule-engine-2-0/tutorials/data-function/temperature-delta.png)         
+
+ - **Node L**: Save Timeseries node.
+  
+    -  Saves the TimeSeries data from the incoming Message payload into the database.
+
+<br>
 
 ## Configuring the Rule Chains
 
