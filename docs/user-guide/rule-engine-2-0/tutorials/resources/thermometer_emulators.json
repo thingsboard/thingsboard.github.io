@@ -16,7 +16,7 @@
           "layoutY": 104
         },
         "type": "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode",
-        "name": "Indoor Thermometer Emalator",
+        "name": "Indoor Thermometer Emulator",
         "debugMode": true,
         "configuration": {
           "msgCount": 0,
@@ -32,7 +32,7 @@
           "layoutY": 203
         },
         "type": "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode",
-        "name": "Outdoor Thermometer Emalator",
+        "name": "Outdoor Thermometer Emulator",
         "debugMode": true,
         "configuration": {
           "msgCount": 0,
@@ -54,7 +54,7 @@
         "additionalInfo": {
           "layoutX": 546,
           "layoutY": 147,
-          "ruleChainNodeId": "rule-chain-node-5"
+          "ruleChainNodeId": "rule-chain-node-4"
         },
         "type": "Success"
       },
@@ -67,7 +67,7 @@
         "additionalInfo": {
           "layoutX": 546,
           "layoutY": 147,
-          "ruleChainNodeId": "rule-chain-node-5"
+          "ruleChainNodeId": "rule-chain-node-4"
         },
         "type": "Success"
       }
