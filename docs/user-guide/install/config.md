@@ -13,7 +13,7 @@ Once you have installed ThingsBoard, you can find configuration files in the fol
 
 ```bash
 Windows: YOUR_INSTALL_DIR/conf
-Linux: /etc/thingsboard/conf
+Linux: /usr/share/thingsboard/conf
 ```
 
 We will describe main configuration files below.
