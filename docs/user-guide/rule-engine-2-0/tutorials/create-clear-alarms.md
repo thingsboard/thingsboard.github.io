@@ -103,7 +103,7 @@ If the temperature is in the expected interval the script will return False, oth
    
 ###### Node B: **Create alarm**
 - Add the **Create alarm** node and connect it to the **Filter Script** node with a relation type **True**. <br>
-  This node loads the latest Alarm with configured Alarm Type for Message Originator, namely **Thermostat Home**<br> if the published temperature is not at expected time range (filter script node returns True). 
+  This node loads the latest Alarm with configured Alarm Type for Message Originator, namely **Thermostat Home**<br> if the published temperature is not at expected range (filter script node returns True). 
   
  - Enter the Name field as **Create alarm** and the Alarm type as **Critical Temperature**.
 
@@ -111,7 +111,7 @@ If the temperature is in the expected interval the script will return False, oth
 
 ###### Node C: **Clear Alarm**
 - Add the **Clear Alarm** node and connect it to the **Filter Script** node with a relation type **False**. <br>
-  This node loads the latest Alarm with configured Alarm Type for Message Originator **Thermostat Home**<br> and Clears alarm if it exists in case if the published temperature is in expected time range (script node returns False). 
+  This node loads the latest Alarm with configured Alarm Type for Message Originator **Thermostat Home**<br> and Clears alarm if it exists in case if the published temperature is in expected range (script node returns False). 
   
 - Enter the Name field as **Clear Alarm** and the Alarm type as **Critical Temperature**.
 
@@ -138,7 +138,7 @@ The initial Rule Chain has been modified by adding the following node:
 
 The following screenshot shows how the final **Root Rule Chain** should look like:
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/alarms v2/view-chain.png)
+![image](/images/user-guide/rule-engine-2-0/tutorials/delta-validation/root-rule-chain.png)
 
 <br/>
 <br/>
@@ -146,9 +146,9 @@ The following screenshot shows how the final **Root Rule Chain** should look lik
 # How to verify the Rule Chain and Post telemetry
 
 For posting device telemetry we will use the Rest APIs, [Telemetry upload APIs](/docs/reference/http-api/#telemetry-upload-api). For this we will need to
-copy device access token from then device **Thermostat Home**. 
+copy device access token from the device **Thermometer**. 
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/alarms v2/copy-token.png)
+![image](/images/user-guide/rule-engine-2-0/tutorials/delta-validation/access-token.png)
 
 {% highlight bash %}**you need to replace $ACCESS_TOKEN with actual device token**{% endhighlight %}
 
