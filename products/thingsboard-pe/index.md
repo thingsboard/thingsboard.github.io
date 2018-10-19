@@ -71,6 +71,33 @@ description:
 <section id="pe-customers">
     <main class="customers-container">
 		<div class="customer-block">
+			<a href="https://www.bosch.com/">
+				<span>
+					<div class="customer-logo" style="height:134px">
+						<img width="" src="/images/customers/bosch.png" alt="Robert Bosch GmbH">
+					 </div>
+				</span>
+			</a>
+		</div>
+        <div class="customer-block">
+            <a href="http://www.engie.sk/en/kontakt">
+				<span>
+					<div class="customer-logo" style="height:134px">
+						<img width="" src="/images/customers/engie.png" alt="ENGIE Services a.s.">
+					 </div>
+				</span>
+            </a>
+        </div>
+		<div class="customer-block">
+			<a href="/industries/telecom/#tektelic">
+				<span>
+					<div class="customer-logo" style="height:134px">
+						<img width="" src="/images/customers/tektelic.png" alt="TEKTELIC Communications Inc.">
+					 </div>
+				</span>
+			</a>
+		</div>
+		<div class="customer-block">
 			<a href="/industries/smart-energy/#oneserve">
 				<span>
 					<div class="customer-logo" style="height:134px">
@@ -97,15 +124,15 @@ description:
 				</span>
 			</a>
 		</div>
-		<div class="customer-block">
-			<a href="/industries/telecom/#tektelic">
+        <div class="customer-block">
+            <a href="/industries/smart-buildings#sensolyze">
 				<span>
 					<div class="customer-logo" style="height:134px">
-						<img width="" src="/images/customers/tektelic.png" alt="TEKTELIC Communications Inc.">
+						<img width="" src="/images/customers/sensolyze.png" alt="Sensolyze GmbH">
 					 </div>
 				</span>
-			</a>
-		</div>
+            </a>
+        </div>
 		<div class="customer-block">
 			<a href="/industries/smart-city#conbee">
 				<span>
