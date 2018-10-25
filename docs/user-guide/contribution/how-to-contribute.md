@@ -81,7 +81,7 @@ Please refer to appropriate section where you find instructions on how to instal
 Edit ThingsBoard configuration file: 
 
 ```text
-/application/scr/main/resources/thingsboard.yml
+/application/src/main/resources/thingsboard.yml
 ```
 
 {% include templates/disable-hsqldb.md %} 
@@ -92,11 +92,14 @@ For **PostgreSQL**:
 
 For **Cassandra DB**:
 
-Locate and set database type configuration parameter to 'cassandra'.
+Locate and set database type configuration parameters to 'cassandra'.
  
 ```text
 database:
-  type: "${DATABASE_TYPE:cassandra}" # cassandra OR sql
+  entities:
+    type: "${DATABASE_ENTITIES_TYPE:cassandra}" # cassandra OR sql
+  ts:
+    type: "${DATABASE_TS_TYPE:cassandra}" # cassandra OR sql (for hybrid mode, only this value should be cassandra)
 ```
 
 **NOTE:** If your Cassandra server is installed on the remote machine or it is bind to custom interface/port, you need to specify it in thingsboard.yml as well.

@@ -19,8 +19,6 @@ toc:
       path: /docs/user-guide/install/linux/
     - title: Installing ThingsBoard on Raspberry Pi 3
       path: /docs/user-guide/install/rpi/
-    - title: Installing ThingsBoard using Kubernetes (Google Cloud Platform)
-      path: /docs/user-guide/install/kubernetes/
     - title: Installing ThingsBoard using Docker (Linux or Mac OS)
       path: /docs/user-guide/install/docker/
     - title: Installing ThingsBoard using Docker (Windows)
