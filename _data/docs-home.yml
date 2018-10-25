@@ -52,8 +52,10 @@ toc:
   - title: Working with alarms
     path: /docs/user-guide/alarms/
   - title: Device Connectivity Status
-    new: true
     path: /docs/user-guide/device-connectivity-status/
+  - title: Entity Views
+    new: true
+    path: /docs/user-guide/entity-views/
   - title: Using RPC capabilities
     path: /docs/user-guide/rpc/
   - title: Data visualization
