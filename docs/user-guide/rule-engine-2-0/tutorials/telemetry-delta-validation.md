@@ -38,11 +38,7 @@ In this section, we explain the purpose of each node in this tutorial. There wil
    
   - **Temperature delta validation** - rule chain that actually calculates the delta between the last five-minutes temperature and latest temperature readings.</br> As a result, if delta value exceeds than 5 degrees, the alarm will be created/updated, otherwise, the alarm will be cleared.
 
-# Configure Rule Chains
-
-In this tutorial, we modified our **Root Rule Chain** and also created Rule Chain **Temperature delta validation**
-
-<br/>The following screenshots show how the above Rule Chains should look like:
+The following screenshots show how the above Rule Chains should look like:
  
   - **Temperature delta validation:**
 
@@ -175,7 +171,7 @@ The following screenshot shows how the final **Root Rule Chain** should look lik
 # How to verify the Rule Chain and Post telemetry
 
 For posting device telemetry we will use the Rest APIs, [Telemetry upload APIs](/docs/reference/http-api/#telemetry-upload-api). For this we will need to
-copy device access token from then device **Thermostat Home**. 
+copy device access token from then device **Thermometer**. 
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/delta-validation/access-token.png)
 
