@@ -58,7 +58,7 @@ Create Node G as shown on the image above in the root rule chain to forward tele
 
 The following section shows you how to create this rule chain from scratch.
  
-#### Create new Rule Chain (**Create & Clear Alarms**)
+#### Create new Rule Chain (**Temperature delta validation**)
 
 Go to **Rule Chains** -> **Add new Rule Chain** 
 
@@ -227,6 +227,6 @@ Please refer to the links from the second to the fourth under the **See Also** s
 
 - [Send Email](/docs/user-guide/rule-engine-2-0/tutorials/send-email/) tutorial.
 
-## Next steps
+# Next steps
 
 {% assign currentGuide = "DataProcessing" %}{% include templates/guides-banner.md %}
