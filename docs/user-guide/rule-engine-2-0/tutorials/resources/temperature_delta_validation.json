@@ -31,8 +31,8 @@
       },
       {
         "additionalInfo": {
-          "layoutX": 952,
-          "layoutY": 253
+          "layoutX": 1116,
+          "layoutY": 250
         },
         "type": "org.thingsboard.rule.engine.action.TbCreateAlarmNode",
         "name": "Create alarm",
@@ -58,8 +58,8 @@
       },
       {
         "additionalInfo": {
-          "layoutX": 661,
-          "layoutY": 304
+          "layoutX": 825,
+          "layoutY": 301
         },
         "type": "org.thingsboard.rule.engine.filter.TbJsFilterNode",
         "name": "validate delta",
@@ -82,8 +82,8 @@
       },
       {
         "additionalInfo": {
-          "layoutX": 951,
-          "layoutY": 354
+          "layoutX": 1115,
+          "layoutY": 351
         },
         "type": "org.thingsboard.rule.engine.action.TbClearAlarmNode",
         "name": "Clear alarm",
@@ -102,11 +102,6 @@
       },
       {
         "fromIndex": 2,
-        "toIndex": 3,
-        "type": "Success"
-      },
-      {
-        "fromIndex": 2,
         "toIndex": 4,
         "type": "Success"
       },
@@ -119,6 +114,11 @@
         "fromIndex": 3,
         "toIndex": 1,
         "type": "True"
+      },
+      {
+        "fromIndex": 4,
+        "toIndex": 3,
+        "type": "Success"
       }
     ],
     "ruleChainConnections": null

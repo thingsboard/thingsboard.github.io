@@ -34,9 +34,10 @@ Add Device entity in ThingsBoard. Its name is **Thermometer** and its type is **
 
 In this section, we explain the purpose of each node in this tutorial. There will be two rule chains involved:
 
-  - **Root rule chain** - rule chain that actually saves telemetry from devices into the database, and redirect the messages it to "Temperature delta validation" chain
+  - **Root rule chain** - rule chain that actually saves telemetry from devices into the database, and redirect the messages to **Temperature delta validation** chain
    
-  - **Temperature delta validation** - rule chain that actually calculates the delta between the last five-minutes temperature and latest temperature readings.</br> As a result, if delta value exceeds than 5 degrees, the alarm will be created/updated, otherwise, the alarm will be cleared.
+  - **Temperature delta validation** - rule chain that actually calculates the delta between the last five-minutes temperature and latest temperature readings.
+    <br> As a result, if delta value exceeds 5 degrees, the alarm will be created/updated, otherwise, the alarm will be cleared.
 
 The following screenshots show how the above Rule Chains should look like:
  
@@ -92,6 +93,45 @@ We will use fetch mode: **LAST**  with the time range from 24 hours ago till 5 m
  
 ![image](/images/user-guide/rule-engine-2-0/tutorials/delta-validation/latest-five-minute-old-record.png)
  
+###### Note: 
+    
+  Let's assume, you need to fetch all telemetry from the particular time range.
+  
+  In this case, you need to select the fetch mode: **ALL**. So rule node will be fetched all telemetry from the specified time range and add it to the message metadata as an array where the key of a particular element will be timestamp and value will be value in this timestamp. 
+  
+  - Metadata of the outbound message would be JSON document with the following structure:
+   
+  {% highlight javascript %}
+  {
+    "temperature": "[{\"ts\":1540892498884,\"value\":22.4},{\"ts\":1540892528847,\"value\":20.45},{\"ts\":1540892558845,\"value\":22.3}]"
+  }{% endhighlight %}
+    
+  - In order to convert the array to the valid JSON document you can use the following script: 
+    
+  {% highlight javascript %}
+  var newMsg = {};
+    
+  newMsg.temperatureArray = JSON.parse(metadata.temperature);
+    
+  return {msg: newMsg, metadata: metadata, msgType: msgType};{% endhighlight %}  
+      
+  - The outbound message payload will look like introduced below:
+  
+  {% highlight javascript %}
+  {
+      "temperatureArray": [{
+          "ts": 1540892498884,
+          "value": 22.4
+      }, {
+          "ts": 1540892528847,
+          "value": 20.45
+      }, {
+          "ts": 1540892558845,
+          "value": 22.3
+      }]
+  }{% endhighlight %}  
+ 
+Fetched mode **ALL** could be useful in the cases if you need to calculate, e.g variance for a particular key or to predict further change of telemetry depending on telemetry changes in the selected time range. 
  
 ###### Node B: **Script Transformation**
  - Add the **Script Transformation** node and connect it to the **Change Orignator** node with a relation type **Success**.
@@ -109,8 +149,16 @@ We will use fetch mode: **LAST**  with the time range from 24 hours ago till 5 m
    
  ![image](/images/user-guide/rule-engine-2-0/tutorials/delta-validation/calculate-delta.png)  
   
-###### Node C: **Filter Script**
- - Add the **Filter Script** node and connect it to the **Calculate delta** node with a relation type **Success**.
+###### Node C: **Save Timeseries**  
+ - Add the **Save TimeSeries** node and connect it to the **Script Transformation** node with a relationship type **Success**.  
+   This node will save the TimeSeries data from the incoming Message payload into the database and link it to the Device that is identified as the Message Originator.
+     
+ - Enter the Name field as **Save Time Series**.
+
+![image](/images/user-guide/rule-engine-2-0/tutorials/delta-validation/save-timeseries.png)
+
+###### Node D: **Filter Script**
+ - Add the **Filter Script** node and connect it to the **Save TimeSeries** node with a relation type **Success**.
  <br>This node will validate that calculated delta value between the latest temperature reading and five-minutes ago temperature reading did not exceed 5 degrees using the following script:
   
    {% highlight javascript %}
@@ -120,7 +168,8 @@ We will use fetch mode: **LAST**  with the time range from 24 hours ago till 5 m
   
 ![image](/images/user-guide/rule-engine-2-0/tutorials/delta-validation/validate-delta.png)
 
-###### Node D: **Create alarm**
+
+###### Node E: **Create alarm**
  - Add the **Create alarm** node and connect it to the **Filter Script** node with a relation type **True**. <br>
   This node loads the latest Alarm with configured Alarm Type for Message Originator, namely **Thermometer**<br> if the published delta temperature is not at expected range (filter script node returns True). 
   
@@ -128,21 +177,13 @@ We will use fetch mode: **LAST**  with the time range from 24 hours ago till 5 m
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/delta-validation/create-alarm.png)
 
-###### Node E: **Clear Alarm**
+###### Node F: **Clear Alarm**
  - Add the **Clear Alarm** node and connect it to the **Filter Script** node with a relation type **False**. <br>
   This node loads the latest Alarm with configured Alarm Type for Message Originator **Thermometer**<br> and Clears alarm if it exists in case if the published temperature delta is in expected range (script node returns False). 
   
  - Enter the Name field as **Clear Alarm** and the Alarm type as **General Alarm**.
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/delta-validation/clear-alarm.png)
-
-###### Node F: **Save Timeseries**  
- - Add the **Save TimeSeries** node and connect it to the **Script Transformation** node with a relationship type **Success**.  
-   This node will save the TimeSeries data from the incoming Message payload into the database and link it to the Device that is identified as the Message Originator.
-     
- - Enter the Name field as **Save Time Series**.
-
-![image](/images/user-guide/rule-engine-2-0/tutorials/delta-validation/save-timeseries.png)
 
 #### Modify Root Rule Chain
 
