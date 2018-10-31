@@ -2,7 +2,7 @@
 layout: thingsboard-pe
 title: ThingsBoard Professional Edition
 description: 
-
+redirect_from: "/partners/"
 ---
 
 ## Advanced ThingsBoard IoT Platform distribution with value added features
