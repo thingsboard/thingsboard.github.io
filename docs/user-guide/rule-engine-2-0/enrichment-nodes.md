@@ -164,3 +164,37 @@ Following Message Originator types are allowed: **Tenant**, **Customer**, **User
 If unsupported Originator type found, an error is thrown.
 
 **Failure** chain is used if Originator does not have assigned Tenant Entity, otherwise - **Success** chain.
+
+##### Originator telemetry
+
+![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-originator-telemetry.png)
+
+Adds Message Originator telemetry values from particular time range that was selected in node configuration to the Message Metadata. 
+
+Telemetry values added to Message Metadata without prefix.
+
+![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-originator-telemetry-config.png)
+
+The rule node has three fetch modes:
+
+ - FIRST: retrieves telemetry from the database that is closest to the beginning of the time range
+
+ - LAST: retrieves telemetry from the database that is closest to the end of the time range
+
+ - ALL: retrieves all telemetry from the database, which is in the specified time range.
+ 
+**NOTE**: End of the interval must always be less than the beginning of the interval.<br> 
+
+If selected fetch mode **FIRST** or **LAST**, Outbound Message Metadata would contain JSON elements(key/value) otherwise if the selected fetch mode **ALL**, telemetry would be fetched as an array.
+
+This array will contain JSON objects with the timestamp and value. 
+
+Outbound Message Metadata will contain configured telemetry fields if they exist and belong to the selected range.
+
+If attribute or telemetry was not found, it is not added into Message Metadata and still routed via **Success** chain. 
+
+To access fetched telemetry in other nodes you can use this template '<code>JSON.parse(metadata.temperature)</code>'
+
+You can see the real-life example, where this node is used, in the following tutorials:
+
+- [Telemetry delta calculation](/docs/user-guide/rule-engine-2-0/tutorials/telemetry-delta-validation/)
