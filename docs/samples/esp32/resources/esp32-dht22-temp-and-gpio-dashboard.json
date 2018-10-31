@@ -1,0 +1,300 @@
+{
+  "title": "ESP32 Pico Dashboard",
+  "configuration": {
+    "widgets": {
+      "70516c56-dc2a-16a4-3d27-0dc48627c31e": {
+        "isSystemType": true,
+        "bundleAlias": "control_widgets",
+        "typeAlias": "knob_control",
+        "type": "rpc",
+        "title": "New widget",
+        "sizeX": 5,
+        "sizeY": 4.5,
+        "config": {
+          "targetDeviceAliases": [],
+          "showTitle": false,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "0px",
+          "settings": {
+            "requestTimeout": 500,
+            "initialValue": 50,
+            "minValue": 25,
+            "title": "LED Blink Speed Control",
+            "getValueMethod": "getValue",
+            "setValueMethod": "setValue",
+            "maxValue": 1000
+          },
+          "title": "ESP32 LED blink speed",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "useDashboardTimewindow": true,
+          "showLegend": false,
+          "actions": {},
+          "decimals": 2,
+          "datasources": [],
+          "targetDeviceAliasIds": [
+            "d231a7b7-7739-5597-80dc-00ffb91eb498"
+          ]
+        },
+        "id": "70516c56-dc2a-16a4-3d27-0dc48627c31e"
+      },
+      "e8f54660-675a-2365-ef7a-ce5a03c7140b": {
+        "isSystemType": true,
+        "bundleAlias": "gpio_widgets",
+        "typeAlias": "basic_gpio_control",
+        "type": "rpc",
+        "title": "New widget",
+        "sizeX": 5,
+        "sizeY": 3,
+        "config": {
+          "targetDeviceAliases": [],
+          "showTitle": true,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "0px",
+          "settings": {
+            "parseGpioStatusFunction": "return body[pin] === true;",
+            "gpioStatusChangeRequest": {
+              "method": "setGpioStatus",
+              "paramsBody": "{\n   \"pin\": \"{$pin}\",\n   \"enabled\": \"{$enabled}\"\n}"
+            },
+            "requestTimeout": 2000,
+            "switchPanelBackgroundColor": "#b71c1c",
+            "gpioStatusRequest": {
+              "method": "getGpioStatus",
+              "paramsBody": "{}"
+            },
+            "gpioList": [
+              {
+                "pin": 0,
+                "label": "Red LED",
+                "row": 0,
+                "col": 0,
+                "_uniqueKey": 0
+              },
+              {
+                "pin": 1,
+                "label": "Green LED",
+                "row": 0,
+                "col": 1,
+                "_uniqueKey": 1
+              },
+              {
+                "pin": 2,
+                "label": "Blue LED",
+                "row": 1,
+                "col": 0,
+                "_uniqueKey": 2
+              }
+            ]
+          },
+          "title": "LED control for ESP32 Pico",
+          "datasources": [],
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "widgetStyle": {},
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "useDashboardTimewindow": true,
+          "showLegend": false,
+          "targetDeviceAliasIds": [
+            "d231a7b7-7739-5597-80dc-00ffb91eb498"
+          ],
+          "actions": {}
+        },
+        "id": "e8f54660-675a-2365-ef7a-ce5a03c7140b"
+      },
+      "4b18df21-2838-5b3a-92d3-3ba741233bf5": {
+        "isSystemType": true,
+        "bundleAlias": "charts",
+        "typeAlias": "basic_timeseries",
+        "type": "timeseries",
+        "title": "New widget",
+        "sizeX": 19,
+        "sizeY": 7,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "dataKeys": [
+                {
+                  "name": "humidity",
+                  "type": "timeseries",
+                  "label": "humidity",
+                  "color": "#2196f3",
+                  "settings": {
+                    "showLines": true,
+                    "fillLines": false,
+                    "showPoints": false,
+                    "tooltipValueFormatter": "",
+                    "showSeparateAxis": false,
+                    "axisTitle": "",
+                    "axisPosition": "left",
+                    "axisTicksFormatter": ""
+                  },
+                  "_hash": 0.6793332888119716
+                },
+                {
+                  "name": "temperature",
+                  "type": "timeseries",
+                  "label": "temperature",
+                  "color": "#4caf50",
+                  "settings": {
+                    "showLines": true,
+                    "fillLines": false,
+                    "showPoints": false,
+                    "tooltipValueFormatter": "",
+                    "showSeparateAxis": false,
+                    "axisTitle": "",
+                    "axisPosition": "left",
+                    "axisTicksFormatter": ""
+                  },
+                  "_hash": 0.5965758467120748
+                }
+              ],
+              "entityAliasId": "d231a7b7-7739-5597-80dc-00ffb91eb498"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "shadowSize": 4,
+            "fontColor": "#545454",
+            "fontSize": 10,
+            "xaxis": {
+              "showLabels": true,
+              "color": "#545454"
+            },
+            "yaxis": {
+              "showLabels": true,
+              "color": "#545454"
+            },
+            "grid": {
+              "color": "#545454",
+              "tickColor": "#DDDDDD",
+              "verticalLines": true,
+              "horizontalLines": true,
+              "outlineWidth": 1
+            },
+            "stack": false,
+            "tooltipIndividual": false
+          },
+          "title": "DHT22 Humidity/Temperature Graph",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "mobileHeight": null,
+          "widgetStyle": {},
+          "useDashboardTimewindow": true,
+          "showLegend": true,
+          "actions": {}
+        },
+        "id": "4b18df21-2838-5b3a-92d3-3ba741233bf5"
+      }
+    },
+    "states": {
+      "default": {
+        "name": "ESP32 Pico",
+        "root": true,
+        "layouts": {
+          "main": {
+            "widgets": {
+              "70516c56-dc2a-16a4-3d27-0dc48627c31e": {
+                "sizeX": 5,
+                "sizeY": 4,
+                "row": 0,
+                "col": 0
+              },
+              "e8f54660-675a-2365-ef7a-ce5a03c7140b": {
+                "sizeX": 5,
+                "sizeY": 3,
+                "row": 4,
+                "col": 0
+              },
+              "4b18df21-2838-5b3a-92d3-3ba741233bf5": {
+                "sizeX": 19,
+                "sizeY": 7,
+                "mobileHeight": null,
+                "row": 0,
+                "col": 5
+              }
+            },
+            "gridSettings": {
+              "backgroundColor": "#eeeeee",
+              "color": "rgba(0,0,0,0.870588)",
+              "columns": 24,
+              "margins": [
+                10,
+                10
+              ],
+              "backgroundSizeMode": "100%"
+            }
+          }
+        }
+      }
+    },
+    "entityAliases": {
+      "d231a7b7-7739-5597-80dc-00ffb91eb498": {
+        "id": "d231a7b7-7739-5597-80dc-00ffb91eb498",
+        "alias": "Pico",
+        "filter": {
+          "type": "singleEntity",
+          "resolveMultiple": false,
+          "singleEntity": {
+            "entityType": "DEVICE",
+            "id": "4757abf0-dbbd-11e8-8e73-fdea0cf121ef"
+          }
+        }
+      }
+    },
+    "timewindow": {
+      "displayValue": "",
+      "selectedTab": 0,
+      "realtime": {
+        "interval": 1000,
+        "timewindowMs": 60000
+      },
+      "history": {
+        "historyType": 0,
+        "interval": 1000,
+        "timewindowMs": 60000,
+        "fixedTimewindow": {
+          "startTimeMs": 1540116848598,
+          "endTimeMs": 1540203248598
+        }
+      },
+      "aggregation": {
+        "type": "AVG",
+        "limit": 2500
+      }
+    },
+    "settings": {
+      "stateControllerId": "entity",
+      "showTitle": false,
+      "showDashboardsSelect": true,
+      "showEntitiesSelect": true,
+      "showDashboardTimewindow": true,
+      "showDashboardExport": true,
+      "toolbarAlwaysOpen": true
+    }
+  },
+  "name": "ESP32 Pico Dashboard"
+}
