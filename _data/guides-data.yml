@@ -379,3 +379,22 @@
       subtitle: Learn how to schedule and generate reports based on existing dashboards.
       pe: true
       video: false
+- title: Contribution and Development
+  subtitle: Learn how to contribute - customize & develop custom widgets and rule nodes
+  id: Contribution
+  section:
+    - path: /docs/user-guide/contribution/how-to-contribute/
+      title: How to Contribute
+      subtitle: "Learn how to contribute to Thingsboard"
+      pe: false
+      video: false
+    - path: /docs/user-guide/contribution/customization-guide/
+      title: Create custom Rule nodes
+      subtitle: Learn how to create your own rule nodes.
+      pe: false
+      video: false
+    - path: /docs/user-guide/contribution/widgets-development/
+      title: Widgets Development Guide
+      subtitle: "Learn how to customize and create custom widgets"
+      pe: false
+      video: false

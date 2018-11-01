@@ -205,3 +205,11 @@ Sign up contribution license agreement (CLA) and verify that remote build has be
 Be patient, pull request may take several days to review.
 
 
+
+#### See also
+
+- [Create custom Rule nodes](/docs/user-guide/contribution/customization-guide/) guide that describes how to create your own rule nodes.
+
+## Next steps
+
+{% assign currentGuide = "Contribution" %}{% include templates/guides-banner.md %}

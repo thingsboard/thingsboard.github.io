@@ -121,5 +121,6 @@ To running Rule Node UI container in hot redeploy mode:
     npm run build 
     ```
  
-
+## Next steps
  
+ {% assign currentGuide = "Contribution" %}{% include templates/guides-banner.md %}
