@@ -208,7 +208,9 @@ Be patient, pull request may take several days to review.
 
 #### See also
 
-- [Create custom Rule nodes](/docs/user-guide/contribution/customization-guide/) guide that describes how to create your own rule nodes.
+- [Rule Node Development](/docs/user-guide/contribution/rule-node-development/) guide that describes how to create your own rule nodes.
+
+- [Widgets Development Guide](/docs/user-guide/contribution/widgets-development/) guide that describes how to create your own widgets.
 
 ## Next steps
 

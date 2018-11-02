@@ -29,7 +29,7 @@ Each Rule Chain Actor represent single rule chain configured by the user. Rule C
 
 Rule Node actor is responsible for processing of the incoming messages. The logic of message processing is highly customizable.
 There are many built-in implementations of the RuleNodes and you can develop your own, custom rule node implementations as well.
-See [Customization Guide](/docs/user-guide/contribution/customization-guide/) for more details.
+See [Rule Node Development](/docs/user-guide/contribution/rule-node-development/) guide for more details.
  
 ### Message Queue
 

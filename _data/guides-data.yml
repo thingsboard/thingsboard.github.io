@@ -388,9 +388,9 @@
       subtitle: "Learn how to contribute to Thingsboard"
       pe: false
       video: false
-    - path: /docs/user-guide/contribution/customization-guide/
-      title: Create custom Rule nodes
-      subtitle: Learn how to create your own rule nodes.
+    - path: /docs/user-guide/contribution/rule-node-development/
+      title: Rule Node Development Guide
+      subtitle: "Learn how to create your own rule nodes"
       pe: false
       video: false
     - path: /docs/user-guide/contribution/widgets-development/

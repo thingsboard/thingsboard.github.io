@@ -185,7 +185,7 @@ toc:
   section:
     - title: How to contribute
       path: /docs/user-guide/contribution/how-to-contribute/
-    - title: Create custom Rule nodes
-      path: /docs/user-guide/contribution/customization-guide/
+    - title: Rule Node development
+      path: /docs/user-guide/contribution/rule-node-development/
     - title: Widgets development
       path: /docs/user-guide/contribution/widgets-development/
