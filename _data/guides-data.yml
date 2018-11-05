@@ -380,7 +380,7 @@
       pe: true
       video: false
 - title: Contribution and Development
-  subtitle: Learn how to contribute - customize & develop custom widgets and rule nodes
+  subtitle: Learn how to contribute to Thingsboard, customize & develop custom widgets and rule nodes
   id: Contribution
   section:
     - path: /docs/user-guide/contribution/how-to-contribute/
@@ -390,7 +390,7 @@
       video: false
     - path: /docs/user-guide/contribution/rule-node-development/
       title: Rule Node Development Guide
-      subtitle: "Learn how to create your own rule nodes"
+      subtitle: "Learn how to customize and create custom rule nodes"
       pe: false
       video: false
     - path: /docs/user-guide/contribution/widgets-development/

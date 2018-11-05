@@ -10,19 +10,25 @@ description: Create custom Rule nodes
 
 ## Overview
 
-In this tutorial, you will learn how to create your own custom nodes, namely:
+In this tutorial, you will learn how to create your custom nodes, namely:
 
- - **Filter node** that will check whether the **key** from telemetry data of the inbound message exists. If the selected key exists - send Message via **True** chain, otherwise **False** chain is used.
+ - [**Filter node**](https://github.com/thingsboard/rule-node-examples/blob/master/src/main/java/org/thingsboard/rule/engine/node/filter/TbKeyFilterNode.java) that will check whether the **key** from telemetry data of the inbound message exists. If the selected key exists - send Message via **True** chain, otherwise **False** chain is used.
  
  ![image](/images/user-guide/contribution/customization/check-key-node.png)
  
- - **Enrichment node** that will calculate Sum of the telemetry data, which fields begin with the specified **Input Key** and add the result into Message Metadata with **Output Key**.
+ ![image](/images/user-guide/contribution/customization/add-check-key-node.png)
+ 
+ - [**Enrichment node**](https://github.com/thingsboard/rule-node-examples/blob/master/src/main/java/org/thingsboard/rule/engine/node/enrichment/TbGetSumIntoMetadata.java) that will calculate Sum of the telemetry data, separately for each device, when fields begin with the specified **Input Key** and add the result into Message Metadata with **Output Key**.
  
  ![image](/images/user-guide/contribution/customization/get-sum-in-metadata-node.png)
  
- - **Transformation node** will calculate Sum of the telemetry data, which fields begin with the specified **Input Key** and add Sum to the new Message payload with **Output Key**.
+ ![image](/images/user-guide/contribution/customization/add-get-sum-into-matadata-node.png)
  
- ![image](/images/user-guide/contribution/customization/get-sum-node.png)
+ - [**Transformation node**](https://github.com/thingsboard/rule-node-examples/blob/master/src/main/java/org/thingsboard/rule/engine/node/transform/TbGetSumNode.java) that will calculate Sum of the telemetry data, separately for each device, when fields begin with the specified **Input Key** and add Sum to the new Message payload with **Output Key**.
+ 
+ ![image](/images/user-guide/contribution/customization/calculate-sum-node.png)
+ 
+ ![image](/images/user-guide/contribution/customization/add-calculate-sum-node.png)
 
 
 ## Prerequisites 
@@ -35,7 +41,7 @@ We assume you have completed the following guides and reviewed the articles list
 
 ## Customization 
 
-In order to create new rule node, you should implement the [TbNode](https://github.com/thingsboard/thingsboard/blob/master/rule-engine/rule-engine-api/src/main/java/org/thingsboard/rule/engine/api/TbNode.java) interface:
+In order to create new rule node, you should implement the [TbNode](https://github.com/thingsboard/thingsboard/blob/release-2.0/rule-engine/rule-engine-api/src/main/java/org/thingsboard/rule/engine/api/TbNode.java) interface:
 
 ```java
 package org.thingsboard.rule.engine.api;
@@ -53,13 +59,13 @@ public interface TbNode {
 }
 ```
 
-and annotate your implementation with the following [annotation](https://github.com/thingsboard/thingsboard/blob/master/rule-engine/rule-engine-api/src/main/java/org/thingsboard/rule/engine/api/RuleNode.java):
+and annotate your implementation with the following [annotation](https://github.com/thingsboard/thingsboard/blob/release-2.0/rule-engine/rule-engine-api/src/main/java/org/thingsboard/rule/engine/api/RuleNode.java):
 
 ```java
 org.thingsboard.rule.engine.api.RuleNode 
 ```
 
-Also each rule node must have a configuration class that implement [NodeConfiguration](https://github.com/thingsboard/thingsboard/blob/master/rule-engine/rule-engine-api/src/main/java/org/thingsboard/rule/engine/api/NodeConfiguration.java) interface.
+Also each rule node may have a configuration class that implement [NodeConfiguration](https://github.com/thingsboard/thingsboard/blob/release-2.0/rule-engine/rule-engine-api/src/main/java/org/thingsboard/rule/engine/api/NodeConfiguration.java) interface.
 
 ```java
 package org.thingsboard.rule.engine.api;
@@ -75,24 +81,62 @@ Configuration class define in Rule node classes.
 
 ### Methods flow
 
-Body of init method for each above mention rule node is almost the same, in each of them defined configuration using static method ```convert()``` from public class [TbNodeUtils](https://github.com/thingsboard/thingsboard/blob/master/rule-engine/rule-engine-api/src/main/java/org/thingsboard/rule/engine/api/util/TbNodeUtils.java) converts JSON data from TbNodeConfiguration to Configuration class.
-All of the configuration parameters assigns in the **init** method.
-
 {% highlight java %}void init(TbContext ctx, TbNodeConfiguration configuration) throws TbNodeException;{% endhighlight %}
  
- Method to initialize rule node after its creation. It is invoked only after rule node creation or updating and takes two input parameters:
+Method to initialize rule node after its creation. Body of **init** method for each above mention rule node is almost the same. We convert the incoming JSON configuration to the specific NodeConfiguration implementation.
+
+ - **check key** node:
  
- - [**TbContext**](https://github.com/thingsboard/thingsboard/blob/master/rule-engine/rule-engine-api/src/main/java/org/thingsboard/rule/engine/api/TbContext.java) is an interface that gives access for rule node to majority of services, e.g for save telemetry to DB and notify over WebSockets to all subscriptions of entity data changes: 
+{% highlight java %}
+    private TbKeyFilterNodeConfiguration config;
+    private String key;
+            
+    @Override
+    public void init(TbContext tbContext, TbNodeConfiguration configuration) throws TbNodeException {
+        this.config = TbNodeUtils.convert(configuration, TbKeyFilterNodeConfiguration.class);
+        key = config.getKey();
+    }{% endhighlight %}
+    
+ - **calculate sum** node:
+ 
+{% highlight java %}
+    private TbCalculateSumConfiguration config;
+    private String inputKey;
+    private String outputKey;
+    
+    @Override
+    public void init(TbContext ctx, TbNodeConfiguration configuration) throws TbNodeException {
+        this.config = TbNodeUtils.convert(configuration, TbCalculateSumConfiguration.class);
+        inputKey = config.getInputKey();
+        outputKey = config.getOutputKey();
+    }{% endhighlight %}    
+
+ - **get sum into metadata** node:
+ 
+{% highlight java %}
+    private TbGetSumIntoMetadataConfiguration config;
+    private String inputKey;
+    private String outputKey;
+    
+    @Override
+    public void init(TbContext ctx, TbNodeConfiguration configuration) throws TbNodeException {
+        this.config = TbNodeUtils.convert(configuration, TbGetSumIntoMetadataConfiguration.class);
+        inputKey = config.getInputKey();
+        outputKey = config.getOutputKey();
+    }{% endhighlight %}    
+ It is invoked only after rule node creation or updating and takes two input parameters:
+ 
+ - [**TbContext**](https://github.com/thingsboard/thingsboard/blob/release-2.0/rule-engine/rule-engine-api/src/main/java/org/thingsboard/rule/engine/api/TbContext.java) is an interface that gives access for rule node to majority of services, e.g for save telemetry to DB and notify over WebSockets to all subscriptions of entity data changes: 
     
    {% highlight java %}ctx.getTelemetryService().saveAndNotify(msg.getOriginator(), tsKvEntryList, ttl, new TelemetryNodeCallback(ctx, msg));{% endhighlight %}
                
- - [**TbNodeConfiguration**](https://github.com/thingsboard/thingsboard/blob/master/rule-engine/rule-engine-api/src/main/java/org/thingsboard/rule/engine/api/TbNodeConfiguration.java) is a simple class that has only one private access final field ```JsonNode data```  that processed on rule node web UI.
+ - [**TbNodeConfiguration**](https://github.com/thingsboard/thingsboard/blob/release-2.0/rule-engine/rule-engine-api/src/main/java/org/thingsboard/rule/engine/api/TbNodeConfiguration.java) is a simple class that has only one private access final field ```JsonNode data```  that processed on rule node web UI.
 
 {% highlight java %}void onMsg(TbContext ctx, TbMsg msg) throws ExecutionException, InterruptedException, TbNodeException;{% endhighlight %}
  
  Method for processing received messages. It is invoked each time when messages arrive in the node. and also takes two input parameters:
 
-- [**TbMsg**](https://github.com/thingsboard/thingsboard/blob/master/common/message/src/main/java/org/thingsboard/server/common/msg/TbMsg.java) is a final serialized class that gives access to fields from the message and also allows you to copy the message, convert the message to ByteBuffer and other way round.
+- [**TbMsg**](https://github.com/thingsboard/thingsboard/blob/release-2.0/common/message/src/main/java/org/thingsboard/server/common/msg/TbMsg.java) is a final serialized class that gives access to fields from the message and also allows you to copy the message, convert the message to ByteBuffer and other way round.
         
    gives access to fields: 
    
@@ -113,7 +157,7 @@ All of the configuration parameters assigns in the **init** method.
         
         ***NOTE*** using in cluster mode. {% endhighlight %} 
  
-- [**TbContext**](https://github.com/thingsboard/thingsboard/blob/master/rule-engine/rule-engine-api/src/main/java/org/thingsboard/rule/engine/api/TbContext.java) interface also has methods that route outbound messages over the chain, e.g
+- [**TbContext**](https://github.com/thingsboard/thingsboard/blob/release-2.0/rule-engine/rule-engine-api/src/main/java/org/thingsboard/rule/engine/api/TbContext.java) interface also has methods that route outbound messages over the chain, e.g
 
 ![image](/images/user-guide/contribution/customization/check-key-config.png)  ![image](/images/user-guide/contribution/customization/relations.png)  
 
@@ -123,16 +167,26 @@ true & false:
           
 failure:
     {% highlight java %}
-        ctx.tellNext(msg, FAILURE, new Exception("Message doesn't contains the Input Key: " + key));
+        ctx.tellFailure(msg, e);
         
-        ***NOTE*** **key** is a fild from configuration class and its translate as **Message key** in rule node web UI.{% endhighlight %}
+        ctx.tellNext(msg, FAILURE, new Exception());{% endhighlight %}
+  
+tellSelf and updateSelf methods:
+    {% highlight java %}
+        ctx.tellSelf(tickMsg, curDelay);
         
-Also, [**TbContext**](https://github.com/thingsboard/thingsboard/blob/master/rule-engine/rule-engine-api/src/main/java/org/thingsboard/rule/engine/api/TbContext.java) allow to create and transform message e.g:   
+        ctx.updateSelf(ruleNode);
+        
+        
+***NOTE*** Method tellSelf() use in rule nodes that based on a specific delay. Method updateSelf() used on each update the rule node.{% endhighlight %}
+      
+        
+Also, [**TbContext**](https://github.com/thingsboard/thingsboard/blob/release-2.0/rule-engine/rule-engine-api/src/main/java/org/thingsboard/rule/engine/api/TbContext.java) allow to create and transform message e.g:   
      {% highlight java %}ctx.newMsg(msg.getType(), msg.getOriginator(), msg.getMetaData(), "{temperature:20, humidity:30}");
      
 ctx.transformMsg(origMsg, origMsg.getType(), origMsg.getOriginator(), metaData, origMsg.getData());
 
-***NOTE*** the difference between this two methods is that newMsg() creates a new message with a new messageId while the transformMsg() simply transforms an already existing message.
+***NOTE*** The difference between this two methods is that newMsg() creates a new message with a new messageId while the transformMsg() simply transforms an already existing message.
 {% endhighlight %}  
            
 {% highlight java %}void destroy();{% endhighlight %}  
