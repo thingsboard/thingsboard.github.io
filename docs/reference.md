@@ -56,9 +56,29 @@ Please follow the links listed below to learn more and choose the right architec
 
 ## SQL vs NoSQL vs Hybrid database approach
 
-ThingsBard supports three database options:
+ThingsBard uses database to store 
+[entities](/docs/user-guide/entities-and-relations/) (devices, assets, customers, dashboards, etc) and 
+[telemetry](/docs/user-guide/telemetry/) data (attributes, timeseries sensor readings, statistics, events). 
+Platform supports three database options at the moment:
 
-* **SQL** -   
+* **SQL** - Stores all entities and telemetry in SQL database. ThingsBoard authors recommend to use PostgreSQL and this is the main SQL database that ThingsBoard supports. 
+It is possible to use HSQLDB for local development purposes. We do nto recommend to use HSQLDB for anything except running tests and launching dev instance that has minimum possible load.
+* **NoSQL** - Stores all entities and telemetry in NoSQL database. ThingsBoard authors recommend to use Cassandra and this is the only NoSQL database that ThingsBoard supports at the moment.
+However, due to a lot of interest to deployments with managed databases, we plan to introduce support on AWS DynamoDB in v2.4. 
+* **Hybrid** - Stores all entities in SQL database and all telemetry in NoSQL database. 
+
+It is possible to configure this options using **thingsboard.yml** file. See database [configuration](/docs/user-guide/install/config/) page for more details.
+
+```yaml
+database:
+  # ...
+  entities:
+    type: "${DATABASE_ENTITIES_TYPE:sql}" # cassandra OR sql
+  ts:
+    type: "${DATABASE_TS_TYPE:sql}" # cassandra OR sql (for hybrid mode, only this value should be cassandra)
+```
+
+See ["How-to choose the right database?"](/docs/reference/how-to-choose-right-db/) for more details on which DB option to use.
 
 ## Programming languages and third-party
 
