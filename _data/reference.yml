@@ -35,7 +35,7 @@ toc:
     path: /docs/reference/performance/
   - title: Performance Test Tools
     path: /docs/reference/performance-tools/
-  - title: How to repeate the tests
+  - title: How to repeat the tests
     path: /docs/reference/performance-tests/
 - title: ThingsBoard PE Cloud Getting Started
   path: /docs/reference/pe-demo-getting-started/
