@@ -1,10 +1,34 @@
-bigheader: "Reference Documentation"
-abstract: "Design docs, concept definitions, and references for APIs and CLIs."
+bigheader: "Architecture"
+abstract: "Design docs, deployment scenarios and release notes."
 toc:
-- title: Reference Documentation
+- title: Architecture Overview
   path: /docs/reference/
-- title: ThingsBoard Architecture
-  path: /docs/reference/architecture/
+- title: Monolithic architecture
+  path: /docs/reference/monolithic/
+- title: Microservices architecture & components
+  section:
+    - title: Microservices architecture
+      path: /docs/reference/msa/
+    - title: Node microservice
+      path: /docs/reference/msa-tb-node/
+    - title: Web UI microservice
+      path: /docs/reference/msa-tb-web-ui/
+    - title: MQTT Transport microservice
+      path: /docs/reference/msa-tb-mqtt-transport/
+    - title: HTTP Transport microservice
+      path: /docs/reference/msa-tb-http-transport/
+    - title: CoAP Transport microservice
+      path: /docs/reference/msa-tb-coap-transport/
+    - title: JavaScript Executor microservice
+      path: /docs/reference/msa-tb-js-executor/
+- title: Deployment How-Tos & Tips
+  section:
+  - title: How-to choose the right database?
+    path: /docs/reference/how-to-choose-right-db/
+  - title: How-to determine the size of the cluster?
+    path: /docs/reference/how-to-determine-cluster-size/
+  - title: How-to choose the load balancer?
+    path: /docs/reference/how-to-choose-lb/
 - title: ThingsBoard Performance
   section:
   - title: Data Collection Performance
