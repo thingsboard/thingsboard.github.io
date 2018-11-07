@@ -59,7 +59,7 @@ public interface TbNode {
 }
 ```
 
-and annotate your implementation with the following [annotation](https://github.com/thingsboard/thingsboard/blob/release-2.0/rule-engine/rule-engine-api/src/main/java/org/thingsboard/rule/engine/api/RuleNode.java):
+and annotate your implementation with the following [multi-value annotation](https://github.com/thingsboard/thingsboard/blob/release-2.0/rule-engine/rule-engine-api/src/main/java/org/thingsboard/rule/engine/api/RuleNode.java) that refers to the runtime:
 
 ```java
 org.thingsboard.rule.engine.api.RuleNode 
@@ -76,16 +76,87 @@ public interface NodeConfiguration<T extends NodeConfiguration> {
 
 }
 ```
+- [TbKeyFilterNodeConfiguration](https://github.com/thingsboard/rule-node-examples/blob/master/src/main/java/org/thingsboard/rule/engine/node/filter/TbKeyFilterNodeConfiguration.java) class:
 
-Configuration class define in Rule node classes.
+{% highlight java %}
+    package org.thingsboard.rule.engine.node.filter;
+    
+    import lombok.Data;
+    import org.thingsboard.rule.engine.api.NodeConfiguration;
+    
+    @Data
+    public class TbKeyFilterNodeConfiguration implements NodeConfiguration<TbKeyFilterNodeConfiguration> {
+    
+        private String key;
+    
+        @Override
+        public TbKeyFilterNodeConfiguration defaultConfiguration() {
+            TbKeyFilterNodeConfiguration configuration = new TbKeyFilterNodeConfiguration();
+            configuration.setKey(null);
+            return configuration;
+        }
+    }{% endhighlight %}
+    
+- [TbCalculateSumNodeConfiguration](https://github.com/thingsboard/rule-node-examples/blob/master/src/main/java/org/thingsboard/rule/engine/node/transform/TbCalculateSumNodeConfiguration.java) class:
+{% highlight java %}
+    package org.thingsboard.rule.engine.node.transform;
+    
+    import lombok.Data;
+    import org.thingsboard.rule.engine.api.NodeConfiguration;
+    
+    
+    @Data
+    public class TbCalculateSumNodeConfiguration implements NodeConfiguration<TbCalculateSumNodeConfiguration> {
+    
+        private String inputKey;
+        private String outputKey;
+    
+        @Override
+        public TbCalculateSumNodeConfiguration defaultConfiguration() {
+            TbCalculateSumNodeConfiguration configuration = new TbCalculateSumNodeConfiguration();
+            configuration.setInputKey("temperature");
+            configuration.setOutputKey("TemperatureSum");
+            return configuration;
+        }
+    }{% endhighlight %}    
+
+- [TbGetSumIntoMetadataConfiguration](https://github.com/thingsboard/rule-node-examples/blob/master/src/main/java/org/thingsboard/rule/engine/node/enrichment/TbGetSumIntoMetadataConfiguration.java) class:
+{% highlight java %}
+    package org.thingsboard.rule.engine.node.enrichment;
+    
+    import lombok.Data;
+    import org.thingsboard.rule.engine.api.NodeConfiguration;
+    
+    @Data
+    public class TbGetSumIntoMetadataConfiguration implements NodeConfiguration<TbGetSumIntoMetadataConfiguration> {
+    
+        private String inputKey;
+        private String outputKey;
+    
+    
+        @Override
+        public TbGetSumIntoMetadataConfiguration defaultConfiguration() {
+            TbGetSumIntoMetadataConfiguration configuration = new TbGetSumIntoMetadataConfiguration();
+            configuration.setInputKey("temperature");
+            configuration.setOutputKey("TemperatureSum");
+            return configuration;
+        }
+    }{% endhighlight %}        
+
+
+Configuration classes defines in Rule node classes.
 
 ### Methods flow
 
+In this section, we explain the purpose of each implemented method from **TbNode** interface:
+
+#### Method init()
+
 {% highlight java %}void init(TbContext ctx, TbNodeConfiguration configuration) throws TbNodeException;{% endhighlight %}
  
-Method to initialize rule node after its creation. Body of **init** method for each above mention rule node is almost the same. We convert the incoming JSON configuration to the specific NodeConfiguration implementation.
+Method to initialize rule node after its creation. Body of **init** method for each above mention rule node is almost the same. We convert the incoming JSON configuration to the specific [NodeConfiguration](https://github.com/thingsboard/thingsboard/blob/release-2.0/rule-engine/rule-engine-api/src/main/java/org/thingsboard/rule/engine/api/NodeConfiguration.java) implementation.
 
- - **check key** node:
+ - [**check key**](https://github.com/thingsboard/rule-node-examples/blob/master/src/main/java/org/thingsboard/rule/engine/node/filter/TbKeyFilterNode.java) node:
  
 {% highlight java %}
     private TbKeyFilterNodeConfiguration config;
@@ -97,7 +168,7 @@ Method to initialize rule node after its creation. Body of **init** method for e
         key = config.getKey();
     }{% endhighlight %}
     
- - **calculate sum** node:
+ - [**calculate sum**](https://github.com/thingsboard/rule-node-examples/blob/master/src/main/java/org/thingsboard/rule/engine/node/transform/TbCalculateSumNode.java) node:
  
 {% highlight java %}
     private TbCalculateSumConfiguration config;
@@ -111,7 +182,7 @@ Method to initialize rule node after its creation. Body of **init** method for e
         outputKey = config.getOutputKey();
     }{% endhighlight %}    
 
- - **get sum into metadata** node:
+ - [**get sum into metadata**](https://github.com/thingsboard/rule-node-examples/blob/master/src/main/java/org/thingsboard/rule/engine/node/enrichment/TbGetSumIntoMetadata.java) node:
  
 {% highlight java %}
     private TbGetSumIntoMetadataConfiguration config;
@@ -130,7 +201,10 @@ Method to initialize rule node after its creation. Body of **init** method for e
     
    {% highlight java %}ctx.getTelemetryService().saveAndNotify(msg.getOriginator(), tsKvEntryList, ttl, new TelemetryNodeCallback(ctx, msg));{% endhighlight %}
                
- - [**TbNodeConfiguration**](https://github.com/thingsboard/thingsboard/blob/release-2.0/rule-engine/rule-engine-api/src/main/java/org/thingsboard/rule/engine/api/TbNodeConfiguration.java) is a simple class that has only one private access final field ```JsonNode data```  that processed on rule node web UI.
+ - [**TbNodeConfiguration**](https://github.com/thingsboard/thingsboard/blob/release-2.0/rule-engine/rule-engine-api/src/main/java/org/thingsboard/rule/engine/api/TbNodeConfiguration.java) 
+    TbNodeConfiguration is a simple class that has only one field that processed on rule node web UI: {% highlight java %}private final JsonNode data;{% endhighlight %}
+
+#### Method onMsg()
 
 {% highlight java %}void onMsg(TbContext ctx, TbMsg msg) throws ExecutionException, InterruptedException, TbNodeException;{% endhighlight %}
  
@@ -175,19 +249,30 @@ tellSelf and updateSelf methods:
     {% highlight java %}
         ctx.tellSelf(tickMsg, curDelay);
         
-        ctx.updateSelf(ruleNode);
+        ctx.updateSelf(ruleNode);{% endhighlight %}
         
         
-***NOTE*** Method tellSelf() use in rule nodes that based on a specific delay. Method updateSelf() used on each update the rule node.{% endhighlight %}
+{% highlight java %}***NOTE*** Method tellSelf() use in rule nodes that based on a specific delay. Method updateSelf() used on each update the rule node.{% endhighlight %}
       
         
-Also, [**TbContext**](https://github.com/thingsboard/thingsboard/blob/release-2.0/rule-engine/rule-engine-api/src/main/java/org/thingsboard/rule/engine/api/TbContext.java) allow to create and transform message e.g:   
-     {% highlight java %}ctx.newMsg(msg.getType(), msg.getOriginator(), msg.getMetaData(), "{temperature:20, humidity:30}");
+Also, [**TbContext**](https://github.com/thingsboard/thingsboard/blob/release-2.0/rule-engine/rule-engine-api/src/main/java/org/thingsboard/rule/engine/api/TbContext.java) allow to create new message:   
+     {% highlight java %}
+        String data = "{temperature:20, humidity:30}"
      
-ctx.transformMsg(origMsg, origMsg.getType(), origMsg.getOriginator(), metaData, origMsg.getData());
+        ctx.newMsg(msg.getType(), msg.getOriginator(), msg.getMetaData(), data);{% endhighlight %}
+      
+and transform message:     
+     {% highlight java %}
+     ctx.transformMsg(origMsg, origMsg.getType(), origMsg.getOriginator(), metaData, origMsg.getData());{% endhighlight %} 
 
-***NOTE*** The difference between this two methods is that newMsg() creates a new message with a new messageId while the transformMsg() simply transforms an already existing message.
-{% endhighlight %}  
+{% highlight java %}
+***NOTE*** The difference between these methods that:
+    
+       TbMsg newMsg() create a new message with a new messageId;
+    
+       TbMsg transformMsg() convert an already existing message;{% endhighlight %}   
+
+#### Method destroy()
            
 {% highlight java %}void destroy();{% endhighlight %}  
 
