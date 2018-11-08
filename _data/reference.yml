@@ -5,22 +5,8 @@ toc:
   path: /docs/reference/
 - title: Monolithic architecture
   path: /docs/reference/monolithic/
-- title: Microservices architecture & components
-  section:
-    - title: Microservices architecture
-      path: /docs/reference/msa/
-    - title: Node microservice
-      path: /docs/reference/msa-tb-node/
-    - title: Web UI microservice
-      path: /docs/reference/msa-tb-web-ui/
-    - title: MQTT Transport microservice
-      path: /docs/reference/msa-tb-mqtt-transport/
-    - title: HTTP Transport microservice
-      path: /docs/reference/msa-tb-http-transport/
-    - title: CoAP Transport microservice
-      path: /docs/reference/msa-tb-coap-transport/
-    - title: JavaScript Executor microservice
-      path: /docs/reference/msa-tb-js-executor/
+- title: Microservices architecture
+  path: /docs/reference/msa/
 - title: Deployment How-Tos & Tips
   section:
   - title: How-to choose the right database?

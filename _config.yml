@@ -57,4 +57,4 @@ permalink: pretty
 gems:
   - jekyll-redirect-from
   - jekyll-seo-tag
-  - jekyll-redirect-from
+  - jekyll_github_sample

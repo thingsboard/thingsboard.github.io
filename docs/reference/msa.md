@@ -13,7 +13,7 @@ This article consist of high level diagram, description of data flow between var
 
 ## Architecture diagram
 
- <object width="80%" data="/images/reference/msa-architecture.svg"></object>   
+ <object width="80%" data="/images/reference/msa-architecture.svg"></object> 
   
 ## Transport Microservices
 
@@ -107,11 +107,24 @@ The main idea is to sacrifice small performance/latency penalties in favor of pe
 
 ### HAProxy (or other LoadBalancer)
 
-
+[haproxy.cfg](https://github.com/thingsboard/thingsboard/blob/c84bcd51d843472c3e96ad3da226d12df9915fda/docker/haproxy/config/haproxy.cfg)
+{% highlight conf %}
+{% github_sample /thingsboard/thingsboard/blob/c84bcd51d843472c3e96ad3da226d12df9915fda/docker/haproxy/config/haproxy.cfg %}
+{% endhighlight %}
 
 ### Databases
 
 See "[SQL vs NoSQL vs Hybrid?](/docs/reference/#sql-vs-nosql-vs-hybrid-database-approach)" for more details. 
-   
+  
+
+## Deployment
+
+[docker-compose.yml](https://github.com/thingsboard/thingsboard/blob/c84bcd51d843472c3e96ad3da226d12df9915fda/docker/docker-compose.yml)
+{% highlight yaml %}
+{% github_sample /thingsboard/thingsboard/blob/c84bcd51d843472c3e96ad3da226d12df9915fda/docker/docker-compose.yml %}
+{% endhighlight %}
+
+
+
 
     
