@@ -41,3 +41,5 @@ toc:
   path: /docs/reference/pe-demo-getting-started/
 - title: Release Notes
   path: https://github.com/thingsboard/thingsboard/releases/
+- title: Roadmap
+  path: /docs/reference/roadmap/
