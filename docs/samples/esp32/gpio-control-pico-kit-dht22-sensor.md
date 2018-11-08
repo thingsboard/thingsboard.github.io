@@ -69,7 +69,8 @@ The following picture summarizes the connections for this project:
 
 This step contains instructions that are necessary to connect your device to ThingsBoard.
 
-Open ThingsBoard Web UI (http://localhost:8080) in browser and login as tenant administrator
+Open ThingsBoard Web UI (http://localhost:8080) in browser and login as tenant administrator.
+If you loaded the demo data during TB installation, the next credentials can be used:
 
  - login: tenant@thingsboard.org
  - password: tenant
@@ -168,7 +169,7 @@ In order to to perform troubleshooting, you must check ESP32 Pico logs. For that
 
 Finally, open ThingsBoard Web UI. You can access this dashboard by logging in as a tenant administrator.
 
-In case of local installation:
+In case of local installation (if the demo data was added during TB installation):
 
  - login: tenant@thingsboard.org
  - password: tenant
