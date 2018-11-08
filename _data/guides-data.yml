@@ -307,43 +307,48 @@
   subtitle: Learn how to connect various hardware platforms to ThingsBoard.
   id: HardwareSamples
   section:
+    - path: /docs/samples/esp32/gpio-control-pico-kit-dht22-sensor/
+      title: ESP32 Pico Kit GPIO control and DHT22 sensor monitor using ThingsBoard Arduino SDK
+      subtitle: Contains wiring diagram, sketch and dashboard setup guide.
+      pe: false
+      video: false
     - path: /docs/samples/arduino/temperature/
       title: Temperature upload over MQTT using Arduino UNO, ESP8266 and DHT22 sensor
-      subtitle: Contains wiring schema, sketch and dashboard setup guide.
+      subtitle: Contains wiring diagram, sketch and dashboard setup guide.
       pe: false
     - path: /docs/samples/esp8266/temperature/
       title: Temperature upload over MQTT using ESP8266 and DHT22 sensor
-      subtitle: Contains wiring schema, sketch, dashboard setup guide and demonstration video.
+      subtitle: Contains wiring diagram, sketch, dashboard setup guide and demonstration video.
       pe: false
       video: true
     - path: /docs/samples/esp8266/gpio/
       title: ESP8266 GPIO control over MQTT using ThingsBoard
-      subtitle: Contains wiring schema, sketch, dashboard setup guide and demonstration video.
+      subtitle: Contains wiring diagram, sketch, dashboard setup guide and demonstration video.
       pe: false
       video: true
     - path: /docs/samples/nodemcu/temperature/
       title: Temperature upload over MQTT using NodeMCU and DHT11 sensor
-      subtitle: Contains wiring schema, sketch and dashboard setup guide.
+      subtitle: Contains wiring diagram, sketch and dashboard setup guide.
       pe: false
       video: false
     - path: /docs/samples/raspberry/gpio/
       title: Raspberry Pi GPIO control over MQTT using ThingsBoard
-      subtitle: Contains wiring schema, source code, dashboard setup guide and demonstration video.
+      subtitle: Contains wiring diagram, source code, dashboard setup guide and demonstration video.
       pe: false
       video: true
     - path: /docs/samples/raspberry/gpio-android-things/
       title: Raspberry Pi GPIO control using Android Things and ThingsBoard
-      subtitle: Contains wiring schema, source code, dashboard setup guide and demonstration video.
+      subtitle: Contains wiring diagram, source code, dashboard setup guide and demonstration video.
       pe: false
       video: true
     - path: /docs/samples/raspberry/temperature/
       title: Temperature upload over MQTT using Raspberry Pi and DHT22 sensor
-      subtitle: Contains wiring schema, sketch, dashboard setup guide and demonstration video.
+      subtitle: Contains wiring diagram, sketch, dashboard setup guide and demonstration video.
       pe: false
       video: true
     - path: /docs/samples/linkit-one/gps/
       title: GPS data upload and visualization using LinkIt ONE and ThingsBoard
-      subtitle: Contains wiring schema, sketch and dashboard setup guide.
+      subtitle: Contains wiring diagram, sketch and dashboard setup guide.
       pe: false
       video: false
 - title: Advanced features
