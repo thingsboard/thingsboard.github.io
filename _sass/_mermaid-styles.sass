@@ -1,0 +1,43 @@
+
+#docsContent
+  .mermaid
+    font-family: "Roboto",sans-serif
+    font-size: 16px
+    font-weight: 700
+
+    .label
+      color: #0f55a2
+
+    .node > *
+      stroke: #305680
+      color: #0f55a2
+      fill: #ffffff
+      stroke-width: 4px
+      transition: 0.3s
+
+    .node.main > *
+        fill: #305680
+        color: #ffffff
+        font-size: 18px
+
+    .node.clickable:hover > *
+        fill: #305680
+        color: #ffffff
+
+    .edgeLabel
+      color: #305680
+      fill: #ffffff
+      background-color: #ffffff
+
+.mermaidTooltip
+  position: absolute
+  text-align: center
+  max-width: 200px
+  padding: 4px
+  font-family: "Roboto",sans-serif
+  font-size: 14px
+  background: #ffffde
+  border: 1px solid #305680
+  border-radius: 6px
+  pointer-events: none
+  z-index: 100

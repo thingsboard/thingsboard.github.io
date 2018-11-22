@@ -7,6 +7,8 @@ toc:
   path: /docs/getting-started-guides/what-is-thingsboard/
 - title: Getting Started
   path: /docs/getting-started-guides/helloworld/
+- title: Connectivity
+  path: /docs/getting-started-guides/connectivity/
 - title: Features
   section:
   - title: Entities and relations

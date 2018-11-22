@@ -1,0 +1,22 @@
+{% capture graphId %}{{include.graphId}}{% endcapture %}
+{% capture graphcode %}{% include_relative {{include.file}} %}{% endcapture %}
+<script type="text/javascript">
+    mermaidDefer(function () {
+        var codeElement = $('textarea#{{ graphId }}');
+        var graphElement = $('<div></div>');
+        graphElement.attr("id","{{ graphId }}");
+        graphElement.addClass("mermaid");
+        graphElement.text(codeElement.text());
+        graphElement.css("visibility", "hidden");
+        codeElement.replaceWith(graphElement);
+        mermaid.init(undefined, graphElement);
+        graphElement.css("visibility", "visible");
+    });
+</script>
+
+<html>
+    <textarea id="{{ graphId }}" style="visibility: hidden;">
+        {{ graphcode }}
+    </textarea>
+</html>
+

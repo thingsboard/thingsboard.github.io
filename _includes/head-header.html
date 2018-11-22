@@ -36,6 +36,34 @@
 			}
 		}
 
+        function mermaidDefer(method) {
+            if (window.mermaid) {
+                method();
+            } else {
+                if (!window.mermaidLoading) {
+                    window.mermaidLoading = true;
+                    loadScript("/js/mermaid.min.js", function() {
+                        mermaid.initialize({
+                            startOnLoad:false
+                        });
+                        jqueryDefer(function() {
+                            setTimeout(function() {
+                                var scroll = $(window).scrollTop();
+                                $('.mermaidTooltip').css("transform", "translate(-40px," + (scroll - 40) + "px)");
+                                $(window).scroll(function (event) {
+                                    var scroll = $(window).scrollTop();
+                                    $('.mermaidTooltip').css("transform", "translate(-40px," + (scroll - 40) + "px)");
+                                });
+                            }, 300);
+                        });
+                    });
+                }
+                setTimeout(function() {
+                    mermaidDefer(method)
+                }, 50);
+            }
+        }
+
 		function jqueryUiDefer(method) {
 			if (window.jQuery && window.jQuery.ui) {
 				method();
@@ -99,6 +127,9 @@
 				var script = scriptsList[index];
 				if (script.type === 'script') {
 					loadScript(script.src, function() {
+                        if (script.callback) {
+                            script.callback();
+                        }
 						index++;
 						loadNextScript(index, scriptsList, completeCallback);
 					});
