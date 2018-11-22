@@ -61,7 +61,7 @@ We suggest to review existing transports [implementation](https://github.com/thi
 
 ## Web UI Microservices
 
-ThingsBoard provides a lightweight component written using Express.js Node.js framework to host static web ui content. Those components are completely stateless and no much configuration available. 
+ThingsBoard provides a lightweight component written using Express.js framework to host static web ui content. Those components are completely stateless and no much configuration available. 
 
 ## JavaScript Executor Microservices
 
@@ -89,25 +89,40 @@ ThingsBoard node is a core service written in Java that is responsible for handl
  
 **Note**: moving rule engine to a separate microservice is scheduled for ThingsBoard v2.4. See [roadmap](/docs/reference/roadmap) for more details. 
  
-ThingsBoard node uses actor system to implement tenant, device, rule chains and rule node actors. 
+ThingsBoard node uses Akka actor system to implement tenant, device, rule chains and rule node actors. 
 Platform nodes can join the cluster, where each node is equal. Service discovery is done via Zookeeper. 
 ThingsBoard nodes route messages between each other using consistent hashing algorithm based on entity id. 
 So, messages for the same entity are processed on the same ThingsBoard node. Platform uses [gRPC](https://grpc.io/) to send messages between ThingsBoard nodes.
 
 **Note**: ThingsBoard authors consider moving from gRPC to Kafka in the future releases for exchanging messages between ThingsBoard nodes. 
-The main idea is to sacrifice small performance/latency penalties in favor of persistent and reliable message delivery.
+The main idea is to sacrifice small performance/latency penalties in favor of persistent and reliable message delivery and automatic load balancing provided by Kafka consumer groups. 
 
 ## Third-party  
 
 ### Kafka
 
+[Apache Kafka](https://kafka.apache.org/) is an open-source stream-processing software platform. ThingsBoard uses Kafka to persist incoming telemetry from HTTP/MQTT/CoAP transpots 
+until it is processed by the rule engine. ThingsBoard also uses Kafka for some API calls between micro-services.
+
 ### Redis
+
+[Redis](https://redis.io/) is an open source (BSD licensed), in-memory data structure store used by ThingsBoard for caching. 
+ThingsBoard caches assets, entity views, devices, device credentials, device sessions and entity relations.
 
 ### Zookeeper
 
+[Zookeeper](https://zookeeper.apache.org/) is an open-source server which enables highly reliable distributed coordination. 
+ThingsBoard uses Zookeeper to address requests processing from a single entity (device,asset,tenant) to a certain ThingsBoard server 
+and guarantee that only one server process data from particular device at a single point in time. 
+
+**Note**: Zookeeper is also used by Kafka, so there was almost no reasons to use two different coordination services (Consul, etcd) in parallel.      
+
 ### HAProxy (or other LoadBalancer)
 
-[haproxy.cfg](https://github.com/thingsboard/thingsboard/blob/c84bcd51d843472c3e96ad3da226d12df9915fda/docker/haproxy/config/haproxy.cfg)
+We recommend to use HAProxy for load balancing. 
+You can find the reference [haproxy.cfg](https://github.com/thingsboard/thingsboard/blob/c84bcd51d843472c3e96ad3da226d12df9915fda/docker/haproxy/config/haproxy.cfg) 
+configuration that corresponds to the architecture diagram below: 
+
 {% highlight conf %}
 {% github_sample /thingsboard/thingsboard/blob/c84bcd51d843472c3e96ad3da226d12df9915fda/docker/haproxy/config/haproxy.cfg %}
 {% endhighlight %}
@@ -115,13 +130,15 @@ The main idea is to sacrifice small performance/latency penalties in favor of pe
 ### Databases
 
 See "[SQL vs NoSQL vs Hybrid?](/docs/reference/#sql-vs-nosql-vs-hybrid-database-approach)" for more details. 
-  
 
 ## Deployment
 
-[docker-compose.yml](https://github.com/thingsboard/thingsboard/blob/c84bcd51d843472c3e96ad3da226d12df9915fda/docker/docker-compose.yml)
+You can find the reference [docker-compose.yml](https://github.com/thingsboard/thingsboard/blob/master/docker/docker-compose.yml)
+and corresponding [documentation](https://github.com/thingsboard/thingsboard/blob/master/docker/README.md) that will help you to run ThingsBoard containers in a cluster mode 
+(although on a single host machine)  
+
 {% highlight yaml %}
-{% github_sample /thingsboard/thingsboard/blob/c84bcd51d843472c3e96ad3da226d12df9915fda/docker/docker-compose.yml %}
+{% github_sample /thingsboard/thingsboard/blob/master/docker/docker-compose.yml 15 1000%}
 {% endhighlight %}
 
 
