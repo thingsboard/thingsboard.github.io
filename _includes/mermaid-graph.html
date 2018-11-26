@@ -1,5 +1,6 @@
 {% capture graphId %}{{include.graphId}}{% endcapture %}
 {% capture graphcode %}{% include_relative {{include.file}} %}{% endcapture %}
+{% if include.links-json %}{% capture linksmap %}{% include_relative {{include.links-json}} %}{% endcapture %}{% endif %}
 <script type="text/javascript">
     mermaidDefer(function () {
         var codeElement = $('textarea#{{ graphId }}');
@@ -12,6 +13,29 @@
         mermaid.init(undefined, graphElement);
         graphElement.css("visibility", "visible");
     });
+
+{% if linksmap %}
+    var linksData = {{ linksmap }};
+{% else %}
+    var linksData = {};
+{% endif %}
+
+    var openLink = function(nodeId) {
+        if (linksData) {
+            var link = linksData[nodeId];
+            if (link) {
+                var targetLink = link;
+                var target = "_blank";
+                if (link.link) {
+                    targetLink = link.link;
+                }
+                if (link.target) {
+                    target = link.target;
+                }
+                window.open(targetLink, target)
+            }
+        }
+    }
 </script>
 
 <html>

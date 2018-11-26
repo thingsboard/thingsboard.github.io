@@ -1,12 +1,25 @@
 
 #docsContent
   .mermaid
+    position: relative
     font-family: "Roboto",sans-serif
-    font-size: 16px
+    font-size: 18px
     font-weight: 700
 
     .label
       color: #0f55a2
+      text-align: center
+      line-height: 20px
+      & a.innerLink
+        border: solid 2px #305680
+        border-radius: 4px
+        padding: 4px
+        margin: 4px
+        color: #ffffff
+        background: #5498e2
+        transition: 0.3s
+        &:hover
+          background: #305680
 
     .node > *
       stroke: #305680
@@ -15,14 +28,22 @@
       stroke-width: 4px
       transition: 0.3s
 
+    .node.big
+      .label
+        line-height: 36px
+
     .node.main > *
-        fill: #305680
-        color: #ffffff
-        font-size: 18px
+      fill: #305680
+      color: #ffffff
+      font-size: 18px
 
     .node.clickable:hover > *
-        fill: #305680
-        color: #ffffff
+      fill: #305680
+      color: #ffffff
+
+    .node.main.clickable:hover > *
+      fill: #ffffff
+      color: #305680
 
     .edgeLabel
       color: #305680

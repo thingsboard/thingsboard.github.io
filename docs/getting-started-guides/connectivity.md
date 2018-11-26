@@ -7,4 +7,7 @@ description: Understand how to connect your IoT devices to ThingsBoard
 
 ---
 
-{% include mermaid-graph.html graphId="connectivityGraph" file="resources/connectivity.mm" %}
+{% include mermaid-graph.html 
+graphId="connectivityGraph" 
+file="resources/connectivity.mm" 
+links-json="resources/connectivity-links.json" %}

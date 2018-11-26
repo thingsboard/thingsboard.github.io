@@ -44,7 +44,10 @@
                     window.mermaidLoading = true;
                     loadScript("/js/mermaid.min.js", function() {
                         mermaid.initialize({
-                            startOnLoad:false
+                            startOnLoad:false,
+                            flowchart:{
+                                htmlLabels: true
+                            }
                         });
                         jqueryDefer(function() {
                             setTimeout(function() {
