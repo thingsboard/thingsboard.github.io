@@ -76,7 +76,6 @@ toc:
   - title: API Limits
     path: /docs/user-guide/api-limits/
 - title: Rule engine
-  new: true
   section:
   - title: Getting Started
     path: /docs/user-guide/rule-engine-2-0/re-getting-started/
