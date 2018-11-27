@@ -1,11 +1,5 @@
 graph TD;
 
-%% classDef node stroke:#305680,color:#0f55a2,fill:#ffffff,stroke-width:4px,font-family:Roboto,sans-serif,font-weight:500,font-size:16px;
-
-%% classDef edgeLabel stroke:#305680,stroke-width:4px,font-family:Roboto,sans-serif,font-weight:500,font-size:16px;
-
-%% classDef main fill:#305680,color:#ffffff,font-size:18px;
-
 ipEnabled(IP Enabled ?);
 class ipEnabled main;
 
@@ -13,58 +7,58 @@ customFirmware(Custom Firmware?);
 commandsOrUploads(Commands to device?</br>or Frequent uploads?)
 mqtt(MQTT?)
 http(HTTP?)
-mqttCeApi(ThingsBoard CE MQTT API)
-httpCeApi(ThingsBoard CE HTTP API)
-customIntegration(Custom Integration)
+mqttCeApi(fa:fa-external-link ThingsBoard CE MQTT API)
+httpCeApi(fa:fa-external-link ThingsBoard CE HTTP API)
+customIntegration(fa:fa-envelope Custom Integration)
 class mqttCeApi main;
 class httpCeApi main;
-class customIntegration main;
+class customIntegration pe;
 
 noIpStack(LoRa WAN/SigFox/NbIot/OPC-UA/SMS);
-platformIntegrations(Platform Integrations)
-contactUsOtherIntegration(Contact us)
-class platformIntegrations main;
-class contactUsOtherIntegration main;
+platformIntegrations(fa:fa-external-link Platform Integrations)
+contactUsOtherIntegration(fa:fa-envelope Contact us)
+class platformIntegrations pe;
+class contactUsOtherIntegration pe;
 
 connectedToBackend(Already Connected to Backend?)
 configureCustomBackend(Configure custom backend?)
 
 existingBackend("
-<a class=innerLink
+<a class='innerLink pe'
    title=AWS&nbsp;IoT&nbsp;Integration
-   target=_blank
+   target=_self
    href=/docs/user-guide/integrations/aws-iot/>
-   AWS IoT
-</a><br/>
-<a class=innerLink
+   fa:fa-amazon AWS IoT
+</a>
+<a class='innerLink pe'
    title=Azure&nbsp;Event&nbsp;Hub&nbsp;Integration
-   target=_blank
+   target=_self
    href=/docs/user-guide/integrations/azure-event-hub/>
-   Azure Event Hub
-</a><br/>
-<a class=innerLink
+   fa:fa-windows Azure Event Hub
+</a>
+<a class='innerLink pe'
    title=IBM&nbsp;Watson&nbsp;IoT&nbsp;Integration
-   target=_blank
+   target=_self
    href=/docs/user-guide/integrations/ibm-watson-iot/>
-   IBM Watson IoT
+   fa:fa-external-link IBM Watson IoT
 </a>
 ")
 
-httpPlatformIntegrations(HTTP Integration)
-brokerPlatformIntegrations(Broker + MQTT Integration)
-contactUsOtherCustomBackend(Contact us)
+httpPlatformIntegrations(fa:fa-external-link HTTP Integration)
+brokerPlatformIntegrations(fa:fa-external-link Broker + MQTT Integration)
+contactUsOtherCustomBackend(fa:fa-envelope Contact us)
 mqttBroker(Supports MQTT Broker?)
-mqttIntegration(MQTT Integration)
+mqttIntegration(fa:fa-external-link MQTT Integration)
 httpCallbacks(Supports HTTP callbacks</br>or webhooks?)
-httpIntegration(HTTP Integration)
-contactUsOtherBackendIntegration(Contact us)
+httpIntegration(fa:fa-external-link HTTP Integration)
+contactUsOtherBackendIntegration(fa:fa-envelope Contact us)
 class existingBackend big;
-class httpPlatformIntegrations main;
-class brokerPlatformIntegrations main;
-class contactUsOtherCustomBackend main;
-class mqttIntegration main;
-class httpIntegration main;
-class contactUsOtherBackendIntegration main;
+class httpPlatformIntegrations pe;
+class brokerPlatformIntegrations pe;
+class contactUsOtherCustomBackend pe;
+class mqttIntegration pe;
+class httpIntegration pe;
+class contactUsOtherBackendIntegration pe;
 
 ipEnabled -->|Yes| customFirmware;
 ipEnabled -->|No| noIpStack;
@@ -108,7 +102,6 @@ click httpCeApi openLink "HTTP Device API Reference"
 click mqttCeApi openLink "MQTT Device API Reference"
 click customIntegration openLink "Develop custom Platform Integration"
 
-%% click existingBackend openLink "Device is connected to existing supported backend?"
 click mqttIntegration openLink "MQTT Integration"
 click httpIntegration openLink "HTTP Integration"
 click contactUsOtherBackendIntegration openLink "Contact Us"
