@@ -15,6 +15,10 @@
         "link": "/docs/reference/mqtt-api/",
         "target": "_self"
     },
+    "mqttGwApi": {
+        "link": "/docs/reference/gateway-mqtt-api/",
+        "target": "_self"
+    },
     "customIntegration": {
         "link": "/docs/contact-us/",
         "target": "_self"

@@ -4,17 +4,20 @@ ipEnabled(IP Enabled ?);
 class ipEnabled main;
 
 customFirmware(Custom Firmware?);
-commandsOrUploads(Commands to device?</br>or Frequent uploads?)
+commandsOrUploads(Commands to device</br>or Frequent uploads?)
 mqtt(MQTT?)
 http(HTTP?)
-mqttCeApi(fa:fa-external-link ThingsBoard CE MQTT API)
-httpCeApi(fa:fa-external-link ThingsBoard CE HTTP API)
+gateway(Your device</br> is an IoT gateway?)
+mqttCeApi(fa:fa-external-link ThingsBoard CE </br>MQTT API)
+httpCeApi(fa:fa-external-link ThingsBoard CE </br>HTTP API)
+mqttGwApi(fa:fa-external-link ThingsBoard CE </br>MQTT Gateway API)
 customIntegration(fa:fa-envelope Contact Us)
+class mqttGwApi main;
 class mqttCeApi main;
 class httpCeApi main;
 class customIntegration main;
 
-noIpStack(LoRa WAN/SigFox/NbIot/OPC-UA/SMS);
+noIpStack(Your device supports</br> LoRaWAN</br>SigFox</br>NB IoT</br>OPC-UA or SMS?);
 platformIntegrations(fa:fa-external-link Platform Integrations)
 contactUsOtherIntegration(fa:fa-envelope Contact Us)
 class platformIntegrations pe;
@@ -30,12 +33,14 @@ existingBackend("
    href=/docs/user-guide/integrations/aws-iot/>
    fa:fa-amazon AWS IoT
 </a>
+</br>
 <a class='innerLink pe'
    title=Azure&nbsp;Event&nbsp;Hub&nbsp;Integration
    target=_self
    href=/docs/user-guide/integrations/azure-event-hub/>
    fa:fa-windows Azure Event Hub
 </a>
+</br>
 <a class='innerLink pe'
    title=IBM&nbsp;Watson&nbsp;IoT&nbsp;Integration
    target=_self
@@ -69,8 +74,11 @@ customFirmware -->|No| connectedToBackend;
 commandsOrUploads -->|Yes| mqtt;
 commandsOrUploads -->|No| http;
 
-mqtt -->|Yes| mqttCeApi;
+mqtt -->|Yes| gateway;
 mqtt -->|No| http;
+
+gateway -->|No| mqttCeApi;
+gateway -->|Yes| mqttGwApi;
 
 http -->|Yes| httpCeApi;
 http -->|No| customIntegration;
@@ -98,8 +106,10 @@ click customFirmware openLink "Is your device supports custom firmware?";
 click platformIntegrations openLink "Platform Integrations"
 click contactUsOtherIntegration openLink "Contact Us"
 
+click gateway openLink "Your device has multiple other devices connected to itself using various protocols like BTLE, ZigBee, etc"
 click httpCeApi openLink "HTTP Device API Reference"
 click mqttCeApi openLink "MQTT Device API Reference"
+click mqttGwApi openLink "MQTT Gateway API Reference"
 click customIntegration openLink "Contact Us"
 
 click mqttIntegration openLink "MQTT Integration"
