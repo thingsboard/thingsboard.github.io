@@ -9,19 +9,19 @@ mqtt(MQTT?)
 http(HTTP?)
 mqttCeApi(fa:fa-external-link ThingsBoard CE MQTT API)
 httpCeApi(fa:fa-external-link ThingsBoard CE HTTP API)
-customIntegration(fa:fa-envelope Custom Integration)
+customIntegration(fa:fa-envelope Contact Us)
 class mqttCeApi main;
 class httpCeApi main;
-class customIntegration pe;
+class customIntegration main;
 
 noIpStack(LoRa WAN/SigFox/NbIot/OPC-UA/SMS);
 platformIntegrations(fa:fa-external-link Platform Integrations)
-contactUsOtherIntegration(fa:fa-envelope Contact us)
+contactUsOtherIntegration(fa:fa-envelope Contact Us)
 class platformIntegrations pe;
-class contactUsOtherIntegration pe;
+class contactUsOtherIntegration main;
 
 connectedToBackend(Already Connected to Backend?)
-configureCustomBackend(Configure custom backend?)
+configureCustomBackend(Able to configure custom backend?)
 
 existingBackend("
 <a class='innerLink pe'
@@ -46,19 +46,19 @@ existingBackend("
 
 httpPlatformIntegrations(fa:fa-external-link HTTP Integration)
 brokerPlatformIntegrations(fa:fa-external-link Broker + MQTT Integration)
-contactUsOtherCustomBackend(fa:fa-envelope Contact us)
+contactUsOtherCustomBackend(fa:fa-envelope Contact Us)
 mqttBroker(Supports MQTT Broker?)
 mqttIntegration(fa:fa-external-link MQTT Integration)
 httpCallbacks(Supports HTTP callbacks</br>or webhooks?)
 httpIntegration(fa:fa-external-link HTTP Integration)
-contactUsOtherBackendIntegration(fa:fa-envelope Contact us)
+contactUsOtherBackendIntegration(fa:fa-envelope Contact Us)
 class existingBackend big;
 class httpPlatformIntegrations pe;
 class brokerPlatformIntegrations pe;
-class contactUsOtherCustomBackend pe;
+class contactUsOtherCustomBackend main;
 class mqttIntegration pe;
 class httpIntegration pe;
-class contactUsOtherBackendIntegration pe;
+class contactUsOtherBackendIntegration main;
 
 ipEnabled -->|Yes| customFirmware;
 ipEnabled -->|No| noIpStack;
@@ -100,7 +100,7 @@ click contactUsOtherIntegration openLink "Contact Us"
 
 click httpCeApi openLink "HTTP Device API Reference"
 click mqttCeApi openLink "MQTT Device API Reference"
-click customIntegration openLink "Develop custom Platform Integration"
+click customIntegration openLink "Contact Us"
 
 click mqttIntegration openLink "MQTT Integration"
 click httpIntegration openLink "HTTP Integration"
