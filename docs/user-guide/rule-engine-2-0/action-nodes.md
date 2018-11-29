@@ -480,6 +480,7 @@ Assign Message Originator Entity to [Customer](/docs/user-guide/ui/customers/).
 Following Message Originator types are allowed: **Asset**, **Device**, **Entity View**, **Dashboard**.
 
 Finds target Customer by customer name pattern and then assign Originator Entity to this customer.
+
 Will create new Customer if it doesn't exists and **Create new Customer if not exists** is set to **true**.
 
 Configuration:
@@ -535,9 +536,13 @@ Following Message Originator types are allowed: **Asset**, **Device**, **Entity 
 
 Finds target Entity by entity name pattern and then create a relation between Originator Entity and this entity.
 
+Rule node will create new Entity if it doesn’t exist and "Create new Entity if not exists" is set to **true**.
+
+**Note**:  Create new Entity if not exists allowed only If selected entity type: **Asset**, **Device** or **Customer** .
+
 Configuration:
 
-![image](/images/user-guide/rule-engine-2-0/nodes/action-relation-node-configuration.png)
+![image](/images/user-guide/rule-engine-2-0/nodes/action-create-relation-node-configuration.png)
 
 - **Direction** - following types are allowed: **From**, **To**.
 - **Relation type** - type of directed connections to message originator entity. Default types **Contains** and **Manages** can be selected from the drop-down list.
@@ -565,7 +570,7 @@ Finds target Entity by entity name pattern and then delete a relation between Or
 
 Configuration:
 
-![image](/images/user-guide/rule-engine-2-0/nodes/action-relation-node-configuration.png)
+![image](/images/user-guide/rule-engine-2-0/nodes/action-delete-relation-node-configuration.png)
 
 - **Direction** - following types are allowed: **From**, **To**.
 - **Relation type** - type of directed connections to message originator entity. Default types **Contains** and **Manages** can be selected from the drop-down list.
