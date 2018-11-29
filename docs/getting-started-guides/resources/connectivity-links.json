@@ -15,6 +15,10 @@
         "link": "/docs/reference/mqtt-api/",
         "target": "_self"
     },
+    "coapCeApi": {
+        "link": "/docs/reference/coap-api/",
+        "target": "_self"
+    },
     "mqttGwApi": {
         "link": "/docs/reference/gateway-mqtt-api/",
         "target": "_self"
