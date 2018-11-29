@@ -56,9 +56,9 @@ Download installation package or [build it from source](/docs/user-guide/install
 
 ```bash
 # Download the package
-$ wget https://github.com/thingsboard/thingsboard/releases/download/v2.1/thingsboard-2.1.deb
+$ wget https://github.com/thingsboard/thingsboard/releases/download/v2.2/thingsboard-2.2.deb
 # Install ThingsBoard as a service
-$ sudo dpkg -i thingsboard-2.1.deb
+$ sudo dpkg -i thingsboard-2.2.deb
 # Update ThingsBoard memory usage and restrict it to 150MB in /etc/thingsboard/conf/thingsboard.conf
 export JAVA_OPTS="$JAVA_OPTS -Dplatform=rpi -Xms256M -Xmx256M"
 ```

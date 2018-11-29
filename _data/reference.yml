@@ -1,17 +1,31 @@
-bigheader: "Reference Documentation"
-abstract: "Design docs, concept definitions, and references for APIs and CLIs."
+bigheader: "Architecture"
+abstract: "Design docs, deployment scenarios and release notes."
 toc:
-- title: Reference Documentation
+- title: Architecture Overview
   path: /docs/reference/
-- title: ThingsBoard Architecture
-  path: /docs/reference/architecture/
+- title: Monolithic architecture
+  path: /docs/reference/monolithic/
+- title: Microservices architecture
+  path: /docs/reference/msa/
+- title: Deployment How-Tos & Tips
+  section:
+  - title: How-to choose the right database?
+    path: /docs/reference/how-to-choose-right-db/
+  - title: How-to determine the size of the cluster?
+    path: /docs/reference/how-to-determine-cluster-size/
+  - title: How-to choose the load balancer?
+    path: /docs/reference/how-to-choose-lb/
 - title: ThingsBoard Performance
   section:
   - title: Data Collection Performance
     path: /docs/reference/performance/
   - title: Performance Test Tools
     path: /docs/reference/performance-tools/
-  - title: How to repeate the tests
+  - title: How to repeat the tests
     path: /docs/reference/performance-tests/
+- title: ThingsBoard PE Cloud Getting Started
+  path: /docs/reference/pe-demo-getting-started/
 - title: Release Notes
   path: https://github.com/thingsboard/thingsboard/releases/
+- title: Roadmap
+  path: /docs/reference/roadmap/

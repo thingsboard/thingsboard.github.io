@@ -5,44 +5,8 @@ toc:
   path: /docs/
 - title: What is ThingsBoard?
   path: /docs/getting-started-guides/what-is-thingsboard/
-- title: Getting Started
-  path: /docs/getting-started-guides/helloworld/
-- title: Installation
-  section:
-  - title: ThingsBoard Community Edition
-    section:
-    - title: Installation options
-      path: /docs/user-guide/install/installation-options/
-    - title: Installing ThingsBoard on Windows
-      path: /docs/user-guide/install/windows/
-    - title: Installing ThingsBoard on Linux (Ubuntu & CentOS)
-      path: /docs/user-guide/install/linux/
-    - title: Installing ThingsBoard on Raspberry Pi 3
-      path: /docs/user-guide/install/rpi/
-    - title: Installing ThingsBoard using Kubernetes (Google Cloud Platform)
-      path: /docs/user-guide/install/kubernetes/
-    - title: Installing ThingsBoard using Docker (Linux or Mac OS)
-      path: /docs/user-guide/install/docker/
-    - title: Installing ThingsBoard using Docker (Windows)
-      path: /docs/user-guide/install/docker-windows/
-    - title: Installing ThingsBoard on AWS EC2
-      path: /docs/user-guide/install/aws/
-    - title: Building from sources
-      path: /docs/user-guide/install/building-from-source/
-    - title: Upgrade instructions
-      path: /docs/user-guide/install/upgrade-instructions/
-    - title: Configuration
-      path: /docs/user-guide/install/config/
-    - title: Cluster setup
-      path: /docs/user-guide/install/cluster-setup/
-  - title: ThingsBoard Professional Edition
-    path: /products/thingsboard-pe/install/
-  - title: ThingsBoard Professional Edition on AWS Marketplace
-    section:
-    - title: Installation
-      path: /docs/user-guide/install/aws-marketplace-pe/
-    - title: Upgrade instructions
-      path: /docs/user-guide/install/aws-marketplace-pe-upgrade/
+- title: How to connect your device?
+  path: /docs/getting-started-guides/connectivity/
 - title: Features
   section:
   - title: Entities and relations
@@ -54,8 +18,10 @@ toc:
   - title: Working with alarms
     path: /docs/user-guide/alarms/
   - title: Device Connectivity Status
-    new: true
     path: /docs/user-guide/device-connectivity-status/
+  - title: Entity Views
+    new: true
+    path: /docs/user-guide/entity-views/
   - title: Using RPC capabilities
     path: /docs/user-guide/rpc/
   - title: Data visualization
@@ -108,7 +74,6 @@ toc:
   - title: API Limits
     path: /docs/user-guide/api-limits/
 - title: Rule engine
-  new: true
   section:
   - title: Getting Started
     path: /docs/user-guide/rule-engine-2-0/re-getting-started/

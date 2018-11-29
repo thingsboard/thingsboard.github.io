@@ -21,7 +21,7 @@ ThingsBoard performance leverages three main projects:
  - [Akka](http://akka.io/) for high-performance actor system to coordinate messages between millions of devices.
  - [Cassandra](http://cassandra.apache.org/) for scalable high-performance NoSQL DB to store timeseries data from devices. 
  
-We also use [Zookeeper](https://zookeeper.apache.org/) for coordination and [gRPC](http://www.grpc.io/) in cluster mode. See [platform architecture](/docs/reference/architecture) for more details.
+We also use [Zookeeper](https://zookeeper.apache.org/) for coordination and [gRPC](http://www.grpc.io/) in cluster mode. See [platform architecture](/docs/reference/) for more details.
 
 ## Data flow and test tools
  

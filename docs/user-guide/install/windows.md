@@ -84,7 +84,7 @@ Instructions listed below will help you to install Cassandra.
 #### ThingsBoard service installation
 
 - Create working directory, for example "C:\thingsboard". 
-- Download [installation archive](https://github.com/thingsboard/thingsboard/releases/download/v2.1/thingsboard-windows-2.1.zip) or [build it from source](/docs/user-guide/install/building-from-source).
+- Download [installation archive](https://github.com/thingsboard/thingsboard/releases/download/v2.2/thingsboard-windows-2.2.zip) or [build it from source](/docs/user-guide/install/building-from-source).
 - Unzip installation archive to the working directory. The working directory should look like this after installation:
  
   ![image](/images/user-guide/install/windows/windows-folder.png)
@@ -136,11 +136,14 @@ For **PostgreSQL**:
 
 For **Cassandra DB**:
 
-Locate and set database type configuration parameter to 'cassandra'.
+Locate and set database type configuration parameters to 'cassandra'.
  
 ```text
 database:
-  type: "${DATABASE_TYPE:cassandra}" # cassandra OR sql
+  entities:
+    type: "${DATABASE_ENTITIES_TYPE:cassandra}" # cassandra OR sql
+  ts:
+    type: "${DATABASE_TS_TYPE:cassandra}" # cassandra OR sql (for hybrid mode, only this value should be cassandra)
 ```
 
 {% include templates/memory-update-for-slow-machines.md %} 

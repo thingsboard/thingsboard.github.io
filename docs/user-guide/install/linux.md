@@ -102,11 +102,14 @@ For **PostgreSQL**:
 
 For **Cassandra DB**:
 
-Locate and set database type configuration parameter to 'cassandra'.
+Locate and set database type configuration parameters to 'cassandra'.
  
 ```text
 database:
-  type: "${DATABASE_TYPE:cassandra}" # cassandra OR sql
+  entities:
+    type: "${DATABASE_ENTITIES_TYPE:cassandra}" # cassandra OR sql
+  ts:
+    type: "${DATABASE_TS_TYPE:cassandra}" # cassandra OR sql (for hybrid mode, only this value should be cassandra)
 ```
 
 {% include templates/memory-update-for-slow-machines.md %} 

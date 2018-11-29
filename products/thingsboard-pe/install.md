@@ -9,11 +9,16 @@ hidetoc: "true"
 <script type="text/javascript">
     jqueryDefer(function () {
             var trialMarketplace = $('#trial-marketplace');
+            var peCloudTrial = $('#pe-cloud-trial');
             var awsTrial = $('#aws-trial-market');
             var azureTrial = $('#azure-trial-market');
             
             var awsTrialForm = $('#mlb2-7972110');            
             var azureTrialForm = $('#mlb2-9674300');
+            
+            peCloudTrial.click(function() {
+                window.open('https://cloud.thingsboard.io/signup', '_blank');
+            });
             
             awsTrial.click(function() {
                 trialMarketplace.css('display', 'none');
@@ -51,7 +56,15 @@ hidetoc: "true"
         <div class="tab-panel">
             <div id="trial-marketplace" class="choose-marketplace"> 
                 <p>
-                    Please choose your cloud provider
+                    Signup for free month trial on ThingsBoard PE Cloud
+                </p>
+                <div class="marketplace" style="padding-bottom: 10px;">
+                    <div id="pe-cloud-trial" class="pricing-image-wrapper" style="max-width: 50%;">
+                        <img src="/images/pe/pe_cloud_signup.svg">
+                    </div>
+                </div>
+                <p style="padding-top: 20px;">
+                    Or choose your cloud provider for dedicated server
                 </p>
                 <div class="marketplace">
                     <div id="aws-trial-market" class="pricing-image-wrapper">
@@ -74,7 +87,7 @@ hidetoc: "true"
                     <form class="ml-block-form" action="https://app.mailerlite.com/webforms/submit/k8u7a2" data-id="784406" data-code="k8u7a2" method="POST" target="_blank">
                         <div class="subscribe-form">
                             <div class="form-section mb30">
-                                <p>Please fill this form in order to get your instance on AWS marketplace with free 5 days trial.</p>
+                                <p>Please fill this form in order to get your instance on AWS marketplace with free 1 month trial.</p>
                                 <div class="form-group ml-field-first_name ml-validate-required">
                                     <label for="fields[first_name]">
                                         <input type="text" name="fields[first_name]" class="form-control" value="" spellcheck="false" autocapitalize="off" autocorrect="off">
@@ -209,8 +222,8 @@ hidetoc: "true"
                                     <div class="cloud-provider-desc">
                                         <p>Install ThingsBoard PE on any cloud or on premises and pay one-time license fee per server and optional software updates subscription for subsequent years of usage.
                                          Save up to 40% comparing to per hour rate on the license fee.</p>
-                                        <p><span class="cloud-price">$1,999.00/server</span><span class="cloud-price-desc"> for the 1st year</span><br/>
-                                        <span class="cloud-price-onwards">$799.00/server</span><span class="cloud-price-onwards-desc"> for optional software updates starting 2nd year</span></p>
+                                        <p><span class="cloud-price">$2,999.00/server</span><span class="cloud-price-desc"> for the 1st year</span><br/>
+                                        <span class="cloud-price-onwards">$1,199.00/server</span><span class="cloud-price-onwards-desc"> for optional software updates starting 2nd year</span></p>
                                     </div>
                                 </div>                                       
                             </div>
@@ -293,7 +306,7 @@ hidetoc: "true"
                                     </div>
                                     <div class="cloud-provider-desc">
                                         <p>Deploy using AWS marketplace. Pay only when you use the platform. Ideal for evaluation and PoCs.</p>
-                                        <p><span class="cloud-price">$0.39/hr</span><span class="cloud-price-desc"> for software + AWS usage fees</span></p>
+                                        <p><span class="cloud-price">$0.57/hr</span><span class="cloud-price-desc"> for software + AWS usage fees</span></p>
                                     </div>
                                 </div>                                                            
                             </div>
@@ -359,7 +372,7 @@ hidetoc: "true"
                                     </div>
                                     <div class="cloud-provider-desc">
                                         <p>Deploy using Azure marketplace. Pay only when you use the platform. Ideal for evaluation and PoCs.</p>
-                                        <p><span class="cloud-price">$0.39/hr</span><span class="cloud-price-desc"> for software + infrastructure usage fees</span></p>
+                                        <p><span class="cloud-price">$0.78/hr</span><span class="cloud-price-desc"> for software + infrastructure usage fees</span></p>
                                     </div>
                                 </div>                                                            
                             </div>
