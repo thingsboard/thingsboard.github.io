@@ -6,6 +6,40 @@ description:
 ---
 
 <div class="customer-block">
+    <a href="https://www.sensolyze.com/">
+        <div class="customer-logo">
+            <img width="" src="/images/customers/sensolyze.png" alt="Sensolyze GmbH">
+        </div>
+    </a>
+    <div class="customer-content">
+        <h3 id="sensolyze" >
+        Sensolyze GmbH
+        </h3>
+        <h4>
+        We are providing Digital Office Solutions for Workspace Managers and Office Planners that help them to better understand how their Spaces are used.
+        </h4>
+        <p>
+        When we started with ThingsBoard we mainly used it for core messaging and the dashboard functionality. 
+        Large parts of the business logic was done by an external backend connecting to ThingsBoard using the API. 
+        Within the first two releases of the new Rule Engine, we were able to migrate basically everything to the platform. 
+        </p>
+        <p>
+        I want to congratulate the team for the huge effort they have put into the solution.
+        The concept of the rule engine and the available nodes are very well thought through and support a wide range of applications. 
+        And - probably most important - Andrew and his team listens closely to the needs and requirements of their customers. 
+        And you clearly see that in the product. We can commend this product to anybody looking for a flexible and stable IoT Solution and are looking forward to work with the team in the future. 
+        </p>
+        <div class="person-logo-container">
+            <img class="person-logo" src="/images/customers/sensolyze-person.png">
+            <div class="person-title">
+                Andreas Brandl<br/>
+                Founder & CEO
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="customer-block">
     <a href="http://www.e2cbms.com/">
         <div class="customer-logo">
             <img width="" src="/images/customers/e2c.png" alt="Environmental Energy Controls">

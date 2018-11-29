@@ -37,7 +37,7 @@ ThingsBoard cluster can handle millions of devices.
 * **customizable**: adding new functionality is easy with customizable widgets and rule engine nodes.
 * **durable**: never lose your data.
 
-See [**ThingsBoard Architecture**](/docs/reference/architecture) for more details.
+See [**ThingsBoard Architecture**](/docs/reference) for more details.
 
 #### Ready to get started?
 

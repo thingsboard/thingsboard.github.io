@@ -39,7 +39,7 @@ $ wget https://github.com/thingsboard/thingsboard-gateway/releases/download/v1.4
 
 ```bash
 # Install gateway as a service
-$ sudo dpkg -i tb-gateway-1.2.1.deb
+$ sudo dpkg -i tb-gateway-1.4.0.deb
 # Update gateway memory usage and restrict it to 150MB in /etc/tb-gateway/conf/tb-gateway.conf
 export JAVA_OPTS="$JAVA_OPTS -Dplatform=rpi -Xms150M -Xmx150M"
 ```

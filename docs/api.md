@@ -19,6 +19,6 @@ or implement your own gateway.
 Server-side API is available as REST API:
 
 * [**Administration REST API**](/docs/reference/rest-api) - The server-side core APIs.
-* [**Attributes query API**](/docs/user-guide/attributes/#data-query-api) - The server-side APIs provided by [Telemetry Service](/docs/user-guide/telemetry/).
+* [**Attributes query API**](/docs/user-guide/attributes/#data-query-api) - The server-side APIs provided by [Telemetry Service](/docs/user-guide/attributes/).
 * [**Timeseries query API**](/docs/user-guide/telemetry/#data-query-api) - The server-side APIs provided by [Telemetry Service](/docs/user-guide/telemetry/).
 * [**RPC API**](/docs/user-guide/rpc/#server-side-rpc-api) - The server-side APIs provided by [RPC Service](/docs/user-guide/rpc/).
