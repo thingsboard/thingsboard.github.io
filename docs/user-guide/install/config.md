@@ -56,6 +56,12 @@ We will list only main configuration parameters below to avoid duplication of th
   </thead>
   <tbody>
       <tr>
+          <td><b>HTTP server parameters</b></td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>  
+      <tr>
           <td>server.address</td>
           <td>HTTP_BIND_ADDRESS</td>
           <td>0.0.0.0</td>

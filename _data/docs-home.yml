@@ -73,6 +73,40 @@ toc:
     path: /docs/user-guide/audit-log/
   - title: API Limits
     path: /docs/user-guide/api-limits/
+  - title: IoT Gateway
+    section:
+    - title: What is ThingsBoard IoT Gateway?
+      path: /docs/iot-gateway/what-is-iot-gateway/
+    - title: Getting Started
+      path: /docs/iot-gateway/getting-started/
+    - title: Installation guide
+      section:
+      - title: Installation options
+        path: /docs/iot-gateway/installation/
+      - title: Windows
+        path: /docs/iot-gateway/install/windows/
+      - title: Linux (Ubuntu & CentOS)
+        path: /docs/iot-gateway/install/linux/
+      - title: Raspberry Pi
+        path: /docs/iot-gateway/install/rpi/
+      - title: Building from sources
+        path: /docs/iot-gateway/install/building-from-source/
+      - title: Upgrade instructions
+        path: /docs/iot-gateway/install/upgrade-instructions/
+    - title: Configuration guide
+      section:
+      - title: General configuration
+        path: /docs/iot-gateway/configuration/
+      - title: OPC-UA Extension
+        path: /docs/iot-gateway/opc-ua/
+      - title: MQTT Extension
+        path: /docs/iot-gateway/mqtt/
+      - title: Sigfox Extension
+        path: /docs/iot-gateway/sigfox/
+      - title: Modbus Extension
+        path: /docs/iot-gateway/modbus/
+      - title: Multi-tenant configuration
+        path: /docs/iot-gateway/multi-tenant-configuration/
 - title: Rule engine
   section:
   - title: Getting Started
@@ -105,13 +139,13 @@ toc:
 - title: Integrations Cookbook
   section:
   - title: Persist and visualize AWS IoT data
-    path: /docs/iot-gateway/integration-with-aws-iot/
+    path: /docs/user-guide/integrations/aws-iot/#overview
   - title: IoT data analytics using Apache Spark
     path: /docs/samples/analytics/spark-integration-with-thingsboard/
   - title: SigFox IoT data collection and visualization
-    path: /docs/iot-gateway/sigfox-iot-data-visualization/
+    path: /docs/user-guide/integrations/sigfox/#overview
   - title: Persist and visualize IBM Watson IoT data
-    path: /docs/iot-gateway/integration-with-ibm-watson-iot/
+    path: /docs/user-guide/integrations/ibm-watson-iot/#overview
   - title: Notifications and Alarms on your smartphone using Telegram Bot
     path: /docs/iot-gateway/integration-with-telegram-bot/
 - title: Security

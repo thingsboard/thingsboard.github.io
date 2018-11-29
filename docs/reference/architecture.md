@@ -59,7 +59,7 @@ The brief description of each actor's functionality is listed below:
  * **Device Actor** - maintain state of the device: active sessions, subscriptions, pending RPC commands, etc. 
  Caches current device attributes in memory for performance reasons.
  An actor is created when the first message from the device is processed. The actor is stopped when there is no messages from devices for a certain time.
- * **Rule Chain Actor** - process incoming messages, persist them into queue and dispatches them to rule node actors. 
+ * **Rule Chain Actor** - process incoming messages and dispatches them to rule node actors. 
  An instance of this actor is always present in memory.
  * **Rule Node Actor** - process incoming messages, and report results back to rule chain actor. 
  An instance of this actor is always present in memory.

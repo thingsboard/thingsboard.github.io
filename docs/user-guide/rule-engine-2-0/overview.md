@@ -246,13 +246,6 @@ For example, the rule chain below will:
  
 ![image](/images/user-guide/rule-engine-2-0/rule-chain-references.png)
  
-## Message Queue
- 
-All incoming messages are stored in the queue before they are pushed for processing by the root rule chain. 
-Once message are processed, they are removed from queue. 
-For security and performance reasons, system administrator may configure max size of the queue per tenant and other important parameters.
-To learn more about message queue, acknowledgement criteria and internals of the rule engine, see [architecture](/docs/user-guide/rule-engine-2-0/architecture/) page. 
-
 ## Rule Node Types
 
 All available rule nodes are grouped in correspondence with their nature:
