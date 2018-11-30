@@ -21,10 +21,10 @@ ThingsBoard provides MQTT, HTTP and CoAP based APIs that are available for your 
 Each of the protocol APIs are provided by a separate server component and is part of ThingsBoard "Transport Layer". 
 The full list of components and corresponding documentation pages are listed below:
 
-* [HTTP Transport microservice](/docs/reference/msa-tb-http-transport/) provides device APIs described [here](/docs/reference/http-api/); 
-* [MQTT Transport microservice](/docs/reference/msa-tb-mqtt-transport/) provides device APIs described [here](/docs/reference/mqtt-api/)
+* HTTP Transport microservice provides device APIs described [here](/docs/reference/http-api/); 
+* MQTT Transport microservice provides device APIs described [here](/docs/reference/mqtt-api/)
 and also enables gateway APIs described [here](/docs/reference/gateway-mqtt-api/);
-* [CoAP Transport microservice](/docs/reference/msa-tb-coap-transport/) provides device APIs described [here](/docs/reference/coap-api/).
+* CoAP Transport microservice provides device APIs described [here](/docs/reference/coap-api/).
 
 Each of the transport servers listed above communicates with the main ThingsBoard Node microservices using Kafka. 
 [Apache Kafka](https://kafka.apache.org) is a distributed, reliable and scalable persistent message queue and streaming platform.
