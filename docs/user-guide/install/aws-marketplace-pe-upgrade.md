@@ -103,7 +103,7 @@ At least the following configuration parameters should be restored:
 - edit **/usr/share/thingsboard/conf/thingsboard.conf**, for ex.:
 
 ```bash
-$ sudo vi /usr/share/thingsboard/conf/thingsboard.conf
+$ sudo nano /usr/share/thingsboard/conf/thingsboard.conf
 ```
 
 - locate and replace ```-Dplatform=deb``` with ```-Dplatform=ami-pe-cassandra```. The final line should be the following:
@@ -117,7 +117,7 @@ $ sudo vi /usr/share/thingsboard/conf/thingsboard.conf
 - edit **/usr/share/thingsboard/conf/thingsboard.yml**. for ex.:
 
 ```bash
-$ sudo vi /usr/share/thingsboard/conf/thingsboard.yml
+$ sudo nano /usr/share/thingsboard/conf/thingsboard.yml
 ```
 
 - locate the following lines:
@@ -264,7 +264,7 @@ At least the following configuration parameters should be restored:
 - edit **/usr/share/thingsboard/conf/thingsboard.conf**, for ex.:
 
 ```bash
-$ sudo vi /usr/share/thingsboard/conf/thingsboard.conf
+$ sudo nano /usr/share/thingsboard/conf/thingsboard.conf
 ```
 
 - locate and replace ```-Dplatform=deb``` with ```-Dplatform=ami-pe-cassandra```. The final line should be the following:
@@ -278,7 +278,7 @@ $ sudo vi /usr/share/thingsboard/conf/thingsboard.conf
 - edit **/usr/share/thingsboard/conf/thingsboard.yml**. for ex.:
 
 ```bash
-$ sudo vi /usr/share/thingsboard/conf/thingsboard.yml
+$ sudo nano /usr/share/thingsboard/conf/thingsboard.yml
 ```
 
 - locate the following lines:
@@ -468,7 +468,7 @@ At least the following configuration parameters should be restored:
 - edit **/usr/share/thingsboard/conf/thingsboard.conf**, for ex.:
 
 ```bash
-$ sudo vi /usr/share/thingsboard/conf/thingsboard.conf
+$ sudo nano /usr/share/thingsboard/conf/thingsboard.conf
 ```
 
 - locate and replace ```-Dplatform=deb``` with ```-Dplatform=ami-pe-cassandra```. The final line should be the following:
@@ -482,7 +482,7 @@ $ sudo vi /usr/share/thingsboard/conf/thingsboard.conf
 - edit **/usr/share/thingsboard/conf/thingsboard.yml**. for ex.:
 
 ```bash
-$ sudo vi /usr/share/thingsboard/conf/thingsboard.yml
+$ sudo nano /usr/share/thingsboard/conf/thingsboard.yml
 ```
 
 - locate the following lines:

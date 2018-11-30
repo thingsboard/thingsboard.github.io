@@ -24,7 +24,7 @@ Main features:
  - Added ThingsBoard [**MQTT, HTTP and CoAP**](/docs/reference/msa/#transport-microservices) transport microservices to isolate communication with devices from the main ThingsBoard services;
  - Added support of [Kafka](/docs/reference/msa/#kafka) to store device telemetry before it is processed with ThingsBoard Rule Engine;
  - Introduced [Rate Limits](/docs/user-guide/api-limits/) for REST, Websocket and Device APIsl
- - Framework for black-box testing of ThingsBoard by automatically launching ThingsBoard cluster using docker-compose and running API tests;
+ - Framework for [**black-box testing**](https://github.com/thingsboard/thingsboard/tree/master/msa/black-box-tests) of ThingsBoard by automatically launching ThingsBoard cluster using docker-compose and running API tests;
  - Added input widgets bundle. 
 
 Additional features:

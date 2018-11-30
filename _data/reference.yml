@@ -7,14 +7,6 @@ toc:
   path: /docs/reference/monolithic/
 - title: Microservices architecture
   path: /docs/reference/msa/
-- title: Deployment How-Tos & Tips
-  section:
-  - title: How-to choose the right database?
-    path: /docs/reference/how-to-choose-right-db/
-  - title: How-to determine the size of the cluster?
-    path: /docs/reference/how-to-determine-cluster-size/
-  - title: How-to choose the load balancer?
-    path: /docs/reference/how-to-choose-lb/
 - title: ThingsBoard Performance
   section:
   - title: Data Collection Performance
@@ -25,7 +17,3 @@ toc:
     path: /docs/reference/performance-tests/
 - title: ThingsBoard PE Cloud Getting Started
   path: /docs/reference/pe-demo-getting-started/
-- title: Release Notes
-  path: /docs/reference/releases/
-- title: Roadmap
-  path: /docs/reference/roadmap/
