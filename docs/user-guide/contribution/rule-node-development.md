@@ -24,7 +24,7 @@ In this tutorial, you will learn how to create your custom nodes, namely:
  
  ![image](/images/user-guide/contribution/customization/add-get-sum-into-matadata-node.png)
  
- - [**Transformation node**](https://github.com/thingsboard/rule-node-examples/blob/master/src/main/java/org/thingsboard/rule/engine/node/transform/TbGetSumNode.java) that will calculate Sum of the telemetry data, separately for each device, when fields begin with the specified **Input Key** and add Sum to the new Message payload with **Output Key**.
+ - [**Transformation node**](https://github.com/thingsboard/rule-node-examples/blob/master/src/main/java/org/thingsboard/rule/engine/node/transform/TbCalculateSumNode.java) that will calculate Sum of the telemetry data, separately for each device, when fields begin with the specified **Input Key** and add Sum to the new Message payload with **Output Key**.
  
  ![image](/images/user-guide/contribution/customization/calculate-sum-node.png)
  
@@ -288,20 +288,52 @@ git clone git@github.com:thingsboard/rule-node-examples.git
 
  - Execute the following command  from the rule-node-examples folder to build the project:
  
+    - **Note** First you need to execute this command from your Thingsboard folder. 
+ 
 ```
 mvn clean install
 ``` 
 
- - Next, import jar-archive to your Thingsboard project as dependency library, that should be here:
+### Import executable jar-file to your ThingsBoard instance
+
+Import jar-file to your Thingsboard project as dependency library, that should be here:
  
 ```
 ./target/rule-engine-1.0.0-custom-nodes.jar
 ```
 
-See separate instructions for [IDEA](https://www.jetbrains.com/help/idea/library.html#add-library-to-module-dependencies) and [Eclipse](https://help.eclipse.org/luna/index.jsp?topic=%2Forg.eclipse.jst.j2ee.doc.user%2Ftopics%2Ftjimpapp.html).
+#### Thingsboard using IDE:
 
- - The last step will be start ThingsBoard server-side container. Please, refer to the following link to see how to do this: [Running server-side container](/docs/user-guide/contribution/how-to-contribute/#running-server-side-container).
+ - See separate instructions for [IDEA](https://www.jetbrains.com/help/idea/library.html#add-library-to-module-dependencies) and [Eclipse](https://help.eclipse.org/luna/index.jsp?topic=%2Forg.eclipse.jst.j2ee.doc.user%2Ftopics%2Ftjimpapp.html).
  
+Restart ThingsBoard server-side container. Please, refer to the following link to see how to do this: [Running server-side container](/docs/user-guide/contribution/how-to-contribute/#running-server-side-container). 
+ 
+```
+**Once ThingsBoard was restarted you need to clear browser cache and refresh the web page to reload UI of Rule Nodes**
+``` 
+ 
+#### Thingsboard as a service:
+ 
+ - first, you need to execute the following command to migrate jar-file to Thingsboard extensions:
+   
+```
+sudo mv rule-engine-1.0.0-custom-nodes.jar /usr/share/thingsboard/extensions/
+```
+
+ - next, execute the following to change the owner to thingsboard:
+
+```
+sudo chown thingsboard:thingsboard /usr/share/thingsboard/extensions/*
+```
+
+Restart Thingsboard service:
+
+```
+sudo service thingsboard restart
+
+**Once ThingsBoard was restarted you need to clear browser cache and refresh the web page to reload UI of Rule Nodes**
+```
+  
 ### UI configuration
 
 The UI for the ThingsBoard rule nodes was configured with the help of the project that is also hosted on the official [github repo](). <br>
@@ -316,20 +348,28 @@ TODO: paste the link
 
 To running Rule Node UI container in hot redeploy mode:
 
-  - first you need to change constant **forwardPort** from **8080** to **3000** in file **server.js** that should be here:
+ - first you need to change constant **ruleNodeUiforwardPort** from **8080** to **5000** in file **server.js** that should be here:
+    
+```
+cd ${TB_WORK_DIR}/ui/server.js
+```
+    
+ - second, you need to running UI container in hot redeploy mode. Please, refer to the following link to see how to do this: [Running UI container in hot redeploy mode](/docs/user-guide/contribution/how-to-contribute/#running-ui-container-in-hot-redeploy-mode).   
+ 
+ - next you need to change constant **forwardPort** from **8080** to **3000** in file **server.js** that should be here:
   
-    ```
-    thingsboard-rule-config-ui/server.js
-    ```
-  
-  - second, you need to running UI container in hot redeploy mode. Please, refer to the following link to see how to do this: [Running UI container in hot redeploy mode](/docs/user-guide/contribution/how-to-contribute/#running-ui-container-in-hot-redeploy-mode).
-  
-  - last step is to execute the following command from your local directory **custom-rule-node-examples-ui**
+```
+cd ${TB_RULE_NODE_UI_WORK_DIR}/ui/server.js
+```
+   
+  - last step is to execute the following command from your local directory **TB_RULE_NODE_UI_WORK_DIR**:
     
     ```
-    npm run build 
+    npm start
     ```
- 
+
+This will forward Rule Node UI requests to the server that listen on **3000** port. 
+
 ## Next steps
  
  {% assign currentGuide = "Contribution" %}{% include templates/guides-banner.md %}
