@@ -26,7 +26,7 @@ To run ThingsBoard and third-party components on a single machine you will need 
 ThingsBoard service is running on Java 8.
 If you don't have Java installed, please download and install Java 8 using this [link](https://java.com/en/download/).
 
-#### [Optional] External database installation
+#### External database installation
 
 {% include templates/install-db.md %}
 
@@ -118,9 +118,7 @@ Instructions listed below will help you to install Cassandra.
     ThingsBoard installed successfully!
   ```
 
-#### [Optional] Configure ThingsBoard to use external database
- 
-{% include templates/optional-db.md %} 
+#### Configure ThingsBoard to use external database
  
 Edit ThingsBoard configuration file: 
 
