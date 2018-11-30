@@ -30,7 +30,7 @@ Java HotSpot(TM) Client VM (build 25.65-b01, mixed mode)
 
 Any Java version higher than or equal to 1.8 is fine. 
 
-#### [Optional] External database installation
+#### External database installation
 
 {% include templates/install-db.md %}
 
@@ -63,9 +63,7 @@ $ sudo dpkg -i thingsboard-2.2.deb
 export JAVA_OPTS="$JAVA_OPTS -Dplatform=rpi -Xms256M -Xmx256M"
 ```
 
-### [Optional] Configure ThingsBoard to use PostgreSQL
- 
-{% include templates/optional-db.md %} 
+### Configure ThingsBoard to use PostgreSQL
  
 Edit ThingsBoard configuration file 
 

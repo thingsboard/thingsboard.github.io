@@ -26,6 +26,6 @@ toc:
 - title: ThingsBoard PE Cloud Getting Started
   path: /docs/reference/pe-demo-getting-started/
 - title: Release Notes
-  path: https://github.com/thingsboard/thingsboard/releases/
+  path: /docs/reference/releases/
 - title: Roadmap
   path: /docs/reference/roadmap/
