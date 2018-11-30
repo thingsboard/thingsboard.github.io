@@ -54,7 +54,7 @@ defaults:
 
 permalink: pretty
 
-gems:
+plugins:
   - jekyll-redirect-from
   - jekyll-seo-tag
   - jekyll_github_sample
