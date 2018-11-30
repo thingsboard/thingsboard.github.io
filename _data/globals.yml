@@ -1,8 +1,10 @@
 tocs:
 - docs-home
+- getting-started
 - guides
 - api
 - iot-gateway
+- installation
 - reference
 - faq
 - products

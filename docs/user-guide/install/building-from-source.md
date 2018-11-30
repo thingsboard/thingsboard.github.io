@@ -39,7 +39,7 @@ You can clone source code of the project from the official [github repo](https:/
 ```bash
 git clone git@github.com:thingsboard/thingsboard.git
 # checkout latest release branch
-git checkout release-2.0
+git checkout release-2.2
 ```
 
 #### Build
@@ -48,6 +48,12 @@ Run the following command from the thingsboard folder to build the project:
 
 ```bash
 mvn clean install
+```
+
+#### Build local docker images
+
+```bash
+mvn clean install -Ddockerfile.skip=false
 ```
 
 #### Build artifacts

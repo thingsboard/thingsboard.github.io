@@ -15,42 +15,88 @@ description: Installing ThingsBoard IoT Platform using Docker (Linux or Mac OS)
 This guide will help you to install and start ThingsBoard using Docker on Linux or Mac OS.
 
 
-## Installation steps
+## Prerequisites
 
-- [Install Docker](https://docs.docker.com/engine/installation/)
-- [Install Docker Compose (Linux only)](https://docs.docker.com/compose/install/) - Mac OS Docker installation already contains Docker Compose. 
-{% include templates/docker-files.md %}
-   
-- If you have already installed ThingsBoard using docker and want to upgrade or cleanup your installation, please cleanup HSQLDB data directory
-      
-```bash
-sudo rm -rf /home/docker/hsqldb_volume
+- [Install Docker CE](https://docs.docker.com/engine/installation/)
+
+## Running
+
+Depending on the database used there are three type of ThingsBoard single instance docker images:
+
+* `thingsboard/tb-cassandra` - single instance of ThingsBoard with Cassandra database. 
+    
+    The most performant and recommended option but requires at least 4GB of RAM. 8GB is recommended.  
+* `thingsboard/tb-postgres` - single instance of ThingsBoard with PostgreSQL database.
+    
+    Recommended option for small servers with at least 1GB of RAM and minimum load (few messages per second). 2-4GB is recommended.
+* `thingsboard/tb` - single instance of ThingsBoard with embedded HSQLDB database. 
+    
+    **Note:** Not recommended for any evaluation or production usage and is used only for development purposes and automatic tests. 
+
+In this instruction `thingsboard/tb-cassandra` image will be used. You can choose any other images with different databases (see above).
+Execute the following command to run this docker directly:
+
+``` 
+$ docker run -it -p 9090:9090 -p 1883:1883 -p 5683:5683/udp -v ~/.mytb-data:/data --name mytb --restart always thingsboard/tb-cassandra
 ```
 
-{% include templates/start-docker.md %}
-   
-- Once started, you will be able to open Web UI using following link:
-   
-```bash
-http://localhost:8080/
+Where: 
+    
+- `docker run`              - run this container
+- `-it`                     - attach a terminal session with current ThingsBoard process output
+- `-p 9090:9090`            - connect local port 9090 to exposed internal HTTP port 9090
+- `-p 1883:1883`            - connect local port 1883 to exposed internal MQTT port 1883    
+- `-p 5683:5683`            - connect local port 5683 to exposed internal COAP port 5683 
+- `-v ~/.mytb-data:/data`   - mounts the host's dir `~/.mytb-data` to ThingsBoard DataBase data directory
+- `--name mytb`             - friendly local name of this machine
+- `--restart always`        - automatically start ThingsBoard in case of system reboot and restart in case of failure.
+- `thingsboard/tb-cassandra`          - docker image, can be also `thingsboard/tb-postgres` or `thingsboard/tb`
+    
+After executing this command you can open `http://{your-host-ip}:9090` in you browser (for ex. `http://localhost:9090`). You should see ThingsBoard login page.
+Use the following default credentials:
+
+- **Systen Administrator**: sysadmin@thingsboard.org / sysadmin
+- **Tenant Administrator**: tenant@thingsboard.org / tenant
+- **Customer User**: customer@thingsboard.org / customer
+    
+You can always change passwords for each account in account profile page.
+
+## Detaching, stop and start commands
+
+You can detach from session terminal with `Ctrl-p` `Ctrl-q` - the container will keep running in the background.
+
+To reattach to the terminal (to see ThingsBoard logs) run:
+
+```
+$ docker attach mytb
 ```
 
-## Advanced usage
+To stop the container:
 
-### .env file
+```
+$ docker stop mytb
+```
 
-One can modify **.env** file to configure following parameters:
+To start the container:
 
- - CASSANDRA_DATA_DIR - location of cassandra data folder on host machine
- - POSTGRES_DATA_DIR - location of postgres data folder on host machine
- - HSQLDB_DATA_DIR - location of hsqldb data folder on host machine
- - ADD_SCHEMA_AND_SYSTEM_DATA - create schema and add system user and rule chains. by default *false*
- - ADD_DEMO_DATA - add demo accounts, dashboards and devices. by default *false*
- - CASSANDRA_URL - url of cassandra container 
-  
-### tb.env file
+```
+$ docker start mytb
+```
 
-One can set thingsboard service environment variables using this file. See [configuration](/docs/user-guide/install/config/#thingsboardyml) for more details.
+## Upgrading
+
+In order to update to the latest image, execute the following commands:
+
+```
+$ docker pull thingsboard/tb-cassandra
+$ docker stop mytb
+$ docker run -it -v ~/.mytb-data:/data --rm thingsboard/tb-cassandra upgrade-tb.sh
+$ docker start mytb
+```
+
+**NOTE**: if you use different database change image name in all commands from `thingsboard/tb-cassandra` to `thingsboard/tb-postgres` or `thingsboard/tb` correspondingly.
+ 
+**NOTE**: replace host's directory `~/.mytb-data` with directory used during container creation. 
 
 ## Troubleshooting
 

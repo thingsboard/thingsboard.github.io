@@ -30,7 +30,7 @@ Java HotSpot(TM) Client VM (build 25.65-b01, mixed mode)
 
 Any Java version higher than or equal to 1.8 is fine. 
 
-#### [Optional] External database installation
+#### External database installation
 
 {% include templates/install-db.md %}
 
@@ -56,16 +56,14 @@ Download installation package or [build it from source](/docs/user-guide/install
 
 ```bash
 # Download the package
-$ wget https://github.com/thingsboard/thingsboard/releases/download/v2.1/thingsboard-2.1.deb
+$ wget https://github.com/thingsboard/thingsboard/releases/download/v2.2/thingsboard-2.2.deb
 # Install ThingsBoard as a service
-$ sudo dpkg -i thingsboard-2.1.deb
+$ sudo dpkg -i thingsboard-2.2.deb
 # Update ThingsBoard memory usage and restrict it to 150MB in /etc/thingsboard/conf/thingsboard.conf
 export JAVA_OPTS="$JAVA_OPTS -Dplatform=rpi -Xms256M -Xmx256M"
 ```
 
-### [Optional] Configure ThingsBoard to use PostgreSQL
- 
-{% include templates/optional-db.md %} 
+### Configure ThingsBoard to use PostgreSQL
  
 Edit ThingsBoard configuration file 
 

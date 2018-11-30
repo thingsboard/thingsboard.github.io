@@ -26,7 +26,7 @@ To run ThingsBoard and third-party components on a single machine you will need 
 ThingsBoard service is running on Java 8.
 If you don't have Java installed, please download and install Java 8 using this [link](https://java.com/en/download/).
 
-#### [Optional] External database installation
+#### External database installation
 
 {% include templates/install-db.md %}
 
@@ -84,7 +84,7 @@ Instructions listed below will help you to install Cassandra.
 #### ThingsBoard service installation
 
 - Create working directory, for example "C:\thingsboard". 
-- Download [installation archive](https://github.com/thingsboard/thingsboard/releases/download/v2.1/thingsboard-windows-2.1.zip) or [build it from source](/docs/user-guide/install/building-from-source).
+- Download [installation archive](https://github.com/thingsboard/thingsboard/releases/download/v2.2/thingsboard-windows-2.2.zip) or [build it from source](/docs/user-guide/install/building-from-source).
 - Unzip installation archive to the working directory. The working directory should look like this after installation:
  
   ![image](/images/user-guide/install/windows/windows-folder.png)
@@ -118,9 +118,7 @@ Instructions listed below will help you to install Cassandra.
     ThingsBoard installed successfully!
   ```
 
-#### [Optional] Configure ThingsBoard to use external database
- 
-{% include templates/optional-db.md %} 
+#### Configure ThingsBoard to use external database
  
 Edit ThingsBoard configuration file: 
 
@@ -136,11 +134,14 @@ For **PostgreSQL**:
 
 For **Cassandra DB**:
 
-Locate and set database type configuration parameter to 'cassandra'.
+Locate and set database type configuration parameters to 'cassandra'.
  
 ```text
 database:
-  type: "${DATABASE_TYPE:cassandra}" # cassandra OR sql
+  entities:
+    type: "${DATABASE_ENTITIES_TYPE:cassandra}" # cassandra OR sql
+  ts:
+    type: "${DATABASE_TS_TYPE:cassandra}" # cassandra OR sql (for hybrid mode, only this value should be cassandra)
 ```
 
 {% include templates/memory-update-for-slow-machines.md %} 

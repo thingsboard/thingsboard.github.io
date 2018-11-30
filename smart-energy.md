@@ -51,7 +51,7 @@ ThingsBoard Rule Engine allows to forward incoming data to various analytics sys
 ## Learn more
 
 <a style="margin: 10px;" href="/docs/getting-started-guides/helloworld/" class="button">Getting started</a>
-<a style="margin: 10px;" href="/docs/feedback/" class="button">Customers feedback</a>
+<a style="margin: 10px;" href="/industries/smart-energy/" class="button">Customers feedback</a>
 <a style="margin: 10px;" href="/docs/#platform-features" class="button">Platform features</a>
-<a style="margin: 10px;" href="/docs/reference/architecture/" class="button">Architecture</a>
+<a style="margin: 10px;" href="/docs/reference/" class="button">Architecture</a>
 <a style="margin: 10px;" href="/docs/contact-us/" class="button">Contact us</a>

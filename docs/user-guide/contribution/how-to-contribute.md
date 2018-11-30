@@ -81,7 +81,7 @@ Please refer to appropriate section where you find instructions on how to instal
 Edit ThingsBoard configuration file: 
 
 ```text
-/application/scr/main/resources/thingsboard.yml
+/application/src/main/resources/thingsboard.yml
 ```
 
 {% include templates/disable-hsqldb.md %} 
@@ -92,11 +92,14 @@ For **PostgreSQL**:
 
 For **Cassandra DB**:
 
-Locate and set database type configuration parameter to 'cassandra'.
+Locate and set database type configuration parameters to 'cassandra'.
  
 ```text
 database:
-  type: "${DATABASE_TYPE:cassandra}" # cassandra OR sql
+  entities:
+    type: "${DATABASE_ENTITIES_TYPE:cassandra}" # cassandra OR sql
+  ts:
+    type: "${DATABASE_TS_TYPE:cassandra}" # cassandra OR sql (for hybrid mode, only this value should be cassandra)
 ```
 
 **NOTE:** If your Cassandra server is installed on the remote machine or it is bind to custom interface/port, you need to specify it in thingsboard.yml as well.
@@ -205,3 +208,13 @@ Sign up contribution license agreement (CLA) and verify that remote build has be
 Be patient, pull request may take several days to review.
 
 
+
+#### See also
+
+- [Rule Node Development](/docs/user-guide/contribution/rule-node-development/) guide that describes how to create your own rule nodes.
+
+- [Widgets Development Guide](/docs/user-guide/contribution/widgets-development/) guide that describes how to create your own widgets.
+
+## Next steps
+
+{% assign currentGuide = "Contribution" %}{% include templates/guides-banner.md %}

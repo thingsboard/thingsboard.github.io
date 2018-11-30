@@ -10,7 +10,18 @@ description: ThingsBoard IoT platform cluster setup guide
 * TOC
 {:toc}
 
-This guide will help you to setup ThingsBoard in cluster mode.
+This guide will help you to setup ThingsBoard in cluster mode. There are two options available. 
+
+## Cluster setup using microservices architecture (recommended)
+
+Starting ThingsBoard v2.2, it is possible to install ThingsBoard cluster using new microservices architecture and docker containers. 
+See [**microservices**](/docs/reference/msa/) architecture page and [**deployment**](https://github.com/thingsboard/thingsboard/blob/master/docker/README.md) 
+tips for more details how to launch the ThingsBoard cluster in a "dockerized" environment. This option is recommended for advanced users only.
+
+## Cluster setup using monolithic architecture (before v2.2)
+  
+Installing cluster of monolithic ThingsBoard applications where each one contains all necessary transport and core components in a single VM is no longer recommended option.
+However, you may still want to use this option in case you would like to minimize amount of third-party used. See instructions below.   
 
 ### Assumptions
 
