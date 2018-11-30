@@ -302,15 +302,17 @@ Import jar-file to your Thingsboard project as dependency library, that should b
 ./target/rule-engine-1.0.0-custom-nodes.jar
 ```
 
-Thingsobard using IDE:
+#### Thingsboard using IDE:
 
  - See separate instructions for [IDEA](https://www.jetbrains.com/help/idea/library.html#add-library-to-module-dependencies) and [Eclipse](https://help.eclipse.org/luna/index.jsp?topic=%2Forg.eclipse.jst.j2ee.doc.user%2Ftopics%2Ftjimpapp.html).
  
-Start ThingsBoard server-side container. Please, refer to the following link to see how to do this: [Running server-side container](/docs/user-guide/contribution/how-to-contribute/#running-server-side-container). 
-
-<br>
+Restart ThingsBoard server-side container. Please, refer to the following link to see how to do this: [Running server-side container](/docs/user-guide/contribution/how-to-contribute/#running-server-side-container). 
  
-Thingsobard as a service:
+```
+**Once ThingsBoard was restarted you need to clear browser cache and refresh the web page to reload UI of Rule Nodes**
+``` 
+ 
+#### Thingsboard as a service:
  
  - first, you need to execute the following command to migrate jar-file to Thingsboard extensions:
    
@@ -328,6 +330,8 @@ Restart Thingsboard service:
 
 ```
 sudo service thingsboard restart
+
+**Once ThingsBoard was restarted you need to clear browser cache and refresh the web page to reload UI of Rule Nodes**
 ```
   
 ### UI configuration
@@ -344,20 +348,28 @@ TODO: paste the link
 
 To running Rule Node UI container in hot redeploy mode:
 
-  - first you need to change constant **forwardPort** from **8080** to **3000** in file **server.js** that should be here:
+ - first you need to change constant **ruleNodeUiforwardPort** from **8080** to **5000** in file **server.js** that should be here:
+    
+```
+cd ${TB_WORK_DIR}/ui/server.js
+```
+    
+ - second, you need to running UI container in hot redeploy mode. Please, refer to the following link to see how to do this: [Running UI container in hot redeploy mode](/docs/user-guide/contribution/how-to-contribute/#running-ui-container-in-hot-redeploy-mode).   
+ 
+ - next you need to change constant **forwardPort** from **8080** to **3000** in file **server.js** that should be here:
   
-    ```
-    thingsboard-rule-config-ui/server.js
-    ```
-  
-  - second, you need to running UI container in hot redeploy mode. Please, refer to the following link to see how to do this: [Running UI container in hot redeploy mode](/docs/user-guide/contribution/how-to-contribute/#running-ui-container-in-hot-redeploy-mode).
-  
-  - last step is to execute the following command from your local directory **custom-rule-node-examples-ui**
+```
+cd ${TB_RULE_NODE_UI_WORK_DIR}/ui/server.js
+```
+   
+  - last step is to execute the following command from your local directory **TB_RULE_NODE_UI_WORK_DIR**:
     
     ```
-    npm run build 
+    npm start
     ```
- 
+
+This will forward Rule Node UI requests to the server that listen on **3000** port. 
+
 ## Next steps
  
  {% assign currentGuide = "Contribution" %}{% include templates/guides-banner.md %}
