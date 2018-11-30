@@ -57,4 +57,3 @@ permalink: pretty
 plugins:
   - jekyll-redirect-from
   - jekyll-seo-tag
-  - jekyll_github_sample
