@@ -18,4 +18,4 @@ gem "jekyll-seo-tag", "2.3.0"
 gem "jekyll-github-metadata", "2.2.0"
 gem "listen", "3.0.6"
 gem "activesupport", "4.2.7"
-gem 'jekyll_github_sample'
+gem "jekyll_github_sample", "0.3.1"
