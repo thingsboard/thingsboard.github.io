@@ -130,6 +130,8 @@ To simplify application development, install the ThingsBoard Arduino SDK and its
 
 From now on, you can use ThingsBoard SDK right from Arduino IDE.
 
+![image](/images/samples/esp32/gpio-temperature/install-tb-arduino.png)
+
 ### Install ESP32 DHT22 driver
 
 DHT22 sensor, connected to the ESP32 requires a special driver. To install it, proceed as follows:
