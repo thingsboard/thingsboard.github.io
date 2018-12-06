@@ -37,7 +37,7 @@ Please don't forget to configure your operating system to use Oracle JDK 8 by de
 Corresponding instructions are in the same articles listed above.
 
 
-#### [Optional] External database installation
+#### External database installation
 
 {% include templates/install-db.md %}
 
@@ -84,10 +84,8 @@ A,Ubuntu,shell,resources/thingsboard-ubuntu-installation.sh,/docs/user-guide/ins
 B,CentOS,shell,resources/thingsboard-centos-installation.sh,/docs/user-guide/install/resources/thingsboard-centos-installation.sh{% endcapture %}  
 {% include tabs.html %}
 
-### [Optional] Configure ThingsBoard to use the external database
- 
-{% include templates/optional-db.md %} 
- 
+### Configure ThingsBoard to use the external database
+  
 Edit ThingsBoard configuration file 
 
 ```bash 

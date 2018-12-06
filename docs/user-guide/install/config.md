@@ -56,10 +56,7 @@ We will list only main configuration parameters below to avoid duplication of th
   </thead>
   <tbody>
       <tr>
-          <td><b>HTTP server parameters</b></td>
-          <td></td>
-          <td></td>
-          <td></td>
+          <td colspan="4"><span style="font-weight: bold; font-size: 24px;">HTTP server parameters</span></td>
       </tr>  
       <tr>
           <td>server.address</td>
@@ -110,6 +107,99 @@ We will list only main configuration parameters below to avoid duplication of th
           <td>Log errors with stacktrace when REST API throws exception</td>
       </tr>
       <tr>
+          <td>server.ws.send_timeout</td>
+          <td>TB_SERVER_WS_SEND_TIMEOUT</td>
+          <td>5000</td>
+          <td>Timeout for sending data to client WebSocket session in milliseconds</td>
+      </tr>      
+      <tr>
+          <td>server.ws.limits.max_sessions_per_tenant</td>
+          <td>TB_SERVER_WS_TENANT_RATE_LIMITS_MAX_SESSIONS_PER_TENANT</td>
+          <td>0</td>
+          <td>Limit the amount of WebSocket sessions per each tenant available on each server. Zero value disables limitation.</td>
+      </tr>      
+      <tr>
+          <td>server.ws.limits.max_sessions_per_customer</td>
+          <td>TB_SERVER_WS_TENANT_RATE_LIMITS_MAX_SESSIONS_PER_CUSTOMER</td>
+          <td>0</td>
+          <td>Limit the amount of WebSocket sessions per each customer available on each server. Zero value disables limitation.</td>
+      </tr>      
+      <tr>
+          <td>server.ws.limits.max_sessions_per_regular_user</td>
+          <td>TB_SERVER_WS_TENANT_RATE_LIMITS_MAX_SESSIONS_PER_REGULAR_USER</td>
+          <td>0</td>
+          <td>Limit the amount of WebSocket sessions per each regular user available on each server. Zero value disables limitation.</td>
+      </tr>      
+      <tr>
+          <td>server.ws.limits.max_sessions_per_public_user</td>
+          <td>TB_SERVER_WS_TENANT_RATE_LIMITS_MAX_SESSIONS_PER_PUBLIC_USER</td>
+          <td>0</td>
+          <td>Limit the amount of WebSocket sessions per each public user available on each server. Zero value disables limitation.</td>
+      </tr>      
+      <tr>
+          <td>server.ws.limits.max_queue_per_ws_session</td>
+          <td>TB_SERVER_WS_TENANT_RATE_LIMITS_MAX_QUEUE_PER_WS_SESSION</td>
+          <td>500</td>
+          <td>Limit the size of pending message queue per each WebSocket session.</td>
+      </tr>      
+      <tr>
+          <td>server.ws.limits.max_subscriptions_per_tenant</td>
+          <td>TB_SERVER_WS_TENANT_RATE_LIMITS_MAX_SUBSCRIPTIONS_PER_TENANT</td>
+          <td>0</td>
+          <td>Limit the amount of WebSocket subscriptions per each tenant available on each server. Zero value disables limitation.</td>
+      </tr>      
+      <tr>
+          <td>server.ws.limits.max_subscriptions_per_customer</td>
+          <td>TB_SERVER_WS_TENANT_RATE_LIMITS_MAX_SUBSCRIPTIONS_PER_CUSTOMER</td>
+          <td>0</td>
+          <td>Limit the amount of WebSocket subscriptions per each customer available on each server. Zero value disables limitation.</td>
+      </tr>      
+      <tr>
+          <td>server.ws.limits.max_subscriptions_per_regular_user</td>
+          <td>TB_SERVER_WS_TENANT_RATE_LIMITS_MAX_SUBSCRIPTIONS_PER_REGULAR_USER</td>
+          <td>0</td>
+          <td>Limit the amount of WebSocket subscriptions per each regular user available on each server. Zero value disables limitation.</td>
+      </tr>      
+      <tr>
+          <td>server.ws.limits.max_subscriptions_per_public_user</td>
+          <td>TB_SERVER_WS_TENANT_RATE_LIMITS_MAX_SUBSCRIPTIONS_PER_PUBLIC_USER</td>
+          <td>0</td>
+          <td>Limit the amount of WebSocket subscriptions per each public user available on each server. Zero value disables limitation.</td>
+      </tr>      
+      <tr>
+          <td>server.ws.limits.max_updates_per_session</td>
+          <td>TB_SERVER_WS_TENANT_RATE_LIMITS_MAX_UPDATES_PER_SESSION</td>
+          <td>300:1,3000:60</td>
+          <td>Limit the maximum data updates sent to WebSocket session for specified time intervals in seconds. Comma separated list of limit:seconds pairs.</td>
+      </tr>      
+      <tr>
+          <td>server.rest.limits.tenant.enabled</td>
+          <td>TB_SERVER_REST_LIMITS_TENANT_ENABLED</td>
+          <td>false</td>
+          <td>Enable/disable REST API rate limits per tenant.</td>
+      </tr>      
+      <tr>
+          <td>server.rest.limits.tenant.configuration</td>
+          <td>TB_SERVER_REST_LIMITS_TENANT_CONFIGURATION</td>
+          <td>100:1,2000:60</td>
+          <td>Limit the maximum REST API calls per tenant on each server for specified time intervals in seconds. Comma separated list of limit:seconds pairs.</td>
+      </tr>      
+      <tr>
+          <td>server.rest.limits.customer.enabled</td>
+          <td>TB_SERVER_REST_LIMITS_CUSTOMER_ENABLED</td>
+          <td>false</td>
+          <td>Enable/disable REST API rate limits per customer.</td>
+      </tr>      
+      <tr>
+          <td>server.rest.limits.customer.configuration</td>
+          <td>TB_SERVER_REST_LIMITS_CUSTOMER_CONFIGURATION</td>
+          <td>50:1,1000:60</td>
+          <td>Limit the maximum REST API calls per customer on each server for specified time intervals in seconds. Comma separated list of limit:seconds pairs.</td>
+      </tr>      
+      <tr>
+          <td colspan="4"><span style="font-weight: bold; font-size: 24px;">Cluster mode parameters</span></td>
+      </tr>  
+      <tr>
           <td>zk.enabled</td>
           <td>ZOOKEEPER_ENABLED</td>
           <td>false</td>
@@ -158,6 +248,12 @@ We will list only main configuration parameters below to avoid duplication of th
           <td>gRPC connection port. Used only in cluster mode only.</td>
       </tr>
       <tr>
+          <td>cluster.node_id</td>
+          <td>CLUSTER_NODE_ID</td>
+          <td></td>
+          <td>Unique id for this node (autogenerated if empty).</td>
+      </tr>
+      <tr>
           <td>cluster.hash_function_name</td>
           <td>CLUSTER_HASH_FUNCTION_NAME</td>
           <td>murmur3_128</td>
@@ -176,11 +272,17 @@ We will list only main configuration parameters below to avoid duplication of th
           <td>Queue partition id for current node in the Cluster</td>
       </tr>
       <tr>
+          <td colspan="4"><span style="font-weight: bold; font-size: 24px;">Plugins configuration parameters</span></td>
+      </tr>  
+      <tr>
           <td>plugins.scan_packages</td>
           <td>PLUGINS_SCAN_PACKAGES</td>
           <td>org.thingsboard.server.extensions, org.thingsboard.rule.engine</td>
           <td>Comma separated package list used during classpath scanning for plugins</td>
       </tr>
+      <tr>
+          <td colspan="4"><span style="font-weight: bold; font-size: 24px;">Security parameters</span></td>
+      </tr>  
       <tr>
           <td>security.jwt.tokenExpirationTime</td>
           <td>JWT_TOKEN_EXPIRATION_TIME</td>
@@ -212,11 +314,23 @@ We will list only main configuration parameters below to avoid duplication of th
           <td>Enable/disable access to Tenant Administrators JWT token by System Administrator or Customer Users JWT token by Tenant Administrator</td>
       </tr>
       <tr>
+          <td>security.user_login_case_sensitive</td>
+          <td>SECURITY_USER_LOGIN_CASE_SENSITIVE</td>
+          <td>true</td>
+          <td>Enable/disable case-sensitive username login</td>
+      </tr>
+      <tr>
+          <td colspan="4"><span style="font-weight: bold; font-size: 24px;">Dashboard parameters</span></td>
+      </tr>  
+      <tr>
           <td>dashboard.max_datapoints_limit</td>
           <td>DASHBOARD_MAX_DATAPOINTS_LIMIT</td>
           <td>50000</td>
-          <td>Maximum allowed datapoints fetched by Thingsboard UI widgets</td>
+          <td>Maximum allowed datapoints fetched by ThingsBoard UI widgets</td>
       </tr>
+      <tr>
+          <td colspan="4"><span style="font-weight: bold; font-size: 24px;">Common database parameters</span></td>
+      </tr>  
       <tr>
           <td>database.ts_max_intervals</td>
           <td>DATABASE_TS_MAX_INTERVALS</td>
@@ -227,14 +341,17 @@ We will list only main configuration parameters below to avoid duplication of th
           <td>database.entities.type</td>
           <td>DATABASE_ENTITIES_TYPE</td>
           <td>sql</td>
-          <td>Database type for Thingsboard entities (assets, devices, customers, etc.). Allowed values - **cassandra** OR **sql**</td>
+          <td>Database type for ThingsBoard entities (assets, devices, customers, etc.). Allowed values - <b>cassandra</b> OR <b>sql</b></td>
       </tr>
       <tr>
           <td>database.ts.type</td>
           <td>DATABASE_TS_TYPE</td>
           <td>sql</td>
-          <td>Database type for Thingsboard timeseries data. Allowed values - **cassandra** OR **sql**. For hybrid mode, only this value should be **cassandra**</td>
+          <td>Database type for ThingsBoard timeseries data. Allowed values - <b>cassandra</b> OR <b>sql</b>. For hybrid mode, only this value should be <b>cassandra</b></td>
       </tr>
+      <tr>
+          <td colspan="4"><span style="font-weight: bold; font-size: 24px;">Cassandra database parameters</span></td>
+      </tr>  
       <tr>
           <td>cassandra.cluster_name</td>
           <td>CASSANDRA_CLUSTER_NAME</td>
@@ -389,7 +506,7 @@ We will list only main configuration parameters below to avoid duplication of th
           <td>cassandra.query.ts_key_value_partitioning</td>
           <td>TS_KV_PARTITIONING</td>
           <td>MONTHS</td>
-          <td>Specify partitioning size for timestamp key-value storage. Allowed values **MINUTES**, **HOURS**, **DAYS**, **MONTHS**,**INDEFINITE**. In case of **INDEFINITE** - timeseries data partitioning is disabled</td>
+          <td>Specify partitioning size for timestamp key-value storage. Allowed values <b>MINUTES</b>, <b>HOURS</b>, <b>DAYS</b>, <b>MONTHS</b>, <b>INDEFINITE</b>. In case of <b>INDEFINITE</b> - timeseries data partitioning is disabled</td>
       </tr>
       <tr>
           <td>cassandra.query.ts_key_value_ttl</td>
@@ -413,31 +530,73 @@ We will list only main configuration parameters below to avoid duplication of th
           <td>cassandra.query.permit_max_wait_time</td>
           <td>PERMIT_MAX_WAIT_TIME</td>
           <td>120000</td>
-          <td>Max Time in milliseconds query waits for execution</td>
+          <td>Max time in milliseconds query waits for execution</td>
+      </tr>
+      <tr>
+          <td>cassandra.query.dispatcher_threads</td>
+          <td>CASSANDRA_QUERY_DISPATCHER_THREADS</td>
+          <td>2</td>
+          <td>Amount of threads to dispatch cassandra queries</td>
+      </tr>
+      <tr>
+          <td>cassandra.query.callback_threads</td>
+          <td>CASSANDRA_QUERY_CALLBACK_THREADS</td>
+          <td>4</td>
+          <td>Amount of threads used to invoke callbacks for queries results</td>
+      </tr>
+      <tr>
+          <td>cassandra.query.poll_ms</td>
+          <td>CASSANDRA_QUERY_POLL_MS</td>
+          <td>50</td>
+          <td>Cassandra query queue polling interval in milliseconds</td>
       </tr>
       <tr>
           <td>cassandra.query.rate_limit_print_interval_ms</td>
           <td>CASSANDRA_QUERY_RATE_LIMIT_PRINT_MS</td>
           <td>10000</td>
-          <td>Internal in milliseconds for printing Cassandra query queue statistic</td>
+          <td>Interval in milliseconds for printing Cassandra query queue statistic</td>
       </tr>
+      <tr>
+          <td>cassandra.query.tenant_rate_limits.enabled</td>
+          <td>CASSANDRA_QUERY_TENANT_RATE_LIMITS_ENABLED</td>
+          <td>false</td>
+          <td>Enable/disable cassandra query rate limits per tenant</td>
+      </tr>
+      <tr>
+          <td>cassandra.query.tenant_rate_limits.configuration</td>
+          <td>CASSANDRA_QUERY_TENANT_RATE_LIMITS_CONFIGURATION</td>
+          <td>1000:1,30000:60</td>
+          <td>Limit the maximum Cassandra queries per tenant on each server for specified time intervals in seconds. Comma separated list of limit:seconds pairs.</td>
+      </tr>
+      <tr>
+          <td>cassandra.query.tenant_rate_limits.print_tenant_names</td>
+          <td>CASSANDRA_QUERY_TENANT_RATE_LIMITS_PRINT_TENANT_NAMES</td>
+          <td>false</td>
+          <td>Whether to print rate-limited tenant names when printing Cassandra query queue statistic</td>
+      </tr>
+      <tr>
+           <td colspan="4"><span style="font-weight: bold; font-size: 24px;">SQL database parameters</span></td>
+      </tr>  
       <tr>
           <td>sql.ts_inserts_executor_type</td>
           <td>SQL_TS_INSERTS_EXECUTOR_TYPE</td>
           <td>fixed</td>
-          <td>Specify executor service type used to perform timeseries insert tasks: **SINGLE** **FIXED** **CACHED**</td>
+          <td>Specify executor service type used to perform timeseries insert tasks: <b>SINGLE</b> <b>FIXED</b> <b>CACHED</b></td>
       </tr>
       <tr>
           <td>sql.ts_inserts_fixed_thread_pool_size</td>
           <td>SQL_TS_INSERTS_FIXED_THREAD_POOL_SIZE</td>
           <td>10</td>
-          <td>Specify thread pool size for **FIXED** executor service type</td>
+          <td>Specify thread pool size for <b>FIXED</b> executor service type</td>
       </tr>
       <tr>
-          <td>actors.tenant.create_components_on_init</td>
-          <td>ACTORS_TENANT_CREATE_COMPONENTS_ON_INIT</td>
-          <td>true</td>
-          <td>Create components in initialization</td>
+          <td colspan="4"><span style="font-weight: bold; font-size: 24px;">Actor system parameters</span></td>
+      </tr>  
+      <tr>
+          <td>actors.cluster.grpc_callback_thread_pool_size</td>
+          <td>ACTORS_CLUSTER_GRPC_CALLBACK_THREAD_POOL_SIZE</td>
+          <td>10</td>
+          <td>Thread pool size for processing requests received from gRPC cluster session</td>
       </tr>
       <tr>
           <td>actors.tenant.create_components_on_init</td>
@@ -530,88 +689,91 @@ We will list only main configuration parameters below to avoid duplication of th
           <td>Client side RPC timeout in milliseconds</td>
       </tr>
       <tr>
+          <td colspan="4"><span style="font-weight: bold; font-size: 24px;">Cache parameters</span></td>
+      </tr>  
+      <tr>
           <td>cache.type</td>
           <td>CACHE_TYPE</td>
           <td>caffeine</td>
-          <td>Cache provider. **caffeine** for stand alone installations and **redis** for clustered installations</td>
+          <td>Cache provider. <b>caffeine</b> for stand alone installations and <b>redis</b> for clustered installations</td>
       </tr>
       <tr>
           <td>caffeine.specs.relations.timeToLiveInMinutes</td>
           <td></td>
           <td>1440</td>
-          <td>**Relations** cache TTL</td>
+          <td><b>Relations</b> cache TTL</td>
       </tr>
       <tr>
           <td>caffeine.specs.relations.maxSize</td>
           <td></td>
           <td>100000</td>
-          <td>**Relations** cache max size</td>
+          <td><b>Relations</b> cache max size</td>
       </tr>
       <tr>
           <td>caffeine.specs.deviceCredentials.timeToLiveInMinutes</td>
           <td></td>
           <td>1440</td>
-          <td>**deviceCredentials** cache TTL</td>
+          <td><b>deviceCredentials</b> cache TTL</td>
       </tr>
       <tr>
           <td>caffeine.specs.deviceCredentials.maxSize</td>
           <td></td>
           <td>100000</td>
-          <td>**deviceCredentials** cache max size</td>
+          <td><b>deviceCredentials</b> cache max size</td>
       </tr>
       <tr>
           <td>caffeine.specs.devices.timeToLiveInMinutes</td>
           <td></td>
           <td>1440</td>
-          <td>**devices** cache TTL</td>
+          <td><b>devices</b> cache TTL</td>
       </tr>
       <tr>
           <td>caffeine.specs.devices.maxSize</td>
           <td></td>
           <td>100000</td>
-          <td>**devices** cache max size</td>
+          <td><b>devices</b> cache max size</td>
       </tr>
       <tr>
           <td>caffeine.specs.sessions.timeToLiveInMinutes</td>
           <td></td>
           <td>1440</td>
-          <td>**sessions** cache TTL</td>
+          <td><b>sessions</b> cache TTL</td>
       </tr>
       <tr>
           <td>caffeine.specs.sessions.maxSize</td>
           <td></td>
           <td>100000</td>
-          <td>**sessions** cache max size</td>
+          <td><b>sessions</b> cache max size</td>
       </tr>
       <tr>
           <td>caffeine.specs.assets.timeToLiveInMinutes</td>
           <td></td>
           <td>1440</td>
-          <td>**assets** cache TTL</td>
+          <td><b>assets</b> cache TTL</td>
       </tr>
       <tr>
           <td>caffeine.specs.assets.maxSize</td>
           <td></td>
           <td>100000</td>
-          <td>**assets** cache max size</td>
+          <td><b>assets</b> cache max size</td>
       </tr>
       <tr>
           <td>caffeine.specs.entityViews.timeToLiveInMinutes</td>
           <td></td>
           <td>1440</td>
-          <td>**entityViews** cache TTL</td>
+          <td><b>entityViews</b> cache TTL</td>
       </tr>
       <tr>
           <td>caffeine.specs.entityViews.maxSize</td>
           <td></td>
           <td>100000</td>
-          <td>**entityViews** cache max size</td>
+          <td><b>entityViews</b> cache max size</td>
       </tr>
       <tr>
           <td>redis.connection.type</td>
           <td></td>
           <td>standalone</td>
-          <td>Redis connection type - **standalone** or **cluster**</td>
+          <td>Redis connection type - <b>standalone</b> or <b>cluster</b></td>
       </tr>
       <tr>
           <td>redis.connection.host</td>
@@ -638,11 +800,17 @@ We will list only main configuration parameters below to avoid duplication of th
           <td>Redis password</td>
       </tr>
       <tr>
+          <td colspan="4"><span style="font-weight: bold; font-size: 24px;">Check new version updates parameters</span></td>
+      </tr>  
+      <tr>
           <td>updates.enabled</td>
           <td>UPDATES_ENABLED</td>
           <td>true</td>
           <td>Enable/disable thingsboard updates checking</td>
       </tr>
+      <tr>
+          <td colspan="4"><span style="font-weight: bold; font-size: 24px;">Spring MVC/Resources parameters</span></td>
+      </tr>  
       <tr>
           <td>spring.mvc.cors.mappings.*</td>
           <td></td>
@@ -653,7 +821,7 @@ We will list only main configuration parameters below to avoid duplication of th
           <td>spring.resources.chain.gzipped</td>
           <td></td>
           <td>true</td>
-          <td></td>
+          <td>Enable/disable gzip compression of static resources</td>
       </tr>
       <tr>
           <td>spring.resources.chain.strategy.content.enabled</td>
@@ -662,16 +830,19 @@ We will list only main configuration parameters below to avoid duplication of th
           <td></td>
       </tr>
       <tr>
+          <td colspan="4"><span style="font-weight: bold; font-size: 24px;">Spring JPA datasource parameters (for SQL database)</span></td>
+      </tr>  
+      <tr>
           <td>spring.jpa.database-platform</td>
           <td>SPRING_JPA_DATABASE_PLATFORM</td>
           <td>org.hibernate.dialect.HSQLDialect</td>
-          <td>Database SQL dialect for Spring JPA - **org.hibernate.dialect.HSQLDialect** or **org.hibernate.dialect.PostgreSQLDialect**</td>
+          <td>Database SQL dialect for Spring JPA - <b>org.hibernate.dialect.HSQLDialect</b> or <b>org.hibernate.dialect.PostgreSQLDialect</b></td>
       </tr>
       <tr>
           <td>spring.datasource.driverClassName</td>
           <td>SPRING_DRIVER_CLASS_NAME</td>
           <td>org.hsqldb.jdbc.JDBCDriver</td>
-          <td>Database driver for Spring JPA - **org.hsqldb.jdbc.JDBCDriver** or **org.postgresql.Driver**</td>
+          <td>Database driver for Spring JPA - <b>org.hsqldb.jdbc.JDBCDriver</b> or <b>org.postgresql.Driver</b></td>
       </tr>
       <tr>
           <td>spring.datasource.url</td>
@@ -691,6 +862,9 @@ We will list only main configuration parameters below to avoid duplication of th
           <td></td>
           <td>Database password</td>
       </tr>
+      <tr>
+          <td colspan="4"><span style="font-weight: bold; font-size: 24px;">Audit log parameters</span></td>
+      </tr>  
       <tr>
           <td>audit_log.enabled</td>
           <td>AUDIT_LOG_ENABLED</td>
@@ -713,55 +887,55 @@ We will list only main configuration parameters below to avoid duplication of th
           <td>audit_log.logging_level.mask."device"</td>
           <td>AUDIT_LOG_MASK_DEVICE</td>
           <td>W</td>
-          <td>Device logging levels. Allowed values: **OFF** (disable), **W** (log write operations), **RW** (log read and write operations)</td>
+          <td>Device logging levels. Allowed values: <b>OFF</b> (disable), <b>W</b> (log write operations), <b>RW</b> (log read and write operations)</td>
       </tr>
       <tr>
           <td>audit_log.logging_level.mask."asset"</td>
           <td>AUDIT_LOG_MASK_ASSET</td>
           <td>W</td>
-          <td>Asset logging levels. Allowed values: **OFF** (disable), **W** (log write operations), **RW** (log read and write operations)</td>
+          <td>Asset logging levels. Allowed values: <b>OFF</b> (disable), <b>W</b> (log write operations), <b>RW</b> (log read and write operations)</td>
       </tr>
       <tr>
           <td>audit_log.logging_level.mask."dashboard"</td>
           <td>AUDIT_LOG_MASK_DASHBOARD</td>
           <td>W</td>
-          <td>Dashboard logging levels. Allowed values: **OFF** (disable), **W** (log write operations), **RW** (log read and write operations)</td>
+          <td>Dashboard logging levels. Allowed values: <b>OFF</b> (disable), <b>W</b> (log write operations), <b>RW</b> (log read and write operations)</td>
       </tr>
       <tr>
           <td>audit_log.logging_level.mask."customer"</td>
           <td>AUDIT_LOG_MASK_CUSTOMER</td>
           <td>W</td>
-          <td>Customer logging levels. Allowed values: **OFF** (disable), **W** (log write operations), **RW** (log read and write operations)</td>
+          <td>Customer logging levels. Allowed values: <b>OFF</b> (disable), <b>W</b> (log write operations), <b>RW</b> (log read and write operations)</td>
       </tr>
       <tr>
           <td>audit_log.logging_level.mask."user"</td>
           <td>AUDIT_LOG_MASK_USER</td>
           <td>W</td>
-          <td>User logging levels. Allowed values: **OFF** (disable), **W** (log write operations), **RW** (log read and write operations)</td>
+          <td>User logging levels. Allowed values: <b>OFF</b> (disable), <b>W</b> (log write operations), <b>RW</b> (log read and write operations)</td>
       </tr>
       <tr>
           <td>audit_log.logging_level.mask."rule_chain"</td>
           <td>AUDIT_LOG_MASK_RULE_CHAIN</td>
           <td>W</td>
-          <td>Rule Chain logging levels. Allowed values: **OFF** (disable), **W** (log write operations), **RW** (log read and write operations)</td>
+          <td>Rule Chain logging levels. Allowed values: <b>OFF</b> (disable), <b>W</b> (log write operations), <b>RW</b> (log read and write operations)</td>
       </tr>
       <tr>
           <td>audit_log.logging_level.mask."alarm"</td>
           <td>AUDIT_LOG_MASK_ALARM</td>
           <td>W</td>
-          <td>Alarm logging levels. Allowed values: **OFF** (disable), **W** (log write operations), **RW** (log read and write operations)</td>
+          <td>Alarm logging levels. Allowed values: <b>OFF</b> (disable), <b>W</b> (log write operations), <b>RW</b> (log read and write operations)</td>
       </tr>
       <tr>
           <td>audit_log.logging_level.mask."entity_view"</td>
           <td>AUDIT_LOG_MASK_ENTITY_VIEW</td>
           <td>W</td>
-          <td>Entity View logging levels. Allowed values: **OFF** (disable), **W** (log write operations), **RW** (log read and write operations)</td>
+          <td>Entity View logging levels. Allowed values: <b>OFF</b> (disable), <b>W</b> (log write operations), <b>RW</b> (log read and write operations)</td>
       </tr>
       <tr>
           <td>audit_log.sink.type</td>
           <td>AUDIT_LOG_SINK_TYPE</td>
           <td>none</td>
-          <td>Type of external sink. possible options: none, elasticsearch</td>
+          <td>Type of external sink system to forward audit logs records. Possible options: none, elasticsearch</td>
       </tr>
       <tr>
           <td>audit_log.sink.index_pattern</td>
@@ -785,26 +959,29 @@ We will list only main configuration parameters below to avoid duplication of th
           <td>audit_log.sink.host</td>
           <td>AUDIT_LOG_SINK_HOST</td>
           <td>localhost</td>
-          <td>DDDDDDDDDDDDDDDDDDD</td>
+          <td>Host of external sink system</td>
       </tr>
       <tr>
           <td>audit_log.sink.port</td>
           <td>AUDIT_LOG_SINK_PORT</td>
           <td>9200</td>
-          <td>DDDDDDDDDDDDDDDDDDD</td>
+          <td>Port of external sink system</td>
       </tr>
       <tr>
           <td>audit_log.sink.user_name</td>
           <td>AUDIT_LOG_SINK_USER_NAME</td>
           <td></td>
-          <td>DDDDDDDDDDDDDDDDDDD</td>
+          <td>Username used to access external sink system</td>
       </tr>
       <tr>
           <td>audit_log.sink.password</td>
           <td>AUDIT_LOG_SINK_PASSWORD</td>
           <td></td>
-          <td>DDDDDDDDDDDDDDDDDDD</td>
+          <td>Password used to access external sink system</td>
       </tr>
+      <tr>
+          <td colspan="4"><span style="font-weight: bold; font-size: 24px;">Device connectivity state parameters</span></td>
+      </tr>  
       <tr>
           <td>state.defaultInactivityTimeoutInSec</td>
           <td>DEFAULT_INACTIVITY_TIMEOUT</td>
@@ -818,22 +995,58 @@ We will list only main configuration parameters below to avoid duplication of th
           <td>Device inactivity check period in seconds</td>
       </tr>
       <tr>
-          <td>kafka.rule_engine.poll_interval</td>
-          <td>TB_RULE_ENGINE_POLL_INTERVAL_MS</td>
-          <td>25</td>
+          <td colspan="4"><span style="font-weight: bold; font-size: 24px;">Kafka parameters</span></td>
+      </tr>  
+      <tr>
+          <td>kafka.enabled</td>
           <td></td>
+          <td>true</td>
+          <td>Enable/disable kafka</td>
       </tr>
       <tr>
-          <td>kafka.rule_engine.auto_commit_interval</td>
-          <td>TB_RULE_ENGINE_AUTO_COMMIT_INTERVAL_MS</td>
-          <td>100</td>
-          <td></td>
+          <td>kafka.bootstrap.servers</td>
+          <td>TB_KAFKA_SERVERS</td>
+          <td>localhost:9092</td>
+          <td>List of kafka bootstrap servers used to establish connection</td>
       </tr>
+      <tr>
+          <td>kafka.acks</td>
+          <td>TB_KAFKA_ACKS</td>
+          <td>all</td>
+          <td>The number of acknowledgments the producer requires the leader to have received before considering a request complete</td>
+      </tr>
+      <tr>
+          <td>kafka.retries</td>
+          <td>TB_KAFKA_RETRIES</td>
+          <td>1</td>
+          <td>Setting a value greater than zero will cause the client to resend any record whose send fails with a potentially transient error</td>
+      </tr>
+      <tr>
+          <td>kafka.batch.size</td>
+          <td>TB_KAFKA_BATCH_SIZE</td>
+          <td>16384</td>
+          <td>The producer will attempt to batch records together into fewer requests whenever multiple records are being sent to the same partition</td>
+      </tr>
+      <tr>
+          <td>kafka.linger.ms</td>
+          <td>TB_KAFKA_LINGER_MS</td>
+          <td>1</td>
+          <td>The producer groups together any records that arrive in between request transmissions into a single batched request</td>
+      </tr>
+      <tr>
+          <td>kafka.buffer.memory</td>
+          <td>TB_BUFFER_MEMORY</td>
+          <td>33554432</td>
+          <td>The total bytes of memory the producer can use to buffer records waiting to be sent to the server</td>
+      </tr>
+      <tr>
+          <td colspan="4"><span style="font-weight: bold; font-size: 24px;">JavaScript evaluator parameters</span></td>
+      </tr>  
       <tr>
           <td>js.evaluator</td>
           <td>JS_EVALUATOR</td>
           <td>local</td>
-          <td>Javascript evaluator type - **local** (Built-in JVM JavaScript environment properties) or **remote** (Remote JavaScript environment )</td>
+          <td>Javascript evaluator type - <b>local</b> (Built-in JVM JavaScript environment properties) or <b>remote</b> (Remote JavaScript environment )</td>
       </tr>
       <tr>
           <td>js.local.use_js_sandbox</td>
@@ -863,37 +1076,37 @@ We will list only main configuration parameters below to avoid duplication of th
           <td>js.remote.request_topic</td>
           <td>REMOTE_JS_EVAL_REQUEST_TOPIC</td>
           <td>js.eval.requests</td>
-          <td>JS Eval request topic</td>
+          <td>Kafka topic used for producing JavaScript evaluation requests</td>
       </tr>
       <tr>
           <td>js.remote.response_topic_prefix</td>
           <td>REMOTE_JS_EVAL_RESPONSE_TOPIC</td>
           <td>js.eval.responses</td>
-          <td>JS Eval responses topic prefix that is combined with node id</td>
+          <td>Prefix for kafka topic used to consume JavaScript evaluation responses</td>
       </tr>
       <tr>
           <td>js.remote.max_pending_requests</td>
           <td>REMOTE_JS_MAX_PENDING_REQUESTS</td>
           <td>10000</td>
-          <td>JS Eval max pending requests</td>
+          <td>Maximum pending JavaScript evaluation requests</td>
       </tr>
       <tr>
           <td>js.remote.max_requests_timeout</td>
           <td>REMOTE_JS_MAX_REQUEST_TIMEOUT</td>
           <td>10000</td>
-          <td>JS Eval max request timeout</td>
+          <td>Maximum timeout in milliseconds for JavaScript evaluation</td>
       </tr>
       <tr>
           <td>js.remote.response_poll_interval</td>
           <td>REMOTE_JS_RESPONSE_POLL_INTERVAL_MS</td>
           <td>25</td>
-          <td>JS response poll interval</td>
+          <td>JavaScript evaluation responses poll interval</td>
       </tr>
       <tr>
           <td>js.remote.response_auto_commit_interval</td>
           <td>REMOTE_JS_RESPONSE_AUTO_COMMIT_INTERVAL_MS</td>
           <td>100</td>
-          <td>JS response auto commit interval</td>
+          <td>JavaScript evaluation responses auto commit interval</td>
       </tr>
       <tr>
           <td>js.remote.max_errors</td>
@@ -902,106 +1115,253 @@ We will list only main configuration parameters below to avoid duplication of th
           <td>Maximum allowed JavaScript execution errors before JavaScript will be blacklisted</td>
       </tr>
       <tr>
+          <td colspan="4"><span style="font-weight: bold; font-size: 24px;">Transport parameters</span></td>
+      </tr>  
+      <tr>
           <td>transport.type</td>
           <td>TRANSPORT_TYPE</td>
           <td>local</td>
-          <td>Transport type : **local** for monolithic application and **remote** for microservices</td>
+          <td>Transport type : <b>local</b> for monolithic application and <b>remote</b> for microservices</td>
       </tr>
       <tr>
           <td>transport.remote.transport_api.requests_topic</td>
           <td>TB_TRANSPORT_API_REQUEST_TOPIC</td>
           <td>tb.transport.api.requests</td>
-          <td></td>
+          <td>Kafka topic used to consume api requests from remote transport microservices</td>
       </tr>
       <tr>
           <td>transport.remote.transport_api.responses_topic</td>
           <td>TB_TRANSPORT_API_RESPONSE_TOPIC</td>
           <td>tb.transport.api.responses</td>
-          <td></td>
+          <td>Prefix for kafka topic used to produce api responses to remote transport microservices</td>
       </tr>
       <tr>
           <td>transport.remote.transport_api.max_pending_requests</td>
           <td>TB_TRANSPORT_MAX_PENDING_REQUESTS</td>
           <td>10000</td>
-          <td></td>
+          <td>Maximum pending api requests from remote transport microservices to be handled by server</td>
       </tr>
       <tr>
           <td>transport.remote.transport_api.request_timeout</td>
           <td>TB_TRANSPORT_MAX_REQUEST_TIMEOUT</td>
           <td>10000</td>
-          <td></td>
+          <td>Maximum timeout in milliseconds to handle api request from remote transport microservice by server</td>
       </tr>
       <tr>
           <td>transport.remote.transport_api.request_poll_interval</td>
           <td>TB_TRANSPORT_RESPONSE_POLL_INTERVAL_MS</td>
           <td>25</td>
-          <td></td>
+          <td>Interval in milliseconds to poll api requests from remote transport microservices</td>
       </tr>
       <tr>
           <td>transport.remote.transport_api.request_auto_commit_interval</td>
           <td>TB_TRANSPORT_RESPONSE_AUTO_COMMIT_INTERVAL_MS</td>
           <td>1000</td>
-          <td></td>
-      </tr>
-      <tr>
-          <td>transport.remote.rule_engine.poll_interval</td>
-          <td>TB_RULE_ENGINE_POLL_INTERVAL_MS</td>
-          <td>25</td>
-          <td></td>
-      </tr>
-      <tr>
-          <td>transport.remote.rule_engine.auto_commit_interval</td>
-          <td>TB_RULE_ENGINE_AUTO_COMMIT_INTERVAL_MS</td>
-          <td>100</td>
-          <td></td>
-      </tr>
-      <tr>
-          <td>transport.remote.rule_engine.poll_records_pack_size</td>
-          <td>TB_RULE_ENGINE_MAX_POLL_RECORDS</td>
-          <td>1000</td>
-          <td></td>
-      </tr>
-      <tr>
-          <td>transport.remote.rule_engine.max_poll_records_per_second</td>
-          <td>TB_RULE_ENGINE_MAX_POLL_RECORDS_PER_SECOND</td>
-          <td>10000</td>
-          <td></td>
-      </tr>
-      <tr>
-          <td>transport.remote.rule_engine.max_poll_records_per_minute</td>
-          <td>TB_RULE_ENGINE_MAX_POLL_RECORDS_PER_MINUTE</td>
-          <td>120000</td>
-          <td></td>
+          <td>The frequency in milliseconds that the consumer offsets are auto-committed to Kafka for consumed transport api requests records</td>
       </tr>
       <tr>
           <td>transport.remote.rule_engine.topic</td>
           <td>TB_RULE_ENGINE_TOPIC</td>
           <td>tb.rule-engine</td>
-          <td></td>
+          <td>Kafka topic used to consume records forwared to rule engine from remote transport microservices</td>
+      </tr>
+      <tr>
+          <td>transport.remote.rule_engine.poll_interval</td>
+          <td>TB_RULE_ENGINE_POLL_INTERVAL_MS</td>
+          <td>25</td>
+          <td>Interval in milliseconds to poll records for rule engine from remote transport microservices</td>
+      </tr>
+      <tr>
+          <td>transport.remote.rule_engine.auto_commit_interval</td>
+          <td>TB_RULE_ENGINE_AUTO_COMMIT_INTERVAL_MS</td>
+          <td>100</td>
+          <td>The frequency in milliseconds that the consumer offsets are auto-committed to Kafka for consumed records for rule engine from remote transport microservices</td>
+      </tr>
+      <tr>
+          <td>transport.remote.rule_engine.poll_records_pack_size</td>
+          <td>TB_RULE_ENGINE_MAX_POLL_RECORDS</td>
+          <td>1000</td>
+          <td>The maximum number of records returned in a single polling call</td>
+      </tr>
+      <tr>
+          <td>transport.remote.rule_engine.max_poll_records_per_second</td>
+          <td>TB_RULE_ENGINE_MAX_POLL_RECORDS_PER_SECOND</td>
+          <td>10000</td>
+          <td>Rate limit for maximum number of records processed per second</td>
+      </tr>
+      <tr>
+          <td>transport.remote.rule_engine.max_poll_records_per_minute</td>
+          <td>TB_RULE_ENGINE_MAX_POLL_RECORDS_PER_MINUTE</td>
+          <td>120000</td>
+          <td>Rate limit for maximum number of records processed per minute</td>
       </tr>
       <tr>
           <td>transport.remote.notifications.topic</td>
           <td>TB_TRANSPORT_NOTIFICATIONS_TOPIC</td>
           <td>tb.transport.notifications</td>
+          <td>Prefix for kafka topic used to produce notifications to remote transport microservices</td>
+      </tr>
+      <tr>
+          <td>transport.sessions.inactivity_timeout</td>
+          <td>TB_TRANSPORT_SESSIONS_INACTIVITY_TIMEOUT</td>
+          <td>300000</td>
           <td></td>
-      </tr>      
+      </tr>
+      <tr>
+          <td>transport.sessions.report_timeout</td>
+          <td>TB_TRANSPORT_SESSIONS_REPORT_TIMEOUT</td>
+          <td>30000</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>transport.rate_limits.enabled</td>
+          <td>TB_TRANSPORT_RATE_LIMITS_ENABLED</td>
+          <td>false</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>transport.rate_limits.tenant</td>
+          <td>TB_TRANSPORT_RATE_LIMITS_TENANT</td>
+          <td>1000:1,20000:60</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>transport.rate_limits.device</td>
+          <td>TB_TRANSPORT_RATE_LIMITS_DEVICE</td>
+          <td>10:1,300:60</td>
+          <td></td>
+      </tr>            
+      <tr>
+          <td>transport.json.type_cast_enabled</td>
+          <td>JSON_TYPE_CAST_ENABLED</td>
+          <td>true</td>
+          <td>Cast String data types to Numeric if possible when processing Telemetry/Attributes JSON</td>
+      </tr>            
+      <tr>
+          <td>transport.json.max_string_value_length</td>
+          <td>JSON_MAX_STRING_VALUE_LENGTH</td>
+          <td>0</td>
+          <td>Maximum allowed string value length when processing Telemetry/Attributes JSON (0 value disables string value length check)</td>
+      </tr>            
       <tr>
           <td>transport.http.enabled</td>
           <td>HTTP_ENABLED</td>
           <td>true</td>
-          <td>Enable\Disable Device HTTP transport</td>
+          <td>Enable\Disable local HTTP transport</td>
+      </tr>
+      <tr>
+          <td>transport.http.request_timeout</td>
+          <td>HTTP_REQUEST_TIMEOUT</td>
+          <td>60000</td>
+          <td></td>
       </tr>
       <tr>
           <td>transport.mqtt.enabled</td>
           <td>MQTT_ENABLED</td>
           <td>true</td>
-          <td>Enable/Disable MQTT transport</td>
+          <td>Enable/Disable local MQTT transport</td>
+      </tr>
+      <tr>
+          <td>transport.mqtt.bind_address</td>
+          <td>MQTT_BIND_ADDRESS</td>
+          <td>0.0.0.0</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>transport.mqtt.bind_port</td>
+          <td>MQTT_BIND_PORT</td>
+          <td>1883</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>transport.mqtt.timeout</td>
+          <td>MQTT_TIMEOUT</td>
+          <td>10000</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>transport.mqtt.netty.leak_detector_level</td>
+          <td>NETTY_LEAK_DETECTOR_LVL</td>
+          <td>DISABLED</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>transport.mqtt.netty.boss_group_thread_count</td>
+          <td>NETTY_BOSS_GROUP_THREADS</td>
+          <td>1</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>transport.mqtt.netty.worker_group_thread_count</td>
+          <td>NETTY_WORKER_GROUP_THREADS</td>
+          <td>12</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>transport.mqtt.netty.max_payload_size</td>
+          <td>NETTY_MAX_PAYLOAD_SIZE</td>
+          <td>65536</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>transport.mqtt.ssl.enabled</td>
+          <td>MQTT_SSL_ENABLED</td>
+          <td>false</td>
+          <td>Enable/disable MQTTS support</td>
+      </tr>
+      <tr>
+          <td>transport.mqtt.ssl.protocol</td>
+          <td>MQTT_SSL_PROTOCOL</td>
+          <td>TLSv1.2</td>
+          <td>SSL protocol</td>
+      </tr>
+      <tr>
+          <td>transport.mqtt.ssl.key_store</td>
+          <td>MQTT_SSL_KEY_STORE</td>
+          <td>mqttserver.jks</td>
+          <td>Path to the key store that holds the SSL certificate</td>
+      </tr>
+      <tr>
+          <td>transport.mqtt.ssl.key_store_password</td>
+          <td>MQTT_SSL_KEY_STORE_PASSWORD</td>
+          <td>server_ks_password</td>
+          <td>Password used to access the key store</td>
+      </tr>
+      <tr>
+          <td>transport.mqtt.ssl.key_password</td>
+          <td>MQTT_SSL_KEY_PASSWORD</td>
+          <td>server_key_password</td>
+          <td>Password used to access the key</td>
+      </tr>
+      <tr>
+          <td>transport.mqtt.ssl.key_store_type</td>
+          <td>MQTT_SSL_KEY_STORE_TYPE</td>
+          <td>JKS</td>
+          <td>Type of the key store</td>
       </tr>
       <tr>
           <td>transport.coap.enabled</td>
           <td>COAP_ENABLED</td>
           <td>true</td>
-          <td>Enable/Disable CoAP transport</td>
+          <td>Enable/Disable local CoAP transport</td>
+      </tr>
+      <tr>
+          <td>transport.coap.bind_address</td>
+          <td>COAP_BIND_ADDRESS</td>
+          <td>0.0.0.0</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>transport.coap.bind_port</td>
+          <td>COAP_BIND_PORT</td>
+          <td>5683</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>transport.coap.timeout</td>
+          <td>COAP_TIMEOUT</td>
+          <td>10000</td>
+          <td></td>
       </tr>
   </tbody>
 </table>

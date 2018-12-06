@@ -50,6 +50,12 @@ Run the following command from the thingsboard folder to build the project:
 mvn clean install
 ```
 
+#### Build local docker images
+
+```bash
+mvn clean install -Ddockerfile.skip=false
+```
+
 #### Build artifacts
 
 You can find debian, rpm and windows packages in the target folder:
