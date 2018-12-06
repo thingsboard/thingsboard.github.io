@@ -336,13 +336,9 @@ sudo service thingsboard restart
   
 ### UI configuration
 
-The UI for the ThingsBoard rule nodes was configured with the help of the project that is also hosted on the official [github repo](). <br>
-Please, find the **README.md** file that describes how to build the project.
+The UI for the ThingsBoard rule nodes was configured with the help of the project that is also hosted on the official [github repo](https://github.com/thingsboard/rule-node-examples-ui).
 
-
-```bash
-TODO: paste the link
-```
+Please, refer to the following link to view how to build the project [**README.md**](https://github.com/thingsboard/rule-node-examples-ui#rule-node-examples-ui)
 
 #### Running Rule Node UI container in hot redeploy mode
 
