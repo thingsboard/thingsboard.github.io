@@ -48,12 +48,14 @@ Modbus extension supports "tcp", "udp" and "rtu" transports.
 
 ##### TCP transport
 
-| **Property**        | **Description**                        | **Default value** |
-|---------------------|----------------------------------------|-------------------|
-| type                | Transport type                         | tcp               |
-| host                | Host                                   | localhost         |
-| port                | Port                                   | 502               |
-| timeout             | Socket timeout     in milliseconds     | 3000              |
+| **Property**           | **Description**                        | **Default value**  |
+|------------------------|----------------------------------------|--------------------|
+| type                   | Transport type                         | tcp                |
+| host                   | Host                                   | localhost          |
+| port                   | Port                                   | 502                |
+| timeout                | Socket timeout     in milliseconds     | 3000               |
+| reconnect              | Automatically reconnect                | true               |
+| rtuOverTcp             | Enable RTU over TCP feature            | false              |
 
 Example of "tcp" transport configuration:
 
@@ -64,7 +66,9 @@ Example of "tcp" transport configuration:
         "type": "tcp",
         "host": "localhost",
         "port": 654,
-        "timeout": 5000
+        "timeout": 5000,
+        "reconnect": true,
+        "rtuOverTcp": false
       }
       ...
 }
