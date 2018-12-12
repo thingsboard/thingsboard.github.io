@@ -280,7 +280,12 @@
       title: Add & remove devices to group dynamically
       subtitle: Learn how to how to dynamically add & remove device from the device group based on incoming data from device.
       keys: device group dynamic relation
-      pe: trues
+      pe: true
+    - path: /docs/user-guide/integrations/mqtt-downlink/
+      title: Send data to external MQTT brokers
+      subtitle: Connect to external brokers and send MQTT data stream
+      keys: mqtt connect
+      pe: true
 - title: IoT Data analytics
   subtitle: Learn how to use rule engine to perform basic analytics tasks.
   id: DataAnalytics
