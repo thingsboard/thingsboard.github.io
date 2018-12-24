@@ -281,7 +281,7 @@
       subtitle: Learn how to how to dynamically add & remove device from the device group based on incoming data from device.
       keys: device group dynamic relation
       pe: true
-    - path: /docs/user-guide/integrations/mqtt-downlink/
+    - path: /docs/user-guide/integrations/send-data-external-mqtt-brokers/
       title: Send data to external MQTT brokers
       subtitle: Connect to external brokers and send MQTT data stream
       keys: mqtt connect
