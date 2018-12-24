@@ -57,14 +57,14 @@ Uplink converter should look like this:
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/mqtt-downlink-uplink-converter.png) 
 
-The full source code of javascript function used in converter is available
+The full source code of JSON converter used in converter is available
  [**here**](/docs/user-guide/resources/mqtt-downlink-uplink-converter.js). 
 
 Downlink converter should look like this:
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/mqtt-downlink-downlink-converter.png)
 
-The full source code of javascript function used in converter is available
+The full source code of JSON converter used in converter is available
  [**here**](/docs/user-guide/resources/mqtt-downlink-downlink-converter.js).
 
 ### Creating integration
@@ -77,8 +77,8 @@ Integration should look like this:
 
 ### Setting up dashboard
 
-Download and import attached json [**file**](/docs/user-guide/resources/temperature_control_dashboard.json) 
-with a dashboard for this tutorial.
+Download and [**import**](docs/user-guide/ui/dashboards/#dashboard-import) attached
+json [**file**](/docs/user-guide/resources/temperature_control_dashboard.json) with a dashboard for this tutorial.
 
 ### Turning on virtual device
 
@@ -92,7 +92,6 @@ node -v
 npm list mqtt
 #should be ran in folder with node-modules, will display npm mqtt module version
 ```
-
 
 If you don't have npm, you can install it from  [here](https://www.npmjs.com/package/npm),
 npm mqtt module with following command:
@@ -127,11 +126,11 @@ In this section, we explain the purpose of each node in this tutorial.
 
 ### Modifying rule chain
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/mqtt-downlink-root-rule-chain.png)
+![image](/images/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/mqtt-downlink-root-rule-chain.png) 
 
   * **Node A**: Originator attributes enrichment node
       
-    * Puts server attribute deviceName into metadata
+    * Puts client attribute deviceName into metadata
     
    ![image](/images/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/mqtt-downlink-node-A.png) 
     
@@ -147,8 +146,8 @@ In this section, we explain the purpose of each node in this tutorial.
     
    ! ![image](/images/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/mqtt-downlink-node-C.png) 
 
-You can download and import attached json [**file**](/docs/user-guide/resources/mqtt-downlink-root-rule-chain.json) 
-with a rule chain for this tutorial.
+You can download and [**import**](/docs/user-guide/ui/rule-chains/#rule-chains-importexport) attached
+ json [**file**](/docs/user-guide/resources/mqtt-downlink-root-rule-chain.json) with a rule chain for this tutorial.
 
     
 

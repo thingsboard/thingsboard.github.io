@@ -273,12 +273,10 @@
         "id": "e087fea7-e1e7-5841-eac0-77d594868df0",
         "alias": "Thermo",
         "filter": {
-          "type": "singleEntity",
-          "resolveMultiple": false,
-          "singleEntity": {
-            "entityType": "DEVICE",
-            "id": "d85a64a0-fc86-11e8-b508-9162c8c71782"
-          }
+          "type": "deviceType",
+          "resolveMultiple": true,
+          "deviceType": "thermostat",
+          "deviceNameFilter": "Thermostat-A"
         }
       }
     },
