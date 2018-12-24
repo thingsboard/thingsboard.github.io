@@ -63,10 +63,10 @@ In order for integration to pick up device name, it should be set as a server at
 In order for integration to work, Downlink and Uplink converters should be created.
 Uplink converter should look like this:
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/mqtt-downlink-uplink-converter.png)
+![image](/images/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/mqtt-downlink-uplink-converter.png) 
 
 The full source code of javascript function used in converter is available
- [**here**](/docs/user-guide/resources/mqtt-downlink-uplink-converter.js).
+ [**here**](/docs/user-guide/resources/mqtt-downlink-uplink-converter.js). 
 
 Downlink converter should look like this:
 
@@ -162,7 +162,7 @@ In this section, we explain the purpose of each node in this tutorial.
     
    ! ![image](/images/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/mqtt-downlink-node-C.png) 
 
-You can download and import attached json [**file**](/docs/user-guide/resources/mqtt-downlink-root-rule-chain.json) (should change chain)
+You can download and import attached json [**file**](/docs/user-guide/resources/mqtt-downlink-root-rule-chain.json) 
 with a rule chain for this tutorial.
 
     
