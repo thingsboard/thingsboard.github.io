@@ -117,7 +117,7 @@ Note: virtual device should be put in the folder where node-modules is situated.
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/mqtt-downlink-work-demonstration.png) 
 
-Using a control widget (in this case, a knob) leads to value change on remote MQTT listener.
+Using a control widget (in this case, a knob) leads to value change on the dashboard.
 
 Dashboard can be found [**here**](/docs/user-guide/resources/temperature_control_dashboard.json).
 
