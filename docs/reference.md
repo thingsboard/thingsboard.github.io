@@ -66,7 +66,7 @@ ThingsBard uses database to store
 Platform supports three database options at the moment:
 
 * **SQL** - Stores all entities and telemetry in SQL database. ThingsBoard authors recommend to use PostgreSQL and this is the main SQL database that ThingsBoard supports. 
-It is possible to use HSQLDB for local development purposes. We do nto recommend to use HSQLDB for anything except running tests and launching dev instance that has minimum possible load.
+It is possible to use HSQLDB for local development purposes. **We do not recommend to use HSQLDB** for anything except running tests and launching dev instance that has minimum possible load.
 * **NoSQL** - Stores all entities and telemetry in NoSQL database. ThingsBoard authors recommend to use Cassandra and this is the only NoSQL database that ThingsBoard supports at the moment.
 However, due to a lot of interest to deployments with managed databases, we plan to introduce support on AWS DynamoDB in v2.3. 
 * **Hybrid** - Stores all entities in SQL database and all telemetry in NoSQL database. 
