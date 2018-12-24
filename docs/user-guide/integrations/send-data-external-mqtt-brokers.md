@@ -42,25 +42,17 @@ We assume you have completed the following guides and reviewed the articles list
 
 ## Model definition
   
-We will operate with Temperature sensor device that has name "Thermostat-A" and type "thermostat".
+We will operate with Temperature sensor device that has name "Thermostat-A" and type "thermostat" which will be
+automatically created in the process of integration work.
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/mqtt-downlink-add-device.png)
+![image](/images/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/mqtt-downlink-device.png)
 
 ## Getting started
 
-### Creating server attribute
-
-In order for integration to pick up device name, it should be set as a server attribute of the device.
-
-![image](/images/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/mqtt-downlink-server-attributes-1.png)
-![image](/images/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/mqtt-downlink-server-attributes-2.png)
-![image](/images/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/mqtt-downlink-server-attributes-3.png)
-
-
-
 ### Creating converters
 
-In order for integration to work, Downlink and Uplink converters should be created.
+In order for integration to work, downlink and uplink converters should be created.
+
 Uplink converter should look like this:
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/mqtt-downlink-uplink-converter.png) 
@@ -90,23 +82,19 @@ with a dashboard for this tutorial.
 
 ### Turning on virtual device
 
-First, you should check if node, npm, npm module mqtt and mosquitto are installed by using following commands:
+First, you should check if node, npm and npm module mqtt are installed by using following commands:
 
 ```bash
-mosquitto
-#should try to launch mosquitto
 npm -v
 #should display npm version
 node -v
 #should display node version
 npm list mqtt
-#should be ran in folder with node-modules, display npm mqtt module version
+#should be ran in folder with node-modules, will display npm mqtt module version
 ```
 
-(need mosquitto only for listener?)
 
-If you don't have mosquitto, you can install it from [here](https://mosquitto.org/download/),
-npm from [here](https://www.npmjs.com/package/npm),
+If you don't have npm, you can install it from  [here](https://www.npmjs.com/package/npm),
 npm mqtt module with following command:
 
 ```bash
@@ -124,17 +112,14 @@ node mqtt-downlink-virtual-device.js
 
 Note: virtual device should be put in the folder where node-modules is situated.
 
-The following command can be used to launch listener to check data:
-
-```bash
-mosquitto_sub -h iot.eclipse.org -t "devices/Thermostat-A/temperature/settings" --port 1883
-```
 
 ### Work demonstration
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/mqtt-downlink-work-demonstration.png) 
 
 Using a control widget (in this case, a knob) leads to value change on remote MQTT listener.
+
+Dashboard can be found [**here**](/docs/user-guide/resources/temperature_control_dashboard.json).
 
 ## Message Flow
 
