@@ -31,3 +31,7 @@ toc:
     path: /docs/iot-gateway/mqtt/
   - title: Sigfox Extension
     path: /docs/iot-gateway/sigfox/
+  - title: Modbus Extension
+    path: /docs/iot-gateway/modbus/
+  - title: Multi-tenant configuration 
+    path: /docs/iot-gateway/multi-tenant-configuration/

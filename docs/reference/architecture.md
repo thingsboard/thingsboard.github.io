@@ -29,40 +29,39 @@ ThingsBoard [Rule Engine](/docs/user-guide/rule-engine/) allows to process messa
 ThingsBoard contains set of core services that allow managing the following entities:
 
  * Devices and their credentials
- * Rules and Plugins
+ * Rule Chains and Rule Nodes
  * Tenants and customers
  * Widgets and Dashboard
  * Alarms and Events
  
-Rules and Plugins are able to invoke a certain subset of this APIs. For example, a rule can create an alarm for certain device.
+Rules are able to invoke a certain subset of this APIs. For example, a rule can create an alarm for certain device.
 
 #### Server-side API Gateway
 
-Every ThingsBoard server provides REST API for registered users.
-Plugins are able to extend existing REST APIs and also handle websocket connections. 
-For example:
- - System Telemetry plugin allows to manage attributes and fetch timeseries data using websockets and REST API.
- - System RPC plugin provides REST API to push custom commands to devices.
+Every ThingsBoard server provides REST API for registered users. 
+System Telemetry service allows to manage attributes and fetch timeseries data using websockets and REST API.
+System RPC service provides REST API to push custom commands to devices.
+Learn more about ThingsBoard REST APIs [here](/docs/reference/rest-api/)
 
 ## Actor model
 
-[Actor model](https://en.wikipedia.org/wiki/Actor_model) enables high performant concurrent processing of messages from devices as long as server-side API calls.
+[Actor model](https://en.wikipedia.org/wiki/Actor_model) enables high performance concurrent processing of messages from devices as long as server-side API calls.
 ThingsBoard uses [Akka](http://akka.io/) as an actor system implementation with following actor hierarchies.
 
  ![image](/images/reference/actor-system-hierarchies.svg)
 
 The brief description of each actor's functionality is listed below:
 
- * **App Actor** - responsible for management of tenant, system rules & plugins actors. 
+ * **App Actor** - responsible for management of tenant actors. 
  An instance of this actor is always present in memory.
- * **Tenant Actor** - responsible for management of tenant device, rules & plugins actors. 
+ * **Tenant Actor** - responsible for management of tenant device & rule chain actors. 
  An instance of this actor is always present in memory.
  * **Device Actor** - maintain state of the device: active sessions, subscriptions, pending RPC commands, etc. 
  Caches current device attributes in memory for performance reasons.
  An actor is created when the first message from the device is processed. The actor is stopped when there is no messages from devices for a certain time.
- * **Rule Actor** - filter and process incoming messages, converts them to actions and forward this actions to plugin actors. 
+ * **Rule Chain Actor** - process incoming messages and dispatches them to rule node actors. 
  An instance of this actor is always present in memory.
- * **Plugin Actor** - process incoming messages, and report results back to rule actor. Also, it handles server side requests. 
+ * **Rule Node Actor** - process incoming messages, and report results back to rule chain actor. 
  An instance of this actor is always present in memory.
  
  * **Device Session Manager Actor** - responsible for management of device session actors. 
@@ -116,7 +115,7 @@ and support of X.509 certificate based credentials for MQTT protocol. See [MQTT 
 ThingsBoard uses following main third-party projects:
  
  * Akka - for actor system implementation
- * Zookeeper - for services coordination 
- * gRPC - for high-performance RPC 
+ * Zookeeper - for services coordination
+ * gRPC - for high-performance RPC
  * Cassandra - as a scalable and reliable database
 

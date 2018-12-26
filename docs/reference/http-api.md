@@ -131,7 +131,7 @@ In order to subscribe to shared device attribute changes, send GET request with 
 http(s)://host:port/api/v1/$ACCESS_TOKEN/attributes/updates
 ```
 
-Once shared attribute will be changed by one of the server-side components (REST API or custom plugins) the client will receive the following update: 
+Once shared attribute will be changed by one of the server-side components (REST API or Rule Chain) the client will receive the following update: 
 
 {% capture tabspec %}http-attributes-subscribe
 A,Example,shell,resources/http-attributes-subscribe.sh,/docs/reference/resources/http-attributes-subscribe.sh
@@ -190,7 +190,7 @@ In order to send RPC commands to the server, send POST request to the following 
 http://host:port/api/v1/$ACCESS_TOKEN/rpc
 ```
 
-Both request and response body should be valid JSON documents. Theh content of the documents is specific to the plugin that will handle your request.
+Both request and response body should be valid JSON documents. Theh content of the documents is specific to the rule node that will handle your request.
 
 {% capture tabspec %}http-rpc-from-client
 A,Example Request,shell,resources/http-rpc-from-client.sh,/docs/reference/resources/http-rpc-from-client.sh
@@ -202,3 +202,8 @@ C,Response Body,shell,resources/rpc-server-response.json,/docs/reference/resourc
 ## Protocol customization
 
 HTTP transport can be fully customized for specific use-case by changing the corresponding [module](https://github.com/thingsboard/thingsboard/tree/master/transport/http).
+
+
+## Next steps
+
+{% assign currentGuide = "ConnectYourDevice" %}{% include templates/guides-banner.md %}

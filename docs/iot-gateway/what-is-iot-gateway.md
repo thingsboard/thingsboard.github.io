@@ -18,6 +18,7 @@ ThingsBoard IoT Gateway provides following features:
  - **MQTT** extension to control, configure and collect data from IoT devices that are connected to external MQTT brokers using existing protocols.
  - **OPC-UA** extension to collect data from IoT devices that are connected to OPC-UA servers.
  - **Sigfox** extension to collect data from IoT devices that are connected to Sigfox Backend.
+ - **Modbus** extension to collect data from IoT devices that are connected through Modbus protocol.
  - **Persistence** of collected data to guarantee data delivery in case of network and hardware failures.
  - **Automatic reconnect** to ThingsBoard cluster.
  - Simple yet powerful **mapping** of incoming data and messages **to unified format**.

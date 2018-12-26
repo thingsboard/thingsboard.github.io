@@ -6,6 +6,62 @@ description:
 ---
 
 <div class="customer-block">
+    <a href="https://www.oneserve.co.uk/">
+        <div class="customer-logo">
+            <img width="" src="/images/customers/oneserve.svg" alt="Oneserve">
+        </div>
+    </a>
+    <div class="customer-content">
+        <h3 id="oneserve">
+            Oneserve Limited 
+        </h3>    
+        <h4>An award winning Field Service Management platform</h4>
+        <p>
+        We operate in highly competitive markets; from housing management to utilities and manufacturing sectors. Technology innovation is at the heart of our product strategy and service delivery approach. As we grow and extend our field service management solution, we recognised that we needed a flexible IoT platform that enables our delivery needs with lower complexity and cost without sacrificing functionality and extensibility. 
+        </p> 
+        <p>
+        The ThingsBoard platform has, within a short space of time, easily fulfilled our requirements. It is easy to adapt, has highly flexible implementation options and includes a broad suite of integration and visualization capabilities out of the box.
+        </p> 
+        <p>
+        The platform is continually being extended and improved, with the ThingsBoard Team both accessible and supportive to all of our needs. We now have a robust industrial platform that unlocks our IoT service goals.
+        </p> 
+        <div class="person-logo-container">
+            <img class="person-logo" src="/images/customers/oneserve-person.png"/>
+            <div class="person-title">
+                Mark Hunt <br/>
+                CTO
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="customer-block">
+    <a href="http://www.nettra.com.uy/">
+        <div class="customer-logo">
+            <img width="" src="/images/customers/nettra.png" alt="Nettra">
+        </div>
+    </a>
+    <div class="customer-content">
+        <h3 id="nettra">
+            Nettra
+        </h3>    
+        <h4>IOT Company specialized in the monitoring and control of distributed infrastructures</h4>
+        <p>
+        We had been working on the development of our own software platform for almost 6 months when we came across Thingsboard. Not only Thingsboard had all the functionalities we had already developed, but also included many more that were on our pipeline for the coming months. Switching to Thingsboard was a no-brainer. 
+        </p> 
+        <p>
+        The platform has proven to be very reliable, with great support and constant evolution. Definitely the right choice for our company.
+        </p> 
+        <div class="person-logo-container">
+            <div class="person-title">
+                Agustin Derregibus <br/>
+                CEO & Co-Founder
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="customer-block">
     <a href="http://www.berliner-energieinstitut.de/">
         <div class="customer-logo">
             <img width="" src="/images/customers/bei.png" alt="BEI">

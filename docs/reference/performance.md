@@ -21,7 +21,7 @@ ThingsBoard performance leverages three main projects:
  - [Akka](http://akka.io/) for high-performance actor system to coordinate messages between millions of devices.
  - [Cassandra](http://cassandra.apache.org/) for scalable high-performance NoSQL DB to store timeseries data from devices. 
  
-We also use [Zookeeper](https://zookeeper.apache.org/) for coordination and [gRPC](http://www.grpc.io/) in cluster mode. See [platform architecture](/docs/reference/architecture) for more details.
+We also use [Zookeeper](https://zookeeper.apache.org/) for coordination and [gRPC](http://www.grpc.io/) in cluster mode. See [platform architecture](/docs/reference/) for more details.
 
 ## Data flow and test tools
  
@@ -48,8 +48,8 @@ See our separate [article](/docs/reference/performance-tools) about how we impro
 
 The results of first performance tests on the modern 4-core laptop with SSD were quite poor. The platform was able to process only 200 messages per second.
 The root cause and a main performance bottle-neck were quite obvious and easy to find. 
-It appears that the processing was not 100% asynchronous and we were executing blocking API call of Cassandra driver inside the [Telemetry plugin](/docs/user-guide/telemetry/) actor.
-Quick refactoring of the plugin implementation resulted in more than 10X performance improvement and we received approximately 2500 published messages per second from 1000 devices.
+It appears that the processing was not 100% asynchronous and we were executing blocking API call of Cassandra driver inside the [Telemetry Service](/docs/user-guide/telemetry/) actor.
+Quick refactoring of the service implementation resulted in more than 10X performance improvement and we received approximately 2500 published messages per second from 1000 devices.
 We would like to recommend [this article](http://www.datastax.com/dev/blog/java-driver-async-queries) about async queries to Cassandra. 
 
 ### Step 2. Connection pooling

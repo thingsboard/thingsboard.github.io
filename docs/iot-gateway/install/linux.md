@@ -87,5 +87,5 @@ In case of any unclear errors, use general [troubleshooting guide](/docs/user-gu
   
 ### Next Steps
 
-Use [**OPC-UA**](/docs/iot-gateway/getting-started/#step-9-connect-to-external-opc-ua-server) or [**MQTT**](/docs/iot-gateway/getting-started/#step-8-connect-to-external-mqtt-broker) extensions to integrate your devices with ThingsBoard platform.
+Use [**OPC-UA**](/docs/iot-gateway/getting-started/#step-9-connect-to-external-opc-ua-server), [**MQTT**](/docs/iot-gateway/getting-started/#step-8-connect-to-external-mqtt-broker), [**Sigfox Backend**](/docs/iot-gateway/getting-started/#step-10-connect-to-sigfox-backend) or [**Modbus slave**](/docs/iot-gateway/getting-started/#step-11-connect-to-modbus-slave) extensions to integrate your devices with ThingsBoard platform.
  

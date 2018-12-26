@@ -5,6 +5,8 @@ description: Triggering email notifications upon IoT Device data thresholds
 
 ---
 
+{% include templates/old-guide-notice.md %}
+
 * TOC
 {:toc}
 

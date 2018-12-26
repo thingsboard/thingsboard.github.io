@@ -6,6 +6,40 @@ description:
 ---
 
 <div class="customer-block">
+    <a href="https://www.sensolyze.com/">
+        <div class="customer-logo">
+            <img width="" src="/images/customers/sensolyze.png" alt="Sensolyze GmbH">
+        </div>
+    </a>
+    <div class="customer-content">
+        <h3 id="sensolyze" >
+        Sensolyze GmbH
+        </h3>
+        <h4>
+        We are providing Digital Office Solutions for Workspace Managers and Office Planners that help them to better understand how their Spaces are used.
+        </h4>
+        <p>
+        When we started with ThingsBoard we mainly used it for core messaging and the dashboard functionality. 
+        Large parts of the business logic was done by an external backend connecting to ThingsBoard using the API. 
+        Within the first two releases of the new Rule Engine, we were able to migrate basically everything to the platform. 
+        </p>
+        <p>
+        I want to congratulate the team for the huge effort they have put into the solution.
+        The concept of the rule engine and the available nodes are very well thought through and support a wide range of applications. 
+        And - probably most important - Andrew and his team listens closely to the needs and requirements of their customers. 
+        And you clearly see that in the product. We can commend this product to anybody looking for a flexible and stable IoT Solution and are looking forward to work with the team in the future. 
+        </p>
+        <div class="person-logo-container">
+            <img class="person-logo" src="/images/customers/sensolyze-person.png">
+            <div class="person-title">
+                Andreas Brandl<br/>
+                Founder & CEO
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="customer-block">
     <a href="http://www.e2cbms.com/">
         <div class="customer-logo">
             <img width="" src="/images/customers/e2c.png" alt="Environmental Energy Controls">
@@ -91,6 +125,36 @@ description:
             <div class="person-title">
                 MIchael Nickolai <br/>
                 Co-Founder & Executive Manager
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="customer-block">
+    <a href="https://www.oneserve.co.uk/">
+        <div class="customer-logo">
+            <img width="" src="/images/customers/oneserve.svg" alt="Oneserve">
+        </div>
+    </a>
+    <div class="customer-content">
+        <h3 id="oneserve">
+            Oneserve Limited 
+        </h3>    
+        <h4>An award winning Field Service Management platform</h4>
+        <p>
+        We operate in highly competitive markets; from housing management to utilities and manufacturing sectors. Technology innovation is at the heart of our product strategy and service delivery approach. As we grow and extend our field service management solution, we recognised that we needed a flexible IoT platform that enables our delivery needs with lower complexity and cost without sacrificing functionality and extensibility. 
+        </p> 
+        <p>
+        The ThingsBoard platform has, within a short space of time, easily fulfilled our requirements. It is easy to adapt, has highly flexible implementation options and includes a broad suite of integration and visualization capabilities out of the box.
+        </p> 
+        <p>
+        The platform is continually being extended and improved, with the ThingsBoard Team both accessible and supportive to all of our needs. We now have a robust industrial platform that unlocks our IoT service goals.
+        </p> 
+        <div class="person-logo-container">
+            <img class="person-logo" src="/images/customers/oneserve-person.png"/>
+            <div class="person-title">
+                Mark Hunt <br/>
+                CTO
             </div>
         </div>
     </div>

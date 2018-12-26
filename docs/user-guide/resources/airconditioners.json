@@ -1,0 +1,125 @@
+{
+  "ruleChain": {
+    "additionalInfo": null,
+    "name": "Airconditioners",
+    "firstRuleNodeId": null,
+    "root": false,
+    "debugMode": false,
+    "configuration": null
+  },
+  "metadata": {
+    "firstNodeIndex": 0,
+    "nodes": [
+      {
+        "additionalInfo": {
+          "layoutX": 328,
+          "layoutY": 148
+        },
+        "type": "org.thingsboard.rule.engine.filter.TbOriginatorTypeSwitchNode",
+        "name": "Test Device",
+        "debugMode": false,
+        "configuration": {
+          "version": 0
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 395,
+          "layoutY": 363
+        },
+        "type": "org.thingsboard.rule.engine.metadata.TbGetOriginatorFieldsNode",
+        "name": "Get Device Fields",
+        "debugMode": false,
+        "configuration": {
+          "fieldsMapping": {
+            "type": "deviceType",
+            "name": "deviceName"
+          }
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 599,
+          "layoutY": 223
+        },
+        "type": "org.thingsboard.rule.engine.filter.TbJsFilterNode",
+        "name": "If Airconditioner",
+        "debugMode": false,
+        "configuration": {
+          "jsScript": "return metadata.deviceType === 'airconditioner';"
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 746,
+          "layoutY": 380
+        },
+        "type": "org.thingsboard.rule.engine.filter.TbMsgTypeSwitchNode",
+        "name": "Type switch",
+        "debugMode": false,
+        "configuration": {
+          "version": 0
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 1059,
+          "layoutY": 535
+        },
+        "type": "org.thingsboard.rule.engine.action.TbAddToGroupNode",
+        "name": "Add to Airconditioners",
+        "debugMode": false,
+        "configuration": {
+          "groupNamePattern": "Airconditioners",
+          "groupCacheExpiration": 300,
+          "createGroupIfNotExists": true
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 1059,
+          "layoutY": 244
+        },
+        "type": "org.thingsboard.rule.engine.integration.TbIntegrationDownlinkNode",
+        "name": "Airconditioners",
+        "debugMode": false,
+        "configuration": {
+          "integrationId": ""
+        }
+      }
+    ],
+    "connections": [
+      {
+        "fromIndex": 0,
+        "toIndex": 1,
+        "type": "Device"
+      },
+      {
+        "fromIndex": 1,
+        "toIndex": 2,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 2,
+        "toIndex": 3,
+        "type": "True"
+      },
+      {
+        "fromIndex": 3,
+        "toIndex": 5,
+        "type": "Attributes Updated"
+      },
+      {
+        "fromIndex": 3,
+        "toIndex": 4,
+        "type": "Post telemetry"
+      },
+      {
+        "fromIndex": 3,
+        "toIndex": 5,
+        "type": "RPC Request to Device"
+      }
+    ],
+    "ruleChainConnections": null
+  }
+}

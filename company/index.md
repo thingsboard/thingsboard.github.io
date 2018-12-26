@@ -14,7 +14,7 @@ description:
 
 ## Who we are?
 
-ThingsBoard OU is a private Estonian company founded in 2016 with RnD center in Kyiv, Ukraine. 
+ThingsBoard, Inc. is a US corporation founded in 2016 with RnD center in Kyiv, Ukraine. 
 We are main contributor and maintainer of ThingsBoard open-source IoT Platform.
  
 ## Our mission
@@ -33,7 +33,7 @@ We also help companies to deliver great IoT products based on ThingsBoard.
             <td><i class="fa fa-envelope"></i></td><td><a class="mail" href="mailto:info@thingsboard.io">info@thingsboard.io</a></td>
         </tr>
         <tr>
-            <td><i class="fa fa-map-marker"></i></td><td>Estonia pst 5-309B, Tallinn, Harjumaa, 10143, Estonia</td>
+            <td><i class="fa fa-map-marker"></i></td><td>39 Carlton Club Drive, Piscataway, NJ, 08854, US</td>
         </tr>   
         <tr>
             <td class="contact-us" colspan="2"><a href="/docs/contact-us/" class="button">Contact us</a></td>

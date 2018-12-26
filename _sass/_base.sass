@@ -224,15 +224,14 @@ header
 #githubButtonContainer
 	display: none
 	position: relative
-	padding-left: 12px
-	margin-right: 158px
+	padding-left: 35px
+	padding-right: 30px
+	margin-top: 2px
+	min-width: 165px
 	float: left
-	vertical-align: middle
 	height: 60px
-	iframe
-		position: absolute
-		top: 50%
-		transform: translateY(-50%) scale(0.7)
+	align-items: center
+	align-content: center
 
 .nav-buttons
 	display: inline-flex
@@ -465,7 +464,7 @@ header
 		background-color: $dark-grey
 	#pe-docs-banner
 		font-size: 18px
-		display: flex
+		display: none
 		flex-direction: column
 		align-items: center
 		align-content: center
@@ -841,6 +840,15 @@ section
 			transform: translate(5px,-10px)
 			display: inline-block
 
+	a.item.item-new > .title
+		&::after
+			content: "NEW"
+			font-size: 12px
+			font-weight: bold
+			color: $green
+			transform: translate(5px,-10px)
+			display: inline-block
+
 	div.item > .title
 		&:before
 			content: ""
@@ -859,6 +867,15 @@ section
 			font-size: 12px
 			font-weight: bold
 			color: $blue
+			transform: translate(5px,-10px)
+			display: inline-block
+
+	div.item.item-new > .title
+		&::after
+			content: "NEW"
+			font-size: 12px
+			font-weight: bold
+			color: $green
 			transform: translate(5px,-10px)
 			display: inline-block
 

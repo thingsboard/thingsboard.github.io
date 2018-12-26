@@ -1,13 +1,12 @@
 tocs:
 - docs-home
+- getting-started
+- guides
 - api
 - iot-gateway
+- installation
 - reference
-- samples
-- iot-use-cases
-- iot-video-tutorials
 - faq
-- services
 - products
 - thingsboard-pe
 - industries

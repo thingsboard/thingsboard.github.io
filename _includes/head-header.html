@@ -18,6 +18,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="/css/styles.css">
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
 	<script type="text/javascript">
 		/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
 		!function(a){"use strict";var b=function(b,c,d){function e(a){return h.body?a():void setTimeout(function(){e(a)})}function f(){i.addEventListener&&i.removeEventListener("load",f),i.media=d||"all"}var g,h=a.document,i=h.createElement("link");if(c)g=c;else{var j=(h.body||h.getElementsByTagName("head")[0]).childNodes;g=j[j.length-1]}var k=h.styleSheets;i.rel="stylesheet",i.href=b,i.media="only x",e(function(){g.parentNode.insertBefore(i,c?g:g.nextSibling)});var l=function(a){for(var b=i.href,c=k.length;c--;)if(k[c].href===b)return a();setTimeout(function(){l(a)})};return i.addEventListener&&i.addEventListener("load",f),i.onloadcssdefined=l,l(f),i};"undefined"!=typeof exports?exports.loadCSS=b:a.loadCSS=b}("undefined"!=typeof global?global:this);
@@ -35,6 +36,37 @@
 				}, 50);
 			}
 		}
+
+        function mermaidDefer(method) {
+            if (window.mermaid) {
+                method();
+            } else {
+                if (!window.mermaidLoading) {
+                    window.mermaidLoading = true;
+                    loadScript("/js/mermaid.min.js", function() {
+                        mermaid.initialize({
+                            startOnLoad:false,
+                            flowchart:{
+                                htmlLabels: true
+                            }
+                        });
+                        jqueryDefer(function() {
+                            setTimeout(function() {
+                                var scroll = $(window).scrollTop();
+                                $('.mermaidTooltip').css("transform", "translate(0px," + (scroll - 40) + "px)");
+                                $(window).scroll(function (event) {
+                                    var scroll = $(window).scrollTop();
+                                    $('.mermaidTooltip').css("transform", "translate(0px," + (scroll - 40) + "px)");
+                                });
+                            }, 300);
+                        });
+                    });
+                }
+                setTimeout(function() {
+                    mermaidDefer(method)
+                }, 50);
+            }
+        }
 
 		function jqueryUiDefer(method) {
 			if (window.jQuery && window.jQuery.ui) {
@@ -99,6 +131,9 @@
 				var script = scriptsList[index];
 				if (script.type === 'script') {
 					loadScript(script.src, function() {
+                        if (script.callback) {
+                            script.callback();
+                        }
 						index++;
 						loadNextScript(index, scriptsList, completeCallback);
 					});
@@ -222,13 +257,11 @@
 <header>
 	<a href="/" class="logo"></a>
 	<div id="githubButtonContainer">
-		<iframe id="gh-btn-frame" src="https://ghbtns.com/github-btn.html?user=thingsboard&repo=thingsboard&type=star&count=true&size=large"
-				frameborder="0"
-				scrolling="0" width="150px" height="30px"></iframe>
+        <a class="github-button" href="https://github.com/thingsboard/thingsboard" data-show-count="true" aria-label="Star thingsboard/thingsboard on GitHub">Star</a>
 	</div>
 	<div class="nav-buttons nav-buttons-left" data-auto-burger="primary">
 		<a href="/installations/" class="button center-button" id="tryItNow" data-auto-burger-exclude>Try it now</a>
-		<a href="/docs/services/" class="button center-button" id="services" data-auto-burger-exclude>Services</a>
+		<!--a href="/docs/guides/" class="button center-button" id="guides" data-auto-burger-exclude>Guides</a-->
 		<!--a target="_blank" href="https://demo.thingsboard.io/signup" class="button center-button" id="liveDemo" data-auto-burger-exclude>Live demo</a-->
 	</div>
 	<div class="nav-buttons nav-buttons-right" data-auto-burger="primary">
@@ -239,6 +272,7 @@
 			<a href="javascript:void(0);" class="nav-item" id="about_us" onclick="tb.openMenu('aboutUsNav', 'about_us')" data-auto-burger-exclude>About Us</a>
 		</div>
 		<a href="/docs/" class="button center-button" id="viewDocs" data-auto-burger-exclude>Docs</a>
+        <a href="/docs/guides/" class="button center-button" id="guides" data-auto-burger-exclude>Guides</a>
 		<button id="hamburger" onclick="tb.toggleMenu()" data-auto-burger-exclude><div></div></button>
 	</div>
 
@@ -247,9 +281,12 @@
 			<div class="nav-box">
 				<h3><a href="/docs/getting-started-guides/helloworld/">Get Started</a></h3>
 			</div>
-			<div class="nav-box">
+			<!--div class="nav-box">
 				<h3><a href="/docs/">Documentation</a></h3>
-			</div>
+			</div-->
+            <div class="nav-box">
+                <h3><a href="/docs/guides/">Guides</a></h3>
+            </div>
 			<div class="nav-box">
 				<h3><a href="/iot-use-cases/">Use cases</a></h3>
 			</div>
@@ -310,11 +347,8 @@
 					<a href="/docs/services/trainings/" target="_self">
 						<li><span>Trainings</span></li>
 					</a>
-					<a href="/docs/services/professional-services/" target="_self">
-						<li><span>Professional services</span></li>
-					</a>
 					<a href="/docs/services/consulting/" target="_self">
-						<li><span>Consulting</span></li>
+						<li><span>Professional services</span></li>
 					</a>
 				</ul>
 			</div>

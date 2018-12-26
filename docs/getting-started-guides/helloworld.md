@@ -13,108 +13,101 @@ description: Getting started with ThingsBoard open-source IoT platform and simul
 
 ## Introduction
 
-The goal of this guide is for you to collect and visualize some IoT device data using ThingsBoard.
-This guide will let you:
+The goal of this tutorial is to demonstrate the basic usage of the most popular ThingsBoard features. 
+You will learn how to:
 
- - Provision your device
- - Manage device credentials
- - Push data from device to your ThingsBoard instance using MQTT, CoAP or HTTP protocols
- - Create dashboard to visualize the data
+ - Provision Assets and Devices in the system;
+ - Define relations between Assets and Devices;
+ - Push data from a device to ThingsBoard;
+ - Build real-time end-user Dashboards;
+ - Define thresholds and trigger alarms;
+ - Push notification about new alarms over email.
+ 
+The tutorial is based on a popular facility monitoring use-case. 
+We will show how to monitor temperature in a different parts of the building,
+raise alarms when temperature exceeds certain threshold and visualize collected data and alarms.
+ 
+## Video tutorial 
+ 
+We recommend you to review the following video tutorial. 
+All the resources used in this tutorial are listed below for your convenience.
+ 
+&nbsp; 
   
 <div id="video">  
     <div id="video_wrapper">
-        <iframe src="https://www.youtube.com/embed/dIKXFxpfB_Q" frameborder="0" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/TwJJbxwQX5k" frameborder="0" allowfullscreen></iframe>
     </div>
 </div>
 
-## Setup and Requirements
+## Tutorial resources
 
-If you don't have access to a running ThingsBoard instance, use either [Live Demo](https://demo.thingsboard.io/signup) or
-[Installation Guide](/docs/user-guide/install/installation-options/) 
-to fix this.
+#### Live Demo and the installation guides
 
-## Demo account
+If you don't have access to a running ThingsBoard instance, 
+use either [Live Demo](https://demo.thingsboard.io/signup) or
+[Installation Guide](/docs/user-guide/install/installation-options/)
+to fix this. 
 
-All ThingsBoard installations are equipped with a demo account that simplifies the first user experience.
-This demo account contains several pre-provisioned devices, dashboards, rules, and plugins installed.
-Please note that you are free to delete this account in the production deployment.
+In case you decided to install your own ThingsBoard server and loaded the demo data ( "--loadDemo" option, according to the installation guides), 
+the list of default accounts (login/password) and device credentials is located [here](/docs/samples/demo-account/). 
 
-You can use ThingsBoard device emulators to simulate real-life devices and play-around with server-side APIs, data visualization, and processing logic.
-   
-We will use these emulators in advanced tutorials, however, the for the purpose of this guide, we will just use pre-provisioned tenant administrator account.
- 
-## Login as a tenant administrator 
+#### Pushing data from the device
 
-The first step is to login into administration Web UI.
+In order to simplify this guide, we will push data using HTTP, MQTT or CoAP protocol from your local PC. 
+Please review [connect your device](/docs/guides#AnchorIDConnectYourDevice) guides for all available connectivity solutions and options and 
+[hardware samples](/docs/guides#AnchorIDHardwareSamples) to learn how to connect various hardware platforms to ThingsBoard.
 
-If you are using local ThingsBoard installation you can login to administration Web UI using default account:
- 
-  - Username: **tenant@thingsboard.org**
-  - Password: **tenant**
+#### Client-side libraries installation
 
-If you are using Live Demo you can login to [Live Demo](https://demo.thingsboard.io/login) server using Tenant Administrator account (the one that you created during sign-up).
-  
-{:refdef: style="text-align: center;"}
-![image](/images/helloworld/login.png)
-{: refdef}
-
-## Provision your device
-
-Open Devices panel and click on "+" button in the bottom-right corner of the page.
-
-{:refdef: style="text-align: center;"}
-![image](/images/helloworld/devices.png)
-{: refdef}
-
-Populate and save device name (for example, "SN-001"). It will be referred to later as $DEVICE_NAME.
-Device names must be unique. Populating device name based on a unique serial number or other device identifier is generally a good idea.
-Click "Add" button will add corresponding device card to the panel.
-
-{:refdef: style="text-align: center;"}
-![image](/images/helloworld/add-device.png)
-{: refdef}
-
-
-## Manage device credentials
-
-Click on the "device card" we have created in the previous step. This action will open "device details" panel.
-
-Click on the "manage credentials" button on the top of the panel. This action will open a popup window with device credentials.
-
-{:refdef: style="text-align: center;"}
-![image](/images/helloworld/manage-credentials.png)
-{: refdef}
-
-Device credentials window will show auto-generated device access token that you can change. 
-Please save this device token. It will be referred to later as **$ACCESS_TOKEN**.
-
-{:refdef: style="text-align: center;"}
-![image](/images/helloworld/device-credentials.png)
-{: refdef}
-
-
-Congratulations! You have just provisioned your first device! 
-Now you can push some data from this device to ThingsBoard for visualization and analysis.
-
-## Pushing data from the device
-
-In order to simplify this guide, we will push data using MQTT, CoAP or HTTP protocol from your local PC.
-Please refer to [samples](/docs/samples/) for advanced examples of for various hardware platforms.
-
-### Client-side libraries installation
-
-Install preferred MQTT (Mosquitto or MQTT.js), CoAP (CoAP.js) or HTTP (cURL) client using following commands.
+Install preferred HTTP (cURL), MQTT (Mosquitto or MQTT.js) or CoAP (CoAP.js) client using following commands.
 
 {% capture tabspec %}mqtt-client
-ClientA,MQTT.js,shell,resources/node-mqtt.sh,/docs/getting-started-guides/resources/node-mqtt.sh
-ClientB,Mosquitto (Ubuntu),shell,resources/mosquitto-ubuntu.sh,/docs/getting-started-guides/resources/mosquitto-ubuntu.sh
-ClientC,Mosquitto (macOS),shell,resources/mosquitto-macos.sh,/docs/getting-started-guides/resources/mosquitto-macos.sh
-ClientD,CoAP.js,shell,resources/node-coap.sh,/docs/getting-started-guides/resources/node-coap.sh
-ClientE,cURL (Ubuntu),shell,resources/curl-ubuntu.sh,/docs/getting-started-guides/resources/curl-ubuntu.sh
-ClientF,cURL (macOS),shell,resources/curl-macos.sh,/docs/getting-started-guides/resources/curl-macos.sh{% endcapture %}
+ClientA,cURL (Windows),shell,resources/curl-win.sh,/docs/getting-started-guides/resources/curl-win.sh
+ClientB,cURL (macOS),shell,resources/curl-macos.sh,/docs/getting-started-guides/resources/curl-macos.sh
+ClientC,cURL (Ubuntu),shell,resources/curl-ubuntu.sh,/docs/getting-started-guides/resources/curl-ubuntu.sh
+ClientD,MQTT.js,shell,resources/node-mqtt.sh,/docs/getting-started-guides/resources/node-mqtt.sh
+ClientE,Mosquitto (Ubuntu),shell,resources/mosquitto-ubuntu.sh,/docs/getting-started-guides/resources/mosquitto-ubuntu.sh
+ClientF,Mosquitto (macOS),shell,resources/mosquitto-macos.sh,/docs/getting-started-guides/resources/mosquitto-macos.sh
+ClientG,CoAP.js,shell,resources/node-coap.sh,/docs/getting-started-guides/resources/node-coap.sh{% endcapture %}
 {% include tabs.html %}
 
-### Sample data files
+#### Sample cURL command used in the video tutorial
+
+This command works for Windows, Ubuntu and macOS, assuming that cURL tool is installed. 
+
+```bash
+# Please replace $HOST_NAME and $ACCESS_TOKEN with corresponding values.
+curl -v -X POST -d "{\"temperature\": 25}" $HOST_NAME/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
+
+# For example, $HOST_NAME in case of live demo server:
+curl -v -X POST -d "{\"temperature\": 25}" https://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
+
+# For example, $HOST_NAME in case of local installation:
+curl -v -X POST -d "{\"temperature\": 25}" http://localhost:8080/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
+```
+
+#### Sample generator script
+
+```javascript
+var msg = { temperature: +(Math.random()*5 + 25).toFixed(1)};
+var metadata = {};
+var msgType = "POST_TELEMETRY_REQUEST";
+
+return { msg: msg, metadata: metadata, msgType: msgType };
+```
+
+#### Rule Engine guides
+
+[Rule Engine overview](/docs/user-guide/rule-engine-2-0/overview/) - learn the Rule Engine basics and architecture.
+
+[Rule Engine guides](/docs/guides#AnchorIDDataProcessing) - learn how to use ThingsBoard Rule Engine.
+
+#### Mail settings
+
+Use this [guide](/docs/user-guide/ui/mail-settings/#step-31-sendgrid-configuration-example) to configure SendGrid or use any other SMTP server available.
+
+#### Other sample data files
 
 **Create some folder** to store all necessary files for this tutorial.
 Download to this folder or create the following data files:
@@ -131,7 +124,7 @@ A,attributes-data.json,json,resources/attributes-data.json,/docs/getting-started
 B,telemetry-data.json,json,resources/telemetry-data.json,/docs/getting-started-guides/resources/telemetry-data.json{% endcapture %}
 {% include tabs.html %}
 
-### Pushing data using MQTT, CoAP or HTTP
+#### Pushing data using MQTT, CoAP or HTTP
 
 Download the following files to **previously created folder** according to the preferred client:
 
@@ -169,84 +162,10 @@ E,CoAP.js (CoAP),shell,resources/coap-js.sh,/docs/getting-started-guides/resourc
 F,cURL (HTTP),shell,resources/curl.sh,/docs/getting-started-guides/resources/curl.sh{% endcapture %}
 {% include tabs.html %}
 
-## Observe device data on the Web UI
-
-Once you execute commands listed above you should see [attributes](/docs/user-guide/attributes/) and latest [telemetry data](/docs/user-guide/telemetry/) in corresponding device detail tabs.
-
-{:refdef: style="text-align: center;"}
-![image](/images/helloworld/device-attributes.png)
-{: refdef}
-
-
-{:refdef: style="text-align: center;"}
-![image](/images/helloworld/device-telemetry.png)
-{: refdef}
-
-## Create new dashboard to visualize the data
- 
-The easiest way to create new dashboard is to select device attributes and show them on widget
-
-{:refdef: style="text-align: center;"}
-![image](/images/helloworld/attributes-selected.png)
-{: refdef}
-
-Once you click on "Show on widget" button, you will see a "widget preview" panel where you can
-
- - Select widget bundle
- - Select preferred widget
- - Add widget to new or existing dashboard
- 
-{:refdef: style="text-align: center;"}
-![image](/images/helloworld/widget-selected.png)
-{: refdef}
-
-Let's add our first widget to new dashboard named "SN-001 Dashboard"
-
-{:refdef: style="text-align: center;"}
-![image](/images/helloworld/add-widget.png)
-{: refdef}
-
-Let's also add widget to visualize temperature    
-
-{:refdef: style="text-align: center;"}
-![image](/images/helloworld/temperature-selected.png)
-{: refdef}
-
-Click **Show on widget** and select **Digital gauges** bundle. Use carousel to select thermometer widget as shown below. 
-
-{:refdef: style="text-align: center;"}
-![image](/images/helloworld/termometer-widget.png)
-{: refdef}
-
-**Please note** that in this case, we will add a widget to an already existing dashboard. We will also select "Open dashboard" option to see results of our work.
-
-{:refdef: style="text-align: center;"}
-![image](/images/helloworld/add-termometer.png)
-{: refdef}
-
-Finally, we are able to see our new dashboard. Now we can edit the dashboard to
-
- - Configure dashboard settings
- - Tune widget sizes and layout
- - Modify advanced settings of individual widget
- - Add new widgets or remove existing
- - Widgets import/export  
- 
-{:refdef: style="text-align: center;"}
-![image](/images/helloworld/new-dashboard.png)
-{: refdef}
-
  
 ## Next steps
 
-Explore guides related to main ThingsBoard features:
-
- - [Device attributes](/docs/user-guide/attributes/) - how to use device attributes.
- - [Telemetry data collection](/docs/user-guide/telemetry/) - how to collect telemetry data.
- - [Using RPC capabilities](/docs/user-guide/rpc/) - how to send commands to/from devices.
- - [Rule Engine](/docs/user-guide/rule-engine/) - how to use rule engine to analyze data from devices.
- - [Data Visualization](/docs/user-guide/visualization/) - how to visualize collected data.
-
+{% assign currentGuide = "GettingStartedGuides" %}{% include templates/guides-banner.md %}
 
 ## Your feedback
 

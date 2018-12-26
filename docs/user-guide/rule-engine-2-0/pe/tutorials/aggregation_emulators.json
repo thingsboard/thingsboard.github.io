@@ -1,0 +1,76 @@
+{
+  "ruleChain": {
+    "additionalInfo": null,
+    "name": "Emulators",
+    "firstRuleNodeId": null,
+    "root": false,
+    "debugMode": false,
+    "configuration": null
+  },
+  "metadata": {
+    "firstNodeIndex": null,
+    "nodes": [
+      {
+        "additionalInfo": {
+          "layoutX": 353,
+          "layoutY": 97
+        },
+        "type": "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode",
+        "name": "Water Meter A1 emulator",
+        "debugMode": false,
+        "configuration": {
+          "msgCount": 0,
+          "periodInSeconds": 1,
+          "originatorId": "ac7e1760-972c-11e8-ba17-a74c748f9fd2",
+          "originatorType": "DEVICE",
+          "jsScript": "var msg = { \n    waterConsumption: (5 * Math.random()).toFixed(2),\n};\n\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, msgType: msgType };"
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 356,
+          "layoutY": 199
+        },
+        "type": "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode",
+        "name": "Water Meter A2 emulator",
+        "debugMode": false,
+        "configuration": {
+          "msgCount": 0,
+          "periodInSeconds": 1,
+          "originatorId": "b3ff7a60-972c-11e8-ba17-a74c748f9fd2",
+          "originatorType": "DEVICE",
+          "jsScript": "var msg = { \n    waterConsumption: (5 * Math.random()).toFixed(2),\n};\n\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, msgType: msgType };"
+        }
+      }
+    ],
+    "connections": null,
+    "ruleChainConnections": [
+      {
+        "fromIndex": 0,
+        "targetRuleChainId": {
+          "entityType": "RULE_CHAIN",
+          "id": "505b0ec0-8aa2-11e8-8a79-a5ec960c12e2"
+        },
+        "additionalInfo": {
+          "layoutX": 807,
+          "layoutY": 139,
+          "ruleChainNodeId": "rule-chain-node-4"
+        },
+        "type": "Success"
+      },
+      {
+        "fromIndex": 1,
+        "targetRuleChainId": {
+          "entityType": "RULE_CHAIN",
+          "id": "505b0ec0-8aa2-11e8-8a79-a5ec960c12e2"
+        },
+        "additionalInfo": {
+          "layoutX": 807,
+          "layoutY": 139,
+          "ruleChainNodeId": "rule-chain-node-4"
+        },
+        "type": "Success"
+      }
+    ]
+  }
+}

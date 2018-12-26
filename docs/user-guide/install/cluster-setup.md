@@ -10,12 +10,23 @@ description: ThingsBoard IoT platform cluster setup guide
 * TOC
 {:toc}
 
-This guide will help you to setup ThingsBoard in cluster mode.
+This guide will help you to setup ThingsBoard in cluster mode. There are two options available. 
+
+## Cluster setup using microservices architecture (recommended)
+
+Starting ThingsBoard v2.2, it is possible to install ThingsBoard cluster using new microservices architecture and docker containers. 
+See [**microservices**](/docs/reference/msa/) architecture page and [**deployment**](https://github.com/thingsboard/thingsboard/blob/master/docker/README.md) 
+tips for more details how to launch the ThingsBoard cluster in a "dockerized" environment. This option is recommended for advanced users only.
+
+## Cluster setup using monolithic architecture (before v2.2)
+  
+Installing cluster of monolithic ThingsBoard applications where each one contains all necessary transport and core components in a single VM is no longer recommended option.
+However, you may still want to use this option in case you would like to minimize amount of third-party used. See instructions below.   
 
 ### Assumptions
 
-ThingsBoard requires Zookeeper for cluster coordination and Cassandra as a NoSQL database.
-You can host Cassandra on the same nodes where you install ThingsBoard or on separate nodes.
+ThingsBoard requires Zookeeper for cluster coordination, Cassandra as a NoSQL database and Redis for cluster cache.
+You can host Cassandra and Redis on the same nodes where you install ThingsBoard or on separate nodes.
 
 We assume following topology
  
@@ -30,8 +41,9 @@ Let's assume following hostnames:
  - **tb1**, **tb2** and **tb3** - ThingsBoard hosts
  - **zk1** and **zk2** - Zookeeper hosts
  - **c1** and **c2** - Cassandra hosts 
+ - **r1** and/or **r2** (for redis cluster)
  
-We will use default ports for Cassandra (9042) and Zookeeper(2181).
+We will use default ports for Cassandra (9042), Zookeeper(2181) and Redis(6379).
 
 ### Installation
 
@@ -50,6 +62,16 @@ zk:
 cassandra:
   url: "${CASSANDRA_URL:c1:9042,c2:9042}"
 
+redis: 
+  # standalone or cluster
+  connection:
+    type: standalone
+    host: "${REDIS_HOST:localhost}"
+    port: "${REDIS_PORT:6379}"
+    db: "${REDIS_DB:0}"
+    password: "${REDIS_PASSWORD:}"
+
+
 ```
 
 Also, you need to specify **rpc.bind_host** to match your current host for each thingsboard server. For example, **tb1** configuration:
@@ -66,7 +88,8 @@ Following ports need to be accessible within cluster for corresponding servers:
  - Zookeeper - **2181** port (used for coordination and can be modified using **zk.url** property).
  - Cassandra - **9042** port (used for coordination and can be modified using **cassandra.url** property).
  - ThingsBoard - **9001** port (used for RPC and can be modified using **rpc.bind_port** property).
- 
+ - Redis     - **6379** port (used for redis connection and can be modified using **redis.port** property)
+
 Following ThingsBoard server ports need to be accessible outside cluster for device connectivity:
  
  - HTTP - **8080** port (can be modified using **server.port** property).
@@ -75,3 +98,8 @@ Following ThingsBoard server ports need to be accessible outside cluster for dev
 
 ### Load Balancing
 
+
+
+## Next steps
+
+{% assign currentGuide = "InstallationGuides" %}{% include templates/guides-banner.md %}

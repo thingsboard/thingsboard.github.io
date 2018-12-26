@@ -1,0 +1,95 @@
+{
+  "ruleChain": {
+    "additionalInfo": null,
+    "name": "Water Consumption",
+    "firstRuleNodeId": null,
+    "root": false,
+    "debugMode": false,
+    "configuration": null
+  },
+  "metadata": {
+    "firstNodeIndex": 0,
+    "nodes": [
+      {
+        "additionalInfo": {
+          "layoutX": 301,
+          "layoutY": 151
+        },
+        "type": "org.thingsboard.rule.engine.transform.TbChangeOriginatorNode",
+        "name": "To Building Asset",
+        "debugMode": true,
+        "configuration": {
+          "originatorSource": "RELATED",
+          "relationsQuery": {
+            "direction": "TO",
+            "maxLevel": 1,
+            "filters": [
+              {
+                "relationType": "Contains",
+                "entityTypes": [
+                  "ASSET"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 1033,
+          "layoutY": 154
+        },
+        "type": "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode",
+        "name": "Save To DB",
+        "debugMode": false,
+        "configuration": {
+          "defaultTTL": 0
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 668,
+          "layoutY": 152
+        },
+        "type": "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode",
+        "name": "TotalWaterConsumptionPer10Sec",
+        "debugMode": true,
+        "configuration": {
+          "parentEntitiesQuery": {
+            "type": "group",
+            "entityGroupId": null
+          },
+          "periodTimeUnit": "MINUTES",
+          "periodValue": 5,
+          "mathFunction": "SUM",
+          "aggIntervalTimeUnit": "SECONDS",
+          "aggIntervalValue": 10,
+          "autoCreateIntervals": false,
+          "intervalPersistencePolicy": "ON_EACH_CHECK_AFTER_INTERVAL_END",
+          "intervalCheckTimeUnit": "SECONDS",
+          "intervalCheckValue": 1,
+          "intervalTtlTimeUnit": "DAYS",
+          "intervalTtlValue": 1,
+          "inputValueKey": "waterConsumption",
+          "outputValueKey": "totalWaterConsumption",
+          "statePersistencePolicy": "ON_EACH_CHANGE",
+          "statePersistenceTimeUnit": "MINUTES",
+          "statePersistenceValue": 1
+        }
+      }
+    ],
+    "connections": [
+      {
+        "fromIndex": 0,
+        "toIndex": 2,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 2,
+        "toIndex": 1,
+        "type": "Success"
+      }
+    ],
+    "ruleChainConnections": null
+  }
+}

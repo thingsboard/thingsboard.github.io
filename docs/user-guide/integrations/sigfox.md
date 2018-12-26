@@ -7,12 +7,13 @@ description: SigFox integration guide
 
 {% assign feature = "Platform Integrations" %}{% include templates/pe-feature-banner.md %}
 
-* TOC
-{:toc}
+## Overview
 
 Sigfox Integration allows to stream data from Sigfox Backend to ThingsBoard and converts binary device payloads to the ThingsBoard format.
 
  ![image](/images/user-guide/integrations/sigfox-integration.svg)
+ 
+## Video tutorial 
  
 See video tutorial below for step-by-step instruction how to setup SigFox Integration.
 
@@ -22,3 +23,7 @@ See video tutorial below for step-by-step instruction how to setup SigFox Integr
      <iframe src="https://www.youtube.com/embed/T769XqaqeFU" frameborder="0" allowfullscreen></iframe>
  </div>
 </div> 
+
+## Next steps
+
+{% assign currentGuide = "ConnectYourDevice" %}{% include templates/guides-banner.md %}

@@ -237,14 +237,14 @@ In case of live-demo server:
  
 See **[live-demo](/docs/user-guide/live-demo/)** page for more details how to get your account.
  
-Once logged in, open **Dashboards->ESP8266 GPIO Demo Dashboard** page. You should observe demo dashboard with GPIO control and status panel for your device. 
+Once logged in, open **Dashboards->ESP8266 GPIO Demo Dashboard** page. You should observe demo dashboard with GPIO control and status panel for your device.
 Now you can switch status of GPIOs using control panel. As a result, you will see LEDs status change on the device and on the status panel.
 
 Below is the screenshot of the "ESP8266 GPIO Demo Dashboard".  
 
  ![image](/images/samples/esp8266/gpio/dashboard.png)
  
-## Next steps
+## See also
 
 Browse other [samples](/docs/samples) or explore guides related to main ThingsBoard features:
 
@@ -255,5 +255,10 @@ Browse other [samples](/docs/samples) or explore guides related to main ThingsBo
  - [Data Visualization](/docs/user-guide/visualization/) - how to visualize collected data.
 
 {% include templates/feedback.md %}
- 
+
 {% include socials.html %}
+
+
+## Next steps
+
+{% assign currentGuide = "HardwareSamples" %}{% include templates/guides-banner.md %}

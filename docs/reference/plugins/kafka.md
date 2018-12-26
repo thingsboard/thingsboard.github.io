@@ -60,7 +60,7 @@ Now it's time to create appropriate Rule.
 
 Add filter for **POST_TELEMETRY** message type:
 
-![image](/images/reference/plugins/kafka/post-telemetry-filter.png)
+![image](/images/reference/plugins/post-telemetry-filter.png)
 
 Click *'Add'* button to add filter.
 
@@ -76,7 +76,7 @@ Click *'Add'* button and then activate Rule.
 
 ### Sending Temperature Telemetry
 
-Now for any of your devices send Telemetry message that contains *'temp'* telemetry:
+Now you can send Telemetry message that contains *'temp'* telemetry for any of your devices:
 
 ```json
 {"temp":73.4}

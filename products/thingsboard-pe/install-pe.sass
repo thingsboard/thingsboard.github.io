@@ -32,12 +32,39 @@ section#install-pe
         background: $professional-color
     @media (min-width: 1025px)
         .tab-label
-            width: 50%
+            width: calc(100% / 3)
     .tab-panel
         background: $professional-color
         color: #fff
         width: 100%
         display: none
+        .choose-marketplace
+            p
+                font-size: 24px
+                padding-left: 50px
+                padding-top: 40px
+            .marketplace
+                padding: 30px 50px 60px
+                display: flex
+                justify-content: center
+                .pricing-image-wrapper
+                    cursor: pointer
+                    flex: 1
+                    margin: 4px
+                    display: flex
+                    align-items: center
+                    background: rgba(255, 255, 255, 0.95)
+                    padding: 5px
+                    box-shadow: 0 1px 8px 0 rgba(0,0,0,0.2), 0 3px 4px 0 rgba(0,0,0,0.14), 0 3px 3px -2px rgba(0,0,0,0.12)
+                    border-radius: 10px
+                    transition: background-color linear 250ms
+                    @media screen and (min-width: 750px)
+                        margin: 16px
+                        padding: 20px
+                    img
+                        width: 100%
+                    &:hover
+                        background: rgba(255, 255, 255, 0.6)
     @media (min-width: 1025px)
         .tab-panel
             order: 99
@@ -91,6 +118,11 @@ section#install-pe
                             min-width: 100px
                             width: 100px
                             height: 80px
+                        &.azure
+                            img
+                                min-width: 120px
+                                width: 120px
+                                height: 80px
                     .cloud-provider-desc
                         padding: 20px
                         p
@@ -143,6 +175,15 @@ section#install-pe
                     input:focus + p, input:not(.input--empty) + p
                         color: inherit
                         transform: translate(-20px, -75px) scale(0.7)
+                    .corporate-email-error
+                        float: left
+                        line-height: 100%
+                        font-size: 12px
+                        background: red
+                        color: white
+                        padding: 5px
+                        //position: absolute
+                        display: none
                 .checkbox
                     width: 100%
                     margin: 0px 0px 10px 0px
@@ -231,7 +272,7 @@ section#install-pe
                         flex-direction: row
                         .cloud-provider-desc
                             padding-left: 0px
-                            padding-right: 0px
+                            padding-right: 6px
                             p
                                 font-size: 18px
                                 span.cloud-price
@@ -245,3 +286,21 @@ section#install-pe
             &:hover
                 text-decoration: underline
 
+#install-thanks
+    max-width: 700px
+    margin: auto
+    padding: 30px
+    background: $professional-color
+    color: #fff
+    box-shadow: 0 1px 8px 0 rgba(0,0,0,0.2), 0 3px 4px 0 rgba(0,0,0,0.14), 0 3px 3px -2px rgba(0,0,0,0.12)
+    .thanks-content
+        opacity: 0
+        &.animated
+            opacity: 1
+        .fa
+            font-size: 36px
+            margin-bottom: 15px
+        p
+            font-size: 20px
+            &.thank-you
+                font-size: 32px

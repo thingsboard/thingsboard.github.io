@@ -29,6 +29,11 @@ See video tutorial below for step-by-step instruction how to use this feature.
 <br/>
 <div id="video">  
     <div id="video_wrapper">
-        <iframe src="https://www.youtube.com/embed/ZTU2ojZBPRU" frameborder="0" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/4dkbVASJ1JU" frameborder="0" allowfullscreen></iframe>
     </div>
 </div> 
+
+## Next steps
+
+{% assign currentGuide = "AdvancedFeatures" %}{% include templates/guides-banner.md %}
+
