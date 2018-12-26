@@ -136,6 +136,90 @@ Similar mapping rules are applied for **attributes** and **timeseries** values:
  - **type** - either boolean, long, double or string.
  - **value** - expression based on relative tag values specified inside **${}** 
 
+### Server-side RPC
+
+For general information how to use server-side RPC feature please visit [this guide](/docs/user-guide/rpc/#server-side-rpc-api/).
+
+#### Multiple tags write
+
+This RPC method allows user to simultaneously write values to the multiple tags of the connected device.
+
+##### Request format
+
+| **Property** | **Description**                 | **Value**   |
+|--------------|---------------------------------|-------------|
+| method       | RPC method name                 | write       |
+| params       | Format of RPC method parameters | JSON object |
+
+###### Method parameters format
+
+The method parameters are represented as JSON object. Each object field describes the single OPC tag and its value that needs to be written.
+
+| **Property**  | **Description**                                            | **Value**                  |
+|---------------|------------------------------------------------------------|----------------------------|
+| _tag name 1_  | Path to the OPC node (tag) relative to the device OPC node | boolean,long,double,string |
+| _tag name 2_  | ...                                                        | ...                        |
+| ...           | ...                                                        | ...                        |
+
+**NOTE:** For more details about the device OPC node see above the _Mapping_ section.
+
+##### Response format
+
+###### Success
+
+| **Property**   | **Description**                        | **Value** |
+|----------------|----------------------------------------|-----------|
+| _tag name 1_   | Name of OPC tag that has been written  | ok        |
+| _tag name 2_   | ...                                    | ...       |
+| ...            | ...                                    | ...       |
+
+###### Global error
+
+| **Property**  | **Description**           |
+|---------------|---------------------------|
+| error         | Description of the error  |
+
+###### Tag error
+
+| **Property**   | **Description**                                      |
+|----------------|------------------------------------------------------|
+| _tag name 1_   | Description of the error while writing the tag value |
+| _tag name 2_   | ...                                                  |
+| ...            | ...                                                  |
+
+
+##### Examples
+
+###### Request
+
+```json
+    {
+        "BooleanTag": true,
+        "DoubleTag": 3.14,
+        "LongTag": 12345,
+        "StringTag": "Hello World!",
+
+        "DateTagMillisInGmtTimeZone": 1543922564000,
+        "DateTagAsString": "2018-12-06 12:40:50.123 PST",
+
+        "Group.SubGroup.WordTag": 3456
+    }
+```
+
+###### Response
+
+```json
+    {
+        "SuccesWriteTag": "ok",
+        "ErrorWriteTag": "No tag found"
+    }
+```
+
+```json
+    {
+        "error": "Unsupported RPC method"
+    }
+```
 
 ## Next steps
 
