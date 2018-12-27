@@ -27,6 +27,7 @@ Let's briefly review those use cases one-by-one:
  NB IoT, SigFox, LoRaWAN or other connectivity solutions and platforms.
  * [**Custom widgets**](/docs/reference/pe-demo-getting-started/#custom-widgets) - platform contains few examples of custom data visualization widgets.
  * [**Custom mail settings**](/docs/reference/pe-demo-getting-started/#custom-widgets) - learn how to configure your own email server to start receiving email alerts and reports.
+ * [**Enable Real-Time Data Generation**](/docs/reference/pe-demo-getting-started/#enable-real-timedatageneration) - enable data generation for Smart Metering Demo.
  
 
 ## Smart Metering Model Definition
@@ -293,3 +294,14 @@ Please find instructions how configure SMTP settings:
 
 - [Gmail](/docs/user-guide/ui/mail-settings/#step-32-gmail-configuration-example).
 - [SendGrid](/docs/user-guide/ui/mail-settings/#step-31-sendgrid-configuration-example).
+
+## Enable Real-Time Data Generation
+There is a Rule Chain **Smart Metering Device Emulators** that generates data for the Smart Metering Demo. Data generation is disabled by default. 
+If you want to see how Smart Metering Dashboard is updated with the Real-Time Data you will need to enable Data Generation.
+
+Navigate to **Rule Chains** -> **Smart Metering Device Emulators**, add new node **Rule Chain** that will redirect messages to the **Root Rule Chain**.
+After that connect **Post Telemetry** node with the **Root Rule Chain** node using **Post Telemetry** link. Save Rule Chain.
+
+![image](/images/reference/pe-demo/enable_generation.png)
+
+After this configuration, the system will emulate data from devices that are part of the Smart Metering demo and you will see that values on the Dashboard are updated in Real-Time. 
