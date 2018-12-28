@@ -17,7 +17,7 @@ you can find configuration files in the following directory:
 
 ```bash
 Windows: YOUR_INSTALL_DIR/conf
-Linux: /etc/thingsboard/conf
+Linux: /usr/share/thingsboard/conf
 ```
 
 But if ThingsBoard is installed as a **microservice**, then each component of the platform will have separate configuration files.
