@@ -53,24 +53,113 @@ automatically created in the process of integration work.
 
 In order for integration to work, downlink and uplink converters should be created.
 
+- Go to **Data Converters** -> **Add new Data Converter** -> **Import Converter** 
+
+![image](/images/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/import_new_converter.png)
+
+- Import following files: [**downlink converter**](/docs/user-guide/resources/sensor_downlink_converter.json),
+[**uplink converter**](/docs/user-guide/resources/sensor_uplink_converter.json)
+
 Uplink converter should look like this:
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/mqtt-downlink-uplink-converter.png) 
 
-The full source code of JSON converter used in converter is available
- [**here**](/docs/user-guide/resources/mqtt-downlink-uplink-converter.js). 
 
 Downlink converter should look like this:
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/mqtt-downlink-downlink-converter.png)
 
-The full source code of JSON converter used in converter is available
- [**here**](/docs/user-guide/resources/mqtt-downlink-downlink-converter.js).
 
 ### Creating integration
 
 For integration to work a remote server should be used. In this case you can use iot.eclipse.org for your MQTT data.
 Integration should look like this:
+
+- Go to **Integrations** -> **Add new Integration**
+
+![image](/images/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/add-new-integration.png)
+
+- Fill in the fields with the input data shown in the following table: 
+
+<table style="width: 25%">
+  <thead>
+      <tr>
+          <td><b>Field</b></td><td><b>Input Data</b></td>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Name</td>
+          <td>MQTT downlink integration</td>
+      </tr>
+      <tr>
+          <td>Type</td>
+          <td>MQTT</td>
+      </tr>
+      <tr>
+          <td>Debug mode</td>
+          <td>False</td>
+      </tr>
+      <tr>
+          <td>Uplink data converter</td>
+          <td>Sensor Uplink Converter</td>
+      </tr>
+      <tr>
+          <td>Downlink data converter</td>
+          <td>Sensor Downlink Converter</td>
+      </tr>
+      <tr>
+          <td>Host</td>
+          <td>iot.eclipse.org</td>
+      </tr>
+      <tr>
+          <td>Port</td>
+          <td>11883</td>
+      </tr>
+      <tr>
+          <td>Connection timeout(sec)</td>
+          <td>10</td>
+      </tr>
+      <tr>
+          <td>Client ID</td>
+          <td>(empty)</td>
+      </tr>
+      <tr>
+          <td>Clean session</td>
+          <td>True</td>
+      </tr>
+      <tr>
+          <td>Enable SSL</td>
+          <td>False</td>
+      </tr>
+      <tr>
+          <td>Credentials</td>
+          <td>Anonymous</td>
+      </tr>
+      <tr>
+          <td>Topic filters</td>
+          <td>devices/Thermostat-A/temperature/latest - At most once</td>
+      </tr>
+      <tr>
+          <td>Topic filters</td>
+          <td>devices/Thermostat-A/temperature/settings/ - At most once</td>
+      </tr>
+      <tr>
+         <td>Downlink topic pattern</td>
+         <td>${topic}</td>
+      </tr>
+      <tr>
+          <td>Description</td>
+          <td>(empty)</td>
+      </tr>
+      <tr>
+          <td>Metadata</td>
+          <td>(empty)</td>
+      </tr>
+   </tbody>
+</table> 
+
+- After filling all fields click the **ADD** button. 
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/mqtt-downlink-create-integration-1.png)
 ![image](/images/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/mqtt-downlink-create-integration-2.png)
@@ -118,7 +207,8 @@ Note: virtual device should be put in the folder where node-modules is situated.
 
 Using a control widget (in this case, a knob) leads to value change on the dashboard.
 
-Dashboard can be found [**here**](/docs/user-guide/resources/temperature_control_dashboard.json).
+Dashboard can be found [**here**](/docs/user-guide/resources/temperature_control_dashboard.json) and
+imported like [**this**](docs/user-guide/ui/dashboards/#dashboard-import).
 
 ## Message Flow
 
