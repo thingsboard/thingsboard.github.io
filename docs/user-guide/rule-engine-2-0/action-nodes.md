@@ -536,7 +536,7 @@ Following Message Originator types are allowed: **Asset**, **Device**, **Entity 
 
 Finds target Entity by metadata key patterns and then create a relation between Originator Entity and the target entity.
 
-If selected entity type **Asset**, **Device** or **Customer**  rule node will create new Entity if it doesn’t exist and checkbox parameter: **Create new Entity if not exists** is set to **true**.
+If selected entity type **Asset**, **Device** or **Customer**  rule node will create new Entity if it doesn’t exist and selected checkbox: **Create new Entity if not exists**.
 
 **Note:** if selected entity type **Asset** or **Device** you need to set two patterns: 
 
