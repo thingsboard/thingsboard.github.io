@@ -40,7 +40,7 @@ Create docker volume (for ex. `mytb-data`) before executing docker run command:
 Open "Docker Quickstart Terminal". Execute the following command to create docker volume:
 
 ``` 
-$ docker create volume mytb-data
+$ docker volume create mytb-data
 ```
 
 Execute the following command to run this docker directly:
