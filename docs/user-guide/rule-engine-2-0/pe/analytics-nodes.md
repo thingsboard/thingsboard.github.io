@@ -14,6 +14,14 @@ Analytics Nodes that are specific to ThingsBoard PE. Used for analysis of stream
 
 # Aggregate Latest Node
 
+<table  style="width:12%">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.1</em></strong></td>
+     </tr>
+   </thead>
+</table> 
+
 ![image](/images/user-guide/rule-engine-2-0/pe/nodes/analytics-aggregate-latest.png)
 
 Periodically does aggregation of child entities attributes or latest timeseries for specified set of parent entities.
@@ -74,6 +82,14 @@ with failure reason and parent entity as originator. Failure message is forwarde
 
 # Aggregate Stream Node
 
+<table  style="width:12%">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.1</em></strong></td>
+     </tr>
+   </thead>
+</table> 
+
 ![image](/images/user-guide/rule-engine-2-0/pe/nodes/analytics-aggregate-stream.png)
 
 Calculates MIN/MAX/SUM/AVG/COUNT/UNIQUE based on the incoming data stream. 
@@ -102,6 +118,14 @@ specifying "Buildings" entity group.
 ![image](/images/user-guide/rule-engine-2-0/pe/nodes/analytics-aggregate-stream-config-2.png)
 
 # Alarms Count Node
+
+<table  style="width:12%">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.1</em></strong></td>
+     </tr>
+   </thead>
+</table> 
 
 ![image](/images/user-guide/rule-engine-2-0/pe/nodes/analytics-alarms-count.png)
 

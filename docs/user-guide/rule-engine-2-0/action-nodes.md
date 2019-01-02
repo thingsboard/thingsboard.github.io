@@ -12,6 +12,14 @@ Action Nodes execute various actions based on incoming Message.
 
 # Create Alarm Node
 
+<table  style="width:12%">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
+     </tr>
+   </thead>
+</table> 
+
 ![image](/images/user-guide/rule-engine-2-0/nodes/action-create-alarm.png)
 
 This Node tries to load latest Alarm with configured **Alarm Type** for Message Originator.
@@ -128,6 +136,14 @@ You can see the real life example, where this node is used, in the next tutorial
 
 # Clear Alarm Node
 
+<table  style="width:12%">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
+     </tr>
+   </thead>
+</table> 
+
 ![image](/images/user-guide/rule-engine-2-0/nodes/action-clear-alarm.png)
 
 This Node loads the latest Alarm with configured **Alarm Type** for Message Originator and Clear the Alarm if it exist.
@@ -236,6 +252,14 @@ You can see the real life example, where this node is used, in the next tutorial
 
 # Delay Node
 
+<table  style="width:12%">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.1</em></strong></td>
+     </tr>
+   </thead>
+</table> 
+
 ![image](/images/user-guide/rule-engine-2-0/nodes/action-delay.png)
 
 Delays incoming messages for configurable period.
@@ -254,6 +278,14 @@ Each next message will be routed via **Failure** chain if the maximum pending me
 <br/>
 
 # Generator Node
+
+<table  style="width:12%">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
+     </tr>
+   </thead>
+</table> 
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/action-generator.png)
 
@@ -292,7 +324,15 @@ This node can be used for Rule Chain debugging purposes.
 
 <br/>
 
-# Log Node
+# Log Node 
+
+<table  style="width:12%">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
+     </tr>
+   </thead>
+</table> 
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/action-log.png)
 
@@ -317,6 +357,14 @@ You can see the real life example, where this node is used, in the next tutorial
 - [Reply to RPC Calls](/docs/user-guide/rule-engine-2-0/tutorials/rpc-reply-tutorial.md#log-unknown-request)
 
 # RPC Call Reply Node
+
+<table  style="width:12%">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
+     </tr>
+   </thead>
+</table> 
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/action-rpc-call-reply.png)
 
@@ -359,6 +407,14 @@ You can see the real life example, where this node is used, in the next tutorial
 
 # RPC Call Request Node
 
+<table  style="width:12%">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
+     </tr>
+   </thead>
+</table> 
+
 ![image](/images/user-guide/rule-engine-2-0/nodes/action-rpc-call-request.png)
 
 Sends RPC requests to the Device and routing response to the next Rule nodes.
@@ -400,6 +456,14 @@ For more details how RPC works in the Thingsboard, please read [RPC capabilities
 
 # Save Attributes Node
 
+<table  style="width:12%">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
+     </tr>
+   </thead>
+</table> 
+
 ![image](/images/user-guide/rule-engine-2-0/nodes/action-save-attributes.png)
 
 Stores attributes from incoming Message payload to the database and associate them to the Entity, that is identified by the Message Originator. 
@@ -434,7 +498,15 @@ otherwise **Failure** chain is used.
 
 <br/>
 
-# Save Timeseries Node
+# Save Timeseries Node 
+
+<table  style="width:12%">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
+     </tr>
+   </thead>
+</table> 
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/action-save-timeseries.png)
 
@@ -471,7 +543,15 @@ otherwise **Failure** chain is used.
 
 <br/>
 
-# Assign To Customer Node
+# Assign To Customer Node 
+
+<table  style="width:12%">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.2</em></strong></td>
+     </tr>
+   </thead>
+</table> 
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/action-assign-to-customer-node.png)
 
@@ -502,6 +582,14 @@ In other cases Message will be routed via **Success** chain.
 
 # Unassign From Customer Node
 
+<table  style="width:12%">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.2</em></strong></td>
+     </tr>
+   </thead>
+</table> 
+
 ![image](/images/user-guide/rule-engine-2-0/nodes/action-unassign-from-customer-node.png)
 
 Unassign Message Originator Entity from [Customer](/docs/user-guide/ui/customers/). 
@@ -526,7 +614,15 @@ In other cases Message will be routed via **Success** chain.
 
 <br/>
 
-# Create Relation Node
+# Create Relation Node 
+
+<table  style="min-width:12%; max-width: 20%">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Release in TB Version 2.2.1</em></strong></td>
+     </tr>
+   </thead>
+</table> 
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/action-create-relation.png)
 
@@ -565,6 +661,15 @@ In other cases Message will be routed via **Success** chain.
 <br/>
 
 # Delete Relation Node
+
+<table  style="min-width:12%; max-width: 20%">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Release in TB Version 2.2.1</em></strong></td>
+     </tr>
+   </thead>
+</table> 
+
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/action-delete-relation.png)
 

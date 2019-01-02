@@ -12,6 +12,14 @@ Enrichment Nodes are used to update meta-data of the incoming Message.
 
 ##### Customer attributes
 
+<table  style="width:12%">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
+     </tr>
+   </thead>
+</table> 
+
 ![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-customer-attributes.png)
 
 Node finds Customer of the Message Originator entity and adds Customers Attributes or Latest Telemetry value into Message Metadata. 
@@ -37,6 +45,14 @@ You can see the real life example, where this node is used, in the next tutorial
 - [Send Email](/docs/user-guide/rule-engine-2-0/tutorials/send-email/)
 
 ##### Device attributes
+
+<table  style="width:12%">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
+     </tr>
+   </thead>
+</table> 
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-device-attributes.png)
 
@@ -70,6 +86,14 @@ To access fetched attributes in other nodes you can use this template '<code>met
 
 ##### Originator attributes
 
+<table  style="width:12%">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
+     </tr>
+   </thead>
+</table> 
+
 ![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-originator-attributes.png)
 
 Add Message Originator Attributes (client\shared\server scope) and Latest Telemetry value into Message Metadata. 
@@ -99,6 +123,15 @@ You can see the real life example, where this node is used, in the following tut
 
 ##### Originator fields
 
+<table  style="width:12%">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.0.1</em></strong></td>
+     </tr>
+   </thead>
+</table> 
+
+
 ![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-originator-fields.png)
 
 Node fetches fields values of the Message Originator entity and adds them into Message Metadata. 
@@ -118,6 +151,14 @@ Outbound Message Metadata will contain configured attributes only if they exist.
 To access fetched attributes in other nodes you can use this template '<code>metadata.devType</code>'
 
 ##### Related attributes
+
+<table  style="width:12%">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
+     </tr>
+   </thead>
+</table> 
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-related-attributes.png)
 
@@ -147,6 +188,14 @@ You can see the real life example, where this node is used, in the next tutorial
 
 ##### Tenant attributes
 
+<table  style="width:12%">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
+     </tr>
+   </thead>
+</table> 
+
 ![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-tenant-attributes.png)
 
 Node finds Tenant of the Message Originator entity and adds Tenant Attributes or Latest Telemetry value into Message Metadata. 
@@ -166,6 +215,14 @@ If unsupported Originator type found, an error is thrown.
 **Failure** chain is used if Originator does not have assigned Tenant Entity, otherwise - **Success** chain.
 
 ##### Originator telemetry
+
+<table  style="width:12%">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.1.1</em></strong></td>
+     </tr>
+   </thead>
+</table> 
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-originator-telemetry.png)
 
