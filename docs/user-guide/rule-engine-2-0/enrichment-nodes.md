@@ -185,28 +185,57 @@ The rule node has three fetch modes:
  
 ![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-originator-telemetry-fetch-mode.png)
 
-**NOTE**: End of the interval must always be less than the beginning of the interval.<br> 
+If selected fetch mode **FIRST** or **LAST**, Outbound Message Metadata would contain JSON elements(key/value)
+
+Otherwise if the selected fetch mode **ALL**, telemetry would be fetched as an array.
+
+<table  style="width: 60%">
+   <thead>
+     <tr>
+	 <td><strong><em>Note:</em></strong></td>
+     </tr>
+   </thead>
+   <tbody>
+     <tr>
+	<td>
+	<p>The rule node can extract a limit size of records into array: 1000 records</p>
+	</td>
+     </tr>
+   </tbody>
+</table>
+
+This array will contain JSON objects with the timestamp and value. 
+
+<table  style="width: 60%">
+   <thead>
+     <tr>
+	 <td><strong><em>Note:</em></strong></td>
+     </tr>
+   </thead>
+   <tbody>
+     <tr>
+	<td>
+	<p>End of the interval must always be less than the beginning of the interval.</p>
+	</td>
+     </tr>
+   </tbody>
+</table>
 
 If selected checkbox: **Use metadata interval patterns**, rule node will use Start Interval and End Interval patterns from metadata.
 
-Patterns units sets in the milliseconds since the since the UNIX epoch (January 1, 1970 00:00:00 UTC)
+Patterns units sets in the milliseconds since the UNIX epoch (January 1, 1970 00:00:00 UTC)
+
+![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-originator-telemetry-patterns.png)
 
  - If any pattern will be absent in the Message metadata, the outbound message will be routed via **failure** chain.
  
  - In addition, if any pattern will have invalid data type, the outbound message will be also routed via **failure** chain.
 
-![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-originator-telemetry-patterns.png)
-
-If selected fetch mode **FIRST** or **LAST**, Outbound Message Metadata would contain JSON elements(key/value),
-<br>otherwise if the selected fetch mode **ALL**, telemetry would be fetched as an array.
-
-This array will contain JSON objects with the timestamp and value. 
-
 Outbound Message Metadata will contain configured telemetry fields if they exist and belong to the selected range.
 
 If attribute or telemetry was not found, it is not added into Message Metadata and still routed via **Success** chain. 
  
-To access fetched telemetry in other nodes you can use this template '<code>JSON.parse(metadata.temperature)</code>'
+To access fetched telemetry in other nodes you can use this template: <code>JSON.parse(metadata.temperature)</code>
 
 You can see the real-life example, where this node is used, in the following tutorials:
 
