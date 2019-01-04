@@ -21,7 +21,7 @@ This guide describes how to upgrade ThingsBoard Professional Edition from AWS Ma
     <a href="#upgrading-to-thingsboard-pe-v220" id="markdown-toc-upgrading-to-thingsboard-pe-v220">Upgrading to ThingsBoard PE v.2.2.0</a>
   </li>
   <li>
-    <a href="#upgrading-to-thingsboard-pe-v221-rc" id="markdown-toc-upgrading-to-thingsboard-pe-v221-rc">Upgrading to ThingsBoard PE v.2.2.1-RC</a>
+    <a href="#upgrading-to-thingsboard-pe-v221" id="markdown-toc-upgrading-to-thingsboard-pe-v221">Upgrading to ThingsBoard PE v.2.2.1</a>
   </li>
 </ul>
 
@@ -768,7 +768,7 @@ Execute the following command in order to start ThingsBoard Web Report Server:
 $ sudo service tb-web-report start
 ```
 
-## Upgrading to ThingsBoard PE v.2.2.1-RC
+## Upgrading to ThingsBoard PE v.2.2.1
 
 These steps are applicable for ThingsBoard PE with Cassandra v.2.2.0.
 
