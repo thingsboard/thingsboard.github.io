@@ -14,6 +14,14 @@ Transformation Nodes that are specific to ThingsBoard PE. Used for changing inco
 
 # Duplicate To Group Node
 
+<table  style="width:12%">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.1</em></strong></td>
+     </tr>
+   </thead>
+</table> 
+
 ![image](/images/user-guide/rule-engine-2-0/pe/nodes/transformation-duplicate-to-group.png)
 
 Duplicates message to all entities belonging to specific [Entity Group](/docs/user-guide/groups/).
@@ -38,6 +46,14 @@ Otherwise original message will be forwarded via **Failure** chain.
 <br/>
 
 # Duplicate To Related Node
+
+<table  style="width:12%">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.1</em></strong></td>
+     </tr>
+   </thead>
+</table> 
 
 ![image](/images/user-guide/rule-engine-2-0/pe/nodes/transformation-duplicate-to-related.png)
 

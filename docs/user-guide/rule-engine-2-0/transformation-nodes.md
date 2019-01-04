@@ -13,6 +13,14 @@ Transformation Nodes are used for changing incoming Message fields like Originat
 
 # Change originator
 
+<table  style="width:12%">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
+     </tr>
+   </thead>
+</table> 
+
 ![image](/images/user-guide/rule-engine-2-0/nodes/transformation-change-originator.png)
 
 All incoming Messages in the Thingsboard have originator field that identifies an entity that submits Message. 
@@ -42,6 +50,14 @@ Outbound Message will have new originator Id.
 <br/>
 
 # Script Transformation Node
+
+<table  style="width:12%">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
+     </tr>
+   </thead>
+</table> 
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/transformation-script.png)
 
@@ -110,6 +126,14 @@ You can see real life example, how to use this node in those tutorials:
 - [Reply to RPC Calls](/docs/user-guide/rule-engine-2-0/tutorials/rpc-reply-tutorial.md#add-transform-script-node)
 
 # To Email Node
+
+<table  style="width:12%">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
+     </tr>
+   </thead>
+</table> 
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/transformation-to-email.png)
 
