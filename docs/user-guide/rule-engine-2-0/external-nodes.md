@@ -13,6 +13,14 @@ External Nodes used are used to interact with external systems.
 
 # AWS SNS Node
 
+<table  style="width:12%">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
+     </tr>
+   </thead>
+</table> 
+
 ![image](/images/user-guide/rule-engine-2-0/nodes/external-aws-sns.png)
 
 Node publish messages to AWS SNS (Amazon Simple Notification Service).
@@ -50,6 +58,14 @@ If required, Rule Chain can be configured to use chain of Transformation Nodes f
 <br/>
 
 # AWS SQS Node
+
+<table  style="width:12%">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
+     </tr>
+   </thead>
+</table> 
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/external-aws-sqs.png)
 
@@ -98,6 +114,14 @@ and **sequenceNumber** in Message metadata. Original Message payload, type and o
 
 # Kafka Node
 
+<table  style="width:12%">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
+     </tr>
+   </thead>
+</table> 
+
 ![image](/images/user-guide/rule-engine-2-0/nodes/external-kafka.png)
 
 Kafka Node sends messages to Kafka brokers. Expects messages with any message type. Will send record via Kafka producer to Kafka server.
@@ -126,6 +150,14 @@ Original Message payload, type and originator will not be changed.
 <br/>
 
 # MQTT Node
+
+<table  style="width:12%">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
+     </tr>
+   </thead>
+</table> 
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/external-mqtt.png)
 
@@ -168,6 +200,14 @@ otherwise **Failure** chain is used.
 
 # RabbitMQ Node
 
+<table  style="width:12%">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
+     </tr>
+   </thead>
+</table> 
+
 ![image](/images/user-guide/rule-engine-2-0/nodes/external-rabbitmq.png)
 
 Publish incoming message payload to the RabbitMQ.
@@ -198,6 +238,14 @@ otherwise **Failure** chain is used.
 <br/>
 
 # REST API Call Node
+
+<table  style="width:12%">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
+     </tr>
+   </thead>
+</table> 
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/external-rest-api-call.png)
 
@@ -243,6 +291,14 @@ otherwise **Failure** chain is used.
 
 # Send Email Node
 
+<table  style="width:12%">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
+     </tr>
+   </thead>
+</table> 
+
 ![image](/images/user-guide/rule-engine-2-0/nodes/external-send-email.png)
 
 Node sends incoming message using configured Mail Server. This Node works only with messages that where created using 
@@ -284,6 +340,14 @@ You can see the real life example, where this node is used, in the next tutorial
 <br/>
 
 # Twilio SMS Node
+
+<table  style="width:12%">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.0.2</em></strong></td>
+     </tr>
+   </thead>
+</table> 
 
 {% assign rulenode = "Twilio SMS" %}{% include templates/pe-rule-node-banner.md %}
 
