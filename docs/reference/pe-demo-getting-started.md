@@ -26,7 +26,8 @@ Let's briefly review those use cases one-by-one:
  * [**Integrations and converters**](/docs/reference/pe-demo-getting-started/#integrations--converters) - entry point to quickly connect physical devices using 
  NB IoT, SigFox, LoRaWAN or other connectivity solutions and platforms.
  * [**Custom widgets**](/docs/reference/pe-demo-getting-started/#custom-widgets) - platform contains few examples of custom data visualization widgets.
- * [**Custom mail settings**](/docs/reference/pe-demo-getting-started/#custom-widgets) - learn how to configure your own email server to start receiving email alerts and reports.
+ * [**Custom mail settings**](/docs/reference/pe-demo-getting-started/#configure-mail-settings) - learn how to configure your own email server to start receiving email alerts and reports.
+ * [**Enable Real-Time Data Generation**](/docs/reference/pe-demo-getting-started/#enable-real-time-data-generation) - enable data generation for Smart Metering Demo.
  
 
 ## Smart Metering Model Definition
@@ -133,6 +134,7 @@ There is a 'Demo Custom Widgets' dashboard that is configured to use custom widg
 More information about custom widget creation you can find in [Widgets Development Guide](/docs/user-guide/contribution/widgets-development/).
 
 ## Customers
+
 There are 2 Customers that are created in the scope of the Smart Metering Demo - 'Customer A' and 'Customer B'. 
 
 
@@ -179,6 +181,7 @@ every morning and disable it every evening. There are 3 redefined Scheduled Even
 
 
 #### Generate Report
+
 Every Monday, at the specified time, a PDF report will be created. 'Demo Smart Metering' Dashboard will be used for report generation. 
 You can configure to send a report to your email, by enabling 'Send Email' checkbox in Event configuration. All reports will be saved
 in Database and available for download via 'Files' widget on the 'Demo Reporting' Dashboard.
@@ -187,6 +190,7 @@ More information about Reporting feature you can find in [Reporting Guide](/docs
 
 
 #### Send RPC command
+
 This Event will send RPC command to all devices from the 'Thermostat' Group every Monday and Tuesday. Each Device will receive this RPC command:
 {% highlight json %}
 {
@@ -217,6 +221,7 @@ More information you can find in [White Labeling Guide](/docs/user-guide/white-l
 
 
 ## Rule Chains
+
 There are 5 preconfigured Rule Chains in the system:
 
 - Root Rule Chain (default Rule Chain) - used as main entry point for all events in the System, handle incoming telemetry/attributes, scheduled events
@@ -266,6 +271,7 @@ After that, you will need to edit 'Send SMS' node and update credentials for con
 More information about Rule Chains you can find in [Rule Engine Overview](/docs/user-guide/rule-engine-2-0/overview/).
 
 ## Integrations & Converters
+
 ThingsBoard Platform integrations feature was designed for two primary use cases/deployment options:
 
 - Connect existing NB IoT, LoRaWAN, SigFox and other devices with specific payload formats (JSON, Binary, Text) directly to ThingsBoard platform.
@@ -281,6 +287,7 @@ You can find list of all supported integration types in [Integration Tutorials](
 More information about Integrations & Converters you can find in [Platform Integrations Overview](/docs/user-guide/integrations/).
 
 ## Configure mail settings
+
 Some ThingsBoard features are using Tenant Email Settings for sending emails - for reporting, send alert notifications, etc. 
 By default, Tenant Email Settings are blank and if you want to receive emails from the ThingsBoard you will need to connect ThingsBoard to external Email Server.
 It can be a Gmail or SendGrid or any other SMTP provider. Just open 'System Settings' -> 'Mail Server' and clear 'Use System Mail Server Settings' checkbox.
@@ -293,3 +300,15 @@ Please find instructions how configure SMTP settings:
 
 - [Gmail](/docs/user-guide/ui/mail-settings/#step-32-gmail-configuration-example).
 - [SendGrid](/docs/user-guide/ui/mail-settings/#step-31-sendgrid-configuration-example).
+
+## Enable Real-Time Data Generation
+
+There is a Rule Chain **Smart Metering Device Emulators** that generates data for the Smart Metering Demo. Data generation is disabled by default. 
+If you want to see how Smart Metering Dashboard is updated with the Real-Time Data you will need to enable Data Generation.
+
+Navigate to **Rule Chains** -> **Smart Metering Device Emulators**, add new node **Rule Chain** that will redirect messages to the **Root Rule Chain**.
+After that connect **Post Telemetry** node with the **Root Rule Chain** node using **Post Telemetry** link. Save Rule Chain.
+
+![image](/images/reference/pe-demo/enable_generation.png)
+
+After this configuration, the system will emulate data from devices that are part of the Smart Metering demo and you will see that values on the Dashboard are updated in Real-Time. 

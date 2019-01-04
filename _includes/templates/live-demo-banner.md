@@ -7,7 +7,7 @@
       <br/>  
       <p><b>IoT PaaS Demo</b></p>
       <br/>  
-      <p>We recommend to use ThingsBoard <a href="https://demo.thingsboard.io/signup"><b>Live Demo</b></a> for the seamless experience and the newest features from the latest source code!</p>
+      <p>We recommend to use ThingsBoard Professional Edition <a href="https://cloud.thingsboard.io/signup"><b>Live Demo</b></a> for the seamless experience and the newest features from the latest source code!</p>
       <p>Save time on the installation and configuration with several pre-provisioned devices, dashboards available in the cloud and pre-integrated email server to create new customer accounts and users.</p>
   </td>
 </tr>
