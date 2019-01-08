@@ -1,0 +1,38 @@
+<!Doctype html>
+<html id="pe-aws">
+
+{% include head-header.html %}
+
+<section id="hero" class="light-text">
+</section>
+
+<section id="encyclopedia">
+    <div id="peAwsContent" class="noToc">
+        {{ content }}
+    </div>
+</section>
+
+{% include footer.html %}
+
+<script type="text/javascript">
+    inViewportDefer(function() {
+        $("#pe-aws-pricing table th:nth-child(2), " +
+            "#pe-aws-pricing table th:nth-child(3), " +
+            "#pe-aws-pricing table th:nth-child(4), " +
+            "#pe-aws-pricing table th:nth-child(5), " +
+            "#pe-aws-pricing table th:nth-child(6), " +
+            "#pe-aws-pricing table td:nth-child(2), " +
+            "#pe-aws-pricing table td:nth-child(3), " +
+            "#pe-aws-pricing table td:nth-child(4), " +
+            "#pe-aws-pricing table td:nth-child(5), " +
+            "#pe-aws-pricing table td:nth-child(6)").inViewport(function(px){
+            if(px >= 80) {
+                $(this).addClass("animated flipInY");
+                return true;
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
