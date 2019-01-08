@@ -146,6 +146,7 @@ var tb = (function () {
 
 			case 'home':
 			case 'thingsboard-pe':
+            case 'pe-aws':
 			case 'installations':
 				bodyHeight = windowHeight;
 				break;
@@ -330,8 +331,17 @@ var tb = (function () {
 			var isContainer = item.tagName === 'DIV';
 
 			var titleText = item.getAttribute('data-title');
-			var title = newDOMElement('div', 'title');
+			var titleTag = item.getAttribute('data-tag');
+            var titleId = item.getAttribute('data-id');
+			if (!titleTag) {
+                titleTag = 'div';
+            }
+
+			var title = newDOMElement(titleTag, 'title');
 			title.innerHTML = titleText;
+			if (titleId) {
+                title.id = titleId;
+            }
 
 			var wrapper, content;
 
