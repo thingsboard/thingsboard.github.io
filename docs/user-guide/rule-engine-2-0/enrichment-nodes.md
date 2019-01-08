@@ -12,6 +12,14 @@ Enrichment Nodes are used to update meta-data of the incoming Message.
 
 ##### Customer attributes
 
+<table  style="width:12%">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
+     </tr>
+   </thead>
+</table> 
+
 ![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-customer-attributes.png)
 
 Node finds Customer of the Message Originator entity and adds Customers Attributes or Latest Telemetry value into Message Metadata. 
@@ -37,6 +45,14 @@ You can see the real life example, where this node is used, in the next tutorial
 - [Send Email](/docs/user-guide/rule-engine-2-0/tutorials/send-email/)
 
 ##### Device attributes
+
+<table  style="width:12%">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
+     </tr>
+   </thead>
+</table> 
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-device-attributes.png)
 
@@ -70,6 +86,14 @@ To access fetched attributes in other nodes you can use this template '<code>met
 
 ##### Originator attributes
 
+<table  style="width:12%">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
+     </tr>
+   </thead>
+</table> 
+
 ![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-originator-attributes.png)
 
 Add Message Originator Attributes (client\shared\server scope) and Latest Telemetry value into Message Metadata. 
@@ -99,6 +123,15 @@ You can see the real life example, where this node is used, in the following tut
 
 ##### Originator fields
 
+<table  style="width:12%">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.0.1</em></strong></td>
+     </tr>
+   </thead>
+</table> 
+
+
 ![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-originator-fields.png)
 
 Node fetches fields values of the Message Originator entity and adds them into Message Metadata. 
@@ -118,6 +151,14 @@ Outbound Message Metadata will contain configured attributes only if they exist.
 To access fetched attributes in other nodes you can use this template '<code>metadata.devType</code>'
 
 ##### Related attributes
+
+<table  style="width:12%">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
+     </tr>
+   </thead>
+</table> 
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-related-attributes.png)
 
@@ -147,6 +188,14 @@ You can see the real life example, where this node is used, in the next tutorial
 
 ##### Tenant attributes
 
+<table  style="width:12%">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
+     </tr>
+   </thead>
+</table> 
+
 ![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-tenant-attributes.png)
 
 Node finds Tenant of the Message Originator entity and adds Tenant Attributes or Latest Telemetry value into Message Metadata. 
@@ -167,13 +216,21 @@ If unsupported Originator type found, an error is thrown.
 
 ##### Originator telemetry
 
+<table  style="width:12%">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.1.1</em></strong></td>
+     </tr>
+   </thead>
+</table> 
+
 ![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-originator-telemetry.png)
 
 Adds Message Originator telemetry values from particular time range that was selected in node configuration to the Message Metadata. 
 
-Telemetry values added to Message Metadata without prefix.
-
 ![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-originator-telemetry-config.png)
+
+Telemetry values added to Message Metadata without prefix.
 
 The rule node has three fetch modes:
 
@@ -183,17 +240,59 @@ The rule node has three fetch modes:
 
  - ALL: retrieves all telemetry from the database, which is in the specified time range.
  
-**NOTE**: End of the interval must always be less than the beginning of the interval.<br> 
+![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-originator-telemetry-fetch-mode.png)
 
-If selected fetch mode **FIRST** or **LAST**, Outbound Message Metadata would contain JSON elements(key/value) otherwise if the selected fetch mode **ALL**, telemetry would be fetched as an array.
+If selected fetch mode **FIRST** or **LAST**, Outbound Message Metadata would contain JSON elements(key/value)
+
+Otherwise if the selected fetch mode **ALL**, telemetry would be fetched as an array.
+
+<table  style="width: 60%">
+   <thead>
+     <tr>
+	 <td><strong><em>Note:</em></strong></td>
+     </tr>
+   </thead>
+   <tbody>
+     <tr>
+	<td>
+	<p>The rule node can extract a limit size of records into array: 1000 records</p>
+	</td>
+     </tr>
+   </tbody>
+</table>
 
 This array will contain JSON objects with the timestamp and value. 
+
+<table  style="width: 60%">
+   <thead>
+     <tr>
+	 <td><strong><em>Note:</em></strong></td>
+     </tr>
+   </thead>
+   <tbody>
+     <tr>
+	<td>
+	<p>End of the interval must always be less than the beginning of the interval.</p>
+	</td>
+     </tr>
+   </tbody>
+</table>
+
+If selected checkbox: **Use metadata interval patterns**, rule node will use Start Interval and End Interval patterns from metadata.
+
+Patterns units sets in the milliseconds since the UNIX epoch (January 1, 1970 00:00:00 UTC)
+
+![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-originator-telemetry-patterns.png)
+
+ - If any pattern will be absent in the Message metadata, the outbound message will be routed via **failure** chain.
+ 
+ - In addition, if any pattern will have invalid data type, the outbound message will be also routed via **failure** chain.
 
 Outbound Message Metadata will contain configured telemetry fields if they exist and belong to the selected range.
 
 If attribute or telemetry was not found, it is not added into Message Metadata and still routed via **Success** chain. 
-
-To access fetched telemetry in other nodes you can use this template '<code>JSON.parse(metadata.temperature)</code>'
+ 
+To access fetched telemetry in other nodes you can use this template: <code>JSON.parse(metadata.temperature)</code>
 
 You can see the real-life example, where this node is used, in the following tutorials:
 

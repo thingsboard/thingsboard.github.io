@@ -20,6 +20,9 @@ This guide describes how to upgrade ThingsBoard Professional Edition from AWS Ma
   <li>
     <a href="#upgrading-to-thingsboard-pe-v220" id="markdown-toc-upgrading-to-thingsboard-pe-v220">Upgrading to ThingsBoard PE v.2.2.0</a>
   </li>
+  <li>
+    <a href="#upgrading-to-thingsboard-pe-v221" id="markdown-toc-upgrading-to-thingsboard-pe-v221">Upgrading to ThingsBoard PE v.2.2.1</a>
+  </li>
 </ul>
 
 ## Upgrading to ThingsBoard PE v.2.0.2
@@ -763,4 +766,105 @@ Execute the following command in order to start ThingsBoard Web Report Server:
 
 ```bash
 $ sudo service tb-web-report start
+```
+
+## Upgrading to ThingsBoard PE v.2.2.1
+
+These steps are applicable for ThingsBoard PE with Cassandra v.2.2.0.
+
+#### Connect to your ThingsBoard PE v.2.2.0 instance over SSH.
+
+Below is example command as a reference:
+
+```bash
+$ ssh -i <PRIVATE-KEY> ubuntu@<PUBLIC_DNS_NAME>
+```
+
+or goto EC2 instances and locate your ThingsBoard PE v2.2.0 instance. 
+Then select **Actions -> Connect** and follow instructions provided in **Connect To Your Instance** dialog.
+
+#### Upgrade ThingsBoard PE package 
+
+In the console execute the following command:
+
+```bash
+$ sudo tb-update-pkg.sh
+```
+
+The output should be like:
+
+```text
+Updating ThingsBoard Professional Edition...
+Installing ThingsBoard PE package...
+(Reading database ... 221177 files and directories currently installed.)
+Preparing to unpack thingsboard.deb ...
+Unpacking thingsboard (2.2.1PE~RC-1) over (2.2.0PE-1) ...
+Setting up thingsboard (2.2.1PE~RC-1) ...
+```
+
+**NOTE:** Package installer will ask you to merge your thingsboard.yml configuration.
+
+```text
+Configuration file '/usr/share/thingsboard/conf/thingsboard.yml'
+ ==> Modified (by you or by a script) since installation.
+ ==> Package distributor has shipped an updated version.
+   What would you like to do about it ?  Your options are:
+    Y or I  : install the package maintainer's version
+    N or O  : keep your currently-installed version
+      D     : show the differences between the versions
+      Z     : start a shell to examine the situation
+ The default action is to keep your current version.
+*** thingsboard.yml (Y/I/N/O/D/Z) [default=N] ? Y
+```
+
+Select **install the package maintainer's version** by entering **Y** or **I**.
+
+After installation your previous configuration will be stored in the following files:
+
+```bash
+/usr/share/thingsboard/conf/thingsboard.yml.dpkg-old
+```
+
+If you changed configuration files previously you can compare new configuration with the old one in order to restore your configuration values.
+
+At least the following configuration parameters should be restored:
+
+- edit **/usr/share/thingsboard/conf/thingsboard.yml**. for ex.:
+
+```bash
+$ sudo nano /usr/share/thingsboard/conf/thingsboard.yml
+```
+
+- locate the following lines:
+
+```
+    database:
+      entities:
+        type: "${DATABASE_ENTITIES_TYPE:sql}" # cassandra OR sql
+      ts:
+        type: "${DATABASE_TS_TYPE:sql}" # cassandra OR sql (for hybrid mode, only this value should be cassandra)
+```
+
+- change ```database.entities.type``` and ```database.ts.type``` values from ```sql``` to ```cassandra```:
+
+```
+    database:
+      entities:
+        type: "${DATABASE_ENTITIES_TYPE:cassandra}" # cassandra OR sql
+      ts:
+        type: "${DATABASE_TS_TYPE:cassandra}" # cassandra OR sql (for hybrid mode, only this value should be cassandra)
+```
+
+#### Start ThingsBoard PE service
+
+Execute the following command in order to start ThingsBoard service:
+
+```bash
+$ sudo service thingsboard start
+```
+
+You can issue the following command in order to check if there are any errors on the backend side:
+
+```bash
+$ cat /var/log/thingsboard/thingsboard.log | grep ERROR
 ```

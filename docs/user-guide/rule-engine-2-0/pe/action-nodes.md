@@ -14,6 +14,14 @@ Action Nodes that are specific to ThingsBoard PE. Execute various actions based 
 
 # Add To Group Node
 
+<table  style="width:12%">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.0.2</em></strong></td>
+     </tr>
+   </thead>
+</table> 
+
 ![image](/images/user-guide/rule-engine-2-0/pe/nodes/action-add-to-group.png)
 
 Adds Message Originator Entity to [Entity Group](/docs/user-guide/groups/). 
@@ -42,6 +50,14 @@ In other cases Message will be routed via **Success** chain.
 
 # Remove From Group Node
 
+<table  style="width:12%">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.0.2</em></strong></td>
+     </tr>
+   </thead>
+</table> 
+
 ![image](/images/user-guide/rule-engine-2-0/pe/nodes/action-remove-from-group.png)
 
 Removes Message Originator Entity from [Entity Group](/docs/user-guide/groups/).
@@ -67,6 +83,14 @@ In other cases Message will be routed via **Success** chain.
 <br/>
 
 # Generate Report Node
+
+<table  style="width:12%">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.1</em></strong></td>
+     </tr>
+   </thead>
+</table> 
 
 ![image](/images/user-guide/rule-engine-2-0/pe/nodes/action-generate-report.png)
 
@@ -116,6 +140,14 @@ In other cases Message will be routed via **Success** chain.
 
 # Integration Downlink Node
 
+<table  style="width:12%">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.0.2</em></strong></td>
+     </tr>
+   </thead>
+</table> 
+
 ![image](/images/user-guide/rule-engine-2-0/pe/nodes/action-integration-downlink.png)
 
 Forwards Message to selected [Integration](/docs/user-guide/integrations/) as downlink message.
@@ -133,6 +165,14 @@ Configuration:
 <br/>
 
 # REST Call Reply Node
+
+<table  style="width:12%">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.1</em></strong></td>
+     </tr>
+   </thead>
+</table> 
 
 ![image](/images/user-guide/rule-engine-2-0/pe/nodes/action-rest-call-reply.png)
 
