@@ -351,6 +351,11 @@
       subtitle: Contains wiring diagram, sketch and dashboard setup guide.
       pe: false
       video: false
+    - path: /docs/user-guide/integrations/sodaq/
+      title: Learn how to connect your SODAQ Universal Tracker to ThingsBoard
+      subtitle: Learn how to connect your SODAQ Universal Tracker to ThingsBoard via T-Mobile – IoT CDP Integration.
+      pe: true
+      video: false
 - title: Advanced features
   subtitle: Learn about advanced ThingsBoard features
   id: AdvancedFeatures
