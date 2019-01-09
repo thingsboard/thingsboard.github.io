@@ -1,4 +1,5 @@
 $professional-color: rgba(11, 142, 129, 0.76)
+$professional-button-color: #29655f
 
 $maker-color: $professional-color
 $prototype-color: $professional-color
@@ -30,17 +31,11 @@ $pricing-table-border: rgba(255, 255, 255, 0.39)
             margin-bottom: 30px
 
         h1
-            border: none
             text-align: center
-            font-weight: 400
-            font-size: 36px
         h2
-            border: none
             text-align: center
-            font-weight: 400
         h3
-            border: none
-            font-weight: 400
+            font-weight: 300
         p
             line-height: 1.5em
 
@@ -62,73 +57,61 @@ $pricing-table-border: rgba(255, 255, 255, 0.39)
                 &:before
                     top: 18px
 
-        h2#instance-types
-            padding-top: 0px
-            padding-bottom: 30px
-            font-size: 28px
-
         div#pe-aws-pricing
             background: $dark-grey url(/images/texture.png)
             background-size: auto 100%
-            margin-top: 170px
+            margin-top: 310px
             width: 100vw
             margin-left: calc(-50vw + 50%)
-            margin-bottom: -100px
+            margin-bottom: -270px
             .bottom-background
-                height: 100px
+                height: 270px
                 background: #fff
-                margin-top: -100px
+                margin-top: -270px
             table
-                th:nth-child(2), th:nth-child(3), th:nth-child(4), th:nth-child(5), th:nth-child(6),
-                td:nth-child(2), td:nth-child(3), td:nth-child(4), td:nth-child(5), td:nth-child(6)
+                th:not(:first-child),
+                td:not(:first-child)
                     opacity: 0
                     &.animated
                         opacity: 1
-                //margin-left: calc( (0% - 120px)/2 )
                 margin: auto
                 border: none
                 max-width: 100%
-                transform: translateY(-170px)
-                th:nth-child(2), td:nth-child(2)
-                    transition-delay: 0.3s
-                th:nth-child(3), td:nth-child(3)
-                    transition-delay: 0.6s
-                th:nth-child(4), td:nth-child(4)
-                    transition-delay: 0.9s
-                th:nth-child(5), td:nth-child(5)
-                    transition-delay: 1.2s
-                th:nth-child(6), td:nth-child(6)
-                    transition-delay: 1.5s
+                transform: translateY(-310px)
                 thead
                     background: none
                     color: #fff
-                    tr
+                    th
+                        text-align: center
+                    tr:nth-child(1)
+                        height: 80px
+                        th
+                            height: 80px
+                            .instance-type-header
+                                line-height: 80px
+                                font-weight: 300
+                                font-size: 20px
+                                background: rgba(0, 0, 0, 0.4)
+                    tr:nth-child(2)
                         height: 40px
-                th
-                    font-weight: 400
-                    height: 40px
-                    text-align: center
-                    text-transform: uppercase
-                td:nth-child(2), td:nth-child(3), td:nth-child(4), td:nth-child(5), td:nth-child(6)
-                    text-align: center
+                        th
+                            height: 40px
+                th.bottom-shadow
+                    box-shadow: 0px 5px 2px 0px rgba(0, 0, 0, 0.4), 0px 9px 2px 0px rgba(0, 0, 0, 0.2)
+                th:not(:first-child)
                     border-bottom: 1px solid $pricing-table-border
                     border-right: 1px solid $pricing-table-border
-                td:nth-child(2)
-                    border-left: 1px solid $pricing-table-border
-                th:nth-child(1)
-                    width: 120px
-                th:nth-child(2), th:nth-child(3), th:nth-child(4), th:nth-child(5), th:nth-child(6)
-                    border-bottom: 1px solid $pricing-table-border
-                    border-right: 1px solid $pricing-table-border
-                    font-size: 14px
-                    //padding: 0 0 10px 0
+                    font-size: 12px
                     padding: 0
                     width: 100px
                     .instance-type-header
+                        text-transform: uppercase
+                        font-weight: 400
                         line-height: 40px
-                        height: 100%
                         padding: 0
-                        background: rgba(0, 0, 0, 0.6)
+                        background: rgba(0, 0, 0, 0.55)
+                th:nth-child(1)
+                    width: 120px
                 th:nth-child(2)
                     border-left: 1px solid #d8d8d8
                 th:nth-child(2), td:nth-child(2)
@@ -141,16 +124,30 @@ $pricing-table-border: rgba(255, 255, 255, 0.39)
                     background: $business-color
                 th:nth-child(6), td:nth-child(6)
                     background: $enterprise-color
-                td.note
+                td
+                    border-top: none
+                    background: none
+                    color: #fff
+                    padding: 0
+                td:not(:first-child).note
                     background: none
                     text-align: left
+                td:nth-child(1)
+                    font-size: 12px
+                td:not(:first-child)
+                    font-size: 12px
+                    text-align: center
+                    border-bottom: 1px solid $pricing-table-border
+                    border-right: 1px solid $pricing-table-border
+                td:nth-child(2)
+                    border-left: 1px solid $pricing-table-border
                 tr
                     background: none
                     height: 60px
                 tr.price
-                    height: 130px
+                    height: 100px
                     td
-                        height: 130px
+                        height: 100px
                         padding: 0
                         .price-cell
                             background: rgba(0, 0, 0, 0.4)
@@ -158,45 +155,69 @@ $pricing-table-border: rgba(255, 255, 255, 0.39)
                             padding-bottom: 20px
                             height: 100%
                             .price
-                                font-size: 42px
-
-                //tr:nth-child(1)
-                    height: 10px
-                td
-                    border-top: none
-                    background: none
-                    color: #fff
-                    padding: 10px
-                td:nth-child(1)
-                    font-size: 12px
-                td:nth-child(2), td:nth-child(3), td:nth-child(4), td:nth-child(5), td:nth-child(6)
-                    font-size: 16px
+                                font-size: 24px
+                        a.button
+                            margin-top: 20px
+                            text-align: center
+                            font-size: 10px
+                            padding: 0
+                            cursor: pointer
+                            line-height: 20px
+                            white-space: nowrap
+                            border: 2px solid #fff
+                            background-color: #fff
+                            color: $professional-button-color
+                            transition: 0.3s
+                            &:hover
+                                background-color: $professional-button-color
+                                color: #fff
+                tr.yearly-sub
+                    td
+                        padding: 0
+                        .yearly-sub-cell
+                            background: rgba(0, 0, 0, 0.4)
+                            height: 100%
+                            line-height: 60px
 
 @media screen and (min-width: 750px)
     #pe-aws
         #peAwsContent
-            h2#instance-types
-                padding-top: 0px
-                padding-bottom: 50px
-                font-size: 38px
             div#pe-aws-pricing
+                margin-top: 366px
+                margin-bottom: -300px
+                .bottom-background
+                    height: 300px
+                    margin-top: -300px
                 table
-                    margin-left: calc( (20% - 200px)/2 )
-                    max-width: 80%
-                    //th
-                    //    height: 80px
+                    transform: translateY(-366px)
+                    thead
+                        tr:nth-child(1)
+                            th
+                                .instance-type-header
+                                    font-size: 36px
+                    max-width: 100%
                     th:nth-child(1)
                         width: 200px
-                    th:nth-child(2), th:nth-child(3), th:nth-child(4), th:nth-child(5), th:nth-child(6)
+                    th:not(:first-child)
                         font-size: 18px
-                        //padding: 0 0 20px 0
                         width: 200px
-                        //.instance-type-header
-                          //  padding: 8px
+                    td
+                        padding: 10px
                     td:nth-child(1)
                         font-size: 18px
-                    td:nth-child(2), td:nth-child(3), td:nth-child(4), td:nth-child(5), td:nth-child(6)
+                    td:not(:first-child)
                         font-size: 18px
+                    tr.price
+                        height: 180px
+                        td
+                            height: 180px
+                            .price-cell
+                                .price
+                                    font-size: 42px
+                            a.button
+                                font-size: 14px
+                                padding: 0.3rem 0.3rem
+                                line-height: 30px
 
 @media screen and (min-width: 1025px)
     #pe-aws
@@ -222,3 +243,17 @@ $pricing-table-border: rgba(255, 255, 255, 0.39)
                 table
                     margin-left: calc( (30% - 200px)/2 )
                     max-width: 70%
+                    tr.price
+                        td
+                            a.button
+                                padding: 0.3rem 1rem
+
+@media screen and (min-width: 1600px)
+    #pe-aws
+        #peAwsContent
+            div#pe-aws-pricing
+                table
+                    tr.price
+                        td
+                            a.button
+                                padding: 0.3rem 3rem
