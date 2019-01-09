@@ -21,8 +21,9 @@ hidetoc: "true"
             });
             
             awsTrial.click(function() {
-                trialMarketplace.css('display', 'none');
-                awsTrialForm.css('display', '');
+                //trialMarketplace.css('display', 'none');
+                //awsTrialForm.css('display', '');
+                window.location.href = '/products/thingsboard-pe/aws/';                
             });
             azureTrial.click(function() {
                 trialMarketplace.css('display', 'none');
@@ -37,8 +38,9 @@ hidetoc: "true"
             var azurePayGoForm = $('#mlb2-9674436');
 
             awsPayGo.click(function() {
-                payGoMarketplace.css('display', 'none');
-                awsPayGoForm.css('display', '');
+                //payGoMarketplace.css('display', 'none');
+                //awsPayGoForm.css('display', '');
+                window.location.href = '/products/thingsboard-pe/aws/';
             });
             azurePayGo.click(function() {
                 payGoMarketplace.css('display', 'none');

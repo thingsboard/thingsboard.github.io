@@ -6,69 +6,107 @@ description:
 
 # ThingsBoard Professional Edition on AWS Marketplace
 
-## Instance types
-
+<br/>
+<br/>
 <div id="pe-aws-pricing">
     <table>
         <thead>
             <tr>
                 <th></th>
-                <th><div class="instance-type-header">Maker</div></th>
-                <th><div class="instance-type-header">Prototype</div></th>
-                <th><div class="instance-type-header">Startup</div></th>
-                <th><div class="instance-type-header">Business</div></th>
-                <th><div class="instance-type-header">Enterprise</div></th>
+                <th colspan="5"><div class="instance-type-header">Instance types</div></th>
+            </tr>
+            <tr>
+                <th></th>
+                <th class="bottom-shadow"><div class="instance-type-header">Maker</div></th>
+                <th class="bottom-shadow"><div class="instance-type-header">Prototype</div></th>
+                <th class="bottom-shadow"><div class="instance-type-header">Startup</div></th>
+                <th class="bottom-shadow"><div class="instance-type-header">Business</div></th>
+                <th class="bottom-shadow"><div class="instance-type-header">Enterprise</div></th>
             </tr>
         </thead>
         <tbody>
             <tr class="price">
                 <td></td>
-                <td><div class="price-cell"><div class="price">$10</div><div>/month</div></div></td>
-                <td><div class="price-cell"><div class="price">$99</div><div>/month</div></div></td>
-                <td><div class="price-cell"><div class="price">$199</div><div>/month</div></div></td>
-                <td><div class="price-cell"><div class="price">$299</div><div>/month</div></div></td>
-                <td><div class="price-cell"><div class="price">$500</div><div>/month</div></div></td>
+                <td>
+                    <div class="price-cell">
+                        <div class="price">$10</div>
+                        <div>/month</div>
+                        <p><a href="/products/thingsboard-pe/install/?deploy=cloud" class="button">Try it now</a></p>
+                    </div>
+                </td>
+                <td>
+                    <div class="price-cell">
+                        <div class="price">$99</div>
+                        <div>/month</div>
+                        <p><a href="/products/thingsboard-pe/install/?deploy=cloud" class="button">Try it now</a></p>
+                    </div>
+                </td>
+                <td>
+                    <div class="price-cell">
+                        <div class="price">$199</div>
+                        <div>/month</div>
+                        <p><a href="/products/thingsboard-pe/install/?deploy=cloud" class="button">Try it now</a></p>
+                    </div>
+                </td>
+                <td>
+                    <div class="price-cell">
+                        <div class="price">$299</div>
+                        <div>/month</div>
+                        <p><a href="/products/thingsboard-pe/install/?deploy=cloud" class="button">Try it now</a></p>           
+                    </div>
+                </td>
+                <td>
+                    <div class="price-cell">
+                        <div class="price">$500</div>
+                        <div>/month</div>
+                        <p><a href="/products/thingsboard-pe/install/?deploy=cloud" class="button">Try it now</a></p>
+                    </div>
+                </td>
+            </tr>
+            <tr class="yearly-sub">
+                <td></td>
+                <td colspan="5"><div class="yearly-sub-cell">Save up to 18% on yearly subscription</div></td>
             </tr>
             <tr>
                 <td>Devices and Assets</td>
                 <td>up to 10</td>
                 <td>up to 100</td>
                 <td>up to 500</td>
-                <td>up to 1000</td>
-                <td>unlimited*</td>
+                <td>up to 1,000</td>
+                <td>Unlimited<sup>*</sup></td>
             </tr>
             <tr>
                 <td>Customers, Users and Dashboards</td>
-                <td colspan="5">unlimited*</td>
+                <td colspan="5">Unlimited<sup>*</sup></td>
             </tr>
             <tr>
                 <td>Data points or Messages</td>
-                <td colspan="5">unlimited*</td>
+                <td colspan="5">Unlimited<sup>*</sup></td>
             </tr>
             <tr>
                 <td>White-labeling</td>
-                <td><b>not available</b></td>
-                <td colspan="4">advanced**</td>
+                <td><b>Not available</b></td>
+                <td colspan="4">Advanced<sup>**</sup></td>
             </tr>
             <tr>
                 <td>Dashboards</td>
-                <td colspan="5">unlimited*</td>            
+                <td colspan="5">Unlimited<sup>*</sup></td>            
             </tr>
             <tr>
                 <td>Integrations</td>
-                <td colspan="5">unlimited*</td>
+                <td colspan="5">Unlimited<sup>*</sup></td>
             </tr>
             <tr>
                 <td>API Calls</td>
-                <td colspan="5">unlimited*</td>
+                <td colspan="5">Unlimited<sup>*</sup></td>
             </tr>
             <tr>
                 <td>Scheduler Events</td>
-                <td colspan="5">unlimited*</td>
+                <td colspan="5">Unlimited<sup>*</sup></td>
             </tr>
             <tr>
                 <td>Support</td>
-                <td colspan="2">community</td>
+                <td colspan="2">Community</td>
                 <td>Email support whithin 72 hours</td>
                 <td>Email support whithin 48 hours</td>
                 <td>Email support whithin 24 hours</td>
@@ -83,8 +121,8 @@ description:
             </tr>
             <tr>
                 <td>Recommended DB</td>
-                <td colspan="2">co-located PostgreSQL</td>
-                <td>co-located PostgreSQL or Amazon RDS for PostgreSQL or external Cassandra DB</td>
+                <td colspan="2">Co-located PostgreSQL</td>
+                <td>Co-located PostgreSQL or Amazon RDS for PostgreSQL or external Cassandra DB</td>
                 <td colspan="2">Cassandra Cluster</td>
             </tr>
             <tr>
@@ -101,6 +139,8 @@ description:
 </div>
 
 ## Frequently asked questions
+
+<br/>
 
 <div class="pi-accordion">
     <h3 id="trial--billing">Trial &amp; Billing</h3>    
