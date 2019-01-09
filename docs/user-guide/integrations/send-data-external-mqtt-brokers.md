@@ -57,13 +57,16 @@ In order for integration to work, downlink and uplink converters should be creat
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/import_new_converter.png)
 
-- Import following files: [**downlink converter**](/docs/user-guide/resources/sensor_downlink_converter.json),
-[**uplink converter**](/docs/user-guide/resources/sensor_uplink_converter.json)
+- Import following files: [**uplink converter**](/docs/user-guide/resources/sensor_uplink_converter.json),
+ [**downlink converter**](/docs/user-guide/resources/sensor_downlink_converter.json).
+
+You can check them like this:
+
+![image](/images/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/mqtt-downlink-check-converters.png)
 
 Uplink converter should look like this:
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/mqtt-downlink-uplink-converter.png) 
-
 
 Downlink converter should look like this:
 
@@ -90,7 +93,7 @@ Integration should look like this:
   <tbody>
       <tr>
           <td>Name</td>
-          <td>MQTT downlink integration</td>
+          <td>Thermostat MQTT integration</td>
       </tr>
       <tr>
           <td>Type</td>
@@ -114,7 +117,7 @@ Integration should look like this:
       </tr>
       <tr>
           <td>Port</td>
-          <td>11883</td>
+          <td>1883</td>
       </tr>
       <tr>
           <td>Connection timeout(sec)</td>
@@ -138,11 +141,19 @@ Integration should look like this:
       </tr>
       <tr>
           <td>Topic filters</td>
-          <td>devices/Thermostat-A/temperature/latest - At most once</td>
+          <td>devices/Thermostat-A/temperature/latest</td>
+      </tr>
+      <tr>
+          <td>QOS</td>
+          <td>At most once</td>
       </tr>
       <tr>
           <td>Topic filters</td>
-          <td>devices/Thermostat-A/temperature/settings/ - At most once</td>
+          <td>devices/Thermostat-A/temperature/settings/</td>
+      </tr>
+      <tr>
+                <td>QOS</td>
+           <td>At most once</td>
       </tr>
       <tr>
          <td>Downlink topic pattern</td>
@@ -166,7 +177,7 @@ Integration should look like this:
 
 ### Setting up dashboard
 
-Download and [**import**](docs/user-guide/ui/dashboards/#dashboard-import) attached
+Download and [**import**](/docs/user-guide/ui/dashboards/#dashboard-import) attached
 json [**file**](/docs/user-guide/resources/temperature_control_dashboard.json) with a dashboard for this tutorial.
 
 ### Turning on virtual device
@@ -174,19 +185,19 @@ json [**file**](/docs/user-guide/resources/temperature_control_dashboard.json) w
 First, you should check if node, npm and npm module mqtt are installed by using following commands:
 
 ```bash
-npm -v
-#should display npm version
+#to display node version
 node -v
-#should display node version
-npm list mqtt
-#should be ran in folder with node-modules, will display npm mqtt module version
+#to display npm version
+npm -v
+#to display npm mqtt module version
+npm list mqtt 
 ```
 
 If you don't have npm, you can install it from  [here](https://www.npmjs.com/package/npm),
-npm mqtt module with following command:
+and npm MQTT module with following command:
 
 ```bash
-npm install mqtt --save
+sudo npm install mqtt --save
 ```
 
 and node from [here](https://nodejs.org/en/download/).
@@ -208,7 +219,7 @@ Note: virtual device should be put in the folder where node-modules is situated.
 Using a control widget (in this case, a knob) leads to value change on the dashboard.
 
 Dashboard can be found [**here**](/docs/user-guide/resources/temperature_control_dashboard.json) and
-imported like [**this**](docs/user-guide/ui/dashboards/#dashboard-import).
+imported like [**this**](/docs/user-guide/ui/dashboards/#dashboard-import).
 
 ## Message Flow
 
@@ -234,15 +245,9 @@ In this section, we explain the purpose of each node in this tutorial.
   
     * Sends message to integration
     
-   ! ![image](/images/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/mqtt-downlink-node-C.png) 
+    ![image](/images/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/mqtt-downlink-node-C.png) 
 
 You can download and [**import**](/docs/user-guide/ui/rule-chains/#rule-chains-importexport) attached
  json [**file**](/docs/user-guide/resources/mqtt-downlink-root-rule-chain.json) with a rule chain for this tutorial.
-
-    
-
-
+ It should be marked as root.
  
-
-
-

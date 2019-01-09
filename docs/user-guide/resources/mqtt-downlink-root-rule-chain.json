@@ -150,7 +150,7 @@
         "name": "Name from Metadata to Message",
         "debugMode": true,
         "configuration": {
-          "jsScript": "msg.deviceName = metadata.ss_deviceName;\nreturn {msg: msg, metadata: metadata, msgType: msgType};"
+          "jsScript": "msg.deviceName = metadata.cs_deviceName;\nreturn {msg: msg, metadata: metadata, msgType: msgType};"
         }
       }
     ],
