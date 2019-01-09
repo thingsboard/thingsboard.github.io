@@ -12,6 +12,14 @@ Filter Nodes are used for Message filtering and routing.
 
 ##### Check Relation Filter Node
 
+<table  style="width:12%">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.0.1</em></strong></td>
+     </tr>
+   </thead>
+</table> 
+
 ![image](/images/user-guide/rule-engine-2-0/nodes/filter-check-relation.png)
 
 Checks the relation from the selected entity to originator of the message by type and direction.
@@ -21,6 +29,14 @@ Checks the relation from the selected entity to originator of the message by typ
 If relation exists - Message is sent via **True** chain, otherwise **False** chain is used.
 
 ##### Message Type Filter Node
+
+<table  style="width:12%">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
+     </tr>
+   </thead>
+</table> 
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/filter-message-type.png)
 
@@ -34,6 +50,14 @@ If incoming Message Type is expected - Message is sent via **True** chain, other
 
 ##### Message Type Switch Node
 
+<table  style="width:12%">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
+     </tr>
+   </thead>
+</table> 
+
 ![image](/images/user-guide/rule-engine-2-0/nodes/filter-message-type-switch.png)
 
 Route incoming messages by Message Type. If incoming Message has known [Message Type](/docs/user-guide/rule-engine-2-0/overview/#predefined-message-types) then it is sent to the corresponding chain, 
@@ -43,6 +67,14 @@ If you use Custom Message Types than you can route those messages via **Other** 
 to the **Switch Node** or **Message Type Filter Node** configured with required routing logic.
 
 ##### Originator Type Filter Node
+
+<table  style="width:12%">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.1</em></strong></td>
+     </tr>
+   </thead>
+</table> 
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/filter-originator-type.png)
 
@@ -54,11 +86,27 @@ If incoming Originator Type is expected - Message is sent via **True** chain, ot
 
 ##### Originator Type Switch Node
 
+<table  style="width:12%">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
+     </tr>
+   </thead>
+</table> 
+
 ![image](/images/user-guide/rule-engine-2-0/nodes/filter-originator-type-switch.png)
 
 Routes incoming messages by Originator [Entity](/docs/user-guide/entities-and-relations/) type. 
 
 ##### Script Filter Node
+
+<table  style="width:12%">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
+     </tr>
+   </thead>
+</table> 
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/filter-script.png)
 
@@ -101,6 +149,14 @@ You can see the real life examples, where this node is used, in the next tutoria
 - [Reply to RPC Calls](/docs/user-guide/rule-engine-2-0/tutorials/rpc-reply-tutorial/#add-filter-script-node)
 
 ##### Switch Node
+
+<table  style="width:12%">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
+     </tr>
+   </thead>
+</table> 
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/filter-switch.png)
 

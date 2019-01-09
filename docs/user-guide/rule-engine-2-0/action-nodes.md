@@ -12,6 +12,14 @@ Action Nodes execute various actions based on incoming Message.
 
 # Create Alarm Node
 
+<table  style="width:12%">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
+     </tr>
+   </thead>
+</table> 
+
 ![image](/images/user-guide/rule-engine-2-0/nodes/action-create-alarm.png)
 
 This Node tries to load latest Alarm with configured **Alarm Type** for Message Originator.
@@ -128,6 +136,14 @@ You can see the real life example, where this node is used, in the next tutorial
 
 # Clear Alarm Node
 
+<table  style="width:12%">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
+     </tr>
+   </thead>
+</table> 
+
 ![image](/images/user-guide/rule-engine-2-0/nodes/action-clear-alarm.png)
 
 This Node loads the latest Alarm with configured **Alarm Type** for Message Originator and Clear the Alarm if it exist.
@@ -236,6 +252,14 @@ You can see the real life example, where this node is used, in the next tutorial
 
 # Delay Node
 
+<table  style="width:12%">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.1</em></strong></td>
+     </tr>
+   </thead>
+</table> 
+
 ![image](/images/user-guide/rule-engine-2-0/nodes/action-delay.png)
 
 Delays incoming messages for configurable period.
@@ -254,6 +278,14 @@ Each next message will be routed via **Failure** chain if the maximum pending me
 <br/>
 
 # Generator Node
+
+<table  style="width:12%">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
+     </tr>
+   </thead>
+</table> 
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/action-generator.png)
 
@@ -292,7 +324,15 @@ This node can be used for Rule Chain debugging purposes.
 
 <br/>
 
-# Log Node
+# Log Node 
+
+<table  style="width:12%">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
+     </tr>
+   </thead>
+</table> 
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/action-log.png)
 
@@ -317,6 +357,14 @@ You can see the real life example, where this node is used, in the next tutorial
 - [Reply to RPC Calls](/docs/user-guide/rule-engine-2-0/tutorials/rpc-reply-tutorial.md#log-unknown-request)
 
 # RPC Call Reply Node
+
+<table  style="width:12%">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
+     </tr>
+   </thead>
+</table> 
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/action-rpc-call-reply.png)
 
@@ -359,6 +407,14 @@ You can see the real life example, where this node is used, in the next tutorial
 
 # RPC Call Request Node
 
+<table  style="width:12%">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
+     </tr>
+   </thead>
+</table> 
+
 ![image](/images/user-guide/rule-engine-2-0/nodes/action-rpc-call-request.png)
 
 Sends RPC requests to the Device and routing response to the next Rule nodes.
@@ -400,6 +456,14 @@ For more details how RPC works in the Thingsboard, please read [RPC capabilities
 
 # Save Attributes Node
 
+<table  style="width:12%">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
+     </tr>
+   </thead>
+</table> 
+
 ![image](/images/user-guide/rule-engine-2-0/nodes/action-save-attributes.png)
 
 Stores attributes from incoming Message payload to the database and associate them to the Entity, that is identified by the Message Originator. 
@@ -434,7 +498,15 @@ otherwise **Failure** chain is used.
 
 <br/>
 
-# Save Timeseries Node
+# Save Timeseries Node 
+
+<table  style="width:12%">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
+     </tr>
+   </thead>
+</table> 
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/action-save-timeseries.png)
 
@@ -471,7 +543,15 @@ otherwise **Failure** chain is used.
 
 <br/>
 
-# Assign To Customer Node
+# Assign To Customer Node 
+
+<table  style="width:12%">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.2</em></strong></td>
+     </tr>
+   </thead>
+</table> 
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/action-assign-to-customer-node.png)
 
@@ -502,6 +582,14 @@ In other cases Message will be routed via **Success** chain.
 
 # Unassign From Customer Node
 
+<table  style="width:12%">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.2</em></strong></td>
+     </tr>
+   </thead>
+</table> 
+
 ![image](/images/user-guide/rule-engine-2-0/nodes/action-unassign-from-customer-node.png)
 
 Unassign Message Originator Entity from [Customer](/docs/user-guide/ui/customers/). 
@@ -526,3 +614,85 @@ In other cases Message will be routed via **Success** chain.
 
 <br/>
 
+# Create Relation Node 
+
+<table  style="min-width:12%; max-width: 20%">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Release in TB Version 2.2.1</em></strong></td>
+     </tr>
+   </thead>
+</table> 
+
+![image](/images/user-guide/rule-engine-2-0/nodes/action-create-relation.png)
+
+Create the relation from the selected entity to originator of the message by type and direction. 
+
+Following Message Originator types are allowed: **Asset**, **Device**, **Entity View**, **Customer**, **Tenant**, **Dashboard**.
+
+Finds target Entity by metadata key patterns and then create a relation between Originator Entity and the target entity.
+
+If selected entity type **Asset**, **Device** or **Customer**  rule node will create new Entity if it doesn’t exist and selected checkbox: **Create new Entity if not exists**.
+
+**Note:** if selected entity type **Asset** or **Device** you need to set two patterns: 
+
+ - entity name pattern; 
+ 
+ - entity type pattern. 
+
+Otherwise, only name pattern should be set.
+
+Configuration:
+
+![image](/images/user-guide/rule-engine-2-0/nodes/action-create-relation-node-configuration.png)
+
+- **Direction** - following types are allowed: **From**, **To**.
+- **Relation type** - type of directed connections to message originator entity. Default types **Contains** and **Manages** can be selected from the drop-down list.
+- **Name pattern** and **Type pattern** - can be set direct entity name/type or pattern can be used, that will be resolved to the real entity name/type using Message metadata.
+- **Entities cache expiration time** - specifies maximum time interval is seconds allowed to store found target entity records. 0 value means that records will never expire.
+
+Message will be routed via **Failure** chain in the following cases:
+
+- When Originator entity type is not supported.
+- Target entity doesn't exist.
+
+In other cases Message will be routed via **Success** chain. 
+
+<br/>
+
+# Delete Relation Node
+
+<table  style="min-width:12%; max-width: 20%">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Release in TB Version 2.2.1</em></strong></td>
+     </tr>
+   </thead>
+</table> 
+
+
+![image](/images/user-guide/rule-engine-2-0/nodes/action-delete-relation.png)
+
+Delete the relation from the selected entity to originator of the message by type and direction.
+
+Following Message Originator types are allowed: **Asset**, **Device**, **Entity View**, **Customer**, **Tenant**, **Dashboard**.
+
+Finds target Entity by entity name pattern and then delete a relation between Originator Entity and this entity.
+
+Configuration:
+
+![image](/images/user-guide/rule-engine-2-0/nodes/action-delete-relation-node-configuration.png)
+
+- **Direction** - following types are allowed: **From**, **To**.
+- **Relation type** - type of directed connections to message originator entity. Default types **Contains** and **Manages** can be selected from the drop-down list.
+- **Name pattern** - can be set direct entity name or pattern can be used, that will be resolved to the real entity name using Message metadata.
+- **Entities cache expiration time** - specifies maximum time interval is seconds allowed to store found target entity records. 0 value means that records will never expire.
+
+Message will be routed via **Failure** chain in the following cases:
+
+- When Originator entity type is not supported.
+- Target entity doesn't exist.
+
+In other cases Message will be routed via **Success** chain. 
+
+<br/>

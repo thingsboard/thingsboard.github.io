@@ -48,12 +48,14 @@ Modbus extension supports "tcp", "udp" and "rtu" transports.
 
 ##### TCP transport
 
-| **Property**        | **Description**                        | **Default value** |
-|---------------------|----------------------------------------|-------------------|
-| type                | Transport type                         | tcp               |
-| host                | Host                                   | localhost         |
-| port                | Port                                   | 502               |
-| timeout             | Socket timeout     in milliseconds     | 3000              |
+| **Property**           | **Description**                        | **Default value**  |
+|------------------------|----------------------------------------|--------------------|
+| type                   | Transport type                         | tcp                |
+| host                   | Host                                   | localhost          |
+| port                   | Port                                   | 502                |
+| timeout                | Socket timeout     in milliseconds     | 3000               |
+| reconnect              | Automatically reconnect                | true               |
+| rtuOverTcp             | Enable RTU over TCP feature            | false              |
 
 Example of "tcp" transport configuration:
 
@@ -64,7 +66,9 @@ Example of "tcp" transport configuration:
         "type": "tcp",
         "host": "localhost",
         "port": 654,
-        "timeout": 5000
+        "timeout": 5000,
+        "reconnect": true,
+        "rtuOverTcp": false
       }
       ...
 }
@@ -284,6 +288,151 @@ Read each hour (3600000 ms) 6 input registers in big-endianness to get a string 
       "pollPeriod": 3600000
     }
   ]
+```
+
+### Server-side RPC
+
+For general information how to use server-side RPC feature please visit [this guide](/docs/user-guide/rpc/#server-side-rpc-api/).
+
+#### Multiple tags write
+
+This RPC method allows user to simultaneously write values to the multiple tags of the connected device.
+
+##### Request format
+
+| **Property** | **Description**                 | **Value**             |
+|--------------|---------------------------------|-----------------------|
+| method       | RPC method name                 | write                 |
+| params       | Format of RPC method parameters | JSON array of objects |
+
+###### Method parameters format
+
+The method parameters are represented as JSON array of objects. Each object describes how the value needs to be encoded and written via Modbus protocol.
+Each object has the following structure:
+
+| **Property**  | **Description**                                   | **Value**                             |
+|---------------|---------------------------------------------------|---------------------------------------|
+| tag           | Arbitrary name of Modbus tag that will be written |                                       |
+| value         | The value that will be written                    | boolean,long,double,string            |
+| functionCode  | Modbus function code                              | 5,6,16                                |
+| address       | Address of coil/register                          | 0-65535                               |
+| registerCount | Number of hardware registers to be written        | 1 (default) -...                      |
+| byteOrder     | Order of bytes                                    | BIG (default),LITTLE,1023,CD AB EG FH |
+
+**NOTE:** For more details about the _registerCount_ and _byteOrder_ parameters see above the _Tag mapping_ section.
+
+The Modbus RPC extension supports the following Modbus functions:
+
+* Force Single Coil (function code 5)
+* Preset Single Register (function code 6)
+* Preset Multiple Registers (function code 16)
+
+##### Response format
+
+###### Success
+
+| **Property**   | **Description**                           | **Value** |
+|----------------|-------------------------------------------|-----------|
+| _tag name 1_   | Name of Modbus tag that has been written  | ok        |
+| _tag name 2_   | Name of Modbus tag that has been written  | ok        |
+| ...            | ...                                       | ok        |
+
+###### Global error
+
+| **Property**  | **Description**           |
+|---------------|---------------------------|
+| error         | Description of the error  |
+
+###### Tag error
+
+| **Property**   | **Description**                                      |
+|----------------|------------------------------------------------------|
+| _tag name 1_   | Description of the error while writing the tag value |
+| _tag name 2_   | ...                                                  |
+| ...            | ...                                                  |
+
+
+##### Examples
+
+###### Request
+
+```json
+    [
+        {
+            "tag": "WriteCoil",
+            "value": true,
+            "functionCode": 5,
+            "address": 1
+        },
+        {
+            "tag": "WriteLittleWord",
+            "value": 123,
+            "functionCode": 6,
+            "address": 1,
+            "byteOrder": "LITTLE"
+        },
+        {
+            "tag": "WriteBigWord",
+            "value": 4567,
+            "functionCode": 6,
+            "address": 2,
+            "byteOrder": "BIG"
+        },
+        {
+            "tag": "WriteInteger1032",
+            "value": 345678,
+            "functionCode": 16,
+            "address": 3,
+            "byteOrder": "1032",
+            "registerCount": 2
+        },
+        {
+            "tag": "WriteLong10325476",
+            "value": 9223372036854775806,
+            "functionCode": 16,
+            "address": 7,
+            "registerCount": 4,
+            "byteOrder": "1 0 3 2 5 4 7 6"
+        },
+        {
+            "tag": "WriteFloat1032",
+            "value": 3.4028234e+38,
+            "functionCode": 16,
+            "address": 11,
+            "registerCount": 2,
+            "byteOrder": "B A D C"
+        },
+        {
+            "tag": "WriteDouble45670123",
+            "value": 1.7976931348623156e+308,
+            "functionCode": 16,
+            "address": 13,
+            "registerCount": 4,
+            "byteOrder": "45670123"
+        },
+        {
+            "tag": "WriteString",
+            "value": "Salute!",
+            "functionCode": 16,
+            "address": 17,
+            "registerCount": 5
+        }
+    ]
+```
+
+###### Response
+
+```json
+    {
+        "SuccesWriteTag": "ok",
+        "ErrorWriteTag": "No tag found"
+    }
+```
+
+```json
+    {
+        "error": "Unsupported RPC method"
+    }
 ```
 
 ## Next steps
