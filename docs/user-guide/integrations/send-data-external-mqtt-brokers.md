@@ -251,3 +251,7 @@ You can download and [**import**](/docs/user-guide/ui/rule-chains/#rule-chains-i
  json [**file**](/docs/user-guide/resources/mqtt-downlink-root-rule-chain.json) with a rule chain for this tutorial.
  It should be marked as root.
  
+
+## Next steps
+
+{% assign currentGuide = "DataProcessing" %}{% include templates/guides-banner.md %}
