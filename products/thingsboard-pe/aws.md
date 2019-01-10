@@ -107,9 +107,9 @@ description:
             <tr>
                 <td>Support</td>
                 <td colspan="2">Community</td>
-                <td>Email support whithin 72 hours</td>
-                <td>Email support whithin 48 hours</td>
-                <td>Email support whithin 24 hours</td>
+                <td>Email support within 72 hours</td>
+                <td>Email support within 48 hours</td>
+                <td>Email support within 24 hours</td>
             </tr>
             <tr>
                 <td>Recommended AWS Instance</td>
@@ -148,6 +148,7 @@ description:
         <div class="container">
             <p>
                 AWS marketplace will not charge you for the TB PE License during the trial, however, you will still need to pay for the AWS EC2 infrastructure you use (server instance, disk, network and optional services).
+                Be aware that if you cancel your TB PE subscription you automatically cancel your free trial as well. So, if you start new subscription the trial will be over and AWS Marketplace will start charging you hourly.
             </p>    
         </div>    
     </div>
@@ -185,11 +186,117 @@ description:
     <div class="item" data-tag="h4" data-id="what-saving-options-are-available" data-title="What saving options are available?">
         <div class="container">
             <p>
-                Save up to 18% on a yearly TB PE AWS marketplace license or deploy TB PE on premises for additional savings. 
-                Additional AWS EC2 infrastructure savings are available for reserved EC2 instances.
+                Save up to 18% on a yearly TB PE AWS marketplace license or deploy TB PE on premises for additional savings. Additional AWS EC2 infrastructure savings are available for reserved EC2 instances. See <a href="https://aws.amazon.com/marketplace/help/buyer-annual-subscription">AWS FAQ</a> for more details.
             </p>    
         </div>    
-    </div>        
+    </div>
+    <h3 id="trial--billing">Installation &amp; Configuration</h3>
+    <div class="item" data-tag="h4" data-id="how-do-i-install-tb-pe-on-aws" data-title="How to install TB PE on AWS Marketplace?">
+        <div class="container">
+            <p>
+                See <a href="/docs/user-guide/install/aws-marketplace-pe/">official documentation page</a> for more details.
+            </p>    
+        </div>    
+    </div>
+    <div class="item" data-tag="h4" data-id="how-do-i-ssh-tb-pe-on-aws" data-title="How to connect to my new TB PE instance using SSH?">
+        <div class="container">
+            <p>
+                See <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html">official documentation page</a> for more details.
+            </p>    
+        </div>    
+    </div>
+    <div class="item" data-tag="h4" data-id="how-do-i-putty-tb-pe-on-aws" data-title="How to connect to my new TB PE instance using PuTTY?">
+        <div class="container">
+            <p>
+                See <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html">official documentation page</a> for more details.
+            </p>    
+        </div>    
+    </div>            
+    <div class="item" data-tag="h4" data-id="how-do-i-https-tb-pe-on-aws" data-title="How to enable HTTPS?">
+        <div class="container">
+            <p>
+                Step 1. Find out your new instance <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">external IP</a> address 
+                or assign <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP</a> address.<br/>
+                Step 2. Assign valid domain name system (DNS) record to your external IP address for first step.<br/>
+                Step 3. Connect to your instance using SSH or PuTTY using instructions from the previous questions above.<br/>
+                Step 4. Execute the following commands:<br/><br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;docker exec haproxy-certbot certbot-certonly --domain <b>smth.yourcompany.com</b> --email <b>support@yourcompany.com</b><br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;docker exec haproxy-certbot haproxy-refresh<br/><br/>
+                where <b>smth.yourcompany.com</b> is your DNS name from the second step<br/>
+                and <b>support@yourcompany.com</b> is your email to get notifications from <a href="https://certbot.eff.org/">certbot</a>.   
+            </p>    
+        </div>    
+    </div>
+    <div class="item" data-tag="h4" data-id="how-do-i-configure-tb-pe-on-aws" data-title="How do I configure my TB PE instance?">
+        <div class="container">
+            <p>
+                See <a href="/docs/user-guide/install/config/">official documentation page</a> for more details.
+            </p>    
+        </div>    
+    </div>    
+    <h3 id="trial--billing">Upgrades & Data Migration</h3>
+    <div class="item" data-tag="h4" data-id="how-do-i-upgrade-tb" data-title="How do I get software updates for my TB PE instance?">
+        <div class="container">
+            <p>
+                You will receive an email notification about new software versions once it becomes available. This email notification will contain a link to  
+                <a href="/docs/user-guide/install/aws-marketplace-pe-upgrade/">official documentation page</a> with the upgrade instructions.
+            </p>    
+        </div>    
+    </div>
+    <div class="item" data-tag="h4" data-id="how-do-i-backup-db" data-title="How do I backup my database?">
+        <div class="container">
+            <p>
+                Depending on your instance type and configuration, ThingsBoard may store data in SQL or NoSQL databases. 
+                ThingsBoard may also store data using hybrid database mode. 
+                Please review <a href="/docs/reference/#sql-vs-nosql-vs-hybrid-database-approach">architecture docs</a> for more info on available database types.
+                Once you figure out the database type(s) you are using in your instance, you can review official <a href="https://www.postgresql.org/docs/9.1/backup.html">PostgreSQL</a> 
+                or <a href="https://docs.datastax.com/en/cassandra/3.0/cassandra/operations/opsBackupRestore.html">Cassandra</a> documentation. 
+                There is also planty of docs and tools in the web how you can backup and restore your DB.  
+            </p>    
+        </div>    
+    </div>
+    <div class="item" data-tag="h4" data-id="how-do-i-upgrade-instance-type" data-title="How do I upgrade my instance type?">
+        <div class="container">
+            <p>
+                Let's assume your number of devices is constantly growing and you decide to upgrade to new instance type. 
+                It is relatively easy to upgrade while you plan to use the same database type. Just execute the following steps:<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;1) stop your isntance and backup your database<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;2) start new subscription with new instance type<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;3) restore the databacse backup on the instance with new subscription<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;4) ensure everything is working as expected<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;5) cancel old subscription if needed<br/>
+                However, if you plan to upgrade from PostgreSQL to Cassandra this may become a chellange. 
+                ThingsBoard team is planning to have a tool for this purpose but the release is schedule for the end of 2019. 
+                So, we recommend to maintain the same database type or consider hybrid database approach.  
+            </p>    
+        </div>    
+    </div>                    
+    <h3 id="trial--billing">Troubleshooting &amp; Support</h3>
+    <div class="item" data-tag="h4" data-id="how-do-i-find-logs-tb" data-title="Where is my ThingsBoard instance logs?">
+        <div class="container">
+            <p>
+                ThingsBoard logs are stored in the <i>/var/log/thingsboard</i> folder. 
+                See <a href="/docs/user-guide/install/config/#logging">configuration page</a> to find out how to configure logging levels.
+            </p>    
+        </div>    
+    </div>
+    <div class="item" data-tag="h4" data-id="how-do-i-get-free-help-tb" data-title="How do I get help from community?">
+        <div class="container">
+            <p>
+                Available community resources are listed below:<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/thingsboard/thingsboard/issues">GitHub issues page</a> - Our GitHub issues page contains a lot of Q&A and discussions about ThingsBoard.<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://groups.google.com/forum/#!forum/thingsboard">Q&A forum</a> - Our user forum is a great place to go for community support.<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;<a href="http://stackoverflow.com/questions/tagged/thingsboard">Stack Overflow</a> - The ThingsBoard team will also monitor posts tagged thingsboard. 
+            </p>    
+        </div>    
+    </div>
+    <div class="item" data-tag="h4" data-id="how-do-i-get-free-help-tb" data-title="How do I get professional support?">
+        <div class="container">
+            <p>
+                Please review ThingsBoard professional <a href="/docs/services/support/">support plans</a> and <a href="/docs/contact-us/">contact us</a>. 
+            </p>    
+        </div>    
+    </div>                            
 </div>
 
 
