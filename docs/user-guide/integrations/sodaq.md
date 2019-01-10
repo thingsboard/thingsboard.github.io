@@ -14,63 +14,139 @@ This tutorial will explain the steps required to connect your SODAQ Tracker to T
 
 ## Use case
 
-Let's assume your device is controlling temperature and you would like to use it as an external MQTT
- broker with the help of Thingsboard. 
-
-In this tutorial we will configure ThingsBoard Rule Engine to automatically send messages using MQTT
- protocol. You can use this tutorial as a basis for much more complex tasks. 
- 
- MQTT Integration allows to convert existing protocols and payload formats to ThingsBoard message format and is useful 
- in several deployment scenarios: 
- 
-  - stream device and/or asset data from external system, IoT platform or connectivity provider back-end.
-  - stream device and/or asset data from your custom application running in the cloud.
-  - connect the existing device with custom MQTT based protocol to ThingsBoard.
-  
- Please review the integration diagram to learn more. 
- 
-  ![image](/images/user-guide/integrations/mqtt-integration.svg)
-
 ## Prerequisites 
 
 We assume you have completed the following guides and reviewed the articles listed below:
 
-  * [Getting Started](/docs/getting-started-guides/helloworld/) guide.
-  * [ Overview](/docs/user-guide/rule-engine-2-0/overview/).
-  * [MQTT Integration](/docs/user-guide/integrations/mqtt/).
-  * [Data converters](/docs/user-guide/integrations/index/#data-converters). 
+  * [Getting Started](/docs/getting-started-guides/helloworld/)
+  * [ Overview](/docs/user-guide/rule-engine-2-0/overview/)
+  * [Data converters](/docs/user-guide/integrations/index/#data-converters)
 
 ## Model definition
   
-We will operate with SODAQ Universal Tracker that has name "Thermostat-A" and type "tracker" which will be
-automatically created in the process of integration work.
+We will operate with SODAQ Universal Tracker which will be automatically created via Integration T-Mobile – IoT CDP.
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/mqtt-downlink-device.png)
+![image](/images/user-guide/integrations/sodaq/model-definition.png)
 
 ## Getting started
 
-In order to create Integration, we should create the Uplink Converter first.
-
-Please, refer to the next section to download the attached file for the uplink converter and import it.
+In order to create Integration, we should create the Uplink Converter first. Please, refer to the next section to download the attached file for the uplink converter and import it.
 
 ### Creating converter
 
+The converter, that will be described in this article, will decode specific telemetry payload data that contains in encoded hex string.
+
+ - Input data should look like this:
+
+{% highlight bash %}
+{
+    "reports": [{
+        "serialNumber": "IMEI:0123456789",
+        "timestamp": 1547035621977,
+        "subscriptionId": "43524b52-b924-40f0-91f0-e7fa71dca87b",
+        "resourcePath": "uplinkMsg/0/data",
+        "value": "010145292a2bfbfc0000000000000000e6e3355c751a879de31e6535d10306005600d00402"
+    }],
+    "registrations": [],
+    "deregistrations": [],
+    "updates": [],
+    "expirations": [],
+    "responses": []
+}
+{% endhighlight %}
+
+ - After decoding output data should look like this:
+
+{% highlight bash %}
+{
+    "deviceName": "0123456789",
+    "deviceType": "tracker",
+    "telemetry": [{
+        "ts": 1547035622000,
+        "values": {
+            "batteryVoltage": 4.17,
+            "temperature": 26,
+            "latitude": 51.8233479,
+            "longitude": 6.4042341,
+            "altitude": 6,
+            "speed": 86,
+            "satellitesObserved": 208,
+            "timetToFirstFix": 4
+        }
+    }]
+}
+{% endhighlight %}
+
+- The following table shows the first byte position and the number of bytes for each encoded field that includes in the incoming hex string:
+
+<table style="width: 20%">
+  <thead>
+      <tr>
+          <td><b>Field</b></td><td><b>Byte</b></td><td><b>Byte length</b></td>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>ts</td>
+          <td>16</td>
+          <td>4</td>
+      </tr>
+      <tr>
+          <td>batteryVoltage</td>
+          <td>20</td>
+          <td>1</td>
+      </tr>
+      <tr>
+          <td>temperature</td>
+          <td>21</td>
+          <td>1</td>
+      </tr>
+      <tr>
+          <td>latitude</td>
+          <td>22</td>
+          <td>4</td>
+      </tr>
+      <tr>
+          <td>longitude</td>
+          <td>26</td>
+          <td>4</td>
+      </tr>
+      <tr>
+          <td>altitude</td>
+          <td>30</td>
+          <td>2</td>
+      </tr>
+      <tr>
+          <td>speed</td>
+          <td>32</td>
+          <td>2</td>
+      </tr>
+      <tr>
+          <td>satellitesObserved</td>
+          <td>35</td>
+          <td>1</td>
+      </tr>
+      <tr>
+          <td>timetToFirstFix</td>
+          <td>36</td>
+          <td>1</td>
+      </tr>
+   </tbody>
+</table> 
+
 - Go to **Data Converters** -> **Add new Data Converter** -> **Import Converter** 
+
+- Import following json file: [**uplink data converter**](/docs/user-guide/resources/sodaq-uplink-data-converter.json)  as described on the following screenshot: 
 
 ![image](/images/user-guide/integrations/sodaq/import-converter.png)
 
-- Import following json file: [**uplink data converter**](/docs/user-guide/resources/sodaq-uplink-data-converter.json)
-
-Converter should look like this:
+ - Converter should look like this:
 
 ![image](/images/user-guide/integrations/sodaq/converter-view.png)
 
 Once, the converter would be created, we could start Integration creation that described in the section below.
 
 ### Creating integration
-
-For integration to work a remote server should be used. In this case you can use iot.eclipse.org for your MQTT data.
-Integration should look like this:
 
 - Go to **Integrations** -> **Add new Integration**
 
@@ -118,83 +194,15 @@ Integration should look like this:
 
 - After filling all fields click the **ADD** button. 
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/mqtt-downlink-create-integration-1.png)
-![image](/images/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/mqtt-downlink-create-integration-2.png)
-
-### Setting up dashboard
+## Setting up dashboard
 
 Download and [**import**](docs/user-guide/ui/dashboards/#dashboard-import) attached
 json [**file**](/docs/user-guide/resources/temperature_control_dashboard.json) with a dashboard for this tutorial.
 
-### Turning on virtual device
+## Next steps
 
-First, you should check if node, npm and npm module mqtt are installed by using following commands:
+{% assign currentGuide = "HardwareSamples" %}{% include templates/guides-banner.md %}
 
-```bash
-npm -v
-#should display npm version
-node -v
-#should display node version
-npm list mqtt
-#should be ran in folder with node-modules, will display npm mqtt module version
-```
-
-If you don't have npm, you can install it from  [here](https://www.npmjs.com/package/npm),
-npm mqtt module with following command:
-
-```bash
-npm install mqtt --save
-```
-
-and node from [here](https://nodejs.org/en/download/).
-
-Download the [**file**](/docs/user-guide/resources/mqtt-downlink-virtual-device.js) and run it with following 
-command to launch virtual device: 
-
-```bash
-node mqtt-downlink-virtual-device.js
-```
-
-Note: virtual device should be put in the folder where node-modules is situated.
-
-
-### Work demonstration
-
-![image](/images/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/mqtt-downlink-work-demonstration.png) 
-
-Using a control widget (in this case, a knob) leads to value change on the dashboard.
-
-Dashboard can be found [**here**](/docs/user-guide/resources/temperature_control_dashboard.json) and
-imported like [**this**](docs/user-guide/ui/dashboards/#dashboard-import).
-
-## Message Flow
-
-In this section, we explain the purpose of each node in this tutorial. 
-
-### Modifying rule chain
-
-![image](/images/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/mqtt-downlink-root-rule-chain.png) 
-
-  * **Node A**: Originator attributes enrichment node
-      
-    * Puts client attribute deviceName into metadata
-    
-   ![image](/images/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/mqtt-downlink-node-A.png) 
-    
-  * **Node B**: Script Transformation Node
-      
-     * Puts deviceName from metadata to message parameters
-     
-    ![image](/images/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/mqtt-downlink-node-B.png)
-
-  * **Node C**: Integration Downlink node
-  
-    * Sends message to integration
-    
-   ! ![image](/images/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/mqtt-downlink-node-C.png) 
-
-You can download and [**import**](/docs/user-guide/ui/rule-chains/#rule-chains-importexport) attached
- json [**file**](/docs/user-guide/resources/mqtt-downlink-root-rule-chain.json) with a rule chain for this tutorial.
 
     
 
