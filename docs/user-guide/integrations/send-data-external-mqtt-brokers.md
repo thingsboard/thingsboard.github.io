@@ -180,7 +180,9 @@ Integration should look like this:
 Download and [**import**](/docs/user-guide/ui/dashboards/#dashboard-import) attached
 json [**file**](/docs/user-guide/resources/temperature_control_dashboard.json) with a dashboard for this tutorial.
 
-### Turning on virtual device
+### Turning on device emulator
+
+In order for widget to work without a real device, emulator should be turned on.
 
 First, you should check if node, npm and npm module mqtt are installed by using following commands:
 
