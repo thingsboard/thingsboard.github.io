@@ -205,13 +205,13 @@ sudo npm install mqtt --save
 and node from [here](https://nodejs.org/en/download/).
 
 Download the [**file**](/docs/user-guide/resources/mqtt-downlink-virtual-device.js) and run it with following 
-command to launch virtual device: 
+command to launch device emulator: 
 
 ```bash
 node mqtt-downlink-virtual-device.js
 ```
 
-Note: virtual device should be put in the folder where node-modules is situated.
+Note: device emulator should be put in the folder where node-modules is situated.
 
 
 ### Work demonstration
