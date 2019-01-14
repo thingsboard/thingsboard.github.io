@@ -30,6 +30,21 @@ hidetoc: "true"
                 azureTrialForm.css('display', '');
             });
             
+            var payYearlyOption = $('#pay-yearly-option');
+            var payYearlyPremise = $('#pay-yearly-premise');    
+            var awsPayYearly = $('#aws-pay-yearly-market');
+            
+            var payYearlyPremiseForm = $('#mlb2-7556612');                    
+
+            payYearlyPremise.click(function() {
+                payYearlyOption.css('display', 'none');
+                payYearlyPremiseForm.css('display', '');
+            });
+            
+            awsPayYearly.click(function() {
+                window.location.href = '/products/thingsboard-pe/aws/';
+            });
+            
             var payGoMarketplace = $('#pay-go-marketplace');
             var awsPayGo = $('#aws-pay-go-market');
             var azurePayGo = $('#azure-pay-go-market');
@@ -210,7 +225,20 @@ hidetoc: "true"
         <input name="tabs" type="radio" id="tab-on-premise" class="tab-input"/>
         <label for="tab-on-premise" class="tab-label label-premise">Pay yearly</label>
         <div class="tab-panel">
-            <div id="mlb2-7556612" class="deploy-form deploy-premise ml-subscribe-form ml-subscribe-form-7556612">
+            <div id="pay-yearly-option" class="choose-marketplace"> 
+                <p>
+                    Please choose your deployment option
+                </p>
+                <div class="marketplace">
+                    <div id="pay-yearly-premise" class="pricing-image-wrapper">
+                        <span>On premises</span>
+                    </div>
+                    <div id="aws-pay-yearly-market" class="pricing-image-wrapper">
+                        <img src="/images/pe/aws_logo.svg">
+                    </div>
+                </div>    
+            </div>            
+            <div id="mlb2-7556612" style="display:none" class="deploy-form deploy-premise ml-subscribe-form ml-subscribe-form-7556612">
                 <div class="ml-vertical-align-center">
                     <div class="subscribe-form ml-block-success" style="display:none">
                         <div class="form-section center">
@@ -559,6 +587,7 @@ hidetoc: "true"
                     return results ? results[1] : null;
                  };                 
                  var deployType = $.urlParam('deploy');
+                 var type = $.urlParam('type');
                  if (!deployType || "premise" == deployType) {
                     $('#tab-on-premise').attr("checked", "checked");
                     var offset = !deployType ? 200 : 100;
@@ -570,6 +599,12 @@ hidetoc: "true"
                     $('html, body').animate({
                         scrollTop: $('#tab-cloud').offset().top - 100
                       }, 0);
+                    if (type === 'azure') {
+                        var payGoMarketplace = $('#pay-go-marketplace');
+                        var azurePayGoForm = $('#mlb2-9674436');
+                        payGoMarketplace.css('display', 'none');
+                        azurePayGoForm.css('display', '');
+                    }  
                  } else if ("trial" == deployType) {
                     $('#tab-trial').attr("checked", "checked"); 
                     $('html, body').animate({
