@@ -31,6 +31,7 @@ description:
                     <div class="price-cell">
                         <div class="price">$10</div>
                         <div>/month</div>
+                        <div>for software + AWS usage fees</div>
                         <p><a href="/products/thingsboard-pe/install/aws/?instance=maker" class="button">Try it now</a></p>
                     </div>
                 </td>
@@ -38,6 +39,7 @@ description:
                     <div class="price-cell">
                         <div class="price">$99</div>
                         <div>/month</div>
+                        <div>for software + AWS usage fees</div>
                         <p><a href="/products/thingsboard-pe/install/aws/?instance=prototype" class="button">Try it now</a></p>
                     </div>
                 </td>
@@ -45,6 +47,7 @@ description:
                     <div class="price-cell">
                         <div class="price">$199</div>
                         <div>/month</div>
+                        <div>for software + AWS usage fees</div>
                         <p><a href="/products/thingsboard-pe/install/aws/?instance=startup" class="button">Try it now</a></p>
                     </div>
                 </td>
@@ -52,6 +55,7 @@ description:
                     <div class="price-cell">
                         <div class="price">$299</div>
                         <div>/month</div>
+                        <div>for software + AWS usage fees</div>
                         <p><a href="/products/thingsboard-pe/install/aws/?instance=business" class="button">Try it now</a></p>           
                     </div>
                 </td>
@@ -59,6 +63,7 @@ description:
                     <div class="price-cell">
                         <div class="price">$500</div>
                         <div>/month</div>
+                        <div>for software + AWS usage fees</div>
                         <p><a href="/products/thingsboard-pe/install/aws/?instance=enterprise" class="button">Try it now</a></p>
                     </div>
                 </td>
@@ -76,17 +81,20 @@ description:
                 <td>Unlimited<sup>*</sup></td>
             </tr>
             <tr>
+                <td>White-labeling</td>
+                <td>Not available</td>
+                <td><b>Advanced<sup>**</sup></b></td>
+                <td><b>Advanced<sup>**</sup></b></td>
+                <td><b>Advanced<sup>**</sup></b></td>
+                <td><b>Advanced<sup>**</sup></b></td>
+            </tr>            
+            <tr>
                 <td>Customers, Users and Dashboards</td>
                 <td colspan="5">Unlimited<sup>*</sup></td>
             </tr>
             <tr>
                 <td>Data points or Messages</td>
                 <td colspan="5">Unlimited<sup>*</sup></td>
-            </tr>
-            <tr>
-                <td>White-labeling</td>
-                <td><b>Not available</b></td>
-                <td colspan="4">Advanced<sup>**</sup></td>
             </tr>
             <tr>
                 <td>Dashboards</td>
@@ -144,11 +152,11 @@ description:
 
 <div class="pi-accordion">
     <h3 id="trial--billing">Trial &amp; Billing</h3>    
-    <div class="item" data-tag="h4" data-id="what-does-free-trial-mean" data-title="What does &quot;free trial&quot; mean?">
+    <div class="item" data-tag="h4" data-id="what-does-free-trial-mean" data-title="How can I enable free trial?">
         <div class="container">
             <p>
-                AWS marketplace will not charge you for the TB PE License during the trial, however, you will still need to pay for the AWS EC2 infrastructure you use (server instance, disk, network and optional services).
-                Be aware that if you cancel your TB PE subscription you automatically cancel your free trial as well. So, if you start new subscription the trial will be over and AWS Marketplace will start charging you hourly.
+                We recommend to use ThingsBoard Professional Edition Live Demo for the seamless experience and the newest features from the latest source code! 
+                Note that this is a shared environment with hardware and software limitations introduced to host multiple trial tenants on the same server instance(s).  
             </p>    
         </div>    
     </div>
@@ -190,7 +198,7 @@ description:
             </p>    
         </div>    
     </div>
-    <h3 id="trial--billing">Installation &amp; Configuration</h3>
+    <h3 id="installation--configuration">Installation &amp; Configuration</h3>
     <div class="item" data-tag="h4" data-id="how-do-i-install-tb-pe-on-aws" data-title="How to install TB PE on AWS Marketplace?">
         <div class="container">
             <p>
@@ -234,7 +242,7 @@ description:
             </p>    
         </div>    
     </div>    
-    <h3 id="trial--billing">Upgrades & Data Migration</h3>
+    <h3 id="upgrades--data migration">Upgrades & Data Migration</h3>
     <div class="item" data-tag="h4" data-id="how-do-i-upgrade-tb" data-title="How do I get software updates for my TB PE instance?">
         <div class="container">
             <p>
@@ -259,19 +267,19 @@ description:
         <div class="container">
             <p>
                 Let's assume your number of devices is constantly growing and you decide to upgrade to new instance type. 
-                It is relatively easy to upgrade while you plan to use the same database type. Just execute the following steps:<br/>
+                It is relatively easy to upgrade while you plan to use the same database type. Just execute the following steps:<br/><br/>
                 &nbsp;&nbsp;&nbsp;&nbsp;1) stop your isntance and backup your database<br/>
                 &nbsp;&nbsp;&nbsp;&nbsp;2) start new subscription with new instance type<br/>
                 &nbsp;&nbsp;&nbsp;&nbsp;3) restore the databacse backup on the instance with new subscription<br/>
                 &nbsp;&nbsp;&nbsp;&nbsp;4) ensure everything is working as expected<br/>
-                &nbsp;&nbsp;&nbsp;&nbsp;5) cancel old subscription if needed<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;5) cancel old subscription if needed<br/><br/>
                 However, if you plan to upgrade from PostgreSQL to Cassandra this may become a chellange. 
                 ThingsBoard team is planning to have a tool for this purpose but the release is schedule for the end of 2019. 
                 So, we recommend to maintain the same database type or consider hybrid database approach.  
             </p>    
         </div>    
     </div>                    
-    <h3 id="trial--billing">Troubleshooting &amp; Support</h3>
+    <h3 id="troubleshooting--support">Troubleshooting &amp; Support</h3>
     <div class="item" data-tag="h4" data-id="how-do-i-find-logs-tb" data-title="Where is my ThingsBoard instance logs?">
         <div class="container">
             <p>

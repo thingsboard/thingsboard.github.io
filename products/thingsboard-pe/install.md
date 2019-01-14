@@ -81,7 +81,12 @@ hidetoc: "true"
                     </div>
                 </div>
                 <p style="padding-top: 20px;">
-                    Or choose your cloud provider for dedicated server
+                    ThingsBoard PE Cloud is a shared enviroment with multiple limitations, such as: <br/>
+                        &nbsp;&nbsp;* amount of active device connections;<br/>
+                        &nbsp;&nbsp;* amount of REST API calls per user;<br/>
+                        &nbsp;&nbsp;* amount of websocket subscriptions per user;<br/>
+                        &nbsp;&nbsp;* disabled white-labeling feature.<br/><br/>
+                    To get the maximum of ThingsBoard PE, we recommend to install your dedicated server using one of the available options below.
                 </p>
                 <div class="marketplace">
                     <div id="aws-trial-market" class="pricing-image-wrapper">
