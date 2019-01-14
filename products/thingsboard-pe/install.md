@@ -80,14 +80,20 @@ hidetoc: "true"
                         <img src="/images/pe/pe_cloud_signup.svg">
                     </div>
                 </div>
-                <p style="padding-top: 20px;">
-                    ThingsBoard PE Cloud is a shared enviroment with multiple limitations, such as: <br/>
-                        &nbsp;&nbsp;* amount of active device connections;<br/>
-                        &nbsp;&nbsp;* amount of REST API calls per user;<br/>
-                        &nbsp;&nbsp;* amount of websocket subscriptions per user;<br/>
-                        &nbsp;&nbsp;* disabled white-labeling feature.<br/><br/>
+                <div style="font-size: 20px;">
+                <p style="padding-top: 20px; font-size: 20px;">
+                    ThingsBoard PE Cloud is a shared enviroment with multiple limitations, such as:
+                </p>
+                <ul style="margin: 10px 10px 10px 60px;">
+                    <li>amount of active device connections</li>
+                    <li>amount of REST API calls per user</li>
+                    <li>amount of websocket subscriptions per user</li>
+                    <li>disabled white-labeling feature</li>
+                </ul>
+                <p style="padding-top: 0px; font-size: 20px;">       
                     To get the maximum of ThingsBoard PE, we recommend to install your dedicated server using one of the available options below.
                 </p>
+                </div>
                 <div class="marketplace">
                     <div id="aws-trial-market" class="pricing-image-wrapper">
                         <img src="/images/pe/aws_logo.svg">
