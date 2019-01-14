@@ -17,12 +17,20 @@ With this option you pay for Thingsboard Professional Edition on hourly basis. S
 
 - Active [Amazon AWS](https://aws.amazon.com/){:target="_blank"} account
 
-##### Step 1. Subscribe to ThingsBoard Professional Edition
+##### Step 2. Select ThingsBoard PE Instance Type
 
-- Go to [AWS Marketplace: ThingsBoard Professional Edition with Cassandra](https://aws.amazon.com/marketplace/pp/B07CSTDN9W){:target="_blank"} page
+Select one of the available AWS Marketplace Subscriptions:
+- [AWS Marketplace: ThingsBoard PE Startup](https://aws.amazon.com/marketplace/pp/B07MQ1G36K){:target="_blank"} page
+- [AWS Marketplace: ThingsBoard PE Startup](https://aws.amazon.com/marketplace/pp/B07MQ1G36K){:target="_blank"} page
+- [AWS Marketplace: ThingsBoard PE Startup](https://aws.amazon.com/marketplace/pp/B07MQ1G36K){:target="_blank"} page
+- [AWS Marketplace: ThingsBoard PE Startup](https://aws.amazon.com/marketplace/pp/B07MQ1G36K){:target="_blank"} page
+- [AWS Marketplace: ThingsBoard PE Startup](https://aws.amazon.com/marketplace/pp/B07MQ1G36K){:target="_blank"} page
+
+##### Step 2. Subscribe to Selected Instance Type
+
 - Press **Continue to Subscribe** button
 
-![image](/images/user-guide/install/aws-marketplace-pe/subscribe.png)
+![image](/images/user-guide/install/aws-marketplace-pe/tb-pe-mk-subscribe.png)
 
 ##### Step 2. Configure instance and Launch
 
