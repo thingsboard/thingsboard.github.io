@@ -26,6 +26,9 @@ toc:
     path: /docs/user-guide/rpc/
   - title: Data visualization
     path: /docs/user-guide/visualization/
+  - title: Advanced RBAC for IoT
+    path: /docs/user-guide/rbac/
+    pe: true
   - title: White-labeling
     path: /docs/user-guide/white-labeling/
     pe: true
