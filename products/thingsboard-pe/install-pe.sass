@@ -48,11 +48,16 @@ section#install-pe
                 display: flex
                 justify-content: center
                 .pricing-image-wrapper
+                    color: $professional-color
+                    font-size: 28px
+                    white-space: nowrap
                     cursor: pointer
                     flex: 1
                     margin: 4px
                     display: flex
                     align-items: center
+                    align-content: center
+                    justify-content: center
                     background: rgba(255, 255, 255, 0.95)
                     padding: 5px
                     box-shadow: 0 1px 8px 0 rgba(0,0,0,0.2), 0 3px 4px 0 rgba(0,0,0,0.14), 0 3px 3px -2px rgba(0,0,0,0.12)
@@ -61,6 +66,7 @@ section#install-pe
                     @media screen and (min-width: 750px)
                         margin: 16px
                         padding: 20px
+                        font-size: 42px
                     img
                         width: 100%
                     &:hover
@@ -309,3 +315,6 @@ section#install-pe
             font-size: 20px
             &.thank-you
                 font-size: 32px
+        .instructions
+            padding-top: 25px
+            text-align: left
