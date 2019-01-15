@@ -102,7 +102,9 @@
             },
             "yaxis": {
               "showLabels": true,
-              "color": "#545454"
+              "color": "#545454",
+              "min": 0,
+              "max": 100
             },
             "grid": {
               "color": "#545454",
