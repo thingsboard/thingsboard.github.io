@@ -31,7 +31,7 @@ description:
                     <div class="price-cell">
                         <div class="price">$10</div>
                         <div>/month</div>
-                        <div>for software + AWS usage fees</div>
+                        <div class="price-desc">for software + AWS usage fees</div>
                         <p><a href="/products/thingsboard-pe/install/aws/?instance=maker" class="button">Try it now</a></p>
                     </div>
                 </td>
@@ -39,7 +39,7 @@ description:
                     <div class="price-cell">
                         <div class="price">$99</div>
                         <div>/month</div>
-                        <div>for software + AWS usage fees</div>
+                        <div class="price-desc">for software + AWS usage fees</div>
                         <p><a href="/products/thingsboard-pe/install/aws/?instance=prototype" class="button">Try it now</a></p>
                     </div>
                 </td>
@@ -47,7 +47,7 @@ description:
                     <div class="price-cell">
                         <div class="price">$199</div>
                         <div>/month</div>
-                        <div>for software + AWS usage fees</div>
+                        <div class="price-desc">for software + AWS usage fees</div>
                         <p><a href="/products/thingsboard-pe/install/aws/?instance=startup" class="button">Try it now</a></p>
                     </div>
                 </td>
@@ -55,7 +55,7 @@ description:
                     <div class="price-cell">
                         <div class="price">$299</div>
                         <div>/month</div>
-                        <div>for software + AWS usage fees</div>
+                        <div class="price-desc">for software + AWS usage fees</div>
                         <p><a href="/products/thingsboard-pe/install/aws/?instance=business" class="button">Try it now</a></p>           
                     </div>
                 </td>
@@ -63,7 +63,7 @@ description:
                     <div class="price-cell">
                         <div class="price">$500</div>
                         <div>/month</div>
-                        <div>for software + AWS usage fees</div>
+                        <div class="price-desc">for software + AWS usage fees</div>
                         <p><a href="/products/thingsboard-pe/install/aws/?instance=enterprise" class="button">Try it now</a></p>
                     </div>
                 </td>

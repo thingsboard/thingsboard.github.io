@@ -60,14 +60,14 @@ $pricing-table-border: rgba(255, 255, 255, 0.39)
         div#pe-aws-pricing
             background: $dark-grey url(/images/texture.png)
             background-size: auto 100%
-            margin-top: 310px
+            margin-top: 355px
             width: 100vw
             margin-left: calc(-50vw + 50%)
-            margin-bottom: -270px
+            margin-bottom: -320px
             .bottom-background
-                height: 270px
+                height: 320px
                 background: #fff
-                margin-top: -270px
+                margin-top: -320px
             table
                 th:not(:first-child),
                 td:not(:first-child)
@@ -77,7 +77,7 @@ $pricing-table-border: rgba(255, 255, 255, 0.39)
                 margin: auto
                 border: none
                 max-width: 100%
-                transform: translateY(-310px)
+                transform: translateY(-355px)
                 thead
                     background: none
                     color: #fff
@@ -156,6 +156,10 @@ $pricing-table-border: rgba(255, 255, 255, 0.39)
                             height: 100%
                             .price
                                 font-size: 24px
+                            .price-desc
+                                font-size: 12px
+                                height: 30px
+                                margin-top: 10px
                         a.button
                             margin-top: 20px
                             text-align: center
@@ -183,13 +187,13 @@ $pricing-table-border: rgba(255, 255, 255, 0.39)
     #pe-aws
         #peAwsContent
             div#pe-aws-pricing
-                margin-top: 366px
-                margin-bottom: -300px
+                margin-top: 406px
+                margin-bottom: -350px
                 .bottom-background
-                    height: 300px
-                    margin-top: -300px
+                    height: 350px
+                    margin-top: -350px
                 table
-                    transform: translateY(-366px)
+                    transform: translateY(-406px)
                     thead
                         tr:nth-child(1)
                             th
@@ -208,12 +212,14 @@ $pricing-table-border: rgba(255, 255, 255, 0.39)
                     td:not(:first-child)
                         font-size: 18px
                     tr.price
-                        height: 180px
+                        height: 200px
                         td
-                            height: 180px
+                            height: 200px
                             .price-cell
                                 .price
                                     font-size: 42px
+                                .price-desc
+                                    font-size: 12px
                             a.button
                                 font-size: 14px
                                 padding: 0.3rem 0.3rem
@@ -234,6 +240,11 @@ $pricing-table-border: rgba(255, 255, 255, 0.39)
                 margin-left: calc(-50vw + 50% + 20px)
                 table
                     max-width: 80%
+                    tr.price
+                        td
+                            .price-cell
+                                .price-desc
+                                    font-size: 14px
 
 @media screen and (min-width: 1500px)
     #pe-aws
