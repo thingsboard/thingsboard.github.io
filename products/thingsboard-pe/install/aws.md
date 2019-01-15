@@ -20,16 +20,13 @@ description:
                                         <img src="/images/pe/aws_logo.svg">
                                     </div>
                                     <div class="cloud-provider-desc">
-                                        <p>Deploy using AWS marketplace. Ideal for evaluation and PoCs.</p>
+                                        <p>Deploy using AWS marketplace. With up to 10 devices, this pricing model is ideal for makers that are getting started with ThingsBoard PE.</p>
                                         <p>
-                                            <span class="cloud-price">$0.014/hr</span>
-                                            <span class="cloud-price-desc"> for software + AWS usage fees</span>
+                                            <span class="cloud-price-aws">$0.014/hr or $100/year (18% savings)</span>
+                                            <span class="cloud-price-aws-desc"> for software + AWS usage fees</span>
                                             <br/>                                            
-                                            <span class="cloud-price-onwards">$10/month</span>
-                                            <span class="cloud-price-onwards-desc"> calculated based on ~720 usage hours</span>
-                                            <br/>
-                                            <span class="cloud-price-onwards">$100/year</span>
-                                            <span class="cloud-price-onwards-desc"> save up to 18% with yearly subscription </span>
+                                            (<span class="cloud-price-onwards">$10/month</span>
+                                            <span class="cloud-price-onwards-desc"> calculated based on ~720 usage hours</span>)
                                         </p>
                                     </div>
                                 </div>                                                            
@@ -91,17 +88,15 @@ description:
                                         <img src="/images/pe/aws_logo.svg">
                                     </div>
                                     <div class="cloud-provider-desc">
-                                        <p>Deploy using AWS marketplace. Ideal for evaluation and PoCs.</p>
+                                        <p>Deploy using AWS marketplace. With up to 100 devices and white-labeling feature enabled, 
+                                        this pricing model is ideal for PoCs and to be used as an ultimate selling tool for your solution.</p>
                                         <p>
-                                            <span class="cloud-price">$0.138/hr</span>
-                                            <span class="cloud-price-desc"> for software + AWS usage fees</span>
+                                            <span class="cloud-price-aws">$0.138/hr or $1000/year (17% savings)</span>
+                                            <span class="cloud-price-aws-desc"> for software + AWS usage fees</span>
                                             <br/>                                            
-                                            <span class="cloud-price-onwards">$99/month</span>
-                                            <span class="cloud-price-onwards-desc"> calculated based on ~720 usage hours</span>
-                                            <br/>
-                                            <span class="cloud-price-onwards">$1000/year</span>
-                                            <span class="cloud-price-onwards-desc"> save up to 18% with yearly subscription </span>
-                                        </p>
+                                            (<span class="cloud-price-onwards">$99/month</span>
+                                            <span class="cloud-price-onwards-desc"> calculated based on ~720 usage hours</span>)
+                                        </p>                                        
                                     </div>
                                 </div>                                                            
                             </div>
@@ -162,17 +157,15 @@ description:
                                         <img src="/images/pe/aws_logo.svg">
                                     </div>
                                     <div class="cloud-provider-desc">
-                                        <p>Deploy using AWS marketplace. Ideal for evaluation and PoCs.</p>
+                                        <p>Deploy using AWS marketplace. With up to 500 devices and white-labeling feature enabled, 
+                                        this pricing model is ideal for startups and field trials.</p>
                                         <p>
-                                            <span class="cloud-price">$0.277/hr</span>
-                                            <span class="cloud-price-desc"> for software + AWS usage fees</span>
+                                            <span class="cloud-price-aws">$0.277/hr or $2000/year (18% savings)</span>
+                                            <span class="cloud-price-aws-desc"> for software + AWS usage fees</span>
                                             <br/>                                            
-                                            <span class="cloud-price-onwards">$199/month</span>
-                                            <span class="cloud-price-onwards-desc"> calculated based on ~720 usage hours</span>
-                                            <br/>
-                                            <span class="cloud-price-onwards">$2000/year</span>
-                                            <span class="cloud-price-onwards-desc"> save up to 18% with yearly subscription </span>
-                                        </p>
+                                            (<span class="cloud-price-onwards">$199/month</span>
+                                            <span class="cloud-price-onwards-desc"> calculated based on ~720 usage hours</span>)
+                                        </p>                                                                                
                                     </div>
                                 </div>                                                            
                             </div>
@@ -233,17 +226,15 @@ description:
                                         <img src="/images/pe/aws_logo.svg">
                                     </div>
                                     <div class="cloud-provider-desc">
-                                        <p>Deploy using AWS marketplace. Ideal for evaluation and PoCs.</p>
+                                        <p>Deploy using AWS marketplace. With up to 1000 devices and white-labeling feature enabled, 
+                                        this pricing model is ideal for small businesses and solutions.</p>
                                         <p>
-                                            <span class="cloud-price">$0.416/hr</span>
-                                            <span class="cloud-price-desc"> for software + AWS usage fees</span>
+                                            <span class="cloud-price-aws">$0.416/hr or $3000/year (18% savings)</span>
+                                            <span class="cloud-price-aws-desc"> for software + AWS usage fees</span>
                                             <br/>                                            
-                                            <span class="cloud-price-onwards">$299/month</span>
-                                            <span class="cloud-price-onwards-desc"> calculated based on ~720 usage hours</span>
-                                            <br/>
-                                            <span class="cloud-price-onwards">$3000/year</span>
-                                            <span class="cloud-price-onwards-desc"> save up to 18% with yearly subscription </span>
-                                        </p>
+                                            (<span class="cloud-price-onwards">$299/month</span>
+                                            <span class="cloud-price-onwards-desc"> calculated based on ~720 usage hours</span>)
+                                        </p>                                                                                
                                     </div>
                                 </div>                                                            
                             </div>
@@ -304,17 +295,14 @@ description:
                                         <img src="/images/pe/aws_logo.svg">
                                     </div>
                                     <div class="cloud-provider-desc">
-                                        <p>Deploy using AWS marketplace. Ideal for evaluation and PoCs.</p>
+                                        <p>Deploy using AWS marketplace. This pricing model is ideal for businesses with large number of devices. No limits per device, message, data points or commands triggered.</p>
                                         <p>
-                                            <span class="cloud-price">$0.694/hr</span>
-                                            <span class="cloud-price-desc"> for software + AWS usage fees</span>
+                                            <span class="cloud-price-aws">$0.694/hr or $5000/year (18% savings)</span>
+                                            <span class="cloud-price-aws-desc"> for software + AWS usage fees</span>
                                             <br/>                                            
-                                            <span class="cloud-price-onwards">$500/month</span>
-                                            <span class="cloud-price-onwards-desc"> calculated based on ~720 usage hours</span>
-                                            <br/>
-                                            <span class="cloud-price-onwards">$5000/year</span>
-                                            <span class="cloud-price-onwards-desc"> save up to 18% with yearly subscription </span>
-                                        </p>
+                                            (<span class="cloud-price-onwards">$500/month</span>
+                                            <span class="cloud-price-onwards-desc"> calculated based on ~720 usage hours</span>)
+                                        </p>                                                                                
                                     </div>
                                 </div>                                                            
                             </div>
