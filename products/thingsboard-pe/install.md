@@ -8,23 +8,12 @@ hidetoc: "true"
 
 <script type="text/javascript">
     jqueryDefer(function () {
-            var trialMarketplace = $('#trial-marketplace');
-            var peCloudTrial = $('#pe-cloud-trial');
-            var awsTrial = $('#aws-trial-market');
+            var trialMarketplace = $('#trial-marketplace');            
             var azureTrial = $('#azure-trial-market');
             
             var awsTrialForm = $('#mlb2-7972110');            
             var azureTrialForm = $('#mlb2-9674300');
             
-            peCloudTrial.click(function() {
-                window.open('https://cloud.thingsboard.io/signup', '_blank');
-            });
-            
-            awsTrial.click(function() {
-                //trialMarketplace.css('display', 'none');
-                //awsTrialForm.css('display', '');
-                window.location.href = '/products/thingsboard-pe/aws/';                
-            });
             azureTrial.click(function() {
                 trialMarketplace.css('display', 'none');
                 azureTrialForm.css('display', '');
@@ -32,7 +21,6 @@ hidetoc: "true"
             
             var payYearlyOption = $('#pay-yearly-option');
             var payYearlyPremise = $('#pay-yearly-premise');    
-            var awsPayYearly = $('#aws-pay-yearly-market');
             
             var payYearlyPremiseForm = $('#mlb2-7556612');                    
 
@@ -41,22 +29,12 @@ hidetoc: "true"
                 payYearlyPremiseForm.css('display', '');
             });
             
-            awsPayYearly.click(function() {
-                window.location.href = '/products/thingsboard-pe/aws/';
-            });
-            
             var payGoMarketplace = $('#pay-go-marketplace');
-            var awsPayGo = $('#aws-pay-go-market');
             var azurePayGo = $('#azure-pay-go-market');
 
             var awsPayGoForm = $('#mlb2-7520964');            
             var azurePayGoForm = $('#mlb2-9674436');
 
-            awsPayGo.click(function() {
-                //payGoMarketplace.css('display', 'none');
-                //awsPayGoForm.css('display', '');
-                window.location.href = '/products/thingsboard-pe/aws/';
-            });
             azurePayGo.click(function() {
                 payGoMarketplace.css('display', 'none');
                 azurePayGoForm.css('display', '');
@@ -76,8 +54,9 @@ hidetoc: "true"
                     Signup for free month trial on ThingsBoard PE Cloud
                 </p>
                 <div class="marketplace" style="padding-bottom: 10px;">
-                    <div id="pe-cloud-trial" class="pricing-image-wrapper" style="max-width: 50%;">
+                    <div id="pe-cloud-trial" class="pricing-image-wrapper clickable" style="max-width: 50%;">
                         <img src="/images/pe/pe_cloud_signup.svg">
+                        <a target="_blank" href="https://cloud.thingsboard.io/signup"></a>
                     </div>
                 </div>
                 <div style="font-size: 20px;">
@@ -95,8 +74,9 @@ hidetoc: "true"
                 </p>
                 </div>
                 <div class="marketplace">
-                    <div id="aws-trial-market" class="pricing-image-wrapper">
+                    <div id="aws-trial-market" class="pricing-image-wrapper clickable">
                         <img src="/images/pe/aws_logo.svg">
+                        <a href="/products/thingsboard-pe/aws/"></a>
                     </div>
                     <div id="azure-trial-market" class="pricing-image-wrapper">
                         <img src="/images/pe/azure_logo.svg">
@@ -239,8 +219,9 @@ hidetoc: "true"
                     <div id="pay-yearly-premise" class="pricing-image-wrapper">
                         <span>On premises</span>
                     </div>
-                    <div id="aws-pay-yearly-market" class="pricing-image-wrapper">
+                    <div id="aws-pay-yearly-market" class="pricing-image-wrapper clickable">
                         <img src="/images/pe/aws_logo.svg">
+                        <a href="/products/thingsboard-pe/aws/"></a>
                     </div>
                 </div>    
             </div>            
@@ -321,8 +302,9 @@ hidetoc: "true"
                     Please choose your cloud provider
                 </p>
                 <div class="marketplace">
-                    <div id="aws-pay-go-market" class="pricing-image-wrapper">
+                    <div id="aws-pay-go-market" class="pricing-image-wrapper clickable">
                         <img src="/images/pe/aws_logo.svg">
+                        <a href="/products/thingsboard-pe/aws/"></a>
                     </div>
                     <div id="azure-pay-go-market" class="pricing-image-wrapper">
                         <img src="/images/pe/azure_logo.svg">
