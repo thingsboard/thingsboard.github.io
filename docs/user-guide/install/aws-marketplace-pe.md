@@ -17,96 +17,109 @@ With this option you pay for Thingsboard Professional Edition on hourly basis. S
 
 - Active [Amazon AWS](https://aws.amazon.com/){:target="_blank"} account
 
-##### Step 1. Subscribe to ThingsBoard Professional Edition
+##### Step 1. Select ThingsBoard PE Instance Type
 
-- Go to [AWS Marketplace: ThingsBoard Professional Edition with Cassandra](https://aws.amazon.com/marketplace/pp/B07CSTDN9W){:target="_blank"} page
+Select one of the available AWS Marketplace Subscriptions:
+- [AWS Marketplace: ThingsBoard PE Maker](https://aws.amazon.com/marketplace/pp/B07MLRVF3Q){:target="_blank"}
+- [AWS Marketplace: ThingsBoard PE Prototype](https://aws.amazon.com/marketplace/pp/B07MLS5VMB){:target="_blank"}
+- [AWS Marketplace: ThingsBoard PE Startup](https://aws.amazon.com/marketplace/pp/B07MQ1G36K){:target="_blank"}
+- [AWS Marketplace: ThingsBoard PE Business](https://aws.amazon.com/marketplace/pp/B07MLRWV22){:target="_blank"}
+- [AWS Marketplace: ThingsBoard PE Enterprise](https://aws.amazon.com/marketplace/pp/B07MBYZSFQ){:target="_blank"}
+
+##### Step 2. Subscribe to Selected Instance Type
+
 - Press **Continue to Subscribe** button
 
-![image](/images/user-guide/install/aws-marketplace-pe/subscribe.png)
+![image](/images/user-guide/install/aws-marketplace-pe/tb-pe-mk-subscribe.png)
 
-##### Step 2. Configure instance and Launch
+##### Step 3. Accept Terms and Conditions
 
-In **1-Click Launch** tab select required properties:
+- Review and Accept all Terms and Conditions
 
-- **Version** - Thingsboard PE version
-- **Region** - AWS Region where instance will be started
-- **EC2 Instance Type** - Instance type where Thingsboard PE will be started. We recommend to use **m5.xlarge** instance type
-- **Optional: Key Pairs** - if you do not have any generated key pairs. Please create them using this instruction [Optional: Create a new key pair for AWS EC2 region](#optional-create-a-new-key-pair-for-aws-ec2-region)
+![image](/images/user-guide/install/aws-marketplace-pe/tb-pe-mk-accept.png)
 
-![image](/images/user-guide/install/aws-marketplace-pe/configure-instance.png)
+##### Step 4. Continue to Configuration
 
-After configuration is finished press **Launch with 1-click**. New EC2 instance will be created and started with installed Thingsboard Professional Edition and Cassandra as data storage.
-You can go to your AWS EC2 console to view Instance details by clicking on the link highlighted on the image below:
+Once Step 3 is completed you are able to save money by purchasing annual subscription and/or continue to configuration.
 
-![image](/images/user-guide/install/aws-marketplace-pe/launch finished.png)
+![image](/images/user-guide/install/aws-marketplace-pe/tb-pe-mk-configuration.png)
 
-##### Step 3. Check instance status
+##### Step 5. Choose your Region
+
+Select your region and continue to launch
+
+![image](/images/user-guide/install/aws-marketplace-pe/tb-pe-mk-launch.png)
+
+##### Step 6. Read Usage Instructions
+
+Make sure you review the usage instructions
+
+![image](/images/user-guide/install/aws-marketplace-pe/tb-pe-mk-usage.png)
+
+##### Step 7. Choose your EC2 Instance Type
+
+You can optionally change your EC2 Instance Type, VPC and Subnet. 
+
+![image](/images/user-guide/install/aws-marketplace-pe/tb-pe-mk-launch-vpc.png)
+
+##### Step 8. Configure Security Group Settings
+
+Make sure you create new Security Group based on seller settings. You can optionally select different or create new KeyPair for your instance. 
+
+![image](/images/user-guide/install/aws-marketplace-pe/tb-pe-mk-launch-security.png)
+
+Populate necessary Security Group name and details and save new group
+
+![image](/images/user-guide/install/aws-marketplace-pe/tb-pe-mk-new-security-group.png)
+
+Finally, click "Launch".
+
+![image](/images/user-guide/install/aws-marketplace-pe/tb-pe-mk-launch-launch.png)
+
+##### Step 9. Configure Security Group Settings
+
+Once Launch is complete, you can navigate to EC2 console to find out the Public IP address of the newly created instance.
+
+![image](/images/user-guide/install/aws-marketplace-pe/tb-pe-mk-launch-complete.png)
+
+##### Step 10. Obtain your Public IP and EC2 Instance ID
 
 In AWS EC2 console you need to wait while instance state will be changes to **running** and all Status checks will be finished.
 
-![image](/images/user-guide/install/aws-marketplace-pe/console state.png)
+![image](/images/user-guide/install/aws-marketplace-pe/tb-pe-mk-ec2-console.png)
 
 On the image above example instance has this Public DNS name 
 
-- **ec2-54-221-163-132.compute-1.amazonaws.com**
+- **ec2-54-82-252-113.compute-1.amazonaws.com**
 
 Instance ID 
 
-- **i-0fd0e896b7e6cf637**
+- **i-03d850e6a818328e4**
 
-##### Step 4. Connect to Thingsboard UI
+##### Step 11. Connect to Thingsboard UI
 
 Now you can open this link in your browser:
 
 - http://PUBLIC_DNS_NAME/login
 
-In this example it is:
+In this example:
 
-- http://ec2-54-221-163-132.compute-1.amazonaws.com/login
+- http://ec2-54-82-252-113.compute-1.amazonaws.com/login
 
 Use this login to connect as system Administrator 
 
 - **sysadmin@thingsboard.org**
 
-Default password for System Administrator is Instance ID (from Step 3). In this example it is 
+Default password for System Administrator is Instance ID (from Step 10). In this example: 
 
--  **i-0fd0e896b7e6cf637**
+-  **i-03d850e6a818328e4**
 
-Now you can proceed with Thingsboard Configuration.
+Now you can proceed to the next steps.
 
-##### Optional: Connect to Thingsboard over SSH
+## Frequently Asked Questions
 
-You can use configured key pairs for accessing Thingsboard instance over SSH. 
-Below is example command as a reference:
+See [**FAQ**](/products/thingsboard-pe/aws/#frequently-asked-questions) for information.
 
-{% highlight java %}
-ssh -i awstbkey.pem ubuntu@ec2-54-221-163-132.compute-1.amazonaws.com
-{% endhighlight %}
+## Next steps
 
-Thingsboard configuration file location:
-
-- /etc/thingsboard/conf/thingsboard.yml
-
-Thingsboard logs location:
-
-- /var/log/thingsboard/thingsboard.log
- 
-##### Optional: Create a new key pair for AWS EC2 region
-
-If it is your first experience with AWS, you will need to generate SSH key pairs before starting any EC2 instances.
-Those keys are used for secured access via SSH to the instance.
-
-Here are steps for creating your first key pair
-
-- Open EC2 Console by clicking on the link highlighted on the image below
-
-![image](/images/user-guide/install/aws-marketplace-pe/key generation start.png)
-
-
-- Press **Create Key Pair** and enter any name for the key. For example _**awstbkey**_
-
-![image](/images/user-guide/install/aws-marketplace-pe/key create name.png)
-
-Finally your private SSH key will be downloaded. Please save it in safe place in order to get access to your instance over SSH.
-
-
+{% assign currentGuide = "InstallationGuides" %}{% include templates/guides-banner.md %}

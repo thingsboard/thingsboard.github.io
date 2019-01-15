@@ -311,11 +311,13 @@ redirect_from: "/partners/"
 			<div style="flex: 1;"></div>
 			<div class="content-block">
 			    <div class="marketplace">
-                    <div class="pricing-image-wrapper">
+                    <div class="pricing-image-wrapper clickable">
                         <img src="/images/pe/aws_logo.svg">
+                        <a href="/products/thingsboard-pe/aws/"></a>
                     </div>
-                    <div class="pricing-image-wrapper">
+                    <div class="pricing-image-wrapper clickable">
                         <img src="/images/pe/azure_logo.svg">
+                        <a href="/products/thingsboard-pe/install/?deploy=cloud&type=azure"></a>
                     </div>
 			    </div>
 			</div>

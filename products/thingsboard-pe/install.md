@@ -21,12 +21,28 @@ hidetoc: "true"
             });
             
             awsTrial.click(function() {
-                trialMarketplace.css('display', 'none');
-                awsTrialForm.css('display', '');
+                //trialMarketplace.css('display', 'none');
+                //awsTrialForm.css('display', '');
+                window.location.href = '/products/thingsboard-pe/aws/';                
             });
             azureTrial.click(function() {
                 trialMarketplace.css('display', 'none');
                 azureTrialForm.css('display', '');
+            });
+            
+            var payYearlyOption = $('#pay-yearly-option');
+            var payYearlyPremise = $('#pay-yearly-premise');    
+            var awsPayYearly = $('#aws-pay-yearly-market');
+            
+            var payYearlyPremiseForm = $('#mlb2-7556612');                    
+
+            payYearlyPremise.click(function() {
+                payYearlyOption.css('display', 'none');
+                payYearlyPremiseForm.css('display', '');
+            });
+            
+            awsPayYearly.click(function() {
+                window.location.href = '/products/thingsboard-pe/aws/';
             });
             
             var payGoMarketplace = $('#pay-go-marketplace');
@@ -37,8 +53,9 @@ hidetoc: "true"
             var azurePayGoForm = $('#mlb2-9674436');
 
             awsPayGo.click(function() {
-                payGoMarketplace.css('display', 'none');
-                awsPayGoForm.css('display', '');
+                //payGoMarketplace.css('display', 'none');
+                //awsPayGoForm.css('display', '');
+                window.location.href = '/products/thingsboard-pe/aws/';
             });
             azurePayGo.click(function() {
                 payGoMarketplace.css('display', 'none');
@@ -63,9 +80,20 @@ hidetoc: "true"
                         <img src="/images/pe/pe_cloud_signup.svg">
                     </div>
                 </div>
-                <p style="padding-top: 20px;">
-                    Or choose your cloud provider for dedicated server
+                <div style="font-size: 20px;">
+                <p style="padding-top: 20px; font-size: 20px;">
+                    ThingsBoard PE Cloud is a shared enviroment with multiple limitations, such as:
                 </p>
+                <ul style="margin: 10px 10px 10px 60px;">
+                    <li>amount of active device connections</li>
+                    <li>amount of REST API calls per user</li>
+                    <li>amount of websocket subscriptions per user</li>
+                    <li>disabled white-labeling feature</li>
+                </ul>
+                <p style="padding-top: 0px; font-size: 20px;">       
+                    To get the maximum of ThingsBoard PE, we recommend to install your dedicated server using one of the available options below.
+                </p>
+                </div>
                 <div class="marketplace">
                     <div id="aws-trial-market" class="pricing-image-wrapper">
                         <img src="/images/pe/aws_logo.svg">
@@ -203,7 +231,20 @@ hidetoc: "true"
         <input name="tabs" type="radio" id="tab-on-premise" class="tab-input"/>
         <label for="tab-on-premise" class="tab-label label-premise">Pay yearly</label>
         <div class="tab-panel">
-            <div id="mlb2-7556612" class="deploy-form deploy-premise ml-subscribe-form ml-subscribe-form-7556612">
+            <div id="pay-yearly-option" class="choose-marketplace"> 
+                <p>
+                    Please choose your deployment option
+                </p>
+                <div class="marketplace">
+                    <div id="pay-yearly-premise" class="pricing-image-wrapper">
+                        <span>On premises</span>
+                    </div>
+                    <div id="aws-pay-yearly-market" class="pricing-image-wrapper">
+                        <img src="/images/pe/aws_logo.svg">
+                    </div>
+                </div>    
+            </div>            
+            <div id="mlb2-7556612" style="display:none" class="deploy-form deploy-premise ml-subscribe-form ml-subscribe-form-7556612">
                 <div class="ml-vertical-align-center">
                     <div class="subscribe-form ml-block-success" style="display:none">
                         <div class="form-section center">
@@ -552,6 +593,7 @@ hidetoc: "true"
                     return results ? results[1] : null;
                  };                 
                  var deployType = $.urlParam('deploy');
+                 var type = $.urlParam('type');
                  if (!deployType || "premise" == deployType) {
                     $('#tab-on-premise').attr("checked", "checked");
                     var offset = !deployType ? 200 : 100;
@@ -563,6 +605,12 @@ hidetoc: "true"
                     $('html, body').animate({
                         scrollTop: $('#tab-cloud').offset().top - 100
                       }, 0);
+                    if (type === 'azure') {
+                        var payGoMarketplace = $('#pay-go-marketplace');
+                        var azurePayGoForm = $('#mlb2-9674436');
+                        payGoMarketplace.css('display', 'none');
+                        azurePayGoForm.css('display', '');
+                    }  
                  } else if ("trial" == deployType) {
                     $('#tab-trial').attr("checked", "checked"); 
                     $('html, body').animate({
