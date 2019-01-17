@@ -76,7 +76,7 @@ Finally, click "Launch".
 
 ![image](/images/user-guide/install/aws-marketplace-pe/tb-pe-mk-launch-launch.png)
 
-##### Step 9. Configure Security Group Settings
+##### Step 9. Open EC2 console
 
 Once Launch is complete, you can navigate to EC2 console to find out the Public IP address of the newly created instance.
 
