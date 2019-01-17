@@ -14,8 +14,9 @@
 							"topicFilter": "sensors",
 							"converter": {
 								"type": "json",
-								"filterExpression": "",
+								"filterExpression": "$",
 								"deviceNameJsonExpression": "${$.serialNumber}",
+								"deviceTypeJsonExpression": "${$.model}",
 								"attributes": [{
 										"type": "string",
 										"key": "model",
@@ -33,7 +34,7 @@
 							"topicFilter": "sensor/+/temperature",
 							"converter": {
 								"type": "json",
-								"filterExpression": "",
+								"filterExpression": "$",
 								"deviceNameTopicExpression": "(?<=sensor/)(.*?)(?=/temperature)",
 								"timeout": 60000,
 								"timeseries": [{
