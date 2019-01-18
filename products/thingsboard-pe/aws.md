@@ -31,7 +31,7 @@ description:
                     <div class="price-cell">
                         <div class="price">$10</div>
                         <div>/month</div>
-                        <div class="price-desc">for software + AWS usage fees</div>
+                        <div class="price-desc">for software + <a href="javascript:void(0);" onClick="openAwsFaqNode('what-is-the-total-cost-of-ownership-tco-for-my-tb-pe-instance')">AWS usage fees</a></div>
                         <p><a href="/products/thingsboard-pe/install/aws/?instance=maker" class="button">Try it now</a></p>
                     </div>
                 </td>
@@ -39,7 +39,7 @@ description:
                     <div class="price-cell">
                         <div class="price">$99</div>
                         <div>/month</div>
-                        <div class="price-desc">for software + AWS usage fees</div>
+                        <div class="price-desc">for software + <a href="javascript:void(0);" onClick="openAwsFaqNode('what-is-the-total-cost-of-ownership-tco-for-my-tb-pe-instance')">AWS usage fees</a></div>
                         <p><a href="/products/thingsboard-pe/install/aws/?instance=prototype" class="button">Try it now</a></p>
                     </div>
                 </td>
@@ -47,7 +47,7 @@ description:
                     <div class="price-cell">
                         <div class="price">$199</div>
                         <div>/month</div>
-                        <div class="price-desc">for software + AWS usage fees</div>
+                        <div class="price-desc">for software + <a href="javascript:void(0);" onClick="openAwsFaqNode('what-is-the-total-cost-of-ownership-tco-for-my-tb-pe-instance')">AWS usage fees</a></div>
                         <p><a href="/products/thingsboard-pe/install/aws/?instance=startup" class="button">Try it now</a></p>
                     </div>
                 </td>
@@ -55,7 +55,7 @@ description:
                     <div class="price-cell">
                         <div class="price">$299</div>
                         <div>/month</div>
-                        <div class="price-desc">for software + AWS usage fees</div>
+                        <div class="price-desc">for software + <a href="javascript:void(0);" onClick="openAwsFaqNode('what-is-the-total-cost-of-ownership-tco-for-my-tb-pe-instance')">AWS usage fees</a></div>
                         <p><a href="/products/thingsboard-pe/install/aws/?instance=business" class="button">Try it now</a></p>           
                     </div>
                 </td>
@@ -63,7 +63,7 @@ description:
                     <div class="price-cell">
                         <div class="price">$500</div>
                         <div>/month</div>
-                        <div class="price-desc">for software + AWS usage fees</div>
+                        <div class="price-desc">for software + <a href="javascript:void(0);" onClick="openAwsFaqNode('what-is-the-total-cost-of-ownership-tco-for-my-tb-pe-instance')">AWS usage fees</a></div>
                         <p><a href="/products/thingsboard-pe/install/aws/?instance=enterprise" class="button">Try it now</a></p>
                     </div>
                 </td>
@@ -152,7 +152,7 @@ description:
 
 <div class="pi-accordion">
     <h3 id="trial--billing">Trial &amp; Billing</h3>    
-    <div class="item" data-tag="h4" data-id="what-does-free-trial-mean" data-title="How can I enable free trial?">
+    <div class="item" data-tag="h4" data-item-id="what-does-free-trial-mean" data-title="How can I enable free trial?">
         <div class="container">
             <p>
                 We recommend to use ThingsBoard Professional Edition Live Demo for the seamless experience and the newest features from the latest source code! 
@@ -160,7 +160,7 @@ description:
             </p>    
         </div>    
     </div>
-    <div class="item" data-tag="h4" data-id="what-does-hourly-charges-mean" data-title="What does &quot;hourly charges&quot; mean?">
+    <div class="item" data-tag="h4" data-item-id="what-does-hourly-charges-mean" data-title="What does &quot;hourly charges&quot; mean?">
         <div class="container">
             <p>
                 AWS is going to charge you for each hour the server is running. Most of the servers are running 24/7, because they need to be able to constantly serve requests from devices or users. 
@@ -168,7 +168,7 @@ description:
             </p>    
         </div>    
     </div>
-    <div class="item" data-tag="h4" data-id="what-is-the-total-cost-of-ownership-tco-for-my-tb-pe-instance" data-title="What is the Total Cost of Ownership (TCO) for my TB PE instance? ">
+    <div class="item" data-tag="h4" data-item-id="what-is-the-total-cost-of-ownership-tco-for-my-tb-pe-instance" data-title="What is the Total Cost of Ownership (TCO) for my TB PE instance? ">
         <div class="container">
             <p>The typical total cost of ownership consists of:</p>
             <ul>
@@ -191,7 +191,7 @@ description:
             <p>All prices are in USD.</p>
         </div>    
     </div>
-    <div class="item" data-tag="h4" data-id="what-saving-options-are-available" data-title="What saving options are available?">
+    <div class="item" data-tag="h4" data-item-id="what-saving-options-are-available" data-title="What saving options are available?">
         <div class="container">
             <p>
                 Save up to 18% on a yearly TB PE AWS marketplace license or deploy TB PE on premises for additional savings. Additional AWS EC2 infrastructure savings are available for reserved EC2 instances. See <a href="https://aws.amazon.com/marketplace/help/buyer-annual-subscription">AWS FAQ</a> for more details.
@@ -199,28 +199,28 @@ description:
         </div>    
     </div>
     <h3 id="installation--configuration">Installation &amp; Configuration</h3>
-    <div class="item" data-tag="h4" data-id="how-do-i-install-tb-pe-on-aws" data-title="How to install TB PE on AWS Marketplace?">
+    <div class="item" data-tag="h4" data-item-id="how-do-i-install-tb-pe-on-aws" data-title="How to install TB PE on AWS Marketplace?">
         <div class="container">
             <p>
                 See <a href="/docs/user-guide/install/aws-marketplace-pe/">official documentation page</a> for more details.
             </p>    
         </div>    
     </div>
-    <div class="item" data-tag="h4" data-id="how-do-i-ssh-tb-pe-on-aws" data-title="How to connect to my new TB PE instance using SSH?">
+    <div class="item" data-tag="h4" data-item-id="how-do-i-ssh-tb-pe-on-aws" data-title="How to connect to my new TB PE instance using SSH?">
         <div class="container">
             <p>
                 See <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html">official documentation page</a> for more details.
             </p>    
         </div>    
     </div>
-    <div class="item" data-tag="h4" data-id="how-do-i-putty-tb-pe-on-aws" data-title="How to connect to my new TB PE instance using PuTTY?">
+    <div class="item" data-tag="h4" data-item-id="how-do-i-putty-tb-pe-on-aws" data-title="How to connect to my new TB PE instance using PuTTY?">
         <div class="container">
             <p>
                 See <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html">official documentation page</a> for more details.
             </p>    
         </div>    
     </div>            
-    <div class="item" data-tag="h4" data-id="how-do-i-https-tb-pe-on-aws" data-title="How to enable HTTPS?">
+    <div class="item" data-tag="h4" data-item-id="how-do-i-https-tb-pe-on-aws" data-title="How to enable HTTPS?">
         <div class="container">
             <p>
                 Step 1. Find out your new instance <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">external IP</a> address 
@@ -235,7 +235,7 @@ description:
             </p>    
         </div>    
     </div>
-    <div class="item" data-tag="h4" data-id="how-do-i-configure-tb-pe-on-aws" data-title="How do I configure my TB PE instance?">
+    <div class="item" data-tag="h4" data-item-id="how-do-i-configure-tb-pe-on-aws" data-title="How do I configure my TB PE instance?">
         <div class="container">
             <p>
                 See <a href="/docs/user-guide/install/config/">official documentation page</a> for more details.
@@ -243,7 +243,7 @@ description:
         </div>    
     </div>    
     <h3 id="upgrades--data migration">Upgrades & Data Migration</h3>
-    <div class="item" data-tag="h4" data-id="how-do-i-upgrade-tb" data-title="How do I get software updates for my TB PE instance?">
+    <div class="item" data-tag="h4" data-item-id="how-do-i-upgrade-tb" data-title="How do I get software updates for my TB PE instance?">
         <div class="container">
             <p>
                 You will receive an email notification about new software versions once it becomes available. This email notification will contain a link to  
@@ -251,7 +251,7 @@ description:
             </p>    
         </div>    
     </div>
-    <div class="item" data-tag="h4" data-id="how-do-i-backup-db" data-title="How do I backup my database?">
+    <div class="item" data-tag="h4" data-item-id="how-do-i-backup-db" data-title="How do I backup my database?">
         <div class="container">
             <p>
                 Depending on your instance type and configuration, ThingsBoard may store data in SQL or NoSQL databases. 
@@ -263,7 +263,7 @@ description:
             </p>    
         </div>    
     </div>
-    <div class="item" data-tag="h4" data-id="how-do-i-upgrade-instance-type" data-title="How do I upgrade my instance type?">
+    <div class="item" data-tag="h4" data-item-id="how-do-i-upgrade-instance-type" data-title="How do I upgrade my instance type?">
         <div class="container">
             <p>
                 Let's assume your number of devices is constantly growing and you decide to upgrade to new instance type. 
@@ -280,7 +280,7 @@ description:
         </div>    
     </div>                    
     <h3 id="troubleshooting--support">Troubleshooting &amp; Support</h3>
-    <div class="item" data-tag="h4" data-id="how-do-i-find-logs-tb" data-title="Where is my ThingsBoard instance logs?">
+    <div class="item" data-tag="h4" data-item-id="how-do-i-find-logs-tb" data-title="Where is my ThingsBoard instance logs?">
         <div class="container">
             <p>
                 ThingsBoard logs are stored in the <i>/var/log/thingsboard</i> folder. 
@@ -288,7 +288,7 @@ description:
             </p>    
         </div>    
     </div>
-    <div class="item" data-tag="h4" data-id="how-do-i-get-free-help-tb" data-title="How do I get help from community?">
+    <div class="item" data-tag="h4" data-item-id="how-do-i-get-free-help-tb" data-title="How do I get help from community?">
         <div class="container">
             <p>
                 Available community resources are listed below:<br/>
@@ -298,7 +298,7 @@ description:
             </p>    
         </div>    
     </div>
-    <div class="item" data-tag="h4" data-id="how-do-i-get-free-help-tb" data-title="How do I get professional support?">
+    <div class="item" data-tag="h4" data-item-id="how-do-i-get-free-help-tb" data-title="How do I get professional support?">
         <div class="container">
             <p>
                 Please review ThingsBoard professional <a href="/docs/services/support/">support plans</a> and <a href="/docs/contact-us/">contact us</a>. 
