@@ -210,7 +210,7 @@ The following screenshot shows how the final **Root Rule Chain** should look lik
 # How to verify the Rule Chain and Post telemetry
 
 For posting device telemetry we will use the Rest APIs, [Telemetry upload APIs](/docs/reference/http-api/#telemetry-upload-api). For this we will need to
-copy device access token from then device **Thermometer**. 
+copy device access token from the device **Thermometer**. 
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/delta-validation/access-token.png)
 
