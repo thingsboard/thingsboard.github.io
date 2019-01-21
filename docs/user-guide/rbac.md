@@ -101,7 +101,7 @@ The root level Owner is Tenant. Each Owner may have multiple Entity Groups (EGs)
 Since CGs may contain multiple Customers, each Customer may also own his EGs, UGs and CGs (i.e sub-customer groups). 
 See diagram below for visual representation of relations between those entities. 
  
-TODO: paste diagram from https://docs.google.com/document/d/1soB_1tBFtWNieCuShO6c5N1CJmy6jtxcCku82WspHfY/edit#heading=h.dsgfhlasq7wk
+![image](/images/user-guide/security/customer-hierarchy-diagram.svg)
 
 ## Generic roles
 
@@ -115,19 +115,76 @@ User Bob will be able to perform any operations over any entity that belongs to 
 However, User Alice will be able to perform any operations over any entity that belongs to only her Customer B and all it's sub-customers.
 So, Alice and Bob are able to access Device B1, but only Bob is able to access Device A1.        
 
-![image](/images/user-guide/security/generic-role-diagram.png)
+![image](/images/user-guide/security/generic-role-diagram.svg)
 
 ## Group roles
 
 Group Role allows you to map set of Permissions for specific User Group to specific Entity Group.
-We use special "connection" object called Group Permission Entity to make a connection between User Group, Entity Group and Group Role.
+We use special "connection" object called Group Permission Entity to make a connection between User Group, Entity Group and Group Role.  
 
-**Note:** Since Entity Group has exactly one Owner, you can assign Group Role to any User Group that belongs to the same Owner or any parents of the Owner.  
+Let’s review the diagram below.
+
+User Bob belongs to "Tenant Administrators" group and is able to do any operations with any tenant entities. 
+Basically Bob has full control over both Device Groups A and B. 
+User Alice belongs to "Group A Administrators" and has read/write access to all devices in device group A. 
+However, Alice will not be able to see or use devices from group B.
 
 ![image](/images/user-guide/security/group-role-diagram.svg)      
 
+**Note:** Since Entity Group has exactly one Owner, you can assign Group Role to any User Group that belongs to the same Owner or any parents of the Owner.
 
-## Examples and How-Tos 
+## Examples and How-Tos
+
+See list of configuration examples and videos below for the most popular use cases.
+
+### Smart Buildings: Separate User Groups per Facility
+
+Let's assume your solution manages commercial buildings. 
+Your main customer is a Building Manager that wants to monitor HVAC systems, electricity consumption and other smart devices in the building.  
+Building Manager may want to design and share some dashboards with the end users - office workers.
+Besides, your engineers responsible for the maintenance are interested in supervising the devices state, for example, receiving alerts when the battery level for goes below certain thresholds.
+
+As a Tenant Administrator, we will configure ThingsBoard to support this use case.
+
+
+**Supervisor users**
+
+We will create a separate User Group named "Supervisor Users" and a separate Dashboard Group "Supervisor Dashboards". We will also create two roles listed below:
+
+ * "All Entities Read-only" - generic role that will allow to access all entities data accept device credentials. 
+ * "All operations for Group" - group role that allows all operations for the group.
+ 
+We will assign those roles to the "Supervisor Users" group. See screenshot below:
+
+![image](/images/user-guide/security/smart-buildings-supervisors.png)
+
+ * Supervisor - read-only access to all devices telemetry in all the buildings and ability to create their custom dashboards, but no access to Facility Managers dashboards.
+ * Facility Manager - allows to provision new devices for each facility, setup rules, manage users and configure dashboards.
+ * End User - allows to have read-only access to the state of the facility where this user belongs to.
+ 
+**Facility managers**
+
+We will also create separate Customer entity for each building. We will add a Facility Manager user account to a default "Customer Administrators" group that is automatically created for each Customer.
+As a Facility Manager we can now login, design dashboards and provision devices and end users.  
+  
+![image](/images/user-guide/security/smart-buildings-customers.png)
+ 
+The video tutorial below will demonstrate how to configure this use case using ThingsBoard UI.
+
+
+### IIoT: Production line monitoring
+
+
+### DaaS: Device as a Service
+
+
+### Misc: Allow end users to configure their dashboards
+
+
+
+### Misc: Create read-only user for education and demonstration purposes
+
+
     
 ## Next steps
 
