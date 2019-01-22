@@ -7,38 +7,35 @@ description: SODAQ Universal Tracker telemetry upload
 
 {% assign feature = "Platform Integrations" %}{% include templates/pe-feature-banner.md %}
 
-This tutorial will explain the steps required to connect your SODAQ Tracker to ThingsBoard.
+This guide contains step-by-step instruction how to to connect your SODAQ NB-IoT boards to ThingsBoard Professional Edition (PE) through the T-Mobile NB IoT network. 
+We will use free ThingsBoard PE demo server [cloud.thingsboard.io](https://cloud.thingsboard.io/signup) in this guide. 
+This guide will be useful for anyone who wants to connect their SODAQ NB-IoT boards or other hardware to T-Mobile NB IoT network.   
 
 * TOC
 {:toc}
 
-## Use case
-
 ## Prerequisites 
 
-We assume you have completed the following guides and reviewed the articles listed below:
+We assume you have at least one of SODAQ NB-IoT Trackers in your lab that is already connected to your T-Mobile IoT network. 
+We also assume you already have a ThingsBoard PE server or free demo account. 
+Otherwise you can register for a 30-days free demo account here: [cloud.thingsboard.io](https://cloud.thingsboard.io/signup).
 
-  * [Getting Started](/docs/getting-started-guides/helloworld/)
-  * [Data Converters](/docs/user-guide/integrations/index/#data-converters)
-  * [Rule Engine Overview](/docs/user-guide/rule-engine-2-0/overview/)
-  * [Create & Clear alarms](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/)
-  * [Working with Alarm details](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms-with-details/)
+We expect you to have a very basic knowledge about ThingsBoard, so we do recommend to complete the [Getting Started](/docs/getting-started-guides/helloworld/) guide.
+ 
+## Integration overview
 
-## Model definition
-  
-We will operate with SODAQ Universal Tracker which will be automatically created via Integration T-Mobile – IoT CDP.
+ThingsBoard Platform Integrations feature allows to push data from various platforms and connectivity solutions to ThingsBoard. 
+We will use "T-Mobile IoT CDP" platform integration to consume data from T-Mobile NB IoT Network and automatically register devices in ThingsBoard.
+Besides configuring the integration, we will also setup ThingsBoard to decode incoming data, store it in the database, visualize on the dashboard and generate alarms based on configurable thresholds.
 
-![image](/images/user-guide/integrations/sodaq/model-definition.png)
+![image](/images/user-guide/integrations/sodaq/demo-dashboard.gif)
 
-## Getting started
+## Step 1. Data Converter configuration
 
-In order to create Integration, we should create the Uplink Converter first. Please, refer to the next section to download the attached file for the uplink converter and import it.
+In order to create an [Integration](/docs/user-guide/integrations), we should create the [Uplink Data Converter](/docs/user-guide/integrations/#uplink-data-converter) first. 
+The converter will decode incoming telemetry payload data from T-Mobile NB IoT that contains in encoded hex string to human readable, simplified ThingsBoard data format.
 
-### Creating converter
-
-The converter, that will be described in this article, will decode specific telemetry payload data that contains in encoded hex string.
-
- - Input data should look like this:
+ - Input data from T-Mobile NB IoT Platform looks like this:
 
 {% highlight bash %}
 {
@@ -52,7 +49,7 @@ The converter, that will be described in this article, will decode specific tele
 }
 {% endhighlight %}
 
- - After decoding output data should look like this:
+ - After decoding output data will look like this:
 
 {% highlight bash %}
 {
@@ -74,6 +71,12 @@ The converter, that will be described in this article, will decode specific tele
 }
 {% endhighlight %}
 
+Few things to notice:
+
+ * The IMEI from the incoming message will become the Device Name in ThingsBoard;
+ * ThingsBoard will automatically create device with type "tracker" and name equal to IMEI;
+ * Timestamp and sensor readings are decoded from incoming hex string.
+ 
 - The following table shows the first byte position and the number of bytes for each encoded field that includes in the incoming hex string:
 
 <table style="width: 22%">
@@ -133,21 +136,17 @@ The converter, that will be described in this article, will decode specific tele
 
 - Go to **Data Converters** -> **Add new Data Converter** -> **Import Converter** 
 
-- Import following json file: [**SODAQ Uplink data converter**](/docs/user-guide/resources/sodaq-uplink-data-converter.json)  as described on the following screenshot: 
+- Import following json file: [**SODAQ Uplink data converter**](/docs/user-guide/resources/sodaq-uplink-data-converter.json) (left click on the link and then 'Ctrl+S' to download) 
+as described on the following screencast: 
 
-![image](/images/user-guide/integrations/sodaq/import-converter.png)
+![image](/images/user-guide/integrations/sodaq/import-and-test-converter.gif)
 
- - Converter should look like this:
 
-![image](/images/user-guide/integrations/sodaq/converter-view.png)
+## Step 2. Integration configuration
 
-Once, the converter would be created, we could start Integration creation that described in the section below.
+- Create new integration and copy-paste the HTTP Endpoint URL from the integration window based on the screencast below: 
 
-### Creating integration
-
-- Go to **Integrations** -> **Add new Integration**
-
-![image](/images/user-guide/integrations/sodaq/add-integration.png)
+![image](/images/user-guide/integrations/sodaq/import-integration.gif)
 
 - Fill in the fields with the input data shown in the following table: 
 
@@ -191,9 +190,13 @@ Once, the converter would be created, we could start Integration creation that d
 
 - After filling all fields click the **ADD** button. 
 
-### Post telemetry and verify the Integration
+## Step 3: Post telemetry and verify the Integration configuration
 
-For posting device telemetry we will use the Rest APIs, [Telemetry upload APIs](/docs/reference/http-api/#telemetry-upload-api). For this we will need to copy HTTP endpoint URL  from the **SODAQ** Integration.
+Before we rush to T-Mobile IoT platform configuration, let's make sure ThingsBoard is properly configured using simple cURL command.
+We will be simulating message from the T-Mobile IoT platform using command below. 
+Please note that we will use the HTTP Endpoint URL from a Step 2.
+
+For this we will need to copy HTTP endpoint URL from the **SODAQ** Integration.
 
 ![image](/images/user-guide/integrations/sodaq/http-endpoint-url.png)
 
@@ -207,8 +210,64 @@ curl -v -X POST -d @telemetry-data.json $HTTP_ENDPOINT_URL --header "Content-Typ
 
 Device should be created:
 
-![image](/images/user-guide/integrations/sodaq/integration-event.png)
-![image](/images/user-guide/integrations/sodaq/device-created.png)
+![image](/images/user-guide/integrations/sodaq/validate-integration.gif)
+
+Now you can delete this dummy device if needed.
+
+## Step 4: T-Mobile NB-IoT Platform Callback configuration
+
+Use HTTP endpoint URL from Step 2 to configure T-Mobile Platform to push data to this URL. See image below for reference.
+
+
+![image](/images/user-guide/integrations/sodaq/tmobile-configration.png)
+
+
+## Step 5: Check Integration Debug Events
+
+Navigate to Integration Debug Events, similar to Step 3 and double check that data from real devices arrives and is processed successfully. 
+Please note that it may take some time (up to 30 minutes based on our experience) for new message to start arriving.
+
+## Step 6: Rule chain import
+
+In this tutorial, we modified our **Root Rule Chain** and also created Rule Chain **Tracker Alarms**. 
+The idea is to forward all incoming telemetry, once it is saved to the database, to **Tracker Alarms** rule chain. 
+This rule chain lookup individual alarm threshold parameters for each tracker. User is able to configure those parameters in the dashboard.   
+
+<br/> 
+Download the attached json [**file**](/docs/user-guide/resources/sodaq/tracker-alarms.json) for the **Tracker Alarms** chain.
+<br/>
+<br/>The following screencast will show how to import and configure rule chains: 
+
+![image](/images/user-guide/integrations/sodaq/configure-rule-chains.gif)
+<br/>
+
+## Step 7: Demo dashboard import
+ 
+Download and import attached json [**file**](/docs/user-guide/resources/sodaq/sodaq-dashboard.json) with a dashboard from this tutorial.
+
+<br/>The following screencast will show how to import the dashboard: 
+
+![image](/images/user-guide/integrations/sodaq/import-dashboard.gif)
+<br/>
+
+After Dashboard creation navigate to Tracker details state to sets the limit values, namely:
+
+ - Max Speed
+ - Min Voltage
+ - Min Temperature
+ - Max Temperature 
+
+Once Rule chains and Dashboard set up you can trigger device to post the real data and verify that Integration and Rule chains work as expected.
+Advanced configuration guide below demonstrates step-by-step instruction how to configure the rule chains and how they actually work. 
+This steps are optional and we recommend to navigate to [Next Steps](#next-steps) for beginners.  
+
+## Advanced Configuration (Optional)
+
+### Security
+
+Note that you can add additional HTTP headers with some unique parameters for security. 
+For example, you can add "MY-INTEGRATION-AUTH-HEADER" with some random string value to both Integration configuration (Step 2) and T-Mobile configuration (Step 4). 
+Obviously, those headers should match for data flow to work properly.  
 
 ### Message flow  
 
@@ -228,7 +287,7 @@ In this section, we explain the purpose of each node in this tutorial:
 
 <br/>
 
-### Configuring the Rule Chain
+#### Configuring the Rule Chain
 
 In this tutorial, we modified our **Root Rule Chain** and also created Rule Chain **Tracker Alarms**
 
@@ -244,13 +303,13 @@ In this tutorial, we modified our **Root Rule Chain** and also created Rule Chai
 
 <br/> 
 
-Download the attached json [**file**](/docs/user-guide/resources/tracker_alarms.json) for the **Tracker Alarms** chain and json [**file**](/docs/user-guide/resources/root_rule_chain_tracker.json) for the **Root Rule Chain**.
+Download the attached json [**file**](/docs/user-guide/resources/sodaq/tracker_alarms.json) for the **Tracker Alarms** chain and json [**file**](/docs/user-guide/resources/root_rule_chain_tracker.json) for the **Root Rule Chain**.
 <br/>
 <br/>
 
 The following sections shows you how to create **Tracker Alarms** chain from scratch and modify **Root Rule Chain**.
  
-#### Create new Rule Chain (**Tracker Alarms**)
+##### Create new **Tracker Alarms** Rule Chain 
 
 Go to **Rule Chains** -> **Add new Rule Chain** 
 
@@ -262,11 +321,11 @@ Configuration:
 
 New Rule Chain is created. Press **Edit** button and to configure it.
 
-#### Adding the required nodes
+##### Adding the required nodes
 
 In this rule chain, you will create 13 nodes as it will be explained in the following sections:
 
-#### Node A: **Originator attributes**
+##### Node A: **Originator attributes**
 - Add the **Originator attributes** node and connect it to **Input** node.<br>
   This node will be used for taking shared scope attributes of the message originator that will be setts directly from the Dashboard. 
   
@@ -303,7 +362,7 @@ In this rule chain, you will create 13 nodes as it will be explained in the foll
    </tbody>
  </table>
 
-#### Node B: **Filter Script**
+##### Node B: **Filter Script**
 - Add the **Filter Script** node and connect it to the **Originator attributes** node with a relation type **Success**.
  <br>This node will verify: "if the temperature less than max temperature value" using the following script:
   
@@ -341,7 +400,7 @@ Rule Nodes C, D, and E have the same configuration that has the above-mentioned 
    </tbody>
  </table>
   
-#### Node F: **Create alarm**
+##### Node F: **Create alarm**
 - Add the **Create alarm** node and connect it to the **Filter Script** node with a relation type **True**. <br>
   This node loads the latest Alarm with configured Alarm Type for Message Originator<br> if the published temperature more than **maxTemperature** value (filter script node returns True). 
   
@@ -403,7 +462,7 @@ Rule Nodes H, J, and L have the same configuration that has the above-mentioned 
    </tbody>
  </table>
 
-#### Node H: **Clear Alarm**
+##### Node H: **Clear Alarm**
 - Add the **Clear Alarm** node and connect it to the **Filter Script** node with a relation type **False**. <br>
   This node loads the latest Alarm with configured Alarm Type for Message Originator<br> and Clears alarm if it exists in case if the published temperature less than **maxTemperature** value (script node returns False). 
   
@@ -471,11 +530,11 @@ Rule Nodes I, K and M have the same configuration that has the above-mentioned r
  </table>
  
  
-### Modify Root Rule Chain
+#### Modify Root Rule Chain
 
 The initial Root Rule Chain has been modified by adding the following node:
 
-#### Node A: **Filter Script**
+##### Node A: **Filter Script**
 - Add the **Filter Script** node and connect it to the **Save Timeseries** node with a relation type **Success**.
  <br>This node will check that message originator type is correct using the following script:
   
@@ -485,35 +544,13 @@ The initial Root Rule Chain has been modified by adding the following node:
   
 ![image](/images/user-guide/integrations/sodaq/tracker-filter.png)
  
-#### Node O: **Rule Chain**
+##### Node O: **Rule Chain**
 - Add the **Rule Chain** node and connect it to the **Filter Script** node with a relation type **True**. <br>
   This node forwards incoming Message to specified Rule Chain **Tracker Alarms**.
 
 - Enter the Name field as **Tracker Alarms**.
 
 ![image](/images/user-guide/integrations/sodaq/rule-chain-node.png)
-
-### Configuring Dashboards
-
-The following screenshots shows how the **Tracker Dashboard** should look like:
-
-![image](/images/user-guide/integrations/sodaq/tracker-dashboard-default-state.png)
-![image](/images/user-guide/integrations/sodaq/tracker-dashboard-tracker-details-state.png)
-
-
-Download and [**import**](/docs/user-guide/ui/dashboards/#dashboard-import) attached
-json [**file**](/docs/user-guide/resources/tracker_dashboard.json) with a dashboard from this tutorial.
-
-
-After Dashboard creation navigate to Tracker details state to sets the limit values, namely:
-
- - Max Speed
- - Min Voltage
- - Min Temperature
- - Max Temperature 
-
-Once Rule chains and Dashboard set up you can post the real data and verify that Integration and Rule chains work as expected. 
-
 
 ## Next steps
 

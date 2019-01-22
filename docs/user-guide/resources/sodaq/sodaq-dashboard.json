@@ -1,5 +1,5 @@
 {
-  "title": "Tracker Dashboard",
+  "title": "Demo Dashboard",
   "configuration": {
     "widgets": {
       "74583c73-4a7f-d036-c099-c03ab26aca2d": {
@@ -76,7 +76,7 @@
             "autocloseTooltip": true,
             "useTooltipFunction": true,
             "useLabelFunction": true,
-            "labelFunction": "var type = dsData[dsIndex][\"mapType\"];\nif (typeof type !== undefined) {\n    if (type == \"tracker\") {\n        return '<div style=\"position: relative; white-space: nowrap; text-align: center; font-size: 13px; top: 3px;\"><span style=\"margin-left: -500%;\"></span><span style=\"border: solid rgb(0,105,92); border-radius: 10px; color: rgb(0,105,92); background-color: #fff; padding-left: 5px; padding-right: 5px; padding-top: 3px; padding-bottom: 3px;\">${entityName}</span><span style=\"margin-right: -500%;\"></span></div>';\n    }\n}",
+            "labelFunction": "        return '<div style=\"position: relative; white-space: nowrap; text-align: center; font-size: 13px; top: 3px;\"><span style=\"margin-left: -500%;\"></span><span style=\"border: solid rgb(0,105,92); border-radius: 10px; color: rgb(0,105,92); background-color: #fff; padding-left: 5px; padding-right: 5px; padding-top: 3px; padding-bottom: 3px;\">${entityName}</span><span style=\"margin-right: -500%;\"></span></div>';\n",
             "tooltipFunction": "var type = dsData[dsIndex][\"mapType\"];\nif (typeof type !== undefined) {\n    if (type == \"tracker\") {\n        return '<div style=\"color:black\"><b>${entityName}</b><br><br/><b>Latitude:</b> ${latitude:7}<br/><b>Longitude:</b> ${longitude:7}<br/><br/><link-act name=\"tracker_tag_action\">Tracker details</link-act><br/></div>';\n    }\n}\n"
           },
           "title": "New OpenStreetMap",
@@ -195,11 +195,20 @@
           "enableDataExport": false,
           "widgetStyle": {},
           "actions": {
-            "rowClick": [
+            "rowClick": [],
+            "actionCellButton": [
+              {
+                "id": "5d5820a6-b5a3-bd09-6ed0-6ed1abd7e06d",
+                "name": "Alarms",
+                "icon": "warning",
+                "type": "openDashboardState",
+                "targetDashboardStateId": "tracker_alarms",
+                "setEntityId": true
+              },
               {
                 "id": "9dbe52ec-817d-1452-8bd5-95682e3d472c",
-                "name": "rowClick",
-                "icon": "more_horiz",
+                "name": "settings",
+                "icon": "settings",
                 "type": "openDashboardState",
                 "targetDashboardStateId": "tracker_state",
                 "setEntityId": true
@@ -215,130 +224,6 @@
           }
         },
         "id": "0ba3d76c-5eac-184f-d7b5-8088a5144c7c"
-      },
-      "9a56e835-2df2-c9ea-debc-e113b917e412": {
-        "isSystemType": true,
-        "bundleAlias": "alarm_widgets",
-        "typeAlias": "alarms_table",
-        "type": "alarm",
-        "title": "New widget",
-        "sizeX": 48,
-        "sizeY": 11,
-        "config": {
-          "timewindow": {
-            "realtime": {
-              "interval": 1000,
-              "timewindowMs": 86400000
-            },
-            "aggregation": {
-              "type": "NONE",
-              "limit": 200
-            }
-          },
-          "showTitle": true,
-          "backgroundColor": "rgb(255, 255, 255)",
-          "color": "rgba(0, 0, 0, 0.87)",
-          "padding": "4px",
-          "settings": {
-            "enableSelection": true,
-            "enableSearch": true,
-            "displayDetails": true,
-            "allowAcknowledgment": true,
-            "allowClear": true,
-            "displayPagination": true,
-            "defaultPageSize": 10,
-            "defaultSortOrder": "-createdTime",
-            "alarmsTitle": "Alarms details"
-          },
-          "title": "New Alarms table",
-          "dropShadow": true,
-          "enableFullscreen": true,
-          "titleStyle": {
-            "fontSize": "16px",
-            "fontWeight": 400,
-            "padding": "5px 10px 5px 10px"
-          },
-          "useDashboardTimewindow": false,
-          "showLegend": false,
-          "alarmSource": {
-            "type": "entity",
-            "dataKeys": [
-              {
-                "name": "createdTime",
-                "type": "alarm",
-                "label": "Created time",
-                "color": "#2196f3",
-                "settings": {},
-                "_hash": 0.31859769207197997
-              },
-              {
-                "name": "originator",
-                "type": "alarm",
-                "label": "Originator",
-                "color": "#4caf50",
-                "settings": {},
-                "_hash": 0.5556411179310023
-              },
-              {
-                "name": "type",
-                "type": "alarm",
-                "label": "Type",
-                "color": "#f44336",
-                "settings": {},
-                "_hash": 0.33997917520165655
-              },
-              {
-                "name": "severity",
-                "type": "alarm",
-                "label": "Severity",
-                "color": "#ffc107",
-                "settings": {},
-                "_hash": 0.28273946175051945
-              },
-              {
-                "name": "status",
-                "type": "alarm",
-                "label": "Status",
-                "color": "#607d8b",
-                "settings": {},
-                "_hash": 0.4546993401240149
-              },
-              {
-                "name": "details.clearedValue",
-                "type": "alarm",
-                "label": "Cleared Value",
-                "color": "#9c27b0",
-                "settings": {
-                  "columnWidth": "0px",
-                  "useCellStyleFunction": false,
-                  "useCellContentFunction": false
-                },
-                "_hash": 0.2236464886456062
-              },
-              {
-                "name": "details.value",
-                "type": "alarm",
-                "label": "Event value",
-                "color": "#8bc34a",
-                "settings": {
-                  "columnWidth": "0px",
-                  "useCellStyleFunction": false,
-                  "useCellContentFunction": false
-                },
-                "_hash": 0.7349474709135908
-              }
-            ],
-            "entityAliasId": "b053a663-8de2-b233-7bab-7cace5554ce4",
-            "name": "alarms"
-          },
-          "alarmSearchStatus": "UNACK",
-          "alarmsPollingInterval": 5,
-          "datasources": [],
-          "enableDataExport": true,
-          "widgetStyle": {},
-          "actions": {}
-        },
-        "id": "9a56e835-2df2-c9ea-debc-e113b917e412"
       },
       "9b5899c4-3cad-83e3-c6c6-b42b58092b05": {
         "isSystemType": true,
@@ -1170,11 +1055,225 @@
           "actions": {}
         },
         "id": "ce1542b6-f424-b0a5-4bb9-b1fd1492f551"
+      },
+      "21ae01c7-49f2-9b2b-d042-c1feb832a693": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "timeseries_table",
+        "type": "timeseries",
+        "title": "New widget",
+        "sizeX": 48,
+        "sizeY": 14,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "dataKeys": [
+                {
+                  "name": "latitude",
+                  "type": "timeseries",
+                  "label": "latitude",
+                  "color": "#2196f3",
+                  "settings": {
+                    "useCellStyleFunction": false,
+                    "cellStyleFunction": "",
+                    "useCellContentFunction": false,
+                    "cellContentFunction": ""
+                  },
+                  "_hash": 0.0524853547202313
+                },
+                {
+                  "name": "longitude",
+                  "type": "timeseries",
+                  "label": "longitude",
+                  "color": "#4caf50",
+                  "settings": {
+                    "useCellStyleFunction": false,
+                    "cellStyleFunction": "",
+                    "useCellContentFunction": false,
+                    "cellContentFunction": ""
+                  },
+                  "_hash": 0.5459438364528988
+                },
+                {
+                  "name": "temperature",
+                  "type": "timeseries",
+                  "label": "temperature",
+                  "color": "#f44336",
+                  "settings": {
+                    "useCellStyleFunction": false,
+                    "cellStyleFunction": "",
+                    "useCellContentFunction": false,
+                    "cellContentFunction": ""
+                  },
+                  "_hash": 0.3717777549787178
+                }
+              ],
+              "entityAliasId": "b053a663-8de2-b233-7bab-7cace5554ce4"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "interval": 1000,
+              "timewindowMs": 2592000000
+            },
+            "aggregation": {
+              "type": "NONE",
+              "limit": 200
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "showTimestamp": true,
+            "displayPagination": true,
+            "defaultPageSize": 10
+          },
+          "title": "Trackers RAW Data",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "useDashboardTimewindow": true,
+          "showLegend": false,
+          "widgetStyle": {},
+          "actions": {},
+          "enableDataExport": true
+        },
+        "id": "21ae01c7-49f2-9b2b-d042-c1feb832a693"
+      },
+      "24e63a52-b081-902a-4f0f-6e006fecb8e3": {
+        "isSystemType": true,
+        "bundleAlias": "alarm_widgets",
+        "typeAlias": "alarms_table",
+        "type": "alarm",
+        "title": "New widget",
+        "sizeX": 24,
+        "sizeY": 12,
+        "config": {
+          "timewindow": {
+            "realtime": {
+              "interval": 1000,
+              "timewindowMs": 2592000000
+            },
+            "aggregation": {
+              "type": "NONE",
+              "limit": 200
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "4px",
+          "settings": {
+            "enableSelection": true,
+            "enableSearch": true,
+            "displayDetails": true,
+            "allowAcknowledgment": true,
+            "allowClear": true,
+            "displayPagination": true,
+            "defaultPageSize": 10,
+            "defaultSortOrder": "-createdTime",
+            "alarmsTitle": "Alarms details"
+          },
+          "title": "New Alarms table",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400,
+            "padding": "5px 10px 5px 10px"
+          },
+          "useDashboardTimewindow": false,
+          "showLegend": false,
+          "alarmSource": {
+            "type": "entity",
+            "dataKeys": [
+              {
+                "name": "createdTime",
+                "type": "alarm",
+                "label": "Created time",
+                "color": "#2196f3",
+                "settings": {},
+                "_hash": 0.31859769207197997
+              },
+              {
+                "name": "originator",
+                "type": "alarm",
+                "label": "Originator",
+                "color": "#4caf50",
+                "settings": {},
+                "_hash": 0.5556411179310023
+              },
+              {
+                "name": "type",
+                "type": "alarm",
+                "label": "Type",
+                "color": "#f44336",
+                "settings": {},
+                "_hash": 0.33997917520165655
+              },
+              {
+                "name": "severity",
+                "type": "alarm",
+                "label": "Severity",
+                "color": "#ffc107",
+                "settings": {},
+                "_hash": 0.28273946175051945
+              },
+              {
+                "name": "status",
+                "type": "alarm",
+                "label": "Status",
+                "color": "#607d8b",
+                "settings": {},
+                "_hash": 0.4546993401240149
+              },
+              {
+                "name": "details.clearedValue",
+                "type": "alarm",
+                "label": "Cleared Value",
+                "color": "#9c27b0",
+                "settings": {
+                  "columnWidth": "0px",
+                  "useCellStyleFunction": false,
+                  "useCellContentFunction": false
+                },
+                "_hash": 0.2236464886456062
+              },
+              {
+                "name": "details.value",
+                "type": "alarm",
+                "label": "Event value",
+                "color": "#8bc34a",
+                "settings": {
+                  "columnWidth": "0px",
+                  "useCellStyleFunction": false,
+                  "useCellContentFunction": false
+                },
+                "_hash": 0.7349474709135908
+              }
+            ],
+            "entityAliasId": "13fd5231-ad06-7ebb-8392-b99ebda9893a",
+            "name": "alarms"
+          },
+          "alarmSearchStatus": "ACTIVE",
+          "alarmsPollingInterval": 5,
+          "datasources": [],
+          "enableDataExport": true,
+          "widgetStyle": {},
+          "actions": {}
+        },
+        "id": "24e63a52-b081-902a-4f0f-6e006fecb8e3"
       }
     },
     "states": {
       "default": {
-        "name": "Tracker Dashboard",
+        "name": "Demo Dashboard",
         "root": true,
         "layouts": {
           "main": {
@@ -1191,9 +1290,9 @@
                 "row": 0,
                 "col": 29
               },
-              "9a56e835-2df2-c9ea-debc-e113b917e412": {
+              "21ae01c7-49f2-9b2b-d042-c1feb832a693": {
                 "sizeX": 48,
-                "sizeY": 11,
+                "sizeY": 14,
                 "row": 16,
                 "col": 0
               }
@@ -1215,7 +1314,7 @@
         }
       },
       "tracker_state": {
-        "name": "Tracker details",
+        "name": "${entityName} Tracker details",
         "root": false,
         "layouts": {
           "main": {
@@ -1305,6 +1404,35 @@
             }
           }
         }
+      },
+      "tracker_alarms": {
+        "name": "${entityName} Tracker alarms",
+        "root": false,
+        "layouts": {
+          "main": {
+            "widgets": {
+              "24e63a52-b081-902a-4f0f-6e006fecb8e3": {
+                "sizeX": 24,
+                "sizeY": 12,
+                "row": 0,
+                "col": 0
+              }
+            },
+            "gridSettings": {
+              "backgroundColor": "#eeeeee",
+              "color": "rgba(0,0,0,0.870588)",
+              "columns": 24,
+              "margins": [
+                10,
+                10
+              ],
+              "backgroundSizeMode": "100%",
+              "autoFillHeight": true,
+              "mobileAutoFillHeight": false,
+              "mobileRowHeight": 70
+            }
+          }
+        }
       }
     },
     "entityAliases": {
@@ -1332,7 +1460,7 @@
     "timewindow": {
       "realtime": {
         "interval": 1800000,
-        "timewindowMs": 604800000
+        "timewindowMs": 2592000000
       },
       "aggregation": {
         "type": "NONE",
@@ -1349,5 +1477,5 @@
       "toolbarAlwaysOpen": true
     }
   },
-  "name": "Tracker Dashboard"
+  "name": "Demo Dashboard"
 }
