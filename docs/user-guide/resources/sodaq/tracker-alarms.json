@@ -8,12 +8,12 @@
     "configuration": null
   },
   "metadata": {
-    "firstNodeIndex": 0,
+    "firstNodeIndex": 13,
     "nodes": [
       {
         "additionalInfo": {
-          "layoutX": 375,
-          "layoutY": 152
+          "layoutX": 378,
+          "layoutY": 381
         },
         "type": "org.thingsboard.rule.engine.metadata.TbGetAttributesNode",
         "name": "Fetch Limit telemetry",
@@ -189,6 +189,18 @@
           "alarmType": "Min Voltage",
           "alarmDetailsBuildJs": "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n}\ndetails.clearedValue = msg.batteryVoltage;\nreturn details;"
         }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 95,
+          "layoutY": 383
+        },
+        "type": "org.thingsboard.rule.engine.filter.TbJsFilterNode",
+        "name": "Tracker Filter",
+        "debugMode": false,
+        "configuration": {
+          "jsScript": "return metadata.deviceType === 'tracker';"
+        }
       }
     ],
     "connections": [
@@ -250,6 +262,11 @@
       {
         "fromIndex": 10,
         "toIndex": 11,
+        "type": "True"
+      },
+      {
+        "fromIndex": 13,
+        "toIndex": 0,
         "type": "True"
       }
     ],
