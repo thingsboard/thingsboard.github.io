@@ -136,7 +136,7 @@ Few things to notice:
 
 - Go to **Data Converters** -> **Add new Data Converter** -> **Import Converter** 
 
-- Import following json file: [**SODAQ Uplink data converter**](/docs/user-guide/resources/sodaq-uplink-data-converter.json) (left click on the link and then 'Ctrl+S' to download) 
+- Import following json file: [**SODAQ Uplink data converter**](/docs/user-guide/resources/sodaq/sodaq-uplink-data-converter.json) (left click on the link and then 'Ctrl+S' to download) 
 as described on the following screencast: 
 
 ![image](/images/user-guide/integrations/sodaq/import-and-test-converter.gif)
@@ -303,7 +303,7 @@ In this tutorial, we modified our **Root Rule Chain** and also created Rule Chai
 
 <br/> 
 
-Download the attached json [**file**](/docs/user-guide/resources/sodaq/tracker_alarms.json) for the **Tracker Alarms** chain and json [**file**](/docs/user-guide/resources/root_rule_chain_tracker.json) for the **Root Rule Chain**.
+Download the attached json [**file**](/docs/user-guide/resources/sodaq/tracker-alarms.json) for the **Tracker Alarms** chain.
 <br/>
 <br/>
 
