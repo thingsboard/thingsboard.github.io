@@ -359,6 +359,7 @@
     - path: /docs/user-guide/integrations/sodaq/
       title: Learn how to connect your SODAQ Universal Tracker to ThingsBoard
       subtitle: Learn how to connect your SODAQ Universal Tracker to ThingsBoard via T-Mobile – IoT CDP Integration.
+      keywords: NB IoT, NB-IoT, T-Mobile, SODAQ, 5G
       pe: true
       video: false
 - title: Advanced features
