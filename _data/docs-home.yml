@@ -32,6 +32,9 @@ toc:
   - title: White-labeling
     path: /docs/user-guide/white-labeling/
     pe: true
+  - title: Custom Translations
+    path: /docs/user-guide/custom-translation/
+    pe: true
   - title: Platform Integrations
     pe: true
     section:

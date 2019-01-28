@@ -1,8 +1,7 @@
 ---
 layout: docwithnav
-title: Advanced role based access control (RBAC) for IoT devices and applications
+title: Advanced Role-Based Access Control (RBAC) for IoT devices and applications
 description:  
-
 ---
 
 {% assign feature = "Advanced RBAC for IoT devices and applications" %}{% include templates/pe-feature-banner.md %}
@@ -10,6 +9,10 @@ description:
 * TOC
 {:toc}
 
+
+## IMPORTANT NOTICE
+
+**This documentation covers feature that is not released yet! It will be released on February 8th, 2019. This feature is already available on cloud.thingsboard.io for evaluation and pre-release review.** 
 
 ## ThingsBoard CE vs PE security features comparison
 
@@ -103,7 +106,11 @@ See diagram below for visual representation of relations between those entities.
  
 ![image](/images/user-guide/security/customer-hierarchy-diagram.svg)
 
-## Generic roles
+## Roles
+
+Role maps Resource type to a list of allowed Operations. There are two Role types: Generic and Group.
+
+### Generic roles
 
 Each Role is related to one or more User Group. Each User Group has only one Owner. 
 With Generic Role you grant UG with the same permissions over all entities that belong to the same Owner and all it's sub-customers recursively.
@@ -117,7 +124,7 @@ So, Alice and Bob are able to access Device B1, but only Bob is able to access D
 
 ![image](/images/user-guide/security/generic-role-diagram.svg)
 
-## Group roles
+### Group roles
 
 Group Role allows you to map set of Permissions for specific User Group to specific Entity Group.
 We use special "connection" object called Group Permission Entity to make a connection between User Group, Entity Group and Group Role.  
@@ -135,7 +142,7 @@ However, Alice will not be able to see or use devices from group B.
 
 ## Examples and How-Tos
 
-See list of configuration examples and videos below for the most popular use cases.
+See list of configuration examples below for the most popular use cases.
 
 ### Smart Buildings: Separate User Groups per Facility
 
@@ -144,47 +151,58 @@ Your main customer is a Building Manager that wants to monitor HVAC systems, ele
 Building Manager may want to design and share some dashboards with the end users - office workers.
 Besides, your engineers responsible for the maintenance are interested in supervising the devices state, for example, receiving alerts when the battery level for goes below certain thresholds.
 
-As a Tenant Administrator, we will configure ThingsBoard to support this use case.
+To summarize those requirements in ThingsBoard terms, we should implement the following roles:
+ * Supervisors - read-only access to all devices telemetry in all the buildings and ability to create their custom dashboards, but no access to dashboards created by users from different user groups.
+ * Facility Managers - allows to provision new devices for each facility, setup thresholds, manage users and configure dashboards.
+ * End Users - allows to have read-only access to the state of the facility where this user belongs to.
 
+Let's configure ThingsBoard to support this use case. The instructions below assume that you have logged in as a Tenant Administrator.
 
-**Supervisor users**
+**Supervisors**
 
-We will create a separate User Group named "Supervisor Users" and a separate Dashboard Group "Supervisor Dashboards". We will also create two roles listed below:
+We will create a separate User Group named "Supervisors" and a separate Dashboard Group "Supervisor Dashboards". 
+Our goal is to allow Supervisors to manage dashboards in "Supervisor Dashboards" group, but for all other entities in the system, they should have read-only access. 
 
- * "All Entities Read-only" - generic role that will allow to access all entities data accept device credentials. 
- * "All operations for Group" - group role that allows all operations for the group.
+Let's start from creating a "Supervisor Dashboards" group. See screencast below.
+
+![image](/images/user-guide/security/smart-buildings-dashboards-group.gif)
+
+We should create two roles to implement this use case:
+
+ * "All Entities Read-only" - **generic role** that will allow to access all entities data accept device credentials. See screencast below: 
  
-We will assign those roles to the "Supervisor Users" group. See screenshot below:
+![image](/images/user-guide/security/smart-buildings-role1.gif)
+ 
+ * "Entity Group Administrator" - **group role** that allows all operations for the group. See screencast below:
 
-![image](/images/user-guide/security/smart-buildings-supervisors.png)
+![image](/images/user-guide/security/smart-buildings-role2.gif)
+  
+We will assign those roles to the "Supervisors" group. See screencast below:
 
- * Supervisor - read-only access to all devices telemetry in all the buildings and ability to create their custom dashboards, but no access to Facility Managers dashboards.
- * Facility Manager - allows to provision new devices for each facility, setup rules, manage users and configure dashboards.
- * End User - allows to have read-only access to the state of the facility where this user belongs to.
+![image](/images/user-guide/security/smart-buildings-user-group.gif)
  
 **Facility managers**
 
-We will also create separate Customer entity for each building. We will add a Facility Manager user account to a default "Customer Administrators" group that is automatically created for each Customer.
-As a Facility Manager we can now login, design dashboards and provision devices and end users.  
+We will create separate Customer entity for each building or group of buildings. We will add a Facility Manager user account to a default "Customer Administrators" group that is automatically created for each Customer.
+As a Facility Manager we can now login, design dashboards, provision devices and end users.  
   
-![image](/images/user-guide/security/smart-buildings-customers.png)
- 
-The video tutorial below will demonstrate how to configure this use case using ThingsBoard UI.
+![image](/images/user-guide/security/smart-buildings-building-a.gif)
 
+**End Users**
 
-### IIoT: Production line monitoring
+Let's login as Alice (created in a previous screencast), Building A administrator, and create several dashboards. 
+To simplify this guide we will not demonstrate particular dashboard creation steps (there are planty of guides available).
+   
+![image](/images/user-guide/security/smart-buildings-building-a-dashboards.png)
 
+Now, let's create a read-only user. Let's assume we want to assign "End User Dashboard" to him and make sure that this dashboard will open full screen once the user is logged in. 
+So, our read-only user will not have access to the administration panel to the left, since he is still not allowed to perform any server side API calls, except read-only browsing the data.   
+
+![image](/images/user-guide/security/smart-buildings-read-only-user.gif)
 
 ### DaaS: Device as a Service
 
-
-### Misc: Allow end users to configure their dashboards
-
-
-
-### Misc: Create read-only user for education and demonstration purposes
-
-
+TODO: Stay tuned, this doc will be available upon v2.3 release.
     
 ## Next steps
 
