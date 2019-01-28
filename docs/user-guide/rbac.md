@@ -165,40 +165,40 @@ Our goal is to allow Supervisors to manage dashboards in "Supervisor Dashboards"
 
 Let's start from creating a "Supervisor Dashboards" group. See screencast below.
 
-![image](/images/user-guide/security/smart-buildings-dashboards-group.gif)
+<img data-gifffer="/images/user-guide/security/smart-buildings-dashboards-group.gif" />
 
 We should create two roles to implement this use case:
 
  * "All Entities Read-only" - **generic role** that will allow to access all entities data accept device credentials. See screencast below: 
- 
-![image](/images/user-guide/security/smart-buildings-role1.gif)
+
+<img data-gifffer="/images/user-guide/security/smart-buildings-role1.gif" /> 
  
  * "Entity Group Administrator" - **group role** that allows all operations for the group. See screencast below:
 
-![image](/images/user-guide/security/smart-buildings-role2.gif)
+<img data-gifffer="/images/user-guide/security/smart-buildings-role2.gif" />
   
 We will assign those roles to the "Supervisors" group. See screencast below:
 
-![image](/images/user-guide/security/smart-buildings-user-group.gif)
+<img data-gifffer="/images/user-guide/security/smart-buildings-user-group.gif" />
  
 **Facility managers**
 
 We will create separate Customer entity for each building or group of buildings. We will add a Facility Manager user account to a default "Customer Administrators" group that is automatically created for each Customer.
 As a Facility Manager we can now login, design dashboards, provision devices and end users.  
   
-![image](/images/user-guide/security/smart-buildings-building-a.gif)
+<img data-gifffer="/images/user-guide/security/smart-buildings-building-a.gif" />  
 
 **End Users**
 
 Let's login as Alice (created in a previous screencast), Building A administrator, and create several dashboards. 
 To simplify this guide we will not demonstrate particular dashboard creation steps (there are planty of guides available).
-   
+      
 ![image](/images/user-guide/security/smart-buildings-building-a-dashboards.png)
 
 Now, let's create a read-only user. Let's assume we want to assign "End User Dashboard" to him and make sure that this dashboard will open full screen once the user is logged in. 
 So, our read-only user will not have access to the administration panel to the left, since he is still not allowed to perform any server side API calls, except read-only browsing the data.   
 
-![image](/images/user-guide/security/smart-buildings-read-only-user.gif)
+<img data-gifffer="/images/user-guide/security/smart-buildings-read-only-user.gif" />
 
 ### DaaS: Device as a Service
 
