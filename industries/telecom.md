@@ -6,9 +6,38 @@ description:
 ---
 
 <div class="customer-block">
+    <a href="https://t-mobile.cz">
+        <div class="customer-logo">
+            <img width="" src="/images/customers/tmobile.png" alt="T-Mobile">
+        </div>
+    </a>
+    <div class="customer-content">
+        <h3 id="tmobile">
+            T-Mobile Czech Republic a.s.
+        </h3>
+        <h4>
+            T-Mobile Czech Republic is provider of IoT connectivity based on technologies NB-IoT and Sigfox as well as provider of complete IoT ICT services.
+        </h4>    
+        <p>
+        We have choose to use ThingsBoard to be able easily and quickly deliver various proof-of-concepts, product prototypes and to test new devices with comes usually “app-less”. 
+        With ThingBoard we are able finish such tasks with visually attractive result with sleek user interface and done in nearly no time.
+        </p> 
+        <p>
+        In comparison to other IoT platforms and tools we value the most the easy to use approach without compromising functionality, very logical structure and in-build support of various technologies and protocols.
+        </p> 
+        <div class="person-logo-container">
+            <div class="person-title">
+                David Týr <br/>
+                Innovation Manager
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="customer-block">
     <a href="https://tektelic.com/">
         <div class="customer-logo">
-            <img width="" src="/images/customers/tektelic.png" alt="X-Telia">
+            <img width="" src="/images/customers/tektelic.png" alt="TEKTELIC Communications Inc.">
         </div>
     </a>
     <div class="customer-content">

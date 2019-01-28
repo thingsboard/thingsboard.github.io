@@ -128,9 +128,13 @@ To simplify application development, install the ThingsBoard Arduino SDK and its
 
 1. Find and install **ThingsBoard Arduino SDK** and **PubSubClient by Nick O'Leary** libraries.
 
-From now on, you can use ThingsBoard SDK right from Arduino IDE.
+   ![image](/images/samples/esp32/gpio-temperature/install-tb-arduino.png)
 
-![image](/images/samples/esp32/gpio-temperature/install-tb-arduino.png)
+1. Install **ArduinoJSON** library. <span style="color:red">Do not install beta releases of the ArduinoJson library. Instead, use **5.13.3** version of the library</span>, as shown in picture below.
+
+   ![image](/images/samples/esp32/gpio-temperature/do-not-use-beta-version-arduinojson.png)
+
+From now on, you can use ThingsBoard SDK right from Arduino IDE.
 
 ### Install ESP32 DHT22 driver
 

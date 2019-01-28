@@ -315,7 +315,7 @@ To run the scripts, you need to do the following steps:
 <br/>
 
 # Configuring Dashboards
-The following screenshot shows how the **Wind Turbine Dashboard** Rule Chain should look like:
+The following screenshot shows how the **Wind Turbine Dashboard** should look like:
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-request/dashboard.png)
 

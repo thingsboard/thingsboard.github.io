@@ -71,6 +71,15 @@ redirect_from: "/partners/"
 <section id="pe-customers">
     <main class="customers-container">
 		<div class="customer-block">
+			<a href="/industries/telecom/#tmobile">
+				<span>
+					<div class="customer-logo" style="height:134px">
+						<img width="" src="/images/customers/tmobile.png" alt="T-Mobile Czech Republic a.s.">
+					 </div>
+				</span>
+			</a>
+		</div>    
+		<div class="customer-block">
 			<a href="https://www.bosch.com/">
 				<span>
 					<div class="customer-logo" style="height:134px">

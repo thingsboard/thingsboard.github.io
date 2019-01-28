@@ -52,7 +52,14 @@ $pricing-table-border: rgba(255, 255, 255, 0.39)
             h4.title
                 font-size: 20px
                 padding: 5px 10px 0px 18px
-
+            div.item
+                overflow: visible
+                &:before
+                    display: block
+                    content: " "
+                    margin-top: -60px
+                    height: 60px
+                    visibility: hidden
             div.item > h4.title
                 &:before
                     top: 18px
@@ -160,6 +167,11 @@ $pricing-table-border: rgba(255, 255, 255, 0.39)
                                 font-size: 12px
                                 height: 30px
                                 margin-top: 10px
+                                a
+                                    color: #fff
+                                    text-decoration: underline
+                                    &:hover
+                                        opacity: 0.65
                         a.button
                             margin-top: 20px
                             text-align: center
