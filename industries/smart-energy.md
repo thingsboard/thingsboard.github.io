@@ -6,6 +6,30 @@ description:
 ---
 
 <div class="customer-block">
+    <a href="http://www.circutor.com/">
+        <div class="customer-logo">
+            <img width="" src="/images/customers/circutor.png" alt="Circutor">
+        </div>
+    </a>
+    <div class="customer-content">
+        <h4>CIRCUTOR has over 40 years’ experience working on the design and manufacture of units for improving energy efficiency: electrical energy, power quality measurement and control units, industrial electrical protection, reactive energy compensation, and harmonic filtering. </h4>
+        <p>
+        CIRCUTOR owns a wide portfolio of connected energy control and metering devices. Despite the diversity of proprietary and off-the-shelf data protocols, Thingsboard has made it easy to accommodate most of our products in a common data platform.  
+        </p> 
+        <p>
+        I am deeply impressed by the dynamism and professionalism of the Thingsboard team. I appreciate greatly the ability to attend our technical suggestions and adopt them in the form of new functionalities. I highly recommend Thingsboard for its reliability, its flexibility and above all, the quality of the product and its technical service.
+        </p> 
+        <div class="person-logo-container">
+            <img class="person-logo" src="/images/customers/circutor-person.jpg"/>
+            <div class="person-title">
+                Daniel Portero <br/>
+                Cloud & App Development Manager
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="customer-block">
     <a href="https://www.oneserve.co.uk/">
         <div class="customer-logo">
             <img width="" src="/images/customers/oneserve.svg" alt="Oneserve">
