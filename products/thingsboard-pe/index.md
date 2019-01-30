@@ -98,6 +98,15 @@ redirect_from: "/partners/"
             </a>
         </div>
 		<div class="customer-block">
+			<a href="/industries/smart-energy/#circutor">
+				<span>
+					<div class="customer-logo" style="height:134px">
+						<img width="" src="/images/customers/circutor.png" alt="Circutor">
+					 </div>
+				</span>
+			</a>
+		</div>        
+		<div class="customer-block">
 			<a href="/industries/telecom/#tektelic">
 				<span>
 					<div class="customer-logo" style="height:134px">
