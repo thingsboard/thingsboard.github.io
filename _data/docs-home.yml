@@ -60,7 +60,7 @@ toc:
       path: /docs/user-guide/integrations/azure-event-hub/
     - title: OPC-UA
       path: /docs/user-guide/integrations/opc-ua/
-  - title: Device & Asset Groups
+  - title: Entity Groups
     path: /docs/user-guide/groups/
     pe: true
   - title: Scheduler

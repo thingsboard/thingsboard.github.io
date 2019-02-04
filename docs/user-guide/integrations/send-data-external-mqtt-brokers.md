@@ -2,6 +2,7 @@
 layout: docwithnav
 title: Send data to external MQTT brokers
 description: MQTT downlink guide
+hidetoc: "true"
 
 ---
 
