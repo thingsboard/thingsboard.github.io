@@ -8,26 +8,26 @@ description: ThingsBoard Performance on different AWS instances results
 * TOC
 {:toc}
 
-One of the key features of ThingsBoard open-source IoT Platform is data collection and this is a crucial feature that must work reliably under long-running a heavy load of the instance.
+One of the key features of ThingsBoard open-source IoT Platform is data collection and this is a crucial feature that must work reliably under a heavy long-running messages upload.
 
-In this article, we are going to describe what are the maximum messages different AWS instance are able to handle and as well we are going to provide the CPU and memory load of different AWS instances under long-running loads.
+In this article, we are going to describe what are the maximum messages different AWS instance are able to handle and as well we are going to provide the CPU and memory load of different AWS instances under long-running tests.
 
-Considering these numbers and your project requirements you’ll be able to analyze what type o the instance is needed for your project.
+Considering these numbers and your project requirements you will be able to identify what type o the instance is the most suitable for your project.
 
 ## Data flow and test tools
 
-IoT devices connect to ThingsBoard server via MQTT or HTTP Device API and sends dummy test data to the platform. 
+IoT devices connect to ThingsBoard server via MQTT or HTTP Device API and send sample test data (*single telemetry of long type*) to the platform. 
 ThingsBoard server processes MQTT or HTTP messages and stores them to Cassandra/PostgreSQL asynchronously. 
 
-As a data tool we have used updated version of Performance Test project that is able to send messages over MQTT/HTTP Device API in an asynchronous way very efficiently. 
+As a test tool we have used updated version of [Performance Test project](https://github.com/thingsboard/performance-tests) that is able to send messages over MQTT/HTTP Device API in an asynchronous way quite efficiently. 
 
-Considering microservice architecture of the ThingsBoard platform and to measure performance in an accurate way, we have created an additional Rule Chain Node that is able to calculate a number of messages that this Node has been received per 1 second (this is a configurable parameter that could be changed) and store this value as telemetry.
+Considering microservice architecture of the ThingsBoard platform and to measure performance in an accurate way, we have created an additional Rule Chain Node that is able to calculate a number of messages that this Node has been received per 1 second (this is a configurable parameter that could be changed) and stores this value as telemetry on a tenant level.
 
-This additional Rule Chain Node is located after the ‘Save telemetry’ Node of the Root Chain and calculates how many messages ThingsBoard instance processed during the performance testing. This data is stored on a tenant level as telemetry. 
+This additional Rule Chain Node is located after the ‘Save telemetry’ Node of the Root Chain and calculates how many messages ThingsBoard instance processed during the performance testing. This data is stored on a tenant level as telemetry with predefined key prefix. 
 
 ![image](/images/reference/performance-aws-instances/modified-rule-chain.png)
 
-Performance Test tool, after test completion, is taking this telemetry value from the platform and provides result in the console of the test:
+Performance Test tool, after test completion, take this telemetry value from the platform and provides result in the console of the test:
 
 ```bash
 12:20:03.772 [main] INFO  o.t.t.s.stats.StatisticsCollector - ============ Node [692dc903cf52] AVG is 500.0 per 1 second ============
@@ -36,41 +36,67 @@ Performance Test tool, after test completion, is taking this telemetry value fro
 
 This telemetry value could be shown as well as general telemetry on the ThingsBoard Dashboard. 
 
+**NOTE:** If you have multiple ThingsBoard nodes in the cluster, additional Rule Chain Node will save statistics under different telemetry keys on tenant level, but Performance Test tool in the result will aggregate these values into a single result.
+
 ## How to repeat the tests
 
-Please use documentation of the [Performance test project](https://github.com/thingsboard/performance-tests/tree/develop/2.0) for more details.
+Please use documentation of the [Performance test project](https://github.com/thingsboard/performance-tests/) for more details.
 
 ## Test Results
 
-### Maximum number of requests that instance is able to handle per second
+### Maximum number of messages that instance is able to handle per second
 
-#### MQTT API
+| Instance Type | Instance details | Database Type | Device API | Number of devices | Delay between messages in millis | Maximum number of messages per second |
+| --- | --- | --- | --- | --- | --- | --- |
+| [t2.micro](#t2micro-test-results) | 1 vCPUs for a 2h 24m burst, 1GB | PostgreSQL | MQTT | 500 | 1000 | **~450** | 
+| [t2.medium](#t2medium-test-results)  | 2 vCPUs for a 4h 48m burst, 4GB | PostgreSQL | MQTT | 900 | 1000 | **~780** |
+| [c5.large](#c5large-test-results)  | 2 vCPUs , 4GB | PostgreSQL | MQTT | 1100 | 1000 | **~1020** |
+| t2.xlarge | 4 vCPUs for a 5h 24m burst, 16GB | PostgreSQL | MQTT |  1800 | 1000 | **~1700** |
+| t2.xlarge | 4 vCPUs for a 5h 24m burst, 16GB | Cassandra | MQTT | 3000 | 1000 | **~3000** |
+| [m5.xlarge](#m5xlarge-test-results)  | 4 vCPUs, 16GB, 150GB SSD mounted | Cassandra | MQTT | 3500 | 1000 | **~3500** |
+| [m5.xlarge](#m5xlarge-test-results)  | 4 vCPUs, 16GB, 150GB SSD mounted | Cassandra | HTTP | 2000 | 1000 | **~950** |
 
-| Instance Type | Instance details | Database Type | Number of devices | Delay between messages in millis | Maximum number of messages per second |
-| --- | --- | --- | --- | --- | --- |
-| t2.micro | 1 vCPUs for a 2h 24m burst, 1GB | PostgreSQL | 500 | 1000 | **~450** | 
-| t2.medium | 2 vCPUs for a 4h 48m burst, 4GB | PostgreSQL | 900 | 1000 | **~780** |
-| c5.large | 2 vCPUs , 4GB | PostgreSQL | 1100 | 1000 | **~1020** |
-| t2.xlarge | 4 vCPUs for a 5h 24m burst, 16GB | PostgreSQL | 1800 | 1000 | **~1700** |
-| t2.xlarge | 4 vCPUs for a 5h 24m burst, 16GB | Cassandra | 3000 | 1000 | **~3000** |
-| m5d.xlarge | 4 vCPUs, 16GB, 150GB SSD mounted | Cassandra | 3500 | 750 | **~3500** |
+## t2.micro
 
-#### HTTP API
+### Maximum number of messages per second
 
-| Instance Type | Instance details | Database Type | Number of devices | Delay between messages in millis | Maximum number of messages per second |
-| --- | --- | --- | --- | --- | --- |
-| m5d.xlarge | 4 vCPUs, 16GB RAM, 150GB SSD mounted | Cassandra | 2000 | 1000 | **~950** |
+| Instance Type | Instance details | Database Type | Device API | Number of devices | Delay between messages in millis | Maximum number of messages per second |
+| --- | --- | --- | --- | --- | --- | --- |
+| t2.micro | 1 vCPUs for a 2h 24m burst, 1GB | PostgreSQL | MQTT | 500 | 1000 | **~450** |
 
-### CPU/memory load of the instances during a long run of the tests
+Test run configuration:
 
-#### MQTT API
+```bash
+...
+DEVICE_API=MQTT
+DEVICE_START_IDX=0
+DEVICE_END_IDX=500
 
-- **t2.micro** AWS Instance Type, Test Run #1
+PUBLISH_COUNT=300
+PUBLISH_PAUSE=1000
+...
+```
 
-| Instance Type | Instance details | Database Type | Number of devices | Delay between messages in millis | Count of test run hours | 
-| --- | --- | --- | --- | --- | --- |
-| t2.micro | 1 vCPUs for a 2h 24m burst, 1GB | PostgreSQL | 50 | 1000 | 10 | 
+### CPU/memory load during a long run
 
+- Test Run #1
+
+| Instance Type | Instance details | Database Type | Device API | Number of devices | Delay between messages in millis | Count of test run hours | 
+| --- | --- | --- | --- | --- | --- | --- |
+| t2.micro | 1 vCPUs for a 2h 24m burst, 1GB | PostgreSQL | MQTT | 50 | 1000 | 10 | 
+
+Test run configuration:
+
+```bash
+...
+DEVICE_API=MQTT
+DEVICE_START_IDX=0
+DEVICE_END_IDX=50
+
+PUBLISH_COUNT=36000
+PUBLISH_PAUSE=1000
+...
+```
 
 | Property | Avg | Min | Max |
 | --- | --- | --- | --- |
@@ -94,12 +120,24 @@ TB dashboard
 
 ![image](/images/reference/performance-aws-instances/t2-micro/postgresql-50msgs-tb.png)
 
-- **t2.micro** AWS Instance Type, Test Run #2
+- Test Run #2
 
-| Instance Type | Instance details | Database Type | Number of devices | Delay between messages in millis | Count of test run hours |
-| --- | --- | --- | --- | --- | --- |
-| t2.micro | 1 vCPUs for a 2h 24m burst, 1GB | PostgreSQL | 100 | 1000 | 10 | 
+| Instance Type | Instance details | Database Type | Device API | Number of devices | Delay between messages in millis | Count of test run hours |
+| --- | --- | --- | --- | --- | --- | --- |
+| t2.micro | 1 vCPUs for a 2h 24m burst, 1GB | PostgreSQL | MQTT | 100 | 1000 | 10 | 
 
+Test run configuration:
+
+```bash
+...
+DEVICE_API=MQTT
+DEVICE_START_IDX=0
+DEVICE_END_IDX=100
+
+PUBLISH_COUNT=36000
+PUBLISH_PAUSE=1000
+...
+```
 
 | Property | Avg | Min | Max |
 | --- | --- | --- | --- |
@@ -123,12 +161,47 @@ TB dashboard
 
 ![image](/images/reference/performance-aws-instances/t2-micro/postgresql-100msgs-tb.png)
 
-- **t2.medium** AWS Instance Type, Test Run #1
+## t2.medium
 
-| Instance Type | Instance details | Database Type | Number of devices | Delay between messages in millis | Count of test run hours | 
-| --- | --- | --- | --- | --- | --- |
-| t2.medium | 2 vCPUs for a 4h 48m burst, 4GB | PostgreSQL | 150 | 1000 | 10 | 
+### Maximum number of messages per second
 
+| Instance Type | Instance details | Database Type | Device API | Number of devices | Delay between messages in millis | Maximum number of messages per second |
+| --- | --- | --- | --- | --- | --- | --- |
+| t2.medium | 2 vCPUs for a 4h 48m burst, 4GB | PostgreSQL | MQTT | 900 | 1000 | **~780** |
+
+Test run configuration:
+
+```bash
+...
+DEVICE_API=MQTT
+DEVICE_START_IDX=0
+DEVICE_END_IDX=900
+
+PUBLISH_COUNT=300
+PUBLISH_PAUSE=1000
+...
+```
+
+### CPU/memory load during a long run
+
+- Test Run #1
+
+| Instance Type | Instance details | Database Type | Device API | Number of devices | Delay between messages in millis | Count of test run hours | 
+| --- | --- | --- | --- | --- | --- | --- |
+| t2.medium | 2 vCPUs for a 4h 48m burst, 4GB | PostgreSQL | MQTT | 150 | 1000 | 10 | 
+
+Test run configuration:
+
+```bash
+...
+DEVICE_API=MQTT
+DEVICE_START_IDX=0
+DEVICE_END_IDX=150
+
+PUBLISH_COUNT=36000
+PUBLISH_PAUSE=1000
+...
+```
 
 | Property | Avg | Min | Max |
 | --- | --- | --- | --- |
@@ -152,11 +225,24 @@ TB dashboard
 
 ![image](/images/reference/performance-aws-instances/t2-medium/postgresql-150msgs-tb.png)
 
-- **t2.medium** AWS Instance Type, Test Run #2
+- Test Run #2
 
-| Instance Type | Instance details | Database Type | Number of devices | Delay between messages in millis | Count of test run hours | 
-| --- | --- | --- | --- | --- | --- |
-| t2.medium | 2 vCPUs for a 4h 48m burst, 4GB | PostgreSQL | 200 | 1000 | 10 | 
+| Instance Type | Instance details | Database Type | Device API | Number of devices | Delay between messages in millis | Count of test run hours | 
+| --- | --- | --- | --- | --- | --- | --- |
+| t2.medium | 2 vCPUs for a 4h 48m burst, 4GB | PostgreSQL | MQTT | 200 | 1000 | 10 | 
+
+Test run configuration:
+
+```bash
+...
+DEVICE_API=MQTT
+DEVICE_START_IDX=0
+DEVICE_END_IDX=200
+
+PUBLISH_COUNT=36000
+PUBLISH_PAUSE=1000
+...
+```
 
 Result shows that **t2.medium** AWS Instance Type is not able to handle more than 200 requests per second, because of the [AWS CPU Credit Balance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-credits-baseline-concepts.html).
 
@@ -166,21 +252,70 @@ The line goes down and after some period instance will be dramatically decreased
 
 ![image](/images/reference/performance-aws-instances/t2-medium/postgresql-200msgs-failing-cpu-credit.png)
 
-- **t2.medium** AWS Instance Type, Test Run #3
+- Test Run #3
 
-| Instance Type | Instance details | Database Type | Number of devices | Delay between messages in millis | Count of test run hours | 
-| --- | --- | --- | --- | --- | --- |
-| t2.medium | 2 vCPUs for a 4h 48m burst, 4GB | PostgreSQL | 300 | 1000 | 10 | 
+| Instance Type | Instance details | Database Type | Device API | Number of devices | Delay between messages in millis | Count of test run hours | 
+| --- | --- | --- | --- | --- | --- | --- |
+| t2.medium | 2 vCPUs for a 4h 48m burst, 4GB | PostgreSQL | MQTT | 300 | 1000 | 10 | 
+
+Test run configuration:
+
+```bash
+...
+DEVICE_API=MQTT
+DEVICE_START_IDX=0
+DEVICE_END_IDX=300
+
+PUBLISH_COUNT=36000
+PUBLISH_PAUSE=1000
+...
+```
 
 The same results as previous run, but CPU Credit Balance chart line goes down more faster.
 
 ![image](/images/reference/performance-aws-instances/t2-medium/postgresql-300msgs-failed-cpu-credit.png)
 
-- **c5.large** AWS Instance Type, Test Run #1
+## c5.large
 
-| Instance Type | Instance details | Database Type | Number of devices | Delay between messages in millis | Count of test run hours | 
-| --- | --- | --- | --- | --- | --- |
-| c5.large | 2 vCPUs, 4GB | PostgreSQL | 500 | 1000 | 10 | 
+### Maximum number of messages per second
+
+| Instance Type | Instance details | Database Type | Device API | Number of devices | Delay between messages in millis | Maximum number of messages per second |
+| --- | --- | --- | --- | --- | --- | --- |
+| c5.large | 2 vCPUs , 4GB | PostgreSQL | MQTT | 1100 | 1000 | **~1020** |
+
+Test run configuration:
+
+```bash
+...
+DEVICE_API=MQTT
+DEVICE_START_IDX=0
+DEVICE_END_IDX=1100
+
+PUBLISH_COUNT=300
+PUBLISH_PAUSE=1000
+...
+```
+
+### CPU/memory load during a long run
+
+- Test Run #1
+
+| Instance Type | Instance details | Database Type | Device API | Number of devices | Delay between messages in millis | Count of test run hours | 
+| --- | --- | --- | --- | --- | --- | --- |
+| c5.large | 2 vCPUs, 4GB | PostgreSQL | MQTT |  500 | 1000 | 10 |
+
+Test run configuration:
+
+```bash
+...
+DEVICE_API=MQTT
+DEVICE_START_IDX=0
+DEVICE_END_IDX=500
+
+PUBLISH_COUNT=36000
+PUBLISH_PAUSE=1000
+...
+```
 
 **c5.large** AWS instance does not have CPU burst that why CPU Credit Balance is not applicable to verify in this case.
 
@@ -218,13 +353,25 @@ AWS write IOPS for the volume
 
 ![image](/images/reference/performance-aws-instances/c5-large/postgresql-500msgs-iops-1.png)
 
-- **c5.large** AWS Instance Type, Test Run #2
+- Test Run #2
 
-| Instance Type | Instance details | Database Type | Number of devices | Delay between messages in millis | Count of test run hours | 
-| --- | --- | --- | --- | --- | --- |
-| c5.large | 2 vCPUs, 4GB | PostgreSQL | 700 | 1000 | 10 | 
+| Instance Type | Instance details | Database Type | Device API | Number of devices | Delay between messages in millis | Count of test run hours | 
+| --- | --- | --- | --- | --- | --- | --- |
+| c5.large | 2 vCPUs, 4GB | PostgreSQL | MQTT |  700 | 1000 | 10 |
 
+Test run configuration:
 
+```bash
+...
+DEVICE_API=MQTT
+DEVICE_START_IDX=0
+DEVICE_END_IDX=700
+
+PUBLISH_COUNT=36000
+PUBLISH_PAUSE=1000
+...
+```
+ 
 | Property | Avg | Min | Max |
 | --- | --- | --- | --- |
 | CPU Utilization (%) | 70 | 66.8 | 76.1 |
@@ -253,12 +400,64 @@ AWS write IOPS for the volume
 
 ![image](/images/reference/performance-aws-instances/c5-large/postgresql-700msgs-iops-1.png)
 
-- **m5.xlarge** AWS Instance Type, Test Run #1
+## m5.xlarge
 
-| Instance Type | Instance details | Database Type | Number of devices | Delay between messages in millis | Count of test run hours | 
-| --- | --- | --- | --- | --- | --- |
-| m5.xlarge | 4 vCPUs, 16GB | Cassandra | 2100 | 1000 | 10 | 
+### Maximum number of messages per second
 
+| Instance Type | Instance details | Database Type | Device API | Number of devices | Delay between messages in millis | Maximum number of messages per second |
+| --- | --- | --- | --- | --- | --- | --- |
+| m5.xlarge | 4 vCPUs, 16GB, 150GB SSD mounted | Cassandra | MQTT | 3500 | 1000 | **~3500** |
+
+Test run configuration:
+
+```bash
+...
+DEVICE_API=MQTT
+DEVICE_START_IDX=0
+DEVICE_END_IDX=3500
+
+PUBLISH_COUNT=300
+PUBLISH_PAUSE=1000
+...
+```
+
+| Instance Type | Instance details | Database Type | Device API | Number of devices | Delay between messages in millis | Maximum number of messages per second |
+| --- | --- | --- | --- | --- | --- | --- |
+| m5.xlarge |  4 vCPUs, 16GB, 150GB SSD mounted | Cassandra | HTTP | 2000 | 1000 | **~950** |
+
+Test run configuration:
+
+```bash
+...
+DEVICE_API=HTTP
+DEVICE_START_IDX=0
+DEVICE_END_IDX=2000
+
+PUBLISH_COUNT=300
+PUBLISH_PAUSE=1000
+...
+```
+
+### CPU/memory load during a long run
+
+- Test Run #1
+
+| Instance Type | Instance details | Database Type | Device API | Number of devices | Delay between messages in millis | Count of test run hours | 
+| --- | --- | --- | --- | --- | --- | --- |
+| m5.xlarge | 4 vCPUs, 16GB | Cassandra | MQTT | 2100 | 1000 | 10 |
+
+Test run configuration:
+
+```bash
+...
+DEVICE_API=MQTT
+DEVICE_START_IDX=0
+DEVICE_END_IDX=2100
+
+PUBLISH_COUNT=36000
+PUBLISH_PAUSE=1000
+...
+```
 
 | Property | Avg | Min | Max |
 | --- | --- | --- | --- |
