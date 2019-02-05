@@ -2,6 +2,7 @@
 layout: docwithnav
 title: Aggregate latest telemetry values periodically
 description: Calculate average temperature in the warehouse
+hidetoc: "true"
 
 ---
 
