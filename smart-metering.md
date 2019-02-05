@@ -22,29 +22,17 @@ Another critical advantage is the cost of smart metering implementation. Using a
         <td><i class="fa fa-cloud-upload" style="font-size: 48px; color: #008b8b;" aria-hidden="true"></i></td>
         <td style="font-size: 20px;">Collect data from smart meters using different <a href="/docs/getting-started-guides/connectivity/">connectivity methods</a></td>
     </tr>    
-    <tr style="background: none;">
-        <td colspan="2"><i class="fa fa-arrow-down" style="padding-left: 100px; font-size: 38px; color: #008b8b;" aria-hidden="true"></i></td>
-    </tr>    
     <tr>
         <td><i class="fa fa-dashboard" style="font-size: 48px; color: #008b8b;" aria-hidden="true"></i></td>
         <td style="font-size: 20px;"><a href="/docs/user-guide/visualization/">Visualize</a> the collected data on a <a href="/docs/iot-video-tutorials/#visualization">custom dashboard</a></td>
-    </tr>    
-    <tr style="background: none;">
-        <td colspan="2"><i class="fa fa-arrow-down" style="padding-left: 100px; font-size: 38px; color: #008b8b;" aria-hidden="true"></i></td>
     </tr>    
     <tr>
         <td><i class="fa fa-line-chart" style="font-size: 48px; color: #008b8b;" aria-hidden="true"></i></td>
         <td style="font-size: 20px;"><a href="/docs/user-guide/rule-engine-2-0/re-getting-started/#typical-use-cases">Analyze incoming smart meter data to derive actionable insights</a></td>
     </tr>    
-    <tr style="background: none;">
-        <td colspan="2"><i class="fa fa-arrow-down" style="padding-left: 100px; font-size: 38px; color: #008b8b;" aria-hidden="true"></i></td>
-    </tr>    
     <tr>
         <td><i class="fa fa-database" style="font-size: 48px; color: #008b8b;" aria-hidden="true"></i></td>
         <td style="font-size: 20px;">Store data for <a href="/docs/user-guide/reporting/">reporting</a> and historical analysis</td>
-    </tr>    
-    <tr style="background: none;">
-        <td colspan="2"><i class="fa fa-arrow-down" style="padding-left: 100px; font-size: 38px; color: #008b8b;" aria-hidden="true"></i></td>
     </tr>    
     <tr>
         <td><i class="fa fa-money" style="font-size: 48px; color: #008b8b;" aria-hidden="true"></i></td>

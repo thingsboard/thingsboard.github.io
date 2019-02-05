@@ -2,6 +2,7 @@
 layout: docwithnav
 title: Aggregate incoming data stream 
 description: Aggregate data about water consumption in the building
+hidetoc: "true"
 
 ---
 
