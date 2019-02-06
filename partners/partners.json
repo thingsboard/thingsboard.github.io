@@ -1,0 +1,40 @@
+[{
+    "type": "hardware",
+    "program": "",
+    "name": "Espressif Systems",
+    "logo": "espressif.svg",
+    "links": {
+        "Site": {
+            "href": "https://www.espressif.com/",
+            "target": "_blank"
+        },
+        "Integration guide": {
+            "href": "/docs/samples/esp32/gpio-control-pico-kit-dht22-sensor/"
+        },
+        "Demo portal": {
+            "href": "https://partner.thingsboard.io/",
+            "target": "_blank"
+        }
+    },
+    "blurb": "Espressif Systems designs a range of high-performance Wi-Fi+Bluetooth/BLE chipsets and modules."
+},
+{
+    "type": "hardware",
+    "program": "",
+    "name": "SODAQ",
+    "logo": "sodaq.jpg",
+    "links": {
+        "Site": {
+            "href": "https://sodaq.com/",
+            "target": "_blank"
+        },
+        "Integration guide": {
+            "href": "/docs/user-guide/integrations/sodaq/"
+        },
+        "Demo portal": {
+            "href": "https://partner.thingsboard.io/",
+            "target": "_blank"
+        }
+    },
+    "blurb": "What drives us is the passion to create scalable electronics solutions that work anywhere. We have implemented projects throughout developing countries, from Peru to Sri Lanka, and we will continue working where we can have the highest impact."
+}]
