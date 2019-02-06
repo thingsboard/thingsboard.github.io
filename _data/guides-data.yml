@@ -395,7 +395,7 @@
       title: Scheduler
       subtitle: Learn how to schedule various types of events and trigger actions.
       pe: true
-      video: false
+      video: true
     - path: /docs/user-guide/reporting/
       title: Reporting
       subtitle: Learn how to schedule and generate reports based on existing dashboards.

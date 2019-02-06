@@ -23,6 +23,17 @@ the [Root Rule Chain](/docs/user-guide/rule-engine-2-0/overview/#rule-chain).
 
 ![image](/images/user-guide/scheduler.svg)
 
+### Video tutorial
+
+See video tutorial below for step-by-step instruction how to use this feature.
+
+<br/>
+<div id="video">  
+    <div id="video_wrapper">
+        <iframe src="https://www.youtube.com/embed/Uo-YEC7UnDk" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div> 
+
 ### Scheduler Administration
 
 Tenant administrator and customer users are able to configure **Scheduler events** in ThingsBoard.
