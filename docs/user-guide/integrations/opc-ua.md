@@ -17,6 +17,17 @@ OPC UA Integration allows you to stream data from the OPC UA server to ThingsBoa
 
 ![image](/images/user-guide/integrations/opc-ua-integration.svg)
 
+### Video tutorial
+
+See video tutorial below for step-by-step instruction how to setup OPC-UA Integration.
+
+<br/>
+<div id="video">  
+    <div id="video_wrapper">
+        <iframe src="https://www.youtube.com/embed/gCOF5HqCEf0" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div> 
+
 ### OPC-UA Integration Tutorial
 
 In this tutorial, we will configure the integration between ThingsBoard and OPC-UA
