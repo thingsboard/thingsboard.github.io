@@ -10,10 +10,6 @@ description:
 {:toc}
 
 
-## IMPORTANT NOTICE
-
-**This documentation covers feature that is not released yet! It will be released on February 8th, 2019. This feature is already available on cloud.thingsboard.io for evaluation and pre-release review.** 
-
 ## ThingsBoard CE vs PE security features comparison
 
 ThingsBoard Community Edition (TB CE) supports straight-forward security model with three main roles: System administrator, Tenant administrator and Customer user. 
