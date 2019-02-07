@@ -5,6 +5,80 @@ description: ThingsBoard architecture
 
 ---
 
+* TOC
+{:toc}
+
+## v2.3 (February 7, 2019)
+
+### ThingsBoard CE
+
+Minor release with the following improvements.
+
+Main features:
+
+- Support of message transactions using new synchronization rule nodes;
+- Delete Alarm API;
+
+Additional features:
+
+- Add 'Reconnect' and 'RTU over TCP' options to TCP Modbus extension configuration;
+- Added note to the originator telemetry node details about max fetch size ([issue #1346](https://github.com/thingsboard/thingsboard/issues/1346));
+- Use a fast serialization library like FST for serialization of TbActorMsg;
+- Improve create alarm node to read alarm config from message;
+- Improve clear alarm node to get alarm type using pattern with fields from message metadata;
+- Ability to make entity views public; 
+- UI: Add German locale;
+- UI: Add Persian locale;
+- UI: Updated Russian locale;
+- UI: Updated Spanish locale;
+- UI: Improve Map widgets to not change zoom on every data update;
+- UI: Add ability to display polygons on Map widgets;
+- UI: Improve webpack resources compilation time by running loaders in concurrent mode;
+
+New Rule nodes:
+
+- Transaction nodes: Synchronization start and Synchronization end;
+- Delete relation node; 
+- Unassign from customer node;
+- Check existence fields;
+
+Bug fixes:
+
+- Fixed aggregation for numeric data types to process long and double values in same time;
+- Fixed issues related to originator telemetry node;
+- Fixed [issue #1327](https://github.com/thingsboard/thingsboard/issues/1327);
+- Fixed [issue #1355](https://github.com/thingsboard/thingsboard/issues/1355);
+- Swagger UI: Fixed URL templating;
+- Fixed NPE in Netty-mqtt client on puback;
+- Fixed SQL aggregation queries (SQL Warning Code: -1003), issues [#925](https://github.com/thingsboard/thingsboard/issues/925), [#397](https://github.com/thingsboard/thingsboard/issues/397);
+- Add workaround to rest api call node to use "simple client HTTP factory" to avoid issues with HTTP headers introduced by netty client http factory; 
+- UI: Fixed gateway mqtt extension configuration: make device type and topic expressions optional;
+- UI: Fixed issues with device/asset/entityView type autocomplete;  
+- UI: Flot timeseries widgets: fixed issue with tooltip vertical position;
+- UI: Fixed [issue #1427](https://github.com/thingsboard/thingsboard/issues/1427): Boolean input widgets were saving wrong value; 
+
+### ThingsBoard PE
+
+Everything from TB CE v2.3+ the following improvements.
+
+Main features:
+
+- [Advanced RBAC for IoT](/docs/user-guide/rbac/) to be able to define user groups and set permissions in relation to entity groups (devices/assets/dashboards, etc);
+
+Additional features:
+
+- Added User, Entity View and Dashboard groups;
+- Improve scheduler configuration with ability to create time-based schedule;
+ 
+Bug fixes:
+
+- Fixed timezone processing of scheduler events;
+- Fixed OPC-UA integration reconnect procedure;
+- Fixed issue with multiple creation of devices by integration;
+- Improve Platform Integrations initialization;
+- UI: Fixed "Allow white-labeling" settings;
+- UI: Fixed issue with labels rendering on IE9+;
+
 ## v2.2 (November 30, 2018)
 
 ### ThingsBoard CE
@@ -93,8 +167,6 @@ Bug fixes:
  - Fixed export csv/xls data format according to locale
  - Scheduler service cluster mode bug fix 
 
-
-
-### Earlier releases
+## Earlier releases
 
 See GitHub releases page for previous release notes: https://github.com/thingsboard/thingsboard/releases  

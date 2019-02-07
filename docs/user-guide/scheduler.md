@@ -30,7 +30,7 @@ See video tutorial below for step-by-step instruction how to use this feature.
 <br/>
 <div id="video">  
     <div id="video_wrapper">
-        <iframe src="https://www.youtube.com/embed/Uo-YEC7UnDk" frameborder="0" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/RnHAao8yET4" frameborder="0" allowfullscreen></iframe>
     </div>
 </div> 
 
