@@ -48,7 +48,7 @@ Where:
 - `-p 1883:1883`            - connect local port 1883 to exposed internal MQTT port 1883    
 - `-p 5683:5683`            - connect local port 5683 to exposed internal COAP port 5683 
 - `-v ~/.mytb-data:/data`   - mounts the host's dir `~/.mytb-data` to ThingsBoard DataBase data directory
-- `-v ~/.mytb-logs:/var/log/thingsboard`   - mounts the host's dir `~/.mytb-data` to ThingsBoard DataBase data directory
+- `-v ~/.mytb-logs:/var/log/thingsboard`   - mounts the host's dir `~/.mytb-logs` to ThingsBoard logs directory
 - `--name mytb`             - friendly local name of this machine
 - `--restart always`        - automatically start ThingsBoard in case of system reboot and restart in case of failure.
 - `thingsboard/tb-cassandra`          - docker image, can be also `thingsboard/tb-postgres` or `thingsboard/tb`
