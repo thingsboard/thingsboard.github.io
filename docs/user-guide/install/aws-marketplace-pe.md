@@ -7,7 +7,7 @@ description: Installing ThingsBoard PE from AWS Marketplace
 
 This guide describes how to install ThingsBoard Professional Edition from AWS Marketplace. 
 
-With this option you pay for Thingsboard Professional Edition on hourly basis. Software usage for the first 5 days is free of charge.
+With this option you pay for Thingsboard Professional Edition on hourly basis.
  
 
 * TOC
