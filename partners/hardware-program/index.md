@@ -4,11 +4,6 @@ title: Hardware Partner Program
 description:
 ---
 
-# Hardware Partner Program
-
-<br/>
-
-##### Apply for ThingsBoard Hardware Partner Program Lorem ipsum dolor
 
 <br/>
 <br/>
@@ -16,7 +11,7 @@ description:
     <table>
         <thead>
         <tr>
-            <th class="left-right-shadow program-type-header" colspan="4"><div class="program-type-header">Partner programs</div></th>
+            <th class="left-right-shadow program-type-header" colspan="4"><div class="program-type-header">Hardware Partner programs</div></th>
         </tr>
         <tr>
             <th class="left-shadow program-type-header"><div class="program-type-header">Description</div></th>
@@ -27,7 +22,7 @@ description:
         </thead>
         <tbody>
         <tr>
-            <td class="program-section" colspan="4"><i class="fa fa-shopping-bag" aria-hidden="true"></i>Marketing</td>
+            <td class="program-section" colspan="4"><i class="fa fa-shopping-bag" aria-hidden="true"></i>Marketing Benefits</td>
         </tr>
         <tr>
             <td>Partner name and logo on ThingsBoard website</td>
@@ -36,17 +31,17 @@ description:
             <td class="checked"></td>
         </tr>
         <tr>
-            <td>Instruction how to connect and use 
-                your device with ThingsBoard prepared by Partner</td>
+            <td>Online tutorial how to connect and use 
+                your devices with ThingsBoard prepared by Partner</td>
             <td class="checked"></td>
             <td class="checked"></td>
             <td class="checked"></td>
         </tr>
         <tr>
-            <td>Instruction how to connect and use 
-                your device with ThingsBoard prepared by ThingsBoard</td>
-            <td>optional</td>
-            <td>optional</td>
+            <td>Online tutorial how to connect and use 
+                your devices with ThingsBoard prepared by ThingsBoard</td>
+            <td>optional<sup>*</sup></td>
+            <td>optional<sup>*</sup></td>
             <td class="checked"></td>
         </tr>
         <tr>
@@ -87,11 +82,11 @@ description:
             <td class="checked"></td>
         </tr>   
         <tr>
-            <td class="program-section" colspan="4"><i class="fa fa-life-ring" aria-hidden="true"></i>Support</td>
+            <td class="program-section" colspan="4"><i class="fa fa-life-ring" aria-hidden="true"></i>Support Services</td>
         </tr>
         <tr>
             <td>Technical Support</td>
-            <td></td>
+            <td>optional<sup>*</sup></td>
             <td>5 hours</td>
             <td>20 hours</td>
         </tr>   
@@ -120,19 +115,19 @@ description:
         </tr>        
         <tr>
             <td>Demo Portal Account</td>
-            <td class="checked">&nbsp;<sup>*</sup></td>
-            <td class="checked">&nbsp;<sup>*</sup></td>
-            <td class="checked">&nbsp;<sup>*</sup></td>
+            <td class="checked">&nbsp;<sup>**</sup></td>
+            <td class="checked">&nbsp;<sup>**</sup></td>
+            <td class="checked">&nbsp;<sup>**</sup></td>
         </tr>
         <tr>
             <td>White-labeling</td>
             <td class="unchecked"></td>
             <td class="unchecked"></td>
-            <td class="checked">&nbsp;<sup>**</sup></td>
+            <td class="checked">&nbsp;<sup>***</sup></td>
         </tr>
         <tr>
             <td>Demo dashboard development by ThingsBoard</td>
-            <td></td>
+            <td>optional<sup>*</sup></td>
             <td>5 hours</td>
             <td>20 hours</td>
         </tr>
@@ -164,11 +159,14 @@ description:
             </td>
         </tr>
         <tr>
-            <td class="note" colspan="4">* - Partner account with demo dashboards on partner.thingsboard.io (Partners ThingsBoard PE Cloud)</td>
+            <td class="note" colspan="4">* - Additional fees may apply</td>
+        </tr>        
+        <tr>
+            <td class="note" colspan="4">** - Tenant administrator account on ThingsBoard PE instance deployed in the cloud and dedicated to PoCs and Sales demos (partner.thingsboard.io)</td>
         </tr>
         <tr>
-            <td class="note" colspan="4">** - Custom logos, color schemes, login pages, translations and domains on a system, tenant and customer levels</td>
-        </tr>
+            <td class="note" colspan="4">*** - Custom logos, color schemes, login pages, translations and domains on a system, tenant and customer levels</td>
+        </tr>        
         </tbody>
     </table>
     <div class="bottom-background"></div>
