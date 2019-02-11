@@ -16,8 +16,8 @@
 
 <script type="text/javascript">
     inViewportDefer(function() {
-        $("#partner-program-pricing table th:not(:first-child), " +
-            "#partner-program-pricing table td:not(:first-child)").inViewport(function(px){
+        $("#partner-program-pricing table th," +
+            "#partner-program-pricing table td").inViewport(function(px){
             if(px >= 20) {
                 $(this).addClass("animated flipInY");
                 return true;
