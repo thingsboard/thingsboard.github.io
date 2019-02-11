@@ -14,9 +14,15 @@ hidetoc: "true"
             var awsTrialForm = $('#mlb2-7972110');            
             var azureTrialForm = $('#mlb2-9674300');
             
+            var payGoMarketplace = $('#pay-go-marketplace');
+            var azurePayGo = $('#azure-pay-go-market');
+
             azureTrial.click(function() {
-                trialMarketplace.css('display', 'none');
-                azureTrialForm.css('display', '');
+                $("#tab-cloud").prop("checked", true).trigger("click");
+                payGoMarketplace.css('display', 'none');
+                azurePayGoForm.css('display', '');
+                //trialMarketplace.css('display', 'none');
+                //azureTrialForm.css('display', '');
             });
             
             var payYearlyOption = $('#pay-yearly-option');
@@ -29,9 +35,6 @@ hidetoc: "true"
                 payYearlyPremiseForm.css('display', '');
             });
             
-            var payGoMarketplace = $('#pay-go-marketplace');
-            var azurePayGo = $('#azure-pay-go-market');
-
             var awsPayGoForm = $('#mlb2-7520964');            
             var azurePayGoForm = $('#mlb2-9674436');
 
