@@ -1,12 +1,19 @@
-{% capture partners %}{% include_relative partners.json %}{% endcapture %}
+{% capture containerId %}{{include.containerId}}{% endcapture %}
+{% capture partnersType %}{{include.type}}{% endcapture %}
+{% capture partners %}{% include partners.json %}{% endcapture %}
 
-;(function () {
+(function () {
+    var containerId = "{{ containerId }}";
+    var partnersType = "{{ partnersType }}";
 	var partners = {{ partners }};
 
-	var hardwareContainer = document.getElementById('hardwareContainer')
-	var integratorContainer = document.getElementById('integratorContainer')
+	var targetContainer = document.getElementById(containerId);
 
-	var sorted = partners.sort(function (a, b) {
+    var partnersByType = partners.filter(function(partner) {
+        return partner.type === partnersType;
+    });
+
+	var sorted = partnersByType.sort(function (a, b) {
 		if (a.name > b.name) return 1
 		if (a.name < b.name) return -1
 		return 0
@@ -66,38 +73,31 @@
 		box.appendChild(img);
 		box.appendChild(div);
 
-		var container = obj.type === 'hardware' ? hardwareContainer : integratorContainer;
-		container.appendChild(box);
+        targetContainer.appendChild(box);
 	});
 
-	var becomeHardwarePartnerBox = document.createElement('div');
-    becomeHardwarePartnerBox.className = 'partner-box';
+	if (partnersType === 'hardware') {
+        var becomeHardwarePartnerBox = document.createElement('div');
+        becomeHardwarePartnerBox.className = 'partner-box';
 
-    var div = document.createElement('div');
-    var p = document.createElement('p');
-    p.textContent = 'Want to become ThingsBoard Hardware Partner?';
-    div.appendChild(p);
+        var div = document.createElement('div');
+        var p = document.createElement('p');
+        p.textContent = 'Want to become ThingsBoard Hardware Partner?';
+        p.className = 'become-partner';
+        div.appendChild(p);
 
-    var linksElement = document.createElement('div');
-    linksElement.className = 'links';
+        var linksElement = document.createElement('div');
+        linksElement.className = 'links';
 
-    var a = document.createElement('a');
-    a.textContent = 'Apply for Hardware Partner Program';
-    a.href = '/partners/hardware-program';
-    linksElement.appendChild(a);
-
-
-    div.appendChild(linksElement);
-    becomeHardwarePartnerBox.appendChild(div);
-
-    /*var buttonElement = document.createElement('a');
-    buttonElement.className = 'button';
-    buttonElement.textContent = 'Become Hardware Partner';
-    buttonElement.href = '/partners/register';
-
-    becomeHardwarePartnerBox.appendChild(buttonElement);*/
-
-    hardwareContainer.appendChild(becomeHardwarePartnerBox);
+        var a = document.createElement('a');
+        a.textContent = 'Apply for Hardware Partner Program';
+        a.href = '/partners/hardware/program/';
+        linksElement.appendChild(a);
 
 
+        div.appendChild(linksElement);
+        becomeHardwarePartnerBox.appendChild(div);
+
+        targetContainer.appendChild(becomeHardwarePartnerBox);
+    }
 })();

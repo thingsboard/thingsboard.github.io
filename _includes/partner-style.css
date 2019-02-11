@@ -81,6 +81,13 @@ h3#hardware-partners:before, h3#integrators:before {
     font-size: 20px;
 }
 
+.partner-box p.become-partner {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    font-size: 18px;
+}
+
 @media screen and (max-width: 1024px) {
 	.partner-box {
 		flex-direction: column;
