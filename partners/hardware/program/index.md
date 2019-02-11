@@ -144,17 +144,17 @@ description:
             <td></td>
             <td>
                 <div class="apply-cell">
-                    <p><a href="/partners/apply/hardware/?program=silver" class="button">Apply</a></p>
+                    <p><a href="/partners/hardware/apply/?program=silver" class="button">Apply</a></p>
                 </div>    
             </td>
             <td>
                 <div class="apply-cell">
-                    <p><a href="/partners/apply/hardware/?program=gold" class="button">Apply</a></p>
+                    <p><a href="/partners/hardware/apply/?program=gold" class="button">Apply</a></p>
                 </div>    
             </td>
             <td>
                 <div class="apply-cell">
-                    <p><a href="/partners/apply/hardware/?program=platinum" class="button">Apply</a></p>
+                    <p><a href="/partners/hardware/apply/?program=platinum" class="button">Apply</a></p>
                 </div>    
             </td>
         </tr>

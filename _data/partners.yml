@@ -1,6 +1,6 @@
-bigheader: "Partners"
-abstract: "ThingsBoard Partners"
+bigheader: "Hardware Partners"
+abstract: "ThingsBoard Hardware Partners"
 hidetoc: "true"
 toc:
-- title: Partners
-  path: /partners/
+- title: Hardware Partners
+  path: /partners/hardware/

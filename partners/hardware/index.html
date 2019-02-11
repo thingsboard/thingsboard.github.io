@@ -16,8 +16,6 @@ title: Partners
 		<h5>We are working with a broad group of partners who contribute to the ThingsBoard core codebase, making it stronger and richer. There partners create a vibrant ThingsBoard ecosystem supporting a spectrum of complementing platforms, from open source solutions to market-leading technologies.</h5>
 		<h3 id="hardware-partners">Hardware Partners</h3>
 		<div id="hardwareContainer"></div>
-		<h3 id="integrators">Integrators</h3>
-		<div id="integratorContainer"></div>
 	</main>
 </section>
 
@@ -29,7 +27,8 @@ title: Partners
 </style>
 
 <script>
-	{% include partner-script.js %}
+	{% include partner-script.js type="hardware"
+        containerId="hardwareContainer" %}
 </script>
 
 </body>
