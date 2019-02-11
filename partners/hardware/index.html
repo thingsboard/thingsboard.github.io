@@ -19,8 +19,6 @@ title: Partners
 			As a hardware manufacturer, you benefit from marketing exposure to hundreds or even thousands of system integrator companies that use the ThingsBoard platform as a basis for their solutions.
 		<h3 id="hardware-partners">Hardware Partners</h3>
 		<div id="hardwareContainer"></div>
-		<h3 id="integrators">Integrators</h3>
-		<div id="integratorContainer"></div>
 	</main>
 </section>
 
@@ -32,7 +30,8 @@ title: Partners
 </style>
 
 <script>
-	{% include partner-script.js %}
+	{% include partner-script.js type="hardware"
+        containerId="hardwareContainer" %}
 </script>
 
 </body>
