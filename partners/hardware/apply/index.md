@@ -7,9 +7,9 @@ description:
 <section id="install-pe">
     <div class="tabs">
         <div class="tab-panel" style="display: block;">
-            <div id="mlb2-11010244" style="display: none;" class="deploy-form deploy-cloud ml-subscribe-form ml-subscribe-form-11010244">
+            <div id="mlb2-11249142" style="display: none;" class="deploy-form deploy-cloud ml-subscribe-form ml-subscribe-form-11249142">
                 <div class="ml-vertical-align-center">
-                    <form class="ml-block-form" action="https://app.mailerlite.com/webforms/submit/x1e5q3" data-id="1174474" data-code="x1e5q3" method="POST" target="_blank">
+                    <form class="ml-block-form" action="https://app.mailerlite.com/webforms/submit/h5b7n2" data-id="1211392" data-code="h5b7n2" method="POST" target="_blank">
                         <div class="form-title center">
                             <h1>Hardware Partner Program Silver Level</h1>
                         </div>
@@ -51,6 +51,12 @@ description:
                                         <p>Company*</p>
                                     </label>                                    
                                 </div>
+                                <div class="form-group ml-field-company_website ml-validate-required">
+                                    <label for="fields[company_website]">
+                                        <input type="text" name="fields[company_website]" class="form-control" value="" spellcheck="false" autocapitalize="off" autocorrect="off">
+                                        <p>Company Website*</p>
+                                    </label>
+                                </div>                                
                                 <div class="form-group ml-field-phone">
                                     <label for="fields[phone]">
                                         <input type="text" name="fields[phone]" class="form-control" value="" spellcheck="false" autocapitalize="off" autocorrect="off">
@@ -69,9 +75,9 @@ description:
                     </form>
                 </div>
             </div>            
-            <div id="mlb2-11010932" style="display: none;" class="deploy-form deploy-cloud ml-subscribe-form ml-subscribe-form-11010932">
+            <div id="mlb2-11249172" style="display: none;" class="deploy-form deploy-cloud ml-subscribe-form ml-subscribe-form-11249172">
                 <div class="ml-vertical-align-center">
-                    <form class="ml-block-form" action="https://app.mailerlite.com/webforms/submit/c1a6q7" data-id="1174562" data-code="c1a6q7" method="POST" target="_blank">
+                    <form class="ml-block-form" action="https://app.mailerlite.com/webforms/submit/d6b3t8" data-id="1211402" data-code="d6b3t8" method="POST" target="_blank">
                         <div class="form-title center">
                             <h1>Hardware Partner Program Gold Level</h1>
                         </div>
@@ -119,6 +125,12 @@ description:
                                         <p>Company*</p>
                                     </label>                                    
                                 </div>
+                                <div class="form-group ml-field-company_website ml-validate-required">
+                                    <label for="fields[company_website]">
+                                        <input type="text" name="fields[company_website]" class="form-control" value="" spellcheck="false" autocapitalize="off" autocorrect="off">
+                                        <p>Company Website*</p>
+                                    </label>
+                                </div>                                
                                 <div class="form-group ml-field-phone">
                                     <label for="fields[phone]">
                                         <input type="text" name="fields[phone]" class="form-control" value="" spellcheck="false" autocapitalize="off" autocorrect="off">
@@ -137,9 +149,9 @@ description:
                     </form>
                 </div>
             </div>            
-            <div id="mlb2-11010992" style="display: none;" class="deploy-form deploy-cloud ml-subscribe-form ml-subscribe-form-11010992">
+            <div id="mlb2-11249200" style="display: none;" class="deploy-form deploy-cloud ml-subscribe-form ml-subscribe-form-11249200">
                 <div class="ml-vertical-align-center">
-                    <form class="ml-block-form" action="https://app.mailerlite.com/webforms/submit/f6r0q1" data-id="1174572" data-code="f6r0q1" method="POST" target="_blank">
+                    <form class="ml-block-form" action="https://app.mailerlite.com/webforms/submit/r7f3c8" data-id="1211404" data-code="r7f3c8" method="POST" target="_blank">
                         <div class="form-title center">
                             <h1>Hardware Partner Program Platinum Level</h1>
                         </div>
@@ -156,7 +168,7 @@ description:
                                         <br/>
                                         <p>
                                             <span class="cloud-price-aws-desc">Yearly fee:</span>
-                                            <span class="cloud-price-aws">$1000</span>
+                                            <span class="cloud-price-aws">$2000</span>
                                         </p>                                        
                                     </div>                                
                                 </div>                                                            
@@ -187,6 +199,12 @@ description:
                                         <p>Company*</p>
                                     </label>                                    
                                 </div>
+                                <div class="form-group ml-field-company_website ml-validate-required">
+                                    <label for="fields[company_website]">
+                                        <input type="text" name="fields[company_website]" class="form-control" value="" spellcheck="false" autocapitalize="off" autocorrect="off">
+                                        <p>Company Website*</p>
+                                    </label>
+                                </div>                                
                                 <div class="form-group ml-field-phone">
                                     <label for="fields[phone]">
                                         <input type="text" name="fields[phone]" class="form-control" value="" spellcheck="false" autocapitalize="off" autocorrect="off">
@@ -218,24 +236,24 @@ description:
     var programType = "silver";
     
     var programTypeForms = {
-        "silver": "#mlb2-11010244",
-        "gold": "#mlb2-11010932",
-        "platinum": "#mlb2-11010992"
+        "silver": "#mlb2-11249142",
+        "gold": "#mlb2-11249172",
+        "platinum": "#mlb2-11249200"
     };
     
-    function ml_webform_success_11010244() {
+    function ml_webform_success_11249142() {
         var $ = ml_jQuery || jQuery;        
-        $(location).attr('href', '/products/thingsboard-pe/install-thanks/?instance='+instanceType);
+        $(location).attr('href', '/partners/hardware/apply/thanks/?type='+programType);
     };
     
-    function ml_webform_success_11010932() {
+    function ml_webform_success_11249172() {
         var $ = ml_jQuery || jQuery;        
-        $(location).attr('href', '/products/thingsboard-pe/install-thanks/?instance='+instanceType);
+        $(location).attr('href', '/partners/hardware/apply/thanks/?type='+programType);
     };
 
-    function ml_webform_success_11010992() {
+    function ml_webform_success_11249200() {
         var $ = ml_jQuery || jQuery;        
-        $(location).attr('href', '/products/thingsboard-pe/install-thanks/?instance='+instanceType);
+        $(location).attr('href', '/partners/hardware/apply/thanks/?type='+programType);
     };
             
     jqueryDefer(
