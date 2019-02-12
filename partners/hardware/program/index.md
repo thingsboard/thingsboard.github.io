@@ -50,6 +50,12 @@ description:
             <td class="checked"></td>
             <td class="checked"></td>
             <td class="checked"></td>
+        </tr>
+        <tr>
+            <td>Joint online demo of end-to-end use case</td>
+            <td class="checked"></td>
+            <td class="checked"></td>
+            <td class="checked"></td>
         </tr>        
         <tr>
             <td>Social Media Blogging</td>
@@ -60,27 +66,15 @@ description:
         <tr>
             <td>Joint webinars</td>
             <td class="unchecked"></td>
-            <td class="checked"></td>
-            <td class="checked"></td>
-        </tr>   
-        <tr>
-            <td>Joint online demo of end-to-end use case</td>
             <td class="unchecked"></td>
             <td class="checked"></td>
-            <td class="checked"></td>
-        </tr>   
+        </tr>
         <tr>
             <td>Success stories</td>
             <td class="unchecked"></td>
-            <td class="checked"></td>
-            <td class="checked"></td>
-        </tr>   
-        <tr>
-            <td>Press releases</td>
             <td class="unchecked"></td>
             <td class="checked"></td>
-            <td class="checked"></td>
-        </tr>   
+        </tr>
         <tr>
             <td class="program-section" colspan="4"><i class="fa fa-life-ring" aria-hidden="true"></i>Support Services</td>
         </tr>
@@ -138,7 +132,7 @@ description:
             <td></td>
             <td>Free</td>
             <td>$500</td>
-            <td>$1000</td>
+            <td>$2000</td>
         </tr>
         <tr>
             <td></td>
@@ -172,12 +166,13 @@ description:
     <div class="bottom-background"></div>
 </div>
 
+
 ## Frequently asked questions
 
 <br/>
 
 <div class="pi-accordion">
-    <h3 id="lorem-ipsum">Lorem ipsum</h3>
+    <h3 id="who-applicable">How to apply?</h3>
     <div class="item" data-tag="h4" data-item-id="lorem-ipsum-dolor" data-title="Lorem ipsum dolor">
         <div class="container">
             <p>
