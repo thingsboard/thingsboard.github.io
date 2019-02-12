@@ -14,6 +14,15 @@ ThingsBoard provides the ability to assign custom attributes to your entities an
 Attributes are treated key-value pairs. Flexibility and simplicity of the key-value format allow easy and seamless integration with almost any IoT device on the market.
 
 
+## Video Tutorial
+
+<div id="video">
+  <div id="video_wrapper">
+    <iframe src="https://www.youtube.com/embed/JCW_hShAp7I" frameborder="0" allowfullscreen=""></iframe>
+  </div>
+</div>
+
+
 ## Attribute types
 
 Attributes are separated into three main groups:
