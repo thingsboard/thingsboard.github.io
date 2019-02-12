@@ -4,7 +4,8 @@ title: Apply for Hardware Partner Program
 description: 
 ---
 
-<section id="install-pe">
+
+<section id="install-pe" >
     <div class="tabs">
         <div class="tab-panel" style="display: block;">
             <div id="mlb2-11249142" style="display: none;" class="deploy-form deploy-cloud ml-subscribe-form ml-subscribe-form-11249142">
@@ -20,8 +21,7 @@ description:
                                         <img src="/images/partners/silver-partner.svg">
                                     </div>
                                     <div class="cloud-provider-desc">
-                                        <p>Become Hardware Partner of Silver Level for free.</p>
-                                        <p>This is the entry package for partners who want to see the benefit of a relationship with us.</p>
+                                        <p>Silver Partnership does not require any fees but assumes you have basic ThingsBoard knowledge and will prepare the online tutorial and demo dashboard on your own.</p>
                                     </div>
                                 </div>                                                            
                             </div>
@@ -88,9 +88,7 @@ description:
                                         <img src="/images/partners/gold-partner.svg">
                                     </div>
                                     <div class="cloud-provider-desc">
-                                        <p>Become Hardware Partner of Gold Level.</p>
-                                        <p>Get account on ThingsBoard Partner Portal with PE features.</p>
-                                        <p>Create demo dashboards to be used as an ultimate selling tool for your devices.</p>
+                                        <p>Gold Partnership includes our support services and help with preparing online tutorials and dashboards that will become an ultimate selling tool for your devices.</p>  
                                         <br/>
                                         <p>
                                             <span class="cloud-price-aws-desc">Yearly fee:</span>
@@ -162,9 +160,7 @@ description:
                                         <img src="/images/partners/platinum-partner.svg">
                                     </div>
                                     <div class="cloud-provider-desc">
-                                        <p>Become Hardware Partner of Platinum Level.</p>
-                                        <p>Get account on ThingsBoard Partner Portal with PE features and White-labeling.</p>
-                                        <p>Use your company branding and create demo dashboards to be used as an ultimate selling tool for your devices.</p>
+                                        <p>Platinum Partnership includes access to white-labeled partner portal, our support services and help with preparing online tutorials and dashboards that will become an ultimate selling tool for your devices.</p>
                                         <br/>
                                         <p>
                                             <span class="cloud-price-aws-desc">Yearly fee:</span>
