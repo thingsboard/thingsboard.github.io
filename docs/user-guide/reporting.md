@@ -28,7 +28,7 @@ See video tutorial below for step-by-step instruction how to use this feature.
 <br/>
 <div id="video">  
     <div id="video_wrapper">
-        <iframe src="https://youtu.be/QTeCoe5rUF0" frameborder="0" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/QTeCoe5rUF0" frameborder="0" allowfullscreen></iframe>
     </div>
 </div> 
 
