@@ -2,6 +2,7 @@
 layout: docwithnav
 title: ESP32 Pico Kit GPIO control and DHT22 sensor monitor using ThingsBoard Arduino SDK
 description: ThingsBoard IoT Platform sample for ESP32 Pico Kit GPIO control and temperature/humidity monitor using ThingsBoard Arduino SDK
+hidetoc: "true"
 ---
 
 * TOC

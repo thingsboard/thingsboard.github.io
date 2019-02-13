@@ -37,7 +37,7 @@ In this instruction `thingsboard/tb-cassandra` image will be used. You can choos
 Execute the following command to run this docker directly:
 
 ``` 
-$ docker run -it -p 9090:9090 -p 1883:1883 -p 5683:5683/udp -v ~/.mytb-data:/data --name mytb --restart always thingsboard/tb-cassandra
+$ docker run -it -p 9090:9090 -p 1883:1883 -p 5683:5683/udp -v ~/.mytb-data:/data -v ~/.mytb-logs:/var/log/thingsboard --name mytb --restart always thingsboard/tb-cassandra
 ```
 
 Where: 
@@ -48,6 +48,7 @@ Where:
 - `-p 1883:1883`            - connect local port 1883 to exposed internal MQTT port 1883    
 - `-p 5683:5683`            - connect local port 5683 to exposed internal COAP port 5683 
 - `-v ~/.mytb-data:/data`   - mounts the host's dir `~/.mytb-data` to ThingsBoard DataBase data directory
+- `-v ~/.mytb-logs:/var/log/thingsboard`   - mounts the host's dir `~/.mytb-logs` to ThingsBoard logs directory
 - `--name mytb`             - friendly local name of this machine
 - `--restart always`        - automatically start ThingsBoard in case of system reboot and restart in case of failure.
 - `thingsboard/tb-cassandra`          - docker image, can be also `thingsboard/tb-postgres` or `thingsboard/tb`
@@ -91,7 +92,8 @@ In order to update to the latest image, execute the following commands:
 $ docker pull thingsboard/tb-cassandra
 $ docker stop mytb
 $ docker run -it -v ~/.mytb-data:/data --rm thingsboard/tb-cassandra upgrade-tb.sh
-$ docker start mytb
+$ docker rm mytb
+$ docker run -it -p 9090:9090 -p 1883:1883 -p 5683:5683/udp -v ~/.mytb-data:/data -v ~/.mytb-logs:/var/log/thingsboard --name mytb --restart always thingsboard/tb-cassandra
 ```
 
 **NOTE**: if you use different database change image name in all commands from `thingsboard/tb-cassandra` to `thingsboard/tb-postgres` or `thingsboard/tb` correspondingly.

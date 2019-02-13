@@ -10,6 +10,7 @@ description: Reporting Guide
 * TOC
 {:toc}
 
+
 ### Overview
 
 ThingsBoard allows you to generate reports using existing dashboards.
@@ -19,6 +20,17 @@ Reports can be generated either from the currently opened dashboard or scheduled
 <br/>
 
 ![image](/images/user-guide/reporting.svg)
+
+### Video tutorial
+
+See video tutorial below for step-by-step instruction how to use this feature.
+
+<br/>
+<div id="video">  
+    <div id="video_wrapper">
+        <iframe src="https://www.youtube.com/embed/QTeCoe5rUF0" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div> 
 
 ### Reports Server
 

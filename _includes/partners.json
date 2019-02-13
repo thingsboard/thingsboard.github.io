@@ -1,0 +1,45 @@
+[{
+    "type": "hardware",
+    "program": "",
+    "name": "Espressif Systems",
+    "logo": "espressif.svg",
+    "links": {
+        "Site": {
+            "href": "https://www.espressif.com/",
+            "target": "_blank"
+        },
+        "Integration guide": {
+            "href": "/docs/samples/esp32/gpio-control-pico-kit-dht22-sensor/"
+        }
+    },
+    "blurb": "Espressif Systems designs a range of high-performance Wi-Fi+Bluetooth/BLE chipsets and modules."
+},
+{
+    "type": "hardware",
+    "program": "",
+    "name": "SODAQ",
+    "logo": "sodaq.jpg",
+    "links": {
+        "Site": {
+            "href": "https://sodaq.com/",
+            "target": "_blank"
+        },
+        "Integration guide": {
+            "href": "/docs/user-guide/integrations/sodaq/"
+        }
+    },
+    "blurb": "What drives us is the passion to create scalable electronics solutions that work anywhere. We have implemented projects throughout developing countries, from Peru to Sri Lanka, and we will continue working where we can have the highest impact."
+},
+{
+    "type": "hardware",
+    "program": "",
+    "name": "TEKTELIC Communications Inc.",
+    "logo": "tektelic.png",
+    "links": {
+        "Site": {
+            "href": "https://tektelic.com/",
+            "target": "_blank"
+        }
+    },
+    "blurb": "TEKTELIC is a leading supplier of LoRaWAN IoT equipment including best-in-class gateways and end devices."
+}]
