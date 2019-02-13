@@ -4,12 +4,20 @@ h5 {
 	margin-bottom: 2em;
 }
 
+h3#hardware-partners:before, h3#integrators:before {
+    display: block;
+    content: " ";
+    margin-top: -80px;
+    height: 80px;
+    visibility: hidden;
+}
+
 #usersGrid a {
 	display: inline-block;
 	background-color: #f9f9f9;
 }
 
-#isvContainer, #servContainer {
+#hardwareContainer, #integratorContainer {
 	position: relative;
 	width: 100%;
 	display: flex;
@@ -17,11 +25,12 @@ h5 {
 	flex-wrap: wrap;
 }
 
-#isvContainer {
-	margin-bottom: 80px;
+#hardwareContainer {
+	margin-bottom: 20px;
 }
 
 .partner-box {
+    box-shadow: 0 1px 8px 0 rgba(0,0,0,0.2), 0 3px 4px 0 rgba(0,0,0,0.14), 0 3px 3px -2px rgba(0,0,0,0.12);
 	position: relative;
 	width: 47%;
 	max-width: 48%;
@@ -30,20 +39,53 @@ h5 {
 	padding: 20px;
 	flex: 1;
 	display: flex;
-	justify-content: space-between;
 	align-items: flex-start;
+    flex-direction: column;
 }
 
-.partner-box img {
-	background-color: #f9f9f9;
+.partner-box img.logo {
+    object-fit: scale-down;
+    height: 50px;
+    max-width: 80%;
+    margin-left: 30px;
+}
+
+.partner-box img.partner-program {
+    position: absolute;
+    object-fit: scale-down;
+    height: 40px;
+    top: 20px;
+    right: 20px;
 }
 
 .partner-box > div {
 	margin-left: 30px;
+    margin-top: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
 }
 
-.partner-box a {
+.partner-box div.links a {
 	color: #3576E3;
+}
+
+.partner-box div.links a:hover {
+    text-decoration: underline;
+}
+
+.partner-box p.title {
+    font-weight: 500 !important;
+    font-size: 20px;
+}
+
+.partner-box p.become-partner {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    font-size: 18px;
 }
 
 @media screen and (max-width: 1024px) {
@@ -55,28 +97,20 @@ h5 {
 	.partner-box > div {
 		margin: 20px 0 0;
 	}
+
+    .partner-box img.logo {
+        margin-left: 0px;
+        height: 30px;
+        max-width: 50%;
+    }
+
+    .partner-box img.partner-program {
+        height: 30px;
+    }
 }
 
 @media screen and (max-width: 568px) {
-	#isvContainer, #servContainer {
-		justify-content: center;
-	}
-
-	.partner-box {
-		flex-direction: column;
-		justify-content: flex-start;
-		width: 100%;
-		max-width: 100%;
-		min-width: 100%;
-	}
-
-	.partner-box > div {
-		margin: 20px 0 0;
-	}
-}
-
-@media screen and (max-width: 568px) {
-	#isvContainer, #servContainer {
+	#hardwareContainer, #integratorContainer {
 		justify-content: center;
 	}
 
