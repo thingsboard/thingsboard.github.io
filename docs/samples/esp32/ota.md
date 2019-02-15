@@ -116,9 +116,9 @@ Go to the [root sample directory](https://github.com/thingsboard/esp32_ota) and 
 
     <img src="/images/samples/esp32/ota/monitor_output_after_flashing.png" width="600"/>
 
-    Let's look at a log message format, for example *I (4894) tb_ota: Connected to WI-FI, IP address: 192.168.2.45*
+    Let's look at a log message format, for example *I (5219) tb_ota: Connected to WI-FI, IP address: 192.168.2.45*
     - *I* - info log type, can be W (warning), E (error) or D (debug)
-    - *(4894)* - time in milliseconds after the scheduler on APP CPU started
+    - *(5219)* - time in milliseconds after the scheduler on APP CPU started
     - *tb_ota:* - tag to identify a component that produced the log message
     - *Connected to ...* - the log message itself
 
