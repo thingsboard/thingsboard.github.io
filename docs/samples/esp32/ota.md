@@ -94,15 +94,15 @@ Open the terminal and execute next command:
     <img src="/images/samples/esp32/ota/partition_table.png" width="600"/>
    
     Save the configuration and select *Exit* twice to exit from *menuconfig* utility.
-5. Any web server that supports HTTPS and returns the image files can be used for OTA. For this sample we will use the GitHub repository to download the images by ESP32 for OTA update. *[ca_cert.pem](./server_certs/ca_cert.pem)* file contains GitHub public certificate already.  
+5. Any web server that supports HTTPS and returns the image files can be used for OTA. For this sample we will use the GitHub repository to download the images by ESP32 for OTA update. *[ca_cert.pem](https://raw.githubusercontent.com/thingsboard/esp32-ota/master/server_certs/ca_cert.pem)* file contains GitHub public certificate already.  
     
     **OPTIONAL**  
-    If you are going to use some another server for the firmware images delivering, then content of *[ca_cert.pem](https://github.com/thingsboard/esp32-ota/blob/master/server_certs/ca_cert.pem)* file should be replaced.  
+    If you are going to use some another server for the firmware images delivering, then content of *[ca_cert.pem](https://raw.githubusercontent.com/thingsboard/esp32-ota/master/server_certs/ca_cert.pem)* file should be replaced.  
     To get public SSL certificate of a server, execute the next command (preliminary replace *raw.githubusercontent.com* by the desired server address)
     ```bash
     openssl s_client -showcerts -connect raw.githubusercontent.com:443
     ```
-    Copy a certificate content from the output to *[ca_cert.pem](https://github.com/thingsboard/esp32-ota/blob/master/server_certs/ca_cert.pem)* and save the file. 
+    Copy a certificate content from the output to *[ca_cert.pem](https://raw.githubusercontent.com/thingsboard/esp32-ota/master/server_certs/ca_cert.pem)* and save the file. 
 6. Now the project is configured and ready for compilation and flashing. Before the first flashing it is necessary to erase ESP32 flash memory.  
 Go to the [root sample directory](https://github.com/thingsboard/esp32-ota) and execute the next command
     ```bash
@@ -116,9 +116,9 @@ Go to the [root sample directory](https://github.com/thingsboard/esp32-ota) and 
 
     <img src="/images/samples/esp32/ota/monitor_output_after_flashing.png" width="600"/>
 
-    Let's look at a log message format, for example *I (4894) tb_ota: Connected to WI-FI, IP address: 192.168.2.45*
+    Let's look at a log message format, for example *I (5219) tb_ota: Connected to WI-FI, IP address: 192.168.2.45*
     - *I* - info log type, can be W (warning), E (error) or D (debug)
-    - *(4894)* - time in milliseconds after the scheduler on APP CPU started
+    - *(5219)* - time in milliseconds after the scheduler on APP CPU started
     - *tb_ota:* - tag to identify a component that produced the log message
     - *Connected to ...* - the log message itself
 
