@@ -312,6 +312,11 @@
   subtitle: Learn how to connect various hardware platforms to ThingsBoard.
   id: HardwareSamples
   section:
+    - path: /docs/samples/esp32/ota/
+      title: ESP32 OTA using ThingsBoard
+      subtitle: Learn how to make ESP32 OTA update using ThingsBoard custom widget, rule chain and dashboard
+      pe: false
+      video: false
     - path: /docs/samples/esp32/gpio-control-pico-kit-dht22-sensor/
       title: ESP32 Pico Kit GPIO control and DHT22 sensor monitor using ThingsBoard Arduino SDK
       subtitle: Contains wiring diagram, sketch and dashboard setup guide.

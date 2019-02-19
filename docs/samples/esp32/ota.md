@@ -35,7 +35,7 @@ The specified device type will be used later in the rule chains and in the dashb
 The attribute type is boolean and it will be used to show on the dashboard is firmware synced or not.  
 Download, import [Check is ESP32 firmware synced](resources/check_is_esp32_firmware_synced.json) rule chain into ThingsBoard and save it:
 
-    <img data-gifffer="/images/samples/esp32/ota/import_rule_chain.gif" width="600"/>
+    <img data-gifffer="/images/samples/esp32/ota/import_rule_chain.gif" width="1000"/>
 
     The rule chain has 3 nodes:
     - *Add attributes to metadata* - adds client attribute *currentFwVer* and server attribute *lastTargetFwVer* to metadata
@@ -47,7 +47,7 @@ To the added node should be connected two links:
     - From *Message Type Switch* with link type *Attributes Updated*
     - From *Save Attributes* with link type *Success*
   
-    <img data-gifffer="/images/samples/esp32/ota/tb_extend_root_rule_chain.gif" width="600"/>
+    <img data-gifffer="/images/samples/esp32/ota/tb_extend_root_rule_chain.gif" width="1000"/>
 
     Such rule configuration allows to compare received firmware version after it was updated in the next cases: 
     - After flashing ESP32 by a new firmware through OTA.  
@@ -140,21 +140,21 @@ Go to the [root sample directory](https://github.com/thingsboard/esp32-ota) and 
 ## Performing OTA from ThingsBoard
 Go to the *OTA for ESP32* dashboard and press *Select OTA configuration* for the device. In opened dashboard enter the next parameters in *OTA control* widget:
   - *Target firmware version* - expected firmware version which is hardcoded in the new firmware image, *v1.2*
-  - *Firmware server URL* - link to the new firmware image, *https://raw.githubusercontent.com/thingsboard/esp32-ta/firmware/master/example-v1.2.bin*
+  - *Firmware server URL* - link to the new firmware image, *https://raw.githubusercontent.com/thingsboard/esp32-ota/master/firmware/example-v1.2.bin*
 
 Press *Start OTA* button to create and send the chared attributes to EPS32. 
 
-<img data-gifffer="/images/samples/esp32/ota/tb_successful_ota_from_dashboard.gif" width="800"/>
+<img data-gifffer="/images/samples/esp32/ota/tb_successful_ota_from_dashboard.gif" width="1000"/>
 
-The sample's [firmware](https://github.com/thingsboard/esp32-ota/firmware/) directory contains two images with the next differences:
-  - [example-v1.1.bin](https://github.com/thingsboard/esp32-ota/firmware/example-v1.1.bin) - value of *FIRMWARE_VERSION* in [main.h](https://github.com/thingsboard/esp32-ota/main/main.h) equals to *v1.1*.  
-  *counter* variable in [main_application_task](https://github.com/thingsboard/esp32-ota/main/main.c) has value *1*.
-  - [example-v1.2.bin](https://github.com/thingsboard/esp32-ota/firmware/example-v1.2.bin) - value of *FIRMWARE_VERSION* in [main.h](https://github.com/thingsboard/esp32-ota/main/main.h) equals to *v1.2*.  
-  *counter* variable in [main_application_task](https://github.com/thingsboard/esp32-ota/main/main.c) has value *2*.
+The sample's [firmware](https://github.com/thingsboard/esp32-ota/tree/master/firmware/) directory contains two images with the next differences:
+  - [example-v1.1.bin](https://github.com/thingsboard/esp32-ota/blob/master/firmware/example-v1.1.bin) - value of *FIRMWARE_VERSION* in [main.h](https://github.com/thingsboard/esp32-ota/blob/master/main/main.h) equals to *v1.1*.  
+  *counter* variable in [main_application_task](https://github.com/thingsboard/esp32-ota/blob/master/main/main.c) has value *1*.
+  - [example-v1.2.bin](https://github.com/thingsboard/esp32-ota/blob/master/firmware/example-v1.2.bin) - value of *FIRMWARE_VERSION* in [main.h](https://github.com/thingsboard/esp32-ota/blob/master/main/main.h) equals to *v1.2*.  
+  *counter* variable in [main_application_task](https://github.com/thingsboard/esp32-ota/blob/master/main/main.c) has value *2*.
 
 After the firmware version and URL were updated on the *OTA control* widget, ThingsBoard sends a MQTT message with the shared attributes to *v1/devices/me/attributes* MQTT topic.  
 Because of the ESP32 is subscribed to this MQTT topic, as soon as the update message is received it is parsed and the firmware versions are compared.  
-If the value of *FIRMWARE_VERSION* defined in [main.h](https://github.com/thingsboard/esp32-ota/main/main.h) isn't equal to the firmware version received from ThingsBoard, OTA update process will started and *monitor* utility outputs the next logs:
+If the value of *FIRMWARE_VERSION* defined in [main.h](https://github.com/thingsboard/esp32-ota/blob/master/main/main.h) isn't equal to the firmware version received from ThingsBoard, OTA update process will started and *monitor* utility outputs the next logs:
 
   <img src="/images/samples/esp32/ota/shared_attributes_updated.png" width="600"/>
 
@@ -177,7 +177,7 @@ Let's review the logs differences in comparison when the firmware was flashed to
 
 Now, just for testing, you can update *OTA control* widget with next values: 
   - *Target firmware version* - v1.1
-  - *Firmware server URL* - https://raw.githubusercontent.com/thingsboard/esp32-ota/firmware/master/example-v1.1.bin
+  - *Firmware server URL* - https://raw.githubusercontent.com/thingsboard/esp32-ota/master/firmware/example-v1.1.bin
 
 After this OTA update *counter* periodically changes its value to 0 or to 1, in the same manner as and after flashing the image to *factory* partition. But the difference this time is that the image was flashed to *ota_1* partition. 
 
