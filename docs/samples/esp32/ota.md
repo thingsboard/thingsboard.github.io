@@ -148,9 +148,9 @@ Press *Start OTA* button to create and send the chared attributes to EPS32.
 <img data-gifffer="/images/samples/esp32/ota/tb_successful_ota_from_dashboard.gif" width="1000"/>
 
 The sample's [firmware](https://github.com/thingsboard/esp32-ota/tree/master/firmware/) directory contains two images with the next differences:
-  - [example-v1.1.bin](https://github.com/thingsboard/esp32-ota/blob/master/firmware/example-v1.1.bin) - value of *FIRMWARE_VERSION* in [main.h](https://github.com/thingsboard/esp32-ota/blob/master/main/main.h) equals to *v1.1*.  
+  - [example-v1.1.bin](https://raw.githubusercontent.com/thingsboard/esp32-ota/master/firmware/example-v1.1.bin) - value of *FIRMWARE_VERSION* in [main.h](https://github.com/thingsboard/esp32-ota/blob/master/main/main.h) equals to *v1.1*.  
   *counter* variable in [main_application_task](https://github.com/thingsboard/esp32-ota/blob/master/main/main.c) has value *1*.
-  - [example-v1.2.bin](https://github.com/thingsboard/esp32-ota/blob/master/firmware/example-v1.2.bin) - value of *FIRMWARE_VERSION* in [main.h](https://github.com/thingsboard/esp32-ota/blob/master/main/main.h) equals to *v1.2*.  
+  - [example-v1.2.bin](https://raw.githubusercontent.com/thingsboard/esp32-ota/master/firmware/example-v1.2.bin) - value of *FIRMWARE_VERSION* in [main.h](https://github.com/thingsboard/esp32-ota/blob/master/main/main.h) equals to *v1.2*.  
   *counter* variable in [main_application_task](https://github.com/thingsboard/esp32-ota/blob/master/main/main.c) has value *2*.
 
 After the firmware version and URL were updated on the *OTA control* widget, ThingsBoard sends a MQTT message with the shared attributes to *v1/devices/me/attributes* MQTT topic.  
