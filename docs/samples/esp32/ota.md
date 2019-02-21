@@ -83,6 +83,7 @@ Open the terminal and execute next command:
     Save the configuration and select *Exit* to return to the main menu.
 3. Select *Serial flasher config* sub-menu and change *Default baud rate* and *Flash Size* parameters:  
     - *Default baud rate* - 921600 baud (by default *111500 baud*)
+    - Specify Serial port name according to your OS (COM-type for Windows, /dev/cu/ for MacOS or /dev/tty/ for Linux)
     - *Flash Size* - 4 MB (by default *1 MB*)
 
     <img src="/images/samples/esp32/ota/serial_flasher_config.png" width="600"/>
