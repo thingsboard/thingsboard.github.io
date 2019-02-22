@@ -96,13 +96,13 @@
         },
         "id": "b9ee3e2f-86e9-47e0-c854-cabd49aa6f84"
       },
-      "070b20b7-5632-e456-8ce8-a029b913a863": {
+      "ec6e1cdb-e6a4-e18b-6a7c-c98524da0120": {
         "isSystemType": false,
-        "bundleAlias": "ota_for_esp32_widget",
+        "bundleAlias": "ota_for_esp32_widget22",
         "typeAlias": "esp32",
         "type": "latest",
         "title": "New widget",
-        "sizeX": 8,
+        "sizeX": 7,
         "sizeY": 4,
         "config": {
           "datasources": [
@@ -115,10 +115,10 @@
                   "label": "active",
                   "color": "#2196f3",
                   "settings": {},
-                  "_hash": 0.16190510867537866
+                  "_hash": 0.8880031022566413
                 }
               ],
-              "entityAliasId": "95aa36da-af72-b076-feeb-8f5272c443eb"
+              "entityAliasId": "5760db51-bafe-c795-9d94-cb027582a518"
             }
           ],
           "timewindow": {
@@ -131,7 +131,7 @@
           "color": "rgba(0, 0, 0, 0.87)",
           "padding": "8px",
           "settings": {},
-          "title": "OTA control",
+          "title": "OTA configuration",
           "dropShadow": true,
           "enableFullscreen": true,
           "enableDataExport": true,
@@ -144,7 +144,7 @@
           "showLegend": false,
           "actions": {}
         },
-        "id": "070b20b7-5632-e456-8ce8-a029b913a863"
+        "id": "ec6e1cdb-e6a4-e18b-6a7c-c98524da0120"
       },
       "a8083feb-029a-10da-53b5-81925b471df9": {
         "isSystemType": true,
@@ -396,8 +396,8 @@
         "layouts": {
           "main": {
             "widgets": {
-              "070b20b7-5632-e456-8ce8-a029b913a863": {
-                "sizeX": 8,
+              "ec6e1cdb-e6a4-e18b-6a7c-c98524da0120": {
+                "sizeX": 7,
                 "sizeY": 4,
                 "row": 0,
                 "col": 7
