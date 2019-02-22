@@ -33,7 +33,7 @@ The specified device type will be used later in the rule chains and in the dashb
 
 2. Add the new rule chain that will update the device's server attribute *fwStateIsSynced*.  
 The attribute type is boolean and it will be used to show on the dashboard is firmware synced or not.  
-Download, import [Check is ESP32 firmware synced](resources/check_is_esp32_firmware_synced.json) rule chain into ThingsBoard and save it:
+Download, import [Check is ESP32 firmware synced](/docs/samples/esp32/resources/check_is_esp32_firmware_synced.json) rule chain into ThingsBoard and save it:
 
     <img data-gifffer="/images/samples/esp32/ota/import_rule_chain.gif" width="1000"/>
 
@@ -55,8 +55,8 @@ To the added node should be connected two links:
     - After the user save the new OTA configuration in the widget.  
     The new value of firmware version passes through *Attributes Updated* link in the rule chain as server attribute *lastTargetFwVer*.
 
-4. Download and import [OTA widgets](./resources/ota_widgets.json) widgets group to Widgets Library to allow specifying of firmware URL and version and send OTA configuration to ESP32.
-5. Download and import [OTA for ESP32](./resources/ota_for_esp32.json) dashboard to Dashboards Group. The dashboard has the alias *ESP32_OTA_alias* for the devices with type *ESP32_OTA*.  
+4. Download and import [OTA widgets](/docs/samples/esp32/resources/ota_widgets.json) widgets group to Widgets Library to allow specifying of firmware URL and version and send OTA configuration to ESP32.
+5. Download and import [OTA for ESP32](/docs/samples/esp32/resources/ota_for_esp32.json) dashboard to Dashboards Group. The dashboard has the alias *ESP32_OTA_alias* for the devices with type *ESP32_OTA*.  
 It allows to show on the dashboard a list of ESP32 with OTA support and the current firmware state (synced or not synced) for every device in the list.  
 User can change and update OTA config of any ESP32 form the list by clicking 'Select OTA configuration' control in the last column.  
 
@@ -81,7 +81,8 @@ Open the terminal and execute next command:
     <img src="/images/samples/esp32/ota/framework_config.png" width="600"/>
 
     Save the configuration and select *Exit* to return to the main menu.
-3. Select *Serial flasher config* sub-menu and change *Default baud rate* and *Flash Size* parameters:  
+3. Select *Serial flasher config* sub-menu and change *Default serial port*, *Default baud rate* and *Flash Size* parameters:  
+    - *Default serial port* - serial port name according to your OS (COM-type for Windows, /dev/cu/ for MacOS or /dev/tty/ for Linux)
     - *Default baud rate* - 921600 baud (by default *111500 baud*)
     - *Flash Size* - 4 MB (by default *1 MB*)
 
@@ -147,9 +148,9 @@ Press *Start OTA* button to create and send the chared attributes to EPS32.
 <img data-gifffer="/images/samples/esp32/ota/tb_successful_ota_from_dashboard.gif" width="1000"/>
 
 The sample's [firmware](https://github.com/thingsboard/esp32-ota/tree/master/firmware/) directory contains two images with the next differences:
-  - [example-v1.1.bin](https://github.com/thingsboard/esp32-ota/blob/master/firmware/example-v1.1.bin) - value of *FIRMWARE_VERSION* in [main.h](https://github.com/thingsboard/esp32-ota/blob/master/main/main.h) equals to *v1.1*.  
+  - [example-v1.1.bin](https://raw.githubusercontent.com/thingsboard/esp32-ota/master/firmware/example-v1.1.bin) - value of *FIRMWARE_VERSION* in [main.h](https://github.com/thingsboard/esp32-ota/blob/master/main/main.h) equals to *v1.1*.  
   *counter* variable in [main_application_task](https://github.com/thingsboard/esp32-ota/blob/master/main/main.c) has value *1*.
-  - [example-v1.2.bin](https://github.com/thingsboard/esp32-ota/blob/master/firmware/example-v1.2.bin) - value of *FIRMWARE_VERSION* in [main.h](https://github.com/thingsboard/esp32-ota/blob/master/main/main.h) equals to *v1.2*.  
+  - [example-v1.2.bin](https://raw.githubusercontent.com/thingsboard/esp32-ota/master/firmware/example-v1.2.bin) - value of *FIRMWARE_VERSION* in [main.h](https://github.com/thingsboard/esp32-ota/blob/master/main/main.h) equals to *v1.2*.  
   *counter* variable in [main_application_task](https://github.com/thingsboard/esp32-ota/blob/master/main/main.c) has value *2*.
 
 After the firmware version and URL were updated on the *OTA control* widget, ThingsBoard sends a MQTT message with the shared attributes to *v1/devices/me/attributes* MQTT topic.  
