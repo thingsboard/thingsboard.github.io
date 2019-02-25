@@ -137,7 +137,7 @@ Few things to notice:
 
 - Go to **Data Converters** -> **Add new Data Converter** -> **Import Converter** 
 
-- Import following json file: [**SODAQ Uplink data converter**](/docs/user-guide/resources/sodaq/sodaq-uplink-data-converter.json) (left click on the link and then 'Ctrl+S' to download) 
+- Import following json file: [**SODAQ Uplink data converter**](/docs/user-guide/resources/sodaq/sodaq_uplink_data_converter.json) (left click on the link and then 'Ctrl+S' to download) 
 as described on the following screencast: 
 
 <img data-gifffer="/images/user-guide/integrations/sodaq/import-and-test-converter.gif" />
