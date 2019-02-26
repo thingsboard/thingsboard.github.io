@@ -152,7 +152,7 @@ level and in specified direction.
 An entity view called 'Device-D-entity-view' which has 'contains' relation to it from Device D was created with a type
  'example-type' which provides access to 'water_level' timeseries from Device D.
 
- <img data-gifffer="/images/user-guide/ui/entity-view-type-search-query-alias .gif" />
+ <img data-gifffer="/images/user-guide/ui/entity-view-type-search-query-alias.gif" />
  
 This alias filters entity views with types ‘example-type’ that have any relation from device ‘Device D’ up to
 relation level 1.
