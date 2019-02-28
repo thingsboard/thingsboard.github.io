@@ -1,6 +1,6 @@
 ---
 layout: docwithnav
-title: Get weather using REST API
+title: Weather reading using REST API calls
 description: REST API weather guide
 
 ---
@@ -27,17 +27,15 @@ We assume you have completed the following guides and reviewed the articles list
 
   * [Getting Started](/docs/getting-started-guides/helloworld/) guide.
   * [Rule Engine Overview](/docs/user-guide/rule-engine-2-0/overview/).
-  * [REST API](/docs/reference/rest-api/).
+  * [External rule nodes](/docs/user-guide/rule-engine-2-0/external-nodes/).
 
-## Model definition
+## Adding the asset
   
-We will operate with asset that has name "Building A" and type "building" which has to be created.
+Add Asset entity in ThingsBoard. Its name is **Building A** and its type is **building**.
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/rest-api-weather/rest-api-weather-building.png)
 
-## Getting started
-
-### Registering on data-providing website
+## Registering on data-providing website
 
 In order to get weather data you should register on a website which will provide it. In this case
  [OpenWeatherMap](https://openweathermap.org/) will be used.
@@ -46,9 +44,9 @@ After signing up there go to [this](https://home.openweathermap.org/api_keys) pa
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/rest-api-weather/openweathermap-apikey.png)
 
-### Creating attributes
+## Creating attributes
 
-For node to work server attributes should be created - api key, longitude, latitude and units of measurement. 
+For REST API call server attributes should be created - api key, longitude, latitude and units of measurement. 
 Attributes should look like this:
 
 - Go to **Building A** -> **Attributes** -> **Add**
@@ -57,7 +55,7 @@ Attributes should look like this:
 
 - Fill in the attributes with the input data shown in the following table: 
 
-<table style="width: 25%">
+<table style="width: 50%">
   <thead>
       <tr>
           <td><b>Field</b></td><td><b>Data Type</b></td><td><b>Input Data</b></td>
@@ -91,46 +89,164 @@ Attributes should look like this:
 
 In this example the coordinates of New York City and metric units will be used.
 
-### Setting up rule chain
+## Message flow
 
+In this section, we explain the purpose of each node in this tutorial. There will be one rule chain involved:
+
+  - **Outside Temperature/Humidity** - rule chain sends API calls to OpenWeatherMap every 15 seconds and sends data about
+  humidity and temperature to a chosen asset.
+
+The following screenshot show how the above Rule Chain should look like:
+
+![image](/images/user-guide/rule-engine-2-0/tutorials/rest-api-weather/weather-rule-chain.png)   
+   
 Download and [**import**](docs/user-guide/ui/rule-chains/#rule-import) attached
 json [**file**](/docs/user-guide/resources/outside_temperature_humidity.json) with a rule chain for this tutorial.
+Be aware that you need to set the asset you created in the beginning as an originator in the leftmost generator node.
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/rest-api-weather/weather-rule-chain.png) 
+The following section shows you how to create this rule chain from scratch.
 
- * **Node A**: Generator node
-      
-    * Generates empty messages to trigger REST API calls
+#### Create new Rule Chain (**Outside Temperature/Humidity**)
+
+Go to **Rule Chains** -> **Add new Rule Chain** 
+
+Configuration:
+
+- Name : **Outside Temperature/Humidity**
+
+![image](/images/user-guide/rule-engine-2-0/tutorials/rest-api-weather/add-weather-rest-api-chain.png) 
+
+New Rule Chain is created. Press **Edit** button and configure Chain.
+
+###### Adding the required nodes
+
+In this rule chain, you will create 5 nodes as it will be explained in the following sections:
+
+###### Node A: **Generator node**
+   - Add the **Generator** node. This rule node Generates empty messages to trigger REST API calls.
+   - Fill its fields the following way:
+   <table style="width: 50%">
+     <thead>
+         <tr>
+             <td><b>Field</b></td><td><b>Value</b></td>
+         </tr>
+     </thead>
+     <tbody>
+         <tr>
+             <td>Name</td>
+             <td>Generate requests</td>
+         </tr>
+         <tr>
+             <td>Message count</td>
+             <td>0</td>
+         </tr>
+         <tr>
+             <td>Period in seconds</td>
+             <td>15</td>
+         </tr>
+         <tr>
+             <td>Originator type</td>
+             <td>Asset</td>
+         </tr>
+         <tr>
+             <td>Asset</td>
+             <td>Building A</td>
+         </tr>
+         <tr>
+             <td>Generate function</td>
+             <td>return { msg: {}, metadata: {}, msgType: "POST_TELEMETRY_REQUEST" };</td>
+         </tr>
+      </tbody>
+   </table>
     
    ![image](/images/user-guide/rule-engine-2-0/tutorials/rest-api-weather/weather-rule-chain-node-A.png) 
    
- * **Node B**: Originator attributes enrichment node
-        
-     * Puts server attributes latitude, longitude, APPID and units into metadata
-      
-    ![image](/images/user-guide/rule-engine-2-0/tutorials/rest-api-weather/weather-rule-chain-node-B.png)
+###### Node B: **Originator attributes enrichment node**
+   - Add the **Originator attributes enrichment node** and connect it to **Generator** node with a relation type
+   **Success**. This node will fetch server attributes atitude, longitude, APPID and units of the originator set up 
+   in a **Generator** node into metadata
+   - Fill its fields the following way:
+       <table style="width: 50%">
+         <thead>
+             <tr>
+                 <td><b>Field</b></td><td><b>Value</b></td>
+             </tr>
+         </thead>
+         <tbody>
+             <tr>
+                 <td>Name</td>
+                 <td>Latitude/Longitudes</td>
+             </tr>
+             <tr>
+                 <td>Server attributes</td>
+                 <td>latitude, longitude, APPID, units</td>
+             </tr>
+          </tbody>
+       </table>  
+   ![image](/images/user-guide/rule-engine-2-0/tutorials/rest-api-weather/weather-rule-chain-node-B.png)
   
- * **Node C**: External REST API call node
-        
-     * Performs REST API calls to OpenWeatherMap
-     * Endpoint is http://api.openweathermap.org/data/2.5/weather?lat=${ss_latitude}&lon=${ss_longitude}&units=${ss_units}&APPID=${ss_APPID}
-      
-    ![image](/images/user-guide/rule-engine-2-0/tutorials/rest-api-weather/weather-rule-chain-node-C.png)
-    
- * **Node D**: Script transformation node
-        
-     * Fetches data about outside temperature, outside minimal temperature, outside maximal temperature and outside humidity into a message.
-      
-    ![image](/images/user-guide/rule-engine-2-0/tutorials/rest-api-weather/weather-rule-chain-node-D.png)     
-    
- * **Node E**: Save timeseries node
-        
-     * Puts data into the latest telemetry of asset "Building A".
-      
-    ![image](/images/user-guide/rule-engine-2-0/tutorials/rest-api-weather/weather-rule-chain-node-E.png)       
+###### Node C: **External REST API call node**
+   - Add the **External REST API call node** and connect it to **Originator attributes enrichment node** with a relation 
+   type **Success**. This node will perform REST API calls to OpenWeatherMap.
+   - Fill its fields the following way:
+      <table style="width: 50%">
+             <thead>
+                <tr>
+                    <td><b>Field</b></td><td><b>Value</b></td>
+                </tr>
+             </thead>
+             <tbody>
+                <tr>
+                    <td>Name</td>
+                    <td>Get Weather Data</td>
+                </tr>
+                <tr>
+                    <td>Endpoint URL pattern</td>
+                    <td>http://api.openweathermap.org/data/2.5/weather?lat=${ss_latitude}&lon=${ss_longitude}&units=${ss_units}&APPID=${ss_APPID}</td>
+                </tr>
+                <tr>
+                    <td>Request method</td>
+                    <td>GET</td>
+                </tr>
+                <tr>
+                    <td>Use simple client HTTP factory</td>
+                    <td>False</td>
+                </tr>
+             </tbody>
+      </table>  
+   - ss_latitude, ss_longitude, ss_units, ss_APPID are server attributes fetched from metadata which were put there
+   by **Originator attributes enrichment node**
    
+   ![image](/images/user-guide/rule-engine-2-0/tutorials/rest-api-weather/weather-rule-chain-node-C.png)
+    
+###### Node D: **Script transformation node**
+   - Add the **Script transformation node** and connect it to **External REST API call node** with a relation 
+   type **Success**. This node will put outside temperature, maximal temperature, minimal temperature and humidity into
+   the message.
+   - Fill Transform function the following way:
+     
+     
+  ```js
+      var newMsg = {
+          "outsideTemp": msg.main.temp,
+          "outsideMaxTemp": msg.main.temp_max,
+          "outsideMinTemp": msg.main.temp_min,
+          "outsideHumidity": msg.main.humidity,
+      };
+      
+      
+      return {msg: newMsg, metadata: metadata, msgType: msgType};
+```
+   ![image](/images/user-guide/rule-engine-2-0/tutorials/rest-api-weather/weather-rule-chain-node-D.png)     
+    
+###### Node E: **Save timeseries node**
+        
+   - Add the **Script transformation node** and connect it to **External REST API call node** with a relation 
+        type **Success**.
+      
+   ![image](/images/user-guide/rule-engine-2-0/tutorials/rest-api-weather/weather-rule-chain-node-E.png)     
 
-### Setting up dashboard
+## Setting up dashboard
 
 Download and [**import**](/docs/user-guide/ui/dashboards/#dashboard-import) attached
 json [**file**](/docs/user-guide/resources/weather_dashboard.json) with a dashboard for this tutorial.
