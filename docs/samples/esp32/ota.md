@@ -13,6 +13,17 @@ hidetoc: "true"
 [ESP32](https://www.espressif.com/en/products/hardware/esp32/overview) is a series of low-cost, low-power SOC microcontrollers with integrated self-contained Wi-Fi and dual-mode Bluetooth.  
 This sample application allow you to deliver a new firmware images to EPS32 with using ThingsBoard and OTA.
 
+## Video tutorial
+
+See video tutorial below for this sample with additional detailed demonstration how to install and configure [ESP-IDF](https://github.com/espressif/esp-idf) for Windows.
+
+<br/>
+<div id="video">
+    <div id="video_wrapper">
+        <iframe src="https://www.youtube.com/embed/nx44dS_Syqk" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
+
 ## What you need
 - Installed and configured [ESP-IDF](https://github.com/espressif/esp-idf), the official development framework for ESP32 chip.  
   Refer to [ESP-IDF Get Started](https://docs.espressif.com/projects/esp-idf/en/latest/get-started/) document to set up the software environment.  
