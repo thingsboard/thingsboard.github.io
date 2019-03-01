@@ -276,6 +276,10 @@
       subtitle: Learn how to send a remote request call to a Related Device using Rule Engine.
       keys: rpc Request
       pe: false
+    - path: /docs/user-guide/rule-engine-2-0/get-weather-using-rest-api-call/
+      title: Get weather data using REST API
+      subtitle: Learn how the REST API call node can be used to check the weather.
+      pe: false
     - path: /docs/user-guide/rule-engine-2-0/tutorials/add-devices-to-group/
       title: Add & remove devices to group dynamically
       subtitle: Learn how to how to dynamically add & remove device from the device group based on incoming data from device.
@@ -283,7 +287,7 @@
       pe: true
     - path: /docs/user-guide/integrations/send-data-external-mqtt-brokers/
       title: Send data to external MQTT brokers
-      subtitle: Connect to external brokers and send MQTT data stream
+      subtitle: Learn how to connect to external brokers and send MQTT data stream using Integration.
       keys: mqtt connect
       pe: true
 - title: IoT Data analytics
