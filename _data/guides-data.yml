@@ -276,6 +276,11 @@
       subtitle: Learn how to send a remote request call to a Related Device using Rule Engine.
       keys: rpc Request
       pe: false
+    - path: /docs/user-guide/rule-engine-2-0/tutorials/get-weather-using-rest-api-call/
+      title: Using REST API to get weather data
+      subtitle: Learn how to use REST API to get weather data in a specified location.
+      keys: rest api
+      pe: false
     - path: /docs/user-guide/rule-engine-2-0/tutorials/add-devices-to-group/
       title: Add & remove devices to group dynamically
       subtitle: Learn how to how to dynamically add & remove device from the device group based on incoming data from device.
