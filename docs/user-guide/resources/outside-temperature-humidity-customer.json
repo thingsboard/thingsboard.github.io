@@ -24,7 +24,6 @@
           "serverAttributeNames": [
             "latitude",
             "longitude",
-            "APPID",
             "units"
           ],
           "latestTsKeyNames": []
