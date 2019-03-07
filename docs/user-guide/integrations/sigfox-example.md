@@ -27,10 +27,12 @@ We assume you have completed the following guides and reviewed the articles list
 
 ## Model definition
   
-We will operate with device that has name "12345" which will be
+We will operate with device that has name "Thermostat A" which will be
 automatically created in the process of integration work.
 
 ![image](/images/user-guide/integrations/sigfox/sigfox-device.png)
+
+**Note**: a shared attribute of this device has to be created.
 
 ## Getting started
 
@@ -72,7 +74,7 @@ Integration should look like this:
   <tbody>
       <tr>
           <td>Name</td>
-          <td>SigFox Integration</td>
+          <td>New SigFox Integration</td>
       </tr>
       <tr>
           <td>Type</td>
@@ -84,20 +86,140 @@ Integration should look like this:
       </tr>
       <tr>
           <td>Uplink data converter</td>
-          <td>Sensor Uplink Converter</td>
+          <td>New uplink SigFox converter</td>
       </tr>
       <tr>
           <td>Downlink data converter</td>
-          <td>Sensor Downlink Converter</td>
+          <td>New downlink SigFox converter</td>
       </tr>
       <tr>
-          <td>Host</td>
-          <td>iot.eclipse.org</td>
+          <td>Base URl</td>
+          <td>http://cloud.thingsboard.io</td>
+      </tr>
+      <tr>
+          <td>Enable secrurity</td>
+          <td>False</td>
       </tr>
    </tbody>
 </table> 
 
+## Message flow
 
+In this section, we explain the purpose of each node in this tutorial. There will be one rule chain involved:
+
+- **Root rule chain** - rule chain that saves telemetry from devices into the database, and redirects the 
+attribute updates to **To SigFox integration** chain.
+- **To SigFox integration** - rule chain that sends all incoming data which has a specified key to integration.
+
+The following screenshots show how the above Rule Chains should look like:
+
+- **To SigFox integration**:
+
+![image](/images/user-guide/integrations/sigfox/sigfox-rule-chain.png)
+
+- **Root Rule Chain**:
+
+![image](/images/user-guide/integrations/sigfox/sigfox-root-rule-chain.png)
+
+Download and [**import**](/docs/user-guide/ui/rule-chains/#rule-import) the attached json
+ [**file**](/docs/user-guide/integrations/tutorials/resources/sigfox/to-sigfox-integration.json) for the
+  **To SigFox integration** rule chain.
+  
+Create Node C as shown on the image above in the root rule chain to forward attribute update messages to the imported 
+rule chain. 
+
+The following section shows you how to create this rule chain from scratch.
+
+#### Create new Rule Chain (**To SigFox integration**)
+
+Go to **Rule Chains** -> **Add new Rule Chain** 
+
+Configuration:
+
+- Name : **To SigFox integration**
+
+![image](/images/user-guide/integrations/sigfox/add-to-sigfox-integration-chain.png)
+
+New Rule Chain is created. Press **Edit** button and configure Chain.
+
+###### Adding the required nodes
+
+In this rule chain, you will create 2 nodes as it will be explained in the following sections:
+
+###### Node A: **Check existence filter**
+
+- Add the **Check existence filter** node and connect it to the **Input** node with a relation type **Success**.
+  This rule node checks if incoming updated attribute is "status" or not. 
+
+![image](/images/user-guide/integrations/sigfox/check-status-field.png)
+
+- Fill in the fields with the input data shown in the following table: 
+
+<table style="width: 25%">
+  <thead>
+      <tr>
+          <td><b>Field</b></td><td><b>Input Data</b></td>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Name</td>
+          <td>Check status field</td>
+      </tr>
+      <tr>
+          <td>Message data</td>
+          <td>status</td>
+      </tr>
+   </tbody>
+</table> 
+
+###### Node B: **Integration downlink**
+
+- Add the **Integration downlink** node and connect it to the **Check existence filter** node with a relation type
+ **Success**. This rule node pushes message to specified integration. 
+ 
+ ![image](/images/user-guide/integrations/sigfox/push-to-integration.png)
+
+- Fill in the fields with the input data shown in the following table: 
+
+<table style="width: 25%">
+  <thead>
+      <tr>
+          <td><b>Field</b></td><td><b>Input Data</b></td>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Name</td>
+          <td>Push to integration</td>
+      </tr>
+      <tr>
+          <td>Integration</td>
+          <td>New SigFox Integration</td>
+      </tr>
+   </tbody>
+</table> 
+
+#### Modify Root Rule Chain
+
+The initial root Rule Chain has been modified by adding the following node:
+
+###### Node С: **Rule Chain**
+
+- Add the **Rule Chain** node and connect it to the **Message type switch** node with a relation type 
+**Update attributes**. This node forwards incoming Message to specified Rule Chain **To SigFox integration**.
+
+- Select the Rule Chain field: **To SigFox integration**.
+
+![image](/images/user-guide/integrations/sigfox/add-rule-chain-node.png)
+
+The following screenshot shows how the final **Root Rule Chain** should look like:
+
+![image](/images/user-guide/integrations/sigfox/sigfox-root-rule-chain.png)
+
+## Conclusion
+
+Now if "status" attribute is updated, integration will send downlink message.
 
 ## Next steps
 
