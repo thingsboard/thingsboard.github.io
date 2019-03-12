@@ -7,7 +7,8 @@ description: SigFox integration guide
 
 {% assign feature = "Platform Integrations" %}{% include templates/pe-feature-banner.md %}
 
-This tutorial will show how to get attribute value of a device using SigFox integration.
+This tutorial Will show how to push downlink messages to devices connected via Sigfox integration
+ when user updates device attribute using ThingsBoard UI
 
 
  
