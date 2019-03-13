@@ -60,7 +60,35 @@ After signing up there go to [this](https://home.openweathermap.org/api_keys) pa
 
 ## Creating attributes
 
-For REST API call server attributes should be created - api key, longitude, latitude and units of measurement. 
+To perform REST API call we need the following URL parameters:
+API key, longitude, latitude, and units of measurement.
+
+We suggest adding an API key parameter to the customer server-side attribute and other parameters to the asset 
+server-side attributes.
+ 
+ Customer attribute should look like this:
+ 
+ - Go to **(Assigned customer)** -> **Attributes** -> **Add**
+ 
+ ![image](/images/user-guide/rule-engine-2-0/tutorials/rest-api-weather/add-attribute-customer.png)
+ 
+ Add the attribute as following:
+ 
+ <table style="width: 50%">
+   <thead>
+       <tr>
+           <td><b>Field</b></td><td><b>Data Type</b></td><td><b>Input Data</b></td>
+       </tr>
+   </thead>
+   <tbody>
+       <tr>
+           <td>APPID</td>
+           <td>String</td>
+           <td>(an API key you got from OpenWeatherMap)</td>
+       </tr>
+    </tbody>
+ </table> 
+ 
 Asset attributes should look like this:
 
 - Go to **Building A** -> **Attributes** -> **Add**
@@ -97,29 +125,6 @@ Asset attributes should look like this:
 
 
 In this example the coordinates of New York City and metric units will be used.
-
-Customer attribute should look like this:
-
-- Go to **(Assigned customer)** -> **Attributes** -> **Add**
-
-![image](/images/user-guide/rule-engine-2-0/tutorials/rest-api-weather/add-attribute-customer.png)
-
-Add the attribute as following:
-
-<table style="width: 50%">
-  <thead>
-      <tr>
-          <td><b>Field</b></td><td><b>Data Type</b></td><td><b>Input Data</b></td>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>APPID</td>
-          <td>String</td>
-          <td>(an API key you got from OpenWeatherMap)</td>
-      </tr>
-   </tbody>
-</table> 
 
 
 ## Message flow
