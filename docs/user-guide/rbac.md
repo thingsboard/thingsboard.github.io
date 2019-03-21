@@ -10,6 +10,15 @@ description:
 {:toc}
 
 
+See video tutorial below for step-by-step instruction how to use this feature.
+
+<br/>
+<div id="video">  
+    <div id="video_wrapper">
+        <iframe src="https://www.youtube.com/embed/xpnYzSiDiJo" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div> 
+
 ## ThingsBoard CE vs PE security features comparison
 
 ThingsBoard Community Edition (TB CE) supports straight-forward security model with three main roles: System administrator, Tenant administrator and Customer user. 
