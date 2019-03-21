@@ -38,14 +38,14 @@ Add Asset entity in ThingsBoard. Its name is **Building A** and its type is **bu
 **Note**:If you have Professional Edition, you will need to add asset to customer using Customer Hierarchy the
 following way:  
 
-- Go to **Customers Hierarchy** -> **All** -> **(Current tenant)** -> **Customer groups** -> **(Needed customer group)**
- -> **(Needed customer)** -> **Asset groups** -> **(Needed asset group)** -> **Add asset**
+- Go to **Customers Hierarchy** -> **All** -> **(Current tenant)** -> **Customer groups** -> **(Your customer group)**
+ -> **(Your customer)** -> **Asset groups** -> **(Your asset group)** -> **Add asset**
  
  ![image](/images/user-guide/rule-engine-2-0/tutorials/rest-api-weather/add-asset-pe-weather-rest-api.png)
  
 ## Assigning asset to customer in Community edition
 
-- Go to **Assets** -> **Assign to customer** -> **(Needed Customer)** -> **Assign**
+- Go to **Assets** -> **Assign to customer** -> **(Your Customer)** -> **Assign**
 
  ![image](/images/user-guide/rule-engine-2-0/tutorials/rest-api-weather/assign-asset-weather-rest-api.png)
 
