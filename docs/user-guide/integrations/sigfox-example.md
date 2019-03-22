@@ -7,10 +7,11 @@ description: SigFox integration guide
 
 {% assign feature = "Platform Integrations" %}{% include templates/pe-feature-banner.md %}
 
-This tutorial Will show how to push downlink messages to devices connected via Sigfox integration
+This tutorial will show how to push downlink messages to devices connected via Sigfox integration
  when user updates device attribute using ThingsBoard UI
 
-
+* TOC
+{:toc}
  
 ## Use case
 
@@ -103,6 +104,8 @@ Integration should look like this:
       </tr>
    </tbody>
 </table> 
+
+![image](/images/user-guide/integrations/sigfox/sigfox-create-integration.png)
 
 ## Message flow
 
@@ -220,7 +223,7 @@ The following screenshot shows how the final **Root Rule Chain** should look lik
 
 ## Conclusion
 
-Now if "status" attribute is updated, integration will send downlink message.
+Now when "status" attribute is updated, integration will send downlink message.
 
 ## Next steps
 
