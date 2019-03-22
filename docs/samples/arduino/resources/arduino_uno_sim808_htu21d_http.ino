@@ -1,9 +1,9 @@
 // This sketch demonstrates connecting and sending telemetry
-// using ThingsBoard SDK and GSM modem, such as SIM900
+// using ThingsBoard SDK and GSM modem, such as SIM808
 //
 // Hardware:
 //  - Arduino Uno
-//  - SIM900 Arduino shield connected to Arduino Uno
+//  - SIM808 Arduino shield connected to Arduino Uno
 
 // Select your modem:
 //#define TINY_GSM_MODEM_SIM800
@@ -35,7 +35,6 @@ const char pass[] = "";
 
 // Baud rate for debug serial
 #define SERIAL_DEBUG_BAUD   115200
-
 
 // Serial port for GSM shield
 SoftwareSerial serialGsm(7, 8); // RX, TX pins for communicating with modem

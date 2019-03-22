@@ -331,6 +331,10 @@
       title: Temperature upload over MQTT using Arduino UNO, ESP8266 and DHT22 sensor
       subtitle: Contains wiring diagram, sketch and dashboard setup guide.
       pe: false
+    - title: Humidity and temperature upload over HTTP using Arduino UNO, SIM808 Shield and HTU21D sensor
+      path: /docs/samples/arduino/sim808-htu21d/
+      subtitle: Contains wiring diagram, sketch and dashboard setup guide.
+      pe: false
     - path: /docs/samples/esp8266/temperature/
       title: Temperature upload over MQTT using ESP8266 and DHT22 sensor
       subtitle: Contains wiring diagram, sketch, dashboard setup guide and demonstration video.
