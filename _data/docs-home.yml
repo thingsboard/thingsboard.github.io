@@ -35,6 +35,9 @@ toc:
   - title: Custom Translations
     path: /docs/user-guide/custom-translation/
     pe: true
+  - title: Custom Menu
+    path: /docs/user-guide/custom-menu/
+    pe: true
   - title: Platform Integrations
     pe: true
     section:
