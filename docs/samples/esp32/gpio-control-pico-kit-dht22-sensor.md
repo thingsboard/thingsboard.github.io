@@ -131,7 +131,7 @@ To simplify application development, install the ThingsBoard Arduino SDK and its
 
    ![image](/images/samples/esp32/gpio-temperature/install-tb-arduino.png)
 
-1. Install **ArduinoJSON** library. <span style="color:red">Do not install beta releases of the ArduinoJson library. Instead, use **5.13.3** version of the library</span>, as shown in picture below.
+1. Install **ArduinoJSON** library **v6.9.1** or higher. <span style="color:red">Avoid installing beta releases of the ArduinoJson library</span>.
 
    ![image](/images/samples/esp32/gpio-temperature/do-not-use-beta-version-arduinojson.png)
 
