@@ -147,12 +147,13 @@ var tb = (function () {
 			case 'home':
 			case 'thingsboard-pe':
             case 'pe-aws':
+            case 'partner-program':
 			case 'installations':
+            case 'partners':
 				bodyHeight = windowHeight;
 				break;
 
 			case 'caseStudies':
-			case 'partners':
 				bodyHeight = windowHeight * 2;
 				break;
 

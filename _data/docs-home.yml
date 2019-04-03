@@ -184,6 +184,8 @@ toc:
     path: /docs/user-guide/ui/dashboards/
   - title: Mail Settings
     path: /docs/user-guide/ui/mail-settings/
+  - title: Aliases
+    path: /docs/user-guide/ui/aliases/
 - title: Troubleshooting
   path: /docs/user-guide/troubleshooting/
 - title: Contribution Guide

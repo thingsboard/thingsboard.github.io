@@ -10,9 +10,14 @@ description:
 {:toc}
 
 
-## IMPORTANT NOTICE
+See video tutorial below for step-by-step instruction how to use this feature.
 
-**This documentation covers feature that is not released yet! It will be released on February 8th, 2019. This feature is already available on cloud.thingsboard.io for evaluation and pre-release review.** 
+<br/>
+<div id="video">  
+    <div id="video_wrapper">
+        <iframe src="https://www.youtube.com/embed/xpnYzSiDiJo" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div> 
 
 ## ThingsBoard CE vs PE security features comparison
 

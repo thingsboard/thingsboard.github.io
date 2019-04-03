@@ -276,6 +276,11 @@
       subtitle: Learn how to send a remote request call to a Related Device using Rule Engine.
       keys: rpc Request
       pe: false
+    - path: /docs/user-guide/rule-engine-2-0/tutorials/get-weather-using-rest-api-call/
+      title: Using REST API to get weather data
+      subtitle: Learn how to use REST API to get weather data in a specified location.
+      keys: rest api
+      pe: false
     - path: /docs/user-guide/rule-engine-2-0/tutorials/add-devices-to-group/
       title: Add & remove devices to group dynamically
       subtitle: Learn how to how to dynamically add & remove device from the device group based on incoming data from device.
@@ -312,6 +317,11 @@
   subtitle: Learn how to connect various hardware platforms to ThingsBoard.
   id: HardwareSamples
   section:
+    - path: /docs/samples/esp32/ota/
+      title: ESP32 OTA using ThingsBoard
+      subtitle: Learn how to make ESP32 OTA update using ThingsBoard custom widget, rule chain and dashboard
+      pe: false
+      video: true
     - path: /docs/samples/esp32/gpio-control-pico-kit-dht22-sensor/
       title: ESP32 Pico Kit GPIO control and DHT22 sensor monitor using ThingsBoard Arduino SDK
       subtitle: Contains wiring diagram, sketch and dashboard setup guide.
@@ -400,7 +410,7 @@
       title: Reporting
       subtitle: Learn how to schedule and generate reports based on existing dashboards.
       pe: true
-      video: false
+      video: true
 - title: Contribution and Development
   subtitle: Learn how to contribute to Thingsboard, customize & develop custom widgets and rule nodes
   id: Contribution
