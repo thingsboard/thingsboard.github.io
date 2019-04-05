@@ -1,15 +1,15 @@
 ---
 layout: docwithnav
-title: Custom Translations
+title: Custom Menu
 description:  
 
 ---
 
-{% assign feature = "Custom Translations" %}{% include templates/pe-feature-banner.md %}
+{% assign feature = "Custom Menu" %}{% include templates/pe-feature-banner.md %}
 
-ThingsBoard Custom Translations feature allows you to upload alternative to existing language translations 
-and extend the translation to specific GUI elements on the dashboards.
- 
+ThingsBoard Custom Menu feature allows you to extend ThingsBoard UI with custom menu items 
+and show/hide existing menu items.
+
 See video tutorial below for step-by-step instruction how to use this feature.
 
 <br/>
