@@ -9,7 +9,7 @@
         "type": "latest",
         "title": "Simple neon gauge - justGage",
         "sizeX": 5,
-        "sizeY": 5,
+        "sizeY": 9,
         "row": 0,
         "col": 7,
         "config": {
@@ -62,7 +62,7 @@
               "family": "Segment7Standard",
               "style": "normal",
               "weight": "500",
-              "size": 32
+              "size": 16
             },
             "minMaxFont": {
               "family": "Segment7Standard",
@@ -75,9 +75,12 @@
             "gaugeType": "donut",
             "animation": true,
             "animationDuration": 500,
-            "animationRule": "linear"
+            "animationRule": "linear",
+            "timestampFormat": "yyyy-MM-dd HH:mm:ss",
+            "title": "HUMIDITY",
+            "showTitle": true
           },
-          "title": "Simple neon gauge - justGage",
+          "title": "HUMIDITY GAUGE",
           "dropShadow": true,
           "enableFullscreen": true,
           "titleStyle": {
@@ -97,8 +100,8 @@
         "typeAlias": "digital_vertical_bar",
         "type": "latest",
         "title": "Digital vertical bar",
-        "sizeX": 3,
-        "sizeY": 5,
+        "sizeX": 5,
+        "sizeY": 9,
         "row": 0,
         "col": 7,
         "config": {
@@ -172,7 +175,8 @@
             "animationDuration": 500,
             "animationRule": "linear",
             "timestampFormat": "yyyy-MM-dd HH:mm:ss",
-            "minValue": -60
+            "minValue": -60,
+            "roundedLineCap": false
           },
           "title": "Digital vertical bar",
           "dropShadow": true,
@@ -188,91 +192,14 @@
         },
         "id": "c510fbc6-c517-d800-7cb4-087ecb8fa730"
       },
-      "989b4dec-5321-a326-f52a-f6c89513c15a": {
-        "isSystemType": true,
-        "bundleAlias": "charts",
-        "typeAlias": "basic_timeseries",
-        "type": "timeseries",
-        "title": "Timeseries - Flot",
-        "sizeX": 8,
-        "sizeY": 5,
-        "row": 0,
-        "col": 2,
-        "config": {
-          "datasources": [
-            {
-              "type": "entity",
-              "entityAliasId": "aa27d6a1-5005-8bed-82f9-8050ca13a6a6",
-              "dataKeys": [
-                {
-                  "name": "humidity",
-                  "label": "humidity",
-                  "type": "timeseries",
-                  "color": "#2196f3",
-                  "settings": {},
-                  "_hash": 0.8201236464417154
-                }
-              ]
-            }
-          ],
-          "timewindow": {
-            "realtime": {
-              "timewindowMs": 60000
-            }
-          },
-          "showTitle": true,
-          "backgroundColor": "#fff",
-          "color": "rgba(0, 0, 0, 0.87)",
-          "padding": "8px",
-          "settings": {
-            "shadowSize": 4,
-            "fontColor": "#545454",
-            "fontSize": 10,
-            "xaxis": {
-              "showLabels": true,
-              "color": "#545454"
-            },
-            "yaxis": {
-              "showLabels": true,
-              "color": "#545454"
-            },
-            "grid": {
-              "color": "#545454",
-              "tickColor": "#DDDDDD",
-              "verticalLines": true,
-              "horizontalLines": true,
-              "outlineWidth": 1
-            },
-            "legend": {
-              "show": true,
-              "position": "nw",
-              "backgroundColor": "#f0f0f0",
-              "backgroundOpacity": 0.85,
-              "labelBoxBorderColor": "rgba(1, 1, 1, 0.45)"
-            },
-            "decimals": 1,
-            "stack": false,
-            "tooltipIndividual": false
-          },
-          "title": "Timeseries - Flot",
-          "dropShadow": true,
-          "enableFullscreen": true,
-          "titleStyle": {
-            "fontSize": "16px",
-            "fontWeight": 400
-          },
-          "mobileHeight": null
-        },
-        "id": "989b4dec-5321-a326-f52a-f6c89513c15a"
-      },
       "3f192cd3-8e40-84f1-5e94-329c77f96fca": {
         "isSystemType": true,
         "bundleAlias": "charts",
         "typeAlias": "basic_timeseries",
         "type": "timeseries",
         "title": "Timeseries - Flot",
-        "sizeX": 16,
-        "sizeY": 10,
+        "sizeX": 14,
+        "sizeY": 9,
         "row": 0,
         "col": 2,
         "config": {
@@ -288,6 +215,23 @@
                   "color": "#2196f3",
                   "settings": {},
                   "_hash": 0.07428156791264029
+                },
+                {
+                  "name": "humidity",
+                  "type": "timeseries",
+                  "label": "humidity",
+                  "color": "#4caf50",
+                  "settings": {
+                    "showLines": true,
+                    "fillLines": false,
+                    "showPoints": false,
+                    "tooltipValueFormatter": "",
+                    "showSeparateAxis": false,
+                    "axisTitle": "",
+                    "axisPosition": "left",
+                    "axisTicksFormatter": ""
+                  },
+                  "_hash": 0.5420233104187349
                 }
               ]
             }
@@ -320,14 +264,6 @@
               "horizontalLines": true,
               "outlineWidth": 1
             },
-            "legend": {
-              "show": true,
-              "position": "nw",
-              "backgroundColor": "#f0f0f0",
-              "backgroundOpacity": 0.85,
-              "labelBoxBorderColor": "rgba(1, 1, 1, 0.45)"
-            },
-            "decimals": 1,
             "stack": false,
             "tooltipIndividual": false
           },
@@ -338,7 +274,11 @@
             "fontSize": "16px",
             "fontWeight": 400
           },
-          "mobileHeight": null
+          "mobileHeight": null,
+          "widgetStyle": {},
+          "useDashboardTimewindow": true,
+          "showLegend": true,
+          "actions": {}
         },
         "id": "3f192cd3-8e40-84f1-5e94-329c77f96fca"
       }
@@ -352,28 +292,21 @@
             "widgets": {
               "c4f67d53-44c9-150e-7a94-20393e8af905": {
                 "sizeX": 5,
-                "sizeY": 5,
+                "sizeY": 9,
                 "row": 0,
-                "col": 0
+                "col": 14
               },
               "c510fbc6-c517-d800-7cb4-087ecb8fa730": {
-                "sizeX": 3,
-                "sizeY": 5,
+                "sizeX": 5,
+                "sizeY": 9,
                 "row": 0,
-                "col": 5
-              },
-              "989b4dec-5321-a326-f52a-f6c89513c15a": {
-                "sizeX": 8,
-                "sizeY": 5,
-                "mobileHeight": null,
-                "row": 5,
-                "col": 8
+                "col": 19
               },
               "3f192cd3-8e40-84f1-5e94-329c77f96fca": {
-                "sizeX": 8,
-                "sizeY": 5,
+                "sizeX": 14,
+                "sizeY": 9,
                 "mobileHeight": null,
-                "row": 5,
+                "row": 0,
                 "col": 0
               }
             },
@@ -394,14 +327,14 @@
     "entityAliases": {
       "aa27d6a1-5005-8bed-82f9-8050ca13a6a6": {
         "id": "aa27d6a1-5005-8bed-82f9-8050ca13a6a6",
-        "alias": "Arduino Uno with sim",
+        "alias": "Arduino Uno Demo Device",
         "filter": {
           "type": "singleEntity",
+          "resolveMultiple": false,
           "singleEntity": {
             "entityType": "DEVICE",
-            "id": "d287bbc0-561a-11e9-b5e4-131e95424e9a"
-          },
-          "resolveMultiple": false
+            "id": "c223fd40-e512-11e7-b863-1d8d2edf4f93"
+          }
         }
       }
     },
