@@ -40,6 +40,7 @@ const char pass[] = "";
 // Serial port for GSM shield
 SoftwareSerial serialGsm(7, 8); // RX, TX pins for communicating with modem
 
+// Uncomment to see StreamDebugger output in serial monitor
 //#define DUMP_AT_COMMANDS 1
 
 #ifdef DUMP_AT_COMMANDS
@@ -84,7 +85,6 @@ void setup() {
   // To skip it, call init() instead of restart()
   Serial.println(F("Initializing modem..."));
   modem.restart();
-//  modem.init();
 
   String modemInfo = modem.getModemInfo();
   Serial.print(F("Modem: "));
