@@ -127,9 +127,11 @@ To simplify application development, install the ThingsBoard Arduino SDK and its
 
 1. Proceed to **Sketch -> Include Library...** submenu. Select **Manage Libraries**.
 
-1. Find and install **ThingsBoard Arduino SDK** and **PubSubClient by Nick O'Leary** libraries.
+1. Find and install **ThingsBoard Arduino SDK**, **PubSubClient by Nick O'Leary** and **ArduinoHttpClient** libraries.
 
-   ![image](/images/samples/esp32/gpio-temperature/install-tb-arduino.png)
+   ![image](/images/samples/esp32/gpio-temperature/install-thingsboard-arduino.png)
+   ![image](/images/samples/esp32/gpio-temperature/install-pubsubclient-arduino.png)
+   ![image](/images/samples/esp32/gpio-temperature/install-arduinohttpclient-arduino.png)
 
 1. Install **ArduinoJSON** library **v6.9.1** or higher. <span style="color:red">Avoid installing beta releases of the ArduinoJson library</span>.
 
