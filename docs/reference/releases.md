@@ -8,6 +8,76 @@ description: ThingsBoard architecture
 * TOC
 {:toc}
 
+## v2.3.1 (April 3, 2019)
+
+### ThingsBoard CE
+
+Minor release with the following improvements.
+
+Main features:
+
+- Migrate to Spring Boot 2.1.0 and Spring 5.1.2;
+- [Kubernetes scripts](https://github.com/thingsboard/thingsboard/tree/master/k8s) for ThingsBoard Microservices;
+- UI: New Trip Animation Widget;
+- UI: New Date Range Navigator Widget;
+- UI: New [Entities Hierarchy Widget](https://www.youtube.com/watch?v=bc07ys-azqw);
+- UI: Added ability to visualize Polygons on the map widgets;
+
+Additional features:
+
+- added feature for resetting debug-mode in all rule-nodes;
+- UI: Updated Italian locale;
+- UI: Added Ukrainian locale;
+- UI: Added full Canadian postal code validation;
+- UI: Add searchbox support for all ace editors;
+- UI: Widgets - add entityDescription variable;
+- Improved zookeeper client reconnect logic;
+- Improved GRPC session error handling.
+
+New Rule nodes:
+
+- Relation Rule Node
+- Save to custom Cassandra table Rule Node
+- Geofencing rule nodes
+- Get Entity Details nodes
+
+Bug fixes:
+
+- fixed Customer User permissions for RPC call;
+- fixed regexp in webpack build;
+- fixed NPE in TbGetTelemetryNode;
+- fixed NPE in TbMsgMetaData constructor;
+- fixed NPE in actor message processors;
+- fixed CORS mapping;
+- fixed doulbe PUBACK for attribute request messages;
+- UI: fixed individual tooltip content in Flot widget;
+- added prefix to device credentials cache keys.
+
+### ThingsBoard PE
+
+Everything from TB CE v2.3.1 with the following improvements.
+
+Main features:
+
+- Introduced [Change Owner](/docs/user-guide/rbac/) operation;
+- Introduced [Custom Menu](/docs/user-guide/custom-menu/) feature;
+
+Additional features:
+
+- UI: improved French locale;
+- Improve reports generation.
+
+New Rule Nodes:
+
+- Change Owner Rule Node
+ 
+Bug fixes:
+
+- Fixed Public Users permissions: Added Alarm Read permission.
+- UI: Fixed multiple users deletion;
+- UI: Timer-Based scheduler layout fix;
+- UI: Fixed custom translation update on page refresh.
+
 ## v2.3 (February 7, 2019)
 
 ### ThingsBoard CE

@@ -1,3 +1,5 @@
+$nav-buttons-margin-left: 30px
+
 @media screen and (min-width: 1120px)
     #githubButtonContainer
         display: inline-flex
@@ -26,6 +28,9 @@
 @media screen and (min-width: 1300px)
     .nav-item
         padding: 15px 8px
+    .nav-buttons
+        .button + *
+            margin-left: $nav-buttons-margin-left
     #services.center-button
         display: inline-block
 

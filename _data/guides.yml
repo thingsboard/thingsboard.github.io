@@ -52,6 +52,8 @@ toc:
       path: /docs/samples/arduino/
     - title: Temperature upload over MQTT using Arduino UNO, ESP8266 and DHT22 sensor
       path: /docs/samples/arduino/temperature/
+    - title: Humidity and temperature upload over HTTP using Arduino UNO, SIM808 Shield and HTU21D sensor
+      path: /docs/samples/arduino/sim808-htu21d/
   - title: ESP8266
     section:
     - title: ESP8266 overview
