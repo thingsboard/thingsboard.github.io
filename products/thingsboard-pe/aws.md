@@ -268,9 +268,9 @@ description:
             <p>
                 Let's assume your number of devices is constantly growing and you decide to upgrade to new instance type. 
                 It is relatively easy to upgrade while you plan to use the same database type. Just execute the following steps:<br/><br/>
-                &nbsp;&nbsp;&nbsp;&nbsp;1) stop your isntance and backup your database<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;1) stop your instance and backup your database<br/>
                 &nbsp;&nbsp;&nbsp;&nbsp;2) start new subscription with new instance type<br/>
-                &nbsp;&nbsp;&nbsp;&nbsp;3) restore the databacse backup on the instance with new subscription<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;3) restore the database backup on the instance with new subscription<br/>
                 &nbsp;&nbsp;&nbsp;&nbsp;4) ensure everything is working as expected<br/>
                 &nbsp;&nbsp;&nbsp;&nbsp;5) cancel old subscription if needed<br/><br/>
                 However, if you plan to upgrade from PostgreSQL to Cassandra this may become a chellange. 
