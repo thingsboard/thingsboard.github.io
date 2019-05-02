@@ -34,7 +34,7 @@ Let’s assume the following use case:
    <tbody>
      <tr>
 	<td>
-	<p>Turning the Rotating System to the left or to the right is based on which way is better and faster so that the difference between the direction of the wind and the wind turbine has to be not more than 5 degrees.</p>
+	<p>Turning the Rotating System to the left or to the right is based on which way is better and faster so that the angle between the direction of the wind and the wind turbine has to be no more than 5 degrees.</p>
 	</td>
      </tr>
    </tbody>
