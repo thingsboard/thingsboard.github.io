@@ -93,3 +93,32 @@ description:
         </div>
     </div>
 </div>
+
+<div class="customer-block">
+    <a href="https://www.iioote.com/">
+        <div class="customer-logo">
+            <img width="" src="/images/customers/iioote.png" alt="iiOOTE AB">
+        </div>
+    </a>
+    <div class="customer-content">
+        <h3 id="iioote">
+            iiOOTE AB
+        </h3>
+        <h4>
+            iiOOTE is an independent systems integrator with deep knowledge and broad international network in the IoT LPWAN ecosystem. 
+        </h4>  
+        <p>
+           During our evaluation of several different IoT platforms we decided using ThingsBoard Community Edition to quickly get started with testing of our concept solutions. Since it offers an easy way to get access to data from all our sensors and supports building dashboards for visualization.  
+        </p>
+        <p>
+           However, we soon discovered that ThingsBoard also fulfilled our need to build commercial services. With increasing number of sensors, customers and requirements we have migrated to ThingsBoard Professional Edition with a lot more functionality for larger deployments and multiple customers. And we will add additional servers as our customers grow.
+        </p> 
+        <div class="person-logo-container">
+        <img class="person-logo" src="/images/customers/bertil.png"/>
+            <div class="person-title">
+                Bertil Moberg  <br/>
+                Co-Founder & Head of IoT Solutions
+            </div>
+        </div>
+    </div>
+</div>
