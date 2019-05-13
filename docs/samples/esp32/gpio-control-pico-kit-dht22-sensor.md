@@ -30,7 +30,7 @@ Once you complete this sample/tutorial, you will see your sensor data on the fol
 
   ![image](https://docs.espressif.com/projects/esp-idf/en/latest/_images/esp32-pico-kit-v4.1-layout.jpg)
 
- - [DHT22 sensor](https://www.aliexpress.com/item/1pcs-DHT22-digital-temperature-and-humidity-sensor-Temperature-and-humidity-module-AM2302-replace-SHT11-SHT15/32316036161.html?spm=2114.03010208.3.49.aZvfaG&ws_ab_test=searchweb0_0,searchweb201602_2_10065_10068_10084_10083_10080_10082_10081_10060_10061_10062_10056_10055_10054_10059_10099_10078_10079_10093_426_10073_10103_10102_10096_10052_10050_10051,searchweb201603_6&btsid=28d9ee9a-283a-4e97-af7b-a7e530490916)
+ - [DHT22 sensor](https://www.aliexpress.com/item/1pcs-DHT22-digital-temperature-and-humidity-sensor-Temperature-and-humidity-module-AM2302-replace-SHT11-SHT15/32316036161.html)
 
   ![image](/images/samples/arduino/temperature/dht22-pinout.png)
 
@@ -93,7 +93,7 @@ Use import/export [**instructions**](/docs/user-guide/ui/dashboards/#dashboard-i
 
 ## Creating ESP32 firmware
 
-Easiest way to program ESP32 Pico Kit is to use Arduino IDE. Following sectoins are describing that approach.
+Easiest way to program ESP32 Pico Kit is to use Arduino IDE. Following sections are describing that approach.
 
 ### ESP32 and Arduino IDE setup
 
@@ -127,11 +127,13 @@ To simplify application development, install the ThingsBoard Arduino SDK and its
 
 1. Proceed to **Sketch -> Include Library...** submenu. Select **Manage Libraries**.
 
-1. Find and install **ThingsBoard Arduino SDK** and **PubSubClient by Nick O'Leary** libraries.
+1. Find and install **ThingsBoard Arduino SDK**, **PubSubClient by Nick O'Leary** and **ArduinoHttpClient** libraries.
 
-   ![image](/images/samples/esp32/gpio-temperature/install-tb-arduino.png)
+   ![image](/images/samples/esp32/gpio-temperature/install-thingsboard-arduino.png)
+   ![image](/images/samples/esp32/gpio-temperature/install-pubsubclient-arduino.png)
+   ![image](/images/samples/esp32/gpio-temperature/install-arduinohttpclient-arduino.png)
 
-1. Install **ArduinoJSON** library. <span style="color:red">Do not install beta releases of the ArduinoJson library. Instead, use **5.13.3** version of the library</span>, as shown in picture below.
+1. Install **ArduinoJSON** library **v6.9.1** or higher. <span style="color:red">Avoid installing beta releases of the ArduinoJson library</span>.
 
    ![image](/images/samples/esp32/gpio-temperature/do-not-use-beta-version-arduinojson.png)
 

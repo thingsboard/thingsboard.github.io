@@ -1,0 +1,9 @@
+{
+  "name": "New uplink SigFox converter",
+  "type": "UPLINK",
+  "debugMode": true,
+  "configuration": {
+    "decoder": "// Decode an uplink message from a buffer\n// payload - array of bytes\n// metadata - key/value object\n\n/** Decoder **/\n\n// decode payload to string\nvar payloadStr = decodeToString(payload);\n\n// decode payload to JSON\n// var data = decodeToJson(payload);\n\nvar pljson = decodeToJson(payload);\nvar deviceName = pljson.device;\nvar deviceType = 'default';\n\n// Result object with device attributes/telemetry data\nvar result = {\n   deviceName: deviceName,\n   deviceType: deviceType,\n   attributes: {\n       integrationName: metadata['integrationName']\n   },\n   telemetry: {\n       rawData: payloadStr\n   }\n};\n\n/** Helper functions **/\n\nfunction decodeToString(payload) {\n   return String.fromCharCode.apply(String, payload);\n}\n\nfunction decodeToJson(payload) {\n   // covert payload to string.\n   var str = decodeToString(payload);\n\n   // parse string to JSON\n   var data = JSON.parse(str);\n   return data;\n}\n\nreturn result;\n"
+  },
+  "additionalInfo": null
+}
