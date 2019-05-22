@@ -242,9 +242,51 @@ Custom relation names are case-insensitive.
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/filter-gps-geofencing.png)
 
-Filter incoming messages by GPS based geofencing. Extracts latitude and longitude parameters from incoming message and returns **True** if they are inside configured perimeters, **False** otherwise.
-
+Filter incoming messages by GPS based geofencing. Extracts latitude and longitude parameters from incoming message(data or metadata) and checks if they are inside configured perimeters.
 ![image](/images/user-guide/rule-engine-2-0/nodes/filter-gps-geofencing-default-config.png)
 
-By default, rule node fetch perimeter information from message metadata - **Fetch perimeter information from message metadata** checkbox is set to **true**.
+By default, rule node fetch perimeter information from message metadata: **Fetch perimeter information from message metadata** checkbox is enabled.
+<br>Otherwise, if **Fetch perimeter information from message metadata** checkbox is disabled, the perimeter information must be defined directly in the rule node configuration.
 
+<br>
+
+- Fetch perimeter information from message metadata - **enabled**:
+
+    There are two options of space definition based on the perimeter type:
+
+    - Polygon: 
+           
+        metadata of the incoming message must include key: **perimeter** with the following data structure: 
+             ```"[[lat1,lon1],[lat2,lon2], ... ,[latN,lonN]]"```
+ 
+    - Circle:
+           
+        metadata of the incoming message must include the following keys:
+                 
+                centerLatitude - double; 
+                centerLongitude - double; 
+                range - double; 
+                rangeUnit: METER, KILOMETER, FOOT, MILE, NAUTICAL_MILE;
+
+<br>
+
+- Fetch perimeter information from message metadata - **disabled**:
+ 
+    There are two options of space definition based on the perimeter type:
+ 
+    - Polygon: 
+             
+    ![image](/images/user-guide/rule-engine-2-0/nodes/filter-gps-geofencing-polygon-config.png)           
+
+    - Circle:
+                  
+    ![image](/images/user-guide/rule-engine-2-0/nodes/filter-gps-geofencing-circle-config.png)          
+    
+if configured Latitude key and Longitude Key are inside configured perimeters message sent via **True** chain, otherwise **False** chain is used.
+   
+**Failure** chain will be used if:
+    
+   - used unsupported perimeter type;
+   - missing perimeter definition;
+   - incoming message has no configured latitude or longitude key in data or metadata.      
+    
