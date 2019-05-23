@@ -28,7 +28,7 @@ Checks the relation from the selected entity to originator of the message by typ
 
 If relation exists - Message is sent via **True** chain, otherwise **False** chain is used.
 
-**Note:** Within TB Version 2.3 the rule node has the ability to check the existence of relation to a specific entity or<br> to any entity based on direction and relation type by disabling the following checkbox in the rule node configuration:
+**Note:** Since TB Version 2.3 the rule node has the ability to check the existence of relation to a specific entity or<br> to any entity based on direction and relation type by disabling the following checkbox in the rule node configuration:
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/check-relation-checkbox.png)
 
