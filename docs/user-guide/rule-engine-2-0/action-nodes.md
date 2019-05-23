@@ -15,7 +15,7 @@ Action Nodes execute various actions based on incoming Message.
 <table  style="width:12%">
    <thead>
      <tr>
-	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
+	 <td style="text-align: center"><strong><em>Release TB Version 2.0</em></strong></td>
      </tr>
    </thead>
 </table> 
@@ -139,7 +139,7 @@ You can see the real life example, where this node is used, in the next tutorial
 <table  style="width:12%">
    <thead>
      <tr>
-	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
+	 <td style="text-align: center"><strong><em>Release TB Version 2.0</em></strong></td>
      </tr>
    </thead>
 </table> 
@@ -255,7 +255,7 @@ You can see the real life example, where this node is used, in the next tutorial
 <table  style="width:12%">
    <thead>
      <tr>
-	 <td style="text-align: center"><strong><em>Since TB Version 2.1</em></strong></td>
+	 <td style="text-align: center"><strong><em>Release TB Version 2.1</em></strong></td>
      </tr>
    </thead>
 </table> 
@@ -282,7 +282,7 @@ Each next message will be routed via **Failure** chain if the maximum pending me
 <table  style="width:12%">
    <thead>
      <tr>
-	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
+	 <td style="text-align: center"><strong><em>Release TB Version 2.0</em></strong></td>
      </tr>
    </thead>
 </table> 
@@ -329,7 +329,7 @@ This node can be used for Rule Chain debugging purposes.
 <table  style="width:12%">
    <thead>
      <tr>
-	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
+	 <td style="text-align: center"><strong><em>Release TB Version 2.0</em></strong></td>
      </tr>
    </thead>
 </table> 
@@ -361,7 +361,7 @@ You can see the real life example, where this node is used, in the next tutorial
 <table  style="width:12%">
    <thead>
      <tr>
-	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
+	 <td style="text-align: center"><strong><em>Release TB Version 2.0</em></strong></td>
      </tr>
    </thead>
 </table> 
@@ -410,7 +410,7 @@ You can see the real life example, where this node is used, in the next tutorial
 <table  style="width:12%">
    <thead>
      <tr>
-	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
+	 <td style="text-align: center"><strong><em>Release TB Version 2.0</em></strong></td>
      </tr>
    </thead>
 </table> 
@@ -459,7 +459,7 @@ For more details how RPC works in the Thingsboard, please read [RPC capabilities
 <table  style="width:12%">
    <thead>
      <tr>
-	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
+	 <td style="text-align: center"><strong><em>Release TB Version 2.0</em></strong></td>
      </tr>
    </thead>
 </table> 
@@ -503,7 +503,7 @@ otherwise **Failure** chain is used.
 <table  style="width:12%">
    <thead>
      <tr>
-	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
+	 <td style="text-align: center"><strong><em>Release TB Version 2.0</em></strong></td>
      </tr>
    </thead>
 </table> 
@@ -543,12 +543,42 @@ otherwise **Failure** chain is used.
 
 <br/>
 
+# Save to Custom Table
+
+<table  style="width:12%">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Release TB Version 2.3.1</em></strong></td>
+     </tr>
+   </thead>
+</table> 
+
+![image](/images/user-guide/rule-engine-2-0/nodes/action-save-to-custom-cassandra-table.png)
+
+Node stores data from incoming Message payload to the Cassandra database into the predefined custom table that should have **cs_tb_** prefix, to avoid the data insertion to the common TB tables.
+
+Please note, that rule node can be used only for **Cassandra DB**.
+
+Configuration:
+
+Administrator should set the custom table name without prefix: **cs_tb_**.
+
+![image](/images/user-guide/rule-engine-2-0/nodes/action-save-to-custom-cassandra-table-name-config.png)
+
+Administrator can configure the mapping between the Message field names and Table columns name. If the mapping key is **$entity_id**, that is identified by the Message Originator, then to the appropriate column name(mapping value) will be write the message originator id.
+
+![image](/images/user-guide/rule-engine-2-0/nodes/action-save-to-custom-cassandra-table-config.png)
+
+If specified message field does not exist or is not a JSON Primitive, the outbound message will be routed via **Failure** chain, otherwise, the message will be routed via **Success** chain.
+
+<br/>
+
 # Assign To Customer Node 
 
 <table  style="width:12%">
    <thead>
      <tr>
-	 <td style="text-align: center"><strong><em>Since TB Version 2.2</em></strong></td>
+	 <td style="text-align: center"><strong><em>Release TB Version 2.2</em></strong></td>
      </tr>
    </thead>
 </table> 
@@ -585,7 +615,7 @@ In other cases Message will be routed via **Success** chain.
 <table  style="width:12%">
    <thead>
      <tr>
-	 <td style="text-align: center"><strong><em>Since TB Version 2.2</em></strong></td>
+	 <td style="text-align: center"><strong><em>Release TB Version 2.2</em></strong></td>
      </tr>
    </thead>
 </table> 
@@ -711,3 +741,72 @@ In other cases Message will be routed via **Success** chain.
 ![image](/images/user-guide/rule-engine-2-0/nodes/action-delete-relation-node-new-functionality.png)
 
 <br/>
+
+##### GPS Geofencing Events Node
+
+<table  style="width:15%">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Release TB Version 2.3.1</em></strong></td>
+     </tr>
+   </thead>
+</table> 
+
+![image](/images/user-guide/rule-engine-2-0/nodes/action-gps-geofencing-event-node.png)
+
+Produces incoming messages by GPS based parameters. Extracts latitude and longitude from incoming message data or metadata and returns different events based on configuration parameters (geo fence).
+
+![image](/images/user-guide/rule-engine-2-0/nodes/filter-gps-geofencing-default-config.png)
+
+The rule node fetches perimeter information from message metadata by default. If **Fetch perimeter information from message metadata** is unchecked, additional information should be configured.
+
+<br>
+
+###### Fetch perimeter information from message metadata
+
+There are two options of area definition based on the perimeter type:
+
+- Polygon 
+           
+    Metadata of the incoming message must include key with name **perimeter** and following data structure:
+     
+{% highlight java %}[[lat1,lon1],[lat2,lon2], ... ,[latN,lonN]]{% endhighlight %}
+ 
+- Circle
+                 
+{% highlight java %}"centerLatitude": "value1", "centerLongitude": "value2", "range": "value3"
+
+All values for these keys are in double-precision floating-point data type.
+
+The "rangeUnit" key requires specific value from a list of METER, KILOMETER, FOOT, MILE, NAUTICAL_MILE (capital letters obligatory).
+{% endhighlight %}
+
+###### Fetch perimeter information from node configuration
+ 
+There are two options of area definition based on the perimeter type:
+ 
+- Polygon 
+             
+![image](/images/user-guide/rule-engine-2-0/nodes/filter-gps-geofencing-polygon-config.png)           
+
+- Circle
+                  
+![image](/images/user-guide/rule-engine-2-0/nodes/filter-gps-geofencing-circle-config.png)          
+
+###### Minimal inside & outside duration configuration
+
+Administrator can configure the minimal inside and outside duration time before reports that configured latitude and longitude keys from incoming message are inside or outside the defined area in the outbound message.
+
+![image](/images/user-guide/rule-engine-2-0/nodes/action-gps-geofencing-event-node-duration-config.png)
+
+if latitude and longitude from the previous message was inside the perimeter (geo fence), and latitude, longitude from the next incoming message, go beyond the perimeter range (geo fence), rule node will return the outbound message with the **Left** event.
+
+if latitude and longitude from the previous message was outside the perimeter (geo fence), and latitude, longitude from the next incoming message, entered the perimeter range (geo fence), rule node will return the outbound message with the **Entered** event.
+
+if 
+   
+**Failure** chain will to be used when:
+
+   - incoming message has no configured latitude or longitude key in data or metadata. 
+   - missing perimeter definition;     
+    

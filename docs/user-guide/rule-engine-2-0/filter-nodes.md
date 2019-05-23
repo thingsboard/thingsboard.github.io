@@ -232,7 +232,7 @@ Custom relation names are case-insensitive.
 
 ##### GPS Geofencing Filter Node
 
-<table  style="width:12%">
+<table  style="width:15%">
    <thead>
      <tr>
 	 <td style="text-align: center"><strong><em>Since TB Version 2.3.1</em></strong></td>
@@ -242,51 +242,51 @@ Custom relation names are case-insensitive.
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/filter-gps-geofencing.png)
 
-Filter incoming messages by GPS based geofencing. Extracts latitude and longitude parameters from incoming message(data or metadata) and checks if they are inside configured perimeters.
+Filters incoming messages by GPS based parameters. Extracts latitude and longitude from data or metadata and checks if they are inside configured perimeter (geo fence).
+
 ![image](/images/user-guide/rule-engine-2-0/nodes/filter-gps-geofencing-default-config.png)
 
-By default, rule node fetch perimeter information from message metadata: **Fetch perimeter information from message metadata** checkbox is enabled.
-<br>Otherwise, if **Fetch perimeter information from message metadata** checkbox is disabled, the perimeter information must be defined directly in the rule node configuration.
+The rule node fetches perimeter information from message metadata by default. If **Fetch perimeter information from message metadata** is unchecked, additional information should be configured.
 
 <br>
 
-- Fetch perimeter information from message metadata - **enabled**:
+###### Fetch perimeter information from message metadata
 
-    There are two options of space definition based on the perimeter type:
+There are two options of area definition based on the perimeter type:
 
-    - Polygon: 
+- Polygon 
            
-        metadata of the incoming message must include key: **perimeter** with the following data structure: 
-             ```"[[lat1,lon1],[lat2,lon2], ... ,[latN,lonN]]"```
+    Metadata of the incoming message must include key with name **perimeter** and following data structure:
+     
+{% highlight java %}[[lat1,lon1],[lat2,lon2], ... ,[latN,lonN]]{% endhighlight %}
  
-    - Circle:
-           
-        metadata of the incoming message must include the following keys:
+- Circle
                  
-                centerLatitude - double; 
-                centerLongitude - double; 
-                range - double; 
-                rangeUnit: METER, KILOMETER, FOOT, MILE, NAUTICAL_MILE;
 
-<br>
+{% highlight java %}"centerLatitude": "value1", "centerLongitude": "value2", "range": "value3"
 
-- Fetch perimeter information from message metadata - **disabled**:
+All values for these keys are in double-precision floating-point data type.
+
+The "rangeUnit" key requires specific value from a list of METER, KILOMETER, FOOT, MILE, NAUTICAL_MILE (capital letters obligatory).
+{% endhighlight %}
+
+###### Fetch perimeter information from node configuration
  
-    There are two options of space definition based on the perimeter type:
+There are two options of area definition based on the perimeter type:
  
-    - Polygon: 
+- Polygon 
              
-    ![image](/images/user-guide/rule-engine-2-0/nodes/filter-gps-geofencing-polygon-config.png)           
+![image](/images/user-guide/rule-engine-2-0/nodes/filter-gps-geofencing-polygon-config.png)           
 
-    - Circle:
+- Circle
                   
-    ![image](/images/user-guide/rule-engine-2-0/nodes/filter-gps-geofencing-circle-config.png)          
+![image](/images/user-guide/rule-engine-2-0/nodes/filter-gps-geofencing-circle-config.png)          
     
-if configured Latitude key and Longitude Key are inside configured perimeters message sent via **True** chain, otherwise **False** chain is used.
-   
-**Failure** chain will be used if:
-    
-   - used unsupported perimeter type;
-   - missing perimeter definition;
-   - incoming message has no configured latitude or longitude key in data or metadata.      
+if configured latitude and longitude are inside configured perimeter message sent via **True** chain, otherwise **False** chain is used.
+      
+**Failure** chain will to be used when:
+
+   - incoming message has no configured latitude or longitude key in data or metadata. 
+   - missing perimeter definition;     
+        
     
