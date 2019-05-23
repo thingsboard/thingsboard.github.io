@@ -658,7 +658,7 @@ Message will be routed via **Failure** chain in the following cases:
 
 In other cases Message will be routed via **Success** chain. 
 
-**Note:** Within TB Version 2.3 the rule node has the ability to:
+**Note:** Since TB Version 2.3 the rule node has the ability to:
 
  - remove current relations from the originator of the incoming message based on direction and type: 
 
@@ -706,7 +706,7 @@ Message will be routed via **Failure** chain in the following cases:
 In other cases Message will be routed via **Success** chain. 
 
 
-**Note:** Within TB Version 2.3 the rule node has the ability to deletes relation from the originator of the incoming message to the specified entity or to the list of entities based on direction and type by disabling the following checkbox in the rule node configuration:
+**Note:** Since TB Version 2.3 the rule node has the ability to deletes relation from the originator of the incoming message to the specified entity or to the list of entities based on direction and type by disabling the following checkbox in the rule node configuration:
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/action-delete-relation-node-new-functionality.png)
 

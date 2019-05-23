@@ -367,11 +367,3 @@ Following Message Originator types are allowed: **Asset**, **Device**, **Entity 
 If unsupported Originator type found, an error is thrown.
  
 If Originator does not have assigned Customer Entity **Failure** chain is used, otherwise **Success** chain.
-
-
-
-
-
-
-
-
