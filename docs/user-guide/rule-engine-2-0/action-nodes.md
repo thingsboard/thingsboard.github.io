@@ -15,7 +15,7 @@ Action Nodes execute various actions based on incoming Message.
 <table  style="width:12%">
    <thead>
      <tr>
-	 <td style="text-align: center"><strong><em>Release TB Version 2.0</em></strong></td>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
      </tr>
    </thead>
 </table> 
@@ -139,7 +139,7 @@ You can see the real life example, where this node is used, in the next tutorial
 <table  style="width:12%">
    <thead>
      <tr>
-	 <td style="text-align: center"><strong><em>Release TB Version 2.0</em></strong></td>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
      </tr>
    </thead>
 </table> 
@@ -255,7 +255,7 @@ You can see the real life example, where this node is used, in the next tutorial
 <table  style="width:12%">
    <thead>
      <tr>
-	 <td style="text-align: center"><strong><em>Release TB Version 2.1</em></strong></td>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.1</em></strong></td>
      </tr>
    </thead>
 </table> 
@@ -282,7 +282,7 @@ Each next message will be routed via **Failure** chain if the maximum pending me
 <table  style="width:12%">
    <thead>
      <tr>
-	 <td style="text-align: center"><strong><em>Release TB Version 2.0</em></strong></td>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
      </tr>
    </thead>
 </table> 
@@ -329,7 +329,7 @@ This node can be used for Rule Chain debugging purposes.
 <table  style="width:12%">
    <thead>
      <tr>
-	 <td style="text-align: center"><strong><em>Release TB Version 2.0</em></strong></td>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
      </tr>
    </thead>
 </table> 
@@ -361,7 +361,7 @@ You can see the real life example, where this node is used, in the next tutorial
 <table  style="width:12%">
    <thead>
      <tr>
-	 <td style="text-align: center"><strong><em>Release TB Version 2.0</em></strong></td>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
      </tr>
    </thead>
 </table> 
@@ -410,7 +410,7 @@ You can see the real life example, where this node is used, in the next tutorial
 <table  style="width:12%">
    <thead>
      <tr>
-	 <td style="text-align: center"><strong><em>Release TB Version 2.0</em></strong></td>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
      </tr>
    </thead>
 </table> 
@@ -459,7 +459,7 @@ For more details how RPC works in the Thingsboard, please read [RPC capabilities
 <table  style="width:12%">
    <thead>
      <tr>
-	 <td style="text-align: center"><strong><em>Release TB Version 2.0</em></strong></td>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
      </tr>
    </thead>
 </table> 
@@ -503,7 +503,7 @@ otherwise **Failure** chain is used.
 <table  style="width:12%">
    <thead>
      <tr>
-	 <td style="text-align: center"><strong><em>Release TB Version 2.0</em></strong></td>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
      </tr>
    </thead>
 </table> 
@@ -548,7 +548,7 @@ otherwise **Failure** chain is used.
 <table  style="width:12%">
    <thead>
      <tr>
-	 <td style="text-align: center"><strong><em>Release TB Version 2.3.1</em></strong></td>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.3.1</em></strong></td>
      </tr>
    </thead>
 </table> 
@@ -578,7 +578,7 @@ If specified message field does not exist or is not a JSON Primitive, the outbou
 <table  style="width:12%">
    <thead>
      <tr>
-	 <td style="text-align: center"><strong><em>Release TB Version 2.2</em></strong></td>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.2</em></strong></td>
      </tr>
    </thead>
 </table> 
@@ -615,7 +615,7 @@ In other cases Message will be routed via **Success** chain.
 <table  style="width:12%">
    <thead>
      <tr>
-	 <td style="text-align: center"><strong><em>Release TB Version 2.2</em></strong></td>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.2</em></strong></td>
      </tr>
    </thead>
 </table> 
@@ -649,7 +649,7 @@ In other cases Message will be routed via **Success** chain.
 <table  style="min-width:12%; max-width: 20%">
    <thead>
      <tr>
-	 <td style="text-align: center"><strong><em>Release in TB Version 2.2.1</em></strong></td>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.2.1</em></strong></td>
      </tr>
    </thead>
 </table> 
@@ -705,7 +705,7 @@ In other cases Message will be routed via **Success** chain.
 <table  style="min-width:12%; max-width: 20%">
    <thead>
      <tr>
-	 <td style="text-align: center"><strong><em>Release in TB Version 2.2.1</em></strong></td>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.2.1</em></strong></td>
      </tr>
    </thead>
 </table> 
@@ -742,12 +742,12 @@ In other cases Message will be routed via **Success** chain.
 
 <br/>
 
-##### GPS Geofencing Events Node
+# GPS Geofencing Events Node
 
 <table  style="width:15%">
    <thead>
      <tr>
-	 <td style="text-align: center"><strong><em>Release TB Version 2.3.1</em></strong></td>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.3.1</em></strong></td>
      </tr>
    </thead>
 </table> 
@@ -791,20 +791,20 @@ There are two options of area definition based on the perimeter type:
 
 - Circle
                   
-![image](/images/user-guide/rule-engine-2-0/nodes/filter-gps-geofencing-circle-config.png)          
+![image](/images/user-guide/rule-engine-2-0/nodes/filter-gps-geofencing-circle-config.png)       
 
-###### Minimal inside & outside duration configuration
+###### Event Types
+There are 4 types of events managed by geofencing rule node:
 
-Administrator can configure the minimal inside and outside duration time before reports that configured latitude and longitude keys from incoming message are inside or outside the defined area in the outbound message.
+- **Entered** — is reporting whenever latitude and longitude from the incoming message to belong the required perimeter area for the first time;
+- **Left** — is reporting whenever latitude and longitude from the incoming message not belong the required perimeter area for the first time;
+- **Inside** and **Outside** events are used to report current status.
 
-![image](/images/user-guide/rule-engine-2-0/nodes/action-gps-geofencing-event-node-duration-config.png)
+Administrator can configure duration time threshold for reporting inside or outside event. For example, whenever minimal inside time is set to 1 minute the message originator is considered as being inside the perimeter 60 seconds after entering the area.
+Minimal outside time defines whenever message originator is considered as out of the perimeter as well.
 
-if latitude and longitude from the previous message was inside the perimeter (geo fence), and latitude, longitude from the next incoming message, go beyond the perimeter range (geo fence), rule node will return the outbound message with the **Left** event.
-
-if latitude and longitude from the previous message was outside the perimeter (geo fence), and latitude, longitude from the next incoming message, entered the perimeter range (geo fence), rule node will return the outbound message with the **Entered** event.
-
-if 
-   
+![image](/images/user-guide/rule-engine-2-0/nodes/action-gps-geofencing-event-node-duration-config.png)  
+ 
 **Failure** chain will to be used when:
 
    - incoming message has no configured latitude or longitude key in data or metadata. 
