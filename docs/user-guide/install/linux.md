@@ -25,16 +25,20 @@ To run ThingsBoard and third-party components on a single machine you will need 
 #### Java
 
 ThingsBoard service is running on Java 8. 
-Although you are able to start the service using [OpenJDK](http://openjdk.java.net/), 
-the solution is actively tested on [Oracle JDK](http://www.oracle.com/technetwork/java/javase/overview/index.html).
+The solution is actively tested on both [OpenJDK](http://openjdk.java.net/) and [Oracle JDK](http://www.oracle.com/technetwork/java/javase/overview/index.html).
 
-Follow this instructions to install Oracle JDK 8:
+Follow this instructions to install OpenJDK 8:
 
- - [Ubuntu 16.04](https://www.digitalocean.com/community/tutorials/how-to-install-java-with-apt-get-on-ubuntu-16-04#installing-the-oracle-jdk)
- - [CentOS 7](https://www.digitalocean.com/community/tutorials/how-to-install-java-on-centos-and-fedora#install-oracle-java-8)
+{% capture tabspec %}java-installation
+A,Ubuntu,shell,resources/java-ubuntu-installation.sh,/docs/user-guide/install/resources/java-ubuntu-installation.sh
+B,CentOS,shell,resources/java-centos-installation.sh,/docs/user-guide/install/resources/java-centos-installation.sh{% endcapture %}  
+{% include tabs.html %}   
 
-Please don't forget to configure your operating system to use Oracle JDK 8 by default. 
-Corresponding instructions are in the same articles listed above.
+Please don't forget to configure your operating system to use OpenJDK 8 by default. 
+See corresponding instructions:
+
+ - [Ubuntu](https://www.digitalocean.com/community/tutorials/how-to-install-java-with-apt-get-on-ubuntu-16-04#managing-java)
+ - [CentOS](https://www.digitalocean.com/community/tutorials/how-to-install-java-on-centos-and-fedora#set-default-java)
 
 
 #### External database installation
