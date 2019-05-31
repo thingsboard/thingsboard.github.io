@@ -24,7 +24,7 @@ This video is a step-by-step tutorial on setting up of MQTT Integration.
 <br/>
 <div id="video">  
  <div id="video_wrapper">
-     <iframe src="https://www.youtube.com/embed/OPkE5FXGPrs" frameborder="0" allowfullscreen></iframe>
+     <iframe src="https://www.youtube.com/embed/BeN5bsDQbdo" frameborder="0" allowfullscreen></iframe>
  </div>
 </div> 
 
