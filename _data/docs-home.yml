@@ -19,6 +19,9 @@ toc:
     path: /docs/user-guide/alarms/
   - title: Device Connectivity Status
     path: /docs/user-guide/device-connectivity-status/
+  - title: Claiming Devices
+    new: true
+    path: /docs/user-guide/claiming-devices/
   - title: Entity Views
     new: true
     path: /docs/user-guide/entity-views/
