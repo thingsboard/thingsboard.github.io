@@ -28,6 +28,31 @@ Checks the relation from the selected entity to originator of the message by typ
 
 If relation exists - Message is sent via **True** chain, otherwise **False** chain is used.
 
+**Note:** Since TB Version 2.3 the rule node has the ability to check the existence of relation to a specific entity or<br> to any entity based on direction and relation type by disabling the following checkbox in the rule node configuration:
+
+![image](/images/user-guide/rule-engine-2-0/nodes/check-relation-checkbox.png)
+
+In case that checkbox disabled and any relation exists - Message is sent via **True** chain, otherwise **False** chain is used.
+
+##### Check Existence Fields Node
+
+<table  style="width:12%">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.3</em></strong></td>
+     </tr>
+   </thead>
+</table> 
+
+![image](/images/user-guide/rule-engine-2-0/nodes/check-existance-fields.png)
+
+Rule node checks the existence of the selected keys from incoming message data and metadata.
+
+![image](/images/user-guide/rule-engine-2-0/nodes/check-existance-fields-config.png)
+
+If selected checkbox **Check that all selected keys are present** and all keys in message data and metadata exists - send Message via **True** chain, otherwise, **False** chain is used.<br>
+In case that checkbox is not selected, and at least one of the keys from data or metadata of the message exists - send Message via **True** chain, otherwise, **False**  chain is used.
+
 ##### Message Type Filter Node
 
 <table  style="width:12%">
@@ -204,3 +229,64 @@ In order to specify custom relation name **Custom** type should be selected. Thi
 Custom relation names are case-insensitive.
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/filter-switch-custom-relation.png)
+
+##### GPS Geofencing Filter Node
+
+<table  style="width:15%">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.3.1</em></strong></td>
+     </tr>
+   </thead>
+</table> 
+
+![image](/images/user-guide/rule-engine-2-0/nodes/filter-gps-geofencing.png)
+
+Filters incoming messages by GPS based parameters. Extracts latitude and longitude from data or metadata and checks if they are inside configured perimeter (geo fence).
+
+![image](/images/user-guide/rule-engine-2-0/nodes/filter-gps-geofencing-default-config.png)
+
+The rule node fetches perimeter information from message metadata by default. If **Fetch perimeter information from message metadata** is unchecked, additional information should be configured.
+
+<br>
+
+###### Fetch perimeter information from message metadata
+
+There are two options of area definition based on the perimeter type:
+
+- Polygon 
+           
+    Metadata of the incoming message must include key with name **perimeter** and following data structure:
+     
+{% highlight java %}[[lat1,lon1],[lat2,lon2], ... ,[latN,lonN]]{% endhighlight %}
+ 
+- Circle
+                 
+
+{% highlight java %}"centerLatitude": "value1", "centerLongitude": "value2", "range": "value3"
+
+All values for these keys are in double-precision floating-point data type.
+
+The "rangeUnit" key requires specific value from a list of METER, KILOMETER, FOOT, MILE, NAUTICAL_MILE (capital letters obligatory).
+{% endhighlight %}
+
+###### Fetch perimeter information from node configuration
+ 
+There are two options of area definition based on the perimeter type:
+ 
+- Polygon 
+             
+![image](/images/user-guide/rule-engine-2-0/nodes/filter-gps-geofencing-polygon-config.png)           
+
+- Circle
+                  
+![image](/images/user-guide/rule-engine-2-0/nodes/filter-gps-geofencing-circle-config.png)          
+    
+if configured latitude and longitude are inside configured perimeter message sent via **True** chain, otherwise **False** chain is used.
+      
+**Failure** chain will to be used when:
+
+   - incoming message has no configured latitude or longitude key in data or metadata. 
+   - missing perimeter definition;     
+        
+    
