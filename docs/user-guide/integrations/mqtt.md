@@ -24,7 +24,7 @@ This video is a step-by-step tutorial on setting up of MQTT Integration.
 <br/>
 <div id="video">  
  <div id="video_wrapper">
-     <iframe src="https://www.youtube.com/embed/OPkE5FXGPrs" frameborder="0" allowfullscreen></iframe>
+     <iframe src="https://www.youtube.com/watch?v=BeN5bsDQbdo&t=3s" frameborder="0" allowfullscreen></iframe>
  </div>
 </div> 
 
@@ -150,6 +150,15 @@ In more complex cases you can write a script that will take this data from any p
 ### Send One-Way RPC to Device
 
 This section describes how to send a one-way RPC request to the device using Control Widgets.
+
+For your convenience you may follow this video to configure RPCs to device and receive simulated response via MQTT Integration.
+
+<br/>
+<div id="video">  
+ <div id="video_wrapper">
+     <iframe src="https://www.youtube.com/watch?v=A_jCXQj_LXs" frameborder="0" allowfullscreen></iframe>
+ </div>
+</div> 
 
 Go to **Dashboard Groups -> All** section and create a new dashboard named **MQTT Tutorial**. Open the dashboard add an alias by clicking on Entity Aliases icon on the top-right.
 
