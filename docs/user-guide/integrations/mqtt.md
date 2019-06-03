@@ -24,7 +24,7 @@ This video is a step-by-step tutorial on setting up of MQTT Integration.
 <br/>
 <div id="video">  
  <div id="video_wrapper">
-     <iframe src="https://www.youtube.com/watch?v=BeN5bsDQbdo&t=3s" frameborder="0" allowfullscreen></iframe>
+     <iframe src="https://www.youtube.com/embed/BeN5bsDQbdo&t=3s" frameborder="0" allowfullscreen></iframe>
  </div>
 </div> 
 
@@ -156,7 +156,7 @@ For your convenience you may follow this video to configure RPCs to device and r
 <br/>
 <div id="video">  
  <div id="video_wrapper">
-     <iframe src="https://www.youtube.com/watch?v=A_jCXQj_LXs" frameborder="0" allowfullscreen></iframe>
+     <iframe src="https://www.youtube.com/embed/A_jCXQj_LXs" frameborder="0" allowfullscreen></iframe>
  </div>
 </div> 
 
