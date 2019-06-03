@@ -173,7 +173,7 @@ where **$request_id** is your integer request identifier, **Device A** is your d
 
 ## Claiming devices API
 
-In order to start claiming device, send PUBLISH message to the following topic:
+In order to initiate claiming device, send PUBLISH message to the following topic:
 
 ```shell
 Topic: v1/gateway/claim

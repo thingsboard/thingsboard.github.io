@@ -200,7 +200,7 @@ C,Response Body,shell,resources/rpc-server-response.json,/docs/reference/resourc
 
 ## Claiming devices
 
-In order to start claiming device, send POST request to the following URL:
+In order to initiate claiming device, send POST request to the following URL:
  
 ```shell
 http(s)://host:port/api/v1/$ACCESS_TOKEN/claim

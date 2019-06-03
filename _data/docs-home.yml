@@ -35,6 +35,9 @@ toc:
   - title: White-labeling
     path: /docs/user-guide/white-labeling/
     pe: true
+  - title: Self-registration
+    path: /docs/user-guide/self-registration/
+    pe: true
   - title: Custom Translations
     path: /docs/user-guide/custom-translation/
     pe: true

@@ -209,7 +209,7 @@ B,mqtt-js-rpc-from-client.js,javascript,resources/mqtt-js-rpc-from-client.js,/do
 
 ## Claiming devices
 
-In order to start claiming device, send PUBLISH message to the following topic:
+In order to initiate claiming device, send PUBLISH message to the following topic:
 
 ```shell
 v1/devices/me/claim
