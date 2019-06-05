@@ -51,9 +51,9 @@ description:
             Learn more
         </div>        
     </a>
-    <a href="/industries/manufacturing/" class="accent card">
+    <a href="/industries/industry40/" class="accent card">
         <div class="card-title">
-            <span class="title-text">Manufacturing</span>
+            <span class="title-text">Industry 4.0</span>
         </div>
         <div class="card-img manufacture-bg"></div>
         <div class="card-description">
