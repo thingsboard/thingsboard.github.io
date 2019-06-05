@@ -11,16 +11,15 @@ description: IoT device management using ThingsBoard claiming devices feature
 ## Feature Overview
 
 The claiming devices feature allows a ThingsBoard (TB) customers to assign tenant's non-assigned device to themselves without tenant's involving.
-In order to enable claiming devices feature a **claimingAllowed** attribute with the value **true** is obligatory for provisioned devices.
+In order to enable claiming devices feature a system parameter **security.claim.allowClaimingByDefault** (in the file **/etc/thingsboard/conf/thingsboard.yml**) should be set to **true**, otherwise a **claimingAllowed** attribute with the value **true** is obligatory for provisioned devices.
 
 The claiming flow consists of two steps:
 - Sending a claiming initiation message using one of TB supported transport protocols (HTTP, MQTT, CoAP);
 - Sending device claiming confirmation message via curl command.
 
-Whenever claiming is succeed the device is being assigned to the specific customer. The **claimingAllowed** attribute is automatically deleted.
+Whenever claiming is succeed the device is being assigned to the specific customer. The **claimingAllowed** attribute is automatically deleted in case the system parameter **allowClaimingByDefault** is **false**.
 
-In addition, there is a possibility to reclaim the device, which means the device will be unassigned from the customer and the **claimingAllowed** attribute will appear again. 
-Reclaiming enables claiming feature for devices which were provisioned without **claimingAllowed** attribute.
+In addition, there is a possibility to reclaim the device, which means the device will be unassigned from the customer. The **claimingAllowed** attribute will appear again in case the **allowClaimingByDefault** is **false**. 
 
 See the following for more details regarding the above steps.
 
