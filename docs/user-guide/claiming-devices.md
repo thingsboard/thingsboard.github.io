@@ -15,7 +15,7 @@ In order to enable claiming devices feature a **claimingAllowed** attribute with
 
 The claiming flow consists of two steps:
 - Sending a claiming initiation message using one of TB supported transport protocols (HTTP, MQTT, CoAP);
-- Sending device claiming confirmation message using the UI or curl command.
+- Sending device claiming confirmation message via curl command.
 
 Whenever claiming is succeed the device is being assigned to the specific customer. The **claimingAllowed** attribute is automatically deleted.
 
@@ -26,9 +26,8 @@ See the following for more details regarding the above steps.
 
 ## Device Claiming
 
-In order to send the claiming message TB supported transport protocols are used.
-The claiming message body have two params: **secretKey** and **durationMs**, which may be optionally specified. 
-The **secretKey** adds security in claiming process and is used as a part of a key to store these optional params in cache. 
+In order to send the claiming initiation message TB supported transport protocols are used. The message body have two parameters: **secretKey** and **durationMs**, which may be optionally specified. 
+The **secretKey** parameter adds security in claiming process.
 The **durationMs** parameter determines the expiration of claiming time. After receiving the message, the claiming info for particular device is saved in cache. 
 In case the **secretKey** is not specified, the empty string as a default value is used.
 In case the **durationMs** is not specified, the system parameter **device.claim.duration** is used (in the file **/etc/thingsboard/conf/thingsboard.yml**).
@@ -36,7 +35,7 @@ In case the **durationMs** is not specified, the system parameter **device.claim
 ### Sending claiming message
 
 Please see the Device API references to get the information about the message structure and topics/URLs to which to send the claiming messages.
-You can use the MQTT Gateway API that allows to claim multiple devices per time as well.
+You can use the MQTT Gateway API that allows to initiate claiming of multiple devices per time as well.
 
  - [MQTT Device API](/docs/reference/mqtt-api/#claiming-devices)
  - [CoAP Device API](/docs/reference/coap-api/#claiming-devices)
@@ -45,7 +44,7 @@ You can use the MQTT Gateway API that allows to claim multiple devices per time 
  
 ### Device claiming confirmation
 
-The second step is to confirm claiming from the UI or via POST request to the following URL:
+The second step is to confirm claiming by sending POST request to the following URL:
 
 ```shell
 http(s)://host:port/api/customer/device/$DEVICE_NAME/claim
@@ -57,7 +56,7 @@ The supported data format is:
 {"secretKey":"value"}
 ```
 
-**Please note** the message does not contain **duarationMs** key and the **secretKey** parameter is optional. 
+**Please note** the message does not contain **duarationMs** parameter and the **secretKey** parameter is optional. 
 However, its value must be equal to the **secretKey** value from the first step, i. e. in case the **secretKey** is empty in the first step, it should be empty at this step as well.
 
 ## Device reclaiming
@@ -65,11 +64,8 @@ However, its value must be equal to the **secretKey** value from the first step,
 In order to reclaim the device, you can send DELETE request to the following URL:
 
 ```shell
-http(s)://host:port/api/customer/device/$DEVICE_NAME/claim?secretKey
+http(s)://host:port/api/customer/device/$DEVICE_NAME/claim
 ```
-
-with the optional request parameter **secretKey**.
-**Please note** that you need to use the same **secretKey** to reclaim the device that was used for claiming.
 
 ## Next steps
 

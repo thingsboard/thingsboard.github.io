@@ -200,6 +200,8 @@ C,Response Body,shell,resources/rpc-server-response.json,/docs/reference/resourc
 
 ## Claiming devices
 
+Please see the corresponding article to get more information about the [Claiming devices](/docs/user-guide/claiming-devices) feature.
+
 In order to initiate claiming device, send POST request to the following URL:
  
 ```shell
@@ -209,7 +211,7 @@ http(s)://host:port/api/v1/$ACCESS_TOKEN/claim
 The supported data format is:
 
 ```json
-{"secretKey":"SECRET_KEY", "durationMs":60000}
+{"secretKey":"value", "durationMs":60000}
 ```
 
 **Please note** that the above fields are optional. In case the **secretKey** is not specified, the empty string as a default value is used.
