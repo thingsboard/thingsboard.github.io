@@ -182,16 +182,93 @@ Location: /home/yulia/.local/lib/python3.6/site-packages
 ...
 ```
 
-## Running main program
-Run `sudo python3 tb-ble-adapter.py` with required arguments and enjoy (ﾉ◕ヮ◕)ﾉ*:･ﾟ
-
-## Troubleshooting
-In order to perform troubleshooting, you must check demo script output. It displays connection status with every device, as well as received and sent data. 
-
 ## Device provisioning
-Run python script **before** importing dashboard. For this you have to create gateway device and specify it in command arguments:
+Run python script **before** importing dashboard. For this you have to [**create**](https://thingsboard.io/docs/iot-gateway/getting-started/) gateway device and specify it in command arguments:
 ```
 sudo python3 tb-ble-adapter.py -t *your_gateway_access_token*
+```
+Example of logs with device scanning, discovery of known devices and device connection:
+```
+Loading MiTempHumidityExtension extension...
+Loading EspGattDemoExtension extension...
+Scanning BLE devices...
+Discovered BT device: 10:73:48:30:84:49
+Discovered BT device: d8:a0:1d:40:93:fa
+Discovered BT device: 3d:0b:d8:a9:ab:9d
+Discovered BT device: 4e:8e:10:d8:c4:a1
+Discovered BT device: 1b:83:77:79:2e:29
+Discovered BT device: 00:1e:c0:75:d0:a3
+Discovered BT device: 4c:65:a8:df:8e:3f
+Discovered BT device: 4c:65:a8:df:85:c0
+Discovered BT device: 4c:65:a8:df:94:d1
+Received new data from: 4c:65:a8:df:8e:3f
+Received new data from: 4c:65:a8:df:85:c0
+Received new data from: 4c:65:a8:df:94:d1
+Received new data from: 4c:65:a8:df:8e:3f
+Received new data from: 4c:65:a8:df:8e:3f
+Received new data from: 4c:65:a8:df:85:c0
+Received new data from: 4c:65:a8:df:94:d1
+Received new data from: 4c:65:a8:df:8e:3f
+Received new data from: 4c:65:a8:df:85:c0
+Received new data from: 4c:65:a8:df:94:d1
+Discovered BT device: 2e:ff:58:11:60:71
+Discovered BT device: 49:91:8f:6c:7a:17
+Received new data from: 4c:65:a8:df:8e:3f
+Received new data from: 4c:65:a8:df:8e:3f
+Received new data from: 4c:65:a8:df:85:c0
+Received new data from: 4c:65:a8:df:8e:3f
+Received new data from: 4c:65:a8:df:85:c0
+Received new data from: 4c:65:a8:df:94:d1
+Received new data from: 4c:65:a8:df:8e:3f
+Device 10:73:48:30:84:49 (random), RSSI=-52 dB
+  Manufacturer = 06000109200298bf2a039d57aa7fda15c7cc1772001b3cd9881bf3e8e0
+Device d8:a0:1d:40:93:fa (public), RSSI=-43 dB
+  Flags = 06
+  Complete Local Name = ESP_GATTS_DEMO
+    [!] Known device found: ESP_GATTS_DEMO
+  Tx Power = 03
+  Complete 16b Services = 000000ee-0000-1000-8000-00805f9b34fb,000000ff-0000-1000-8000-00805f9b34fb
+Device 3d:0b:d8:a9:ab:9d (random), RSSI=-76 dB
+  Manufacturer = 0600010920029944e816d9764a15972cd9df7db619bf8dc0875737d50a
+Device 4e:8e:10:d8:c4:a1 (random), RSSI=-72 dB
+  Flags = 1a
+  Manufacturer = 4c001005131c9659d5
+Device 1b:83:77:79:2e:29 (random), RSSI=-91 dB
+  Manufacturer = 060001092002fd5da974543017b16d0518788003bed6946bb155378f84
+Device 00:1e:c0:75:d0:a3 (public), RSSI=-90 dB
+  Flags = 06
+  Complete 128b Services = 00035b03-58e6-07dd-021a-08123a000300
+  Complete Local Name = D1900924
+Device 4c:65:a8:df:8e:3f (public), RSSI=-59 dB
+  Flags = 06
+  16b Service Data = ffffe0845fe76916
+  Complete Local Name = MJ_HT_V1
+    [!] Known device found: MJ_HT_V1
+  Complete 16b Services = 0000180f-0000-1000-8000-00805f9b34fb,0000180a-0000-1000-8000-00805f9b34fb
+Device 4c:65:a8:df:85:c0 (public), RSSI=-51 dB
+  Flags = 06
+  16b Service Data = ffffca4e2ef743aa
+  Complete Local Name = MJ_HT_V1
+    [!] Known device found: MJ_HT_V1
+  Complete 16b Services = 0000180f-0000-1000-8000-00805f9b34fb,0000180a-0000-1000-8000-00805f9b34fb
+Device 4c:65:a8:df:94:d1 (public), RSSI=-57 dB
+  Flags = 06
+  16b Service Data = fffff61d60016488
+  Complete Local Name = MJ_HT_V1
+    [!] Known device found: MJ_HT_V1
+  Complete 16b Services = 0000180f-0000-1000-8000-00805f9b34fb,0000180a-0000-1000-8000-00805f9b34fb
+Device 2e:ff:58:11:60:71 (random), RSSI=-96 dB
+  Manufacturer = 06000109200232a466069323755cf0a3f6333f3575276dd81e6a2940ba
+Device 49:91:8f:6c:7a:17 (random), RSSI=-71 dB
+  Flags = 1a
+  Manufacturer = 4c001005131cc5c74c
+Connecting to device: MJ_HT_V1_4C65A8DF8E3F
+Polling data from: MJ_HT_V1_4C65A8DF8E3F
+Received data: b'T=23.9 H=43.5\x00'
+Data received: {'temperature': 23.9, 'humidity': 43.5}
+Sending data to TB: {'ts': 1559827797240, 'values': {'temperature': 23.9, 'humidity': 43.5}}
+Disconnecting from device
+
 ```
 It creates devices:
 ![Created devices](/images/samples/ble/created_devices.png)
@@ -228,6 +305,9 @@ Go to **“Devices”** section, open created devices details and switch to **�
 After, open **“Dashboards”** section and find previously imported dashboard **“Device GW”** and observe the following picture:
 
   ![Dashboard](/images/samples/ble/dashboard.png)
+
+## Troubleshooting
+In order to perform troubleshooting, you must check demo script output. It displays connection status with every device, as well as received and sent data. 
 
 ## See also
 Browse other  [samples](https://thingsboard.io/docs/samples)  or explore guides related to main ThingsBoard features:
