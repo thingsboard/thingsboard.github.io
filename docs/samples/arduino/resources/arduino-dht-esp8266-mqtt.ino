@@ -2,8 +2,8 @@
 #include <WiFiEspClient.h>
 #include <WiFiEsp.h>
 #include <WiFiEspUdp.h>
-#include <PubSubClient.h>
 #include "SoftwareSerial.h"
+#include <ThingsBoard.h>
 
 #define WIFI_AP "YOUR_WIFI_AP"
 #define WIFI_PASSWORD "YOUR_WIFI_PASSWORD"
@@ -22,7 +22,7 @@ WiFiEspClient espClient;
 // Initialize DHT sensor.
 DHT dht(DHTPIN, DHTTYPE);
 
-PubSubClient client(espClient);
+ThingsBoard tb(espClient);
 
 SoftwareSerial soft(2, 3); // RX, TX
 
@@ -34,7 +34,6 @@ void setup() {
   Serial.begin(9600);
   dht.begin();
   InitWiFi();
-  client.setServer( thingsboardServer, 1883 );
   lastSend = 0;
 }
 
@@ -51,7 +50,7 @@ void loop() {
     Serial.println("Connected to AP");
   }
 
-  if ( !client.connected() ) {
+  if ( !tb.connected() ) {
     reconnect();
   }
 
@@ -60,7 +59,7 @@ void loop() {
     lastSend = millis();
   }
 
-  client.loop();
+  tb.loop();
 }
 
 void getAndSendTemperatureAndHumidityData()
@@ -68,44 +67,26 @@ void getAndSendTemperatureAndHumidityData()
   Serial.println("Collecting temperature data.");
 
   // Reading temperature or humidity takes about 250 milliseconds!
-  float h = dht.readHumidity();
+  float humidity = dht.readHumidity();
   // Read temperature as Celsius (the default)
-  float t = dht.readTemperature();
+  float temperature = dht.readTemperature();
 
   // Check if any reads failed and exit early (to try again).
-  if (isnan(h) || isnan(t)) {
+  if (isnan(humidity) || isnan(temperature)) {
     Serial.println("Failed to read from DHT sensor!");
     return;
   }
 
+  Serial.println("Sending data to ThingsBoard:");
   Serial.print("Humidity: ");
-  Serial.print(h);
+  Serial.print(humidity);
   Serial.print(" %\t");
   Serial.print("Temperature: ");
-  Serial.print(t);
-  Serial.print(" *C ");
+  Serial.print(temperature);
+  Serial.println(" *C ");
 
-  String temperature = String(t);
-  String humidity = String(h);
-
-
-  // Just debug messages
-  Serial.print( "Sending temperature and humidity : [" );
-  Serial.print( temperature ); Serial.print( "," );
-  Serial.print( humidity );
-  Serial.print( "]   -> " );
-
-  // Prepare a JSON payload string
-  String payload = "{";
-  payload += "\"temperature\":"; payload += temperature; payload += ",";
-  payload += "\"humidity\":"; payload += humidity;
-  payload += "}";
-
-  // Send payload
-  char attributes[100];
-  payload.toCharArray( attributes, 100 );
-  client.publish( "v1/devices/me/telemetry", attributes );
-  Serial.println( attributes );
+  tb.sendTelemetryFloat("temperature", temperature);
+  tb.sendTelemetryFloat("humidity", humidity);
 }
 
 void InitWiFi()
@@ -135,19 +116,16 @@ void InitWiFi()
 
 void reconnect() {
   // Loop until we're reconnected
-  while (!client.connected()) {
+  while (!tb.connected()) {
     Serial.print("Connecting to ThingsBoard node ...");
     // Attempt to connect (clientId, username, password)
-    if ( client.connect("Arduino Uno Device", TOKEN, NULL) ) {
+    if ( tb.connect(thingsboardServer, TOKEN) ) {
       Serial.println( "[DONE]" );
     } else {
-      Serial.print( "[FAILED] [ rc = " );
-      Serial.print( client.state() );
-      Serial.println( " : retrying in 5 seconds]" );
+      Serial.print( "[FAILED]" );
+      Serial.println( " : retrying in 5 seconds" );
       // Wait 5 seconds before retrying
       delay( 5000 );
     }
   }
 }
-
-
