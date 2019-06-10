@@ -183,9 +183,19 @@ Location: /home/yulia/.local/lib/python3.6/site-packages
 ```
 
 ## Device provisioning
-Run python script **before** importing dashboard. For this you have to [**create**](https://thingsboard.io/docs/iot-gateway/getting-started/) gateway device and specify it in command arguments:
+Run python script **before** importing dashboard. For this you have to find location of binary file using the following command:
 ```
-sudo python3 tb-ble-adapter.py -t *your_gateway_access_token*
+$> pip3 show tb-ble-adapter -f
+...
+Files:
+  ../../../bin/tb_ble_adapter
+...
+```
+Path is relative to demo [location](#installing-gateway-scripts-on-raspberry-pi).
+
+Then [**create**](https://thingsboard.io/docs/iot-gateway/getting-started/) gateway device and specify it in command arguments:
+```
+sudo path_to_binary/tb_ble_adapter -t *your_gateway_access_token*
 ```
 Example of logs with device scanning, discovery of known devices and device connection:
 ```
