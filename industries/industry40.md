@@ -33,3 +33,30 @@ Now we have a real-time production monitoring dashboards with a considerable nov
         </div>
     </div>
 </div>
+<div class="customer-block">
+    <a href="https://www.citeve.pt">
+        <div class="customer-logo">
+            <img width="" src="/images/customers/citeve.png" alt="CITEVE">
+        </div>
+    </a>
+    <div class="customer-content">
+        <h3 id="citeve">
+            CITEVE
+        </h3>
+        <h4>
+            CITEVE is a Technological Institute which provides technological support and services to companies acting in the textile & clothing business.
+        </h4>    
+        <p>
+       We aim to introduce systematic integration of Industry 4.0 into the Portuguese companies through the development, use and optimization of interoperable technological resources at the service of industry and productivity. 
+        </p> 
+        <p>
+       ThingsBoard platform was selected for experimentation due to its good reputation, not only under academic reviews but also under the GitHub and global Internet community. This software is available with an open-source license and its website has lessons on how to use each feature, this made easy for the team to install, run and learn how to use this platform. With implementation of TB CE, we were able to develop and gather knowledge on several key-topics of the I4.0 and IoT paradigm: Security (Network, Devices and Users management), Connectivity (M2M communication and protocols), Machine Control (Programing with traditional [Python and Java] and modern [Rule Engine and RPC requests] frameworks). 
+       </p> 
+        <div class="person-logo-container">
+            <div class="person-title">
+                Júlio Sá  <br/>
+                I4.0 researcher at CITEVE 
+            </div>
+        </div>
+    </div>
+</div>
