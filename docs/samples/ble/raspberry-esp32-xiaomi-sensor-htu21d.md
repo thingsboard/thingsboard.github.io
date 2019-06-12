@@ -12,7 +12,7 @@ hidetoc: "true"
 
 {% include templates/what-is-thingsboard.md %}
 
-This sample demo performs collection of temperature and humidity values produced by BLE broadcasting devices and further visualization on the real-time web dashboard. In this example we use [HTU21D]([https://www.sparkfun.com/products/13763]) connected to [ESP32](https://espressif.com/en/products/hardware/esp32/overview) and  [Xiaomi Smart Temperature & Humidity Sensor]([https://www.amazon.com/Xiaomi-Bluetooth-Temperature-Sensitive-Thermometer/dp/B07B9SJJZJ). The purpose of this application is to demonstrate ThingsBoard  [data collection API](https://thingsboard.io/docs/user-guide/telemetry/) , [visualization capabilities](https://thingsboard.io/docs/user-guide/visualization/), [gateway API](https://thingsboard.io/docs/iot-gateway/what-is-iot-gateway/) and the capabilities of [Bluetooth Low Energy](https://en.wikipedia.org/wiki/Bluetooth_Low_Energy) protocol.
+This sample demo performs collection of temperature and humidity values produced by BLE broadcasting devices and further visualization on the real-time web dashboard. In this example we use [HTU21D]([https://www.sparkfun.com/products/13763]) connected to [ESP32](https://espressif.com/en/products/hardware/esp32/overview) and  [Xiaomi Smart Temperature & Humidity Sensor]([https://www.amazon.com/Xiaomi-Bluetooth-Temperature-Sensitive-Thermometer/dp/B07B9SJJZJ). The purpose of this application is to demonstrate ThingsBoard  [data collection API](https://thingsboard.io/docs/user-guide/telemetry/) , [visualization capabilities](https://thingsboard.io/docs/user-guide/visualization/), [gateway API](https://thingsboard.io/docs/iot-gateway/what-is-iot-gateway/) and the capabilities of [Bluetooth Low Energy](https://en.wikipedia.org/wiki/Bluetooth_Low_Energy) protocol, which you can use with both custom and mass-produce devices.
 
 Data is collected by a python script that is running on [Raspberry Pi](https://en.wikipedia.org/wiki/Raspberry_Pi). It pushes data to ThingsBoard server via MQTT protocol by using  [ThingsBoard MQTT client Python SDK](https://github.com/thingsboard/thingsboard-python-client-sdk) library. Data is visualized using built-in customizable dashboard. Demo that is running on Raspberry Pi is written in Python which is quite simple and easy to understand.
 
@@ -69,7 +69,16 @@ Whole setup:
 
   ![Ble diagram](/images/samples/ble/setup.jpg)
 
-## Flashing ESP32 BT firmware
+## Preparing ESP32
+
+### Application capabilities
+
+In this project ESP is a GATT server, which creates BLE service with two characteristics, one is read-only, and the second is for both reading and writing.
+Also it reads temperature and humidity data from connected HTU21D sensor and broadcast it as notifications to all nearby BLE devices.
+You can find the source code [**here**](https://github.com/thingsboard/gatts_demo).
+It bases on Espressif GATT demo server [**example**](https://github.com/espressif/esp-idf/tree/master/examples/bluetooth/gatt_server) and uses [**this**](https://github.com/lucadentella/esp32_htu21d) library to interact with HTU21D.
+
+### Flashing ESP32 BT firmware
 
 You need ESP-IDF (Espressif IoT Development Framework) to program your ESP32.
 It is the official development framework for the ESP32 chip.
@@ -94,7 +103,7 @@ The python packages required by ESP-IDF are located in IDF_PATH/requirements.txt
 python -m pip install --user -r $IDF_PATH/requirements.txt
 ```
 
-### Note
+#### Note
 
 Please check the version of the Python interpreter that you will be using with ESP-IDF. For this, run the command `python --version` and depending on the result, you might want to use python2, python2.7 or similar instead of just python, e.g.
 
@@ -168,7 +177,14 @@ I (157) GATTS_DEMO: starting ESP gatt demo
 ## Preparing MI Sensor
 Install the battery in sensor.
 
-## Installing gateway scripts on Raspberry Pi
+## Preparing Raspberry Pi
+
+### Application capabilities
+Demo script scans for available BLE devices and connects to them. It can read a direct value of BLE characteristic from ESP and receive notifications from both ESP and Mi sensor. Also, if you want to add new device to be recognized by script, you need to rescan devices.
+Gathered data is sent to ThingsBoard server with credetionals you provide.
+[**Here**](https://github.com/thingsboard/tb-ble-adapter) you can find the source code.
+
+### Installing gateway scripts on Raspberry Pi
 Login to your Raspberry PI using SSH and install demo. It requires at least **python3.4**. 
 ```
 sudo apt-get install libglib2.0-dev
@@ -178,7 +194,7 @@ Run `pip3 show tb-ble-adapter` to find the location of installed demo:
 ```
 $> pip3 show tb-ble-adapter
 ...
-Location: /home/yulia/.local/lib/python3.6/site-packages
+Location: **location_to_your_script**
 ...
 ```
 
