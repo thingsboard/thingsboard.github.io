@@ -1,6 +1,6 @@
 ---
 layout: docwithnav
-title: Manufacturing
+title: Industry 4.0
 description: 
 
 ---
