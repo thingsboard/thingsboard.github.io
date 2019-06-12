@@ -76,7 +76,7 @@ Whole setup:
 In this project ESP is a GATT server, which creates BLE service with two characteristics, one is read-only, and the second is for both reading and writing.
 Also it reads temperature and humidity data from connected HTU21D sensor and broadcast it as notifications to all nearby BLE devices.
 You can find the source code [**here**](https://github.com/thingsboard/gatts_demo).
-It bases on Espressif GATT demo server [**example**](https://github.com/espressif/esp-idf/tree/master/examples/bluetooth/gatt_server) and uses [**this**](https://github.com/lucadentella/esp32_htu21d) library to interact with HTU21D.
+It is based on Espressif GATT demo server [**example**](https://github.com/espressif/esp-idf/tree/master/examples/bluetooth/gatt_server) and uses [**this**](https://github.com/lucadentella/esp32_htu21d) library to interact with HTU21D.
 
 ### Flashing ESP32 BT firmware
 
@@ -178,11 +178,16 @@ I (157) GATTS_DEMO: starting ESP gatt demo
 Install the battery in sensor.
 
 ## Preparing Raspberry Pi
+Demo script scans for available BLE devices and connects to them. It can read a direct value of BLE characteristic from ESP and receive notifications from both ESP and Mi. If needed, a re-scan command can be issues from the dashboard to connect to new devices.
 
-### Application capabilities
-Demo script scans for available BLE devices and connects to them. It can read a direct value of BLE characteristic from ESP and receive notifications from both ESP and Mi sensor. Also, if you want to add new device to be recognized by script, you need to rescan devices.
-Gathered data is sent to ThingsBoard server with credetionals you provide.
-[**Here**](https://github.com/thingsboard/tb-ble-adapter) you can find the source code.
+### Implementation details
+
+If you are not interested in modifying or extending a list of supported devices, you can skip this sub-section.
+The demo script consists of few modules: the main module and couple of extension modules.
+
+The [**main**](https://github.com/thingsboard/tb-ble-adapter/blob/master/tb_ble_adapter/adapter.py) module is responsible for receiving commands from ThingsBoard and sending telemetry data. It also scans nearby devices and connects to them.
+
+Extensions are [**modules**](https://github.com/thingsboard/tb-ble-adapter/tree/master/tb_ble_adapter/extensions) that responsible for extracting application-specific data from the BLE device. If you want to implement support for a new device, you can create additional extension class and inherit it from [**provided intarface**](https://github.com/thingsboard/tb-ble-adapter/blob/master/tb_ble_adapter/extensions/ExtensionInterface.py). Use [**this**](https://github.com/thingsboard/tb-ble-adapter/blob/master/tb_ble_adapter/extensions/MiTempHumidityExtension.py) as an example.
 
 ### Installing gateway scripts on Raspberry Pi
 Login to your Raspberry PI using SSH and install demo. It requires at least **python3.4**. 
