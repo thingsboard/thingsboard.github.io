@@ -200,7 +200,7 @@ sudo pip3 install tb-ble-adapter
 ## Device provisioning
 Run python script **before** importing dashboard. For this you have to [**create**](https://thingsboard.io/docs/iot-gateway/getting-started/) gateway device and specify it in command arguments:
 ```
-sudo path_to_binary/tb_ble_adapter -t $GATEWAY_ACCESS_TOKEN
+sudo tb_ble_adapter -t $GATEWAY_ACCESS_TOKEN
 ```
 Example of logs with device scanning, discovery of known devices and device connection:
 ```
