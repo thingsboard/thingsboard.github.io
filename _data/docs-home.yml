@@ -75,6 +75,9 @@ toc:
   - title: CSV/XLS data export
     path: /docs/user-guide/csv-xls-data-export/
     pe: true
+  - title: Bulk Provisioning
+    new: true
+    path: /docs/user-guide/bulk-provisioning/
   - title: File Storage
     path: /docs/user-guide/file-storage/
     pe: true
