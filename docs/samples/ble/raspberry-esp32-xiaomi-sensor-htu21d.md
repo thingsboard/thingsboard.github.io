@@ -191,32 +191,16 @@ Extensions are [**modules**](https://github.com/thingsboard/tb-ble-adapter/tree/
 
 ### Installing gateway scripts on Raspberry Pi
 Login to your Raspberry PI using SSH and install demo. It requires at least **python3.4**. 
+Also script requires superuser rights for Bluetooth management, so you need to install it system-wide.
 ```
 sudo apt-get install libglib2.0-dev
-pip3 install tb-ble-adapter
-```
-Run `pip3 show tb-ble-adapter` to find the location of installed demo:
-```
-$> pip3 show tb-ble-adapter
-...
-Location: **location_to_your_script**
-...
+sudo pip3 install tb-ble-adapter
 ```
 
 ## Device provisioning
-Run python script **before** importing dashboard. For this you have to find location of binary file using the following command:
+Run python script **before** importing dashboard. For this you have to [**create**](https://thingsboard.io/docs/iot-gateway/getting-started/) gateway device and specify it in command arguments:
 ```
-$> pip3 show tb-ble-adapter -f
-...
-Files:
-  ../../../bin/tb_ble_adapter
-...
-```
-Path is relative to demo [location](#installing-gateway-scripts-on-raspberry-pi).
-
-Then [**create**](https://thingsboard.io/docs/iot-gateway/getting-started/) gateway device and specify it in command arguments:
-```
-sudo path_to_binary/tb_ble_adapter -t *your_gateway_access_token*
+sudo path_to_binary/tb_ble_adapter -t $GATEWAY_ACCESS_TOKEN
 ```
 Example of logs with device scanning, discovery of known devices and device connection:
 ```
