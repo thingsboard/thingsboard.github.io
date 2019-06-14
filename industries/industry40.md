@@ -1,6 +1,10 @@
 ---
 layout: docwithnav
+<<<<<<< HEAD
 title: Industry 4.0
+=======
+title: Manufacturing
+>>>>>>> 0f928865d6a452ae216ac7fefdec2aa40488d6b7
 description: 
 
 ---
