@@ -1,6 +1,6 @@
 ---
 layout: docwithnav
-title: Manufacturing
+title: Industry 4.0
 description: 
 
 ---
@@ -53,6 +53,7 @@ Now we have a real-time production monitoring dashboards with a considerable nov
        ThingsBoard platform was selected for experimentation due to its good reputation, not only under academic reviews but also under the GitHub and global Internet community. This software is available with an open-source license and its website has lessons on how to use each feature, this made easy for the team to install, run and learn how to use this platform. With implementation of TB CE, we were able to develop and gather knowledge on several key-topics of the I4.0 and IoT paradigm: Security (Network, Devices and Users management), Connectivity (M2M communication and protocols), Machine Control (Programing with traditional [Python and Java] and modern [Rule Engine and RPC requests] frameworks). 
        </p> 
         <div class="person-logo-container">
+            <img class="person-logo" src="/images/customers/julio.jpg"/>
             <div class="person-title">
                 Júlio Sá  <br/>
                 I4.0 researcher at CITEVE 
