@@ -173,6 +173,8 @@ where **$request_id** is your integer request identifier, **Device A** is your d
 
 ## Claiming devices API
 
+Please see the corresponding article to get more information about the [Claiming devices](/docs/user-guide/claiming-devices) feature.
+
 In order to initiate claiming device, send PUBLISH message to the following topic:
 
 ```shell
@@ -184,11 +186,11 @@ Message:
 ```json
 {
   "Device A": {
-    "secretKey": "SECRET_KEY_A",
+    "secretKey": "value_A",
     "durationMs": 60000
   },
   "Device B": {
-    "secretKey": "SECRET_KEY_B",
+    "secretKey": "value_B",
     "durationMs": 60000
   }
 }
