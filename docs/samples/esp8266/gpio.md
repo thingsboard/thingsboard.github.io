@@ -63,54 +63,40 @@ The video below demonstrates the final result of this tutorial.
 
 ### Programming/flashing scheme 
 
-ESP8266 Pin|USB-TTL Pin
------------|-----------
-ESP8266 VCC|USB-TTL VCC +3.3V
-ESP8266 CH_PD|USB-TTL VCC +3.3V
-ESP8266 GND (-)|USB-TTL GND
-ESP8266 GPIO 0|USB-TTL GND
-ESP8266 RX|USB-TTL TX
-ESP8266 TX|USB-TTL RX
-
-LED 1 Pin  |USB-TTL Pin
------------|-----------
-cathode|USB-TTL GND
-
-LED 1 Pin  |ESP8266 Pin
------------|-----------
-anode|ESP8266 GPIO 2
+ESP8266 |USB-TTL
+--------|-----------
+VCC|+3.3V
+CH_PD|+3.3V
+RESET|+3.3V
+GPIO2|+3.3V
+GPIO0|GND
+GND|GND
+RX|TX
+TX|RX
 
 The following picture summarizes the connections for this project in programming/debug mode:
 
-![image](/images/samples/esp8266/gpio/schema-flash.png)
+<img src="/images/samples/esp8266/gpio/schema-flash.png" width="700">
 
 ### Final schema (Battery Powered)
 
-ESP8266 Pin|3.3V power source
------------|-----------
-ESP8266 VCC|VCC+
-ESP8266 CH_PD|VCC+
-ESP8266 GND (-)|VCC-
+ESP8266|Battery Pack 
+-------|------------
+VCC|(+)
+CH_PD|(+)
+RESET|(+)
+GND|(-)
 
-LED 1 Pin|ESP8266 Pin
------------|-----------
-anode|ESP8266 GPIO 2
-
-LED 1 Pin|3.3V power source
------------|-----------
-cathode|VCC-
-
-LED 2 Pin|ESP8266 Pin
------------|-----------
-anode|ESP8266 GPIO 0
-
-LED 2 Pin|3.3V power source
------------|-----------
-cathode|VCC-
+LEDS|ESP8266 
+----|-----------
+LED1 anode|GPIO2
+LED1 cathode|GND
+LED2 anode|GPIO0
+LED2 cathode|GND
 
 The final picture:
 
-![image](/images/samples/esp8266/gpio/schema.png)
+<img src="/images/samples/esp8266/gpio/schema.png" width="700">
  
 {% include templates/thingsboard-configuration.md %}
 
@@ -185,13 +171,17 @@ Set the key emulation to “Both NL & CR” and the speed to 115200 baud. This c
 Open Arduino IDE and go to **Sketch -> Include Library -> Manage Libraries**. 
 Find and install the following libraries:
 
-- [PubSubClient by Nick O'Leary](http://pubsubclient.knolleary.net/).
+- [Arduino ThingsBoard SDK](https://github.com/thingsboard/ThingsBoard-Arduino-MQTT-SDK)
 - [ArduinoJson by Benoit Blanchon](https://github.com/bblanchon/ArduinoJson)
+- [ArduinoHttpClient](https://github.com/arduino-libraries/ArduinoHttpClient)
+- [PubSubClient by Nick O’Leary.](https://pubsubclient.knolleary.net/)
 
 **Note** that this tutorial was tested with the following versions of the libraries:
 
-- PubSubClient 2.6
+- Arduino ThingsBoard SDK 0.4
 - ArduinoJson 5.8.0
+- ArduinoHttpClient 0.3.1
+- PubSubClient 2.7
 
 ### Step 3. Prepare and upload a sketch.
 
