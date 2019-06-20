@@ -122,3 +122,28 @@ description:
         </div>
     </div>
 </div>
+
+<div class="customer-block">
+    <a href="https://www.makers.sk/">
+        <div class="customer-logo">
+            <img width="" src="/images/customers/makerssro.jpg" alt="Makers s. r. o.">
+        </div>
+    </a>
+    <div class="customer-content">
+        <h3 id="makers">
+            MAKERS s. r. o.
+        </h3>
+        <h4>
+           MAKERS s. r. o. is a Slovak IoT solutions software house.  
+        </h4>  
+        <p>
+           While building the Smart City solution for OMS, a. s. we were looking for IoT platform serving as core backend for our solutions. ThingsBoard became our first clear choice. It contains necessary business functionality and support all needed technologies/protocols which we required. Later on, ThingsBoard became the heart of the upcoming solution. In any implementation of complex systems cooperation and support are crucial to success achievement. We are glad that we found stable partners in design, implementation and deployment of ThingsBoard in the Smart City solution.  
+        </p> 
+        <div class="person-logo-container">
+            <div class="person-title">
+                Ján Masaryk  <br/>
+                Co-Founder 
+            </div>
+        </div>
+    </div>
+</div>
