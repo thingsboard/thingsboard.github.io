@@ -49,12 +49,12 @@ void loop()
 RPC_Response get_gpio_status(const RPC_Data &data)
 {
     if (data["pin"].as<int>() == GPIO0_PIN) {
-		// Return GPIO0 state
+        // Return GPIO0 state
         return RPC_Response(STR(GPIO0_PIN), gpioState[0]);
     } else if (data["pin"].as<int>() == GPIO2_PIN) {
-		// Return GPIO2 state
+        // Return GPIO2 state
         return RPC_Response(STR(GPIO2_PIN), gpioState[1]);
-	}
+    }
 }
 
 
@@ -119,7 +119,7 @@ void reconnect()
                     return;
                 }
 
-				// Send initial GPIO state
+                // Send initial GPIO state
                 tb.sendAttributeBool(STR(GPIO0_PIN), false);
                 tb.sendAttributeBool(STR(GPIO2_PIN), false);
 
