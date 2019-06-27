@@ -2,8 +2,8 @@
 layout: docwithnav
 assignees:
 - ashvayka
-title: ThingsBoard installation options
-description: ThingsBoard installation instructions for various operation systems and cloud platforms
+title: ThingsBoard Professional Edition installation options
+description: ThingsBoard Professional Edition installation instructions for various operation systems and cloud platforms
 notitle: "true"
 ---
 
@@ -12,13 +12,13 @@ notitle: "true"
        <div class="install-options-hero">
           <div class="container">
             <div class="install-options-hero-content">
-                <h1>ThingsBoard installation options</h1>
+                <h1>ThingsBoard Professional Edition installation options</h1>
                 <div class="install-options-description">
                     <p>
-                        ThingsBoard is designed to run and utilize on majority of hardware, from local Raspberry PI to powerful servers in the cloud
+                        ThingsBoard Professional Edition is designed to run and utilize on majority of hardware, from local Raspberry PI to powerful servers in the cloud
                     </p>
                 </div>
-            </div>            
+            </div>
             <div class="col-lg-12 deployment-container">
                 <div class="deployment-selector">
                     <div class="deployment" data-toggle="#liveDemo">
@@ -124,15 +124,6 @@ notitle: "true"
                                         </a>
                                     </div>
                                     <div class="deployment-card-block">
-                                        <a href="/docs/user-guide/install/building-from-source/">
-                                            <span>
-                                                <div class="deployment-logo" style="height:134px">
-                                                    <img width="" src="/images/install/platform/sources.png" title="Building from source" alt="Building from source">
-                                                 </div>
-                                            </span>
-                                        </a>
-                                    </div>
-                                    <div class="deployment-card-block">
                                         <a href="/docs/user-guide/install/cluster-setup/">
                                             <span>
                                                 <div class="deployment-logo" style="height:134px">
@@ -206,12 +197,11 @@ notitle: "true"
                         </div>
                     </div>
                 </div>    
-            </div>
+            </div>            
           </div>
        </div>
     </div>
 </div>
-
 
 <script type="text/javascript">
 

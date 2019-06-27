@@ -1,0 +1,42 @@
+$install-color: #305683
+
+#docsContent
+  .installation
+    .install-hero
+      position: relative
+      z-index: 6
+      min-height: 220px
+      display: flex
+      align-items: center
+      .cards
+        @media (min-width: 1400px)
+          padding-right: 150px
+          padding-left: 150px
+      .install-hero-content
+        text-align: center
+        padding-top: 0px
+        padding-bottom: 0px
+        h1
+          padding-right: 0
+          color: $install-color
+          border: none
+          margin-bottom: 20px
+          font-size: 2.5rem
+          font-weight: 500
+          line-height: 1.2
+          margin-top: 0
+          text-transform: uppercase
+          &:before
+            display: none
+          &:after
+            display: block
+            content: ""
+            height: 6px
+            width: 100%
+            margin: 20px auto
+            background-color: $install-color
+        .pricing-hero-description
+          max-width: 800px
+          margin: auto
+          p
+            margin-bottom: 0
