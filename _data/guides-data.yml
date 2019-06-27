@@ -376,6 +376,11 @@
       keywords: NB IoT, NB-IoT, T-Mobile, SODAQ, 5G
       pe: true
       video: false
+    - path: /docs/samples/ble/raspberry-esp32-xiaomi-sensor-htu21d.md
+      title: ThingsBoard BLE Demo with Raspberry PI, ESP32, Xiaomi MI and HTU21D sensors
+      subtitle: Contains wiring diagram and dashboard setup guide.
+      pe: false
+      video: false
 - title: Advanced features
   subtitle: Learn about advanced ThingsBoard features
   id: AdvancedFeatures
