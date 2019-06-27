@@ -9,7 +9,7 @@ description: ThingsBoard Products Pricing
    <div class="pricing-hero">
       <div class="container">
         <div class="pricing-hero-content">
-            <h1>Achieve your plan  <span class="a-full-green">Deploy anywhere</span></h1>
+            <h1>Get your product  <span class="a-full-green">Deploy anywhere</span></h1>
         </div>
       </div>
    </div>
@@ -348,7 +348,7 @@ description: ThingsBoard Products Pricing
         <div class="item" data-tag="h4" data-item-id="trial-enable" data-title="If I want to be a re-seller of ThingsBoard, shall I have a discount?">
             <div class="container">
                 <p>
-                 We have clear and transparent conditions for partners. Send us a request via <a href="https://thingsboard.io/docs/contact-us/" target="blank">contuct us</a> and we will discuss with you all benefits of cooperation with ThingsBoard Inc.   
+                 We have clear and transparent conditions for partners. Send us a request via <a href="https://thingsboard.io/docs/contact-us/" target="blank">contact us</a> and we will discuss with you all benefits of cooperation with ThingsBoard Inc.   
                 </p>    
             </div>    
         </div>
