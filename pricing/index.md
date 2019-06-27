@@ -9,7 +9,7 @@ description: ThingsBoard Products Pricing
    <div class="pricing-hero">
       <div class="container">
         <div class="pricing-hero-content">
-            <h1>Achieve your plan <span class="a-full-green">Deploy anywhere</span></h1>
+            <h1>Achieve your plan  <span class="a-full-green">Deploy anywhere</span></h1>
         </div>
       </div>
    </div>
@@ -41,7 +41,7 @@ description: ThingsBoard Products Pricing
                             <a class="btn btn-full-green btn-pricing" href="/docs/user-guide/install/installation-options/">
                                 Install
                             </a>
-                            <div class="pricing-square-item" data-faq-id="section3-item1">
+                            <div class="pricing-square-item" data-faq-id="community-support">
                                 Community support
                             </div><br>
                             <div class="pricing-square-item">Unlimited Devices and Assets</div><br>
@@ -120,7 +120,7 @@ description: ThingsBoard Products Pricing
                                 '26d44280-9337-11e9-8d13-8ba32b237cce')">
                                 Get your license
                             </a>
-                            <div class="pricing-square-item" data-faq-id="section3-item1">
+                            <div class="pricing-square-item" data-faq-id="community-support">
                                 Community support
                             </div><br>
                             <div class="pricing-square-item">—</div><br>
@@ -148,7 +148,7 @@ description: ThingsBoard Products Pricing
                                 '26d44280-9337-11e9-8d13-8ba32b237cce')">
                                 Get your license
                             </a>
-                            <div class="pricing-square-item" data-faq-id="section3-item1">
+                            <div class="pricing-square-item" data-faq-id="community-support">
                                 Community support
                             </div><br>
                             <div class="pricing-square-item"><span class="a-full-green">White-labeling</span></div><br>
@@ -176,7 +176,7 @@ description: ThingsBoard Products Pricing
                                 '26d44280-9337-11e9-8d13-8ba32b237cce')">
                                 Get your license
                             </a>
-                            <div class="pricing-square-item" data-faq-id="section3-item2">
+                            <div class="pricing-square-item" data-faq-id="subscription-support">
                                 Email support within 36 hours
                             </div><br>
                             <div class="pricing-square-item"><span class="a-full-green">White-labeling</span></div><br>
@@ -189,7 +189,7 @@ description: ThingsBoard Products Pricing
                         <div class="pricing-square">
                             <h2>Business</h2>
                             <div class="pricing-square-description">
-                                <p>The subscription is designed for established mid-level market players</p>
+                                <p>For established mid-level market players with mature IoT approach</p>
                             </div>
                             <h4 class="pricing-square-price mb-0">
                                 299
@@ -204,7 +204,7 @@ description: ThingsBoard Products Pricing
                                 '26d44280-9337-11e9-8d13-8ba32b237cce')">
                                 Get your license
                             </a>
-                            <div class="pricing-square-item" data-faq-id="section3-item2">
+                            <div class="pricing-square-item" data-faq-id="subscription-support">
                                 Email support within 24 hours
                             </div><br>
                             <div class="pricing-square-item"><span class="a-full-green">White-labeling</span></div><br>
@@ -232,7 +232,7 @@ description: ThingsBoard Products Pricing
                                 '26d44280-9337-11e9-8d13-8ba32b237cce')">
                                 Get your license
                             </a>
-                            <div class="pricing-square-item" data-faq-id="section3-item2">
+                            <div class="pricing-square-item" data-faq-id="subscription-support">
                                 Email support within 12 hours
                             </div><br>
                             <div class="pricing-square-item"> <span class="a-full-green">White-labeling</span></div><br>
@@ -268,7 +268,7 @@ description: ThingsBoard Products Pricing
                                 '26d44280-9337-11e9-8d13-8ba32b237cce')">
                                 Get your license
                             </a>
-                            <div class="pricing-square-item" data-faq-id="section3-item2">
+                            <div class="pricing-square-item" data-faq-id="subscription-support">
                                 Email support within 24 hours
                             </div><br>
                             <div class="pricing-square-item">1 year of software updates</div><br>
@@ -309,40 +309,84 @@ description: ThingsBoard Products Pricing
                 </p>    
             </div>    
         </div>
-        <div class="item" data-tag="h4" data-item-id="can-i-migrate" data-title="Can I migrate from subscription to Perpetual license?">
+        <div class="item" data-tag="h4" data-item-id="can-i-migrate" data-title="Can I migrate from one subscription to another?">
             <div class="container">
                 <p>
-                    Yes. One of the greatest features of ThingsBoard License Server is ability to change subscription plans or migrate from SaaS to perpetual and vice versa.  
+                    Yes. One of the greatest features of ThingsBoard License Server is the ability to change subscription plans. Now it is as simple as that. The flow is: Subscription details — Update subscription — Choose a plan. Also there is an Update subscription button in the action icons tray.   
                 </p>    
             </div>    
         </div>
-        <div class="item" data-tag="h4" data-item-id="cancel-subscription" data-title="Whenever I cancel the subscription, I'll loose my credits?">
+        <div class="item" data-tag="h4" data-item-id="migrate-between-servers" data-title="Can I migrate from cloud to on-premise server using the same license?">
             <div class="container">
                 <p>
-                Customers may manage their subscription plans: update or cancel them. Once the subscription is deleted before expiration, Stripe will keep the balance. After a certain time period (about an hour) positive Account due with the remain amount of credits will appear in Billing section of License portal. This sum is deducted from       
+                 Definitely, yes. For that purpose we made a possibility to Activate/Deactivate instance. In order to migrate between servers customer must deactivate its instance, install the software on new server and then use already existing license secret. Backup of all data from previos instance is necessary if customer wants to continue utilizing same environment after migration. Notice: license check mechanism won't allow using ThingsBoard Professional Edition on two or more servers simultaneously.         
                 </p>    
             </div>    
         </div>
-        <h3 id="section2">Section2</h3>
-        <div class="item" data-tag="h4" data-item-id="section2-item1" data-title="Section2 Item1">
+         <div class="item" data-tag="h4" data-item-id="migrate-plan-to-perpetual" data-title="Is it possible to jump from subscription to perpetual?">
             <div class="container">
                 <p>
-                    Section2 Item1 description
+                 Customer may cancel the subscription and purchase a perpetual license. The remain costs from terminated subscription plan (if remain) will be deducted from Total cost for the perpetual license. Keep in mind: perpetual license is non-cancelable. So, customer can not stop using perpetual license and rely on Total price decreasing for any Subscription plan.         
                 </p>    
             </div>    
         </div>
-        <h3 id="section3">Section3</h3>
-        <div class="item" data-tag="h4" data-item-id="section3-item1" data-title="Section3 Item1">
+        <h3 id="section2">Billing</h3>
+        <div class="item" data-tag="h4" data-item-id="trial-enable" data-title="How can I enable free trial?">
             <div class="container">
                 <p>
-                    Section3 Item1 description
+                    Customer may still use <a href="https://cloud.thingsboard.io" target="blank">ThingsBoard Professional Edition Live Demo</a> for that. 30 days of seamless experience and the newest features from the latest source code! Note: Live Demo is a shared environment with hardware and software limitations. It is introduced to host multiple trial tenants on the same server instance(s).
                 </p>    
             </div>    
         </div>
-        <div class="item" data-tag="h4" data-item-id="section3-item2" data-title="Section3 Item2">
+        <div class="item" data-tag="h4" data-item-id="trial-enable" data-title="Are there any saving options?">
             <div class="container">
                 <p>
-                    Section3 Item2 description
+                 As customers may see from the Purchase form, using of special coupons for discount is possible. Time after time we grant coupons to our regular customers (read newsletters), provide promo codes during events and distribute coupons to our partners.   
+                </p>    
+            </div>    
+        </div>
+        <div class="item" data-tag="h4" data-item-id="trial-enable" data-title="If I want to be a re-seller of ThingsBoard, shall I have a discount?">
+            <div class="container">
+                <p>
+                 We have clear and transparent conditions for partners. Send us a request via <a href="https://thingsboard.io/docs/contact-us/" target="blank">contuct us</a> and we will discuss with you all benefits of cooperation with ThingsBoard Inc.   
+                </p>    
+            </div>    
+        </div>
+        <div class="item" data-tag="h4" data-item-id="cancel-subscription" data-title="When I cancel the subscription, I loose my credits?">
+            <div class="container">
+                <p>
+                Customers may manage their subscription plans: update or cancel them. Once the subscription is deleted before expiration, Stripe will keep the balance. After a certain time period (about an hour) positive Amount due with the remain credits will appear in Billing section of License portal. This sum is deducted from Total fee whenever particular customer purchase a new plan or a perpetual license.      
+                </p>    
+            </div>    
+        </div>
+        <h3 id="section3">Support</h3>
+        <div class="item" data-tag="h4" data-item-id="community-support" data-title="What does community support mean?">
+            <div class="container">
+                <p>
+                Community support is free-of-charge option. It is a volonteering initiative, provided by our team. Please, be aware that support is one of ThingsBoard Inc. business fields. Although our engineers (as many of our customers know) successfully handle user's requests in their free time. Community support doesn't mean any obligation for ThingsBoard Inc. We encourage you to <a href="https://thingsboard.io/docs/">read documentation</a>, subscribe to our <a href="https://www.youtube.com/c/thingsboard" target ="blank">YouTube channel</a> where we host <a href="https://www.youtube.com/watch?v=M0CaascgDmg&list=PLYEKB_XwLCZJ6T8RPLTjRwMw0eoabpEKO" target="blank">the free Education course</a> and most demanded tutorials, samples and guides.
+                </p>
+                <p>Customer may also rely on answers from ThingsBoard <a href="https://github.com/thingsboard/thingsboard/issues" target="blank">community on GitHub</a> (issues page), send their queries to <a href="https://groups.google.com/forum/#!forum/thingsboard" target="blank">Q&A forum</a> and start <a href="http://stackoverflow.com/questions/tagged/thingsboard" target="blank">Stack Overflow</a> themes.   
+                </p>    
+            </div>    
+        </div>
+        <div class="item" data-tag="h4" data-item-id="professional-support" data-title="What support plans do you have?">
+            <div class="container">
+                <p>
+                Please review ThingsBoard professional <a href="https://thingsboard.io/docs/services/support/" target="blank">support plans</a> and contact us.
+                </p>    
+            </div>    
+        </div>
+        <div class="item" data-tag="h4" data-item-id="subscription-support" data-title="What issues included in email support?">
+            <div class="container">
+                <p>
+                For StartUp, Business and Enterprise licensees as well as Perpetual licensees we provide email response on any issue within certain amount of time, if separate support agreement is not signed. Solution time depends on issue and may require a meeting with out team member
+                </p>    
+            </div>    
+        </div>
+        <div class="item" data-tag="h4" data-item-id="buy-support" data-title="What kind of professional support can I order?">
+            <div class="container">
+                <p>
+                We provide support bundles which contain server issues and application development. Please review ThingsBoard professional <a href="https://thingsboard.io/docs/services/support/" target="blank">support plans</a>. Also we will add ability to buy support plan from <a href="https://license.thingsboard.io/">License portal</a>. 
                 </p>    
             </div>    
         </div>
