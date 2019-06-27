@@ -127,10 +127,13 @@ To learn how to connect your Uno board to the computer and upload your first ske
 Open Arduino IDE and go to **Sketch -> Include Library -> Manage Libraries**.
 Find and install the following libraries:
 
-- [PubSubClient by Nick O'Leary](http://pubsubclient.knolleary.net/).
+- [PubSubClient by Nick O'Leary](http://pubsubclient.knolleary.net/)
 - [WiFiEsp by bportaluri](https://github.com/bportaluri/WiFiEsp)
 - [Adafruit Unified Sensor by Adafruit](https://github.com/adafruit/Adafruit_Sensor)
 - [DHT sensor library by Adafruit](https://github.com/adafruit/DHT-sensor-library)
+- [Arduino ThingsBoard SDK by ThingsBoard](https://github.com/thingsboard/ThingsBoard-Arduino-MQTT-SDK)
+- [ArduinoJSON by bblanchon](https://github.com/bblanchon/ArduinoJson)
+- [Arduino Http Client](https://github.com/arduino-libraries/ArduinoHttpClient)
 
 **Note** that this tutorial was tested with the following versions of the libraries:
 
@@ -138,6 +141,9 @@ Find and install the following libraries:
 - WiFiEsp 2.1.2
 - Adafruit Unified Sensor 1.0.2
 - DHT sensor library 1.3.0
+- Arduino ThingsBoard SDK 0.4
+- ArduinoJSON 6.10.1
+- Arduino Http Client 0.4.0
 
 ### Step 3. Prepare and upload a sketch.
 

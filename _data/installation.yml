@@ -33,5 +33,7 @@ toc:
     path: /docs/user-guide/install/aws-marketplace-pe/
   - title: Upgrade instructions
     path: /docs/user-guide/install/aws-marketplace-pe-upgrade/
+- title: License Server
+  path: /products/license-server/
 - title: Configuration
   path: /docs/user-guide/install/config/

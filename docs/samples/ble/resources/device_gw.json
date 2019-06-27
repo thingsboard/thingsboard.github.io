@@ -1,0 +1,525 @@
+{
+  "title": "Device GW",
+  "configuration": {
+    "widgets": {
+      "a8c0b10b-e07a-02a8-bef6-2abf966ab818": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "entities_table",
+        "type": "latest",
+        "title": "New widget",
+        "sizeX": 12,
+        "sizeY": 6,
+        "config": {
+          "timewindow": {
+            "realtime": {
+              "interval": 1000,
+              "timewindowMs": 86400000
+            },
+            "aggregation": {
+              "type": "NONE",
+              "limit": 200
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "4px",
+          "settings": {
+            "enableSearch": true,
+            "displayPagination": true,
+            "defaultPageSize": 10,
+            "defaultSortOrder": "entityName",
+            "displayEntityName": false,
+            "displayEntityType": false
+          },
+          "title": "New Entities table",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400,
+            "padding": "5px 10px 5px 10px"
+          },
+          "useDashboardTimewindow": false,
+          "showLegend": false,
+          "datasources": [
+            {
+              "type": "entity",
+              "dataKeys": [
+                {
+                  "name": "description",
+                  "type": "attribute",
+                  "label": "Device name",
+                  "color": "#2196f3",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "useCellContentFunction": false
+                  },
+                  "_hash": 0.8669101034944076
+                },
+                {
+                  "name": "discovered",
+                  "type": "attribute",
+                  "label": "Discovered",
+                  "color": "#4caf50",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "useCellContentFunction": false
+                  },
+                  "_hash": 0.39449470397976505
+                },
+                {
+                  "name": "mac_addr",
+                  "type": "attribute",
+                  "label": "Mac address",
+                  "color": "#f44336",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "useCellContentFunction": false
+                  },
+                  "_hash": 0.13260061707485304
+                }
+              ],
+              "entityAliasId": "52d341c7-4465-69eb-ed1a-7729467d54e7"
+            }
+          ],
+          "widgetStyle": {
+            "backgroundImage": "url(https://thingsboard.io/images/dashboards/districts/apartments-bg.jpg)",
+            "backgroundSize": "cover"
+          },
+          "actions": {}
+        },
+        "id": "a8c0b10b-e07a-02a8-bef6-2abf966ab818"
+      },
+      "036ed4e6-e781-3805-1d8c-3cb279dcf1dd": {
+        "isSystemType": true,
+        "bundleAlias": "charts",
+        "typeAlias": "basic_timeseries",
+        "type": "timeseries",
+        "title": "New widget",
+        "sizeX": 12,
+        "sizeY": 6,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "dataKeys": [
+                {
+                  "name": "temperature",
+                  "type": "timeseries",
+                  "label": "Device ${entityName}",
+                  "color": "#2196f3",
+                  "settings": {
+                    "showLines": true,
+                    "fillLines": false,
+                    "showPoints": false,
+                    "showSeparateAxis": false,
+                    "axisPosition": "left"
+                  },
+                  "_hash": 0.49808913995548143
+                }
+              ],
+              "entityAliasId": "52d341c7-4465-69eb-ed1a-7729467d54e7"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "shadowSize": 4,
+            "fontColor": "#545454",
+            "fontSize": 10,
+            "xaxis": {
+              "showLabels": true,
+              "color": "#545454"
+            },
+            "yaxis": {
+              "showLabels": true,
+              "color": "#545454"
+            },
+            "grid": {
+              "color": "#545454",
+              "tickColor": "#DDDDDD",
+              "verticalLines": true,
+              "horizontalLines": true,
+              "outlineWidth": 1
+            },
+            "stack": false,
+            "tooltipIndividual": false
+          },
+          "title": "Temperature",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "mobileHeight": null,
+          "widgetStyle": {
+            "backgroundImage": "url(https://thingsboard.io/images/dashboards/districts/districts-bg.jpg)",
+            "backgroundSize": "cover"
+          },
+          "useDashboardTimewindow": true,
+          "showLegend": true,
+          "actions": {}
+        },
+        "id": "036ed4e6-e781-3805-1d8c-3cb279dcf1dd"
+      },
+      "02c3fa9d-ec95-7c0d-56a5-9154a36fe7b1": {
+        "isSystemType": true,
+        "bundleAlias": "charts",
+        "typeAlias": "basic_timeseries",
+        "type": "timeseries",
+        "title": "New widget",
+        "sizeX": 12,
+        "sizeY": 6,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "dataKeys": [
+                {
+                  "name": "humidity",
+                  "type": "timeseries",
+                  "label": "Device ${entityName}",
+                  "color": "#2196f3",
+                  "settings": {
+                    "showLines": true,
+                    "fillLines": false,
+                    "showPoints": false,
+                    "showSeparateAxis": false,
+                    "axisPosition": "left"
+                  },
+                  "_hash": 0.84393347807399
+                }
+              ],
+              "entityAliasId": "52d341c7-4465-69eb-ed1a-7729467d54e7"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "shadowSize": 4,
+            "fontColor": "#545454",
+            "fontSize": 10,
+            "xaxis": {
+              "showLabels": true,
+              "color": "#545454"
+            },
+            "yaxis": {
+              "showLabels": true,
+              "color": "#545454"
+            },
+            "grid": {
+              "color": "#545454",
+              "tickColor": "#DDDDDD",
+              "verticalLines": true,
+              "horizontalLines": true,
+              "outlineWidth": 1
+            },
+            "stack": false,
+            "tooltipIndividual": false
+          },
+          "title": "Humidity",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "mobileHeight": null,
+          "widgetStyle": {
+            "backgroundImage": "url(https://thingsboard.io/images/dashboards/districts/alarms-bg.jpg)",
+            "backgroundSize": "cover"
+          },
+          "useDashboardTimewindow": true,
+          "showLegend": true,
+          "actions": {}
+        },
+        "id": "02c3fa9d-ec95-7c0d-56a5-9154a36fe7b1"
+      },
+      "8430d71e-9325-da56-2996-158699f834a9": {
+        "isSystemType": false,
+        "bundleAlias": "custom_widget",
+        "typeAlias": "rpcbutton",
+        "type": "rpc",
+        "title": "New widget",
+        "sizeX": 12,
+        "sizeY": 2,
+        "config": {
+          "targetDeviceAliases": [],
+          "showTitle": false,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "0px",
+          "settings": {
+            "requestTimeout": 500,
+            "oneWayElseTwoWay": true,
+            "buttonText": "Re-scan device ",
+            "methodName": "doRescan",
+            "methodParams": "10"
+          },
+          "title": "New RPCButton",
+          "datasources": [],
+          "dropShadow": false,
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "useDashboardTimewindow": true,
+          "showLegend": false,
+          "targetDeviceAliasIds": [
+            "aa05144b-2178-63f9-ffbf-ee13800c1c24"
+          ],
+          "actions": {}
+        },
+        "id": "8430d71e-9325-da56-2996-158699f834a9"
+      },
+      "f0d69b1a-28bc-cd92-c8ee-7b900cee5f3b": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "html_value_card",
+        "type": "latest",
+        "title": "New widget",
+        "sizeX": 6,
+        "sizeY": 4,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "dataKeys": [
+                {
+                  "name": "temperature",
+                  "type": "timeseries",
+                  "label": "temperature",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.029655975605606066,
+                  "decimals": 1
+                }
+              ],
+              "entityAliasId": "52d341c7-4465-69eb-ed1a-7729467d54e7"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "0px",
+          "settings": {
+            "cardHtml": "<div class='card'>\n    <div class='content'>\n       <div class='upper-bar'>\n           <video loop muted autoplay>\n               <source src=\"https://media.giphy.com/media/vUYHZ1Ng5C4Fy/giphy.mp4\" type=\"video/mp4\">\n           </video>\n            <div class='image-shade'>\n                <h1><br><br><br><br></h1>\n                <div class='value'>${temperature:1} °C</div>\n            </div>\n       </div><br>\n       <div class='lower-bar'>\n           <div class='icon-container'>\n               <div class='material-icons icon'>filter</div>\n           </div>\n           <div class='description'>Temperature</div>\n       </div>\n    </div>\n</div>",
+            "cardCss": ".card,\n.card * {\n    box-sizing: border-box;\n}    \n.card {\n    position: relative;\n    width: 100%;\n    height: 100%;\n}\n.card .content {\n    height: 100%;\n}\n.card .upper-bar {\n    position: relative;\n    z-index: 0;\n    overflow: hidden;\n    height: auto;\n    box-shadow: 0 1px 3px 0 rgba(0,0,0,.26);\n    color: #fff;\n}\n.card .lower-bar {\n    position: relative;\n    height: auto;\n    padding-left: 16px;\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n}\n.card .image-shade {\n    width: 100%;\n    height: 100%;\n    padding-left: 16px;\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    background-color: rgba(0, 0, 0, 0);\n    z-index: 0;\n}\n.card h1 {\n    margin: 0;\n    font-size: 20px;\n    font-weight: bold;\n    line-height: 30px;\n}\n.card .icon-container {\n    height: 40px;\n    width: 40px;\n    border-radius: 50%;\n    border: 3px solid rgb(0, 132, 214);\n    text-align: center;\n}\n.card .description {\n    margin-left: 16px;\n    font-size: 20px;\n    font-weight: 500;\n    color: rgb(0, 132, 214);\n}\n.card .value {\n    font-size: 40px;\n    font-weight: 300;\n    letter-spacing: -2px;\n}\n.card .icon {\n    line-height: 36px;\n    color: rgb(0, 132, 214);\n}\n.card video {\n    position: absolute;\n    top: 55%;\n    left: 0;\n    width: 100%;\n    z-index: -1;\n    transform: translateY(-50%);\n}"
+          },
+          "title": "Température",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "useDashboardTimewindow": true,
+          "showLegend": false,
+          "actions": {},
+          "enableDataExport": true,
+          "decimals": 1
+        },
+        "id": "f0d69b1a-28bc-cd92-c8ee-7b900cee5f3b"
+      },
+      "a0954304-5b15-7f7b-d7e5-edc3de606c92": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "html_value_card",
+        "type": "latest",
+        "title": "New widget",
+        "sizeX": 6,
+        "sizeY": 4,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "dataKeys": [
+                {
+                  "name": "humidity",
+                  "type": "timeseries",
+                  "label": "humidity",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.9718118717068891
+                }
+              ],
+              "entityAliasId": "52d341c7-4465-69eb-ed1a-7729467d54e7"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "0px",
+          "settings": {
+            "cardHtml": "<div class='card'>\n    <div class='content'>\n       <div class='upper-bar'>\n           <video loop muted autoplay>\n               <source src=\"https://media.giphy.com/media/FjfWV4pvi0Yzm/giphy.mp4\" type=\"video/mp4\">\n           </video>\n            <div class='image-shade'>\n                <h1><br><br><br><br></h1>\n                <div class='value'>${humidity:0} %</div>\n            </div>\n       </div><br>\n       <div class='lower-bar'>\n           <div class='icon-container'>\n               <div class='material-icons icon'>grain</div>\n           </div>\n           <div class='description'>Humidity</div>\n       </div>\n    </div>\n</div>",
+            "cardCss": ".card,\n.card * {\n    box-sizing: border-box;\n}    \n.card {\n    position: relative;\n    width: 100%;\n    height: 100%;\n}\n.card .content {\n    height: 100%;\n}\n.card .upper-bar {\n    position: relative;\n    z-index: 0;\n    overflow: hidden;\n    height: auto;\n    box-shadow: 0 1px 3px 0 rgba(0,0,0,.26);\n    color: #fff;\n}\n.card .lower-bar {\n    position: relative;\n    height: auto;\n    padding-left: 16px;\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n}\n.card .image-shade {\n    width: 100%;\n    height: 100%;\n    padding-left: 16px;\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    background-color: rgba(0, 0, 0, 0);\n    z-index: 0;\n}\n.card h1 {\n    margin: 0;\n    font-size: 20px;\n    font-weight: bold;\n    line-height: 30px;\n}\n.card .icon-container {\n    height: 40px;\n    width: 40px;\n    border-radius: 50%;\n    border: 3px solid rgb(0, 132, 214);\n    text-align: center;\n}\n.card .description {\n    margin-left: 16px;\n    font-size: 20px;\n    font-weight: 500;\n    color: rgb(0, 132, 214);\n}\n.card .value {\n    font-size: 40px;\n    font-weight: 300;\n    letter-spacing: -2px;\n}\n.card .icon {\n    line-height: 36px;\n    color: rgb(0, 132, 214);\n}\n.card video {\n    position: absolute;\n    top: 65%;\n    left: 0;\n    width: 100%;\n    z-index: -1;\n    transform: translateY(-50%);\n}"
+          },
+          "title": "Consommation d'eau",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "useDashboardTimewindow": true,
+          "showLegend": false,
+          "actions": {},
+          "enableDataExport": true,
+          "decimals": 0
+        },
+        "id": "a0954304-5b15-7f7b-d7e5-edc3de606c92"
+      }
+    },
+    "states": {
+      "default": {
+        "name": "Test Dashboard",
+        "root": true,
+        "layouts": {
+          "main": {
+            "widgets": {
+              "a8c0b10b-e07a-02a8-bef6-2abf966ab818": {
+                "sizeX": 12,
+                "sizeY": 6,
+                "row": 0,
+                "col": 0
+              },
+              "036ed4e6-e781-3805-1d8c-3cb279dcf1dd": {
+                "sizeX": 12,
+                "sizeY": 6,
+                "mobileHeight": null,
+                "row": 6,
+                "col": 0
+              },
+              "02c3fa9d-ec95-7c0d-56a5-9154a36fe7b1": {
+                "sizeX": 12,
+                "sizeY": 6,
+                "mobileHeight": null,
+                "row": 6,
+                "col": 12
+              },
+              "8430d71e-9325-da56-2996-158699f834a9": {
+                "sizeX": 12,
+                "sizeY": 2,
+                "row": 0,
+                "col": 12
+              },
+              "f0d69b1a-28bc-cd92-c8ee-7b900cee5f3b": {
+                "sizeX": 6,
+                "sizeY": 4,
+                "row": 2,
+                "col": 12
+              },
+              "a0954304-5b15-7f7b-d7e5-edc3de606c92": {
+                "sizeX": 6,
+                "sizeY": 4,
+                "row": 2,
+                "col": 18
+              }
+            },
+            "gridSettings": {
+              "backgroundColor": "#eeeeee",
+              "color": "rgba(0,0,0,0.870588)",
+              "columns": 24,
+              "margins": [
+                10,
+                10
+              ],
+              "backgroundSizeMode": "100%"
+            }
+          }
+        }
+      }
+    },
+    "entityAliases": {
+      "52d341c7-4465-69eb-ed1a-7729467d54e7": {
+        "id": "52d341c7-4465-69eb-ed1a-7729467d54e7",
+        "alias": "GW_Devices",
+        "filter": {
+          "type": "relationsQuery",
+          "resolveMultiple": true,
+          "rootStateEntity": false,
+          "stateEntityParamName": null,
+          "defaultStateEntity": null,
+          "rootEntity": {
+            "entityType": "DEVICE",
+            "id": "abc37a10-7640-11e9-b9b3-9d846828fd2d"
+          },
+          "direction": "FROM",
+          "maxLevel": 1,
+          "filters": [
+            {
+              "relationType": "Created",
+              "entityTypes": []
+            }
+          ]
+        }
+      },
+      "aa05144b-2178-63f9-ffbf-ee13800c1c24": {
+        "id": "aa05144b-2178-63f9-ffbf-ee13800c1c24",
+        "alias": "GW",
+        "filter": {
+          "type": "singleEntity",
+          "resolveMultiple": false,
+          "singleEntity": {
+            "entityType": "DEVICE",
+            "id": "abc37a10-7640-11e9-b9b3-9d846828fd2d"
+          }
+        }
+      }
+    },
+    "timewindow": {
+      "realtime": {
+        "interval": 3600000,
+        "timewindowMs": 604800000
+      },
+      "aggregation": {
+        "type": "AVG",
+        "limit": 25000
+      }
+    },
+    "settings": {
+      "stateControllerId": "entity",
+      "showTitle": false,
+      "showDashboardsSelect": true,
+      "showEntitiesSelect": true,
+      "showDashboardTimewindow": true,
+      "showDashboardExport": true,
+      "toolbarAlwaysOpen": true
+    }
+  },
+  "name": "Device GW"
+}
