@@ -63,6 +63,10 @@ toc:
       path: /docs/user-guide/integrations/azure-event-hub/
     - title: OPC-UA
       path: /docs/user-guide/integrations/opc-ua/
+    - title: TCP
+      path: /docs/user-guide/integrations/tcp/
+    - title: UDP
+      path: /docs/user-guide/integrations/udp/
   - title: Entity Groups
     path: /docs/user-guide/groups/
     pe: true

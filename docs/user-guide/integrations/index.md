@@ -295,6 +295,8 @@ Explore guides and video tutorials related to specific integrations:
  - [OceanConnect](/docs/user-guide/integrations/ocean-connect/)
  - [TheThingsNetwork](/docs/user-guide/integrations/ttn/)
  - [OPC-UA](/docs/user-guide/integrations/opc-ua/)
+ - [TCP](/docs/user-guide/integrations/tcp/)
+ - [UDP](/docs/user-guide/integrations/udp/)
 
 
 ## Next steps

@@ -178,6 +178,18 @@
       keywords:
       pe: true
       video: true
+    - path: /docs/user-guide/integrations/tcp/
+      title: Devices uses TCP protocol
+      subtitle: How to connect to ThingsBoard TCP-server, transform the incoming messages and generate the downlinks using ThingsBoard.
+      keywords: Connect TCP devices
+      pe: true
+      video: true
+    - path: /docs/user-guide/integrations/tcp/
+      title: Devices uses UDP protocol
+      subtitle: How to connect to ThingsBoard UDP-server, transform the incoming messages and generate the downlinks using ThingsBoard.
+      keywords: Connect UDP devices
+      pe: true
+      video: true
 - title: Data visualization
   subtitle: These guides contain instructions how to configure complex ThingsBoard dashboards
   id: DataVisualization
