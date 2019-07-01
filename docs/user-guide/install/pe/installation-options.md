@@ -55,10 +55,10 @@ notitle: "true"
                             <div class="deployment-cards">
                                 <div class="deployment-cards-container">
                                     <div class="deployment-card-block">
-                                        <a href="https://demo.thingsboard.io/signup">
+                                        <a href="https://cloud.thingsboard.io/signup">
                                             <span>
                                                 <div class="deployment-logo" style="height:134px">
-                                                    <img width="" src="/images/install/live-demo/signup-ce.png" title="Live Demo" alt="Live Demo">
+                                                    <img width="" src="/images/install/live-demo/signup-pe.png" title="Live Demo" alt="Live Demo">
                                                  </div>
                                             </span>
                                         </a>
