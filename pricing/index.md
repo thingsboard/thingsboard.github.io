@@ -59,8 +59,8 @@ description: ThingsBoard Products Pricing
 </section>
 
 <section id="thingsboard-pe" class="pricing-content">
- <div class="indicator text-center pt-2 pb-2">
-                            <a class="btn" href="" target="blank">BECOME A PARTNER</a> 
+ <div class="text-center pt-4 pb-4">
+    <a class="btn btn-full-green btn-pricing" href="/docs/contact-us/?subject=Partnership">Become a partner</a> 
  </div> 
  <div class="col-lg-12">
     <div class="solution-selector">

@@ -204,7 +204,6 @@ $pricing-color: #506dad
             box-sizing: border-box
             top: 10px
             border-radius: 50%
-            background: #626262
             position: absolute
             left: 0
             display: inline-block
@@ -262,7 +261,7 @@ $pricing-color: #506dad
             vertical-align: middle
             border-style: none
             max-height: 100%
-            filter: brightness(0.7)
+            filter: grayscale(1)
           &.active
             color: $pricing-color
             img
@@ -311,7 +310,7 @@ $pricing-color: #506dad
     .pricing-hero
       position: relative
       z-index: 6
-      min-height: 150px
+      min-height: 100px
       display: flex
       align-items: center
       background-color: #f3f3f3
@@ -319,16 +318,14 @@ $pricing-color: #506dad
 
       .pricing-hero-content
         text-align: center
-        padding-top: 100px
+        padding-top: 24px
         padding-bottom: 24px
-        @media (min-width: 768px)
-          padding-top: 142px
         @media (min-width: 992px)
           padding-top: 0px
           padding-bottom: 0px
         h1
-          margin-bottom: 20px
-          font-size: 3rem
+          margin-bottom: 0
+          font-size: 2.5rem
           font-weight: 500
           line-height: 1.2
           margin-top: 0
