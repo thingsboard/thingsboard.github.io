@@ -1,0 +1,180 @@
+---
+layout: docwithnav
+assignees:
+- ashvayka
+title: Installing ThingsBoard PE on Ubuntu
+description: Installing ThingsBoard on Ubuntu
+
+---
+
+{% include templates/live-demo-banner.md %}
+
+* TOC
+{:toc}
+
+### Prerequisites
+
+This guide describes how to install ThingsBoard on Ubuntu Server 18.04 LTS. 
+Hardware requirements depend on chosen database and amount of devices connected to the system. 
+To run ThingsBoard and PostgreSQL on a single machine you will need at least 1Gb of RAM.
+To run ThingsBoard and Cassandra on a single machine you will need at least 8Gb of RAM.
+
+### Step 1. Install Java 8 (OpenJDK) 
+
+ThingsBoard service is running on Java 8. Follow this instructions to install OpenJDK 8:
+
+```bash
+sudo apt update
+sudo apt install openjdk-8-jdk
+```
+
+Please don't forget to configure your operating system to use OpenJDK 8 by default. 
+You can configure which version is the default using the following command:
+
+```bash
+sudo update-alternatives --config java
+```
+
+You can check the installation using the following command:
+
+```bash
+java -version
+```
+
+Expected command output is:
+
+```text
+openjdk version "1.8.0_xxx"
+OpenJDK Runtime Environment (...)
+OpenJDK 64-Bit Server VM (build ...)
+```
+
+### Step 2. ThingsBoard service installation
+
+Download installation package.
+
+```bash
+wget http://d2yx87vr19hm2o.cloudfront.net/thingsboard-2.3.1.deb
+```
+
+Install ThingsBoard as a service
+
+```bash
+sudo dpkg -i thingsboard-2.3.1.deb
+```
+
+### Step 3. Choose and install database 
+
+{% include templates/install-db.md %}
+
+#### PostgreSQL Installation (recommended)
+
+Instructions listed below will help you to install PostgreSQL.
+
+```bash
+sudo apt-get update
+sudo apt-get install postgresql postgresql-contrib
+sudo service postgresql start
+```
+
+{% include templates/postgres-post-install.md %}
+
+{% include templates/create-tb-db.md %}
+
+#### [Optional] Cassandra Installation
+
+**NOTE:** This is an **optional** step. It is required only for specific production cases with high performance and scalability requirements. 
+
+{% include templates/cassandra-ubuntu-install.md %}
+
+### Step 4. Configure ThingsBoard to use the external database
+  
+Edit ThingsBoard configuration file 
+
+```bash 
+sudo nano /etc/thingsboard/conf/thingsboard.conf
+``` 
+
+To use **PostgreSQL** only (recommended):
+
+Add the following lines to the configuration file. Don't forget to replace "PUT_YOUR_POSTGRESQL_PASSWORD_HERE" with your real postgres user password:
+
+```bash
+# DB Configuration 
+export DATABASE_ENTITIES_TYPE=sql
+export DATABASE_TS_TYPE=sql
+export SPRING_DRIVER_CLASS_NAME=org.postgresql.Driver
+export SPRING_DATASOURCE_URL=jdbc:postgresql://localhost:5432/thingsboard
+export SPRING_DATASOURCE_USERNAME=postgres
+export SPRING_DATASOURCE_PASSWORD=PUT_YOUR_POSTGRESQL_PASSWORD_HERE
+```
+
+To use **PostgreSQL** and **Cassandra** in a **hybrid mode** (advanced usage):
+
+Add the following lines to the configuration file. Don't forget to replace "PUT_YOUR_POSTGRESQL_PASSWORD_HERE" with your real postgres user password:
+
+```bash
+# DB Configuration 
+export DATABASE_ENTITIES_TYPE=sql
+export DATABASE_TS_TYPE=cassandra
+export SPRING_DRIVER_CLASS_NAME=org.postgresql.Driver
+export SPRING_DATASOURCE_URL=jdbc:postgresql://localhost:5432/thingsboard
+export SPRING_DATASOURCE_USERNAME=postgres
+export SPRING_DATASOURCE_PASSWORD=PUT_YOUR_POSTGRESQL_PASSWORD_HERE
+``` 
+
+You can optionally add the following parameters to reconfigure your ThingsBoard instance to connect to external Cassandra nodes:
+
+```bash
+export CASSANDRA_CLUSTER_NAME=Thingsboard Cluster
+export CASSANDRA_KEYSPACE_NAME=thingsboard
+export CASSANDRA_URL=127.0.0.1:9042
+export CASSANDRA_USE_CREDENTIALS=false
+export CASSANDRA_USERNAME=
+export CASSANDRA_PASSWORD=
+```
+
+To use **Cassandra DB** only (not recommended):
+
+```bash
+# DB Configuration 
+export DATABASE_ENTITIES_TYPE=cassandra
+export DATABASE_TS_TYPE=cassandra
+```
+
+### Step 5. [Optional] Memory update for slow machines (1GB of RAM) 
+
+For ThingsBoard service:
+
+```bash
+# Update ThingsBoard memory usage and restrict it to 256MB in /etc/thingsboard/conf/thingsboard.conf
+export JAVA_OPTS="$JAVA_OPTS -Xms256M -Xmx256M"
+```
+
+### Step 6. Run installation script
+{% include templates/run-install.md %} 
+
+
+### Step 7. Start ThingsBoard service
+
+{% include templates/start-service.md %}
+
+**NOTE**: Please allow up to 90 seconds for the Web UI to start. This is applicable for slow machines with 1-2 CPUs.
+
+### Troubleshooting
+
+ThingsBoard logs are stored in the following directory:
+ 
+```bash
+/var/log/thingsboard
+```
+
+You can issue the following command in order to check if there are any errors on the backend side:
+ 
+```bash
+cat /var/log/thingsboard/thingsboard.log | grep ERROR
+```
+
+## Next steps
+
+{% assign currentGuide = "InstallationGuides" %}{% include templates/guides-banner.md %}

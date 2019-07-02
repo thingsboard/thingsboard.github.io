@@ -70,7 +70,7 @@ notitle: "true"
                            <div class="deployment-cards">
                                 <div class="deployment-cards-container">
                                     <div class="deployment-card-block">
-                                        <a href="/docs/user-guide/install/linux/">
+                                        <a href="/docs/user-guide/install/pe/ubuntu/">
                                             <span>
                                                 <div class="deployment-logo" style="height:134px">
                                                     <img width="" src="/images/install/platform/ubuntu.png" title="Ubuntu" alt="Ubuntu">
@@ -79,7 +79,7 @@ notitle: "true"
                                         </a>
                                     </div>
                                     <div class="deployment-card-block">
-                                        <a href="/docs/user-guide/install/linux/">
+                                        <a href="/docs/user-guide/install/rhel/">
                                             <span>
                                                 <div class="deployment-logo" style="height:134px">
                                                     <img width="" src="/images/install/platform/centos-redhat.png" title="CentOS/RHEL" alt="CentOS/RHEL">

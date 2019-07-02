@@ -1,6 +1,9 @@
-ThingsBoard is able to use SQL or NoSQL(Cassandra) database layer. 
-You can configure your platform to use either scalable Cassandra DB cluster or various SQL databases. 
-If you prefer to use an SQL database, we recommend PostgreSQL. 
+ThingsBoard is able to use SQL, NoSQL or hybrid database approach. 
+See corresponding architecture [page](/docs/reference/#sql-vs-nosql-vs-hybrid-database-approach) for more details. 
 
-By default, ThingsBoard uses embedded **HSQLDB** instance which is very convenient for running tests and development 
-but **IS NOT RECOMMENDED** for any evaluation or production environments. 
+ThingsBoard team recommends to use PostgreSQL for development and production environments with reasonable load (< 5000 msg/sec).
+Many cloud vendors support managed PostgreSQL servers which is a cost-effective solution for most of ThingsBoard instances.
+
+However, if you do plan to have 1M+ devices in production, we suggest to use NoSQL database (Cassandra) for storing timeseries data 
+while continue to use PostgreSQL for everything else (devices/assets/dashboards/customers).  
+ 
