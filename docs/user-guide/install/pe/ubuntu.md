@@ -92,12 +92,14 @@ and put your license secret. Please don't forget to uncomment the export stateme
 export TB_LICENSE_SECRET=YOUR_LICENSE_SECRET_HERE
 ``` 
 
-### Step 4. Choose and install database 
+### Step 4. Configure ThingsBoard database 
 
 {% include templates/install-db.md %}
 
-
 {% capture postgresql-install-capture %}
+
+ThingsBoard team recommends to use PostgreSQL for development and production environments with reasonable load (< 5000 msg/sec).
+Many cloud vendors support managed PostgreSQL servers which is a cost-effective solution for most of ThingsBoard instances.
 
 #### PostgreSQL Installation (recommended)
 
@@ -115,7 +117,11 @@ sudo service postgresql start
 
 {% endcapture %}
 
-{% capture cassandra-install-capture %}
+{% capture hybrid-install-capture %}
+
+ThingsBoard team recommends to use Hybrid database approach if you do plan to have 1M+ devices in production or high data ingestion rate (> 5000 msg/sec).
+In this case, ThingsBoard will be storing timeseries data in Cassandra while continue to use PostgreSQL for main entities (devices/assets/dashboards/customers).  
+
 
 #### [Optional] Cassandra Installation
 
@@ -127,12 +133,10 @@ sudo service postgresql start
 
 
 {% capture contenttogglespec %}
-PostgreSQL (recommended)%,%postgresql%,%{{postgresql-install-capture}}%br%
-Cassandra (optional)%,%cassandra%,%{{cassandra-install-capture}}{% endcapture %}
+PostgreSQL <small>(recommended for < 5K msg/sec)</small>%,%postgresql%,%{{postgresql-install-capture}}%br%
+Hybrid <br/>PostgreSQL+Cassandra<br/><small>(recommended for > 5K msg/sec)</small>%,%hybrid%,%{{hybrid-install-capture}}{% endcapture %}
 
 {% include content-toggle.html toggle-spec=contenttogglespec %}
-
-### Step 5. Configure ThingsBoard to use the external database
   
 Edit ThingsBoard configuration file 
 
