@@ -54,7 +54,7 @@ OpenJDK 64-Bit Server VM (build ...)
 Download installation package.
 
 ```bash
-wget http://d2yx87vr19hm2o.cloudfront.net/thingsboard-2.3.1.deb
+wget https://d2yx87vr19hm2o.cloudfront.net/thingsboard.deb
 ```
 
 Install ThingsBoard as a service
@@ -63,7 +63,36 @@ Install ThingsBoard as a service
 sudo dpkg -i thingsboard-2.3.1.deb
 ```
 
-### Step 3. Choose and install database 
+### Step 3. Obtain and configure license key 
+
+We assume you have already chosen your subscription plan or decided to purchase a perpetual license. 
+If not, please navigate to [pricing](/pricing/) page to select the best license option for your case and get your license. 
+See [How-to get pay-as-you-go subscription](/TODO) or [How-to get perpatual license](TODO) for more details.
+
+Once you get the license secret, you should put it to the thingsboard configuration file. 
+Open the file for editing using the following command:
+
+```bash 
+sudo nano /etc/thingsboard/conf/thingsboard.conf
+``` 
+
+Locate the following configuration block:
+
+```bash
+# License secret obtained from ThingsBoard License Portal (https://license.thingsboard.io)
+# UNCOMMENT NEXT LINE AND PUT YOUR LICENSE SECRET:
+# export TB_LICENSE_SECRET=
+```
+
+and put your license secret. Please don't forget to uncomment the export statement. See example below: 
+
+```bash
+# License secret obtained from ThingsBoard License Portal (https://license.thingsboard.io)
+# UNCOMMENT NEXT LINE AND PUT YOUR LICENSE SECRET:
+export TB_LICENSE_SECRET=YOUR_LICENSE_SECRET_HERE
+``` 
+
+### Step 4. Choose and install database 
 
 {% include templates/install-db.md %}
 
@@ -87,7 +116,7 @@ sudo service postgresql start
 
 {% include templates/cassandra-ubuntu-install.md %}
 
-### Step 4. Configure ThingsBoard to use the external database
+### Step 5. Configure ThingsBoard to use the external database
   
 Edit ThingsBoard configuration file 
 
@@ -142,7 +171,7 @@ export DATABASE_ENTITIES_TYPE=cassandra
 export DATABASE_TS_TYPE=cassandra
 ```
 
-### Step 5. [Optional] Memory update for slow machines (1GB of RAM) 
+### Step 6. [Optional] Memory update for slow machines (1GB of RAM) 
 
 For ThingsBoard service:
 
@@ -151,11 +180,11 @@ For ThingsBoard service:
 export JAVA_OPTS="$JAVA_OPTS -Xms256M -Xmx256M"
 ```
 
-### Step 6. Run installation script
+### Step 7. Run installation script
 {% include templates/run-install.md %} 
 
 
-### Step 7. Start ThingsBoard service
+### Step 8. Start ThingsBoard service
 
 {% include templates/start-service.md %}
 
