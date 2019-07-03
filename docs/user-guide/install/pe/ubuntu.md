@@ -96,6 +96,9 @@ export TB_LICENSE_SECRET=YOUR_LICENSE_SECRET_HERE
 
 {% include templates/install-db.md %}
 
+
+{% capture postgresql-install-capture %}
+
 #### PostgreSQL Installation (recommended)
 
 Instructions listed below will help you to install PostgreSQL.
@@ -110,11 +113,24 @@ sudo service postgresql start
 
 {% include templates/create-tb-db.md %}
 
+{% endcapture %}
+
+{% capture cassandra-install-capture %}
+
 #### [Optional] Cassandra Installation
 
 **NOTE:** This is an **optional** step. It is required only for specific production cases with high performance and scalability requirements. 
 
 {% include templates/cassandra-ubuntu-install.md %}
+
+{% endcapture %}
+
+
+{% capture contenttogglespec %}
+PostgreSQL (recommended)%,%postgresql%,%{{postgresql-install-capture}}%br%
+Cassandra (optional)%,%cassandra%,%{{cassandra-install-capture}}{% endcapture %}
+
+{% include content-toggle.html toggle-spec=contenttogglespec %}
 
 ### Step 5. Configure ThingsBoard to use the external database
   

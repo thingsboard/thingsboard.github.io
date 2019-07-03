@@ -1,0 +1,48 @@
+{% assign toggleraw = include.toggle-spec | split: '%br%' %}
+
+<div class="tb-content-toggle">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            {% for content in toggleraw %}
+            {% assign thisContent = content | split: '%,%' %}
+            {% assign buttonText=thisContent[0] | strip %}
+            {% assign toggleName=thisContent[1] %}
+            <a class="content-toggle-button{% if forloop.first == true %} active{% endif %}" data-target="#{{toggleName}}">
+                <div class="content-toggle-button-text">
+                    {{buttonText}}
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+        {% for content in toggleraw %}
+        {% assign thisContent = content | split: '%,%' %}
+        {% assign toggleName=thisContent[1] %}
+        {% assign toggleText=thisContent[2] %}
+        <div id="{{toggleName}}" class="panel-collapse collapse{% if forloop.first == true %} show{% endif %}">
+            <div class="panel-body">
+                {% capture noTocText %}
+                    {% include disable-toc.html content=toggleText %}
+                {% endcapture %}
+               {{ noTocText | markdownify }}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<script>
+    jqueryUiDefer(initContentToggle);
+    function initContentToggle() {
+        $(function(){
+            $('.tb-content-toggle a.content-toggle-button').click(function(event) {
+                event.preventDefault();
+                var id = $(this).attr("data-target");
+                $('.tb-content-toggle a.content-toggle-button').removeClass("active");
+                $(this).addClass("active");
+
+                $('.tb-content-toggle .panel-collapse').removeClass("show");
+                $('.tb-content-toggle .panel-collapse'+id).addClass("show");
+            });
+        });
+    }
+</script>
