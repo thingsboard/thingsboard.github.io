@@ -4,8 +4,44 @@ In this case, ThingsBoard will be storing timeseries data in Cassandra while con
 {% endcapture %}
 {% include templates/info-banner.md content=hybrid-info %}
 
-#### [Optional] Cassandra Installation
+##### Step 4.1 PostgreSQL Installation
 
-**NOTE:** This is an **optional** step. It is required only for specific production cases with high performance and scalability requirements. 
+{% include templates/postgres-install-ubuntu.md %}
+
+{% include templates/create-tb-db.md %}
+
+##### Step 4.2 Cassandra Installation
 
 {% include templates/cassandra-ubuntu-install.md %}
+
+##### Step 4.3 ThingsBoard Configuration
+
+Edit ThingsBoard configuration file 
+
+```bash 
+sudo nano /etc/thingsboard/conf/thingsboard.conf
+``` 
+
+Add the following lines to the configuration file. Don't forget to replace "PUT_YOUR_POSTGRESQL_PASSWORD_HERE" with your real postgres user password:
+
+```bash
+# DB Configuration 
+export DATABASE_ENTITIES_TYPE=sql
+export DATABASE_TS_TYPE=cassandra
+export SPRING_JPA_DATABASE_PLATFORM=org.hibernate.dialect.PostgreSQLDialect
+export SPRING_DRIVER_CLASS_NAME=org.postgresql.Driver
+export SPRING_DATASOURCE_URL=jdbc:postgresql://localhost:5432/thingsboard
+export SPRING_DATASOURCE_USERNAME=postgres
+export SPRING_DATASOURCE_PASSWORD=PUT_YOUR_POSTGRESQL_PASSWORD_HERE
+``` 
+
+You can optionally add the following parameters to reconfigure your ThingsBoard instance to connect to external Cassandra nodes:
+
+```bash
+export CASSANDRA_CLUSTER_NAME=Thingsboard Cluster
+export CASSANDRA_KEYSPACE_NAME=thingsboard
+export CASSANDRA_URL=127.0.0.1:9042
+export CASSANDRA_USE_CREDENTIALS=false
+export CASSANDRA_USERNAME=
+export CASSANDRA_PASSWORD=
+```

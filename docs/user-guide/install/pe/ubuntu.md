@@ -7,8 +7,6 @@ description: Installing ThingsBoard on Ubuntu
 
 ---
 
-{% include templates/live-demo-banner.md %}
-
 * TOC
 {:toc}
 
@@ -54,13 +52,13 @@ OpenJDK 64-Bit Server VM (build ...)
 Download installation package.
 
 ```bash
-wget https://d2yx87vr19hm2o.cloudfront.net/thingsboard.deb
+wget https://dist.thingsboard.io/thingsboard-2.4pe.deb
 ```
 
 Install ThingsBoard as a service
 
 ```bash
-sudo dpkg -i thingsboard-2.3.1.deb
+sudo dpkg -i thingsboard-2.4pe.deb
 ```
 
 ### Step 3. Obtain and configure license key 
@@ -92,7 +90,7 @@ and put your license secret. Please don't forget to uncomment the export stateme
 export TB_LICENSE_SECRET=YOUR_LICENSE_SECRET_HERE
 ``` 
 
-### Step 4. Configure ThingsBoard database 
+### Step 4. Configure ThingsBoard database
 
 {% include templates/install/install-db.md %}
 
@@ -100,64 +98,17 @@ export TB_LICENSE_SECRET=YOUR_LICENSE_SECRET_HERE
 PostgreSQL <small>(recommended for < 5K msg/sec)</small>%,%postgresql%,%templates/install/ubuntu-db-postgresql.md%br%
 Hybrid <br/>PostgreSQL+Cassandra<br/><small>(recommended for > 5K msg/sec)</small>%,%hybrid%,%templates/install/ubuntu-db-hybrid.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="ubuntuThingsboardDatabase" toggle-spec=contenttogglespec %}
-  
+{% include content-toggle.html content-toggle-id="ubuntuThingsboardDatabase" toggle-spec=contenttogglespec %} 
+
+### Step 6. [Optional] Memory update for slow machines (1GB of RAM) 
+
 Edit ThingsBoard configuration file 
 
 ```bash 
 sudo nano /etc/thingsboard/conf/thingsboard.conf
 ``` 
 
-To use **PostgreSQL** only (recommended):
-
-Add the following lines to the configuration file. Don't forget to replace "PUT_YOUR_POSTGRESQL_PASSWORD_HERE" with your real postgres user password:
-
-```bash
-# DB Configuration 
-export DATABASE_ENTITIES_TYPE=sql
-export DATABASE_TS_TYPE=sql
-export SPRING_DRIVER_CLASS_NAME=org.postgresql.Driver
-export SPRING_DATASOURCE_URL=jdbc:postgresql://localhost:5432/thingsboard
-export SPRING_DATASOURCE_USERNAME=postgres
-export SPRING_DATASOURCE_PASSWORD=PUT_YOUR_POSTGRESQL_PASSWORD_HERE
-```
-
-To use **PostgreSQL** and **Cassandra** in a **hybrid mode** (advanced usage):
-
-Add the following lines to the configuration file. Don't forget to replace "PUT_YOUR_POSTGRESQL_PASSWORD_HERE" with your real postgres user password:
-
-```bash
-# DB Configuration 
-export DATABASE_ENTITIES_TYPE=sql
-export DATABASE_TS_TYPE=cassandra
-export SPRING_DRIVER_CLASS_NAME=org.postgresql.Driver
-export SPRING_DATASOURCE_URL=jdbc:postgresql://localhost:5432/thingsboard
-export SPRING_DATASOURCE_USERNAME=postgres
-export SPRING_DATASOURCE_PASSWORD=PUT_YOUR_POSTGRESQL_PASSWORD_HERE
-``` 
-
-You can optionally add the following parameters to reconfigure your ThingsBoard instance to connect to external Cassandra nodes:
-
-```bash
-export CASSANDRA_CLUSTER_NAME=Thingsboard Cluster
-export CASSANDRA_KEYSPACE_NAME=thingsboard
-export CASSANDRA_URL=127.0.0.1:9042
-export CASSANDRA_USE_CREDENTIALS=false
-export CASSANDRA_USERNAME=
-export CASSANDRA_PASSWORD=
-```
-
-To use **Cassandra DB** only (not recommended):
-
-```bash
-# DB Configuration 
-export DATABASE_ENTITIES_TYPE=cassandra
-export DATABASE_TS_TYPE=cassandra
-```
-
-### Step 6. [Optional] Memory update for slow machines (1GB of RAM) 
-
-For ThingsBoard service:
+Add the following lines to the configuration file. 
 
 ```bash
 # Update ThingsBoard memory usage and restrict it to 256MB in /etc/thingsboard/conf/thingsboard.conf
@@ -172,7 +123,63 @@ export JAVA_OPTS="$JAVA_OPTS -Xms256M -Xmx256M"
 
 {% include templates/start-service.md %}
 
-**NOTE**: Please allow up to 90 seconds for the Web UI to start. This is applicable for slow machines with 1-2 CPUs.
+{% capture 90-sec-ui %}
+Please allow up to 90 seconds for the Web UI to start. This is applicable only for slow machines with 1-2 CPUs or 1-2 GB RAM.{% endcapture %}
+{% include templates/info-banner.md content=90-sec-ui %}
+
+### Step 9. Install ThingsBoard WebReport component
+
+Download installation package for the [Reports Server](/docs/user-guide/reporting/#reports-server) component:
+
+```bash
+wget https://dist.thingsboard.io/tb-web-report-2.4pe.deb
+```
+
+Install third-party libraries:
+
+```bash
+sudo apt install -yq gconf-service libasound2 libatk1.0-0 libc6 libcairo2 libcups2 libdbus-1-3 \
+     libexpat1 libfontconfig1 libgcc1 libgconf-2-4 libgdk-pixbuf2.0-0 libglib2.0-0 libgtk-3-0 libnspr4 \
+     libpango-1.0-0 libpangocairo-1.0-0 libstdc++6 libx11-6 libx11-xcb1 libxcb1 libxcomposite1 \
+     libxcursor1 libxdamage1 libxext6 libxfixes3 libxi6 libxrandr2 libxrender1 libxss1 libxtst6 \
+     ca-certificates fonts-liberation libappindicator1 libnss3 lsb-release xdg-utils unzip wget
+```
+
+Install Roboto fonts:
+
+```bash
+sudo apt install fonts-roboto
+```
+
+Install Noto fonts (Japanese, Chinese, etc.):
+
+```bash
+mkdir ~/noto
+cd ~/noto
+wget https://noto-website.storage.googleapis.com/pkgs/NotoSansCJKjp-hinted.zip
+unzip NotoSansCJKjp-hinted.zip
+sudo mkdir -p /usr/share/fonts/noto
+sudo cp *.otf /usr/share/fonts/noto
+sudo chmod 655 -R /usr/share/fonts/noto/
+sudo fc-cache -fv
+cd ..
+rm -rf ~/noto
+```
+
+Install and start Web Report service:
+
+```bash
+sudo dpkg -i tb-web-report-2.4pe.deb
+sudo service tb-web-report start
+```
+
+### Post-installation steps
+
+**Configure HAProxy to enable HTTPS**
+
+You may want to configure HTTPS access using HAProxy. 
+This is possible in case you are hosting ThingsBoard in the cloud and have a valid DNS name assigned to your instance.
+Please follow this [guide](/docs/user-guide/install/pe/add-haproxy-ubuntu) to install HAProxy and generate valid SSL certificate using Let's Encrypt.
 
 ### Troubleshooting
 
@@ -189,5 +196,7 @@ cat /var/log/thingsboard/thingsboard.log | grep ERROR
 ```
 
 ## Next steps
+
+
 
 {% assign currentGuide = "InstallationGuides" %}{% include templates/guides-banner.md %}
