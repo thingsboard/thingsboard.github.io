@@ -37,7 +37,19 @@ toc:
     path: /docs/user-guide/install/aws-marketplace-pe/
   - title: Upgrade instructions
     path: /docs/user-guide/install/aws-marketplace-pe-upgrade/
-- title: License Server
-  path: /products/license-server/
+- title: License Server  
+  section:
+  - title: Overview
+    path: /products/license-server/
+  - title: Subscriptions
+    path: /products/license-server/subscription/
+  - title: Perpetual
+    path: /products/license-server/perpetual/
+  - title: Billing info
+    path: /products/license-server/billing-info/
+  - title: User management
+    path: /products/license-server/user/
+  - title: Instance management
+    path: /products/license-server/instance/
 - title: Configuration
   path: /docs/user-guide/install/config/
