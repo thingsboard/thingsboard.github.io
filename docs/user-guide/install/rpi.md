@@ -32,11 +32,11 @@ Any Java version higher than or equal to 1.8 is fine.
 
 #### External database installation
 
-{% include templates/install-db.md %}
+{% include templates/install/install-db.md %}
 
 ###### SQL Database: PostgreSQL
 
-{% include templates/optional-db.md %}
+{% include templates/install/optional-db.md %}
 
 Instructions listed below will help you to install PostgreSQL.
 

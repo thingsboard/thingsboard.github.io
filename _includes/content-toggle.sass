@@ -31,7 +31,18 @@
         text-align: center
   .panel-collapse
     .panel-body
-      h1, h2, h3, h4, h5, h6
+      > table
+        width: auto !important
+        border: none !important
+        margin: 0 !important
+        display: block
+        > tbody
+          display: block
+          > tr
+            display: block
+            > td
+              display: block
+    h1, h2, h3, h4, h5, h6
         &:before
           height: 0 !important
           margin-top: 0 !important

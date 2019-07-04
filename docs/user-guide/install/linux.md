@@ -43,11 +43,11 @@ See corresponding instructions:
 
 #### External database installation
 
-{% include templates/install-db.md %}
+{% include templates/install/install-db.md %}
 
 ###### SQL Database: PostgreSQL
 
-{% include templates/optional-db.md %}
+{% include templates/install/optional-db.md %}
 
 Instructions listed below will help you to install PostgreSQL.
 
@@ -63,7 +63,7 @@ B,CentOS,shell,resources/postgresql-centos-installation.sh,/docs/user-guide/inst
 
 ###### NoSQL Database: Cassandra
 
-{% include templates/optional-db.md %}
+{% include templates/install/optional-db.md %}
 
 Instructions listed below will help you to install Cassandra.
 

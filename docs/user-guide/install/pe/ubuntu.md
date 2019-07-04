@@ -94,49 +94,13 @@ export TB_LICENSE_SECRET=YOUR_LICENSE_SECRET_HERE
 
 ### Step 4. Configure ThingsBoard database 
 
-{% include templates/install-db.md %}
-
-{% capture postgresql-install-capture %}
-
-ThingsBoard team recommends to use PostgreSQL for development and production environments with reasonable load (< 5000 msg/sec).
-Many cloud vendors support managed PostgreSQL servers which is a cost-effective solution for most of ThingsBoard instances.
-
-#### PostgreSQL Installation (recommended)
-
-Instructions listed below will help you to install PostgreSQL.
-
-```bash
-sudo apt-get update
-sudo apt-get install postgresql postgresql-contrib
-sudo service postgresql start
-```
-
-{% include templates/postgres-post-install.md %}
-
-{% include templates/create-tb-db.md %}
-
-{% endcapture %}
-
-{% capture hybrid-install-capture %}
-
-ThingsBoard team recommends to use Hybrid database approach if you do plan to have 1M+ devices in production or high data ingestion rate (> 5000 msg/sec).
-In this case, ThingsBoard will be storing timeseries data in Cassandra while continue to use PostgreSQL for main entities (devices/assets/dashboards/customers).  
-
-
-#### [Optional] Cassandra Installation
-
-**NOTE:** This is an **optional** step. It is required only for specific production cases with high performance and scalability requirements. 
-
-{% include templates/cassandra-ubuntu-install.md %}
-
-{% endcapture %}
-
+{% include templates/install/install-db.md %}
 
 {% capture contenttogglespec %}
-PostgreSQL <small>(recommended for < 5K msg/sec)</small>%,%postgresql%,%{{postgresql-install-capture}}%br%
-Hybrid <br/>PostgreSQL+Cassandra<br/><small>(recommended for > 5K msg/sec)</small>%,%hybrid%,%{{hybrid-install-capture}}{% endcapture %}
+PostgreSQL <small>(recommended for < 5K msg/sec)</small>%,%postgresql%,%templates/install/ubuntu-db-postgresql.md%br%
+Hybrid <br/>PostgreSQL+Cassandra<br/><small>(recommended for > 5K msg/sec)</small>%,%hybrid%,%templates/install/ubuntu-db-hybrid.md{% endcapture %}
 
-{% include content-toggle.html toggle-spec=contenttogglespec %}
+{% include content-toggle.html content-toggle-id="ubuntuThingsboardDatabase" toggle-spec=contenttogglespec %}
   
 Edit ThingsBoard configuration file 
 
