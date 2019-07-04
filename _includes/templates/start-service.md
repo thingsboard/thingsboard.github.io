@@ -1,4 +1,3 @@
-### Start ThingsBoard service
 
 Execute the following command to start ThingsBoard:
 

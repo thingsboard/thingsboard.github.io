@@ -19,6 +19,9 @@ toc:
     path: /docs/user-guide/alarms/
   - title: Device Connectivity Status
     path: /docs/user-guide/device-connectivity-status/
+  - title: Claiming Devices
+    new: true
+    path: /docs/user-guide/claiming-devices/
   - title: Entity Views
     new: true
     path: /docs/user-guide/entity-views/
@@ -31,6 +34,9 @@ toc:
     pe: true
   - title: White-labeling
     path: /docs/user-guide/white-labeling/
+    pe: true
+  - title: Self-registration
+    path: /docs/user-guide/self-registration/
     pe: true
   - title: Custom Translations
     path: /docs/user-guide/custom-translation/
@@ -75,6 +81,9 @@ toc:
   - title: CSV/XLS data export
     path: /docs/user-guide/csv-xls-data-export/
     pe: true
+  - title: Bulk Provisioning
+    new: true
+    path: /docs/user-guide/bulk-provisioning/
   - title: File Storage
     path: /docs/user-guide/file-storage/
     pe: true

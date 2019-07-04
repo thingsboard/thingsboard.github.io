@@ -26,12 +26,18 @@ toc:
   - title: Cluster setup
     path: /docs/user-guide/install/cluster-setup/
 - title: ThingsBoard Professional Edition
-  path: /products/thingsboard-pe/install/
+  section:
+  - title: Installation options
+    path: /docs/user-guide/install/pe/installation-options/
+  - title: Installing ThingsBoard PE on Ubuntu Server
+    path: /docs/user-guide/install/pe/ubuntu/
 - title: ThingsBoard Professional Edition on AWS Marketplace
   section:
   - title: Installation
     path: /docs/user-guide/install/aws-marketplace-pe/
   - title: Upgrade instructions
     path: /docs/user-guide/install/aws-marketplace-pe-upgrade/
+- title: License Server
+  path: /products/license-server/
 - title: Configuration
   path: /docs/user-guide/install/config/

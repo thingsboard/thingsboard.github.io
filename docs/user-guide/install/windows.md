@@ -28,11 +28,11 @@ If you don't have Java installed, please download and install Java 8 using this 
 
 #### External database installation
 
-{% include templates/install-db.md %}
+{% include templates/install/install-db.md %}
 
 ###### SQL Database: PostgreSQL
 
-{% include templates/optional-db.md %}
+{% include templates/install/optional-db.md %}
 
 Download the installation file [here](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads#windows) and follow the installation instructions.
 
@@ -42,7 +42,7 @@ Once PostgreSQL is installed you may want to create the new user or set the pass
 
 ###### NoSQL Database: Cassandra
 
-{% include templates/optional-db.md %}
+{% include templates/install/optional-db.md %}
 
 Instructions listed below will help you to install Cassandra.
 
