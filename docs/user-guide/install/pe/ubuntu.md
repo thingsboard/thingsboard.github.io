@@ -101,50 +101,19 @@ export TB_LICENSE_SECRET=YOUR_LICENSE_SECRET_HERE
 ThingsBoard team recommends to use PostgreSQL for development and production environments with reasonable load (< 5000 msg/sec).
 Many cloud vendors support managed PostgreSQL servers which is a cost-effective solution for most of ThingsBoard instances.
 
-#### PostgreSQL Installation (recommended)
+##### Step 4.1 PostgreSQL Installation
 
-Instructions listed below will help you to install PostgreSQL.
-
-```bash
-sudo apt-get update
-sudo apt-get install postgresql postgresql-contrib
-sudo service postgresql start
-```
-
-{% include templates/postgres-post-install.md %}
+{% include templates/postgres-install-ubuntu.md %}
 
 {% include templates/create-tb-db.md %}
 
-{% endcapture %}
+##### Step 4.2 ThingsBoard Configuration
 
-{% capture hybrid-install-capture %}
-
-ThingsBoard team recommends to use Hybrid database approach if you do plan to have 1M+ devices in production or high data ingestion rate (> 5000 msg/sec).
-In this case, ThingsBoard will be storing timeseries data in Cassandra while continue to use PostgreSQL for main entities (devices/assets/dashboards/customers).  
-
-
-#### [Optional] Cassandra Installation
-
-**NOTE:** This is an **optional** step. It is required only for specific production cases with high performance and scalability requirements. 
-
-{% include templates/cassandra-ubuntu-install.md %}
-
-{% endcapture %}
-
-
-{% capture contenttogglespec %}
-PostgreSQL <small>(recommended for < 5K msg/sec)</small>%,%postgresql%,%{{postgresql-install-capture}}%br%
-Hybrid <br/>PostgreSQL+Cassandra<br/><small>(recommended for > 5K msg/sec)</small>%,%hybrid%,%{{hybrid-install-capture}}{% endcapture %}
-
-{% include content-toggle.html toggle-spec=contenttogglespec %}
-  
 Edit ThingsBoard configuration file 
 
 ```bash 
 sudo nano /etc/thingsboard/conf/thingsboard.conf
 ``` 
-
-To use **PostgreSQL** only (recommended):
 
 Add the following lines to the configuration file. Don't forget to replace "PUT_YOUR_POSTGRESQL_PASSWORD_HERE" with your real postgres user password:
 
@@ -158,7 +127,30 @@ export SPRING_DATASOURCE_USERNAME=postgres
 export SPRING_DATASOURCE_PASSWORD=PUT_YOUR_POSTGRESQL_PASSWORD_HERE
 ```
 
-To use **PostgreSQL** and **Cassandra** in a **hybrid mode** (advanced usage):
+{% endcapture %}
+
+{% capture hybrid-install-capture %}
+
+ThingsBoard team recommends to use Hybrid database approach if you do plan to have 1M+ devices in production or high data ingestion rate (> 5000 msg/sec).
+In this case, ThingsBoard will be storing timeseries data in Cassandra while continue to use PostgreSQL for main entities (devices/assets/dashboards/customers).  
+
+##### Step 4.1 PostgreSQL Installation
+
+{% include templates/postgres-install-ubuntu.md %}
+
+{% include templates/create-tb-db.md %}
+
+##### Step 4.2 Cassandra Installation
+
+{% include templates/cassandra-ubuntu-install.md %}
+
+##### Step 4.3 ThingsBoard Configuration
+
+Edit ThingsBoard configuration file 
+
+```bash 
+sudo nano /etc/thingsboard/conf/thingsboard.conf
+``` 
 
 Add the following lines to the configuration file. Don't forget to replace "PUT_YOUR_POSTGRESQL_PASSWORD_HERE" with your real postgres user password:
 
@@ -183,13 +175,14 @@ export CASSANDRA_USERNAME=
 export CASSANDRA_PASSWORD=
 ```
 
-To use **Cassandra DB** only (not recommended):
+{% endcapture %}
 
-```bash
-# DB Configuration 
-export DATABASE_ENTITIES_TYPE=cassandra
-export DATABASE_TS_TYPE=cassandra
-```
+
+{% capture contenttogglespec %}
+PostgreSQL <small>(recommended for < 5K msg/sec)</small>%,%postgresql%,%{{postgresql-install-capture}}%br%
+Hybrid <br/>PostgreSQL+Cassandra<br/><small>(recommended for > 5K msg/sec)</small>%,%hybrid%,%{{hybrid-install-capture}}{% endcapture %}
+
+{% include content-toggle.html toggle-spec=contenttogglespec %}
 
 ### Step 6. [Optional] Memory update for slow machines (1GB of RAM) 
 
