@@ -58,7 +58,7 @@ If you prefer to use an SQL database, we recommend PostgreSQL.
 
 ##### [Optional] SQL Database: PostgreSQL
 
-{% include templates/optional-db.md %}
+{% include templates/install/optional-db.md %}
 
 Please use [this link](https://wiki.postgresql.org/wiki/Detailed_installation_guides) for the PostgreSQL installation instructions.
 
@@ -76,7 +76,7 @@ Please refer to appropriate section where you find instructions on how to instal
 
 ##### [Optional] Configure ThingsBoard to use external database
  
-{% include templates/optional-db.md %} 
+{% include templates/install/optional-db.md %} 
  
 Edit ThingsBoard configuration file: 
 

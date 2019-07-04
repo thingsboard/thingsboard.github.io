@@ -1,13 +1,15 @@
+{% assign contentToggleId = include.content-toggle-id %}
 {% assign toggleraw = include.toggle-spec | split: '%br%' %}
 
-<div class="tb-content-toggle">
+<div class="tb-content-toggle" id="{{contentToggleId}}">
     <div class="panel panel-default">
         <div class="panel-heading">
             {% for content in toggleraw %}
             {% assign thisContent = content | split: '%,%' %}
             {% assign buttonText=thisContent[0] | strip %}
             {% assign toggleName=thisContent[1] %}
-            <a class="content-toggle-button{% if forloop.first == true %} active{% endif %}" data-target="#{{toggleName}}">
+            {% if forloop.first == true %}{% assign firstTargetId=thisContent[1] %}{% endif %}
+            <a class="content-toggle-button" data-target="#{{toggleName}}">
                 <div class="content-toggle-button-text">
                     {{buttonText}}
                 </div>
@@ -17,13 +19,14 @@
         {% for content in toggleraw %}
         {% assign thisContent = content | split: '%,%' %}
         {% assign toggleName=thisContent[1] %}
-        {% assign toggleText=thisContent[2] %}
-        <div id="{{toggleName}}" class="panel-collapse collapse{% if forloop.first == true %} show{% endif %}">
+        {% assign togglePath=thisContent[2] %}
+        {% capture toggleText %}{% include {{togglePath}} %}{% endcapture %}
+        <div id="{{toggleName}}" class="panel-collapse collapse">
             <div class="panel-body">
                 {% capture noTocText %}
                     {% include disable-toc.html content=toggleText %}
                 {% endcapture %}
-               {{ noTocText | markdownify }}
+                <table><tr><td>{{ noTocText | markdownify }}</td></tr></table>
             </div>
         </div>
         {% endfor %}
@@ -31,18 +34,45 @@
 </div>
 
 <script>
-    jqueryUiDefer(initContentToggle);
-    function initContentToggle() {
+    jqueryUiDefer(initContentToggle{{contentToggleId}});
+    function initContentToggle{{contentToggleId}}() {
         $(function(){
-            $('.tb-content-toggle a.content-toggle-button').click(function(event) {
-                event.preventDefault();
-                var id = $(this).attr("data-target");
-                $('.tb-content-toggle a.content-toggle-button').removeClass("active");
-                $(this).addClass("active");
 
-                $('.tb-content-toggle .panel-collapse').removeClass("show");
-                $('.tb-content-toggle .panel-collapse'+id).addClass("show");
+            window.addEventListener('popstate', onPopState{{contentToggleId}});
+
+            onPopState{{contentToggleId}}();
+
+            $('.tb-content-toggle#{{contentToggleId}} a.content-toggle-button').click(function(event) {
+                event.preventDefault();
+                var id = $(this).attr("data-target").substring(1);
+                var param = '{{contentToggleId}}';
+                var params = Qs.parse(window.location.search, { ignoreQueryPrefix: true });
+                params[param] = id;
+
+                var newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?' + Qs.stringify(params);
+                if (window.location.hash) {
+                    newurl += window.location.hash;
+                }
+                window.history.pushState({ path: newurl }, '', newurl);
+                selectTarget{{contentToggleId}}(id);
             });
         });
     }
+
+    function onPopState{{contentToggleId}}() {
+        var params = Qs.parse(window.location.search, { ignoreQueryPrefix: true });
+        var targetId = params['{{contentToggleId}}'];
+        if (!targetId) {
+            targetId = '{{firstTargetId}}';
+        }
+        selectTarget{{contentToggleId}}(targetId);
+    }
+
+    function selectTarget{{contentToggleId}}(targetId) {
+        $(".tb-content-toggle#{{contentToggleId}} a.content-toggle-button").removeClass("active");
+        $(".tb-content-toggle#{{contentToggleId}} a.content-toggle-button[data-target='#"+targetId+"']").addClass("active");
+        $('.tb-content-toggle#{{contentToggleId}} .panel-collapse').removeClass("show");
+        $('.tb-content-toggle#{{contentToggleId}} .panel-collapse#'+targetId).addClass("show");
+    }
+
 </script>
