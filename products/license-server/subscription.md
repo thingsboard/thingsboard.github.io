@@ -17,11 +17,11 @@ There are five pre-defined subscription plans that are limited by amount of devi
 - ***Business***
 - ***Enterprise***
 
-Pay-as-you-go subscriptions are convenient for small companies and start-ups that are getting started with the platform and would like to minimize upfront licensing costs. Although pay-as-you-go model also fits needs of established businesses while developing and releasing IoT solution. See [pricing](https://thingsboard.io/pricing/) for more details about available subscriptions. 
+Pay-as-you-go subscriptions are convenient for small companies and start-ups that are getting started with the platform and would like to minimize upfront licensing costs. Although pay-as-you-go model also fits needs of established businesses while developing and releasing IoT solution. See [pricing](/pricing/) for more details about available subscriptions. 
 License Server allows to buy monthly or yearly subscriptions for ThingsBoard. In order to purchase the Subscription the customer may register on License portal and then follow simple steps: 
 - Go to ***Subscriptions*** — ***Choose a product*** — Choose a plan — Input ***Billing info*** — ***Create***
 
-or choose exact plan directly from [pricing](https://thingsboard.io/pricing/). Once you press ***Get your license*** button you will be routed to the License portal authentication/registration or directly to ***Billing info*** step if you are already logged in on the License portal. 
+or choose exact plan directly from [pricing](/pricing/). Once you press ***Get your license*** button you will be routed to the License portal authentication/registration or directly to ***Billing info*** step if you are already logged in on the License portal. 
 
 
 By default, subscription covers single ThingsBoard PE instance (server process). However, customer can add more instances to the same subscription. This allows to launch multiple instances that use same subscription credentials in one server cluster.

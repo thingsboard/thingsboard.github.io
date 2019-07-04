@@ -50,7 +50,7 @@ If you are interested to use it for selling your software, please [contact us](/
 
  - **Pay-as-you-go subscriptions**
  
-License Server allows to purchase monthly or yearly subscriptions for ThingsBoard. See [pricing](TODO) for more details about available subscriptions.
+License Server allows to purchase monthly or yearly subscriptions for ThingsBoard. See [pricing](/pricing/) for more details about available subscriptions.
 Once you purchase a subscription, you can flexibly upgrade or downgrade your subscription plan. By default, subscription covers single ThingsBoard PE instance (server process). 
 However, you can add more instances to the same subscription. This allows to launch multiple instances that use same subscription credentials in one server cluster.
 This feature is very useful for container based setups.
