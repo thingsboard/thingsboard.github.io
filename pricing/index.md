@@ -348,7 +348,7 @@ description: ThingsBoard Products Pricing
         <div class="item" data-tag="h4" data-item-id="trial-enable" data-title="If I want to be a re-seller of ThingsBoard, shall I have a discount?">
             <div class="container">
                 <p>
-                 We have clear and transparent conditions for partners. Send us a request via <a href="https://thingsboard.io/docs/contact-us/" target="blank">contact us</a> and we will discuss with you all benefits of cooperation with ThingsBoard Inc.   
+                 We have clear and transparent conditions for partners. Send us a request via <a href="/docs/contact-us/" target="blank">contact us</a> and we will discuss with you all benefits of cooperation with ThingsBoard Inc.   
                 </p>    
             </div>    
         </div>
@@ -363,7 +363,7 @@ description: ThingsBoard Products Pricing
         <div class="item" data-tag="h4" data-item-id="community-support" data-title="What does community support mean?">
             <div class="container">
                 <p>
-                Community support is free-of-charge option. It is a volonteering initiative, provided by our team. Please, be aware that support is one of ThingsBoard Inc. business fields. Although our engineers (as many of our customers know) successfully handle user's requests in their free time. Community support doesn't mean any obligation for ThingsBoard Inc. We encourage you to <a href="https://thingsboard.io/docs/">read documentation</a>, subscribe to our <a href="https://www.youtube.com/c/thingsboard" target ="blank">YouTube channel</a> where we host <a href="https://www.youtube.com/watch?v=M0CaascgDmg&list=PLYEKB_XwLCZJ6T8RPLTjRwMw0eoabpEKO" target="blank">the free Education course</a> and most demanded tutorials, samples and guides.
+                Community support is free-of-charge option. It is a volonteering initiative, provided by our team. Please, be aware that support is one of ThingsBoard Inc. business fields. Although our engineers (as many of our customers know) successfully handle user's requests in their free time. Community support doesn't mean any obligation for ThingsBoard Inc. We encourage you to <a href="/docs/">read documentation</a>, subscribe to our <a href="https://www.youtube.com/c/thingsboard" target ="blank">YouTube channel</a> where we host <a href="https://www.youtube.com/watch?v=M0CaascgDmg&list=PLYEKB_XwLCZJ6T8RPLTjRwMw0eoabpEKO" target="blank">the free Education course</a> and most demanded tutorials, samples and guides.
                 </p>
                 <p>Customer may also rely on answers from ThingsBoard <a href="https://github.com/thingsboard/thingsboard/issues" target="blank">community on GitHub</a> (issues page), send their queries to <a href="https://groups.google.com/forum/#!forum/thingsboard" target="blank">Q&A forum</a> and start <a href="http://stackoverflow.com/questions/tagged/thingsboard" target="blank">Stack Overflow</a> themes.   
                 </p>    
@@ -372,7 +372,7 @@ description: ThingsBoard Products Pricing
         <div class="item" data-tag="h4" data-item-id="professional-support" data-title="What support plans do you have?">
             <div class="container">
                 <p>
-                Please review ThingsBoard professional <a href="https://thingsboard.io/docs/services/support/" target="blank">support plans</a> and contact us.
+                Please review ThingsBoard professional <a href="/docs/services/support/" target="blank">support plans</a> and contact us.
                 </p>    
             </div>    
         </div>
@@ -386,7 +386,7 @@ description: ThingsBoard Products Pricing
         <div class="item" data-tag="h4" data-item-id="buy-support" data-title="What kind of professional support can I order?">
             <div class="container">
                 <p>
-                We provide support bundles which contain server issues and application development. Please review ThingsBoard professional <a href="https://thingsboard.io/docs/services/support/" target="blank">support plans</a>. Also we will add ability to buy support plan from <a href="https://license.thingsboard.io/">License portal</a>. 
+                We provide support bundles which contain server issues and application development. Please review ThingsBoard professional <a href="/docs/services/support/" target="blank">support plans</a>. Also we will add ability to buy support plan from <a href="https://license.thingsboard.io/">License portal</a>. 
                 </p>    
             </div>    
         </div>
