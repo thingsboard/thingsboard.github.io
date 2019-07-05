@@ -99,7 +99,7 @@ Execute the following commands:
 
 ```bash
 sudo chmod +x /usr/bin/haproxy-default-cert
-touch /home/ubuntu/.rnd
+touch ~/.rnd
 sudo haproxy-default-cert
 ```
 
@@ -216,7 +216,7 @@ cat <<EOT | sudo tee /usr/bin/haproxy-refresh
 
 HA_PROXY_DIR=/usr/share/tb-haproxy
 LE_DIR=/usr/share/tb-haproxy/letsencrypt/live
-DOMAINS=\$(ls \${LE_DIR})
+DOMAINS=\$(ls -I README \${LE_DIR})
 
 # update certs for HA Proxy
 for DOMAIN in \${DOMAINS}

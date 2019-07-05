@@ -8,7 +8,7 @@ Many cloud vendors support managed PostgreSQL servers which is a cost-effective 
 
 {% include templates/install/postgres-install-rhel.md %}
 
-{% include templates/install/create-tb-db.md %}
+{% include templates/install/create-tb-db-rhel.md %}
 
 ##### Step 4.2 ThingsBoard Configuration
 

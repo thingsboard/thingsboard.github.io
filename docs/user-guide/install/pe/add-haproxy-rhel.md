@@ -13,7 +13,15 @@ as a service. This is possible in case you are hosting ThingsBoard in the cloud 
 
 ### Prerequisites
 
-RHEL/CentOS 7 (or Fedora equivalent) or later with valid DNS name assigned to the instance. Network settings should allow connections on Port 80 (HTTP) and 443 (HTTPS). 
+RHEL/CentOS 7 with valid DNS name assigned to the instance. Network settings should allow connections on Port 80 (HTTP) and 443 (HTTPS).
+
+In order to open 80 and 443 ports execute the following command:
+
+```bash
+sudo firewall-cmd --zone=public --add-port=80/tcp --permanent
+sudo firewall-cmd --zone=public --add-port=443/tcp --permanent
+sudo firewall-cmd --reload
+``` 
 
 ### Step 1. Connect to your ThingsBoard instance over SSH
 
@@ -27,21 +35,28 @@ or consult your cloud vendor for different options.
 
 ### Step 2. Install HAProxy Load Balancer package
 
-Enable EPEL Repository:
-
-```bash
-sudo yum -y install epel-release
-```
-{: .copy-code}
-
 Execute the following commands to install HAProxy package:
 
+- CentOS 7:
 ```bash
-sudo yum -y install haproxy
+sudo yum -y install http://www.nosuchhost.net/~cheese/fedora/packages/epel-7/x86_64/cheese-release-7-1.noarch.rpm
+sudo yum -y install haproxy-1.7.3
 ```
-{: .copy-code}
+
+- RHEL 7:
+
+```bash
+sudo yum -y install ftp://ftp.pbone.net/mirror/ftp5.gwdg.de/pub/opensuse/repositories/home:/IFAD:/RHEL/RHEL_7/x86_64/haproxy-1.7.11-1.1.x86_64.rpm
+```
 
 ### Step 3. Install Certbot package
+
+RHEL 7 ONLY - Enable the optional channel:
+
+```bash
+sudo yum -y install yum-utils
+sudo yum-config-manager --enable rhui-REGION-rhel-server-extras rhui-REGION-rhel-server-optional
+```
 
 Execute the following commands to install Certbot package:
 
@@ -105,7 +120,7 @@ Execute the following commands:
 
 ```bash
 sudo chmod +x /usr/bin/haproxy-default-cert
-touch /home/ubuntu/.rnd
+touch ~/.rnd
 sudo haproxy-default-cert
 ```
 
@@ -145,13 +160,6 @@ defaults
  timeout tunnel  1h    # timeout to use with WebSocket and CONNECT
 
  default-server init-addr none
-
-listen stats
- bind *:9999
- stats enable
- stats hide-version
- stats uri /stats
- stats auth admin:admin@123
 
 frontend http-in
  bind *:80
@@ -222,7 +230,7 @@ cat <<EOT | sudo tee /usr/bin/haproxy-refresh
 
 HA_PROXY_DIR=/usr/share/tb-haproxy
 LE_DIR=/usr/share/tb-haproxy/letsencrypt/live
-DOMAINS=\$(ls \${LE_DIR})
+DOMAINS=\$(ls -I README \${LE_DIR})
 
 # update certs for HA Proxy
 for DOMAIN in \${DOMAINS}
