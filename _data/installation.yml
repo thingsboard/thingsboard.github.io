@@ -31,6 +31,8 @@ toc:
     path: /docs/user-guide/install/pe/installation-options/
   - title: Installing ThingsBoard PE on Ubuntu Server
     path: /docs/user-guide/install/pe/ubuntu/
+  - title: Installing ThingsBoard PE on CentOS/RHEL Server
+    path: /docs/user-guide/install/pe/rhel/
 - title: ThingsBoard Professional Edition on AWS Marketplace
   section:
   - title: Installation

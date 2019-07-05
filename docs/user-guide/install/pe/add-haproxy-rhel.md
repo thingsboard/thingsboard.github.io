@@ -1,19 +1,19 @@
 ---
 layout: docwithnav
-title: Install HAProxy Load Balancer for ThingsBoard on Ubuntu
-description: Install HAProxy Load Balancer for ThingsBoard on Ubuntu
+title: Install HAProxy Load Balancer for ThingsBoard on CentOS/RHEL
+description: Install HAProxy Load Balancer for ThingsBoard on CentOS/RHEL
 hidetoc: "true"
 ---
 
 This guide describes how to install HAProxy with Let's Encrypt
-as ubuntu service. This is possible in case you are hosting ThingsBoard in the cloud and have a valid DNS name assigned to your instance.
+as a service. This is possible in case you are hosting ThingsBoard in the cloud and have a valid DNS name assigned to your instance.
 
 * TOC
 {:toc}
 
 ### Prerequisites
 
-Ubuntu 18.04 with valid DNS name assigned to the instance. Network settings should allow connections on Port 80 (HTTP) and 443 (HTTPS). 
+RHEL/CentOS 7 (or Fedora equivalent) or later with valid DNS name assigned to the instance. Network settings should allow connections on Port 80 (HTTP) and 443 (HTTPS). 
 
 ### Step 1. Connect to your ThingsBoard instance over SSH
 
@@ -27,20 +27,26 @@ or consult your cloud vendor for different options.
 
 ### Step 2. Install HAProxy Load Balancer package
 
+Enable EPEL Repository:
+
+```bash
+sudo yum -y install epel-release
+```
+{: .copy-code}
+
 Execute the following commands to install HAProxy package:
 
 ```bash
-sudo add-apt-repository ppa:vbernat/haproxy-1.7
-sudo apt-get update
-sudo apt-get install haproxy openssl
+sudo yum -y install haproxy
 ```
+{: .copy-code}
 
 ### Step 3. Install Certbot package
 
 Execute the following commands to install Certbot package:
 
 ```bash
-sudo apt-get install ca-certificates certbot
+sudo yum -y install ca-certificates certbot
 ```
 {: .copy-code}
 

@@ -64,7 +64,7 @@ Please use [this link](https://wiki.postgresql.org/wiki/Detailed_installation_gu
 
 Once PostgreSQL is installed you may want to create a new user or set the password for the main user.
 
-{% include templates/create-tb-db.md %}
+{% include templates/install/create-tb-db.md %}
 
 
 ##### [Optional] NoSQL Database: Cassandra

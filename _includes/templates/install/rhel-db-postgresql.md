@@ -6,7 +6,7 @@ Many cloud vendors support managed PostgreSQL servers which is a cost-effective 
 
 ##### Step 4.1 PostgreSQL Installation
 
-{% include templates/install/postgres-install-ubuntu.md %}
+{% include templates/install/postgres-install-rhel.md %}
 
 {% include templates/install/create-tb-db.md %}
 

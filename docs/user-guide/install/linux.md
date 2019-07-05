@@ -57,9 +57,9 @@ B,CentOS,shell,resources/postgresql-centos-installation.sh,/docs/user-guide/inst
 {% include tabs.html %}   
 
 
-{% include templates/postgres-post-install.md %}
+{% include templates/install/postgres-post-install.md %}
 
-{% include templates/create-tb-db.md %}
+{% include templates/install/create-tb-db.md %}
 
 ###### NoSQL Database: Cassandra
 

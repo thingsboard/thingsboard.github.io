@@ -38,7 +38,7 @@ Download the installation file [here](https://www.enterprisedb.com/downloads/pos
 
 Once PostgreSQL is installed you may want to create the new user or set the password for the main user.
 
-{% include templates/create-tb-db.md %}
+{% include templates/install/create-tb-db.md %}
 
 ###### NoSQL Database: Cassandra
 

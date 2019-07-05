@@ -6,13 +6,13 @@ In this case, ThingsBoard will be storing timeseries data in Cassandra while con
 
 ##### Step 4.1 PostgreSQL Installation
 
-{% include templates/install/postgres-install-ubuntu.md %}
+{% include templates/install/postgres-install-rhel.md %}
 
 {% include templates/install/create-tb-db.md %}
 
 ##### Step 4.2 Cassandra Installation
 
-{% include templates/install/cassandra-ubuntu-install.md %}
+{% include templates/install/cassandra-rhel-install.md %}
 
 ##### Step 4.3 ThingsBoard Configuration
 

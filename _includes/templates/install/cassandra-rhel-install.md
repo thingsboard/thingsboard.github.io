@@ -1,3 +1,6 @@
+Instructions listed below will help you to install Cassandra.
+
+```bash
 # Add cassandra repository
 sudo touch /etc/yum.repos.d/datastax.repo
 echo '[datastax]' | sudo tee --append /etc/yum.repos.d/datastax.repo > /dev/null
@@ -14,3 +17,4 @@ sudo yum install cassandra30-tools
 sudo service cassandra start
 # Configure the database to start automatically when OS starts.
 sudo chkconfig cassandra on
+```

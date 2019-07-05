@@ -6,4 +6,4 @@ sudo apt-get install postgresql postgresql-contrib
 sudo service postgresql start
 ```
 
-{% include templates/postgres-post-install.md %}
+{% include templates/install/postgres-post-install.md %}

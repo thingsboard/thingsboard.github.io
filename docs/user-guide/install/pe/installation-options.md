@@ -79,7 +79,7 @@ notitle: "true"
                                         </a>
                                     </div>
                                     <div class="deployment-card-block">
-                                        <a href="/docs/user-guide/install/rhel/">
+                                        <a href="/docs/user-guide/install/pe/rhel/">
                                             <span>
                                                 <div class="deployment-logo" style="height:134px">
                                                     <img width="" src="/images/install/platform/centos-redhat.png" title="CentOS/RHEL" alt="CentOS/RHEL">

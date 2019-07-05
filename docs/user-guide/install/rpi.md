@@ -46,9 +46,9 @@ sudo apt-get install postgresql postgresql-contrib
 sudo service postgresql start
 ```
 
-{% include templates/postgres-post-install.md %}
+{% include templates/install/postgres-post-install.md %}
 
-{% include templates/create-tb-db.md %}
+{% include templates/install/create-tb-db.md %}
 
 ### ThingsBoard service installation
 
