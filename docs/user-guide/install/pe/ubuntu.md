@@ -54,12 +54,14 @@ Download installation package.
 ```bash
 wget https://dist.thingsboard.io/thingsboard-2.4pe.deb
 ```
+{: .copy-code}
 
 Install ThingsBoard as a service
 
 ```bash
 sudo dpkg -i thingsboard-2.4pe.deb
 ```
+{: .copy-code}
 
 ### Step 3. Obtain and configure license key 
 
@@ -73,6 +75,7 @@ Open the file for editing using the following command:
 ```bash 
 sudo nano /etc/thingsboard/conf/thingsboard.conf
 ``` 
+{: .copy-code}
 
 Locate the following configuration block:
 
@@ -107,6 +110,7 @@ Edit ThingsBoard configuration file
 ```bash 
 sudo nano /etc/thingsboard/conf/thingsboard.conf
 ``` 
+{: .copy-code}
 
 Add the following lines to the configuration file. 
 
@@ -114,6 +118,7 @@ Add the following lines to the configuration file.
 # Update ThingsBoard memory usage and restrict it to 256MB in /etc/thingsboard/conf/thingsboard.conf
 export JAVA_OPTS="$JAVA_OPTS -Xms256M -Xmx256M"
 ```
+{: .copy-code}
 
 ### Step 7. Run installation script
 {% include templates/run-install.md %} 
@@ -134,6 +139,7 @@ Download installation package for the [Reports Server](/docs/user-guide/reportin
 ```bash
 wget https://dist.thingsboard.io/tb-web-report-2.4pe.deb
 ```
+{: .copy-code}
 
 Install third-party libraries:
 
@@ -144,12 +150,14 @@ sudo apt install -yq gconf-service libasound2 libatk1.0-0 libc6 libcairo2 libcup
      libxcursor1 libxdamage1 libxext6 libxfixes3 libxi6 libxrandr2 libxrender1 libxss1 libxtst6 \
      ca-certificates fonts-liberation libappindicator1 libnss3 lsb-release xdg-utils unzip wget
 ```
+{: .copy-code}
 
 Install Roboto fonts:
 
 ```bash
 sudo apt install fonts-roboto
 ```
+{: .copy-code}
 
 Install Noto fonts (Japanese, Chinese, etc.):
 
@@ -194,6 +202,7 @@ You can issue the following command in order to check if there are any errors on
 ```bash
 cat /var/log/thingsboard/thingsboard.log | grep ERROR
 ```
+{: .copy-code}
 
 ## Next steps
 

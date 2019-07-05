@@ -42,6 +42,7 @@ Execute the following commands to install Certbot package:
 ```bash
 sudo apt-get install ca-certificates certbot
 ```
+{: .copy-code}
 
 ### Step 4. Install default self-signed certificate
 
@@ -92,6 +93,7 @@ if [ ! -e \${DEFAULT_PEM} ]; then
 fi
 EOT
 ```
+{: .copy-code}
 
 Execute the following commands:
 
@@ -180,6 +182,7 @@ backend tb-backend
   http-request set-header X-Forwarded-Port %[dst_port]
 EOT
 ```
+{: .copy-code}
 
 ### Step 6. Configure Certbot with Let’s Encrypt
 
@@ -193,6 +196,7 @@ sudo mkdir -p /usr/local/etc/letsencrypt \
 && sudo rm -rf /etc/letsencrypt \
 && sudo ln -s /usr/share/tb-haproxy/letsencrypt /etc/letsencrypt
 ```
+{: .copy-code}
 
 ```bash
 cat <<EOT | sudo tee /usr/local/etc/letsencrypt/cli.ini
@@ -204,6 +208,7 @@ non-interactive = True
 preferred-challenges = http-01
 EOT
 ```
+{: .copy-code}
 
 ```bash
 cat <<EOT | sudo tee /usr/bin/haproxy-refresh
@@ -223,6 +228,7 @@ done
 exec service haproxy restart
 EOT
 ```
+{: .copy-code}
 
 ```bash
 cat <<EOT | sudo tee /usr/bin/certbot-certonly
@@ -231,6 +237,7 @@ cat <<EOT | sudo tee /usr/bin/certbot-certonly
 /usr/bin/certbot certonly -c /usr/local/etc/letsencrypt/cli.ini "\$@"
 EOT
 ```
+{: .copy-code}
 
 ```bash
 cat <<EOT | sudo tee /usr/bin/certbot-renew
@@ -239,10 +246,12 @@ cat <<EOT | sudo tee /usr/bin/certbot-renew
 /usr/bin/certbot -c /usr/local/etc/letsencrypt/cli.ini renew "\$@"
 EOT
 ```
+{: .copy-code}
 
 ```bash
 sudo chmod +x /usr/bin/haproxy-refresh /usr/bin/certbot-certonly /usr/bin/certbot-renew
 ```
+{: .copy-code}
 
 ### Step 7. Install certificates auto renewal cron job
 
@@ -265,6 +274,7 @@ PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 0 */12 * * * root test -x /usr/bin/certbot && perl -e 'sleep int(rand(3600))' && certbot -c /usr/local/etc/letsencrypt/cli.ini -q renew && haproxy-refresh
 EOT
 ```
+{: .copy-code}
 
 ### Step 8. Restart HAProxy Load Balancer
 
@@ -273,6 +283,7 @@ Finally restart HAProxy Load Balancer service in order changes take effect:
 ```bash
 sudo service haproxy restart
 ```
+{: .copy-code}
 
 ### Step 9. Execute command to get generate certificate using Let's Encrypt
 
@@ -289,3 +300,4 @@ Finally restart HAProxy:
 ```bash
 sudo haproxy-refresh
 ```
+{: .copy-code}
