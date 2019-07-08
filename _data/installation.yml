@@ -13,8 +13,10 @@ toc:
     path: /docs/user-guide/install/docker-windows/
   - title: Installing ThingsBoard on Windows
     path: /docs/user-guide/install/windows/
-  - title: Installing ThingsBoard on Linux (Ubuntu & CentOS)
-    path: /docs/user-guide/install/linux/
+  - title: Installing ThingsBoard CE on Ubuntu Server
+    path: /docs/user-guide/install/ubuntu/
+  - title: Installing ThingsBoard CE on CentOS/RHEL Server
+    path: /docs/user-guide/install/rhel/
   - title: Installing ThingsBoard on Raspberry Pi 3
     path: /docs/user-guide/install/rpi/
   - title: Installing ThingsBoard on AWS EC2

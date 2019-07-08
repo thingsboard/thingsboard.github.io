@@ -26,32 +26,7 @@ sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.
 
 ### Step 1. Install Java 8 (OpenJDK) 
 
-ThingsBoard service is running on Java 8. Follow this instructions to install OpenJDK 8:
-
-```bash
-sudo yum install java-1.8.0-openjdk
-```
-
-Please don't forget to configure your operating system to use OpenJDK 8 by default. 
-You can configure which version is the default using the following command:
-
-```bash
-sudo update-alternatives --config java
-```
-
-You can check the installation using the following command:
-
-```bash
-java -version
-```
-
-Expected command output is:
-
-```text
-openjdk version "1.8.0_xxx"
-OpenJDK Runtime Environment (...)
-OpenJDK 64-Bit Server VM (build ...)
-```
+{% include templates/install/rhel-java-install.md %}
 
 ### Step 2. ThingsBoard service installation
 
@@ -111,20 +86,7 @@ Hybrid <br/>PostgreSQL+Cassandra<br/><small>(recommended for > 5K msg/sec)</smal
 
 ### Step 6. [Optional] Memory update for slow machines (1GB of RAM) 
 
-Edit ThingsBoard configuration file 
-
-```bash 
-sudo nano /etc/thingsboard/conf/thingsboard.conf
-``` 
-{: .copy-code}
-
-Add the following lines to the configuration file. 
-
-```bash
-# Update ThingsBoard memory usage and restrict it to 256MB in /etc/thingsboard/conf/thingsboard.conf
-export JAVA_OPTS="$JAVA_OPTS -Xms256M -Xmx256M"
-```
-{: .copy-code}
+{% include templates/install/memory-on-slow-machines.md %} 
 
 ### Step 7. Run installation script
 {% include templates/run-install.md %} 
@@ -197,26 +159,11 @@ sudo service tb-web-report start
 
 ### Post-installation steps
 
-**Configure HAProxy to enable HTTPS**
-
-You may want to configure HTTPS access using HAProxy. 
-This is possible in case you are hosting ThingsBoard in the cloud and have a valid DNS name assigned to your instance.
-Please follow this [guide](/docs/user-guide/install/pe/add-haproxy-rhel) to install HAProxy and generate valid SSL certificate using Let's Encrypt.
+{% include templates/install/rhel-haproxy-postinstall.md %}
 
 ### Troubleshooting
 
-ThingsBoard logs are stored in the following directory:
- 
-```bash
-/var/log/thingsboard
-```
-
-You can issue the following command in order to check if there are any errors on the backend side:
- 
-```bash
-cat /var/log/thingsboard/thingsboard.log | grep ERROR
-```
-{: .copy-code}
+{% include templates/install/troubleshooting.md %}
 
 ## Next steps
 

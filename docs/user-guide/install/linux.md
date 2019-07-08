@@ -4,6 +4,7 @@ assignees:
 - ashvayka
 title: Installing ThingsBoard on Linux
 description: Installing ThingsBoard on Linux
+redirect_to: "/docs/user-guide/install/ubuntu"
 
 ---
 

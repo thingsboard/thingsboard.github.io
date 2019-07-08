@@ -19,33 +19,7 @@ To run ThingsBoard and Cassandra on a single machine you will need at least 8Gb 
 
 ### Step 1. Install Java 8 (OpenJDK) 
 
-ThingsBoard service is running on Java 8. Follow this instructions to install OpenJDK 8:
-
-```bash
-sudo apt update
-sudo apt install openjdk-8-jdk
-```
-
-Please don't forget to configure your operating system to use OpenJDK 8 by default. 
-You can configure which version is the default using the following command:
-
-```bash
-sudo update-alternatives --config java
-```
-
-You can check the installation using the following command:
-
-```bash
-java -version
-```
-
-Expected command output is:
-
-```text
-openjdk version "1.8.0_xxx"
-OpenJDK Runtime Environment (...)
-OpenJDK 64-Bit Server VM (build ...)
-```
+{% include templates/install/ubuntu-java-install.md %}
 
 ### Step 2. ThingsBoard service installation
 
@@ -103,28 +77,15 @@ Hybrid <br/>PostgreSQL+Cassandra<br/><small>(recommended for > 5K msg/sec)</smal
 
 {% include content-toggle.html content-toggle-id="ubuntuThingsboardDatabase" toggle-spec=contenttogglespec %} 
 
-### Step 6. [Optional] Memory update for slow machines (1GB of RAM) 
+### Step 5. [Optional] Memory update for slow machines (1GB of RAM) 
 
-Edit ThingsBoard configuration file 
+{% include templates/install/memory-on-slow-machines.md %} 
 
-```bash 
-sudo nano /etc/thingsboard/conf/thingsboard.conf
-``` 
-{: .copy-code}
-
-Add the following lines to the configuration file. 
-
-```bash
-# Update ThingsBoard memory usage and restrict it to 256MB in /etc/thingsboard/conf/thingsboard.conf
-export JAVA_OPTS="$JAVA_OPTS -Xms256M -Xmx256M"
-```
-{: .copy-code}
-
-### Step 7. Run installation script
+### Step 6. Run installation script
 {% include templates/run-install.md %} 
 
 
-### Step 8. Start ThingsBoard service
+### Step 7. Start ThingsBoard service
 
 {% include templates/start-service.md %}
 
@@ -132,7 +93,7 @@ export JAVA_OPTS="$JAVA_OPTS -Xms256M -Xmx256M"
 Please allow up to 90 seconds for the Web UI to start. This is applicable only for slow machines with 1-2 CPUs or 1-2 GB RAM.{% endcapture %}
 {% include templates/info-banner.md content=90-sec-ui %}
 
-### Step 9. Install ThingsBoard WebReport component
+### Step 8. Install ThingsBoard WebReport component
 
 Download installation package for the [Reports Server](/docs/user-guide/reporting/#reports-server) component:
 
@@ -183,26 +144,11 @@ sudo service tb-web-report start
 
 ### Post-installation steps
 
-**Configure HAProxy to enable HTTPS**
-
-You may want to configure HTTPS access using HAProxy. 
-This is possible in case you are hosting ThingsBoard in the cloud and have a valid DNS name assigned to your instance.
-Please follow this [guide](/docs/user-guide/install/pe/add-haproxy-ubuntu) to install HAProxy and generate valid SSL certificate using Let's Encrypt.
+{% include templates/install/ubuntu-haproxy-postinstall.md %}
 
 ### Troubleshooting
 
-ThingsBoard logs are stored in the following directory:
- 
-```bash
-/var/log/thingsboard
-```
-
-You can issue the following command in order to check if there are any errors on the backend side:
- 
-```bash
-cat /var/log/thingsboard/thingsboard.log | grep ERROR
-```
-{: .copy-code}
+{% include templates/install/troubleshooting.md %}
 
 ## Next steps
 
