@@ -73,6 +73,4 @@ Please allow up to 90 seconds for the Web UI to start. This is applicable only f
 
 ## Next steps
 
-
-
 {% assign currentGuide = "InstallationGuides" %}{% include templates/guides-banner.md %}
