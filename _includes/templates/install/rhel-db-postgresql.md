@@ -4,13 +4,13 @@ Many cloud vendors support managed PostgreSQL servers which is a cost-effective 
 {% endcapture %}
 {% include templates/info-banner.md content=postgresql-info %}
 
-##### Step 4.1 PostgreSQL Installation
+##### PostgreSQL Installation
 
 {% include templates/install/postgres-install-rhel.md %}
 
 {% include templates/install/create-tb-db-rhel.md %}
 
-##### Step 4.2 ThingsBoard Configuration
+##### ThingsBoard Configuration
 
 Edit ThingsBoard configuration file 
 
