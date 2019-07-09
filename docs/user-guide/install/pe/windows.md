@@ -2,8 +2,8 @@
 layout: docwithnav
 assignees:
 - ashvayka
-title: Installing ThingsBoard PE on Ubuntu
-description: Installing ThingsBoard on Ubuntu
+title: Installing ThingsBoard PE on Windows
+description: Installing ThingsBoard on Windows
 
 ---
 
@@ -24,19 +24,14 @@ To run ThingsBoard and Cassandra on a single machine you will need at least 8Gb 
 
 ### Step 2. ThingsBoard service installation
 
-Download installation package.
+Download and run the installation package.
 
 ```bash
-wget https://dist.thingsboard.io/thingsboard-2.4pe.deb
+https://dist.thingsboard.io/thingsboard-windows-setup-2.4pe.exe
 ```
 {: .copy-code}
 
-Install ThingsBoard as a service
-
-```bash
-sudo dpkg -i thingsboard-2.4pe.deb
-```
-{: .copy-code}
+**Note:** We assume you have installed ThingsBoard to default location: *C:\Program Files (x86)\thingsboard*  
 
 ### Step 3. Obtain and configure license key 
 
@@ -44,28 +39,28 @@ We assume you have already chosen your subscription plan or decided to purchase 
 If not, please navigate to [pricing](/pricing/) page to select the best license option for your case and get your license. 
 See [How-to get pay-as-you-go subscription](/TODO) or [How-to get perpatual license](TODO) for more details.
 
-Once you get the license secret, you should put it to the thingsboard configuration file. 
-Open the file for editing using the following command:
+Once you get the license secret, you should put it to the thingsboard configuration file.
 
-```bash 
-sudo nano /etc/thingsboard/conf/thingsboard.conf
+Open the Notepad or other editor as administrator user (right click on the app icon and select "Run as administrator").  
+Open the following file for editing (select "All Files" instead of "Text Documents" in file choosing dialog, the encoding is UTF-8):
+
+```text 
+C:\Program Files (x86)\thingsboard\conf\thingsboard.yml
 ``` 
 {: .copy-code}
 
-Locate the following configuration block:
+Scroll to the bottom of the file and locate the following configuration block:
 
-```bash
-# License secret obtained from ThingsBoard License Portal (https://license.thingsboard.io)
-# UNCOMMENT NEXT LINE AND PUT YOUR LICENSE SECRET:
-# export TB_LICENSE_SECRET=
+```yml
+license:
+    secret: "${TB_LICENSE_SECRET:}" # license secret obtained from ThingsBoard License Portal (https://license.thingsboard.io)
 ```
 
-and put your license secret. Please don't forget to uncomment the export statement. See example below: 
+and put your license secret. See example below: 
 
-```bash
-# License secret obtained from ThingsBoard License Portal (https://license.thingsboard.io)
-# UNCOMMENT NEXT LINE AND PUT YOUR LICENSE SECRET:
-export TB_LICENSE_SECRET=YOUR_LICENSE_SECRET_HERE
+```yml
+license:
+    secret: "${TB_LICENSE_SECRET:YOUR_LICENSE_SECRET_HERE}" # license secret obtained from ThingsBoard License Portal (https://license.thingsboard.io)
 ``` 
 
 ### Step 4. Configure ThingsBoard database
@@ -73,22 +68,37 @@ export TB_LICENSE_SECRET=YOUR_LICENSE_SECRET_HERE
 {% include templates/install/install-db.md %}
 
 {% capture contenttogglespec %}
-PostgreSQL <small>(recommended for < 5K msg/sec)</small>%,%postgresql%,%templates/install/ubuntu-db-postgresql.md%br%
-Hybrid <br/>PostgreSQL+Cassandra<br/><small>(recommended for > 5K msg/sec)</small>%,%hybrid%,%templates/install/ubuntu-db-hybrid.md{% endcapture %}
+PostgreSQL <small>(recommended for < 5K msg/sec)</small>%,%postgresql%,%templates/install/windows-db-postgresql.md%br%
+Hybrid <br/>PostgreSQL+Cassandra<br/><small>(recommended for > 5K msg/sec)</small>%,%hybrid%,%templates/install/windows-db-hybrid.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="ubuntuThingsboardDatabase" toggle-spec=contenttogglespec %} 
 
 ### Step 5. [Optional] Memory update for slow machines (1GB of RAM) 
 
-{% include templates/install/memory-on-slow-machines.md %} 
+{% include templates/install/windows-memory-on-slow-machines.md %} 
 
 ### Step 6. Run installation script
-{% include templates/run-install.md %} 
 
+Launch windows shell (Command Prompt) as Administrator. Change directory to your ThingsBoard installation directory.
+
+Execute **install.bat** script to install ThingsBoard as a Windows service (or run **"install.bat --loadDemo"** to install and add demo data).
+This means it will be automatically started on system startup. 
+Similar, **uninstall.bat** will remove ThingsBoard from Windows services.
+The output should be similar to this one:
+  
+  ```text
+C:\Program Files (x86)\thingsboard>install.bat --loadDemo
+Detecting Java version installed.
+CurrentVersion 18
+Java 1.8 found!
+Installing thingsboard ...
+...
+ThingsBoard installed successfully!
+```
 
 ### Step 7. Start ThingsBoard service
 
-{% include templates/start-service.md %}
+{% include templates/windows-start-service.md %}
 
 {% capture 90-sec-ui %}
 Please allow up to 90 seconds for the Web UI to start. This is applicable only for slow machines with 1-2 CPUs or 1-2 GB RAM.{% endcapture %}
@@ -96,63 +106,95 @@ Please allow up to 90 seconds for the Web UI to start. This is applicable only f
 
 ### Step 8. Install ThingsBoard WebReport component
 
-Download installation package for the [Reports Server](/docs/user-guide/reporting/#reports-server) component:
+Download and unpack the installation package.
 
 ```bash
-wget https://dist.thingsboard.io/tb-web-report-2.4pe.deb
+https://dist.thingsboard.io/tb-web-report-windows-2.4pe.zip
 ```
 {: .copy-code}
 
-Install third-party libraries:
+**Note:** We assume you have installed ThingsBoard to default location: *C:\Program Files (x86)\tb-web-report* 
 
-```bash
-sudo apt install -yq gconf-service libasound2 libatk1.0-0 libc6 libcairo2 libcups2 libdbus-1-3 \
-     libexpat1 libfontconfig1 libgcc1 libgconf-2-4 libgdk-pixbuf2.0-0 libglib2.0-0 libgtk-3-0 libnspr4 \
-     libpango-1.0-0 libpangocairo-1.0-0 libstdc++6 libx11-6 libx11-xcb1 libxcb1 libxcomposite1 \
-     libxcursor1 libxdamage1 libxext6 libxfixes3 libxi6 libxrandr2 libxrender1 libxss1 libxtst6 \
-     ca-certificates fonts-liberation libappindicator1 libnss3 lsb-release xdg-utils unzip wget
-```
-{: .copy-code}
+Launch windows shell (Command Prompt) as Administrator. Change directory to your ThingsBoard installation directory.
 
-Install Roboto fonts:
+Execute **install.bat** script to install ThingsBoard Web Report Server as a Windows service.
+  This means it will be automatically started on system startup. 
+  Similar, **uninstall.bat** will remove ThingsBoard from Windows services.
+  The output should be like:
+  
+  ```text
+    C:\Program Files (x86)\tb-web-report>install.bat
+    Installing tb-web-report ...
+    tb-web-report installed successfully!  
+  ```    
+  
+Now let's start the ThingsBoard service!
+Open the command prompt as an Administrator and execute the following command:
 
-```bash
-sudo apt install fonts-roboto
-```
-{: .copy-code}
-
-Install Noto fonts (Japanese, Chinese, etc.):
-
-```bash
-mkdir ~/noto
-cd ~/noto
-wget https://noto-website.storage.googleapis.com/pkgs/NotoSansCJKjp-hinted.zip
-unzip NotoSansCJKjp-hinted.zip
-sudo mkdir -p /usr/share/fonts/noto
-sudo cp *.otf /usr/share/fonts/noto
-sudo chmod 655 -R /usr/share/fonts/noto/
-sudo fc-cache -fv
-cd ..
-rm -rf ~/noto
+```shell
+net start tb-web-report
 ```
 
-Install and start Web Report service:
+Expected output:
 
-```bash
-sudo dpkg -i tb-web-report-2.4pe.deb
-sudo service tb-web-report start
+```text
+C:\Program Files (x86)\tb-web-report>net start tb-web-report
+The Thingsboard Web Report Microservice service is starting.
+The Thingsboard Web Report Microservice service was started successfully.
 ```
 
-### Post-installation steps
+##### Troubleshooting
 
-{% include templates/install/ubuntu-haproxy-postinstall.md %}
+The log files are located in **logs** folder ("C:\Program Files (x86)\thingsboard\logs" in our case).
 
-### Troubleshooting
+The **thingsboard.log** file should contain following line:
 
-{% include templates/install/troubleshooting.md %}
+```text
+YYYY-MM-DD HH:mm:ss,sss [main] INFO  o.t.s.ThingsboardServerApplication - Started ThingsboardServerApplication in x.xxx seconds (JVM running for x.xxx)
+
+```
+
+In case of any unclear errors, use general [troubleshooting guide](/docs/user-guide/troubleshooting/#getting-help) or [contact us](/docs/contact-us/).
+
+##### Windows firewall settings
+
+In order to have external access to ThingsBoard Web UI and device connectivity (HTTP, MQTT, CoAP)
+you need to create a new inbound rule with Windows Firewall with Advanced Security.
+ 
+- Open "Windows Firewall" from "Control Panel":
+
+![image](/images/user-guide/install/windows/windows7-firewall-1.png)
+
+- Click "Advanced settings" on the left panel:
+
+![image](/images/user-guide/install/windows/windows7-firewall-2.png)
+
+- Select "Inbound Rules" on the left panel, then click "New Rule..." on the right "Actions" panel:
+
+![image](/images/user-guide/install/windows/windows7-firewall-3.png)
+
+- Now new "New Inbound Rule Wizard" window will open. On the first step "Rule Type" select "Port" option: 
+
+![image](/images/user-guide/install/windows/windows7-firewall-4.png)
+
+- On the "Protocol and Ports" step select "TCP" protocol and enter port list **8080, 1883, 5683** in the "Specific local ports" field:
+
+![image](/images/user-guide/install/windows/windows7-firewall-5.png)
+
+- On the "Action" step leave "Allow the connection" option selected:
+
+![image](/images/user-guide/install/windows/windows7-firewall-6.png)
+
+- On the "Profile" step select Windows network profiles when to apply this rule:
+
+![image](/images/user-guide/install/windows/windows7-firewall-7.png)
+
+- Finally, give the name to this rule (for ex. "ThingsBoard Service Networking") and click "Finish".
+
+![image](/images/user-guide/install/windows/windows7-firewall-8.png)
+
+
 
 ## Next steps
-
-
 
 {% assign currentGuide = "InstallationGuides" %}{% include templates/guides-banner.md %}

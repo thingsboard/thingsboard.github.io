@@ -1,18 +1,11 @@
-ThingsBoard service is running on Java 8. Follow this instructions to install OpenJDK 8:
+ThingsBoard service is running on Java 8. Follow this instructions to install OpenJDK 8.
 
-```bash
-sudo apt update
-sudo apt install openjdk-8-jdk
-```
+ * Visit [Open JDK Download Page](https://adoptopenjdk.net/index.html) to download latest **OpenJDK 8 (LTS)** MSI package.
+ * Run the downloaded MSI package and follow the instructions. 
+ Make sure you have selected "**Add to PATH**" and "**Set JAVA_HOME variable**" options to "Will be installed on local hard drive" state. 
 
-Please don't forget to configure your operating system to use OpenJDK 8 by default. 
-You can configure which version is the default using the following command:
 
-```bash
-sudo update-alternatives --config java
-```
-
-You can check the installation using the following command:
+You can check the installation using the following command (using Command Prompt):
 
 ```bash
 java -version
@@ -21,7 +14,8 @@ java -version
 Expected command output is:
 
 ```text
-openjdk version "1.8.0_xxx"
-OpenJDK Runtime Environment (...)
-OpenJDK 64-Bit Server VM (build ...)
+C:\Users\User>java -version
+openjdk version "1.8.0_212"
+OpenJDK Runtime Environment (AdoptOpenJDK)(build 1.8.0_212-b04)
+OpenJDK 64-Bit Server VM (AdoptOpenJDK)(build 25.212-b04, mixed mode)
 ```

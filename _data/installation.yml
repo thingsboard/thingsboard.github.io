@@ -35,6 +35,8 @@ toc:
     path: /docs/user-guide/install/pe/ubuntu/
   - title: Installing ThingsBoard PE on CentOS/RHEL Server
     path: /docs/user-guide/install/pe/rhel/
+  - title: Installing ThingsBoard PE on Windows
+    path: /docs/user-guide/install/pe/windows/
   - title: Installing ThingsBoard PE using Docker (Linux or Mac OS)
     path: /docs/user-guide/install/pe/docker/
   - title: Installing ThingsBoard PE using Docker (Windows)

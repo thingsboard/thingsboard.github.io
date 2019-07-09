@@ -88,7 +88,7 @@ notitle: "true"
                                         </a>
                                     </div>
                                     <div class="deployment-card-block">
-                                        <a href="/docs/user-guide/install/windows/">
+                                        <a href="/docs/user-guide/install/pe/windows/">
                                             <span>
                                                 <div class="deployment-logo" style="height:134px">
                                                     <img width="" src="/images/install/platform/windows.png" title="Windows" alt="Windows">
@@ -148,7 +148,7 @@ notitle: "true"
                                         </a>
                                     </div>
                                     <div class="deployment-card-block">
-                                        <a href="/docs/user-guide/install/aws/">
+                                        <a href="/docs/user-guide/install/pe/azure/">
                                             <span>
                                                 <div class="deployment-logo" style="height:134px">
                                                     <img width="" src="/images/install/cloud/azure.png" title="Microsoft Azure" alt="Microsoft Azure">
