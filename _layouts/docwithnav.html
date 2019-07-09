@@ -84,7 +84,7 @@
         var allCodeBlocksElements = $( ".copy-code" );
         allCodeBlocksElements.each(function(i) {
             var currentId = "codeblock" + (i + 1);
-            var block = $(this).find('> pre > code');
+            var block = $(this).find('pre.highlight > code');
             block.attr('id', currentId);
             var clipButton = $('<button class="clipboard-btn" data-clipboard-target="#' + currentId + '"><img src="https://clipboardjs.com/assets/images/clippy.svg" alt="Copy to clipboard"></button>');
             $(this).append(clipButton);
