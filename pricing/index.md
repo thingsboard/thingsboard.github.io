@@ -116,8 +116,8 @@ description: ThingsBoard Products Pricing
                             <a class="btn btn-full-green btn-pricing" href="javascript:void(0);" 
                                 onClick="getLicense(event,
                                 false,
-                                '127a2600-8ec4-11e9-88c4-2bcc77e2d2cd',
-                                '26d44280-9337-11e9-8d13-8ba32b237cce')">
+                                '20be6f50-a18e-11e9-8e16-03828ff5271c',
+                                '7ef31a80-a18e-11e9-8e16-03828ff5271c')">
                                 Get your license
                             </a>
                             <div class="pricing-square-item" data-faq-id="community-support">
@@ -144,8 +144,8 @@ description: ThingsBoard Products Pricing
                             <a class="btn btn-full-green btn-pricing" href="javascript:void(0);" 
                                 onClick="getLicense(event,
                                 false,
-                                '127a2600-8ec4-11e9-88c4-2bcc77e2d2cd',
-                                '26d44280-9337-11e9-8d13-8ba32b237cce')">
+                                '20be6f50-a18e-11e9-8e16-03828ff5271c',
+                                '0e236dc0-a196-11e9-8e16-03828ff5271c')">
                                 Get your license
                             </a>
                             <div class="pricing-square-item" data-faq-id="community-support">
@@ -172,8 +172,8 @@ description: ThingsBoard Products Pricing
                             <a class="btn btn-full-green btn-pricing" href="javascript:void(0);" 
                                 onClick="getLicense(event,
                                 false,
-                                '127a2600-8ec4-11e9-88c4-2bcc77e2d2cd',
-                                '26d44280-9337-11e9-8d13-8ba32b237cce')">
+                                '20be6f50-a18e-11e9-8e16-03828ff5271c',
+                                '8ac6d190-a197-11e9-8e16-03828ff5271c')">
                                 Get your license
                             </a>
                             <div class="pricing-square-item" data-faq-id="subscription-support">
@@ -200,8 +200,8 @@ description: ThingsBoard Products Pricing
                             <a class="btn btn-full-green btn-pricing" href="javascript:void(0);" 
                                 onClick="getLicense(event,
                                 false,
-                                '127a2600-8ec4-11e9-88c4-2bcc77e2d2cd',
-                                '26d44280-9337-11e9-8d13-8ba32b237cce')">
+                                '20be6f50-a18e-11e9-8e16-03828ff5271c',
+                                'd82185c0-a197-11e9-8e16-03828ff5271c')">
                                 Get your license
                             </a>
                             <div class="pricing-square-item" data-faq-id="subscription-support">
@@ -228,8 +228,8 @@ description: ThingsBoard Products Pricing
                             <a class="btn btn-full-green btn-pricing" href="javascript:void(0);" 
                                 onClick="getLicense(event,
                                 false,
-                                '127a2600-8ec4-11e9-88c4-2bcc77e2d2cd',
-                                '26d44280-9337-11e9-8d13-8ba32b237cce')">
+                                '20be6f50-a18e-11e9-8e16-03828ff5271c',
+                                '34530df0-a198-11e9-8e16-03828ff5271c')">
                                 Get your license
                             </a>
                             <div class="pricing-square-item" data-faq-id="subscription-support">
@@ -264,8 +264,8 @@ description: ThingsBoard Products Pricing
                             <a class="btn btn-full-green btn-pricing" href="javascript:void(0);" 
                                 onClick="getLicense(event,
                                 true,
-                                '127a2600-8ec4-11e9-88c4-2bcc77e2d2cd',
-                                '26d44280-9337-11e9-8d13-8ba32b237cce')">
+                                '90b6c9b0-a198-11e9-8e16-03828ff5271c',
+                                '4c711b60-a199-11e9-8e16-03828ff5271c')">
                                 Get your license
                             </a>
                             <div class="pricing-square-item" data-faq-id="subscription-support">
