@@ -139,7 +139,7 @@ notitle: "true"
                                         </a>
                                     </div>
                                     <div class="deployment-card-block">
-                                        <a href="/docs/user-guide/install/aws/">
+                                        <a href="/docs/user-guide/install/pe/gcp/">
                                             <span>
                                                 <div class="deployment-logo" style="height:134px">
                                                     <img width="" src="/images/install/cloud/gcp.png" title="Google Cloud Platform" alt="Google Cloud Platform">
@@ -157,16 +157,16 @@ notitle: "true"
                                         </a>
                                     </div>
                                     <div class="deployment-card-block">
-                                        <a href="/docs/user-guide/install/aws/">
+                                        <a href="/docs/user-guide/install/pe/digital-ocean/">
                                             <span>
                                                 <div class="deployment-logo" style="height:134px">
-                                                    <img width="" src="/images/install/cloud/digitalocean.png" title="Digital Ocean" alt="Digital Ocean">
+                                                    <img width="" src="/images/install/cloud/digitalocean.png" title="DigitalOcean" alt="DigitalOcean">
                                                  </div>
                                             </span>
                                         </a>
                                     </div>
                                     <div class="deployment-card-block">
-                                        <a href="/docs/user-guide/install/aws/">
+                                        <a href="/docs/user-guide/install/pe/ibm-cloud/">
                                             <span>
                                                 <div class="deployment-logo" style="height:134px">
                                                     <img width="" src="/images/install/cloud/ibm-cloud.png" title="IBM Cloud" alt="IBM Cloud">
@@ -175,7 +175,7 @@ notitle: "true"
                                         </a>
                                     </div>
                                     <div class="deployment-card-block">
-                                        <a href="/docs/user-guide/install/aws/">
+                                        <a href="/docs/user-guide/install/pe/alibaba-cloud/">
                                             <span>
                                                 <div class="deployment-logo" style="height:134px">
                                                     <img width="" src="/images/install/cloud/alibaba-cloud.jpg" title="Alibaba Cloud" alt="Alibaba Cloud">
