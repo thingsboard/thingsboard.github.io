@@ -104,16 +104,16 @@ ThingsBoard installed successfully!
 Please allow up to 90 seconds for the Web UI to start. This is applicable only for slow machines with 1-2 CPUs or 1-2 GB RAM.{% endcapture %}
 {% include templates/info-banner.md content=90-sec-ui %}
 
-### Step 8. Install ThingsBoard WebReport component
+### Step 8. Install ThingsBoard Web Report Server component
 
-Download and unpack the installation package.
+Download and extract the installation package.
 
 ```bash
 https://dist.thingsboard.io/tb-web-report-windows-2.4pe.zip
 ```
 {: .copy-code}
 
-**Note:** We assume you have installed ThingsBoard to default location: *C:\Program Files (x86)\tb-web-report* 
+**Note:** We assume you have extracted ThingsBoard Web Report Server to default location: *C:\Program Files (x86)\tb-web-report* 
 
 Launch windows shell (Command Prompt) as Administrator. Change directory to your ThingsBoard installation directory.
 
@@ -143,7 +143,7 @@ The Thingsboard Web Report Microservice service is starting.
 The Thingsboard Web Report Microservice service was started successfully.
 ```
 
-##### Troubleshooting
+### Troubleshooting
 
 The log files are located in **logs** folder ("C:\Program Files (x86)\thingsboard\logs" in our case).
 
@@ -156,7 +156,7 @@ YYYY-MM-DD HH:mm:ss,sss [main] INFO  o.t.s.ThingsboardServerApplication - Starte
 
 In case of any unclear errors, use general [troubleshooting guide](/docs/user-guide/troubleshooting/#getting-help) or [contact us](/docs/contact-us/).
 
-##### Windows firewall settings
+### Windows firewall settings
 
 In order to have external access to ThingsBoard Web UI and device connectivity (HTTP, MQTT, CoAP)
 you need to create a new inbound rule with Windows Firewall with Advanced Security.
