@@ -39,6 +39,8 @@ toc:
     path: /docs/user-guide/install/pe/docker/
   - title: Installing ThingsBoard PE using Docker (Windows)
     path: /docs/user-guide/install/pe/docker-windows/
+  - title: Installing ThingsBoard PE on AWS Marketplace
+    path: /docs/user-guide/install/pe/aws/
 - title: ThingsBoard Professional Edition on AWS Marketplace
   section:
   - title: Installation

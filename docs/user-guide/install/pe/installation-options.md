@@ -130,7 +130,7 @@ notitle: "true"
                             <div class="deployment-cards">
                                 <div class="deployment-cards-container">
                                     <div class="deployment-card-block">
-                                        <a href="/docs/user-guide/install/aws/">
+                                        <a href="/docs/user-guide/install/pe/aws/">
                                             <span>
                                                 <div class="deployment-logo" style="height:134px">
                                                     <img width="" src="/images/install/cloud/aws.png" title="AWS" alt="AWS">

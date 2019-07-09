@@ -298,35 +298,54 @@ description: ThingsBoard Products Pricing
         <div class="item" data-tag="h4" data-item-id="what-is-pay-as-you-go" data-title="What is &quot;Pay-as-you-go&quot; license?">
             <div class="container">
                 <p>
-                    Pay-as-you-go license is based on different subscription plans and represents a typical SaaS model. Each plan is usually limited by the amount of devices or assets that ThingsBoard instance will manage. The billing is being provided either monthly or yearly. The customer may put a sum of money in advance and this credits decrease while service is used. The same as pre-paid SIM-card using or VOD-service subscribing. 
+                    Pay-as-you-go license is based on different subscription plans and represents a typical SaaS model. Each plan is usually limited by the number of devices or assets that ThingsBoard instance will manage. The billing is being provided either monthly or yearly.
+                    Your credit card will be charged once per billing period, at the beginning of the corresponding period.  
                 </p>    
             </div>    
         </div>
         <div class="item" data-tag="h4" data-item-id="what-is-perpetual" data-title="What is &quot;Perpetual&quot; license?">
             <div class="container">
                 <p>
-                    Perpetual license is a specific version of software, that you may use without an active subscription plan. Whenever purchasing perpetual fallback license, the customer gets one year of software updates included to constant use of the platform. ThingsBoard Inc. offers a discount for consequent years of updates. For more information proceed with "Rrequest a discount info" message via <a href="#">contact us</a> form.  
-                </p>    
+                    Perpetual fallback license is a license that allows you to use specific version of software, without an active subscription to it. 
+                    Whenever you purchase a perpetual fallback license you get one year of software updates included. 
+                    You can purchase additional updates if required. 
+                    Typical price for one year update package is within 40% of inital license cost.                    
+                    <br/><br/><b>Example 1</b>: Let's assume you purchased one license for ThingsBoard v2.4 in June 2019 and received an update to ThingsBoard v3.0 in May 2020.
+                    This means you can continue using this ThingsBoard v3.0 instance forever. You can also migrate to different hardware without issues.
+                    <br/><br/><b>Example 2</b>: Let's assume you purchased one license for ThingsBoard v2.4 in June 2019 and received an update to ThingsBoard v3.0 in May 2020.
+                    This means you can continue using this ThingsBoard v3.0 instance forever. Later, in August 2020 we released v3.1. 
+                    In order to get the v3.1 update, you will need to purchase an additional year of software updates for ThingsBoard PE which will cost 1199 USD. 
+                    However, you can continue using v3.0 without updates.                    
+                </p>
             </div>    
         </div>
         <div class="item" data-tag="h4" data-item-id="can-i-migrate" data-title="Can I migrate from one subscription to another?">
             <div class="container">
                 <p>
-                    Yes. One of the greatest features of ThingsBoard License Server is the ability to change subscription plans. Now it is as simple as that. The flow is: Subscription details — Update subscription — Choose a plan. Also there is an Update subscription button in the action icons tray.   
+                    Yes. One of the greatest features of <a href="/products/license-server/">ThingsBoard License Server</a> is the ability to change subscription plans. 
+                    Now it is as simple as that. The flow is: Subscription details — Update subscription — Choose a plan. 
+                    Also there is an Update subscription button in the action icons tray.   
                 </p>    
             </div>    
         </div>
         <div class="item" data-tag="h4" data-item-id="migrate-between-servers" data-title="Can I migrate from cloud to on-premise server using the same license?">
             <div class="container">
                 <p>
-                 Definitely, yes. For that purpose we made a possibility to Activate/Deactivate instance. In order to migrate between servers customer must deactivate its instance, install the software on new server and then use already existing license secret. Backup of all data from previos instance is necessary if customer wants to continue utilizing same environment after migration. Notice: license check mechanism won't allow using ThingsBoard Professional Edition on two or more servers simultaneously.         
+                    Yes, definitely! 
+                    For that purpose we made a possibility to Activate/Deactivate instance.
+                    In order to migrate between servers customer must deactivate its instance, install the software on new server and then use already existing license secret.
+                    Backup of all data from previos instance is necessary if customer wants to continue utilizing same environment after migration.
+                    Notice: license check mechanism won't allow using ThingsBoard Professional Edition on two or more servers simultaneously (unless you purchase two instances of the same subscription plan).         
                 </p>    
             </div>    
         </div>
          <div class="item" data-tag="h4" data-item-id="migrate-plan-to-perpetual" data-title="Is it possible to jump from subscription to perpetual?">
             <div class="container">
                 <p>
-                 Customer may cancel the subscription and purchase a perpetual license. The remain costs from terminated subscription plan (if remain) will be deducted from Total cost for the perpetual license. Keep in mind: perpetual license is non-cancelable. So, customer can not stop using perpetual license and rely on Total price decreasing for any Subscription plan.         
+                 Customer may cancel the subscription and purchase a perpetual license. 
+                 The remain costs from terminated subscription plan (if remain) will be deducted from Total cost for the perpetual license.
+                 Keep in mind: perpetual license is non-cancelable.
+                 So, customer can not stop using perpetual license and rely on total price for any subscription plan to be decreased.         
                 </p>    
             </div>    
         </div>
@@ -334,7 +353,10 @@ description: ThingsBoard Products Pricing
         <div class="item" data-tag="h4" data-item-id="trial-enable" data-title="How can I enable free trial?">
             <div class="container">
                 <p>
-                    Customer may still use <a href="https://cloud.thingsboard.io" target="blank">ThingsBoard Professional Edition Live Demo</a> for that. 30 days of seamless experience and the newest features from the latest source code! Note: Live Demo is a shared environment with hardware and software limitations. It is introduced to host multiple trial tenants on the same server instance(s).
+                    Customer may still use <a href="https://cloud.thingsboard.io" target="blank">ThingsBoard Professional Edition Live Demo</a> for that. 
+                    30 days of seamless experience and the newest features, except white-labeling, from the latest source code! 
+                    Note: Live Demo is a shared environment with hardware and software limitations. 
+                    It is introduced to host multiple trial tenants on the same server instance(s).
                 </p>    
             </div>    
         </div>
@@ -363,7 +385,10 @@ description: ThingsBoard Products Pricing
         <div class="item" data-tag="h4" data-item-id="community-support" data-title="What does community support mean?">
             <div class="container">
                 <p>
-                Community support is free-of-charge option. It is a volonteering initiative, provided by our team. Please, be aware that support is one of ThingsBoard Inc. business fields. Although our engineers (as many of our customers know) successfully handle user's requests in their free time. Community support doesn't mean any obligation for ThingsBoard Inc. We encourage you to <a href="/docs/">read documentation</a>, subscribe to our <a href="https://www.youtube.com/c/thingsboard" target ="blank">YouTube channel</a> where we host <a href="https://www.youtube.com/watch?v=M0CaascgDmg&list=PLYEKB_XwLCZJ6T8RPLTjRwMw0eoabpEKO" target="blank">the free Education course</a> and most demanded tutorials, samples and guides.
+                Community support is free-of-charge option. It is a volonteering initiative, provided by our team and other ThingsBoard contributors. 
+                Please, be aware that support services is one of ThingsBoard Inc. business fields. 
+                Although our engineers successfully handle community support requests in their free time, this doesn't mean any obligation for ThingsBoard Inc.
+                We encourage you to <a href="/docs/">read documentation</a>, subscribe to our <a href="https://www.youtube.com/c/thingsboard" target ="blank">YouTube channel</a> where we host <a href="https://www.youtube.com/watch?v=M0CaascgDmg&list=PLYEKB_XwLCZJ6T8RPLTjRwMw0eoabpEKO" target="blank">the free Education course</a> and most demanded tutorials, samples and guides.
                 </p>
                 <p>Customer may also rely on answers from ThingsBoard <a href="https://github.com/thingsboard/thingsboard/issues" target="blank">community on GitHub</a> (issues page), send their queries to <a href="https://groups.google.com/forum/#!forum/thingsboard" target="blank">Q&A forum</a> and start <a href="http://stackoverflow.com/questions/tagged/thingsboard" target="blank">Stack Overflow</a> themes.   
                 </p>    
@@ -372,21 +397,14 @@ description: ThingsBoard Products Pricing
         <div class="item" data-tag="h4" data-item-id="professional-support" data-title="What support plans do you have?">
             <div class="container">
                 <p>
-                Please review ThingsBoard professional <a href="/docs/services/support/" target="blank">support plans</a> and contact us.
+                We provide support bundles which contain server issues and application development tips. Please review ThingsBoard professional <a href="/docs/services/support/" target="blank">support plans</a>. Also we will add ability to buy support plan from <a href="https://license.thingsboard.io/">License portal</a>.
                 </p>    
             </div>    
         </div>
         <div class="item" data-tag="h4" data-item-id="subscription-support" data-title="What issues included in email support?">
             <div class="container">
                 <p>
-                For StartUp, Business and Enterprise licensees as well as Perpetual licensees we provide email response on any issue within certain amount of time, if separate support agreement is not signed. Solution time depends on issue and may require a meeting with out team member
-                </p>    
-            </div>    
-        </div>
-        <div class="item" data-tag="h4" data-item-id="buy-support" data-title="What kind of professional support can I order?">
-            <div class="container">
-                <p>
-                We provide support bundles which contain server issues and application development. Please review ThingsBoard professional <a href="/docs/services/support/" target="blank">support plans</a>. Also we will add ability to buy support plan from <a href="https://license.thingsboard.io/">License portal</a>. 
+                For StartUp, Business and Enterprise licensees as well as Perpetual licensees we provide email response on any issue within certain amount of time, if separate support agreement is not signed. Solution time depends on issue severity and may require a meeting with out team member
                 </p>    
             </div>    
         </div>

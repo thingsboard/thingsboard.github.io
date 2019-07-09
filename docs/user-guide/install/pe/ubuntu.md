@@ -82,8 +82,8 @@ Hybrid <br/>PostgreSQL+Cassandra<br/><small>(recommended for > 5K msg/sec)</smal
 {% include templates/install/memory-on-slow-machines.md %} 
 
 ### Step 6. Run installation script
-{% include templates/run-install.md %} 
 
+{% include templates/run-install.md %} 
 
 ### Step 7. Start ThingsBoard service
 
