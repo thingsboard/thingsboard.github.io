@@ -32,6 +32,17 @@ Specify Port: **11562** for **Text Channel Inbound Handler** which work depends 
 
 **Text Channel Inbound Handler** is specific handler class which allows to explicit only handle a String type of messages.<br>
 
+#### For messages in hex string format
+
+Go to **Integrations** section and click **Add new integration** button.
+Name it **Demo UDP HEX Integration Test**, select type **UDP**, turn the Debug mode on and from drop-down menus add recently created Uplink and Downlink converters.
+
+Specify Port: **11564** for **Text Channel Inbound Handler** which work depends on the so-called **Datagram-Packet To ObjectNode Message Decoder**.
+
+**Datagram-Packet To ObjectNode Message Decoder** which decodes from one message to an other message in our case from **DatagramPacket** to **ObjectNode**.<br>
+
+**Text Channel Inbound Handler** is specific handler class which allows to explicit only handle a ObjectNode type of messages.<br>
+
 #### For messages in binary format
 
 Go to **Integrations** section and click **Add new integration** button.
@@ -41,10 +52,6 @@ Specify Port: **11563** for **Binary Channel Inbound Handler** which work depend
 
 **Datagram-Packet To Byte Array Message Decoder** that decodes from **DatagramPacket** to **byte[]**.<br>
 
-In order for this class to work correctly, we must correctly set the following parameters:
-- **lengthFieldOffset** - the offset of the length field
-- **lengthFieldLength** - the length of the length field
-
 **Binary Channel Inbound Handler** is specific handler class which allows to explicit only handle a **byte[]** type of messages.<br>
 
 #### A brief description of Socket Channel Options used to configure the server
@@ -52,11 +59,7 @@ In order for this class to work correctly, we must correctly set the following p
 - **SO_RCVBUF** - the size in bytes of the socket data receive buffer (will specify **65535**);
 
 Then we need to configure the **Handler Configuration**.
-Handler Type: **TEXT** or **BINARY**.
-
-If **TEXT** then we will need to set **Charset name** and **Message Separator**
-else if **BINARY** then we will need to set **Message size**.
-We use **TEXT** so then **Charset name** is **'UTF-8'** and **Message Separator** is **System Line Delimiter**.
+Handler Type: **TEXT**, **HEX** or **BINARY**.
 
 Click **Add** to save the Integration.
 
