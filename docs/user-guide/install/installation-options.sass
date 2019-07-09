@@ -71,6 +71,7 @@ $install-color: #506dad
                 p
                   margin: 15px 0
                 .deployment-logo
+                  position: relative
                   box-shadow: 0 1px 8px 0 rgba(0,0,0,0.2), 0 3px 4px 0 rgba(0,0,0,0.14), 0 3px 3px -2px rgba(0,0,0,0.12)
                   width: 200px
                   height: 120px
@@ -85,6 +86,19 @@ $install-color: #506dad
                     max-width: 90%
                     max-height: 85%
                     vertical-align: middle
+                  &.coming-soon
+                    &:after
+                      content: ""
+                      position: absolute
+                      top: 0
+                      left: 0
+                      right: 0
+                      bottom: 0
+                      background-image: url("/images/install/coming-soon.png")
+                      background-size: contain
+                      opacity: 0.5
+                      background-color: #fff
+
 
       .magic-radio
         box-sizing: border-box

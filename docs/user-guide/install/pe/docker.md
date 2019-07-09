@@ -7,6 +7,10 @@ description: Installing ThingsBoard PE IoT Platform using Docker (Linux or Mac O
 
 ---
 
+![image](/images/coming-soon.jpg)
+
+<!--
+
 {% include templates/live-demo-banner.md %}
 
 * TOC
@@ -123,3 +127,4 @@ See corresponding [Linux](https://developers.google.com/speed/public-dns/docs/us
 ## Next steps
 
 {% assign currentGuide = "InstallationGuides" %}{% include templates/guides-banner.md %}
+-->

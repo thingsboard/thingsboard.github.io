@@ -30,8 +30,8 @@ notitle: "true"
                             <h2 class="d-none d-md-inline-block">Live demo</h2>
                         </label>
                     </div>
-                    <div class="deployment active" data-toggle="#onPremise">
-                        <input type="radio" class="magic-radio" name="deployment-radio-selector" id="DeploymentOnPremise" value="Deployment On Premise Details" checked>
+                    <div class="deployment" data-toggle="#onPremise">
+                        <input type="radio" class="magic-radio" name="deployment-radio-selector" id="DeploymentOnPremise" value="Deployment On Premise Details">
                         <label for="DeploymentOnPremise">
                             <div class="deployment-icon-div d-inline-block">
                                 <img src="/images/install/on-premise.png" alt="on premise icon" class="on-premise-icon d-inline">
@@ -66,7 +66,7 @@ notitle: "true"
                                 </div>
                             </div>
                         </div>
-                        <div class="deployment-section deployment-on-premise active" id="onPremise">
+                        <div class="deployment-section deployment-on-premise" id="onPremise">
                            <div class="deployment-cards">
                                 <div class="deployment-cards-container">
                                     <div class="deployment-card-block">
@@ -99,7 +99,7 @@ notitle: "true"
                                     <div class="deployment-card-block">
                                         <a href="/docs/user-guide/install/pe/docker-windows/">
                                             <span>
-                                                <div class="deployment-logo" style="height:134px">
+                                                <div class="deployment-logo coming-soon" style="height:134px">
                                                     <img width="" src="/images/install/platform/docker-windows.png" title="Docker (Windows)" alt="Docker (Windows)">
                                                  </div>
                                             </span>
@@ -108,13 +108,13 @@ notitle: "true"
                                     <div class="deployment-card-block">
                                         <a href="/docs/user-guide/install/pe/docker/">
                                             <span>
-                                                <div class="deployment-logo" style="height:134px">
+                                                <div class="deployment-logo coming-soon" style="height:134px">
                                                     <img width="" src="/images/install/platform/docker-linux-macos.png" title="Docker (Linux or Mac OS)" alt="Docker (Linux or Mac OS)">
                                                  </div>
                                             </span>
                                         </a>
                                     </div>
-                                    <div class="deployment-card-block">
+                                    <!--div class="deployment-card-block">
                                         <a href="/docs/user-guide/install/cluster-setup/">
                                             <span>
                                                 <div class="deployment-logo" style="height:134px">
@@ -122,7 +122,7 @@ notitle: "true"
                                                  </div>
                                             </span>
                                         </a>
-                                    </div>
+                                    </div-->
                                </div>                    
                             </div>                        
                         </div>
@@ -134,15 +134,6 @@ notitle: "true"
                                             <span>
                                                 <div class="deployment-logo" style="height:134px">
                                                     <img width="" src="/images/install/cloud/aws.png" title="AWS" alt="AWS">
-                                                 </div>
-                                            </span>
-                                        </a>
-                                    </div>
-                                    <div class="deployment-card-block">
-                                        <a href="/docs/user-guide/install/pe/gcp/">
-                                            <span>
-                                                <div class="deployment-logo" style="height:134px">
-                                                    <img width="" src="/images/install/cloud/gcp.png" title="Google Cloud Platform" alt="Google Cloud Platform">
                                                  </div>
                                             </span>
                                         </a>
@@ -166,9 +157,18 @@ notitle: "true"
                                         </a>
                                     </div>
                                     <div class="deployment-card-block">
+                                        <a href="/docs/user-guide/install/pe/gcp/">
+                                            <span>
+                                                <div class="deployment-logo coming-soon" style="height:134px">
+                                                    <img width="" src="/images/install/cloud/gcp.png" title="Google Cloud Platform" alt="Google Cloud Platform">
+                                                 </div>
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="deployment-card-block">
                                         <a href="/docs/user-guide/install/pe/ibm-cloud/">
                                             <span>
-                                                <div class="deployment-logo" style="height:134px">
+                                                <div class="deployment-logo coming-soon" style="height:134px">
                                                     <img width="" src="/images/install/cloud/ibm-cloud.png" title="IBM Cloud" alt="IBM Cloud">
                                                  </div>
                                             </span>
@@ -177,7 +177,7 @@ notitle: "true"
                                     <div class="deployment-card-block">
                                         <a href="/docs/user-guide/install/pe/alibaba-cloud/">
                                             <span>
-                                                <div class="deployment-logo" style="height:134px">
+                                                <div class="deployment-logo coming-soon" style="height:134px">
                                                     <img width="" src="/images/install/cloud/alibaba-cloud.jpg" title="Alibaba Cloud" alt="Alibaba Cloud">
                                                  </div>
                                             </span>
@@ -206,19 +206,47 @@ notitle: "true"
     });
 
     jqueryDefer(function () {
+    
+        window.addEventListener('popstate', onPopStatePeInstallOptions);
+        
+        onPopStatePeInstallOptions();
+        
         $('.deployment-selector .deployment').click(function(event) {
-            event.preventDefault();
+            event.preventDefault();            
             var id = $(this).attr("data-toggle");
-            $(this).find(".magic-radio").prop("checked", true);
-            $('.deployment-selector .deployment').removeClass("active");
-            $(this).addClass("active");
-            $('.deployment-div .deployment-section').removeClass("active");
-            $('.deployment-div .deployment-section'+id).addClass("active");
+            var param = 'peInstallType';
+            var params = Qs.parse(window.location.search, { ignoreQueryPrefix: true });
+            params[param] = id.substring(1);
             
-            $('.deployment-div .deployment-section' + id + ' .deployment-card-block').addClass("animated zoomIn");
+            var newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?' + Qs.stringify(params);
             
+            if (window.location.hash) {
+                newurl += window.location.hash;
+            }
+            
+            window.history.pushState({ path: newurl }, '', newurl);
+            selectTargetPeInstallOption(id);
         });
-
     });
+    
+    function onPopStatePeInstallOptions() {
+            var params = Qs.parse(window.location.search, { ignoreQueryPrefix: true });
+            var targetId = params['peInstallType'];
+            if (!targetId) {
+                targetId = 'onPremise';
+            }
+            selectTargetPeInstallOption('#'+targetId);
+    }
+        
+    function selectTargetPeInstallOption(targetId) {
+         $(".deployment-selector .deployment").removeClass("active");         
+         $(".deployment-selector .deployment[data-toggle='"+targetId+"']").addClass("active");
+         $(".deployment-selector .deployment[data-toggle='"+targetId+"'] .magic-radio").prop("checked", true);
+         
+         $('.deployment-div .deployment-section').removeClass("active");
+         $('.deployment-div .deployment-section'+targetId).addClass("active");
+         
+         $('.deployment-div .deployment-section' + targetId + ' .deployment-card-block').addClass("animated zoomIn");
+    }   
 
 </script>
