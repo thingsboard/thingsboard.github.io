@@ -173,9 +173,9 @@ Use this login to connect as system Administrator
 
 - **sysadmin@thingsboard.org**
 
-Default password for System Administrator is:
+Default password for System Administrator is Instance ID (see [Step 3.7](/docs/user-guide/install/pe/aws/#step-37-obtain-your-public-ip-and-ec2-instance-id)). In this example: 
 
--  **sysadmin**
+-  **i-03d850e6a818328e4**
 
 Now you can proceed to the next steps.
 
