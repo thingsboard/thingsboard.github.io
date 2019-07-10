@@ -388,7 +388,7 @@ description:
 <br/>
 
 <p align="center">
-    <a href="/pricing/" class="button try-pe">Try it now</a>
+    <a href="/pricing/" class="button try-pe">Get it now</a>
 </p>
 
 <br/>
