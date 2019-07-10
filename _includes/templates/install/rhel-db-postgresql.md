@@ -19,7 +19,7 @@ sudo nano /etc/thingsboard/conf/thingsboard.conf
 ``` 
 {: .copy-code}
 
-Add the following lines to the configuration file. Don't forget to replace "PUT_YOUR_POSTGRESQL_PASSWORD_HERE" with your real postgres user password:
+Add the following lines to the configuration file. Don't forget **to replace** "PUT_YOUR_POSTGRESQL_PASSWORD_HERE" with your **real postgres user password**:
 
 ```bash
 # DB Configuration 

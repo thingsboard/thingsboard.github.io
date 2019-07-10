@@ -2,10 +2,14 @@
 layout: docwithnav
 assignees:
 - ashvayka
-title: Installing ThingsBoard using Docker (Windows)
-description: Installing ThingsBoard IoT Platform using Docker (Windows)
+title: Installing ThingsBoard PE using Docker (Windows)
+description: Installing ThingsBoard PE IoT Platform using Docker (Windows)
 
 ---
+
+![image](/images/coming-soon.jpg)
+
+<!--
 
 {% include templates/live-demo-banner.md %}
 
@@ -134,3 +138,5 @@ You may configure your system to use [Google public DNS servers](https://develop
 ## Next steps
 
 {% assign currentGuide = "InstallationGuides" %}{% include templates/guides-banner.md %}
+
+-->
