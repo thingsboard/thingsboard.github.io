@@ -152,6 +152,4 @@ sudo service tb-web-report start
 
 ## Next steps
 
-
-
 {% assign currentGuide = "InstallationGuides" %}{% include templates/guides-banner.md %}

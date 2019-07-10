@@ -168,7 +168,7 @@ notitle: "true"
                                     <div class="deployment-card-block">
                                         <a href="/docs/user-guide/install/digital-ocean/">
                                             <span>
-                                                <div class="deployment-logo coming-soon" style="height:134px">
+                                                <div class="deployment-logo" style="height:134px">
                                                     <img width="" src="/images/install/cloud/digitalocean.png" title="Digital Ocean" alt="Digital Ocean">
                                                  </div>
                                             </span>
