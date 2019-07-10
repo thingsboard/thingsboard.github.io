@@ -49,6 +49,79 @@ The converter will decode incoming telemetry payload data from T-Mobile NB IoT t
 }
 {% endhighlight %}
 
+ - For this payload, the decoder has the following appearance:
+ 
+```javascript
+    /** Decoder **/
+    
+    // The field of input json
+    var reports = decodeToJson(payload).reports;
+    
+    // Result object with device attributes/telemetry data
+    var result = {
+       deviceName: {},
+       deviceType: "tracker",
+       telemetry: []
+    };
+    
+    for (var i = 0; i < reports.length; i++) {
+      result.deviceName = parseInt(reports[i].value.substring(2, 16), 16);
+      var telemetryObj = {
+          ts: {},
+          values: {}
+      };
+      timestamp = stringToInt(reports[i].value.substring(32,40))*1000;
+      v = stringToInt(reports[i].value.substring(40,42))/100 + 3;
+      t = stringToInt(reports[i].value.substring(42,44));
+      lat = stringToInt(reports[i].value.substring(44,52))/10000000;
+      lon = stringToInt(reports[i].value.substring(52,60))/10000000;
+      alt = stringToInt(reports[i].value.substring(60, 64));
+      speed = stringToInt(reports[i].value.substring(64, 68));
+      sat = stringToInt(reports[i].value.substring(68, 70));
+      ttf = stringToInt(reports[i].value.substring(70, 72));
+       
+      telemetryObj.ts = timestamp;
+      telemetryObj.values.batteryVoltage = v;
+      telemetryObj.values.temperature = t;
+      if(lat !== 0) {
+            telemetryObj.values.latitude = lat;      
+      }
+      if(lon !== 0) {
+            telemetryObj.values.longitude = lon;      
+      }
+      if(alt !== 0) {
+            telemetryObj.values.altitude = alt;      
+      }
+      telemetryObj.values.speed = speed;
+      telemetryObj.values.satellitesObserved = sat;
+      telemetryObj.values.timetToFirstFix = ttf;
+      telemetryObj.values.imei = result.deviceName;
+      result.telemetry.push(telemetryObj);
+    }
+    
+    /** Helper functions **/
+    
+    function stringToInt(hex) {
+        return parseInt('0x' + hex.match(/../g).reverse().join(''));
+    }
+    
+    function decodeToString(payload) {
+       return String.fromCharCode.apply(String, payload);
+    }
+    
+    function decodeToJson(payload) {
+      // convert payload to string.
+      var str = decodeToString(payload);
+    
+      // parse string to JSON
+      var data = JSON.parse(str);
+      return data;
+    }
+    
+    return result;
+
+``` 
+
  - After decoding output data will look like this:
 
 {% highlight bash %}
@@ -224,6 +297,8 @@ Now you can delete this dummy device if needed.
 
 Navigate to Integration Debug Events, similar to Step 3 and double check that data from real devices arrives and is processed successfully. 
 Please note that it may take some time (up to 30 minutes based on our experience) for new message to start arriving.
+
+<img data-gifffer="/images/user-guide/integrations/sodaq/debug-event-udp-integration.gif" />
 
 ## Next steps
 
