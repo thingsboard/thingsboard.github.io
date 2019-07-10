@@ -6,7 +6,7 @@ description: Installing ThingsBoard PE on DigitalOcean
 ---
 
 This guide describes how to install ThingsBoard Professional Edition on DigitalOcean. 
-Using this guide you will install [BYOL](https://docs.aws.amazon.com/marketplace/latest/userguide/pricing.html#ami-pricing-models) version of the product.
+Using this guide you will install "Bring Your Own License" version of the product.
 Basically, you get the license directly from ThingsBoard, Inc, but purchase corresponding server instances and infrastructure from DigitalOcean.       
 
 * TOC
