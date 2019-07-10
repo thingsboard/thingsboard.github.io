@@ -12,87 +12,53 @@ description: Installing ThingsBoard IoT Platform on Raspberry Pi 3 Model B
 * TOC
 {:toc}
 
-This guide describes how to install ThingsBoard on a Raspberry Pi 3 running Raspbian Jessie.
+This guide describes how to install ThingsBoard on a Raspberry Pi 3 running Raspbian Buster.
 
 ### Third-party components installation
 
-#### Java
+### Step 1. Install Java 8 (OpenJDK) 
 
-ThingsBoard service is running on Java 8. Oracle Java 8 is already pre-installed on Raspbian.
-You can check java version using the following command
+{% include templates/install/ubuntu-java-install.md %}
 
-```bash
-$ java -version
-java version "1.8.0_65"
-Java(TM) SE Runtime Environment (build 1.8.0_65-b17)
-Java HotSpot(TM) Client VM (build 25.65-b01, mixed mode)
-```
+### Step 2. ThingsBoard service installation
 
-Any Java version higher than or equal to 1.8 is fine. 
-
-#### External database installation
-
-{% include templates/install-db.md %}
-
-###### SQL Database: PostgreSQL
-
-{% include templates/optional-db.md %}
-
-Instructions listed below will help you to install PostgreSQL.
+Download installation package.
 
 ```bash
-sudo apt-get update
-sudo apt-get install postgresql postgresql-contrib
-sudo service postgresql start
+wget https://github.com/thingsboard/thingsboard/releases/download/v2.4/thingsboard-2.4.deb
 ```
+{: .copy-code}
 
-{% include templates/postgres-post-install.md %}
-
-{% include templates/create-tb-db.md %}
-
-### ThingsBoard service installation
-
-Download installation package or [build it from source](/docs/user-guide/install/building-from-source).
+Install ThingsBoard as a service
 
 ```bash
-# Download the package
-$ wget https://github.com/thingsboard/thingsboard/releases/download/v2.3.1/thingsboard-2.3.1.deb
-# Install ThingsBoard as a service
-$ sudo dpkg -i thingsboard-2.3.1.deb
-# Update ThingsBoard memory usage and restrict it to 150MB in /etc/thingsboard/conf/thingsboard.conf
-export JAVA_OPTS="$JAVA_OPTS -Dplatform=rpi -Xms256M -Xmx256M"
+sudo dpkg -i thingsboard-2.4.deb
 ```
+{: .copy-code}
 
-### Configure ThingsBoard to use PostgreSQL
- 
-Edit ThingsBoard configuration file 
+### Step 3. Configure ThingsBoard database
 
-```bash 
-sudo nano /etc/thingsboard/conf/thingsboard.yml
-```
-{% include templates/disable-hsqldb.md %}
+{% include templates/install/ubuntu-db-postgresql.md %}
 
-{% include templates/enable-postgresql.md %}
+### Step 4. Memory update for slow machines (1GB of RAM) 
 
+{% include templates/install/memory-on-slow-machines.md %} 
+
+### Step 5. Run installation script
 {% include templates/run-install.md %} 
+
+
+### Step 6. Start ThingsBoard service
 
 {% include templates/start-service.md %}
 
-**NOTE**: Please allow up to 2 minutes for the Web UI to start
+{% capture 90-sec-ui %}
+Please allow up to 240 seconds for the Web UI to start. This is applicable only for slow machines with 1-2 CPUs or 1-2 GB RAM.{% endcapture %}
+{% include templates/info-banner.md content=90-sec-ui %}
 
 ### Troubleshooting
 
-ThingsBoard logs are stored in the following directory:
- 
-```bash
-/var/log/thingsboard
-```
-
-You can issue the following command in order to check if there are any errors on the backend side:
- 
-```bash
-cat /var/log/thingsboard/thingsboard.log | grep ERROR
-```
+{% include templates/install/troubleshooting.md %}
 
 ## Next steps
 

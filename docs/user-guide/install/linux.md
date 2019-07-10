@@ -4,6 +4,7 @@ assignees:
 - ashvayka
 title: Installing ThingsBoard on Linux
 description: Installing ThingsBoard on Linux
+redirect_to: "/docs/user-guide/install/ubuntu"
 
 ---
 
@@ -43,11 +44,11 @@ See corresponding instructions:
 
 #### External database installation
 
-{% include templates/install-db.md %}
+{% include templates/install/install-db.md %}
 
 ###### SQL Database: PostgreSQL
 
-{% include templates/optional-db.md %}
+{% include templates/install/optional-db.md %}
 
 Instructions listed below will help you to install PostgreSQL.
 
@@ -57,13 +58,13 @@ B,CentOS,shell,resources/postgresql-centos-installation.sh,/docs/user-guide/inst
 {% include tabs.html %}   
 
 
-{% include templates/postgres-post-install.md %}
+{% include templates/install/postgres-post-install.md %}
 
-{% include templates/create-tb-db.md %}
+{% include templates/install/create-tb-db.md %}
 
 ###### NoSQL Database: Cassandra
 
-{% include templates/optional-db.md %}
+{% include templates/install/optional-db.md %}
 
 Instructions listed below will help you to install Cassandra.
 

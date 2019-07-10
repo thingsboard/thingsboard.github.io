@@ -8,6 +8,80 @@ description: ThingsBoard architecture
 * TOC
 {:toc}
 
+## v2.4.0 (July 10, 2019)
+
+### ThingsBoard CE
+
+Minor release with the following improvements.
+
+Main features:
+
+- Added [Bulk Provisioning](/docs/user-guide/bulk-provisioning/) of devices/assets using CSV files;
+- Added [Claiming devices](/docs/user-guide/claiming-devices/) feature;
+- UI: Ability to reorder datakey chips via Drag&Drop in widget editor;
+- UI: Combined attributes and timeseries datakeys for latest values widget in widget editor;
+
+Additional features:
+
+- Added events debug mode rate limits;
+- Added debug events TTL;
+- Improved "tenant/customer details" rule nodes;
+- Improved "get originator attributes" and "get device attributes"rule nodes;
+- Improve "create alarm" rule node: ability to use metadata for alarm type;
+- Added "Entity View" type to "Filter" rule nodes;
+- Added indexes to SQL database schema;
+- Added device label field;
+- UI: add map HERE provider to OpenStreet Map widgets;
+- UI: added custom provider option for OpenStreet Map widgets;
+- UI: added 'Disable scroll zooming' setting for all Map widgets;
+- UI: Trip animation widget improvements;
+- UI: Added ability to choose direction of legend items in legend settings;
+- UI: Added ability to hide widget timewindow;
+- UI: Added rowClick and cellButton action sources to Timeseries Table widget;
+- UI: Updated German locale;
+- UI: Added hide empty lines option to Timeseries Table widget;
+- UI: Added Chinese translation for entity views;
+- UI: Added option to show tooltip on hover for Map widgets;
+- UI: Added Czech locale;
+- UI: Added ability to define form groups in json schema for widgets configuration forms;
+- UI: Added 'On HTML element click' action source for HTML card (static and value) widgets;
+
+New Rule nodes:
+
+- "gcp pubsub" - Google Cloud PubSub external node;
+
+Bug fixes:
+
+- Fixed mqtt keep-alive;
+- Fixed [issue #1686](https://github.com/thingsboard/thingsboard/issues/1686);
+- Fixed windows installation scripts;
+- UI: fix Chinese translation problem;
+- UI: fix Entities Table widget for wrong dataKey value when same key is used on multiple columns with different processing function;
+
+### ThingsBoard PE
+
+Everything from TB CE v2.4.0 with the following improvements.
+
+Main features:
+
+- Added [Self-registration](/docs/user-guide/self-registration/) feature;
+
+Additional features:
+
+- Improve 'add to group' node - add ability to remove entity from current groups;
+- Allow pushing ENTITY_CREATED event on device creation via Integration;
+- Allow pushing ENTITY_CREATED event on customer creation via Integration;
+- Integrations: added ability to change device owner from uplink data;
+- UI: Added 'Copy entity group id' button;
+- UI: Added white-labeling settings to show product name and version;
+
+Bug fixes:
+
+- Fixed matching by FQN and ID in OPC-UA integration;
+- Fixed whitelabeling issues for subcustomers;
+- Fixed owners cache;
+- Add validation to Group Permissions Controller;
+
 ## v2.3.1 (April 3, 2019)
 
 ### ThingsBoard CE

@@ -1,0 +1,203 @@
+$install-color: #506dad
+
+#docsContent
+  .installation-options
+    .gray-bg
+      background: #7c7c7c
+
+    .install-options-hero
+      position: relative
+      z-index: 6
+      min-height: 160px
+      display: flex
+      align-items: center
+      .install-options-hero-content
+        text-align: center
+        padding-top: 0px
+        padding-bottom: 0px
+        h1
+          padding-right: 0
+          color: #444
+          border: none
+          margin-bottom: 0
+          font-size: 2.5rem
+          font-weight: 500
+          line-height: 1.2
+          margin-top: 0
+          text-transform: uppercase
+          &:before
+            display: none
+        .install-options-description
+          color: #777
+          margin: auto
+          p
+            font-weight: 500
+            font-size: 18px
+            margin-bottom: 0
+      .deployment-container
+        padding-top: 50px
+        .deployment-div
+          margin-top: 30px
+          padding-bottom: 20px
+          .deployment-section
+            display: none
+            &.active
+              display: block
+          .indicator
+            font-size: 28px
+            line-height: 25px
+            font-weight: 500
+            letter-spacing: .5px
+            text-transform: uppercase
+          .deployment-cards
+            padding-bottom: 40px
+            .deployment-cards-container
+              display: flex
+              flex-wrap: wrap
+              justify-content: center
+              .deployment-card-block
+                opacity: 0
+                &.animated
+                  opacity: 1
+                max-width: 100%
+                padding: 20px 30px
+                width: 230px
+                a
+                  cursor: pointer
+                  color: $blue-03
+                  text-decoration: none
+                  &:hover
+                    text-decoration: underline
+                p
+                  margin: 15px 0
+                .deployment-logo
+                  position: relative
+                  box-shadow: 0 1px 8px 0 rgba(0,0,0,0.2), 0 3px 4px 0 rgba(0,0,0,0.14), 0 3px 3px -2px rgba(0,0,0,0.12)
+                  width: 200px
+                  height: 120px
+                  min-width: 200px
+                  display: flex
+                  justify-content: center
+                  align-items: center
+                  align-content: center
+                  img
+                    flex: 0 0 auto
+                    object-fit: scale-down
+                    max-width: 90%
+                    max-height: 85%
+                    vertical-align: middle
+                  &.coming-soon
+                    &:after
+                      content: ""
+                      position: absolute
+                      top: 0
+                      left: 0
+                      right: 0
+                      bottom: 0
+                      background-image: url("/images/install/coming-soon.png")
+                      background-size: contain
+                      opacity: 0.5
+                      background-color: #fff
+
+
+      .magic-radio
+        box-sizing: border-box
+        padding: 0
+        position: absolute
+        display: none
+        overflow: visible
+        &+label
+          position: relative
+          display: block
+          padding-left: 30px
+          cursor: pointer
+          vertical-align: middle
+          &:before
+            box-sizing: border-box
+            top: 10px
+            border-radius: 50%
+            position: absolute
+            left: 0
+            display: inline-block
+            width: 20px
+            height: 20px
+            content: ""
+            border: 1px solid silver
+          &:after
+            box-sizing: border-box
+            top: 16px
+            display: block
+            left: 6px
+            width: 8px
+            height: 8px
+            border-radius: 50%
+            background: $install-color
+            position: absolute
+            display: none
+            content: ""
+        &:checked+label:before
+          border: 1px solid $install-color
+        &:checked+label:after
+          display: block
+
+      .deployment-selector
+        margin: 0 auto
+        display: flex
+        align-items: center
+        justify-content: center
+        width: 100%
+        h2
+          margin: 0 0 0 10px
+          border: none
+          padding-bottom: 0
+          &:before
+            display: none
+        .deployment
+          position: relative
+          display: flex
+          align-items: flex-end
+          justify-content: center
+          padding-left: 10px
+          padding-right: 10px
+          color: #626262
+          cursor: pointer
+          flex: 1
+          h2
+            font-weight: 500
+            line-height: .9
+            margin: auto auto auto 10px
+            font-size: 1rem
+            letter-spacing: -.03em
+            text-transform: uppercase
+            @media (min-width: 1200px)
+              margin: auto auto auto 15px
+              font-size: 1.5rem
+            @media (min-width: 1500px)
+              font-size: 2rem
+          img
+            vertical-align: middle
+            border-style: none
+            max-height: 100%
+            filter: grayscale(1)
+          &.active
+            color: $install-color
+            img
+              opacity: 1
+              -moz-filter: grayscale(0)
+              filter: grayscale(0)
+            &:after
+              background-color: $install-color
+          &:after
+            position: absolute
+            content: ""
+            display: block
+            height: 8px
+            width: 100%
+            background-color: #626262
+            left: 0
+            bottom: -10px
+          label
+            display: flex
+            margin-bottom: 7px
+          .deployment-icon-div
+            height: 40px
