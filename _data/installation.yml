@@ -53,12 +53,6 @@ toc:
     path: /docs/user-guide/install/pe/ibm-cloud/
   - title: Installing ThingsBoard PE from Alibaba Cloud Marketplace
     path: /docs/user-guide/install/pe/alibaba-cloud/
-- title: ThingsBoard Professional Edition on AWS Marketplace
-  section:
-  - title: Installation
-    path: /docs/user-guide/install/aws-marketplace-pe/
-  - title: Upgrade instructions
-    path: /docs/user-guide/install/aws-marketplace-pe-upgrade/
 - title: License Server  
   section:
   - title: Overview
