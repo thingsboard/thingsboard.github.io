@@ -96,15 +96,7 @@ In order to activate your ThingsBoard instance you will need to get the license 
 ThingsBoard Licenses are managed by [ThingsBoard License Portal](https://license.thingsboard.io/signup).   
 
 Please register on [ThingsBoard License Portal](https://license.thingsboard.io/signup) to get your license. 
-You can review the following video for more info:
-
-<br/>
-<div id="video">  
-    <div id="video_wrapper">
-        <iframe src="https://www.youtube.com/embed/O5N-Rb7dMtI" frameborder="0" allowfullscreen></iframe>
-    </div>
-</div>
-<br/>
+See [How-to get pay-as-you-go subscription](https://www.youtube.com/watch?v=dK-QDFGxWek){:target="_blank"} or [How-to get perpatual license](https://www.youtube.com/watch?v=GPe0lHolWek){:target="_blank"} for more details.
  
 Please save your license secret to a safe place. We will use them later in this guide.
  
