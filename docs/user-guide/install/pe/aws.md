@@ -18,7 +18,7 @@ Basically, you get the license directly from ThingsBoard, Inc, but purchase corr
 
 ### Step 1. Subscribe to ThingsBoard PE BYOL
 
-Search and open "ThingsBoard Professional Edition BYOL" product page on AWS Marketplace.
+Open [ThingsBoard Professional Edition BYOL](https://aws.amazon.com/marketplace/pp/B07V8S6JLG) product page on [AWS Marketplace](https://aws.amazon.com/marketplace).
 
 - Click the **Continue to Subscribe** button
 
