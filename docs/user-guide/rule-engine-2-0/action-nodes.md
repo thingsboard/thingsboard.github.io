@@ -543,6 +543,36 @@ otherwise **Failure** chain is used.
 
 <br/>
 
+# Save to Custom Table
+
+<table  style="width:12%">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.3.1</em></strong></td>
+     </tr>
+   </thead>
+</table> 
+
+![image](/images/user-guide/rule-engine-2-0/nodes/action-save-to-custom-cassandra-table.png)
+
+Node stores data from incoming Message payload to the Cassandra database into the predefined custom table that should have **cs_tb_** prefix, to avoid the data insertion to the common TB tables.
+
+Please note, that rule node can be used only for **Cassandra DB**.
+
+Configuration:
+
+Administrator should set the custom table name without prefix: **cs_tb_**.
+
+![image](/images/user-guide/rule-engine-2-0/nodes/action-save-to-custom-cassandra-table-name-config.png)
+
+Administrator can configure the mapping between the Message field names and Table columns name. If the mapping key is **$entity_id**, that is identified by the Message Originator, then to the appropriate column name(mapping value) will be write the message originator id.
+
+![image](/images/user-guide/rule-engine-2-0/nodes/action-save-to-custom-cassandra-table-config.png)
+
+If specified message field does not exist or is not a JSON Primitive, the outbound message will be routed via **Failure** chain, otherwise, the message will be routed via **Success** chain.
+
+<br/>
+
 # Assign To Customer Node 
 
 <table  style="width:12%">
@@ -619,7 +649,7 @@ In other cases Message will be routed via **Success** chain.
 <table  style="min-width:12%; max-width: 20%">
    <thead>
      <tr>
-	 <td style="text-align: center"><strong><em>Release in TB Version 2.2.1</em></strong></td>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.2.1</em></strong></td>
      </tr>
    </thead>
 </table> 
@@ -658,6 +688,16 @@ Message will be routed via **Failure** chain in the following cases:
 
 In other cases Message will be routed via **Success** chain. 
 
+**Note:** Since TB Version 2.3 the rule node has the ability to:
+
+ - remove current relations from the originator of the incoming message based on direction and type: 
+
+    ![image](/images/user-guide/rule-engine-2-0/nodes/action-create-relation-node-remove-relations.png)
+
+ - change the originator of the incoming message to the selected entity and process outboud messages as messages from another entity: 
+ 
+    ![image](/images/user-guide/rule-engine-2-0/nodes/action-create-relation-node-change-originator.png)
+
 <br/>
 
 # Delete Relation Node
@@ -665,7 +705,7 @@ In other cases Message will be routed via **Success** chain.
 <table  style="min-width:12%; max-width: 20%">
    <thead>
      <tr>
-	 <td style="text-align: center"><strong><em>Release in TB Version 2.2.1</em></strong></td>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.2.1</em></strong></td>
      </tr>
    </thead>
 </table> 
@@ -695,4 +735,78 @@ Message will be routed via **Failure** chain in the following cases:
 
 In other cases Message will be routed via **Success** chain. 
 
+
+**Note:** Since TB Version 2.3 the rule node has the ability to deletes relation from the originator of the incoming message to the specified entity or to the list of entities based on direction and type by disabling the following checkbox in the rule node configuration:
+
+![image](/images/user-guide/rule-engine-2-0/nodes/action-delete-relation-node-new-functionality.png)
+
 <br/>
+
+# GPS Geofencing Events Node
+
+<table  style="width:15%">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.3.1</em></strong></td>
+     </tr>
+   </thead>
+</table> 
+
+![image](/images/user-guide/rule-engine-2-0/nodes/action-gps-geofencing-event-node.png)
+
+Produces incoming messages by GPS based parameters. Extracts latitude and longitude from incoming message data or metadata and returns different events based on configuration parameters (geo fence).
+
+![image](/images/user-guide/rule-engine-2-0/nodes/filter-gps-geofencing-default-config.png)
+
+The rule node fetches perimeter information from message metadata by default. If **Fetch perimeter information from message metadata** is unchecked, additional information should be configured.
+
+<br>
+
+###### Fetch perimeter information from message metadata
+
+There are two options of area definition based on the perimeter type:
+
+- Polygon 
+           
+    Metadata of the incoming message must include key with name **perimeter** and following data structure:
+     
+{% highlight java %}[[lat1,lon1],[lat2,lon2], ... ,[latN,lonN]]{% endhighlight %}
+ 
+- Circle
+                 
+{% highlight java %}"centerLatitude": "value1", "centerLongitude": "value2", "range": "value3"
+
+All values for these keys are in double-precision floating-point data type.
+
+The "rangeUnit" key requires specific value from a list of METER, KILOMETER, FOOT, MILE, NAUTICAL_MILE (capital letters obligatory).
+{% endhighlight %}
+
+###### Fetch perimeter information from node configuration
+ 
+There are two options of area definition based on the perimeter type:
+ 
+- Polygon 
+             
+![image](/images/user-guide/rule-engine-2-0/nodes/filter-gps-geofencing-polygon-config.png)           
+
+- Circle
+                  
+![image](/images/user-guide/rule-engine-2-0/nodes/filter-gps-geofencing-circle-config.png)       
+
+###### Event Types
+There are 4 types of events managed by geofencing rule node:
+
+- **Entered** — is reporting whenever latitude and longitude from the incoming message to belong the required perimeter area for the first time;
+- **Left** — is reporting whenever latitude and longitude from the incoming message not belong the required perimeter area for the first time;
+- **Inside** and **Outside** events are used to report current status.
+
+Administrator can configure duration time threshold for reporting inside or outside event. For example, whenever minimal inside time is set to 1 minute the message originator is considered as being inside the perimeter 60 seconds after entering the area.
+Minimal outside time defines whenever message originator is considered as out of the perimeter as well.
+
+![image](/images/user-guide/rule-engine-2-0/nodes/action-gps-geofencing-event-node-duration-config.png)  
+ 
+**Failure** chain will to be used when:
+
+   - incoming message has no configured latitude or longitude key in data or metadata. 
+   - missing perimeter definition;     
+    

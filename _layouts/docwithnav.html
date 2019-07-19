@@ -78,5 +78,39 @@
     border-bottom: 0;
   }
 </style>
+{% if page.content contains ".copy-code" %}
+<script>
+    jqueryDefer(function () {
+        var allCodeBlocksElements = $( ".copy-code" );
+        allCodeBlocksElements.each(function(i) {
+            var currentId = "codeblock" + (i + 1);
+            var block = $(this).find('pre.highlight > code');
+            block.attr('id', currentId);
+            var clipButton = $('<button class="clipboard-btn" data-clipboard-target="#' + currentId + '"><img src="https://clipboardjs.com/assets/images/clippy.svg" alt="Copy to clipboard"></button>');
+            $(this).append(clipButton);
+            clipButton.on('mouseleave', clearTooltip);
+            clipButton.on('blur', clearTooltip);
+        });
+        var clipboard = new Clipboard('.clipboard-btn');
+        clipboard.on('success', function(e) {
+            e.clearSelection();
+            showTooltip(e.trigger, 'Copied!');
+        });
+
+        function clearTooltip(e) {
+            var el = $(e.currentTarget);
+            el.removeClass('tooltipped tooltipped-s');
+            el.attr('aria-label', null);
+        }
+
+        function showTooltip(elem, msg) {
+            var el = $(elem);
+            el.addClass('tooltipped tooltipped-s');
+            el.attr('aria-label', msg);
+        }
+
+    });
+</script>
+{% endif %}
 </body>
 </html>

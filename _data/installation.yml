@@ -7,31 +7,75 @@ toc:
   section:
   - title: Installation options
     path: /docs/user-guide/install/installation-options/
-  - title: Installing ThingsBoard using Docker (Linux or Mac OS)
-    path: /docs/user-guide/install/docker/
-  - title: Installing ThingsBoard using Docker (Windows)
-    path: /docs/user-guide/install/docker-windows/
-  - title: Installing ThingsBoard on Windows
+  - title: Installing ThingsBoard CE on Ubuntu Server
+    path: /docs/user-guide/install/ubuntu/
+  - title: Installing ThingsBoard CE on CentOS/RHEL Server
+    path: /docs/user-guide/install/rhel/
+  - title: Installing ThingsBoard CE on Windows
     path: /docs/user-guide/install/windows/
-  - title: Installing ThingsBoard on Linux (Ubuntu & CentOS)
-    path: /docs/user-guide/install/linux/
-  - title: Installing ThingsBoard on Raspberry Pi 3
+  - title: Installing ThingsBoard CE on Raspberry Pi 3
     path: /docs/user-guide/install/rpi/
-  - title: Installing ThingsBoard on AWS EC2
+  - title: Installing ThingsBoard CE using Docker (Windows)
+    path: /docs/user-guide/install/docker-windows/
+  - title: Installing ThingsBoard CE using Docker (Linux or Mac OS)
+    path: /docs/user-guide/install/docker/
+  - title: Installing ThingsBoard CE on AWS
     path: /docs/user-guide/install/aws/
+  - title: Installing ThingsBoard CE on Azure
+    path: /docs/user-guide/install/azure/
+  - title: Installing ThingsBoard CE on DigitalOcean
+    path: /docs/user-guide/install/digital-ocean/
+  - title: Installing ThingsBoard CE on GCP
+    path: /docs/user-guide/install/gcp/
+  - title: Installing ThingsBoard CE on IBM Cloud
+    path: /docs/user-guide/install/ibm-cloud/
+  - title: Installing ThingsBoard CE on Alibaba Cloud
+    path: /docs/user-guide/install/alibaba-cloud/
   - title: Building from sources
     path: /docs/user-guide/install/building-from-source/
-  - title: Upgrade instructions
-    path: /docs/user-guide/install/upgrade-instructions/
   - title: Cluster setup
     path: /docs/user-guide/install/cluster-setup/
-- title: ThingsBoard Professional Edition
-  path: /products/thingsboard-pe/install/
-- title: ThingsBoard Professional Edition on AWS Marketplace
-  section:
-  - title: Installation
-    path: /docs/user-guide/install/aws-marketplace-pe/
   - title: Upgrade instructions
-    path: /docs/user-guide/install/aws-marketplace-pe-upgrade/
+    path: /docs/user-guide/install/upgrade-instructions/
+- title: ThingsBoard Professional Edition
+  section:
+  - title: Installation options
+    path: /docs/user-guide/install/pe/installation-options/
+  - title: Installing ThingsBoard PE on Ubuntu Server
+    path: /docs/user-guide/install/pe/ubuntu/
+  - title: Installing ThingsBoard PE on CentOS/RHEL Server
+    path: /docs/user-guide/install/pe/rhel/
+  - title: Installing ThingsBoard PE on Windows
+    path: /docs/user-guide/install/pe/windows/
+  - title: Installing ThingsBoard PE using Docker (Linux or Mac OS)
+    path: /docs/user-guide/install/pe/docker/
+  - title: Installing ThingsBoard PE using Docker (Windows)
+    path: /docs/user-guide/install/pe/docker-windows/
+  - title: Installing ThingsBoard PE from AWS Marketplace
+    path: /docs/user-guide/install/pe/aws/
+  - title: Installing ThingsBoard PE from Azure Marketplace
+    path: /docs/user-guide/install/pe/azure/
+  - title: Installing ThingsBoard PE on DigitalOcean
+    path: /docs/user-guide/install/pe/digital-ocean/
+  - title: Installing ThingsBoard PE from GCP Marketplace
+    path: /docs/user-guide/install/pe/gcp/
+  - title: Installing ThingsBoard PE from IBM Cloud Marketplace
+    path: /docs/user-guide/install/pe/ibm-cloud/
+  - title: Installing ThingsBoard PE from Alibaba Cloud Marketplace
+    path: /docs/user-guide/install/pe/alibaba-cloud/
+- title: License Server
+  section:
+  - title: Overview
+    path: /products/license-server/
+  - title: Subscriptions
+    path: /products/license-server/subscription/
+  - title: Perpetual
+    path: /products/license-server/perpetual/
+  - title: Billing info
+    path: /products/license-server/billing-info/
+  - title: User management
+    path: /products/license-server/user/
+  - title: Instance management
+    path: /products/license-server/instance/
 - title: Configuration
   path: /docs/user-guide/install/config/

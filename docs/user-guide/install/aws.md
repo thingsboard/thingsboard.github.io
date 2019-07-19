@@ -2,11 +2,14 @@
 layout: docwithnav
 assignees:
 - ashvayka
-title: Installing ThingsBoard on AWS EC2
-description: Installing ThingsBoard on AWS EC2
+title: Installing ThingsBoard CE on AWS
+description: Installing ThingsBoard CE on AWS
 
 ---
 
+![image](/images/coming-soon.jpg)
+
+<!--
 {% include templates/live-demo-banner.md %}
 
 * TOC
@@ -97,3 +100,4 @@ We recommend to create new security group, for example "ThingsBoard". Configure 
 
 Once the instance is launched, please wait some time for services to boot up and open Administration UI in the browser using public DNS from instance details.
 
+-->

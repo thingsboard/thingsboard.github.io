@@ -84,6 +84,10 @@ Outbound Message Metadata will contain configured attributes only if they exist.
 
 To access fetched attributes in other nodes you can use this template '<code>metadata.temperature</code>'
 
+**Note:** Since TB Version 2.3.1 the rule node has the ability to enable/disable reporting **Failure** if at least one selected key doesn't exist in the outbound message.
+
+![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-orignator-and-device-attributes-tell-failure.png)
+
 ##### Originator attributes
 
 <table  style="width:12%">
@@ -112,9 +116,11 @@ Server attributes use 'ss_' prefix. Latest telemetry value added into Message Me
 
 Outbound Message Metadata will contain configured attributes if they exist.
 
-If attribute or telemetry was not found, it is not added into Message Metadata and still routed via **Success** chain. 
-
 To access fetched attributes in other nodes you can use this template '<code>metadata.cs_temperature</code>'
+
+**Note:** Since TB Version 2.3.1 the rule node has the ability to enable/disable reporting **Failure** if at least one selected key doesn't exist in the outbound message.
+
+![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-orignator-and-device-attributes-tell-failure.png)
 
 You can see the real life example, where this node is used, in the following tutorials:
 
@@ -294,6 +300,70 @@ If attribute or telemetry was not found, it is not added into Message Metadata a
  
 To access fetched telemetry in other nodes you can use this template: <code>JSON.parse(metadata.temperature)</code>
 
+**Note:** Since TB Version 2.3 the rule node has the ability to choose telemetry sampling order when selected Fetch mode: **ALL**.
+
+![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-originator-telemetry-order-by.png)
+
 You can see the real-life example, where this node is used, in the following tutorials:
 
 - [Telemetry delta calculation](/docs/user-guide/rule-engine-2-0/tutorials/telemetry-delta-validation/)
+
+##### Tenant details
+
+<table  style="width:12%">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.3.1</em></strong></td>
+     </tr>
+   </thead>
+</table> 
+
+![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-tenant-details.png)
+
+Rule Node Adds fields from Tenant details to the message body or metadata.
+
+There is **Add selected details to the message metadata** checkbox in the Node configuration. If this checkbox selected, existing fields will be added to the message metadata instead of message data.
+
+![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-tenant-details-config.png)
+
+Selected details are added into metadata with prefix: **tenant_**. Outbound Message will contain configured details if they exist.
+
+To access fetched details in other nodes you can use one of the following template: 
+
+- <code>metadata.tenant_address</code>
+
+- <code>msg.tenant_address</code>
+
+**Failure** chain is used if Originator does not have assigned Tenant Entity, otherwise - **Success** chain.
+
+##### Customer details
+
+<table  style="width:12%">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.3.1</em></strong></td>
+     </tr>
+   </thead>
+</table> 
+
+![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-customer-details.png)
+
+Rule Node Adds fields from Customer details to the message body or metadata.
+
+There is **Add selected details to the message metadata** checkbox in the Node configuration. If this checkbox selected, existing fields will be added to the message metadata instead of message data.
+
+![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-customer-details-config.png)
+
+Selected details are added into metadata with prefix: **customer_**. Outbound Message will contain configured details if they exist.
+
+To access fetched details in other nodes you can use one of the following template: 
+
+- <code>metadata.customer_email</code>
+
+- <code>msg.customer_email</code>
+
+Following Message Originator types are allowed: **Asset**, **Device**, **Entity View**.
+  
+If unsupported Originator type found, an error is thrown.
+ 
+If Originator does not have assigned Customer Entity **Failure** chain is used, otherwise **Success** chain.

@@ -1,0 +1,78 @@
+{% assign contentToggleId = include.content-toggle-id %}
+{% assign toggleraw = include.toggle-spec | split: '%br%' %}
+
+<div class="tb-content-toggle" id="{{contentToggleId}}">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            {% for content in toggleraw %}
+            {% assign thisContent = content | split: '%,%' %}
+            {% assign buttonText=thisContent[0] | strip %}
+            {% assign toggleName=thisContent[1] %}
+            {% if forloop.first == true %}{% assign firstTargetId=thisContent[1] %}{% endif %}
+            <a class="content-toggle-button" data-target="#{{toggleName}}">
+                <div class="content-toggle-button-text">
+                    {{buttonText}}
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+        {% for content in toggleraw %}
+        {% assign thisContent = content | split: '%,%' %}
+        {% assign toggleName=thisContent[1] %}
+        {% assign togglePath=thisContent[2] %}
+        {% capture toggleText %}{% include {{togglePath}} %}{% endcapture %}
+        <div id="{{toggleName}}" class="panel-collapse collapse">
+            <div class="panel-body">
+                {% capture noTocText %}
+                    {% include disable-toc.html content=toggleText %}
+                {% endcapture %}
+                <table><tr><td>{{ noTocText | markdownify }}</td></tr></table>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<script>
+    jqueryUiDefer(initContentToggle{{contentToggleId}});
+    function initContentToggle{{contentToggleId}}() {
+        $(function(){
+
+            window.addEventListener('popstate', onPopState{{contentToggleId}});
+
+            onPopState{{contentToggleId}}();
+
+            $('.tb-content-toggle#{{contentToggleId}} a.content-toggle-button').click(function(event) {
+                event.preventDefault();
+                var id = $(this).attr("data-target").substring(1);
+                var param = '{{contentToggleId}}';
+                var params = Qs.parse(window.location.search, { ignoreQueryPrefix: true });
+                params[param] = id;
+
+                var newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?' + Qs.stringify(params);
+                if (window.location.hash) {
+                    newurl += window.location.hash;
+                }
+                window.history.pushState({ path: newurl }, '', newurl);
+                selectTarget{{contentToggleId}}(id);
+            });
+        });
+    }
+
+    function onPopState{{contentToggleId}}() {
+        var params = Qs.parse(window.location.search, { ignoreQueryPrefix: true });
+        var targetId = params['{{contentToggleId}}'];
+        if (!targetId) {
+            targetId = '{{firstTargetId}}';
+        }
+        selectTarget{{contentToggleId}}(targetId);
+    }
+
+    function selectTarget{{contentToggleId}}(targetId) {
+        $(".tb-content-toggle#{{contentToggleId}} a.content-toggle-button").removeClass("active");
+        $(".tb-content-toggle#{{contentToggleId}} a.content-toggle-button[data-target='#"+targetId+"']").addClass("active");
+        $('.tb-content-toggle#{{contentToggleId}} .panel-collapse').removeClass("show");
+        $('.tb-content-toggle#{{contentToggleId}} .panel-collapse#'+targetId).addClass("show");
+    }
+
+</script>

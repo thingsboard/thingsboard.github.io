@@ -1,0 +1,390 @@
+$pricing-color: #506dad
+
+@media (min-width: 1400px)
+  .container
+    max-width: 1340px
+
+#pricing
+
+  #hero
+    padding-top: 60px
+
+  #encyclopedia
+    padding: 0px
+    overflow: initial
+
+  color: #424242
+
+  .flyout-button
+    display: none
+
+  #viewPricing.center-button
+    display: none
+
+  #pricingContent
+    color: #424242
+    position: relative
+    width: 100%
+    margin: auto
+
+    .faq-content
+      padding-bottom: 30px
+      * + h2, * + h3, * + h4, * + h5, * + h6
+        margin-top: 30px
+      h1
+        text-align: center
+      h2
+        text-align: center
+      h3
+        font-weight: 300
+      p
+        line-height: 1.5em
+
+      ul, ol
+        margin: 20px 0
+        padding-left: 30px
+        font-weight: 400
+      ul
+        li
+          list-style: disc
+          margin-bottom: .75em
+
+      .pi-accordion
+        h4.title
+          font-size: 20px
+          padding: 5px 10px 0px 18px
+        div.item
+          overflow: visible
+          &:before
+            display: block
+            content: " "
+            margin-top: -60px
+            height: 60px
+            visibility: hidden
+        div.item > h4.title
+          &:before
+            top: 18px
+        .content
+          border: 5px solid transparent
+          box-shadow: 0 0 5px rgba(0,0,0,0.1), 0 1px 20px rgba(0,0,0,0.1)
+          border-radius: 10px
+        .item.on
+          & > .wrapper > .content
+            margin: 10px
+
+
+    .gray-bg
+      background: #506dad
+
+    .btn
+      display: inline-block
+      letter-spacing: 1px
+      background-color: transparent
+      border: 1px solid transparent
+      border-radius: 0
+      text-transform: uppercase
+      cursor: pointer
+      text-align: center
+      vertical-align: middle
+      user-select: none
+      line-height: 1.5
+      transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out
+      &:hover
+        color: #212529
+        text-decoration: none
+
+    .a-full-green
+      color: $pricing-color
+      font-weight: 500
+
+    .btn-full-green
+      position: relative
+      background: linear-gradient(90deg,$pricing-color,$pricing-color 31%,$pricing-color)
+      border: 0
+      color: #fff
+      letter-spacing: 1px
+      font-size: 14px
+      font-weight: 500
+      padding: .95rem 2rem .8rem 1.5rem
+      &:hover
+        background-image: linear-gradient(139deg, #5f71b5 1%, #55a05c 50%),linear-gradient(#3e7d80, #329296) !important
+        color: #fff
+        &:after
+          right: 12px
+      &:after
+        content: ">"
+        position: absolute
+        display: block
+        right: 17px
+        top: 15px
+        transition: right .2s ease-in-out
+
+
+    .pricing-square
+      border: 4px solid transparent
+      box-shadow: 0 0 10px rgba(0,0,0,.1), 0 1px 60px rgba(0,0,0,.1)
+      padding-top: 20px
+      text-align: center
+      border-radius: 0
+      color: #1b263f
+      height: 100%
+      h2
+        position: relative
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        margin-bottom: 50px
+        min-height: 80px
+        padding-right: 25px
+        padding-left: 25px
+        font-size: 2.7rem
+        &:after
+          content: ""
+          display: block
+          position: absolute
+          bottom: -30px
+          height: 3px
+          width: 70px
+          background-color: #e6e7e8
+      .pricing-square-description
+        font-size: 16px
+        font-weight: 700
+        line-height: 1.5
+        padding-right: 25px
+        padding-left: 25px
+        @media (min-width: 768px)
+          min-height: 110px
+        @media (min-width: 992px)
+          min-height: 120px
+        @media (min-width: 1200px)
+          min-height: 120px
+        @media (min-width: 1400px)
+          min-height: 100px
+        p
+          margin-bottom: 1rem
+      .pricing-square-price
+        font-weight: 700
+        font-size: 35px
+        padding-right: 25px
+        padding-left: 25px
+        text-transform: uppercase
+        letter-spacing: -.01em
+        @media (min-width: 768px)
+          min-height: 42px
+        &:not(.no-sign)
+          &:before
+            content: "$"
+            font-size: 15px
+            margin-right: -6px
+        span
+          font-size: 14px
+      .pricing-square-item
+        font-size: 14px
+        line-height: 1.5
+
+    section.pricing-content
+      position: relative
+      z-index: 4
+      padding-top: 0px
+
+      .magic-radio
+        box-sizing: border-box
+        padding: 0
+        position: absolute
+        display: none
+        overflow: visible
+        &+label
+          position: relative
+          display: block
+          padding-left: 30px
+          cursor: pointer
+          vertical-align: middle
+          &:before
+            box-sizing: border-box
+            top: 10px
+            border-radius: 50%
+            position: absolute
+            left: 0
+            display: inline-block
+            width: 20px
+            height: 20px
+            content: ""
+            border: 1px solid silver
+          &:after
+            box-sizing: border-box
+            top: 16px
+            display: block
+            left: 6px
+            width: 8px
+            height: 8px
+            border-radius: 50%
+            background: $pricing-color
+            position: absolute
+            display: none
+            content: ""
+        &:checked+label:before
+          border: 1px solid $pricing-color
+        &:checked+label:after
+          display: block
+
+      .solution-selector
+        margin: 0 auto
+        display: flex
+        align-items: center
+        justify-content: center
+        width: 100%
+        max-width: 970px
+        h2
+          margin: 0 0 0 10px
+        .solution
+          position: relative
+          display: flex
+          align-items: flex-end
+          justify-content: center
+          padding-left: 10px
+          padding-right: 10px
+          color: #626262
+          cursor: pointer
+          flex: 1
+          h2
+            font-weight: 500
+            line-height: .9
+            margin: auto auto auto 10px
+            font-size: 2rem
+            letter-spacing: -.03em
+            text-transform: uppercase
+            @media (min-width: 992px)
+              margin: auto auto auto 15px
+              font-size: 2.5rem
+          img
+            vertical-align: middle
+            border-style: none
+            max-height: 100%
+            filter: grayscale(1)
+          &.active
+            color: $pricing-color
+            img
+              opacity: 1
+              -moz-filter: grayscale(0)
+              filter: grayscale(0)
+            &:after
+              background-color: $pricing-color
+          &:after
+            position: absolute
+            content: ""
+            display: block
+            height: 8px
+            width: 100%
+            background-color: #626262
+            left: 0
+            bottom: -10px
+          label
+            display: flex
+            margin-bottom: 7px
+          .solution-icon-div
+            height: 40px
+      &#thingsboard-ce
+        padding-top: 10px
+        .pricing-div
+          margin-top: 25px
+
+      .pricing-div
+        margin-top: 65px
+        padding-bottom: 20px
+        .pricing-section
+          display: none
+          &.active
+            display: block
+        .indicator
+          font-size: 28px
+          line-height: 25px
+          font-weight: 500
+          letter-spacing: .5px
+          text-transform: uppercase
+        .btn-pricing
+          margin-top: 40px
+          margin-bottom: 40px
+          font-weight: 500
+
+    .pricing-hero
+      position: relative
+      z-index: 6
+      min-height: 100px
+      display: flex
+      align-items: center
+      background-color: #f3f3f3
+      box-shadow: 0 10.5px 25px 1px rgba(0,0,0,.15)
+
+      .pricing-hero-content
+        text-align: center
+        padding-top: 24px
+        padding-bottom: 24px
+        @media (min-width: 992px)
+          padding-top: 0px
+          padding-bottom: 0px
+        h1
+          margin-bottom: 0
+          font-size: 2.5rem
+          font-weight: 500
+          line-height: 1.2
+          margin-top: 0
+          text-transform: uppercase
+        
+        .pricing-hero-description
+          max-width: 800px
+          margin: auto
+          p
+            margin-bottom: 0
+
+    .inner-navigation
+      position: relative
+      height: 70px
+      background-color: $pricing-color
+      display: flex
+      justify-content: center
+      align-items: center
+      ul
+        list-style-type: none
+        display: flex
+        justify-content: space-around
+        align-items: center
+        margin: 0
+        padding: 0
+        li
+          position: relative
+          height: 70px
+          display: table
+          a
+            text-decoration: none
+            display: table-cell
+            vertical-align: middle
+            text-align: center
+            font-size: 12px
+            font-weight: 500
+            cursor: pointer
+            color: #122551
+            padding: 0 32px
+            letter-spacing: 1px
+            text-transform: uppercase
+            @media (min-width: 768px)
+              font-size: 15px
+            @media (min-width: 992px)
+              font-size: 18px
+            &:hover
+              color: #fff
+          &.active
+            z-index: 5
+            a
+              color: #fff
+            &:after
+              display: block
+              content: ""
+              background-color: #fff
+              height: 6px
+              width: 100px
+              position: absolute
+              bottom: -3px
+              left: calc(50% - 50px)
+              transition: left .3s ease-in-out
+              box-shadow: 0 1px 3px rgba(0,0,0,.12), 0 1px 2px rgba(0,0,0,.24)

@@ -147,6 +147,7 @@ var tb = (function () {
 			case 'home':
 			case 'thingsboard-pe':
             case 'pe-aws':
+            case 'pricing':
             case 'partner-program':
 			case 'installations':
             case 'partners':
@@ -334,6 +335,19 @@ var tb = (function () {
 			CollapseBox($(container));
 		});
 
+        $('[data-faq-id]').each(function () {
+            var faqAnchor = this;
+            var nodeId = this.getAttribute('data-faq-id');
+            var fontSize = this.getAttribute('data-faq-link-size') || 'smaller';
+            var faqLink = newDOMElement('a', 'faq-link');
+            $(faqLink).css('fontSize', fontSize);
+            faqAnchor.appendChild(faqLink);
+            $(faqLink).click(function() {
+                document.getElementById(nodeId).scrollIntoView();
+                tb.openAccordionItem(nodeId);
+            });
+        });
+
 		setYAH();
 
 		setTimeout(function () {
@@ -382,7 +396,7 @@ var tb = (function () {
 
 			if (wrapper) {
 				item.appendChild(wrapper);
-				$(wrapper).css({height: 0});
+				$(wrapper).css({height: 0, padding: 0});
 			}
 
 
@@ -413,7 +427,7 @@ var tb = (function () {
 
 				if (!thisWrapper) return;
 
-				var contentHeight = thisWrapper.find('.content').eq(0).innerHeight() + 'px';
+				var contentHeight = thisWrapper.find('.content').eq(0).outerHeight(true) + 'px';
 
 				if ($(thisItem).hasClass('on')) {
 					thisWrapper.css({height: contentHeight});

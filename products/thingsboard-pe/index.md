@@ -333,7 +333,7 @@ description:
 <br/>
 <br/>
 <div id="deployment-options"></div>
-<section id="pricing-models-cards">
+<!--section id="pricing-models-cards">
     <main id="cloud-pricing">
 		<div class="content">
 			<div class="content-block pb-0x">
@@ -382,13 +382,13 @@ description:
 			</div>
         </div>
     </main>
-</section>
+</section-->
 
 <br/>
 <br/>
 
 <p align="center">
-    <a href="/products/thingsboard-pe/install/?deploy=trial" class="button try-pe">Try it now</a>
+    <a href="/pricing/" class="button try-pe">Get it now</a>
 </p>
 
 <br/>
