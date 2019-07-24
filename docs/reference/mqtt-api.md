@@ -207,8 +207,25 @@ A,MQTT.js,shell,resources/mqtt-js-rpc-from-client.sh,/docs/reference/resources/m
 B,mqtt-js-rpc-from-client.js,javascript,resources/mqtt-js-rpc-from-client.js,/docs/reference/resources/mqtt-js-rpc-from-client.js{% endcapture %}  
 {% include tabs.html %}
 
+## Claiming devices
 
-  
+Please see the corresponding article to get more information about the [Claiming devices](/docs/user-guide/claiming-devices) feature.
+
+In order to initiate claiming device, send PUBLISH message to the following topic:
+
+```shell
+v1/devices/me/claim
+```
+
+The supported data format is:
+
+```json
+{"secretKey":"value", "durationMs":60000}
+```
+
+**Please note** that the above fields are optional. In case the **secretKey** is not specified, the empty string as a default value is used.
+In case the **durationMs** is not specified, the system parameter **device.claim.duration** is used (in the file **/etc/thingsboard/conf/thingsboard.yml**).
+
 ## Protocol customization
 
 MQTT transport can be fully customized for specific use-case by changing the corresponding [module](https://github.com/thingsboard/thingsboard/tree/master/transport/mqtt).

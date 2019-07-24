@@ -17,9 +17,12 @@
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link rel="stylesheet" href="/css/styles.css">
     <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.7.0/qs.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gifffer/1.5.0/gifffer.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@1/dist/clipboard.min.js"></script>
 	<script type="text/javascript">
         window.onload = function() {
             Gifffer();
@@ -288,6 +291,7 @@
                 <a href="javascript:void(0);" class="nav-item" id="about_us" onclick="tb.openMenu('aboutUsNav', 'about_us')" data-auto-burger-exclude>About Us</a>
             </div>
         </div>
+        <a href="/pricing/" class="button center-button" id="viewPricing" data-auto-burger-exclude>Pricing</a>
         <a href="/docs/" class="button center-button" id="viewDocs" data-auto-burger-exclude>Docs</a>
         <a href="/docs/guides/" class="button center-button" id="guides" data-auto-burger-exclude>Guides</a>
 		<button id="hamburger" onclick="tb.toggleMenu()" data-auto-burger-exclude><div></div></button>
@@ -350,6 +354,9 @@
 					</a>
 					<a href="/docs/iot-gateway/what-is-iot-gateway/" target="_self">
 						<li><span>ThingsBoard IoT Gateway</span></li>
+					</a>
+					<a href="/products/license-server/" target="_self">
+						<li><span>ThingsBoard License Server</span></li>
 					</a>
 				</ul>
 			</div>

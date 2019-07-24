@@ -1,0 +1,48 @@
+.tb-content-toggle
+  .panel-heading
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    padding-top: 20px
+    padding-bottom: 30px
+    a.content-toggle-button
+      padding: 1em 1em
+      border: 2px solid #E7E7E7
+      margin: 0.75em 0.75em
+      cursor: pointer
+      &.active
+        border: 2px solid #17527F
+        background-color: #E6F4FF
+        .content-toggle-button-text
+          color: #17527F
+      &:not(.active):hover
+        border: 2px solid #17527F
+        background-color: #E6F4FF22
+      .content-toggle-button-text
+        font-size: 18px
+        font-weight: 500
+        color: #333
+        height: 80px
+        width: 220px
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+        text-align: center
+  .panel-collapse
+    .panel-body
+      > table
+        width: auto !important
+        border: none !important
+        margin: 0 !important
+        display: block
+        > tbody
+          display: block
+          > tr
+            display: block
+            > td
+              display: block
+    h1, h2, h3, h4, h5, h6
+        &:before
+          height: 0 !important
+          margin-top: 0 !important
