@@ -23,21 +23,21 @@ This guide will help you to install and start ThingsBoard using Docker on Linux 
 
 Depending on the database used there are three type of ThingsBoard single instance docker images:
 
-* [thingsboard/tb-cassandra](https://hub.docker.com/r/thingsboard/tb-cassandra/) - single instance of ThingsBoard with Cassandra database. 
-    
-    The most performant and recommended option but requires at least 4GB of RAM. 8GB is recommended.  
 * [thingsboard/tb-postgres](https://hub.docker.com/r/thingsboard/tb-postgres/) - single instance of ThingsBoard with PostgreSQL database.
     
     Recommended option for small servers with at least 1GB of RAM and minimum load (few messages per second). 2-4GB is recommended.
+* [thingsboard/tb-cassandra](https://hub.docker.com/r/thingsboard/tb-cassandra/) - single instance of ThingsBoard with Cassandra database. 
+    
+    The most performant and recommended option but requires at least 4GB of RAM. 8GB is recommended.  
 * [thingsboard/tb](https://hub.docker.com/r/thingsboard/tb/) - single instance of ThingsBoard with embedded HSQLDB database. 
     
     **Note:** Not recommended for any evaluation or production usage and is used only for development purposes and automatic tests. 
 
-In this instruction `thingsboard/tb-cassandra` image will be used. You can choose any other images with different databases (see above).
+In this instruction `thingsboard/tb-postgres` image will be used. You can choose any other images with different databases (see above).
 Execute the following command to run this docker directly:
 
 ``` 
-$ docker run -it -p 9090:9090 -p 1883:1883 -p 5683:5683/udp -v ~/.mytb-data:/data -v ~/.mytb-logs:/var/log/thingsboard --name mytb --restart always thingsboard/tb-cassandra
+$ docker run -it -p 9090:9090 -p 1883:1883 -p 5683:5683/udp -v ~/.mytb-data:/data -v ~/.mytb-logs:/var/log/thingsboard --name mytb --restart always thingsboard/tb-postgres
 ```
 
 Where: 
@@ -51,7 +51,7 @@ Where:
 - `-v ~/.mytb-logs:/var/log/thingsboard`   - mounts the host's dir `~/.mytb-logs` to ThingsBoard logs directory
 - `--name mytb`             - friendly local name of this machine
 - `--restart always`        - automatically start ThingsBoard in case of system reboot and restart in case of failure.
-- `thingsboard/tb-cassandra`          - docker image, can be also `thingsboard/tb-postgres` or `thingsboard/tb`
+- `thingsboard/tb-postgres`          - docker image, can be also `thingsboard/tb-cassandra` or `thingsboard/tb`
     
 After executing this command you can open `http://{your-host-ip}:9090` in you browser (for ex. `http://localhost:9090`). You should see ThingsBoard login page.
 Use the following default credentials:
@@ -89,14 +89,14 @@ $ docker start mytb
 In order to update to the latest image, execute the following commands:
 
 ```
-$ docker pull thingsboard/tb-cassandra
+$ docker pull thingsboard/tb-postgres
 $ docker stop mytb
-$ docker run -it -v ~/.mytb-data:/data --rm thingsboard/tb-cassandra upgrade-tb.sh
+$ docker run -it -v ~/.mytb-data:/data --rm thingsboard/tb-postgres upgrade-tb.sh
 $ docker rm mytb
-$ docker run -it -p 9090:9090 -p 1883:1883 -p 5683:5683/udp -v ~/.mytb-data:/data -v ~/.mytb-logs:/var/log/thingsboard --name mytb --restart always thingsboard/tb-cassandra
+$ docker run -it -p 9090:9090 -p 1883:1883 -p 5683:5683/udp -v ~/.mytb-data:/data -v ~/.mytb-logs:/var/log/thingsboard --name mytb --restart always thingsboard/tb-postgres
 ```
 
-**NOTE**: if you use different database change image name in all commands from `thingsboard/tb-cassandra` to `thingsboard/tb-postgres` or `thingsboard/tb` correspondingly.
+**NOTE**: if you use different database change image name in all commands from `thingsboard/tb-postgres` to `thingsboard/tb-cassandra` or `thingsboard/tb` correspondingly.
  
 **NOTE**: replace host's directory `~/.mytb-data` with directory used during container creation. 
 

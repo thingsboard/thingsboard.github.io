@@ -1,0 +1,5 @@
+{% assign contentRows = include.content | newline_to_br | split: '<br />' %}
+{% assign notoc = '
+{: .no_toc}' %}
+{% assign skipnotoc = false %}
+{% for contentRow in contentRows %}{{contentRow}}{% assign parts = contentRow | strip | split: ' ' %}{% assign partsSize = parts | size %}{% if partsSize > 0 and parts[0] contains '```' %}{% if skipnotoc == false %}{% assign skipnotoc = true %}{% else %}{% assign skipnotoc = false %}{% endif %}{% endif %}{% if partsSize > 0 and parts[0] contains '#' and skipnotoc == false %}{{notoc}}{% endif %}{% endfor %}
