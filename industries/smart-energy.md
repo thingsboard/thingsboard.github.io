@@ -60,7 +60,7 @@ description:
 </div>
 
 <div class="customer-block">
-    <a href="http://www.nettra.com.uy/">
+    <a href="http://www.nettra.tech/">
         <div class="customer-logo">
             <img width="" src="/images/customers/nettra.png" alt="Nettra">
         </div>

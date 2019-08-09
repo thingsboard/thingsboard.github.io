@@ -381,6 +381,11 @@
       subtitle: Contains wiring diagram and dashboard setup guide.
       pe: false
       video: false
+    - path: /docs/samples/rtu+/rtu_temp_sensor/
+      title: Temperature upload over MQTT using RTU+
+      subtitle: Contains wiring diagram and dashboard setup guide.
+      pe: false
+      video: false
 - title: Advanced features
   subtitle: Learn about advanced ThingsBoard features
   id: AdvancedFeatures
