@@ -114,15 +114,15 @@ notitle: "true"
                                             </span>
                                         </a>
                                     </div>
-                                    <!--div class="deployment-card-block">
-                                        <a href="/docs/user-guide/install/cluster-setup/">
+                                    <div class="deployment-card-block">
+                                        <a href="/docs/user-guide/install/pe/cluster-setup/">
                                             <span>
                                                 <div class="deployment-logo" style="height:134px">
                                                     <img width="" src="/images/install/platform/cluster.png" title="Cluster setup" alt="Cluster setup">
                                                  </div>
                                             </span>
                                         </a>
-                                    </div-->
+                                    </div>
                                </div>                    
                             </div>                        
                         </div>

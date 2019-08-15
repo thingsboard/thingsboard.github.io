@@ -37,10 +37,12 @@ Open official [ThingsBoard PE Standalone](https://hub.docker.com/_/thingsboard-p
 Populate basic information about yourself and click "Get Content"
 
 
-![image](/images/user-guide/install/docker-pe/details.png) 
+![image](/images/user-guide/install/docker-pe/details.png)
  
 
 ## Step 3. Running
+
+Make sure your have [logged in](https://docs.docker.com/engine/reference/commandline/login/) to docker hub using command line.
 
 Execute the following command to run this docker directly:
 

@@ -63,6 +63,8 @@ toc:
     path: /docs/user-guide/install/pe/ibm-cloud/
   - title: Installing ThingsBoard PE from Alibaba Cloud Marketplace
     path: /docs/user-guide/install/pe/alibaba-cloud/
+  - title: Cluster setup
+    path: /docs/user-guide/install/pe/cluster-setup/
 - title: License Server
   section:
   - title: Overview

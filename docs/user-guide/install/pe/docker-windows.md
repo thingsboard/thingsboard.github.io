@@ -43,6 +43,8 @@ Populate basic information about yourself and click "Get Content"
 
 ## Step 3. Running
 
+Make sure your have [logged in](https://docs.docker.com/engine/reference/commandline/login/) to docker hub using command line.
+
 Windows users should use docker managed volume for ThingsBoard DataBase. 
 Create docker volume (for ex. `mytbpe-data`) before executing docker run command:
 Open "Docker Quickstart Terminal". Execute the following command to create docker volume:
