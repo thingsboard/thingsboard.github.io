@@ -7,72 +7,77 @@ description: Installing ThingsBoard PE IoT Platform using Docker (Windows)
 
 ---
 
-![image](/images/coming-soon.jpg)
-
-<!--
-
-{% include templates/live-demo-banner.md %}
-
 * TOC
 {:toc}
 
-This guide will help you to install and start ThingsBoard using Docker on Windows.
+
+This guide will help you to install and start ThingsBoard Professional Edition (PE) using Docker on Windows. 
+This guide covers standalone ThingsBoard PE installation. The container image used in this guide has embedded PostgreSQL 9.6 to simplify setup. 
+If you are looking for a cluster installation instruction, please visit [cluster setup page](/docs/user-guide/install/pe/cluster-setup/).  
 
 
 ## Prerequisites
 
 - [Install Docker Toolbox for Windows](https://docs.docker.com/toolbox/toolbox_install_windows/)
 
-## Running
+## Step 1. Obtain the license key 
 
-Depending on the database used there are three type of ThingsBoard single instance docker images:
+We assume you have already chosen your subscription plan or decided to purchase a perpetual license. 
+If not, please navigate to [pricing](/pricing/) page to select the best license option for your case and get your license. 
+See [How-to get pay-as-you-go subscription](https://www.youtube.com/watch?v=dK-QDFGxWek){:target="_blank"} or [How-to get perpetual license](https://www.youtube.com/watch?v=GPe0lHolWek){:target="_blank"} for more details.
 
-* [thingsboard/tb-cassandra](https://hub.docker.com/r/thingsboard/tb-cassandra/) - single instance of ThingsBoard with Cassandra database. 
-    
-    The most performant and recommended option but requires at least 6GB of RAM. 8GB is recommended.  
-* [thingsboard/tb-postgres](https://hub.docker.com/r/thingsboard/tb-postgres/) - single instance of ThingsBoard with PostgreSQL database.
-    
-    Recommended option for small servers with at least 1GB of RAM and minimum load (few messages per second). 2-4GB is recommended.
-* [thingsboard/tb](https://hub.docker.com/r/thingsboard/tb/) - single instance of ThingsBoard with embedded HSQLDB database. 
-    
-    **Note:** Not recommended for any evaluation or production usage and is used only for development purposes and automatic tests. 
+Note: We will reference the license key you have obtained during this step as PUT_YOUR_LICENSE_SECRET_HERE later in this guide.
 
-In this instruction `thingsboard/tb-cassandra` image will be used. You can choose any other images with different databases (see above).
+## Step 2. Checkout ThingsBoard PE image on Docker Hub
+
+Open official [ThingsBoard PE Standalone](https://hub.docker.com/_/thingsboard-pe) Docker Hub page and proceed to checkout.
+
+![image](/images/user-guide/install/docker-pe/checkout.png)
+
+
+Populate basic information about yourself and click "Get Content"
+
+
+![image](/images/user-guide/install/docker-pe/details.png) 
+ 
+
+## Step 3. Running
 
 Windows users should use docker managed volume for ThingsBoard DataBase. 
-Create docker volume (for ex. `mytb-data`) before executing docker run command:
+Create docker volume (for ex. `mytbpe-data`) before executing docker run command:
 Open "Docker Quickstart Terminal". Execute the following command to create docker volume:
 
 ``` 
-$ docker volume create mytb-data
-$ docker volume create mytb-logs
+docker volume create mytbpe-data
+docker volume create mytbpe-logs
 ```
 
 Execute the following command to run this docker directly:
-                                   
+
 ``` 
-$ docker run -it -p 9090:9090 -p 1883:1883 -p 5683:5683/udp -v mytb-data:/data -v ~/mytb-logs:/var/log/thingsboard --name mytb --restart always thingsboard/tb-cassandra
+docker run -it -p 9090:9090 -p 1883:1883 -p 5683:5683/udp -v mytbpe-data:/data -v mytbpe-logs:/var/log/thingsboard -e "TB_LICENSE_SECRET=PUT_YOUR_LICENSE_SECRET_HERE" --name mytbpe --restart always store/thingsboard/tb-pe:2.4.0PE
 ```
 
 Where: 
     
-- `docker run`              - run this container
-- `-it`                     - attach a terminal session with current ThingsBoard process output
-- `-p 9090:9090`            - connect local port 9090 to exposed internal HTTP port 9090
-- `-p 1883:1883`            - connect local port 1883 to exposed internal MQTT port 1883    
-- `-p 5683:5683`            - connect local port 5683 to exposed internal COAP port 5683 
-- `-v mytb-data:/data`      - mounts the volume `mytb-data` to ThingsBoard DataBase data directory
-- `-v mytb-logs:/var/log/thingsboard`      - mounts the volume `mytb-logs` to ThingsBoard logs directory
-- `--name mytb`             - friendly local name of this machine
-- `--restart always`        - automatically start ThingsBoard in case of system reboot and restart in case of failure. 
-- `thingsboard/tb-cassandra`          - docker image, can be also `thingsboard/tb-postgres` or `thingsboard/tb`
+- `PUT_YOUR_LICENSE_SECRET_HERE` - placeholder for your license secret obtained on the first step;    
+- `docker run`              - run this container;
+- `-it`                     - attach a terminal session with current ThingsBoard process output;
+- `-p 9090:9090`            - connect local port 9090 to exposed internal HTTP port 9090;
+- `-p 1883:1883`            - connect local port 1883 to exposed internal MQTT port 1883;   
+- `-p 5683:5683`            - connect local port 5683 to exposed internal COAP port 5683; 
+- `-v mytbpe-data:/data`      - mounts the volume `mytbpe-data` to ThingsBoard DataBase data directory
+- `-v mytbpe-logs:/var/log/thingsboard`      - mounts the volume `mytbpe-logs` to ThingsBoard logs directory
+- `--name mytb-pe`             - friendly local name of this machine;
+- `--restart always`        - automatically start ThingsBoard in case of system reboot and restart in case of failure.;
+- `store/thingsboard/tb-pe:2.4.0PE`          - docker image.
 
 In order to get access to necessary resources from external IP/Host on Windows machine, please execute the following commands:
 
 ``` 
-$ VBoxManage controlvm "default" natpf1 "tcp-port9090,tcp,,9090,,9090"  
-$ VBoxManage controlvm "default" natpf1 "tcp-port1883,tcp,,1883,,1883"
-$ VBoxManage controlvm "default" natpf1 "tcp-port5683,tcp,,5683,,5683"
+VBoxManage controlvm "default" natpf1 "tcp-port9090,tcp,,9090,,9090"  
+VBoxManage controlvm "default" natpf1 "tcp-port1883,tcp,,1883,,1883"
+VBoxManage controlvm "default" natpf1 "tcp-port5683,tcp,,5683,,5683"
 ```
     
 After executing this command you can open `http://{your-host-ip}:9090` in you browser (for ex. `http://localhost:9090`). You should see ThingsBoard login page.
@@ -91,36 +96,20 @@ You can detach from session terminal with `Ctrl-p` `Ctrl-q` - the container will
 To reattach to the terminal (to see ThingsBoard logs) run:
 
 ```
-$ docker attach mytb
+$ docker attach mytbpe
 ```
 
 To stop the container:
 
 ```
-$ docker stop mytb
+$ docker stop mytbpe
 ```
 
 To start the container:
 
 ```
-$ docker start mytb
+$ docker start mytbpe
 ```
-
-## Upgrading
-
-In order to update to the latest image, open "Docker Quickstart Terminal" and execute the following commands:
-
-```
-$ docker pull thingsboard/tb-cassandra
-$ docker stop mytb
-$ docker run -it -v mytb-data:/data --rm thingsboard/tb-cassandra upgrade-tb.sh
-$ docker rm mytb
-$ docker run -it -p 9090:9090 -p 1883:1883 -p 5683:5683/udp -v ~/mytb-data:/data -v ~/mytb-logs:/var/log/thingsboard --name mytb --restart always thingsboard/tb-cassandra
-```
-
-**NOTE**: if you use different database change image name in all commands from `thingsboard/tb-cassandra` to `thingsboard/tb-postgres` or `thingsboard/tb` correspondingly.
- 
-**NOTE**: replace volume `mytb-data` with volume used during container creation. 
 
 ## Troubleshooting
 
@@ -138,5 +127,3 @@ You may configure your system to use [Google public DNS servers](https://develop
 ## Next steps
 
 {% assign currentGuide = "InstallationGuides" %}{% include templates/guides-banner.md %}
-
--->
