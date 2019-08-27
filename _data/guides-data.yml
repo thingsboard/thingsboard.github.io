@@ -381,8 +381,8 @@
       subtitle: Contains wiring diagram and dashboard setup guide.
       pe: false
       video: false
-    - path: /docs/samples/rtu+/rtu_temp_sensor/
-      title: Temperature upload over MQTT using RTU+
+    - path: /docs/samples/nettrartu+/rtu_temp_sensor/
+      title: Temperature upload over MQTT using Nettra RTU
       subtitle: Contains wiring diagram and dashboard setup guide.
       pe: false
       video: false

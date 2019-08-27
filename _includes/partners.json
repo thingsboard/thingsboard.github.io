@@ -54,7 +54,7 @@
             "target": "_blank"
         },
         "Integration guide": {
-            "href": "/docs/samples/rtu+/rtu_temp_sensor/"
+            "href": "/docs/samples/nettrartu+/rtu_temp_sensor/"
         }
     },
     "blurb": "We provide comprehensive hardware and software IoT solutions"
