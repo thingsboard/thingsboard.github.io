@@ -31,6 +31,8 @@ and will upload them to this page as soon as possible.
 
  - [**LinkIt ONE**](/docs/samples/linkit-one/)
 
+ - [**Nettra RTU**](/docs/samples/nettrartu+/)
+
 #### Tutorials
 
  - [**Sending alarms using Email Plugin**](/docs/samples/alarms/mail/)

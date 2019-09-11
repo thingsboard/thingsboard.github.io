@@ -42,4 +42,20 @@
         }
     },
     "blurb": "TEKTELIC is a leading supplier of LoRaWAN IoT equipment including best-in-class gateways and end devices."
+},
+{
+    "type": "hardware",
+    "program": "",
+    "name": "Nettra",
+    "logo": "nettra.png",
+    "links": {
+        "Site": {
+            "href": "http://nettra.tech/",
+            "target": "_blank"
+        },
+        "Integration guide": {
+            "href": "/docs/samples/nettrartu+/rtu_temp_sensor/"
+        }
+    },
+    "blurb": "We provide comprehensive hardware and software IoT solutions"
 }]
