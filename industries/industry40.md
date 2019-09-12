@@ -61,3 +61,29 @@ Now we have a real-time production monitoring dashboards with a considerable nov
         </div>
     </div>
 </div>
+
+<div class="customer-block">
+    <a href="https://www.insys-tec.de">
+        <div class="customer-logo">
+            <img width="" src="/images/customers/insystec.jpg" alt="INSYS  Microelectronics GmbH">
+        </div>
+    </a>
+    <div class="customer-content">
+        <h3 id="insys">
+            INSYS icom
+        </h3>
+        <h4>
+            INSYS icom is a technology company, providing fully integrated solutions for IoT connectivity and remote maintenance to the automation industry and machine builders.
+        </h4>    
+        <p>
+      Our customers are manufacturers of machinery and automation systems and use the Thingsboard plattform, to centrally store and analyze the status and performance of their machines. Thingsboard provides just the right features for all standard use cases, but at the same time keeps usability and necessary knowledge at a level, that is just right for the end user. Our customers especially like the possibility to adapt widgets or build their own for special use cases, based on the detailed documentation and videos available. The IoT gateways from INSYS icom connect to the MQTT API of Thingsboard that allows sending the data to the server but as well receive server side messages to change parameters in the machinery or trigger actions in field.
+        </p> 
+        <div class="person-logo-container">
+            <!--  <img class="person-logo" src="/images/customers/julio.jpg"/> -->
+            <div class="person-title">
+                Simone Pürzer  <br/>
+                Head of Supply Chain Center 
+            </div>
+        </div>
+    </div>
+</div>

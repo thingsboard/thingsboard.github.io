@@ -60,7 +60,7 @@ description:
 </div>
 
 <div class="customer-block">
-    <a href="http://www.nettra.com.uy/">
+    <a href="http://www.nettra.tech/">
         <div class="customer-logo">
             <img width="" src="/images/customers/nettra.png" alt="Nettra">
         </div>
@@ -167,6 +167,36 @@ description:
             <div class="person-title">
                 Nairn Harrison<br/>
                 Director
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="customer-block">
+    <a href="http://co-met.info">
+        <div class="customer-logo">
+            <img width="" src="/images/customers/comet.jpg" alt="Co.met GmbH">
+        </div>
+    </a>
+    <div class="customer-content">
+        <h3 id="co-met">
+            co.met GmbH 
+        </h3>
+        <h4>
+       co.met GmbH has been active in the energy industry since 2001 with process and data services and in some cases proprietary IT solutions. 
+        </h4>
+        <p>
+        We’re a meter operator and as such a service provider for energy distribution network carriers (electricity, gas, water and heat) and other meter operators. We provide SaaS-Solutions for the remote reading of meters, field force management (for meter fitters) and the administration of smart meter gateways. Additionally we’re a LoRa WAN carrier for the city of Saarbrücken and a Solution Provider for LoRa-WAN Backendsystems.
+        </p>
+        <p>
+        In the above mentioned roles we face a lot of use cases, ranging from the mere visualization of telemetry data to the necessity to trigger events using rule chains.
+        ThingsBoard is a mighty tool and yet easy to use. It meets our requirements perfectly and far better than any other solution we’ve been testing so far. We and our customers appreciate it’s professional look, functionality and speed of reaction . The ThingsBoard Team has proven to be a very reliable partner, open for improvements and very quick to offer satisfying solutions if needed.
+        </p> 
+        <div class="person-logo-container">
+            <img class="person-logo" src="/images/customers/peter_backes.jpg"/>
+            <div class="person-title">
+                Peter Backes<br/>
+                CEO
             </div>
         </div>
     </div>
