@@ -16,39 +16,46 @@ Minor release with the following improvements.
 
 Main features:
 
-- TODO
+* Password policy setting. Login/Logout audit log;
+* Timescale DB support;
+* 5x performance improvement for PostgreSQL insert speed;
+* UI: New 'Custom Action' editor with HTML/CSS/JS input capabilities;
 
 Additional features:
 
-- TODO
-
-New Rule nodes:
-
-- TODO
+* UI: Migrate to latest webpack version 4.36.1;
+* UI: Add the possibility to hide single time-window fields;
+* UI: Add new 'multiple-input' widget to 'input widgets' bundle;
+* UI: Webcamera input widget;
+* UI: Add new React component 'ThingsboardIcon', a form to select an icon from widget settings;
+* UI: Add support for optional widget title tooltip text;
+* UI: Improve IT, ES, FR and DE translation;
+* Update Netty, GRPC, jackson-databind versions;
+* Refactoring of DAO layer and separated common interfaces to separate module;
+* Claim device improvements;
 
 Bug fixes:
 
-- TODO
+* Fix NPE in transport service;
+* MqttTransportHandler: Use default channelReadComplete implementation to avoid memory leaks;
+* Fixed memory leaks in MqttTransportHandler ([#1787](https://github.com/thingsboard/thingsboard/issues/1787));
+* Fixed broken swagger-ui;
+* Fixed violations on attributes/event primary and unique keys constraints;
+* UI: Fix fullscreen mode for ace editors inside react schema form.
 
 ### ThingsBoard PE
 
-Everything from TB CE v2.4.1 with the following improvements.
+Everything from [TB CE v2.4.1](https://github.com/thingsboard/thingsboard/releases/tag/v2.4.1) with the following improvements.
 
 Main features:
 
-- TODO
+- Remote Integrations feature to execute Integrations in a separate microservice;
+- Added TCP & UDP Integrations;
 
 Additional features:
 
-- TODO
-
-New Rule nodes:
-
-- TODO
-
-Bug fixes:
-
-- TODO
+- Integration enable/disable feature;
+- AWS SQS Integration;
 
 ## v2.4.0 (July 10, 2019)
 
