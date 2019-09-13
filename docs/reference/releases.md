@@ -8,6 +8,48 @@ description: ThingsBoard architecture
 * TOC
 {:toc}
 
+## v2.4.1 (September 13, 2019)
+
+### ThingsBoard CE
+
+Minor release with the following improvements.
+
+Main features:
+
+- TODO
+
+Additional features:
+
+- TODO
+
+New Rule nodes:
+
+- TODO
+
+Bug fixes:
+
+- TODO
+
+### ThingsBoard PE
+
+Everything from TB CE v2.4.1 with the following improvements.
+
+Main features:
+
+- TODO
+
+Additional features:
+
+- TODO
+
+New Rule nodes:
+
+- TODO
+
+Bug fixes:
+
+- TODO
+
 ## v2.4.0 (July 10, 2019)
 
 ### ThingsBoard CE
