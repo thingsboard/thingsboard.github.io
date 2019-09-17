@@ -8,18 +8,19 @@ description: ThingsBoard architecture
 The product roadmap listed below covers only main features and does not cover small improvements and bug fixes.         
 
 ## ThingsBoard CE
- 
-### v2.4.1
-
- * Introduce password makeup policy;
- * Audit of user access activity: login/logout;
- * User activation and de-activation;
- * Simplify creation of modal dialogs in dashboards;
- * TimescaleDB support for time-series data;
 
 ### v2.5
 
  * Moving Rule Engine to a separate microservice;
+ * Introducing back-pressure logic and processing checkpoints in the rule engine;
+ 
+### v3.0
+
+ * Force SQL DB usage to store entities and optional NoSQL support for timeseries data;  
+ * Migration of the UI to Angular 8;
+ * UI/UX improvements;
+ 
+See active development in progress [here](https://github.com/thingsboard/thingsboard/tree/develop/3.0) for more info.
 
 ### Upcoming releases
 
@@ -34,15 +35,10 @@ The product roadmap listed below covers only main features and does not cover sm
 ## ThingsBoard PE
 
 Everything in ThingsBoard CE, plus:
-
-### v2.4.1
-
- * Moving Integrations to a separate micro-services;
- * TCP and UDP integrations;
  
 ### v2.5
  
- * OAuth and LDAP integrations;
+ * OAuth and LDAP integrations; 
  
 ### Upcoming releases
  
