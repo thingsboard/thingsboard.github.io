@@ -95,7 +95,7 @@ return result;
 
 
 6. var data = {
-    devName: metadata.deviceName, 
+    devName: "kitchen_thermostat",
     version: msg.version
 };
 
@@ -137,7 +137,21 @@ return result;
 14. aws kinesis get-records --shard-iterator AAAAAAAAAAHlZIxAeL2mL89lR7GyyMXUUOovzvzE3gkUhzq6Ko9qADl6KyIn0lFaBbY+xaIbaqoId/vgXE99KEezsEtuwCtNC6xYZtizRThkookpXAhiriIMMbyvKgYnbeRFlHNOzIZlt28QLKGovV3qaftzP32LQ9RLcKh9X0tTm+5iiPXqGGYOIv/dfhCigOsBm740XyvL4EyooX5acL2IFf4FCuek
 
 
+15. voba@voba-desktop:~/projects/thingsboard.github.io$ aws kinesis get-records --shard-iterator AAAAAAAAAAFQtL3oAo74irn+ccC3vghADqqmh2MH+HKI9qYTi1NP957vDe8KyV6VdQ+I4shIP0HIRRVYyTZs0W9v6jaai9LevlJayMw6TgdPkVIGmV5SYZF8sGWgtd0wJuRqB+6QwCAUHQ52dgT4m+lypNSzJJw4Mo6h+9Wdk5fpwQxu/GlM8J+Uqblnq4EEr17FkWLahikaSZXktfLq5dh23+LEIc22
+{
+    "Records": [
+        {
+            "Data": "eyJkZXZOYW1lIjoia2l0Y2hlbl90aGVybW9zdGF0IiwidmVyc2lvbiI6InYuMC4xMSJ9", 
+            "PartitionKey": "1234", 
+            "ApproximateArrivalTimestamp": 1569609612.27, 
+            "SequenceNumber": "49599912710236940383450082324919185009278025474345271298"
+        }
+    ], 
+    "NextShardIterator": "AAAAAAAAAAFQlgSyxBdpKxlRrocJCYT9YDrCi/vxl0sstJgg4CM+pttVsK4AjjQwJ/QJsags5vdpQdopaqk9aKefAUOWobgwHVaZvhI4tdkmHBr45uO0Hq9AxUlKDxfiYbM0qgN33+5SvGxU8gJBUihYFY4ydPWOWdVTf2lOxp0a9X6DFrjsUqwMXR9skLw8/lQkBmHVFBlFURPy+z/AMuYHga5mDch/", 
+    "MillisBehindLatest": 0
+}
 
+16. {"devName":"kitchen_thermostat","version":"v.0.11"}
 
 ## Overview
 AWS Kinesis provides easily collect, process, and analyze video and data streams in real time, so you can get timely insights and react quickly to new information. 
