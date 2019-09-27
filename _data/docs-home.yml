@@ -61,6 +61,8 @@ toc:
       path: /docs/user-guide/integrations/mqtt/
     - title: AWS IoT
       path: /docs/user-guide/integrations/aws-iot/
+    - title: AWS Kinesis
+      path: /docs/user-guide/integrations/aws-kinesis/
     - title: IBM Watson IoT
       path: /docs/user-guide/integrations/ibm-watson-iot/
     - title: TheThingsNetwork

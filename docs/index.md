@@ -38,6 +38,7 @@ description: ThingsBoard documentation - learn about the platform and get your I
         <li><b><a href="/docs/user-guide/integrations/azure-event-hub/">Azure Event Hub</a></b></li>
         <li><b><a href="/docs/user-guide/integrations/ibm-watson-iot/">IBM Watson IoT</a></b></li>
         <li><b><a href="/docs/user-guide/integrations/aws-iot/">AWS IoT</a></b></li>
+        <li><b><a href="/docs/user-guide/integrations/aws-kinesis/">AWS Kinesis</a></b></li>
     </ul>
 <li><b><a href="/docs/user-guide/groups/">Device & asset groups</a></b> - configure multiple custom device & asset groups.</li>
 <li><b><a href="/docs/user-guide/scheduler/">Scheduler</a></b> - schedule various types of events (i.e. configuration updates, report generation, rpc commands) with flexible configuration options.</li>
