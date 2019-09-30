@@ -24,9 +24,11 @@ The job of ThingsBoard Integration is to provide secure and reliable API bridge 
 
 ### How it works?
 
-At the moment ThingsBoard supports two main integration protocols: HTTP and MQTT. 
-For example, SigFox Backend uses HTTP to push data to ThingsBoard or any other system. 
-On the other hand, AWS IoT, IBM Watson and Azure Event Hub allows to subscribe to the data feed from devices via MQTT. Similar, some LoRaWAN and NB IoT platforms allow both HTTP and MQTT interfaces.
+At the moment ThingsBoard supports various integration protocols. Most popular are HTTP, MQTT and OPC-UA. 
+Platform also support integration with specific LoRaWAN Network servers, Sigfox backend, various NB IoT devices using raw UDP and TCP integrations. 
+AWS IoT, IBM Watson and Azure Event Hub allows to subscribe to the data feed from devices via MQTT or AMQP.
+
+The list of platform integrations is constantly growing, however, the general integration concepts are the same and explained below.  
 
 Once message arrives from External Platform to ThingsBoard it passes validation according to platform specific payload format and security rules. 
 Once message is validated ThingsBoard Integration invokes assigned [**Uplink Data Converter**](/docs/user-guide/integrations/#uplink-data-converter) to extract sub-set of meaningful information out of the incoming message. 
@@ -49,6 +51,46 @@ Once message is pushed by the rule engine, ThingsBoard invokes assigned [**Downl
 <br/>
 
  ![image](/images/user-guide/integrations/integrations-overview.svg)
+ 
+ 
+### Deployment options
+ 
+ThingsBoard Integration has two deployment options: embedded and remote. See details and architecture diagrams below.
+
+#### Embedded integrations
+
+Embedded integration is running in the main ThingsBoard server process. Basically it is part of a monolith deployment scenario.
+
+Pros:
+  * simplifies deployment of new integration (just few clicks on ThingsBoard UI);
+  * minimize latency for message delivery;
+  
+Cons:
+  * consume resources allocated to main ThingsBoard process: network connections, OS threads and CPU cycles;
+  * low level of isolation;
+  * can't access local MQTT brokers or OPC-UA servers if ThingsBoard is deployed in the cloud.
+  
+#### Remote integrations
+ 
+Remote integration become available since ThingsBoard PE v2.4.1 and enables new deployment scenario. 
+One can install remote integration in the local network and stream data to the cloud.   
+
+Let's assume you have local MQTT broker or OPC-UA server deployed on-premises. 
+Those brokers and/or servers don't have dedicated external IP address, so ThingsBoard instance in the cloud can't connect to them directly. 
+However, you can install remote integration close to this server, in the same local network. 
+This integration will connect to the broker/server, pull the data and store it in the local file system.
+Remote integration will stream the data to the ThingsBoard instance deployed in the cloud once the internet connection is available.
+
+Pros:
+  * enables integration with servers deployed in the local network;
+  * isolates the integration process from main ThingsBoard process;
+  
+Cons:
+  * requires installation of a separate package;
+
+Learn how to configure integration to run remotely using [this guide](/docs/user-guide/integrations/remote-integrations).
+
+![image](/images/user-guide/integrations/remote-integrations-overview.jpg)  
 
 ### Data Converters
 
