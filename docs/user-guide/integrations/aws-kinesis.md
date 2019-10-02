@@ -11,32 +11,28 @@ description: AWS Kinesis Integration Guide
 {:toc}
 
 TODO:
-- AWS Access Credentials link
-- aws kinesis version command and it's result
-- base64 vs plain text payload
-- screnshots with correct labels 
-- Describe 'Use credentials from the Amazon EC2 Instance Metadata Service'
-- Describe 'Use Consumers with Enhanced Fan-Out'
-- shell vs bash vs json
+- screnshots with correct labels
 
 ## Overview
 **AWS Kinesis** provides easily collect, process, and analyze video and data streams in real time, so you can get timely insights and react quickly to new information. 
 After integrating **AWS Kinesis** with the **Thingsboard**, you can process and visualize data from **AWS Kinesis** streams in the **Thingsboard IoT platform**.
 
 
-Please make sure that you know [AWS Kinesis basics](https://docs.aws.amazon.com/streams/latest/dev/fundamental-stream.html){:target="_blank"} and what are the **AWS Kinesis streams** in general before continue with this topic.
+Please make sure that you know [AWS Kinesis basics](https://docs.aws.amazon.com/streams/latest/dev/introduction.html){:target="_blank"} and what are the **AWS Kinesis streams** in general before continue with this topic.
 
 
 ## AWS Kinesis setup
 
 ##### Install and configure AWS CLI
-The first step is to obtain [AWS Access Credentials](TODO){:target="_blank"} for your account. Account with these credentials must be able to create **AWS Kinesis** stream and put/get data to/from the streams.
- 
-Please make sure that account with these credentials have access to **AWS Kinesis**, **AWS DynamoDB** and **AWS CloudWatch** services.
+The first step is to obtain [AWS Access Keys](https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys){:target="_blank"} for your AWS account. Access key to your AWS account must be able to create **AWS Kinesis** stream, put data to the stream and get data from the stream. Please go to [Managing Access Keys for Your AWS Account Root User](https://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html){:target="_blank"} to create your AWS access key.
 
-Once the account is created, please note down **AWS Access Key ID**, **AWS Secret Access Key** and **AWS region**:
+Additionally, please make sure that access key for your account has access to **AWS Kinesis**, **AWS DynamoDB** and **AWS CloudWatch** services.
+
+Once the **Access Key** is created, please note down **AWS Access Key ID**, **AWS Secret Access Key**:
 - **AWS Access Key ID**: XXXXXXXXXXXXXXX
 - **AWS Secret Access Key**: YYYYYYYYYYYYYYY
+
+Additionally, please make sure that you know your default **AWS region** name:
 - **AWS region name**: ZZZZZZZ
 
 We we'll refer to them later as **AWS_ACCESS_KEY_ID**, **AWS_SECRET_ACCESS_KEY** and **AWS_REGION** accordingly during the configuration of **AWS Kinesis** Thingsboard integration.
@@ -44,23 +40,45 @@ We we'll refer to them later as **AWS_ACCESS_KEY_ID**, **AWS_SECRET_ACCESS_KEY**
 The second step is to install and configure **AWS CLI** to be able to create streams, put records into the streams and get records from the streams from the command line.
 Go to [AWS CLI install and configuration](https://docs.aws.amazon.com/streams/latest/dev/kinesis-tutorial-cli-installation.html){:target="_blank"} and install **AWS CLI** onto your machine.
 
-Once completed, please make sure that you are able to run 
-```shell
-aws kinesis version ????
+Once completed, please make sure that you are able to see help for command line: 
+```bash
+aws kinesis help
 ```
 
 and receive the following output:
-```shell
-TODO
+```bash
+KINESIS()                                                            KINESIS()
+
+NAME
+       kinesis -
+
+DESCRIPTION
+       Amazon  Kinesis  Data  Streams is a managed service that scales elasti-
+       cally for real-time processing of streaming big data.
+
+AVAILABLE COMMANDS
+       o add-tags-to-stream
+       o create-stream
+       o decrease-stream-retention-period
+       o delete-stream
+       o deregister-stream-consumer
+       o describe-limits
+       o describe-stream
+       o describe-stream-consumer
+       o describe-stream-summary
+       o disable-enhanced-monitoring
+....
 ```
 
+Please click **q** to close help.
+
 ##### Kinesis stream data format
-Kinesis uses **Base64** encoding for data compression and unification. In mean time **Thingsboard AWS Kinesis** integration will automatically convert **Base64** encoding into plain text payload. 
+Kinesis uses **Base64** format for data inside streams. In mean time **Thingsboard AWS Kinesis** integration will automatically convert **Base64** encoding into character payload. 
 
-If your application sends data in the **CSV** format, you will receive the same text line in the **CSV** format on the Thingsboard converter. If your application sends data in the **JSON** format, Thingsboard converter will receive text payload in the **JSON** format.
+If your application sends data as **CSV**, you will receive the same **CSV** payload on the Thingsboard converter. If your application sends data as **JSON** string, Thingsboard converter will receive **JSON** string in the text payload.
 
-In this tutorial, we will use JSON format to put records into Kinesis data streams and as well we'll send data back to Kinesis streams from the Thingsboard in the JSON format.
-In real life scenario, it is up to you what data format to use to decode/encode data, because it is possible to do this on any side.
+In this tutorial, we will use JSON string to put records into Kinesis data stream. As well we will send data back to Kinesis streams from the Thingsboard in the JSON string.
+In real life scenario, it is up to you what data format to use to decode/encode data.
 
 ##### AWS Kinesis demo streams
 
@@ -69,17 +87,17 @@ In this demo we will use two AWS Kinesis streams:
  - **downlink** stream - for the outgoing data from the Thingsboard.
 
 Let's create uplink stream with the help of AWS CLI:
-```shell
+```bash
 aws kinesis create-stream --stream-name tb-test-uplink --shard-count 1
 ```
 
 Please verify that stream was created successfully:
-```shell
+```bash
 aws kinesis describe-stream --stream-name tb-test-uplink
 ```
 
 The output should be similar to this:
-```shell
+{% highlight json %}
 {
     "StreamDescription": {
         "KeyId": null, 
@@ -108,20 +126,20 @@ The output should be similar to this:
         "RetentionPeriodHours": 24
     }
 }
-```
+{% endhighlight %}
 
 Next step is to create downlink stream:
-```shell
+```bash
 aws kinesis create-stream --stream-name tb-test-downlink --shard-count 1
 ```
 
 Please verify that stream was created successfully:
-```shell
+```bash
 aws kinesis describe-stream --stream-name tb-test-downlink
 ```
 
 The output should be similar to this:
-```shell
+{% highlight json %}
 {
     "StreamDescription": {
         "KeyId": null, 
@@ -150,7 +168,7 @@ The output should be similar to this:
         "RetentionPeriodHours": 24
     }
 }
-```
+{% endhighlight %}
 
 ## Integration with the Thingsboard
 We have done all necessary steps on the AWS Kinesis side. Now we can start configuring the Thingsboard.
@@ -159,7 +177,7 @@ We have done all necessary steps on the AWS Kinesis side. Now we can start confi
 
 First, we need to create Uplink Data converter that will be used for converting messages received from the AWS Kinesis. The converter should transform incoming payload into the required message format.
 Message must contains **deviceName** and **deviceType**. Those fields are used for submitting data to the correct device. If a device was not found then new device will be created.
-Here is how demo payload will look like:
+Here is how demo payload from the AWS Kinesis will look like:
 {% highlight json %}
 {
     "devName": "kitchen_thermostat", 
@@ -239,7 +257,7 @@ var result = {
 return result;
 {% endhighlight %}
 
-This converter will take **version** field from the incoming message and add it is a payload field in the outbound message. Additionally, we will put device name in the outbound message. In this way next applications in our business flow, that will consume messages from the donwlink stream, will be able to identify, that this payload belongs to **kitchen_thermostat** device.
+This converter will take **version** field from the incoming message and add it as a payload field in the outbound message. Additionally, we will put device name in the outbound message. In this way next applications in our business flow, that will consume messages from the donwlink stream, will be able to identify, that this payload belongs to **kitchen_thermostat** device.
 
 ![image](/images/user-guide/integrations/aws-kinesis/aws-kinesis-add-downlink-converter.png)
 
@@ -256,8 +274,8 @@ Next we will create Integration with AWS Kinesis inside the Thingsboard. Open **
 - Region: **AWS_REGION**
 - Access Key Id: **AWS_ACCESS_KEY_ID**
 - Access Key: **SECRET_ACCESS_KEY**
-- Use credentials from the Amazon EC2 Instance Metadata Service: false (please refer to []() for more details)
-- Use Consumers with Enhanced Fan-Out: false (please refer to []() for more details)
+- Use credentials from the Amazon EC2 Instance Metadata Service: false (please refer to [IAM Roles for Amazon EC2](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html){:target="_blank"} for more details)
+- Use Consumers with Enhanced Fan-Out: false (please refer to [Using Consumers with Enhanced Fan-Out](https://docs.aws.amazon.com/streams/latest/dev/introduction-to-enhanced-consumers.html){:target="_blank"} for more details)
 
 ![image](/images/user-guide/integrations/aws-kinesis/aws-kinesis-add-integration_1.png)
 
@@ -269,7 +287,7 @@ Next we will create Integration with AWS Kinesis inside the Thingsboard. Open **
 Lets verify our integration. First, lets put message into uplink stream, so Thingsboard will fetch this message. 
 Type in the console:
 ```bash
-aws kinesis put-record --stream-name tb-test-uplink --partition-key 123 --data '{"devName":"kitchen_thermostat", "devType":"thermostat", "temperature": 22}'
+aws kinesis put-record --stream-name tb-test-uplink --partition-key 123 --data '{"devName": "kitchen_thermostat", "devType": "thermostat", "temperature": 22}'
 ```
 
 Go to **Device Group** -> **All** -> **kitchen_thermostat** - you can see that 
@@ -335,7 +353,7 @@ In the output you should receive records from the donwlink stream in the JSON fo
 }
 {% endhighlight %}
 
-As Kinesis uses **Base64** for data encoding, we need to use some [online tool](https://base64decode.org) to encode from the **Base64** to JSON. As a result we will get next JSON payload: 
+As Kinesis uses **Base64** for data presentation, we need to use some [online Base64 converter tool](https://base64decode.org) to encode from the **Base64** to JSON representative. As a result we will get next JSON payload: 
 {% highlight json %}
 {
     "devName":"kitchen_thermostat",
