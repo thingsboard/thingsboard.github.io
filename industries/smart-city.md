@@ -93,8 +93,6 @@ description:
         </div>
     </div>
 </div>
-<<<<<<< HEAD
-=======
 
 <div class="customer-block">
     <a href="https://www.iioote.com/">
@@ -148,5 +146,3 @@ description:
             </div>
         </div>
     </div>
-</div>
->>>>>>> 8f3aeca6b1761f3038c2fa7b5286da380b8fa300
