@@ -36,6 +36,15 @@ thingsboard-download-2-4-1-centos,CentOS,shell,resources/2.4.1pe/thingsboard-cen
 
 #### ThingsBoard PE service upgrade
 
+* Stop ThingsBoard service if it is running.
+
+```bash
+$ sudo service thingsboard stop
+```
+
+* Install Thingsboard Web Report component as described [here](/docs/user-guide/install/pe/ubuntu/#step-8-install-thingsboard-webreport-component).
+
+
 {% capture tabspec %}thingsboard-installation-2-4-1
 thingsboard-installation-2-4-1-ubuntu,Ubuntu,shell,resources/2.4.1pe/thingsboard-ubuntu-installation.sh,/docs/user-guide/install/resources/2.4.1pe/thingsboard-ubuntu-installation.sh
 thingsboard-installation-2-4-1-centos,CentOS,shell,resources/2.4.1pe/thingsboard-centos-installation.sh,/docs/user-guide/install/resources/2.4.1pe/thingsboard-centos-installation.sh{% endcapture %}  
