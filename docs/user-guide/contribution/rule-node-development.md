@@ -340,7 +340,7 @@ The ThingsBoard rule nodes UI is configured with another project in the official
 
 #### Running Rule Node UI container in hot redeploy mode
 
-To running Rule Node UI container in hot redeploy mode:
+To run Rule Node UI container in hot redeploy mode:
 
  - first you need to change constant **ruleNodeUiforwardPort** from **8080** to **5000** in file **server.js** that should be here:
     
