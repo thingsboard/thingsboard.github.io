@@ -143,6 +143,7 @@ description:
             <div class="person-title">
                 Ján Masaryk  <br/>
                 Co-Founder 
+                     </div>
+                </div>
             </div>
         </div>
-    </div>
