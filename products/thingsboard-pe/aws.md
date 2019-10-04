@@ -229,8 +229,8 @@ redirect_to: "/pricing/"
                 Step 2. Assign valid domain name system (DNS) record to your external IP address for first step.<br/>
                 Step 3. Connect to your instance using SSH or PuTTY using instructions from the previous questions above.<br/>
                 Step 4. Execute the following commands:<br/><br/>
-                &nbsp;&nbsp;&nbsp;&nbsp;docker exec haproxy-certbot certbot-certonly --domain <b>smth.yourcompany.com</b> --email <b>support@yourcompany.com</b><br/>
-                &nbsp;&nbsp;&nbsp;&nbsp;docker exec haproxy-certbot haproxy-refresh<br/><br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;sudo haproxy-certbot certbot-certonly --domain <b>smth.yourcompany.com</b> --email <b>support@yourcompany.com</b><br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;sudo haproxy-certbot haproxy-refresh<br/><br/>
                 where <b>smth.yourcompany.com</b> is your DNS name from the second step<br/>
                 and <b>support@yourcompany.com</b> is your email to get notifications from <a href="https://certbot.eff.org/">certbot</a>.   
             </p>    
@@ -270,13 +270,13 @@ redirect_to: "/pricing/"
                 Let's assume your number of devices is constantly growing and you decide to upgrade to new instance type. 
                 It is relatively easy to upgrade while you plan to use the same database type. Just execute the following steps:<br/><br/>
                 &nbsp;&nbsp;&nbsp;&nbsp;1) stop your instance and backup your database<br/>
-                &nbsp;&nbsp;&nbsp;&nbsp;2) start new subscription with new instance type<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;2) start a new subscription with a new instance type<br/>
                 &nbsp;&nbsp;&nbsp;&nbsp;3) restore the database backup on the instance with new subscription<br/>
                 &nbsp;&nbsp;&nbsp;&nbsp;4) ensure everything is working as expected<br/>
                 &nbsp;&nbsp;&nbsp;&nbsp;5) cancel old subscription if needed<br/><br/>
-                However, if you plan to upgrade from PostgreSQL to Cassandra this may become a chellange. 
-                ThingsBoard team is planning to have a tool for this purpose but the release is schedule for the end of 2019. 
-                So, we recommend to maintain the same database type or consider hybrid database approach.  
+                However, if you plan to upgrade from PostgreSQL to Cassandra this may become a challenge. 
+                ThingsBoard team is planning to have a tool for this purpose but the release is scheduled for the end of 2019. 
+                So, we recommend to maintain the same database type or consider a hybrid database approach.  
             </p>    
         </div>    
     </div>                    
