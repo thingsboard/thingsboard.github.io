@@ -229,8 +229,8 @@ redirect_to: "/pricing/"
                 Step 2. Assign valid domain name system (DNS) record to your external IP address for first step.<br/>
                 Step 3. Connect to your instance using SSH or PuTTY using instructions from the previous questions above.<br/>
                 Step 4. Execute the following commands:<br/><br/>
-                &nbsp;&nbsp;&nbsp;&nbsp;sudo haproxy-certbot certbot-certonly --domain <b>smth.yourcompany.com</b> --email <b>support@yourcompany.com</b><br/>
-                &nbsp;&nbsp;&nbsp;&nbsp;sudo haproxy-certbot haproxy-refresh<br/><br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;sudo certbot-certonly --domain <b>smth.yourcompany.com</b> --email <b>support@yourcompany.com</b><br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;sudo haproxy-refresh<br/><br/>
                 where <b>smth.yourcompany.com</b> is your DNS name from the second step<br/>
                 and <b>support@yourcompany.com</b> is your email to get notifications from <a href="https://certbot.eff.org/">certbot</a>.   
             </p>    
@@ -271,7 +271,7 @@ redirect_to: "/pricing/"
                 It is relatively easy to upgrade while you plan to use the same database type. Just execute the following steps:<br/><br/>
                 &nbsp;&nbsp;&nbsp;&nbsp;1) stop your instance and backup your database<br/>
                 &nbsp;&nbsp;&nbsp;&nbsp;2) start a new subscription with a new instance type<br/>
-                &nbsp;&nbsp;&nbsp;&nbsp;3) restore the database backup on the instance with new subscription<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;3) restore the database backup on the instance with a new subscription<br/>
                 &nbsp;&nbsp;&nbsp;&nbsp;4) ensure everything is working as expected<br/>
                 &nbsp;&nbsp;&nbsp;&nbsp;5) cancel old subscription if needed<br/><br/>
                 However, if you plan to upgrade from PostgreSQL to Cassandra this may become a challenge. 
