@@ -1,0 +1,749 @@
+{
+  "title": "Grove Seeed Studio",
+  "configuration": {
+    "widgets": {
+      "f62e73cf-9926-3105-05cf-939de3ecf509": {
+        "isSystemType": true,
+        "bundleAlias": "control_widgets",
+        "typeAlias": "switch_control",
+        "type": "rpc",
+        "title": "New widget",
+        "sizeX": 4,
+        "sizeY": 2,
+        "config": {
+          "targetDeviceAliases": [],
+          "showTitle": false,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "0px",
+          "settings": {
+            "requestTimeout": 500,
+            "initialValue": false,
+            "getValueMethod": "getLedState",
+            "setValueMethod": "setLedState",
+            "showOnOffLabels": true,
+            "title": "Button led",
+            "retrieveValueMethod": "rpc",
+            "valueKey": "value",
+            "parseValueFunction": "return data ? true : false;",
+            "convertValueFunction": "return value;"
+          },
+          "title": "Button led",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "useDashboardTimewindow": true,
+          "showLegend": false,
+          "actions": {},
+          "decimals": 2,
+          "datasources": [],
+          "showTitleIcon": false,
+          "titleIcon": null,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "enableDataExport": true,
+          "displayTimewindow": true,
+          "targetDeviceAliasIds": [
+            "7d5b26b2-83fd-1042-7651-077cdb1665bc"
+          ]
+        },
+        "id": "f62e73cf-9926-3105-05cf-939de3ecf509"
+      },
+      "a8fb0f17-eeed-e924-a208-0b789558140f": {
+        "isSystemType": true,
+        "bundleAlias": "control_widgets",
+        "typeAlias": "knob_control",
+        "type": "rpc",
+        "title": "New widget",
+        "sizeX": 4,
+        "sizeY": 4,
+        "config": {
+          "targetDeviceAliases": [],
+          "showTitle": false,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "0px",
+          "settings": {
+            "requestTimeout": 1000,
+            "maxValue": 179,
+            "initialValue": 90,
+            "minValue": 1,
+            "title": "Servo",
+            "getValueMethod": "getValue",
+            "setValueMethod": "setServoAngle"
+          },
+          "title": "Servo",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "useDashboardTimewindow": true,
+          "showLegend": false,
+          "actions": {},
+          "decimals": 0,
+          "datasources": [],
+          "showTitleIcon": false,
+          "titleIcon": null,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "enableDataExport": true,
+          "displayTimewindow": true,
+          "targetDeviceAliasIds": [
+            "7d5b26b2-83fd-1042-7651-077cdb1665bc"
+          ]
+        },
+        "id": "a8fb0f17-eeed-e924-a208-0b789558140f"
+      },
+      "d0145282-e9ba-bfbc-fe69-1684734e6af0": {
+        "isSystemType": true,
+        "bundleAlias": "charts",
+        "typeAlias": "basic_timeseries",
+        "type": "timeseries",
+        "title": "New widget",
+        "sizeX": 19,
+        "sizeY": 6,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "dataKeys": [
+                {
+                  "name": "humidity",
+                  "type": "timeseries",
+                  "label": "humidity",
+                  "color": "#2196f3",
+                  "settings": {
+                    "showLines": true,
+                    "fillLines": false,
+                    "showPoints": false,
+                    "showPointsRadius": 3,
+                    "tooltipValueFormatter": "",
+                    "showSeparateAxis": false,
+                    "axisTitle": "",
+                    "axisPosition": "left",
+                    "axisTicksFormatter": ""
+                  },
+                  "_hash": 0.13253806509197408
+                },
+                {
+                  "name": "temperature",
+                  "type": "timeseries",
+                  "label": "temperature",
+                  "color": "#4caf50",
+                  "settings": {
+                    "showLines": true,
+                    "fillLines": false,
+                    "showPoints": false,
+                    "showPointsRadius": 3,
+                    "tooltipValueFormatter": "",
+                    "showSeparateAxis": false,
+                    "axisTitle": "",
+                    "axisPosition": "left",
+                    "axisTicksFormatter": ""
+                  },
+                  "_hash": 0.2073349699414826
+                }
+              ],
+              "entityAliasId": "7d5b26b2-83fd-1042-7651-077cdb1665bc"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "shadowSize": 4,
+            "fontColor": "#545454",
+            "fontSize": 10,
+            "xaxis": {
+              "showLabels": true,
+              "color": "#545454"
+            },
+            "yaxis": {
+              "showLabels": true,
+              "color": "#545454"
+            },
+            "grid": {
+              "color": "#545454",
+              "tickColor": "#DDDDDD",
+              "verticalLines": true,
+              "horizontalLines": true,
+              "outlineWidth": 1
+            },
+            "stack": false,
+            "tooltipIndividual": false
+          },
+          "title": "Temperature and humidity",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "mobileHeight": null,
+          "showTitleIcon": false,
+          "titleIcon": null,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "enableDataExport": true,
+          "widgetStyle": {},
+          "useDashboardTimewindow": true,
+          "displayTimewindow": true,
+          "showLegend": true,
+          "actions": {}
+        },
+        "id": "d0145282-e9ba-bfbc-fe69-1684734e6af0"
+      },
+      "2cb9722c-92ec-4381-b374-52d60b2b6102": {
+        "isSystemType": true,
+        "bundleAlias": "charts",
+        "typeAlias": "timeseries_bars_flot",
+        "type": "timeseries",
+        "title": "New widget",
+        "sizeX": 8,
+        "sizeY": 5,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "dataKeys": [
+                {
+                  "name": "moisture",
+                  "type": "timeseries",
+                  "label": "moisture",
+                  "color": "#00838f",
+                  "settings": {
+                    "showLines": false,
+                    "fillLines": false,
+                    "showPoints": false,
+                    "showPointsRadius": 3,
+                    "tooltipValueFormatter": "",
+                    "showSeparateAxis": false,
+                    "axisTitle": "",
+                    "axisPosition": "left",
+                    "axisTicksFormatter": ""
+                  },
+                  "_hash": 0.2797165505762029
+                }
+              ],
+              "entityAliasId": "7d5b26b2-83fd-1042-7651-077cdb1665bc"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            },
+            "aggregation": {
+              "limit": 200,
+              "type": "AVG"
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "shadowSize": 4,
+            "fontColor": "#545454",
+            "fontSize": 10,
+            "xaxis": {
+              "showLabels": true,
+              "color": "#545454"
+            },
+            "yaxis": {
+              "showLabels": true,
+              "color": "#545454",
+              "title": "Moisture"
+            },
+            "grid": {
+              "color": "#545454",
+              "tickColor": "#DDDDDD",
+              "verticalLines": true,
+              "horizontalLines": true,
+              "outlineWidth": 1
+            },
+            "stack": true,
+            "tooltipIndividual": false,
+            "defaultBarWidth": 600
+          },
+          "title": "Moisture",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "mobileHeight": null,
+          "widgetStyle": {},
+          "useDashboardTimewindow": true,
+          "showLegend": true,
+          "actions": {},
+          "showTitleIcon": false,
+          "titleIcon": null,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "enableDataExport": true,
+          "displayTimewindow": true
+        },
+        "id": "2cb9722c-92ec-4381-b374-52d60b2b6102"
+      },
+      "37606a88-b01b-bfe1-35e6-4bdffe6ad9c6": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "html_value_card",
+        "type": "latest",
+        "title": "New widget",
+        "sizeX": 8,
+        "sizeY": 3,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "dataKeys": [
+                {
+                  "name": "distance",
+                  "type": "timeseries",
+                  "label": "distance",
+                  "color": "#69f0ae",
+                  "settings": {},
+                  "_hash": 0.6357223880662238,
+                  "postFuncBody": "return value/100;"
+                }
+              ],
+              "entityAliasId": "7d5b26b2-83fd-1042-7651-077cdb1665bc"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "0px",
+          "settings": {
+            "cardCss": ".card {\n   width: 100%;\n   height: 100%;\n   border: 2px solid #ccc;\n   box-sizing: border-box;\n}\n\n.card .content {\n   padding: 20px;\n   display: flex;\n   flex-direction: row;\n   align-items: center;\n   justify-content: space-around;\n   height: 100%;\n   box-sizing: border-box;\n}\n\n.card .content .column {\n   display: flex;\n   flex-direction: column;    \n   justify-content: space-around;\n   height: 100%;\n}\n\n.card h1 {\n    text-transform: uppercase;\n    color: #999;\n    font-size: 20px;\n    font-weight: bold;\n    margin: 0;\n    padding-bottom: 10px;\n    line-height: 32px;\n}\n\n.card .value {\n    font-size: 38px;\n    font-weight: 200;\n}\n\n.card .description {\n    font-size: 20px;\n    color: #999;\n}\n",
+            "cardHtml": "<div class='card'>\n    <div class='content'>\n        <div class='column'>\n            <h1>Distance</h1>\n            <div class='value'>\n                ${distance:2} m.\n            </div>\n        </div>\n        <img height=\"80px\" src=\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMzIwIiB3aWR0aD0iMzIwIj48ZyBzdHJva2Utd2lkdGg9IjI4Ij48ZyBmaWxsPSIjMzA1NjgwIiBjb2xvcj0iIzAwMCIgd2hpdGUtc3BhY2U9Im5vcm1hbCI+PHBhdGggc3R5bGU9InRleHQtZGVjb3JhdGlvbi1jb2xvcjojMDAwO2lzb2xhdGlvbjphdXRvO21peC1ibGVuZC1tb2RlOm5vcm1hbDtibG9jay1wcm9ncmVzc2lvbjp0Yjt0ZXh0LWRlY29yYXRpb24tbGluZTpub25lO3RleHQtZGVjb3JhdGlvbi1zdHlsZTpzb2xpZDt0ZXh0LWluZGVudDowO3RleHQtdHJhbnNmb3JtOm5vbmUiIGQ9Ik0xNTEuMTMgMGMtMjguMzYzIDAtNTQuOTE1IDcuOTE1LTc3LjYxMyAyMS41MzdhMzYuNTc4IDM2LjU3OCAwIDAgMC0yMy4wNjctOC4xOTQgOC43NjYgOC43NjYgMCAwIDAtLjAwNCAwYy0yMC4xNTQuMDAxLTM2LjY3OSAxNi41MjgtMzYuNjc4IDM2LjY4MmE4Ljc2NiA4Ljc2NiAwIDAgMCAwIC4wMSAzNi42OSAzNi42OSAwIDAgMCA4LjEwNCAyMi45MjhjLTEzLjgzIDIyLjgzLTIxLjg3IDQ5LjU4LTIxLjg3IDc4LjE3YTguNzY2IDguNzY2IDAgMSAwIDE3LjUzIDBjMC0yNC43MDIgNi43Mi00Ny43NDggMTguMzc5LTY3LjU3NCA0LjU2NiAxLjk4NSA5LjQ3MiAzLjE1IDE0LjUxOSAzLjE1N2E4Ljc2NiA4Ljc2NiAwIDAgMCAuMDEyIDBjMjAuMTU1IDAgMzYuNjgzLTE2LjUyNyAzNi42ODItMzYuNjgyYTguNzY2IDguNzY2IDAgMCAwIDAtLjAwNGMtLjAwMS01LTEuMTM4LTkuODYzLTMuMDgzLTE0LjM5NyAxOS43MTctMTEuNDg0IDQyLjU4NS0xOC4wOTUgNjcuMDg1LTE4LjA5NWE4Ljc2NiA4Ljc2NiAwIDEgMCAwLTE3LjUzek01MC40NCAzMC44OGM1LjkxMy4wMDIgMTEuMTkxIDIuNTEyIDE0LjgzNiA3LjA3N2E4Ljc2NiA4Ljc2NiAwIDAgMCAuMTgzLjIxNCAxOS4xMzcgMTkuMTM3IDAgMCAxIDQuMTM0IDExLjg2M2MtLjAwMiAxMC42NzctOC40NjggMTkuMTQ0LTE5LjE0NCAxOS4xNDhhMTkuMTQ1IDE5LjE0NSAwIDAgMS0xMi00LjI1NCA4Ljc2NiA4Ljc2NiAwIDAgMC0uMDEzLS4wMSAxOS4xMzYgMTkuMTM2IDAgMCAxLTcuMTQ0LTE0Ljg5MmMuMDAzLTEwLjY3NyA4LjQ3LTE5LjE0NCAxOS4xNDgtMTkuMTQ2eiIvPjxwYXRoIHN0eWxlPSJ0ZXh0LWRlY29yYXRpb24tY29sb3I6IzAwMDtpc29sYXRpb246YXV0bzttaXgtYmxlbmQtbW9kZTpub3JtYWw7YmxvY2stcHJvZ3Jlc3Npb246dGI7dGV4dC1kZWNvcmF0aW9uLWxpbmU6bm9uZTt0ZXh0LWRlY29yYXRpb24tc3R5bGU6c29saWQ7dGV4dC1pbmRlbnQ6MDt0ZXh0LXRyYW5zZm9ybTpub25lIiBkPSJNNjYuOTkyIDEwMi44M2E4LjE4NyA4LjE4NyAwIDAgMC0yLjI1OCA2LjA3MSA4LjYwNCA4LjYwNCAwIDAgMCAyLjMzOCA1LjUxOGM2LjgwNSA2Ljg1NiAyMC4yMjMgMjAuMjIzIDIwLjIyMyAyMC4yMjNsMTEuODQ0LTExLjgzcy0xMi45NzMtMTIuOTYxLTIwLjE3Ni0yMC4xNzFjLTEuNjA0LTEuNjMyLTMuNzUtMi4zMTQtNi4wMTItMi4zMjRhOC4xNSA4LjE1IDAgMCAwLTUuOTYgMi41MTJ6bTMyLjE0NyAxOS45ODNMNjIuNSAxNTkuNDUyYy0zLjk3NSAzLjk3Ni0zLjk3NSAxMC40MjEgMCAxNC4zOTdsMTguMTU2IDE4LjE1NiAzMS43NTMgMzEuNzUzIDMwLjQ3OCAzMC40NzhjMy45NzYgMy45NzYgMTAuNDIyIDMuOTc2IDE0LjM5OCAwbDI0Ljc5MS0yNC43OTEgMzcuOTE0LTM3LjkxNCAzNi42MzktMzYuNjM5YzMuOTc1LTMuOTc2IDMuOTc1LTEwLjQyMiAwLTE0LjM5OGwtMTguNjMtMTguNjMtMzEuNzUtMzEuNzYtMzAuMDEtMzBjLTMuOTc3LTMuOTc1LTEwLjQyMi0zLjk3NS0xNC4zOTggMGwtMjQuNzkgMjQuNzktMzcuOTEgMzcuOTF6bTM3LjkxMS0zNy45MXMtMTIuOTczLTEyLjk2MS0yMC4xNzYtMjAuMTcxYy0xLjYwNC0xLjYzMi0zLjc1LTIuMzE0LTYuMDEyLTIuMzI0LTQuNzE3LS4wMjMtOC40MzQgMy44NjEtOC4yMTcgOC41ODNhOC42MDQgOC42MDQgMCAwIDAgMi4zMzcgNS41MThjNi44MDUgNi44NTYgMjAuMjIzIDIwLjIyMyAyMC4yMjMgMjAuMjIzbDExLjg0NC0xMS44M3ptNjkuMTkzIDUuMjEzczEyLjk2MS0xMi45NzMgMjAuMTcxLTIwLjE3NmMxLjYzMy0xLjYwNCAyLjMxNC0zLjc1IDIuMzI0LTYuMDEyLjAyMy00LjcxNi0zLjg2MS04LjQzNC04LjU4My04LjIxN2E4LjYwNCA4LjYwNCAwIDAgMC01LjUxOCAyLjMzOGMtNi44NTYgNi44MDUtMjAuMjIzIDIwLjIyMy0yMC4yMjMgMjAuMjIzbDExLjgzIDExLjg0NHptMzEuNzUzIDMxLjc1M3MxMi45NjEtMTIuOTczIDIwLjE3MS0yMC4xNzZjMS42MzMtMS42MDQgMi4zMTQtMy43NSAyLjMyNC02LjAxMi4wMjMtNC43MTYtMy44NjEtOC40MzQtOC41ODMtOC4yMTdhOC42MDQgOC42MDQgMCAwIDAtNS41MTggMi4zMzhjLTYuODU2IDYuODA1LTIwLjIyMyAyMC4yMjMtMjAuMjIzIDIwLjIyM2wxMS44MyAxMS44NDR6bS0xOC4wMDkgNjkuNjY3czEyLjk3MyAxMi45NjEgMjAuMTc4IDIwLjE3YzEuNjA0IDEuNjMyIDMuNzUgMi4zMTMgNi4wMTIgMi4zMjQgNC43MTcuMDIyIDguNDM0LTMuODYyIDguMjE3LTguNTg0bC0uMDAyLjAwMmE4LjYwNiA4LjYwNiAwIDAgMC0yLjMzOC01LjUxOGMtNi44MDUtNi44NTYtMjAuMjIyLTIwLjIyMi0yMC4yMjItMjAuMjIybC0xMS44NDQgMTEuODN6bS0zNy45MTQgMzcuOTE0czEyLjk3MyAxMi45NjEgMjAuMTc4IDIwLjE3YzEuNjA0IDEuNjMyIDMuNzUgMi4zMTMgNi4wMTIgMi4zMjMgNC43MTcuMDIzIDguNDM0LTMuODYxIDguMjE3LTguNTgzaC0uMDAyYTguNjAzIDguNjAzIDAgMCAwLTIuMzM3LTUuNTE4Yy02LjgwNS02Ljg1Ni0yMC4yMjMtMjAuMjIzLTIwLjIyMy0yMC4yMjNsLTExLjg0NCAxMS44M3ptLTY5LjY2Ny01LjY4N3MtMTIuOTYxIDEyLjk3My0yMC4xNjkgMjAuMTc4Yy0xLjYzMiAxLjYwNC0yLjMxNCAzLjc1LTIuMzI0IDYuMDEyLS4wMjMgNC43MTcgMy44NjEgOC40MzQgOC41ODMgOC4yMTdoLS4wMDJhOC42MDIgOC42MDIgMCAwIDAgNS41MTgtMi4zMzdjNi44NTYtNi44MDUgMjAuMjIzLTIwLjIyMyAyMC4yMjMtMjAuMjIzbC0xMS44Mi0xMS44NHptLTMxLjc0My0zMS43NHMtMTIuOTYxIDEyLjk3My0yMC4xNjkgMjAuMTc4Yy0xLjYzMiAxLjYwNC0yLjMxNCAzLjc1LTIuMzI0IDYuMDEyLS4wMjMgNC43MTcgMy44NjEgOC40MzQgOC41ODMgOC4yMTdoLS4wMDJhOC42MDQgOC42MDQgMCAwIDAgNS41MTgtMi4zMzdjNi44NTYtNi44MDUgMjAuMjIzLTIwLjIyMyAyMC4yMjMtMjAuMjIzbC0xMS44My0xMS44NXpNMTY3LjkgMTAxLjQ3YzEuNjgtMS43MDYgMy45NjctMi42NiA2LjI5Ny0yLjYyNmE3Ljg5IDcuODkgMCAwIDEgNC41NjMgMS41MWwxNi40OTkgMTIuMWMzLjIgMi4yOTcgNC4xNDQgNi42NTkgMi4yMyAxMC4zMTItMS45MTMgMy42NTMtNi4xMjMgNS41MjQtOS45NSA0LjQyM2w2LjEyNCAyMy45NDhjMS4xMTMgNC4zNTEtMS41NjQgOC45NjctNS45ODQgMTAuMzE3bC00NC42NDIgMTMuNjMgOC4yNDYgMzEuODg0YzEuMTczIDQuMzctMS41MDIgOS4wNDQtNS45NTUgMTAuNDA3cy04Ljk3NS0xLjExMS0xMC4wNjgtNS41MDVsLTEwLjI4Mi0zOS43N2MtMS4xMjYtNC4zNTUgMS41NS04Ljk4NCA1Ljk3Ni0xMC4zMzdsNDQuNjYxLTEzLjYzNy00LjEyMi0xNi4xMThjLTIuNzYzIDMuMDY0LTcuMjMzIDMuODA4LTEwLjU4NiAxLjc2MS0zLjM1My0yLjA0Ny00LjYxNC02LjI5LTIuOTg2LTEwLjA0N2w4LjExNy0xOS40NTRhOC44NzIgOC44NzIgMCAwIDEgMS44NjMtMi43OTd6IiBmaWxsLXJ1bGU9ImV2ZW5vZGQiLz48cGF0aCBzdHlsZT0idGV4dC1kZWNvcmF0aW9uLWNvbG9yOiMwMDA7aXNvbGF0aW9uOmF1dG87bWl4LWJsZW5kLW1vZGU6bm9ybWFsO2Jsb2NrLXByb2dyZXNzaW9uOnRiO3RleHQtZGVjb3JhdGlvbi1saW5lOm5vbmU7dGV4dC1kZWNvcmF0aW9uLXN0eWxlOnNvbGlkO3RleHQtaW5kZW50OjA7dGV4dC10cmFuc2Zvcm06bm9uZSIgZD0iTTE2OC44NyAzMjAuMDRjMjguMzYzIDAgNTQuOTE1LTcuOTE1IDc3LjYxNC0yMS41MzhhMzYuNTc4IDM2LjU3OCAwIDAgMCAyMy4wNjcgOC4xOTQgOC43NjYgOC43NjYgMCAwIDAgLjAwNCAwYzIwLjE1NSAwIDM2LjY4LTE2LjUyOCAzNi42NzktMzYuNjgyYTguNzY2IDguNzY2IDAgMCAwIDAtLjAxMSAzNi42ODggMzYuNjg4IDAgMCAwLTguMTAzLTIyLjkyN2MxMy44MjUtMjIuODIgMjEuODY2LTQ5LjU3MiAyMS44NjYtNzguMTYyYTguNzY2IDguNzY2IDAgMSAwLTE3LjUzMSAwYzAgMjQuNzAzLTYuNzIgNDcuNzQ5LTE4LjM3OCA2Ny41NzUtNC41NjctMS45ODUtOS40NzMtMy4xNS0xNC41Mi0zLjE1N2E4Ljc2NiA4Ljc2NiAwIDAgMC0uMDEyIDBjLTIwLjE1NS0uMDAxLTM2LjY4MyAxNi41MjctMzYuNjgyIDM2LjY4Mi4wMDIgNC45OTkgMS4xMzkgOS44NjIgMy4wODMgMTQuMzk3LTE5LjcxNyAxMS40ODQtNDIuNTg2IDE4LjA5NS02Ny4wODYgMTguMDk1YTguNzY2IDguNzY2IDAgMSAwIDAgMTcuNTN6bTEwMC42OS0zMC44NzVjLTUuOTEzIDAtMTEuMTkxLTIuNTEyLTE0LjgzNi03LjA3N2E4Ljc2NiA4Ljc2NiAwIDAgMC0uMTgzLS4yMTQgMTkuMTM2IDE5LjEzNiAwIDAgMS00LjEzNC0xMS44NjNjLjAwMi0xMC42NzcgOC40NjgtMTkuMTQ0IDE5LjE0NC0xOS4xNDhhMTkuMTQ1IDE5LjE0NSAwIDAgMSAxMiA0LjI1NCA4Ljc2NiA4Ljc2NiAwIDAgMCAuMDEzLjAxIDE5LjEzNiAxOS4xMzYgMCAwIDEgNy4xNDQgMTQuODkyYy0uMDAzIDEwLjY3Ny04LjQ3IDE5LjE0NS0xOS4xNDggMTkuMTQ2eiIvPjwvZz48L2c+PC9zdmc+\" />\n    </div>\n</div>"
+          },
+          "title": "Distance",
+          "dropShadow": false,
+          "enableFullscreen": true,
+          "widgetStyle": {},
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "useDashboardTimewindow": true,
+          "showLegend": false,
+          "actions": {},
+          "showTitleIcon": false,
+          "titleIcon": null,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "enableDataExport": true,
+          "displayTimewindow": true
+        },
+        "id": "37606a88-b01b-bfe1-35e6-4bdffe6ad9c6"
+      },
+      "35558d8d-1e9f-1e1b-2121-9ab863447214": {
+        "isSystemType": true,
+        "bundleAlias": "charts",
+        "typeAlias": "state_chart",
+        "type": "timeseries",
+        "title": "New widget",
+        "sizeX": 8,
+        "sizeY": 5,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "dataKeys": [
+                {
+                  "name": "button_press",
+                  "type": "timeseries",
+                  "label": "button_press",
+                  "color": "#2196f3",
+                  "settings": {
+                    "showLines": true,
+                    "fillLines": true,
+                    "showPoints": false,
+                    "showPointsRadius": 3,
+                    "showSeparateAxis": false,
+                    "axisPosition": "left"
+                  },
+                  "_hash": 0.954349789101717,
+                  "postFuncBody": "if (value == \"true\"){\n    return 1;\n} else {\n    return 0;\n}"
+                }
+              ],
+              "entityAliasId": "7d5b26b2-83fd-1042-7651-077cdb1665bc"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "shadowSize": 4,
+            "fontColor": "#545454",
+            "fontSize": 10,
+            "xaxis": {
+              "showLabels": true,
+              "color": "#545454"
+            },
+            "yaxis": {
+              "showLabels": true,
+              "color": "#545454",
+              "ticksFormatter": "// if (value) {\n//     return 'On';\n// } else if (!value) {\n//     return 'Off';\n// } else {\n//     return '';\n// }\nreturn value;",
+              "min": 0,
+              "max": 1,
+              "tickSize": 1
+            },
+            "grid": {
+              "color": "#545454",
+              "tickColor": "#DDDDDD",
+              "verticalLines": true,
+              "horizontalLines": true,
+              "outlineWidth": 1
+            },
+            "stack": true,
+            "tooltipIndividual": false,
+            "smoothLines": true,
+            "tooltipValueFormatter": "// if (value) {\n//     return 'On';\n// } else if (!value) {\n//     return 'Off';\n// } else {\n//     return '';\n// }\nreturn value;"
+          },
+          "title": "Button state",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "mobileHeight": null,
+          "widgetStyle": {},
+          "useDashboardTimewindow": true,
+          "showLegend": true,
+          "actions": {},
+          "legendConfig": {
+            "position": "bottom",
+            "showMin": false,
+            "showMax": false,
+            "showAvg": false,
+            "showTotal": false
+          },
+          "showTitleIcon": false,
+          "titleIcon": null,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "enableDataExport": true,
+          "displayTimewindow": true
+        },
+        "id": "35558d8d-1e9f-1e1b-2121-9ab863447214"
+      },
+      "afb8bd77-1aba-93e1-f75a-e9e12c58f193": {
+        "isSystemType": true,
+        "bundleAlias": "digital_gauges",
+        "typeAlias": "vertical_bar_justgage",
+        "type": "latest",
+        "title": "New widget",
+        "sizeX": 5,
+        "sizeY": 8,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "dataKeys": [
+                {
+                  "name": "light",
+                  "type": "timeseries",
+                  "label": "light",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.7972109195601981
+                }
+              ],
+              "entityAliasId": "7d5b26b2-83fd-1042-7651-077cdb1665bc"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#ffffff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "0px",
+          "settings": {
+            "maxValue": 1023,
+            "minValue": 0,
+            "donutStartAngle": 90,
+            "showValue": true,
+            "showMinMax": true,
+            "gaugeWidthScale": 0.75,
+            "levelColors": [],
+            "titleFont": {
+              "family": "Roboto",
+              "size": 12,
+              "style": "normal",
+              "weight": "500",
+              "color": "#999999"
+            },
+            "labelFont": {
+              "family": "Roboto",
+              "size": 8,
+              "style": "normal",
+              "weight": "500"
+            },
+            "valueFont": {
+              "family": "Roboto",
+              "style": "normal",
+              "weight": "500",
+              "size": 12,
+              "color": "#666666"
+            },
+            "minMaxFont": {
+              "family": "Roboto",
+              "size": 8,
+              "style": "normal",
+              "weight": "500",
+              "color": "#666666"
+            },
+            "neonGlowBrightness": 0,
+            "dashThickness": 1.5,
+            "gaugeColor": "#eeeeee",
+            "showTitle": false,
+            "gaugeType": "verticalBar",
+            "timestampFormat": "yyyy-MM-dd HH:mm:ss",
+            "animation": true,
+            "animationDuration": 500,
+            "animationRule": "linear"
+          },
+          "title": "Light",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "showTitleIcon": false,
+          "titleIcon": null,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "enableDataExport": true,
+          "widgetStyle": {},
+          "useDashboardTimewindow": true,
+          "displayTimewindow": true,
+          "showLegend": false,
+          "actions": {}
+        },
+        "id": "afb8bd77-1aba-93e1-f75a-e9e12c58f193"
+      },
+      "ac206203-78b6-0095-82af-c96f927c8394": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "timeseries_table",
+        "type": "timeseries",
+        "title": "New widget",
+        "sizeX": 10,
+        "sizeY": 8,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "dataKeys": [
+                {
+                  "name": "motion",
+                  "type": "timeseries",
+                  "label": "motion",
+                  "color": "#2196f3",
+                  "settings": {
+                    "useCellStyleFunction": false,
+                    "useCellContentFunction": false
+                  },
+                  "_hash": 0.06608180295154453,
+                  "postFuncBody": "if (value == \"true\"){\n    return \"Motion detected\"\n} else {\n    return \"No motion\"\n}"
+                }
+              ],
+              "entityAliasId": "7d5b26b2-83fd-1042-7651-077cdb1665bc"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "interval": 1000,
+              "timewindowMs": 3600000
+            },
+            "aggregation": {
+              "type": "NONE",
+              "limit": 200
+            },
+            "hideInterval": false,
+            "hideAggregation": true,
+            "hideAggInterval": true
+          },
+          "showTitle": true,
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "showTimestamp": true,
+            "displayPagination": true,
+            "defaultPageSize": 10
+          },
+          "title": "Motion",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "useDashboardTimewindow": false,
+          "showLegend": false,
+          "widgetStyle": {},
+          "actions": {},
+          "showTitleIcon": false,
+          "titleIcon": null,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "enableDataExport": true,
+          "displayTimewindow": true
+        },
+        "id": "ac206203-78b6-0095-82af-c96f927c8394"
+      }
+    },
+    "states": {
+      "default": {
+        "name": "Grove Seeed Studio",
+        "root": true,
+        "layouts": {
+          "main": {
+            "widgets": {
+              "f62e73cf-9926-3105-05cf-939de3ecf509": {
+                "sizeX": 4,
+                "sizeY": 2,
+                "row": 0,
+                "col": 0
+              },
+              "a8fb0f17-eeed-e924-a208-0b789558140f": {
+                "sizeX": 4,
+                "sizeY": 4,
+                "row": 2,
+                "col": 0
+              },
+              "d0145282-e9ba-bfbc-fe69-1684734e6af0": {
+                "sizeX": 19,
+                "sizeY": 6,
+                "mobileHeight": null,
+                "row": 0,
+                "col": 4
+              },
+              "2cb9722c-92ec-4381-b374-52d60b2b6102": {
+                "sizeX": 8,
+                "sizeY": 5,
+                "mobileHeight": null,
+                "row": 9,
+                "col": 0
+              },
+              "37606a88-b01b-bfe1-35e6-4bdffe6ad9c6": {
+                "sizeX": 8,
+                "sizeY": 3,
+                "row": 6,
+                "col": 0
+              },
+              "35558d8d-1e9f-1e1b-2121-9ab863447214": {
+                "sizeX": 8,
+                "sizeY": 5,
+                "mobileHeight": null,
+                "row": 14,
+                "col": 0
+              },
+              "afb8bd77-1aba-93e1-f75a-e9e12c58f193": {
+                "sizeX": 5,
+                "sizeY": 8,
+                "row": 6,
+                "col": 8
+              },
+              "ac206203-78b6-0095-82af-c96f927c8394": {
+                "sizeX": 10,
+                "sizeY": 8,
+                "row": 6,
+                "col": 13
+              }
+            },
+            "gridSettings": {
+              "backgroundColor": "#eeeeee",
+              "color": "rgba(0,0,0,0.870588)",
+              "columns": 24,
+              "margins": [
+                10,
+                10
+              ],
+              "backgroundSizeMode": "100%"
+            }
+          }
+        }
+      }
+    },
+    "entityAliases": {
+      "7d5b26b2-83fd-1042-7651-077cdb1665bc": {
+        "id": "7d5b26b2-83fd-1042-7651-077cdb1665bc",
+        "alias": "Grove Seeed Studio",
+        "filter": {
+          "type": "singleEntity",
+          "resolveMultiple": false,
+          "singleEntity": {
+            "entityType": "DEVICE",
+            "id": "1bdb0450-daa8-11e9-920e-313684e23fb0"
+          }
+        }
+      }
+    },
+    "timewindow": {
+      "realtime": {
+        "interval": 5000,
+        "timewindowMs": 60000
+      },
+      "aggregation": {
+        "type": "AVG",
+        "limit": 2500
+      },
+      "hideInterval": false,
+      "hideAggregation": false,
+      "hideAggInterval": false
+    },
+    "settings": {
+      "stateControllerId": "entity",
+      "showTitle": false,
+      "showDashboardsSelect": true,
+      "showEntitiesSelect": true,
+      "showDashboardTimewindow": true,
+      "showDashboardExport": true,
+      "toolbarAlwaysOpen": true
+    }
+  },
+  "name": "Grove Seeed Studio"
+}

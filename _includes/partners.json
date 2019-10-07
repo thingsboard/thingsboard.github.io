@@ -58,4 +58,20 @@
         }
     },
     "blurb": "We provide comprehensive hardware and software IoT solutions"
+},
+{
+    "type": "hardware",
+    "program": "",
+    "name": "Seeed Technology Co.,Ltd.",
+    "logo": "seeed.png",
+    "links": {
+        "Site": {
+            "href": "https://www.seeed.cc/",
+            "target": "_blank"
+        },
+        "Integration guide": {
+            "href": "/docs/samples/raspberry/grove/"
+        }
+    },
+    "blurb": "Whether you are a developer , technical supplier, or industry player, we provide products and services for your IoT needs."
 }]
