@@ -49,6 +49,8 @@ toc:
     section:
     - title: Overview
       path: /docs/user-guide/integrations/
+    - title: Remote Integrations
+      path: /docs/user-guide/integrations/remote-integrations/
     - title: HTTP
       path: /docs/user-guide/integrations/http/
     - title: Ocean Connect
