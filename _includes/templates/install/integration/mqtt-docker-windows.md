@@ -46,16 +46,19 @@ To reattach to the terminal (to see ThingsBoard logs) run:
 ```
 docker attach tb-pe-mqtt-integration
 ```
+{: .copy-code}
 
 To stop the container:
 
 ```
 docker stop tb-pe-mqtt-integration
 ```
+{: .copy-code}
 
 To start the container:
 
 ```
 docker start tb-pe-mqtt-integration
 ```
+{: .copy-code}
 

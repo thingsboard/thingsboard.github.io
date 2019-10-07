@@ -37,16 +37,18 @@ To reattach to the terminal (to see ThingsBoard logs) run:
 ```
 docker attach tb-pe-azure-integration
 ```
+{: .copy-code}
 
 To stop the container:
 
 ```
 docker stop tb-pe-azure-integration
 ```
+{: .copy-code}
 
 To start the container:
 
 ```
 docker start tb-pe-azure-integration
 ```
-
+{: .copy-code}

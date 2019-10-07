@@ -51,7 +51,7 @@ Let's copy-paste the integration key and secret from the integration details.
 
 ## Remote integration installation steps
 
-### Step 4. Choose your platform and install
+### Choose your platform and install
 
 One can install ThingsBoard Integration via Docker, Debian or RPM packages.
 Please use one of the next steps.
@@ -61,7 +61,7 @@ Please use one of the next steps.
  * [Ubuntu](/docs/user-guide/integrations/remote-integrations/#ubuntu-server)
  * [CentOS/RHEL Server](/docs/user-guide/integrations/remote-integrations/#centosrhel-server)
 
-#### Docker on Linux/Mac
+### Docker on Linux/Mac
 
 - **[Install Docker CE](https://docs.docker.com/engine/installation/)**
 
@@ -90,11 +90,12 @@ TCP/UDP<br/> Integration<br/>%,%tcpudp%,%templates/install/integration/tcpudp-do
 ```bash
 127.0.1.1:53: cannot unmarshal DNS message
 ```
+{: .copy-code}
 
 You may configure your system to use Google public DNS servers. 
 See corresponding [Linux](opc-uas://developers.google.com/speed/public-dns/docs/using#linux) and [Mac OS](opc-uas://developers.google.com/speed/public-dns/docs/using#mac_os) instructions.
 
-#### Docker on Windows
+### Docker on Windows
 
 - **[Install Docker Toolbox for Windows](https://docs.docker.com/toolbox/toolbox_install_windows/)**
 
@@ -127,7 +128,7 @@ TCP/UDP<br/> Integration<br/>%,%tcpudp%,%templates/install/integration/tcpudp-do
 You may configure your system to use [Google public DNS servers](https://developers.google.com/speed/public-dns/docs/using#windows)
 
 
-#### Ubuntu Server
+### Ubuntu Server
 
  - Install Java 8 (OpenJDK) 
 
@@ -145,7 +146,23 @@ TCP/UDP<br/> Integration<br/>%,%tcpudp%,%templates/install/integration/tcpudp-ub
 
 {% include content-toggle.html content-toggle-id="remoteintegrationinstallubuntu" toggle-spec=ubuntuinstallspec %} 
 
-#### CentOS/RHEL Server
+### CentOS/RHEL Server
+
+ - Install Java 8 (OpenJDK) 
+
+{% include templates/install/rhel-java-install.md %}
+
+ - **Choose Integration package to install**
+ 
+{% capture rhelinstallspec %}
+HTTP Integrations<br/><small>(HTTP, Sigfox, ThingPark, OceanConnect and <br/> T-Mobile IoT CDP)</small>%,%http%,%templates/install/integration/http-rhel.md%br%
+MQTT Integrations<br/><small>(MQTT, AWS IoT, IBM Watson, The Things Network)</small>%,%mqtt%,%templates/install/integration/mqtt-rhel.md%br%
+AWS SQS<br/> Integration<br/>%,%aws%,%templates/install/integration/aws-rhel.md%br%
+Azure Event Hub<br/>Integration<br/>%,%azure%,%templates/install/integration/azure-rhel.md%br%
+OPC UA<br/> Integration<br/>%,%opcua%,%templates/install/integration/opcua-rhel.md%br%
+TCP/UDP<br/> Integration<br/>%,%tcpudp%,%templates/install/integration/tcpudp-rhel.md{% endcapture %}
+
+{% include content-toggle.html content-toggle-id="remoteintegrationinstallrhel" toggle-spec=rhelinstallspec %} 
 
 ## Remote integration configuration
 

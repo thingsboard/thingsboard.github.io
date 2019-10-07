@@ -6,6 +6,7 @@ Open "Docker Quickstart Terminal". Execute the following command to create docke
 docker volume create tb-tcp-udp-integration-logs
 docker volume create tb-tcp-udp-integration-logs
 ```
+{: .copy-code}
 
 Execute the following command to run this docker directly:
 
@@ -46,15 +47,18 @@ To reattach to the terminal (to see ThingsBoard logs) run:
 ```
 docker attach tb-pe-tcp-udp-integration
 ```
+{: .copy-code}
 
 To stop the container:
 
 ```
 docker stop tb-pe-tcp-udp-integration
 ```
+{: .copy-code}
 
 To start the container:
 
 ```
 docker start tb-pe-tcp-udp-integration
 ```
+{: .copy-code}

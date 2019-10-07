@@ -70,6 +70,8 @@ Cons:
   * low level of isolation;
   * can't access local MQTT brokers or OPC-UA servers if ThingsBoard is deployed in the cloud.
   
+![image](/images/user-guide/integrations/embeded-integrations-overview.jpg)  
+  
 #### Remote integrations
  
 Remote integration become available since ThingsBoard PE v2.4.1 and enables new deployment scenario. 

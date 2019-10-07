@@ -6,6 +6,7 @@ Open "Docker Quickstart Terminal". Execute the following command to create docke
 docker volume create tb-azure-integration-logs
 docker volume create tb-azure-integration-logs
 ```
+{: .copy-code}
 
 Execute the following command to run this docker directly:
 
@@ -46,16 +47,18 @@ To reattach to the terminal (to see ThingsBoard logs) run:
 ```
 docker attach tb-pe-azure-integration
 ```
+{: .copy-code}
 
 To stop the container:
 
 ```
 docker stop tb-pe-azure-integration
 ```
+{: .copy-code}
 
 To start the container:
 
 ```
 docker start tb-pe-azure-integration
 ```
-
+{: .copy-code}
