@@ -18,6 +18,7 @@ However, you are able to use other programming languages and OS.
  - [Raspberry Pi GPIO control over MQTT using ThingsBoard](/docs/samples/raspberry/gpio/)
  - [Raspberry Pi GPIO control using Android Things and ThingsBoard](/docs/samples/raspberry/gpio-android-things/)
  - [Temperature upload over MQTT using Raspberry Pi and DHT22 sensor](/docs/samples/raspberry/temperature/) 
+ - [Connecting Raspberry Pi with Grove Base Hat to ThingsBoard](/docs/samples/raspberry/grove/) 
 
 ## Documentation
 

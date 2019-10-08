@@ -170,7 +170,36 @@ Once command is processed by device, gateway can send commands back using follow
 ```
 
 where **$request_id** is your integer request identifier, **Device A** is your device name and **method** is your RPC method name. 
-  
+
+## Claiming devices API
+
+Please see the corresponding article to get more information about the [Claiming devices](/docs/user-guide/claiming-devices) feature.
+
+In order to initiate claiming device, send PUBLISH message to the following topic:
+
+```shell
+Topic: v1/gateway/claim
+```
+
+Message:
+
+```json
+{
+  "Device A": {
+    "secretKey": "value_A",
+    "durationMs": 60000
+  },
+  "Device B": {
+    "secretKey": "value_B",
+    "durationMs": 60000
+  }
+}
+```
+
+where **Device A** and **Device B** are your device names, **secretKey** and **durationMs** are optional keys.
+In case the **secretKey** is not specified, the empty string as a default value is used.
+In case the **durationMs** is not specified, the system parameter **device.claim.duration** is used (in the file **/etc/thingsboard/conf/thingsboard.yml**).
+
 ## Protocol customization
 
 MQTT transport can be fully customized for specific use-case by changing the corresponding [module](https://github.com/thingsboard/thingsboard/tree/master/transport/mqtt).

@@ -1,0 +1,73 @@
+<!Doctype html>
+<html id="pricing">
+
+{% include head-header.html %}
+
+<section id="hero" class="light-text">
+</section>
+
+<section id="encyclopedia">
+    <div id="pricingContent" class="noToc">
+        {{ content }}
+    </div>
+</section>
+
+{% include footer.html %}
+
+<script type="text/javascript">
+    inViewportDefer(function() {
+        $("#pe-aws-pricing table th:not(:first-child), " +
+            "#pe-aws-pricing table td:not(:first-child)").inViewport(function(px){
+            if(px >= 20) {
+                $(this).addClass("animated flipInY");
+                return true;
+            }
+        });
+    });
+
+    jqueryDefer(function () {
+        $('.solution-selector .solution').click(function(event) {
+            event.preventDefault();
+            var id = $(this).attr("data-toggle");
+            $(this).find(".magic-radio").prop("checked", true);
+            $('.solution-selector .solution').removeClass("active");
+            $(this).addClass("active");
+            $('.pricing-div .pricing-section:not(.pricing-community)').removeClass("active");
+            $('.pricing-div .pricing-section'+id).addClass("active");
+        });
+
+    });
+
+    function activatePricingSection(sectionId) {
+        $("li.menu-item").removeClass("active");
+        $("li.menu-item#menu-item-"+sectionId).addClass("active");
+        $("section.pricing-content").css("display", "none");
+        $("section.pricing-content#"+sectionId).css("display", "block");
+    }
+
+    function getLicense(event, isPerpetual, productId, planId, coupon) {
+        event.preventDefault();
+        var e = $(event.target);
+        var url = "https://license.thingsboard.io/signup?createSubscription=true&perpetual=";
+        if (isPerpetual) {
+            url += "true";
+        } else {
+            url += "false";
+        }
+        url += "&productId="+productId;
+        url += "&planId="+planId;
+        if (coupon) {
+            url += "&coupon="+coupon;
+        }
+        window.open(url, "_blank");
+    }
+
+    function openPricingFaqNode(nodeId) {
+        document.getElementById(nodeId).scrollIntoView();
+        tb.openAccordionItem(nodeId);
+    }
+
+</script>
+
+</body>
+</html>

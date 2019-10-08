@@ -61,7 +61,11 @@ zk:
 
 cassandra:
   url: "${CASSANDRA_URL:c1:9042,c2:9042}"
-
+  # Cassandra cluster connection query parameters  #
+  query:
+    read_consistency_level: "${CASSANDRA_READ_CONSISTENCY_LEVEL:QUORUM}"
+    write_consistency_level: "${CASSANDRA_WRITE_CONSISTENCY_LEVEL:QUORUM}"
+    
 redis: 
   # standalone or cluster
   connection:
@@ -70,7 +74,6 @@ redis:
     port: "${REDIS_PORT:6379}"
     db: "${REDIS_DB:0}"
     password: "${REDIS_PASSWORD:}"
-
 
 ```
 
@@ -95,10 +98,6 @@ Following ThingsBoard server ports need to be accessible outside cluster for dev
  - HTTP - **8080** port (can be modified using **server.port** property).
  - MQTT - **1883** port (can be modified using **mqtt.bind_port** property).
  - CoAP - **5683** port (can be modified using **coap.bind_port** property).
-
-### Load Balancing
-
-
 
 ## Next steps
 

@@ -178,6 +178,18 @@
       keywords:
       pe: true
       video: true
+    - path: /docs/user-guide/integrations/tcp/
+      title: Devices uses TCP protocol
+      subtitle: How to connect to ThingsBoard TCP-server, transform the incoming messages and generate the downlinks using ThingsBoard.
+      keywords: Connect TCP devices
+      pe: true
+      video: true
+    - path: /docs/user-guide/integrations/tcp/
+      title: Devices uses UDP protocol
+      subtitle: How to connect to ThingsBoard UDP-server, transform the incoming messages and generate the downlinks using ThingsBoard.
+      keywords: Connect UDP devices
+      pe: true
+      video: true
 - title: Data visualization
   subtitle: These guides contain instructions how to configure complex ThingsBoard dashboards
   id: DataVisualization
@@ -376,8 +388,19 @@
       keywords: NB IoT, NB-IoT, T-Mobile, SODAQ, 5G
       pe: true
       video: false
+    - path: /docs/user-guide/integrations/sodaq-udp
+      title: Learn how to connect your SODAQ Universal Tracker to ThingsBoard
+      subtitle: Learn how to connect your SODAQ Universal Tracker to ThingsBoard via UDP Integration.
+      keywords: NB IoT, NB-IoT, T-Mobile, SODAQ, 5G
+      pe: true
+      video: false
     - path: /docs/samples/ble/raspberry-esp32-xiaomi-sensor-htu21d.md
       title: ThingsBoard BLE Demo with Raspberry PI, ESP32, Xiaomi MI and HTU21D sensors
+      subtitle: Contains wiring diagram and dashboard setup guide.
+      pe: false
+      video: false
+    - path: /docs/samples/nettrartu+/rtu_temp_sensor/
+      title: Temperature upload over MQTT using Nettra RTU
       subtitle: Contains wiring diagram and dashboard setup guide.
       pe: false
       video: false

@@ -1,0 +1,31 @@
+/*
+ * DESCRIPTION :
+ *	- Monitor temperature each 20 seconds.
+ *	
+ *	INPUTS:
+ *	- Temperature sensor : Analog Input 0 
+ */
+
+// Constants
+const TLOG = 20000;	// [Miliseconds]
+ 
+// Variable definitions
+loggable float temperature;	// [ºC]
+ulong logTimer;
+
+// Alias
+alias sensorTemperature as AInEscalado[0];
+
+// Variable initializations
+logTimer = ConfigurarTimeout(0); 
+
+// Code
+while(1)
+{
+	if (Timeout(logTimer))
+	{
+		logTimer = ConfigurarTimeout(TLOG);
+		temperature = sensorTemperature;
+		Log(temperature);
+	}
+}

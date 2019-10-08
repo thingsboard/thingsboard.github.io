@@ -1,8 +1,8 @@
 ---
 layout: pe-aws
-redirect_from: "/pricing/"
 title: ThingsBoard Professional Edition on AWS Marketplace
 description: 
+redirect_to: "/pricing/"
 ---
 
 # ThingsBoard Professional Edition on AWS Marketplace
