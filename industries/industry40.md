@@ -87,3 +87,29 @@ Now we have a real-time production monitoring dashboards with a considerable nov
         </div>
     </div>
 </div>
+
+<div class="customer-block">
+    <a href="https://ch2i.eu/">
+        <div class="customer-logo">
+            <img width="" src="/images/customers/ch2i.jpg" alt="CH2i">
+        </div>
+    </a>
+    <div class="customer-content">
+        <h3 id="ch2i">
+            CH2i
+        </h3>
+        <h4>
+            CH2i is managing and implementing complex IoT infrastructure. Coming from building sensors to Information System Integration with all security rules. With high backend of IT security and electronic they provide any optimized infrastructure when deploying IoT solutions.
+        </h4>    
+        <p>
+      We first tried Thingsboard with the free version to build a customer POC. We liked the Open side of the product and the ability to get it working out of the cloud. Then, we had more and more customers that asked us to be able to see their data. So, we migrated to the Professional Edition. We installed it on dedicated cloud instance. Help and support from Thingsboard team was awesome. They installed the product on our VM and they customized the installation to fit our need. Same availability when new version was available. They updated our instance with new version. To go further, we then asked Thingsboard to customize some dashboards for a dedicated customer. Once again, all was straightforward and Thingsboard team was professional. We are now also creating custom application using powerfull API integrated in the product.We highly recommend Thingsboard for their products and support.
+        </p> 
+        <div class="person-logo-container">
+            <img class="person-logo" src="/images/customers/charles-henri.jpg"/>
+            <div class="person-title">
+                Charles-Henri Hallard  <br/>
+                Président 
+            </div>
+        </div>
+    </div>
+</div>
