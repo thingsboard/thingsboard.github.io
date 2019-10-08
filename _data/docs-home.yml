@@ -51,10 +51,7 @@ toc:
       path: /docs/user-guide/integrations/
     - title: Remote Integrations
       path: /docs/user-guide/integrations/remote-integrations/
-<<<<<<< HEAD
       new: true
-=======
->>>>>>> origin/master
     - title: HTTP
       path: /docs/user-guide/integrations/http/
     - title: Ocean Connect
