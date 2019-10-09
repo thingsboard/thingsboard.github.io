@@ -84,65 +84,36 @@ By first we need to configure the Raspberry Pi. Please follow this [article](htt
 After the configuration we need to install libraries used in the script to the Raspberry Pi.
 
 The following command will install thingsboard python client sdk, it is used for communication with ThingsBoard server: 
-<div class="language-cpp copy-code highlighter-rouge">
-    <div class="highlight">
-        <pre>
-            <code id="python_install_1">pip3 install tb-mqtt-client</code>
-</pre>
-</div>
-<button class="clipboard-btn" data-clipboard-target="#python_install_1">
-<img src="https://clipboardjs.com/assets/images/clippy.svg" alt="Copy to clipboard">
-</button>
-</div>
+
+
+```bash
+pip3 install tb-mqtt-client
+```
+{: .copy-code}
 
 Also we need to install Seeed-Studio library to be able to connect our modules:
 
-<div class="language-cpp copy-code highlighter-rouge">
-    <div class="highlight">
-        <pre>
-            <code id="python_install_2">git clone git@github.com:Seeed-Studio/grove.py.git</code>
-</pre>
-</div>
-<button class="clipboard-btn" data-clipboard-target="#python_install_2">
-<img src="https://clipboardjs.com/assets/images/clippy.svg" alt="Copy to clipboard">
-</button>
-</div>
+```bash
+git clone git@github.com:Seeed-Studio/grove.py.git
+```
+{: .copy-code}
 
-<div class="language-cpp copy-code highlighter-rouge">
-    <div class="highlight">
-        <pre>
-            <code id="python_install_3">pip3 install ./grove.py/</code>
-</pre>
-</div>
-<button class="clipboard-btn" data-clipboard-target="#python_install_3">
-<img src="https://clipboardjs.com/assets/images/clippy.svg" alt="Copy to clipboard">
-</button>
-</div>
+```bash
+pip3 install ./grove.py/
+```
+{: .copy-code}
 
 At last if you use Temperature and Humidity sensor (DHTXX), you also need to install the Library for Temperature and Humidity Sensor:
 
-<div class="language-cpp copy-code highlighter-rouge">
-    <div class="highlight">
-        <pre>
-            <code id="python_install_4">git clone https://github.com/Seeed-Studio/Seeed_Python_DHT.git</code>
-</pre>
-</div>
-<button class="clipboard-btn" data-clipboard-target="#python_install_4">
-<img src="https://clipboardjs.com/assets/images/clippy.svg" alt="Copy to clipboard">
-</button>
-</div>
+```bash
+git clone https://github.com/Seeed-Studio/Seeed_Python_DHT.git
+```
+{: .copy-code}
 
-<div class="language-cpp copy-code highlighter-rouge">
-    <div class="highlight">
-        <pre>
-            <code id="python_install_5">sudo python3 ./Seeed_Python_DHT/setup.py install</code>
-</pre>
-</div>
-<button class="clipboard-btn" data-clipboard-target="#python_install_5">
-<img src="https://clipboardjs.com/assets/images/clippy.svg" alt="Copy to clipboard">
-</button>
-</div>
-
+```bash
+sudo python3 ./Seeed_Python_DHT/setup.py install
+```
+{: .copy-code}
 
 ## Application source code
 
@@ -163,12 +134,7 @@ Also we need say to ThingsBoard that we want to connect this device and get the 
 
 After this you need to replace the THINGSBOARD_HOST and ACCESS_TOKEN in the script below, with your values. In case you use Live demo, populate <b>cloud.thingsboard.io</b> as THINGSBOARD_HOST
 
-
-
-<div class="language-cpp copy-code highlighter-rouge">
-    <div class="highlight">
-        <pre>
-            <code id="python_code">
+```python
 import logging
 import time
 from tb_device_mqtt import TBDeviceMqttClient, TBPublishInfo
@@ -302,13 +268,8 @@ def main():
 if __name__ == '__main__':
     main()
 
-</code>
-</pre>
-</div>
-<button class="clipboard-btn" data-clipboard-target="#python_code">
-<img src="https://clipboardjs.com/assets/images/clippy.svg" alt="Copy to clipboard">
-</button>
-</div>
+```
+{: .copy-code}
 
 
 ## Data Visualization and Control
@@ -323,7 +284,10 @@ Running the application
 
 This simple command will launch the application:
 
-<code>python3 tb_grove.py</code>
+```bash
+python3 tb_grove.py
+```
+{: .copy-code}
 
 The results of script running - you can see on the dashboard.
 
@@ -353,38 +317,3 @@ Browse other [samples](/docs/samples) or explore guides related to main ThingsBo
 ## Next steps
 
 {% assign currentGuide = "HardwareSamples" %}{% include templates/guides-banner.md %}
-
-
-
-<script>
-    jqueryDefer(function () {
-        var allCodeBlocksElements = $( ".copy-code" );
-        allCodeBlocksElements.each(function(i) {
-            var currentId = "codeblock" + (i + 1);
-            var block = $(this).find('pre.highlight > code');
-            block.attr('id', currentId);
-            var clipButton = $('<button class="clipboard-btn" data-clipboard-target="#' + currentId + '"><img src="https://clipboardjs.com/assets/images/clippy.svg" alt="Copy to clipboard"></button>');
-            $(this).append(clipButton);
-            clipButton.on('mouseleave', clearTooltip);
-            clipButton.on('blur', clearTooltip);
-        });
-        var clipboard = new Clipboard('.clipboard-btn');
-        clipboard.on('success', function(e) {
-            e.clearSelection();
-            showTooltip(e.trigger, 'Copied!');
-        });
-
-        function clearTooltip(e) {
-            var el = $(e.currentTarget);
-            el.removeClass('tooltipped tooltipped-s');
-            el.attr('aria-label', null);
-        }
-
-        function showTooltip(elem, msg) {
-            var el = $(elem);
-            el.addClass('tooltipped tooltipped-s');
-            el.attr('aria-label', msg);
-        }
-
-    });
-</script>
