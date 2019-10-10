@@ -42,11 +42,11 @@ client.username_pw_set("TEST_TOKEN")
 Run the script:
 
 {% capture tabspec %}mqtt-ssl-configuration-keygen
-A,python one-way-ssl-mqtt-client.py,shell,resources/mqtt-ssl-configuration-run-onewaysslmqttclient.sh,/docs/user-guide/mqtt-ssl-configuration-run-onewaysslmqttclient.sh{% endcapture %}
+A,python one-way-ssl-mqtt-client.py,shell,resources/mqtt-ssl-configuration-run-onewaysslmqttclient.sh,/docs/user-guide/resources/mqtt-ssl-configuration-run-onewaysslmqttclient.sh{% endcapture %}
 {% include tabs.html %}         
 
 If everything was configured correctly, the output should be like:
 
 {% capture tabspec %}mqtt-ssl-configuration-output
-A,onewaysslmqttclient.py output,shell,resources/mqtt-ssl-configuration-onewaysslmqttclient-output.txt,/docs/user-guide/mqtt-ssl-configuration-onewaysslmqttclient-output.txt{% endcapture %}
+A,onewaysslmqttclient.py output,shell,resources/mqtt-ssl-configuration-onewaysslmqttclient-output.txt,/docs/user-guide/resources/mqtt-ssl-configuration-onewaysslmqttclient-output.txt{% endcapture %}
 {% include tabs.html %}
