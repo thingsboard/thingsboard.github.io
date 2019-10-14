@@ -20,10 +20,8 @@ toc:
   - title: Device Connectivity Status
     path: /docs/user-guide/device-connectivity-status/
   - title: Claiming Devices
-    new: true
     path: /docs/user-guide/claiming-devices/
   - title: Entity Views
-    new: true
     path: /docs/user-guide/entity-views/
   - title: Using RPC capabilities
     path: /docs/user-guide/rpc/
@@ -76,6 +74,8 @@ toc:
       path: /docs/user-guide/integrations/tcp/
     - title: UDP
       path: /docs/user-guide/integrations/udp/
+    - title: Custom
+      path: /docs/user-guide/integrations/custom/
   - title: Entity Groups
     path: /docs/user-guide/groups/
     pe: true

@@ -16,7 +16,7 @@ Please review the integration diagram to learn more.
 
  ![image](/images/user-guide/integrations/mqtt-integration.png)
 
-ThingsBoard MQTT Integration acts as an MQTT client. It subscribes to topics and converts the data into telemetry and attribute updates. In case of downlink message, MQTT integration converts it to the device-suitable format and pushs to external MQTT broker. 
+ThingsBoard MQTT Integration acts as an MQTT client. It subscribes to topics and converts the data into telemetry and attribute updates. In case of downlink message, MQTT integration converts it to the device-suitable format and pushes to external MQTT broker. 
 Pay attention: MQTT broker should be either co-located with ThingsBoard instance or deployed in the cloud and have a valid DNS name or static IP address. ThingsBoard instance that is running in the cloud can’t connect to the MQTT broker deployed in local area network.
 
 This video is a step-by-step tutorial on setting up of MQTT Integration.
@@ -30,7 +30,7 @@ This video is a step-by-step tutorial on setting up of MQTT Integration.
 
 ## MQTT Integration Configuration
 
-Also you may folow this guide, which discloses MQTT Integration to provide devices connection to the Platform and ability to send RPC commands to devices.
+Also you may follow this guide, which discloses MQTT Integration to provide devices connection to the Platform and ability to send RPC commands to devices.
 
 ### Prerequisites
 
@@ -39,7 +39,7 @@ In this tutorial, we will use:
  - ThingsBoard Professional Edition instance — [cloud.thingsboard.io](https://cloud.thingsboard.io);
  - MQTT broker, accessible by ThingsBoard PE instance — broker.hivemq.com (port 1883);
  - mosquitto_pub and mosquitto_sub MQTT clients to send and receive messages;   
- - an andvanced [device simulator](/docs/user-guide/integrations/resources/mqtt-client.py) for RPC simulation example. 
+ - an advanced [device simulator](/docs/user-guide/integrations/resources/mqtt-client.py) for RPC simulation example. 
 
 Let's assume that we have a sensor which is sending current temperature readings.
 Our sensor device **SN-001** publishes it's temperature readings to **tb/mqtt-integration-tutorial/sensors/SN-001/temperature** and it is subscribed to **tb/mqtt-integration-tutorial/sensors/SN-001/rx** to receive RPC calls.
