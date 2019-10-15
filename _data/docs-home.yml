@@ -21,8 +21,10 @@ toc:
     path: /docs/user-guide/device-connectivity-status/
   - title: Claiming Devices
     path: /docs/user-guide/claiming-devices/
+    new: true
   - title: Entity Views
     path: /docs/user-guide/entity-views/
+    new: true
   - title: Using RPC capabilities
     path: /docs/user-guide/rpc/
   - title: Data visualization
