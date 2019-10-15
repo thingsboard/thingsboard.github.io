@@ -1,0 +1,225 @@
+{
+  "title": "My Smart Devices",
+  "configuration": {
+    "widgets": {
+      "15bd9bb7-dcb8-6227-bec1-f95b3d7d6809": {
+        "isSystemType": true,
+        "bundleAlias": "entity_admin_widgets",
+        "typeAlias": "device_admin_table",
+        "type": "latest",
+        "title": "New widget",
+        "sizeX": 24,
+        "sizeY": 6,
+        "config": {
+          "timewindow": {
+            "realtime": {
+              "interval": 1000,
+              "timewindowMs": 86400000
+            },
+            "aggregation": {
+              "type": "NONE",
+              "limit": 200
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "4px",
+          "settings": {
+            "enableSearch": true,
+            "displayPagination": true,
+            "defaultPageSize": 10,
+            "defaultSortOrder": "entityName",
+            "displayEntityName": true,
+            "displayEntityType": false,
+            "entitiesTitle": "Device admin table",
+            "entityNameColumnTitle": "Device name"
+          },
+          "title": "New Device admin table",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400,
+            "padding": "5px 10px 5px 10px"
+          },
+          "useDashboardTimewindow": false,
+          "showLegend": false,
+          "datasources": [
+            {
+              "type": "entity",
+              "dataKeys": [
+                {
+                  "name": "latitude",
+                  "type": "attribute",
+                  "label": "Latitude",
+                  "color": "#2196f3",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "useCellContentFunction": false
+                  },
+                  "_hash": 0.1638548913540474
+                },
+                {
+                  "name": "longitude",
+                  "type": "attribute",
+                  "label": "Longitude",
+                  "color": "#4caf50",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "useCellContentFunction": false
+                  },
+                  "_hash": 0.9869421623889292
+                },
+                {
+                  "name": "lowBatteryThreshold",
+                  "type": "attribute",
+                  "label": "Low Battery Threshold, %",
+                  "color": "#f44336",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "useCellContentFunction": false
+                  },
+                  "_hash": 0.2871437803122674
+                },
+                {
+                  "name": "highTemperatureThreshold",
+                  "type": "attribute",
+                  "label": "Temperature Threshold, °C",
+                  "color": "#ffc107",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "useCellContentFunction": false
+                  },
+                  "_hash": 0.20146498128944468
+                }
+              ],
+              "entityAliasId": "757c7545-96f1-9594-4d7d-c195142db4cd"
+            }
+          ],
+          "showTitleIcon": false,
+          "titleIcon": null,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "enableDataExport": true,
+          "widgetStyle": {},
+          "displayTimewindow": true,
+          "actions": {
+            "headerButton": [
+              {
+                "id": "bcce6561-4ace-710d-cde3-5e30733aa68a",
+                "name": "Add device",
+                "icon": "add",
+                "type": "customPretty",
+                "customHtml": "<md-dialog aria-label=\"Add entity\" style=\"width: 480px\">\n    <form name=\"addDeviceForm\" ng-submit=\"vm.save()\">\n        <md-toolbar>\n            <div class=\"md-toolbar-tools\">\n                <h2>Add device</h2>\n                <span flex></span>\n                <md-button class=\"md-icon-button\" ng-click=\"vm.cancel()\">\n                    <ng-md-icon icon=\"close\" aria-label=\"Close\"></ng-md-icon>\n                </md-button>\n            </div>\n        </md-toolbar>\n        <md-progress-linear class=\"md-warn\" md-mode=\"indeterminate\" ng-disabled=\"!$root.loading && !vm.loading\" ng-show=\"$root.loading || vm.loading\"></md-progress-linear>\n        <span style=\"min-height: 5px;\" flex=\"\" ng-show=\"!$root.loading && !vm.loading\"></span>\n        <md-dialog-content>\n            <div class=\"md-dialog-content\">\n                <fieldset ng-disabled=\"$root.loading || vm.loading\">\n                    <div flex layout=\"row\">\n                        <md-input-container flex class=\"md-block\">\n                            <label>Device name</label>\n                            <input ng-model=\"vm.deviceName\" name=deviceName required>\n                            <div ng-messages=\"addDeviceForm.deviceName.$error\">\n                                <div ng-message=\"required\">Device name is required.</div>\n                            </div>\n                        </md-input-container>\n                    </div>\n                    <div flex layout=\"row\">\n                        <md-input-container flex=\"50\" class=\"md-block\">\n                            <label>Latitude</label>\n                            <input type=\"number\" step=\"any\" name=\"latitude\" ng-model=\"vm.attributes.latitude\">\n                        </md-input-container>\n                        <md-input-container flex=\"50\" class=\"md-block\">\n                            <label>Longitude</label>\n                            <input type=\"number\" step=\"any\" name=\"longitude\" ng-model=\"vm.attributes.longitude\">\n                        </md-input-container>\n                    </div>\n                    <div flex layout=\"row\">\n                        <md-input-container flex=\"50\" class=\"md-block\">\n                            <label>Low Battery Threshold, %</label>\n                            <input type=\"number\" step=\"any\" name=\"lowBatteryThreshold\" ng-model=\"vm.attributes.lowBatteryThreshold\">\n                        </md-input-container>\n                        <md-input-container flex=\"50\" class=\"md-block\">\n                            <label>Temperature Threshold, °C</label>\n                            <input type=\"number\" step=\"any\" name=\"highTemperatureThreshold\" ng-model=\"vm.attributes.highTemperatureThreshold\">\n                        </md-input-container>\n                    </div>\n                </fieldset>\n            </div>\n        </md-dialog-content>\n        <md-dialog-actions>\n            <md-button type=\"submit\" ng-disabled=\"vm.loading || addDeviceForm.$invalid || !addDeviceForm.$dirty\" class=\"md-raised md-primary\">Create</md-button>\n            <md-button ng-click=\"vm.cancel()\" class=\"md-primary\">Cancel</md-button>\n        </md-dialog-actions>\n    </form>\n</md-dialog>\n",
+                "customCss": "\n",
+                "customFunction": "let $injector = widgetContext.$scope.$injector;\nlet $mdDialog = $injector.get('$mdDialog'),\n    $document = $injector.get('$document'),\n    $q = $injector.get('$q'),\n    $rootScope = $injector.get('$rootScope'),\n    types = $injector.get('types'),\n    deviceService = $injector.get('deviceService'),\n    attributeService = $injector.get('attributeService');\n    \nopenAddDeviceDialog();\n\nfunction openAddDeviceDialog() {\n    $mdDialog.show({\n        controller: ['$scope','$mdDialog', AddDeviceDialogController],\n        controllerAs: 'vm',\n        template: htmlTemplate,\n        parent: angular.element($document[0].body),\n        targetEvent: $event,\n        multiple: true,\n        clickOutsideToClose: false\n    });\n}\n\nfunction AddDeviceDialogController($scope, $mdDialog) {\n    let vm = this;\n    vm.types = types;\n    vm.attributes = {};\n    \n    vm.cancel = () => {\n        $mdDialog.hide();\n    };\n    \n    vm.save = () => {\n        vm.loading = true;\n        $scope.addDeviceForm.$setPristine();\n        let device = {\n            name: vm.deviceName,\n            type: \"sensor\"\n        };\n        deviceService.saveDevice(device).then(\n            (device) => {\n                saveAttributes(device.id).then(\n                    () => {\n                        vm.loading = false;\n                        updateAliasData();\n                        $mdDialog.hide();\n                    }\n                );\n            },\n            () => {\n                vm.loading = false;\n            }\n        );\n    };\n    \n    function saveAttributes(entityId) {\n        let attributesArray = [];\n        for (let key in vm.attributes) {\n            attributesArray.push({key: key, value: vm.attributes[key]});\n        }\n        if (attributesArray.length > 0) {\n            return attributeService.saveEntityAttributes(entityId.entityType, entityId.id, \"SERVER_SCOPE\", attributesArray);\n        } else {\n            return $q.when([]);\n        }\n    }\n    \n    function updateAliasData() {\n        let aliasIds = [];\n        for (let id in widgetContext.aliasController.resolvedAliases) {\n            aliasIds.push(id);\n        }\n        let tasks = [];\n        aliasIds.forEach((aliasId) => {\n            widgetContext.aliasController.setAliasUnresolved(aliasId);\n            tasks.push(widgetContext.aliasController.getAliasInfo(aliasId));\n        });\n        $q.all(tasks).then(() => {\n            $rootScope.$broadcast('widgetForceReInit');\n        });\n    }\n}"
+              }
+            ],
+            "actionCellButton": [
+              {
+                "id": "bf9fcf0e-68a6-e34b-b1d2-f998a93f617c",
+                "name": "Edit device",
+                "icon": "edit",
+                "type": "customPretty",
+                "customHtml": "<md-dialog aria-label=\"Edit entity\" style=\"width: 480px\">\n    <form name=\"editDeviceForm\" ng-submit=\"vm.save()\">\n        <md-toolbar>\n            <div class=\"md-toolbar-tools\">\n                <h2>Edit device</h2>\n                <span flex></span>\n                <md-button class=\"md-icon-button\" ng-click=\"vm.cancel()\">\n                    <ng-md-icon icon=\"close\" aria-label=\"Close\"></ng-md-icon>\n                </md-button>\n            </div>\n        </md-toolbar>\n        <md-progress-linear class=\"md-warn\" md-mode=\"indeterminate\" ng-disabled=\"!$root.loading && !vm.loading\" ng-show=\"$root.loading || vm.loading\"></md-progress-linear>\n        <span style=\"min-height: 5px;\" flex=\"\" ng-show=\"!$root.loading && !vm.loading\"></span>\n        <md-dialog-content>\n            <div class=\"md-dialog-content\">\n                <fieldset ng-disabled=\"$root.loading || vm.loading\">\n                    <md-input-container flex class=\"md-block\">\n                        <label>Device name</label>\n                        <input ng-model=\"vm.device.name\" name=deviceName required>\n                        <div ng-messages=\"editDeviceForm.deviceName.$error\">\n                            <div ng-message=\"required\">Device name is required.</div>\n                        </div>\n                    </md-input-container>\n                    <div flex layout=\"row\">\n                        <md-input-container flex=\"50\" class=\"md-block\">\n                            <label>Latitude</label>\n                            <input type=\"number\" step=\"any\" name=\"latitude\" ng-model=\"vm.attributes.latitude\">\n                        </md-input-container>\n                        <md-input-container flex=\"50\" class=\"md-block\">\n                            <label>Longitude</label>\n                            <input type=\"number\" step=\"any\" name=\"longitude\" ng-model=\"vm.attributes.longitude\">\n                        </md-input-container>\n                    </div>\n                    <div flex layout=\"row\">\n                        <md-input-container flex=\"50\" class=\"md-block\">\n                            <label>Low Battery Threshold, %</label>\n                            <input type=\"number\" step=\"any\" name=\"lowBatteryThreshold\" ng-model=\"vm.attributes.lowBatteryThreshold\">\n                        </md-input-container>\n                        <md-input-container flex=\"50\" class=\"md-block\">\n                            <label>Temperature Threshold, °C</label>\n                            <input type=\"number\" step=\"any\" name=\"highTemperatureThreshold\" ng-model=\"vm.attributes.highTemperatureThreshold\">\n                        </md-input-container>\n                    </div>                    \n                </fieldset>\n            </div>\n        </md-dialog-content>\n        <md-dialog-actions>\n            <md-button type=\"submit\" ng-disabled=\"vm.loading || editDeviceForm.$invalid || !editDeviceForm.$dirty\" class=\"md-raised md-primary\">Update</md-button>\n            <md-button ng-click=\"vm.cancel()\" class=\"md-primary\">Cancel</md-button>\n        </md-dialog-actions>\n    </form>\n</md-dialog>",
+                "customCss": "",
+                "customFunction": "let $injector = widgetContext.$scope.$injector;\nlet $mdDialog = $injector.get('$mdDialog'),\n    $document = $injector.get('$document'),\n    $q = $injector.get('$q'),\n    $rootScope = $injector.get('$rootScope'),\n    types = $injector.get('types'),\n    deviceService = $injector.get('deviceService'),\n    attributeService = $injector.get('attributeService'),\n    entityGroupService = $injector.get('entityGroupService');\n    \nopenEditDeviceDialog();\n\nfunction openEditDeviceDialog() {\n    $mdDialog.show({\n        controller: ['$scope','$mdDialog', EditDeviceDialogController],\n        controllerAs: 'vm',\n        template: htmlTemplate,\n        parent: angular.element($document[0].body),\n        targetEvent: $event,\n        multiple: true,\n        clickOutsideToClose: false\n    });\n}\n\nfunction EditDeviceDialogController($scope,$mdDialog) {\n    let vm = this;\n    vm.types = types;\n    vm.loading = false;\n    vm.attributes = {};\n    \n    getEntityInfo();\n    \n    function getEntityInfo() {\n        vm.loading = true;\n        deviceService.getDevice(entityId.id).then(\n            (device) => {\n                attributeService.getEntityAttributesValues(entityId.entityType, entityId.id, 'SERVER_SCOPE').then(\n                   (data) => {\n                        entityGroupService.getEntityGroupIdsForEntityId(entityId.entityType, entityId.id).then(\n                            (deviceGroupIds) => {\n                                let ids = [];\n                                deviceGroupIds.forEach((groupId) => {\n                                    ids.push(groupId.id);\n                                });\n                                entityGroupService.getEntityGroupsByIds(ids).then(\n                                    (deviceGroups) => {\n                                        vm.deviceGroups = deviceGroups;\n                                        let nonAllResult = deviceGroups.filter(group => group.groupAll === false);\n                                        vm.targetGroup = angular.copy((nonAllResult.length) ? nonAllResult[0] : deviceGroups[0]);\n                                        vm.prevTargetGroup = angular.copy(vm.targetGroup);\n                                        vm.device = device;\n                                        if (data.length) {\n                                            getEntityAttributes(data);\n                                        }\n                                        vm.loading = false;\n                                    }\n                                );\n                            }\n                        )\n                   } \n                );\n            }\n        )\n    }\n    \n    vm.cancel = function() {\n        $mdDialog.hide();\n    };\n    \n    vm.save = () => {\n        vm.loading = true;\n        $scope.editDeviceForm.$setPristine();\n        deviceService.saveDevice(vm.device).then(\n            () => {\n                saveAttributes().then(\n                    () => {\n                        updateAliasData();\n                        vm.loading = false;\n                        $mdDialog.hide();\n                    }\n                );\n            },\n            () => {\n                vm.loading = false;\n            }\n        );\n    }\n    \n    function getEntityAttributes(attributes) {\n        for (let i = 0; i < attributes.length; i++) {\n            vm.attributes[attributes[i].key] = attributes[i].value; \n        }\n    }\n    \n    function saveAttributes() {\n        let attributesArray = [];\n        for (let key in vm.attributes) {\n            attributesArray.push({key: key, value: vm.attributes[key]});\n        }\n        if (attributesArray.length > 0) {\n            return attributeService.saveEntityAttributes(entityId.entityType, entityId.id, \"SERVER_SCOPE\", attributesArray);\n        }  else {\n            return $q.when([]);\n        }\n    }\n    \n    function updateAliasData() {\n        let aliasIds = [];\n        for (let id in widgetContext.aliasController.resolvedAliases) {\n            aliasIds.push(id);\n        }\n        let tasks = [];\n        aliasIds.forEach((aliasId) => {\n            widgetContext.aliasController.setAliasUnresolved(aliasId);\n            tasks.push(widgetContext.aliasController.getAliasInfo(aliasId));\n        });\n        console.log(widgetContext);\n        $q.all(tasks).then(() => {\n            $rootScope.$broadcast('widgetForceReInit');\n        });\n    }\n}\n"
+              },
+              {
+                "id": "3666799d-3ebf-28da-3fda-81124613513f",
+                "name": "Delete device",
+                "icon": "delete",
+                "type": "custom",
+                "customFunction": "let $injector = widgetContext.$scope.$injector;\nlet $mdDialog = $injector.get('$mdDialog'),\n    $document = $injector.get('$document'),\n    types = $injector.get('types'),\n    deviceService = $injector.get('deviceService'),\n    $rootScope = $injector.get('$rootScope'),\n    $q = $injector.get('$q');\n\nopenDeleteDeviceDialog();\n\nfunction openDeleteDeviceDialog() {\n    let title = \"Are you sure you want to delete the device \" + entityName +  \"?\";\n    let content = \"Be careful, after the confirmation, the device and all related data will become unrecoverable!\";\n    let confirm = $mdDialog.confirm()\n        .targetEvent($event)\n        .title(title)\n        .htmlContent(content)\n        .ariaLabel(title)\n        .cancel('Cancel')\n        .ok('Delete');\n    $mdDialog.show(confirm).then(() => {\n        deleteDevice();\n    })\n}\n\nfunction deleteDevice() {\n    deviceService.deleteDevice(entityId.id).then(\n        () => {\n            updateAliasData();\n        }\n    );\n}\n\nfunction updateAliasData() {\n    let aliasIds = [];\n    for (let id in widgetContext.aliasController.resolvedAliases) {\n        aliasIds.push(id);\n    }\n    let tasks = [];\n    aliasIds.forEach((aliasId) => {\n        widgetContext.aliasController.setAliasUnresolved(aliasId);\n        tasks.push(widgetContext.aliasController.getAliasInfo(aliasId));\n    });\n    $q.all(tasks).then(() => {\n        $rootScope.$broadcast('entityAliasesChanged', aliasIds);\n    });\n}"
+              }
+            ]
+          }
+        },
+        "id": "15bd9bb7-dcb8-6227-bec1-f95b3d7d6809"
+      }
+    },
+    "states": {
+      "default": {
+        "name": "My Smart Devices",
+        "root": true,
+        "layouts": {
+          "main": {
+            "widgets": {
+              "15bd9bb7-dcb8-6227-bec1-f95b3d7d6809": {
+                "sizeX": 24,
+                "sizeY": 6,
+                "row": 0,
+                "col": 0
+              }
+            },
+            "gridSettings": {
+              "backgroundColor": "#eeeeee",
+              "color": "rgba(0,0,0,0.870588)",
+              "columns": 24,
+              "margins": [
+                10,
+                10
+              ],
+              "backgroundSizeMode": "100%",
+              "autoFillHeight": true,
+              "mobileAutoFillHeight": false,
+              "mobileRowHeight": 70
+            }
+          }
+        }
+      }
+    },
+    "entityAliases": {
+      "757c7545-96f1-9594-4d7d-c195142db4cd": {
+        "id": "757c7545-96f1-9594-4d7d-c195142db4cd",
+        "alias": "MyDevices",
+        "filter": {
+          "type": "deviceType",
+          "resolveMultiple": true,
+          "deviceType": "sensor",
+          "deviceNameFilter": ""
+        }
+      }
+    },
+    "timewindow": {
+      "displayValue": "",
+      "selectedTab": 0,
+      "hideInterval": false,
+      "hideAggregation": false,
+      "hideAggInterval": false,
+      "realtime": {
+        "interval": 1000,
+        "timewindowMs": 60000
+      },
+      "history": {
+        "historyType": 0,
+        "interval": 1000,
+        "timewindowMs": 60000,
+        "fixedTimewindow": {
+          "startTimeMs": 1570684565734,
+          "endTimeMs": 1570770965734
+        }
+      },
+      "aggregation": {
+        "type": "AVG",
+        "limit": 25000
+      }
+    },
+    "settings": {
+      "stateControllerId": "entity",
+      "showTitle": false,
+      "showDashboardsSelect": true,
+      "showEntitiesSelect": true,
+      "showDashboardTimewindow": true,
+      "showDashboardExport": true,
+      "toolbarAlwaysOpen": true
+    }
+  },
+  "name": "My Smart Devices"
+}
