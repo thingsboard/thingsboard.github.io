@@ -89,8 +89,11 @@ This Dashboard will be the same for all our Self-Registered Customers.
 
 ### Step 6. Create shared dashboard
 
+First, navigate to "Device Groups"->"All" and create sample device with name "Device A" and type "sensor". 
+This is necessary to pass certain validation while importing the dashboard. 
+
 Now, let’s navigate to the Dashboard Groups and create a new Group called “Shared Dashboards”.
-Upload a [simple dashboard](/docs/user-guide/resources/my_smart_devices_dashboard.json) that shows you a list of devices. 
+Import a [simple dashboard](/docs/user-guide/resources/my_smart_devices_dashboard.json) that shows you a list of devices. 
 This dashboard provides the ability to add/edit/remove devices. 
 BTW, we use new widget from Entity Admin Widgets Bundle.
 

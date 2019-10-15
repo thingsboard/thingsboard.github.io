@@ -143,7 +143,12 @@ Main dependencies that are used in the project:
 
 #### Source code review
 
-To be continued...
+Main source code is the [CustomIntegration](https://github.com/thingsboard/remote-integration-example/blob/master/src/main/java/org/thingsboard/integration/custom/basic/CustomIntegration.java) Java class.
+Integration is expecting "Hello to ThingsBoard" message from the TCP client and replies with the "Hello from ThingsBoard!".
+Once the [client emulator](https://github.com/thingsboard/remote-integration-example/blob/master/src/main/java/org/thingsboard/integration/custom/client/CustomClient.java) receives "Hello from ThingsBoard!"
+, it will start sending auto-generated data to ThingsBoard in the following format: **“25,40,94”**. 
+The Integration will pass the incoming message as-is to the [uplink converter](/docs/user-guide/integrations/custom/#uplink-converter) and push data to ThingsBoard. 
+
 
 ## Next steps
 
