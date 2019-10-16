@@ -1,0 +1,9 @@
+{
+  "name": "New downlink SigFox converter",
+  "type": "DOWNLINK",
+  "debugMode": true,
+  "configuration": {
+    "encoder": "// Encode downlink data from incoming Rule Engine message\n\n// msg - JSON message payload downlink message json\n// msgType - type of message, for ex. 'ATTRIBUTES_UPDATED', 'POST_TELEMETRY_REQUEST', etc.\n// metadata - list of key-value pairs with additional data about the message\n// integrationMetadata - list of key-value pairs with additional data defined in Integration executing this converter\n\n/** Encoder **/\n\nvar data = {};\n\n// Process data from incoming message and metadata\nvar response = metadata.shared_status;\n\n\n// Result object with encoded downlink payload\nvar result = {\n\n    // downlink data content type: JSON, TEXT or BINARY (base64 format)\n    contentType: \"JSON\",\n    data: response\n};\nreturn result;\n\nfunction decodeToString(payload) {\n   return String.fromCharCode.apply(String, payload);\n}"
+  },
+  "additionalInfo": null
+}

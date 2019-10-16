@@ -334,37 +334,4 @@ ThingsBoard authors have prepared several tutorials to help you get started with
   * [**Send emails to customer on device alarm**](/docs/user-guide/rule-engine-2-0/tutorials/send-email/) 
   * [**Send messages between related devices**](/docs/user-guide/rule-engine-2-0/tutorials/rpc-reply-tutorial/)
   
-## NEW
-  
-  * [**Raise alarms on constant threshold violation**] - Learn how to raise alarms when telemetry is violating thresholds for some time. 
-  * [**Flexible processing thresholds**] - Learn how to raise alarms when device telemetry is violating thresholds set on the customer or parent asset level.
-  * [**Check relation**] - Learn how to filter messages based on the relation to parent asset.
-  * [**Combine telemetry**] - Learn how to combine messages from different devices and make decisions based on complex functions. 
-  (in this tutorial we fetch two different values from devices related to same asset and use them somehow)
-  * [**Create alarm when device is offline for 1 minute**](/docs/user-guide/rule-engine-2-0/tutorials/rpc-reply-tutorial/)
-    
-  
-## Pushing data to External systems  
-  
-  * [**Enrich and push sensor readings to Kafka**](/docs/user-guide/rule-engine-2-0/tutorials/push-telemetry-to-kafka/)  - Learn how to enrich incoming message with device or parent asset attributes and push this message to external system;
-  * [**Enrich and push sensor readings to RabbitMQ**](/docs/user-guide/rule-engine-2-0/tutorials/push-telemetry-to-rabbitmq/)  - Learn how to enrich incoming message with device or parent asset attributes and push this message to external system;
-  * [**Push new or cleared alarm event to AWS SQS**](/docs/user-guide/rule-engine-2-0/tutorials/push-telemetry-to-aws-sqs/)  - Learn how to enrich incoming message with device or parent asset attributes and push this message to external system;
-  * [**Push new or cleared alarm event to AWS SNS**](/docs/user-guide/rule-engine-2-0/tutorials/push-telemetry-to-aws-sns/)  - Learn how to enrich incoming message with device or parent asset attributes and push this message to external system;
-  * [**Push information about new created device or asset to Kafka**](/docs/user-guide/rule-engine-2-0/tutorials/push-telemetry-to-aws-sns/)  - Learn how to ..;
-  * [**Enrich and push sensor readings to External MQTT Broker**](/docs/user-guide/rule-engine-2-0/tutorials/push-telemetry-to-mqtt/)  - Learn how to enrich incoming message with device or parent asset attributes and push this message to external system;
-  * [**Execute REST API call to External system**](/docs/user-guide/rule-engine-2-0/tutorials/rest-api-call-to-external-system/)  - Learn how to enrich incoming message with device or parent asset attributes and push this message to external system;
-  * [**Push data to external system via REST API and update telemetry based on content of the reply**](/docs/user-guide/rule-engine-2-0/tutorials/rest-api-call-to-external-system/)  - Learn how to process data in external system and save results of processing in asset telemetry;
-
-## PE
-
-  * [**Send SMS on alarm**] - Deliver notification about the alarm via SMS to customer cell phone;
-  
-  * [**Add & remove devices from a group**] - Learn how to dynamically add & remove devices from a group based on incoming attributes or telemetry;
-  * [**Aggregate data stream**] - Learn how to aggregate incoming telemetry values (e.g. calculate total energy consumption on a building, district or customer level);
-  * [**Aggregate latest values**] - Learn how to aggregate latest telemetry values (e.g. calculate average temperature in the office area);
-  * [**Alarm count visualization**] - Calculate and visualize amount of active alarms on device, apartment, building levels;
-  * [**Alarm count thresholds**] - Raise high priority alarms when threshold of low priority alarms reached;
-  * [**Raise alarm on the results of aggregation**] - Raise alarm when total power consumption in the warehouse is higher then threshold;
-  
-  * [**Schedule reports**] - schedule beautiful reports to be sent to your end-users (e.g. export dashboard as pdf or png and send via email);
-  * [**Schedule device updates**] - schedule periodic configuration updates to a group of devices (e.g. turn on air conditioning at 7 am);
+See more tutorials [here](https://thingsboard.io/docs/guides/).

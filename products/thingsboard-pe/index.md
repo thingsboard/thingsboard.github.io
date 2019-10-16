@@ -2,7 +2,6 @@
 layout: thingsboard-pe
 title: ThingsBoard Professional Edition
 description: 
-redirect_from: "/partners/"
 ---
 
 ## Advanced ThingsBoard IoT Platform distribution with value added features
@@ -31,10 +30,19 @@ redirect_from: "/partners/"
     <main>
         <div class="image-wrapper"><img src="/images/pe/device-asset-groups.svg"></div>
         <div class="content">
-            <h3><a href="/docs/user-guide/groups/">Device & Asset Groups</a></h3>
-            <p>Group your assets and devices to simplify administration tasks. Customize set of columns for each group and trigger actions on devices directly from administration interface.</p>
+            <h3><a href="/docs/user-guide/groups/">Entity Groups</a></h3>
+            <p>Group your entities (device, assets, etc.) to simplify administration tasks. Customize set of columns for each group and trigger actions on entities directly from administration interface.</p>
             <br/>
             <p><a href="/docs/user-guide/groups/" class="button">Read more</a></p>
+        </div>
+    </main>
+    <main>
+        <div class="image-wrapper"><img src="/images/pe/rbac-banner.svg"></div>
+        <div class="content">
+            <h3><a href="/docs/user-guide/rbac/">Advanced RBAC for IoT</a></h3>
+            <p>Advanced management of user roles and permissions. Manage hierarchy of customers with multiple levels of sub-customers, independent users and devices.</p>
+            <br/>
+            <p><a href="/docs/user-guide/rbac/" class="button">Read more</a></p>
         </div>
     </main>
     <main>
@@ -71,6 +79,15 @@ redirect_from: "/partners/"
 <section id="pe-customers">
     <main class="customers-container">
 		<div class="customer-block">
+			<a href="/industries/telecom/#tmobile">
+				<span>
+					<div class="customer-logo" style="height:134px">
+						<img width="" src="/images/customers/tmobile.png" alt="T-Mobile Czech Republic a.s.">
+					 </div>
+				</span>
+			</a>
+		</div>    
+		<div class="customer-block">
 			<a href="https://www.bosch.com/">
 				<span>
 					<div class="customer-logo" style="height:134px">
@@ -88,6 +105,15 @@ redirect_from: "/partners/"
 				</span>
             </a>
         </div>
+		<div class="customer-block">
+			<a href="/industries/smart-energy/#circutor">
+				<span>
+					<div class="customer-logo" style="height:134px">
+						<img width="" src="/images/customers/circutor.png" alt="Circutor">
+					 </div>
+				</span>
+			</a>
+		</div>        
 		<div class="customer-block">
 			<a href="/industries/telecom/#tektelic">
 				<span>
@@ -234,7 +260,14 @@ redirect_from: "/partners/"
                 <td></td>
             </tr>
             <tr>
-                <td><a class="feature-link" href="/docs/user-guide/groups/">Device, assets and customer <span class="info">groups</span></a></td>
+                <td><a class="feature-link" href="/docs/user-guide/groups/">Entity <span class="info">groups</span></a></td>
+                <td class="unchecked"></td>
+                <td></td>
+                <td class="checked"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><a class="feature-link" href="/docs/user-guide/rbac/">Advanced RBAC for <span class="info">IoT</span></a></td>
                 <td class="unchecked"></td>
                 <td></td>
                 <td class="checked"></td>
@@ -299,7 +332,8 @@ redirect_from: "/partners/"
 </section>
 <br/>
 <br/>
-<section id="pricing-models-cards">
+<div id="deployment-options"></div>
+<!--section id="pricing-models-cards">
     <main id="cloud-pricing">
 		<div class="content">
 			<div class="content-block pb-0x">
@@ -311,11 +345,13 @@ redirect_from: "/partners/"
 			<div style="flex: 1;"></div>
 			<div class="content-block">
 			    <div class="marketplace">
-                    <div class="pricing-image-wrapper">
+                    <div class="pricing-image-wrapper clickable">
                         <img src="/images/pe/aws_logo.svg">
+                        <a href="/products/thingsboard-pe/aws/"></a>
                     </div>
-                    <div class="pricing-image-wrapper">
+                    <div class="pricing-image-wrapper clickable">
                         <img src="/images/pe/azure_logo.svg">
+                        <a href="/products/thingsboard-pe/install/?deploy=cloud&type=azure"></a>
                     </div>
 			    </div>
 			</div>
@@ -346,13 +382,13 @@ redirect_from: "/partners/"
 			</div>
         </div>
     </main>
-</section>
+</section-->
 
 <br/>
 <br/>
 
 <p align="center">
-    <a href="/products/thingsboard-pe/install/?deploy=trial" class="button try-pe">Try it now</a>
+    <a href="/pricing/" class="button try-pe">Get it now</a>
 </p>
 
 <br/>

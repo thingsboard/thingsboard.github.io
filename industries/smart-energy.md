@@ -6,6 +6,30 @@ description:
 ---
 
 <div class="customer-block">
+    <a href="http://www.circutor.com/">
+        <div class="customer-logo">
+            <img width="" src="/images/customers/circutor.png" alt="Circutor">
+        </div>
+    </a>
+    <div class="customer-content">
+        <h4>CIRCUTOR has over 40 years’ experience working on the design and manufacture of units for improving energy efficiency: electrical energy, power quality measurement and control units, industrial electrical protection, reactive energy compensation, and harmonic filtering. </h4>
+        <p>
+        CIRCUTOR owns a wide portfolio of connected energy control and metering devices. Despite the diversity of proprietary and off-the-shelf data protocols, Thingsboard has made it easy to accommodate most of our products in a common data platform.  
+        </p> 
+        <p>
+        I am deeply impressed by the dynamism and professionalism of the Thingsboard team. I appreciate greatly the ability to attend our technical suggestions and adopt them in the form of new functionalities. I highly recommend Thingsboard for its reliability, its flexibility and above all, the quality of the product and its technical service.
+        </p> 
+        <div class="person-logo-container">
+            <img class="person-logo" src="/images/customers/circutor-person.jpg"/>
+            <div class="person-title">
+                Daniel Portero <br/>
+                Cloud & App Development Manager
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="customer-block">
     <a href="https://www.oneserve.co.uk/">
         <div class="customer-logo">
             <img width="" src="/images/customers/oneserve.svg" alt="Oneserve">
@@ -36,7 +60,7 @@ description:
 </div>
 
 <div class="customer-block">
-    <a href="http://www.nettra.com.uy/">
+    <a href="http://www.nettra.tech/">
         <div class="customer-logo">
             <img width="" src="/images/customers/nettra.png" alt="Nettra">
         </div>
@@ -143,6 +167,36 @@ description:
             <div class="person-title">
                 Nairn Harrison<br/>
                 Director
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="customer-block">
+    <a href="http://co-met.info">
+        <div class="customer-logo">
+            <img width="" src="/images/customers/comet.jpg" alt="Co.met GmbH">
+        </div>
+    </a>
+    <div class="customer-content">
+        <h3 id="co-met">
+            co.met GmbH 
+        </h3>
+        <h4>
+       co.met GmbH has been active in the energy industry since 2001 with process and data services and in some cases proprietary IT solutions. 
+        </h4>
+        <p>
+        We’re a meter operator and as such a service provider for energy distribution network carriers (electricity, gas, water and heat) and other meter operators. We provide SaaS-Solutions for the remote reading of meters, field force management (for meter fitters) and the administration of smart meter gateways. Additionally we’re a LoRa WAN carrier for the city of Saarbrücken and a Solution Provider for LoRa-WAN Backendsystems.
+        </p>
+        <p>
+        In the above mentioned roles we face a lot of use cases, ranging from the mere visualization of telemetry data to the necessity to trigger events using rule chains.
+        ThingsBoard is a mighty tool and yet easy to use. It meets our requirements perfectly and far better than any other solution we’ve been testing so far. We and our customers appreciate it’s professional look, functionality and speed of reaction . The ThingsBoard Team has proven to be a very reliable partner, open for improvements and very quick to offer satisfying solutions if needed.
+        </p> 
+        <div class="person-logo-container">
+            <img class="person-logo" src="/images/customers/peter_backes.jpg"/>
+            <div class="person-title">
+                Peter Backes<br/>
+                CEO
             </div>
         </div>
     </div>

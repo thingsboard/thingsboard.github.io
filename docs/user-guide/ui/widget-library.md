@@ -134,13 +134,13 @@ Useful for visualization and control of GPIO state for target devices.
 
 ### Control widgets
  
-Useful for visualize current state and send RPC commands to target devices.
+Useful for visualization of current state and sending RPC commands to target devices.
 
 ![image](/images/user-guide/ui/control-widgets.png)
 
 ### Maps widgets
  
-Useful for visualization of devices geo locations and track devices routes both in real-time and history mode.
+Useful for visualization of devices geo locations and tracking devices routes both in real-time and history mode.
 
 ![image](/images/user-guide/ui/maps-widgets.png)
 
@@ -155,6 +155,18 @@ Useful for visualization of timeseries data or attributes in a table or card wid
 Useful for visualization of alarms for specific entities both in real-time and history mode.
 
 ![image](/images/user-guide/ui/alarm-widgets.png)
+
+### Gateway widgets
+
+Useful for managing extensions.
+
+![image](/images/user-guide/ui/gateway-widgets.png)
+
+### Input widgets
+
+Useful for changing entity attributes.
+
+![image](/images/user-guide/ui/input-widgets.png)
 
 ## Widgets Bundles import/export
 

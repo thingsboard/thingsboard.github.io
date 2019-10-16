@@ -1,0 +1,307 @@
+$pricing-color: #506dad
+$pricing-button-color: #29655f
+
+$silver-color: rgba(160, 160, 160, 0.75)
+$gold-color: rgba(234, 206, 26, 0.76)
+$platinum-color: rgba(158, 150, 94, 0.76)
+
+$pricing-table-border: rgba(255, 255, 255, 0.39)
+
+#partner-program
+  color: #424242
+
+  .flyout-button
+    display: none
+
+  #partnerProgramContent
+    color: #424242
+    position: relative
+    width: 100%
+    margin: auto
+    * + h2, * + h3, * + h4, * + h5, * + h6
+      margin-top: 30px
+
+    table
+      width: 100%
+      border: 1px solid #ccc
+      border-spacing: 0
+      margin-top: 30px
+      margin-bottom: 30px
+
+    h1
+      text-align: center
+    h2
+      text-align: center
+    h3
+      font-weight: 300
+    h5
+      font-size: 18px
+      line-height: 1.5em
+      font-weight: 300
+    p
+      line-height: 1.5em
+
+    ul, ol
+      margin: 20px 0
+      padding-left: 30px
+      font-weight: 400
+    ul
+      li
+        list-style: disc
+        margin-bottom: .75em
+
+    .pi-accordion
+      h4.title
+        font-size: 20px
+        padding: 5px 10px 0px 18px
+      div.item
+        overflow: visible
+        &:before
+          display: block
+          content: " "
+          margin-top: -60px
+          height: 60px
+          visibility: hidden
+      div.item > h4.title
+        &:before
+          top: 18px
+
+    div#partner-program-pricing
+      background: $dark-grey url(/images/texture.png)
+      background-size: auto 100%
+      margin-top: 132px
+      width: 100vw
+      margin-left: calc(-50vw + 50%)
+      margin-bottom: -100px
+      .bottom-background
+        height: 100px
+        background: #fff
+        margin-top: -100px
+      table
+        td
+          &.checked, &.unchecked
+            &:before
+              background-size: 18px 18px
+              width: 18px
+              height: 18px
+              display: inline-block
+              content: ""
+          &.checked
+            &:before
+              background-image: url(/images/pe/feature-checked.svg)
+          &.unchecked
+            &:before
+              background-image: url(/images/pe/feature-unchecked.svg)
+          sup
+            font-size: 20px
+        th,
+        td
+          opacity: 0
+          &.animated
+            opacity: 1
+        margin: auto
+        border: none
+        max-width: 100%
+        transform: translateY(-132px)
+        thead
+          background: none
+          color: #fff
+          th
+            text-align: center
+          tr:nth-child(1)
+            height: 80px
+            th
+              &.program-type-header
+                background: $pricing-color
+                height: 80px
+                border: solid $pricing-color 1px
+              .program-type-header
+                line-height: 80px
+                font-weight: 300
+                font-size: 20px
+                background: rgba(0, 0, 0, 0.0)
+          tr:nth-child(2)
+            height: 40px
+            th
+              height: 40px
+              .program-type-header
+                color: #666
+                font-size: 12px
+                font-weight: 500
+              &:not(:last-child)
+                &.program-type-header
+                  border-right: solid #c7c5c5 1px
+        th.bottom-shadow
+          box-shadow: 0px 5px 2px 0px rgba(0, 0, 0, 0.4), 0px 9px 2px 0px rgba(0, 0, 0, 0.2)
+        th.left-right-shadow
+          box-shadow: -2px 3px 8px 0px rgba(0,0,0,0.4), 0px 0px 3px 0px rgba(0,0,0,0.2), 3px 4px 8px 0px rgba(0, 0, 0, 0.25), 4px 3px 3px 0px rgba(0, 0, 0, 0.1)
+        th.left-shadow
+          box-shadow: -2px 0px 8px 0px rgba(0,0,0,0.4), 0px 0px 3px 0px rgba(0,0,0,0.2)
+        th.right-shadow
+          box-shadow: 2px 0px 8px 0px rgba(0,0,0,0.25), 4px 3px 3px 0px rgba(0,0,0,0.1)
+        th
+          border-bottom: 1px solid $pricing-table-border
+          font-size: 12px
+          padding: 0
+          width: 100px
+          &.program-type-header
+            background: #fff
+            text-align: center
+          .program-type-header
+            text-transform: uppercase
+            font-weight: 400
+            line-height: 40px
+            padding: 0
+            background: #fff
+            display: flex
+            align-items: center
+            align-content: center
+            justify-content: center
+            img
+              height: 50px
+              width: 100%
+              padding-top: 10px
+              padding-bottom: 10px
+        th:nth-child(1)
+          width: 120px
+        th:nth-child(2), td:nth-child(2)
+          background: $silver-color
+        th:nth-child(3), td:nth-child(3)
+          background: $gold-color
+        th:nth-child(4), td:nth-child(4)
+          background: $platinum-color
+        td
+          border-top: none
+          background: none
+          color: #fff
+          padding: 0
+          div.apply-cell
+            a.button
+              text-align: center
+              font-size: 10px
+              padding: 0.1rem 0.5rem
+              cursor: pointer
+              line-height: 20px
+              white-space: nowrap
+              border: 2px solid #fff
+              background-color: #fff
+              color: $pricing-color
+              transition: 0.3s
+              &:hover
+                background-color: rgba(0, 0, 0, 0.25)
+                color: #fff
+        td.note
+          background: none
+          text-align: left
+        td
+          font-size: 12px
+          border-bottom: 1px solid $pricing-table-border
+          border-right: 1px solid $pricing-table-border
+        td:not(:first-child)
+          text-align: center
+        td:nth-child(1)
+          border-left: 1px solid $pricing-table-border
+          background: rgba(45, 45, 45, 0.25)
+          &.program-section
+            text-transform: uppercase
+            text-align: center
+            font-size: 12px
+            i.fa
+              font-size: 18px
+              padding-right: 10px
+        tr
+          background: none
+          height: 60px
+
+@media screen and (min-width: 750px)
+  #partner-program
+    #partnerProgramContent
+      div#partner-program-pricing
+        margin-top: 162px
+        margin-bottom: -100px
+        .bottom-background
+          height: 100px
+          margin-top: -100px
+        table
+          transform: translateY(-162px)
+          thead
+            tr:nth-child(1)
+              th
+                .program-type-header
+                  font-size: 36px
+            tr:nth-child(2)
+              th
+                .program-type-header
+                  font-size: 18px
+
+          max-width: 100%
+          th:nth-child(1)
+            width: 200px
+          th:not(:first-child)
+            font-size: 18px
+            width: 200px
+            .program-type-header
+              img
+                height: 80px
+                width: 100%
+                padding-top: 10px
+                padding-bottom: 10px
+          td
+            padding: 10px
+            &.checked, &.unchecked
+              &:before
+                background-size: 24px 24px
+                width: 24px
+                height: 24px
+          td:nth-child(1)
+            font-size: 16px
+            &.program-section
+              font-size: 18px
+              i.fa
+                font-size: 24px
+                padding-right: 20px
+          td:not(:first-child)
+            font-size: 18px
+          td
+            div.apply-cell
+              a.button
+                font-size: 14px
+                padding: 0.3rem 2rem
+                line-height: 30px
+
+@media screen and (min-width: 1025px)
+  #partner-program
+    section, header
+      main
+        max-width: 1000px
+    footer
+      main
+        max-width: 1000px
+
+    #partnerProgramContent
+      width: calc(100% - 400px)
+      div#partner-program-pricing
+        margin-left: calc(-50vw + 50% + 20px)
+        table
+          max-width: 80%
+
+@media screen and (min-width: 1500px)
+  #partner-program
+    #partnerProgramContent
+      width: calc(100% - 700px)
+      div#partner-program-pricing
+        table
+          td
+            div.apply-cell
+              a.button
+                padding: 0.3rem 3rem
+
+@media screen and (min-width: 1600px)
+  #partner-program
+    #partnerProgramContent
+      div#partner-program-pricing
+        table
+          td
+            div.apply-cell
+              a.button
+                padding: 0.3rem 5rem

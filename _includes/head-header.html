@@ -17,8 +17,17 @@
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link rel="stylesheet" href="/css/styles.css">
     <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.7.0/qs.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gifffer/1.5.0/gifffer.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@1/dist/clipboard.min.js"></script>
+	<script type="text/javascript">
+        window.onload = function() {
+            Gifffer();
+        }
+	</script>
 	<script type="text/javascript">
 		/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
 		!function(a){"use strict";var b=function(b,c,d){function e(a){return h.body?a():void setTimeout(function(){e(a)})}function f(){i.addEventListener&&i.removeEventListener("load",f),i.media=d||"all"}var g,h=a.document,i=h.createElement("link");if(c)g=c;else{var j=(h.body||h.getElementsByTagName("head")[0]).childNodes;g=j[j.length-1]}var k=h.styleSheets;i.rel="stylesheet",i.href=b,i.media="only x",e(function(){g.parentNode.insertBefore(i,c?g:g.nextSibling)});var l=function(a){for(var b=i.href,c=k.length;c--;)if(k[c].href===b)return a();setTimeout(function(){l(a)})};return i.addEventListener&&i.addEventListener("load",f),i.onloadcssdefined=l,l(f),i};"undefined"!=typeof exports?exports.loadCSS=b:a.loadCSS=b}("undefined"!=typeof global?global:this);
@@ -258,20 +267,32 @@
 	<a href="/" class="logo"></a>
 	<div id="githubButtonContainer">
         <a class="github-button" href="https://github.com/thingsboard/thingsboard" data-show-count="true" aria-label="Star thingsboard/thingsboard on GitHub">Star</a>
-	</div>
-	<div class="nav-buttons nav-buttons-left" data-auto-burger="primary">
-		<a href="/installations/" class="button center-button" id="tryItNow" data-auto-burger-exclude>Try it now</a>
-		<!--a href="/docs/guides/" class="button center-button" id="guides" data-auto-burger-exclude>Guides</a-->
-		<!--a target="_blank" href="https://demo.thingsboard.io/signup" class="button center-button" id="liveDemo" data-auto-burger-exclude>Live demo</a-->
-	</div>
-	<div class="nav-buttons nav-buttons-right" data-auto-burger="primary">
-		<div class="nav-items">
-			<a href="javascript:void(0);" class="nav-item" id="solutions" onclick="tb.openMenu('solutionsNav', 'solutions')" data-auto-burger-exclude>Solutions</a>
-			<a href="javascript:void(0);" class="nav-item" id="customers" onclick="tb.openMenu('customersNav', 'customers')" data-auto-burger-exclude>Customers</a>
-			<a href="javascript:void(0);" class="nav-item" id="use_cases" onclick="tb.openMenu('useCasesNav', 'use_cases')" data-auto-burger-exclude>Use Cases</a>
-			<a href="javascript:void(0);" class="nav-item" id="about_us" onclick="tb.openMenu('aboutUsNav', 'about_us')" data-auto-burger-exclude>About Us</a>
-		</div>
-		<a href="/docs/" class="button center-button" id="viewDocs" data-auto-burger-exclude>Docs</a>
+    </div>
+    <div class="nav-buttons nav-buttons-left" data-auto-burger="primary">
+        <a href="/installations/" class="button center-button" id="tryItNow" data-auto-burger-exclude>Try it now</a>
+        <!--a href="/docs/guides/" class="button center-button" id="guides" data-auto-burger-exclude>Guides</a-->
+        <!--a target="_blank" href="https://demo.thingsboard.io/signup" class="button center-button" id="liveDemo" data-auto-burger-exclude>Live demo</a-->
+    </div>
+    <div class="nav-buttons nav-buttons-right" data-auto-burger="primary">
+        <div class="nav-items">
+            <div class="nav-item-container">
+                <a href="javascript:void(0);" class="nav-item" id="solutions" onclick="tb.openMenu('solutionsNav', 'solutions')" data-auto-burger-exclude>Solutions</a>
+            </div>
+            <div class="nav-item-container">
+                <a href="javascript:void(0);" class="nav-item" id="customers" onclick="tb.openMenu('customersNav', 'customers')" data-auto-burger-exclude>Customers</a>
+            </div>
+            <div class="nav-item-container">
+                <a href="javascript:void(0);" class="nav-item" id="use_cases" onclick="tb.openMenu('useCasesNav', 'use_cases')" data-auto-burger-exclude>Use Cases</a>
+            </div>
+            <div class="nav-item-container">
+                <a href="javascript:void(0);" class="nav-item" id="partners_menu" onclick="tb.openMenu('partnersNav', 'partners_menu')" data-auto-burger-exclude>Partners</a>
+            </div>
+            <div class="nav-item-container">
+                <a href="javascript:void(0);" class="nav-item" id="about_us" onclick="tb.openMenu('aboutUsNav', 'about_us')" data-auto-burger-exclude>About Us</a>
+            </div>
+        </div>
+        <a href="/pricing/" class="button center-button" id="viewPricing" data-auto-burger-exclude>Pricing</a>
+        <a href="/docs/" class="button center-button" id="viewDocs" data-auto-burger-exclude>Docs</a>
         <a href="/docs/guides/" class="button center-button" id="guides" data-auto-burger-exclude>Guides</a>
 		<button id="hamburger" onclick="tb.toggleMenu()" data-auto-burger-exclude><div></div></button>
 	</div>
@@ -334,6 +355,9 @@
 					<a href="/docs/iot-gateway/what-is-iot-gateway/" target="_self">
 						<li><span>ThingsBoard IoT Gateway</span></li>
 					</a>
+					<a href="/products/license-server/" target="_self">
+						<li><span>ThingsBoard License Server</span></li>
+					</a>
 				</ul>
 			</div>
 			<div class="nav-box">
@@ -381,6 +405,9 @@
 					<a href="/industries/telecom/" target="_self">
 						<li><span>Telecom</span></li>
 					</a>
+					<a href="/industries/industry40/" target="_self">
+						<li><span>Industry 4.0</span></li>
+					</a>
 				</ul>
 			</div>
 		</main>
@@ -413,6 +440,25 @@
 			</div>
 		</main>
 	</nav>
+    <nav id="partnersNav" class="nav-menu">
+        <main data-auto-burger="primary">
+            <div class="nav-box">
+                <img src="/images/head-partners.svg">
+            </div>
+            <div class="nav-box">
+            </div>
+            <div class="nav-box">
+                <ul>
+                    <a href="/partners/hardware/" target="_self">
+                        <li><strong>Partners</strong></li>
+                    </a>
+                    <a href="/partners/hardware/" target="_self">
+                        <li><span>Hardware partners</span></li>
+                    </a>
+                </ul>
+            </div>
+        </main>
+    </nav>
 	<nav id="aboutUsNav" class="nav-menu">
 		<main data-auto-burger="primary">
 			<div class="nav-box">

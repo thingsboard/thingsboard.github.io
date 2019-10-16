@@ -178,6 +178,18 @@
       keywords:
       pe: true
       video: true
+    - path: /docs/user-guide/integrations/tcp/
+      title: Devices uses TCP protocol
+      subtitle: How to connect to ThingsBoard TCP-server, transform the incoming messages and generate the downlinks using ThingsBoard.
+      keywords: Connect TCP devices
+      pe: true
+      video: true
+    - path: /docs/user-guide/integrations/tcp/
+      title: Devices uses UDP protocol
+      subtitle: How to connect to ThingsBoard UDP-server, transform the incoming messages and generate the downlinks using ThingsBoard.
+      keywords: Connect UDP devices
+      pe: true
+      video: true
 - title: Data visualization
   subtitle: These guides contain instructions how to configure complex ThingsBoard dashboards
   id: DataVisualization
@@ -276,11 +288,21 @@
       subtitle: Learn how to send a remote request call to a Related Device using Rule Engine.
       keys: rpc Request
       pe: false
+    - path: /docs/user-guide/rule-engine-2-0/tutorials/get-weather-using-rest-api-call/
+      title: Using REST API to get weather data
+      subtitle: Learn how to use REST API to get weather data in a specified location.
+      keys: rest api
+      pe: false
     - path: /docs/user-guide/rule-engine-2-0/tutorials/add-devices-to-group/
       title: Add & remove devices to group dynamically
       subtitle: Learn how to how to dynamically add & remove device from the device group based on incoming data from device.
       keys: device group dynamic relation
-      pe: trues
+      pe: true
+    - path: /docs/user-guide/integrations/send-data-external-mqtt-brokers/
+      title: Send data to external MQTT brokers
+      subtitle: Connect to external brokers and send MQTT data stream
+      keys: mqtt connect
+      pe: true
 - title: IoT Data analytics
   subtitle: Learn how to use rule engine to perform basic analytics tasks.
   id: DataAnalytics
@@ -307,6 +329,11 @@
   subtitle: Learn how to connect various hardware platforms to ThingsBoard.
   id: HardwareSamples
   section:
+    - path: /docs/samples/esp32/ota/
+      title: ESP32 OTA using ThingsBoard
+      subtitle: Learn how to make ESP32 OTA update using ThingsBoard custom widget, rule chain and dashboard
+      pe: false
+      video: true
     - path: /docs/samples/esp32/gpio-control-pico-kit-dht22-sensor/
       title: ESP32 Pico Kit GPIO control and DHT22 sensor monitor using ThingsBoard Arduino SDK
       subtitle: Contains wiring diagram, sketch and dashboard setup guide.
@@ -314,6 +341,10 @@
       video: false
     - path: /docs/samples/arduino/temperature/
       title: Temperature upload over MQTT using Arduino UNO, ESP8266 and DHT22 sensor
+      subtitle: Contains wiring diagram, sketch and dashboard setup guide.
+      pe: false
+    - title: Humidity and temperature upload over HTTP using Arduino UNO, SIM808 Shield and HTU21D sensor
+      path: /docs/samples/arduino/sim808-htu21d/
       subtitle: Contains wiring diagram, sketch and dashboard setup guide.
       pe: false
     - path: /docs/samples/esp8266/temperature/
@@ -351,6 +382,28 @@
       subtitle: Contains wiring diagram, sketch and dashboard setup guide.
       pe: false
       video: false
+    - path: /docs/user-guide/integrations/sodaq/
+      title: Learn how to connect your SODAQ Universal Tracker to ThingsBoard
+      subtitle: Learn how to connect your SODAQ Universal Tracker to ThingsBoard via T-Mobile – IoT CDP Integration.
+      keywords: NB IoT, NB-IoT, T-Mobile, SODAQ, 5G
+      pe: true
+      video: false
+    - path: /docs/user-guide/integrations/sodaq-udp
+      title: Learn how to connect your SODAQ Universal Tracker to ThingsBoard
+      subtitle: Learn how to connect your SODAQ Universal Tracker to ThingsBoard via UDP Integration.
+      keywords: NB IoT, NB-IoT, T-Mobile, SODAQ, 5G
+      pe: true
+      video: false
+    - path: /docs/samples/ble/raspberry-esp32-xiaomi-sensor-htu21d.md
+      title: ThingsBoard BLE Demo with Raspberry PI, ESP32, Xiaomi MI and HTU21D sensors
+      subtitle: Contains wiring diagram and dashboard setup guide.
+      pe: false
+      video: false
+    - path: /docs/samples/nettrartu+/rtu_temp_sensor/
+      title: Temperature upload over MQTT using Nettra RTU
+      subtitle: Contains wiring diagram and dashboard setup guide.
+      pe: false
+      video: false
 - title: Advanced features
   subtitle: Learn about advanced ThingsBoard features
   id: AdvancedFeatures
@@ -384,12 +437,12 @@
       title: Scheduler
       subtitle: Learn how to schedule various types of events and trigger actions.
       pe: true
-      video: false
+      video: true
     - path: /docs/user-guide/reporting/
       title: Reporting
       subtitle: Learn how to schedule and generate reports based on existing dashboards.
       pe: true
-      video: false
+      video: true
 - title: Contribution and Development
   subtitle: Learn how to contribute to Thingsboard, customize & develop custom widgets and rule nodes
   id: Contribution

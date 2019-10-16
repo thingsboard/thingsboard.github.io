@@ -1,0 +1,51 @@
+{
+  "ruleChain": {
+    "additionalInfo": null,
+    "name": "To SigFox Integration",
+    "firstRuleNodeId": null,
+    "root": false,
+    "debugMode": false,
+    "configuration": null
+  },
+  "metadata": {
+    "firstNodeIndex": 0,
+    "nodes": [
+      {
+        "additionalInfo": {
+          "layoutX": 379,
+          "layoutY": 153
+        },
+        "type": "org.thingsboard.rule.engine.filter.TbCheckMessageNode",
+        "name": "Check status field",
+        "debugMode": true,
+        "configuration": {
+          "messageNames": [
+            "status"
+          ],
+          "metadataNames": [],
+          "checkAllKeys": true
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 718,
+          "layoutY": 151
+        },
+        "type": "org.thingsboard.rule.engine.integration.TbIntegrationDownlinkNode",
+        "name": "Push to integration",
+        "debugMode": true,
+        "configuration": {
+          "integrationId": "ef78a910-3360-11e9-bd45-c54e70610fce"
+        }
+      }
+    ],
+    "connections": [
+      {
+        "fromIndex": 0,
+        "toIndex": 1,
+        "type": "True"
+      }
+    ],
+    "ruleChainConnections": null
+  }
+}

@@ -146,12 +146,15 @@ var tb = (function () {
 
 			case 'home':
 			case 'thingsboard-pe':
+            case 'pe-aws':
+            case 'pricing':
+            case 'partner-program':
 			case 'installations':
+            case 'partners':
 				bodyHeight = windowHeight;
 				break;
 
 			case 'caseStudies':
-			case 'partners':
 				bodyHeight = windowHeight * 2;
 				break;
 
@@ -278,11 +281,31 @@ var tb = (function () {
 		}, 100);
 	}
 
+	function openAccordionItem(itemId) {
+	    var thisItem = $('#'+itemId);
+        if (!thisItem) return;
+        var thisWrapper = $(thisItem).find('.wrapper').eq(0);
+        if (!thisWrapper) return;
+        var contentHeight = thisWrapper.find('.content').eq(0).innerHeight() + 'px';
+        if (!$(thisItem).hasClass('on')) {
+            $(thisItem).addClass('on');
+            thisWrapper.css({height: contentHeight});
+
+            var duration = parseFloat(getComputedStyle(thisWrapper[0]).transitionDuration) * 1000;
+
+            setTimeout(function(){
+                thisWrapper.css({height: ''});
+                moving = false;
+            }, duration);
+        }
+    }
+
 	return {
 		toggleToc: toggleToc,
 		toggleMenu: toggleMenu,
 		openMenu: openMenu,
-		showVideo: showVideo
+		showVideo: showVideo,
+        openAccordionItem: openAccordionItem
 	};
 })();
 
@@ -312,6 +335,19 @@ var tb = (function () {
 			CollapseBox($(container));
 		});
 
+        $('[data-faq-id]').each(function () {
+            var faqAnchor = this;
+            var nodeId = this.getAttribute('data-faq-id');
+            var fontSize = this.getAttribute('data-faq-link-size') || 'smaller';
+            var faqLink = newDOMElement('a', 'faq-link');
+            $(faqLink).css('fontSize', fontSize);
+            faqAnchor.appendChild(faqLink);
+            $(faqLink).click(function() {
+                document.getElementById(nodeId).scrollIntoView();
+                tb.openAccordionItem(nodeId);
+            });
+        });
+
 		setYAH();
 
 		setTimeout(function () {
@@ -330,8 +366,21 @@ var tb = (function () {
 			var isContainer = item.tagName === 'DIV';
 
 			var titleText = item.getAttribute('data-title');
-			var title = newDOMElement('div', 'title');
+			var titleTag = item.getAttribute('data-tag');
+            var titleId = item.getAttribute('data-id');
+            var itemId = item.getAttribute('data-item-id');
+			if (!titleTag) {
+                titleTag = 'div';
+            }
+
+			var title = newDOMElement(titleTag, 'title');
 			title.innerHTML = titleText;
+			if (titleId) {
+                title.id = titleId;
+            }
+            if (itemId) {
+                item.id = itemId;
+            }
 
 			var wrapper, content;
 
@@ -347,7 +396,7 @@ var tb = (function () {
 
 			if (wrapper) {
 				item.appendChild(wrapper);
-				$(wrapper).css({height: 0});
+				$(wrapper).css({height: 0, padding: 0});
 			}
 
 
@@ -378,7 +427,7 @@ var tb = (function () {
 
 				if (!thisWrapper) return;
 
-				var contentHeight = thisWrapper.find('.content').eq(0).innerHeight() + 'px';
+				var contentHeight = thisWrapper.find('.content').eq(0).outerHeight(true) + 'px';
 
 				if ($(thisItem).hasClass('on')) {
 					thisWrapper.css({height: contentHeight});

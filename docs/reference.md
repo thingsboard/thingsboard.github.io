@@ -82,8 +82,6 @@ database:
     type: "${DATABASE_TS_TYPE:sql}" # cassandra OR sql (for hybrid mode, only this value should be cassandra)
 ```
 
-See ["How-to choose the right database?"](/docs/reference/how-to-choose-right-db/) for more details on which DB option to use.
-
 ## Programming languages and third-party
 
 ThingsBoard back-end is written in Java, but we also have some micro-services based on Node.js. ThingsBoard front-end is a SPA based on Angular JS framework. 

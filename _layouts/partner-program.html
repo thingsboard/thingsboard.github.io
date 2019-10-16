@@ -1,0 +1,30 @@
+<!Doctype html>
+<html id="partner-program">
+
+{% include head-header.html %}
+
+<section id="hero" class="light-text">
+</section>
+
+<section id="encyclopedia">
+    <div id="partnerProgramContent" class="noToc">
+        {{ content }}
+    </div>
+</section>
+
+{% include footer.html %}
+
+<script type="text/javascript">
+    inViewportDefer(function() {
+        $("#partner-program-pricing table th," +
+            "#partner-program-pricing table td").inViewport(function(px){
+            if(px >= 20) {
+                $(this).addClass("animated flipInY");
+                return true;
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!Doctype html>
+<html id="pe-aws">
+
+{% include head-header.html %}
+
+<section id="hero" class="light-text">
+</section>
+
+<section id="encyclopedia">
+    <div id="peAwsContent" class="noToc">
+        {{ content }}
+    </div>
+</section>
+
+{% include footer.html %}
+
+<script type="text/javascript">
+    inViewportDefer(function() {
+        $("#pe-aws-pricing table th:not(:first-child), " +
+            "#pe-aws-pricing table td:not(:first-child)").inViewport(function(px){
+            if(px >= 20) {
+                $(this).addClass("animated flipInY");
+                return true;
+            }
+        });
+    });
+
+    function openAwsFaqNode(nodeId) {
+        document.getElementById(nodeId).scrollIntoView();
+        tb.openAccordionItem(nodeId);
+    }
+
+</script>
+
+</body>
+</html>

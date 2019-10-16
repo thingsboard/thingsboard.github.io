@@ -1,0 +1,484 @@
+{
+  "title": "Weather Dashboard",
+  "configuration": {
+    "widgets": {
+      "3aa2e1f6-6110-4640-986c-1248d40fee9d": {
+        "isSystemType": true,
+        "bundleAlias": "maps_v2",
+        "typeAlias": "openstreetmap",
+        "type": "latest",
+        "title": "New widget",
+        "sizeX": 20,
+        "sizeY": 13,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "dataKeys": [
+                {
+                  "name": "outsideHumidity",
+                  "type": "timeseries",
+                  "label": "outsideHumidity",
+                  "color": "#607d8b",
+                  "settings": {},
+                  "_hash": 0.008594114868399227
+                },
+                {
+                  "name": "outsideTemp",
+                  "type": "timeseries",
+                  "label": "outsideTemperature",
+                  "color": "#9c27b0",
+                  "settings": {},
+                  "_hash": 0.47804473530892544
+                },
+                {
+                  "name": "outsideMaxTemp",
+                  "type": "timeseries",
+                  "label": "outsideMaxTemp",
+                  "color": "#607d8b",
+                  "settings": {},
+                  "_hash": 0.1372079460332596
+                },
+                {
+                  "name": "outsideMinTemp",
+                  "type": "timeseries",
+                  "label": "outsideMinTemp",
+                  "color": "#9c27b0",
+                  "settings": {},
+                  "_hash": 0.8730892450517318
+                },
+                {
+                  "name": "latitude",
+                  "type": "attribute",
+                  "label": "latitude",
+                  "color": "#3f51b5",
+                  "settings": {},
+                  "_hash": 0.9213604791727981
+                },
+                {
+                  "name": "longitude",
+                  "type": "attribute",
+                  "label": "longitude",
+                  "color": "#e91e63",
+                  "settings": {},
+                  "_hash": 0.42039953996537016
+                }
+              ],
+              "entityAliasId": "6d9aab6b-1420-9ecc-1374-d505fa272913"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "fitMapBounds": true,
+            "latKeyName": "latitude",
+            "lngKeyName": "longitude",
+            "showLabel": true,
+            "label": "<div style=\"position: relative; white-space: nowrap; text-align: center; font-size: 13px; top: 3px;\"><span style=\"margin-left: -500%;\"></span><span style=\"border: solid #ff3f26; border-radius: 10px; color: #ff3f26; background-color: #fff; padding-left: 5px; padding-right: 5px; padding-top: 3px; padding-bottom: 3px;\">${entityName}</span><span style=\"margin-right: -500%;\"></span></div>",
+            "tooltipPattern": "<div style=\"color:black\"><b>${entityName}</b><br/><br/><b>Max outside temperature:</b> ${outsideMaxTemp:1}<br/><b>Min outside temperature:</b> ${outsideMinTemp:1}<br/><b>Current outside temperature:</b> ${outsideTemperature:1}<br/><b>Current outside humidity:</b> ${outsideHumidity:1}<br/></div>",
+            "markerImageSize": 34,
+            "useColorFunction": true,
+            "markerImages": [
+              "data:image/svg+xml;base64,PHN2ZyBpZD0ic3ZnNDQwOCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMTUwIDE1MCI+CiAgPHN0eWxlPgogICAgLnN0MHtvcGFjaXR5OjAuODkyO2VuYWJsZS1iYWNrZ3JvdW5kOm5ldyA7fSAuc3Qxe2ZpbGw6dXJsKCNTVkdJRF8xXyk7fSAuc3Qye2ZpbGw6I0ZGM0UwMTt9IC5zdDN7ZmlsbDojRkZGRkZGO30KICA8L3N0eWxlPgogIDxnIGlkPSJsYXllcjEiPgogICAgPGcgaWQ9InBhdGg2ODgxLTMtNS01LTEtOC00LTQtNy04IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMTQ2LjQzOCAtMjc2LjAyOCkiIGNsYXNzPSJzdDAiPgogICAgICA8cmFkaWFsR3JhZGllbnQgaWQ9IlNWR0lEXzFfIiBjeD0iMTc0My42ODkiIGN5PSItMTQ3MC44OTEiIHI9IjQ5LjkwMSIgZ3JhZGllbnRUcmFuc2Zvcm09Im1hdHJpeCguNjc5MyAuMDA3NiAuNTA5IC0uNTYxMiAtMTkwLjQ4MiAtNDQzLjI0MikiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KICAgICAgICA8c3RvcCBvZmZzZXQ9IjAiLz4KICAgICAgICA8c3RvcCBvZmZzZXQ9IjEiIHN0b3Atb3BhY2l0eT0iLjE4OCIvPgogICAgICA8L3JhZGlhbEdyYWRpZW50PgogICAgICA8cGF0aCBjbGFzcz0ic3QxIiBkPSJNMjg1LjYgMzg4LjVjMTAuMy0xMi40IDQuNC0yMi40LTE0LjQtMjIuNC0xOC45IDAtNDIuNCAxMC01My45IDIyLjQtMTYuOCAxOCAuNCAyMy41LS4yIDM1LS4xIDEuOCAzLjkgMS44IDcgMCAxOS44LTExLjUgNDYuNS0xNyA2MS41LTM1Ii8+CiAgICA8L2c+CiAgICA8cGF0aCBpZD0icGF0aDY4ODEtMy01LTUtMS04LTQtNCIgY2xhc3M9InN0MiIgZD0iTTEyNC43IDY5LjFjLS45LTI3LjUtMjIuMy00OS44LTQ5LjgtNDkuOHMtNDkgMjIuMy00OS44IDQ5LjhjLTEuMyA0MC4xIDMwLjcgNTIuMiA0NC43IDc4IDIuMiA0IDggNCAxMC4xIDAgMTQuMS0yNS44IDQ2LjEtMzcuOSA0NC44LTc4Ii8+CiAgPC9nPgogIDxnIGlkPSJnNDkyOCI+CiAgICA8Y2lyY2xlIGlkPSJwYXRoNDk3OCIgY2xhc3M9InN0MiIgY3g9Ijc0LjkiIGN5PSI2OS4xIiByPSI0OS45Ii8+CiAgICA8ZyBpZD0iZzQ5MTUiPgogICAgICA8cGF0aCBpZD0icGF0aDY4ODMtMi0zLTUtMi00LTktNC05IiBjbGFzcz0ic3QzIiBkPSJNNzQuOCAxMDYuNGMtMjAuNiAwLTM3LjQtMTYuNy0zNy40LTM3LjQgMC0yMC42IDE2LjctMzcuNCAzNy40LTM3LjQgMjAuNiAwIDM3LjQgMTYuNyAzNy40IDM3LjRzLTE2LjcgMzcuNC0zNy40IDM3LjQiLz4KICAgIDwvZz4KICA8L2c+CiAgPHBhdGggY2xhc3M9InN0MiIgZD0iTTgzLjUgOTYuNlY0OC43YzAtLjEtLjEtLjMtLjItLjNoLTEuNnYtMS44YzAtLjEtLjEtLjMtLjItLjNoLTIuMXYtMS43YzAtLjEtLjEtLjMtLjItLjNoLTIuNnYtMS4xYzAtLjMtLjEtLjQtLjMtLjRoLS43bC0uMS02LjhjMC0uMi0uMS0uMy0uMi0uM3MtLjMuMS0uMy4zbC0uMSA2LjhoLS43Yy0uMiAwLS4zLjItLjMuNHYxLjFoLTIuNmMtLjEgMC0uMi4xLS4yLjN2MS43SDY5Yy0uMSAwLS4yLjEtLjIuM3YxLjhoLTEuNmMtLjEgMC0uMi4xLS4yLjN2NDcuOWgtMnYxLjloMjAuOXYtMS45aC0yLjR6bS00LjktNDUuMWgyLjJ2My4zaC0yLjJ2LTMuM3ptMCA1LjZoMi4ydjMuM2gtMi4ydi0zLjN6bTAgNS42aDIuMlY2NmgtMi4ydi0zLjN6bTAgNS41aDIuMnYzLjNoLTIuMnYtMy4zem0wIDUuNmgyLjJ2My4zaC0yLjJ2LTMuM3ptMCA1LjZoMi4ydjMuM2gtMi4ydi0zLjN6bTAgNS42aDIuMnYzLjNoLTIuMlY4NXptMCA1LjVoMi4ydjMuM2gtMi4ydi0zLjN6bS00LjgtMzlINzZ2My4zaC0yLjJ2LTMuM3ptMCA1LjZINzZ2My4zaC0yLjJ2LTMuM3ptMCA1LjZINzZWNjZoLTIuMnYtMy4zem0wIDUuNUg3NnYzLjNoLTIuMnYtMy4zem0wIDUuNkg3NnYzLjNoLTIuMnYtMy4zem0wIDUuNkg3NnYzLjNoLTIuMnYtMy4zem0wIDUuNkg3NnYzLjNoLTIuMlY4NXptMCA1LjVINzZ2My4zaC0yLjJ2LTMuM3ptLTQuOC0zOWgyLjJ2My4zSDY5di0zLjN6bTAgNS42aDIuMnYzLjNINjl2LTMuM3ptMCA1LjZoMi4yVjY2SDY5di0zLjN6bTAgNS41aDIuMnYzLjNINjl2LTMuM3ptMCA1LjZoMi4ydjMuM0g2OXYtMy4zem0wIDUuNmgyLjJ2My4zSDY5di0zLjN6bTAgNS42aDIuMnYzLjNINjlWODV6bTAgNS41aDIuMnYzLjNINjl2LTMuM3oiLz4KPC9zdmc+Cg=="
+            ],
+            "useMarkerImageFunction": true,
+            "colorFunction": "var type = dsData[dsIndex]['type'];\nif (type == 'colorpin') {\n\tvar temperature = dsData[dsIndex]['temperature'];\n\tif (typeof temperature !== undefined) {\n\t    var percent = (temperature + 60)/120 * 100;\n\t    return tinycolor.mix('blue', 'red', amount = percent).toHexString();\n\t}\n\treturn 'blue';\n}\n",
+            "color": "#fe7569",
+            "mapProvider": "OpenStreetMap.HOT",
+            "showTooltip": true,
+            "autocloseTooltip": true,
+            "useLabelFunction": false,
+            "useTooltipFunction": false,
+            "polygonKeyName": "coordinates",
+            "polygonOpacity": 0.5,
+            "polygonStrokeOpacity": 1,
+            "polygonStrokeWeight": 1,
+            "markerImageFunction": "var res = {\n    url: images[0],\n    size: 50\n};\n\nreturn res;"
+          },
+          "title": "New OpenStreetMap",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "useDashboardTimewindow": true,
+          "showLegend": false,
+          "widgetStyle": {},
+          "actions": {
+            "tooltipAction": []
+          },
+          "enableDataExport": false
+        },
+        "id": "3aa2e1f6-6110-4640-986c-1248d40fee9d"
+      },
+      "b4763e7a-fff5-0e45-ea68-a7baf48f2b5c": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "entities_table",
+        "type": "latest",
+        "title": "New widget",
+        "sizeX": 28,
+        "sizeY": 13,
+        "config": {
+          "timewindow": {
+            "realtime": {
+              "interval": 1000,
+              "timewindowMs": 86400000
+            },
+            "aggregation": {
+              "type": "NONE",
+              "limit": 200
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "4px",
+          "settings": {
+            "enableSearch": true,
+            "displayPagination": true,
+            "defaultPageSize": 10,
+            "defaultSortOrder": "entityName",
+            "displayEntityName": true,
+            "displayEntityType": false,
+            "entitiesTitle": "Buildings",
+            "entityNameColumnTitle": "Building name"
+          },
+          "title": "New Entities table",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400,
+            "padding": "5px 10px 5px 10px"
+          },
+          "useDashboardTimewindow": false,
+          "showLegend": false,
+          "datasources": [
+            {
+              "type": "entity",
+              "dataKeys": [
+                {
+                  "name": "outsideHumidity",
+                  "type": "timeseries",
+                  "label": "Outside humidity",
+                  "color": "#2196f3",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "useCellContentFunction": false
+                  },
+                  "_hash": 0.4489038050236591,
+                  "decimals": 2
+                },
+                {
+                  "name": "outsideMaxTemp",
+                  "type": "timeseries",
+                  "label": "Outside max temperature",
+                  "color": "#4caf50",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "useCellContentFunction": false
+                  },
+                  "_hash": 0.061481145614210586,
+                  "decimals": 2
+                },
+                {
+                  "name": "outsideMinTemp",
+                  "type": "timeseries",
+                  "label": "Outside min temperature",
+                  "color": "#f44336",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "useCellContentFunction": false
+                  },
+                  "_hash": 0.9274533466592478,
+                  "decimals": 2
+                },
+                {
+                  "name": "outsideTemp",
+                  "type": "timeseries",
+                  "label": "Outside temperature",
+                  "color": "#ffc107",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "useCellContentFunction": false
+                  },
+                  "_hash": 0.5193448542324204,
+                  "decimals": 2
+                }
+              ],
+              "entityAliasId": "6d9aab6b-1420-9ecc-1374-d505fa272913"
+            }
+          ],
+          "enableDataExport": true,
+          "widgetStyle": {},
+          "actions": {}
+        },
+        "id": "b4763e7a-fff5-0e45-ea68-a7baf48f2b5c"
+      },
+      "e4b213c6-0920-0790-bac4-a5fc9631d8f0": {
+        "isSystemType": true,
+        "bundleAlias": "charts",
+        "typeAlias": "basic_timeseries",
+        "type": "timeseries",
+        "title": "New widget",
+        "sizeX": 20,
+        "sizeY": 10,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "dataKeys": [
+                {
+                  "name": "outsideTemp",
+                  "type": "timeseries",
+                  "label": "Outside temperature",
+                  "color": "#4caf50",
+                  "settings": {
+                    "showLines": true,
+                    "fillLines": false,
+                    "showPoints": false,
+                    "showSeparateAxis": false,
+                    "axisPosition": "left"
+                  },
+                  "_hash": 0.40621422753419933,
+                  "decimals": 2
+                }
+              ],
+              "entityAliasId": "6d9aab6b-1420-9ecc-1374-d505fa272913"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "interval": 15000,
+              "timewindowMs": 3600000
+            },
+            "aggregation": {
+              "type": "AVG",
+              "limit": 25000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "shadowSize": 4,
+            "fontColor": "#545454",
+            "fontSize": 10,
+            "xaxis": {
+              "showLabels": true,
+              "color": "#545454"
+            },
+            "yaxis": {
+              "showLabels": true,
+              "color": "#545454"
+            },
+            "grid": {
+              "color": "#545454",
+              "tickColor": "#DDDDDD",
+              "verticalLines": true,
+              "horizontalLines": true,
+              "outlineWidth": 1
+            },
+            "stack": false,
+            "tooltipIndividual": false
+          },
+          "title": "Temperature graph",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "mobileHeight": null,
+          "enableDataExport": true,
+          "widgetStyle": {},
+          "useDashboardTimewindow": false,
+          "showLegend": true,
+          "actions": {}
+        },
+        "id": "e4b213c6-0920-0790-bac4-a5fc9631d8f0"
+      },
+      "957e6112-382c-1541-ce37-85372fc4daee": {
+        "isSystemType": true,
+        "bundleAlias": "charts",
+        "typeAlias": "basic_timeseries",
+        "type": "timeseries",
+        "title": "New widget",
+        "sizeX": 28,
+        "sizeY": 10,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "dataKeys": [
+                {
+                  "name": "outsideHumidity",
+                  "type": "timeseries",
+                  "label": "Humidity",
+                  "color": "#2196f3",
+                  "settings": {
+                    "showLines": true,
+                    "fillLines": false,
+                    "showPoints": false,
+                    "showSeparateAxis": false,
+                    "axisPosition": "left"
+                  },
+                  "_hash": 0.17278290845791222,
+                  "decimals": 2
+                }
+              ],
+              "entityAliasId": "6d9aab6b-1420-9ecc-1374-d505fa272913"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "interval": 15000,
+              "timewindowMs": 3600000
+            },
+            "aggregation": {
+              "type": "AVG",
+              "limit": 25000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "shadowSize": 4,
+            "fontColor": "#545454",
+            "fontSize": 10,
+            "xaxis": {
+              "showLabels": true,
+              "color": "#545454"
+            },
+            "yaxis": {
+              "showLabels": true,
+              "color": "#545454"
+            },
+            "grid": {
+              "color": "#545454",
+              "tickColor": "#DDDDDD",
+              "verticalLines": true,
+              "horizontalLines": true,
+              "outlineWidth": 1
+            },
+            "stack": false,
+            "tooltipIndividual": false
+          },
+          "title": "Humidity graph",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "mobileHeight": null,
+          "enableDataExport": true,
+          "widgetStyle": {},
+          "useDashboardTimewindow": false,
+          "showLegend": true,
+          "actions": {}
+        },
+        "id": "957e6112-382c-1541-ce37-85372fc4daee"
+      }
+    },
+    "states": {
+      "default": {
+        "name": "Weather dashboard",
+        "root": true,
+        "layouts": {
+          "main": {
+            "widgets": {
+              "3aa2e1f6-6110-4640-986c-1248d40fee9d": {
+                "sizeX": 20,
+                "sizeY": 13,
+                "row": 0,
+                "col": 0
+              },
+              "b4763e7a-fff5-0e45-ea68-a7baf48f2b5c": {
+                "sizeX": 28,
+                "sizeY": 13,
+                "row": 0,
+                "col": 20
+              },
+              "e4b213c6-0920-0790-bac4-a5fc9631d8f0": {
+                "sizeX": 20,
+                "sizeY": 10,
+                "mobileHeight": null,
+                "row": 13,
+                "col": 0
+              },
+              "957e6112-382c-1541-ce37-85372fc4daee": {
+                "sizeX": 28,
+                "sizeY": 10,
+                "mobileHeight": null,
+                "row": 13,
+                "col": 20
+              }
+            },
+            "gridSettings": {
+              "backgroundColor": "#eeeeee",
+              "color": "rgba(0,0,0,0.870588)",
+              "columns": 48,
+              "margins": [
+                7,
+                7
+              ],
+              "backgroundSizeMode": "100%",
+              "autoFillHeight": true,
+              "mobileAutoFillHeight": false,
+              "mobileRowHeight": 70
+            }
+          }
+        }
+      }
+    },
+    "entityAliases": {
+      "6d9aab6b-1420-9ecc-1374-d505fa272913": {
+        "id": "6d9aab6b-1420-9ecc-1374-d505fa272913",
+        "alias": "Buildings",
+        "filter": {
+          "type": "assetType",
+          "resolveMultiple": true,
+          "assetType": "building",
+          "assetNameFilter": ""
+        }
+      }
+    },
+    "timewindow": {
+      "realtime": {
+        "interval": 15000,
+        "timewindowMs": 3600000
+      },
+      "aggregation": {
+        "type": "AVG",
+        "limit": 25000
+      }
+    },
+    "settings": {
+      "stateControllerId": "entity",
+      "showTitle": false,
+      "showDashboardsSelect": true,
+      "showEntitiesSelect": true,
+      "showDashboardTimewindow": true,
+      "showDashboardExport": true,
+      "toolbarAlwaysOpen": true
+    }
+  },
+  "name": "Weather Dashboard"
+}

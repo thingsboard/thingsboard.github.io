@@ -34,7 +34,7 @@ Let’s assume the following use case:
    <tbody>
      <tr>
 	<td>
-	<p>Turning the Rotating System to the left or to the right is based on which way is better and faster so that the difference between the direction of the wind and the wind turbine has to be not more than 5 degrees.</p>
+	<p>Turning the Rotating System to the left or to the right is based on which way is better and faster so that the angle between the direction of the wind and the wind turbine has to be no more than 5 degrees.</p>
 	</td>
      </tr>
    </tbody>
@@ -315,7 +315,7 @@ To run the scripts, you need to do the following steps:
 <br/>
 
 # Configuring Dashboards
-The following screenshot shows how the **Wind Turbine Dashboard** Rule Chain should look like:
+The following screenshot shows how the **Wind Turbine Dashboard** should look like:
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-request/dashboard.png)
 

@@ -9,6 +9,8 @@ toc:
   path: /docs/reference/msa/
 - title: ThingsBoard Performance
   section:
+  - title: ThingsBoard Performance on different AWS instances
+    path: /docs/reference/performance-aws-instances/
   - title: Data Collection Performance
     path: /docs/reference/performance/
   - title: Performance Test Tools

@@ -19,15 +19,19 @@ ThingsBoard team is working on samples applications for
 Intel Edison, C.H.I.P, Tessel, Samsung Artik and Gemalto 
 and will upload them to this page as soon as possible.  
 
- - [**Arduino**](/docs/samples/arduino/) 
+ - [**Arduino**](/docs/samples/arduino/)
 
- - [**ESP8266**](/docs/samples/esp8266/) 
+ - [**ESP32**](/docs/samples/esp32/)
+
+ - [**ESP8266**](/docs/samples/esp8266/)
 
  - [**NodeMCU**](/docs/samples/nodemcu/)
 
  - [**Raspberry Pi**](/docs/samples/raspberry/)
- 
- - [**LinkIt ONE**](/docs/samples/linkit-one/) 
+
+ - [**LinkIt ONE**](/docs/samples/linkit-one/)
+
+ - [**Nettra RTU**](/docs/samples/nettrartu+/)
 
 #### Tutorials
 

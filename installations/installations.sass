@@ -48,7 +48,7 @@
                     display: flex
                     flex-direction: column
                     .content-list-item
-                        padding: .5rem 2rem
+                        padding: 1.25rem 1.25rem 0
                         .item-row
                             display: flex
                             flex-direction: row
@@ -63,15 +63,27 @@
                                 width: 100%
                                 height: 100%
                         .item-text
-                            padding-right: 16px
-                            padding-left: 16px
-                            flex: 0 0 auto
-                            width: auto
-                            max-width: 80%
                             p.item-title
                                 font-size: 17px
                                 line-height: 24px
-                                margin-bottom: .5rem
+                                margin-bottom: -.5rem
+                                a
+                                    position: relative
+                                    color: #fff
+                                    &:hover
+                                        text-decoration: underline
+                                    &:before
+                                        content: "\f08e"
+                                        font-family: FontAwesome
+                                        font-style: normal
+                                        font-weight: normal
+                                        font-size: 14px
+                                        padding-right: 0.5em
+                                        position: absolute
+                                        top: -5px
+                                        right: -24px
+
+
                 a.button
                     width: 100%
                     text-align: center
@@ -131,8 +143,6 @@
                                 height: 104px
                                 img
                                     padding: 16px
-                            .item-text
-                                max-width: 70%
 
 @media screen and (min-width: 1250px)
     #installations

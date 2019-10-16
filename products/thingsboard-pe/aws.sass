@@ -1,0 +1,282 @@
+$pricing-color: rgba(11, 142, 129, 0.76)
+$pricing-button-color: #29655f
+
+$maker-color: $pricing-color
+$prototype-color: $pricing-color
+$startup-color: $pricing-color
+$business-color: $pricing-color
+$enterprise-color: $pricing-color
+
+$pricing-table-border: rgba(255, 255, 255, 0.39)
+
+#pe-aws
+    color: #424242
+
+    .flyout-button
+        display: none
+
+    #peAwsContent
+        color: #424242
+        position: relative
+        width: 100%
+        margin: auto
+        * + h2, * + h3, * + h4, * + h5, * + h6
+            margin-top: 30px
+
+        table
+            width: 100%
+            border: 1px solid #ccc
+            border-spacing: 0
+            margin-top: 30px
+            margin-bottom: 30px
+
+        h1
+            text-align: center
+        h2
+            text-align: center
+        h3
+            font-weight: 300
+        p
+            line-height: 1.5em
+
+        ul, ol
+            margin: 20px 0
+            padding-left: 30px
+            font-weight: 400
+        ul
+            li
+                list-style: disc
+                margin-bottom: .75em
+
+        .pi-accordion
+            h4.title
+                font-size: 20px
+                padding: 5px 10px 0px 18px
+            div.item
+                overflow: visible
+                &:before
+                    display: block
+                    content: " "
+                    margin-top: -60px
+                    height: 60px
+                    visibility: hidden
+            div.item > h4.title
+                &:before
+                    top: 18px
+
+        div#pe-aws-pricing
+            background: $dark-grey url(/images/texture.png)
+            background-size: auto 100%
+            margin-top: 355px
+            width: 100vw
+            margin-left: calc(-50vw + 50%)
+            margin-bottom: -320px
+            .bottom-background
+                height: 320px
+                background: #fff
+                margin-top: -320px
+            table
+                th:not(:first-child),
+                td:not(:first-child)
+                    opacity: 0
+                    &.animated
+                        opacity: 1
+                margin: auto
+                border: none
+                max-width: 100%
+                transform: translateY(-355px)
+                thead
+                    background: none
+                    color: #fff
+                    th
+                        text-align: center
+                    tr:nth-child(1)
+                        height: 80px
+                        th
+                            height: 80px
+                            .instance-type-header
+                                line-height: 80px
+                                font-weight: 300
+                                font-size: 20px
+                                background: rgba(0, 0, 0, 0.4)
+                    tr:nth-child(2)
+                        height: 40px
+                        th
+                            height: 40px
+                th.bottom-shadow
+                    box-shadow: 0px 5px 2px 0px rgba(0, 0, 0, 0.4), 0px 9px 2px 0px rgba(0, 0, 0, 0.2)
+                th:not(:first-child)
+                    border-bottom: 1px solid $pricing-table-border
+                    border-right: 1px solid $pricing-table-border
+                    font-size: 12px
+                    padding: 0
+                    width: 100px
+                    .instance-type-header
+                        text-transform: uppercase
+                        font-weight: 400
+                        line-height: 40px
+                        padding: 0
+                        background: rgba(0, 0, 0, 0.55)
+                th:nth-child(1)
+                    width: 120px
+                th:nth-child(2)
+                    border-left: 1px solid #d8d8d8
+                th:nth-child(2), td:nth-child(2)
+                    background: $maker-color
+                th:nth-child(3), td:nth-child(3)
+                    background: $prototype-color
+                th:nth-child(4), td:nth-child(4)
+                    background: $startup-color
+                th:nth-child(5), td:nth-child(5)
+                    background: $business-color
+                th:nth-child(6), td:nth-child(6)
+                    background: $enterprise-color
+                td
+                    border-top: none
+                    background: none
+                    color: #fff
+                    padding: 0
+                td:not(:first-child).note
+                    background: none
+                    text-align: left
+                td:nth-child(1)
+                    font-size: 12px
+                td:not(:first-child)
+                    font-size: 12px
+                    text-align: center
+                    border-bottom: 1px solid $pricing-table-border
+                    border-right: 1px solid $pricing-table-border
+                td:nth-child(2)
+                    border-left: 1px solid $pricing-table-border
+                tr
+                    background: none
+                    height: 60px
+                tr.price
+                    height: 100px
+                    td
+                        height: 100px
+                        padding: 0
+                        .price-cell
+                            background: rgba(0, 0, 0, 0.4)
+                            padding-top: 20px
+                            padding-bottom: 20px
+                            height: 100%
+                            .price
+                                font-size: 24px
+                            .price-desc
+                                font-size: 12px
+                                height: 30px
+                                margin-top: 10px
+                                a
+                                    color: #fff
+                                    text-decoration: underline
+                                    &:hover
+                                        opacity: 0.65
+                        a.button
+                            margin-top: 20px
+                            text-align: center
+                            font-size: 10px
+                            padding: 0
+                            cursor: pointer
+                            line-height: 20px
+                            white-space: nowrap
+                            border: 2px solid #fff
+                            background-color: #fff
+                            color: $pricing-button-color
+                            transition: 0.3s
+                            &:hover
+                                background-color: $pricing-button-color
+                                color: #fff
+                tr.yearly-sub
+                    td
+                        padding: 0
+                        .yearly-sub-cell
+                            background: rgba(0, 0, 0, 0.4)
+                            height: 100%
+                            line-height: 60px
+
+@media screen and (min-width: 750px)
+    #pe-aws
+        #peAwsContent
+            div#pe-aws-pricing
+                margin-top: 406px
+                margin-bottom: -350px
+                .bottom-background
+                    height: 350px
+                    margin-top: -350px
+                table
+                    transform: translateY(-406px)
+                    thead
+                        tr:nth-child(1)
+                            th
+                                .instance-type-header
+                                    font-size: 36px
+                    max-width: 100%
+                    th:nth-child(1)
+                        width: 200px
+                    th:not(:first-child)
+                        font-size: 18px
+                        width: 200px
+                    td
+                        padding: 10px
+                    td:nth-child(1)
+                        font-size: 18px
+                    td:not(:first-child)
+                        font-size: 18px
+                    tr.price
+                        height: 200px
+                        td
+                            height: 200px
+                            .price-cell
+                                .price
+                                    font-size: 42px
+                                .price-desc
+                                    font-size: 12px
+                            a.button
+                                font-size: 14px
+                                padding: 0.3rem 0.3rem
+                                line-height: 30px
+
+@media screen and (min-width: 1025px)
+    #pe-aws
+        section, header
+            main
+                max-width: 1000px
+        footer
+            main
+                max-width: 1000px
+
+        #peAwsContent
+            width: calc(100% - 400px)
+            div#pe-aws-pricing
+                margin-left: calc(-50vw + 50% + 20px)
+                table
+                    max-width: 80%
+                    tr.price
+                        td
+                            .price-cell
+                                .price-desc
+                                    font-size: 14px
+
+@media screen and (min-width: 1500px)
+    #pe-aws
+        #peAwsContent
+            width: calc(100% - 700px)
+            div#pe-aws-pricing
+                table
+                    margin-left: calc( (30% - 200px)/2 )
+                    max-width: 70%
+                    tr.price
+                        td
+                            a.button
+                                padding: 0.3rem 1rem
+
+@media screen and (min-width: 1600px)
+    #pe-aws
+        #peAwsContent
+            div#pe-aws-pricing
+                table
+                    tr.price
+                        td
+                            a.button
+                                padding: 0.3rem 3rem

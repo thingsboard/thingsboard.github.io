@@ -1,3 +1,5 @@
+$nav-buttons-margin-left: 30px
+
 @media screen and (min-width: 1120px)
     #githubButtonContainer
         display: inline-flex
@@ -15,7 +17,8 @@
                 #docsList
                     li
                         margin-right: 20px
-
+    .nav-item
+        padding: 15px 6px
     //.nav-item
         padding: 15px 30px
             &::before
@@ -23,10 +26,17 @@
                 width: calc(100% - 60px)
 
 @media screen and (min-width: 1300px)
+    .nav-item
+        padding: 15px 8px
+    .nav-buttons
+        .button + *
+            margin-left: $nav-buttons-margin-left
     #services.center-button
         display: inline-block
 
 @media screen and (min-width: 1500px)
+    .nav-item
+        padding: 15px 12.5px
     #docs
         #hero
             #vendorStrip
@@ -35,3 +45,7 @@
     section, header, #vendorStrip
         padding-left: $full-width-paddingX-large
         padding-right: $full-width-paddingX-large
+
+@media screen and (min-width: 1600px)
+    #customers.nav-item
+        display: inline

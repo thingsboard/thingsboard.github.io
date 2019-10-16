@@ -4,6 +4,7 @@ assignees:
 - ashvayka
 title: Installing ThingsBoard on Linux
 description: Installing ThingsBoard on Linux
+redirect_to: "/docs/user-guide/install/ubuntu"
 
 ---
 
@@ -25,25 +26,29 @@ To run ThingsBoard and third-party components on a single machine you will need 
 #### Java
 
 ThingsBoard service is running on Java 8. 
-Although you are able to start the service using [OpenJDK](http://openjdk.java.net/), 
-the solution is actively tested on [Oracle JDK](http://www.oracle.com/technetwork/java/javase/overview/index.html).
+The solution is actively tested on both [OpenJDK](http://openjdk.java.net/) and [Oracle JDK](http://www.oracle.com/technetwork/java/javase/overview/index.html).
 
-Follow this instructions to install Oracle JDK 8:
+Follow this instructions to install OpenJDK 8:
 
- - [Ubuntu 16.04](https://www.digitalocean.com/community/tutorials/how-to-install-java-with-apt-get-on-ubuntu-16-04#installing-the-oracle-jdk)
- - [CentOS 7](https://www.digitalocean.com/community/tutorials/how-to-install-java-on-centos-and-fedora#install-oracle-java-8)
+{% capture tabspec %}java-installation
+A,Ubuntu,shell,resources/java-ubuntu-installation.sh,/docs/user-guide/install/resources/java-ubuntu-installation.sh
+B,CentOS,shell,resources/java-centos-installation.sh,/docs/user-guide/install/resources/java-centos-installation.sh{% endcapture %}  
+{% include tabs.html %}   
 
-Please don't forget to configure your operating system to use Oracle JDK 8 by default. 
-Corresponding instructions are in the same articles listed above.
+Please don't forget to configure your operating system to use OpenJDK 8 by default. 
+See corresponding instructions:
+
+ - [Ubuntu](https://www.digitalocean.com/community/tutorials/how-to-install-java-with-apt-get-on-ubuntu-16-04#managing-java)
+ - [CentOS](https://www.digitalocean.com/community/tutorials/how-to-install-java-on-centos-and-fedora#set-default-java)
 
 
 #### External database installation
 
-{% include templates/install-db.md %}
+{% include templates/install/install-db.md %}
 
 ###### SQL Database: PostgreSQL
 
-{% include templates/optional-db.md %}
+{% include templates/install/optional-db.md %}
 
 Instructions listed below will help you to install PostgreSQL.
 
@@ -53,13 +58,13 @@ B,CentOS,shell,resources/postgresql-centos-installation.sh,/docs/user-guide/inst
 {% include tabs.html %}   
 
 
-{% include templates/postgres-post-install.md %}
+{% include templates/install/postgres-post-install.md %}
 
-{% include templates/create-tb-db.md %}
+{% include templates/install/create-tb-db.md %}
 
 ###### NoSQL Database: Cassandra
 
-{% include templates/optional-db.md %}
+{% include templates/install/optional-db.md %}
 
 Instructions listed below will help you to install Cassandra.
 
