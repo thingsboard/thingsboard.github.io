@@ -3,17 +3,16 @@ Create docker volume (for ex. `tb-aws-integration-logs`) before executing docker
 Open "Docker Quickstart Terminal". Execute the following command to create docker volume:
 
 ``` 
-docker volume create tb-aws-integration-logs
-docker volume create tb-aws-integration-logs
+docker volume create tb-pe-aws-integration-logs
 ```
 {: .copy-code}
 
 Execute the following command to run this docker directly:
 
 ```bash
-docker run -it -v ~/.tb-pe-aws-integration-logs:/var/log/tb-aws-integration \
--e "PRC_HOST=cloud.thingsboard.io" -e "RPC_PORT=9090" \
--e "INTEGRATION_ROUTING_KEY=YOUR_ROUTING_KEY"  -e "INTEGRATION_SECRET=YOUR_SECRET " \
+docker run -it -v tb-pe-aws-integration-logs:/var/log/tb-aws-integration `
+-e "PRC_HOST=cloud.thingsboard.io" -e "RPC_PORT=9090" `
+-e "INTEGRATION_ROUTING_KEY=YOUR_ROUTING_KEY"  -e "INTEGRATION_SECRET=YOUR_SECRET" `
 --name my-tb-pe-aws-integration --restart always thingsboard/tb-pe-aws-integration:2.4.1PE
 ```
 {: .copy-code}
@@ -26,7 +25,7 @@ Where:
 - `YOUR_SECRET` - placeholder for your integration secret obtained on [Step 3](/docs/user-guide/integrations/remote-integrations/#step-3-save-remote-integration-credentials);
 - `docker run`              - run this container;
 - `-it`                     - attach a terminal session with current ThingsBoard process output;
-- `-v tb-aws-integration-logs:/var/log/tb-aws-integration`   - mounts the host's dir `~/.tb-pe-aws-integration-logs` to ThingsBoard logs directory;
+- `-v tb-pe-aws-integration-logs:/var/log/tb-aws-integration`   - mounts the host's dir `~/.tb-pe-aws-integration-logs` to ThingsBoard logs directory;
 - `--name tb-pe-aws-integration`             - friendly local name of this machine;
 - `--restart always`        - automatically start ThingsBoard Integration in case of system reboot and restart in case of failure.;
 - `thingsboard/tb-pe-aws-integration:2.4.1PE`          - docker image.

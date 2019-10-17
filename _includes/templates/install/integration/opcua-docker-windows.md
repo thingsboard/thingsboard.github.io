@@ -3,17 +3,16 @@ Create docker volume (for ex. `tb-opc-ua-integration-logs`) before executing doc
 Open "Docker Quickstart Terminal". Execute the following command to create docker volume:
 
 ``` 
-docker volume create tb-opc-ua-integration-logs
-docker volume create tb-opc-ua-integration-logs
+docker volume create tb-pe-opc-ua-integration-logs
 ```
 {: .copy-code}
 
 Execute the following command to run this docker directly:
 
 ```bash
-docker run -it -v ~/.tb-pe-opc-ua-integration-logs:/var/log/tb-opc-ua-integration \
--e "PRC_HOST=cloud.thingsboard.io" -e "RPC_PORT=9090" \
--e "INTEGRATION_ROUTING_KEY=YOUR_ROUTING_KEY"  -e "INTEGRATION_SECRET=YOUR_SECRET " \
+docker run -it -v tb-pe-opc-ua-integration-logs:/var/log/tb-opc-ua-integration `
+-e "PRC_HOST=cloud.thingsboard.io" -e "RPC_PORT=9090" `
+-e "INTEGRATION_ROUTING_KEY=YOUR_ROUTING_KEY"  -e "INTEGRATION_SECRET=YOUR_SECRET" `
 --name my-tb-pe-opc-ua-integration --restart always thingsboard/tb-pe-opc-ua-integration:2.4.1PE
 ```
 {: .copy-code}
@@ -26,7 +25,7 @@ Where:
 - `YOUR_SECRET` - placeholder for your integration secret obtained on [Step 3](/docs/user-guide/integrations/remote-integrations/#step-3-save-remote-integration-credentials);
 - `docker run`              - run this container;
 - `-it`                     - attach a terminal session with current ThingsBoard process output;
-- `-v tb-opc-ua-integration-logs:/var/log/tb-opc-ua-integration`   - mounts the host's dir `~/.tb-pe-opc-ua-integration-logs` to ThingsBoard logs directory;
+- `-v tb-pe-opc-ua-integration-logs:/var/log/tb-opc-ua-integration`   - mounts the host's dir `~/.tb-pe-opc-ua-integration-logs` to ThingsBoard logs directory;
 - `--name tb-pe-opc-ua-integration`             - friendly local name of this machine;
 - `--restart always`        - automatically start ThingsBoard Integration in case of system reboot and restart in case of failure.;
 - `thingsboard/tb-pe-opc-ua-integration:2.4.1PE`          - docker image.

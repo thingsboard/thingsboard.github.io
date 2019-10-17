@@ -78,18 +78,18 @@ client.tls_set(ca_certs="mqttserver.pub.pem", certfile="mqttclient.nopass.pem", 
 Run the script:
 
 {% capture tabspec %}mqtt-ssl-configuration-twoway
-A,python twowaysslmqttclient.py,shell,resources/mqtt-ssl-configuration-run-twowaysslmqttclient.sh,/docs/user-guide/mqtt-ssl-configuration-run-twowaysslmqttclient.sh{% endcapture %}
+A,python twowaysslmqttclient.py,shell,resources/mqtt-ssl-configuration-run-twowaysslmqttclient.sh,/docs/user-guide/resources/mqtt-ssl-configuration-run-twowaysslmqttclient.sh{% endcapture %}
 {% include tabs.html %}  
 
 If everything was configured correctly, the output should be like:
 
 {% capture tabspec %}mqtt-ssl-configuration-output-twoway
-A,twowaysslmqttclient.py output,shell,resources/mqtt-ssl-configuration-twowaysslmqttclient-output.txt,/docs/user-guide/mqtt-ssl-configuration-twowaysslmqttclient-output.txt{% endcapture %}
+A,twowaysslmqttclient.py output,shell,resources/mqtt-ssl-configuration-twowaysslmqttclient-output.txt,/docs/user-guide/resources/mqtt-ssl-configuration-twowaysslmqttclient-output.txt{% endcapture %}
 {% include tabs.html %}
 
 
 To run Java client, import **CLIENT_FILE_PREFIX.jks** file as follows:
 
 {% capture tabspec %}mqtt-ssl-java-twoway-client
-A,MqttSslClient.java,java,resources/MqttSslClient.java,/docs/user-guide/SMqttSslClient.java{% endcapture %}
+A,MqttSslClient.java,java,resources/MqttSslClient.java,/docs/user-guide/resources/MqttSslClient.java{% endcapture %}
 {% include tabs.html %}

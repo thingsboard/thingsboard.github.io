@@ -20,11 +20,11 @@ toc:
   - title: Device Connectivity Status
     path: /docs/user-guide/device-connectivity-status/
   - title: Claiming Devices
-    new: true
     path: /docs/user-guide/claiming-devices/
-  - title: Entity Views
     new: true
+  - title: Entity Views
     path: /docs/user-guide/entity-views/
+    new: true
   - title: Using RPC capabilities
     path: /docs/user-guide/rpc/
   - title: Data visualization
@@ -51,6 +51,7 @@ toc:
       path: /docs/user-guide/integrations/
     - title: Remote Integrations
       path: /docs/user-guide/integrations/remote-integrations/
+      new: true
     - title: HTTP
       path: /docs/user-guide/integrations/http/
     - title: Ocean Connect
@@ -75,6 +76,8 @@ toc:
       path: /docs/user-guide/integrations/tcp/
     - title: UDP
       path: /docs/user-guide/integrations/udp/
+    - title: Custom
+      path: /docs/user-guide/integrations/custom/
   - title: Entity Groups
     path: /docs/user-guide/groups/
     pe: true
