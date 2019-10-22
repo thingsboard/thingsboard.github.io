@@ -47,11 +47,9 @@ The following services must be up and running:
 
 The [sample application](https://github.com/thingsboard/kafka-streams-example)
 
-### Uplink and Downlink Converters
+### Uplink Converter
 
-Before setting up a custom integration, you need to create an Uplink and a Downlink converters.
-
-#### Uplink Converter
+Before setting up a kafka integration, you need to create an Uplink converter.
 
 Let’s create uplink converter.
 
@@ -113,11 +111,6 @@ return result;
 The purpose of the decoder function is to parse the incoming data and metadata to a format that ThingsBoard can consume. 
 **deviceName** and **deviceType** are required, while **attributes** and **telemetry** are optional.
 **Attributes** and **telemetry** are flat key-value objects. Nested objects are not supported.
-
-#### Downlink Converter
-
-We will not use the Downlink converter in this guide so there is no need to create one.
-In case you have another use case, please refer to the following [instructions](/docs/user-guide/integrations/#downlink-data-converter).
 
 ### Kafka Integration Setup
  
