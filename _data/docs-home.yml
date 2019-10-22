@@ -76,6 +76,9 @@ toc:
       path: /docs/user-guide/integrations/tcp/
     - title: UDP
       path: /docs/user-guide/integrations/udp/
+    - title: Kafka
+      new: true
+      path: /docs/user-guide/integrations/kafka/
     - title: Custom
       path: /docs/user-guide/integrations/custom/
   - title: Entity Groups
