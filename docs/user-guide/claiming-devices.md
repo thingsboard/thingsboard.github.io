@@ -24,7 +24,7 @@ The Secret Key may be provisioned in two different ways.
 Either reported by device (device-side key) or using server-side device attribute (server-side key).
 See below for more details.
 
-## Claiming using Device-side key
+### Claiming using Device-side key
 
 This procedure requires device to generate the Secret Key based on some trigger event. 
 For example, once device is booted or when some physical button is pressed. 
@@ -59,9 +59,11 @@ See instructions how to send the Claiming Request [here](/docs/user-guide/claimi
 **Note:** The Secret Key may also be an empty string. This is useful if your device does not have any way to display the Secret Key. 
 For example, you may allow to claim device within 30 seconds after the claim button is pressed on the device. In this case user needs to know the device Name (MAC address, etc) only.
 
-Server validates the Claiming Request and replies with the Claiming Response. Claiming Response contains status of the Claiming operation and Device ID if the operation was successful.      
+Server validates the Claiming Request and replies with the Claiming Response. Claiming Response contains status of the Claiming operation and Device ID if the operation was successful.
 
-## Claiming using Server-side key
+Once Claiming Information is provisioned, Customer User may use [Claim Device](/docs/user-guide/claiming-devices/#device-claiming-widget) widget.        
+
+### Claiming using Server-side key
 
 Let's assume you have thousands of NB IoT/LoRaWAN/Sigfox devices connected using one of ThingsBoard [Integrations](/docs/user-guide/integrations/).
 The integration layer will automatically provision them in ThingsBoard. 
@@ -77,10 +79,31 @@ In order to provision device Secret Key, Tenant Administrator should set server-
 {"secretKey": "YOUR_SECRET_KEY", "expirationTime": "1577836800000"}
 ``` 
 
-, where 1577836800000 is an expiration time of the device Secret Key that is 01/01/2022 as a unix timestamp with milliseconds precision. 
+, where 1577836800000 is an expiration time of the device Secret Key that is 01/01/2022 as a unix timestamp with milliseconds precision.
+
+Once server-side attribute is provisioned, Customer User may use [Claim Device](/docs/user-guide/claiming-devices/#device-claiming-widget) widget.  
+
+## Device Claiming Widget
+
+Claim device widget is quite simple and allows to input device name and Secret Key. 
+
+![image](/images/user-guide/claiming-devices/claim-device-widget.png)
+
+It is possible to "hide" Secret Key input field and change the labels in "General settings".
+
+![image](/images/user-guide/claiming-devices/claim-device-widget-advanced-settings.png)
+
+It is also possible to configure all sorts of messages to the user in "Message settings".
+
+![image](/images/user-guide/claiming-devices/claim-device-widget-message-settings.png)
+
+Finally, you can relate claimed device to the current state entity of the dashboard. 
+This is useful if you have multiple assets and would like to relate your device to one of them. 
+
+![image](/images/user-guide/claiming-devices/claim-device-widget-relation-settings.png)
 
 
-## Device Claiming Request
+## Device Claiming API Request
 
 The Claiming Request is send as a POST request to the following URL:
 
@@ -102,7 +125,7 @@ In addition, there is a possibility to reclaim the device, which means the devic
 
 See the following for more details regarding the above steps. 
 
-## Device Reclaiming
+## Device Reclaiming API Request
 
 In order to reclaim the device, you can send DELETE request to the following URL:
 
