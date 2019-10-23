@@ -8,30 +8,40 @@ description: IoT device management using ThingsBoard claiming devices feature
 * TOC
 {:toc}
 
-## Feature Overview
+## Use Case description
 
-The claiming devices feature allows a ThingsBoard (TB) customers to assign tenant's non-assigned device to themselves without tenant's involving.
-In order to enable claiming devices feature a system parameter **security.claim.allowClaimingByDefault** (in the file **/etc/thingsboard/conf/thingsboard.yml**) should be set to **true**, otherwise a server-side **claimingAllowed** attribute with the value **true** is obligatory for provisioned devices.
+As a Tenant, I would like to pre-provision my devices via script or UI. My customers purchase devices directly from me or through the distributors.
+I would like my customers to claim their devices based on the QR code or similar technique, once they get physical access to the device.
 
-The claiming flow consists of two steps:
-- Sending a claiming initiation message using one of TB supported transport protocols (HTTP, MQTT, CoAP);
-- Sending device claiming confirmation message via curl command.
+Once device is claimed, the customer becomes its owner and customer users may access device data as well as control the device.   
 
-Whenever claiming is succeed the device is being assigned to the specific customer. The **claimingAllowed** attribute is automatically deleted in case the system parameter **allowClaimingByDefault** is **false**.
+## Device Claiming scenarios
+ 
+ThingsBoard User can claim the device if he "knows" the device Name and Secret Key. 
+The Secret Key is optional, always has an expiration time and may also change over time. 
 
-In addition, there is a possibility to reclaim the device, which means the device will be unassigned from the customer. The **claimingAllowed** attribute will appear again in case the **allowClaimingByDefault** is **false**. 
+The Secret Key may be provisioned in two different ways. 
+Either reported by device (device-side key) or using server-side device attribute (server-side key).
+See below for more details.
 
-See the following for more details regarding the above steps.
+## Claiming using Device-side key
 
-## Device Claiming
+This procedure requires device to generate the Secret Key based on some trigger event. 
+For example, once device is booted or when some physical button is pressed. 
+Once the Secret Key is generated, it is valid for certain period of time. 
+The device sends Claiming Information to the server which contains both the Secret Key and the duration of the validity of the key.  
+ThingsBoard server stores Claiming Information for the duration of the validity of the key. See diagram below.
 
-In order to send the claiming initiation message TB supported transport protocols are used. The message body have two parameters: **secretKey** and **durationMs**, which may be optionally specified. 
-The **secretKey** parameter adds security in claiming process.
-The **durationMs** parameter determines the expiration of claiming time. After receiving the message, the claiming info for particular device is saved in cache. 
+![image](/images/user-guide/claiming-devices/device-side-key-diagram.png)
+
+Device may send Claiming Information to TB using all supported transport protocols. The message body have two parameters: **secretKey** and **durationMs**, which may be optionally specified. 
+The **secretKey** parameter adds security to the claiming process.
+The **durationMs** parameter determines the expiration of claiming time.
 In case the **secretKey** is not specified, the empty string as a default value is used.
 In case the **durationMs** is not specified, the system parameter **device.claim.duration** is used (in the file **/etc/thingsboard/conf/thingsboard.yml**).
 
-### Sending claiming message
+In order to enable claiming devices feature a system parameter **security.claim.allowClaimingByDefault** (see [configuration guide](/docs/user-guide/install/config/)) 
+should be set to **true**, otherwise a server-side **claimingAllowed** attribute with the value **true** is obligatory for provisioned devices.
 
 Please see the Device API references to get the information about the message structure and topics/URLs to which to send the claiming messages.
 You can use the MQTT Gateway API that allows to initiate claiming of multiple devices per time as well.
@@ -41,9 +51,38 @@ You can use the MQTT Gateway API that allows to initiate claiming of multiple de
  - [HTTP Device API](/docs/reference/http-api/#claiming-devices)
  - [MQTT Gateway API](/docs/reference/gateway-mqtt-api/#claiming-devices-api)
  
-### Device claiming confirmation
 
-The second step is to confirm claiming by sending POST request to the following URL:
+Once the Claiming Info is sent, device may display the Secret Key either in plain text or using the QR code. User should scan this key and use it to send the Claiming Request.
+Claiming Request consists of the device Name and Secret Key. You may use MAC address or other unique property as the device Name. 
+See instructions how to send the Claiming Request [here](/docs/user-guide/claiming-devices/#device-claiming-request).   
+
+**Note:** The Secret Key may also be an empty string. This is useful if your device does not have any way to display the Secret Key. 
+For example, you may allow to claim device within 30 seconds after the claim button is pressed on the device. In this case user needs to know the device Name (MAC address, etc) only.
+
+Server validates the Claiming Request and replies with the Claiming Response. Claiming Response contains status of the Claiming operation and Device ID if the operation was successful.      
+
+## Claiming using Server-side key
+
+Let's assume you have thousands of NB IoT/LoRaWAN/Sigfox devices connected using one of ThingsBoard [Integrations](/docs/user-guide/integrations/).
+The integration layer will automatically provision them in ThingsBoard. 
+Assuming Tenant Admin knows the list of DevEUIs (LoRaWAN) or any other device identifiers, 
+it is possible to generate a random Secret Key per device and upload this key to ThingsBoard as a server-side attribute using [REST API](https://thingsboard.io/docs/reference/rest-api/) or UI.
+Once this is done, tenant admin can email those keys to the Customer, or put them inside the device package box. 
+
+![image](/images/user-guide/claiming-devices/server-side-key-diagram.png)
+
+In order to provision device Secret Key, Tenant Administrator should set server-side attribute "claimingData" with the following value:
+
+```json
+{"secretKey": "YOUR_SECRET_KEY", "expirationTime": "1577836800000"}
+``` 
+
+, where 1577836800000 is an expiration time of the device Secret Key that is 01/01/2022 as a unix timestamp with milliseconds precision. 
+
+
+## Device Claiming Request
+
+The Claiming Request is send as a POST request to the following URL:
 
 ```shell
 http(s)://host:port/api/customer/device/$DEVICE_NAME/claim
@@ -55,10 +94,15 @@ The supported data format is:
 {"secretKey":"value"}
 ```
 
-**Please note** the message does not contain **duarationMs** parameter and the **secretKey** parameter is optional. 
-However, its value must be equal to the **secretKey** value from the first step, i. e. in case the **secretKey** is empty in the first step, it should be empty at this step as well.
+**Note:** the message does not contain **duarationMs** parameter and the **secretKey** parameter is optional.
 
-## Device reclaiming
+Whenever claiming is succeed the device is being assigned to the specific customer. The **claimingAllowed** attribute is automatically deleted in case the system parameter **allowClaimingByDefault** is **false**.
+
+In addition, there is a possibility to reclaim the device, which means the device will be unassigned from the customer. The **claimingAllowed** attribute will appear again in case the **allowClaimingByDefault** is **false**. 
+
+See the following for more details regarding the above steps. 
+
+## Device Reclaiming
 
 In order to reclaim the device, you can send DELETE request to the following URL:
 
