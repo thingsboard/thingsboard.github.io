@@ -135,6 +135,8 @@ toc:
   section:
   - title: IoT data analytics using Apache Spark
     path: /docs/samples/analytics/spark-integration-with-thingsboard/
+  - title: Integrations Overview
+    path: /docs/user-guide/integrations/#overview
   - title: Remote Integrations
     path: /docs/user-guide/integrations/remote-integrations/
     new: true
