@@ -7,8 +7,6 @@ description: HTTP integration guide
 
 {% assign feature = "Platform Integrations" %}{% include templates/pe-feature-banner.md %}
 
-* TOC
-{:toc}
 
 HTTP Integration allows to convert existing protocols and payload formats to ThingsBoard message format and is useful in several deployment scenarios: 
 

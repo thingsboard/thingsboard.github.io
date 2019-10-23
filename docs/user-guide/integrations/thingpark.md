@@ -7,8 +7,6 @@ description: ThingPark Integration Guide
 
 {% assign feature = "Platform Integrations" %}{% include templates/pe-feature-banner.md %}
 
-* TOC
-{:toc}
 
 ThingPark Integration allows to stream data from Actility ThingPark servers to ThingsBoard and converts binary device payloads to the ThingsBoard format.
 

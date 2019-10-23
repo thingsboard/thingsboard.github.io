@@ -24,7 +24,6 @@ toc:
     new: true
   - title: Entity Views
     path: /docs/user-guide/entity-views/
-    new: true
   - title: Using RPC capabilities
     path: /docs/user-guide/rpc/
   - title: Data visualization
@@ -45,39 +44,8 @@ toc:
     path: /docs/user-guide/custom-menu/
     pe: true
   - title: Platform Integrations
+    path: /docs/user-guide/integrations/
     pe: true
-    section:
-    - title: Overview
-      path: /docs/user-guide/integrations/
-    - title: Remote Integrations
-      path: /docs/user-guide/integrations/remote-integrations/
-      new: true
-    - title: HTTP
-      path: /docs/user-guide/integrations/http/
-    - title: Ocean Connect
-      path: /docs/user-guide/integrations/ocean-connect/
-    - title: SigFox
-      path: /docs/user-guide/integrations/sigfox/
-    - title: ThingPark
-      path: /docs/user-guide/integrations/thingpark/
-    - title: MQTT
-      path: /docs/user-guide/integrations/mqtt/
-    - title: AWS IoT
-      path: /docs/user-guide/integrations/aws-iot/
-    - title: IBM Watson IoT
-      path: /docs/user-guide/integrations/ibm-watson-iot/
-    - title: TheThingsNetwork
-      path: /docs/user-guide/integrations/ttn/
-    - title: Azure Event Hub
-      path: /docs/user-guide/integrations/azure-event-hub/
-    - title: OPC-UA
-      path: /docs/user-guide/integrations/opc-ua/
-    - title: TCP
-      path: /docs/user-guide/integrations/tcp/
-    - title: UDP
-      path: /docs/user-guide/integrations/udp/
-    - title: Custom
-      path: /docs/user-guide/integrations/custom/
   - title: Entity Groups
     path: /docs/user-guide/groups/
     pe: true
@@ -163,16 +131,39 @@ toc:
       path: /docs/user-guide/rule-engine-2-0/pe/action-nodes/
     - title: Analytics Nodes
       path: /docs/user-guide/rule-engine-2-0/pe/analytics-nodes/
-- title: Integrations Cookbook
+- title: Integrations
   section:
-  - title: Persist and visualize AWS IoT data
-    path: /docs/user-guide/integrations/aws-iot/#overview
   - title: IoT data analytics using Apache Spark
     path: /docs/samples/analytics/spark-integration-with-thingsboard/
-  - title: SigFox IoT data collection and visualization
-    path: /docs/user-guide/integrations/sigfox/#overview
-  - title: Persist and visualize IBM Watson IoT data
-    path: /docs/user-guide/integrations/ibm-watson-iot/#overview
+  - title: Remote Integrations
+    path: /docs/user-guide/integrations/remote-integrations/
+    new: true
+  - title: HTTP
+    path: /docs/user-guide/integrations/http/
+  - title: MQTT
+    path: /docs/user-guide/integrations/mqtt/
+  - title: OPC-UA
+    path: /docs/user-guide/integrations/opc-ua/
+  - title: Actility ThingPark
+    path: /docs/user-guide/integrations/thingpark/
+  - title: TheThingsNetwork
+    path: /docs/user-guide/integrations/ttn/
+  - title: AWS IoT
+    path: /docs/user-guide/integrations/aws-iot/
+  - title: IBM Watson
+    path: /docs/user-guide/integrations/ibm-watson-iot/
+  - title: Azure Event Hub
+    path: /docs/user-guide/integrations/azure-event-hub/
+  - title: TCP
+    path: /docs/user-guide/integrations/tcp/
+  - title: UDP
+    path: /docs/user-guide/integrations/udp/
+  - title: SigFox
+    path: /docs/user-guide/integrations/sigfox/
+  - title: Ocean Connect
+    path: /docs/user-guide/integrations/ocean-connect/
+  - title: Custom Integration development guide
+    path: /docs/user-guide/integrations/custom/
   - title: Notifications and Alarms on your smartphone using Telegram Bot
     path: /docs/iot-gateway/integration-with-telegram-bot/
 - title: Security
