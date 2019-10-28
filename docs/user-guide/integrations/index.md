@@ -142,6 +142,8 @@ Converter output should be a valid JSON document with the following structure:
 {
     "deviceName": "Device A",
     "deviceType": "thermostat",
+    "customerName": "Company Name",
+    "groupName": "Thermostats",
     "attributes": {
         "model": "Model A",
         "serialNumber": "SN-111",
@@ -154,7 +156,11 @@ Converter output should be a valid JSON document with the following structure:
 }
 ```
 
-**NOTE**: The only mandatory parameters in the output JSON are **deviceName** and **deviceType**.
+**NOTE**: The only mandatory parameters in the output JSON are **deviceName** and **deviceType**. 
+Starting version 2.4.2, ThingsBoard also supports **assetName** and **assetType** instead of deviceName and deviceType.
+
+**NOTE**: Starting version 2.4.2, ThingsBoard also support optional **customerName** and **groupName**. 
+Those parameters will cause ThingsBoard to automatically create customer and/or entity group and assign those entities to the customer and/or group.     
 
 Converter may also output array of device values and/or contain timestamps in the telemetry values. For example:
 
@@ -184,8 +190,8 @@ Converter may also output array of device values and/or contain timestamps in th
         ]
     },
     {
-        "deviceName":"SN-333",
-        "deviceType":"thermostat",
+        "assetName":"OF-123",
+        "assetType":"office",
         "attributes":{
             "model":"Model A"
         },
