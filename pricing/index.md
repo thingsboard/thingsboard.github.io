@@ -432,4 +432,5 @@ description: ThingsBoard Products Pricing
     or <a href="https://www.youtube.com/watch?v=GPe0lHolWek">How-to get perpetual license</a> for more details. 
     Please <a href="https://thingsboard.io/docs/contact-us/">contact us</a> if you have any questions or require support.
     </p>
-</div>   
+   <p></p>
+</div> 
