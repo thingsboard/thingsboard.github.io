@@ -168,7 +168,11 @@ toc:
   - title: Notifications and Alarms on your smartphone using Telegram Bot
     path: /docs/iot-gateway/integration-with-telegram-bot/
 - title: Analytics
+  new: true
   section:
+  - title: Kafka Streams
+    new: true
+    path: /docs/samples/analytics/kafka-streams/
   - title: IoT data analytics using Apache Spark
     path: /docs/samples/analytics/spark-integration-with-thingsboard/
 - title: Security
