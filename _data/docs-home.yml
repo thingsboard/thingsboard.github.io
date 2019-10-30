@@ -207,6 +207,20 @@ toc:
     path: /docs/user-guide/ui/mail-settings/
   - title: Aliases
     path: /docs/user-guide/ui/aliases/
+- title: Trendz Analytics
+  section:
+    - title: Overview
+      path: /docs/trendz/
+    - title: Getting Started
+      path: /docs/trendz/getting-started/
+    - title: Connect Trendz to the Thingsboard
+      path: /docs/trendz/connect-thingsboard/
+    - title: Available Visualizations
+      path: /docs/trendz/visualizations/
+    - title: Clear, Filter, Group and Aggregate
+      path: /docs/trendz/view-builder/
+    - title: Share and embed Visualizations
+      path: /docs/trendz/embed-visuals/
 - title: Troubleshooting
   path: /docs/user-guide/troubleshooting/
 - title: Contribution Guide

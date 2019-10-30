@@ -8,15 +8,15 @@ description:
     <div class="main-bg">
         <main>
             <div class="content">
-                <h3 class="header"><a class="cBlue" href="/docs/user-guide/white-labeling/">Find outliers and patterns fast</a></h3>
+                <h3 class="header"><span class="cBlue" >Find outliers and patterns fast</span></h3>
                 <p>With built-in visualizations and self-service interface you can see your Devices and Assets data in a way you want it to be. 
                         In combination with human ability to identify visual patterns, Trendz quickly get you from data to insights and to actions.</p>
-                <a href="/docs/user-guide/white-labeling/" class="button cBlue try-button">Try Trendz</a>           
+                <a href="/pricing/?active=trendz" class="button cBlue try-button">Start Analysis</a>           
             </div>
             <div class="image-block">
                 <div class="image-wrapper">
-                    <video autoplay="" loop="" preload="auto" muted="">
-                        <source src="https://github.com/vparomskiy/publicData/blob/master/corelation%20between%20heat%20and%20energy.mp4?raw=true" type="video/mp4">                
+                    <video poster="/images/trendz/preview/heatmap-preview.png" autoplay="" loop="" preload="auto" muted="">
+                        <source src="https://github.com/vparomskiy/publicData/blob/master/heatmap_v2.mp4?raw=true" type="video/mp4">                
                     </video>
                 </div>
             </div>
@@ -25,19 +25,19 @@ description:
     <div class="main-bg">
         <main>
             <div class="content">
-                <h3 class="header"><a class="cBlue" href="/docs/user-guide/integrations/">Connect Data</a></h3>
+                <h3 class="header"><span class="cBlue">Connect Data</span></h3>
                 <p>Connect Trendz to the ThingsBoard in few clicks with automatic Topology Discovery.</p>
                 <p>
                     Trandz works with all ThingsBoard products, including:<br>
-                    Open Source ThingsBoard Community Edition<br>
-                    ThingsBoard Professional Edititon
+                    <b>Open Source ThingsBoard Community Edition</b><br>
+                    <b>ThingsBoard Professional Edititon</b>
                 </p>
                 <a href="/docs/trendz/" class="button cBlue try-button">Learn More</a>
             </div>
             <div class="image-block">
                 <div class="image-wrapper">
-                    <video autoplay="" loop="" preload="auto" muted="">
-                        <source src="https://github.com/vparomskiy/publicData/blob/master/heat%20maps.mp4?raw=true" type="video/mp4">
+                    <video poster="/images/trendz/preview/table-preview.png" autoplay="" loop="" preload="auto" muted="">
+                        <source src="https://github.com/vparomskiy/publicData/blob/master/table_v2.mp4?raw=true" type="video/mp4">
                     </video>
                 </div>
             </div>
@@ -46,18 +46,18 @@ description:
     <div class="main-bg">
         <main>
             <div class="content">
-                <h3 class="header"><a class="cBlue" href="/docs/user-guide/groups/">Plot and aggregate your data with any granularity</a></h3>
+                <h3 class="header"><span class="cBlue">Plot and aggregate your data with any granularity</span></h3>
                 <p>
                     With built-in visualizations and self-service interface you can see your Devices and Assets data in
                     a way you want it to be. In combination with human ability to identify visual patterns, Trendz
                     quickly get you from data to insights and to actions.
                 </p>
-                <a href="/docs/user-guide/groups/" class="button cBlue try-button">Try Trendz</a>
+                <a href="/pricing/?active=trendz" class="button cBlue try-button">Start Analysis</a>
             </div>
             <div class="image-block">
                 <div class="image-wrapper">
-                    <video autoplay="" loop="" preload="auto" muted="">
-                        <source src="https://github.com/vparomskiy/publicData/blob/master/line%20series%20example.mp4?raw=true" type="video/mp4">
+                    <video poster="/images/trendz/preview/corelation-preview.png" autoplay="" loop="" preload="auto" muted="">
+                        <source src="https://github.com/vparomskiy/publicData/blob/master/corelation_v2.mp4?raw=true" type="video/mp4">
                     </video>
                 </div>
             </div>
@@ -66,7 +66,7 @@ description:
     <div class="main-bg">
         <main>
             <div class="content">
-                <h3 class="header"><a class="cBlue" href="/docs/user-guide/scheduler/">Share securelly</a></h3>
+                <h3 class="header"><span class="cBlue">Share securelly</span></h3>
                 <p>
                     Share visualized insights with your users by:
                 </p>
@@ -75,14 +75,13 @@ description:
                     embeding on 3rd party web sites
                     exporting data into spreadsheets and images
                     <br>
-                    <span class="bold cBlue">All with respect to ThingsBoard user permissions</span>
+                    <b>All with respect to ThingsBoard user permissions</b>
                 </p>
-                <a href="/docs/user-guide/scheduler/" class="button cBlue try-button">Try Trendz</a>
+                <a href="http://0.0.0.0:4000/docs/trendz/" class="button cBlue try-button">Learn More</a>
             </div>
             <div class="image-block">
                 <div class="image-wrapper">
-                    <video autoplay="" loop="" preload="auto" muted="">
-                        <source src="https://github.com/vparomskiy/publicData/blob/master/table%20dynamic%20columns.mp4?raw=true" type="video/mp4">
+                    <video poster="/images/trendz/preview/dashboard-preview.png" autoplay="" loop="" preload="auto" muted="">
                     </video>
                 </div>
             </div>
@@ -145,5 +144,5 @@ description:
 </div>
 
 <div class="try-button-block">
-    <a href="/pricing/" class="button try-trendz">Try Trendz</a>
+    <a href="/pricing/?active=trendz" class="button try-trendz">Try Trendz</a>
 </div>

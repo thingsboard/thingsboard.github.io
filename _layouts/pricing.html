@@ -15,7 +15,20 @@
 {% include footer.html %}
 
 <script type="text/javascript">
+    (function(m,a,i,l,e,r){ m['MailerLiteObject']=e;function f(){
+        var c={ a:arguments,q:[]};var r=this.push(c);return "number"!=typeof r?r:f.bind(c.q);}
+        f.q=f.q||[];m[e]=m[e]||f.bind(f.q);m[e].q=m[e].q||f.q;r=a.createElement(i);
+        var _=a.getElementsByTagName(i)[0];r.async=1;r.src=l+'?v'+(~~(new Date().getTime()/1000000));
+        _.parentNode.insertBefore(r,_);})(window, document, 'script', 'https://static.mailerlite.com/js/universal.js', 'ml');
+
+    var ml_account = ml('accounts', '1017142', 'w0j5m5g7f5', 'load');
+
     inViewportDefer(function() {
+        var activeTab = getUrlVars()['active'];
+        if(activeTab && activeTab === 'trendz') {
+            activatePricingSection('trendz');
+        }
+
         $("#pe-aws-pricing table th:not(:first-child), " +
             "#pe-aws-pricing table td:not(:first-child)").inViewport(function(px){
             if(px >= 20) {
@@ -66,6 +79,15 @@
         document.getElementById(nodeId).scrollIntoView();
         tb.openAccordionItem(nodeId);
     }
+
+    function getUrlVars() {
+        var vars = {};
+        var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+            vars[key] = value;
+        });
+        return vars;
+    }
+
 
 </script>
 

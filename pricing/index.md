@@ -21,6 +21,9 @@ description: ThingsBoard Products Pricing
         <li id="menu-item-thingsboard-pe" class="menu-item active">
             <a href="javascript:void(0);" onClick="activatePricingSection('thingsboard-pe')">Professional Edition</a>
         </li>
+        <li id="menu-item-trendz" class="menu-item">
+            <a href="javascript:void(0);" onClick="activatePricingSection('trendz')">Trendz Analytics</a>
+        </li>
      </ul>
    </nav> 
 </div>
@@ -289,6 +292,41 @@ description: ThingsBoard Products Pricing
     </div>
  </div>  
 </section>
+
+<section id="trendz" class="pricing-content" style="display: none;">
+    <div class="pricing-div">
+        <div class="container">
+            <div class="pricing-section pricing-community active" id="community">
+               <div class="row justify-content-center">
+                    <div class="col-md-8 col-lg-6 col-xl-4 mb-4">
+                        <div class="pricing-square">
+                            <h2>Trendz Analytics</h2>
+                            <div class="pricing-square-description">
+                                <p>Create interactive visual analytics and discover trends, patterns and insight from your data.</p>
+                            </div>
+                            <div class="pricing-square-description">
+                                <p>**Submit form here**.</p>
+                            </div>
+                            <div class="pricing-square-item">Self-service analytics</div><br>
+                            <div class="pricing-square-item">Data clear and fitlering</div><br>
+                            <div class="pricing-square-item">Advansed visualizations</div><br>
+                            <div class="pricing-square-item">Share and colaboarate visualization</div><br>
+                            <div class="pricing-square-item">Kepp your data secure</div><br>
+                            <div class="pricing-square-item">
+                                <p>&nbsp;</p>
+                            </div>
+                            <div class="ml-form-embed"
+                              data-account="1017142:w0j5m5g7f5"
+                              data-form="1575980:e2f1u0">
+                            </div>
+                        </div>
+                    </div>
+               </div>
+            </div>
+        </div>
+    </div>     
+</section>
+
 
 <div class="container faq-content">
     <h2 id="faq" class="text-center">Frequently asked questions</h2>
