@@ -209,10 +209,8 @@ toc:
     path: /docs/user-guide/ui/aliases/
 - title: Trendz Analytics
   section:
-    - title: Overview
-      path: /docs/trendz/
     - title: Getting Started
-      path: /docs/trendz/getting-started/
+      path: /docs/trendz/
     - title: Connect Trendz to the Thingsboard
       path: /docs/trendz/connect-thingsboard/
     - title: Available Visualizations

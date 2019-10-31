@@ -6,21 +6,30 @@ title: Trendz Analytics
 description: ThingsBoard Trends - Business Intelligence and Analytics Platform for Iot powered Business
 ---
 
-
-The ThingsBoard **Trendz** is an Analytics Platform that convert IoT dataset into insights and simplify decision making process. 
+The ThingsBoard **Trendz** is an Analytics Platform that converts the IoT dataset into insights and simplifies the decision-making process. 
 With Trendz you can:
- - analise behaviour patterns, outliers and trends.
- - clear, aggregate and group datasets in different dimensions
- - share analysis with other users by embedding visualizations into dashboard   
+ - Analise behavior patterns, outliers and trends.
+ - Clear, aggregate and group the dataset in different dimensions
+ - Share the analysis with other users by embedding visualizations into a dashboard   
 
 **Trendz** can be connected to both:
  - Open source ThingsBoard Community Edition
- - Thingsboard Professional Edition 
+ - ThingsBoard Professional Edition 
 
-#### Contents
 
-[**Getting Started**](/docs/trendz/getting-started)
-: Provides an overview of Trendz Analytics based on Smart Energy use case.
+#### Getting Started Tutorial
+
+&nbsp; 
+  
+<div id="video">  
+    <div id="video_wrapper">
+        <iframe src="https://www.youtube.com/embed/TwJJbxwQX5k" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
+
+
+
+#### Next Steps
 
 [**Connect Trendz to the Thingsboard and basic configuration**](/docs/trendz/connect-thingsboard)
 : How to connect Trendz to the ThingsBoard and change connection properties.

@@ -2,8 +2,8 @@
 layout: docwithnav
 assignees:
 - vparomskiy
-title: Connect To the Thingsboard
-description: Connect Trendz Analytics platform to the Thingsboard
+title: Connect To the ThingsBoard
+description: Connect Trendz Analytics platform to the ThingsBoard
 ---
 
 * TOC
@@ -11,11 +11,11 @@ description: Connect Trendz Analytics platform to the Thingsboard
 
 
 ## Connect to the ThingsBoard
-You can connect Trendz Analytics to the Thingsboard Community Edition or ThingsBoard Professional Edition.
+You can connect Trendz Analytics to the ThingsBoard Community Edition or ThingsBoard Professional Edition.
 
 <br/>
 
-By default, Trendz expect that Thingsboard is hosted on the same instance and accessible via an URL:
+By default, Trendz expects that ThingsBoard is hosted on the same instance and accessible via an URL:
  
  - http://localhost:9090
     
@@ -28,7 +28,7 @@ Windows: C:\Program Files (x86)\trendz\conf\trendz.yml
 Linux: /usr/share/trandz/conf/trandz.yml
 ```
     
-And update this property to correct value:
+And update this property to the correct value:
 
 ```yml
 tb.api.url: "${TB_API_URL:http://localhost:9090}"
@@ -89,7 +89,7 @@ For docker installations - update environment variable ``TB_API_URL`` with the c
 </table>
 
 ## Authentication and Security
-Trendz use ThingsBoard as authentication service. Any Tenant Administrator or Customer User can sign in into Trendz UI using their login\password that they use for authentication in the ThingsBoard.
+Trendz uses ThingsBoard as an authentication service. Any Tenant Administrator or Customer User can sign in into Trendz UI using their login\password that they use for authentication in the ThingsBoard.
 
 Same security restrictions that are configured on the ThingsBoard works in the Trendz Analytics. 
 
@@ -98,17 +98,17 @@ Same security restrictions that are configured on the ThingsBoard works in the T
 
 
 ## Topology Discovery
-Trendz Topology represent business model of Devices/Assets that was created in the ThingsBoard. 
-Topology defins dimensions/fields that used for building visualizations and relation between Devices/Assets.
-Here are core components of Trendz Topology:
+Trendz Topology represents the business model of Devices/Assets that was created in ThingsBoard. 
+Topology defines dimensions/fields that used for building visualizations and relation between Devices/Assets.
+Here are the core components of Trendz Topology:
 
 
-**Business Entity** - Definition of group of Devices or Assets with same Device Type/Asset Type. Each Business Entity has:
+**Business Entity** - Definition of a group of Devices or Assets with same Device Type/Asset Type. Each Business Entity has:
 
-- **Criteria** - General properties that defines how Devices/Assets fetched from the ThingsBoard
-- **Business Entity Field** - Represent field that is used during building visualizations. Field contains data type, label and query parameters that used during fetching data from The thingsBoard.
+- **Criteria** - General properties that define how Devices/Assets fetched from the ThingsBoard
+- **Business Entity Field** - Represent field that is used during building visualizations. Field contains data type, label and query parameters used during fetching data from The thingsBoard.
 Here is a list of supported fields:
-    - Entity Name - name of the Device or Asset
+    - Entity Name - the name of the Device or Asset
     - Owner - who own device (administrator/customer)
     - Attribute
     - Telemetry
@@ -117,8 +117,8 @@ Here is a list of supported fields:
 #### First Topology discovery
 
 
-After first sign-in user should perform initial Topology Discovery. During this process, Trendz will analise all Devices/Assets available in the ThingsBoard, their attributes/telemetry and all relations between them.
-As the result, Trendz will extract and save collection of Business Entities. You can view and modify them on the `Settings` page.
+After the first sign-in user should perform initial Topology Discovery. During this process, Trendz will analyze all Devices/Assets available in the ThingsBoard, their attributes/telemetry and all relations between them.
+As a result, Trendz will extract and save the collection of Business Entities. You can view and modify them on the `Settings` page.
 
 ![image](/images/trendz/first-discovery.png)
 
@@ -127,9 +127,9 @@ As the result, Trendz will extract and save collection of Business Entities. You
 ![image](/images/trendz/discover-results.png)
  
 #### Manual Topology rediscovery
-Business Entity do not represent single Device or Asset, but query that used for fetching Device/Asset from the ThingsBoard. It means that you do not need to update topology if new Devices Assets with the same type were added on the ThingsBoard.
+Business Entity does not represent a single Device or Asset, but the query that used for fetching Device/Asset from the ThingsBoard. It means that you do not need to update topology if new Devices Assets with the same type were added on the ThingsBoard.
 
-In case, when new Device/Asset types were added or attribute/telemetry with new key was created in the ThingsBoard - you should update Topology. 
+In case, when new Device/Asset types were added or attribute/telemetry with a new key was created in the ThingsBoard - you should update Topology. 
 
 
 Manual Topology Rediscovery will scan ThingsBoard again, detect modifications and update collection of Business Entities with required settings. 
@@ -137,7 +137,7 @@ You can trigger this process on the `Settings` page by pressing `Refresh Topolog
 
  
 #### Manual Modification
-Other option for updating topology is manual modification of Business Entity properties. You can have as many Business Entities with similar properties as you want. 
-It may be useful in case when same devices/assets represent different aspects of business solution. For example single devices can monitor environment and submit debug events for troubleshooting.
-By separating debug events from environment measurements into isolated Business Entities it becomes easier to build visualizations focused on single aspect of your solution.
+Another option for updating topology is a manual modification of Business Entity properties. You can have as many Business Entities with similar properties as you want. 
+It may be useful in case when the same devices/assets represent different aspects of business solution. For example, single devices can monitor the environment and submit debug events for troubleshooting.
+By separating debug events from environment measurements into isolated Business Entities it becomes easier to build visualizations focused on a single aspect of your solution.
 
