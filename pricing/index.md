@@ -112,7 +112,7 @@ description: ThingsBoard Products Pricing
                             </div>
                             <h4 class="pricing-square-price mb-0">
                                 10
-                                <span>/Month</span>
+                                <span>USD / Month</span>
                             </h4>
                             <div class="pricing-square-item">Up to 10 Devices</div>
                             <div class="pricing-square-item">and 10 Assets</div> 
@@ -140,7 +140,7 @@ description: ThingsBoard Products Pricing
                             </div>
                             <h4 class="pricing-square-price mb-0">
                                 99
-                                <span>/Month</span>
+                                <span>USD / Month</span>
                             </h4>
                             <div class="pricing-square-item">Up to 100 Devices</div>
                             <div class="pricing-square-item"> and 100 Assets</div>
@@ -168,7 +168,7 @@ description: ThingsBoard Products Pricing
                             </div>
                             <h4 class="pricing-square-price mb-0">
                                 199
-                                <span>/Month</span>
+                                <span>USD / Month</span>
                             </h4>
                             <div class="pricing-square-item">Up to 500 Devices</div>
                             <div class="pricing-square-item"> and 500 Assets</div>
@@ -196,7 +196,7 @@ description: ThingsBoard Products Pricing
                             </div>
                             <h4 class="pricing-square-price mb-0">
                                 299
-                                <span>/Month</span>
+                                <span>USD / Month</span>
                             </h4>
                             <div class="pricing-square-item">Up to 1000 Devices</div>
                             <div class="pricing-square-item"> and 1000 Assets</div>
@@ -224,7 +224,7 @@ description: ThingsBoard Products Pricing
                             </div>
                             <h4 class="pricing-square-price mb-0">
                                 500
-                                <span>/Month</span>
+                                <span>USD / Month</span>
                             </h4>
                             <div class="pricing-square-item">Unlimited number</div> 
                             <div class="pricing-square-item"> of Devices and Assets</div>
@@ -263,6 +263,7 @@ description: ThingsBoard Products Pricing
                             </div>
                             <h4 class="pricing-square-price mb-0">
                                 2999
+                                <span>USD</span>
                             </h4>                  
                             <a class="btn btn-full-green btn-pricing" href="javascript:void(0);" 
                                 onClick="getLicense(event,
@@ -304,6 +305,7 @@ description: ThingsBoard Products Pricing
                             <p>Create interactive visual analytics and discover trends, patterns and insight from your data:</p>
                         </div>            
                         <ul>
+                            <li class="pricing-square-item">One-click integration with ThingsBaord</li>                                                          
                             <li class="pricing-square-item">Self-service analytics</li>                                                          
                             <li class="pricing-square-item">Data clear and filtering</li>                                                          
                             <li class="pricing-square-item">Advanced visualizations</li>                                                          
@@ -442,5 +444,27 @@ description: ThingsBoard Products Pricing
                 </p>    
             </div>    
         </div>
-    </div>    
-</div>
+    </div>
+</div>   
+   
+<h2 id="policies" class="text-center">Refund and Delivery Policy</h2>
+<div class="container">
+    <p><b>Refund Policy</b></p>
+    <p>
+    The License fee is non-refundable, regardless of any circumstances. 
+    Customers may manage their subscription plans: update or cancel them. 
+    Once the subscription is deleted before expiration, Stripe will keep the balance. 
+    After a certain time period (about an hour) positive Amount due with the remain credits will appear in Billing section of License portal. 
+    This sum is deducted from Total fee whenever particular customer purchase a new plan or a perpetual license.
+    </p>
+    <p><b>Delivery Policy</b></p>
+    <p>
+    The software is available for download and installation from our website. 
+    See <a href="https://thingsboard.io/docs/user-guide/install/pe/installation-options/">Installation Guides</a> for more details.
+    In order to activate the software you will need to obtain the license key. Instruction how to obtain and use the license key is provided in the installation guide. 
+    See <a href="https://www.youtube.com/watch?v=dK-QDFGxWek">How-to get pay-as-you-go subscription</a> 
+    or <a href="https://www.youtube.com/watch?v=GPe0lHolWek">How-to get perpetual license</a> for more details. 
+    Please <a href="https://thingsboard.io/docs/contact-us/">contact us</a> if you have any questions or require support.
+    </p>
+   <p></p>
+</div> 

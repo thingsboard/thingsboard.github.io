@@ -10,7 +10,7 @@ description: Connect Trendz Analytics platform to the ThingsBoard
 {:toc}
 
 
-## Connect to the ThingsBoard
+## Connect to ThingsBoard
 You can connect Trendz Analytics to the ThingsBoard Community Edition or ThingsBoard Professional Edition.
 
 <br/>

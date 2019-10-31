@@ -31,7 +31,7 @@ With Trendz you can:
 
 #### Next Steps
 
-[**Connect Trendz to the Thingsboard and basic configuration**](/docs/trendz/connect-thingsboard)
+[**Connect Trendz to Thingsboard and basic configuration**](/docs/trendz/connect-thingsboard)
 : How to connect Trendz to the ThingsBoard and change connection properties.
 
 [**Available Visualizations**](/docs/trendz/visualizations)
