@@ -16,7 +16,7 @@ Minor release with the following improvements.
 
 Main features:
 
-* Password policy setting. Login/Logout audit log;
+* Password policy setting. Login/Logout audit log. See [video tutorial](https://www.youtube.com/watch?v=ZKUs01k8_H4);
 * Timescale DB support;
 * 5x performance improvement for PostgreSQL insert speed;
 * UI: New 'Custom Action' editor with HTML/CSS/JS input capabilities;
