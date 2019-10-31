@@ -297,34 +297,27 @@ description: ThingsBoard Products Pricing
     <div class="pricing-div">
         <div class="container">
             <div class="pricing-section pricing-community active" id="community">
-               <div class="row justify-content-center">
-                    <div class="col-md-8 mb-4">
-                        <div class="pricing-square">
-                            <h2>Trendz Analytics</h2>
-                            <div style="display: flex;">
-                                <div style="width: 50%; margin: 30px 0 0;">
-                                    <div class="pricing-square-description">
-                                        <p>Create interactive visual analytics and discover trends, patterns and insight from your data.</p>
-                                    </div>                                                                      
-                                    <div class="pricing-square-item">Self-service analytics</div><br>
-                                    <div class="pricing-square-item">Data clear and filtering</div><br>
-                                    <div class="pricing-square-item">Advanced visualizations</div><br>
-                                    <div class="pricing-square-item">Share and collaborate visualization</div><br>
-                                    <div class="pricing-square-item">Keep your data secure</div><br>
-                                    <div class="pricing-square-item">
-                                        <p>&nbsp;</p>
-                                    </div>
-                                </div>
-                                <div style="width: 50%;">
-                                    <div class="ml-form-embed"
-                                      data-account="1017142:w0j5m5g7f5"
-                                      data-form="1575980:e2f1u0">
-                                    </div>
-                                </div>
-                            </div>
+                <h1 class="tCenter" style="margin: 0 0 27px 0;">Trendz Analytics</h1>
+                <div style="display: flex;">
+                    <div style="width: 50%; margin: 30px 10px 0;">
+                        <div class="pricing-square-description">
+                            <p>Create interactive visual analytics and discover trends, patterns and insight from your data:</p>
+                        </div>            
+                        <ul>
+                            <li class="pricing-square-item">Self-service analytics</li>                                                          
+                            <li class="pricing-square-item">Data clear and filtering</li>                                                          
+                            <li class="pricing-square-item">Advanced visualizations</li>                                                          
+                            <li class="pricing-square-item">Share and collaborate visualization</li>                                                          
+                            <li class="pricing-square-item">Keep your data secure</li>                                                          
+                        </ul>
+                    </div>
+                    <div style="width: 50%; margin: 0 10px 0;">
+                        <div class="ml-form-embed"
+                          data-account="1017142:w0j5m5g7f5"
+                          data-form="1575980:e2f1u0">
                         </div>
                     </div>
-               </div>
+                </div>
             </div>
         </div>
     </div>     
