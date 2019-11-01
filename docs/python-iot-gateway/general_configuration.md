@@ -10,11 +10,11 @@ description: Installation structure and configuration of ThingsBoard IoT Gateway
 {:toc}
 
 
-## Installation structure
+## Directory structure
 
 <br>
 
-Installation directory structure can be different, caused by different types of installations:
+Directory structure can be different, caused by different types of installations, there are few cases:
 
 1 - DEB/RPM package
 
@@ -22,7 +22,7 @@ Installation directory structure can be different, caused by different types of 
 
 3 - Package manager installation (pip3)
 
-case 1:
+### DEB/RPM package
 
 ```text
 /etc/thingsboard-gateway/config
@@ -50,10 +50,20 @@ case 1:
 ```
         
 
+### Docker container
+
+
+
+### Package manager installation
+
+## General configuration file
+
+The main configuration file that is used to setup connection to ThingsBoard platform and enable/disable connectors.
+
 Example of main configuration file:
 
 ```yaml
-thingsboard-client:
+thingsboard:
   host: 127.0.0.1
   port: 1883
   security:
@@ -83,8 +93,6 @@ connectors:
 ***Spaces identity are important.***
 
 
-The main configuration file that is used to setup connection to ThingsBoard platform and enable/disable connectors.
-
 ### Sections in config file
 
 + **thingsboard-client** - Configuration for connecting to ThingsBoard platform.
@@ -92,11 +100,11 @@ The main configuration file that is used to setup connection to ThingsBoard plat
 + **storage** - Configuration for local storage of incoming data from devices.
 + **connectors** - Array of connectors (Protocols) uses.
 
-#### Section "thingsboard-client"
+#### Section "thingsboard"
 
 |**Parameter**             | **Default value**                            |   **Description**                                              |
 |---                       |---                                           |---                                                             |
-| ***thingsboard-client*** |                                              | Configuration for connection to server.                        |
+| ***thingsboard***        |                                              | Configuration for connection to server.                        |
 | host                     | **127.0.0.1**                                | Hostname or ip address of ThingsBoard server.                  |
 | port                     | **1883**                                     | Port of mqtt service on ThingsBoard server.                    |
 
@@ -159,3 +167,16 @@ connectors:
 
 **In example configuration file provided all available connectors by this time, if you don't need some from them, you should just remove it from configuration.**  
 If you need different type of connector, please email us: <info@thingsboard.io>.
+
+
+
+# Connectors
+
+There are few connectors implemented:
+
+1. MQTT Connector
+2. Modbus Connector
+3. OPC-UA Connector
+
+## MQTT Connector
+
