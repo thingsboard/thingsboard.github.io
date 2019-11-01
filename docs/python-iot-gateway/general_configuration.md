@@ -52,9 +52,12 @@ Directory structure can be different, caused by different types of installations
 
 ### Docker container
 
-
+Directory structure like in DEB/RPM package, but you need mount the extension and config folders into container.
 
 ### Package manager installation
+
+In this case you can select which folder will be uses for config. 
+\#TODO write guide about running from library.    
 
 ## General configuration file
 
@@ -180,3 +183,153 @@ There are few connectors implemented:
 
 ## MQTT Connector
 
+Example of MQTT Connector config file.
+
+
+```json
+{
+  "broker": {
+    "name":"Default Broker",
+    "host":"demo.thingsboard.io",
+    "port":1883,
+    "credentials": {
+      "type": "basic",
+      "username": "GIjr0vTtbOLwpouuBxL9",
+      "password": ""
+    }
+  },
+  "mapping": [
+    {
+      "topicFilter": "v1/devices/me/attributes",
+      "converter": {
+        "type": "json",
+        "filterExpression": "",
+        "deviceNameJsonExpression": "${SerialNumber}",
+        "deviceTypeJsonExpression": "${SensorType}",
+        "timeout": 60000,
+        "attributes": [
+          {
+            "type": "string",
+            "key": "test_key",
+            "value": "${SerialNumber}"
+          }
+        ]
+      }
+    },
+    {
+      "topicFilter": "/temperature-sensors/+",
+      "converter": {
+        "type": "json",
+        "filterExpression": "",
+        "deviceNameJsonExpression": "${$.serialNumber}",
+        "deviceTypeJsonExpression": "${$.sensorType}",
+        "timeout": 60000,
+        "attributes": [
+          {
+            "type": "string",
+            "key": "model",
+            "value": "${$.model}"
+          }
+        ],
+        "timeseries": [
+          {
+            "type": "double",
+            "key": "temperature",
+            "value": "${$.temperature}"
+          }
+        ]
+      }
+    },
+    {
+      "topicFilter": "/temperature-sensors/+",
+      "converter": {
+        "type": "json",
+        "filterExpression": "",
+        "deviceNameJsonExpression": "${$.sensorId}",
+        "deviceTypeJsonExpression": "${$.sensorType}",
+        "timeout": 60000,
+        "timeseries": [
+          {
+            "type": "double",
+            "key": "humidity",
+            "value": "${$.humidity}"
+          }
+        ]
+      }
+    },
+    {
+      "topicFilter": "/custom-sensors/+",
+      "converter": {
+        "type": "custom",
+        "extension": "CustomMqttUplinkConverter",
+        "extension-config": {
+            "temperatureBytes" : 2,
+            "humidityBytes" :  2,
+            "batteryLevelBytes" : 1
+        }
+      }
+    }
+  ],
+  "connectRequests": [
+    {
+      "topicFilter": "sensors/connect",
+      "deviceNameJsonExpression": "${$.SerialNumber}"
+    },
+    {
+      "topicFilter": "sensor/+/connect",
+      "deviceNameTopicExpression": "(?<=sensor\/)(.*?)(?=\/connect)"
+    }
+  ],
+  "disconnectRequests": [
+    {
+      "topicFilter": "sensors/disconnect",
+      "deviceNameJsonExpression": "${$.SerialNumber}"
+    },
+    {
+      "topicFilter": "sensor/+/disconnect",
+      "deviceNameTopicExpression": "(?<=sensor\/)(.*?)(?=\/disconnect)"
+    }
+  ],
+  "attributeUpdates": [
+    {
+      "deviceNameFilter": "SmartMeter.*",
+      "attributeFilter": "uploadFrequency",
+      "topicExpression": "sensor/${deviceName}/${attributeKey}",
+      "valueExpression": "{\"${attributeKey}\":\"${attributeValue}\"}"
+    }
+  ],
+  "serverSideRpc": [
+    {
+      "deviceNameFilter": ".*",
+      "methodFilter": "echo",
+      "requestTopicExpression": "sensor/${deviceName}/request/${methodName}/${requestId}",
+      "responseTopicExpression": "sensor/${deviceName}/response/${methodName}/${requestId}",
+      "responseTimeout": 10000,
+      "valueExpression": "${params}"
+    },
+    {
+      "deviceNameFilter": ".*",
+      "methodFilter": "no-reply",
+      "requestTopicExpression": "sensor/${deviceName}/request/${methodName}/${requestId}",
+      "valueExpression": "${params}"
+    }
+  ]
+}
+```
+
+## Section "broker"
+
+|**Parameter**|**Default value**|**Description**|
+|:-|:-|-
+|name|**Default Broker**|Name of broker for logs and saving to persistent devices|
+|host|**demo.thingsboard.io**|ThingsBoard platform instance hostname or ip address|
+|port|**1883**|Mqtt port on ThingsBoard platform instance|
+|---
+
+### Subsection "credentials"
+
+## Section "mapping"
+## Section "connectRequests"
+## Section "disconnectRequest"
+## Section "attributeUpdates"
+## Section "serverSideRpc"
