@@ -7,9 +7,9 @@
 |---
 
 
-\* - If receive data when storage have already count, described in this parameter, new data will lose.
+\* -- If receive data when storage has already counted, described in this parameter, new data will lose.
 
-Storage section of configuration file will looks like:
+Storage section of configuration file will look like:
 
 ```yaml
 storage:

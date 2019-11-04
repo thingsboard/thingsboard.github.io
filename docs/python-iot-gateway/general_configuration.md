@@ -14,7 +14,7 @@ description: Installation structure and configuration of ThingsBoard IoT Gateway
 
 <br>
 
-Directory structure can be different, caused by different types of installations, there are few cases:
+Directory structure can be different it depends on type of installation:
 
 1 - DEB/RPM package
 
@@ -25,28 +25,28 @@ Directory structure can be different, caused by different types of installations
 ### DEB/RPM package
 
 ```text
-/etc/thingsboard-gateway/config
-    logs.conf
-    modbus.json
-    mqtt.json
+/etc/thingsboard-gateway/config                   - Default path for configuration folder.
+    logs.conf                                     - Default configuration file for logs.
+    modbus.json                                   - Default configuration file for modbus connector.
+    mqtt.json                                     - Default configuration file for mqtt connector.
     ...
-    opcua.json
-    tb_gateway.yaml
+    opcua.json                                    - Default configuration file for OPC-UA connector.
+    tb_gateway.yaml                               - Default main configuration file for gateway. 
 
-/var/lib/thingsboard_gateway/extensions
-    modbus
-    mqtt
-        __init__.py
-        custom_uplink_mqtt_converter.py
+/var/lib/thingsboard_gateway/extensions           - Default folder for custom converters.                      
+    modbus                                        - Default folder for Modbus custom converters.
+    mqtt                                          - Default folder for Mqtt custom converters.
+        __init__.py                               - Default python package file, needed for correct importing.
+        custom_uplink_mqtt_converter.py           - Example of custom Mqtt converter.
     ...
-    opcua
+    opcua                                         - Default folder for OPC-UA custom converters.
 
-/var/log/thingsboard-gateway
-    connector.log
-    extension.log
-    service.log
-    storage.log
-    tb_connection.log
+/var/log/thingsboard-gateway                      - Default configuration folder
+    connector.log                                 - Default logs for all connectors.
+    extension.log                                 - Default logs for all converters.
+    service.log                                   - Default logs for the main gateway service.
+    storage.log                                   - Default logs for storage.
+    tb_connection.log                             - Default logs for connection to the ThingsBoard instance.
 ```
         
 
@@ -56,16 +56,20 @@ Directory structure like in DEB/RPM package, but you need mount the extension an
 
 ### Package manager installation
 
-In this case you can select which folder will be uses for config. 
-\#TODO write guide about running from library.    
+In this case you can select, which folder will be used as configuration directory. 
+\#TODO write a guide about running from library.    
 
 ## General configuration file
 
-The main configuration file that is used to setup connection to ThingsBoard platform and enable/disable connectors.
+The main configuration file that is used for connection to ThingsBoard platform instance and enable/disable connectors.  
+<br>
+<details>
+<summary>
+<b>Example of main configuration file.</b>
+</summary>
 
-Example of main configuration file:
+{% highlight yaml %}
 
-```yaml
 thingsboard:
   host: 127.0.0.1
   port: 1883
@@ -91,17 +95,19 @@ connectors:
     name: OPC-UA Connector
     type: opcua
     configuration: opcua.json
-```
+
+{% endhighlight %}
 
 ***Spaces identity are important.***
 
+</details>
 
 ### Sections in config file
 
-+ **thingsboard-client** - Configuration for connecting to ThingsBoard platform.
-  - *security* - Configuration for type of encryption and authorization.
-+ **storage** - Configuration for local storage of incoming data from devices.
-+ **connectors** - Array of connectors (Protocols) uses.
++ **thingsboard-client** -- Configuration for connecting to ThingsBoard platform.
+  - *security* -- Configuration for type of encryption and authorization.
++ **storage** -- Configuration for local storage of incoming data from devices.
++ **connectors** -- Array of connectors (Protocols) uses.
 
 #### Section "thingsboard"
 
@@ -144,12 +150,12 @@ File storage<br/> <small>(recommended for more persistent)</small>%,%file%,%temp
  
 |**Parameter**|**Default value**|**Description**|
 |:-|:-|- 
-| name                     | **MQTT Broker Connector**                    | Name of connector to device.                                   |
-| type                     | **mqtt**                                     | Type of connector, must be like name of folder.                |
-| configuration            | **mqtt.json**                                | Name of the file with configuration in config folder.*         |
+| name                     | **MQTT Broker Connector**                    | Name of connector to device.                                                    |
+| type                     | **mqtt**                                     | Type of connector, must be like a name of folder, contained configuration file. |
+| configuration            | **mqtt.json**                                | Name of the file with configuration in config folder.*                          |
 |---
 
-\* - Folder with this configuration file.
+\* -- Folder with this configuration file.
 
 Section connectors in your configuration file may differ from shown below, but they should have structure like this:
 
@@ -168,7 +174,7 @@ connectors:
 
 ```
 
-**In example configuration file provided all available connectors by this time, if you don't need some from them, you should just remove it from configuration.**  
+**In example configuration file provided all available connectors by this time, if you don't need some from them, you should just remove it from this file.**  
 If you need different type of connector, please email us: <info@thingsboard.io>.
 
 
@@ -183,16 +189,24 @@ There are few connectors implemented:
 
 ## MQTT Connector
 
-Example of MQTT Connector config file.
+This configuration file provides configuration for connecting to a broker and settings for processing incoming from broker messages.
 
+<br>
 
-```json
+<details>
+
+<summary>
+<b>Example of MQTT Connector config file.</b>
+</summary>
+
+{% highlight json %}
+
 {
   "broker": {
     "name":"Default Broker",
     "host":"demo.thingsboard.io",
     "port":1883,
-    "credentials": {
+    "security": {
       "type": "basic",
       "username": "GIjr0vTtbOLwpouuBxL9",
       "password": ""
@@ -315,21 +329,195 @@ Example of MQTT Connector config file.
     }
   ]
 }
-```
 
-## Section "broker"
+
+{% endhighlight %}
+
+</details>
+
+### Section "broker"
+
+Section "broker" - provided configuration for connecting to the mqtt broker.
+
+| **Parameter** | **Default value**              | **Description**                                        |
+|:-|:-|-
+| name          | **Default Broker**             | Broker name for logs and saving to persistent devices. |
+| host          | **demo.thingsboard.io**        | Mqtt broker hostname or ip address.                    |
+| port          | **1883**                       | Mqtt port on the broker.                               |
+|---
+
+#### Subsection "security"
+
+Subsection "security" -- provided configuration for security authorization.  
+There are 2 variants:
+1. basic -- username and password.
+2. cert.PEM -- For authorization will be used TLS certificate.
+ 
+{% capture mqttconnectorsecuritytogglespec %}
+basic<small>Recommended as easier to configure</small>%,%accessToken%,%templates/iot-gateway/mqtt-connector-basic-security-config.md%br%
+cert.PEM<small>recommended as more safety</small>%,%tls%,%templates/iot-gateway/mqtt-connector-tls-security-config.md{% endcapture %}
+
+{% include content-toggle.html content-toggle-id="mqttConnectorCredentialsConfig" toggle-spec=mqttconnectorsecuritytogglespec %}
+
+### Section "mapping"
+This configuration section contains array of topics that the gateway will subscribe to after connecting to the broker and settings about processing incoming messages (converter).
+
 
 |**Parameter**|**Default value**|**Description**|
 |:-|:-|-
-|name|**Default Broker**|Name of broker for logs and saving to persistent devices|
-|host|**demo.thingsboard.io**|ThingsBoard platform instance hostname or ip address|
-|port|**1883**|Mqtt port on ThingsBoard platform instance|
+| topicFilter | **/temperature-sensors/+** | Topic address for subscribing. |
 |---
 
-### Subsection "credentials"
+#### Subsection "converter"
+This subsection contains configuration for processing incoming messages.  
 
-## Section "mapping"
-## Section "connectRequests"
-## Section "disconnectRequest"
-## Section "attributeUpdates"
-## Section "serverSideRpc"
+Types of mqtt converters:  
+1. json -- Default converter
+2. custom -- Custom converter (You can write it by yourself, and it will use to convert incoming data from the broker.) 
+
+{% capture mqttconvertertypespec %}
+json<small>Recommended as easier to configure</small>%,%accessToken%,%templates/iot-gateway/mqtt-converter-json-config.md%br%
+custom<small>recommended as more safety</small>%,%tls%,%templates/iot-gateway/mqtt-converter-custom-config.md{% endcapture %}
+
+{% include content-toggle.html content-toggle-id="MqttConverterTypeConfig" toggle-spec=mqttconvertertypespec %}
+
+### Section "connectRequests"
+This configuration section is optional.  
+Configuration, provided in this section will be used to get information from the broker about connecting new device.  
+
+There are 2 options for this block configuration, depending on where gateway should receive device name.  
+
+**1. Name in a message from broker:**
+
+| **Parameter**                 | **Default value**                     | **Description**                                                                                   |
+|:-|:-|-
+| topicFilter                   | **sensors/connect**                   | Topic address on the broker, where the broker sends information about new connected devices.      |
+| deviceNameJsonExpression      | **${$.SerialNumber}**                 | JSON-path expression, for looking the new device name.                                            |
+|---
+
+**2. Name in topic address:**
+
+| **Parameter**                 | **Default value**                     | **Description**                                                                                   |
+|:-|:-|-
+| topicFilter                   | **sensors/+/connect**                 | Topic address on the broker, where the broker sends information about new connected devices.      |
+| deviceNameTopicExpression     | **(?<=sensor\/)(.\*?)(?=\/connect)**  | Regular expression for looking the device name in topic path.                                     |
+|---
+
+This section in configuration looks like:
+```json
+  "connectRequests": [
+    {
+      "topicFilter": "sensors/connect",
+      "deviceNameJsonExpression": "${$.SerialNumber}"
+    },
+    {
+      "topicFilter": "sensor/+/connect",
+      "deviceNameTopicExpression": "(?<=sensor\/)(.*?)(?=\/connect)"
+    }
+  ]
+```
+
+### Section "disconnectRequest"
+This configuration section is optional.  
+Configuration, provided in this section will be used to get information from the broker about disconnecting device.  
+
+There are 2 options for this block configuration, depending on where gateway should receive device name.  
+
+**1. Name in a message from broker:**
+
+| **Parameter**                 | **Default value**                     | **Description**                                                                                   |
+|:-|:-|-
+| topicFilter                   | **sensors/disconnect**                | Topic address on the broker, where the broker sends information about disconnected devices.       |
+| deviceNameJsonExpression      | **${$.SerialNumber}**                 | JSON-path expression, for looking the new device name.                                            |
+|---
+
+**2. Name in topic address:**
+
+| **Parameter**                 | **Default value**                     | **Description**                                                                                   |
+|:-|:-|-
+| topicFilter                   | **sensors/+/disconnect**              | Topic address on the broker, where the broker sends information about disconnected devices.       |
+| deviceNameTopicExpression     | **(?<=sensor\/)(.\*?)(?=\/connect)**  | Regular expression for looking the device name in topic path.                                     |
+|---
+
+This section in configuration file looks like:
+```json
+  "disconnectRequests": [
+    {
+      "topicFilter": "sensors/disconnect",
+      "deviceNameJsonExpression": "${$.SerialNumber}"
+    },
+    {
+      "topicFilter": "sensor/+/disconnect",
+      "deviceNameTopicExpression": "(?<=sensor\/)(.*?)(?=\/disconnect)"
+    }
+  ]
+```
+
+### Section "attributeUpdates"
+This configuration section is optional.  
+Configuration, provided in this section will be used to send information to configured topic when server side attributes on ThingsBoard platform instance will change.
+
+| **Parameter**                 | **Default value**                                     | **Description**                                                                                    |
+|:-|:-|-
+| deviceNameFilter              | **SmartMeter.\***                                     | Regular expression device name filter, uses to determine, which function to execute.               |
+| attributeFilter               | **uploadFrequency**                                   | Regular expression attribute name filter, uses to determine, which function to execute.            |
+| topicExpression               | **sensor/${deviceName}/${attributeKey}**              | JSON-path expression uses for creating topic address to send a message.                            |
+| valueExpression               | **{\\"${attributeKey}\\":\\"${attributeValue}\\"}**   | JSON-path expression uses for creating the message data that will send to topic.                   |
+|---
+
+
+This section in configuration file looks like:
+
+```json
+  "attributeUpdates": [
+    {
+      "deviceNameFilter": "SmartMeter.*",
+      "attributeFilter": "uploadFrequency",
+      "topicExpression": "sensor/${deviceName}/${attributeKey}",
+      "valueExpression": "{\"${attributeKey}\":\"${attributeValue}\"}"
+    }
+  ]
+```
+
+### Section "serverSideRpc"
+This configuration section is optional.  
+Configuration, provided in this section uses for sending RPC requests to device.
+
+| **Parameter**                 | **Default value**                                                 | **Description**                                                                                                           |
+|:-|:-|-
+| deviceNameFilter              | **SmartMeter.\***                                                 | Regular expression device name filter, uses to determine, which function to execute.                                      |
+| methodFilter                  | **echo**                                                          | Regular expression method name filter, uses to determine, which function to execute.                                      |
+| requestTopicExpression        | **sensor/${deviceName}/request/${methodName}/${requestId}**       | JSON-path expression, uses for creating topic address to send RPC request.                                                |
+| responseTopicExpression       | **sensor/${deviceName}/response/${methodName}/${requestId}**      | JSON-path expression, uses for creating topic address to subscribe for response message.                                  |
+| responseTimeout               | **10000**                                                         | Value in milliseconds, if no response in this period after sending request, gateway will unsubscribe from response topic. |
+| valueExpression               | **${params}**                                                     | JSON-path expression, uses for creating data for sending to broker.                                                       |
+|---
+
+{% capture methodFilterOptions %}
+There are 2 options for RPC request:  
+1. **With response** -- If in the configuration exists responseTopicExpression, gateway will try to subscribe on it and wait for response.
+2. **Without response** -- If in the configuration not exists responseTopicExpression, gateway have just send message and won't wait for response.
+{% endcapture %}
+{% include templates/info-banner.md content=methodFilterOptions %}
+
+This section in configuration file looks like:
+
+```json
+  "serverSideRpc": [
+    {
+      "deviceNameFilter": ".*",
+      "methodFilter": "echo",
+      "requestTopicExpression": "sensor/${deviceName}/request/${methodName}/${requestId}",
+      "responseTopicExpression": "sensor/${deviceName}/response/${methodName}/${requestId}",
+      "responseTimeout": 10000,
+      "valueExpression": "${params}"
+    },
+    {
+      "deviceNameFilter": ".*",
+      "methodFilter": "no-reply",
+      "requestTopicExpression": "sensor/${deviceName}/request/${methodName}/${requestId}",
+      "valueExpression": "${params}"
+    }
+  ]
+```
+

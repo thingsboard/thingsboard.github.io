@@ -1,4 +1,4 @@
-In table below described parameters to configure authorization of IoT gateway on ThingsBoard platform.  
+In table below described parameters to configure authorization on mqtt broker .  
 
 |**Parameter**|**Default value**|**Description**|
 |:-|:-|-
@@ -9,9 +9,10 @@ In table below described parameters to configure authorization of IoT gateway on
 
 Security subsection in configuration file will look like this: 
 
-```yaml
-  security:
-    caCert: /etc/thingsboard-gateway/ca.pem
-    privateKey: /etc/thingsboard-gateway/privateKey.pem
-    cert: /etc/thingsboard-gateway/certificate.pem
+```json
+  "security": {
+    "caCert": "/etc/thingsboard-gateway/ca.pem",
+    "privateKey": "/etc/thingsboard-gateway/privateKey.pem",
+    "cert": "/etc/thingsboard-gateway/certificate.pem",
+  }
 ```

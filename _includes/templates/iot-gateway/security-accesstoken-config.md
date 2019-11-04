@@ -8,10 +8,10 @@ open this device and press the "COPY ACCESS TOKEN" button and replace default wi
 
 |**Parameter**|**Default value**|**Description**|
 |:-|:-|-
-| accessToken              | **FUH2Fonov6eajSHi0Zyw**                     | Access token for device from ThingsBoard server.               |
+| accessToken              | **FUH2Fonov6eajSHi0Zyw**                     | Access token for the gateway from ThingsBoard server.|
 |---
 
-Security subsection in configuration file will looks like this: 
+Security subsection in configuration file will look like this: 
 
 ```yaml
 ...
