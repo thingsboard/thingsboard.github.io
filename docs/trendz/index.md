@@ -23,7 +23,7 @@ With Trendz you can:
   
 <div id="video">  
     <div id="video_wrapper">
-        <iframe src="https://www.youtube.com/embed/TwJJbxwQX5k" frameborder="0" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/CDt-B5_JiIs" frameborder="0" allowfullscreen></iframe>
     </div>
 </div>
 
