@@ -24,7 +24,7 @@ Trendz knows what Energy Meters are registered in each building, so energy meter
 
 ![image](/images/trendz/data-grouping-simple.png)
 
-We see total consumption for the lat year. Now let's group data by quarters - add **Date** field with **quarter** type:
+We see total consumption for the last year. Now let's group data by quarters - add **Date** field with **quarter** type:
 
 ![image](/images/trendz/data-grouping-quarter.png)
 

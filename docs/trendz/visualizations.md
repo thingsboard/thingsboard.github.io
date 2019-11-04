@@ -15,7 +15,7 @@ This guide contains a basic description of how to use and configure them.
 
 Before we continue overview of available visualization we need to discuss important topic to understand how data resolved by Trendz:
 ## How Trendz resolve fields from different Business Entities
-Let's assume that we have a Smart Building solution. Our topology contains Buildings, Apartments and different meters Meters that are connected with each other using relations.
+Let's assume that we have a Smart Building solution. Our topology contains Buildings, Apartments and different Meters that are connected with each other using relations.
 Here is how our topology will look like:
 
 ![image](/images/reference/pe-demo/smart-metering-model.png)

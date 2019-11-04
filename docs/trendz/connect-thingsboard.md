@@ -129,7 +129,7 @@ As a result, Trendz will extract and save the collection of Business Entities. Y
 #### Manual Topology rediscovery
 Business Entity does not represent a single Device or Asset, but the query that used for fetching Device/Asset from the ThingsBoard. It means that you do not need to update topology if new Devices Assets with the same type were added on the ThingsBoard.
 
-In case, when new Device/Asset types were added or attribute/telemetry with a new key was created in the ThingsBoard - you should update Topology. 
+When new Device/Asset types were added or attribute/telemetry with a new key was created in the ThingsBoard - you should update Topology. 
 
 
 Manual Topology Rediscovery will scan ThingsBoard again, detect modifications and update collection of Business Entities with required settings. 

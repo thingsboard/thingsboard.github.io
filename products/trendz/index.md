@@ -16,7 +16,7 @@ description:
             <div class="image-block">
                 <div class="image-wrapper">
                     <video poster="/images/trendz/preview/heatmap-preview.png" autoplay="" loop="" preload="auto" muted="">
-                        <source src="https://github.com/vparomskiy/publicData/blob/master/heatmap_v3.webm?raw=true" type="video/webm">                
+                        <source src="https://tb-videos.s3-us-west-1.amazonaws.com/heatmap_v3.webm" type="video/webm">                
                     </video>
                 </div>
             </div>
@@ -37,7 +37,7 @@ description:
             <div class="image-block">
                 <div class="image-wrapper">
                     <video poster="/images/trendz/preview/table-preview.png" autoplay="" loop="" preload="auto" muted="">
-                        <source src="https://github.com/vparomskiy/publicData/blob/master/table_v3.webm?raw=true" type="video/webm">
+                        <source src="https://tb-videos.s3-us-west-1.amazonaws.com/table_v3.webm" type="video/webm">
                     </video>
                 </div>
             </div>
@@ -56,7 +56,7 @@ description:
             <div class="image-block">
                 <div class="image-wrapper">
                     <video poster="/images/trendz/preview/corelation-preview.png" autoplay="" loop="" preload="auto" muted="">
-                        <source src="https://github.com/vparomskiy/publicData/blob/master/corelation_v3.webm?raw=true" type="video/webm">
+                        <source src="https://tb-videos.s3-us-west-1.amazonaws.com/corelation_v3.webm" type="video/webm">
                     </video>
                 </div>
             </div>
