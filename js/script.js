@@ -309,7 +309,6 @@ var tb = (function () {
 	};
 })();
 
-
 // accordion
 (function(){
 	var yah = true;
@@ -353,7 +352,27 @@ var tb = (function () {
 		setTimeout(function () {
 			yah = false;
 		}, 500);
-	});
+
+        window.addEventListener('popstate', onPopStateFaqNode);
+        onPopStateFaqNode();
+
+    });
+
+    function onPopStateFaqNode() {
+        var locationHash = window.location.hash;
+        if (locationHash && locationHash.startsWith('#')) {
+            var nodeId = locationHash.substring(1);
+            openFaqNode(nodeId);
+        }
+    }
+
+    function openFaqNode(nodeId) {
+        var item = $('.pi-accordion div[data-item-id='+nodeId);
+        if (item.length) {
+            tb.openAccordionItem(nodeId);
+            document.getElementById(nodeId).scrollIntoView();
+        }
+    }
 
 	function CollapseBox(container){
 		container.children('.item').each(function(){
