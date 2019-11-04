@@ -150,7 +150,7 @@ File storage<br/> <small>(recommended for more persistent)</small>%,%file%,%temp
  
 |**Parameter**|**Default value**|**Description**|
 |:-|:-|- 
-| name                     | **MQTT Broker Connector**                    | Name of connector to device.                                                    |
+| name                     | **MQTT Broker Connector**                    | Name of connector to broker.                                                    |
 | type                     | **mqtt**                                     | Type of connector, must be like a name of folder, contained configuration file. |
 | configuration            | **mqtt.json**                                | Name of the file with configuration in config folder.*                          |
 |---
@@ -521,3 +521,218 @@ This section in configuration file looks like:
   ]
 ```
 
+## Modbus Connector
+
+This configuration file provides configuration for connecting to a Modbus server and settings for processing data.
+
+<br>
+
+<details>
+
+<summary>
+<b>Example of Modbus Connector config file.</b>
+</summary>
+
+{% highlight json %}
+
+{
+  "server": {
+    "name": "Modbus Default Server",
+    "type": "tcp",
+    "host": "127.0.0.1",
+    "port": 5020,
+    "timeout": 35,
+    "rtuOverTcp": false,
+    "devices": [
+      {
+        "unitId": 1,
+        "deviceName": "Temp Sensor",
+        "attributesPollPeriod": 5000,
+        "timeseriesPollPeriod": 5000,
+        "sendDataOnlyOnChange": true,
+        "attributes": [
+          {
+            "byteOrder": "BIG",
+            "tag": "test",
+            "type": "long",
+            "functionCode": 4,
+            "registerCount": 1,
+            "address": 0
+          }
+        ],
+        "timeseries": [
+          {
+            "byteOrder": "BIG",
+            "tag": "test",
+            "type": "long",
+            "functionCode": 4,
+            "registerCount": 1,
+            "address": 0
+          }
+        ],
+        "rpc": {
+          "turnLightOn": {
+            "address": 4,
+            "bit": 2,
+            "value": true
+          },
+          "turnLightOff": {
+            "address": 4,
+            "bit": 2,
+            "value": false
+          },
+          "getCPULoad": {
+            "tag": "Integer",
+            "value": 42,
+            "functionCode": 16,
+            "address": 0,
+            "unitId": 1,
+            "byteOrder": "BIG",
+            "registerCount": 1
+          }
+        }
+      }
+    ]
+  }
+}
+
+{% endhighlight %}
+
+</details>
+
+### Section "server"
+Configuration in this section uses for connecting to Modbus server.
+\#TODO I need to implement the modbus connector as server or just as client. 
+
+| **Parameter**                 | **Default value**                       | **Description**                                                                       |
+|:-|:-|-
+| name                          | **Modbus Default Server**               | Name of connector to server.                                                          |
+| type                          | **tcp**                                 | Type of connection may be **tcp** or **udp**.                                         |
+| host                          | **127.0.0.1**                           | Hostname or ip address of Modbus server.                                              |
+| port                          | **5020**                                | Port of Modbus server for connect.                                                    |
+| timeout                       | **35**                                  | Timeout in seconds for connecting to Modbus server.                                   |
+| rtuOverTcp                    | **false**                               | Depends on type of connection, may be **rtuOverUdp**, if true then RTU will use.      |
+|---
+
+#### Subsection "devices"
+In this subsection provides array of configurations for devices, which connected to the Modbus server.
+
+##### Parameters of device (object in the subsection "devices")
+This configuration section provides configuration for device connection and data processing from those.
+
+| **Parameter**                 | **Default value**   | **Description**                                                                             |
+|:-|:-|-
+| unitId                        | **1**               | Id of current device on Modbus.                                                             |
+| deviceName                    | **Temp Sensor**     | Name of the current device                                                                  |
+| attributesPollPeriod          | **5000**            | Period in milliseconds for check the attributes on device.                                  |
+| timeseriesPollPeriod          | **5000**            | Period in milliseconds for check the telemetry on device.                                   |
+| sendDataOnlyOnChange          | **true**            | Sending only if data changed from last check, if no -- data will send after every check     |
+|---
+
+This part of configuration will look like:
+
+```json
+    "devices": [
+      {
+        "unitId": 1,
+        "deviceName": "Temp Sensor",
+        "attributesPollPeriod": 5000,
+        "timeseriesPollPeriod": 5000,
+        "sendDataOnlyOnChange": true,
+```
+
+###### Subsection attributes
+Configuration in this subsection provides settings for processing data on Modbus server, which will be interpreted in ThingsBoard platform instance as attribute of device.
+
+| **Parameter** | **Default value**   | **Description**                                                         |
+|:-|:-|-
+| byteOrder     | **BIG**      | Order of bytes to read.                                                        |
+| tag           | **test**     | Tag, which will use as attribute key for ThingsBoard platform instance.        |
+| type          | **long**     | Type of data. (long, int, string, double, bit)                                 |
+| functionCode  | **4**        | Function to use in processing data. Based on Modbus standard.                  |
+| registerCount | **1**        | Count of registers to read.                                                    |
+| address       | **0**        | Register address to check.                                                     |
+|---
+
+This part of configuration will look like:
+
+```json
+        "attributes": [
+          {
+            "byteOrder": "BIG",
+            "tag": "test",
+            "type": "long",
+            "functionCode": 4,
+            "registerCount": 1,
+            "address": 0
+          }
+        ],
+```
+
+###### Subsection "timeseries"
+Configuration in this subsection provides settings for processing data on Modbus server, which will be interpreted in ThingsBoard platform instance as telemetry of device.
+
+| **Parameter** | **Default value**   | **Description**                                                         |
+|:-|:-|-
+| byteOrder     | **BIG**      | Order of bytes to read.                                                        |
+| tag           | **test**     | Tag, which will use as attribute key for ThingsBoard platform instance.        |
+| type          | **long**     | Type of data. (long, int, string, double, bit)                                 |
+| functionCode  | **4**        | Function to use in processing data. Based on Modbus standard.                  |
+| registerCount | **1**        | Count of registers to read.                                                    |
+| address       | **0**        | Register address to check.                                                     |
+|---
+
+This part of configuration will look like:
+
+```json
+        "timeseries": [
+          {
+            "byteOrder": "BIG",
+            "tag": "test",
+            "type": "long",
+            "functionCode": 4,
+            "registerCount": 1,
+            "address": 0
+          }
+        ],
+```
+
+###### Subsection "rpc"
+Configuration in this subsection provides settings for RPC requests from ThingsBoard platform instance to device.
+
+| **Parameter** | **Default value**   | **Description**                                                         |
+|:-|:-|-
+| turnLightOn   |              | Name of RPC function.                                                          |
+| address       | **4**     | Register address to set.        |
+| bit           | **2**     | Bit address to set.                                 |
+| value         | **true**        | Function to use in processing data. Based on Modbus standard.                  |
+| registerCount | **1**        | Count of registers to read.                                                    |
+| address       | **0**        | Bit address to check.                                                          |
+|---
+
+```json
+        "rpc": {
+          "turnLightOn": {
+            "address": 4,
+            "bit": 2,
+            "value": true
+          },
+          "turnLightOff": {
+            "address": 4,
+            "bit": 2,
+            "value": false
+          },
+          "getCPULoad": {
+            "tag": "Integer",
+            "value": 42,
+            "functionCode": 16,
+            "address": 0,
+            "unitId": 1,
+            "byteOrder": "BIG",
+            "registerCount": 1
+          }
+        }
+      }
+```
+
+## OPC-UA Connector
