@@ -1,77 +1,95 @@
-[{
+[
+  {
     "type": "hardware",
     "program": "",
     "name": "Espressif Systems",
     "logo": "espressif.svg",
     "links": {
-        "Site": {
-            "href": "https://www.espressif.com/",
-            "target": "_blank"
-        },
-        "Integration guide": {
-            "href": "/docs/samples/esp32/gpio-control-pico-kit-dht22-sensor/"
-        }
+      "Site": {
+        "href": "https://www.espressif.com/",
+        "target": "_blank"
+      },
+      "Integration guide": {
+        "href": "/docs/samples/esp32/gpio-control-pico-kit-dht22-sensor/"
+      }
     },
     "blurb": "Espressif Systems designs a range of high-performance Wi-Fi+Bluetooth/BLE chipsets and modules."
-},
-{
+  },
+  {
     "type": "hardware",
     "program": "",
     "name": "SODAQ",
     "logo": "sodaq.jpg",
     "links": {
-        "Site": {
-            "href": "https://sodaq.com/",
-            "target": "_blank"
-        },
-        "Integration guide": {
-            "href": "/docs/user-guide/integrations/sodaq/"
-        }
+      "Site": {
+        "href": "https://sodaq.com/",
+        "target": "_blank"
+      },
+      "Integration guide": {
+        "href": "/docs/user-guide/integrations/sodaq/"
+      }
     },
     "blurb": "What drives us is the passion to create scalable electronics solutions that work anywhere. We have implemented projects throughout developing countries, from Peru to Sri Lanka, and we will continue working where we can have the highest impact."
-},
-{
+  },
+  {
     "type": "hardware",
     "program": "",
     "name": "TEKTELIC Communications Inc.",
     "logo": "tektelic.png",
     "links": {
-        "Site": {
-            "href": "https://tektelic.com/",
-            "target": "_blank"
-        }
+      "Site": {
+        "href": "https://tektelic.com/",
+        "target": "_blank"
+      }
     },
     "blurb": "TEKTELIC is a leading supplier of LoRaWAN IoT equipment including best-in-class gateways and end devices."
-},
-{
+  },
+  {
     "type": "hardware",
     "program": "",
     "name": "Nettra",
     "logo": "nettra.png",
     "links": {
-        "Site": {
-            "href": "http://nettra.tech/",
-            "target": "_blank"
-        },
-        "Integration guide": {
-            "href": "/docs/samples/nettrartu+/rtu_temp_sensor/"
-        }
+      "Site": {
+        "href": "http://nettra.tech/",
+        "target": "_blank"
+      },
+      "Integration guide": {
+        "href": "/docs/samples/nettrartu+/rtu_temp_sensor/"
+      }
     },
     "blurb": "We provide comprehensive hardware and software IoT solutions"
-},
-{
+  },
+  {
+    "type": "hardware",
+    "program": "",
+    "name": "Abeeway",
+    "logo": "abeeway.png",
+    "links": {
+      "Site": {
+        "href": "https://www.abeeway.com/",
+        "target": "_blank"
+      },
+      "Integration guide": {
+        "href": "/docs/samples/abeeway/tracker"
+      }
+    },
+    "blurb": "Abeeway is  a market leader in tracking devices offering on-demand geolocation, movement alerts or geofencing. These trackers use GPS signals to determine their location, but with energy-efficient LoRaWAN communication to pass that location to a tracking application, so in comparison with trackers using cellular networks, they offer much longer battery life."
+  },
+  {
     "type": "hardware",
     "program": "",
     "name": "Seeed Technology Co.,Ltd.",
     "logo": "seeed.png",
     "links": {
-        "Site": {
-            "href": "https://www.seeedstudio.com/",
-            "target": "_blank"
-        },
-        "Integration guide": {
-            "href": "/docs/samples/raspberry/grove/"
-        }
+      "Site": {
+        "href": "https://www.seeedstudio.com/",
+        "target": "_blank"
+      },
+      "Integration guide": {
+        "href": "/docs/samples/raspberry/grove/"
+      }
     },
     "blurb": "Whether you are a developer, technical supplier, or industry player, we provide products and services for your IoT needs."
-}]
+  }
+]
