@@ -124,7 +124,9 @@ connectors:
 Access Token<small>Recommended as easier to configure</small>%,%accessToken%,%templates/iot-gateway/security-accesstoken-config.md%br%
 TLS<small>recommended as more safety</small>%,%tls%,%templates/iot-gateway/security-tls-config.md{% endcapture %}
 
-There are 2 variants of security subsection - accessToken or TLS.
+There are 2 variants of security subsection:
+1. accessToken
+2. TLS
 
 {% include content-toggle.html content-toggle-id="securityConfig" toggle-spec=securitytogglespec %}
 
@@ -155,9 +157,9 @@ File storage<br/> <small>(recommended for more persistent)</small>%,%file%,%temp
 | configuration            | **mqtt.json**                                | Name of the file with configuration in config folder.*                          |
 |---
 
-\* -- Folder with this configuration file.
+\* -- Folder with this configuration file.  
 
-Section connectors in your configuration file may differ from shown below, but they should have structure like this:
+Section connectors in your configuration file may differ from shown below, but they should have structure like this:  
 
 ```yaml
 connectors:
@@ -181,11 +183,11 @@ If you need different type of connector, please email us: <info@thingsboard.io>.
 
 # Connectors
 
-There are few connectors implemented:
+There are few connectors implemented:  
 
-1. MQTT Connector
-2. Modbus Connector
-3. OPC-UA Connector
+1. MQTT Connector  
+2. Modbus Connector  
+3. OPC-UA Connector  
 
 ## MQTT Connector
 
@@ -376,8 +378,8 @@ Types of mqtt converters:
 2. custom -- Custom converter (You can write it by yourself, and it will use to convert incoming data from the broker.) 
 
 {% capture mqttconvertertypespec %}
-json<small>Recommended as easier to configure</small>%,%accessToken%,%templates/iot-gateway/mqtt-converter-json-config.md%br%
-custom<small>recommended as more safety</small>%,%tls%,%templates/iot-gateway/mqtt-converter-custom-config.md{% endcapture %}
+json<small>Recommended as easier to configure</small>%,%json%,%templates/iot-gateway/mqtt-converter-json-config.md%br%
+custom<small>recommended as more safety</small>%,%custom%,%templates/iot-gateway/mqtt-converter-custom-config.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="MqttConverterTypeConfig" toggle-spec=mqttconvertertypespec %}
 
@@ -403,7 +405,7 @@ There are 2 options for this block configuration, depending on where gateway sho
 | deviceNameTopicExpression     | **(?<=sensor\/)(.\*?)(?=\/connect)**  | Regular expression for looking the device name in topic path.                                     |
 |---
 
-This section in configuration looks like:
+This section in configuration looks like:  
 ```json
   "connectRequests": [
     {
@@ -439,7 +441,7 @@ There are 2 options for this block configuration, depending on where gateway sho
 | deviceNameTopicExpression     | **(?<=sensor\/)(.\*?)(?=\/connect)**  | Regular expression for looking the device name in topic path.                                     |
 |---
 
-This section in configuration file looks like:
+This section in configuration file looks like:  
 ```json
   "disconnectRequests": [
     {
@@ -466,7 +468,7 @@ Configuration, provided in this section will be used to send information to conf
 |---
 
 
-This section in configuration file looks like:
+This section in configuration file looks like:  
 
 ```json
   "attributeUpdates": [
@@ -494,13 +496,14 @@ Configuration, provided in this section uses for sending RPC requests to device.
 |---
 
 {% capture methodFilterOptions %}
+<br>
 There are 2 options for RPC request:  
 1. **With response** -- If in the configuration exists responseTopicExpression, gateway will try to subscribe on it and wait for response.
 2. **Without response** -- If in the configuration not exists responseTopicExpression, gateway have just send message and won't wait for response.
 {% endcapture %}
 {% include templates/info-banner.md content=methodFilterOptions %}
 
-This section in configuration file looks like:
+This section in configuration file looks like:  
 
 ```json
   "serverSideRpc": [
@@ -601,8 +604,7 @@ This configuration file provides configuration for connecting to a Modbus server
 </details>
 
 ### Section "server"
-Configuration in this section uses for connecting to Modbus server.
-\#TODO I need to implement the modbus connector as server or just as client. 
+Configuration in this section uses for connecting to Modbus server.  
 
 | **Parameter**                 | **Default value**                       | **Description**                                                                       |
 |:-|:-|-
@@ -629,7 +631,7 @@ This configuration section provides configuration for device connection and data
 | sendDataOnlyOnChange          | **true**            | Sending only if data changed from last check, if no -- data will send after every check     |
 |---
 
-This part of configuration will look like:
+This part of configuration will look like:  
 
 ```json
     "devices": [
@@ -648,13 +650,13 @@ Configuration in this subsection provides settings for processing data on Modbus
 |:-|:-|-
 | byteOrder     | **BIG**      | Order of bytes to read.                                                        |
 | tag           | **test**     | Tag, which will use as attribute key for ThingsBoard platform instance.        |
-| type          | **long**     | Type of data. (long, int, string, double, bit)                                 |
+| type          | **long**     | Type of value. (**long**, **integer**, **string**, **double**, **bit**)        |
 | functionCode  | **4**        | Function to use in processing data. Based on Modbus standard.                  |
 | registerCount | **1**        | Count of registers to read.                                                    |
 | address       | **0**        | Register address to check.                                                     |
 |---
 
-This part of configuration will look like:
+This part of configuration will look like:  
 
 ```json
         "attributes": [
@@ -676,13 +678,13 @@ Configuration in this subsection provides settings for processing data on Modbus
 |:-|:-|-
 | byteOrder     | **BIG**      | Order of bytes to read.                                                        |
 | tag           | **test**     | Tag, which will use as attribute key for ThingsBoard platform instance.        |
-| type          | **long**     | Type of data. (long, int, string, double, bit)                                 |
+| type          | **long**     | Type of value. (**long**, **integer**, **string**, **double**, **bit**)        |
 | functionCode  | **4**        | Function to use in processing data. Based on Modbus standard.                  |
 | registerCount | **1**        | Count of registers to read.                                                    |
 | address       | **0**        | Register address to check.                                                     |
 |---
 
-This part of configuration will look like:
+This part of configuration will look like:  
 
 ```json
         "timeseries": [
@@ -700,15 +702,19 @@ This part of configuration will look like:
 ###### Subsection "rpc"
 Configuration in this subsection provides settings for RPC requests from ThingsBoard platform instance to device.
 
-| **Parameter** | **Default value**   | **Description**                                                         |
+| **Parameter** | **Default value**     | **Description**                                                         |
 |:-|:-|-
-| turnLightOn   |              | Name of RPC function.                                                          |
-| address       | **4**     | Register address to set.        |
-| bit           | **2**     | Bit address to set.                                 |
-| value         | **true**        | Function to use in processing data. Based on Modbus standard.                  |
-| registerCount | **1**        | Count of registers to read.                                                    |
-| address       | **0**        | Bit address to check.                                                          |
+| turnLightOn   |                       | Name of RPC function. Can be different (Variants provided below.)       |
+| address       | **4**                 | Register address to set/read.                                           |
+| bit           | **2**                 | Bit address to set/read.                                                |
+| value         | **true**              | The value will be written to register.                                  |
+| registerCount | **1**                 | Count of registers to set/read.                                         |
+| unitId        | **1**                 | Identifier of the device unit, on which rpc request will be executed.   |
+| byteOrder     | **BIG**               | Byte order, for value, that will be written to register.                |
+| tag           | **Integer**           | Type of value. (**long**, **integer**, **string**, **double**, **bit**) |
 |---
+
+This part of configuration will look like:  
 
 ```json
         "rpc": {
@@ -735,4 +741,198 @@ Configuration in this subsection provides settings for RPC requests from ThingsB
       }
 ```
 
+{% capture modbusRPCinfo %}
+<br>
+**Parameters in this subsection of the configuration depend on the type of rpc request, you need.**
+{% endcapture %}
+{% include templates/info-banner.md content=modbusRPCinfo %}
+
 ## OPC-UA Connector
+
+This configuration file provides configuration for connecting to an OPC-UA server and settings for processing OPC-UA server data.
+
+<br>
+
+<details>
+
+<summary>
+<b>Example of OPC-UA Connector config file.</b>
+</summary>
+
+{% highlight json %}
+
+{
+  "server": {
+    "name": "OPC-UA Default Server",
+    "url": "localhost:4840/freeopcua/server/",
+    "scanPeriodInMillis": 10000,
+    "timeoutInMillis": 5000,
+    "security": "Basic128Rsa15",
+    "identity": {
+      "type": "anonymous"
+    },
+    "mapping": [
+      {
+        "deviceNodePattern": "MyObject\\d+",
+        "deviceNamePattern": "Device ${MyVariable22}",
+        "attributes": [
+          {
+            "key": "Tag1",
+            "path": "${MyVariable1}"
+          }
+        ],
+        "timeseries": [
+          {
+            "key": "Tag3",
+            "path": "${Tag3}"
+          },
+          {
+            "key": "Tag2",
+            "path": "${MyVariable3}"
+          }
+        ],
+        "rpc_methods": [
+          {
+            "method": "multiply",
+            "arguments": [2, 4]
+          }
+        ],
+        "attributes_updates": [
+          {
+            "attributeOnThingsBoard": "t",
+            "attributeOnDevice": "MyVariable1"
+          }
+        ]
+      }
+    ]
+  }
+}
+
+{% endhighlight %}
+
+</details>
+
+### Section "server"
+
+Configuration in this section uses for connecting to Modbus server.  
+
+| **Parameter**                 | **Default value**                    | **Description**                                                                       |
+|:-|:-|-
+| name                          | **OPC-UA Default Server**            | Name of connector to server.                                                          |
+| host                          | **localhost:4840/freeopcua/server/** | Hostname or ip address of Modbus server.                                              |
+| scanPeriodInMillis            | **10000**                            | Port of Modbus server for connect.                                                    |
+| timeoutInMillis               | **5000**                             | Timeout in seconds for connecting to Modbus server.                                   |
+| security                      | **Basic128Rsa15**                    | Security policy (**Basic128Rsa15**, **Basic256**, **Basic256Sha256**)                 |
+|---
+
+#### Subsection "identity"
+There are several types available for this subsection:  
+1. anonymous  
+2. username  
+3. cert.PEM  
+
+{% capture identityopcuatogglespec %}
+<b>anonymous</b><br/> <small>(recommended if all servers in the local network)</small>%,%anonymous%,%templates/iot-gateway/opcua-identity-anonymous-config.md%br%
+<b>username</b><br/> <small>(recommended as basic level of security)</small>%,%username%,%templates/iot-gateway/opcua-identity-username-config.md%br%
+<b>cert.PEM</b><br/> <small>(recommended as better level of security)</small>%,%certpem%,%templates/iot-gateway/opcua-identity-certpem-config.md%br%{% endcapture %}
+
+{% include content-toggle.html content-toggle-id="opcuaIdentityConfig" toggle-spec=identityopcuatogglespec %}
+
+### Section "mapping"
+This configuration section contains array of nodes that the gateway will subscribe to after connecting to the OPC-UA server and settings about processing data from these nodes.
+
+| **Parameter**                 | **Default value**                    | **Description**                                                                       |
+|:-|:-|-
+| deviceNodePattern             | **MyObject\\d+**                     | Regular expression, uses for looking the node for a current device.                   |
+| deviceNamePattern             | **Device ${MyVariable22}**           | JSON-path expression, uses for looking the device name in some variable.              |
+|---
+
+This part of configuration will look like:  
+
+```json
+        "deviceNodePattern": "MyObject\\d+",
+        "deviceNamePattern": "Device ${MyVariable22}",
+```
+
+***Optionally, you can add in this section parameter "converter" for using custom converter.***
+
+#### Subsection "attributes"
+This subsection contains configurations for variables of the object, that will be interpreted as attributes for the device.
+
+| **Parameter**   | **Default value**           | **Description**                                                                   |
+|:-|:-|-
+| key             | **Tag1**                    | Tag, that will interpreted as attribute for ThingsBoard platform instance.        |
+| path            | **${MyVariable}**           | JSON-path expression, uses for looking the value in some variable.                |
+|---
+
+This part of configuration will look like:  
+
+```json
+        "attributes": [
+          {
+            "key": "Tag1",
+            "path": "${MyVariable1}"
+          }
+        ],
+```
+
+#### Subsection "timeseries"
+This subsection contains configurations for variables of the object, that will be interpreted as telemetry for the device.
+
+| **Parameter**   | **Default value**           | **Description**                                                                   |
+|:-|:-|-
+| key             | **Tag1**                    | Tag, that will interpreted as telemetry for ThingsBoard platform instance.        |
+| path            | **${MyVariable}**           | JSON-path expression, uses for looking the value in some variable.                |
+|---
+
+This part of configuration will look like:  
+
+```json
+        "timeseries": [
+          {
+            "key": "Tag3",
+            "path": "${Tag3}"
+          }
+        ],
+```
+
+#### Subsection "rpc_methods"
+This subsection contains configuration for RPC request from ThingsBoard platform instance.
+
+| **Parameter**         | **Default value**                 | **Description**                                                                                    |
+|:-|:-|-
+| method                | **multiply**                      | Name of method on OPC-UA server.                                                                   |
+| arguments             | **[2,4]**                         | Arguments for the method (if this parameter doesn't exist, arguments will take from rpc request). |
+|---
+
+This part of configuration will look like:  
+
+```json
+        "rpc_methods": [
+          {
+            "method": "multiply",
+            "arguments": [2, 4]
+          }
+        ],
+```
+
+
+#### Subsection "attributes_updates"
+This subsection contains configuration for RPC request from ThingsBoard platform instance.
+
+| **Parameter**             | **Default value**                 | **Description**                                                                               |
+|:-|:-|-
+| attributeOnThingsBoard    | **t**                             | Name of server side argument.                                                                 |
+| attributeOnDevice         | **MyVariable1**                   | Name of variable that will change itself value with a value from attribute update request.    |
+|---
+
+This part of configuration will look like:  
+
+```json
+        "attributes_updates": [
+          {
+            "attributeOnThingsBoard": "t",
+            "attributeOnDevice": "MyVariable1"
+          }
+        ]
+```
