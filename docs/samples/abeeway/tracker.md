@@ -9,7 +9,7 @@ hidetoc: "true"
 {% assign feature = "Platform Integrations" %}{% include templates/pe-feature-banner.md %}
 
 This guide provides step-by-step instructions for connecting the Abeeway Micro Track and Abeeway Industrial Tracker to ThingsBoard Professional Edition (PE).
-The connection is through the Iot network in the new global standard LoRaWAN and ThingPark Wireless OSS intelligent logger (Actility).
+The connection is through the IoT network in the new global standard LoRaWAN and ThingPark Wireless OSS intelligent logger (Actility).
 In this guide, we will use the free ThingsBoard PE demo server [cloud.thingsboard.io](https://cloud.thingsboard.io/signup) in this guide. 
 This guide will be useful to anyone who wants to connect their tracker`s manufactured by Abeeway or another industrial IoT application to the LoRaWAN network.
 
@@ -18,7 +18,7 @@ This guide will be useful to anyone who wants to connect their tracker`s manufac
 
 ## Prerequisites 
 
-We assume you have at least one of SODAQ NB-IoT Trackers in your lab that is already connected to your T-Mobile IoT network. 
+We assume you have at least one of Abeeway Micro Track and Abeeway Industrial Tracker  in your lab that is already connected  with ACTILITY THINGPARK IoT NETWORK. 
 We also assume you already have a ThingsBoard PE server or free demo account. 
 Otherwise you can register for a 30-days free demo account here: [cloud.thingsboard.io](https://cloud.thingsboard.io/signup).
 
@@ -27,12 +27,139 @@ We expect you to have a very basic knowledge about ThingsBoard, so we do recomme
 ## Integration overview
 
 ThingsBoard Platform Integrations feature allows to push data from various platforms and connectivity solutions to ThingsBoard. 
-We will use "T-Mobile IoT CDP" platform integration to consume data from T-Mobile NB IoT Network and automatically register devices in ThingsBoard.
+We will use platform ThingPark Wireless companies Actility to consume data fromLoRaWAN networks and automatically register devices in ThingsBoard.
 Besides configuring the integration, we will also setup ThingsBoard to decode incoming data, store it in the database, visualize on the dashboard and generate alarms based on configurable thresholds.
 
-<img data-gifffer="/images/user-guide/integrations/sodaq/demo-dashboard.gif" />
+![image](/images/samples/abeeway/dashboard_demo.png)
 
-## Step 1. Data Converter configuration
+
+## Step 1. Add new divice
+
+![image](/images/samples/abeeway/add_device.png)
+
+## Step 2. Creature UpLink and DownLink DATA Converters
+
+![image](/images/samples/abeeway/add_uplink_decoder.png)
+
+![image](/images/samples/abeeway/add_downlink_decoder.png)
+
+## Step 3. UpLink Data Converter configuration
+
+![image](/images/samples/abeeway/uplink_decoder_input.png)
+
+![image](/images/samples/abeeway/uplink_decoder_output.png)
+
+![image](/iimages/samples/abeeway/uplink_decoder.png)
+
+## Step 4. Integration configuration
+
+![image](/images/samples/abeeway/create_integration_1.png)
+
+![image](/images/samples/abeeway/create_integration_2.png)
+
+
+## Step 5. Creature  and  configuration Dashboard 
+
+![image](/images/samples/abeeway/dashboard_create.png)
+
+![image](/iimages/samples/abeeway/dashboard_config_01.png)
+
+## Step 6: Post telemetry and verify the Integration configuration
+
+
+![image](/images/samples/abeeway/integration_events.png)
+
+![image](/images/samples/abeeway/integration_latest_telemetry.png)
+
+## Step 7. DownLink Data Converter configuration
+
+
+### Step 7.1 Configuring the Rule Chain
+#### Downlink messages
+##### Examples Update configuration Abeeway Micro Track and Abeeway Industrial Tracker
+
+###### Position on demand
+
+Mode: operating modes. Acceptable values are:
+
+➢ 0- Standby
+
+➢ 1- Motion tracking
+
+➢ 2- Permanent tracking
+
+➢ 3- Motion start/end tracking
+
+➢ 4- Activity tracking
+
+➢ 5- Off mode
+
+{% highlight bash %}
+{
+    "method": "POST",
+    "header": [
+        {
+            "key": "Content-Type",
+            "value": "application/json"
+        },
+        {
+            "key": "Accept",
+            "value": "application/json"
+        },
+        {
+            "key": "Authorization",
+            "value": "Bearer {{token_Actilty}}",
+        }
+    ],     
+    body: {  
+      "payloadHex": "0102",
+      "targetPorts": "11",
+        "securityParams": {
+        "asId": "TWA_100038328.39972.AS",
+        "creationTime": "2019-10-29T10:26:45+02:00",
+        "asKey": "6c58202a09252d72093163fe4439f623"
+      }
+    }
+}
+{% endhighlight %}
+
+###### Operational mode configuration
+
+{% highlight bash %}
+{... 
+      "payloadHex": "0203", ...
+}
+{% endhighlight %}
+
+###### Request device configuration
+
+{% highlight bash %}
+{... 
+      "payloadHex": "030605090C01", ...
+}
+{% endhighlight %}
+
+* "05" - "geoloc_sensor",
+* "09" - "gps_timeout",
+* "0C" - "gps_convergence", 
+* "01" - "lora_period"
+
+Special parameter Id:
+
+* 0xFD: get the BLE version.
+* 0xFE: get the firmware version.
+
+###### RParameters configuration
+
+
+{% highlight bash %}
+{... 
+      "payloadHex": "0B0A0C000000781100000E10", ...
+}
+{% endhighlight %}
+
+* "0C00000078" - 0C - gps_convergence, 0x78 - value (sec), 
+* "1100000E10" - 11 - gps_standby_timeout. 0xE10 - value (sec).
 
 In order to create an [Integration](/docs/user-guide/integrations), we should create the [Uplink Data Converter](/docs/user-guide/integrations/#uplink-data-converter) first. 
 The converter will decode incoming telemetry payload data from T-Mobile NB IoT that contains in encoded hex string to human readable, simplified ThingsBoard data format.
@@ -51,7 +178,7 @@ The converter will decode incoming telemetry payload data from T-Mobile NB IoT t
 }
 {% endhighlight %}
 
- - After decoding output data will look like this:
+ - After decoding output data will look like this:Creature UpLink and DownLink DATA Converters
 
 {% highlight bash %}
 {
@@ -142,7 +269,7 @@ Few things to notice:
 as described on the following screencast: 
 
 <img data-gifffer="/images/user-guide/integrations/sodaq/import-and-test-converter.gif" />
-
+dashboard 
 ## Step 2. Integration configuration
 
 - Create new integration and copy-paste the HTTP Endpoint URL from the integration window based on the screencast below: 
