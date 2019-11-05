@@ -120,7 +120,8 @@ description: ThingsBoard Products Pricing
                                 onClick="getLicense(event,
                                 false,
                                 '20be6f50-a18e-11e9-8e16-03828ff5271c',
-                                '7ef31a80-a18e-11e9-8e16-03828ff5271c')">
+                                '7ef31a80-a18e-11e9-8e16-03828ff5271c',
+                                'Maker')">
                                 Get your license
                             </a>
                             <div class="pricing-square-item" data-faq-id="community-support">
@@ -148,7 +149,8 @@ description: ThingsBoard Products Pricing
                                 onClick="getLicense(event,
                                 false,
                                 '20be6f50-a18e-11e9-8e16-03828ff5271c',
-                                '0e236dc0-a196-11e9-8e16-03828ff5271c')">
+                                '0e236dc0-a196-11e9-8e16-03828ff5271c',
+                                'Prototype')">
                                 Get your license
                             </a>
                             <div class="pricing-square-item" data-faq-id="community-support">
@@ -176,7 +178,8 @@ description: ThingsBoard Products Pricing
                                 onClick="getLicense(event,
                                 false,
                                 '20be6f50-a18e-11e9-8e16-03828ff5271c',
-                                '8ac6d190-a197-11e9-8e16-03828ff5271c')">
+                                '8ac6d190-a197-11e9-8e16-03828ff5271c',
+                                'Startup')">
                                 Get your license
                             </a>
                             <div class="pricing-square-item" data-faq-id="subscription-support">
@@ -204,7 +207,8 @@ description: ThingsBoard Products Pricing
                                 onClick="getLicense(event,
                                 false,
                                 '20be6f50-a18e-11e9-8e16-03828ff5271c',
-                                'd82185c0-a197-11e9-8e16-03828ff5271c')">
+                                'd82185c0-a197-11e9-8e16-03828ff5271c',
+                                'Business')">
                                 Get your license
                             </a>
                             <div class="pricing-square-item" data-faq-id="subscription-support">
@@ -232,7 +236,8 @@ description: ThingsBoard Products Pricing
                                 onClick="getLicense(event,
                                 false,
                                 '20be6f50-a18e-11e9-8e16-03828ff5271c',
-                                '34530df0-a198-11e9-8e16-03828ff5271c')">
+                                '34530df0-a198-11e9-8e16-03828ff5271c',
+                                'Enterprise')">
                                 Get your license
                             </a>
                             <div class="pricing-square-item" data-faq-id="subscription-support">
@@ -269,7 +274,8 @@ description: ThingsBoard Products Pricing
                                 onClick="getLicense(event,
                                 true,
                                 '90b6c9b0-a198-11e9-8e16-03828ff5271c',
-                                '4c711b60-a199-11e9-8e16-03828ff5271c')">
+                                '4c711b60-a199-11e9-8e16-03828ff5271c',
+                                'Perpetual')">
                                 Get your license
                             </a>
                             <div class="pricing-square-item" data-faq-id="subscription-support">

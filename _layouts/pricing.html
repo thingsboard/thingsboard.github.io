@@ -58,7 +58,7 @@
         $("section.pricing-content#"+sectionId).css("display", "block");
     }
 
-    function getLicense(event, isPerpetual, productId, planId, coupon) {
+    function getLicense(event, isPerpetual, productId, planId, productName, coupon) {
         event.preventDefault();
         var e = $(event.target);
         var url = "https://license.thingsboard.io/signup?createSubscription=true&perpetual=";
@@ -72,7 +72,16 @@
         if (coupon) {
             url += "&coupon="+coupon;
         }
+
+        reportPriceLink(url, productName + '/' + productId);
         window.open(url, "_blank");
+    }
+
+    function reportPriceLink(link, product) {
+        if (!ga.hasOwnProperty("loaded") || ga.loaded !== true || !link || !product) {
+            return;
+        }
+        ga("send", "event", "PriceLink", product, link);
     }
 
     function openPricingFaqNode(nodeId) {
