@@ -339,7 +339,7 @@ If your devices are active and you do everything correctly when you connect the 
 
 ## Step 8 Configuring the Rule Chain
 
-#### Downlink messages
+## Information to create Downlink messages
 
 These messages are sent from the server to the tracker through the LoRa network. They are used to either
 configure or manage the tracker. Each message contains a header including:
