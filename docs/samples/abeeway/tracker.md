@@ -22,7 +22,7 @@ We assume you have at least one of Abeeway Micro Track and Abeeway Industrial Tr
 We also assume you already have a ThingsBoard PE server or free demo account. 
 Otherwise you can register for a 30-days free demo account here: [cloud.thingsboard.io](https://cloud.thingsboard.io/signup).
 
-We expect you to have a very basic knowledge about ThingsBoard, so we do recommend to complete the [Getting Started](/docs/getting-started-guides/helloworld/) guide.
+We expect you to have a very basic knowledge about ThingsBoard, so we do recommend to complete the [Getting Started](/docs/getting-started-guides/helloworld) guide.
  
 ## Integration overview
 
