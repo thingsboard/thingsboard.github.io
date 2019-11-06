@@ -317,9 +317,43 @@ Input data from ThingPark Wireless OSS intelligent logger (Actility) Platform lo
 
 ## Step 5. Creature  and  configuration Dashboard
 
-![image](/images/samples/abeeway/dashboard_create.png)
+### Creature Dashboard
 
-![image](/images/samples/abeeway/dashboard_config_01.png)
+![image](/images/samples/abeeway/dashboard_create_01.png)
+
+#### open Dashboard to add:
+
+##### alias (Entity_list.Device.{{DevEUI_1}, DevEUI_2}, DevEUI_3}...} )
+
+![image](/images/samples/abeeway/alias_create.png)
+
+##### alias (DigEntityFrom.Entity from dashboard state.Device
+
+![image](/images/samples/abeeway/widget_create_cards.png)
+
+* new widgets:
+
+1. Cards.Entity_tabl.Entity.{Name_Entity_list} + Action
+
+![image](/images/samples/abeeway/widget_create_cards.png)
+
+2. Charts.last_value.Data_Source.Entity.{Name_Entity_list}.{key:temperature, ${entityLabel}{
+
+![image](/images/samples/abeeway/widget_create_charts.png)
+
+3. Digital_gages.Data_Source.Entity.{DigEntityFrom}.temperature
+
+![image](/images/samples/abeeway/widget_create_difital.png)
+
+4. Cards.Timeseries_table.Entity.{alias (DigEntityFrom)}.{bataryvoltage,temperature, ...}
+
+![image](/images/samples/abeeway/widget_create_cards_with_value.png)
+
+* config dashbord (add filter):
+
+Widgets Number 1 and Number 2 with alias <b>Entity_list.Device</b>.
+
+Widgets Number 3 and Number 4 with alias <b>DigEntityFrom</b>.
 
 ## Step 6: Post telemetry and verify the Integration configuration
 
