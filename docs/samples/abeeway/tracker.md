@@ -216,20 +216,29 @@ Input data from ThingPark Wireless OSS intelligent logger (Actility) Platform lo
 {% endhighlight %}
 
 #### Common message header
+
  <table style="width: 22%">
    <thead>
        <tr>
-           <td><b>Byte 0</b></td><td><b>Byte 1</b></td><td><b>Byte 2</b></td><td><b>Byte 3</b></td><td><b>Byte 4</b></td><td><b>Data Variable</b></td>
+           <td><b>Byte 0</b></td>
+           <td><b>Byte 1</b></td>
+           <td><b>Byte 2</b></td>
+           <td><b>Byte 3</b></td>
+           <td><b>Byte 4</b></td>
+           <td><b>Data Variable</b></td>
        </tr>
    </thead>
    <tbody>
        <tr>
-           <td>Type</td><td>Status</td><td>Battery</td><td>Temperature</td><td>Ack/opt</td><td>Information</td>
+           <td>Type</td>
+           <td>Status</td>
+           <td>Battery</td>
+           <td>Temperature</td>
+           <td>Ack/opt</td>
+           <td>Information</td>
        </tr>
-       <tr>
-         </tbody>
-        </table> 
-
+    </tbody>
+ </table> 
 
 "payload_hex": "**0500997d3040**"
 
