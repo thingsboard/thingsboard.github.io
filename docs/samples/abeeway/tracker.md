@@ -302,21 +302,36 @@ Input data from ThingPark Wireless OSS intelligent logger (Actility) Platform lo
 
 ## Step 4. Integration configuration
 
-![image](/images/samples/abeeway/create_integration_1.png)
+### Create new integration:
 
-![image](/images/samples/abeeway/create_integration_2.png)
+![image](/images/samples/abeeway/create_integration.png)
+
+ * check of the base URL  
+ * change downLink URL to:
+ https://thingparkenterprise.eu.actility.com/thingpark/dx/core/latest/api/devices
+ *  copy-paste the HTTP Endpoint URL from the integration window based on the screencast below to URL Application Actility.
+
+![image](/images/samples/abeeway/actility_application.png)
 
 ## Step 5. Creature  and  configuration Dashboard 
 
 ![image](/images/samples/abeeway/dashboard_create.png)
 
-![image](/iimages/samples/abeeway/dashboard_config_01.png)
+![image](/images/samples/abeeway/dashboard_config_01.png)
 
 ## Step 6: Post telemetry and verify the Integration configuration
 
-![image](/images/samples/abeeway/integration_events.png)
+Integration settings change log see here
 
 ![image](/images/samples/abeeway/integration_latest_telemetry.png)
+
+A log of incoming messages from from ThingPark Wireless OSS intelligent logger (Actility) Platform see here:
+
+![image](/images/samples/abeeway/integration_events.png)
+
+If your devices are active and you do everything correctly when you connect the ThingPark Wireless OSS intelligent logger (Actility) Platform, then you will see incoming messages to the dashboard you created
+
+![image](/images/samples/abeeway/dashboard_demo.png)
 
 ## Step 7. DownLink Data Converter configuration
 
