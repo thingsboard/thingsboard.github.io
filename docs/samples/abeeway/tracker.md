@@ -233,7 +233,7 @@ Input data from ThingPark Wireless OSS intelligent logger (Actility) Platform lo
            <td>Battery</td>
            <td>Temperature</td>
            <td>Ack/opt</td>
-           <td>Information</td>
+           <td>Data</td>
        </tr>
     </tbody>
  </table> 
@@ -243,27 +243,55 @@ Input data from ThingPark Wireless OSS intelligent logger (Actility) Platform lo
  <table style="width: 22%">
    <thead>
        <tr>
-           <td><b>Field</b></td><td><b>First Byte</b></td><td><b>Byte length</b></td><td><b>Value</b></td><td><b>Description</b></td>
+           <td><b>Field</b></td>
+           <td><b>First Byte</b></td>
+           <td><b>Byte length</b></td>
+           <td><b>Value</b></td>
+           <td><b>Description</b></td>
        </tr>
    </thead>
    <tbody>
        <tr>
-           <td>Type</td><td>0</td><td>1</td><td>0x05</td><td>Heartbeat message</td>
+           <td>Type</td>
+           <td>0</td>
+           <td>1</td>
+           <td>0x05</td>
+           <td>Heartbeat message</td>
        </tr>      
         <tr>
-           <td>Status</td><td>1</td><td>1</td><td>0x00</td><td>Standby</td>
+           <td>Status</td>
+           <td>1</td>
+           <td>1</td>
+           <td>0x00</td>
+           <td>Standby</td>
        </tr>
         <tr>
-           <td>Battery</td><td>2</td><td>1</td><td>0x99</td><td>8.388</td>
+           <td>Battery</td>
+           <td>2</td>
+           <td>1</td>
+           <td>0x99</td>
+           <td>8.388</td>
        </tr>
         <tr>
-           <td>Temperature</td><td>3</td><td>1</td><td>0x7d</td><td>18.5</td>
+           <td>Temperature</td>
+           <td>3</td>
+           <td>1</td>
+           <td>0x7d</td>
+           <td>18.5</td>
        </tr>
         <tr>
-           <td>Ack/opt</td><td>4</td><td>1</td><td>0x30</td><td>3/Optional data (depending on message type. Currently used only for position messages)</td>
+           <td>Ack/opt</td>
+           <td>4</td>
+           <td>1</td>
+           <td>0x30</td>
+           <td>3/Optional data (depending on message type. Currently used only for position messages)</td>
        </tr>
         <tr>
-           <td>Data</td><td>5</td><td>1-22</td><td>0x40</td><td>last_reset_cause</td>
+           <td>Data</td>
+           <td>5</td>
+           <td>1-22</td>
+           <td>0x40</td>
+           <td>last_reset_cause</td>
        </tr>
     </tbody>
  </table> 
@@ -308,7 +336,9 @@ The remaining of the message depends on the message type described in the follow
 <table style="width: 22%">
   <thead>
       <tr>
-          <td><b>Message type</b></td><td><b>ID</b></td><td><b>Description</b></td>
+          <td><b>Message type</b></td><td>
+          <b>ID</b></td><td>
+          <b>Description</b></td>
       </tr>
   </thead>
   <tbody>
@@ -357,27 +387,34 @@ Mode: operating modes. Acceptable values are:
 <table style="width: 22%">
   <thead>
       <tr>
-          <td><b>Mode</b></td><td><b>Value</b>
+          <td><b>Mode</b></td>
+          <td><b>Value</b>
       </tr>
   </thead>
   <tbody>
       <tr>
-          <td>Standby</td><td>0</td>
+          <td>Standby</td>
+          <td>0</td>
       </tr>
       <tr>
-          <td>Motion tracking</td><td>1</td>
+          <td>Motion tracking</td>
+          <td>1</td>
       </tr>
       <tr>
-          <td>Permanent tracking</td><td>2</td>
+          <td>Permanent tracking</td>
+          <td>2</td>
       </tr>
       <tr>
-          <td>Motion start/end tracking</td><td>3</td>
+          <td>Motion start/end tracking</td>
+          <td>3</td>
       </tr>
       <tr>
-          <td>Activity tracking</td><td>4</td>
+          <td>Activity tracking</td>
+          <td>4</td>
       </tr>
       <tr>
-          <td>Off mode</td><td>5</td>
+          <td>Off mode</td>
+          <td>5</td>
       </tr>
    </tbody>
 </table> 
