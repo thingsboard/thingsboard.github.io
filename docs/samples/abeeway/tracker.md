@@ -71,12 +71,14 @@ For this is it necessary:
 #### The tracker supports different types of uplink messages, that are described in following sections:
 
 <table style="width: 22%">
-  <thead>
-      <tr>
-          <td><b>Message type</b></td><td><b>Id</b></td><td><b>Content</b></td>
-      </tr>
-  </thead>
-  <tbody>
+   <thead>
+       <tr>
+           <td><b>Message type</b></td>
+           <td><b>Id</b></td>
+           <td><b>Content</b></td>
+        </tr>
+   </thead>
+   <tbody>
       <tr>
           <td>Frame pending</td>
           <td>0x00</td>
@@ -118,18 +120,17 @@ For this is it necessary:
           <td>Sent when the tracker starts a geolocation</td>
       </tr>
       <tr>
-          <td>Debug message</td>
+          <td>_Debug message</td>
           <td>0xFF</td>
           <td>Internal use only</td>
       </tr>
-   </tbody>
-</table> 
+    </tbody>
+ </table> 
 
-    Note:
-    (1) Activity status message and configuration message share the same identifier. They are differentiated
-    by another field.
-    (2) Only available on FW 1.7-3. Configurable via the config_flag parameter
-
+Note:
+(1) Activity status message and configuration message share the same identifier. They are differentiated
+by another field.
+(2) Only available on FW 1.7-3. Configurable via the config_flag parameter
 
 Input data from ThingPark Wireless OSS intelligent logger (Actility) Platform looks like this:
 
@@ -143,7 +144,7 @@ Input data from ThingPark Wireless OSS intelligent logger (Actility) Platform lo
         "ADRbit": 1,
         "MType": 2,
         "FCntDn": 94,
-        **"payload_hex": "0500997d3040",**
+        "payload_hex": "0500997d3040",
         "mic_hex": "304d48f9",
         "Lrcid": "00000211",
         "LrrRSSI": -63.0,
@@ -184,6 +185,7 @@ Input data from ThingPark Wireless OSS intelligent logger (Actility) Platform lo
 
 * After decoding output data will look like this:
 
+
 {% highlight bash %}
 {
     "deviceName": "20635F00C5000660",
@@ -213,7 +215,7 @@ Input data from ThingPark Wireless OSS intelligent logger (Actility) Platform lo
 }
 {% endhighlight %}
 
-#### Common message header
+### Common message header
 
  <table style="width: 22%">
    <thead>
@@ -257,7 +259,7 @@ Input data from ThingPark Wireless OSS intelligent logger (Actility) Platform lo
            <td>1</td>
            <td>0x05</td>
            <td>Heartbeat message</td>
-       </tr>      
+       </tr>
         <tr>
            <td>Status</td>
            <td>1</td>
@@ -306,14 +308,14 @@ Input data from ThingPark Wireless OSS intelligent logger (Actility) Platform lo
 
 ![image](/images/samples/abeeway/create_integration.png)
 
- * check of the base URL  
+ * check of the base URL
  * change downLink URL to:
  https://thingparkenterprise.eu.actility.com/thingpark/dx/core/latest/api/devices
  *  copy-paste the HTTP Endpoint URL from the integration window based on the screencast below to URL Application Actility.
 
 ![image](/images/samples/abeeway/actility_application.png)
 
-## Step 5. Creature  and  configuration Dashboard 
+## Step 5. Creature  and  configuration Dashboard
 
 ![image](/images/samples/abeeway/dashboard_create.png)
 
