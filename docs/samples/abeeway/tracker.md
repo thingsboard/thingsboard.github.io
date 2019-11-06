@@ -43,8 +43,6 @@ Therefore, when creating a new device, in the <b>Name</b> field, enter the value
 
 ![image](/images/samples/abeeway/actility_device.png)
 
-![image](/images/samples/abeeway/actility_device.png)
-
 ## Step 2. Creature UpLink and DownLink DATA Converters
 In order to create an [Integration](/docs/user-guide/integrations), we should create the [Uplink Data Converter](/docs/user-guide/integrations/#uplink-data-converter) and the [Downlink Data Converter](/docs/user-guide/integrations/#downlink-data-converter) first. 
 The converters will decode incoming telemetry payload data from global standard LoRaWAN that contains in encoded hex string to human readable, simplified ThingsBoard data format.
