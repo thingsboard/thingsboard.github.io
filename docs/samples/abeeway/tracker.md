@@ -69,8 +69,8 @@ For this is it necessary:
     ➢ A specific data part
 
 #### The tracker supports different types of uplink messages, that are described in following sections:
-
-<table style="width: 22%">
+<br/> 
+<table>
    <thead>
        <tr>
            <td><b>Message type</b></td>
@@ -82,7 +82,7 @@ For this is it necessary:
       <tr>
           <td>Frame pending</td>
           <td>0x00</td>
-          <td>This uplink message is sent to trigger the sending. (and speed up the configuration of the tracker) if downlink messages are available on gateway and no other uplink message is on the queue</td>
+          <td>This uplink message is sent to trigger the sending. (and speed up the configuration of the tracker) <br/> if downlink messages are available on gateway and no other uplink message is on the queue</td>
       </tr>
       <tr>
           <td>Position message</td>
@@ -92,7 +92,7 @@ For this is it necessary:
       <tr>
           <td>Energy status message</td>
           <td>0x04</td>
-          <td>Used by the server to estimate the battery level. Contain information related to the power consumption</td>
+          <td>Used by the server to estimate the battery level. Contain information related to the power <br/> consumption</td>
       </tr>
       <tr>
           <td>Heartbeat message</td>
@@ -125,10 +125,10 @@ For this is it necessary:
           <td>Internal use only</td>
       </tr>
     </tbody>
- </table> 
-
+</table>
+<br/> 
 Note:
-(1) Activity status message and configuration message share the same identifier. They are differentiated
+(1) Activity status message and configuration message share the same identifier. <br/> They are differentiated
 by another field.
 (2) Only available on FW 1.7-3. Configurable via the config_flag parameter
 
@@ -217,7 +217,7 @@ Input data from ThingPark Wireless OSS intelligent logger (Actility) Platform lo
 
 ### Common message header
 
- <table style="width: 22%">
+<table>
    <thead>
        <tr>
            <td><b>Byte 0</b></td>
@@ -242,7 +242,7 @@ Input data from ThingPark Wireless OSS intelligent logger (Actility) Platform lo
 
 "payload_hex": "**0500997d3040**"
 
- <table style="width: 22%">
+<table>
    <thead>
        <tr>
            <td><b>Field</b></td>
@@ -296,7 +296,7 @@ Input data from ThingPark Wireless OSS intelligent logger (Actility) Platform lo
            <td>last_reset_cause</td>
        </tr>
     </tbody>
- </table> 
+</table>
 
 ![image](/images/samples/abeeway/uplink_decoder_output.png)
 
@@ -309,9 +309,9 @@ Input data from ThingPark Wireless OSS intelligent logger (Actility) Platform lo
 ![image](/images/samples/abeeway/create_integration.png)
 
  * check of the base URL
- * change downLink URL to:
- https://thingparkenterprise.eu.actility.com/thingpark/dx/core/latest/api/devices
- *  copy-paste the HTTP Endpoint URL from the integration window based on the screencast below to URL Application Actility.
+ * change downLink URL to:<br/> 
+ https://thingparkenterprise.eu.actility.com/thingpark/dx/core/latest/api/devices<br/> 
+ * copy-paste the HTTP Endpoint URL from the integration window based on the screencast below to URL Application Actility.
 
 ![image](/images/samples/abeeway/actility_application.png)
 
@@ -323,7 +323,7 @@ Input data from ThingPark Wireless OSS intelligent logger (Actility) Platform lo
 
 #### open Dashboard to add:
 
-##### alias (Entity_list.Device.{{DevEUI_1}, DevEUI_2}, DevEUI_3}...} )
+##### alias _Entity_list.Device.__DevEUI_1_, DevEUI_2_, DevEUI_3_...__ 
 
 ![image](/images/samples/abeeway/alias_create.png)
 
@@ -365,7 +365,7 @@ A log of incoming messages from from ThingPark Wireless OSS intelligent logger (
 
 ![image](/images/samples/abeeway/integration_events.png)
 
-If your devices are active and you do everything correctly when you connect the ThingPark Wireless OSS intelligent logger (Actility) Platform, then you will see incoming messages to the dashboard you created
+If your devices are active and you do everything correctly when you connect the ThingPark Wireless OSS intelligent <br/> logger (Actility) Platform, then you will see incoming messages to the dashboard you created
 
 ![image](/images/samples/abeeway/dashboard_demo.png)
 
@@ -384,7 +384,7 @@ configure or manage the tracker. Each message contains a header including:
 
 The remaining of the message depends on the message type described in the following table.
 
-<table style="width: 22%">
+<table>
   <thead>
       <tr>
           <td><b>Message type</b></td><td>
@@ -429,13 +429,13 @@ The remaining of the message depends on the message type described in the follow
           <td>Remove BLE bonding. Reset the tracker</td>
       </tr>
     </tbody>
-</table> 
+</table>
 
 ###### Position on demand
 
 Mode: operating modes. Acceptable values are:
 
-<table style="width: 22%">
+<table>
   <thead>
       <tr>
           <td><b>Mode</b></td>
