@@ -30,6 +30,12 @@ ThingsBoard Platform Integrations feature allows to push data from various platf
 We will use platform ThingPark Wireless companies Actility to consume data fromLoRaWAN networks and automatically register devices in ThingsBoard.
 Besides configuring the integration, we will also setup ThingsBoard to decode incoming data, store it in the database, visualize on the dashboard and generate alarms based on configurable thresholds.
 
+<details>
+    <summary>Testing custom image</summary>
+    Turns out you just need to use the <img> tag 
+    <img src="/images/samples/abeeway/dashboard_demo.png">
+</details>
+
 ![image](/images/samples/abeeway/dashboard_demo.png)
 
 ## Step 1. Add new divice
