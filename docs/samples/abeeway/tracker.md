@@ -30,12 +30,6 @@ ThingsBoard Platform Integrations feature allows to push data from various platf
 We will use platform ThingPark Wireless companies Actility to consume data fromLoRaWAN networks and automatically register devices in ThingsBoard.
 Besides configuring the integration, we will also setup ThingsBoard to decode incoming data, store it in the database, visualize on the dashboard and generate alarms based on configurable thresholds.
 
-<details>
-    <summary>Testing custom image</summary>
-    Turns out you just need to use the <img> tag 
-    <img src="/images/samples/abeeway/dashboard_demo.png">
-</details>
-
 ![image](/images/samples/abeeway/dashboard_demo.png)
 
 ## Step 1. Add new divice
@@ -57,7 +51,6 @@ The converters will decode incoming telemetry payload data from global standard 
 
 ![image](/images/samples/abeeway/add_downlink_decoder.png)
 
-
 ## Step 3. UpLink Data Converter configuration
 When creating an Uplink Converter, a default decoder is added to the Decoder section
 
@@ -68,15 +61,16 @@ For this is it necessary:
 [Decoder UpLink](/images/samples/abeeway/upLinkDecoder.txt)
 
 ### Uplink messages
+
     This section describes the payload messages supported by the tracker.
     Unless otherwise specified, all values are transmitted in network byte order (MSB first).
     Each message is composed by:
     ➢ A common header
     ➢ A specific data part
 
-#### The tracker supports different types of uplink messages, that are described in following sections:
-<br/> 
-<table>
+- **The tracker supports different types of uplink messages, that are described in following sections**:
+
+<table style="width: 22%">
    <thead>
        <tr>
            <td><b>Message type</b></td>
@@ -88,7 +82,7 @@ For this is it necessary:
       <tr>
           <td>Frame pending</td>
           <td>0x00</td>
-          <td>This uplink message is sent to trigger the sending. (and speed up the configuration of the tracker) <br/> if downlink messages are available on gateway and no other uplink message is on the queue</td>
+          <td>This uplink message is sent to trigger the sending. (and speed up the configuration of the tracker) if downlink messages are available on gateway and no other uplink message is on the queue</td>
       </tr>
       <tr>
           <td>Position message</td>
@@ -98,7 +92,7 @@ For this is it necessary:
       <tr>
           <td>Energy status message</td>
           <td>0x04</td>
-          <td>Used by the server to estimate the battery level. Contain information related to the power <br/> consumption</td>
+          <td>Used by the server to estimate the battery level. Contain information related to the power consumption</td>
       </tr>
       <tr>
           <td>Heartbeat message</td>
@@ -116,7 +110,7 @@ For this is it necessary:
           <td>Reports the partial or whole configuration of the trackers</td>
       </tr>
       <tr>
-          <td>Shutdown message /td>
+          <td>Shutdown message </td>
           <td>0x09</td>
           <td>Sent when the tracker is set off</td>
       </tr>
@@ -126,16 +120,15 @@ For this is it necessary:
           <td>Sent when the tracker starts a geolocation</td>
       </tr>
       <tr>
-          <td>_Debug message</td>
+          <td>Debug message</td>
           <td>0xFF</td>
           <td>Internal use only</td>
       </tr>
     </tbody>
 </table>
-<br/> 
+
 Note:
-(1) Activity status message and configuration message share the same identifier. <br/> They are differentiated
-by another field.
+(1) Activity status message and configuration message share the same identifier. They are differentiated by another field.
 (2) Only available on FW 1.7-3. Configurable via the config_flag parameter
 
 Input data from ThingPark Wireless OSS intelligent logger (Actility) Platform looks like this:
@@ -189,8 +182,7 @@ Input data from ThingPark Wireless OSS intelligent logger (Actility) Platform lo
 
 ![image](/images/samples/abeeway/uplink_decoder_input.png)
 
-* After decoding output data will look like this:
-
+- ***After decoding output data will look like this:***
 
 {% highlight bash %}
 {
@@ -221,7 +213,7 @@ Input data from ThingPark Wireless OSS intelligent logger (Actility) Platform lo
 }
 {% endhighlight %}
 
-### Common message header
+- **Common message header**
 
 <table>
    <thead>
@@ -246,7 +238,7 @@ Input data from ThingPark Wireless OSS intelligent logger (Actility) Platform lo
     </tbody>
  </table> 
 
-"payload_hex": "**0500997d3040**"
+***"payload_hex": "**0500997d3040**"***
 
 <table>
    <thead>
@@ -272,28 +264,28 @@ Input data from ThingPark Wireless OSS intelligent logger (Actility) Platform lo
            <td>1</td>
            <td>0x00</td>
            <td>Standby</td>
-       </tr>
+        </tr>
         <tr>
            <td>Battery</td>
            <td>2</td>
            <td>1</td>
            <td>0x99</td>
            <td>8.388</td>
-       </tr>
+        </tr>
         <tr>
            <td>Temperature</td>
            <td>3</td>
            <td>1</td>
            <td>0x7d</td>
            <td>18.5</td>
-       </tr>
+        </tr>
         <tr>
            <td>Ack/opt</td>
            <td>4</td>
            <td>1</td>
            <td>0x30</td>
            <td>3/Optional data (depending on message type. Currently used only for position messages)</td>
-       </tr>
+        </tr>
         <tr>
            <td>Data</td>
            <td>5</td>
@@ -310,8 +302,6 @@ Input data from ThingPark Wireless OSS intelligent logger (Actility) Platform lo
 
 ## Step 4. Integration configuration
 
-### Create new integration:
-
 ![image](/images/samples/abeeway/create_integration.png)
 
  * check of the base URL
@@ -325,43 +315,43 @@ Input data from ThingPark Wireless OSS intelligent logger (Actility) Platform lo
 
 ## Step 5. Creature  and  configuration Dashboard
 
-### Creature Dashboard
+- **Creature Dashboard**
 
 ![image](/images/samples/abeeway/dashboard_create_01.png)
 
-#### open Dashboard to add:
+- **Open Dashboard to add:**
 
-##### alias _Entity_list.Device.__DevEUI_1_, DevEUI_2_, DevEUI_3_...__ 
+- ***alias _Entity_list.Device.__DevEUI_1_, DevEUI_2_, DevEUI_3_...__*** 
 
 ![image](/images/samples/abeeway/alias_create.png)
 
-##### alias (DigEntityFrom.Entity from dashboard state.Device
+- ***alias (DigEntityFrom.Entity from dashboard state.Device***
 
 ![image](/images/samples/abeeway/widget_create_cards.png)
 
-* new widgets:
+- **new widgets:**
 
-1. Cards.Entity_tabl.Entity.{Name_Entity_list} + Action
+1_. Cards.Entity_tabl.Entity.{Name_Entity_list} + Action
 
 ![image](/images/samples/abeeway/widget_create_cards.png)
 
-2. Charts.last_value.Data_Source.Entity.{Name_Entity_list}.{key:temperature, ${entityLabel}{
+2_. Charts.last_value.Data_Source.Entity.{Name_Entity_list}.{key:temperature, ${entityLabel}{
 
 ![image](/images/samples/abeeway/widget_create_charts.png)
 
-3. Digital_gages.Data_Source.Entity.{DigEntityFrom}.temperature
+3_. Digital_gages.Data_Source.Entity.{DigEntityFrom}.temperature
 
 ![image](/images/samples/abeeway/widget_create_difital.png)
 
-4. Cards.Timeseries_table.Entity.{alias (DigEntityFrom)}.{bataryvoltage,temperature, ...}
+4_. Cards.Timeseries_table.Entity.{alias (DigEntityFrom)}.{bataryvoltage,temperature, ...}
 
 ![image](/images/samples/abeeway/widget_create_cards_with_value.png)
 
-* config dashbord (add filter):
+- **config dashbord (add filter):**
 
-Widgets Number 1 and Number 2 with alias <b>Entity_list.Device</b>.
+***Widgets Number 1 and Number 2 with alias <b>Entity_list.Device</b>.***
 
-Widgets Number 3 and Number 4 with alias <b>DigEntityFrom</b>.
+***Widgets Number 3 and Number 4 with alias <b>DigEntityFrom</b>.***
 
 ## Step 6: Post telemetry and verify the Integration configuration
 
@@ -376,10 +366,6 @@ A log of incoming messages from from ThingPark Wireless OSS intelligent logger (
 If your devices are active and you do everything correctly when you connect the ThingPark Wireless OSS intelligent <br/> logger (Actility) Platform, then you will see incoming messages to the dashboard you created
 
 ![image](/images/samples/abeeway/dashboard_demo.png)
-
-## Step 7. DownLink Data Converter configuration
-
-## Step 8 Configuring the Rule Chain
 
 ## Information to create Downlink messages
 
@@ -480,36 +466,7 @@ Mode: operating modes. Acceptable values are:
 
 [Reqest POD](/images/samples/abeeway/payloadHex_0102.json)
 
-{% highlight bash %}
-{
-    "method": "POST",
-    "header": [
-        {
-            "key": "Content-Type",
-            "value": "application/json"
-        },
-        {
-            "key": "Accept",
-            "value": "application/json"
-        },
-        {
-            "key": "Authorization",
-            "value": "Bearer {{token_Actilty}}",
-        }
-    ],     
-    "body": {  
-      "payloadHex": "0102",
-      "targetPorts": "11",
-        "securityParams": {
-        "asId": "TWA_100038328.39972.AS",
-        "creationTime": "2019-10-29T10:26:45+02:00",
-        "asKey": "6c58202a09252d72093163fe4439f623"
-      }
-    }
-}
-{% endhighlight %}
-
-###### Operational mode configuration
+- **Operational mode configuration**
 
 {% highlight bash %}
 {... 
@@ -517,41 +474,31 @@ Mode: operating modes. Acceptable values are:
 }
 {% endhighlight %}
 
-###### Request device configuration
+- **Request device configuration**
 
 {% highlight bash %}
 {... 
-      "payloadHex": "030605090C01", ...
+    "payloadHex": "030605090C01", ...
+    * "05" - "geoloc_sensor",
+    * "09" - "gps_timeout",
+    * "0C" - "gps_convergence", 
+    * "01" - "lora_period"
+          
+    Special parameter Id:  
+    * 0xFD: get the BLE version.
+    * 0xFE: get the firmware version.
 }
 {% endhighlight %}
 
-* "05" - "geoloc_sensor",
-* "09" - "gps_timeout",
-* "0C" - "gps_convergence", 
-* "01" - "lora_period"
-
-Special parameter Id:
-
-* 0xFD: get the BLE version.
-* 0xFE: get the firmware version.
-
-###### Parameters configuration
+- **Parameters configuration**
 
 {% highlight bash %}
 {... 
       "payloadHex": "0B0A0C000000781100000E10", ...
+      
+     * "0C00000078" - 0C - gps_convergence, 0x78 - value (sec), 
+     * "1100000E10" - 11 - gps_standby_timeout. 0xE10 - value (sec). 
 }
 {% endhighlight %}
-
-* "0C00000078" - 0C - gps_convergence, 0x78 - value (sec), 
-* "1100000E10" - 11 - gps_standby_timeout. 0xE10 - value (sec).
-
-## Next steps
-
-{% assign currentGuide = "HardwareSamples" %}{% include templates/guides-banner.md %}
-
-
- 
-
 
 
