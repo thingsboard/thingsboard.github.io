@@ -21,6 +21,9 @@ description: ThingsBoard Products Pricing
         <li id="menu-item-thingsboard-pe" class="menu-item active">
             <a href="javascript:void(0);" onClick="activatePricingSection('thingsboard-pe')">Professional Edition</a>
         </li>
+        <li id="menu-item-trendz" class="menu-item">
+            <a href="javascript:void(0);" onClick="activatePricingSection('trendz')">Trendz Analytics</a>
+        </li>
      </ul>
    </nav> 
 </div>
@@ -117,7 +120,8 @@ description: ThingsBoard Products Pricing
                                 onClick="getLicense(event,
                                 false,
                                 '20be6f50-a18e-11e9-8e16-03828ff5271c',
-                                '7ef31a80-a18e-11e9-8e16-03828ff5271c')">
+                                '7ef31a80-a18e-11e9-8e16-03828ff5271c',
+                                'Maker')">
                                 Get your license
                             </a>
                             <div class="pricing-square-item" data-faq-id="community-support">
@@ -145,7 +149,8 @@ description: ThingsBoard Products Pricing
                                 onClick="getLicense(event,
                                 false,
                                 '20be6f50-a18e-11e9-8e16-03828ff5271c',
-                                '0e236dc0-a196-11e9-8e16-03828ff5271c')">
+                                '0e236dc0-a196-11e9-8e16-03828ff5271c',
+                                'Prototype')">
                                 Get your license
                             </a>
                             <div class="pricing-square-item" data-faq-id="community-support">
@@ -173,7 +178,8 @@ description: ThingsBoard Products Pricing
                                 onClick="getLicense(event,
                                 false,
                                 '20be6f50-a18e-11e9-8e16-03828ff5271c',
-                                '8ac6d190-a197-11e9-8e16-03828ff5271c')">
+                                '8ac6d190-a197-11e9-8e16-03828ff5271c',
+                                'Startup')">
                                 Get your license
                             </a>
                             <div class="pricing-square-item" data-faq-id="subscription-support">
@@ -201,7 +207,8 @@ description: ThingsBoard Products Pricing
                                 onClick="getLicense(event,
                                 false,
                                 '20be6f50-a18e-11e9-8e16-03828ff5271c',
-                                'd82185c0-a197-11e9-8e16-03828ff5271c')">
+                                'd82185c0-a197-11e9-8e16-03828ff5271c',
+                                'Business')">
                                 Get your license
                             </a>
                             <div class="pricing-square-item" data-faq-id="subscription-support">
@@ -229,7 +236,8 @@ description: ThingsBoard Products Pricing
                                 onClick="getLicense(event,
                                 false,
                                 '20be6f50-a18e-11e9-8e16-03828ff5271c',
-                                '34530df0-a198-11e9-8e16-03828ff5271c')">
+                                '34530df0-a198-11e9-8e16-03828ff5271c',
+                                'Enterprise')">
                                 Get your license
                             </a>
                             <div class="pricing-square-item" data-faq-id="subscription-support">
@@ -266,7 +274,8 @@ description: ThingsBoard Products Pricing
                                 onClick="getLicense(event,
                                 true,
                                 '90b6c9b0-a198-11e9-8e16-03828ff5271c',
-                                '4c711b60-a199-11e9-8e16-03828ff5271c')">
+                                '4c711b60-a199-11e9-8e16-03828ff5271c',
+                                'Perpetual')">
                                 Get your license
                             </a>
                             <div class="pricing-square-item" data-faq-id="subscription-support">
@@ -289,6 +298,37 @@ description: ThingsBoard Products Pricing
         </div>
     </div>
  </div>  
+</section>
+
+<section id="trendz" class="pricing-content" style="display: none;">
+    <div class="pricing-div">
+        <div class="container">
+            <div class="pricing-section pricing-community active" id="community">
+                <h1 class="tCenter" style="margin: 0 0 27px 0;">Trendz Analytics</h1>
+                <div style="display: flex;">
+                    <div style="width: 50%; margin: 30px 10px 0;">
+                        <div class="pricing-square-description">
+                            <p>Create interactive visual analytics and discover trends, patterns and insight from your data:</p>
+                        </div>            
+                        <ul>
+                            <li class="pricing-square-item">One-click integration with ThingsBaord</li>                                                          
+                            <li class="pricing-square-item">Self-service analytics</li>                                                          
+                            <li class="pricing-square-item">Data clear and filtering</li>                                                          
+                            <li class="pricing-square-item">Advanced visualizations</li>                                                          
+                            <li class="pricing-square-item">Share and collaborate visualization</li>                                                          
+                            <li class="pricing-square-item">Keep your data secure</li>                                                          
+                        </ul>
+                    </div>
+                    <div style="width: 50%; margin: 0 10px 0;">
+                        <div class="ml-form-embed"
+                          data-account="1017142:w0j5m5g7f5"
+                          data-form="1575980:e2f1u0">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>     
 </section>
 
 

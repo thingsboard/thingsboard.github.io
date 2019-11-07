@@ -15,6 +15,14 @@
 {% include footer.html %}
 
 <script type="text/javascript">
+    (function(m,a,i,l,e,r){ m['MailerLiteObject']=e;function f(){
+        var c={ a:arguments,q:[]};var r=this.push(c);return "number"!=typeof r?r:f.bind(c.q);}
+        f.q=f.q||[];m[e]=m[e]||f.bind(f.q);m[e].q=m[e].q||f.q;r=a.createElement(i);
+        var _=a.getElementsByTagName(i)[0];r.async=1;r.src=l+'?v'+(~~(new Date().getTime()/1000000));
+        _.parentNode.insertBefore(r,_);})(window, document, 'script', 'https://static.mailerlite.com/js/universal.js', 'ml');
+
+    var ml_account = ml('accounts', '1017142', 'w0j5m5g7f5', 'load');
+
     inViewportDefer(function() {
         $("#pe-aws-pricing table th:not(:first-child), " +
             "#pe-aws-pricing table td:not(:first-child)").inViewport(function(px){
@@ -36,6 +44,15 @@
             $('.pricing-div .pricing-section'+id).addClass("active");
         });
 
+        $.urlParam = function (name) {
+            var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+            return results ? results[1] : null;
+        };
+
+        var activeTab = $.urlParam('active');
+        if (activeTab && activeTab === 'trendz') {
+            activatePricingSection('trendz');
+        }
     });
 
     function activatePricingSection(sectionId) {
@@ -45,7 +62,7 @@
         $("section.pricing-content#"+sectionId).css("display", "block");
     }
 
-    function getLicense(event, isPerpetual, productId, planId, coupon) {
+    function getLicense(event, isPerpetual, productId, planId, productName, coupon) {
         event.preventDefault();
         var e = $(event.target);
         var url = "https://license.thingsboard.io/signup?createSubscription=true&perpetual=";
@@ -59,12 +76,16 @@
         if (coupon) {
             url += "&coupon="+coupon;
         }
+
+        reportPriceLink(url, productName + '/' + productId);
         window.open(url, "_blank");
     }
 
-    function openPricingFaqNode(nodeId) {
-        document.getElementById(nodeId).scrollIntoView();
-        tb.openAccordionItem(nodeId);
+    function reportPriceLink(link, product) {
+        if (!ga.hasOwnProperty("loaded") || ga.loaded !== true || !link || !product) {
+            return;
+        }
+        ga("send", "event", "PriceLink", product, link);
     }
 
 </script>
