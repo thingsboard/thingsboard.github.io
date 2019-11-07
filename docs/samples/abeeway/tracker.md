@@ -361,14 +361,14 @@ Input data from ThingPark Wireless OSS intelligent logger (Actility) Platform lo
 
 ![image](/images/samples/abeeway/widget_create_difital.png)
 
-4) widget number 3: 
+4) widget number 4: 
 - Current_bundle: Cards ->Timeseries
 
 ![image](/images/samples/abeeway/widget_create_cards_Timeseries.png)
 
 - Data_Source: type: Entity, parameters: DigEntityFrom, 
-- keys:temperature, label: temperaturetable
-- keys:bataryvoltage, label: bataryvoltage ...
+- keys:temperature, label: temperature
+- keys:batteryVoltage, label: batteryVoltage ...
 
 ![image](/images/samples/abeeway/widget_create_cards_with_value.png)
 
@@ -380,7 +380,7 @@ Input data from ThingPark Wireless OSS intelligent logger (Actility) Platform lo
 
 Example: created by Dashboard in format json
 
-[Actility Dashboard](/images/samples/abeeway/alias_create_entityFromDashboard.png)
+[Actility Dashboard](/images/samples/abeeway/actility_dashboard.json)
 
 ## Step 6: Post telemetry and verify the Integration configuration
 
@@ -394,7 +394,7 @@ A log of incoming messages from from ThingPark Wireless OSS intelligent logger (
 
 If your devices are active and you do everything correctly when you connect the ThingPark Wireless OSS intelligent <br/> logger (Actility) Platform, then you will see incoming messages to the dashboard you created
 
-![image](/images/samples/abeeway/dashboard_demo.png)
+![image](/images/samples/abeeway/Actility Dashboard_Example.png)
 
 ## Information to create Downlink messages
 
