@@ -331,19 +331,19 @@ Input data from ThingPark Wireless OSS intelligent logger (Actility) Platform lo
 
 - **new widgets:**
 
-1_. Cards.Entity_tabl.Entity.{Name_Entity_list} + Action
+1) Cards.Entity_tabl.Entity.{Name_Entity_list} + Action
 
 ![image](/images/samples/abeeway/widget_create_cards.png)
 
-2_. Charts.last_value.Data_Source.Entity.{Name_Entity_list}.{key:temperature, ${entityLabel}{
+2) Charts.last_value.Data_Source.Entity.{Name_Entity_list}.{key:temperature, ${entityLabel}{
 
 ![image](/images/samples/abeeway/widget_create_charts.png)
 
-3_. Digital_gages.Data_Source.Entity.{DigEntityFrom}.temperature
+3) Digital_gages.Data_Source.Entity.{DigEntityFrom}.temperature
 
 ![image](/images/samples/abeeway/widget_create_difital.png)
 
-4_. Cards.Timeseries_table.Entity.{alias (DigEntityFrom)}.{bataryvoltage,temperature, ...}
+4) Cards.Timeseries_table.Entity.{alias (DigEntityFrom)}.{bataryvoltage,temperature, ...}
 
 ![image](/images/samples/abeeway/widget_create_cards_with_value.png)
 
@@ -433,7 +433,7 @@ Mode: operating modes. Acceptable values are:
   <thead>
       <tr>
           <td><b>Mode</b></td>
-          <td><b>Value</b>
+          <td><b>Value</b></td>
       </tr>
   </thead>
   <tbody>
@@ -470,7 +470,7 @@ Mode: operating modes. Acceptable values are:
 
 {% highlight bash %}
 {... 
-      "payloadHex": "0203", ...
+      payloadHex: "0203", ...
 }
 {% endhighlight %}
 
@@ -478,15 +478,15 @@ Mode: operating modes. Acceptable values are:
 
 {% highlight bash %}
 {... 
-    "payloadHex": "030605090C01", ...
-    * "05" - "geoloc_sensor",
-    * "09" - "gps_timeout",
-    * "0C" - "gps_convergence", 
-    * "01" - "lora_period"
+    payloadHex: "030605090C01", ...
+    * "05" - geoloc_sensor,
+    * "09" - gps_timeout,
+    * "0C" - gps_convergence, 
+    * "01" - lora_period
           
     Special parameter Id:  
-    * 0xFD: get the BLE version.
-    * 0xFE: get the firmware version.
+    * "0xFD": get the BLE version.
+    * "0xFE": get the firmware version.
 }
 {% endhighlight %}
 
@@ -494,11 +494,10 @@ Mode: operating modes. Acceptable values are:
 
 {% highlight bash %}
 {... 
-      "payloadHex": "0B0A0C000000781100000E10", ...
+      payloadHex: "0B 0A 0C00000078 1100000E10", ...
       
      * "0C00000078" - 0C - gps_convergence, 0x78 - value (sec), 
-     * "1100000E10" - 11 - gps_standby_timeout. 0xE10 - value (sec). 
+     * 1100000E10 - 11 - gps_standby_timeout. 0xE10 - value (sec). 
 }
 {% endhighlight %}
-
 
