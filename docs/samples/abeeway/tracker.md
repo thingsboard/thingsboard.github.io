@@ -70,7 +70,7 @@ For this is it necessary:
 
 - **The tracker supports different types of uplink messages, that are described in following sections**:
 
-<table style="width: 22%">
+<table style="width: 75%">
    <thead>
        <tr>
            <td><b>Message type</b></td>
@@ -215,7 +215,7 @@ Input data from ThingPark Wireless OSS intelligent logger (Actility) Platform lo
 
 - **Common message header**
 
-<table>
+<table style="width: 75%">
    <thead>
        <tr>
            <td><b>Byte 0</b></td>
@@ -240,7 +240,7 @@ Input data from ThingPark Wireless OSS intelligent logger (Actility) Platform lo
 
 ***"payload_hex": "**0500997d3040**"***
 
-<table>
+<table style="width: 75%">
    <thead>
        <tr>
            <td><b>Field</b></td>
@@ -378,7 +378,7 @@ configure or manage the tracker. Each message contains a header including:
 
 The remaining of the message depends on the message type described in the following table.
 
-<table>
+<table style="width: 50%">
   <thead>
       <tr>
           <td><b>Message type</b></td>
@@ -425,11 +425,11 @@ The remaining of the message depends on the message type described in the follow
     </tbody>
 </table>
 
-###### Position on demand
+- **Position on demand**
 
 Mode: operating modes. Acceptable values are:
 
-<table>
+<table style="width: 40%">
   <thead>
       <tr>
           <td><b>Mode</b></td>
