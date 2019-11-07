@@ -389,14 +389,14 @@ The remaining of the message depends on the message type described in the follow
 <table>
   <thead>
       <tr>
-          <td><b>Message type</b></td><td>
-          <b>ID</b></td><td>
-          <b>Description</b></td>
+          <td><b>Message type</b></td>
+          <td><b>ID</b></td>
+          <td><b>Description</b></td>
       </tr>
   </thead>
   <tbody>
       <tr>
-          <td>POD/td>
+          <td>POD</td>
           <td>0x01</td>
           <td>Position on demand</td>
       </tr>
