@@ -238,7 +238,7 @@ Input data from ThingPark Wireless OSS intelligent logger (Actility) Platform lo
     </tbody>
  </table> 
 
-***"payload_hex": "**0500997d3040**"***
+<i>"payload_hex": <b>"0500997d3040"</b></i>
 
 <table style="width: 75%">
    <thead>
@@ -313,37 +313,62 @@ Input data from ThingPark Wireless OSS intelligent logger (Actility) Platform lo
 
 ![image](/images/samples/abeeway/actility_application.png)
 
-## Step 5. Creature  and  configuration Dashboard
+## Step 5. Creation  and  configuration of the Dashboard
 
-- **Creature Dashboard**
+- **Creation of the Dashboard**
 
 ![image](/images/samples/abeeway/dashboard_create_01.png)
 
 - **Open Dashboard to add:**
 
-- ***alias _Entity_list.Device.__DevEUI_1_, DevEUI_2_, DevEUI_3_...__*** 
+- ***alias (List abeeways): filter_type: Entity_list, type: Device, device_names: DevEUI_1_, DevEUI_2_, DevEUI_3_...__*** 
 
 ![image](/images/samples/abeeway/alias_create.png)
 
-- ***alias (DigEntityFrom.Entity from dashboard state.Device***
+- ***alias (DigEntityFrom): type: Entity from dashboard state, type: Device***
 
-![image](/images/samples/abeeway/widget_create_cards.png)
+![image](/images/samples/abeeway/alias_create_entityFromDashboard.png)
 
 - **new widgets:**
 
-1) Cards.Entity_tabl.Entity.{Name_Entity_list} + Action
+1) widget number 1: 
+- Current_bundle: Cards -> latest_values -> Entities:
+- Datasources: type: Entity, parameters: List abeeways
 
 ![image](/images/samples/abeeway/widget_create_cards.png)
 
-2) Charts.last_value.Data_Source.Entity.{Name_Entity_list}.{key:temperature, ${entityLabel}{
+- Action: action sources: on row click, Name: ${entityName}, type: Update_current_dashboard_state, Set_entity_from_widget
+
+![image](/images/samples/abeeway/widget_create_cards_action.png)
+
+2) widget number 2: 
+- Current_bundle: Charts -> time_series: Timeseries_Float:
+
+![image](/images/samples/abeeway/widget_create_charts_timeseriesFloat.png)
+
+- Data_Source: type: Entity, parameters: List_abeeways, key:temperature, label: ${entityLabel}
 
 ![image](/images/samples/abeeway/widget_create_charts.png)
 
-3) Digital_gages.Data_Source.Entity.{DigEntityFrom}.temperature
+![image](/images/samples/abeeway/widget_create_charts_entityLabel.png)
+
+3) widget number 3: 
+- Current_bundle: Digital_guages
+
+![image](/images/samples/abeeway/widget_create_difital_guages.png)
+
+- Data_Source: type: Entity, parameters: DigEntityFrom, key:temperature, label: temperature
 
 ![image](/images/samples/abeeway/widget_create_difital.png)
 
-4) Cards.Timeseries_table.Entity.{alias (DigEntityFrom)}.{bataryvoltage,temperature, ...}
+4) widget number 3: 
+- Current_bundle: Cards ->Timeseries
+
+![image](/images/samples/abeeway/widget_create_cards_Timeseries.png)
+
+- Data_Source: type: Entity, parameters: DigEntityFrom, 
+- keys:temperature, label: temperaturetable
+- keys:bataryvoltage, label: bataryvoltage ...
 
 ![image](/images/samples/abeeway/widget_create_cards_with_value.png)
 
@@ -352,6 +377,10 @@ Input data from ThingPark Wireless OSS intelligent logger (Actility) Platform lo
 ***Widgets Number 1 and Number 2 with alias <b>Entity_list.Device</b>.***
 
 ***Widgets Number 3 and Number 4 with alias <b>DigEntityFrom</b>.***
+
+Example: created by Dashboard in format json
+
+[Actility Dashboard](/images/samples/abeeway/alias_create_entityFromDashboard.png)
 
 ## Step 6: Post telemetry and verify the Integration configuration
 
@@ -429,7 +458,7 @@ The remaining of the message depends on the message type described in the follow
 
 Mode: operating modes. Acceptable values are:
 
-<table style="width: 40%">
+<table style="width: 40%">Int
   <thead>
       <tr>
           <td><b>Mode</b></td>
