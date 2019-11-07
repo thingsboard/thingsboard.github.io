@@ -309,8 +309,10 @@ Input data from ThingPark Wireless OSS intelligent logger (Actility) Platform lo
 ![image](/images/samples/abeeway/create_integration.png)
 
  * check of the base URL
- * change downLink URL to:<br/> 
- https://thingparkenterprise.eu.actility.com/thingpark/dx/core/latest/api/devices<br/> 
+ * change downLink URL to:
+ <br/> 
+ https://thingparkenterprise.eu.actility.com/thingpark/dx/core/latest/api/devices
+ <br/> 
  * copy-paste the HTTP Endpoint URL from the integration window based on the screencast below to URL Application Actility.
 
 ![image](/images/samples/abeeway/actility_application.png)
@@ -470,6 +472,8 @@ Mode: operating modes. Acceptable values are:
    </tbody>
 </table> 
 
+[Reqest POD](/images/samples/abeeway/payloadHex_0102.json)
+
 {% highlight bash %}
 {
     "method": "POST",
@@ -487,7 +491,7 @@ Mode: operating modes. Acceptable values are:
             "value": "Bearer {{token_Actilty}}",
         }
     ],     
-    body: {  
+    "body": {  
       "payloadHex": "0102",
       "targetPorts": "11",
         "securityParams": {
