@@ -1,0 +1,41 @@
+{
+  "widgetsBundle": {
+    "alias": "trendz_bundle",
+    "title": "Trendz Bundle",
+    "image": null
+  },
+  "widgetTypes": [
+    {
+      "alias": "trendz_view",
+      "name": "Trendz View",
+      "descriptor": {
+        "type": "static",
+        "sizeX": 9.5,
+        "sizeY": 6.5,
+        "resources": [],
+        "templateHtml": "<iframe class=\"iFrameWindo\" src=\"{{trustSrc(viewUrl)}}\" \n        style=\"border: 0; width: 100%; height: 100%\">\n    Your browser doesn't support iFrames.\n</iframe>\n\n<div class=\"iFrameEdit\" ng-if=\"ctx.isEdit\">\n    \n</div>",
+        "templateCss": ".iFrameWindo {\n    border: 0; \n    width: 100%; \n    height: 100%\n}\n\n.iFrameEdit {\n    border: 0; \n    width: 100%; \n    height: 100%;\n    position: absolute;\n    top: 0;\n    left: 0;\n}",
+        "controllerScript": "let $scope;\nlet $sce;\nlet userService;\n\nself.onInit = function() {\n    $scope = self.ctx.$scope;\n    $scope.ctx = self.ctx;\n    \n    $sce = $scope.$injector.get('$sce');\n    userService = $scope.$injector.get('userService');\n    let jwt = userService.getJwtToken();\n    \n    settings = angular.copy(self.ctx.settings) || {};\n    $scope.viewUrl = settings.viewUrl + '/?token=' + jwt;\n    \n    $scope.trustSrc = function(src) {\n        return $sce.trustAsResourceUrl(src);\n    }\n    \n    self.onResize();\n}\n\nself.onDataUpdated = function() {\n    \n}\n\nself.onResize = function() {\n    \n}\n\nself.onDestroy = function() {\n}\n",
+        "settingsSchema": "{\n    \"schema\": {\n        \"type\": \"object\",\n        \"title\": \"EntitiesTableSettings\",\n        \"properties\": {\n            \"viewUrl\": {\n                \"title\": \"View URL\",\n                \"type\": \"string\",\n                \"default\": \"http://localhost:4200/viewMode/{id}/\"\n            }\n        },\n        \"required\": []\n    },\n    \"form\": [\n        \"viewUrl\"\n    ]\n}",
+        "dataKeySettingsSchema": "{}\n",
+        "defaultConfig": "{\"datasources\":[{\"type\":\"static\",\"name\":\"function\",\"dataKeys\":[{\"name\":\"f(x)\",\"type\":\"function\",\"label\":\"Random\",\"color\":\"#2196f3\",\"settings\":{},\"_hash\":0.15479322438769105,\"funcBody\":\"var value = prevValue + Math.random() * 100 - 50;\\nvar multiplier = Math.pow(10, 2 || 0);\\nvar value = Math.round(value * multiplier) / multiplier;\\nif (value < -1000) {\\n\\tvalue = -1000;\\n} else if (value > 1000) {\\n\\tvalue = 1000;\\n}\\nreturn value;\"}]}],\"timewindow\":{\"realtime\":{\"timewindowMs\":60000}},\"showTitle\":true,\"backgroundColor\":\"#fff\",\"color\":\"rgba(0, 0, 0, 0.87)\",\"padding\":\"8px\",\"settings\":{},\"title\":\"Trendz View\"}"
+      }
+    },
+    {
+      "alias": "trendz_builder",
+      "name": "Trendz Builder",
+      "descriptor": {
+        "type": "static",
+        "sizeX": 9.5,
+        "sizeY": 6.5,
+        "resources": [],
+        "templateHtml": "<iframe class=\"iFrameWindo\" src=\"{{trustSrc(viewUrl)}}\" \n        style=\"border: 0; width: 100%; height: 100%\">\n    Your browser doesn't support iFrames.\n</iframe>\n\n<div class=\"iFrameEdit\" ng-if=\"ctx.isEdit\">\n    \n</div>",
+        "templateCss": ".iFrameWindo {\n    border: 0; \n    width: 100%; \n    height: 100%\n}\n\n.iFrameEdit {\n    border: 0; \n    width: 100%; \n    height: 100%;\n    position: absolute;\n    top: 0;\n    left: 0;\n}",
+        "controllerScript": "let $scope;\nlet $sce;\nlet userService;\n\nself.onInit = function() {\n    $scope = self.ctx.$scope;\n    $scope.ctx = self.ctx;\n    \n    $sce = $scope.$injector.get('$sce');\n    userService = $scope.$injector.get('userService');\n    let jwt = userService.getJwtToken();\n    \n    settings = angular.copy(self.ctx.settings) || {};\n    $scope.viewUrl = settings.viewUrl + '/?token=' + jwt;\n    \n    $scope.trustSrc = function(src) {\n        return $sce.trustAsResourceUrl(src);\n    }\n    \n    self.onResize();\n}\n\nself.onDataUpdated = function() {\n    \n}\n\nself.onResize = function() {\n    \n}\n\nself.onDestroy = function() {\n}\n",
+        "settingsSchema": "{\n    \"schema\": {\n        \"type\": \"object\",\n        \"title\": \"EntitiesTableSettings\",\n        \"properties\": {\n            \"viewUrl\": {\n                \"title\": \"View URL\",\n                \"type\": \"string\",\n                \"default\": \"http://localhost:4200\"\n            }\n        },\n        \"required\": []\n    },\n    \"form\": [\n        \"viewUrl\"\n    ]\n}",
+        "dataKeySettingsSchema": "{}\n",
+        "defaultConfig": "{\"datasources\":[{\"type\":\"static\",\"name\":\"function\",\"dataKeys\":[{\"name\":\"f(x)\",\"type\":\"function\",\"label\":\"Random\",\"color\":\"#2196f3\",\"settings\":{},\"_hash\":0.15479322438769105,\"funcBody\":\"var value = prevValue + Math.random() * 100 - 50;\\nvar multiplier = Math.pow(10, 2 || 0);\\nvar value = Math.round(value * multiplier) / multiplier;\\nif (value < -1000) {\\n\\tvalue = -1000;\\n} else if (value > 1000) {\\n\\tvalue = 1000;\\n}\\nreturn value;\"}]}],\"timewindow\":{\"realtime\":{\"timewindowMs\":60000}},\"showTitle\":true,\"backgroundColor\":\"#fff\",\"color\":\"rgba(0, 0, 0, 0.87)\",\"padding\":\"8px\",\"settings\":{},\"title\":\"Trendz Builder\"}"
+      }
+    }
+  ]
+}

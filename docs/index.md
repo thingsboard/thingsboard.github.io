@@ -65,3 +65,7 @@ description: ThingsBoard documentation - learn about the platform and get your I
 <h2>Video Tutorials</h2>
 
 <p>The ThingsBoard Youtube <b><a href="https://www.youtube.com/channel/UCDb9fsV-YR4JmnipAMGsVAQ/videos">channel</a></b> contains useful video tutorials that cover various platform features.</p>
+
+<h2>Trendz Analytics</h2>
+
+<p>Contains comprehensive documentation about ThingsBoard <b><a href="/docs/trendz/">Trendz Analytics</a></b>.</p>
