@@ -13,26 +13,34 @@ The connection is through the IoT network in the new global standard LoRaWAN and
 In this guide, we will use the free ThingsBoard PE demo server [cloud.thingsboard.io](https://cloud.thingsboard.io/signup) in this guide. 
 This guide will be useful to anyone who wants to connect their tracker`s manufactured by Abeeway or another industrial IoT application to the LoRaWAN network.
 
+![image](/images/samples/abeeway/dashboard_demo.png)
+
 * TOC
 {:toc}
 
+  <style>
+   p {
+    text-indent: 20px; /* Отступ первой строки в пикселах */
+   }
+  </style>
 ## Prerequisites 
-
-We assume you have at least one of Abeeway Micro Track and Abeeway Industrial Tracker  in your lab that is already connected  with ACTILITY THINGPARK IoT NETWORK. 
-We also assume you already have a ThingsBoard PE server or free demo account. 
+We assume:
+- You are registered on the Activity
+- You have at least one of Abeeway Micro Track and Abeeway Industrial Tracker  that is already connected  with ACTILITY THINGPARK IoT NETWORK and is active.
+- We also assume you already have a ThingsBoard PE server or free demo account. 
 Otherwise you can register for a 30-days free demo account here: [cloud.thingsboard.io](https://cloud.thingsboard.io/signup).
-
 We expect you to have a very basic knowledge about ThingsBoard, so we do recommend to complete the [Getting Started](/docs/getting-started-guides/helloworld) guide.
  
 ## Integration overview
 
 ThingsBoard Platform Integrations feature allows to push data from various platforms and connectivity solutions to ThingsBoard. 
-We will use platform ThingPark Wireless companies Actility to consume data fromLoRaWAN networks and automatically register devices in ThingsBoard.
+We will use platform ThingPark Wireless companies Actility to consume data from LoRaWAN networks and automatically register devices in ThingsBoard.
 Besides configuring the integration, we will also setup ThingsBoard to decode incoming data, store it in the database, visualize on the dashboard and generate alarms based on configurable thresholds.
 
-![image](/images/samples/abeeway/dashboard_demo.png)
+## Step 1. Checking the registration for the platform ThingPark Wireless companies Actility
+           
+- registration and condition of devices.
 
-## Step 1. Add new divice
 Few things to notice:
 
 The <b>DevEUI</b> from the incoming message will become the Device <b>Name</b> in ThingsBoard;
@@ -41,264 +49,331 @@ ThingsBoard will automatically create device with type “tracker” and name eq
 
 Therefore, when creating a new device, in the <b>Name</b> field, enter the value <b>DevEUI</b>: from the Device Information (ThingPark Wireless OSS intelligent logger (Actility)) section
 
-![image](/images/samples/abeeway/actility_device.png)
+<details xmlns:text-indent="20px">
+    <summary>
+        <font color="#006400"><i><b>An example of a device registered to the platform ThingPark Wireless companies Actility</b></i></font> (<b>click to open expanded view</b>)
+    </summary>   
+    <p> 
+        <font color="#00008b"><b>The device must be <font color="#32cd32">active!!!</font> </b>In the example, DevUi = </font><font color="red">"20635F010800105C"</font>    
+    </p>
+    <p>    
+         <font color="#00008b"><b>The device must be attached to the application.</b>In our example: to Application </font><font color="red">"NoAS21"</font>
+     </p>
+    <details>
+         <summary>
+             <font color="#228b22"><b>Photo of the example of a device registered to the platform ThingPark Wireless companies Actility</b></font>  (<b>click to open expanded view</b>)
+         </summary>  
+        <img src="/images/samples/abeeway/actility_device.png">
+    </details>
+</details>
 
-## Step 2. Creature UpLink and DownLink DATA Converters
+## Step 2. Creation UpLink and DownLink DATA Converters
 In order to create an [Integration](/docs/user-guide/integrations), we should create the [Uplink Data Converter](/docs/user-guide/integrations/#uplink-data-converter) and the [Downlink Data Converter](/docs/user-guide/integrations/#downlink-data-converter) first. 
 The converters will decode incoming telemetry payload data from global standard LoRaWAN that contains in encoded hex string to human readable, simplified ThingsBoard data format.
 
-![image](/images/samples/abeeway/add_uplink_decoder.png)
+<details>
+    <summary>
+        <font color="#006400"><i><b>Photo: illustration of how to create Uplink converter</b></i></font> (<b>click to open expanded view</b>)
+    </summary>
+    <img src="/images/samples/abeeway/add_uplink_decoder.png">
+</details>
 
-![image](/images/samples/abeeway/add_downlink_decoder.png)
+<details>
+    <summary>
+        <font color="#006400"><i><b>Photo: illustration of how to create Downlink converter</b></i></font> (<b>click to open expanded view</b>)
+    </summary>
+    <img src="/images/samples/abeeway/add_downlink_decoder.png">
+</details>
 
 ## Step 3. UpLink Data Converter configuration
 When creating an Uplink Converter, a default decoder is added to the Decoder section
 
-After creating the Uplink Converter to the Decoder section, you need to update the Decoder code to:
-For this is it necessary:
-- Open Uplink Converter, editor mode, click "test decoder function" and replace the default code with a new code:
+After creating the Uplink Converter to the Decoder section, you need to update the Decoder code to.
 
-[Decoder UpLink](/images/samples/abeeway/upLinkDecoder.txt)
+For this is it necessary:
 
 ### Uplink messages
 
-    This section describes the payload messages supported by the tracker.
-    Unless otherwise specified, all values are transmitted in network byte order (MSB first).
-    Each message is composed by:
-    ➢ A common header
-    ➢ A specific data part
-
-- **The tracker supports different types of uplink messages, that are described in following sections**:
-
-<table style="width: 75%">
-   <thead>
-       <tr>
-           <td><b>Message type</b></td>
-           <td><b>Id</b></td>
-           <td><b>Content</b></td>
-        </tr>
-   </thead>
-   <tbody>
-      <tr>
-          <td>Frame pending</td>
-          <td>0x00</td>
-          <td>This uplink message is sent to trigger the sending. (and speed up the configuration of the tracker) if downlink messages are available on gateway and no other uplink message is on the queue</td>
-      </tr>
-      <tr>
-          <td>Position message</td>
-          <td>0x03</td>
-          <td>GPS, low power GPS, WIFI or BLE position data</td>
-      </tr>
-      <tr>
-          <td>Energy status message</td>
-          <td>0x04</td>
-          <td>Used by the server to estimate the battery level. Contain information related to the power consumption</td>
-      </tr>
-      <tr>
-          <td>Heartbeat message</td>
-          <td>0x05</td>
-          <td>Notify the server the tracker is operational and under LoRa coverage</td>
-      </tr>
-      <tr>
-          <td>Activity Status message (1)</td>
-          <td>0x07</td>
-          <td>Reports the activity counter. Used only by the activity tracking operating mode</td>
-      </tr>
-      <tr>
-          <td>Configuration message (1)</td>
-          <td>0x07</td>
-          <td>Reports the partial or whole configuration of the trackers</td>
-      </tr>
-      <tr>
-          <td>Shutdown message </td>
-          <td>0x09</td>
-          <td>Sent when the tracker is set off</td>
-      </tr>
-      <tr>
-          <td>Geolocation start message (2)</td>
-          <td>0x0A</td>
-          <td>Sent when the tracker starts a geolocation</td>
-      </tr>
-      <tr>
-          <td>Debug message</td>
-          <td>0xFF</td>
-          <td>Internal use only</td>
-      </tr>
-    </tbody>
-</table>
-
-Note:
-(1) Activity status message and configuration message share the same identifier. They are differentiated by another field.
-(2) Only available on FW 1.7-3. Configurable via the config_flag parameter
-
-Input data from ThingPark Wireless OSS intelligent logger (Actility) Platform looks like this:
-
-{% highlight bash %}
-{
-    "DevEUI_uplink": {
-        "Time": "2019-11-06T09:54:46.342+01:00",
-        "DevEUI": "20635F00C5000660",
-        "FPort": 17,
-        "FCntUp": 1796,
-        "ADRbit": 1,
-        "MType": 2,
-        "FCntDn": 94,
-        "payload_hex": "0500997d3040",
-        "mic_hex": "304d48f9",
-        "Lrcid": "00000211",
-        "LrrRSSI": -63.0,
-        "LrrSNR": 7.5,
-        "SpFact": 7,
-        "SubBand": "G1",
-        "Channel": "LC2",
-        "DevLrrCnt": 1,
-        "Lrrid": "10000329",
-        "Late": 0,
-        "Lrrs": {
-            "Lrr": [{
-                "Lrrid": "10000329",
-                "Chain": 0,
-                "LrrRSSI": -63.0,
-                "LrrSNR": 7.5,
-                "LrrESP": -63.710819
-            }]
-        },
-        "CustomerID": "100038328",
-        "CustomerData": {
-            "alr": {
-                "pro": "ABEE/APY",
-                "ver": "1"
+[Decoder_Up_Link -> for devices such as Micro Tracker Abeeway  (<b>click to open expanded view</b>)](/images/samples/abeeway/upLinkDecoder.txt)
+<p></p> <p></p>
+<details>
+    <summary>
+        <font color="#006400"><i><b>Open Uplink Converter, editor mode, click "test decoder function" and replace the default code with a new code:</b></i></font> <br> (<b>click to open expanded view</b>)
+    </summary> 
+    <details>
+        <summary>
+        <font color="#228b22"><b>Photo: illustration edit the UpLink decoder</b></font> (<b>click to open expanded view</b>)
+        </summary>
+        <img src="/images/samples/abeeway/uplink_decoder.png">
+    </details> 
+    <details>
+         <summary>
+             <font color="#228b22"><b>Input data from ThingPark Wireless OSS intelligent logger (Actility) Platform looks like this:</b></font> (<b>click to open expanded view</b>)
+         </summary>
+          <details>
+            <summary>
+              <font color="#32cd32"><b>JSON: input data from ThingPark Wireless OSS intelligent logger (Actility) Platform looks like this:</b></font>  <br>(<b>click to open expanded view</b>)
+            </summary>
+             {% highlight bash %}
+             {
+                 "DevEUI_uplink": {
+                     "Time": "2019-11-06T09:54:46.342+01:00",
+                     "DevEUI": "20635F00C5000660",
+                     "FPort": 17,
+                     "FCntUp": 1796,
+                     "ADRbit": 1,
+                     "MType": 2,
+                     "FCntDn": 94,
+                     "payload_hex": "0500997d3040",
+                     "mic_hex": "304d48f9",
+                     "Lrcid": "00000211",
+                     "LrrRSSI": -63.0,
+                     "LrrSNR": 7.5,
+                     "SpFact": 7,
+                     "SubBand": "G1",
+                     "Channel": "LC2",
+                     "DevLrrCnt": 1,
+                     "Lrrid": "10000329",
+                     "Late": 0,
+                     "Lrrs": {
+                         "Lrr": [{
+                             "Lrrid": "10000329",
+                             "Chain": 0,
+                             "LrrRSSI": -63.0,
+                             "LrrSNR": 7.5,
+                             "LrrESP": -63.710819
+                         }]
+                     },
+                     "CustomerID": "100038328",
+                     "CustomerData": {
+                         "alr": {
+                             "pro": "ABEE/APY",
+                             "ver": "1"
+                         }
+                     },
+                     "ModelCfg": "0",
+                     "InstantPER": 0.0,
+                     "MeanPER": 0.001706,
+                     "DevAddr": "05C1704A",
+                     "TxPower": 9.5,
+                     "NbTrans": 1
+                 }
+             }
+             {% endhighlight %}
+        </details>
+        <details>
+             <summary>
+                 <font color="#32cd32"><b>Photo: illustration of the input data from ThingPark Wireless OSS intelligent logger (Actility) Platform looks like this:</b></font>  <br>(<b>click to open expanded view</b>)
+             </summary>
+             <img src="/images/samples/abeeway/uplink_decoder_input.png">
+        </details>
+    </details>
+    <details>
+        <summary>
+         <font color="#228b22"><b>Output data after decoding will look like this:</b></font> (<b>click to open expanded view</b>)
+        </summary>  
+        <details>
+            <summary>
+            <font color="#32cd32"><b>JSON: output data from ThingPark Wireless OSS intelligent logger (Actility) Platform looks like this:</b></font>  <br>(<b>click to open expanded view</b>)
+            </summary>  
+            {% highlight bash %}
+            {
+             "deviceName": "20635F00C5000660",
+             "deviceType": "Abeeway Micro/Industrial Tracker",
+             "telemetry": {
+                 "ts": 1573030486342,
+                 "values": {
+                     "batteryVoltage": 8.388,
+                     "temperature": 18.5,
+                     "ph_type": "Heartbeat message",
+                     "ph_status": "Standby",
+                     "ph_alert_SOS_bit4": 0,
+                     "ph_tracking/idle_state_bit3": 0,
+                     "ph_tracker_is_moving_bit2": 0,
+                     "ph_periodic_position_message_bit1": 0,
+                     "ph_POD_message_bit0": 0,
+                     "m_type": "Unconfirmed Data Up",
+                     "m_port": 17,
+                     "m_customerID": "100038328",
+                     "m_LrrRSSI": -63,
+                     "m_LrrSNR": 7.5,
+                     "m_Lrrid": "10000329",
+                     "ack": 3
+                 },
+                 "last_reset_cause": 64
+             }
             }
-        },
-        "ModelCfg": "0",
-        "InstantPER": 0.0,
-        "MeanPER": 0.001706,
-        "DevAddr": "05C1704A",
-        "TxPower": 9.5,
-        "NbTrans": 1
-    }
-}
-{% endhighlight %}
-
-![image](/images/samples/abeeway/uplink_decoder_input.png)
-
-- ***After decoding output data will look like this:***
-
-{% highlight bash %}
-{
-    "deviceName": "20635F00C5000660",
-    "deviceType": "Abeeway Micro/Industrial Tracker",
-    "telemetry": {
-        "ts": 1573030486342,
-        "values": {
-            "batteryVoltage": 8.388,
-            "temperature": 18.5,
-            "ph_type": "Heartbeat message",
-            "ph_status": "Standby",
-            "ph_alert_SOS_bit4": 0,
-            "ph_tracking/idle_state_bit3": 0,
-            "ph_tracker_is_moving_bit2": 0,
-            "ph_periodic_position_message_bit1": 0,
-            "ph_POD_message_bit0": 0,
-            "m_type": "Unconfirmed Data Up",
-            "m_port": 17,
-            "m_customerID": "100038328",
-            "m_LrrRSSI": -63,
-            "m_LrrSNR": 7.5,
-            "m_Lrrid": "10000329",
-            "ack": 3
-        },
-        "last_reset_cause": 64
-    }
-}
-{% endhighlight %}
-
-- **Common message header**
-
-<table style="width: 75%">
-   <thead>
-       <tr>
-           <td><b>Byte 0</b></td>
-           <td><b>Byte 1</b></td>
-           <td><b>Byte 2</b></td>
-           <td><b>Byte 3</b></td>
-           <td><b>Byte 4</b></td>
-           <td><b>Data Variable</b></td>
-       </tr>
-   </thead>
-   <tbody>
-       <tr>
-           <td>Type</td>
-           <td>Status</td>
-           <td>Battery</td>
-           <td>Temperature</td>
-           <td>Ack/opt</td>
-           <td>Data</td>
-       </tr>
-    </tbody>
- </table> 
-
-<i>"payload_hex": <b>"0500997d3040"</b></i>
-
-<table style="width: 75%">
-   <thead>
-       <tr>
-           <td><b>Field</b></td>
-           <td><b>First Byte</b></td>
-           <td><b>Byte length</b></td>
-           <td><b>Value</b></td>
-           <td><b>Description</b></td>
-       </tr>
-   </thead>
-   <tbody>
-       <tr>
-           <td>Type</td>
-           <td>0</td>
-           <td>1</td>
-           <td>0x05</td>
-           <td>Heartbeat message</td>
-       </tr>
-        <tr>
-           <td>Status</td>
-           <td>1</td>
-           <td>1</td>
-           <td>0x00</td>
-           <td>Standby</td>
-        </tr>
-        <tr>
-           <td>Battery</td>
-           <td>2</td>
-           <td>1</td>
-           <td>0x99</td>
-           <td>8.388</td>
-        </tr>
-        <tr>
-           <td>Temperature</td>
-           <td>3</td>
-           <td>1</td>
-           <td>0x7d</td>
-           <td>18.5</td>
-        </tr>
-        <tr>
-           <td>Ack/opt</td>
-           <td>4</td>
-           <td>1</td>
-           <td>0x30</td>
-           <td>3/Optional data (depending on message type. Currently used only for position messages)</td>
-        </tr>
-        <tr>
-           <td>Data</td>
-           <td>5</td>
-           <td>1-22</td>
-           <td>0x40</td>
-           <td>last_reset_cause</td>
-       </tr>
-    </tbody>
-</table>
-
-![image](/images/samples/abeeway/uplink_decoder_output.png)
-
-![image](/images/samples/abeeway/uplink_decoder.png)
+            {% endhighlight %}   
+        </details> 
+        <details>
+          <summary>
+          <font color="#32cd32"><b>Photo: output data from ThingPark Wireless OSS intelligent logger (Actility) Platform looks like this:</b></font>  <br>(<b>click to open expanded view</b>)
+          </summary>
+          <img src="/images/samples/abeeway/uplink_decoder_output.png">   
+        </details>  
+        <details>
+            <summary>
+            <font color="#32cd32"><b>Payload_hex: example to decoder</b></font>  <br>(<b>click to open expanded view</b>)
+            </summary>
+            <b>Common message header</b>    
+            <table style="width: 75%">
+            <thead>
+                <tr>
+                    <td><b>Byte 0</b></td>
+                    <td><b>Byte 1</b></td>
+                    <td><b>Byte 2</b></td>
+                    <td><b>Byte 3</b></td>
+                    <td><b>Byte 4</b></td>
+                    <td><b>Data Variable</b></td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Type</td>
+                    <td>Status</td>
+                    <td>Battery</td>
+                    <td>Temperature</td>
+                    <td>Ack/opt</td>
+                    <td>Data</td>
+                </tr>
+             </tbody>
+            </table>    
+            <i>"payload_hex": <font color="#cd5c5c"><b>"0500997d3040"</b></font></i>    
+            <table style="width: 75%">
+            <thead>
+                <tr>
+                    <td><b>Field</b></td>
+                    <td><b>First Byte</b></td>
+                    <td><b>Byte length</b></td>
+                    <td><b>Value</b></td>
+                    <td><b>Description</b></td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Type</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0x05</td>
+                    <td>Heartbeat message</td>
+                </tr>
+                 <tr>
+                    <td>Status</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>0x00</td>
+                    <td>Standby</td>
+                 </tr>
+                 <tr>
+                    <td>Battery</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>0x99</td>
+                    <td>8.388</td>
+                 </tr>
+                 <tr>
+                    <td>Temperature</td>
+                    <td>3</td>
+                    <td>1</td>
+                    <td>0x7d</td>
+                    <td>18.5</td>
+                 </tr>
+                 <tr>
+                    <td>Ack/opt</td>
+                    <td>4</td>
+                    <td>1</td>
+                    <td>0x30</td>
+                    <td>3/Optional data (depending on message type. Currently used only for position messages)</td>
+                 </tr>
+                 <tr>
+                    <td>Data</td>
+                    <td>5</td>
+                    <td>1-22</td>
+                    <td>0x40</td>
+                    <td>last_reset_cause</td>
+                </tr>
+             </tbody>
+            </table>   
+        </details>
+        <details>
+                <summary>
+                    <font color="#32cd32"><b>Info: The tracker supports different types of uplink messages, that are described in following sections:</b></font>
+                </summary>
+                <ul>
+                <li>This section describes the payload messages supported by the tracke</li>
+                <li>Unless otherwise specified, all values are transmitted in network byte order (MSB first).</li>
+                  <li>Each message is composed by:    
+                   <ul>
+                     <li>A common header</li>
+                     <li>A specific data part</li>
+                     </ul>
+                  </li> 
+                </ul>
+                <table style="width: 75%">
+                   <thead>
+                       <tr>
+                           <td><b>Message type</b></td>
+                           <td><b>Id</b></td>
+                           <td><b>Content</b></td>
+                        </tr>
+                   </thead>
+                   <tbody>
+                      <tr>
+                          <td>Frame pending</td>
+                          <td>0x00</td>
+                          <td>This uplink message is sent to trigger the sending. (and speed up the configuration of the tracker) if downlink messages are available on gateway and no other uplink message is on the queue</td>
+                      </tr>
+                      <tr>
+                          <td>Position message</td>
+                          <td>0x03</td>
+                          <td>GPS, low power GPS, WIFI or BLE position data</td>
+                      </tr>
+                      <tr>
+                          <td>Energy status message</td>
+                          <td>0x04</td>
+                          <td>Used by the server to estimate the battery level. Contain information related to the power consumption</td>
+                      </tr>
+                      <tr>
+                          <td>Heartbeat message</td>
+                          <td>0x05</td>
+                          <td>Notify the server the tracker is operational and under LoRa coverage</td>
+                      </tr>
+                      <tr>
+                          <td>Activity Status message (1)</td>
+                          <td>0x07</td>
+                          <td>Reports the activity counter. Used only by the activity tracking operating mode</td>
+                      </tr>
+                      <tr>
+                          <td>Configuration message (1)</td>
+                          <td>0x07</td>
+                          <td>Reports the partial or whole configuration of the trackers</td>
+                      </tr>
+                      <tr>
+                          <td>Shutdown message </td>
+                          <td>0x09</td>
+                          <td>Sent when the tracker is set off</td>
+                      </tr>
+                      <tr>
+                          <td>Geolocation start message (2)</td>
+                          <td>0x0A</td>
+                          <td>Sent when the tracker starts a geolocation</td>
+                      </tr>
+                      <tr>
+                          <td>Debug message</td>
+                          <td>0xFF</td>
+                          <td>Internal use only</td>
+                      </tr>
+                    </tbody>
+                </table>        
+                Note:
+                <ul>
+                <li>(1) Activity status message and configuration message share the same identifier. They are differentiated by another field.</li>
+                <li>(2) Only available on FW 1.7-3. Configurable via the config_flag parameter</li>
+                </ul>   
+            </details>
+     </details>   
+ 
+</details>
 
 ## Step 4. Integration configuration
 
