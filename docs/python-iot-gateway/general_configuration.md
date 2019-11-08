@@ -57,7 +57,9 @@ Directory structure like in DEB/RPM package, but you need mount the extension an
 ### Package manager installation
 
 In this case you can select, which folder will be used as configuration directory. 
-\#TODO write a guide about running from library.    
+In this case, directory structure depends on place, where you start the gateway. 
+Configuration folder is the same folder where "tb_gateway.yaml" placed.
+Logs file directory you can provide in "logs.conf" file.
 
 ## General configuration file
 
@@ -97,9 +99,7 @@ connectors:
     configuration: opcua.json
 
 {% endhighlight %}
-
-***Spaces identity are important.***
-
+<b><i>Spaces identity are important.</i></b>  
 </details>
 
 ### Sections in config file
@@ -918,7 +918,7 @@ This part of configuration will look like:
 
 
 #### Subsection "attributes_updates"
-This subsection contains configuration for RPC request from ThingsBoard platform instance.
+This subsection contains configuration for attribute updates request from ThingsBoard platform instance.
 
 | **Parameter**             | **Default value**                 | **Description**                                                                               |
 |:-|:-|-
