@@ -376,100 +376,174 @@ For this is it necessary:
 </details>
 
 ## Step 4. Integration configuration
+<details>
+    <summary>
+        <font color="#006400"><i><b>Photo: illustration create integration on the ThingsBoard platform</b></i></font> <br> (<b>click to open expanded view</b>)
+    </summary> 
+    <img src="/images/samples/abeeway/create_integration.png">
+</details>
+<b><font color="red">WARN !!!</font> After creation Integration...</b>
+<ul>
+    <li>check of the <b>base URL,</b></li>
+    <li>check <b>downLink URL</b> to:</li>
+    <ol>
+        <li>copy <b>downLink URL</b> - the HTTP Endpoint URL from the integration window (Example: https://thingparkenterprise.eu.actility.com/thingpark/dx/core/latest/api/devices)</li>
+        <li>paste this <b>downLink URL</b> to the URL of the Application server Actility where the device data is sent to and received from.</li>
+    </ol>
+</ul>
 
-![image](/images/samples/abeeway/create_integration.png)
-
- * check of the base URL
- * change downLink URL to:
- <br/> 
- https://thingparkenterprise.eu.actility.com/thingpark/dx/core/latest/api/devices
- <br/> 
- * copy-paste the HTTP Endpoint URL from the integration window based on the screencast below to URL Application Actility.
-
-![image](/images/samples/abeeway/actility_application.png)
+<details>
+    <summary>
+        <font color="#006400"><i><b>Photo: illustration page ThingPark Wireless OSS intelligent logger (Actility),</b> where you need to copy the <b>downLink URL</b></i></font> <br> (<b>click to open expanded view</b>)
+    </summary> 
+    <img src="/images/samples/abeeway/actility_application.png">
+</details>
 
 ## Step 5. Creation  and  configuration of the Dashboard
+<details>
+   <summary>
+       <font color="#006400"><i><b>Photo: illustration the Dashboard after finish og creation</b></i></font> (<b>click to open expanded view</b>)
+   </summary> 
+   <img src="/images/samples/abeeway/Actility Dashboard_Example.png">
+</details>
 
-- **Creation of the Dashboard**
+[Example: created by Dashboard in format json](/images/samples/abeeway/actility_dashboard.json)
 
-![image](/images/samples/abeeway/dashboard_create_01.png)
+<b>- Creation of the Dashboard<b>
+<details>
+   <summary>
+       <font color="#006400"><i><b>Photo: illustration the creation of the Dashboard</b></i></font> (<b>click to open expanded view</b>)
+   </summary> 
+   <img src="/images/samples/abeeway/dashboard_create_01.png">
+</details>
+<ol>
+     <li>Open Dashboard and add to: <br> alias (List abeeways): filter_type: Entity_list, type: Device, device_names: DevEUI_1_, DevEUI_2_, DevEUI_3_...</li>
+    <details>
+        <summary>
+            <font color="#006400"><i><b>Photo: illustration the open Dashboard and add to: alias (List abeeways): filter_type: Entity_list, type: Device, device_names: DevEUI_1_, DevEUI_2_, DevEUI_3_...</b></i></font> <br> (<b>click to open expanded view</b>)
+        </summary> 
+        <img src="/images/samples/abeeway/alias_create.png">
+    </details>
+    <li>Open Dashboard and add to: alias (DigEntityFrom): type: Entity from dashboard state, type: Device</li>
+    <details>
+        <summary>
+            <font color="#006400"><i><b>Photo: illustration the open Dashboard and add to: alias (DigEntityFrom): type: Entity from dashboard state, type: Device</b></i></font> <br> (<b>click to open expanded view</b>)
+        </summary> 
+        <img src="/images/samples/abeeway/alias_create_entityFromDashboard.png">
+    </details>
+</ol>
 
-- **Open Dashboard to add:**
 
-- ***alias (List abeeways): filter_type: Entity_list, type: Device, device_names: DevEUI_1_, DevEUI_2_, DevEUI_3_...__*** 
+<b>- Add to the Dashboard new widgets:</b>
+<ol>
+    <li> widget number 1: </li>
+        <ul>
+            <li>Current_bundle: Cards -> latest_values -> Entities: </li>
+            <li>Datasources: type: Entity, parameters: List abeeways </li>        
+            <details>
+                 <summary>
+                     <font color="#006400"><i><b>Photo: illustration creation widget number 1</b></i></font> (<b>click to open expanded view</b>)
+                 </summary> 
+                 <img src="/images/samples/abeeway/widget_create_cards.png">
+             </details>
+            <li> Action: action sources: on row click, Name: ${entityName}, type: Update_current_dashboard_state, Set_entity_from_widget </li>
+             <details>
+                  <summary>
+                      <font color="#006400"><i><b>Photo: illustration action sources: on row click to widget number 1</b></i></font> (<b>click to open expanded view</b>)
+                  </summary> 
+                  <img src="/images/samples/abeeway/widget_create_cards_action.png">
+              </details>           
+        </ul>     
+    <li> widget number 2: </li>
+        <ul>
+            <li>Current_bundle: Charts -> time_series: Timeseries_Float:</li>
+            <details>
+               <summary>
+                   <font color="#006400"><i><b>Photo: illustration creation widget number 2</b></i></font> (<b>click to open expanded view</b>)
+               </summary> 
+               <img src="/images/samples/abeeway/widget_create_charts_timeseriesFloat.png">
+            </details>
+            <li>Data_Source: type: Entity, parameters: List_abeeways, key:temperature, label: ${entityLabel}</li>         
+            <details>
+                <summary>
+                    <font color="#006400"><i><b>Photo: illustration add datasource to widget number 2 (part 1)</b></i></font> (<b>click to open expanded view</b>)
+                </summary> 
+                <img src="/images/samples/abeeway/widget_create_charts.png">
+            </details> 
+            <details>
+               <summary>
+                   <font color="#006400"><i><b>Photo: illustration add datasource to widget number 2 (part 2)</b></i></font> (<b>click to open expanded view</b>)
+               </summary> 
+               <img src="/images/samples/abeeway/widget_create_charts_entityLabel.png">
+            </details>  ![image](/images/samples/abeeway/Actility Dashboard_Example.png)     
+        </ul>    
+    <li> widget number 3: </li>
+        <ul>
+            <li>Current_bundle: Digital_guages</li>
+            <details>
+               <summary>
+                   <font color="#006400"><i><b>Photo: illustration creation widget number 3</b></i></font> (<b>click to open expanded view</b>)
+               </summary> 
+               <img src="/images/samples/abeeway/widget_create_difital_guages.png">
+            </details>
+            <li>Data_Source: type: Entity, parameters: DigEntityFrom, key:temperature, label: temperature</li>
+             <details>
+                <summary>
+                    <font color="#006400"><i><b>Photo: illustration add datasource to widget number 3</b></i></font> <b>click to open expanded view</b>)
+                </summary> 
+                <img src="/images/samples/abeeway/widget_create_difital.png">
+             </details>           
+        </ul>
+    <li> widget number 4: </li>
+        <ul>
+            <li>Current_bundle: Cards ->Timeseries</li>
+            <details>
+               <summary>
+                   <font color="#006400"><i><b>Photo: illustration creation widget number 4</b></i></font> (<b>click to open expanded view</b>)
+               </summary> 
+               <img src="/images/samples/abeeway/widget_create_cards_Timeseries.png">
+            </details>            
+            <li>Data_Source: type: Entity, parameters: DigEntityFrom</li>
+                <ul>
+                    <li>keys:temperature, label: temperature</li>>
+                    <li>keys:batteryVoltage, label: batteryVoltage ...</li>>
+                </ul>
+            </li>
+            <details>
+             <summary>
+                 <font color="#006400"><i><b>Photo: illustration add datasource to widget number 4</b></i></font> (<b>click to open expanded view</b>)
+             </summary> 
+             <img src="/images/samples/abeeway/widget_create_cards_with_value.png">
+            </details>           
+        </ul>
+</ol>
 
-![image](/images/samples/abeeway/alias_create.png)
-
-- ***alias (DigEntityFrom): type: Entity from dashboard state, type: Device***
-
-![image](/images/samples/abeeway/alias_create_entityFromDashboard.png)
-
-- **new widgets:**
-
-1) widget number 1: 
-- Current_bundle: Cards -> latest_values -> Entities:
-- Datasources: type: Entity, parameters: List abeeways
-
-![image](/images/samples/abeeway/widget_create_cards.png)
-
-- Action: action sources: on row click, Name: ${entityName}, type: Update_current_dashboard_state, Set_entity_from_widget
-
-![image](/images/samples/abeeway/widget_create_cards_action.png)
-
-2) widget number 2: 
-- Current_bundle: Charts -> time_series: Timeseries_Float:
-
-![image](/images/samples/abeeway/widget_create_charts_timeseriesFloat.png)
-
-- Data_Source: type: Entity, parameters: List_abeeways, key:temperature, label: ${entityLabel}
-
-![image](/images/samples/abeeway/widget_create_charts.png)
-
-![image](/images/samples/abeeway/widget_create_charts_entityLabel.png)
-
-3) widget number 3: 
-- Current_bundle: Digital_guages
-
-![image](/images/samples/abeeway/widget_create_difital_guages.png)
-
-- Data_Source: type: Entity, parameters: DigEntityFrom, key:temperature, label: temperature
-
-![image](/images/samples/abeeway/widget_create_difital.png)
-
-4) widget number 4: 
-- Current_bundle: Cards ->Timeseries
-
-![image](/images/samples/abeeway/widget_create_cards_Timeseries.png)
-
-- Data_Source: type: Entity, parameters: DigEntityFrom, 
-- keys:temperature, label: temperature
-- keys:batteryVoltage, label: batteryVoltage ...
-
-![image](/images/samples/abeeway/widget_create_cards_with_value.png)
-
-- **config dashbord (add filter):**
-
-***Widgets Number 1 and Number 2 with alias <b>Entity_list.Device</b>.***
-
-***Widgets Number 3 and Number 4 with alias <b>DigEntityFrom</b>.***
-
-Example: created by Dashboard in format json
-
-[Actility Dashboard](/images/samples/abeeway/actility_dashboard.json)
+-<b> ***Note***</b>:
+<ul>
+    <li>Widgets Number 1 and Number 2 with alias <b>Entity_list.Device</b>.</li>
+    <li>Widgets Number 3 and Number 4 with alias <b>DigEntityFrom</b>.</li>
+</ul>
 
 ## Step 6: Post telemetry and verify the Integration configuration
-
-Integration settings change log see here
-
-![image](/images/samples/abeeway/integration_latest_telemetry.png)
-
-A log of incoming messages from from ThingPark Wireless OSS intelligent logger (Actility) Platform see here:
-
-![image](/images/samples/abeeway/integration_events.png)
-
-If your devices are active and you do everything correctly when you connect the ThingPark Wireless OSS intelligent <br/> logger (Actility) Platform, then you will see incoming messages to the dashboard you created
-
-![image](/images/samples/abeeway/Actility Dashboard_Example.png)
+<details>
+ <summary>
+     <font color="#006400"><i><b>Photo: illustration Integration settings change log see here</b></i></font> (<b>click to open expanded view</b>)
+ </summary> 
+ <img src="/images/samples/abeeway/integration_latest_telemetry.png">
+</details> 
+<details>
+ <summary>
+     <font color="#006400"><i><b>Photo: illustration a log of incoming messages from from ThingPark Wireless OSS intelligent logger (Actility) Platform see here:</b></i></font> <br> (<b>click to open expanded view</b>)
+ </summary> 
+ <img src="/images/samples/abeeway/integration_events.png">
+</details> 
+If your devices are active and you do everything correctly when you connect the ThingPark Wireless OSS intelligent <br/> logger (Actility) Platform, then you will see incoming messages to the dashboard you created.
+<details>
+ <summary>
+     <font color="#006400"><i><b>Photo: illustration, as see incoming messages to the dashboard you created</b></i></font> (<b>click to open expanded view</b>)
+ </summary> 
+ <img src="/images/samples/abeeway/Actility Dashboard_Example.png">
+</details> 
 
 ## Information to create Downlink messages
 
@@ -480,128 +554,133 @@ configure or manage the tracker. Each message contains a header including:
 
 ➢ An acknowledgement token
 
-The remaining of the message depends on the message type described in the following table.
+<details>
+    <summary>
+     <font color="#006400"><i><b>The remaining of the message depends on the message type described in the following table.</b></i></font> <br> (<b>click to open expanded view</b>)
+    </summary> 
+    <table style="width: 50%">
+      <thead>
+          <tr>
+              <td><b>Message type</b></td>
+              <td><b>ID</b></td>
+              <td><b>Description</b></td>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td>POD</td>
+              <td>0x01</td>
+              <td>Position on demand</td>
+          </tr>
+          <tr>
+              <td>Set Mode</td>
+              <td>0x02</td>
+              <td>hange the tracker operational mode</td>
+          </tr>
+          <tr>
+              <td>Request configuration</td>
+              <td>0x03</td>
+              <td>Request the actual configuration of the tracker</td>
+          </tr>
+          <tr>
+              <td>Start SOS mode</td>
+              <td>0x04</td>
+              <td>Turn on SOS mode</td>
+          </tr>
+          <tr>
+              <td>Stop SOS mode</td>
+              <td>0x05</td>
+              <td>Turn off SOS mode</td>
+          </tr>
+          <tr>
+              <td>Set Param</td>
+              <td>0x0B</td>
+              <td>Modify parameter(s)</td>
+          </tr>
+          <tr>
+              <td>Debug command</td>
+              <td>0xFF</td>
+              <td>Remove BLE bonding. Reset the tracker</td>
+          </tr>
+        </tbody>
+    </table>
+</details>
 
-<table style="width: 50%">
-  <thead>
-      <tr>
-          <td><b>Message type</b></td>
-          <td><b>ID</b></td>
-          <td><b>Description</b></td>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>POD</td>
-          <td>0x01</td>
-          <td>Position on demand</td>
-      </tr>
-      <tr>
-          <td>Set Mode</td>
-          <td>0x02</td>
-          <td>hange the tracker operational mode</td>
-      </tr>
-      <tr>
-          <td>Request configuration</td>
-          <td>0x03</td>
-          <td>Request the actual configuration of the tracker</td>
-      </tr>
-      <tr>
-          <td>Start SOS mode</td>
-          <td>0x04</td>
-          <td>Turn on SOS mode</td>
-      </tr>
-      <tr>
-          <td>Stop SOS mode</td>
-          <td>0x05</td>
-          <td>Turn off SOS mode</td>
-      </tr>
-      <tr>
-          <td>Set Param</td>
-          <td>0x0B</td>
-          <td>Modify parameter(s)</td>
-      </tr>
-      <tr>
-          <td>Debug command</td>
-          <td>0xFF</td>
-          <td>Remove BLE bonding. Reset the tracker</td>
-      </tr>
-    </tbody>
-</table>
-
-- **Position on demand**
-
-Mode: operating modes. Acceptable values are:
-
-<table style="width: 40%">Int
-  <thead>
-      <tr>
-          <td><b>Mode</b></td>
-          <td><b>Value</b></td>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>Standby</td>
-          <td>0</td>
-      </tr>
-      <tr>
-          <td>Motion tracking</td>
-          <td>1</td>
-      </tr>
-      <tr>
-          <td>Permanent tracking</td>
-          <td>2</td>
-      </tr>
-      <tr>
-          <td>Motion start/end tracking</td>
-          <td>3</td>
-      </tr>
-      <tr>
-          <td>Activity tracking</td>
-          <td>4</td>
-      </tr>
-      <tr>
-          <td>Off mode</td>
-          <td>5</td>
-      </tr>
-   </tbody>
-</table> 
-
-[Reqest POD](/images/samples/abeeway/payloadHex_0102.json)
-
-- **Operational mode configuration**
-
-{% highlight bash %}
-{... 
-      payloadHex: "0203", ...
-}
-{% endhighlight %}
-
-- **Request device configuration**
-
-{% highlight bash %}
-{... 
-    payloadHex: "030605090C01", ...
-    * "05" - geoloc_sensor,
-    * "09" - gps_timeout,
-    * "0C" - gps_convergence, 
-    * "01" - lora_period
-          
-    Special parameter Id:  
-    * "0xFD": get the BLE version.
-    * "0xFE": get the firmware version.
-}
-{% endhighlight %}
-
-- **Parameters configuration**
-
-{% highlight bash %}
-{... 
-      payloadHex: "0B 0A 0C00000078 1100000E10", ...
-      
-     * "0C00000078" - 0C - gps_convergence, 0x78 - value (sec), 
-     * 1100000E10 - 11 - gps_standby_timeout. 0xE10 - value (sec). 
-}
-{% endhighlight %}
+- Create request: Position on demand
+[JSON: Create request "Position on demand"](/images/samples/abeeway/payloadHex_0102.json)
+<details>
+    <summary>
+     <font color="#006400"><i><b>Create request: Position on demand</b></i></font> (<b>click to open expanded view</b>)
+    </summary> 
+    <details>
+        <summary>
+        <font color="##228b22"><i><b>Create request: Position on demand -> Mode: operating modes. Acceptable values are:</b></i></font> (<b>click to open expanded view</b>)
+        </summary> 
+        <table style="width: 40%">
+          <thead>
+              <tr>
+                  <td><b>Mode</b></td>
+                  <td><b>Value</b></td>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td>Standby</td>
+                  <td>0</td>
+              </tr>
+              <tr>
+                  <td>Motion tracking</td>
+                  <td>1</td>
+              </tr>
+              <tr>
+                  <td>Permanent tracking</td>
+                  <td>2</td>
+              </tr>
+              <tr>
+                  <td>Motion start/end tracking</td>
+                  <td>3</td>
+              </tr>
+              <tr>
+                  <td>Activity tracking</td>
+                  <td>4</td>
+              </tr>
+              <tr>
+                  <td>Off mode</td>
+                  <td>5</td>
+              </tr>
+           </tbody>
+        </table> 
+     </details>
+     <ul>
+        <li>Operational mode configuration</li>
+        {% highlight bash %}
+        {... 
+              payloadHex: "0203", ...
+        }
+        {% endhighlight %}    
+        <li>Request device configuration</li>    
+        {% highlight bash %}
+        {... 
+            payloadHex: "030605090C01", ...
+            * "05" - geoloc_sensor,
+            * "09" - gps_timeout,
+            * "0C" - gps_convergence, 
+            * "01" - lora_period
+                  
+            Special parameter Id:  
+            * "0xFD": get the BLE version.
+            * "0xFE": get the firmware version.
+        }
+        {% endhighlight %}
+        <li>Parameters configuration</li>
+        {% highlight bash %}
+        {... 
+              payloadHex: "0B 0A 0C00000078 1100000E10", ...
+              
+             * "0C00000078" - 0C - gps_convergence, 0x78 - value (sec), 
+             * 1100000E10 - 11 - gps_standby_timeout. 0xE10 - value (sec). 
+        }
+        {% endhighlight %}
+    <ul>
+</details>
 

@@ -11,7 +11,7 @@
         },
         {
             "key": "Authorization",
-            "value": "Bearer {{token_Actilty}}",
+            "value": "Bearer {{token_Actilty}}"
         }
     ],
     "body": {
