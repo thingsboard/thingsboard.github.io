@@ -665,8 +665,7 @@ configure or manage the tracker. Each message contains a header including:
             * "05" - geoloc_sensor,
             * "09" - gps_timeout,
             * "0C" - gps_convergence, 
-            * "01" - lora_period
-                  
+            * "01" - lora_period,                  
             Special parameter Id:  
             * "0xFD": get the BLE version.
             * "0xFE": get the firmware version.
@@ -675,12 +674,20 @@ configure or manage the tracker. Each message contains a header including:
         <li>Parameters configuration</li>
         {% highlight bash %}
         {... 
-              payloadHex: "0B 0A 0C00000078 1100000E10", ...
-              
+              payloadHex: "0B 0A 0C00000078 1100000E10", ...              
              * "0C00000078" - 0C - gps_convergence, 0x78 - value (sec), 
              * 1100000E10 - 11 - gps_standby_timeout. 0xE10 - value (sec). 
         }
         {% endhighlight %}
-    <ul>
+    </ul>
+
 </details>
+
+## Next steps
+
+{% assign currentGuide = "HardwareSamples" %}{% include templates/guides-banner.md %}
+
+
+
+
 
