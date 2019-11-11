@@ -40,7 +40,7 @@ Few things to notice:
 
 The <b>DevEUI</b> from the incoming message will become the Device <b>Name</b> in ThingsBoard;
 
-ThingsBoard will automatically create device with type “tracker” and name equal to <b>DevEUI</b>;
+    ThingsBoard will automatically create device with type “tracker” and name equal to <b>DevEUI</b>;
 
 Therefore, when creating a new device, in the <b>Name</b> field, enter the value <b>DevEUI</b>: from the Device Information (ThingPark Wireless OSS intelligent logger (Actility)) section
 
@@ -401,12 +401,30 @@ For this is it necessary:
     <img src="/images/samples/abeeway/actility_application.png">
 </details>
 
-## Step 5. Creation  and  configuration of the Dashboard
+
+## Step 5. Verifying devices connectivity after creating and configuration the Integration.
+After creating and configuring the integration and connecting it to platform ThingPark Wireless companies Actility, ThingsBoard will begin receiving the first reports of the telemetry from your devices.
+<details>
+   <summary>
+       <font color="#006400"><i><b>Photo: illustration begin receiving the first reports of the telemetry</b></i></font> (<b>click to open expanded view</b>)
+   </summary> 
+   <img src="/images/samples/abeeway/after_integr_mesag.png">
+</details>
+On the basis of these first reports ThingsBoard system will automatically create devices with type  and name,  under which devices was registered in the ThingPark Actility Enterprise. 
+<details>
+   <summary>
+       <font color="#006400"><i><b>Photo: illustration ThingsBoard system will automatically create devices</b></i></font> (<b>click to open expanded view</b>)
+   </summary> 
+   <img src="/images/samples/abeeway/after_integr_dev.png">
+</details> 
+That's why after creating and configuring the integration, before starting the Dashboard setup, you need to check that, all your devices are detected and visible in ThingsBoard.
+
+## Step 6. Creation  and  configuration of the Dashboard
 <details>
    <summary>
        <font color="#006400"><i><b>Photo: illustration the Dashboard after finish og creation</b></i></font> (<b>click to open expanded view</b>)
    </summary> 
-   <img src="/images/samples/abeeway/Actility Dashboard_Example.png">
+   <img src="/images/samples/abeeway/actility_Dashboard_Example.png">
 </details>
 
 [Example: created by Dashboard in format json](/images/samples/abeeway/actility_dashboard.json)
@@ -526,7 +544,7 @@ For this is it necessary:
     <li>Widgets Number 3 and Number 4 with alias <b>DigEntityFrom</b>.</li>
 </ul>
 
-## Step 6: Post telemetry and verify the Integration configuration
+## Step 7: Post telemetry and verify the Integration configuration
 <details>
  <summary>
      <font color="#006400"><i><b>Photo: illustration Integration settings change log see here</b></i></font> (<b>click to open expanded view</b>)
