@@ -13,7 +13,7 @@ The connection is through the IoT network in the new global standard LoRaWAN and
 In this guide, we will use the free ThingsBoard PE demo server [cloud.thingsboard.io](https://cloud.thingsboard.io/signup) in this guide. 
 This guide will be useful to anyone who wants to connect their tracker`s manufactured by Abeeway or another industrial IoT application to the LoRaWAN network.
 
-![image](/images/samples/abeeway/dashboard_demo.png)
+![image](/images/samples/abeeway/actility_dashboard_example.png)
 
 * TOC
 {:toc}
@@ -89,7 +89,7 @@ After creating the Uplink Converter to the Decoder section, you need to update t
 
 For this is it necessary:
 
-### Uplink messages
+<b>- Edit the UpLink decoder !!!</b>
 
 [Decoder_Up_Link -> for devices such as Micro Tracker Abeeway  (<b>click to open expanded view</b>)](/images/samples/abeeway/upLinkDecoder.txt)
 <p></p> <p></p>
@@ -377,7 +377,35 @@ For this is it necessary:
     </ul>
 </details>
 
-## Step 4. Integration configuration
+## Step 4. DownLink Data Converter configuration
+When creating an Downlink Converter, a default decoder is added to the Decoder section.<br>
+After creating the Downlink Converter to the Decoder section, you need to update the Decoder code to. <br>
+For this is it necessary: <br>
+<b>- Edit the DownLink decoder !!!</b> <br>
+[Decoder_Down_Link -> for devices such as Micro Tracker Abeeway  (<b>click to open expanded view</b>)](/images/samples/abeeway/downlinkDecoder.txt)<br>
+   <ul>
+        <details>
+            <summary>
+            <font color="#228b22"><b>Photo: illustration edit the DownLink decoder</b></font> (<b>click to open expanded view</b>)
+            </summary>
+            <img src="/images/samples/abeeway/downlink_decoder.png">
+        </details> 
+        <details>
+         <summary>
+         <font color="#228b22"><b>JSON: output data after DownLink Data Converter looks like this:</b></font>  <br>(<b>click to open expanded view</b>)
+         </summary>  
+         {% highlight bash %}
+         {
+             {
+                 "contentType": "JSON",
+                 "data": "{\"senPayloadHex\":\"03020607\",\"deviceName\":\"20635F010800105C\"}"
+             }
+         }
+         {% endhighlight %}   
+        </details>  
+    </ul>
+    
+## Step 5. Integration configuration
 <details>
     <summary>
         <font color="#006400"><i><b>Photo: illustration create integration on the ThingsBoard platform</b></i></font> <br> (<b>click to open expanded view</b>)
@@ -402,7 +430,7 @@ For this is it necessary:
 </details>
 
 
-## Step 5. Verifying devices connectivity after creating and configuration the Integration.
+## Step 6. Verifying devices connectivity after creating and configuration the Integration.
 After creating and configuring the integration and connecting it to platform ThingPark Wireless companies Actility, ThingsBoard will begin receiving the first reports of the telemetry from your devices.
 <details>
    <summary>
@@ -419,12 +447,12 @@ On the basis of these first reports ThingsBoard system will automatically create
 </details> 
 That's why after creating and configuring the integration, before starting the Dashboard setup, you need to check that, all your devices are detected and visible in ThingsBoard.
 
-## Step 6. Creation  and  configuration of the Dashboard
+## Step 7. Creation  and  configuration of the Dashboard
 <details>
    <summary>
        <font color="#006400"><i><b>Photo: illustration the Dashboard after finish og creation</b></i></font> (<b>click to open expanded view</b>)
    </summary> 
-   <img src="/images/samples/abeeway/actility_Dashboard_Example.png">
+   <img src="/images/samples/abeeway/actility_dashboard_example.png">
 </details>
 
 [Example: created by Dashboard in format json](/images/samples/abeeway/actility_dashboard.json)
@@ -535,8 +563,30 @@ That's why after creating and configuring the integration, before starting the D
              </summary> 
              <img src="/images/samples/abeeway/widget_create_cards_with_value.png">
             </details>           
+        </ul>   
+        <li> widget number 5: </li>
+        <ul>
+            <li>Current_bundle: Input widgets ->Update Multiple Attributes</li>
+            <details>
+               <summary>
+                   <font color="#006400"><i><b>Photo: illustration creation widget number 5</b></i></font> (<b>click to open expanded view</b>)
+               </summary> 
+               <img src="/images/samples/abeeway/widget_create_input.png">
+            </details>            
+            <li>Data_Source: type: Entity, parameters: DigEntityFrom</li>
+                <ul>
+                    <li>keys:sentPayloadHex, label: ${entityLabel}</li>
+                </ul>
+            </li>
+            <details>
+             <summary>
+                 <font color="#006400"><i><b>Photo: illustration add datasource to widget number 5</b></i></font> (<b>click to open expanded view</b>)
+             </summary> 
+             <img src="/images/samples/abeeway/widget_create_input_with_value.png">
+            </details>           
         </ul>
 </ol>
+
 
 -<b><i>Note</i></b>:
 <ul>
@@ -544,7 +594,7 @@ That's why after creating and configuring the integration, before starting the D
     <li>Widgets Number 3 and Number 4 with alias <b>DigEntityFrom</b>.</li>
 </ul>
 
-## Step 7: Post telemetry and verify the Integration configuration
+## Step 8: Post telemetry and verify the Integration configuration
 <details>
  <summary>
      <font color="#006400"><i><b>Photo: illustration Integration settings change log see here</b></i></font> (<b>click to open expanded view</b>)
@@ -562,148 +612,269 @@ If your devices are active and you do everything correctly when you connect the 
  <summary>
      <font color="#006400"><i><b>Photo: illustration, as see incoming messages to the dashboard you created</b></i></font> (<b>click to open expanded view</b>)
  </summary> 
- <img src="/images/samples/abeeway/Actility Dashboard_Example.png">
+ <img src="/images/samples/abeeway/actility_dashboard_example.png">
 </details> 
 
-## Information to create Downlink messages
+## Step 9: Configuration the Root Rule Chain (Root)
 
-These messages are sent from the server to the tracker through the LoRa network. They are used to either
-configure or manage the tracker. Each message contains a header including:
+After adding widget number 5, it must be associated with the downlink decoder.<br>
+To do this, go to the "Rule Chain" tab and open the "Root Rule Chain".<br>
+<details>
+ <summary>
+     <font color="#006400"><i><b>Photo: illustration, Configuration the Root Rule Chain for the sent message to device</b></i></font> (<b>click to open expanded view</b>)
+ </summary> 
+ <img src="/images/samples/abeeway/rule_chain.png">
+</details> <br>
+Editing the "Root Rule Chain":
+<ul>
+    <li>To get the original name of the device via metadata After "Message Type Switch" add Enrichment: "originator fields" with the name "Fetch Name and Type":</li>
+        <ul>
+        <li>name: deviceName</li>
+        <li>type: deviceType</li>
+        <li>The relationship between "Message Type Switch" and "Fetch Name and Type":</li>
+            <ul>
+                <li>"Rule node link details": "Attributes Update"</li>
+            </ul>
+        </ul>
+    <details>
+     <summary>
+         <font color="#006400"><i><b>Photo: illustration, created Enrichment: "originator fields"</b></i></font> (<b>click to open expanded view</b>)
+     </summary> 
+     <img src="/images/samples/abeeway/create_incrichment_originator_fields.png">
+    </details>     
+    <li>To receive downlink data by a decoder and transmit decoded data to "Action - rpc call request":</li>
+        <ul>
+        <li>between "Fetch Name and Type" and "Action - rpc call request"</li>
+            <ul>
+                <li>add: Action: "integration downlink": name: Actility_DownLink, intagration: Test_ThigPark</li>
+                    <details>
+                     <summary>
+                         <font color="#006400"><i><b>Photo: illustration, created Action: "integration downlink"</b></i></font> (<b>click to open expanded view</b>)
+                     </summary> 
+                     <img src="/images/samples/abeeway/create_action _integration_downlink.png">
+                    </details>   
+            </ul>
+        <li>The relationship between "Fetch Name and Type" and "Actility_DownLink":</li>
+            <ul>
+                <li>"Rule node link details": "Success"</li>
+             </ul>   
+        <li>The relationship between "Actility_DownLink" and "Action - rpc call request":</li>
+            <ul>
+                <li>"Rule node link details": "Success"</li>
+            </ul>
+        </ul>
+</ul>
 
-➢ A message type
 
-➢ An acknowledgement token
+
+## Step 10: Create and Sent Downlink messages
+Before sending a message:
+- you must create a heading in which the type of request is determined (information about the configuration, or about the status of the device, or about the new configuration)<br> 
+and also the content of the date itself (a detailed description of the data).
 
 <details>
     <summary>
-     <font color="#006400"><i><b>The remaining of the message depends on the message type described in the following table.</b></i></font> <br> (<b>click to open expanded view</b>)
-    </summary> 
-    <table style="width: 50%">
-      <thead>
-          <tr>
-              <td><b>Message type</b></td>
-              <td><b>ID</b></td>
-              <td><b>Description</b></td>
-          </tr>
-      </thead>
-      <tbody>
-          <tr>
-              <td>POD</td>
-              <td>0x01</td>
-              <td>Position on demand</td>
-          </tr>
-          <tr>
-              <td>Set Mode</td>
-              <td>0x02</td>
-              <td>hange the tracker operational mode</td>
-          </tr>
-          <tr>
-              <td>Request configuration</td>
-              <td>0x03</td>
-              <td>Request the actual configuration of the tracker</td>
-          </tr>
-          <tr>
-              <td>Start SOS mode</td>
-              <td>0x04</td>
-              <td>Turn on SOS mode</td>
-          </tr>
-          <tr>
-              <td>Stop SOS mode</td>
-              <td>0x05</td>
-              <td>Turn off SOS mode</td>
-          </tr>
-          <tr>
-              <td>Set Param</td>
-              <td>0x0B</td>
-              <td>Modify parameter(s)</td>
-          </tr>
-          <tr>
-              <td>Debug command</td>
-              <td>0xFF</td>
-              <td>Remove BLE bonding. Reset the tracker</td>
-          </tr>
-        </tbody>
-    </table>
-</details>
-
-- Create request: Position on demand
-[JSON: Create request "Position on demand"](/images/samples/abeeway/payloadHex_0102.json)
-<details>
-    <summary>
-     <font color="#006400"><i><b>Create request: Position on demand</b></i></font> (<b>click to open expanded view</b>)
-    </summary> 
-    <ul>
+         <font color="#006400"><i><b>Information to create Downlink messages</b></i></font> (<b>click to open expanded view</b>)
+    </summary>  
+     <ul>      
+        <li>These messages are sent from the server to the tracker through the LoRa network. They are used to either
+        configure or manage the tracker. Each message contains a header including: </li> 
+        <ul> 
+            <li> A message type </li> 
+            <li> An acknowledgement token</li> 
+        </ul>       
         <details>
             <summary>
-            <font color="##228b22"><i><b>Create request: Position on demand -> Mode: operating modes. Acceptable values are:</b></i></font> (<b>click to open expanded view</b>)
+             <font color="#228b22"><i><b>The remaining of the message depends on the message type described in the following table.</b></i></font> <br> (<b>click to open expanded view</b>)
             </summary> 
-            <table style="width: 40%">
+            <table style="width: 50%">
               <thead>
                   <tr>
-                      <td><b>Mode</b></td>
-                      <td><b>Value</b></td>
+                      <td><b>Message type</b></td>
+                      <td><b>ID</b></td>
+                      <td><b>Description</b></td>
                   </tr>
               </thead>
               <tbody>
                   <tr>
-                      <td>Standby</td>
-                      <td>0</td>
+                      <td>POD</td>
+                      <td>0x01</td>
+                      <td>Position on demand</td>
                   </tr>
                   <tr>
-                      <td>Motion tracking</td>
-                      <td>1</td>
+                      <td>Set Mode</td>
+                      <td>0x02</td>
+                      <td>hange the tracker operational mode</td>
                   </tr>
                   <tr>
-                      <td>Permanent tracking</td>
-                      <td>2</td>
+                      <td>Request configuration</td>
+                      <td>0x03</td>
+                      <td>Request the actual configuration of the tracker</td>
                   </tr>
                   <tr>
-                      <td>Motion start/end tracking</td>
-                      <td>3</td>
+                      <td>Start SOS mode</td>
+                      <td>0x04</td>
+                      <td>Turn on SOS mode</td>
                   </tr>
                   <tr>
-                      <td>Activity tracking</td>
-                      <td>4</td>
+                      <td>Stop SOS mode</td>
+                      <td>0x05</td>
+                      <td>Turn off SOS mode</td>
+                  </tr>
+                  <tr>Enrichment: "originator fields"
+                      <td>Set Param</td>
+                      <td>0x0B</td>
+                      <td>Modify parameter(s)</td>
                   </tr>
                   <tr>
-                      <td>Off mode</td>
-                      <td>5</td>
+                      <td>Debug command</td>
+                      <td>0xFF</td>
+                      <td>Remove BLE bonding. Reset the tracker</td>
                   </tr>
-               </tbody>
-            </table> 
-         </details>
-         <ul>
-            <li>Operational mode configuration</li>
-            {% highlight bash %}
-            {... 
-                  payloadHex: "0203", ...
-            }
-            {% endhighlight %}    
-            <li>Request device configuration</li>    
-            {% highlight bash %}
-            {... 
-                payloadHex: "030605090C01", ...
-                * "05" - geoloc_sensor,
-                * "09" - gps_timeout,
-                * "0C" - gps_convergence, 
-                * "01" - lora_period,                  
-                Special parameter Id:  
-                * "0xFD": get the BLE version.
-                * "0xFE": get the firmware version.
-            }
-            {% endhighlight %}
-            <li>Parameters configuration</li>
-            {% highlight bash %}
-            {... 
-                  payloadHex: "0B 0A 0C00000078 1100000E10", ...              
-                 * "0C00000078" - 0C - gps_convergence, 0x78 - value (sec), 
-                 * 1100000E10 - 11 - gps_standby_timeout. 0xE10 - value (sec). 
-            }
-            {% endhighlight %}
-        </ul>
+                </tbody>
+            </table>
+        </details>    
+        - Create request: Position on demand
+        [JSON: Create request "Position on demand"](/images/samples/abeeway/payloadHex_0102.json)
+        <details>
+            <summary>
+             <font color="#228b22"><i><b>Create request: Position on demand</b></i></font> (<b>click to open expanded view</b>)
+            </summary> 
+            <ul>
+                <details>
+                    <summary>
+                    <font color="##228b22"><i><b>Create request: Position on demand -> Mode: operating modes. Acceptable values are:</b></i></font> (<b>click to open expanded view</b>)
+                    </summary> 
+                    <table style="width: 40%">
+                      <thead>
+                          <tr>
+                              <td><b>Mode</b></td>
+                              <td><b>Value</b></td>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <tr>
+                              <td>Standby</td>
+                              <td>0</td>
+                          </tr>
+                          <tr>
+                              <td>Motion tracking</td>
+                              <td>1</td>
+                          </tr>
+                          <tr>
+                              <td>Permanent tracking</td>
+                              <td>2</td>
+                          </tr>
+                          <tr>
+                              <td>Motion start/end tracking</td>
+                              <td>3</td>
+                          </tr>
+                          <tr>
+                              <td>Activity tracking</td>
+                              <td>4</td>
+                          </tr>
+                          <tr>
+                              <td>Off mode</td>
+                              <td>5</td>
+                          </tr>
+                       </tbody>
+                    </table> 
+                 </details>
+                 <ul>
+                    <li>Operational mode configuration</li>
+                    {% highlight bash %}
+                    {... 
+                          payloadHex: "0203", ...
+                    }
+                    {% endhighlight %}    
+                    <li>Request device configuration</li>    
+                    {% highlight bash %}
+                    {... 
+                        payloadHex: "030605090C01", ...
+                        * "05" - geoloc_sensor,
+                        * "09" - gps_timeout,
+                        * "0C" - gps_convergence, 
+                        * "01" - lora_period,                  
+                        Special parameter Id:  
+                        * "0xFD": get the BLE version.
+                        * "0xFE": get the firmware version.
+                    }
+                    {% endhighlight %}
+                    <li>Parameters configuration</li>
+                    {% highlight bash %}
+                    {... 
+                          payloadHex: "0B 0A 0C00000078 1100000E10", ...              
+                         * "0C00000078" - 0C - gps_convergence, 0x78 - value (sec), 
+                         * 1100000E10 - 11 - gps_standby_timeout. 0xE10 - value (sec). 
+                    }
+                    {% endhighlight %}
+                </ul>
+            </ul>
+        </details>
     </ul>
 </details>
+<details>
+    <summary>
+         <font color="#006400"><i><b>Sent Downlink messages</b></i></font> (<b>click to open expanded view</b>)
+    </summary> 
+    <ul>
+        <li>Messages to devices are sent from widget number 5:</li>
+        <details>
+         <summary>
+             <font color="#228b22"><i><b>Photo: illustration, sent message from widget number 5</b></i></font> (<b>click to open expanded view</b>)
+         </summary> 
+         <img src="/images/samples/abeeway/sent_message.png">
+        </details>   
+        <details>
+            <summary>
+                 <font color="#228b22"><i><b>Example creation message</b></i></font> (<b>click to open expanded view</b>)
+            </summary> 
+              {% highlight bash %}
+                {... 
+                      payloadHex: "03020001020305", 
+                ...}
+                {% endhighlight %}  
+                {% highlight bash %}
+                {... 
+                    Byte 0 Byte 1 Byte 2-21          
+                    "0x03" "ACK" Byte "2-21" Parameter ID list (optional)        
+                    Special parameter Id:        
+                    ➢ 0xFD: get the BLE version.        
+                    ➢ 0xFE: get the firmware version.           
+                    Byte 2-21 00 01 02 03 04 05 06 07 08 09 0a 0b 0c 0d 0e 0f 10 11 12       
+                    13 fd fe        
+                    00 01 02 03 05 06 08 09 0a 0b 0c 0d 0e 0f 10 11 12 13 fe 
+                ...}
+                {% endhighlight %}         
+        </details>
+         <details>
+          <summary>
+              <font color="#228b22"><i><b>Photo: illustration, receiving / sending messages to the device ThingPark Wireless OSS intelligent logger (Actility)</b></i></font> (<b>click to open expanded view</b>)
+          </summary> 
+          <img src="/images/samples/abeeway/receiving_message_actility.png">
+         </details>   
+        <details>
+          <summary>
+              <font color="#228b22"><i><b>Photo: illustration, receiving messages from the device ThingPark Wireless OSS intelligent logger (Actility)</b></i></font> (<b>click to open expanded view</b>)
+          </summary> 
+          <img src="/images/samples/abeeway/receiving_actility_from_dev.png">
+         </details>          
+         <details>
+          <summary>
+              <font color="#228b22"><i><b>Photo: illustration, receiving confirmation from the ThingPark Wireless to ThingsBoardabout sending a message to the device</b></i></font> (<b>click to open expanded view</b>)
+          </summary> 
+          <img src="/images/samples/abeeway/receiving_confirmation_singboard.png">
+         </details>  
+        <details>
+          <summary>
+              <font color="#228b22"><i><b>Photo: illustration, decoding device response by Thingsboard  UpLink decoder</b></i></font> (<b>click to open expanded view</b>)
+          </summary> 
+          <img src="/images/samples/abeeway/decoding_device_response.png">
+         </details>          
+    </ul>
 
+    
+</details>
 ## Next steps
 
 {% assign currentGuide = "HardwareSamples" %}{% include templates/guides-banner.md %}
