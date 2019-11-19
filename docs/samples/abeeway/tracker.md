@@ -40,7 +40,7 @@ Few things to notice:
 
 The <b>DevEUI</b> from the incoming message will become the Device <b>Name</b> in ThingsBoard;
 
-    ThingsBoard will automatically create device with type “tracker” and name equal to <b>DevEUI</b>;
+ThingsBoard will automatically create device with type “tracker” and name equal to <b>DevEUI</b>;
 
 Therefore, when creating a new device, in the <b>Name</b> field, enter the value <b>DevEUI</b>: from the Device Information (ThingPark Wireless OSS intelligent logger (Actility)) section
 
@@ -397,8 +397,36 @@ For this is it necessary: <br>
          {% highlight bash %}
          {
              {
-                 "contentType": "JSON",
-                 "data": "{\"senPayloadHex\":\"03020607\",\"deviceName\":\"20635F010800105C\"}"
+                /** Encoder **/
+                
+                var data = {};
+                
+                // Process data from incoming message and metadata
+                
+                data.payload = msg.sentPayloadHex;
+                data.DevEUI = metadata['DevEUI'];
+                data.deviceType = metadata['deviceType'];
+                data.ContentType = "application/json";
+                data.Accept = "application/json";
+                data.urlPrefix = "/core/latest/api/devices/";
+                data.urlSufix = "/downlinkMessages";
+                data.urlSufixToken = "/admin/latest/api/oauth/token";
+                data.firstParamToken = "client_credentials";
+                data.urlSufixGetDevices = "/core/latest/api/devices";
+                
+                
+                // Result object with encoded downlink payload
+                var result = {
+                    // downlink data content type: JSON, TEXT or BINARY (base64 format)
+                    contentType: "JSON",
+                    // downlink data
+                    data: JSON.stringify(data),
+                    msg: msg,
+                    metadata:  metadata
+                };
+                
+                
+                return result;
              }
          }
          {% endhighlight %}   
