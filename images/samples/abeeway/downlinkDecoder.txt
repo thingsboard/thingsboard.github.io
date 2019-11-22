@@ -1,0 +1,16 @@
+var data = {};
+
+// Process data from incoming message and metadata
+
+data.senPayloadHex = msg.sentPayloadHex;
+data.deviceName =  metadata['deviceName'];
+
+// Result object with encoded downlink payload
+var result = {
+    // downlink data content type: JSON, TEXT or BINARY (base64 format)
+    contentType: "JSON",
+    // downlink data
+    data: JSON.stringify(data),
+};
+
+return result;
