@@ -639,6 +639,7 @@ If your devices are active and you do everything correctly when you connect the 
     <img src="/images/samples/abeeway/actility_dashboard_example.png">
 </details> 
 
+
 ## Step 9: Configuration the Root Rule Chain (Root)
 
 After adding widget number 5, it must be associated with the downlink decoder.<br>
