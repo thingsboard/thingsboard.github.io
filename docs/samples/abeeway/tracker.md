@@ -689,7 +689,7 @@ Editing the "Root Rule Chain":
         <ul>
         <li>between "Fetch Name and Type" and "Action - rpc call request"</li>
             <ul>
-                <li>add: Action: "integration downlink": name: Actility_DownLink, intagration: Test_ThigPark</li>
+                <li>add: Action: "integration downlink": name: Actility_DownLink, integration: Test_ThigPark</li>
                     <details>
                      <summary>
                          <font color="#006400"><i><b>Screenshot of the created Action: "integration downlink"</b></i></font> (<b>click to open expanded view</b>)
