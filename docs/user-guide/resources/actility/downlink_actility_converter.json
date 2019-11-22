@@ -1,0 +1,9 @@
+{
+  "name": "Downlink Actility Converter",
+  "type": "DOWNLINK",
+  "debugMode": false,
+  "configuration": {
+    "encoder": "var data = {};\n\n// Process data from incoming message and metadata\n\ndata.senPayloadHex = msg.sentPayloadHex;\ndata.deviceName =  metadata['deviceName'];\n\n// Result object with encoded downlink payload\nvar result = {\n    // downlink data content type: JSON, TEXT or BINARY (base64 format)\n    contentType: \"JSON\",\n    // downlink data\n    data: JSON.stringify(data),\n};\n\nreturn result;"
+  },
+  "additionalInfo": null
+}
