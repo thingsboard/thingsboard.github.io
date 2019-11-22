@@ -63,18 +63,18 @@
   {
     "type": "hardware",
     "program": "",
-    "name": "Abeeway",
-    "logo": "abeeway.png",
+    "name": "Actility",
+    "logo": "actility.png",
     "links": {
       "Site": {
-        "href": "https://www.abeeway.com/",
+        "href": "https://www.actility.com/",
         "target": "_blank"
       },
       "Integration guide": {
         "href": "/docs/samples/abeeway/tracker"
       }
     },
-    "blurb": "Abeeway is  a market leader in tracking devices offering on-demand geolocation, movement alerts or geofencing. These trackers use GPS signals to determine their location, but with energy-efficient LoRaWAN communication to pass that location to a tracking application, so in comparison with trackers using cellular networks, they offer much longer battery life."
+    "blurb": "Actility has a strong background in large-scale project delivery and a heritage in carrier-grade systems, with leading customer deployments worldwide, making it the global leader in IoT connectivity solutions deployment."
   },
   {
     "type": "hardware",
