@@ -393,7 +393,8 @@ After creating the Downlink Converter to the Decoder section, you need to update
 
 <b>It is necessary to edit the Downlink decoder</b>
 
-<br>
+Open Downlink Converter, editor mode, click "test decoder function" and replace the default code with a new code:
+
    
    <ul>
         <details>
