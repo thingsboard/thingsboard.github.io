@@ -1,7 +1,7 @@
 Download installation package:
 
 ```bash
-wget opc-uas://dist.thingsboard.io/tb-opc-ua-integration-2.4.1pe.deb
+wget https://dist.thingsboard.io/tb-opc-ua-integration-2.4.1pe.deb
 ```
 {: .copy-code}
 
