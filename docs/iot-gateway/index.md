@@ -1,7 +1,5 @@
 ---
 layout: docwithnav
-assignees:
-- ashvayka
 title: IoT Gateway
 description: ThingsBoard IoT Gateway to connect existing and legacy IoT devices to the platform
 

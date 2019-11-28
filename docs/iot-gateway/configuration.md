@@ -1,88 +1,234 @@
 ---
 layout: docwithnav
-assignees:
-- ashvayka
-title: IoT Gateway Configuration
+title: Python IoT Gateway Configuration
+description: Installation structure and configuration of ThingsBoard IoT Gateway 
 
 ---
 
-This guide will help you to get familiar with ThingsBoard IoT Gateway configuration files and parameters.
 
-Once you have installed ThingsBoard IoT Gateway, you can find configuration files in the following directory:
+* TOC
+{:toc}
+
+
+## Directory structure
+
+<br>
+
+Directory structure can be different it depends on type of installation:
+
+1 - DEB/RPM package
+
+2 - Docker container
+
+3 - Package manager installation (pip3)
+
+### DEB/RPM package
+
+```text
+/etc/thingsboard-gateway/config                   - Default path for configuration folder.
+    logs.conf                                     - Default configuration file for logs.
+    modbus.json                                   - Default configuration file for Modbus connector.
+    mqtt.json                                     - Default configuration file for MQTT connector.
+    ble.json                                      - Default configuration file for BLE connector.
+    ...
+    opcua.json                                    - Default configuration file for OPC-UA connector.
+    tb_gateway.yaml                               - Default main configuration file for gateway. 
+
+/var/lib/thingsboard_gateway/extensions           - Default folder for custom connectors/converters.                      
+    modbus                                        - Default folder for Modbus custom connectors/converters.
+    mqtt                                          - Default folder for MQTT custom connectors/converters.
+        __init__.py                               - Default python package file, needed for correct imports.
+        custom_uplink_mqtt_converter.py           - Example of custom Mqtt converter.
+    ...
+    opcua                                         - Default folder for OPC-UA custom connectors/converters.
+
+/var/log/thingsboard-gateway                      - Default configuration folder
+    connector.log                                 - Default logs for default connectors.
+    converter.log                                 - Default logs for default converters.
+    extension.log                                 - Default logs for custom connectors.
+    service.log                                   - Default logs for the main gateway service.
+    storage.log                                   - Default logs for storage.
+    tb_connection.log                             - Default logs for connection to the ThingsBoard instance.
+```
+        
+
+### Docker container
+
+Directories structure like in DEB/RPM package, but you need mount the extensions  and config folders into container.
+
+### Package manager installation
+
+To install ThingsBoard as python module, you should follow steps below:  
+
+1. Install required libraries to the system with apt:  
 
 ```bash
-Linux: /etc/tb-gateway/conf
-Windows: $INSTALL_DIR/conf
+sudo apt install python3-dev python3-pip libglib2.0-dev 
 ```
+{: .copy-code}
 
-We will describe main configuration files below.
-
-#### tb-gateway.yml
-
-The main configuration file that is used to setup connection to ThingsBoard server and enable/disable extensions.
-
-| **Configuration property**            | **Description**                                                                                                                                                                           |
-|---------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **ThingsBoard connection properties** |                                                                                                                                                                                           |
-| gateway.connection.host               | ThingsBoard server hostname. For example, demo.thingsboard.io - live demo server.                                                                                                         |
-| gateway.connection.port               | ThingsBoard server MQTT port (1883 for not encrypted connection, 8883 for encrypted connection)                                                                                           |
-| gateway.connection.retryInterval      | ThingsBoard connect retry interval in milliseconds.                                                                                                                                       |
-| gateway.connection.maxInFlight        | Maximum amount of pending publish messages. Pending messages are messages that are either not sent due to connection problem or not yet confirmed due to high load on ThingsBoard Server. |
-| **ThingsBoard security properties**   |                                                                                                                                                                                           |
-| gateway.security.accessToken          | Populate this field in case of [Access Token based authentication](/docs/user-guide/access-token/)                                                                                        |
-| gateway.security.keystore             | Absolute or relative pass to keystore. Used in case of [X.509 Certificate based authentication](/docs/user-guide/certificates/)                                                           |
-| gateway.security.keystorePassword     | Password to the keystore.                                                                                                                                                                 |
-| gateway.security.keystoreKeyAlias     | Name of the client key in keystore. Password to the key should match password to keystore.                                                                                                |
-| gateway.security.truststore           | Absolute or relative pass to truststore. Used in case of encrypted connection.                                                                                                            |
-| gateway.security.truststorePassword   | Password to the truststore.                                                                                                                                                               |
-| **Misc gateway properties**           |                                                                                                                                                                                           |
-| gateway.reporting.interval            | Statistics report interval in milliseconds. Reports amount of connected devices and sent messages.                                                                                        |
-| gateway.persistence.type              | Either "file" or "memory" message persistence options available.                                                                                                                          |
-| gateway.persistence.path              | Path to the storage file in case of "file" persistence. Make sure that user who is running gateway process is able to create/modify the file.                                             |
-| gateway.persistence.bufferSize        | Maximum size of messages in storage.                                                                                                                                                      |
-| **OPC-UA extension**                  |                                                                                                                                                                                           |
-| opc.enabled                           | Either "true" or "false". Boolean flag that enables OPC-UA extension.                                                                                                                     |
-| opc.configuration                     | Absolute or relative pass to OPC-UA extension configuration file. See the corresponding section for more details.                                                                             |
-| **MQTT extension**                    |                                                                                                                                                                                           |
-| mqtt.enabled                          | Either "true" or "false". Boolean flag that enables MQTT extension.                                                                                                                       |
-| mqtt.configuration                    | Absolute or relative pass to MQTT extension configuration file. See the corresponding section for more details.                                                                               |
-| **Sigfox extension**                  |                                                                                                                                                                                           |
-| sigfox.enabled                        | Either "true" or "false". Boolean flag that enables Sigfox extension.                                                                                                                     |
-| sigfox.configuration                  | Absolute or relative pass to Sigfox extension configuration file. See the corresponding section for more details.                                                                             |
-| **HTTP server properties**            |                                                                                                                                                                                           |
-| server.address                        | HTTP server bind address. Reserved for future usage.                                                                                                                                      |
-| server.port                           | HTTP server bind port. Reserved for future usage                                                                                                                                          |
-
-#### logback.xml
-
-Logging configuration file that is based on [Logback](https://logback.qos.ch/) library.
-
-Most important loggers are listed below. Supported log levels: TRACE, DEBUG, INFO, WARN, ERROR
+2. Install ThingsBoard Gateway module with pip:  
 
 ```bash
-    <logger name="org.thingsboard" level="INFO" />
-    <logger name="org.eclipse.milo" level="INFO" />
-    <logger name="org.eclipse.paho" level="INFO" />
+sudo pip3 install thingsboard-gateway
+```
+{: .copy-code}
+
+3. Download example of configs, create log folder:  
+
+Downloading configs example:  
+
+```bash
+wget https://github.com/thingsboard/thingsboard-gateway/raw/develop/2.4-python/configs.tar.gz
+```
+{: .copy-code}
+
+Make directory for configs:  
+```bash
+sudo mkdir /etc/thingsboard-gateway
+```
+{: .copy-code}
+
+Make directory for logs:  
+```bash
+sudo mkdir /var/log/thingsboard-gateway
+```
+{: .copy-code}
+
+Unpack configs:  
+```bash
+sudo tar -xvzf configs.tar.gz -C /etc/thingsboard-gateway
+```
+{: .copy-code}
+
+
+4. Check installation you can with command (You will get errors about connection, because you don't configure gateway for yourself. For configuration please use [Configuration guide](/docs/iot-gateway/configuration-guide)):
+
+```bash
+thingsboard-gateway
+```
+{: .copy-code}
+
+## General configuration file
+
+The main configuration file that is used for connection to ThingsBoard platform instance and enable/disable connectors.  
+<br>
+<details>
+<summary>
+<b>Example of main configuration file. Press to show.</b>
+</summary>
+
+{% highlight yaml %}
+
+thingsboard:
+  host: 127.0.0.1
+  port: 1883
+  security:
+    accessToken: FUH2Fonov6eajSHi0Zyw
+storage:
+  type: memory
+  read_records_count: 10
+  max_records_count: 1000
+connectors:
+
+  -
+    name: MQTT Broker Connector
+    type: mqtt
+    configuration: mqtt.json
+
+  -
+    name: Modbus Connector
+    type: modbus
+    configuration: modbus.json
+
+  -
+    name: OPC-UA Connector
+    type: opcua
+    configuration: opcua.json
+   
+  -
+    name: BLE Connector
+    type: ble
+    configuration: ble.json
+
+{% endhighlight %}
+<b><i>Spaces identity are important.</i></b>  
+</details>
+
+### Sections in config file
+
++ **thingsboard-client** -- Configuration for connecting to ThingsBoard platform.
+  - *security* -- Configuration for type of encryption and authorization.
++ **storage** -- Configuration for local storage of incoming data from devices.
++ **connectors** -- Array of connectors (Protocols) uses.
+
+#### Section "thingsboard"
+
+|**Parameter**             | **Default value**                            |   **Description**                                              |
+|---                       |---                                           |---                                                             |
+| ***thingsboard***        |                                              | Configuration for connection to server.                        |
+| host                     | **127.0.0.1**                                | Hostname or ip address of ThingsBoard server.                  |
+| port                     | **1883**                                     | Port of mqtt service on ThingsBoard server.                    |
+
+###### Subsection "security"
+
+
+{% capture securitytogglespec %}
+Access Token<small>Recommended as easier to configure</small>%,%accessToken%,%templates/iot-gateway/security-accesstoken-config.md%br%
+TLS<small>recommended as more safety</small>%,%tls%,%templates/iot-gateway/security-tls-config.md{% endcapture %}
+
+There are 2 variants of security subsection:
+1. accessToken
+2. TLS
+
+{% include content-toggle.html content-toggle-id="securityConfig" toggle-spec=securitytogglespec %}
+
+
+#### Section "storage"
+
+Configs in storage subsection provides configuration for saving incoming data before it will be send to ThingsBoard platform.
+  
+There are 2 variants for this section: memory or file.
+1. **Memory** storage - Received data saving to the RAM memory.
+2. **File** storage - Received data saving to the hard drive.
+
+{% capture storagetogglespec %}
+Memory storage<br/> <small>(recommended if there is not enough disk space)</small>%,%memory%,%templates/iot-gateway/storage-memory-config.md%br%
+File storage<br/> <small>(recommended for more persistent)</small>%,%file%,%templates/iot-gateway/storage-file-config.md{% endcapture %}
+
+{% include content-toggle.html content-toggle-id="storageConfig" toggle-spec=storagetogglespec %}
+
+#### Section "connectors"
+ Configs in connectors section configuration for connecting to devices by implemented protocols.  
+ ***Pattern*** provided below.  
+ Config for every connector in this section must have parameters as in table below:  
+ 
+|**Parameter**|**Default value**|**Description**|
+|:-|:-|- 
+| name                     | **MQTT Broker Connector**                    | Name of connector to broker.                                                    |
+| type                     | **mqtt**                                     | Type of connector, must be like a name of folder, contained configuration file. |
+| configuration            | **mqtt.json**                                | Name of the file with configuration in config folder.*                          |
+|---
+
+\* -- Folder with this configuration file.  
+
+Section connectors in your configuration file may differ from shown below, but they should have structure like this:  
+
+```yaml
+connectors:
+
+  -
+    name: MQTT Broker Connector
+    type: mqtt
+    configuration: mqtt.json
+
+  -
+    name: Modbus Connector
+    type: modbus
+    configuration: modbus.json
+
 ```
 
-#### OPC-UA Extension
+**In example configuration file provided all connectors, you should uncomment sections for required connectors.**  
 
-OPC-UA Extension configuration is covered on the corresponding [extension page](/docs/iot-gateway/opc-ua/).
-
-#### MQTT Extension
-
-MQTT Extension configuration is covered on the corresponding [extension page](/docs/iot-gateway/mqtt/).
-
-#### Sigfox Extension
-
-SIGFOX Extension configuration is covered on the corresponding [extension page](/docs/iot-gateway/sigfox/).
-
-#### Modbus Extension
-
-Modbus Extension configuration is covered on the corresponding [extension page](/docs/iot-gateway/modbus/).
-
-#### Multi-tenant configuration
-
-Multi-tenant configuration is covered on the corresponding [**multi-tenant configuration page**](/docs/iot-gateway/multi-tenant-configuration/)
-
-
+If you need different type of connector, you can implement it by yourself, using custom connector or email us: <info@thingsboard.io>.

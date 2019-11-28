@@ -27,23 +27,25 @@ Directory structure can be different it depends on type of installation:
 ```text
 /etc/thingsboard-gateway/config                   - Default path for configuration folder.
     logs.conf                                     - Default configuration file for logs.
-    modbus.json                                   - Default configuration file for modbus connector.
-    mqtt.json                                     - Default configuration file for mqtt connector.
+    modbus.json                                   - Default configuration file for Modbus connector.
+    mqtt.json                                     - Default configuration file for MQTT connector.
+    ble.json                                      - Default configuration file for BLE connector.
     ...
     opcua.json                                    - Default configuration file for OPC-UA connector.
     tb_gateway.yaml                               - Default main configuration file for gateway. 
 
-/var/lib/thingsboard_gateway/extensions           - Default folder for custom converters.                      
-    modbus                                        - Default folder for Modbus custom converters.
-    mqtt                                          - Default folder for Mqtt custom converters.
-        __init__.py                               - Default python package file, needed for correct importing.
+/var/lib/thingsboard_gateway/extensions           - Default folder for custom connectors/converters.                      
+    modbus                                        - Default folder for Modbus custom connectors/converters.
+    mqtt                                          - Default folder for MQTT custom connectors/converters.
+        __init__.py                               - Default python package file, needed for correct imports.
         custom_uplink_mqtt_converter.py           - Example of custom Mqtt converter.
     ...
-    opcua                                         - Default folder for OPC-UA custom converters.
+    opcua                                         - Default folder for OPC-UA custom connectors/converters.
 
 /var/log/thingsboard-gateway                      - Default configuration folder
-    connector.log                                 - Default logs for all connectors.
-    extension.log                                 - Default logs for all converters.
+    connector.log                                 - Default logs for default connectors.
+    converter.log                                 - Default logs for default converters.
+    extension.log                                 - Default logs for custom connectors.
     service.log                                   - Default logs for the main gateway service.
     storage.log                                   - Default logs for storage.
     tb_connection.log                             - Default logs for connection to the ThingsBoard instance.
@@ -52,14 +54,53 @@ Directory structure can be different it depends on type of installation:
 
 ### Docker container
 
-Directory structure like in DEB/RPM package, but you need mount the extension and config folders into container.
+Directories structure like in DEB/RPM package, but you need mount the extension and config folders into container.
 
 ### Package manager installation
 
-In this case you can select, which folder will be used as configuration directory. 
-In this case, directory structure depends on place, where you start the gateway. 
-Configuration folder is the same folder where "tb_gateway.yaml" placed.
-Logs file directory you can provide in "logs.conf" file.
+To install ThingsBoard as python module, you should follow steps below:  
+
+1. Install required libraries to the system with apt:  
+
+```bash
+sudo apt install python3-dev python3-pip libglib2.0-dev
+```
+
+2. Install ThingsBoard Gateway module with pip:  
+
+```bash
+pip3 install thingsboard-gateway
+```
+
+3. Download example of configs, create log folder:  
+
+Downloading configs example:  
+
+```bash
+wget https://github.com/thingsboard/thingsboard-gateway/raw/develop/2.4-python/configs.tar.gz
+```
+{: .copy-code}
+
+Make directory for configs:  
+```bash
+mkdir /etc/thingsboard-gateway
+```
+{: .copy-code}
+
+Unpack configs:  
+```bash
+tar -zvcf configs.tar.gz /etc/thingsboard-gateway
+```
+{: .copy-code}
+
+
+4. Check installation you can with command (You will get errors about connection, because you don't configure gateway for yourself. For configuration please use [Configuration guide](/docs/iot-gateway/configuration-guide)):
+
+```bash
+thingsboard-gateway
+```
+{: .copy-code}
+
 
 ## General configuration file
 
@@ -67,7 +108,7 @@ The main configuration file that is used for connection to ThingsBoard platform 
 <br>
 <details>
 <summary>
-<b>Example of main configuration file. Press to show.</b>
+<b>Example of main configuration file. Press to expand.</b>
 </summary>
 
 {% highlight yaml %}
@@ -193,7 +234,8 @@ There are few connectors implemented:
 1. MQTT Connector  
 2. Modbus Connector  
 3. OPC-UA Connector  
-4. BLE Connector
+4. BLE Connector  
+5. Custom serial connector
 
 ## MQTT Connector
 
@@ -391,9 +433,9 @@ custom<small>recommended as more safety</small>%,%custom%,%templates/iot-gateway
 
 ### Section "connectRequests"
 This configuration section is optional.  
-Configuration, provided in this section will be used to get information from the broker about connecting new device.  
-
-There are 2 options for this block configuration, depending on where gateway should receive device name.  
+Configuration, provided in this section will be used to get information from the broker about connecting new device.
+  
+There are 2 options for this block configuration, depending on the type of device name retrieval. 
 
 **1. Name in a message from broker:**
 
