@@ -25,7 +25,7 @@ ThingsBoard IoT Gateway provides following features:
 #### Architecture  
 
 {:refdef: style="text-align: center;"}
-![ThingsBoard IoT Gateway architecture](/images/gateway/Python-gateway.jpg)
+![ThingsBoard IoT Gateway architecture](/images/gateway/python-gateway.jpg)
 {: refdef}
 
 
