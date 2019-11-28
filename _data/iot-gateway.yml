@@ -11,12 +11,14 @@ toc:
   section:
     - title: Installation options
       path: /docs/iot-gateway/installation/
-    - title: Windows
-      path: /docs/iot-gateway/install/windows/
     - title: Linux (Ubuntu & CentOS)
       path: /docs/iot-gateway/install/linux/
     - title: Raspberry Pi
-      path: /docs/iot-gateway/install/rpi/
+      path: /docs/iot-gateway/install/raspberry-pi/
+    - title: Orange Pi 2G IoT
+      path: /docs/iot-gateway/install/orange-pi-2g-iot/
+    - title: Orange Pi Zero
+      path: /docs/iot-gateway/install/orange-pi-2g-zero/
     - title: Building from sources
       path: /docs/iot-gateway/install/building-from-source/
     - title: Upgrade instructions
@@ -25,13 +27,13 @@ toc:
   section:
   - title: General configuration
     path: /docs/iot-gateway/configuration/
-  - title: OPC-UA Extension
-    path: /docs/iot-gateway/opc-ua/
-  - title: MQTT Extension
-    path: /docs/iot-gateway/mqtt/
-  - title: Sigfox Extension
-    path: /docs/iot-gateway/sigfox/
-  - title: Modbus Extension
-    path: /docs/iot-gateway/modbus/
-  - title: Multi-tenant configuration 
-    path: /docs/iot-gateway/multi-tenant-configuration/
+  - title: Connectors
+    section:
+    - title: MQTT Connector
+      path: /docs/iot-gateway/mqtt/
+    - title: Modbus Connector
+      path: /docs/iot-gateway/modbus/
+    - title: OPC-UA Connector
+      path: /docs/iot-gateway/opc-ua/
+    - title: BLE Connector
+      path: /docs/iot-gateway/ble/
