@@ -10,222 +10,199 @@ description: OPC-UA protocol support for ThingsBoard IoT Gateway
 * TOC
 {:toc}
 
-This guide will help you to get familiar with OPC-UA extension configuration for ThingsBoard IoT Gateway.
+This guide will help you to get familiar with OPC-UA connector configuration for ThingsBoard IoT Gateway.
 Use [general configuration](/docs/iot-gateway/configuration/) to enable this extension.
-We will describe extension configuration file below.
+We will describe connector configuration file below.
 
-### Extension configuration: opc-config.json
 
-Extension configuration is a JSON file that contains information about how to connect and monitor a list of OPC-UA servers.
-The root JSON element should contain "servers" array. Each server in the array is configured using following properties:
+<br>
 
-#### Basic connection properties
+<details>
 
-| **Property**        | **Description**                                                                                                                                                                                                  | **Default Value**         |
-|---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------|
-| applicationName     | Name of the client application, used for OPC-UA connection.                                                                                                                                                      | ThingsBoard OPC-UA client |
-| applicationUri      | URI of the client application, used for OPC-UA connection.                                                                                                                                                       |     |
-| host                | OPC-UA server host                                                                                                                                                                                               | localhost                 |
-| port                | OPC-UA server port                                                                                                                                                                                               | 49320                     |
-| scanPeriodInSeconds | Interval for complete OPC-UA server structure re-scan. Used to detect new or deleted devices.                                                                                                                    | 10                        |
-| timeoutInMillis     | OPC-UA server connection timeout in milliseconds.                                                                                                                                                                | 5000                      |
-| security            | OPC-UA security option. See [SecurityPolicy](https://github.com/eclipse/milo/blob/master/opc-ua-stack/stack-core/src/main/java/org/eclipse/milo/opcua/stack/core/security/SecurityPolicy.java) for more details. | Basic128Rsa15             |
+<summary>
+<b>Example of OPC-UA Connector config file. Press to expand.</b>
+</summary>
 
-For Example:
+{% highlight json %}
 
-```json
 {
-  "servers": [
-    {
-      "applicationName": "ThingsBoard OPC-UA client",
-      "applicationUri": "urn:thingsboard:client",
-      "host": "localhost",
-      "port": 49320,
-      "scanPeriodInSeconds": 10,
-      "timeoutInMillis": 5000,
-      "security": "Basic128Rsa15"
-      ...
-    }
-  ]
-}
-      
-```
-
-#### Client identity properties
-
-OPC-UA extension supports "anonymous" and "username" client identities.
-Example of anonymous identity configuration:
-
-```json
-{
-      ...
-      "identity": {
-        "type": "anonymous"
+  "server": {
+    "name": "OPC-UA Default Server",
+    "url": "localhost:4840/freeopcua/server/",
+    "scanPeriodInMillis": 10000,
+    "timeoutInMillis": 5000,
+    "security": "Basic128Rsa15",
+    "identity": {
+      "type": "anonymous"
+    },
+    "mapping": [
+      {
+        "deviceNodePattern": "MyObject\\d+",
+        "deviceNamePattern": "Device ${MyVariable22}",
+        "attributes": [
+          {
+            "key": "Tag1",
+            "path": "${MyVariable1}"
+          }
+        ],
+        "timeseries": [
+          {
+            "key": "Tag3",
+            "path": "${Tag3}"
+          },
+          {
+            "key": "Tag2",
+            "path": "${MyVariable3}"
+          }
+        ],
+        "rpc_methods": [
+          {
+            "method": "multiply",
+            "arguments": [2, 4]
+          }
+        ],
+        "attributes_updates": [
+          {
+            "attributeOnThingsBoard": "t",
+            "attributeOnDevice": "MyVariable1"
+          }
+        ]
       }
-      ...
+    ]
+  }
 }
-      
-```
 
-Example of username identity configuration:
+{% endhighlight %}
 
-```json
-{
-      ...
-      "identity": {
-        "type": "username",
-        "username": "Your username",
-        "password": "Your password"
-      }
-      ...
-}
-      
-```
+</details>
 
-#### Keystore configuration
+### Section "server"
 
-Keystore information is used to setup encrypted connection between Gateway OPC-UA client and your OPC-UA server.
-Many OPC-UA servers require provisioning of client key on the server before client can connect.
-Supported keystore types are JKS and PKCS12.
-Example of keystore configuration:
+Configuration in this section uses for connecting to Modbus server.  
 
-```json
-{
-      ...
-      "keystore": {
-        "type": "PKCS12",
-        "location": "your-certs.pfx",
-        "password": "your-keystore-password",
-        "alias": "your-client-key",
-        "keyPassword": "your-client-password"
-      }
-      ...
-}
-```
+| **Parameter**                 | **Default value**                    | **Description**                                                                       |
+|:-|:-|-
+| name                          | **OPC-UA Default Server**            | Name of connector to server.                                                          |
+| host                          | **localhost:4840/freeopcua/server/** | Hostname or ip address of Modbus server.                                              |
+| scanPeriodInMillis            | **10000**                            | Port of Modbus server for connect.                                                    |
+| timeoutInMillis               | **5000**                             | Timeout in seconds for connecting to Modbus server.                                   |
+| security                      | **Basic128Rsa15**                    | Security policy (**Basic128Rsa15**, **Basic256**, **Basic256Sha256**)                 |
+|---
 
-#### Mapping
+#### Subsection "identity"
+There are several types available for this subsection:  
+1. anonymous  
+2. username  
+3. cert.PEM  
 
-Mapping configuration setup rules of OPC-UA server monitoring and data conversion to ThingsBoard Key-Value format. For example:
+{% capture identityopcuatogglespec %}
+<b>anonymous</b><br/> <small>(recommended if all servers in the local network)</small>%,%anonymous%,%templates/iot-gateway/opcua-identity-anonymous-config.md%br%
+<b>username</b><br/> <small>(recommended as basic level of security)</small>%,%username%,%templates/iot-gateway/opcua-identity-username-config.md%br%
+<b>cert.PEM</b><br/> <small>(recommended as better level of security)</small>%,%certpem%,%templates/iot-gateway/opcua-identity-certpem-config.md%br%{% endcapture %}
 
-```json
-{
-...
-  "mapping": [
-    {
-      "deviceNodePattern": "Channel1\\.Device\\d+$",
-      "deviceNamePattern": "Device ${_System._DeviceId}",
-      "attributes": [
-        {"key":"Tag1", "type": "string", "value": "${Tag1}"}
-      ],
-      "timeseries": [
-        {"key":"Tag2", "type": "long", "value": "${Tag2}"}
-      ]
-    }
-    ...
-  ]
-}
-```
+{% include content-toggle.html content-toggle-id="opcuaIdentityConfig" toggle-spec=identityopcuatogglespec %}
 
-Mapping process periodically traverse the OPC-UA server node tree and applies the regular expression that is configured in **deviceNodePattern** parameter for each mapping configuration.
-The ist of nodes that match the regular expression is stored as device nodes. 
-Now mapping process will use **deviceNamePattern** to get device name value. 
-You can use OPC-UA tags inside the pattern by specifying their relative (to device node) names. See example below. 
-Similar mapping rules are applied for **attributes** and **timeseries** values:
+### Section "mapping"
+This configuration section contains array of nodes that the gateway will subscribe to after connecting to the OPC-UA server and settings about processing data from these nodes.
 
- - **key** - constant Attribute or Timeseries ThingsBoard key.
- - **type** - either boolean, long, double or string.
- - **value** - expression based on relative tag values specified inside **${}** 
+| **Parameter**                 | **Default value**                    | **Description**                                                                       |
+|:-|:-|-
+| deviceNodePattern             | **MyObject\\d+**                     | Regular expression, uses for looking the node for a current device.                   |
+| deviceNamePattern             | **Device ${MyVariable22}**           | JSON-path expression, uses for looking the device name in some variable.              |
+|---
 
-### Server-side RPC
-
-For general information how to use server-side RPC feature please visit [this guide](/docs/user-guide/rpc/#server-side-rpc-api/).
-
-#### Multiple tags write
-
-This RPC method allows user to simultaneously write values to the multiple tags of the connected device.
-
-##### Request format
-
-| **Property** | **Description**                 | **Value**   |
-|--------------|---------------------------------|-------------|
-| method       | RPC method name                 | write       |
-| params       | Format of RPC method parameters | JSON object |
-
-###### Method parameters format
-
-The method parameters are represented as JSON object. Each object field describes the single OPC tag and its value that needs to be written.
-
-| **Property**  | **Description**                                            | **Value**                  |
-|---------------|------------------------------------------------------------|----------------------------|
-| _tag name 1_  | Path to the OPC node (tag) relative to the device OPC node | boolean,long,double,string |
-| _tag name 2_  | ...                                                        | ...                        |
-| ...           | ...                                                        | ...                        |
-
-**NOTE:** For more details about the device OPC node see above the _Mapping_ section.
-
-##### Response format
-
-###### Success
-
-| **Property**   | **Description**                        | **Value** |
-|----------------|----------------------------------------|-----------|
-| _tag name 1_   | Name of OPC tag that has been written  | ok        |
-| _tag name 2_   | ...                                    | ...       |
-| ...            | ...                                    | ...       |
-
-###### Global error
-
-| **Property**  | **Description**           |
-|---------------|---------------------------|
-| error         | Description of the error  |
-
-###### Tag error
-
-| **Property**   | **Description**                                      |
-|----------------|------------------------------------------------------|
-| _tag name 1_   | Description of the error while writing the tag value |
-| _tag name 2_   | ...                                                  |
-| ...            | ...                                                  |
-
-
-##### Examples
-
-###### Request
+This part of configuration will look like:  
 
 ```json
-    {
-        "BooleanTag": true,
-        "DoubleTag": 3.14,
-        "LongTag": 12345,
-        "StringTag": "Hello World!",
-
-        "DateTagMillisInGmtTimeZone": 1543922564000,
-        "DateTagAsString": "2018-12-06 12:40:50.123 PST",
-
-        "Group.SubGroup.WordTag": 3456
-    }
+        "deviceNodePattern": "MyObject\\d+",
+        "deviceNamePattern": "Device ${MyVariable22}",
 ```
 
-###### Response
+***Optionally, you can add in this section parameter "converter" for using custom converter.***
+
+#### Subsection "attributes"
+This subsection contains configurations for variables of the object, that will be interpreted as attributes for the device.
+
+| **Parameter**   | **Default value**           | **Description**                                                                   |
+|:-|:-|-
+| key             | **Tag1**                    | Tag, that will interpreted as attribute for ThingsBoard platform instance.        |
+| path            | **${MyVariable}**           | JSON-path expression, uses for looking the value in some variable.                |
+|---
+
+This part of configuration will look like:  
 
 ```json
-    {
-        "SuccesWriteTag": "ok",
-        "ErrorWriteTag": "No tag found"
-    }
+        "attributes": [
+          {
+            "key": "Tag1",
+            "path": "${MyVariable1}"
+          }
+        ],
 ```
 
+#### Subsection "timeseries"
+This subsection contains configurations for variables of the object, that will be interpreted as telemetry for the device.
+
+| **Parameter**   | **Default value**           | **Description**                                                                   |
+|:-|:-|-
+| key             | **Tag1**                    | Tag, that will interpreted as telemetry for ThingsBoard platform instance.        |
+| path            | **${MyVariable}**           | JSON-path expression, uses for looking the value in some variable.                |
+|---
+
+This part of configuration will look like:  
+
 ```json
-    {
-        "error": "Unsupported RPC method"
-    }
+        "timeseries": [
+          {
+            "key": "Tag3",
+            "path": "${Tag3}"
+          }
+        ],
+```
+
+
+#### Subsection "rpc_methods"
+This subsection contains configuration for RPC request from ThingsBoard platform instance.
+
+| **Parameter**         | **Default value**                 | **Description**                                                                                    |
+|:-|:-|-
+| method                | **multiply**                      | Name of method on OPC-UA server.                                                                   |
+| arguments             | **[2,4]**                         | Arguments for the method (if this parameter doesn't exist, arguments will take from rpc request). |
+|---
+
+This part of configuration will look like:  
+
+```json
+        "rpc_methods": [
+          {
+            "method": "multiply",
+            "arguments": [2, 4]
+          }
+        ],
+```
+
+
+#### Subsection "attributes_updates"
+This subsection contains configuration for attribute updates request from ThingsBoard platform instance.
+
+| **Parameter**             | **Default value**                 | **Description**                                                                               |
+|:-|:-|-
+| attributeOnThingsBoard    | **t**                             | Name of server side argument.                                                                 |
+| attributeOnDevice         | **MyVariable1**                   | Name of variable that will change itself value with a value from attribute update request.    |
+|---
+
+This part of configuration will look like:  
+
+```json
+        "attributes_updates": [
+          {
+            "attributeOnThingsBoard": "t",
+            "attributeOnDevice": "MyVariable1"
+          }
+        ]
 ```
 
 ## Next steps
-
-Explore examples:
- 
- - [KEPServerEX connection example](/docs/iot-gateway/getting-started/#step-9-connect-to-external-opc-ua-server)
 
 Explore guides related to main ThingsBoard features:
 
