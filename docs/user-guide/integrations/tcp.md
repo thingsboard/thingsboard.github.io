@@ -139,17 +139,6 @@ Click on the device, go to **Latest Telemetry** tab to see "temperature" key and
 
 If your payload contains **humidity** telemetry, you should see "humidity" key and its value (69) there as well.
 
-## Video tutorial
- 
-See video tutorial below for step-by-step instruction how to setup TCP Integration.
-
-<br/>
-<div id="video">  
- <div id="video_wrapper">
-     <iframe src=" " frameborder="0" allowfullscreen></iframe>
- </div>
-</div>
-
 ## Next steps
 
 {% assign currentGuide = "ConnectYourDevice" %}{% include templates/guides-banner.md %}
