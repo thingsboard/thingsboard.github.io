@@ -2,8 +2,8 @@
 layout: docwithnav
 assignees:
 - ashvayka
-title: ThingsBoard Professional Edition cluster setup guide
-description: ThingsBoard Professional Edition cluster setup guide
+title: ThingsBoard Professional Edition using Docker with Cassandra (Linux or Mac OS)
+description: ThingsBoard Professional Edition using Docker with Cassandra (Linux or Mac OS)
 
 ---
 
@@ -148,8 +148,7 @@ $ ./docker-remove-services.sh
 
 Execute the following command to update particular or all services (pull newer docker image and rebuild container):
 
-`
-$ ./docker-update-service.sh
+`$ ./docker-update-service.sh`
 
 ## Post-installation steps
 
@@ -159,7 +158,7 @@ $ ./docker-update-service.sh
 
 In case when database upgrade is needed, execute the following commands:
 
-```
+```bash
 $ ./docker-stop-services.sh
 $ ./docker-upgrade-tb.sh --fromVersion=[FROM_VERSION]
 $ ./docker-start-services.sh
