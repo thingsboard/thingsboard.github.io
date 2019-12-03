@@ -77,7 +77,7 @@ TB_LICENSE_SECRET=PUT_YOUR_LICENSE_SECRET_HERE
 
 ## Step 6. Installation
 
-Check docker-compose.yml and configure ports fi you need
+Check docker-compose.yml and configure ports if you need
 
 ```bash
 cd pe-docker-compose
@@ -91,8 +91,8 @@ services:
     image: "${DOCKER_REPO}/${TB_NODE_DOCKER_NAME}:${TB_VERSION}"
     ports:
       - "9090:8080"
-      - "1885:1883"
-      - "5685:5683"
+      - "1883:1883"
+      - "5683:5683"
 ```
 
 Execute installation script
@@ -127,7 +127,7 @@ In case of any issues you can examine service logs for errors.
 For example to see ThingsBoard node logs execute the following command:
 
 `
-$ docker-compose logs -f tb1
+$ docker-compose logs -f tbpe
 `
 
 Or use `docker-compose ps` to see the state of all the containers.
@@ -149,12 +149,7 @@ $ ./docker-remove-services.sh
 Execute the following command to update particular or all services (pull newer docker image and rebuild container):
 
 `
-$ ./docker-update-service.sh [SERVICE...]
-`
-
-Where:
-
-- `[SERVICE...]` - list of services to update (defined in docker-compose configurations). If not specified all services will be updated.
+$ ./docker-update-service.sh
 
 ## Post-installation steps
 
