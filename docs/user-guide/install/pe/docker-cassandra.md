@@ -47,6 +47,8 @@ docker pull store/thingsboard/tb-pe-node:2.4.1PE
 
 ```bash
 git clone https://github.com/thingsboard/thingsboard-pe-docker-compose.git tb-pe-docker-compose
+cd tb-pe-docker-compose
+git checkout develop/cassandra-standalone
 ```
 
 ## Step 4. Obtain your license key
@@ -60,7 +62,6 @@ We will reference the license key you have obtained during this step as PUT_YOUR
 ## Step 5. Configure your license key
 
 ```bash
-cd tb-pe-docker-compose
 nano tb-node.env
 ```
 
@@ -80,7 +81,6 @@ TB_LICENSE_SECRET=PUT_YOUR_LICENSE_SECRET_HERE
 Check docker-compose.yml and configure ports if you need
 
 ```bash
-cd pe-docker-compose
 nano docker-compose.yml
 ```
 
