@@ -210,8 +210,12 @@ toc:
     path: /docs/user-guide/ui/devices/
   - title: Rule Chains
     path: /docs/user-guide/ui/rule-chains/
-  - title: Widgets Library
-    path: /docs/user-guide/ui/widget-library/
+  - title: Widgets
+    section:
+    - title: Trip Animation Widget
+      path: /docs/user-guide/ui/trip-animation-widget/
+    - title: Widgets Library
+      path: /docs/user-guide/ui/widget-library/
   - title: Dashboards
     path: /docs/user-guide/ui/dashboards/
   - title: Mail Settings
