@@ -166,6 +166,12 @@
       keywords:
       pe: true
       video: true
+    - path: /docs/user-guide/integrations/aws-kinesis/
+      title: Connect devices through AWS Kinesis
+      subtitle: Learn how to connect to AWS Kinesis stream, transform the incoming messages and generate the downlinks using ThingsBoard.
+      keywords:
+      pe: true
+      video: false
     - path: /docs/user-guide/integrations/ibm-watson-iot/
       title: Connect devices through IBM Watson IoT
       subtitle: Learn how to connect to IBM Watson IoT broker, transform the incoming messages and generate the downlinks using ThingsBoard.
