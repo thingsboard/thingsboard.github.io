@@ -151,6 +151,8 @@ toc:
     path: /docs/user-guide/integrations/ttn/
   - title: AWS IoT
     path: /docs/user-guide/integrations/aws-iot/
+  - title: AWS Kinesis
+    path: /docs/user-guide/integrations/aws-kinesis/
   - title: IBM Watson
     path: /docs/user-guide/integrations/ibm-watson-iot/
   - title: Azure Event Hub
@@ -210,8 +212,12 @@ toc:
     path: /docs/user-guide/ui/devices/
   - title: Rule Chains
     path: /docs/user-guide/ui/rule-chains/
-  - title: Widgets Library
-    path: /docs/user-guide/ui/widget-library/
+  - title: Widgets
+    section:
+    - title: Trip Animation Widget
+      path: /docs/user-guide/ui/trip-animation-widget/
+    - title: Widgets Library
+      path: /docs/user-guide/ui/widget-library/
   - title: Dashboards
     path: /docs/user-guide/ui/dashboards/
   - title: Mail Settings

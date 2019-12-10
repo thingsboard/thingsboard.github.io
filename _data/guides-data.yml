@@ -166,6 +166,12 @@
       keywords:
       pe: true
       video: true
+    - path: /docs/user-guide/integrations/aws-kinesis/
+      title: Connect devices through AWS Kinesis
+      subtitle: Learn how to connect to AWS Kinesis stream, transform the incoming messages and generate the downlinks using ThingsBoard.
+      keywords:
+      pe: true
+      video: false
     - path: /docs/user-guide/integrations/ibm-watson-iot/
       title: Connect devices through IBM Watson IoT
       subtitle: Learn how to connect to IBM Watson IoT broker, transform the incoming messages and generate the downlinks using ThingsBoard.
@@ -230,6 +236,12 @@
       keywords:
       pe: false
       video: true
+    - path: /docs/user-guide/ui/trip-animation-widget
+      title: Trip Animation widget
+      subtitle: "Learn how to display your devices with the latest telemetry data on the Trip Animation widget and modify the widget properties."
+      keywords: 
+      pe: false
+      video: false
 - title: Data processing & actions
   subtitle: Learn how to use ThingsBoard Rule Engine.
   id: DataProcessing

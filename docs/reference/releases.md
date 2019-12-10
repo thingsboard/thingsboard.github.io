@@ -8,6 +8,85 @@ description: ThingsBoard architecture
 * TOC
 {:toc}
 
+## v2.4.2 (December 10, 2019)
+
+### ThingsBoard CE
+
+Minor release with the following improvements.
+
+Main features:
+
+* Batch attribute and telemetry updates for PostgreSQL 
+(up to 40000 insert/second on an average laptop);
+* Alarm create/update performance improvements;
+* Ability to store device state changes to telemetry instead of attributes;
+* Added coverage of nearly all REST API calls in the Java REST Client;
+* Optimization of device creation and lookup performance;
+* JS Invoke become async;
+* Redis cluster configuration support;
+* Added Redis queue support in REST API call node;
+* UI: Added 'Device claiming' widget;
+* UI: Improved 'Trip Animation' widget;
+* UI: Improved 'Multiple Attributes' widget;
+* UI: New input widgets use map (image/openstreet/gogle) to set location entity
+* UI: Added clustering of markers on Map widget. See [video tutorial](https://www.youtube.com/watch?v=sBFmOHxWbag).
+
+Additional features:
+
+* Added 'label' field to Assets;
+* Added configurable logging of performance metrics;
+* Improved reporting of last activity time from the remote transport;
+* Tool for migrating from Postgres to hybrid mode;
+* Updated PostgreSQL driver version to 9.4.1212;
+* Allow Nulls in JsonConverter for usability;
+* Improved activation link to work without x-forwarded-port not set;
+* increased default JS execution time to 3000 ms;
+* UI: Improved translations for RU & UA;
+* UI: Added Greek language;
+* UI: Move action button to header widget;
+* UI: Bulk provisioning supports label filed;
+* UI: Ability to hide "Columns to Display" and "Alarm Status Filter";
+* UI: Charts:
+  * Ability to compare current data with data for last day, week, month, year;
+  * Ability to hide tooltip values that are 0 or false;
+  * Ability to configure dataKey and remove it from stacking mode;
+  * Ability to specify type of the dots on line chart: 'circle', 'cross', 'diamond', 'square' і 'triangle';
+
+Bug fixes:
+
+* Clear Alarm Node fix clearTs and endTs in log message;
+* UI: Fixed CDN Url for Google Maps widget;
+* UI: Fixed missing translations for login page;
+* UI: Fixed spelling;
+* UI: Fixed widgets order mobile view;
+* UI: Fixed disable on condition and errors displaying;
+* UI: Fix delete timeseries data;
+
+### ThingsBoard PE
+
+Everything from [TB CE v2.4.2](https://github.com/thingsboard/thingsboard/releases/tag/v2.4.2) with the following improvements.
+
+Main features:
+
+ - Kafka integration;
+ - AWS Kinesis integration;
+ - UDP/TCP integration improvements and documentation;
+ - Added support of Assets and Entity Groups in the integrations;
+ 
+Additional features:
+
+ - Add new format export data XLSX;
+ - JPA improvements.
+ - Misc performance improvements;
+ - UI: New alias: Owner of an entity from dashboard state
+ 
+Bug fixes:
+
+- Fix schedule reconnect for stopped OPC-UA integration;
+- Fix for OPC-UA Client reconnect issue;
+- Fix event storage reader not to skips an extra line in file on start;
+- Fix export file name to support custom translate;
+
 ## v2.4.1 (September 13, 2019)
 
 ### ThingsBoard CE
