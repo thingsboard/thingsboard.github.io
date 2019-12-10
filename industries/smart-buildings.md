@@ -40,6 +40,32 @@ description:
 </div>
 
 <div class="customer-block">
+    <a href="https://www.mdeg-digital.com/">
+        <div class="customer-logo">
+            <img width="" src="/images/customers/mdeg.png" alt="mdeg GmbH">
+        </div>
+    </a>
+    <div class="customer-content">
+        <h3 id="mdeg">
+            mdeg GmbH 
+        </h3>    
+        <h4>mdeg GmbH – we deliver a consummate solution for digital connection of medical devices</h4>
+        <p> One of our core products is the mdeg Medical Device Cloud, a connectivity solution for medical devices to record, track, and monitor. Being dedicated for Medical Devices only, we have to meet the highest standards regarding reliability, independence, security and scalability. We also need to stay within judicial area with our infrastructure. With ThingsBoard we found the right solution and partner.
+        </p>
+        <p> ThingsBoard provides us with the perfect mix of reliability, flexibility and high quality support whenever needed during the development of the mdeg Medical Device Cloud. Thanks to the beneficial cooperation we can today offer a complete Connectivity Solution dedicated to Medical Device Industry only to a wide range of customers with exciting medical products all over Europe.
+        </p>
+        <div class="person-logo-container">
+            <img class="person-logo" src="/images/customers/mdeg-cbeck.jpg"/>
+            <div class="person-title">
+                Christoph Beck
+                <br/>
+                Founder and CEO 
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="customer-block">
     <a href="http://www.e2cbms.com/">
         <div class="customer-logo">
             <img width="" src="/images/customers/e2c.png" alt="Environmental Energy Controls">
@@ -123,7 +149,7 @@ description:
         </p> 
         <div class="person-logo-container">
             <div class="person-title">
-                MIchael Nickolai <br/>
+                Michael Nickolai <br/>
                 Co-Founder & Executive Manager
             </div>
         </div>
