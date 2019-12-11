@@ -23,10 +23,10 @@ description: ThingsBoard PE IoT platform upgrade instructions
       <a href="#upgrading-to-242pe" id="markdown-toc-upgrading-to-242pe">Upgrading to 2.4.2PE</a>
       <ul>
           <li>
-              <a href="#ubuntucentos-2" id="markdown-toc-ubuntucentos-2">Ubuntu/CentOS</a>        
+              <a href="#ubuntucentos-1" id="markdown-toc-ubuntucentos-2">Ubuntu/CentOS</a>        
           </li>
           <li>
-              <a href="#windows-2" id="markdown-toc-windows-2">Windows</a>        
+              <a href="#windows-1" id="markdown-toc-windows-2">Windows</a>        
           </li>
       </ul>
   </li>
