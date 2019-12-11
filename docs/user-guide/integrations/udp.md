@@ -14,56 +14,53 @@ description: UDP Integration Guide
 
 UDP Integration allows to stream data from devices which use a UDP protocol to ThingsBoard and converts payloads of these devices into the ThingsBoard format.
 
+
+**Please note** UDP Integration can be started only as [Remote Integration](/docs/user-guide/integrations/remote-integrations). It could be started on the same machine, where TB instance is running, or you can start in on another machine, that has access over the network to the TB instance.  
+
 Please review the integration diagram to learn more.
 
 ![image](/images/user-guide/integrations/udp-integration.svg)
 
-## Setup UDP Integration
+## UDP Integration Configuration
 
+### Prerequisites
 
-#### For messages in string format
+In this tutorial, we will use:
 
-Go to **Integrations** section and click **Add new integration** button.
-Name it **Demo UDP TEXT Integration Test**, select type **UDP**, turn the Debug mode on and from drop-down menus add recently created Uplink and Downlink converters.
+ - ThingsBoard Professional Edition instance — [cloud.thingsboard.io](https://cloud.thingsboard.io);
+ - UDP Integration, running externally and connected to the cloud ThingsBoard PE instance;
+ - **echo** command which intended to display a line of text, and will redirect it's output to **netcat** (**nc**) utility;
+ - **netcat** (**nc**) utility to establish UDP connections, receive data from there and transfer them;    
 
-Specify Port: **11562** for **Text Channel Inbound Handler** which work depends on the so-called **Datagram-Packet To String Message Decoder**.
+Let's assume that we have a sensor which is sending current temperature and humidity readings.
+Our sensor device **SN-001** publishes it's temperature and humidity readings to UDP Integration on **11560** port to the machine where UDP Integration is running.
 
-**Datagram-Packet To String Message Decoder** which decodes from one message to an other message in our case from **DatagramPacket** to **String**.<br>
+For demo purposes we assume that our device is smart enough to send data in 3 different payload types:
+ - **Text** - in this case payload is **SN-001,default,temperature,25.7,humidity,69**
+ - **JSON** - in this case payload is 
+ 
+```json
+[
+  {
+    "deviceName": "SN-001",
+    "deviceType": "default",
+    "temperature": 25.7,
+    "humidity": 69
+  }
+]
+```
+ - **Binary** - in this case binary payload is **\x53\x4e\x2d\x30\x30\x31\x64\x65\x66\x61\x75\x6c\x74\x32\x35\x2e\x37** (in HEX string). 
+  Here is the description of the bytes in this payload:
+    - **0-5** bytes - **\x53\x4e\x2d\x30\x30\x31** - device name. If we convert it to text - **SN-001**;
+    - **6-12** bytes - **\x64\x65\x66\x61\x75\x6c\x74** - device type. If we convert it to text - **default**;
+    - **13-16** bytes - **\x32\x35\x2e\x37** - temperature telemetry. If we convert it to text - **25.7**;
+    
+You can select payload type based on your device capabilities and business cases.
+ 
+**Please note** that on the machine, where UDP Integration is running, port **11560** must be opened for incoming connections - **nc** utility must be able to connect to UDP socket.
+In case you are running it locally, it should be fine without any additional changes. 
 
-**Text Channel Inbound Handler** is specific handler class which allows to explicit only handle a String type of messages.<br>
-
-#### For messages in hex string format
-
-Go to **Integrations** section and click **Add new integration** button.
-Name it **Demo UDP HEX Integration Test**, select type **UDP**, turn the Debug mode on and from drop-down menus add recently created Uplink and Downlink converters.
-
-Specify Port: **11564** for **Text Channel Inbound Handler** which work depends on the so-called **Datagram-Packet To ObjectNode Message Decoder**.
-
-**Datagram-Packet To ObjectNode Message Decoder** which decodes from one message to an other message in our case from **DatagramPacket** to **ObjectNode**.<br>
-
-**Text Channel Inbound Handler** is specific handler class which allows to explicit only handle a ObjectNode type of messages.<br>
-
-#### For messages in binary format
-
-Go to **Integrations** section and click **Add new integration** button.
-Name it **Demo UDP BINARY Integration Test**, select type **UDP**, turn the Debug mode on and from drop-down menus add recently created Uplink and Downlink converters.
-
-Specify Port: **11563** for **Binary Channel Inbound Handler** which work depends on the so-called **Datagram-Packet To Byte Array Message Decoder**.
-
-**Datagram-Packet To Byte Array Message Decoder** that decodes from **DatagramPacket** to **byte[]**.<br>
-
-**Binary Channel Inbound Handler** is specific handler class which allows to explicit only handle a **byte[]** type of messages.<br>
-
-#### A brief description of Socket Channel Options used to configure the server
-- **SO_BROADCAST** - enables or disables a DataGramSocket's ability to send broadcast messages;
-- **SO_RCVBUF** - the size in bytes of the socket data receive buffer (will specify **65535**);
-
-Then we need to configure the **Handler Configuration**.
-Handler Type: **TEXT**, **HEX** or **BINARY**.
-
-Click **Add** to save the Integration.
-
-#### Uplink Converter
+### Uplink Converter
 
 Before setting up an **UDP integration**, you need to create an **Uplink Converter** that is a script for parsing and transforming the data received by UDP integration.
 
@@ -72,95 +69,69 @@ Name it **"UDP Uplink Converter"** and select type **Uplink**. Use debug mode fo
 
 **NOTE** Although the Debug mode is very useful for development and troubleshooting, leaving it enabled in production mode may tremendously increase the disk space, used by the database, because all the debugging data is stored there. It is highly recommended to turn the Debug mode off when done debugging. 
 
-Now copy & paste the following script to the Decoder function section:
+Choose device payload type to for decoder configuration
 
-```javascript
-/** Decoder **/
+{% capture uplinkpayload %}
+Text payload<br/>%,%text%,%templates/integration/udp/udp-uplink-converter-text.md%br%
+JSON payload<br/>%,%json%,%templates/integration/udp/udp-uplink-converter-json.md%br%
+Binary payload<br/>%,%binary%,%templates/integration/udp/udp-uplink-converter-binary.md{% endcapture %}
 
-// decode payload to string
-
-var strArray = decodeToString(payload);
-var payloadArray = strArray.replace(/\"/g, "").replace(/\s/g, "").split(',');
-
-var result = {
-    deviceName: payloadArray[0],
-    deviceType: payloadArray[1],
-    telemetry: {
-      temperature: payloadArray[2],
-      humidity: payloadArray[3]
-    },
-    attributes: {
-      boolValue: payloadArray[4],
-      serialNumber: payloadArray[5]
-    }
-  };
-
-function decodeToString(payload) {
-   return String.fromCharCode.apply(String, payload);
-}
-return result;
-
-``` 
-
-The purpose of the decoder function is to parse the incoming data and metadata to a format that ThingsBoard can consume. 
-**deviceName** and **deviceType** are required, while **attributes** and **telemetry** are optional.
-**Attributes** and **telemetry** are flat key-value objects. Nested objects are not supported.
+{% include content-toggle.html content-toggle-id="udpintegartionuplinkpayload" toggle-spec=uplinkpayload %}
 
 #### Downlink Converter
 
-**In current implementation does not use the the DownLink Converter**
+**Currently UDP integration does not support Downlink functionality**
 
-## Prerequisites to testing **UDP Integration**
+### UDP Integration Setup
 
-In order to test the work of a UDP integration, in this tutorial we will use:
+Go to **Integrations** section and click **Add new integration** button. Name it **UDP Integration**, select type **UDP**, turn the Debug mode on and from drop-down menus add recently created Uplink converter.
 
- - ThingsBoard Professional Edition instance — [cloud.thingsboard.io](https://cloud.thingsboard.io);
- - UDP server, accessible by ThingsBoard PE instance (port 11562 / 11563 depends from type of configuration, TEXT of BINARY);
- - **echo** command which intended to display a line of text;   
- - **netcat** utility to establish UDP connections, receive data from there and transfer them;    
+As you mentioned **Execute remotely** is checked and can not be modified - UDP Integration can be only **remote** type.
 
-Let's suppose that we have a device with some name, let's say **MyDummyDeviceA**, and some kind of message, with the following content:
+Please note down **Integration key** and **Integration secret** - we will use these values later in the configuration on the remote UDP Integration itself.
 
-```shell
-msg: 'MyDummyDeviceA,UDPDevice,45.2,57.3,false,40'
-```
+![image](/images/user-guide/integrations/udp/udp-integration-setup.png)
 
-The command to send a message to the UDP server will look like this:
+By default UDP Integration will use **11560** port, but you can change this to any available port in your case. 
 
-```shell
-echo MyDummyDeviceA,UDPDevice,45.2,57.3,false,40 | netcat <thingsbord-name-cloud-host> 11562 (or 11563 for BINARY configuration)
-```
+We leave other options by default, but there is brief description of them:
+- **Enable broadcast - integration will accepts broadcast address packets** - a flag indicating that integration will accept UDP packets that were sent to broadcast address;
+- **Size of the buffer for inbound socket** - the size in KBytes of the socket data receive buffer;
 
-We can also send multiple messages in one string, separated by **Message Separator** (**System Line Delimiter**).
-In this case, the command will look like this:
+Choose device payload type for **Handler Configuration**
 
-```shell
-echo MyDummyDeviceA,UDPDevice,45.2,57.3,false,40<lineSeparator>MyDummyDeviceB,UDPDevice,39.2,81.2,true,39 | netcat <thingsbord-name-cloud-host> 11562 (or 11563 for BINARY configuration)
-```
+{% capture handlerconfiguration %}
+Text payload<br/>%,%text%,%templates/integration/udp/udp-handler-configuration-text.md%br%
+JSON payload<br/>%,%json%,%templates/integration/udp/udp-handler-configuration-json.md%br%
+Binary payload<br/>%,%binary%,%templates/integration/udp/udp-handler-configuration-binary.md{% endcapture %}
 
-## Send Uplink message
+{% include content-toggle.html content-toggle-id="udpintegrationhandlerconfiguration" toggle-spec=handlerconfiguration %}
 
-Once ThingsBoard UDP Integration has been created, the UDP server starts, and then it waits for text and binary data from the devices.
+Click **Add** to save the Integration.
 
-Now let's simulate the device sending a temperature reading to the integration:
+#### Installing and running external UDP Integration
 
-```shell
-echo MyDummyDeviceA,UDPDevice,25.2,57.3,false,40<lineSeparator> | netcat <thingsbord-name-cloud-host> 11562 (or 11563 for BINARY configuration)
-```
+Please refer to the [Remote Integration guide](/docs/user-guide/integrations/remote-integrations) and install UDP Integration service locally or on separate machine.
 
-Once you go to **Device Groups -> All** you should find a **MyDummyDeviceA** device provisioned by the Integration.
-Click on the device, go to **Latest Telemetry** tab to see "temperature" key and its value (25.2) and "humidity" key and its value (57.3) there.
+Please use **Integration key** and **Integration secret** from the above section for your UDP Integration configuration.  
 
-## Video tutorial
- 
-See video tutorial below for step-by-step instruction how to setup UDP Integration.
+### Send Uplink message
 
-<br/>
-<div id="video">  
- <div id="video_wrapper">
-     <iframe src="" frameborder="0" allowfullscreen></iframe>
- </div>
-</div> 
+Once ThingsBoard UDP Integration has been created, the UDP server starts, and then it waits for data from the devices.
+
+Choose device payload type to send uplink message
+
+{% capture senduplink %}
+Text payload<br/>%,%text%,%templates/integration/udp/udp-send-uplink-text.md%br%
+JSON payload<br/>%,%json%,%templates/integration/udp/udp-send-uplink-json.md%br%
+Binary payload<br/>%,%binary%,%templates/integration/udp/udp-send-uplink-binary.md{% endcapture %}
+
+{% include content-toggle.html content-toggle-id="udpintegrationsenduplink" toggle-spec=senduplink %}
+
+Once you go to **Device Groups -> All** you should find a **SN-001** device provisioned by the Integration.
+Click on the device, go to **Latest Telemetry** tab to see "temperature" key and its value (25.7) there.
+
+If your payload contains **humidity** telemetry, you should see "humidity" key and its value (69) there as well.
 
 ## Next steps
 

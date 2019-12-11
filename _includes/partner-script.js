@@ -13,13 +13,14 @@
         return partner.type === partnersType;
     });
 
-	var sorted = partnersByType.sort(function (a, b) {
-		if (a.name > b.name) return 1
-		if (a.name < b.name) return -1
-		return 0
-	})
+	// var sorted = partnersByType.sort(function (a, b) {
+	// 	if (a.name > b.name) return 1
+	// 	if (a.name < b.name) return -1
+	// 	return 0
+	// })
 
-	sorted.forEach(function (obj) {
+    // sorted.forEach(function (obj) {
+    partnersByType.forEach(function (obj) {
 		var box = document.createElement('div');
 		box.className = 'partner-box';
 

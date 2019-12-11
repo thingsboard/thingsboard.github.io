@@ -25,14 +25,14 @@ This guide describes how to install ThingsBoard on a Raspberry Pi 3 running Rasp
 Download installation package.
 
 ```bash
-wget https://github.com/thingsboard/thingsboard/releases/download/v2.4.1/thingsboard-2.4.1.deb
+wget https://github.com/thingsboard/thingsboard/releases/download/v2.4.2/thingsboard-2.4.2.deb
 ```
 {: .copy-code}
 
 Install ThingsBoard as a service
 
 ```bash
-sudo dpkg -i thingsboard-2.4.1.deb
+sudo dpkg -i thingsboard-2.4.2.deb
 ```
 {: .copy-code}
 
