@@ -20,7 +20,7 @@ description: ThingsBoard PE IoT platform upgrade instructions
     </ul>
   </li>
   <li>
-      <a href="#upgrading-to-242pe" id="markdown-toc-upgrading-to-242pe">Upgrading to 2.4.2PE</a>
+      <a href="#upgrading-to-2421pe" id="markdown-toc-upgrading-to-2421pe">Upgrading to 2.4.2.1PE</a>
       <ul>
           <li>
               <a href="#ubuntucentos-1" id="markdown-toc-ubuntucentos-2">Ubuntu/CentOS</a>        
@@ -124,17 +124,17 @@ C:\thingsboard>upgrade.bat --fromVersion=2.4.0
 net start thingsboard
 ```
 
-## Upgrading to 2.4.2PE
+## Upgrading to 2.4.2.1PE
 
-These steps are applicable for 2.4.1PE ThingsBoard Professional Edition version.
+These steps are applicable for 2.4.1PE and 2.4.2PE ThingsBoard Professional Edition versions.
 
 ### Ubuntu/CentOS
 
 #### ThingsBoard PE package download
 
 {% capture tabspec %}thingsboard-download-2-4-2
-thingsboard-download-2-4-2-ubuntu,Ubuntu,shell,resources/2.4.2pe/thingsboard-ubuntu-download.sh,/docs/user-guide/install/resources/2.4.2pe/thingsboard-ubuntu-download.sh
-thingsboard-download-2-4-2-centos,CentOS,shell,resources/2.4.2pe/thingsboard-centos-download.sh,/docs/user-guide/install/resources/2.4.2pe/thingsboard-centos-download.sh{% endcapture %}  
+thingsboard-download-2-4-2-ubuntu,Ubuntu,shell,resources/2.4.2.1pe/thingsboard-ubuntu-download.sh,/docs/user-guide/install/resources/2.4.2.1pe/thingsboard-ubuntu-download.sh
+thingsboard-download-2-4-2-centos,CentOS,shell,resources/2.4.2.1pe/thingsboard-centos-download.sh,/docs/user-guide/install/resources/2.4.2.1pe/thingsboard-centos-download.sh{% endcapture %}  
 {% include tabs.html %}
 
 #### ThingsBoard PE service upgrade
@@ -149,8 +149,8 @@ $ sudo service thingsboard stop
 
 
 {% capture tabspec %}thingsboard-installation-2-4-2
-thingsboard-installation-2-4-2-ubuntu,Ubuntu,shell,resources/2.4.2pe/thingsboard-ubuntu-installation.sh,/docs/user-guide/install/resources/2.4.2pe/thingsboard-ubuntu-installation.sh
-thingsboard-installation-2-4-2-centos,CentOS,shell,resources/2.4.2pe/thingsboard-centos-installation.sh,/docs/user-guide/install/resources/2.4.2pe/thingsboard-centos-installation.sh{% endcapture %}  
+thingsboard-installation-2-4-2-ubuntu,Ubuntu,shell,resources/2.4.2.1pe/thingsboard-ubuntu-installation.sh,/docs/user-guide/install/resources/2.4.2.1pe/thingsboard-ubuntu-installation.sh
+thingsboard-installation-2-4-2-centos,CentOS,shell,resources/2.4.2.1pe/thingsboard-centos-installation.sh,/docs/user-guide/install/resources/2.4.2.1pe/thingsboard-centos-installation.sh{% endcapture %}  
 {% include tabs.html %}
 
 **NOTE:** Package installer will ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.  
@@ -179,7 +179,7 @@ $ sudo service thingsboard start
 
 #### ThingsBoard PE package download
 
-Download ThingsBoard PE installation package for Windows: [thingsboard-windows-setup-2.4.2pe.exe](https://dist.thingsboard.io/thingsboard-windows-setup-2.4.2pe.exe).
+Download ThingsBoard PE installation package for Windows: [thingsboard-windows-setup-2.4.2.1pe.exe](https://dist.thingsboard.io/thingsboard-windows-setup-2.4.2.1pe.exe).
 
 #### ThingsBoard PE service upgrade
 
@@ -190,7 +190,7 @@ net stop thingsboard
 ```
 
 * Make a backup of previous ThingsBoard PE configuration located in \<ThingsBoard install dir\>\conf (for ex. C:\thingsboard\conf).
-* Run installation package **thingsboard-windows-setup-2.4.2pe.exe**.
+* Run installation package **thingsboard-windows-setup-2.4.2.1pe.exe**.
 * Compare your old ThingsBoard configuration files (from the backup you made in the first step) with new ones.
 * Please make sure that you set **database.entities.type** and **database.ts.type** parameters values (in the file **\<ThingsBoard install dir\>\conf\thingsboard.yml**) to "cassandra" instead of "sql" in order to upgrade your cassandra database:
   

@@ -26,14 +26,14 @@ To run ThingsBoard and Cassandra on a single machine you will need at least 8Gb 
 Download installation package.
 
 ```bash
-wget https://dist.thingsboard.io/thingsboard-2.4.2pe.deb
+wget https://dist.thingsboard.io/thingsboard-2.4.2.1pe.deb
 ```
 {: .copy-code}
 
 Install ThingsBoard as a service
 
 ```bash
-sudo dpkg -i thingsboard-2.4.2pe.deb
+sudo dpkg -i thingsboard-2.4.2.1pe.deb
 ```
 {: .copy-code}
 
@@ -98,7 +98,7 @@ Please allow up to 90 seconds for the Web UI to start. This is applicable only f
 Download installation package for the [Reports Server](/docs/user-guide/reporting/#reports-server) component:
 
 ```bash
-wget https://dist.thingsboard.io/tb-web-report-2.4.2pe.deb
+wget https://dist.thingsboard.io/tb-web-report-2.4.2.1pe.deb
 ```
 {: .copy-code}
 
@@ -138,7 +138,7 @@ rm -rf ~/noto
 Install and start Web Report service:
 
 ```bash
-sudo dpkg -i tb-web-report-2.4.2pe.deb
+sudo dpkg -i tb-web-report-2.4.2.1pe.deb
 sudo service tb-web-report start
 ```
 
