@@ -1,5 +1,5 @@
 bigheader: "Architecture"
-abstract: "Design docs, deployment scenarios and release notes."
+abstract: "Design docs, deployment scenarios and performance"
 toc:
 - title: Architecture Overview
   path: /docs/reference/
@@ -7,15 +7,17 @@ toc:
   path: /docs/reference/monolithic/
 - title: Microservices architecture
   path: /docs/reference/msa/
+- title: Deployment scenarios
+  path: /docs/reference/iot-platform-deployment-scenarios/
 - title: ThingsBoard Performance
   section:
-  - title: ThingsBoard Performance on different AWS instances
-    path: /docs/reference/performance-aws-instances/
-  - title: Data Collection Performance
-    path: /docs/reference/performance/
-  - title: Performance Test Tools
-    path: /docs/reference/performance-tools/
-  - title: How to repeat the tests
-    path: /docs/reference/performance-tests/
+    - title: Performance and Scalability
+      path: /docs/reference/performance/
+    - title: 20K IoT devices on single ThingsBoard server
+      path: /docs/reference/20k-devices-test/
+    - title: 1M IoT devices on ThingsBoard cluster with Kubernetes and Amazon EC2
+      path: /docs/reference/1m-devices-test/
+    - title: Single instance performance on different AWS instances
+      path: /docs/reference/performance-aws-instances/
 - title: ThingsBoard PE Cloud Getting Started
   path: /docs/reference/pe-demo-getting-started/
