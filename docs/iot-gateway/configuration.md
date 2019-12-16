@@ -56,58 +56,6 @@ Directory structure can be different it depends on type of installation:
 
 Directories structure like in DEB/RPM package, but you need mount the extensions  and config folders into container.
 
-### Package manager installation
-
-To install ThingsBoard as python module, you should follow steps below:  
-
-1. Install required libraries to the system with apt:  
-
-```bash
-sudo apt install python3-dev python3-pip libglib2.0-dev 
-```
-{: .copy-code}
-
-2. Install ThingsBoard Gateway module with pip:  
-
-```bash
-sudo pip3 install thingsboard-gateway
-```
-{: .copy-code}
-
-3. Download example of configs, create log folder:  
-
-Downloading configs example:  
-
-```bash
-wget https://github.com/thingsboard/thingsboard-gateway/raw/develop/2.4-python/configs.tar.gz
-```
-{: .copy-code}
-
-Make directory for configs:  
-```bash
-sudo mkdir /etc/thingsboard-gateway
-```
-{: .copy-code}
-
-Make directory for logs:  
-```bash
-sudo mkdir /var/log/thingsboard-gateway
-```
-{: .copy-code}
-
-Unpack configs:  
-```bash
-sudo tar -xvzf configs.tar.gz -C /etc/thingsboard-gateway
-```
-{: .copy-code}
-
-
-4. Check installation you can with command (You will get errors about connection, because you don't configure gateway for yourself. For configuration please use [Configuration guide](/docs/iot-gateway/configuration-guide)):
-
-```bash
-thingsboard-gateway
-```
-{: .copy-code}
 
 ## General configuration file
 
@@ -227,8 +175,28 @@ connectors:
     type: modbus
     configuration: modbus.json
 
+  -
+    name: BLE Connector
+    type: ble
+    configuration: ble.json
+
+  -
+    name: OPC-UA
+    type: opcua
+    configuration: opcua.json
+
+  -
+    name: Modbus Serial Connector
+    type: modbus
+    configuration: modbus_serial.json
+
+  -
+    name: Custom Serial Connector
+    type: serial
+    configuration: custom_serial.json
+    class: CustomSerialConnector
 ```
 
-**In example configuration file provided all connectors, you should uncomment sections for required connectors.**  
+**Notice:** You can use several similar connectors at same time, but you should provide different names and configuration files to them. 
 
 If you need different type of connector, you can implement it by yourself, using custom connector or email us: <info@thingsboard.io>.

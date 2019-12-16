@@ -13,30 +13,15 @@ Thingsboard is an open-source IoT platform for data collection, processing, visu
 
 ThingsBoard IoT Gateway provides following features:
 
- - [**MQTT** connector](/docs/iot-gateway/mqtt.md) to control, configure and collect data from IoT devices that are connected to external MQTT brokers using existing protocols.
- - [**OPC-UA** connector](/docs/iot-gateway/opc-ua.md) to collect data from IoT devices that are connected to OPC-UA servers.
- - [**Modbus** connector](/docs/iot-gateway/modbus.md) to collect data from IoT devices that are connected through Modbus protocol.
- - [**BLE** connector](/docs/iot-gateway/ble.md) to collect data from IoT devices that are connected using Bluetooth Low Energy.
- - [**Custom** connector](/docs/iot-gateway/custom.md) to collect data from IoT devices that are connected by different protocols. (You can create your own connector for the requires protocol).
+ - [**MQTT** connector](/docs/iot-gateway/config/mqtt/) to control, configure and collect data from IoT devices that are connected to external MQTT brokers using existing protocols.
+ - [**OPC-UA** connector](/docs/iot-gateway/config/opc-ua/) to collect data from IoT devices that are connected to OPC-UA servers.
+ - [**Modbus** connector](/docs/iot-gateway/config/modbus/) to collect data from IoT devices that are connected through Modbus protocol.
+ - [**BLE** connector](/docs/iot-gateway/config/ble/) to collect data from IoT devices that are connected using Bluetooth Low Energy.
+ - [**Custom** connector](/docs/iot-gateway/custom/connector/) to collect data from IoT devices that are connected by different protocols. (You can create your own connector for the requires protocol).
  - **Persistence** of collected data to guarantee data delivery in case of network or hardware failures.
  - **Automatic reconnect** to ThingsBoard cluster.
  - Simple yet powerful **mapping** of incoming data and messages **to unified format**.
   
-#### Architecture  
-
-{:refdef: style="text-align: center;"}
-![ThingsBoard IoT Gateway architecture](/images/gateway/python-gateway.jpg)
-{: refdef}
-
-
-
-The IoT Gateway is built on top of **Python**, however is different from similar projects that leverage OSGi technology.
-The idea is distantly similar to microservices architecture.
-The gateway supports custom connectors to connect to new devices or servers and custom converters for processing data from devices.
-Especially, when we are talking about language APIs and existing libraries to work with serial ports, GPIOs, I2C, and new modules and sensors that are released every day. 
-
-The Gateway provides simple integration APIs, and encapsulates common Thingsboard related tasks: device provisioning, local data persistence and delivery, message converters and other.
-For processing data from devices you also can write custom converter, it will receive information from device and send it to converter to convert to unified format before sending it to the ThingsBoard cluster.  
 
 #### Project Roadmap
 

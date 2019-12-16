@@ -1,8 +1,6 @@
 ---
 layout: docwithnav
-assignees:
-- ashvayka
-title: MQTT Extension Configuration
+title: MQTT Connector Configuration
 description: MQTT protocol support for ThingsBoard IoT Gateway
 
 ---

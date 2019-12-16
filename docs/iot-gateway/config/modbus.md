@@ -1,6 +1,6 @@
 ---
 layout: docwithnav
-title: Modbus Extension Configuration
+title: Modbus Connector Configuration
 description: Modbus protocol support for ThingsBoard IoT Gateway
 
 ---
@@ -8,196 +8,188 @@ description: Modbus protocol support for ThingsBoard IoT Gateway
 * TOC
 {:toc}
 
-This guide will help you to get familiar with Modbus extension configuration for ThingsBoard IoT Gateway.
-Use [general configuration](/docs/iot-gateway/configuration/) to enable this extension.
-We will describe extension configuration file below.
+This guide will help you to get familiar with Modbus connector configuration for ThingsBoard IoT Gateway.
+Use [general configuration](/docs/iot-gateway/configuration/) to enable this connector.
+We will describe connector configuration file below.
 
-### Extension configuration: modbus-config.json
+<br>
 
-Extension configuration is a JSON file that contains information about how to connect and monitor a list of Modbus slaves.
-The root JSON element should contain "servers" array. Each server (slave or gateway) in the array is configured using following properties:
+<details>
 
-#### Basic connection properties
+<summary>
+<b>Example of Modbus Connector config file. Press to expand.</b>
+</summary>
 
-| **Property**        | **Description**                               |
-|---------------------|-----------------------------------------------|
-| transport           | Protocol configuration                        |
-| devices             | Devices (slaves) mapping configuration        |
+{% highlight json %}
 
-For Example:
-
-```json
 {
-  "servers": [
-    {
-      "transport": {
-      ...
-      },
-      "devices": [
-      ...
-      ]
-    }
-  ]
-}
-      
-```
-
-#### Transport properties
-
-Modbus extension supports "tcp", "udp" and "rtu" transports.
-
-##### TCP transport
-
-| **Property**           | **Description**                        | **Default value**  |
-|------------------------|----------------------------------------|--------------------|
-| type                   | Transport type                         | tcp                |
-| host                   | Host                                   | localhost          |
-| port                   | Port                                   | 502                |
-| timeout                | Socket timeout     in milliseconds     | 3000               |
-| reconnect              | Automatically reconnect                | true               |
-| rtuOverTcp             | Enable RTU over TCP feature            | false              |
-
-Example of "tcp" transport configuration:
-
-```json
-{
-      ...
-      "transport": {
-        "type": "tcp",
-        "host": "localhost",
-        "port": 654,
-        "timeout": 5000,
-        "reconnect": true,
-        "rtuOverTcp": false
-      }
-      ...
-}
-      
-```
-
-##### UDP transport
-
-| **Property**        | **Description**                        | **Default value** |
-|---------------------|----------------------------------------|-------------------|
-| type                | Transport type                         | udp               |
-| host                | Host                                   | localhost         |
-| port                | Port                                   | 502               |
-| timeout             | Socket timeout in milliseconds         | 3000              |
-
-Example of "udp" transport configuration:
-
-```json
-{
-      ...
-      "transport": {
-        "type": "udp",
-        "host": "localhost",
-        "port": 502,
-        "timeout": 5000
-      }
-      ...
-}
-      
-```
-
-##### RTU transport
-
-| **Property**        | **Description**                    | **Values**        |
-|---------------------|------------------------------------|-------------------|
-| type                | Transport type                     | rtu (default)     |
-| portName            | Name of port                       |                   |
-| encoding            | Serial encoding                    | ascii,rtu         |
-| baudRate            | Baud rate                          | 9600,115200 ...   |
-| dataBits            | Number of data bits                | 7,8               |
-| stopBits            | Number of stop bits                | 1,2               |
-| parity              | Type of parity                     | none,even,odd     |
-| timeout             | Socket timeout in milliseconds     | 3000 (default)    |
-
-Example of "rtu" transport configuration:
-
-```json
-{
-      ...
-      "transport": {
-        "type": "rtu",
-        "portName": "COM1",
-        "encoding": "ascii",
-        "baudRate": 115200,
-        "dataBits": 7,
-        "stopBits": 1,
-        "parity": "even",
-        "timeout": 5000
-      }
-      ...
-}
-      
-```
-
-#### Device mapping
-
-Device mapping configuration setup rules of Modbus slave(s) monitoring.
-
-| **Property**          | **Description**                                       | **Values**        |
-|-----------------------|-------------------------------------------------------|-------------------|
-| unitId                | Modbus unit identifier                                | 1-247             |
-| deviceName            | Arbitrary name of device                              |                   |
-| attributesPollPeriod  | Period of polling attributes in milliseconds          | 1000 (default)    |
-| timeseriesPollPeriod  | Period of polling timeseries in milliseconds          | 1000 (default)    |
-| attributes            | Attributes (tags) mapping rules                       |                   |
-| timeseries            | Timeseries (tags) mapping rules                       |                   |
-
-Example of device mapping configuration:
-
-```json
-{
-      ...
-      "devices": [
-        {
-          "unitId": 1,
-          "deviceName": "Temp Sensor",
-          "attributesPollPeriod": 5000,
-          "timeseriesPollPeriod": 5000,
-          "attributes": [
-            {
-            ...tag mappings
-            }
-          ],
-          "timeseries": [
-            {
-            ...tag mappings
-            }
-          ]
+  "server": {
+    "name": "Modbus Default Server",
+    "type": "tcp",
+    "host": "127.0.0.1",
+    "port": 5020,
+    "timeout": 35,
+    "rtuOverTcp": false,
+    "devices": [
+      {
+        "unitId": 1,
+        "deviceName": "Temp Sensor",
+        "attributesPollPeriod": 5000,
+        "timeseriesPollPeriod": 5000,
+        "sendDataOnlyOnChange": true,
+        "attributes": [
+          {
+            "byteOrder": "BIG",
+            "tag": "test",
+            "type": "long",
+            "functionCode": 4,
+            "registerCount": 1,
+            "address": 0
+          }
+        ],
+        "timeseries": [
+          {
+            "byteOrder": "BIG",
+            "tag": "test",
+            "type": "long",
+            "functionCode": 4,
+            "registerCount": 1,
+            "address": 0
+          }
+        ],
+        "rpc": {
+          "turnLightOn": {
+            "address": 4,
+            "bit": 2,
+            "value": true
+          },
+          "turnLightOff": {
+            "address": 4,
+            "bit": 2,
+            "value": false
+          },
+          "getCPULoad": {
+            "tag": "Integer",
+            "value": 42,
+            "functionCode": 16,
+            "address": 0,
+            "unitId": 1,
+            "byteOrder": "BIG",
+            "registerCount": 1
+          }
         }
-      ]
-      ...
+      }
+    ]
+  }
 }
+
+{% endhighlight %}
+
+</details>
+
+
+### Section "server"
+Configuration in this section uses for connecting to Modbus server.  
+
+| **Parameter**                 | **Default value**                       | **Description**                                                                       |
+|:-|:-|-
+| name                          | **Modbus Default Server**               | Name of connector to server.                                                          |
+| type                          | **tcp**                                 | Type of connection may be **tcp** or **udp**.                                         |
+| host                          | **127.0.0.1**                           | Hostname or ip address of Modbus server.                                              |
+| port                          | **5020**                                | Port of Modbus server for connect.                                                    |
+| timeout                       | **35**                                  | Timeout in seconds for connecting to Modbus server.                                   |
+| rtuOverTcp                    | **false**                               | Depends on type of connection, may be **rtuOverUdp**, if true then RTU will use.      |
+|---
+
+#### Subsection "devices"
+In this subsection provides array of configurations for devices, which connected to the Modbus server.
+
+##### Parameters of device 
+This configuration section provides configuration for device connection and data processing from those.
+
+| **Parameter**                 | **Default value**   | **Description**                                                                             |
+|:-|:-|-
+| unitId                        | **1**               | Id of current device on Modbus.                                                             |
+| deviceName                    | **Temp Sensor**     | Name of the current device                                                                  |
+| attributesPollPeriod          | **5000**            | Period in milliseconds for check the attributes on device.                                  |
+| timeseriesPollPeriod          | **5000**            | Period in milliseconds for check the telemetry on device.                                   |
+| sendDataOnlyOnChange          | **true**            | Sending only if data changed from last check, if no -- data will send after every check     |
+|---
+
+This part of configuration will look like:  
+
+```json
+    "devices": [
+      {
+        "unitId": 1,
+        "deviceName": "Temp Sensor",
+        "attributesPollPeriod": 5000,
+        "timeseriesPollPeriod": 5000,
+        "sendDataOnlyOnChange": true,
 ```
 
-#### Tag mapping
+###### Subsection attributes
+Configuration in this subsection provides settings for processing data on Modbus server, which will be interpreted in ThingsBoard platform instance as attribute of device.
 
-Tag mapping configuration setup rules of Modbus entities (coils, discrete inputs, holding and input registers) monitoring and conversion to ThingsBoard Key-Value format.
+| **Parameter** | **Default value**   | **Description**                                                         |
+|:-|:-|-
+| byteOrder     | **BIG**      | Order of bytes to read.                                                        |
+| tag           | **test**     | Tag, which will use as attribute key for ThingsBoard platform instance.        |
+| type          | **long**     | Type of value. (**long**, **integer**, **string**, **double**, **bit**)        |
+| functionCode  | **4**        | Function to use in processing data. Based on Modbus standard.                  |
+| registerCount | **1**        | Count of registers to read.                                                    |
+| address       | **0**        | Register address to check.                                                     |
+|---
 
-| **Property**          | **Description**                                                                       | **Values**                            |
-|-----------------------|---------------------------------------------------------------------------------------|---------------------------------------|
-| tag                   | Arbitrary name of Modbus entity what will be read                                     |                                       |
-| pollPeriod            | Period of polling in milliseconds. Overrides values defined on device mapping level   |                                       |
-| type                  | Type of data to what Modbus entity will converted                                     | boolean,long,double,string            |
-| functionCode          | Modbus function code                                                                  | 1,2,3,4                               |
-| address               | Address of coil/discrete input/register                                               | 0-65535                               |
-| registerCount         | Number of hardware registers to be read                                               | 1 (default) -...                      |
-| bit                   | **ONLY boolean**: Index of bit to be read (ascending numbering from right to left)    | 0-15                                  |
-| byteOrder             | Order of bytes                                                                        | BIG (default),LITTLE,1023,CD AB EG FH |
+This part of configuration will look like:  
 
-##### Modbus functions
+```json
+        "attributes": [
+          {
+            "byteOrder": "BIG",
+            "tag": "test",
+            "type": "long",
+            "functionCode": 4,
+            "registerCount": 1,
+            "address": 0
+          }
+        ],
+```
 
-The Modbus extension supports the following Modbus functions:
+###### Subsection "timeseries"
+Configuration in this subsection provides settings for processing data on Modbus server, which will be interpreted in ThingsBoard platform instance as telemetry of device.
+
+| **Parameter** | **Default value**   | **Description**                                                         |
+|:-|:-|-
+| byteOrder     | **BIG**      | Order of bytes to read. Can be **BIG** or **LITTLE**, depends on hardware.     |
+| tag           | **test**     | Tag, which will use as attribute key for ThingsBoard platform instance.        |
+| type          | **long**     | Type of value. (**long**, **integer**, **string**, **double**, **bit**)        |
+| functionCode  | **4**        | Function to use in processing data. Based on Modbus standard.                  |
+| registerCount | **1**        | Count of registers to read.                                                    |
+| address       | **0**        | Register address to check.                                                     |
+|---
+
+This part of configuration will look like:  
+
+```json
+        "timeseries": [
+          {
+            "byteOrder": "BIG",
+            "tag": "test",
+            "type": "long",
+            "functionCode": 4,
+            "registerCount": 1,
+            "address": 0
+          }
+        ],
+```
+
+The Modbus connector supports the following Modbus functions:
 
 * Read Coils (function code 1)
 * Read Discrete Inputs (function code 2)
 * Read Multiple Holding Registers (function code 3)
 * Read Input Registers (function code 4)
-
-##### Data conversion rules
 
 The hardware manufactures can implement various data types. Here are mapping rules that help to convert common hardware data types to Thingsboard key value format:
 
@@ -211,229 +203,55 @@ The hardware manufactures can implement various data types. Here are mapping rul
 | Double            | double                | 3-4                | 4                      |                                                 |
 | String            | string                | 3-4                | 1-...                  | 1 register = 2 characters                       |
 
-##### Byte order
 
-The byte order can be different among hardware manufactures. To correctly map data to Thingsboard types you must specify the byte order.
-There are several ways how to do it:
+###### Subsection "rpc"
+Configuration in this subsection provides settings for RPC requests from ThingsBoard platform instance to device.
 
-* **BIG (big)** and **LITTLE( little)** constants mean big-endianness and little-endianness correspondingly
-* numerical markers 0,1,2,3,4,5.... where 0 means least significant byte
-* literal markers A(a),B(b),C(c),D(d),E(e)... where A means least significant byte
+| **Parameter** | **Default value**     | **Description**                                                         |
+|:-|:-|-
+| turnLightOn   |                       | Name of RPC function. Can be different (Variants provided below.)       |
+| address       | **4**                 | Register address to set/read.                                           |
+| bit           | **2**                 | Bit address to set/read.                                                |
+| value         | **true**              | The value will be written to register.                                  |
+| registerCount | **1**                 | Count of registers to set/read.                                         |
+| unitId        | **1**                 | Identifier of the device unit, on which rpc request will be executed.   |
+| byteOrder     | **BIG**               | Byte order, for value, that will be written to register.                |
+| tag           | **Integer**           | Type of value. (**long**, **integer**, **string**, **double**, **bit**) |
+|---
 
-| **Hardware type** | **Marker limits**                      |
-|-------------------|----------------------------------------|
-| Bool              | [0-1],[A-B] for function codes 3 and 4 |
-| Word              | [0-1],[A-B]                            |
-| DWord/Integer     | [0-3],[A-D]                            |
-| Integer64         | [0-7],[A-H]                            |
-| Float             | [0-3],[A-D]                            |
-| Double            | [0-7],[A-H]                            |
-| String            | [0-1],[A-B]                            |
-
-##### Examples
-
-Read each second (1000 ms - default value for polling) a coil to get a boolean value.
+This part of configuration will look like:  
 
 ```json
-  "timeseries": [
-    {
-      "tag": "Coil",
-      "type": "boolean",
-      "functionCode": 1,
-      "address": 75
-    }
-  ]
-```
-
-Read each second (1000 ms - default value for polling) 14th bit of a holding register in little-endianness to get a boolean value.
-
-```json
-  "timeseries": [
-    {
-      "tag": "BooleanValue",
-      "type": "boolean",
-      "functionCode": 3,
-      "address": 150,
-      "bit": 14,
-      "byteOrder": "little"
-    }
-  ]
-```
-
-Read each second (1000 ms - default value for polling) 4 holding register in the 'CD AB EF GH' byte order to get a long value.
-
-```json
-  "timeseries": [
-    {
-      "tag": "LongValue",
-      "type": "long",
-      "functionCode": 3,
-      "address": 154,
-      "registerCount": 4,
-      "byteOrder": "CD AB EF GH"
-    }
-  ]
-```
-
-Read each hour (3600000 ms) 6 input registers in big-endianness to get a string 12-character long.
-
-```json
-  "attributes": [
-    {
-      "tag": "Serial number",
-      "type": "string",
-      "functionCode": 4,
-      "address": 146,
-      "registerCount": 6,
-      "pollPeriod": 3600000
-    }
-  ]
-```
-
-### Server-side RPC
-
-For general information how to use server-side RPC feature please visit [this guide](/docs/user-guide/rpc/#server-side-rpc-api/).
-
-#### Multiple tags write
-
-This RPC method allows user to simultaneously write values to the multiple tags of the connected device.
-
-##### Request format
-
-| **Property** | **Description**                 | **Value**             |
-|--------------|---------------------------------|-----------------------|
-| method       | RPC method name                 | write                 |
-| params       | Format of RPC method parameters | JSON array of objects |
-
-###### Method parameters format
-
-The method parameters are represented as JSON array of objects. Each object describes how the value needs to be encoded and written via Modbus protocol.
-Each object has the following structure:
-
-| **Property**  | **Description**                                   | **Value**                             |
-|---------------|---------------------------------------------------|---------------------------------------|
-| tag           | Arbitrary name of Modbus tag that will be written |                                       |
-| value         | The value that will be written                    | boolean,long,double,string            |
-| functionCode  | Modbus function code                              | 5,6,16                                |
-| address       | Address of coil/register                          | 0-65535                               |
-| registerCount | Number of hardware registers to be written        | 1 (default) -...                      |
-| byteOrder     | Order of bytes                                    | BIG (default),LITTLE,1023,CD AB EG FH |
-
-**NOTE:** For more details about the _registerCount_ and _byteOrder_ parameters see above the _Tag mapping_ section.
-
-The Modbus RPC extension supports the following Modbus functions:
-
-* Force Single Coil (function code 5)
-* Preset Single Register (function code 6)
-* Preset Multiple Registers (function code 16)
-
-##### Response format
-
-###### Success
-
-| **Property**   | **Description**                           | **Value** |
-|----------------|-------------------------------------------|-----------|
-| _tag name 1_   | Name of Modbus tag that has been written  | ok        |
-| _tag name 2_   | Name of Modbus tag that has been written  | ok        |
-| ...            | ...                                       | ok        |
-
-###### Global error
-
-| **Property**  | **Description**           |
-|---------------|---------------------------|
-| error         | Description of the error  |
-
-###### Tag error
-
-| **Property**   | **Description**                                      |
-|----------------|------------------------------------------------------|
-| _tag name 1_   | Description of the error while writing the tag value |
-| _tag name 2_   | ...                                                  |
-| ...            | ...                                                  |
-
-
-##### Examples
-
-###### Request
-
-```json
-    [
-        {
-            "tag": "WriteCoil",
-            "value": true,
-            "functionCode": 5,
-            "address": 1
-        },
-        {
-            "tag": "WriteLittleWord",
-            "value": 123,
-            "functionCode": 6,
-            "address": 1,
-            "byteOrder": "LITTLE"
-        },
-        {
-            "tag": "WriteBigWord",
-            "value": 4567,
-            "functionCode": 6,
-            "address": 2,
-            "byteOrder": "BIG"
-        },
-        {
-            "tag": "WriteInteger1032",
-            "value": 345678,
+        "rpc": {
+          "turnLightOn": {
+            "address": 4,
+            "bit": 2,
+            "value": true
+          },
+          "turnLightOff": {
+            "address": 4,
+            "bit": 2,
+            "value": false
+          },
+          "getCPULoad": {
+            "tag": "Integer",
+            "value": 42,
             "functionCode": 16,
-            "address": 3,
-            "byteOrder": "1032",
-            "registerCount": 2
-        },
-        {
-            "tag": "WriteLong10325476",
-            "value": 9223372036854775806,
-            "functionCode": 16,
-            "address": 7,
-            "registerCount": 4,
-            "byteOrder": "1 0 3 2 5 4 7 6"
-        },
-        {
-            "tag": "WriteFloat1032",
-            "value": 3.4028234e+38,
-            "functionCode": 16,
-            "address": 11,
-            "registerCount": 2,
-            "byteOrder": "B A D C"
-        },
-        {
-            "tag": "WriteDouble45670123",
-            "value": 1.7976931348623156e+308,
-            "functionCode": 16,
-            "address": 13,
-            "registerCount": 4,
-            "byteOrder": "45670123"
-        },
-        {
-            "tag": "WriteString",
-            "value": "Salute!",
-            "functionCode": 16,
-            "address": 17,
-            "registerCount": 5
+            "address": 0,
+            "unitId": 1,
+            "byteOrder": "BIG",
+            "registerCount": 1
+          }
         }
-    ]
+      }
 ```
 
-###### Response
+{% capture modbusRPCinfo %}
+<br>
+**Parameters in this subsection of the configuration depend on the type of rpc request, you need.**
+{% endcapture %}
+{% include templates/info-banner.md content=modbusRPCinfo %}
 
-```json
-    {
-        "SuccesWriteTag": "ok",
-        "ErrorWriteTag": "No tag found"
-    }
-```
-
-```json
-    {
-        "error": "Unsupported RPC method"
-    }
-```
 
 ## Next steps
 

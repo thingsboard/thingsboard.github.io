@@ -11,16 +11,16 @@ toc:
   section:
     - title: Installation options
       path: /docs/iot-gateway/installation/
-    - title: Linux (Ubuntu & CentOS)
-      path: /docs/iot-gateway/install/linux/
-    - title: Raspberry Pi
-      path: /docs/iot-gateway/install/raspberry-pi/
-    - title: Orange Pi 2G IoT
-      path: /docs/iot-gateway/install/orange-pi-2g-iot/
-    - title: Orange Pi Zero
-      path: /docs/iot-gateway/install/orange-pi-2g-zero/
-    - title: Building from sources
-      path: /docs/iot-gateway/install/building-from-source/
+    - title: DEB package installation (Daemon)
+      path: /docs/iot-gateway/install/deb-installation/
+    - title: Installation from pip
+      path: /docs/iot-gateway/install/pip-installation/
+    - title: RPM package installation (Daemon)
+      path: /docs/iot-gateway/install/rpm-installation/
+    - title: Docker installation
+      path: /docs/iot-gateway/install/docker-installation/
+    - title: Installation from sources (Latest version)
+      path: /docs/iot-gateway/install/source-installation/
     - title: Upgrade instructions
       path: /docs/iot-gateway/install/upgrade-instructions/
 - title: Configuration guide
