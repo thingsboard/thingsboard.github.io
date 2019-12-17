@@ -1,6 +1,6 @@
 ---
 layout: docwithnav
-title: Python IoT Gateway Configuration
+title: IoT Gateway Configuration
 description: Installation structure and configuration of ThingsBoard IoT Gateway 
 
 ---
