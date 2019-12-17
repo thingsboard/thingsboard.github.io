@@ -58,8 +58,8 @@ Connector configuration is a JSON file that contains information about how to co
       "converter": {
         "type": "json",
         "filterExpression": "",
-        "deviceNameJsonExpression": "${$.serialNumber}",
-        "deviceTypeJsonExpression": "${$.sensorType}",
+        "deviceNameJsonExpression": "${serialNumber}",
+        "deviceTypeJsonExpression": "${sensorType}",
         "timeout": 60000,
         "attributes": [
           {
@@ -82,8 +82,8 @@ Connector configuration is a JSON file that contains information about how to co
       "converter": {
         "type": "json",
         "filterExpression": "",
-        "deviceNameJsonExpression": "${$.sensorId}",
-        "deviceTypeJsonExpression": "${$.sensorType}",
+        "deviceNameJsonExpression": "${sensorId}",
+        "deviceTypeJsonExpression": "${sensorType}",
         "timeout": 60000,
         "timeseries": [
           {
@@ -110,7 +110,7 @@ Connector configuration is a JSON file that contains information about how to co
   "connectRequests": [
     {
       "topicFilter": "sensors/connect",
-      "deviceNameJsonExpression": "${$.SerialNumber}"
+      "deviceNameJsonExpression": "${SerialNumber}"
     },
     {
       "topicFilter": "sensor/+/connect",
@@ -120,7 +120,7 @@ Connector configuration is a JSON file that contains information about how to co
   "disconnectRequests": [
     {
       "topicFilter": "sensors/disconnect",
-      "deviceNameJsonExpression": "${$.SerialNumber}"
+      "deviceNameJsonExpression": "${SerialNumber}"
     },
     {
       "topicFilter": "sensor/+/disconnect",
@@ -211,10 +211,7 @@ Mapping process subscribes to the MQTT topics using **topicFilter** parameter of
 Each message that is published to this topic by other devices or applications is analyzed to extract device name and device data (attributes or timeseries values).
 By default, gateway use [Json converter](https://github.com/thingsboard/thingsboard-gateway/blob/release-1.0/src/main/java/org/thingsboard/gateway/extensions/mqtt/client/conf/mapping/MqttJsonConverter.java), but you can customize this behaviour and implement your own converter. See [converter interface](https://github.com/thingsboard/thingsboard-gateway/blob/release-1.0/src/main/java/org/thingsboard/gateway/extensions/mqtt/client/conf/mapping/MqttDataConverter.java) for more details.
 
-The Json converter is based on [**JsonPath**](https://github.com/jayway/JsonPath) library to provide the ability of flexible mapping and filtering of JSON structures.
-You can define **filterExpression** based on the [**path**](https://github.com/jayway/JsonPath#path-examples) and [**filter**](https://github.com/jayway/JsonPath#filter-operators) examples.
-
-The **deviceNameJsonExpression** mapping parameter is used to extract device name from the incoming JSON message.
+The **deviceNameJsonExpression** mapping parameter is used to extract device name from the incoming JSON message. 
 
 For example, if you have following message:
 
@@ -222,7 +219,7 @@ For example, if you have following message:
 {"serialNumber":"SN-001", "model":"T1000", "temperature":36.6}
 ```
 
-The **"${$.serialNumber}"** expression will return **"SN-001"** device name. Similar, **"Device ${$.serialNumber} (${$.model})"** will return **"Device SN-001 (T1000)"** device name.
+The **"${serialNumber}"** expression will return **"SN-001"** device name. Similar, **"Device ${serialNumber} (${model})"** will return **"Device SN-001 (T1000)"** device name.
 
 If the device name is a part of the MQTT topic, you can use **deviceNameTopicExpression** parameter, which is basically Java regular expression.
 

@@ -20,16 +20,12 @@ If you don't have access to a running ThingsBoard instance, use either [**Live D
 to fix this. 
 
 
-## Step 1: Choose installation option
+## Step 1: Install the gateway
 
 Browse available gateway [**installation options**](/docs/iot-gateway/installation/) and choose the most suitable installation guide.
-
-## Step 2: Follow installation steps
-
 Follow steps in chosen gateway installation guide. The Gateway configuration steps are covered below.
 
-
-## Step 3: Gateway provisioning
+## Step 2: Gateway provisioning
 
 In order to connect your IoT gateway to ThingsBoard server, you need to provision gateway credentials first. We will use access token credentials as the most simple one.
 See [device authentication options](/docs/user-guide/device-credentials/) for more details.
@@ -55,7 +51,7 @@ Open new device card and click on "Copy Access Token" button.
 ![image](/images/gateway/device-token.png)
 {: refdef} 
 
-## Step 4: Gateway configuration
+## Step 3: Gateway configuration
 
 Navigate to the gateway configuration folder and edit **tb-gateway.yml** file.
 ```bash
@@ -90,7 +86,7 @@ connectors:
 
 **You can read more in [this article](/docs/iot-gateway/configuration/) about configuration files and their properties.**  
 
-## Step 5: Restart gateway to accept new configuration
+## Step 4: Restart gateway to accept new configuration
 
 This step depends on chosen type of installation. If you install thingsboard-gateway as daemon - you should use following command:  
 ```bash
@@ -98,20 +94,20 @@ systemctl restart thingsboard-gateway.service
 ```
 In other case, if you have installed the gateway as python module - you should just rerun gateway process.   
 
-## Step 6: Review gateway statistics
+## Step 5: Review gateway statistics
 
 Open the web UI of your ThingsBoard server and review statistics that is uploaded from your thingsboard gateway.  
 Login as Tenant Administrator and open **Devices** page. Click on the gateway device card.   
 Open "Latest Telemetry" tab and review following statistics: "**SummaryReceived**", "**SummarySent**" and parameters that provide information about every connector.  
 All values should be set to "0".  
 
-## Step 7: Add connectors to the main configuration file 
+## Step 6: Add connectors to the main configuration file 
  
 For connection to some devices we use connectors, they are connect to different devices and servers to collect data.  
 To provide for gateway information about connectors that you need - you should write a configuration to section "connectors" in tb_gateway.yml (At least one connector needed for correct work).  
 For correct configuration please use [this article](/docs/iot-gateway/configuration/#section-connectors).  
  
-## Step 8: Configure connectors
+## Step 7: Configure connectors
 
 After successful installation you should configure the connectors to connect to different devices, please use one (or more) following articles to configure connector files:  
  - [**MQTT** connector](/docs/iot-gateway/config/mqtt/)
