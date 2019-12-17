@@ -243,6 +243,8 @@ The following Kubernetes cluster is sufficient to support this use-case:
 - Amazon RDS for PostgreSQL based on db.m5.large multi-AZ deployment. Estimate: 220 USD/month 
 - 100TB of deployment storage. Estimate: 10000 USD/month 
 
+![image](/images/reference/deployment/smart-tracker-cluster.png)
+
 Approximate infrastructure cost: ~13630 USD/month or 0.0134 USD/month/device.
 15 ThingsBoard PE perpetual licenses cost is 44985 USD for the first year and 17985 USD for the subsequent years (software updates + basic support).
 ThingsBoard Managed services to support the production environment: 0.01 USD per device per month. 
