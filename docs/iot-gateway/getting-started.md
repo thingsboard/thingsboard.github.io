@@ -20,12 +20,7 @@ If you don't have access to a running ThingsBoard instance, use either [**Live D
 to fix this. 
 
 
-## Step 1: Install the gateway
-
-Browse available gateway [**installation options**](/docs/iot-gateway/installation/) and choose the most suitable installation guide.
-Follow steps in chosen gateway installation guide. The Gateway configuration steps are covered below.
-
-## Step 2: Gateway provisioning
+## Step 1: Provision the gateway
 
 In order to connect your IoT gateway to ThingsBoard server, you need to provision gateway credentials first. We will use access token credentials as the most simple one.
 See [device authentication options](/docs/user-guide/device-credentials/) for more details.
@@ -45,11 +40,17 @@ Populate your gateway name and select "Is gateway" checkbox.
 
 **NOTE:** Gateway and device names should be unique in the scope of a tenant.
 
-Open new device card and click on "Copy Access Token" button.
+Open your new device card and click on "Copy Access Token" button. 
+Paste the token to a safe place. We will use it for ThingsBoard configuration in the next steps.
 
 {:refdef: style="text-align: center;"}
 ![image](/images/gateway/device-token.png)
 {: refdef} 
+
+## Step 2: Install the gateway
+
+Browse available gateway [**installation options**](/docs/iot-gateway/installation/) and choose the most suitable installation guide.
+Follow steps in chosen gateway installation guide. The Gateway configuration steps are covered below.
 
 ## Step 3: Gateway configuration
 
@@ -67,7 +68,7 @@ You gateway configuration should look similar to this file:
 ```yaml
 
 thingsboard:
-  host: 127.0.0.1
+  host: demo.thingsboard.io
   port: 1883
   security:
     accessToken: FUH2Fonov6eajSHi0Zyw

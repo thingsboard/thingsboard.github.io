@@ -21,22 +21,60 @@ ThingsBoard IoT Gateway provides following features:
  - **Persistence** of collected data to guarantee data delivery in case of network or hardware failures.
  - **Automatic reconnect** to ThingsBoard cluster.
  - Simple yet powerful **mapping** of incoming data and messages **to unified format**.
+
+
+#### Architecture
+
+The IoT Gateway is a software component that is designed to run on a Linux based microcomputers that support **Python 3.5+**.
+Main components of ThingsBoard IoT Gateway are listed below.
+
+**Connector**
+
+The purpose of this component is to connect to external system (e.g. MQTT broker or OPC-UA server) or directly to devices (e.g. Modbus or BLE).
+Once connected, connector is either poll data from those systems or subscribe to updates. Poll vs subscribe depends on the protocol capabilities. 
+For example, we use subscription model for MQTT connectors and polling for Modbus. 
+Connector is also able to push updates to devices either directly or via external systems.
+
+It is possible to define your own connector using the [customization guide](/docs/iot-gateway/custom/connector/).
+
+**Converter**   
+ 
+Converters are responsible for converting data from protocol specific format to/from ThingsBoard format.
+Converters are invoked by Connectors. Converters are often specific to protocol supported by Connector.
+There are uplink and downlink converters. Uplink converter is used to convert data from specific protocol to ThingsBoard format.
+Downlink converter is used to convert messages from ThingsBoard to specific protocol format.
+
+It is possible to define your own converter using the [customization guide](/docs/iot-gateway/custom/converter/).
+
+**Event Storage**
+
+Event Storage is used to temporary store the telemetry and other events produced by Connectors until they are delivered to ThingsBoard.
+Event Storage support two implementations: in-memory queue and persistent file storage. 
+Both implementations make sure that your device data is eventually delivered in case of network outages.
+In-memory queue minimizes the IO operations but may lose message in case of gateway process restart.  
+Persistent file storage survives the restart of the process but executes IO operations to the file system.
+
+**ThingsBoard Client**
+
+The Gateway communicates to ThingsBoard via MQTT protocol and uses API described [here](/docs/reference/gateway-mqtt-api/).
+ThingsBoard Client is a separate thread that polls Event Storage and delivers messages once connection to ThingsBoard is active.  
+ThingsBoard Client supports monitoring of the connectivity, batching the events for performance improvement and many other features.
+
+**Gateway Service**
+
+The Gateway Service is responsible for bootstrap of the Connectors, Event Storage and ThingsBoard Client. 
+This Service collects and periodically reports statistics to ThingsBoard about incoming messages and connected devices.
+Gateway Service persists list of connected devices to be able to re-subscribe to device configuration updates in case of the restart of the gateway. 
+
+{:refdef: style="text-align: center;"}
+![ThingsBoard IoT Gateway architecture](/images/gateway/python-gateway.png)
+{: refdef}
   
 
 #### Project Roadmap
 
-The initial Gateway release goal is to bring ThingsBoard [data collection](/docs/user-guide/telemetry/) feature to OPC-UA and MQTT enabled devices.
-ThingsBoard Gateway provides the ability to configure and control MQTT enabled devices from ThingsBoard through the Gateway.
-
-The Gateway project is currently in active development stage and you should expect following major features in next releases:
-
- - Ability to configure IoT devices connected through the Gateway using ThingsBoard [Attributes](/docs/user-guide/attributes) feature.
- - Ability to control IoT devices connected through the Gateway using ThingsBoard [RPC](/docs/user-guide/rpc/) feature.
- - Ability to configure Gateway distantly from ThingsBoard [Dashboards](/docs/user-guide/visualization/).
- - Client-side load balancing based on information about ThingsBoard cluster.
- - Ability to visualize collected device data on the Gateway Web UI.
- - Configurable edge analytics.
+<p><a href="/docs/iot-gateway/roadmap" class="button">Gateway Roadmap</a></p>
 
 #### Next Steps
 
-<p><a href="/docs/iot-gateway/getting-started" class="button">Getting Started</a></p>
+<p><a href="/docs/iot-gateway/getting-started" class="button">Getting Started Guide</a></p>

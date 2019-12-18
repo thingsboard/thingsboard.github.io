@@ -192,8 +192,6 @@ toc:
     path: /docs/iot-gateway/what-is-iot-gateway/
   - title: Getting Started
     path: /docs/iot-gateway/getting-started/
-  - title: IoT Gateway Architecture
-    path: /docs/iot-gateway/architecture/
   - title: Installation guide
     section:
       - title: Installation options
