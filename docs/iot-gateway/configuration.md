@@ -1,6 +1,6 @@
 ---
 layout: docwithnav
-title: Python IoT Gateway Configuration
+title: IoT Gateway Configuration
 description: Installation structure and configuration of ThingsBoard IoT Gateway 
 
 ---
@@ -105,7 +105,7 @@ connectors:
 
 ### Sections in config file
 
-+ **thingsboard-client** -- Configuration for connecting to ThingsBoard platform.
++ **thingsboard** -- Configuration for connecting to ThingsBoard platform.
   - *security* -- Configuration for type of encryption and authorization.
 + **storage** -- Configuration for local storage of incoming data from devices.
 + **connectors** -- Array of connectors (Protocols) uses.
