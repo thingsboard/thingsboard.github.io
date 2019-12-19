@@ -12,6 +12,14 @@ This guide will help you to get familiar with BLE connector configuration for Th
 Use [general configuration](/docs/iot-gateway/configuration/) to enable this extension.
 We will describe connector configuration file below.
 
+**BLE connector need some system libraries, to install them please select version of package manager in your system below and run a command to install libraries:**
+
+{% capture systemtogglespec %}
+APT-GET<br/>%,%deb%,%templates/iot-gateway/ble-requirements-deb.md%br%
+YUM<br/>%,%rpm%,%templates/iot-gateway/ble-requirements-rpm.md{% endcapture %}
+
+{% include content-toggle.html content-toggle-id="SystemLibraries" toggle-spec=systemtogglespec %}
+
 
 <br>
 
