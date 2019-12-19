@@ -68,40 +68,6 @@ toc:
     path: /docs/user-guide/audit-log/
   - title: API Limits
     path: /docs/user-guide/api-limits/
-  - title: IoT Gateway
-    section:
-    - title: What is ThingsBoard IoT Gateway?
-      path: /docs/iot-gateway/what-is-iot-gateway/
-    - title: Getting Started
-      path: /docs/iot-gateway/getting-started/
-    - title: Installation guide
-      section:
-      - title: Installation options
-        path: /docs/iot-gateway/installation/
-      - title: Windows
-        path: /docs/iot-gateway/install/windows/
-      - title: Linux (Ubuntu & CentOS)
-        path: /docs/iot-gateway/install/linux/
-      - title: Raspberry Pi
-        path: /docs/iot-gateway/install/rpi/
-      - title: Building from sources
-        path: /docs/iot-gateway/install/building-from-source/
-      - title: Upgrade instructions
-        path: /docs/iot-gateway/install/upgrade-instructions/
-    - title: Configuration guide
-      section:
-      - title: General configuration
-        path: /docs/iot-gateway/configuration/
-      - title: OPC-UA Extension
-        path: /docs/iot-gateway/opc-ua/
-      - title: MQTT Extension
-        path: /docs/iot-gateway/mqtt/
-      - title: Sigfox Extension
-        path: /docs/iot-gateway/sigfox/
-      - title: Modbus Extension
-        path: /docs/iot-gateway/modbus/
-      - title: Multi-tenant configuration
-        path: /docs/iot-gateway/multi-tenant-configuration/
 - title: Rule engine
   section:
   - title: Getting Started
@@ -224,6 +190,50 @@ toc:
     path: /docs/user-guide/ui/mail-settings/
   - title: Aliases
     path: /docs/user-guide/ui/aliases/
+- title: IoT Gateway
+  path: /docs/iot-gateway/
+  new: true
+  section:
+  - title: What is ThingsBoard IoT Gateway?
+    path: /docs/iot-gateway/what-is-iot-gateway/
+  - title: Getting Started
+    path: /docs/iot-gateway/getting-started/
+  - title: Installation guide
+    section:
+      - title: Installation options
+        path: /docs/iot-gateway/installation/
+      - title: DEB package installation (Daemon)
+        path: /docs/iot-gateway/install/deb-installation/
+      - title: Installation from pip
+        path: /docs/iot-gateway/install/pip-installation/
+      - title: RPM package installation (Daemon)
+        path: /docs/iot-gateway/install/rpm-installation/
+      - title: Docker installation
+        path: /docs/iot-gateway/install/docker-installation/
+      - title: Installation from sources (Latest version)
+        path: /docs/iot-gateway/install/source-installation/
+      - title: Upgrade instructions
+        path: /docs/iot-gateway/install/upgrade-instructions/
+  - title: Configuration guide
+    section:
+      - title: General configuration
+        path: /docs/iot-gateway/configuration/
+      - title: MQTT Connector
+        path: /docs/iot-gateway/config/mqtt/
+      - title: Modbus Connector
+        path: /docs/iot-gateway/config/modbus/
+      - title: OPC-UA Connector
+        path: /docs/iot-gateway/config/opc-ua/
+      - title: BLE Connector
+        path: /docs/iot-gateway/config/ble/
+  - title: Customization guide
+    section:
+      - title: Custom connector
+        path: /docs/iot-gateway/custom/connector/
+      - title: Custom converter
+        path: /docs/iot-gateway/custom/converter/
+  - title: IoT Gateway Roadmap
+    path: /docs/iot-gateway/roadmap/
 - title: Troubleshooting
   path: /docs/user-guide/troubleshooting/
 - title: Contribution Guide

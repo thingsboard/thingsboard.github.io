@@ -1,59 +1,80 @@
 ---
 layout: docwithnav
-assignees:
-- ashvayka
 title: What is ThingsBoard IoT Gateway?
 description: Features and advantages of ThingsBoard IoT Gateway
 
 ---
 
-The ThingsBoard **IoT Gateway** is an open-source solution that allows you to integrate IoT devices connected to legacy and third-party systems with ThingsBoard.
+The Thingsboard **IoT Gateway** is an open-source solution that allows you to integrate devices connected to legacy and third-party systems with Thingsboard.  
 
-ThingsBoard is an open-source IoT platform that enables rapid development, management and scaling of IoT applications. See [**What is ThingsBoard?**](/docs/getting-started-guides/what-is-thingsboard/) if you are new platform user.
+Thingsboard is an open-source IoT platform for data collection, processing, visualization, and device management. See [**What is Thingsboard?**](https://thingsboard.io/docs/getting-started-guides/what-is-thingsboard/) if you are new platform user.  
 
 #### Gateway features
 
 ThingsBoard IoT Gateway provides following features:
 
- - **MQTT** extension to control, configure and collect data from IoT devices that are connected to external MQTT brokers using existing protocols.
- - **OPC-UA** extension to collect data from IoT devices that are connected to OPC-UA servers.
- - **Sigfox** extension to collect data from IoT devices that are connected to Sigfox Backend.
- - **Modbus** extension to collect data from IoT devices that are connected through Modbus protocol.
- - **Persistence** of collected data to guarantee data delivery in case of network and hardware failures.
+ - [**MQTT** connector](/docs/iot-gateway/config/mqtt/) to control, configure and collect data from IoT devices that are connected to external MQTT brokers using existing protocols.
+ - [**OPC-UA** connector](/docs/iot-gateway/config/opc-ua/) to collect data from IoT devices that are connected to OPC-UA servers.
+ - [**Modbus** connector](/docs/iot-gateway/config/modbus/) to collect data from IoT devices that are connected through Modbus protocol.
+ - [**BLE** connector](/docs/iot-gateway/config/ble/) to collect data from IoT devices that are connected using Bluetooth Low Energy.
+ - [**Custom** connector](/docs/iot-gateway/custom/connector/) to collect data from IoT devices that are connected by different protocols. (You can create your own connector for the requires protocol).
+ - **Persistence** of collected data to guarantee data delivery in case of network or hardware failures.
  - **Automatic reconnect** to ThingsBoard cluster.
  - Simple yet powerful **mapping** of incoming data and messages **to unified format**.
-  
-#### Architecture  
+
+
+#### Architecture
+
+The IoT Gateway is a software component that is designed to run on a Linux based microcomputers that support **Python 3.5+**.
+Main components of ThingsBoard IoT Gateway are listed below.
+
+**Connector**
+
+The purpose of this component is to connect to external system (e.g. MQTT broker or OPC-UA server) or directly to devices (e.g. Modbus or BLE).
+Once connected, connector is either poll data from those systems or subscribe to updates. Poll vs subscribe depends on the protocol capabilities. 
+For example, we use subscription model for MQTT connectors and polling for Modbus. 
+Connector is also able to push updates to devices either directly or via external systems.
+
+It is possible to define your own connector using the [customization guide](/docs/iot-gateway/custom/connector/).
+
+**Converter**   
+ 
+Converters are responsible for converting data from protocol specific format to/from ThingsBoard format.
+Converters are invoked by Connectors. Converters are often specific to protocol supported by Connector.
+There are uplink and downlink converters. Uplink converter is used to convert data from specific protocol to ThingsBoard format.
+Downlink converter is used to convert messages from ThingsBoard to specific protocol format.
+
+It is possible to define your own converter using the [customization guide](/docs/iot-gateway/custom/converter/).
+
+**Event Storage**
+
+Event Storage is used to temporary store the telemetry and other events produced by Connectors until they are delivered to ThingsBoard.
+Event Storage support two implementations: in-memory queue and persistent file storage. 
+Both implementations make sure that your device data is eventually delivered in case of network outages.
+In-memory queue minimizes the IO operations but may lose message in case of gateway process restart.  
+Persistent file storage survives the restart of the process but executes IO operations to the file system.
+
+**ThingsBoard Client**
+
+The Gateway communicates to ThingsBoard via MQTT protocol and uses API described [here](/docs/reference/gateway-mqtt-api/).
+ThingsBoard Client is a separate thread that polls Event Storage and delivers messages once connection to ThingsBoard is active.  
+ThingsBoard Client supports monitoring of the connectivity, batching the events for performance improvement and many other features.
+
+**Gateway Service**
+
+The Gateway Service is responsible for bootstrap of the Connectors, Event Storage and ThingsBoard Client. 
+This Service collects and periodically reports statistics to ThingsBoard about incoming messages and connected devices.
+Gateway Service persists list of connected devices to be able to re-subscribe to device configuration updates in case of the restart of the gateway. 
 
 {:refdef: style="text-align: center;"}
-![ThingsBoard IoT Gateway architecture](/images/gateway/tb-gateway.svg)
+![ThingsBoard IoT Gateway architecture](/images/gateway/python-gateway.png)
 {: refdef}
-
-
-The IoT Gateway is built on top of **Java**, however, it is different from similar projects that leverage OSGi technology.
-The idea is distantly similar to the microservices architecture.
-There are **other programming languages** (C, C++, Python, Javascript, Go..) that may be more suitable for the development of the applications that target IoT devices.
-Especially, when we are talking about language APIs and existing libraries to work with serial ports, GPIOs, I2C, and new modules and sensors that are released every day. 
-
-The Gateway provides simple integration APIs, and encapsulates common ThingsBoard related tasks: device provisioning, local data persistence and delivery, message converters/adaptors and other.
-As an application developer, you are able to choose Python, Go, C/C++ and other languages and connect to ThingsBoard Gateway through external MQTT broker or OPC-UA server.
-IoT devices that support other protocols may be connected to the gateway by implementing custom extensions.
+  
 
 #### Project Roadmap
 
-The initial Gateway release goal is to bring ThingsBoard [data collection](/docs/user-guide/telemetry/) feature to OPC-UA and MQTT enabled devices.
-ThingsBoard Gateway 1.2 provides the ability to configure and control MQTT enabled devices from ThingsBoard through the Gateway.
-
-The Gateway project is currently in active development stage and you should expect following major features in next releases:
-
- - Sigfox and OPC-UA extension improvements:
-    - Ability to configure IoT devices connected through the Gateway using ThingsBoard [Attributes](/docs/user-guide/attributes) feature.
-    - Ability to control IoT devices connected through the Gateway using ThingsBoard [RPC](/docs/user-guide/rpc/) feature.
- - Ability to configure Gateway distantly from ThingsBoard [Dashboards](/docs/user-guide/visualization/).
- - Client-side load balancing based on information about ThingsBoard cluster.
- - Ability to visualize collected device data on the Gateway Web UI. 
- - Configurable edge analytics.
+<p><a href="/docs/iot-gateway/roadmap" class="button">Gateway Roadmap</a></p>
 
 #### Next Steps
 
-<p><a href="/docs/iot-gateway/getting-started" class="button">Getting Started</a></p>
+<p><a href="/docs/iot-gateway/getting-started" class="button">Getting Started Guide</a></p>
