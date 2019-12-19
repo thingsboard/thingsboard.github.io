@@ -11,12 +11,12 @@ toc:
   path: /docs/reference/iot-platform-deployment-scenarios/
 - title: ThingsBoard Performance
   section:
-    - title: Performance and Scalability
+    - title: Data Collection Performance
       path: /docs/reference/performance/
-    - title: 20K IoT devices on single ThingsBoard server
-      path: /docs/reference/20k-devices-test/
-    - title: 1M IoT devices on ThingsBoard cluster with Kubernetes and Amazon EC2
-      path: /docs/reference/1m-devices-test/
+#    - title: 20K IoT devices on single ThingsBoard server
+#      path: /docs/reference/20k-devices-test/
+#    - title: 1M IoT devices on ThingsBoard cluster with Kubernetes and Amazon EC2
+#      path: /docs/reference/1m-devices-test/
     - title: Single instance performance on different AWS instances
       path: /docs/reference/performance-aws-instances/
 - title: ThingsBoard PE Cloud Getting Started

@@ -189,10 +189,11 @@ In other cases PostgreSQL based deployment is sufficient.
 
 Overall performance of the solution depends on the cluster hardware and heavily rely on the performance of the database used.
 A cluster of virtual machines with 5 ThingsBoard servers and 5 Cassandra nodes can handle 1 million of devices;
-See [key infrastructure characteristics](/docs/reference/iot-platform-deployment-scenarios/#key-infrastructure-characteristics)
-and [performance test](/docs/reference/1m-devices-test/) for more details.
+See [key infrastructure characteristics](/docs/reference/iot-platform-deployment-scenarios/#key-infrastructure-characteristics) for more details.
   
 **Total cost of ownership examples for Cluster deployment scenario**:
+
+#### 1 Million Smart Meters TCO
 
 **Example 1:** Assuming **1,000,000** LoRaWAN/NB-IoT **smart meter** devices sending messages to the cloud **once per hour**. 
 Each message contains 3 data points that may need to be graphed/analyzed/fetched separately.
@@ -218,6 +219,8 @@ Two ThingsBoard PE perpetual licenses cost 5,998 USD (including optional updates
 With more than 10k devices use cases we provide **Managed services** to support the production environment (not the basic Support subscriptions). The rate is 0.01 USD per device per month. 
  
 TCO: ~12,270 USD per month or 0.01227 USD per month per device.
+
+#### 1 Million Smart Trackers TCO
 
 **Example 2:** Assuming 1,000,000 **smart tracker** devices sending readings to the cloud **once per minute**.
 Each message contains 5 data points that may need to be graphed/analyzed/fetched separately. 
