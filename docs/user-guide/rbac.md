@@ -201,7 +201,7 @@ To simplify this guide we will not demonstrate particular dashboard creation ste
 ![image](/images/user-guide/security/smart-buildings-building-a-dashboards.png)
 
 Now, let's create a read-only user. Let's assume we want to assign "End User Dashboard" to him and make sure that this dashboard will open full screen once the user is logged in. 
-So, our read-only user will not have access to the administration panel to the left, since he is still not allowed to perform any server side API calls, except read-only browsing the data.   
+So, our read-only user will not have access to the administration panel to the left, since they are still not allowed to perform any server side API calls, except read-only browsing the data.   
 
 <img data-gifffer="/images/user-guide/security/smart-buildings-read-only-user.gif" />
 

@@ -1,7 +1,7 @@
 Download installation package:
 
 ```bash
-wget tcp-udps://dist.thingsboard.io/tb-tcp-udp-integration-2.4.1pe.deb
+wget https://dist.thingsboard.io/tb-tcp-udp-integration-2.4.1pe.deb
 ```
 {: .copy-code}
 
