@@ -9,12 +9,13 @@ description: MQTT protocol support for ThingsBoard IoT Gateway
 {:toc}
 
 This guide will help you to get familiar with MQTT connector configuration for ThingsBoard IoT Gateway.
-Use [general configuration](/docs/iot-gateway/configuration/) to enable this extension.
+Use [general configuration](/docs/iot-gateway/configuration/) to enable this connector.
 We will describe connector configuration file below.
 
 ## Connector configuration: mqtt.json
 
-Connector configuration is a JSON file that contains information about how to connect and monitor a MQTT broker.  
+Connector configuration is a JSON file that contains information about how to connect to external MQTT broker.  
+
 <br>
 <details>
 
@@ -22,22 +23,26 @@ Connector configuration is a JSON file that contains information about how to co
 <b>Example of MQTT Connector config file. Press to expand.</b>
 </summary>
 
+Example listed below will connect to MQTT broker in a local network deployed on server with IP 192.168.1.100. 
+Connector will use basic MQTT auth using username and password. 
+Then, connector will subscribe to a list of topics using topic filters from mapping section. See more info in a description below.    
+
 {% highlight json %}
 
 {
   "broker": {
     "name":"Default Broker",
-    "host":"demo.thingsboard.io",
+    "host":"192.168.1.100",
     "port":1883,
     "security": {
       "type": "basic",
-      "username": "GIjr0vTtbOLwpouuBxL9",
-      "password": ""
+      "username": "user",
+      "password": "secret"
     }
   },
   "mapping": [
     {
-      "topicFilter": "v1/devices/me/attributes",
+      "topicFilter": "sensors/data",
       "converter": {
         "type": "json",
         "filterExpression": "",
@@ -45,65 +50,24 @@ Connector configuration is a JSON file that contains information about how to co
         "deviceTypeJsonExpression": "${SensorType}",
         "timeout": 60000,
         "attributes": [
-          {
-            "type": "string",
-            "key": "test_key",
-            "value": "${SerialNumber}"
-          }
-        ]
-      }
-    },
-    {
-      "topicFilter": "/temperature-sensors/+",
-      "converter": {
-        "type": "json",
-        "filterExpression": "",
-        "deviceNameJsonExpression": "${serialNumber}",
-        "deviceTypeJsonExpression": "${sensorType}",
-        "timeout": 60000,
-        "attributes": [
-          {
-            "type": "string",
-            "key": "model",
-            "value": "${$.model}"
-          }
-        ],
+                  {
+                    "type": "string",
+                    "key": "model",
+                    "value": "${$.SensorModel}"
+                  }
+                ],
         "timeseries": [
           {
-            "type": "double",
-            "key": "temperature",
-            "value": "${$.temperature}"
-          }
-        ]
-      }
-    },
-    {
-      "topicFilter": "/temperature-sensors/+",
-      "converter": {
-        "type": "json",
-        "filterExpression": "",
-        "deviceNameJsonExpression": "${sensorId}",
-        "deviceTypeJsonExpression": "${sensorType}",
-        "timeout": 60000,
-        "timeseries": [
+            "type": "string",
+            "key": "Temperature",
+            "value": "${T}"
+          },
           {
-            "type": "double",
-            "key": "humidity",
-            "value": "${$.humidity}"
-          }
+            "type": "string",
+            "key": "Humidity",
+            "value": "${H}"
+          }          
         ]
-      }
-    },
-    {
-      "topicFilter": "/custom-sensors/+",
-      "converter": {
-        "type": "custom",
-        "extension": "CustomMqttUplinkConverter",
-        "extension-config": {
-            "temperatureBytes" : 2,
-            "humidityBytes" :  2,
-            "batteryLevelBytes" : 1
-        }
       }
     }
   ],
@@ -159,7 +123,6 @@ Connector configuration is a JSON file that contains information about how to co
 </details>
 
 
-
 ### Section "broker"
 
 | **Parameter** | **Default value**              | **Description**                                        |
@@ -177,8 +140,8 @@ There are 2 variants:
 2. cert.PEM -- For authorization will be used TLS certificate.
  
 {% capture mqttconnectorsecuritytogglespec %}
-basic<small>Recommended as easier to configure</small>%,%accessToken%,%templates/iot-gateway/mqtt-connector-basic-security-config.md%br%
-cert.PEM<small>recommended as more safety</small>%,%tls%,%templates/iot-gateway/mqtt-connector-tls-security-config.md{% endcapture %}
+basic<small>Recommended</small>%,%accessToken%,%templates/iot-gateway/mqtt-connector-basic-security-config.md%br%
+cert.PEM<small>For binary/text payloads</small>%,%tls%,%templates/iot-gateway/mqtt-connector-tls-security-config.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="mqttConnectorCredentialsConfig" toggle-spec=mqttconnectorsecuritytogglespec %}  
 
