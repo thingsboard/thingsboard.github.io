@@ -12,54 +12,40 @@ description: Installation structure and configuration of ThingsBoard IoT Gateway
 
 ## Directory structure
 
-<br>
-
-Directory structure can be different it depends on type of installation:
-
-1 - DEB/RPM package
-
-2 - Docker container
-
-3 - Package manager installation (pip3)
-
-### DEB/RPM package
+Please see default directory structure below. 
 
 ```text
-/etc/thingsboard-gateway/config                   - Default path for configuration folder.
-    logs.conf                                     - Default configuration file for logs.
-    modbus.json                                   - Default configuration file for Modbus connector.
-    mqtt.json                                     - Default configuration file for MQTT connector.
-    ble.json                                      - Default configuration file for BLE connector.
-    ...
-    opcua.json                                    - Default configuration file for OPC-UA connector.
-    tb_gateway.yaml                               - Default main configuration file for gateway. 
+/etc/thingsboard-gateway/config                   - Configuration folder.
+    tb_gateway.yaml                               - Main configuration file for Gateway.
+    logs.conf                                     - Configuration file for logging.
+    modbus.json                                   - Modbus connector configuration.
+    mqtt.json                                     - MQTT connector configuration.
+    ble.json                                      - BLE connector configuration.
+    opcua.json                                    - OPC-UA connector configuration.    
+    ... 
 
-/var/lib/thingsboard_gateway/extensions           - Default folder for custom connectors/converters.                      
-    modbus                                        - Default folder for Modbus custom connectors/converters.
-    mqtt                                          - Default folder for MQTT custom connectors/converters.
+/var/lib/thingsboard_gateway/extensions           - Folder for custom connectors/converters.                      
+    modbus                                        - Folder for Modbus custom connectors/converters.
+    mqtt                                          - Folder for MQTT custom connectors/converters.
         __init__.py                               - Default python package file, needed for correct imports.
-        custom_uplink_mqtt_converter.py           - Example of custom Mqtt converter.
+        custom_uplink_mqtt_converter.py           - Custom Mqtt converter example.
     ...
-    opcua                                         - Default folder for OPC-UA custom connectors/converters.
+    opcua                                         - Folder for OPC-UA custom connectors/converters.
 
-/var/log/thingsboard-gateway                      - Default configuration folder
-    connector.log                                 - Default logs for default connectors.
-    converter.log                                 - Default logs for default converters.
-    extension.log                                 - Default logs for custom connectors.
-    service.log                                   - Default logs for the main gateway service.
-    storage.log                                   - Default logs for storage.
-    tb_connection.log                             - Default logs for connection to the ThingsBoard instance.
+/var/log/thingsboard-gateway                      - Logs folder
+    connector.log                                 - Connector logs.
+    service.log                                   - Main gateway service logs.
+    storage.log                                   - Storage logs.
+    tb_connection.log                             - Logs for connection to the ThingsBoard instance.
 ```
         
-
-### Docker container
-
-Directories structure like in DEB/RPM package, but you need mount the extensions  and config folders into container.
-
-
 ## General configuration file
 
-The main configuration file that is used for connection to ThingsBoard platform instance and enable/disable connectors.  
+The main configuration file that is used for connection to ThingsBoard platform instance and enable/disable connectors. 
+This configuration points to ThingsBoard instance demo.thingsboard.io and uses 
+memory file storage configured to store maximum of 100,000 records. There are 4 different connectors active. 
+If you like to use only one of them - just remove all other connectors. 
+
 <br>
 <details>
 <summary>
@@ -69,31 +55,27 @@ The main configuration file that is used for connection to ThingsBoard platform 
 {% highlight yaml %}
 
 thingsboard:
-  host: 127.0.0.1
+  host: demo.thingsboard.io
   port: 1883
   security:
     accessToken: FUH2Fonov6eajSHi0Zyw
 storage:
   type: memory
-  read_records_count: 10
-  max_records_count: 1000
+  read_records_count: 100
+  max_records_count: 100000
 connectors:
-
   -
     name: MQTT Broker Connector
     type: mqtt
     configuration: mqtt.json
-
   -
     name: Modbus Connector
     type: modbus
     configuration: modbus.json
-
   -
     name: OPC-UA Connector
     type: opcua
     configuration: opcua.json
-   
   -
     name: BLE Connector
     type: ble
@@ -108,7 +90,7 @@ connectors:
 + **thingsboard** -- Configuration for connecting to ThingsBoard platform.
   - *security* -- Configuration for type of encryption and authorization.
 + **storage** -- Configuration for local storage of incoming data from devices.
-+ **connectors** -- Array of connectors (Protocols) uses.
++ **connectors** -- Array of Connectors and their configuration to use.
 
 #### Section "thingsboard"
 
@@ -120,10 +102,9 @@ connectors:
 
 ###### Subsection "security"
 
-
 {% capture securitytogglespec %}
-Access Token<small>Recommended as easier to configure</small>%,%accessToken%,%templates/iot-gateway/security-accesstoken-config.md%br%
-TLS<small>recommended as more safety</small>%,%tls%,%templates/iot-gateway/security-tls-config.md{% endcapture %}
+Access Token<small>Basic security</small>%,%accessToken%,%templates/iot-gateway/security-accesstoken-config.md%br%
+TLS<small>Advanced security</small>%,%tls%,%templates/iot-gateway/security-tls-config.md{% endcapture %}
 
 There are 2 variants of security subsection:
 1. accessToken
@@ -132,7 +113,7 @@ There are 2 variants of security subsection:
 {% include content-toggle.html content-toggle-id="securityConfig" toggle-spec=securitytogglespec %}
 
 
-#### Section "storage"
+#### Storage configuration
 
 Configs in storage subsection provides configuration for saving incoming data before it will be send to ThingsBoard platform.
   
@@ -146,10 +127,10 @@ File storage<br/> <small>(recommended for more persistent)</small>%,%file%,%temp
 
 {% include content-toggle.html content-toggle-id="storageConfig" toggle-spec=storagetogglespec %}
 
-#### Section "connectors"
- Configs in connectors section configuration for connecting to devices by implemented protocols.  
- ***Pattern*** provided below.  
- Config for every connector in this section must have parameters as in table below:  
+#### Connectors configuration
+
+Configs in connectors section configuration for connecting to devices by implemented protocols.
+Config for every connector in this section must have parameters as in table below:  
  
 |**Parameter**|**Default value**|**Description**|
 |:-|:-|- 
@@ -197,6 +178,6 @@ connectors:
     class: CustomSerialConnector
 ```
 
-**Notice:** You can use several similar connectors at same time, but you should provide different names and configuration files to them. 
+**Note:** You can use several similar connectors at same time, but you should provide different names and configuration files to them. 
 
-If you need different type of connector, you can implement it by yourself, using custom connector or email us: <info@thingsboard.io>.
+If you need different type of connector, you can implement it using [customization guide](/docs/iot-gateway/custom/connector/) or email us: <info@thingsboard.io>.
