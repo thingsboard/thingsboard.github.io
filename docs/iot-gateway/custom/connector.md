@@ -7,7 +7,7 @@ title: Custom IoT Gateway Connector
 * TOC
 {:toc}
 
-## Connector
+## Custom connector
 
 The purpose of the connector is to connect to external system (e.g. MQTT broker or OPC-UA server) or directly to devices (e.g. Modbus or BLE).
 Once connected, connector is either poll data from those systems or subscribe to updates. Poll vs subscribe depends on the protocol capabilities. 
@@ -34,23 +34,6 @@ or
 
 **2. If you install the gateway as daemon, extensions folder located in /var/lib/thingsboard_gateway/extensions**
 
-### Connection of custom connector
-
-To connect the custom connector to gateway you should add a section with configuration to tb_gateway.yaml file.  (You can read more about tb_gateway.yaml in [this article](/docs/iot-gateway/configuration/).)  
-
-For example:  
-
-```yaml
-  -
-    name: Custom Serial Connector
-    type: serial
-    configuration: custom_serial.json
-    class: CustomSerialConnector
-```
-
-This section has only one difference from default connectors configuration, this difference is attribute "class" (About default configuration you can read more in [this article](/docs/iot-gateway/configuration/))  
-
-Attribute "class" should contain a name of custom connector class in extension file (Case-sensitive).  
 
 ### Custom connector file and class
 
@@ -62,15 +45,15 @@ Attribute "class" should contain a name of custom connector class in extension f
 
 {% highlight python %}
 
-import serial    # Import library for connector.
+import serial    # Import library for connection over serial port.
 import time    # Import system time library for sleep function and checking read data period.
-from thingsboard_gateway.connectors.custom_connector import CustomConnector, log    # Import base class for connector and log ("connector.log" in logs directory).
+from thingsboard_gateway.connectors.custom_connector import CustomConnector, log    # Import base class for the connector and log ("connector.log" in logs directory).
 
 
 class CustomSerialConnector(CustomConnector):    # Definition of class.
     def __init__(self, gateway,  config, connector_type):    # Initialization method.
         super().__init__(gateway, config, connector_type)    # Call to parent method for initialization.
-        self.__config = config    # Saving a configuration to current object (Data from configuration file from attribute "configuration" in tb_gateway.yaml).
+        self.__config = config    # Saving a configuration to current object (Data from configuration file in a parameter "configuration" in tb_gateway.yaml).
         self.__gateway = gateway    # Saving a gateway object (We will use it later for saving data into storage).
         self.load_converters()    # Loading converters for devices from configuration(attribute "converter" in device section of connector configuration).
         for device in self.devices:    # Loop for initialization devices. 
