@@ -338,6 +338,7 @@ Explore guides and video tutorials related to specific integrations:
  - [HTTP](/docs/user-guide/integrations/http/)
  - [MQTT](/docs/user-guide/integrations/mqtt/)
  - [AWS IoT](/docs/user-guide/integrations/aws-iot/)
+ - [AWS Kinesis](/docs/user-guide/integrations/aws-kinesis/)
  - [IBM Watson IoT](/docs/user-guide/integrations/ibm-watson-iot/)
  - [Azure Event Hub](/docs/user-guide/integrations/azure-event-hub/)
  - [Actility ThingPark](/docs/user-guide/integrations/thingpark/)

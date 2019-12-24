@@ -17,7 +17,7 @@ Once device is claimed, the customer becomes its owner and customer users may ac
 
 ## Device Claiming scenarios
  
-ThingsBoard User can claim the device if he "knows" the device Name and Secret Key. 
+ThingsBoard User can claim the device if they "know" the device Name and Secret Key. 
 The Secret Key is optional, always has an expiration time and may also change over time. 
 
 The Secret Key may be provisioned in two different ways. 
@@ -34,7 +34,7 @@ ThingsBoard server stores Claiming Information for the duration of the validity 
 
 ![image](/images/user-guide/claiming-devices/device-side-key-diagram.png)
 
-Device may send Claiming Information to TB using all supported transport protocols. The message body have two parameters: **secretKey** and **durationMs**, which may be optionally specified. 
+Device may send Claiming Information to TB using all supported transport protocols. The message body has two parameters: **secretKey** and **durationMs**, which may be optionally specified. 
 The **secretKey** parameter adds security to the claiming process.
 The **durationMs** parameter determines the expiration of claiming time.
 In case the **secretKey** is not specified, the empty string as a default value is used.
@@ -44,7 +44,7 @@ In order to enable claiming devices feature a system parameter **security.claim.
 should be set to **true**, otherwise a server-side **claimingAllowed** attribute with the value **true** is obligatory for provisioned devices.
 
 Please see the Device API references to get the information about the message structure and topics/URLs to which to send the claiming messages.
-You can use the MQTT Gateway API that allows to initiate claiming of multiple devices per time as well.
+You can use the MQTT Gateway API that allows initiating claiming of multiple devices per time as well.
 
  - [MQTT Device API](/docs/reference/mqtt-api/#claiming-devices)
  - [CoAP Device API](/docs/reference/coap-api/#claiming-devices)
