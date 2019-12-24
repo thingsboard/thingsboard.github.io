@@ -1,14 +1,14 @@
 Download installation package:
 
 ```bash
-wget https://dist.thingsboard.io/tb-aws-integration-2.4.1pe.deb
+wget https://dist.thingsboard.io/tb-aws-integration-2.4.2.1pe.deb
 ```
 {: .copy-code}
 
 Install integration as a service:
 
 ```bash
-sudo dpkg -i tb-aws-integration-2.4.1pe.deb
+sudo dpkg -i tb-aws-integration-2.4.2.1pe.deb
 ```
 {: .copy-code}
 

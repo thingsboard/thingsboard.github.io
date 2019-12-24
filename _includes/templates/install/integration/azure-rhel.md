@@ -1,14 +1,14 @@
 Download installation package:
 
 ```bash
-wget https://dist.thingsboard.io/tb-azure-integration-2.4.1pe.rpm
+wget https://dist.thingsboard.io/tb-azure-integration-2.4.2.1pe.rpm
 ```
 {: .copy-code}
 
 Install integration as a service:
 
 ```bash
-sudo rpm -Uvh tb-azure-integration-2.4.1pe.deb
+sudo rpm -Uvh tb-azure-integration-2.4.2.1pe.rpm
 ```
 {: .copy-code}
 
