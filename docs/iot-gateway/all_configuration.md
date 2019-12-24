@@ -54,7 +54,13 @@ Directory structure can be different it depends on type of installation:
 
 ### Docker container
 
-Directories structure like in DEB/RPM package, but you need mount the extension and config folders into container.
+File structure like in DEB/RPM package. Config, extensions and logs directories with default parameters created during installation.
+
+Default Gateway configuration directories when using docker:
+
+- `~/.thingsboard-gateway/config` - config  directory
+- `~/.thingsboard-gateway/extensions` - extensions  directory
+- `~/.thingsboard-gateway/logs` - logs  directory
 
 ### Package manager installation
 
