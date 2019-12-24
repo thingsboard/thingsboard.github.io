@@ -4,12 +4,15 @@ title: Install ThingsBoard IoT Gateway as package.
 
 ---
 
-The deb package will install the necessary libraries for the IOT Gateway work:  
+### Prerequisites
+
+This guide describes how to install ThingsBoard IoT Gateway on Ubuntu Server 18.04 LTS. 
+The minimum system requirements match official [minimum requirements](https://help.ubuntu.com/lts/serverguide/preparing-to-install.html#system-requirements) for the OS.
+
+The deb package will automatically install the necessary libraries for the IOT Gateway to work:  
 
 1. System libraries: libffi-dev, libglib2.0-dev, libxml2-dev, libxslt-dev, libssl-dev, zlib1g-dev, python3-dev, python3-pip.  
 2. Python modules: bluepy, importlib, importlib-metadata, jsonschema, pymodbus, lxml, jsonpath-rw, paho-mqtt, pyserial, PyYAML, simplejson, pyrsistent, bluepy.  
-3. The library requirements above will also be installed.  
-
 
 To install ThingsBoard IoT Gateway as package and run it as daemon use the following instructions:<br><br>
 
