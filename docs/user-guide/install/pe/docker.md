@@ -47,7 +47,7 @@ Make sure your have [logged in](https://docs.docker.com/engine/reference/command
 Execute the following command to run this docker directly:
 
 ``` 
-docker run -it -p 9090:9090 -p 1883:1883 -p 5683:5683/udp -v ~/.mytbpe-data:/data -v ~/.mytbpe-logs:/var/log/thingsboard -e "TB_LICENSE_SECRET=PUT_YOUR_LICENSE_SECRET_HERE" --name mytbpe --restart always store/thingsboard/tb-pe:2.4.1PE
+docker run -it -p 9090:9090 -p 1883:1883 -p 5683:5683/udp -v ~/.mytbpe-data:/data -v ~/.mytbpe-logs:/var/log/thingsboard -e "TB_LICENSE_SECRET=PUT_YOUR_LICENSE_SECRET_HERE" --name mytbpe --restart always store/thingsboard/tb-pe:2.4.2.1PE
 ```
 
 Where: 
@@ -62,7 +62,7 @@ Where:
 - `-v ~/.mytbpe-logs:/var/log/thingsboard`   - mounts the host's dir `~/.mytbpe-logs` to ThingsBoard logs directory;
 - `--name mytbpe`             - friendly local name of this machine;
 - `--restart always`        - automatically start ThingsBoard in case of system reboot and restart in case of failure.;
-- `store/thingsboard/tb-pe:2.4.1PE`          - docker image.
+- `store/thingsboard/tb-pe:2.4.2.1PE`          - docker image.
     
 After executing this command you can open `http://{your-host-ip}:9090` in you browser (for ex. `http://localhost:9090`). You should see ThingsBoard login page.
 Use the following default credentials:

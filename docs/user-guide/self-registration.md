@@ -131,7 +131,7 @@ Change the text message and privacy policy (optional).
 ![image](/images/user-guide/self-registration/signup-form-config.png)
 
 Congratulations! We have completed our self-registration form setup. Save now and navigate to sign-up form. 
-Create a new user and see that he is completely isolated and controls his own devices.
+Create a new user and see that they are completely isolated and control their own devices.
 
 See signup form example below:
 

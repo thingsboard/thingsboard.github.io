@@ -7,6 +7,7 @@ title: Custom IoT Gateway Connector
 * TOC
 {:toc}
 
+<<<<<<< HEAD
 ## Custom connector
 
 The purpose of the connector is to connect to external system (e.g. MQTT broker or OPC-UA server) or directly to devices (e.g. Modbus or BLE).
@@ -24,10 +25,47 @@ Connector file should being placed in extensions folder that depends on type of 
 **1. If you install the gateway as pip module, extensions folder placed in python package folder for example:** 
 
 ```text 
+=======
+## Custom connector implementation
+
+Connectors are Gateway components that connect to external system or directly to devices. Gateway has many built-in connectors (e.g. MQTT, OPC-UA server, Modbus, BLE, etc).
+Once connected, connector is either poll data from those systems or subscribe to updates. Poll vs subscribe depends on the protocol capabilities.
+
+Main goal of the custom connector is opportunity to connect to any device with any protocol. Connectors are written in Python language.
+ 
+We will demonstrate how to create custom connector by example. Let's assume we want our connector to connect to serial port on your device and read the data. 
+Connector will be able to push data to device over serial. We will call this connector SerialConnector. Please see step-by-step guide how to add SerialConnector to your Gateway.
+
+Let's assume our serial devices push UTF-8 encoded strings like this: 
+
+```text
+422498
+```
+where 42 is temperature, 24 is humidity and 98 is battery level of the device and messages are separated by \n symbol.
+
+### Step 1. Define SerialConnector configuration
+
+TODO: Put example of connector configuration.
+
+### Step 2. Locate extensions folder
+
+Connector file should being placed in extensions folder that depends on type of installation:
+
+**Ubuntu/CentOS:**
+
+```bash
+/var/lib/thingsboard_gateway/extensions
+```
+
+**For installation using pip:** 
+
+```bash 
+>>>>>>> e1303f77e4911a9453a213aeee5a34c300cca0dd
 /usr/lib/python3/site-packages/thingsboard_gateway/extensions
 ```
 or
 
+<<<<<<< HEAD
 ```text
 /usr/.local/lib/python3/site-packages/thingsboard_gateway/extensions
 ```
@@ -36,6 +74,13 @@ or
 
 
 ### Custom connector file and class
+=======
+```bash
+/usr/.local/lib/python3/site-packages/thingsboard_gateway/extensions
+```
+
+### Step 3. Define Connector Implementation
+>>>>>>> e1303f77e4911a9453a213aeee5a34c300cca0dd
 
 <br>
 <details>
@@ -146,7 +191,19 @@ class CustomSerialConnector(CustomConnector):    # Definition of class.
 The custom connector should inherit from CustomConnector class.  
 Connector base class inherits from threading.Thread and have methods of this class.
 
+<<<<<<< HEAD
 #### Custom connector methods
+=======
+### Step 5. Define Converter Implementation
+
+See separate guide. TODO: link.
+
+### Step 6. Include Connector into main Gateway configuration file
+
+TODO
+
+## Custom connector methods reference
+>>>>>>> e1303f77e4911a9453a213aeee5a34c300cca0dd
 
 You should implement following methods:  
 **\_\_init\_\_** -- called on creating object (In example used for loading converters, saving data from configs to object variables and creating serial ports objects).  

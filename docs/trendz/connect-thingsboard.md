@@ -94,7 +94,7 @@ Trendz uses ThingsBoard as an authentication service. Any Tenant Administrator o
 Same security restrictions that are configured on the ThingsBoard works in the Trendz Analytics. 
 
 - **Tenant Administrator** has access to all Devices/Assets
-- **Customer user** has access only to those Devices/Assets that he has permissions to view
+- **Customer user** has access only to those Devices/Assets that they have permissions to view
 
 
 ## Topology Discovery
