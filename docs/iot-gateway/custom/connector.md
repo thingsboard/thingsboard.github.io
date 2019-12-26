@@ -20,13 +20,85 @@ Connector will be able to push data to device over serial. We will call this con
 Let's assume our serial devices push UTF-8 encoded strings like this: 
 
 ```text
-422498
+48\r2430947595\n
 ```
-where 42 is temperature, 24 is humidity and 98 is battery level of the device and messages are separated by \n symbol.
+where 48 is humidity, \r is delimiter between values 2430947595 is device serial number and messages are separated by \n symbol.
 
 ### Step 1. Define SerialConnector configuration
 
-TODO: Put example of connector configuration.
+At first, we need create configuration file for our serial connector. Let's create file in the config folder (In the folder with tb_gateway.yaml file.)
+
+```bash
+touch custom_serial.json
+```
+
+After this we need add some configuration for this connector in file.
+
+<br>
+<details>
+<summary>
+<b>Example of custom connector configuration file. Press to expand.</b>
+</summary>
+
+{% highlight json %}
+{
+  "name": "Custom serial connector",
+  "devices": [
+    {
+      "name": "CustomSerialDevice1",
+      "port": "/dev/ttyUSB0",
+      "baudrate": 9600,
+      "converter": "CustomSerialUplinkConverter",
+      "telemetry": [
+        {
+          "type": "byte",
+          "key": "humidity",
+          "untilDelimiter": "\r"
+        }
+      ],
+      "attributes":[
+        {
+          "key": "SerialNumber",
+          "type": "string",
+          "fromByte": 4,
+          "toByte": -1
+        }
+      ],
+      "attributeUpdates": [
+        {
+          "attributeOnThingsBoard": "attr1",
+          "stringToDevice": "value = ${attr1}\n"
+        }
+      ]
+    }
+  ]
+}
+{% endhighlight %}
+
+</details>
+<br>
+
+In this file we write the configuration that we will use in the connector code.
+
+Parameters in the configuration:
+
+1. "name" - connector name, it should be like a connector name in the tb_gateway.yaml file. Uses by the gateway to find correct connector for saved devices.
+2. "devices" - array with devices configuration (We can provide more that one device.)
+
+In the "devices" array configuration file has devices json objects with configuration parameters for this device.
+
+Parameters in device object:  
+1. "name" - name of the device for ThingsBoard instance.  
+2. "port" - port for the device.  
+3. "baudrate" - port baudrate for connection to device.  
+**Notate:** You can also use parameters from a configuration for serial port such as parity, stop bits, etc.   
+You can read more about parameters for the serial port [here.](https://pythonhosted.org/pyserial/pyserial_api.html#classes)  
+4. "converter" - class name of converter that we will use for the serial connector.
+5. "telemetry" - objects array, with a configuration for processing data from device, data processed with configuration in this section will be interpreted as device telemetries.
+6. "attributes" - objects array, with a configuration for processing data from device, data processed with configuration in this section will be interpreted as device attributes.
+7. "attributesUpdates" - objects array with a configuration for processing attribute update request from ThingsBoard.
+
+ 
 
 ### Step 2. Locate extensions folder
 
@@ -45,11 +117,17 @@ Connector file should being placed in extensions folder that depends on type of 
 ```
 or
 
-```bash
+```text
 /usr/.local/lib/python3/site-packages/thingsboard_gateway/extensions
 ```
 
+**2. If you install the gateway as daemon, extensions folder located in /var/lib/thingsboard_gateway/extensions**
+
 ### Step 3. Define Connector Implementation
+
+We need create a folder and file for our connector class.  
+We have created folder "serial" in extensions folder and file "custom_serial_connector.py".
+After this, we write connector class in the connector file and override some methods of parent class. [List of methods.](#custom-connector-methods-reference) 
 
 <br>
 <details>
@@ -59,97 +137,163 @@ or
 
 {% highlight python %}
 
-import serial    # Import library for connection over serial port.
-import time    # Import system time library for sleep function and checking read data period.
-from thingsboard_gateway.connectors.custom_connector import CustomConnector, log    # Import base class for the connector and log ("connector.log" in logs directory).
+"""Import libraries"""
+
+import serial
+import time
+from threading import Thread
+from random import choice
+from string import ascii_lowercase
+from thingsboard_gateway.connectors.connector import Connector, log    # Import base class for connector and logger
+from thingsboard_gateway.tb_utility.tb_utility import TBUtility
 
 
-class CustomSerialConnector(CustomConnector):    # Definition of class.
-    def __init__(self, gateway,  config, connector_type):    # Initialization method.
-        super().__init__(gateway, config, connector_type)    # Call to parent method for initialization.
-        self.__config = config    # Saving a configuration to current object (Data from configuration file in a parameter "configuration" in tb_gateway.yaml).
-        self.__gateway = gateway    # Saving a gateway object (We will use it later for saving data into storage).
-        self.load_converters()    # Loading converters for devices from configuration(attribute "converter" in device section of connector configuration).
-        for device in self.devices:    # Loop for initialization devices. 
-            try:    # Start of handling errors.
-                connection_start = time.time()    # Saving current timestamp to check connection timeout.
-                self.devices[device]["serial"] = None    # Creating place for object that will connect to device.
-                while self.devices[device]["serial"] is None or not self.devices[device]["serial"].isOpen():    # Loop for connecting to device
-                    self.devices[device]["serial"] = serial.Serial(
-                             port=self.__config.get('port', '/dev/ttyUSB0'),
-                             baudrate=self.__config.get('baudrate', 9600),
-                             bytesize=self.__config.get('bytesize', serial.EIGHTBITS),
-                             parity=self.__config.get('parity', serial.PARITY_NONE),
-                             stopbits=self.__config.get('stopbits', serial.STOPBITS_ONE),
-                             timeout=self.__config.get('timeout', 1),
-                             xonxoff=self.__config.get('xonxoff', False),
-                             rtscts=self.__config.get('rtscts', False),
-                             write_timeout=self.__config.get('write_timeout', None),
-                             dsrdtr=self.__config.get('dsrdtr', False),
-                             inter_byte_timeout=self.__config.get('inter_byte_timeout', None),
-                             exclusive=self.__config.get('exclusive', None)
-                    )    # Configuration for Serial object with default values
-                    time.sleep(.1)    # sleep 100 ms for connecting.
-                    if time.time() - connection_start > 10:    # If difference between start of connection and current time if it more than 10 seconds trying to connect will stop for this device.
-                        log.error("Connection refused per timeout for device %s", self.devices[device]["device_config"].get("name"))    # Message to log about connection timeout.
-                        break    # Stop the connection loop. 
-            except Exception as e:    # Handling errors
-                log.exception(e)    # Message about error to log
-            else:    # If no exception add device to gateway and ThingsBoard
-                self.__gateway.add_device(self.devices[device]["device_config"]["name"], {"connector": self})    # Call method of gateway to add device to ThingsBoard instance
-                self.connected = True    # Set self status of connection.
-    
-    def run(self):    # Main loop method 
-        try:    # Start of handling errors.
-            while True:    # infinite loop
-                for device in self.devices:    # Checking every device that in the configuration section in the connector configuration file.
-                    serial = self.devices[device]["serial"]    # Initializing local variable for work.
-                    ch = b''    # Buffer for char from serial port.
-                    data_from_device = b''    # Byte string from device from serial port.
-                    while ch != b'\n':    # Reading bytes from serial while character is not "new line".
-                        ch = serial.read(1)    # Read 1 character from serial port.
-                        data_from_device = data_from_device + ch    # add received character to result string.
-                    try:    # Start of handling errors.
-                        converted_data = self.devices[device]['converter'].convert(self.devices[device]['device_config'], data_from_device)    # Use device converter to convert received data from device.
-                        self.__gateway.send_to_storage(self.get_name(), converted_data)    # Send converted data to storage.
-                        time.sleep(.1)    # Delay for data processing.
-                    except Exception as e:    # Handling errors.
-                        log.exception(e)    # Sending error message to log.
-                        self.close()    # close connector if error occured
-                        raise e    # raise error to higher level error handler
-        except Exception as e:    # Handling errors
-            log.exception(e)    # Sending error message to log
+class CustomSerialConnector(Thread, Connector):    # Define a connector class, it should inherit from "Connector" class.
+    def __init__(self, gateway,  config, connector_type):
+        super().__init__()    # Initialize parents classes
+        self.statistics = {'MessagesReceived': 0,
+                           'MessagesSent': 0}    # Dictionary, will save information about count received and sent messages.
+        self.__config = config    # Save configuration from the configuration file.
+        self.__gateway = gateway    # Save gateway object, we will use some gateway methods for adding devices and saving data from them.
+        self.__connector_type = connector_type    # Saving type for connector, need for loading converter
+        self.setName(self.__config.get("name",
+                                       "Custom %s connector " % self.get_name() + ''.join(choice(ascii_lowercase) for _ in range(5))))    # get from the configuration or create name for logs.
+        log.info("Starting Custom %s connector", self.get_name())    # Send message to logger
+        self.daemon = True    # Set self thread as daemon
+        self.stopped = True    # Service variable for check state
+        self.connected = False    # Service variable for check connection to device
+        self.devices = {}    # Dictionary with devices, will contain devices configurations, converters for devices and serial port objects
+        self.load_converters()    # Call function to load converters and save it into devices dictionary
+        self.__connect_to_devices()    # Call function for connect to devices
+        log.info('Custom connector %s initialization success.', self.get_name())    # Message to logger
+        log.info("Devices in configuration file found: %s ", '\n'.join(device for device in self.devices))    # Message to logger
 
-    def close(self):    # method for closing connector (usually calls when some exeptions occured and connector can not contiue it's work)
-        super().close()    # call to parent close method
-        for device in self.devices:    # Loop over connector devices
-            self.__gateway.del_device(self.devices[device])    # Removing devices from devices dictionary
-            if self.devices[device]['serial'].isOpen():    # Check connection
-                self.devices[device]['serial'].close()    # Closing connection over serial port to device
+    def __connect_to_devices(self):    # Function for opening connection and connecting to devices
+        for device in self.devices:
+            try:    # Start error handler
+                connection_start = time.time()
+                if self.devices[device].get("serial") is None \
+                        or self.devices[device]["serial"] is None \
+                        or not self.devices[device]["serial"].isOpen():    # Connect only if serial not available earlier or it is closed.
+                    self.devices[device]["serial"] = None
+                    while self.devices[device]["serial"] is None or not self.devices[device]["serial"].isOpen():    # Try connect
+                        '''connection to serial port with parameters from configuration file or default'''
+                        self.devices[device]["serial"] = serial.Serial(
+                                 port=self.__config.get('port', '/dev/ttyUSB0'),
+                                 baudrate=self.__config.get('baudrate', 9600),
+                                 bytesize=self.__config.get('bytesize', serial.EIGHTBITS),
+                                 parity=self.__config.get('parity', serial.PARITY_NONE),
+                                 stopbits=self.__config.get('stopbits', serial.STOPBITS_ONE),
+                                 timeout=self.__config.get('timeout', 1),
+                                 xonxoff=self.__config.get('xonxoff', False),
+                                 rtscts=self.__config.get('rtscts', False),
+                                 write_timeout=self.__config.get('write_timeout', None),
+                                 dsrdtr=self.__config.get('dsrdtr', False),
+                                 inter_byte_timeout=self.__config.get('inter_byte_timeout', None),
+                                 exclusive=self.__config.get('exclusive', None)
+                        )
+                        time.sleep(.1)
+                        if time.time() - connection_start > 10:    # Break connection try if it setting up for 10 seconds
+                            log.error("Connection refused per timeout for device %s", self.devices[device]["device_config"].get("name"))
+                            break
+            except serial.serialutil.SerialException:
+                log.error("Port %s for device %s - not found", self.__config.get('port', '/dev/ttyUSB0'), device)
+                time.sleep(10)
+            except Exception as e:
+                log.exception(e)
+                time.sleep(10)
+            else:    # if no exception handled - add device and change connection state
+                self.__gateway.add_device(self.devices[device]["device_config"]["name"], {"connector": self})
+                self.connected = True
 
-    def on_attributes_update(self, content):    # Method for processing AttributeUpdates requests from ThingsBoard instance
-        log.debug(content)     # Send debug message to log with received data.
-        if self.devices.get(content["device"]) is not None:    # Checking device for processing
-            device_config = self.devices[content["device"]].get("device_config")    # Getting configuration for device from AttributeUpdates request
-            if device_config is not None:    # Checking configuration
-                log.debug(device_config)    # Sending debug message to log with configuration. 
-                if device_config.get("attributeUpdates") is not None:    # Checking avaibility of attributeUpdates section in configuration
-                    requests = device_config["attributeUpdates"]    # Getting configuration from configuration section attributeUpdates for device 
-                    for request in requests:    # Loop for requests from configuration file
-                        attribute = request.get("attributeOnThingsBoard")    # getting parameter attributeOnThingsBoard in configuration
-                        log.debug(attribute)    # Sending debug message to log
-                        if attribute is not None and attribute in content["data"]:    # Checking attribute and checking that it in received request or no.
-                            try:    # Start handling errors
-                                value = content["data"][attribute]    # Getting data from received attributeUpdates request
-                                str_to_send = str(request["stringToDevice"].replace("${" + attribute + "}", str(value))).encode("UTF-8")    # Forming string that will being sended to device over serial port
-                                self.devices[content["device"]]["serial"].write(str_to_send)    # Sending data to device.
-                                log.debug("Attribute update request to device %s : %s", content["device"], str_to_send)    # Sending debug message to log sended data
-                                time.sleep(.01)    # delay for writing to serial port
-                            except Exception as e:    # Handling errors
-                                log.exception(e)    # Sending error message to log
+    def open(self):    # Function called by gateway on start
+        self.stopped = False
+        self.start()
 
-    def server_side_rpc_handler(self, content):    # Method for processing RPC requests from ThingsBoard instance
-        # Structure of this method should be the same like in on_attributes_update method.
+    def get_name(self):    # Function used for logging, sending data and statistic
+        return self.name
+
+    def is_connected(self):    # Function for checking connection state
+        return self.connected
+
+    def load_converters(self):    # Function for search a converter and save it.
+        devices_config = self.__config.get('devices')
+        try:
+            if devices_config is not None:
+                for device_config in devices_config:
+                    if device_config.get('converter') is not None:
+                        converter = TBUtility.check_and_import(self.__connector_type, device_config['converter'])
+                        self.devices[device_config['name']] = {'converter': converter(device_config),
+                                                               'device_config': device_config}
+                    else:
+                        log.error('Converter configuration for the custom connector %s -- not found, please check your configuration file.', self.get_name())
+            else:
+                log.error('Section "devices" in the configuration not found. A custom connector %s has being stopped.', self.get_name())
+                self.close()
+        except Exception as e:
+            log.exception(e)
+
+    def run(self):    # Main loop of thread
+        try:
+            while True:
+                for device in self.devices:
+                    serial = self.devices[device]["serial"]
+                    ch = b''
+                    data_from_device = b''
+                    while ch != b'\n':
+                        try:
+                            try:
+                                ch = serial.read(1)    # Reading data from serial
+                            except AttributeError as e:
+                                if serial is None:
+                                    self.__connect_to_devices()    # if port not found - try to connect to it
+                                    raise e
+                            data_from_device = data_from_device + ch
+                        except Exception as e:
+                            log.exception(e)
+                            continue
+                    try:
+                        converted_data = self.devices[device]['converter'].convert(self.devices[device]['device_config'], data_from_device)
+                        self.__gateway.send_to_storage(self.get_name(), converted_data)
+                        time.sleep(.1)
+                    except Exception as e:
+                        log.exception(e)
+                        self.close()
+                        raise e
+                if not self.connected:
+                    break
+        except Exception as e:
+            log.exception(e)
+
+    def close(self):    # Close connect function, usually used if exception handled in gateway main loop or in connector main loop
+        self.stopped = True
+        for device in self.devices:
+            self.__gateway.del_device(self.devices[device])
+            if self.devices[device]['serial'].isOpen():
+                self.devices[device]['serial'].close()
+
+    def on_attributes_update(self, content):    # Function used for processing attribute update requests from ThingsBoard
+        log.debug(content)
+        if self.devices.get(content["device"]) is not None:    # checking - is device in configuration?
+            device_config = self.devices[content["device"]].get("device_config")
+            if device_config is not None:
+                log.debug(device_config)
+                if device_config.get("attributeUpdates") is not None:
+                    requests = device_config["attributeUpdates"]    # getting configuration for attribute requests
+                    for request in requests:
+                        attribute = request.get("attributeOnThingsBoard")
+                        log.debug(attribute)
+                        if attribute is not None and attribute in content["data"]:
+                            try:
+                                value = content["data"][attribute]    # get value from content
+                                str_to_send = str(request["stringToDevice"].replace("${" + attribute + "}", str(value))).encode("UTF-8")    # form a string to send to device
+                                self.devices[content["device"]]["serial"].write(str_to_send)    # send string to device
+                                log.debug("Attribute update request to device %s : %s", content["device"], str_to_send)
+                                time.sleep(.01)
+                            except Exception as e:
+                                log.exception(e)
+
+    def server_side_rpc_handler(self, content):
         pass
 
 
@@ -157,21 +301,36 @@ class CustomSerialConnector(CustomConnector):    # Definition of class.
 </details>
 <br>
 
-The custom connector should inherit from CustomConnector class.  
-Connector base class inherits from threading.Thread and have methods of this class.
-
 ### Step 5. Define Converter Implementation
 
-See separate guide. TODO: link.
+[See separate guide.](/docs/iot-gateway/custom/converter/)
 
 ### Step 6. Include Connector into main Gateway configuration file
 
-TODO
+To add the serial connector to the gateway, we need add following lines into section connectors tb_gateway.yaml file.
+```yaml
+  -
+    name: Custom Serial Connector
+    type: serial
+    configuration: custom_serial.json
+    class: CustomSerialConnector
+```
+
+where:
+*name* - connector name
+*type* - folder name in extensions, with connector file
+*configuration* - connector configuration file in folder with tb_gateway.yaml file
+*class* - connector class name in connector file in extensions
+
+
 
 ## Custom connector methods reference
 
 You should implement following methods:  
-**\_\_init\_\_** -- called on creating object (In example used for loading converters, saving data from configs to object variables and creating serial ports objects).  
+**\_\_init\_\_** -- called on creating object (In example used for loading converters, saving data from configs to object variables and creating serial ports objects).
+**open** -- called on start connection to device with connector
+**get_name** -- called to recieve name of connector
+**is_connected** -- called to check the connection to devices
 **run** -- Main method of thread, must contain an infinite loop and all calls to data receiving/processing functions.  
 **close** -- method, that has being called when gateway stops and should contain processing of closing connection/ports etc.  
 **on_attributes_update** -- gateway call it when receives AttributeUpdates request from ThingsBoard server to device with this connector.  
@@ -192,6 +351,45 @@ def __init__(self, gateway, config, connector_type):
 
 In example above, we used this method to initialize data with which we will work.  
 
+##### __connect_to_devices method
+
+```python
+def __connect_to_devices(self):
+```
+
+*self* -- current object
+
+Service method, used for connection to devices.  
+
+##### get_name method
+
+```python
+def get_name(self):    # Function used for logging, sending data and statistic
+```
+
+*self* -- current object
+
+Method to get connector name.
+
+##### is_connected method
+
+```python
+def is_connected(self):    # Function for checking connection state
+```
+
+*self* -- current object
+
+Method for check current connection state.
+
+##### load_converters method
+
+```python
+def load_converters(self):    # Function for search a converter and save it.
+```
+
+*self* -- current object
+
+Method for loading converters for devices.
 
 ##### run method
 
@@ -225,6 +423,24 @@ def on_attributes_update_method(self, content):
 ```
 *self* -- current object.  
 *content* -- dictionary with data from ThingsBoard server.  
+
+Example of content:
+
+```python
+{"device": "CustomSerialDevice1", "data": {"attr1": 25}}
+```
+
+If configuration in section attributesUpdates like following, connector will send string "value = 25\n" to device.
+
+```json
+      "attributeUpdates": [
+        {
+          "attributeOnThingsBoard": "attr1",
+          "stringToDevice": "value = ${attr1}\n"
+        }
+      ]
+```
+
 
 
 ##### server_side_rpc_handler
