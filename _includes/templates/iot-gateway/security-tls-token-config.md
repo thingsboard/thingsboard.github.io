@@ -11,7 +11,7 @@ Security subsection in configuration file will look like this:
 
 ```yaml
   security:
-    privateKey: /etc/thingsboard-gateway/privateKey.pem
+    accessToken: PUT_YOUR_GW_ACCESS_TOKEN_HERE
     caCert: /etc/thingsboard-gateway/ca.pem
     cert: /etc/thingsboard-gateway/certificate.pem
 ```

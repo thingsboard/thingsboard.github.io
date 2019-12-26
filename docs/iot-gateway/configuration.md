@@ -58,7 +58,7 @@ thingsboard:
   host: demo.thingsboard.io
   port: 1883
   security:
-    accessToken: FUH2Fonov6eajSHi0Zyw
+    accessToken: PUT_YOUR_ACCESS_TOKEN_HERE
 storage:
   type: memory
   read_records_count: 100
@@ -85,14 +85,14 @@ connectors:
 <b><i>Spaces identity are important.</i></b>  
 </details>
 
-### Sections in config file
+#### Sections in config file
 
 + **thingsboard** -- Configuration for connecting to ThingsBoard platform.
   - *security* -- Configuration for type of encryption and authorization.
 + **storage** -- Configuration for local storage of incoming data from devices.
 + **connectors** -- Array of Connectors and their configuration to use.
 
-#### Section "thingsboard"
+#### Connection to ThingsBoard
 
 |**Parameter**             | **Default value**                            |   **Description**                                              |
 |---                       |---                                           |---                                                             |
@@ -104,11 +104,10 @@ connectors:
 
 {% capture securitytogglespec %}
 Access Token<small>Basic security</small>%,%accessToken%,%templates/iot-gateway/security-accesstoken-config.md%br%
-TLS<small>Advanced security</small>%,%tls%,%templates/iot-gateway/security-tls-config.md{% endcapture %}
+TLS + Access Token<small>Advanced security</small>%,%tlsToken%,%templates/iot-gateway/security-tls-token-config.md%br%
+TLS + Private Key<small>Advanced security</small>%,%tls%,%templates/iot-gateway/security-tls-config.md{% endcapture %}
 
-There are 2 variants of security subsection:
-1. accessToken
-2. TLS
+There are 3 variants of security subsection:
 
 {% include content-toggle.html content-toggle-id="securityConfig" toggle-spec=securitytogglespec %}
 

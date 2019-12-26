@@ -10,9 +10,9 @@ In table below described parameters to configure authorization on mqtt broker .
 Security subsection in configuration file will look like this: 
 
 ```json
-  "security": {
+  "security":{
     "caCert": "/etc/thingsboard-gateway/ca.pem",
     "privateKey": "/etc/thingsboard-gateway/privateKey.pem",
-    "cert": "/etc/thingsboard-gateway/certificate.pem",
+    "cert": "/etc/thingsboard-gateway/certificate.pem"
   }
 ```
