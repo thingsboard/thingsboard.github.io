@@ -304,7 +304,125 @@ class CustomSerialConnector(Thread, Connector):    # Define a connector class, i
 
 ### Step 4. Define Converter Implementation
 
-[See separate guide.](/docs/iot-gateway/custom/converter/)
+The purpose of the converter is to convert data from devices to the ThingsBoard format.
+Converters written in Python language.
+
+#### Custom connector file and class
+
+We should create a custom converter file "custom_serial_converter.py" in the extension folder, you can find extension folder location in [Step 2](#step-2-locate-extensions-folder)
+
+<br>
+<details>
+<summary>
+<b>Example of custom converter file. Press to expand.</b>
+</summary>
+
+{% highlight python %}
+from thingsboard_gateway.connectors.converter import Converter, log    # Import base class for the converter and log ("converter.log" in logs directory).
+
+
+class CustomSerialUplinkConverter(Converter):    # Definition of class.
+    def __init__(self, config):    # Initialization method
+        self.__config = config    # Saving configuration to object variable
+        self.result_dict = {
+            'deviceName': config.get('name', 'CustomSerialDevice'),
+            'deviceType': config.get('deviceType', 'default'),
+            'attributes': [],
+            'telemetry': []
+        }    # template for a result dictionary.
+    def convert(self, config, data: bytes):    # Method for conversion data from device format to ThingsBoard format.
+        keys = ['attributes', 'telemetry']    # Array used for looking data for data processing.
+        for key in keys:    # Data processing loop for parameters in keys array.
+            self.result_dict[key] = []    # Clean old data.
+            if self.__config.get(key) is not None:    # Checking the parameter from the keys in the config.
+                for config_object in self.__config.get(key):    # The loop for checking whether there is data that interests us.
+                    data_to_convert = data    # data for conversion.
+                    if config_object.get('untilDelimiter') is not None:    # Checking some parameter from configuration file.
+                        data_to_convert = data.split(config_object.get('untilDelimiter').encode('UTF-8'))[0]    # if "utilDelimiter" parameter in configuration file - get data from incoming data to delimiter position in received string.
+                    if config_object.get('fromDelimiter') is not None:    # Checking some parameter from configuration file.
+                        data_to_convert = data.split(config_object.get('fromDelimiter').encode('UTF-8'))[1]    # if "fromDelimiter" parameter in configuration file - get data from incoming data from delimiter position in received string.
+                    if config_object.get('toByte') is not None:    # Checking some parameter from configuration file.
+                        to_byte = config_object.get('toByte')    #     # if "toByte" parameter in configuration file - get data from incoming data to byte number from a parameter "toByte" in configuration file.
+                        if to_byte == -1:    # Checking some parameter from configuration file.
+                            to_byte = len(data) - 1    # If parameter == -1 - we will take data to the end.
+                        data_to_convert = data_to_convert[:to_byte]    # saving data to variable for sending
+                    if config_object.get('fromByte') is not None:    # Checking some parameter from configuration file
+                        from_byte = config_object.get('fromByte')    # if "fromByte" parameter in configuration file - get data from incoming data from byte number from a parameter "fromByte" in configuration file.
+                        data_to_convert = data_to_convert[from_byte:]    # saving data to variable for sending.
+                    converted_data = {config_object['key']: data_to_convert.decode('UTF-8')}    # Adding data from temporary variable to result string.
+                    self.result_dict[key].append(converted_data)    # Append result string to result dictionary.
+        return self.result_dict    # returning result dictionary after all iterations.
+
+{% endhighlight %}
+</details>
+<br>
+
+After processing **48\r2430947595\n**  we receive following dictionary:
+
+```python
+{
+    "deviceName": "CustomSerialDevice1",
+    "deviceType": "default",
+    "attributes": [{"SerialNumber": "2430947595"}],
+    "telemetry": [{"humidity":48}]
+}
+```
+
+This dictionary will be converted into json and gateway will send it to ThingsBoard instance.
+
+
+##### Custom connector methods reference
+
+You should implement following methods:  
+**\_\_init\_\_** -- called on creating object.  
+**convert** -- Method for conversion data from device format to ThingsBoard data format.  
+
+##### \_\_init\_\_ method
+
+**Parameters:**
+
+```python
+def __init__(self, config):
+```
+
+*self* -- current object.  
+*config* -- dictionary with data from connector configuration file.  
+
+In the example used to save the converter configuration and create a template for the result's dictionary with ThingsBoard data format
+
+##### convert method
+
+Method for conversion data from device format to ThingsBoard data format.
+
+**Parameters:**
+
+```python
+def convert(self, config, data):
+```
+*self* -- current object.  
+*config* -- configuration section for this device from connector configuration file.  
+*data* -- data from a device.  
+
+This function should return dictionary in format like following:
+
+```python
+{
+    "deviceName": "DEVICE_NAME",
+    "deviceType": "DEVICE_TYPE",
+    "attributes": [
+                    {"SOME_ATTRIBUTE_KEY":"SOME_ATTRIBUTE_VALUE"},
+                    {"SOME_ATTRIBUTE_KEY1":"SOME_ATTRIBUTE_VALUE1"}
+                  ],
+    "telemetry": [
+                    {"SOME_TELEMETRY_KEY": "SOME_TELEMETRY_VALUE"},
+                    {"SOME_TELEMETRY_KEY1": "SOME_TELEMETRY_VALUE1"},
+                    {"SOME_TELEMETRY_KEY2": "SOME_TELEMETRY_VALUE2"}
+                  ]
+}
+```
+
+Gateway will convert this data into json and send it to the ThingsBoard instance.
+
 
 ### Step 5. Include Connector into main Gateway configuration file
 
@@ -355,10 +473,10 @@ You should see the telemetry from config (humidity) with some value 48 (Value fr
 ## Custom connector methods reference
 
 You should implement following methods:  
-**\_\_init\_\_** -- called on creating object (In example used for loading converters, saving data from configs to object variables and creating serial ports objects).
-**open** -- called on start connection to device with connector
-**get_name** -- called to recieve name of connector
-**is_connected** -- called to check the connection to devices
+**\_\_init\_\_** -- called on creating object (In example used for loading converters, saving data from configs to object variables and creating serial ports objects).  
+**open** -- called on start connection to device with connector.  
+**get_name** -- called to recieve name of connector.  
+**is_connected** -- called to check the connection to devices.  
 **run** -- Main method of thread, must contain an infinite loop and all calls to data receiving/processing functions.  
 **close** -- method, that has being called when gateway stops and should contain processing of closing connection/ports etc.  
 **on_attributes_update** -- gateway call it when receives AttributeUpdates request from ThingsBoard server to device with this connector.  
