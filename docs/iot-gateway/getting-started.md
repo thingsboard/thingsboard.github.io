@@ -115,4 +115,4 @@ After successful installation you should configure the connectors to connect to 
  - [**OPC-UA** connector](/docs/iot-gateway/config/opc-ua/)
  - [**Modbus** connector](/docs/iot-gateway/config/modbus/)
  - [**BLE** connector](/docs/iot-gateway/config/ble/)
- - [**Custom** connector](/docs/iot-gateway/custom/connector/)
+ - [**Custom** connector](/docs/iot-gateway/custom/)
