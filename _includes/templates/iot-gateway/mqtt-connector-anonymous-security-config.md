@@ -1,6 +1,6 @@
 
-One type of security configuration is basic, 
-For authorization will be used combination of username/password, provided in this section in config. 
+ 
+Anonymous auth is the most simple option. It is useful for testing on public MQTT brokers, like test.mosquitto.org.  
 
 
 |**Parameter**|**Default value**|**Description**|
