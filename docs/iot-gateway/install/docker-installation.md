@@ -22,10 +22,12 @@ git clone -b develop/2.4-python https://github.com/thingsboard/thingsboard-gatew
 {: .copy-code}
 
 ```
-$ cd thingsboard-gateway
+cd thingsboard-gateway
 ```
+{: .copy-code}
 
 **Build docker image from Dockerfile:**
+
 ```
 docker build -t python3-thingsboard-gateway:2.4 docker
 ```
@@ -56,31 +58,38 @@ You can detach from session terminal with `Ctrl-p` `Ctrl-q` - the container will
 To reattach to the terminal (to see Gateway logs) run:
 
 ```
-$ docker attach gateway
+docker attach gateway
 ```
+{: .copy-code}
 
 To stop the container:
 
 ```
-$ docker stop gateway
+docker stop gateway
 ```
+{: .copy-code}
 
 To start the container:
 
 ```
-$ docker start gateway
+docker start gateway
 ```
+{: .copy-code}
+
 ## Gateway configuration
+
 Stop the container:
 
 ```
-$ docker stop gateway
+docker stop gateway
 ```
+{: .copy-code}
 
 **Configure gateway to work with your instance of ThingsBoard, using [this guide](/docs/iot-gateway/all_configuration/):**
 
 Start the container after made changes:
 
 ```
-$ docker start gateway
+docker start gateway
 ```
+{: .copy-code}

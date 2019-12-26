@@ -8,13 +8,20 @@ description: MQTT protocol support for ThingsBoard IoT Gateway
 * TOC
 {:toc}
 
-This guide will help you to get familiar with MQTT connector configuration for ThingsBoard IoT Gateway.
-Use [general configuration](/docs/iot-gateway/configuration/) to enable this connector.
+This guide will help you to get familiar with MQTT Connector configuration for ThingsBoard IoT Gateway.
+Use [general configuration](/docs/iot-gateway/configuration/) to enable this Connector. 
+The purpose of this Connector is to connect to external MQTT broker and subscribe to data feed from devices. 
+Connector is also able to push data to MQTT brokers based on the updates/commands from ThingsBoard. 
+
+This Connector is useful when you have local MQTT broker in your facility or corporate network and you would like to push data from this broker to ThingsBoard.
+
 We will describe connector configuration file below.
 
 ## Connector configuration: mqtt.json
 
-Connector configuration is a JSON file that contains information about how to connect to external MQTT broker.  
+Connector configuration is a JSON file that contains information about how to connect to external MQTT broker, 
+what topics to use when subscribing to data feed and how to process the data. 
+Let's review the format of the configuration file using example below.
 
 <br>
 <details>
@@ -31,49 +38,88 @@ Then, connector will subscribe to a list of topics using topic filters from mapp
 
 {
   "broker": {
-    "name":"Default Broker",
-    "host":"192.168.1.100",
+    "name":"Default Local Broker",
+    "host":"127.0.0.1",
     "port":1883,
     "security": {
       "type": "basic",
       "username": "user",
-      "password": "secret"
+      "password": "password"
     }
   },
   "mapping": [
     {
-      "topicFilter": "sensors/data",
+      "topicFilter": "/sensor/data",
       "converter": {
         "type": "json",
-        "filterExpression": "",
-        "deviceNameJsonExpression": "${SerialNumber}",
-        "deviceTypeJsonExpression": "${SensorType}",
+        "deviceNameJsonExpression": "${serialNumber}",
+        "deviceTypeJsonExpression": "${sensorType}",
         "timeout": 60000,
         "attributes": [
-                  {
-                    "type": "string",
-                    "key": "model",
-                    "value": "${$.SensorModel}"
-                  }
-                ],
+          {
+            "type": "string",
+            "key": "model",
+            "value": "${sensorModel}"
+          }
+        ],
         "timeseries": [
           {
-            "type": "string",
-            "key": "Temperature",
-            "value": "${T}"
+            "type": "double",
+            "key": "temperature",
+            "value": "${temp}"
           },
           {
-            "type": "string",
-            "key": "Humidity",
-            "value": "${H}"
-          }          
+            "type": "double",
+            "key": "humidity",
+            "value": "${hum}"
+          }
         ]
+      }
+    },
+    {
+      "topicFilter": "/sensor/+/data",
+      "converter": {
+        "type": "json",
+        "deviceNameTopicExpression": "(?<=sensor\/)(.*?)(?=\/data)",
+        "deviceTypeTopicExpression": "Thermometer",
+        "timeout": 60000,
+        "attributes": [
+          {
+            "type": "string",
+            "key": "model",
+            "value": "${sensorModel}"
+          }
+        ],
+        "timeseries": [
+          {
+            "type": "double",
+            "key": "temperature",
+            "value": "${temp}"
+          },
+          {
+            "type": "double",
+            "key": "humidity",
+            "value": "${hum}"
+          }
+        ]
+      }
+    },
+    {
+      "topicFilter": "/custom/sensors/+",
+      "converter": {
+        "type": "custom",
+        "extension": "CustomMqttUplinkConverter",
+        "extension-config": {
+            "temperatureBytes" : 2,
+            "humidityBytes" :  2,
+            "batteryLevelBytes" : 1
+        }
       }
     }
   ],
   "connectRequests": [
     {
-      "topicFilter": "sensors/connect",
+      "topicFilter": "sensor/connect",
       "deviceNameJsonExpression": "${SerialNumber}"
     },
     {
@@ -83,7 +129,7 @@ Then, connector will subscribe to a list of topics using topic filters from mapp
   ],
   "disconnectRequests": [
     {
-      "topicFilter": "sensors/disconnect",
+      "topicFilter": "sensor/disconnect",
       "deviceNameJsonExpression": "${SerialNumber}"
     },
     {
@@ -118,6 +164,7 @@ Then, connector will subscribe to a list of topics using topic filters from mapp
 }
 
 
+
 {% endhighlight %}
 
 </details>
@@ -128,7 +175,7 @@ Then, connector will subscribe to a list of topics using topic filters from mapp
 | **Parameter** | **Default value**              | **Description**                                        |
 |:-|:-|-
 | name          | **Default Broker**             | Broker name for logs and saving to persistent devices. |
-| host          | **demo.thingsboard.io**        | Mqtt broker hostname or ip address.                    |
+| host          | **localhost**                  | Mqtt broker hostname or ip address.                    |
 | port          | **1883**                       | Mqtt port on the broker.                               |
 |---
 
@@ -141,7 +188,8 @@ There are 2 variants:
  
 {% capture mqttconnectorsecuritytogglespec %}
 basic<small>Recommended</small>%,%accessToken%,%templates/iot-gateway/mqtt-connector-basic-security-config.md%br%
-cert.PEM<small>For binary/text payloads</small>%,%tls%,%templates/iot-gateway/mqtt-connector-tls-security-config.md{% endcapture %}
+anonymous<small>No security</small>%,%anonymous%,%templates/iot-gateway/mqtt-connector-anonymous-security-config.md%br%
+cert.PEM<small>For advanced security</small>%,%tls%,%templates/iot-gateway/mqtt-connector-tls-security-config.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="mqttConnectorCredentialsConfig" toggle-spec=mqttconnectorsecuritytogglespec %}  
 

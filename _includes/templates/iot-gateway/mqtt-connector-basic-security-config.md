@@ -6,8 +6,8 @@ For authorization will be used combination of username/password, provided in thi
 |**Parameter**|**Default value**|**Description**|
 |:-|:-|-
 | type               | **basic**                      | Type of authorization.      |
-| username           | **GIjr0vTtbOLwpouuBxL9**       | Username for authorization. |
-| password           |                                | Password for authorization. |
+| username           | **username**                   | Username for authorization. |
+| password           | **password**                   | Password for authorization. |
 |---
 
 Security subsection in configuration file will look like this: 
@@ -15,7 +15,7 @@ Security subsection in configuration file will look like this:
 ```yaml
     "security": {
       "type": "basic",
-      "username": "GIjr0vTtbOLwpouuBxL9",
-      "password": ""
+      "username": "username",
+      "password": "password"
     }
 ```
