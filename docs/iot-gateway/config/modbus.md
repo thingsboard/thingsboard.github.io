@@ -10,7 +10,7 @@ description: Modbus protocol support for ThingsBoard IoT Gateway
 
 This guide will help you to get familiar with Modbus connector configuration for ThingsBoard IoT Gateway.
 Use [general configuration](/docs/iot-gateway/configuration/) to enable this connector.
-We will describe connector configuration file below.
+We will describe connector configuration file below.  
 
 <br>
 
@@ -29,7 +29,7 @@ We will describe connector configuration file below.
     "host": "127.0.0.1",
     "port": 5020,
     "timeout": 35,
-    "rtuOverTcp": false,
+    "method": "rtu",
     "devices": [
       {
         "unitId": 1,
@@ -87,19 +87,18 @@ We will describe connector configuration file below.
 
 </details>
 
-
 ### Section "server"
 Configuration in this section uses for connecting to Modbus server.  
 
-| **Parameter**                 | **Default value**                       | **Description**                                                                       |
-|:-|:-|-
-| name                          | **Modbus Default Server**               | Name of connector to server.                                                          |
-| type                          | **tcp**                                 | Type of connection may be **tcp** or **udp**.                                         |
-| host                          | **127.0.0.1**                           | Hostname or ip address of Modbus server.                                              |
-| port                          | **5020**                                | Port of Modbus server for connect.                                                    |
-| timeout                       | **35**                                  | Timeout in seconds for connecting to Modbus server.                                   |
-| rtuOverTcp                    | **false**                               | Depends on type of connection, may be **rtuOverUdp**, if true then RTU will use.      |
-|---
+{% capture modbusConnectionType %}
+TCP/UDP<small>Connection over TCP/UDP protocol</small>%,%tcpUdp%,%templates/iot-gateway/modbus-tcpudp-connection.md%br%
+Serial<small>Connection over serial port</small>%,%serial%,%templates/iot-gateway/modbus-serial-connection.md{% endcapture %}
+
+There are 2 variants of server section:
+
+{% include content-toggle.html content-toggle-id="modbusConnection" toggle-spec=modbusConnectionType %}
+
+<br>
 
 #### Subsection "devices"
 In this subsection provides array of configurations for devices, which connected to the Modbus server.

@@ -31,6 +31,7 @@ At first, we need create configuration file for our serial connector. Let's crea
 ```bash
 touch custom_serial.json
 ```
+{: .copy-code}
 
 After this we need add some configuration for this connector in file.
 
@@ -339,13 +340,16 @@ sudo python3 -c 'from thingsboard_gateway.gateway.tb_gateway_service import TBGa
 ```
 {: .copy-code}
 
-You can check a status of the IoT Gateway by watch the logs in a folder that you provide in logs.conf file. 
-Default location of logs folder for the daemon - "/var/log/thingsboard-gateway/"
-Default location of logs folder for Python module - "./logs/"
+You can check a status of the IoT Gateway by watch the logs in a folder that you provide in logs.conf file.  
+Default location of logs folder for the daemon - "/var/log/thingsboard-gateway/"  
+Default location of logs folder for Python module - "./logs/"  
 
 ### Step 6. Check a result in the ThingsBoard instance
 
-
+To check the result, you should connect device, and go to the ThingsBoard UI into "Devices" tab.  
+If device connected correctly and has sent some data, you will see device with a name - "CustomSerialDevice1".  
+To check the data - open device and go to the telemetry tab.
+You should see the telemetry from config (humidity) with some value 48 (Value from example, your value can be different).
 
 
 ## Custom connector methods reference
