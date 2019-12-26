@@ -301,11 +301,11 @@ class CustomSerialConnector(Thread, Connector):    # Define a connector class, i
 </details>
 <br>
 
-### Step 5. Define Converter Implementation
+### Step 4. Define Converter Implementation
 
 [See separate guide.](/docs/iot-gateway/custom/converter/)
 
-### Step 6. Include Connector into main Gateway configuration file
+### Step 5. Include Connector into main Gateway configuration file
 
 To add the serial connector to the gateway, we need add following lines into section connectors tb_gateway.yaml file.
 ```yaml
@@ -321,6 +321,30 @@ where:
 *type* - folder name in extensions, with connector file
 *configuration* - connector configuration file in folder with tb_gateway.yaml file
 *class* - connector class name in connector file in extensions
+
+### Step 6. Run the IoT gateway
+
+To run the gateway you should execute following command, it depends on type of installation:
+
+ -  If you install the IoT gateway as daemon, you should restart it with following command to apply changes to the configuration:
+
+```bash
+sudo systemctl restart thingsboard-gateway
+```
+{: .copy-code}
+ - If you install the IoT gateway as Python module, you should run it from the folder with tb_gateway.yaml (or change path to the tb_gateway.yaml file) with the following command to apply changes to the configuration:
+
+```bash
+sudo python3 -c 'from thingsboard_gateway.gateway.tb_gateway_service import TBGatewayService; TBGatewayService("./tb_gateway.yaml")'
+```
+{: .copy-code}
+
+You can check a status of the IoT Gateway by watch the logs in a folder that you provide in logs.conf file. 
+Default location of logs folder for the daemon - "/var/log/thingsboard-gateway/"
+Default location of logs folder for Python module - "./logs/"
+
+### Step 6. Check a result in the ThingsBoard instance
+
 
 
 
