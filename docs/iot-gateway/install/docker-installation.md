@@ -17,7 +17,7 @@ This guide will help you to install and start ThingsBoard Gateway using Docker o
 **Download Gateway repository and go to the directory:**
 
 ```bash
-git clone -b develop/2.4-python https://github.com/thingsboard/thingsboard-gateway.git
+git clone https://github.com/thingsboard/thingsboard-gateway.git
 ```
 {: .copy-code}
 

@@ -27,7 +27,7 @@ sudo pip3 install thingsboard-gateway
  - Downloading configs example:  
 
 ```bash
-wget https://github.com/thingsboard/thingsboard-gateway/raw/develop/2.4-python/configs.tar.gz
+wget https://github.com/thingsboard/thingsboard-gateway/releases/download/2.0/configs.tar.gz
 ```
 {: .copy-code}
 
