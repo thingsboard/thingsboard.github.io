@@ -179,4 +179,4 @@ connectors:
 
 **Note:** You can use several similar connectors at same time, but you should provide different names and configuration files to them. 
 
-If you need different type of connector, you can implement it using [customization guide](/docs/iot-gateway/custom/connector/) or email us: <info@thingsboard.io>.
+If you need different type of connector, you can implement it using [customization guide](/docs/iot-gateway/custom/) or email us: <info@thingsboard.io>.

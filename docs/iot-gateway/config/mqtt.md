@@ -39,7 +39,7 @@ Then, connector will subscribe to a list of topics using topic filters from mapp
 {
   "broker": {
     "name":"Default Local Broker",
-    "host":"127.0.0.1",
+    "host":"192.168.1.100",
     "port":1883,
     "security": {
       "type": "basic",
@@ -181,26 +181,36 @@ Then, connector will subscribe to a list of topics using topic filters from mapp
 
 #### Subsection "security"
 
-Subsection "security" -- provided configuration for security authorization.  
-There are 2 variants:
-1. basic -- username and password.
-2. cert.PEM -- For authorization will be used TLS certificate.
+Subsection "security" provides configuration for client authorization at Mqtt Broker.
  
 {% capture mqttconnectorsecuritytogglespec %}
-basic<small>Recommended</small>%,%accessToken%,%templates/iot-gateway/mqtt-connector-basic-security-config.md%br%
-anonymous<small>No security</small>%,%anonymous%,%templates/iot-gateway/mqtt-connector-anonymous-security-config.md%br%
-cert.PEM<small>For advanced security</small>%,%tls%,%templates/iot-gateway/mqtt-connector-tls-security-config.md{% endcapture %}
+Basic<small>Recommended</small>%,%accessToken%,%templates/iot-gateway/mqtt-connector-basic-security-config.md%br%
+Anonymous<small>No security</small>%,%anonymous%,%templates/iot-gateway/mqtt-connector-anonymous-security-config.md%br%
+Certificates<small>For advanced security</small>%,%tls%,%templates/iot-gateway/mqtt-connector-tls-security-config.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="mqttConnectorCredentialsConfig" toggle-spec=mqttconnectorsecuritytogglespec %}  
 
 ### Section "mapping"
-This configuration section contains array of topics that the gateway will subscribe to after connecting to the broker and settings about processing incoming messages (converter).
 
+This configuration section contains array of topics that the gateway will subscribe to after connecting to the broker and settings about processing incoming messages (converter).
 
 |**Parameter**|**Default value**|**Description**|
 |:-|:-|-
-| topicFilter | **/temperature-sensors/+** | Topic address for subscribing. |
+| topicFilter | **/sensor/data** | Topic address for subscribing. |
 |---
+
+
+The **topicFilter** supports special symbols: '#' and '+' to allow to subscribe to multiple topics.
+
+Let's assume we would like to subscribe and process following data from Thermometer devices:
+
+|**Example Name**|**Topic**|**Topic Filter**|**Payload**|**Comments**|
+|:-|:-|:-|-
+| Example 1 | /sensor/data | /sensor/data | {"serialNumber": "SN-001", "sensorType": "Thermometer", "sensorModel": "T1000", "temp":  42, "hum": 58} | Device Name is part of the payload|
+| Example 2 | /sensor/SN-001/data | /sensor/+/data | { "sensorType": "Thermometer", "sensorModel": "T1000", "temp":  42, "hum": 58} | Device Name is part of the topic|
+|---
+
+Now let's review how we can configure JSON converter to parse this data
 
 #### Subsection "converter"
 This subsection contains configuration for processing incoming messages.  
@@ -219,28 +229,8 @@ custom<small>recommended as more safety</small>%,%custom%,%templates/iot-gateway
 **Note**: You can specify multiple mapping objects inside the array.
 
 Mapping process subscribes to the MQTT topics using **topicFilter** parameter of the mapping object. 
-Each message that is published to this topic by other devices or applications is analyzed to extract device name and device data (attributes or timeseries values).
-By default, gateway use [Json converter](https://github.com/thingsboard/thingsboard-gateway/blob/release-1.0/src/main/java/org/thingsboard/gateway/extensions/mqtt/client/conf/mapping/MqttJsonConverter.java), but you can customize this behaviour and implement your own converter. See [converter interface](https://github.com/thingsboard/thingsboard-gateway/blob/release-1.0/src/main/java/org/thingsboard/gateway/extensions/mqtt/client/conf/mapping/MqttDataConverter.java) for more details.
-
-The **deviceNameJsonExpression** mapping parameter is used to extract device name from the incoming JSON message. 
-
-For example, if you have following message:
-
-```json
-{"serialNumber":"SN-001", "model":"T1000", "temperature":36.6}
-```
-
-The **"${serialNumber}"** expression will return **"SN-001"** device name. Similar, **"Device ${serialNumber} (${model})"** will return **"Device SN-001 (T1000)"** device name.
-
-If the device name is a part of the MQTT topic, you can use **deviceNameTopicExpression** parameter, which is basically Java regular expression.
-
-For example, if you have **"sensor/SN-001/temperature"**" topic, the **"(?<=sensor\/)(.*?)(?=\/temperature)"** expression will return **"SN-001"** device name.
-
-Similar [**JsonPath**](https://github.com/jayway/JsonPath) mapping rules are applied for **attributes** and **timeseries** values:
-
- - **key** - constant Attribute or Timeseries ThingsBoard key.
- - **type** - either boolean, long, double or string.
- - **value** - expression based on JsonPath syntax that may be specified inside **${}** 
+Each message that is published to this topic by other devices or applications is analyzed to extract device name, type and data (attributes and/or timeseries values).
+By default, gateway uses Json converter, but it is possible to provide custom converter. See examples in the source code.
 
 ### Section "connectRequests"
 
@@ -254,7 +244,7 @@ If your device just connects to MQTT broker and waits for commands/updates, you 
 | **Parameter**                 | **Default value**                     | **Description**                                                                                   |
 |:-|:-|-
 | topicFilter                   | **sensors/connect**                   | Topic address on the broker, where the broker sends information about new connected devices.      |
-| deviceNameJsonExpression      | **${$.SerialNumber}**                 | JSON-path expression, for looking the new device name.                                            |
+| deviceNameJsonExpression      | **${SerialNumber}**                 | JSON-path expression, for looking the new device name.                                            |
 |---
 
 **2. Name in topic address:**
@@ -298,7 +288,7 @@ If your device just disconnects from MQTT broker and waits for commands/updates,
 | **Parameter**                 | **Default value**                     | **Description**                                                                                   |
 |:-|:-|-
 | topicFilter                   | **sensors/disconnect**                | Topic address on the broker, where the broker sends information about disconnected devices.       |
-| deviceNameJsonExpression      | **${$.SerialNumber}**                 | JSON-path expression, for looking the new device name.                                            |
+| deviceNameJsonExpression      | **${SerialNumber}**                 | JSON-path expression, for looking the new device name.                                            |
 |---
 
 **2. Name in topic address:**
@@ -315,7 +305,7 @@ This section in configuration file looks like:
   "disconnectRequests": [
     {
       "topicFilter": "sensors/disconnect",
-      "deviceNameJsonExpression": "${$.SerialNumber}"
+      "deviceNameJsonExpression": "${SerialNumber}"
     },
     {
       "topicFilter": "sensor/+/disconnect",

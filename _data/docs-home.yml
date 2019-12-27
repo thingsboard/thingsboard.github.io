@@ -229,11 +229,7 @@ toc:
       - title: BLE Connector
         path: /docs/iot-gateway/config/ble/
   - title: Customization guide
-    section:
-      - title: Custom connector
-        path: /docs/iot-gateway/custom/connector/
-      - title: Custom converter
-        path: /docs/iot-gateway/custom/converter/
+    path: /docs/iot-gateway/custom/
   - title: IoT Gateway Roadmap
     path: /docs/iot-gateway/roadmap/
 - title: Troubleshooting

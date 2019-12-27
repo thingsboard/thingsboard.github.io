@@ -35,7 +35,7 @@ Once connected, connector is either poll data from those systems or subscribe to
 For example, we use subscription model for MQTT connectors and polling for Modbus. 
 Connector is also able to push updates to devices either directly or via external systems.
 
-It is possible to define your own connector using the [customization guide](/docs/iot-gateway/custom/connector/).
+It is possible to define your own connector using the [customization guide](/docs/iot-gateway/custom/).
 
 **Converter**   
  
@@ -44,7 +44,7 @@ Converters are invoked by Connectors. Converters are often specific to protocol 
 There are uplink and downlink converters. Uplink converter is used to convert data from specific protocol to ThingsBoard format.
 Downlink converter is used to convert messages from ThingsBoard to specific protocol format.
 
-It is possible to define your own converter using the [customization guide](/docs/iot-gateway/custom/converter/).
+It is possible to define your own converter using the [customization guide](/docs/iot-gateway/custom/).
 
 **Event Storage**
 

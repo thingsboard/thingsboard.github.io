@@ -306,9 +306,6 @@ class CustomSerialConnector(Thread, Connector):    # Define a connector class, i
 
 The purpose of the converter is to convert data from devices to the ThingsBoard format.
 Converters written in Python language.
-
-#### Custom connector file and class
-
 We should create a custom converter file "custom_serial_converter.py" in the extension folder, you can find extension folder location in [Step 2](#step-2-locate-extensions-folder)
 
 <br>
@@ -369,60 +366,6 @@ After processing **48\r2430947595\n**  we receive following dictionary:
 ```
 
 This dictionary will be converted into json and gateway will send it to ThingsBoard instance.
-
-
-##### Custom connector methods reference
-
-You should implement following methods:  
-**\_\_init\_\_** -- called on creating object.  
-**convert** -- Method for conversion data from device format to ThingsBoard data format.  
-
-##### \_\_init\_\_ method
-
-**Parameters:**
-
-```python
-def __init__(self, config):
-```
-
-*self* -- current object.  
-*config* -- dictionary with data from connector configuration file.  
-
-In the example used to save the converter configuration and create a template for the result's dictionary with ThingsBoard data format
-
-##### convert method
-
-Method for conversion data from device format to ThingsBoard data format.
-
-**Parameters:**
-
-```python
-def convert(self, config, data):
-```
-*self* -- current object.  
-*config* -- configuration section for this device from connector configuration file.  
-*data* -- data from a device.  
-
-This function should return dictionary in format like following:
-
-```python
-{
-    "deviceName": "DEVICE_NAME",
-    "deviceType": "DEVICE_TYPE",
-    "attributes": [
-                    {"SOME_ATTRIBUTE_KEY":"SOME_ATTRIBUTE_VALUE"},
-                    {"SOME_ATTRIBUTE_KEY1":"SOME_ATTRIBUTE_VALUE1"}
-                  ],
-    "telemetry": [
-                    {"SOME_TELEMETRY_KEY": "SOME_TELEMETRY_VALUE"},
-                    {"SOME_TELEMETRY_KEY1": "SOME_TELEMETRY_VALUE1"},
-                    {"SOME_TELEMETRY_KEY2": "SOME_TELEMETRY_VALUE2"}
-                  ]
-}
-```
-
-Gateway will convert this data into json and send it to the ThingsBoard instance.
-
 
 ### Step 5. Include Connector into main Gateway configuration file
 
@@ -622,3 +565,56 @@ content = {"success": True}
 ```
   
  - If with response in content should be any dictionary with content that you want send to ThingsBoard as response.
+
+
+## Custom converter methods reference
+
+You should implement following methods:  
+**\_\_init\_\_** -- called on creating object.  
+**convert** -- Method for conversion data from device format to ThingsBoard data format.  
+
+##### \_\_init\_\_ method
+
+**Parameters:**
+
+```python
+def __init__(self, config):
+```
+
+*self* -- current object.  
+*config* -- dictionary with data from connector configuration file.  
+
+In the example used to save the converter configuration and create a template for the result's dictionary with ThingsBoard data format
+
+##### convert method
+
+Method for conversion data from device format to ThingsBoard data format.
+
+**Parameters:**
+
+```python
+def convert(self, config, data):
+```
+*self* -- current object.  
+*config* -- configuration section for this device from connector configuration file.  
+*data* -- data from a device.  
+
+This function should return dictionary in format like following:
+
+```python
+{
+    "deviceName": "DEVICE_NAME",
+    "deviceType": "DEVICE_TYPE",
+    "attributes": [
+                    {"SOME_ATTRIBUTE_KEY":"SOME_ATTRIBUTE_VALUE"},
+                    {"SOME_ATTRIBUTE_KEY1":"SOME_ATTRIBUTE_VALUE1"}
+                  ],
+    "telemetry": [
+                    {"SOME_TELEMETRY_KEY": "SOME_TELEMETRY_VALUE"},
+                    {"SOME_TELEMETRY_KEY1": "SOME_TELEMETRY_VALUE1"},
+                    {"SOME_TELEMETRY_KEY2": "SOME_TELEMETRY_VALUE2"}
+                  ]
+}
+```
+
+Gateway will convert this data into json and send it to the ThingsBoard instance.
