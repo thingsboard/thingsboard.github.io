@@ -16,7 +16,7 @@ sudo apt install python3-dev python3-pip libglib2.0-dev git
 
 **2. Download repository from Github:**
 ```bash
-git clone -b develop/2.4-python https://github.com/thingsboard/thingsboard-gateway.git
+git clone https://github.com/thingsboard/thingsboard-gateway.git
 ```
 {: .copy-code}
 

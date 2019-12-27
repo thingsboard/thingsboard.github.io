@@ -89,6 +89,22 @@ YUM<br/>%,%rpm%,%templates/iot-gateway/ble-requirements-rpm.md{% endcapture %}
 
 </details>
 
+<br>
+
+To understand how this connector works, we will describe how to connect device Xiaomi Mi Smart Temperature Humidity Sensor to ThingsBoard using gateway.
+We know following device parameters:
+Device **MAC address** - 4C:65:A8:DF:85:C0
+Default name characteristic id -  00002A00-0000-1000-8000-00805F9B34FB   - This is a default characteristic - we have got it ID from [GATT characeristics documentation](https://www.bluetooth.com/specifications/gatt/characteristics/)
+Temperature characteristic id - 00002A00-0000-1000-8000-00805F9B34FB    - This is a custom characteristic - we have got it after scanning device characteristics. 
+
+Default configuration created for this device to process data from it, receive notifies and write some information.  
+
+In a [main section](#main-section) we write general configuration for our connector, such as connector name scan interval, etc.  
+In a [device subsection](#device-object-subsection) we write general configuration for connection to our device (name for device in ThingsBoard and device MAC address, etc.).  
+In a [subsection telemetry](#subsection-telemetry) we write the configuration for processing data from the device (Where the gateway should take the data, method and converter will interpret this data to telemetry and attributes on ThingsBoard).  
+In a [subsection attributeUpdates](#subsection-attributes) we write the configuration to rename the device after receiving attribute update request from ThingsBoard.  
+If device shared attribute with a name "sharedName" changed - gateway will write data from this attribute to characteristic with ID - 00002A00-0000-1000-8000-00805F9B34FB.  
+
 ### Main section
 
 This section contains general settings for the connector.
@@ -124,14 +140,15 @@ This part of configuration will look like:
 
 This subsection contains general settings for the device and subsections for processing data.
 
-| **Parameter**     | **Default value** | **Description**                                                            |
+| **Parameter**     | **Default value** | **Description**                                                                                           |
 |:-|:-|-
-| name              | **BLE Connector** | Name for the device in ThingsBoard.                                        |
-| MACAddress        | **4C:65:A8:DF:C0**| MAC address for the device of interest.                                    |
-| telemetry         |                   | Array of objects for processing device telemetry.                          |
-| attributes        |                   | Array of objects for processing device attributes.                         |
-| attributeUpdates  |                   | Array of objects for processing attributeUpdate requests from ThingsBoard. |
-| serverSideRpc     |                   | Array of objects for processing RPC requests from ThingsBoard.             |
+| name              | **BLE Connector** | Name for the device in ThingsBoard.                                                                       |
+| MACAddress        | **4C:65:A8:DF:C0**| MAC address for the device of interest.                                                                   |
+| deviceType        | **BLEDevice**     | Device type for ThingsBoard, by default this parameter is absent, but you can add it.                     |
+| telemetry         |                   | Array of objects for processing device telemetry.                                                         |
+| attributes        |                   | Array of objects for processing device attributes.                                                        |
+| attributeUpdates  |                   | Array of objects for processing attributeUpdate requests from ThingsBoard.                                |
+| serverSideRpc     |                   | Array of objects for processing RPC requests from ThingsBoard.                                            |
 |---
 
 
