@@ -7,16 +7,79 @@ description: Understand how to connect BLE temperature and humidity sensor using
 
 ---
 
-## 
+## Device information
 
 To understand how to connect devices to the gateway using the BLE protocol, we will use a humidity and temperature sensor from MI.
+We will use [BLE connector](/docs/iot-gateway/config/ble-connector/) to connect to device and collect data.
 
+Information about the device that we have is:  
+MAC Address - 4C:65:A8:DF:85:C0  
 
-Information about the device that we have is:
-MAC Address - 00: 00: 00: 00: 00: 00
-Characteristics IDs:
-00002A00-0000-1000-8000-00805F9B34FB - identifier of standard device name characteristic ([GATT Specification](https://www.bluetooth.com/specifications/gatt/services/))
-226CAA55-6476-4566-7562-66734470666D - identifier of a custom temperature and humidity characteristic ([How to get characteristics list from BLE device](#how-to-get-characteristics-list-from-ble-device))  
+Characteristics IDs:  
+00002A00-0000-1000-8000-00805F9B34FB - identifier of standard device name characteristic ([GATT Specification](https://www.bluetooth.com/specifications/gatt/services/))  
+226CAA55-6476-4566-7562-66734470666D - identifier of a custom temperature and humidity characteristic ([How to get characteristics list from BLE device](#how-to-get-characteristics-list-from-ble-device))    
+
+## Step 1. Configure the BLE connector
+
+We need create ble configuration file and write a configuration template and write general configuration for the connector:
+
+```json
+{
+    "name": "BLE Connector",
+    "rescanIntervalSeconds": 100,
+    "checkIntervalSeconds": 100,
+    "scanTimeSeconds": 5,
+    "passiveScanMode": true,
+    "devices": [
+        {
+            "name": "Temperature and humidity sensor",
+            "MACAddress": "4C:65:A8:DF:85:C0",
+            "telemetry": [
+                {
+                    "key": "temperature",
+                    "method": "notify",
+                    "characteristicUUID": "226CAA55-6476-4566-7562-66734470666D",
+                    "byteFrom": 2,
+                    "byteTo": 6
+                },
+                {
+                    "key": "humidity",
+                    "method": "notify",
+                    "characteristicUUID": "226CAA55-6476-4566-7562-66734470666D",
+                    "byteFrom": 9,
+                    "byteTo": 13
+                }
+            ],
+            "attributes": [
+                {
+                    "key": "name",
+                    "characteristicUUID": "00002A00-0000-1000-8000-00805F9B34FB",
+                    "method": "read",
+                    "byteFrom": 0,
+                    "byteTo": -1
+                }
+            ],
+            "attributeUpdates": [
+                {
+                    "attributeOnThingsBoard": "sharedName",
+                    "characteristicUUID": "00002A00-0000-1000-8000-00805F9B34FB"
+                }
+            ],
+            "serverSideRpc": [
+                {
+                    "methodRPC": "sharedName",
+                    "withResponse": true,
+                    "characteristicUUID": "00002A00-0000-1000-8000-00805F9B34FB",
+                    "methodProcessing": "write"
+                }
+            ]
+        }
+    ]
+}
+```  
+About sections of BLE configuration file you can [read more here](/docs/iot-gateway/config/ble/)
+
+In this guide we should configure like  
 
 #### How to get characteristics list from BLE device
 
@@ -72,3 +135,5 @@ Characteristic methods:
 1. READ - Read value from the characteristic.  
 2. WRITE - Write value to the characteristic.  
 3. NOTIFY - Subscribe to characteristic updates.  
+
+Usually characteristics where name is equals to id is custom.  
