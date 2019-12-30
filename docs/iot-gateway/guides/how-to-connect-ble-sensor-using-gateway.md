@@ -2,26 +2,46 @@
 layout: docwithnav
 assignees:
 - zbeacon
-title: How to connect BLE temperature and humidity sensor using the gateway.
-description: Understand how to connect BLE temperature and humidity sensor using the gateway. 
+title: How to connect BLE temperature and humidity sensor using the gateway
+description: Understand how to connect BLE temperature and humidity sensor using the gateway 
 
 ---
 
 ## Device information
 
-To understand how to connect devices to the gateway using the BLE protocol, we will use a humidity and temperature sensor from MI.
-We will use [BLE connector](/docs/iot-gateway/config/ble-connector/) to connect to device and collect data.
+For the purpose of this guide, we will use a Mi humidity and temperature sensor.
+We will use [BLE connector](/docs/iot-gateway/config/ble-connector/) to connect to the device and collect data.
 
-Information about the device that we have is:  
+Our goals for this device:  
+1. Temperature and humidity data.
+2. Get a device name.
+
+At this moment the only info about the device are it's MAC address and characteristic identifiers:  
+
 MAC Address - 4C:65:A8:DF:85:C0  
 
 Characteristics IDs:  
 00002A00-0000-1000-8000-00805F9B34FB - identifier of standard device name characteristic ([GATT Specification](https://www.bluetooth.com/specifications/gatt/services/))  
-226CAA55-6476-4566-7562-66734470666D - identifier of a custom temperature and humidity characteristic ([How to get characteristics list from BLE device](#how-to-get-characteristics-list-from-ble-device))    
+226CAA55-6476-4566-7562-66734470666D - identifier of a custom temperature and humidity characteristic ([How to get characteristics list from BLE device](#how-to-get-characteristics-identifiers-list-from-ble-device))    
 
-## Step 1. Configure the BLE connector
+## Step 1. Required libraries
 
-We need create ble configuration file and write a configuration template and write general configuration for the connector:
+Before we start configure our BLE connector within the gateway.
+These libraries depend on type of your OS:
+
+
+{% capture systemtogglespec %}
+Debian based<br/>%,%deb%,%templates/iot-gateway/ble-requirements-deb.md%br%
+Red Hat based<br/>%,%red-hat%,%templates/iot-gateway/ble-requirements-rpm.md{% endcapture %}
+
+{% include content-toggle.html content-toggle-id="SystemLibraries" toggle-spec=systemtogglespec %}
+
+
+ 
+
+## Step 2. Configuring the BLE connector
+
+We need to create ble setup file and put configuration there. For example:
 
 ```json
 {
@@ -76,12 +96,86 @@ We need create ble configuration file and write a configuration template and wri
         }
     ]
 }
+```
+{: .copy-code}
+
+  
+About sections of BLE configuration file you can [read more here](/docs/iot-gateway/config/ble/).  
+
+In this guide we will use configuration above.
+
+Let's analyze our settings:
+
+1. General configuration for the connector. In this section we have defined general connector settings, such as connector name ("BLE Connector"), rescan interval (100) etc. You can read more about available parameters [here](/docs/iot-gateway/config/ble/#main-section).  
+2. General device configuration. In this section we have defined general device settings, such as device name in ThingsBoard ("Temperature and humidity sensor"), MAC-address ("4C:65:A8:DF:85:C0") etc. You can read more about available parameters [here](/docs/iot-gateway/config/ble/#device-object-subsection).
+3. Telemetry configuration. In this section we have defined a configuration for temperature and humidity parameters. You can read more about available parameters [here](/docs/iot-gateway/config/ble/#subsection-telemetry).  
+4. Attributes configuration. In this section we have defined that connector will read value from characteristic ("00002A00-0000-1000-8000-00805F9B34FB") and write it as the device client-side attribute ("name") on ThingsBoard. You can read more about available parameters [here](/docs/iot-gateway/config/ble/#subsection-attributes).    
+5. Attribute updates configuration. In this section we have configured the gateway to change the device name when we change shared attribute ("sharedName") in ThingsBoard device. You can read more about available parameters [here](/docs/iot-gateway/config/ble/#subsection-attributeupdates).   
+6. Server side rpc configuration. In this section we have configured the gateway to read the device name and return it when we call RPC method ("rpcMethod1") from ThingsBoard. You can read more about available parameters [here](/docs/iot-gateway/config/ble/#subsection-serversiderpc).   
+
+If you have a different device, you should provide your device characteristic identifiers in the configuration json.    
+
+We have saved the configuration file as **ble.json** in the config folder (the directory, that contains the general configuration file - **tb_gateway.yaml**).  
+
+## Step 3. Turn on the connector 
+
+To use the connector, we must turn it on in the main configuration file (**[tb_gateway.yaml](/docs/iot-gateway/configuration/#connectors-configuration)**)
+
+In "connectors" section we should uncomment following strings:
+
+```yaml
+   -
+     name: BLE Connector
+     type: ble
+     configuration: ble.json
+```
+
+## Step 4. Run the gateway
+
+To run the gateway with BLE Connector we will use root permissions.  
+Command for run depends on type of installation.  
+If you have installed the gateway as daemon, run the following command:  
+```bash
+sudo systemctl restart thingsboard-gateway
 ```  
-About sections of BLE configuration file you can [read more here](/docs/iot-gateway/config/ble/)
+{: .copy-code}
 
-In this guide we should configure like  
+If you have installed the gateway as a python module (using [pip package manager](/docs/iot-gateway/install/pip-installation/) or [from sources](/docs/iot-gateway/install/source-installation/)), use following command or script to run the gateway.  
+**Notice**: You must place correct path to the main configuration file (**tb_gateway.yaml**) in the command/script.  
 
-#### How to get characteristics list from BLE device
+```bash
+sudo python3 -c 'from thingsboard_gateway.gateway.tb_gateway_service import TBGatewayService; TBGatewayService("YOUR_PATH_HERE")'
+```
+
+or script:
+
+```python
+from thingsboard_gateway.gateway.tb_gateway_service import TBGatewayService 
+
+config_file_path = "YOUR_PATH_HERE"
+
+TBGatewayService(config_file_path)
+```
+
+## Step 5. Check information from device
+
+Check data in your ThingsBoard instance, that you have been configured in the [general configuration guide](/docs/iot-gateway/configuration/).  
+    - Go to the your ThingsBoard instance and login.  
+    - Go to the "Devices" tab. "Temperature and Humidity sensor" should be there.
+    <br>    
+    ![](/images/gateway/temp-hum-sensor.png)
+<br><br>
+Go to the device details, **ATTRIBUTES** tab, which contains all client-side attributes, including requested from our configuration file attributes.    
+<br>
+![](/images/gateway/attribute-on-ble-device.png)
+
+Let's try to change the device name.
+We should follow several steps:
+1. Create shared attribute on device, to do this we go to the **ATTRIBUTES** tab, select from a list of attributes option "Shared attributes" instead of "Client attributes", press plus icon, put "sharedName" as Key and "New device name" as "String value".
+2. Check name of device using "rpcMethod1" from RPC Dashboard or scan devices around using default ability in the device where installed the gateway. 
+
+
+#### How to get characteristic identifiers list from BLE device
 
 To get all available device characteristics, you can use the following Python script:  
 
@@ -128,7 +222,7 @@ Characteristic - id: 00000014-0000-1000-8000-00805f9b34fb	name (if exists): Char
 
 Where:  
 id - characteristic identifier.  
-name (if exists) - Characteristic name, if it has description in the [GATT specification](https://www.bluetooth.com/specifications/gatt/services/).  
+name (if exists) - Characteristic name, if it has description in a [GATT specification](https://www.bluetooth.com/specifications/gatt/services/).  
 available methods - Characteristic supports methods.  
 
 Characteristic methods:  
