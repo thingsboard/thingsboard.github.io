@@ -357,6 +357,7 @@ This section in configuration file looks like:
 ThingsBoard allows sending [RPC commands](/docs/user-guide/rpc/) to the device that is connected to ThingsBoard directly or via Gateway.
  
 Configuration, provided in this section uses for sending RPC requests from ThingsBoard to device.
+
 | **Parameter**                 | **Default value**                                                 | **Description**                                                                                                           |
 |:-|:-|-
 | deviceNameFilter              | **SmartMeter.\***                                                 | Regular expression device name filter, uses to determine, which function to execute.                                      |
