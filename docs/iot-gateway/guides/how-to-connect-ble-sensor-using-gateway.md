@@ -7,10 +7,13 @@ description: Understand how to connect BLE temperature and humidity sensor using
 
 ---
 
+* TOC
+{:toc}
+
 ## Device information
 
 For the purpose of this guide, we will use a Mi humidity and temperature sensor.
-We will use [BLE connector](/docs/iot-gateway/config/ble-connector/) to connect to the device and collect data.
+We will use [BLE connector](/docs/iot-gateway/config/ble/) to connect to the device and collect data.
 
 Our goals for this device:  
 1. Temperature and humidity data.
@@ -157,7 +160,7 @@ config_file_path = "YOUR_PATH_HERE"
 TBGatewayService(config_file_path)
 ```
 
-## Step 5. Check information from device
+## Step 5. Check information on ThingsBoard
 
 Check data in your ThingsBoard instance, that you have been configured in the [general configuration guide](/docs/iot-gateway/configuration/).  
     - Go to the your ThingsBoard instance and login.  
@@ -165,14 +168,22 @@ Check data in your ThingsBoard instance, that you have been configured in the [g
     <br>    
     ![](/images/gateway/temp-hum-sensor.png)
 <br><br>
-Go to the device details, **ATTRIBUTES** tab, which contains all client-side attributes, including requested from our configuration file attributes.    
+Go to the device details, **ATTRIBUTES** tab, which contains all client-side attributes, including requested from our configuration file attributes.  
+**Notify:** Attributes from the GATT specification updates only on first connect to device after the gateway start.  
 <br>
 ![](/images/gateway/attribute-on-ble-device.png)
 
+## Step 6. Change the device name using shared attributes
+
 Let's try to change the device name.
 We should follow several steps:
-1. Create shared attribute on device, to do this we go to the **ATTRIBUTES** tab, select from a list of attributes option "Shared attributes" instead of "Client attributes", press plus icon, put "sharedName" as Key and "New device name" as "String value".
+1. Create a shared attribute in the device on ThingsBoard, to do this we go to the **ATTRIBUTES** tab, select from a list of attributes option "Shared attributes" instead of "Client attributes", press plus icon, put "sharedName" as Key and "New_name_" as "String value".
 2. Check name of device using "rpcMethod1" from RPC Dashboard or scan devices around using default ability in the device where installed the gateway. 
+
+**Notify:** Some devices can reset their name to default.
+
+![](/images/gateway/changed-name-ble-tb-gateway.png)
+
 
 
 #### How to get characteristic identifiers list from BLE device
