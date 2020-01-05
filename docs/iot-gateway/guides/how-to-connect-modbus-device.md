@@ -2,8 +2,8 @@
 layout: docwithnav
 assignees:
 - zbeacon
-title: How to connect Modbus device to ThingsBoard using the gateway
-description: Understand how to connect Modbus device to ThingsBoard using the gateway 
+title: How to connect Modbus device to ThingsBoard using the ThingsBoard IoT Gateway
+description: Understand how to connect Modbus device to ThingsBoard using the ThingsBoard IoT Gateway 
 
 ---
 
@@ -12,10 +12,10 @@ description: Understand how to connect Modbus device to ThingsBoard using the ga
 
 ## Device information
 
-For the purpose of this guide, we will use Raspberry Pi with Modbus server to emulate Modnus device.
-We will use [Modbus connector](/docs/iot-gateway/config/modbus/) to connect to the device and collect data.  
+For the purpose of this guide, we will use Raspberry Pi with Modbus server to emulate Modbus device.
+We will use [Modbus connector](/docs/iot-gateway/config/modbus/) to collect data.  
 
-At this moment the only info about the device are:  
+The info available at this moment:  
 
 
 | Parameter     | Our value            |
@@ -27,15 +27,16 @@ At this moment the only info about the device are:
 | Poll period   | **5 seconds**        | 
 |-|-|
 
-We want to read **temperature** (register address is **0**), **humidity** (register address is **1**) as telemetry in the ThingsBoard and **batteryLevel** (register address is **2**) as a device attribute in the ThingsBoard.    
+We want to write **temperature** (register address is 0) and **humidity** (register address is 1) as the telemetry to ThingsBoard and **batteryLevel** (register address is 2) as the device client-side attribute.      
 
 
 
 ## Step 1. Configuring the Modbus connector
 
-We need to create ble setup file and put configuration there.  
-We have taken a default configuration file for Modbus and replace some parameters with our values.  
-For example:  
+In order to configure the connector, we must create MODBUS setup file and put configuration there.
+You may use default modbus.json file (from /etc/thingsboard-gateway/config in case of daemon installation or from folder with tb_gateway.yaml file in case you use python package).  
+Simply replace some parameters with our values.
+For example: 
 
 ```json
 {
@@ -91,16 +92,14 @@ For example:
   
 About sections of Modbus configuration file you can [read more here](/docs/iot-gateway/config/modbus/).  
 
-In this guide we will use configuration above.
-
 Let's analyze our settings:
 
-1. General configuration for the connector. In this section we have defined general connector settings, such as connector name ("**Modbus Default Server**"), port (**5020**) etc. You can read more about available parameters [here](/docs/iot-gateway/config/modbus/#section-server).  
-2. General device configuration. In this section we have defined general device settings, such as device name in ThingsBoard ("**TH_sensor**"), unit id ("**1**") etc. You can read more about available parameters [here](/docs/iot-gateway/config/modbus/#subsection-devices).
-3. Timeseries configuration. In this section we have defined a configuration for temperature and humidity parameters. You can read more about available parameters [here](/docs/iot-gateway/config/modbus/#subsection-timeseries).  
-4. Attributes configuration. In this section we have defined a configuration for **batteryLevel** parameter. You can read more about available parameters [here](/docs/iot-gateway/config/modbus/#subsection-attributes).    
+1. General configuration of connector. In this section we have defined main settings (e. g. connector name — Modbus Default Server, port — 5020 etc.). You can read more about available parameters here.
+2. General device configuration. In this section we have defined main settings of our Modbus device (e. g. device name within ThingsBoard — TH_sensor, unit id — 1 etc.). You can read more about available parameters here.
+3. Timeseries configuration. In this section we set up temperature and humidity parameters. You can read more about available parameters here.
+4. Attributes configuration. In this section we have defined the settings for batteryLevel attribute within ThingsBoard. You can read more about available parameters here.
 
-We have saved the configuration file as **modbus.json** in the config folder (the directory, that contains the general configuration file - **tb_gateway.yaml**).  
+Save the configuration file as modbus.json in configuration folder (the directory, that contains the general configuration file - **tb_gateway.yaml**).  
 
 ## Step 3. Turn on the connector 
 
@@ -143,17 +142,17 @@ TBGatewayService(config_file_path)
 
 ## Step 5. Check information from device
 
-Check data in your ThingsBoard instance, that you have been configured in the [general configuration guide](/docs/iot-gateway/configuration/).  
+Check data in your ThingsBoard instance.  
     - Go to the your ThingsBoard instance and login.  
     - Go to the "Devices" tab. "TH_sensor" will be there.
     <br>    
     ![](/images/gateway/gateway-modbus-device-added.png)
 <br><br>
-Go to the device details, **ATTRIBUTES** tab, it contains an attribute **batteryLevel**.  
+Go to the device details, **ATTRIBUTES** tab, there you may see the attribute **batteryLevel** with some value.  
 <br>
 ![](/images/gateway/modbus-device-client-attribute.png)
 <br><br>
-Go to the device details, **LATEST TELEMETRY** tab, it contains telemetries: **temperature** and **humidity**.  
+Go to the device details, **LATEST TELEMETRY** tab, to see your telemetries data: **temperature** and **humidity**.  
 <br>
 ![](/images/gateway/modbus-device-telemetry.png)
 

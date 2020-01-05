@@ -42,7 +42,7 @@ notitle: "true"
                                         </a>
                                     </div>
                                     <div class="deployment-card-block">
-                                        <a href="">
+                                        <a href="/docs/iot-gateway/install/deb-installation/">
                                             <span>
                                                 <div class="deployment-logo" style="height:134px">
                                                     <img width="" src="/images/install/platform/rpi3.jpg" title="Raspberry Pi 3" alt="Raspberry Pi 3">
