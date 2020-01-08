@@ -15,11 +15,7 @@ Install Ruby 2.2 or higher. If you're on Ubuntu 18.04.2 LTS, run these commands:
 	sudo apt-get install software-properties-common
 	sudo apt-add-repository ppa:brightbox/ruby-ng
 	sudo apt-get update
-	sudo apt-get install ruby
-	sudo apt-get install ruby-dev
-	sudo apt-get install libffi-dev
-	sudo apt-get install g++
-	sudo apt-get install zlib1g-dev 
+	sudo apt-get install ruby ruby-dev libffi-dev g++ zlib1g-dev
 	sudo gem install github-pages
 	sudo gem install jekyll bundler
 
