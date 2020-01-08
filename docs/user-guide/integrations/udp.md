@@ -54,6 +54,13 @@ For demo purposes we assume that our device is smart enough to send data in 3 di
     - **0-5** bytes - **\x53\x4e\x2d\x30\x30\x31** - device name. If we convert it to text - **SN-001**;
     - **6-12** bytes - **\x64\x65\x66\x61\x75\x6c\x74** - device type. If we convert it to text - **default**;
     - **13-16** bytes - **\x32\x35\x2e\x37** - temperature telemetry. If we convert it to text - **25.7**;
+
+  - **Hex** - in this case payload is hexadecimal string **534e2d30303164656661756c7432352e373639**. 
+   Here is the description of the bytes in this payload:
+     - **0-5** bytes - **534e2d303031** - device name. If we convert it to text - **SN-001**;
+     - **6-12** byte - **64656661756c74** - device type. If we convert it to text - **default**;   
+     - **13-16** byte - **32352e37** - temperature telemetry. If we convert it to text: - **25.7**;    
+     - **17-18** byte - **3639** - humidity telemetry. If we convert it to text: - **69**;    
     
 You can select payload type based on your device capabilities and business cases.
  
@@ -74,7 +81,8 @@ Choose device payload type to for decoder configuration
 {% capture uplinkpayload %}
 Text payload<br/>%,%text%,%templates/integration/udp/udp-uplink-converter-text.md%br%
 JSON payload<br/>%,%json%,%templates/integration/udp/udp-uplink-converter-json.md%br%
-Binary payload<br/>%,%binary%,%templates/integration/udp/udp-uplink-converter-binary.md{% endcapture %}
+Binary payload<br/>%,%binary%,%templates/integration/udp/udp-uplink-converter-binary.md%br%
+Hex payload<br/>%,%hex%,%templates/integration/udp/udp-uplink-converter-hex.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="udpintegartionuplinkpayload" toggle-spec=uplinkpayload %}
 
@@ -103,7 +111,8 @@ Choose device payload type for **Handler Configuration**
 {% capture handlerconfiguration %}
 Text payload<br/>%,%text%,%templates/integration/udp/udp-handler-configuration-text.md%br%
 JSON payload<br/>%,%json%,%templates/integration/udp/udp-handler-configuration-json.md%br%
-Binary payload<br/>%,%binary%,%templates/integration/udp/udp-handler-configuration-binary.md{% endcapture %}
+Binary payload<br/>%,%binary%,%templates/integration/udp/udp-handler-configuration-binary.md%br%
+Hex payload<br/>%,%hex%,%templates/integration/udp/udp-handler-configuration-hex.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="udpintegrationhandlerconfiguration" toggle-spec=handlerconfiguration %}
 
@@ -124,7 +133,8 @@ Choose device payload type to send uplink message
 {% capture senduplink %}
 Text payload<br/>%,%text%,%templates/integration/udp/udp-send-uplink-text.md%br%
 JSON payload<br/>%,%json%,%templates/integration/udp/udp-send-uplink-json.md%br%
-Binary payload<br/>%,%binary%,%templates/integration/udp/udp-send-uplink-binary.md{% endcapture %}
+Binary payload<br/>%,%binary%,%templates/integration/udp/udp-send-uplink-binary.md%br%
+Hex payload<br/>%,%hex%,%templates/integration/udp/udp-send-uplink-hex.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="udpintegrationsenduplink" toggle-spec=senduplink %}
 
