@@ -54,9 +54,9 @@ Follow steps in chosen gateway installation guide. The Gateway configuration ste
 
 ## Step 3: Gateway configuration
 
-Navigate to the gateway configuration folder and edit **tb-gateway.yml** file.
+Navigate to the gateway configuration folder and edit **tb-gateway.yaml** file.
 ```bash
-/etc/thingsboard-gateway/config/tb_gateway.yml
+/etc/thingsboard-gateway/config/tb_gateway.yaml
 ```
   
 Change **host** and **port** properties in the section *"thingsboard"* to your ThingsBoard host.
@@ -105,7 +105,7 @@ All values should be set to "0".
 ## Step 6: Add connectors to the main configuration file 
  
 For connection to some devices we use connectors, they are connect to different devices and servers to collect data.  
-To provide for gateway information about connectors that you need - you should write a configuration to section "connectors" in tb_gateway.yml (At least one connector needed for correct work).  
+To provide for gateway information about connectors that you need - you should write a configuration to section "connectors" in tb_gateway.yaml (At least one connector needed for correct work).  
 For correct configuration please use [this article](/docs/iot-gateway/configuration/#section-connectors).  
  
 ## Step 7: Configure connectors
