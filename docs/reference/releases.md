@@ -8,6 +8,60 @@ description: ThingsBoard architecture
 * TOC
 {:toc}
 
+## v2.4.3 (January 8, 2020)
+
+### ThingsBoard CE
+
+Minor release with the following improvements.
+
+Main features:
+
+* Performance Improvement for Device State Service;
+* Async JS Execution;
+* Added support of Entity Label in bulk import;
+* Added "delete alarm" API to alarm service.
+* UI: Added new Alarm widget settings: "Maximum number of alarms to load" and "Fetch size".
+* UI: Improved state controller for dashboard;
+* UI: Added support of Entity Label to state name and dashboard breadcrumbs;
+* UI: Added data key settings to change legend appearance for charts.
+* UI: Hide timewindow when all options are hidden;
+* UI: Control widgets background color;
+
+Additional features:
+
+* More clear thread names;
+* Added support of activity event for "Copy to view" rule node;
+* JS Stats for Nashorn JS Executor;
+* UI: Added Traditional Chinese locale;
+* UI: Added Entity Label to widget actions;
+
+Bug fixes:
+
+* UI: Fix timewindow parameters when zooming flot widget chart;
+* UI: Fixed knob control widget;
+* UI: Fixed entity name resolution;
+* UI: Fixed disable timewindow logic;
+
+### ThingsBoard PE
+
+Everything from [TB CE v2.4.3](https://github.com/thingsboard/thingsboard/releases/tag/v2.4.3) with the following improvements.
+
+Main features:
+
+ - New Integration: Actility ThingPark Enterprise;
+ - Added new alias: "Entities by group name". 
+ 
+Additional features:
+
+ - Rest client update;
+ - Added "other properties" for Kafka integration;
+ - TCP and UDP integration: added HEX handler type;
+ 
+Bug fixes:
+
+- UI: Fix promise to tenant_admin and generic permission;
+- White-labeling: Fixed NPE in case tenant has not additional info;
+
 ## v2.4.2 (December 10, 2019)
 
 ### ThingsBoard CE
