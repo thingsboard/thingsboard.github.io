@@ -57,7 +57,7 @@ docker volume create mytbpe-logs
 Execute the following command to run this docker directly:
 
 ``` 
-docker run -it -p 9090:9090 -p 1883:1883 -p 5683:5683/udp -v mytbpe-data:/data -v mytbpe-logs:/var/log/thingsboard -e "TB_LICENSE_SECRET=PUT_YOUR_LICENSE_SECRET_HERE" --name mytbpe --restart always store/thingsboard/tb-pe:2.4.2.1PE
+docker run -it -p 9090:9090 -p 1883:1883 -p 5683:5683/udp -v mytbpe-data:/data -v mytbpe-logs:/var/log/thingsboard -e "TB_LICENSE_SECRET=PUT_YOUR_LICENSE_SECRET_HERE" --name mytbpe --restart always store/thingsboard/tb-pe:2.4.3PE
 ```
 
 Where: 
@@ -72,7 +72,7 @@ Where:
 - `-v mytbpe-logs:/var/log/thingsboard`      - mounts the volume `mytbpe-logs` to ThingsBoard logs directory
 - `--name mytb-pe`             - friendly local name of this machine;
 - `--restart always`        - automatically start ThingsBoard in case of system reboot and restart in case of failure.;
-- `store/thingsboard/tb-pe:2.4.2.1PE`          - docker image.
+- `store/thingsboard/tb-pe:2.4.3PE`          - docker image.
 
 In order to get access to necessary resources from external IP/Host on Windows machine, please execute the following commands:
 
