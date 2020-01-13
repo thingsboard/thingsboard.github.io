@@ -68,7 +68,7 @@ docker stop gateway
 ```
 {: .copy-code}
 
-**Configure gateway to work with your instance of ThingsBoard, using [this guide](/docs/iot-gateway/all_configuration/):**
+**Configure gateway to work with your instance of ThingsBoard, using [this guide](/docs/iot-gateway/configuration/):**
 
 Start the container after made changes:
 
