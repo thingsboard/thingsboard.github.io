@@ -14,29 +14,12 @@ This guide will help you to install and start ThingsBoard Gateway using Docker o
 
 - [Install Docker CE](https://docs.docker.com/engine/installation/)
 
-**Download Gateway repository and go to the directory:**
+## Running
 
-```bash
-git clone https://github.com/thingsboard/thingsboard-gateway.git
-```
-{: .copy-code}
+**Execute the following command to run this docker directly:**
 
 ```
-cd thingsboard-gateway
-```
-{: .copy-code}
-
-**Build docker image from Dockerfile:**
-
-```
-docker build -t python3-thingsboard-gateway:2.4 docker
-```
-{: .copy-code}
-
-## Run gateway container from created image 
-
-```
-docker run -it -v ~/.thingsboard-gateway/logs:/var/log/thingsboard-gateway -v ~/.thingsboard-gateway/extensions:/var/lib/thingsboard_gateway/extensions -v ~/.thingsboard-gateway/config:/etc/thingsboard-gateway/config --name gateway --restart always python3-thingsboard-gateway:2.4
+docker run -it -v ~/.thingsboard-gateway/logs:/var/log/thingsboard-gateway -v ~/.thingsboard-gateway/extensions:/var/lib/thingsboard_gateway/extensions -v ~/.thingsboard-gateway/config:/etc/thingsboard-gateway/config --name tb-gateway --restart always thingsboard/tb-gateway
 ```
 {: .copy-code}
 
@@ -47,9 +30,9 @@ Where:
 - `-v ~/.thingsboard-gateway/config:/etc/thingsboard-gateway/config`   - mounts the host's dir `~/.thingsboard-gateway/config` to Gateway config  directory
 - `-v ~/.thingsboard-gateway/extensions:/var/lib/thingsboard_gateway/extensions`   - mounts the host's dir `~/.thingsboard-gateway/extensions` to Gateway extensions  directory
 - `-v ~/.thingsboard-gateway/logs:/var/log/thingsboard-gateway`   - mounts the host's dir `~/.thingsboard-gateway/logs` to Gateway logs  directory
-- `--name gateway`             - friendly local name of this machine
+- `--name tb-gateway`             - friendly local name of this machine
 - `--restart always`        - automatically start ThingsBoard in case of system reboot and restart in case of failure.
-- `python3-thingsboard-gateway`          - docker image, created in the previous step
+- `thingsboard/tb-gateway`          - docker image
 
 ## Detaching, stop and start commands
 
@@ -93,3 +76,13 @@ Start the container after made changes:
 docker start gateway
 ```
 {: .copy-code}
+
+**Upgrading**
+In order to update to the latest image, execute the following commands:
+
+```
+$ docker pull thingsboard/tb-gateway
+$ docker stop tb-gateway
+$ docker rm tb-gateway
+$ docker run -it -v ~/.thingsboard-gateway/logs:/var/log/thingsboard-gateway -v ~/.thingsboard-gateway/extensions:/var/lib/thingsboard_gateway/extensions -v ~/.thingsboard-gateway/config:/etc/thingsboard-gateway/config --name tb-gateway --restart always thingsboard/tb-gateway
+```
