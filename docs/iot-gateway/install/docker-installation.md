@@ -77,7 +77,8 @@ docker start gateway
 ```
 {: .copy-code}
 
-**Upgrading**
+## Upgrading
+
 In order to update to the latest image, execute the following commands:
 
 ```
