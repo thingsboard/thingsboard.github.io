@@ -7,6 +7,8 @@ description: ThingsBoard IoT platform upgrade instructions
 
 ---
 
+<h3>In order to update ThingsBoard PE please follow <a style="pointer-events: all;" href="/docs/user-guide/install/pe/upgrade-instructions/">these instructions</a></h3>
+
 <ul id="markdown-toc">
   <li>
     <a href="#upgrading-to-103" id="markdown-toc-upgrading-to-103">Upgrading to 1.0.3</a>
