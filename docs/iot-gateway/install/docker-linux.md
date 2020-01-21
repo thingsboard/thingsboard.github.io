@@ -19,7 +19,7 @@ This guide will help you to install and start ThingsBoard Gateway using Docker o
 **Execute the following command to run this docker directly:**
 
 ```
-docker run -it -v ~/.thingsboard-gateway/logs:/var/log/thingsboard-gateway -v ~/.thingsboard-gateway/extensions:/var/lib/thingsboard_gateway/extensions -v ~/.thingsboard-gateway/config:/etc/thingsboard-gateway/config --name tb-gateway --restart always thingsboard/tb-gateway
+docker run -it -v ~/.tb-gateway/logs:/var/log/thingsboard-gateway -v ~/.tb-gateway/extensions:/var/lib/thingsboard_gateway/extensions -v ~/.tb-gateway/config:/etc/thingsboard-gateway/config --name tb-gateway --restart always thingsboard/tb-gateway
 ```
 {: .copy-code}
 
