@@ -86,6 +86,7 @@ Configuration in this section uses for connecting to Modbus server.
 | host                          | **localhost:4840/freeopcua/server/** | Hostname or ip address of Modbus server.                                              |
 | scanPeriodInMillis            | **10000**                            | Port of Modbus server for connect.                                                    |
 | timeoutInMillis               | **5000**                             | Timeout in seconds for connecting to Modbus server.                                   |
+| showMap                       |                                      | Show nodes on scanning **true** or **false**.                                         |
 | security                      | **Basic128Rsa15**                    | Security policy (**Basic128Rsa15**, **Basic256**, **Basic256Sha256**)                 |
 |---
 
