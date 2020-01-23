@@ -14,4 +14,4 @@ sudo pip3 install thingsboard-gateway --upgrade
 ```
 {: .copy-code}
 
-**To upgrade to *Develop* version you should use ![this guide](/docs/iot-gateway/install/source-installation/).**
+**To upgrade to *Develop* version you should use [this guide](/docs/iot-gateway/install/source-installation/).**
