@@ -2,7 +2,7 @@
 layout: docwithnav
 assignees:
 - ashvayka
-title: OPC-UA Extension Configuration
+title: OPC-UA Connector Configuration
 description: OPC-UA protocol support for ThingsBoard IoT Gateway
 
 ---
@@ -38,7 +38,7 @@ We will describe connector configuration file below.
     "mapping": [
       {
         "deviceNodePattern": "Root\\.Objects\\.MyObject\\d+",
-        "deviceNamePattern": "Device ${MyVariable22}",
+        "deviceNamePattern": "Device ${Root\\.Objects\\.MyObject\\d+\\.MyVariable22}",
         "attributes": [
           {
             "key": "Tag1",
@@ -48,7 +48,7 @@ We will describe connector configuration file below.
         "timeseries": [
           {
             "key": "Tag3",
-            "path": "${Tag3}"
+            "path": "${MyVariable}"
           },
           {
             "key": "Tag2",
@@ -127,7 +127,7 @@ This subsection contains configurations for variables of the object, that will b
 | **Parameter**   | **Default value**           | **Description**                                                                   |
 |:-|:-|-
 | key             | **Tag1**                    | Tag, that will interpreted as attribute for ThingsBoard platform instance.        |
-| path            | **${MyVariable}**           | Name of the variable in the Modbus object, uses for looking the value in some variable. ** \* **               |
+| path            | **${MyVariable1}**           | Name of the variable in the Modbus object, uses for looking the value in some variable. ** \* **               |
 |---
 
 This part of configuration will look like:  
@@ -147,7 +147,7 @@ This subsection contains configurations for variables of the object, that will b
 | **Parameter**   | **Default value**           | **Description**                                                                   |
 |:-|:-|-
 | key             | **Tag1**                    | Tag, that will interpreted as telemetry for ThingsBoard platform instance.        |
-| path            | **${MyVariable}**           | Name of the variable in the Modbus object, uses for looking the value in some variable. ** \* ** |
+| path            | **${MyVariable3}**           | Name of the variable in the Modbus object, uses for looking the value in some variable. ** \* ** |
 |---
 
 ** \* ** You can put here sub level for search, e.g: **${Battery\\.Level}**
@@ -158,7 +158,7 @@ This part of configuration will look like:
         "timeseries": [
           {
             "key": "Tag3",
-            "path": "${MyVariable}"
+            "path": "${MyVariable3}"
           }
         ],
 ```
