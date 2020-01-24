@@ -37,3 +37,5 @@ toc:
       path: /docs/iot-gateway/opc-ua/
     - title: BLE Connector
       path: /docs/iot-gateway/ble/
+- title: Features
+  path: /docs/iot-gateway/features/
