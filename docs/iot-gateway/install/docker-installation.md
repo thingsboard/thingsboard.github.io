@@ -27,9 +27,9 @@ Where:
     
 - `docker run`              - run this container
 - `-it`                     - attach a terminal session with current Gateway process output
-- `-v ~/.thingsboard-gateway/config:/etc/thingsboard-gateway/config`   - mounts the host's dir `~/.thingsboard-gateway/config` to Gateway config  directory
-- `-v ~/.thingsboard-gateway/extensions:/var/lib/thingsboard_gateway/extensions`   - mounts the host's dir `~/.thingsboard-gateway/extensions` to Gateway extensions  directory
-- `-v ~/.thingsboard-gateway/logs:/var/log/thingsboard-gateway`   - mounts the host's dir `~/.thingsboard-gateway/logs` to Gateway logs  directory
+- `-v ~/.tb-gateway/config:/etc/thingsboard-gateway/config`   - mounts the host's dir `~/.tb-gateway/config` to Gateway config  directory
+- `-v ~/.tb-gateway/extensions:/var/lib/thingsboard_gateway/extensions`   - mounts the host's dir `~/.tb-gateway/extensions` to Gateway extensions  directory
+- `-v ~/.tb-gateway/logs:/var/log/thingsboard-gateway`   - mounts the host's dir `~/.tb-gateway/logs` to Gateway logs  directory
 - `--name tb-gateway`             - friendly local name of this machine
 - `--restart always`        - automatically start ThingsBoard in case of system reboot and restart in case of failure.
 - `thingsboard/tb-gateway`          - docker image
@@ -41,21 +41,21 @@ You can detach from session terminal with `Ctrl-p` `Ctrl-q` - the container will
 To reattach to the terminal (to see Gateway logs) run:
 
 ```
-docker attach gateway
+docker attach tb-gateway
 ```
 {: .copy-code}
 
 To stop the container:
 
 ```
-docker stop gateway
+docker stop tb-gateway
 ```
 {: .copy-code}
 
 To start the container:
 
 ```
-docker start gateway
+docker start tb-gateway
 ```
 {: .copy-code}
 
@@ -64,7 +64,7 @@ docker start gateway
 Stop the container:
 
 ```
-docker stop gateway
+docker stop tb-gateway
 ```
 {: .copy-code}
 
@@ -73,7 +73,7 @@ docker stop gateway
 Start the container after made changes:
 
 ```
-docker start gateway
+docker start tb-gateway
 ```
 {: .copy-code}
 
@@ -85,5 +85,5 @@ In order to update to the latest image, execute the following commands:
 $ docker pull thingsboard/tb-gateway
 $ docker stop tb-gateway
 $ docker rm tb-gateway
-$ docker run -it -v ~/.thingsboard-gateway/logs:/var/log/thingsboard-gateway -v ~/.thingsboard-gateway/extensions:/var/lib/thingsboard_gateway/extensions -v ~/.thingsboard-gateway/config:/etc/thingsboard-gateway/config --name tb-gateway --restart always thingsboard/tb-gateway
+$ docker run -it -v ~/.tb-gateway/logs:/var/log/thingsboard-gateway -v ~/.tb-gateway/extensions:/var/lib/thingsboard_gateway/extensions -v ~/.tb-gateway/config:/etc/thingsboard-gateway/config --name tb-gateway --restart always thingsboard/tb-gateway
 ```
