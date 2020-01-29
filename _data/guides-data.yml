@@ -241,7 +241,7 @@
       subtitle: "Learn how to display your devices with the latest telemetry data on the Trip Animation widget and modify the widget properties."
       keywords: 
       pe: false
-      video: false
+      video: true
 - title: Data processing & actions
   subtitle: Learn how to use ThingsBoard Rule Engine.
   id: DataProcessing
