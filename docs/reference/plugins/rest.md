@@ -6,6 +6,8 @@ title: REST API Call Plugin
 
 ---
 
+{% include templates/old-guide-notice.md %}
+
 ## Overview
 
 Rest API plugin is responsible for sending HTTP requests to specific endpoints triggered by specific rules

@@ -6,6 +6,8 @@ title: Kafka Plugin
 
 ---
 
+{% include templates/old-guide-notice.md %}
+
 ## Overview
 
 Kafka plugin is responsible for sending messages to Kafka brokers triggered by specific rules

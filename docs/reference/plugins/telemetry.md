@@ -6,6 +6,8 @@ title: Telemetry Plugin
 
 ---
 
+{% include templates/old-guide-notice.md %}
+
 ## Overview
 
 Telemetry plugin is responsible for:
