@@ -6,6 +6,8 @@ title: SQS Plugin
 
 ---
 
+{% include templates/old-guide-notice.md %}
+
 ## Overview
 
 SQS plugin is responsible for sending messages to Amazon Web Services Simple Queue Service queues triggered by specific rules
