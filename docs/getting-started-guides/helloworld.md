@@ -162,6 +162,14 @@ E,CoAP.js (CoAP),shell,resources/coap-js.sh,/docs/getting-started-guides/resourc
 F,cURL (HTTP),shell,resources/curl.sh,/docs/getting-started-guides/resources/curl.sh{% endcapture %}
 {% include tabs.html %}
 
+## ThingsBoard Community Edition education course
+ <p></p>
+  <div id="video">  
+      <div id="video_wrapper">
+          <iframe src="https://www.youtube.com/embed/videoseries?list=PLYEKB_XwLCZJ6T8RPLTjRwMw0eoabpEKO" frameborder="0" allowfullscreen></iframe>
+      </div>
+  </div>
+  <p></p>
  
 ## Next steps
 
