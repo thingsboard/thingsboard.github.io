@@ -95,7 +95,7 @@ description: ThingsBoard professional support plans for IoT projects, cloud infr
                             </div><br>
                             <h4 class="pricing-square-price mb-0">
                                 248
-                                <span>/ Month</span>
+                                <span>USD / Month</span>
                             </h4>
                                 <a class="btn btn-full-green btn-pricing" href="/docs/contact-us/">
                                 Order 
@@ -121,7 +121,7 @@ description: ThingsBoard professional support plans for IoT projects, cloud infr
                             </div><br>
                             <h4 class="pricing-square-price mb-0">
                                 498
-                                <span>/ Month</span>
+                                <span>USD / Month</span>
                             </h4>
                                 <a class="btn btn-full-green btn-pricing" href="/docs/contact-us/">
                                 Order 
@@ -147,7 +147,7 @@ description: ThingsBoard professional support plans for IoT projects, cloud infr
                             </div><br>
                             <h4 class="pricing-square-price mb-0">
                                 1198
-                                <span>/ Month</span>
+                                <span>USD / Month</span>
                             </h4>
                                 <a class="btn btn-full-green btn-pricing" href="/docs/contact-us/">
                                 Order 
