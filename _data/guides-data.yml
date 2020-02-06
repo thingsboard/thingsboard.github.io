@@ -241,7 +241,7 @@
       subtitle: "Learn how to display your devices with the latest telemetry data on the Trip Animation widget and modify the widget properties."
       keywords: 
       pe: false
-      video: false
+      video: true
 - title: Data processing & actions
   subtitle: Learn how to use ThingsBoard Rule Engine.
   id: DataProcessing
@@ -282,7 +282,7 @@
       title: Send email to customer
       subtitle: Learn how to configure Rule Engine to send email to the customer of the assigned device.
       pe: false
-    - path: /docs/iot-gateway/integration-with-telegram-bot/
+    - path: /docs/user-guide/rule-engine-2-0/tutorials/integration-with-telegram-bot/
       title: Notifications and Alarms on your smartphone using Telegram Bot
       subtitle: Learn how to configure Rule Engine to send notification using Telegram Bot when new alarm is created.
       pe: false

@@ -137,7 +137,7 @@ toc:
   - title: Custom Integration development guide
     path: /docs/user-guide/integrations/custom/
   - title: Notifications and Alarms on your smartphone using Telegram Bot
-    path: /docs/iot-gateway/integration-with-telegram-bot/
+    path: /docs/user-guide/rule-engine-2-0/tutorials/integration-with-telegram-bot/
 - title: Analytics
   new: true
   section:
@@ -210,7 +210,7 @@ toc:
       - title: IoT Gateway installation on CentOS/RHEL (RPM)
         path: /docs/iot-gateway/install/rpm-installation/
       - title: IoT Gateway installation using Docker (Linux and Mac OS)
-        path: /docs/iot-gateway/install/docker-linux/
+        path: /docs/iot-gateway/install/docker-installation/
       - title: IoT Gateway installation using Docker (Windows)
         path: /docs/iot-gateway/install/docker-windows/
       - title: Installation from pip
@@ -233,6 +233,8 @@ toc:
         path: /docs/iot-gateway/config/ble/
   - title: Customization guide
     path: /docs/iot-gateway/custom/
+  - title: IoT Gateway features
+    path: /docs/iot-gateway/features/
   - title: IoT Gateway Roadmap
     path: /docs/iot-gateway/roadmap/
 - title: Troubleshooting

@@ -266,6 +266,18 @@ if (speed > 55) {
 return res;
 ```
 
+## Video tutorial 
+ 
+We also recommend you to review this video tutorial.
+
+  
+<div id="video">  
+    <div id="video_wrapper">
+        <iframe src="https://www.youtube.com/embed/qWCmDjca-T8" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
+
+
 ## Device emulator
  
 [Emulator](/docs/user-guide/resources/timeseries-map-bus.js)

@@ -6,6 +6,8 @@ title: Mail Plugin
 
 ---
 
+{% include templates/old-guide-notice.md %}
+
 ## Overview
 
 Mail plugin is responsible for sending email messages that are triggered by corresponding rule [actions](/docs/reference/actions/send-mail-action/).  
