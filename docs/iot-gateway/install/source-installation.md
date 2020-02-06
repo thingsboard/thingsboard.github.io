@@ -32,9 +32,15 @@ python3 setup.py install
 ```
 {: .copy-code}
 
-**5. Configure gateway to work with your instance of ThingsBoard platform, using ![this guide](/docs/iot-gateway/all_configuration/)** *or just run to test result of installation such as in the next step.*
+**5. Create "logs" folder:**  
+```bash
+mkdir logs
+```
+{: .copy-code}
+
+**6. Configure gateway to work with your instance of ThingsBoard platform, using ![this guide](/docs/iot-gateway/all_configuration/)** *or just run to test result of installation such as in the next step.*
    
-**6. Run gateway, to check installation result:**
+**7. Run gateway, to check installation result:**
 ```bash
 python3 ./thingsboard_gateway/tb_gateway.py
 ```

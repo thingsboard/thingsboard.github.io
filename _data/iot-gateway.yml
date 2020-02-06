@@ -6,6 +6,20 @@ toc:
 - title: IoT Gateway
   path: /docs/iot-gateway/getting-started/
   section:
+  - title: General configuration
+    path: /docs/iot-gateway/configuration/
+  - title: Connectors
+    section:
+    - title: MQTT Connector
+      path: /docs/iot-gateway/mqtt/
+    - title: Modbus Connector
+      path: /docs/iot-gateway/modbus/
+    - title: OPC-UA Connector
+      path: /docs/iot-gateway/opc-ua/
+    - title: BLE Connector
+      path: /docs/iot-gateway/ble/
+- title: Features
+  path: /docs/iot-gateway/features/
     - title: What is ThingsBoard IoT Gateway?
       path: /docs/iot-gateway/what-is-iot-gateway/
     - title: Getting Started

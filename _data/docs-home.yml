@@ -134,7 +134,7 @@ toc:
   - title: Custom Integration development guide
     path: /docs/user-guide/integrations/custom/
   - title: Notifications and Alarms on your smartphone using Telegram Bot
-    path: /docs/iot-gateway/integration-with-telegram-bot/
+    path: /docs/user-guide/rule-engine-2-0/tutorials/integration-with-telegram-bot/
 - title: Analytics
   new: true
   section:
@@ -230,6 +230,8 @@ toc:
         path: /docs/iot-gateway/config/ble/
   - title: Customization guide
     path: /docs/iot-gateway/custom/
+  - title: IoT Gateway features
+    path: /docs/iot-gateway/features/
   - title: IoT Gateway Roadmap
     path: /docs/iot-gateway/roadmap/
 - title: Troubleshooting
