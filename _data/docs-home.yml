@@ -207,7 +207,7 @@ toc:
       - title: IoT Gateway installation on CentOS/RHEL (RPM)
         path: /docs/iot-gateway/install/rpm-installation/
       - title: IoT Gateway installation using Docker (Linux and Mac OS)
-        path: /docs/iot-gateway/install/docker-linux/
+        path: /docs/iot-gateway/install/docker-installation/
       - title: IoT Gateway installation using Docker (Windows)
         path: /docs/iot-gateway/install/docker-windows/
       - title: Installation from pip
