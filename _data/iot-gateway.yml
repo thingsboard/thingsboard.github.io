@@ -20,6 +20,7 @@ toc:
       path: /docs/iot-gateway/ble/
 - title: Features
   path: /docs/iot-gateway/features/
+  section:
     - title: What is ThingsBoard IoT Gateway?
       path: /docs/iot-gateway/what-is-iot-gateway/
     - title: Getting Started
