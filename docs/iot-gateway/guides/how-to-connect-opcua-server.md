@@ -13,7 +13,7 @@ description: Understand how to connect OPC-UA server
 ## Device information
 
 For the purpose of this guide, we will use Raspberry Pi with OPC-UA server.  
-We will use [OPC-UA connector](/docs/iot-gateway/config/opcua/) to collect data.  
+We will use [OPC-UA connector](/docs/iot-gateway/config/opc-ua/) to collect data.  
 
 The info available at this moment:  
 

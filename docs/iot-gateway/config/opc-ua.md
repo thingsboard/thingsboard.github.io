@@ -2,7 +2,7 @@
 layout: docwithnav
 assignees:
 - ashvayka
-title: OPC-UA Extension Configuration
+title: OPC-UA Connector Configuration
 description: OPC-UA protocol support for ThingsBoard IoT Gateway
 
 ---
@@ -206,7 +206,7 @@ This part of configuration will look like:
 
 Explore guides related to main ThingsBoard features:
 
- - [How to connect OP-UA server to the gateway](/docs/iot-gateway/guides/how-to-connect-opcua-server/)
+ - [How to connect OPC-UA server to the gateway](/docs/iot-gateway/guides/how-to-connect-opcua-server/)
  - [Data Visualization](/docs/user-guide/visualization/) - how to visualize collected data.
  - [Device attributes](/docs/user-guide/attributes/) - how to use device attributes.
  - [Telemetry data collection](/docs/user-guide/telemetry/) - how to collect telemetry data.
