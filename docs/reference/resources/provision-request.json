@@ -1,0 +1,7 @@
+{
+  "deviceName": "YOUR_DEVICE_NAME",
+  "deviceType": "YOUR_DEVICE_TYPE",
+  "x509CertPubKey": "YOUR_CERT_PUB_KEY",
+  "provisionProfileKey": "YOUR_PROFILE_KEY",
+  "provisionProfileSecret": "YOUR_PROFILE_SECRET"
+}

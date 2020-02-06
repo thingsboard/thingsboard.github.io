@@ -215,6 +215,34 @@ The supported data format is:
 **Please note** that the above fields are optional. In case the **secretKey** is not specified, the empty string as a default value is used.
 In case the **durationMs** is not specified, the system parameter **device.claim.duration** is used (in the file **/etc/thingsboard/conf/thingsboard.yml**).
   
+## Device provision
+
+Please see the corresponding article to get more information about the [Device provision](/docs/user-guide/provision-devices) feature.
+
+In order to provision device, send POST request to the following URL:
+
+```shell
+coap://host/api/v1/provision
+```
+
+The supported data format is:
+
+```json
+{
+  "deviceName": "YOUR_DEVICE_NAME",
+  "deviceType": "YOUR_DEVICE_TYPE",
+  "x509CertPubKey": "YOUR_CERT_PUB_KEY",
+  "provisionProfileKey": "YOUR_PROFILE_KEY",
+  "provisionProfileSecret": "YOUR_PROFILE_SECRET"
+}
+```
+
+{% capture tabspec %}coap-provision
+A,Example,shell,resources/coap-provision.sh,/docs/reference/resources/coap-provision.sh
+B,provision-request.json,json,resources/provision-request.json,/docs/reference/resources/provision-request.json
+C,Result,json,resources/provision-response.json,/docs/reference/resources/provision-response.json{% endcapture %}
+{% include tabs.html %}
+
 ## Protocol customization
 
 CoAP transport can be fully customized for specific use-case by changing the corresponding [module](https://github.com/thingsboard/thingsboard/tree/master/transport/coap).

@@ -226,6 +226,45 @@ The supported data format is:
 **Please note** that the above fields are optional. In case the **secretKey** is not specified, the empty string as a default value is used.
 In case the **durationMs** is not specified, the system parameter **device.claim.duration** is used (in the file **/etc/thingsboard/conf/thingsboard.yml**).
 
+## Device provision
+
+Please see the corresponding article to get more information about the [Device provision](/docs/user-guide/provision-devices) feature.
+
+In order to provision device, send PUBLISH message to the following topic:
+
+```shell
+v1/devices/me/provision
+```
+
+The supported data format is:
+
+```json
+{
+  "deviceName": "YOUR_DEVICE_NAME",
+  "deviceType": "YOUR_DEVICE_TYPE",
+  "x509CertPubKey": "YOUR_CERT_PUB_KEY",
+  "provisionProfileKey": "YOUR_PROFILE_KEY",
+  "provisionProfileSecret": "YOUR_PROFILE_SECRET"
+}
+```
+
+Before sending PUBLISH message with the request, client need to subscribe to 
+
+```shell
+v1/devices/me/provision/response
+```
+
+The following example is written in javascript and is based on mqtt.js. 
+Pure command-line examples are not available because subscribe and publish need to happen in the same mqtt session.
+
+{% capture tabspec %}mqtt-provision
+A,MQTT.js,shell,resources/mqtt-js-provision.sh,/docs/reference/resources/mqtt-js-provision.sh
+B,mqtt-js-provision.js,javascript,resources/mqtt-js-provision.js,/docs/reference/resources/mqtt-js-provision.js
+C,Result,json,resources/provision-response.json,/docs/reference/resources/provision-response.json{% endcapture %}
+{% include tabs.html %}
+
+**Please note**, the client user name (or TOKEN) should be **provision** to connect the client.
+
 ## Protocol customization
 
 MQTT transport can be fully customized for specific use-case by changing the corresponding [module](https://github.com/thingsboard/thingsboard/tree/master/transport/mqtt).
