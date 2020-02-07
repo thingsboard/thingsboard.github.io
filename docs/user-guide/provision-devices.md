@@ -11,7 +11,7 @@ description: IoT device management using ThingsBoard provision devices feature
 ## Use Case description
 
 As a Tenant, I would like to easily provision my devices in the system.
-After the provision is finished, the device would receive the TB credentials to use them for the data upload.
+After the provision request succeeded, the device would receive the TB credentials to use them for the data upload.
 
 ## Provision Profile
 
@@ -25,8 +25,8 @@ Provision profile contains:
 
 - **provision credentials** - which includes provision **key** and **secret**;
 - **tenant id** - it is used to provision device for the specific tenant;
-- **customer id** - if present, it is used to provision device at the customer level;
-- **group name** (available in PE version) - if present, it is used to automatically add the device to a specific group;
+- **customer id** - if present (optional parameter), it is used to provision device at the customer level;
+- **group name** (available in PE version) - if present (optional parameter), it is used to automatically add the device to a specific group;
 - **pre-provision allowed** - if true, allows to provision the device that is present in the DB.
 
 In order to create the provision profile, the following POST request is needed to be sent to the following URL:
@@ -80,7 +80,7 @@ A Tenant knows the device names and has created them in the system using UI or [
 Since the devices are present in the DB, the **preProvisionAllowed** field is set to **true** in the provision profile that is used to provision those devices.
 Afterward, the devices send the provision request and receive their credentials in case of success. 
 The devices now have the server-side attribute **provisionState** set to **provisioned**.
-The devices send another provision requests which are failed since the devices have been provisioned and attributes have already been persisted.
+The devices may send another provision requests which will be failed since the devices have been provisioned and attributes have already been persisted.
 
 ## Provision Request
 
