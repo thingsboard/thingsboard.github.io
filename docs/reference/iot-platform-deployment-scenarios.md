@@ -220,6 +220,9 @@ With more than 10k devices use cases we provide **Managed services** to support 
  
 TCO: ~12,270 USD per month or 0.01227 USD per month per device.
 
+**If you would like to reproduce this case on your cluster setup, please follow this guide:**
+[Smart Meters use case performance test](https://github.com/ashvayka/tb-pe-k8s-perf-tests/tree/scenario/1-million-smart-meters)
+
 #### 1 Million Smart Trackers TCO
 
 **Example 2:** Assuming 1,000,000 **smart tracker** devices sending readings to the cloud **once per minute**.
@@ -231,7 +234,7 @@ This load can be reliably handled with Cassandra and results to 144GB daily. Sin
 
 The following Kubernetes cluster is sufficient to support this use case:
 
-- 4 x "c5.large" instances (2vCPUs and 4 GB of RAM) to host 4 ThingsBoard MQTT Transport containers. Approx. price is ~160 USD/month.
+- 8 x "c5.large" instances (2vCPUs and 4 GB of RAM) to host 8 ThingsBoard MQTT Transport containers. Approx. price is ~320 USD/month.
 - 15 x "c5.xlarge" instances (4vCPUs and 8 GB of RAM) to host 15 ThingsBoard Node containers. Approx. price is ~1095 USD/month.
 - 15 x "c5.xlarge" instances (4vCPUs and 8 GB of RAM) to host 15 Cassandra containers. Approx. price is ~1095 USD/month.
 - 3 x "c5.xlarge" instances (2vCPUs and 4 GB of RAM) to host 3 Zookeeper and ~30 JS Executors. Approx. price is ~240 USD/month.
@@ -242,9 +245,11 @@ The following Kubernetes cluster is sufficient to support this use case:
 
 ![image](/images/reference/deployment/smart-tracker-cluster.png)
 
-Thus approximate infrastructure cost is ~13,630 USD/month or 0.0134 USD/month per device.
+Thus approximate infrastructure cost is ~13,790 USD/month or 0.0138 USD/month per device.
 15 ThingsBoard PE perpetual licenses (below v3.0) cost 44,985 USD (including optional updates and basic support within initial year of usage). 17,985 USD is the respective pricing for the subsequent years of software updates + basic support.
 ThingsBoard **Managed services** to support the production environment: 0.01 USD per device per month. 
 
-TCO: ~27,378 USD per month or 0.0273 USD per month per device.
+TCO: ~27,508 USD per month or 0.0275 USD per month per device.
 
+**If you would like to reproduce this case on your cluster setup, please follow this guide:**
+[Smart Trackers use case performance test](https://github.com/ashvayka/tb-pe-k8s-perf-tests/tree/scenario/1-million-smart-trackers)
