@@ -1,6 +1,6 @@
 ---
 layout: docwithnav
-title: Provision devices
+title: Self-Provisioning of Devices
 description: IoT device management using ThingsBoard provision devices feature
 
 ---
@@ -12,6 +12,8 @@ description: IoT device management using ThingsBoard provision devices feature
 
 As a Tenant, I would like to easily provision my devices in the system.
 After the provision request succeeded, the device would receive the TB credentials to use them for the data upload.
+
+![image](/images/user-guide/provision-devices/provision-diagram.png)
 
 ## Provision Profile
 
@@ -27,7 +29,7 @@ Provision profile contains:
 - **tenant id** - it is used to provision device for the specific tenant;
 - **customer id** - if present (optional parameter), it is used to provision device at the customer level;
 - **group name** (available in PE version) - if present (optional parameter), it is used to automatically add the device to a specific group;
-- **pre-provision allowed** - if true, allows to provision the device that is present in the DB.
+- **provision validation strategy** - allows to provision the device in different ways, see below for more details.
 
 In order to create the provision profile, the following POST request is needed to be sent to the following URL:
 
@@ -56,7 +58,9 @@ The request body is optional. However, it is needed to be a valid JSON object if
     "entityType": "TENANT",
     "id": "string"
   },
-  "preProvisionAllowed": false,
+  "strategy": {
+    "validationStrategyType": "string"
+  },
   "groupName": "string"
 }
 ```
@@ -70,17 +74,24 @@ rb5r4tb6Win6F6puGL5J
 
 **Please note:** Each device could be provisioned only once.
 
-As we mentioned before, the **preProvisionAllowed** field is used to allow to provision the device and to receive its credentials in case the device is already present in the DB.
-Thus, a server-side **provisionState** attribute with the value **provisioned** will be created when the device is provisioned successfully. 
-If the device already has such attribute with the above value, the provision will be failed and no device credentials will be returned.
+## Provision Strategies
 
-Let's review an example:
+There are different strategies that would help cover different cases of device's self-provisioning. One of the two existed strategies can be chosen at the moment.
 
-A Tenant knows the device names and has created them in the system using UI or [bulk provisioning feature](/docs/user-guide/bulk-provisioning).
-Since the devices are present in the DB, the **preProvisionAllowed** field is set to **true** in the provision profile that is used to provision those devices.
-Afterward, the devices send the provision request and receive their credentials in case of success. 
-The devices now have the server-side attribute **provisionState** set to **provisioned**.
-The devices may send another provision requests which will be failed since the devices have been provisioned and attributes have already been persisted.
+### Provision Strategy - CHECK_NEW_DEVICE
+
+The given strategy named **CHECK_NEW_DEVICE** covers the next logic. The device sends the provision request.
+The server validates the request, creates the device in the system if absent and returns the device credentials. 
+It is considered now the device is provisioned successfully. In such a case, the device now has the server-side attribute **provisionState** set to **provisioned**.
+In case the device already exists in the DB, the failure message is returned with no device credentials.
+
+### Provision Strategy - CHECK_PRE_PROVISIONED_DEVICE
+
+The strategy named **CHECK_PRE_PROVISIONED_DEVICE** allows to provision device that is already present in the DB. If the device is absent in the DB, the request will be failed.
+For instance, Tenant knows the device name and has created it in the system using UI or [bulk provisioning feature](/docs/user-guide/bulk-provisioning).
+Device sends provision requests. The server validates it, finds the device and checks whether the device was provisioned earlier.
+It is done using the server-side attribute **provisionState**. If the value is **provisioned**, the failure message with no credentials is returned.
+Otherwise, the **provisionState** attribute is saved and the device credentials are returned.
 
 ## Provision Request
 
