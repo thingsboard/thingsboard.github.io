@@ -20,11 +20,20 @@ description: Supported REST API Reference for server-side integration of your ja
 Main dependencies that are used in the project:
 
 ```xml
+    <dependencies>
         <dependency>
             <groupId>org.thingsboard</groupId>
-            <artifactId>tools</artifactId>
+            <artifactId>rest-client</artifactId>
             <version>2.5.0-SNAPSHOT</version>
         </dependency>
+    </dependencies>
+
+    <repositories>
+        <repository>
+            <id>thingsboard</id>
+            <url>https://repo.thingsboard.io/artifactory/libs-release-public</url>
+        </repository>
+    </repositories>
 ```
 #### Source code review
 
@@ -68,11 +77,20 @@ You can find the example application **[here](https://github.com/YevhenBondarenk
 Main dependencies that are used in the project:
 
 ```xml
+    <dependencies>
         <dependency>
             <groupId>org.thingsboard</groupId>
-            <artifactId>tools</artifactId>
+            <artifactId>rest-client</artifactId>
             <version>2.5.0PE-SNAPSHOT</version>
         </dependency>
+    </dependencies>
+
+    <repositories>
+        <repository>
+            <id>thingsboard</id>
+            <url>https://repo.thingsboard.io/artifactory/libs-release-public</url>
+        </repository>
+    </repositories>
 ```
 
 #### Source code review
