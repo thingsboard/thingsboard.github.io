@@ -47,8 +47,6 @@ In order to download the REST Client dependency, you should add the following re
 
 You can find the example application **[here](https://github.com/thingsboard/tb-ce-rest-client-example)**.
 
-{% include ghlink.html content='mosquitto.sh' ghlink='/docs/getting-started-guides/resources/mosquitto.sh' %}
-
 ```java
 // ThingsBoard REST API URL
 String url = "http://localhost:8080";
