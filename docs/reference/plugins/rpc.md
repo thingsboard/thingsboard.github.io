@@ -6,6 +6,8 @@ title: RPC Plugin
 
 ---
 
+{% include templates/old-guide-notice.md %}
+
 ## Overview
 
 RPC plugin is responsible for:

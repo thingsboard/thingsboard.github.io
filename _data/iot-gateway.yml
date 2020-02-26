@@ -3,27 +3,8 @@ abstract: "Integrate legacy and third-party systems with ThingsBoard platform us
 toc:
 - title: IoT Gateway
   path: /docs/iot-gateway/
-- title: What is ThingsBoard IoT Gateway?
-  path: /docs/iot-gateway/what-is-iot-gateway/
-- title: Getting Started
+- title: IoT Gateway
   path: /docs/iot-gateway/getting-started/
-- title: Installation guide
-  section:
-    - title: Installation options
-      path: /docs/iot-gateway/installation/
-    - title: DEB package installation (Daemon)
-      path: /docs/iot-gateway/install/deb-installation/
-    - title: Installation from pip
-      path: /docs/iot-gateway/install/pip-installation/
-    - title: RPM package installation (Daemon)
-      path: /docs/iot-gateway/install/rpm-installation/
-    - title: Docker installation
-      path: /docs/iot-gateway/install/docker-installation/
-    - title: Installation from sources (Latest version)
-      path: /docs/iot-gateway/install/source-installation/
-    - title: Upgrade instructions
-      path: /docs/iot-gateway/install/upgrade-instructions/
-- title: Configuration guide
   section:
   - title: General configuration
     path: /docs/iot-gateway/configuration/
@@ -37,3 +18,44 @@ toc:
       path: /docs/iot-gateway/opc-ua/
     - title: BLE Connector
       path: /docs/iot-gateway/ble/
+- title: Features
+  path: /docs/iot-gateway/features/
+  section:
+    - title: What is ThingsBoard IoT Gateway?
+      path: /docs/iot-gateway/what-is-iot-gateway/
+    - title: Getting Started
+      path: /docs/iot-gateway/getting-started/
+    - title: Installation guide
+      section:
+        - title: Installation options
+          path: /docs/iot-gateway/installation/
+        - title: IoT Gateway installation on Ubuntu (DEB)
+          path: /docs/iot-gateway/install/deb-installation/
+        - title: IoT Gateway installation on CentOS/RHEL (RPM)
+          path: /docs/iot-gateway/install/rpm-installation/
+        - title: IoT Gateway installation using Docker (Linux and Mac OS)
+          path: /docs/iot-gateway/install/docker-installation/
+        - title: IoT Gateway installation using Docker (Windows)
+          path: /docs/iot-gateway/install/docker-installation/
+        - title: Installation from pip
+          path: /docs/iot-gateway/install/pip-installation/
+        - title: Installation from sources (Latest version)
+          path: /docs/iot-gateway/install/source-installation/
+        - title: Upgrade instructions
+          path: /docs/iot-gateway/install/upgrade-instructions/
+    - title: Configuration guide
+      section:
+        - title: General configuration
+          path: /docs/iot-gateway/configuration/
+        - title: MQTT Connector
+          path: /docs/iot-gateway/config/mqtt/
+        - title: Modbus Connector
+          path: /docs/iot-gateway/config/modbus/
+        - title: OPC-UA Connector
+          path: /docs/iot-gateway/config/opc-ua/
+        - title: BLE Connector
+          path: /docs/iot-gateway/config/ble/
+    - title: Customization guide
+      path: /docs/iot-gateway/custom/
+    - title: IoT Gateway Roadmap
+      path: /docs/iot-gateway/roadmap/

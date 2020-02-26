@@ -2,7 +2,7 @@
 layout: docwithnav
 assignees:
 - ashvayka
-title: OPC-UA Extension Configuration
+title: OPC-UA Connector Configuration
 description: OPC-UA protocol support for ThingsBoard IoT Gateway
 
 ---
@@ -37,8 +37,8 @@ We will describe connector configuration file below.
     },
     "mapping": [
       {
-        "deviceNodePattern": "MyObject\\d+",
-        "deviceNamePattern": "Device ${MyVariable22}",
+        "deviceNodePattern": "Root\\.Objects\\.MyObject\\d+",
+        "deviceNamePattern": "Device ${Root\\.Objects\\.MyObject\\d+\\.MyVariable22}",
         "attributes": [
           {
             "key": "Tag1",
@@ -48,7 +48,7 @@ We will describe connector configuration file below.
         "timeseries": [
           {
             "key": "Tag3",
-            "path": "${Tag3}"
+            "path": "${MyVariable}"
           },
           {
             "key": "Tag2",
@@ -86,6 +86,7 @@ Configuration in this section uses for connecting to Modbus server.
 | host                          | **localhost:4840/freeopcua/server/** | Hostname or ip address of Modbus server.                                              |
 | scanPeriodInMillis            | **10000**                            | Port of Modbus server for connect.                                                    |
 | timeoutInMillis               | **5000**                             | Timeout in seconds for connecting to Modbus server.                                   |
+| showMap                       |                                      | Show nodes on scanning **true** or **false**.                                         |
 | security                      | **Basic128Rsa15**                    | Security policy (**Basic128Rsa15**, **Basic256**, **Basic256Sha256**)                 |
 |---
 
@@ -107,15 +108,15 @@ This configuration section contains array of nodes that the gateway will subscri
 
 | **Parameter**                 | **Default value**                    | **Description**                                                                       |
 |:-|:-|-
-| deviceNodePattern             | **MyObject\\d+**                     | Regular expression, uses for looking the node for a current device.                   |
-| deviceNamePattern             | **Device ${MyVariable22}**           | JSON-path expression, uses for looking the device name in some variable.              |
+| deviceNodePattern             | **Root\\.Objects\\.MyObject\\d+**                     | Regular expression, uses for looking the node for a current device.                   |
+| deviceNamePattern             | **Device ${Root\\.Objects\\.MyObject\\d+\\.MyVariable22}**           | Path to variable with device name, uses for looking the device name in some variable.              |
 |---
 
 This part of configuration will look like:  
 
 ```json
         "deviceNodePattern": "MyObject\\d+",
-        "deviceNamePattern": "Device ${MyVariable22}",
+        "deviceNamePattern": "Device ${Root\\.Objects\\.MyObject\\d+\\.MyVariable22}",
 ```
 
 ***Optionally, you can add in this section parameter "converter" for using custom converter.***
@@ -126,7 +127,7 @@ This subsection contains configurations for variables of the object, that will b
 | **Parameter**   | **Default value**           | **Description**                                                                   |
 |:-|:-|-
 | key             | **Tag1**                    | Tag, that will interpreted as attribute for ThingsBoard platform instance.        |
-| path            | **${MyVariable}**           | JSON-path expression, uses for looking the value in some variable.                |
+| path            | **${MyVariable1}**           | Name of the variable in the Modbus object, uses for looking the value in some variable. ** \* **               |
 |---
 
 This part of configuration will look like:  
@@ -146,8 +147,10 @@ This subsection contains configurations for variables of the object, that will b
 | **Parameter**   | **Default value**           | **Description**                                                                   |
 |:-|:-|-
 | key             | **Tag1**                    | Tag, that will interpreted as telemetry for ThingsBoard platform instance.        |
-| path            | **${MyVariable}**           | JSON-path expression, uses for looking the value in some variable.                |
+| path            | **${MyVariable3}**           | Name of the variable in the Modbus object, uses for looking the value in some variable. ** \* ** |
 |---
+
+** \* ** You can put here sub level for search, e.g: **${Battery\\.Level}**
 
 This part of configuration will look like:  
 
@@ -155,7 +158,7 @@ This part of configuration will look like:
         "timeseries": [
           {
             "key": "Tag3",
-            "path": "${Tag3}"
+            "path": "${MyVariable3}"
           }
         ],
 ```
@@ -206,7 +209,7 @@ This part of configuration will look like:
 
 Explore guides related to main ThingsBoard features:
 
- - [How to connect OP-UA server to the gateway](/docs/iot-gateway/guides/how-to-connect-opcua-server/)
+ - [How to connect OPC-UA server to the gateway](/docs/iot-gateway/guides/how-to-connect-opcua-server/)
  - [Data Visualization](/docs/user-guide/visualization/) - how to visualize collected data.
  - [Device attributes](/docs/user-guide/attributes/) - how to use device attributes.
  - [Telemetry data collection](/docs/user-guide/telemetry/) - how to collect telemetry data.

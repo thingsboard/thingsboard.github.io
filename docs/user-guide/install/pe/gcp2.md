@@ -2,7 +2,7 @@
 layout: docwithnav
 title: Installing ThingsBoard PE from GCP Marketplace
 description: Installing ThingsBoard PE from Google Cloud Platform Marketplace
-redirect_from: "/docs/user-guide/install/pe/gcp2/"
+
 ---
 
 This guide describes how to install ThingsBoard Professional Edition from GCP Marketplace. 

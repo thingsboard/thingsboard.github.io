@@ -6,6 +6,8 @@ title: RabbitMQ Plugin
 
 ---
 
+{% include templates/old-guide-notice.md %}
+
 ## Overview
 
 RabbitMQ plugin is responsible for sending messages to RabbitMQ instances triggered by specific rules

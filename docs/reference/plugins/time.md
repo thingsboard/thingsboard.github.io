@@ -6,6 +6,8 @@ title: Time RPC Plugin
 
 ---
 
+{% include templates/old-guide-notice.md %}
+
 ## Overview
 
 Simple RPC plugin that is responsible for handling "getTime" RPC request from devices. 

@@ -49,3 +49,9 @@ B,resonse.json,json,resources/get-token-response.json,/docs/reference/resources/
 {% include tabs.html %}
 
  - Now, you should set  'X-Authorization' to "Bearer $YOUR_JWT_TOKEN"  
+ 
+ 
+## Java REST API Client
+
+ThingsBoard team provides client library written in Java to simplify consumption of the REST API. 
+Please see Java REST API Client [documentation page](/docs/reference/rest-client/) for more details.  
