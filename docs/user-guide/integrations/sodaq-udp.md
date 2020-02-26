@@ -21,7 +21,9 @@ We assume you have at least one of SODAQ NB-IoT Trackers in your lab that is alr
 We also assume you already have a ThingsBoard PE server or free demo account. 
 Otherwise you can register for a 30-days free demo account here: [cloud.thingsboard.io](https://cloud.thingsboard.io/signup).
 
-We expect you to have a very basic knowledge about ThingsBoard, so we do recommend to complete the [Getting Started](/docs/getting-started-guides/helloworld/) guide.
+We expect you have a very basic knowledge about ThingsBoard. Otherwise you can to complete the following guides: 
+- [Getting Started](/docs/getting-started-guides/helloworld/) guide.
+- [Platform Integrations](/docs/user-guide/integrations/) guide.
  
 ## Integration overview
 
@@ -219,7 +221,16 @@ as described on the following screencast:
 
 ## Step 2. Integration configuration
 
-- Create new integration and copy-paste the HTTP Endpoint URL from the integration window based on the screencast below: 
+- Create new integration based on the screencast below.
+  
+  Copy **"Integration key"** and **"Integration secret"**, and paste this parameters in configuration block to file **"tb-tcp-udp-integration.conf"**:
+  {% highlight bash %}
+  # UNCOMMENT NEXT LINES AND PUT YOUR CONNECTION PARAMETERS:
+  # export PRC_HOST=cloud.thingsboard.io
+  # export RPC_PORT=9090
+  # export INTEGRATION_ROUTING_KEY=YOUR_INTEGRATION_KEY
+  # export INTEGRATION_SECRET=YOUR_INTEGRATION_SECRET
+  {% endhighlight %} 
 
 <img data-gifffer="/images/user-guide/integrations/sodaq/create-udp-integration.gif" />
 
@@ -271,14 +282,19 @@ as described on the following screencast:
 
 ## Step 3: Post telemetry and verify the Integration configuration
 
-Before we rush to T-Mobile IoT platform configuration, let's make sure ThingsBoard is properly configured using simple **echo** command and **netcat** utility.
+ 
+
+Before we rush to T-Mobile IoT platform configuration, make sure that you complete the [**Remote integration installation steps**](/docs/user-guide/integrations/remote-integrations/#remote-integration-installation-steps).
+
+Also, let’s make sure ThingsBoard is properly configured using simple **echo** command and **netcat** utility.
 We will simulate messages from the T-Mobile IoT platform using the command below.
 Let's execute the following command:
 
 {% highlight bash %}
 echo -e -n '$PAYLOAD' | xxd -r -p | nc -q1 -w1 -u $URL_THINGSBOARD_CLOUD_HOST $PORT
+
+You need to replace $PAYLOAD, $URL_THINGSBOARD_CLOUD_HOST and $PORT respectively with the actual payload, cloud host URL and port.
 {% endhighlight %}
-**You need to replace $PAYLOAD, $URL_THINGSBOARD_CLOUD_HOST and $PORT respectively with the actual payload, the actual cloud host URL and your real port.**
 
 Sample: 
 {% highlight bash %}
