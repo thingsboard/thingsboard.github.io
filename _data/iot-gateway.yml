@@ -55,6 +55,8 @@ toc:
           path: /docs/iot-gateway/config/opc-ua/
         - title: BLE Connector
           path: /docs/iot-gateway/config/ble/
+        - title: Request Connector
+          path: /docs/iot-gateway/config/request/
     - title: Customization guide
       path: /docs/iot-gateway/custom/
     - title: IoT Gateway Roadmap
