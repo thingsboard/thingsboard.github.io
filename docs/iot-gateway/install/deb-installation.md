@@ -14,7 +14,7 @@ The minimum system requirements match official [minimum requirements](https://he
 Download installation package.
 
 ```bash
-wget https://github.com/thingsboard/thingsboard-gateway/releases/download/2.0/python3-thingsboard-gateway.deb
+wget https://github.com/thingsboard/thingsboard-gateway/releases/latest/download/python3-thingsboard-gateway.deb
 ```
 {: .copy-code}
 
