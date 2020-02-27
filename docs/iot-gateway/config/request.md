@@ -9,20 +9,18 @@ description: HTTP protocol support for ThingsBoard IoT Gateway
 {:toc}
 
 This guide will help you to get familiar with Request Connector configuration for ThingsBoard IoT Gateway.  
-Use [general configuration](/docs/iot-gateway/configuration/) to enable this Connector.   
+Use [general configuration guide](/docs/iot-gateway/configuration/) to enable this Connector.  
 The purpose of this Connector is to connect to external API endpoints and get data from them.  
-Connector is also able to push data to API endpoints based on the updates/commands from ThingsBoard.  
+Connector is also able to push data to API endpoints based on the updates/commands from ThingsBoard.    
 
-This connector is useful when you have some HTTP API endpoints in your device or some data from the internet and you would like to push data from this device using HTTP API to the ThingsBoard.  
+This connector is useful when you have some HTTP API endpoints in your device or some data in external resource and you would like to push this data using HTTP API to the ThingsBoard.    
 
 We will describe connector configuration file below.  
 
 ## Connector configuration: request.json
 
-Connector configuration is a JSON file that contains information about how to connect to external API endpoints, 
-what topics to use when reading data and how to process the data.  
-Let's review the format of the configuration file using example below.  
-
+Connector configuration is a JSON file that contains information about how to connect to external API endpoints, what urls to use when reading data and how to process the data.  
+Let's review the format of the configuration file using example below.    
 
 <br>
 <details>
@@ -31,9 +29,9 @@ Let's review the format of the configuration file using example below.
 <b>Example of Request Connector config file. Press to expand.</b>
 </summary>
 
-Example listed below will connect to server on a localhost with 5000 port. 
-Connector will use basic HTTP auth using username and password. 
-Then, connector will read data from a list of endpoints using urls from mapping section. See more info in a description below.    
+Example listed below will connect to server on a localhost with 5000 port.  
+Connector will use basic HTTP auth using username and password.  
+Then, connector will read data from a list of endpoints using urls from mapping section. See more info in a description below.  
 
 {% highlight json %}
 {
@@ -178,9 +176,10 @@ Anonymous<small>No security</small>%,%anonymous%,%templates/iot-gateway/request-
 
 ### Mapping section
 
-This configuration section contains array of objects with endpoints that the gateway will try to read after connecting to the server and settings about processing incoming messages (converter).
-After request, each response from that url is analyzed to extract device name, type and data (attributes and/or timeseries values).
-By default, gateway uses Json converter, but it is possible to provide custom converter. See examples in the source code.
+This configuration section contains array of objects with endpoints that the gateway will try to read after connecting to the server.  
+Also this section contains settings about processing incoming messages (converter).  
+After request, each response from that url is analyzed to extract device name, type and data (attributes and/or timeseries values).  
+By default, the gateway uses Json converter, but it is possible to provide custom converter. See examples in the source code.  
 
 **Note**: You can specify multiple mapping objects inside the array.
 
@@ -189,7 +188,7 @@ By default, gateway uses Json converter, but it is possible to provide custom co
 | url               | **getdata**                           | Url address for sending request.                                  |
 | httpMethod        | **GET**                               | HTTP method for request (**GET**, **POST** etc.).                 |
 | httpHeaders       | **{ "ACCEPT": "application/json" }**  | Object contains additional HTTP headers for request.              |
-| allowRedirects    | **true**                              | Is allowed redirects responses from server.                       |
+| allowRedirects    | **true**                              | Allow request redirection.                                        |
 | timeout           | **0.5**                               | Timeout for request.                                              |
 | scanPeriod        | **5**                                 | Rescan rate.                                                      |
 |---
@@ -225,11 +224,11 @@ The "**attributeRequests**" configuration allows configuring the format of the c
 | httpHeaders                   | **{ "CONTENT-TYPE": "application/json" }**            | Object contains additional HTTP headers for request.                                               |
 | timeout                       | **0.5**                                               | Timeout for request.                                                                               |
 | tries                         | **3**                                                 | Count of tries to send data                                                                        |
-| allowRedirects                | **true**                                              | Is allowed redirects responses from server.                                                        |
+| allowRedirects                | **true**                                              | Allow request redirection.                                                                         |
 | deviceNameFilter              | **SD.\***                                             | Regular expression device name filter, uses to determine, which function to execute.               |
 | attributeFilter               | **send_data**                                         | Regular expression attribute name filter, uses to determine, which function to execute.            |
-| requestUrlExpression          | **sensor/${deviceName}/${attributeKey}**              | JSON-path expression uses for creating topic address to send a message.                            |
-| valueExpression               | **{\\"${attributeKey}\\":\\"${attributeValue}\\"}**   | JSON-path expression uses for creating the message data that will send to topic.                   |
+| requestUrlExpression          | **sensor/${deviceName}/${attributeKey}**              | JSON-path expression uses for creating url address to send a message.                              |
+| valueExpression               | **{\\"${attributeKey}\\":\\"${attributeValue}\\"}**   | JSON-path expression uses for creating the message data that will send to url.                     |
 |---
 
 The **attributeUpdates** section will look like:
@@ -277,7 +276,7 @@ Configuration, provided in this section uses for sending RPC requests from Thing
 {% capture rpc_variants %}
 **There are 2 types of the RPC calls:**  
 1. With reply, after sending request the gateway will wait for response and send it to ThingsBoard.
-2. Without reply, after sending request the gateway will not wait for response.
+2. With no reply, after sending request the gateway will not wait for response.
 
 Examples for both methods provided below.
 
