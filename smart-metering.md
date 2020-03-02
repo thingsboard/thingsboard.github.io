@@ -6,8 +6,6 @@ horizontaltoc: "true"
 
 ---
 
-## IoT and smart meters
-
 Traditionally being a part of the electrical grid infrastructure, a smart meter is an electronic device that allows for remote monitoring and recording of energy consumption. However, in the age of IoT and IoT platforms, standalone smart meters give way to more advanced and multi-purpose smart metering solutions. These solutions offer a broader range of remote monitoring and alerting capabilities as well as provide powerful data analytics tools to help companies and individual users optimize their energy, water, gas, or fuel consumption.  
 
 A typical challenge for companies implementing smart meters is how to integrate them within their infrastructure and set up custom-tailored smart metering use cases. The best way to achieve these goals is by using an IoT platform that offers out-of-the-box solutions and templates for smart metering, such as ThingsBoard. One of the strongest advantages of an enterprise-grade IoT platform is its data processing capabilities. Not only will you be able to collect data from your diverse smart meters in a centralized way, but also set up custom visualization dashboards, configure user alerts and notifications, and feed the collected data into other applications or data stores.
@@ -16,82 +14,74 @@ Another critical advantage is the cost of smart metering implementation. Using a
 
 ### Smart metering solutions with ThingsBoard
 
-<table style="border: none; width: initial;">
-<tbody>
-    <tr>
-        <td><i class="fa fa-cloud-upload" style="font-size: 48px; color: #008b8b;" aria-hidden="true"></i></td>
-        <td style="font-size: 20px;">Collect data from smart meters using different <a href="/docs/getting-started-guides/connectivity/">connectivity methods</a></td>
-    </tr>    
-    <tr>
-        <td><i class="fa fa-dashboard" style="font-size: 48px; color: #008b8b;" aria-hidden="true"></i></td>
-        <td style="font-size: 20px;"><a href="/docs/user-guide/visualization/">Visualize</a> the collected data on a <a href="/docs/iot-video-tutorials/#visualization">custom dashboard</a></td>
-    </tr>    
-    <tr>
-        <td><i class="fa fa-line-chart" style="font-size: 48px; color: #008b8b;" aria-hidden="true"></i></td>
-        <td style="font-size: 20px;"><a href="/docs/user-guide/rule-engine-2-0/re-getting-started/#typical-use-cases">Analyze incoming smart meter data to derive actionable insights</a></td>
-    </tr>    
-    <tr>
-        <td><i class="fa fa-database" style="font-size: 48px; color: #008b8b;" aria-hidden="true"></i></td>
-        <td style="font-size: 20px;">Store data for <a href="/docs/user-guide/reporting/">reporting</a> and historical analysis</td>
-    </tr>    
-    <tr>
-        <td><i class="fa fa-money" style="font-size: 48px; color: #008b8b;" aria-hidden="true"></i></td>
-        <td style="font-size: 20px;">Feed processed smart metering data into <a href="/docs/user-guide/rule-engine-2-0/external-nodes/">third-party applications</a> for accounting and billing</td>
-    </tr>    
-</tbody>
-</table>
-
-
-## Building end-to-end smart metering solutions with ThingsBoard
-
-ThingsBoard IoT platform provides out-of-the-box components and APIs to dramatically drive down effort required to create smart metering solutions, resulting in highly improved time to market, reliability, and competitiveness of your solutions. By our estimates, companies may save up to 90% of their product development time when utilizing the following features and benefits of ThingsBoard:
-
-- Reliable and fault tolerant data collection for your smart water meters, energy monitors, smart energy meters, etc.;
-- Advanced, customizable [data visualization](/docs/user-guide/visualization/) for real-time and historical smart metering monitoring;
-- [Alarm widgets](/docs/user-guide/ui/widget-library/#alarm-widgets) to instantly notify users and / or operators about any critical events or unusual consumption levels;
-- Device management to allow you organize your endpoints in [groups](/docs/user-guide/groups/) by specific attributes, simplify navigation between different types of [entities](/docs/user-guide/entities-and-relations/) and endpoint groups, and enable more flexible data analysis based on your custom groups;
-- Customizable [end-user dashboards](/docs/user-guide/ui/dashboards/) (featuring drill-down capabilities) to analyze and share the results of smart metering monitoring;
-- Integration with [third-party analytics frameworks and solutions](/docs/samples/analytics/spark-integration-with-thingsboard/) for advanced processing of smart metering data and reporting;
-- Smart metering management by utilizing [ThingsBoard API](/docs/api/) to control and manage smart meters.
-
-The ThingsBoard IoT platform provides production ready server infrastructure to connect your smart meter devices, collect, store and analyze smart metering data, and share results of the analysis with your customers and end-users.
-
-## Smart metering dashboard
-
-The following interactive dashboard hosted on live demo server represents smart metering IoT data visualization that may be embedded in your IoT project or solution. See the dashboard description below.
-
-<iframe class="demoDashboardFrame" src="https://demo.ThingsBoard.io/dashboards/3a1026e0-83f6-11e7-b56d-c7f326cba909?publicId=322a2330-7c36-11e7-835d-c7f326cba909" frameborder="0" width="100%"></iframe>
-<div class="center" style="margin-bottom: 20px;">
-    <a target="_blank" style="padding: 0 40px;" href="https://demo.ThingsBoard.io/dashboards/3a1026e0-83f6-11e7-b56d-c7f326cba909?publicId=322a2330-7c36-11e7-835d-c7f326cba909" class="button">Live demo</a>
-</div>
-
-The attached dashboard demonstrates real-time data from smart-meters that is collected using [ThingsBoard MQTT API](/docs/reference/mqtt-api/). The data is stored in Cassandra DB on our demo server.
-
-We would like to highlight the following features:
-
- - low-latency updates using web-sockets;
- - ability to zoom-in into the charts by selecting time range with the mouse;
- - advanced tooltips and legend;
- - dashboard toolbar in the top-right corner enables global time selector and switch between dashboards.
-
-## Smart metering solution overview
+ThingsBoard Team have prepared out-of-the-box Smart Metering application designed to be used by the platform administrator and non-technical customer users and operators. 
  
-The diagram below identifies data flow and integration points for typical smart metering solution that uses ThingsBoard platform to collect and analyze monitoring data from smart meters.
+This application is basically an IoT solution blueprint with the following features:
 
-<br/>
+- Reliable and fault tolerant data collection for your smart water and smart energy meters;
+- Create customers and provision assets and meters for those customers;
+- Manage customer users with role-based access control;
+- Configure resource consumption, RSSI, battery level and other thresholds;
+- Track online/offline devices and other alarms;
+- Analyze and Visualize collected data;
+
+The application can be deployed to any ThingsBoard Professional Edition instance via REST API based script. 
+   
+//TODO: Make this as a Carousel with the dashboard images
+
+### Solution architecture
 
 ![Smart metering solution diagram](/images/iot-use-cases/smart-energy-monitoring.svg)
 
-You may notice that there are plenty of connectivity options for smart meters: both via direct connection to the cloud and via [Platform Integrations](/docs/user-guide/integrations/). 
-The ThingsBoard platform supports industry standard encryption algorithms [(SSL)](/docs/user-guide/mqtt-over-ssl/) and [device credentials](/docs/user-guide/device-credentials/) types (X.509 certificates and access tokens).
-The collected data is stored in Cassandra - a popular NoSQL database, which is widely recognized for its fault-tolerance and reliability. 
+**Device Connectivity**
 
-ThingsBoard Rule Engine enables forwarding incoming data to various analytics systems, such as Apache Spark or Hadoop using Kafka or other Message buses.
+Solution supports any well-know connectivity options for smart-meters: 
 
-## Learn more
+- LoRaWAN devices are easily connected using existing LoRaWAN NS integrations: [Actility ThingPark](/docs/user-guide/integrations/thingpark/),
+[TheThingsNetwork](/docs/user-guide/integrations/ttn/) or any other NS based on HTTP webhooks (/docs/user-guide/integrations/http/);
+- IP enabled devices using existing HTTP, MQTT or CoAP protocols described [here](https://thingsboard.io/docs/api/);
+- NB IoT devices using [TCP](/docs/user-guide/integrations/tcp/), [UDP](/docs/user-guide/integrations/udp/) or other [custom](/docs/user-guide/integrations/custom/) integrations;
+- Modbus, OPC-UA, BLE or other devices deployed in the LAN of a Customer using [IoT Gateway](/docs/iot-gateway/what-is-iot-gateway/);
+- Consume data streams from AWS ([AWS IoT](/docs/user-guide/integrations/aws-iot/), [AWS Kinesis](/docs/user-guide/integrations/aws-kinesis/))
+, [IBM Watson](/docs/user-guide/integrations/ibm-watson-iot/) or [Azure Event Hub](/docs/user-guide/integrations/azure-event-hub/);
 
-<a style="margin: 10px;" href="/docs/getting-started-guides/helloworld/" class="button">Getting started</a>
-<a style="margin: 10px;" href="/industries/smart-buildings/" class="button">Customers feedback</a>
-<a style="margin: 10px;" href="/docs/#platform-features" class="button">Platform features</a>
-<a style="margin: 10px;" href="/docs/reference/" class="button">Architecture</a>
-<a style="margin: 10px;" href="/docs/contact-us/" class="button">Contact us</a>
+If you don't see suitable connectivity option listed above, or have any troubles connecting your device, please [contact us](/docs/contact-us/).
+
+**Device Provisioning**
+ 
+When using ThingsBoard Integrations, devices may be provisioned automatically and should be pushed to "Smart Water Meters" and "Smart Energy Meters" device groups.
+When using IP enabled devices or IoT Gateway, devices should be pre-provisioned using CSV bulk-upload feature.    
+
+**Data Processing**
+
+Once the data arrives to the platform it is processed by the pre-configured [Rule Chains](/docs/user-guide/rule-engine-2-0/overview/). 
+Those Rule Chains are configured to aggregate the incoming data on an hourly, daily, weekly and monthly basis and match it against thresholds. 
+Thresholds are configured either by the Tenant Administrator or Customer Users.
+
+**Dashboards**
+
+There are three Dashboards configured for this use-case that correspond to three main User Roles:
+
+- "Smart Building" dashboard is for Tenant Administrator users and enables the following functionality:
+  - CRUD (Create/Read/Update/Delete) operations for Customers;
+  - CRUD operations for Customer Administrators and Customer Users;
+  - CRUD of Customer Assets - buildings and other facilities;
+  - Ability to assign Water and Energy meters from a pre-configured smart meter groups to particular customer asset;
+  - Ability to configure various thresholds for both smart meters and customer assets;
+  - Ability to manage list of users that should receive notifications for each asset;
+  - Ability to browse charts that display energy consumption on an Asset or Device level;
+- "	Smart Building (Administrator)" dashboard is for Customer Administrator users and enabled the following functionality:
+  - CRUD of Customer Assets - buildings and other facilities;
+  - Ability to claim Water and Energy meters from a pre-configured smart meter groups to particular customer asset;
+  - Ability to configure various thresholds for both smart meters and customer assets;
+  - Ability to browse charts that display energy consumption on an Asset or Device level;
+- "	Smart Building (User)" dashboard is for Customer Read-Only users and enabled the following functionality:
+  - Ability to configure various thresholds for both smart meters and customer assets;
+  - Ability to browse charts that display energy consumption on an Asset or Device level;
+  
+**Customization capabilities**
+
+The use-case is intended to be a PoC or even MVP of particular solution, however, you might want to customize the end-user dashboards and rule chains to match your particular requirements.
+It is also possible to integrate with advanced analytics frameworks and solutions for additional processing of smart metering data and reporting. 
+Examples of such solutions are [Trendz Analytics](/docs/trendz/) or [Kafka Streams]((/docs/samples/analytics/kafka-streams/))
+  
