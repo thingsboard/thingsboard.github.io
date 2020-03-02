@@ -10,10 +10,10 @@ description: HTTP protocol support for ThingsBoard IoT Gateway
 
 This guide will help you to get familiar with Request Connector configuration for ThingsBoard IoT Gateway.  
 Use [general configuration guide](/docs/iot-gateway/configuration/) to enable this Connector.  
-The purpose of this Connector is to connect to external API endpoints and get data from them.  
-Connector is also able to push data to API endpoints based on the updates/commands from ThingsBoard.    
+The purpose of this Connector is to connect to external HTTP(S) API endpoints and get data from them.  
+Connector is also able to push data to external HTTP(S) API based on the updates/commands from ThingsBoard.    
 
-This connector is useful when you have some HTTP API endpoints in your device or some data in external resource and you would like to push this data using HTTP API to the ThingsBoard.    
+This connector is useful when you have some HTTP(S) API endpoints in your device or some data in external resource and you would like to push this data to the ThingsBoard.    
 
 We will describe connector configuration file below.  
 
@@ -30,7 +30,7 @@ Let's review the format of the configuration file using example below.
 </summary>
 
 Example listed below will connect to server on a localhost with 5000 port.  
-Connector will use basic HTTP auth using username and password.  
+Connector will use basic HTTP authorization using username and password.  
 Then, connector will read data from a list of endpoints using urls from mapping section. See more info in a description below.  
 
 {% highlight json %}
@@ -166,6 +166,8 @@ Then, connector will read data from a list of endpoints using urls from mapping 
 
 
 ### Security section
+
+This section provides configuration for client authorization at the external server.
  
 {% capture requestconnectorsecuritytogglespec %}
 Basic<small>Recommended</small>%,%username%,%templates/iot-gateway/request-connector-basic-security-config.md%br%
@@ -179,7 +181,7 @@ Anonymous<small>No security</small>%,%anonymous%,%templates/iot-gateway/request-
 This configuration section contains array of objects with endpoints that the gateway will try to read after connecting to the server.  
 Also this section contains settings about processing incoming messages (converter).  
 After request, each response from that url is analyzed to extract device name, type and data (attributes and/or timeseries values).  
-By default, the gateway uses Json converter, but it is possible to provide custom converter. See examples in the source code.  
+By default, the gateway uses Json converter, but it is possible to provide custom converter. See [example](https://github.com/thingsboard/thingsboard-gateway/blob/master/thingsboard_gateway/extensions/request/custom_request_uplink_converter.py) in the source code.  
 
 **Note**: You can specify multiple mapping objects inside the array.
 
