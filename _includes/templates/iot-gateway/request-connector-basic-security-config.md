@@ -1,7 +1,6 @@
 
-One type of security configuration is basic.  
-For authorization will be used combination of username/password, provided in this section in config. 
-
+One type of security configuration is Basic authentication.
+The Request Connector sends HTTP requests with the Authorization header that contains the word Basic word followed by a space and a base64-encoded string username:password.
 
 |**Parameter**|**Default value**|**Description**|
 |:-|:-|-
