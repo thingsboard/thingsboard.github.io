@@ -21,7 +21,7 @@ We assume you have at least one of SODAQ NB-IoT Trackers in your lab that is alr
 We also assume you already have a ThingsBoard PE server or free demo account. 
 Otherwise you can register for a 30-days free demo account here: [cloud.thingsboard.io](https://cloud.thingsboard.io/signup).
 
-We expect you have a very basic knowledge about ThingsBoard. Otherwise you can to complete the following guides: 
+We expect you have a very basic knowledge about ThingsBoard. Otherwise we do recommend to complete the following guides: 
 - [Getting Started](/docs/getting-started-guides/helloworld/) guide.
 - [Platform Integrations](/docs/user-guide/integrations/) guide.
  
@@ -139,7 +139,7 @@ The converter will decode incoming telemetry payload data from T-Mobile NB IoT t
             "altitude": 6,
             "speed": 86,
             "satellitesObserved": 208,
-            "timetToFirstFix": 4,
+            "timetToFirstFix": 4
         }
     }]
 }
@@ -214,7 +214,7 @@ Few things to notice:
 
 - Go to **Data Converters** -> **Add new Data Converter** -> **Import Converter** 
 
-- Import following json file: [**SODAQ UDP Data Uplink Converter**](/docs/user-guide/resources/sodaq/sodaq_udp_data_uplink_converter.json) (left click on the link and then 'Ctrl+S' to download) 
+- Import following json file: [**SODAQ UDP Uplink Data Converter**](/docs/user-guide/resources/sodaq/sodaq_udp_uplink_data_converter.json) (left click on the link and then 'Ctrl+S' to download) 
 as described on the following screencast: 
 
 <img data-gifffer="/images/user-guide/integrations/sodaq/import-udp-converter_updated.gif" />
@@ -223,14 +223,8 @@ as described on the following screencast:
 
 - Create new integration based on the screencast below.
   
-  Copy **"Integration key"** and **"Integration secret"**, and paste this parameters in configuration block to file **"tb-tcp-udp-integration.conf"**:
-  {% highlight bash %}
-  # UNCOMMENT NEXT LINES AND PUT YOUR CONNECTION PARAMETERS:
-  # export PRC_HOST=cloud.thingsboard.io
-  # export RPC_PORT=9090
-  # export INTEGRATION_ROUTING_KEY=YOUR_INTEGRATION_KEY
-  # export INTEGRATION_SECRET=YOUR_INTEGRATION_SECRET
-  {% endhighlight %} 
+  Please, note that you should copy **Integration key** and **Integration secret** as described in the [**UDP Integration Setup**](/docs/user-guide/integrations/udp/#udp-integration-setup) guide.
+  
 
 <img data-gifffer="/images/user-guide/integrations/sodaq/create-udp-integration.gif" />
 
@@ -303,7 +297,7 @@ echo -e -n '010145292a2bfbfc0000000000000000e6e3355c751a879de31e6535d10306005600
 
 Navigate to Integration Debug Events and check that data real arrives and is processed successfully.
 
-Device with name '**357518080211964**' should be created.
+Device with name **357518080211964** should be created.
 
 <img data-gifffer="/images/user-guide/integrations/sodaq/validate-udp-integration.gif" />
 
