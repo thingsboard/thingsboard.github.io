@@ -1,5 +1,5 @@
 {
-  "name": "SODAQ UDP Data Uplink Converter",
+  "name": "SODAQ UDP Uplink Data Converter",
   "type": "UPLINK",
   "debugMode": false,
   "configuration": {
