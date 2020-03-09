@@ -6,15 +6,32 @@ horizontaltoc: "true"
 
 ---
 
-Traditionally being a part of the electrical grid infrastructure, a smart meter is an electronic device that allows for remote monitoring and recording of energy consumption. However, in the age of IoT and IoT platforms, standalone smart meters give way to more advanced and multi-purpose smart metering solutions. These solutions offer a broader range of remote monitoring and alerting capabilities as well as provide powerful data analytics tools to help companies and individual users optimize their energy, water, gas, or fuel consumption.  
+Traditionally being a part of the electrical grid infrastructure, a smart meter is an electronic device for remote monitoring and recording of energy consumption. However, in the age of IoT and IoT platforms, standalone smart meters give way to more advanced and multi-purpose smart metering solutions, which offer a broader range of remote monitoring and alerting capabilities as well as provide powerful data analytics tools to help companies and individual users optimize their energy, water, gas, fuel and other resources consumption.  
 
-A typical challenge for companies implementing smart meters is how to integrate them within their infrastructure and set up custom-tailored smart metering use cases. The best way to achieve these goals is by using an IoT platform that offers out-of-the-box solutions and templates for smart metering, such as ThingsBoard. One of the strongest advantages of an enterprise-grade IoT platform is its data processing capabilities. Not only will you be able to collect data from your diverse smart meters in a centralized way, but also set up custom visualization dashboards, configure user alerts and notifications, and feed the collected data into other applications or data stores.
+A typical challenge for companies implementing smart meters is how to integrate them within their infrastructure and set up custom-tailored smart metering use cases. The very short (and probably best) way to achieve these goals is by using an IoT platform that offers out-of-the-box solutions and templates for smart metering. ThingsBoard provides that option. One of the strongest advantages of an enterprise-grade IoT platform is its data processing capabilities. This means the ability to perform not only the data collection (from diverse smart meters in a centralized way), but customized visualization of received data, configuration of user alerts and notifications, and feeding the collected data into other applications or data stores also.
 
-Another critical advantage is the cost of smart metering implementation. Using an IoT platform allows you to have all the necessary functionality right away and focus on building particular smart metering use cases instead, saving time and avoiding the risks associated with in-house IoT development.  
+Another critical advantage is, definitely, the cost of smart metering implementation. Using an IoT platform of above-mentioned class allows you to have all the necessary functionality right away and focus on building particular smart metering use cases instead, saving time and avoiding the risks associated with in-house IoT development.  
 
 ### Smart metering solutions with ThingsBoard
 
-ThingsBoard Team have prepared out-of-the-box Smart Metering application designed to be used by the platform administrator and non-technical customer users and operators. 
+ThingsBoard Team has prepared out-of-the-box Smart Metering application designed to be used by the platform administrator and non-technical customer users and operators.
+
+//TO DO SLIDESHOW 
+![Smart metering screen](/images/iot-use-cases/smart-metering-root-state.jpg) 
+ThingsBoard delivers and stores the data from smart meters in reliable and fault-tolerant way, visualized data depends on end-user permissions defined by administrator. The top-level user may see all info about Entites.
+
+![Smart metering screen](/images/iot-use-cases/hotel-state.jpg)  
+
+![Smart metering screen](/images/iot-use-cases/customer-admin-dashboard-root.jpg) 
+The Administrator of particular customer is able to manage Entities (e.g. create Users, add  devices) and respective data that belongs to particular customer only. All Customer entites are separated from each other.    
+
+![Smart metering screen](/images/iot-use-cases/customer-admin-dashboard-drill.jpg) 
+The Administrator of particular customer is able to have pre-configured multi-state dashboard and create own dashboards.
+
+![Smart metering screen](/images/iot-use-cases/end-user-dashboard.jpg) 
+No Admin user does not ahve the ability to manage the system. With ReadOnly role the can view the dashboard only. 
+
+### Key clauses
  
 This application is basically an IoT solution blueprint with the following features:
 
@@ -22,16 +39,14 @@ This application is basically an IoT solution blueprint with the following featu
 - Create customers and provision assets and meters for those customers;
 - Manage customer users with role-based access control;
 - Configure resource consumption, RSSI, battery level and other thresholds;
-- Track online/offline devices and other alarms;
+- Track online/off-line devices and execute required alarms;
 - Analyze and Visualize collected data;
 
-The application can be deployed to any ThingsBoard Professional Edition instance via REST API based script. 
+The application can be deployed to any ThingsBoard Professional Edition instance via REST API based script. This ready-to-use solution can be ordered via [contact us](/docs/contact-us/).
    
-//TODO: Make this as a Carousel with the dashboard images
-
 ### Solution architecture
 
-![Smart metering solution diagram](/images/iot-use-cases/smart-energy-monitoring.svg)
+![Smart metering solution diagram](/images/iot-use-cases/smart-energy-monitoring1.svg)
 
 **Device Connectivity**
 
@@ -50,7 +65,7 @@ If you don't see suitable connectivity option listed above, or have any troubles
 **Device Provisioning**
  
 When using ThingsBoard Integrations, devices may be provisioned automatically and should be pushed to "Smart Water Meters" and "Smart Energy Meters" device groups.
-When using IP enabled devices or IoT Gateway, devices should be pre-provisioned using CSV bulk-upload feature.    
+When using IP enabled devices or IoT Gateway, devices should be pre-provisioned using [CSV bulk-upload](/docs/user-guide/bulk-provisioning/) feature.    
 
 **Data Processing**
 
