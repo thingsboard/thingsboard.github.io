@@ -32,6 +32,20 @@ Node Configuration:
 - **Alarm Severity** - {CRITICAL \| MAJOR \| MINOR \| WARNING \| INDETERMINATE}
 - is **Propagate** - whether Alarm should be propagated to all parent related entities.
 
+Note: Since TB Version 2.3.0 the rule node has the ability to:
+
+-  read alarm config from message:
+
+-  get alarm type using pattern with fields from message metadata:
+
+    ![image](/images/user-guide/rule-engine-2-0/nodes/action-create-alarm-config-from-msg.png)
+  
+Note: Since TB Version 2.4.3 the rule node has the ability to:
+
+- filter propagation to parent entities by relation types:
+
+    ![image](/images/user-guide/rule-engine-2-0/nodes/action-create-alarm-propagate-list.png)
+
 **Alarm Details Builder** script used for generating Alarm Details JsonNode. It is useful for storing additional parameters
 inside Alarm. For example you can save attribute name/value pair from Original Message payload or Metadata. 
 
@@ -152,6 +166,10 @@ Node Configuration:
 
 - **Alarm Details Builder** script
 - **Alarm Type** - any string that represents Alarm Type
+
+Note: Since TB Version 2.3.0 the rule node has the ability to get alarm type using pattern with fields from message metadata:
+
+   ![image](/images/user-guide/rule-engine-2-0/nodes/action-clear-alarm-fetch-alarm-type-from-metadata.png)
 
 **Alarm Details Builder** script used for updating Alarm Details JsonNode. It is useful for storing additional parameters
 inside Alarm. For example you can save attribute name/value pair from Original Message payload or Metadata.
