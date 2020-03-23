@@ -43,6 +43,94 @@ description: ThingsBoard PE IoT platform upgrade instructions
   </li>
 </ul>
 
+
+
+## Prepare for upgrading ThingsBoard (CentOS, Ubuntu)
+
+**Stop ThingsBoard**
+Check if ThingsBoard and database services are running 
+Initially ThingsBoard, check status to ensure it is stopped and then databases.  
+```
+$ sudo systemctl stop thingsboard
+```
+
+```
+$ sudo systemctl status thingsboard
+```
+
+## Backup Database
+Make a backup of the database before upgrading.  
+#### PostgreSQL
+Check PostgreSQL status. It is unnecessary to stop PostgreSQL for the backup.
+```
+$ sudo systemctl status postgresql
+```
+***Make sure you have enough space to place a backup of the database***  
+Check database size
+```bash
+$ sudo -u postgres psql -c "SELECT pg_size_pretty( pg_database_size('thingsboard') );"
+```
+Check free space
+```bash
+$ df -h /
+```
+If there is enough free space - make a backup.
+```bash
+$ sudo -Hiu postgres pg_dump thingsboard > thingsboard.sql.bak
+```
+Check backup file being created.
+
+#### Cassandra   
+Check Cassandra status. It is necessary to stop Cassandra for the backup.
+
+```
+$ sudo systemctl status cassandra
+```
+
+Flush all memtables from the node to SSTables on disk.
+
+```
+$ nodetool drain
+```
+
+Stop Cassandra.
+
+```
+$ sudo systemctl stop cassandra
+```
+
+And you have to check the status again to ensure they are surely stopped.
+
+```bash
+$ sudo systemctl status cassandra
+```
+
+***Make sure you have enough space to place a backup of the database***  
+Check database size.
+```bash
+$ du -h /var/lib/cassandra/ | tail -1
+```
+
+Check free space.
+```bash
+$ df -h /
+```
+Make a backup of Cassandra database.
+```bash
+$ mkdir backup
+$ sudo tar -cvf backup/cassandra.tar /var/lib/cassandra
+```  
+***Check archive being created***
+
+### Start Database
+**Cassandra**  
+```
+$ sudo systemctl start cassandra
+```
+**PostgreSQL**
+Do nothing, postgresql is already running.  
+
+
 ## Upgrading to 2.4.1PE
 
 These steps are applicable for 2.4.0PE ThingsBoard Professional Edition version.
