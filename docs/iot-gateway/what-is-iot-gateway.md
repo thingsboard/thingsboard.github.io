@@ -17,6 +17,8 @@ ThingsBoard IoT Gateway provides following features:
  - [**OPC-UA** connector](/docs/iot-gateway/config/opc-ua/) to collect data from IoT devices that are connected to OPC-UA servers.
  - [**Modbus** connector](/docs/iot-gateway/config/modbus/) to collect data from IoT devices that are connected through Modbus protocol.
  - [**BLE** connector](/docs/iot-gateway/config/ble/) to collect data from IoT devices that are connected using Bluetooth Low Energy.
+ - [**Request** connector](/docs/iot-gateway/config/can/) to collect data from IoT devices that are have HTTP(S) API endpoints.
+ - [**CAN** connector](/docs/iot-gateway/config/can/) to collect data from IoT devices that are connected through CAN protocol.
  - [**Custom** connector](/docs/iot-gateway/custom/) to collect data from IoT devices that are connected by different protocols. (You can create your own connector for the requires protocol).
  - **Persistence** of collected data to guarantee data delivery in case of network or hardware failures.
  - **Automatic reconnect** to ThingsBoard cluster.
@@ -30,9 +32,9 @@ Main components of ThingsBoard IoT Gateway are listed below.
 
 **Connector**
 
-The purpose of this component is to connect to external system (e.g. MQTT broker or OPC-UA server) or directly to devices (e.g. Modbus or BLE).
+The purpose of this component is to connect to external system (e.g. MQTT broker or OPC-UA server) or directly to devices (e.g. Modbus, BLE or CAN).
 Once connected, connector is either poll data from those systems or subscribe to updates. Poll vs subscribe depends on the protocol capabilities. 
-For example, we use subscription model for MQTT connectors and polling for Modbus. 
+For example, we use subscription model for MQTT connectors and polling for Modbus and CAN. 
 Connector is also able to push updates to devices either directly or via external systems.
 
 It is possible to define your own connector using the [customization guide](/docs/iot-gateway/custom/).
