@@ -117,6 +117,9 @@ toc:
     path: /docs/user-guide/integrations/ttn/
   - title: AWS IoT
     path: /docs/user-guide/integrations/aws-iot/
+  - title: Teltonika TCP Integration
+    path: /docs/user-guide/integrations/teltonika/
+    new: true
   - title: AWS Kinesis
     path: /docs/user-guide/integrations/aws-kinesis/
   - title: IBM Watson

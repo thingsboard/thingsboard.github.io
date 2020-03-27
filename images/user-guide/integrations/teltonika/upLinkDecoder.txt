@@ -1,0 +1,570 @@
+    var constants = {
+        'priority':
+            {
+                0: "Low",
+                1: "High",
+                2: "Panic",
+                3: "Security"
+            },
+        'idIo':
+            {
+                0: "00000",
+                1: "Digital Input 1",
+                2: "00002",
+                3: "00003",
+                4: "Pulse Counter DIN1",
+                5: "00005",
+                6: "00006",
+                7: "00007",
+                8: "00008",
+                9: "Analog Input 1",
+                10: "00010",
+                11: "ICCID1",
+                12: "FC By GPS (ml)",
+                13: "FC AVG By GPS (l/h*100)",
+                14: "ICCID4",
+                15: "Eco score",
+                16: "Total Odometr (m)",
+                17: "Axis X (mG)",
+                18: "Axis Y (mG)",
+                19: "Axis Z (mG)",
+                20: "BLE Battery #2 (%)",
+                21: {
+                    "GSM Signal":
+                        {
+                            0: "00",
+                            1: "01",
+                            2: "02",
+                            3: "03",
+                            4: "Good Signal",
+                            5: "Excellent Signal"
+                        }
+                },
+                22: "BLE Battery #3 (%)",
+                23: "BLE Battery #4 (%)",
+                24: "Speed km/h",
+                25: "BLE Temp #1 (C)",
+                26: "BLE Temp #2 (C)",
+                27: "BLE Temp #3 (C)",
+                28: "BLE Temp #4 (C)",
+                29: "BLE Battery #1 (%)",
+                30: "00030",
+                31: "00031",
+                32: "00032",
+                33: "00033",
+                34: "00034",
+                35: "00035",
+                36: "00036",
+                37: "00037",
+                38: "00038",
+                39: "00039",
+                40: "00040",
+                41: "00041",
+                42: "00042",
+                43: "00043",
+                44: "00044",
+                45: "00045",
+                46: "00046",
+                47: "00047",
+                48: "00048",
+                49: "00049",
+                50: "00050",
+                51: "00051",
+                52: "00052",
+                53: "00053",
+                54: "00054",
+                55: "00055",
+                56: "00056",
+                57: "00057",
+                58: "00058",
+                59: "00059",
+                60: "00060",
+                61: "00061",
+                62: "00062",
+                63: "00063",
+                64: "00064",
+                65: "00065",
+                66: "External Voltage mV",
+                67: "Battery Voltage mV",
+                68: "Battery Current mA",
+                69: {
+                    "GNSS Status":
+                        {
+                            0: "00",
+                            1: "01",
+                            2: "Activated",
+                            3: "03"
+                        }
+                },
+                70: "00070",
+                71: "00071",
+                72: "00072",
+                73: "00073",
+                74: "00074",
+                75: "00075",
+                76: "00076",
+                77: "00077",
+                78: "00078",
+                79: "00079",
+                80: "Data Mode",
+                81: "00081",
+                82: "00082",
+                83: "00083",
+                84: "00084",
+                85: "00085",
+                86: "BLE Humidity #1 (%RH)",
+                87: "00087",
+                88: "00088",
+                89: "00089",
+                90: "00090",
+                91: "00091",
+                92: "00092",
+                93: "00093",
+                94: "00094",
+                95: "00095",
+                96: "00096",
+                97: "00097",
+                98: "00098",
+                99: "00099",
+                100: "00100",
+                101: "00101",
+                102: "00102",
+                103: "00103",
+                104: "BLE Humidity #2 (%RH)",
+                105: "00105",
+                106: "BLE Humidity #3 (%RH)",
+                107: "00107",
+                108: "BLE Humidity #4 (%RH)",
+                109: "00109",
+                110: "00110",
+                111: "00111",
+                112: "00112",
+                113: "Internel Battery Status %",
+                114: "00114",
+                115: "00115",
+                116: "00116",
+                117: "00117",
+                118: "00118",
+                119: "00119",
+                120: "00120",
+                121: "00121",
+                122: "00122",
+                123: "00123",
+                124: "00124",
+                125: "00125",
+                126: "00126",
+                127: "00127",
+                128: "00128",
+                129: "00129",
+                130: "00130",
+                131: "00131",
+                132: "00132",
+                133: "00133",
+                134: "00134",
+                135: "00135",
+                136: "00136",
+                137: "00137",
+                138: "00138",
+                139: "00139",
+                140: "00140",
+                141: "00141",
+                142: "00142",
+                143: "00143",
+                144: "00144",
+                145: "00145",
+                146: "00146",
+                147: "00147",
+                148: "00148",
+                149: "00149",
+                150: "00150",
+                151: "00151",
+                152: "00152",
+                153: "00153",
+                154: "00154",
+                155: "00155",
+                156: "00156",
+                157: "00157",
+                158: "00158",
+                159: "00159",
+                160: "00160",
+                161: "00161",
+                162: "00162",
+                163: "00163",
+                164: "00164",
+                165: "00165",
+                166: "00166",
+                167: "00167",
+                168: "00168",
+                169: "00169",
+                170: "00170",
+                171: "00171",
+                172: "00172",
+                173: "00173",
+                174: "00174",
+                175: "00175",
+                176: "00176",
+                177: "00177",
+                178: "00178",
+                179: "Digital Output 1",
+                180: "00180",
+                181: "GNSS PDOP",
+                182: "GNSS NDOP",
+                183: "00183",
+                184: "00184",
+                185: "00185",
+                186: "00186",
+                187: "00187",
+                188: "00188",
+                189: "00189",
+                190: "00190",
+                191: "00191",
+                192: "00192",
+                193: "00193",
+                194: "00194",
+                195: "00195",
+                196: "00196",
+                197: "00197",
+                198: "00198",
+                199: "Trip Odometr (m)",
+                200: "Sllep Mode",
+                201: "00201",
+                202: "00202",
+                203: "00203",
+                204: "00204",
+                205: "GSM Cell ID",
+                206: "GSM Area Code",
+                207: "00207",
+                208: "00208",
+                209: "00209",
+                210: "00210",
+                211: "00211",
+                212: "00212",
+                213: "00123",
+                214: "00124",
+                215: "00125",
+                216: "00126",
+                217: "00217",
+                218: "00218",
+                219: "00219",
+                220: "00220",
+                221: "00221",
+                222: "00222",
+                223: "00223",
+                224: "00224",
+                225: "00225",
+                226: "00226",
+                227: "00227",
+                228: "00228",
+                229: "00229",
+                230: "00230",
+                231: "00231",
+                232: "00232",
+                233: "00233",
+                234: "00234",
+                235: "00235",
+                236: "00236",
+                237: "00237",
+                238: "User ID",
+                239: "Ignition",
+                240: "Movement",
+                241: "Actual Operator Code",
+                242: "00242",
+                243: "00243",
+                244: "00244",
+                245: "00245",
+                246: "00246",
+                247: "00247",
+                248: "00248",
+                249: "00249",
+                250: "00250",
+                251: "00251",
+                252: "00252",
+                253: "00253",
+                254: "00254",
+                255: "00255",
+                256: "00256",
+                257: "00257",
+                258: "00258",
+                259: "00259",
+                260: "00260",
+                261: "00261",
+                262: "00262",
+                263: "00263",
+                264: "00264",
+                265: "00265",
+                266: "00266",
+                267: "00267",
+                268: "00268",
+                269: "00269",
+                270: "00270",
+                271: "00271",
+                272: "00272",
+                273: "00273",
+                274: "00274",
+                275: "00275",
+                276: "00276",
+                277: "00277",
+                278: "00278",
+                279: "00279",
+                280: "00280",
+                281: "00281",
+                282: "00282",
+                283: "00283",
+                284: "00284",
+                285: "00285",
+                286: "00286",
+                287: "00287",
+                288: "00288",
+                289: "00289",
+                290: "00290",
+                291: "00291",
+                292: "00292",
+                293: "00293",
+                294: "00294",
+                295: "00295",
+                296: "00296",
+                297: "00297",
+                298: "00298",
+                299: "00299"
+
+
+            }
+    };
+
+    var payoadStr = decodeToJson(payload);
+    var y = 0;
+    var lenByte = 2;
+    var deviceName = getNameDevice('FMB920_');
+    var deviceType = 'teltonik';
+    var deviceModel = 'FMB920';
+    var request = "Downlink";
+    var response = "Uplink";
+
+    var result = setPayload();
+
+    function setPayload() {
+        if (payoadStr !== null && payoadStr.length > 0 && metadata.hasOwnProperty('imei')) {
+            return getPayload();
+        }
+        return null;
+    }
+
+    function getPayload() {
+        var codec = parseInt(payoadStr.substr(y, lenByte), 16);
+        y += lenByte;
+        var rez = {
+            deviceName: deviceName,
+            deviceType: deviceType,
+            attributes: {
+                model: deviceModel,
+                serialNumber: metadata.imei,
+                integrationName: metadata.integrationName,
+                codec: codec
+            },
+            telemetry: getTelemetry(codec)
+        };
+        return rez;
+    }
+
+    function getTelemetry(codec) {
+        if (codec === 8) {
+            return getTelemetry08();
+        } else if (codec === 12) {
+            return getTelemetry12();
+        }
+        else if (codec === 22) {
+            return getTelemetry22();
+        }
+    }
+
+
+    function getTelemetry08() {
+        var telemetry = [];
+        // var numberData1 = parseInt(payoadStr.substr(y, lenByte), 16);
+        var numberData1 = 1;
+        y += lenByte;
+        for (var i = 0; i < numberData1; i++) {
+            var len = 16;
+            var timeMS = parseInt(payoadStr.substr(y, len), 16);
+            y += len;
+            var avlData = {
+                ts: timeMS,
+                values: getAVLData()
+            };
+
+            telemetry.push(avlData);
+        }
+        var ts = new Date().getTime();
+        var maxLenth = 400;
+        var telemtryStr = JSON.stringify(telemetry[0]);
+        if (telemtryStr.length> maxLenth) telemtryStr = telemtryStr.substring(0, maxLenth) + "...";
+        var logs = {
+            ts: ts,
+            values: {
+                "logs": request + ": 1 " + response + ": " + telemtryStr
+            }
+        };
+
+
+        telemetry.push(logs);
+
+        return telemetry;
+    }
+
+    function getTelemetry12() {
+        var telemetry = [];
+        var quantity = parseInt(payoadStr.substr(y, lenByte), 16);
+        y += lenByte;
+        var type = parseInt(payoadStr.substr(y, lenByte), 16);
+        y += lenByte;
+        var ts = new Date().getTime();
+        var responseData = {
+            ts: ts,
+            values: getResponse()
+        };
+        telemetry.push(responseData);
+        return telemetry;
+    }
+
+
+    function getTelemetry22() {
+        var telemetry = [];
+        var ts = new Date().getTime();
+        var responseData = {
+            ts: ts,
+            values: {
+                "logs":  metadata["request"]  + ": " + payoadStr.substr(y)
+            }
+        };
+        telemetry.push(responseData);
+        return telemetry;
+    }
+
+    function getAVLData() {
+        var priority = constants.priority[parseInt(payoadStr.substr(y, lenByte), 16)];
+        y += lenByte;
+        len = 30;
+        var gpsElementStr = payoadStr.substr(y, len);
+        y += len;
+        var avlData = {
+            priority: priority,
+            longitude: getLatLongToStr(gpsElementStr.substr(0, 8)),
+            latitude: getLatLongToStr(gpsElementStr.substr(8, 8)),
+            altitude: parseInt(gpsElementStr.substr(16, 4), 16),
+            angle: parseInt(gpsElementStr.substr(20, 4), 16),
+            satellites: parseInt(gpsElementStr.substr(24, 2), 16),
+            speed: parseInt(gpsElementStr.substr(26, 4), 16)
+        };
+        addIoElement(avlData);
+        return avlData;
+    }
+
+    function getLatLongToStr(str) {
+        var strInt = parseInt(str, 16);
+        var strVal = strInt.toString();
+        return strInt > 0 ? strVal.substring(0, 2) + "." + strVal.substring(2) : strVal;
+    }
+
+
+    function getResponse() {
+        var len = 8;
+        var responseSize = parseInt(payoadStr.substr(y, len), 16);
+        y += len;
+        len = 2 * responseSize;
+        var responseValHex = payoadStr.substr(y, len);
+        y += len;
+        var key = metadata["request"];
+        var resposeValAnsii = hex_to_ascii(responseValHex);
+        var result = {
+            "logs": request + ": " + metadata["request"] + " " + response + ": " + resposeValAnsii
+        };
+        return result;
+    }
+
+    function getNameDevice(deviceName) {
+        if (metadata.hasOwnProperty('imei')) {
+            return deviceName + metadata['imei'];
+        } else {
+            return deviceName;
+        }
+    }
+
+    function addIoElement(avlData) {
+        avlData.eventIoId = parseInt(payoadStr.substr(y, lenByte), 16);
+        y += lenByte;
+        var totalIo = parseInt(payoadStr.substr(y, lenByte), 16);
+        y += lenByte;
+        var oneByteIo = parseInt(payoadStr.substr(y, lenByte), 16);
+        y += lenByte;
+        if (oneByteIo > 0) {
+            getByteIo(avlData, oneByteIo, 2);
+        }
+        var twoByteIo = parseInt(payoadStr.substr(y, lenByte), 16);
+        y += lenByte;
+        if (twoByteIo > 0) {
+            getByteIo(avlData, twoByteIo, 4);
+        }
+        var forByteIo = parseInt(payoadStr.substr(y, lenByte), 16);
+        y += lenByte;
+        if (forByteIo > 0) {
+            getByteIo(avlData, forByteIo, 8);
+        }
+        var eightByteIo = parseInt(payoadStr.substr(y, lenByte), 16);
+        y += lenByte;
+        if (eightByteIo > 0) {
+            getByteIo(avlData, eightByteIo, 16);
+        }
+    }
+
+    function getByteIo(avlData, cnt, lenB) {
+        var nameIoId;
+        var val;
+        for (var i = 0; i < cnt * 2; i += 2) {
+            var ioId = parseInt(payoadStr.substr(y, lenByte), 16);
+            if (constants.idIo[ioId] instanceof Object) {
+                for (var key in constants.idIo[ioId]) {
+                    nameIoId = key;
+                    y += lenByte;
+                    val = constants.idIo[ioId][key][parseInt(payoadStr.substr(y, lenB), 16)];
+                    y += lenB;
+                }
+            } else {
+                nameIoId = constants.idIo[ioId];
+                y += lenByte;
+                val = hexToInt(payoadStr.substr(y, lenB));
+                y += lenB;
+            }
+            avlData[nameIoId] = val;
+        }
+    }
+
+    function hexToInt(hex) {
+        if (hex.length % 2 !== 0) {
+            hex = "0" + hex;
+        }
+        var num = parseInt(hex, 16);
+        var maxVal = Math.pow(2, hex.length / 2 * 8);
+        if (num > maxVal / 2 - 1) {
+            num = num - maxVal
+        }
+        return num;
+    }
+
+    function decodeToJson(payoadStr) {
+        try {
+            return JSON.parse(String.fromCharCode.apply(String, payoadStr));
+        } catch (e) {
+            return JSON.parse(JSON.stringify(payoadStr));
+        }
+    }
+
+    function hex_to_ascii(str1) {
+        var hex = str1.toString();
+        var str = '';
+        for (var n = 0; n < hex.length; n += 2) {
+            str += String.fromCharCode(parseInt(hex.substr(n, 2), 16));
+        }
+        return str;
+    }
+
+    return result;
