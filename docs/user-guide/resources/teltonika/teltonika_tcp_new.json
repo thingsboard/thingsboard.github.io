@@ -1,0 +1,1010 @@
+{
+  "title": "TELTONIKA_TCP_NEW",
+  "configuration": {
+    "widgets": {
+      "4693e2d5-24f9-69cb-e596-d307d0dfb993": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "timeseries_table",
+        "type": "timeseries",
+        "title": "New widget",
+        "sizeX": 17,
+        "sizeY": 4,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "dataKeys": [
+                {
+                  "name": "altitude",
+                  "type": "timeseries",
+                  "label": "altitude",
+                  "color": "#2196f3",
+                  "settings": {
+                    "useCellStyleFunction": false,
+                    "cellStyleFunction": "",
+                    "useCellContentFunction": false,
+                    "cellContentFunction": ""
+                  },
+                  "_hash": 0.9178106937829309
+                },
+                {
+                  "name": "longitude",
+                  "type": "timeseries",
+                  "label": "longitude",
+                  "color": "#4caf50",
+                  "settings": {
+                    "useCellStyleFunction": false,
+                    "cellStyleFunction": "",
+                    "useCellContentFunction": false,
+                    "cellContentFunction": ""
+                  },
+                  "_hash": 0.35778649845926114
+                },
+                {
+                  "name": "latitude",
+                  "type": "timeseries",
+                  "label": "latitude",
+                  "color": "#f44336",
+                  "settings": {
+                    "useCellStyleFunction": false,
+                    "cellStyleFunction": "",
+                    "useCellContentFunction": false,
+                    "cellContentFunction": ""
+                  },
+                  "_hash": 0.7661275217596377
+                },
+                {
+                  "name": "angle",
+                  "type": "timeseries",
+                  "label": "angle",
+                  "color": "#ffc107",
+                  "settings": {
+                    "useCellStyleFunction": false,
+                    "cellStyleFunction": "",
+                    "useCellContentFunction": false,
+                    "cellContentFunction": ""
+                  },
+                  "_hash": 0.06373438992852654
+                },
+                {
+                  "name": "Speed km/h",
+                  "type": "timeseries",
+                  "label": "Speed km/h",
+                  "color": "#607d8b",
+                  "settings": {
+                    "useCellStyleFunction": false,
+                    "cellStyleFunction": "",
+                    "useCellContentFunction": false,
+                    "cellContentFunction": ""
+                  },
+                  "_hash": 0.42125721507602476
+                },
+                {
+                  "name": "satellites",
+                  "type": "timeseries",
+                  "label": "satellites",
+                  "color": "#9c27b0",
+                  "settings": {
+                    "useCellStyleFunction": false,
+                    "cellStyleFunction": "",
+                    "useCellContentFunction": false,
+                    "cellContentFunction": ""
+                  },
+                  "_hash": 0.794226132721152
+                }
+              ],
+              "entityAliasId": "b12006c0-7ed3-8b50-b30c-925b29829f92"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "interval": 1000,
+              "timewindowMs": 604800000
+            },
+            "aggregation": {
+              "type": "NONE",
+              "limit": 200
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "showTimestamp": true,
+            "displayPagination": true,
+            "defaultPageSize": 10
+          },
+          "title": "Messages from device",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "useDashboardTimewindow": false,
+          "showLegend": false,
+          "widgetStyle": {},
+          "actions": {},
+          "showTitleIcon": false,
+          "titleIcon": null,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "enableDataExport": true,
+          "displayTimewindow": true
+        },
+        "id": "4693e2d5-24f9-69cb-e596-d307d0dfb993"
+      },
+      "e547e127-11d9-3704-f68a-0f0dfb74d6a1": {
+        "isSystemType": true,
+        "bundleAlias": "input_widgets",
+        "typeAlias": "update_multiple_attributes",
+        "type": "latest",
+        "title": "New widget",
+        "sizeX": 7,
+        "sizeY": 4,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "dataKeys": [
+                {
+                  "name": "payload",
+                  "type": "attribute",
+                  "label": "${entityLabel}",
+                  "color": "#2196f3",
+                  "settings": {
+                    "dataKeyType": "server",
+                    "dataKeyValueType": "string",
+                    "required": false,
+                    "isEditable": "editable",
+                    "dataKeyHidden": false,
+                    "step": 1
+                  },
+                  "_hash": 0.782653728416606
+                }
+              ],
+              "entityAliasId": "b12006c0-7ed3-8b50-b30c-925b29829f92"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "showActionButtons": true,
+            "showResultMessage": true,
+            "fieldsAlignment": "row",
+            "fieldsInRow": 2,
+            "groupTitle": "${entityName}"
+          },
+          "title": "Send DownLink command",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "enableDataExport": false,
+          "widgetStyle": {},
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "useDashboardTimewindow": true,
+          "showLegend": false,
+          "actions": {},
+          "showTitleIcon": false,
+          "titleIcon": null,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "displayTimewindow": true
+        },
+        "id": "e547e127-11d9-3704-f68a-0f0dfb74d6a1"
+      },
+      "afb2a790-e04c-75f9-5b88-53c361773c6d": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "entities_table",
+        "type": "latest",
+        "title": "New widget",
+        "sizeX": 24,
+        "sizeY": 12,
+        "config": {
+          "timewindow": {
+            "realtime": {
+              "interval": 1000,
+              "timewindowMs": 86400000
+            },
+            "aggregation": {
+              "type": "NONE",
+              "limit": 200
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "4px",
+          "settings": {
+            "enableSearch": true,
+            "displayPagination": true,
+            "defaultPageSize": 10,
+            "defaultSortOrder": "entityName",
+            "displayEntityName": true,
+            "displayEntityType": true,
+            "enableSelectColumnDisplay": true
+          },
+          "title": "New Entities table",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400,
+            "padding": "5px 10px 5px 10px"
+          },
+          "useDashboardTimewindow": false,
+          "showLegend": false,
+          "datasources": [
+            {
+              "type": "entity",
+              "dataKeys": [
+                {
+                  "name": "serialNumber",
+                  "type": "attribute",
+                  "label": "serialNumber",
+                  "color": "#2196f3",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "cellStyleFunction": "",
+                    "useCellContentFunction": false,
+                    "cellContentFunction": ""
+                  },
+                  "_hash": 0.9862181984635043
+                },
+                {
+                  "name": "model",
+                  "type": "attribute",
+                  "label": "model",
+                  "color": "#4caf50",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "cellStyleFunction": "",
+                    "useCellContentFunction": false,
+                    "cellContentFunction": ""
+                  },
+                  "_hash": 0.9769641010345038
+                },
+                {
+                  "name": "codec",
+                  "type": "attribute",
+                  "label": "codec",
+                  "color": "#f44336",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "cellStyleFunction": "",
+                    "useCellContentFunction": false,
+                    "cellContentFunction": ""
+                  },
+                  "_hash": 0.3349219951195128
+                }
+              ],
+              "entityAliasId": "c58c3559-0020-5536-8a48-9a66a0e2db28"
+            }
+          ],
+          "showTitleIcon": false,
+          "titleIcon": null,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "widgetStyle": {},
+          "displayTimewindow": true,
+          "actions": {
+            "rowClick": [
+              {
+                "id": "bfa93667-c196-77bc-e0e7-8b9c121766ad",
+                "name": "Details",
+                "icon": "more_horiz",
+                "type": "openDashboardState",
+                "targetDashboardStateId": "details",
+                "setEntityId": true
+              }
+            ],
+            "actionCellButton": [
+              {
+                "id": "b75bb88a-d79b-77f9-fd17-524581038f7b",
+                "name": "Details",
+                "icon": "settings",
+                "type": "openDashboardState",
+                "targetDashboardStateId": "details",
+                "setEntityId": true
+              },
+              {
+                "id": "c3e860e5-7647-256c-7698-d61fd6c63a35",
+                "name": "GoToUplinks",
+                "icon": "multiline_chart",
+                "type": "openDashboardState",
+                "targetDashboardStateId": "uplinks",
+                "setEntityId": true
+              },
+              {
+                "id": "a2df6eef-9498-c14e-c508-889243bce135",
+                "name": "GoToMap",
+                "icon": "map",
+                "type": "openDashboardState",
+                "targetDashboardStateId": "map",
+                "setEntityId": true
+              }
+            ]
+          },
+          "enableDataExport": true
+        },
+        "id": "afb2a790-e04c-75f9-5b88-53c361773c6d"
+      },
+      "3b408d73-4683-0f13-8a97-47012b7fb368": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "entities_table",
+        "type": "latest",
+        "title": "New widget",
+        "sizeX": 24,
+        "sizeY": 3,
+        "config": {
+          "timewindow": {
+            "realtime": {
+              "interval": 1000,
+              "timewindowMs": 86400000
+            },
+            "aggregation": {
+              "type": "NONE",
+              "limit": 200
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "4px",
+          "settings": {
+            "enableSearch": true,
+            "displayPagination": true,
+            "defaultPageSize": 10,
+            "defaultSortOrder": "entityName",
+            "displayEntityName": true,
+            "displayEntityType": true,
+            "enableSelectColumnDisplay": true
+          },
+          "title": "New Entities table",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400,
+            "padding": "5px 10px 5px 10px"
+          },
+          "useDashboardTimewindow": false,
+          "showLegend": false,
+          "datasources": [
+            {
+              "type": "entity",
+              "dataKeys": [
+                {
+                  "name": "model",
+                  "type": "attribute",
+                  "label": "model",
+                  "color": "#9c27b0",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "cellStyleFunction": "",
+                    "useCellContentFunction": false,
+                    "cellContentFunction": ""
+                  },
+                  "_hash": 0.18500016860343438
+                },
+                {
+                  "name": "serialNumber",
+                  "type": "attribute",
+                  "label": "serialNumber",
+                  "color": "#8bc34a",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "useCellContentFunction": false
+                  },
+                  "_hash": 0.7032766169846905
+                },
+                {
+                  "name": "Battery Voltage mV",
+                  "type": "timeseries",
+                  "label": "Battery Voltage mV",
+                  "color": "#f44336",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "cellStyleFunction": "",
+                    "useCellContentFunction": false,
+                    "cellContentFunction": ""
+                  },
+                  "_hash": 0.13663938039169454
+                },
+                {
+                  "name": "External Voltage mV",
+                  "type": "timeseries",
+                  "label": "External Voltage mV",
+                  "color": "#ffc107",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "cellStyleFunction": "",
+                    "useCellContentFunction": false,
+                    "cellContentFunction": ""
+                  },
+                  "_hash": 0.03401260447054555
+                }
+              ],
+              "entityAliasId": "b12006c0-7ed3-8b50-b30c-925b29829f92"
+            }
+          ],
+          "showTitleIcon": false,
+          "titleIcon": null,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "widgetStyle": {},
+          "displayTimewindow": true,
+          "actions": {},
+          "enableDataExport": true,
+          "legendConfig": {
+            "direction": "column",
+            "position": "bottom",
+            "showMin": false,
+            "showMax": false,
+            "showAvg": false,
+            "showTotal": false
+          }
+        },
+        "id": "3b408d73-4683-0f13-8a97-47012b7fb368"
+      },
+      "58bbe231-7837-f017-3f38-24b59cf4eb90": {
+        "isSystemType": true,
+        "bundleAlias": "maps_v2",
+        "typeAlias": "test",
+        "type": "timeseries",
+        "title": "New widget",
+        "sizeX": 24,
+        "sizeY": 12,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "dataKeys": [
+                {
+                  "name": "latitude",
+                  "type": "timeseries",
+                  "label": "latitude",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.5296266877644209
+                },
+                {
+                  "name": "longitude",
+                  "type": "timeseries",
+                  "label": "longitude",
+                  "color": "#4caf50",
+                  "settings": {},
+                  "_hash": 0.4709143089776824
+                },
+                {
+                  "name": "altitude",
+                  "type": "timeseries",
+                  "label": "altitude",
+                  "color": "#f44336",
+                  "settings": {},
+                  "_hash": 0.6822891615787898
+                }
+              ],
+              "entityAliasId": "b12006c0-7ed3-8b50-b30c-925b29829f92"
+            }
+          ],
+          "timewindow": {
+            "history": {
+              "interval": 1000,
+              "timewindowMs": 7200000
+            },
+            "aggregation": {
+              "type": "NONE",
+              "limit": 50000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "mapProvider": "OpenStreetMap.Mapnik",
+            "latKeyName": "latitude",
+            "lngKeyName": "longitude",
+            "showLabel": true,
+            "label": "${entityName}",
+            "showTooltip": true,
+            "tooltipColor": "#fff",
+            "tooltipFontColor": "#000",
+            "tooltipOpacity": 1,
+            "tooltipPattern": "<b>${entityName}</b><br/><br/><b>Latitude:</b> ${latitude:7}<br/><b>Longitude:</b> ${longitude:7}<br/><b>End Time:</b> ${maxTime}<br/><b>Start Time:</b> ${minTime}",
+            "strokeWeight": 2,
+            "strokeOpacity": 1,
+            "pointSize": 10,
+            "markerImageSize": 34,
+            "rotationAngle": 180,
+            "normalizationStep": 1000,
+            "polKeyName": "coordinates",
+            "decoratorSymbol": "arrowHead",
+            "decoratorSymbolSize": 10,
+            "decoratorCustomColor": "#000",
+            "decoratorOffset": "20px",
+            "endDecoratorOffset": "20px",
+            "decoratorRepeat": "20px",
+            "polygonTooltipPattern": "<b>${entityName}</b><br/><br/><b>TimeStamp:</b> ${ts:7}",
+            "polygonOpacity": 0.5,
+            "polygonStrokeOpacity": 1,
+            "polygonStrokeWeight": 1,
+            "pointTooltipOnRightPanel": true,
+            "autocloseTooltip": true,
+            "showPolygon": false,
+            "usePolygonTooltipFunction": true
+          },
+          "title": "Device Migration Map",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "mobileHeight": null,
+          "widgetStyle": {},
+          "useDashboardTimewindow": false,
+          "showLegend": false,
+          "actions": {},
+          "legendConfig": {
+            "position": "bottom",
+            "showMin": false,
+            "showMax": false,
+            "showAvg": false,
+            "showTotal": false
+          },
+          "showTitleIcon": false,
+          "titleIcon": null,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "enableDataExport": true,
+          "displayTimewindow": true
+        },
+        "id": "58bbe231-7837-f017-3f38-24b59cf4eb90"
+      },
+      "6f2fd245-2388-5f85-90a7-3b4690950ec5": {
+        "isSystemType": true,
+        "bundleAlias": "charts",
+        "typeAlias": "basic_timeseries",
+        "type": "timeseries",
+        "title": "New widget",
+        "sizeX": 24,
+        "sizeY": 5,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "dataKeys": [
+                {
+                  "name": "External Voltage mV",
+                  "type": "timeseries",
+                  "label": "External Voltage mV",
+                  "color": "#2196f3",
+                  "settings": {
+                    "excludeFromStacking": false,
+                    "hideDataByDefault": false,
+                    "disableDataHiding": false,
+                    "removeFromLegend": false,
+                    "showLines": true,
+                    "fillLines": false,
+                    "showPoints": false,
+                    "showPointShape": "circle",
+                    "pointShapeFormatter": "var size = radius * Math.sqrt(Math.PI) / 2;\nctx.moveTo(x - size, y - size);\nctx.lineTo(x + size, y + size);\nctx.moveTo(x - size, y + size);\nctx.lineTo(x + size, y - size);",
+                    "showPointsLineWidth": 5,
+                    "showPointsRadius": 3,
+                    "tooltipValueFormatter": "",
+                    "showSeparateAxis": false,
+                    "axisTitle": "",
+                    "axisPosition": "left",
+                    "axisTicksFormatter": "",
+                    "thresholds": [
+                      {
+                        "thresholdValueSource": "predefinedValue"
+                      }
+                    ],
+                    "comparisonSettings": {
+                      "showValuesForComparison": true,
+                      "comparisonValuesLabel": "",
+                      "color": ""
+                    }
+                  },
+                  "_hash": 0.583838232358038
+                },
+                {
+                  "name": "Battery Voltage mV",
+                  "type": "timeseries",
+                  "label": "Battery Voltage mV",
+                  "color": "#4caf50",
+                  "settings": {
+                    "excludeFromStacking": false,
+                    "hideDataByDefault": false,
+                    "disableDataHiding": false,
+                    "removeFromLegend": false,
+                    "showLines": true,
+                    "fillLines": false,
+                    "showPoints": false,
+                    "showPointShape": "circle",
+                    "pointShapeFormatter": "var size = radius * Math.sqrt(Math.PI) / 2;\nctx.moveTo(x - size, y - size);\nctx.lineTo(x + size, y + size);\nctx.moveTo(x - size, y + size);\nctx.lineTo(x + size, y - size);",
+                    "showPointsLineWidth": 5,
+                    "showPointsRadius": 3,
+                    "tooltipValueFormatter": "",
+                    "showSeparateAxis": false,
+                    "axisTitle": "",
+                    "axisPosition": "left",
+                    "axisTicksFormatter": "",
+                    "thresholds": [
+                      {
+                        "thresholdValueSource": "predefinedValue"
+                      }
+                    ],
+                    "comparisonSettings": {
+                      "showValuesForComparison": true,
+                      "comparisonValuesLabel": "",
+                      "color": ""
+                    }
+                  },
+                  "_hash": 0.3656132019277556
+                }
+              ],
+              "entityAliasId": "b12006c0-7ed3-8b50-b30c-925b29829f92"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "interval": 300000,
+              "timewindowMs": 86400000
+            },
+            "aggregation": {
+              "type": "NONE",
+              "limit": 25000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "shadowSize": 4,
+            "fontColor": "#545454",
+            "fontSize": 10,
+            "xaxis": {
+              "showLabels": true,
+              "color": "#545454"
+            },
+            "yaxis": {
+              "showLabels": true,
+              "color": "#545454"
+            },
+            "grid": {
+              "color": "#545454",
+              "tickColor": "#DDDDDD",
+              "verticalLines": true,
+              "horizontalLines": true,
+              "outlineWidth": 1
+            },
+            "stack": false,
+            "tooltipIndividual": false,
+            "timeForComparison": "months",
+            "xaxisSecond": {
+              "axisPosition": "top",
+              "showLabels": true
+            }
+          },
+          "title": "Graph value",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "mobileHeight": null,
+          "showTitleIcon": false,
+          "titleIcon": null,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "enableDataExport": true,
+          "widgetStyle": {},
+          "useDashboardTimewindow": false,
+          "displayTimewindow": true,
+          "showLegend": true,
+          "actions": {}
+        },
+        "id": "6f2fd245-2388-5f85-90a7-3b4690950ec5"
+      },
+      "72133d84-b405-426e-01ba-5152948abc8f": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "timeseries_table",
+        "type": "timeseries",
+        "title": "New widget",
+        "sizeX": 24,
+        "sizeY": 8,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "dataKeys": [
+                {
+                  "name": "logs",
+                  "type": "timeseries",
+                  "label": "logs",
+                  "color": "#2196f3",
+                  "settings": {
+                    "useCellStyleFunction": false,
+                    "cellStyleFunction": "",
+                    "useCellContentFunction": false,
+                    "cellContentFunction": ""
+                  },
+                  "_hash": 0.2426504647721739
+                }
+              ],
+              "entityAliasId": "b12006c0-7ed3-8b50-b30c-925b29829f92"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "interval": 1000,
+              "timewindowMs": 18000000
+            },
+            "aggregation": {
+              "type": "NONE",
+              "limit": 200
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "showTimestamp": true,
+            "displayPagination": true,
+            "defaultPageSize": 10
+          },
+          "title": "Commands",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "useDashboardTimewindow": false,
+          "showLegend": false,
+          "widgetStyle": {},
+          "actions": {},
+          "showTitleIcon": false,
+          "titleIcon": null,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "enableDataExport": true,
+          "displayTimewindow": true
+        },
+        "id": "72133d84-b405-426e-01ba-5152948abc8f"
+      }
+    },
+    "states": {
+      "details": {
+        "name": "Setup -> ${entityName}",
+        "root": false,
+        "layouts": {
+          "main": {
+            "widgets": {
+              "4693e2d5-24f9-69cb-e596-d307d0dfb993": {
+                "sizeX": 17,
+                "sizeY": 4,
+                "row": 0,
+                "col": 0
+              },
+              "e547e127-11d9-3704-f68a-0f0dfb74d6a1": {
+                "sizeX": 7,
+                "sizeY": 4,
+                "row": 0,
+                "col": 17
+              },
+              "72133d84-b405-426e-01ba-5152948abc8f": {
+                "sizeX": 24,
+                "sizeY": 8,
+                "row": 4,
+                "col": 0
+              }
+            },
+            "gridSettings": {
+              "backgroundColor": "#eeeeee",
+              "color": "rgba(0,0,0,0.870588)",
+              "columns": 24,
+              "margins": [
+                10,
+                10
+              ],
+              "backgroundSizeMode": "100%"
+            }
+          }
+        }
+      },
+      "main": {
+        "name": "MAIN",
+        "root": true,
+        "layouts": {
+          "main": {
+            "widgets": {
+              "afb2a790-e04c-75f9-5b88-53c361773c6d": {
+                "sizeX": 24,
+                "sizeY": 12,
+                "row": 0,
+                "col": 0
+              }
+            },
+            "gridSettings": {
+              "backgroundColor": "#eeeeee",
+              "color": "rgba(0,0,0,0.870588)",
+              "columns": 24,
+              "margins": [
+                10,
+                10
+              ],
+              "backgroundSizeMode": "100%",
+              "autoFillHeight": true,
+              "mobileAutoFillHeight": false,
+              "mobileRowHeight": 70
+            }
+          }
+        }
+      },
+      "uplinks": {
+        "name": "UPLINKS -> ${entityName}",
+        "root": false,
+        "layouts": {
+          "main": {
+            "widgets": {
+              "3b408d73-4683-0f13-8a97-47012b7fb368": {
+                "sizeX": 24,
+                "sizeY": 3,
+                "row": 0,
+                "col": 0
+              },
+              "6f2fd245-2388-5f85-90a7-3b4690950ec5": {
+                "sizeX": 24,
+                "sizeY": 5,
+                "mobileHeight": null,
+                "row": 3,
+                "col": 0
+              }
+            },
+            "gridSettings": {
+              "backgroundColor": "#eeeeee",
+              "color": "rgba(0,0,0,0.870588)",
+              "columns": 24,
+              "margins": [
+                10,
+                10
+              ],
+              "backgroundSizeMode": "100%",
+              "autoFillHeight": true,
+              "mobileAutoFillHeight": false,
+              "mobileRowHeight": 70
+            }
+          }
+        }
+      },
+      "map": {
+        "name": "Map",
+        "root": false,
+        "layouts": {
+          "main": {
+            "widgets": {
+              "58bbe231-7837-f017-3f38-24b59cf4eb90": {
+                "sizeX": 24,
+                "sizeY": 12,
+                "mobileHeight": null,
+                "row": 0,
+                "col": 0
+              }
+            },
+            "gridSettings": {
+              "backgroundColor": "#eeeeee",
+              "color": "rgba(0,0,0,0.870588)",
+              "columns": 24,
+              "margins": [
+                10,
+                10
+              ],
+              "backgroundSizeMode": "100%",
+              "autoFillHeight": true,
+              "mobileAutoFillHeight": false,
+              "mobileRowHeight": 70
+            }
+          }
+        }
+      }
+    },
+    "entityAliases": {
+      "c58c3559-0020-5536-8a48-9a66a0e2db28": {
+        "id": "c58c3559-0020-5536-8a48-9a66a0e2db28",
+        "alias": "ListTeltonika",
+        "filter": {
+          "type": "entityList",
+          "resolveMultiple": true,
+          "entityType": "DEVICE",
+          "entityList": [
+            "dfd89f60-6221-11ea-8ca0-011cd5ae8bc0",
+            "dfdd5a50-6221-11ea-8ca0-011cd5ae8bc0",
+            "06a52dc0-6222-11ea-8ca0-011cd5ae8bc0"
+          ]
+        }
+      },
+      "aae3d567-8471-100c-5d7c-cca002398cf1": {
+        "id": "aae3d567-8471-100c-5d7c-cca002398cf1",
+        "alias": "DigEntityFrom",
+        "filter": {
+          "type": "deviceType",
+          "resolveMultiple": false,
+          "deviceType": "teltonik",
+          "deviceNameFilter": ""
+        }
+      },
+      "b12006c0-7ed3-8b50-b30c-925b29829f92": {
+        "id": "b12006c0-7ed3-8b50-b30c-925b29829f92",
+        "alias": "SelectedDevice",
+        "filter": {
+          "type": "stateEntity",
+          "resolveMultiple": false,
+          "stateEntityParamName": null,
+          "defaultStateEntity": null
+        }
+      }
+    },
+    "timewindow": {
+      "history": {
+        "interval": 300000,
+        "fixedTimewindow": {
+          "startTimeMs": 1585134755776,
+          "endTimeMs": 1585221155776
+        }
+      },
+      "aggregation": {
+        "type": "NONE",
+        "limit": 50000
+      },
+      "hideInterval": false,
+      "hideAggregation": false,
+      "hideAggInterval": false
+    },
+    "settings": {
+      "stateControllerId": "entity",
+      "showTitle": false,
+      "showDashboardsSelect": true,
+      "showEntitiesSelect": true,
+      "showDashboardTimewindow": true,
+      "showDashboardExport": true,
+      "toolbarAlwaysOpen": true
+    }
+  },
+  "name": "TELTONIKA_TCP_NEW"
+}
