@@ -21,7 +21,9 @@ Please see default directory structure below.
     modbus.json                                   - Modbus connector configuration.
     mqtt.json                                     - MQTT connector configuration.
     ble.json                                      - BLE connector configuration.
-    opcua.json                                    - OPC-UA connector configuration.    
+    opcua.json                                    - OPC-UA connector configuration.
+    request.json                                  - Request connector configuration.
+    can.json                                      - CAN connector configuration. 
     ... 
 
 /var/lib/thingsboard_gateway/extensions           - Folder for custom connectors/converters.                      
@@ -31,6 +33,9 @@ Please see default directory structure below.
         custom_uplink_mqtt_converter.py           - Custom Mqtt converter example.
     ...
     opcua                                         - Folder for OPC-UA custom connectors/converters.
+    ble                                           - Folder for BLE custom connectors/converters.
+    request                                       - Folder for Request custom connectors/converters.
+    can                                           - Folder for CAN custom connectors/converters.
 
 /var/log/thingsboard-gateway                      - Logs folder
     connector.log                                 - Connector logs.
@@ -68,18 +73,37 @@ connectors:
     name: MQTT Broker Connector
     type: mqtt
     configuration: mqtt.json
+
   -
     name: Modbus Connector
     type: modbus
     configuration: modbus.json
+
+  -
+    name: Modbus Connector
+    type: modbus
+    configuration: modbus_serial.json
+
   -
     name: OPC-UA Connector
     type: opcua
     configuration: opcua.json
+
   -
     name: BLE Connector
     type: ble
     configuration: ble.json
+
+  -
+    name: CAN Connector
+    type: can
+    configuration: can.json
+
+  -
+    name: Custom Serial Connector
+    type: serial
+    configuration: custom_serial.json
+    class: CustomSerialConnector
 
 {% endhighlight %}
 <b><i>Spaces identity are important.</i></b>  
@@ -156,19 +180,24 @@ connectors:
     configuration: modbus.json
 
   -
+    name: Modbus Connector
+    type: modbus
+    configuration: modbus_serial.json
+
+  -
+    name: OPC-UA Connector
+    type: opcua
+    configuration: opcua.json
+
+  -
     name: BLE Connector
     type: ble
     configuration: ble.json
 
   -
-    name: OPC-UA
-    type: opcua
-    configuration: opcua.json
-
-  -
-    name: Modbus Serial Connector
-    type: modbus
-    configuration: modbus_serial.json
+    name: CAN Connector
+    type: can
+    configuration: can.json
 
   -
     name: Custom Serial Connector

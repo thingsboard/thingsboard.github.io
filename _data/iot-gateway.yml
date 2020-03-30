@@ -57,7 +57,11 @@ toc:
           path: /docs/iot-gateway/config/ble/
         - title: Request Connector
           path: /docs/iot-gateway/config/request/
+        - title: CAN Connector
+          path: /docs/iot-gateway/config/can/
     - title: Customization guide
       path: /docs/iot-gateway/custom/
+    - title: IoT Gateway features
+      path: /docs/iot-gateway/features/
     - title: IoT Gateway Roadmap
       path: /docs/iot-gateway/roadmap/

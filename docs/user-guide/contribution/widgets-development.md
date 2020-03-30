@@ -139,8 +139,8 @@ In order to implement a new widget, the following JavaScript functions should be
 | ``` onDestroy() ```                | Called when widget element is destroyed. Should be used to cleanup all resources if necessary.            |
 | ``` getSettingsSchema() ```        | Optional function returning widget settings schema json as alternative to **Settings tab** of [Settings schema section](#settings-schema-section).             |
 | ``` getDataKeySettingsSchema() ``` | Optional function returning particular data key settings schema json as alternative to **Data key settings schema** tab of [Settings schema section](#settings-schema-section).             |
-| ``` typeParameters() ```           | Retruns object describing widget datasource parameters. See [Type parameters object](#type-parameters-object). |            |
-| ``` actionSources() ```            | Retruns object describing available widget action sources used to define user actions. See [Action sources object](#action-sources-object). |
+| ``` typeParameters() ```           | Returns object describing widget datasource parameters. See [Type parameters object](#type-parameters-object). |            |
+| ``` actionSources() ```            | Returns object describing available widget action sources used to define user actions. See [Action sources object](#action-sources-object). |
 
 
 #### Subscription object
@@ -232,7 +232,7 @@ For [Alarm widget](/docs/user-guide/ui/widget-library/#alarm-widget) type it pro
             createdTime: 1498150092317, // Alarm created time (unix timestamp)
             startTs: 1498150092316, // Alarm started time (unix timestamp)
             endTs: 1498563899065, // Alarm end time (unix timestamp)
-            ackTs: 0, // Time of alarm aknowledgment (unix timestamp)
+            ackTs: 0, // Time of alarm acknowledgment (unix timestamp)
             clearTs: 0, // Time of alarm clear (unix timestamp)
             originator: { // Originator - id of entity produced this alarm 
                 entityType: "ASSET", 
