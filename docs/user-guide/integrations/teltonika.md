@@ -90,6 +90,34 @@ Alternatively, you can import it from this [file](/docs/user-guide/resources/tel
     <img src="/images/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/import_new_converter.png">
 </details>
 
+<details>
+    <summary>
+        <i><b><font color="#FF0000">Note !!!</font> If error: Script used more than the allowed [<font color="#36abb5">100 ms</font>] of CPU time. </b></i> (click to open expanded view)
+    </summary>
+    <ul>
+        <li>If you have an <b>error</b> while executing <b>uplink scripts:</b></li>         
+        {% highlight bash %}
+            java.util.concurrent.ExecutionException: java.util.concurrent.ExecutionException: javax.script.ScriptException: delight.nashornsandbox.exceptions.ScriptCPUAbuseException: Script used more than the allowed [100 ms] of CPU time.
+ 	        at com.google.common.util.concurrent.AbstractFuture.getDoneValue(AbstractFuture.java:502) ...    
+        {% endhighlight %}          
+        <li>It is possible to raise <font color="#006400"><i><b>"Maximum CPU time in milliseconds allowed for script execution"</b></i></font> in <i><b>src/main/resources/tb-remote-integration.yml</b></i></li>  
+        {% highlight bash %}
+            ...
+            js:
+              evaluator: "${JS_EVALUATOR:local}" # local/remote
+              # Built-in JVM JavaScript environment properties
+              local:
+                ...
+                # Maximum CPU time in milliseconds allowed for script execution
+                max_cpu_time: "${LOCAL_JS_SANDBOX_MAX_CPU_TIME:300}"
+                ...
+        {% endhighlight %}
+    </ul>
+</details>
+<br>
+
+
+
 ### Step 4. Settings encoder Function  to Downlink Data Converter
 When creating an Downlink Converter, a default decoder is added to the Decoder section.<br>
 After creating the Downlink Converter to the Decoder section, you need to update the Decoder code to [the following code](/images/user-guide/integrations/teltonika/downlinkDecoder.txt). <br>
@@ -365,8 +393,83 @@ After creating devices manually: an overview attribute: the serial number of the
                  </ul>                  
               </ol>
           </details>           
-    </ul>       
-
+    </ul>  
+    <li> state <b>map:</b></li>
+    <ul>
+        <li><b>Add widget:</b> Trip Animation: Maps -> Trip Animation </li>
+        <li><b>Data</b> widget: add Datasources -> Type=>Entity; Parameters=>SelectedDevice; Fields=>latitude... </li>
+        <details>
+             <summary>
+                 <font color="#006400"><i><b>Screenshot of creation widget Trip Animation</b></i></font> (<b>click to open expanded view</b>)
+             </summary> 
+             <img src="/images/user-guide/integrations/teltonika/teltonika_dashboard_state_map_TripAnimation.png">
+         </details> 
+         <details>
+              <summary>
+                  <font color="#006400"><i><b>Screenshot of widget Trip Animation -> Title: Device Migration Map</b></i></font> (<b>click to open expanded view</b>)
+              </summary> 
+              <img src="/images/user-guide/integrations/teltonika/teltonika_dashboard_state_map_MigrationMap.png">
+          </details>   
+    </ul> 
+    <li> state <b>details:</b></li>
+    <details>
+         <summary>
+             <font color="#006400"><i><b>Screenshot of creation All widgets state details: Name=>Setup -> ${entityName} </b></i></font> (<b>click to open expanded view</b>)
+         </summary> 
+         <img src="/images/user-guide/integrations/teltonika/teltonika_dashboard_state_details_Setup.png">
+     </details>      
+    <ul>
+        <li><b>Add widget:</b> Timeseries table: Cards -> Timeseries table: Title=>Messages from device <p></p> <b>Data</b> widget: add Datasources -> Type=>Entity; Parameters=>SelectedDevice; Fields=>latitude... </li>
+        <details>
+             <summary>
+                 <font color="#006400"><i><b>Screenshot of creation widget Timeseries table: Title=>Messages from device</b></i></font> (<b>click to open expanded view</b>)
+             </summary> 
+             <img src="/images/user-guide/integrations/teltonika/teltonika_dashboard_state_details_Timeseries.png">
+         </details>          
+         <li><b>Add widget:</b> Update Multiple Attributes: Input Widget -> Update Multiple Attributes <p></p> <b>Data</b> widget: add Datasources -> Type=>Entity; Parameters=>SelectedDevice; Fields=>key: payload; label: ${entityLabel} </li>
+        <details>
+             <summary>
+                 <font color="#006400"><i><b>Screenshot of creation widget Update Multiple Attributes: Title: Send DownLink command</b></i></font> (<b>click to open expanded view</b>)
+             </summary> 
+             <img src="/images/user-guide/integrations/teltonika/teltonika_dashboard_state_details_InputAtrribut.png">
+         </details>        
+         <details>
+             <summary>
+                 <font color="#006400"><i><b>Screenshot of add to widget Update Multiple Attributes new field: key: payload; label: ${entityLabel} </b></i></font> (<b>click to open expanded view</b>)
+             </summary> 
+             <img src="/images/user-guide/integrations/teltonika/teltonika_dashboard_state_details_InputAtrribut_payload.png">
+         </details>   
+         <li><b>Add widget:</b> Timeseries table: Cards -> Timeseries table: Title=>Commands <p></p> <b>Data</b> widget: add Datasources -> Type=>Entity; Parameters=>SelectedDevice; Fields=>logs... </li>
+         <details>
+              <summary>
+                  <font color="#006400"><i><b>Screenshot of creation widget Timeseries table: Title=>Commands</b></i></font> (<b>click to open expanded view</b>)
+              </summary> 
+              <img src="/images/user-guide/integrations/teltonika/teltonika_dashboard_state_details_logs.png">
+          </details>        
+    </ul>    
+    <li> state <b>uplinks:</b></li>
+    <details>
+         <summary>
+             <font color="#006400"><i><b>Screenshot of creation All widgets state uplinks: Name=>UPLINKS -> ${entityName} </b></i></font> (<b>click to open expanded view</b>)
+         </summary> 
+         <img src="/images/user-guide/integrations/teltonika/teltonika_dashboard_state_uplinks_allwidget.png">
+     </details> 
+    <ul>
+        <li><b>Add widget:</b> Entities table: Cards -> Entities table: Title=>Last Entity Value <p></p> <b>Data</b> widget: add Datasources -> Type=>Entity; Parameters=>SelectedDevice; Fields=>model... </li>
+        <details>
+             <summary>
+                 <font color="#006400"><i><b>Screenshot of creation widget Entities table: Title=>Last Entity Value</b></i></font> (<b>click to open expanded view</b>)
+             </summary> 
+             <img src="/images/user-guide/integrations/teltonika/teltonika_dashboard_state_uplinks_entity.png">
+         </details>          
+         <li><b>Add widget:</b> Timeseries - Flot: Charts -> Timeseries - Flot <p></p> <b>Data</b> widget: add Datasources -> Type=>Entity; Parameters=>SelectedDevice; Fields=>External Voltage mV... </li>
+        <details>
+             <summary>
+                 <font color="#006400"><i><b>Screenshot of creation widget Timeseries - Flot: Title: Graph value</b></i></font> (<b>click to open expanded view</b>)
+             </summary> 
+             <img src="/images/user-guide/integrations/teltonika/teltonika_dashboard_state_uplinks_gtaph.png">
+         </details>           
+    </ul>
   </ol>
 </details>
 
