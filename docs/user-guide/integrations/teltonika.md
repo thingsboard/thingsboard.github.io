@@ -225,12 +225,17 @@ Let's create Custom integration that will connect to the local service "remote-i
 - Integration class
 - Intagration key
 - Integration secret 
-
-Notice that we enable "Debug" and "Execute remotely".   
-Let's copy-paste the integration key, secret and class from the integration details.
-
-![image](/images/user-guide/integrations/teltonika/custom-teltonika-tcp-integration.jpg)
-
+<ol>
+    <li>Notice that we enable "Debug" and "Execute remotely".</li>    
+    <li>Required field: "Integration JSON configuration".</li>
+        {% highlight bash %}
+            {"bindPort": 1994}
+        {% endhighlight %}    
+    <img src="/images/user-guide/integrations/teltonika/custom-teltonika-tcp-integration_config.png">
+    <li>If bindPort`s value is not set in the "Integration JSON configuration", the default value will be used: <font color="#36abb5">bindPort </font>=<font color="#0031ff">1990</font></li>
+    <li>Let's copy-paste the integration key, secret and class from the integration details.</li>
+     <img src="/images/user-guide/integrations/teltonika/custom-teltonika-tcp-integration.jpg">   
+</ol>
 
 ### Step 6. Creation  and  configuration of the Dashboard
 
@@ -298,7 +303,7 @@ After creating devices manually: an overview attribute: the serial number of the
         <ul>
             <details>
                  <summary>
-                     <font color=New "#006400"><i><b>Screenshot of creation of the state; main</b></i></font> (<b>click to open expanded view</b>)
+                     <font color="#006400"><i><b>Screenshot of creation of the state; main</b></i></font> (<b>click to open expanded view</b>)
                  </summary> 
                  <img src="/images/user-guide/integrations/teltonika/teltonika_dashboard_state_main.png">
              </details>
@@ -425,7 +430,7 @@ After creating devices manually: an overview attribute: the serial number of the
                  <font color="#006400"><i><b>Screenshot of creation widget Timeseries table: Title=>Messages from device</b></i></font> (<b>click to open expanded view</b>)
              </summary> 
              <img src="/images/user-guide/integrations/teltonika/teltonika_dashboard_state_details_Timeseries.png">
-         </details>          
+         </details>          “TCP Integration”
          <li><b>Add widget:</b> Update Multiple Attributes: Input Widget -> Update Multiple Attributes <p></p> <b>Data</b> widget: add Datasources -> Type=>Entity; Parameters=>SelectedDevice; Fields=>key: payload; label: ${entityLabel} </li>
         <details>
              <summary>
@@ -445,7 +450,7 @@ After creating devices manually: an overview attribute: the serial number of the
                   <font color="#006400"><i><b>Screenshot of creation widget Timeseries table: Title=>Commands</b></i></font> (<b>click to open expanded view</b>)
               </summary> 
               <img src="/images/user-guide/integrations/teltonika/teltonika_dashboard_state_details_logs.png">
-          </details>        
+         </details>        
     </ul>    
     <li> state <b>uplinks:</b></li>
     <details>
@@ -478,13 +483,134 @@ After creating devices manually: an overview attribute: the serial number of the
 ## Service: "remote-integration-tcp" install and configuration steps
 
 ### Step 1.  Install service: "remote-integration-tcp"
- 
-[teltonika-tcp-intefration](https://github.com/nickAS21/remote-integration-tcp).  
+- Download the installation of the service and run remotely from the Thingsboard_pe
+
+[remote-integration-tcp](https://github.com/nickAS21/remote-integration-tcp.git). 
 
 ### Step 2.  Configuration service: "remote-integration-tcp"
 
-tb-remote-integration.yml
+Example configuration file for <b>"remote-integration-tcp".</b>
+<ol>
+    <li>The <b>path to the main file</b> should correspond to the “TCP Integration” value in the field: “Integration Class”. Default value: <b>org.thingsboard.integration.custom.server.TCPIntegration</b> (src/main/java/org/thingsboard/integration/custom/server/TCPIntegration.java).</li>
+    <li>routingKey: value from  “TCP Integration” </li>
+        {% highlight bash %}
+            integration:
+                routingKey: "${INTEGRATION_ROUTING_KEY:f340c97bdee97fa79ce69cdc3b2f50a2}"
+        {% endhighlight %}
+    <li>secret: value from  “TCP Integration” </li>
+        {% highlight bash %}
+            ...
+                secret: "${INTEGRATION_SECRET:3ezdnokj455v03wkzt44}"
+        {% endhighlight %}
+</ol>
+[the following code: <b>tb-remote-integration.yml</b>](/images/user-guide/integrations/teltonika/upLinkDecoder.txt)
 
+## Example of configuration over TCP (Teltonika FMB920)
+<details>
+     <summary>
+         <i><b>Example list of some commands (from FMB920 User Manual V0.25)</b></i> (click to open expanded view)
+     </summary> 
+     {% highlight bash %}
+         ...
+         "getinfo",
+         "getver",
+         "getstatus",
+         "getgps",
+         "getio",
+         "ggps",
+         "cpureset",
+         "getparam 2004",                        // Server gettings domen: my.org.ua 
+         "setparam 2004:my.thingsboard.io",      // Server settings domen: my.thingsboard.io
+         "getparam 2005",                        // Server gettings port: 1994             
+         "setparam 2005:1992",                   // Server settings port: 1992             
+         "getparam 2006"                         //  Server gettings pototokol: TCP - 0, UDP - 1
+         "setparam 2006:1"                       //  Server settings pototokol: UDP - 1
+         ...
+      {% endhighlight %}
+</details>  
+<ol>
+    <li><b>Sending</b> a request:</li>
+    {% highlight bash %}
+        getver, getinfo
+    {% endhighlight %}
+    <li><b>Receiving</b> a response to a request:</li>
+     {% highlight bash %}
+         getver  => "logs": "Downlink: getver Uplink: Ver:03.25.14_05 GPS:AXN_5.10_3333 Hw:FMB920 Mod:13 IMEI:359633100458590 Init:1970-1-1 0:0 Uptime:7202 MAC:001E42BD06FE SPC:1(0) AXL:1 OBD:0 BL:1.7 BT:4" 
+         getinfo => "logs": "Downlink: getinfo Uplink: RTC:2004/1/1 7:59 Init:1970/1/1 0:0 UpTime:6853s PWR:SoftReset RST:0 GPS:2 SAT:0 TTFF:0 TTLF:0 NOGPS:1:54 SR:0 FG:0 FL:10 SMS:0 REC:10000+ MD:1 DB:0"
+     {% endhighlight %}
+    <details>
+         <summary>
+             <font color="#006400"><i><b>Screenshot of sending a request and receiving a response to a request</b></i></font> (<b>click to open expanded view</b>)
+         </summary> 
+         <img src="/images/user-guide/integrations/teltonika/example_list_some_commands.png">
+     </details> 
+     <li>If a <b>request</b> from the device: IMEV number is sent an answer == <font color="#0031ff">"0x01"</font> in bytes, then we get an answer about the state of all the <b>parameters</b> listed in the <b>I / O</b></li>
+      <details>
+           <summary>
+               Example <b>Receiving</b> a response to a <font color="#36abb5">request</font> : <font color="#0031ff">1</font> (click to open expanded view)
+           </summary> 
+                 {% highlight bash %}
+                   "telemetry": {
+                        "ts": 1072944932000,
+                        "values": {
+                            "priority": "Low",
+                            "longitude": "0",
+                            "latitude": "0",
+                            "altitude": 0,
+                            "angle": 0,
+                            "satellites": 0,
+                            "speed": 0,
+                            "eventIoId": 0,
+                            "Ignition": 1,
+                            "Movement": 1,
+                            "Data Mode": 1,
+                            "GSM Signal": "Good Signal",
+                            "Sllep Mode": 0,
+                            "GNSS Status": "Activated",
+                            "Digital Input 1": 0,
+                            "Digital Output 1": 0,
+                            "BLE Battery #1 (%)": 0,
+                            "BLE Battery #2 (%)": 0,
+                            "BLE Battery #3 (%)": 0,
+                            "BLE Battery #4 (%)": 0,
+                            "Internel Battery Status %": 83,
+                            "GNSS PDOP": 0,
+                            "GNSS NDOP": 0,
+                            "External Voltage mV": 12019,
+                            "Speed km/h": 0,
+                            "GSM Cell ID": 27216,
+                            "GSM Area Code": 1821,
+                            "Battery Voltage mV": 3934,
+                            "Battery Current mA": 0,
+                            "Analog Input 1": 131,
+                            "FC AVG By GPS (l/h*100)": 9999,
+                            "Axis X (mG)": -15,
+                            "Axis Y (mG)": 3,
+                            "Axis Z (mG)": 1003,
+                            "Eco score": 0,
+                            "BLE Temp #1 (C)": 0,
+                            "BLE Temp #2 (C)": 0,
+                            "BLE Temp #3 (C)": 0,
+                            "BLE Temp #4 (C)": 0,
+                            "BLE Humidity #1 (%RH)": 0,
+                            "BLE Humidity #2 (%RH)": 0,
+                            "BLE Humidity #3 (%RH)": 0,
+                            "BLE Humidity #4 (%RH)": 0,
+                            "Actual Operator Code": 25501,
+                            "Trip Odometr (m)": 0,
+                            "Total Odometr (m)": 194928,
+                            "FC By GPS (ml)": 129178,
+                            "Pulse Counter DIN1": 0,
+                            "ICCID1": 893800180,
+                            "User ID": 0,
+                            "ICCID4": 402338912
+                        }
+                    }      
+                {% endhighlight %}
+       </details>    
+     
+
+ </ol>
 
 ## Next steps
 
