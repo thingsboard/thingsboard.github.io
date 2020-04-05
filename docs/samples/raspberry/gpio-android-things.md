@@ -107,7 +107,7 @@ adb shell am start -n "org.thingsboard.sample.gpiocontrol/org.thingsboard.sample
 
 ## Data visualization
 
-In order to simplify this guide, we have included "Raspberry PI GPIO Demo Dashboard" to the [demo data](/docs/samples/demo-account/#dashboards) that is available in each Thingboard installation. 
+In order to simplify this guide, we have included "Raspberry PI GPIO Demo Dashboard" to the [demo data](/docs/samples/demo-account/#dashboards) that is available in each ThingsBoard installation. 
 Of course, you can modify this dashboard: tune, add, delete widgets, etc.
 You can access this dashboard by logging in as a tenant administrator.
 
