@@ -77,7 +77,7 @@ python gpio.py
 
 ## Data visualization
 
-In order to simplify this guide, we have included "Raspberry PI GPIO Demo Dashboard" to the [demo data](/docs/samples/demo-account/#dashboards) that is available in each Thingboard installation. 
+In order to simplify this guide, we have included "Raspberry PI GPIO Demo Dashboard" to the [demo data](/docs/samples/demo-account/#dashboards) that is available in each ThingsBoard installation. 
 You still can modify this dashboard: tune, add, delete widgets, etc.
 You can access this dashboard by logging in as a tenant administrator. Use
 
