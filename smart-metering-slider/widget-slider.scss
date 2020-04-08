@@ -33,7 +33,6 @@
       position: relative;
       &:hover {
         cursor: pointer;
-        //width: 240px;
         color: #fff;
         span {
           left: 0;
@@ -42,14 +41,12 @@
       span {
         padding: 0 30px 0 15px;
         position: absolute;
-        //left: -210px;
         transition: left .4s ease;
       }
       i {
         position: absolute;
         top: 50%;
         right: 20px;
-        //transform: translateY(-50%);
         font-size: 1.5em;
       }
     }
