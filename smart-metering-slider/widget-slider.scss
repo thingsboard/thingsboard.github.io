@@ -1,0 +1,66 @@
+@import url('http://weloveiconfonts.com/api/?family=entypo');
+
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+
+.widget-slider {
+  position: fixed;
+  z-index: 100;
+  top: 15%;
+  right: 0;
+  margin: 0 !important;
+  padding: 0 !important;
+  cursor: pointer;
+  max-height: 60px;
+  li {
+    list-style: none !important;
+    margin: 0 !important;
+    a {
+      font-family: "Quicksand", sans-serif;
+      font-weight: 600;
+      display: block;
+      margin-right: -2px;
+      height: 60px;
+      width: 12vw;
+      min-width: 220px;
+      border-radius: 25px 0 0 25px;
+      border: 2px solid #000;
+      background: #FFF;
+      margin-bottom: 1em;
+      transition: all .4s ease;
+      color: #fff;
+      text-decoration: none;
+      line-height: 60px;
+      position: relative;
+      &:hover {
+        cursor: pointer;
+        //width: 240px;
+        color: #fff;
+        span {
+          left: 0;
+        }
+      }
+      span {
+        padding: 0 30px 0 15px;
+        position: absolute;
+        //left: -210px;
+        transition: left .4s ease;
+      }
+      i {
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        //transform: translateY(-50%);
+        font-size: 1.5em;
+      }
+    }
+    .orderThisCase {
+      background: rgba(#22A7F0, 1);
+      border-color: #22A7F0;
+      color: #FFF;
+      &:hover {
+        background: #F53E05;
+        border-color: #F53E05;
+      }
+    }
+  }
+}
