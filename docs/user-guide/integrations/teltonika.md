@@ -248,7 +248,7 @@ After creating devices manually: an overview attribute: the serial number of the
    <img src="/images/user-guide/integrations/teltonika/teltonika_dashboard_example.png">
 </details>
 
-[Example:  Dashboard in json format](/docs/user-guide/resources/teltonika/teltonika_tcp_new.json)
+[Example:  Dashboard in json format](/docs/user-guide/resources/teltonika/teltonika_tcp.json)
 
 <details>
   <summary>
@@ -501,9 +501,17 @@ Example configuration file for <b>"remote-integration-tcp".</b>
         {% highlight bash %}
             ...
                 secret: "${INTEGRATION_SECRET:3ezdnokj455v03wkzt44}"
+        {% endhighlight %}    
+     <li>connect remote-integration with ThingsBoard integration on cloud.thingsboard.io” </li>
+        {% highlight bash %}
+            ...
+                rpc:
+                  #  Cloud...
+                  host: "${PRC_HOST:cloud.thingsboard.io}"
+                  port: "${RPC_PORT:9090}""
         {% endhighlight %}
 </ol>
-[the following code: <b>tb-remote-integration.yml</b>](/images/user-guide/integrations/teltonika/upLinkDecoder.txt)
+[the following code: <b>tb-remote-integration.yml</b>](/images/user-guide/integrations/teltonika/tb-remote-integration.yml)
 
 ## Example of configuration over TCP (Teltonika FMB920)
 <details>
