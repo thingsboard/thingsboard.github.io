@@ -1,0 +1,100 @@
+
+[type=radio] {
+    display: none;
+}
+
+#slider {
+    height: 35.8vw;
+    position: relative;
+    perspective: 900px;
+    transform-style: preserve-3d;
+    background-color: unset;
+    margin: 75px 0 35px;
+}
+
+#slider label {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    width: 70%;
+    height: 85%;
+    border-radius: 4px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    cursor: pointer;
+    transition: transform 0.4s ease;
+}
+
+#s1:checked ~ #slide4, #s2:checked ~ #slide5,
+#s3:checked ~ #slide1, #s4:checked ~ #slide2,
+#s5:checked ~ #slide3 {
+    box-shadow: 0 9px 15px 0 rgba(0,0,0,.37), 0 6px 6px 0 rgba(0,0,0,0.3);
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s1:checked ~ #slide5, #s2:checked ~ #slide1,
+#s3:checked ~ #slide2, #s4:checked ~ #slide3,
+#s5:checked ~ #slide4 {
+    box-shadow: 0 12px 20px 0 rgba(0,0,0,.3), 0 10px 10px 0 rgba(0,0,0,0.3);
+    transform: translate3d(-15%,0,-100px);
+}
+
+#s1:checked ~ #slide1, #s2:checked ~ #slide2,
+#s3:checked ~ #slide3, #s4:checked ~ #slide4,
+#s5:checked ~ #slide5 {
+    box-shadow: 0 16px 30px 0 rgba(0,0,0,.3), 0 15px 9px 0 rgba(0,0,0,0.3);
+    background-color: inherit;
+    transform: translate3d(0,0,0);
+    cursor: default;
+}
+
+#s1:checked ~ #slide2, #s2:checked ~ #slide3,
+#s3:checked ~ #slide4, #s4:checked ~ #slide5,
+#s5:checked ~ #slide1 {
+    box-shadow: 0 12px 20px 0 rgba(0,0,0,.3), 0 10px 10px 0 rgba(0,0,0,0.3);
+    transform: translate3d(15%,0,-100px);
+}
+
+#s1:checked ~ #slide3, #s2:checked ~ #slide4,
+#s3:checked ~ #slide5, #s4:checked ~ #slide1,
+#s5:checked ~ #slide2 {
+    box-shadow: 0 9px 15px 0 rgba(0,0,0,.37), 0 6px 6px 0 rgba(0,0,0,0.3);
+    transform: translate3d(30%,0,-200px);
+}
+
+#slide1 {
+    background: url("/images/iot-use-cases/customer-admin-dashboard-drill.jpg") 100% 100% no-repeat;
+    background-size: contain;
+}
+#slide2 {
+    background: url("/images/iot-use-cases/end-user-dashboard.jpg") 100% 100% no-repeat;
+    background-size: contain;
+}
+#slide3 {
+    background: url("/images/iot-use-cases/smart-metering-root-state.jpg") 100% 100% no-repeat;
+    background-size: contain;
+}
+#slide4 {
+    background: url("/images/iot-use-cases/hotel-state.jpg") 100% 100% no-repeat;
+    background-size: contain;
+}
+#slide5 {
+    background: url("/images/iot-use-cases/customer-admin-dashboard-root.jpg") 100% 100% no-repeat;
+    background-size: contain;
+}
+
+.slide_description {
+    display: none;
+    position: absolute;
+    background: inherit white;
+    font-size: 13px !important;
+    bottom: -45px;
+    text-align: center;
+}
+
+#s1:checked ~ #slide1 .slide_description , #s2:checked ~ #slide2 .slide_description,
+#s3:checked ~ #slide3 .slide_description, #s4:checked ~ #slide4 .slide_description,
+#s5:checked ~ #slide5 .slide_description {
+    display: block;
+}

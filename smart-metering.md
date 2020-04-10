@@ -5,6 +5,13 @@ description: IoT smart metering solutions and smart meter data visualization wit
 horizontaltoc: "true"
 
 ---
+<link rel="stylesheet" href="/smart-metering-slider/widget-slider.css">
+
+<ul class="widget-slider">
+  <li>
+    <a href="/docs/contact-us/" class="orderThisCase"><span>ORDER THIS USE CASE</span></a>
+  </li>
+</ul>
 
 Traditionally being a part of the electrical grid infrastructure, a smart meter is an electronic device for remote monitoring and recording of energy consumption. However, in the age of IoT and IoT platforms, standalone smart meters give way to more advanced and multi-purpose smart metering solutions, which offer a broader range of remote monitoring and alerting capabilities as well as provide powerful data analytics tools to help companies and individual users optimize their energy, water, gas, fuel and other resources consumption.  
 
@@ -16,23 +23,35 @@ Another critical advantage is, definitely, the cost of smart metering implementa
 
 ThingsBoard Team has prepared out-of-the-box Smart Metering application designed to be used by the platform administrator and non-technical customer users and operators.
 
-//TO DO SLIDESHOW 
-![Smart metering screen](/images/iot-use-cases/smart-metering-root-state.jpg) 
-ThingsBoard delivers and stores the data from smart meters in reliable and fault-tolerant way, visualized data depends on end-user permissions defined by administrator. The top-level user may see all info about Entites.
+<link rel="stylesheet" href="/smart-metering-slider/slider.css">
 
-![Smart metering screen](/images/iot-use-cases/hotel-state.jpg)  
+<section id="slider">
+  <input type="radio" name="slider" id="s1">
+  <input type="radio" name="slider" id="s2">
+  <input type="radio" name="slider" id="s3" checked>
+  <input type="radio" name="slider" id="s4">
+  <input type="radio" name="slider" id="s5">
+  <label for="s1" id="slide1">
+  <p class="slide_description">With this use case you get pre-configured multi-state dashboard, pre-configured rules and alarms. No need to code.
+    The one can populate thresolds and conditions in order to receive or send notifications.</p>
+  </label>
+  <label for="s2" id="slide2">
+  <p class="slide_description">Simple End users do not have the ability to manage the system.
+    With ReadOnly role they can view the dashboard and set thresholds only.</p>
+  </label>
+  <label for="s3" id="slide3">
+  <p class="slide_description">ThingsBoard delivers and stores the data from smart meters in reliable and fault-tolerant way, 
+  administrator provides permission to visualized data. The top-level admin user see all info about Entites.</p>
+  </label>
+  <label for="s4" id="slide4">
+   <p class="slide_description">In this use case, the data is aggregated for each level of hierarchy. 
+  Facility manager of particular asset has access to related entities' data.</p>
+  </label>
+  <label for="s5" id="slide5">
+  <p class="slide_description">All Customer entites are separated from each other. The Administrator of a Customer is able to manage Entities (e.g. create Users, add  devices) and respective data that belongs to particular Customer only.</p>
+  </label>
+</section>
 
-![Smart metering screen](/images/iot-use-cases/customer-admin-dashboard-root.jpg) 
-The Administrator of particular customer is able to manage Entities (e.g. create Users, add  devices) and respective data that belongs to particular customer only. All Customer entites are separated from each other.    
-
-![Smart metering screen](/images/iot-use-cases/customer-admin-dashboard-drill.jpg) 
-The Administrator of particular customer is able to have pre-configured multi-state dashboard and create own dashboards.
-
-![Smart metering screen](/images/iot-use-cases/end-user-dashboard.jpg) 
-No Admin user does not ahve the ability to manage the system. With ReadOnly role the can view the dashboard only. 
-
-### Key clauses
- 
 This application is basically an IoT solution blueprint with the following features:
 
 - Reliable and fault tolerant data collection for your smart water and smart energy meters;
