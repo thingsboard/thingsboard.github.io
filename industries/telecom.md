@@ -20,7 +20,7 @@ description:
         </h4>    
         <p>
         We have choose to use ThingsBoard to be able easily and quickly deliver various proof-of-concepts, product prototypes and to test new devices with comes usually “app-less”. 
-        With ThingBoard we are able finish such tasks with visually attractive result with sleek user interface and done in nearly no time.
+        With ThingsBoard we are able finish such tasks with visually attractive result with sleek user interface and done in nearly no time.
         </p> 
         <p>
         In comparison to other IoT platforms and tools we value the most the easy to use approach without compromising functionality, very logical structure and in-build support of various technologies and protocols.

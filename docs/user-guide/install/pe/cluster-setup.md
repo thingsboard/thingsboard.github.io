@@ -49,13 +49,13 @@ Populate basic information about yourself and click "Get Content"
 Make sure your have [logged in](https://docs.docker.com/engine/reference/commandline/login/) to docker hub using command line.
 
 ```bash
-docker pull store/thingsboard/tb-pe-node:2.4.1PE
-docker pull store/thingsboard/tb-pe-web-ui:2.4.1PE
-docker pull store/thingsboard/tb-pe-web-report:2.4.1PE
-docker pull store/thingsboard/tb-pe-js-executor:2.4.1PE
-docker pull store/thingsboard/tb-pe-http-transport:2.4.1PE
-docker pull store/thingsboard/tb-pe-mqtt-transport:2.4.1PE
-docker pull store/thingsboard/tb-pe-coap-transport:2.4.1PE
+docker pull store/thingsboard/tb-pe-node:2.4.3PE
+docker pull store/thingsboard/tb-pe-web-ui:2.4.3PE
+docker pull store/thingsboard/tb-pe-web-report:2.4.3PE
+docker pull store/thingsboard/tb-pe-js-executor:2.4.3PE
+docker pull store/thingsboard/tb-pe-http-transport:2.4.3PE
+docker pull store/thingsboard/tb-pe-mqtt-transport:2.4.3PE
+docker pull store/thingsboard/tb-pe-coap-transport:2.4.3PE
 ```
 
 ## Step 3. Clone ThingsBoard PE Docker Compose scripts
@@ -109,6 +109,13 @@ In order to set database type change the value of `DATABASE` variable in `.env` 
 - `cassandra` - use Cassandra database;
 
 **NOTE**: According to the database type corresponding docker service will be deployed (see `docker-compose.postgres.yml`, `docker-compose.cassandra.yml` for details).
+
+Execute the following command to create log folders for the services and chown of these folders to the docker container users. 
+To be able to change user, **chown** command is used, which requires sudo permissions (script will request password for a sudo access): 
+
+`
+$ ./docker-create-log-folders.sh
+`
 
 Execute the following command to run installation:
 

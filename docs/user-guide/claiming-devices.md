@@ -17,7 +17,7 @@ Once device is claimed, the customer becomes its owner and customer users may ac
 
 ## Device Claiming scenarios
  
-ThingsBoard User can claim the device if he "knows" the device Name and Secret Key. 
+ThingsBoard User can claim the device if they "know" the device Name and Secret Key. 
 The Secret Key is optional, always has an expiration time and may also change over time. 
 
 The Secret Key may be provisioned in two different ways. 
@@ -34,7 +34,7 @@ ThingsBoard server stores Claiming Information for the duration of the validity 
 
 ![image](/images/user-guide/claiming-devices/device-side-key-diagram.png)
 
-Device may send Claiming Information to TB using all supported transport protocols. The message body have two parameters: **secretKey** and **durationMs**, which may be optionally specified. 
+Device may send Claiming Information to TB using all supported transport protocols. The message body has two parameters: **secretKey** and **durationMs**, which may be optionally specified. 
 The **secretKey** parameter adds security to the claiming process.
 The **durationMs** parameter determines the expiration of claiming time.
 In case the **secretKey** is not specified, the empty string as a default value is used.
@@ -44,7 +44,7 @@ In order to enable claiming devices feature a system parameter **security.claim.
 should be set to **true**, otherwise a server-side **claimingAllowed** attribute with the value **true** is obligatory for provisioned devices.
 
 Please see the Device API references to get the information about the message structure and topics/URLs to which to send the claiming messages.
-You can use the MQTT Gateway API that allows to initiate claiming of multiple devices per time as well.
+You can use the MQTT Gateway API that allows initiating claiming of multiple devices per time as well.
 
  - [MQTT Device API](/docs/reference/mqtt-api/#claiming-devices)
  - [CoAP Device API](/docs/reference/coap-api/#claiming-devices)
@@ -54,7 +54,7 @@ You can use the MQTT Gateway API that allows to initiate claiming of multiple de
 
 Once the Claiming Info is sent, device may display the Secret Key either in plain text or using the QR code. User should scan this key and use it to send the Claiming Request.
 Claiming Request consists of the device Name and Secret Key. You may use MAC address or other unique property as the device Name. 
-See instructions how to send the Claiming Request [here](/docs/user-guide/claiming-devices/#device-claiming-request).   
+See instructions how to send the Claiming Request [here](/docs/user-guide/claiming-devices/#device-claiming-api-request).   
 
 **Note:** The Secret Key may also be an empty string. This is useful if your device does not have any way to display the Secret Key. 
 For example, you may allow to claim device within 30 seconds after the claim button is pressed on the device. In this case user needs to know the device Name (MAC address, etc) only.
@@ -76,12 +76,30 @@ Once this is done, tenant admin can email those keys to the Customer, or put the
 In order to provision device Secret Key, Tenant Administrator should set server-side attribute "claimingData" with the following value:
 
 ```json
-{"secretKey": "YOUR_SECRET_KEY", "expirationTime": "1577836800000"}
+{"secretKey": "YOUR_SECRET_KEY", "expirationTime": "1640995200000"}
 ``` 
 
 , where 1577836800000 is an expiration time of the device Secret Key that is 01/01/2022 as a unix timestamp with milliseconds precision.
 
 Once server-side attribute is provisioned, Customer User may use [Claim Device](/docs/user-guide/claiming-devices/#device-claiming-widget) widget.  
+
+## Device Claiming Permissions in PE
+
+It is important to know that in case of the PE version the user that is trying to claim the specific device must have the necessary permissions to do so.
+In this case, the needed permission is the following:
+
+- **Resource: Device**
+- **Operation: Claim devices**
+
+Let's add the above permission for a custom claiming user group.
+
+First, we need to create a generic role:
+
+![image](/images/user-guide/claiming-devices/claiming-generic-role.png)
+
+And then assign that role for a user group:
+
+![image](/images/user-guide/claiming-devices/assign-claiming-role.png)
 
 ## Device Claiming Widget
 
@@ -105,7 +123,7 @@ This is useful if you have multiple assets and would like to relate your device 
 
 ## Device Claiming API Request
 
-The Claiming Request is send as a POST request to the following URL:
+The Claiming Request is sent as a POST request to the following URL:
 
 ```shell
 http(s)://host:port/api/customer/device/$DEVICE_NAME/claim

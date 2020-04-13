@@ -26,7 +26,7 @@ Different entities may have the following parameters:
 
 To create multiple entities at one time, you need to create a CSV file, where each line will be responsible for creating one entity with given parameters. <br/>
 If you don't need to add some settings for a particular entity, leave this cell empty.<br/> 
-There are two reserved parameters names: Name and Type, that have a predefined column type.
+There are three reserved parameters names: Name, Type and Label that have a predefined column type.
 
 ### Step 1: Select a file
 
