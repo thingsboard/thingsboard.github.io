@@ -69,23 +69,23 @@
 }
 
 #slide1 {
-    background: url("/images/iot-use-cases/customer-admin-dashboard-drill.jpg") 100% 100% no-repeat;
+    background: url("/images/iot-use-cases/customer-admin-dashboard-drill-min.png") 100% 100% no-repeat;
     background-size: contain;
 }
 #slide2 {
-    background: url("/images/iot-use-cases/end-user-dashboard.jpg") 100% 100% no-repeat;
+    background: url("/images/iot-use-cases/end-user-dashboard-min.png") 100% 100% no-repeat;
     background-size: contain;
 }
 #slide3 {
-    background: url("/images/iot-use-cases/smart-metering-root-state.jpg") 100% 100% no-repeat;
+    background: url("/images/iot-use-cases/smart-metering-root-state-min.png") 100% 100% no-repeat;
     background-size: contain;
 }
 #slide4 {
-    background: url("/images/iot-use-cases/hotel-state.jpg") 100% 100% no-repeat;
+    background: url("/images/iot-use-cases/hotel-state-min.png") 100% 100% no-repeat;
     background-size: contain;
 }
 #slide5 {
-    background: url("/images/iot-use-cases/customer-admin-dashboard-root.jpg") 100% 100% no-repeat;
+    background: url("/images/iot-use-cases/customer-admin-dashboard-root-min.png") 100% 100% no-repeat;
     background-size: contain;
 }
 
