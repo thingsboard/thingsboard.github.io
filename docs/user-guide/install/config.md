@@ -29,7 +29,7 @@ all application properties are located in the single file - **thingsboard.yml** 
 #### ThingsBoard Core Settings
 
 This is the main configuration file that contains configuration properties 
-for transports (HTTP, MQTT, CoAP), database (Cassandra), clustering (Zookeeper and gRPC), etc.
+for transports (HTTP, MQTT, CoAP), database (Cassandra, PostgreSQL, TimescaleDB), clustering (Zookeeper and gRPC), etc.
 The configuration file is written in YAML. 
 
 All configuration parameters have corresponding environment variable name and default value. In order to change configuration parameter you can simply change it's default value.
@@ -347,7 +347,10 @@ We will list only main configuration parameters below to avoid duplication of th
           <td>database.ts.type</td>
           <td>DATABASE_TS_TYPE</td>
           <td>sql</td>
-          <td>Database type for ThingsBoard timeseries data. Allowed values - <b>cassandra</b> OR <b>sql</b>. For hybrid mode, only this value should be <b>cassandra</b></td>
+          <td>Database type for ThingsBoard timeseries data. 
+          Allowed values - <b>cassandra</b>, <b>sql</b> OR <b>timescale</b>. For hybrid mode or for using PostgreSQL + TimescaleDB extension)
+          this value should be <b>cassandra</b> or <b>timescale</b> in accordance.
+          Please, note that in these cases the database type for ThingsBoard entities should be <b>sql</b></td>
       </tr>
       <tr>
           <td colspan="4"><span style="font-weight: bold; font-size: 24px;">Cassandra database parameters</span></td>
@@ -512,7 +515,19 @@ We will list only main configuration parameters below to avoid duplication of th
           <td>cassandra.query.ts_key_value_ttl</td>
           <td>TS_KV_TTL</td>
           <td>0</td>
-          <td>Time To Live (in seconds) for Cassandra Record. 0 - record is never expired.</td>
+          <td>Timeseries Time To Live (in seconds) for Cassandra Record. 0 - record is never expired.</td>
+      </tr>
+      <tr>
+          <td>cassandra.query.events_ttl</td>
+          <td>TS_EVENTS_TTL</td>
+          <td>0</td>
+          <td>Events(LC_EVENT, STATS) Time To Live (in seconds) for Cassandra Record. 0 - record is never expired.</td>
+      </tr>
+      <tr>
+          <td>cassandra.query.debug_events_ttl</td>
+          <td>DEBUG_EVENTS_TTL</td>
+          <td>604800</td>
+          <td>Debug Events(DEBUG_CONVERTER, DEBUG_INTEGRATION, DEBUG_RULE_NODE, DEBUG_RULE_CHAIN) Time To Live (in seconds) for Cassandra Record. 0 - record is never expired.</td>
       </tr>
       <tr>
           <td>cassandra.query.buffer_size</td>
@@ -575,19 +590,128 @@ We will list only main configuration parameters below to avoid duplication of th
           <td>Whether to print rate-limited tenant names when printing Cassandra query queue statistic</td>
       </tr>
       <tr>
-           <td colspan="4"><span style="font-weight: bold; font-size: 24px;">SQL database parameters</span></td>
+           <td colspan="4"><span style="font-weight: bold; font-size: 24px;">Common SQL database parameters</span></td>
       </tr>  
       <tr>
-          <td>sql.ts_inserts_executor_type</td>
-          <td>SQL_TS_INSERTS_EXECUTOR_TYPE</td>
-          <td>fixed</td>
-          <td>Specify executor service type used to perform timeseries insert tasks: <b>SINGLE</b> <b>FIXED</b> <b>CACHED</b></td>
+          <td>sql.attributes.batch_size</td>
+          <td>SQL_ATTRIBUTES_BATCH_SIZE</td>
+          <td>10000</td>
+          <td>Batch size for persisting attribute updates</td>
       </tr>
       <tr>
-          <td>sql.ts_inserts_fixed_thread_pool_size</td>
-          <td>SQL_TS_INSERTS_FIXED_THREAD_POOL_SIZE</td>
-          <td>10</td>
-          <td>Specify thread pool size for <b>FIXED</b> executor service type</td>
+          <td>sql.attributes.batch_max_delay</td>
+          <td>SQL_ATTRIBUTES_BATCH_MAX_DELAY_MS</td>
+          <td>100</td>
+          <td>Max timeout for attributes entries queue polling. Value set in milliseconds.</td>
+      </tr>
+      <tr>
+          <td>sql.attributes.stats_print_interval_ms</td>
+          <td>SQL_ATTRIBUTES_BATCH_STATS_PRINT_MS</td>
+          <td>10000</td>
+          <td>Interval in milliseconds for printing attributes updates statistic</td>
+      </tr>
+      <tr>
+          <td>sql.ts.batch_size</td>
+          <td>SQL_TS_BATCH_SIZE</td>
+          <td>10000</td>
+          <td>Batch size for persisting timeseries inserts</td>
+      </tr>
+      <tr>
+          <td>sql.ts.batch_max_delay</td>
+          <td>SQL_TS_BATCH_MAX_DELAY_MS</td>
+          <td>100</td>
+          <td>Max timeout for time-series entries queue polling. Value set in milliseconds.</td>
+      </tr>
+      <tr>
+          <td>sql.ts.stats_print_interval_ms</td>
+          <td>SQL_TS_BATCH_STATS_PRINT_MS</td>
+          <td>10000</td>
+          <td>Interval in milliseconds for printing timeseries insert statistic</td>
+      </tr>
+      <tr>
+        <td>sql.ts_latest.batch_size</td>
+        <td>SQL_TS_LATEST_BATCH_SIZE</td>
+        <td>10000</td>
+        <td>Batch size for persisting latest telemetry updates</td>
+      </tr>
+      <tr>
+        <td>sql.ts_latest.batch_max_delay</td>
+        <td>SQL_TS_LATEST_BATCH_MAX_DELAY_MS</td>
+        <td>100</td>
+        <td>Max timeout for latest telemetry entries queue polling. The value set in milliseconds.</td>
+      </tr>
+      <tr>
+          <td>sql.ts_latest.stats_print_interval_ms</td>
+          <td>SQL_TS_LATEST_BATCH_STATS_PRINT_MS</td>
+          <td>10000</td>
+          <td>Interval in milliseconds for printing latest telemetry updates statistic</td>
+      </tr>
+      <tr>
+          <td>sql.remove_null_chars</td>
+          <td>SQL_REMOVE_NULL_CHARS</td>
+          <td>true</td>
+          <td>Parameter to specify whether to remove null characters from strValue of attributes and timeseries before insert execution</td>
+      </tr>
+      <tr>
+          <td>sql.ttl.ts.enabled</td>
+          <td>SQL_TTL_TS_ENABLED</td>
+          <td>true</td>
+          <td>The parameter to specify whether to use TTL (Time To Live) for timeseries records.</td>
+      </tr>
+      <tr>
+          <td>sql.ttl.ts.execution_interval_ms</td>
+          <td>SQL_TTL_TS_EXECUTION_INTERVAL</td>
+          <td>86400000</td>
+          <td>The parameter to specify the period of execution TTL task for timeseries records. Value set in milliseconds. Default value corresponds to one day.</td>
+      </tr>
+      <tr>
+          <td>sql.ttl.ts.ts_key_value_ttl</td>
+          <td>SQL_TTL_TS_TS_KEY_VALUE_TTL</td>
+          <td>0</td>
+          <td>The parameter to specify system TTL(Time To Live) value for timeseries records. Value set in seconds. 0 - records are never expired. System TTL value can be overwritten for a particular Tenant, or parent Customer entity by setting the server-side attribute TTL to the corresponding Tenant or parent Customer entity. 
+              Please, note that the value should be set as long value, otherwise the TTL will be used from the higher level(Tenant or System).</td>
+      </tr>
+      <tr>
+          <td>sql.ttl.events.enabled</td>
+          <td>SQL_TTL_EVENTS_ENABLED</td>
+          <td>true</td>
+          <td>The parameter to specify whether to use TTL (Time To Live) for events records.</td>
+      </tr>
+      <tr>
+        <td>sql.ttl.events.execution_interval_ms</td>
+        <td>SQL_TTL_EVENTS_EXECUTION_INTERVAL</td>
+        <td>86400000</td>
+        <td>The parameter to specify the period of execution TTL task for events records. Value set in milliseconds. Default value corresponds to one day.</td>
+      </tr>
+      <tr>
+        <td>sql.ttl.events.events_ttl</td>
+        <td>SQL_TTL_EVENTS_EVENTS_TTL</td>
+        <td>0</td>
+            <td>The parameter to specify TTL(Time To Live) value for Events(LC_EVENT, STATS) records. Value set in seconds. 0 - records are never expired.</td>
+      </tr>
+      <tr>
+         <td>sql.ttl.events.debug_events_ttl</td>
+         <td>SQL_TTL_EVENTS_DEBUG_EVENTS_TTL</td>
+         <td>604800</td>
+         <td>The parameter to specify TTL(Time To Live) value for Debug Events(DEBUG_CONVERTER, DEBUG_INTEGRATION, DEBUG_RULE_NODE, DEBUG_RULE_CHAIN) records. Value set in seconds. 0 - records are never expired. Default value corresponds to one week.</td>
+      </tr>
+      <tr>
+           <td colspan="4"><span style="font-weight: bold; font-size: 24px;">PostgreSQL database parameters</span></td>
+      </tr>  
+      <tr>
+          <td>sql.postgres.ts_key_value_partitioning</td>
+          <td>SQL_POSTGRES_TS_KV_PARTITIONING</td>
+          <td>MONTHS</td>
+          <td>Parameter to specify partitioning size for timestamp key-value storage. Allowed values <b>DAYS</b>, <b>MONTHS</b>, <b>YEARS</b>, <b>INDEFINITE</b>. In case of <b>INDEFINITE</b> - timeseries data partitioning is disabled. Please, note that this value can be set only once.</td>
+      </tr>
+      <tr>
+           <td colspan="4"><span style="font-weight: bold; font-size: 24px;">TimescaleDB database parameters</span></td>
+      </tr>  
+      <tr>
+           <td>sql.timescale.chunk_time_interval</td>
+          <td>SQL_TIMESCALE_CHUNK_TIME_INTERVAL</td>
+          <td>604800000</td>
+          <td>The parameter to specify the interval size for data chunks storage. Value set in milliseconds. Default value corresponds to one week. Please, note that this value can be set only once.</td>
       </tr>
       <tr>
           <td colspan="4"><span style="font-weight: bold; font-size: 24px;">Actor system parameters</span></td>
@@ -835,14 +959,14 @@ We will list only main configuration parameters below to avoid duplication of th
       <tr>
           <td>spring.jpa.database-platform</td>
           <td>SPRING_JPA_DATABASE_PLATFORM</td>
-          <td>org.hibernate.dialect.HSQLDialect</td>
-          <td>Database SQL dialect for Spring JPA - <b>org.hibernate.dialect.HSQLDialect</b> or <b>org.hibernate.dialect.PostgreSQLDialect</b></td>
+          <td>org.hibernate.dialect.PostgreSQLDialect</td>
+          <td>Database SQL dialect for Spring JPA - <b>org.hibernate.dialect.PostgreSQLDialect</b> or <b>org.hibernate.dialect.HSQLDialect</b></td>
       </tr>
       <tr>
           <td>spring.datasource.driverClassName</td>
           <td>SPRING_DRIVER_CLASS_NAME</td>
-          <td>org.hsqldb.jdbc.JDBCDriver</td>
-          <td>Database driver for Spring JPA - <b>org.hsqldb.jdbc.JDBCDriver</b> or <b>org.postgresql.Driver</b></td>
+          <td>org.postgresql.Driver</td>
+          <td>Database driver for Spring JPA - <b>org.postgresql.Driver</b> or <b>org.hsqldb.jdbc.JDBCDriver</b></td>
       </tr>
       <tr>
           <td>spring.datasource.url</td>
@@ -861,6 +985,14 @@ We will list only main configuration parameters below to avoid duplication of th
           <td>SPRING_DATASOURCE_PASSWORD</td>
           <td></td>
           <td>Database password</td>
+      </tr>
+      <tr>
+          <td>spring.datasource.hikari.maximumPoolSize</td>
+          <td>SPRING_DATASOURCE_MAXIMUM_POOL_SIZE</td>
+          <td>5</td>
+          <td>This property allows the number of connections in the pool to increase as demand increases. 
+                          At the same time, the property ensures that the pool doesn't grow to the point of exhausting a system's resources,
+                           which ultimately affects an application's performance and availability.</td>
       </tr>
       <tr>
           <td colspan="4"><span style="font-weight: bold; font-size: 24px;">Audit log parameters</span></td>
