@@ -1,0 +1,220 @@
+{
+  "ruleChain": {
+    "additionalInfo": null,
+    "name": "Synchronization Rule Chain",
+    "firstRuleNodeId": null,
+    "root": false,
+    "debugMode": false,
+    "configuration": null
+  },
+  "metadata": {
+    "firstNodeIndex": null,
+    "nodes": [
+      {
+        "additionalInfo": {
+          "layoutX": 655,
+          "layoutY": 555
+        },
+        "type": "org.thingsboard.rule.engine.filter.TbJsFilterNode",
+        "name": "Filter Script",
+        "debugMode": true,
+        "configuration": {
+          "jsScript": "return metadata.ss_state === 'on';"
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 922,
+          "layoutY": 553
+        },
+        "type": "org.thingsboard.rule.engine.transform.TbTransformMsgNode",
+        "name": "Off State Script",
+        "debugMode": true,
+        "configuration": {
+          "jsScript": "var newMsg = {};\nnewMsg.state = 'off';\n\nreturn {\n    msg: newMsg,\n    metadata: metadata,\n    msgType: 'POST_ATTRIBUTES_REQUEST'\n};"
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 587,
+          "layoutY": 298
+        },
+        "type": "org.thingsboard.rule.engine.transform.TbTransformMsgNode",
+        "name": "On State Script With Timeout",
+        "debugMode": true,
+        "configuration": {
+          "jsScript": "var newMsg = {};\nnewMsg.state = 'on';\n\nsleepFor(7000);\n\nfunction sleepFor(sleepDuration) {\n    var now = new Date().getTime();\n    while (new Date().getTime() < now + sleepDuration) {}\n}\n\nreturn {\n    msg: newMsg,\n    metadata: metadata,\n    msgType: 'POST_ATTRIBUTES_REQUEST'\n};"
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 401,
+          "layoutY": 552
+        },
+        "type": "org.thingsboard.rule.engine.action.TbLogNode",
+        "name": "Failure Logger",
+        "debugMode": true,
+        "configuration": {
+          "jsScript": "return 'Failed message:\\n' + JSON.stringify(msg) + '\\nIncoming metadata:\\n' + JSON.stringify(metadata);"
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 906,
+          "layoutY": 373
+        },
+        "type": "org.thingsboard.rule.engine.telemetry.TbMsgAttributesNode",
+        "name": "Save Attributes",
+        "debugMode": true,
+        "configuration": {
+          "scope": "SERVER_SCOPE"
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 33,
+          "layoutY": 235
+        },
+        "type": "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode",
+        "name": "Generator",
+        "debugMode": false,
+        "configuration": {
+          "msgCount": 1,
+          "periodInSeconds": 1,
+          "originatorId": "aab2bd90-8614-11ea-80a1-a7a96773bb43",
+          "originatorType": "DEVICE",
+          "jsScript": "var msg = {\n    temp: 21\n};\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn {\n    msg: msg,\n    metadata: metadata,\n    msgType: msgType\n};"
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 292,
+          "layoutY": 389
+        },
+        "type": "org.thingsboard.rule.engine.filter.TbJsFilterNode",
+        "name": "Filter By Temperature",
+        "debugMode": true,
+        "configuration": {
+          "jsScript": "return msg.temp > 20;"
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 32,
+          "layoutY": 338
+        },
+        "type": "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode",
+        "name": "Generator",
+        "debugMode": false,
+        "configuration": {
+          "msgCount": 1,
+          "periodInSeconds": 2,
+          "originatorId": "aab2bd90-8614-11ea-80a1-a7a96773bb43",
+          "originatorType": "DEVICE",
+          "jsScript": "var msg = {\n    temp: 19\n};\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn {\n    msg: msg,\n    metadata: metadata,\n    msgType: msgType\n};"
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 1132,
+          "layoutY": 460
+        },
+        "type": "org.thingsboard.rule.engine.action.TbLogNode",
+        "name": "Success Logger",
+        "debugMode": true,
+        "configuration": {
+          "jsScript": "return 'Incoming message:\\n' + JSON.stringify(msg) + '\\nIncoming metadata:\\n' + JSON.stringify(metadata);"
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 589,
+          "layoutY": 436
+        },
+        "type": "org.thingsboard.rule.engine.metadata.TbGetAttributesNode",
+        "name": "Originator Attributes",
+        "debugMode": true,
+        "configuration": {
+          "clientAttributeNames": [],
+          "sharedAttributeNames": [],
+          "serverAttributeNames": [
+            "state"
+          ],
+          "latestTsKeyNames": [],
+          "tellFailureIfAbsent": true,
+          "getLatestValueWithTs": false
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 276,
+          "layoutY": 284
+        },
+        "type": "org.thingsboard.rule.engine.flow.TbCheckpointNode",
+        "name": "CheckPoint",
+        "debugMode": true,
+        "configuration": {
+          "queueName": "SequentialByOriginator"
+        }
+      }
+    ],
+    "connections": [
+      {
+        "fromIndex": 0,
+        "toIndex": 1,
+        "type": "True"
+      },
+      {
+        "fromIndex": 1,
+        "toIndex": 4,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 2,
+        "toIndex": 4,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 4,
+        "toIndex": 8,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 5,
+        "toIndex": 10,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 6,
+        "toIndex": 9,
+        "type": "False"
+      },
+      {
+        "fromIndex": 6,
+        "toIndex": 2,
+        "type": "True"
+      },
+      {
+        "fromIndex": 7,
+        "toIndex": 10,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 9,
+        "toIndex": 3,
+        "type": "Failure"
+      },
+      {
+        "fromIndex": 9,
+        "toIndex": 0,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 10,
+        "toIndex": 6,
+        "type": "Success"
+      }
+    ],
+    "ruleChainConnections": null
+  }
+}

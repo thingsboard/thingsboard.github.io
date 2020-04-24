@@ -315,6 +315,14 @@
       subtitle: Connect to external brokers and send MQTT data stream
       keys: mqtt connect
       pe: true
+    - path: /docs/user-guide/rule-engine-2-5/tutorials/queues-for-synchronization/
+      title: Using queues for synchronization
+      subtitle: Learn how to use Rule Engine 2.5 queues for message processing synchronization.
+      pe: false
+    - path: /docs/user-guide/rule-engine-2-5/tutorials/queues-for-message-reprocessing/
+      title: Using queues for message reprocessing
+      subtitle: Learn how to use Rule Engine 2.5 queues for message reprocessing in case of failure or timeout.
+      pe: false
 - title: IoT Data analytics
   subtitle: Learn how to use rule engine to perform basic analytics tasks.
   id: DataAnalytics
