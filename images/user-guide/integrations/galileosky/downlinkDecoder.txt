@@ -1,0 +1,78 @@
+    var lenPacketStart = 26;
+    var result = setPayload();
+
+    function setPayload() {
+        if (msg.hasOwnProperty('payload') && metadata['payload'] !== null) {
+            return getPayload();
+        }
+        return null;
+    }
+
+    function getPayload() {
+        var rez = {
+            contentType: "JSON",
+            data:  getDataHexMany(),
+            metadata: {
+                serialNumber: metadata['cs_serialNumber'],
+                deviceName: metadata['originatorName'],
+                payload:  getPayloadTrim()
+            }
+        };
+        return rez;
+    }
+
+    function convertToHex(str) {
+        var hex = '';
+        for(var i=0;i<str.length;i++) {
+            hex += ''+str.charCodeAt(i).toString(16);
+        }
+        return hex;
+    }
+
+    function convertToHexFixLen(str, len){
+        var strHex = len +str.toString(16);
+        return strHex.substring(strHex.length - len.length);
+    }
+
+    function getDataHexMany() {
+        var dataArrays = msg.payload.split(",");
+        var data = "";
+        for (var i = 0; i < dataArrays.length; i ++) {
+            data += (getDataHexOneForMany(dataArrays[i].trim()) + ",")
+        }
+        data = data.substring(0, data.lastIndexOf(","));
+
+        return data;
+
+    }
+
+    function getDataHexOneForMany(str) {
+        var lenCommand = str.length;
+        var lenPacket = lenPacketStart + lenCommand;
+        var lenCommandHex = convertToHexFixLen(lenCommand, "00");
+        var lenPacketHex = hexStringToStringRev(convertToHexFixLen(lenPacket, "0000"));
+        var serialNumberHex = convertToHex(metadata['cs_serialNumber']);
+        var commandHex = convertToHex(str);
+        var dataHex = "01" + lenPacketHex  + "03" + serialNumberHex + "04" + "0000" + "E0" + "00000000" + "E1" + lenCommandHex + commandHex;
+        return dataHex;
+    }
+
+    function hexStringToStringRev(str) {
+        var strRev = "";
+        for (var i = (str.length - 2); i >= 0; i -= 2) {
+            strRev += str.substring(i, i + 2);
+        }
+        return strRev;
+    }
+
+    function getPayloadTrim () {
+        var dataArrays = msg.payload.split(",");
+        var data = "";
+        for (var i = 0; i < dataArrays.length; i ++) {
+            data += (dataArrays[i].trim() + ",")
+        }
+        data = data.substring(0, data.lastIndexOf(","));
+        return data;
+    }
+
+    return result;

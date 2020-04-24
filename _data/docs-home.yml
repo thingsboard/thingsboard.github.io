@@ -120,6 +120,9 @@ toc:
   - title: Teltonika TCP Integration
     path: /docs/user-guide/integrations/teltonika/
     new: true
+  - title: Galileosky TCP Integration
+    path: /docs/user-guide/integrations/galileosky/
+    new: true
   - title: AWS Kinesis
     path: /docs/user-guide/integrations/aws-kinesis/
   - title: IBM Watson

@@ -1,0 +1,1962 @@
+    var constants = {
+        'tag':
+            {
+                "00": {
+                    "type": 1,          // attributes
+                    "name": "Unsent data",
+                    "len": 1,
+                    "value": {
+                        0: "no",
+                        1: "yes"
+                    }
+                },
+                "01": {
+                    "type": 1,
+                    "name": "Hardware version",
+                    "len": 1,
+                    "valueType": "Unsigned integer"
+                },
+                "02": {
+                    "type": 1,
+                    "name": "Firmware version",
+                    "len": 1,
+                    "valueType": "Unsigned integer"
+                },
+                "03": {
+                    "type": 1,
+                    "name": "IMEI",
+                    "len": 15,
+                    "valueType": "String"
+                },
+                "04": {
+                    "type": 1,
+                    "name": "Device number",
+                    "len": 2,
+                    "valueType": "Unsigned integer"
+                },
+                "10": {
+                    "type": 2,                      // telemetry
+                    "name": "Number of an archive record",
+                    "len": 2,
+                    "valueType": "Unsigned integer"
+                },
+                "20": {
+                    "len": 4,
+                    "valueType": "function",
+                    "function": getDateTimeResponse,
+                    "functionValue": {
+                        1: "Date and time (ms)",
+                        2: "Date and time"
+                    }
+                },
+                "30": {
+                    "type": 2,
+                    "len": 9,
+                    "valueType": "function",
+                    "function": getCoordinates,
+                    "functionValue": {
+                        "0_0_3": "Number of satellites",
+                        "0_4_7": {
+                            "name": "Coordinates source",
+                            0: "GLONASS/GPS module is a source",
+                            2: "Cellular base stations are a source",
+                            3: "Coordinates are incorrect"
+                        },
+                        "1_4": "latitude",
+                        "5-9": "longitude"
+                    }
+                },
+                "33": {
+                    "type": 2,
+                    "len": 4,
+                    "valueType": "function",
+                    "function": getSpeed,
+                    "functionValue": {
+                        "0_1": "Speed (km/h)",
+                        "2_3": "Direction in degrees"
+                    }
+                },
+                "34": {
+                    "type": 2,
+                    "name": "Height (m)",
+                    "len": 2,
+                    "valueType": "Signed integer"
+                },
+                "35": {
+                    "type": 2,
+                    "name": "Position error",
+                    "len": 1,
+                    "valueType": "function",
+                    "function": getPositioningError,
+                    "functionValue": {
+                        0: "HDOP",
+                        2: "Base stations (m)",
+                        3: "Coordinates are incorrect"
+                    }
+                },
+                "40": {
+                    "type": 2,
+                    "len": 2,
+                    "valueType": "function",
+                    "function": getStatusDevice,
+                    "functionValue":
+                        {
+                            0: {
+                                "name": "Status device: vibration level",
+                                0: "corresponds to parking",
+                                1: "corresponds to driving"
+                            },
+                            1: {
+                                "name": "Status device: incline angle",
+                                0: "does not exceed the allowable one",
+                                1: "exceeds the allowable one"
+                            },
+                            2: {
+                                "name": "Status device: iButton keys",
+                                0: "none of the trusted iButton keys are connected",
+                                1: "one of the recorded to the SD-card iButton keys is connected"
+                            },
+                            3: {
+                                "name": "Status device: SIM card",
+                                0: "there is a SIM card",
+                                1: "GSM-unit can’t determine the SIM-card"
+                            },
+                            4: {
+                                "name": "Status device: tracking device",
+                                0: "is outside the geofence",
+                                1: "is inside the geofence"
+                            },
+                            5: {
+                                "name": "Status device: voltage of internal source",
+                                0: "is normal",
+                                1: "lower than 3.7 V"
+                            },
+                            6: {
+                                "name": "Status device: GPS aerial",
+                                0: "is connected",
+                                1: "disconnected"
+                            },
+                            7: {
+                                "name": "Status device: voltage of internal Tracking device bus supply",
+                                0: "is normal",
+                                1: "declined from normal"
+                            },
+                            8: {
+                                "name": "Status device: external supply voltage",
+                                0: "is normal",
+                                1: "declined from normal"
+                            },
+                            9: {
+                                "name": "Status device: vehicle",
+                                0: "is stopped",
+                                1: "is started"
+                            },
+                            10: {
+                                "name": "Status device: vehicle",
+                                0: "vibration level corresponds to the normal movement",
+                                1: "vibration level corresponds to a strike"
+                            },
+                            11: {
+                                "name": "Status device: coordinates are used",
+                                0: "built-in module",                               // For devices with built-in GLONASS/GPS module:  0: "built-in module"
+                                1: "external module"                                // For devices with built-in GPS module (without GLONASS support):  0: "external module"
+                            },
+                            12: {
+                                "name": "Status device: Signal quality",
+                                "bitNumber": 12,
+                                "len": 2                                            // range: [0-3]. The less value, the worse communication.
+                            },
+                            14: {
+                                "name": "Status device: signaling mode",
+                                0: "is off",
+                                1: "is on"
+                            },
+                            15: {
+                                "name": "Status device: alarm",
+                                0: "no alarm",
+                                1: "activated"
+                            }
+                        }
+                },
+                "41": {
+                    "type": 2,
+                    "name": "Supply voltage, mV",
+                    "len": 2,
+                    "valueType": "Unsigned integer"
+                },
+                "42": {
+                    "type": 2,
+                    "name": "Battery voltage (mV)",
+                    "len": 2,
+                    "valueType": "Unsigned integer"
+                },
+                "43": {
+                    "type": 2,
+                    "name": "Tracking device temperature (C)",
+                    "len": 1,
+                    "valueType": "Signed integer"
+                },
+                "44": {
+                    "type": 2,
+                    "len": 4,
+                    "valueType": "function",
+                    "function": getAcceleration,
+                    "functionValue": {
+                        0: {
+                            "name": "Acceleration: by X axis",
+                            "bitNumber": 0,
+                            "len": 10
+                        },
+                        1: {
+                            "name": "Acceleration: by Y axis",
+                            "bitNumber": 10,
+                            "len": 10
+                        },
+                        2: {
+                            "name": "Acceleration: by Z axis",
+                            "bitNumber": 20,
+                            "len": 10
+                        }
+                    }
+                },
+                "45": {
+                    "type": 2,
+                    "name": "Status of outputs",
+                    "len": 2,
+                    "valueType": "Unsigned integer"
+                },
+                "46": {
+                    "type": 2,
+                    "name": "Status of inputs",
+                    "len": 2,
+                    "valueType": "Unsigned integer"
+                },
+                "47": {
+                    "type": 2,
+                    "len": 4,
+                    "valueType": "function",
+                    "function": getEcoDrive,
+                    "functionValue": {
+                        0: "EcoDrive: acceleration (m/s2)",
+                        1: "EcoDrive: braking (m/s2)",
+                        2: "EcoDrive: cornering acceleration (m/s2)",
+                        3: "EcoDrive: strike on bump (m/s2)"
+                    }
+                },
+                "48": {
+                    "type": 2,
+                    "len": 2,
+                    "valueType": "function",
+                    "function": getExpandedStatus,
+                    "functionValue": {
+                        0: {
+                            "name": "Expanded status: state to the primary server",
+                            "bitNumber": 0,
+                            "len": 1,
+                            0: "not connected",
+                            1: "connected"
+                        },
+                        1: {
+                            "name": "Expanded status: GPRS session status",
+                            "bitNumber": 1,
+                            "len": 1,
+                            0: "off",
+                            1: "on"
+                        },
+                        2: {
+                            "name": "Expanded status: jamming detected",
+                            "bitNumber": 2,
+                            "len": 1,
+                            0: "no jamming detected",
+                            1: "GSM jamming detected"
+                        }
+                    }
+                },
+                "50": {
+                    "type": 2,
+                    "name": "Input voltage 0",
+                    "len": 2,
+                    "valueType": "Unsigned integer"
+                },
+                "51": {
+                    "type": 2,
+                    "name": "Input voltage 1",
+                    "len": 2,
+                    "valueType": "Unsigned integer"
+                },
+                "52": {
+                    "type": 2,
+                    "name": "Input voltage 2",
+                    "len": 2,
+                    "valueType": "Unsigned integer"
+                },
+                "53": {
+                    "type": 2,
+                    "name": "Input voltage 3",
+                    "len": 2,
+                    "valueType": "Unsigned integer"
+                },
+                "54": {
+                    "type": 2,
+                    "name": "Input voltage 4",
+                    "len": 2,
+                    "valueType": "Unsigned integer"
+                },
+                "55": {
+                    "type": 2,
+                    "name": "Input voltage 5",
+                    "len": 2,
+                    "valueType": "Unsigned integer"
+                },
+                "56": {
+                    "type": 2,
+                    "name": "Input voltage 6",
+                    "len": 2,
+                    "valueType": "Unsigned integer"
+                },
+                "57": {
+                    "type": 2,
+                    "name": "Input voltage 7",
+                    "len": 2,
+                    "valueType": "Unsigned integer"
+                },
+                "58": {
+                    "type": 2,
+                    "name": "RS232 0",
+                    "len": 2,
+                    "valueType": "Unsigned integer"
+                },
+                "59": {
+                    "type": 2,
+                    "name": "RS232 1",
+                    "len": 2,
+                    "valueType": "Unsigned integer"
+                },
+                "5A": {
+                    "type": 2,
+                    "name": "REP-500",
+                    "len": 4,
+                    "valueType": "Unsigned integer"
+                },
+                "5B": {
+                    "name": "Refrigeration unit data",
+                    "type": 2,
+                    "len": 7,
+                    "valueType": "function",
+                    "function": getRefrigerationData,
+                    "functionValue": {
+                        1: {
+                            "name": " (Type of unit)",
+                            "len": 1,
+                            1: "DataCOLD 500",
+                            2: "ThermoKing iBox",
+                            3: "EuroScan",
+                            4: "Carrier Gateway",
+                            5: "DataCOLD600",
+                            7: "ThermoKing v SLX",
+                            8: "Carrier Standard32",
+                            9: "iQFreeze: Zanotti",
+                            10: "ThermalMaster",
+                            11: "iQFreeze: Carrier NDP33LN6F",
+                            12: "iQFreeze Mitsubishi",
+                            13: "ThermoKing TouchPrint",
+                            14: "iQFreeze Carrier Vector 1350",
+                            15: "iQFreeze ThermoKing TGVI",
+                            16: "iQFreeze Carrier XARIOS"
+                        },
+                        2: {
+                            "name": " (Status): ",
+                            "len": 2,
+                            0: "no connection with the unit",
+                            1: "setting of zone 1 is on",
+                            2: "setting of zone 2 is on",
+                            3: "setting of zone 3 is on",
+                            4: "temperature sensor 1 is available",
+                            5: "temperature sensor 2 is available",
+                            6: "temperature sensor 3 is available",
+                            7: "temperature sensor 4 is available",
+                            8: "temperature sensor 5 is available",
+                            9: "temperature sensor 6 is available",
+                            10: "Emergency field",
+                            11: "Hours up to maintenance field",
+                            12: "Operating hours field",
+                            13: "Requests failures field",
+                            14: "Engine speed field"
+                        },
+                        4: {
+                            "name": " (Digital input 1) ",
+                            "len": 1,
+                            0: "input is on",
+                            1: "input state",
+                            2: "alarm",
+                            3: {
+                                "name": "input type",
+                                "len": 5
+                            }
+                        },
+                        5: {
+                            "name": " (Digital input 2) ",
+                            "len": 1,
+                            0: "input is on",
+                            1: "input state",
+                            2: "alarm",
+                            3: {
+                                "name": "input type",
+                                "len": 5
+                            }
+                        },
+                        6: {
+                            "name": " (Digital input 3) ",
+                            "len": 1,
+                            0: "input is on",
+                            1: "input state",
+                            2: "alarm",
+                            3: {
+                                "name": "input type",
+                                "len": 5
+                            }
+                        },
+                        7: {
+                            "name": " (Digital input 4) ",
+                            "len": 1,
+                            0: "input is on",
+                            1: "input state",
+                            2: "alarm",
+                            3: {
+                                "name": "input type",
+                                "len": 5
+                            }
+                        }
+                    }
+                },
+                "5C": {
+                    "type": 2,
+                    "name": "PressurePro #",
+                    "len": 4,
+                    "valueType": "function",
+                    "function": getPressurePro,
+                    "functionValue": {
+                        0: ": tire pressure (ps)",
+                        1: {
+                            0: {
+                                "name": ": temperature",
+                                "len": 3
+                            },
+                            3: {
+                                0: "is connected",
+                                1: "no connection"
+                            },
+                            4: {
+                                "name": ": sensor battery",
+                                1: "low charge (error)"
+                            },
+                            5: {
+                                "name": ": reason of data sending",
+                                "len": 3,
+                                0: "periodical sending",
+                                1: "pressure loss by 10%",
+                                2: "pressure loss by 20%",
+                                3: "pressure loss by 50% for TPMS",
+                                4: "high temperature for TPMS",
+                                5: "rapid pressure drop for TPMS",
+                                6: "tire is inflated again"
+                            }
+                        }
+                    }
+                },
+                "5D": {
+                    "type": 2,
+                    "name": "Dosimeter data (DBG-S11D): ",
+                    "len": 3,
+                    "valueType": "function",
+                    "function": getDosimeterData,
+                    "functionValue": {
+                        0: {
+                            "name": " ADER 3V/h: ",
+                            "len": 2,
+                            0: {
+                                "name": "order",
+                                "bitNumber": 10,
+                                "len": 6
+
+                            },
+                            6: {
+                                "name": "coefficient",
+                                "bitNumber": 0,
+                                "len": 10
+                            }
+                        },
+                        2: {
+                            "name": " dosimeter state: ",
+                            "len": 1,
+                            0: {
+                                "name": "dose power value",
+                                "len": 3,
+                                0: "weighted average value is typed out via 2 channels",
+                                1: "channel 1 value is typed out",
+                                2: "channel 2 value is typed out",
+                                5: "false value is typed out (device in testingmode)"
+                            },
+                            3: {
+                                "name": " channel 1 state: ",
+                                0: "is off",
+                                1: "is on"
+                            },
+                            4: {
+                                "name": " channel 1 state: ",
+                                0: "OK",
+                                1: "failure"
+                            },
+                            5: {
+                                "name": " channel 2 state: ",
+                                0: "is off",
+                                1: "is on"
+                            },
+                            6: {
+                                "name": " channel 2 state: ",
+                                0: "OK",
+                                1: "failure"
+                            },
+                            7: {
+                                "name": " economy mode: ",
+                                0: "is off",
+                                1: "is on"
+                            }
+                        }
+                    }
+                },
+                "60": {
+                    "type": 2,
+                    "name": "Fuel level sensor with address 0: relative fuel level",
+                    "len": 2,
+                    "valueType": "Unsigned integer"
+                },
+                "61": {
+                    "type": 2,
+                    "name": "Fuel level sensor with address 1: relative fuel level",
+                    "len": 2,
+                    "valueType": "Unsigned integer"
+                },
+                "62": {
+                    "type": 2,
+                    "name": "Fuel level sensor with address 2: relative fuel level",
+                    "len": 2,
+                    "valueType": "Unsigned integer"
+                },
+                "63": {
+                    "type": 2,
+                    "len": 3,
+                    "valueType": "function",
+                    "function": getFuelLevelSensor,
+                    "functionValue": {
+                        0: "Fuel level sensor with address 3: relative fuel level",
+                        2: "Fuel level sensor with address 3: temperature (С)"
+                    }
+                },
+                "64": {
+                    "type": 2,
+                    "len": 3,
+                    "valueType": "function",
+                    "function": getFuelLevelSensor,
+                    "functionValue": {
+                        0: "Fuel level sensor with address 4: relative fuel level",
+                        2: "Fuel level sensor with address 4: temperature (С)"
+                    }
+                },
+                "65": {
+                    "type": 2,
+                    "len": 3,
+                    "valueType": "function",
+                    "function": getFuelLevelSensor,
+                    "functionValue": {
+                        0: "Fuel level sensor with address 5: relative fuel level",
+                        2: "Fuel level sensor with address 5: temperature (С)"
+                    }
+                },
+                "66": {
+                    "type": 2,
+                    "len": 3,
+                    "valueType": "function",
+                    "function": getFuelLevelSensor,
+                    "functionValue": {
+                        0: "Fuel level sensor with address 6: relative fuel level",
+                        2: "Fuel level sensor with address 6: temperature (С)"
+                    }
+                },
+                "67": {
+                    "type": 2,
+                    "len": 3,
+                    "valueType": "function",
+                    "function": getFuelLevelSensor,
+                    "functionValue": {
+                        0: "Fuel level sensor with address 7: relative fuel level",
+                        2: "Fuel level sensor with address 7: temperature (С)"
+                    }
+                },
+                "68": {
+                    "type": 2,
+                    "len": 3,
+                    "valueType": "function",
+                    "function": getFuelLevelSensor,
+                    "functionValue": {
+                        0: "Fuel level sensor with address 8: relative fuel level",
+                        2: "Fuel level sensor with address 8: temperature (С)"
+                    }
+                },
+                "69": {
+                    "type": 2,
+                    "len": 3,
+                    "valueType": "function",
+                    "function": getFuelLevelSensor,
+                    "functionValue": {
+                        0: "Fuel level sensor with address 9: relative fuel level",
+                        2: "Fuel level sensor with address 9: temperature (С)"
+                    }
+                },
+                "6A": {
+                    "type": 2,
+                    "len": 3,
+                    "valueType": "function",
+                    "function": getFuelLevelSensor,
+                    "functionValue": {
+                        0: "Fuel level sensor with address 10: relative fuel level",
+                        2: "Fuel level sensor with address 10: temperature, С"
+                    }
+                },
+                "6B": {
+                    "type": 2,
+                    "len": 3,
+                    "valueType": "function",
+                    "function": getFuelLevelSensor,
+                    "functionValue": {
+                        0: "Fuel level sensor with address 11: relative fuel level",
+                        2: "Fuel level sensor with address 11: temperature (С)"
+                    }
+                },
+                "6C": {
+                    "type": 2,
+                    "len": 3,
+                    "valueType": "function",
+                    "function": getFuelLevelSensor,
+                    "functionValue": {
+                        0: "Fuel level sensor with address 12: relative fuel level",
+                        2: "Fuel level sensor with address 12: temperature, С"
+                    }
+                },
+                "6D": {
+                    "type": 2,
+                    "len": 3,
+                    "valueType": "function",
+                    "function": getFuelLevelSensor,
+                    "functionValue": {
+                        0: "Fuel level sensor with address 13: relative fuel level",
+                        2: "Fuel level sensor with address 13: temperature, С"
+                    }
+                },
+                "6E": {
+                    "type": 2,
+                    "len": 3,
+                    "valueType": "function",
+                    "function": getFuelLevelSensor,
+                    "functionValue": {
+                        0: "Fuel level sensor with address 14: relative fuel level",
+                        2: "Fuel level sensor with address 14: temperature, С"
+                    }
+                },
+                "6F": {
+                    "type": 2,
+                    "len": 3,
+                    "valueType": "function",
+                    "function": getFuelLevelSensor,
+                    "functionValue": {
+                        0: "Fuel level sensor with address 15: relative fuel level",
+                        2: "Fuel level sensor with address 15: temperature, С"
+                    }
+                },
+                "70": {
+                    "type": 2,
+                    "len": 2,
+                    "valueType": "function",
+                    "function": getThermometer,
+                    "functionValue": {
+                        0: "Thermometer 0 identifier",
+                        1: "Thermometer 0 measured"
+                    }
+                },
+                "71": {
+                    "type": 2,
+                    "len": 2,
+                    "valueType": "function",
+                    "function": getThermometer,
+                    "functionValue": {
+                        0: "Thermometer 1 identifier",
+                        1: "Thermometer 1 measured"
+                    }
+                },
+                "72": {
+                    "type": 2,
+                    "len": 2,
+                    "valueType": "function",
+                    "function": getThermometer,
+                    "functionValue": {
+                        0: "Thermometer 2 identifier",
+                        1: "Thermometer 2 measured"
+                    }
+                },
+                "73": {
+                    "name": "RS232 1",
+                    "len": 2,
+                    "valueType": "function",
+                    "function": getThermometer,
+                    "functionValue": {
+                        0: "Thermometer 3 identifier",
+                        1: "Thermometer 3 measured"
+                    }
+                },
+                "74": {
+                    "type": 2,
+                    "len": 2,
+                    "valueType": "function",
+                    "function": getThermometer,
+                    "functionValue": {
+                        0: "Thermometer 4 identifier",
+                        1: "Thermometer 4 measured"
+                    }
+                },
+                "75": {
+                    "type": 2,
+                    "len": 2,
+                    "valueType": "function",
+                    "function": getThermometer,
+                    "functionValue": {
+                        0: "Thermometer 5 identifier",
+                        1: "Thermometer 5 measured"
+                    }
+                },
+                "76": {
+                    "type": 2,
+                    "len": 2,
+                    "valueType": "function",
+                    "function": getThermometer,
+                    "functionValue": {
+                        0: "Thermometer 6 identifier",
+                        1: "Thermometer 6 measured"
+                    }
+                },
+                "77": {
+                    "type": 2,
+                    "len": 2,
+                    "valueType": "function",
+                    "function": getThermometer,
+                    "functionValue": {
+                        0: "Thermometer 7 identifier",
+                        1: "Thermometer 7 measured"
+                    }
+                },
+                "78": {
+                    "type": 2,
+                    "name": "Input voltage 8",
+                    "len": 2,
+                    "valueType": "Unsigned integer"
+                },
+                "79": {
+                    "type": 2,
+                    "name": "Input voltage 9",
+                    "len": 2,
+                    "valueType": "Unsigned integer"
+                },
+                "80": {
+                    "type": 2,
+                    "name": "Zero DS1923 sensor ",
+                    "len": 3,
+                    "valueType": "function",
+                    "function": getDS1923,
+                    "functionValue": {
+                        0: "Identifier",
+                        1: "temperature (C)",
+                        2: "humidity (%)"
+                    }
+                },
+                "81": {
+                    "type": 2,
+                    "name": "The 1-st DS1923 sensor ",
+                    "len": 3,
+                    "valueType": "function",
+                    "function": getDS1923,
+                    "functionValue": {
+                        0: "Identifier",
+                        1: "temperature (C)",
+                        2: "humidity (%)"
+                    }
+                },
+                "82": {
+                    "type": 2,
+                    "name": "The 2-nd DS1923 sensor ",
+                    "len": 3,
+                    "valueType": "function",
+                    "function": getDS1923,
+                    "functionValue": {
+                        0: "Identifier",
+                        1: "temperature (C)",
+                        2: "humidity (%)"
+                    }
+                },
+                "83": {
+                    "type": 2,
+                    "name": "The 3-rd DS1923 sensor ",
+                    "len": 3,
+                    "valueType": "function",
+                    "function": getDS1923,
+                    "functionValue": {
+                        0: "Identifier",
+                        1: "temperature (C)",
+                        2: "humidity (%)"
+                    }
+                },
+                "84": {
+                    "type": 2,
+                    "name": "The 4-th DS1923 sensor ",
+                    "len": 3,
+                    "valueType": "function",
+                    "function": getDS1923,
+                    "functionValue": {
+                        0: "Identifier",
+                        1: "temperature (C)",
+                        2: "humidity (%)"
+                    }
+                },
+                "85": {
+                    "type": 2,
+                    "name": "The 5-th DS1923 sensor ",
+                    "len": 3,
+                    "valueType": "function",
+                    "function": getDS1923,
+                    "functionValue": {
+                        0: "Identifier",
+                        1: "temperature (C)",
+                        2: "humidity (%)"
+                    }
+                },
+                "86": {
+                    "type": 2,
+                    "name": "The 6-th DS1923 sensor ",
+                    "len": 3,
+                    "valueType": "function",
+                    "function": getDS1923,
+                    "functionValue": {
+                        0: "Identifier",
+                        1: "temperature (C)",
+                        2: "humidity (%)"
+                    }
+                },
+                "87": {
+                    "type": 2,
+                    "name": "The 7-th DS1923 sensor ",
+                    "len": 3,
+                    "valueType": "function",
+                    "function": getDS1923,
+                    "functionValue": {
+                        0: "Identifier",
+                        1: "temperature (C)",
+                        2: "humidity (%)"
+                    }
+                },
+                "88": {
+                    "type": 2,
+                    "name": "Extended data RS232[0]",
+                    "len": 1,
+                    "valueType": "Signed integer"
+                },
+                "89": {
+                    "type": 2,
+                    "name": "Extended data RS232[1]",
+                    "len": 1,
+                    "valueType": "Signed integer"
+                },
+                "8A": {
+                    "type": 2,
+                    "name": "Fuel level sensor with address 0: temperature (С)",
+                    "len": 1,
+                    "valueType": "Signed integer"
+                },
+                "8B": {
+                    "type": 2,
+                    "name": "Fuel level sensor with address 1: temperature, С",
+                    "len": 1,
+                    "valueType": "Signed integer"
+                },
+                "8C": {
+                    "type": 2,
+                    "name": "Fuel level sensor with address 2: temperature, С",
+                    "len": 1,
+                    "valueType": "Signed integer"
+                },
+                "90": {
+                    "type": 2,
+                    "name": "First iButton key identification number",
+                    "len": 4,
+                    "valueType": "Unsigned integer"
+                },
+                "A0": {
+                    "type": 2,
+                    "name": "CAN8BITR15",
+                    "len": 1,
+                    "valueType": "Unsigned integer"
+                },
+                "A1": {
+                    "type": 2,
+                    "name": "CAN8BITR16",
+                    "len": 1,
+                    "valueType": "Unsigned integer"
+                },
+                "A2": {
+                    "type": 2,
+                    "name": "CAN8BITR17",
+                    "len": 1,
+                    "valueType": "Unsigned integer"
+                },
+                "A3": {
+                    "type": 2,
+                    "name": "CAN8BITR18",
+                    "len": 1,
+                    "valueType": "Unsigned integer"
+                },
+                "A4": {
+                    "type": 2,
+                    "name": "CAN8BITR19",
+                    "len": 1,
+                    "valueType": "Unsigned integer"
+                },
+                "A5": {
+                    "type": 2,
+                    "name": "CAN8BITR20",
+                    "len": 1,
+                    "valueType": "Unsigned integer"
+                },
+                "A6": {
+                    "type": 2,
+                    "name": "CAN8BITR21",
+                    "len": 1,
+                    "valueType": "Unsigned integer"
+                },
+                "A7": {
+                    "type": 2,
+                    "name": "CAN8BITR22",
+                    "len": 1,
+                    "valueType": "Unsigned integer"
+                },
+                "A8": {
+                    "type": 2,
+                    "name": "CAN8BITR23",
+                    "len": 1,
+                    "valueType": "Unsigned integer"
+                },
+                "A9": {
+                    "type": 2,
+                    "name": "CAN8BITR24",
+                    "len": 1,
+                    "valueType": "Unsigned integer"
+                },
+                "AA": {
+                    "type": 2,
+                    "name": "CAN8BITR25",
+                    "len": 1,
+                    "valueType": "Unsigned integer"
+                },
+                "AB": {
+                    "type": 2,
+                    "name": "CAN8BITR26",
+                    "len": 1,
+                    "valueType": "Unsigned integer"
+                },
+                "AC": {
+                    "type": 2,
+                    "name": "CAN8BITR27",
+                    "len": 1,
+                    "valueType": "Unsigned integer"
+                },
+                "AD": {
+                    "type": 2,
+                    "name": "CAN8BITR28",
+                    "len": 1,
+                    "valueType": "Unsigned integer"
+                },
+                "AE": {
+                    "type": 2,
+                    "name": "CAN8BITR29",
+                    "len": 1,
+                    "valueType": "Unsigned integer"
+                },
+                "AF": {
+                    "type": 2,
+                    "name": "CAN8BITR30",
+                    "len": 1,
+                    "valueType": "Unsigned integer"
+                },
+                "B0": {
+                    "type": 2,
+                    "name": "CAN16BITR5",
+                    "len": 2,
+                    "valueType": "Unsigned integer"
+                },
+                "B1": {
+                    "type": 2,
+                    "name": "CAN16BITR6",
+                    "len": 2,
+                    "valueType": "Unsigned integer"
+                },
+                "B2": {
+                    "type": 2,
+                    "name": "CAN16BITR7",
+                    "len": 2,
+                    "valueType": "Unsigned integer"
+                },
+                "B3": {
+                    "type": 2,
+                    "name": "CAN16BITR8",
+                    "len": 2,
+                    "valueType": "Unsigned integer"
+                },
+                "B4": {
+                    "type": 2,
+                    "name": "CAN16BITR9",
+                    "len": 2,
+                    "valueType": "Unsigned integer"
+                },
+                "B5": {
+                    "type": 2,
+                    "name": "CAN16BITR10",
+                    "len": 2,
+                    "valueType": "Unsigned integer"
+                },
+                "B6": {
+                    "type": 2,
+                    "name": "CAN16BITR11",
+                    "len": 2,
+                    "valueType": "Unsigned integer"
+                },
+                "B7": {
+                    "type": 2,
+                    "name": "CAN16BITR12",
+                    "len": 2,
+                    "valueType": "Unsigned integer"
+                },
+                "B8": {
+                    "type": 2,
+                    "name": "CAN16BITR13",
+                    "len": 2,
+                    "valueType": "Unsigned integer"
+                },
+                "B9": {
+                    "type": 2,
+                    "name": "CAN16BITR14",
+                    "len": 2,
+                    "valueType": "Unsigned integer"
+                },
+                "C0": {
+                    "type": 2,
+                    "len": 4,
+                    "valueType": "function",
+                    "function": getCAN_LOG_Data_CAN_A0,
+                    "name": "CAN-LOG data CAN_A0"
+                },
+                "C1": {
+                    "type": 2,
+                    "len": 4,
+                    "valueType": "function",
+                    "function": getCAN_LOG_Data_CAN_A1,
+                    "name": "CAN-LOG data CAN_A1: ",
+                    "functionValue": {
+                        0: "fuel level (%)",
+                        1: "coolant temperature (C)",
+                        2: "engine speed, rmp"
+                    }
+                },
+                "C2": {
+                    "type": 2,
+                    "len": 4,
+                    "valueType": "function",
+                    "function": getCAN_LOG_Data_CAN_B0,
+                    "name": "CAN-LOG data CAN_B0: Vehicle`s mileage (m)"
+                },
+                "C3": {
+                    "type": 2,
+                    "name": "CAN_B1",
+                    "len": 4,
+                    "valueType": "Unsigned integer"
+                },
+                "C4": {
+                    "type": 2,
+                    "name": "CAN8BITR0 or vehicle speed (km/h)",
+                    "len": 1,
+                    "valueType": "Unsigned integer"
+                },
+                "C5": {
+                    "type": 2,
+                    "name": "CAN8BITR1",
+                    "len": 1,
+                    "valueType": "Unsigned integer"
+                },
+                "C6": {
+                    "type": 2,
+                    "name": "CAN8BITR2",
+                    "len": 1,
+                    "valueType": "Unsigned integer"
+                },
+                "C7": {
+                    "type": 2,
+                    "name": "CAN8BITR3",
+                    "len": 1,
+                    "valueType": "Unsigned integer"
+                },
+                "C8": {
+                    "type": 2,
+                    "name": "CAN8BITR4",
+                    "len": 1,
+                    "valueType": "Unsigned integer"
+                },
+                "C9": {
+                    "type": 2,
+                    "name": "CAN8BITR5",
+                    "len": 1,
+                    "valueType": "Unsigned integer"
+                },
+                "CA": {
+                    "type": 2,
+                    "name": "CAN8BITR6",
+                    "len": 1,
+                    "valueType": "Unsigned integer"
+                },
+                "CB": {
+                    "type": 2,
+                    "name": "CAN8BITR7",
+                    "len": 1,
+                    "valueType": "Unsigned integer"
+                },
+                "CC": {
+                    "type": 2,
+                    "name": "CAN8BITR8",
+                    "len": 1,
+                    "valueType": "Unsigned integer"
+                },
+                "CD": {
+                    "type": 2,
+                    "name": "CAN8BITR9",
+                    "len": 1,
+                    "valueType": "Unsigned integer"
+                },
+                "CE": {
+                    "type": 2,
+                    "name": "CAN8BITR10",
+                    "len": 1,
+                    "valueType": "Unsigned integer"
+                },
+                "CF": {
+                    "type": 2,
+                    "name": "CAN8BITR11",
+                    "len": 1,
+                    "valueType": "Unsigned integer"
+                },
+                "D0": {
+                    "type": 2,
+                    "name": "CAN8BITR12",
+                    "len": 1,
+                    "valueType": "Unsigned integer"
+                },
+                "D1": {
+                    "type": 2,
+                    "name": "CAN8BITR13",
+                    "len": 1,
+                    "valueType": "Unsigned integer"
+                },
+                "D2": {
+                    "type": 2,
+                    "name": "CAN8BITR14",
+                    "len": 1,
+                    "valueType": "Unsigned integer"
+                },
+                "D3": {
+                    "type": 2,
+                    "name": "Second iButton key identification number",
+                    "len": 4,
+                    "valueType": "Unsigned integer"
+                },
+                "D4": {
+                    "type": 2,
+                    "name": "Total mileage according to GPS/GLONASS units data",
+                    "len": 4,
+                    "valueType": "Unsigned integer"
+                },
+                "D5": {
+                    "type": 2,
+                    "len": 1,
+                    "valueType": "function",
+                    "function": getState_iButtoKeys,
+                    "name": "State of iButton keys"
+                },
+                "D6": {
+                    "type": 2,
+                    "name": "CAN16BITR0",
+                    "len": 2,
+                    "valueType": "Unsigned integer"
+                },
+                "D7": {
+                    "type": 2,
+                    "name": "CAN16BITR1",
+                    "len": 2,
+                    "valueType": "Unsigned integer"
+                },
+                "D8": {
+                    "type": 2,
+                    "name": "CAN16BITR2",
+                    "len": 2,
+                    "valueType": "Unsigned integer"
+                },
+                "D9": {
+                    "type": 2,
+                    "name": "CAN16BITR3",
+                    "len": 2,
+                    "valueType": "Unsigned integer"
+                },
+                "DA": {
+                    "type": 2,
+                    "name": "CAN16BITR4",
+                    "len": 2,
+                    "valueType": "Unsigned integer"
+                },
+                "DB": {
+                    "type": 2,
+                    "name": "CAN32BITR0",
+                    "len": 4,
+                    "valueType": "Unsigned integer"
+                },
+                "DC": {
+                    "type": 2,
+                    "name": "CAN32BITR1",
+                    "len": 4,
+                    "valueType": "Unsigned integer"
+                },
+                "DD": {
+                    "type": 2,
+                    "name": "CAN32BITR2",
+                    "len": 4,
+                    "valueType": "Unsigned integer"
+                },
+                "DE": {
+                    "type": 2,
+                    "name": "CAN32BITR3",
+                    "len": 4,
+                    "valueType": "Unsigned integer"
+                },
+                "DF": {
+                    "type": 2,
+                    "name": "CAN32BITR4",
+                    "len": 4,
+                    "valueType": "Unsigned integer"
+                },
+                "E0": {
+                    "type": 2,
+                    "name": "Number command",
+                    "len": 4,
+                    "valueType": "Unsigned integer"
+                },
+               "E1": {
+                   "type": 2,
+                   "valueType": "function",
+                   "functionLen": getCommandLen,
+                   "function": getCommand,
+                   "name": "Request response"
+                },
+               "E2": {
+                    "type": 2,
+                    "name": "User data",
+                    "len": 4,
+                    "valueType": "Unsigned integer"
+                },
+                "E3": {
+                    "type": 2,
+                    "name": "User data1",
+                    "len": 4,
+                    "valueType": "Unsigned integer"
+                },
+                "E4": {
+                    "type": 2,
+                    "name": "User data2",
+                    "len": 4,
+                    "valueType": "Unsigned integer"
+                },
+                "E5": {
+                    "type": 2,
+                    "name": "User data3",
+                    "len": 4,
+                    "valueType": "Unsigned integer"
+                },
+                "E6": {
+                    "type": 2,
+                    "name": "User data4",
+                    "len": 4,
+                    "valueType": "Unsigned integer"
+                },
+                "E7": {
+                    "type": 2,
+                    "name": "User data5",
+                    "len": 4,
+                    "valueType": "Unsigned integer"
+                },
+                "E8": {
+                    "type": 2,
+                    "name": "User data6",
+                    "len": 4,
+                    "valueType": "Unsigned integer"
+                },
+                "E9": {
+                    "type": 2,
+                    "name": "User data7",
+                    "len": 4,
+                    "valueType": "Unsigned integer"
+                },
+                "EA": {
+                    "type": 2,
+                    "name": "User data array",
+                    "functionLen": getUserDataArrayLen,
+                    "valueType": "function",
+                    "function": getUserDataArray
+                },
+                "F0": {
+                    "type": 2,
+                    "name": "CAN32BITR5",
+                    "len": 4,
+                    "valueType": "Unsigned integer"
+                },
+                "F1": {
+                    "type": 2,
+                    "name": "CAN32BITR6",
+                    "len": 4,
+                    "valueType": "Unsigned integer"
+                },
+                "F2": {
+                    "type": 2,
+                    "name": "CAN32BITR7",
+                    "len": 4,
+                    "valueType": "Unsigned integer"
+                },
+                "F3": {
+                    "type": 2,
+                    "name": "CAN32BITR8",
+                    "len": 4,
+                    "valueType": "Unsigned integer"
+                },
+                "F4": {
+                    "type": 2,
+                    "name": "CAN32BITR9",
+                    "len": 4,
+                    "valueType": "Unsigned integer"
+                },
+                "F5": {
+                    "type": 2,
+                    "name": "CAN32BITR10",
+                    "len": 4,
+                    "valueType": "Unsigned integer"
+                },
+                "F6": {
+                    "type": 2,
+                    "name": "CAN32BITR11",
+                    "len": 4,
+                    "valueType": "Unsigned integer"
+                },
+                "F7": {
+                    "type": 2,
+                    "name": "CAN32BITR12",
+                    "len": 4,
+                    "valueType": "Unsigned integer"
+                },
+                "F8": {
+                    "type": 2,
+                    "name": "CAN32BITR13",
+                    "len": 4,
+                    "valueType": "Unsigned integer"
+                },
+                "F9": {
+                    "type": 2,
+                    "name": "CAN32BITR14",
+                    "len": 4,
+                    "valueType": "Unsigned integer"
+                }
+
+            }
+    };
+
+    var payoadStr = decodeToJson(payload).toUpperCase();
+    var pos = 0;
+    var lenTagId = 2;
+    var lenPos;
+    var deviceName = getNameDevice('Gal_');
+    var deviceType = 'galileosky';
+    var positionError = 4;
+    // typeGPS_GLONASS = 1 => For devices with built-in GPS module (without GLONASS support):
+    // typeGPS_GLONASS = 2 => For devices with built-in GLONASS/GPS module::
+    var typeGPS_GLONASS = 2;
+
+    var result = setPayload();
+
+    function setPayload() {
+        if (payoadStr !== null && payoadStr.length > 0 && metadata.hasOwnProperty('imei')) {
+            return getPayload();
+        }
+        return null;
+    }
+
+    function getPayload() {
+        lenPos = lenTagId;
+        var typePacket = parseInt(payoadStr.substr(pos, lenPos), 16);
+        pos += lenPos;
+        var rez = {
+            deviceName: deviceName,
+            deviceType: deviceType
+        };
+        var attributes = getAttributes();
+        var telemetry = [];
+        getData(typePacket, attributes, telemetry);
+        rez['attributes'] = attributes;
+        if (telemetry.length > 0) {
+            rez['telemetry'] = telemetry;
+        }
+        return rez;
+    }
+
+    function getAttributes() {
+        return {
+            identifyNumber: metadata.imei,
+            integrationName: metadata.integrationName
+        };
+    }
+
+    function getData(typePacket, attributes, telemetry) {
+        if (typePacket === 1) {
+            getData01(attributes, telemetry);
+        }
+        else if (typePacket === 22) {
+            getData22(telemetry);
+        }
+    }
+
+
+
+    function getData01(attributes, telemetry) {
+        getTelAttrData(attributes, telemetry);
+        if (telemetry.length > 0) {
+            var telemtryStr = JSON.stringify(telemetry[0]);
+            var maxLenth = 400;
+            if (telemtryStr.length > maxLenth) {
+                telemtryStr = telemtryStr.substring(0, maxLenth) + "...";
+            }
+            var logs = {
+                ts: telemetry[0].ts,
+                values: {
+                    "logs": telemtryStr
+                }
+            };
+            telemetry.push(logs)
+        }
+
+    }
+
+    function getData22(telemetry) {
+        var ts = new Date().getTime();
+        var responseData = {
+            ts: ts,
+            values: {
+                "logs":  "Request: " + payoadStr.substr(pos)
+            }
+        };
+        telemetry.push(responseData);
+        return telemetry;
+    }
+
+    function getTelAttrData(attributes, telemetry) {
+        var telemetryData = {};
+        var tagId = "00";
+        pos = 4;
+        lenPos = constants.tag[tagId].len;
+        var name = constants.tag[tagId].name;
+        var tagIdValue = payoadStr.substr(pos, lenPos);
+        tagIdValue = (parseInt(tagIdValue, 16) > 0) ? 1 : 0;
+        tagIdValue = constants.tag[tagId].value[tagIdValue];
+        if (constants.tag[tagId].type === 1) attributes[name] = tagIdValue;
+        else telemetryData[name] = tagIdValue;
+        pos = 6;
+        lenPos = lenTagId;
+        tagId = payoadStr.substr(pos, lenPos);
+        pos += lenPos;
+        while (pos < payoadStr.toString().length) {
+            if (constants.tag.hasOwnProperty(tagId)) {
+                lenPos = (constants.tag[tagId].hasOwnProperty("functionLen")) ? constants.tag[tagId].functionLen(tagId)*2 : constants.tag[tagId].len * 2;
+                tagIdValue = payoadStr.substr(pos, lenPos);
+
+                pos += lenPos;
+                addTagNameValueToAttrTelemetry(attributes, telemetryData, tagId, tagIdValue);
+            } else {
+                throw Error("No tagId in spr: " + tagId);
+            }
+            lenPos = lenTagId;
+            var tagIdNext = payoadStr.substr(pos, lenPos);
+            pos += lenPos;
+            if (parseInt(tagIdNext, 16) < parseInt(tagId, 16)) {
+                addToTelemetry(telemetry, telemetryData);
+                telemetryData = {};
+                if (Object.keys(telemetryData).length > 0) {
+                    var ts = new Date().getTime();
+                    var telemetryValues = {
+                        ts: ts,
+                        values: telemetryData
+                    };
+                    telemetry.push(telemetryValues);
+                    telemetryData = {};
+                }
+            }
+            tagId = tagIdNext;
+        }
+        addToTelemetry(telemetry, telemetryData);
+    }
+
+    function addToTelemetry(telemetry, telemetryData) {
+        if (Object.keys(telemetryData).length > 0) {
+            var ts = new Date().getTime();
+            var telemetryValues = {
+                ts: ts,
+                values: telemetryData
+            };
+            telemetry.push(telemetryValues);
+        }
+    }
+
+    function addTagNameValueToAttrTelemetry(attributes, telemetryData, tagId, tagIdValue) {
+        if (constants.tag[tagId].hasOwnProperty('valueType') && (constants.tag[tagId].valueType === "function")) {
+            constants.tag[tagId].function(attributes, telemetryData, tagId, tagIdValue);
+        } else {
+            var name = constants.tag[tagId].name;
+            if (constants.tag[tagId].hasOwnProperty('value')) {
+                tagIdValue = hexStringToUInt(tagIdValue, 1);
+                if (constants.tag[tagId].value.hasOwnProperty(tagIdValue)) {
+                    tagIdValue = constants.tag[tagId].value[tagIdValue];
+                }
+            } else if (constants.tag[tagId].hasOwnProperty('valueType')) {
+                if (constants.tag[tagId].valueType === "Unsigned integer") {
+                    tagIdValue = hexStringToUInt(tagIdValue, 1);
+                } else if (constants.tag[tagId].valueType === "Signed integer") {
+                    tagIdValue = tagIdValue = hexStringToInt(tagIdValue, 1);
+                } else if (constants.tag[tagId].valueType === "String") {
+                    tagIdValue = hexStringToAncii(tagIdValue);
+                }
+            }
+            if (constants.tag[tagId].type === 1) attributes[name] = tagIdValue;
+            else telemetryData[name] = tagIdValue;
+        }
+    }
+
+    function getNameDevice(deviceName) {
+        return (metadata.hasOwnProperty('imei')) ? (deviceName + metadata['imei']) : deviceName;
+    }
+
+    function decodeToJson(payoadStr) {
+        try {
+            return JSON.parse(String.fromCharCode.apply(String, payoadStr));
+        } catch (e) {
+            return JSON.parse(JSON.stringify(payoadStr));
+        }
+    }
+
+    function hexStringToStringRev(str) {
+        var strRev = "";
+        for (var i = (str.length - 2); i >= 0; i -= 2) {
+            strRev += str.substring(i, i + 2);
+        }
+        return strRev;
+    }
+
+    function hexStringToInt(hexStr, rev) {
+        var hex = (rev === 0) ? hexStr : hexStringToStringRev(hexStr);
+        if (hex.length % 2 != 0) {
+            hex = "0" + hex;
+        }
+        var num = parseInt(hex, 16);
+        var maxVal = Math.pow(2, hex.length / 2 * 8);
+        if (num > maxVal / 2 - 1) {
+            num = num - maxVal
+        }
+        return num;
+    }
+
+    function hexStringToUInt(hexStr, rev) {
+        var str = (rev === 0) ? hexStr : hexStringToStringRev(hexStr);
+        var array = str.match(/.{1,2}/g);
+        var a = [];
+        array.forEach(function (element) {
+            a.push(parseInt(element, 16));
+        });
+        var bytes = new Uint8Array(a);
+        var val = 0;
+        var len = bytes.length;
+        for (var j = 0; j < len; j++) {
+            val += bytes[j];
+            if (j < (len - 1)) {
+                val = val << 8;
+            }
+        }
+        return val;
+    }
+
+    function hexStringToAncii(strHex) {
+        return strHex.match(/.{1,2}/g).map(function (v) {
+            return String.fromCharCode(parseInt(v, 16));
+        }).join('');
+    }
+
+    function timeMsToString(ms) {
+        return new Date(ms).toISOString();
+    }
+
+    function getBit(byte, bitNumber) {
+        return ((byte & (1 << bitNumber)) != 0) ? 1 : 0;
+    }
+
+    function getMask(bitNumber, len) {
+        var mask = 1;
+        for (var i = 1; i < len; i++) {
+            mask = mask << 1;
+            mask++;
+
+        }
+        return mask << bitNumber;
+    }
+
+    function getDateTimeResponse(attributes, telemetryData, tagId, tagIdValue, name) {
+        var name = constants.tag[tagId].functionValue[1];
+        tagIdValue = hexStringToUInt(tagIdValue, 1) * 1000;
+        if (constants.tag[tagId].type === 1) attributes[name] = tagIdValue;
+        else telemetryData[name] = tagIdValue;
+        name = constants.tag[tagId].functionValue[2];
+        tagIdValue = timeMsToString(tagIdValue);
+        if (constants.tag[tagId].type === 1) attributes[name] = tagIdValue;
+        else telemetryData[name] = tagIdValue;
+    }
+
+    function getCoordinates(attributes, telemetryData, tagId, tagIdValue) {
+        var name = constants.tag[tagId].functionValue["0_0_3"];
+        var tagIdVal = parseInt(tagIdValue.substring(1, 2), 16);
+        if (constants.tag[tagId].type === 1) attributes[name] = tagIdVal;
+        else telemetryData[name] = tagIdVal;
+        name = constants.tag[tagId].functionValue["0_4_7"].name;
+        tagIdVal = parseInt(tagIdValue.substring(0, 1), 16);
+        positionError = tagIdVal;
+        tagIdVal = (constants.tag[tagId].functionValue["0_4_7"].hasOwnProperty(tagIdVal)) ? constants.tag[tagId].functionValue["0_4_7"][tagIdVal] : constants.tag[tagId].functionValue["0_4_7"][3];
+        if (constants.tag[tagId].type === 1) attributes[name] = tagIdVal;
+        else telemetryData[name] = tagIdVal;
+        name = constants.tag[tagId].functionValue["1_4"];
+        tagIdVal = hexStringToUInt(tagIdValue.substring(2, 10), 1);
+        tagIdVal = getLatLongToStr(tagIdVal);
+        if (constants.tag[tagId].type === 1) attributes[name] = tagIdVal;
+        else telemetryData[name] = tagIdVal;
+        name = constants.tag[tagId].functionValue["5-9"];
+        tagIdVal = hexStringToUInt(tagIdValue.substring(10), 1);
+        tagIdVal = getLatLongToStr(tagIdVal);
+        if (constants.tag[tagId].type === 1) attributes[name] = tagIdVal;
+        else telemetryData[name] = tagIdVal;
+    }
+
+    function getLatLongToStr(strInt) {
+        var strVal = strInt.toString();
+        return strInt > 0 ? strVal.substring(0, 2) + "." + strVal.substring(2) : strVal;
+    }
+
+    function getSpeed(attributes, telemetryData, tagId, tagIdValue) {
+        var name = constants.tag[tagId].functionValue["0_1"];
+        var tagIdVal = hexStringToUInt(tagIdValue.substring(0, 4), 1) / 10;
+        if (constants.tag[tagId].type === 1) attributes[name] = tagIdVal;
+        else telemetryData[name] = tagIdVal;
+        name = constants.tag[tagId].functionValue["2_3"];
+        tagIdVal = hexStringToUInt(tagIdValue.substring(4, 8), 1) / 10;
+        if (constants.tag[tagId].type === 1) attributes[name] = tagIdVal;
+        else telemetryData[name] = tagIdVal;
+    }
+
+    function getPositioningError(attributes, telemetryData, tagId, tagIdValue) {
+        var name = constants.tag[tagId].name;
+        var tagIdVal = parseInt(tagIdValue, 16);
+        var tagIdName = (constants.tag[tagId].functionValue.hasOwnProperty(positionError)) ? constants.tag[tagId].functionValue[positionError] : constants.tag[tagId].functionValue[3];
+        if (positionError === 0) {
+            tagIdVal = tagIdVal / 10;
+        } else if (positionError === 2) {
+            tagIdVal = tagIdVal * 10;
+        }
+        tagIdVal = tagIdVal.toString() + ", " + tagIdName;
+        if (constants.tag[tagId].type === 1) attributes[name] = tagIdVal;
+        else telemetryData[name] = tagIdVal;
+    }
+
+    function getStatusDevice(attributes, telemetryData, tagId, tagIdValue) {
+        tagIdValue = hexStringToUInt(tagIdValue, 1);
+        for (var bitNumber = 0; bitNumber < 16; (bitNumber === 12) ? bitNumber += 2 : bitNumber++) {
+            var bit = getBit(tagIdValue, bitNumber);
+            var name = constants.tag[tagId].functionValue[bitNumber].name;
+            var tagIdVal;
+            if (bitNumber === 12) {
+                tagIdVal = (tagIdValue & getMask(constants.tag[tagId].functionValue[bitNumber].bitNumber, constants.tag[tagId].functionValue[bitNumber].len)) >> bitNumber;
+            } else {
+                if (bitNumber === 11) {
+                    bit = (typeGPS_GLONASS == 1) ? bit : (bit === 0) ? 1 : 0;
+                }
+                tagIdVal = constants.tag[tagId].functionValue[bitNumber][bit];
+            }
+            if (constants.tag[tagId].type === 1) attributes[name] = tagIdVal;
+            else telemetryData[name] = tagIdVal;
+        }
+    }
+
+    function getAcceleration(attributes, telemetryData, tagId, tagIdValue) {
+        tagIdValue = hexStringToUInt(tagIdValue, 1);
+        for (var i = 0; i < 3; i++) {
+            var name = constants.tag[tagId].functionValue[i].name;
+            var bitNumber = constants.tag[tagId].functionValue[i].bitNumber;
+            var tagIdVal = (tagIdValue & getMask(bitNumber, constants.tag[tagId].functionValue[i].len)) >> bitNumber;
+            if (constants.tag[tagId].type === 1) attributes[name] = tagIdVal;
+            else telemetryData[name] = tagIdVal;
+        }
+    }
+
+    function getEcoDrive(attributes, telemetryData, tagId, tagIdValue) {
+        tagIdValue = hexStringToStringRev(tagIdValue);
+        for (var i = 0; i < 4; i++) {
+            var name = constants.tag[tagId].functionValue[i];
+            var tagIdVal = (parseInt(tagIdValue.substring(i * 2, (i * 2 + 2)), 16) / 100) * 9.8;
+            if (constants.tag[tagId].type === 1) attributes[name] = tagIdVal;
+            else telemetryData[name] = tagIdVal
+        }
+    }
+
+
+    function getExpandedStatus(attributes, telemetryData, tagId, tagIdValue) {
+        tagIdValue = hexStringToUInt(tagIdValue, 1);
+        for (var i = 0; i < 3; i++) {
+            var name = constants.tag[tagId].functionValue[i].name;
+            var bitNumber = constants.tag[tagId].functionValue[i].bitNumber;
+            var tagIdVal = (tagIdValue & getMask(bitNumber, constants.tag[tagId].functionValue[i].len)) >> bitNumber;
+            tagIdVal = constants.tag[tagId].functionValue[i][tagIdVal];
+            if (constants.tag[tagId].type === 1) attributes[name] = tagIdVal;
+            else telemetryData[name] = tagIdVal;
+        }
+    }
+
+    function getRefrigerationData(attributes, telemetryData, tagId, tagIdValue) {
+        if (hexStringToInt(tagIdValue, 1) !== 0) {
+            for (var byteNumber = 1; byteNumber < 8; (byteNumber === 2) ? byteNumber += 2 : byteNumber++) {
+                if (constants.tag[tagId].functionValue.hasOwnProperty(byteNumber)) {
+                    var name = constants.tag[tagId].name;
+                    var len = constants.tag[tagId].functionValue[byteNumber].len;
+                    var tagIdVal = parseInt(tagIdValue.substring((byteNumber - 1) * 2, (byteNumber - 1) * 2 + len * 2), 16);
+                    name = name + constants.tag[tagId].functionValue[byteNumber].name;
+                    if (byteNumber === 1) {
+                        if (constants.tag[tagId].functionValue[byteNumber].hasOwnProperty(tagIdVal)) {
+                            tagIdVal = constants.tag[tagId].functionValue[byteNumber][tagIdVal];
+                        } else {
+                            tagIdVal = "Unknown device type: id = " + tagIdVal;
+                        }
+                        if (constants.tag[tagId].type === 1) attributes[name] = tagIdVal;
+                        else telemetryData[name] = tagIdVal;
+                    } else if (byteNumber > 1) {
+                        for (var i = 0; i < (len * 8 - 1); i++) {
+                            if (constants.tag[tagId].functionValue[byteNumber].hasOwnProperty(i)) {
+                                var nameBit = (byteNumber > 2 && i === 3) ? name + constants.tag[tagId].functionValue[byteNumber][i].name : name + constants.tag[tagId].functionValue[byteNumber][i];
+                                var lenBit = (byteNumber > 2 && i === 3) ? constants.tag[tagId].functionValue[byteNumber][i].len : 1;
+                                var tagIdValBit = (tagIdVal & getMask(i, lenBit)) >> i;
+                                tagIdValBit = (lenBit === 1) ? (tagIdValBit === 0) ? "no" : "yes" : tagIdValBit;
+                                if (constants.tag[tagId].type === 1) attributes[nameBit] = tagIdValBit;
+                                else telemetryData[nameBit] = tagIdValBit;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    function getFuelLevelSensor(attributes, telemetryData, tagId, tagIdValue) {
+        var tagIdVal = hexStringToUInt(tagIdValue.substring(0, 4), 1);
+        var name = constants.tag[tagId].functionValue[0];
+        if (constants.tag[tagId].type === 1) attributes[name] = tagIdVal;
+        else telemetryData[name] = tagIdVal;
+        tagIdVal = hexStringToInt(tagIdValue.substring(4), 1);
+        name = constants.tag[tagId].functionValue[2];
+        if (constants.tag[tagId].type === 1) attributes[name] = tagIdVal;
+        else telemetryData[name] = tagIdVal;
+    }
+
+    function getThermometer(attributes, telemetryData, tagId, tagIdValue) {
+        var tagIdVal = parseInt(tagIdValue.substring(0, 2), 16);
+        var name = constants.tag[tagId].functionValue[0];
+        if (constants.tag[tagId].type === 1) attributes[name] = tagIdVal;
+        else telemetryData[name] = tagIdVal;
+        tagIdVal = hexStringToInt(tagIdValue.substring(2), 1);
+        tagIdVal = (tagIdVal === -128) ? "disconnection" : tagIdVal
+        name = constants.tag[tagId].functionValue[1];
+        if (constants.tag[tagId].type === 1) attributes[name] = tagIdVal;
+        else telemetryData[name] = tagIdVal
+    }
+
+
+    function getCAN_LOG_Data_CAN_A0(attributes, telemetryData, tagId, tagIdValue) {
+        var tagIdVal = hexStringToUInt(tagIdValue, 1) / 2;
+        var name = constants.tag[tagId].name;
+        if (constants.tag[tagId].type === 1) attributes[name] = tagIdVal;
+        else telemetryData[name] = tagIdVal
+    }
+
+    function getCAN_LOG_Data_CAN_A1(attributes, telemetryData, tagId, tagIdValue) {
+        var name = constants.tag[tagId].name;
+        var off = 0;
+        for (var byteNumber = 0; byteNumber < 3; byteNumber++) {
+            var len = (byteNumber === 2) ? 4 : 2;
+            var tagIdVal = tagIdValue.substring(off, off + len);
+            off += len;
+            tagIdVal = (byteNumber === 2) ? hexStringToUInt(tagIdVal, 1) : parseInt(tagIdVal, 16);
+            tagIdVal = (byteNumber === 0) ? tagIdVal * 0.4 : (byteNumber === 1) ? tagIdVal - 40 : tagIdVal * 0.125;
+            var nameByte = name + constants.tag[tagId].functionValue[byteNumber];
+            if (constants.tag[tagId].type === 1) attributes[nameByte] = tagIdVal;
+            else telemetryData[nameByte] = tagIdVal;
+        }
+    }
+
+    function getCAN_LOG_Data_CAN_B0(attributes, telemetryData, tagId, tagIdValue) {
+        var name = constants.tag[tagId].name;
+        var tagIdVal = hexStringToUInt(tagIdValue, 1) * 5;
+        if (constants.tag[tagId].type === 1) attributes[name] = tagIdVal;
+        else telemetryData[name] = tagIdVal;
+    }
+
+    function getState_iButtoKeys(attributes, telemetryData, tagId, tagIdValue) {
+        var tagIdValue = hexStringToUInt(tagIdValue, 1);
+        if (tagIdValue > 0) {
+            var name = constants.tag[tagId].name;
+            var tagIdVal = null;
+            for (var bitNumber = 0; bitNumber < 8; bitNumber++) {
+                var bit = getBit(tagIdValue, bitNumber);
+                if (bit > 0) {
+                    tagIdVal = (tagIdVal === null) ? "connected: " : tagIdVal += ", ";
+                    tagIdVal += (bitNumber + 1).toString();
+                }
+            }
+            if (constants.tag[tagId].type === 1) attributes[name] = tagIdVal;
+            else telemetryData[name] = tagIdVal;
+        }
+    }
+
+    function getDS1923(attributes, telemetryData, tagId, tagIdValue) {
+        var name = constants.tag[tagId].name;
+        var off = 0;
+        var len = 2;
+        for (var byteNumber = 0; byteNumber < 3; byteNumber++) {
+            var tagIdVal = tagIdValue.substring(off, off + len);
+            off += len;
+            tagIdVal = (byteNumber === 1) ? parseInt(tagIdVal, 16) : hexStringToUInt(tagIdVal, 1);
+            tagIdVal = (byteNumber === 2) ? tagIdVal * 100 / 255 : tagIdVal;
+            var nameByte = name + constants.tag[tagId].functionValue[byteNumber];
+            if (constants.tag[tagId].type === 1) attributes[nameByte] = tagIdVal;
+            else telemetryData[nameByte] = tagIdVal;
+        }
+    }
+
+    function getPressurePro(attributes, telemetryData, tagId, tagIdValue) {
+        var name = constants.tag[tagId].name;
+        var off = 0;
+        for (var i = 0; i < constants.tag[tagId].len; i += 2) {
+            var nameBytes = name + (i / 2).toString();
+            var len = 4;
+            var tagIdVal = tagIdValue.substring(off, off + len);
+            off += len;
+            var tagIdValByte = parseInt(tagIdVal.substring(0, 2), 16);
+            var nameByte = nameBytes + constants.tag[tagId].functionValue[0];
+            if (constants.tag[tagId].type === 1) attributes[nameByte] = tagIdValByte;
+            else telemetryData[nameByte] = tagIdValByte;
+            tagIdValByte = parseInt(tagIdVal.substring(2), 16);
+            for (var bitNumber = 0; bitNumber < 6; bitNumber++) {
+                if (constants.tag[tagId].functionValue[1].hasOwnProperty(bitNumber)) {
+                    var nameBit = (constants.tag[tagId].functionValue[1][bitNumber].hasOwnProperty("name")) ? nameBytes + constants.tag[tagId].functionValue[1][bitNumber].name : nameBytes;
+                    var len = (constants.tag[tagId].functionValue[1][bitNumber].hasOwnProperty("len")) ? constants.tag[tagId].functionValue[1][bitNumber].len : 1;
+                    var tagIdValBit = (tagIdValByte & getMask(bitNumber, len)) >> bitNumber;
+                    if (bitNumber === 0) {
+                        tagIdValBit *= 20;
+                        tagIdValBit = (tagIdValBit <= 100) ? tagIdValBit : 100 - tagIdValBit;
+                        if (constants.tag[tagId].type === 1) attributes[nameBit] = tagIdValBit;
+                        else telemetryData[nameBit] = tagIdValBit;
+                    } else if (constants.tag[tagId].functionValue[1][bitNumber].hasOwnProperty(tagIdValBit)) {
+                        tagIdValBit = constants.tag[tagId].functionValue[1][bitNumber][tagIdValBit];
+                        if (constants.tag[tagId].type === 1) attributes[nameBit] = tagIdValBit;
+                        else telemetryData[nameBit] = tagIdValBit;
+                    }
+                }
+            }
+        }
+    }
+
+     function getDosimeterData(attributes, telemetryData, tagId, tagIdValue) {
+        var name = constants.tag[tagId].name;
+        var len = constants.tag[tagId].functionValue[0].len * 2;
+        var off = 0;
+        var tagIdValByte = hexStringToUInt(tagIdValue.substring(off, off + len), 1);
+        off += len;
+        var nameByte = name + constants.tag[tagId].functionValue[0].name;
+        var nameBit = nameByte + constants.tag[tagId].functionValue[0][0].name;
+        var bitNumber = constants.tag[tagId].functionValue[0][0].bitNumber;
+        len = constants.tag[tagId].functionValue[0][0].len;
+        var tagIdValBit = (tagIdValByte & getMask(bitNumber, len)) >> bitNumstatusber;
+        if (constants.tag[tagId].type === 1) attributes[nameBit] = tagIdValBit;
+        else telemetryData[nameBit] = tagIdValBit;
+        nameBit = nameByte + constants.tag[tagId].functionValue[0][6].name;
+        bitNumber = constants.tag[tagId].functionValue[0][6].bitNumber;
+        len = constants.tag[tagId].functionValue[0][6].len;
+        tagIdValBit = (tagIdValByte & getMask(bitNumber, len)) >> bitNumber;
+        if (constants.tag[tagId].type === 1) attributes[nameBit] = tagIdValBit;
+        else telemetryData[nameBit] = tagIdValBit;
+        len = constants.tag[tagId].functionValue[2].len * 2;
+        tagIdValByte = parseInt(tagIdValue.substring(off, off + len), 16);
+        nameByte = name + constants.tag[tagId].functionValue[2].name;
+        for (var bitNumber = 0; bitNumber < 8; bitNumber++) {
+            if (constants.tag[tagId].functionValue[2].hasOwnProperty(bitNumber)) {
+                nameBit = nameByte + constants.tag[tagId].functionValue[2][bitNumber].name;
+                var len = (constants.tag[tagId].functionValue[2][bitNumber].hasOwnProperty("len")) ? constants.tag[tagId].functionValue[2][bitNumber].len : 1;
+                var tagIdValBit = (tagIdValByte & getMask(bitNumber, len)) >> bitNumber;
+                tagIdValBit = constants.tag[tagId].functionValue[2][bitNumber][tagIdValBit];
+                if (constants.tag[tagId].type === 1) attributes[nameBit] = tagIdValBit;
+                else telemetryData[nameBit] = tagIdValBit;
+            }
+        }
+
+    }
+
+    function getUserDataArray(attributes, telemetryData, tagId, tagIdValue) {
+        var name = constants.tag[tagId].name;
+        var tagIdVal = hexStringToStringRev(tagIdValue);
+        if (constants.tag[tagId].type === 1) attributes[name] = tagIdVal;
+        else telemetryData[name] = tagIdVal;
+    }
+
+    function getUserDataArrayLen(tagId) {
+        var lenPos = parseInt(payoadStr.substr(pos, 2), 16);
+        pos += 2;
+        return lenPos;
+    }
+
+    function getCommand(attributes, telemetryData, tagId, tagIdValue) {
+        var name = constants.tag[tagId].name;
+        var tagIdVal = hexStringToAncii(tagIdValue);
+        if (constants.tag[tagId].type === 1) attributes[name] = tagIdVal;
+        else telemetryData[name] = tagIdVal;
+    }
+
+    function getCommandLen(tagId) {
+        var lenPos = parseInt(payoadStr.substr(pos, 2), 16);
+        pos += 2;
+        return lenPos;
+    }
+
+    return result;
