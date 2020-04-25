@@ -304,7 +304,7 @@ description: ThingsBoard Products Pricing
 <div class="col-lg-12">
     <br>
     <div class="solution-selector">
-        <div class="solution active" data-toggle="#payAsYouGo">
+        <div class="solution" data-toggle="#trndzPayAsYouGo">
             <input type="radio" class="magic-radio" name="pricing-radio-selector" id="PricingPayAsYouGo" value="Pricing Pay As You Go Details" checked>
             <label for="PricingPayAsYouGo">
                 <div class="solution-icon-div d-inline-block">
@@ -325,7 +325,7 @@ description: ThingsBoard Products Pricing
     </div>
     <div class="pricing-div">
         <div class="container">
-            <div class="pricing-section pricing-pay-as-you-go active" id="payAsYouGo">
+            <div class="pricing-section pricing-pay-as-you-go active" id="trndzPayAsYouGo">
                 <div class="row d-none d-lg-flex mb-4">
                     <div class="col-lg-12">
                         <div class="indicator gray-bg text-white text-center pt-2 pb-2">
