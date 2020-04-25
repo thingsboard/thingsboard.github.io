@@ -57,7 +57,7 @@ sudo nano /etc/systemd/system/kafka.service
 ```
 {: .copy-code}
 
-Add the below content. Make sure **to replace** "PUT_YOUR_JAVA_PATH" with your **real JAVA_HOME path** as per the Java installed on your system: 
+Add the below content. Make sure **to replace** "PUT_YOUR_JAVA_PATH" with your **real JAVA_HOME path** as per the Java installed on your system, by default like "/usr/lib/jvm/java-1.8.0-openjdk-xxx": 
 ```bash
 [Unit]
 Description=Apache Kafka Server
@@ -66,7 +66,7 @@ Requires=zookeeper.service
 
 [Service]
 Type=simple
-Environment="JAVA_HOME=/usr/lib/jvm/PUT_YOUR_JAVA_PATH"
+Environment="JAVA_HOME=PUT_YOUR_JAVA_PATH"
 ExecStart=/usr/local/kafka/bin/kafka-server-start.sh /usr/local/kafka/config/server.properties
 ExecStop=/usr/local/kafka/bin/kafka-server-stop.sh
 
@@ -75,38 +75,24 @@ WantedBy=multi-user.target
 ```
 {: .copy-code}
 ##### Start ZooKeeper and Kafka:
+
 ```text
 sudo systemctl start zookeeper
 
 sudo systemctl start kafka
-
 ```
 
-##### Kafka configuration
+##### ThingsBoard Configuration
 
-You will need to change following Queue type parameter in [thingsboard.yml](/docs/user-guide/install/config/#thingsboardyml):
+Edit ThingsBoard configuration file
 
-```bash
-queue:
-  type: "${TB_QUEUE_TYPE:kafka}"
+```text
+sudo nano /etc/thingsboard/conf/thingsboard.conf
 ```
+{: .copy-code}
 
-If need you can configure default Kafka parameters in [thingsboard.yml](/docs/user-guide/install/config/#thingsboardyml):
+Add the following line to the configuration file:
+
 ```bash
-queue:
-...
-  kafka:
-    bootstrap.servers: "${TB_KAFKA_SERVERS:localhost:9092}"
-    acks: "${TB_KAFKA_ACKS:all}"
-    retries: "${TB_KAFKA_RETRIES:1}"
-    batch.size: "${TB_KAFKA_BATCH_SIZE:16384}"
-    linger.ms: "${TB_KAFKA_LINGER_MS:1}"
-    buffer.memory: "${TB_BUFFER_MEMORY:33554432}"
-    replication_factor: "${TB_QUEUE_KAFKA_REPLICATION_FACTOR:1}"
-    topic-properties:
-      rule-engine: "${TB_QUEUE_KAFKA_RE_TOPIC_PROPERTIES:retention.ms:604800000;segment.bytes:26214400;retention.bytes:1048576000}"
-      core: "${TB_QUEUE_KAFKA_CORE_TOPIC_PROPERTIES:retention.ms:604800000;segment.bytes:26214400;retention.bytes:1048576000}"
-      transport-api: "${TB_QUEUE_KAFKA_TA_TOPIC_PROPERTIES:retention.ms:604800000;segment.bytes:26214400;retention.bytes:1048576000}"
-      notifications: "${TB_QUEUE_KAFKA_NOTIFICATIONS_TOPIC_PROPERTIES:retention.ms:604800000;segment.bytes:26214400;retention.bytes:1048576000}"
-      js-executor: "${TB_QUEUE_KAFKA_JE_TOPIC_PROPERTIES:retention.ms:604800000;segment.bytes:26214400;retention.bytes:104857600}"
+export TB_QUEUE_TYPE=kafka
 ```
