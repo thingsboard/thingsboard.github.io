@@ -300,35 +300,168 @@ description: ThingsBoard Products Pricing
  </div>  
 </section>
 
-<section id="trendz" class="pricing-content" style="display: none;">
+<section id="trendz" class="pricing-content">
+<div class="col-lg-12">
+    <br>
+    <div class="solution-selector">
+        <div class="solution active" data-toggle="#payAsYouGo">
+            <input type="radio" class="magic-radio" name="pricing-radio-selector" id="PricingPayAsYouGo" value="Pricing Pay As You Go Details" checked>
+            <label for="PricingPayAsYouGo">
+                <div class="solution-icon-div d-inline-block">
+                    <img src="/images/pricing/pay-as-you-go.png" alt="pay as you go icon" class="pay-as-you-go-icon d-inline">
+                </div>
+                <h2 class="d-none d-md-inline-block" data-faq-id="what-is-pay-as-you-go" data-faq-link-size="50%">Pay-as-you-go</h2>
+            </label>
+        </div>
+        <div class="solution" data-toggle="#perpetual">
+            <input type="radio" class="magic-radio" name="pricing-radio-selector" id="PricingPerpetual" value="Pricing Perpetual Details">
+            <label for="PricingPerpetual">
+                <div class="solution-icon-div d-inline-block">
+                    <img src="/images/pricing/perpetual.png" alt="perpetual icon" class="perpetual-icon d-inline">
+                </div>
+                <h2 class="d-none d-md-inline-block" data-faq-id="what-is-perpetual" data-faq-link-size="50%">Perpetual</h2>
+            </label>
+        </div>
+    </div>
     <div class="pricing-div">
         <div class="container">
-            <div class="pricing-section pricing-community active" id="community">
-                <h1 class="tCenter" style="margin: 0 0 27px 0;">Trendz Analytics</h1>
-                <div style="display: flex;">
-                    <div style="width: 50%; margin: 30px 10px 0;">
-                        <div class="pricing-square-description">
-                            <p>Create interactive visual analytics and discover trends, patterns and insight from your data:</p>
-                        </div>            
-                        <ul>
-                            <li class="pricing-square-item">One-click integration with ThingsBaord</li>                                                          
-                            <li class="pricing-square-item">Self-service analytics</li>                                                          
-                            <li class="pricing-square-item">Data clear and filtering</li>                                                          
-                            <li class="pricing-square-item">Advanced visualizations</li>                                                          
-                            <li class="pricing-square-item">Share and collaborate visualization</li>                                                          
-                            <li class="pricing-square-item">Keep your data secure</li>                                                          
-                        </ul>
+            <div class="pricing-section pricing-pay-as-you-go active" id="payAsYouGo">
+                <div class="row d-none d-lg-flex mb-4">
+                    <div class="col-lg-12">
+                        <div class="indicator gray-bg text-white text-center pt-2 pb-2">
+                            TRENDZ SUBSCRIPTION PLANS
+                        </div>
                     </div>
-                    <div style="width: 50%; margin: 0 10px 0;">
-                        <div class="ml-form-embed"
-                          data-account="1017142:w0j5m5g7f5"
-                          data-form="1575980:e2f1u0">
+                </div>
+                <div class="row d-none d-lg-flex mb-4"></div>
+                <div class="row justify-content-center">
+                    <div class="col-md-4 col-lg-4 col-xl mb-4">
+                        <div class="pricing-square">
+                            <h2>Prototype</h2>
+                            <h4 class="pricing-square-price mb-0">
+                                175
+                                <span>USD / Month</span>
+                            </h4>
+                            <div style="color: rgba(var(--sk_foreground_high,29,28,29),.5); font-size: 15px; font-weight: 400;">Up to 200 Devices and Assets</div>
+                            <div class="pricing-square-item" >
+                                <div style="margin: 5px">Calculated Fields</div>
+                                <div style="margin: 5px">Predictive Analytics</div>
+                                <div style="margin: 5px">Self-service Interface</div>
+                                <div style="margin: 5px">Advanced Visualizations</div>
+                            </div>
+                            <a class="btn btn-full-green btn-pricing" href="javascript:void(0);"
+                               onClick="getLicense(event,
+                                false,
+                                '31307df0-11f6-11ea-951e-b77b877a367b',
+                                '2985f1a0-7afd-11ea-951e-b77b877a367b',
+                                'Trendz Analytics Prototype')">
+                                Get your license
+                            </a>
+                            <div>
+                                <a href="/products/trendz/"><span class="a-full-green">Learn More</span><br></a>
+                            </div>                            
+                            <div class="pricing-square-item" data-faq-id="community-support">
+                                Community support
+                            </div><br>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-4 col-xl mb-4">
+                        <div class="pricing-square">
+                            <h2>Startup</h2>                            
+                            <h4 class="pricing-square-price mb-0">
+                                200
+                                <span>USD / Month</span>
+                            </h4>
+                            <div style="color: rgba(var(--sk_foreground_high,29,28,29),.5); font-size: 15px; font-weight: 400;">Up to 500 Devices and Assets</div>
+                            <div class="pricing-square-item" >
+                                <div style="margin: 5px">Calculated Fields</div>
+                                <div style="margin: 5px">Predictive Analytics</div>
+                                <div style="margin: 5px">Self-service Interface</div>
+                                <div style="margin: 5px">Advanced Visualizations</div>
+                            </div>
+                            <a class="btn btn-full-green btn-pricing" href="javascript:void(0);"
+                               onClick="getLicense(event,
+                                false,
+                                '31307df0-11f6-11ea-951e-b77b877a367b',
+                                '018b7520-7afe-11ea-951e-b77b877a367b',
+                                'Trendz Analytics StartUp')">
+                                Get your license
+                            </a>
+                            <div>
+                                <a href="/products/trendz/"><span class="a-full-green">Learn More</span><br></a>
+                            </div>   
+                            <div class="pricing-square-item" data-faq-id="subscription-support">
+                                Email support within 36 hours
+                            </div><br>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-4 col-xl mb-4">
+                        <div class="pricing-square">
+                            <h2>Business</h2>
+                            <h4 class="pricing-square-price mb-0">
+                                350
+                                <span>USD / Month</span>
+                            </h4>
+                            <div style="color: rgba(var(--sk_foreground_high,29,28,29),.5); font-size: 15px; font-weight: 400;">Up to 1000 Devices and Assets</div>
+                            <div class="pricing-square-item" >
+                                <div style="margin: 5px">Calculated Fields</div>
+                                <div style="margin: 5px">Predictive Analytics</div>
+                                <div style="margin: 5px">Self-service Interface</div>
+                                <div style="margin: 5px">Advanced Visualizations</div>
+                            </div>
+                            <a class="btn btn-full-green btn-pricing" href="javascript:void(0);"
+                               onClick="getLicense(event,
+                                false,
+                                '31307df0-11f6-11ea-951e-b77b877a367b',
+                                '6e3bb4f0-7afe-11ea-951e-b77b877a367b',
+                                'Trendz Analytics Business')">
+                                Get your license
+                            </a>
+                            <div>
+                                <a href="/products/trendz/"><span class="a-full-green">Learn More</span><br></a>
+                            </div>   
+                            <div class="pricing-square-item" data-faq-id="subscription-support">
+                                Email support within 24 hours
+                            </div><br>
+                        </div>
+                    </div>                    
+                </div>
+            </div>
+            <div class="pricing-section pricing-perpetual" id="perpetual">
+                <div class="row d-none d-lg-flex mb-4">
+                    <div class="col-lg-12">
+                        <div class="indicator gray-bg text-white text-center pt-2 pb-2">
+                            LICENSE PACKAGES
+                        </div>
+                    </div>
+                    <h4 class="text-center pt-2 pb-2" style="width: 100%">Trendz Analytics Perpetual Fallback License</h4>
+                    <div style="display: flex;">
+                        <div style="width: 50%; margin: 30px 10px 0;">
+                            <div class="pricing-square-description">
+                                <p>Create interactive visual analytics and discover trends, patterns and
+                                    insight from your data:</p>
+                            </div>
+                            <ul>
+                                <li class="pricing-square-item">One-click integration with ThingsBaord</li>
+                                <li class="pricing-square-item">Self-service analytics</li>
+                                <li class="pricing-square-item">Data clear and filtering</li>
+                                <li class="pricing-square-item">Advanced visualizations</li>
+                                <li class="pricing-square-item">Share and collaborate visualization</li>
+                                <li class="pricing-square-item">Keep your data secure</li>
+                            </ul>
+                        </div>
+                        <div style="width: 50%; margin: 0 10px 0;">
+                            <div class="ml-form-embed"
+                                 data-account="1017142:w0j5m5g7f5"
+                                 data-form="1575980:e2f1u0">
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>     
+    </div>
+</div>
 </section>
 
 

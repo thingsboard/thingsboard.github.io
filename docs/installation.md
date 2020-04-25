@@ -31,6 +31,24 @@ notitle: "true"
                         Installation options
                     </div>
                 </a>
+                <a href="/docs/iot-gateway/installation/" class="card thingsboard-gw">
+                    <div class="card-title">
+                        <span class="title-text">IoT Gateway</span>
+                    </div>
+                    <div class="card-img product gateway-bg"></div>
+                    <div class="card-description">  
+                        Installation options
+                    </div>
+                </a>
+                <a href="/docs/trendz/install/installation-options/" class="card trendz">
+                    <div class="card-title">
+                        <span class="title-text">Trendz Analytics</span>
+                    </div>
+                    <div class="card-img product trendz-bg"></div>
+                    <div class="card-description">  
+                        Installation options
+                    </div>
+                </a>
             </div>
           </div>
        </div>
