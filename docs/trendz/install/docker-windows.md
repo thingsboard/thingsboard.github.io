@@ -47,7 +47,7 @@ docker volume create mytrendz-logs
 Execute the following command to run this docker directly:
 
 ``` 
-docker run -it -p 8888:8888 -v mytrendz-data:/data -v mytrendz-logs:/var/log/trendz -e TB_API_URL='PUT_YOUR_THINGSBOARD_URL_HERE' -e TB_API_PE_ENABLED='true' -e TB_LICENSE_SECRET=PUT_YOUR_LICENSE_SECRET_HERE --restart always --name mytrendz store/thingsboard/trendz:1.4.0-SNAPSHOT
+docker run -it -p 8888:8888 -v mytrendz-data:/data -v mytrendz-logs:/var/log/trendz -e TB_API_URL='PUT_YOUR_THINGSBOARD_URL_HERE' -e TB_API_PE_ENABLED='true' -e TB_LICENSE_SECRET=PUT_YOUR_LICENSE_SECRET_HERE --restart always --name mytrendz thingsboard/trendz:1.4.0-SNAPSHOT
 ```
 
 Where: 
@@ -62,7 +62,7 @@ Where:
 - `-v mytrendz-logs:/var/log/thingsboard`   - mounts the volume `mytbpe-logs` to Trendz logs directory
 - `--name mytrendz`             - friendly local name of this machine
 - `--restart always`        - automatically start Trendz in case of system reboot and restart in case of failure.
-- `store/thingsboard/trendz:1.4.0-SNAPSHOT`          - docker image
+- `thingsboard/trendz:1.4.0-SNAPSHOT`          - docker image
 
     
 In order to get access to necessary resources from external IP/Host on Windows machine, please execute the following commands:
