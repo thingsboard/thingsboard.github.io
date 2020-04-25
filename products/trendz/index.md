@@ -8,10 +8,28 @@ description:
     <div class="main-bg">
         <main>
             <div class="content">
+                <h3 class="header"><span class="cBlue" >Predict failures and forecast utilisation</span></h3>
+                <p>For better decision making, resource planning and reducing cost business requires answers to 3 main questions:
+                   <b>What</b> will happen, <b>When</b>, and <b>Why</b>?</p>
+                   <p>Trendz provides an answer</p>
+                <a href="/docs/trendz/" class="button cBlue try-button">Start Analysis</a>           
+            </div>
+            <div class="image-block">
+                <div class="image-wrapper">
+                    <video poster="/images/trendz/trndz-home-pred.png" autoplay="" loop="" preload="auto" muted="">
+                        <source src="https://tb-videos.s3-us-west-1.amazonaws.com/heatmap_v3ww.webm" type="video/webm">                
+                    </video>
+                </div>
+            </div>
+        </main>
+    </div> 
+    <div class="main-bg">
+        <main>
+            <div class="content">
                 <h3 class="header"><span class="cBlue" >Find outliers and patterns fast</span></h3>
                 <p>With built-in visualizations and self-service interface, you can see your Devices and Assets data in a way you want it to be. 
                         In combination with the human ability to identify visual patterns, Trendz quickly gets you from data to insights and actions.</p>
-                <a href="/pricing/?active=trendz" class="button cBlue try-button">Start Analysis</a>           
+                <a href="/docs/trendz/" class="button cBlue try-button">Learn More</a>           
             </div>
             <div class="image-block">
                 <div class="image-wrapper">
@@ -22,6 +40,24 @@ description:
             </div>
         </main>
     </div>
+    <div class="main-bg">
+            <main>
+                <div class="content">
+                    <h3 class="header"><span class="cBlue" >Define KPI using calculated fields</span></h3>
+                    <p>Calculated fields are one of the most powerful features for KPI monitoring and prediction. 
+                    Based on the input data, calculated fields allow you to run statistical functions and create 
+                    new data items by applying calculations.</p>
+                    <a href="/docs/trendz/" class="button cBlue try-button">Start Analysis</a>           
+                </div>
+                <div class="image-block">
+                    <div class="image-wrapper">
+                        <video poster="/images/trendz/state-simple-view.png" autoplay="" loop="" preload="auto" muted="">
+                            <source src="https://tb-videos.s3-us-west-1.amazonaws.com/heatmap_v3ww.webm" type="video/webm">                
+                        </video>
+                    </div>
+                </div>
+            </main>
+        </div> 
     <div class="main-bg">
         <main>
             <div class="content">
@@ -76,7 +112,7 @@ description:
                     <br>
                     <b>All with respect to ThingsBoard user permissions</b>
                 </p>
-                <a href="http://0.0.0.0:4000/docs/trendz/" class="button cBlue try-button">Learn More</a>
+                <a href="/docs/trendz/" class="button cBlue try-button">Learn More</a>
             </div>
             <div class="image-block">
                 <div class="image-wrapper">
