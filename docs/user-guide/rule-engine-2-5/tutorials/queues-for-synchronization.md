@@ -10,9 +10,12 @@ description: Using queues for synchronization
 
 ## Use case
 
-Let's assume your device is using DHT22 sensor to collect and push temperature readings in the room to ThingsBoard.
-In case the temperature exceeds some threshold we will simulate the air conditioning system to be enabled.
-Otherwise, it will be disabled.
+Let's assume you need to implement the "counter" logic using ThingsBoard Rule Engine.
+Basically, message processing is executed asynchronously inside the Rule Nodes. Due to this fact, in most cases, the logic "get present counter value -> add new counter value -> save counter value" 
+leads to the incorrect final result (unlike your expectations) due to the race condition issue. 
+It is a well-known problem for all who dealt with multi-threading programming.
+You can refer to this [article](https://opensourceforgeeks.blogspot.com/2014/01/race-condition-synchronization-atomic.html) which nicely describes the problem and the existed solutions.
+Starting the ThingsBoard v2.5 this processing issue could be solved using special configurable queues.
 
 In this tutorial, we will configure ThingsBoard Rule Engine to use queue with sequential by originator message submit strategy.
 Although this scenario is fictional, you will learn how to work with the queue to allow processing messages in sequential order
@@ -31,8 +34,8 @@ In addition, you need to have at least one device provisioned in your environmen
 
 ![image](/docs/user-guide/rule-engine-2-5/tutorials/resources/sync_rule_chain.png)
 
-We will add two generator nodes that will generate a single message each. First generator will produce a message with the temperature value of 21.
-Second - with the value of 19 in one second later.
+We will add two generator nodes that will generate seven messages each. First generator will produce a message with the counter value of 101.
+Second - with the value of 10. So the result should be 777.
 
 ![image](/docs/user-guide/rule-engine-2-5/tutorials/resources/generator1.png)
 ![image](/docs/user-guide/rule-engine-2-5/tutorials/resources/generator2.png)
@@ -43,50 +46,26 @@ the subsequent message will start being processed when the preceding message is 
 
 ![image](/docs/user-guide/rule-engine-2-5/tutorials/resources/checkpoint.png)
 
-We will filter the messages based on the temperature value.
-![image](/docs/user-guide/rule-engine-2-5/tutorials/resources/filter_by_temperature.png)
+We will get the present "counter" value using **"Originator Attributes"** node.
+![image](/docs/user-guide/rule-engine-2-5/tutorials/resources/sync_originator_attributes.png)
 
-The first message will go through the **'True'** chain. The new attribute **'state'** will be created with the value **'on'**.
-That would mean the air conditioning system is enabled. We have simulated the 7 seconds delay to show that the second message will be on hold until the first message is processed (acknowledged).
+The calculations will be done using **"Counter Script"** node. 
 
-![image](/docs/user-guide/rule-engine-2-5/tutorials/resources/on_state_script.png)
+![image](/docs/user-guide/rule-engine-2-5/tutorials/resources/sync_counter_script.png)
 
-The two last steps are saving the attribute and displaying the Success Log.
-After the log message is displayed, the first message is considered as processed (acknowledged) since there is no more logic coming afterward.
-
-![image](/docs/user-guide/rule-engine-2-5/tutorials/resources/save_and_log.png)
-
-The second message is started being processed. It will go through the **"False"** chain of the **"Filter By Temperature"** node.
-The **"Originator Attributes"** node is used for fetching the **'state'** attribute.
-In case it is absent, the message will go through **"Failure"** chain. This is done to illustrate that in case the second message is started being processed before the first is finished, 
-the logic fails and the attribute is not updated.
-
-![image](/docs/user-guide/rule-engine-2-5/tutorials/resources/originator_attributes.png)
-
-The **"Filter Script"** node is used to filter the message based on the air conditioning system state. In case it is enabled (the value is **'on'**), we change the state to **'off'** and save attribute.
-
-![image](/docs/user-guide/rule-engine-2-5/tutorials/resources/filter_by_state.png)
-![image](/docs/user-guide/rule-engine-2-5/tutorials/resources/off_state.png)
-
-Otherwise, we do nothing. The same save attributes and log nodes are used to finish the processing.
-
-![image](/docs/user-guide/rule-engine-2-5/tutorials/resources/save_and_log.png)
+The last step will be to save the new counter value using **"Save Attributes"** node.
 
 ## Step 2: Validation the Rule Chain logic
 
-Let's check that our logic is correct by saving the Rule Chain. The generators will automatically produce two messages:
+Let's check that our logic is correct by saving the Rule Chain. The generators will automatically produce 14 messages:
 
-**"Checkpoint"** node receives two messages:
+![image](/docs/user-guide/rule-engine-2-5/tutorials/resources/sync_events.png)
 
-![image](/docs/user-guide/rule-engine-2-5/tutorials/resources/checkpoint_events.png)
+The final counter value that is persisted for a device is:
 
-We can see that the next node, **"Filter By Temperature"**, receives the second message after 7 seconds the first came. That means that our logic works correctly.
+![image](/docs/user-guide/rule-engine-2-5/tutorials/resources/sync_result.png)
 
-![image](/docs/user-guide/rule-engine-2-5/tutorials/resources/checkpoint_events.png)
-
-And the **"Originator Attributes"** node processed the second message successfully.
-
-![image](/docs/user-guide/rule-engine-2-5/tutorials/resources/originator_events.png)
+That means that our logic works correctly.
 
 ## TL;DR
 
