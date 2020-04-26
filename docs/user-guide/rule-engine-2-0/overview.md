@@ -245,6 +245,63 @@ For example, the rule chain below will:
   * forward events about "Created" and "Cleared" alarms to external rule chain that handles notifications to corresponding users.
  
 ![image](/images/user-guide/rule-engine-2-0/rule-chain-references.png)
+
+#### Rule Engine Queue
+
+Rule Engine subscribe to queues on startup and polls for new messages. 
+There is always "Main" topic that is used as a main entry point for new incoming messages. 
+You may configure multiple queues using thingsboard.yml or environment variables.
+Once configured, you may put message to the other topic using "Checkpoint" node. 
+This automatically acknowledges corresponding message in the current topic.
+
+The definition of the queue consists of the following parameters:
+
+ * name - used for statistics and logging;
+ * topic - used by Queue implementations to produce and consume messages;
+ * poll-interval - duration in milliseconds between polling of the messages if no new messages arrive;
+ * partitions - number of partitions to associate with this queue. Used for scaling the number of messages that can be processed in parallel;
+ * pack-processing-timeout - interval in milliseconds for processing of the particular pack of messages returned by consumer;
+ * submit-strategy - defines logic and order of submitting messages to rule engine. See separate paragraph below.
+ * processing-strategy - defines logic of acknowledgement of the messages. See separate paragraph below.
+  
+##### Queue submit strategy
+
+Rule Engine service constantly polls messages for specific topic and once the Consumer returns a list of messages it creates the TbMsgPackProcessingContext object.
+Queue submit strategy controls how messages from TbMsgPackProcessingContext are submitted to rule chains. There are 5 available strategies:
+
+ * BURST - all messages are submitted to the rule chains in the order they arrive.  
+ * BATCH - messages are grouped to batches using "queue.rule-engine.queues\[queue index\].batch-size" configuration parameter. 
+ New batch is not submitted until previous batch is acknowledged.
+ * SEQUENTIAL_BY_ORIGINATOR - messages are submitted sequentially within particular entity (originator of the message). 
+ New message for e.g. device A is not submitted until previous message for device A is acknowledged. 
+ * SEQUENTIAL_BY_TENANT - messages are submitted sequentially within tenant (owner of the originator of the message). 
+ New message for e.g tenant A is not submitted until previous message for tenant A is acknowledged.
+ * SEQUENTIAL  - messages are submitted sequentially. New message is not submitted until previous message is acknowledged. This makes processing quite slow.
+
+##### Queue processing strategy
+
+TODO: 2.5
+
+##### Default queues
+
+There are three default queues configured: Main, HighPriority and SequentialByOriginator.
+They differ based on submit and processing strategy.
+Basically, rule engine process messages from Main topic and may optionally put them to other topics using "Checkpoint" rule node. 
+Main topic simply ignores failed messages by default. This is done for backward compatibility with previous releases. 
+However, you may reconfigure this at your own risk. 
+Note that if one message is not processed due to some failure in your rule node script, it may prevent next messages from being processed.
+We have designed specific [dashboard](/docs/user-guide/rule-engine-2-0/overview/#rule-engine-statistics) to monitor Rule Engine processing and failures. 
+
+The HighPriority topic may be used for delivery of alarms or other critical processing steps. 
+The messages in HighPriority topic are constantly reprocessed in case of failure until the message processing succeeds. 
+This is useful if you have an outage of the SMTP server or external system. The Rule Engine will retry sending the message until it is processed.   
+
+The SequentialByOriginator topic is important if you would like to make sure that messages are processed in correct order.
+Messages from the same entity will be processed with the order they arrive to the queue. 
+Rule Engine will not submit new message to the rule chain until the previous message for the same entity id is acknowledged. 
+ 
+
+TODO: 2.5
  
 ## Rule Node Types
 
@@ -281,6 +338,10 @@ You can define:
 - Actual **JS script** in Filter section.
 
 After pressing **Test** output will be returned in right **Output** section.
+
+## Rule Engine Statistics
+
+TODO 2.5
 
 ## Debugging
 
