@@ -396,7 +396,7 @@
         }
         var ts = new Date().getTime();
         var maxLenth = 400;
-        var telemtryStr = JSON.stringify(telemetry[0]);
+        var telemtryStr = JSON.stringify(telemetry[0]).replace(timeMS,timeMsToString(timeMS));
         if (telemtryStr.length> maxLenth) telemtryStr = telemtryStr.substring(0, maxLenth) + "...";
         var logs = {
             ts: ts,
@@ -404,10 +404,7 @@
                 "logs": request + ": 1 " + response + ": " + telemtryStr
             }
         };
-
-
         telemetry.push(logs);
-
         return telemetry;
     }
 
@@ -433,7 +430,7 @@
         var responseData = {
             ts: ts,
             values: {
-                "logs":  metadata["request"]  + ": " + payoadStr.substr(y)
+                "logs":  request + ": request " + payoadStr.substr(y)
             }
         };
         telemetry.push(responseData);
@@ -473,10 +470,9 @@
         len = 2 * responseSize;
         var responseValHex = payoadStr.substr(y, len);
         y += len;
-        var key = metadata["request"];
         var resposeValAnsii = hex_to_ascii(responseValHex);
         var result = {
-            "logs": request + ": " + metadata["request"] + " " + response + ": " + resposeValAnsii
+            "logs": request + ": request " + response + ": " + resposeValAnsii
         };
         return result;
     }
@@ -567,4 +563,7 @@
         return str;
     }
 
+    function timeMsToString(ms) {
+        return new Date(ms).toISOString();
+    }
     return result;

@@ -141,7 +141,10 @@ Open Downlink Converter, editor mode, click "test decoder function" and replace 
                  {
                     /** Encoder **/                    
                      var lenPacketStart = 26;
-                     var result = setPayload(); 
+                     var result = setPayload();
+                     var commandNumber;
+                     var newPayload;
+                     var separator;                 
                      function setPayload() {
                          if (msg.hasOwnProperty('payload') && metadata['payload'] !== null) {
                              return getPayload();
@@ -149,13 +152,18 @@ Open Downlink Converter, editor mode, click "test decoder function" and replace 
                          return null;
                      }                 
                      function getPayload() {
+                         newPayload = [];
+                          separator = ";";
+                         commandNumber = metadata['commandNumber'];
                          var rez = {
                              contentType: "JSON",
                              data:  getDataHexMany(),
                              metadata: {
                                  serialNumber: metadata['cs_serialNumber'],
                                  deviceName: metadata['originatorName'],
-                                 payload:  getPayloadTrim()
+                                 commandNumber: commandNumber,
+                                 // payload:  getPayloadTrim()
+                                 payload:  getNewPayloadStr ()
                              }
                          };
                          return rez;
@@ -172,13 +180,13 @@ Open Downlink Converter, editor mode, click "test decoder function" and replace 
                          return strHex.substring(strHex.length - len.length);
                      }                 
                      function getDataHexMany() {
-                         var dataArrays = msg.payload.split(",");
+                         var dataArrays = msg.payload.split(separator);
                          var data = "";
                          for (var i = 0; i < dataArrays.length; i ++) {
-                             data += (getDataHexOneForMany(dataArrays[i].trim()) + ",")
+                             data += (getDataHexOneForMany(dataArrays[i].trim()) + separator)
                          }
-                         data = data.substring(0, data.lastIndexOf(","));                 
-                         return data;                 
+                         data = data.substring(0, data.lastIndexOf(separator));
+                         return data;
                      }                 
                      function getDataHexOneForMany(str) {
                          var lenCommand = str.length;
@@ -187,7 +195,14 @@ Open Downlink Converter, editor mode, click "test decoder function" and replace 
                          var lenPacketHex = hexStringToStringRev(convertToHexFixLen(lenPacket, "0000"));
                          var serialNumberHex = convertToHex(metadata['cs_serialNumber']);
                          var commandHex = convertToHex(str);
-                         var dataHex = "01" + lenPacketHex  + "03" + serialNumberHex + "04" + "0000" + "E0" + "00000000" + "E1" + lenCommandHex + commandHex;
+                         var commNumber = parseInt(commandNumber, 10);
+                         commNumber ++;
+                         // commNumber *= 10000;
+                         var commNumberHex = convertToHexFixLen(commNumber, "00000000");
+                         var dataHex = "01" + lenPacketHex  + "03" + serialNumberHex + "04" + "0000" + "E0" + commNumberHex + "E1" + lenCommandHex + commandHex;
+                         var val = commNumberHex + ": " + str;
+                         newPayload.push (val);
+                         commandNumber = commNumber.toString();
                          return dataHex;
                      }                 
                      function hexStringToStringRev(str) {
@@ -198,12 +213,20 @@ Open Downlink Converter, editor mode, click "test decoder function" and replace 
                          return strRev;
                      }                 
                      function getPayloadTrim () {
-                         var dataArrays = msg.payload.split(",");
+                         var dataArrays = msg.payload.split(separator);
                          var data = "";
                          for (var i = 0; i < dataArrays.length; i ++) {
-                             data += (dataArrays[i].trim() + ",")
+                             data += (dataArrays[i].trim() + separator)
                          }
-                         data = data.substring(0, data.lastIndexOf(","));
+                         data = data.substring(0, data.lastIndexOf(separator));
+                         return data;
+                     }
+                     function getNewPayloadStr () {
+                         var data = "";
+                         for (var i = 0; i < newPayload.length; i ++) {
+                             data += (newPayload[i].trim() + separator)
+                         }
+                         data = data.substring(0, data.lastIndexOf(separator));
                          return data;
                      }                 
                      return result;

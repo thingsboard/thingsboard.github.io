@@ -1,6 +1,8 @@
     var codec = 12;
     var quantity = 1;
     var commandType = 5;
+    var commandNumber = metadata['commandNumber'];
+    var separator;
 
     var result = setPayload();
 
@@ -12,6 +14,7 @@
     }
 
     function getPayload() {
+        separator = ";";
         var rez = {
             contentType: "JSON",
             data:  getDataHexMany(),
@@ -20,7 +23,7 @@
                 deviceName: metadata['originatorName'],
                 payload:  getPayloadTrim(),
                 codec: codec,
-                quantity: quantity,
+                commandNumber: commandNumber,
                 commandType: commandType
             }
         };
@@ -41,12 +44,12 @@
     }
 
     function getDataHexMany() {
-        var dataArrays = msg.payload.split(",");
+        var dataArrays = msg.payload.split(separator);
         var data = "";
         for (var i = 0; i < dataArrays.length; i ++) {
-            data += (getDataHexOneForMany(dataArrays[i].trim()) + ",")
+            data += (getDataHexOneForMany(dataArrays[i].trim()) + separator)
         }
-        data = data.substring(0, data.lastIndexOf(","));
+        data = data.substring(0, data.lastIndexOf(separator));
 
         return data;
 
@@ -63,12 +66,12 @@
     }
 
     function getPayloadTrim () {
-        var dataArrays = msg.payload.split(",");
+        var dataArrays = msg.payload.split(separator);
         var data = "";
         for (var i = 0; i < dataArrays.length; i ++) {
-            data += (dataArrays[i].trim() + ",")
+            data += (dataArrays[i].trim() + separator)
         }
-        data = data.substring(0, data.lastIndexOf(","));
+        data = data.substring(0, data.lastIndexOf(separator));
         return data;
     }
 
