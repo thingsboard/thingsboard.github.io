@@ -24,12 +24,12 @@ We will describe connector configuration file below.
 
 {
   "server": {
-    "name": "Modbus Default Server",
     "type": "tcp",
     "host": "127.0.0.1",
     "port": 5020,
     "timeout": 35,
-    "method": "rtu",
+    "method": "socket",
+    "byteOrder": "BIG",
     "devices": [
       {
         "unitId": 1,
@@ -39,45 +39,154 @@ We will describe connector configuration file below.
         "sendDataOnlyOnChange": true,
         "attributes": [
           {
-            "byteOrder": "BIG",
-            "tag": "test",
-            "type": "long",
+            "tag": "string_read",
+            "type": "string",
             "functionCode": 4,
-            "registerCount": 1,
-            "address": 0
-          }
-        ],
-        "timeseries": [
+            "objectsCount": 4,
+            "address": 1
+          },
           {
-            "byteOrder": "BIG",
-            "tag": "test",
-            "type": "long",
+            "tag": "bits_read",
+            "type": "bits",
             "functionCode": 4,
-            "registerCount": 1,
-            "address": 0
+            "objectsCount": 1,
+            "address": 5
+          },
+          {
+            "tag": "8int_read",
+            "type": "8int",
+            "functionCode": 4,
+            "objectsCount": 1,
+            "address": 6
+          },
+          {
+            "tag": "16int_read",
+            "type": "16int",
+            "functionCode": 4,
+            "objectsCount": 1,
+            "address": 7
+          },
+          {
+            "tag": "32int_read_divider",
+            "type": "32int",
+            "functionCode": 4,
+            "objectsCount": 2,
+            "address": 8,
+            "divider": 10
+          },
+          {
+            "tag": "8int_read_multiplier",
+            "type": "8int",
+            "functionCode": 4,
+            "objectsCount": 1,
+            "address": 10,
+            "multiplier": 10
+          },
+          {
+            "tag": "32int_read",
+            "type": "32int",
+            "functionCode": 4,
+            "objectsCount": 2,
+            "address": 11
+          },
+          {
+            "tag": "64int_read",
+            "type": "64int",
+            "functionCode": 4,
+            "objectsCount": 4,
+            "address": 13
+          }
+      ],
+      "timeseries": [
+          {
+            "tag": "8uint_read",
+            "type": "8uint",
+            "functionCode": 4,
+            "objectsCount": 1,
+            "address": 17
+          },
+          {
+            "tag": "16uint_read",
+            "type": "16uint",
+            "functionCode": 4,
+            "objectsCount": 2,
+            "address": 18
+          },
+          {
+            "tag": "32uint_read",
+            "type": "32uint",
+            "functionCode": 4,
+            "objectsCount": 4,
+            "address": 20
+          },
+          {
+            "tag": "64uint_read",
+            "type": "64uint",
+            "functionCode": 4,
+            "objectsCount": 1,
+            "address": 24
+          },
+          {
+            "tag": "16float_read",
+            "type": "16float",
+            "functionCode": 4,
+            "objectsCount": 1,
+            "address": 25
+          },
+          {
+            "tag": "32float_read",
+            "type": "32float",
+            "functionCode": 4,
+            "objectsCount": 2,
+            "address": 26
+          },
+          {
+            "tag": "64float_read",
+            "type": "64float",
+            "functionCode": 4,
+            "objectsCount": 4,
+            "address": 28
           }
         ],
-        "rpc": {
-          "turnLightOn": {
-            "address": 4,
-            "bit": 2,
-            "value": true
-          },
-          "turnLightOff": {
-            "address": 4,
-            "bit": 2,
-            "value": false
-          },
-          "getCPULoad": {
-            "tag": "Integer",
-            "value": 42,
-            "functionCode": 16,
-            "address": 0,
-            "unitId": 1,
-            "byteOrder": "BIG",
-            "registerCount": 1
+        "attributeUpdates": [
+          {
+            "tag": "shared_attribute_write",
+            "type": "32int",
+            "functionCode": 6,
+            "objectsCount": 2,
+            "address": 29
           }
-        }
+        ],
+        "rpc": [
+          {
+            "tag": "setValue",
+            "type": "bits",
+            "functionCode": 5,
+            "objectsCount": 1,
+            "address": 31
+          },
+          {
+            "tag": "getValue",
+            "type": "bits",
+            "functionCode": 1,
+            "objectsCount": 1,
+            "address": 31
+          },
+          {
+            "tag": "setCPUFanSpeed",
+            "type": "32int",
+            "functionCode": 16,
+            "objectsCount": 2,
+            "address": 33
+          },
+          {
+            "tag":"getCPULoad",
+            "type": "32int",
+            "functionCode": 4,
+            "objectsCount": 2,
+            "address": 35
+          }
+        ]
       }
     ]
   }
@@ -132,28 +241,46 @@ Configuration in this subsection provides settings for processing data on Modbus
 
 | **Parameter** | **Default value**   | **Description**                                                         |
 |:-|:-|-
-| byteOrder     | **BIG**      | Order of bytes to read.                                                        |
-| tag           | **test**     | Tag, which will use as attribute key for ThingsBoard platform instance.        |
-| type          | **long**     | Type of value. (**long**, **integer**, **string**, **double**, **bit**)        |
-| functionCode  | **4**        | Function to use in processing data. Based on Modbus standard.                  |
-| registerCount | **1**        | Count of registers to read.                                                    |
-| address       | **0**        | Register address to check.                                                     |
+| tag           | **test**      | Tag, which will use as attribute key for ThingsBoard platform instance.        |
+| type          | **32int**     | Type of value. (**long**, **integer**, **string**, **double**, **bit**)        |
+| functionCode  | **4**         | Function to use in processing data. Based on Modbus standard.                  |
+| objectsCount  | **1**         | Count of registers to read.                                                    |
+| address       | **1**         | Register address to check.                                                     |
 |---
+
+Optional parameters:
+**multiplier** - result of reading will be multiplied by value of this parameter.
+**divider** - result of reading will be divided by value of this parameter.
 
 This part of configuration will look like:  
 
 ```json
         "attributes": [
           {
-            "byteOrder": "BIG",
             "tag": "test",
-            "type": "long",
+            "type": "32int",
             "functionCode": 4,
-            "registerCount": 1,
-            "address": 0
+            "objectsCount": 1,
+            "address": 1
           }
         ],
 ```
+
+**\*\* Datatypes:**
+**string**
+**bytes**
+**bits**
+**8int**
+**8uint**
+**16int**
+**16uint**
+**16float**
+**32int**
+**32uint**
+**32float**
+**64int**
+**64uint**
+**64float**
 
 ###### Subsection "timeseries"
 Configuration in this subsection provides settings for processing data on Modbus server, which will be interpreted in ThingsBoard platform instance as telemetry of device.
@@ -206,43 +333,55 @@ The hardware manufactures can implement various data types. Here are mapping rul
 ###### Subsection "rpc"
 Configuration in this subsection provides settings for RPC requests from ThingsBoard platform instance to device.
 
-| **Parameter** | **Default value**     | **Description**                                                         |
+| **Parameter** | **Default value**     | **Description**                                                             |
 |:-|:-|-
-| turnLightOn   |                       | Name of RPC function. Can be different (Variants provided below.)       |
-| address       | **4**                 | Register address to set/read.                                           |
-| bit           | **2**                 | Bit address to set/read.                                                |
-| value         | **true**              | The value will be written to register.                                  |
-| registerCount | **1**                 | Count of registers to set/read.                                         |
-| unitId        | **1**                 | Identifier of the device unit, on which rpc request will be executed.   |
-| byteOrder     | **BIG**               | Byte order, for value, that will be written to register.                |
-| tag           | **Integer**           | Type of value. (**long**, **integer**, **string**, **double**, **bit**) |
+| tag           | **turnLightOn**       | Name of RPC function. Can be different (Variants provided below.)           |
+| type          | **Integer**           | Type of value. (**long**, **integer**, **string**, **double**, **bit**)**\***    |
+| address       | **4**                 | Register address to set/read.                                               |
+| bit           | **2**                 | Bit address to set/read.                                                    |
+| value         | **true**              | The value will be written to register.                                      |
+| registerCount | **1**                 | Count of registers to set/read.                                             |
+| unitId        | **1**                 | Identifier of the device unit, on which rpc request will be executed.       |
+| byteOrder     | **BIG**               | Byte order, for value, that will be written to register.                    |
+
+
 |---
 
 This part of configuration will look like:  
 
 ```json
-        "rpc": {
-          "turnLightOn": {
+        "rpc": [
+          {
+            "tag": "turnLightOn",
             "address": 4,
+            "type": "bit",
             "bit": 2,
             "value": true
           },
-          "turnLightOff": {
+          {
+            "tag": "turnLightOff",
             "address": 4,
+            "type": "bit",
             "bit": 2,
             "value": false
           },
-          "getCPULoad": {
-            "tag": "Integer",
-            "value": 42,
+          {
+            "tag": "setCPUFanSpeed",
+            "type": "int",
             "functionCode": 16,
+            "address": 1,
+            "byteOrder": "BIG",
+            "registerCount": 2
+          },
+          {
+            "tag":"getCPULoad",
+            "type": "int",
+            "functionCode": 4,
             "address": 0,
-            "unitId": 1,
             "byteOrder": "BIG",
             "registerCount": 1
           }
-        }
-      }
+        ]
 ```
 
 {% capture modbusRPCinfo %}
@@ -256,7 +395,7 @@ This part of configuration will look like:
 
 Explore guides related to main ThingsBoard features:
 
- - [Connect MODBUS device](/docs/iot-gateway/guides/how-to-connect-modbus-device/) - how to connect MODBUS device using ThongsBoard IoT Gateway
+ - [Connect MODBUS device](/docs/iot-gateway/guides/how-to-connect-modbus-device/) - how to connect MODBUS device using ThingsBoard IoT Gateway
  - [Data Visualization](/docs/user-guide/visualization/) - how to visualize collected data.
  - [Device attributes](/docs/user-guide/attributes/) - how to use device attributes.
  - [Telemetry data collection](/docs/user-guide/telemetry/) - how to collect telemetry data.

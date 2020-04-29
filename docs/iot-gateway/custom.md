@@ -13,9 +13,13 @@ Connectors are Gateway components that connect to external system or directly to
 Once connected, connector is either poll data from those systems or subscribe to updates. Poll vs subscribe depends on the protocol capabilities.
 
 Main goal of the custom connector is opportunity to connect to any device with any protocol. Connectors are written in Python language.
- 
+
 We will demonstrate how to create custom connector by example. Let's assume we want our connector to connect to serial port on your device and read the data. 
-Connector will be able to push data to device over serial. We will call this connector SerialConnector. Please see step-by-step guide how to add SerialConnector to your Gateway.
+Connector will be able to push data to device over serial. We will call this connector SerialConnector.  
+Please see step-by-step guide how we have added SerialConnector to the Gateway.  
+You can create your custom connector, based on this example.  
+
+**Notate: The gateway already contains this connector, you can find it in the extensions folder**
 
 Let's assume our serial devices push UTF-8 encoded strings like this: 
 
@@ -92,8 +96,8 @@ Parameters in device object:
 1. "name" - name of the device for ThingsBoard instance.  
 2. "port" - port for the device.  
 3. "baudrate" - port baudrate for connection to device.  
-**Notate:** You can also use parameters from a configuration for serial port such as parity, stop bits, etc.   
-You can read more about parameters for the serial port [here.](https://pythonhosted.org/pyserial/pyserial_api.html#classes)  
+**Notate: You can also use parameters from a configuration for serial port such as parity, stop bits, etc.   
+You can read more about serial port parameters [here.](https://pythonhosted.org/pyserial/pyserial_api.html#classes)**  
 4. "converter" - class name of converter that we will use for the serial connector.
 5. "telemetry" - objects array, with a configuration for processing data from device, data processed with configuration in this section will be interpreted as device telemetries.
 6. "attributes" - objects array, with a configuration for processing data from device, data processed with configuration in this section will be interpreted as device attributes.
@@ -105,29 +109,25 @@ You can read more about parameters for the serial port [here.](https://pythonhos
 
 Connector file should being placed in extensions folder that depends on type of installation:
 
-**Ubuntu/CentOS:**
+**If you install the gateway as daemon:**
 
 ```bash
 /var/lib/thingsboard_gateway/extensions
 ```
+{: .copy-code}
 
 **For installation using pip:** 
 
-```bash 
-/usr/lib/python3/site-packages/thingsboard_gateway/extensions
-```
-or
+| **Installation command** | **Path** | **Description** |
+|-|-|
+| **sudo pip3 install thingsboard-gateway** | `/usr/lib/python3/site-packages/thingsboard_gateway/extensions` | Package installed on system layer, for every user. |
+| **pip3 install thingsboard-gateway** | `/usr/local/lib/python3/dist-packages/thingsboard-gateway` | Package installed only for current user. |
 
-```text
-/usr/.local/lib/python3/site-packages/thingsboard_gateway/extensions
-```
-
-**2. If you install the gateway as daemon, extensions folder located in /var/lib/thingsboard_gateway/extensions**
 
 ### Step 3. Define Connector Implementation
 
 We need create a folder and file for our connector class.  
-We have created folder "serial" in extensions folder and file "custom_serial_connector.py".
+We have a folder "**serial**" in extensions folder and file "**custom_serial_connector.py**".
 After this, we write connector class in the connector file and override some methods of parent class. [List of methods.](#custom-connector-methods-reference) 
 
 <br>
@@ -252,7 +252,7 @@ class CustomSerialConnector(Thread, Connector):    # Define a connector class, i
                             data_from_device = data_from_device + ch
                         except Exception as e:
                             log.exception(e)
-                            continue
+                            break
                     try:
                         converted_data = self.devices[device]['converter'].convert(self.devices[device]['device_config'], data_from_device)
                         self.__gateway.send_to_storage(self.get_name(), converted_data)

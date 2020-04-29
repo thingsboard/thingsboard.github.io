@@ -17,7 +17,7 @@ ThingsBoard IoT Gateway provides following features:
  - [**OPC-UA** connector](/docs/iot-gateway/config/opc-ua/) to collect data from IoT devices that are connected to OPC-UA servers.
  - [**Modbus** connector](/docs/iot-gateway/config/modbus/) to collect data from IoT devices that are connected through Modbus protocol.
  - [**BLE** connector](/docs/iot-gateway/config/ble/) to collect data from IoT devices that are connected using Bluetooth Low Energy.
- - [**Request** connector](/docs/iot-gateway/config/can/) to collect data from IoT devices that are have HTTP(S) API endpoints.
+ - [**Request** connector](/docs/iot-gateway/config/request/) to collect data from IoT devices that are have HTTP(S) API endpoints.
  - [**CAN** connector](/docs/iot-gateway/config/can/) to collect data from IoT devices that are connected through CAN protocol.
  - [**Custom** connector](/docs/iot-gateway/custom/) to collect data from IoT devices that are connected by different protocols. (You can create your own connector for the requires protocol).
  - **Persistence** of collected data to guarantee data delivery in case of network or hardware failures.
