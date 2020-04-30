@@ -44,7 +44,7 @@ sudo dpkg -i thingsboard-2.4.3.deb
 {% capture contenttogglespec %}
 PostgreSQL <small>(recommended for < 5K msg/sec)</small>%,%postgresql%,%templates/install/ubuntu-db-postgresql.md%br%
 Hybrid <br/>PostgreSQL+Cassandra<br/><small>(recommended for > 5K msg/sec)</small>%,%hybrid%,%templates/install/ubuntu-db-hybrid.md%br%
-Hybrid <br/>PostgreSQL+TimescaleDB<br/>%,%timescale%,%templates/install/ubuntu-db-hybrid-timescale.md{% endcapture %}
+Hybrid <br/>PostgreSQL+TimescaleDB<small>(for TimescaleDB professionals)</small><br/>%,%timescale%,%templates/install/ubuntu-db-hybrid-timescale.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="ubuntuThingsboardDatabase" toggle-spec=contenttogglespec %} 
 
