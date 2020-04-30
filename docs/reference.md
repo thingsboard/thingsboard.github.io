@@ -8,6 +8,7 @@ description: ThingsBoard architecture
 * TOC
 {:toc}
 
+## ThingsBoard services
 
 ThingsBoard is designed to be:
 
@@ -21,7 +22,11 @@ ThingsBoard cluster can handle millions of devices.
 
 The diagram below shows key system components and interfaces they provide. Let's walk through them.
 
+
+
  <object width="100%" data="/images/reference/thingsboard-architecture.svg"></object>
+
+
 
 **ThingsBoard Transports**
  
@@ -129,9 +134,9 @@ Platform supports three database options at the moment:
 
 * **SQL** - Stores all entities and telemetry in SQL database. ThingsBoard authors recommend to use PostgreSQL and this is the main SQL database that ThingsBoard supports. 
 It is possible to use HSQLDB for local development purposes. **We do not recommend to use HSQLDB** for anything except running tests and launching dev instance that has minimum possible load.
-* **NoSQL** - Stores all entities and telemetry in NoSQL database. ThingsBoard authors recommend to use Cassandra and this is the only NoSQL database that ThingsBoard supports at the moment.
-However, due to a lot of interest to deployments with managed databases, we plan to introduce support on AWS DynamoDB in v2.3. 
-* **Hybrid (Cassandra)** - Stores all entities in SQL database and all telemetry in NoSQL database. 
+* **NoSQL (Deprecated)** - Stores all entities and telemetry in NoSQL database. ThingsBoard authors recommend to use Cassandra and this is the only NoSQL database that ThingsBoard supports at the moment.
+Please note that this option is deprecated in favor of Hybrid approach due to many limitations of NoSQL for transactions and "joins" that are required to enable advanced search over IoT entities.
+* **Hybrid (PostgreSQL + Cassandra)** - Stores all entities in PostgreSQL database and timeseries data in Cassandra database. 
 * **Hybrid (PostgreSQL + TimescaleDB)** - Stores all entities in PostgreSQL database and timeseries data in Timescale database. 
 
 It is possible to configure this options using **thingsboard.yml** file. See database [configuration](/docs/user-guide/install/config/) page for more details.
@@ -149,5 +154,5 @@ database:
 
 ## Programming languages and third-party
 
-ThingsBoard back-end is written in Java, but we also have some micro-services based on Node.js. ThingsBoard front-end is a SPA based on Angular JS framework. 
+ThingsBoard back-end is written in Java, but we also have some micro-services based on Node.js. ThingsBoard front-end is a SPA based on Angular 9 framework. 
 See [monolithic](/docs/reference/monolithic) and [microservices](/docs/reference/monolithic) pages for more details about third-party components used.  
