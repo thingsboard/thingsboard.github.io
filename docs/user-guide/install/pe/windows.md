@@ -109,7 +109,7 @@ Please allow up to 90 seconds for the Web UI to start. This is applicable only f
 Download and extract the installation package.
 
 ```bash
-https://dist.thingsboard.io/tb-web-report-windows-2.4.3pe.zip
+https://dist.thingsboard.io/tb-web-report-windows-2.5pe.zip
 ```
 {: .copy-code}
 
