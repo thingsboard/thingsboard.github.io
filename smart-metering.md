@@ -60,9 +60,9 @@ The ThingsBoard IoT platform provides production ready server infrastructure to 
 
 The following interactive dashboard hosted on live demo server represents smart metering IoT data visualization that may be embedded in your IoT project or solution. See the dashboard description below.
 
-<iframe class="demoDashboardFrame" src="https://demo.ThingsBoard.io/dashboards/3a1026e0-83f6-11e7-b56d-c7f326cba909?publicId=322a2330-7c36-11e7-835d-c7f326cba909" frameborder="0" width="100%"></iframe>
+<iframe class="demoDashboardFrame" src="https://demo.ThingsBoard.io/dashboard/3a1026e0-83f6-11e7-b56d-c7f326cba909?publicId=322a2330-7c36-11e7-835d-c7f326cba909" frameborder="0" width="100%"></iframe>
 <div class="center" style="margin-bottom: 20px;">
-    <a target="_blank" style="padding: 0 40px;" href="https://demo.ThingsBoard.io/dashboards/3a1026e0-83f6-11e7-b56d-c7f326cba909?publicId=322a2330-7c36-11e7-835d-c7f326cba909" class="button">Live demo</a>
+    <a target="_blank" style="padding: 0 40px;" href="https://demo.ThingsBoard.io/dashboard/3a1026e0-83f6-11e7-b56d-c7f326cba909?publicId=322a2330-7c36-11e7-835d-c7f326cba909" class="button">Live demo</a>
 </div>
 
 The attached dashboard demonstrates real-time data from smart-meters that is collected using [ThingsBoard MQTT API](/docs/reference/mqtt-api/). The data is stored in Cassandra DB on our demo server.
