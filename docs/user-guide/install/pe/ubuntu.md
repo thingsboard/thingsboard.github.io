@@ -26,14 +26,14 @@ To run ThingsBoard and Cassandra on a single machine you will need at least 8Gb 
 Download installation package.
 
 ```bash
-wget https://dist.thingsboard.io/thingsboard-2.4.3pe.deb
+wget https://dist.thingsboard.io/thingsboard-2.5pe.deb
 ```
 {: .copy-code}
 
 Install ThingsBoard as a service
 
 ```bash
-sudo dpkg -i thingsboard-2.4.3pe.deb
+sudo dpkg -i thingsboard-2.5pe.deb
 ```
 {: .copy-code}
 

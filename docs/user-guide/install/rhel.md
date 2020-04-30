@@ -34,14 +34,14 @@ sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.
 Download installation package.
 
 ```bash
-wget https://github.com/thingsboard/thingsboard/releases/download/v2.4.3/thingsboard-2.4.3.rpm
+wget https://github.com/thingsboard/thingsboard/releases/download/v2.5/thingsboard-2.5.rpm
 ```
 {: .copy-code}
 
 Install ThingsBoard as a service
 
 ```bash
-sudo rpm -Uvh thingsboard-2.4.3.rpm
+sudo rpm -Uvh thingsboard-2.5.rpm
 ```
 {: .copy-code}
 
@@ -53,7 +53,7 @@ sudo rpm -Uvh thingsboard-2.4.3.rpm
 {% capture contenttogglespec %}
 PostgreSQL <small>(recommended for < 5K msg/sec)</small>%,%postgresql%,%templates/install/rhel-db-postgresql.md%br%
 Hybrid <br/>PostgreSQL+Cassandra<br/><small>(recommended for > 5K msg/sec)</small>%,%hybrid%,%templates/install/rhel-db-hybrid.md%br%
-Hybrid <br/>PostgreSQL+TimescaleDB<br/>%,%timescale%,%templates/install/rhel-db-hybrid-timescale.md{% endcapture %}
+Hybrid <br/>PostgreSQL+TimescaleDB<br/><small>(for TimescaleDB professionals)</small>%,%timescale%,%templates/install/rhel-db-hybrid-timescale.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="rhelThingsboardDatabase" toggle-spec=contenttogglespec %} 
 
