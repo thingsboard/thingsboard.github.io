@@ -45,10 +45,10 @@ description: ThingsBoard PE IoT platform upgrade instructions
         <a href="#upgrading-to-25pe" id="markdown-toc-upgrading-to-25pe">Upgrading to 2.5PE</a>
         <ul>
             <li>
-                <a href="#ubuntucentos-2" id="markdown-toc-ubuntucentos-3">Ubuntu/CentOS</a>        
+                <a href="#ubuntucentos-3" id="markdown-toc-ubuntucentos-4">Ubuntu/CentOS</a>        
             </li>
             <li>
-                <a href="#windows-2" id="markdown-toc-windows-3">Windows</a>
+                <a href="#windows-3" id="markdown-toc-windows-3">Windows</a>
             </li>
         </ul>
     </li>
@@ -452,7 +452,7 @@ thingsboard-installation-2-5-centos,CentOS,shell,resources/2.5pe/thingsboard-cen
 Please refer to the guides below that will describe how to upgrade your PostgreSQL service on:
 
  - [Ubuntu](https://gist.github.com/ShvaykaD/1f0e6c1321a0a2b4b9f3b9ea9ab3e8d3)
- - [CentOS]()
+ - [CentOS](https://gist.github.com/ShvaykaD/313745d31a9af6db3d6a01ec9f16aac8)
  
 **NOTE:** Package installer will ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.  
 Please make sure that you set **database.entities.type** and **database.ts.type** parameters values (in the file **/etc/thingsboard/conf/thingsboard.yml**) to "cassandra" instead of "sql" in order to upgrade your cassandra database:
