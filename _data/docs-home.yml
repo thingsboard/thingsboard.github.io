@@ -143,12 +143,52 @@ toc:
     section:
       - title: Getting Started
         path: /docs/trendz/
+      - title: Installation guide
+        section:
+          - title: Installation options
+            path: /docs/trendz/install/installation-options
+          - title: Installing Trendz on Ubuntu Server
+            path: /docs/trendz/install/ubuntu/
+          - title: Installing Trendz on CentOS/RHEL
+            path: /docs/trendz/install/rhel/
+          - title: Installing Trendz on Windows
+            path: /docs/trendz/install/windows/
+          - title: Installing Trendz using Docker (Windows)
+            path: /docs/trendz/install/docker-windows/
+          - title: Installing Trendz using Docker (Linux or Mac OS)
+            path: /docs/trendz/install/docker/
       - title: Connect Trendz to Thingsboard
         path: /docs/trendz/connect-thingsboard/
-      - title: Available Visualizations
-        path: /docs/trendz/visualizations/
-      - title: Clear, Filter, Group and Aggregate
-        path: /docs/trendz/view-builder/
+      - title: Data Visualization
+        section:
+          - title: Overview
+            path: /docs/trendz/visualizations-overview/
+          - title: Tables
+            path: /docs/trendz/visualizations-tables/
+          - title: Line Chart
+            path: /docs/trendz/visualizations-line/
+          - title: Bar & Histogram
+            path: /docs/trendz/visualizations-bar/
+          - title: Pie Chart
+            path: /docs/trendz/visualizations-pie/
+          - title: Scatter Plot
+            path: /docs/trendz/visualizations-scatter/
+          - title: Heat Map
+            path: /docs/trendz/visualizations-heatmap/
+          - title: Cards
+            path: /docs/trendz/visualizations-card/
+          - title: View Settings
+            path: /docs/trendz/view-settings/
+      - title: Grouping and Aggregation
+        path: /docs/trendz/data-grouping-aggregation/
+      - title: Filtering
+        path: /docs/trendz/data-filtering/
+      - title: Calculated Fields
+        path: /docs/trendz/calculated-fields/
+      - title: States
+        path: /docs/trendz/states/
+      - title: Prediction
+        path: /docs/trendz/prediction/
       - title: Share and embed Visualizations
         path: /docs/trendz/embed-visuals/
   - title: Kafka Streams
