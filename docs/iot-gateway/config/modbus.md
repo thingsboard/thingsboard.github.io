@@ -194,8 +194,9 @@ We will describe connector configuration file below.
 
 </details>
 
-### Section "server"
-Configuration in this section uses for connecting to Modbus server.  
+### Section "server": description and configuration parameters
+In order to connect to Modbus server, the one must set required parameters of section "server".
+Due to the nature of preferred way of communication with Modbus server there are 2 options how to configure this part: if using TCP/UDP or via Serial port.  
 
 {% capture modbusConnectionType %}
 TCP/UDP<small>Connection over TCP/UDP protocol</small>%,%tcpUdp%,%templates/iot-gateway/modbus-tcpudp-connection.md%br%
@@ -205,11 +206,11 @@ There are 2 variants of server section:
 
 {% include content-toggle.html content-toggle-id="modbusConnection" toggle-spec=modbusConnectionType %}
 
-#### Subsection "devices"
-This subsection provides array of configurations for devices, which connected to the Modbus server.
+#### Sub-section "devices"
+This sub-section provides array of configurations for devices.
 
-##### Parameters of device 
-This configuration section provides configuration for device connection and data processing from those.
+##### Device object settings
+This configuration contains common connection parameters and settings for data processing. Available parameters are as follows:
 
 | **Parameter**                 | **Default value**   | **Description**                                                                             |
 |:-|:-|-
@@ -220,7 +221,7 @@ This configuration section provides configuration for device connection and data
 | sendDataOnlyOnChange          | **true**            | Sending only if data changed from last check, if no -- data will send after every check     |
 |---
 
-This part of configuration will look like:  
+Example:
 
 ```json
     "devices": [
@@ -232,8 +233,8 @@ This part of configuration will look like:
         "sendDataOnlyOnChange": true,
 ```
 
-###### Subsection attributes
-Configuration in this subsection provides settings for processing data on Modbus server, which will be interpreted in ThingsBoard platform instance as attribute of device.
+###### Key settings for "attributes"
+Configuration in this unit provides settings for processing data on Modbus server, which will be interpreted in ThingsBoard platform instance as attribute of device.
 
 | **Parameter** | **Default value**   | **Description**                                                          |
 |:-|:-|-
@@ -244,11 +245,11 @@ Configuration in this subsection provides settings for processing data on Modbus
 | address       | **1**         | Object address to check.                                                       |
 |---
 
-Optional parameters:
-**multiplier** - result of reading will be multiplied by value of this parameter.
-**divider** - result of reading will be divided by value of this parameter.
+Optional parameters:  
+**multiplier** - result of reading will be multiplied by value of this parameter.  
+**divider** - result of reading will be divided by value of this parameter.  
 
-This part of configuration will look like:  
+Example:
 
 ```json
         "attributes": [
@@ -262,8 +263,8 @@ This part of configuration will look like:
         ],
 ```
 
-###### Subsection "timeseries"
-Configuration in this subsection provides settings for processing data on Modbus server, which will be interpreted in ThingsBoard platform instance as telemetry of device.
+###### Key settings for "timeseries"
+Configuration in this unit provides settings for processing data on Modbus server, which will be interpreted in ThingsBoard platform instance as telemetry of device.
 
 | **Parameter** | **Default value**   | **Description**                                                                              |
 |:-|:-|-
@@ -274,7 +275,7 @@ Configuration in this subsection provides settings for processing data on Modbus
 | address       | **1**        | Object address to check.                                                                            |
 |---
 
-This part of configuration will look like:  
+Example:
 
 ```json
         "timeseries": [
@@ -288,8 +289,8 @@ This part of configuration will look like:
         ],
 ```
 
-###### Subsection "attributeUpdates"
-Configuration in this subsection provides settings for Attribute update requests from ThingsBoard platform instance.
+###### Key settings for "attributeUpdates"
+Configuration in this unit provides settings for Attribute update requests from ThingsBoard platform instance.
 
 | **Parameter** | **Default value**          | **Description**                                                             |
 |:-|:-|-
@@ -300,7 +301,7 @@ Configuration in this subsection provides settings for Attribute update requests
 | address       | **1**                      | Object address.                                                             |
 |---
 
-This part of configuration will look like:  
+Example:
 
 ```json
         "attributeUpdates": [
@@ -314,8 +315,8 @@ This part of configuration will look like:
         ],
 ```
 
-###### Subsection "rpc"
-Configuration in this subsection provides settings for RPC requests from ThingsBoard platform instance to device.
+###### Key settings for "rpc"
+Configuration in this unit provides settings for RPC requests from ThingsBoard platform instance to device.
 
 | **Parameter** | **Default value**     | **Description**                                                             |
 |:-|:-|-
@@ -326,7 +327,7 @@ Configuration in this subsection provides settings for RPC requests from ThingsB
 | address       | **1**        | Object address.                                                                      |
 |---
 
-This part of configuration will look like:  
+Example:
 
 ```json
         "rpc": [
