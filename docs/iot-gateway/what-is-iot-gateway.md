@@ -19,6 +19,7 @@ ThingsBoard IoT Gateway provides following features:
  - [**BLE** connector](/docs/iot-gateway/config/ble/) to collect data from IoT devices that are connected using Bluetooth Low Energy.
  - [**Request** connector](/docs/iot-gateway/config/request/) to collect data from IoT devices that are have HTTP(S) API endpoints.
  - [**CAN** connector](/docs/iot-gateway/config/can/) to collect data from IoT devices that are connected through CAN protocol.
+ - [**BACnet** connector](/docs/iot-gateway/config/bacnet/) to collect data from IoT devices that are connected throughBACnet protocol.
  - [**Custom** connector](/docs/iot-gateway/custom/) to collect data from IoT devices that are connected by different protocols. (You can create your own connector for the requires protocol).
  - **Persistence** of collected data to guarantee data delivery in case of network or hardware failures.
  - **Automatic reconnect** to ThingsBoard cluster.
