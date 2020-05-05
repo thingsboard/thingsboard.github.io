@@ -1,5 +1,7 @@
 #### RabbitMQ Installation
 
+For installation RabbitMQ you can use [official docs](https://www.rabbitmq.com/install-debian.html), or our instruction bellow:
+
 Since RabbitMQ is written in Erlang, you need to install Erlang before you can use RabbitMQ:
 
 ```text
