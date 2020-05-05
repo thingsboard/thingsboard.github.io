@@ -1,7 +1,20 @@
 #### Kafka Installation
 
-[Apache Kafka](https://kafka.apache.org/) is an open-source stream-processing software platform. 
-ThingsBoard uses Kafka like queue service for some API calls between micro-services.
+[Apache Kafka](https://kafka.apache.org/) is an open-source stream-processing software platform.
+
+##### Install Kafka
+
+We recommend to use Kafka in Docker container. For installing Kafka in Docker container use this [link](https://github.com/wurstmeister/kafka-docker), and after installation go to the last point **"ThingsBoard Configuration"**. 
+
+If you want to use Kafka without Docker see bellow:
+
+```text
+wget http://www-us.apache.org/dist/kafka/2.3.0/kafka_2.12-2.3.0.tgz
+
+tar xzf kafka_2.13-2.4.0.tgz
+
+sudo mv kafka_2.13-2.4.0 /usr/local/kafka
+```
 
 ##### Install ZooKeeper
 
@@ -11,16 +24,6 @@ Kafka uses [ZooKeeper](https://zookeeper.apache.org/) so you need to first insta
 sudo apt-get install zookeeper
 ```
 {: .copy-code}
-
-##### Install Kafka
-
-```text
-wget http://www-us.apache.org/dist/kafka/2.4.0/kafka_2.13-2.4.0.tgz
-
-tar xzf kafka_2.13-2.4.0.tgz
-
-sudo mv kafka_2.13-2.4.0 /usr/local/kafka
-```
 
 ##### Setup ZooKeeper Systemd Unit file
 
@@ -91,8 +94,9 @@ sudo nano /etc/thingsboard/conf/thingsboard.conf
 ```
 {: .copy-code}
 
-Add the following line to the configuration file:
+Add the following line to the configuration file. Don't forget to replace "localhost:9092" with **your real Kafka bootstrap servers**:
 
 ```bash
 export TB_QUEUE_TYPE=kafka
+export TB_KAFKA_SERVERS=localhost:9092
 ```

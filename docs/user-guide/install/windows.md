@@ -45,11 +45,25 @@ Hybrid <br/>PostgreSQL+Cassandra<br/><small>(recommended for > 5K msg/sec)</smal
 
 {% include content-toggle.html content-toggle-id="ubuntuThingsboardDatabase" toggle-spec=contenttogglespec %} 
 
-### Step 4. [Optional] Memory update for slow machines (1GB of RAM) 
+### Step 4. Configure ThingsBoard queue service
+
+{% include templates/install/install-queue.md %}
+
+{% capture contenttogglespecqueue %}
+In Memory %,%inmemory%,%templates/install/queue-in-memory.md%br%
+Kafka %,%kafka%,%templates/install/windows-queue-kafka.md%br%
+AWS SQS %,%aws-sqs%,%templates/install/windows-queue-aws-sqs.md%br%
+Google Pub/Sub %,%pubsub%,%templates/install/windows-queue-pub-sub.md%br%
+Azure Service Bus %,%service-bus%,%templates/install/windows-queue-service-bus.md%br%
+RabbitMQ %,%rabbitmq%,%templates/install/windows-queue-rabbitmq.md{% endcapture %}
+
+{% include content-toggle.html content-toggle-id="windowsThingsboardQueue" toggle-spec=contenttogglespecqueue %} 
+
+### Step 5. [Optional] Memory update for slow machines (1GB of RAM) 
 
 {% include templates/install/windows-memory-on-slow-machines.md %} 
 
-### Step 5. Run installation script
+### Step 6. Run installation script
 
 Launch windows shell (Command Prompt) as Administrator. Change directory to your ThingsBoard installation directory.
 
@@ -68,7 +82,7 @@ Installing thingsboard ...
 ThingsBoard installed successfully!
 ```
 
-### Step 6. Start ThingsBoard service
+### Step 7. Start ThingsBoard service
 
 {% include templates/windows-start-service.md %}
 

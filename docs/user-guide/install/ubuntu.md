@@ -52,7 +52,7 @@ Hybrid <br/>PostgreSQL+Cassandra<br/><small>(recommended for > 5K msg/sec)</smal
 {% include templates/install/install-queue.md %}
 
 {% capture contenttogglespecqueue %}
-In Memory %,%inmemory%,%templates/install/ubuntu-queue-in-memory.md%br%
+In Memory %,%inmemory%,%templates/install/queue-in-memory.md%br%
 Kafka %,%kafka%,%templates/install/ubuntu-queue-kafka.md%br%
 AWS SQS %,%aws-sqs%,%templates/install/ubuntu-queue-aws-sqs.md%br%
 Google Pub/Sub %,%pubsub%,%templates/install/ubuntu-queue-pub-sub.md%br%
