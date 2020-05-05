@@ -78,15 +78,29 @@ Hybrid <br/>PostgreSQL+TimescaleDB<br/><small>(for TimescaleDB professionals)</s
 
 {% include content-toggle.html content-toggle-id="ubuntuThingsboardDatabase" toggle-spec=contenttogglespec %} 
 
-### Step 5. [Optional] Memory update for slow machines (1GB of RAM) 
+### Step 5. Configure ThingsBoard queue service
+
+{% include templates/install/install-queue.md %}
+
+{% capture contenttogglespecqueue %}
+In Memory %,%inmemory%,%templates/install/queue-in-memory.md%br%
+Kafka %,%kafka%,%templates/install/ubuntu-queue-kafka.md%br%
+AWS SQS %,%aws-sqs%,%templates/install/ubuntu-queue-aws-sqs.md%br%
+Google Pub/Sub %,%pubsub%,%templates/install/ubuntu-queue-pub-sub.md%br%
+Azure Service Bus %,%service-bus%,%templates/install/ubuntu-queue-service-bus.md%br%
+RabbitMQ %,%rabbitmq%,%templates/install/ubuntu-queue-rabbitmq.md{% endcapture %}
+
+{% include content-toggle.html content-toggle-id="ubuntuThingsboardQueue" toggle-spec=contenttogglespecqueue %} 
+
+### Step 6. [Optional] Memory update for slow machines (1GB of RAM) 
 
 {% include templates/install/memory-on-slow-machines.md %} 
 
-### Step 6. Run installation script
+### Step 7. Run installation script
 
 {% include templates/run-install.md %} 
 
-### Step 7. Start ThingsBoard service
+### Step 8. Start ThingsBoard service
 
 {% include templates/start-service.md %}
 
@@ -94,7 +108,7 @@ Hybrid <br/>PostgreSQL+TimescaleDB<br/><small>(for TimescaleDB professionals)</s
 Please allow up to 90 seconds for the Web UI to start. This is applicable only for slow machines with 1-2 CPUs or 1-2 GB RAM.{% endcapture %}
 {% include templates/info-banner.md content=90-sec-ui %}
 
-### Step 8. Install ThingsBoard WebReport component
+### Step 9. Install ThingsBoard WebReport component
 
 Download installation package for the [Reports Server](/docs/user-guide/reporting/#reports-server) component:
 

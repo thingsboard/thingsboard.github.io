@@ -57,15 +57,29 @@ Hybrid <br/>PostgreSQL+TimescaleDB<br/><small>(for TimescaleDB professionals)</s
 
 {% include content-toggle.html content-toggle-id="rhelThingsboardDatabase" toggle-spec=contenttogglespec %} 
 
-### Step 4. [Optional] Memory update for slow machines (1GB of RAM) 
+### Step 4. Configure ThingsBoard queue service
+
+{% include templates/install/install-queue.md %}
+
+{% capture contenttogglespecqueue %}
+In Memory %,%inmemory%,%templates/install/queue-in-memory.md%br%
+Kafka %,%kafka%,%templates/install/rhel-queue-kafka.md%br%
+AWS SQS %,%aws-sqs%,%templates/install/ubuntu-queue-aws-sqs.md%br%
+Google Pub/Sub %,%pubsub%,%templates/install/ubuntu-queue-pub-sub.md%br%
+Azure Service Bus %,%service-bus%,%templates/install/ubuntu-queue-service-bus.md%br%
+RabbitMQ %,%rabbitmq%,%templates/install/rhel-queue-rabbitmq.md{% endcapture %}
+
+{% include content-toggle.html content-toggle-id="ubuntuThingsboardQueue" toggle-spec=contenttogglespecqueue %} 
+
+### Step 5. [Optional] Memory update for slow machines (1GB of RAM) 
 
 {% include templates/install/memory-on-slow-machines.md %} 
 
-### Step 5. Run installation script
+### Step 6. Run installation script
 {% include templates/run-install.md %} 
 
 
-### Step 6. Start ThingsBoard service
+### Step 7. Start ThingsBoard service
 
 ThingsBoard UI is accessible on 8080 port by default. 
 Make sure that your 8080 port is accessible via firewall.

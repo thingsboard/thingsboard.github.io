@@ -40,15 +40,27 @@ sudo dpkg -i thingsboard-2.5.deb
 
 {% include templates/install/ubuntu-db-postgresql.md %}
 
-### Step 4. Memory update for slow machines (1GB of RAM) 
+### Step 4. Configure ThingsBoard queue service
+
+{% include templates/install/rpi-install-queue.md %}
+
+{% capture contenttogglespecqueue %}
+In Memory %,%inmemory%,%templates/install/queue-in-memory.md%br%
+AWS SQS %,%aws-sqs%,%templates/install/ubuntu-queue-aws-sqs.md%br%
+Google Pub/Sub %,%pubsub%,%templates/install/ubuntu-queue-pub-sub.md%br%
+Azure Service Bus %,%service-bus%,%templates/install/ubuntu-queue-service-bus.md{% endcapture %}
+
+{% include content-toggle.html content-toggle-id="ubuntuThingsboardQueue" toggle-spec=contenttogglespecqueue %} 
+
+### Step 5. Memory update for slow machines (1GB of RAM) 
 
 {% include templates/install/memory-on-slow-machines.md %} 
 
-### Step 5. Run installation script
+### Step 6. Run installation script
 {% include templates/run-install.md %} 
 
 
-### Step 6. Start ThingsBoard service
+### Step 7. Start ThingsBoard service
 
 {% include templates/start-service.md %}
 

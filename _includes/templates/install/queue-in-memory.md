@@ -1,0 +1,1 @@
+**ThingsBoard includes In Memory Queue service and use it by default without extra settings.**
