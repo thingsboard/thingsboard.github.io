@@ -67,6 +67,15 @@ description: ThingsBoard documentation - learn about the platform and get your I
 
 <p>The ThingsBoard Youtube <b><a href="https://www.youtube.com/channel/UCDb9fsV-YR4JmnipAMGsVAQ/videos">channel</a></b> contains useful video tutorials that cover various platform features.</p>
 
-<h2>Trendz Analytics</h2>
+<h2>Trendz Analytics Features</h2>
 
-<p>Contains comprehensive documentation about ThingsBoard <b><a href="/docs/trendz/">Trendz Analytics</a></b>.</p>
+<ul>    
+    <li><b><a href="/docs/trendz/prediction">Forecast timeseries</a></b> - predict system behaviour and forecast utilisation</li>
+    <li><b><a href="/docs/trendz/calculated-fields">Calculated fields</a></b> - define, monitor and compare custom KPIs</li>
+    <li><b><a href="/docs/trendz/states">States</a></b> - track how much time equipment spent in different states</li>
+    <li><b><a href="/docs/trendz/data-filtering">Filtering</a></b> - clear and filter data by any field</li>
+    <li><b><a href="/docs/trendz/visualizations-overview">Advanced visualisations</a></b> - create heatmaps, scatter plots and compare utilities</li>
+    <li><b><a href="/docs/trendz/data-grouping-aggregation">Grouping and aggregation</a></b> - aggregate data on different levels in few minutes</li>
+</ul>
+
+<p>Comprehensive documentation about ThingsBoard <b><a href="/docs/trendz/">Trendz Analytics</a></b>.</p>

@@ -337,6 +337,11 @@
       subtitle: Calculate average temperature in the warehouse based on readings from multiple temperature sensors.
       keywords: average temperature analytics rule engine
       pe: true
+    - path: /docs/trendz/prediction/
+      title: Predict timeseries
+      subtitle: Build prediction model based on vibration of water pump
+      keywords: analytics forecast prediction
+      pe: false
 #- title: Pushing data to external systems
 #  subtitle: lorem ipsum dolor
 #  section:
