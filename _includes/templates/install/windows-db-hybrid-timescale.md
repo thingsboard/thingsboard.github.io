@@ -1,8 +1,8 @@
-{% capture postgresql-info %}
-ThingsBoard team recommends to use PostgreSQL for development and production environments with reasonable load (< 5000 msg/sec).
-Many cloud vendors support managed PostgreSQL servers which is a cost-effective solution for most of ThingsBoard instances.
+{% capture hybrid-info %}
+ThingsBoard team recommends using Timescale database only for companies that already use TimescaleDB in production.
+In this case, ThingsBoard will be storing timeseries data in TimescaleDB Hypertable while continue to use PostgreSQL for main entities (devices/assets/dashboards/customers).  
 {% endcapture %}
-{% include templates/info-banner.md content=postgresql-info %}
+{% include templates/info-banner.md content=hybrid-info %}
 
 ##### PostgreSQL Installation
 
@@ -16,9 +16,11 @@ Don't forget this password. It will be used later. For simplicity, we will subst
 Once installed, launch the "pgAdmin" software and login as superuser (postgres). 
 Open your server and create database "thingsboard" with owner "postgres".
 
-##### ThingsBoard Configuration
+##### TimescaleDB Installation
 
-In case you have specified the PostgreSQL superuser password as "postgres", you can skip this step. 
+{% include templates/install/timescale-windows-install.md %}
+
+##### ThingsBoard Configuration
 
 Open the Notepad or other editor as administrator user (right click on the app icon and select "Run as administrator").  
 Open the following file for editing (select "All Files" instead of "Text Documents" in file choosing dialog, the encoding is UTF-8):
@@ -53,11 +55,21 @@ spring:
 ``` 
 {: .copy-code}
 
-locate "SQL_POSTGRES_TS_KV_PARTITIONING" parameter in order to override the default value for timestamp key-value storage partitioning size:
+locate "DATABASE_TS_TYPE" parameter. Replace "sql" with "timescale".
 
 ```yml
-    sql:
-      postgres:
-        # Specify partitioning size for timestamp key-value storage. Example: DAYS, MONTHS, YEARS, INDEFINITE.
-        ts_key_value_partitioning: "${SQL_POSTGRES_TS_KV_PARTITIONING:MONTHS}"
+      ts:
+        type: "${DATABASE_TS_TYPE:sql}" # cassandra, sql, or timescale (for hybrid mode, DATABASE_TS_TYPE value should be cassandra, or timescale)
+    
+    # note: timescale works only with postgreSQL database for DATABASE_ENTITIES_TYPE.
+```
+
+You can optionally tune parameters that refer to the Timescale DB configuration: "timescale" configuration block inside "sql" configuration block.
+
+```yml
+# SQL configuration parameters
+sql:
+    timescale:
+      # Specify Interval size for new data chunks storage.
+      chunk_time_interval: "${SQL_TIMESCALE_CHUNK_TIME_INTERVAL:604800000}"
 ```
