@@ -1,6 +1,6 @@
 #### RabbitMQ Installation
 
-For installing RabbitMQ use this [link](https://www.rabbitmq.com/install-windows.html).
+For installing RabbitMQ use this [instruction](https://www.rabbitmq.com/install-windows.html).
 
 ##### ThingsBoard Configuration
 

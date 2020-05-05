@@ -4,7 +4,7 @@
 
 ##### Install Kafka
 
-We recommend to use Kafka in Docker container. For installing Kafka in Docker container use this [link](https://github.com/wurstmeister/kafka-docker), and after installation go to the last point **"ThingsBoard Configuration"**. 
+We recommend to use Kafka in Docker container. For installing Kafka in Docker container use this [instruction](https://github.com/wurstmeister/kafka-docker), and after installation go to the last point **"ThingsBoard Configuration"**. 
 
 If you want to use Kafka without Docker see bellow:
 
