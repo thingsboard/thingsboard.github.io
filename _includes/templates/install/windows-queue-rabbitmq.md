@@ -15,7 +15,7 @@ C:\Program Files (x86)\thingsboard\conf\thingsboard.yml
 
 and locate "queue:" block. Make sure the queue type is "rabbitmq" and don't forget to replace "YOUR_USERNAME" and "YOUR_PASSWORD" with your **real user credentials**, "localhost" and "5672" with your **real RabbitMQ host and port**:
 
-```bash
+```yml
 queue:
   type: "${TB_QUEUE_TYPE:rabbitmq}"
 ...

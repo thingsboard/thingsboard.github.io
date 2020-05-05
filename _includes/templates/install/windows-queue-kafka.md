@@ -4,7 +4,7 @@
 
 ##### Install Kafka
 
-We recommend to use Kafka in Docker container, use this [link](https://github.com/wurstmeister/kafka-docker) for installing Kafka in Docker container:
+We recommend to use Kafka in Docker container, use this [link](https://github.com/wurstmeister/kafka-docker) for installing Kafka in Docker container.
 
 ##### ThingsBoard Configuration
 
@@ -18,7 +18,7 @@ C:\Program Files (x86)\thingsboard\conf\thingsboard.yml
 
 and locate "queue:" block. Make sure the queue type is "kafka", and don't forget to replace "localhost:9092" with **your real Kafka bootstrap servers**:
 
-```bash
+```yml
 queue:
   type: "${TB_QUEUE_TYPE:kafka}"
 ...
