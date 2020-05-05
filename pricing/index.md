@@ -304,8 +304,8 @@ description: ThingsBoard Products Pricing
 <div class="col-lg-12">
     <br>
     <div class="solution-selector">
-        <div class="solution" data-toggle="#trndzPayAsYouGo">
-            <input type="radio" class="magic-radio" name="pricing-radio-selector" id="PricingPayAsYouGo" value="Pricing Pay As You Go Details" checked>
+        <div class="solution" data-toggle="#payAsYouGo">
+            <input type="radio" class="magic-radio" name="pricing-radio-selector" id="PricingPayAsYouGo" value="Pricing Pay As You Go Details">
             <label for="PricingPayAsYouGo">
                 <div class="solution-icon-div d-inline-block">
                     <img src="/images/pricing/pay-as-you-go.png" alt="pay as you go icon" class="pay-as-you-go-icon d-inline">
@@ -325,7 +325,7 @@ description: ThingsBoard Products Pricing
     </div>
     <div class="pricing-div">
         <div class="container">
-            <div class="pricing-section pricing-pay-as-you-go active" id="trndzPayAsYouGo">
+            <div class="pricing-section pricing-pay-as-you-go active" id="payAsYouGo">
                 <div class="row d-none d-lg-flex mb-4">
                     <div class="col-lg-12">
                         <div class="indicator gray-bg text-white text-center pt-2 pb-2">
@@ -354,8 +354,8 @@ description: ThingsBoard Products Pricing
                                 false,
                                 '31307df0-11f6-11ea-951e-b77b877a367b',
                                 '2985f1a0-7afd-11ea-951e-b77b877a367b',
-                                'Trendz Analytics Prototype')">
-                                Get your license
+                                'Trendz Analytics Prototype', 'FREETRIALFORONEMONTH')">
+                                Try For Free
                             </a>
                             <div>
                                 <a href="/products/trendz/"><span class="a-full-green">Learn More</span><br></a>
@@ -384,8 +384,8 @@ description: ThingsBoard Products Pricing
                                 false,
                                 '31307df0-11f6-11ea-951e-b77b877a367b',
                                 '018b7520-7afe-11ea-951e-b77b877a367b',
-                                'Trendz Analytics StartUp')">
-                                Get your license
+                                'Trendz Analytics StartUp', 'FREETRIALFORONEMONTH')">
+                                Try For Free
                             </a>
                             <div>
                                 <a href="/products/trendz/"><span class="a-full-green">Learn More</span><br></a>
@@ -414,8 +414,8 @@ description: ThingsBoard Products Pricing
                                 false,
                                 '31307df0-11f6-11ea-951e-b77b877a367b',
                                 '6e3bb4f0-7afe-11ea-951e-b77b877a367b',
-                                'Trendz Analytics Business')">
-                                Get your license
+                                'Trendz Analytics Business', 'FREETRIALFORONEMONTH')">
+                                Try For Free
                             </a>
                             <div>
                                 <a href="/products/trendz/"><span class="a-full-green">Learn More</span><br></a>

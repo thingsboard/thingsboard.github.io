@@ -62,6 +62,10 @@
         $("li.menu-item#menu-item-"+sectionId).addClass("active");
         $("section.pricing-content").css("display", "none");
         $("section.pricing-content#"+sectionId).css("display", "block");
+
+        if(sectionId) {
+            reportPriceOpen(sectionId);
+        }
     }
 
     function getLicense(event, isPerpetual, productId, planId, productName, coupon) {
@@ -88,6 +92,13 @@
             return;
         }
         ga("send", "event", "PriceLink", product, link);
+    }
+
+    function reportPriceOpen(solutionId) {
+        if (!ga.hasOwnProperty("loaded") || ga.loaded !== true || !solutionId) {
+            return;
+        }
+        ga("send", "event", "PriceOpen", solutionId);
     }
 
 </script>

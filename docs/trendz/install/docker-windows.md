@@ -19,8 +19,7 @@ This guide will help you to install and start Trendz Analytics using Docker on W
 
 ## Step 1. Obtain the license key 
 
-We assume you have already chosen your subscription plan or decided to purchase a perpetual license. 
-If not, please navigate to [pricing](/pricing/?active=trendz) page to select the best license option for your case and get your license. 
+We assume you have already have Trendz license key. If not, please get your [Free Trial license](/pricing/?active=trendz) before you proceed.
 See [How-to get pay-as-you-go subscription](https://www.youtube.com/watch?v=dK-QDFGxWek){:target="_blank"} for more details.
 
 Note: We will reference the license key you have obtained during this step as PUT_YOUR_LICENSE_SECRET_HERE later in this guide.
