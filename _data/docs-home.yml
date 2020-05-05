@@ -28,6 +28,9 @@ toc:
     path: /docs/user-guide/rpc/
   - title: Data visualization
     path: /docs/user-guide/visualization/
+  - title: OAuth 2 Support
+    path: /docs/user-guide/oauth-2-support/
+    new: true
   - title: Advanced RBAC for IoT
     path: /docs/user-guide/rbac/
     pe: true
