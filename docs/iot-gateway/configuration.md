@@ -12,7 +12,7 @@ description: Installation structure and configuration of ThingsBoard IoT Gateway
 
 ## Directory structure
 
-Please see default directory structure below. 
+Please see default directory structure below for daemon installation.  
 
 ```text
 /etc/thingsboard-gateway/config                   - Configuration folder.
