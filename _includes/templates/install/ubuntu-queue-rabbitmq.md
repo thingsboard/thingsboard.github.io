@@ -33,6 +33,7 @@ sudo rabbitmqctl add_user PUT_YOUR_USER_NAME PUT_YOUR_PASSWORD
 sudo rabbitmqctl set_user_tags PUT_YOUR_USER_NAME administrator
 sudo rabbitmqctl set_permissions -p / PUT_YOUR_USER_NAME ".*" ".*" ".*"
 ```
+{: .copy-code}
 
 ##### ThingsBoard Configuration
 
@@ -52,3 +53,4 @@ export TB_QUEUE_RABBIT_MQ_PASSWORD=YOUR_PASSWORD
 export TB_QUEUE_RABBIT_MQ_HOST=localhost
 export TB_QUEUE_RABBIT_MQ_PORT=5672
 ```
+{: .copy-code}

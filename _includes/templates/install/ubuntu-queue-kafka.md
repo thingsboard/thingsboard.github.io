@@ -15,6 +15,7 @@ tar xzf kafka_2.13-2.4.0.tgz
 
 sudo mv kafka_2.13-2.4.0 /usr/local/kafka
 ```
+{: .copy-code}
 
 ##### Install ZooKeeper
 
@@ -84,6 +85,7 @@ sudo systemctl start zookeeper
 
 sudo systemctl start kafka
 ```
+{: .copy-code}
 
 ##### ThingsBoard Configuration
 
@@ -94,9 +96,10 @@ sudo nano /etc/thingsboard/conf/thingsboard.conf
 ```
 {: .copy-code}
 
-Add the following line to the configuration file. Don't forget to replace "localhost:9092" with **your real Kafka bootstrap servers**:
+Add the following line to the configuration file. **Don't forget** to replace "localhost:9092" with your real Kafka bootstrap servers:
 
 ```bash
 export TB_QUEUE_TYPE=kafka
 export TB_KAFKA_SERVERS=localhost:9092
 ```
+{: .copy-code}

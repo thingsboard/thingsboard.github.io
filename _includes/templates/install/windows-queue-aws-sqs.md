@@ -21,3 +21,4 @@ queue:
     secret_access_key: "${TB_QUEUE_AWS_SQS_SECRET_ACCESS_KEY:YOUR_SECRET}"
     region: "${TB_QUEUE_AWS_SQS_REGION:YOUR_REGION}"
 ```
+

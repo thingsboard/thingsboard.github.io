@@ -16,7 +16,7 @@ C:\Program Files (x86)\thingsboard\conf\thingsboard.yml
 ``` 
 {: .copy-code}
 
-and locate "queue:" block. Make sure the queue type is "kafka", and don't forget to replace "localhost:9092" with **your real Kafka bootstrap servers**:
+and locate "queue:" block. Make sure the queue type is "kafka", and **don't forget** to replace "localhost:9092" with your real Kafka bootstrap servers:
 
 ```yml
 queue:

@@ -16,5 +16,6 @@ sudo apt update
 sudo apt -y install postgresql-11
 sudo service postgresql start
 ```
+{: .copy-code}
 
 {% include templates/install/postgres-post-install.md %}

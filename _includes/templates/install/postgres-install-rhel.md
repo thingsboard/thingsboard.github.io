@@ -13,5 +13,6 @@ sudo systemctl start postgresql-11
 # Optional: Configure PostgreSQL to start on boot
 sudo systemctl enable postgresql-11
 ```
+{: .copy-code}
 
 {% include templates/install/postgres-post-install.md %}

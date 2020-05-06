@@ -1,4 +1,4 @@
-#### Aws Sqs Configuration
+#### AWS SQS Configuration
 
 To access AWS SQS service, you first need to create an [AWS account](https://aws.amazon.com/sqs/).
 

@@ -1,1 +1,1 @@
-**ThingsBoard includes In Memory Queue service and use it by default without extra settings.**
+In Memory queue is built-in and enabled by default. No additional configuration steps required.

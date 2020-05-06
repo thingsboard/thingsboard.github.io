@@ -20,3 +20,4 @@ export TB_QUEUE_RABBIT_MQ_PASSWORD=YOUR_PASSWORD
 export TB_QUEUE_RABBIT_MQ_HOST=localhost
 export TB_QUEUE_RABBIT_MQ_PORT=5672
 ```
+{: .copy-code}
