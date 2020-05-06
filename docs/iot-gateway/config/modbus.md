@@ -11,9 +11,7 @@ description: Modbus protocol support for ThingsBoard IoT Gateway
 This guide will help you to get familiar with Modbus connector configuration for ThingsBoard IoT Gateway.
 Use [general configuration](/docs/iot-gateway/configuration/) to enable this connector.
 We will describe connector configuration file below.  
-
 <br>
-
 <details>
 
 <summary>
@@ -24,12 +22,12 @@ We will describe connector configuration file below.
 
 {
   "server": {
-    "name": "Modbus Default Server",
     "type": "tcp",
     "host": "127.0.0.1",
     "port": 5020,
     "timeout": 35,
-    "method": "rtu",
+    "method": "socket",
+    "byteOrder": "BIG",
     "devices": [
       {
         "unitId": 1,
@@ -39,45 +37,154 @@ We will describe connector configuration file below.
         "sendDataOnlyOnChange": true,
         "attributes": [
           {
-            "byteOrder": "BIG",
-            "tag": "test",
-            "type": "long",
+            "tag": "string_read",
+            "type": "string",
             "functionCode": 4,
-            "registerCount": 1,
-            "address": 0
-          }
-        ],
-        "timeseries": [
+            "objectsCount": 4,
+            "address": 1
+          },
           {
-            "byteOrder": "BIG",
-            "tag": "test",
-            "type": "long",
+            "tag": "bits_read",
+            "type": "bits",
             "functionCode": 4,
-            "registerCount": 1,
-            "address": 0
+            "objectsCount": 1,
+            "address": 5
+          },
+          {
+            "tag": "8int_read",
+            "type": "8int",
+            "functionCode": 4,
+            "objectsCount": 1,
+            "address": 6
+          },
+          {
+            "tag": "16int_read",
+            "type": "16int",
+            "functionCode": 4,
+            "objectsCount": 1,
+            "address": 7
+          },
+          {
+            "tag": "32int_read_divider",
+            "type": "32int",
+            "functionCode": 4,
+            "objectsCount": 2,
+            "address": 8,
+            "divider": 10
+          },
+          {
+            "tag": "8int_read_multiplier",
+            "type": "8int",
+            "functionCode": 4,
+            "objectsCount": 1,
+            "address": 10,
+            "multiplier": 10
+          },
+          {
+            "tag": "32int_read",
+            "type": "32int",
+            "functionCode": 4,
+            "objectsCount": 2,
+            "address": 11
+          },
+          {
+            "tag": "64int_read",
+            "type": "64int",
+            "functionCode": 4,
+            "objectsCount": 4,
+            "address": 13
+          }
+      ],
+      "timeseries": [
+          {
+            "tag": "8uint_read",
+            "type": "8uint",
+            "functionCode": 4,
+            "objectsCount": 1,
+            "address": 17
+          },
+          {
+            "tag": "16uint_read",
+            "type": "16uint",
+            "functionCode": 4,
+            "objectsCount": 2,
+            "address": 18
+          },
+          {
+            "tag": "32uint_read",
+            "type": "32uint",
+            "functionCode": 4,
+            "objectsCount": 4,
+            "address": 20
+          },
+          {
+            "tag": "64uint_read",
+            "type": "64uint",
+            "functionCode": 4,
+            "objectsCount": 1,
+            "address": 24
+          },
+          {
+            "tag": "16float_read",
+            "type": "16float",
+            "functionCode": 4,
+            "objectsCount": 1,
+            "address": 25
+          },
+          {
+            "tag": "32float_read",
+            "type": "32float",
+            "functionCode": 4,
+            "objectsCount": 2,
+            "address": 26
+          },
+          {
+            "tag": "64float_read",
+            "type": "64float",
+            "functionCode": 4,
+            "objectsCount": 4,
+            "address": 28
           }
         ],
-        "rpc": {
-          "turnLightOn": {
-            "address": 4,
-            "bit": 2,
-            "value": true
-          },
-          "turnLightOff": {
-            "address": 4,
-            "bit": 2,
-            "value": false
-          },
-          "getCPULoad": {
-            "tag": "Integer",
-            "value": 42,
-            "functionCode": 16,
-            "address": 0,
-            "unitId": 1,
-            "byteOrder": "BIG",
-            "registerCount": 1
+        "attributeUpdates": [
+          {
+            "tag": "shared_attribute_write",
+            "type": "32int",
+            "functionCode": 6,
+            "objectsCount": 2,
+            "address": 29
           }
-        }
+        ],
+        "rpc": [
+          {
+            "tag": "setValue",
+            "type": "bits",
+            "functionCode": 5,
+            "objectsCount": 1,
+            "address": 31
+          },
+          {
+            "tag": "getValue",
+            "type": "bits",
+            "functionCode": 1,
+            "objectsCount": 1,
+            "address": 31
+          },
+          {
+            "tag": "setCPUFanSpeed",
+            "type": "32int",
+            "functionCode": 16,
+            "objectsCount": 2,
+            "address": 33
+          },
+          {
+            "tag":"getCPULoad",
+            "type": "32int",
+            "functionCode": 4,
+            "objectsCount": 2,
+            "address": 35
+          }
+        ]
       }
     ]
   }
@@ -87,8 +194,9 @@ We will describe connector configuration file below.
 
 </details>
 
-### Section "server"
-Configuration in this section uses for connecting to Modbus server.  
+### Section "server": description and configuration parameters
+In order to connect to Modbus server, the one must set required parameters of section "server".
+Due to the nature of preferred way of communication with Modbus server there are 2 options how to configure this part: if using TCP/UDP or via Serial port.  
 
 {% capture modbusConnectionType %}
 TCP/UDP<small>Connection over TCP/UDP protocol</small>%,%tcpUdp%,%templates/iot-gateway/modbus-tcpudp-connection.md%br%
@@ -98,13 +206,11 @@ There are 2 variants of server section:
 
 {% include content-toggle.html content-toggle-id="modbusConnection" toggle-spec=modbusConnectionType %}
 
-<br>
+#### Sub-section "devices"
+This sub-section provides array of configurations for devices.
 
-#### Subsection "devices"
-In this subsection provides array of configurations for devices, which connected to the Modbus server.
-
-##### Parameters of device 
-This configuration section provides configuration for device connection and data processing from those.
+##### Device object settings
+This configuration contains common connection parameters and settings for data processing. Available parameters are as follows:
 
 | **Parameter**                 | **Default value**   | **Description**                                                                             |
 |:-|:-|-
@@ -115,7 +221,7 @@ This configuration section provides configuration for device connection and data
 | sendDataOnlyOnChange          | **true**            | Sending only if data changed from last check, if no -- data will send after every check     |
 |---
 
-This part of configuration will look like:  
+Example:
 
 ```json
     "devices": [
@@ -127,136 +233,162 @@ This part of configuration will look like:
         "sendDataOnlyOnChange": true,
 ```
 
-###### Subsection attributes
-Configuration in this subsection provides settings for processing data on Modbus server, which will be interpreted in ThingsBoard platform instance as attribute of device.
+###### Key settings for "attributes"
+Configuration in this unit provides settings for processing data on Modbus server, which will be interpreted in ThingsBoard platform instance as attribute of device.
 
-| **Parameter** | **Default value**   | **Description**                                                         |
+| **Parameter** | **Default value**   | **Description**                                                          |
 |:-|:-|-
-| byteOrder     | **BIG**      | Order of bytes to read.                                                        |
-| tag           | **test**     | Tag, which will use as attribute key for ThingsBoard platform instance.        |
-| type          | **long**     | Type of value. (**long**, **integer**, **string**, **double**, **bit**)        |
-| functionCode  | **4**        | Function to use in processing data. Based on Modbus standard.                  |
-| registerCount | **1**        | Count of registers to read.                                                    |
-| address       | **0**        | Register address to check.                                                     |
+| tag           | **test**      | Tag, which will use as attribute key for ThingsBoard platform instance.        |
+| type          | **32int**     | Type of value. [Available data types](#data-types)                             |
+| functionCode  | **4**         | Function to use in processing data. [Modbus functions](#modbus-functions)      |
+| objectsCount  | **1**         | Count of objects to read.                                                      |
+| address       | **1**         | Object address to check.                                                       |
 |---
 
-This part of configuration will look like:  
+Optional parameters:  
+**multiplier** - result of reading will be multiplied by value of this parameter.  
+**divider** - result of reading will be divided by value of this parameter.  
+
+Example:
 
 ```json
         "attributes": [
           {
-            "byteOrder": "BIG",
             "tag": "test",
-            "type": "long",
+            "type": "32int",
             "functionCode": 4,
-            "registerCount": 1,
-            "address": 0
+            "objectsCount": 1,
+            "address": 1
           }
         ],
 ```
 
-###### Subsection "timeseries"
-Configuration in this subsection provides settings for processing data on Modbus server, which will be interpreted in ThingsBoard platform instance as telemetry of device.
+###### Key settings for "timeseries"
+Configuration in this unit provides settings for processing data on Modbus server, which will be interpreted in ThingsBoard platform instance as telemetry of device.
 
-| **Parameter** | **Default value**   | **Description**                                                         |
+| **Parameter** | **Default value**   | **Description**                                                                              |
 |:-|:-|-
-| byteOrder     | **BIG**      | Order of bytes to read. Can be **BIG** or **LITTLE**, depends on hardware.     |
-| tag           | **test**     | Tag, which will use as attribute key for ThingsBoard platform instance.        |
-| type          | **long**     | Type of value. (**long**, **integer**, **string**, **double**, **bit**)        |
-| functionCode  | **4**        | Function to use in processing data. Based on Modbus standard.                  |
-| registerCount | **1**        | Count of registers to read.                                                    |
-| address       | **0**        | Register address to check.                                                     |
+| tag           | **test**     | Tag, which will use as attribute key for ThingsBoard platform instance.                             |
+| type          | **16uint**   | Type of value. [Available data types](#data-types)                                                  |
+| functionCode  | **4**        | Function to use in processing data. [Modbus functions](#modbus-functions)                           |
+| objectsCount  | **1**        | Count of objects to read.                                                                           |
+| address       | **1**        | Object address to check.                                                                            |
 |---
 
-This part of configuration will look like:  
+Example:
 
 ```json
         "timeseries": [
           {
-            "byteOrder": "BIG",
             "tag": "test",
-            "type": "long",
+            "type": "16uint",
             "functionCode": 4,
-            "registerCount": 1,
-            "address": 0
+            "objectsCount": 1,
+            "address": 1
           }
         ],
 ```
 
-The Modbus connector supports the following Modbus functions:
+###### Key settings for "attributeUpdates"
+Configuration in this unit provides settings for Attribute update requests from ThingsBoard platform instance.
 
-* Read Coils (function code 1)
-* Read Discrete Inputs (function code 2)
-* Read Multiple Holding Registers (function code 3)
-* Read Input Registers (function code 4)
-
-The hardware manufactures can implement various data types. Here are mapping rules that help to convert common hardware data types to Thingsboard key value format:
-
-| **Hardware type** | **Thingsboard type**  | **Function code**  | **Hardware registers** | **Note**                                        |
-|-------------------|-----------------------|--------------------|------------------------|-------------------------------------------------|
-| Bool              | boolean               | 1-4                | 1                      | Use **bit** property for function codes 3 and 4 |
-| Word              | long                  | 3-4                | 1                      |                                                 |
-| DWord/Integer     | long                  | 3-4                | 2                      |                                                 |
-| Integer64         | long                  | 3-4                | 4                      |                                                 |
-| Float             | double                | 3-4                | 2                      |                                                 |
-| Double            | double                | 3-4                | 4                      |                                                 |
-| String            | string                | 3-4                | 1-...                  | 1 register = 2 characters                       |
-
-
-###### Subsection "rpc"
-Configuration in this subsection provides settings for RPC requests from ThingsBoard platform instance to device.
-
-| **Parameter** | **Default value**     | **Description**                                                         |
+| **Parameter** | **Default value**          | **Description**                                                             |
 |:-|:-|-
-| turnLightOn   |                       | Name of RPC function. Can be different (Variants provided below.)       |
-| address       | **4**                 | Register address to set/read.                                           |
-| bit           | **2**                 | Bit address to set/read.                                                |
-| value         | **true**              | The value will be written to register.                                  |
-| registerCount | **1**                 | Count of registers to set/read.                                         |
-| unitId        | **1**                 | Identifier of the device unit, on which rpc request will be executed.   |
-| byteOrder     | **BIG**               | Byte order, for value, that will be written to register.                |
-| tag           | **Integer**           | Type of value. (**long**, **integer**, **string**, **double**, **bit**) |
+| tag           | **shared_attribute_write** | Shared attribute name.                                                      |
+| type          | **32int**                   | Type of value. [Available data types](#data-types)                         |
+| functionCode  | **6**                      | Function to use in processing data. [Modbus functions](#modbus-functions)   |
+| objectsCount  | **2**                      | Count of objects to write.                                                  |
+| address       | **1**                      | Object address.                                                             |
 |---
 
-This part of configuration will look like:  
+Example:
 
 ```json
-        "rpc": {
-          "turnLightOn": {
-            "address": 4,
-            "bit": 2,
-            "value": true
-          },
-          "turnLightOff": {
-            "address": 4,
-            "bit": 2,
-            "value": false
-          },
-          "getCPULoad": {
-            "tag": "Integer",
-            "value": 42,
-            "functionCode": 16,
-            "address": 0,
-            "unitId": 1,
-            "byteOrder": "BIG",
-            "registerCount": 1
+        "attributeUpdates": [
+          {
+            "tag": "shared_attribute_write",
+            "type": "32int",
+            "functionCode": 6,
+            "objectsCount": 2,
+            "address": 1
           }
-        }
-      }
+        ],
 ```
 
-{% capture modbusRPCinfo %}
-<br>
-**Parameters in this subsection of the configuration depend on the type of rpc request, you need.**
-{% endcapture %}
-{% include templates/info-banner.md content=modbusRPCinfo %}
+###### Key settings for "rpc"
+Configuration in this unit provides settings for RPC requests from ThingsBoard platform instance to device.
+
+| **Parameter** | **Default value**     | **Description**                                                             |
+|:-|:-|-
+| tag           | **setValue** | RPC method name.                                                                     |
+| type          | **bits**     | Type of value. [Available data types](#data-types)                                   |
+| functionCode  | **5**        | Function to use in processing data. [Modbus functions](#modbus-functions)            |
+| objectsCount  | **1**        | Count of objects to write.                                                           |
+| address       | **1**        | Object address.                                                                      |
+|---
+
+Example:
+
+```json
+        "rpc": [
+          {
+            "tag": "setValue",
+            "type": "bits",
+            "functionCode": 5,
+            "objectsCount": 1,
+            "address": 1
+          }
+        ],
+```
+
+
+##### Additional information
+
+Additional information about Modbus functions and supported data types.
+
+###### Modbus functions
+
+The Modbus connector supports the following Modbus functions:
+
+| **Modbus function code** | **Description**                 |
+| *Read data*                                                |
+| **1**                    | Read Coils                      |
+| **2**                    | Read Discrete Inputs            |
+| **3**                    | Read Multiple Holding Registers |
+| **4**                    | Read Input Registers            |
+| *Write data:*                                              |
+| **5**                     | Write Coil                     |
+| **6**                     | Write Register                 |
+| **15**                    | Write Coils                    |
+| **16**                    | Write Registers                |
+
+
+###### Data types
+
+A list and description of the supported data types for reading/writing data.
+
+| **Type**    | **Function code** | **Objects count** | **Note**                                                                                                            |
+|-|-|-|
+| **string**  | 3-4               | 1-...             | Read bytes from registers and decode it ('UTF-8' coding).                                                           |
+| **bytes**   | 3-4               | 1-...             | Read bytes from registers.                                                                                          |
+| **bits**    | 1-4               | 1-...             | Read coils. If objects count 1 - result will be interpret as a boolean, else the result will be an array with bits. |
+| **16int**   | 3-4               | 1                 | Integer 16 bit.                                                                                                     |
+| **16uint**  | 3-4               | 1                 | Unsigned integer 16 bit.                                                                                            |
+| **16float** | 3-4               | 1                 | Float 16 bit.                                                                                                       |
+| **32int**   | 3-4               | 2                 | Integer 32 bit.                                                                                                     |
+| **32uint**  | 3-4               | 2                 | Unsigned integer 32 bit.                                                                                            |
+| **32float** | 3-4               | 2                 | Float 32 bit.                                                                                                       |
+| **64int**   | 3-4               | 4                 | Integer 64 bit.                                                                                                     |
+| **64uint**  | 3-4               | 4                 | Unsigned integer 64 bit.                                                                                            |
+| **64float** | 3-4               | 4                 | Float 64 bit.                                                                                                       |
+
 
 
 ## Next steps
 
 Explore guides related to main ThingsBoard features:
 
- - [Connect MODBUS device](/docs/iot-gateway/guides/how-to-connect-modbus-device/) - how to connect MODBUS device using ThongsBoard IoT Gateway
+ - [Connect Modbus device](/docs/iot-gateway/guides/how-to-connect-modbus-device/) - how to connect Modbus device using ThingsBoard IoT Gateway
  - [Data Visualization](/docs/user-guide/visualization/) - how to visualize collected data.
  - [Device attributes](/docs/user-guide/attributes/) - how to use device attributes.
  - [Telemetry data collection](/docs/user-guide/telemetry/) - how to collect telemetry data.
