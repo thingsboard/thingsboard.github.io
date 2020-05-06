@@ -63,6 +63,7 @@
         $("section.pricing-content").css("display", "none");
         $("section.pricing-content#"+sectionId).css("display", "block");
 
+        $('#' + sectionId + ' .solution-selector .solution.defaultselection').click();
         if(sectionId) {
             reportPriceOpen(sectionId);
         }
