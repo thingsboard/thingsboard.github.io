@@ -19,8 +19,6 @@ This guide will help you to install and start ThingsBoard using Docker on Window
 
 - [Install Docker Toolbox for Windows](https://docs.docker.com/toolbox/toolbox_install_windows/)
 
-- [Install Docker Compose](https://docs.docker.com/compose/install/)
-
 ## Running
 
 Depending on the database used there are three type of ThingsBoard single instance docker images:
