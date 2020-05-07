@@ -84,7 +84,8 @@ Hybrid <br/>PostgreSQL+TimescaleDB<br/><small>(for TimescaleDB professionals)</s
 
 {% capture contenttogglespecqueue %}
 In Memory %,%inmemory%,%templates/install/queue-in-memory.md%br%
-Kafka %,%kafka%,%templates/install/ubuntu-queue-kafka.md%br%
+Kafka%,%kafka%,%templates/install/ubuntu-queue-kafka.md%br%
+Kafka <small>(in docker container)</small>%,%kafka-in-docker%,%templates/install/ubuntu-queue-kafka-in-docker.md%br%
 AWS SQS %,%aws-sqs%,%templates/install/ubuntu-queue-aws-sqs.md%br%
 Google Pub/Sub %,%pubsub%,%templates/install/ubuntu-queue-pub-sub.md%br%
 Azure Service Bus %,%service-bus%,%templates/install/ubuntu-queue-service-bus.md%br%

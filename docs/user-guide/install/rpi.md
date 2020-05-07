@@ -45,10 +45,10 @@ sudo dpkg -i thingsboard-2.5.deb
 {% include templates/install/rpi-install-queue.md %}
 
 {% capture contenttogglespecqueue %}
-In Memory %,%inmemory%,%templates/install/queue-in-memory.md%br%
-AWS SQS %,%aws-sqs%,%templates/install/ubuntu-queue-aws-sqs.md%br%
-Google Pub/Sub %,%pubsub%,%templates/install/ubuntu-queue-pub-sub.md%br%
-Azure Service Bus %,%service-bus%,%templates/install/ubuntu-queue-service-bus.md{% endcapture %}
+In Memory <small>(built-in and default)</small>%,%inmemory%,%templates/install/queue-in-memory.md%br%
+AWS SQS <small>(managed service from AWS)</small>%,%aws-sqs%,%templates/install/ubuntu-queue-aws-sqs.md%br%
+Google Pub/Sub <small>(managed service from Google)</small>%,%pubsub%,%templates/install/ubuntu-queue-pub-sub.md%br%
+Azure Service Bus <small>(managed service from Azure)</small>%,%service-bus%,%templates/install/ubuntu-queue-service-bus.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="ubuntuThingsboardQueue" toggle-spec=contenttogglespecqueue %} 
 

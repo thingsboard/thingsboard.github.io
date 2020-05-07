@@ -9,7 +9,7 @@ sudo nano /etc/thingsboard/conf/thingsboard.conf
 ```
 {: .copy-code}
 
-Add the following lines to the configuration file. Don’t forget to replace "YOUR_KEY", "YOUR_SECRET" with your **real AWS SQS IAM user credentials** and "YOUR_REGION" with your **real AWS SQS account region:**
+Add the following lines to the configuration file. Don't forget to replace "YOUR_KEY", "YOUR_SECRET" with your **real AWS SQS IAM user credentials** and "YOUR_REGION" with your **real AWS SQS account region:**
 
 ```bash
 export TB_QUEUE_TYPE=aws-sqs
