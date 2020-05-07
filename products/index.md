@@ -33,11 +33,11 @@ description: ThingsBoard Products
             Learn more
         </div>
     </a>
-    <a href="/products/trendz/" class="card thingsboard-ce">
+    <a href="/products/trendz/" class="card trendz">
         <div class="card-title">
             <span class="title-text">Trendz<br/>Analytics Platform</span>
         </div>
-        <div class="card-img product community-edition-bg"></div>
+        <div class="card-img product trendz-bg"></div>
         <div class="card-description">  
             Learn more
         </div>

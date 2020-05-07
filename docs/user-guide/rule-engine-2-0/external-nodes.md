@@ -147,6 +147,33 @@ If required, Rule Chain can be configured to use chain of Transformation Nodes f
 **Outbound message** from this node will contain response **offset**, **partition** and **topic** properties in the Message metadata. 
 Original Message payload, type and originator will not be changed.
 
+**Note** - if you want to use [Confluent cloud](https://confluent.cloud) as a kafka broker you should add next properties:
+
+<table>
+    <tr>
+        <th>Key</th>
+        <th>Value</th>
+    </tr>
+    <tr>
+        <td>ssl.endpoint.identification.algorithm</td>
+        <td>https</td>
+    </tr>
+    <tr>
+        <td>sasl.mechanism</td>
+        <td>PLAIN</td>
+    </tr>
+    <tr>
+        <td>sasl.jaas.config</td>
+        <td>org.apache.kafka.common.security.plain.PlainLoginModule required username="CLUSTER_API_KEY" password="CLUSTER_API_SECRET";</td>
+    </tr>
+    <tr>
+        <td>security.protocol</td>
+        <td>SASL_SSL</td>
+    </tr>
+</table>
+- **CLUSTER_API_KEY** - your access key from Cluster settings.
+- **CLUSTER_API_SECRET** - your access secret from Cluster settings.
+
 <br/>
 
 # MQTT Node

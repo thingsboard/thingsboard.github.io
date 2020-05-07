@@ -9,10 +9,19 @@ title: IoT Gateway upgrade instructions.
 
 There are 2 ways for upgrade ThingsBoard IoT Gateway, depends on a version that you want (**Release** or **Develop**).
 
-* To upgrade to **Release** version you should use following command:
+* To upgrade to **Release** version you should use following commands:
+
+ - **Installation from pip**
 
 ```
 sudo pip3 install thingsboard-gateway --upgrade
+```
+{: .copy-code}
+
+ - **Installation as a daemon**
+ 
+ ```bash
+sudo pip3 install thingsboard-gateway --user thingsboard_gateway --upgrade
 ```
 {: .copy-code}
 

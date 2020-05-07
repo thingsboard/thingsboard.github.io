@@ -6,18 +6,37 @@ title: Trendz Analytics
 description: ThingsBoard Trends - Business Intelligence and Analytics Platform for Iot powered Business
 ---
 
-The ThingsBoard **Trendz** is an Analytics Platform that converts the IoT dataset into insights and simplifies the decision-making process. 
+* TOC
+{:toc}
+
+The ThingsBoard **Trendz** is an [Analytics Platform](/products/trendz/) that converts the IoT dataset into insights and simplifies the decision-making process. 
 With Trendz you can:
- - Analise behavior patterns, outliers and trends.
- - Clear, aggregate and group the dataset in different dimensions
+ - Analise behavior patterns, outliers and trends
+ - Predict system behavior and react beforehand
+ - Define KPI using calculated fields, review dynamic and understand what affects it
+ - Monitor how much time equipment spend in different states
+ - Filter, group and aggregate data in different dimensions
  - Share the analysis with other users by embedding visualizations into a dashboard   
 
 **Trendz** can be connected to both:
- - Open source ThingsBoard Community Edition
- - ThingsBoard Professional Edition 
+* Open source ThingsBoard Community Edition
+* ThingsBoard Professional Edition 
+
+Visit [Trendz Analytics](/products/trendz/) home page to find Use Cases and additional information. 
+
+## Introduction
+
+The goal of this tutorial is to demonstrate the basic usage of Trendz Analytics. You will learn how to:
+
+* Login to the Trendz for the first time
+* Discover Topology from ThingsBoard
+* Create basic visualizations
+* Aggregate data on different levels using relations
+* Filter data using attributes and telemetry fields
+* Add Trendz View to ThingsBoard dashboard
 
 
-#### Getting Started Tutorial
+## Video Tutorial
 
 &nbsp; 
   
@@ -27,19 +46,34 @@ With Trendz you can:
     </div>
 </div>
 
+## Installation and first configuration
+
+Detailed instruction on how to install Trendz on various platforms located here:
+* [**Installation options**](/docs/trendz/install/installation-options)
 
 
-#### Next Steps
+After Trendz installed you can sign-in to Trendz UI and discover topology:
+* [**Connect Trendz to Thingsboard and basic configuration**](/docs/trendz/connect-thingsboard)
 
-[**Connect Trendz to Thingsboard and basic configuration**](/docs/trendz/connect-thingsboard)
-: How to connect Trendz to the ThingsBoard and change connection properties.
+## Next Steps
 
-[**Available Visualizations**](/docs/trendz/visualizations)
-: Describe Basic Visualization Widgets available in Trendz and how to configure them.
+Visualization Widgets available in Trendz and how to configure them 
+* [**Available Visualizations**](/docs/trendz/visualizations-overview)
 
-[**Clear, Filter, Group and Aggregate data**](/docs/trendz/view-builder)
-: Describe how to prepare and clear dataset during analysis, define aggregation functions.
+How to group and aggregate data
+* [**Group and Aggregate data**](/docs/trendz/data-grouping-aggregation)
 
+How to apply filters
+* [**Filters**](/docs/trendz/data-filtering)
 
-[**Share and embed Visualizations**](/docs/trendz/embed-visuals)
-: Guide how to add visualization on the thingsBoard dashboard or 3rd party web site.
+Create calculated fields
+* [**Calculated Fields**](/docs/trendz/calculated-fields)
+
+Define custom states
+* [**States**](/docs/trendz/states)
+
+Data Forecast and prediction tutorial
+* [**Prediction**](/docs/trendz/prediction)
+
+Add visualizations on dashboard and 3rd party pages
+* [**Share and embed Visualizations**](/docs/trendz/embed-visuals)
