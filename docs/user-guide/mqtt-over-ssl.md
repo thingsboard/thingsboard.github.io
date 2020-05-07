@@ -101,7 +101,7 @@ Locate your **thingsboard.yml** file and set the MQTT_ENABLED value equals true.
     # Enable/disable mqtt transport protocol.
     enabled: "${MQTT_ENABLED:true}"
     bind_address: "${MQTT_BIND_ADDRESS:0.0.0.0}"
-    bind_port: "${MQTT_BIND_PORT:8883}"
+    bind_port: "${MQTT_BIND_PORT:1883}"
     timeout: "${MQTT_TIMEOUT:10000}"
     netty:
       leak_detector_level: "${NETTY_LEAK_DETECTOR_LVL:DISABLED}"
@@ -133,6 +133,32 @@ The **key_store** Property must point to the **.jks** file location. **key_store
 
 After these values are set, launch or restart your thingsboard server.
 
+### Example of configuration 
+The next combination of the keygen.properties being used to generate a proper .jks and .pem in a case of the ThingsBoard uses  [**thingsboard.yml**](/docs/user-guide/resources/mqtt-over-ssl/thingsboard.yml)  and the has the domain localhost.
+Was set for the default ThingsBoard installation of the **2.4.3 version**. 
+
+**keygen.properties:** 
+```bash
+DOMAIN_SUFFIX=localhost
+ORGANIZATIONAL_UNIT=Thingsboard
+ORGANIZATION=Thingsboard
+CITY=SF
+STATE_OR_PROVINCE=CA
+TWO_LETTER_COUNTRY_CODE=US
+
+SERVER_KEYSTORE_PASSWORD=server_ks_password
+SERVER_KEY_PASSWORD=server_key_password
+
+SERVER_KEY_ALIAS="serveralias"
+SERVER_FILE_PREFIX="mqttserver"
+SERVER_KEYSTORE_DIR="/etc/thingsboard/conf"
+
+CLIENT_KEYSTORE_PASSWORD=password
+CLIENT_KEY_PASSWORD=password
+
+CLIENT_KEY_ALIAS="tomcat"
+CLIENT_FILE_PREFIX="mqttclient"
+```
 ## Client Examples
 
 See following resources:
