@@ -64,6 +64,8 @@ Where:
 
 Execute the following command to up this docker compose directly:
 
+**NOTE**: For running docker compose commands you have to be present in a directory with docker-compose.yml file. 
+
 ```
 $ docker-compose up
 ```
