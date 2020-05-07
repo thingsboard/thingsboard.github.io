@@ -9,7 +9,7 @@ sudo nano /etc/thingsboard/conf/thingsboard.conf
 ```
 {: .copy-code}
 
-Add the following lines to the configuration file. Don’t forget to replace “YOUR_PROJECT_ID”, "YOUR_SERVICE_ACCOUNT" with your **real Pub/Sub project id, and service account (it is whole data from json file):**
+Add the following lines to the configuration file. Don't forget to replace “YOUR_PROJECT_ID”, "YOUR_SERVICE_ACCOUNT" with your **real Pub/Sub project id, and service account (it is whole data from json file):**
 
 ```bash
 export TB_QUEUE_TYPE=pubsub

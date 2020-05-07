@@ -19,6 +19,8 @@ This guide will help you to install and start ThingsBoard using Docker on Window
 
 - [Install Docker Toolbox for Windows](https://docs.docker.com/toolbox/toolbox_install_windows/)
 
+- [Install Docker Compose](https://docs.docker.com/compose/install/)
+
 ## Running
 
 Depending on the database used there are three type of ThingsBoard single instance docker images:
@@ -44,24 +46,36 @@ $ docker volume create mytb-data
 $ docker volume create mytb-logs
 ```
 
-Execute the following command to run this docker directly:
-                                   
-``` 
-$ docker run -it -p 9090:9090 -p 1883:1883 -p 5683:5683/udp -v mytb-data:/data -v mytb-logs:/var/log/thingsboard --name mytb --restart always thingsboard/tb-postgres
-```
+## Configure ThingsBoard queue service
+
+{% include templates/install/install-queue.md %}
+
+{% capture contenttogglespecqueue %}
+In Memory <small>(built-in and default)</small>%,%inmemory%,%templates/install/windows-docker-queue-in-memory.md%br%
+Kafka <small>(recommended for on-prem, production installations)</small>%,%kafka%,%templates/install/windows-docker-queue-kafka.md%br%
+AWS SQS <small>(managed service from AWS)</small>%,%aws-sqs%,%templates/install/windows-docker-queue-aws-sqs.md%br%
+Google Pub/Sub <small>(managed service from Google)</small>%,%pubsub%,%templates/install/windows-docker-queue-pub-sub.md%br%
+Azure Service Bus <small>(managed service from Azure)</small>%,%service-bus%,%templates/install/windows-docker-queue-service-bus.md%br%
+RabbitMQ <small>(for small on-prem installations)</small>%,%rabbitmq%,%templates/install/windows-docker-queue-rabbitmq.md{% endcapture %}
+
+{% include content-toggle.html content-toggle-id="ubuntuThingsboardQueue" toggle-spec=contenttogglespecqueue %} 
 
 Where: 
     
-- `docker run`              - run this container
-- `-it`                     - attach a terminal session with current ThingsBoard process output
-- `-p 9090:9090`            - connect local port 9090 to exposed internal HTTP port 9090
-- `-p 1883:1883`            - connect local port 1883 to exposed internal MQTT port 1883    
-- `-p 5683:5683`            - connect local port 5683 to exposed internal COAP port 5683 
-- `-v mytb-data:/data`      - mounts the volume `mytb-data` to ThingsBoard DataBase data directory
-- `-v mytb-logs:/var/log/thingsboard`      - mounts the volume `mytb-logs` to ThingsBoard logs directory
-- `--name mytb`             - friendly local name of this machine
-- `--restart always`        - automatically start ThingsBoard in case of system reboot and restart in case of failure. 
-- `thingsboard/tb-postgres`          - docker image, can be also `thingsboard/tb-cassandra` or `thingsboard/tb`
+- `9090:9090`            - connect local port 9090 to exposed internal HTTP port 9090
+- `1883:1883`            - connect local port 1883 to exposed internal MQTT port 1883    
+- `5683:5683`            - connect local port 5683 to exposed internal COAP port 5683 
+- `~/.mytb-data:/data`   - mounts the host's dir `~/.mytb-data` to ThingsBoard DataBase data directory
+- `~/.mytb-logs:/var/log/thingsboard`   - mounts the host's dir `~/.mytb-logs` to ThingsBoard logs directory
+- `mytb`             - friendly local name of this machine
+- `restart: always`        - automatically start ThingsBoard in case of system reboot and restart in case of failure.
+- `image: thingsboard/tb-postgres`          - docker image, can be also `thingsboard/tb-cassandra` or `thingsboard/tb`
+
+Execute the following command to up this docker compose directly:
+
+```
+$ docker-compose up
+```
 
 In order to get access to necessary resources from external IP/Host on Windows machine, please execute the following commands:
 
@@ -93,13 +107,13 @@ $ docker attach mytb
 To stop the container:
 
 ```
-$ docker stop mytb
+$ docker-compose stop
 ```
 
 To start the container:
 
 ```
-$ docker start mytb
+$ docker-compose start
 ```
 
 ## Upgrading
@@ -108,10 +122,10 @@ In order to update to the latest image, open "Docker Quickstart Terminal" and ex
 
 ```
 $ docker pull thingsboard/tb-postgres
-$ docker stop mytb
+$ docker-compose stop
 $ docker run -it -v mytb-data:/data --rm thingsboard/tb-postgres upgrade-tb.sh
 $ docker rm mytb
-$ docker run -it -p 9090:9090 -p 1883:1883 -p 5683:5683/udp -v ~/mytb-data:/data -v ~/mytb-logs:/var/log/thingsboard --name mytb --restart always thingsboard/tb-postgres
+$ docker-compose up
 ```
 
 **NOTE**: if you use different database change image name in all commands from `thingsboard/tb-postgres` to `thingsboard/tb-cassandra` or `thingsboard/tb` correspondingly.

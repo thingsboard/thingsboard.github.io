@@ -51,12 +51,12 @@ Hybrid <br/>PostgreSQL+TimescaleDB<br/><small>(for TimescaleDB professionals)</s
 {% include templates/install/install-queue.md %}
 
 {% capture contenttogglespecqueue %}
-In Memory %,%inmemory%,%templates/install/queue-in-memory.md%br%
-Kafka %,%kafka%,%templates/install/windows-queue-kafka.md%br%
-AWS SQS %,%aws-sqs%,%templates/install/windows-queue-aws-sqs.md%br%
-Google Pub/Sub %,%pubsub%,%templates/install/windows-queue-pub-sub.md%br%
-Azure Service Bus %,%service-bus%,%templates/install/windows-queue-service-bus.md%br%
-RabbitMQ %,%rabbitmq%,%templates/install/windows-queue-rabbitmq.md{% endcapture %}
+In Memory <small>(built-in and default)</small> %,%inmemory%,%templates/install/queue-in-memory.md%br%
+Kafka <small>(recommended for on-prem, production installations)</small> %,%kafka%,%templates/install/windows-queue-kafka.md%br%
+AWS SQS <small>(managed service from AWS)</small> %,%aws-sqs%,%templates/install/windows-queue-aws-sqs.md%br%
+Google Pub/Sub <small>(managed service from Google)</small>%,%pubsub%,%templates/install/windows-queue-pub-sub.md%br%
+Azure Service Bus <small>(managed service from Azure)</small>%,%service-bus%,%templates/install/windows-queue-service-bus.md%br%
+RabbitMQ <small>(for small on-prem installations)</small>%,%rabbitmq%,%templates/install/windows-queue-rabbitmq.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="windowsThingsboardQueue" toggle-spec=contenttogglespecqueue %} 
 
