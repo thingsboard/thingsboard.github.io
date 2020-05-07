@@ -1,4 +1,3 @@
-#### RabbitMQ Installation
 
 For installing RabbitMQ use this [instruction](https://www.rabbitmq.com/install-debian.html).
 

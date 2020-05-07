@@ -35,15 +35,8 @@ Possible error codes and their reasons:
 * **401 Unauthorized** - Invalid **$ACCESS_TOKEN**.
 * **404 Not Found** - Resource not found.
 
-## Key-value format
+{% include templates/api/key-value-format.md %}
 
-By default, ThingsBoard supports key-value content in JSON. Key is always a string, while value can be either string, boolean, double or long.
-Using custom binary format or some serialization framework is also possible. See [protocol customization](#protocol-customization) for more details.
-For example:
-
-```json
-{"stringKey":"value1", "booleanKey":true, "doubleKey":42.0, "longKey":73}
-```
 
 ## Telemetry upload API
 
