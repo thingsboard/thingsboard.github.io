@@ -10,13 +10,13 @@ description: OAuth 2.0 Support
 
 ## Overview
 
-ThingsBoard allows you to provide Single Sign On functionality for your customers and automatically create tenant, customers or subcustomers using external access management platforms, that supports OAuth 2.0 protocol. As an example of these platforms: [Google](https://developers.google.com/identity/protocols/oauth2/openid-connect), [Okta](https://www.okta.com/), [Auth0](https://auth0.com/) etc.   
+ThingsBoard allows you to provide Single Sign On functionality for your customers and automatically create tenant, customers or subcustomers using external user management platforms, that supports OAuth 2.0 protocol. As an example of these platforms: [Google](https://developers.google.com/identity/protocols/oauth2/openid-connect), [Okta](https://www.okta.com/), [Auth0](https://auth0.com/) etc.   
 
 
 ## OAuth 2.0 authentication flow
 
 ThingsBoard supports the Authorization Code grant type to exchange an authorization code for an access token. Once user returns to the ThingsBoard client via redirect URL, the platform will get the authorization code from the URL and use it to request an access token from external user management platform.
-Using [basic mapper](/docs/user-guide/oauth-2-support/#basic-mapper) or [custom mapper](/docs/user-guide/oauth-2-support/#custom-mapper) external user object will be converted from external system into ThingsBoard internal user and then regular ThingsBoard authorization flow will happen.
+Using [basic mapper](/docs/user-guide/oauth-2-support/#basic-mapper) or [custom mapper](/docs/user-guide/oauth-2-support/#custom-mapper) external user info object will be converted from external platform into ThingsBoard internal OAuth 2.0 user and then regular ThingsBoard authorization flow will happen.
 
 ## Scenario description
 
@@ -28,7 +28,7 @@ As a second step we are going to add a new external provider for authentication 
 In this case User is going to be logged into the Tenant which name is going to be equal to user's email domain name.
 Additionally, for every user we are going to create a new Customer and Customer name is going to be user's email. 
 
-To map these external users from Google and Auth0 platform we are going to use built-in [basic mapper](/docs/user-guide/oauth-2-support/#basic-mapper). 
+To map these external user infos from Google and Auth0 platform we are going to use built-in [basic mapper](/docs/user-guide/oauth-2-support/#basic-mapper). 
 
 If [basic mapper](/docs/user-guide/oauth-2-support/#basic-mapper) functionality will not fit your business needs, with the help of [custom mapper](/docs/user-guide/oauth-2-support/#custom-mapper) you are able to add an implementation that fits your specific goals.
 
@@ -53,14 +53,14 @@ http://localhost:8080/login/oauth2/code/
 
 #### Configuration of ThingsBoard
 
-You will need to modify OAuth 2 parameters in [thingsboard.yml](/docs/user-guide/install/config/#thingsboardyml)
+You will need to modify OAuth 2.0 parameters in [thingsboard.yml](/docs/user-guide/install/config/#thingsboardyml)
 
 ```bash
 # Security parameters
 security:
   ...
   oauth2:
-    # Enable/disable OAuth 2 login functionality
+    # Enable/disable OAuth 2.0 login functionality
     # For details please refer to https://thingsboard.io/docs/user-guide/oauth-2-support/
     enabled: "${SECURITY_OAUTH2_ENABLED:false}"
     # Redirect URL where access code from external user management system will be processed
@@ -316,8 +316,8 @@ We have completed our sample and now your users not required to create accounts 
 
 ## Mapping of external user into ThingBoard internal user structure
 
-Mapping of the external user object into ThingBoard user can be achieved in two ways - using **Basic** and **Custom** mappers. 
-Main functionality of the mapper is to map key-value attributes from the external user information object into expected structure of the ThingsBoard OAuth 2 User:
+Mapping of the external user info object into ThingBoard user can be achieved in two ways - using **Basic** and **Custom** mappers. 
+Main functionality of the mapper is to map key-value attributes from the external user info object into expected structure of the ThingsBoard OAuth 2.0 User:
 
 ```java
 public class OAuth2User {
@@ -338,7 +338,7 @@ public class OAuth2User {
 
 ### Basic mapper
 
-A Basic mapper is able to merge external OAuth 2.0 user into ThingsBoard OAuth 2.0 user with a predefined set of rules. 
+A basic mapper is able to merge external OAuth 2.0 user info object into ThingsBoard OAuth 2.0 user with a predefined set of rules. 
 Configuration of this mapper done over [thingsboard.yml](/docs/user-guide/install/config/#thingsboardyml):
 
 ```bash
@@ -375,7 +375,7 @@ mapperConfig:
     userGroupsNamePattern: "${SECURITY_OAUTH2_DEFAULT_MAPPER_BASIC_USER_GROUPS_NAME_PATTERN:Tenant Administrators}" 
 ```
 
-To use Basic mapper please set **mapperConfig.type** or **SECURITY_OAUTH2_DEFAULT_MAPPER_TYPE** environment variable to **basic**. 
+To use basic mapper please set *mapperConfig.type* or *SECURITY_OAUTH2_DEFAULT_MAPPER_TYPE* environment variable to **basic**. 
 
 Here are the details of other properties:
 
@@ -384,24 +384,24 @@ Here are the details of other properties:
   If this option set to **false**, user will get access denied error if he tries to login with external OAuth 2.0 provider, but user doesn't exist yet.   
  
 - **emailAttributeKey**
-  This is the key of the attributes from the external OAuth 2.0 user that is going to be used as ThingsBoard user email property.
+  This is the key of the attributes from the external OAuth 2.0 user info that is going to be used as ThingsBoard user email property.
   
 - **firstNameAttributeKey**
-  This is the key of the attributes from the external OAuth 2.0 user that is going to be used as ThingsBoard user first name property.
+  This is the key of the attributes from the external OAuth 2.0 user info that is going to be used as ThingsBoard user first name property.
     
 - **lastNameAttributeKey**
-  This is the key of the attributes from the external OAuth 2.0 user that is going to be used as ThingsBoard user surname property.
+  This is the key of the attributes from the external OAuth 2.0 user info that is going to be used as ThingsBoard user surname property.
 
 - **tenantNameStrategy**
   This option specifies which tenant is going to be chosen for creating of the user.
-  A Basic mapper provide three possible options strategy for generating Tenant name from external user object - *domain*, *email* or *custom*.
+  A basic mapper provide three possible options strategy for generating Tenant name from external user info object - *domain*, *email* or *custom*.
      - **domain** - name of the Tenant will be extracted as domain from the email of the user
      - **email** - name of the Tenant will email of the user
      - **custom** - you can define a custom pattern for Tenant name. Please see *tenantNamePattern*.
 
 - **tenantNamePattern**
   In case *tenantNameStrategy* is **custom** you can specify a name of the Tenant where user is going to be created with a help of custom pattern.
-  You can use attributes from the external user object to put them into Tenant name. Please use %{attribute_key} as placeholder for attribute value.
+  You can use attributes from the external user info object to put them into Tenant name. Please use %{attribute_key} as placeholder for attribute value.
   
   Tenant pattern examples:
      - **Demo Tenant**           # Hard coded Tenant name
@@ -410,7 +410,7 @@ Here are the details of other properties:
         
 - **customerNamePattern**
   User can be created under specific Customer, and not under the Tenant, if this pattern field is not empty.
-  You can use attributes from the external user object to put them into Customer name. Please use %{attribute_key} as placeholder for attribute value.
+  You can use attributes from the external user info object to put them into Customer name. Please use %{attribute_key} as placeholder for attribute value.
   
   Customer pattern examples:
      - **Demo Customer**             # Hard coded Customer name
@@ -422,7 +422,7 @@ Here are the details of other properties:
   **NOTE: This configuration available only in Professional Edition**
 
   Customer of the user can be created in the hierarchy under this parent Customer, if this pattern field is not empty.
-  You can use attributes from the external user object to put them into Parent Customer name. Please use %{attribute_key} as placeholder for attribute value.
+  You can use attributes from the external user info object to put them into Parent Customer name. Please use %{attribute_key} as placeholder for attribute value.
   
   Parent Customer pattern examples:
      - **Demo Parent Customer**           # Hard coded Parent Customer name
@@ -435,7 +435,7 @@ Here are the details of other properties:
 
   By default, newly created user will be assigned only to the **All** user's group. 
   You can customize this behaviour by specifying list of groups, where user must be assigned to as well. 
-  You can use attributes from the external user object to put them into user group names. Please use %{attribute_key} as placeholder for attribute value.
+  You can use attributes from the external user info object to put them into user group names. Please use %{attribute_key} as placeholder for attribute value.
   If groups doesn't exist, this group will be created automatically.
   
   User groups pattern examples:
@@ -447,7 +447,7 @@ Here are the details of other properties:
 If basic mapper functionality doesn't cover your business needs, with the help of custom mapper you are able to add an implementation that fits your specific goals.
 
 A custom mapper designed as a separate microservice which is running nearby the ThingsBoard core microservice.
-ThingsBoard forwards all mapping requests to this microservice and expects as a response ThingsBoard OAuth 2 user object:
+ThingsBoard forwards all mapping requests to this microservice and expects as a response ThingsBoard OAuth 2.0 user object:
 
 ```java
 public class OAuth2User {
@@ -476,7 +476,7 @@ mapperConfig:
   allowUserCreation: "${SECURITY_OAUTH2_DEFAULT_MAPPER_ALLOW_USER_CREATION:true}"
   # Allows user to setup ThingsBoard internal password and login over default Login window
   activateUser: "${SECURITY_OAUTH2_DEFAULT_MAPPER_ACTIVATE_USER:false}"
-  # Mapper type of converter from external user into internal - 'basic' or 'custom'
+  # Mapper type of converter from external user info object into internal - 'basic' or 'custom'
   type: "${SECURITY_OAUTH2_DEFAULT_MAPPER_TYPE:custom}"
   custom:
     url: "${SECURITY_OAUTH2_DEFAULT_MAPPER_CUSTOM_URL:}"
@@ -485,7 +485,7 @@ mapperConfig:
               
 ```
 
-To use Custom mapper please set **mapperConfig.type** or **SECURITY_OAUTH2_DEFAULT_MAPPER_TYPE** environment variable to **custom**. 
+To use custom mapper please set *mapperConfig.type* or *SECURITY_OAUTH2_DEFAULT_MAPPER_TYPE* environment variable to **custom**. 
 
 Here are the details of other properties:
 
@@ -495,11 +495,11 @@ Here are the details of other properties:
 
 - **username**
 
-  If custom mapper endpoint configured with a basic authorization mechanism, please specify *username* in this property.
+  If custom mapper endpoint configured with a basic authorization, specify *username* in this property.
  
 - **password**
 
-  If custom mapper endpoint configured with a basic authorization mechanism, please specify *password* in this property.
+  If custom mapper endpoint configured with a basic authorization, specify *password* in this property.
   
 Here is the example of demo configuration:
 
@@ -510,28 +510,50 @@ Here is the example of demo configuration:
     password: pa$$word
 ```
 
-## HAProxy configuration
+## OAuth 2.0 configuration parameters
 
-If ThingsBoard is running under loadbalancer like HAProxy please configure properly balance algorithm to make sure correct session is available on the ThingsBoard instance. 
-```
+| Key | Description |
+| --- | ----------- |
+| security.oauth2.enabled | Enable/disable OAuth 2.0 login functionality |
+| security.oauth2.loginProcessingUrl | Redirect URL where access code from external user management system will be processed |
+| security.oauth2.clients.default.loginButtonLabel | Label that going to be show on login button - 'Login with {loginButtonLabel}' |
+| security.oauth2.clients.default.loginButtonIcon | Icon that going to be show on login button. Material design icon ID. List of icon IDs could be found [here](https://material.angularjs.org/latest/api/directive/mdIcon) |
+| security.oauth2.clients.default.clientName | Logical name of the client or registration |
+| security.oauth2.clients.default.clientId | Client ID |
+| security.oauth2.clients.default.clientSecret | Client secret |
+| security.oauth2.clients.default.accessTokenUri | URI for the token endpoint |
+| security.oauth2.clients.default.authorizationUri | URI for the authorization endpoint |
+| security.oauth2.clients.default.scope | Sets the scope(s) used for the client |
+| security.oauth2.clients.default.redirectUriTemplate | URI (or uri template) for the redirection endpoint. Must be in sync with 'security.oauth2.loginProcessingUrl' (domain name added) |
+| security.oauth2.clients.default.jwkSetUri | URI for the JSON Web Key (JWK) Set endpoint |
+| security.oauth2.clients.default.authorizationGrantType | [Authorization grant type](https://docs.spring.io/spring-security/site/docs/current/api/org/springframework/security/oauth2/core/AuthorizationGrantType.html) used for the client |
+| security.oauth2.clients.default.clientAuthenticationMethod | [Authentication method](https://docs.spring.io/spring-security/site/docs/current/api/org/springframework/security/oauth2/core/ClientAuthenticationMethod.html) used when authenticating the client with the authorization server |
+| security.oauth2.clients.default.userInfoUri | URI for the user info endpoint |
+| security.oauth2.clients.default.userNameAttributeName | Attribute name used to access the user's name from the user info response |
+
+## HaProxy configuration
+
+If ThingsBoard is running under loadbalancer like HAProxy please configure properly balance algorithm to make sure correct session is available on the ThingsBoard instance: 
+```bash
 backend tb-api-backend
   ...
-  **balance source**
+  balance source # balance must be set to 'source'
   ...
 ```
+
 
 As well please configure properly ACL mapping for HTTP and HTTPs requests:
-```
+```bash
 frontend http-in
   ...
-  acl tb_api_acl path_beg /api/ /swagger /webjars /v2/ /static/rulenode/ **/oauth2/** **/login/oauth2/**
+  acl tb_api_acl path_beg /api/ /swagger /webjars /v2/ /static/rulenode/ /oauth2/ /login/oauth2/ # '/oauth2/ /login/oauth2/' added
   ...
 ```
 
-```
+```bash
 frontend https_in
   ...
-  acl tb_api_acl path_beg /api/ /swagger /webjars /v2/ /static/rulenode/ **/oauth2/** **/login/oauth2/**
+  acl tb_api_acl path_beg /api/ /swagger /webjars /v2/ /static/rulenode/ /oauth2/ /login/oauth2/ # '/oauth2/ /login/oauth2/' added
   ...
 ```
 
