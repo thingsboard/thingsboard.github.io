@@ -93,21 +93,36 @@ sudo chown thingsboard:thingsboard /etc/thingsboard/conf/mqttserver.jks
 
 ### Server configuration
 
-Locate your **thingsboard.yml** file and uncomment the lines after "*# Uncomment the following lines to enable ssl for MQTT*":
+Locate your **thingsboard.yml** file and set the MQTT_ENABLED value equals true.
 
 ```bash
-# MQTT server parameters
-mqtt:
-  bind_address: "${MQTT_BIND_ADDRESS:0.0.0.0}"
-  bind_port: "${MQTT_BIND_PORT:8883}"
-  adaptor: "${MQTT_ADAPTOR_NAME:JsonMqttAdaptor}"
-  timeout: "${MQTT_TIMEOUT:10000}"
-# Uncomment the following lines to enable ssl for MQTT
-  ssl:
-    key_store: mqttserver.jks
-    key_store_password: server_ks_password
-    key_password: server_key_password
-    key_store_type: JKS
+#Local MQTT transport parameters
+  mqtt:
+    # Enable/disable mqtt transport protocol.
+    enabled: "${MQTT_ENABLED:true}"
+    bind_address: "${MQTT_BIND_ADDRESS:0.0.0.0}"
+    bind_port: "${MQTT_BIND_PORT:8883}"
+    timeout: "${MQTT_TIMEOUT:10000}"
+    netty:
+      leak_detector_level: "${NETTY_LEAK_DETECTOR_LVL:DISABLED}"
+      boss_group_thread_count: "${NETTY_BOSS_GROUP_THREADS:1}"
+      worker_group_thread_count: "${NETTY_WORKER_GROUP_THREADS:12}"
+      max_payload_size: "${NETTY_MAX_PAYLOAD_SIZE:65536}"
+      so_keep_alive: "${NETTY_SO_KEEPALIVE:false}"
+    # MQTT SSL configuration
+    ssl:
+      # Enable/disable SSL support
+      enabled: "${MQTT_SSL_ENABLED:true}"
+      # SSL protocol: See http://docs.oracle.com/javase/8/docs/technotes/guides/security$
+      protocol: "${MQTT_SSL_PROTOCOL:TLSv1.2}"
+      # Path to the key store that holds the SSL certificate
+      key_store: "${MQTT_SSL_KEY_STORE:mqttserver.jks}"
+      # Password used to access the key store
+      key_store_password: "${MQTT_SSL_KEY_STORE_PASSWORD:server_ks_password}"
+      # Password used to access the key
+      key_password: "${MQTT_SSL_KEY_PASSWORD:server_key_password}"
+      # Type of the key store
+      key_store_type: "${MQTT_SSL_KEY_STORE_TYPE:JKS}"
 ```
 
 You may also want to change **mqtt.bind_port** to 8883 which is recommended for MQTT over SSL servers.
