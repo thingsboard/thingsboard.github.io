@@ -7,7 +7,7 @@ sudo nano docker-compose.yml
 ```
 {: .copy-code}
 
-Add the following line to the yml file:
+Add the following lines to the yml file:
 
 ```yml
 version: '2.2'

@@ -69,7 +69,6 @@ and put the license secret parameter
 ```bash
 # ThingsBoard server configuration
 
-RPC_HOST=${TB_HOST}
 HTTP_LOG_CONTROLLER_ERROR_STACK_TRACE=false
 
 TB_LICENSE_SECRET=PUT_YOUR_LICENSE_SECRET_HERE

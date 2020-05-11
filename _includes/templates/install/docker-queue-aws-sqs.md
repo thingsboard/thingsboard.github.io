@@ -7,7 +7,7 @@ sudo nano docker-compose.yml
 ```
 {: .copy-code}
 
-Add the following line to the yml file. Don’t forget to replace "YOUR_KEY", "YOUR_SECRET" with your **real AWS SQS IAM user credentials** and "YOUR_REGION" with your **real AWS SQS account region:**
+Add the following lines to the yml file. Don’t forget to replace "YOUR_KEY", "YOUR_SECRET" with your **real AWS SQS IAM user credentials** and "YOUR_REGION" with your **real AWS SQS account region:**
 
 ```yml
 version: '2.2'
