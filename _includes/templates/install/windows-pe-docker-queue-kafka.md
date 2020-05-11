@@ -1,4 +1,3 @@
-#### Kafka Installation
 
 [Apache Kafka](https://kafka.apache.org/) is an open-source stream-processing software platform.
 
@@ -9,7 +8,7 @@ docker-compose.yml
 ```
 {: .copy-code}
 
-Add the following line to the yml file.
+Add the following line to the yml file. Don’t forget to replace "PUT_YOUR_LICENSE_SECRET_HERE" with your **license secret obtained on the first step**:
 
 ```yml
 version: '2.2'
@@ -37,9 +36,9 @@ services:
       KAFKA_INTER_BROKER_LISTENER_NAME: INSIDE
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-  mytb:
+  mytbpe:
     restart: always
-    image: "thingsboard/tb-postgres"
+    image: "store/thingsboard/tb-pe:2.5.0PE"
     depends_on:
       - kafka
     ports:
@@ -49,6 +48,7 @@ services:
     environment:
       TB_QUEUE_TYPE: kafka
       TB_KAFKA_SERVERS: kafka:9092
+      TB_LICENSE_SECRET: PUT_YOUR_LICENSE_SECRET_HERE
     volumes:
       - ~/.mytb-data:/data
       - ~/.mytb-logs/var/log/thingsboard

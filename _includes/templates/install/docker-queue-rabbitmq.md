@@ -1,4 +1,3 @@
-#### RabbitMQ Installation
 
 For installing RabbitMQ use this [instruction](https://www.rabbitmq.com/install-debian.html).
 
@@ -18,7 +17,7 @@ services:
     restart: always
     image: "thingsboard/tb-postgres"
     ports:
-      - "9090:9090"
+      - "8080:9090"
       - "1883:1883"
       - "5683:5683/udp"
     environment:
