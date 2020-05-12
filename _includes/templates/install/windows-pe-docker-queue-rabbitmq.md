@@ -1,4 +1,3 @@
-#### RabbitMQ Installation
 
 For installing RabbitMQ use this [instruction](https://www.rabbitmq.com/install-windows.html).
 
@@ -9,14 +8,14 @@ docker-compose.yml
 ```
 {: .copy-code}
 
-Add the following line to the yml file. Don't forget to replace "YOUR_USERNAME" and "YOUR_PASSWORD" with your **real user credentials**, "localhost" and "5672" with your **real RabbitMQ host and port**:
+Add the following line to the yml file. Don't forget to replace "YOUR_USERNAME" and "YOUR_PASSWORD" with your **real user credentials**, "localhost" and "5672" with your **real RabbitMQ host and port**, and "PUT_YOUR_LICENSE_SECRET_HERE" with your **license secret obtained on the first step**:
 
 ```yml
 version: '2.2'
 services:
-  mytb:
+  mytbpe:
     restart: always
-    image: "thingsboard/tb-postgres"
+    image: "store/thingsboard/tb-pe:2.5.0PE"
     ports:
       - "8080:9090"
       - "1883:1883"
@@ -27,6 +26,7 @@ services:
       TB_QUEUE_RABBIT_MQ_PASSWORD: YOUR_PASSWORD
       TB_QUEUE_RABBIT_MQ_HOST: localhost
       TB_QUEUE_RABBIT_MQ_PORT: 5672
+      TB_LICENSE_SECRET: PUT_YOUR_LICENSE_SECRET_HERE
     volumes:
       - ~/.mytb-data:/data
       - ~/.mytb-logs/var/log/thingsboard

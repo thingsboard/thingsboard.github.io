@@ -74,7 +74,7 @@ Hybrid <br/>PostgreSQL+TimescaleDB<br/><small>(for TimescaleDB professionals)</s
 
 {% include content-toggle.html content-toggle-id="ubuntuThingsboardDatabase" toggle-spec=contenttogglespec %} 
 
-### Step 5. Configure ThingsBoard queue service
+### Step 5. Choose ThingsBoard queue service
 
 {% include templates/install/install-queue.md %}
 

@@ -37,7 +37,7 @@ Depending on the database used there are three type of ThingsBoard single instan
     
 In this instruction `thingsboard/tb-postgres` image will be used. You can choose any other images with different databases (see above).
 
-## Configure ThingsBoard queue service
+## Choose ThingsBoard queue service
 
 {% include templates/install/install-queue.md %}
 
@@ -53,7 +53,7 @@ RabbitMQ <small>(for small on-prem installations)</small>%,%rabbitmq%,%templates
 
 Where: 
     
-- `9090:9090`            - connect local port 9090 to exposed internal HTTP port 9090
+- `8080:9090`            - connect local port 8080 to exposed internal HTTP port 9090
 - `1883:1883`            - connect local port 1883 to exposed internal MQTT port 1883    
 - `5683:5683`            - connect local port 5683 to exposed internal COAP port 5683 
 - `~/.mytb-data:/data`   - mounts the host's dir `~/.mytb-data` to ThingsBoard DataBase data directory
@@ -64,13 +64,13 @@ Where:
 
 Execute the following command to up this docker compose directly:
 
-**NOTE**: For running docker compose commands you have to be present in a directory with docker-compose.yml file. 
+**NOTE**: For running docker compose commands you have to be in a directory with docker-compose.yml file. 
 
 ```
 $ docker-compose up
 ```
     
-After executing this command you can open `http://{your-host-ip}:9090` in you browser (for ex. `http://localhost:9090`). You should see ThingsBoard login page.
+After executing this command you can open `http://{your-host-ip}:8080` in you browser (for ex. `http://localhost:8080`). You should see ThingsBoard login page.
 Use the following default credentials:
 
 - **Systen Administrator**: sysadmin@thingsboard.org / sysadmin
@@ -83,10 +83,11 @@ You can always change passwords for each account in account profile page.
 
 You can detach from session terminal with `Ctrl-p` `Ctrl-q` - the container will keep running in the background.
 
-To reattach to the terminal (to see ThingsBoard logs) run:
+In case of any issues you can examine service logs for errors.
+For example to see ThingsBoard node logs execute the following command:
 
 ```
-$ docker attach mytb
+docker-compose logs -f mytbpe
 ```
 
 To stop the container:
@@ -109,7 +110,7 @@ In order to update to the latest image, execute the following commands:
 $ docker pull thingsboard/tb-postgres
 $ docker-compose stop
 $ docker run -it -v ~/.mytb-data:/data --rm thingsboard/tb-postgres upgrade-tb.sh
-$ docker rm mytb
+$ docker-compose rm mytb
 $ docker-compose up
 ```
 
