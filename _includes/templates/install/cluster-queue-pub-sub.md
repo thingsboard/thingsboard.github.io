@@ -23,9 +23,12 @@ sudo nano queue-pubsub.env
 
 Don’t forget to replace “YOUR_PROJECT_ID”, "YOUR_SERVICE_ACCOUNT" with your **real Pub/Sub project id, and service account (it is whole data from json file):**
 
+**Note**: If your internet connection is slowly, you should increase "REMOTE_JS_MAX_REQUEST_TIMEOUT" value.
+
 ```.env
 TB_QUEUE_TYPE=pubsub
 TB_QUEUE_PUBSUB_PROJECT_ID=YOUR_PROJECT_ID
 TB_QUEUE_PUBSUB_SERVICE_ACCOUNT=YOUR_SERVICE_ACCOUNT
+REMOTE_JS_MAX_REQUEST_TIMEOUT=20000
 ```
 {: .copy-code}
