@@ -7,7 +7,7 @@ sudo nano docker-compose.yml
 ```
 {: .copy-code}
 
-Add the following line to the yml file. Don't forget to replace “YOUR_NAMESPACE_NAME” with your **real Service Bus namespace name**, and "YOUR_SAS_KEY_NAME", "YOUR_SAS_KEY" with your **real Service Bus credentials. Note: "YOUR_SAS_KEY_NAME" it is "SAS Policy", "YOUR_SAS_KEY" it is "SAS Policy Primary Key":**
+Add the following lines to the yml file. Don't forget to replace “YOUR_NAMESPACE_NAME” with your **real Service Bus namespace name**, and "YOUR_SAS_KEY_NAME", "YOUR_SAS_KEY" with your **real Service Bus credentials. Note: "YOUR_SAS_KEY_NAME" it is "SAS Policy", "YOUR_SAS_KEY" it is "SAS Policy Primary Key":**
 
 ```yml
 version: '2.2'
@@ -16,7 +16,7 @@ services:
     restart: always
     image: "thingsboard/tb-postgres"
     ports:
-      - "9090:9090"
+      - "8080:9090"
       - "1883:1883"
       - "5683:5683/udp"
     environment:

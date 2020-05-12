@@ -43,7 +43,7 @@ services:
     depends_on:
       - kafka
     ports:
-      - "9090:9090"
+      - "8080:9090"
       - "1883:1883"
       - "5683:5683/udp"
     environment:

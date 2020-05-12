@@ -7,7 +7,7 @@ sudo nano docker-compose.yml
 ```
 {: .copy-code}
 
-Add the following line to the yml file. Don’t forget to replace “YOUR_PROJECT_ID”, "YOUR_SERVICE_ACCOUNT" with your **real Pub/Sub project id, and service account (it is whole data from json file):**
+Add the following lines to the yml file. Don’t forget to replace “YOUR_PROJECT_ID”, "YOUR_SERVICE_ACCOUNT" with your **real Pub/Sub project id, and service account (it is whole data from json file):**
 
 ```yml
 version: '2.2'
@@ -16,7 +16,7 @@ services:
     restart: always
     image: "thingsboard/tb-postgres"
     ports:
-      - "9090:9090"
+      - "8080:9090"
       - "1883:1883"
       - "5683:5683/udp"
     environment:

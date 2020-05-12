@@ -1,17 +1,24 @@
 
 [Apache Kafka](https://kafka.apache.org/) is an open-source stream-processing software platform.
 
-Create docker compose file for ThingsBoard queue service:
+Configuration environment file for ThingsBoard queue service:
 
 ```text
-sudo nano docker-compose.yml
+nano tb-node.env
 ```
 {: .copy-code}
 
-Add the following lines to the yml file.
+Add the following line to the file.
+
+```bash
+TB_QUEUE_TYPE=kafka
+TB_KAFKA_SERVERS=kafka:9092
+```
+{: .copy-code}
+
+Check docker-compose.yml and configure ports if you need:
 
 ```yml
-version: '2.2'
 services:
   zookeeper:
     restart: always
@@ -36,20 +43,14 @@ services:
       KAFKA_INTER_BROKER_LISTENER_NAME: INSIDE
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-  mytb:
+  tbpe:
     restart: always
-    image: "thingsboard/tb-postgres"
+    image: "${DOCKER_REPO}/${TB_NODE_DOCKER_NAME}:${TB_VERSION}"
+    ports:
+      - "8080:8080"
+      - "1883:1883"
+      - "5683:5683"
     depends_on:
       - kafka
-    ports:
-      - "8080:9090"
-      - "1883:1883"
-      - "5683:5683/udp"
-    environment:
-      TB_QUEUE_TYPE: kafka
-      TB_KAFKA_SERVERS: kafka:9092
-    volumes:
-      - ~/.mytb-data:/data
-      - ~/.mytb-logs/var/log/thingsboard
 ```
 {: .copy-code}

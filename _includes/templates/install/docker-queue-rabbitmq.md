@@ -8,7 +8,7 @@ sudo nano docker-compose.yml
 ```
 {: .copy-code}
 
-Add the following line to the yml file. Don't forget to replace "YOUR_USERNAME" and "YOUR_PASSWORD" with your **real user credentials**, "localhost" and "5672" with your **real RabbitMQ host and port**:
+Add the following lines to the yml file. Don't forget to replace "YOUR_USERNAME" and "YOUR_PASSWORD" with your **real user credentials**, "localhost" and "5672" with your **real RabbitMQ host and port**:
 
 ```yml
 version: '2.2'
@@ -17,7 +17,7 @@ services:
     restart: always
     image: "thingsboard/tb-postgres"
     ports:
-      - "9090:9090"
+      - "8080:9090"
       - "1883:1883"
       - "5683:5683/udp"
     environment:
