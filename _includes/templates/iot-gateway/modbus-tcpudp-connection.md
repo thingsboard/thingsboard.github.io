@@ -6,4 +6,5 @@
 | port                          | **5020**                                | Port of Modbus server for connect.                                                    |
 | timeout                       | **35**                                  | Timeout in seconds for connecting to Modbus server.                                   |
 | method                        | **socket**                              | Type of a framer **socket** or **rtu**, if needed.                                    |
+| byteOrder                     | **BIG**                               | Order of bytes to read.                                                                 |
 |---

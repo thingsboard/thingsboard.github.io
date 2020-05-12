@@ -37,8 +37,7 @@ https://dist.thingsboard.io/trendz-windows-1.4.0.zip
 
 ### Step 3. Obtain and configure license key 
 
-We assume you have already chosen your subscription plan or decided to purchase a perpetual license. 
-If not, please navigate to [pricing](/pricing/?active=trendz) page to select the best license option for your case and get your license. 
+We assume you have already have Trendz license key. If not, please get your [Free Trial license](/pricing/?active=trendz) before you proceed.
 See [How-to get pay-as-you-go subscription](https://www.youtube.com/watch?v=dK-QDFGxWek){:target="_blank"} for more details.
 
 Once you get the license secret, you should put it to the trendz configuration file. 

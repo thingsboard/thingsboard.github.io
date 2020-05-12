@@ -9,7 +9,7 @@ description: ThingsBoard Trends - Business Intelligence and Analytics Platform f
 * TOC
 {:toc}
 
-The ThingsBoard **Trendz** is an Analytics Platform that converts the IoT dataset into insights and simplifies the decision-making process. 
+The ThingsBoard **Trendz** is an [Analytics Platform](/products/trendz/) that converts the IoT dataset into insights and simplifies the decision-making process. 
 With Trendz you can:
  - Analise behavior patterns, outliers and trends
  - Predict system behavior and react beforehand
@@ -22,6 +22,7 @@ With Trendz you can:
 * Open source ThingsBoard Community Edition
 * ThingsBoard Professional Edition 
 
+Visit [Trendz Analytics](/products/trendz/) home page to find Use Cases and additional information. 
 
 ## Introduction
 

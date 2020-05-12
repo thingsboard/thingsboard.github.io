@@ -8,16 +8,15 @@ description:
     <div class="main-bg">
         <main>
             <div class="content">
-                <h3 class="header"><span class="cBlue" >Predict failures and forecast utilisation</span></h3>
+                <h3 class="header"><span class="cBlue" >Predict failures and forecast utilization</span></h3>
                 <p>For better decision making, resource planning and reducing cost business requires answers to 3 main questions:
                    <b>What</b> will happen, <b>When</b>, and <b>Why</b>?</p>
                    <p>Trendz provides an answer</p>
-                <a href="/docs/trendz/" class="button cBlue try-button">Start Analysis</a>           
+                <a href="/docs/trendz/prediction/" class="button cBlue try-button">Start Analysis</a>           
             </div>
             <div class="image-block">
                 <div class="image-wrapper">
                     <video poster="/images/trendz/trndz-home-pred.png" autoplay="" loop="" preload="auto" muted="">
-                        <source src="https://tb-videos.s3-us-west-1.amazonaws.com/heatmap_v3ww.webm" type="video/webm">                
                     </video>
                 </div>
             </div>
@@ -47,12 +46,11 @@ description:
                     <p>Calculated fields are one of the most powerful features for KPI monitoring and prediction. 
                     Based on the input data, calculated fields allow you to run statistical functions and create 
                     new data items by applying calculations.</p>
-                    <a href="/docs/trendz/" class="button cBlue try-button">Start Analysis</a>           
+                    <a href="/docs/trendz/calculated-fields/" class="button cBlue try-button">Start Analysis</a>           
                 </div>
                 <div class="image-block">
                     <div class="image-wrapper">
                         <video poster="/images/trendz/state-simple-view.png" autoplay="" loop="" preload="auto" muted="">
-                            <source src="https://tb-videos.s3-us-west-1.amazonaws.com/heatmap_v3ww.webm" type="video/webm">                
                         </video>
                     </div>
                 </div>
@@ -68,7 +66,7 @@ description:
                     <b>Open Source ThingsBoard Community Edition</b><br>
                     <b>ThingsBoard Professional Edition</b>
                 </p>
-                <a href="/docs/trendz/" class="button cBlue try-button">Learn More</a>
+                <a href="/docs/trendz/connect-thingsboard/" class="button cBlue try-button">Learn More</a>
             </div>
             <div class="image-block">
                 <div class="image-wrapper">
@@ -87,7 +85,7 @@ description:
                     See your data, like total resource consumption on any levels starting from country level and deep dive into concrete meter level.
                     Clear dataset in real-time by grouping and filtering on dimensions that you are interested in.
                 </p>
-                <a href="/pricing/?active=trendz" class="button cBlue try-button">Start Analysis</a>
+                <a href="/docs/trendz/data-grouping-aggregation/" class="button cBlue try-button">Start Analysis</a>
             </div>
             <div class="image-block">
                 <div class="image-wrapper">
@@ -105,14 +103,15 @@ description:
                 <p>
                     Share visualized insights with your users by:
                 </p>
-                <p>
-                    Adding them on ThingsBoard dashboards
-                    embedding on 3rd party web sites
-                    exporting data into spreadsheets and images
-                    <br>
-                    <b>All with respect to ThingsBoard user permissions</b>
-                </p>
-                <a href="/docs/trendz/" class="button cBlue try-button">Learn More</a>
+                <ul style="list-style-type: circle;">
+                    <li>Adding them on ThingsBoard dashboards</li>
+                    <li>Embedding on 3rd party web sites</li>
+                    <li>Exporting data into spreadsheets and images</li>
+                </ul>
+                <b>All with respect to ThingsBoard user permissions</b>
+                <br>                
+                <br>                
+                <a href="/docs/trendz/embed-visuals/" class="button cBlue try-button">Learn More</a>
             </div>
             <div class="image-block">
                 <div class="image-wrapper">
