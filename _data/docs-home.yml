@@ -199,6 +199,8 @@ toc:
     path: /docs/samples/analytics/kafka-streams/
 - title: Security
   section:
+  - title: OAuth 2 Support
+    path: /docs/user-guide/oauth-2-support/
   - title: MQTT over SSL
     path: /docs/user-guide/mqtt-over-ssl/
   - title: Device authentication options
