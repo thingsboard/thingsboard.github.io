@@ -25,6 +25,6 @@ services:
       TB_QUEUE_PUBSUB_SERVICE_ACCOUNT: YOUR_SERVICE_ACCOUNT
     volumes:
       - ~/.mytb-data:/data
-      - ~/.mytb-logs/var/log/thingsboard
+      - ~/.mytb-logs:/var/log/thingsboard
 ```
 {: .copy-code}

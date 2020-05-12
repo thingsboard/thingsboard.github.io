@@ -25,7 +25,7 @@ services:
       TB_QUEUE_SERVICE_BUS_SAS_KEY_NAME: YOUR_SAS_KEY_NAME
       TB_QUEUE_SERVICE_BUS_SAS_KEY: YOUR_SAS_KEY
     volumes:
-      - ~/.mytb-data:/data
-      - ~/.mytb-logs/var/log/thingsboard
+      - mytb-data:/data
+      - mytb-logs:/var/log/thingsboard
 ```
 {: .copy-code}

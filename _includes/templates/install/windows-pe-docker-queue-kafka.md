@@ -49,8 +49,9 @@ services:
       TB_QUEUE_TYPE: kafka
       TB_KAFKA_SERVERS: kafka:9092
       TB_LICENSE_SECRET: PUT_YOUR_LICENSE_SECRET_HERE
+      TB_LICENSE_INSTANCE_DATA_FILE: /data/license.data
     volumes:
-      - ~/.mytb-data:/data
-      - ~/.mytb-logs/var/log/thingsboard
+      - mytbpe-data:/data
+      - mytbpe-logs:/var/log/thingsboard
 ```
 {: .copy-code}

@@ -22,7 +22,7 @@ services:
     environment:
       TB_QUEUE_TYPE: in-memory
     volumes:
-      - ~/.mytb-data:/data
-      - ~/.mytb-logs/var/log/thingsboard
+      - mytb-data:/data
+      - mytb-logs:/var/log/thingsboard
 ```
 {: .copy-code}

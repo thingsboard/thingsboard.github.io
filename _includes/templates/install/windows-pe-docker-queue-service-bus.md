@@ -25,8 +25,9 @@ services:
       TB_QUEUE_SERVICE_BUS_SAS_KEY_NAME: YOUR_SAS_KEY_NAME
       TB_QUEUE_SERVICE_BUS_SAS_KEY: YOUR_SAS_KEY
       TB_LICENSE_SECRET: PUT_YOUR_LICENSE_SECRET_HERE
+      TB_LICENSE_INSTANCE_DATA_FILE: /data/license.data
     volumes:
-      - ~/.mytb-data:/data
-      - ~/.mytb-logs/var/log/thingsboard
+      - mytbpe-data:/data
+      - mytbpe-logs:/var/log/thingsboard
 ```
 {: .copy-code}

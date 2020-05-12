@@ -26,6 +26,6 @@ services:
       TB_QUEUE_AWS_SQS_REGION: YOUR_REGION
     volumes:
       - ~/.mytb-data:/data
-      - ~/.mytb-logs/var/log/thingsboard
+      - ~/.mytb-logs:/var/log/thingsboard
 ```
 {: .copy-code}

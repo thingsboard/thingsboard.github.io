@@ -25,8 +25,9 @@ services:
       TB_QUEUE_AWS_SQS_SECRET_ACCESS_KEY: YOUR_SECRET
       TB_QUEUE_AWS_SQS_REGION: YOUR_REGION
       TB_LICENSE_SECRET: PUT_YOUR_LICENSE_SECRET_HERE
+      TB_LICENSE_INSTANCE_DATA_FILE: /data/license.data
     volumes:
-      - ~/.mytb-data:/data
-      - ~/.mytb-logs/var/log/thingsboard
+      - ~/.mytbpe-data:/data
+      - ~/.mytbpe-logs:/var/log/thingsboard
 ```
 {: .copy-code}
