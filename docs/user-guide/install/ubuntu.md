@@ -26,14 +26,14 @@ To run ThingsBoard and Cassandra on a single machine you will need at least 8Gb 
 Download installation package.
 
 ```bash
-wget https://github.com/thingsboard/thingsboard/releases/download/v2.4.3/thingsboard-2.4.3.deb
+wget https://github.com/thingsboard/thingsboard/releases/download/v2.5/thingsboard-2.5.deb
 ```
 {: .copy-code}
 
 Install ThingsBoard as a service
 
 ```bash
-sudo dpkg -i thingsboard-2.4.3.deb
+sudo dpkg -i thingsboard-2.5.deb
 ```
 {: .copy-code}
 
@@ -43,19 +43,35 @@ sudo dpkg -i thingsboard-2.4.3.deb
 
 {% capture contenttogglespec %}
 PostgreSQL <small>(recommended for < 5K msg/sec)</small>%,%postgresql%,%templates/install/ubuntu-db-postgresql.md%br%
-Hybrid <br/>PostgreSQL+Cassandra<br/><small>(recommended for > 5K msg/sec)</small>%,%hybrid%,%templates/install/ubuntu-db-hybrid.md{% endcapture %}
+Hybrid <br/>PostgreSQL+Cassandra<br/><small>(recommended for > 5K msg/sec)</small>%,%hybrid%,%templates/install/ubuntu-db-hybrid.md%br%
+Hybrid <br/>PostgreSQL+TimescaleDB<br/><small>(for TimescaleDB professionals)</small>%,%timescale%,%templates/install/ubuntu-db-hybrid-timescale.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="ubuntuThingsboardDatabase" toggle-spec=contenttogglespec %} 
 
-### Step 4. [Optional] Memory update for slow machines (1GB of RAM) 
+### Step 4. Choose ThingsBoard queue service
+
+{% include templates/install/install-queue.md %}
+
+{% capture contenttogglespecqueue %}
+In Memory <small>(built-in and default)</small>%,%inmemory%,%templates/install/queue-in-memory.md%br%
+Kafka <small>(recommended for on-prem, production installations)</small> %,%kafka%,%templates/install/ubuntu-queue-kafka.md%br%
+Kafka in docker container <small>(recommended for on-prem, production installations)</small> %,%kafka-in-docker%,%templates/install/ubuntu-queue-kafka-in-docker.md%br%
+AWS SQS <small>(managed service from AWS)</small> %,%aws-sqs%,%templates/install/ubuntu-queue-aws-sqs.md%br%
+Google Pub/Sub <small>(managed service from Google)</small>%,%pubsub%,%templates/install/ubuntu-queue-pub-sub.md%br%
+Azure Service Bus <small>(managed service from Azure)</small>%,%service-bus%,%templates/install/ubuntu-queue-service-bus.md%br%
+RabbitMQ <small>(for small on-prem installations)</small>%,%rabbitmq%,%templates/install/ubuntu-queue-rabbitmq.md{% endcapture %}
+
+{% include content-toggle.html content-toggle-id="ubuntuThingsboardQueue" toggle-spec=contenttogglespecqueue %} 
+
+### Step 5. [Optional] Memory update for slow machines (1GB of RAM) 
 
 {% include templates/install/memory-on-slow-machines.md %} 
 
-### Step 5. Run installation script
+### Step 6. Run installation script
 {% include templates/run-install.md %} 
 
 
-### Step 6. Start ThingsBoard service
+### Step 7. Start ThingsBoard service
 
 {% include templates/start-service.md %}
 

@@ -49,13 +49,13 @@ Populate basic information about yourself and click "Get Content"
 Make sure your have [logged in](https://docs.docker.com/engine/reference/commandline/login/) to docker hub using command line.
 
 ```bash
-docker pull store/thingsboard/tb-pe-node:2.4.3PE
-docker pull store/thingsboard/tb-pe-web-ui:2.4.3PE
-docker pull store/thingsboard/tb-pe-web-report:2.4.3PE
-docker pull store/thingsboard/tb-pe-js-executor:2.4.3PE
-docker pull store/thingsboard/tb-pe-http-transport:2.4.3PE
-docker pull store/thingsboard/tb-pe-mqtt-transport:2.4.3PE
-docker pull store/thingsboard/tb-pe-coap-transport:2.4.3PE
+docker pull store/thingsboard/tb-pe-node:2.5.0PE
+docker pull store/thingsboard/tb-pe-web-ui:2.5.0PE
+docker pull store/thingsboard/tb-pe-web-report:2.5.0PE
+docker pull store/thingsboard/tb-pe-js-executor:2.5.0PE
+docker pull store/thingsboard/tb-pe-http-transport:2.5.0PE
+docker pull store/thingsboard/tb-pe-mqtt-transport:2.5.0PE
+docker pull store/thingsboard/tb-pe-coap-transport:2.5.0PE
 ```
 
 ## Step 3. Clone ThingsBoard PE Docker Compose scripts
@@ -99,8 +99,7 @@ TB_LICENSE_SECRET=PUT_YOUR_LICENSE_SECRET_HERE
 Starting ThingsBoard v2.2, it is possible to install ThingsBoard cluster using new microservices architecture and docker containers. 
 See [**microservices**](/docs/reference/msa/) architecture page for more details.
 
-
-## Step 7. Installation
+## Step 7. Configure ThingsBoard database
 
 Before performing initial installation you can configure the type of database to be used with ThingsBoard.
 In order to set database type change the value of `DATABASE` variable in `.env` file to one of the following:
@@ -112,6 +111,21 @@ In order to set database type change the value of `DATABASE` variable in `.env` 
 
 Execute the following command to create log folders for the services and chown of these folders to the docker container users. 
 To be able to change user, **chown** command is used, which requires sudo permissions (script will request password for a sudo access): 
+
+## Step 8. Choose ThingsBoard queue service 
+
+{% include templates/install/install-queue.md %}
+
+{% capture contenttogglespecqueue %}
+Kafka <small>(recommended for on-prem, production installations)</small>%,%kafka%,%templates/install/cluster-queue-kafka.md%br%
+AWS SQS <small>(managed service from AWS)</small>%,%aws-sqs%,%templates/install/cluster-queue-aws-sqs.md%br%
+Google Pub/Sub <small>(managed service from Google)</small>%,%pubsub%,%templates/install/cluster-queue-pub-sub.md%br%
+Azure Service Bus <small>(managed service from Azure)</small>%,%service-bus%,%templates/install/cluster-queue-service-bus.md%br%
+RabbitMQ <small>(for small on-prem installations)</small>%,%rabbitmq%,%templates/install/cluster-queue-rabbitmq.md{% endcapture %}
+
+{% include content-toggle.html content-toggle-id="ubuntuThingsboardQueue" toggle-spec=contenttogglespecqueue %} 
+
+## Step 9. Running
 
 `
 $ ./docker-create-log-folders.sh
@@ -126,8 +140,6 @@ $ ./docker-install-tb.sh --loadDemo
 Where:
 
 - `--loadDemo` - optional argument. Whether to load additional demo data.
-
-## Step 8. Running
 
 Execute the following command to start services:
 
@@ -151,7 +163,7 @@ In case of any issues you can examine service logs for errors.
 For example to see ThingsBoard node logs execute the following command:
 
 `
-$ docker-compose logs -f tb1
+$ docker-compose logs -f tb-core1 tb-rule-engine1
 `
 
 Or use `docker-compose ps` to see the state of all the containers.

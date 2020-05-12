@@ -14,7 +14,7 @@ http://localhost:8080/
 
 The following default credentials are available if you have specified *--loadDemo* during execution of the installation script:
 
-- **Systen Administrator**: sysadmin@thingsboard.org / sysadmin
+- **System Administrator**: sysadmin@thingsboard.org / sysadmin
 - **Tenant Administrator**: tenant@thingsboard.org / tenant
 - **Customer User**: customer@thingsboard.org / customer
 

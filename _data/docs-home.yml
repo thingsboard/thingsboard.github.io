@@ -28,6 +28,9 @@ toc:
     path: /docs/user-guide/rpc/
   - title: Data visualization
     path: /docs/user-guide/visualization/
+  - title: OAuth 2 Support
+    path: /docs/user-guide/oauth-2-support/
+    new: true
   - title: Advanced RBAC for IoT
     path: /docs/user-guide/rbac/
     pe: true
@@ -196,6 +199,8 @@ toc:
     path: /docs/samples/analytics/kafka-streams/
 - title: Security
   section:
+  - title: OAuth 2 Support
+    path: /docs/user-guide/oauth-2-support/
   - title: MQTT over SSL
     path: /docs/user-guide/mqtt-over-ssl/
   - title: Device authentication options

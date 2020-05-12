@@ -33,14 +33,14 @@ sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.
 Download installation package.
 
 ```bash
-wget https://dist.thingsboard.io/thingsboard-2.4.3pe.rpm
+wget https://dist.thingsboard.io/thingsboard-2.5pe.rpm
 ```
 {: .copy-code}
 
 Install ThingsBoard as a service
 
 ```bash
-sudo rpm -Uvh thingsboard-2.4.3pe.rpm
+sudo rpm -Uvh thingsboard-2.5pe.rpm
 ```
 {: .copy-code}
 
@@ -80,19 +80,35 @@ export TB_LICENSE_SECRET=YOUR_LICENSE_SECRET_HERE
 
 {% capture contenttogglespec %}
 PostgreSQL <small>(recommended for < 5K msg/sec)</small>%,%postgresql%,%templates/install/rhel-db-postgresql.md%br%
-Hybrid <br/>PostgreSQL+Cassandra<br/><small>(recommended for > 5K msg/sec)</small>%,%hybrid%,%templates/install/rhel-db-hybrid.md{% endcapture %}
+Hybrid <br/>PostgreSQL+Cassandra<br/><small>(recommended for > 5K msg/sec)</small>%,%hybrid%,%templates/install/rhel-db-hybrid.md%br%
+Hybrid <br/>PostgreSQL+TimescaleDB<br/><small>(for TimescaleDB professionals)</small>%,%timescale%,%templates/install/rhel-db-hybrid-timescale.md{% endcapture %}
+
 
 {% include content-toggle.html content-toggle-id="rhelThingsboardDatabase" toggle-spec=contenttogglespec %} 
 
-### Step 5. [Optional] Memory update for slow machines (1GB of RAM) 
+### Step 5. Choose ThingsBoard queue service
+
+{% include templates/install/install-queue.md %}
+
+{% capture contenttogglespecqueue %}
+In Memory %,%inmemory%,%templates/install/queue-in-memory.md%br%
+Kafka %,%kafka%,%templates/install/rhel-queue-kafka.md%br%
+AWS SQS %,%aws-sqs%,%templates/install/ubuntu-queue-aws-sqs.md%br%
+Google Pub/Sub %,%pubsub%,%templates/install/ubuntu-queue-pub-sub.md%br%
+Azure Service Bus %,%service-bus%,%templates/install/ubuntu-queue-service-bus.md%br%
+RabbitMQ %,%rabbitmq%,%templates/install/rhel-queue-rabbitmq.md{% endcapture %}
+
+{% include content-toggle.html content-toggle-id="ubuntuThingsboardQueue" toggle-spec=contenttogglespecqueue %} 
+
+### Step 6. [Optional] Memory update for slow machines (1GB of RAM) 
 
 {% include templates/install/memory-on-slow-machines.md %} 
 
-### Step 6. Run installation script
+### Step 7. Run installation script
 {% include templates/run-install.md %} 
 
 
-### Step 7. Start ThingsBoard service
+### Step 8. Start ThingsBoard service
 
 ThingsBoard UI is accessible on 8080 port by default. 
 Make sure that your 8080 port is accessible via firewall.
@@ -109,12 +125,12 @@ sudo firewall-cmd --reload
 Please allow up to 90 seconds for the Web UI to start. This is applicable only for slow machines with 1-2 CPUs or 1-2 GB RAM.{% endcapture %}
 {% include templates/info-banner.md content=90-sec-ui %}
 
-### Step 8. Install ThingsBoard WebReport component
+### Step 9. Install ThingsBoard WebReport component
 
 Download installation package for the [Reports Server](/docs/user-guide/reporting/#reports-server) component:
 
 ```bash
-wget https://dist.thingsboard.io/tb-web-report-2.4.3pe.rpm
+wget https://dist.thingsboard.io/tb-web-report-2.5pe.rpm
 ```
 {: .copy-code}
 
@@ -153,7 +169,7 @@ rm -rf ~/noto
 Install and start Web Report service:
 
 ```bash
-sudo rpm -Uvh tb-web-report-2.4.3pe.rpm
+sudo rpm -Uvh tb-web-report-2.5pe.rpm
 sudo service tb-web-report start
 ```
 
