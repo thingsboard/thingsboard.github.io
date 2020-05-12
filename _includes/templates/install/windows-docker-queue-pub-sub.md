@@ -24,7 +24,7 @@ services:
       TB_QUEUE_PUBSUB_PROJECT_ID: YOUR_PROJECT_ID
       TB_QUEUE_PUBSUB_SERVICE_ACCOUNT: YOUR_SERVICE_ACCOUNT
     volumes:
-      - ~/.mytb-data:/data
-      - ~/.mytb-logs/var/log/thingsboard
+      - mytb-data:/data
+      - mytb-logs:/var/log/thingsboard
 ```
 {: .copy-code}

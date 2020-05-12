@@ -23,6 +23,6 @@ services:
       TB_QUEUE_TYPE: in-memory
     volumes:
       - ~/.mytb-data:/data
-      - ~/.mytb-logs/var/log/thingsboard
+      - ~/.mytb-logs:/var/log/thingsboard
 ```
 {: .copy-code}

@@ -28,7 +28,7 @@ services:
       TB_QUEUE_RABBIT_MQ_HOST: localhost
       TB_QUEUE_RABBIT_MQ_PORT: 5672
     volumes:
-      - ~/.mytb-data:/data
-      - ~/.mytb-logs/var/log/thingsboard
+      - mytb-data:/data
+      - mytb-logs:/var/log/thingsboard
 ```
 {: .copy-code}
