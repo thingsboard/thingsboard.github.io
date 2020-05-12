@@ -23,7 +23,7 @@ sudo nano queue-service-bus.env
 
 Don't forget to replace “YOUR_NAMESPACE_NAME” with your **real Service Bus namespace name**, and "YOUR_SAS_KEY_NAME", "YOUR_SAS_KEY" with your **real Service Bus credentials. Note: "YOUR_SAS_KEY_NAME" it is "SAS Policy", "YOUR_SAS_KEY" it is "SAS Policy Primary Key":**
 
-**Note**: If your internet connection is slowly, you should increase "REMOTE_JS_MAX_REQUEST_TIMEOUT" value.
+**Note**: You should increase "REMOTE_JS_MAX_REQUEST_TIMEOUT" value due to network latency and delays for the creation of the queue instances.
 
 ```.env
 TB_QUEUE_TYPE=service-bus

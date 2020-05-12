@@ -23,7 +23,7 @@ sudo nano queue-aws-sqs.env
 
 Don’t forget to replace "YOUR_KEY", "YOUR_SECRET" with your **real AWS SQS IAM user credentials** and "YOUR_REGION" with your **real AWS SQS account region:**
 
-**Note**: If your internet connection is slowly, you should increase "REMOTE_JS_MAX_REQUEST_TIMEOUT" value.
+**Note**: You should increase "REMOTE_JS_MAX_REQUEST_TIMEOUT" value due to network latency and delays for the creation of the queue instances.
 
 ```.env
 TB_QUEUE_TYPE=aws-sqs
