@@ -74,16 +74,19 @@ Execute the following command to up this docker compose directly:
 **NOTE**: For running docker compose commands you have to be in a directory with docker-compose.yml file. 
 
 ```
-$ docker-compose up
+docker-compose pull
+docker-compose up
 ```
+{: .copy-code}
 
 In order to get access to necessary resources from external IP/Host on Windows machine, please execute the following commands:
 
 ``` 
-$ VBoxManage controlvm "default" natpf1 "tcp-port8080,tcp,,8080,,9090"  
-$ VBoxManage controlvm "default" natpf1 "tcp-port1883,tcp,,1883,,1883"
-$ VBoxManage controlvm "default" natpf1 "tcp-port5683,tcp,,5683,,5683"
+VBoxManage controlvm "default" natpf1 "tcp-port8080,tcp,,8080,,9090"  
+VBoxManage controlvm "default" natpf1 "tcp-port1883,tcp,,1883,,1883"
+VBoxManage controlvm "default" natpf1 "tcp-port5683,tcp,,5683,,5683"
 ```
+{: .copy-code}
     
 After executing this command you can open `http://{your-host-ip}:9090` in you browser (for ex. `http://localhost:8080`). You should see ThingsBoard login page.
 Use the following default credentials:
@@ -104,18 +107,21 @@ For example to see ThingsBoard node logs execute the following command:
 ```
 docker-compose logs -f mytbpe
 ```
+{: .copy-code}
 
 To stop the container:
 
 ```
-$ docker-compose stop
+docker-compose stop
 ```
+{: .copy-code}
 
 To start the container:
 
 ```
-$ docker-compose start
+docker-compose start
 ```
+{: .copy-code}
 
 ## Upgrading
 

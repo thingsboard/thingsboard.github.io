@@ -67,8 +67,11 @@ Execute the following command to up this docker compose directly:
 **NOTE**: For running docker compose commands you have to be in a directory with docker-compose.yml file. 
 
 ```
-$ docker-compose up
+docker-compose pull
+docker-compose up
 ```
+{: .copy-code}
+
     
 After executing this command you can open `http://{your-host-ip}:8080` in you browser (for ex. `http://localhost:8080`). You should see ThingsBoard login page.
 Use the following default credentials:
@@ -89,30 +92,34 @@ For example to see ThingsBoard node logs execute the following command:
 ```
 docker-compose logs -f mytbpe
 ```
+{: .copy-code}
 
 To stop the container:
 
 ```
-$ docker-compose stop
+docker-compose stop
 ```
+{: .copy-code}
 
 To start the container:
 
 ```
-$ docker-compose start
+docker-compose start
 ```
+{: .copy-code}
 
 ## Upgrading
 
 In order to update to the latest image, execute the following commands:
 
 ```
-$ docker pull thingsboard/tb-postgres
-$ docker-compose stop
-$ docker run -it -v ~/.mytb-data:/data --rm thingsboard/tb-postgres upgrade-tb.sh
-$ docker-compose rm mytb
-$ docker-compose up
+docker pull thingsboard/tb-postgres
+docker-compose stop
+docker run -it -v ~/.mytb-data:/data --rm thingsboard/tb-postgres upgrade-tb.sh
+docker-compose rm mytb
+docker-compose up
 ```
+{: .copy-code}
 
 **NOTE**: if you use different database change image name in all commands from `thingsboard/tb-postgres` to `thingsboard/tb-cassandra` or `thingsboard/tb` correspondingly.
  

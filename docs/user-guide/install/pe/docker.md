@@ -50,8 +50,10 @@ Execute the following command to up this docker compose directly:
 **NOTE**: For running docker compose commands you have to be in a directory with docker-compose.yml file. 
 
 ``` 
+docker-compose pull
 docker-compose up
 ```
+{: .copy-code}
 
 Where: 
     
@@ -84,18 +86,21 @@ For example to see ThingsBoard node logs execute the following command:
 ```
 docker-compose logs -f mytbpe
 ```
+{: .copy-code}
 
 To stop the container:
 
 ```
 docker-compose stop
 ```
+{: .copy-code}
 
 To start the container:
 
 ```
 docker-compose start
 ```
+{: .copy-code}
 
 ## Troubleshooting
 
