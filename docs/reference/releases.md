@@ -8,6 +8,98 @@ description: ThingsBoard architecture
 * TOC
 {:toc}
 
+## v2.5 (May 12, 2020)
+
+### ThingsBoard CE
+
+Major release with the following improvements.
+
+**Main features:**
+
+* Support of new Queue implementations: AWS SQS, Google Pub/Sub, Azure Service Bus and RabbitMQ;
+* Rule Engine:
+    * Implemented back pressure logic; 
+    * Implemented processing checkpoints;
+    * Configurable Submit and Ack strategies;
+    * Ability to launch Rule Engine as separate microservice;
+    * Ability to isolate tenant processing to separate rule engine instance(s);
+    * Improved statistics and error tracing;
+    * Automatic reset of blacklisted functions;
+    * Replaced gRPC with queues for communication between ThingsBoard components;
+* OAuth support;
+* JSON support for telemetry and attributes;
+* Improvements to timeseries DAO for SQL:
+    * Reduced size of telemetry tables on 40%;
+    * Updated minimum PostgreSQL version from 9.x to 11.x;
+    * Configurable TTL implementation for telemetry and events;
+     * Partitioning of time series data in PostgreSQL;
+* Non Root docker images support;
+* Refactored and improved Java REST client;
+* UI: Added Widgets and Dashboard for Managing Gateway;
+    
+
+**Additional features:**
+
+* Service Discovery improvements;
+* Introduced SMTP TLS version to default mail service and send email node;
+* Added settings for queue topic creation;
+* Added "check alarm status" rule node;
+* Added "sendActivationEmail" as request param for activateUser controller;
+* UI: Added new alias - "current tenant";
+* UI: Added ticks support to digital gauge;
+* UI: Added ability to configure thresholds to Flot charts;
+* UI: Added gauge color limits configuration; 
+* UI: Added Latvian locale;
+* UI: Added Romanian locale;
+* UI: Added fetchLastLevelOnly checkbox to alias query filter;
+* UI: Added option to set bar alignment in 'flot-bar-widget';
+* UI: Added new settings to web-camera input widget;
+* UI: Added ability to use apostrophe in custom translations in tables;
+* Demo Data: Added "Thermostats" Dashboard as an example of custom actions;
+
+**Bug fixes:**
+
+* Fixed MQTT inactivity disconnects;
+* Fixed concurrent processing of new device connections for gateway MQTT session;
+* Fixed device reconnect abnormal when certificate authentication is turned on;
+* Fixed Alarm Ack/Clear/Update when Relation Type Filter is used;
+* Fixed PostgreSQL Inserts logic;
+* Fixed logging statistics configuration;
+* Fixed dependency vulnerabilities;
+* Fixed PEM keys with password for MQTT server;
+* UI: Fixed error when updating websocket for “impersonated” user (#2743)
+* UI: Fixed SQL DAO shutdown sequence;
+* UI: Fixed Digital gauge values don't switch to 0 when telemetry is 0;
+* UI: Fixed Digital Gauge Widget sometimes does not update latest value;
+* UI: Fixed infinite loop caused by default md-dialog resize function in Safari
+* UI: Fixed manage dashboard states for Safari;
+* UI: Fixed entity label for header action in dashboard states;
+* UI: Fixed validation for geo-fencing nodes;
+* UI: Fixed dialogs in Safari;
+
+
+### ThingsBoard PE
+
+Everything from [TB CE v2.5](https://github.com/thingsboard/thingsboard/releases/tag/v2.5) with the following improvements.
+
+**Main features:**
+
+ * Rule Engine improvements similar to Community Edition;
+ * OAuth improvements similar to Community Edition;
+ * Improved performance;
+
+**Additional features:**
+
+ * Added Entity Name column for multiple entities to export functionality;
+ * Avoid entity count check for unlimited subscriptions;
+ * Persistent volumes for k8s deployments to store license data;
+ 
+**Bug fixes:**
+
+ * UI: Fix XLSX export to use local time;
+ * UI: Add CSV string-delimiter for export;
+ * RE: Fix for owner logic in TbAddToGroupNode node.
+
 ## v2.4.3 (January 8, 2020)
 
 ### ThingsBoard CE
@@ -190,7 +282,7 @@ Additional features:
 - Integration enable/disable feature;
 - AWS SQS Integration;
 
-## v2.4.0 (July 10, 2019)
+## v2.4 (July 10, 2019)
 
 ### ThingsBoard CE
 
