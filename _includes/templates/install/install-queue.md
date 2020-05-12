@@ -14,3 +14,5 @@ However, some providers also have managed services for Kafka. See AWS [MSK](http
  * **Google Pub/Sub** is a fully managed message queuing service from Google. Useful if you plan to deploy ThingsBoard on Google Cloud.  
 
  * **Azure Service Bus** is a fully managed message queuing service from Azure. Useful if you plan to deploy ThingsBoard on Azure.
+
+See corresponding architecture [page](/docs/reference/#message-queues-are-awesome) and rule engine [page](/docs/user-guide/rule-engine-2-0/overview/#rule-engine-queue) for more details.
