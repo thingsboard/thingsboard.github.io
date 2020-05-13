@@ -94,39 +94,25 @@ sudo chown thingsboard:thingsboard /etc/thingsboard/conf/mqttserver.jks
 ### Server configuration
 
 Locate your **thingsboard.conf** file and set the MQTT_ENABLED value equals true.
-It is also recommended set the MQTT transport port to 8883 on switching for the MQTT over SSL.  
 
-```bash
-#Local MQTT transport parameters
-  mqtt:
-    # Enable/disable mqtt transport protocol.
-    enabled: "${MQTT_ENABLED:true}"
-    bind_address: "${MQTT_BIND_ADDRESS:0.0.0.0}"
-    bind_port: "${MQTT_BIND_PORT:1883}"
-    timeout: "${MQTT_TIMEOUT:10000}"
-    netty:
-      leak_detector_level: "${NETTY_LEAK_DETECTOR_LVL:DISABLED}"
-      boss_group_thread_count: "${NETTY_BOSS_GROUP_THREADS:1}"
-      worker_group_thread_count: "${NETTY_WORKER_GROUP_THREADS:12}"
-      max_payload_size: "${NETTY_MAX_PAYLOAD_SIZE:65536}"
-      so_keep_alive: "${NETTY_SO_KEEPALIVE:false}"
-    # MQTT SSL configuration
-    ssl:
-      # Enable/disable SSL support
-      enabled: "${MQTT_SSL_ENABLED:true}"
-      # SSL protocol: See http://docs.oracle.com/javase/8/docs/technotes/guides/security$
-      protocol: "${MQTT_SSL_PROTOCOL:TLSv1.2}"
-      # Path to the key store that holds the SSL certificate
-      key_store: "${MQTT_SSL_KEY_STORE:mqttserver.jks}"
-      # Password used to access the key store
-      key_store_password: "${MQTT_SSL_KEY_STORE_PASSWORD:server_ks_password}"
-      # Password used to access the key
-      key_password: "${MQTT_SSL_KEY_PASSWORD:server_key_password}"
-      # Type of the key store
-      key_store_type: "${MQTT_SSL_KEY_STORE_TYPE:JKS}"
+The MQTT over SSL can be enabled in the **thingsboard.conf**.  
+
+So that you can add the next row for to the **thingsboard.conf**, so that the MQTT over SSL will be enabled.  
+```bash 
+...
+export MQTT_SSL_ENABLED=true
+
 ```
 
 You may also want to change **mqtt.bind_port** to 8883 which is recommended for MQTT over SSL servers.
+
+The MQTT bind port can be changed with the next row within the **thingsboard.conf** being added:
+
+```bash
+...
+export MQTT_BIND_PORT=8883
+
+```
 
 The **key_store** Property must point to the **.jks** file location. **key_store_password** and **key_password** must be the same as were used in keystore generation.
 
@@ -135,7 +121,7 @@ The **key_store** Property must point to the **.jks** file location. **key_store
 After these values are set, launch or restart your ThingsBoard server.
 
 ### Example of configuration 
-The next combination of the keygen.properties example was used to generate a proper .jks and .pem in a case of the ThingsBoard uses  [**thingsboard.conf**](/docs/user-guide/resources/mqtt-over-ssl/thingsboard.conf)  and the has the domain "localhost".
+The next combination of the keygen.properties example was used to generate a proper .jks and .pem in a case of the ThingsBoard uses the next [**thingsboard.conf**](/docs/user-guide/resources/mqtt-over-ssl/thingsboard.conf)  and the has the domain is "localhost".
 Was set for the default ThingsBoard installation of the **2.5 version**. 
 
 **keygen.properties:** 
@@ -157,7 +143,7 @@ SERVER_KEYSTORE_DIR="/etc/thingsboard/conf"
 CLIENT_KEYSTORE_PASSWORD=password
 CLIENT_KEY_PASSWORD=password
 
-CLIENT_KEY_ALIAS="tomcat"
+CLIENT_KEY_ALIAS="clientalias"
 CLIENT_FILE_PREFIX="mqttclient"
 ```
 
