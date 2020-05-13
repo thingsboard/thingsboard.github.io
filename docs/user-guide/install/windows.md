@@ -29,7 +29,7 @@ To run ThingsBoard and Cassandra on a single machine you will need at least 8Gb 
 Download and extract the package.
 
 ```bash
-https://github.com/thingsboard/thingsboard/releases/download/v2.4.3/thingsboard-windows-2.4.3.zip
+https://github.com/thingsboard/thingsboard/releases/download/v2.5/thingsboard-windows-2.5.zip
 ```
 {: .copy-code}
 
@@ -41,15 +41,30 @@ https://github.com/thingsboard/thingsboard/releases/download/v2.4.3/thingsboard-
 
 {% capture contenttogglespec %}
 PostgreSQL <small>(recommended for < 5K msg/sec)</small>%,%postgresql%,%templates/install/windows-db-postgresql.md%br%
-Hybrid <br/>PostgreSQL+Cassandra<br/><small>(recommended for > 5K msg/sec)</small>%,%hybrid%,%templates/install/windows-db-hybrid.md{% endcapture %}
+Hybrid <br/>PostgreSQL+Cassandra<br/><small>(recommended for > 5K msg/sec)</small>%,%hybrid%,%templates/install/windows-db-hybrid.md%br%
+Hybrid <br/>PostgreSQL+TimescaleDB<br/><small>(for TimescaleDB professionals)</small>%,%timescale%,%templates/install/windows-db-hybrid-timescale.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="ubuntuThingsboardDatabase" toggle-spec=contenttogglespec %} 
 
-### Step 4. [Optional] Memory update for slow machines (1GB of RAM) 
+### Step 4. Choose ThingsBoard queue service
+
+{% include templates/install/install-queue.md %}
+
+{% capture contenttogglespecqueue %}
+In Memory <small>(built-in and default)</small> %,%inmemory%,%templates/install/queue-in-memory.md%br%
+Kafka <small>(recommended for on-prem, production installations)</small> %,%kafka%,%templates/install/windows-queue-kafka.md%br%
+AWS SQS <small>(managed service from AWS)</small> %,%aws-sqs%,%templates/install/windows-queue-aws-sqs.md%br%
+Google Pub/Sub <small>(managed service from Google)</small>%,%pubsub%,%templates/install/windows-queue-pub-sub.md%br%
+Azure Service Bus <small>(managed service from Azure)</small>%,%service-bus%,%templates/install/windows-queue-service-bus.md%br%
+RabbitMQ <small>(for small on-prem installations)</small>%,%rabbitmq%,%templates/install/windows-queue-rabbitmq.md{% endcapture %}
+
+{% include content-toggle.html content-toggle-id="windowsThingsboardQueue" toggle-spec=contenttogglespecqueue %} 
+
+### Step 5. [Optional] Memory update for slow machines (1GB of RAM) 
 
 {% include templates/install/windows-memory-on-slow-machines.md %} 
 
-### Step 5. Run installation script
+### Step 6. Run installation script
 
 Launch windows shell (Command Prompt) as Administrator. Change directory to your ThingsBoard installation directory.
 
@@ -68,7 +83,7 @@ Installing thingsboard ...
 ThingsBoard installed successfully!
 ```
 
-### Step 6. Start ThingsBoard service
+### Step 7. Start ThingsBoard service
 
 {% include templates/windows-start-service.md %}
 

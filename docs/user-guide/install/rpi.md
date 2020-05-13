@@ -25,14 +25,14 @@ This guide describes how to install ThingsBoard on a Raspberry Pi 3 running Rasp
 Download installation package.
 
 ```bash
-wget https://github.com/thingsboard/thingsboard/releases/download/v2.4.3/thingsboard-2.4.3.deb
+wget https://github.com/thingsboard/thingsboard/releases/download/v2.5/thingsboard-2.5.deb
 ```
 {: .copy-code}
 
 Install ThingsBoard as a service
 
 ```bash
-sudo dpkg -i thingsboard-2.4.3.deb
+sudo dpkg -i thingsboard-2.5.deb
 ```
 {: .copy-code}
 
@@ -40,15 +40,27 @@ sudo dpkg -i thingsboard-2.4.3.deb
 
 {% include templates/install/ubuntu-db-postgresql.md %}
 
-### Step 4. Memory update for slow machines (1GB of RAM) 
+### Step 4. Choose ThingsBoard queue service
+
+{% include templates/install/rpi-install-queue.md %}
+
+{% capture contenttogglespecqueue %}
+In Memory <small>(built-in and default)</small>%,%inmemory%,%templates/install/queue-in-memory.md%br%
+AWS SQS <small>(managed service from AWS)</small>%,%aws-sqs%,%templates/install/ubuntu-queue-aws-sqs.md%br%
+Google Pub/Sub <small>(managed service from Google)</small>%,%pubsub%,%templates/install/ubuntu-queue-pub-sub.md%br%
+Azure Service Bus <small>(managed service from Azure)</small>%,%service-bus%,%templates/install/ubuntu-queue-service-bus.md{% endcapture %}
+
+{% include content-toggle.html content-toggle-id="ubuntuThingsboardQueue" toggle-spec=contenttogglespecqueue %} 
+
+### Step 5. Memory update for slow machines (1GB of RAM) 
 
 {% include templates/install/memory-on-slow-machines.md %} 
 
-### Step 5. Run installation script
+### Step 6. Run installation script
 {% include templates/run-install.md %} 
 
 
-### Step 6. Start ThingsBoard service
+### Step 7. Start ThingsBoard service
 
 {% include templates/start-service.md %}
 

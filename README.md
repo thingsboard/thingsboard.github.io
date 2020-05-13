@@ -35,7 +35,11 @@ Make any changes you want. Then, to see your changes locally:
 	
 In case you change the layout or website structure you might need to execute following command:
 
-        rm -rf _site .jekyll-metadata && bundle exec jekyll serve --host 0.0.0.0
+    rm -rf _site .jekyll-metadata && bundle exec jekyll serve --host 0.0.0.0
+        
+or execute the below script from the project root directory:
+        
+    ./restart.sh
 
 
 Your copy of the site will then be viewable at: [http://localhost:4000](http://localhost:4000)

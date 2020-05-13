@@ -40,7 +40,7 @@ Populate basic information about yourself and click "Get Content"
 Make sure your have [logged in](https://docs.docker.com/engine/reference/commandline/login/) to docker hub using command line.
 
 ```bash
-docker pull store/thingsboard/tb-pe-node:2.4.3PE
+docker pull store/thingsboard/tb-pe-node:2.5PE
 ```
 
 ## Step 3. Clone ThingsBoard PE Docker Compose scripts
@@ -58,7 +58,6 @@ If not, please navigate to [pricing](/pricing/) page to select the best license 
 See [How-to get pay-as-you-go subscription](https://www.youtube.com/watch?v=dK-QDFGxWek){:target="_blank"} or [How-to get perpetual license](https://www.youtube.com/watch?v=GPe0lHolWek){:target="_blank"} for more details.
 We will reference the license key you have obtained during this step as PUT_YOUR_LICENSE_SECRET_HERE later in this guide.
 
-
 ## Step 5. Configure your license key
 
 ```bash
@@ -70,30 +69,26 @@ and put the license secret parameter
 ```bash
 # ThingsBoard server configuration
 
-RPC_HOST=${TB_HOST}
 HTTP_LOG_CONTROLLER_ERROR_STACK_TRACE=false
 
 TB_LICENSE_SECRET=PUT_YOUR_LICENSE_SECRET_HERE
 ```
 
-## Step 6. Installation
+## Step 6. Choose ThingsBoard queue service 
 
-Check docker-compose.yml and configure ports if you need
+{% include templates/install/install-queue.md %}
 
-```bash
-nano docker-compose.yml
-```
+{% capture contenttogglespecqueue %}
+In Memory <small>(built-in and default)</small>%,%inmemory%,%templates/install/pe-cassandra-docker-queue-in-memory.md%br%
+Kafka <small>(recommended for on-prem, production installations)</small>%,%kafka%,%templates/install/pe-cassandra-docker-queue-kafka.md%br%
+AWS SQS <small>(managed service from AWS)</small>%,%aws-sqs%,%templates/install/pe-docker-queue-aws-sqs.md%br%
+Google Pub/Sub <small>(managed service from Google)</small>%,%pubsub%,%templates/install/pe-cassandra-docker-queue-pub-sub.md%br%
+Azure Service Bus <small>(managed service from Azure)</small>%,%service-bus%,%templates/install/pe-cassandra-docker-queue-service-bus.md%br%
+RabbitMQ <small>(for small on-prem installations)</small>%,%rabbitmq%,%templates/install/pe-cassandra-docker-queue-rabbitmq.md{% endcapture %}
 
-```bash
-services:
-  tbpe:
-    restart: always
-    image: "${DOCKER_REPO}/${TB_NODE_DOCKER_NAME}:${TB_VERSION}"
-    ports:
-      - "9090:8080"
-      - "1883:1883"
-      - "5683:5683"
-```
+{% include content-toggle.html content-toggle-id="ubuntuThingsboardQueue" toggle-spec=contenttogglespecqueue %} 
+
+## Step 7. Installation
 
 Execute installation script
 
@@ -103,7 +98,7 @@ Where:
 
 - `--loadDemo` - optional argument. Whether to load additional demo data.
 
-## Step 7. Running
+## Step 8. Running
 
 Execute the following command to start services:
 

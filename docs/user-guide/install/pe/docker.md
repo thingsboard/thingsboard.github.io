@@ -12,7 +12,7 @@ description: Installing ThingsBoard PE IoT Platform using Docker (Linux or Mac O
 
 
 This guide will help you to install and start ThingsBoard Professional Edition (PE) using Docker on Linux or Mac OS. 
-This guide covers standalone ThingsBoard PE installation. The container image used in this guide has embedded PostgreSQL 9.6 to simplify setup. 
+This guide covers standalone ThingsBoard PE installation. The container image used in this guide has embedded PostgreSQL 11 to simplify setup. 
 If you are looking for a cluster installation instruction, please visit [cluster setup page](/docs/user-guide/install/pe/cluster-setup/).  
 
 ## Prerequisites
@@ -27,44 +27,47 @@ See [How-to get pay-as-you-go subscription](https://www.youtube.com/watch?v=dK-Q
 
 Note: We will reference the license key you have obtained during this step as PUT_YOUR_LICENSE_SECRET_HERE later in this guide.
 
-## Step 2. Checkout ThingsBoard PE image on Docker Hub
+## Step 2. Choose ThingsBoard queue service
 
-Open official [ThingsBoard PE Standalone](https://hub.docker.com/_/thingsboard-pe) Docker Hub page and proceed to checkout.
+{% include templates/install/install-queue.md %}
 
-![image](/images/user-guide/install/docker-pe/checkout.png)
+{% capture contenttogglespecqueue %}
+In Memory <small>(built-in and default)</small>%,%inmemory%,%templates/install/pe-docker-queue-in-memory.md%br%
+Kafka <small>(recommended for on-prem, production installations)</small>%,%kafka%,%templates/install/pe-docker-queue-kafka.md%br%
+AWS SQS <small>(managed service from AWS)</small>%,%aws-sqs%,%templates/install/pe-docker-queue-aws-sqs.md%br%
+Google Pub/Sub <small>(managed service from Google)</small>%,%pubsub%,%templates/install/pe-docker-queue-pub-sub.md%br%
+Azure Service Bus <small>(managed service from Azure)</small>%,%service-bus%,%templates/install/pe-docker-queue-service-bus.md%br%
+RabbitMQ <small>(for small on-prem installations)</small>%,%rabbitmq%,%templates/install/pe-docker-queue-rabbitmq.md{% endcapture %}
 
-
-Populate basic information about yourself and click "Get Content"
-
-
-![image](/images/user-guide/install/docker-pe/details.png)
- 
+{% include content-toggle.html content-toggle-id="ubuntuThingsboardQueue" toggle-spec=contenttogglespecqueue %}  
 
 ## Step 3. Running
 
 Make sure your have [logged in](https://docs.docker.com/engine/reference/commandline/login/) to docker hub using command line.
 
-Execute the following command to run this docker directly:
+Execute the following command to up this docker compose directly:
+
+**NOTE**: For running docker compose commands you have to be in a directory with docker-compose.yml file. 
 
 ``` 
-docker run -it -p 9090:9090 -p 1883:1883 -p 5683:5683/udp -v ~/.mytbpe-data:/data -v ~/.mytbpe-logs:/var/log/thingsboard -e "TB_LICENSE_SECRET=PUT_YOUR_LICENSE_SECRET_HERE" --name mytbpe --restart always store/thingsboard/tb-pe:2.4.3PE
+docker-compose pull
+docker-compose up
 ```
+{: .copy-code}
 
 Where: 
     
 - `PUT_YOUR_LICENSE_SECRET_HERE` - placeholder for your license secret obtained on the first step;    
-- `docker run`              - run this container;
-- `-it`                     - attach a terminal session with current ThingsBoard process output;
-- `-p 9090:9090`            - connect local port 9090 to exposed internal HTTP port 9090;
-- `-p 1883:1883`            - connect local port 1883 to exposed internal MQTT port 1883;   
-- `-p 5683:5683`            - connect local port 5683 to exposed internal COAP port 5683; 
-- `-v ~/.mytbpe-data:/data`   - mounts the host's dir `~/.mytbpe-data` to ThingsBoard DataBase data directory;
-- `-v ~/.mytbpe-logs:/var/log/thingsboard`   - mounts the host's dir `~/.mytbpe-logs` to ThingsBoard logs directory;
-- `--name mytbpe`             - friendly local name of this machine;
-- `--restart always`        - automatically start ThingsBoard in case of system reboot and restart in case of failure.;
-- `store/thingsboard/tb-pe:2.4.3PE`          - docker image.
+- `8080:9090`            - connect local port 8080 to exposed internal HTTP port 9090;
+- `1883:1883`            - connect local port 1883 to exposed internal MQTT port 1883;   
+- `5683:5683`            - connect local port 5683 to exposed internal COAP port 5683; 
+- `~/.mytbpe-data:/data`   - mounts the host's dir `~/.mytbpe-data` to ThingsBoard DataBase data directory;
+- `~/.mytbpe-logs:/var/log/thingsboard`   - mounts the host's dir `~/.mytbpe-logs` to ThingsBoard logs directory;
+- `mytbpe`             - friendly local name of this machine;
+- `restart: always`        - automatically start ThingsBoard in case of system reboot and restart in case of failure.;
+- `store/thingsboard/tb-pe:2.5PE`          - docker image.
     
-After executing this command you can open `http://{your-host-ip}:9090` in you browser (for ex. `http://localhost:9090`). You should see ThingsBoard login page.
+After executing this command you can open `http://{your-host-ip}:8080` in you browser (for ex. `http://localhost:8080`). You should see ThingsBoard login page.
 Use the following default credentials:
 
 - **Systen Administrator**: sysadmin@thingsboard.org / sysadmin
@@ -77,23 +80,27 @@ You can always change passwords for each account in account profile page.
 
 You can detach from session terminal with `Ctrl-p` `Ctrl-q` - the container will keep running in the background.
 
-To reattach to the terminal (to see ThingsBoard logs) run:
+In case of any issues you can examine service logs for errors.
+For example to see ThingsBoard node logs execute the following command:
 
 ```
-docker attach mytbpe
+docker-compose logs -f mytbpe
 ```
+{: .copy-code}
 
 To stop the container:
 
 ```
-docker stop mytbpe
+docker-compose stop
 ```
+{: .copy-code}
 
 To start the container:
 
 ```
-docker start mytbpe
+docker-compose start
 ```
+{: .copy-code}
 
 ## Troubleshooting
 
