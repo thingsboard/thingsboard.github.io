@@ -468,8 +468,33 @@ database:
 # note: timescale works only with postgreSQL database for DATABASE_ENTITIES_TYPE.
 ```
 
+**NOTE:** before executing the upgrade script, go to the PostgreSQL terminal: 
+
 ```bash
-# Execute upgrade script
+# login to psql terminal:
+$ psql -U postgres -d postgres -h 127.0.0.1 -W
+
+# Connect to thingsboard database:
+\c thingsboard
+
+# Execute the next commands:
+
+# Update ts_kv table constraints:
+ALTER TABLE ts_kv DROP CONSTRAINT IF EXISTS ts_kv_unq_key;
+ALTER TABLE ts_kv DROP CONSTRAINT IF EXISTS ts_kv_pkey;
+ALTER TABLE ts_kv ADD CONSTRAINT ts_kv_pkey PRIMARY KEY (entity_type, entity_id, key, ts);
+
+# Update ts_kv_latest table constraints:
+ALTER TABLE ts_kv_latest DROP CONSTRAINT IF EXISTS ts_kv_latest_unq_key;
+ALTER TABLE ts_kv_latest DROP CONSTRAINT IF EXISTS ts_kv_latest_pkey;
+ALTER TABLE ts_kv_latest ADD CONSTRAINT ts_kv_latest_pkey PRIMARY KEY (entity_type, entity_id, key);
+
+# exit psql terminal 
+\q
+```
+
+```bash
+# Finally, execute upgrade script
 $ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=2.4.3
 ```
 
@@ -510,7 +535,29 @@ database:
 # note: timescale works only with postgreSQL database for DATABASE_ENTITIES_TYPE.
 ```       
 
-* Run **upgrade.bat** script to upgrade ThingsBoard to the new version.
+**NOTE:** Before executing the upgrade script, you need to access the psql terminal. Once you will be logged to the psql terminal, please follow the instructions below:
+
+```bash
+# Connect to thingsboard database:
+\c thingsboard
+
+# Execute the next commands:
+
+# Update ts_kv table constraints:
+ALTER TABLE ts_kv DROP CONSTRAINT IF EXISTS ts_kv_unq_key;
+ALTER TABLE ts_kv DROP CONSTRAINT IF EXISTS ts_kv_pkey;
+ALTER TABLE ts_kv ADD CONSTRAINT ts_kv_pkey PRIMARY KEY (entity_type, entity_id, key, ts);
+
+# Update ts_kv_latest table constraints:
+ALTER TABLE ts_kv_latest DROP CONSTRAINT IF EXISTS ts_kv_latest_unq_key;
+ALTER TABLE ts_kv_latest DROP CONSTRAINT IF EXISTS ts_kv_latest_pkey;
+ALTER TABLE ts_kv_latest ADD CONSTRAINT ts_kv_latest_pkey PRIMARY KEY (entity_type, entity_id, key);
+
+# exit psql terminal 
+\q
+```
+
+* Finally, run **upgrade.bat** script to upgrade ThingsBoard to the new version.
 
 **NOTE** Scripts listed above should be executed using Administrator Role.
 
