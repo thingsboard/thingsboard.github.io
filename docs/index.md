@@ -38,6 +38,7 @@ description: ThingsBoard documentation - learn about the platform and get your I
         <li><b><a href="/docs/user-guide/integrations/azure-event-hub/">Azure Event Hub</a></b></li>
         <li><b><a href="/docs/user-guide/integrations/ibm-watson-iot/">IBM Watson IoT</a></b></li>
         <li><b><a href="/docs/user-guide/integrations/aws-iot/">AWS IoT</a></b></li>
+        <li><b><a href="/docs/user-guide/integrations/aws-kinesis/">AWS Kinesis</a></b></li>
     </ul>
 <li><b><a href="/docs/user-guide/groups/">Device & asset groups</a></b> - configure multiple custom device & asset groups.</li>
 <li><b><a href="/docs/user-guide/scheduler/">Scheduler</a></b> - schedule various types of events (i.e. configuration updates, report generation, rpc commands) with flexible configuration options.</li>
@@ -66,6 +67,15 @@ description: ThingsBoard documentation - learn about the platform and get your I
 
 <p>The ThingsBoard Youtube <b><a href="https://www.youtube.com/channel/UCDb9fsV-YR4JmnipAMGsVAQ/videos">channel</a></b> contains useful video tutorials that cover various platform features.</p>
 
-<h2>Trendz Analytics</h2>
+<h2>Trendz Analytics Features</h2>
 
-<p>Contains comprehensive documentation about ThingsBoard <b><a href="/docs/trendz/">Trendz Analytics</a></b>.</p>
+<ul>    
+    <li><b><a href="/docs/trendz/prediction">Forecast timeseries</a></b> - predict system behaviour and forecast utilisation</li>
+    <li><b><a href="/docs/trendz/calculated-fields">Calculated fields</a></b> - define, monitor and compare custom KPIs</li>
+    <li><b><a href="/docs/trendz/states">States</a></b> - track how much time equipment spent in different states</li>
+    <li><b><a href="/docs/trendz/data-filtering">Filtering</a></b> - clear and filter data by any field</li>
+    <li><b><a href="/docs/trendz/visualizations-overview">Advanced visualisations</a></b> - create heatmaps, scatter plots and compare utilities</li>
+    <li><b><a href="/docs/trendz/data-grouping-aggregation">Grouping and aggregation</a></b> - aggregate data on different levels in few minutes</li>
+</ul>
+
+<p>Comprehensive documentation about ThingsBoard <b><a href="/docs/trendz/">Trendz Analytics</a></b>.</p>

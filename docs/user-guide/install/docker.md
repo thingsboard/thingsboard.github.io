@@ -19,6 +19,8 @@ This guide will help you to install and start ThingsBoard using Docker on Linux 
 
 - [Install Docker CE](https://docs.docker.com/engine/installation/)
 
+- [Install Docker Compose](https://docs.docker.com/compose/install/)
+
 ## Running
 
 Depending on the database used there are three type of ThingsBoard single instance docker images:
@@ -32,28 +34,46 @@ Depending on the database used there are three type of ThingsBoard single instan
 * [thingsboard/tb](https://hub.docker.com/r/thingsboard/tb/) - single instance of ThingsBoard with embedded HSQLDB database. 
     
     **Note:** Not recommended for any evaluation or production usage and is used only for development purposes and automatic tests. 
-
+    
 In this instruction `thingsboard/tb-postgres` image will be used. You can choose any other images with different databases (see above).
-Execute the following command to run this docker directly:
 
-``` 
-$ docker run -it -p 9090:9090 -p 1883:1883 -p 5683:5683/udp -v ~/.mytb-data:/data -v ~/.mytb-logs:/var/log/thingsboard --name mytb --restart always thingsboard/tb-postgres
-```
+## Choose ThingsBoard queue service
+
+{% include templates/install/install-queue.md %}
+
+{% capture contenttogglespecqueue %}
+In Memory <small>(built-in and default)</small>%,%inmemory%,%templates/install/docker-queue-in-memory.md%br%
+Kafka <small>(recommended for on-prem, production installations)</small>%,%kafka%,%templates/install/docker-queue-kafka.md%br%
+AWS SQS <small>(managed service from AWS)</small>%,%aws-sqs%,%templates/install/docker-queue-aws-sqs.md%br%
+Google Pub/Sub <small>(managed service from Google)</small>%,%pubsub%,%templates/install/docker-queue-pub-sub.md%br%
+Azure Service Bus <small>(managed service from Azure)</small>%,%service-bus%,%templates/install/docker-queue-service-bus.md%br%
+RabbitMQ <small>(for small on-prem installations)</small>%,%rabbitmq%,%templates/install/docker-queue-rabbitmq.md{% endcapture %}
+
+{% include content-toggle.html content-toggle-id="ubuntuThingsboardQueue" toggle-spec=contenttogglespecqueue %} 
 
 Where: 
     
-- `docker run`              - run this container
-- `-it`                     - attach a terminal session with current ThingsBoard process output
-- `-p 9090:9090`            - connect local port 9090 to exposed internal HTTP port 9090
-- `-p 1883:1883`            - connect local port 1883 to exposed internal MQTT port 1883    
-- `-p 5683:5683`            - connect local port 5683 to exposed internal COAP port 5683 
-- `-v ~/.mytb-data:/data`   - mounts the host's dir `~/.mytb-data` to ThingsBoard DataBase data directory
-- `-v ~/.mytb-logs:/var/log/thingsboard`   - mounts the host's dir `~/.mytb-logs` to ThingsBoard logs directory
-- `--name mytb`             - friendly local name of this machine
-- `--restart always`        - automatically start ThingsBoard in case of system reboot and restart in case of failure.
-- `thingsboard/tb-postgres`          - docker image, can be also `thingsboard/tb-cassandra` or `thingsboard/tb`
+- `8080:9090`            - connect local port 8080 to exposed internal HTTP port 9090
+- `1883:1883`            - connect local port 1883 to exposed internal MQTT port 1883    
+- `5683:5683`            - connect local port 5683 to exposed internal COAP port 5683 
+- `~/.mytb-data:/data`   - mounts the host's dir `~/.mytb-data` to ThingsBoard DataBase data directory
+- `~/.mytb-logs:/var/log/thingsboard`   - mounts the host's dir `~/.mytb-logs` to ThingsBoard logs directory
+- `mytb`             - friendly local name of this machine
+- `restart: always`        - automatically start ThingsBoard in case of system reboot and restart in case of failure.
+- `image: thingsboard/tb-postgres`          - docker image, can be also `thingsboard/tb-cassandra` or `thingsboard/tb`
+
+Execute the following command to up this docker compose directly:
+
+**NOTE**: For running docker compose commands you have to be in a directory with docker-compose.yml file. 
+
+```
+docker-compose pull
+docker-compose up
+```
+{: .copy-code}
+
     
-After executing this command you can open `http://{your-host-ip}:9090` in you browser (for ex. `http://localhost:9090`). You should see ThingsBoard login page.
+After executing this command you can open `http://{your-host-ip}:8080` in you browser (for ex. `http://localhost:8080`). You should see ThingsBoard login page.
 Use the following default credentials:
 
 - **Systen Administrator**: sysadmin@thingsboard.org / sysadmin
@@ -66,35 +86,40 @@ You can always change passwords for each account in account profile page.
 
 You can detach from session terminal with `Ctrl-p` `Ctrl-q` - the container will keep running in the background.
 
-To reattach to the terminal (to see ThingsBoard logs) run:
+In case of any issues you can examine service logs for errors.
+For example to see ThingsBoard node logs execute the following command:
 
 ```
-$ docker attach mytb
+docker-compose logs -f mytbpe
 ```
+{: .copy-code}
 
 To stop the container:
 
 ```
-$ docker stop mytb
+docker-compose stop
 ```
+{: .copy-code}
 
 To start the container:
 
 ```
-$ docker start mytb
+docker-compose start
 ```
+{: .copy-code}
 
 ## Upgrading
 
 In order to update to the latest image, execute the following commands:
 
 ```
-$ docker pull thingsboard/tb-postgres
-$ docker stop mytb
-$ docker run -it -v ~/.mytb-data:/data --rm thingsboard/tb-postgres upgrade-tb.sh
-$ docker rm mytb
-$ docker run -it -p 9090:9090 -p 1883:1883 -p 5683:5683/udp -v ~/.mytb-data:/data -v ~/.mytb-logs:/var/log/thingsboard --name mytb --restart always thingsboard/tb-postgres
+docker pull thingsboard/tb-postgres
+docker-compose stop
+docker run -it -v ~/.mytb-data:/data --rm thingsboard/tb-postgres upgrade-tb.sh
+docker-compose rm mytb
+docker-compose up
 ```
+{: .copy-code}
 
 **NOTE**: if you use different database change image name in all commands from `thingsboard/tb-postgres` to `thingsboard/tb-cassandra` or `thingsboard/tb` correspondingly.
  

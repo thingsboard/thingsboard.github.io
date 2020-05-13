@@ -52,6 +52,8 @@
         var activeTab = $.urlParam('active');
         if (activeTab && activeTab === 'trendz') {
             activatePricingSection('trendz');
+        } else {
+            activatePricingSection('thingsboard-pe');
         }
     });
 
@@ -60,6 +62,11 @@
         $("li.menu-item#menu-item-"+sectionId).addClass("active");
         $("section.pricing-content").css("display", "none");
         $("section.pricing-content#"+sectionId).css("display", "block");
+
+        $('#' + sectionId + ' .solution-selector .solution.defaultselection').click();
+        if(sectionId) {
+            reportPriceOpen(sectionId);
+        }
     }
 
     function getLicense(event, isPerpetual, productId, planId, productName, coupon) {
@@ -86,6 +93,13 @@
             return;
         }
         ga("send", "event", "PriceLink", product, link);
+    }
+
+    function reportPriceOpen(solutionId) {
+        if (!ga.hasOwnProperty("loaded") || ga.loaded !== true || !solutionId) {
+            return;
+        }
+        ga("send", "event", "PriceOpen", solutionId);
     }
 
 </script>

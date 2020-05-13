@@ -49,6 +49,8 @@ toc:
     path: /docs/user-guide/install/pe/windows/
   - title: Installing ThingsBoard PE using Docker (Linux or Mac OS)
     path: /docs/user-guide/install/pe/docker/
+  - title: Installing ThingsBoard PE using Docker with Cassandra
+    path: /docs/user-guide/install/pe/docker-cassandra/
   - title: Installing ThingsBoard PE using Docker (Windows)
     path: /docs/user-guide/install/pe/docker-windows/
   - title: Installing ThingsBoard PE from AWS Marketplace
@@ -67,6 +69,14 @@ toc:
     path: /docs/user-guide/install/pe/cluster-setup/
   - title: Upgrade instructions
     path: /docs/user-guide/install/pe/upgrade-instructions/
+- title: ThingsBoard IoT Gateway
+  section:
+    - title: Installation options
+      path: /docs/iot-gateway/installation/
+- title: Trendz Analytics
+  section:
+    - title: Installation options
+      path: /docs/trendz/install/installation-options/
 - title: License Server
   section:
   - title: Overview

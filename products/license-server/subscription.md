@@ -7,6 +7,15 @@ description: Features and advantages of pay-as-you-go payment model
 
 ---
 
+ 
+ <div id="video">  
+     <div id="video_wrapper">
+         <iframe src="https://www.youtube.com/embed/dK-QDFGxWek" frameborder="0" allowfullscreen></iframe>
+     </div>
+ </div>
+ <p></p>
+
+
 ThingsBoars Inc. provides for their customers two payment models, i. e. subscriptions (pay-as-you-go) and perpetual fallback.   
 **Pay-as-you-go** is a billing system in which **ThingsBoard Professional Edition (TB PE)** customers purchase different kind of licenses on a time basis (no additional fees per messages or per devices). In other words this option allows to subscribe for ThingsBoard PE service. 
 There are five pre-defined subscription plans that are limited by amount of devices and/or assets and support priority:

@@ -302,6 +302,17 @@ Import jar-file to your Thingsboard project as dependency library, that should b
 ./target/rule-engine-1.0.0-custom-nodes.jar
 ```
 
+**NOTE** if you have changed the package name from **org.thingsboard.rule.engine** to your company package name, e.g. **com.example.rule.engine**, 
+you need also to add your package name in **thingsboard.yml** file in plugins section:
+
+```yaml
+# Plugins configuration parameters
+plugins:
+  # Comma separated package list used during classpath scanning for plugins
+  scan_packages: "${PLUGINS_SCAN_PACKAGES:org.thingsboard.server.extensions,org.thingsboard.rule.engine,com.example.rule.engine}"
+
+```
+
 #### Thingsboard using IDE:
 
  - See separate instructions for [IDEA](https://www.jetbrains.com/help/idea/library.html#add-library-to-module-dependencies) and [Eclipse](https://help.eclipse.org/luna/index.jsp?topic=%2Forg.eclipse.jst.j2ee.doc.user%2Ftopics%2Ftjimpapp.html).
