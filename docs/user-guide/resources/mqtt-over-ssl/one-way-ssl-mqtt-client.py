@@ -30,10 +30,10 @@ def on_connect(client, userdata, rc, *extra_params):
 
 # The callback for when a PUBLISH message is received from the server.
 def on_message(client, userdata, msg):
-   print 'Topic: ' + msg.topic + '\nMessage: ' + str(msg.payload)
+   print('Topic: ' + msg.topic + '\nMessage: ' + str(msg.payload))
    if msg.topic.startswith( 'v1/devices/me/rpc/request/'):
        requestId = msg.topic[len('v1/devices/me/rpc/request/'):len(msg.topic)]
-       print ('This is a RPC call. RequestID: ' + requestId + '. Going to reply now!')
+       print('This is a RPC call. RequestID: ' + requestId + '. Going to reply now!')
        client.publish('v1/devices/me/rpc/response/' + requestId, "{\"value1\":\"A\", \"value2\":\"B\"}", 1)
 
 

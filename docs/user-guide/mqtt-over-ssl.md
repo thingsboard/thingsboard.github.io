@@ -93,7 +93,8 @@ sudo chown thingsboard:thingsboard /etc/thingsboard/conf/mqttserver.jks
 
 ### Server configuration
 
-Locate your **thingsboard.yml** file and set the MQTT_ENABLED value equals true.
+Locate your **thingsboard.conf** file and set the MQTT_ENABLED value equals true.
+It is also recommended set the MQTT transport port to 8883 on switching for the MQTT over SSL.  
 
 ```bash
 #Local MQTT transport parameters
@@ -131,11 +132,11 @@ The **key_store** Property must point to the **.jks** file location. **key_store
 
 **NOTE:** ThingsBoard supports **.p12** keystores as well. if this is the case, set **key_store_type** value to **'PKCS12'**
 
-After these values are set, launch or restart your thingsboard server.
+After these values are set, launch or restart your ThingsBoard server.
 
 ### Example of configuration 
-The next combination of the keygen.properties being used to generate a proper .jks and .pem in a case of the ThingsBoard uses  [**thingsboard.yml**](/docs/user-guide/resources/mqtt-over-ssl/thingsboard.yml)  and the has the domain localhost.
-Was set for the default ThingsBoard installation of the **2.4.3 version**. 
+The next combination of the keygen.properties example was used to generate a proper .jks and .pem in a case of the ThingsBoard uses  [**thingsboard.conf**](/docs/user-guide/resources/mqtt-over-ssl/thingsboard.conf)  and the has the domain "localhost".
+Was set for the default ThingsBoard installation of the **2.5 version**. 
 
 **keygen.properties:** 
 ```bash
@@ -159,6 +160,8 @@ CLIENT_KEY_PASSWORD=password
 CLIENT_KEY_ALIAS="tomcat"
 CLIENT_FILE_PREFIX="mqttclient"
 ```
+
+
 ## Client Examples
 
 See following resources:
