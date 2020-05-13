@@ -93,11 +93,9 @@ sudo chown thingsboard:thingsboard /etc/thingsboard/conf/mqttserver.jks
 
 ### Server configuration
 
-Locate your **thingsboard.conf** file and set the MQTT_ENABLED value equals true.
+Locate your **thingsboard.conf** file and set the MQTT_SSL_ENABLED value equals  true.
 
-The MQTT over SSL can be enabled in the **thingsboard.conf**.  
-
-So that you can add the next row for to the **thingsboard.conf**, so that the MQTT over SSL will be enabled.  
+You can add the next row for to the **thingsboard.conf**, so that the MQTT over SSL will be enabled.  
 ```bash 
 ...
 export MQTT_SSL_ENABLED=true

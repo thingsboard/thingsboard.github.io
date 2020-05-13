@@ -37,7 +37,7 @@ client.username_pw_set("accessToken")
 # Some code omitted
 ```
 
-**Note** Script uses **8883** mqtt port and requires paho mqtt library that you can install using the following command: **pip install paho-mqtt**
+**Note** Script uses **8883** mqtt port and requires paho mqtt library that you can install using the following command: **pip3 install paho-mqtt**
  
 Run the script:
 
