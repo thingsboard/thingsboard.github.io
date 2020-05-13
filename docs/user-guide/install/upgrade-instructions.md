@@ -1863,12 +1863,9 @@ database:
 # note: timescale works only with postgreSQL database for DATABASE_ENTITIES_TYPE.
 ```
 
-**NOTE:** before executing the upgrade script, go to the PostgreSQL terminal: 
+**NOTE:** If you are using **PostgreSql(Sql)** for time-series data storage before executing the upgrade script, go to the PostgreSQL terminal(psql) and follow the instructions below: 
 
 ```bash
-# login to psql terminal:
-$ psql -U postgres -d postgres -h 127.0.0.1 -W
-
 # Connect to thingsboard database:
 \c thingsboard
 
@@ -1932,7 +1929,7 @@ database:
 # note: timescale works only with postgreSQL database for DATABASE_ENTITIES_TYPE.
 ```       
 
-**NOTE:** Before executing the upgrade script, you need to access the psql terminal. Once you will be logged to the psql terminal, please follow the instructions below:
+**NOTE:** If you are using **PostgreSql(Sql)** for time-series data storage before executing the upgrade script, you need to access the psql terminal. Once you will be logged to the psql terminal, please follow the instructions below:
 
 ```bash
 # Connect to thingsboard database:
