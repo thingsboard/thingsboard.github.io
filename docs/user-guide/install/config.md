@@ -1900,7 +1900,7 @@ We will list only main configuration parameters below to avoid duplication of th
       <tr>
           <td>queue.rule-engine.queues.partitions</td>
           <td>TB_QUEUE_RE_HP_PARTITIONS</td>
-          <td>3</td>
+          <td>10</td>
           <td>HighPriority queue amount of partitions used by Rule Engine microservices</td>
       </tr>
       <tr>
@@ -1965,7 +1965,7 @@ We will list only main configuration parameters below to avoid duplication of th
         </tr>
         <tr>
             <td>queue.rule-engine.queues.partitions</td>
-            <td>TB_QUEUE_RE_HP_PARTITIONS</td>
+            <td>TB_QUEUE_RE_SQ_PARTITIONS</td>
             <td>10</td>
             <td>SequentialByOriginator queue amount of partitions used by Rule Engine microservices</td>
         </tr>
@@ -2812,7 +2812,7 @@ We will list only main configuration parameters below to avoid duplication of th
       <tr>
           <td>queue.rule-engine.queues.partitions</td>
           <td>TB_QUEUE_RE_HP_PARTITIONS</td>
-          <td>3</td>
+          <td>10</td>
           <td>HighPriority queue amount of partitions used by Rule Engine microservices</td>
       </tr>
       <tr>
@@ -2877,7 +2877,7 @@ We will list only main configuration parameters below to avoid duplication of th
         </tr>
         <tr>
             <td>queue.rule-engine.queues.partitions</td>
-            <td>TB_QUEUE_RE_HP_PARTITIONS</td>
+            <td>TB_QUEUE_RE_SQ_PARTITIONS</td>
             <td>10</td>
             <td>SequentialByOriginator queue amount of partitions used by Rule Engine microservices</td>
         </tr>
@@ -3646,7 +3646,7 @@ We will list only main configuration parameters below to avoid duplication of th
       <tr>
           <td>queue.rule-engine.queues.partitions</td>
           <td>TB_QUEUE_RE_HP_PARTITIONS</td>
-          <td>3</td>
+          <td>10</td>
           <td>HighPriority queue amount of partitions used by Rule Engine microservices</td>
       </tr>
       <tr>
@@ -3711,7 +3711,7 @@ We will list only main configuration parameters below to avoid duplication of th
         </tr>
         <tr>
             <td>queue.rule-engine.queues.partitions</td>
-            <td>TB_QUEUE_RE_HP_PARTITIONS</td>
+            <td>TB_QUEUE_RE_SQ_PARTITIONS</td>
             <td>10</td>
             <td>SequentialByOriginator queue amount of partitions used by Rule Engine microservices</td>
         </tr>
@@ -4495,7 +4495,7 @@ We will list only main configuration parameters below to avoid duplication of th
       <tr>
           <td>queue.rule-engine.queues.partitions</td>
           <td>TB_QUEUE_RE_HP_PARTITIONS</td>
-          <td>3</td>
+          <td>10</td>
           <td>HighPriority queue amount of partitions used by Rule Engine microservices</td>
       </tr>
       <tr>
@@ -4560,7 +4560,7 @@ We will list only main configuration parameters below to avoid duplication of th
         </tr>
         <tr>
             <td>queue.rule-engine.queues.partitions</td>
-            <td>TB_QUEUE_RE_HP_PARTITIONS</td>
+            <td>TB_QUEUE_RE_SQ_PARTITIONS</td>
             <td>10</td>
             <td>SequentialByOriginator queue amount of partitions used by Rule Engine microservices</td>
         </tr>
