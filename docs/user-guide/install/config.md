@@ -1811,7 +1811,7 @@ We will list only main configuration parameters below to avoid duplication of th
           <td>queue.rule-engine.queues.submit-strategy.type</td>
           <td>TB_QUEUE_RE_MAIN_SUBMIT_STRATEGY_TYPE</td>
           <td>BURST</td>
-          <td>Main queue submit strategy. Can be: BURST, BATCH, SEQUENTIAL_WITHIN_ORIGINATOR, SEQUENTIAL_WITHIN_TENANT, SEQUENTIAL</td>
+          <td>Main queue submit strategy. Can be: BURST, BATCH, SEQUENTIAL_BY_ORIGINATOR, SEQUENTIAL_WITHIN_TENANT, SEQUENTIAL</td>
       </tr>
       <tr>
           <td>queue.rule-engine.queues.submit-strategy.batch-size</td>
@@ -1876,8 +1876,8 @@ We will list only main configuration parameters below to avoid duplication of th
       <tr>
           <td>queue.rule-engine.queues.submit-strategy.type</td>
           <td>TB_QUEUE_RE_HP_SUBMIT_STRATEGY_TYPE</td>
-          <td>SEQUENTIAL_WITHIN_ORIGINATOR</td>
-          <td>HighPriority queue submit strategy. Can be: BURST, BATCH, SEQUENTIAL_WITHIN_ORIGINATOR, SEQUENTIAL_WITHIN_TENANT, SEQUENTIAL</td>
+          <td>SEQUENTIAL_BY_ORIGINATOR</td>
+          <td>HighPriority queue submit strategy. Can be: BURST, BATCH, SEQUENTIAL_BY_ORIGINATOR, SEQUENTIAL_WITHIN_TENANT, SEQUENTIAL</td>
       </tr>
       <tr>
           <td>queue.rule-engine.queues.submit-strategy.batch-size</td>
@@ -2627,7 +2627,7 @@ We will list only main configuration parameters below to avoid duplication of th
           <td>queue.rule-engine.queues.submit-strategy.type</td>
           <td>TB_QUEUE_RE_MAIN_SUBMIT_STRATEGY_TYPE</td>
           <td>BURST</td>
-          <td>Main queue submit strategy. Can be: BURST, BATCH, SEQUENTIAL_WITHIN_ORIGINATOR, SEQUENTIAL_WITHIN_TENANT, SEQUENTIAL</td>
+          <td>Main queue submit strategy. Can be: BURST, BATCH, SEQUENTIAL_BY_ORIGINATOR, SEQUENTIAL_WITHIN_TENANT, SEQUENTIAL</td>
       </tr>
       <tr>
           <td>queue.rule-engine.queues.submit-strategy.batch-size</td>
@@ -2692,8 +2692,8 @@ We will list only main configuration parameters below to avoid duplication of th
       <tr>
           <td>queue.rule-engine.queues.submit-strategy.type</td>
           <td>TB_QUEUE_RE_HP_SUBMIT_STRATEGY_TYPE</td>
-          <td>SEQUENTIAL_WITHIN_ORIGINATOR</td>
-          <td>HighPriority queue submit strategy. Can be: BURST, BATCH, SEQUENTIAL_WITHIN_ORIGINATOR, SEQUENTIAL_WITHIN_TENANT, SEQUENTIAL</td>
+          <td>SEQUENTIAL_BY_ORIGINATOR</td>
+          <td>HighPriority queue submit strategy. Can be: BURST, BATCH, SEQUENTIAL_BY_ORIGINATOR, SEQUENTIAL_WITHIN_TENANT, SEQUENTIAL</td>
       </tr>
       <tr>
           <td>queue.rule-engine.queues.submit-strategy.batch-size</td>
@@ -3365,7 +3365,7 @@ We will list only main configuration parameters below to avoid duplication of th
           <td>queue.rule-engine.queues.submit-strategy.type</td>
           <td>TB_QUEUE_RE_MAIN_SUBMIT_STRATEGY_TYPE</td>
           <td>BURST</td>
-          <td>Main queue submit strategy. Can be: BURST, BATCH, SEQUENTIAL_WITHIN_ORIGINATOR, SEQUENTIAL_WITHIN_TENANT, SEQUENTIAL</td>
+          <td>Main queue submit strategy. Can be: BURST, BATCH, SEQUENTIAL_BY_ORIGINATOR, SEQUENTIAL_WITHIN_TENANT, SEQUENTIAL</td>
       </tr>
       <tr>
           <td>queue.rule-engine.queues.submit-strategy.batch-size</td>
@@ -3430,8 +3430,8 @@ We will list only main configuration parameters below to avoid duplication of th
       <tr>
           <td>queue.rule-engine.queues.submit-strategy.type</td>
           <td>TB_QUEUE_RE_HP_SUBMIT_STRATEGY_TYPE</td>
-          <td>SEQUENTIAL_WITHIN_ORIGINATOR</td>
-          <td>HighPriority queue submit strategy. Can be: BURST, BATCH, SEQUENTIAL_WITHIN_ORIGINATOR, SEQUENTIAL_WITHIN_TENANT, SEQUENTIAL</td>
+          <td>SEQUENTIAL_BY_ORIGINATOR</td>
+          <td>HighPriority queue submit strategy. Can be: BURST, BATCH, SEQUENTIAL_BY_ORIGINATOR, SEQUENTIAL_WITHIN_TENANT, SEQUENTIAL</td>
       </tr>
       <tr>
           <td>queue.rule-engine.queues.submit-strategy.batch-size</td>
@@ -4118,7 +4118,7 @@ We will list only main configuration parameters below to avoid duplication of th
           <td>queue.rule-engine.queues.submit-strategy.type</td>
           <td>TB_QUEUE_RE_MAIN_SUBMIT_STRATEGY_TYPE</td>
           <td>BURST</td>
-          <td>Main queue submit strategy. Can be: BURST, BATCH, SEQUENTIAL_WITHIN_ORIGINATOR, SEQUENTIAL_WITHIN_TENANT, SEQUENTIAL</td>
+          <td>Main queue submit strategy. Can be: BURST, BATCH, SEQUENTIAL_BY_ORIGINATOR, SEQUENTIAL_WITHIN_TENANT, SEQUENTIAL</td>
       </tr>
       <tr>
           <td>queue.rule-engine.queues.submit-strategy.batch-size</td>
@@ -4183,8 +4183,8 @@ We will list only main configuration parameters below to avoid duplication of th
       <tr>
           <td>queue.rule-engine.queues.submit-strategy.type</td>
           <td>TB_QUEUE_RE_HP_SUBMIT_STRATEGY_TYPE</td>
-          <td>SEQUENTIAL_WITHIN_ORIGINATOR</td>
-          <td>HighPriority queue submit strategy. Can be: BURST, BATCH, SEQUENTIAL_WITHIN_ORIGINATOR, SEQUENTIAL_WITHIN_TENANT, SEQUENTIAL</td>
+          <td>SEQUENTIAL_BY_ORIGINATOR</td>
+          <td>HighPriority queue submit strategy. Can be: BURST, BATCH, SEQUENTIAL_BY_ORIGINATOR, SEQUENTIAL_WITHIN_TENANT, SEQUENTIAL</td>
       </tr>
       <tr>
           <td>queue.rule-engine.queues.submit-strategy.batch-size</td>
