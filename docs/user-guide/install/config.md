@@ -1538,6 +1538,36 @@ We will list only main configuration parameters below to avoid duplication of th
           <td>Number of messages per a consumer</td>
       </tr>
       <tr>
+          <td>queue.service_bus.queue-properties.rule-engine</td>
+          <td>TB_QUEUE_SERVICE_BUS_RE_QUEUE_PROPERTIES</td>
+          <td>lockDurationInSec:30;maxSizeInMb:1024;messageTimeToLiveInSec:604800</td>
+          <td>Azure Service Bus properties for Rule Engine queues</td>
+      </tr>
+      <tr>
+          <td>queue.service_bus.queue-properties.core</td>
+          <td>TB_QUEUE_SERVICE_BUS_CORE_QUEUE_PROPERTIES</td>
+          <td>lockDurationInSec:30;maxSizeInMb:1024;messageTimeToLiveInSec:604800</td>
+          <td>Azure Service Bus properties for Core queues</td>
+      </tr>
+      <tr>
+          <td>queue.service_bus.queue-properties.transport-api</td>
+          <td>TB_QUEUE_SERVICE_BUS_TA_QUEUE_PROPERTIES</td>
+          <td>lockDurationInSec:30;maxSizeInMb:1024;messageTimeToLiveInSec:604800</td>
+          <td>Azure Service Bus properties for Transport Api queues</td>
+      </tr>
+      <tr>
+          <td>queue.service_bus.queue-properties.notifications</td>
+          <td>TB_QUEUE_SERVICE_BUS_NOTIFICATIONS_QUEUE_PROPERTIES</td>
+          <td>lockDurationInSec:30;maxSizeInMb:1024;messageTimeToLiveInSec:604800</td>
+          <td>Azure Service Bus properties for Notifications queues</td>
+      </tr>
+      <tr>
+          <td>queue.service_bus.queue-properties.js-executor</td>
+          <td>TB_QUEUE_SERVICE_BUS_JE_QUEUE_PROPERTIES</td>
+          <td>lockDurationInSec:30;maxSizeInMb:1024;messageTimeToLiveInSec:604800</td>
+          <td>Azure Service Bus properties for Js Executor queues</td>
+      </tr>
+      <tr>
           <td>queue.rabbitmq.exchange_name</td>
           <td>TB_QUEUE_RABBIT_MQ_EXCHANGE_NAME</td>
           <td></td>
@@ -1730,10 +1760,16 @@ We will list only main configuration parameters below to avoid duplication of th
           <td>Maximum pending JavaScript evaluation requests</td>
       </tr>
       <tr>
+          <td>queue.js.max_eval_requests_timeout</td>
+          <td>REMOTE_JS_MAX_EVAL_REQUEST_TIMEOUT</td>
+          <td>60000</td>
+          <td>Maximum timeout in milliseconds for JavaScript evaluation</td>
+      </tr>
+      <tr>
           <td>queue.js.max_requests_timeout</td>
           <td>REMOTE_JS_MAX_REQUEST_TIMEOUT</td>
           <td>10000</td>
-          <td>Maximum timeout in milliseconds for JavaScript evaluation</td>
+          <td>Maximum timeout in milliseconds for JavaScript execution</td>
       </tr>
       <tr>
           <td>queue.js.response_poll_interval</td>
@@ -1876,7 +1912,7 @@ We will list only main configuration parameters below to avoid duplication of th
       <tr>
           <td>queue.rule-engine.queues.submit-strategy.type</td>
           <td>TB_QUEUE_RE_HP_SUBMIT_STRATEGY_TYPE</td>
-          <td>SEQUENTIAL_BY_ORIGINATOR</td>
+          <td>BURST</td>
           <td>HighPriority queue submit strategy. Can be: BURST, BATCH, SEQUENTIAL_BY_ORIGINATOR, SEQUENTIAL_WITHIN_TENANT, SEQUENTIAL</td>
       </tr>
       <tr>
@@ -1910,12 +1946,72 @@ We will list only main configuration parameters below to avoid duplication of th
           <td>Time in seconds to wait in consumer thread before retries</td>
       </tr>
       <tr>
-           <td>queue.rule-engine.queues.submit-strategy.batch-size</td>
-           <td>TB_QUEUE_RE_HP_SUBMIT_STRATEGY_BATCH_SIZE</td>
-           <td>100</td>
-           <td>Maximum number of messages in batch. Only for submit strategy type: BATCH</td>
-       </tr>
-       <tr>
+            <td>queue.rule-engine.queues.name</td>
+            <td>TB_QUEUE_RE_SQ_QUEUE_NAME</td>
+            <td>SequentialByOriginator</td>
+            <td>Rule Engine SequentialByOriginator queue</td>
+        </tr>
+        <tr>
+            <td>queue.rule-engine.queues.topic</td>
+            <td>TB_QUEUE_RE_SQ_TOPIC</td>
+            <td>tb_rule_engine.sq</td>
+            <td>Topic for SequentialByOriginator queue by Rule Engine microservices</td>
+        </tr>
+        <tr>
+            <td>queue.rule-engine.queues.poll-interval</td>
+            <td>TB_QUEUE_RE_SQ_POLL_INTERVAL_MS</td>
+            <td>25</td>
+            <td>Interval in milliseconds to poll messages from SequentialByOriginator queue by Rule Engine microservices</td>
+        </tr>
+        <tr>
+            <td>queue.rule-engine.queues.partitions</td>
+            <td>TB_QUEUE_RE_HP_PARTITIONS</td>
+            <td>10</td>
+            <td>SequentialByOriginator queue amount of partitions used by Rule Engine microservices</td>
+        </tr>
+        <tr>
+            <td>queue.rule-engine.queues.pack-processing-timeout</td>
+            <td>TB_QUEUE_RE_SQ_PACK_PROCESSING_TIMEOUT_MS</td>
+            <td>60000</td>
+            <td>Timeout for processing a message pack from SequentialByOriginator queue by Rule Engine microservices</td>
+        </tr>
+        <tr>
+            <td>queue.rule-engine.queues.submit-strategy.type</td>
+            <td>TB_QUEUE_RE_SQ_SUBMIT_STRATEGY_TYPE</td>
+            <td>SEQUENTIAL_BY_ORIGINATOR</td>
+            <td>SequentialByOriginator queue submit strategy. Can be: BURST, BATCH, SEQUENTIAL_BY_ORIGINATOR, SEQUENTIAL_WITHIN_TENANT, SEQUENTIAL</td>
+        </tr>
+        <tr>
+            <td>queue.rule-engine.queues.submit-strategy.batch-size</td>
+            <td>TB_QUEUE_RE_SQ_SUBMIT_STRATEGY_BATCH_SIZE</td>
+            <td>100</td>
+            <td>Maximum number of messages in batch. Only for submit strategy type: BATCH</td>
+        </tr>
+        <tr>
+            <td>queue.rule-engine.queues.processing-strategy.type</td>
+            <td>TB_QUEUE_RE_SQ_PROCESSING_STRATEGY_TYPE</td>
+            <td>RETRY_FAILED_AND_TIMED_OUT</td>
+            <td>SKIP_ALL_FAILURES, RETRY_ALL, RETRY_FAILED, RETRY_TIMED_OUT, RETRY_FAILED_AND_TIMED_OUT</td>
+        </tr>
+        <tr>
+            <td>queue.rule-engine.queues.processing-strategy.retries</td>
+            <td>TB_QUEUE_RE_SQ_PROCESSING_STRATEGY_RETRIES</td>
+            <td>3</td>
+            <td>Number of retries, 0 is unlimited. Use for RETRY_ALL, RETRY_FAILED, RETRY_TIMED_OUT, RETRY_FAILED_AND_TIMED_OUT processing strategies</td>
+        </tr>
+        <tr>
+            <td>queue.rule-engine.queues.processing-strategy.failure-percentage</td>
+            <td>TB_QUEUE_RE_SQ_PROCESSING_STRATEGY_FAILURE_PERCENTAGE</td>
+            <td>0</td>
+            <td>Skip retry if failures or timeouts are less then X percentage of messages</td>
+        </tr>
+        <tr>
+            <td>queue.rule-engine.queues.processing-strategy.pause-between-retries</td>
+            <td>TB_QUEUE_RE_SQ_PROCESSING_STRATEGY_RETRY_PAUSE</td>
+            <td>5</td>
+            <td>Time in seconds to wait in consumer thread before retries</td>
+        </tr>
+        <tr>
            <td>queue.transport.notifications_topic</td>
            <td>TB_QUEUE_TRANSPORT_NOTIFICATIONS_TOPIC</td>
            <td>tb_transport.notifications</td>
@@ -2354,6 +2450,36 @@ We will list only main configuration parameters below to avoid duplication of th
           <td>Number of messages per a consumer</td>
       </tr>
       <tr>
+          <td>queue.service_bus.queue-properties.rule-engine</td>
+          <td>TB_QUEUE_SERVICE_BUS_RE_QUEUE_PROPERTIES</td>
+          <td>lockDurationInSec:30;maxSizeInMb:1024;messageTimeToLiveInSec:604800</td>
+          <td>Azure Service Bus properties for Rule Engine queues</td>
+      </tr>
+      <tr>
+          <td>queue.service_bus.queue-properties.core</td>
+          <td>TB_QUEUE_SERVICE_BUS_CORE_QUEUE_PROPERTIES</td>
+          <td>lockDurationInSec:30;maxSizeInMb:1024;messageTimeToLiveInSec:604800</td>
+          <td>Azure Service Bus properties for Core queues</td>
+      </tr>
+      <tr>
+          <td>queue.service_bus.queue-properties.transport-api</td>
+          <td>TB_QUEUE_SERVICE_BUS_TA_QUEUE_PROPERTIES</td>
+          <td>lockDurationInSec:30;maxSizeInMb:1024;messageTimeToLiveInSec:604800</td>
+          <td>Azure Service Bus properties for Transport Api queues</td>
+      </tr>
+      <tr>
+          <td>queue.service_bus.queue-properties.notifications</td>
+          <td>TB_QUEUE_SERVICE_BUS_NOTIFICATIONS_QUEUE_PROPERTIES</td>
+          <td>lockDurationInSec:30;maxSizeInMb:1024;messageTimeToLiveInSec:604800</td>
+          <td>Azure Service Bus properties for Notifications queues</td>
+      </tr>
+      <tr>
+          <td>queue.service_bus.queue-properties.js-executor</td>
+          <td>TB_QUEUE_SERVICE_BUS_JE_QUEUE_PROPERTIES</td>
+          <td>lockDurationInSec:30;maxSizeInMb:1024;messageTimeToLiveInSec:604800</td>
+          <td>Azure Service Bus properties for Js Executor queues</td>
+      </tr>      
+      <tr>
           <td>queue.rabbitmq.exchange_name</td>
           <td>TB_QUEUE_RABBIT_MQ_EXCHANGE_NAME</td>
           <td></td>
@@ -2546,10 +2672,16 @@ We will list only main configuration parameters below to avoid duplication of th
           <td>Maximum pending JavaScript evaluation requests</td>
       </tr>
       <tr>
+          <td>queue.js.max_eval_requests_timeout</td>
+          <td>REMOTE_JS_MAX_EVAL_REQUEST_TIMEOUT</td>
+          <td>60000</td>
+          <td>Maximum timeout in milliseconds for JavaScript evaluation</td>
+      </tr>
+      <tr>
           <td>queue.js.max_requests_timeout</td>
           <td>REMOTE_JS_MAX_REQUEST_TIMEOUT</td>
           <td>10000</td>
-          <td>Maximum timeout in milliseconds for JavaScript evaluation</td>
+          <td>Maximum timeout in milliseconds for JavaScript execution</td>
       </tr>
       <tr>
           <td>queue.js.response_poll_interval</td>
@@ -2692,7 +2824,7 @@ We will list only main configuration parameters below to avoid duplication of th
       <tr>
           <td>queue.rule-engine.queues.submit-strategy.type</td>
           <td>TB_QUEUE_RE_HP_SUBMIT_STRATEGY_TYPE</td>
-          <td>SEQUENTIAL_BY_ORIGINATOR</td>
+          <td>BURST</td>
           <td>HighPriority queue submit strategy. Can be: BURST, BATCH, SEQUENTIAL_BY_ORIGINATOR, SEQUENTIAL_WITHIN_TENANT, SEQUENTIAL</td>
       </tr>
       <tr>
@@ -2726,11 +2858,71 @@ We will list only main configuration parameters below to avoid duplication of th
           <td>Time in seconds to wait in consumer thread before retries</td>
       </tr>
       <tr>
-           <td>queue.rule-engine.queues.submit-strategy.batch-size</td>
-           <td>TB_QUEUE_RE_HP_SUBMIT_STRATEGY_BATCH_SIZE</td>
-           <td>100</td>
-           <td>Maximum number of messages in batch. Only for submit strategy type: BATCH</td>
-       </tr>
+            <td>queue.rule-engine.queues.name</td>
+            <td>TB_QUEUE_RE_SQ_QUEUE_NAME</td>
+            <td>SequentialByOriginator</td>
+            <td>Rule Engine SequentialByOriginator queue</td>
+        </tr>
+        <tr>
+            <td>queue.rule-engine.queues.topic</td>
+            <td>TB_QUEUE_RE_SQ_TOPIC</td>
+            <td>tb_rule_engine.sq</td>
+            <td>Topic for SequentialByOriginator queue by Rule Engine microservices</td>
+        </tr>
+        <tr>
+            <td>queue.rule-engine.queues.poll-interval</td>
+            <td>TB_QUEUE_RE_SQ_POLL_INTERVAL_MS</td>
+            <td>25</td>
+            <td>Interval in milliseconds to poll messages from SequentialByOriginator queue by Rule Engine microservices</td>
+        </tr>
+        <tr>
+            <td>queue.rule-engine.queues.partitions</td>
+            <td>TB_QUEUE_RE_HP_PARTITIONS</td>
+            <td>10</td>
+            <td>SequentialByOriginator queue amount of partitions used by Rule Engine microservices</td>
+        </tr>
+        <tr>
+            <td>queue.rule-engine.queues.pack-processing-timeout</td>
+            <td>TB_QUEUE_RE_SQ_PACK_PROCESSING_TIMEOUT_MS</td>
+            <td>60000</td>
+            <td>Timeout for processing a message pack from SequentialByOriginator queue by Rule Engine microservices</td>
+        </tr>
+        <tr>
+            <td>queue.rule-engine.queues.submit-strategy.type</td>
+            <td>TB_QUEUE_RE_SQ_SUBMIT_STRATEGY_TYPE</td>
+            <td>SEQUENTIAL_BY_ORIGINATOR</td>
+            <td>SequentialByOriginator queue submit strategy. Can be: BURST, BATCH, SEQUENTIAL_BY_ORIGINATOR, SEQUENTIAL_WITHIN_TENANT, SEQUENTIAL</td>
+        </tr>
+        <tr>
+            <td>queue.rule-engine.queues.submit-strategy.batch-size</td>
+            <td>TB_QUEUE_RE_SQ_SUBMIT_STRATEGY_BATCH_SIZE</td>
+            <td>100</td>
+            <td>Maximum number of messages in batch. Only for submit strategy type: BATCH</td>
+        </tr>
+        <tr>
+            <td>queue.rule-engine.queues.processing-strategy.type</td>
+            <td>TB_QUEUE_RE_SQ_PROCESSING_STRATEGY_TYPE</td>
+            <td>RETRY_FAILED_AND_TIMED_OUT</td>
+            <td>SKIP_ALL_FAILURES, RETRY_ALL, RETRY_FAILED, RETRY_TIMED_OUT, RETRY_FAILED_AND_TIMED_OUT</td>
+        </tr>
+        <tr>
+            <td>queue.rule-engine.queues.processing-strategy.retries</td>
+            <td>TB_QUEUE_RE_SQ_PROCESSING_STRATEGY_RETRIES</td>
+            <td>3</td>
+            <td>Number of retries, 0 is unlimited. Use for RETRY_ALL, RETRY_FAILED, RETRY_TIMED_OUT, RETRY_FAILED_AND_TIMED_OUT processing strategies</td>
+        </tr>
+        <tr>
+            <td>queue.rule-engine.queues.processing-strategy.failure-percentage</td>
+            <td>TB_QUEUE_RE_SQ_PROCESSING_STRATEGY_FAILURE_PERCENTAGE</td>
+            <td>0</td>
+            <td>Skip retry if failures or timeouts are less then X percentage of messages</td>
+        </tr>
+        <tr>
+            <td>queue.rule-engine.queues.processing-strategy.pause-between-retries</td>
+            <td>TB_QUEUE_RE_SQ_PROCESSING_STRATEGY_RETRY_PAUSE</td>
+            <td>5</td>
+            <td>Time in seconds to wait in consumer thread before retries</td>
+        </tr>     
        <tr>
            <td>queue.transport.notifications_topic</td>
            <td>TB_QUEUE_TRANSPORT_NOTIFICATIONS_TOPIC</td>
@@ -3092,6 +3284,36 @@ We will list only main configuration parameters below to avoid duplication of th
           <td>Number of messages per a consumer</td>
       </tr>
       <tr>
+          <td>queue.service_bus.queue-properties.rule-engine</td>
+          <td>TB_QUEUE_SERVICE_BUS_RE_QUEUE_PROPERTIES</td>
+          <td>lockDurationInSec:30;maxSizeInMb:1024;messageTimeToLiveInSec:604800</td>
+          <td>Azure Service Bus properties for Rule Engine queues</td>
+      </tr>
+      <tr>
+          <td>queue.service_bus.queue-properties.core</td>
+          <td>TB_QUEUE_SERVICE_BUS_CORE_QUEUE_PROPERTIES</td>
+          <td>lockDurationInSec:30;maxSizeInMb:1024;messageTimeToLiveInSec:604800</td>
+          <td>Azure Service Bus properties for Core queues</td>
+      </tr>
+      <tr>
+          <td>queue.service_bus.queue-properties.transport-api</td>
+          <td>TB_QUEUE_SERVICE_BUS_TA_QUEUE_PROPERTIES</td>
+          <td>lockDurationInSec:30;maxSizeInMb:1024;messageTimeToLiveInSec:604800</td>
+          <td>Azure Service Bus properties for Transport Api queues</td>
+      </tr>
+      <tr>
+          <td>queue.service_bus.queue-properties.notifications</td>
+          <td>TB_QUEUE_SERVICE_BUS_NOTIFICATIONS_QUEUE_PROPERTIES</td>
+          <td>lockDurationInSec:30;maxSizeInMb:1024;messageTimeToLiveInSec:604800</td>
+          <td>Azure Service Bus properties for Notifications queues</td>
+      </tr>
+      <tr>
+          <td>queue.service_bus.queue-properties.js-executor</td>
+          <td>TB_QUEUE_SERVICE_BUS_JE_QUEUE_PROPERTIES</td>
+          <td>lockDurationInSec:30;maxSizeInMb:1024;messageTimeToLiveInSec:604800</td>
+          <td>Azure Service Bus properties for Js Executor queues</td>
+      </tr>           
+      <tr>
           <td>queue.rabbitmq.exchange_name</td>
           <td>TB_QUEUE_RABBIT_MQ_EXCHANGE_NAME</td>
           <td></td>
@@ -3284,10 +3506,16 @@ We will list only main configuration parameters below to avoid duplication of th
           <td>Maximum pending JavaScript evaluation requests</td>
       </tr>
       <tr>
+          <td>queue.js.max_eval_requests_timeout</td>
+          <td>REMOTE_JS_MAX_EVAL_REQUEST_TIMEOUT</td>
+          <td>60000</td>
+          <td>Maximum timeout in milliseconds for JavaScript evaluation</td>
+      </tr>
+      <tr>
           <td>queue.js.max_requests_timeout</td>
           <td>REMOTE_JS_MAX_REQUEST_TIMEOUT</td>
           <td>10000</td>
-          <td>Maximum timeout in milliseconds for JavaScript evaluation</td>
+          <td>Maximum timeout in milliseconds for JavaScript execution</td>
       </tr>
       <tr>
           <td>queue.js.response_poll_interval</td>
@@ -3430,7 +3658,7 @@ We will list only main configuration parameters below to avoid duplication of th
       <tr>
           <td>queue.rule-engine.queues.submit-strategy.type</td>
           <td>TB_QUEUE_RE_HP_SUBMIT_STRATEGY_TYPE</td>
-          <td>SEQUENTIAL_BY_ORIGINATOR</td>
+          <td>BURST</td>
           <td>HighPriority queue submit strategy. Can be: BURST, BATCH, SEQUENTIAL_BY_ORIGINATOR, SEQUENTIAL_WITHIN_TENANT, SEQUENTIAL</td>
       </tr>
       <tr>
@@ -3464,11 +3692,71 @@ We will list only main configuration parameters below to avoid duplication of th
           <td>Time in seconds to wait in consumer thread before retries</td>
       </tr>
       <tr>
-           <td>queue.rule-engine.queues.submit-strategy.batch-size</td>
-           <td>TB_QUEUE_RE_HP_SUBMIT_STRATEGY_BATCH_SIZE</td>
-           <td>100</td>
-           <td>Maximum number of messages in batch. Only for submit strategy type: BATCH</td>
-       </tr>
+            <td>queue.rule-engine.queues.name</td>
+            <td>TB_QUEUE_RE_SQ_QUEUE_NAME</td>
+            <td>SequentialByOriginator</td>
+            <td>Rule Engine SequentialByOriginator queue</td>
+        </tr>
+        <tr>
+            <td>queue.rule-engine.queues.topic</td>
+            <td>TB_QUEUE_RE_SQ_TOPIC</td>
+            <td>tb_rule_engine.sq</td>
+            <td>Topic for SequentialByOriginator queue by Rule Engine microservices</td>
+        </tr>
+        <tr>
+            <td>queue.rule-engine.queues.poll-interval</td>
+            <td>TB_QUEUE_RE_SQ_POLL_INTERVAL_MS</td>
+            <td>25</td>
+            <td>Interval in milliseconds to poll messages from SequentialByOriginator queue by Rule Engine microservices</td>
+        </tr>
+        <tr>
+            <td>queue.rule-engine.queues.partitions</td>
+            <td>TB_QUEUE_RE_HP_PARTITIONS</td>
+            <td>10</td>
+            <td>SequentialByOriginator queue amount of partitions used by Rule Engine microservices</td>
+        </tr>
+        <tr>
+            <td>queue.rule-engine.queues.pack-processing-timeout</td>
+            <td>TB_QUEUE_RE_SQ_PACK_PROCESSING_TIMEOUT_MS</td>
+            <td>60000</td>
+            <td>Timeout for processing a message pack from SequentialByOriginator queue by Rule Engine microservices</td>
+        </tr>
+        <tr>
+            <td>queue.rule-engine.queues.submit-strategy.type</td>
+            <td>TB_QUEUE_RE_SQ_SUBMIT_STRATEGY_TYPE</td>
+            <td>SEQUENTIAL_BY_ORIGINATOR</td>
+            <td>SequentialByOriginator queue submit strategy. Can be: BURST, BATCH, SEQUENTIAL_BY_ORIGINATOR, SEQUENTIAL_WITHIN_TENANT, SEQUENTIAL</td>
+        </tr>
+        <tr>
+            <td>queue.rule-engine.queues.submit-strategy.batch-size</td>
+            <td>TB_QUEUE_RE_SQ_SUBMIT_STRATEGY_BATCH_SIZE</td>
+            <td>100</td>
+            <td>Maximum number of messages in batch. Only for submit strategy type: BATCH</td>
+        </tr>
+        <tr>
+            <td>queue.rule-engine.queues.processing-strategy.type</td>
+            <td>TB_QUEUE_RE_SQ_PROCESSING_STRATEGY_TYPE</td>
+            <td>RETRY_FAILED_AND_TIMED_OUT</td>
+            <td>SKIP_ALL_FAILURES, RETRY_ALL, RETRY_FAILED, RETRY_TIMED_OUT, RETRY_FAILED_AND_TIMED_OUT</td>
+        </tr>
+        <tr>
+            <td>queue.rule-engine.queues.processing-strategy.retries</td>
+            <td>TB_QUEUE_RE_SQ_PROCESSING_STRATEGY_RETRIES</td>
+            <td>3</td>
+            <td>Number of retries, 0 is unlimited. Use for RETRY_ALL, RETRY_FAILED, RETRY_TIMED_OUT, RETRY_FAILED_AND_TIMED_OUT processing strategies</td>
+        </tr>
+        <tr>
+            <td>queue.rule-engine.queues.processing-strategy.failure-percentage</td>
+            <td>TB_QUEUE_RE_SQ_PROCESSING_STRATEGY_FAILURE_PERCENTAGE</td>
+            <td>0</td>
+            <td>Skip retry if failures or timeouts are less then X percentage of messages</td>
+        </tr>
+        <tr>
+            <td>queue.rule-engine.queues.processing-strategy.pause-between-retries</td>
+            <td>TB_QUEUE_RE_SQ_PROCESSING_STRATEGY_RETRY_PAUSE</td>
+            <td>5</td>
+            <td>Time in seconds to wait in consumer thread before retries</td>
+        </tr>      
        <tr>
            <td>queue.transport.notifications_topic</td>
            <td>TB_QUEUE_TRANSPORT_NOTIFICATIONS_TOPIC</td>
@@ -3845,6 +4133,36 @@ We will list only main configuration parameters below to avoid duplication of th
           <td>Number of messages per a consumer</td>
       </tr>
       <tr>
+          <td>queue.service_bus.queue-properties.rule-engine</td>
+          <td>TB_QUEUE_SERVICE_BUS_RE_QUEUE_PROPERTIES</td>
+          <td>lockDurationInSec:30;maxSizeInMb:1024;messageTimeToLiveInSec:604800</td>
+          <td>Azure Service Bus properties for Rule Engine queues</td>
+      </tr>
+      <tr>
+          <td>queue.service_bus.queue-properties.core</td>
+          <td>TB_QUEUE_SERVICE_BUS_CORE_QUEUE_PROPERTIES</td>
+          <td>lockDurationInSec:30;maxSizeInMb:1024;messageTimeToLiveInSec:604800</td>
+          <td>Azure Service Bus properties for Core queues</td>
+      </tr>
+      <tr>
+          <td>queue.service_bus.queue-properties.transport-api</td>
+          <td>TB_QUEUE_SERVICE_BUS_TA_QUEUE_PROPERTIES</td>
+          <td>lockDurationInSec:30;maxSizeInMb:1024;messageTimeToLiveInSec:604800</td>
+          <td>Azure Service Bus properties for Transport Api queues</td>
+      </tr>
+      <tr>
+          <td>queue.service_bus.queue-properties.notifications</td>
+          <td>TB_QUEUE_SERVICE_BUS_NOTIFICATIONS_QUEUE_PROPERTIES</td>
+          <td>lockDurationInSec:30;maxSizeInMb:1024;messageTimeToLiveInSec:604800</td>
+          <td>Azure Service Bus properties for Notifications queues</td>
+      </tr>
+      <tr>
+          <td>queue.service_bus.queue-properties.js-executor</td>
+          <td>TB_QUEUE_SERVICE_BUS_JE_QUEUE_PROPERTIES</td>
+          <td>lockDurationInSec:30;maxSizeInMb:1024;messageTimeToLiveInSec:604800</td>
+          <td>Azure Service Bus properties for Js Executor queues</td>
+      </tr>      
+      <tr>
           <td>queue.rabbitmq.exchange_name</td>
           <td>TB_QUEUE_RABBIT_MQ_EXCHANGE_NAME</td>
           <td></td>
@@ -4037,10 +4355,16 @@ We will list only main configuration parameters below to avoid duplication of th
           <td>Maximum pending JavaScript evaluation requests</td>
       </tr>
       <tr>
+          <td>queue.js.max_eval_requests_timeout</td>
+          <td>REMOTE_JS_MAX_EVAL_REQUEST_TIMEOUT</td>
+          <td>60000</td>
+          <td>Maximum timeout in milliseconds for JavaScript evaluation</td>
+      </tr>
+      <tr>
           <td>queue.js.max_requests_timeout</td>
           <td>REMOTE_JS_MAX_REQUEST_TIMEOUT</td>
           <td>10000</td>
-          <td>Maximum timeout in milliseconds for JavaScript evaluation</td>
+          <td>Maximum timeout in milliseconds for JavaScript execution</td>
       </tr>
       <tr>
           <td>queue.js.response_poll_interval</td>
@@ -4183,7 +4507,7 @@ We will list only main configuration parameters below to avoid duplication of th
       <tr>
           <td>queue.rule-engine.queues.submit-strategy.type</td>
           <td>TB_QUEUE_RE_HP_SUBMIT_STRATEGY_TYPE</td>
-          <td>SEQUENTIAL_BY_ORIGINATOR</td>
+          <td>BURST</td>
           <td>HighPriority queue submit strategy. Can be: BURST, BATCH, SEQUENTIAL_BY_ORIGINATOR, SEQUENTIAL_WITHIN_TENANT, SEQUENTIAL</td>
       </tr>
       <tr>
@@ -4217,11 +4541,71 @@ We will list only main configuration parameters below to avoid duplication of th
           <td>Time in seconds to wait in consumer thread before retries</td>
       </tr>
       <tr>
-           <td>queue.rule-engine.queues.submit-strategy.batch-size</td>
-           <td>TB_QUEUE_RE_HP_SUBMIT_STRATEGY_BATCH_SIZE</td>
-           <td>100</td>
-           <td>Maximum number of messages in batch. Only for submit strategy type: BATCH</td>
-       </tr>
+            <td>queue.rule-engine.queues.name</td>
+            <td>TB_QUEUE_RE_SQ_QUEUE_NAME</td>
+            <td>SequentialByOriginator</td>
+            <td>Rule Engine SequentialByOriginator queue</td>
+        </tr>
+        <tr>
+            <td>queue.rule-engine.queues.topic</td>
+            <td>TB_QUEUE_RE_SQ_TOPIC</td>
+            <td>tb_rule_engine.sq</td>
+            <td>Topic for SequentialByOriginator queue by Rule Engine microservices</td>
+        </tr>
+        <tr>
+            <td>queue.rule-engine.queues.poll-interval</td>
+            <td>TB_QUEUE_RE_SQ_POLL_INTERVAL_MS</td>
+            <td>25</td>
+            <td>Interval in milliseconds to poll messages from SequentialByOriginator queue by Rule Engine microservices</td>
+        </tr>
+        <tr>
+            <td>queue.rule-engine.queues.partitions</td>
+            <td>TB_QUEUE_RE_HP_PARTITIONS</td>
+            <td>10</td>
+            <td>SequentialByOriginator queue amount of partitions used by Rule Engine microservices</td>
+        </tr>
+        <tr>
+            <td>queue.rule-engine.queues.pack-processing-timeout</td>
+            <td>TB_QUEUE_RE_SQ_PACK_PROCESSING_TIMEOUT_MS</td>
+            <td>60000</td>
+            <td>Timeout for processing a message pack from SequentialByOriginator queue by Rule Engine microservices</td>
+        </tr>
+        <tr>
+            <td>queue.rule-engine.queues.submit-strategy.type</td>
+            <td>TB_QUEUE_RE_SQ_SUBMIT_STRATEGY_TYPE</td>
+            <td>SEQUENTIAL_BY_ORIGINATOR</td>
+            <td>SequentialByOriginator queue submit strategy. Can be: BURST, BATCH, SEQUENTIAL_BY_ORIGINATOR, SEQUENTIAL_WITHIN_TENANT, SEQUENTIAL</td>
+        </tr>
+        <tr>
+            <td>queue.rule-engine.queues.submit-strategy.batch-size</td>
+            <td>TB_QUEUE_RE_SQ_SUBMIT_STRATEGY_BATCH_SIZE</td>
+            <td>100</td>
+            <td>Maximum number of messages in batch. Only for submit strategy type: BATCH</td>
+        </tr>
+        <tr>
+            <td>queue.rule-engine.queues.processing-strategy.type</td>
+            <td>TB_QUEUE_RE_SQ_PROCESSING_STRATEGY_TYPE</td>
+            <td>RETRY_FAILED_AND_TIMED_OUT</td>
+            <td>SKIP_ALL_FAILURES, RETRY_ALL, RETRY_FAILED, RETRY_TIMED_OUT, RETRY_FAILED_AND_TIMED_OUT</td>
+        </tr>
+        <tr>
+            <td>queue.rule-engine.queues.processing-strategy.retries</td>
+            <td>TB_QUEUE_RE_SQ_PROCESSING_STRATEGY_RETRIES</td>
+            <td>3</td>
+            <td>Number of retries, 0 is unlimited. Use for RETRY_ALL, RETRY_FAILED, RETRY_TIMED_OUT, RETRY_FAILED_AND_TIMED_OUT processing strategies</td>
+        </tr>
+        <tr>
+            <td>queue.rule-engine.queues.processing-strategy.failure-percentage</td>
+            <td>TB_QUEUE_RE_SQ_PROCESSING_STRATEGY_FAILURE_PERCENTAGE</td>
+            <td>0</td>
+            <td>Skip retry if failures or timeouts are less then X percentage of messages</td>
+        </tr>
+        <tr>
+            <td>queue.rule-engine.queues.processing-strategy.pause-between-retries</td>
+            <td>TB_QUEUE_RE_SQ_PROCESSING_STRATEGY_RETRY_PAUSE</td>
+            <td>5</td>
+            <td>Time in seconds to wait in consumer thread before retries</td>
+        </tr>      
        <tr>
            <td>queue.transport.notifications_topic</td>
            <td>TB_QUEUE_TRANSPORT_NOTIFICATIONS_TOPIC</td>
