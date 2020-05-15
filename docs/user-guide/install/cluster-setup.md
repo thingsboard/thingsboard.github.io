@@ -18,48 +18,33 @@ For simplicity, we will use docker-compose tool to setup our cluster.
 ThingsBoard Microservices are running in dockerized environment.
 Before starting please make sure [Docker CE](https://docs.docker.com/install/) and [Docker Compose](https://docs.docker.com/compose/install/) are installed in your system. 
 
-## Step 1. Checkout all ThingsBoard СE Images
-
-Please checkout all ThingsBoard CE Images from Docker Hub.
-You will need to open all [verified images](https://hub.docker.com/search?q=thingsboard&type=image&image_filter=store).
-
-Listing all images **mandatory** for checkout for your convenience below:
-
- - [ThingsBoard CE Node Microservice](https://hub.docker.com/_/thingsboard-ce-node)
- - [ThingsBoard CE Web UI Microservice](https://hub.docker.com/_/thingsboard-ce-web-ui)
- - [ThingsBoard CE Web Report Microservice](https://hub.docker.com/_/thingsboard-ce-web-report) 
- - [ThingsBoard CE JS Executor Microservice](https://hub.docker.com/_/thingsboard-ce-js-executor)
- - [ThingsBoard CE HTTP Transport Microservice](https://hub.docker.com/_/thingsboard-ce-http-transport)    
- - [ThingsBoard CE MQTT Transport Microservice](https://hub.docker.com/_/thingsboard-ce-mqtt-transport)
- - [ThingsBoard CE CoAP Transport Microservice](https://hub.docker.com/_/thingsboard-ce-coap-transport) 
-
-## Step 2. Pull ThingsBoard CE Images
+## Step 1. Pull ThingsBoard CE Images
 
 Make sure your have [logged in](https://docs.docker.com/engine/reference/commandline/login/) to docker hub using command line.
 
 ```bash
-docker pull store/thingsboard/tb-ce-node:2.5.0
-docker pull store/thingsboard/tb-ce-web-ui:2.5.0
-docker pull store/thingsboard/tb-ce-web-report:2.5.0
-docker pull store/thingsboard/tb-ce-js-executor:2.5.0
-docker pull store/thingsboard/tb-ce-http-transport:2.5.0
-docker pull store/thingsboard/tb-ce-mqtt-transport:2.5.0
-docker pull store/thingsboard/tb-ce-coap-transport:2.5.0
+docker pull thingsboard/tb-node:2.5.0
+docker pull thingsboard/tb-web-ui:2.5.0
+docker pull thingsboard/tb-web-report:2.5.0
+docker pull thingsboard/tb-js-executor:2.5.0
+docker pull thingsboard/tb-http-transport:2.5.0
+docker pull thingsboard/tb-mqtt-transport:2.5.0
+docker pull thingsboard/tb-coap-transport:2.5.0
 ```
 
-## Step 3. Review the architecture page
+## Step 2. Review the architecture page
 
 Starting ThingsBoard v2.2, it is possible to install ThingsBoard cluster using new microservices architecture and docker containers. 
 See [**microservices**](/docs/reference/msa/) architecture page for more details.
 
-## Step 4. Clone ThingsBoard CE repository
+## Step 3. Clone ThingsBoard CE repository
 
 ```bash
 git clone https://github.com/thingsboard/thingsboard.git
 cd docker
 ```
 
-## Step 5. Configure ThingsBoard database
+## Step 4. Configure ThingsBoard database
 
 Before performing initial installation you can configure the type of database to be used with ThingsBoard.
 In order to set database type change the value of `DATABASE` variable in `.env` file to one of the following:
@@ -69,7 +54,7 @@ In order to set database type change the value of `DATABASE` variable in `.env` 
 
 **NOTE**: According to the database type corresponding docker service will be deployed (see `docker-compose.postgres.yml`, `docker-compose.cassandra.yml` for details).
 
-## Step 6. Choose ThingsBoard queue service 
+## Step 5. Choose ThingsBoard queue service 
 
 {% include templates/install/install-queue.md %}
 
@@ -82,7 +67,7 @@ RabbitMQ <small>(for small on-prem installations)</small>%,%rabbitmq%,%templates
 
 {% include content-toggle.html content-toggle-id="ubuntuThingsboardQueue" toggle-spec=contenttogglespecqueue %} 
 
-## Step 7. Running
+## Step 6. Running
 
 Execute the following command to create log folders for the services and chown of these folders to the docker container users. 
 To be able to change user, **chown** command is used, which requires sudo permissions (script will request password for a sudo access): 
