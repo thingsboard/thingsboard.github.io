@@ -10,33 +10,36 @@ description: OAuth 2.0 Support
 
 ## Overview
 
-ThingsBoard allows you to provide Single Sign On functionality for your customers and automatically create tenant, customers or subcustomers using external user management platforms, that supports OAuth 2.0 protocol. As an example of these platforms: [Google](https://developers.google.com/identity/protocols/oauth2/openid-connect), [Okta](https://www.okta.com/), [Auth0](https://auth0.com/) etc.   
+ThingsBoard allows you to provide Single Sign On functionality for your customers and automatically create tenants, customers or subcustomers using external user management platforms, that supports OAuth 2.0 protocol.  
+A list of platforms which supports the OAUth 2.0 protocol: [Google](https://developers.google.com/identity/protocols/oauth2/openid-connect), [Okta](https://www.okta.com/), [Auth0](https://auth0.com/) etc.   
 
 
 ## OAuth 2.0 authentication flow
 
-ThingsBoard supports the Authorization Code grant type to exchange an authorization code for an access token. Once user returns to the ThingsBoard client via redirect URL, the platform will get the authorization code from the URL and use it to request an access token from external user management platform.
-Using [basic mapper](/docs/user-guide/oauth-2-support/#basic-mapper) or [custom mapper](/docs/user-guide/oauth-2-support/#custom-mapper) external user info object will be converted from external platform into ThingsBoard internal OAuth 2.0 user and then regular ThingsBoard authorization flow will happen.
+ThingsBoard supports the Authorization Code grant type to exchange an authorization code for an access token.   
+Once user returns to the ThingsBoard client via redirect URL, the platform will get the authorization code from the URL and use it to request an access token from the external user management platform.
+Using the [basic mapper](/docs/user-guide/oauth-2-support/#basic-mapper) or [custom mapper](/docs/user-guide/oauth-2-support/#custom-mapper) external user info object will be converted from external platform into ThingsBoard internal OAuth 2.0 user and then the regular ThingsBoard authorization flow will happen.
+
 
 ## Scenario description
 
-In this sample we are going to use [Google](https://developers.google.com/identity/protocols/oauth2/openid-connect) for authentication. 
-User is going to be logged into the Tenant and Tenant name is going to be equal to the user's email.
-If Tenant is not exist in the system, the newly Tenant is going to be created.
+In this sample we are going to use [Google](https://developers.google.com/identity/protocols/oauth2/openid-connect) for the authentication. 
+User is going to be logged into the Tenant and Tenant name is going to be equal to the users email.
+If Tenant does not exist in the system, the new Tenant will be created.
 
 As a second step we are going to add a new external provider for authentication - [Auth0](https://auth0.com/).
-In this case User is going to be logged into the Tenant which name is going to be equal to user's email domain name.
-Additionally, for every user we are going to create a new Customer and Customer name is going to be user's email. 
+In this case User is going to be logged into the Tenant which name is going to be equal to a user email domain name.
+Additionally, for every user we are going to create a new Customer and Customer name is going to be equal to a user email. 
 
-To map these external user infos from Google and Auth0 platform we are going to use built-in [basic mapper](/docs/user-guide/oauth-2-support/#basic-mapper). 
+To map those external user infos from Google and Auth0 platform we are going to use built-in [basic mapper](/docs/user-guide/oauth-2-support/#basic-mapper). 
 
-If [basic mapper](/docs/user-guide/oauth-2-support/#basic-mapper) functionality will not fit your business needs, with the help of [custom mapper](/docs/user-guide/oauth-2-support/#custom-mapper) you are able to add an implementation that fits your specific goals.
+If [basic mapper](/docs/user-guide/oauth-2-support/#basic-mapper) functionality will not fit your business needs, you can configure the [custom mapper](/docs/user-guide/oauth-2-support/#custom-mapper)  so that you are able to add an implementation that fits under your specific needs.
 
 ### Login with Google
 
-To use Google’s OAuth 2.0 authentication platform for Login, you must set up a project in the Google API Console to obtain OAuth 2.0 credentials.
+To use Google OAuth 2.0 authentication platform for Login, you need to set up a project in the Google API Console to obtain OAuth 2.0 credentials.
 
-Please follow the instructions on the [OpenID Connect](https://developers.google.com/identity/protocols/oauth2/openid-connect) page.
+Please, follow the instructions on the [OpenID Connect](https://developers.google.com/identity/protocols/oauth2/openid-connect) page to configure the OAuth 2.0 Client.
 After completing the instructions above, you should have a new OAuth Client with credentials consisting of a Client ID and a Client Secret.
 
 ![image](/images/user-guide/oauth-2-support/credentials-list.png)
@@ -133,6 +136,7 @@ Here is the list of modified parameters:
 # Security parameters
 security:
   ...
+
   oauth2:
     enabled: true
     loginProcessingUrl: /login/oauth2/code/
@@ -174,15 +178,77 @@ security:
             password:
 ```
 
+So that the resulted thingsboard.yml oauth2 configurations will look similar to the provided below:
+```bash
+security:
+  ...
+  oauth2:
+    # Enable/disable OAuth 2 login functionality
+    # For details please refer to https://thingsboard.io/docs/user-guide/oauth-2-support/
+    enabled: "${SECURITY_OAUTH2_ENABLED:true}"
+    # Redirect URL where access code from external user management system will be processed
+    loginProcessingUrl: "${SECURITY_OAUTH2_LOGIN_PROCESSING_URL:/login/oauth2/code/}"
+    # List of SSO clients
+    clients:
+      default:
+        # Label that going to be show on login button - 'Login with {loginButtonLabel}'
+        loginButtonLabel: "${SECURITY_OAUTH2_DEFAULT_LOGIN_BUTTON_LABEL:Google}"
+        # Icon that going to be show on login button. Material design icon ID (https://material.angularjs.org/latest/api/directive/mdIcon)
+        loginButtonIcon: "${SECURITY_OAUTH2_DEFAULT_LOGIN_BUTTON_ICON:mdi:google}"
+        clientName: "${SECURITY_OAUTH2_DEFAULT_CLIENT_NAME:ThingsBoard}"
+        clientId: "${SECURITY_OAUTH2_DEFAULT_CLIENT_ID:XXXXXXXXXXXXXXXXXX}"
+        clientSecret: "${SECURITY_OAUTH2_DEFAULT_CLIENT_SECRET:YYYYYYYYYYYYYYYYY}"
+        accessTokenUri: "${SECURITY_OAUTH2_DEFAULT_ACCESS_TOKEN_URI:https://oauth2.googleapis.com/token}"
+        authorizationUri: "${SECURITY_OAUTH2_DEFAULT_AUTHORIZATION_URI:https://accounts.google.com/o/oauth2/auth}"
+        scope: "${SECURITY_OAUTH2_DEFAULT_SCOPE:openid,email,profile}"
+        # Redirect URL that must be in sync with 'security.oauth2.loginProcessingUrl', but domain name added
+        redirectUriTemplate: "${SECURITY_OAUTH2_DEFAULT_REDIRECT_URI_TEMPLATE:http://localhost:8080/login/oauth2/code/}"
+        jwkSetUri: "${SECURITY_OAUTH2_DEFAULT_JWK_SET_URI:https://www.googleapis.com/oauth2/v3/certs}"
+        # 'authorization_code', 'implicit', 'refresh_token' or 'client_credentials'
+        authorizationGrantType: "${SECURITY_OAUTH2_DEFAULT_AUTHORIZATION_GRANT_TYPE:authorization_code}"
+        clientAuthenticationMethod: "${SECURITY_OAUTH2_DEFAULT_CLIENT_AUTHENTICATION_METHOD:post}" # basic or post
+        userInfoUri: "${SECURITY_OAUTH2_DEFAULT_USER_INFO_URI:https://openidconnect.googleapis.com/v1/userinfo}"
+        userNameAttributeName: "${SECURITY_OAUTH2_DEFAULT_USER_NAME_ATTRIBUTE_NAME:email}"
+                mapperConfig:
+                  # Allows to create user if it not exists
+                  allowUserCreation: "${SECURITY_OAUTH2_DEFAULT_MAPPER_ALLOW_USER_CREATION:true}"
+                  # Allows user to setup ThingsBoard internal password and login over default Login window
+                  activateUser: "${SECURITY_OAUTH2_DEFAULT_MAPPER_ACTIVATE_USER:fae}"
+                  # Mapper type of converter from external user into internal - 'basic' or 'custom'
+                  type: "${SECURITY_OAUTH2_DEFAULT_MAPPER_TYPE:basic}"
+                  basic:
+                    # Key from attributes of external user object to use as email
+                    emailAttributeKey: "${SECURITY_OAUTH2_DEFAULT_MAPPER_BASIC_EMAIL_ATTRIBUTE_KEY:email}"
+                    firstNameAttributeKey: "${SECURITY_OAUTH2_DEFAULT_MAPPER_BASIC_FIRST_NAME_ATTRIBUTE_KEY:}"
+                    lastNameAttributeKey: "${SECURITY_OAUTH2_DEFAULT_MAPPER_BASIC_LAST_NAME_ATTRIBUTE_KEY:}"
+                    # Strategy for generating Tenant from external user object - 'domain', 'email' or 'custom'
+                    # 'domain' - name of the Tenant will be extracted as domain from the email of the user
+                    # 'email' - name of the Tenant will email of the user
+                    # 'custom' - please configure 'tenantNamePattern' for custom mapping
+                    tenantNameStrategy: "${SECURITY_OAUTH2_DEFAULT_MAPPER_BASIC_TENANT_NAME_STRATEGY:domain}"
+                    # %{attribute_key} as placeholder for attribute value of attributes of external user object
+                    tenantNamePattern: "${SECURITY_OAUTH2_DEFAULT_MAPPER_BASIC_TENANT_NAME_PATTERN:}"
+                    # If this field is not empty, user will be created as a user under defined Customer
+                    # %{attribute_key} as placeholder for attribute value of attributes of external user object
+                    customerNamePattern: "${SECURITY_OAUTH2_DEFAULT_MAPPER_BASIC_CUSTOMER_NAME_PATTERN:}"
+                    parentCustomerNamePattern: "${SECURITY_OAUTH2_DEFAULT_MAPPER_BASIC_PARENT_CUSTOMER_NAME_PATTERN:}" # %{attribute_key} as placeholder for attributes value b$
+                    # NOTE: Next configurations available only in Professional Edition
+                    userGroupsNamePattern: "${SECURITY_OAUTH2_DEFAULT_MAPPER_BASIC_USER_GROUPS_NAME_PATTERN:Tenant Administrators}" # list of comma separated user group names,$
+                  custom:
+                    url: "${SECURITY_OAUTH2_DEFAULT_MAPPER_CUSTOM_URL:}"
+                    username: "${SECURITY_OAUTH2_DEFAULT_MAPPER_CUSTOM_USERNAME:}"
+                    password: "${SECURITY_OAUTH2_DEFAULT_MAPPER_CUSTOM_PASSWORD:}"
+
+```
 If we navigate to Login screen, we will see additional Login option with Google:
 
 ![image](/images/user-guide/oauth-2-support/login-with-google.png)
 
-Once we click it and select on of our Google Account, we are going to be logged into ThingsBoard with our Google's email as Tenant Administrator email:
+Once we click it and select on of our Google Account, we are going to be logged into ThingsBoard with our Google's email as a Tenant Administrator email:
 
 ![image](/images/user-guide/oauth-2-support/google-email.png)
 
-If we logged as System Administrator, you will see that Tenant name is our Google email's, according to basic mapper:
+If we will log as the System Administrator, you will see that the Tenant name is our Google's email, according to basic mapper:
 
 ![image](/images/user-guide/oauth-2-support/tenant-title-as-email.png)
 
