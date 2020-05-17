@@ -178,7 +178,8 @@ security:
             password:
 ```
 
-So that the resulted thingsboard.yml oauth2 configurations will look similar to the provided below:
+So that the resulted thingsboard.yml oauth2 configurations for Google will look similar to the provided below:
+
 ```bash
 security:
   ...
@@ -240,7 +241,7 @@ security:
                     password: "${SECURITY_OAUTH2_DEFAULT_MAPPER_CUSTOM_PASSWORD:}"
 
 ```
-If we navigate to Login screen, we will see additional Login option with Google:
+If we navigate to the Login screen, we will see additional Login option with Google:
 
 ![image](/images/user-guide/oauth-2-support/login-with-google.png)
 
@@ -248,14 +249,14 @@ Once we click it and select on of our Google Account, we are going to be logged 
 
 ![image](/images/user-guide/oauth-2-support/google-email.png)
 
-If we will log as the System Administrator, you will see that the Tenant name is our Google's email, according to basic mapper:
+If you will login as the System Administrator, you will see that the Tenant name is our Google's email, according to basic mapper:
 
 ![image](/images/user-guide/oauth-2-support/tenant-title-as-email.png)
 
 ### Login with Auth0
 
 Now let's add one more SSO provider to our list - [Auth0](https://auth0.com/).
-This time we are going to create Customers for our users inside a single domain tenant.
+This time we are going to create customers for our users inside a single domain tenant.
 
 To use Auth0 authentication platform for Login, let's create new application of 'Regular Web App' type following this [link](https://auth0.com/docs/quickstarts/).
 
@@ -275,15 +276,79 @@ As well please update you allowed Callback URLs:
 http://localhost:8080/login/oauth2/code/
 ```
 
+**Please, note** that it is not necessary to update the Application login URI.
+
 ![image](/images/user-guide/oauth-2-support/auth0-allowed-redirect.png)
 
-In the advanced details section you'll be able to find all the required URLs (endpoints) for OAuth 2.0 configuration:
+In the advanced details section you will be able to find all the required URLs (endpoints) for OAuth 2.0 configuration:
 
 ![image](/images/user-guide/oauth-2-support/auth0-advanced-endpoints.png)
 
 #### Configuration of ThingsBoard
 
-Now it's time to update [thingsboard.yml](/docs/user-guide/install/config/#thingsboardyml) with the additional SSO provider. 
+Now it is time to update the [thingsboard.yml](/docs/user-guide/install/config/#thingsboardyml) with the additional SSO provider. 
+This snippet contains both providers that are used in our sample:
+
+```bash
+# Security parameters
+security:
+  ...
+  oauth2:
+    enabled: true
+    loginProcessingUrl: /login/oauth2/code/
+    clients:
+      auth0:
+        loginButtonLabel: Auth0
+        loginButtonIcon: mdi:shield-account
+        clientName: My App
+        clientId: XXXXXXXXXXXXXXXXXXX
+        clientSecret: YYYYYYYYYYYYYYYYY
+        accessTokenUri: https://dev-jwnt7l67.auth0.com/oauth/token
+        authorizationUri: https://dev-jwnt7l67.auth0.com/authorize
+        scope: openid,email,profile
+        redirectUriTemplate: http://localhost:8080/login/oauth2/code/
+        jwkSetUri: https://dev-jwnt7l67.auth0.com/.well-known/jwks.json
+        authorizationGrantType: authorization_code
+        clientAuthenticationMethod: post
+        userInfoUri: https://dev-jwnt7l67.auth0.com/userinfo
+        userNameAttributeName: email
+        mapperConfig:
+          type: basic
+          allowUserCreation: true
+          activateUser: false
+          basic:
+            emailAttributeKey: email
+            firstNameAttributeKey: 
+            lastNameAttributeKey: 
+            tenantNameStrategy: domain
+            tenantNamePattern:
+            customerNamePattern: %{email}
+            #
+            # NOTE: Next configurations available only in Professional Edition
+            #
+            parentCustomerNamePattern:
+            userGroupsNamePattern: Customer Users
+          custom:
+            url:
+            username:
+            password:
+```
+
+If we navigate to Login screen, we will see two possible Login with options - *Google* and *Auth0*:
+
+![image](/images/user-guide/oauth-2-support/login-with-google-and-auth0.png)
+
+Once we click it and select our *Auth0* Account, we are going to be logged into ThingsBoard with our email's as Customer User:
+
+![image](/images/user-guide/oauth-2-support/customer-email.png)
+
+If we are logged as System Administrator, you will see that Tenant name is our *Auth0* email domain name, according to basic mapper:
+
+![image](/images/user-guide/oauth-2-support/tenant-title-as-domain.png)
+
+We have completed our sample and now your users not required to create accounts inside ThingsBoard - they can use already exist SSO providers for this.
+
+## Resulted Snipped
 This snippet contains both providers that are used in our sample:
 
 ```bash
@@ -365,24 +430,71 @@ security:
             username:
             password:
 ```
+So that the resulted thingsboard.yml oauth2 configurations for OAuth0 will look similar to the provided below:
 
-If we navigate to Login screen, we will see two possible Login with options - *Google* and *Auth0*:
-
-![image](/images/user-guide/oauth-2-support/login-with-google-and-auth0.png)
-
-Once we click it and select our *Auth0* Account, we are going to be logged into ThingsBoard with our email's as Customer User:
-
-![image](/images/user-guide/oauth-2-support/customer-email.png)
-
-If we logged as System Administrator, you will see that Tenant name is our *Auth0* email domain name, according to basic mapper:
-
-![image](/images/user-guide/oauth-2-support/tenant-title-as-domain.png)
-
-We have completed our sample and now your users not required to create accounts inside ThingsBoard - they can use already exist SSO providers for this.
-
+```bash
+# Security parameters
+security:
+    ...
+    oauth2:
+        # Enable/disable OAuth 2 login functionality
+        # For details please refer to https://thingsboard.io/docs/user-guide/oauth-2-support/
+        enabled: "${SECURITY_OAUTH2_ENABLED:true}"
+        # Redirect URL where access code from external user management system will be processed
+        loginProcessingUrl: "${SECURITY_OAUTH2_LOGIN_PROCESSING_URL:/login/oauth2/code/}"
+        # List of SSO clients
+        clients:
+          auth0:
+            # Label that going to be show on login button - 'Login with {loginButtonLabel}'
+            loginButtonLabel: "${SECURITY_OAUTH2_DEFAULT_LOGIN_BUTTON_LABEL:Auth0}"
+            # Icon that going to be show on login button. Material design icon ID (https://material.angularjs.org/latest/api/directive/mdIcon)
+            loginButtonIcon: "${SECURITY_OAUTH2_DEFAULT_LOGIN_BUTTON_ICON:}"
+            clientName: "${SECURITY_OAUTH2_DEFAULT_CLIENT_NAME:ThingsBoard}"
+            clientId: "${SECURITY_OAUTH2_DEFAULT_CLIENT_ID:e2LFGQLpSn4vfw7ZgW5rl7WZnej2hY0J}"
+            clientSecret: "${SECURITY_OAUTH2_DEFAULT_CLIENT_SECRET:kKOjahMP9vKNknQvqP7PeRJoB58ggQ_edL3uyirb5i2PiAbIBOpT6GzI4--3S7Or}"
+            accessTokenUri: "${SECURITY_OAUTH2_DEFAULT_ACCESS_TOKEN_URI:https://tbsupport.eu.auth0.com/oauth/token}"
+            authorizationUri: "${SECURITY_OAUTH2_DEFAULT_AUTHORIZATION_URI:https://tbsupport.eu.auth0.com/authorize}"
+            scope: "${SECURITY_OAUTH2_DEFAULT_SCOPE:openid,email,profile}"
+            # Redirect URL that must be in sync with 'security.oauth2.loginProcessingUrl', but domain name added
+            redirectUriTemplate: "${SECURITY_OAUTH2_DEFAULT_REDIRECT_URI_TEMPLATE:http://tb.tbsupport.xyz/login/oauth2/code/}"
+            jwkSetUri: "${SECURITY_OAUTH2_DEFAULT_JWK_SET_URI:https://tbsupport.eu.auth0.com/.well-known/jwks.json}"
+            # 'authorization_code', 'implicit', 'refresh_token' or 'client_credentials'
+            authorizationGrantType: "${SECURITY_OAUTH2_DEFAULT_AUTHORIZATION_GRANT_TYPE:authorization_code}"
+            clientAuthenticationMethod: "${SECURITY_OAUTH2_DEFAULT_CLIENT_AUTHENTICATION_METHOD:post}" # basic or post
+            userInfoUri: "${SECURITY_OAUTH2_DEFAULT_USER_INFO_URI:https://tbsupport.eu.auth0.com/userinfo}"
+            userNameAttributeName: "${SECURITY_OAUTH2_DEFAULT_USER_NAME_ATTRIBUTE_NAME:email}"
+            mapperConfig:
+              # Allows to create user if it not exists
+              allowUserCreation: "${SECURITY_OAUTH2_DEFAULT_MAPPER_ALLOW_USER_CREATION:true}"
+              # Allows user to setup ThingsBoard internal password and login over default Login window
+              activateUser: "${SECURITY_OAUTH2_DEFAULT_MAPPER_ACTIVATE_USER:false}"
+              # Mapper type of converter from external user into internal - 'basic' or 'custom'
+              type: "${SECURITY_OAUTH2_DEFAULT_MAPPER_TYPE:basic}"
+              basic:
+                # Key from attributes of external user object to use as email
+                emailAttributeKey: "${SECURITY_OAUTH2_DEFAULT_MAPPER_BASIC_EMAIL_ATTRIBUTE_KEY:email}"
+                firstNameAttributeKey: "${SECURITY_OAUTH2_DEFAULT_MAPPER_BASIC_FIRST_NAME_ATTRIBUTE_KEY:}"
+                lastNameAttributeKey: "${SECURITY_OAUTH2_DEFAULT_MAPPER_BASIC_LAST_NAME_ATTRIBUTE_KEY:}"
+                # Strategy for generating Tenant from external user object - 'domain', 'email' or 'custom'
+                # 'domain' - name of the Tenant will be extracted as domain from the email of the user
+                # 'email' - name of the Tenant will email of the user
+                # 'custom' - please configure 'tenantNamePattern' for custom mapping
+                tenantNameStrategy: "${SECURITY_OAUTH2_DEFAULT_MAPPER_BASIC_TENANT_NAME_STRATEGY:domain}"
+                # %{attribute_key} as placeholder for attribute value of attributes of external user object
+                tenantNamePattern: "${SECURITY_OAUTH2_DEFAULT_MAPPER_BASIC_TENANT_NAME_PATTERN:}"
+                # If this field is not empty, user will be created as a user under defined Customer
+                # %{attribute_key} as placeholder for attribute value of attributes of external user object
+                customerNamePattern: "${SECURITY_OAUTH2_DEFAULT_MAPPER_BASIC_CUSTOMER_NAME_PATTERN: %{email}}"
+                parentCustomerNamePattern: "${SECURITY_OAUTH2_DEFAULT_MAPPER_BASIC_PARENT_CUSTOMER_NAME_PATTERN:}" # %{attribute_key} as placeholder for attributes value by key
+                userGroupsNamePattern: "${SECURITY_OAUTH2_DEFAULT_MAPPER_BASIC_USER_GROUPS_NAME_PATTERN: Customer Users}" # list of comma separated user group names, %{attribute_key} as placeholder for attributes value by key
+              custom:
+                url: "${SECURITY_OAUTH2_DEFAULT_MAPPER_CUSTOM_URL:}"
+                username: "${SECURITY_OAUTH2_DEFAULT_MAPPER_CUSTOM_USERNAME:}"
+                password: "${SECURITY_OAUTH2_DEFAULT_MAPPER_CUSTOM_PASSWORD:}"
+```
 ## Mapping of external user into ThingBoard internal user structure
 
-Mapping of the external user info object into ThingBoard user can be achieved in two ways - using **Basic** and **Custom** mappers. 
+Mapping of the external user info object into ThingBoard user can be achieved in two ways - using the **Basic** and **Custom** mappers. 
 Main functionality of the mapper is to map key-value attributes from the external user info object into expected structure of the ThingsBoard OAuth 2.0 User:
 
 ```java
@@ -396,6 +508,7 @@ public class OAuth2User {
     private String lastName;
     
     // NOTE: Next configurations available only in Professional Edition
+
     private List<String> userGroups;
     private String parentCustomerName;
     private CustomerId parentCustomerId;
@@ -441,13 +554,13 @@ mapperConfig:
     userGroupsNamePattern: "${SECURITY_OAUTH2_DEFAULT_MAPPER_BASIC_USER_GROUPS_NAME_PATTERN:Tenant Administrators}" 
 ```
 
-To use basic mapper please set *mapperConfig.type* or *SECURITY_OAUTH2_DEFAULT_MAPPER_TYPE* environment variable to **basic**. 
+To use the basic mapper please set *mapperConfig.type* or *SECURITY_OAUTH2_DEFAULT_MAPPER_TYPE* environment variable to **basic**. 
 
 Here are the details of other properties:
 
 - **allowUserCreation**
-  If this option set to **true**, then if user account doesn't exist in the ThingsBoard yet, it's going to be created.
-  If this option set to **false**, user will get access denied error if he tries to login with external OAuth 2.0 provider, but user doesn't exist yet.   
+  If this option set to **true**, then if user account does not exist in the ThingsBoard yet, it will be created.
+  If this option set to **false**, user will get access denied error if will try to login with an external OAuth 2.0 provider, but there is no user exists with those credentials in the ThingsBoard.   
  
 - **emailAttributeKey**
   This is the key of the attributes from the external OAuth 2.0 user info that is going to be used as ThingsBoard user email property.
@@ -466,17 +579,17 @@ Here are the details of other properties:
      - **custom** - you can define a custom pattern for Tenant name. Please see *tenantNamePattern*.
 
 - **tenantNamePattern**
-  In case *tenantNameStrategy* is **custom** you can specify a name of the Tenant where user is going to be created with a help of custom pattern.
-  You can use attributes from the external user info object to put them into Tenant name. Please use %{attribute_key} as placeholder for attribute value.
+  In case if the *tenantNameStrategy* is **custom** you can specify a name of the Tenant where user is going to be created with a help of custom pattern.
+  You can use attributes from the external user info object to put them into the Tenant's name. Please use %{attribute_key} as placeholder for attribute value.
   
   Tenant pattern examples:
      - **Demo Tenant**           # Hard coded Tenant name
-     - **Demo Tenant %{email}**  # In this case if user's email is *test@demo.com*, Tenant name is going to be *'Demo Tenant test@demo.com'*
-     - **%{givenName}**            # In this case if user's givenName is *Demo User*, Tenant name is going to be *'Demo User'* 
+     - **Demo Tenant %{email}**  # In this case if user's email is *test@demo.com*, Tenant's name will be the *'Demo Tenant test@demo.com'*
+     - **%{givenName}**          # In this case if user's givenName attribute is *Demo User*, Tenant name will be *'Demo User'* 
         
 - **customerNamePattern**
   User can be created under specific Customer, and not under the Tenant, if this pattern field is not empty.
-  You can use attributes from the external user info object to put them into Customer name. Please use %{attribute_key} as placeholder for attribute value.
+  You can use attributes from the external user info object to put them into the Customer name. Please use %{attribute_key} as placeholder for attribute value.
   
   Customer pattern examples:
      - **Demo Customer**             # Hard coded Customer name
@@ -532,7 +645,7 @@ public class OAuth2User {
 }
 ```
 
-Please use this [base implementation](https://github.com/thingsboard/custom-oauth2-mapper) as a starting point for your custom mapper.
+Please refer to this [base implementation](https://github.com/thingsboard/custom-oauth2-mapper) as a starting point for your custom mapper.
 
 Configuration of this mapper done over [thingsboard.yml](/docs/user-guide/install/config/#thingsboardyml):
 
@@ -599,7 +712,7 @@ Here is the example of demo configuration:
 
 ## HaProxy configuration
 
-If ThingsBoard is running under loadbalancer like HAProxy please configure properly balance algorithm to make sure correct session is available on the ThingsBoard instance: 
+If ThingsBoard is running under loadbalancer like HAProxy please configure properly balance algorithm to make sure that the correct session is available on the ThingsBoard instance: 
 ```bash
 backend tb-api-backend
   ...
