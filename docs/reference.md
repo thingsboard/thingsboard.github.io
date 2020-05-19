@@ -127,7 +127,7 @@ Please follow the links listed below to learn more and choose the right architec
 
 ## SQL vs NoSQL vs Hybrid database approach
 
-ThingsBard uses database to store 
+ThingsBoard uses database to store 
 [entities](/docs/user-guide/entities-and-relations/) (devices, assets, customers, dashboards, etc) and 
 [telemetry](/docs/user-guide/telemetry/) data (attributes, timeseries sensor readings, statistics, events). 
 Platform supports three database options at the moment:
