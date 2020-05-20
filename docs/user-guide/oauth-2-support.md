@@ -108,6 +108,10 @@ security:
             # If this field is not empty, user will be created as a user under defined Customer
             # %{attribute_key} as placeholder for attribute value of attributes of external user object
             customerNamePattern: "${SECURITY_OAUTH2_DEFAULT_MAPPER_BASIC_CUSTOMER_NAME_PATTERN:}"
+            # If this field is not empty, user will be created with default defined Dashboard
+            defaultDashboardName: "${SECURITY_OAUTH2_DEFAULT_MAPPER_BASIC_DEFAULT_DASHBOARD_NAME:}"
+            # If this field is set 'true' along with non-empty 'defaultDashboardName', user will start from the defined Dashboard in fullscreen mode
+            alwaysFullScreen: "${SECURITY_OAUTH2_DEFAULT_MAPPER_BASIC_ALWAYS_FULL_SCREEN:false}"
             # 
             # NOTE: Next configurations available only in Professional Edition
             #
@@ -163,6 +167,9 @@ security:
             tenantNameStrategy: custom
             tenantNamePattern:
             customerNamePattern:
+            alwaysFullScreen: false
+            defaultDashboardName:
+
             #
             # NOTE: Next configurations available only in Professional Edition
             #
@@ -254,6 +261,8 @@ security:
             tenantNameStrategy: email
             tenantNamePattern:
             customerNamePattern:
+            alwaysFullScreen: false
+            defaultDashboardName:
             #
             # NOTE: Next configurations available only in Professional Edition
             #
@@ -289,6 +298,8 @@ security:
             tenantNameStrategy: domain
             tenantNamePattern:
             customerNamePattern: %{email}
+            alwaysFullScreen: false
+            defaultDashboardName:
             #
             # NOTE: Next configurations available only in Professional Edition
             #
@@ -328,6 +339,8 @@ public class OAuth2User {
     private String email;
     private String firstName;
     private String lastName;
+    private boolean alwaysFullScreen;
+    private String defaultDashboardName;
     
     // NOTE: Next configurations available only in Professional Edition
     private List<String> userGroups;
@@ -364,6 +377,10 @@ mapperConfig:
     # If this field is not empty, user will be created as a user under defined Customer
     # %{attribute_key} as placeholder for attribute value of attributes of external user object
     customerNamePattern: "${SECURITY_OAUTH2_DEFAULT_MAPPER_BASIC_CUSTOMER_NAME_PATTERN:}"
+    # If this field is not empty, user will be created with default defined Dashboard
+    defaultDashboardName: "${SECURITY_OAUTH2_DEFAULT_MAPPER_BASIC_DEFAULT_DASHBOARD_NAME:}"
+    # If this field is set 'true' along with non-empty 'defaultDashboardName', user will start from the defined Dashboard in fullscreen mode
+    alwaysFullScreen: "${SECURITY_OAUTH2_DEFAULT_MAPPER_BASIC_ALWAYS_FULL_SCREEN:false}"
     # 
     # NOTE: Next configurations available only in Professional Edition
     #
@@ -417,6 +434,12 @@ Here are the details of other properties:
      - **Demo Customer %{email}**    # If user's *email* attribute is *test@demo.com*, Customer name is going to be *'Demo Customer test@demo.com'*
      - **%{city}**                   # If user's *city* attribute is *New York*, Customer name is going to be *'New York'* 
 
+- **defaultDashboardName**
+  User will be redirected to specific Dashboard, if this field is not empty.
+  
+- **alwaysFullScreen**
+  If this field is **true** and **defaultDashboardName** is not empty, User will be redirected to specific Dashboard in fullscreen mode.
+
 - **parentCustomerNamePattern**
 
   **NOTE: This configuration available only in Professional Edition**
@@ -458,6 +481,8 @@ public class OAuth2User {
     private String email;
     private String firstName;
     private String lastName;
+    private boolean alwaysFullScreen;
+    private String defaultDashboardName;
     
     // NOTE: Next configurations available only in Professional Edition
     private List<String> userGroups;
