@@ -34,14 +34,14 @@ sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.
 Download installation package.
 
 ```bash
-wget https://github.com/thingsboard/thingsboard/releases/download/v2.5/thingsboard-2.5.rpm
+wget https://github.com/thingsboard/thingsboard/releases/download/v3.0/thingsboard-3.0.rpm
 ```
 {: .copy-code}
 
 Install ThingsBoard as a service
 
 ```bash
-sudo rpm -Uvh thingsboard-2.5.rpm
+sudo rpm -Uvh thingsboard-3.0.rpm
 ```
 {: .copy-code}
 
