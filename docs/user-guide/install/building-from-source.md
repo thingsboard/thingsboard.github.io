@@ -39,7 +39,7 @@ You can clone source code of the project from the official [github repo](https:/
 ```bash
 git clone git@github.com:thingsboard/thingsboard.git
 # checkout latest release branch
-git checkout release-2.5
+git checkout release-3.0
 ```
 
 #### Build
@@ -63,4 +63,3 @@ You can find debian, rpm and windows packages in the target folder:
 ```bash
 application/target
 ```
- 
