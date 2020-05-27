@@ -28,4 +28,5 @@ First we need to go for the credentials tab.
 
 ![image](/images/user-guide/oauth-2-support/google/google-console-to-credentials.png)
 
+Then we need to create the OAuth client ID 
  
