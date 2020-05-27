@@ -24,7 +24,7 @@ The example below demonstrates how to connect to a ThingsBoard MQTT server that 
 You will need to have the public key of server certificate in PEM format. 
 See [following instructions](/docs/user-guide/mqtt-over-ssl/#self-signed-certificate-generation) for more details on server-side configuration.
 
-Download Python client example [**one-way-ssl-mqtt-client.py**](https://raw.githubusercontent.com/thingsboard/thingsboard/master/tools/src/main/python/one-way-ssl-mqtt-client.py).
+Download Python client example [**one-way-ssl-mqtt-client.py**](/docs/user-guide/resources/mqtt-over-ssl/one-way-ssl-mqtt-client.py).
 Specify your access token and path to the public key of the server certificate.
 
 ```python
@@ -32,12 +32,12 @@ Specify your access token and path to the public key of the server certificate.
 
 client.tls_set(ca_certs="mqttserver.pub.pem", certfile=None, keyfile=None, cert_reqs=ssl.CERT_REQUIRED, tls_version=ssl.PROTOCOL_TLSv1, ciphers=None);
 
-client.username_pw_set("TEST_TOKEN")
+client.username_pw_set("accessToken")
 
 # Some code omitted
 ```
 
-**Note** Script uses **8883** mqtt port and requires paho mqtt library that you can install using the following command: **pip install paho-mqtt**
+**Note** Script uses **8883** mqtt port and requires paho mqtt library that you can install using the following command: **pip3 install paho-mqtt**
  
 Run the script:
 
