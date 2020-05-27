@@ -119,7 +119,15 @@ The **key_store** Property must point to the **.jks** file location. **key_store
 After these values are set, launch or restart your ThingsBoard server.
 
 ### Example of configuration 
-The next combination of the keygen.properties example was used to generate a proper .jks and .pem in a case of the ThingsBoard uses the next [**thingsboard.conf**](/docs/user-guide/resources/mqtt-over-ssl/thingsboard.conf)  and the has the domain is "localhost".
+The next combination of the keygen.properties example was used to generate a proper .jks and .pem in a case of the ThingsBoard uses the next default thingsboard.conf enchantments 
+
+```bash
+...
+export MQTT_SSL_ENABLED=true
+export MQTT_BIND_PORT=8883
+...
+``` 
+
 Was set for the default ThingsBoard installation of the **2.5 version**. 
 
 **keygen.properties:** 
