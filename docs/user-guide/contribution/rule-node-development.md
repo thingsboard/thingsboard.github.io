@@ -359,7 +359,7 @@ To run Rule Node UI container in hot redeploy mode:
 cd ${TB_WORK_DIR}/ui/server.js
 ```
     
- - second, you need to running UI container in hot redeploy mode. Please, refer to the following link to see how to do this: [Running UI container in hot redeploy mode](/docs/user-guide/contribution/how-to-contribute/#running-ui-container-in-hot-redeploy-mode).   
+ - second, you need to run UI container in hot redeploy mode. Please, refer to the following link to see how to do this: [Running UI container in hot redeploy mode](/docs/user-guide/contribution/how-to-contribute/#running-ui-container-in-hot-redeploy-mode).   
  
  - next you need to change constant **forwardPort** from **8080** to **3000** in file **server.js** that should be here:
   
