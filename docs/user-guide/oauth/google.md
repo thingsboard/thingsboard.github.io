@@ -21,7 +21,7 @@ To map those external user infos from Google and Auth0 platform we are going to 
 
 If [basic mapper](/docs/user-guide/oauth-2-support/#basic-mapper) functionality will not fit your business needs, you can configure the [custom mapper](/docs/user-guide/oauth-2-support/#custom-mapper)  so that you are able to add an implementation that fits under your specific needs.
 
-## Login with the Google
+## Login with Google
 
 ### Preparations
 To apply the configurations properly, we need to obtain the **clientName**,  **clientId** and **clientSecret** first. For this reasons we first go for the [Google Developer Consnole](https://console.developers.google.com/).  
@@ -158,3 +158,5 @@ After that, proceed to the User Interface of yours, to make sure there are no tr
 In case of the troubleshooting with those, please, contact us [using the contact us form](https://thingsboard.io/docs/contact-us/).
 
 ## Next Steps
+
+{% assign currentGuide = "OAuth" %}{% include templates/guides-banner.md %}
