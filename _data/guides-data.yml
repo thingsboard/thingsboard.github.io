@@ -468,6 +468,15 @@
       subtitle: Learn how to schedule and generate reports based on existing dashboards.
       pe: true
       video: true
+
+- title: OAuth 2.0
+  subtitle: Learn how to step-by-step setup OAuth with different providers.
+  id: OAuth
+  section:
+  - path: /docs/user-guide/oauth/google
+    title: Google OAuth example
+    subtitle: Learn how to step-by-step setup OAuth with Google.
+
 - title: Contribution and Development
   subtitle: Learn how to contribute to Thingsboard, customize & develop custom widgets and rule nodes
   id: Contribution
