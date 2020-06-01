@@ -95,7 +95,7 @@ description: ThingsBoard IoT platform upgrade instructions
 ## Upgrading to 3.0 {#upgrading-to-30}
 
 
-These steps are applicable for 2.5 ThingsBoard version.
+These steps are applicable for 2.5+ ThingsBoard version.
 
 ### Ubuntu/CentOS {#ubuntucentos-30}
 

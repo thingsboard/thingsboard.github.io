@@ -168,7 +168,7 @@ Do nothing, postgresql is already running.
 ## Upgrading to 3.0PE
 
 
-These steps are applicable for 2.5PE ThingsBoard Professional Edition version.
+These steps are applicable for 2.5PE+ ThingsBoard Professional Edition version.
 
 ### Ubuntu/CentOS {#ubuntucentos-30}
 
