@@ -93,30 +93,68 @@ sudo chown thingsboard:thingsboard /etc/thingsboard/conf/mqttserver.jks
 
 ### Server configuration
 
-Locate your **thingsboard.yml** file and uncomment the lines after "*# Uncomment the following lines to enable ssl for MQTT*":
+Locate your **thingsboard.conf** file and set the MQTT_SSL_ENABLED value equals  true.
 
-```bash
-# MQTT server parameters
-mqtt:
-  bind_address: "${MQTT_BIND_ADDRESS:0.0.0.0}"
-  bind_port: "${MQTT_BIND_PORT:8883}"
-  adaptor: "${MQTT_ADAPTOR_NAME:JsonMqttAdaptor}"
-  timeout: "${MQTT_TIMEOUT:10000}"
-# Uncomment the following lines to enable ssl for MQTT
-  ssl:
-    key_store: mqttserver.jks
-    key_store_password: server_ks_password
-    key_password: server_key_password
-    key_store_type: JKS
+You can add the next row for to the **thingsboard.conf**, so that the MQTT over SSL will be enabled.  
+```bash 
+...
+export MQTT_SSL_ENABLED=true
+
 ```
 
 You may also want to change **mqtt.bind_port** to 8883 which is recommended for MQTT over SSL servers.
+
+The MQTT bind port can be changed with the next row within the **thingsboard.conf** being added:
+
+```bash
+...
+export MQTT_BIND_PORT=8883
+
+```
 
 The **key_store** Property must point to the **.jks** file location. **key_store_password** and **key_password** must be the same as were used in keystore generation.
 
 **NOTE:** ThingsBoard supports **.p12** keystores as well. if this is the case, set **key_store_type** value to **'PKCS12'**
 
-After these values are set, launch or restart your thingsboard server.
+After these values are set, launch or restart your ThingsBoard server.
+
+### Example of configuration 
+The next combination of the **keygen.properties** example was used to generate a proper .jks and .pem in a case of the ThingsBoard uses the next default **thingsboard.conf** with the enchantments being specified below.   
+This example is based on the default ThingsBoard installation of the **2.5 version**. 
+
+
+**thingsboard.conf:**
+```bash
+...
+export MQTT_SSL_ENABLED=true
+export MQTT_BIND_PORT=8883
+...
+``` 
+
+
+**keygen.properties:** 
+```bash
+DOMAIN_SUFFIX=localhost
+ORGANIZATIONAL_UNIT=Thingsboard
+ORGANIZATION=Thingsboard
+CITY=SF
+STATE_OR_PROVINCE=CA
+TWO_LETTER_COUNTRY_CODE=US
+
+SERVER_KEYSTORE_PASSWORD=server_ks_password
+SERVER_KEY_PASSWORD=server_key_password
+
+SERVER_KEY_ALIAS="serveralias"
+SERVER_FILE_PREFIX="mqttserver"
+SERVER_KEYSTORE_DIR="/etc/thingsboard/conf"
+
+CLIENT_KEYSTORE_PASSWORD=password
+CLIENT_KEY_PASSWORD=password
+
+CLIENT_KEY_ALIAS="clientalias"
+CLIENT_FILE_PREFIX="mqttclient"
+```
+
 
 ## Client Examples
 

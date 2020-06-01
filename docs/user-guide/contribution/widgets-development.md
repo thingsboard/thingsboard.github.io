@@ -105,27 +105,33 @@ For example, "Function" can only be selected as datasource type in widget dataso
 All widget related code is located in the [JavaScript section](#javascript-section).
 The built-in variable **self** that is a reference to the widget instance is also available.
 Each widget function should be defined as a property of the **self** variable.
-**self** variable has property **ctx** - a reference to widget context that has all necessary API and data used by widget instance.
+**self** variable has property **ctx** of type [WidgetContext](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/modules/home/models/widget-component.models.ts#L83) - a reference to widget context that has all necessary API and data used by widget instance.
 Below is brief description of widget context properties:
  
 | **Property**                     | **Type**           |  **Description**                                                |
 |----------------------------------|--------------------|-----------------------------------------------------------------|
 | $container                       | jQuery Object      | Container element of the widget. Can be used to dynamically access or modify widget DOM using jQuery API. |
-| $scope                           | Object             | Angular scope object of the current widget element. Can be used to access/modify scope properties when widget is built using Angular approach. |
+| $scope                           | [IDynamicWidgetComponent](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/modules/home/models/widget-component.models.ts#L274")             | Reference to the current widget component. Can be used to access/modify component properties when widget is built using Angular approach. |
 | width                            | Number             | Current width of widget container in pixels.                     |
 | height                           | Number             | Current height of widget container in pixels.                    |
 | isEdit                           | Boolean            | Indicates whether the dashboard is in in the view or editing state.|
 | isMobile                         | Boolean            | Indicates whether the dashboard view is less then 960px width (default mobile breakpoint). |
-| widgetConfig                     | Object             | Common widget configuration containing properties such as **color** (text color), **backgroundColor** (widget background color), etc. |
+| widgetConfig                     | [WidgetConfig](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/shared/models/widget.models.ts#L341)             | Common widget configuration containing properties such as **color** (text color), **backgroundColor** (widget background color), etc. |
 | settings                         | Object             | Widget settings containing widget specific properties according to the defined [settings json schema](#settings-schema-section) |
+| datasources                      | Array<[Datasource](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/shared/models/widget.models.ts#L250)>  | Array of resolved widget datasources. See [Subscription object](#subscription-object). |
+| data                             | Array<[DatasourceData](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/shared/models/widget.models.ts#L275)>  | Array of latest datasources data. See [Subscription object](#subscription-object). |
+| timeWindow                       | [WidgetTimewindow](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/shared/models/time/time.models.ts#L104)   | Current widget timewindow (applicable for timeseries widgets). Holds information about current timewindow bounds. **minTime** - minimum time in UTC milliseconds, **maxTime** - maximum time in UTC milliseconds, **interval** - current aggregation interval in milliseconds.|
 | units                            | String             | Optional property defining units text of values displayed by widget. Useful for simple widgets like cards or gauges. |
 | decimals                         | Number             | Optional property defining how many positions should be used to display decimal part of the value number.  |
-| hideTitlePanel                   | Boolean            | Manages visibility of widget title panel. Useful for widget with custom title panels or different states. |
-| defaultSubscription              | Object             | See [Subscription object](#subscription-object) |
-| timewindowFunctions              | Object             | See [Timewindow functions](#timewindow-functions) |
-| controlApi                       | Object             | See [Control API](#control-api) | 
-| actionsApi                       | Object             | See [Actions API](#actions-api) |
-| stateController                  | Object             | See [State Controller](#state-controller) |
+| hideTitlePanel                   | Boolean            | Manages visibility of widget title panel. Useful for widget with custom title panels or different states. **updateWidgetParams()** function must be called after this property change. |
+| widgetTitle                      | String             | If set, will override configured widget title text. **updateWidgetParams()** function must be called after this property change. |
+| detectChanges()                  | Function           | Trigger change detection for current widget. Must be invoked when widget HTML template bindings should be updated due to widget data changes. |
+| updateWidgetParams()             | Function           | Updates widget with runtime set properties such as **widgetTitle**, **hideTitlePanel**, etc. Must be invoked in order these properties changes take effect. |
+| defaultSubscription              | [IWidgetSubscription](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/core/api/widget-api.models.ts#L220")             | Default widget subscription object contains all subscription information, including current data, according to the widget type. See [Subscription object](#subscription-object). |
+| timewindowFunctions              | [TimewindowFunctions](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/core/api/widget-api.models.ts#L45)             | Object with timewindow functions used to manage widget data time frame. Can by used by Time-series or Alarm widgets. See [Timewindow functions](#timewindow-functions). |
+| controlApi                       | [RpcApi](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/core/api/widget-api.models.ts#L58)             | Object that provides API functions for RPC (Control) widgets. See [Control API](#control-api). | 
+| actionsApi                       | [WidgetActionsApi](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/core/api/widget-api.models.ts#L67)             | Set of API functions to work with user defined actions. See [Actions API](#actions-api). |
+| stateController                  | [IStateController](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/core/api/widget-api.models.ts#L121)             | Reference to Dashboard state controller, providing API to manage current dashboard state. See [State Controller](#state-controller). |
 
 In order to implement a new widget, the following JavaScript functions should be defined *(Note: each function is optional and can be implemented according to  widget specific behaviour):*
    
@@ -139,17 +145,17 @@ In order to implement a new widget, the following JavaScript functions should be
 | ``` onDestroy() ```                | Called when widget element is destroyed. Should be used to cleanup all resources if necessary.            |
 | ``` getSettingsSchema() ```        | Optional function returning widget settings schema json as alternative to **Settings tab** of [Settings schema section](#settings-schema-section).             |
 | ``` getDataKeySettingsSchema() ``` | Optional function returning particular data key settings schema json as alternative to **Data key settings schema** tab of [Settings schema section](#settings-schema-section).             |
-| ``` typeParameters() ```           | Returns object describing widget datasource parameters. See [Type parameters object](#type-parameters-object). |            |
-| ``` actionSources() ```            | Returns object describing available widget action sources used to define user actions. See [Action sources object](#action-sources-object). |
+| ``` typeParameters() ```           | Returns [WidgetTypeParameters](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/shared/models/widget.models.ts#L146) object describing widget datasource parameters. See [Type parameters object](#type-parameters-object). |            |
+| ``` actionSources() ```            | Returns map describing available widget action sources ([WidgetActionSource](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/shared/models/widget.models.ts#L118)) used to define user actions. See [Action sources object](#action-sources-object). |
 
 
 #### Subscription object
 
-The widget subscription object contains all subscription information, including current data, according to the [widget type](/docs/user-guide/ui/widget-library/#widget-types).
+The widget subscription object is instance of [IWidgetSubscription](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/core/api/widget-api.models.ts#L220") and contains all subscription information, including current data, according to the [widget type](/docs/user-guide/ui/widget-library/#widget-types).
 Depending on widget type, subscription object provides different data structures.
 For [Latest values](/docs/user-guide/ui/widget-library/#latest-values) and [Time-series](/docs/user-guide/ui/widget-library/#time-series) widget types, it provides the following properties:
 
- - **datasources** - array of datasources used by this subscription, using the following structure:
+ - **datasources** - array of datasources (Array<[Datasource](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/shared/models/widget.models.ts#L250)>) used by this subscription, using the following structure:
 
 ```javascript
     datasources = [
@@ -160,7 +166,7 @@ For [Latest values](/docs/user-guide/ui/widget-library/#latest-values) and [Time
            entityName: 'entityName', // name of the Entity used as datasource
            entityType: 'DEVICE', // datasource Entity type (for ex. "DEVICE", "ASSET", "TENANT", etc.)
            entityId: '943b8cd0-576a-11e7-824c-0b1cb331ec92', // entity identificator presented as string uuid. 
-           dataKeys: [ // array of keys (attributes or timeseries) of the entity used to fetch data 
+           dataKeys: [ //  array of keys (Array<DataKey>) (attributes or timeseries) of the entity used to fetch data 
                { // dataKey
                     name: 'name', // the name of the particular entity attribute/timeseries 
                     type: 'timeseries', // type of the dataKey. Can be "timeseries", "attribute" or "function" 
@@ -176,7 +182,7 @@ For [Latest values](/docs/user-guide/ui/widget-library/#latest-values) and [Time
     ]
 ```
     
-  - **data** - array of latest data received in scope of this subscription, using the following structure:
+  - **data** - array of latest data (Array<[DatasourceData](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/shared/models/widget.models.ts#L275)>) received in scope of this subscription, using the following structure:
   
 ```javascript
     data = [
@@ -197,7 +203,7 @@ For [Latest values](/docs/user-guide/ui/widget-library/#latest-values) and [Time
 
 For [Alarm widget](/docs/user-guide/ui/widget-library/#alarm-widget) type it provides the following properties:
  
- - **alarmSource** - information about entity for which alarms are fetched, using the following structure: 
+ - **alarmSource** - ([Datasource](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/shared/models/widget.models.ts#L250)) information about entity for which alarms are fetched, using the following structure: 
 
 ```javascript
     alarmSource = {
@@ -220,7 +226,7 @@ For [Alarm widget](/docs/user-guide/ui/widget-library/#alarm-widget) type it pro
     }
 ```
 
-  - **alarms** - array of alarms received in scope of this subscription, using the following structure:
+  - **alarms** - array of alarms (Array<[Alarm](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/shared/models/alarm.models.ts#L88)>) received in scope of this subscription, using the following structure:
 
 ```javascript
     alarms = [
@@ -255,7 +261,7 @@ For [RPC](/docs/user-guide/ui/widget-library/#rpc-control-widget) or [Static](/d
 
 #### Timewindow functions
 
-Object with timewindow functions used to manage widget data time frame. Can by used by [Time-series](/docs/user-guide/ui/widget-library/#time-series) or [Alarm](/docs/user-guide/ui/widget-library/#alarm-widget) widgets.
+Object with timewindow functions ([TimewindowFunctions](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/core/api/widget-api.models.ts#L45)) used to manage widget data time frame. Can by used by [Time-series](/docs/user-guide/ui/widget-library/#time-series) or [Alarm](/docs/user-guide/ui/widget-library/#alarm-widget) widgets.
 
 | **Function**                                        | **Description**                                                                        |
 |-----------------------------------------------------|----------------------------------------------------------------------------------------|
@@ -265,7 +271,7 @@ Object with timewindow functions used to manage widget data time frame. Can by u
 
 #### Control API
 
-Object that provides API functions for [RPC (Control)](/docs/user-guide/ui/widget-library/#rpc-control-widget) widgets.
+Object that provides API functions ([RpcApi](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/core/api/widget-api.models.ts#L58)) for [RPC (Control)](/docs/user-guide/ui/widget-library/#rpc-control-widget) widgets.
 
 | **Function**                                        | **Description**                                                                        |
 |-----------------------------------------------------|----------------------------------------------------------------------------------------|
@@ -275,7 +281,7 @@ Object that provides API functions for [RPC (Control)](/docs/user-guide/ui/widge
 
 #### Actions API
 
-Set of API functions to work with user defined actions.
+Set of API functions ([WidgetActionsApi](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/core/api/widget-api.models.ts#L67)) to work with user defined actions.
 
 | **Function**                                                          | **Description**                                                                        |
 |-----------------------------------------------------------------------|----------------------------------------------------------------------------------------|
@@ -285,7 +291,7 @@ Set of API functions to work with user defined actions.
 
 #### State Controller
 
-Reference to Dashboard state controller, providing API to manage current dashboard state.
+Reference to Dashboard state controller ([IStateController](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/core/api/widget-api.models.ts#L121)), providing API to manage current dashboard state.
 
 | **Function**                                        | **Description**                                                                        |
 |-----------------------------------------------------|----------------------------------------------------------------------------------------|
@@ -298,18 +304,19 @@ Reference to Dashboard state controller, providing API to manage current dashboa
 
 #### Type parameters object
 
-Object describing widget datasource parameters. It has the following properties:
+Object [WidgetTypeParameters](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/shared/models/widget.models.ts#L146) describing widget datasource parameters. It has the following properties:
 
 ```javascript
     return {
         maxDatasources: -1, // Maximum allowed datasources for this widget, -1 - unlimited
-        maxDataKeys: -1 //Maximum allowed data keys for this widget, -1 - unlimited
+        maxDataKeys: -1, //Maximum allowed data keys for this widget, -1 - unlimited
+        dataKeysOptional: false //Whether this widget can be configured with datasources without data keys
     }
 ```
 
 #### Action sources object
 
-Map describing available widget action sources to which user actions can be assigned. It has the following structure:
+Map describing available widget action sources ([WidgetActionSource](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/shared/models/widget.models.ts#L118)) to which user actions can be assigned. It has the following structure:
 
 ```javascript
    return {
@@ -336,13 +343,13 @@ The **Widget Editor** will open, pre-populated with the content of the default *
  - Put the following HTML code inside the HTML tab of "Resources" section:
   
 ```html
-  {% raw  %}<div flex layout="column" style="height: 100%;" layout-align="center stretch">
-      <div>My first latest values widget.</div>
-      <div flex layout="row" ng-repeat="dataKeyData in data" layout-align="space-around center">
-          <div>{{dataKeyData.dataKey.label}}:</div>
-          <div>{{dataKeyData.data[0][0] | date : 'yyyy-MM-dd HH:mm:ss'}}</div>
-          <div>{{dataKeyData.data[0][1]}}</div>
-      </div>
+  {% raw  %}<div fxFlex fxLayout="column" style="height: 100%;" fxLayoutAlign="center stretch">
+    <div>My first latest values widget.</div>
+    <div fxFlex fxLayout="row" *ngFor="let dataKeyData of data" fxLayoutAlign="space-around center">
+        <div>{{dataKeyData.dataKey.label}}:</div>
+        <div>{{(dataKeyData.data[0] && dataKeyData.data[0][0]) | date : 'yyyy-MM-dd HH:mm:ss' }}</div>
+        <div>{{dataKeyData.data[0] && dataKeyData.data[0][1]}}</div>
+    </div>
   </div>{% endraw %}
 ```
 
@@ -350,9 +357,11 @@ The **Widget Editor** will open, pre-populated with the content of the default *
  
 ```javascript
     self.onInit = function() {
+       self.ctx.$scope.data = self.ctx.defaultSubscription.data;
+    }
         
-        self.ctx.$scope.data = self.ctx.defaultSubscription.data;
-    
+    self.onDataUpdated = function() {
+        self.ctx.detectChanges();
     }
 ```
 
@@ -361,7 +370,7 @@ The **Widget Editor** will open, pre-populated with the content of the default *
 ![image](/images/user-guide/contribution/widgets/latest-values-widget-sample.png) 
 
 In this example, the **data** property of [subscription](#subscription-object) is assigned to the **$scope** and becomes accessible within the HTML template.
-Inside the HTML, a special **ng-repeat** angular directive is used in order to iterate over available dataKeys & datapoints then render latest values with their corresponding timestamps. 
+Inside the HTML, a special [***ngFor**](https://angular.io/api/common/NgForOf) structural angular directive is used in order to iterate over available dataKeys & datapoints then render latest values with their corresponding timestamps. 
 
 #### Time-Series widget
 
@@ -369,37 +378,42 @@ In the **Widgets Bundle** view, click the big “+” button at the bottom-right
 Click the **Time-Series** button on the **Select widget type** popup.
 The **Widget Editor** will open, pre-populated with default **Time-Series** template widget content.
 
- - Clear content of the CSS tab of "Resources" section.
+ - Replace content of the CSS tab in "Resources" section with the following one:
+
+```css
+.my-data-table th {
+    text-align: left;
+}
+``` 
+ 
  - Put the following HTML code inside the HTML tab of "Resources" section:
 
 ```html
-  {% raw  %}<div flex layout="column" style="height: 100%;">
-      <div>My first Time-Series widget.</div>
-      <md-tabs md-border-bottom>
-          <md-tab ng-repeat="datasource in datasources track by $index" label="{{datasource.name}}">
-              <table style="width: 100%;">
-                  <thead>
-                      <tr>
-                          <th>Timestamp</th>
-                          <th ng-repeat="dataKeyData in datasourceData[$index]">{{dataKeyData.dataKey.label}}</th>
-                      <tr>          
-                  </thead>
-                  <tbody>
-                      <tr ng-repeat="data in datasourceData[$index][0].data track by $index">
-                          <td>{{data[0] | date : 'yyyy-MM-dd HH:mm:ss'}}</td>
-                          <td ng-repeat="dataKeyData in datasourceData[$parent.$index]">{{dataKeyData.data[$parent.$index][1]}}</td>
-                      </tr>      
-                  </tbody>          
-              </table>          
-          </md-tab>       
-      </md-tabs>      
-  </div>{% endraw %}
+  {% raw  %}<mat-tab-group style="height: 100%;">
+      <mat-tab *ngFor="let datasource of datasources; let $dsIndex = index" label="{{datasource.name}}">
+          <table class="my-data-table" style="width: 100%;">
+              <thead>
+                  <tr>
+                      <th>Timestamp</th>
+                      <th *ngFor="let dataKeyData of datasourceData[$dsIndex]">{{dataKeyData.dataKey.label}}</th>
+                  <tr>          
+              </thead>
+              <tbody>
+                  <tr *ngFor="let data of datasourceData[$dsIndex][0].data; let $dataIndex = index">
+                      <td>{{data[0] | date : 'yyyy-MM-dd HH:mm:ss'}}</td>
+                      <td *ngFor="let dataKeyData of datasourceData[$dsIndex]">{{dataKeyData.data[$dataIndex] && dataKeyData.data[$dataIndex][1]}}</td>
+                  </tr>      
+              </tbody>          
+          </table>          
+      </mat-tab>       
+  </mat-tab-group>{% endraw %}
 ```
 
  - Put the following JavaScript code inside the "JavaScript" section:
  
 ```javascript
 self.onInit = function() {
+    self.ctx.widgetTitle = 'My first Time-Series widget';
     self.ctx.$scope.datasources = self.ctx.defaultSubscription.datasources;
     self.ctx.$scope.data = self.ctx.defaultSubscription.data;
     
@@ -418,11 +432,12 @@ self.onInit = function() {
         } 
         self.ctx.$scope.datasourceData[currentDatasourceIndex].push(dataKeyData);
     }
+    self.ctx.updateWidgetParams();
 
 }
 
 self.onDataUpdated = function() {
-    self.ctx.$scope.$digest();
+    self.ctx.detectChanges();
 }
 ```
 
@@ -432,10 +447,10 @@ self.onDataUpdated = function() {
 
 In this example, the [subscription](#subscription-object) **datasources** and **data** properties are assigned to **$scope** and become accessible within the HTML template.
 The **$scope.datasourceData** property is introduced to map datasource specific dataKeys data by datasource index for flexible access within the HTML template.
-Inside the HTML, a special **ng-repeat** angular directive is used in order to iterate over available datasources and render corresponding tabs.
+Inside the HTML, a special [***ngFor**](https://angular.io/api/common/NgForOf) structural angular directive is used in order to iterate over available datasources and render corresponding tabs.
 Inside each tab, the table is rendered using dataKeys obtained from **datasourceData** scope property accessed by datasource index.
 Each table renders columns by iterating over all **dataKeyData** objects and renders all available datapoints by iterating over **data** array of each **dataKeyData** to render timestamps and values.
-Note that in this code, **onDataUpdated** function is implemented with a call to angular **$digest** function necessary to perform new rendering cycle when new data is received.   
+Note that in this code, **onDataUpdated** function is implemented with a call to **detectChanges** function necessary to perform new change detection cycle when new data is received.   
 
 #### RPC (Control) widget
 
@@ -447,33 +462,32 @@ The **Widget Editor** will open, pre-populated with default **Control** template
  - Put the following HTML code inside the HTML tab of "Resources" section:
 
 ```html
-  {% raw  %}<form name="rpcForm" ng-submit="sendCommand()">
-    <md-content class="md-padding" layout="column">
-        <md-input-container>
-          <label>RPC method</label>  
-          <input required name="rpcMethod" ng-model="rpcMethod"/>
-          <div ng-messages="rpcForm.rpcMethod.$error">
-            <div ng-message="required">RPC method name is required.</div>
-          </div>
-        </md-input-container>    
-        <md-input-container>
-          <label>RPC params</label>  
-          <input required name="rpcParams" ng-model="rpcParams"/>
-          <div ng-messages="rpcForm.rpcParams.$error">
-            <div ng-message="required">RPC params is required.</div>
-          </div>
-        </md-input-container>    
-        <md-button ng-disabled="rpcForm.$invalid || !rpcForm.$dirty" type="submit"
-                   class="md-raised md-primary">
-            Send RPC command
-        </md-button>
+    {% raw  %}<form #rpcForm="ngForm" (submit)="sendCommand()">
+      <div class="mat-content mat-padding" fxLayout="column">
+        <mat-form-field class="mat-block">
+          <mat-label>RPC method</mat-label>
+          <input matInput required name="rpcMethod" #rpcMethodField="ngModel" [(ngModel)]="rpcMethod"/>
+          <mat-error *ngIf="rpcMethodField.hasError('required')">
+            RPC method name is required.
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="mat-block">
+          <mat-label>RPC params</mat-label>
+          <input matInput required name="rpcParams" #rpcParamsField="ngModel" [(ngModel)]="rpcParams"/>
+          <mat-error *ngIf="rpcParamsField.hasError('required')">
+            RPC params is required.
+          </mat-error>
+        </mat-form-field>
+        <button [disabled]="rpcForm.invalid || !rpcForm.dirty" mat-raised-button color="primary" type="submit" >
+          Send RPC command
+        </button>
         <div>
-           <label>RPC command response</label>
-           <div style="width: 100%; height: 100px; border: solid 2px gray" ng-bind-html="rpcCommandResponse">
-           </div>       
+          <label>RPC command response</label>
+          <div style="width: 100%; height: 100px; border: solid 2px gray" [innerHTML]="rpcCommandResponse">
+          </div>
         </div>
-    </md-content>
-  </form>{% endraw %}
+      </div>
+    </form>{% endraw %}
 ```
 
  - Put the following JSON content inside the "Settings schema" tab of **Settings schema section**:
@@ -514,26 +528,28 @@ self.onInit = function() {
         var rpcParams = self.ctx.$scope.rpcParams;
         var timeout = self.ctx.settings.requestTimeout;
         var oneWayElseTwoWay = self.ctx.settings.oneWayElseTwoWay ? true : false;
-        
-        var commandPromise;
+
+        var commandObservable;
         if (oneWayElseTwoWay) {
-            commandPromise = self.ctx.controlApi.sendOneWayCommand(rpcMethod, rpcParams, timeout);
+            commandObservable = self.ctx.controlApi.sendOneWayCommand(rpcMethod, rpcParams, timeout);
         } else {
-            commandPromise = self.ctx.controlApi.sendTwoWayCommand(rpcMethod, rpcParams, timeout);
+            commandObservable = self.ctx.controlApi.sendTwoWayCommand(rpcMethod, rpcParams, timeout);
         }
-        commandPromise.then(
-            function success(response) {
+        commandObservable.subscribe(
+            function (response) {
                 if (oneWayElseTwoWay) {
-                    self.ctx.$scope.rpcCommandResponse = "Command was successfully received by device.<br/> No response body because of one way command mode.";
+                    self.ctx.$scope.rpcCommandResponse = "Command was successfully received by device.<br> No response body because of one way command mode.";
                 } else {
-                    self.ctx.$scope.rpcCommandResponse = "Response from device:<br/>";                    
-                    self.ctx.$scope.rpcCommandResponse += angular.toJson(response);
+                    self.ctx.$scope.rpcCommandResponse = "Response from device:<br>";                    
+                    self.ctx.$scope.rpcCommandResponse += JSON.stringify(response, undefined, 2);
                 }
+                self.ctx.detectChanges();
             },
-            function fail(rejection) {
-                self.ctx.$scope.rpcCommandResponse = "Failed to send command to the device:<br/>"
-                self.ctx.$scope.rpcCommandResponse += "Status: " + rejection.status + "<br/>";
+            function (rejection) {
+                self.ctx.$scope.rpcCommandResponse = "Failed to send command to the device:<br>"
+                self.ctx.$scope.rpcCommandResponse += "Status: " + rejection.status + "<br>";
                 self.ctx.$scope.rpcCommandResponse += "Status text: '" + rejection.statusText + "'";
+                self.ctx.detectChanges();
             }
             
         );
@@ -612,7 +628,7 @@ In order to test "Two way" RPC command mode, we need to change the corresponding
 ![image](/images/user-guide/contribution/widgets/control-widget-sample-response-timeout.png)  
   
 In this example, **controlApi** is used to send RPC commands. Additionally, custom widget settings were introduced in order to configure RPC command mode and RPC request timeout.
-The response from the device is handled by **commandPromise**.  It has success and failed callbacks with corresponding response, or rejection objects containing information about request execution result.     
+The response from the device is handled by **commandObservable**.  It has success and failed callbacks with corresponding response, or rejection objects containing information about request execution result.     
 
 #### Alarm widget
 
@@ -620,21 +636,29 @@ In the **Widgets Bundle** view, click the big “+” button at the bottom-right
 Click the **Alarm Widget** button on the **Select widget type** popup.
 The **Widget Editor** will be opened, pre-populated with the content of the default **Alarm** template widget.
 
+- Replace content of the CSS tab in "Resources" section with the following one:
+
+```css
+.my-alarm-table th {
+    text-align: left;
+}
+``` 
+
  - Put the following HTML code inside the HTML tab of "Resources" section:
 
 ```html
-  {% raw  %}<div flex layout="column" style="height: 100%;">
+  {% raw  %}<div fxFlex fxLayout="column" style="height: 100%;">
       <div>My first Alarm widget.</div>
-      <table style="width: 100%;">
+      <table class="my-alarm-table" style="width: 100%;">
           <thead>
               <tr>
-                  <th ng-repeat="dataKey in alarmSource.dataKeys">{{dataKey.label}}</th> 
+                  <th *ngFor="let dataKey of alarmSource?.dataKeys">{{dataKey.label}}</th> 
               <tr>          
           </thead>
           <tbody>
-              <tr ng-repeat="alarm in alarms">
-                  <td ng-repeat="dataKey in alarmSource.dataKeys" 
-                      ng-style="getAlarmCellStyle(alarm, dataKey)">
+              <tr *ngFor="let alarm of alarms">
+                  <td *ngFor="let dataKey of alarmSource?.dataKeys" 
+                      [ngStyle]="getAlarmCellStyle(alarm, dataKey)">
                       {{getAlarmValue(alarm, dataKey)}}
                   </td>
               </tr>      
@@ -674,11 +698,8 @@ The **Widget Editor** will be opened, pre-populated with the content of the defa
 self.onInit = function() {
     self.ctx.$scope.alarmSource = self.ctx.defaultSubscription.alarmSource;
     
-    var alarmFields = self.ctx.$scope.$injector.get('types').alarmFields;
-    var $filter = self.ctx.$scope.$injector.get('$filter');
-    
     var alarmSeverityColorFunctionBody = self.ctx.settings.alarmSeverityColorFunction;
-    if (angular.isUndefined(alarmSeverityColorFunctionBody) || !alarmSeverityColorFunctionBody.length) {
+    if (typeof alarmSeverityColorFunctionBody === 'undefined' || !alarmSeverityColorFunctionBody.length) {
         alarmSeverityColorFunctionBody = "if(severity == 'CRITICAL') {return 'red';} else if (severity == 'MAJOR') {return 'orange';} else return 'green';";
     }
     
@@ -690,34 +711,34 @@ self.onInit = function() {
     }
 
     self.ctx.$scope.getAlarmValue = function(alarm, dataKey) {
-        var alarmField = alarmFields[dataKey.name];
-        if (alarmField) {
-            var value = alarm[alarmField.value];
-            if (alarmField.time) {
-                return $filter('date')(value, 'yyyy-MM-dd HH:mm:ss');
-            } else {
-                return value;
-            }
+        var alarmKey = dataKey.name;
+        if (alarmKey === 'originator') {
+            alarmKey = 'originatorName';
+        }
+        var value = alarm[alarmKey];
+        if (alarmKey === 'createdTime') {
+            return self.ctx.date.transform(value, 'yyyy-MM-dd HH:mm:ss');
         } else {
-            return alarm[dataKey.name];
+            return value;
         }
     }
     
     self.ctx.$scope.getAlarmCellStyle = function(alarm, dataKey) {
-        var alarmField = alarmFields[dataKey.name];
-        if (alarmField && alarmField == alarmFields.severity && alarmSeverityColorFunction) {
-            var severity = alarm[alarmField.value];
+        var alarmKey = dataKey.name;
+        if (alarmKey === 'severity' && alarmSeverityColorFunction) {
+            var severity = alarm[alarmKey];
             var color = alarmSeverityColorFunction(severity);
             return {
                 color: color  
             };
-        }
+        } 
         return {};
     }
 }
 
 self.onDataUpdated = function() {
     self.ctx.$scope.alarms = self.ctx.defaultSubscription.alarms;
+    self.ctx.detectChanges();
 }
 ```
 
@@ -726,12 +747,12 @@ self.onDataUpdated = function() {
 ![image](/images/user-guide/contribution/widgets/alarm-widget-sample.png)
 
 In this example, the **alarmSource** and **alarms** properties of [subscription](#subscription-object) are assigned to **$scope** and become accessible within HTML template.
-Inside the HTML, a special **ng-repeat** angular directive is used in order to iterate over available alarm **dataKeys** of **alarmSource** and render corresponding columns.
+Inside the HTML, a special [***ngFor**](https://angular.io/api/common/NgForOf) structural angular directive is used in order to iterate over available alarm **dataKeys** of **alarmSource** and render corresponding columns.
 The table rows are rendered by iterating over **alarms** array and corresponding cells rendered by iterating over **dataKeys**.
-The function **getAlarmValue** is fetching alarm value using special alarmFields constants obtained from **types** which is part of ThingsBoard UI and accessed via Angular **$injector**.
+The function **getAlarmValue** is fetching alarm value and formatting **createdTime** alarm property using a [DatePipe](https://angular.io/api/common/DatePipe) angular pipe accessible via **date** property of **ctx**.
 The function **getAlarmCellStyle** is used to assign custom cell styles for each alarm cell. In this example, we introduced new settings property called **alarmSeverityColorFunction** that contains function body returning color depending on alarm severity.
 Inside the **getAlarmCellStyle** function there is corresponding invocation of **alarmSeverityColorFunction** with severity value in order to get color for alarm severity cell. 
-Note that in this code **onDataUpdated** function is implemented in order to update **alarms** property with latest alarms from subscription.   
+Note that in this code **onDataUpdated** function is implemented in order to update **alarms** property with latest alarms from subscription and invoke change detection using **detectChanges()** function.   
 
 #### Static widget
 
@@ -742,9 +763,9 @@ The **Widget Editor** will be opened pre-populated with the content of default *
  - Put the following HTML code inside the HTML tab of "Resources" section:
 
 ```html
-  {% raw  %}<div flex layout="column" style="height: 100%;" layout-align="space-around stretch">
-      <h3 style="text-align: center;">My first static widget.</h3>
-      <md-button class="md-primary md-raised" ng-click="showAlert()">Click me</md-button>
+  {% raw  %}<div fxFlex fxLayout="column" style="height: 100%;" fxLayoutAlign="space-around stretch">
+    <h3 style="text-align: center;">My first static widget.</h3>
+    <button mat-raised-button color="primary" (click)="showAlert()">Click me</button>
   </div>{% endraw %}
 ```
 
@@ -800,6 +821,8 @@ Below are some examples demonstrating how external JavaScript libraries or exist
  
 ### Using external JavaScript library
 
+#### Latest Values Example
+
 In this example, **Latest Values** gauge widget will be created using external [gauge.js](http://bernii.github.io/gauge.js/) library.
 
 In the **Widgets Bundle** view, click the big “+” button at the bottom-right part of the screen, then click the “Create new widget type” button.
@@ -809,7 +832,7 @@ The **Widget Editor** will be opened, pre-populated with the content of default 
  - Open **Resources** tab and click "Add" then insert the following link:
 
 ```  
-http://bernii.github.io/gauge.js/dist/gauge.min.js  
+https://bernii.github.io/gauge.js/dist/gauge.min.js  
 ```
 
  - Clear content of the CSS tab of "Resources" section.
@@ -854,40 +877,154 @@ self.onDataUpdated = function() {
 In this example, the external JS library API was used that becomes available after injecting the corresponding URL in **Resources** section.
 The value displayed was obtained from [subscription](#subscription-object) **data** property for the first dataKey. 
 
+#### Time-Series Example
+
+In this example, **Time-Series** line chart widget will be created using external [Chart.js](https://www.chartjs.org/) library.
+
+In the **Widgets Bundle** view, click the big “+” button at the bottom-right part of the screen, then click the “Create new widget type” button.
+Click the **Time-Series** button on the **Select widget type** popup.
+The **Widget Editor** will be opened, pre-populated with the content of default **Time-Series** template widget.
+
+ - Open **Resources** tab and click "Add" then insert the following link:
+
+```  
+https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js
+```
+
+ - Clear content of the CSS tab of "Resources" section.
+ - Put the following HTML code inside the HTML tab of "Resources" section:
+ 
+```html
+  {% raw  %}<canvas id="myChart"></canvas>{% endraw %}
+```
+
+ - Put the following JavaScript code inside the "JavaScript" section:
+ 
+```javascript
+var myChart;
+
+self.onInit = function() {
+    
+    var chartData = {
+        datasets: []
+    };
+
+    for (var i=0; i < self.ctx.data.length; i++) {
+        var dataKey = self.ctx.data[i].dataKey;
+        var dataset = {
+            label: dataKey.label,
+            data: [],
+            borderColor: dataKey.color,
+            fill: false
+        };
+        chartData.datasets.push(dataset);
+    }
+    
+    var options = {
+        maintainAspectRatio: false,
+        legend: {
+            display: false
+        },
+        scales: {
+        xAxes: [{
+            type: 'time',
+            ticks: {
+                maxRotation: 0,
+                autoSkipPadding: 30
+            }
+        }]
+    }
+    };
+    
+    var canvasElement = $('#myChart', self.ctx.$container)[0];
+    var canvasCtx = canvasElement.getContext('2d');
+    myChart = new Chart(canvasCtx, {
+        type: 'line',
+        data: chartData,
+        options: options
+    });
+    self.onResize();
+}
+
+self.onResize = function() {
+    myChart.resize();
+}
+
+self.onDataUpdated = function() {
+    for (var i = 0; i < self.ctx.data.length; i++) {
+        var datasourceData = self.ctx.data[i];
+        var dataSet = datasourceData.data;
+        myChart.data.datasets[i].data.length = 0;
+        var data = myChart.data.datasets[i].data;
+        for (var d = 0; d < dataSet.length; d++) {
+            var tsValuePair = dataSet[d];
+            var ts = tsValuePair[0];
+            var value = tsValuePair[1];
+            data.push({t: ts, y: value});
+        }
+    }
+    myChart.options.scales.xAxes[0].ticks.min = self.ctx.timeWindow.minTime;
+    myChart.options.scales.xAxes[0].ticks.max = self.ctx.timeWindow.maxTime;
+    myChart.update();
+}
+```
+
+ - Click the **Run** button on the **Widget Editor Toolbar** in order to see the result in **Widget preview** section.
+
+![image](/images/user-guide/contribution/widgets/external-js-timeseries-widget-sample.png)
+
+In this example, the external JS library API was used that becomes available after injecting the corresponding URL in **Resources** section.
+Initially chart datasets prepared using configured dataKeys from **data** property of **ctx**.
+In the **onDataUpdated** function datasources data converted to Chart.js line chart format and pushed to chart datasets.
+Please note that xAxis (time axis) is limited to current timewindow bounds obtained from **timeWindow** property of **ctx**.  
+
 ### Using existing JavaScript code
 
 Another approach of creating widgets is to use existing bundled JavaScript code.
-In this case, you can create own JavaScript class or Angular directive and bundle it into the ThingsBoard UI code.
-In order to make this code accessible within the widget, you need to register corresponding Angular module or inject JavaScript class to a global variable (for ex. window object).
-Some of the ThingsBoard widgets already use this approach. Take a look at the [widget.service.js](https://github.com/thingsboard/thingsboard/tree/master/ui/src/app/api/widget.service.js).
-Here you can find how some bundled classes or modules are registered for later use in ThingsBoard widgets.
-For example "Timeseries - Flot" widget (from "Charts" Widgets Bundle) uses [**TbFlot**](https://github.com/thingsboard/thingsboard/tree/master/ui/src/app/widget/lib/flot-widget.js) JavaScript class which is injected as window property inside **widget.service.js**:
+In this case, you can create own TypeScript class or Angular component and bundle it into the ThingsBoard UI code.
+In order to make this code accessible within the widget, you need to register corresponding Angular module or inject TypeScript class to a global variable (for ex. window object).
+Some of the ThingsBoard widgets already use this approach. Take a look at the [polyfills.ts](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/polyfills.ts#L106)
+or [widget-components.module.ts](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/modules/home/components/widget/widget-components.module.ts#L44).
+Here you can find how some bundled classes or components are registered for later use in ThingsBoard widgets.
+For example "Timeseries - Flot" widget (from "Charts" Widgets Bundle) uses [**TbFlot**](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/modules/home/components/widget/lib/flot-widget.ts#L63) TypeScript class which is injected as window property inside **polyfills.ts**:
 
-```javascript
+```typescript
 ...
 
-import TbFlot from '../widget/lib/flot-widget';
+import { TbFlot } from '@home/components/widget/lib/flot-widget';
 ...
 
-    $window.TbFlot = TbFlot;
+    (window as any).TbFlot = TbFlot;
 ...
 
 ```
 
-Another example is "Timeseries table" widget (from "Cards" Widgets Bundle) that uses Angular directive [**tb-timeseries-table-widget**](https://github.com/thingsboard/thingsboard/tree/master/ui/src/app/widget/lib/timeseries-table-widget.js) which is registered as dependency of **'thingsboard.api.widget'** Angular module inside **widget.service.js**.
-Thereby this directive becomes available for use inside the widget template HTML. 
+Another example is "Timeseries table" widget (from "Cards" Widgets Bundle) that uses Angular component [**tb-timeseries-table-widget**](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/modules/home/components/widget/lib/timeseries-table-widget.component.ts#L99) which is registered as dependency of **WidgetComponentsModule** Angular module inside **widget-components.module.ts**.
+Thereby this component becomes available for use inside the widget template HTML. 
 
-```javascript
+```typescript
 ...
 
-import thingsboardTimeseriesTableWidget from '../widget/lib/timeseries-table-widget';
-
-...
-
-export default angular.module('thingsboard.api.widget', ['oc.lazyLoad', thingsboardLedLight, thingsboardTimeseriesTableWidget,
+import { TimeseriesTableWidgetComponent } from '@home/components/widget/lib/timeseries-table-widget.component';
 
 ...
 
+@NgModule({
+  declarations:
+    [
+...
+      TimeseriesTableWidgetComponent,
+...
+    ],
+...
+  exports: [
+...
+      TimeseriesTableWidgetComponent,
+...
+  ],
+...    
+})
+export class WidgetComponentsModule { }
 ```
 
 ## Widget code debugging tips

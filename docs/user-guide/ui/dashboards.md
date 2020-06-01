@@ -42,13 +42,13 @@ select the IoT dashboard from the list and apply changes. Please note that you c
 
 You are able to export your dashboard to JSON format and import it to the same or another ThingsBoard instance.
 
-In order to export dashboard, you should navigate to the **Dashboards** page and click on the export button located on the particular dashboard card.
+In order to export dashboard, you should navigate to the **Dashboards** page and click on the export button located on the particular dashboard row.
  
 ![image](/images/user-guide/ui/export-dashboard.png)
 
 #### Dashboard import
 
-Similar, to import the dashboard you should navigate to the **Dashboards** page and click on the big "+" button in the bottom-right part of the screen and then click on the import button. 
+Similar, to import the dashboard you should navigate to the **Dashboards** page and click on the "+" button located in the top-right corner of the **Dashboards** table and then choose "Import dashboard" option. 
 
 ![image](/images/user-guide/ui/import-dashboard.png)
 
