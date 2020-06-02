@@ -51,7 +51,7 @@ The **redirect URI** needs to be specified in the next format:
 ```
 
 Where under the domain, please, specify the current **domain** of yours and for the **port** please specify the port to have an HTTP access to the ThingsBoard instance of yours.   
-For the example reasons, the domain of my is the localhost, and the port is being the default ThingsBoard installation port 8080.  
+For the example reasons, the domain of my is the localhost, and the port is being the default ThingsBoard installation port 80.  
 
 ![image](/images/user-guide/oauth-2-support/oauth0/Application-Details-2.png)
 
@@ -117,7 +117,7 @@ security:
              authorizationUri: "${SECURITY_OAUTH2_DEFAULT_AUTHORIZATION_URI:https://tbsupport.eu.auth0.com/authorize}"
              scope: "${SECURITY_OAUTH2_DEFAULT_SCOPE:openid,email,profile}"
              # Redirect URL that must be in sync with 'security.oauth2.loginProcessingUrl', but domain name added
-             redirectUriTemplate: "${SECURITY_OAUTH2_DEFAULT_REDIRECT_URI_TEMPLATE:http://tb.tbsupport.xyz/login/oauth2/code/}"
+             redirectUriTemplate: "${SECURITY_OAUTH2_DEFAULT_REDIRECT_URI_TEMPLATE:http://localhost:80/login/oauth2/code/}"
              jwkSetUri: "${SECURITY_OAUTH2_DEFAULT_JWK_SET_URI:https://tbsupport.eu.auth0.com/.well-known/jwks.json}"
              # 'authorization_code', 'implicit', 'refresh_token' or 'client_credentials'
              authorizationGrantType: "${SECURITY_OAUTH2_DEFAULT_AUTHORIZATION_GRANT_TYPE:authorization_code}"
