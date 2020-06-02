@@ -31,7 +31,7 @@ First we need to create the application.
 ![image](/images/user-guide/oauth-2-support/oauth0/Application-to-create.png)
 
 Then we need to specify the application name and application type.  
-The application name equals the **clientName** and the application type.
+The application name equals the **clientName**. THe Application type is a **Regular Web Application**. 
 
 ![image](/images/user-guide/oauth-2-support/oauth0/Application-creation.png)
 
