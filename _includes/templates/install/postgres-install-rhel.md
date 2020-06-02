@@ -3,15 +3,41 @@ Instructions listed below will help you to install PostgreSQL.
 ```bash
 # Update your system
 sudo yum update
-# Install the repository RPM:
-sudo yum install https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm
+```
+{: .copy-code}
+
+**For CentOS 7:**
+
+```bash
+# Install the repository RPM (for CentOS 7):
+sudo yum -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm
 # Install packages
-sudo yum install postgresql11-server postgresql11-contrib
+sudo yum -y install epel-release yum-utils
+sudo yum-config-manager --enable pgdg12
+sudo yum install postgresql12-server postgresql12
 # Initialize your PostgreSQL DB
-sudo /usr/pgsql-11/bin/postgresql-11-setup initdb
-sudo systemctl start postgresql-11
+sudo /usr/pgsql-12/bin/postgresql-12-setup initdb
+sudo systemctl start postgresql-12
 # Optional: Configure PostgreSQL to start on boot
-sudo systemctl enable postgresql-11
+sudo systemctl enable --now postgresql-12
+
+```
+{: .copy-code}
+
+**For CentOS 8:**
+
+```bash
+# Install the repository RPM (for CentOS 8):
+sudo yum -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x86_64/pgdg-redhat-repo-latest.noarch.rpm
+# Install packages
+sudo dnf -qy module disable postgresql
+sudo dnf -y install postgresql12 postgresql12-server
+# Initialize your PostgreSQL DB
+sudo /usr/pgsql-12/bin/postgresql-12-setup initdb
+sudo systemctl start postgresql-12
+# Optional: Configure PostgreSQL to start on boot
+sudo systemctl enable --now postgresql-12
+
 ```
 {: .copy-code}
 

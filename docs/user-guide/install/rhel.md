@@ -12,18 +12,34 @@ description: Installing ThingsBoard CE on CentOS/RHEL
 
 ### Prerequisites
 
-This guide describes how to install ThingsBoard on RHEL/CentOS 7. 
+This guide describes how to install ThingsBoard on RHEL/CentOS 7/8. 
 Hardware requirements depend on chosen database and amount of devices connected to the system. 
 To run ThingsBoard and PostgreSQL on a single machine you will need at least 1Gb of RAM.
 To run ThingsBoard and Cassandra on a single machine you will need at least 8Gb of RAM.
 
 Before continue to installation execute the following commands in order to install necessary tools:
 
+**For CentOS 7:**
+
 ```bash
+# Install wget
 sudo yum install -y nano wget
-# Add latest EPEL release
+# Add latest EPEL release for CentOS 7
 sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+
 ```
+{: .copy-code}
+
+**For CentOS 8:**
+
+```bash
+# Install wget
+sudo yum install -y nano wget
+# Add latest EPEL release for CentOS 8
+sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+
+```
+{: .copy-code}
 
 ### Step 1. Install Java 8 (OpenJDK) 
 
@@ -88,7 +104,8 @@ In order to open 8080 port execute the following command:
 ```bash
 sudo firewall-cmd --zone=public --add-port=8080/tcp --permanent
 sudo firewall-cmd --reload
-```   
+```
+{: .copy-code}   
 
 {% include templates/start-service.md %}
 

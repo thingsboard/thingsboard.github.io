@@ -3,6 +3,7 @@ Execute the following command to start ThingsBoard:
 
 ```bash
 sudo service thingsboard start
+
 ```
 {: .copy-code}
  
