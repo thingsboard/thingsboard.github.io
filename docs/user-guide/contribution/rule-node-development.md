@@ -347,33 +347,25 @@ sudo service thingsboard restart
   
 ### UI configuration
 
-The ThingsBoard rule nodes UI is configured with another project in the official [github repo](https://github.com/thingsboard/rule-node-examples-ui). Please, refer to the following [link](https://github.com/thingsboard/thingsboard-rule-config-ui#thingsboard-rule-config-ui) to see build instructions.
+The ThingsBoard rule nodes UI is configured with another project in the official [github repo](https://github.com/thingsboard/rule-node-examples-ui-ngx). Please, refer to the following [link](https://github.com/thingsboard/rule-node-examples-ui-ngx#rule-node-examples-ui-ngx) to see build instructions.
 
 #### Running Rule Node UI container in hot redeploy mode
 
 To run Rule Node UI container in hot redeploy mode:
 
- - first you need to change constant **ruleNodeUiforwardPort** from **8080** to **5000** in file **server.js** that should be here:
+ - first you need to change constant **ruleNodeUiforwardPort** from **8080** to **5000** in file **proxy.conf.js** that should be here:
     
 ```
-cd ${TB_WORK_DIR}/ui/server.js
+cd ${TB_WORK_DIR}/ui-ngx/proxy.conf.js
 ```
     
  - second, you need to run UI container in hot redeploy mode. Please, refer to the following link to see how to do this: [Running UI container in hot redeploy mode](/docs/user-guide/contribution/how-to-contribute/#running-ui-container-in-hot-redeploy-mode).   
- 
- - next you need to change constant **forwardPort** from **8080** to **3000** in file **server.js** that should be here:
-  
-```
-cd ${TB_RULE_NODE_UI_WORK_DIR}/ui/server.js
-```
-   
-  - last step is to execute the following command from your local directory **TB_RULE_NODE_UI_WORK_DIR**:
+    
+ - last step is to execute the following command from your local directory **TB_RULE_NODE_UI_WORK_DIR**:
     
     ```
     npm start
     ```
-
-This will forward Rule Node UI requests to the server that listen on **3000** port. 
 
 ## Next steps
  
