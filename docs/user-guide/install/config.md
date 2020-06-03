@@ -22,7 +22,7 @@ Linux: /usr/share/thingsboard/conf
 
 But if ThingsBoard is installed as a **microservice**, then each component of the platform will have separate configuration files.
 
-In this guide all application properties will be devided by components where they are applied. **Note** that in case of **monolithic application**
+In this guide all application properties will be divided by components where they are applied. **Note** that in case of **monolithic application**
 all application properties are located in the single file - **thingsboard.yml** and all environment variables are in **thingsboard.conf**
 
 
