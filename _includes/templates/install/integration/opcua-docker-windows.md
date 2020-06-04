@@ -28,7 +28,7 @@ Where:
 - `-v tb-pe-opc-ua-integration-logs:/var/log/tb-opc-ua-integration`   - mounts the host's dir `~/.tb-pe-opc-ua-integration-logs` to ThingsBoard logs directory;
 - `--name tb-pe-opc-ua-integration`             - friendly local name of this machine;
 - `--restart always`        - automatically start ThingsBoard Integration in case of system reboot and restart in case of failure.;
-- `thingsboard/tb-pe-opc-ua-integration:2.5PE`          - docker image.
+- `thingsboard/tb-pe-opc-ua-integration:2.5.0PE`          - docker image.
 
 After executing this command you can open logs which are located here `~/.tb-pe-opc-ua-integration-logs`. 
 You should see some INFO log messages with your latest Integration configuration that arrived from the server.

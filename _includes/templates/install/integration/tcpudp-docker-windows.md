@@ -29,7 +29,7 @@ Where:
 - `-v tb-pe-tcp-udp-integration-logs:/var/log/tb-tcp-udp-integration`   - mounts the host's dir `~/.tb-pe-tcp-udp-integration-logs` to ThingsBoard logs directory;
 - `--name tb-pe-tcp-udp-integration`             - friendly local name of this machine;
 - `--restart always`        - automatically start ThingsBoard Integration in case of system reboot and restart in case of failure.;
-- `thingsboard/tb-pe-tcp-udp-integration:2.5PE`          - docker image.
+- `thingsboard/tb-pe-tcp-udp-integration:2.5.0PE`          - docker image.
 
 After executing this command you can open logs which are located here `~/.tb-pe-tcp-udp-integration-logs`. 
 You should see some INFO log messages with your latest Integration configuration that arrived from the server.
