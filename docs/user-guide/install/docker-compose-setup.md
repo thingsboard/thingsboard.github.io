@@ -2,16 +2,15 @@
 layout: docwithnav
 assignees:
 - ashvayka
-title: Cluster setup
-description: ThingsBoard IoT platform cluster setup guide
+title: Cluster setup with Docker Compose
+description: ThingsBoard IoT platform cluster setup with Docker Compose guide
 
 ---
 
 * TOC
 {:toc}
 
-This guide will help you to setup ThingsBoard in cluster mode. 
-For simplicity, we will use docker-compose tool to setup our cluster.
+This guide will help you to setup ThingsBoard in cluster mode using Docker Compose tool. 
 
 ## Prerequisites
 
