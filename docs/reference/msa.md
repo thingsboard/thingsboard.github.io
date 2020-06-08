@@ -120,7 +120,7 @@ and guarantee that only one server process data from particular device at a sing
 ### HAProxy (or other LoadBalancer)
 
 We recommend to use HAProxy for load balancing. 
-You can find the reference [haproxy.cfg](https://github.com/thingsboard/thingsboard/blob/release-2.4/docker/haproxy/config/haproxy.cfg) 
+You can find the reference [haproxy.cfg](https://github.com/thingsboard/thingsboard/blob/release-2.5/docker/haproxy/config/haproxy.cfg) 
 configuration that corresponds to the architecture diagram below: 
 
 {% highlight conf %}
@@ -248,9 +248,11 @@ See "[SQL vs NoSQL vs Hybrid?](/docs/reference/#sql-vs-nosql-vs-hybrid-database-
 
 ## Deployment
 
-You can find the reference [docker-compose.yml](https://github.com/thingsboard/thingsboard/blob/release-2.4/docker/docker-compose.yml)
+You can find the reference [docker-compose.yml](https://github.com/thingsboard/thingsboard/blob/release-2.5/docker/docker-compose.yml)
 and corresponding [documentation](https://github.com/thingsboard/thingsboard/blob/master/docker/README.md) that will help you to run ThingsBoard containers in a cluster mode 
-(although on a single host machine)  
+(although on a single host machine)
+
+TODO: 2.5  
 
 {% highlight yaml %}
 version: '2.2'

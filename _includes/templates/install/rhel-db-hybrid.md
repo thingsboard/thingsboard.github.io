@@ -34,6 +34,7 @@ export SPRING_DRIVER_CLASS_NAME=org.postgresql.Driver
 export SPRING_DATASOURCE_URL=jdbc:postgresql://localhost:5432/thingsboard
 export SPRING_DATASOURCE_USERNAME=postgres
 export SPRING_DATASOURCE_PASSWORD=PUT_YOUR_POSTGRESQL_PASSWORD_HERE
+export SPRING_DATASOURCE_MAXIMUM_POOL_SIZE=5
 ``` 
 {: .copy-code}
 

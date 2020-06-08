@@ -3,6 +3,7 @@ ThingsBoard service is running on Java 8. Follow this instructions to install Op
 ```bash
 sudo yum install java-1.8.0-openjdk
 ```
+{: .copy-code}
 
 Please don't forget to configure your operating system to use OpenJDK 8 by default. 
 You can configure which version is the default using the following command:
@@ -10,12 +11,14 @@ You can configure which version is the default using the following command:
 ```bash
 sudo update-alternatives --config java
 ```
+{: .copy-code}
 
 You can check the installation using the following command:
 
 ```bash
 java -version
 ```
+{: .copy-code}
 
 Expected command output is:
 

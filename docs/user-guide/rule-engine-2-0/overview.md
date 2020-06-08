@@ -31,7 +31,142 @@ Rule Engine Message contains the following information:
   * Payload of the message: JSON body with actual message payload;
   * Metadata: List of key-value pairs with additional data about the message. 
 
-##### Predefined Message Types
+#### Rule Node
+
+Rule Node is a basic component of Rule Engine that process single incoming message at a time and produce one or more outgoing messages. 
+Rule Node is a main logical unit of the Rule Engine. Rule Node can filter, enrich, transform incoming messages, perform action or communicate with external systems.
+
+#### Rule Node Relation
+
+Rule Nodes may be related to other rule nodes. Each relation has relation type, a label used to identify logical meaning of the relation. 
+When rule node produces the outgoing message it always specifies the relation type which is used to route message to next nodes.
+ 
+Typical rule node relations are "Success" and "Failure". 
+Rule nodes that represent logical operations may use "True" or "False". 
+Some specific rule nodes may use completely different relation types, for example: "Post Telemetry", "Attributes Updated", "Entity Created", etc. 
+
+#### Rule Chain
+
+Rule Chain is a logical group of rule nodes and their relations. For example, the rule chain below will:
+
+  * save all telemetry messages to the database;
+  * raise "High Temperature Alarm" if temperature field in the message will be higher then 50 degrees;
+  * raise "Low Temperature Alarm" if temperature field in the message will be lower then -40 degrees;
+  * log failure to execute the temperature check scripts to console in case of logical or syntax error in the script. 
+
+![image](/images/user-guide/rule-engine-2-0/rule-node-relations.png)
+
+Tenant administrator is able to define one **Root Rule Chain** and optionally multiple other rule chains. 
+Root rule chain handles all incoming messages and may forward them to other rule chains for additional processing.
+Other rule chains may also forward messages to different rule chains.
+
+For example, the rule chain below will:
+
+  * raise "High Temperature Alarm" if temperature field in the message will be higher then 50 degrees;
+  * clear "High Temperature Alarm" if temperature field in the message will be less then 50 degrees;
+  * forward events about "Created" and "Cleared" alarms to external rule chain that handles notifications to corresponding users.
+ 
+![image](/images/user-guide/rule-engine-2-0/rule-chain-references.png)
+
+#### Message Processing Result
+
+There are three possible results of message processing: Success, Failure and Timeout.
+The message processing attempt is marked as "Success" when the last rule node in the processing chain successfully process the message.
+The message processing attempt is marked as "Failure" if one of the rule nodes produce "Failure" of message processing, 
+and there is no rule nodes to handle that failure. 
+The message processing attempt is marked as "Timeout" when overall time of processing exceed configurable threshold.
+
+See diagram below and let's review the possible scenarios:
+
+![image](/images/user-guide/rule-engine-2-0/not-a-failure.png)
+
+If the "Transformation" script fails, the message is not marked as "Failed", because there is a "Save to DB" node connected with "Failure" relation.
+If the "Transformation" script is successful, it will be pushed to "External System" with the REST API call.
+If the external system is overloaded, the REST API call may "hang" for some time. 
+Let's assume the overall timeout for message pack processing is 20 seconds. Let's ignore Transformation script execution time because it is < 1ms.
+So, if the "External System" will reply within 20 seconds, the message will be successfully processed. 
+Similar, if "Save to DB" call will succeed, the message will be successfully processed. 
+However, if the external system will not reply within 20 seconds, the message processing attempt will be marked as "timed-out".
+Similar, if "Save to DB" call will fail, the message will be marked as failed.
+
+#### Rule Engine Queue
+
+Rule Engine subscribe to queues on startup and polls for new messages. 
+There is always "Main" topic that is used as a main entry point for new incoming messages. 
+You may configure multiple queues using thingsboard.yml or environment variables.
+Once configured, you may put message to the other topic using "Checkpoint" node. 
+This automatically acknowledges corresponding message in the current topic.
+
+The definition of the queue consists of the following parameters:
+
+ * name - used for statistics and logging;
+ * topic - used by Queue implementations to produce and consume messages;
+ * poll-interval - duration in milliseconds between polling of the messages if no new messages arrive;
+ * partitions - number of partitions to associate with this queue. Used for scaling the number of messages that can be processed in parallel;
+ * pack-processing-timeout - interval in milliseconds for processing of the particular pack of messages returned by consumer;
+ * submit-strategy - defines logic and order of submitting messages to rule engine. See separate paragraph below.
+ * processing-strategy - defines logic of acknowledgement of the messages. See separate paragraph below.
+  
+##### Queue submit strategy
+
+Rule Engine service constantly polls messages for specific topic and once the Consumer returns a list of messages it creates the TbMsgPackProcessingContext object.
+Queue submit strategy controls how messages from TbMsgPackProcessingContext are submitted to rule chains. There are 5 available strategies:
+
+ * BURST - all messages are submitted to the rule chains in the order they arrive.  
+ * BATCH - messages are grouped to batches using "queue.rule-engine.queues\[queue index\].batch-size" configuration parameter. 
+ New batch is not submitted until previous batch is acknowledged.
+ * SEQUENTIAL_BY_ORIGINATOR - messages are submitted sequentially within particular entity (originator of the message). 
+ New message for e.g. device A is not submitted until previous message for device A is acknowledged. 
+ * SEQUENTIAL_BY_TENANT - messages are submitted sequentially within tenant (owner of the originator of the message). 
+ New message for e.g tenant A is not submitted until previous message for tenant A is acknowledged.
+ * SEQUENTIAL  - messages are submitted sequentially. New message is not submitted until previous message is acknowledged. This makes processing quite slow.
+ 
+See this [guide](/docs/user-guide/rule-engine-2-5/tutorials/queues-for-synchronization/) for an example of submit strategy use case.
+
+##### Queue processing strategy
+  
+Processing Strategy controls how failed or timed out messages are re-processed. There are 5 available strategies:
+
+ * SKIP_ALL_FAILURES - simply ignore all failures and timeouts. Will cause messages to be "lost". 
+ For example, if DB is down, the messages will not be persisted but will be still marked as "acknowledged" and deleted from queue.
+ This strategy is created mostly for backward-compatibility with previous releases and development/demo environments.
+ * RETRY_ALL - retry all messages from processing pack. 
+ If 1 out of 100 messages will fail, strategy will still reprocess (resubmit to Rule Engine) 100 messages. 
+ * RETRY_FAILED - retry all failed messages from processing pack. 
+ If 1 out of 100 messages will fail, strategy will reprocess(resubmit to Rule Engine) only 1 message. 
+ Timed-out messages will not be reprocessed.
+ * RETRY_TIMED_OUT - retry all timed-out messages from processing pack. 
+ If 1 out of 100 messages will timeout, strategy will reprocess(resubmit to Rule Engine) only 1 message.
+ Failed messages will not be reprocessed.
+ * RETRY_FAILED_AND_TIMED_OUT - retry all failed and timed-out messages from processing pack.
+ 
+All "RETRY*" strategies support important configuration parameters:  
+ 
+ * retries - Number of retries, 0 is unlimited
+ * failure-percentage - Skip retry if failures or timeouts are less then X percentage of messages;
+ * pause-between-retries - Time in seconds to wait in consumer thread before retries;
+ 
+ See this [guide](/docs/user-guide/rule-engine-2-5/tutorials/queues-for-message-reprocessing/) for an example of processing strategy use case.
+
+##### Default queues
+
+There are three default queues configured: Main, HighPriority and SequentialByOriginator.
+They differ based on submit and processing strategy.
+Basically, rule engine process messages from Main topic and may optionally put them to other topics using "Checkpoint" rule node. 
+Main topic simply ignores failed messages by default. This is done for backward compatibility with previous releases. 
+However, you may reconfigure this at your own risk. 
+Note that if one message is not processed due to some failure in your rule node script, it may prevent next messages from being processed.
+We have designed specific [dashboard](/docs/user-guide/rule-engine-2-0/overview/#rule-engine-statistics) to monitor Rule Engine processing and failures. 
+
+The HighPriority topic may be used for delivery of alarms or other critical processing steps. 
+The messages in HighPriority topic are constantly reprocessed in case of failure until the message processing succeeds. 
+This is useful if you have an outage of the SMTP server or external system. The Rule Engine will retry sending the message until it is processed.   
+
+The SequentialByOriginator topic is important if you would like to make sure that messages are processed in correct order.
+Messages from the same entity will be processed with the order they arrive to the queue. 
+Rule Engine will not submit new message to the rule chain until the previous message for the same entity id is acknowledged. 
+
+## Predefined Message Types
 
 List of the predefined Message Types is presented in the following table:
 
@@ -207,44 +342,6 @@ List of the predefined Message Types is presented in the following table:
       </tr>
    </tbody>
 </table>
-
-#### Rule Node
-
-Rule Node is a basic component of Rule Engine that process single incoming message at a time and produce one or more outgoing messages. 
-Rule Node is a main logical unit of the Rule Engine. Rule Node can filter, enrich, transform incoming messages, perform action or communicate with external systems.
-
-#### Rule Node Relation
-
-Rule Nodes may be related to other rule nodes. Each relation has relation type, a label used to identify logical meaning of the relation. 
-When rule node produces the outgoing message it always specifies the relation type which is used to route message to next nodes.
- 
-Typical rule node relations are "Success" and "Failure". 
-Rule nodes that represent logical operations may use "True" or "False". 
-Some specific rule nodes may use completely different relation types, for example: "Post Telemetry", "Attributes Updated", "Entity Created", etc. 
-
-#### Rule Chain
-
-Rule Chain is a logical group of rule nodes and their relations. For example, the rule chain below will:
-
-  * save all telemetry messages to the database;
-  * raise "High Temperature Alarm" if temperature field in the message will be higher then 50 degrees;
-  * raise "Low Temperature Alarm" if temperature field in the message will be lower then -40 degrees;
-  * log failure to execute the temperature check scripts to console in case of logical or syntax error in the script. 
-
-![image](/images/user-guide/rule-engine-2-0/rule-node-relations.png)
-
-
-Tenant administrator is able to define one **Root Rule Chain** and optionally multiple other rule chains. 
-Root rule chain handles all incoming messages and may forward them to other rule chains for additional processing.
-Other rule chains may also forward messages to different rule chains.
-
-For example, the rule chain below will:
-
-  * raise "High Temperature Alarm" if temperature field in the message will be higher then 50 degrees;
-  * clear "High Temperature Alarm" if temperature field in the message will be less then 50 degrees;
-  * forward events about "Created" and "Cleared" alarms to external rule chain that handles notifications to corresponding users.
- 
-![image](/images/user-guide/rule-engine-2-0/rule-chain-references.png)
  
 ## Rule Node Types
 
@@ -281,6 +378,15 @@ You can define:
 - Actual **JS script** in Filter section.
 
 After pressing **Test** output will be returned in right **Output** section.
+
+## Rule Engine Statistics
+
+ThingsBoard Team have prepared the "default" dashboard for Rule Engine statistics. 
+This dashboard is automatically loaded for each tenant. The statistics collection is enabled by default and is controlled via configuration properties.
+
+You may notice insights about errors in processing and what causes them on the dashbaord below: 
+
+![image](/images/user-guide/rule-engine-2-0/rule-engine-stats-dashboard.png)
 
 ## Debugging
 
