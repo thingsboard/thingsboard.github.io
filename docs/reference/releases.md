@@ -18,7 +18,7 @@ Minor release with everything from 3.0/2.5.2 plus the following improvements.
 
  * Improved database migration - create indexes after inserts;
  * Improved rpc error handling;
- * Moved component tb-compact to shared module;
+ * Moved component tb-contact to shared module;
  * Updated Czech translation;
 
 **Bug fixes:**
@@ -26,19 +26,17 @@ Minor release with everything from 3.0/2.5.2 plus the following improvements.
  * UI: Dashboard page fixes and improvements;
  * UI: Fix map tooltip actions;
  * UI: Input maps fixed: error create the first marker;
+ * UI: Fix image map initialization;
+ * UI: Fix state chart subscription;
  * Set correct cassandra datacenter;
 
 ### ThingsBoard PE
 
 Everything from [TB CE v3.0.1](https://github.com/thingsboard/thingsboard/releases/tag/v3.0.1) with the following improvements.
 
-**Improvements:**
-
- * TODO;
-
 **Bug fixes:**
 
- * BugFixes;
+ * UI: Fix null value during export into csv.
 
 ## v2.5.2 (June 9, 2020)
 
