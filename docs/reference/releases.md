@@ -8,7 +8,7 @@ description: ThingsBoard architecture
 * TOC
 {:toc}
 
-## v3.0.1 (June 8, 2020)
+## v3.0.1 (June 9, 2020)
 
 ### ThingsBoard CE
 
