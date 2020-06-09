@@ -1,14 +1,14 @@
 Download installation package:
 
 ```bash
-wget https://dist.thingsboard.io/tb-tcp-udp-integration-2.5pe.rpm
+wget https://dist.thingsboard.io/tb-tcp-udp-integration-3.0.1pe.rpm
 ```
 {: .copy-code}
 
 Install integration as a service:
 
 ```bash
-sudo rpm -Uvh tb-tcp-udp-integration-2.5pe.rpm
+sudo rpm -Uvh tb-tcp-udp-integration-3.0.1pe.rpm
 ```
 {: .copy-code}
 

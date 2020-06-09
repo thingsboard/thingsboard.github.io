@@ -1,14 +1,14 @@
 Download installation package:
 
 ```bash
-wget https://dist.thingsboard.io/tb-http-integration-2.5pe.deb
+wget https://dist.thingsboard.io/tb-http-integration-3.0.1pe.deb
 ```
 {: .copy-code}
 
 Install integration as a service:
 
 ```bash
-sudo dpkg -i tb-http-integration-2.5pe.deb
+sudo dpkg -i tb-http-integration-3.0.1pe.deb
 ```
 {: .copy-code}
 
