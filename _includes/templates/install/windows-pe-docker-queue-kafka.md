@@ -38,7 +38,7 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
   mytbpe:
     restart: always
-    image: "store/thingsboard/tb-pe:2.5.0PE"
+    image: "store/thingsboard/tb-pe:3.0.1PE"
     depends_on:
       - kafka
     ports:

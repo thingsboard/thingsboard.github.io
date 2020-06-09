@@ -50,14 +50,14 @@ sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.
 Download installation package.
 
 ```bash
-wget https://dist.thingsboard.io/thingsboard-3.0pe.rpm
+wget https://dist.thingsboard.io/thingsboard-3.0.1pe.rpm
 ```
 {: .copy-code}
 
 Install ThingsBoard as a service
 
 ```bash
-sudo rpm -Uvh thingsboard-3.0pe.rpm
+sudo rpm -Uvh thingsboard-3.0.1pe.rpm
 ```
 {: .copy-code}
 
@@ -147,7 +147,7 @@ Please allow up to 90 seconds for the Web UI to start. This is applicable only f
 Download installation package for the [Reports Server](/docs/user-guide/reporting/#reports-server) component:
 
 ```bash
-wget https://dist.thingsboard.io/tb-web-report-3.0pe.rpm
+wget https://dist.thingsboard.io/tb-web-report-3.0.1pe.rpm
 ```
 {: .copy-code}
 
@@ -186,7 +186,7 @@ rm -rf ~/noto
 Install and start Web Report service:
 
 ```bash
-sudo rpm -Uvh tb-web-report-3.0pe.rpm
+sudo rpm -Uvh tb-web-report-3.0.1pe.rpm
 sudo service tb-web-report start
 ```
 

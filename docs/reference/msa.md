@@ -89,7 +89,7 @@ ThingsBoard node is a core service written in Java that is responsible for handl
  
 **Note**: moving rule engine to a separate microservice is scheduled for ThingsBoard v2.5. See [roadmap](/docs/reference/roadmap) for more details. 
  
-ThingsBoard node uses Akka actor system to implement tenant, device, rule chains and rule node actors. 
+ThingsBoard node uses Actor System to implement tenant, device, rule chains and rule node actors. 
 Platform nodes can join the cluster, where each node is equal. Service discovery is done via Zookeeper. 
 ThingsBoard nodes route messages between each other using consistent hashing algorithm based on entity id. 
 So, messages for the same entity are processed on the same ThingsBoard node. Platform uses [gRPC](https://grpc.io/) to send messages between ThingsBoard nodes.

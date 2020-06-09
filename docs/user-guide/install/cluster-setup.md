@@ -7,150 +7,82 @@ description: ThingsBoard IoT platform cluster setup guide
 
 ---
 
-* TOC
-{:toc}
+<div class="installation-options">
+    <div class="install-options-header">
+       <div class="install-options-hero">
+          <div class="container">
+            <div class="install-options-hero-content">
+                <h1>ThingsBoard Kubernetes Cluster setup options</h1>
+                <div class="install-options-description">
+                    <p>
+                        You may deploy ThingsBoard IoT Platform using different tools and platforms which are based on Kubernetes
+                    </p>
+                </div>
+            </div>            
+            <div class="col-lg-12 deployment-container one-line-deployment-container">
+                <div class="deployment-div">
+                    <div class="container">
+                        <div class="deployment-section deployment-on-premise" id="onPremise">
+                           <div class="deployment-cards">
+                                <div class="deployment-cards-container">
+                                    <div class="deployment-card-block">
+                                        <a href="/docs/user-guide/install/cluster/minikube-cluster-setup/">
+                                            <span>
+                                                <div class="deployment-logo" style="height:134px">
+                                                    <img width="" src="/images/install/cluster/minikube.png" title="Minikube" alt="Minikube">
+                                                 </div>
+                                            </span>
+                                        </a>
+                                    </div>
+                               </div>                    
+                            </div>                        
+                        </div>
+                    </div>
+                </div>    
+            </div>
+          </div>
+       </div>
+    </div>
+</div>
 
-This guide will help you to setup ThingsBoard in cluster mode. 
-For simplicity, we will use docker-compose tool to setup our cluster.
 
-## Prerequisites
+<script type="text/javascript">
 
-ThingsBoard Microservices are running in dockerized environment.
-Before starting please make sure [Docker CE](https://docs.docker.com/install/) and [Docker Compose](https://docs.docker.com/compose/install/) are installed in your system. 
+    inViewportDefer(function() {
+        $(".deployment-cards .deployment-cards-container .deployment-card-block").inViewport(function(px){
+            if(px >= 10) {
+                $(this).addClass("animated zoomIn");
+                return true;
+            }
+        });
+    });
 
-## Step 1. Pull ThingsBoard CE Images
+    jqueryDefer(function () {
+    
+        window.addEventListener('popstate', onPopStateCeInstallOptions);
+        
+        onPopStateCeInstallOptions();
+        
+    });
+    
+    function onPopStateCeInstallOptions() {
+            var params = Qs.parse(window.location.search, { ignoreQueryPrefix: true });
+            var targetId = params['ceInstallType'];
+            if (!targetId) {
+                targetId = 'onPremise';
+            }
+            selectTargetCeInstallOption('#'+targetId);
+    }
+        
+    function selectTargetCeInstallOption(targetId) {
+         $(".deployment-selector .deployment").removeClass("active");         
+         $(".deployment-selector .deployment[data-toggle='"+targetId+"']").addClass("active");
+         $(".deployment-selector .deployment[data-toggle='"+targetId+"'] .magic-radio").prop("checked", true);
+         
+         $('.deployment-div .deployment-section').removeClass("active");
+         $('.deployment-div .deployment-section'+targetId).addClass("active");
+         
+         $('.deployment-div .deployment-section' + targetId + ' .deployment-card-block').addClass("animated zoomIn");
+    }   
 
-Make sure your have [logged in](https://docs.docker.com/engine/reference/commandline/login/) to docker hub using command line.
-
-```bash
-docker pull thingsboard/tb-node:3.0.0
-docker pull thingsboard/tb-web-ui:3.0.0
-docker pull thingsboard/tb-web-report:3.0.0
-docker pull thingsboard/tb-js-executor:3.0.0
-docker pull thingsboard/tb-http-transport:3.0.0
-docker pull thingsboard/tb-mqtt-transport:3.0.0
-docker pull thingsboard/tb-coap-transport:3.0.0
-```
-
-## Step 2. Review the architecture page
-
-Starting ThingsBoard v2.2, it is possible to install ThingsBoard cluster using new microservices architecture and docker containers. 
-See [**microservices**](/docs/reference/msa/) architecture page for more details.
-
-## Step 3. Clone ThingsBoard CE repository
-
-```bash
-git clone https://github.com/thingsboard/thingsboard.git
-cd docker
-```
-
-## Step 4. Configure ThingsBoard database
-
-Before performing initial installation you can configure the type of database to be used with ThingsBoard.
-In order to set database type change the value of `DATABASE` variable in `.env` file to one of the following:
-
-- `postgres` - use PostgreSQL database;
-- `cassandra` - use Cassandra database;
-
-**NOTE**: According to the database type corresponding docker service will be deployed (see `docker-compose.postgres.yml`, `docker-compose.cassandra.yml` for details).
-
-## Step 5. Choose ThingsBoard queue service 
-
-{% include templates/install/install-queue.md %}
-
-{% capture contenttogglespecqueue %}
-Kafka <small>(recommended for on-prem, production installations)</small>%,%kafka%,%templates/install/cluster-queue-kafka.md%br%
-AWS SQS <small>(managed service from AWS)</small>%,%aws-sqs%,%templates/install/cluster-queue-aws-sqs.md%br%
-Google Pub/Sub <small>(managed service from Google)</small>%,%pubsub%,%templates/install/cluster-queue-pub-sub.md%br%
-Azure Service Bus <small>(managed service from Azure)</small>%,%service-bus%,%templates/install/cluster-queue-service-bus.md%br%
-RabbitMQ <small>(for small on-prem installations)</small>%,%rabbitmq%,%templates/install/cluster-queue-rabbitmq.md{% endcapture %}
-
-{% include content-toggle.html content-toggle-id="ubuntuThingsboardQueue" toggle-spec=contenttogglespecqueue %} 
-
-## Step 6. Running
-
-Execute the following command to create log folders for the services and chown of these folders to the docker container users. 
-To be able to change user, **chown** command is used, which requires sudo permissions (script will request password for a sudo access): 
-
-`
-$ ./docker-create-log-folders.sh
-`
-
-Execute the following command to run installation:
-
-`
-$ ./docker-install-tb.sh --loadDemo
-`
-
-Where:
-
-- `--loadDemo` - optional argument. Whether to load additional demo data.
-
-Execute the following command to start services:
-
-`
-$ ./docker-start-services.sh
-`
-
-After a while when all services will be successfully started you can open `http://{your-host-ip}` in you browser (for ex. `http://localhost`).
-You should see ThingsBoard login page.
-
-Use the following default credentials:
-
-- **System Administrator**: sysadmin@thingsboard.org / sysadmin
-
-If you installed DataBase with demo data (using `--loadDemo` flag) you can also use the following credentials:
-
-- **Tenant Administrator**: tenant@thingsboard.org / tenant
-- **Customer User**: customer@thingsboard.org / customer
-
-In case of any issues you can examine service logs for errors.
-For example to see ThingsBoard node logs execute the following command:
-
-`
-$ docker-compose logs -f tb-core1 tb-rule-engine1
-`
-
-Or use `docker-compose ps` to see the state of all the containers.
-Use `docker-compose logs --f` to inspect the logs of all running services.
-See [docker-compose logs](https://docs.docker.com/compose/reference/logs/) command reference for details.
-
-Execute the following command to stop services:
-
-`
-$ ./docker-stop-services.sh
-`
-
-Execute the following command to stop and completely remove deployed docker containers:
-
-`
-$ ./docker-remove-services.sh
-`
-
-Execute the following command to update particular or all services (pull newer docker image and rebuild container):
-
-`
-$ ./docker-update-service.sh [SERVICE...]
-`
-
-Where:
-
-- `[SERVICE...]` - list of services to update (defined in docker-compose configurations). If not specified all services will be updated.
-
-## Upgrading
-
-In case when database upgrade is needed, execute the following commands:
-
-```
-$ ./docker-stop-services.sh
-$ ./docker-upgrade-tb.sh --fromVersion=[FROM_VERSION]
-$ ./docker-start-services.sh
-```
-
-Where:
-
-- `FROM_VERSION` - from which version upgrade should be started. See [Upgrade Instructions](https://thingsboard.io/docs/user-guide/install/upgrade-instructions) for valid `fromVersion` values.
-
-## Next steps
-
-{% assign currentGuide = "InstallationGuides" %}{% include templates/guides-banner.md %}
+</script>

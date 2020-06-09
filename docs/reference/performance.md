@@ -18,8 +18,9 @@ which in summary gives us around **2 million published messages per minute**.
 ThingsBoard performance leverages three main projects:
 
  - [Netty](http://netty.io/) for high-performance MQTT server/broker for IoT devices.
- - [Akka](http://akka.io/) for high-performance actor system to coordinate messages between millions of devices.
- - [Cassandra](http://cassandra.apache.org/) for scalable high-performance NoSQL DB to store timeseries data from devices. 
+ - [Cassandra](http://cassandra.apache.org/) for scalable high-performance NoSQL DB to store timeseries data from devices.
+ - Actor System for high-performance coordination of messages between millions of devices.
+ - Kafka (or RabbitMQ, AWS SQS, Azure Event Hub, Google PubSub) - as a scalable message queue 
  
 We also use [Zookeeper](https://zookeeper.apache.org/) for coordination and [gRPC](http://www.grpc.io/) in cluster mode. See [platform architecture](/docs/reference/) for more details.
 

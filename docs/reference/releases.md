@@ -8,6 +8,65 @@ description: ThingsBoard architecture
 * TOC
 {:toc}
 
+## v3.0.1 (June 9, 2020)
+
+### ThingsBoard CE
+
+Minor release with everything from 3.0/2.5.2 plus the following improvements.
+
+**Improvements:**
+
+ * Improved database migration - create indexes after inserts;
+ * Improved rpc error handling;
+ * Moved component tb-contact to shared module;
+ * Updated Czech translation;
+
+**Bug fixes:**
+
+ * UI: Dashboard page fixes and improvements;
+ * UI: Fix map tooltip actions;
+ * UI: Input maps fixed: error create the first marker;
+ * UI: Fix image map initialization;
+ * UI: Fix state chart subscription;
+ * Set correct cassandra datacenter;
+
+### ThingsBoard PE
+
+Everything from [TB CE v3.0.1](https://github.com/thingsboard/thingsboard/releases/tag/v3.0.1) with the following improvements.
+
+**Bug fixes:**
+
+ * UI: Fix null value during export into csv.
+
+## v2.5.2 (June 9, 2020)
+
+### ThingsBoard CE
+
+Minor bug-fix release with few improvements.
+
+**Improvements:**
+
+ * Replaced Akka with pure java implementation of Actor System;
+ * Using external executor in Kafka Node;
+ * Improvements for actor initialization logic;
+ * Improved handling of peak connect attempts;
+ * RPC Request Node improvement to avoid blocking;
+
+**Bug fixes:**
+
+ * UI: Fixed the activation of on-row event on details click;
+ * UI: Fixed problem widget-editor in Safari #2900;
+ * Message is pushed to correct queue in case of duplication;
+ * Never use Fork-Join pool with parallelism set to 1.
+
+### ThingsBoard PE
+
+Everything from [TB CE v2.5.2](https://github.com/thingsboard/thingsboard/releases/tag/v2.5.2) with the following improvements.
+
+**Bug fixes:**
+
+ * UI: Fix null value during export into csv;
+
 ## v3.0 (June 1, 2020)
 
 ### ThingsBoard CE

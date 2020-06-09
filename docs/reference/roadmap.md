@@ -9,19 +9,13 @@ The product roadmap listed below covers only main features and does not cover sm
 
 ## ThingsBoard CE
 
-### v3.0
-
- * Force SQL DB usage to store entities and optional NoSQL support for timeseries data;  
- * Migration of the UI to Angular 9;
- * UI/UX improvements;
- 
 ### v3.1
  
  * Improved Entity Search API;
  * Device Profiles to dramatically simplify configuration of Validation, Thresholds and Alarms generation;
  * Sticky Partitioning Strategy for all Queue implementations;
  
-See active development in progress [here](https://github.com/thingsboard/thingsboard/tree/develop/3.0) for more info.
+See active development in progress [here](https://github.com/thingsboard/thingsboard/tree/develop/3.1) for more info.
 
 ### Upcoming releases
 
@@ -33,12 +27,6 @@ See active development in progress [here](https://github.com/thingsboard/thingsb
 
 ## ThingsBoard PE
 
-### v3.0
- 
-Everything in CE 3.0, plus:
-
- * Advanced CSS for white-labeling;
- 
 ### v3.1
  
 Everything in CE 3.1, plus:

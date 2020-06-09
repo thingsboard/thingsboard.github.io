@@ -33,8 +33,12 @@ toc:
     path: /docs/user-guide/install/alibaba-cloud/
   - title: Building from sources
     path: /docs/user-guide/install/building-from-source/
-  - title: Cluster setup
+  - title: Cluster setup with Docker Compose
+    path: /docs/user-guide/install/docker-compose-setup/
+  - title: Cluster setup with Kubernetes
     path: /docs/user-guide/install/cluster-setup/
+  - title: Cluster setup with Kubernetes on Minikube
+    path: /docs/user-guide/install/cluster/minikube-cluster-setup/
   - title: Upgrade instructions
     path: /docs/user-guide/install/upgrade-instructions/
 - title: ThingsBoard Professional Edition

@@ -65,7 +65,7 @@ Where:
 - `~/.mytbpe-logs:/var/log/thingsboard`   - mounts the host's dir `~/.mytbpe-logs` to ThingsBoard logs directory;
 - `mytbpe`             - friendly local name of this machine;
 - `restart: always`        - automatically start ThingsBoard in case of system reboot and restart in case of failure.;
-- `store/thingsboard/tb-pe:3.0.0PE`          - docker image.
+- `store/thingsboard/tb-pe:3.0.1PE`          - docker image.
     
 After executing this command you can open `http://{your-host-ip}:8080` in you browser (for ex. `http://localhost:8080`). You should see ThingsBoard login page.
 Use the following default credentials:

@@ -133,10 +133,19 @@ notitle: "true"
                                         </a>
                                     </div>
                                     <div class="deployment-card-block">
+                                        <a href="/docs/user-guide/install/docker-compose-setup/">
+                                            <span>
+                                                <div class="deployment-logo" style="height:134px">
+                                                    <img width="" src="/images/install/platform/docker-compose.png" title="Cluster setup with Docker Compose" alt="Cluster setup with Docker Compose">
+                                                 </div>
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="deployment-card-block">
                                         <a href="/docs/user-guide/install/cluster-setup/">
                                             <span>
                                                 <div class="deployment-logo" style="height:134px">
-                                                    <img width="" src="/images/install/platform/cluster.png" title="Cluster setup" alt="Cluster setup">
+                                                    <img width="" src="/images/install/platform/cluster.png" title="Cluster setup with Kubernetes" alt="Cluster setup with Kubernetes">
                                                  </div>
                                             </span>
                                         </a>

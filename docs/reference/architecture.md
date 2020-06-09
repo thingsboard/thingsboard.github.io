@@ -46,7 +46,7 @@ Learn more about ThingsBoard REST APIs [here](/docs/reference/rest-api/)
 ## Actor model
 
 [Actor model](https://en.wikipedia.org/wiki/Actor_model) enables high performance concurrent processing of messages from devices as long as server-side API calls.
-ThingsBoard uses [Akka](http://akka.io/) as an actor system implementation with following actor hierarchies.
+ThingsBoard uses own Actor System implementation (sharpened for our use cases) with following actor hierarchies.
 
  ![image](/images/reference/actor-system-hierarchies.svg)
 
@@ -64,16 +64,6 @@ The brief description of each actor's functionality is listed below:
  * **Rule Node Actor** - process incoming messages, and report results back to rule chain actor. 
  An instance of this actor is always present in memory.
  
- * **Device Session Manager Actor** - responsible for management of device session actors. 
- Creates session actors on a first message with the corresponding session id. Closes session actors when the corresponding session is closed. 
- * **Session Actor** - represents a communication session between a device and ThingsBoard server.
- Sessions may be synchronous (HTTP, CoAP) and asynchronous (MQTT, CoAP with Observe option).
- 
- * **RPC Session Manager Actor** - responsible for management of cluster RPC session actors.
- Creates session actor when a new server is up. Closes session actor when server is down.
- * **RPC Session Actor** - represents a communication session between two ThingsBoard servers in the cluster mode.
- Communication is done using HTTP/2 based on [gRPC](http://www.grpc.io/). 
-
 ## Clustering mode
 
 ###### Service Discovery
@@ -114,8 +104,7 @@ and support of X.509 certificate based credentials for MQTT protocol. See [MQTT 
 
 ThingsBoard uses following main third-party projects:
  
- * Akka - for actor system implementation
  * Zookeeper - for services coordination
- * gRPC - for high-performance RPC
  * Cassandra - as a scalable and reliable database
+ * Kafka (or RabbitMQ, AWS SQS, Azure Event Hub, Google PubSub) - as a scalable message queue
 
