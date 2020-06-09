@@ -41,13 +41,13 @@ The message delivery is acknowledged to device only after corresponding message 
 
 ThingsBoard Core is responsible for handling [REST API](/docs/reference/rest-api/) calls and WebSocket [subscriptions](/docs/user-guide/telemetry/#websocket-api).
 It is also responsible for storing up to date information about active device sessions and monitoring device [connectivity state](/docs/user-guide/device-connectivity-status/).
-ThingsBoard Core uses Akka actor system under the hood to implement actors for main entities: tenants and devices. 
+ThingsBoard Core uses Actor System under the hood to implement actors for main entities: tenants and devices. 
 Platform nodes can join the cluster, where each node is responsible for certain partitions of the incoming messages.
 
 **ThingsBoard Rule Engine**
 
 ThingsBoard Rule Engine is the heart of the system and is responsible for processing incoming [messages](/docs/user-guide/rule-engine-2-0/overview/#rule-engine-message).
-Rule Engine uses Akka actor system under the hood to implement actors for main entities: rule chains and rule nodes.
+Rule Engine uses Actor System under the hood to implement actors for main entities: rule chains and rule nodes.
 Rule Engine nodes can join the cluster, where each node is responsible for certain partitions of the incoming messages.
 
 Rule Engine subscribes to incoming data feed from queue(s) and acknowledge the message only once it is processed. 

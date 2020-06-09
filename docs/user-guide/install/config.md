@@ -4651,11 +4651,6 @@ We will list only main configuration parameters below to avoid duplication of th
 
 The configuration file for the startup script. Contains Java options and classpath related parameters.
 
-#### actor-system.conf
-
-Actor system configuration. Contains general actor system properties and configuration of [Akka dispatchers](http://doc.akka.io/docs/akka/current/java/dispatchers.html).
-Allows performance tuning for specific use cases.
-
 #### logback.xml
 
 The configuration file for logging. Allows controlling the log level, the size of log files and the total size/volume of logs.
