@@ -479,6 +479,9 @@
   - path: /docs/user-guide/oauth/oauth0
     title: OAuth0 OAuth example
     subtitle: Learn how to step-by-step setup OAuth with OAuth0.
+  - path: /docs/user-guide/oauth/okta
+    title: OAuth0 Okta example
+    subtitle: Learn how to step-by-step setup OAuth with Okta.
 
 - title: Contribution and Development
   subtitle: Learn how to contribute to Thingsboard, customize & develop custom widgets and rule nodes
