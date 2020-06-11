@@ -207,6 +207,8 @@ These steps are applicable for 2.5PE+ ThingsBoard Professional Edition version.
 
 #### ThingsBoard PE package download
 
+**Please, note that the 3.0.1 version is possible only to be upgraded on from the 2.5.1 version**
+
 {% capture tabspec %}thingsboard-download-3-0-1
 thingsboard-download-3-0-1-ubuntu,Ubuntu,shell,resources/3.0.1pe/thingsboard-ubuntu-download.sh,/docs/user-guide/install/resources/3.0.1pe/thingsboard-ubuntu-download.sh
 thingsboard-download-3-0-1-centos,CentOS,shell,resources/3.0.1pe/thingsboard-centos-download.sh,/docs/user-guide/install/resources/3.0.1pe/thingsboard-centos-download.sh{% endcapture %}  
@@ -446,6 +448,8 @@ net start thingsboard
 ```
 
 ## Upgrading to 2.5.2PE 
+
+**Please, note that the 3.0.1 version is possible only to be upgraded on from the 2.5.1 version**
 
 These steps are applicable for 2.4.3PE ThingsBoard Professional Edition version.
 
