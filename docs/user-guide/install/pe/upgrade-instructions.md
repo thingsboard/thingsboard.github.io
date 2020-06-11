@@ -449,7 +449,7 @@ net start thingsboard
 
 ## Upgrading to 2.5.2PE 
 
-**Please, note that the 3.0.1 version is possible only to be upgraded on from the 2.5.1 version**
+**Please, note that the 2.5.2 version is possible only to be upgraded on from the 2.5.1 version**
 
 These steps are applicable for 2.4.3PE ThingsBoard Professional Edition version.
 
