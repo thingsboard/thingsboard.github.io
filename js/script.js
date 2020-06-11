@@ -146,6 +146,7 @@ var tb = (function () {
 
 			case 'home':
 			case 'thingsboard-pe':
+			case 'edge':
             case 'pe-aws':
             case 'pricing':
             case 'partner-program':

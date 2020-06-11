@@ -24,6 +24,9 @@ description: ThingsBoard Products Pricing
         <li id="menu-item-trendz" class="menu-item">
             <a href="javascript:void(0);" onClick="activatePricingSection('trendz')">Trendz Analytics</a>
         </li>
+        <li id="menu-item-edge" class="menu-item">
+                    <a href="javascript:void(0);" onClick="activatePricingSection('edge')">Edge</a>
+                </li>
      </ul>
    </nav> 
 </div>
@@ -464,6 +467,223 @@ description: ThingsBoard Products Pricing
 </div>
 </section>
 
+<section id="edge" class="pricing-content">
+ <div class="text-center pt-4 pb-4">
+    <a class="btn btn-full-green btn-pricing" href="/docs/contact-us/?subject=Partnership">Become a partner</a> 
+ </div> 
+ <div class="col-lg-12">
+    <div class="solution-selector">
+        <div class="solution active defaultselection" data-toggle="#payAsYouGo">
+            <input type="radio" class="magic-radio" name="pricing-radio-selector" id="PricingPayAsYouGo" value="Pricing Pay As You Go Details" checked>
+            <label for="PricingPayAsYouGo">
+                <div class="solution-icon-div d-inline-block">
+                    <img src="/images/pricing/pay-as-you-go.png" alt="pay as you go icon" class="pay-as-you-go-icon d-inline">
+                </div>
+                <h2 class="d-none d-md-inline-block" data-faq-id="what-is-pay-as-you-go" data-faq-link-size="50%">Pay-as-you-go</h2>
+            </label>
+        </div>
+        <div class="solution" data-toggle="#perpetual">
+            <input type="radio" class="magic-radio" name="pricing-radio-selector" id="PricingPerpetual" value="Pricing Perpetual Details">
+            <label for="PricingPerpetual">
+                <div class="solution-icon-div d-inline-block">
+                    <img src="/images/pricing/perpetual.png" alt="perpetual icon" class="perpetual-icon d-inline">
+                </div>
+                <h2 class="d-none d-md-inline-block" data-faq-id="what-is-perpetual" data-faq-link-size="50%">Perpetual</h2>
+            </label>
+        </div>
+    </div>
+    <div class="pricing-div">
+        <div class="container">
+            <div class="pricing-section pricing-pay-as-you-go active" id="payAsYouGo">
+               <div class="row d-none d-lg-flex mb-4">
+                   <div class="col-lg-12">
+                        <div class="indicator gray-bg text-white text-center pt-2 pb-2">
+                            SUBSCRIPTION PLANS
+                        </div>
+                   </div> 
+                   <div class="col-lg-12">
+                   <p>&nbsp;</p>
+                        <div class="pricing-square-item text-center">
+                            All subscription plans include <span class="a-full-green">unlimited</span> customers, dashboards, integrations, api calls, datapoints & messages  
+                        </div>
+                   </div>                    
+               </div>
+               <div class="row d-none d-lg-flex mb-4"></div>
+               <div class="row justify-content-center">
+                    <div class="col-md-4 col-lg-4 col-xl mb-4">
+                        <div class="pricing-square">
+                            <h2>Micro</h2>
+                            <h4 class="pricing-square-price mb-0">
+                                1
+                                <span>USD / Month</span>
+                            </h4>
+                            <div class="pricing-square-item">Up to 10 Devices</div>
+                            <a class="btn btn-full-green btn-pricing" href="javascript:void(0);" 
+                                onClick="getLicense(event,
+                                false,
+                                '20be6f50-a18e-11e9-8e16-03828ff5271c',
+                                '7ef31a80-a18e-11e9-8e16-03828ff5271c',
+                                'Maker')">
+                                Get your license
+                            </a>
+                            <div class="pricing-square-item" data-faq-id="community-support">
+                                Community support
+                            </div><br>
+                            <div class="pricing-square-item">—</div><br>
+                            <div class="pricing-square-item">
+                                <p>&nbsp;</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-4 col-xl mb-4">
+                        <div class="pricing-square">
+                            <h2>Small</h2>
+                            <h4 class="pricing-square-price mb-0">
+                                10
+                                <span>USD / Month</span>
+                            </h4>
+                            <div class="pricing-square-item">Up to 100 Devices</div>
+                            <a class="btn btn-full-green btn-pricing" href="javascript:void(0);" 
+                                onClick="getLicense(event,
+                                false,
+                                '20be6f50-a18e-11e9-8e16-03828ff5271c',
+                                '0e236dc0-a196-11e9-8e16-03828ff5271c',
+                                'Prototype')">
+                                Get your license
+                            </a>
+                            <div class="pricing-square-item" data-faq-id="community-support">
+                                Community support
+                            </div><br>
+                            <div class="pricing-square-item">
+                                <p>&nbsp;</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-4 col-xl mb-4">
+                        <div class="pricing-square">
+                            <h2>Medium</h2>
+                            <h4 class="pricing-square-price mb-0">
+                                20
+                                <span>USD / Month</span>
+                            </h4>
+                            <div class="pricing-square-item">Up to 300 Devices</div>
+                            <a class="btn btn-full-green btn-pricing" href="javascript:void(0);" 
+                                onClick="getLicense(event,
+                                false,
+                                '20be6f50-a18e-11e9-8e16-03828ff5271c',
+                                '8ac6d190-a197-11e9-8e16-03828ff5271c',
+                                'Startup')">
+                                Get your license
+                            </a>
+                            <div class="pricing-square-item" data-faq-id="subscription-support">
+                                Email support within 36 hours
+                            </div><br>
+                            <div class="pricing-square-item"><span class="a-full-green">White-labeling</span></div><br>
+                            <div class="pricing-square-item">
+                                <p>&nbsp;</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-4 col-xl mb-4">
+                        <div class="pricing-square">
+                            <h2>Large</h2>
+                            <h4 class="pricing-square-price mb-0">
+                                30
+                                <span>USD / Month</span>
+                            </h4>
+                            <div class="pricing-square-item">Up to 1000 Devices</div>
+                            <a class="btn btn-full-green btn-pricing" href="javascript:void(0);" 
+                                onClick="getLicense(event,
+                                false,
+                                '20be6f50-a18e-11e9-8e16-03828ff5271c',
+                                'd82185c0-a197-11e9-8e16-03828ff5271c',
+                                'Business')">
+                                Get your license
+                            </a>
+                            <div class="pricing-square-item" data-faq-id="subscription-support">
+                                Email support within 24 hours
+                            </div><br>
+                            <div class="pricing-square-item"><span class="a-full-green">White-labeling</span></div><br>
+                            <div class="pricing-square-item">
+                                <p>&nbsp;</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-4 col-xl flex-xl-grow-0 mb-4">
+                        <div class="pricing-square">
+                            <h2>Unlimited</h2>
+                            <h4 class="pricing-square-price mb-0">
+                                50
+                                <span>USD / Month</span>
+                            </h4>
+                            <div class="pricing-square-item">Unlimited number of Devices</div> 
+                            <a class="btn btn-full-green btn-pricing" href="javascript:void(0);" 
+                                onClick="getLicense(event,
+                                false,
+                                '20be6f50-a18e-11e9-8e16-03828ff5271c',
+                                '34530df0-a198-11e9-8e16-03828ff5271c',
+                                'Enterprise')">
+                                Get your license
+                            </a>
+                            <div class="pricing-square-item" data-faq-id="subscription-support">
+                                Email support within 12 hours
+                            </div><br>
+                            <div class="pricing-square-item"> <span class="a-full-green">White-labeling</span></div><br>
+                            <div class="pricing-square-item">
+                                <p>&nbsp;</p>
+                            </div>
+                        </div>
+                    </div>
+               </div>
+            </div>
+            <div class="pricing-section pricing-perpetual" id="perpetual">
+               <div class="row d-none d-lg-flex mb-4">
+                   <div class="col-lg-12">
+                        <div class="indicator gray-bg text-white text-center pt-2 pb-2">
+                            LICENSE PACKAGES
+                        </div>
+                   </div>                   
+               </div>
+               <div class="row justify-content-center">
+                    <div class="col-md-8 col-lg-6 col-xl-4 mb-4">
+                        <div class="pricing-square">
+                            <h2>Perpetual Fallback License</h2>
+                            <div class="pricing-square-description">
+                                <h3>Use your ThingsBoard Edge instance forever</h3>
+                            </div>
+                            <h4 class="pricing-square-price mb-0">
+                                299
+                                <span>USD</span>
+                            </h4>                  
+                            <a class="btn btn-full-green btn-pricing" href="javascript:void(0);" 
+                                onClick="getLicense(event,
+                                true,
+                                '90b6c9b0-a198-11e9-8e16-03828ff5271c',
+                                '4c711b60-a199-11e9-8e16-03828ff5271c',
+                                'Perpetual')">
+                                Get your license
+                            </a>
+                            <div class="pricing-square-item" data-faq-id="subscription-support">
+                                Email support within 24 hours
+                            </div><br>
+                            <div class="pricing-square-item">1 year of software updates</div><br>
+                            <div class="pricing-square-item">Unlimited Devices and Assets</div><br>
+                            <div class="pricing-square-item">White-labeling</div><br>
+                            <div class="pricing-square-item">Integrations feature</div><br>
+                            <div class="pricing-square-item">Unlimited datapoints</div>
+                            <div class="pricing-square-item">and messages</div><br>
+                            <div class="pricing-square-item">Unlimited API calls</div><br>
+                            <div class="pricing-square-item">
+                                <p>&nbsp;</p>
+                            </div>
+                        </div>
+                    </div>
+               </div>
+            </div>
+        </div>
+    </div>
+ </div>  
+</section>
 
 <div class="container faq-content">
     <h2 id="faq" class="text-center">Frequently asked questions</h2>

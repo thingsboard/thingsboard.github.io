@@ -135,6 +135,20 @@ toc:
     path: /docs/user-guide/integrations/custom/
   - title: Notifications and Alarms on your smartphone using Telegram Bot
     path: /docs/user-guide/rule-engine-2-0/tutorials/integration-with-telegram-bot/
+- title: Edge
+  new: true
+  section:
+    - title: Getting Started
+      path: /docs/edge/getting-started/
+    - title: Installation guides
+      path: /docs/edge/install/
+      section:
+        - title: Installing Edge on Ubuntu Server
+          path: /docs/edge/install/deb-installation/
+    - title: Connectors
+      section:
+        - title: MQTT Connector
+          path: /docs/edge/config/mqtt/
 - title: Analytics
   new: true
   section:

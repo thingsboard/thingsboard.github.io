@@ -63,6 +63,10 @@ description: ThingsBoard documentation - learn about the platform and get your I
 
 <p>Contains comprehensive documentation about ThingsBoard <b><a href="/docs/iot-gateway/">IoT Gateway</a></b>.</p>
 
+<h2>Edge</h2>
+
+<p>Contains comprehensive documentation about ThingsBoard <b><a href="/docs/edge/">Edge</a></b>.</p>
+
 <h2>Video Tutorials</h2>
 
 <p>The ThingsBoard Youtube <b><a href="https://www.youtube.com/channel/UCDb9fsV-YR4JmnipAMGsVAQ/videos">channel</a></b> contains useful video tutorials that cover various platform features.</p>

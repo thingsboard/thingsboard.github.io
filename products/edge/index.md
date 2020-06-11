@@ -1,6 +1,6 @@
 ---
-layout: thingsboard-pe
-title: ThingsBoard Professional Edition
+layout: edge
+title: ThingsBoard Edge
 description: 
 ---
 
@@ -386,6 +386,7 @@ description:
 
 <br/>
 <br/>
+
 
 <p align="center">
     <a href="/pricing/" class="button try-pe">Get it now</a>

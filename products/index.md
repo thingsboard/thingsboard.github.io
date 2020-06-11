@@ -24,6 +24,15 @@ description: ThingsBoard Products
             Learn more
         </div>
     </a>
+    <a href="/products/edge/" class="card thingsboard-edge">
+            <div class="card-title">
+                <span class="title-text">ThingsBoard<br/>Edge</span>
+            </div>
+            <div class="card-img product edge-bg"></div>
+            <div class="card-description">  
+                Learn more
+            </div>
+    </a>
     <a href="/docs/iot-gateway/what-is-iot-gateway/" class="card thingsboard-gw">
         <div class="card-title">
             <span class="title-text">ThingsBoard<br/>IoT Gateway</span>
