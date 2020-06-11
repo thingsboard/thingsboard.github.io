@@ -25,7 +25,7 @@ description: ThingsBoard Products Pricing
             <a href="javascript:void(0);" onClick="activatePricingSection('trendz')">Trendz Analytics</a>
         </li>
         <li id="menu-item-edge" class="menu-item">
-                    <a href="javascript:void(0);" onClick="activatePricingSection('edge')">Edge</a>
+                    <a href="javascript:void(0);" onClick="activatePricingSection('edge')">ThingsBoard Edge</a>
                 </li>
      </ul>
    </nav> 

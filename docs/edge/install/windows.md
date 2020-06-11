@@ -11,7 +11,7 @@ description: Installing ThingsBoard Edge on Ubuntu
 
 This guide describes how to install ThingsBoard Edge on Ubuntu Server 18.04 LTS. 
 The minimum system requirements match official [minimum requirements](https://help.ubuntu.com/lts/serverguide/preparing-to-install.html#system-requirements) for the OS.
-In small and medium installations ThingsBoard Edge can be installed **on the same** server with ThingsBoard.
+In small and medium installations Edge can be installed **on the same** server with ThingsBoard.
 
 ### Step 1. Install Java 8 (OpenJDK) 
 
@@ -19,7 +19,7 @@ In small and medium installations ThingsBoard Edge can be installed **on the sam
 
 ### Step 2. ThingsBoard PE/CE service installation 
 
-You can connect ThingsBoard Edge to the ThingsBoard Community Edition or ThingsBoard Professional Edition.
+You can connect Edge to the ThingsBoard Community Edition or ThingsBoard Professional Edition.
 See [ThingsBoard Professional Edition](/docs/user-guide/install/pe/ubuntu/) or [ThingsBoard Community Edition](/docs/user-guide/install/ubuntu/) step-by-step installation guides for more details.
 
 ### Step 3. Get Edge Secret and Key

@@ -10,7 +10,7 @@ Many cloud vendors support managed PostgreSQL servers which is a cost-effective 
 
 {% include templates/edge/create-tb-db.md %}
 
-##### Step 5.2. Edge Configuration
+##### Step 5.2. ThingsBoard Edge Configuration
 
 Edit ThingsBoard Edge configuration file 
 ```bash 
@@ -42,9 +42,9 @@ export CLOUD_ROUTING_SECRET=PUT_YOUR_EDGE_SECRET_HERE
 ```
 
 ###### ThingsBoard Edge ports Configuration (optional)
-By default, Edge service has following configuration properties for transports:
+By default, ThingsBoard Edge service has following configuration properties for transports:
  ``` bash
-# ThingsBoard default transport ports used by Edge
+# ThingsBoard default transport ports used by ThingsBoard Edge
 CLOUD_RPC_PORT:60100
 HTTP_BIND_PORT:8190
 MQTT_BIND_PORT:1993

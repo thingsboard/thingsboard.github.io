@@ -141,14 +141,19 @@ toc:
     - title: Getting Started
       path: /docs/edge/getting-started/
     - title: Installation guides
-      path: /docs/edge/install/
       section:
-        - title: Installing Edge on Ubuntu Server
+        - title: Installation options
+          path: /docs/edge/install/installation-options
+        - title: Installing Edge on Ubuntu
           path: /docs/edge/install/deb-installation/
-    - title: Connectors
-      section:
-        - title: MQTT Connector
-          path: /docs/edge/config/mqtt/
+        - title: Installing Edge on CentOS/RHEL
+          path: /docs/edge/install/rhel/
+        - title: Installing Edge on Windows
+          path: /docs/edge/install/windows/
+        - title: Installing Edge using Docker (Windows)
+          path: /docs/edge/install/docker-windows/
+        - title: Installing Edge using Docker (Linux or Mac OS)
+          path: /docs/edge/install/docker/
 - title: Analytics
   new: true
   section:
