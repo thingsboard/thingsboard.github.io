@@ -10,7 +10,7 @@ notitle: "true"
        <div class="install-options-hero">
           <div class="container">
             <div class="install-options-hero-content">
-                <h1>ThingsBoard Trendz Analytics installation options</h1>
+                <h1>ThingsBoard Edge installation options</h1>
             </div>
             <div class="col-lg-12 deployment-container">                
                 <div class="deployment-div">
