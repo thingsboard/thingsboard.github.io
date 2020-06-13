@@ -1,16 +1,10 @@
-To connect Edge to ThingsBoard you need to add edge entity and copy <strong>Edge Secret</strong> and <strong>Edge Key</strong>. 
-Following video demonstrates how to do it via UI of ThingsBoard PE/CE. 
+To connect ThingsBoard Edge to ThingsBoard Platform you need to get <strong>Edge Secret</strong> and <strong>Edge Key</strong> 
+that are automatically generated after adding new edge entity. 
 
-#### Step 3.1 ThingsBoard Professional Edition
-<div id="video">  
-    <div id="video_wrapper">
-        <iframe src="https://www.youtube.com/embed/PxlLVex83Lg" frameborder="0" allowfullscreen></iframe>
-    </div>
-</div>
+Copy it to clipboard with one click.
 
-#### Step 3.2 ThingsBoard Community Edition
-<div id="video">  
-    <div id="video_wrapper">
-        <iframe src="https://www.youtube.com/embed/PxlLVex83Lg" frameborder="0" allowfullscreen></iframe>
-    </div>
-</div>
+{% capture contenttogglespec %}
+ThingsBoard Professional Edition <br/><br/> <small>advanced features</small>%,%postgresql%,%templates/edge/get-edge-key-secret-pe.md%br%
+ThingsBoard Community Edition<br/><br/><small>free</small>%,%hybrid%,%templates/edge/get-edge-key-secret-ce.md{% endcapture %}
+
+{% include content-toggle.html content-toggle-id="rhelThingsboardDatabase" toggle-spec=contenttogglespec %} 
