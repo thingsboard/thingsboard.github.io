@@ -10,8 +10,8 @@ sudo nano /usr/share/thingsboard/conf/thingsboard.yml
 ``` 
 {: .copy-code}
 
-Locate **EDGES_RPC_PORT** (press **Ctrl-W** to search in text) and replace port if necessary. 
-In configuration file it looks this way
+Locate **EDGES_RPC_PORT** (**Ctrl-W**) and replace port if necessary. 
+In configuration file it will look like this
 ``` bash
 # Edges parameters
 edges:
