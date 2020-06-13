@@ -53,10 +53,10 @@ Where:
 - `-p 8190:8190`            - connect local port 8190 to exposed internal HTTP port 9090
 - `-p 1993:1993`            - connect local port 1993 to exposed internal MQTT port 1993  
 - `-p 60100:60100`            - connect local port 60100 to exposed internal CLOUD_RPC_PORT port 60100   
-- `-v mytb-edge-data:/data`      - mounts the volume `mytb-data` to ThingsBoard DataBase data directory
-- `-v mytb-edge-logs:/var/log/thingsboard-edge`      - mounts the volume `mytb-edge-logs` to ThingsBoard logs directory
+- `-v mytb-edge-data:/data`      - mounts the volume `mytb-data` to ThingsBoard Edge DataBase data directory
+- `-v mytb-edge-logs:/var/log/thingsboard-edge`      - mounts the volume `mytb-edge-logs` to ThingsBoard Edge logs directory
 - `--name mytb-edge`             - friendly local name of this machine
-- `--restart always`        - automatically start ThingsBoard in case of system reboot and restart in case of failure. 
+- `--restart always`        - automatically start ThingsBoard Edge in case of system reboot and restart in case of failure. 
 - `thingsboard-edge/tb-postgres`          - docker image
 
 In order to get access to necessary resources from external IP/Host on Windows machine, please execute the following commands:
@@ -109,6 +109,8 @@ $ docker run -it -v mytb-edge-data:/data --rm thingsboard-edge/tb-postgres upgra
 $ docker rm mytb-edge
 $ docker run -it -p 8190:8190 -p 1993:1993 -p 60100:60100/udp -v ~/mytb-edge-data:/data -v ~/mytb-edge-logs:/var/log/thingsboard-edge --name mytb-edge --restart always thingsboard-edge/tb-postgres
 ```
+
+**NOTE**: if you use different database change image name in all commands from `thingsboard-edge/tb-postgres`
 
 **NOTE**: replace volume `mytb-edge-data` with volume used during container creation. 
 
