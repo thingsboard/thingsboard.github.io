@@ -51,14 +51,11 @@ sudo dpkg -i tb-edge.deb
 
 ### Step 7. Start ThingsBoard Edge service
 
-{% include templates/edge/start-edge-service.md %} 
+{% include templates/edge/start-edge-ubuntu.md %} 
 
 ### Step 8. Open ThingsBoard Edge UI
 
-By default, ThingsBoard Edge UI will be available on HTTP port:
-```
-http://localhost:8190
-```
+ThingsBoard Edge UI is accessible on 8190 port by default. 
 
 ### Troubleshootings
 
