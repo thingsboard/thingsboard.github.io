@@ -26,8 +26,7 @@ sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.
 
 ### Step 2. ThingsBoard PE/CE service installation 
 
-You can connect ThingsBoard Edge to the ThingsBoard Community Edition or ThingsBoard Professional Edition.
-See [ThingsBoard Professional Edition](/docs/user-guide/install/pe/rhel/) or [ThingsBoard Community Edition](/docs/user-guide/install/rhel/) step-by-step installation guides for more details.
+{% include templates/edge/thingsboard-installation.md %}
 
 ### Step 3. Get edge Secret and Key
 
@@ -59,15 +58,16 @@ sudo rpm -Uvh tb-edge.rpm
 
 ### Step 7. Start ThingsBoard Edge service
 
-{% include templates/edge/start-edge-service.md %} 
+{% include templates/edge/start-edge-ubuntu.md %}
 
 ### Step 8. Open ThingsBoard Edge UI
 
-ThingsBoard Edge UI is accessible on 8190 port by default.
-```
-http://localhost:8190
-```
+{% include templates/edge/open-edge-ui.md %} 
 
 ### Troubleshootings
 
+{% include templates/edge/troubleshooting.md %} 
+
 ### Next Steps
+
+{% include templates/edge/next-steps.md %} 

@@ -1,6 +1,7 @@
-##### PostgreSQL Installation
 
-##### Step 5.1. PostreSQL Installation
+ThingsBoard Edge supports only PostgreSQL database management system.
+
+##### Step 5.1. PostgreSQL Installation
 
 {% include templates/install/postgres-install-rhel.md %}
 
@@ -31,7 +32,7 @@ export SPRING_DATASOURCE_PASSWORD=PUT_YOUR_POSTGRESQL_PASSWORD_HERE
 
 ###### Add Edge Key and Secret
 Add the following lines to the configuration file. 
-Don't forget **to replace** "PUT_YOUR_EDGE_KEY_HERE" and "PUT_YOUR_EDGE_SECRET_HERE" with your **real key and secret** from [Step 3](/docs/edge/install/deb-installation/#step-3-get-edge-secret-and-key):
+Don't forget **to replace** "PUT_YOUR_EDGE_KEY_HERE" and "PUT_YOUR_EDGE_SECRET_HERE" with your **real key and secret** from [Step 3](#step-3-get-edge-secret-and-key):
  ```bash
 export CLOUD_ROUTING_KEY=PUT_YOUR_EDGE_KEY_HERE
 export CLOUD_ROUTING_SECRET=PUT_YOUR_EDGE_SECRET_HERE

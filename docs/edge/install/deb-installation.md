@@ -10,6 +10,7 @@ description: Installing ThingsBoard Edge on Ubuntu Server
 ### Prerequisites
 
 This guide describes how to install ThingsBoard Edge on Ubuntu Server 18.04 LTS. 
+
 {% include templates/edge/prerequisites.md %}
 
 ### Step 1. Install Java 8 (OpenJDK) 
@@ -18,8 +19,7 @@ This guide describes how to install ThingsBoard Edge on Ubuntu Server 18.04 LTS.
 
 ### Step 2. ThingsBoard PE/CE service installation 
 
-You can connect ThingsBoard Edge to the ThingsBoard Community Edition or ThingsBoard Professional Edition.
-See [ThingsBoard Professional Edition](/docs/user-guide/install/pe/ubuntu/) or [ThingsBoard Community Edition](/docs/user-guide/install/ubuntu/) step-by-step installation guides for more details.
+{% include templates/edge/thingsboard-installation.md %}
 
 ### Step 3. Get edge Secret and Key
 
@@ -55,8 +55,12 @@ sudo dpkg -i tb-edge.deb
 
 ### Step 8. Open ThingsBoard Edge UI
 
-ThingsBoard Edge UI is accessible on 8190 port by default. 
+{% include templates/edge/open-edge-ui.md %} 
 
 ### Troubleshootings
 
+{% include templates/edge/troubleshooting.md %} 
+
 ### Next Steps
+
+{% include templates/edge/next-steps.md %} 
