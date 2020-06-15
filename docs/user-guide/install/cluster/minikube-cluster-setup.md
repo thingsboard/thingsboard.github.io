@@ -2,8 +2,8 @@
 layout: docwithnav
 assignees:
 - ashvayka
-title: Cluster setup
-description: ThingsBoard IoT platform cluster setup with Kubernetes guide
+title: Cluster setup using Minikube
+description: ThingsBoard IoT platform cluster setup with Kubernetes and Minikube guide
 
 ---
 
@@ -37,6 +37,8 @@ See [**microservices**](/docs/reference/msa/) architecture page for more details
 ```bash
 git clone https://github.com/thingsboard/thingsboard-ce-k8s.git
 ```
+
+In `.env` file set the value of `PLATFORM` field to `minikube`.
 
 ## Step 3. Configure ThingsBoard database
 
