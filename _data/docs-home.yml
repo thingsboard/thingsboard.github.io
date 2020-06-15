@@ -281,6 +281,8 @@ toc:
         path: /docs/iot-gateway/config/bacnet/
       - title: ODBC Connector
         path: /docs/iot-gateway/config/odbc/
+      - title: REST Connector
+        path: /docs/iot-gateway/config/rest/
   - title: Customization guide
     path: /docs/iot-gateway/custom/
   - title: IoT Gateway features

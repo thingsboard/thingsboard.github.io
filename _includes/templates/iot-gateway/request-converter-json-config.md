@@ -2,7 +2,7 @@ Json converter is default converter, it looks for deviceName, deviceType, attrib
 
 |**Parameter**|**Default value**|**Description**|
 |:-|:-|-
-| type                        | **json**                  | Provides information to connector that default converter will be uses for converting data from topic.                                     |
+| type                        | **json**                  | Provides information to connector that default converter will be uses for converting data from response.                                     |
 | deviceNameJsonExpression    | **SD8500**                | Simple JSON expression, uses for looking device name in the incoming message (string "SD8500" will be used as device name).               |
 | deviceTypeJsonExpression    | **SD**                    | Simple JSON expression, uses for looking device type in the incoming message (string "SD" will be used as device type).                   |
 | timeout                     | **60000**                 | Timeout for triggering "Device Disconnected" event                                                                                        |

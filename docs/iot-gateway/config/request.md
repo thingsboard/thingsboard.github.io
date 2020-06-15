@@ -202,7 +202,7 @@ This subsection contains configuration for processing incoming messages.
 
 Types of request converters:  
 1. json -- Default converter  
-2. custom -- Custom converter (You can write it by yourself, and it will use to convert incoming data from the broker.)  
+2. custom -- Custom converter (You can write it by yourself, and it will use to convert incoming data from the response.)  
 
 {% capture requestconvertertypespec %}
 json<small>Recommended if json will be received in response</small>%,%json%,%templates/iot-gateway/request-converter-json-config.md%br%
@@ -269,7 +269,7 @@ Configuration, provided in this section uses for sending RPC requests from Thing
 | requestUrlExpression          | **sensor/${deviceName}/request/${methodName}/${requestId}**       | JSON-path expression, uses to create url address to send RPC request.                 |
 | responseTimeout               | **0.5**                                                           | Timeout for request.                                                                  |
 | httpMethod                    | **GET**                                                           | HTTP method for request (**GET**, **POST** etc.).                                     |
-| valueExpression               | **${params}**                                                     | JSON-path expression, uses for creating data for sending to broker.                   |
+| valueExpression               | **${params}**                                                     | JSON-path expression, uses for creating data for sending to the external endpoint.    |
 | timeout                       | **0.5**                                                           | Timeout for request.                                                                  |
 | tries                         | **3**                                                             | Count of tries to send data                                                           |
 | httpHeaders                   | **{ "CONTENT-TYPE": "application/json" }**                        | Object contains additional HTTP headers for request.                                  |
