@@ -190,9 +190,11 @@ Do nothing, postgresql is already running.
 ## Upgrading to 3.0.1PE
 
 
-These steps are applicable for 2.5PE+ ThingsBoard Professional Edition version.
-
 ### Ubuntu/CentOS {#ubuntucentos-301}
+
+**NOTE**: These upgrade steps are applicable for ThingsBoard version 3.0PE. In order to upgrade to 3.0.1PE you need to [**upgrade to 3.0PE first**](/docs/user-guide/install/pe/upgrade-instructions/#ubuntucentos-30).
+
+<br>
 
 {% include templates/install/tb-30-update.md %}
 
@@ -259,6 +261,10 @@ $ sudo service thingsboard start
 ```
 
 ### Windows {#windows-301}
+
+**NOTE**: These upgrade steps are applicable for ThingsBoard version 3.0PE. In order to upgrade to 3.0.1PE you need to [**upgrade to 3.0PE first**](/docs/user-guide/install/pe/upgrade-instructions/#windows-30).
+
+<br>
 
 {% include templates/install/tb-30-update.md %}
 
@@ -447,9 +453,9 @@ net start thingsboard
 
 ## Upgrading to 2.5.2PE 
 
-These steps are applicable for 2.4.3PE ThingsBoard Professional Edition version.
-
 ### Ubuntu/CentOS {#ubuntucentos-252}
+
+**NOTE**: These upgrade steps are applicable for ThingsBoard version 2.5.1PE. In order to upgrade to 2.5.2PE you need to [**upgrade to 2.5.1PE first**](/docs/user-guide/install/pe/upgrade-instructions/#ubuntucentos-251).
 
 #### ThingsBoard PE package download
 
@@ -495,6 +501,8 @@ $ sudo service thingsboard start
 ```
 
 ### Windows {#windows-252}
+
+**NOTE**: These upgrade steps are applicable for ThingsBoard version 2.5.1PE. In order to upgrade to 2.5.2PE you need to [**upgrade to 2.5.1PE first**](/docs/user-guide/install/pe/upgrade-instructions/#windows-251).
 
 #### ThingsBoard PE package download
 

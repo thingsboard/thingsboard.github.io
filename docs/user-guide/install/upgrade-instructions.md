@@ -114,12 +114,13 @@ description: ThingsBoard IoT platform upgrade instructions
     </li>       
 </ul>
 
-## Upgrading to 3.0.1 {#upgrading-to-301}
-
-
-These steps are applicable for 2.5+ ThingsBoard version.
+## Upgrading to 3.0.1 {#upgrading-to-301} 
 
 ### Ubuntu/CentOS {#ubuntucentos-301}
+
+**NOTE**: These upgrade steps are applicable for ThingsBoard version 3.0. In order to upgrade to 3.0.1 you need to [**upgrade to 3.0 first**](/docs/user-guide/install/upgrade-instructions/#ubuntucentos-30).
+
+<br>
 
 {% include templates/install/tb-30-update.md %}
 
@@ -179,6 +180,10 @@ $ sudo service thingsboard start
 ```
 
 ### Windows {#windows-301}
+
+**NOTE**: These upgrade steps are applicable for ThingsBoard version 3.0. In order to upgrade to 3.0.1 you need to [**upgrade to 3.0 first**](/docs/user-guide/install/upgrade-instructions/#windows-30).
+
+<br>
 
 {% include templates/install/tb-30-update.md %}
 
@@ -365,9 +370,9 @@ net start thingsboard
 
 ## Upgrading to 2.5.2 {#upgrading-to-252}
 
-These steps are applicable for 2.4.3+ ThingsBoard version.
-
 ### Ubuntu/CentOS {#ubuntucentos-252}
+
+**NOTE**: These upgrade steps are applicable for ThingsBoard version 2.5.1. In order to upgrade to 2.5.2 you need to [**upgrade to 2.5.1 first**](/docs/user-guide/install/upgrade-instructions/#ubuntucentos-251).
 
 #### ThingsBoard package download
 
@@ -405,6 +410,8 @@ $ sudo service thingsboard start
 ```
 
 ### Windows {#windows-252}
+
+**NOTE**: These upgrade steps are applicable for ThingsBoard version 2.5.1. In order to upgrade to 2.5.2 you need to [**upgrade to 2.5.1 first**](/docs/user-guide/install/upgrade-instructions/#windows-251).
 
 #### ThingsBoard package download
 
