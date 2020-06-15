@@ -70,10 +70,7 @@ The Gateway Service is responsible for bootstrap of the Connectors, Event Storag
 This Service collects and periodically reports statistics to ThingsBoard about incoming messages and connected devices.
 Gateway Service persists list of connected devices to be able to re-subscribe to device configuration updates in case of the restart of the gateway. 
 
-{:refdef: style="text-align: center;"}
-![ThingsBoard IoT Gateway architecture](/images/gateway/python-gateway.png)
-{: refdef}
-  
+<object width="80%" data="/images/reference/python-gateway-animd-ff.svg"></object>
 
 #### Project Roadmap
 
