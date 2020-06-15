@@ -96,6 +96,12 @@
       keywords: install cluster kubernetes k8s minikube
       video: false
       pe: false
+    - path: /docs/user-guide/install/cluster/openshift-cluster-setup
+      title: Cluster setup with Kubernetes using OpenShift
+      subtitle: Learn how to setup ThingsBoard cluster with Kubernetes using OpenShift.
+      keywords: install cluster kubernetes k8s openshift
+      video: false
+      pe: false
 - title: Connect your device
   subtitle: Learn how to connect devices based on your connectivity technology or solution.
   id: ConnectYourDevice
