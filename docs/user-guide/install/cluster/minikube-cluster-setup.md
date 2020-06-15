@@ -32,11 +32,10 @@ $ minikube addons enable ingress
 Starting ThingsBoard v2.2, it is possible to install ThingsBoard cluster using new microservices architecture and docker containers. 
 See [**microservices**](/docs/reference/msa/) architecture page for more details.
 
-## Step 2. Clone ThingsBoard CE repository
+## Step 2. Clone ThingsBoard CE Kubernetes scripts repository
 
 ```bash
-git clone https://github.com/thingsboard/thingsboard.git
-cd k8s
+git clone https://github.com/thingsboard/thingsboard-ce-k8s.git
 ```
 
 ## Step 3. Configure ThingsBoard database
@@ -47,7 +46,7 @@ In order to set database type change the value of `DATABASE` variable in `.env` 
 - `postgres` - use PostgreSQL database;
 - `hybrid` - use PostgreSQL for entities database and Cassandra for timeseries database;
 
-**NOTE**: According to the database type corresponding kubernetes resources will be deployed (see `common/postgres.yml`, `common/cassandra.yml` for details).
+**NOTE**: According to the database type corresponding kubernetes resources will be deployed (see `basic/postgres.yml` or `high-availability/postgres-ha.yaml` for postgres with replication, `common/cassandra.yml` for details).
 
 ## Step 4. Choose deployment type
 
@@ -57,7 +56,14 @@ In order to set deployment type change the value of `DEPLOYMENT_TYPE` variable i
 - `basic` - startup with a single instance of Zookeeper, Kafka and Redis;
 - `high-availability` - startup with Zookeeper, Kafka, and Redis in cluster modes;
 
-**NOTE**: According to the deployment type corresponding kubernetes resources will be deployed (see the content of the directories `./basic` and `./high-availability` for details).
+**NOTE**: According to the deployment type corresponding kubernetes resources will be deployed (see the content of the directories `basic` and `high-availability` for details).
+
+If you selected `cassandra` as `DATABASE` you can also configure the number of Cassandra nodes (`StatefulSet.spec.replicas` property in `common/cassandra.yml` config file) and the `CASSANDRA_REPLICATION_FACTOR` in `.env` file. 
+It is recommended to have 3 Cassandra nodes with `CASSANDRA_REPLICATION_FACTOR` equal to 1.
+
+**NOTE**: If you want to configure `CASSANDRA_REPLICATION_FACTOR` please read Cassandra documentation first.  
+
+Also, to run PostgreSQL in `high-availability` deployment mode you'll need to  [install](https://helm.sh/docs/intro/install/) `helm`.
 
 ## Step 5. Running
 
