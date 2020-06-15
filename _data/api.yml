@@ -17,3 +17,5 @@ toc:
   path: /docs/reference/gateway-mqtt-api/
 - title: REST Client
   path: /docs/reference/rest-client/
+- title: Python REST Client
+  path: /docs/reference/python-rest-client/
