@@ -14,7 +14,7 @@ This guide will help you to setup ThingsBoard in cluster mode using OpenShift.
 
 ## Prerequisites
 
-ThingsBoard Microservices run on the Kubernetes cluster. To bootstrap OpenShift cluster locally you'll need to have Docker CE to run OpenShift containers and OpenShift Origin itself. 
+ThingsBoard Microservices run on the Kubernetes cluster. To deploy OpenShift cluster locally you'll need to have Docker CE to run OpenShift containers and OpenShift Origin itself. 
 Please follow [these instructions](https://www.techrepublic.com/article/how-to-install-openshift-origin-on-ubuntu-18-04/) to install all required software.
 
 
