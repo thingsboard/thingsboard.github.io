@@ -71,7 +71,7 @@ We will describe connector configuration file below.
       "procedureOne",
       {
         "name": "procedureTwo",
-        "params": [ "One", 2, 3.0 ]
+        "args": [ "One", 2, 3.0 ]
       }
     ]
   }
@@ -118,7 +118,21 @@ This **optional** subsection provides information how to decode string data and 
 **Note**: More information about encoding/decoding read [there](https://github.com/mkleehammer/pyodbc/wiki/Unicode).
 
 ## Section "pyodbc"
-This **optional** section provides [options](https://github.com/mkleehammer/pyodbc/wiki/Module#attributes) to tune *pyodbc* Python library which is working under the hood of ODBC Connector.
+This **optional** section provides [options](https://github.com/mkleehammer/pyodbc/wiki/The-pyodbc-Module#pyodbc-attributes) to tune *pyodbc* Python library which is working under the hood of ODBC Connector.
+
+```json
+"pyodbc": {
+  "pooling": false,
+  "native_uuid": true
+},
+```
+
+## Property "converter"
+ODBC connector is provided with built-in uplink data converter. One can specify custom converter class in this **optional** property.
+
+```json
+"converter": "CustomOdbcUplinkConverter",
+```
 
 ## Section "polling"
 The main idea of ODBC connector is periodically querying ODBC database whether new data is appeared. 
@@ -224,7 +238,7 @@ This **mandatory** subsection provides information how to map the result set to 
 
 For example,
 ```json
-device: {
+"device": {
   "name": "'ODBC' + entity_id"
 }
 ```
@@ -237,14 +251,18 @@ The connector supports several configuration modes for these subsections:
 
 * list of database columns
 ```json
-timeseries: [ "str_v", "ts" ]
+"timeseries": [ "str_v", "ts" ]
 ```
 * list of configurations
 ```json
 "timeseries": [
   {
-    "column": "bool_v",
-    "name": "boolValue"
+    "name": "boolValue",
+    "column": "bool_v"
+  },
+  {
+    "nameExpression": "key_name",
+    "value": "[i for i in [str_v, long_v, dbl_v,bool_v] if i is not None][0]"
   },
   {
     "name": "value",
@@ -253,11 +271,12 @@ timeseries: [ "str_v", "ts" ]
 ]
 ```
 
-| **Parameter**               | **Description**                                                                                        |
+| **Parameter**               | **Description**                                                                                             |
 |:-|-
-| **name**                    | Alias.                                                                                                 |
-| column                      | Database column name.                                                                                  |
-| value                       | Python [eval()](https://docs.python.org/3/library/functions.html#eval) expression to evaluate a value. |
+| **name**                    | Alias name.                                                                                                 |
+| **nameExpression**          | Python [eval()](https://docs.python.org/3/library/functions.html#eval) expression to evaluate a alias name. |
+| column                      | Database column name.                                                                                       |
+| value                       | Python [eval()](https://docs.python.org/3/library/functions.html#eval) expression to evaluate a value.      |
 
 **Note** All database columns listed in SQL *SELECT* clause of the [query](/docs/iot-gateway/config/odbc/#section-polling) option are available by its name in the Python [eval()](https://docs.python.org/3/library/functions.html#eval) context.
 
@@ -273,12 +292,12 @@ timeseries: [ "str_v", "ts" ]
 ```
 * globbing
 ```json
-timeseries: "*"
+"timeseries": "*"
 ```
 , means treating all database columns as timeseries.
 
 ## Section "serverSideRpc"
-The connector is able to call SQL stored procedures with or without parameters. Parameters are get either from a connector's configuration file or from [data](/docs/reference/gateway-mqtt-api/#server-side-rpc) received from a server.
+The connector is able to call SQL procedures/functions with or without parameters. Parameters are get either from a connector's configuration file or from [data](/docs/reference/gateway-mqtt-api/#server-side-rpc) received from a server.
 
 | **Parameter**                 | **Default value**   | **Description**                     |
 |:-|:-|-
@@ -288,48 +307,61 @@ The connector is able to call SQL stored procedures with or without parameters. 
 
 The connector supports several configuration modes for the *methods* subsection:
 
-* without parameters
+* list of procedures/functions without parameter
 ```json
 "methods": [ "procedureOne", "procedureTwo" ]
 ```
-* with parameters
+* list of procedure/function configurations
 <br/><br/>
-**The order of arguments matters**. It must be the same as the order of parameters in SQL stored procedure.
+**The order of arguments matters**. It must be the same as the order of parameters in SQL procedure/function.
 ```json
 "methods": [
   {
-    "name": "procedureOne",
-    "params": [ "One", 2, 3.0 ]
+    "name": "rpcProcOne",
+    "args": [ "One", 2, 3.0 ],
+    "query": "CALL procedureOne(?,?,?)"
   },
   {
-    "name": "procedureTwo",
-    "params": [ false ]
+    "name": "functionOne",
+    "args": [ false ]
   }
 ]
 ```
+**Procedure / function configuration parameters**
+
+| **Parameter**     | **Default value** | **Description**                     |
+|:-|:-|-
+| **name**          |                   | Name of RPC method or SQL procedure/function. |
+| query             |                   | Custom SQL query to call procedure/function. |
+| args              |                   | List of SQL procedure/function arguments.        |
+| result            |  **false**        | **Only for SQL functions** Whether to process function result, if not connector returns the status of processing procedure/function (i.e. *succes* / *failure* ).        |
+
+
 * combining mode
 ```json
-methods: [
+"methods": [
   "procedureOne",
   {
     "name": "procedureTwo",
-    "params": [ "One", 2, 3.0 ]
+    "args": [ "One", 2, 3.0 ]
   }
 ]
 ```
 
 **IMPORTANT**
 
-If *enableUnknownRpc* or *overrideRpcConfig* is set to *true*, [RPC params](/docs/reference/gateway-mqtt-api/#server-side-rpc) **must have** the JSON property named *args* which is an array of SQL procedure arguments. If *args* is absent or empty it means SQL procedure without parameters.
+If *enableUnknownRpc* is set to *true*, [RPC params](/docs/reference/gateway-mqtt-api/#server-side-rpc) **must have** all needed **procedure/function configuration parameters**.
 
-**The order of arguments matters**. It must be the same as the order of parameters in SQL stored procedure.
+If *overrideRpcConfig* is set to *true*, [RPC params](/docs/reference/gateway-mqtt-api/#server-side-rpc) **may contain** all or some of **procedure/function configuration parameters** to override ones that are specified in the connector configuration file.
+
+**The order of arguments matters**. It must be the same as the order of parameters in SQL procedure/function.
 ```json
 {
   "device": "ODBC Device 1", 
   "data": {
     "method": "procedureOne", 
     "params": {
-      "args": [ "One", 2, 3.0 ]
+      "args": [ "OverridedValue", 123, 3.14 ]
     }
   }
 }

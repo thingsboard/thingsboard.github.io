@@ -4,16 +4,16 @@ A custom converter is converter written for some device:
 
 |**Parameter**|**Default value**|**Description**|
 |:-|:-|-
-| type                        | **custom**                      | Provides information to connector that custom converter will be uses for converting data from topic.                                  |
-| extension                   | **CustomMqttUplinkConverter**   | Name of custom converter class.                                                                                                       |
-| extension-config            |                                 | This subsection is a configuration for the custom converter. In default example it contains setting for parsing response string.      |
-| key                         | **Totaliser**                   | In this example value "Totaliser" will be interpreted as a telemetry key in ThingsBoard instance.                                     |
-| type                        | **float**                       | In this example type of the data.                                                                                                     |
-| fromByte                    | **0**                           | In this example start byte position in the response string.                                                                           |
-| toByte                      | **4**                           | In this example start byte position in the response string.                                                                           |
-| byteorder                   | **big**                         | In this example byteorder for response string.                                                                                        |
-| signed                      | **true**                        | In this example using to indicate is the data in response signed.                                                                     |
-| multiplier                  | **1**                           | In this example every data from in response should be multiplied to some coefficient.                                                 | 
+| type                        | **custom**                         | Provides information to connector that custom converter will be uses for converting data from response.                                  |
+| extension                   | **CustomRequestUplinkConverter**   | Name of custom converter class.                                                                                                       |
+| extension-config            |                                    | This subsection is a configuration for the custom converter. In default example it contains setting for parsing response string.      |
+| key                         | **Totaliser**                      | In this example value "Totaliser" will be interpreted as a telemetry key in ThingsBoard instance.                                     |
+| type                        | **float**                          | In this example type of the data.                                                                                                     |
+| fromByte                    | **0**                              | In this example start byte position in the response string.                                                                           |
+| toByte                      | **4**                              | In this example start byte position in the response string.                                                                           |
+| byteorder                   | **big**                            | In this example byteorder for response string.                                                                                        |
+| signed                      | **true**                           | In this example using to indicate is the data in response signed.                                                                     |
+| multiplier                  | **1**                              | In this example every data from in response should be multiplied to some coefficient.                                                 | 
 |--- 
 
 {% capture difference %}

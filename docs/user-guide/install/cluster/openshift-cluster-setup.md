@@ -2,30 +2,39 @@
 layout: docwithnav
 assignees:
 - ashvayka
-title: Cluster setup using Minikube
-description: ThingsBoard IoT platform cluster setup with Kubernetes and Minikube guide
+title: Cluster setup using OpenShift
+description: ThingsBoard IoT platform cluster setup with Kubernetes and OpenShift guide
 
 ---
 
 * TOC
 {:toc}
 
-This guide will help you to setup ThingsBoard in cluster mode using Minikube tool. 
+This guide will help you to setup ThingsBoard in cluster mode using OpenShift. 
 
 ## Prerequisites
 
-ThingsBoard Microservices run on the Kubernetes cluster. You need to have a Kubernetes cluster, and the `kubectl` command-line tool must be configured to communicate with your cluster. 
-If you don't have Minikube installed, please follow [these instructions](https://kubernetes.io/docs/setup/learning-environment/minikube/).
+ThingsBoard Microservices run on the Kubernetes cluster. To deploy OpenShift cluster locally you'll need to have Docker CE to run OpenShift containers and OpenShift Origin itself. 
+Please follow [these instructions](https://www.techrepublic.com/article/how-to-install-openshift-origin-on-ubuntu-18-04/) to install all required software.
 
 
-### Enable ingress addon
+### Log in to OpenShift cluster
 
-By default ingress addon is disabled in the Minikube, and available only in cluster providers.
-To enable ingress, please execute the following command:
+To access OpenShift cluster you'll have to login first. By default, you may login as the `developer` user:
 
 `
-$ minikube addons enable ingress
+$  oc login -u developer -p developer
 ` 
+
+### Create project
+
+On the first start-up you should create the `thingsboard` project.
+To create it, please execute next command:
+
+`
+$ oc new-project thingsboard
+` 
+
 
 ## Step 1. Review the architecture page
 
@@ -38,7 +47,7 @@ See [**microservices**](/docs/reference/msa/) architecture page for more details
 git clone https://github.com/thingsboard/thingsboard-ce-k8s.git
 ```
 
-In `.env` file set the value of `PLATFORM` field to `minikube`.
+In `.env` file set the value of `PLATFORM` field to `openshift`.
 
 ## Step 3. Configure ThingsBoard database
 
@@ -94,14 +103,10 @@ Execute the following command to deploy ThingsBoard resources:
 $ ./k8s-deploy-resources.sh
 `
 
-After a while when all resources will be successfully started you can open `http://{your-cluster-ip}` in your browser (for ex. `http://192.168.99.101`).
-You can see your cluster IP using command:
+To see how to reach your ThingsBoard application on cluster, login as ***developer*** user (default password is ***developer*** too), open `thingsboard` project, then go to `Application -> Routes` menu and you'll see all your configured routes.
+The *root* route should look like `https://tb-route-node-root-thingsboard.127.0.0.1.nip.io/`.
 
-`
-$ minikube ip
-`
-
-You should see ThingsBoard login page.
+When you open it, you should see ThingsBoard login page.
 
 Use the following default credentials:
 
@@ -118,23 +123,23 @@ For example to see ThingsBoard node logs execute the following command:
 1) Get the list of the running tb-node pods:
 
 `
-$ kubectl get pods -l app=tb-node
+$ oc get pods -l app=tb-node
 `
 
 2) Fetch logs of the tb-node pod:
 
 `
-$ kubectl logs -f [tb-node-pod-name]
+$ oc logs -f [tb-node-pod-name]
 `
 
 Where:
 
 - `tb-node-pod-name` - tb-node pod name obtained from the list of the running tb-node pods.
 
-Or use `kubectl get pods` to see the state of all the pods.
-Or use `kubectl get services` to see the state of all the services.
-Or use `kubectl get deployments` to see the state of all the deployments.
-See [kubectl Cheat Sheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/) command reference for details.
+Or use `oc get pods` to see the state of all the pods.
+Or use `oc get services` to see the state of all the services.
+Or use `oc get deployments` to see the state of all the deployments.
+See [oc Cheat Sheet](https://design.jboss.org/redhatdeveloper/marketing/openshift_cheatsheet/cheatsheet/images/openshift_cheat_sheet_r1v1.pdf) command reference for details.
 
 Execute the following command to delete all ThingsBoard microservices:
 
