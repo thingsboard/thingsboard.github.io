@@ -10,7 +10,7 @@ description: ThingsBoard key features and advantages for the rapid development o
 ThingsBoard is an open-source IoT platform that enables rapid development, management and scaling of IoT projects. 
 Our goal is to provide the out-of-the-box IoT cloud or on-premises solution that will enable server-side infrastructure for your IoT applications. 
 
- ![image](/images/reference/cluster-mode-rpc-request.svg)
+<object width="80%" data="/images/reference/thingsboard-architecture.svg"></object>
 
 #### Features
 
