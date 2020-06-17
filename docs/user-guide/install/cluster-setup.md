@@ -12,10 +12,10 @@ description: ThingsBoard IoT platform cluster setup guide
        <div class="install-options-hero">
           <div class="container">
             <div class="install-options-hero-content">
-                <h1>ThingsBoard Kubernetes Cluster setup options</h1>
+                <h1>ThingsBoard Cluster setup options</h1>
                 <div class="install-options-description">
                     <p>
-                        You may deploy ThingsBoard IoT Platform using different tools and platforms which are based on Kubernetes
+                        You may deploy ThingsBoard IoT Platform using different tools and platforms
                     </p>
                 </div>
             </div>            
