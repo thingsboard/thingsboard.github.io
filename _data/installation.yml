@@ -71,8 +71,12 @@ toc:
     path: /docs/user-guide/install/pe/ibm-cloud/
   - title: Installing ThingsBoard PE from Alibaba Cloud Marketplace
     path: /docs/user-guide/install/pe/alibaba-cloud/
-  - title: Cluster setup
+  - title: Cluster setup with Docker Compose
+    path: /docs/user-guide/install/pe/docker-compose-setup/
+  - title: Cluster setup with Kubernetes
     path: /docs/user-guide/install/pe/cluster-setup/
+  - title: Cluster setup with Kubernetes on Minikube
+    path: /docs/user-guide/install/pe/cluster/minikube-cluster-setup/
   - title: Upgrade instructions
     path: /docs/user-guide/install/pe/upgrade-instructions/
 - title: ThingsBoard IoT Gateway
