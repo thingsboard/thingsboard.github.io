@@ -81,7 +81,7 @@ Also, to run PostgreSQL in `high-availability` deployment mode you'll need to  [
 Execute the following command to run installation:
 
 `
-$ ./docker-install-tb.sh --loadDemo
+$ ./k8s-install-tb.sh --loadDemo
 `
 
 Where:
