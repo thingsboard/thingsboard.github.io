@@ -115,15 +115,6 @@ notitle: "true"
                                         </a>
                                     </div>
                                     <div class="deployment-card-block">
-                                        <a href="/docs/user-guide/install/pe/docker-compose-setup/">
-                                            <span>
-                                                <div class="deployment-logo" style="height:134px">
-                                                    <img width="" src="/images/install/cluster/docker-compose.png" title="Cluster setup with Docker Compose" alt="Cluster setup with Docker Compose">
-                                                 </div>
-                                            </span>
-                                        </a>
-                                    </div>
-                                     <div class="deployment-card-block">
                                         <a href="/docs/user-guide/install/pe/cluster-setup/">
                                             <span>
                                                 <div class="deployment-logo" style="height:134px">

@@ -13,7 +13,7 @@ description: Installing ThingsBoard PE IoT Platform using Docker (Linux or Mac O
 
 This guide will help you to install and start ThingsBoard Professional Edition (PE) using Docker on Linux or Mac OS. 
 This guide covers standalone ThingsBoard PE installation. The container image used in this guide has embedded PostgreSQL 11 to simplify setup. 
-If you are looking for a cluster installation with Docker Compose instruction, please visit [cluster setup with Docker Compose page](/docs/user-guide/install/pe/docker-compose-setup/).  
+If you are looking for a cluster installation instruction, please visit [cluster setup page](/docs/user-guide/install/pe/cluster-setup/).  
 
 ## Prerequisites
 

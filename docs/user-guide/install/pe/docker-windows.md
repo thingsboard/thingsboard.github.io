@@ -13,7 +13,7 @@ description: Installing ThingsBoard PE IoT Platform using Docker (Windows)
 
 This guide will help you to install and start ThingsBoard Professional Edition (PE) using Docker on Windows. 
 This guide covers standalone ThingsBoard PE installation. The container image used in this guide has embedded PostgreSQL 11 to simplify setup. 
-If you are looking for a cluster installation with Docker Compose instruction, please visit [cluster with Docker Compose setup page](/docs/user-guide/install/pe/docker-compose-setup/).  
+If you are looking for a cluster installation instruction, please visit [cluster setup page](/docs/user-guide/install/pe/cluster-setup/).  
 
 
 ## Prerequisites
