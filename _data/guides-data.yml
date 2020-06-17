@@ -78,16 +78,16 @@
       keywords: install upgrade
       video: false
       pe: false
-    - path: /docs/user-guide/install/docker-compose-setup/
-      title: Cluster setup with Docker Compose
-      subtitle: Learn how to setup ThingsBoard cluster with Docker Compose.
-      keywords: install cluster docker compose
+    - path: /docs/user-guide/install/cluster-setup/
+      title: Cluster setup
+      subtitle: Learn how to setup ThingsBoard cluster.
+      keywords: install cluster
       video: false
       pe: false
-    - path: /docs/user-guide/install/cluster-setup/
-      title: Cluster setup with Kubernetes
-      subtitle: Learn how to setup ThingsBoard cluster with Kubernetes.
-      keywords: install cluster kubernetes k8s
+    - path: /docs/user-guide/install/cluster/docker-compose-setup/
+      title: Cluster setup with Docker Compose
+      subtitle: Learn how to setup ThingsBoard cluster with Docker Compose.
+      keywords: install cluster docker docker-compose
       video: false
       pe: false
     - path: /docs/user-guide/install/cluster/minikube-cluster-setup
