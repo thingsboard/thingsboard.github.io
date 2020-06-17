@@ -118,7 +118,7 @@ notitle: "true"
                                         <a href="/docs/user-guide/install/pe/cluster-setup/">
                                             <span>
                                                 <div class="deployment-logo" style="height:134px">
-                                                    <img width="" src="/images/install/platform/cluster.png" title="Cluster setup with Kubernetes" alt="Cluster setup with Kubernetes">
+                                                    <img width="" src="/images/install/platform/cluster.png" title="Cluster setup" alt="Cluster setup">
                                                  </div>
                                             </span>
                                         </a>
