@@ -12,7 +12,7 @@ description: ThingsBoard Professional Edition cluster setup guide
        <div class="install-options-hero">
           <div class="container">
             <div class="install-options-hero-content">
-                <h1>ThingsBoard Cluster setup options</h1>
+                <h1>ThingsBoard Professional Edition Cluster setup options</h1>
                 <div class="install-options-description">
                     <p>
                         ThingsBoard IoT can be bootstrapped using different tools and platforms
