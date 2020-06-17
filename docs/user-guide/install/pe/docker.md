@@ -41,6 +41,18 @@ RabbitMQ <small>(for small on-prem installations)</small>%,%rabbitmq%,%templates
 
 {% include content-toggle.html content-toggle-id="ubuntuThingsboardQueue" toggle-spec=contenttogglespecqueue %}  
 
+Where: 
+    
+- `PUT_YOUR_LICENSE_SECRET_HERE` - placeholder for your license secret obtained on the first step;    
+- `8080:9090`            - connect local port 8080 to exposed internal HTTP port 9090;
+- `1883:1883`            - connect local port 1883 to exposed internal MQTT port 1883;   
+- `5683:5683`            - connect local port 5683 to exposed internal COAP port 5683; 
+- `~/.mytbpe-data:/data`   - mounts the host's dir `~/.mytbpe-data` to ThingsBoard DataBase data directory;
+- `~/.mytbpe-logs:/var/log/thingsboard`   - mounts the host's dir `~/.mytbpe-logs` to ThingsBoard logs directory;
+- `mytbpe`             - friendly local name of this machine;
+- `restart: always`        - automatically start ThingsBoard in case of system reboot and restart in case of failure.;
+- `store/thingsboard/tb-pe:3.0.1PE`          - docker image.
+
 ## Step 3. Running
 
 Make sure your have [logged in](https://docs.docker.com/engine/reference/commandline/login/) to docker hub using command line.
@@ -54,18 +66,6 @@ docker-compose pull
 docker-compose up
 ```
 {: .copy-code}
-
-Where: 
-    
-- `PUT_YOUR_LICENSE_SECRET_HERE` - placeholder for your license secret obtained on the first step;    
-- `8080:9090`            - connect local port 8080 to exposed internal HTTP port 9090;
-- `1883:1883`            - connect local port 1883 to exposed internal MQTT port 1883;   
-- `5683:5683`            - connect local port 5683 to exposed internal COAP port 5683; 
-- `~/.mytbpe-data:/data`   - mounts the host's dir `~/.mytbpe-data` to ThingsBoard DataBase data directory;
-- `~/.mytbpe-logs:/var/log/thingsboard`   - mounts the host's dir `~/.mytbpe-logs` to ThingsBoard logs directory;
-- `mytbpe`             - friendly local name of this machine;
-- `restart: always`        - automatically start ThingsBoard in case of system reboot and restart in case of failure.;
-- `store/thingsboard/tb-pe:3.0.1PE`          - docker image.
     
 After executing this command you can open `http://{your-host-ip}:8080` in you browser (for ex. `http://localhost:8080`). You should see ThingsBoard login page.
 Use the following default credentials:
