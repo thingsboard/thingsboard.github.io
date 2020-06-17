@@ -55,6 +55,16 @@ Where:
 
 ## Step 3. Running
 
+Before starting Docker container run following commands to create a directory for storing data and logs and then change its owner to docker container user,
+to be able to change user, **chown** command is used, which requires sudo permissions (command will request password for a sudo access):
+
+```
+$ mkdir -p ~/.mytbpe-data && sudo chown -R 799:799 ~/.mytbpe-data
+$ mkdir -p ~/.mytbpe-logs && sudo chown -R 799:799 ~/.mytbpe-logs
+```
+
+**NOTE**: replace directory `~/.mytbpe-data` and `~/.mytbpe-logs` with directories you're planning to used in `docker-compose.yml`. 
+
 Make sure your have [logged in](https://docs.docker.com/engine/reference/commandline/login/) to docker hub using command line.
 
 Execute the following command to up this docker compose directly:
