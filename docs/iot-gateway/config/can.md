@@ -155,7 +155,7 @@ This section provides array of configurations for devices, which connected throu
 | **Parameter**                 | **Default value**   | **Description**                                                                                                |
 |:-|:-|-
 | **name**                      |                     | Name of device.                                                                                                |
-| type                          | **CAN**             | Type of device.                                                                                                |
+| type                          | **can**             | Type of device.                                                                                                |
 | sendDataOnlyOnChange          | **false**           | Sending only if data changed from last check, if not specified data will send after each received CAN message. |
 | strictEval                    | **true**            | Restricted mode of Python [eval()](https://docs.python.org/3/library/functions.html#eval) API.                 |
 | enableUnknownRpc              | **false**           | Allow processing RPC commands not listed in [serverSideRpc](/docs/iot-gateway/config/can/#subsection-serversiderpc) subsection. |
@@ -172,7 +172,7 @@ If *enableUnknownRpc* is set to *true*, *overrideRpcConfig* is forcibly set to *
 **Note**, despite [attributes](/docs/iot-gateway/config/can/#subsection-attributes-or-timeseries), [timeseries](/docs/iot-gateway/config/can/#subsection-attributes-or-timeseries), [attributeUpdates](/docs/iot-gateway/config/can/#subsection-attributeupdates) and [serverSideRpc](/docs/iot-gateway/config/can/#subsection-serversiderpc) are optional subsections, at least one of them must be set to get in use the device configuration.
 
 #### Subsection "converters"
-CAN connector is provided with built-in uplink/downlink data converters. One can specify custom converter for both uplink and downlink data or for one of them.  
+CAN connector is provided with built-in uplink/downlink data converters. One can specify custom converter for both uplink and downlink data or for one of them.
 
 | **Parameter**                     | **Default value**   | **Description**                     |
 |:-|:-|-
@@ -253,7 +253,7 @@ The option *value* describes how many bytes to get from CAN payload and what pri
 The option _value_ supports the following formats:
  - As JSON string:
 ```json
-"value": "<start>:<length>:[byteorder]:<type>:[encoding]"
+"value": "<start>:<length>:[byteorder]:<type>:[encoding|signed]"
 ```
  - As JSON object: 
 ```json
@@ -262,7 +262,8 @@ The option _value_ supports the following formats:
   "length": <length_value>,
   "byteorder": <byteorder_value>,
   "type": <type_value>,
-  "encoding": <encoding_value>
+  "encoding": <encoding_value>,
+  "signed": <signed_value>
 }
 ```
 
@@ -274,10 +275,11 @@ where
 By types **bool**, **int** and **float** it is meant Thingsboard **boolean**, **long** and **double** types respectively.
 **Note**, **float** type value requires 4 bytes and **double** type value requires 8 bytes.
 * *encoding* - **Only for string type** [Encoding](https://docs.python.org/3/library/codecs.html#standard-encodings) of string (default *ascii*).
+* *signed* - **Only for int/long types** indicates whether integer is signed value or not - *signed* or *unsigned* (default *unsigned*)
 
 Examples:
 
- - Read 1 byte starting from 2d position as the *big* byte ordered and cast to the value of the *int* type.
+ - Read 1 byte starting from 2d position as the *big* byte ordered and cast to the value of the *unsigned int* type.
 ```json 
 "value": "2:1:int" 
 ``` 
@@ -289,18 +291,18 @@ Examples:
 ```json
 "value": "0:4:little:float"
 ```
- - Read 2 bytes starting from 4th position as the *little* byte ordered and cast to the value the *int* type. The *"casted"* value is used in Python [eval()](https://docs.python.org/3/library/functions.html#eval) expression to
+ - Read 2 bytes starting from 4th position as the *little* byte ordered and cast to the value the *signed int* type. The value is used in Python [eval()](https://docs.python.org/3/library/functions.html#eval) expression to
 get the final value. 
 ```json
-"value": "4:2:little:int",
+"value": "4:2:little:int:signed",
 "expression": "value / 4"
 ```
 
 ##### "expression"
 The option _expression_ is evaluated via Python [eval()](https://docs.python.org/3/library/functions.html#eval) API. There are available the following variables in the [eval()](https://docs.python.org/3/library/functions.html#eval) context:
 
-1. *value* - *"casted"* value, i.e. the result of applying the [value configuration](/docs/iot-gateway/config/can/#value) to the CAN payload
-2. *can_data* -  the CAN payload (array of bytes)
+1. *value* - the result of applying the [value configuration](/docs/iot-gateway/config/can/#value) to the CAN payload
+2. *can_data* - the CAN payload (array of bytes)
 
 **Note**, by default Python [eval()](https://docs.python.org/3/library/functions.html#eval) API is working in some kind of a restricted mode by denying the explicit access to [\_\_builtins\_\_ API](https://docs.python.org/3/library/builtins.html), to
 disable the restricted mode [set](/docs/iot-gateway/config/can/#section-devices) the option *strictEval* to _False_.
@@ -321,20 +323,21 @@ This subsection provides the list of configurations to subscribe for changes of 
 
 | **Parameter**              | **Default value**     | **Description**                                                         |
 |:-|:-|-
-| **attributeOnThingsBoard** |                       | Name of shared attribute.                                               |
+| **attribute**              |                       | Name of shared attribute.                                               |
 | **nodeId**                 |                       | CAN node (arbitration) id.                                           |
 | isExtendedId               | **false**             | If True means extended CAN node (arbitration) id.                                                 |
 | isFd                       | **false**             | If True means using CAN FD mode.                                  |
 | bitrateSwitch              | **false**             | **Only for CAN FD mode** If True means a higher bitrate is used for the data transmission.                                         |
 | dataLength                 | **1**                 | **Only for integer values** Number of bytes to pack **integer** value.   |
 | dataByteorder              | **big**               | **Only for integer and float values** Order of bytes to pack **numeric** value. |
+| dataSigned                 | **false**             | **Only for int/long types** indicates whether integer is signed value or not. |
 | dataExpression             |                       | Python [eval()](https://docs.python.org/3/library/functions.html#eval) expression to modify attribute value in some way before packing it to array of bytes. |
 | dataEncoding               | **ascii**             | **Only for string values** [Encoding](https://docs.python.org/3/library/codecs.html#standard-encodings) of string packing. |
 | dataBefore                 |                       | Hexadecimal string of bytes that are preceded value bytes. |
 | dataAfter                  |                       | Hexadecimal string of bytes that are followed by value bytes. |
 |---
 
-The steps of processing an attribute update are the following:  
+The steps of processing an attribute update are the following:
 
 1. If *dataExpression* is set, [the value](/docs/reference/gateway-mqtt-api/#subscribe-to-attribute-updates-from-the-server) that received from Thingsboard server is modified via Python [eval()](https://docs.python.org/3/library/functions.html#eval) API. The variable *value* is available in *dataExpression*. This is a value of the attribute that was changed.
 If *dataExpression* is not set, the value is left as it is.
@@ -348,13 +351,14 @@ This subsection provides the list of configurations to process RPC commands from
 | **Parameter**            | **Default value**     | **Description**                                                         |
 |:-|:-|-
 | **method**               |                       | Name of RPC command.       |
-| response                 | **true**              | If true, [response](/docs/reference/gateway-mqtt-api/#server-side-rpc) will be sent to ThingsBoard.       |
+| response                 | **false**             | If true, [response](/docs/reference/gateway-mqtt-api/#server-side-rpc) will be sent to ThingsBoard.       |
 | **nodeId**               |                       | CAN node (arbitration) id.                                           |
 | isExtendedId             | **false**             | If True means extended CAN node (arbitration) id.                                                 |
 | isFd                     | **false**             | If True means using CAN FD mode.                                  |
 | bitrateSwitch            | **false**             | **Only for CAN FD mode** If True means a higher bitrate is used for the data transmission.                                         |
 | dataLength               | **1**                 | **Only for integer values** Number of bytes to pack **integer** value.   |
 | dataByteorder            | **big**               | **Only for integer and float values** Order of bytes to pack **numeric** value. |
+| dataSigned               | **false**             | **Only for int/long types** indicates whether integer is signed value or not. |
 | dataExpression           |                       | Python [eval()](https://docs.python.org/3/library/functions.html#eval) expression to modify attribute value in some way before packing it to array of bytes. |
 | dataEncoding             | **ascii**             | **Only for string values** [Encoding](https://docs.python.org/3/library/codecs.html#standard-encodings) of string packing. |
 | dataBefore               |                       | Hexadecimal string of bytes that are preceded value bytes. |

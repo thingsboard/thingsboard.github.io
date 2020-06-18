@@ -1,1 +1,11 @@
-{"key1":"value1", "key2":true, "key3": 3.0, "key4": 4}
+{
+  "stringKey": "value1",
+  "booleanKey": true,
+  "doubleKey": 42.0,
+  "longKey": 73,
+  "jsonKey": {
+    "someNumber": 42,
+    "someArray": [1,2,3],
+    "someNestedObject": {"key": "value"}
+  }
+}

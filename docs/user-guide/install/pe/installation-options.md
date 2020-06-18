@@ -159,7 +159,7 @@ notitle: "true"
                                     <div class="deployment-card-block">
                                         <a href="/docs/user-guide/install/pe/gcp/">
                                             <span>
-                                                <div class="deployment-logo coming-soon" style="height:134px">
+                                                <div class="deployment-logo" style="height:134px">
                                                     <img width="" src="/images/install/cloud/gcp.png" title="Google Cloud Platform" alt="Google Cloud Platform">
                                                  </div>
                                             </span>

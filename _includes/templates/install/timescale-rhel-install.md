@@ -1,0 +1,1 @@
+Please refer to the official [TimescaleDB installation page](https://docs.timescale.com/latest/getting-started/installation/rhel-centos/installation-yum) on RHEL/CentOS distros and follow the instructions in accordance with your installed PostgreSQL version.

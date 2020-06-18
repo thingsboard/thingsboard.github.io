@@ -12,18 +12,34 @@ description: Installing ThingsBoard CE on CentOS/RHEL
 
 ### Prerequisites
 
-This guide describes how to install ThingsBoard on RHEL/CentOS 7. 
+This guide describes how to install ThingsBoard on RHEL/CentOS 7/8. 
 Hardware requirements depend on chosen database and amount of devices connected to the system. 
 To run ThingsBoard and PostgreSQL on a single machine you will need at least 1Gb of RAM.
 To run ThingsBoard and Cassandra on a single machine you will need at least 8Gb of RAM.
 
 Before continue to installation execute the following commands in order to install necessary tools:
 
+**For CentOS 7:**
+
 ```bash
+# Install wget
 sudo yum install -y nano wget
-# Add latest EPEL release
+# Add latest EPEL release for CentOS 7
 sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+
 ```
+{: .copy-code}
+
+**For CentOS 8:**
+
+```bash
+# Install wget
+sudo yum install -y nano wget
+# Add latest EPEL release for CentOS 8
+sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+
+```
+{: .copy-code}
 
 ### Step 1. Install Java 8 (OpenJDK) 
 
@@ -34,14 +50,14 @@ sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.
 Download installation package.
 
 ```bash
-wget https://github.com/thingsboard/thingsboard/releases/download/v2.4.3/thingsboard-2.4.3.rpm
+wget https://github.com/thingsboard/thingsboard/releases/download/v3.0.1/thingsboard-3.0.1.rpm
 ```
 {: .copy-code}
 
 Install ThingsBoard as a service
 
 ```bash
-sudo rpm -Uvh thingsboard-2.4.3.rpm
+sudo rpm -Uvh thingsboard-3.0.1.rpm
 ```
 {: .copy-code}
 
@@ -52,19 +68,34 @@ sudo rpm -Uvh thingsboard-2.4.3.rpm
 
 {% capture contenttogglespec %}
 PostgreSQL <small>(recommended for < 5K msg/sec)</small>%,%postgresql%,%templates/install/rhel-db-postgresql.md%br%
-Hybrid <br/>PostgreSQL+Cassandra<br/><small>(recommended for > 5K msg/sec)</small>%,%hybrid%,%templates/install/rhel-db-hybrid.md{% endcapture %}
+Hybrid <br/>PostgreSQL+Cassandra<br/><small>(recommended for > 5K msg/sec)</small>%,%hybrid%,%templates/install/rhel-db-hybrid.md%br%
+Hybrid <br/>PostgreSQL+TimescaleDB<br/><small>(for TimescaleDB professionals)</small>%,%timescale%,%templates/install/rhel-db-hybrid-timescale.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="rhelThingsboardDatabase" toggle-spec=contenttogglespec %} 
 
-### Step 4. [Optional] Memory update for slow machines (1GB of RAM) 
+### Step 4. Choose ThingsBoard queue service
+
+{% include templates/install/install-queue.md %}
+
+{% capture contenttogglespecqueue %}
+In Memory <small>(built-in and default)</small>%,%inmemory%,%templates/install/queue-in-memory.md%br%
+Kafka <small>(recommended for on-prem, production installations)</small>%,%kafka%,%templates/install/rhel-queue-kafka.md%br%
+AWS SQS <small>(managed service from AWS)</small> %,%aws-sqs%,%templates/install/ubuntu-queue-aws-sqs.md%br%
+Google Pub/Sub <small>(managed service from Google)</small> %,%pubsub%,%templates/install/ubuntu-queue-pub-sub.md%br%
+Azure Service Bus <small>(managed service from Azure)</small>%,%service-bus%,%templates/install/ubuntu-queue-service-bus.md%br%
+RabbitMQ <small>(for small on-prem installations)</small>%,%rabbitmq%,%templates/install/rhel-queue-rabbitmq.md{% endcapture %}
+
+{% include content-toggle.html content-toggle-id="ubuntuThingsboardQueue" toggle-spec=contenttogglespecqueue %} 
+
+### Step 5. [Optional] Memory update for slow machines (1GB of RAM) 
 
 {% include templates/install/memory-on-slow-machines.md %} 
 
-### Step 5. Run installation script
+### Step 6. Run installation script
 {% include templates/run-install.md %} 
 
 
-### Step 6. Start ThingsBoard service
+### Step 7. Start ThingsBoard service
 
 ThingsBoard UI is accessible on 8080 port by default. 
 Make sure that your 8080 port is accessible via firewall.
@@ -73,7 +104,8 @@ In order to open 8080 port execute the following command:
 ```bash
 sudo firewall-cmd --zone=public --add-port=8080/tcp --permanent
 sudo firewall-cmd --reload
-```   
+```
+{: .copy-code}   
 
 {% include templates/start-service.md %}
 

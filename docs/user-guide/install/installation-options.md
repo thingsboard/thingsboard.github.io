@@ -136,7 +136,7 @@ notitle: "true"
                                         <a href="/docs/user-guide/install/cluster-setup/">
                                             <span>
                                                 <div class="deployment-logo" style="height:134px">
-                                                    <img width="" src="/images/install/platform/cluster.png" title="Cluster setup" alt="Cluster setup">
+                                                    <img width="" src="/images/install/platform/cluster.png" title="Cluster setup with Kubernetes" alt="Cluster setup with Kubernetes">
                                                  </div>
                                             </span>
                                         </a>

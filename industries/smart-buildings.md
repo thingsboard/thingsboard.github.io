@@ -186,3 +186,24 @@ description:
     </div>
 </div>
 
+<div class="customer-block">
+    <a href="https://tpsystems.it">
+        <div class="customer-logo">
+            <img width="" src="/images/customers/tpssystems.png" alt="T.P.S.">
+        </div>
+    </a>
+    <div class="customer-content">
+        <h3 id="TPSsystems">
+            TOURISTIC PLATFORM SYSTEMS SRL 
+        </h3>    
+        <h4>TPS offers integrated and innovative systems for the enhancement and use of cultural heritage, choosing the visitor and his / her experience as the privileged point of view.</h4>
+        <p>
+         We are very satisfied with the functionality of the IoT platform. The numerous dashboards available and the flexibility of the product allow us to develop our project dedicated to Cultural Heritage. Through the platform, we have managed to put all the sensors in the Museums in communication in order to deliver a powerful data collection and analysis tool to be delivered to the administrators of cultural sites.   
+        </p> 
+            <div class="person-logo-container">
+                <div class="person-title">
+                Antonio Chianese   <br/>
+                </div>
+            </div>
+    </div>    
+</div>
