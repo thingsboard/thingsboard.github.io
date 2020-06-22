@@ -145,13 +145,13 @@ notitle: "true"
                             </div>                        
                         </div>
                         <div class="deployment-section deployment-cloud" id="cloud">
-                            <div class="deployment-cards">
+                            <div class="deployment-cards">                  
                                 <div class="deployment-cards-container">
                                     <div class="deployment-card-block">
-                                        <a href="/docs/user-guide/install/aws/">
+                                        <a href="/docs/user-guide/install/cluster/aws-cluster-setup/">
                                             <span>
-                                                <div class="deployment-logo coming-soon" style="height:134px">
-                                                    <img width="" src="/images/install/cloud/aws.png" title="AWS" alt="AWS">
+                                                <div class="deployment-logo" style="height:134px">
+                                                    <img width="" src="/images/install/cloud/aws.svg" title="AWS" alt="AWS">
                                                  </div>
                                             </span>
                                         </a>

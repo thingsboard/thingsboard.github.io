@@ -133,7 +133,7 @@ notitle: "true"
                                         <a href="/docs/user-guide/install/pe/aws/">
                                             <span>
                                                 <div class="deployment-logo" style="height:134px">
-                                                    <img width="" src="/images/install/cloud/aws.png" title="AWS" alt="AWS">
+                                                    <img width="" src="/images/install/cloud/aws.svg" title="AWS" alt="AWS">
                                                  </div>
                                             </span>
                                         </a>
