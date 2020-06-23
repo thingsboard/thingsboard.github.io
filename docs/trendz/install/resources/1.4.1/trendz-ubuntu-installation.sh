@@ -1,0 +1,1 @@
+sudo dpkg -i trendz-1.4.1.deb
