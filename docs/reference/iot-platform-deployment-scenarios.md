@@ -102,7 +102,7 @@ Overall performance of the solution depends on the instance hardware and heavily
 We suggest to use PostgreSQL for both entities and telemetry data in Standalone server deployment scenario.
 An average virtual environment can handle ~ 5,000 telemetry data points per second.
 See [key infrastructure characteristics](/docs/reference/iot-platform-deployment-scenarios/#key-infrastructure-characteristics)
-and [performance tests](/docs/reference/performance-aws-instances/) on different AWS instances. This information is usefull for making right decesion regarding the infrastructure for your solution. 
+and [performance tests](/docs/reference/performance-aws-instances/) on different AWS instances. This information is useful for making right decision regarding the infrastructure for your solution. 
 
 **Total cost of ownership (TCO) example**:
 
