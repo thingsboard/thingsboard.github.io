@@ -160,6 +160,8 @@ toc:
             path: /docs/trendz/install/docker-windows/
           - title: Installing Trendz using Docker (Linux or Mac OS)
             path: /docs/trendz/install/docker/
+          - title: Upgrade instructions
+            path: /docs/trendz/install/trndz-upgrade-instructions/
       - title: Connect Trendz to Thingsboard
         path: /docs/trendz/connect-thingsboard/
       - title: Data Visualization
