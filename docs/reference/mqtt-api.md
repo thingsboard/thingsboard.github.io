@@ -16,7 +16,7 @@ description: Supported MQTT API Reference for IoT Devices
 
 [MQTT](https://en.wikipedia.org/wiki/MQTT) is a lightweight publish-subscribe messaging protocol which probably makes it the most suitable for various IoT devices. You can find more information about MQTT [here](http://mqtt.org/).
 
-ThingsBoard server nodes act as an MQTT Broker that supports QoS levels 0 (at most once) and 1 (at least once) and a set of predefined topics.
+ThingsBoard server nodes act as an MQTT Client that supports QoS levels 0 (at most once) and 1 (at least once) and a set of predefined topics. You will need to install an MQTT Broker for communication between devices and ThingsBoard.
 
 ##### Client libraries setup
 
@@ -216,7 +216,9 @@ The supported data format is:
 ```
 
 **Please note** that the above fields are optional. In case the **secretKey** is not specified, the empty string as a default value is used.
-In case the **durationMs** is not specified, the system parameter **device.claim.duration** is used (in the file **/etc/thingsboard/conf/thingsboard.yml**).
+In case the **durationMs** is not specified, the system parameter **device.claim.duratio
+
+n** is used (in the file **/etc/thingsboard/conf/thingsboard.yml**).
 
 ## Protocol customization
 
