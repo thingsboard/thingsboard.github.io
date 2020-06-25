@@ -29,7 +29,7 @@ In small and medium installations Trendz can be installed **on the same** server
 Download and run the installation package.
 
 ```bash
-https://dist.thingsboard.io/trendz-windows-1.4.0.zip
+https://dist.thingsboard.io/trendz-windows-1.4.1.zip
 ```
 {: .copy-code}
 

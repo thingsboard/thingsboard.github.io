@@ -247,7 +247,7 @@ net start thingsboard
 ## Upgrading to 3.0 {#upgrading-to-30}
 
 
-These steps are applicable for 2.5+ ThingsBoard version.
+**NOTE**: These upgrade steps are applicable for ThingsBoard version 2.5.2. In order to upgrade to 3.0 you need to [**upgrade to 2.5.2 first**](/docs/user-guide/install/upgrade-instructions/#ubuntucentos-252).
 
 ### Ubuntu/CentOS {#ubuntucentos-30}
 
@@ -309,6 +309,8 @@ $ sudo service thingsboard start
 ```
 
 ### Windows {#windows-30}
+
+**NOTE**: These upgrade steps are applicable for ThingsBoard version 2.5.2. In order to upgrade to 3.0 you need to [**upgrade to 2.5.2 first**](/docs/user-guide/install/upgrade-instructions/#windows-252).
 
 {% include templates/install/tb-30-update.md %}
 
