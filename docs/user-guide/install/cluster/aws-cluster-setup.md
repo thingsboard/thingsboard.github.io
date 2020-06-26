@@ -2,7 +2,7 @@
 layout: docwithnav
 assignees:
 - ashvayka
-title: Cluster setup using AWS infrastructure
+title: Cluster setup using AWS infrastructure and KubeOne
 description: ThingsBoard IoT platform cluster setup with Kubernetes in AWS guide
 
 ---
