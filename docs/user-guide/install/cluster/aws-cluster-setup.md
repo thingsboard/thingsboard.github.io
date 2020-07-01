@@ -2,7 +2,7 @@
 layout: docwithnav
 assignees:
 - ashvayka
-title: Cluster setup using AWS infrastructure
+title: Cluster setup using AWS infrastructure and KubeOne
 description: ThingsBoard IoT platform cluster setup with Kubernetes in AWS guide
 
 ---
@@ -23,13 +23,17 @@ You need to install a kubeone, terraform (v0.11+) and the kubectl (v1.16+).
 
 You can choose any other available [Kubernetes cluster deployment solutions](https://kubernetes.io/docs/setup/pick-right-solution/).
 
-### Step 1. Enter the terraform working directory
+## Step 1. Clone ThingsBoard CE Kubernetes scripts repository. Enter the terraform working directory
+
+`
+$ git clone https://github.com/thingsboard/thingsboard-ce-k8s.git
+`
 
 `
 $ cd ./aws
 `
 
-### Step 2. Generate ssh key
+## Step 2. Generate ssh key
 
 Kubeone needs ssh key for access to ec2 instance. By default, terraform uses ~/.ssh/id_rsa and ~/.ssh/id_rsa.pub. But you can generate your ssh key to any folder and add this path to terraform variables file.
 To generate ssh key, please execute the following command:
@@ -38,7 +42,7 @@ To generate ssh key, please execute the following command:
 $ ssh-keygen
 ` 
 
-### Step 3. AWS credentials
+## Step 3. AWS credentials
 Also you need access to AWS. It can be iam user or iam role. You need have a AWS_ACCESS_KEY and AWS_SECRET_ACCESS_KEY.
 To add environment variables, please execute the following command:
 
@@ -54,7 +58,7 @@ $ export AWS_ACCESS_KEY=xxxxxxxxx
 $ export AWS_SECRET_ACCESS_KEY=xxxxxxxxxxxxxx
 `
 
-### Step 4. Installation AWS cloud infrastructure
+## Step 4. Installation AWS cloud infrastructure
 
 To initialize a working directory for terraform, please execute the following command:
 
@@ -153,11 +157,7 @@ $ terraform destroy
 Starting ThingsBoard v2.2, it is possible to install ThingsBoard cluster using new microservices architecture and docker containers. 
 See [**microservices**](/docs/reference/msa/) architecture page for more details.
 
-## Step 6. Clone ThingsBoard CE Kubernetes scripts repository
-
-```bash
-git clone https://github.com/thingsboard/thingsboard-ce-k8s.git
-```
+## Step 6. Environment file.
 
 Please go to back in root folder `cd ../`.
 

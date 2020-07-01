@@ -97,9 +97,15 @@
       video: false
       pe: false
     - path: /docs/user-guide/install/cluster/aws-cluster-setup
-      title: Cluster setup with Kubernetes on AWS cloud infrstructure
+      title: Cluster setup with Kubernetes and KubeOne on AWS cloud infrstructure
       subtitle: Learn how to setup ThingsBoard cluster with Kubernetes on AWS cloud infrstructure.
       keywords: install cluster kubernetes k8s aws cloud
+      video: false
+      pe: false
+    - path: /docs/user-guide/install/cluster/aws-self-hosted-setup
+      title: Self-hosted setup using AWS EC2 instance
+      subtitle: Learn how to setup ThingsBoard on AWS EC2 instance.
+      keywords: install ec2 aws cloud self-hosted
       video: false
       pe: false
     - path: /docs/user-guide/install/cluster/openshift-cluster-setup

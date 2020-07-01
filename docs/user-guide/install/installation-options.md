@@ -148,7 +148,7 @@ notitle: "true"
                             <div class="deployment-cards">                  
                                 <div class="deployment-cards-container">
                                     <div class="deployment-card-block">
-                                        <a href="/docs/user-guide/install/cluster/aws-cluster-setup/">
+                                        <a href="/docs/user-guide/install/aws/">
                                             <span>
                                                 <div class="deployment-logo" style="height:134px">
                                                     <img width="" src="/images/install/cloud/aws.svg" title="AWS" alt="AWS">
