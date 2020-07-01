@@ -84,6 +84,12 @@
       keywords: install cluster
       video: false
       pe: false
+    - path: /docs/user-guide/install/aws/
+      title: AWS cluster setup
+      subtitle: Learn how to setup ThingsBoard cluster on AWS infrastructure.
+      keywords: install cluster aws
+      video: false
+      pe: false
     - path: /docs/user-guide/install/cluster/docker-compose-setup/
       title: Cluster setup with Docker Compose
       subtitle: Learn how to setup ThingsBoard cluster with Docker Compose.
