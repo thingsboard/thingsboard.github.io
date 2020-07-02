@@ -37,6 +37,8 @@ toc:
     path: /docs/user-guide/install/building-from-source/
   - title: Cluster setup
     path: /docs/user-guide/install/cluster-setup/
+  - title: AWS cluster setup
+    path: /docs/user-guide/install/aws/
   - title: Cluster setup with Docker Compose
     path: /docs/user-guide/install/cluster/docker-compose-setup/
   - title: Cluster setup with Kubernetes on Minikube
