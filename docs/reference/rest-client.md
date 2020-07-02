@@ -144,29 +144,9 @@ restClient.activateUser(tenantUser.getId(), tenantPassword);
 login(tenantUsername, tenantPassword);
 
 // Loading Widget from file
-Path widgetFilePath = Paths.get("src/main/resources/custom_widget.json");
-JsonNode widgetJson = mapper.readTree(Files.readAllBytes(widgetFilePath));
-
-WidgetsBundle widgetsBundle = new WidgetsBundle();
-widgetsBundle.setTitle(widgetJson.get("widgetsBundle").get("title").asText());
-widgetsBundle.setAlias(widgetJson.get("widgetsBundle").get("alias").asText());
-final WidgetsBundle bundle = restClient.saveWidgetsBundle(widgetsBundle);
-
-WidgetType widgetType = new WidgetType();
-JsonNode widgetTypes = widgetJson.get("widgetTypes");
-CountDownLatch latch = new CountDownLatch(widgetTypes.size());
-widgetTypes.forEach(type -> httpExecutor.submit(() -> {
-    try {
-        widgetType.setName(type.get("alias").asText());
-        widgetType.setAlias(type.get("alias").asText());
-        widgetType.setBundleAlias(bundle.getAlias());
-        widgetType.setDescriptor(type.get("descriptor"));
-        restClient.saveWidgetType(widgetType);
-    } finally {
-        latch.countDown();
-    }
-}));
-latch.await();
+// Path widgetFilePath = Paths.get("src/main/resources/custom_widget.json");
+// JsonNode widgetJson = mapper.readTree(Files.readAllBytes(widgetFilePath));
+// loadWidget(widgetJson);
 
 // Creating Dashboard Group on the Tenant Level
 EntityGroup sharedDashboardsGroup = new EntityGroup();
