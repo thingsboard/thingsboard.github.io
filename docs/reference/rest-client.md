@@ -148,6 +148,11 @@ login(tenantUsername, tenantPassword);
 // JsonNode widgetJson = mapper.readTree(Files.readAllBytes(widgetFilePath));
 // loadWidget(widgetJson);
 
+// Loading Rule Chain from file
+// Path ruleChainFilePath = Paths.get("src/main/resources/rule_chain.json");
+// JsonNode ruleChainJson = mapper.readTree(Files.readAllBytes(ruleChainFilePath));
+// loadRuleChain(ruleChainJson, false);
+
 // Creating Dashboard Group on the Tenant Level
 EntityGroup sharedDashboardsGroup = new EntityGroup();
 sharedDashboardsGroup.setName("Shared Dashboards");
@@ -209,7 +214,5 @@ user = restClient.saveUser(user, false);
 restClient.activateUser(user.getId(), userPassword);
 
 restClient.addEntitiesToEntityGroup(customer1Administrators.getId(), Collections.singletonList(user.getId()));
-
-httpExecutor.shutdownNow();
 ```
  
