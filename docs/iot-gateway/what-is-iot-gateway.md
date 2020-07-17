@@ -22,7 +22,9 @@ ThingsBoard IoT Gateway provides following features:
  - [**Request** connector](/docs/iot-gateway/config/request/) to collect data from IoT devices that are have HTTP(S) API endpoints.
  - [**CAN** connector](/docs/iot-gateway/config/can/) to collect data from IoT devices that are connected through CAN protocol.
  - [**BACnet** connector](/docs/iot-gateway/config/bacnet/) to collect data from IoT devices that are connected throughBACnet protocol.
- - [**ODBC** connector](https://thingsboard.io/docs/iot-gateway/config/odbc/) to collect data from ODBC databases.
+ - [**ODBC** connector](/docs/iot-gateway/config/odbc/) to collect data from ODBC databases.
+ - [**REST** connector](/docs/iot-gateway/config/rest/) to create endpoints and collect data from incoming HTTP requests.
+ - [**SNMP** connector](/docs/iot-gateway/config/rest/) to collect data from SNMP managers.
  - [**Custom** connector](/docs/iot-gateway/custom/) to collect data from IoT devices that are connected by different protocols. (You can create your own connector for the requires protocol).
  - **Persistence** of collected data to guarantee data delivery in case of network or hardware failures.
  - **Automatic reconnect** to ThingsBoard cluster.
