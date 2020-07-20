@@ -22,3 +22,30 @@ queue:
     max_msg_size: "${TB_QUEUE_PUBSUB_MAX_MSG_SIZE:1048576}" #in bytes
     max_messages: "${TB_QUEUE_PUBSUB_MAX_MESSAGES:1000}"
 ```
+
+The following params affect the **number of requests** per second from each partitions per each queue, make sure the next params have the correct values:
+
+```yml
+queue:
+...
+  transport_api:
+    request_poll_interval: "${TB_QUEUE_TRANSPORT_REQUEST_POLL_INTERVAL_MS:1000}"
+    response_poll_interval: "${TB_QUEUE_TRANSPORT_RESPONSE_POLL_INTERVAL_MS:1000}"
+...
+  core:
+    poll-interval: "${TB_QUEUE_CORE_POLL_INTERVAL_MS:1000}"
+...
+  js:
+    response_poll_interval: "${REMOTE_JS_RESPONSE_POLL_INTERVAL_MS:1000}"
+...
+  rule-engine:
+    poll-interval: "${TB_QUEUE_RULE_ENGINE_POLL_INTERVAL_MS:1000}"
+...
+    queues:
+        poll-interval: "${TB_QUEUE_RE_MAIN_POLL_INTERVAL_MS:1000}"
+        poll-interval: "${TB_QUEUE_RE_HP_POLL_INTERVAL_MS:1000}"
+        poll-interval: "${TB_QUEUE_RE_SQ_POLL_INTERVAL_MS:1000}"
+...
+  transport:
+    poll_interval: "${TB_QUEUE_TRANSPORT_NOTIFICATIONS_POLL_INTERVAL_MS:1000}"
+```
