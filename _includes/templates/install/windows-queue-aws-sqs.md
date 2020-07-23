@@ -22,7 +22,32 @@ queue:
     region: "${TB_QUEUE_AWS_SQS_REGION:YOUR_REGION}"
 ```
 
-The following params affect the **number of requests** per second from each partitions per each queue, make sure the next params have the correct values:
+**These params affect the number of requests per second from each partitions per each queue.**
+
+Number of requests to particular Message Queue calculated based on the formula:
+
+((Number of Rule Engine and Core Queues) * (Number of partitions per Queue) + 
+(Number of transport queues) + (Number of microservices) + (Number of JS executors)) * 1000 / POLL_INTERVAL_MS
+
+For example, number of requests based on default parameters is:
+
+Rule Engine queues:
+
+Main **10** partitions + HighPriority **10** partitions + SequentialByOriginator **10** partitions = **30**
+
+Core queue **10** partitions
+
+Transport request Queue + response Queue = **2**
+
+Rule Engine Transport notifications Queue + Core Transport notifications Queue = **2**
+
+Total = **44**
+
+Number of requests per second = **44 * 1000 / 25 = 1760** requests
+
+Based on the use case, you can compromise latency and decrease number of partitions/requests to the queue, if the message load is low.
+
+Sample parameters to fit into **10** requests per second on a "monolith" deployment:
 
 ```yml
 queue:
@@ -33,6 +58,7 @@ queue:
 ...
   core:
     poll-interval: "${TB_QUEUE_CORE_POLL_INTERVAL_MS:1000}"
+    partitions: "${TB_QUEUE_CORE_PARTITIONS:2}"
 ...
   js:
     response_poll_interval: "${REMOTE_JS_RESPONSE_POLL_INTERVAL_MS:1000}"
@@ -42,8 +68,13 @@ queue:
 ...
     queues:
         poll-interval: "${TB_QUEUE_RE_MAIN_POLL_INTERVAL_MS:1000}"
+        partitions: "${TB_QUEUE_RE_MAIN_PARTITIONS:2}"
+...
         poll-interval: "${TB_QUEUE_RE_HP_POLL_INTERVAL_MS:1000}"
+        partitions: "${TB_QUEUE_RE_HP_PARTITIONS:1}"
+...
         poll-interval: "${TB_QUEUE_RE_SQ_POLL_INTERVAL_MS:1000}"
+        partitions: "${TB_QUEUE_RE_SQ_PARTITIONS:1}"
 ...
   transport:
     poll_interval: "${TB_QUEUE_TRANSPORT_NOTIFICATIONS_POLL_INTERVAL_MS:1000}"
