@@ -354,7 +354,7 @@ description: ThingsBoard Products Pricing
                                 false,
                                 '31307df0-11f6-11ea-951e-b77b877a367b',
                                 '2985f1a0-7afd-11ea-951e-b77b877a367b',
-                                'Trendz Analytics Prototype', 'FREETRIALFORONEMONTH')">
+                                'Trendz Analytics Prototype', 'KFYU8D47ZB')">
                                 Try For Free
                             </a>
                             <div>
@@ -384,7 +384,7 @@ description: ThingsBoard Products Pricing
                                 false,
                                 '31307df0-11f6-11ea-951e-b77b877a367b',
                                 '018b7520-7afe-11ea-951e-b77b877a367b',
-                                'Trendz Analytics StartUp', 'FREETRIALFORONEMONTH')">
+                                'Trendz Analytics StartUp', 'KFYU8D47ZB')">
                                 Try For Free
                             </a>
                             <div>
@@ -414,7 +414,7 @@ description: ThingsBoard Products Pricing
                                 false,
                                 '31307df0-11f6-11ea-951e-b77b877a367b',
                                 '6e3bb4f0-7afe-11ea-951e-b77b877a367b',
-                                'Trendz Analytics Business', 'FREETRIALFORONEMONTH')">
+                                'Trendz Analytics Business', 'KFYU8D47ZB')">
                                 Try For Free
                             </a>
                             <div>
