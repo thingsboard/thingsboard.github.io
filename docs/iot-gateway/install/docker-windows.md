@@ -23,7 +23,7 @@ Make sure your have [logged in](https://docs.docker.com/engine/reference/command
 **Execute the following command to run this docker directly:**
 
 ```
-docker run -it -v $HOME/tb-gateway/config:/etc/thingsboard-gateway/config -v $HOME/tb-gateway/extensions:/var/lib/thingsboard_gateway/extensions -v $HOME/tb-gateway/logs:/var/log/thingsboard-gateway --name tb-gateway --restart always thingsboard/tb-gateway
+docker run -it -v $HOME/tb-gateway/config:/thingsboard_gateway/config -v $HOME/tb-gateway/extensions:/thingsboard_gateway/extensions -v $HOME/tb-gateway/logs:/thingsboard_gateway/logs --name tb-gateway --restart always thingsboard/tb-gateway
 ```
 {: .copy-code}
 
