@@ -31,9 +31,9 @@ Where:
     
 - `docker run`              - run this container
 - `-it`                     - attach a terminal session with current Gateway process output
-- `-v $HOME/tb-gateway/config:/etc/thingsboard-gateway/config`   - mounts the host's dir `%HomePath%\tb-gateway\config` to Gateway config  directory
-- `-v $HOME/tb-gateway/extensions:/var/lib/thingsboard_gateway/extensions`   - mounts the host's dir `%HomePath%\tb-gateway\extensions` to Gateway extensions  directory
-- `-v $HOME/tb-gateway/logs:/var/log/thingsboard-gateway`   - mounts the host's dir `%HomePath%\tb-gateway\logs` to Gateway logs  directory
+- `-v $HOME/tb-gateway/config:/thingsboard_gateway/config`   - mounts the host's dir `%HomePath%\tb-gateway\config` to Gateway config  directory
+- `-v $HOME/tb-gateway/extensions:/thingsboard_gateway/extensions`   - mounts the host's dir `%HomePath%\tb-gateway\extensions` to Gateway extensions  directory
+- `-v $HOME/tb-gateway/logs:/thingsboard_gateway/logs`   - mounts the host's dir `%HomePath%\tb-gateway\logs` to Gateway logs  directory
 - `--name tb-gateway`             - friendly local name of this machine
 - `--restart always`        - automatically start ThingsBoard in case of system reboot and restart in case of failure.
 - `thingsboard/tb-gateway`          - docker image
