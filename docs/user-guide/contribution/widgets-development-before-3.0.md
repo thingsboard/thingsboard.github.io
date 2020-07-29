@@ -12,7 +12,7 @@ title: Widgets Development Guide Before 3.0
 ## Introduction
 
 This is a widget development guide for the ThingsBoard version before the ThingsBoard 3.0 version. 
-In case if you are using the ThingsBoard 3.0+ version, 
+In case if you are using the ThingsBoard 3.0+ version, the next link refers to those [Widget Development ThingsBoard 3.0+ version](/docs/user-guide/contribution/widgets-development/).
 
 **ThingsBoard widgets** are additional UI modules that can be easily integrated into any [IoT Dashboards](/docs/user-guide/ui/dashboards/) and provide end-user functions such as data visualization, remote device control, alarms management and displaying static custom html content.
 According to the provided features each widget definition represents specific [Widget Type](/docs/user-guide/ui/widget-library/#widget-types).
