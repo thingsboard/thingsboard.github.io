@@ -45,13 +45,13 @@ See **[live-demo](/docs/user-guide/live-demo/)** page for more details how to ge
 
 {% capture tabspec %}token
 A,get-token.sh,shell,resources/get-token.sh,/docs/reference/resources/get-token.sh
-B,resonse.json,json,resources/get-token-response.json,/docs/reference/resources/get-token-response.json{% endcapture %}
+B,response.json,json,resources/get-token-response.json,/docs/reference/resources/get-token-response.json{% endcapture %}
 {% include tabs.html %}
 
- - Now, you should set  'X-Authorization' to "Bearer $YOUR_JWT_TOKEN"  
+ - Now, you should set  'X-Authorization' to "Bearer $YOUR_JWT_TOKEN"
  
  
 ## Java REST API Client
 
-ThingsBoard team provides client library written in Java to simplify consumption of the REST API. 
-Please see Java REST API Client [documentation page](/docs/reference/rest-client/) for more details.  
+ThingsBoard team provides client library written in Java to simplify consumption of the REST API.
+Please see Java REST API Client [documentation page](/docs/reference/rest-client/) for more details.
