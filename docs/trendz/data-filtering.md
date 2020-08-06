@@ -2,7 +2,7 @@
 layout: docwithnav
 assignees:
 - vparomskiy
-title: Data Fitlering
+title: Data Filtering
 description: How to filter and clear dataset in Trendz Analytics 
 ---
 
