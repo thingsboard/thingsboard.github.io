@@ -118,7 +118,7 @@ ajax().then(function(data) {
 function Map(m)
 {
     End(ls);
-    document.location.href = "/partners/integrators/#distributors";
+    document.location.href = "/partners/local/#distributors";
     selectType(m,"All countries");
     var optionElement = document.getElementById('region').options.namedItem(m);
     optionElement.selected = 'true';

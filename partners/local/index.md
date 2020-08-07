@@ -1,15 +1,15 @@
 ---
 layout: integrators
-title: Distributors
+title: Local partners
 notitle: "true"
-description: ThingsBoard Distributors
+description: ThingsBoard local partners
 ---
 
-# ThingsBoard Distributors
+# ThingsBoard local partners
 
 <object id="map" width="100%" data="/images/partners/map-of-distributors.svg"></object>
 
-<div id="distributors">Find your local re-seller</div>
+<div id="distributors">Find our local re-seller</div>
 
 <div id="integratorsGrid">
 <div id="filterContainer">
