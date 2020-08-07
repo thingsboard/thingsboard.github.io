@@ -50,7 +50,7 @@ Once message is pushed by the rule engine, ThingsBoard invokes assigned [**Downl
 
 <br/>
 
- ![image](/images/user-guide/integrations/integrations-overview.svg)
+<object width="80%" data="/images/user-guide/integrations/integrations-overview.svg"></object>
  
  
 ### Deployment options
@@ -70,7 +70,7 @@ Cons:
   * low level of isolation;
   * can't access local MQTT brokers or OPC-UA servers if ThingsBoard is deployed in the cloud.
   
-![image](/images/user-guide/integrations/embeded-integrations-overview.jpg)  
+<object width="60%" data="/images/user-guide/integrations/embeded-integrations-overview.svg"></object> 
   
 #### Remote integrations
  
@@ -92,7 +92,7 @@ Cons:
 
 Learn how to configure integration to run remotely using [this guide](/docs/user-guide/integrations/remote-integrations).
 
-![image](/images/user-guide/integrations/remote-integrations-overview.jpg)  
+<object width="70%" data="/images/user-guide/integrations/remote-integrations-overview.svg"></object> 
 
 ### Data Converters
 
