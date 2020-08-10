@@ -89,7 +89,8 @@ Kafka <small>(in docker container)</small>%,%kafka-in-docker%,%templates/install
 AWS SQS %,%aws-sqs%,%templates/install/ubuntu-queue-aws-sqs.md%br%
 Google Pub/Sub %,%pubsub%,%templates/install/ubuntu-queue-pub-sub.md%br%
 Azure Service Bus %,%service-bus%,%templates/install/ubuntu-queue-service-bus.md%br%
-RabbitMQ %,%rabbitmq%,%templates/install/ubuntu-queue-rabbitmq.md{% endcapture %}
+RabbitMQ %,%rabbitmq%,%templates/install/ubuntu-queue-rabbitmq.md%br%
+Confluent Cloud %,%confluent-cloud%,%templates/install/ubuntu-queue-confluent-cloud.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="ubuntuThingsboardQueue" toggle-spec=contenttogglespecqueue %} 
 

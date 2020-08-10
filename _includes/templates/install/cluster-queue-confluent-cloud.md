@@ -1,4 +1,4 @@
-{% include templates/install/queue-service-bus-config.md %}
+{% include templates/install/queue-confluent-cloud-config.md %}
 
 Configure ThingsBoard environment file:
 
@@ -10,24 +10,38 @@ sudo nano .env
 Check following line:
 
 ```.env
-TB_QUEUE_TYPE=service-bus
+TB_QUEUE_TYPE=confluent
 ```
 {: .copy-code}
 
-Configure Service Bus environment file for ThingsBoard queue service:
+Configure Confluent Cloud environment file for ThingsBoard queue service:
 
 ```text
-sudo nano queue-service-bus.env
+sudo nano queue-confluent-cloud.env
 ```
 {: .copy-code}
 
-Don't forget to replace “YOUR_NAMESPACE_NAME” with your **real Service Bus namespace name**, and "YOUR_SAS_KEY_NAME", "YOUR_SAS_KEY" with your **real Service Bus credentials. Note: "YOUR_SAS_KEY_NAME" it is "SAS Policy", "YOUR_SAS_KEY" it is "SAS Policy Primary Key":**
+Don’t forget to replace "CLUSTER_API_KEY", "CLUSTER_API_SECRET" and "confluent.cloud:9092" with your real Confluent Cloud bootstrap servers:
 
 ```.env
-TB_QUEUE_TYPE=service-bus
-TB_QUEUE_SERVICE_BUS_NAMESPACE_NAME=YOUR_NAMESPACE_NAME
-TB_QUEUE_SERVICE_BUS_SAS_KEY_NAME=YOUR_SAS_KEY_NAME
-TB_QUEUE_SERVICE_BUS_SAS_KEY=YOUR_SAS_KEY
+TB_QUEUE_TYPE=kafka
+
+TB_KAFKA_SERVERS=confluent.cloud:9092
+TB_QUEUE_KAFKA_REPLICATION_FACTOR=3
+
+TB_QUEUE_KAFKA_USE_CONFLUENT_CLOUD=true
+TB_QUEUE_KAFKA_CONFLUENT_SSL_ALGORITHM=https
+TB_QUEUE_KAFKA_CONFLUENT_SASL_MECHANISM=PLAIN
+TB_QUEUE_KAFKA_CONFLUENT_SASL_JAAS_CONFIG=org.apache.kafka.common.security.plain.PlainLoginModule required username="CLUSTER_API_KEY" password="CLUSTER_API_SECRET";
+TB_QUEUE_KAFKA_CONFLUENT_SECURITY_PROTOCOL=SASL_SSL
+TB_QUEUE_KAFKA_CONFLUENT_USERNAME=CLUSTER_API_KEY
+TB_QUEUE_KAFKA_CONFLUENT_PASSWORD=CLUSTER_API_SECRET
+
+TB_QUEUE_KAFKA_RE_TOPIC_PROPERTIES=retention.ms:604800000;segment.bytes:52428800;retention.bytes:1048576000
+TB_QUEUE_KAFKA_CORE_TOPIC_PROPERTIES=retention.ms:604800000;segment.bytes:52428800;retention.bytes:1048576000
+TB_QUEUE_KAFKA_TA_TOPIC_PROPERTIES=retention.ms:604800000;segment.bytes:52428800;retention.bytes:1048576000
+TB_QUEUE_KAFKA_NOTIFICATIONS_TOPIC_PROPERTIES=retention.ms:604800000;segment.bytes:52428800;retention.bytes:1048576000
+TB_QUEUE_KAFKA_JE_TOPIC_PROPERTIES=retention.ms:604800000;segment.bytes:52428800;retention.bytes:104857600
 
 # These params affect the number of requests per second from each partitions per each queue.
 # Number of requests to particular Message Queue is calculated based on the formula:
@@ -57,5 +71,6 @@ TB_QUEUE_RE_SQ_POLL_INTERVAL_MS=1000
 TB_QUEUE_RE_SQ_PARTITIONS=1
 TB_QUEUE_TRANSPORT_REQUEST_POLL_INTERVAL_MS=1000
 TB_QUEUE_TRANSPORT_RESPONSE_POLL_INTERVAL_MS=1000
-TB_QUEU_TRANSPORT_NOTIFICATIONS_POLL_INTERVAL_MS=1000
+TB_QUEUE_TRANSPORT_NOTIFICATIONS_POLL_INTERVAL_MS=1000
 ```
+{: .copy-code}
