@@ -7,7 +7,7 @@ sudo nano .env
 ```
 {: .copy-code}
 
-Check following line:**
+Check following line:
 
 ```.env
 TB_QUEUE_TYPE=rabbitmq

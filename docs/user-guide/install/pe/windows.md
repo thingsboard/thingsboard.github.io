@@ -84,7 +84,8 @@ Kafka %,%kafka%,%templates/install/windows-queue-kafka.md%br%
 AWS SQS %,%aws-sqs%,%templates/install/windows-queue-aws-sqs.md%br%
 Google Pub/Sub %,%pubsub%,%templates/install/windows-queue-pub-sub.md%br%
 Azure Service Bus %,%service-bus%,%templates/install/windows-queue-service-bus.md%br%
-RabbitMQ %,%rabbitmq%,%templates/install/windows-queue-rabbitmq.md{% endcapture %}
+RabbitMQ %,%rabbitmq%,%templates/install/windows-queue-rabbitmq.md%br%
+Confluent Cloud %,%confluent-cloud%,%templates/install/windows-queue-confluent-cloud.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="windowsThingsboardQueue" toggle-spec=contenttogglespecqueue %} 
 
