@@ -8,21 +8,24 @@ function selectType(type, country) {
   var integrators = {{ integrators }};
   var targetContainer = document.getElementById(containerId);
   targetContainer.innerHTML = '';
-  if ((country == "All countries" && type == "Worldwide")) {
-    var integratorsByType = integrators;
-  } else if (type == "") {
-    var integratorsByType = integrators;
-  } else if (country == "All countries") {
+  if (country == "All countries") {
     var integratorsByType = integrators.filter(function (integrator) {
       return integrator.type.includes(type) || integrator.type.includes("Worldwide");
     });
   } else {
     var integratorsByType = integrators.filter(function (integrator) {
-      return integrator.country.includes(country) || integrator.type.includes("Worldwide") || (integrator.country.includes("") && integrator.type.includes(type));
+      return integrator.country.includes(country) || (integrator.country.includes("") && integrator.type.includes(type));
     });
   }
 
+  if (integratorsByType == ""){
+  if (document.getElementById('integratorsContainer') != null) {
+  document.getElementById('integratorsContainer').id = 'integratorsContainerEmpty';
+  }
+  $('#integratorsContainerEmpty').html("</br><p>Coming soon</p></br>");
+  } else {
   integratorsByType.forEach(function (obj) { targetContainer.appendChild(createBox(obj)) });
+  }
 }
 
 function createBox(integrator) {
@@ -69,9 +72,11 @@ function createBox(integrator) {
 }
 
 function PushIndex(f) {
-  End(ls);
   r = $( "#region option:selected" ).text();
   c = $( "#country option:selected" ).text();
+  if (document.getElementById('integratorsContainerEmpty') != null) {
+  document.getElementById('integratorsContainerEmpty').id = 'integratorsContainer';
+  }
   selectType(r,c);
 }
 
@@ -108,6 +113,9 @@ ajax().then(function(data) {
       if ($(this).val() == '0'){
           $('#Search').attr('disabled', 'disabled');
           $('#country').attr('disabled', 'disabled');
+      } else if ($(this).val() == '8'){
+          $('#Search').removeAttr('disabled');
+          $('#country').attr('disabled', 'disabled');
       } else {
          $('#Search').removeAttr('disabled');
          $('#country').removeAttr('disabled');
@@ -117,7 +125,11 @@ ajax().then(function(data) {
 
 function Map(m)
 {
-    End(ls);
+    if (document.getElementById('integratorsContainerEmpty') != null) {
+    document.getElementById('integratorsContainerEmpty').id = 'integratorsContainer';
+    }
+    $('#Search').removeAttr('disabled');
+    $('#country').removeAttr('disabled');
     document.location.href = "/partners/local/#distributors";
     selectType(m,"All countries");
     var optionElement = document.getElementById('region').options.namedItem(m);
@@ -142,17 +154,5 @@ function Empty()
                     return '<option id="' + val.cntr + '">' + val.cntr + '</option>';
                 }));
     });
-    document.getElementById('integratorsContainer').id = 'integratorsContainerEmpty';
     $('#integratorsContainerEmpty').html("<object data='/images/partners/search-icon.svg'></object></br><p>Select a region using the map or the finder</p>");
-    ls = 1;
-}
-
-function End()
-{
-  if (ls == 1){
-  document.getElementById('integratorsContainerEmpty').id = 'integratorsContainer';
-  $('#Search').removeAttr('disabled');
-  $('#country').removeAttr('disabled');
-  ls = 0;
-  };
 }
