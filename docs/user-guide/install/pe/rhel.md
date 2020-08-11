@@ -108,13 +108,13 @@ Hybrid <br/>PostgreSQL+TimescaleDB<br/><small>(for TimescaleDB professionals)</s
 {% include templates/install/install-queue.md %}
 
 {% capture contenttogglespecqueue %}
-In Memory %,%inmemory%,%templates/install/queue-in-memory.md%br%
-Kafka %,%kafka%,%templates/install/rhel-queue-kafka.md%br%
-AWS SQS %,%aws-sqs%,%templates/install/ubuntu-queue-aws-sqs.md%br%
-Google Pub/Sub %,%pubsub%,%templates/install/ubuntu-queue-pub-sub.md%br%
-Azure Service Bus %,%service-bus%,%templates/install/ubuntu-queue-service-bus.md%br%
-RabbitMQ %,%rabbitmq%,%templates/install/rhel-queue-rabbitmq.md%br%
-Confluent Cloud %,%confluent-cloud%,%templates/install/ubuntu-queue-confluent-cloud.md{% endcapture %}
+In Memory <small>(built-in and default)</small>%,%inmemory%,%templates/install/queue-in-memory.md%br%
+Kafka <small>(recommended for on-prem, production installations)</small>%,%kafka%,%templates/install/rhel-queue-kafka.md%br%
+AWS SQS <small>(managed service from AWS)</small>%,%aws-sqs%,%templates/install/ubuntu-queue-aws-sqs.md%br%
+Google Pub/Sub <small>(managed service from Google)</small>%,%pubsub%,%templates/install/ubuntu-queue-pub-sub.md%br%
+Azure Service Bus <small>(managed service from Azure)</small>%,%service-bus%,%templates/install/ubuntu-queue-service-bus.md%br%
+RabbitMQ <small>(for small on-prem installations)</small>%,%rabbitmq%,%templates/install/rhel-queue-rabbitmq.md%br%
+Confluent Cloud <small>(Event Streaming Platform based on Kafka)</small>%,%confluent-cloud%,%templates/install/ubuntu-queue-confluent-cloud.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="ubuntuThingsboardQueue" toggle-spec=contenttogglespecqueue %} 
 

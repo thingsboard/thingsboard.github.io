@@ -1,10 +1,6 @@
-#### Confluent Cloud Installation
+#### Confluent Cloud Configuration
 
-[What is Confluent Platform?](https://docs.confluent.io/current/platform.html#what-is-cp)
-
-##### Configuration Confluent Cloud
-To access Confluent Cloud service, you first need to create an [account](https://confluent.cloud/login).
-
-Create a [Kafka Cluster in Confluent Cloud](https://docs.confluent.io/current/quickstart/cloud-quickstart/index.html#step-1-create-a-ak-cluster-in-ccloud).
-
-Create an [API Key](https://docs.confluent.io/current/quickstart/cloud-quickstart/index.html#step-4-create-an-api-key).
+To access [Confluent Cloud](https://docs.confluent.io/current/platform.html#what-is-cp) 
+you should first create an [account](https://confluent.cloud/login), 
+then create a [Kafka cluster](https://docs.confluent.io/current/quickstart/cloud-quickstart/index.html#step-1-create-a-ak-cluster-in-ccloud) 
+and get your [API Key](https://docs.confluent.io/current/quickstart/cloud-quickstart/index.html#step-4-create-an-api-key).
