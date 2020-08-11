@@ -14,6 +14,8 @@ description: Azure IoT Hub Integration Guide
 ## Overview
 
 Azure IoT Hub Integration allows to stream data from AWS IoT Backend to ThingsBoard and converts device payloads to the ThingsBoard format.
+ 
+  <object width="80%" data="/images/user-guide/integrations/azure/iot-hub-integration.svg"></object>
 
 ## Create and configure Azure IoT Hub account
 
