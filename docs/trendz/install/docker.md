@@ -38,7 +38,7 @@ Make sure your have [logged in](https://docs.docker.com/engine/reference/command
 Execute the following command to run this docker directly:
 
 ``` 
-docker run -it -p 8888:8888 -v ~/.mytrendz-data:/data -v ~/.mytrendz-logs:/var/log/trendz -e TB_API_URL='PUT_YOUR_THINGSBOARD_URL_HERE' -e TB_API_PE_ENABLED='true' -e TB_LICENSE_SECRET=PUT_YOUR_LICENSE_SECRET_HERE --restart always --name mytrendz thingsboard/trendz:1.4.1-SNAPSHOT
+docker run -it -p 8888:8888 -v ~/.mytrendz-data:/data -v ~/.mytrendz-logs:/var/log/trendz -e TB_API_URL='PUT_YOUR_THINGSBOARD_URL_HERE' -e TB_API_PE_ENABLED='true' -e TRENDZ_LICENSE_SECRET=PUT_YOUR_LICENSE_SECRET_HERE --restart always --name mytrendz thingsboard/trendz:1.4.1-SNAPSHOT
 ```
 
 Where: 

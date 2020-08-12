@@ -113,15 +113,45 @@ You can find the example application **[here](https://github.com/thingsboard/tb-
 
 ```java
 // ThingsBoard REST API URL
-String url = "http://localhost:8080";
+final String url = "http://localhost:8080";
 
-// Default Tenant Administrator credentials
-String username = "tenant@thingsboard.org";
-String password = "tenant";
+// Default System Administrator credentials
+final String username = "sysadmin@thingsboard.org";
+final String password = "sysadmin";
 
-// creating new rest restClient and auth with credentials
-RestClient restClient = new RestClient(url);
-restClient.login(username, password);
+// creating new rest restClient and auth with system administrator credentials
+restClient = new RestClient(url);
+login(username, password);
+
+// Creating Tenant
+Tenant tenant = new Tenant();
+tenant.setTitle("Test Tenant");
+tenant = restClient.saveTenant(tenant);
+
+final String tenantUsername = "testtenant@thingsboard.org";
+final String tenantPassword = "testtenant";
+
+// Created User for Tenant
+User tenantUser = new User();
+tenantUser.setAuthority(Authority.TENANT_ADMIN);
+tenantUser.setEmail(tenantUsername);
+tenantUser.setTenantId(tenant.getId());
+
+tenantUser = restClient.saveUser(tenantUser, false);
+restClient.activateUser(tenantUser.getId(), tenantPassword);
+
+// login with Tenant
+login(tenantUsername, tenantPassword);
+
+// Loading Widget from file
+// Path widgetFilePath = Paths.get("src/main/resources/custom_widget.json");
+// JsonNode widgetJson = mapper.readTree(Files.readAllBytes(widgetFilePath));
+// loadWidget(widgetJson);
+
+// Loading Rule Chain from file
+// Path ruleChainFilePath = Paths.get("src/main/resources/rule_chain.json");
+// JsonNode ruleChainJson = mapper.readTree(Files.readAllBytes(ruleChainFilePath));
+// loadRuleChain(ruleChainJson, false);
 
 // Creating Dashboard Group on the Tenant Level
 EntityGroup sharedDashboardsGroup = new EntityGroup();
@@ -148,18 +178,18 @@ Device waterMeter1 = new Device();
 waterMeter1.setCustomerId(customer1.getId());
 waterMeter1.setName("WaterMeter1");
 waterMeter1.setType("waterMeter");
-restClient.saveDevice(waterMeter1);
+waterMeter1 = restClient.saveDevice(waterMeter1);
+
+// Update device token
+DeviceCredentials deviceCredentials = restClient.getDeviceCredentialsByDeviceId(waterMeter1.getId()).get();
+deviceCredentials.setCredentialsId("new_device_token");
+restClient.saveDeviceCredentials(deviceCredentials);
 
 // Fetching automatically created "Customer Administrators" Group.
-EntityGroupInfo customer1Administrators = restClient
-        .getEntityGroupInfoByOwnerAndNameAndType(customer1.getId(), EntityType.USER, "Customer Administrators").get();
+EntityGroupInfo customer1Administrators = restClient.getEntityGroupInfoByOwnerAndNameAndType(customer1.getId(), EntityType.USER, "Customer Administrators").get();
 
 // Creating Read-Only Role
-Role readOnlyRole = restClient
-        .createGroupRole("Read-Only", Arrays.asList(Operation.READ, 
-                                                    Operation.READ_ATTRIBUTES, 
-                                                    Operation.READ_TELEMETRY, 
-                                                    Operation.READ_CREDENTIALS));
+Role readOnlyRole = restClient.createGroupRole("Read-Only", Arrays.asList(Operation.READ, Operation.READ_ATTRIBUTES, Operation.READ_TELEMETRY, Operation.READ_CREDENTIALS));
 
 // Assigning Shared Dashboards to the Customer 1 Administrators
 GroupPermission groupPermission = new GroupPermission();
