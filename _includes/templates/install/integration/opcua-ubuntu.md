@@ -1,14 +1,14 @@
 Download installation package:
 
 ```bash
-wget https://dist.thingsboard.io/tb-opc-ua-integration-3.0.1pe.deb
+wget https://dist.thingsboard.io/tb-opc-ua-integration-3.1pe.deb
 ```
 {: .copy-code}
 
 Install integration as a service:
 
 ```bash
-sudo dpkg -i tb-opc-ua-integration-3.0.1pe.deb
+sudo dpkg -i tb-opc-ua-integration-3.1pe.deb
 ```
 {: .copy-code}
 

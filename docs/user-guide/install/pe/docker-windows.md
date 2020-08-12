@@ -52,7 +52,7 @@ Where:
 - `~/.mytb-logs:/var/log/thingsboard`   - mounts the host's dir `~/.mytb-logs` to ThingsBoard logs directory
 - `mytbpe`             - friendly local name of this machine
 - `restart: always`        - automatically start ThingsBoard in case of system reboot and restart in case of failure.
-- `image: store/thingsboard/tb-pe:3.0.1PE`          - docker image.
+- `image: store/thingsboard/tb-pe:3.1.0PE`          - docker image.
 
 ## Step 3. Running
 
