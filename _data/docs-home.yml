@@ -118,6 +118,8 @@ toc:
     path: /docs/user-guide/integrations/thingpark/
   - title: TheThingsNetwork
     path: /docs/user-guide/integrations/ttn/
+  - title: TheThingsIndustries
+    path: /docs/user-guide/integrations/tti/
   - title: AWS IoT
     path: /docs/user-guide/integrations/aws-iot/
   - title: AWS Kinesis
