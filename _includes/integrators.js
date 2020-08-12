@@ -45,7 +45,9 @@ function createBox(integrator) {
      textContact.textContent = 'Contact Us: ';
 
      var linkContact = document.createElement('a');
+     if (integrator.contact.href.includes("@")){
      linkContact.href = 'mailto:' + integrator.contact.href + '?subject=Introduction request';
+     }
      linkContact.textContent = integrator.contact.href;
      linkContact.className = 'links';
      box.appendChild(Contact);

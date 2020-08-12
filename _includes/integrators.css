@@ -79,6 +79,24 @@
      color: #75797C;
  }
 
+ .buttonRe {
+    font-weight: 500;
+    color: #305680;
+    border: 1px solid #B5C9DE;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 3px;
+    height: 47px;
+    width: 100%;
+    transition: all 0.3s ease 0s;
+
+ }
+ .buttonRe:hover {
+    border: 0px solid #305680;
+    color: #fff;
+    background-color: #305680;
+ }
+
 #integratorsContainer {
     display: grid;
     border: 1px solid #EDEDED;
@@ -149,6 +167,16 @@
     flex: 1;
     align-items: center;
     font-size: 18px;
+}
+
+@media screen and (max-width: 1500px) {
+	.buttonRe {
+	}
+}
+
+@media screen and (max-width: 750px) {
+	.buttonRe {
+	}
 }
 
 @media screen and (max-width: 1280px) {

@@ -31,15 +31,15 @@ Finder
 <option id="-- Country --">-- Country --</option>
 </select></p>
 <p><input class="buttonSearch" id="Search" type="button" value="FIND" onClick="PushIndex(this.form)" disabled="disabled"></p>
+<hr noshade>
+<p><input class="buttonRe" id="Search" type="button" value="BECOME A RESELLER" onClick="window.location.href='/docs/contact-us/'"></p>
 </form>
 </div>
 <div id="integratorsContainer"></div>
 </div>
-
 <style>
 	{% include integrators.css %}
 </style>
-
 <script>
 	{% include integrators.js
         containerId="integratorsContainer" %}

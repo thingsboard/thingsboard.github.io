@@ -217,7 +217,7 @@
   },
   {
     "type": ["Europe"],
-    "country": [""],
+    "country": ["Italy"],
     "name": "IBT Systems",
     "contact": {
       "href": "info@ibtsystems.it"
@@ -560,6 +560,30 @@
     },
     "site": {
       "href": "volsoft.com.tr",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["North America", "South America"],
+    "country": ["United States", "Belize", "Panama", "Peru", "Colombia", "Argentina"],
+    "name": "Voxney PLSC, Inc.",
+    "contact": {
+      "href": "trading@voxney.com"
+    },
+    "site": {
+      "href": "voxney.com",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Asia"],
+    "country": ["Thailand"],
+    "name": "Wireless Solution Asia Co.,Ltd.",
+    "contact": {
+      "href": "+66 (88) 298-89-66"
+    },
+    "site": {
+      "href": "wirelesssolution.asia",
       "target": "_blank"
     }
   }
