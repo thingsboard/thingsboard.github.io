@@ -198,6 +198,8 @@ toc:
         path: /docs/trendz/prediction/
       - title: Share and embed Visualizations
         path: /docs/trendz/embed-visuals/
+      - title: Trendz Release Notes
+        path: /docs/trendz/releases/
   - title: Kafka Streams
     new: true
     path: /docs/samples/analytics/kafka-streams/
