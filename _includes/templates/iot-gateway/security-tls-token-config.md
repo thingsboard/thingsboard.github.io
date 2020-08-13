@@ -2,8 +2,8 @@ In table below described parameters to configure authorization of IoT gateway on
 
 |**Parameter**|**Default value**|**Description**|
 |:-|:-|-
-| accessToken              | **PUT_YOUR_GW_ACCESS_TOKEN_HERE**               | Path to CA file.                                            |
-| caCert                   | **/etc/thingsboard-gateway/mqttserver.pub.pem** | Path to certificate file.                                   |
+| accessToken              | **PUT_YOUR_GW_ACCESS_TOKEN_HERE**               | Access token for the gateway from ThingsBoard server.       |
+| caCert                   | **/etc/thingsboard-gateway/mqttserver.pub.pem** | Path to CA certificate file.                                |
 |---    
 
 Security subsection in configuration file will look like this: 
