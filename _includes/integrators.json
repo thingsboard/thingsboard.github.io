@@ -74,6 +74,18 @@
   {
     "type": ["Asia"],
     "country": ["India"],
+    "name": "Bhavamish Solution",
+    "contact": {
+      "href": "inquiry@bhavamish.com"
+    },
+    "site": {
+      "href": "bhavamish.com",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Asia"],
+    "country": ["India"],
     "name": "Bluetronics",
     "contact": {
       "href": "Info@bluetronics.co.in"
@@ -108,8 +120,8 @@
     }
   },
   {
-    "type": ["Worldwide"],
-    "country": [""],
+    "type": ["Worldwide", "Asia"],
+    "country": ["Russia"],
     "name": "Datastreams AI",
     "contact": {
       "href": "contact@dstreams.ai"
@@ -168,8 +180,8 @@
     }
   },
   {
-    "type": ["Worldwide"],
-    "country": [""],
+    "type": ["Worldwide", "Europe"],
+    "country": ["Ukraine"],
     "name": "Euristiq",
     "contact": {
       "href": "hello@euristiq.com"
@@ -420,8 +432,8 @@
     }
   },
   {
-    "type": ["Worldwide"],
-    "country": [""],
+    "type": ["Worldwide", "Europe"],
+    "country": ["Czechia"],
     "name": "Simac",
     "contact": {
       "href": "info@simac.cz"

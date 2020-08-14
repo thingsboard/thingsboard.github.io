@@ -10,7 +10,7 @@ function selectType(type, country) {
   targetContainer.innerHTML = '';
   if (country == "All countries") {
     var integratorsByType = integrators.filter(function (integrator) {
-      return integrator.type.includes(type) || integrator.type.includes("Worldwide");
+      return integrator.type.includes(type);
     });
   } else {
     var integratorsByType = integrators.filter(function (integrator) {
@@ -47,9 +47,9 @@ function createBox(integrator) {
      var linkContact = document.createElement('a');
      if (integrator.contact.href.includes("@")){
      linkContact.href = 'mailto:' + integrator.contact.href + '?subject=Introduction request';
+     linkContact.className = 'links';
      }
      linkContact.textContent = integrator.contact.href;
-     linkContact.className = 'links';
      box.appendChild(Contact);
      Contact.appendChild(textContact);
      Contact.appendChild(linkContact);
@@ -132,7 +132,7 @@ function Map(m)
     }
     $('#Search').removeAttr('disabled');
     $('#country').removeAttr('disabled');
-    document.location.href = "/partners/local/#distributors";
+    document.location.href = "/partners/distributors/#distributors";
     selectType(m,"All countries");
     var optionElement = document.getElementById('region').options.namedItem(m);
     optionElement.selected = 'true';

@@ -2,10 +2,10 @@
 layout: integrators
 title: Local partners
 notitle: "true"
-description: ThingsBoard local partners
+description: ThingsBoard Distributors
 ---
 
-# ThingsBoard local partners
+# ThingsBoard Distributors
 
 <object id="map" width="100%" data="/images/partners/map-of-distributors.svg"></object>
 
