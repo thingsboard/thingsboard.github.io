@@ -92,7 +92,7 @@ VBoxManage controlvm "default" natpf1 "tcp-port5683,tcp,,5683,,5683"
 After executing this command you can open `http://{your-host-ip}:9090` in you browser (for ex. `http://localhost:8080`). You should see ThingsBoard login page.
 Use the following default credentials:
 
-- **Systen Administrator**: sysadmin@thingsboard.org / sysadmin
+- **System Administrator**: sysadmin@thingsboard.org / sysadmin
 - **Tenant Administrator**: tenant@thingsboard.org / tenant
 - **Customer User**: customer@thingsboard.org / customer
     
