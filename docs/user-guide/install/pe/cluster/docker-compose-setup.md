@@ -48,13 +48,13 @@ Populate basic information about yourself and click "Get Content"
 Make sure your have [logged in](https://docs.docker.com/engine/reference/commandline/login/) to docker hub using command line.
 
 ```bash
-docker pull store/thingsboard/tb-pe-node:3.1PE
-docker pull store/thingsboard/tb-pe-web-ui:3.1PE
-docker pull store/thingsboard/tb-pe-web-report:3.1PE
-docker pull store/thingsboard/tb-pe-js-executor:3.1PE
-docker pull store/thingsboard/tb-pe-http-transport:3.1PE
-docker pull store/thingsboard/tb-pe-mqtt-transport:3.1PE
-docker pull store/thingsboard/tb-pe-coap-transport:3.1PE
+docker pull store/thingsboard/tb-pe-node:3.1.0PE
+docker pull store/thingsboard/tb-pe-web-ui:3.1.0PE
+docker pull store/thingsboard/tb-pe-web-report:3.1.0PE
+docker pull store/thingsboard/tb-pe-js-executor:3.1.0PE
+docker pull store/thingsboard/tb-pe-http-transport:3.1.0PE
+docker pull store/thingsboard/tb-pe-mqtt-transport:3.1.0PE
+docker pull store/thingsboard/tb-pe-coap-transport:3.1.0PE
 ```
 
 ## Step 3. Clone ThingsBoard PE Docker Compose scripts
