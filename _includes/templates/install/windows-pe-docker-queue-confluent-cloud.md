@@ -14,13 +14,14 @@ version: '2.2'
 services:
   mytbpe:
     restart: always
-    image: "store/thingsboard/tb-pe:3.1PE"
+    image: "store/thingsboard/tb-pe:3.1.0PE"
     ports:
-      - "8080:9090"
+      - "8080:8080"
       - "1883:1883"
       - "5683:5683/udp"
     environment:
       TB_QUEUE_TYPE=kafka
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/thingsboard
     
       TB_KAFKA_SERVERS:confluent.cloud:9092
       TB_QUEUE_KAFKA_REPLICATION_FACTOR:3
@@ -69,5 +70,15 @@ services:
     volumes:
       - mytbpe-data:/data
       - mytbpe-logs:/var/log/thingsboard
+  postgres:
+    restart: always
+    image: "postgres:11.6"
+    ports:
+    - "5432"
+    environment:
+      POSTGRES_DB: thingsboard
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - mytbpe-data-db:/var/lib/postgresql/data
 ```
 {: .copy-code}
