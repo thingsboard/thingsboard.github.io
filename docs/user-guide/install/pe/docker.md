@@ -11,15 +11,43 @@ description: Installing ThingsBoard PE IoT Platform using Docker (Linux or Mac O
 {:toc}
 
 
-This guide will help you to install and start ThingsBoard Professional Edition (PE) using Docker on Linux or Mac OS. 
-This guide covers standalone ThingsBoard PE installation. The container image used in this guide has embedded PostgreSQL 11 to simplify setup. 
+This guide will help you to install and start ThingsBoard Professional Edition (PE) using Docker and Docker Compose on Linux or Mac OS. 
+This guide covers standalone ThingsBoard PE installation. 
 If you are looking for a cluster installation instruction, please visit [cluster setup page](/docs/user-guide/install/pe/cluster-setup/).  
 
 ## Prerequisites
 
 - [Install Docker CE](https://docs.docker.com/engine/installation/)
+- [Install Docker Compose](https://docs.docker.com/compose/install/)
 
-## Step 1. Obtain the license key 
+## Step 1. Checkout all ThingsBoard PE Image
+
+Please checkout ThingsBoard PE Image from Docker Hub.
+You will need to open all [verified images](https://hub.docker.com/search?q=thingsboard&type=image&image_filter=store) and click on "Proceed to checkout" to accept ThingsBoard PE license agreement.
+
+Listing all images **mandatory** for checkout for your convenience below:
+
+ - [ThingsBoard PE Standalone](https://hub.docker.com/_/thingsboard-pe)
+ 
+
+![image](/images/user-guide/install/docker-pe/checkout-pe-node.png)
+
+
+Populate basic information about yourself and click "Get Content"
+
+
+![image](/images/user-guide/install/docker-pe/details.png)
+ 
+ 
+## Step 2. Pull ThingsBoard PE Image
+
+Make sure your have [logged in](https://docs.docker.com/engine/reference/commandline/login/) to docker hub using command line.
+
+```bash
+docker pull store/thingsboard/tb-pe:3.1.0PE
+```
+ 
+## Step 3. Obtain the license key 
 
 We assume you have already chosen your subscription plan or decided to purchase a perpetual license. 
 If not, please navigate to [pricing](/pricing/) page to select the best license option for your case and get your license. 
@@ -27,7 +55,7 @@ See [How-to get pay-as-you-go subscription](https://www.youtube.com/watch?v=dK-Q
 
 Note: We will reference the license key you have obtained during this step as PUT_YOUR_LICENSE_SECRET_HERE later in this guide.
 
-## Step 2. Choose ThingsBoard queue service
+## Step 4. Choose ThingsBoard queue service
 
 {% include templates/install/install-queue.md %}
 
@@ -44,17 +72,18 @@ Confluent Cloud <small>(Event Streaming Platform based on Kafka)</small>%,%confl
 
 Where: 
     
-- `PUT_YOUR_LICENSE_SECRET_HERE` - placeholder for your license secret obtained on the first step;    
-- `8080:9090`            - connect local port 8080 to exposed internal HTTP port 9090;
+- `PUT_YOUR_LICENSE_SECRET_HERE` - placeholder for your license secret obtained on the third step;    
+- `8080:8080`            - connect local port 8080 to exposed internal HTTP port 8080;
 - `1883:1883`            - connect local port 1883 to exposed internal MQTT port 1883;   
 - `5683:5683`            - connect local port 5683 to exposed internal COAP port 5683; 
-- `~/.mytbpe-data:/data`   - mounts the host's dir `~/.mytbpe-data` to ThingsBoard DataBase data directory;
+- `~/.mytbpe-data:/data`   - mounts the host's dir `~/.mytbpe-data` to ThingsBoard data directory;
+- `~/.mytbpe-data/db:/var/lib/postgresql/data`   - mounts the host's dir `~/.mytbpe-data/db` to Postgres data directory;
 - `~/.mytbpe-logs:/var/log/thingsboard`   - mounts the host's dir `~/.mytbpe-logs` to ThingsBoard logs directory;
 - `mytbpe`             - friendly local name of this machine;
 - `restart: always`        - automatically start ThingsBoard in case of system reboot and restart in case of failure.;
 - `store/thingsboard/tb-pe:3.1.0PE`          - docker image.
 
-## Step 3. Running
+## Step 5. Running
 
 Before starting Docker container run following commands to create a directory for storing data and logs and then change its owner to docker container user,
 to be able to change user, **chown** command is used, which requires sudo permissions (command will request password for a sudo access):
@@ -66,15 +95,13 @@ $ mkdir -p ~/.mytbpe-logs && sudo chown -R 799:799 ~/.mytbpe-logs
 
 **NOTE**: replace directory `~/.mytbpe-data` and `~/.mytbpe-logs` with directories you're planning to used in `docker-compose.yml`. 
 
-Make sure your have [logged in](https://docs.docker.com/engine/reference/commandline/login/) to docker hub using command line.
-
 Execute the following command to up this docker compose directly:
 
 **NOTE**: For running docker compose commands you have to be in a directory with docker-compose.yml file. 
 
 ``` 
-docker-compose pull
-docker-compose up
+docker-compose up -d
+docker-compose logs -f mytbpe
 ```
 {: .copy-code}
     
@@ -89,7 +116,7 @@ You can always change passwords for each account in account profile page.
 
 ## Detaching, stop and start commands
 
-You can detach from session terminal with `Ctrl-p` `Ctrl-q` - the container will keep running in the background.
+You can close logs `Ctrl-c` - the container will keep running in the background.
 
 In case of any issues you can examine service logs for errors.
 For example to see ThingsBoard node logs execute the following command:
@@ -113,6 +140,16 @@ docker-compose start
 ```
 {: .copy-code}
 
+## Upgrading
+
+In case when database upgrade is needed, execute the following commands:
+
+```
+$ docker-compose stop tb-node
+$ docker-compose run mytbpe upgrade-tb.sh
+$ docker-compose start mytbpe
+```
+
 ## Troubleshooting
 
 ### DNS issues
@@ -125,7 +162,6 @@ docker-compose start
 
 You may configure your system to use Google public DNS servers. 
 See corresponding [Linux](https://developers.google.com/speed/public-dns/docs/using#linux) and [Mac OS](https://developers.google.com/speed/public-dns/docs/using#mac_os) instructions.
-
 
 ## Next steps
 
