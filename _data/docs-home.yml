@@ -71,6 +71,9 @@ toc:
     path: /docs/user-guide/audit-log/
   - title: API Limits
     path: /docs/user-guide/api-limits/
+  - title: Advanced Filters
+    new: true
+    path: /docs/user-guide/advanced-filters/
 - title: Rule engine
   section:
   - title: Getting Started
@@ -129,6 +132,7 @@ toc:
   - title: Azure Event Hub
     path: /docs/user-guide/integrations/azure-event-hub/
   - title: Azure IoT Hub
+    new: true
     path: /docs/user-guide/integrations/azure-iot-hub/
   - title: TCP
     path: /docs/user-guide/integrations/tcp/
