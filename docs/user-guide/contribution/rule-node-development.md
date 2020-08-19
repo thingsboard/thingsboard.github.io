@@ -268,6 +268,55 @@ TimeseriesService getTimeseriesService();
 // Allows to programmatically query and manage entity relations;
 RelationService getRelationService();
 ```
+
+ThingsBoard PE users may get access to additional services using *TbContext.getPeContext()* method. TbPeContext provides access to the following services:
+
+```java
+// Allows to programmatically create and manage integrations;
+IntegrationService getIntegrationService();
+
+// Allows to programmatically create and manage entity groups;
+EntityGroupService getEntityGroupService();
+
+// Allows to programmatically create reports;
+ReportService getReportService();
+
+// Allows to programmatically manage blob entities;
+BlobEntityService getBlobEntityService();
+
+// Allows to programmatically manage group permissions;
+GroupPermissionService getGroupPermissionService();
+
+// Allows to programmatically manage roles;
+RoleService getRoleService();
+
+// Get entity owner (TenantId or CustomerId)
+EntityId getOwner(TenantId tenantId, EntityId entityId);
+
+// Clear entity owners cache
+void clearOwners(EntityId entityId);
+
+// Get all sub-customers of the current entity
+Set<EntityId> getChildOwners(TenantId tenantId, EntityId parentOwnerId);
+
+// Allows to change entity owner. Expects TenantId or CustomerId as targetOwnerId
+void changeDashboardOwner(TenantId tenantId, EntityId targetOwnerId, Dashboard dashboard) throws ThingsboardException;
+
+void changeUserOwner(TenantId tenantId, EntityId targetOwnerId, User user) throws ThingsboardException;
+
+void changeCustomerOwner(TenantId tenantId, EntityId targetOwnerId, Customer customer) throws ThingsboardException;
+
+void changeEntityViewOwner(TenantId tenantId, EntityId targetOwnerId, EntityView entityView) throws ThingsboardException;
+
+void changeAssetOwner(TenantId tenantId, EntityId targetOwnerId, Asset asset) throws ThingsboardException;
+
+void changeDeviceOwner(TenantId tenantId, EntityId targetOwnerId, Device device) throws ThingsboardException;
+
+void changeEntityOwner(TenantId tenantId, EntityId targetOwnerId, EntityId entityId, EntityType entityType) throws ThingsboardException;
+
+// Allows to push custom downlink message to the integration
+void pushToIntegration(IntegrationId integrationId, TbMsg tbMsg, FutureCallback<Void> callback);
+```
   
 
 ### Creating new messages from the rule node
