@@ -83,7 +83,7 @@ Where:
 - `restart: always`        - automatically start ThingsBoard in case of system reboot and restart in case of failure.
 - `image: store/thingsboard/tb-pe:3.1.0PE`          - docker image.
 
-## Step 3. Running
+## Step 5. Running
 
 Windows users should use docker managed volume for ThingsBoard DataBase. 
 Create docker volume (for ex. `mytbpe-data`) before executing docker run command:
