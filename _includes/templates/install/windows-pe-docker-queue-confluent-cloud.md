@@ -80,5 +80,12 @@ services:
       POSTGRES_PASSWORD: postgres
     volumes:
       - mytbpe-data-db:/var/lib/postgresql/data
+volumes:
+  mytbpe-data:
+    external: true
+  mytbpe-logs:
+    external: true
+  mytbpe-data-db:
+    external: true
 ```
 {: .copy-code}
