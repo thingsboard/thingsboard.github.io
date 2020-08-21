@@ -30,5 +30,10 @@ services:
     volumes:
       - mytb-data:/data
       - mytb-logs:/var/log/thingsboard
+volumes:
+  mytb-data:
+    external: true
+  mytb-logs:
+    external: true
 ```
 {: .copy-code}
