@@ -22,12 +22,19 @@ Instructions below are provided for Windows 10/8.1/8/7 32-bit/64-bit.
 
 {% include templates/edge/thingsboard-installation.md %}
 
-### Step 3. Get edge Secret and Key
+### Step 3. Create edge and get credentials
 
 {% include templates/edge/add-edge.md %}
 
-### Step 4. ThingsBoard Edge service installation
+### Step 4. Configure PostgreSQL
 
+{% include templates/edge/windows-db-postgresql.md %}
+
+### Step 5. ThingsBoard Edge service installation
+
+Please contact us.
+
+<!---
 Download and run the installation package.
 
 ```bash
@@ -36,34 +43,27 @@ https://dist.thingsboard.io/thingsboard-edge-windows-setup.exe
 {: .copy-code}
 
 **Note:** We assume you have installed ThingsBoard to default location: *C:\Program Files (x86)\thingsboard-edge*  
+--->
 
-### Step 5. Configure ThingsBoard Edge
+### Step 6. Configure ThingsBoard Edge
 
-{% include templates/edge/windows-db-postgresql.md %}
+{% include templates/edge/windows-configure-edge.md %}
 
-### Step 6. Run installation script
+### Step 7. Configure transport ports (optional)
+
+{% include templates/edge/windows-configure-ports.md %} 
+
+### Step 8. Run installation script
 
 {% include templates/edge/run-edge-install.md %} 
 
-### Step 7. Start ThingsBoard Edge service
+### Step 9. Start ThingsBoard Edge service
 
 {% include templates/edge/windows-start-service.md %}
 
-### Step 8. Open ThingsBoard Edge UI
+### Step 10. Open ThingsBoard Edge UI
 
-Once started, you will be able to open Web UI using the following link:
-
-```bash
-http://localhost:8190/
-```
-
-The following default credentials are available if you have specified *--loadDemo* during execution of the installation script:
-
-- **Systen Administrator**: sysadmin@thingsboard.org / sysadmin
-- **Tenant Administrator**: tenant@thingsboard.org / tenant
-- **Customer User**: customer@thingsboard.org / customer
-
-You can always change passwords for each account in account profile page.
+{% include templates/edge/open-edge-ui.md %} 
 
 ### Troubleshootings
 

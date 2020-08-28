@@ -19,7 +19,7 @@ If you are looking for a cluster installation instruction, please visit [cluster
 
 {% include templates/edge/thingsboard-installation.md %}
 
-### Step 2. Get edge Secret and Key
+### Step 2. Create edge and get credentials
 
 {% include templates/edge/add-edge.md %}
 

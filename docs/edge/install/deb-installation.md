@@ -48,6 +48,7 @@ sudo dpkg -i tb-edge.deb
 ```
 {: .copy-code}
 --->
+
 ### Step 6. Configure ThingsBoard Edge
 
 {% include templates/edge/ubuntu-configure-edge.md %}
@@ -74,4 +75,4 @@ sudo dpkg -i tb-edge.deb
 
 ### Next Steps
 
-{% include templates/edge/next-steps.md %} 
+{% include templates/edge/next-steps.md %}

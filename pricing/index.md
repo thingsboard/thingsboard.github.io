@@ -502,22 +502,18 @@ description: ThingsBoard Products Pricing
                         </div>
                    </div> 
                    <div class="col-lg-12">
-                   <p>&nbsp;</p>
-                        <div class="pricing-square-item text-center">
-                            All subscription plans include <span class="a-full-green">unlimited</span> customers, dashboards, integrations, api calls, datapoints & messages  
-                        </div>
                    </div>                    
                </div>
                <div class="row d-none d-lg-flex mb-4"></div>
                <div class="row justify-content-center">
                     <div class="col-md-4 col-lg-4 col-xl mb-4">
                         <div class="pricing-square">
-                            <h2>Micro</h2>
+                            <h2>Pico</h2>
                             <h4 class="pricing-square-price mb-0">
-                                1
+                                2
                                 <span>USD / Month</span>
                             </h4>
-                            <div class="pricing-square-item">Up to 10 Devices</div>
+                            <div class="pricing-square-item">Up to 5 Devices and Assets</div>
                             <a class="btn btn-full-green btn-pricing" href="javascript:void(0);" 
                                 onClick="getLicense(event,
                                 false,
@@ -537,12 +533,12 @@ description: ThingsBoard Products Pricing
                     </div>
                     <div class="col-md-4 col-lg-4 col-xl mb-4">
                         <div class="pricing-square">
-                            <h2>Small</h2>
+                            <h2>Nano</h2>
                             <h4 class="pricing-square-price mb-0">
-                                10
+                                19
                                 <span>USD / Month</span>
                             </h4>
-                            <div class="pricing-square-item">Up to 100 Devices</div>
+                            <div class="pricing-square-item">Up to 50 Devices and Assets</div>
                             <a class="btn btn-full-green btn-pricing" href="javascript:void(0);" 
                                 onClick="getLicense(event,
                                 false,
@@ -552,7 +548,11 @@ description: ThingsBoard Products Pricing
                                 Get your license
                             </a>
                             <div class="pricing-square-item" data-faq-id="community-support">
-                                Community support
+                                Discounts:<br>             
+                                10–50 Edges - 10%<br> 
+                                50–100 Edges - 12%<br> 
+                                >100 Edges - 15%<br>       
+                                Support is available for<br>  Tier 2 and Tier 3
                             </div><br>
                             <div class="pricing-square-item">
                                 <p>&nbsp;</p>
@@ -561,12 +561,12 @@ description: ThingsBoard Products Pricing
                     </div>
                     <div class="col-md-4 col-lg-4 col-xl mb-4">
                         <div class="pricing-square">
-                            <h2>Medium</h2>
+                            <h2>Micro</h2>
                             <h4 class="pricing-square-price mb-0">
-                                20
+                                29
                                 <span>USD / Month</span>
                             </h4>
-                            <div class="pricing-square-item">Up to 300 Devices</div>
+                            <div class="pricing-square-item">Up to 250 Devices and Assets</div>
                             <a class="btn btn-full-green btn-pricing" href="javascript:void(0);" 
                                 onClick="getLicense(event,
                                 false,
@@ -576,9 +576,12 @@ description: ThingsBoard Products Pricing
                                 Get your license
                             </a>
                             <div class="pricing-square-item" data-faq-id="subscription-support">
-                                Email support within 36 hours
+                                Discounts:<br>             
+                                10–50 Edges - 10%<br> 
+                                50–100 Edges - 12%<br> 
+                                >100 Edges - 15%<br>       
+                                Support is available for<br>  Tier 2 and Tier 3
                             </div><br>
-                            <div class="pricing-square-item"><span class="a-full-green">White-labeling</span></div><br>
                             <div class="pricing-square-item">
                                 <p>&nbsp;</p>
                             </div>
@@ -586,12 +589,12 @@ description: ThingsBoard Products Pricing
                     </div>
                     <div class="col-md-4 col-lg-4 col-xl mb-4">
                         <div class="pricing-square">
-                            <h2>Large</h2>
+                            <h2>Macro</h2>
                             <h4 class="pricing-square-price mb-0">
-                                30
+                                39
                                 <span>USD / Month</span>
                             </h4>
-                            <div class="pricing-square-item">Up to 1000 Devices</div>
+                            <div class="pricing-square-item">Up to 1000 Devices and Assets</div>
                             <a class="btn btn-full-green btn-pricing" href="javascript:void(0);" 
                                 onClick="getLicense(event,
                                 false,
@@ -601,34 +604,12 @@ description: ThingsBoard Products Pricing
                                 Get your license
                             </a>
                             <div class="pricing-square-item" data-faq-id="subscription-support">
-                                Email support within 24 hours
-                            </div><br>
-                            <div class="pricing-square-item"><span class="a-full-green">White-labeling</span></div><br>
-                            <div class="pricing-square-item">
-                                <p>&nbsp;</p>
+                                Discounts:<br>             
+                                10–50 Edges - 10%<br> 
+                                50–100 Edges - 12%<br> 
+                                >100 Edges - 15%<br>       
+                                Support is available for<br>  Tier 2 and Tier 3
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-lg-4 col-xl flex-xl-grow-0 mb-4">
-                        <div class="pricing-square">
-                            <h2>Unlimited</h2>
-                            <h4 class="pricing-square-price mb-0">
-                                50
-                                <span>USD / Month</span>
-                            </h4>
-                            <div class="pricing-square-item">Unlimited number of Devices</div> 
-                            <a class="btn btn-full-green btn-pricing" href="javascript:void(0);" 
-                                onClick="getLicense(event,
-                                false,
-                                '20be6f50-a18e-11e9-8e16-03828ff5271c',
-                                '34530df0-a198-11e9-8e16-03828ff5271c',
-                                'Enterprise')">
-                                Get your license
-                            </a>
-                            <div class="pricing-square-item" data-faq-id="subscription-support">
-                                Email support within 12 hours
-                            </div><br>
-                            <div class="pricing-square-item"> <span class="a-full-green">White-labeling</span></div><br>
                             <div class="pricing-square-item">
                                 <p>&nbsp;</p>
                             </div>
@@ -663,19 +644,8 @@ description: ThingsBoard Products Pricing
                                 'Perpetual')">
                                 Get your license
                             </a>
-                            <div class="pricing-square-item" data-faq-id="subscription-support">
-                                Email support within 24 hours
-                            </div><br>
                             <div class="pricing-square-item">1 year of software updates</div><br>
-                            <div class="pricing-square-item">Unlimited Devices and Assets</div><br>
-                            <div class="pricing-square-item">White-labeling</div><br>
-                            <div class="pricing-square-item">Integrations feature</div><br>
-                            <div class="pricing-square-item">Unlimited datapoints</div>
-                            <div class="pricing-square-item">and messages</div><br>
-                            <div class="pricing-square-item">Unlimited API calls</div><br>
-                            <div class="pricing-square-item">
-                                <p>&nbsp;</p>
-                            </div>
+                            <div class="pricing-square-item">Up to 1000 Devices and Assets</div><br>
                         </div>
                     </div>
                </div>
