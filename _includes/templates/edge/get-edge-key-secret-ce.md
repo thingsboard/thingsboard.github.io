@@ -13,9 +13,9 @@ CE features:
 4. Click on entity
 5. Find edge's secret and key
 
-<br>![image](/images/edge/installation/add-edge-key-secret-ce.gif)
-
 ###### Get credentials
 Click on edge entity and find secret and key. 
 You may copy it with one click. 
 These credentials will be required in [Step 6](#add-edge-key-and-secret).
+
+<br>![image](/images/edge/installation/add-edge-key-secret-ce.gif)
