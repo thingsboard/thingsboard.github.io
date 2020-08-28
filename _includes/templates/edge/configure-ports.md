@@ -1,22 +1,26 @@
-By default, ThingsBoard connects to ThingsBoard Edge via **RPC port 60100**. 
-Follow next steps to check or modify it.
+By default, ThingsBoard Edge service has following configurations for transports:
 
-##### ThingsBoard Platform port Configuration (optional)
-
-Open ThingsBoard configuration file
-
-```bash 
-sudo nano /usr/share/thingsboard/conf/thingsboard.yml
-``` 
-{: .copy-code}
-
-Locate **EDGES_RPC_PORT** (**Ctrl-W**) and replace port if necessary. 
-In configuration file it will look like this
-``` bash
-# Edges parameters
-edges:
-  rpc:
-    enabled: "${EDGES_RPC_ENABLED:true}"
-    port: "${EDGES_RPC_PORT:60100}"
-``` 
-Write out changes (**Ctrl-O**) and exit from nano editor (**Ctrl-X**).
+<table>
+  <thead>
+      <tr>
+          <td><b>Environment Variable</b></td><td><b>Default Value</b></td><td><b>Description</b></td>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>CLOUD_RPC_PORT</td>
+          <td>60100</td>
+          <td>RPC port connects ThingsBoard Edge to ThinsBoard Platform</td>
+      </tr>
+      <tr>
+           <td>HTTP_BIND_PORT</td>
+           <td>8190</td>
+           <td>HTTP Server bind port</td>
+        </tr>
+       <tr>
+          <td>MQTT_BIND_PORT</td>
+          <td>1993</td>
+          <td>MQTT Server bind port</td>
+      </tr>
+  </tbody>
+</table>
