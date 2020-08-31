@@ -522,10 +522,10 @@ description: ThingsBoard Products Pricing
                                 'Maker')">
                                 Get your license
                             </a>
+                            </a>
                             <div class="pricing-square-item" data-faq-id="community-support">
                                 Community support
                             </div><br>
-                            <div class="pricing-square-item">—</div><br>
                             <div class="pricing-square-item">
                                 <p>&nbsp;</p>
                             </div>
@@ -547,15 +547,9 @@ description: ThingsBoard Products Pricing
                                 'Prototype')">
                                 Get your license
                             </a>
-                            <div class="pricing-square-item" data-faq-id="community-support">
-                                Discounts:<br>             
-                                10–50 Edges - 10%<br> 
-                                50–100 Edges - 12%<br> 
-                                >100 Edges - 15%<br>       
-                                Support is available for<br>  Tier 2 and Tier 3
-                            </div><br>
                             <div class="pricing-square-item">
-                                <p>&nbsp;</p>
+                                Discount: <br>
+                                10–50 edges - 10%
                             </div>
                         </div>
                     </div>
@@ -575,12 +569,9 @@ description: ThingsBoard Products Pricing
                                 'Startup')">
                                 Get your license
                             </a>
-                            <div class="pricing-square-item" data-faq-id="subscription-support">
-                                Discounts:<br>             
-                                10–50 Edges - 10%<br> 
-                                50–100 Edges - 12%<br> 
-                                >100 Edges - 15%<br>       
-                                Support is available for<br>  Tier 2 and Tier 3
+                            <div class="pricing-square-item">
+                                Discount:<br>             
+                                >100 edges - 15%
                             </div><br>
                             <div class="pricing-square-item">
                                 <p>&nbsp;</p>
@@ -603,12 +594,8 @@ description: ThingsBoard Products Pricing
                                 'Business')">
                                 Get your license
                             </a>
-                            <div class="pricing-square-item" data-faq-id="subscription-support">
-                                Discounts:<br>             
-                                10–50 Edges - 10%<br> 
-                                50–100 Edges - 12%<br> 
-                                >100 Edges - 15%<br>       
-                                Support is available for<br>  Tier 2 and Tier 3
+                            <div class="pricing-square-item">   
+                                Support is available for <br> Tier 2 and Tier 3
                             </div>
                             <div class="pricing-square-item">
                                 <p>&nbsp;</p>
