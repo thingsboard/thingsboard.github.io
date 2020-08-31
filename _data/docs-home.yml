@@ -176,6 +176,8 @@ toc:
            path: /docs/edge/use-cases/batch-updates
         -  title: Local Alarm
            path: /docs/edge/use-cases/local-alarm
+    - title: ThingsBoard Edge Roadmap
+      path: /docs/edge/roadmap/
 - title: Analytics
   new: true
   section:

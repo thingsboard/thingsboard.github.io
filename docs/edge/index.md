@@ -1,7 +1,8 @@
 ---
 layout: docwithnav
-title: ThingsBoard Edge
-description: Edge computing solution on the ThingsBoard platform
+title: Getting started with ThingsBoard Edge
+description: Getting started with ThingsBoard Edge
+
 ---
 
 * TOC
@@ -41,12 +42,11 @@ It allows to bring edge computing, data collection and management to the edge, w
 
 ## Installation and connection with ThingsBoard
 
-The ThingsBoard Edge 1.0 release requires installation as distinct service and can be connected to:
- * Open source [**ThingsBoard Community Edition**](/docs/user-guide/install/installation-options/)
- * [**ThingsBoard Professional Edition**](/docs/user-guide/install/pe/installation-options/)
-
-In the next release multiple ThingsBoard Edge components will be built in and managed by a 
-single ThingsBoard CE/PE installation.<br>
+The ThingsBoard Edge 1.0 release requires installation as distinct service. 
+In the [next releases](/docs/edge/roadmap.md) multiple components will be built in and managed by a single ThingsBoard CE/PE installation.
+Current 1.0 version can be connected to 
+open source [ThingsBoard Community Edition](/docs/user-guide/install/installation-options/)
+or [ThingsBoard Professional Edition](/docs/user-guide/install/pe/installation-options/).
 
 Detailed instructions on **how to install ThingsBoard Edge** on various platforms:
 * [**Ubuntu**](/docs/edge/install/deb-installation)
