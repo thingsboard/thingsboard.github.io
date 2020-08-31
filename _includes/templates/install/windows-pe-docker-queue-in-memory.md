@@ -14,7 +14,7 @@ version: '2.2'
 services:
   mytbpe:
     restart: always
-    image: "store/thingsboard/tb-pe:3.1.0PE"
+    image: "store/thingsboard/tb-pe:{{ site.release.pe_full_ver }}"
     ports:
       - "8080:8080"
       - "1883:1883"

@@ -29,7 +29,7 @@ To run ThingsBoard and Cassandra on a single machine you will need at least 8Gb 
 Download and extract the package.
 
 ```bash
-https://github.com/thingsboard/thingsboard/releases/download/v3.1/thingsboard-windows-3.1.zip
+https://github.com/thingsboard/thingsboard/releases/download/{{ site.release.ce_tag }}/thingsboard-windows-{{ site.release.ce_ver }}.zip
 ```
 {: .copy-code}
 

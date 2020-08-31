@@ -1,14 +1,14 @@
 Download installation package:
 
 ```bash
-wget https://dist.thingsboard.io/tb-mqtt-integration-3.1pe.deb
+wget https://dist.thingsboard.io/tb-mqtt-integration-{{ site.release.pe_ver }}.deb
 ```
 {: .copy-code}
 
 Install integration as a service:
 
 ```bash
-sudo dpkg -i tb-mqtt-integration-3.1pe.deb
+sudo dpkg -i tb-mqtt-integration-{{ site.release.pe_ver }}.deb
 ```
 {: .copy-code}
 

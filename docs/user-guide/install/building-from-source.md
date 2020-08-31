@@ -39,7 +39,7 @@ You can clone source code of the project from the official [github repo](https:/
 ```bash
 git clone git@github.com:thingsboard/thingsboard.git
 # checkout latest release branch
-git checkout release-3.1
+git checkout {{ site.release.branch }}
 ```
 
 #### Build
