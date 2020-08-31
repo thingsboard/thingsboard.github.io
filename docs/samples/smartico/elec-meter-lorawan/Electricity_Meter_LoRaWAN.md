@@ -32,7 +32,7 @@ To integrate Electricity Meters “Smartico E307” into ThingsBoard platform yo
 
 Also below you should add the topic filter according to LoRaWAN server configuration (in this example ``` application/2/device/+/rx ``` ). In the Host and Port fields, enter the ip-address where the MQTT broker is installed and port for working with it.
 ## Step 3. Verifying the receipt of data from the device.
-Connect Electricity Meter  to transfer information. If the integration was performed without errors, after the transmission of the first telemetry, a new device with the name “0012778” will appear in the DEVICE GROUPS →All. Also you can verify the input and output data, respectively, before and after conversion in DATA CONVERTERS → Uplink Elec meter → EVENTS.
+Connect Electricity Meter  to transfer information. If the integration was performed without errors, after the transmission of the first telemetry, a new device with the name “0012778” will appear in the DEVICE GROUPS → All. Also you can verify the input and output data, respectively, before and after conversion in DATA CONVERTERS → Uplink Elec meter → EVENTS.
 
 ![image](/images/samples/smartico/elec-meter-lorawan/verifying.PNG)
 
@@ -120,7 +120,7 @@ The payload is contained in the “data” field and encrypted in Base64. After 
 }
 ```
 The input and output data are for example purposes only and not related to the dashboard shown at the beginning of the guide. 
-Before turning on the device, you can verify the functionality of programming code from uplink_elec_meter.json file. For this purpose, open the Test decoder function for Uplink Elec meter in the DATA CONVERTERS and copy the input data from this guide into Payload content field. Press TEST button then in Output field should appear decoding output data as shown on the figure (the REAL_TIME field displays the current date and time).
+Before turning on the device, you can verify the functionality of programming code from [uplink_elec_meter.json](/docs/samples/smartico/elec-meter-lorawan/resources/uplink_elec_meter.json) file. For this purpose, open the Test decoder function for Uplink Elec meter in the DATA CONVERTERS and copy the input data from this guide into **Payload content** field. Press **TEST** button then in **Output** field should appear decoding output data as shown on the figure (the REAL_TIME field displays the current date and time).
 
 ![image](/images/samples/smartico/elec-meter-lorawan/verifyingUplink.PNG)
 
@@ -132,4 +132,13 @@ To be able to display data in the dashboard, you should first create an asset an
 ![image](/images/samples/smartico/elec-meter-lorawan/asset2.PNG)
 
 ## Step 5. Dashboard import and configuration.
-To display data to users, you need to create a dashboard that can be imported from [dashboard_elec_meter.json](/docs/samples/smartico/elec-meter-lorawan/resources/uplink_elec_meter.json)  file. 
+To display data to users, you need to create a dashboard that can be imported from [dashboard_elec_meter.json](/docs/samples/smartico/elec-meter-lorawan/resources/uplink_elec_meter.json) file. 
+
+![image](/images/samples/smartico/elec-meter-lorawan/dash1.PNG)
+
+When importing a dashboard, it will be necessary to create an alias, as shown in the figure.
+
+![image](/images/samples/smartico/elec-meter-lorawan/dash2.PNG)
+
+If everything was done correctly, in DASHBOARD GROUPS → All you will see the new dashboard **Electricity Three Phase Smart Meter "Smartico E307"** that was provided at the beginning of the guide.
+
