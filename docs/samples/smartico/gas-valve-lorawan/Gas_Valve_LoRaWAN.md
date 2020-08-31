@@ -87,7 +87,7 @@ The payload is contained in the “data” field and encrypted in Base64. After 
 }
 ```
 The input and output data are for example purposes only and not related to the dashboard shown at the beginning of the guide. 
-Before turning on the device, you can verify the functionality of programming code from [uplink_gas_valve.json](/docs/samples/smartico/gas-valve-lorawan/resources/uplink_gas_valve.json) file. For this purpose, open the **Test decoder function** for Uplink Gas Valve in the DATA CONVERTERS and copy the input data from this guide into Payload content field. Press **TEST** button then in **Output** field should appear decoding output data as shown on the figure (the REAL_TIME field displays the current date and time).
+Before turning on the device, you can verify the functionality of programming code from [uplink_gas_valve.json](/docs/samples/smartico/gas-valve-lorawan/resources/uplink_gas_valve.json) file. For this purpose, open the **Test decoder function** for Uplink Gas Valve in the DATA CONVERTERS and copy the input data from this guide into **Payload content** field. Press **TEST** button then in **Output** field should appear decoding output data as shown on the figure (the REAL_TIME field displays the current date and time).
 
 ![image](/images/samples/smartico/gas-valve-lorawan/VerifyingUplink.PNG)
 
@@ -96,7 +96,7 @@ To be able to display data in the dashboard, you should first create an asset an
 
 ![image](/images/samples/smartico/gas-valve-lorawan/asset.PNG)
 
-![image](/images/samples/smartico/gas-valve-lorawan/asset2.PNG
+![image](/images/samples/smartico/gas-valve-lorawan/asset2.PNG)
 
 ## Step 5. Rule chain import and configuration.
 In addition to meter readings, it is possible to monitor the status of the device. For example, you can get information about a low battery, opening the device case, exposure to a magnetic field, and others. This information is displayed in the Alarm widget. Therefore, you should set up Rule chain first. Import [alarms_gas_valve.json](/docs/samples/smartico/gas-valve-lorawan/resources/alarms_gas_valve.json) file with alarms  and save the configuration of the Rule chain in ThingsBoard.
