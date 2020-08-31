@@ -15,13 +15,14 @@ version: '2.2'
 services:
   mytbpe:
     restart: always
-    image: "store/thingsboard/tb-pe:3.0.1PE"
+    image: "store/thingsboard/tb-pe:{{ site.release.pe_full_ver }}"
     ports:
-      - "8080:9090"
+      - "8080:8080"
       - "1883:1883"
       - "5683:5683/udp"
     environment:
       TB_QUEUE_TYPE: rabbitmq
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/thingsboard
       TB_QUEUE_RABBIT_MQ_USERNAME: YOUR_USERNAME
       TB_QUEUE_RABBIT_MQ_PASSWORD: YOUR_PASSWORD
       TB_QUEUE_RABBIT_MQ_HOST: localhost
@@ -31,5 +32,15 @@ services:
     volumes:
       - ~/.mytbpe-data:/data
       - ~/.mytbpe-logs:/var/log/thingsboard
+  postgres:
+    restart: always
+    image: "postgres:11.6"
+    ports:
+    - "5432"
+    environment:
+      POSTGRES_DB: thingsboard
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - ~/.mytbpe-data/db:/var/lib/postgresql/data
 ```
 {: .copy-code}

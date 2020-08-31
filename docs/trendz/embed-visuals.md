@@ -19,16 +19,21 @@ Follow 2 simple steps to make it:
 
 #### Import Trendz widget bundle
 At the beginning you need to import Trendz widgets into your ThingsBoard installation:
-* Download a <a href="https://dist.thingsboard.io/trendz_bundle.json" download target="_blank">Trendz_widgets_bunble</a> 
+* For ThingsBoard version **3.x** download a <a href="https://dist.thingsboard.io/trendz_bundle_tb3.json" download target="_blank">Trendz_widgets_bundle V3</a> 
+* For ThingsBoard version **2.x** download a <a href="https://dist.thingsboard.io/trendz_bundle_tb2.json" download target="_blank">Trendz_widgets_bundle V2</a> 
 * Login as Tenant Administrator into ThingsBoard and go to **Widget Library**
 * Press **Add new widget bundle** and select **import widget bundle**
-* Import downloaded  widget bundle
+* Import downloaded  widget bundle 
 
 This bundle contains 3 widgets:
 * **Trendz View Static**- allow adding saved Trendz visualizations into ThingsBoard dashboards
 * **Trendz View - with filter alias**- similar to previous but also support dashboard aliases for resolving entities
 * **Trendz Builder** - Trendz Visualization Builder for providing self-service interface to your end-users, 
 so they can create their own analysis using ThingsBoard dashboard. 
+
+**Note:** If after importing Trendz Widget Bundle into ThingsBoard, widgets do not work and white screen with error displayed - double-check
+that correct bundle was imported. Widget API in ThingsBoard v2.x and v3.x is different. Ensure that you downloaded bundle for 
+the correct ThingsBoard version.
 
 #### Add visualization on ThingsBoard Dashboard
 Once widgets bundle imported and you already have saved Trendz Visualization - follow next steps to add them on the dashboard:
@@ -96,6 +101,18 @@ If multiple filters configured in Trendz View - system will match required filte
         </video> 
     </div>
 </div>
+
+#### Use Dashboard time window
+
+By default, all Trendz visualizations use individual time range. However you can change this behavior and configure widget to toke time from ThingsBoard Dashboard.
+This option available for both, Static Trendz widget and for Trendz View with aliases.
+
+* Open Dashboard Edit Mode
+* Select required Trendz Widget
+* Switch to **Advanced** Tab
+* Enable checkbox **Use Dashboard Time Window** 
+
+![image](/images/trendz/trndz_dashboard_time.png)
 
 ## Embed visualization on external site
 You can also embed Trendz visualization into your web site by adding iFrame that points to required visualization.

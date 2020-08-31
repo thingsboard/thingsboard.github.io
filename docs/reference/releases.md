@@ -8,6 +8,148 @@ description: ThingsBoard architecture
 * TOC
 {:toc}
 
+## v3.1.1 (August 28, 2020)
+
+### ThingsBoard CE
+
+Minor bug fix release:
+
+**Improvements:**
+
+ * Performance improvement for Alarm related SQL queries;
+ * UI: Upgrade Angular framework version to 10;
+ * UI: Switch to yarn package-manager;
+ * UI: Update Italian locale;
+ * UI: Improved modules loading;
+ * UI: Introduced common modules map;
+
+ **Bug fixes:**
+
+ * UI: Fixed error tslint for map widget;
+ * UI: Fixed update position new marker/polygon on resize in image-map;
+ * UI: Fixed call action: polygon click;
+ * UI: Fixed clear state params for dashboardId change;
+ * Various fixed of filtering queues;
+
+### ThingsBoard PE
+
+Everything from [TB CE v3.1.1](https://github.com/thingsboard/thingsboard/releases/tag/v3.1.1) with the following improvements.
+
+Main features:
+
+* Created Apache Pulsar integration;
+* Added lifecycle event "UPDATE" for converter;
+
+Bug Fixes:
+
+* UI: Limit Aggregation Time Unit;
+* Fixed query in case generic is not set and entity group ids is present;
+* Fixed entity data query - replace bool_or with max;
+* Fixed search by type for user entities query;
+* Fixed for text search in entity selection;
+* Fixed Tenant User queries with a combination of generic and group permissions;
+* Removed PostgreSQL from tb-pe image;
+* Remote integration API: Force disconnect on connection error;
+
+## v2.5.4 (August 28, 2020)
+
+### ThingsBoard CE
+
+**Improvements:**
+
+ * Password from SMTP settings is no longer shared to UI;
+ * Added logs for in memory queue
+
+ **Bug fixes:**
+
+ * Fixed SQL scripts for Unit tests
+
+### ThingsBoard PE
+
+Everything from [TB CE v2.5.4](https://github.com/thingsboard/thingsboard/releases/tag/v2.5.4).
+
+Main features:
+
+* Created Apache Pulsar integration;
+
+Bug fixes:
+
+* UI: Fixed show dashboard added Group permission;
+* Fixed Report service - duplicate generate report post request;
+* Fixed tb-pe docker image;
+
+## v3.1 (August 12, 2020)
+
+### ThingsBoard CE
+
+Minor release with the following improvements and bug fixes.
+
+**Main features:**
+
+ * Filters over entity fields, attributes and latest telemetry; 
+ * Alarm widget improvements;
+ * Performance improvements to insets in PostgreSQL;
+ * Ability to store the latest values in SQL instead of NoSQL;
+
+**Additional features:**
+
+ * UI: 
+   * External angular modules for widget development;
+   * Support of the files with .txt extensions in bulk import of entities;
+   * Flot: add ability to use attributes in datakeys labels;
+   * Maps cluster mode optimizations;
+   * Add ability to edit polygons on image map;
+   * New alias entity types: Current User and Current User Owner (Tenant or Customer);
+ * Rule Engine: 
+   * Improved logging of failed and timeout messages;
+   * Azure iot hub rule node;
+   * Open rule chain from rule node link;
+   * Clear alarm node now accepts alarm id as an originator;
+   * Log time to acknowledge message;
+   * Display sorted metadata keys in rule nodes;
+ * REST API: Ability to move device to another tenant;
+ * Enable default credential provider chain for aws sqs;
+ * Added logging of MQTT payload errors;
+ * Added support of Confluent cloud;
+
+**Bug fixes:**
+
+ * UI: 
+   * Fixed show polygon on image map widget;
+   * Fix page link without pagination. Minor fixes;
+   * Fix boolean input widgets;
+   * Fix web camera input widget;
+
+### ThingsBoard PE
+
+Everything from [TB CE v3.1](https://github.com/thingsboard/thingsboard/releases/tag/v3.1) with the following improvements.
+
+Main features:
+
+* Performance improvements for majority of REST API calls;
+* Azure IoT Hub integration;
+* The Things Industries integration;
+
+## v2.5.3 (August 12, 2020)
+
+### ThingsBoard CE
+
+**Improvements:**
+
+ * Performance improvements to inserts in PostgreSQL;
+ * Prometheus Metrics;
+ * Created Azure IoT hub rule node;
+ * REST API: Ability to move device to another tenant;
+ * Added proxy configs to rest api call rule node (#2943);
+
+**Bug fixes:**
+
+ * refactored DataValidator email pattern
+
+### ThingsBoard PE
+
+Everything from [TB CE v2.5.3](https://github.com/thingsboard/thingsboard/releases/tag/v2.5.3).
+
 ## v3.0.1 (June 9, 2020)
 
 ### ThingsBoard CE

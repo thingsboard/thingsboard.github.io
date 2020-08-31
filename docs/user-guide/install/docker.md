@@ -71,12 +71,9 @@ to be able to change user, **chown** command is used, which requires sudo permis
 $ mkdir -p ~/.mytb-data && sudo chown -R 799:799 ~/.mytb-data
 $ mkdir -p ~/.mytb-logs && sudo chown -R 799:799 ~/.mytb-logs
 ```
+**NOTE**: Replace directory `~/.mytb-data` and `~/.mytb-logs` with directories you're planning to use in `docker-compose.yml`.
 
-**NOTE**: replace directory `~/.mytb-data` and `~/.mytb-logs` with directories you're planning to used in `docker-compose.yml`. 
-
-Execute the following command to up this docker compose directly:
-
-**NOTE**: For running docker compose commands you have to be in a directory with docker-compose.yml file. 
+Set the terminal in the directory which contains the `docker-compose.yml` file and execute the following command to up this docker compose directly:
 
 ```
 docker-compose pull
@@ -85,10 +82,10 @@ docker-compose up
 {: .copy-code}
 
     
-After executing this command you can open `http://{your-host-ip}:8080` in you browser (for ex. `http://localhost:8080`). You should see ThingsBoard login page.
-Use the following default credentials:
+After executing this command you can open `http://{your-host-ip}:8080` in your browser (for ex. `http://localhost:8080`). 
+You should see ThingsBoard login page. Use the following default credentials:
 
-- **Systen Administrator**: sysadmin@thingsboard.org / sysadmin
+- **System Administrator**: sysadmin@thingsboard.org / sysadmin
 - **Tenant Administrator**: tenant@thingsboard.org / tenant
 - **Customer User**: customer@thingsboard.org / customer
     
