@@ -91,7 +91,7 @@ The payload is contained in the “data” field and encrypted in Base64. After 
 }
 ```
 The input and output data are for example purposes only and not related to the dashboard shown at the beginning of the guide. 
-Before turning on the device, you can verify the functionality of programming code from uplink_pulse_sensor.json file. For this purpose, open the **Test decoder function** for Uplink Pulse Sensor in the DATA CONVERTERS and copy the input data from this guide into **Payload content** field. Press **TEST** button then in **Output** field should appear decoding output data as shown on the figure (the REAL_TIME field displays the current date and time).
+Before turning on the device, you can verify the functionality of programming code from [uplink_pulse_sensor.json](/docs/samples/smartico/pulse-sensor-lorawan/resources/uplink_pulse_sensor.json) file. For this purpose, open the **Test decoder function** for Uplink Pulse Sensor in the DATA CONVERTERS and copy the input data from this guide into **Payload content** field. Press **TEST** button then in **Output** field should appear decoding output data as shown on the figure (the REAL_TIME field displays the current date and time).
 
 ![image](/images/samples/smartico/pulse-sensor-lorawan/verify2.PNG)
 
@@ -112,7 +112,7 @@ Then configure Root Rule chain. You should add in Root Rule chain Alarms Pulse S
 ![image](/images/samples/smartico/pulse-sensor-lorawan/alarms2.PNG)
 
 ## Step 6. Dashboard import and configuration.
-To display data to users, you need to create a dashboard that can be imported from the [dashboard_pulse_sensor.json] file (/docs/samples/smartico/pulse-sensor-lorawan/resources/dashboard_pulse_sensor.json). 
+To display data to users, you need to create a dashboard that can be imported from the [dashboard_pulse_sensor.json](/docs/samples/smartico/pulse-sensor-lorawan/resources/dashboard_pulse_sensor.json) file. 
 
 ![image](/images/samples/smartico/pulse-sensor-lorawan/importDashboard.PNG)
 
