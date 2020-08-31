@@ -73,19 +73,19 @@ The payload is contained in the “data” field and encrypted in Base64. After 
         "temperature": 27.87,
  "REAL_TIME": "26.08.2020 15:02:39",
         "SN": "12676",
-        "FLG_LOW_BAT": "0",
-        "FLG_MOTION_DETECT": "0",
-        "FLG_MAGNET_DETECT": "1",
-        "FLG_TAMPER_DETECT": "1",
-        "STS_VALVE": "0",
-        "FLG_ERR_OVR": "0",
-        "FLG_ERR_REVERSE": "0",
-        "FLG_ERR_SENSOR": "0",
-        "FLG_ERR_GAS": "1",
-        "FLG_ERR_TIME": "1",
-        "FLG_POWER_ON": "0",
-        "FLG_LOCK": "0",
-        "FLG_CFG_DONE": "0"
+        "FLG_LOW_BAT": 0,
+        "FLG_MOTION_DETECT": 0,
+        "FLG_MAGNET_DETECT": 1,
+        "FLG_TAMPER_DETECT": 1,
+        "STS_VALVE": 0,
+        "FLG_ERR_OVR": 0,
+        "FLG_ERR_REVERSE": 0,
+        "FLG_ERR_SENSOR": 0,
+        "FLG_ERR_GAS": 1,
+        "FLG_ERR_TIME": 1,
+        "FLG_POWER_ON": 0,
+        "FLG_LOCK": 0,
+        "FLG_CFG_DONE": 0
     }
 }
 ```
@@ -94,3 +94,29 @@ Before turning on the device, you can verify the functionality of programming co
 
 ![image](/images/samples/smartico/gas-meter-lorawan/verify1.PNG)
 
+## Step 4. Creation Pulse Sensor Asset.
+To be able to display data in the dashboard, you should first create an asset and add device 012685 in the RELATIONS, as shown in the figures.
+
+![image](/images/samples/smartico/gas-meter-lorawan/asset1.PNG)
+
+![image](/images/samples/smartico/gas-meter-lorawan/asset2.PNG)
+
+## Step 5. Rule chain import and configuration.
+In addition to meter readings, it is possible to monitor the status of the device. For example, you can get information about a low battery, opening the device case, exposure to a magnetic field, and others. This information is displayed in the Alarm widget. Therefore, you should set up Rule chain first. Import [alarms_gas_meter.json](/docs/samples/smartico/gas-meter-lorawan/resources/alarms_gas_meter.json) file with alarms and save the configuration of the Rule chain in ThingsBoard.
+
+![image](/images/samples/smartico/gas-meter-lorawan/alarm1.PNG)
+
+Then configure Root Rule chain. You should add in Root Rule chain Alarms Gas Meter as it shown on the figure.
+
+![image](/images/samples/smartico/gas-meter-lorawan/alarm2.PNG)
+
+## Step 6. Dashboard import and configuration.
+To display data to users, you need to create a dashboard that can be imported from the [dashboard_gas_meter.json](/docs/samples/smartico/gas-meter-lorawan/resources/dashboard_gas_meter.json) file.
+
+![image](/images/samples/smartico/gas-meter-lorawan/dashboard1.PNG)
+
+When importing a dashboard, it will be necessary to create an alias, as shown in the figure.
+
+![image](/images/samples/smartico/gas-meter-lorawan/dashboard2.PNG)
+
+If everything was done correctly, in DASHBOARD GROUPS → All you will see the new dashboard **Ultrasonic Residential Smart Gas Meter LoRaWAN "Smartico G-1.6"** that was provided at the beginning of the guide.
