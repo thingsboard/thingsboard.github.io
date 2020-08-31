@@ -93,4 +93,31 @@ The payload is contained in the “data” field and encrypted in Base64. After 
 The input and output data are for example purposes only and not related to the dashboard shown at the beginning of the guide. 
 Before turning on the device, you can verify the functionality of programming code from [uplink_wmbus_reader.json](/docs/samples/smartico/wm-bus-lorawan/resources/uplink_wmbus_reader.json) file. For this purpose, open the **Test decoder function** for Uplink wM-Bus Reader in the DATA CONVERTERS and copy the input data from this guide into **Payload content** field. Press **TEST** button then in **Output** field should appear decoding output data as shown on the figure (the REAL_TIME field displays the current date and time).
 
+![image](/images/samples/smartico/wm-bus-lorawan/verifying2.PNG)
 
+## Step 4. Creation wM-Bus Reader Asset.
+To be able to display data in the dashboard, you should first create an asset and add device 0000020 in the RELATIONS, as shown in the figures.
+
+![image](/images/samples/smartico/wm-bus-lorawan/asset1.PNG)
+
+![image](/images/samples/smartico/wm-bus-lorawan/asset2.PNG)
+
+## Step 5. Rule chain import and configuration.
+In addition to meter readings, it is possible to monitor the status of the device. For example, you can get information about a low battery, opening the device case, exposure to a magnetic field, and others. This information is displayed in the Alarm widget. Therefore, you should set up Rule chain first. Import [alarms_wmbus_reader.json](/docs/samples/smartico/wm-bus-lorawan/resources/alarms_wmbus_reader.json) file with alarms and save the configuration of the Rule chain in ThingsBoard.
+
+![image](/images/samples/smartico/wm-bus-lorawan/alarms1.PNG)
+
+Then configure Root Rule chain. You should add in Root Rule chain Alarms wMBus Reader as it shown on the figure.
+
+![image](/images/samples/smartico/wm-bus-lorawan/alarms2.PNG)
+
+## Step 6. Dashboard import and configuration.
+To display data to users, you need to create a dashboard that can be imported from [dashboard_wmbus_reader.json](/docs/samples/smartico/wm-bus-lorawan/resources/dashboard_wmbus_reader.json)  file. 
+
+![image](/images/samples/smartico/wm-bus-lorawan/dash1.PNG)
+
+When importing a dashboard, it will be necessary to create an alias, as shown in the figure.
+
+![image](/images/samples/smartico/wm-bus-lorawan/dash2.PNG)
+
+If everything was done correctly, in DASHBOARD GROUPS → All you will see the new dashboard **Water meter wM-Bus Reader LoRaWAN “Smartico WM-LR”** that was provided at the beginning of the guide.
