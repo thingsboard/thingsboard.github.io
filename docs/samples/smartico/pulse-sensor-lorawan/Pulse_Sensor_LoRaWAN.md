@@ -103,7 +103,7 @@ To be able to display data in the dashboard, you should first create an asset an
 ![image](/images/samples/smartico/pulse-sensor-lorawan/asset2.PNG)
 
 ## Step 5. Rule chain import and configuration.
-In addition to meter readings, it is possible to monitor the status of the device. For example, you can get information about a low battery, opening the device case, exposure to a magnetic field, and others. This information is displayed in the Alarm widget. Therefore, you should set up Rule chain first. Import following json file with alarms (alarms_pulse_sensor.json) and save the configuration of the Rule chain in ThingsBoard. 
+In addition to meter readings, it is possible to monitor the status of the device. For example, you can get information about a low battery, opening the device case, exposure to a magnetic field, and others. This information is displayed in the Alarm widget. Therefore, you should set up Rule chain first. Import [alarms_pulse_sensor.json](/docs/samples/smartico/pulse-sensor-lorawan/resources/alarms_pulse_sensor.json) file with alarms and save the configuration of the Rule chain in ThingsBoard. 
 
 ![image](/images/samples/smartico/pulse-sensor-lorawan/alarms1.PNG)
 
@@ -112,7 +112,7 @@ Then configure Root Rule chain. You should add in Root Rule chain Alarms Pulse S
 ![image](/images/samples/smartico/pulse-sensor-lorawan/alarms2.PNG)
 
 ## Step 6. Dashboard import and configuration.
-To display data to users, you need to create a dashboard that can be imported from the following json file (dashboard_pulse_sensor.json). 
+To display data to users, you need to create a dashboard that can be imported from the [dashboard_pulse_sensor.json] file (/docs/samples/smartico/pulse-sensor-lorawan/resources/dashboard_pulse_sensor.json). 
 
 ![image](/images/samples/smartico/pulse-sensor-lorawan/importDashboard.PNG)
 
