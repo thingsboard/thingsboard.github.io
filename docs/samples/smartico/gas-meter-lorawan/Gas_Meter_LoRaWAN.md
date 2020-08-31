@@ -28,3 +28,69 @@ To integrate Ultrasonic Residential Smart Gas Meter LoRaWAN “Smartico G-1.6”
 Also below you should add the topic filter according to LoRaWAN server configuration (in this example ```application/1/device/+/rx```). In the Host and Port fields, enter the ip-address where the MQTT broker is installed and port for working with it.
 ## Step 3. Verifying the receipt of data from the device.
 Connect Gas Meter to transfer information. If the integration was performed without errors, after the transmission of the first telemetry, a new device with the name “012676” will appear in the DEVICE GROUPS → All. Also you can verify the input and output data, respectively, before and after conversion in DATA CONVERTERS → Uplink Gas Meter → EVENTS.
+
+![image](/images/samples/smartico/gas-meter-lorawan/verify.PNG)
+
+Input data from Gas Meter looks like this:
+```json
+{
+    "applicationID": "1",
+    "applicationName": "Smartico_gas_meters",
+    "deviceName": "12676",
+    "devEUI": "02aaaa0200003184",
+    "rxInfo": [{
+        "gatewayID": "647fdafffe00d228",
+        "uplinkID": "bd949c88-fd1e-4c97-bbef-ad6412139d89",
+        "name": "Kona_micro_lite",
+        "rssi": -65,
+        "loRaSNR": 6,
+        "location": {
+            "latitude": 48.44229794818326,
+            "longitude": 35.014479160308845,
+            "altitude": 144
+        }
+    }],
+    "txInfo": {
+        "frequency": 868300000,
+        "dr": 0
+    },
+    "adr": true,
+    "fCnt": 742,
+    "fPort": 2,
+    "data": "BAwMAQAxhAAAA1YK4w=="
+}
+```
+The payload is contained in the “data” field and encrypted in Base64. After decoding output data will look like this:
+```json
+{
+    "deviceName": "12676",
+    "deviceType": "Gas Meter",
+    "attributes": {
+        "integrationName": "Gas Meter"
+    },
+    "telemetry": {
+        "gasMeter": 0.854,
+        "temperature": 27.87,
+ "REAL_TIME": "26.08.2020 15:02:39",
+        "SN": "12676",
+        "FLG_LOW_BAT": "0",
+        "FLG_MOTION_DETECT": "0",
+        "FLG_MAGNET_DETECT": "1",
+        "FLG_TAMPER_DETECT": "1",
+        "STS_VALVE": "0",
+        "FLG_ERR_OVR": "0",
+        "FLG_ERR_REVERSE": "0",
+        "FLG_ERR_SENSOR": "0",
+        "FLG_ERR_GAS": "1",
+        "FLG_ERR_TIME": "1",
+        "FLG_POWER_ON": "0",
+        "FLG_LOCK": "0",
+        "FLG_CFG_DONE": "0"
+    }
+}
+```
+The input and output data are for example purposes only and not related to the dashboard shown at the beginning of the guide. 
+Before turning on the device, you can verify the functionality of programming code from [uplink_gas_meter.json](/docs/samples/smartico/gas-meter-lorawan/resources/uplink_gas_meter.json) file. For this purpose, open the **Test decoder function** for Uplink Gas Meter in the DATA CONVERTERS and copy the input data from this guide into **Payload content** field. Press **TEST** button then in **Output** field should appear decoding output data as shown on the figure (the REAL_TIME field displays the current date and time).
+
+![image](/images/samples/smartico/gas-meter-lorawan/verify1.PNG)
+
