@@ -354,8 +354,8 @@ description: ThingsBoard Products Pricing
                                 false,
                                 '31307df0-11f6-11ea-951e-b77b877a367b',
                                 '2985f1a0-7afd-11ea-951e-b77b877a367b',
-                                'Trendz Analytics Prototype', 'KFYU8D47ZB')">
-                                Try For Free
+                                'Trendz Analytics Prototype', '')">
+                                Get your license
                             </a>
                             <div>
                                 <a href="/products/trendz/"><span class="a-full-green">Learn More</span><br></a>
@@ -384,8 +384,8 @@ description: ThingsBoard Products Pricing
                                 false,
                                 '31307df0-11f6-11ea-951e-b77b877a367b',
                                 '018b7520-7afe-11ea-951e-b77b877a367b',
-                                'Trendz Analytics StartUp', 'KFYU8D47ZB')">
-                                Try For Free
+                                'Trendz Analytics StartUp', '')">
+                                Get your license
                             </a>
                             <div>
                                 <a href="/products/trendz/"><span class="a-full-green">Learn More</span><br></a>
@@ -414,8 +414,8 @@ description: ThingsBoard Products Pricing
                                 false,
                                 '31307df0-11f6-11ea-951e-b77b877a367b',
                                 '6e3bb4f0-7afe-11ea-951e-b77b877a367b',
-                                'Trendz Analytics Business', 'KFYU8D47ZB')">
-                                Try For Free
+                                'Trendz Analytics Business', '')">
+                                Get your license
                             </a>
                             <div>
                                 <a href="/products/trendz/"><span class="a-full-green">Learn More</span><br></a>
@@ -553,6 +553,14 @@ description: ThingsBoard Products Pricing
             <div class="container">
                 <p>
                 Customers may manage their subscription plans: update or cancel them. Once the subscription is deleted before expiration, Stripe will keep the balance. After a certain time period (about an hour) positive Amount due with the remain credits will appear in Billing section of License portal. This sum is deducted from Total fee whenever particular customer purchase a new plan or a perpetual license.      
+                </p>    
+            </div>    
+        </div>
+        <div class="item" data-tag="h4" data-item-id="trendz-free-subscription" data-title="Can we get a trial license for Trendz Analytics?">
+            <div class="container">
+                <p>
+                As part of evaluation process, we can give you 30 days of free trial. 
+                Please, send us your request on <a href="/docs/contact-us/?subject=ThingsBoard%20Products">Contact us</a>.      
                 </p>    
             </div>    
         </div>
