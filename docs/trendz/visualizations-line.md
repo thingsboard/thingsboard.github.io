@@ -9,13 +9,25 @@ description: Trendz Line Chart
 * TOC
 {:toc}
 
+## Video Tutorial
+
+&nbsp; 
+  
+<div id="video">  
+    <div id="video_wrapper">
+        <iframe src="https://www.youtube.com/embed/v2pZKQhiw8s" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
+
+
+## Simple Line Chart
 In case of Bar and Line charts you have 3 configurable sections:
 * **X-axis** - define what value will be used in the X-axis of the chart (horizontal axis). In most cases it would be Raw Date field, 
 but it can be any field from your Topology or combination of fields.
 * **Y-axis** - define what value will be used in the Y-axis of the chart (vertical axis). You can drop few telemetry fields in this section with required aggregation.
 * **Series** - split data into multiple groups using single (or multiple) field criteria
 
-## Simple Line Chart
+
 Add Date field on **X-axis** and numeric telemetry to the **Y-axis** 
 
 ![image](/images/trendz/simple-line.png)

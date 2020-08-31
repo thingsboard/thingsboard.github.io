@@ -14,6 +14,16 @@ Heatmap is one of the easiest way to describe repeatable patterns and find outli
 * **Y axis** - fields define table rows (vertical axis)
 * **Value** - fields define cell value
 
+## Video Tutorial
+
+&nbsp; 
+  
+<div id="video">  
+    <div id="video_wrapper">
+        <iframe src="https://www.youtube.com/embed/XJjC3xdTJq4" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
+
 ## Day, Week, Month Heat Maps
 
 There are few predefined templates available for heat map in **By** field near time range:
