@@ -16,4 +16,4 @@ For example, we connected a device with the serial number 12676. With the correc
 
 To be able to receive data via the MQTT protocol, you need to integrate the [LoRaWAN server and the Mosquitto MQTT broker](https://www.chirpstack.io/application-server/integrations/mqtt/).
 ## Step 1. Creation UpLink Data Converters
-First, you should create the Uplink Data Converter according to the device protocol. The converter will decode incoming telemetry payload data from Ultrasonic Residential Smart Gas Meter LoRaWAN “Smartico G-1.6” that contains in encoded Base64 string to human readable, simplified ThingsBoard data format. Import [uplink_gas_meter.json]() file with Uplink data converter.
+First, you should create the Uplink Data Converter according to the device protocol. The converter will decode incoming telemetry payload data from Ultrasonic Residential Smart Gas Meter LoRaWAN “Smartico G-1.6” that contains in encoded Base64 string to human readable, simplified ThingsBoard data format. Import [uplink_gas_meter.json](docs/samples/smartico/gas-meter-lorawan/resources/uplink_gas_meter.json) file with Uplink data converter.
