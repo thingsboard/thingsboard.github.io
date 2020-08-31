@@ -16,4 +16,81 @@ For example, we connected a device with the serial number 0000020. With the corr
 
 To be able to receive data via the MQTT protocol, you need to integrate the [LoRaWAN server and the Mosquitto MQTT broker](https://www.chirpstack.io/application-server/integrations/mqtt/).
 ## Step 1. Creation UpLink Data Converters.
-First, you should create the Uplink Data Converter according to the device protocol. The converter will decode incoming telemetry payload data from wM-Bus Reader LoRaWAN “Smartico WM-LR” that contains in encoded Base64 string to human readable, simplified ThingsBoard data format. Import [uplink_wmbus_reader.json](uplink_wmbus_reader.json) file with Uplink data converter .
+First, you should create the Uplink Data Converter according to the device protocol. The converter will decode incoming telemetry payload data from wM-Bus Reader LoRaWAN “Smartico WM-LR” that contains in encoded Base64 string to human readable, simplified ThingsBoard data format. Import [uplink_wmbus_reader.json](/docs/samples/smartico/wm-bus-lorawan/resources/uplink_wmbus_reader.json) file with Uplink data converter.
+
+![image](/images/samples/smartico/wm-bus-lorawan/converter.PNG)
+
+## Step 2. Integration configuration.
+To integrate wM-Bus Reader LoRaWAN “Smartico WM-LR” into ThingsBoard platform you should create a new integration as shown on the figure.
+
+![image](/images/samples/smartico/wm-bus-lorawan/Integration.PNG)
+
+Also below you should add the topic filter according to LoRaWAN server configuration (in this example ```application/3/device/+/rx```). In the Host and Port fields, enter the ip-address where the MQTT broker is installed and port for working with it.
+## Step 3. Verifying the receipt of data from the device.
+Connect wM-Bus Reader WM-LR to transfer information. If the integration was performed without errors, after the transmission of the first telemetry, a new device with the name “0000020” will appear in the DEVICE GROUPS → All. Also you can verify the input and output data, respectively, before and after conversion in DATA CONVERTERS → Uplink wM-Bus Reader → EVENTS.
+
+![image](/images/samples/smartico/wm-bus-lorawan/Verifying.PNG)
+
+It should be noted that readings from each meter come in separate packages. In this case, the time indicated on the dashboard corresponds to the time of the last package. The variable “existSerial” must contain the serial numbers of all meters that are connected to wM-Bus Reader. For example ```var existSerial=['66413314','65656691','66413313', '66413315'];```.
+Input data from wM-Bus Reader looks like this:
+```json
+{
+    "applicationID": "3",
+    "applicationName": "Smartico_wmbus_readers",
+    "deviceName": "0000020",
+    "devEUI": "02aaaa0100000014",
+    "rxInfo": [{
+        "gatewayID": "647fdafffe00d228",
+        "uplinkID": "14b77859-1e6c-4668-8eb3-73900e49a33c",
+        "name": "tectelic_micro_lite_TECH",
+        "rssi": -89,
+        "loRaSNR": 7.5,
+        "location": {
+            "latitude": 48.44229794818326,
+            "longitude": 35.014479160308845,
+            "altitude": 144
+        }
+    }],
+    "txInfo": {
+        "frequency": 868500000,
+        "dr": 0
+    },
+    "adr": true,
+    "fCnt": 28,
+    "fPort": 33,
+    "data": "IAP1YwIAAAAATFo="
+}
+```
+The payload is contained in the “data” field and encrypted in Base64. After decoding output data will look like this:
+```json
+{
+    "deviceName": "0000020",
+    "deviceType": "wM-Bus Reader",
+    "attributes": {
+        "integrationName": "wM-Bus Reader Integration"
+    },
+    "telemetry": {
+        "REAL_TIME": "26.08.2020 16:38:14",
+        "SERIAL1": "66413314",
+        "SERIAL2": null,
+        "SERIAL3": null,
+        "SERIAL4": null,
+        "WATER_WMBUS_VALUE1": 19.546,
+        "WATER_WMBUS_VALUE2": null,
+        "WATER_WMBUS_VALUE3": null,
+        "WATER_WMBUS_VALUE4": null,
+        "FLG_LOW_BAT": 0,
+        "FLG_MOTION_DETECT": 0,
+        "FLG_MAGNET_DETECT": 0,
+        "FLG_TAMPER_DETECT": 0,
+        "FLG_POWER_ON": 0,
+        "FLG_POWER_BAT": 1,
+        "FLG_ERR_TIME": 0,
+        "FLG_CFG_DONE": 0
+    }
+}
+```
+The input and output data are for example purposes only and not related to the dashboard shown at the beginning of the guide. 
+Before turning on the device, you can verify the functionality of programming code from [uplink_wmbus_reader.json](/docs/samples/smartico/wm-bus-lorawan/resources/uplink_wmbus_reader.json) file. For this purpose, open the **Test decoder function** for Uplink wM-Bus Reader in the DATA CONVERTERS and copy the input data from this guide into **Payload content** field. Press **TEST** button then in **Output** field should appear decoding output data as shown on the figure (the REAL_TIME field displays the current date and time).
+
+
