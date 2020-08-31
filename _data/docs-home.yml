@@ -139,7 +139,7 @@ toc:
   new: true
   section:
     - title: Getting Started
-      path: /docs/edge/getting-started/
+      path: /docs/edge/
     - title: Installation guides
       section:
         - title: Installation options
@@ -154,6 +154,28 @@ toc:
           path: /docs/edge/install/docker-windows/
         - title: Installing Edge using Docker (Linux or Mac OS)
           path: /docs/edge/install/docker/
+    - title: How ThingsBoard Edge works
+      section:
+        -  title: PE/CE features
+           path: /docs/edge/how-edge-works/features
+        -  title: Roles Management
+           path: /docs/edge/how-edge-works/roles-management
+        -  title: Rule nodes
+           path: /docs/edge/how-edge-works/rule-nodes
+        -  title: Performance
+           path: /docs/edge/how-edge-works/performance
+        -  title: Security
+           path: /docs/edge/how-edge-works/security
+    - title: Use Cases
+      section:
+        -  title: Offline/Network outage data processing
+           path: /docs/edge/use-cases/offiline-data-processing
+        -  title: Data filtering and traffic reduce
+           path: /docs/edge/use-cases/data-filtering
+        -  title: Batch updates
+           path: /docs/edge/use-cases/batch-updates
+        -  title: Local Alarm
+           path: /docs/edge/use-cases/local-alarm
 - title: Analytics
   new: true
   section:
