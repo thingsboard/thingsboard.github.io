@@ -5,7 +5,7 @@ The device Pulse Sensor LoRaWAN “Smartico P22-LR” is used in various fields 
 ![image](/images/samples/smartico/pulse-sensor-lorawan/dashboard.png)
 
 ## Prerequisites
-LoRaWAN technology is used to transfer data from the Pulse Sensor P22-LR to the ThingsBoard platform. This is the wireless communication technology that allows small amounts of data to be exchanged over a long distance. First of all, you need to configure the LoRaWAN server and make sure that data from the device goes to the server.  This guide uses ChirpStack open-source LoRaWAN Network Server (https://www.chirpstack.io/application-server/).
+LoRaWAN technology is used to transfer data from the Pulse Sensor P22-LR to the ThingsBoard platform. This is the wireless communication technology that allows small amounts of data to be exchanged over a long distance. First of all, you need to configure the LoRaWAN server and make sure that data from the device goes to the server.  This guide uses [ChirpStack open-source LoRaWAN Network Server](https://www.chirpstack.io/application-server/).
 After finishing the server configuration on the Applications page, an entry with the device type should appear in the table.
 
 ![image](/images/samples/smartico/pulse-sensor-lorawan/Lorawan1.PNG)
@@ -14,7 +14,7 @@ For example, we connected a device with the serial number 12685. With the correc
 
 ![image](/images/samples/smartico/pulse-sensor-lorawan/Lorawan2.PNG)
 
-To be able to receive data via the MQTT protocol, you need to integrate the LoRaWAN server and the Mosquitto MQTT broker (https://www.chirpstack.io/application-server/integrations/mqtt/).
+To be able to receive data via the MQTT protocol, you need to integrate the [LoRaWAN server and the Mosquitto MQTT broker](https://www.chirpstack.io/application-server/integrations/mqtt/).
 ## Step 1. Creation UpLink Data Converters
 First, you should create the Uplink Data Converter according to the device protocol. The converter will decode incoming telemetry payload data from Pulse Sensor LoRaWAN “Smartico P22-LR” that contains in encoded Base64 string to human readable, simplified ThingsBoard data format. Import following json file with Uplink data converter (uplink_pulse_sensor.json
 
