@@ -32,6 +32,7 @@ Connect Pulse Sensor P22-LR to transfer information. If the integration was perf
 ![image](/images/samples/smartico/pulse-sensor-lorawan/verify1.PNG)
 
 Input data from Pulse Sensor looks like this:
+```xml
 {
     "applicationID": "4",
     "applicationName": "Smartico_puls_sensor",
@@ -59,7 +60,9 @@ Input data from Pulse Sensor looks like this:
     "data": "YgASAACBBAAAAAk="
 }
 
+```
 The payload is contained in the “data” field and encrypted in Base64. After decoding output data will look like this:
+```xml
 {
     "deviceName": "012685",
     "deviceType": "Water Pulse",
@@ -86,6 +89,7 @@ The payload is contained in the “data” field and encrypted in Base64. After 
         "FLG_CFG_DONE": 0
     }
 }
+```
 The input and output data are for example purposes only and not related to the dashboard shown at the beginning of the guide. 
 Before turning on the device, you can verify the functionality of programming code from uplink_pulse_sensor.json file. For this purpose, open the Test decoder function for Uplink Pulse Sensor in the DATA CONVERTERS and copy the input data from this guide into Payload content field. Press TEST button then in Output field should appear decoding output data as shown on the figure (the REAL_TIME field displays the current date and time).
 
