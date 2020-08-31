@@ -16,7 +16,7 @@ For example, we connected a device with the serial number 12685. With the correc
 
 To be able to receive data via the MQTT protocol, you need to integrate the [LoRaWAN server and the Mosquitto MQTT broker](https://www.chirpstack.io/application-server/integrations/mqtt/).
 ## Step 1. Creation UpLink Data Converters
-First, you should create the Uplink Data Converter according to the device protocol. The converter will decode incoming telemetry payload data from Pulse Sensor LoRaWAN “Smartico P22-LR” that contains in encoded Base64 string to human readable, simplified ThingsBoard data format. Import following json file with Uplink data converter (uplink_pulse_sensor.json
+First, you should create the Uplink Data Converter according to the device protocol. The converter will decode incoming telemetry payload data from Pulse Sensor LoRaWAN “Smartico P22-LR” that contains in encoded Base64 string to human readable, simplified ThingsBoard data format. Import [uplink_pulse_sensor.json](https://github.com/thingsboard/samples/releases/download/v1.0-tfm/facilities-monitoring.jar) file with Uplink data converter  
 
 ![image](/images/samples/smartico/pulse-sensor-lorawan/uplink_import.PNG)
 
@@ -32,7 +32,7 @@ Connect Pulse Sensor P22-LR to transfer information. If the integration was perf
 ![image](/images/samples/smartico/pulse-sensor-lorawan/verify1.PNG)
 
 Input data from Pulse Sensor looks like this:
-```xml
+```json
 {
     "applicationID": "4",
     "applicationName": "Smartico_puls_sensor",
@@ -62,7 +62,7 @@ Input data from Pulse Sensor looks like this:
 
 ```
 The payload is contained in the “data” field and encrypted in Base64. After decoding output data will look like this:
-```xml
+```json
 {
     "deviceName": "012685",
     "deviceType": "Water Pulse",
