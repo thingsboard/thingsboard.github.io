@@ -91,5 +91,21 @@
       }
     },
     "blurb": "Whether you are a developer, technical supplier, or industry player, we provide products and services for your IoT needs."
+  },
+  {
+    "type": "hardware",
+    "program": "",
+    "name": "DECODE",
+    "logo": "decode.png",
+    "links": {
+      "Site": {
+        "href": "https://www.decode.rs/",
+        "target": "_blank"
+     },
+    "Integration guide": {
+      "href": "https://decode.rs/dl28-integration-into-thingsboard-iot-platform/"
+      }
+    },
+    "blurb": "Decode is a Serbian company with extensive experience in design, engineering and production of devices for industrial communication and telemetry."
   }
 ]
