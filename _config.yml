@@ -57,3 +57,11 @@ permalink: pretty
 plugins:
   - jekyll-redirect-from
   - jekyll-seo-tag
+
+release:
+  branch: release-3.1
+  ce_ver: 3.1.1
+  ce_tag: v3.1.1
+  ce_full_ver: 3.1.1
+  pe_ver: 3.1.1pe
+  pe_full_ver: 3.1.1PE

@@ -8,6 +8,76 @@ description: ThingsBoard architecture
 * TOC
 {:toc}
 
+## v3.1.1 (August 28, 2020)
+
+### ThingsBoard CE
+
+Minor bug fix release:
+
+**Improvements:**
+
+ * Performance improvement for Alarm related SQL queries;
+ * UI: Upgrade Angular framework version to 10;
+ * UI: Switch to yarn package-manager;
+ * UI: Update Italian locale;
+ * UI: Improved modules loading;
+ * UI: Introduced common modules map;
+
+ **Bug fixes:**
+
+ * UI: Fixed error tslint for map widget;
+ * UI: Fixed update position new marker/polygon on resize in image-map;
+ * UI: Fixed call action: polygon click;
+ * UI: Fixed clear state params for dashboardId change;
+ * Various fixed of filtering queues;
+
+### ThingsBoard PE
+
+Everything from [TB CE v3.1.1](https://github.com/thingsboard/thingsboard/releases/tag/v3.1.1) with the following improvements.
+
+Main features:
+
+* Created Apache Pulsar integration;
+* Added lifecycle event "UPDATE" for converter;
+
+Bug Fixes:
+
+* UI: Limit Aggregation Time Unit;
+* Fixed query in case generic is not set and entity group ids is present;
+* Fixed entity data query - replace bool_or with max;
+* Fixed search by type for user entities query;
+* Fixed for text search in entity selection;
+* Fixed Tenant User queries with a combination of generic and group permissions;
+* Removed PostgreSQL from tb-pe image;
+* Remote integration API: Force disconnect on connection error;
+
+## v2.5.4 (August 28, 2020)
+
+### ThingsBoard CE
+
+**Improvements:**
+
+ * Password from SMTP settings is no longer shared to UI;
+ * Added logs for in memory queue
+
+ **Bug fixes:**
+
+ * Fixed SQL scripts for Unit tests
+
+### ThingsBoard PE
+
+Everything from [TB CE v2.5.4](https://github.com/thingsboard/thingsboard/releases/tag/v2.5.4).
+
+Main features:
+
+* Created Apache Pulsar integration;
+
+Bug fixes:
+
+* UI: Fixed show dashboard added Group permission;
+* Fixed Report service - duplicate generate report post request;
+* Fixed tb-pe docker image;
+
 ## v3.1 (August 12, 2020)
 
 ### ThingsBoard CE

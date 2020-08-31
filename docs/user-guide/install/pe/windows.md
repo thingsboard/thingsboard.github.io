@@ -27,7 +27,7 @@ To run ThingsBoard and Cassandra on a single machine you will need at least 8Gb 
 Download and run the installation package.
 
 ```bash
-https://dist.thingsboard.io/thingsboard-windows-setup-3.1pe.exe
+https://dist.thingsboard.io/thingsboard-windows-setup-{{ site.release.pe_ver }}.exe
 ```
 {: .copy-code}
 
@@ -125,7 +125,7 @@ Please allow up to 90 seconds for the Web UI to start. This is applicable only f
 Download and extract the installation package.
 
 ```bash
-https://dist.thingsboard.io/tb-web-report-windows-3.1pe.zip
+https://dist.thingsboard.io/tb-web-report-windows-{{ site.release.pe_ver }}.zip
 ```
 {: .copy-code}
 

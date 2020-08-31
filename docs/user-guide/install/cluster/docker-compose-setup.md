@@ -22,12 +22,12 @@ Before starting please make sure [Docker CE](https://docs.docker.com/install/) a
 Make sure your have [logged in](https://docs.docker.com/engine/reference/commandline/login/) to docker hub using command line.
 
 ```bash
-docker pull thingsboard/tb-node:3.1.0
-docker pull thingsboard/tb-web-ui:3.1.0
-docker pull thingsboard/tb-js-executor:3.1.0
-docker pull thingsboard/tb-http-transport:3.1.0
-docker pull thingsboard/tb-mqtt-transport:3.1.0
-docker pull thingsboard/tb-coap-transport:3.1.0
+docker pull thingsboard/tb-node:{{ site.release.ce_full_ver }}
+docker pull thingsboard/tb-web-ui:{{ site.release.ce_full_ver }}
+docker pull thingsboard/tb-js-executor:{{ site.release.ce_full_ver }}
+docker pull thingsboard/tb-http-transport:{{ site.release.ce_full_ver }}
+docker pull thingsboard/tb-mqtt-transport:{{ site.release.ce_full_ver }}
+docker pull thingsboard/tb-coap-transport:{{ site.release.ce_full_ver }}
 ```
 
 ## Step 2. Review the architecture page

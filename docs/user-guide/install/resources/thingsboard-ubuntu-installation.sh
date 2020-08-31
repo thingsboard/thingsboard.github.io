@@ -1,1 +1,1 @@
-sudo dpkg -i thingsboard-3.1.deb
+sudo dpkg -i thingsboard-{{ site.release.ce_ver }}.deb
