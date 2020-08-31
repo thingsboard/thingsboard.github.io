@@ -14,3 +14,6 @@ For example, we connected a device with the serial number 0000020. With the corr
 
 ![image](/images/samples/smartico/wm-bus-lorawan/Lora2.PNG)
 
+To be able to receive data via the MQTT protocol, you need to integrate the [LoRaWAN server and the Mosquitto MQTT broker](https://www.chirpstack.io/application-server/integrations/mqtt/).
+## Step 1. Creation UpLink Data Converters.
+First, you should create the Uplink Data Converter according to the device protocol. The converter will decode incoming telemetry payload data from wM-Bus Reader LoRaWAN “Smartico WM-LR” that contains in encoded Base64 string to human readable, simplified ThingsBoard data format. Import [uplink_wmbus_reader.json](uplink_wmbus_reader.json) file with Uplink data converter .
