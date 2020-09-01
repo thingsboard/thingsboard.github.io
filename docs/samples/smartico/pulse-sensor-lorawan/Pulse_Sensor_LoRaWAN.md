@@ -16,7 +16,7 @@ For example, we connected a device with the serial number 12685. With the correc
 
 To be able to receive data via the MQTT protocol, you need to integrate the [LoRaWAN server and the Mosquitto MQTT broker](https://www.chirpstack.io/application-server/integrations/mqtt/).
 ## Step 1. Creation UpLink Data Converters
-First, you should create the Uplink Data Converter according to the device protocol. The converter will decode incoming telemetry payload data from Pulse Sensor LoRaWAN “Smartico P22-LR” that contains in encoded Base64 string to human readable, simplified ThingsBoard data format. Import [uplink_pulse_sensor.json](/docs/samples/smartico/pulse-sensor-lorawan/resources/uplink_pulse_sensor.json) file with Uplink data converter  
+First, you should create the Uplink Data Converter according to the device protocol. The converter will decode incoming telemetry payload data from Pulse Sensor LoRaWAN “Smartico P22-LR” that contains in encoded Base64 string to human readable, simplified ThingsBoard data format. Import [uplink_pulse_sensor.json](/docs/samples/smartico/pulse-sensor-lorawan/resources/uplink_pulse_sensor.json) file with Uplink data converter.  
 
 ![image](/images/samples/smartico/pulse-sensor-lorawan/uplink_import.PNG)
 
@@ -25,9 +25,9 @@ To integrate Pulse Sensor LoRaWAN “Smartico P22-LR” into ThingsBoard platfor
 
 ![image](/images/samples/smartico/pulse-sensor-lorawan/integration.PNG)
 
-Also below you should add the topic filter according to LoRaWAN server configuration (in this example application/4/device/+/rx ). In the Host and Port fields, enter the ip-address where the MQTT broker is installed and port for working with it.
+Also below you should add the topic filter according to LoRaWAN server configuration (in this example ```application/4/device/+/rx```). In the Host and Port fields, enter the ip-address where the MQTT broker is installed and port for working with it.
 ## Step 3. Verifying the receipt of data from the device.
-Connect Pulse Sensor P22-LR to transfer information. If the integration was performed without errors, after the transmission of the first telemetry, a new device with the name “012685” will appear in the DEVICE GROUPS →All. Also you can verify the input and output data, respectively, before and after conversion in DATA CONVERTERS → Uplink Pulse Sensor → EVENTS.
+Connect Pulse Sensor P22-LR to transfer information. If the integration was performed without errors, after the transmission of the first telemetry, a new device with the name “012685” will appear in the DEVICE GROUPS → All. Also you can verify the input and output data, respectively, before and after conversion in DATA CONVERTERS → Uplink Pulse Sensor → EVENTS.
 
 ![image](/images/samples/smartico/pulse-sensor-lorawan/verify1.PNG)
 
