@@ -49,6 +49,8 @@ toc:
     path: /docs/user-guide/install/upgrade-instructions/
 - title: ThingsBoard Professional Edition
   section:
+  - title: AWS cluster setup
+    path: /docs/user-guide/install/pe/aws/
   - title: Installation options
     path: /docs/user-guide/install/pe/installation-options/
   - title: Installing ThingsBoard PE on Ubuntu Server
@@ -63,8 +65,10 @@ toc:
     path: /docs/user-guide/install/pe/docker-cassandra/
   - title: Installing ThingsBoard PE using Docker (Windows)
     path: /docs/user-guide/install/pe/docker-windows/
+  - title: Cluster setup with Kubernetes and KubeOne on AWS cloud infrastructure
+    path: /docs/user-guide/install/pe/cluster/aws-cluster-setup/
   - title: Installing ThingsBoard PE from AWS Marketplace
-    path: /docs/user-guide/install/pe/aws/
+    path: /docs/user-guide/install/pe/aws-marketplace/
   - title: Installing ThingsBoard PE from Azure Marketplace
     path: /docs/user-guide/install/pe/azure/
   - title: Installing ThingsBoard PE on DigitalOcean
