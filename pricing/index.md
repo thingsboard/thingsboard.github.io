@@ -112,7 +112,7 @@ description: ThingsBoard Products Pricing
                             </div>
                             <h4 class="pricing-square-price mb-0">
                                 10
-                                <span>USD / Month</span>
+                                <span>USD&nbsp;/&nbsp;Month</span>
                             </h4>
                             <div class="pricing-square-item">Up to 10 Devices</div>
                             <div class="pricing-square-item">and 10 Assets</div> 
@@ -141,7 +141,7 @@ description: ThingsBoard Products Pricing
                             </div>
                             <h4 class="pricing-square-price mb-0">
                                 99
-                                <span>USD / Month</span>
+                                <span>USD&nbsp;/&nbsp;Month</span>
                             </h4>
                             <div class="pricing-square-item">Up to 100 Devices</div>
                             <div class="pricing-square-item"> and 100 Assets</div>
@@ -170,7 +170,7 @@ description: ThingsBoard Products Pricing
                             </div>
                             <h4 class="pricing-square-price mb-0">
                                 199
-                                <span>USD / Month</span>
+                                <span>USD&nbsp;/&nbsp;Month</span>
                             </h4>
                             <div class="pricing-square-item">Up to 500 Devices</div>
                             <div class="pricing-square-item"> and 500 Assets</div>
@@ -199,7 +199,7 @@ description: ThingsBoard Products Pricing
                             </div>
                             <h4 class="pricing-square-price mb-0">
                                 299
-                                <span>USD / Month</span>
+                                <span>USD&nbsp;/&nbsp;Month</span>
                             </h4>
                             <div class="pricing-square-item">Up to 1000 Devices</div>
                             <div class="pricing-square-item"> and 1000 Assets</div>
@@ -228,7 +228,7 @@ description: ThingsBoard Products Pricing
                             </div>
                             <h4 class="pricing-square-price mb-0">
                                 500
-                                <span>USD / Month</span>
+                                <span>USD&nbsp;/&nbsp;Month</span>
                             </h4>
                             <div class="pricing-square-item">Unlimited number</div> 
                             <div class="pricing-square-item"> of Devices and Assets</div>
