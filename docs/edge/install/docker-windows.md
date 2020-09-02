@@ -25,9 +25,8 @@ If you are looking for a cluster installation instruction, please visit [cluster
 
 ### Step 3. Running ThingsBoard Edge
 
-There is one type of ThingsBoard Edge single instance docker image:
-
 * [thingsboard-edge/tb-postgres](https://hub.docker.com/r/thingsboard/thingsboard-edge/tb-postgres/) - single instance of ThingsBoard Edge with PostgreSQL database.
+Recommended option for small servers with at least 1GB of RAM and minimum load (few messages per second). 2-4GB is recommended.
 
 In this instruction `thingsboard-edge/tb-postgres` image will be used. You can choose any other images with different databases (see above).
 
@@ -40,34 +39,69 @@ $ docker volume create mytb-edge-data
 $ docker volume create mytb-edge-logs
 ```
 
-Execute the following command to run this docker directly:
-                                   
-``` 
-$ docker run -it -p 9090:9090 -p 1883:1883 -p 5683:5683/udp -v mytb-edge-data:/data -v mytb-edge-logs:/var/log/thingsboard-edge --name mytb-edge --restart always thingsboard-edge/tb-postgres
+Create docker compose file for ThingsBoard Edge service:
+```
+docker-compose.yml
+```
+Add the following lines to the yml file:
+```
+version: '2.2'
+services:
+  mytbedge:
+    restart: always
+    image: "thingsboard-edge/tb-postgres"
+    ports:
+      - "8090:9090"
+      - "11883:1883"
+      - "15683:5683/udp"
+    environment:
+      CLOUD_ROUTING_KEY: PUT_YOUR_EDGE_KEY_HERE
+      CLOUD_ROUTING_SECRET: PUT_YOUR_EDGE_SECRET_HERE
+      CLOUD_PRC_HOST: PUT_YOUR_CLOUD_IP
+      CLOUD_RPC_PORT: PUT_YOUR_EDGES_RPC_PORT
+    volumes:
+      - mytb-edge-data:/data
+      - mytb-edge-logs:/var/log/thingsboard-edge
+volumes:
+  mytb-edge-data:
+    external: true
+  mytb-edge-logs:
+    external: true
 ```
 
 Where: 
     
-- `docker run`              - run this container
-- `-it`                     - attach a terminal session with current ThingsBoard Edge process output
-- `-p 8190:8190`            - connect local port 8190 to exposed internal HTTP port 9090
-- `-p 1993:1993`            - connect local port 1993 to exposed internal MQTT port 1993  
-- `-p 60100:60100`            - connect local port 60100 to exposed internal CLOUD_RPC_PORT port 60100   
-- `-v mytb-edge-data:/data`      - mounts the volume `mytb-data` to ThingsBoard Edge DataBase data directory
-- `-v mytb-edge-logs:/var/log/thingsboard-edge`      - mounts the volume `mytb-edge-logs` to ThingsBoard Edge logs directory
-- `--name mytb-edge`             - friendly local name of this machine
-- `--restart always`        - automatically start ThingsBoard Edge in case of system reboot and restart in case of failure. 
-- `thingsboard-edge/tb-postgres`          - docker image
+- `8090:9090` - connect local port 8090 to exposed internal HTTP port 9090
+- `11883:1883` - connect local port 11883 to exposed internal MQTT port 1883  
+- `15683:5683` - connect local port 15683 to exposed internal COAP port 5683   
+- `mytb-edge-data:/data` - mounts the host's dir `mytb-edge-data` to ThingsBoard Edge DataBase data directory
+- `mytb-edge-logs:/var/log/thingsboard-edge` - mounts the host's dir `mytb-edge-logs` to ThingsBoard Edge logs directory
+- `thingsboard-edge/tb-postgres` - docker image
+- `CLOUD_ROUTING_KEY` - your edge key from step 2
+- `CLOUD_ROUTING_SECRET` - your edge secret from step 2
+- `CLOUD_PRC_HOST` - ip address of the machine with the ThingsBoard platform
+- `CLOUD_RPC_PORT` - cloud rpc port for connection with edges
+- `restart: always` - automatically start ThingsBoard Edge in case of system reboot and restart in case of failure
+- `image: thingsboard-edge/tb-postgres` - docker image
 
-In order to get access to necessary resources from external IP/Host on Windows machine, please execute the following commands:
+Execute the following command to up this docker compose directly:
 
-``` 
-$ VBoxManage controlvm "default" natpf1 "tcp-8190,tcp,,8190,,8190"  
-$ VBoxManage controlvm "default" natpf1 "tcp-1993,tcp,,1993,,1993"
-$ VBoxManage controlvm "default" natpf1 "tcp-60100,tcp,,60100,,60100"
+**NOTE**: For running docker compose commands you have to be in a directory with docker-compose.yml file.
 ```
-    
-After executing this command you can open `http://{your-host-ip}:8190` in you browser (for ex. `http://localhost:8190`). You should see ThingsBoard login page.
+docker-compose pull
+docker-compose up
+```
+In order to get access to necessary resources from external IP/Host on Windows machine, please execute the following commands:
+``` 
+set PATH=%PATH%;"C:\Program Files\Oracle\VirtualBox"
+$ VBoxManage controlvm "default" natpf1 "tcp-8090,tcp,,8090,,9090"  
+$ VBoxManage controlvm "default" natpf1 "tcp-11883,tcp,,11883,,1883"
+$ VBoxManage controlvm "default" natpf1 "tcp-15683,tcp,,15683,,5683"
+```
+Where:
+- `C:\Program Files\Oracle\VirtualBox` - path to your VirtualBox installation directory
+
+After executing this command you can open `http://{your-host-ip}:8090` in you browser (for ex. `http://localhost:8190`). You should see ThingsBoard Edge login page.
 Use the following default credentials:
 
 - **Systen Administrator**: sysadmin@thingsboard.org / sysadmin
@@ -80,34 +114,28 @@ You can always change passwords for each account in account profile page.
 
 You can detach from session terminal with `Ctrl-p` `Ctrl-q` - the container will keep running in the background.
 
-To reattach to the terminal (to see ThingsBoard Edge logs) run:
-
+In case of any issues you can examine service logs for errors. For example to see ThingsBoard Edge node logs execute the following command:
 ```
-$ docker attach mytb-edge
+docker-compose logs -f mytbedge
 ```
-
 To stop the container:
-
 ```
-$ docker stop mytb-edge
+docker-compose stop
 ```
-
 To start the container:
-
 ```
-$ docker start mytb-edge
+docker-compose start
 ```
 
 ## Upgrading
 
-In order to update to the latest image, open "Docker Quickstart Terminal" and execute the following commands:
-
+In order to update to the latest image, execute the following commands:
 ```
-$ docker pull thingsboard-edge/tb-postgres
-$ docker stop mytb-edge
-$ docker run -it -v mytb-edge-data:/data --rm thingsboard-edge/tb-postgres upgrade-tb.sh
-$ docker rm mytb-edge
-$ docker run -it -p 8190:8190 -p 1993:1993 -p 60100:60100/udp -v ~/mytb-edge-data:/data -v ~/mytb-edge-logs:/var/log/thingsboard-edge --name mytb-edge --restart always thingsboard-edge/tb-postgres
+docker pull thingsboard-edge/tb-postgres
+docker-compose stop
+docker run -it -v mytb-edge-data:/data --rm thingsboard-edge/tb-postgres upgrade-tb-edge.sh
+docker-compose rm mytbedge
+docker-compose up
 ```
 
 **NOTE**: if you use different database change image name in all commands from `thingsboard-edge/tb-postgres`
