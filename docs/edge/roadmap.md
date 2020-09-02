@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
-title: Getting started with ThingsBoard Edge
-description: Getting started with ThingsBoard Edge
+title: ThingsBoard Edge Roadmap
+description: Upcoming releases
 
 ---
 
@@ -9,7 +9,7 @@ description: Getting started with ThingsBoard Edge
 {:toc}
 
 
-Upcoming releases:
+**Upcoming releases**:
 * Support ThingsBoard 3.0 cloud and migrate edge product to Angular 9+
 * RBAC support
 * Create assets/relations

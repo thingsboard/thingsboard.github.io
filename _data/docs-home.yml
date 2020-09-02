@@ -154,28 +154,28 @@ toc:
           path: /docs/edge/install/docker-windows/
         - title: Installing Edge using Docker (Linux or Mac OS)
           path: /docs/edge/install/docker/
-    - title: How ThingsBoard Edge works
+    - title: ThingsBoard Edge Overview
       section:
-        -  title: PE/CE features
-           path: /docs/edge/how-edge-works/features
         -  title: Roles Management
-           path: /docs/edge/how-edge-works/roles-management
-        -  title: Rule nodes
-           path: /docs/edge/how-edge-works/rule-nodes
+           path: /docs/edge/overview/roles-management
+        -  title: Edge rule nodes
+           path: /docs/edge/overview/rule-nodes
         -  title: Performance
-           path: /docs/edge/how-edge-works/performance
+           path: /docs/edge/overview/performance
         -  title: Security
-           path: /docs/edge/how-edge-works/security
+           path: /docs/edge/overview/security
     - title: Use Cases
       section:
         -  title: Offline/Network outage data processing
-           path: /docs/edge/use-cases/offiline-data-processing
+           path: /docs/edge/use-cases/offiline-data-processing/
         -  title: Data filtering and traffic reduce
-           path: /docs/edge/use-cases/data-filtering
+           path: /docs/edge/use-cases/data-filtering/
         -  title: Batch updates
-           path: /docs/edge/use-cases/batch-updates
+           path: /docs/edge/use-cases/batch-updates/
         -  title: Local Alarm
-           path: /docs/edge/use-cases/local-alarm
+           path: /docs/edge/use-cases/local-alarm/
+    - title: Connect device to ThingsBoard Edge
+      path: /docs/edge/connect-device-to-edge/
     - title: ThingsBoard Edge Roadmap
       path: /docs/edge/roadmap/
 - title: Analytics
