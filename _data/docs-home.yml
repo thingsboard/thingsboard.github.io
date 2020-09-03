@@ -166,14 +166,10 @@ toc:
            path: /docs/edge/overview/security
     - title: Use Cases
       section:
-        -  title: Offline/Network outage data processing
-           path: /docs/edge/use-cases/offiline-data-processing/
-        -  title: Data filtering and traffic reduce
-           path: /docs/edge/use-cases/data-filtering/
-        -  title: Batch updates
-           path: /docs/edge/use-cases/batch-updates/
-        -  title: Local Alarm
-           path: /docs/edge/use-cases/local-alarm/
+        -  title: Manage alarms and RPC requests on edge devices
+           path: /docs/edge/use-cases/manage-alarms-rpc-requests/
+        -  title: Data filtering and traffic reduce on edge server
+           path: /docs/edge/use-cases/data-filtering-traffic-reduce/
     - title: Connect device to ThingsBoard Edge
       path: /docs/edge/connect-device-to-edge/
     - title: ThingsBoard Edge Roadmap

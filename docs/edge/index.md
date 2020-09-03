@@ -23,7 +23,7 @@ It allows to bring edge computing, data collection and management to the edge, w
 
 ## Edge architecture
 
-- **Robust and efficient.** Single edge can handle tens or even hundreds thousands of devices depending on the [use-case](/docs/edge/tutorial) and deployed hardware
+- **Robust and efficient.** Single edge can handle tens or even hundreds thousands of devices depending on the [use-case](/docs/edge/use-cases) and deployed hardware
 - **Scalable.** Spread your computation and data analysis on thousands of edges
 - **Customizable.** Adding new functionality is easy with customizable widgets, rule engine and plugin system
 - **Fault-tolerant.** All messages and events are collected in the persistence layer and will be delivered to cloud
@@ -56,7 +56,7 @@ Detailed instructions on **how to install ThingsBoard Edge** on various platform
 * [**Docker (Linux or Mac OS)**](/docs/edge/install/docker)
 
 ## Next Steps with ThingsBoard Edge
-* [**Use cases**](/docs/edge/tutorial)
+* [**Use cases**](/docs/edge/use-cases)
 * [**How it works**](/docs/edge/overview)
 * [**How to connect device**](/docs/edge/how-connect-device)
 * [**Performance test results**](/docs/edge/performance)

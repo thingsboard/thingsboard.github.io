@@ -1,6 +1,6 @@
 ---
 layout: docwithnav
-title: Edge alarm and network outage data processing
+title: Manage alarms and RPC requests on edge devices
 description: ThingsBoard Edge use case
 
 ---
@@ -54,8 +54,6 @@ In this section we explain the purpose of each node in this tutorial:
   - This node with temperature threshold check script will verify: "if the temperature is in the expected interval, the script will return False, otherwise True will be returned".
 - Node B: [**Create alarm**](/docs/user-guide/rule-engine-2-0/action-nodes/#create-alarm-node) node.
   - Creates or Updates an  alarm if the published temperature is not at expected time range (filter script node returns True).    
-- Node C: [**Create alarm**](/docs/user-guide/rule-engine-2-0/action-nodes/#create-alarm-node) node.
-  - Creates or Updates an  alarm if the published temperature is not at expected time range (filter script node returns True).    
 - Node C: [**Clear alarm**](/docs/user-guide/rule-engine-2-0/action-nodes/#clear-alarm-node) node.
   - Clears alarm if it exists in case if the published temperature is in expected time range (script node returns False).   
 - Node D: [**Push to Cloud**](/docs/user-guide/rule-engine-2-0/action-nodes/#push-to-cloud) node.
@@ -63,7 +61,7 @@ In this section we explain the purpose of each node in this tutorial:
 - Node E: [**Change originator**](/docs/user-guide/rule-engine-2-0/transformation-nodes/#change-originator) node.
     - Changes the originator from **Thermostat Home** to the related device **Cooler Home** and the submitted message will be processed as a message from the **Cooler Home**.
 - Node F: [**Transform Script**](/docs/user-guide/rule-engine-2-0/transformation-nodes/#script-transformation-node) node. 
-    - Transform an original message into RPC reply message with custom params and telemetry.
+    - Transform an original message into RPC reply message with customized data.
 - Node G: [**Filter Script**](/docs/user-guide/rule-engine-2-0/filter-nodes/#script-filter-node) node.
     - This node will check if msgType of incoming message is **RPC message**.  
 - Node H: [**RPC call request**](/docs/user-guide/rule-engine-2-0/action-nodes/#rpc-call-request-node) node
@@ -81,7 +79,7 @@ In ThingsBoard Professional Edition we modified default **Edge Root Rule Chain**
 
 ![image](/images/edge/tutorial/alarm/rule-chain-create-alarm.png)
 
-Download the attached [json file](https://thingsboard.io/docs/edge/tutorial/resources/create_alarm.json) for the **Manage Alarms and RPC** rule chain.
+Download the attached [json file](https://thingsboard.io/docs/edge/use-cases/resources/manage-alarms-rpc-requests/manage_alarms_and_rpc.json) for the **Manage Alarms and RPC** rule chain.
 
  - **Edge Root Rule Chain:**
 
@@ -144,7 +142,7 @@ If the temperature is below 50°C the script will return False, otherwise True w
 
 ![image](/images/edge/tutorial/alarm/node-push-to-cloud.png)
 
-##### Adding nodes for RPC call
+##### Adding nodes for RPC call requests
 
 The next 4 nodes will switch originator from **Thermostat Home** to **Cooler Home** 
 and send RPC message to the edge device **Cooler Home**:
@@ -152,7 +150,7 @@ and send RPC message to the edge device **Cooler Home**:
 ###### Node E: **Change Originator**
 - Add the **Change Originator** node and connect it to the **Filter Script** node with a relation types **True** and **False**. <br>
   This node will change the originator from Device **Thermostat Home** to **Cooler Home** that has a relation of the type **Uses**. 
-  <br/>As a result, the RPC call will be processed as a message to **Cooler Home**
+  <br/>As a result, the RPC call requests will be processed as a message to **Cooler Home**
   
 - Fill in the fields with the input data shown in the following table: 
 
@@ -270,8 +268,8 @@ In ThingsBoard Professional Edition open edge **Edge #1** and click **Manage edg
 
 - Use the following scripts to connect device **Cooler Home** to ThingsBoard server by MQTT protocol.  
 Script will emulate turning on/off cooler based on temperature reading: "If temperature is > 50°C - turn cooler on, otherwise - turn off".
-    - [**mqtt-js.sh**](https://thingsboard.io/docs/edge/tutorial/resources/mqtt-js.sh).
-    - [**cooler.js**](https://thingsboard.io/docs/edge/tutorial/resources/cooler.js).
+    - [**mqtt-js.sh**](https://thingsboard.io/docs/edge/use-cases/resources/manage-alarms-rpc-requests/mqtt-js.sh).
+    - [**cooler.js**](https://thingsboard.io/docs/edge/use-cases/resources/manage-alarms-rpc-requests/cooler.js).
 
 To run the scripts, you need to do the following steps:
 
