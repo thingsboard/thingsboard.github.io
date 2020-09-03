@@ -1,24 +1,22 @@
 ---
 layout: docwithnav
 title: Manage alarms and RPC requests on edge devices
-description: ThingsBoard Edge use case
+description: ThingsBoard Edge use case #1
 
 ---
 * TOC
 {:toc}
 
 ### Use case
-Let's assume you have a warehouse with two **edge computing devices** connected to ThingsBoard Edge:
-* DHT22 sensor
-* Cooler
+Let's assume you have a warehouse with two **edge computing devices** connected to ThingsBoard Edge: 
+* Thermostat Home
+* Cooler Home
 
-Thermometer sends data to the local **edge server** that has few responsibilities:
- * Collects temperature readings from DHT22 sensor
+Thermometer sends data to the local **edge service** that has few responsibilities:
+ * Collects temperature readings from sensor
  * Creates, updates and sends to the cloud alarm if temperature > 50°C
  * Turns on cooler by RPC request
- * Pushes temperature telemetry to the cloud
-
-In our case **cloud is ThingsBoard Professional Edition**. It stores and visualizes temperature readings on the graph.
+ * Pushes temperature telemetry to the cloud. In this case **cloud is ThingsBoard Professional Edition**
 
 Please note that this is just a simple theoretical use case to demonstrate the capabilities of the platform. 
 You can use this tutorial as a basis for much more complex scenarios.
@@ -31,7 +29,7 @@ We assume you have completed the following guides and reviewed the articles list
 
 In ThingsBoard Professional Edition we have created edge entity **Edge #1** in group **All**, assigned edge to **Tenant users**.
 
-Edge **secret** and **key** we pasted in ThingsBoard Edge [configuration file](/docs/edge/install/deb-installation/#step-6-configure-thingsboard-edge) in order to connect **edge server** with **cloud server**.
+Edge **secret** and **key** we pasted in ThingsBoard Edge [configuration file](/docs/edge/install/deb-installation/#step-6-configure-thingsboard-edge) in order to connect **edge service** with **cloud server**.
 
 ### Model definition
 Open ThingsBoard Edge UI. Add two device entities in the group "All".
@@ -252,7 +250,7 @@ The following screenshot shows how the final **Edge Root Rule Chain** should loo
 
 ### Assign Edge Rule Chains to Edge
 Tenant administrator is able to assign entity groups (Users, Assets, Devices, Entity Views, Dashboards) 
-and entities (rule chains, scheduler events) to certain edge. Cloud will send assigned entities and groups to edge server.
+and entities (rule chains, scheduler events) to certain edge. Cloud will send assigned entities and groups to edge.
 
 Follow these steps to assign rule chains to edge:
 
