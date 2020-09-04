@@ -36,8 +36,6 @@ Edge **secret** and **key** we pasted in ThingsBoard Edge [configuration file](/
 
 ### Model definition
 
-{% assign feature = "Entity Groups" %}{% include templates/pe-feature-banner.md %}
-
 Open ThingsBoard Professional Edition UI. Add new [device group](/docs/user-guide/groups/) **Truck**:
 
 <br>![image](/images/edge/tutorial/data-filtering/add-device-group.png) 
@@ -130,8 +128,6 @@ Then run the following command:
 {% highlight bash %}
 node bash mqtt-js.sh
 {% endhighlight %}
-
-<br/>
 
 You should see following screen with your host and device token:
 

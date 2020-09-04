@@ -8,8 +8,8 @@
         "typeAlias": "basic_timeseries",
         "type": "timeseries",
         "title": "New widget",
-        "sizeX": 17,
-        "sizeY": 10,
+        "sizeX": 15,
+        "sizeY": 11,
         "config": {
           "datasources": [
             {
@@ -18,8 +18,8 @@
                 {
                   "name": "avgMinuteMpg",
                   "type": "timeseries",
-                  "label": "avgMinuteMpg",
-                  "color": "#2196f3",
+                  "label": "Miles Per Gallon",
+                  "color": "#0645dd",
                   "settings": {
                     "excludeFromStacking": false,
                     "hideDataByDefault": false,
@@ -27,25 +27,20 @@
                     "removeFromLegend": false,
                     "showLines": true,
                     "fillLines": false,
-                    "showPoints": false,
+                    "showPoints": true,
                     "showPointShape": "circle",
                     "pointShapeFormatter": "var size = radius * Math.sqrt(Math.PI) / 2;\nctx.moveTo(x - size, y - size);\nctx.lineTo(x + size, y + size);\nctx.moveTo(x - size, y + size);\nctx.lineTo(x + size, y - size);",
                     "showPointsLineWidth": 5,
                     "showPointsRadius": 3,
-                    "tooltipValueFormatter": "",
                     "showSeparateAxis": false,
-                    "axisTitle": "",
                     "axisPosition": "left",
-                    "axisTicksFormatter": "",
                     "thresholds": [
                       {
                         "thresholdValueSource": "predefinedValue"
                       }
                     ],
                     "comparisonSettings": {
-                      "showValuesForComparison": true,
-                      "comparisonValuesLabel": "",
-                      "color": ""
+                      "showValuesForComparison": true
                     }
                   },
                   "_hash": 0.324549013211354
@@ -56,7 +51,12 @@
           ],
           "timewindow": {
             "realtime": {
-              "timewindowMs": 60000
+              "interval": 5000,
+              "timewindowMs": 600000
+            },
+            "aggregation": {
+              "type": "NONE",
+              "limit": 25000
             }
           },
           "showTitle": true,
@@ -82,7 +82,7 @@
               "horizontalLines": true,
               "outlineWidth": 1
             },
-            "stack": true,
+            "stack": false,
             "tooltipIndividual": true,
             "timeForComparison": "months",
             "xaxisSecond": {
@@ -106,7 +106,7 @@
           "titleTooltip": "",
           "enableDataExport": true,
           "widgetStyle": {},
-          "useDashboardTimewindow": true,
+          "useDashboardTimewindow": false,
           "displayTimewindow": true,
           "showLegend": true,
           "actions": {},
@@ -127,8 +127,8 @@
         "typeAlias": "entities_table",
         "type": "latest",
         "title": "New widget",
-        "sizeX": 7,
-        "sizeY": 10,
+        "sizeX": 9,
+        "sizeY": 11,
         "config": {
           "timewindow": {
             "realtime": {
@@ -145,15 +145,16 @@
           "color": "rgba(0, 0, 0, 0.87)",
           "padding": "4px",
           "settings": {
-            "enableSearch": true,
-            "displayPagination": true,
+            "enableSearch": false,
+            "displayPagination": false,
             "defaultPageSize": 10,
             "defaultSortOrder": "entityName",
             "displayEntityName": true,
-            "displayEntityType": true,
-            "enableSelectColumnDisplay": true
+            "displayEntityType": false,
+            "enableSelectColumnDisplay": true,
+            "entitiesTitle": "Emissions"
           },
-          "title": "Details ${entityName}",
+          "title": "",
           "dropShadow": true,
           "enableFullscreen": true,
           "titleStyle": {
@@ -170,8 +171,8 @@
               "entityAliasId": "867565f6-cfd1-fc5c-dcce-af2d51c7226e"
             }
           ],
-          "showTitleIcon": false,
-          "titleIcon": null,
+          "showTitleIcon": true,
+          "titleIcon": "pie_chart",
           "iconColor": "rgba(0, 0, 0, 0.87)",
           "iconSize": "24px",
           "titleTooltip": "",
@@ -182,8 +183,8 @@
               {
                 "id": "61f2d717-5971-de5d-6780-b27b785598e4",
                 "name": "Details",
-                "icon": "pie_chart",
-                "type": "updateDashboardState",
+                "icon": "play_arrow",
+                "type": "openDashboardState",
                 "targetDashboardStateId": "details",
                 "setEntityId": true
               }
@@ -199,8 +200,8 @@
         "typeAlias": "digital_speedometer",
         "type": "latest",
         "title": "New widget",
-        "sizeX": 7,
-        "sizeY": 5,
+        "sizeX": 8,
+        "sizeY": 12,
         "config": {
           "datasources": [
             {
@@ -228,7 +229,7 @@
           "color": "rgba(255, 254, 254, 0.87)",
           "padding": "0px",
           "settings": {
-            "maxValue": 1000,
+            "maxValue": 0.5,
             "minValue": 0,
             "donutStartAngle": 90,
             "showValue": true,
@@ -269,7 +270,7 @@
             "unitTitle": "ppm",
             "showUnitTitle": true,
             "gaugeColor": "#171a1c",
-            "gaugeType": "arc",
+            "gaugeType": "verticalBar",
             "animation": true,
             "animationDuration": 500,
             "animationRule": "linear",
@@ -302,8 +303,8 @@
         "typeAlias": "digital_speedometer",
         "type": "latest",
         "title": "New widget",
-        "sizeX": 7,
-        "sizeY": 5,
+        "sizeX": 8,
+        "sizeY": 12,
         "config": {
           "datasources": [
             {
@@ -331,7 +332,7 @@
           "color": "rgba(255, 254, 254, 0.87)",
           "padding": "0px",
           "settings": {
-            "maxValue": 1000,
+            "maxValue": 400,
             "minValue": 0,
             "donutStartAngle": 90,
             "showValue": true,
@@ -372,11 +373,12 @@
             "unitTitle": "ppm",
             "showUnitTitle": true,
             "gaugeColor": "#171a1c",
-            "gaugeType": "arc",
+            "gaugeType": "verticalBar",
             "animation": true,
             "animationDuration": 500,
             "animationRule": "linear",
-            "timestampFormat": "yyyy-MM-dd HH:mm:ss"
+            "timestampFormat": "yyyy-MM-dd HH:mm:ss",
+            "roundedLineCap": false
           },
           "title": "Hydrocarbon (HC)",
           "dropShadow": true,
@@ -395,7 +397,8 @@
           "iconSize": "24px",
           "titleTooltip": "",
           "enableDataExport": true,
-          "displayTimewindow": true
+          "displayTimewindow": true,
+          "decimals": 0
         },
         "id": "997aa62a-52f8-a9f9-3dda-a0b3c527efdc"
       },
@@ -405,8 +408,8 @@
         "typeAlias": "digital_speedometer",
         "type": "latest",
         "title": "New widget",
-        "sizeX": 7,
-        "sizeY": 5,
+        "sizeX": 8,
+        "sizeY": 12,
         "config": {
           "datasources": [
             {
@@ -434,7 +437,7 @@
           "color": "rgba(255, 254, 254, 0.87)",
           "padding": "0px",
           "settings": {
-            "maxValue": 1000,
+            "maxValue": 100,
             "minValue": 0,
             "donutStartAngle": 90,
             "showValue": true,
@@ -475,11 +478,12 @@
             "unitTitle": "ppm",
             "showUnitTitle": true,
             "gaugeColor": "#171a1c",
-            "gaugeType": "arc",
+            "gaugeType": "verticalBar",
             "animation": true,
             "animationDuration": 500,
-            "animationRule": "linear",
-            "timestampFormat": "yyyy-MM-dd HH:mm:ss"
+            "animationRule": "quint",
+            "timestampFormat": "yyyy-MM-dd HH:mm:ss",
+            "roundedLineCap": false
           },
           "title": "Carbon monoxide gas (CO)",
           "dropShadow": true,
@@ -498,7 +502,8 @@
           "iconSize": "24px",
           "titleTooltip": "",
           "enableDataExport": true,
-          "displayTimewindow": true
+          "displayTimewindow": true,
+          "decimals": 0
         },
         "id": "48829023-01ab-e766-19a8-8551ca593fa1"
       }
@@ -511,17 +516,17 @@
           "main": {
             "widgets": {
               "28d6d36f-5d5d-3c40-0b64-f1efd0de0e0e": {
-                "sizeX": 17,
-                "sizeY": 10,
+                "sizeX": 15,
+                "sizeY": 11,
                 "mobileHeight": null,
                 "row": 0,
                 "col": 0
               },
               "2bbc99da-4910-280f-ffdb-043e6d2e8525": {
-                "sizeX": 7,
-                "sizeY": 10,
+                "sizeX": 9,
+                "sizeY": 11,
                 "row": 0,
-                "col": 17
+                "col": 15
               }
             },
             "gridSettings": {
@@ -538,26 +543,26 @@
         }
       },
       "details": {
-        "name": "Details",
+        "name": "Emissions",
         "root": false,
         "layouts": {
           "main": {
             "widgets": {
               "5cac9177-e4cd-fecb-edce-5da1b69fb95b": {
-                "sizeX": 7,
-                "sizeY": 5,
+                "sizeX": 8,
+                "sizeY": 12,
                 "row": 0,
-                "col": 14
+                "col": 16
               },
               "997aa62a-52f8-a9f9-3dda-a0b3c527efdc": {
-                "sizeX": 7,
-                "sizeY": 5,
+                "sizeX": 8,
+                "sizeY": 12,
                 "row": 0,
-                "col": 7
+                "col": 8
               },
               "48829023-01ab-e766-19a8-8551ca593fa1": {
-                "sizeX": 7,
-                "sizeY": 5,
+                "sizeX": 8,
+                "sizeY": 12,
                 "row": 0,
                 "col": 0
               }
@@ -593,11 +598,11 @@
     "timewindow": {
       "realtime": {
         "interval": 5000,
-        "timewindowMs": 300000
+        "timewindowMs": 900000
       },
       "aggregation": {
         "type": "NONE",
-        "limit": 25000
+        "limit": 50000
       },
       "hideInterval": false,
       "hideAggregation": false,
