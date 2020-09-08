@@ -522,9 +522,8 @@ description: ThingsBoard Products Pricing
                                 'Maker')">
                                 Get your license
                             </a>
-                            </a>
-                            <div class="pricing-square-item" data-faq-id="community-support">
-                                Community support
+                            <div class="pricing-square-item">
+                                No support
                             </div><br>
                             <div class="pricing-square-item">
                                 <p>&nbsp;</p>
@@ -547,10 +546,12 @@ description: ThingsBoard Products Pricing
                                 'Prototype')">
                                 Get your license
                             </a>
-                            <div class="pricing-square-item">
-                                Discount: <br>
-                                10–50 edges - 10%
+                            <div class="pricing-square-item" data-faq-id="edge-discount">
+                                Discounts from 10 edges                            
                             </div>
+                            <div class="pricing-square-item" data-faq-id="optional-support">
+                                <br>Optional support
+                            </div><br>
                         </div>
                     </div>
                     <div class="col-md-4 col-lg-4 col-xl mb-4">
@@ -569,13 +570,12 @@ description: ThingsBoard Products Pricing
                                 'Startup')">
                                 Get your license
                             </a>
-                            <div class="pricing-square-item">
-                                Discount:<br>             
-                                >100 edges - 15%
-                            </div><br>
-                            <div class="pricing-square-item">
-                                <p>&nbsp;</p>
+                            <div class="pricing-square-item" data-faq-id="edge-discount">
+                                Discounts from 10 edges                            
                             </div>
+                            <div class="pricing-square-item" data-faq-id="optional-support">
+                                <br>Optional support
+                            </div><br>
                         </div>
                     </div>
                     <div class="col-md-4 col-lg-4 col-xl mb-4">
@@ -594,12 +594,12 @@ description: ThingsBoard Products Pricing
                                 'Business')">
                                 Get your license
                             </a>
-                            <div class="pricing-square-item">   
-                                Support is available for <br> Tier 2 and Tier 3
+                            <div class="pricing-square-item" data-faq-id="edge-discount">
+                                Discounts from 10 edges                            
                             </div>
-                            <div class="pricing-square-item">
-                                <p>&nbsp;</p>
-                            </div>
+                            <div class="pricing-square-item" data-faq-id="optional-support">
+                                <br>Optional support
+                            </div><br>
                         </div>
                     </div>
                </div>
@@ -701,6 +701,20 @@ description: ThingsBoard Products Pricing
                 </p>    
             </div>    
         </div>
+        <div class="item" data-tag="h4" data-item-id="edge-discount" data-title="Do you have discounts for ThingsBoard Edge?">
+            <div class="container">
+                <p>
+                    Yes. Here is our discount grid for ThingsBoard Edge licenses:
+                        <table>
+                        <ul>
+                            <li><b>10%:</b> 10–50 Edges</li>
+                            <li><b>12%:</b> 50–100 Edges</li>
+                            <li><b>15%:</b> >100 Edges</li>
+                        </ul>
+                        </table>
+                </p>    
+            </div>    
+        </div>
         <h3 id="section2">Billing</h3>
         <div class="item" data-tag="h4" data-item-id="trial-enable" data-title="How can I enable free trial?">
             <div class="container">
@@ -753,6 +767,13 @@ description: ThingsBoard Products Pricing
                 </p>    
             </div>    
         </div>
+        <div class="item" data-tag="h4" data-item-id="optional-support" data-title="What support options do you have for ThingsBoard Edge?">
+            <div class="container">
+                <p>
+                We provide support for customers with more than 50 edge licenses.
+                </p>    
+            </div>    
+        </div>        
         <div class="item" data-tag="h4" data-item-id="subscription-support" data-title="What issues included in email support?">
             <div class="container">
                 <p>
