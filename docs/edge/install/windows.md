@@ -26,42 +26,31 @@ Instructions below are provided for Windows 10/8.1/8/7 32-bit/64-bit.
 
 {% include templates/edge/add-edge.md %}
 
-### Step 4. Configure PostgreSQL
+### Step 4. ThingsBoard Edge service installation
+
+{% include templates/edge/edge-extract.md %}
+
+**Note:** We assume you have installed ThingsBoard to default location: *C:\Program Files (x86)\thingsboard-edge*
+
+### Step 5. Obtain and configure license key
+
+{% include templates/edge/license-ubuntu.md %}
+
+### Step 6. Configure PostgreSQL
 
 {% include templates/edge/windows-db-postgresql.md %}
 
-### Step 5. ThingsBoard Edge service installation
-
-Please contact us.
-
-<!---
-Download and run the installation package.
-
-```bash
-https://dist.thingsboard.io/thingsboard-edge-windows-setup.exe
-```
-{: .copy-code}
-
-**Note:** We assume you have installed ThingsBoard to default location: *C:\Program Files (x86)\thingsboard-edge*  
---->
-
-### Step 6. Configure ThingsBoard Edge
-
 {% include templates/edge/windows-configure-edge.md %}
 
-### Step 7. Configure transport ports (optional)
+### Step 7. Run installation script
 
-{% include templates/edge/windows-configure-ports.md %} 
+{% include templates/edge/run-edge-install-windows.md %} 
 
-### Step 8. Run installation script
-
-{% include templates/edge/run-edge-install.md %} 
-
-### Step 9. Start ThingsBoard Edge service
+### Step 8. Start ThingsBoard Edge service
 
 {% include templates/edge/windows-start-service.md %}
 
-### Step 10. Open ThingsBoard Edge UI
+### Step 9. Open ThingsBoard Edge UI
 
 {% include templates/edge/open-edge-ui.md %} 
 

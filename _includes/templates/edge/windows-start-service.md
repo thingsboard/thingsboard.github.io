@@ -2,7 +2,7 @@ Now let's start the ThingsBoard Edge service!
 Open the command prompt as an Administrator and execute the following command:
 
 ```shell
-net start thingsboard-edge
+net start tb-edge
 ```
 
 Expected output:
@@ -15,6 +15,6 @@ The ThingsBoard Edge Server Application service was started successfully.
 In order to restart the ThingsBoard Edge service you can execute following commands:
 
 ```shell
-net stop thingsboard-edge
-net start thingsboard-edge
+net stop tb-edge
+net start tb-edge
 ```

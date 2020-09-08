@@ -13,23 +13,35 @@ It allows to bring edge computing, data collection and management to the edge, w
 
 ## Key benefits
  - **Local deployment on site.** The ability to operate with local devices without internet connection to cloud
+ 
+ ![image](/images/edge/overview/offline_network_.svg)
+ 
  - **Traffic filtering.** Filter data from the devices on the edge and push to cloud only subset of the data
+ 
+ ![image](/images/edge/overview/data_filtering.svg)
+ 
  - **Local alarms.** React instantly to cricital situations on site without internet connection to cloud
+ 
+ ![image](/images/edge/overview/alarm.svg)
+ 
  - **Visualization.** Monitor local events/timeseries data with a real-time dashboard
  - **Batch update.** Update thousands of edge configurations in a single click
- - **Local storage.** Store data from the devices on the edge without internet connection to the cloud and push to the cloud updates once connection restored
 
-![image](/images/edge/edge-in-thingsboard.png) 
+![image](/images/edge/overview/update_dashboard.svg)
+
+ - **Local storage.** Store data from the devices on the edge without internet connection to the cloud and push to the cloud updates once connection restored
 
 ## Edge architecture
 
-- **Robust and efficient.** Single edge can handle tens or even hundreds thousands of devices depending on the [use-case](/docs/edge/use-cases) and deployed hardware
+- **Robust and efficient.** Single edge can handle tens or even hundreds thousands of devices depending on the [use-case](#next-steps-with-thingsboard-edge) and deployed hardware
 - **Scalable.** Spread your computation and data analysis on thousands of edges
+
+![image](/images/edge/overview/edge_architecture.svg)
+
 - **Customizable.** Adding new functionality is easy with customizable widgets, rule engine and plugin system
 - **Fault-tolerant.** All messages and events are collected in the persistence layer and will be delivered to cloud
-
-![image](/images/edge/architecture.png) 
  
+<!---
 ## Video Tutorial
 
 &nbsp; 
@@ -39,6 +51,8 @@ It allows to bring edge computing, data collection and management to the edge, w
         <iframe src="https://www.youtube.com/embed/CDt-B5_JiIs" frameborder="0" allowfullscreen></iframe>
     </div>
 </div>
+
+--->
 
 ## Installation and connection with ThingsBoard
 
@@ -56,9 +70,5 @@ Detailed instructions on **how to install ThingsBoard Edge** on various platform
 * [**Docker (Linux or Mac OS)**](/docs/edge/install/docker)
 
 ## Next Steps with ThingsBoard Edge
-* [**Use cases**](/docs/edge/use-cases)
-* [**How it works**](/docs/edge/overview)
-* [**How to connect device**](/docs/edge/how-connect-device)
-* [**Performance test results**](/docs/edge/performance)
-* [**Security**](/docs/edge/security)
-* [**Roadmap**](/docs/edge/roadmap)
+
+{% include templates/edge/next-steps.md %}

@@ -140,6 +140,8 @@ toc:
   section:
     - title: Getting Started
       path: /docs/edge/
+    - title: ThingsBoard Edge Overview
+      path: /docs/edge/overview/
     - title: Installation guides
       section:
         - title: Installation options
@@ -154,24 +156,12 @@ toc:
           path: /docs/edge/install/docker-windows/
         - title: Installing Edge using Docker (Linux or Mac OS)
           path: /docs/edge/install/docker/
-    - title: ThingsBoard Edge Overview
-      section:
-        -  title: Roles Management
-           path: /docs/edge/overview/roles-management
-        -  title: Edge rule nodes
-           path: /docs/edge/overview/rule-nodes
-        -  title: Performance
-           path: /docs/edge/overview/performance
-        -  title: Security
-           path: /docs/edge/overview/security
     - title: Use Cases
       section:
         -  title: Manage alarms and RPC requests on edge devices
            path: /docs/edge/use-cases/manage-alarms-rpc-requests/
-        -  title: Data filtering and traffic reduce on edge server
+        -  title: Data filtering and traffic reduce
            path: /docs/edge/use-cases/data-filtering-traffic-reduce/
-    - title: Connect device to ThingsBoard Edge
-      path: /docs/edge/connect-device-to-edge/
     - title: ThingsBoard Edge Roadmap
       path: /docs/edge/roadmap/
 - title: Analytics

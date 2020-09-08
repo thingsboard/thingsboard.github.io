@@ -31,6 +31,6 @@ Connect to the database to create thingsboard DB:
 
 ```bash
 psql -U postgres -d postgres -h 127.0.0.1 -W
-CREATE DATABASE thingsboard-edge;
+CREATE DATABASE thingsboard_edge;
 \q
 ```

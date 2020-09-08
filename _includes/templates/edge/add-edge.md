@@ -1,5 +1,5 @@
-To use ThingsBoard Edge first you must launch ThingsBoard Platform and create edge entity. 
-For each entity ThingsBoard automatically generates immutable unique <strong>Edge Secret</strong> and <strong>Edge Key</strong> 
+In order to start using ThingsBoard Edge you must run ThingsBoard Platform and create edge entity. 
+For each entity ThingsBoard automatically generates immutable unique credentials: <strong>Edge Secret</strong> and <strong>Edge Key</strong> 
 (kind of login/password).
 
 {% capture contenttogglespec %}

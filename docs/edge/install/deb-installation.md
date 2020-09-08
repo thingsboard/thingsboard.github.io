@@ -31,15 +31,7 @@ This guide describes how to install ThingsBoard Edge on Ubuntu Server 18.04 LTS.
 
 ### Step 5. ThingsBoard Edge service installation
 
-Please contact us.
-
-<!---
-Download installation package.
-
-```bash
-wget https://dist.thingsboard.io/tb-edge.deb
-```
-{: .copy-code}
+{% include templates/edge/edge-extract.md %}
 
 Go to the download repository and install ThingsBoard Edge service:
 
@@ -47,15 +39,14 @@ Go to the download repository and install ThingsBoard Edge service:
 sudo dpkg -i tb-edge.deb
 ```
 {: .copy-code}
---->
 
-### Step 6. Configure ThingsBoard Edge
+### Step 6. Obtain and configure license key
+
+{% include templates/edge/license-ubuntu.md %}
+
+### Step 7. Configure ThingsBoard Edge
 
 {% include templates/edge/ubuntu-configure-edge.md %}
-
-### Step 7. Configure transport ports (optional)
-
-{% include templates/edge/ubuntu-configure-ports.md %} 
 
 ### Step 8. Run installation script
 

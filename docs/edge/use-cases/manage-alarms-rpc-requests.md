@@ -17,7 +17,7 @@ Thermometer sends data to the local **edge service** that has few responsibiliti
  * Creates, updates and sends to the cloud alarm if temperature > 50°C
  * Turns on cooler by RPC request
  * Pushes temperature telemetry to the cloud. In this case **cloud is ThingsBoard Professional Edition**
-
+ 
 Please note that this is just a simple theoretical use case to demonstrate the capabilities of the platform. 
 You can use this tutorial as a basis for much more complex scenarios.
 
