@@ -35,7 +35,7 @@ ThingsBoard Edge uses separate [ThingsBoard Rule Engine framework](/docs/user-gu
 #### Default edge rule chains
 
 ThingsBoard Edge allows tenant admins to make edge rule chains **default**. 
-Rule chains with activated default flag will be automatically assigned to the edges.
+Rule chains with activated default flag will be automatically assigned to the edges created by the same .
 
 ![image](/images/edge/nodes/make-default.png)
 
