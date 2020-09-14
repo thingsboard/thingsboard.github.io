@@ -35,12 +35,9 @@ It allows to bring edge computing, data collection and management to the edge, w
 
 - **Robust and efficient.** Single edge can handle tens or even hundreds thousands of devices depending on the [use-case](#next-steps-with-thingsboard-edge) and deployed hardware
 - **Scalable.** Spread your computation and data analysis on thousands of edges
-
-![image](/images/edge/overview/edge_architecture.svg)
-
 - **Customizable.** Adding new functionality is easy with customizable widgets, rule engine and plugin system
 - **Fault-tolerant.** All messages and events are collected in the persistence layer and will be delivered to cloud
- 
+
 <!---
 ## Video Tutorial
 

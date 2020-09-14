@@ -9,10 +9,7 @@ description:
         <main>
             <div class="content">
                 <h3 class="header"><span class="cBlue" >Local deployment and storage</span></h3>
-                <p>Without internet connection you have ability to:
-                 <br><br>- Operate with local devices
-                 <br>- Store data from devices
-                 <br>- Push updates to the cloud once connection restored</p>
+                <p>Operate with and store data from local devices without internet connection. Push updates to the cloud once connection restored. </p>
                 <a href="/docs/edge/" class="button cBlue try-button">Learn more</a>           
             </div>
             <div class="image-block">
@@ -27,7 +24,7 @@ description:
         <main>
             <div class="content">
                 <h3 class="header"><span class="cBlue" >Traffic filtering</span></h3>
-                <p> Filter data from the devices on the edge and push to cloud only subset of the data.</p>
+                <p>Filter data from devices on the ThingsBoard Edge service and push to cloud only subset of the data.</p>
                 <a href="/docs/edge/" class="button cBlue try-button">Learn more</a>           
             </div>
             <div class="image-block">

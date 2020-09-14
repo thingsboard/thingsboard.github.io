@@ -9,23 +9,28 @@ description: ThingsBoard Edge features, FAQ
 
 ![image](/images/edge/overview/edge_overview.svg)
 
-### How to connect device
+### Edge devices
 
-ThingsBoard Edge supports device connections using:
-* HTTP protocol
-* MQTT protocol
+ThingsBoard Edge provides support for three communication protocols:
+* [**HTTP API**](/docs/reference/http-api/)
+* [**MQTT API**](/docs/reference/mqtt-api/)
+* [**CoAP API**](/docs/reference/coap-api/)
 
-More info about how to connect devices to ThingsBoard you can find [here](/docs/guides/).
+![image](/images/edge/overview/edge_architecture.svg)
 
-### Roles Management
+### Roles management
+### Relations with assets and devices
+### Data visualization
+#### Widgets
+#### Dashboards
 
 ### Rule Engine
 
-ThingsBoard Edge uses separate [ThingsBoard Rule Engine framework](/docs/user-guide/rule-engine-2-0/re-getting-started/) for building event-based workflows on the edge side and communicating with cloud. 
+ThingsBoard Edge uses separate [ThingsBoard Rule Engine framework](/docs/user-guide/rule-engine-2-0/re-getting-started/) for building event-based workflows on the edge side and communicating with cloud - **Edge Rule chains**. 
 
 ![image](/images/edge/nodes/rule-chains-menu.png)
 
-**Edge Rule chains** is almost the same as **Core Rule chains**, except few differences.
+**Edge Rule chains** framework is almost the same as **Core Rule chains**, except few differences, mentioned below.
  
 #### Rule nodes
 
@@ -35,7 +40,7 @@ ThingsBoard Edge uses separate [ThingsBoard Rule Engine framework](/docs/user-gu
 #### Default edge rule chains
 
 ThingsBoard Edge allows tenant admins to make edge rule chains **default**. 
-Rule chains with activated default flag will be automatically assigned to the edges created by the same .
+Rule chains with activated default flag will be automatically assigned to the next edges created by the same owner.
 
 ![image](/images/edge/nodes/make-default.png)
 
@@ -55,4 +60,11 @@ Keep in mind, **you won't be able to import Core rule chains to the Edge rule ch
 * **Cloud connectivity**: gRPC
 
 ### Performance
+
+ThinsBoard Edge is able to ...
+
 ### Security
+
+Each edge instance has unique immutable credentials: pair of **Key** and **Secret**. It is used to connect cloud to edge service.
+
+For **secure device message transporting** you can use MQTT (over SSL) or HTTPS protocols. Each device has unique access token credentials that is used to setup connection.
