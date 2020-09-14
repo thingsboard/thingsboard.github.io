@@ -20,7 +20,7 @@ It allows to bring edge computing, data collection and management to the edge, w
  
  ![image](/images/edge/overview/data_filtering.svg)
  
- - **Local alarms.** React instantly to cricital situations on site without internet connection to cloud
+ - **Local alarms.** React instantly to critical situations on site without internet connection to cloud
  
  ![image](/images/edge/overview/alarm.svg)
  

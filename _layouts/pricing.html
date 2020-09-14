@@ -52,6 +52,9 @@
         var activeTab = $.urlParam('active');
         if (activeTab && activeTab === 'trendz') {
             activatePricingSection('trendz');
+        }
+        else if (activeTab && activeTab === 'edge') {
+            activatePricingSection('edge');
         } else {
             activatePricingSection('thingsboard-pe');
         }
