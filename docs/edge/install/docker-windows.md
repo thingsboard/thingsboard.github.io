@@ -51,7 +51,7 @@ services:
     restart: always
     image: "thingsboard-edge/tb-postgres"
     ports:
-      - "8090:9090"
+      - "8090:8080"
       - "11883:1883"
       - "15683:5683/udp"
     environment:
@@ -71,7 +71,7 @@ volumes:
 
 Where: 
     
-- `8090:9090` - connect local port 8090 to exposed internal HTTP port 9090
+- `8090:8080` - connect local port 8090 to exposed internal HTTP port 8080
 - `11883:1883` - connect local port 11883 to exposed internal MQTT port 1883  
 - `15683:5683` - connect local port 15683 to exposed internal COAP port 5683   
 - `mytb-edge-data:/data` - mounts the host's dir `mytb-edge-data` to ThingsBoard Edge DataBase data directory
@@ -94,7 +94,7 @@ docker-compose up
 In order to get access to necessary resources from external IP/Host on Windows machine, please execute the following commands:
 ``` 
 set PATH=%PATH%;"C:\Program Files\Oracle\VirtualBox"
-$ VBoxManage controlvm "default" natpf1 "tcp-8090,tcp,,8090,,9090"  
+$ VBoxManage controlvm "default" natpf1 "tcp-8090,tcp,,8090,,8080"  
 $ VBoxManage controlvm "default" natpf1 "tcp-11883,tcp,,11883,,1883"
 $ VBoxManage controlvm "default" natpf1 "tcp-15683,tcp,,15683,,5683"
 ```
