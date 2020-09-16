@@ -28,9 +28,14 @@ Instructions below are provided for Windows 10/8.1/8/7 32-bit/64-bit.
 
 ### Step 4. ThingsBoard Edge service installation
 
-{% include templates/edge/edge-extract.md %}
+Download installation package.
 
-**Note:** We assume you have installed ThingsBoard to default location: *C:\Program Files (x86)\thingsboard-edge*
+```bash
+wget https://github.com/thingsboard/thingsboard/features/tb-edge-windows.zip
+```
+{: .copy-code}
+
+**Note:** We assume you have unzipped package to default location: *C:\Program Files (x86)*
 
 ### Step 5. Obtain and configure license key
 

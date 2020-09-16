@@ -7,7 +7,7 @@ Similar, **uninstall.bat** will remove ThingsBoard Edge from Windows services.
 The output should be similar to this one:
 
   ```text
-C:\Program Files (x86)\tb-edge>install.bat
+C:\Program Files (x86)\tb-edge\install.bat
 Detecting Java version installed.
 CurrentVersion 18
 Java 1.8 found!

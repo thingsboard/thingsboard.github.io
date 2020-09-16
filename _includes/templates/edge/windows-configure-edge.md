@@ -14,16 +14,6 @@ C:\Program Files (x86)\tb-edge\conf\tb-edge.yml
 ``` 
 {: .copy-code}
 
-###### Add edge key and secret
-
-Locate "cloud" block and replace **PUT_YOUR_EDGE_KEY_HERE** and **PUT_YOUR_EDGE_SECRET_HERE** with your **real credentials** from [Step 3](#step-3-create-edge-and-get-credentials):
- 
-```bash
-cloud:
-    routingKey: "${CLOUD_ROUTING_KEY:PUT_YOUR_EDGE_KEY_HERE}"
-    secret: "${CLOUD_ROUTING_SECRET:PUT_YOUR_EDGE_SECRET_HERE}"
-```
-
 ###### Database configuration
 
 In case you have specified the PostgreSQL superuser password as "postgres", **you can skip this step**. 
@@ -48,3 +38,13 @@ spring:
     password: "${SPRING_DATASOURCE_PASSWORD:YOUR_POSTGRES_PASSWORD_HERE}"
 ``` 
 {: .copy-code}
+
+###### Add edge key and secret
+
+Locate "cloud" block and replace **PUT_YOUR_EDGE_KEY_HERE** and **PUT_YOUR_EDGE_SECRET_HERE** with your **real credentials** from [Step 3](#step-3-create-edge-and-get-credentials):
+ 
+```bash
+cloud:
+    routingKey: "${CLOUD_ROUTING_KEY:PUT_YOUR_EDGE_KEY_HERE}"
+    secret: "${CLOUD_ROUTING_SECRET:PUT_YOUR_EDGE_SECRET_HERE}"
+```
