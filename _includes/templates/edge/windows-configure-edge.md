@@ -16,9 +16,9 @@ C:\Program Files (x86)\tb-edge\conf\tb-edge.yml
 
 ###### Database configuration
 
-In case you have specified the PostgreSQL superuser password as "postgres", **you can skip this step**. 
+In the file "tb-edge.yml" from the previous step locate "# SQL DAO Configuration" block. 
 
-In the file "tb-edge.yml" from the previous step locate "# SQL DAO Configuration" block. Don't forget to replace "postgres" with your real postgres user password:
+Don't forget to **replace YOUR_POSTGRES_PASSWORD_HER** with your real postgres user password:
 
 ```yml
 # SQL DAO Configuration

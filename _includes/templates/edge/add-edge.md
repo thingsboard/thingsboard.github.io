@@ -7,3 +7,4 @@ ThingsBoard Professional Edition%,%postgresql%,%templates/edge/get-edge-key-secr
 ThingsBoard Community Edition%,%hybrid%,%templates/edge/get-edge-key-secret-ce.md%br%{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="rhelThingsboardDatabase" toggle-spec=contenttogglespec %} 
+

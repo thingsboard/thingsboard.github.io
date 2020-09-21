@@ -45,7 +45,6 @@ ThingsBoard Edge provides support for standard ThingsBoard communication protoco
 
 ![image](/images/edge/overview/edge_architecture.svg)
 
-
 ### Edge Rule Engine
 
 ThingsBoard Edge uses separate [ThingsBoard Rule Engine framework](/docs/user-guide/rule-engine-2-0/re-getting-started/) for building event-based workflows on the edge side and communicating with cloud.
@@ -62,37 +61,33 @@ You can find **Edge Rule chains** in the menu by clicking on **Rule chains** but
 
 #### Default edge rule chains
 
-ThingsBoard Edge allows tenants to make edge rule chains **default**. 
-Rule chains with activated default flag will be automatically assigned to the next edges created by the same owner.
+Tenant administrator is able to make edge rule chain **default**. 
+Rule chain with activated default flag will be automatically assigned to the next edges created by the same owner.
 
 ![image](/images/edge/nodes/make-default.png)
 
 ![image](/images/edge/nodes/default.png)
 
-#### Export/Import edge rule chains
+#### Export/Import edge rule chain
 
 You are able to export your rule chain to JSON format and import it to the same or another ThingsBoard instance ([see detailed how-to instruction here](/docs/user-guide/ui/rule-chains/#rule-chains-importexport)).
 
-Keep in mind, **you won't be able to import Core rule chains to the Edge rule chains and vice versa**.
+Keep in mind, **you won't be able to import Core rule chain to the Edge rule chain and vice versa**.
 
 ### Entity Groups management
 
-ThingsBoard Edge is almost completely managed from the cloud UI. 
-
-Tenant Administator have to assign particular entity or entity group (EG) in order to have access in the it to
-
-What can be assigned to edge?
+Tenant Administator is able to assign entity(ies) or entity group(s) to edge:
  * **Entity Group(s) of Users, Assets, Devices, Entity Views, Dashboards**. You may also create new entities in assigned groups.
- * **Rule chains**. By default, new edges are created with assigned **root** and **default** rule chains. **Only** Edge Rule chains can be assigned. 
+ * **Rule chain**. By default, new edges are created with assigned **root** and **default** rule chain(s).
  * **Scheduler events**.
 
-Edge's entity groups management can be accessed from UI:  
+Edge's entity groups management can be accessed from [UI](/docs/user-guide/ui/edges/):  
 
 ![image](/images/edge/overview/cloud-management2.png)
 
-Customer user is able to view entities/EG that are assigned to specific edge.
+Customer user is able to view entities/entity groups that are assigned to specific edge.
 
-Tenant Administrator is also able to **create a new device from ThingsBoard Edge UI**. In this case such device will be created in the cloud and located in device group with special name template: *[Edge] ${name} All*.
+Tenant Administrator is able to **create a new device from ThingsBoard Edge UI**. In this case such device will be created in the cloud and located in device group with special name template: *[Edge] ${name} All*.
 
 ### Roles management
 

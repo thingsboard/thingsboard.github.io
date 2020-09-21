@@ -14,13 +14,14 @@ PE features:
 3. Add new edge entity
 4. Fill required fields (<i>Name</i> and <i>Edge type</i>) in the form "Add Edge"
 
-###### Assign edge to user
-5. Click "Manage edge user groups"
-6. Click "Assign new entity group" and choose group(s) of users that will have access to Edge ThingsBoard
-
 ###### Get credentials
 Click on edge entity and find secret and key. 
 You may copy it with one click. 
 These credentials will be required in [Step 6](#add-edge-key-and-secret).
 
 <br>![image](/images/edge/installation/add-edge-key-secret-pe.gif)
+
+###### Assign edge to user
+In order to login into ThingsBoard Edge you have to use **login and password** of the User that is assigned to edge:
+1. Click "Manage edge user groups"
+2. Click "Assign new entity group" and choose group(s) of users that will have access to Edge ThingsBoard
