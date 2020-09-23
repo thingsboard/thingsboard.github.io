@@ -17,7 +17,7 @@ PE features:
 ###### Get credentials
 Click on edge entity and find secret and key. 
 You may copy it with one click. 
-These credentials will be required in [Step 6](#add-edge-key-and-secret).
+These credentials will be required in further step.
 
 <br>![image](/images/edge/installation/add-edge-key-secret-pe.gif)
 
