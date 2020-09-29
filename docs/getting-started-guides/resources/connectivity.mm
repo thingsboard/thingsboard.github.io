@@ -43,6 +43,12 @@ existingBackend("
    href=/docs/user-guide/integrations/azure-event-hub/>
    fa:fa-windows Azure Event Hub
 </a>
+<a class='innerLink pe'
+   title=Azure&nbsp;IoT&nbsp;Hub&nbsp;Integration
+   target=_self
+   href=/docs/user-guide/integrations/azure-iot-hub/>
+   fa:fa-windows Azure IoT Hub
+</a>
 </br>
 <a class='innerLink pe'
    title=IBM&nbsp;Watson&nbsp;IoT&nbsp;Integration

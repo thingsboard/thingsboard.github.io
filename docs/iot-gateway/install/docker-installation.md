@@ -19,7 +19,7 @@ This guide will help you to install and start ThingsBoard Gateway using Docker o
 **Execute the following command to run this docker directly:**
 
 ```
-docker run -it -v ~/.tb-gateway/logs:/var/log/thingsboard-gateway -v ~/.tb-gateway/extensions:/var/lib/thingsboard_gateway/extensions -v ~/.tb-gateway/config:/etc/thingsboard-gateway/config --name tb-gateway --restart always thingsboard/tb-gateway
+docker run -it -v ~/.tb-gateway/logs:/thingsboard_gateway/logs -v ~/.tb-gateway/extensions:/thingsboard_gateway/extensions -v ~/.tb-gateway/config:/thingsboard_gateway/config --name tb-gateway --restart always thingsboard/tb-gateway
 ```
 {: .copy-code}
 
@@ -27,9 +27,9 @@ Where:
     
 - `docker run`              - run this container
 - `-it`                     - attach a terminal session with current Gateway process output
-- `-v ~/.tb-gateway/config:/etc/thingsboard-gateway/config`   - mounts the host's dir `~/.tb-gateway/config` to Gateway config  directory
-- `-v ~/.tb-gateway/extensions:/var/lib/thingsboard_gateway/extensions`   - mounts the host's dir `~/.tb-gateway/extensions` to Gateway extensions  directory
-- `-v ~/.tb-gateway/logs:/var/log/thingsboard-gateway`   - mounts the host's dir `~/.tb-gateway/logs` to Gateway logs  directory
+- `-v ~/.tb-gateway/config:/thingsboard_gateway/config`   - mounts the host's dir `~/.tb-gateway/config` to Gateway config  directory
+- `-v ~/.tb-gateway/extensions:/thingsboard_gateway/extensions`   - mounts the host's dir `~/.tb-gateway/extensions` to Gateway extensions  directory
+- `-v ~/.tb-gateway/logs:/thingsboard_gateway/logs`   - mounts the host's dir `~/.tb-gateway/logs` to Gateway logs  directory
 - `--name tb-gateway`             - friendly local name of this machine
 - `--restart always`        - automatically start ThingsBoard in case of system reboot and restart in case of failure.
 - `thingsboard/tb-gateway`          - docker image

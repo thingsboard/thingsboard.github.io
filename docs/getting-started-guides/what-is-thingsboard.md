@@ -26,6 +26,8 @@ With ThingsBoard, you are able to:
  
 See [**ThingsBoard features list**](/docs/#community-edition-features) for more features and useful links to the specific feature documentation. 
 
+<object width="80%" data="/images/reference/thingsboard-architecture.svg"></object>
+
 #### Architecture
 
 ThingsBoard is designed to be:

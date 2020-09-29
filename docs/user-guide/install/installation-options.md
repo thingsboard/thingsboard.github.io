@@ -136,7 +136,7 @@ notitle: "true"
                                         <a href="/docs/user-guide/install/cluster-setup/">
                                             <span>
                                                 <div class="deployment-logo" style="height:134px">
-                                                    <img width="" src="/images/install/platform/cluster.png" title="Cluster setup" alt="Cluster setup">
+                                                    <img width="" src="/images/install/platform/cluster.png" title="Cluster setup with Kubernetes" alt="Cluster setup with Kubernetes">
                                                  </div>
                                             </span>
                                         </a>
@@ -145,13 +145,13 @@ notitle: "true"
                             </div>                        
                         </div>
                         <div class="deployment-section deployment-cloud" id="cloud">
-                            <div class="deployment-cards">
+                            <div class="deployment-cards">                  
                                 <div class="deployment-cards-container">
                                     <div class="deployment-card-block">
                                         <a href="/docs/user-guide/install/aws/">
                                             <span>
-                                                <div class="deployment-logo coming-soon" style="height:134px">
-                                                    <img width="" src="/images/install/cloud/aws.png" title="AWS" alt="AWS">
+                                                <div class="deployment-logo" style="height:134px">
+                                                    <img width="" src="/images/install/cloud/aws.svg" title="AWS" alt="AWS">
                                                  </div>
                                             </span>
                                         </a>

@@ -26,10 +26,10 @@ In small and medium installations Trendz can be installed **on the same** server
 
 ### Step 2. ThingsBoard service installation
 
-Download and run the installation package.
+Download and extract the package.
 
 ```bash
-https://dist.thingsboard.io/trendz-windows-1.4.0.zip
+https://dist.thingsboard.io/trendz-windows-1.5.0.zip
 ```
 {: .copy-code}
 

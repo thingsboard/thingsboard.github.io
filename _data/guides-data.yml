@@ -84,6 +84,42 @@
       keywords: install cluster
       video: false
       pe: false
+    - path: /docs/user-guide/install/aws/
+      title: AWS cluster setup
+      subtitle: Learn how to setup ThingsBoard cluster on AWS infrastructure.
+      keywords: install cluster aws
+      video: false
+      pe: false
+    - path: /docs/user-guide/install/cluster/docker-compose-setup/
+      title: Cluster setup with Docker Compose
+      subtitle: Learn how to setup ThingsBoard cluster with Docker Compose.
+      keywords: install cluster docker docker-compose
+      video: false
+      pe: false
+    - path: /docs/user-guide/install/cluster/minikube-cluster-setup
+      title: Cluster setup with Kubernetes using Minikube
+      subtitle: Learn how to setup ThingsBoard cluster with Kubernetes using Minikube.
+      keywords: install cluster kubernetes k8s minikube
+      video: false
+      pe: false
+    - path: /docs/user-guide/install/cluster/aws-cluster-setup
+      title: Cluster setup with Kubernetes and KubeOne on AWS cloud infrstructure
+      subtitle: Learn how to setup ThingsBoard cluster with Kubernetes on AWS cloud infrstructure.
+      keywords: install cluster kubernetes k8s aws cloud
+      video: false
+      pe: false
+    - path: /docs/user-guide/install/cluster/aws-self-hosted-setup
+      title: Self-hosted setup using AWS EC2 instance
+      subtitle: Learn how to setup ThingsBoard on AWS EC2 instance.
+      keywords: install ec2 aws cloud self-hosted
+      video: false
+      pe: false
+    - path: /docs/user-guide/install/cluster/openshift-cluster-setup
+      title: Cluster setup with Kubernetes using OpenShift
+      subtitle: Learn how to setup ThingsBoard cluster with Kubernetes using OpenShift.
+      keywords: install cluster kubernetes k8s openshift
+      video: false
+      pe: false
 - title: Connect your device
   subtitle: Learn how to connect devices based on your connectivity technology or solution.
   id: ConnectYourDevice
@@ -184,6 +220,12 @@
       keywords:
       pe: true
       video: true
+    - path: /docs/user-guide/integrations/azure-iot-hub/
+      title: Connect devices through Azure IoT Hub
+      subtitle: Learn how to connect to Azure IoT Hub and transform the incoming messages using ThingsBoard.
+      keywords:
+      pe: true
+      video: false
     - path: /docs/user-guide/integrations/tcp/
       title: Devices uses TCP protocol
       subtitle: How to connect to ThingsBoard TCP-server, transform the incoming messages and generate the downlinks using ThingsBoard.
@@ -315,6 +357,14 @@
       subtitle: Connect to external brokers and send MQTT data stream
       keys: mqtt connect
       pe: true
+    - path: /docs/user-guide/rule-engine-2-5/tutorials/queues-for-synchronization/
+      title: Using queues for synchronization
+      subtitle: Learn how to use Rule Engine 2.5 queues for message processing synchronization.
+      pe: false
+    - path: /docs/user-guide/rule-engine-2-5/tutorials/queues-for-message-reprocessing/
+      title: Using queues for message reprocessing
+      subtitle: Learn how to use Rule Engine 2.5 queues for message reprocessing in case of failure or timeout.
+      pe: false
 - title: IoT Data analytics
   subtitle: Learn how to use rule engine to perform basic analytics tasks.
   id: DataAnalytics
@@ -460,6 +510,24 @@
       subtitle: Learn how to schedule and generate reports based on existing dashboards.
       pe: true
       video: true
+
+- title: OAuth 2.0
+  subtitle: Learn how to step-by-step setup OAuth with different providers.
+  id: OAuth
+  section:
+  - path: /docs/user-guide/oauth/google
+    title: Google OAuth example
+    subtitle: Learn how to step-by-step setup OAuth with Google.
+  - path: /docs/user-guide/oauth/oauth0
+    title: OAuth0 OAuth example
+    subtitle: Learn how to step-by-step setup OAuth with OAuth0.
+  - path: /docs/user-guide/oauth/okta
+    title: OAuth0 Okta example
+    subtitle: Learn how to step-by-step setup OAuth with Okta.
+  - path: /docs/user-guide/oauth/azure
+    title: OAuth0 Azure Active Directory example
+    subtitle: Learn how to step-by-step setup OAuth with Azure Active Directory.
+
 - title: Contribution and Development
   subtitle: Learn how to contribute to Thingsboard, customize & develop custom widgets and rule nodes
   id: Contribution

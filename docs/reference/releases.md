@@ -8,6 +8,373 @@ description: ThingsBoard architecture
 * TOC
 {:toc}
 
+## v3.1.1 (August 28, 2020)
+
+### ThingsBoard CE
+
+Minor bug fix release:
+
+**Improvements:**
+
+ * Performance improvement for Alarm related SQL queries;
+ * UI: Upgrade Angular framework version to 10;
+ * UI: Switch to yarn package-manager;
+ * UI: Update Italian locale;
+ * UI: Improved modules loading;
+ * UI: Introduced common modules map;
+
+ **Bug fixes:**
+
+ * UI: Fixed error tslint for map widget;
+ * UI: Fixed update position new marker/polygon on resize in image-map;
+ * UI: Fixed call action: polygon click;
+ * UI: Fixed clear state params for dashboardId change;
+ * Various fixed of filtering queues;
+
+### ThingsBoard PE
+
+Everything from [TB CE v3.1.1](https://github.com/thingsboard/thingsboard/releases/tag/v3.1.1) with the following improvements.
+
+Main features:
+
+* Created Apache Pulsar integration;
+* Added lifecycle event "UPDATE" for converter;
+
+Bug Fixes:
+
+* UI: Limit Aggregation Time Unit;
+* Fixed query in case generic is not set and entity group ids is present;
+* Fixed entity data query - replace bool_or with max;
+* Fixed search by type for user entities query;
+* Fixed for text search in entity selection;
+* Fixed Tenant User queries with a combination of generic and group permissions;
+* Removed PostgreSQL from tb-pe image;
+* Remote integration API: Force disconnect on connection error;
+
+## v2.5.4 (August 28, 2020)
+
+### ThingsBoard CE
+
+**Improvements:**
+
+ * Password from SMTP settings is no longer shared to UI;
+ * Added logs for in memory queue
+
+ **Bug fixes:**
+
+ * Fixed SQL scripts for Unit tests
+
+### ThingsBoard PE
+
+Everything from [TB CE v2.5.4](https://github.com/thingsboard/thingsboard/releases/tag/v2.5.4).
+
+Main features:
+
+* Created Apache Pulsar integration;
+
+Bug fixes:
+
+* UI: Fixed show dashboard added Group permission;
+* Fixed Report service - duplicate generate report post request;
+* Fixed tb-pe docker image;
+
+## v3.1 (August 12, 2020)
+
+### ThingsBoard CE
+
+Minor release with the following improvements and bug fixes.
+
+**Main features:**
+
+ * Filters over entity fields, attributes and latest telemetry; 
+ * Alarm widget improvements;
+ * Performance improvements to insets in PostgreSQL;
+ * Ability to store the latest values in SQL instead of NoSQL;
+
+**Additional features:**
+
+ * UI: 
+   * External angular modules for widget development;
+   * Support of the files with .txt extensions in bulk import of entities;
+   * Flot: add ability to use attributes in datakeys labels;
+   * Maps cluster mode optimizations;
+   * Add ability to edit polygons on image map;
+   * New alias entity types: Current User and Current User Owner (Tenant or Customer);
+ * Rule Engine: 
+   * Improved logging of failed and timeout messages;
+   * Azure iot hub rule node;
+   * Open rule chain from rule node link;
+   * Clear alarm node now accepts alarm id as an originator;
+   * Log time to acknowledge message;
+   * Display sorted metadata keys in rule nodes;
+ * REST API: Ability to move device to another tenant;
+ * Enable default credential provider chain for aws sqs;
+ * Added logging of MQTT payload errors;
+ * Added support of Confluent cloud;
+
+**Bug fixes:**
+
+ * UI: 
+   * Fixed show polygon on image map widget;
+   * Fix page link without pagination. Minor fixes;
+   * Fix boolean input widgets;
+   * Fix web camera input widget;
+
+### ThingsBoard PE
+
+Everything from [TB CE v3.1](https://github.com/thingsboard/thingsboard/releases/tag/v3.1) with the following improvements.
+
+Main features:
+
+* Performance improvements for majority of REST API calls;
+* Azure IoT Hub integration;
+* The Things Industries integration;
+
+## v2.5.3 (August 12, 2020)
+
+### ThingsBoard CE
+
+**Improvements:**
+
+ * Performance improvements to inserts in PostgreSQL;
+ * Prometheus Metrics;
+ * Created Azure IoT hub rule node;
+ * REST API: Ability to move device to another tenant;
+ * Added proxy configs to rest api call rule node (#2943);
+
+**Bug fixes:**
+
+ * refactored DataValidator email pattern
+
+### ThingsBoard PE
+
+Everything from [TB CE v2.5.3](https://github.com/thingsboard/thingsboard/releases/tag/v2.5.3).
+
+## v3.0.1 (June 9, 2020)
+
+### ThingsBoard CE
+
+Minor release with everything from 3.0/2.5.2 plus the following improvements.
+
+**Improvements:**
+
+ * Improved database migration - create indexes after inserts;
+ * Improved rpc error handling;
+ * Moved component tb-contact to shared module;
+ * Updated Czech translation;
+
+**Bug fixes:**
+
+ * UI: Dashboard page fixes and improvements;
+ * UI: Fix map tooltip actions;
+ * UI: Input maps fixed: error create the first marker;
+ * UI: Fix image map initialization;
+ * UI: Fix state chart subscription;
+ * Set correct cassandra datacenter;
+
+### ThingsBoard PE
+
+Everything from [TB CE v3.0.1](https://github.com/thingsboard/thingsboard/releases/tag/v3.0.1) with the following improvements.
+
+**Bug fixes:**
+
+ * UI: Fix null value during export into csv.
+
+## v2.5.2 (June 9, 2020)
+
+### ThingsBoard CE
+
+Minor bug-fix release with few improvements.
+
+**Improvements:**
+
+ * Replaced Akka with pure java implementation of Actor System;
+ * Using external executor in Kafka Node;
+ * Improvements for actor initialization logic;
+ * Improved handling of peak connect attempts;
+ * RPC Request Node improvement to avoid blocking;
+
+**Bug fixes:**
+
+ * UI: Fixed the activation of on-row event on details click;
+ * UI: Fixed problem widget-editor in Safari #2900;
+ * Message is pushed to correct queue in case of duplication;
+ * Never use Fork-Join pool with parallelism set to 1.
+
+### ThingsBoard PE
+
+Everything from [TB CE v2.5.2](https://github.com/thingsboard/thingsboard/releases/tag/v2.5.2) with the following improvements.
+
+**Bug fixes:**
+
+ * UI: Fix null value during export into csv;
+
+## v3.0 (June 1, 2020)
+
+### ThingsBoard CE
+
+Major release with everything from 2.5 plus the following improvements.
+
+**Main features:**
+
+ * AngularJS 1.5.8 -> Angular 9 migration for entire UI;
+ * Force SQL DB usage to store entities;
+
+**Additional features:**
+
+ * Improved pagination and filtering;
+ * Improved and refactored Map widgets;
+ * Improved tool-tips for widget development;
+ * Cassandra driver updated to 4.x;
+ * Dramatically reduced number of REST API calls generated by UI;
+ * Replaced Velocity with Freemarker.
+
+
+### ThingsBoard PE
+
+Everything from [TB CE v3.0](https://github.com/thingsboard/thingsboard/releases/tag/v3.0) with the following improvements.
+
+**Main features:**
+
+ * Advanced CSS for White-labeling;
+
+**Additional features:**
+
+ * No more "Fetch more" button;
+ * SQL native filtering and pagination in entity groups;
+
+## v2.5.1 (June 1, 2020)
+
+### ThingsBoard CE
+
+Minor bug-fix release with few improvements.
+
+**Improvements:**
+
+ * UI: Batch support for fetching entities from relations 
+ * Improved K8S deployment scripts;
+ * Cluster mode performance improvements;
+ * Proxy configuration for email rule node and sysadmin email settings;
+ * Additional setting "max_eval_requests_timeout" to separate JS "eval" from JS "invoke" timeouts;
+ * Added 'alwaysFullScreen' and 'defaultDashboardName' OAuth2 properties;
+ * Refactored DEB/RPM builds to minimize code duplication and enable CentOS 8 support;
+ * Added gatewayId to metadata in ENTITY_CREATED event message;
+ * Added timestamp to TbMsg;
+ * Added minimum RPC timeout value setting;
+
+**Bug fixes:**
+
+ * Fixed claim devices API;
+ * Fixed shared/client attribute updates over WS;
+ * Fixed REST API security checks for some corner cases;
+ * UI: Fixed data displaying in mobile browser for digital gauge widget;
+ * Fixed 2.4.3 -> 2.5 upgrade script for AWS RDS; 
+
+### ThingsBoard PE
+
+Everything from [TB CE v2.5.1](https://github.com/thingsboard/thingsboard/releases/tag/v2.5.1) with the following improvements.
+
+**Improvements:**
+
+ * Performance improvement for RBAC functionality;
+ * Added maxRecords and requestTimeout to AWS Kinesis integration;
+
+**Bug fixes:**
+
+ * Start scheduled events correctly if startTime is set earlier than repeat config start date
+
+## v2.5 (May 12, 2020)
+
+### ThingsBoard CE
+
+Major release with the following improvements.
+
+**Main features:**
+
+* Support of new Queue implementations: AWS SQS, Google Pub/Sub, Azure Service Bus and RabbitMQ;
+* Rule Engine:
+    * Implemented back pressure logic; 
+    * Implemented processing checkpoints;
+    * Configurable Submit and Ack strategies;
+    * Ability to launch Rule Engine as separate microservice;
+    * Ability to isolate tenant processing to separate rule engine instance(s);
+    * Improved statistics and error tracing;
+    * Automatic reset of blacklisted functions;
+    * Replaced gRPC with queues for communication between ThingsBoard components;
+* OAuth support;
+* JSON support for telemetry and attributes;
+* Improvements to timeseries DAO for SQL:
+    * Reduced size of telemetry tables on 40%;
+    * Updated minimum PostgreSQL version from 9.x to 11.x;
+    * Configurable TTL implementation for telemetry and events;
+     * Partitioning of time series data in PostgreSQL;
+* Non Root docker images support;
+* Refactored and improved Java REST client;
+* UI: Added Widgets and Dashboard for Managing Gateway;
+    
+
+**Additional features:**
+
+* Service Discovery improvements;
+* Introduced SMTP TLS version to default mail service and send email node;
+* Added settings for queue topic creation;
+* Added "check alarm status" rule node;
+* Added "sendActivationEmail" as request param for activateUser controller;
+* UI: Added new alias - "current tenant";
+* UI: Added ticks support to digital gauge;
+* UI: Added ability to configure thresholds to Flot charts;
+* UI: Added gauge color limits configuration; 
+* UI: Added Latvian locale;
+* UI: Added Romanian locale;
+* UI: Added fetchLastLevelOnly checkbox to alias query filter;
+* UI: Added option to set bar alignment in 'flot-bar-widget';
+* UI: Added new settings to web-camera input widget;
+* UI: Added ability to use apostrophe in custom translations in tables;
+* Demo Data: Added "Thermostats" Dashboard as an example of custom actions;
+
+**Bug fixes:**
+
+* Fixed MQTT inactivity disconnects;
+* Fixed concurrent processing of new device connections for gateway MQTT session;
+* Fixed device reconnect abnormal when certificate authentication is turned on;
+* Fixed Alarm Ack/Clear/Update when Relation Type Filter is used;
+* Fixed PostgreSQL Inserts logic;
+* Fixed logging statistics configuration;
+* Fixed dependency vulnerabilities;
+* Fixed PEM keys with password for MQTT server;
+* UI: Fixed error when updating websocket for “impersonated” user (#2743)
+* UI: Fixed SQL DAO shutdown sequence;
+* UI: Fixed Digital gauge values don't switch to 0 when telemetry is 0;
+* UI: Fixed Digital Gauge Widget sometimes does not update latest value;
+* UI: Fixed infinite loop caused by default md-dialog resize function in Safari
+* UI: Fixed manage dashboard states for Safari;
+* UI: Fixed entity label for header action in dashboard states;
+* UI: Fixed validation for geo-fencing nodes;
+* UI: Fixed dialogs in Safari;
+
+
+### ThingsBoard PE
+
+Everything from [TB CE v2.5](https://github.com/thingsboard/thingsboard/releases/tag/v2.5) with the following improvements.
+
+**Main features:**
+
+ * Rule Engine improvements similar to Community Edition;
+ * OAuth improvements similar to Community Edition;
+ * Improved performance;
+
+**Additional features:**
+
+ * Added Entity Name column for multiple entities to export functionality;
+ * Avoid entity count check for unlimited subscriptions;
+ * Persistent volumes for k8s deployments to store license data;
+ 
+**Bug fixes:**
+
+ * UI: Fix XLSX export to use local time;
+ * UI: Add CSV string-delimiter for export;
+ * RE: Fix for owner logic in TbAddToGroupNode node.
+
 ## v2.4.3 (January 8, 2020)
 
 ### ThingsBoard CE
@@ -190,7 +557,7 @@ Additional features:
 - Integration enable/disable feature;
 - AWS SQS Integration;
 
-## v2.4.0 (July 10, 2019)
+## v2.4 (July 10, 2019)
 
 ### ThingsBoard CE
 

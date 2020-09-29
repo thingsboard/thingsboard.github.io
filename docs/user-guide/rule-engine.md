@@ -26,7 +26,7 @@ With Rule Engine you can:
 
 Rule engine operates with two main components: Rules and Plugins. 
 The job of Rule Engine is to sequentially apply configured rules to incoming messages.
-Although rules are applied sequentially, rule execution is asynchronous and is based on [actors](http://akka.io/). 
+Although rules are applied sequentially, rule execution is asynchronous and is based on Actor System. 
 This allows processing of messages from the device in the same order in which they are received without sacrificing performance.
 
 The results of processing may or may not be delivered back to device application. 

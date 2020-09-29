@@ -36,6 +36,7 @@ description: ThingsBoard documentation - learn about the platform and get your I
         <li><b><a href="/docs/user-guide/integrations/thingpark/">ThingPark</a></b></li>
         <li><b><a href="/docs/user-guide/integrations/ttn/">TheThingsNetwork</a></b></li>
         <li><b><a href="/docs/user-guide/integrations/azure-event-hub/">Azure Event Hub</a></b></li>
+        <li><b><a href="/docs/user-guide/integrations/azure-iot-hub/">Azure IoT Hub</a></b></li>
         <li><b><a href="/docs/user-guide/integrations/ibm-watson-iot/">IBM Watson IoT</a></b></li>
         <li><b><a href="/docs/user-guide/integrations/aws-iot/">AWS IoT</a></b></li>
         <li><b><a href="/docs/user-guide/integrations/aws-kinesis/">AWS Kinesis</a></b></li>

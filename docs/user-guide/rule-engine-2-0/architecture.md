@@ -17,7 +17,7 @@ ThingsBoard rule engine is based on two main components: the actor model and mes
 ### Actor model
 
 Actor model enables high performance and concurrent processing of messages from device transport layer as long as server-side API calls. 
-ThingsBoard uses Akka as an actor system implementation. 
+ThingsBoard uses own Actor System implementation that is sharpened for our use case. 
 There are two main actors related to the rule engine: Rule Chain Actor and Rule Node Actor.
 
 #### Rule Chain Actor

@@ -20,6 +20,10 @@ toc:
       path: /docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms-v2/
     - title: Send Email v2
       path: /docs/user-guide/rule-engine-2-0/tutorials/send-email-v2/
+    - title: Using queues for synchronization
+      path: /docs/user-guide/rule-engine-2-5/tutorials/queues-for-synchronization/
+    - title: Using queues for message reprocessing
+      path: /docs/user-guide/rule-engine-2-5/tutorials/queues-for-message-reprocessing/
   - title: Advanced
     section:
     - title: Check Relation between Entities

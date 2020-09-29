@@ -174,13 +174,13 @@ Useful for changing entity attributes.
 
 You are able to export widgets bundle to JSON format and import it to the same or another ThingsBoard instance.
 
-In order to export widgets bundle, you should navigate to the **Widgets Library** page and click on the export button located on the particular widgets bundle card.
+In order to export widgets bundle, you should navigate to the **Widgets Library** page and click on the export button located on the particular widgets bundle row.
  
 ![image](/images/user-guide/ui/export-widgets-bundle.png)
 
 #### Widgets Bundle import
 
-Similar, to import the widgets bundle you should navigate to the **Widgets Library** page and click on the big "+" button in the bottom-right part of the screen and then click on the import button. 
+Similar, to import the widgets bundle you should navigate to the **Widgets Library** page and click on the "+" button in the top-right corner of the **Widgets Bundles** table and then choose "Import widgets bundle" option. 
 
 ![image](/images/user-guide/ui/import-widgets-bundle.png)
 

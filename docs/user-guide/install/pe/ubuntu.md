@@ -26,14 +26,14 @@ To run ThingsBoard and Cassandra on a single machine you will need at least 8Gb 
 Download installation package.
 
 ```bash
-wget https://dist.thingsboard.io/thingsboard-2.4.3pe.deb
+wget https://dist.thingsboard.io/thingsboard-{{ site.release.pe_ver }}.deb
 ```
 {: .copy-code}
 
 Install ThingsBoard as a service
 
 ```bash
-sudo dpkg -i thingsboard-2.4.3pe.deb
+sudo dpkg -i thingsboard-{{ site.release.pe_ver }}.deb
 ```
 {: .copy-code}
 
@@ -73,19 +73,36 @@ export TB_LICENSE_SECRET=YOUR_LICENSE_SECRET_HERE
 
 {% capture contenttogglespec %}
 PostgreSQL <small>(recommended for < 5K msg/sec)</small>%,%postgresql%,%templates/install/ubuntu-db-postgresql.md%br%
-Hybrid <br/>PostgreSQL+Cassandra<br/><small>(recommended for > 5K msg/sec)</small>%,%hybrid%,%templates/install/ubuntu-db-hybrid.md{% endcapture %}
+Hybrid <br/>PostgreSQL+Cassandra<br/><small>(recommended for > 5K msg/sec)</small>%,%hybrid%,%templates/install/ubuntu-db-hybrid.md%br%
+Hybrid <br/>PostgreSQL+TimescaleDB<br/><small>(for TimescaleDB professionals)</small>%,%timescale%,%templates/install/ubuntu-db-hybrid-timescale.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="ubuntuThingsboardDatabase" toggle-spec=contenttogglespec %} 
 
-### Step 5. [Optional] Memory update for slow machines (1GB of RAM) 
+### Step 5. Choose ThingsBoard queue service
+
+{% include templates/install/install-queue.md %}
+
+{% capture contenttogglespecqueue %}
+In Memory <small>(built-in and default)</small>%,%inmemory%,%templates/install/queue-in-memory.md%br%
+Kafka <small>(recommended for on-prem, production installations)</small>%,%kafka%,%templates/install/ubuntu-queue-kafka.md%br%
+Kafka in docker container <small>(recommended for on-prem, production installations)</small>%,%kafka-in-docker%,%templates/install/ubuntu-queue-kafka-in-docker.md%br%
+AWS SQS <small>(managed service from AWS)</small>%,%aws-sqs%,%templates/install/ubuntu-queue-aws-sqs.md%br%
+Google Pub/Sub <small>(managed service from Google)</small>%,%pubsub%,%templates/install/ubuntu-queue-pub-sub.md%br%
+Azure Service Bus <small>(managed service from Azure)</small>%,%service-bus%,%templates/install/ubuntu-queue-service-bus.md%br%
+RabbitMQ <small>(for small on-prem installations)</small>%,%rabbitmq%,%templates/install/ubuntu-queue-rabbitmq.md%br%
+Confluent Cloud <small>(Event Streaming Platform based on Kafka)</small>%,%confluent-cloud%,%templates/install/ubuntu-queue-confluent-cloud.md{% endcapture %}
+
+{% include content-toggle.html content-toggle-id="ubuntuThingsboardQueue" toggle-spec=contenttogglespecqueue %} 
+
+### Step 6. [Optional] Memory update for slow machines (1GB of RAM) 
 
 {% include templates/install/memory-on-slow-machines.md %} 
 
-### Step 6. Run installation script
+### Step 7. Run installation script
 
 {% include templates/run-install.md %} 
 
-### Step 7. Start ThingsBoard service
+### Step 8. Start ThingsBoard service
 
 {% include templates/start-service.md %}
 
@@ -93,12 +110,12 @@ Hybrid <br/>PostgreSQL+Cassandra<br/><small>(recommended for > 5K msg/sec)</smal
 Please allow up to 90 seconds for the Web UI to start. This is applicable only for slow machines with 1-2 CPUs or 1-2 GB RAM.{% endcapture %}
 {% include templates/info-banner.md content=90-sec-ui %}
 
-### Step 8. Install ThingsBoard WebReport component
+### Step 9. Install ThingsBoard WebReport component
 
 Download installation package for the [Reports Server](/docs/user-guide/reporting/#reports-server) component:
 
 ```bash
-wget https://dist.thingsboard.io/tb-web-report-2.4.3pe.deb
+wget https://dist.thingsboard.io/tb-web-report-{{ site.release.pe_ver }}.deb
 ```
 {: .copy-code}
 
@@ -109,7 +126,7 @@ sudo apt install -yq gconf-service libasound2 libatk1.0-0 libc6 libcairo2 libcup
      libexpat1 libfontconfig1 libgcc1 libgconf-2-4 libgdk-pixbuf2.0-0 libglib2.0-0 libgtk-3-0 libnspr4 \
      libpango-1.0-0 libpangocairo-1.0-0 libstdc++6 libx11-6 libx11-xcb1 libxcb1 libxcomposite1 \
      libxcursor1 libxdamage1 libxext6 libxfixes3 libxi6 libxrandr2 libxrender1 libxss1 libxtst6 \
-     ca-certificates fonts-liberation libappindicator1 libnss3 lsb-release xdg-utils unzip wget
+     ca-certificates fonts-liberation libappindicator1 libnss3 lsb-release xdg-utils unzip wget libgbm-dev
 ```
 {: .copy-code}
 
@@ -138,7 +155,7 @@ rm -rf ~/noto
 Install and start Web Report service:
 
 ```bash
-sudo dpkg -i tb-web-report-2.4.3pe.deb
+sudo dpkg -i tb-web-report-{{ site.release.pe_ver }}.deb
 sudo service tb-web-report start
 ```
 

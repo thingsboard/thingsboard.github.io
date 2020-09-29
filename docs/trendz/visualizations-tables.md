@@ -9,6 +9,16 @@ description: Trendz Table View
 * TOC
 {:toc}
 
+## Video Tutorial
+
+&nbsp; 
+  
+<div id="video">  
+    <div id="video_wrapper">
+        <iframe src="https://www.youtube.com/embed/oFYlDUGS0mI" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
+
 
 ## Simple Table
 In this mode, you drag-n-drop fields only to the **Columns** section. Each field represents a column in the table. 

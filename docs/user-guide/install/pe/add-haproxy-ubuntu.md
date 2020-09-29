@@ -30,7 +30,7 @@ or consult your cloud vendor for different options.
 Execute the following commands to install HAProxy package:
 
 ```bash
-sudo add-apt-repository ppa:vbernat/haproxy-1.7
+sudo add-apt-repository ppa:vbernat/haproxy-1.8
 sudo apt-get update
 sudo apt-get install haproxy openssl
 ```

@@ -28,6 +28,9 @@ toc:
     path: /docs/user-guide/rpc/
   - title: Data visualization
     path: /docs/user-guide/visualization/
+  - title: OAuth 2 Support
+    path: /docs/user-guide/oauth-2-support/
+    new: true
   - title: Advanced RBAC for IoT
     path: /docs/user-guide/rbac/
     pe: true
@@ -97,6 +100,8 @@ toc:
       path: /docs/user-guide/rule-engine-2-0/pe/action-nodes/
     - title: Analytics Nodes
       path: /docs/user-guide/rule-engine-2-0/pe/analytics-nodes/
+  - title: Custom Rule Nodes
+    path: /docs/user-guide/contribution/rule-node-development/
 - title: Integrations
   pe: true
   section:
@@ -115,6 +120,8 @@ toc:
     path: /docs/user-guide/integrations/thingpark/
   - title: TheThingsNetwork
     path: /docs/user-guide/integrations/ttn/
+  - title: TheThingsIndustries
+    path: /docs/user-guide/integrations/tti/
   - title: AWS IoT
     path: /docs/user-guide/integrations/aws-iot/
   - title: AWS Kinesis
@@ -123,6 +130,8 @@ toc:
     path: /docs/user-guide/integrations/ibm-watson-iot/
   - title: Azure Event Hub
     path: /docs/user-guide/integrations/azure-event-hub/
+  - title: Azure IoT Hub
+    path: /docs/user-guide/integrations/azure-iot-hub/
   - title: TCP
     path: /docs/user-guide/integrations/tcp/
   - title: UDP
@@ -186,6 +195,8 @@ toc:
             path: /docs/trendz/install/docker-windows/
           - title: Installing Trendz using Docker (Linux or Mac OS)
             path: /docs/trendz/install/docker/
+          - title: Upgrade instructions
+            path: /docs/trendz/install/trndz-upgrade-instructions/
       - title: Connect Trendz to Thingsboard
         path: /docs/trendz/connect-thingsboard/
       - title: Data Visualization
@@ -220,11 +231,15 @@ toc:
         path: /docs/trendz/prediction/
       - title: Share and embed Visualizations
         path: /docs/trendz/embed-visuals/
+      - title: Trendz Release Notes
+        path: /docs/trendz/releases/
   - title: Kafka Streams
     new: true
     path: /docs/samples/analytics/kafka-streams/
 - title: Security
   section:
+  - title: OAuth 2 Support
+    path: /docs/user-guide/oauth-2-support/
   - title: MQTT over SSL
     path: /docs/user-guide/mqtt-over-ssl/
   - title: Device authentication options
@@ -305,10 +320,21 @@ toc:
         path: /docs/iot-gateway/config/bacnet/
       - title: ODBC Connector
         path: /docs/iot-gateway/config/odbc/
+      - title: REST Connector
+        path: /docs/iot-gateway/config/rest/
+      - title: SNMP Connector
+        path: /docs/iot-gateway/config/snmp/
   - title: Customization guide
     path: /docs/iot-gateway/custom/
   - title: IoT Gateway features
     path: /docs/iot-gateway/features/
+    section:
+      - title: Remote logging
+        path: /docs/iot-gateway/guides/how-to-enable-remote-logging/
+      - title: Service RPC methods
+        path: /docs/iot-gateway/guides/how-to-use-gateway-rpc-methods/
+      - title: Remote shell
+        path: /docs/iot-gateway/guides/how-to-enable-remote-shell/
   - title: IoT Gateway Roadmap
     path: /docs/iot-gateway/roadmap/
 - title: Troubleshooting
@@ -319,8 +345,10 @@ toc:
       path: /docs/user-guide/contribution/how-to-contribute/
     - title: Rule Node development
       path: /docs/user-guide/contribution/rule-node-development/
-    - title: Widgets development
+    - title: Widgets development (ThingsBoard v3.x)
       path: /docs/user-guide/contribution/widgets-development/
+    - title: Widgets development (ThingsBoard v2.x)
+      path: /docs/user-guide/contribution/widgets-development-before-3.0/
 - title: Release Notes
   path: /docs/reference/releases/
 - title: Roadmap

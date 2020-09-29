@@ -1,14 +1,14 @@
 Download installation package:
 
 ```bash
-wget https://dist.thingsboard.io/tb-aws-integration-2.4.3pe.rpm
+wget https://dist.thingsboard.io/tb-aws-integration-{{ site.release.pe_ver }}.rpm
 ```
 {: .copy-code}
 
 Install integration as a service:
 
 ```bash
-sudo rpm -Uvh tb-aws-integration-2.4.3pe.rpm
+sudo rpm -Uvh tb-aws-integration-{{ site.release.pe_ver }}.rpm
 ```
 {: .copy-code}
 

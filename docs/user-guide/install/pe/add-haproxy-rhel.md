@@ -37,17 +37,32 @@ or consult your cloud vendor for different options.
 
 Execute the following commands to install HAProxy package:
 
-- CentOS 7:
+- CentOS 8:
+
 ```bash
-sudo yum -y install http://www.nosuchhost.net/~cheese/fedora/packages/epel-7/x86_64/cheese-release-7-1.noarch.rpm
-sudo yum -y install haproxy-1.7.3
+dnf update -y
+dnf install haproxy
+
 ```
+{: .copy-code}
+
+- CentOS 7:
+
+```bash
+sudo yum remove haproxy
+sudo yum -y install centos-release-scl
+sudo yum -y install rh-haproxy18-haproxy rh-haproxy18-haproxy-syspaths
+
+```
+{: .copy-code}
 
 - RHEL 7:
 
 ```bash
 sudo yum -y install ftp://ftp.pbone.net/mirror/ftp5.gwdg.de/pub/opensuse/repositories/home:/IFAD:/RHEL/RHEL_7/x86_64/haproxy-1.7.11-1.1.x86_64.rpm
+
 ```
+{: .copy-code}
 
 ### Step 3. Install Certbot package
 
@@ -57,6 +72,7 @@ RHEL 7 ONLY - Enable the optional channel:
 sudo yum -y install yum-utils
 sudo yum-config-manager --enable rhui-REGION-rhel-server-extras rhui-REGION-rhel-server-optional
 ```
+{: .copy-code}
 
 Execute the following commands to install Certbot package:
 

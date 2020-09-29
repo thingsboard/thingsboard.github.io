@@ -341,6 +341,7 @@ Explore guides and video tutorials related to specific integrations:
  - [AWS Kinesis](/docs/user-guide/integrations/aws-kinesis/)
  - [IBM Watson IoT](/docs/user-guide/integrations/ibm-watson-iot/)
  - [Azure Event Hub](/docs/user-guide/integrations/azure-event-hub/)
+ - [Azure IoT Hub](/docs/user-guide/integrations/azure-iot-hub/)
  - [Actility ThingPark](/docs/user-guide/integrations/thingpark/)
  - [SigFox](/docs/user-guide/integrations/sigfox/)
  - [OceanConnect](/docs/user-guide/integrations/ocean-connect/)

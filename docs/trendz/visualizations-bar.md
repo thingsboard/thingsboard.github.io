@@ -12,6 +12,16 @@ description: Bar Chart and Histogram
 Details about basic Bar chart you can find in [Line Chart Configuration](/docs/trendz/visualizations-line/)
 Main concept for line and bar charts are the same. In this tutorial we will focus on differences.
 
+## Video Tutorial
+
+&nbsp; 
+  
+<div id="video">  
+    <div id="video_wrapper">
+        <iframe src="https://www.youtube.com/embed/Sc6vySTadCQ" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
+
 ## Horizontal Bars
 
 By default bar chart is vertical. In some cases it is required to show data using vertical bars. For making it:
