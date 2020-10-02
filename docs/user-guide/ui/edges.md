@@ -41,7 +41,7 @@ In **ThingsBoard Professional Edition** also scheduler events could be assigned 
  
 ## Create edge rule chains and rule nodes
 
-Tenant administrator is able to create edge [rule engine](/docs/user-guide/rule-engine-2-0/re-getting-started/)
+Tenant administrator is able to create edge [rule engine](/docs/user-guide/rule-engine-2-0/re-getting-started/).
 
 ![image](/images/edge/help/edge-rulechains.png)
 
