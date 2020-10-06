@@ -1,3 +1,13 @@
+---
+layout: docwithnav
+title: Water meter wM-Bus Reader LoRaWAN "Smartico WM-LR" telemetry upload
+description: ThingsBoard IoT Platform sample for water meter data upload over MQTT using wM-Bus Reader LoRaWAN "Smartico WM-LR".
+
+---
+
+* TOC
+{:toc}
+
 # Water meter wM-Bus Reader LoRaWAN "Smartico WM-LR" telemetry upload
 ## Introduction
 The device wM-Bus Reader LoRaWAN “Smartico WM-LR” is used in various fields of industry, utilities and automation for remote data collection from gas, water, electricity and heat meters with the help of the wM-Bus protocol and data transmission via LoRaWAN networks. Additionally, the device has an input for wired connection to the digital interface of Kamstrup meters as a standard. This input can also be used to count pulses. The design of the sensor in a waterproof housing allows external use. The sensor’s compact size allows installation in confined spaces, and special adapters provide reliable mounting to a pipe or a flat surface without opening the case. In this example, four water meters are connected to the device. The figure shows a dashboard with processed telemetry results.
