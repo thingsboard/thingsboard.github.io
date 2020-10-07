@@ -156,7 +156,7 @@ frontend http-in
 
  acl letsencrypt_http_acl path_beg /.well-known/acme-challenge/
 
- redirect scheme https if !letsencrypt_http_acl { env(FORCE_HTTPS_REDIRECT) -m str true }
+ redirect scheme https if ! { ssl_fc }
 
  use_backend letsencrypt_http if letsencrypt_http_acl
 
