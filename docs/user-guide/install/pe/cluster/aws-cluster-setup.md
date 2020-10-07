@@ -190,7 +190,21 @@ It is recommended to have 5 Cassandra nodes with `CASSANDRA_REPLICATION_FACTOR` 
 
 Also, to run PostgreSQL in `high-availability` deployment mode you'll need to  [install](https://helm.sh/docs/intro/install/) `helm`.
 
-## Step 9. Running
+## Step 9. Upload Docker credentials
+
+Make sure your have logged in to docker hub using command line. To upload Docker credentials, please execute next command:
+
+`
+./k8s-upload-docker-credentials.sh
+`
+
+Or you can use the following command:
+
+`
+kubectl create secret docker-registry regcred --docker-server=https://index.docker.io/v1/ --docker-username=[YOUR_USERNAME] --docker-password=[YOUR_PASSWORD] --docker-email=[YOUR_EMAIL]
+`
+
+## Step 10. Running
 
 Execute the following command to run installation:
 
