@@ -31,10 +31,3 @@ process.on('SIGINT', function () {
     console.log('Exited!');
     process.exit(2);
 });
-
-//Catches uncaught exceptions
-process.on('uncaughtException', function (e) {
-    console.log('Uncaught Exception...');
-    console.log(e.stack);
-    process.exit(99);
-});

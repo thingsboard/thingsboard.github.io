@@ -1,10 +1,6 @@
-#!/bin/sh
-
-# Set ThingsBoard host to "demo.thingsboard.io" or "localhost"
-export THINGSBOARD_HOST=127.0.0.1:1895
-
-# Replace YOUR_ACCESS_TOKEN with one from Device details panel.
-export ACCESS_TOKEN=u6B2RI1G1JfneRXeaKEu
-
-# publish attributes and telemetry data via mqtt client
-node publish.js
+# Set YOUR_THINGSBOARD_HOST to ThingsBoard Edge host
+export THINGSBOARD_HOST=YOUR_THINGSBOARD_HOST # e.g. export THINGSBOARD_HOST=127.0.0.1
+# Replace YOUR_ACCESS_TOKEN with one from Device details panel
+export ACCESS_TOKEN=YOUR_ACCESS_TOKEN # e.g. export ACCESS_TOKEN=fSzqLypyZdGxANdhG339
+# Run cooler.js script
+node cooler.js

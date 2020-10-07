@@ -1,9 +1,12 @@
 ---
 layout: docwithnav
+assignees:
+- ababak
 title: Edges
-description: ThingsBoard Edge management
+description: ThingsBoard IoT Edge management
 
 ---
+
 
 ThingsBoard support following edge management features using Web UI and [REST API](/docs/reference/rest-api/).
 
@@ -12,7 +15,7 @@ ThingsBoard support following edge management features using Web UI and [REST AP
 
 ## Add and delete edges
 
-Tenant administrator is able to register new edges or delete them from ThingsBoard.
+Tenant administrator is able to register new edges or delete them from ThingsBoard cloud service.
 
 ![image](/images/edge/help/edges.png)
 
@@ -33,9 +36,9 @@ This will allow Customer users to fetch edge data using REST APIs or Web UI.
  
 ## Assign entities to edge
 
-Tenant administrator is able to assign/unassign to edge: asset(s), device(s), entity view(s), dashboard(s), rule chain(s).
+Tenant administrator is able to assign/unassign to the edge following entity groups/entities: user(s), asset(s), device(s), entity view(s), dashboard(s), rule chain(s).
 
-In **ThingsBoard Professional Edition** also scheduler events could be assigned to the edge.
+In case of using **ThingsBoard Professional Edition** also [scheduler events](/docs/user-guide/scheduler/) could be assigned to the edge.
 
  ![image](/images/edge/overview/cloud-management2.png)
  
@@ -63,7 +66,7 @@ Tenant administrator and customer users are able to manage edge server-side [att
   
 Tenant administrator and customer users are able to browse events related to particular edge using "Events" tab.
 
-Edge has **Downlink** event type with message history from cloud to edge.
+Each edge has **Downlink** event type with message history from cloud to edge.
 
  ![image](/images/edge/help/edge-events.png)
 
