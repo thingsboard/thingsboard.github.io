@@ -19,7 +19,6 @@ If you are looking for a cluster installation instruction, please visit [cluster
 ## Prerequisites
 
 - [Install Docker Toolbox for Windows](https://docs.docker.com/toolbox/toolbox_install_windows/)
-- [Install Docker Compose](https://docs.docker.com/compose/install/)
 
 ## Step 1. Checkout all ThingsBoard PE Image
 
@@ -45,7 +44,7 @@ Populate basic information about yourself and click "Get Content"
 Make sure your have [logged in](https://docs.docker.com/engine/reference/commandline/login/) to docker hub using command line.
 
 ```bash
-docker pull store/thingsboard/tb-pe:3.1.0PE
+docker pull store/thingsboard/tb-pe:{{ site.release.pe_full_ver }}
 ```
 
 ## Step 3. Obtain the license key 
@@ -81,7 +80,7 @@ Where:
 - `mytb-logs:/var/log/thingsboard`   - mounts the volume `mytb-logs` to ThingsBoard logs directory
 - `mytbpe`             - friendly local name of this machine
 - `restart: always`        - automatically start ThingsBoard in case of system reboot and restart in case of failure.
-- `image: store/thingsboard/tb-pe:3.1.0PE`          - docker image.
+- `image: store/thingsboard/tb-pe:{{ site.release.pe_full_ver }}`          - docker image.
 
 ## Step 5. Running
 
@@ -110,12 +109,18 @@ docker-compose logs -f mytbpe
 In order to get access to necessary resources from external IP/Host on Windows machine, please execute the following commands:
 
 ``` 
-VBoxManage controlvm "default" natpf1 "tcp-port8080,tcp,,8080,,9090"  
+set PATH=%PATH%;"C:\Program Files\Oracle\VirtualBox"
+VBoxManage controlvm "default" natpf1 "tcp-port8080,tcp,,8080,,8080"  
 VBoxManage controlvm "default" natpf1 "tcp-port1883,tcp,,1883,,1883"
 VBoxManage controlvm "default" natpf1 "tcp-port5683,tcp,,5683,,5683"
 ```
 {: .copy-code}
     
+Where: 
+    
+- `C:\Program Files\Oracle\VirtualBox`            - path to your VirtualBox installation directory
+
+
 After executing this command you can open `http://{your-host-ip}:8080` in you browser (for ex. `http://localhost:8080`). You should see ThingsBoard login page.
 Use the following default credentials:
 

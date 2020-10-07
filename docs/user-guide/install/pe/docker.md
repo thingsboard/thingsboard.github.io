@@ -44,7 +44,7 @@ Populate basic information about yourself and click "Get Content"
 Make sure your have [logged in](https://docs.docker.com/engine/reference/commandline/login/) to docker hub using command line.
 
 ```bash
-docker pull store/thingsboard/tb-pe:3.1.0PE
+docker pull store/thingsboard/tb-pe:{{ site.release.pe_full_ver }}
 ```
  
 ## Step 3. Obtain the license key 
@@ -81,7 +81,7 @@ Where:
 - `~/.mytbpe-logs:/var/log/thingsboard`   - mounts the host's dir `~/.mytbpe-logs` to ThingsBoard logs directory;
 - `mytbpe`             - friendly local name of this machine;
 - `restart: always`        - automatically start ThingsBoard in case of system reboot and restart in case of failure.;
-- `store/thingsboard/tb-pe:3.1.0PE`          - docker image.
+- `store/thingsboard/tb-pe:{{ site.release.pe_full_ver }}`          - docker image.
 
 ## Step 5. Running
 
@@ -89,9 +89,10 @@ Before starting Docker container run following commands to create a directory fo
 to be able to change user, **chown** command is used, which requires sudo permissions (command will request password for a sudo access):
 
 ```
-$ mkdir -p ~/.mytbpe-data && sudo chown -R 799:799 ~/.mytbpe-data
-$ mkdir -p ~/.mytbpe-logs && sudo chown -R 799:799 ~/.mytbpe-logs
+mkdir -p ~/.mytbpe-data && sudo chown -R 799:799 ~/.mytbpe-data
+mkdir -p ~/.mytbpe-logs && sudo chown -R 799:799 ~/.mytbpe-logs
 ```
+{: .copy-code}
 
 **NOTE**: replace directory `~/.mytbpe-data` and `~/.mytbpe-logs` with directories you're planning to used in `docker-compose.yml`. 
 

@@ -38,7 +38,7 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
   mytbpe:
     restart: always
-    image: "store/thingsboard/tb-pe:3.1.0PE"
+    image: "store/thingsboard/tb-pe:{{ site.release.pe_full_ver }}"
     depends_on:
       - kafka
     ports:
@@ -64,5 +64,12 @@ services:
       POSTGRES_PASSWORD: postgres
     volumes:
       - mytbpe-data-db:/var/lib/postgresql/data
+volumes:
+  mytbpe-data:
+    external: true
+  mytbpe-logs:
+    external: true
+  mytbpe-data-db:
+    external: true
 ```
 {: .copy-code}

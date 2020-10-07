@@ -12,6 +12,17 @@ description: Trendz Card
 
 Card widget allows visualizing the single important metrics and monitors its dynamics.
 
+## Video Tutorial
+
+&nbsp; 
+  
+<div id="video">  
+    <div id="video_wrapper">
+        <iframe src="https://www.youtube.com/embed/ZXORc5nipgg" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
+
+
 ## Simple Card
 
 For creating simple Card view:

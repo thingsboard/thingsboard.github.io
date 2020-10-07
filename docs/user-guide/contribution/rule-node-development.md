@@ -50,13 +50,13 @@ nano pom.xml
 ```
 {: .copy-code}
 
-For example, the property below is set to 3.1.0 Professional Edition:
+For example, the property below is set to {{ site.release.pe_full_ver }} Professional Edition:
 
 ```xml
 ...
     <properties>
         ...
-        <thingsboard.version>3.1.0PE</thingsboard.version>
+        <thingsboard.version>{{ site.release.pe_full_ver }}</thingsboard.version>
         ...
     </properties>
 ...
@@ -89,8 +89,8 @@ Make sure the [Lombok](https://projectlombok.org/) plugin is installed to your f
 ## Step 3. Create your rule node
 
 In order to create new rule node, you should implement the 
-[TbNode](https://github.com/thingsboard/thingsboard/blob/release-3.1/rule-engine/rule-engine-api/src/main/java/org/thingsboard/rule/engine/api/TbNode.java) interface and annotate it with the
-[RuleNode](https://github.com/thingsboard/thingsboard/blob/release-3.1/rule-engine/rule-engine-api/src/main/java/org/thingsboard/rule/engine/api/RuleNode.java) annotation.
+[TbNode](https://github.com/thingsboard/thingsboard/blob/{{ site.release.branch }}/rule-engine/rule-engine-api/src/main/java/org/thingsboard/rule/engine/api/TbNode.java) interface and annotate it with the
+[RuleNode](https://github.com/thingsboard/thingsboard/blob/{{ site.release.branch }}/rule-engine/rule-engine-api/src/main/java/org/thingsboard/rule/engine/api/RuleNode.java) annotation.
 
 As an example, you may review a very simple Rule Node that filters incoming message based on the existence of the key in the message payload. 
 This rule node is part of the project you have downloaded on the previous step.  
@@ -149,8 +149,8 @@ Let's walk through available parameters:
 * *nodeDetails* - full description of your node with html tags support. Visible in the Rule Chain Editor;
 * *configClazz* - full class name of the class that describes the configuration json.  
 * *relationTypes* - array of strings with pre-defined [relation types](https://thingsboard.io/docs/user-guide/rule-engine-2-0/overview/#rule-node-relation);
-This values should correspond to the ones that are used in [TbContext.tellNext](https://github.com/thingsboard/thingsboard/blob/release-3.1/rule-engine/rule-engine-api/src/main/java/org/thingsboard/rule/engine/api/TbContext.java#L76) method;
-* *customRelations* - boolean value that indicates you are going to use any custom relations in [TbContext.tellNext](https://github.com/thingsboard/thingsboard/blob/release-3.1/rule-engine/rule-engine-api/src/main/java/org/thingsboard/rule/engine/api/TbContext.java#L76) method;
+This values should correspond to the ones that are used in [TbContext.tellNext](https://github.com/thingsboard/thingsboard/blob/{{ site.release.branch }}/rule-engine/rule-engine-api/src/main/java/org/thingsboard/rule/engine/api/TbContext.java#L76) method;
+* *customRelations* - boolean value that indicates you are going to use any custom relations in [TbContext.tellNext](https://github.com/thingsboard/thingsboard/blob/{{ site.release.branch }}/rule-engine/rule-engine-api/src/main/java/org/thingsboard/rule/engine/api/TbContext.java#L76) method;
 * *configDirective* - name of the Angular based UI directive that will allow user to edit the configuration of the rule node. This is optional and may be empty. In such case, the user will see raw JSON editor;
 * *uiResources* - path to your Angular UI file that contains the configuration directive. This is optional and may be empty. In such case, the user will see raw JSON editor;
 * *icon* - icon name from the angular material package;
@@ -162,7 +162,7 @@ This values should correspond to the ones that are used in [TbContext.tellNext](
 
 The **"init"** method is called by the rule engine when the new rule node is created. 
 This may happen if someone adds the rule node to the rule chain or system is stopped.
-This method is mostly used to parse the configuration which is a JSON object or to obtain a local copy of [TbContext](https://github.com/thingsboard/thingsboard/blob/release-3.1/rule-engine/rule-engine-api/src/main/java/org/thingsboard/rule/engine/api/TbContext.java).
+This method is mostly used to parse the configuration which is a JSON object or to obtain a local copy of [TbContext](https://github.com/thingsboard/thingsboard/blob/{{ site.release.branch }}/rule-engine/rule-engine-api/src/main/java/org/thingsboard/rule/engine/api/TbContext.java).
 The "TbNodeUtils.convert" is parsing the raw configuration to the java object of a specified class.
 
 The **"destroy"** method is called by the rule engine when the rule node is destroyed. 
@@ -224,7 +224,7 @@ and eventually mark current message as failed.
 
 ### Using ThingsBoard services
 
-The [TbContext](https://github.com/thingsboard/thingsboard/blob/release-3.1/rule-engine/rule-engine-api/src/main/java/org/thingsboard/rule/engine/api/TbContext.java) contains "getters" for a lot of useful services. 
+The [TbContext](https://github.com/thingsboard/thingsboard/blob/{{ site.release.branch }}/rule-engine/rule-engine-api/src/main/java/org/thingsboard/rule/engine/api/TbContext.java) contains "getters" for a lot of useful services. 
 Please don't forget to press "Download Sources" in your favorite IDE to simplify browsing of the interfaces of those services;
 A short list of available services getters is listed below:
 
@@ -356,7 +356,7 @@ public void onMsg(TbContext ctx, TbMsg msg) {
 
 ```    
 
-You may notice that we have used [TbContext.enqueueForTellNext](https://github.com/thingsboard/thingsboard/blob/release-3.1/rule-engine/rule-engine-api/src/main/java/org/thingsboard/rule/engine/api/TbContext.java#L119) method to push new message to the Rule Engine.
+You may notice that we have used [TbContext.enqueueForTellNext](https://github.com/thingsboard/thingsboard/blob/{{ site.release.branch }}/rule-engine/rule-engine-api/src/main/java/org/thingsboard/rule/engine/api/TbContext.java#L119) method to push new message to the Rule Engine.
 The message will be pushed to the related rule nodes, based on the relation type. The alternative option is to put the message to the beginning of the processing, basically to the root rule chain.
 
 ```java
@@ -377,7 +377,7 @@ void enqueueForTellNext(TbMsg msg, String queueName, String relationType, Runnab
 ### Multithreading
 
 The Rule Engine is an implementation of an [actor model](https://en.wikipedia.org/wiki/Actor_model) which invokes 
-[TbNode.onMsg](https://github.com/thingsboard/thingsboard/blob/release-3.1/rule-engine/rule-engine-api/src/main/java/org/thingsboard/rule/engine/api/TbNode.java#L30) method sequentially
+[TbNode.onMsg](https://github.com/thingsboard/thingsboard/blob/{{ site.release.branch }}/rule-engine/rule-engine-api/src/main/java/org/thingsboard/rule/engine/api/TbNode.java#L30) method sequentially
 for every new message in the rule node mailbox. Thus, if you process the message in the same thread, your implementation is thread safe. 
 
 However, for performance reasons, most of the API calls are executed in a separate threads. 
@@ -426,9 +426,9 @@ The Rule Engine [messages](https://thingsboard.io/docs/user-guide/rule-engine-2-
 So, messages from one device will always go to the same rule node instance on a specific rule engine microservice. 
 The only corner case is when the rule nodes are added or removed. In such a case, the "repartition" event occur.
 
-As a rule node developer, you may override default method [TbNode.onPartitionChangeMsg](https://github.com/thingsboard/thingsboard/blob/release-3.1/rule-engine/rule-engine-api/src/main/java/org/thingsboard/rule/engine/api/TbNode.java#L34)
+As a rule node developer, you may override default method [TbNode.onPartitionChangeMsg](https://github.com/thingsboard/thingsboard/blob/{{ site.release.branch }}/rule-engine/rule-engine-api/src/main/java/org/thingsboard/rule/engine/api/TbNode.java#L34)
 to react on the changes of cluster topology. This is useful for stateful nodes that decide to cache information based on the originator (device/asset) id of the message.
-In order to determine that the current entity id belongs to current list of assigned partitions, one may use [TbContext.isLocalEntity](https://github.com/thingsboard/thingsboard/blob/release-3.1/rule-engine/rule-engine-api/src/main/java/org/thingsboard/rule/engine/api/TbContext.java#L152).
+In order to determine that the current entity id belongs to current list of assigned partitions, one may use [TbContext.isLocalEntity](https://github.com/thingsboard/thingsboard/blob/{{ site.release.branch }}/rule-engine/rule-engine-api/src/main/java/org/thingsboard/rule/engine/api/TbContext.java#L152).
 See complete example below:   
 
 ```java

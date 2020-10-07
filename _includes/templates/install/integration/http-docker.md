@@ -4,7 +4,7 @@ Execute the following command to run this docker directly:
 docker run -it -v ~/.tb-pe-http-integration-logs:/var/log/tb-http-integration \
 -e "PRC_HOST=cloud.thingsboard.io" -e "RPC_PORT=9090" \
 -e "INTEGRATION_ROUTING_KEY=YOUR_ROUTING_KEY"  -e "INTEGRATION_SECRET=YOUR_SECRET " \
---name my-tb-pe-http-integration --restart always thingsboard/tb-pe-http-integration:3.1PE
+--name my-tb-pe-http-integration --restart always thingsboard/tb-pe-http-integration:{{ site.release.pe_full_ver }}
 ```
 {: .copy-code}
 
@@ -19,7 +19,7 @@ Where:
 - `-v ~/.tb-pe-http-integration-logs:/var/log/tb-http-integration`   - mounts the host's dir `~/.tb-pe-http-integration-logs` to ThingsBoard logs directory;
 - `--name tb-pe-http-integration`             - friendly local name of this machine;
 - `--restart always`        - automatically start ThingsBoard Integration in case of system reboot and restart in case of failure.;
-- `thingsboard/tb-pe-http-integration:3.1.0PE`          - docker image.
+- `thingsboard/tb-pe-http-integration:{{ site.release.pe_full_ver }}`          - docker image.
 
 After executing this command you can open logs which are located here `~/.tb-pe-http-integration-logs`. 
 You should see some INFO log messages with your latest Integration configuration that arrived from the server.
