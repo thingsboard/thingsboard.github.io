@@ -145,13 +145,6 @@ To scale your workers node, please execute the following command:
  kubectl --namespace kube-system scale machinedeployment/$MACHINE-DEPLOYMENT-NAME --replicas=3
 `
 
-To remove k8s cluster and aws resourse, you can execute the following command:
-
-```
- kubeone reset config.yml -t tf.state
- terraform destroy
-```
-
 ## Step 5. Review the architecture page
 
 Starting ThingsBoard v2.2, it is possible to install ThingsBoard cluster using new microservices architecture and docker containers. 
@@ -279,6 +272,13 @@ Execute the following command to delete all resources (including database):
 `
  ./k8s-delete-all.sh
 `
+
+To remove k8s cluster and aws resources, you can execute the following command:
+
+```
+ kubeone reset config.yml -t tf.state
+ terraform destroy
+```
 
 ## Upgrading
 

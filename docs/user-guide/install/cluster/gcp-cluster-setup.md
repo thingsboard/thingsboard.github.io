@@ -149,28 +149,18 @@ If you want to export a kubectl config, please execute following command:
 kops export kubecfg kops-example-dev.k8s.local
 `
 
-## Step 4. Remove cluster and GCP resources
-
-To destroy the k8s cluster, please execute following commands:
-
-```
-kops delete cluster kops-example-dev.k8s.local --state gs://$bucket_name_for_kops/ --yes
-export GOOGLE_CREDENTIALS=""
-terraform destroy
-```
-
-## Step 5. Review the architecture page
+## Step 4. Review the architecture page
 
 Starting ThingsBoard v2.2, it is possible to install ThingsBoard cluster using new microservices architecture and docker containers. 
 See [**microservices**](/docs/reference/msa/) architecture page for more details.
 
-## Step 6. Environment file.
+## Step 5. Environment file.
 
 Please go to back in root folder `cd ../`.
 
 In `.env` file set the value of `PLATFORM` field to `gcp`.
 
-## Step 7. Configure ThingsBoard database
+## Step 6. Configure ThingsBoard database
 
 Before performing initial installation you can configure the type of database to be used with ThingsBoard.
 In order to set database type change the value of `DATABASE` variable in `.env` file to one of the following:
@@ -180,7 +170,7 @@ In order to set database type change the value of `DATABASE` variable in `.env` 
 
 **NOTE**: According to the database type corresponding kubernetes resources will be deployed (see `basic/postgres.yml` or `high-availability/postgres-ha.yaml` for postgres with replication, `common/cassandra.yml` for details).
 
-## Step 8. Choose deployment type
+## Step 7. Choose deployment type
 
 Before performing initial installation you can configure the type of ThingsBoard deployment.
 In order to set deployment type change the value of `DEPLOYMENT_TYPE` variable in `.env` file to one of the following:
@@ -197,7 +187,7 @@ It is recommended to have 3 Cassandra nodes with `CASSANDRA_REPLICATION_FACTOR` 
 
 Also, to run PostgreSQL in `high-availability` deployment mode you'll need to  [install](https://helm.sh/docs/intro/install/) `helm`.
 
-## Step 9. Running
+## Step 8. Running
 
 Execute the following command to run installation:
 
@@ -286,6 +276,14 @@ Execute the following command to delete all resources (including database):
 `
  ./k8s-delete-all.sh
 `
+
+To destroy the k8s cluster and GCP resources, please execute following commands:
+
+```
+kops delete cluster kops-example-dev.k8s.local --state gs://$bucket_name_for_kops/ --yes
+export GOOGLE_CREDENTIALS=""
+terraform destroy
+```
 
 ## Upgrading
 

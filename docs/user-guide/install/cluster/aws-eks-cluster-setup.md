@@ -96,26 +96,18 @@ and please execute the following command for install "cluster_autoscaler":
 kubectl apply -f ../../common/cluster-autoscaler-autodiscover.yaml
 `
 
-## Step 3. Remove EKS cluster
-
-To remove k8s cluster and aws resourse, you can execute the following command:
-
-```
-terraform destroy
-```
-
-## Step 4. Review the architecture page
+## Step 3. Review the architecture page
 
 Starting ThingsBoard v2.2, it is possible to install ThingsBoard cluster using new microservices architecture and docker containers. 
 See [**microservices**](/docs/reference/msa/) architecture page for more details.
 
-## Step 5. Environment file.
+## Step 4. Environment file.
 
 Please go to back in root folder `cd ../../`.
 
 In `.env` file set the value of `PLATFORM` field to `aws-eks`.
 
-## Step 6. Configure ThingsBoard database
+## Step 5. Configure ThingsBoard database
 
 Before performing initial installation you can configure the type of database to be used with ThingsBoard.
 In order to set database type change the value of `DATABASE` variable in `.env` file to one of the following:
@@ -125,7 +117,7 @@ In order to set database type change the value of `DATABASE` variable in `.env` 
 
 **NOTE**: According to the database type corresponding kubernetes resources will be deployed (see `basic/postgres.yml` or `high-availability/postgres-ha.yaml` for postgres with replication, `common/cassandra.yml` for details).
 
-## Step 7. Choose deployment type
+## Step 6. Choose deployment type
 
 Before performing initial installation you can configure the type of ThingsBoard deployment.
 In order to set deployment type change the value of `DEPLOYMENT_TYPE` variable in `.env` file to one of the following:
@@ -142,7 +134,7 @@ It is recommended to have 3 Cassandra nodes with `CASSANDRA_REPLICATION_FACTOR` 
 
 Also, to run PostgreSQL in `high-availability` deployment mode you'll need to  [install](https://helm.sh/docs/intro/install/) `helm`.
 
-## Step 8. Running
+## Step 7. Running
 
 Execute the following command to run installation:
 
@@ -231,6 +223,12 @@ Execute the following command to delete all resources (including database):
 `
  ./k8s-delete-all.sh
 `
+
+To remove k8s cluster and aws resources, you can execute the following command:
+
+```
+terraform destroy
+```
 
 ## Upgrading
 
