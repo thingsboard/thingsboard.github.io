@@ -277,7 +277,16 @@ database:
     type: "${DATABASE_TS_TYPE:sql}" # cassandra, sql, or timescale (for hybrid mode, DATABASE_TS_TYPE value should be cassandra, or timescale)
 ```
 
-**NOTE**: If you were using **Cassandra** database for entities data execute the following migration script: 
+**NOTE**: Cassandra database does not support [advanced filters](/docs/user-guide/advanced-filters/). If you were using **Cassandra** database for timeseries data please make sure that **database.ts_latest.type** parameter value (in the file **/etc/thingsboard/conf/thingsboard.yml**) is "sql":
+
+```
+database:
+...
+  ts_latest:
+    type: "${DATABASE_TS_LATEST_TYPE:sql}" # cassandra, sql, or timescale (for hybrid mode, DATABASE_TS_TYPE value should be cassandra, or timescale)
+```
+
+and execute the following migration script:
 
 ```bash
 # Execute script to migrate latest timeseries data from Cassandra to PostgreSQL
