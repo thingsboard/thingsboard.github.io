@@ -103,7 +103,7 @@
         "target": "_blank"
      },
     "Integration guide": {
-      "href": "https://decode.rs/dl28-integration-into-thingsboard-iot-platform/"
+      "href": "/docs/user-guide/integrations/decode/"
       }
     },
     "blurb": "Decode is a Serbian company with extensive experience in design, engineering and production of devices for industrial communication and telemetry."
