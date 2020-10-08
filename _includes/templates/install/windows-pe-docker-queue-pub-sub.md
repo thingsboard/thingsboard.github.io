@@ -14,7 +14,7 @@ version: '2.2'
 services:
   mytbpe:
     restart: always
-    image: "store/thingsboard/tb-pe:3.1.0PE"
+    image: "store/thingsboard/tb-pe:{{ site.release.pe_full_ver }}"
     ports:
       - "8080:8080"
       - "1883:1883"
@@ -67,5 +67,12 @@ services:
       POSTGRES_PASSWORD: postgres
     volumes:
       - mytbpe-data-db:/var/lib/postgresql/data
+volumes:
+  mytbpe-data:
+    external: true
+  mytbpe-logs:
+    external: true
+  mytbpe-data-db:
+    external: true
 ```
 {: .copy-code}

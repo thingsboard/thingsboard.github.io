@@ -9,9 +9,19 @@ description: Trendz Scatter Plot
 * TOC
 {:toc}
 
-Scatter plot show dependency between few properties of your topology.
+## Video Tutorial
+
+&nbsp; 
+  
+<div id="video">  
+    <div id="video_wrapper">
+        <iframe src="https://www.youtube.com/embed/wX4ro6FfyaE" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
 
 ## Compare 2 dimensions
+Scatter plot show dependency between few properties of your topology.
+
 In this case you only use **X-axis** and **Y-axis** sections and drop there fields of interest.
 ![image](/images/trendz/simple-scatter.png)
 

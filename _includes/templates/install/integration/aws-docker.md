@@ -4,7 +4,7 @@ Execute the following command to run this docker directly:
 docker run -it -v ~/.tb-pe-aws-integration-logs:/var/log/tb-aws-integration \
 -e "PRC_HOST=cloud.thingsboard.io" -e "RPC_PORT=9090" \
 -e "INTEGRATION_ROUTING_KEY=YOUR_ROUTING_KEY"  -e "INTEGRATION_SECRET=YOUR_SECRET " \
---name my-tb-pe-aws-integration --restart always thingsboard/tb-pe-aws-integration:3.1PE
+--name my-tb-pe-aws-integration --restart always thingsboard/tb-pe-aws-integration:{{ site.release.pe_full_ver }}
 ```
 {: .copy-code}
 
@@ -19,7 +19,7 @@ Where:
 - `-v ~/.tb-pe-aws-integration-logs:/var/log/tb-aws-integration`   - mounts the host's dir `~/.tb-pe-aws-integration-logs` to ThingsBoard logs directory;
 - `--name tb-pe-aws-integration`             - friendly local name of this machine;
 - `--restart always`        - automatically start ThingsBoard Integration in case of system reboot and restart in case of failure.;
-- `thingsboard/tb-pe-aws-integration:3.1.0PE`          - docker image.
+- `thingsboard/tb-pe-aws-integration:{{ site.release.pe_full_ver }}`          - docker image.
 
 After executing this command you can open logs which are located here `~/.tb-pe-aws-integration-logs`. 
 You should see some INFO log messages with your latest Integration configuration that arrived from the server.

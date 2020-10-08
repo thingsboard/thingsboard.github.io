@@ -100,6 +100,8 @@ toc:
       path: /docs/user-guide/rule-engine-2-0/pe/action-nodes/
     - title: Analytics Nodes
       path: /docs/user-guide/rule-engine-2-0/pe/analytics-nodes/
+  - title: Custom Rule Nodes
+    path: /docs/user-guide/contribution/rule-node-development/
 - title: Integrations
   pe: true
   section:

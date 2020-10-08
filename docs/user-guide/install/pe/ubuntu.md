@@ -26,14 +26,14 @@ To run ThingsBoard and Cassandra on a single machine you will need at least 8Gb 
 Download installation package.
 
 ```bash
-wget https://dist.thingsboard.io/thingsboard-3.1pe.deb
+wget https://dist.thingsboard.io/thingsboard-{{ site.release.pe_ver }}.deb
 ```
 {: .copy-code}
 
 Install ThingsBoard as a service
 
 ```bash
-sudo dpkg -i thingsboard-3.1pe.deb
+sudo dpkg -i thingsboard-{{ site.release.pe_ver }}.deb
 ```
 {: .copy-code}
 
@@ -115,7 +115,7 @@ Please allow up to 90 seconds for the Web UI to start. This is applicable only f
 Download installation package for the [Reports Server](/docs/user-guide/reporting/#reports-server) component:
 
 ```bash
-wget https://dist.thingsboard.io/tb-web-report-3.1pe.deb
+wget https://dist.thingsboard.io/tb-web-report-{{ site.release.pe_ver }}.deb
 ```
 {: .copy-code}
 
@@ -126,7 +126,7 @@ sudo apt install -yq gconf-service libasound2 libatk1.0-0 libc6 libcairo2 libcup
      libexpat1 libfontconfig1 libgcc1 libgconf-2-4 libgdk-pixbuf2.0-0 libglib2.0-0 libgtk-3-0 libnspr4 \
      libpango-1.0-0 libpangocairo-1.0-0 libstdc++6 libx11-6 libx11-xcb1 libxcb1 libxcomposite1 \
      libxcursor1 libxdamage1 libxext6 libxfixes3 libxi6 libxrandr2 libxrender1 libxss1 libxtst6 \
-     ca-certificates fonts-liberation libappindicator1 libnss3 lsb-release xdg-utils unzip wget
+     ca-certificates fonts-liberation libappindicator1 libnss3 lsb-release xdg-utils unzip wget libgbm-dev
 ```
 {: .copy-code}
 
@@ -155,7 +155,7 @@ rm -rf ~/noto
 Install and start Web Report service:
 
 ```bash
-sudo dpkg -i tb-web-report-3.1pe.deb
+sudo dpkg -i tb-web-report-{{ site.release.pe_ver }}.deb
 sudo service tb-web-report start
 ```
 
