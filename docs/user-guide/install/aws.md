@@ -26,6 +26,17 @@ description: ThingsBoard IoT platform  AWS cluster setup guide
                            <div class="deployment-cards">
                                 <div class="deployment-cards-container">
                                     <div class="deployment-card-block">
+                                        <a href="/docs/user-guide/install/cluster/aws-eks-cluster-setup/">
+                                            <span>
+                                                <div class="deployment-logo" style="height:134px">
+                                                    <img width="" src="/images/install/cloud/eks.png" title="Cluster setup with Kubernetes on AWS EKS" alt="AWS EKS K8S cluster">
+                                                 </div>
+                                            </span>
+                                        </a>
+                                    </div>
+                               </div>
+                                <div class="deployment-cards-container">
+                                    <div class="deployment-card-block">
                                         <a href="/docs/user-guide/install/cluster/aws-cluster-setup/">
                                             <span>
                                                 <div class="deployment-logo" style="height:134px">

@@ -21,6 +21,7 @@ description: ThingsBoard documentation - learn about the platform and get your I
 <li><b><a href="/docs/user-guide/rpc/">RPC</a></b> - API and widgets to push commands from your apps and dashboards to devices and vice versa.</li>
 <li><b><a href="/docs/user-guide/audit-log/">Audit log</a></b> - tracking of user activity and API calls usage.</li>
 <li><b><a href="/docs/user-guide/api-limits/">API Limits</a></b> - controlling API usage, by limiting number of requests from single host during single time unit.</li>
+<li><b><a href="/docs/user-guide/advanced-filters/">Advanced filters</a></b> - filters over entity fields, attributes and latest telemetry.</li>
 </ul>
 
 <h2>Professional Edition Features</h2>
