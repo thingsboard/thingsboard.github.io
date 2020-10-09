@@ -69,7 +69,7 @@
         }
     }
 
-    function getLicense(event, isPerpetual, productId, planId, productName, coupon) {
+    function getLicense(event, isPerpetual, productId, planId, productName, coupon, showConfirmDialog) {
         event.preventDefault();
         var e = $(event.target);
         var url = "https://license.thingsboard.io/signup?createSubscription=true&perpetual=";
@@ -84,8 +84,37 @@
             url += "&coupon="+coupon;
         }
 
-        reportPriceLink(url, productName + '/' + productId);
-        window.open(url, "_blank");
+        if(showConfirmDialog) {
+            openTrendzConfirmDialog(url, productName + '/' + productId);
+        } else {
+            reportPriceLink(url, productName + '/' + productId);
+            window.open(url, "_blank");
+        }
+    }
+
+    function openTrendzConfirmDialog(url, product) {
+        var dialogTemplate = "<ul class='trndz_dialog_list'>\n" +
+            "<li>You won't be charged until after your free month.</li>\n" +
+            "<li>We'll remind you three days before your trial ends.</li>\n" +
+            "<li>Cancel anytime.</li>\n" +
+            "</ul>";
+
+        swal({
+            title: "Set up your Trendz License",
+            html: true,
+            text: dialogTemplate,
+            allowOutsideClick: true,
+            cancelButtonText: "Cancel",
+            showCancelButton: true,
+            confirmButtonText: "Proceed to License Portal",
+            confirmButtonColor: '#506dad',
+            customClass: 'trndz-swal-license'
+        }, function(isConfirm) {
+            if (isConfirm) {
+                reportPriceLink(url, product);
+                window.open(url, "_blank");
+            }
+        });
     }
 
     function reportPriceLink(link, product) {
