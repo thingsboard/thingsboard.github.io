@@ -9,8 +9,37 @@
     "configuration": null
   },
   "metadata": {
-    "firstNodeIndex": 6,
+    "firstNodeIndex": 0,
     "nodes": [
+      {
+        "additionalInfo": {
+          "layoutX": 321,
+          "layoutY": 154
+        },
+        "type": "org.thingsboard.rule.engine.filter.TbJsFilterNode",
+        "name": "Above Threshold",
+        "debugMode": true,
+        "configuration": {
+          "jsScript": "return msg.temperature > 50;"
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 621,
+          "layoutY": 44
+        },
+        "type": "org.thingsboard.rule.engine.action.TbCreateAlarmNode",
+        "name": "Create Alarm",
+        "debugMode": false,
+        "configuration": {
+          "alarmType": "Critical Temperature",
+          "alarmDetailsBuildJs": "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n}\nreturn details;",
+          "severity": "CRITICAL",
+          "propagate": true,
+          "useMessageAlarmData": false,
+          "relationTypes": []
+        }
+      },
       {
         "additionalInfo": {
           "layoutX": 317,
@@ -54,8 +83,8 @@
           "layoutY": 280
         },
         "type": "org.thingsboard.rule.engine.rpc.TbSendRPCRequestNode",
-        "name": "Cooler Home",
-        "debugMode": false,
+        "name": "Cooler RPC Call",
+        "debugMode": true,
         "configuration": {
           "timeoutInSeconds": 60
         }
@@ -67,7 +96,7 @@
         },
         "type": "org.thingsboard.rule.engine.filter.TbJsFilterNode",
         "name": "Check RPC type message",
-        "debugMode": false,
+        "debugMode": true,
         "configuration": {
           "jsScript": "return msgType == 'RPC message'; "
         }
@@ -96,82 +125,53 @@
         "configuration": {
           "version": 0
         }
-      },
-      {
-        "additionalInfo": {
-          "layoutX": 321,
-          "layoutY": 154
-        },
-        "type": "org.thingsboard.rule.engine.filter.TbJsFilterNode",
-        "name": "Above Threshold",
-        "debugMode": true,
-        "configuration": {
-          "jsScript": "return msg.temperature > 50;"
-        }
-      },
-      {
-        "additionalInfo": {
-          "layoutX": 621,
-          "layoutY": 44
-        },
-        "type": "org.thingsboard.rule.engine.action.TbCreateAlarmNode",
-        "name": "Create Alarm",
-        "debugMode": false,
-        "configuration": {
-          "alarmType": "Critical Temperature",
-          "alarmDetailsBuildJs": "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n}\nreturn details;",
-          "severity": "CRITICAL",
-          "propagate": true,
-          "useMessageAlarmData": false,
-          "relationTypes": []
-        }
       }
     ],
     "connections": [
       {
         "fromIndex": 0,
         "toIndex": 1,
-        "type": "Success"
+        "type": "True"
+      },
+      {
+        "fromIndex": 0,
+        "toIndex": 6,
+        "type": "False"
+      },
+      {
+        "fromIndex": 0,
+        "toIndex": 2,
+        "type": "True"
+      },
+      {
+        "fromIndex": 0,
+        "toIndex": 2,
+        "type": "False"
       },
       {
         "fromIndex": 1,
+        "toIndex": 7,
+        "type": "Created"
+      },
+      {
+        "fromIndex": 2,
         "toIndex": 3,
         "type": "Success"
       },
       {
         "fromIndex": 3,
-        "toIndex": 2,
-        "type": "True"
+        "toIndex": 5,
+        "type": "Success"
       },
       {
-        "fromIndex": 4,
-        "toIndex": 5,
-        "type": "Cleared"
+        "fromIndex": 5,
+        "toIndex": 4,
+        "type": "True"
       },
       {
         "fromIndex": 6,
         "toIndex": 7,
-        "type": "True"
-      },
-      {
-        "fromIndex": 6,
-        "toIndex": 4,
-        "type": "False"
-      },
-      {
-        "fromIndex": 6,
-        "toIndex": 0,
-        "type": "True"
-      },
-      {
-        "fromIndex": 6,
-        "toIndex": 0,
-        "type": "False"
-      },
-      {
-        "fromIndex": 7,
-        "toIndex": 5,
-        "type": "Created"
+        "type": "Cleared"
       }
     ],
     "ruleChainConnections": null

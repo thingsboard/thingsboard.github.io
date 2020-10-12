@@ -62,7 +62,7 @@ You can find **Edge Rule chains** in the menu by clicking on **Rule chains** but
 #### Default edge rule chains
 
 Tenant administrator is able to make edge rule chain **default**. 
-Rule chain with activated default flag will be automatically assigned to the next edges created by the same owner.
+Rule chain with activated default flag will be added to default list and assigned to newly created edge(s).
 
 ![image](/images/edge/nodes/make-default.png)
 
