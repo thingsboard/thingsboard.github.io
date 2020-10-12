@@ -371,7 +371,6 @@ var tb = (function () {
     function openFaqNode(nodeId) {
         tb.openAccordionItem(nodeId);
         document.getElementById(nodeId).scrollIntoView();
-        debugger;
         reportFaqNode(nodeId);
     }
 
