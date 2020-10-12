@@ -38,12 +38,17 @@ sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.
 
 ### Step 5. ThingsBoard Edge service installation
 
-{% include templates/edge/edge-extract.md %}
-
-Go to the download repository and install ThingsBoard Edge service:
+Download installation package.
 
 ```bash
-sudo dpkg -i tb-edge.deb
+wget https://dist.thingsboard.io/tb-edge-1.0.0beta.rpm
+```
+{: .copy-code}
+
+Go to the download repository and install ThingsBoard Edge service
+
+```bash
+sudo rpm -Uvh tb-edge-1.0.0beta.rpm
 ```
 {: .copy-code}
 

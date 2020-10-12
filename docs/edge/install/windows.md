@@ -31,7 +31,7 @@ Instructions below are provided for Windows 10/8.1/8/7 32-bit/64-bit.
 Download installation package.
 
 ```bash
-wget https://github.com/thingsboard/thingsboard/features/tb-edge-windows.zip
+wget https://github.com/thingsboard/thingsboard/features/tb-edge-windows-1.0.0beta.zip
 ```
 {: .copy-code}
 

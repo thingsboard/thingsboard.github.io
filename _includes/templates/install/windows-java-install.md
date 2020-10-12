@@ -1,4 +1,4 @@
-ThingsBoard service is running on Java 8. Follow this instructions to install OpenJDK 8.
+ThingsBoard service is running on Java 8. Follow these instructions to install OpenJDK 8.
 
  * Visit [Open JDK Download Page](https://adoptopenjdk.net/index.html) to download latest **OpenJDK 8 (LTS)** MSI package.
  * Run the downloaded MSI package and follow the instructions. 

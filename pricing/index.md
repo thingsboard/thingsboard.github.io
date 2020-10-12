@@ -517,9 +517,9 @@ description: ThingsBoard Products Pricing
                             <a class="btn btn-full-green btn-pricing" href="javascript:void(0);" 
                                 onClick="getLicense(event,
                                 false,
-                                '20be6f50-a18e-11e9-8e16-03828ff5271c',
-                                '7ef31a80-a18e-11e9-8e16-03828ff5271c',
-                                'Maker')">
+                                'd3b7d030-fe4c-11ea-951e-b77b877a367b',
+                                'da425aa0-fe4d-11ea-951e-b77b877a367b',
+                                'Edge Pico')">
                                 Get your license
                             </a>
                             <div class="pricing-square-item" data-faq-id="optional-support">
@@ -541,9 +541,9 @@ description: ThingsBoard Products Pricing
                             <a class="btn btn-full-green btn-pricing" href="javascript:void(0);" 
                                 onClick="getLicense(event,
                                 false,
-                                '20be6f50-a18e-11e9-8e16-03828ff5271c',
-                                '0e236dc0-a196-11e9-8e16-03828ff5271c',
-                                'Prototype')">
+                                'd3b7d030-fe4c-11ea-951e-b77b877a367b',
+                                '302e3420-fe4e-11ea-951e-b77b877a367b',
+                                'Edge Nano')">
                                 Get your license
                             </a>
                             <div class="pricing-square-item" data-faq-id="optional-support">
@@ -565,9 +565,9 @@ description: ThingsBoard Products Pricing
                             <a class="btn btn-full-green btn-pricing" href="javascript:void(0);" 
                                 onClick="getLicense(event,
                                 false,
-                                '20be6f50-a18e-11e9-8e16-03828ff5271c',
-                                '8ac6d190-a197-11e9-8e16-03828ff5271c',
-                                'Startup')">
+                                'd3b7d030-fe4c-11ea-951e-b77b877a367b',
+                                '6e6c58c0-fe4e-11ea-951e-b77b877a367b',
+                                'Edge Micro')">
                                 Get your license
                             </a>
                             <div class="pricing-square-item" data-faq-id="optional-support">
@@ -589,9 +589,9 @@ description: ThingsBoard Products Pricing
                             <a class="btn btn-full-green btn-pricing" href="javascript:void(0);" 
                                 onClick="getLicense(event,
                                 false,
-                                '20be6f50-a18e-11e9-8e16-03828ff5271c',
-                                'd82185c0-a197-11e9-8e16-03828ff5271c',
-                                'Business')">
+                                'd3b7d030-fe4c-11ea-951e-b77b877a367b',
+                                'a0e02610-fe4e-11ea-951e-b77b877a367b',
+                                'Edge Macro')">
                                 Get your license
                             </a>
                             <div class="pricing-square-item" data-faq-id="optional-support">
@@ -626,9 +626,9 @@ description: ThingsBoard Products Pricing
                             <a class="btn btn-full-green btn-pricing" href="javascript:void(0);" 
                                 onClick="getLicense(event,
                                 true,
-                                '90b6c9b0-a198-11e9-8e16-03828ff5271c',
-                                '4c711b60-a199-11e9-8e16-03828ff5271c',
-                                'Perpetual')">
+                                'f59db8c0-fe4e-11ea-951e-b77b877a367b',
+                                '7eb90e70-fe4f-11ea-951e-b77b877a367b',
+                                'Edge Perpetual')">
                                 Get your license
                             </a>
                             <div class="pricing-square-item">1 year of software updates</div><br>

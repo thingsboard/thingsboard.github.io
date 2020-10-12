@@ -8,8 +8,8 @@ description: Getting started with ThingsBoard Edge
 * TOC
 {:toc}
 
-The [**ThingsBoard Edge**](/products/edge/) is a ThingsBoard's software product for edge gateways. 
-It allows to bring edge computing, data collection and management to the edge, while seamlessly synchronizing with the cloud. 
+The [**ThingsBoard Edge**](/products/edge/) is a ThingsBoard's software product for edge computing. 
+It allows bringing data analysis and management to the edge, while seamlessly synchronizing with the cloud. 
 
 ## Key benefits
  - **Local deployment on site.** The ability to operate with local devices without internet connection to cloud

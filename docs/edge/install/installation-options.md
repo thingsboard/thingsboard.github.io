@@ -1,8 +1,8 @@
 ---
 layout: docwithnav
 title: ThingsBoard Edge installation options
-description: ThingsBoard Edge installation instructions for various operation systems
 notitle: "true"
+
 ---
 
 <div class="installation-options">
@@ -11,6 +11,11 @@ notitle: "true"
           <div class="container">
             <div class="install-options-hero-content">
                 <h1>ThingsBoard Edge installation options</h1>
+                <div class="install-options-description">
+                    <p>
+                        ThingsBoard Edge installation instructions for various operation systems
+                    </p>
+                </div>
             </div>
             <div class="col-lg-12 deployment-container">                
                 <div class="deployment-div">
@@ -87,38 +92,22 @@ notitle: "true"
 
     jqueryDefer(function () {
     
-        window.addEventListener('popstate', onPopStatePeInstallOptions);
+        window.addEventListener('popstate', onPopStateEdgeInstallOptions);
         
-        onPopStatePeInstallOptions();
+        onPopStateEdgeInstallOptions();
         
-        $('.deployment-selector .deployment').click(function(event) {
-            event.preventDefault();            
-            var id = $(this).attr("data-toggle");
-            var param = 'peInstallType';
-            var params = Qs.parse(window.location.search, { ignoreQueryPrefix: true });
-            params[param] = id.substring(1);
-            
-            var newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?' + Qs.stringify(params);
-            
-            if (window.location.hash) {
-                newurl += window.location.hash;
-            }
-            
-            window.history.pushState({ path: newurl }, '', newurl);
-            selectTargetPeInstallOption(id);
-        });
     });
     
-    function onPopStatePeInstallOptions() {
+    function onPopStateEdgeInstallOptions() {
             var params = Qs.parse(window.location.search, { ignoreQueryPrefix: true });
-            var targetId = params['peInstallType'];
+            var targetId = params['edgeInstallType'];
             if (!targetId) {
                 targetId = 'onPremise';
             }
-            selectTargetPeInstallOption('#'+targetId);
+            selectTargetEdgeInstallOption('#'+targetId);
     }
         
-    function selectTargetPeInstallOption(targetId) {
+    function selectTargetEdgeInstallOption(targetId) {
          $(".deployment-selector .deployment").removeClass("active");         
          $(".deployment-selector .deployment[data-toggle='"+targetId+"']").addClass("active");
          $(".deployment-selector .deployment[data-toggle='"+targetId+"'] .magic-radio").prop("checked", true);
@@ -127,6 +116,5 @@ notitle: "true"
          $('.deployment-div .deployment-section'+targetId).addClass("active");
          
          $('.deployment-div .deployment-section' + targetId + ' .deployment-card-block').addClass("animated zoomIn");
-    }   
-
+    }
 </script>

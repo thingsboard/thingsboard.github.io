@@ -908,6 +908,15 @@ section
 			transform: translate(5px,-10px)
 			display: inline-block
 
+	a.item.item-beta > .title
+		&::after
+			content: "BETA"
+			font-size: 12px
+			font-weight: bold
+			color: $red
+			transform: translate(5px,-10px)
+			display: inline-block
+
 	div.item > .title
 		&:before
 			content: ""
@@ -935,6 +944,15 @@ section
 			font-size: 12px
 			font-weight: bold
 			color: $green
+			transform: translate(5px,-10px)
+			display: inline-block
+
+	div.item.item-beta > .title
+		&::after
+			content: "BETA"
+			font-size: 12px
+			font-weight: bold
+			color: $red
 			transform: translate(5px,-10px)
 			display: inline-block
 

@@ -109,7 +109,6 @@ toc:
     path: /docs/user-guide/integrations/
   - title: Remote Integrations
     path: /docs/user-guide/integrations/remote-integrations/
-    new: true
   - title: HTTP
     path: /docs/user-guide/integrations/http/
   - title: MQTT
@@ -145,7 +144,7 @@ toc:
   - title: Notifications and Alarms on your smartphone using Telegram Bot
     path: /docs/user-guide/rule-engine-2-0/tutorials/integration-with-telegram-bot/
 - title: Edge
-  new: true
+  beta: true
   section:
     - title: Getting Started
       path: /docs/edge/
@@ -154,10 +153,10 @@ toc:
     - title: Installation guides
       section:
         - title: Installation options
-          path: /docs/edge/install/installation-options
-        - title: Installing Edge on Ubuntu
+          path: /docs/edge/install/installation-options/
+        - title: Installing Edge on Ubuntu (DEB)
           path: /docs/edge/install/deb-installation/
-        - title: Installing Edge on CentOS/RHEL
+        - title: Installing Edge on CentOS/RHEL (RPM)
           path: /docs/edge/install/rhel/
         - title: Installing Edge on Windows
           path: /docs/edge/install/windows/
@@ -174,17 +173,15 @@ toc:
     - title: ThingsBoard Edge Roadmap
       path: /docs/edge/roadmap/
 - title: Analytics
-  new: true
   section:
   - title: Trendz Analytics
-    new: true
     section:
       - title: Getting Started
         path: /docs/trendz/
       - title: Installation guide
         section:
           - title: Installation options
-            path: /docs/trendz/install/installation-options
+            path: /docs/trendz/install/installation-options/
           - title: Installing Trendz on Ubuntu Server
             path: /docs/trendz/install/ubuntu/
           - title: Installing Trendz on CentOS/RHEL
@@ -234,7 +231,6 @@ toc:
       - title: Trendz Release Notes
         path: /docs/trendz/releases/
   - title: Kafka Streams
-    new: true
     path: /docs/samples/analytics/kafka-streams/
 - title: Security
   section:
@@ -276,7 +272,6 @@ toc:
     path: /docs/user-guide/ui/aliases/
 - title: IoT Gateway
   path: /docs/iot-gateway/
-  new: true
   section:
   - title: What is ThingsBoard IoT Gateway?
     path: /docs/iot-gateway/what-is-iot-gateway/

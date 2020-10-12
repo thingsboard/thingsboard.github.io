@@ -1,3 +1,5 @@
-Hardware requirements depend on chosen database and amount of devices connected to the system. 
-We recommended to run ThingsBoard Edge on a single machine with at least 1GB of RAM.
-ThingsBoard Edge can be installed **on the same** server with ThingsBoard Platform.
+Hardware requirements depend on an amount of devices connected to the system and GUI usage locally. 
+
+To run ThingsBoard Edge ***without*** usage of GUI (local dashboards, device management etc.) and relatively small amount of devices (under 100) on a single machine you will need at least 1GB of RAM.
+
+To run ThingsBoard Edge ***with*** usage of GUI (local dashboards, device management etc.) and with 100+ devices on a single machine we recommend having at least 4GB of RAM.

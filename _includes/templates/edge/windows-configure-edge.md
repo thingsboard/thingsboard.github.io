@@ -18,7 +18,7 @@ C:\Program Files (x86)\tb-edge\conf\tb-edge.yml
 
 In the file "tb-edge.yml" from the previous step locate "# SQL DAO Configuration" block. 
 
-Don't forget to **replace YOUR_POSTGRES_PASSWORD_HER** with your real postgres user password:
+Don't forget to **replace YOUR_POSTGRES_PASSWORD_HERE** with your real postgres user password:
 
 ```yml
 # SQL DAO Configuration

@@ -9,16 +9,15 @@ hidetoc: "true"
 <div style="display: flex;">
     <div style="width: 50%; margin: 30px 10px 0;">
         <div class="pricing-square-description">
-            <p>Connect devices to ThingsBoard Edge and start processing data faster, safer and more reliable:</p>
+            <p>Connect devices to ThingsBoard Edge and start processing data locally without internet connection:</p>
         </div>
         <ul>
-            <li class="pricing-square-item">Push to cloud data already filtered on the edge</li>
-            <li class="pricing-square-item">React faster to critical situations with local edge alarms</li>
-            <li class="pricing-square-item">Create flexible relations with devices and assets</li>
-            <li class="pricing-square-item">Customize rule chains, dashboards, widgets</li>
-            <li class="pricing-square-item">Configure role-based access control for edges</li>
-            <li class="pricing-square-item">Update thousands of edges in a single click</li>
             <li class="pricing-square-item">Operate with local devices without internet connection</li>
+            <li class="pricing-square-item">Monitor local events/timeseries data with real-time dashboard</li>
+            <li class="pricing-square-item">Push to cloud only subset of filtered data from devices</li>
+            <li class="pricing-square-item">React to critical local situations on site without internet connection</li>
+            <li class="pricing-square-item">Update thousands of edges in a single click</li>
+            <li class="pricing-square-item">Store data locally from devices without internet connection and push to cloud once connection is restored</li>
         </ul>
     </div>
     <div style="width: 50%; margin: 0 10px 0;">
