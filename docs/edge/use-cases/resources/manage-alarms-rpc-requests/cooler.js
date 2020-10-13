@@ -8,7 +8,7 @@ var client  = mqtt.connect('mqtt://'+ process.env.THINGSBOARD_HOST,{
 
 client.on('connect', function () {
     client.subscribe('v1/devices/me/rpc/request/+');
-    console.log('Cooler connected!');
+    console.log('Cooler is connected!');
 });
 
 //RPC message handling sent to the client

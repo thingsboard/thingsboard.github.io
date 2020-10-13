@@ -219,43 +219,37 @@ In ThingsBoard Professional Edition UI go to **Rule Chains** -> **Edge Rule Chai
 
 Now let's create connections between nodes in the following way:
  * Remove the connection between **Save timeseries** and **Push to cloud** nodes
- * Connect **Save timeseries** node to the **Node A** and **Node B** with the relation **Success**
- * Connect **Node A** and **Node C** with relation **True**
- * Connect **Node B** and **Node D** with relation **True** 
- * Connect **Node C** and **Node D** to the **Push to cloud** node with relation types **Success**
+ * Connect **Save timeseries** node to the **Node A** and **Node B** with the relation type **Success**
+ * Connect **Node A** and **Node C** with relation type **True**
+ * Connect **Node B** and **Node D** with relation type **True** 
+ * Connect **Node C** and **Node D** to the **Push to cloud** node with relation type **Success**
+
+![image](/images/edge/tutorial/data-filtering/rule-chain-root.png)
 
 ### Generate telemetry
 
-- Use the following scripts to connect the device **Fuel monitoring system** to the ThingsBoard server by MQTT protocol.  
-    - [**mqtt-js.sh**](https://thingsboard.io/docs/edge/use-cases/resources/data-filtering-traffic-reduce/mqtt-js.sh).
-    - [**generator.js**](https://thingsboard.io/docs/edge/use-cases/resources/data-filtering-traffic-reduce/generator.js).
-
-The script will generate each second two telemetry readings:
-- Fuel consumption in **miles per gallon (mpg)**
-- Car speed in **miles per hour (mph)**
+- Use the following scripts to connect the devices **GPS** and **Fuel monitoring system** to the ThingsBoard server by MQTT protocol.  
+    - [**mqtt_generator_gps.py**](/docs/edge/use-cases/resources/data-filtering-traffic-reduce/mqtt_generator_gps.py): the script generates each second speed data (mph)
+    - [**mqtt_generator_fuel.py**](/docs/edge/use-cases/resources/data-filtering-traffic-reduce/mqtt_generator_fuel.py): the script generates each second fuel consumption data (mpg)
 
 To run the scripts, you need to do the following steps:
- * In the mqtt-js.sh replace THINGSBOARD_HOST, ACCESS_TOKEN_GPS, ACCESS_TOKEN_FUEL with you real params
- * Access tokens for the **Fuel monitoring system** and **GPS** devices can be find from the device's page. <br>
+ * Replace THINGSBOARD_HOST with your ThingsBoard Edge server installation IP address or hostname 
+ * Replace ACCESS_TOKEN. Access token can be find from the [device's page](/docs/user-guide/ui/devices/#manage-device-credentials): <br>
 
 ![image](/images/edge/tutorial/data-filtering/copy-token.png)
 
-- Open the terminal and go to the folder that contains these emulator scripts. 
- Make sure it is executable:
-  
- ```shell
- chmod +x *.sh
- ```
+- Open the terminal and install MQTT Python library:
 
-Then run the following command:
+```bash
+sudo pip install paho-mqtt
+```
 
-{% highlight bash %}
-sudo bash mqtt-js.sh
-{% endhighlight %}
+- Go to the folder that contains Python scripts and launch applications in separate terminal windows by these commands:
 
-You should see the following screen:
-
-![image](/images/edge/tutorial/data-filtering/script-generator.png)
+```bash
+python mqtt_generator_gps.py
+python mqtt_generator_fuel.py
+```
 
 ## Validating the flow
 
