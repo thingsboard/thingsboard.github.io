@@ -6,14 +6,14 @@ import time
 THINGSBOARD_HOST = '127.0.0.1' # REPLACE with your ThingsBoard Edge server installation IP address or hostname
 ACCESS_TOKEN = '08loDim39tsY9eudikQz' # REPLACE with your device access token
 
-# The callback for when the client receives a CONNACK response from th$
+# The callback for when the client receives a CONNACK response from the server
 def on_connect(client, userdata, rc, *extra_params):
     # print('Connected with result code ' + str(rc))
     # Subscribing to receive RPC requests
     client.subscribe('v1/devices/me/rpc/request/+')
     # Sending current telemetry
     client.publish('v1/devices/me/telemetry', get_telemetry(), 1)
-    # Log device name and current value
+    # Log device current value
     print(get_telemetry())
 
 def get_telemetry():
@@ -28,7 +28,7 @@ while(True):
     client.on_connect = on_connect
     # Set access token
     client.username_pw_set(ACCESS_TOKEN)
-    # Connect to ThingsBoard using default MQTT port and 60 seconds keepal$
+    # Connect to ThingsBoard using default MQTT port and 60 seconds keep alive
     client.connect(THINGSBOARD_HOST, 1883, 60)
     try:
         # Set timeout 1 second
