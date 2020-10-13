@@ -22,18 +22,14 @@ For example, we will launch Teltonika TCP Integration that connects to the Thing
 [cloud.thingsboard.io](https://cloud.thingsboard.io/signup).  
 
 See [deployment options](/docs/user-guide/integrations/#deployment-options) for more general information.
-But in our integraation we used only TCP protocol:
-<details>
-    <summary>
-    <font color="#228b22"><b>Scheme`s screenshot Teltonika TCP Integration</b></font> (<b>click to open expanded view</b>)
-    </summary>
-    <img src="/images/user-guide/integrations/teltonika/embeded-integrations-overview.jpg">
-</details> 
+But in our integration we only used TCP protocol:
 
+
+![image](/images/user-guide/integrations/teltonika/embeded-integrations-overview.jpg)
 
 ## Prerequisites
 
-We assume you already have a tenant administrator account on your own ThingsBoard PE v2.4.3 instance or
+We assume you already have a tenant administrator account on your own ThingsBoard PE v3.1.1 instance or
 [cloud.thingsboard.io](https://cloud.thingsboard.io/signup). 
  
 
@@ -41,23 +37,24 @@ We assume you already have a tenant administrator account on your own ThingsBoar
 
 ### Step 1. Config Root Rule Chain (Root)
 
-After installing the ThingsBoard, for the normal operation of the Downlink Data Converter, you need to edit the Root Rule Chain (Root).
+After installing the ThingsBoard, for the normal operation of the Downlink Data Converter, you need to edit the Root 
+Rule Chain (Root) the following way: Rule chains -> Root Rule Chain (Root) -> Add the originator attributes, originator
+ fields and integration downlink rule nodes.
 
-<details>
-    <summary>
-        <font color="#006400"><i><b>the following way: Rule chains -> Root Rule Chain (Root) -> Add the originator attributes, originator fields and integration downlink </b></i></font> (<b>click to open expanded view</b>)
-    </summary>
-    <img src="/images/user-guide/integrations/teltonika/rule_chane.png">
-</details>
+![image](/images/user-guide/integrations/teltonika/rule_chain.png)
+
 Alternatively, you can import it from this [file](/docs/user-guide/resources/teltonika/teltonika_root_rule_chain.json) 
+
+
+
 
 ### Step 2. Create default Uplink and Downlink Converters
 
 Let's create dummy uplink and downlink converters and will set them to work in debug mode.
 While running in debug mode, those converters will record all incoming events. 
-This will help us to tune the converters once we start receiving the data.
+This will help us tune the converters once we start receiving the data.
 
-![image](/images/user-guide/integrations/remote/default-converters.gif)  
+<img data-gifffer="/images/user-guide/integrations/remote/default-converters.gif" />
 
 ### Step 3. Settings decoder Function  to Uplink Data Converter
 
@@ -65,34 +62,28 @@ When creating an Uplink Converter, a default decoder is added to the Decoder sec
 
 After creating the Uplink Converter to the Decoder section, you need to update the Decoder code to [the following code](/images/user-guide/integrations/teltonika/upLinkDecoder.txt).
 
-<b>It is necessary to edit the Uplink decoder</b>
+<b>NOTE: it is necessary to edit the Uplink decoder</b>
 
-<p></p> <p></p>
-<details>
-    <summary>
-        <font color="#006400"><i><b>Open Uplink Converter, editor mode, click "test decoder function" and replace the default code with a new code:</b></i></font> <br> (<b>click to open expanded view</b>)
-    </summary> 
-   <ul>
-        <details>
-            <summary>
-            <font color="#228b22"><b>Screenshot of editing the UpLink decoder</b></font> (<b>click to open expanded view</b>)
-            </summary>
-            <img src="/images/user-guide/integrations/teltonika/uplink_decoder.png">
-        </details> 
-    </ul>
-</details>
+
+Open Uplink Converter, editor mode, click "test decoder function" and replace the default code with a new code:
+
+![image](/images/user-guide/integrations/teltonika/uplink_decoder.png)
 
 Alternatively, you can import it from this [file](/docs/user-guide/resources/teltonika/teltonika_tcp_uplink_converter.json) 
+
+
+It is done the following way: Go to Data Converters -> Add new Data Converter -> Import Converter
+
 <details>
-    <summary>
-        <font color="#006400"><i><b>the following way: Go to Data Converters -> Add new Data Converter -> Import Converter </b></i></font> (<b>click to open expanded view</b>)
-    </summary>
-    <img src="/images/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/import_new_converter.png">
+            <summary>
+            (<b>click to open screenshot</b>)
+            </summary>
+            <img src="/images/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/import_new_converter.png">
 </details>
 
 <details>
     <summary>
-        <i><b><font color="#FF0000">Note !!!</font> If error: Script used more than the allowed [<font color="#36abb5">100 ms</font>] of CPU time. </b></i> (click to open expanded view)
+        <i><b><font color="#FF0000">Note !!!</font> If the following error appears: Script used more than the allowed [<font color="#36abb5">100 ms</font>] of CPU time. </b></i> (click to open expanded view)
     </summary>
     <ul>
         <li>If you have an <b>error</b> while executing <b>uplink scripts:</b></li>         
@@ -124,147 +115,80 @@ Alternatively, you can import it from this [file](/docs/user-guide/resources/tel
 When creating an Downlink Converter, a default decoder is added to the Decoder section.<br>
 After creating the Downlink Converter to the Decoder section, you need to update the Decoder code to [the following code](/images/user-guide/integrations/teltonika/downlinkDecoder.txt). <br>
 
-<b>It is necessary to edit the Downlink decoder</b>
+<b>NOTE: It is necessary to edit the Downlink decoder</b>
 
-Open Downlink Converter, editor mode, click "test decoder function" and replace the default code with a new code:   
-   <ul>
-        <details>
-            <summary>
-            <font color="#228b22"><b>Screenshot edit the DownLink decoder</b></font> (<b>click to open expanded view</b>)
-            </summary>
-            <img src="/images/user-guide/integrations/teltonika/downlink_decoder.png">
-        </details>         
-        <details>
-            <summary>
-             <font color="#228b22"><b>JSON: output data after DownLink Data Converter looks like this:</b></font>  <br>(<b>click to open expanded view</b>)
-             </summary>  
-             {% highlight bash %}
-             {
-                 {
-                    /** Encoder **/                    
-                      var codec = 12;
-                      var quantity = 1;
-                      var commandType = 5;
-                      var commandNumber = metadata['commandNumber'];
-                      var separator = ";";                  
-                      var result = setPayload();                  
-                      function setPayload() {
-                          if (msg.hasOwnProperty('payload') && metadata['payload'] !== null) {
-                              return getPayload();
-                          }
-                          return null;
-                      }                  
-                      function getPayload() {
-                          var rez = {
-                              contentType: "JSON",
-                              data:  getDataHexMany(),
-                              metadata: {
-                                  serialNumber: metadata['cs_serialNumber'],
-                                  deviceName: metadata['originatorName'],
-                                  payload:  getPayloadTrim(),
-                                  codec: codec,
-                                  commandNumber: commandNumber,
-                                  commandType: commandType
-                              }
-                          };
-                          return rez;
-                      }                  
-                      function convertToHex(str) {
-                          var hex = '';
-                          for(var i=0;i<str.length;i++) {
-                              hex += ''+str.charCodeAt(i).toString(16);
-                          }
-                          return hex;
-                      }                  
-                      function convertToHexFixLen(str, len){
-                          var strHex = len +str.toString(16);
-                          return strHex.substring(strHex.length - len.length);
-                      }                  
-                      function getDataHexMany() {
-                          var dataArrays = msg.payload.split(separator);
-                          var data = "";
-                          for (var i = 0; i < dataArrays.length; i ++) {
-                              data += (getDataHexOneForMany(dataArrays[i].trim()) + separator)
-                          }
-                          data = data.substring(0, data.lastIndexOf(separator));                  
-                          return data;                  
-                      }                  
-                      function getDataHexOneForMany(str) {
-                          var codecHex = convertToHexFixLen(codec, "00");
-                          var quantityHex = convertToHexFixLen(quantity, "00");
-                          var typeHex = convertToHexFixLen(commandType, "00");
-                          var commandSizeHex = convertToHexFixLen(str.length,"00000000");
-                          var commandHex = convertToHex(str);
-                          var dataHex = codecHex + quantityHex  + typeHex + commandSizeHex + commandHex + quantityHex;
-                          return dataHex;
-                      }                  
-                      function getPayloadTrim () {
-                          var dataArrays = msg.payload.split(separator);
-                          var data = "";
-                          for (var i = 0; i < dataArrays.length; i ++) {
-                              data += (dataArrays[i].trim() + separator)
-                          }
-                          data = data.substring(0, data.lastIndexOf(separator));
-                          return data;
-                      }                  
-                      return result;
-                 }
-             }
-             {% endhighlight %}
-         </details>  
-    </ul>  
-    
-    
-Alternatively, you can import it from this [file](/docs/user-guide/resources/teltonika/teltonika_tcp_downlink_converter.json) 
+Open Downlink Converter, editor mode, click "test decoder function" and replace the default code with a new code:
+
+![image](/images/user-guide/integrations/teltonika/downlink_decoder.png)
+
+Alternatively, you can import it from this [file](/docs/user-guide/resources/teltonika/teltonika_tcp_uplink_converter.json) 
+
+It is done the following way: Go to Data Converters -> Add new Data Converter -> Import Converter
+
 <details>
-    <summary>
-        <font color="#006400"><i><b>the following way: Go to Data Converters -> Add new Data Converter -> Import Converter </b></i></font> (<b>click to open expanded view</b>)
-    </summary>
-    <img src="/images/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/import_new_converter.png">
-</details>   
+            <summary>
+            (<b>click to open screenshot</b>)
+            </summary>
+            <img src="/images/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/import_new_converter.png">
+</details>
+   
+     
 
 ### Step 5. Create and Save credentials of Teltonika TCP Integration
 
-Let's create Custom integration that will connect to the local service "remote-integration-tcp" using:
+Let's create a custom integration that will connect to the local service "remote-integration-tcp" using:
 - Integration class
-- Intagration key
+- Integration key
 - Integration secret 
+- Integration JSON configuration
 <ol>
-    <li>Notice that we enable "Debug" and "Execute remotely".</li>    
+    <li>Notice that we enable "Debug" and "Execute remotely".</li> 
+    <li>Required field: "Integration class" - org.thingsboard.integration.custom.server.TCPIntegration</li>    
     <li>Required field: "Integration JSON configuration".</li>
         {% highlight bash %}
-            {"bindPort": 1994}
+            {"bindPort": 1994,
+            "typeDevice": "teltonika"}
         {% endhighlight %}    
     <img src="/images/user-guide/integrations/teltonika/custom-teltonika-tcp-integration_config.png">
-    <li>If bindPort`s value is not set in the "Integration JSON configuration", the default value will be used: <font color="#36abb5">bindPort </font>=<font color="#0031ff">1990</font></li>
-    <li>Let's copy-paste the integration key, secret and class from the integration details.</li>
-     <img src="/images/user-guide/integrations/teltonika/custom-teltonika-tcp-integration.jpg">   
+    <li>If bindPort`s value is not set in the "Integration JSON configuration", the default value will be used: <font color="#36abb5">bindPort </font>=<font color="#0031ff">1990</font></li>  
 </ol>
 
 ### Step 6. Creation  and  configuration of the Dashboard
 
 After creating devices manually: an overview attribute: the serial number of the device or after automatically creating the device (with the first service connection, the device is created automatically) - you need to create a dashboard.
 
-<details>
-   <summary>
-       <font color="#006400"><i><b>Screenshot of the Dashboard after finishing its creation</b></i></font> (<b>click to open expanded view</b>)
-   </summary> 
-   <img src="/images/user-guide/integrations/teltonika/teltonika_dashboard_example.png">
-</details>
 
-[Example:  Dashboard in json format](/docs/user-guide/resources/teltonika/teltonika_tcp.json)
+Screenshot of the Dashboard after finishing its creation:
 
-<details>
+![image](/images/user-guide/integrations/teltonika/teltonika_dashboard_example.png)
+
+[Dashboard in json format](/docs/user-guide/resources/teltonika/teltonika_tcp.json)
+
+Creation of aliases :
+
+1.LisTeltonika: Filter type = Entity list; Type = Device; and add TELTONIKA devices 
+
+![image](/images/user-guide/integrations/teltonika/teltonika_dashboard_alias_ListTeltonika.png)
+
+2.DigEntityForm: Filter type = Device type; Type = teltonika
+
+![image](/images/user-guide/integrations/teltonika/teltonika_dashboard_alias_DigEntityForm.png)
+
+3.SelectedDevice: Filter type = Entity from dashboard state
+
+![image](/images/user-guide/integrations/teltonika/teltonika_dashboard_alias_SelectedDevice.png)
+
+Result of alias creation:
+
+![image](/images/user-guide/integrations/teltonika/teltonika_dashboard_add_aliases.png)
+
+<!-- <details>
   <summary>
     <i><b>Creation of the Dashboard (open Dashboard to edit and add three aliases)</b></i> (click to open expanded view)
   </summary> 
   <ol>
-    <details>
-      <summary>
-          <font color="#006400"><i><b>Screenshot: add Entity aliases</b></i></font> (<b>click to open expanded view</b>)
-      </summary> 
+         Screenshot of Entity aliases
       <img src="/images/user-guide/integrations/teltonika/teltonika_dashboard_add_aliases.png">
-    </details>  
     <ol>
          <li><b>LisTeltonika:</b> Filter type=>Entity list; Type=>Device; and add devices TELTONIKA</li>
           <details>
@@ -289,8 +213,31 @@ After creating devices manually: an overview attribute: the serial number of the
         </details>
     </ol>
    </ol>
-</details>  
+</details>  -->
 
+Creation of dashboard states:
+
+1.state main: Name = MAIN; Sate id = main; Root state = true
+
+![image](/images/user-guide/integrations/teltonika/teltonika_dashboard_state_main.png)
+
+2.state map: Name = Map; Sate id = map; Root state = false
+
+![image](/images/user-guide/integrations/teltonika/teltonika_dashboard_state_map.png)
+
+3.state details: Name = Setup -> ${entityName}; Sate id = details; Root state = false
+
+![image](/images/user-guide/integrations/teltonika/teltonika_dashboard_state_details.png)
+
+4.state uplinks: Name = UPLINKS -> ${entityName}; Sate id = uplinks; Root state = false
+
+![image](/images/user-guide/integrations/teltonika/teltonika_dashboard_state_uplinks.png)
+
+Result of states creation:
+
+![image](/images/user-guide/integrations/teltonika/teltonika_dashboard_states.png)
+
+<!--
 <details>
   <summary>
     <i><b>Add to the Dashboard new states (open Dashboard to edit, click "Manage dashboard states" and add states)</b></i> (click to open expanded view)
@@ -342,7 +289,86 @@ After creating devices manually: an overview attribute: the serial number of the
     </ol>
    </ol>
 </details>  
+-->
+Editing of dashboard states:
 
+1) State  <b>main:</b>
+
+a.<b>Add widget:</b> Entities table: Cards -> Entities
+
+b.Widget <b>data</b>: add Datasources -> Type = Entity; Parameters = ListTeltonika; Fields = serialNumber...
+
+![image](/images/user-guide/integrations/teltonika/teltonika_dashboard_state_main_entities.png)
+
+c.Widget <b>actions</b>:
+
+c1) Add action <b>Details</b>: Action source = Action cell button, Name = Details, Type = Navigation to new dashboard state, Target dashboard state = details
+
+![image](/images/user-guide/integrations/teltonika/teltonika_dashboard_state_main_entities_details.png)
+
+c2) Add action <b>GoToUplinks</b>: Action source = Action cell button, Name = GoToUplinks, Type = Navigation to new dashboard state, Target dashboard state = uplinks
+
+![image](/images/user-guide/integrations/teltonika/teltonika_dashboard_state_main_entities_GoToUplinks.png)
+
+c3) Add action <b>GoToMap</b>: Action source = Action cell button, Name = GoToMap, Type = Navigation to new dashboard state, Target dashboard state = map
+
+![image](/images/user-guide/integrations/teltonika/teltonika_dashboard_state_main_entities_GoToMap.png)
+
+c4) Add action <b>Details (On row click)</b>: Action source = On row click, Name = Detailsrow, Type = Navigation to new dashboard state, Target dashboard state = details
+
+![image](/images/user-guide/integrations/teltonika/teltonika_dashboard_state_main_entities_detailsrow.png)
+
+2) State <b>map:</b>
+
+a. <b>Add widget:</b> Trip Animation: Maps -> Trip Animation
+
+b. Widget <b>data</b>: add Datasources -> Type = Entity, Parameters = SelectedDevice, Fields = latitude...
+
+![image](/images/user-guide/integrations/teltonika/teltonika_dashboard_state_map_TripAnimation.png)
+
+Screenshot of the Trip Animation widget at work:
+
+![image](/images/user-guide/integrations/teltonika/teltonika_dashboard_state_map_MigrationMap.png)
+
+3) State <b>details</b>:
+
+a. <b>Add widget:</b> Timeseries table: Cards -> Timeseries table: Title = Messages from device 
+
+a1)Widget <b>data:</b> add Datasources -> Type = Entity; Parameters = SelectedDevice; Fields = latitude...
+
+![image](/images/user-guide/integrations/teltonika/teltonika_dashboard_state_details_Timeseries.png)
+
+b. <b>Add widget:</b> Update Multiple Attributes: Input Widget -> Update Multiple Attributes 
+
+b1)Widget <b>data:</b> add Datasources -> Type = Entity; Parameters = SelectedDevice; Fields = key: payload; label: ${entityLabel}
+
+![image](/images/user-guide/integrations/teltonika/teltonika_dashboard_state_details_Timeseries.png)
+
+c. <b>Add widget:</b> Timeseries table: Cards -> Timeseries table: Title = Commands 
+
+c1)Widget <b>data:</b> add Datasources -> Type = Entity; Parameters = SelectedDevice; Fields = logs...
+
+![image](/images/user-guide/integrations/teltonika/teltonika_dashboard_state_details_logs.png)
+
+Screenshot of the details state:
+
+![image](/images/user-guide/integrations/teltonika/teltonika_dashboard_state_details_Setup.png)
+
+4) State <b>uplinks</b>:
+
+a. <b>Add widget:</b> Entities table: Cards -> Entities table: Title = Last Entity Value
+
+a1) Widget <b>data:</b> add Datasources -> Type = Entity, Parameters = SelectedDevice, Fields = model...
+
+![image](/images/user-guide/integrations/teltonika/teltonika_dashboard_state_uplinks_entity.png)
+
+b. <b>Add widget:</b> Timeseries - Flot: Charts -> Timeseries - Flot
+
+b1) Widget <b>data:</b> add Datasources -> Type = Entity; Parameters = SelectedDevice; Fields = External Voltage mV...
+
+![image](/images/user-guide/integrations/teltonika/teltonika_dashboard_state_uplinks_gtaph.png)
+
+<!--
 <details>
   <summary>
     <i><b>Edit states and add  new widgets (open Dashboard and state to edit)</b></i> (click to open expanded view)
@@ -481,7 +507,7 @@ After creating devices manually: an overview attribute: the serial number of the
     </ul>
   </ol>
 </details>
-
+-->
 
 
 ## Service: "remote-integration-tcp" install and configuration steps
@@ -518,6 +544,27 @@ Example configuration file for <b>"remote-integration-tcp".</b>
 [the following code: <b>tb-remote-integration.yml</b>](/images/user-guide/integrations/teltonika/tb-remote-integration.yml)
 
 ## Example of configuration over TCP (Teltonika FMB920)
+
+Example list of some commands (from FMB920 User Manual V0.25)
+
+{% highlight bash %}
+         ...
+         "getinfo",
+         "getver",
+         "getstatus",
+         "getgps",
+         "getio",
+         "ggps",
+         "cpureset",
+         "getparam 2004",                        // Server gettings domen: my.org.ua 
+         "setparam 2004:my.thingsboard.io",      // Server settings domen: my.thingsboard.io
+         "getparam 2005",                        // Server gettings port: 1994             
+         "setparam 2005:1992",                   // Server settings port: 1992             
+         "getparam 2006"                         //  Server gettings pototokol: TCP - 0, UDP - 1
+         "setparam 2006:1"                       //  Server settings pototokol: UDP - 1
+         ...
+      {% endhighlight %}
+<!--
 <details>
      <summary>
          <i><b>Example list of some commands (from FMB920 User Manual V0.25)</b></i> (click to open expanded view)
@@ -540,6 +587,7 @@ Example configuration file for <b>"remote-integration-tcp".</b>
          ...
       {% endhighlight %}
 </details>  
+-->
 <ol>
     <li><b>Sending</b> a request:</li>
     {% highlight bash %}
@@ -550,12 +598,9 @@ Example configuration file for <b>"remote-integration-tcp".</b>
          getver  => "logs": "Downlink: getver Uplink: Ver:03.25.14_05 GPS:AXN_5.10_3333 Hw:FMB920 Mod:13 IMEI:359633100458590 Init:1970-1-1 0:0 Uptime:7202 MAC:001E42BD06FE SPC:1(0) AXL:1 OBD:0 BL:1.7 BT:4" 
          getinfo => "logs": "Downlink: getinfo Uplink: RTC:2004/1/1 7:59 Init:1970/1/1 0:0 UpTime:6853s PWR:SoftReset RST:0 GPS:2 SAT:0 TTFF:0 TTLF:0 NOGPS:1:54 SR:0 FG:0 FL:10 SMS:0 REC:10000+ MD:1 DB:0"
      {% endhighlight %}
-    <details>
-         <summary>
-             <font color="#006400"><i><b>Screenshot of sending a request and receiving a response to a request</b></i></font> (<b>click to open expanded view</b>)
-         </summary> 
+    
+             <font color="#006400"><i><b>Screenshot of sending a request and receiving a response to a request:</b></i></font> 
          <img src="/images/user-guide/integrations/teltonika/example_list_some_commands.png">
-     </details> 
      <li>If a <b>request</b> from the device: IMEV number is sent an answer == <font color="#0031ff">"0x01"</font> in bytes, then we get an answer about the state of all the <b>parameters</b> listed in the <b>I / O</b></li>
       <details>
            <summary>
