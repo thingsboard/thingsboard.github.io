@@ -1,0 +1,27 @@
+{% assign gallery = gallery | strip | newline_to_br | strip_newlines | split: "<br />" %}
+{% assign min = 0 %}
+{% assign max = 1000 %}
+{% assign diff = max | minus: min %}
+{% assign id = "now" | date: "%N" | modulo: diff | plus: min %}
+<ul class="images-gallery" id="{{id}}" style="justify-content: {{ include.align | default: 'start'}};">
+    {% for image in gallery %}
+    <li style="max-width: min({{ include.max-width | default: '450px'}}, 100%);
+                max-height: min({{ include.max-height | default: '450px'}}, 100%);"
+        {% if gallery.size > 1 %} class="list-item"{% endif %}>
+        <img src="{{image}}" alt="image" style="max-width: min({{ include.max-width | default: '450px'}}, 100%);
+                                                max-height: min({{ include.max-height | default: '450'}}, 100%);">
+    </li>
+    {% endfor %}
+</ul>
+<script>
+    window.onload = function() {
+        var Viewer = window.Viewer;
+        var gallery = new Viewer(document.getElementById('{{id}}'), {
+            title: false,
+            navbar: false,
+            toolbar: false,
+            rotatable: false,
+            zIndex: 9000
+        });
+    }
+</script>
