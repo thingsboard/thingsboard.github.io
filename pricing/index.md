@@ -24,8 +24,8 @@ description: ThingsBoard Products Pricing
         <li id="menu-item-trendz" class="menu-item">
             <a href="javascript:void(0);" onClick="activatePricingSection('trendz')">Trendz Analytics</a>
         </li>
-        <li id="menu-item-edge" class="menu-item">
-            <a href="javascript:void(0);" onClick="activatePricingSection('edge')">ThingsBoard Edge</a>
+        <li id="menu-item-thingsboard-edge" class="menu-item">
+            <a href="javascript:void(0);" onClick="activatePricingSection('thingsboard-edge')">ThingsBoard Edge</a>
         </li>
      </ul>
    </nav> 
@@ -445,7 +445,7 @@ description: ThingsBoard Products Pricing
                                     insight from your data:</p>
                             </div>
                             <ul>
-                                <li class="pricing-square-item">One-click integration with ThingsBaord</li>
+                                <li class="pricing-square-item">One-click integration with ThingsBoard</li>
                                 <li class="pricing-square-item">Self-service analytics</li>
                                 <li class="pricing-square-item">Data clear and filtering</li>
                                 <li class="pricing-square-item">Advanced visualizations</li>
@@ -467,7 +467,7 @@ description: ThingsBoard Products Pricing
 </div>
 </section>
 
-<section id="edge" class="pricing-content">
+<section id="thingsboard-edge" class="pricing-content">
  <div class="text-center pt-4 pb-4">
     <a class="btn btn-full-green btn-pricing" href="/docs/contact-us/?subject=Partnership">Become a partner</a> 
  </div> 
@@ -525,7 +525,7 @@ description: ThingsBoard Products Pricing
                             <div class="pricing-square-item" data-faq-id="optional-support">
                                 Optional support
                             </div><br>
-                            <div class="pricing-square-item" data-faq-id="edge-discount">
+                            <div class="pricing-square-item" data-faq-id="thingsboard-edge-discount">
                                 Tired discounts                           
                             </div><br>
                         </div>
@@ -549,7 +549,7 @@ description: ThingsBoard Products Pricing
                             <div class="pricing-square-item" data-faq-id="optional-support">
                                 Optional support
                             </div><br>
-                            <div class="pricing-square-item" data-faq-id="edge-discount">
+                            <div class="pricing-square-item" data-faq-id="thingsboard-edge-discount">
                                 Tired discounts                           
                             </div><br>
                         </div>
@@ -573,7 +573,7 @@ description: ThingsBoard Products Pricing
                             <div class="pricing-square-item" data-faq-id="optional-support">
                                 Optional support
                             </div><br>
-                            <div class="pricing-square-item" data-faq-id="edge-discount">
+                            <div class="pricing-square-item" data-faq-id="thingsboard-edge-discount">
                                 Tired discounts                           
                             </div><br>
                         </div>
@@ -597,7 +597,7 @@ description: ThingsBoard Products Pricing
                             <div class="pricing-square-item" data-faq-id="optional-support">
                                 Optional support
                             </div><br>
-                            <div class="pricing-square-item" data-faq-id="edge-discount">
+                            <div class="pricing-square-item" data-faq-id="thingsboard-edge-discount">
                                 Tired discounts                           
                             </div><br>
                         </div>
@@ -701,7 +701,7 @@ description: ThingsBoard Products Pricing
                 </p>    
             </div>    
         </div>
-        <div class="item" data-tag="h4" data-item-id="edge-discount" data-title="Can we have a discounted price for ThingsBoard Edges in case of bulk purchase?">
+        <div class="item" data-tag="h4" data-item-id="thingsboard-edge-discount" data-title="Can we have a discounted price for ThingsBoard Edges in case of bulk purchase?">
             <div class="container">
                 <p>
                     We do understand that you may need multiple edge computing services. Price reduction starts from 10 licenses. Discount tiers are as follows: 10–50 Edges — 10%, 51–100 Edges — 12%, above 100 Edges — 15% off the license cost regardless the plan.

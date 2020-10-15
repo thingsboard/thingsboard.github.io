@@ -98,7 +98,7 @@ toc:
 - title: ThingsBoard Edge
   section:
     - title: Installation options
-      path: /docs/edge/install/installation-options/
+      path: /docs/thingsboard-edge/install/installation-options/
 - title: License Server
   section:
   - title: Overview

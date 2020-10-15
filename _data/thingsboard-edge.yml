@@ -1,0 +1,41 @@
+bigheader: "ThingsBoard Edge"
+abstract: "Distribute data processing and analysis using edge computing."
+toc:
+- title: ThingsBoard Edge
+  path: /docs/thingsboard-edge/
+- title: What is ThingsBoard Edge?
+  path: /docs/thingsboard-edge/what-is-edge/
+- title: Getting Started
+  path: /docs/thingsboard-edge/getting-started/
+- title: Installation guides
+  section:
+    - title: Installation options
+      path: /docs/thingsboard-edge/install/installation-options/
+    - title: Installing Edge on Ubuntu (DEB)
+      path: /docs/thingsboard-edge/install/deb-installation/
+    - title: Installing Edge on CentOS/RHEL (RPM)
+      path: /docs/thingsboard-edge/install/rhel/
+    - title: Installing Edge on Windows
+      path: /docs/thingsboard-edge/install/windows/
+    - title: Installing Edge using Docker (Windows)
+      path: /docs/thingsboard-edge/install/docker-windows/
+    - title: Installing Edge using Docker (Linux or Mac OS)
+      path: /docs/thingsboard-edge/install/docker/
+- title: ThingsBoard Edge features
+  section:
+    - title: Synchronization with ThingsBoard CE/PE (cloud)
+      path: /docs/thingsboard-edge/features/sync/
+    - title: Edge Rule Engine
+      path: /docs/thingsboard-edge/features/edge-rule-engine/
+    - title: RBAC
+      path: /docs/thingsboard-edge/features/rbac/
+- title: Use Cases
+  section:
+    -  title: Overview
+       path: /docs/thingsboard-edge/use-cases/overview
+    -  title: Manage alarms and RPC requests on edge devices
+       path: /docs/thingsboard-edge/use-cases/manage-alarms-rpc-requests/
+    -  title: Data filtering and traffic reduce
+       path: /docs/thingsboard-edge/use-cases/data-filtering-traffic-reduce/
+- title: ThingsBoard Edge Roadmap
+  path: /docs/thingsboard-edge/roadmap/

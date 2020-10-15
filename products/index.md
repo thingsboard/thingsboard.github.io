@@ -24,7 +24,7 @@ description: ThingsBoard Products
             Learn more
         </div>
     </a>
-    <a href="/products/edge/" class="card thingsboard-edge">
+    <a href="/products/thingsboard-edge/" class="card thingsboard-edge">
             <div class="card-title">
                 <span class="title-text">ThingsBoard<br/>Edge</span>
             </div>

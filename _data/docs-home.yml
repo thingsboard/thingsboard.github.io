@@ -143,35 +143,46 @@ toc:
     path: /docs/user-guide/integrations/custom/
   - title: Notifications and Alarms on your smartphone using Telegram Bot
     path: /docs/user-guide/rule-engine-2-0/tutorials/integration-with-telegram-bot/
-- title: Edge
+- title: ThingsBoard Edge
+  path: /docs/thingsboard-edge/
   beta: true
   section:
+    - title: What is ThingsBoard Edge?
+      path: /docs/thingsboard-edge/what-is-edge/
     - title: Getting Started
-      path: /docs/edge/
-    - title: ThingsBoard Edge Overview
-      path: /docs/edge/overview/
+      path: /docs/thingsboard-edge/getting-started/
     - title: Installation guides
       section:
         - title: Installation options
-          path: /docs/edge/install/installation-options/
+          path: /docs/thingsboard-edge/install/installation-options/
         - title: Installing Edge on Ubuntu (DEB)
-          path: /docs/edge/install/deb-installation/
+          path: /docs/thingsboard-edge/install/deb-installation/
         - title: Installing Edge on CentOS/RHEL (RPM)
-          path: /docs/edge/install/rhel/
+          path: /docs/thingsboard-edge/install/rhel/
         - title: Installing Edge on Windows
-          path: /docs/edge/install/windows/
+          path: /docs/thingsboard-edge/install/windows/
         - title: Installing Edge using Docker (Windows)
-          path: /docs/edge/install/docker-windows/
+          path: /docs/thingsboard-edge/install/docker-windows/
         - title: Installing Edge using Docker (Linux or Mac OS)
-          path: /docs/edge/install/docker/
+          path: /docs/thingsboard-edge/install/docker/
+    - title: ThingsBoard Edge features
+      section:
+        - title: Synchronization with ThingsBoard CE/PE (cloud)
+          path: /docs/thingsboard-edge/features/sync/
+        - title: Edge Rule Engine
+          path: /docs/thingsboard-edge/features/edge-rule-engine/
+        - title: RBAC
+          path: /docs/thingsboard-edge/features/rbac/
     - title: Use Cases
       section:
+        -  title: Overview
+           path: /docs/thingsboard-edge/use-cases/overview/
         -  title: Manage alarms and RPC requests on edge devices
-           path: /docs/edge/use-cases/manage-alarms-rpc-requests/
+           path: /docs/thingsboard-edge/use-cases/manage-alarms-rpc-requests/
         -  title: Data filtering and traffic reduce
-           path: /docs/edge/use-cases/data-filtering-traffic-reduce/
+           path: /docs/thingsboard-edge/use-cases/data-filtering-traffic-reduce/
     - title: ThingsBoard Edge Roadmap
-      path: /docs/edge/roadmap/
+      path: /docs/thingsboard-edge/roadmap/
 - title: Analytics
   section:
   - title: Trendz Analytics

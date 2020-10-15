@@ -828,4 +828,4 @@ Minimal outside time defines whenever message originator is considered as out of
    - incoming message has no configured latitude or longitude key in data or metadata. 
    - missing perimeter definition;     
 
-{% include templates/edge/edge-nodes.md %}
+{% include templates/thingsboard-edge/edge-nodes.md %}
