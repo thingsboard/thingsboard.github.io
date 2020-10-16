@@ -180,6 +180,7 @@ toc:
         -  title: Manage alarms and RPC requests on edge devices
            path: /docs/thingsboard-edge/use-cases/manage-alarms-rpc-requests/
         -  title: Data filtering and traffic reduce
+           pe: true
            path: /docs/thingsboard-edge/use-cases/data-filtering-traffic-reduce/
     - title: ThingsBoard Edge Roadmap
       path: /docs/thingsboard-edge/roadmap/

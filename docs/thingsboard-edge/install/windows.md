@@ -18,11 +18,11 @@ Instructions below are provided for Windows 10/8.1/8/7 32-bit/64-bit.
 
 {% include templates/install/windows-java-install.md %}
 
-### Step 3. Create edge and get credentials
+### Step 2. Configure PostgreSQL
 
-{% include templates/thingsboard-edge/add-edge.md %}
+{% include templates/thingsboard-edge/windows-db-postgresql.md %}
 
-### Step 4. ThingsBoard Edge service installation
+### Step 3. ThingsBoard Edge service installation
 
 Download installation package.
 
@@ -33,21 +33,19 @@ wget https://github.com/thingsboard/thingsboard/features/tb-edge-windows-1.0.0be
 
 **Note:** We assume you have unzipped package to default location: *C:\Program Files (x86)*
 
-### Step 6. Configure PostgreSQL
-
-{% include templates/thingsboard-edge/windows-db-postgresql.md %}
+### Step 4. Configure ThingsBoard Edge
 
 {% include templates/thingsboard-edge/windows-configure-edge.md %}
 
-### Step 7. Run installation script
+### Step 5. Run installation script
 
 {% include templates/thingsboard-edge/run-edge-install-windows.md %} 
 
-### Step 8. Start ThingsBoard Edge service
+### Step 6. Start ThingsBoard Edge service
 
 {% include templates/thingsboard-edge/windows-start-service.md %}
 
-### Step 9. Open ThingsBoard Edge UI
+### Step 7. Open ThingsBoard Edge UI
 
 {% include templates/thingsboard-edge/open-edge-ui.md %} 
 

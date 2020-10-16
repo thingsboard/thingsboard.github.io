@@ -19,3 +19,8 @@ Please do next steps to assign User Entity Group to edge:
 <br>![image](/images/thingsboard-edge/installation/assign-user-entity-group.gif)
 
 In our sample all users that are inside Tenant Administrators User Entity group will be able to login into ThingsBoard Edge UI.  
+
+#### Get Edge credentials
+Click on edge entity and find **Edge key** and **Edge secret**.
+Paste the key and secret to a safe place.
+These credentials will be required in next steps during the configuration of ThingsBoard Edge.

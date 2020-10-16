@@ -14,11 +14,7 @@ This guide will help you to install and start ThingsBoard Edge using Docker on L
 - [Install Docker CE](https://docs.docker.com/engine/install/)
 - [Install Docker Compose](https://docs.docker.com/compose/install/)
 
-### Step 2. Get edge Secret and Key
-
-{% include templates/thingsboard-edge/add-edge.md %}
-
-### Step 3. Running ThingsBoard Edge
+### Step 1. Running ThingsBoard Edge
 
 Here you can find ThingsBoard Edge single instance docker image with PostgreSQL database: 
 
@@ -37,7 +33,7 @@ services:
     restart: always
     image: "thingsboard/tb-edge"
     ports:
-      - "8080:9090"
+      - "8080:8080"
       - "1883:1883"
       - "5683:5683/udp"
     environment:
@@ -46,15 +42,15 @@ services:
       CLOUD_PRC_HOST: PUT_YOUR_CLOUD_IP # e.g. 192.168.1.250
     volumes:
       - ~/.mytb-edge-data:/data
-      - ~/.mytb-edge-logs:/var/log/thingsboard-edge
+      - ~/.mytb-edge-logs:/var/log/tb-edge
 ```
 
 Where:    
-- `8080:9090` - connect local port 8080 to exposed internal HTTP port 9090
-- `1883:1883` - connect local port 11883 to exposed internal MQTT port 1883  
-- `5683:5683` - connect local port 15683 to exposed internal COAP port 5683   
+- `8080:8080` - connect local port 8080 to exposed internal HTTP port 8080
+- `1883:1883` - connect local port 1883 to exposed internal MQTT port 1883  
+- `5683:5683` - connect local port 5683 to exposed internal COAP port 5683   
 - `mytb-edge-data:/data` - mounts the host's dir `mytb-edge-data` to ThingsBoard Edge DataBase data directory
-- `mytb-edge-logs:/var/log/thingsboard-edge` - mounts the host's dir `mytb-edge-logs` to ThingsBoard Edge logs directory
+- `mytb-edge-logs:/var/log/tb-edge` - mounts the host's dir `mytb-edge-logs` to ThingsBoard Edge logs directory
 - `thingsboard/tb-edge` - docker image
 - `CLOUD_ROUTING_KEY` - your edge key
 - `CLOUD_ROUTING_SECRET` - your edge secret
@@ -76,10 +72,15 @@ docker-compose pull
 docker-compose up
 ```
 
-After executing this command you can open `http://{your-host-ip}:8080` in you browser (for ex. `http://localhost:8080`). You should see ThingsBoard Edge login page.
-Use username and login of the user assigned to the edge.
+After executing this command you can open `http://{your-host-ip}:8080` in you browser (for ex. `http://localhost:8080`). 
+You should see ThingsBoard Edge login page.
 
-## Step 4. Detaching, stop and start commands
+Please use **tenant administrator** credentials to login to ThingsBoard Edge UI in case Edge connected to **ThingsBoard CE**.
+
+If ThingBoard Edge connected to **ThingsBoard PE** please use credentials of the **user(s)** that were assigned to the Edge during Edge **provisioning**.
+
+
+## Step 2. Detaching, stop and start commands
 
 {% include templates/thingsboard-edge/docker-control.md %}
 

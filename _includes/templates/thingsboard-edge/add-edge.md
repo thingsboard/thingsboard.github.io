@@ -8,9 +8,4 @@ ThingsBoard Professional Edition%,%pe%,%templates/thingsboard-edge/get-edge-key-
 
 {% include content-toggle.html content-toggle-id="ubuntuThingsboardVersion" toggle-spec=contenttogglespeccloud %} 
 
-#### Get Edge credentials
-Click on edge entity and find **Edge key** and **Edge secret**.
-Paste the key and secret to a safe place.
-These credentials will be required in next steps during the configuration of ThingsBoard Edge.
-
 

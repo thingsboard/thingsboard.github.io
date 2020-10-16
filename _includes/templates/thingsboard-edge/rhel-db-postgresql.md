@@ -1,5 +1,5 @@
 
-ThingsBoard Edge supports only PostgreSQL database management system.
+ThingsBoard Edge uses PostgreSQL database as a local storage.
 
 {% include templates/install/postgres-install-rhel.md %}
 

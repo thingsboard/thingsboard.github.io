@@ -24,15 +24,11 @@ sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.
 
 {% include templates/install/rhel-java-install.md %}
 
-### Step 3. Create edge and get credentials
-
-{% include templates/thingsboard-edge/add-edge.md %}
-
-### Step 4. Configure PostgreSQL
+### Step 2. Configure PostgreSQL
 
 {% include templates/thingsboard-edge/rhel-db-postgresql.md %}
 
-### Step 5. ThingsBoard Edge service installation
+### Step 3. ThingsBoard Edge service installation
 
 Download installation package.
 
@@ -49,19 +45,21 @@ sudo rpm -Uvh tb-edge-1.0.0beta.rpm
 {: .copy-code}
 
 
-### Step 7. Configure ThingsBoard Edge
+### Step 4. Configure ThingsBoard Edge
 
 {% include templates/thingsboard-edge/ubuntu-configure-edge.md %}
 
-### Step 8. Run installation script
+### Step 5. Run installation script
 
 {% include templates/thingsboard-edge/run-edge-install.md %} 
 
-### Step 9. Start ThingsBoard Edge service
+### Step 6. Restart ThingsBoard Edge service
 
-{% include templates/thingsboard-edge/start-edge-ubuntu.md %}
+```bash
+sudo service tb-edge restart
+```
 
-### Step 10. Open ThingsBoard Edge UI
+### Step 7. Open ThingsBoard Edge UI
 
 {% include templates/thingsboard-edge/open-edge-ui.md %} 
 
@@ -78,6 +76,8 @@ You can issue the following command in order to check if there are any errors on
 ```bash
 cat /var/log/tb-edge/tb-edge.log | grep ERROR
 ```
+
+{% include templates/thingsboard-edge/edge-service-commands.md %} 
 
 ### Next Steps
 

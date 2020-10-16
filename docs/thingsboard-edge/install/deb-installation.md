@@ -37,19 +37,22 @@ sudo dpkg -i tb-edge-1.0.0beta.deb
 ```
 {: .copy-code}
 
-### Step 7. Configure ThingsBoard Edge
+### Step 4. Configure ThingsBoard Edge
 
 {% include templates/thingsboard-edge/ubuntu-configure-edge.md %}
 
-### Step 8. Run installation script
+### Step 5. Run installation script
 
 {% include templates/thingsboard-edge/run-edge-install.md %} 
 
-### Step 9. Start ThingsBoard Edge service
+### Step 6. Restart ThingsBoard Edge service
 
-{% include templates/thingsboard-edge/start-edge-ubuntu.md %} 
+```bash
+sudo service tb-edge restart
+```
+{: .copy-code}
 
-### Step 10. Open ThingsBoard Edge UI
+### Step 7. Open ThingsBoard Edge UI
 
 {% include templates/thingsboard-edge/open-edge-ui.md %} 
 
@@ -66,6 +69,8 @@ You can issue the following command in order to check if there are any errors on
 ```bash
 cat /var/log/tb-edge/tb-edge.log | grep ERROR
 ```
+
+{% include templates/thingsboard-edge/edge-service-commands.md %} 
 
 ### Next Steps
 
