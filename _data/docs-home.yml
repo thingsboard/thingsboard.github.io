@@ -171,8 +171,8 @@ toc:
           path: /docs/thingsboard-edge/features/sync/
         - title: Edge Rule Engine
           path: /docs/thingsboard-edge/features/edge-rule-engine/
-        - title: RBAC
-          path: /docs/thingsboard-edge/features/rbac/
+        - title: User Access management
+          path: /docs/thingsboard-edge/features/user-access/
     - title: Use Cases
       section:
         -  title: Overview
