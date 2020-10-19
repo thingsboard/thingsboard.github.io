@@ -13,10 +13,10 @@ Messages serialized using Protocol Buffers (ProtoBuf).
 
 All messages that are pushed from ThingsBoard Edge to ThingsBoard CE/PE cloud are going to be stored in the local PostgreSQL table (**cloud_event table**) prior sending.
 In this way ThingsBoard Edge is able to operate without connectivity to the cloud.
-Once the connection established ThingsBoard Edge will push all messages in the local cloud_event table to the cloud and mark ones that are successfully transferred to the cloud.
+Once the connection established ThingsBoard Edge will push all messages in the local **cloud_event** table to the cloud and mark ones that are successfully transferred to the cloud.
 
-All messages that are pushed from ThingsBoard CE/PE cloud to ThingsBoard Edge are going to be stored in the local PostgreSQL table (**edge_event table**) prior sending.
-Once the connection established ThingsBoard CE/PE cloud will push all messages in the local edge_event table to the edge and mark ones that are successfully transferred to the edge.
+All messages that are pushed from ThingsBoard CE/PE cloud to ThingsBoard Edge are going to be stored in the cloud PostgreSQL table (**edge_event table**) prior sending.
+Once the connection established ThingsBoard CE/PE cloud will push all messages in the cloud **edge_event** table to the edge and mark ones that are successfully transferred to the edge.
 
 User is able to see list of transferred messages from the cloud to edge using **Event** tab of **Edge** entity.
 
@@ -64,4 +64,6 @@ ThingsBoard Professional Edition%,%pe%,%templates/thingsboard-edge/sync/pe-entit
 
 {% include content-toggle.html content-toggle-id="ubuntuThingsboardVersion" toggle-spec=contenttogglespeccloud %} 
 
+### Next Steps
 
+{% include templates/thingsboard-edge/next-steps.md %}

@@ -13,7 +13,7 @@ Probably much more efficient would be to **filter and process it on the edge** a
 * TOC
 {:toc}
 
-### Use case
+## Use case
 Let's assume you have a delivery van with mounted IoT devices:
  * A **fuel monitoring system** that tracks real-time fuel consumption
  * A **GPS tracker** that tracks car speed
@@ -22,28 +22,38 @@ Vehicle sensors gather data in realtime and transmit it to the edge computing se
 
 Please note that this is just a simple theoretical use case to demonstrate the capabilities of the platform. You can use this tutorial as a basis for much more complex scenarios.
 
-### Prerequisites
+## Prerequisites
 We assume you have completed the following guides and reviewed the articles listed below:
   * [Getting Started](/docs/getting-started-guides/helloworld/) guide.
   * [Dashboard development](/docs/iot-video-tutorials/#dashboard-development-guide-part-1-of-3-visualizing-assets-data-using-maps-and-tables) guide.
   * [Rule Engine Overview](/docs/user-guide/rule-engine-2-0/overview/) article.
-  * [ThingsBoard Edge Getting Started](/docs/thingsboard-edge/) article.
+  * [ThingsBoard Edge Getting Started](/docs/thingsboard-edge/getting-started/) article.
 
-In ThingsBoard Professional Edition we have:
- * created [edge entity](/docs/user-guide/ui/edges/#add-and-delete-edges) **Edge ThingsBoard** in group **All**.
+Let's do the following actions on the cloud:
+ * Create [edge entity](/docs/user-guide/ui/edges/#add-and-delete-edges) **Edge ThingsBoard** in group **All**.
  
 ![image](/images/thingsboard-edge/tutorial/alarm/add-edge.png) 
  
- * assigned edge to a [user](/docs/user-guide/ui/edges/#assign-entities-to-edge) with [permission]() to create devices.
+ * Assign Tenant Administrators [user group](/docs/user-guide/ui/edges/#assign-entities-to-edge) to newly created edge. Users from this group will be able to create devices on the edge.
  
 ![image](/images/thingsboard-edge/tutorial/alarm/assign-user.png) 
  
- * connected ThingsBoard Edge. Detailed step by step instructions on how to configure edge and cloud you can find in [installation guides](/docs/thingsboard-edge/install/installation-options/).
+ Now let's connect ThingsBoard Edge to cloud. Detailed step by step instructions on how to configure edge and cloud you can find in [installation guides](/docs/thingsboard-edge/install/installation-options/). Screen of successfully connected edge to cloud:
  
 ![image](/images/thingsboard-edge/tutorial/alarm/edge-status.png) 
 
-### Create device group
-Open ThingsBoard Professional Edition UI. Add new [device group](/docs/user-guide/groups/) **Vehicles**:
+## Create device group
+Open ThingsBoard Edge UI (default UI port is 8080) and login as tenant administrator.
+
+{% capture local-deployment %}
+If you have changed **HTTP_BIND_PORT** during installation process please use that instead of 8080 port
+```bash
+http://localhost:HTTP_BIND_PORT
+``` 
+{% endcapture %}
+{% include templates/info-banner.md content=local-deployment %}
+ 
+Add new [device group](/docs/user-guide/groups/) **Vehicles**:
 
 ![image](/images/thingsboard-edge/tutorial/data-filtering/add-device-group.png) 
 
@@ -54,12 +64,12 @@ Create two devices with the following information:
 <br>![image](/images/thingsboard-edge/tutorial/data-filtering/add-device.png) 
 ![image](/images/thingsboard-edge/tutorial/data-filtering/add-device-2.png) 
 
-### Create dashboard group
+## Create dashboard group
 Let's also create two dashboards in order to visualize data flow:
  * **Dashboard Edge** for visualizing real-time vehicle's fuel consumption and speed
  * **Dashboard Cloud** for visualizing on the chart average hourly fuel consumption and speed
 
-Open ThingsBoard Professional Edition UI. Go to Dashboard groups -> Add new entity group and name it "Delivery van dashboards".
+Open cloud UI. Go to Dashboard groups -> Add new entity group and name it "Delivery van dashboards".
 
 ![image](/images/thingsboard-edge/tutorial/data-filtering/add-dashboard-group.png)
 
@@ -69,9 +79,9 @@ Open dashboard group **Delivery van dashboards**. Click **Import Dashboard** and
 
 ![image](/images/thingsboard-edge/tutorial/data-filtering/dashboards.png)
 
-### Assign device and dashboard groups to the edge
+## Assign device and dashboard groups to the edge
 If you have created an entity group on the cloud and want to use it on the edge - you must assign it. Follow these steps in order to assign device group **Delivery van** and dashboard group **Delivery van dashboards** to the edge **Edge ThingsBoard**:
- * Open ThingsBoard Professional Edition UI
+ * Open cloud UI
  * Click **Menu -> Edge groups -> All -> Edge ThingsBoard -> Manage edge device groups**:
  
 ![image](/images/thingsboard-edge/tutorial/data-filtering/assign-device-group-1.png)
@@ -92,7 +102,7 @@ In the ThingsBoard Edge UI you should see assigned groups and entities:
 
 ![image](/images/thingsboard-edge/tutorial/data-filtering/assign-dashboard-group-3.png)
 
-### Message flow
+## Message flow
 In this section we explain the purpose of two kind of nodes used in this tutorial:
 - Node [**Filter Script**](/docs/user-guide/rule-engine-2-0/filter-nodes/#check-relation-filter-node): **Node A** and **Node B**.
   - This node will check the type of telemetry data. If the incoming message has type "mpg" - script will direct it to the node **Aggregate stream** to calculate average fuel consumption. If the message type is "mph" - it flows to similar **Aggregate node** to calculate average speed.
@@ -105,9 +115,9 @@ Download the attached [JSON file](/docs/thingsboard-edge/use-cases/resources/dat
 
 Also, you can create such rule chain from scratch. The following section shows you how to modify Edge Root Rule Chain.
 
-### Configure Rule Engine
+## Configure Rule Engine
 
-In ThingsBoard Professional Edition UI go to **Rule Chains** -> **Edge Rule Chains** -> click on the **Edge Root Rule Chain**:
+Go to **Rule Chains** -> **Edge Rule Chains** on the cloud and click on the **Edge Root Rule Chain**:
 
 - Add two nodes **Filter Script**. You can find it in the Filter node section:
 
@@ -226,14 +236,14 @@ Now let's create connections between nodes in the following way:
 
 ![image](/images/thingsboard-edge/tutorial/data-filtering/rule-chain-root.png)
 
-### Generate telemetry
+## Generate telemetry
 
-- Use the following scripts to connect the devices **GPS** and **Fuel monitoring system** to the ThingsBoard server by MQTT protocol.  
+- Use the following scripts to connect the devices **GPS** and **Fuel monitoring system** to the ThingsBoard Edge by MQTT protocol.  
     - [**mqtt_generator_gps.py**](/docs/thingsboard-edge/use-cases/resources/data-filtering-traffic-reduce/mqtt_generator_gps.py): the script generates each second speed data (mph)
     - [**mqtt_generator_fuel.py**](/docs/thingsboard-edge/use-cases/resources/data-filtering-traffic-reduce/mqtt_generator_fuel.py): the script generates each second fuel consumption data (mpg)
 
 To run the scripts, you need to do the following steps:
- * Replace THINGSBOARD_HOST with your ThingsBoard Edge server installation IP address or hostname 
+ * Replace THINGSBOARD_EDGE_HOST with your ThingsBoard Edge instance installation IP address or hostname 
  * Replace ACCESS_TOKEN. Access token can be find from the [device's page](/docs/user-guide/ui/devices/#manage-device-credentials): <br>
 
 ![image](/images/thingsboard-edge/tutorial/data-filtering/copy-token.png)

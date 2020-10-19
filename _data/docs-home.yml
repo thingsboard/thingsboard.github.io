@@ -178,6 +178,7 @@ toc:
         -  title: Overview
            path: /docs/thingsboard-edge/use-cases/overview/
         -  title: Manage alarms and RPC requests on edge devices
+           pe: true
            path: /docs/thingsboard-edge/use-cases/manage-alarms-rpc-requests/
         -  title: Data filtering and traffic reduce
            pe: true

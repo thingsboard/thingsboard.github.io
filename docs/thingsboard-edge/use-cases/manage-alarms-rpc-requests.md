@@ -10,7 +10,7 @@ description: ThingsBoard Edge use case #1
 * TOC
 {:toc}
 
-### Use case
+## Use case
 Let's assume you have a warehouse with two **edge computing devices** connected to ThingsBoard Edge: 
 * DHT22 temperature sensor
 * Air Conditioner 
@@ -19,32 +19,42 @@ ThingsBoard Edge has the following responsibilities:
  * **Collects temperature readings** from the DHT22 sensor
  * **Creates and updates alarms** if the temperature in the warehouse is higher than 50°C
  * In case if the temperature becomes critical, ThingsBoard Edge turns on the cooler system by **sending RPC call requests**
- * **Pushes telemetry to the cloud** (ThingsBoard Professional Edition)
+ * **Pushes telemetry to the cloud**
 
 Please note that this is just a simple theoretical use case to demonstrate the capabilities of the platform. 
 You can use this tutorial as a basis for much more complex scenarios.
 
-### Prerequisites
+## Prerequisites
 We assume you have completed the following guides and reviewed the articles listed below:
   * [Getting Started](/docs/getting-started-guides/helloworld/) guide.
   * [Rule Engine Overview](/docs/user-guide/rule-engine-2-0/overview/) article.
-  * [ThingsBoard Edge Getting Started](/docs/thingsboard-edge/) article.
+  * [ThingsBoard Edge Getting Started](/docs/thingsboard-edge/getting-started/) article.
 
-In ThingsBoard Professional Edition we have:
- * created [edge entity](/docs/user-guide/ui/edges/#add-and-delete-edges) **Edge ThingsBoard** in group **All**.
+Let's do the following actions on the cloud:
+ * Create [edge entity](/docs/user-guide/ui/edges/#add-and-delete-edges) **Edge ThingsBoard** in group **All**.
  
 ![image](/images/thingsboard-edge/tutorial/alarm/add-edge.png) 
- 
- * assigned edge to a [user](/docs/user-guide/ui/edges/#assign-entities-to-edge) with [permission]() to create devices.
- 
+
+ * Assign Tenant Administrators [user group](/docs/user-guide/ui/edges/#assign-entities-to-edge) to newly created edge. Users from this group will be able to create devices on the edge.
+
 ![image](/images/thingsboard-edge/tutorial/alarm/assign-user.png) 
  
- * connected ThingsBoard Edge. Detailed step by step instructions on how to configure edge and cloud you can find in [installation guides](/docs/thingsboard-edge/install/installation-options/).
+ Now let's connect ThingsBoard Edge to cloud. Detailed step by step instructions on how to configure edge and cloud you can find in [installation guides](/docs/thingsboard-edge/install/installation-options/). Screen of successfully connected edge to cloud:
  
-![image](/images/thingsboard-edge/tutorial/alarm/edge-status.png) 
+![image](/images/thingsboard-edge/tutorial/alarm/edge-status.png)
 
-### Model definition
-Open ThingsBoard Edge UI (default installation port is 8080). [Add two devices](/docs/user-guide/ui/devices/#add-and-delete-devices) in the group "All" (**Device Groups -> All -> Add device**):
+## Model definition
+Open ThingsBoard Edge UI (default UI port is 8080) and login as tenant administrator.
+
+{% capture local-deployment %}
+If you have changed **HTTP_BIND_PORT** during installation process please use that instead of 8080 port
+```bash
+http://localhost:HTTP_BIND_PORT
+``` 
+{% endcapture %}
+{% include templates/info-banner.md content=local-deployment %}
+ 
+[Add two devices](/docs/user-guide/ui/devices/#add-and-delete-devices) in the group "All" (**Device Groups -> All -> Add device**):
 * Thermometer's name is **DHT22** and its type is **temperature sensor**.
 * Cooler's name is **Air Conditioner** and its type is **cooler system**.
 
@@ -64,7 +74,7 @@ Open ThingsBoard Edge UI (default installation port is 8080). [Add two devices](
 
 ![image](/images/thingsboard-edge/tutorial/alarm/device-group.png)
 
-### Message flow
+## Message flow
 In this section we explain the purpose of each node in this tutorial:
 
 - Node A: [**Filter Script**](/docs/user-guide/rule-engine-2-0/filter-nodes/#check-relation-filter-node) node.
@@ -86,9 +96,9 @@ In this section we explain the purpose of each node in this tutorial:
 - Node I: **Rule Chain** node.
     - This node forwards incoming telemetry to Edge Rule Chain **Manage Alarms and RPC**.
 
-### Configure Edge Rule Chains
+## Configure Edge Rule Chains
 
-In ThingsBoard Professional Edition we modified the default **Edge Root Rule Chain** and created rule chain **Manage Alarms and RPC**.
+On the cloud we should modify the default **Edge Root Rule Chain** and create new rule chain **Manage Alarms and RPC**.
 
 <br/>The following screenshots show how the above rule chains should look like:
  
@@ -106,7 +116,7 @@ Download the attached [JSON file](/docs/thingsboard-edge/use-cases/resources/man
 
 Also, you can create the new Rule Chain from scratch. The following section shows you how to create it.
 
-#### Create new Edge Rule Chain (**Manage Alarms and RPC**)
+### Create new Edge Rule Chain (**Manage Alarms and RPC**)
 
 Go to **Rule Chains** -> **Edge Rule Chains** -> **Add new Rule Chain** 
 
@@ -118,11 +128,11 @@ Configuration:
 
 Press the **Edit** button and configure Chain.
 
-##### Adding nodes for creating and clearing alarms
+#### Adding nodes for creating and clearing alarms
 
-The next 4 nodes will create and clear alarms in **both edge and cloud servers**:
+The nodes from **Node A** to **Node D** will create and clear alarms in **both edge and cloud instances**.
  
-###### Node A: **Filter Script**
+##### Node A: **Filter Script**
 - Add the **Filter Script** node and connect it to the **Input** node. This node will verify 
 "if the temperature is above threshold" using the following script:
   
@@ -134,7 +144,7 @@ If the temperature is below 50°C the script will return False, otherwise True w
   
 ![image](/images/thingsboard-edge/tutorial/alarm/node-script.png)
    
-###### Node B: **Create Alarm**
+##### Node B: **Create Alarm**
 - Add the **Create alarm** node and connect it to the **Filter Script** node with a relation type **True**.
 <br> This node tries to load the latest Alarm with the configured Alarm Type for the Message Originator. If Uncleared Alarm exists, then this Alarm will be updated, otherwise, a new Alarm will be created. 
   
@@ -142,14 +152,14 @@ If the temperature is below 50°C the script will return False, otherwise True w
 
 ![image](/images/thingsboard-edge/tutorial/alarm/node-create-alarm.png)
 
-###### Node C: **Clear Alarm**
+##### Node C: **Clear Alarm**
 - Add the **Clear Alarm** node and connect it to the **Filter Script** node with a relation type **False**. <br>
   This Node loads the latest Alarm with the configured Alarm Type for the Message Originator and Clear the Alarm if it exists.
 - Enter the Name field as **Clear Alarm** and the Alarm type as **Critical Temperature**.
 
 ![image](/images/thingsboard-edge/tutorial/alarm/node-clear-alarm.png)
 
-###### Node D: **Push to cloud**
+##### Node D: **Push to cloud**
 - Add the **Push to cloud** node and connect it to the **Create alarm** node with a relation type **Created**.
  Also, connect this node to the **Clear alarm** node with a relation type **Cleared**.<br>
   This node will create and clear alarm on the Cloud.
@@ -158,11 +168,11 @@ If the temperature is below 50°C the script will return False, otherwise True w
 
 ![image](/images/thingsboard-edge/tutorial/alarm/node-push-to-cloud.png)
 
-##### Adding nodes for RPC call requests
+#### Adding nodes for RPC call requests
 
-The next 4 nodes will switch originator from **DHT22** to **Air Conditioner** and send an RPC message to the edge device **Air Conditioner**:
+The nodes from **Node E** to **Node H** will switch originator from **DHT22** to **Air Conditioner** and send an RPC message to the edge device **Air Conditioner**:
 
-###### Node E: **Change Originator**
+##### Node E: **Change Originator**
 - Add the **Change Originator** node and connect it to the **Filter Script** node with a relation types **True** and **False**. <br>
   This node will change the originator from Device **DHT22** to **Air Conditioner** that has a relation of the type **Uses**. 
   <br/>As a result, the RPC call requests will be processed as a message to **Air Conditioner**
@@ -205,7 +215,7 @@ The next 4 nodes will switch originator from **DHT22** to **Air Conditioner** an
 
 ![image](/images/thingsboard-edge/tutorial/alarm/node-change-originator.png)
 
-###### Node F: **Transform Script** 
+##### Node F: **Transform Script** 
 Add **Transform Script** node and connect it to the **Input** node.
 
 This node will transform an original message into RPC reply message with params depends on temperature readings.
@@ -228,7 +238,7 @@ return {msg: newMsg, metadata: metadata, msgType: msgType};
 
 ![image](/images/thingsboard-edge/tutorial/alarm/node-transform.png)
 
-###### Node G: **Filter Script**
+##### Node G: **Filter Script**
 
 - Add the **Filter Script** node and connect it to the **Transform Script** node with a relation type **Success**. <br> 
   This node will check if msgType of the incoming message is an **RPC message**.
@@ -238,7 +248,7 @@ return {msg: newMsg, metadata: metadata, msgType: msgType};
 
 ![image](/images/thingsboard-edge/tutorial/alarm/node-check-rpc-request.png)
 
-###### Node H: **RPC call request**
+##### Node H: **RPC call request**
 - Add the **RPC call request** node and connect it to the **Filter Script** node with a relation type **True**. <br>
   This node takes the message payload and sends it as a response to the Message Originator.
 - Enter the Name field as **Air Conditioner**.
@@ -246,18 +256,18 @@ return {msg: newMsg, metadata: metadata, msgType: msgType};
 
 ![image](/images/thingsboard-edge/tutorial/alarm/node-rpc-request.png)
 
-<br/>This Edge Rule Chain is ready and you need to save it.
+<br/>This Edge Rule Chain is ready, and you need to save it.
 
 <br/>
 
 
-#### Modify Edge Root Rule Chain
+### Modify Edge Root Rule Chain
 
 The following screenshot shows how the final **Edge Root Rule Chain** should look like:
 
 ![image](/images/thingsboard-edge/tutorial/alarm/rule-chain-root.png)
 
-###### Node I: **Rule Chain**
+##### Node I: **Rule Chain**
 - Add the **Rule Chain** node and connect it to the **Save timeseries** node with a relation type **Success**. <br>
   This node forwards incoming telemetry to specified Edge Rule Chain **Manage Alarms and RPC**.
 
@@ -265,13 +275,13 @@ The following screenshot shows how the final **Edge Root Rule Chain** should loo
 
 <br/>
 
-### Assign Edge Rule Chains to Edge
+## Assign Edge Rule Chains to Edge
 Tenant administrator is able to assign entity groups (Users, Assets, Devices, Entity Views, Dashboards) 
 and entities (rule chains, scheduler events) to a certain edge. Cloud will send assigned entities and groups to edge.
 
 Follow these steps to assign rule chains to edge:
 
-In ThingsBoard Professional Edition open edge **Edge #1** and click **Manage edge rule chains**.  
+Open edge **Edge #1** on the cloud and click **Manage edge rule chains**.  
   
 ![image](/images/thingsboard-edge/tutorial/alarm/manage-rule-chains-icon.png)
 
@@ -279,9 +289,9 @@ In ThingsBoard Professional Edition open edge **Edge #1** and click **Manage edg
 
 ![image](/images/thingsboard-edge/tutorial/alarm/assign-rule-chain.png)
 
-### Connect device by MQTT
+## Connect device by MQTT
 
-- Use the following scripts to connect the device **Air Conditioner** to the ThingsBoard server by MQTT protocol.  
+- Use the following scripts to connect the device **Air Conditioner** to the ThingsBoard Edge by MQTT protocol.  
 The script will emulate turning on/off cooler based on temperature readings: "If the temperature is > 50°C - turn cooler on, otherwise - turn off".
     - [**mqtt-js.sh**](/docs/thingsboard-edge/use-cases/resources/manage-alarms-rpc-requests/mqtt-js.sh)
     - [**cooler.js**](/docs/thingsboard-edge/use-cases/resources/manage-alarms-rpc-requests/cooler.js)
@@ -289,12 +299,13 @@ The script will emulate turning on/off cooler based on temperature readings: "If
 To run the scripts, you need to modify **mqtt-js.sh** file. Please do the following steps:
 
 - Replace **YOUR_ACCESS_TOKEN** with **Air Conditioner device access token**. You can find device access token [on the Device page](/docs/user-guide/ui/devices/#manage-device-credentials). <br>
-- Replace **YOUR_THINGSBOARD_HOST** with your ThingsBoard Edge host. For example, **127.0.0.1**. 
 
 ![image](/images/thingsboard-edge/tutorial/alarm/copy-cooler-token.png)
 
+- Replace **YOUR_THINGSBOARD_HOST** with your ThingsBoard Edge host. For example, **127.0.0.1**. 
+
 - Open the terminal and go to the folder that contains these emulator scripts. 
- Make sure that it is executable:
+ Make sure it is executable:
   
  ```shell
  chmod +x *.sh
@@ -312,31 +323,39 @@ You should see the following screen with your host and device token:
 
 ![image](/images/thingsboard-edge/tutorial/alarm/terminal-run-sh.png)
 
-### Post telemetry and verify alarms
+**Note** Please open a new terminal tab to push temperature telemetry to device and leave this running in the background until end of the guide.
 
-For posting device telemetry. For this, we need to **copy the DHT22 device access token**. Let's post the temperature 51°C using the following [Rest API](/docs/reference/http-api/#telemetry-upload-api) call. Do not forget to **replace $ACCESS_TOKEN with actual DHT22 device token**:
+## Post telemetry and verify alarms
+
+Now let's post temperature telemetry for **DHT22** sensor. For this, we need to **copy the DHT22 device access token**. Let's post the temperature 51°C using the following [Rest API](/docs/reference/http-api/#telemetry-upload-api) call. Do not forget to **replace $ACCESS_TOKEN with actual DHT22 device token**:
 
 ![image](/images/thingsboard-edge/tutorial/alarm/copy-device-token.png)
 
 {% highlight bash %}
-curl -v -X POST -d '{"temperature":51}' http://localhost:8080/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
+curl -v -X POST -d '{"temperature":51}' http://THINGSBOARD_EDGE_HOST:8080/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
 {% endhighlight %}
 
-**Note** that alarm should be created in the device **on both edge and cloud servers** according to rule engine logic:
+{% capture local-deployment %}
+ * Please replace **THINGSBOARD_EDGE_HOST** with the IP address of your edge or **localhost** if you are running edge locally.
+ * Please replace **8080** with the port of your edge if you have changed it during configuration process.
+{% endcapture %}
+{% include templates/info-banner.md content=local-deployment %}
+
+Once you'll post this telemetry please notify that alarm created in *ALARMS* tab on the device **on both edge and cloud instances** according to rule engine logic:
 
 ![image](/images/thingsboard-edge/tutorial/alarm/alarm-created.png)
 
 Now let's post new temperature = 49°C. Alarm should be cleared:
 
 {% highlight bash %}
-curl -v -X POST -d '{"temperature":49}' http://localhost:8080/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
+curl -v -X POST -d '{"temperature":49}' http://THINGSBOARD_EDGE_HOST:8080/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
 {% endhighlight %}
 
 ![image](/images/thingsboard-edge/tutorial/alarm/alarm-cleared.png)
 
-### Verify RPC request
+## Verify RPC request
 
-Open the terminal where you run **mqtt-js.sh** script. 
-You should see on the screen such messages:
+Open the terminal where **mqtt-js.sh** script is running. 
+You should see similar messages on the screen:
 
 ![image](/images/thingsboard-edge/tutorial/alarm/terminal-rpc-message.png)

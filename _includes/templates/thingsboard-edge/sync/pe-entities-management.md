@@ -7,6 +7,8 @@ Once User Group assigned to edge **all entities** that are inside this User Grou
 
 Additionally, any user that is created on the Edge will be able **to login** into Edge UI with his credentials. 
 
+For additional informaion on **User Access management** please follow [**link**](/docs/thingsboard-edge/features/user-access/).
+
 ![image](/images/thingsboard-edge/sync/pe-manage-users.png)
 
 

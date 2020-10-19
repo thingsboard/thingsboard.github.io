@@ -3,7 +3,7 @@ import json
 import random
 import time
 
-THINGSBOARD_HOST = '127.0.0.1' # REPLACE with your ThingsBoard Edge server installation IP address or hostname
+THINGSBOARD_EDGE_HOST = '127.0.0.1' # REPLACE with your ThingsBoard Edge server installation IP address or hostname
 ACCESS_TOKEN = '08loDim39tsY9eudikQz' # REPLACE with your device access token
 
 # The callback for when the client receives a CONNACK response from the server
@@ -29,7 +29,7 @@ while(True):
     # Set access token
     client.username_pw_set(ACCESS_TOKEN)
     # Connect to ThingsBoard using default MQTT port and 60 seconds keep alive
-    client.connect(THINGSBOARD_HOST, 1883, 60)
+    client.connect(THINGSBOARD_EDGE_HOST, 1883, 60)
     try:
         # Set timeout 1 second
         time.sleep(1)

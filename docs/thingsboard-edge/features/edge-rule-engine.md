@@ -10,7 +10,7 @@ description: ThingsBoard Edge Rule Engine
 ThingsBoard Edge uses the same [ThingsBoard Rule Engine framework](/docs/user-guide/rule-engine-2-0/re-getting-started/) for building event-based workflows on the edge side and communicating with cloud.
 
 Starting from **2.6.0 version** ThingsBoard CE/PE version has two types of rule chains:
- - **Core** rule chains - rule chains that are executed on the cloud version and basically are the same rule chains that were before
+ - **Core** rule chains - rule chains that are executed on the cloud and basically are the same rule chains that were prior version 2.6.0
  - **Edge** rule chains - rule chains that are executed on the edge only. These rule chains configured using cloud UI, but never executed on the cloud. Once configuration completed and rule chain updated all changes are going to be transferred to edge. 
 
 ![image](/images/thingsboard-edge/nodes/rule-chains-menu.png)
@@ -46,3 +46,7 @@ Tenant administrator is able to set specific **Edge** rule chains as **default**
 #### Export/Import edge rule chain
 
 You are able to export your rule chain to JSON format and import it to the same or another ThingsBoard instance ([see detailed how-to instruction here](/docs/user-guide/ui/rule-chains/#rule-chains-importexport)).
+
+### Next Steps
+
+{% include templates/thingsboard-edge/next-steps.md %}

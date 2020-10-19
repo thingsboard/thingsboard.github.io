@@ -32,16 +32,16 @@ ThingsBoard Edge provides following features:
  
  ![image](/images/thingsboard-edge/overview/update_dashboard.svg)
  
- - **Local storage** to store data from the devices on the edge without internet connection to the cloud and push to the cloud updates once connection restored
+ - **Local storage** to store data from the devices on the edge without internet connection to the cloud and push to the cloud updates once connection restored.
 
-ThingsBoard Edge developed on to of ThingsBoard CE/PE and inheritances functionality from them.  
+ThingsBoard Edge developed on top of ThingsBoard CE/PE and inheritances functionality from them.  
 
 It supports next **ThingsBoard Community Edition** features:
  * [**Attributes**](/docs/user-guide/attributes/) - assign and manage custom attributes to your entities.
- * [**Telemetry**](/docs/user-guide/telemetry/) - API for collection of time-series data and related use cases.
+ * [**Telemetry**](/docs/user-guide/telemetry/) - API for collection of time-series data of your devices.
  * [**Entities and relations**](/docs/user-guide/entities-and-relations/) - model physical world objects (e.g. devices and assets) and relations between them.
  * [**Data visualization**](/docs/guides#AnchorIDDataVisualization) - develop custom dashboards and widgets.
- * [**Rule engine**](/docs/thingsboard-edge/features/edge-rule-engine/) - manage data processing & actions on incoming telemetry and events separately for edge and cloud service side.
+ * [**Rule engine**](/docs/thingsboard-edge/features/edge-rule-engine/) - manage data processing & actions on incoming telemetry and events.
  * [**RPC**](/docs/user-guide/rpc/) - send remote procedure calls (RPC) **both from edge and cloud sides** to devices and vice versa.
  * [**Audit log**](/docs/user-guide/audit-log/) - track user activity.
  * [**API Limits**](/docs/user-guide/api-limits/) - control and limit number of API requests from single host.
