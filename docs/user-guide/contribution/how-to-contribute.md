@@ -139,7 +139,7 @@ By default, ThingsBoard UI is served at 8080 port. However, you may want to run 
 
 ```bash
 cd ${TB_WORK_DIR}/ui-ngx
-mvn clean install -P npm-start
+mvn clean install -P yarn-start
 ```
 
 This will launch a special server that will listen on 4200 port. All REST API and websocket requests will be forwarded to 8080 port.

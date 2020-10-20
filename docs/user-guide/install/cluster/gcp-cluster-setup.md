@@ -2,161 +2,165 @@
 layout: docwithnav
 assignees:
 - ashvayka
-title: Cluster setup using AWS infrastructure 
-description: ThingsBoard IoT platform cluster setup with Kubernetes in AWS
+title: Cluster setup using GCP infrastructure 
+description: ThingsBoard IoT platform cluster setup with Kubernetes and KOPS in Google Cloude Platform
 
 ---
 
 * TOC
 {:toc}
 
-This guide will help you to setup ThingsBoard in cluster mode in AWS. 
+This guide will help you to setup ThingsBoard in cluster mode in Google Cloude Platform. 
 
 ## Prerequisites
 
 ThingsBoard Microservices run on the Kubernetes cluster.
-You need to install a kubeone, terraform (v0.11+) and the kubectl (v1.16+).
+You need to install a gcloud, kops, terraform (v0.11+) and the kubectl (v1.16+).
 
-[kubeOne](https://docs.kubermatic.com/kubeone/master/) - for create and manage kubernetes cluster.
+[gcloud](https://cloud.google.com/sdk/gcloud) - for manage GCP infrastructure.
 
-[terraform](https://www.terraform.io/) - for create and manage cloud infrastructure in AWS.
+[kops](https://github.com/kubernetes/kops) - for create and manage kubernetes cluster.
+
+[terraform](https://www.terraform.io/) - for create and manage cloud infrastructure in GCP.
 
 You can choose any other available [Kubernetes cluster deployment solutions](https://kubernetes.io/docs/setup/pick-right-solution/).
 
-## Step 1. Clone ThingsBoard CE Kubernetes scripts repository. Enter the terraform working directory
+## Step 1. Enter the terraform working directory
 
 `
- git clone https://github.com/thingsboard/thingsboard-ce-k8s.git
+cd ./gcp
 `
 
-`
- cd ./aws
-`
+## Step 2. GCP credentials and access
+Also you need access to GCP.
 
-## Step 2. Generate ssh key
-
-Kubeone needs ssh key for access to ec2 instance. By default, terraform uses ~/.ssh/id_rsa and ~/.ssh/id_rsa.pub. But you can generate your ssh key to any folder and add this path to terraform variables file.
-To generate ssh key, please execute the following command:
+To login, please execute the following command:
 
 `
- ssh-keygen
+gcloud auth application-default login
+`
+
+Get your project id:
+
+`
+gcloud projects list
+`
+
+To set your project for k8s cluster, please execute following command:
+
+`
+gcloud config set project $your_project_id
+`
+
+## Step 3. Installation GCP cloud infrastructure
+To create a service account, a storage bucket and a rules for a k8s cluster, please create variables file:
+
+```
+cat << EOF > terraform.tfvars
+project     = "$your_project_id"
+svca_name   = "$name_for_new_service_account"
+bucket_name = "$bucket_name_for_kops"
+vpc_name    = "$vpc_name"
+EOF
+```
+
+To initialize terraform states, please execute the following command:
+
+`
+terraform init
+`
+
+To review what infrastructure will be created, please execute the following command:
+
+`
+terraform plan
+`
+
+To create infrastructure for the k8s cluster, please execute the following command:
+
+`
+terraform apply
+`
+
+In output of this command you will have your bucket name and service account email.
+
+To get your service account id, email, name with gcloud, please execute the following command:
+
+`
+gcloud iam service-accounts list
 ` 
 
-## Step 3. AWS credentials
-Also you need access to AWS. It can be iam user or iam role. You need have a AWS_ACCESS_KEY and AWS_SECRET_ACCESS_KEY.
-To add environment variables, please execute the following command:
+To create a new json key for your service account, please execute the following command:
 
 `
- export AWS_PROFILE=default
+gcloud iam service-accounts keys create --iam-account $serviceAccountEMAIL kops-cluster-gcp-key.json
 `
 
-`
- export AWS_ACCESS_KEY=xxxxxxxxx
-`
+To export a JSON file content of the created service account json key, please execute the following command:
 
 `
- export AWS_SECRET_ACCESS_KEY=xxxxxxxxxxxxxx
+export GOOGLE_CREDENTIALS=$(cat ./kops-cluster-gcp-key.json)
 `
 
-## Step 4. Installation AWS cloud infrastructure
+To create the k8s cluster, please execute the following commands:
 
-To initialize a working directory for terraform, please execute the following command:
-
-`
- terraform init
-`
-
-To create configure file for terraform, please execute the following command:
-
-`
- nano terraform.tfvars
-`
-
-And add this example config:
 ```
-cluster_name = "k8s-cluster-example"
-aws_region = "eu-west-1"
-control_plane_type = "t3.medium"
+PROJECT=$your_project_id
+export KOPS_FEATURE_FLAGS=AlphaAllowGCE # to unlock the GCE features
+kops create cluster kops-example-dev.k8s.local --zones=us-central1-a,us-central1-b,us-central1-c --gce-service-account $serviceAccountEMAIL --vpc $vpc_name --state gs://$bucket_name_for_kops/ --project=${PROJECT} --kubernetes-version=1.18.0 --node-count 3 --node-size n2-standard-4
 ```
-Now we use this example config, but you can see all the variables in `variables.tf`.
 
-To see what infrastructure will be created, please execute the following command:
-
-`
- terraform plan
-`
-
-To create this infrastructure, please execute the following command:
+If you want a high-available cluster, please add this option to the last command:
 
 `
- terraform apply
+--master-count 3
+--master-zones=us-central1-a,us-central1-b,us-central1-c
+--node-count 6
+--node-size n2-standard-4
 `
 
-After executing this command we will have the infrastructure to create the k8s cluster.
-For kubeone, we need to generate terraform output file with all resourse id. Please execute the following command:
+To get the k8s cluster name from the bucket, please execute following command:
 
 `
- terraform output -json > tf.state
+kops get cluster --state gs://$bucket_name_for_kops/
 `
 
-Generate config file for kubeone. Please execute the following command:
+To deploy the cluster to the gcp infrastructure, please execute following command:
 
 `
- kubeone config print --full > config.yml
+kops update cluster kops-example-dev.k8s.local --state gs://$bucket_name_for_kops/ --yes
 `
 
-You can change the settings for yourself. We will use default config.
-
-To add your ssh key to ssh agent, please execute the following command:
+To check status of your cluster, please execute following command:
 
 `
- ssh-add /path/to/your/id_rsa
+kops validate cluster --wait 10m --state gs://$bucket_name_for_kops/
 `
 
-To start deploy k8s cluster, please execute the following command:
+After that you can check your nodes:
 
 `
- kubeone install config.yml -t tf.state
+kubectl get ndoes
 `
 
-After executing this command you will have a working k8s cluster with three master nodes and kubeconfig for your kubectl in this directory  $(pwd)/ .
-
-To set KUBECONFIG variable for kubectl, please execute the following command:
+If you want to export a kubectl config, please execute following command:
 
 `
- export KUBECONFIG=$(pwd)/k8s-cluster-example-kubeconfig
+kops export kubecfg kops-example-dev.k8s.local
 `
 
-And check your nodes in the cluster:
-
-`
- kubectl get nodes 
-`
-
-For manage workers node kubeone uses machinedeployments, please execute the following command:
-
-`
- kubectl get machinedeployments -n kube-system
-`
-
-To scale your workers node, please execute the following command:
-
-`
- kubectl --namespace kube-system scale machinedeployment/$MACHINE-DEPLOYMENT-NAME --replicas=3
-`
-
-## Step 5. Review the architecture page
+## Step 4. Review the architecture page
 
 Starting ThingsBoard v2.2, it is possible to install ThingsBoard cluster using new microservices architecture and docker containers. 
 See [**microservices**](/docs/reference/msa/) architecture page for more details.
 
-## Step 6. Environment file.
+## Step 5. Environment file.
 
 Please go to back in root folder `cd ../`.
 
-In `.env` file set the value of `PLATFORM` field to `aws`.
+In `.env` file set the value of `PLATFORM` field to `gcp`.
 
-## Step 7. Configure ThingsBoard database
+## Step 6. Configure ThingsBoard database
 
 Before performing initial installation you can configure the type of database to be used with ThingsBoard.
 In order to set database type change the value of `DATABASE` variable in `.env` file to one of the following:
@@ -166,7 +170,7 @@ In order to set database type change the value of `DATABASE` variable in `.env` 
 
 **NOTE**: According to the database type corresponding kubernetes resources will be deployed (see `basic/postgres.yml` or `high-availability/postgres-ha.yaml` for postgres with replication, `common/cassandra.yml` for details).
 
-## Step 8. Choose deployment type
+## Step 7. Choose deployment type
 
 Before performing initial installation you can configure the type of ThingsBoard deployment.
 In order to set deployment type change the value of `DEPLOYMENT_TYPE` variable in `.env` file to one of the following:
@@ -183,7 +187,7 @@ It is recommended to have 3 Cassandra nodes with `CASSANDRA_REPLICATION_FACTOR` 
 
 Also, to run PostgreSQL in `high-availability` deployment mode you'll need to  [install](https://helm.sh/docs/intro/install/) `helm`.
 
-## Step 9. Running
+## Step 8. Running
 
 Execute the following command to run installation:
 
@@ -243,7 +247,7 @@ For example to see ThingsBoard node logs execute the following command:
 2) Fetch logs of the tb-node pod:
 
 `
- kubectl logs -f [tb-node-pod-name]
+ kubectl logs -f $tb-node-pod-name
 `
 
 Where:
@@ -273,11 +277,12 @@ Execute the following command to delete all resources (including database):
  ./k8s-delete-all.sh
 `
 
-To remove k8s cluster and aws resources, you can execute the following command:
+To destroy the k8s cluster and GCP resources, please execute following commands:
 
 ```
- kubeone reset config.yml -t tf.state
- terraform destroy
+kops delete cluster kops-example-dev.k8s.local --state gs://$bucket_name_for_kops/ --yes
+export GOOGLE_CREDENTIALS=""
+terraform destroy
 ```
 
 ## Upgrading
