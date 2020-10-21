@@ -9,7 +9,7 @@ description: Learn how to get data from Tektelic LoRaWAN sensors at ThingsBoard
 {:toc}
 
 [Tektelic](tektelic.com) is a premier supplier of LoRaWAN® IoT Gateways, Sensors and custom applications.  
-This tutorial describes how to stream data from TEKTELIC KONA Core Network Server to ThingsBoard.
+This guide describes how to stream data from TEKTELIC KONA Core Network Server to ThingsBoard.
 
 ### Prerequisites
  A gateway and a sensor that is designed to work in EU868 frequency band will be used.  
@@ -18,7 +18,11 @@ This tutorial describes how to stream data from TEKTELIC KONA Core Network Serve
  - [Smart Room Sensor](https://tektelic.com/wp-content/uploads/Smart-Room-Sensor.pdf).
  - [KONA Micro IoT Gateway](https://tektelic.com/wp-content/uploads/KONA-Micro.pdf).
  - Customer account at [EU instance](https://lorawan-ns-eu.tektelic.com) TEKTELIC KONA Core Network Server.  
-To get an account contact [Tektelic support](mailto:support@tektelic.com).
+ To get an account contact [Tektelic support](mailto:support@tektelic.com).
+
+ The common scheme of the guide setup is the next:  
+
+ <img src="/images/samples/tektelic/setup_scheme.png" width="800">  
 
 ### Step 1. Add hardware in Network Server
 ##### Step 1.1 Add a gateway
