@@ -104,7 +104,7 @@ This guide describes how to stream data from TEKTELIC KONA Core Network Server t
  In ThingsBoard open device-gateway from step 2.1, go to the *RELATIONS* tab, and select outbound relations with a direction *From*.  
  There should be present the gateway and the sensor added in Network Server at Step 1.1 and Step 1.2
  
- <img src="/images/samples/tektelic/tb_from_relations.png" width="800">  
+ <img src="/images/samples/tektelic/tb_from_relations.png" width="1000">  
  <br>
  These devices will be displayed with an appropriate type:  
    - *CLASS_A* - the sensor from step 1.2.  
@@ -117,12 +117,11 @@ This guide describes how to stream data from TEKTELIC KONA Core Network Server t
  This part of telemetry data depends on Network Server converter used for a ThingsBoard integration and how that converter parses the sensor's payload (array of bytes) into JSON at Network Server side.  
  So if you are using another model of the sensor, please take it into account.  
  <br/>
- Once integration verification passed successfully, you can use ThingsBoard dashboard to visualize received telemetry.
+ Once integration verification passed successfully, the received telemetry is available for visualization.  
+ You can import the predefined dashboard to see the data. <a href="./resources/network_server_dashboard.json" download>Click to download.</a>  
 
- <img data-gifffer="/images/samples/tektelic/add_sensor_data_at_dashboard.gif" width="1000">  
+ <img data-gifffer="/images/samples/tektelic/import_dashboard.gif" width="1000">  
 
- Also, you can download the dashboard and import it in ThingsBoard. <a href="./resources/smart_room_sensor_dashboard.json" download>Click to Download</a>.  
- After importing the dashboard please don't forget to change [the alias](/docs/user-guide/ui/aliases/#single-entity) to an appropriate one.
  
 ## Next steps
 
