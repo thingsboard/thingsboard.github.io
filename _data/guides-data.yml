@@ -252,7 +252,7 @@
       video: true
     - path: /docs/samples/tektelic/
       title: Connect Tektelic LoRaWAN sensors using TEKTELIC KONA Core Network Server
-      subtitle: Learn how to route messages from TEKTELIC KONA Core Network Server to ThingsBoard and vise-versa.
+      subtitle: Learn how to route messages from TEKTELIC KONA Core Network Server to ThingsBoard.
       keywords: Tektelic connect
       pe: false
       video: false

@@ -24,7 +24,7 @@ This guide describes how to stream data from TEKTELIC KONA Core Network Server t
 
  <img src="/images/samples/tektelic/setup_scheme.png" width="800">  
 
-### Step 1. Add hardware in Network Server
+### Step 1. Register hardware in Network Server
 ##### Step 1.1 Add a gateway
  - Create a new gateway group
  - Create a new gateway in the group. The GW-ID could be found at a sticker at the gateway body.  
@@ -73,7 +73,6 @@ This guide describes how to stream data from TEKTELIC KONA Core Network Server t
  Smart Room Sensor is rejoining every time after the battery has been disconnected.  
 ### Step 2. Configure integration with ThingsBoard
  ThingsBoard provides [MQTT Gateway API](/docs/reference/gateway-mqtt-api/).  
- Device of special type in ThingsBoard that exposes MQTT Gateway API and will act as a bridge between Network Server and ThingsBoard.  
  Network Server integration, in turn, uses this MQTT Gateway API.  
  So sensors and gateways will be created automatically at ThingsBoard side.  
 ##### Step 2.1 Add a gateway device in ThingsBoard

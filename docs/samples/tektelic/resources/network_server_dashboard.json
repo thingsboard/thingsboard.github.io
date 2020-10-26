@@ -22,7 +22,7 @@
               "dataKeys": [
                 {
                   "name": "temperature",
-                  "label": "Temperature",
+                  "label": "Temperature (${entityName})",
                   "type": "timeseries",
                   "color": "#2196f3",
                   "settings": {
@@ -47,7 +47,7 @@
                 },
                 {
                   "name": "humidity",
-                  "label": "Humidity",
+                  "label": "Humidity (${entityName})",
                   "type": "timeseries",
                   "color": "#4caf50",
                   "settings": {
