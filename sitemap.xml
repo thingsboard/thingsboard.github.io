@@ -8,7 +8,7 @@
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
 <url>
-  <loc>https://thingsboard.io/</loc>
+  <loc>https://v14.thingsboard.io/</loc>
   <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
 </url>
 {% for page in site.pages %}{% if page.url != "/" and page.url != "/404.html" and page.url != "/sitemap.xml" and page.url != "/css/styles.css" %}<url>
