@@ -1,0 +1,64 @@
+$pricing-color: #506dad
+$pricing-button-color: #29655f
+
+$silver-color: rgba(160, 160, 160, 0.75)
+$gold-color: rgba(234, 206, 26, 0.76)
+$platinum-color: rgba(158, 150, 94, 0.76)
+
+$pricing-table-border: rgba(255, 255, 255, 0.39)
+
+#careers
+  footer
+    position: static
+
+  color: #424242
+
+  .flyout-button
+    display: none
+
+  #carsContent
+    position: relative
+    width: 100%
+    margin: auto
+    * + h2, * + h3, * + h4, * + h5, * + h6
+
+    h1
+      text-align: left
+      margin-bottom: 0px
+      font-weight: 300
+      font-size: 48px
+    h2
+      font-size: 32px
+      line-height: 1.5em
+      margin-top: 25px
+    h3
+      font-weight: 300
+    h5
+      font-size: 18px
+      line-height: 1.5em
+      font-weight: 300
+
+@media screen and (min-width: 750px)
+  #careers
+    #carsContent
+
+@media screen and (min-width: 1025px)
+  #careers
+    section, header
+      main
+        max-width: 1000px
+    footer
+      main
+        max-width: 1000px
+
+    #carsContent
+      width: calc(100% - 200px)
+
+@media screen and (min-width: 1500px)
+  #careers
+    #carsContent
+          width: calc(100% - 468px)
+
+@media screen and (min-width: 1600px)
+  #careers
+    #carsContent

@@ -1,0 +1,108 @@
+hr.solid {
+  border-top: 1px solid #212529;
+  opacity: 0.1;
+  margin-top: 54px;
+}
+
+#carsGrid {
+	margin-top: 46px;
+    margin-bottom: 52px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 46px;
+    vertical-align: top;
+    row-gap: 46px;
+}
+
+.cars-box {
+    display: block;
+    background-color: #F5F7F9;
+    border-radius: 3px;
+    padding: 24px 30px 24px 30px;
+    height: 160px;
+}
+
+.cars-box:hover {
+    text-decoration: none;
+}
+
+.cars-box:hover {
+    background-color: #FFFFFF;
+    box-shadow: 0 0 0px 6px #305680;
+}
+
+.cars-box > div {
+    height: 90px;
+}
+
+.cars-box p.title {
+    font-weight: bold !important;
+    font-size: 24px;
+    line-height: 28px;
+    margin-bottom: 5px;
+    Color: #212529;
+}
+
+.cars-box p.description {
+    font-size: 18px;
+    Color: #212529;
+}
+
+.cars-box p.location {
+    font-size: 18px;
+    Color: #212529;
+    opacity: 0.6;
+    float: left;
+    width: 50%;
+}
+
+.cars-box a.link {
+	color: #305680;
+	font-weight: 500;
+	text-align: right;
+    float: left;
+    width: 50%;
+}
+
+#technology {
+	padding-top: 80px;
+    padding-bottom: 80px;
+    height: 220px;
+    text-align: justify;
+    -moz-text-align-last: justify; text-align-last: justify;
+}
+
+#technology > img {
+	height: 100%;
+}
+
+#about {
+	width: 100% + 508px;
+    background-color: #F7F7F7;
+    margin:0 -254px 52px;
+    padding: 64px 254px 64px 254px;
+}
+
+#about p.title {
+    font-weight: bold !important;
+    font-size: 36px;
+    line-height: 42px;
+    color: #212529;
+    margin-bottom: 25px;
+}
+
+#about p.description {
+    font-size: 18px;
+    line-height: 30px;
+    color: #212529;
+}
+
+.back {
+    font-size: 32px;
+    font-weight: 300;
+    margin-bottom: 100px;
+}
+
+.back:focus {
+    outline: none;
+}

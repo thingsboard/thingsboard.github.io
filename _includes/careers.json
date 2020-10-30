@@ -1,0 +1,44 @@
+[
+  {
+    "id": "1",
+    "title": "IT Sales manager",
+    "description": " ",
+    "location": "Kyiv, Ukraine"
+  },
+  {
+    "id": "2",
+    "title": "Copywriter",
+    "description": " ",
+    "location": "Kyiv, Ukraine"
+  },
+  {
+    "id": "3",
+    "title": "Technical Support Team Lead",
+    "description": " ",
+    "location": "Kyiv, Ukraine"
+  },
+  {
+    "id": "4",
+    "title": "Video Editor",
+    "description": " ",
+    "location": "Kyiv, Ukraine"
+  },
+  {
+    "id": "5",
+    "title": "Java/DevOps Engineer",
+    "description": " ",
+    "location": "Kyiv, Ukraine"
+  },
+  {
+    "id": "6",
+    "title": "Middle Java developer",
+    "description": " ",
+    "location": "Kyiv, Ukraine"
+  },
+  {
+    "id": "7",
+    "title": "Middle Frontend developer",
+    "description": "Angular 2+",
+    "location": "Kyiv, Ukraine"
+  }
+]
