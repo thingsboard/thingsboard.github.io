@@ -320,6 +320,8 @@ toc:
       path: /docs/user-guide/contribution/widgets-development/
     - title: Widgets development (ThingsBoard v2.x)
       path: /docs/user-guide/contribution/widgets-development-before-3.0/
+    - title: Partnership documentation guide
+      path: /docs/user-guide/contribution/how-to-apply-for-partner/
 - title: Release Notes
   path: /docs/reference/releases/
 - title: Roadmap

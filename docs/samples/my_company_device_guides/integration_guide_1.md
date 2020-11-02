@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
-title: MyDevice2 integration guide
-description: ThingsBoard IoT Platform sample for usage of MyDevice2 
+title: MyDevice1 integration guide
+description: ThingsBoard IoT Platform sample for usage of MyDevice1 
 hidetoc: "true"
 ---
 
@@ -12,24 +12,24 @@ hidetoc: "true"
 
 This guide contains step-by-step instructions on how to connect your device to the ThingsBoard Community Edition through the next connectivity way([ThingsBoard IoT Gateway](docs/iot-gateway/what-is-iot-gateway/), [ThingsBoard Device API](/docs/api/), [Third-Party Application](https://application_link_authority:port/path)) In particular, this sample application will allow you to monitor data from devices of 'My Company' with the usage of the ThingsBoard. 
 
-### My Device 2
-[My Device 2](https://my_device_link) called **"MyDevice2"** is a device which provides with the data about the ... 
+### MyDevice 1
+[MyDevice 1](https://my_device_link) called **"MyDevice1"** is a device which provides with the data about the ... 
 
-You can refer for this link for the device configuration guides [My Device 2 docs](https://my_device_link/docs)
+You can refer for this link for the device configuration guides [MyDevice 1 docs](https://my_device_link/docs)
 
-Once you complete this sample/tutorial, you will see your **"MyDevice2"** data on a dashboard like the following on the right.
+Once you complete this sample/tutorial, you will see your **"MyDevice1"** data on a dashboard like the following on the right.
 
 ## Prerequisites
 
 ### Hardware  
 
- - 1x [MyDevice2](https://my_device_link)
+ - 1x [MyDevice1](https://my_device_link)
  - 1x Ethernet cable
  - ...
 
 ### Software  
 
- - [MyDevice2 configuration interface](https://my_device_link/docs).
+ - [MyDevice1 configuration interface](https://my_device_link/docs).
  - The ThingsBoard Community Edition (the guide is based on the to the ThingsBoard 2.5.4 version) installed locally, though, you can use the [Live Demo](/docs/user-guide/live-demo/) or [Installation Guide](/docs/user-guide/install/installation-options/) to install ThingsBoard.
  - ...
  
@@ -53,7 +53,7 @@ How to connect the device description.
 ...  
 Rule chains configuration details.  
 ...  
-Rule chains used in this topic you can upload via [this link](/docs/samples/my_company_device_guides/resources/rule_chains.zip)  
+Rule chain used in this topic you can upload via [this link](/docs/samples/my_company_device_guides/resources/rule_chains.json)  
 ### Dashboard and Data visualization
 ...  
 Dashboard configuration part.  
