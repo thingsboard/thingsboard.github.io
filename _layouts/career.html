@@ -1,0 +1,66 @@
+<!Doctype html>
+<html id="careers">
+
+{% include head-header.html %}
+
+<section id="hero" class="light-text">
+</section>
+
+<section id="encyclopedia">
+    <div id="carsContent" class="noToc">
+
+        <button class="back" onClick="window.location.href='/careers/'"><img src="/images/careers/back_arrow.svg" alt="Back" style="vertical-align: middle; margin-right: 16px">Back to Careers</button>
+
+        <div id="vacancy">
+            <div class="head">
+                <p class="title">{{ page.position }}</p>
+                <div class="location">{{page.location}}<img src="/images/careers/location_icon.svg"></div>
+                <p class="date">{{page.dateString}}</p>
+            </div>
+
+            {{ content }}
+
+            <div id="mailBlock">
+                <p class="mailTitle">Send your CV on mail:</p><p class="mail">hr@thingsboard.io</p>
+                <p><input class="buttonApply" type="button" value="APPLY NOW" onClick="window.location.href='mailto:hr@thingsboard.io?subject=Job application in ThingsBoard'"></p>
+            </div>
+
+            <h2>Our Advantages:</h2>
+            <div id="advanGrid">
+                <div>
+                    <img class="advanImg" src="/images/careers/schedule_icon.svg">
+                    <h5>Comfortable and flexible working schedule</h5>
+                </div>
+                <div>
+                    <img class="advanImg" src="/images/careers/support_icon.svg">
+                    <h5>A high-professional team without bureaucracy</h5>
+                </div>
+                <div>
+                    <img class="advanImg" src="/images/careers/target_icon.svg">
+                    <h5>Career growth opportunities and regular salary review</h5>
+                </div>
+                <div>
+                    <img class="advanImg" src="/images/careers/vacation_icon.svg">
+                    <h5>Social benefits, paid vacations and sick leaves</h5>
+                </div>
+                <div>
+                    <img class="advanImg" src="/images/careers/sweet_icon.svg">
+                    <h5>Unlimited beverages, fruits and sweets</h5>
+                </div>
+                <div>
+                    <img class="advanImg" src="/images/careers/english_icon.svg">
+                    <h5>English classes in the office</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+	{% include careers.css %}
+</style>
+
+{% include footer.html %}
+
+</body>
+</html>
