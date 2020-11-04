@@ -9,20 +9,22 @@
 <section id="encyclopedia">
     <div id="carsContent" class="noToc">
 
-        <button class="back" onClick="window.location.href='/careers/'"><img src="/images/careers/back_arrow.svg" alt="Back" style="vertical-align: middle; margin-right: 16px">Back to Careers</button>
+        <a class="back" href="/careers/"><img src="/images/careers/back_arrow.svg" alt="Back to Careers">Back to Careers</a>
 
         <div id="vacancy">
             <div class="head">
                 <p class="title">{{ page.position }}</p>
-                <div class="location">{{page.location}}<img src="/images/careers/location_icon.svg"></div>
-                <p class="date">{{page.dateString}}</p>
+                <div>
+                    <div class="location">{{page.location}}<img src="/images/careers/location_icon.svg"></div>
+                    <p class="date">{{page.dateString}}</p>
+                </div>
             </div>
 
             {{ content }}
 
             <div id="mailBlock">
-                <p class="mailTitle">Send your CV on mail:</p><p class="mail">hr@thingsboard.io</p>
-                <p><input class="buttonApply" type="button" value="APPLY NOW" onClick="window.location.href='mailto:hr@thingsboard.io?subject=Job application in ThingsBoard'"></p>
+                <p class="mailTitle">Send your CV on mail:</p><a class="mail" href='mailto:hr@thingsboard.io?subject=Job application in ThingsBoard'>hr@thingsboard.io</a>
+                <a class="buttonApply" href='mailto:hr@thingsboard.io?subject=Job application in ThingsBoard'>APPLY NOW</a>
             </div>
 
             <h2>Our Advantages:</h2>
@@ -55,10 +57,6 @@
         </div>
     </div>
 </section>
-
-<style>
-	{% include careers.css %}
-</style>
 
 {% include footer.html %}
 

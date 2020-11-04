@@ -5,48 +5,49 @@ location: Kyiv, Ukraine
 dateString: 2 November, 2020
 layout: career
 ---
+#### ThingsBoard is looking for a Front-end Developer (Angular 2+) to join our team on a full-time basis in the Kyiv office! We would like you to help us to improve our Open-Source IoT platform. UI is based on Angular 10 and uses Angular Material.
+
 ### Required skills:
-2+ years of hands-on experience in various Java technologies and frameworks.
+2+ years of commercial experience with Angular 2+;
 
-Working knowledge of software development practices and technologies.
+Solid knowledge of JavaScript and TypeScript;
 
-Experience in Spring (Core, Boot, MVC, Security, Data).
+Experience building SPAs using RESTful APIs;
 
-RDBMS background (PostgreSQL is preferable).
+Experience building cross-browser and responsive user interfaces;
 
-Deep understanding of OOP.
+Deep understanding of OOP;
 
-Knowledge in Git and Linux.
+Extensive knowledge of CSS(SASS)/HTML5;
 
-
-
-### Will be a plus:
-Experience with cloud services: AWS, GCE, or Azure.
-
-Technical education.
+Experience with Git, Webpack.
 
 
+### Desired skills:
+Experience with Angular Material and WebSockets;
 
-### We offer:
-Working on an open-source IoT platform that has thousands of installations all over the world and 7000+ stars on github.
-
-A high-professional team without bureaucracy and management overhead.
-
-Code review done by engineers with 13+ years of experience.
-
-Career growth opportunities and regular salary review.
-
-Flexible work hours.
-
-Comfortable office and fridge with free beverages.
-
+Intermediate English.
 
 
 ### Responsibilities:
-Design and development of the new features and APIs.
+Design and development of the new platform features, dashboards, widgets, and APIs;
 
-Writing clean and reusable code.
+Writing clean and reusable code; 
 
-Support the existing functionality and improve it.
+Ensuring high performance on mobile and desktop; 
 
-Deep dive into java performance improvements during heavy load testing.
+Integration with Java back-end via RESTful and WebSocket APIs;
+
+Review and acceptance of Pull Requests on GitHub from community members.
+
+
+### We offer:
+Working on an open-source IoT platform that has thousands of installations all over the world and 7000+ stars on GitHub;
+
+A high-professional team without bureaucracy and management overhead. Code review done by engineers with 13+ years of experience; 
+
+Career growth opportunities and regular salary review;
+
+Flexible work hours; 
+
+Comfortable office and fridge with free beverages.

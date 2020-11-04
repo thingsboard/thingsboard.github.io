@@ -8,7 +8,7 @@ description: ThingsBoard Careers
 # Careers
 ## We search smart and communicable workers for <b>full-time in the Kyiv</b> office — Be one of us.
 
-<hr class="solid">
+<hr>
 <div id="carsGrid">
 {% for career in site.careers %}
   <a class="cars-box" href="{{ career.url }}">
@@ -41,7 +41,3 @@ description: ThingsBoard Careers
 <h5>ThingsBoard, Inc. is a US corporation founded in 2016 with RnD center in Kyiv, Ukraine. We are main contributor and maintainer of ThingsBoard open-source IoT Platform.<br>
 <br>We deliver and constantly improve scalable, robust and affordable IoT Platform that dramatically reduces time-to-market for life-changing IoT solutions. We also help companies to deliver great IoT products based on ThingsBoard.</h5>
 </div>
-
-<style>
-	{% include careers.css %}
-</style>
