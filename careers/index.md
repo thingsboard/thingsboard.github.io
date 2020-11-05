@@ -41,3 +41,31 @@ description: ThingsBoard Careers
 <h5>ThingsBoard, Inc. is a US corporation founded in 2016 with RnD center in Kyiv, Ukraine. We are main contributor and maintainer of ThingsBoard open-source IoT Platform.<br>
 <br>We deliver and constantly improve scalable, robust and affordable IoT Platform that dramatically reduces time-to-market for life-changing IoT solutions. We also help companies to deliver great IoT products based on ThingsBoard.</h5>
 </div>
+
+<h2>How do we work:</h2>
+<div id="advanGrid">
+    <div>
+      <img class="advanImg" src="/images/careers/schedule_icon.svg">
+      <h5>Comfortable and flexible working schedule</h5>
+    </div>
+    <div>
+      <img class="advanImg" src="/images/careers/support_icon.svg">
+      <h5>A high-professional team without bureaucracy</h5>
+    </div>
+    <div>
+      <img class="advanImg" src="/images/careers/target_icon.svg">
+      <h5>Career growth opportunities and regular salary review</h5>
+    </div>
+    <div>
+      <img class="advanImg" src="/images/careers/vacation_icon.svg">
+      <h5>Team buildings, corporate events, paid vacations and sick leaves</h5>
+    </div>
+    <div>
+      <img class="advanImg" src="/images/careers/sweet_icon.svg">
+      <h5>Unlimited beverages, fruits and sweets</h5>
+    </div>
+    <div>
+      <img class="advanImg" src="/images/careers/english_icon.svg">
+      <h5>Free English classes</h5>
+    </div>
+</div>
