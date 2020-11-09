@@ -11,6 +11,9 @@ toc:
   section:
   - title: Entities and relations
     path: /docs/user-guide/entities-and-relations/
+  - title: Device Profiles
+    path: /docs/user-guide/device-profiles/
+    new: true
   - title: Working with device attributes
     path: /docs/user-guide/attributes/
   - title: Working with telemetry data
@@ -21,7 +24,6 @@ toc:
     path: /docs/user-guide/device-connectivity-status/
   - title: Claiming Devices
     path: /docs/user-guide/claiming-devices/
-    new: true
   - title: Entity Views
     path: /docs/user-guide/entity-views/
   - title: Using RPC capabilities
