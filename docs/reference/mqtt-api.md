@@ -218,6 +218,28 @@ The supported data format is:
 **Please note** that the above fields are optional. In case the **secretKey** is not specified, the empty string as a default value is used.
 In case the **durationMs** is not specified, the system parameter **device.claim.duration** is used (in the file **/etc/thingsboard/conf/thingsboard.yml**).
 
+## Device provisioning
+
+Please see the corresponding article to get more information about the [Device provisioning](/docs/user-guide/device-provisioning) feature.  
+
+In order to initiate device provisioning, send Provisioning request to the following topic:
+ 
+```shell
+/provision
+```
+
+Also, you should set **username** or **clientId** to *provision*. 
+
+The supported data format is:
+
+```json
+{
+  "deviceName": "DEVICE_NAME",
+  "provisionDeviceKey": "u7piawkboq8v32dmcmpp",
+  "provisionDeviceSecret": "jpmwdn8ptlswmf4m29bw"
+}
+```
+  
 ## Protocol customization
 
 MQTT transport can be fully customized for specific use-case by changing the corresponding [module](https://github.com/thingsboard/thingsboard/tree/master/transport/mqtt).
