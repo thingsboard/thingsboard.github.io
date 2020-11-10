@@ -23,7 +23,7 @@ transition-duration: 0.3s;
 <path d="M4.0498 41.4934L25.7264 47.9987L50.5632 40.5492L29.4435 37.9211L4.0498 41.4934" fill="#0D2743"/>
 <path d="M4.0498 41.4934L25.7264 47.9987L50.5632 40.5492L29.4435 37.9211L4.0498 41.4934" fill="white" fill-opacity="0.6"/>
 </g>
-<a xlink:href="https://aws.amazon.com/sqs/" target="_blank" xlink:title="Amazon SQS" xlink:alt="Amazon SQS">
+<a xlink:href="https://aws.amazon.com/" target="_blank" xlink:title="Amazon SQS" xlink:alt="Amazon SQS">
 <g class="img">
 <rect width="51" height="60" fill="white" opacity="0"/>
 <path d="M50.5772 19.4594L49.7789 19.446L25.7439 12.3302L25.7295 12.0009V0.00280762L50.579 12.43L50.5772 19.4594Z" fill="#D9A741"/>
