@@ -26,8 +26,12 @@ This guide describes how to stream data from TEKTELIC KONA Core Network Server t
 
 ### Step 1. Register hardware in Network Server
 ##### Step 1.1 Add a gateway
- - Create a new gateway group
+ - Create a new gateway group.
  - Create a new gateway in the group. The GW-ID could be found at a sticker at the gateway body.  
+ - Change the gateway credentials, below is the format of default username and password:
+     - Username: TEK00XXYY (where XXYY represents last 4 digits of MAC address).
+     - Password: 9-Digit serial number of the gateway.  
+
  Network Server provides a predefined list of the gateways and here is using Kona Micro EU GW model.  
  You also could create a new one gateway model, set a frequency band and number of channels according to a gateway specification.
 
@@ -51,7 +55,7 @@ This guide describes how to stream data from TEKTELIC KONA Core Network Server t
  <img src="/images/samples/tektelic/QR_scan_result.png" width="200">  
  
  Where *647FDA00000042F0* is Device EUI and *647FDA8010000100* is Application EUI.  
- To get an Application Key, submit a request to [Tektelic support](mailto:support@tektelic.com).  
+ Tektelic provides a hard copy containing commissioning information with shipment of sensors. If you don’t find it, then contact [Tektelic support](mailto:support@tektelic.com)   
  
  <img data-gifffer="/images/samples/tektelic/add_a_sensor.gif" width="1000"/>
  
