@@ -6,7 +6,7 @@ description: ThingsBoard Careers
 ---
 
 # Careers
-## We search smart and communicable workers for <b>full-time in the Kyiv</b> office — Be one of us.
+## We welcome smart and communicable individuals to join our team in the Kyiv office.
 
 <hr>
 <div id="carsGrid">
@@ -20,20 +20,20 @@ description: ThingsBoard Careers
 </div>
 
 <div id="technology">
-<img src="/images/careers/angular.svg">
-<img src="/images/careers/spring.svg">
-<img src="/images/careers/java.svg">
-<img src="/images/careers/typescript.svg">
-<img src="/images/careers/kafka.svg">
-<img src="/images/careers/redis.svg">
-<img src="/images/careers/cassandra.svg">
-<img src="/images/careers/postgresql.svg">
-<img src="/images/careers/docker.svg">
-<img src="/images/careers/kubernets.svg">
-<img src="/images/careers/github.svg">
-<img src="/images/careers/aws.svg">
-<img src="/images/careers/azure.svg">
-<img src="/images/careers/google-cloud.svg">
+<object data="/images/careers/angular.svg"></object>
+<object data="/images/careers/spring.svg"></object>
+<object data="/images/careers/java.svg"></object>
+<object data="/images/careers/typescript.svg"></object>
+<object data="/images/careers/kafka.svg"></object>
+<object data="/images/careers/redis.svg"></object>
+<object data="/images/careers/cassandra.svg"></object>
+<object data="/images/careers/postgresql.svg"></object>
+<object data="/images/careers/docker.svg"></object>
+<object data="/images/careers/kubernets.svg"></object>
+<object data="/images/careers/github.svg"></object>
+<object data="/images/careers/aws.svg"></object>
+<object data="/images/careers/azure.svg"></object>
+<object data="/images/careers/google-cloud.svg"></object>
 </div>
 
 <div id="about">

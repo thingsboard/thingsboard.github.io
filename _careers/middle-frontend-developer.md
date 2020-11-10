@@ -5,9 +5,9 @@ location: Kyiv, Ukraine
 dateString: 2 November, 2020
 layout: career
 ---
-#### ThingsBoard is looking for a Front-end Developer (Angular 2+) to join our team on a full-time basis in the Kyiv office! We would like you to help us to improve our Open-Source IoT platform. UI is based on Angular 10 and uses Angular Material.
+##### ThingsBoard Inc. is looking for a Front-end Developer (Angular 2+) to join our team on a full-time basis in the Kyiv office! We would like you to help us to improve our Open-Source IoT platform. UI is based on Angular 10 and uses Angular Material.
 
-### Required skills:
+### Requirements:
 2+ years of commercial experience with Angular 2+;
 
 Solid knowledge of JavaScript and TypeScript;
@@ -22,32 +22,33 @@ Extensive knowledge of CSS(SASS)/HTML5;
 
 Experience with Git, Webpack.
 
-
-### Desired skills:
+### Nice to have:
 Experience with Angular Material and WebSockets;
 
 Intermediate English.
 
-
 ### Responsibilities:
 Design and development of the new platform features, dashboards, widgets, and APIs;
 
-Writing clean and reusable code; 
+Writing clean and reusable code;
 
-Ensuring high performance on mobile and desktop; 
+Ensuring high performance on mobile and desktop;
 
 Integration with Java back-end via RESTful and WebSocket APIs;
 
 Review and acceptance of Pull Requests on GitHub from community members.
 
-
 ### We offer:
 Working on an open-source IoT platform that has thousands of installations all over the world and 7000+ stars on GitHub;
 
-A high-professional team without bureaucracy and management overhead. Code review done by engineers with 13+ years of experience; 
+A high-professional team without bureaucracy and management overhead. Code review done by engineers with 13+ years of experience;
 
 Career growth opportunities and regular salary review;
 
-Flexible work hours; 
+Flexible work hours;
 
-Comfortable office and fridge with free beverages.
+Free English classes;
+
+Comfortable office and fridge with free beverages;
+
+Team-buildings and corporate events.
