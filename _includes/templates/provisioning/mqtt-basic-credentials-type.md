@@ -27,9 +27,11 @@ Provisioning request data example:
 Provisioning response example:
 
 ```json
-{"credentialsType":"MQTT_BASIC",
+{
+"credentialsType":"MQTT_BASIC",
 "credentialsValue":"{\"clientId\":\"DEVICE_CLIENT_ID_HERE\",\"userName\":\"DEVICE_USERNAME_HERE\",\"password\":\"DEVICE_PASSWORD_HERE\"}",
-"status":"SUCCESS"}
+"status":"SUCCESS"
+}
 ```
 
 Where:  
