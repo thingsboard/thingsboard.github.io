@@ -24,6 +24,9 @@ toc:
     path: /docs/user-guide/device-connectivity-status/
   - title: Claiming Devices
     path: /docs/user-guide/claiming-devices/
+  - title: Device provisioning
+    path: /docs/user-guide/device-provisioning/
+    new: true
   - title: Entity Views
     path: /docs/user-guide/entity-views/
   - title: Using RPC capabilities
