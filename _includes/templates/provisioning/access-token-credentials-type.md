@@ -24,10 +24,9 @@ Provisioning response example:
 
 ```json
 {
-  "deviceId":"97a20840-2287-11eb-9872-652e146ea052",
   "credentialsType":"ACCESS_TOKEN",
-  "credentialsId":"DEVICE_ACCESS_TOKEN",
-  "provisionDeviceStatus":"SUCCESS"
+  "credentialsValue":"DEVICE_ACCESS_TOKEN",
+  "status":"SUCCESS"
 }
 ```
 
@@ -58,11 +57,11 @@ RESULT_CODES = {
     }
 
 
-THINGSBOARD_HOST = "127.0.0.1"  # ThingsBoard instance host
+THINGSBOARD_HOST = "cloud.thingsboard.io"  # ThingsBoard instance host
 THINGSBOARD_PORT = 1883  # ThingsBoard instance MQTT port
 
-PROVISION_DEVICE_KEY = "default_provision_key"  # Provision device key, replace this value with your value from device profile.
-PROVISION_DEVICE_SECRET = "default_provision_secret"  # Provision device secret, replace this value with your value from device profile.
+PROVISION_DEVICE_KEY = "PUT_PROVISION_KEY_HERE"  # Provision device key, replace this value with your value from device profile.
+PROVISION_DEVICE_SECRET = "PUT_PROVISION_SECRET_HERE"  # Provision device secret, replace this value with your value from device profile.
 
 
 PROVISION_REQUEST = {"provisionDeviceKey": PROVISION_DEVICE_KEY,
@@ -100,9 +99,9 @@ class ProvisionClient(Client):
         decoded_payload = msg.payload.decode("UTF-8")
         print("[Provisioning client] Received data from ThingsBoard: %s" % decoded_payload)
         decoded_message = loads(decoded_payload)
-        provision_device_status = decoded_message.get("provisionDeviceStatus")
+        provision_device_status = decoded_message.get("status")
         if provision_device_status == "SUCCESS":
-            self.__save_credentials(decoded_message["credentialsId"])
+            self.__save_credentials(decoded_message["credentialsValue"])
         else:
             print("[Provisioning client] Provisioning was unsuccessful with status %s and message: %s" % (provision_device_status, decoded_message["errorMsg"]))
         self.disconnect()
