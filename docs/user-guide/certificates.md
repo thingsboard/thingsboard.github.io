@@ -18,7 +18,7 @@ See [following instructions](/docs/user-guide/mqtt-over-ssl/#self-signed-certifi
 Open the keygen.properties file, and update the values if needed:
 
 ```bash
-DOMAIN_SUFFIX="$(hostname)"
+DOMAIN_SUFFIX="localhost"
 ORGANIZATIONAL_UNIT=ThingsBoard
 ORGANIZATION=ThingsBoard
 CITY=San Francisco
@@ -61,30 +61,20 @@ Alternatively, the same can be done through the REST API.
 
 #### Run Two-Way MQTT SSL Python Client
 
-Download Python client example [**two-way-ssl-mqtt-client.py**](https://raw.githubusercontent.com/thingsboard/thingsboard/master/tools/src/main/python/two-way-ssl-mqtt-client.py).
-Specify your client-side certificate and path to the public key of the server certificate.
+Download Python client example [**two-way-ssl-mqtt-client.py**](/docs/user-guide/resources/mqtt-over-ssl/two-way-ssl-mqtt-client.py).
 
-```python
-# Some code omitted
+**Note** Script uses **8883** MQTT port and requires paho-mqtt library that you can install using the following command: **pip3 install paho-mqtt**
 
-client.tls_set(ca_certs="mqttserver.pub.pem", certfile="mqttclient.nopass.pem", keyfile=None, cert_reqs=ssl.CERT_REQUIRED,
-                       tls_version=ssl.PROTOCOL_TLSv1, ciphers=None);
-
-# Some code omitted
-```
-
-**Note** Script uses **8883** MQTT port and requires paho-mqtt library that you can install using the following command: **pip install paho-mqtt**
-
-Run the script:
+Run the script and follow steps in console:
 
 {% capture tabspec %}mqtt-ssl-configuration-twoway
-A,python twowaysslmqttclient.py,shell,resources/mqtt-ssl-configuration-run-twowaysslmqttclient.sh,/docs/user-guide/resources/mqtt-ssl-configuration-run-twowaysslmqttclient.sh{% endcapture %}
+A,Run command,shell,resources/mqtt-ssl-configuration-run-twowaysslmqttclient.sh,/docs/user-guide/resources/mqtt-ssl-configuration-run-twowaysslmqttclient.sh{% endcapture %}
 {% include tabs.html %}  
 
 If everything was configured correctly, the output should be like:
 
 {% capture tabspec %}mqtt-ssl-configuration-output-twoway
-A,twowaysslmqttclient.py output,shell,resources/mqtt-ssl-configuration-twowaysslmqttclient-output.txt,/docs/user-guide/resources/mqtt-ssl-configuration-twowaysslmqttclient-output.txt{% endcapture %}
+A,Result,shell,resources/mqtt-ssl-configuration-twowaysslmqttclient-output.txt,/docs/user-guide/resources/mqtt-ssl-configuration-twowaysslmqttclient-output.txt{% endcapture %}
 {% include tabs.html %}
 
 

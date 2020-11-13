@@ -15,23 +15,20 @@
 #
 
 import paho.mqtt.client as mqtt
-import ssl, socket
+import ssl
+
 
 def collect_required_data():
     config = {}
     print("\n\n", "="*80, sep="")
-    print(" "*20, "ThingsBoard one way RPC example script.", sep="")
+    print(" "*20, "\033[1m\033[94mThingsBoard one way RPC example script.\033[0m", sep="")
     print("="*80, "\n\n", sep="")
-    host = input("Please write your ThingsBoard host or leave it blank to use default (localhost): ")
+    host = input("Please write your ThingsBoard \033[93mhost\033[0m or leave it blank to use default (localhost): ")
     config["host"] = host if host else "localhost"
-    ca_cert = input("Please write path to your server public certificate or leave it blank to use default (mqttserver.pub.pem): ")
+    ca_cert = input("Please write \033[93mpath\033[0m to your \033[93mserver public certificate\033[0m or leave it blank to use default (mqttserver.pub.pem): ")
     config["ca_cert"] = ca_cert if ca_cert else "mqttserver.pub.pem"
-    token = ""
-    while not token:
-        token = input("Please write accessToken for device: ")
-        if not token:
-            print("Access token is required!")
-    config["token"] = token
+    ca_cert = input("Please write \033[93mpath\033[0m to your \033[93mclient public certificate\033[0m or leave it blank to use default (mqttclient.nopass.pem): ")
+    config["cert"] = ca_cert if ca_cert else "mqttclient.nopass.pem"
     print("\n", "="*80, "\n", sep="")
     return config
 
@@ -48,10 +45,10 @@ def on_connect(client, userdata, rc, *extra_params):
 
 # The callback for when a PUBLISH message is received from the server.
 def on_message(client, userdata, msg):
-   print('Topic: ' + msg.topic + '\nMessage: ' + str(msg.payload))
+   print ('Topic: ' + msg.topic + '\nMessage: ' + str(msg.payload))
    if msg.topic.startswith( 'v1/devices/me/rpc/request/'):
        requestId = msg.topic[len('v1/devices/me/rpc/request/'):len(msg.topic)]
-       print('This is a RPC call. RequestID: ' + requestId + '. Going to reply now!')
+       print ('This is a RPC call. RequestID: ' + requestId + '. Going to reply now!')
        client.publish('v1/devices/me/rpc/response/' + requestId, "{\"value1\":\"A\", \"value2\":\"B\"}", 1)
 
 
@@ -62,9 +59,8 @@ if __name__ == '__main__':
     client.on_message = on_message
     client.publish('v1/devices/me/attributes/request/1', "{\"clientKeys\":\"model\"}", 1)
 
-    client.tls_set(ca_certs=config["ca_cert"], tls_version=ssl.PROTOCOL_TLSv1_2, ciphers=None)
-    client.username_pw_set(config["token"])
-    client.tls_insecure_set(True)
+    client.tls_set(ca_certs=config["ca_cert"], certfile=config["cert"], tls_version=ssl.PROTOCOL_TLSv1_2, ciphers=None)
+    client.tls_insecure_set(False)
     client.connect(config["host"], 8883, 1)
 
     # Blocking call that processes network traffic, dispatches callbacks and
