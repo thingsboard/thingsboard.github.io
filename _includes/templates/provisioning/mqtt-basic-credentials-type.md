@@ -28,11 +28,9 @@ Provisioning response example:
 
 ```json
 {
-  "deviceId":"0a6c0480-2327-11eb-9d5c-e9ed3235dff8",
-  "credentialsType":"MQTT_BASIC",
-  "credentialsId":"e448c0b7af13ee71748b221b1b611f946168fe12303b94d943c622308c19c5f6",
-  "credentialsValue":"{\\"clientId\\":\\"DEVICE_CLIENT_ID_HERE\\",\\"userName\\":\\"DEVICE_USERNAME_HERE\\",\\"password\\":\\"DEVICE_PASSWORD_HERE\\"}",
-  "provisionDeviceStatus":"SUCCESS"
+"credentialsType":"MQTT_BASIC",
+"credentialsValue":"{\"clientId\":\"DEVICE_CLIENT_ID_HERE\",\"userName\":\"DEVICE_USERNAME_HERE\",\"password\":\"DEVICE_PASSWORD_HERE\"}",
+"status":"SUCCESS"
 }
 ```
 
@@ -64,7 +62,7 @@ RESULT_CODES = {
     }
 
 
-THINGSBOARD_HOST = "127.0.0.1"  # ThingsBoard instance host
+THINGSBOARD_HOST = "cloud.thingsboard.io"  # ThingsBoard instance host
 THINGSBOARD_PORT = 1883  # ThingsBoard instance MQTT port
 
 PROVISION_DEVICE_KEY = "PUT_PROVISION_KEY_HERE"  # Provision device key, replace this value with your value from device profile.
@@ -108,7 +106,7 @@ class ProvisionClient(Client):
         decoded_payload = msg.payload.decode("UTF-8")
         print("[Provisioning client] Received data from ThingsBoard: %s" % decoded_payload)
         decoded_message = loads(decoded_payload)
-        provision_device_status = decoded_message.get("provisionDeviceStatus")
+        provision_device_status = decoded_message.get("status")
         if provision_device_status == "SUCCESS":
             self.__save_credentials(decoded_message["credentialsValue"])
         else:

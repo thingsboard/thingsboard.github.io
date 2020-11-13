@@ -20,9 +20,9 @@ Provisioning response example:
 
 ```json
 {
-  "provisionDeviceStatus":"SUCCESS",
+  "status":"SUCCESS",
   "credentialsType":"ACCESS_TOKEN",
-  "accessToken":"sLzc0gDAZPkGMzFVTyUY"  
+  "credentialsValue":"sLzc0gDAZPkGMzFVTyUY"
 }
 ```
 {: .copy-code}
@@ -82,9 +82,9 @@ class ProvisionClient(Client):
         decoded_payload = msg.payload.decode("UTF-8")
         print("[Provisioning client] Received data from ThingsBoard: %s" % decoded_payload)
         decoded_message = loads(decoded_payload)
-        provision_device_status = decoded_message.get("provisionDeviceStatus")
+        provision_device_status = decoded_message.get("status")
         if provision_device_status == "SUCCESS":
-            self.__save_credentials(decoded_message["credentialsId"])
+            self.__save_credentials(decoded_message["credentialsValue"])
         else:
             print("[Provisioning client] Provisioning was unsuccessful with status %s and message: %s" % (provision_device_status, decoded_message["errorMsg"]))
         self.disconnect()
