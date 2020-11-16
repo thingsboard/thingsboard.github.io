@@ -14,33 +14,22 @@ Provisioning request data example:
   "provisionDeviceSecret": "PUT_PROVISION_SECRET_HERE"
 }
 ```
+{: .copy-code}
 
 Provisioning response example:
 
 ```json
 {
+  "status":"SUCCESS",
   "credentialsType":"ACCESS_TOKEN",
-  "credentialsValue":"sLzc0gDAZPkGMzFVTyUY",
-  "status":"SUCCESS"
+  "credentialsValue":"sLzc0gDAZPkGMzFVTyUY"
 }
 ```
+{: .copy-code}
 
-Where:  
-***credentialsId*** - Access token for device in ThingsBoard.  
+### MQTT Example script
 
-
-#### Python example scripts
-
-<br>
-<details>
-
-<summary>
-<b>Example for MQTT API. Press to expand.</b>
-</summary>
-
-{% highlight python %}
-
-
+```python
 from paho.mqtt.client import Client
 from json import dumps, loads
 
@@ -154,17 +143,11 @@ if __name__ == '__main__':
         tb_client.loop_forever()  # Starting infinity loop
     else:
         print("Client was not created!")
+```
+{: .copy-code}
 
 
-{% endhighlight %}
-</details>
-
-<br>
-<details>
-
-<summary>
-<b>Example for HTTP API. Press to expand.</b>
-</summary>
+### HTTP Example script
 
 {% highlight python %}
 from requests import post
@@ -181,15 +164,9 @@ if __name__ == '__main__':
     print(response.json())
 
 {% endhighlight %}
-</details>
+{: .copy-code}
 
-<br>
-<details>
-
-<summary>
-<b>Example for COAP API. Press to expand.</b>
-</summary>
-<br>
+### CoAP Example script
 
 To communicate with ThingsBoard we will use CoAPthon3 module, so we should install it: <br><br>
 
@@ -218,4 +195,3 @@ if __name__ == '__main__':
 
 
 {% endhighlight %}
-</details>
