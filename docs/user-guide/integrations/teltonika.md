@@ -14,16 +14,15 @@ description: Teltonika TCP Integration Documentation
 
 ## Introduction
 
-This article discusses the practical steps to connect the Teltonika FMB-920 device to the ThingsBoard Integration and further control of this device using the ThingsBoard Integration features.
+This article explains the practical steps to connect the Teltonika FMB-920 device to the ThingsBoard and further control of this device using the ThingsBoard Integration features.
 
-It is possible to execute any ThingsBoard Integration remotely from main ThingsBoard instance.
-This guide contains step-by-step instructions how to launch ThingsBoard integration remotely.
-For example, we will launch Teltonika TCP Integration that connects to the ThingsBoard PE and pushes data to 
-[cloud.thingsboard.io](https://cloud.thingsboard.io/signup).  
+We will use remote TCP integration which would receive data through TCP and will send it to the cluster, which in this
+case is [cloud.thingsboard.io](https://cloud.thingsboard.io/signup).  
 
 See [deployment options](/docs/user-guide/integrations/#deployment-options) for more general information.
 But in our integration we only used TCP protocol:
 
+TODO: request a new icon
 
 ![image](/images/user-guide/integrations/teltonika/embeded-integrations-overview.jpg)
 
@@ -32,128 +31,142 @@ But in our integration we only used TCP protocol:
 We assume you already have a tenant administrator account on your own ThingsBoard PE v3.1.1 instance or
 [cloud.thingsboard.io](https://cloud.thingsboard.io/signup). 
  
+ <br/>
+ 
+# Basic (Uplink)
+ 
 
 ## ThingsBoard configuration steps
 
-### Step 1. Config Root Rule Chain (Root)
-
-After installing the ThingsBoard, for the normal operation of the Downlink Data Converter, you need to edit the Root 
-Rule Chain (Root) the following way: Rule chains -> Root Rule Chain (Root) -> Add the originator attributes, originator
- fields and integration downlink rule nodes.
-
-![image](/images/user-guide/integrations/teltonika/rule_chain.png)
-
-Alternatively, you can import it from this [file](/docs/user-guide/resources/teltonika/teltonika_root_rule_chain.json) 
 
 
 
 
-### Step 2. Create default Uplink and Downlink Converters
 
-Let's create dummy uplink and downlink converters and will set them to work in debug mode.
-While running in debug mode, those converters will record all incoming events. 
-This will help us tune the converters once we start receiving the data.
+### Step 1. Import default Uplink Converter
 
-<img data-gifffer="/images/user-guide/integrations/remote/default-converters.gif" />
+Let's import uplink converter from this [file](/docs/user-guide/resources/teltonika/teltonika_tcp_uplink_converter.json) 
+ and will set it to work in debug mode. While running in debug mode, this converter will record all incoming events. 
+This will help us tune the converter once we start receiving the data.
 
-### Step 3. Settings decoder Function  to Uplink Data Converter
+<img data-gifffer="/images/user-guide/integrations/teltonika/teltonika-import-converter.gif" />
 
-When creating an Uplink Converter, a default decoder is added to the Decoder section.
-
-After creating the Uplink Converter to the Decoder section, you need to update the Decoder code to [the following code](/images/user-guide/integrations/teltonika/upLinkDecoder.txt).
-
-<b>NOTE: it is necessary to edit the Uplink decoder</b>
-
-
-Open Uplink Converter, editor mode, click "test decoder function" and replace the default code with a new code:
-
-![image](/images/user-guide/integrations/teltonika/uplink_decoder.png)
-
-Alternatively, you can import it from this [file](/docs/user-guide/resources/teltonika/teltonika_tcp_uplink_converter.json) 
-
-
-It is done the following way: Go to Data Converters -> Add new Data Converter -> Import Converter
-
-<details>
-            <summary>
-            (<b>click to open screenshot</b>)
-            </summary>
-            <img src="/images/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/import_new_converter.png">
-</details>
-
-<details>
-    <summary>
-        <i><b><font color="#FF0000">Note !!!</font> If the following error appears: Script used more than the allowed [<font color="#36abb5">100 ms</font>] of CPU time. </b></i> (click to open expanded view)
-    </summary>
-    <ul>
-        <li>If you have an <b>error</b> while executing <b>uplink scripts:</b></li>         
-        {% highlight bash %}
-            java.util.concurrent.ExecutionException: java.util.concurrent.ExecutionException: javax.script.ScriptException: delight.nashornsandbox.exceptions.ScriptCPUAbuseException: Script used more than the allowed [100 ms] of CPU time.
- 	        at com.google.common.util.concurrent.AbstractFuture.getDoneValue(AbstractFuture.java:502) ...    
-        {% endhighlight %}          
-        <li>It is possible to raise <font color="#006400"><i><b>"Maximum CPU time in milliseconds allowed for script execution"</b></i></font> in <i><b>src/main/resources/tb-remote-integration.yml</b></i></li>  
-        {% highlight bash %}
-            ...
-            js:
-              evaluator: "${JS_EVALUATOR:local}" # local/remote
-              # Built-in JVM JavaScript environment properties
-              local:
-                # Use Sandboxed (secured) JVM JavaScript environment
-                use_js_sandbox: "${USE_LOCAL_JS_SANDBOX:false}"
-                ...
-                # Maximum CPU time in milliseconds allowed for script execution
-                max_cpu_time: "${LOCAL_JS_SANDBOX_MAX_CPU_TIME:300}"
-                ...
-        {% endhighlight %}
-    </ul>
-</details>
-<br>
-
-
-
-### Step 4. Settings encoder Function  to Downlink Data Converter
-When creating an Downlink Converter, a default decoder is added to the Decoder section.<br>
-After creating the Downlink Converter to the Decoder section, you need to update the Decoder code to [the following code](/images/user-guide/integrations/teltonika/downlinkDecoder.txt). <br>
-
-<b>NOTE: It is necessary to edit the Downlink decoder</b>
-
-Open Downlink Converter, editor mode, click "test decoder function" and replace the default code with a new code:
-
-![image](/images/user-guide/integrations/teltonika/downlink_decoder.png)
-
-Alternatively, you can import it from this [file](/docs/user-guide/resources/teltonika/teltonika_tcp_uplink_converter.json) 
-
-It is done the following way: Go to Data Converters -> Add new Data Converter -> Import Converter
-
-<details>
-            <summary>
-            (<b>click to open screenshot</b>)
-            </summary>
-            <img src="/images/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/import_new_converter.png">
-</details>
-   
+ 
      
 
-### Step 5. Create and Save credentials of Teltonika TCP Integration
+### Step 2. Create and Save credentials of Teltonika TCP Integration
 
-Let's create a custom integration that will connect to the local service "remote-integration-tcp" using:
-- Integration class
-- Integration key
-- Integration secret 
-- Integration JSON configuration
-<ol>
-    <li>Notice that we enable "Debug" and "Execute remotely".</li> 
-    <li>Required field: "Integration class" - org.thingsboard.integration.custom.server.TCPIntegration</li>    
-    <li>Required field: "Integration JSON configuration".</li>
-        {% highlight bash %}
-            {"bindPort": 1994,
-            "typeDevice": "teltonika"}
-        {% endhighlight %}    
-    <img src="/images/user-guide/integrations/teltonika/custom-teltonika-tcp-integration_config.png">
-    <li>If bindPort`s value is not set in the "Integration JSON configuration", the default value will be used: <font color="#36abb5">bindPort </font>=<font color="#0031ff">1990</font></li>  
+Let's create a custom integration that will connect to the local service "remote-integration-tcp" using the following
+configuration: 
+
+<table style="width: 25%">
+  <thead>
+      <tr>
+          <td><b>Field</b></td><td><b>Input Data</b></td>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Name</td>
+          <td>TCP-teltonika</td>
+      </tr>
+      <tr>
+          <td>Type</td>
+          <td>Custom</td>
+      </tr>
+      <tr>
+          <td>Enabled</td>
+          <td>True</td>
+      </tr>
+      <tr>
+          <td>Debug mode</td>
+          <td>True</td>
+      </tr>
+      <tr>
+          <td>Allow create devices or assets</td>
+          <td>True</td>
+      </tr>
+      <tr>
+          <td>Uplink data converter</td>
+          <td>Teltonika Uplink converter</td>
+      </tr>
+      <tr>
+          <td>Execute remotely</td>
+          <td>True</td>
+      </tr>
+      <tr>
+          <td>Integration key</td>
+          <td>(will be generated automatically)</td>
+      </tr>
+      <tr>
+          <td>Integration secret</td>
+          <td>(will be generated automatically)</td>
+      </tr>
+      <tr>
+          <td>Integration class</td>
+          <td>org.thingsboard.integration.custom.server.TCPIntegration</td>
+      </tr>
+      <tr>
+          <td>Integartion JSON configuration</td>
+          <td>
+          {
+          	"bindPort": 1994,
+          	"typeDevice": "teltonika"
+          }
+          </td>
+      </tr>
+      <tr>
+          <td>Description</td>
+          <td>(empty)</td>
+      </tr>
+      <tr>
+          <td>Metadata</td>
+          <td>(empty)</td>
+      </tr>
+   </tbody>
+</table> 
+
+<ol>  
+    <img src="/images/user-guide/integrations/teltonika/custom-teltonika-tcp-integration_config.png">  
 </ol>
 
-### Step 6. Creation  and  configuration of the Dashboard
+## Remote integration installation and configuration steps
+
+### Step 1.  Install service: "remote-integration-tcp"
+- Download the installation of the service and run remotely (or on the same server) from the ThingsBoard PE
+
+[remote-integration-tcp](https://github.com/nickAS21/remote-integration-tcp.git). 
+
+### Step 2.  Configuration service: "remote-integration-tcp"
+
+Example configuration file for <b>"remote-integration-tcp".</b>
+<ol>
+    <li>The <b>path to the main file</b> should correspond to the “TCP Integration” value in the field: “Integration Class”. Default value: <b>org.thingsboard.integration.custom.server.TCPIntegration</b> (src/main/java/org/thingsboard/integration/custom/server/TCPIntegration.java).</li>
+    <li>routingKey: value from  “TCP Integration” </li>
+        {% highlight bash %}
+            integration:
+                routingKey: "${INTEGRATION_ROUTING_KEY:f340c97bdee97fa79ce69cdc3b2f50a2}"
+        {% endhighlight %}
+    <li>secret: value from  “TCP Integration” </li>
+        {% highlight bash %}
+            ...
+                secret: "${INTEGRATION_SECRET:3ezdnokj455v03wkzt44}"
+        {% endhighlight %}    
+     <li>connect remote-integration with ThingsBoard integration on cloud.thingsboard.io” </li>
+        {% highlight bash %}
+            ...
+                rpc:
+                  #  Cloud...
+                  host: "${PRC_HOST:cloud.thingsboard.io}"
+                  port: "${RPC_PORT:9090}""
+        {% endhighlight %}
+</ol>
+[the following code: <b>tb-remote-integration.yml</b>](/images/user-guide/integrations/teltonika/tb-remote-integration.yml)
+
+# Advanced (Downlink)
+
+
+### Step 1. Creation  and  configuration of the Dashboard
 
 After creating devices manually: an overview attribute: the serial number of the device or after automatically creating the device (with the first service connection, the device is created automatically) - you need to create a dashboard.
 
@@ -162,8 +175,9 @@ Screenshot of the Dashboard after finishing its creation:
 
 ![image](/images/user-guide/integrations/teltonika/teltonika_dashboard_example.png)
 
-[Dashboard in json format](/docs/user-guide/resources/teltonika/teltonika_tcp.json)
+You can import the dashboard from this [file](/docs/user-guide/resources/teltonika/teltonika_tcp.json) or you can create it as shown below
 
+<!--
 Creation of aliases :
 
 1.LisTeltonika: Filter type = Entity list; Type = Device; and add TELTONIKA devices 
@@ -182,7 +196,7 @@ Result of alias creation:
 
 ![image](/images/user-guide/integrations/teltonika/teltonika_dashboard_add_aliases.png)
 
-<!-- <details>
+ <details>
   <summary>
     <i><b>Creation of the Dashboard (open Dashboard to edit and add three aliases)</b></i> (click to open expanded view)
   </summary> 
@@ -215,6 +229,7 @@ Result of alias creation:
    </ol>
 </details>  -->
 
+<!--
 Creation of dashboard states:
 
 1.state main: Name = MAIN; Sate id = main; Root state = true
@@ -236,8 +251,8 @@ Creation of dashboard states:
 Result of states creation:
 
 ![image](/images/user-guide/integrations/teltonika/teltonika_dashboard_states.png)
+-->
 
-<!--
 <details>
   <summary>
     <i><b>Add to the Dashboard new states (open Dashboard to edit, click "Manage dashboard states" and add states)</b></i> (click to open expanded view)
@@ -289,7 +304,9 @@ Result of states creation:
     </ol>
    </ol>
 </details>  
--->
+
+
+<!--
 Editing of dashboard states:
 
 1) State  <b>main:</b>
@@ -367,8 +384,8 @@ b. <b>Add widget:</b> Timeseries - Flot: Charts -> Timeseries - Flot
 b1) Widget <b>data:</b> add Datasources -> Type = Entity; Parameters = SelectedDevice; Fields = External Voltage mV...
 
 ![image](/images/user-guide/integrations/teltonika/teltonika_dashboard_state_uplinks_gtaph.png)
+-->
 
-<!--
 <details>
   <summary>
     <i><b>Edit states and add  new widgets (open Dashboard and state to edit)</b></i> (click to open expanded view)
@@ -507,41 +524,92 @@ b1) Widget <b>data:</b> add Datasources -> Type = Entity; Parameters = SelectedD
     </ul>
   </ol>
 </details>
--->
 
 
-## Service: "remote-integration-tcp" install and configuration steps
+### Step 2. Config Root Rule Chain (Root)
 
-### Step 1.  Install service: "remote-integration-tcp"
-- Download the installation of the service and run remotely from the Thingsboard_pe
+After installing the ThingsBoard, for the normal operation of the Downlink Data Converter, you need to edit the Root 
+Rule Chain (Root) the following way: Rule chains -> Root Rule Chain (Root) -> Add the originator attributes, originator
+ fields and integration downlink rule nodes.
 
-[remote-integration-tcp](https://github.com/nickAS21/remote-integration-tcp.git). 
+![image](/images/user-guide/integrations/teltonika/rule_chain.png)
 
-### Step 2.  Configuration service: "remote-integration-tcp"
+Alternatively, you can import it from this [file](/docs/user-guide/resources/teltonika/teltonika_root_rule_chain.json) 
 
-Example configuration file for <b>"remote-integration-tcp".</b>
-<ol>
-    <li>The <b>path to the main file</b> should correspond to the “TCP Integration” value in the field: “Integration Class”. Default value: <b>org.thingsboard.integration.custom.server.TCPIntegration</b> (src/main/java/org/thingsboard/integration/custom/server/TCPIntegration.java).</li>
-    <li>routingKey: value from  “TCP Integration” </li>
+### Step 3. Settings decoder Function  to Uplink Data Converter
+
+When creating an Uplink Converter, a default decoder is added to the Decoder section.
+
+After creating the Uplink Converter to the Decoder section, you need to update the Decoder code to [the following code](/images/user-guide/integrations/teltonika/upLinkDecoder.txt).
+
+<b>NOTE: it is necessary to edit the Uplink decoder</b>
+
+
+Open Uplink Converter, editor mode, click "test decoder function" and replace the default code with a new code:
+
+![image](/images/user-guide/integrations/teltonika/uplink_decoder.png)
+
+Alternatively, you can import it from this [file](/docs/user-guide/resources/teltonika/teltonika_tcp_uplink_converter.json) 
+
+
+It is done the following way: Go to Data Converters -> Add new Data Converter -> Import Converter
+
+<details>
+            <summary>
+            (<b>click to open screenshot</b>)
+            </summary>
+            <img src="/images/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/import_new_converter.png">
+</details>
+
+<details>
+    <summary>
+        <i><b><font color="#FF0000">Note !!!</font> If the following error appears: Script used more than the allowed [<font color="#36abb5">100 ms</font>] of CPU time. </b></i> (click to open expanded view)
+    </summary>
+    <ul>
+        <li>If you have an <b>error</b> while executing <b>uplink scripts:</b></li>         
         {% highlight bash %}
-            integration:
-                routingKey: "${INTEGRATION_ROUTING_KEY:f340c97bdee97fa79ce69cdc3b2f50a2}"
-        {% endhighlight %}
-    <li>secret: value from  “TCP Integration” </li>
+            java.util.concurrent.ExecutionException: java.util.concurrent.ExecutionException: javax.script.ScriptException: delight.nashornsandbox.exceptions.ScriptCPUAbuseException: Script used more than the allowed [100 ms] of CPU time.
+ 	        at com.google.common.util.concurrent.AbstractFuture.getDoneValue(AbstractFuture.java:502) ...    
+        {% endhighlight %}          
+        <li>It is possible to raise <font color="#006400"><i><b>"Maximum CPU time in milliseconds allowed for script execution"</b></i></font> in <i><b>src/main/resources/tb-remote-integration.yml</b></i></li>  
         {% highlight bash %}
             ...
-                secret: "${INTEGRATION_SECRET:3ezdnokj455v03wkzt44}"
-        {% endhighlight %}    
-     <li>connect remote-integration with ThingsBoard integration on cloud.thingsboard.io” </li>
-        {% highlight bash %}
-            ...
-                rpc:
-                  #  Cloud...
-                  host: "${PRC_HOST:cloud.thingsboard.io}"
-                  port: "${RPC_PORT:9090}""
+            js:
+              evaluator: "${JS_EVALUATOR:local}" # local/remote
+              # Built-in JVM JavaScript environment properties
+              local:
+                # Use Sandboxed (secured) JVM JavaScript environment
+                use_js_sandbox: "${USE_LOCAL_JS_SANDBOX:false}"
+                ...
+                # Maximum CPU time in milliseconds allowed for script execution
+                max_cpu_time: "${LOCAL_JS_SANDBOX_MAX_CPU_TIME:300}"
+                ...
         {% endhighlight %}
-</ol>
-[the following code: <b>tb-remote-integration.yml</b>](/images/user-guide/integrations/teltonika/tb-remote-integration.yml)
+    </ul>
+</details>
+<br>
+
+### Step 4. Settings encoder Function  to Downlink Data Converter
+When creating an Downlink Converter, a default decoder is added to the Decoder section.<br>
+After creating the Downlink Converter to the Decoder section, you need to update the Decoder code to [the following code](/images/user-guide/integrations/teltonika/downlinkDecoder.txt). <br>
+
+<b>NOTE: It is necessary to edit the Downlink decoder</b>
+
+Open Downlink Converter, editor mode, click "test decoder function" and replace the default code with a new code:
+
+![image](/images/user-guide/integrations/teltonika/downlink_decoder.png)
+
+Alternatively, you can import it from this [file](/docs/user-guide/resources/teltonika/teltonika_tcp_uplink_converter.json) 
+
+It is done the following way: Go to Data Converters -> Add new Data Converter -> Import Converter
+
+<details>
+            <summary>
+            (<b>click to open screenshot</b>)
+            </summary>
+            <img src="/images/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/import_new_converter.png">
+</details>
+
 
 ## Example of configuration over TCP (Teltonika FMB920)
 
