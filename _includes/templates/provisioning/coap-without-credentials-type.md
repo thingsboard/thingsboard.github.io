@@ -27,7 +27,8 @@ Provisioning response example:
 ```
 {: .copy-code}
 
-#### Sample application
+
+#### Sample script
 
 To communicate with ThingsBoard we will use CoAPthon3 module, so we should install it:
 
@@ -36,48 +37,88 @@ pip3 install coapthon3 --user
 ```
 {: .copy-code}
 
-The application source code is available below. You may copy-paste it to a file, for example:
+The script source code is available below. You may copy-paste it to a file, for example:
 
 ```bash
 device-provision-example.py
 ```
 {: .copy-code}
 
-Now you should edit the script and change the following parameters:
-
-```python
-THINGSBOARD_HOST = "cloud.thingsboard.io"  # ThingsBoard instance host
-THINGSBOARD_PORT = 1883  # ThingsBoard instance MQTT port
-
-PROVISION_DEVICE_KEY = "PUT_PROVISION_KEY_HERE"  # Provision device key, replace this value with your value from device profile.
-PROVISION_DEVICE_SECRET = "PUT_PROVISION_SECRET_HERE"  # Provision device secret, replace this value with your value from device profile.
-```
-{: .copy-code}
-
-Once you have configured your provision key and secret, you may launch the application using python 3:
+Now you should run the script and follow the steps inside.  
+You may launch the script using python 3:  
 
 ```bash 
 python3 device-provision-example.py
 ```
 {: .copy-code}
 
-The application source code: 
+The script source code: 
 
 ```python
 
 from coapthon.client.helperclient import HelperClient
-from json import dumps
+from json import loads, dumps
 
-to_publish = {"provisionDeviceKey": "u7piawkboq8v32dmcmpp",
-              "provisionDeviceSecret": "jpmwdn8ptlswmf4m29bw",
-              "deviceName": "DEVICE_NAME"
-              }
+
+def collect_required_data():
+    config = {}
+    print("\n\n", "="*80, sep="")
+    print(" "*10, "\033[1m\033[94mThingsBoard device provisioning with basic authorization example script.\033[0m", sep="")
+    print("="*80, "\n\n", sep="")
+    host = input("Please write your ThingsBoard \033[93mhost\033[0m or leave it blank to use default (cloud.thingsboard.io): ")
+    config["host"] = host if host else "cloud.thingsboard.io"
+    port = input("Please write your ThingsBoard \033[93mCoAP port\033[0m or leave it blank to use default (5683): ")
+    config["port"] = int(port) if port else 5683
+    config["provision_device_key"] = input("Please write \033[93mprovision device key\033[0m: ")
+    config["provision_device_secret"] = input("Please write \033[93mprovision device secret\033[0m: ")
+    device_name = input("Please write \033[93mdevice name\033[0m or leave it blank to generate: ")
+    if device_name:
+        config["device_name"] = device_name
+    print("\n", "="*80, "\n", sep="")
+    return config
+
+
+# Example for message to ThingsBoard
+to_publish = {
+  "stringKey": "value1",
+  "booleanKey": True,
+  "doubleKey": 42.0,
+  "longKey": 73,
+  "jsonKey": {
+    "someNumber": 42,
+    "someArray": [1, 2, 3],
+    "someNestedObject": {"key": "value"}
+  }
+}
 
 if __name__ == '__main__':
-    client = HelperClient(server=('127.0.0.1', 5683))
-    response = client.post('/api/v1/provision', dumps(to_publish))
-    print(response.payload)
+
+    config = collect_required_data()
+
+    THINGSBOARD_HOST = config["host"]  # ThingsBoard instance host
+    THINGSBOARD_PORT = config["port"]  # ThingsBoard instance MQTT port
+
+    PROVISION_REQUEST = {"provisionDeviceKey": config["provision_device_key"],  # Provision device key, replace this value with your value from device profile.
+                         "provisionDeviceSecret": config["provision_device_secret"],  # Provision device secret, replace this value with your value from device profile.
+                         }
+    if config.get("device_name") is not None:
+        PROVISION_REQUEST["deviceName"] = config["device_name"]
+    client = HelperClient(server=(THINGSBOARD_HOST, THINGSBOARD_PORT))
+    response = client.post('/api/v1/provision', dumps(PROVISION_REQUEST))
     client.stop()
+    decoded_response = loads(response.payload)
+    print("Received response: ")
+    print(decoded_response)
+    received_token = decoded_response.get("credentialsValue")
+    if received_token is not None:
+        thingsboardClient = HelperClient(server=(THINGSBOARD_HOST, THINGSBOARD_PORT))
+        response = thingsboardClient.post('/api/v1/%s/telemetry' % (received_token,), dumps(to_publish))
+        print("[THINGSBOARD CLIENT] Response from Thingsboard.")
+        print(response)
+        thingsboardClient.stop()
+    else:
+        print("Failed to get access token from response.")
+        print(decoded_response.get("errorMsg"))
 
 ```
 {: .copy-code}
