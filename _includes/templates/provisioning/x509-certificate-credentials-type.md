@@ -1,9 +1,15 @@
+ {% capture info %}
+<br>
+**INFO: To use this feature, you should have configured [MQTT over SSL in ThingsBoard](/docs/user-guide/mqtt-over-ssl/)**  
+{% endcapture %}
+{% include templates/info-banner.md content=info %}
+
 |---
 | **Parameter**             | **Example value**                            | **Description**                                                                |
 |:-|:-|-
 | *deviceName*              | **DEVICE_NAME**                              | Device name in ThingsBoard.                                                    |
-| *provisionDeviceKey*      | **PUT_PROVISION_KEY_HERE**                     | Provisioning device key, you should take it from configured device profile.    |
-| *provisionDeviceSecret*   | **PUT_PROVISION_SECRET_HERE**                     | Provisioning device secret, you should take it from configured device profile. | 
+| *provisionDeviceKey*      | **PUT_PROVISION_KEY_HERE**                   | Provisioning device key, you should take it from configured device profile.    |
+| *provisionDeviceSecret*   | **PUT_PROVISION_SECRET_HERE**                | Provisioning device secret, you should take it from configured device profile. | 
 | credentialsType           | **X509_CERTIFICATE**                         | Credentials type parameter.                                                    |
 | hash                      | **MIIB........AQAB**                         | Public key X509 hash for device in ThingsBoard.                                |
 |---
@@ -32,12 +38,10 @@ Provisioning response example:
 }
 ```
 
-Where:  
-***credentialsId*** - SHA3 hash of public key X509 hash.  
-***credentialsValue*** - Public key X509 hash.  
-
 
 ### MQTT Example script
+
+To use this script put your **mqttserver.pub.pem** (public key of the server) into the folder with script. 
 
 ```python
 
@@ -61,18 +65,22 @@ RESULT_CODES = {
     }
 
 
-THINGSBOARD_HOST = "localhost"  # ThingsBoard instance host
-THINGSBOARD_PORT_SSL = 8883  # ThingsBoard instance MQTT over SSL port
-
-PROVISION_DEVICE_KEY = "PUT_PROVISION_KEY_HERE"  # Provision device key, replace this value with your value from device profile.
-PROVISION_DEVICE_SECRET = "PUT_PROVISION_SECRET_HERE"  # Provision device secret, replace this value with your value from device profile.
-
-
-PROVISION_REQUEST = {"provisionDeviceKey": PROVISION_DEVICE_KEY,
-                     "provisionDeviceSecret": PROVISION_DEVICE_SECRET,
-                     "credentialsType": "X509_CERTIFICATE"
-                     }
-
+def collect_required_data():
+    config = {}
+    print("\n\n", "="*80, sep="")
+    print(" "*10, "\033[1m\033[94mThingsBoard device provisioning with basic authorization example script.\033[0m", sep="")
+    print("="*80, "\n\n", sep="")
+    host = input("Please write your ThingsBoard \033[93mhost\033[0m or leave it blank to use default (cloud.thingsboard.io): ")
+    config["host"] = host if host else "localhost"
+    port = input("Please write your ThingsBoard \033[93mSSL port\033[0m or leave it blank to use default (8883): ")
+    config["port"] = int(port) if port else 8883
+    config["provision_device_key"] = input("Please write \033[93mprovision device key\033[0m: ")
+    config["provision_device_secret"] = input("Please write \033[93mprovision device secret\033[0m: ")
+    device_name = input("Please write \033[93mdevice name\033[0m or leave it blank to generate: ")
+    if device_name:
+        config["device_name"] = device_name
+    print("\n", "="*80, "\n", sep="")
+    return config
 
 def generate_certs(ca_certfile="mqttserver.pub.pem"):
     root_cert = None
@@ -203,12 +211,6 @@ class ProvisionClient(Client):
         open("credentials", "w").close()
 
 
-# if cert is None or not cert:
-generate_certs()  # Generate certificate and key
-cert, key = read_cert()  # Read certificate and key
-PROVISION_REQUEST["hash"] = cert
-
-
 def on_tb_connected(client, userdata, flags, rc):  # Callback for connect with received credentials
     if rc == 0:
         print("[ThingsBoard client] Connected to ThingsBoard with credentials: username: %s, password: %s, client id: %s" % (client._username, client._password, client._client_id))
@@ -217,13 +219,27 @@ def on_tb_connected(client, userdata, flags, rc):  # Callback for connect with r
 
 
 if __name__ == '__main__':
+
+    config = collect_required_data()
+
+    THINGSBOARD_HOST = config["host"]  # ThingsBoard instance host
+    THINGSBOARD_PORT = config["port"]  # ThingsBoard instance MQTT port
+
+    PROVISION_REQUEST = {"provisionDeviceKey": config["provision_device_key"],  # Provision device key, replace this value with your value from device profile.
+                         "provisionDeviceSecret": config["provision_device_secret"],  # Provision device secret, replace this value with your value from device profile.
+                         }
+    if config.get("device_name") is not None:
+        PROVISION_REQUEST["deviceName"] = config["device_name"]
+    generate_certs()  # Generate certificate and key
+    cert, key = read_cert()  # Read certificate and key
+    PROVISION_REQUEST["hash"] = cert
     if PROVISION_REQUEST.get("hash") is not None:
-        provision_client = ProvisionClient(THINGSBOARD_HOST, THINGSBOARD_PORT_SSL, PROVISION_REQUEST)
+        provision_client = ProvisionClient(THINGSBOARD_HOST, THINGSBOARD_PORT, PROVISION_REQUEST)
         provision_client.provision()  # Request provisioned data
         tb_client = provision_client.get_new_client()  # Getting client with provisioned data
         if tb_client:
             tb_client.on_connect = on_tb_connected  # Setting callback for connect
-            tb_client.connect(THINGSBOARD_HOST, THINGSBOARD_PORT_SSL, 60)
+            tb_client.connect(THINGSBOARD_HOST, THINGSBOARD_PORT, 60)
             tb_client.loop_forever()  # Starting infinity loop
         else:
             print("Client was not created!")

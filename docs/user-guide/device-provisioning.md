@@ -30,7 +30,7 @@ Provisioning request example:
 {
   "deviceName": "DEVICE_NAME",
   "provisionDeviceKey": "YOUR_PROVISION_KEY_HERE",
-  "provisionDeviceSecret": "Your_PROVISION_SECRET_HERE"
+  "provisionDeviceSecret": "YOUR_PROVISION_SECRET_HERE"
 }
 ```
 {: .copy-code}

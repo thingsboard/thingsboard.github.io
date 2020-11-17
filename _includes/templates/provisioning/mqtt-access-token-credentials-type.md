@@ -30,20 +30,27 @@ Provisioning response example:
 }
 ```
 
-Where:  
-***credentialsId*** - Access token for device in ThingsBoard.  
 
+#### Sample script
 
-#### Python example scripts
+The script source code is available below. You may copy-paste it to a file, for example:
 
-<br>
-<details>
+```bash
+device-provision-example.py
+```
+{: .copy-code}
 
-<summary>
-<b>Example for MQTT API. Press to expand.</b>
-</summary>
+Now you should run the script and follow the steps inside.  
+You may launch the script using python 3:  
 
-{% highlight python %}
+```bash 
+python3 device-provision-example.py
+```
+{: .copy-code}
+
+The script source code: 
+
+```python
 
 from paho.mqtt.client import Client
 from json import dumps, loads
@@ -57,19 +64,24 @@ RESULT_CODES = {
     }
 
 
-THINGSBOARD_HOST = "cloud.thingsboard.io"  # ThingsBoard instance host
-THINGSBOARD_PORT = 1883  # ThingsBoard instance MQTT port
 
-PROVISION_DEVICE_KEY = "PUT_PROVISION_KEY_HERE"  # Provision device key, replace this value with your value from device profile.
-PROVISION_DEVICE_SECRET = "PUT_PROVISION_SECRET_HERE"  # Provision device secret, replace this value with your value from device profile.
-
-
-PROVISION_REQUEST = {"provisionDeviceKey": PROVISION_DEVICE_KEY,
-                     "provisionDeviceSecret": PROVISION_DEVICE_SECRET,
-                     "deviceName": "DEVICE_NAME",
-                     "credentialsType": "ACCESS_TOKEN",
-                     "token": "PUT_TOKEN_HERE"
-                     }
+def collect_required_data():
+    config = {}
+    print("\n\n", "="*80, sep="")
+    print(" "*10, "\033[1m\033[94mThingsBoard device provisioning with basic authorization example script.\033[0m", sep="")
+    print("="*80, "\n\n", sep="")
+    host = input("Please write your ThingsBoard \033[93mhost\033[0m or leave it blank to use default (cloud.thingsboard.io): ")
+    config["host"] = host if host else "localhost"
+    port = input("Please write your ThingsBoard \033[93mport\033[0m or leave it blank to use default (1883): ")
+    config["port"] = int(port) if port else 1883
+    config["provision_device_key"] = input("Please write \033[93mprovision device key\033[0m: ")
+    config["provision_device_secret"] = input("Please write \033[93mprovision device secret\033[0m: ")
+    config["token"] = input("Please write \033[93mdevice access token\033[0m: ")
+    device_name = input("Please write \033[93mdevice name\033[0m or leave it blank to generate: ")
+    if device_name:
+        config["device_name"] = device_name
+    print("\n", "="*80, "\n", sep="")
+    return config
 
 
 class ProvisionClient(Client):
@@ -145,12 +157,24 @@ class ProvisionClient(Client):
 
 def on_tb_connected(client, userdata, flags, rc):  # Callback for connect with received credentials
     if rc == 0:
-        print("[ThingsBoard client] Connected to ThingsBoard with credentials: %s" % client._username)
+        print("[ThingsBoard client] Connected to ThingsBoard with credentials: %s" % client._username.decode())
     else:
         print("[ThingsBoard client] Cannot connect to ThingsBoard!, result: %s" % RESULT_CODES[rc])
 
 
 if __name__ == '__main__':
+
+    config = collect_required_data()
+
+    THINGSBOARD_HOST = config["host"]  # ThingsBoard instance host
+    THINGSBOARD_PORT = config["port"]  # ThingsBoard instance MQTT port
+
+    PROVISION_REQUEST = {"provisionDeviceKey": config["provision_device_key"],  # Provision device key, replace this value with your value from device profile.
+                         "provisionDeviceSecret": config["provision_device_secret"],  # Provision device secret, replace this value with your value from device profile.
+                         "token": config["token"],
+                         }
+    if config.get("device_name") is not None:
+        PROVISION_REQUEST["deviceName"] = config["device_name"]
     provision_client = ProvisionClient(THINGSBOARD_HOST, THINGSBOARD_PORT, PROVISION_REQUEST)
     provision_client.provision()  # Request provisioned data
     tb_client = provision_client.get_new_client()  # Getting client with provisioned data
@@ -161,67 +185,5 @@ if __name__ == '__main__':
     else:
         print("Client was not created!")
 
-{% endhighlight %}
-</details>
-
-<br>
-<details>
-
-<summary>
-<b>Example for HTTP API. Press to expand.</b>
-</summary>
-
-{% highlight python %}
-from requests import post
-
-
-to_publish = {"deviceName": "DEVICE_NAME",
-              "provisionDeviceKey": "u7piawkboq8v32dmcmpp",
-              "provisionDeviceSecret": "jpmwdn8ptlswmf4m29bw",
-              "credentialsType": "ACCESS_TOKEN",
-              "token": "sLzc0gDAZPkGMzFVTyUY"
-              }  # Creating request
-
-
-if __name__ == '__main__':
-    response = post("http://127.0.0.1:8080/api/v1/provision", json=to_publish)
-    print(response.json())
-
-{% endhighlight %}
-</details>
-
-<br>
-<details>
-
-<summary>
-<b>Example for COAP API. Press to expand.</b>
-</summary>
-<br>
-
-To communicate with ThingsBoard we will use CoAPthon3 module, so we should install it: <br><br>
-
-<b>pip3 install coapthon3 --user</b>
-
-<br><br>
-
-{% highlight python %}
-
-
-from coapthon.client.helperclient import HelperClient
-from json import dumps
-
-to_publish = {"deviceName": "DEVICE_NAME",
-              "provisionDeviceKey": "u7piawkboq8v32dmcmpp",
-              "provisionDeviceSecret": "jpmwdn8ptlswmf4m29bw",
-              "credentialsType": "ACCESS_TOKEN",
-              "token": "sLzc0gDAZPkGMzFVTyUY"
-              }  # Creating request
-
-if __name__ == '__main__':
-    client = HelperClient(server=('127.0.0.1', 5683))
-    response = client.post('/api/v1/provision', dumps(to_publish))
-    print(response.payload)
-    client.stop()
-
-{% endhighlight %}
-</details>
+```
+{: .copy-code}
