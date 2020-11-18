@@ -75,7 +75,7 @@ RESULT_CODES = {
 def collect_required_data():
     config = {}
     print("\n\n", "="*80, sep="")
-    print(" "*10, "\033[1m\033[94mThingsBoard device provisioning with basic authorization example script.\033[0m", sep="")
+    print(" "*10, "\033[1m\033[94mThingsBoard device provisioning with access token authorization example script. MQTT API\033[0m", sep="")
     print("="*80, "\n\n", sep="")
     host = input("Please write your ThingsBoard \033[93mhost\033[0m or leave it blank to use default (cloud.thingsboard.io): ")
     config["host"] = host if host else "cloud.thingsboard.io"
@@ -195,3 +195,4 @@ if __name__ == '__main__':
 
 ```
 {: .copy-code}
+

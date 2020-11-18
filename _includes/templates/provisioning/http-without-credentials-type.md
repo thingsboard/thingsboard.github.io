@@ -56,10 +56,10 @@ from json import dumps
 def collect_required_data():
     config = {}
     print("\n\n", "="*80, sep="")
-    print(" "*10, "\033[1m\033[94mThingsBoard device provisioning with basic authorization example script.\033[0m", sep="")
+    print(" "*10, "\033[1m\033[94mThingsBoard device provisioning without authorization example script. HTTP API\033[0m", sep="")
     print("="*80, "\n\n", sep="")
-    host = input("Please write your ThingsBoard \033[93mhost\033[0m or leave it blank to use default (cloud.thingsboard.io): ")
-    config["host"] = host if host else "cloud.thingsboard.io"
+    host = input("Please write your ThingsBoard \033[93mhost\033[0m or leave it blank to use default (https://cloud.thingsboard.io): ")
+    config["host"] = host if host else "https://cloud.thingsboard.io"
     port = input("Please write your ThingsBoard \033[93mHTTP port\033[0m or leave it blank to use default (80): ")
     config["port"] = int(port) if port else 80
     config["provision_device_key"] = input("Please write \033[93mprovision device key\033[0m: ")
@@ -96,13 +96,13 @@ if __name__ == '__main__':
                          }
     if config.get("device_name") is not None:
         PROVISION_REQUEST["deviceName"] = config["device_name"]
-    response = post("http://%s:%i/api/v1/provision" % (THINGSBOARD_HOST, THINGSBOARD_PORT), json=PROVISION_REQUEST)
+    response = post("%s:%i/api/v1/provision" % (THINGSBOARD_HOST, THINGSBOARD_PORT), json=PROVISION_REQUEST)
     decoded_response = response.json()
     print("Received response: ")
     print(decoded_response)
     received_token = decoded_response.get("credentialsValue")
     if received_token is not None:
-        response = post('http://%s:%i/api/v1/%s/telemetry' % (THINGSBOARD_HOST, THINGSBOARD_PORT, received_token,), dumps(to_publish))
+        response = post('%s:%i/api/v1/%s/telemetry' % (THINGSBOARD_HOST, THINGSBOARD_PORT, received_token,), dumps(to_publish))
         print("[THINGSBOARD CLIENT] Response code from Thingsboard.")
         print(response.status_code)
     else:
