@@ -19,4 +19,4 @@ description: ThingsBoard IoT Platform hardware samples for Smartico devices.
 
 ## Company details
 
- - [Official site](https://smartico.biz/)
+ - [Official site](https://smartico.biz/en/)
