@@ -14,7 +14,8 @@
     {% endfor %}
 </ul>
 <script>
-    window.onload = function() {
+    window.addEventListener("load", function() {
+        window.removeEventListener( "load", arguments.callee, false );
         var Viewer = window.Viewer;
         var gallery = new Viewer(document.getElementById('{{id}}'), {
             title: false,
@@ -23,5 +24,5 @@
             rotatable: false,
             zIndex: 9000
         });
-    }
+    }, false)
 </script>
