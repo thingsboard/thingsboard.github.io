@@ -109,27 +109,51 @@ We plan to add ability to define the schema for the downlink messages (RPC calls
 {% capture gallery %}
 /images/user-guide/device-profile/mqtt-protobuf-setting.png
 {% endcapture %} 
-{% include images-gallery.html%}        
+{% include images-gallery.html%}
+
+ThingsBoard parses the protobuf structures dynamically, that is why, it does not support some protobuf features like OneOf, extensions and maps, yet.
+
 
 ### Alarm Rules
 
-By default, platform users should use Rule Engine to configure alarms. 
-Rule Engine is a quite powerful feature but requires some programming skills.
-We have introduced simple Alarm Rules to simplify the process of configuring most popular alarm types. 
-Under the hood, Alarm Rules are still evaluated in the Rule Engine using the "Device Profile" rule node. 
-Although now you don't need to be the Rule Engine guru to configure your processing logic. 
+Platform users may use Rule Engine to configure alarms. Rule Engine is a quite powerful feature but requires some programming skills.
+Since ThingsBoard 3.2, we have introduced Alarm Rules to simplify the process of configuring most popular alarm types.
+Now you don't need to be the Rule Engine guru to configure your processing logic. 
+Under the hood, Rule Engine evaluates Alarm Rules using the "Device Profile" rule node. 
 
-Let's learn how to use the Alarm Rules by example.
+Let's learn how to use the Alarm Rules by example. Let's assume we would like to monitor a temperature inside of the fridge with valuable goods.  
+We also assume that we have already created device profile called "Temperature Sensors", and provisioned our device with the temperature sensor and with access token - "ACCESS_TOKEN".
+The command listed below will upload the temperature readings to demo.thingsboard.io.  
+
+```bash
+mosquitto_pub -d -h 'demo.thingsboard.io' -t "v1/devices/me/telemetry" -u "$ACCESS_TOKEN" -m '{"temperature": 5.3}'
+```
+{: .copy-code}
 
 #### Example 1. Simple alarm conditions 
  
-Let's assume I would like to create **Minor** alarm when temperature is greater than 30 degrees and **Critical** alarm when temperature is greater than 40 degrees.
+I would like to create **Critical** alarm when temperature is greater than 10 degrees.
 
-We assume that the "Thermostat" device profile is already present. Let's open the profile details and navigate to the "Alarm Rules" tab.
+Step 1. Open the device profile and toggle edit mode. 
+Step 2. Click "Add alarm rule" button.
+Step 3. Input Alarm Type and click on the red "+" sign.
+Step 4. Click "Add Key Filter" button.
+Step 5. Select "Timeseries" key type. Input "temperature" key name. Change "Value type" to "Numeric". Click "Add" button.
+Step 6. Select "greater then" operation and input the threshold value. Click "Add".
+Step 7. Click "Save" button.
+Step 8. Finally, apply changes.
 
-TODO: screen with two arrows (how to click this).
-
-Now, you need to add the Alarm Rule and configure two alarm conditions for Minor and Critical severity respectfully. 
+{% capture gallery %}
+/images/user-guide/device-profile/alarm-example-1-step-1.png       
+/images/user-guide/device-profile/alarm-example-1-step-2.png
+/images/user-guide/device-profile/alarm-example-1-step-3.png
+/images/user-guide/device-profile/alarm-example-1-step-4.png
+/images/user-guide/device-profile/alarm-example-1-step-5.png
+/images/user-guide/device-profile/alarm-example-1-step-6.png
+/images/user-guide/device-profile/alarm-example-1-step-7.png
+/images/user-guide/device-profile/alarm-example-1-step-8.png
+{% endcapture %} 
+{% include images-gallery.html%} 
 
 #### Example 2. Alarm condition with duration
 
