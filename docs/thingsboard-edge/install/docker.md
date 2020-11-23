@@ -11,14 +11,14 @@ This guide will help you to install and start ThingsBoard Edge using Docker on L
 
 ### Prerequisites
 
-- [Install Docker CE](https://docs.docker.com/engine/install/)
-- [Install Docker Compose](https://docs.docker.com/compose/install/)
+- [Install Docker CE](https://docs.docker.com/engine/install/){:target="_blank"}
+- [Install Docker Compose](https://docs.docker.com/compose/install/){:target="_blank"}
 
 ### Step 1. Running ThingsBoard Edge
 
 Here you can find ThingsBoard Edge single instance docker image with PostgreSQL database: 
 
-* [thingsboard/tb-edge](https://hub.docker.com/r/bohdansmetanyuk/tb-edge)
+* [thingsboard/tb-edge](https://hub.docker.com/r/thingsboard/tb-edge){:target="_blank"}
 
 Create docker compose file for ThingsBoard Edge service:
 ```
@@ -28,6 +28,8 @@ sudo nano docker-compose.yml
 Add the following lines to the yml file:
 
 ```
+version: '2.2'
+
 services:
   mytbedge:
     restart: always
@@ -54,7 +56,10 @@ Where:
 - `thingsboard/tb-edge` - docker image
 - `CLOUD_ROUTING_KEY` - your edge key
 - `CLOUD_ROUTING_SECRET` - your edge secret
-- `CLOUD_PRC_HOST` - ip address of the machine with the ThingsBoard platform
+- `CLOUD_PRC_HOST` - ip address of the machine with the ThingsBoard platform. 
+
+**NOTE**: do not use *'localhost'* - *'localhost'* is the ip address of the edge service in the docker container 
+
 - `restart: always` - automatically start ThingsBoard Edge in case of system reboot and restart in case of failure
 
 Before starting Docker container run following commands to create a directory for storing data and logs and then change its owner to docker container user, to be able to change user, chown command is used, which requires sudo permissions (command will request password for a sudo access):

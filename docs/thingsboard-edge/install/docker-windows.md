@@ -13,13 +13,13 @@ If you are looking for a cluster installation instruction, please visit [cluster
 
 ### Prerequisites
 
-- [Install Docker Toolbox for Windows](https://docs.docker.com/toolbox/toolbox_install_windows/)
+- [Install Docker Toolbox for Windows](https://docs.docker.com/toolbox/toolbox_install_windows/){:target="_blank"}
 
 ### Step 1. Running ThingsBoard Edge
 
 Here you can find ThingsBoard Edge single instance docker image with PostgreSQL database: 
 
-* [thingsboard/tb-edge](https://hub.docker.com/r/bohdansmetanyuk/tb-edge)
+* [thingsboard/tb-edge](https://hub.docker.com/r/thingsboard/tb-edge){:target="_blank"}
 
 Windows users should use docker managed volume for ThingsBoard Edge DataBase. 
 Create docker volume (for ex. `mytb-edge-data`) before executing docker run command:
@@ -35,6 +35,8 @@ Create docker compose file for ThingsBoard Edge service:
 docker-compose.yml
 ```
 ```
+version: '2.2'
+
 services:
   mytbedge:
     restart: always
@@ -67,6 +69,9 @@ Where:
 - `CLOUD_ROUTING_KEY` - your edge key
 - `CLOUD_ROUTING_SECRET` - your edge secret
 - `CLOUD_PRC_HOST` - ip address of the machine with the ThingsBoard platform
+
+**NOTE**: do not use *'localhost'* - *'localhost'* is the ip address of the edge service in the docker container
+
 - `restart: always` - automatically start ThingsBoard Edge in case of system reboot and restart in case of failure
 
 **NOTE**: For running docker compose commands you have to be in a directory with docker-compose.yml file.
