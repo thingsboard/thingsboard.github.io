@@ -275,7 +275,23 @@ The Rule Node will fetch the state from DB when the first message from the parti
 /images/user-guide/device-profile/device-profile-rule-node.png
 /images/user-guide/device-profile/device-profile-rule-node2.png
 {% endcapture %} 
-{% include images-gallery.html%}       
+{% include images-gallery.html%}
+
+#### Notifications about alarms
+
+Assuming you have configured alarm rules you may also want to receive a notification when ThingsBoard creates or updates the alarm.
+The device profile rule node has three main outbound relation types that you can use: 'Alarm Created', 'Alarm Severity Updated' and 'Alarm Cleared'.
+See example rule chain below. Please make sure the system administrator have configured the sms/email providers before you proceed or configure your own settings in the rule nodes. 
+
+You may also use existing guides: 
+[Send email on alarm](/docs/user-guide/rule-engine-2-0/tutorials/send-email/) (Use part which explains 'to email' and 'send email' nodes) 
+or [Telegram notifications](/docs/user-guide/rule-engine-2-0/tutorials/integration-with-telegram-bot/).
+There is also additional 'Alarm Updated' relation type that most of the use cases should ignore to avoid duplicate notifications.
+
+{% capture gallery %}
+/images/user-guide/device-profile/device-profile-notifications.png
+{% endcapture %} 
+{% include images-gallery.html%}
 
 ### Device provisioning
 
