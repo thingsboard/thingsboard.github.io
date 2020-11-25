@@ -119,7 +119,20 @@ ThingsBoard parses the protobuf structures dynamically, that is why, it does not
 Platform users may use Rule Engine to configure alarms. Rule Engine is a quite powerful feature but requires some programming skills.
 Since ThingsBoard 3.2, we have introduced Alarm Rules to simplify the process of configuring most popular alarm types.
 Now you don't need to be the Rule Engine guru to configure your processing logic. 
-Under the hood, Rule Engine evaluates Alarm Rules using the "Device Profile" rule node. 
+Under the hood, Rule Engine evaluates Alarm Rules using the "Device Profile" rule node.
+
+
+Alarm Rule consists of the following properties:
+
+ * Alarm Type - type of the Alarm. Alarm type must be unique within the device profile alarm rules;
+ * Create conditions - defines criteria when the Alarm will be created/updated. Condition consists of the following properties;
+   * Severity - will be used to create / update the alarm. ThingsBoard verifies create conditions in the descending order of the severity. For example, if condition with Critical severity is true, platform will raise alarm with Critical severity and "Major", "Minor", "Warning" conditions will not be evaluated. Severity must be unique per alarm rule (e.g., two create conditions within the same alarm rule can't have the same severity);        
+   * Key Filters - list of logical expressions against attributes or telemetry values. For example, *"(temperature < 0 OR temperature > 20) AND softwareVersion = '2.5.5'"*;
+   * Condition Type - either simple, duration or repeating. For example, *3 times in a row* or *during 5 minutes*. Simple condition will raise alarm once the first matching event occurred;
+   * Schedule - defines time interval during which the rule is active. Either "active all the time", "active at specific time" or "custom";
+   * Details - alarm details template supports substitution of the telemetry and/or attribute values using ${attributeName} syntax;
+ * Clear condition - defines criteria when the Alarm will be cleared;
+ * Advanced settings - defines alarm propagation to related assets, customers, tenant or other entities;    
 
 Let's learn how to use the Alarm Rules by example. Let's assume we would like to monitor a temperature inside of the fridge with valuable goods.  
 We also assume that we have already created device profile called "Temperature Sensors", and provisioned our device with the temperature sensor and with access token - "ACCESS_TOKEN".
@@ -132,16 +145,16 @@ mosquitto_pub -d -h 'demo.thingsboard.io' -t "v1/devices/me/telemetry" -u "$ACCE
 
 #### Example 1. Simple alarm conditions 
  
-I would like to create **Critical** alarm when temperature is greater than 10 degrees.
+We would like to create **Critical** alarm when temperature is greater than 10 degrees.
 
-Step 1. Open the device profile and toggle edit mode. 
-Step 2. Click "Add alarm rule" button.
-Step 3. Input Alarm Type and click on the red "+" sign.
-Step 4. Click "Add Key Filter" button.
-Step 5. Select "Timeseries" key type. Input "temperature" key name. Change "Value type" to "Numeric". Click "Add" button.
-Step 6. Select "greater then" operation and input the threshold value. Click "Add".
-Step 7. Click "Save" button.
-Step 8. Finally, apply changes.
+ * Step 1. Open the device profile and toggle edit mode. 
+ * Step 2. Click "Add alarm rule" button.
+ * Step 3. Input Alarm Type and click on the red "+" sign.
+ * Step 4. Click "Add Key Filter" button.
+ * Step 5. Select "Timeseries" key type. Input "temperature" key name. Change "Value type" to "Numeric". Click "Add" button.
+ * Step 6. Select "greater then" operation and input the threshold value. Click "Add".
+ * Step 7. Click "Save" button.
+ * Step 8. Finally, apply changes.
 
 {% capture gallery %}
 /images/user-guide/device-profile/alarm-example-1-step-1.png       
@@ -157,17 +170,117 @@ Step 8. Finally, apply changes.
 
 #### Example 2. Alarm condition with duration
 
-Let's assume that I would like to modify Example 1 and raise alarms only if the temperature exceeds certain threshold for 1 minute. 
+Let's assume that we would like to modify Example 1 and raise alarms only if the temperature exceeds a certain threshold for 1 minute. 
 
-For this purpose, I need to edit the alarm condition and modify the condition type from "Simple" to "Duration". Now, I should also specify duration value and unit.
+For this purpose, we need to edit the alarm condition and modify the condition type from "Simple" to "Duration". We should also specify duration value and unit.
+
+{% capture gallery %}
+/images/user-guide/device-profile/alarm-example-2-step-1.png
+/images/user-guide/device-profile/alarm-example-2-step-2.png
+{% endcapture %} 
+{% include images-gallery.html%} 
 
 #### Example 3. Repeating alarm condition
 
-Let's assume that I would like to modify Example 1 and raise alarms only if the sensor reports that the temperature exceeds the threshold 3 times in a row.
+Let's assume we would like to modify Example 1 and raise alarms only if the sensor reports the temperature that exceeds the threshold 3 times in a row.
 
-For this purpose, I need to edit the alarm condition and modify the condition type from "Simple" to "Repeating". Now, I should also specify 3 as 'Count of events'.
+For this purpose, we need to edit the alarm condition and modify the condition type from "Simple" to "Repeating". We should also specify 3 as 'Count of events'.
+
+{% capture gallery %}
+/images/user-guide/device-profile/alarm-example-3-step-1.png
+/images/user-guide/device-profile/alarm-example-3-step-2.png
+{% endcapture %} 
+{% include images-gallery.html%} 
+
+#### Example 4. Clear alarm rule
+
+Let's assume we would like to automatically clear the alarm if temperature in the fridge goes back to normal.
+
+ * Step 1. Open the device profile and toggle edit mode. Click "Add clear condition" button.
+ * Step 2. Click on the red "+" sign.
+ * Step 3. Add Key Filter.
+ * Step 4. Finally, apply changes.
+ 
+ 
+{% capture gallery %}
+/images/user-guide/device-profile/alarm-example-4-step-1.png
+/images/user-guide/device-profile/alarm-example-4-step-2.png
+/images/user-guide/device-profile/alarm-example-4-step-3.png
+/images/user-guide/device-profile/alarm-example-4-step-4.png      
+{% endcapture %} 
+{% include images-gallery.html%}  
+
+#### Example 5. Define alarm rule schedule
+
+Let's assume we would like alarm rule to evaluate alarms only during the work hours.
+
+ * Step 1. Edit the alarm rule schedule;
+ * Step 2. Select timezone, days, time interval and click "Save";
+ * Step 3. Finally, apply changes;
+ 
+{% capture gallery %}
+/images/user-guide/device-profile/alarm-example-5-step-1.png
+/images/user-guide/device-profile/alarm-example-5-step-2.png
+/images/user-guide/device-profile/alarm-example-5-step-3.png
+{% endcapture %} 
+{% include images-gallery.html%}  
+
+#### Example 6. Advanced thresholds
+
+Let's assume we would like our users to be able to overwrite the thresholds from Dashboard UI. 
+We may also want to add the flag to enable or disable certain alarms for each device. 
+For this purpose, we will use dynamic values in the alarm rule condition. 
+We will use two attributes, boolean *temperatureAlarmFlag* and numeric *temperatureAlarmThreshold*.
+Our goal is to trigger alarm creation when "*temperatureAlarmFlag* = True AND *temperature* is greater than *temperatureAlarmThreshold*".
+
+ * Step 1. Modify temperature key filter and change the value type to dynamic;
+ * Step 2. Select dynamic source type and input the *temperatureAlarmThreshold*, then click "Update";
+ * Step 3. Add another key filter for the *temperatureAlarmFlag*, then click "Add";
+ * Step 4. Finally, click "Save" and apply changes;
+ * Step 5. Provision device attributes either manually or via the script;
+ * Step 6. Use "Update Multiple Attributes" widget to configure the thresholds on the dashboard;
+ 
+{% capture gallery %}
+/images/user-guide/device-profile/alarm-example-6-step-1.png
+/images/user-guide/device-profile/alarm-example-6-step-2.png
+/images/user-guide/device-profile/alarm-example-6-step-3.png
+/images/user-guide/device-profile/alarm-example-6-step-4.png
+/images/user-guide/device-profile/alarm-example-6-step-5.png
+/images/user-guide/device-profile/alarm-example-6-step-6.png
+
+{% endcapture %} 
+{% include images-gallery.html%}   
+
+#### Device profile rule node
+
+Device Profile rule node creates and clears alarms based on the alarm rules defined in the device profile. 
+By default, it is the first rule node in the chain of processing. 
+The rule node is processing all incoming messages and reacts on the attributes and telemetry values.
+There are two important settings in the rule node.
+
+**Persist state of alarm rules** - force rule node to store the state of processing. Disabled by default. This setting is useful if you have duration or repeating conditions. 
+Let's assume you have condition "Temperature is greater than 50 for 1 hour", and the first event with temperature greater than 50 was reported at 1pm. 
+At 2pm you should receive the alarm (assuming temperature conditions will not change). 
+However, if you will restart the server after 1pm and before 2pm, the rule node needs to lookup the state from DB.
+Basically, if you enable this and the 'Fetch state of alarm rules' option, the rule node will be able to raise the alarm. 
+If you leave it disabled, the rule node will not generate the alarm.
+We disable this setting by default for performance reasons. If enabled, and if incoming message matches at least one of the alarm conditions, it will cause additional write operation to persist the state.
+
+**Fetch state of alarm rules** - force rule node to restore the state of processing on initialization. Disabled by default. This setting is useful if you have duration or repeating conditions. 
+It should work in a pair with 'Persist state of alarm rules' option, but there is a rare case when you may want to disable this setting while the 'Persist state of alarm rules' option is enabled.
+Assuming you have a lot of devices that often and constantly send data, you may avoid loading the state from the DB on initialization. 
+The Rule Node will fetch the state from DB when the first message from the particular device will arrive.     
+
+{% capture gallery %}
+/images/user-guide/device-profile/device-profile-rule-node.png
+/images/user-guide/device-profile/device-profile-rule-node2.png
+{% endcapture %} 
+{% include images-gallery.html%}       
 
 ### Device provisioning
+
+Device provisioning allows device to automatically register in ThingsBoard either during or after manufacturing. 
+See separate documentation [page](/docs/user-guide/device-provisioning/) for more details.
 
 
 

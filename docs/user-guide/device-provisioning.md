@@ -71,9 +71,7 @@ We will use "Device Provisioning Test" in this example. However, typically this 
 3. Choose one of the provisioning strategies, copy the provisioning key and secret and finally click "Add". 
 
 {% capture gallery %}
-    /images/user-guide/device-provisioning/device-provisioning-step-1.png
-    /images/user-guide/device-provisioning/device-provisioning-step-2.png
-    /images/user-guide/device-provisioning/device-provisioning-step-3.png
+    /images/user-guide/device-provisioning/device-profile-rule-node.png
 {% endcapture %} 
 {% include images-gallery.html%}  
 
