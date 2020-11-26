@@ -1,7 +1,7 @@
 bigheader: "ThingsBoard Documentation"
 abstract: "Documentation for using ThingsBoard IoT Platform."
 toc:
-- title: ThingsBoard Documentation
+- title: Documentation
   path: /docs/
 - title: What is ThingsBoard?
   path: /docs/getting-started-guides/what-is-thingsboard/
