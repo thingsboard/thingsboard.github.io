@@ -85,6 +85,73 @@ Once you have successfully published the "temperature" readings, you should imme
 
 ## Step 3. Create Dashboard
 
+We will create a dashboard and add most popular widgets. See instructions below. 
+
+### Step 3.1 Create Empty Dashboard
+
+* Open Dashboards page. Click on the "+" icon in the top right corner. Select "Create new dashboard".
+* Input dashboard name. For example, "My New Dashboard". Click "Add" to add the dashboard.
+* Now your dashboard should be listed first, since table sort dashboards using created time by default. Click on the "Open dashboard" icon.  
+
+{% capture gallery %}
+/images/helloworld/hello-world-step-31-item-1.png
+/images/helloworld/hello-world-step-31-item-2.png
+/images/helloworld/hello-world-step-31-item-3.png
+{% endcapture %} 
+{% include images-gallery.html%}
+
+### Step 3.2 Add Entity Alias
+
+Alias is a reference to single entity or group of entities that is used in the widgets.
+Alias may be static or dynamic. For simplicity, we will use "Single entity" alias reference one and only one entity ("My New Device" in our case).   
+
+* Enter edit mode. Click on the pencil button in the bottom right corner. 
+* Click "Entity Aliases" icon in the top right part of the screen. You will see empty list of Entity aliases.
+* Click "Add alias".
+* Input alias name, for example "MyDevice". Select "Single entity" Filter type. Select "Device" as Type and type "My New" to enable autocomplete. Choose your device from the auto-complete and click on the device.
+* Click "Add" and then "Save".
+* Finally, Click "Apply changes" in the dashboard editor to save the changes. Then you should enter edit mode again. 
+
+{% capture gallery %}
+/images/helloworld/hello-world-step-32-item-1.png
+/images/helloworld/hello-world-step-32-item-2.png
+/images/helloworld/hello-world-step-32-item-3.png
+/images/helloworld/hello-world-step-32-item-4.png
+/images/helloworld/hello-world-step-32-item-5.png
+/images/helloworld/hello-world-step-32-item-6.png
+{% endcapture %} 
+{% include images-gallery.html%}
+
+### Step 3.3 Add Table Widget
+
+To add a widget we need to select it from the widget library. Widgets are grouped into widget bundles.
+Each widget has a data source. This is how widget "knows" what data to display.
+To see the latest value of our "temperature" data that we sent during step 2, we should configure the data source.
+
+* Enter edit mode. Click on the "Add new widget" button. 
+* Select "Cards" widget bundle. Select "Latest values" tab. Click on the header of the Entities widget. The "Add Widget" window will appear.
+* Click "Add" to add the data source. Widget may have multiple data sources, but we will use only one in this case.
+* Select "MyDevice" entity alias. Then click on the input field to the right. The auto-complete with available data points will appear. Select "temperature" data point and click "Add".
+* Resize the widget to make it a little bigger. Just drag the bottom right corner of the widget. You can also play with the advanced settings if you edit the widget.  
+
+Congratulations! You have added first widget.
+
+{% capture gallery %}
+/images/helloworld/hello-world-step-33-item-1.png
+/images/helloworld/hello-world-step-33-item-2.png
+/images/helloworld/hello-world-step-33-item-3.png
+/images/helloworld/hello-world-step-33-item-4.png
+/images/helloworld/hello-world-step-33-item-5.png
+{% endcapture %} 
+{% include images-gallery.html%}   
+
+### Step 3.4 Add Chart Widget
+
+### Step 3.5 Add Alarm Widget
+
+### Step 4. Configure Alarm Rules
+
+### Step 5. Configure Alarm Notifications
 
 ## ThingsBoard Community Edition education course
  
