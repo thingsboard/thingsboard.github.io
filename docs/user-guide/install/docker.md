@@ -72,6 +72,7 @@ mkdir -p ~/.mytb-data && sudo chown -R 799:799 ~/.mytb-data
 mkdir -p ~/.mytb-logs && sudo chown -R 799:799 ~/.mytb-logs
 ```
 {: .copy-code}
+
 **NOTE**: Replace directory `~/.mytb-data` and `~/.mytb-logs` with directories you're planning to use in `docker-compose.yml`.
 
 Set the terminal in the directory which contains the `docker-compose.yml` file and execute the following command to up this docker compose directly:
