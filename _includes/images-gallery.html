@@ -97,7 +97,6 @@
                         continue;
                     }
                     linkEl = figureEl.children[0];
-                    console.dir(linkEl);
                     size = linkEl.children[0];
                     item = {
                         src: linkEl.getAttribute('href'),
@@ -209,7 +208,8 @@
                     shareEl: false,
                     fullscreenEl: false,
                     zoomEl: true,
-                    history: false
+                    history: false,
+                    loop: false
                 };
 
                 if(fromURL) {
@@ -237,6 +237,18 @@
 
                 gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
                 gallery.init();
+
+                var buttonLeft = pswpElement.getElementsByClassName('pswp__button--arrow--left')[0];
+                var buttonRight = pswpElement.getElementsByClassName('pswp__button--arrow--right')[0];
+
+                buttonLeft.hidden = gallery.getCurrentIndex() === 0;
+                buttonRight.hidden = gallery.getCurrentIndex() + 1 === gallery.items.length;
+
+                gallery.listen('beforeChange', function() {
+                        buttonLeft.hidden = gallery.getCurrentIndex() === 0;
+                        buttonRight.hidden = gallery.getCurrentIndex() + 1 === gallery.items.length;
+                    }
+                );
             };
 
             var galleryElements = container.querySelectorAll( gallerySelector );
