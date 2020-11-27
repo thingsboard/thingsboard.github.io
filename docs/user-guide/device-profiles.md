@@ -4,7 +4,35 @@ assignees:
 - ashvayka
 title: Device Profiles
 description: IoT device profiles
+ruleChainSetting:
+    0:
+        image: /images/user-guide/device-profile/rule-chain-setting.png
 
+alarmСonditions:
+    0:
+        image: /images/user-guide/device-profile/alarm-example-1-step-1.png  
+        title: 'Step 1. Open the device profile and toggle edit mode.'
+    1:
+        image: /images/user-guide/device-profile/alarm-example-1-step-2.png
+        title: 'Step 2. Click "Add alarm rule" button.'
+    2:
+        image: /images/user-guide/device-profile/alarm-example-1-step-3.png
+        title: 'Step 3. Input Alarm Type and click on the red "+" sign.'
+    3:
+        image: /images/user-guide/device-profile/alarm-example-1-step-4.png
+        title: 'Step 4. Click "Add Key Filter" button.'
+    4:
+        image: /images/user-guide/device-profile/alarm-example-1-step-5.png
+        title: 'Step 5. Select "Timeseries" key type. Input "temperature" key name. Change "Value type" to "Numeric". Click "Add" button.'
+    5:
+        image: /images/user-guide/device-profile/alarm-example-1-step-6.png
+        title: 'Step 6. Select "greater then" operation and input the threshold value. Click "Add".'
+    6:
+        image: /images/user-guide/device-profile/alarm-example-1-step-7.png
+        title: 'Step 7. Click "Save" button.'
+    7:
+        image: /images/user-guide/device-profile/alarm-example-1-step-8.png
+        title: 'Step 8. Finally, apply changes.'
 ---
 
 * TOC
@@ -32,10 +60,7 @@ To avoid this painful and routine activity, since ThingsBoard 3.2, you may speci
 The new Rule Chain will receive all telemetry, device activity(Active/Inactive) and device lifecycle(Created/Updated/Deleted) events.
 This setting is available in the Device Profile wizard and Device Profile details.  
 
-{% capture gallery %}
- /images/user-guide/device-profile/rule-chain-setting.png      
-{% endcapture %} 
-{% include images-gallery.html%}
+{% include images-gallery.html imageCollection="ruleChainSetting" %}
 
 ### Queue Name
 
@@ -147,26 +172,7 @@ mosquitto_pub -d -h 'demo.thingsboard.io' -t "v1/devices/me/telemetry" -u "$ACCE
  
 We would like to create **Critical** alarm when temperature is greater than 10 degrees.
 
- * Step 1. Open the device profile and toggle edit mode. 
- * Step 2. Click "Add alarm rule" button.
- * Step 3. Input Alarm Type and click on the red "+" sign.
- * Step 4. Click "Add Key Filter" button.
- * Step 5. Select "Timeseries" key type. Input "temperature" key name. Change "Value type" to "Numeric". Click "Add" button.
- * Step 6. Select "greater then" operation and input the threshold value. Click "Add".
- * Step 7. Click "Save" button.
- * Step 8. Finally, apply changes.
-
-{% capture gallery %}
-/images/user-guide/device-profile/alarm-example-1-step-1.png       
-/images/user-guide/device-profile/alarm-example-1-step-2.png
-/images/user-guide/device-profile/alarm-example-1-step-3.png
-/images/user-guide/device-profile/alarm-example-1-step-4.png
-/images/user-guide/device-profile/alarm-example-1-step-5.png
-/images/user-guide/device-profile/alarm-example-1-step-6.png
-/images/user-guide/device-profile/alarm-example-1-step-7.png
-/images/user-guide/device-profile/alarm-example-1-step-8.png
-{% endcapture %} 
-{% include images-gallery.html%} 
+{% include images-gallery.html imageCollection="alarmСonditions" showListImageTitles="true" %} 
 
 #### Example 2. Alarm condition with duration
 
