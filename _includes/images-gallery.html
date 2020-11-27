@@ -17,8 +17,10 @@
                     max-height: min({{ include.max-height | default: '225px'}}, 100%);"
                 {% if page[include.imageCollection].size > 1 %} class="list-item"{% endif %}>
                 <a href="{{image[1].image}}" itemprop="contentUrl">
-                    <img src="{{image[1].image}}" itemprop="thumbnail"  alt="image" style="max-width: min({{ include.max-width | default: '225px'}}, 100%);
-                                                   max-height: min({{ include.max-height | default: '225px'}}, 100%);"/>
+                    <img src={% if image[1].preview %}"{{image[1].preview}}"{% else %}"{{image[1].image}}"{% endif %}
+                         itemprop="thumbnail"  alt="image"
+                         style="max-width: min({{ include.max-width | default: '225px'}}, 100%);
+                                max-height: min({{ include.max-height | default: '225px'}}, 100%);"/>
                 </a>
                 <figcaption itemprop="caption description" style="display: none">{{image[1].title}}</figcaption>
             </figure>
@@ -100,8 +102,8 @@
                     size = linkEl.children[0];
                     item = {
                         src: linkEl.getAttribute('href'),
-                        w: parseInt(size.naturalWidth, 10),
-                        h: parseInt(size.naturalHeight, 10)
+                        w: 0,
+                        h: 0
                     };
 
                     if(figureEl.children.length > 1) {
@@ -110,11 +112,14 @@
                     if(linkEl.children.length > 0) {
                         item.msrc = linkEl.children[0].getAttribute('src');
                     }
+                    if(item.msrc === item.src){
+                        item.w = parseInt(size.naturalWidth, 10);
+                        item.h = parseInt(size.naturalHeight, 10);
+                    }
 
                     item.el = figureEl;
                     items.push(item);
                 }
-
                 return items;
             };
 
@@ -236,6 +241,21 @@
                 }
 
                 gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
+
+                gallery.listen('gettingData', function(index, item) {
+                    if (item.w < 1 || item.h < 1) {
+                        var img = new Image();
+                        img.onload = function() {
+                            item.w = this.width;
+                            item.h = this.height;
+                            gallery.invalidateCurrItems();
+                            gallery.updateSize(true);
+                        }
+                        img.src = item.src;
+                        console.warn(item);
+                    }
+                });
+
                 gallery.init();
 
                 var buttonLeft = pswpElement.getElementsByClassName('pswp__button--arrow--left')[0];
