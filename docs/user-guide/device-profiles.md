@@ -8,6 +8,18 @@ ruleChainSetting:
     0:
         image: /images/user-guide/device-profile/rule-chain-setting.png
 
+queueNameSetting:
+    0:
+        image: /images/user-guide/device-profile/queue-name-setting.png
+
+transportSetting:
+    0:
+        image: /images/user-guide/device-profile/transport-setting.png
+
+mqttProtobufSetting:
+    0:
+        image: /images/user-guide/device-profile/mqtt-protobuf-setting.png
+    
 alarmСonditions:
     0:
         image: /images/user-guide/device-profile/alarm-example-1-step-1.png  
@@ -33,6 +45,77 @@ alarmСonditions:
     7:
         image: /images/user-guide/device-profile/alarm-example-1-step-8.png
         title: 'Step 8. Finally, apply changes.'
+
+alarmСonditionsWithDuration:
+    0:
+        image: /images/user-guide/device-profile/alarm-example-2-step-1.png  
+        title: 'Step 1. Edit the alarm condition and change the condition type to "Duration". Specify duration value and unit. Save the condition.'
+    1:
+        image: /images/user-guide/device-profile/alarm-example-2-step-2.png
+        title: 'Step 2. Apply changes.'
+        
+alarmСonditionsWithRepeating:
+    0:
+        image: /images/user-guide/device-profile/alarm-example-3-step-1.png  
+        title: 'Step 1. Edit the alarm condition and change the condition type to "Repeating". Specify 3 as "Count of events".  Save the condition.'
+    1:
+        image: /images/user-guide/device-profile/alarm-example-3-step-2.png
+        title: 'Step 2. Apply changes.'
+        
+alarmСonditionsClear:
+    0:
+        image: /images/user-guide/device-profile/alarm-example-4-step-1.png  
+        title: 'Step 1. Open the device profile and toggle edit mode. Click "Add clear condition" button.'
+    1:
+        image: /images/user-guide/device-profile/alarm-example-4-step-2.png
+        title: 'Step 2. Click on the red "+" sign.'
+    2:
+        image: /images/user-guide/device-profile/alarm-example-4-step-3.png
+        title: 'Step 3. Add Key Filter.'
+    3:
+        image: /images/user-guide/device-profile/alarm-example-4-step-4.png
+        title: 'Step 4. Finally, apply changes.'
+ 
+alarmСonditionsSchedule:
+    0:
+        image: /images/user-guide/device-profile/alarm-example-5-step-1.png  
+        title: 'Step 1. Edit the alarm rule schedule'
+    1:
+        image: /images/user-guide/device-profile/alarm-example-5-step-2.png
+        title: 'Step 2. Select timezone, days, time interval and click "Save"'
+    2:
+        image: /images/user-guide/device-profile/alarm-example-5-step-3.png
+        title: 'Step 3. Finally, apply changes'
+        
+alarmСonditionsAdvanced:
+    0:
+        image: /images/user-guide/device-profile/alarm-example-6-step-1.png  
+        title: 'Step 1. Modify temperature key filter and change the value type to dynamic.'
+    1:
+        image: /images/user-guide/device-profile/alarm-example-6-step-2.png
+        title: 'Step 2. Select dynamic source type and input the *temperatureAlarmThreshold*, then click "Update".'
+    2:
+        image: /images/user-guide/device-profile/alarm-example-6-step-3.png
+        title: 'Step 3. Add another key filter for the *temperatureAlarmFlag*, then click "Add".'
+    3:
+        image: /images/user-guide/device-profile/alarm-example-6-step-4.png
+        title: 'Step 4. Finally, click "Save" and apply changes.'
+    4:
+        image: /images/user-guide/device-profile/alarm-example-6-step-5.png
+        title: 'Step 5. Provision device attributes either manually or via the script.'
+    5:
+        image: /images/user-guide/device-profile/alarm-example-6-step-6.png
+        title: 'Step 6. Use "Update Multiple Attributes" widget to configure the thresholds on the dashboard.'
+
+ruleNode:
+    0:
+        image: /images/user-guide/device-profile/device-profile-rule-node.png 
+    1:
+        image: /images/user-guide/device-profile/device-profile-rule-node2.png
+        
+notifications:
+    0:
+        image: /images/user-guide/device-profile/device-profile-notifications.png           
 ---
 
 * TOC
@@ -74,10 +157,7 @@ Separation of the queues also allows you to configure different [submit](/docs/u
 This setting is available in the Device Profile wizard and Device Profile details. 
 Please note, that if you decided to use custom queue name, you should configure it in [thingsboard.yml](/docs/user-guide/install/config/#thingsboard-core-settings) file before you start using it.
 
-{% capture gallery %}
-/images/user-guide/device-profile/queue-name-setting.png   
-{% endcapture %} 
-{% include images-gallery.html%}
+{% include images-gallery.html imageCollection="queueNameSetting" %}
 
 ### Transport configuration
 
@@ -116,10 +196,7 @@ mosquitto_pub -h 'demo.thingsboard.io' -i 'c1' -u 't1' -P 'secret' -t '/attribut
 
 assuming you have provisioned basic mqtt credentials for your device with the client id 'c1', username 't1' and password 'secret'.
 
-{% capture gallery %}
-/images/user-guide/device-profile/transport-setting.png       
-{% endcapture %} 
-{% include images-gallery.html%}
+{% include images-gallery.html imageCollection="transportSetting" %}
 
 ##### MQTT device payload
 
@@ -131,10 +208,8 @@ At the moment of writing (ThingsBoard 3.2) platform supports custom proto schema
 and [attribute upload]/docs/reference/mqtt-api/#publish-attribute-update-to-the-server). 
 We plan to add ability to define the schema for the downlink messages (RPC calls and attribute updates) in the future releases.  
 
-{% capture gallery %}
-/images/user-guide/device-profile/mqtt-protobuf-setting.png
-{% endcapture %} 
-{% include images-gallery.html%}
+{% include images-gallery.html imageCollection="mqttProtobufSetting" %}
+
 
 ThingsBoard parses the protobuf structures dynamically, that is why, it does not support some protobuf features like OneOf, extensions and maps, yet.
 
@@ -180,11 +255,7 @@ Let's assume that we would like to modify Example 1 and raise alarms only if the
 
 For this purpose, we need to edit the alarm condition and modify the condition type from "Simple" to "Duration". We should also specify duration value and unit.
 
-{% capture gallery %}
-/images/user-guide/device-profile/alarm-example-2-step-1.png
-/images/user-guide/device-profile/alarm-example-2-step-2.png
-{% endcapture %} 
-{% include images-gallery.html%} 
+{% include images-gallery.html imageCollection="alarmСonditionsWithDuration" showListImageTitles="true" %} 
 
 #### Example 3. Repeating alarm condition
 
@@ -192,44 +263,19 @@ Let's assume we would like to modify Example 1 and raise alarms only if the sens
 
 For this purpose, we need to edit the alarm condition and modify the condition type from "Simple" to "Repeating". We should also specify 3 as 'Count of events'.
 
-{% capture gallery %}
-/images/user-guide/device-profile/alarm-example-3-step-1.png
-/images/user-guide/device-profile/alarm-example-3-step-2.png
-{% endcapture %} 
-{% include images-gallery.html%} 
+{% include images-gallery.html imageCollection="alarmСonditionsWithRepeating" showListImageTitles="true" %} 
 
 #### Example 4. Clear alarm rule
 
 Let's assume we would like to automatically clear the alarm if temperature in the fridge goes back to normal.
 
- * Step 1. Open the device profile and toggle edit mode. Click "Add clear condition" button.
- * Step 2. Click on the red "+" sign.
- * Step 3. Add Key Filter.
- * Step 4. Finally, apply changes.
- 
- 
-{% capture gallery %}
-/images/user-guide/device-profile/alarm-example-4-step-1.png
-/images/user-guide/device-profile/alarm-example-4-step-2.png
-/images/user-guide/device-profile/alarm-example-4-step-3.png
-/images/user-guide/device-profile/alarm-example-4-step-4.png      
-{% endcapture %} 
-{% include images-gallery.html%}  
+{% include images-gallery.html imageCollection="alarmСonditionsClear" showListImageTitles="true" %}
 
 #### Example 5. Define alarm rule schedule
 
 Let's assume we would like alarm rule to evaluate alarms only during the work hours.
 
- * Step 1. Edit the alarm rule schedule;
- * Step 2. Select timezone, days, time interval and click "Save";
- * Step 3. Finally, apply changes;
- 
-{% capture gallery %}
-/images/user-guide/device-profile/alarm-example-5-step-1.png
-/images/user-guide/device-profile/alarm-example-5-step-2.png
-/images/user-guide/device-profile/alarm-example-5-step-3.png
-{% endcapture %} 
-{% include images-gallery.html%}  
+{% include images-gallery.html imageCollection="alarmСonditionsSchedule" showListImageTitles="true" %}
 
 #### Example 6. Advanced thresholds
 
@@ -239,23 +285,7 @@ For this purpose, we will use dynamic values in the alarm rule condition.
 We will use two attributes, boolean *temperatureAlarmFlag* and numeric *temperatureAlarmThreshold*.
 Our goal is to trigger alarm creation when "*temperatureAlarmFlag* = True AND *temperature* is greater than *temperatureAlarmThreshold*".
 
- * Step 1. Modify temperature key filter and change the value type to dynamic;
- * Step 2. Select dynamic source type and input the *temperatureAlarmThreshold*, then click "Update";
- * Step 3. Add another key filter for the *temperatureAlarmFlag*, then click "Add";
- * Step 4. Finally, click "Save" and apply changes;
- * Step 5. Provision device attributes either manually or via the script;
- * Step 6. Use "Update Multiple Attributes" widget to configure the thresholds on the dashboard;
- 
-{% capture gallery %}
-/images/user-guide/device-profile/alarm-example-6-step-1.png
-/images/user-guide/device-profile/alarm-example-6-step-2.png
-/images/user-guide/device-profile/alarm-example-6-step-3.png
-/images/user-guide/device-profile/alarm-example-6-step-4.png
-/images/user-guide/device-profile/alarm-example-6-step-5.png
-/images/user-guide/device-profile/alarm-example-6-step-6.png
-
-{% endcapture %} 
-{% include images-gallery.html%}   
+{% include images-gallery.html imageCollection="alarmСonditionsAdvanced" showListImageTitles="true" %}
 
 #### Device profile rule node
 
@@ -277,11 +307,7 @@ It should work in a pair with 'Persist state of alarm rules' option, but there i
 Assuming you have a lot of devices that often and constantly send data, you may avoid loading the state from the DB on initialization. 
 The Rule Node will fetch the state from DB when the first message from the particular device will arrive.     
 
-{% capture gallery %}
-/images/user-guide/device-profile/device-profile-rule-node.png
-/images/user-guide/device-profile/device-profile-rule-node2.png
-{% endcapture %} 
-{% include images-gallery.html%}
+{% include images-gallery.html imageCollection="ruleNode" %}
 
 #### Notifications about alarms
 
@@ -294,10 +320,7 @@ You may also use existing guides:
 or [Telegram notifications](/docs/user-guide/rule-engine-2-0/tutorials/integration-with-telegram-bot/).
 There is also additional 'Alarm Updated' relation type that most of the use cases should ignore to avoid duplicate notifications.
 
-{% capture gallery %}
-/images/user-guide/device-profile/device-profile-notifications.png
-{% endcapture %} 
-{% include images-gallery.html%}
+{% include images-gallery.html imageCollection="notifications" %}
 
 ### Device provisioning
 
