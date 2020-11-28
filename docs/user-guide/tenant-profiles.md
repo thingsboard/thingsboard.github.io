@@ -32,7 +32,7 @@ ThingsBoard Professional edition supports adds support of the limits for the fol
 
 {% include images-gallery.html imageCollection="entityLimits" %}
  
-## API Limits
+## API Limits & Usage
 
 This group of settings allow System Administrator to configure maximum number of messages, api calls, etc per month that each Tenant may perform.
 ThingsBoard constantly collects and analyze statistics about API Usage. The typical update interval of the statistics is 1 minute.
@@ -69,7 +69,23 @@ Processing of a single telemetry message may cause multiple Rule Engine executio
 
 **JavaScript executions** means any execution of the custom function defined by tenant administrators. For example, processing of the "Script" filter or transformation node, invocation of the data converter, etc.       
 
-**Data points storage days** is calculated by multiplying number of data points
+**Data points storage days** is calculated for all time-series data points that are stored to the database. 
+Platform multiplies number of data points with the number of days extracted from the TTL parameter. 
+For example, if you store 3 data points for 30 days, this is 90 storage data point days.
+System administrator is able to configure default TTL using "**Default Storage TTL Days**" parameter.
+Tenant administrator is able to overwrite default TTL using "**Save Timeseries**" rule node configuration or using "TTL" parameter in the post telemetry request.
+
+**Emails sent**
+
+TODO
+
+**SMS sent**
+
+TODO
+
+### Api Usage dashboard
+
+
 
 ## Rate Limits
 
