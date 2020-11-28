@@ -107,8 +107,9 @@
                     size = linkEl.children[0];
                     item = {
                         src: linkEl.getAttribute('href'),
-                        w: 0,
-                        h: 0
+                        w: 2500,
+                        h: 0,
+                        sizeLoaded: false
                     };
 
                     if(figureEl.children.length > 1) {
@@ -248,12 +249,12 @@
                 gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
 
                 gallery.listen('gettingData', function(index, item) {
-                    if (item.w < 1 || item.h < 1) {
+                    if (!item.sizeLoaded) {
+                        item.sizeLoaded = true;
                         var img = new Image();
                         img.onload = function() {
                             item.w = this.width;
                             item.h = this.height;
-                            gallery.invalidateCurrItems();
                             gallery.updateSize(true);
                         }
                         img.src = item.src;
