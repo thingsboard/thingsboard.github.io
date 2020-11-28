@@ -12,3 +12,6 @@ Use the instructions listed below:
 /images/helloworld/hello-world-step-3-item-2.png
 {% endcapture %} 
 {% include images-gallery.html%}
+
+<br/>
+<br/>

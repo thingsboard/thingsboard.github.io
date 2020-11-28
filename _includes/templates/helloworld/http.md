@@ -41,3 +41,6 @@ For example, $HOST_NAME reference your local installation, access token is ABC12
 curl -v -X POST -d "{\"temperature\": 25}" http://localhost:8080/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
 ```
 {: .copy-code}
+
+<br/>
+<br/>

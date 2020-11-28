@@ -11,6 +11,9 @@ toc:
   section:
   - title: Entities and relations
     path: /docs/user-guide/entities-and-relations/
+  - title: Tenant Profiles
+    path: /docs/user-guide/tenant-profiles/
+    new: true
   - title: Device Profiles
     path: /docs/user-guide/device-profiles/
     new: true

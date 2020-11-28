@@ -1,7 +1,7 @@
 ## Prerequisites
 
 You will need to have ThingsBoard server up and running. 
-The easiest way is to use [Live Demo](https://demo.thingsboard.io/signup) server. If you do so, you can continue to [Step 1](/docs/getting-started-guides/helloworld/#step-1-create-device-profile).
+The easiest way is to use [Live Demo](https://demo.thingsboard.io/signup) server.
 
 The alternative option is to install ThingsBoard using [Installation Guide](/docs/user-guide/install/installation-options/). 
 **Windows** users should follow this [guide](/docs/user-guide/install/docker-windows/). **Linux** users that have docker installed should execute the following commands:

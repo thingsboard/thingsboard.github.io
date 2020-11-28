@@ -235,12 +235,12 @@ step7:
 The goal of this tutorial is to demonstrate the basic usage of the most popular ThingsBoard features. You will learn how to:
 
  - Connect devices to ThingsBoard;
- - Push data from the device to ThingsBoard;
+ - Push data from devices to ThingsBoard;
  - Build real-time end-user dashboards;
  - Define thresholds and trigger alarms;
  - Push notification about new alarms over email, sms or other systems.
 
-We will connect and visualize data from temperature sensor to keep it simple. 
+We will connect and visualize data from the temperature sensor to keep it simple. 
  
 {% include templates/prerequisites.md %}
 
@@ -269,7 +269,8 @@ We will use simple commands to publish data over HTTP or MQTT in this example.
 HTTP<small>Linux, macOS or Windows</small>%,%http%,%templates/helloworld/http.md%br%
 MQTT<small>Linux or macOS</small>%,%mqtt-linux%,%templates/helloworld/mqtt-linux.md%br%
 MQTT<small>Windows</small>%,%mqtt-windows%,%templates/helloworld/mqtt-windows.md%br%
-CoAP<small>Linux or macOS</small>%,%coap%,%templates/helloworld/coap.md{% endcapture %}
+CoAP<small>Linux or macOS</small>%,%coap%,%templates/helloworld/coap.md%br%
+Other Protocols<small>Modbus, SNMP, LoRaWAN, etc</small>%,%other%,%templates/helloworld/other.md{% endcapture %}
 {% include content-toggle.html content-toggle-id="connectdevice" toggle-spec=connectdevicetogglespec %}
 
 Once you have successfully published the "temperature" readings, you should immediately see them in the Device Telemetry Tab:
@@ -354,15 +355,9 @@ Let's create "My New Customer" and add a user for this customer. Please see inst
 
 {% include images-gallery.html imageCollection="step7" showListImageTitles="true" %}
 
+## Next steps
 
-Now, let's assign our device and dashboard to the customer. Please see instruction below:
-
-
-
- 
-
-
-
+{% assign currentGuide = "GettingStartedGuides" %}{% include templates/guides-banner.md %}
 
 ## ThingsBoard Community Edition education course
  
@@ -373,10 +368,6 @@ Now, let's assign our device and dashboard to the customer. Please see instructi
  </div>
  <p></p>
 
-  
-## Next steps
-
-{% assign currentGuide = "GettingStartedGuides" %}{% include templates/guides-banner.md %}
 
 ## Your feedback
 

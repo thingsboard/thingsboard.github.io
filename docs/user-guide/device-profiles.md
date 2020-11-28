@@ -103,9 +103,6 @@ alarmСonditionsAdvanced:
     4:
         image: /images/user-guide/device-profile/alarm-example-6-step-5.png
         title: 'Step 5. Provision device attributes either manually or via the script.'
-    5:
-        image: /images/user-guide/device-profile/alarm-example-6-step-6.png
-        title: 'Step 6. Use "Update Multiple Attributes" widget to configure the thresholds on the dashboard.'
 
 ruleNode:
     0:
