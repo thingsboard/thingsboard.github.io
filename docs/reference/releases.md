@@ -15,15 +15,15 @@ description: ThingsBoard architecture
 The goal of this release is to simplify provisioning and connecting the devices and configuration of the alarms. 
 We have also added features to track tenant API usage.  
 
-
 **Major Improvements:**
 
  * [Tenant Profiles](/docs/user-guide/tenant-profiles/) to manage API and Rate Limits;
  * [Device Profiles](/docs/user-guide/device-profiles/) to configure default rule chain and queue, set transport configuration and define [Alarm Rules](/docs/user-guide/device-profiles/#alarm-rules);
- * Added support of custom [MQTT Topics](/docs/user-guide/device-profiles/#mqtt-device-topic-filters) and basic mqtt credentials as alternative to access token;
+ * Added support of custom [MQTT Topics](/docs/user-guide/device-profiles/#mqtt-device-topic-filters) and basic [MQTT credentials](/docs/user-guide/basic-mqtt/) as alternative to access token;
  * Added support of custom device payload schema using [protocol buffers](/docs/user-guide/device-profiles/#mqtt-device-payload) for MQTT transport;
  * [Device provisioning](/docs/user-guide/device-provisioning/) is now available via device profiles;
- * [SMS Provider](/docs/user-guide/ui/sms-provider-settings) and [Send SMS](/docs/user-guide/rule-engine-2-0/external-nodes/#send-sms-node) rule node.
+ * [SMS Provider](/docs/user-guide/ui/sms-provider-settings) and [Send SMS](/docs/user-guide/rule-engine-2-0/external-nodes/#send-sms-node) rule node;
+ * UI for [OAuth2](/docs/user-guide/oauth-2-support/) settings.
  
 **Minor Improvements:**
 
@@ -33,12 +33,11 @@ We have also added features to track tenant API usage.
  * Added protection from the circular reference across different rule chains; 
  * Added new language Brazilian Portuguese;
  * Improvements to camera and alarm widgets, legend sort;
+ * Added support of min/max values in multiple attributes input widget;
 
  **Bug fixes:**
 
  * Cover all markers to fit bounds by default even when fit bounds marker is disabled in the map widget;
- * Show correct time for device profiles scheduler preview;
- * Fixed multiple attributes data-key settings;
 
 ### ThingsBoard PE
 
@@ -46,14 +45,16 @@ Everything from [TB CE v3.2](https://github.com/thingsboard/thingsboard/releases
 
 Main features:
 
-* LORIOT integration;
-* Simplified Alarm Search Query;
-* Api usage stats collection for Integrations;
+ * LORIOT integration;
+ * RabbitMQ integration;
+ * Simplified Alarm Search Query;
+ * Api usage stats collection for Integrations;
 
 Bug Fixes:
 
-* Fixed RabbitMQ integration;
-* Critical bug fix for alarm search query when sorting by entity key; 
+ * Critical bug fix for alarm search query when sorting by entity key;
+ * Show correct time for device profiles scheduler preview; 
+ * Added proxy for reCaptcha.
 
 ## v2.5.5 (December 1, 2020)
 
