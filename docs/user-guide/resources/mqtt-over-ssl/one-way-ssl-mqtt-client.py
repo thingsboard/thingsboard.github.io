@@ -17,6 +17,25 @@
 import paho.mqtt.client as mqtt
 import ssl, socket
 
+def collect_required_data():
+    config = {}
+    print("\n\n", "="*80, sep="")
+    print(" "*20, "ThingsBoard one way RPC example script.", sep="")
+    print("="*80, "\n\n", sep="")
+    host = input("Please write your ThingsBoard host or leave it blank to use default (localhost): ")
+    config["host"] = host if host else "localhost"
+    ca_cert = input("Please write path to your server public certificate or leave it blank to use default (mqttserver.pub.pem): ")
+    config["ca_cert"] = ca_cert if ca_cert else "mqttserver.pub.pem"
+    token = ""
+    while not token:
+        token = input("Please write accessToken for device: ")
+        if not token:
+            print("Access token is required!")
+    config["token"] = token
+    print("\n", "="*80, "\n", sep="")
+    return config
+
+
 # The callback for when the client receives a CONNACK response from the server.
 def on_connect(client, userdata, rc, *extra_params):
    print('Connected with result code '+str(rc))
@@ -36,21 +55,20 @@ def on_message(client, userdata, msg):
        client.publish('v1/devices/me/rpc/response/' + requestId, "{\"value1\":\"A\", \"value2\":\"B\"}", 1)
 
 
-client = mqtt.Client()
-client.on_connect = on_connect
-client.on_message = on_message
-client.publish('v1/devices/me/attributes/request/1', "{\"clientKeys\":\"model\"}", 1)
+if __name__ == '__main__':
+    config = collect_required_data()
+    client = mqtt.Client()
+    client.on_connect = on_connect
+    client.on_message = on_message
+    client.publish('v1/devices/me/attributes/request/1', "{\"clientKeys\":\"model\"}", 1)
 
-client.tls_set(ca_certs=None, certfile=None, keyfile=None, cert_reqs=ssl.CERT_REQUIRED,
-                       tls_version=ssl.PROTOCOL_TLSv1_2, ciphers=None);
+    client.tls_set(ca_certs=config["ca_cert"], tls_version=ssl.PROTOCOL_TLSv1_2, ciphers=None)
+    client.username_pw_set(config["token"])
+    client.tls_insecure_set(True)
+    client.connect(config["host"], 8883, 1)
 
-client.username_pw_set("accessToken")
-client.tls_insecure_set(True)
-client.connect("host", 8883, 1)
-
-
-# Blocking call that processes network traffic, dispatches callbacks and
-# handles reconnecting.
-# Other loop*() functions are available that give a threaded interface and a
-# manual interface.
-client.loop_forever()
+    # Blocking call that processes network traffic, dispatches callbacks and
+    # handles reconnecting.
+    # Other loop*() functions are available that give a threaded interface and a
+    # manual interface.
+    client.loop_forever()

@@ -1880,6 +1880,12 @@ We will list only main configuration parameters below to avoid duplication of th
           <td>Time in seconds to wait in consumer thread before retries</td>
       </tr>
       <tr>
+          <td>queue.rule-engine.queues.processing-strategy.max-pause-between-retries</td>
+          <td>TB_QUEUE_RE_MAIN_PROCESSING_STRATEGY_MAX_RETRY_PAUSE</td>
+          <td>3</td>
+          <td>Max allowed time in seconds for pause between retries</td>
+      </tr>
+      <tr>
           <td>queue.rule-engine.queues.name</td>
           <td>TB_QUEUE_RE_HP_QUEUE_NAME</td>
           <td>HighPriority</td>
@@ -1946,6 +1952,12 @@ We will list only main configuration parameters below to avoid duplication of th
           <td>Time in seconds to wait in consumer thread before retries</td>
       </tr>
       <tr>
+          <td>queue.rule-engine.queues.processing-strategy.max-pause-between-retries</td>
+          <td>TB_QUEUE_RE_HP_PROCESSING_STRATEGY_MAX_RETRY_PAUSE</td>
+          <td>5</td>
+          <td>Max allowed time in seconds for pause between retries</td>
+      </tr>
+      <tr>
             <td>queue.rule-engine.queues.name</td>
             <td>TB_QUEUE_RE_SQ_QUEUE_NAME</td>
             <td>SequentialByOriginator</td>
@@ -2010,6 +2022,12 @@ We will list only main configuration parameters below to avoid duplication of th
             <td>TB_QUEUE_RE_SQ_PROCESSING_STRATEGY_RETRY_PAUSE</td>
             <td>5</td>
             <td>Time in seconds to wait in consumer thread before retries</td>
+        </tr>
+        <tr>
+            <td>queue.rule-engine.queues.processing-strategy.max-pause-between-retries</td>
+            <td>TB_QUEUE_RE_SQ_PROCESSING_STRATEGY_MAX_RETRY_PAUSE</td>
+            <td>5</td>
+            <td>Max allowed time in seconds for pause between retries</td>
         </tr>
         <tr>
            <td>queue.transport.notifications_topic</td>
@@ -2792,6 +2810,12 @@ We will list only main configuration parameters below to avoid duplication of th
           <td>Time in seconds to wait in consumer thread before retries</td>
       </tr>
       <tr>
+          <td>queue.rule-engine.queues.processing-strategy.max-pause-between-retries</td>
+          <td>TB_QUEUE_RE_MAIN_PROCESSING_STRATEGY_MAX_RETRY_PAUSE</td>
+          <td>3</td>
+          <td>Max allowed time in seconds for pause between retries</td>
+      </tr>
+      <tr>
           <td>queue.rule-engine.queues.name</td>
           <td>TB_QUEUE_RE_HP_QUEUE_NAME</td>
           <td>HighPriority</td>
@@ -2858,6 +2882,12 @@ We will list only main configuration parameters below to avoid duplication of th
           <td>Time in seconds to wait in consumer thread before retries</td>
       </tr>
       <tr>
+          <td>queue.rule-engine.queues.processing-strategy.max-pause-between-retries</td>
+          <td>TB_QUEUE_RE_HP_PROCESSING_STRATEGY_MAX_RETRY_PAUSE</td>
+          <td>5</td>
+          <td>Max allowed time in seconds for pause between retries</td>
+      </tr>
+      <tr>
             <td>queue.rule-engine.queues.name</td>
             <td>TB_QUEUE_RE_SQ_QUEUE_NAME</td>
             <td>SequentialByOriginator</td>
@@ -2922,6 +2952,12 @@ We will list only main configuration parameters below to avoid duplication of th
             <td>TB_QUEUE_RE_SQ_PROCESSING_STRATEGY_RETRY_PAUSE</td>
             <td>5</td>
             <td>Time in seconds to wait in consumer thread before retries</td>
+        </tr>
+        <tr>
+            <td>queue.rule-engine.queues.processing-strategy.max-pause-between-retries</td>
+            <td>TB_QUEUE_RE_SQ_PROCESSING_STRATEGY_MAX_RETRY_PAUSE</td>
+            <td>5</td>
+            <td>Max allowed time in seconds for pause between retries</td>
         </tr>     
        <tr>
            <td>queue.transport.notifications_topic</td>
@@ -3626,6 +3662,12 @@ We will list only main configuration parameters below to avoid duplication of th
           <td>Time in seconds to wait in consumer thread before retries</td>
       </tr>
       <tr>
+          <td>queue.rule-engine.queues.processing-strategy.max-pause-between-retries</td>
+          <td>TB_QUEUE_RE_MAIN_PROCESSING_STRATEGY_MAX_RETRY_PAUSE</td>
+          <td>3</td>
+          <td>Max allowed time in seconds for pause between retries</td>
+      </tr>
+      <tr>
           <td>queue.rule-engine.queues.name</td>
           <td>TB_QUEUE_RE_HP_QUEUE_NAME</td>
           <td>HighPriority</td>
@@ -3690,6 +3732,12 @@ We will list only main configuration parameters below to avoid duplication of th
           <td>TB_QUEUE_RE_HP_PROCESSING_STRATEGY_RETRY_PAUSE</td>
           <td>5</td>
           <td>Time in seconds to wait in consumer thread before retries</td>
+      </tr>
+      <tr>
+          <td>queue.rule-engine.queues.processing-strategy.max-pause-between-retries</td>
+          <td>TB_QUEUE_RE_HP_PROCESSING_STRATEGY_MAX_RETRY_PAUSE</td>
+          <td>5</td>
+          <td>Max allowed time in seconds for pause between retries</td>
       </tr>
       <tr>
             <td>queue.rule-engine.queues.name</td>
@@ -3757,6 +3805,12 @@ We will list only main configuration parameters below to avoid duplication of th
             <td>5</td>
             <td>Time in seconds to wait in consumer thread before retries</td>
         </tr>      
+        <tr>
+            <td>queue.rule-engine.queues.processing-strategy.max-pause-between-retries</td>
+            <td>TB_QUEUE_RE_SQ_PROCESSING_STRATEGY_MAX_RETRY_PAUSE</td>
+            <td>5</td>
+            <td>Max allowed time in seconds for pause between retries</td>
+        </tr>
        <tr>
            <td>queue.transport.notifications_topic</td>
            <td>TB_QUEUE_TRANSPORT_NOTIFICATIONS_TOPIC</td>
@@ -4475,6 +4529,12 @@ We will list only main configuration parameters below to avoid duplication of th
           <td>Time in seconds to wait in consumer thread before retries</td>
       </tr>
       <tr>
+          <td>queue.rule-engine.queues.processing-strategy.max-pause-between-retries</td>
+          <td>TB_QUEUE_RE_MAIN_PROCESSING_STRATEGY_MAX_RETRY_PAUSE</td>
+          <td>3</td>
+          <td>Max allowed time in seconds for pause between retries</td>
+      </tr>
+      <tr>
           <td>queue.rule-engine.queues.name</td>
           <td>TB_QUEUE_RE_HP_QUEUE_NAME</td>
           <td>HighPriority</td>
@@ -4541,6 +4601,12 @@ We will list only main configuration parameters below to avoid duplication of th
           <td>Time in seconds to wait in consumer thread before retries</td>
       </tr>
       <tr>
+          <td>queue.rule-engine.queues.processing-strategy.max-pause-between-retries</td>
+          <td>TB_QUEUE_RE_HP_PROCESSING_STRATEGY_MAX_RETRY_PAUSE</td>
+          <td>5</td>
+          <td>Max allowed time in seconds for pause between retries</td>
+      </tr> 
+      <tr>
             <td>queue.rule-engine.queues.name</td>
             <td>TB_QUEUE_RE_SQ_QUEUE_NAME</td>
             <td>SequentialByOriginator</td>
@@ -4605,6 +4671,12 @@ We will list only main configuration parameters below to avoid duplication of th
             <td>TB_QUEUE_RE_SQ_PROCESSING_STRATEGY_RETRY_PAUSE</td>
             <td>5</td>
             <td>Time in seconds to wait in consumer thread before retries</td>
+        </tr>      
+        <tr>
+             <td>queue.rule-engine.queues.processing-strategy.max-pause-between-retries</td>
+             <td>TB_QUEUE_RE_SQ_PROCESSING_STRATEGY_MAX_RETRY_PAUSE</td>
+             <td>5</td>
+             <td>Max allowed time in seconds for pause between retries</td>
         </tr>      
        <tr>
            <td>queue.transport.notifications_topic</td>

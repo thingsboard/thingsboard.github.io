@@ -1,1 +1,1 @@
-python two-way-ssl-mqtt-client.py
+python3 two-way-ssl-mqtt-client.py

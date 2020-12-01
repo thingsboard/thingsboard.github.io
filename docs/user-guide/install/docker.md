@@ -68,9 +68,11 @@ Before starting Docker container run following commands to create a directory fo
 to be able to change user, **chown** command is used, which requires sudo permissions (command will request password for a sudo access):
 
 ```
-$ mkdir -p ~/.mytb-data && sudo chown -R 799:799 ~/.mytb-data
-$ mkdir -p ~/.mytb-logs && sudo chown -R 799:799 ~/.mytb-logs
+mkdir -p ~/.mytb-data && sudo chown -R 799:799 ~/.mytb-data
+mkdir -p ~/.mytb-logs && sudo chown -R 799:799 ~/.mytb-logs
 ```
+{: .copy-code}
+
 **NOTE**: Replace directory `~/.mytb-data` and `~/.mytb-logs` with directories you're planning to use in `docker-compose.yml`.
 
 Set the terminal in the directory which contains the `docker-compose.yml` file and execute the following command to up this docker compose directly:
