@@ -8,6 +8,57 @@ description: ThingsBoard architecture
 * TOC
 {:toc}
 
+## v3.2 (December 1, 2020)
+
+### ThingsBoard CE
+
+Minor release:
+
+**Improvements:**
+
+ * TODO;
+
+ **Bug fixes:**
+
+ * TODO;
+
+### ThingsBoard PE
+
+Everything from [TB CE v3.2](https://github.com/thingsboard/thingsboard/releases/tag/v3.2) with the following improvements.
+
+Main features:
+
+* TODO;
+
+Bug Fixes:
+
+* TODO;
+
+## v2.5.5 (December 1, 2020)
+
+### ThingsBoard CE
+
+**Improvements:**
+
+ * TODO;
+
+ **Bug fixes:**
+
+ * TODO;
+
+### ThingsBoard PE
+
+Everything from [TB CE v2.5.5](https://github.com/thingsboard/thingsboard/releases/tag/v2.5.5).
+
+Main features:
+
+* TODO;
+
+Bug fixes:
+
+* TODO;
+
+
 ## v3.1.1 (August 28, 2020)
 
 ### ThingsBoard CE
