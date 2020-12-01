@@ -34,6 +34,7 @@ We have also added features to track tenant API usage.
  * Added new language Brazilian Portuguese;
  * Improvements to camera and alarm widgets, legend sort;
  * Added support of min/max values in multiple attributes input widget;
+ * UI performance improvements;
 
  **Bug fixes:**
 

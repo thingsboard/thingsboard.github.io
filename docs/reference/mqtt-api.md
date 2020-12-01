@@ -14,9 +14,10 @@ description: Supported MQTT API Reference for IoT Devices
 
 ##### MQTT basics
 
-[MQTT](https://en.wikipedia.org/wiki/MQTT) is a lightweight publish-subscribe messaging protocol which probably makes it the most suitable for various IoT devices. You can find more information about MQTT [here](http://mqtt.org/).
+[MQTT](https://en.wikipedia.org/wiki/MQTT) is a lightweight publish-subscribe messaging protocol which probably makes it the most suitable for various IoT devices. 
+You can find more information about MQTT [here](http://mqtt.org/).
 
-ThingsBoard server nodes act as an MQTT Broker that supports QoS levels 0 (at most once) and 1 (at least once) and a set of predefined topics.
+ThingsBoard server nodes act as an MQTT Broker that supports QoS levels 0 (at most once) and 1 (at least once) and a set of [configurable](/docs/user-guide/device-profiles/#mqtt-device-topic-filters) topics.
 
 ##### Client libraries setup
 
@@ -27,6 +28,8 @@ In order to setup one of those tools, you can use instructions in our [Hello Wor
 
 We will use *access token* device credentials in this article and they will be referred to later as **$ACCESS_TOKEN**.
 The application needs to send MQTT CONNECT message with username that contains **$ACCESS_TOKEN**.
+The alternative option is to use [Basic MQTT Credentials](/docs/user-guide/basic-mqtt/) - combination of client id, username and password; 
+
 Possible return codes and their reasons during connect sequence:
 
 * **0x00 Connected** - Successfully connected to ThingsBoard MQTT server.

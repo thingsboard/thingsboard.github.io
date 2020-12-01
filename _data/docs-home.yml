@@ -229,6 +229,8 @@ toc:
     path: /docs/user-guide/device-credentials/
   - title: Access Token based authentication
     path: /docs/user-guide/access-token/
+  - title: Basic MQTT Credentials
+    path: /docs/user-guide/basic-mqtt/
   - title: X.509 Certificate based authentication
     path: /docs/user-guide/certificates/
 - title: Administration UI
