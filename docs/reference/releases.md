@@ -8,6 +8,96 @@ description: ThingsBoard architecture
 * TOC
 {:toc}
 
+## v3.2 (December 1, 2020)
+
+### ThingsBoard CE
+
+The goal of this release is to simplify provisioning and connecting the devices and configuration of the alarms. 
+We have also added features to track tenant API usage.  
+
+**Major Improvements:**
+
+ * [Tenant Profiles](/docs/user-guide/tenant-profiles/) to manage API and Rate Limits;
+ * [Device Profiles](/docs/user-guide/device-profiles/) to configure default rule chain and queue, set transport configuration and define [Alarm Rules](/docs/user-guide/device-profiles/#alarm-rules);
+ * Added support of custom [MQTT Topics](/docs/user-guide/device-profiles/#mqtt-device-topic-filters) and basic [MQTT credentials](/docs/user-guide/basic-mqtt/) as alternative to access token;
+ * Added support of custom device payload schema using [protocol buffers](/docs/user-guide/device-profiles/#mqtt-device-payload) for MQTT transport;
+ * [Device provisioning](/docs/user-guide/device-provisioning/) is now available via device profiles;
+ * [SMS Provider](/docs/user-guide/ui/sms-provider-settings) and [Send SMS](/docs/user-guide/rule-engine-2-0/external-nodes/#send-sms-node) rule node;
+ * UI for [OAuth2](/docs/user-guide/oauth-2-support/) settings.
+ 
+**Minor Improvements:**
+
+ * Added [Api Usage](/docs/user-guide/tenant-profiles/#api-usage-dashboard) dashboard;
+ * Added "orderBy" request parameter for telemetry controller;
+ * Added queueName to enqueueForTellNext in TbSendRPCRequestNode;
+ * Added protection from the circular reference across different rule chains; 
+ * Added new language Brazilian Portuguese;
+ * Improvements to camera and alarm widgets, legend sort;
+ * Added support of min/max values in multiple attributes input widget;
+ * UI performance improvements;
+
+ **Bug fixes:**
+
+ * Cover all markers to fit bounds by default even when fit bounds marker is disabled in the map widget;
+
+### ThingsBoard PE
+
+Everything from [TB CE v3.2](https://github.com/thingsboard/thingsboard/releases/tag/v3.2) with the following improvements.
+
+Main features:
+
+ * LORIOT integration;
+ * RabbitMQ integration;
+ * Simplified Alarm Search Query;
+ * Api usage stats collection for Integrations;
+
+Bug Fixes:
+
+ * Critical bug fix for alarm search query when sorting by entity key;
+ * Show correct time for device profiles scheduler preview; 
+ * Added proxy for reCaptcha.
+
+## v2.5.5 (December 1, 2020)
+
+### ThingsBoard CE
+
+**Improvements:**
+
+ * Added partition property for kafka settings;
+ * Changed default QoS for default SubAck message from AT_LEAST_ONCE to AT_MOST_ONCE
+ * Added ability to not notify device about attributes update;
+ * Added ability to set/force base URL for password reset links;
+ * Added validation of circular reference in the rule chains;
+ * AWS SQS client improvements for JS executors;
+ * Updated dependency versions to fix some vulnerabilities;
+ * Added handler for too long payload exception in MQTT transport
+
+ **Bug fixes:**
+
+ * Fixed telemetry cleanup procedure for telemetry stored in PostgreSQL;
+ * Added ability to use exp-pause-between-retries for message processing strategies;
+ * Fixed for client certificate check in case of MQTT two-way SSL connection;
+ * Fixed inactivitiy timeout for gw sessions;
+ * Fixed knob control widget;
+
+### ThingsBoard PE
+
+Everything from [TB CE v2.5.5](https://github.com/thingsboard/thingsboard/releases/tag/v2.5.5).
+
+Main features:
+
+* Added logs to detect rule nodes that cause timeout;
+* Top 5 rule nodes statistics;
+* Twilio rule node improvements to support new line characters;
+* Added lock to the kafka integration;
+* IBM Watson integration improvements
+* Improvement to logo container size;
+
+Bug fixes:
+
+* Fixed csv export;
+
+
 ## v3.1.1 (August 28, 2020)
 
 ### ThingsBoard CE

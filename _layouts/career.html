@@ -1,0 +1,36 @@
+<!Doctype html>
+<html id="careers">
+
+{% include head-header.html %}
+
+<section id="hero" class="light-text">
+</section>
+
+<section id="encyclopedia">
+    <div id="carsContent" class="noToc">
+
+        <a class="back" href="/careers/"><img src="/images/careers/back_arrow.svg" alt="Back to Careers">Back to Careers</a>
+
+        <div id="vacancy">
+            <div class="head">
+                <p class="title">{{ page.position }}</p>
+                <div>
+                    <div class="location">{{page.location}}<img src="/images/careers/location_icon.svg"></div>
+                    <p class="date">{{page.dateString}}</p>
+                </div>
+            </div>
+
+            {{ content }}
+
+            <div id="mailBlock">
+                <p class="mailTitle">Send your CV on mail:</p><a class="mail" href='mailto:hr@thingsboard.io?subject=Job application in ThingsBoard'>hr@thingsboard.io</a>
+                <a class="buttonApply" href='mailto:hr@thingsboard.io?subject=Job application in ThingsBoard'>APPLY NOW</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% include footer.html %}
+
+</body>
+</html>
