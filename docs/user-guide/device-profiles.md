@@ -4,6 +4,7 @@ assignees:
 - ashvayka
 title: Device Profiles
 description: IoT device profiles
+redirect_from: "/docs/user-guide/ui/device-profiles"
 ruleChainSetting:
     0:
         image: /images/user-guide/device-profile/rule-chain-setting.png
