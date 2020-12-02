@@ -2,7 +2,17 @@
 layout: docwithnav
 title: Provisioning devices
 description: IoT device management using ThingsBoard provisioning devices feature
-
+deviceProfileConfiguration:
+    0:
+        image: /images/user-guide/device-provisioning/device-provisioning-step-1.png 
+        title: 'Create new device profile or open the existing one. We will create new one. Open the Device profiles page and click on "+" icon in the table header.'
+    1:
+        image: /images/user-guide/device-provisioning/device-provisioning-step-2.png 
+        title: 'Input name of the new device profile and click on Step 4 of the "Add device profile" wizard. We will use "Device Provisioning Test" in this example. However, typically this should be your device model or similar.' 
+    2:
+        image: /images/user-guide/device-provisioning/device-provisioning-step-3.png 
+        title: 'Choose one of the provisioning strategies, copy the provisioning key and secret and finally click "Add". ' 
+         
 ---
 
 * TOC
@@ -64,16 +74,7 @@ Once the provisioning is complete, ThingsBoard will update *provisionState* serv
 
 You should configure device profile to enable provisioning feature and collect provision device key and provision device secret.
 
-1. Create new device profile or open the existing one. We will create new one.     
-Open the Device profiles page and click on "+" icon in the table header.
-2. Input name of the new device profile and click on Step 4 of the "Add device profile" wizard. 
-We will use "Device Provisioning Test" in this example. However, typically this should be your device model or similar. 
-3. Choose one of the provisioning strategies, copy the provisioning key and secret and finally click "Add". 
-
-{% capture gallery %}
-    /images/user-guide/device-provisioning/device-profile-rule-node.png
-{% endcapture %} 
-{% include images-gallery.html%}  
+{% include images-gallery.html imageCollection="deviceProfileConfiguration" showListImageTitles="true" %}
 
 ## Provision Device APIs 
 
