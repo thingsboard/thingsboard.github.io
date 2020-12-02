@@ -1,8 +1,8 @@
 ---
-position: Copywriter
+position: Technical writer
 tag: 
 location: Kyiv, Ukraine
-dateString: 4 November, 2020
+dateString: 2 December, 2020
 layout: career
 ---
 ##### ThingsBoard Inc. is one of the most popular Open-Source IoT Platform. We help world-class companies launch IoT projects faster, saving the months and thousands of dollars on in-house development.
@@ -43,8 +43,8 @@ Career growth opportunities and regular salary review;
 
 Free English classes;
 
-Flexible work hours; 
+Full-time office work with flexible work hours;
 
-Comfortable office and fridge with free beverages.
+Comfortable office and fridge with free beverages;
 
 Team-buildings and corporate events.
