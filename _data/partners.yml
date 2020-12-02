@@ -4,3 +4,5 @@ hidetoc: "true"
 toc:
 - title: Hardware Partners
   path: /partners/hardware/
+- title: Local Partners
+  path: /partners/local/

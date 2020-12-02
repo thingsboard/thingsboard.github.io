@@ -222,7 +222,15 @@ step7:
         title: 'Use activation link to set the password. Click "Create Password". You will automatically login as a customer user.'
     15:
         image: /images/helloworld/hello-world-step-7-item-9.png 
-        title: 'You have logged in as a Customer User. You may browse the data and acknowledge/clear alarms.'              
+        title: 'You have logged in as a Customer User. You may browse the data and acknowledge/clear alarms.'
+        
+mqttWindows:
+    0:
+        image: /images/helloworld/hello-world-step-3-item-1.png
+        title: 'Create new MQTT Client with the properties listed in screenshots below.' 
+    1:
+        image: /images/helloworld/hello-world-step-3-item-2.png
+        title: 'Populate the topic name and payload. Make sure the payload is a valid JSON document. Click "Publish" button.' 
                            
 ---
 
