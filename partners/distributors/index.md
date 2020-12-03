@@ -37,9 +37,6 @@ Finder
 </div>
 <div id="integratorsContainer"></div>
 </div>
-<style>
-	{% include integrators.css %}
-</style>
 <script>
 	{% include integrators.js
         containerId="integratorsContainer" %}

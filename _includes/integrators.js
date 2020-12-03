@@ -74,6 +74,11 @@ function createBox(integrator) {
 }
 
 function PushIndex(f) {
+  $(function(){
+    if ( $(window).width() < 568 ) {
+    document.location.href = "/partners/distributors/#Search";
+    }
+    });
   r = $( "#region option:selected" ).text();
   c = $( "#country option:selected" ).text();
   if (document.getElementById('integratorsContainerEmpty') != null) {
@@ -156,5 +161,11 @@ function Empty()
                     return '<option id="' + val.cntr + '">' + val.cntr + '</option>';
                 }));
     });
-    $('#integratorsContainerEmpty').html("<object data='/images/partners/search-icon.svg'></object></br><p>Select a region using the map or the finder</p>");
+    $(function(){
+      if ( $(window).width() > 568 ) {
+      $('#integratorsContainerEmpty').html("<object data='/images/partners/search-icon.svg'></object></br><p>Select a region using the map or the finder</p>");
+      } else {
+      $('#integratorsContainerEmpty').html("<object data='/images/partners/search-icon.svg'></object></br><p>Select a region</p>");
+      }
+    });
 }
