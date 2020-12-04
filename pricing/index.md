@@ -124,7 +124,7 @@ description: ThingsBoard Products Pricing
                                 false,
                                 '20be6f50-a18e-11e9-8e16-03828ff5271c',
                                 '7ef31a80-a18e-11e9-8e16-03828ff5271c',
-                                'Maker')">
+                                'Maker', null, false)">
                                 Get your license
                             </a>
                             <div class="pricing-square-item" data-faq-id="community-support">
@@ -153,7 +153,7 @@ description: ThingsBoard Products Pricing
                                 false,
                                 '20be6f50-a18e-11e9-8e16-03828ff5271c',
                                 '0e236dc0-a196-11e9-8e16-03828ff5271c',
-                                'Prototype')">
+                                'Prototype', null, false)">
                                 Get your license
                             </a>
                             <div class="pricing-square-item" data-faq-id="community-support">
@@ -182,7 +182,7 @@ description: ThingsBoard Products Pricing
                                 false,
                                 '20be6f50-a18e-11e9-8e16-03828ff5271c',
                                 '8ac6d190-a197-11e9-8e16-03828ff5271c',
-                                'Startup')">
+                                'Startup', null, false)">
                                 Get your license
                             </a>
                             <div class="pricing-square-item" data-faq-id="subscription-support">
@@ -211,7 +211,7 @@ description: ThingsBoard Products Pricing
                                 false,
                                 '20be6f50-a18e-11e9-8e16-03828ff5271c',
                                 'd82185c0-a197-11e9-8e16-03828ff5271c',
-                                'Business')">
+                                'Business', null, false)">
                                 Get your license
                             </a>
                             <div class="pricing-square-item" data-faq-id="subscription-support">
@@ -240,7 +240,7 @@ description: ThingsBoard Products Pricing
                                 false,
                                 '20be6f50-a18e-11e9-8e16-03828ff5271c',
                                 '34530df0-a198-11e9-8e16-03828ff5271c',
-                                'Enterprise')">
+                                'Enterprise', null, false)">
                                 Get your license
                             </a>
                             <div class="pricing-square-item" data-faq-id="subscription-support">
@@ -278,7 +278,7 @@ description: ThingsBoard Products Pricing
                                 true,
                                 '90b6c9b0-a198-11e9-8e16-03828ff5271c',
                                 '4c711b60-a199-11e9-8e16-03828ff5271c',
-                                'Perpetual')">
+                                'Perpetual', null, false)">
                                 Get your license
                             </a>
                             <div class="pricing-square-item" data-faq-id="subscription-support">
@@ -343,7 +343,7 @@ description: ThingsBoard Products Pricing
                             <h2>Prototype</h2>
                             <h4 class="pricing-square-price mb-0">
                                 175
-                                <span>USD / Month</span>
+                                <span>USD&nbsp;/&nbsp;Month</span>
                             </h4>
                             <div style="color: rgba(var(--sk_foreground_high,29,28,29),.5); font-size: 15px; font-weight: 400;">Up to 200 Devices and Assets</div>
                             <div class="pricing-square-item" >
@@ -357,8 +357,8 @@ description: ThingsBoard Products Pricing
                                 false,
                                 '31307df0-11f6-11ea-951e-b77b877a367b',
                                 '2985f1a0-7afd-11ea-951e-b77b877a367b',
-                                'Trendz Analytics Prototype', '')">
-                                Get your license
+                                'Trendz Analytics Prototype', 'KFYU8D47ZB', true)">
+                                try 30 days for free
                             </a>
                             <div>
                                 <a href="/products/trendz/"><span class="a-full-green">Learn More</span><br></a>
@@ -373,7 +373,7 @@ description: ThingsBoard Products Pricing
                             <h2>Startup</h2>                            
                             <h4 class="pricing-square-price mb-0">
                                 200
-                                <span>USD / Month</span>
+                                <span>USD&nbsp;/&nbsp;Month</span>
                             </h4>
                             <div style="color: rgba(var(--sk_foreground_high,29,28,29),.5); font-size: 15px; font-weight: 400;">Up to 500 Devices and Assets</div>
                             <div class="pricing-square-item" >
@@ -387,8 +387,8 @@ description: ThingsBoard Products Pricing
                                 false,
                                 '31307df0-11f6-11ea-951e-b77b877a367b',
                                 '018b7520-7afe-11ea-951e-b77b877a367b',
-                                'Trendz Analytics StartUp', '')">
-                                Get your license
+                                'Trendz Analytics StartUp', 'KFYU8D47ZB', true)">
+                                try 30 days for free
                             </a>
                             <div>
                                 <a href="/products/trendz/"><span class="a-full-green">Learn More</span><br></a>
@@ -403,7 +403,7 @@ description: ThingsBoard Products Pricing
                             <h2>Business</h2>
                             <h4 class="pricing-square-price mb-0">
                                 350
-                                <span>USD / Month</span>
+                                <span>USD&nbsp;/&nbsp;Month</span>
                             </h4>
                             <div style="color: rgba(var(--sk_foreground_high,29,28,29),.5); font-size: 15px; font-weight: 400;">Up to 1000 Devices and Assets</div>
                             <div class="pricing-square-item" >
@@ -417,8 +417,8 @@ description: ThingsBoard Products Pricing
                                 false,
                                 '31307df0-11f6-11ea-951e-b77b877a367b',
                                 '6e3bb4f0-7afe-11ea-951e-b77b877a367b',
-                                'Trendz Analytics Business', '')">
-                                Get your license
+                                'Trendz Analytics Business', 'KFYU8D47ZB', true)">
+                                try 30 days for free
                             </a>
                             <div>
                                 <a href="/products/trendz/"><span class="a-full-green">Learn More</span><br></a>

@@ -14,9 +14,10 @@ description: Supported MQTT API Reference for IoT Devices
 
 ##### MQTT basics
 
-[MQTT](https://en.wikipedia.org/wiki/MQTT) is a lightweight publish-subscribe messaging protocol which probably makes it the most suitable for various IoT devices. You can find more information about MQTT [here](http://mqtt.org/).
+[MQTT](https://en.wikipedia.org/wiki/MQTT) is a lightweight publish-subscribe messaging protocol which probably makes it the most suitable for various IoT devices. 
+You can find more information about MQTT [here](http://mqtt.org/).
 
-ThingsBoard server nodes act as an MQTT Broker that supports QoS levels 0 (at most once) and 1 (at least once) and a set of predefined topics.
+ThingsBoard server nodes act as an MQTT Broker that supports QoS levels 0 (at most once) and 1 (at least once) and a set of [configurable](/docs/user-guide/device-profiles/#mqtt-device-topic-filters) topics.
 
 ##### Client libraries setup
 
@@ -27,6 +28,8 @@ In order to setup one of those tools, you can use instructions in our [Hello Wor
 
 We will use *access token* device credentials in this article and they will be referred to later as **$ACCESS_TOKEN**.
 The application needs to send MQTT CONNECT message with username that contains **$ACCESS_TOKEN**.
+The alternative option is to use [Basic MQTT Credentials](/docs/user-guide/basic-mqtt/) - combination of client id, username and password; 
+
 Possible return codes and their reasons during connect sequence:
 
 * **0x00 Connected** - Successfully connected to ThingsBoard MQTT server.
@@ -218,6 +221,28 @@ The supported data format is:
 **Please note** that the above fields are optional. In case the **secretKey** is not specified, the empty string as a default value is used.
 In case the **durationMs** is not specified, the system parameter **device.claim.duration** is used (in the file **/etc/thingsboard/conf/thingsboard.yml**).
 
+## Device provisioning
+
+Please see the corresponding article to get more information about the [Device provisioning](/docs/user-guide/device-provisioning) feature.  
+
+In order to initiate device provisioning, send Provisioning request to the following topic:
+ 
+```shell
+/provision
+```
+
+Also, you should set **username** or **clientId** to *provision*. 
+
+The supported data format is:
+
+```json
+{
+  "deviceName": "DEVICE_NAME",
+  "provisionDeviceKey": "u7piawkboq8v32dmcmpp",
+  "provisionDeviceSecret": "jpmwdn8ptlswmf4m29bw"
+}
+```
+  
 ## Protocol customization
 
 MQTT transport can be fully customized for specific use-case by changing the corresponding [module](https://github.com/thingsboard/thingsboard/tree/master/transport/mqtt).

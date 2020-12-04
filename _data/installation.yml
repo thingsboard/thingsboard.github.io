@@ -27,8 +27,14 @@ toc:
     path: /docs/user-guide/install/gcp/
   - title: Cluster setup with Kubernetes and KubeOne on AWS cloud infrastructure
     path: /docs/user-guide/install/cluster/aws-cluster-setup/
+  - title: Cluster setup with Kubernetes and KOPS on GCP cloud infrastructure
+    path: /docs/user-guide/install/cluster/gcp-cluster-setup/
+  - title: Cluster setup with Kubernetes on AWS EKS cloud infrastructure
+    path: /docs/user-guide/install/cluster/aws-eks-cluster-setup/
   - title: Self-hosted setup using AWS EC2 instance
     path: /docs/user-guide/install/cluster/aws-self-hosted-setup/
+  - title: Self-hosted setup using GCP VM instance
+    path: /docs/user-guide/install/cluster/gcp-self-hosted-setup/
   - title: Installing ThingsBoard CE on IBM Cloud
     path: /docs/user-guide/install/ibm-cloud/
   - title: Installing ThingsBoard CE on Alibaba Cloud
@@ -67,8 +73,14 @@ toc:
     path: /docs/user-guide/install/pe/docker-windows/
   - title: Cluster setup with Kubernetes and KubeOne on AWS cloud infrastructure
     path: /docs/user-guide/install/pe/cluster/aws-cluster-setup/
+  - title: Cluster setup with Kubernetes on AWS EKS cloud infrastructure
+    path: /docs/user-guide/install/pe/cluster/aws-eks-cluster-setup/
+  - title: Cluster setup with Kubernetes and KOPS on GCP cloud infrastructure
+    path: /docs/user-guide/install/pe/cluster/gcp-cluster-setup/
   - title: Installing ThingsBoard PE from AWS Marketplace
     path: /docs/user-guide/install/pe/aws-marketplace/
+  - title: Installing ThingsBoard PE from GCP Marketplace
+    path: /docs/user-guide/install/pe/gcp-marketplace/
   - title: Installing ThingsBoard PE from Azure Marketplace
     path: /docs/user-guide/install/pe/azure/
   - title: Installing ThingsBoard PE on DigitalOcean

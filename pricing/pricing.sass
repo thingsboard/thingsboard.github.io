@@ -2,7 +2,7 @@ $pricing-color: #506dad
 
 @media (min-width: 1400px)
   .container
-    max-width: 1340px
+    max-width: 1400px
 
 html#pricing
 
@@ -69,8 +69,10 @@ html#pricing
             top: 18px
         .content
           border: 5px solid transparent
-          box-shadow: 0 0 5px rgba(0,0,0,0.1), 0 1px 20px rgba(0,0,0,0.1)
-          border-radius: 10px
+          box-shadow: 5px 5px 5px rgba(0,0,0,0.2), 0 1px 10px rgba(0,0,0,0.2)
+          border-radius: 4px
+          padding-top: 5px
+          padding-bottom: 5px
         .item.on
           & > .wrapper > .content
             margin: 10px
@@ -304,6 +306,7 @@ html#pricing
           margin-top: 40px
           margin-bottom: 40px
           font-weight: 500
+          min-width: 200px
 
       &#trendz
         .pricing-div
@@ -413,3 +416,17 @@ html#pricing
               transition: left .3s ease-in-out
               box-shadow: 0 1px 3px rgba(0,0,0,.12), 0 1px 2px rgba(0,0,0,.24)
 
+.trndz-swal-license
+  .trndz_dialog_list
+    display: flex
+    flex-direction: column
+    align-items: center
+
+    li
+      margin-bottom: 20px
+      max-width: 200px
+      text-align: center
+
+  .sa-button-container
+    display: flex
+    justify-content: space-between
