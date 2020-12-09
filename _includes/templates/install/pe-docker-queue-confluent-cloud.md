@@ -64,7 +64,6 @@ services:
       TB_QUEUE_RE_HP_PARTITIONS: 1
       TB_QUEUE_RE_SQ_POLL_INTERVAL_MS: 1000
       TB_QUEUE_RE_SQ_PARTITIONS: 1
-      TB_QUEUE_CORE_POLL_INTERVAL_MS: 1000
       TB_QUEUE_TRANSPORT_REQUEST_POLL_INTERVAL_MS: 1000
       TB_QUEUE_TRANSPORT_RESPONSE_POLL_INTERVAL_MS: 1000
       TB_QUEUE_TRANSPORT_NOTIFICATIONS_POLL_INTERVAL_MS: 1000
@@ -73,7 +72,7 @@ services:
       - ~/.mytbpe-logs:/var/log/thingsboard
   postgres:
     restart: always
-    image: "postgres:11.6"
+    image: "postgres:12"
     ports:
     - "5432"
     environment:
