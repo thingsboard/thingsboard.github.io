@@ -7,7 +7,7 @@ description: ThingsBoard Distributors
 
 # ThingsBoard Distributors
 
-<object id="map" width="100%" data="/images/partners/map-of-distributors.svg"></object>
+<div style="margin: 0px -254px;"><object id="map" data="/images/partners/map-of-distributors.svg"></object></div>
 
 <div id="distributors">Find our local re-seller</div>
 
