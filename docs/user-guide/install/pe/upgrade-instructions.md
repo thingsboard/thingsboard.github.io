@@ -1050,19 +1050,14 @@ thingsboard-installation-2-5-2-ubuntu,Ubuntu,shell,resources/2.5.2pe/thingsboard
 thingsboard-installation-2-5-2-centos,CentOS,shell,resources/2.5.2pe/thingsboard-centos-installation.sh,/docs/user-guide/install/resources/2.5.2pe/thingsboard-centos-installation.sh{% endcapture %}  
 {% include tabs.html %}
 
-**NOTE:** Upgrading ThingsBoard PE from 2.4.3 to 2.5.1 version in case of using PostgreSQL database require to upgrade the PostgreSQL service to 11.x version.
+**NOTE:** Upgrading ThingsBoard to 2.5.2 version in case of using PostgreSQL database require to upgrade the PostgreSQL service to 11.x version.
 
 Please refer to the guides below that will describe how to upgrade your PostgreSQL service on:
 
  - [Ubuntu](https://gist.github.com/ShvaykaD/1f0e6c1321a0a2b4b9f3b9ea9ab3e8d3)
  - [CentOS](https://gist.github.com/ShvaykaD/313745d31a9af6db3d6a01ec9f16aac8)
  
-**NOTE:** Package installer will ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.  
-
-```bash
-# Finally, execute upgrade script
-$ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=2.4.3
-```
+**NOTE:** Package installer will ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.
 
 #### Start the service
 

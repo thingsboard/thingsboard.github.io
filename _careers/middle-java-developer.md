@@ -2,7 +2,7 @@
 position: Middle Java developer
 tag: 
 location: Kyiv, Ukraine
-dateString: 2 November, 2020
+dateString: 2 December, 2020
 layout: career
 ---
 ##### ThingsBoard Inc. (Open-Source IoT platform) is looking for a Middle Java developer to join our team on a full-time basis in the Kyiv office.
@@ -35,13 +35,15 @@ Support the existing functionality and improve it;
 Deep dive into java performance improvements during heavy load testing.
 
 ### We offer:
+Working on an open-source IoT platform that has thousands of installations all over the world and 7000+ stars on GitHub;
+
+Full-time office work with flexible work hours;
+
 Modern cutting-edge development stack;
 
 A high-professional team without bureaucracy and management overhead with 13+ years of experience;
 
 Career growth opportunities and regular salary review;
-
-Flexible work hours;
 
 Free English classes;
 
