@@ -8,7 +8,11 @@ function selectType(type, country) {
   var integrators = {{ integrators }};
   var targetContainer = document.getElementById(containerId);
   targetContainer.innerHTML = '';
-  if (country == "All countries") {
+
+  if (type == "-- All regions --" && country == "-- All countries --") {
+    var integratorsByType = integrators;
+  } else
+  if (country == "-- All countries --") {
     var integratorsByType = integrators.filter(function (integrator) {
       return integrator.type.includes(type);
     });
@@ -17,7 +21,6 @@ function selectType(type, country) {
       return integrator.country.includes(country) || (integrator.country.includes("") && integrator.type.includes(type));
     });
   }
-
   if (integratorsByType == ""){
   if (document.getElementById('integratorsContainer') != null) {
   document.getElementById('integratorsContainer').id = 'integratorsContainerEmpty';
@@ -74,6 +77,11 @@ function createBox(integrator) {
 }
 
 function PushIndex(f) {
+  $(function(){
+    if ( $(window).width() < 568 ) {
+    document.location.href = "/partners/distributors/#Search";
+    }
+    });
   r = $( "#region option:selected" ).text();
   c = $( "#country option:selected" ).text();
   if (document.getElementById('integratorsContainerEmpty') != null) {
@@ -81,11 +89,6 @@ function PushIndex(f) {
   }
   selectType(r,c);
 }
-
-(function () {
- var integratorsType = "{{ integratorsType }}";
- selectType(integratorsType);
-})();
 
 function ajax() {
   var json = {{ rgn }};
@@ -98,11 +101,7 @@ var $selectCountry = $('#country');
 ajax().then(function(data) {
   $selectRegion.html('');
   $selectRegion.append(data.rgn.map(function (val, key) {
-    if (key == 0) {
-      return '<option id="' + val.region + '" value="' + key + '" disabled="disabled">' + val.region + '</option>';
-    } else {
       return '<option id="' + val.region + '" value="' + key + '">' + val.region + '</option>';
-    }
   }));
   $selectRegion.on('change', function () {
     var index = $(this).val();
@@ -111,18 +110,6 @@ ajax().then(function(data) {
         return '<option id="' + val.cntr + '">' + val.cntr + '</option>';
     }));
   }).change();
-  $selectRegion.on('change', function() {
-      if ($(this).val() == '0'){
-          $('#Search').attr('disabled', 'disabled');
-          $('#country').attr('disabled', 'disabled');
-      } else if ($(this).val() == '8'){
-          $('#Search').removeAttr('disabled');
-          $('#country').attr('disabled', 'disabled');
-      } else {
-         $('#Search').removeAttr('disabled');
-         $('#country').removeAttr('disabled');
-      }
-  });
 });
 
 function Map(m)
@@ -133,7 +120,7 @@ function Map(m)
     $('#Search').removeAttr('disabled');
     $('#country').removeAttr('disabled');
     document.location.href = "/partners/distributors/#distributors";
-    selectType(m,"All countries");
+    selectType(m,"-- All countries --");
     var optionElement = document.getElementById('region').options.namedItem(m);
     optionElement.selected = 'true';
     ajax().then(function(data) {
@@ -147,14 +134,5 @@ function Map(m)
 
 function Empty()
 {
-    var optionElement = document.getElementById('region').options.namedItem('-- Region --');
-       optionElement.selected = 'true';
-    ajax().then(function(data) {
-        var index = optionElement.value;
-                $selectCountry.empty()
-                  .append(data.rgn[index].country.map(function (val) {
-                    return '<option id="' + val.cntr + '">' + val.cntr + '</option>';
-                }));
-    });
-    $('#integratorsContainerEmpty').html("<object data='/images/partners/search-icon.svg'></object></br><p>Select a region using the map or the finder</p>");
+    selectType("-- All regions --","-- All countries --");
 }
