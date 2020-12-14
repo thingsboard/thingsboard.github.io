@@ -6,6 +6,7 @@ description: ThingsBoard Distributors
 ---
 
 # ThingsBoard Distributors
+<p id="des">Select a region using the map or the finder</p>
 
 <div style="margin: 0px -254px;"><object id="map" data="/images/partners/map-of-distributors.svg"></object></div>
 
@@ -25,12 +26,11 @@ Finder
 <option id="Middle East" value="5">Middle East</option>
 <option id="North America" value="6">North America</option>
 <option id="South America" value="7">South America</option>
-<option value="8">Worldwide</option>
 </select></p>
-<p><select class="dropSelector" id="country" name="country" disabled="disabled">
+<p><select class="dropSelector" id="country" name="country">
 <option id="-- Country --">-- Country --</option>
 </select></p>
-<p><input class="buttonSearch" id="Search" type="button" value="FIND" onClick="PushIndex(this.form)" disabled="disabled"></p>
+<p><input class="buttonSearch" id="Search" type="button" value="FIND" onClick="PushIndex(this.form)"></p>
 <hr noshade>
 <p><input class="buttonRe" id="Search" type="button" value="BECOME A RESELLER" onClick="window.location.href='/docs/contact-us/'"></p>
 </form>
