@@ -35,16 +35,11 @@ $ sudo rm -rf /var/lib/docker && sudo groupdel docker && sudo rm -rf /var/run/do
 
 #### Install HAProxy Load Balancer package
 
-Execute the following commands to add HAProxy repository (for Ubuntu 14.04):
-
-```bash
-$ sudo add-apt-repository ppa:vbernat/haproxy-1.8
-$ sudo apt-get update
-```
-
 Execute the following commands to install HAProxy package:
 
 ```bash
+$ sudo add-apt-repository ppa:vbernat/haproxy-1.7
+$ sudo apt-get update
 $ sudo apt-get install haproxy openssl
 ```
 
