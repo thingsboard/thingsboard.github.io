@@ -27,12 +27,17 @@ or consult your cloud vendor for different options.
 
 ### Step 2. Install HAProxy Load Balancer package
 
+Execute the following commands to add HAProxy repository (for Ubuntu 14.04):
+
+```bash
+$ sudo add-apt-repository ppa:vbernat/haproxy-1.8
+$ sudo apt-get update
+```
+
 Execute the following commands to install HAProxy package:
 
 ```bash
-sudo add-apt-repository ppa:vbernat/haproxy-1.7
-sudo apt-get update
-sudo apt-get install haproxy openssl
+$ sudo apt-get install haproxy openssl
 ```
 
 ### Step 3. Install Certbot package
