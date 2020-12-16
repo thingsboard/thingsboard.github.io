@@ -48,7 +48,7 @@ description: ThingsBoard Cloud Privacy Policy
 <p>6.1 Nowadays some browsers provide the “Do Not Track” feature in a proprietary way. There is no common understanding of how to interpret Do Not Track requests. The Service does not currently respond to Do Not Track signals.</p> 
 
 <br>
-<p> <b>7. Unsubscribe request</b> </p> 
+<p id="unsubscribe"> <b>7. Unsubscribe request</b> </p> 
 <p>By accepting the <a href="/products/paas/terms-of-use/">Terms of Use </a> you subscribe to our newsletters and remain email campaigns without limitation. You can opt out at any time by using the unsubscribe links at the bottom of our emails. Our Service gives you the ability to delete all personal information from within the Service. 
 You can completely delete your account and data by clicking "Delete Account" button which is available on the User Profile Page. Please note, however, that we may need to retain certain information for record keeping purposes, to complete transactions or to comply with our legal obligations.</p> 
 
