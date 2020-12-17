@@ -146,7 +146,7 @@ docker-compose start
 In case when database upgrade is needed, execute the following commands:
 
 ```
-$ docker-compose stop tb-node
+$ docker-compose stop mytbpe
 $ docker-compose run mytbpe upgrade-tb.sh
 $ docker-compose start mytbpe
 ```
@@ -163,6 +163,174 @@ $ docker-compose start mytbpe
 
 You may configure your system to use Google public DNS servers. 
 See corresponding [Linux](https://developers.google.com/speed/public-dns/docs/using#linux) and [Mac OS](https://developers.google.com/speed/public-dns/docs/using#mac_os) instructions.
+
+
+### Upgrading from old PostgreSQL 9.6 to PostgreSQL 11 and ThingsBoard 3.0.1PE
+
+In this example we'll show steps to upgrade ThingsBoard from 2.4.3PE to 3.0.1PE.
+
+Make a backup of your data:
+
+```
+sudo cp -r ~/.mytbpe-data ./
+```
+{: .copy-code}
+
+Stop currently running docker container:
+
+```
+docker stop [container_id]
+```
+
+Upgrade old postgres to the new one:
+
+```
+docker run --rm -v ~/.mytbpe-data/db/:/var/lib/postgresql/9.6/data -v ~/.mytbpe-data-11n/db/:/var/lib/postgresql/11/data --env LANG=C.UTF-8 tianon/postgres-upgrade:9.6-to-11
+```
+{: .copy-code}
+
+Copy .firstlaunch and .upgradeversion files within ~/.mytbpe-data-11n:
+
+```
+sudo cp ~/.mytbpe-data/.firstlaunch ~/.mytbpe-data-11n
+sudo cp ~/.mytbpe-data/.upgradeversion ~/.mytbpe-data-11n
+```
+{: .copy-code}
+
+Start the new version of TB with following command:
+
+```
+docker run -it -v ~/.mytbpe-data-11n:/data --rm store/thingsboard/tb-pe:3.0.1PE bash
+```
+{: .copy-code}
+
+Then please follow these steps:
+
+```
+apt update
+apt install sudo
+chown -R postgres. /data/db/
+chmod 750 -R /data/db/
+sudo -i -u postgres
+cd /usr/lib/postgresql/11/
+./bin/pg_ctl -D /data/db start
+logout
+/usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=2.4.1
+exit
+```
+{: .copy-code}
+
+After this create your docker-compose.yml and insert (we used in-memory queue as an example):
+
+```yml
+version: '2.2'
+services:
+  mytbpe:
+    restart: always
+    image: "store/thingsboard/tb-pe:3.0.1PE"
+    ports:
+      - "8080:9090"
+      - "1883:1883"
+      - "5683:5683/udp"
+    environment:
+      TB_QUEUE_TYPE: in-memory
+      TB_LICENSE_SECRET: YOUR_SECRET_KEY
+      TB_LICENSE_INSTANCE_DATA_FILE: /data/license.data
+      INTEGRATIONS_RPC_PORT: 50052
+      PGDATA: /data/db
+    volumes:
+      - ~/.mytbpe-data-11n:/data
+      - ~/.mytbpe-logs:/var/log/thingsboard
+```
+{: .copy-code}
+
+### Upgrading from 3.0.1PE to the latest version
+
+After 3.0.1PE PostgreSQL service was separated from ThingsBoard image and upgrading to the newest version is not trivial.
+
+First of all you need to create a dump of your database:
+
+```
+docker-compose exec mytbpe sh -c "pg_dump -U postgres thingsboard > /data/thingsboard_dump"
+```
+{: .copy-code}
+
+**Note** You have to use your valid username for connecting to PostgreSQL
+
+Then you need to stop service, create a new directory for the database and set permissions:
+
+```
+docker-compose down
+mkdir ~/.mytbpe-data-db
+sudo chown -R 799:799 ~/.mytbpe-data-11n
+sudo chown -R 799:799 ~/.mytbpe-logs
+```
+{: .copy-code}
+
+After this you need to update docker-compose.yml. Here the example with in-memory queue:
+
+```yml
+version: '2.2'
+services:
+  mytbpe:
+    restart: always
+    image: "store/thingsboard/tb-pe:{{ site.release.pe_full_ver }}"
+    ports:
+      - "8080:8080"
+      - "1885:1883"
+      - "5683:5683/udp"
+    environment:
+      TB_QUEUE_TYPE: in-memory
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/thingsboard
+      TB_LICENSE_SECRET: YOUR_SECRET_KEY
+      TB_LICENSE_INSTANCE_DATA_FILE: /data/license.data
+    volumes:
+      - ~/.mytbpe-data-11n:/data
+      - ~/.mytbpe-logs:/var/log/thingsboard
+  postgres:
+    restart: always
+    image: "postgres:11.6"
+    ports:
+    - "5432"
+    environment:
+      POSTGRES_DB: thingsboard
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - ~/.mytbpe-data-db:/var/lib/postgresql/data
+      - ~/.mytbpe-data-11n:/dump_data
+```
+{: .copy-code}
+
+**Note** Make sure you have configured volumes for the postgres service correctly.
+
+Start PostgreSQL:
+
+```
+docker-compose up postgres
+```
+{: .copy-code}
+
+Restore backup:
+
+```
+docker-compose exec postgres sh -c "psql -U postgres thingsboard < /dump_data/thingsboard_dump"
+```
+{: .copy-code}
+
+Upgrade ThingsBoard:
+
+```
+docker-compose run mytbpe upgrade-tb.sh
+```
+{: .copy-code}
+
+Start ThingsBoard:
+
+```
+docker-compose up mytbpe
+```
+{: .copy-code}
+
 
 ## Next steps
 
