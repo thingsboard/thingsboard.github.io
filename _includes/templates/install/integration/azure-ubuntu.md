@@ -23,7 +23,7 @@ Locate the following configuration block:
 
 ```bash
 # UNCOMMENT NEXT LINES AND PUT YOUR CONNECTION PARAMETERS:
-# export PRC_HOST=cloud.thingsboard.io
+# export PRC_HOST=thingsboard.cloud
 # export RPC_PORT=9090
 # export INTEGRATION_ROUTING_KEY=YOUR_INTEGRATION_KEY
 # export INTEGRATION_SECRET=YOUR_INTEGRATION_SECRET
@@ -33,7 +33,7 @@ and put your configuration parameters. Please don't forget to uncomment the expo
 
 ```bash
 # UNCOMMENT NEXT LINES AND PUT YOUR CONNECTION PARAMETERS:
-export PRC_HOST=cloud.thingsboard.io
+export PRC_HOST=thingsboard.cloud
 export RPC_PORT=9090
 export INTEGRATION_ROUTING_KEY=b75**************************34d
 export INTEGRATION_SECRET=vna**************mik

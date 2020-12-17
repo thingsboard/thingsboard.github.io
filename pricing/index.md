@@ -528,7 +528,7 @@ description: ThingsBoard Products Pricing
         <div class="item" data-tag="h4" data-item-id="trial-enable" data-title="How can I enable free trial?">
             <div class="container">
                 <p>
-                    Customer may still use <a href="https://cloud.thingsboard.io" target="blank">ThingsBoard Professional Edition Live Demo</a> for that. 
+                    Customer may still use <a href="https://thingsboard.cloud" target="blank">ThingsBoard Professional Edition Live Demo</a> for that. 
                     30 days of seamless experience and the newest features, except white-labeling, from the latest source code! 
                     Note: Live Demo is a shared environment with hardware and software limitations. 
                     It is introduced to host multiple trial tenants on the same server instance(s).
