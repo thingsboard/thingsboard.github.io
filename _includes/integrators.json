@@ -576,6 +576,18 @@
     }
   },
   {
+    "type": ["Africa", "Asia", "Middle East"],
+    "country": ["Turkey", "Eritrea", "Sudan", "Egypt", "Libya", "Tunisia", "Algeria", "Morocco", "Western Sahara"],
+    "name": "Başarı Mühendislik",
+    "contact": {
+      "href": "info@basarimuhendislik.com"
+    },
+    "site": {
+      "href": "basarimuhendislik.com",
+      "target": "_blank"
+    }
+  },
+  {
     "type": ["North America", "South America"],
     "country": ["United States", "Belize", "Panama", "Peru", "Colombia", "Argentina"],
     "name": "Voxney PLSC, Inc.",
