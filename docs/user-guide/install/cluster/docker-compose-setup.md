@@ -39,7 +39,7 @@ See [**microservices**](/docs/reference/msa/) architecture page for more details
 
 ```bash
 git clone https://github.com/thingsboard/thingsboard.git
-cd docker
+cd thingsboard/docker
 ```
 
 ## Step 4. Configure ThingsBoard database
@@ -54,10 +54,10 @@ In order to set database type change the value of `DATABASE` variable in `.env` 
 
 ## Step 5. Choose ThingsBoard queue service 
 
-{% include templates/install/install-queue.md %}
+{% include templates/install/install-queue-docker-compose.md %}
 
 {% capture contenttogglespecqueue %}
-Kafka <small>(recommended for on-prem, production installations)</small>%,%kafka%,%templates/install/cluster-queue-kafka.md%br%
+Kafka <small>(default, recommended for on-prem, production installations)</small>%,%kafka%,%templates/install/cluster-queue-kafka.md%br%
 AWS SQS <small>(managed service from AWS)</small>%,%aws-sqs%,%templates/install/cluster-queue-aws-sqs.md%br%
 Google Pub/Sub <small>(managed service from Google)</small>%,%pubsub%,%templates/install/cluster-queue-pub-sub.md%br%
 Azure Service Bus <small>(managed service from Azure)</small>%,%service-bus%,%templates/install/cluster-queue-service-bus.md%br%
