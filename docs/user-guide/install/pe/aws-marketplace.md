@@ -190,7 +190,7 @@ Now you can proceed to the next steps.
 
 **How can I enable free trial?**
 
-Customer may still use <a href="https://cloud.thingsboard.io" target="blank">ThingsBoard Professional Edition Live Demo</a> for that. 
+Customer may still use <a href="https://thingsboard.cloud" target="blank">ThingsBoard Professional Edition Live Demo</a> for that. 
 30 days of seamless experience and the newest features, except white-labeling, from the latest source code! 
 
 **Note:** Live Demo is a shared environment with hardware and software limitations. 

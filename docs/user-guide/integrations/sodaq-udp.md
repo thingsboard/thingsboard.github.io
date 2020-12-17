@@ -9,7 +9,7 @@ hidetoc: "true"
 {% assign feature = "Platform Integrations" %}{% include templates/pe-feature-banner.md %}
 
 This guide contains step-by-step instruction how to to connect your SODAQ NB-IoT boards to ThingsBoard Professional Edition (PE) through the T-Mobile NB IoT network. 
-We will use free ThingsBoard PE demo server [cloud.thingsboard.io](https://cloud.thingsboard.io/signup) in this guide. 
+We will use free ThingsBoard PE demo server [thingsboard.cloud](https://thingsboard.cloud/signup) in this guide. 
 This guide will be useful for anyone who wants to connect their SODAQ NB-IoT boards or other hardware to T-Mobile NB IoT network.   
 
 * TOC
@@ -19,7 +19,7 @@ This guide will be useful for anyone who wants to connect their SODAQ NB-IoT boa
 
 We assume you have at least one of SODAQ NB-IoT Trackers in your lab that is already connected to your T-Mobile IoT network. 
 We also assume you already have a ThingsBoard PE server or free demo account. 
-Otherwise you can register for a 30-days free demo account here: [cloud.thingsboard.io](https://cloud.thingsboard.io/signup).
+Otherwise you can register for a 30-days free demo account here: [thingsboard.cloud](https://thingsboard.cloud/signup).
 
 We expect you have a very basic knowledge about ThingsBoard. Otherwise we do recommend to complete the following guides: 
 - [Getting Started](/docs/getting-started-guides/helloworld/) guide.

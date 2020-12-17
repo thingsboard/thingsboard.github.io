@@ -15,7 +15,7 @@ description: Supported REST API Reference for server-side integration of your Io
 ThingsBoard REST API may be explored using Swagger UI.
 You can explore REST API of the live-demo server using this **[Swagger UI link.](https://demo.thingsboard.io/swagger-ui.html)**
 
-To explore REST API provided by ThingsBoard Professional Edition please use the following **[Swagger UI link.](https://cloud.thingsboard.io/swagger-ui.html)**
+To explore REST API provided by ThingsBoard Professional Edition please use the following **[Swagger UI link.](https://thingsboard.cloud/swagger-ui.html)**
 
 Once you will install ThingsBoard server you can open UI using the following URL:
     
