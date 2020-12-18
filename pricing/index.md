@@ -11,7 +11,6 @@ defaultActivePricingSection: thingsboard-cloud
        <div class="pricing-hero">
         <div class="pricing-hero-content">
             <h1>ThingsBoard Pricing</h1>
-            <h5>Get your product DEPLOY ANYWHERE!</h5>
         </div>
        </div>
        <nav id="inner-navigation" class="inner-navigation">
@@ -62,7 +61,7 @@ defaultActivePricingSection: thingsboard-cloud
                             </div>
                             <div class="pricing-square-item">Up to 10 Devices</div>
                             <div class="pricing-square-item">Up to 10 Assets</div>
-                            <div class="pricing-square-item" data-faq-id="data-points">10 million data points</div> 
+                            <div class="pricing-square-item">10 million <span data-faq-id="data-points">data points</span><br/> per month</div> 
                             <div class="pricing-square-item" data-faq-id="community-support">
                                 Community support
                             </div>
@@ -85,11 +84,11 @@ defaultActivePricingSection: thingsboard-cloud
                             </div>
                             <div class="pricing-square-item">Up to 100 Devices</div>
                             <div class="pricing-square-item">Up to 100 Assets</div>
-                            <div class="pricing-square-item" data-faq-id="data-points">100 million data points</div> 
+                            <div class="pricing-square-item">100 million <span data-faq-id="data-points">data points</span><br/> per month</div> 
                             <div class="pricing-square-item" data-faq-id="community-support">
                                 Community support
                             </div>
-                            <div class="pricing-square-item"><b>White-labeling</b></div>
+                            <div class="pricing-square-item" data-faq-id="white-labeling"><b>White-labeling</b></div>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-6 col-xl-4 col-gt-xl mb-4">
@@ -109,11 +108,11 @@ defaultActivePricingSection: thingsboard-cloud
                             </div>
                             <div class="pricing-square-item">Up to 500 Devices</div>
                             <div class="pricing-square-item">Up to 500 Assets</div>
-                            <div class="pricing-square-item" data-faq-id="data-points">500 million data points</div> 
+                            <div class="pricing-square-item">500 million <span data-faq-id="data-points">data points</span><br/> per month</div>
                             <div class="pricing-square-item" data-faq-id="subscription-support">
                                 Email support
                             </div>
-                            <div class="pricing-square-item"><b>White-labeling</b></div>
+                            <div class="pricing-square-item" data-faq-id="white-labeling"><b>White-labeling</b></div>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-6 col-xl-4 col-gt-xl mb-4">
@@ -132,11 +131,11 @@ defaultActivePricingSection: thingsboard-cloud
                             </div>
                             <div class="pricing-square-item">Unlimited number of Devices</div> 
                             <div class="pricing-square-item">Unlimited number of Assets</div>
-                            <div class="pricing-square-item" data-faq-id="data-points">Unlimited data points</div> 
+                            <div class="pricing-square-item">Unlimited <span data-faq-id="data-points">data points</span><br/> per month</div>
                             <div class="pricing-square-item" data-faq-id="subscription-support">
                                 Custom <b>SLA</b>
                             </div>
-                            <div class="pricing-square-item"><b>White-labeling</b></div>
+                            <div class="pricing-square-item" data-faq-id="white-labeling"><b>White-labeling</b></div>
                         </div>
                     </div>
                </div>
@@ -610,7 +609,7 @@ defaultActivePricingSection: thingsboard-cloud
             </div>    
         </div>
         <h3 id="section3">ThingsBoard Cloud</h3>
-        <div class="item" data-tag="h4" data-item-id="data-points" data-title="Is there any API Limits?">
+        <div class="item" data-tag="h4" data-item-id="api-limits" data-title="Is there any API Limits?">
             <div class="container">
                 <p>
                 Yes, ThingsBoard Cloud subscriptions have Entity, API and Rate limits. See subscription <a href="/products/paas/subscription/" target="blank">documentation</a> for more details.
@@ -625,7 +624,16 @@ defaultActivePricingSection: thingsboard-cloud
                 There are other <a href="/products/paas/subscription/" target ="blank">important parameters</a> of the subscription.
                 </p>  
             </div>    
-        </div>         
+        </div>
+        <div class="item" data-tag="h4" data-item-id="white-labeling" data-title="What is a white-labeling?">
+            <div class="container">
+                <p>
+               ThingsBoard web interface allows you to configure your company or product logo and color scheme in 2 minutes with zero coding efforts and no service restart required. 
+               See feature <a href="/docs/user-guide/white-labeling/" target ="blank">documentation</a> for more details. ThingsBoard Cloud extends white-labeling feature with ability to configure own domain name easily. 
+               See <a href="/products/paas/domains/" target ="blank">managing domain</a> for more details.
+                </p>  
+            </div>    
+        </div>                   
         <h3 id="section3">Support</h3>
         <div class="item" data-tag="h4" data-item-id="community-support" data-title="What does community support mean?">
             <div class="container">
