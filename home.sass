@@ -36,7 +36,7 @@ $feature-box-div-margin-bottom: 40px
             flex-direction: column
             justify-content: center
             align-content: center
-            background-color: rgba(0,0,0,0.5)
+            background-color: rgba(0,0,0,0.72)
             .tb-title
                 margin-bottom: 20px
                 font-size: 22px
@@ -59,6 +59,7 @@ $feature-box-div-margin-bottom: 40px
                 &:hover
                     background-color: white
                     color: $dark-grey
+                    text-shadow: none
             .tb-arrow
                 position: fixed
                 bottom: 40px
@@ -83,59 +84,129 @@ $feature-box-div-margin-bottom: 40px
             font-size: 20px
 
     #intro, #main-features, #dashboard_description, #rule_engine, #tb-customers, #tb-intro-video
-        color: #424242
-        h2
-            border: none
+        color: #44474A
+        h1
+            color: #212529
+            font-weight: 600
             text-align: center
-            font-weight: 400
+            font-size: 32px
+            line-height: 48px
+            a
+                color: #305680
+        h2
+            margin: 48px 0 136px
+            text-align: center
+            color: #707275
+            font-size: 18px
+            line-height: 27px
+            font-weight: normal
         h3
             border: none
             font-weight: 400
         p
             line-height: 1.5em
 
+    #intro
+        margin-bottom: 64px
+        padding-top: 88px
+        #cards
+            &>div
+                margin-bottom: 56px
+                &.col-lg-6
+                    padding: 0 30px
+                div
+                    float: left
+                    width: calc(100% - 92px)
+                    p
+                        color: #44474A
+                        font-size: 18px
+                        font-weight: normal
+                        line-height: 27px
+                        margin-block-start: 15px
+                    a
+                        color: #305680
+                        font-weight: 600
+                        font-size: 24px
+                img
+                    float: left
+                    margin-right: 32px
+
+    #products
+        width: 100%
+        background-color: #F9FAFB
+        padding: 96px 0 56px
+        margin-bottom: 72px
+        .product-list
+            display: flex
+            margin: 0 60px
+            div
+                color: #212529
+                background-color: white
+                box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.1)
+                border-radius: 4px
+                padding: 40px
+                text-align: center
+                flex: 1
+                margin-bottom: 40px
+                h1
+                    color: #707275
+                    font-size: 18px
+                    line-height: 32px
+                h2
+                    font-size: 28px
+                    font-weight: 600
+                h3
+                    font-size: 16px
+                img
+                    display: block
+                    margin: 50px auto 50px auto
+                    width: 80%
+                &.main
+                    box-shadow: inset 0px -6px 0px #305680, 0 10px 20px 0 rgba(0, 0, 0, 0.1)
+                    margin: 0 30px
+                    h2
+                        font-size: 42px
+                        font-weight: 600
+                    img
+                        margin: 60px auto
+                a
+                    color: #305680
+                    font-weight: 500
+            @media(max-width: 992px)
+                flex-direction: column
+                div.main
+                    margin: 0 0 40px
+        a
+            color: #707275
+            font-weight: 500
+            margin-top: 56px
+            text-align: center
+
     #tb-customers
-        padding-top: 40px
-        padding-bottom: 40px
-        .customers-container
+        width: 100%
+        background-color: #FBFBFB
+        padding: 50px 0
+        text-align: justify
+        -moz-text-align-last: justify
+        text-align-last: justify
+        display: none
+        @media(min-width: 992px)
+            display: block
+        img
+            height: 60px
+            margin-bottom: 20px
+        main
             display: flex
             flex-wrap: wrap
-            justify-content: center
-            .customer-block
-                opacity: 0
-                &.animated
-                    opacity: 1
-                max-width: 100%
-                padding: 20px 30px
-                width: 230px
-                a
-                    cursor: pointer
-                    color: $blue-03
-                    text-decoration: none
-                    &:hover
-                        text-decoration: underline
-                p
-                    margin: 15px 0
-
-    .oceanNodes
-        &#intro
-            padding-top: 40px
-            padding-bottom: 40px
-            main:first-child
-                .image-wrapper
-                    max-width: 100%
-                    img
-                        max-width: 491px
-        &#main-features
-            .image-wrapper
-                top: 0
-                transform: translateY(0)
-            .image-wrapper, .content
-                animation-duration: 1.5s
-        .image-wrapper, .content
-            opacity: 0
-            &.animated
-                opacity: 1
+            flex-direction: row
+            justify-content: space-around
+            align-items: center
+            padding: 0 50px
+            a
+                display: block
+                padding: 10px
+                object
+                    pointer-events: none
 
     .demoDashboardButton
         text-align: center
@@ -283,24 +354,6 @@ $feature-box-div-margin-bottom: 40px
                 .tb-sub-title
                     font-size: 20px
                     margin-bottom: 60px
-        .oceanNodes
-            &#intro
-                main:nth-child(1)
-                    padding-right: 0
-                    h3, p
-                        text-align: center
-                    .image-wrapper
-                        position: relative
-                        display: block
-                        float: none
-                        max-width: 100%
-                        transform: none
-                    .content
-                        display: block
-            &#main-features
-                main
-                    .image-wrapper
-                        max-width: 25%
 
         #features
             padding-bottom: 60px
@@ -325,27 +378,10 @@ $feature-box-div-margin-bottom: 40px
                 display: block
         section, header
             main
-                max-width: 1000px
+                max-width: 1400px
         footer
             main
-                max-width: 1000px
-
-        .oceanNodes
-            &#intro
-                main:nth-child(1)
-                    max-width: 1000px
-                    padding-right: 475px
-
-                    h3, p
-                        text-align: left
-
-                    .image-wrapper
-                        position: absolute
-                        max-width: 48%
-                        transform: translateY(-50%)
-
-                        img
-                            max-width: 425px
+                max-width: 1400px
 
 @media screen and (min-width: 1250px)
     #home
