@@ -172,7 +172,7 @@ In this example we'll show steps to upgrade ThingsBoard from 2.4.3PE to 3.0.1PE.
 Make a backup of your data:
 
 ```
-sudo cp -r ~/.mytbpe-data ./
+sudo cp -r ~/.mytbpe-data ./.mytbpe-data-2-4-3-backup
 ```
 {: .copy-code}
 
