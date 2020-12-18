@@ -40,9 +40,6 @@ defaultActivePricingSection: thingsboard-cloud
         <div class="pricing-content-header row">
             <div class="pricing-content-description pricing-cloud active col-lg-6">
                 <h2>Subscription plans</h2>
-                <div class="pricing-content-details">
-                    All subscription plans include <b>unlimited</b> customers, dashboards, integrations, api calls, datapoints & messages
-                </div>
             </div>
         </div>
         <div class="pricing-div">
@@ -52,7 +49,7 @@ defaultActivePricingSection: thingsboard-cloud
                         <div class="pricing-square">
                             <h2>Maker</h2>
                             <div class="pricing-square-description">
-                                <p>To become familiar with ThingsBoard PE features</p>
+                                <p>Become familiar with ThingsBoard features</p>
                             </div>
                             <h4 class="pricing-square-price mb-0">
                                 $29
@@ -64,7 +61,8 @@ defaultActivePricingSection: thingsboard-cloud
                                 </a>
                             </div>
                             <div class="pricing-square-item">Up to 10 Devices</div>
-                            <div class="pricing-square-item">Up to 10 Assets</div> 
+                            <div class="pricing-square-item">Up to 10 Assets</div>
+                            <div class="pricing-square-item" data-faq-id="data-points">10 million data points</div> 
                             <div class="pricing-square-item" data-faq-id="community-support">
                                 Community support
                             </div>
@@ -74,7 +72,7 @@ defaultActivePricingSection: thingsboard-cloud
                         <div class="pricing-square">
                             <h2>Prototype</h2>
                             <div class="pricing-square-description">
-                                <p>The subscription is designed for PoCs and prototyping</p>
+                                <p>For PoCs and MVPs</p>
                             </div>
                             <h4 class="pricing-square-price mb-0">
                                 $149
@@ -87,6 +85,7 @@ defaultActivePricingSection: thingsboard-cloud
                             </div>
                             <div class="pricing-square-item">Up to 100 Devices</div>
                             <div class="pricing-square-item">Up to 100 Assets</div>
+                            <div class="pricing-square-item" data-faq-id="data-points">100 million data points</div> 
                             <div class="pricing-square-item" data-faq-id="community-support">
                                 Community support
                             </div>
@@ -110,8 +109,9 @@ defaultActivePricingSection: thingsboard-cloud
                             </div>
                             <div class="pricing-square-item">Up to 500 Devices</div>
                             <div class="pricing-square-item">Up to 500 Assets</div>
+                            <div class="pricing-square-item" data-faq-id="data-points">500 million data points</div> 
                             <div class="pricing-square-item" data-faq-id="subscription-support">
-                                Email support within <b>36 hours</b>
+                                Email support
                             </div>
                             <div class="pricing-square-item"><b>White-labeling</b></div>
                         </div>
@@ -120,7 +120,7 @@ defaultActivePricingSection: thingsboard-cloud
                         <div class="pricing-square">
                             <h2>Enterprise</h2>
                             <div class="pricing-square-description">
-                                <p>Consider youself a Fortune 500 company in the field? Subscribe this plan</p>
+                                <p>Consider yourself a Fortune 500 company in the field?</p>
                             </div>
                             <h4 class="pricing-square-price mb-0">
                                 Custom
@@ -132,8 +132,9 @@ defaultActivePricingSection: thingsboard-cloud
                             </div>
                             <div class="pricing-square-item">Unlimited number of Devices</div> 
                             <div class="pricing-square-item">Unlimited number of Assets</div>
+                            <div class="pricing-square-item" data-faq-id="data-points">Unlimited data points</div> 
                             <div class="pricing-square-item" data-faq-id="subscription-support">
-                                Email support within <b>12 hours</b>
+                                Custom <b>SLA</b>
                             </div>
                             <div class="pricing-square-item"><b>White-labeling</b></div>
                         </div>
@@ -183,7 +184,7 @@ defaultActivePricingSection: thingsboard-cloud
         <div id="payAsYouGoHeader" class="pricing-content-description col-lg-6">
             <h2>Subscription plans</h2>
             <div class="pricing-content-details">
-                All subscription plans include <b>unlimited</b> customers, dashboards, integrations, api calls, datapoints & messages
+                All subscription plans include <b>unlimited</b> customers, dashboards, integrations, api calls, data points & messages
             </div>
         </div>
         <div id="perpetualHeader" class="pricing-content-description col-lg-6">
@@ -290,7 +291,7 @@ defaultActivePricingSection: thingsboard-cloud
                     <div class="pricing-square">
                         <h2>Enterprise</h2>
                         <div class="pricing-square-description">
-                            <p>Consider youself a Fortune 500 company in the field? Subscribe this plan</p>
+                            <p>Consider yourself a Fortune 500 company in the field? Subscribe this plan</p>
                         </div>
                         <h4 class="pricing-square-price mb-0">
                             $500
@@ -608,6 +609,23 @@ defaultActivePricingSection: thingsboard-cloud
                 </p>    
             </div>    
         </div>
+        <h3 id="section3">ThingsBoard Cloud</h3>
+        <div class="item" data-tag="h4" data-item-id="data-points" data-title="Is there any API Limits?">
+            <div class="container">
+                <p>
+                Yes, ThingsBoard Cloud subscriptions have Entity, API and Rate limits. See subscription <a href="/products/paas/subscription/" target="blank">documentation</a> for more details.
+                </p>  
+            </div>    
+        </div>
+        <div class="item" data-tag="h4" data-item-id="data-points" data-title="What is a data point?">
+            <div class="container">
+                <p>
+                Data point is a key-value pair that your device telemetry messages contain. For example, the message <i>{"temperature":42, "humidity": 60}</i> contains two data points.  
+                Each ThingsBoard Cloud subscription plan has a maximum number of data points that can be sent from all your devices per month. 
+                There are other <a href="/products/paas/subscription/" target ="blank">important parameters</a> of the subscription.
+                </p>  
+            </div>    
+        </div>         
         <h3 id="section3">Support</h3>
         <div class="item" data-tag="h4" data-item-id="community-support" data-title="What does community support mean?">
             <div class="container">
@@ -631,7 +649,7 @@ defaultActivePricingSection: thingsboard-cloud
         <div class="item" data-tag="h4" data-item-id="subscription-support" data-title="What issues included in email support?">
             <div class="container">
                 <p>
-                For StartUp, Business and Enterprise licensees as well as Perpetual licensees we provide email response on any issue within certain amount of time, if separate support agreement is not signed. Solution time depends on issue severity and may require a meeting with out team member
+                For StartUp, Business and Enterprise licensees as well as Perpetual licensees we provide email response on any issue within certain amount of time, if separate support agreement is not signed. Solution time depends on issue severity and may require a meeting with out team member.
                 </p>    
             </div>    
         </div>
