@@ -19,5 +19,3 @@ toc:
 #      path: /docs/reference/1m-devices-test/
     - title: Single instance performance on different AWS instances
       path: /docs/reference/performance-aws-instances/
-- title: ThingsBoard PE Cloud Getting Started
-  path: /docs/reference/pe-demo-getting-started/
