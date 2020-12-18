@@ -33,7 +33,7 @@ See video tutorial below for this sample with additional detailed demonstration 
 - Any development board with ESP32-PICO-D4 chip.  
   For this sample we were using [ESP32-PICO-KIT mini development board](https://docs.espressif.com/projects/esp-idf/en/latest/get-started/get-started-pico-kit.html#overview)  
     <img src="/images/samples/esp32/ota/esp32_board.png" width="400"/>
-- Account in ThingsBoard application. You can use your own instance or [ThingsBoard PE Cloud](https://cloud.thingsboard.io)  
+- Account in ThingsBoard application. You can use your own instance or [ThingsBoard Cloud](https://thingsboard.cloud)  
   We need to say that this sample works well with both CE and PE, but we use PE cloud since it has more features and in the next sample we will show how to do mass firmware updates for multiple devices simultaneously.
 
 ## ThingsBoard configuration

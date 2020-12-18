@@ -16,7 +16,7 @@ In this example, we'll study trip animation widget functionality.
 
 This widget might be useful for different use cases, but mainly it might be used for a Tracking in a realtime, researching movement of the entities and visualizing it.
 
-This guide was written on a [cloud](https://cloud.thingsboard.io) version-2.4.2 of ThingsBoard Professional Edition, so some steps will be a little different from Community Edition. 
+This guide was written for [cloud](https://thingsboard.cloud), so some steps will be a little different from Community Edition. 
 
 It's capable of all further versions.
 
