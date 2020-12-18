@@ -185,22 +185,16 @@ docker stop [container_id]
 Upgrade old postgres to the new one:
 
 ```
-docker run --rm -v ~/.mytbpe-data/db/:/var/lib/postgresql/9.6/data -v ~/.mytbpe-data-11n/db/:/var/lib/postgresql/11/data --env LANG=C.UTF-8 tianon/postgres-upgrade:9.6-to-11
-```
-{: .copy-code}
-
-Copy .firstlaunch and .upgradeversion files within ~/.mytbpe-data-11n:
-
-```
-sudo cp ~/.mytbpe-data/.firstlaunch ~/.mytbpe-data-11n
-sudo cp ~/.mytbpe-data/.upgradeversion ~/.mytbpe-data-11n
+docker run --rm -v ~/.mytbpe-data/db/:/var/lib/postgresql/9.6/data -v ~/.mytbpe-data-temp/db/:/var/lib/postgresql/11/data --env LANG=C.UTF-8 tianon/postgres-upgrade:9.6-to-11
+sudo rm -rf ~/.mytbpe-data/db
+sudo mv ~/.mytbpe-data-temp/db ~/.mytbpe-data/db
 ```
 {: .copy-code}
 
 Start the new version of TB with following command:
 
 ```
-docker run -it -v ~/.mytbpe-data-11n:/data --rm store/thingsboard/tb-pe:3.0.1PE bash
+docker run -it -v ~/.mytbpe-data:/data --rm store/thingsboard/tb-pe:3.0.1PE bash
 ```
 {: .copy-code}
 
@@ -239,8 +233,15 @@ services:
       INTEGRATIONS_RPC_PORT: 50052
       PGDATA: /data/db
     volumes:
-      - ~/.mytbpe-data-11n:/data
+      - ~/.mytbpe-data:/data
       - ~/.mytbpe-logs:/var/log/thingsboard
+```
+{: .copy-code}
+
+Start ThingsBoard:
+
+```
+docker-compose up
 ```
 {: .copy-code}
 
@@ -260,9 +261,10 @@ docker-compose exec mytbpe sh -c "pg_dump -U postgres thingsboard > /data/things
 Then you need to stop service, create a new directory for the database and set permissions:
 
 ```
+sudo cp -r ~/.mytbpe-data ./.mytbpe-data-backup
 docker-compose down
-mkdir ~/.mytbpe-data-db
-sudo chown -R 799:799 ~/.mytbpe-data-11n
+sudo rm -rf ~/.mytbpe-data/db
+sudo chown -R 799:799 ~/.mytbpe-data
 sudo chown -R 799:799 ~/.mytbpe-logs
 ```
 {: .copy-code}
@@ -274,7 +276,7 @@ version: '2.2'
 services:
   mytbpe:
     restart: always
-    image: "store/thingsboard/tb-pe:{{ site.release.pe_full_ver }}"
+    image: "store/thingsboard/tb-pe:3.1.0PE"
     ports:
       - "8080:8080"
       - "1885:1883"
@@ -285,7 +287,7 @@ services:
       TB_LICENSE_SECRET: YOUR_SECRET_KEY
       TB_LICENSE_INSTANCE_DATA_FILE: /data/license.data
     volumes:
-      - ~/.mytbpe-data-11n:/data
+      - ~/.mytbpe-data:/data
       - ~/.mytbpe-logs:/var/log/thingsboard
   postgres:
     restart: always
@@ -296,8 +298,8 @@ services:
       POSTGRES_DB: thingsboard
       POSTGRES_PASSWORD: postgres
     volumes:
-      - ~/.mytbpe-data-db:/var/lib/postgresql/data
-      - ~/.mytbpe-data-11n:/dump_data
+      - ~/.mytbpe-data/db:/var/lib/postgresql/data
+      - ~/.mytbpe-data:/dump_data
 ```
 {: .copy-code}
 
@@ -320,6 +322,15 @@ docker-compose exec postgres sh -c "psql -U postgres thingsboard < /dump_data/th
 Upgrade ThingsBoard:
 
 ```
+docker-compose run mytbpe upgrade-tb.sh
+```
+{: .copy-code}
+
+Open docker-compose.yml and change version from 3.1.0PE to {{ site.release.pe_full_ver }}. 
+Then call the following commands:
+
+```
+sudo sh -c "echo '3.1.0' > ~/.mytbpe-data/.upgradeversion"
 docker-compose run mytbpe upgrade-tb.sh
 ```
 {: .copy-code}
