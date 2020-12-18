@@ -492,7 +492,7 @@
     }
   },
   {
-    "type": ["Asia","Europe", "Middle East"],
+    "type": ["Asia", "Europe", "Middle East"],
     "country": ["Kazakhstan", "Uzbekistan", "Turkmenistan", "Tajikistan", "Kyrgyzstan", "Armenia", "Azerbaijan", "Moldova", "Russia", "Belarus"],
     "name": "Syssoft LLC",
     "contact": {
@@ -576,11 +576,11 @@
     }
   },
   {
-    "type": ["Africa", "Asia", "Middle East"],
-    "country": ["Turkey", "Eritrea", "Sudan", "Egypt", "Libya", "Tunisia", "Algeria", "Morocco", "Western Sahara"],
-    "name": "Başarı Mühendislik",
+    "type": ["Europe", "Africa", "Asia", "Middle East"],
+    "country": ["Turkey", "Georgia", "Kazakhstan", "Azerbaijan", "Tajikistan", "Turkmenistan", "Uzbekistan", "Kyrgyzstan", "Tunisia", "Libya", "Iraq", "Albania", "Montenegro", "Bosnia and Herzegovina"],
+    "name": "Basari Muhendislik",
     "contact": {
-      "href": "info@basarimuhendislik.com"
+      "href": "sales@basarimuhendislik.com"
     },
     "site": {
       "href": "basarimuhendislik.com",
