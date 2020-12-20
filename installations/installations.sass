@@ -121,8 +121,23 @@
                     font-size: 18px
                     line-height: 27px
 
-            img
-                width: 100%
+                .image-content
+                    position: relative
+                    img
+                        width: 75%
+                        position: absolute
+                        box-shadow: 0 18px 60px rgba(0, 0, 0, 0.127868)
+                        border-radius: 4px
+                        .bg
+                            top: 0
+                            right: 0
+                            z-index: 1
+                            opacity: 0.5
+
+                        .main
+                            left: 0
+                            top: 25px
+                            z-index: 2
 
         a, button
             &.btn-blue
@@ -233,7 +248,6 @@
                         justify-content: start
 
                     .deployment-card-block
-                        max-width: 100%
                         background-color: #fff
                         margin: 0 10px 10px 0
                         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15)
@@ -249,7 +263,7 @@
                             align-content: center
                             img
                                 flex: 0 0 auto
-                                object-fit: scale-down
+                                object-fit: contain
                                 max-width: 90%
                                 max-height: 85%
                                 vertical-align: middle
