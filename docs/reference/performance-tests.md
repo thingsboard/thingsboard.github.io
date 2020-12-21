@@ -107,7 +107,7 @@ cqlsh 172.21.12.100 -f /usr/share/thingsboard/data/system-data.cql
 cqlsh 172.21.12.100 -f /usr/share/thingsboard/data/demo-data.cql 
 ```
 
-Once Cassandra cluster setup is done please run ThingsBoard AMI instance. You need to update **thingsbaord.yml** config to use Cassandra cluster instead of a local instance:
+Once Cassandra cluster setup is done please run ThingsBoard AMI instance. You need to update **thingsboard.yml** config to use Cassandra cluster instead of a local instance:
 
 ```bash
 sudo nano /etc/thingsboard/conf/thingsboard.yml
