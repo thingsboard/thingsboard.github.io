@@ -121,23 +121,26 @@
                     font-size: 18px
                     line-height: 27px
 
-                .image-content
-                    position: relative
-                    img
-                        width: 75%
-                        position: absolute
-                        box-shadow: 0 18px 60px rgba(0, 0, 0, 0.127868)
-                        border-radius: 4px
-                        .bg
-                            top: 0
-                            right: 0
-                            z-index: 1
-                            opacity: 0.5
-
-                        .main
-                            left: 0
-                            top: 25px
-                            z-index: 2
+            .image-content
+                position: relative
+                width: 100%
+                padding-top: 60%
+                @media (min-width: 768px)
+                    padding-top: 50%
+                img
+                    width: 75%
+                    position: absolute
+                    box-shadow: 0 18px 60px rgba(0, 0, 0, 0.127868)
+                    border-radius: 4px
+                    &.bg
+                        top: 0
+                        right: 0
+                        z-index: 1
+                        opacity: 0.5
+                    &.main
+                        left: 0
+                        top: 3rem
+                        z-index: 2
 
         a, button
             &.btn-blue
@@ -264,8 +267,9 @@
                             img
                                 flex: 0 0 auto
                                 object-fit: contain
-                                max-width: 90%
-                                max-height: 85%
+                                width: 100%
+                                height: 100%
+                                padding: 15px 25px
                                 vertical-align: middle
 
             .divider
