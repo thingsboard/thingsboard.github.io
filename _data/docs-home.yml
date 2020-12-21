@@ -1,7 +1,7 @@
 bigheader: "ThingsBoard Documentation"
 abstract: "Documentation for using ThingsBoard IoT Platform."
 toc:
-- title: ThingsBoard Documentation
+- title: Documentation
   path: /docs/
 - title: What is ThingsBoard?
   path: /docs/getting-started-guides/what-is-thingsboard/
@@ -11,6 +11,12 @@ toc:
   section:
   - title: Entities and relations
     path: /docs/user-guide/entities-and-relations/
+  - title: Tenant Profiles
+    path: /docs/user-guide/tenant-profiles/
+    new: true
+  - title: Device Profiles
+    path: /docs/user-guide/device-profiles/
+    new: true
   - title: Working with device attributes
     path: /docs/user-guide/attributes/
   - title: Working with telemetry data
@@ -21,6 +27,8 @@ toc:
     path: /docs/user-guide/device-connectivity-status/
   - title: Claiming Devices
     path: /docs/user-guide/claiming-devices/
+  - title: Device provisioning
+    path: /docs/user-guide/device-provisioning/
     new: true
   - title: Entity Views
     path: /docs/user-guide/entity-views/
@@ -149,10 +157,8 @@ toc:
   - title: Notifications and Alarms on your smartphone using Telegram Bot
     path: /docs/user-guide/rule-engine-2-0/tutorials/integration-with-telegram-bot/
 - title: Analytics
-  new: true
   section:
   - title: Trendz Analytics
-    new: true
     section:
       - title: Getting Started
         path: /docs/trendz/
@@ -221,6 +227,8 @@ toc:
     path: /docs/user-guide/device-credentials/
   - title: Access Token based authentication
     path: /docs/user-guide/access-token/
+  - title: Basic MQTT Credentials
+    path: /docs/user-guide/basic-mqtt/
   - title: X.509 Certificate based authentication
     path: /docs/user-guide/certificates/
 - title: Administration UI
@@ -245,13 +253,14 @@ toc:
       path: /docs/user-guide/ui/widget-library/
   - title: Dashboards
     path: /docs/user-guide/ui/dashboards/
+  - title: SMS Provider Settings
+    path: /docs/user-guide/ui/sms-provider-settings/
   - title: Mail Settings
     path: /docs/user-guide/ui/mail-settings/
   - title: Aliases
     path: /docs/user-guide/ui/aliases/
 - title: IoT Gateway
   path: /docs/iot-gateway/
-  new: true
   section:
   - title: What is ThingsBoard IoT Gateway?
     path: /docs/iot-gateway/what-is-iot-gateway/
@@ -312,6 +321,17 @@ toc:
         path: /docs/iot-gateway/guides/how-to-enable-remote-shell/
   - title: IoT Gateway Roadmap
     path: /docs/iot-gateway/roadmap/
+- title: ThingsBoard Cloud
+  new: true
+  section:
+    - title: What is ThingsBoard Cloud?
+      path: /products/paas/
+    - title: Subscriptions
+      path: /products/paas/subscription/
+    - title: Plan and billing
+      path: /products/paas/billing-info/
+    - title: Domains
+      path: /products/paas/domains/
 - title: Troubleshooting
   path: /docs/user-guide/troubleshooting/
 - title: Contribution Guide

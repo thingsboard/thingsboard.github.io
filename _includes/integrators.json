@@ -1,0 +1,614 @@
+[
+  {
+    "type": ["Asia"],
+    "country": ["Vietnam", "China", "Laos", "Thailand", "Cambodia", "Malaysia", "Singapore", "Brunei", "Philippines", "Taiwan"],
+    "name": "ACTE Solutions",
+    "contact": {
+      "href": "contact@acte-solutions.com"
+    },
+    "site": {
+      "href": "acte-solutions.com",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Asia"],
+    "country": ["India"],
+    "name": "AMS-India",
+    "contact": {
+      "href": "contact@ams-india.co.in"
+    },
+    "site": {
+      "href": "ams-india.co.in",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Asia"],
+    "country": ["Taiwan"],
+    "name": "ArtistanTech Computer Engineering Co.Ltd.",
+    "contact": {
+      "href": "vincent_lin@artt.com.tw"
+    },
+    "site": {
+      "href": "artt.com.tw",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Europe"],
+    "country": ["France"],
+    "name": "arx iT",
+    "contact": {
+      "href": "info@arxit.com"
+    },
+    "site": {
+      "href": "arxit.com",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Asia"],
+    "country": ["China"],
+    "name": "AugeSmart Inc.",
+    "contact": {
+      "href": "service@augesmart.com"
+    },
+    "site": {
+      "href": "augesmart.com",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Europe"],
+    "country": ["Spain"],
+    "name": "BCNSoluciona (Querly S.L.)",
+    "contact": {
+      "href": "info@bcnsoluciona.com"
+    },
+    "site": {
+      "href": "bcnsoluciona.com",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Asia"],
+    "country": ["India"],
+    "name": "Bhavamish Solution",
+    "contact": {
+      "href": "inquiry@bhavamish.com"
+    },
+    "site": {
+      "href": "bhavamish.com",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Asia"],
+    "country": ["India"],
+    "name": "Bluetronics",
+    "contact": {
+      "href": "Info@bluetronics.co.in"
+    },
+    "site": {
+      "href": "bluetronics.co.in ",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Europe"],
+    "country": ["France"],
+    "name": "Cimyco",
+    "contact": {
+      "href": "contact@cimyco.com"
+    },
+    "site": {
+      "href": "cimyco.com",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["North America"],
+    "country": ["Canada"],
+    "name": "Citykinect Inc.",
+    "contact": {
+      "href": "info@citykinect.com"
+    },
+    "site": {
+      "href": "citykinect.com",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Asia"],
+    "country": ["Russia"],
+    "name": "Datastreams AI",
+    "contact": {
+      "href": "contact@dstreams.ai"
+    },
+    "site": {
+      "href": "",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Asia"],
+    "country": ["Malaysia"],
+    "name": "Delta Global Automation Sdn. Bhd.",
+    "contact": {
+      "href": "sales@deltaglobal.com.my"
+    },
+    "site": {
+      "href": "deltaglobal.com.my",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Europe"],
+    "country": ["Ukraine"],
+    "name": "DEPS",
+    "contact": {
+      "href": "deps@deps.ua"
+    },
+    "site": {
+      "href": "deps.ua",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Asia"],
+    "country": ["China"],
+    "name": "DEW Technology",
+    "contact": {
+      "href": "support@microraindrop.com"
+    },
+    "site": {
+      "href": "microraindrop.com",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Europe"],
+    "country": ["France"],
+    "name": "Eiffage",
+    "contact": {
+      "href": ""
+    },
+    "site": {
+      "href": "eiffage.com",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Europe"],
+    "country": ["Ukraine"],
+    "name": "Euristiq",
+    "contact": {
+      "href": "hello@euristiq.com"
+    },
+    "site": {
+      "href": "euristiq.com",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Australia and Oceania"],
+    "country": ["Australia"],
+    "name": "FEEL Digital Asset Strategy",
+    "contact": {
+      "href": "contact@feelvirtualreality.com.au"
+    },
+    "site": {
+      "href": "feelvirtualreality.com.au",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Europe"],
+    "country": ["Swizerland"],
+    "name": "Halley Technologies SA",
+    "contact": {
+      "href": "Haithem.bouajila@halley-technologies.ch"
+    },
+    "site": {
+      "href": "halley-technologies.ch",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Asia"],
+    "country": ["India"],
+    "name": "IBOT Control Systems Inc.",
+    "contact": {
+      "href": "connect@ibotcontrols.com"
+    },
+    "site": {
+      "href": "ibotcontrols.com",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Europe"],
+    "country": ["Italy"],
+    "name": "IBT Systems",
+    "contact": {
+      "href": "info@ibtsystems.it"
+    },
+    "site": {
+      "href": "ibtsystems.it",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Asia"],
+    "country": ["Russia", "Kazakhstan", "Uzbekistan", "Turkmenistan", "Tajikistan", "Kyrgyzstan"],
+    "name": "ICBcom",
+    "contact": {
+      "href": "sales@icbcom.ru"
+    },
+    "site": {
+      "href": "icbcom.ru",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Asia", "Australia and Oceania"],
+    "country": ["Australia", "New Zeland", "Mongolia"],
+    "name": "InSig Technologies Pty. Ltd.",
+    "contact": {
+      "href": "info@insigtech.com.au"
+    },
+    "site": {
+      "href": "insigtech.com.au",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Europe"],
+    "country": ["Norway"],
+    "name": "IoT solutions AS",
+    "contact": {
+      "href": "bt@iotsolutions.no"
+    },
+    "site": {
+      "href": "iotsolutions.no",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Europe"],
+    "country": ["Germany", "Austria", "Switzerland"],
+    "name": "it-novum GmbH",
+    "contact": {
+      "href": "info@it-novum.com"
+    },
+    "site": {
+      "href": "it-novum.com",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Asia", "Middle East"],
+    "country": ["United Arab Emirates"],
+    "name": "Link971",
+    "contact": {
+      "href": "info@link971.ae"
+    },
+    "site": {
+      "href": "link971.ae",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Asia"],
+    "country": ["India"],
+    "name": "Logicon Technosolutions Pvt. Ltd.",
+    "contact": {
+      "href": "support@logicontech.com"
+    },
+    "site": {
+      "href": "logicontech.com",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Asia"],
+    "country": ["Japan"],
+    "name": "MACNICA, Inc.",
+    "contact": {
+      "href": ""
+    },
+    "site": {
+      "href": "macnica.co.jp",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Asia"],
+    "country": ["Sri-Lanka"],
+    "name": "N-able Pvt. Ltd.",
+    "contact": {
+      "href": "info@n-able.biz"
+    },
+    "site": {
+      "href": "n-able.biz",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Asia"],
+    "country": ["India"],
+    "name": "NistantriTech Pvt. Ltd.",
+    "contact": {
+      "href": "contact@nistantritech.com"
+    },
+    "site": {
+      "href": "nistantritech.com",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Asia", "Australia and Oceania"],
+    "country": ["India", "Australia"],
+    "name": "ProtoConvert",
+    "contact": {
+      "href": "sales@protoconvert.com"
+    },
+    "site": {
+      "href": "protoconvert.com",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Europe"],
+    "country": ["Spain"],
+    "name": "Risk Factor",
+    "contact": {
+      "href": "info@risk-factor.biz"
+    },
+    "site": {
+      "href": "risk-factor.biz",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Europe"],
+    "country": ["Ukraine"],
+    "name": "RPA Romsat Ltd.",
+    "contact": {
+      "href": "info@romsat.ua"
+    },
+    "site": {
+      "href": "romsat.ua",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Europe"],
+    "country": ["United Kingdom"],
+    "name": "SanCloud Ltd.",
+    "contact": {
+      "href": "info@sancloud.co.uk"
+    },
+    "site": {
+      "href": "sancloud.co.uk",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Asia"],
+    "country": ["India"],
+    "name": "SAR",
+    "contact": {
+      "href": "Contact@sar-bptc.com"
+    },
+    "site": {
+      "href": "sar-btpc.com",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Africa"],
+    "country": ["Nigeria"],
+    "name": "Sawtel Technologies Ltd.",
+    "contact": {
+      "href": "info@sawtelnigeria.com"
+    },
+    "site": {
+      "href": "sawtelnigeria.com",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Europe"],
+    "country": ["Germany"],
+    "name": "SienerSoft GmbH",
+    "contact": {
+      "href": "infos@sienersoft.de"
+    },
+    "site": {
+      "href": "sienersoft.de",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Europe"],
+    "country": ["Czechia"],
+    "name": "Simac",
+    "contact": {
+      "href": "info@simac.cz"
+    },
+    "site": {
+      "href": "simac.cz",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Europe"],
+    "country": ["Romania"],
+    "name": "S.C. Skybase Solar S.R.L.",
+    "contact": {
+      "href": "skybasesolar.bacau@gmail.com"
+    },
+    "site": {
+      "href": "",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Europe"],
+    "country": ["Ukraine"],
+    "name": "Smartico",
+    "contact": {
+      "href": "office@smartico.biz"
+    },
+    "site": {
+      "href": "smartico.biz",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Europe"],
+    "country": ["Hungary"],
+    "name": "SoftOne Ltd.",
+    "contact": {
+      "href": "support@softone.hu"
+    },
+    "site": {
+      "href": "softone.hu",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Asia"],
+    "country": ["Indonesia"],
+    "name": "Solu Filantropi Teknologi",
+    "contact": {
+      "href": "info@solu.co.id"
+    },
+    "site": {
+      "href": "solu.co.id",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Asia", "Europe", "Middle East"],
+    "country": ["Kazakhstan", "Uzbekistan", "Turkmenistan", "Tajikistan", "Kyrgyzstan", "Armenia", "Azerbaijan", "Moldova", "Russia", "Belarus"],
+    "name": "Syssoft LLC",
+    "contact": {
+      "href": "info@syssoft.ru"
+    },
+    "site": {
+      "href": "syssoft.ru",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Asia"],
+    "country": ["India"],
+    "name": "TechYugadi IT Solutions",
+    "contact": {
+      "href": "contact@techyugadi.com"
+    },
+    "site": {
+      "href": "techyugadi.com ",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["North America"],
+    "country": ["Canada"],
+    "name": "Teldio Corp.",
+    "contact": {
+      "href": "sales@teldio.com"
+    },
+    "site": {
+      "href": "teldio.com",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Africa"],
+    "country": ["South Africa"],
+    "name": "Tesla Water",
+    "contact": {
+      "href": "info@teslawater.com"
+    },
+    "site": {
+      "href": "teslawater.com",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Asia", "Middle East"],
+    "country": ["Israel"],
+    "name": "Tom Zamir",
+    "contact": {
+      "href": "tom@iot-experts.net"
+    },
+    "site": {
+      "href": "iot-experts.net",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Asia"],
+    "country": ["India"],
+    "name": "Velotech Solutions",
+    "contact": {
+      "href": "velotechsolutions@gmail.com"
+    },
+    "site": {
+      "href": "velotechsolutions.com",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Africa", "Asia", "Middle East"],
+    "country": ["Turkey", "Eritrea", "Sudan", "Egypt", "Libya", "Tunisia", "Algeria", "Morocco", "Western Sahara"],
+    "name": "Volsoft Ltd.",
+    "contact": {
+      "href": "hello@volsoft.com.tr"
+    },
+    "site": {
+      "href": "volsoft.com.tr",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Europe", "Africa", "Asia", "Middle East"],
+    "country": ["Turkey", "Georgia", "Kazakhstan", "Azerbaijan", "Tajikistan", "Turkmenistan", "Uzbekistan", "Kyrgyzstan", "Tunisia", "Libya", "Iraq", "Albania", "Montenegro", "Bosnia and Herzegovina"],
+    "name": "Basari Muhendislik",
+    "contact": {
+      "href": "sales@basarimuhendislik.com"
+    },
+    "site": {
+      "href": "basarimuhendislik.com",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["North America", "South America"],
+    "country": ["United States", "Belize", "Panama", "Peru", "Colombia", "Argentina"],
+    "name": "Voxney PLSC, Inc.",
+    "contact": {
+      "href": "trading@voxney.com"
+    },
+    "site": {
+      "href": "voxney.com",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Asia"],
+    "country": ["Thailand"],
+    "name": "Wireless Solution Asia Co.,Ltd.",
+    "contact": {
+      "href": "+66 (88) 298-89-66"
+    },
+    "site": {
+      "href": "wirelesssolution.asia",
+      "target": "_blank"
+    }
+  }
+]

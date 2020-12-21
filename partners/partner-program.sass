@@ -13,6 +13,27 @@ $pricing-table-border: rgba(255, 255, 255, 0.39)
   .flyout-button
     display: none
 
+  #integratorsContent
+    position: relative
+    width: 100%
+    margin: auto
+    * + h2, * + h3, * + h4, * + h5, * + h6
+
+    h1
+      text-align: center
+      margin-bottom: 0px
+      font-weight: 300
+      font-size: 48px
+    h2
+      font-size: 32px
+      line-height: 1.5em
+    h3
+      font-weight: 300
+    h5
+      font-size: 18px
+      line-height: 1.5em
+      font-weight: 300
+
   #partnerProgramContent
     color: #424242
     position: relative
@@ -214,7 +235,8 @@ $pricing-table-border: rgba(255, 255, 255, 0.39)
           height: 60px
 
 @media screen and (min-width: 750px)
-  #partner-program
+    #partner-program
+    #integratorsContent
     #partnerProgramContent
       div#partner-program-pricing
         margin-top: 162px
@@ -278,6 +300,9 @@ $pricing-table-border: rgba(255, 255, 255, 0.39)
       main
         max-width: 1000px
 
+    #integratorsContent
+      width: calc(100% - 200px)
+
     #partnerProgramContent
       width: calc(100% - 400px)
       div#partner-program-pricing
@@ -287,6 +312,9 @@ $pricing-table-border: rgba(255, 255, 255, 0.39)
 
 @media screen and (min-width: 1500px)
   #partner-program
+    #integratorsContent
+          width: calc(100% - 468px)
+
     #partnerProgramContent
       width: calc(100% - 700px)
       div#partner-program-pricing
@@ -298,6 +326,7 @@ $pricing-table-border: rgba(255, 255, 255, 0.39)
 
 @media screen and (min-width: 1600px)
   #partner-program
+    #integratorsContent
     #partnerProgramContent
       div#partner-program-pricing
         table

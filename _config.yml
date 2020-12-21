@@ -58,10 +58,14 @@ plugins:
   - jekyll-redirect-from
   - jekyll-seo-tag
 
+collections:
+  careers:
+    output: true
+
 release:
-  branch: release-3.1
-  ce_ver: 3.1.1
-  ce_tag: v3.1.1
-  ce_full_ver: 3.1.1
-  pe_ver: 3.1.1pe
-  pe_full_ver: 3.1.1PE
+  branch: release-3.2
+  ce_ver: 3.2
+  ce_tag: v3.2
+  ce_full_ver: 3.2.0
+  pe_ver: 3.2pe
+  pe_full_ver: 3.2.0PE

@@ -5,6 +5,9 @@ description: ThingsBoard IoT Platform troubleshooting
 
 ---
 
+
+### Logs
+
 ThingsBoard logs are stored in the following directory:
  
 ```bash
@@ -16,6 +19,12 @@ You can issue the following command in order to check if there are any errors on
 ```bash
 cat /var/log/thingsboard/thingsboard.log | grep ERROR
 ```
+
+### Metrics
+
+You may enable prometheus metrics by setting environment variable `METRICS_ENDPOINTS_EXPOSE` to value `prometheus` in the configuration file.
+
+These metrics are exposed at the path: `https://<yourhostname>/actuator/prometheus` which can be scraped by prometheus (No authentication required).
 
 ### Getting help
 

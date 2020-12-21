@@ -10,7 +10,7 @@ hidetoc: "true"
 
 This guide provides step-by-step instructions for connecting the Abeeway Micro Tracker and Abeeway Industrial Tracker to ThingsBoard Professional Edition (PE).
 The connection is through the IoT network in the new global standard LoRaWAN and ThingPark Wireless OSS intelligent logger (Actility).
-In this guide, we will use the free ThingsBoard PE demo server [cloud.thingsboard.io](https://cloud.thingsboard.io/signup) in this guide. 
+In this guide, we will use the free ThingsBoard PE demo server [thingsboard.cloud](https://thingsboard.cloud/signup) in this guide. 
 This guide will be useful to anyone who wants to connect their trackers manufactured by Abeeway or another industrial IoT application to the LoRaWAN network.
 
 ![image](/images/samples/abeeway/actility_dashboard_example.png)
@@ -24,7 +24,7 @@ We assume:
 - You are registered on the Actility [website](https://www.actility.com/).
 - You have at least one Abeeway Micro Tracker or Abeeway Industrial Tracker that is already connected  with ACTILITY THINGPARK IoT NETWORK and is active.
 - We also assume you already have a ThingsBoard PE server or free demo account. 
-Otherwise you can register for a 30-days free demo account here: [cloud.thingsboard.io](https://cloud.thingsboard.io/signup).
+Otherwise you can register for a 30-days free demo account here: [thingsboard.cloud](https://thingsboard.cloud/signup).
 We expect you to have at least a basic knowledge about ThingsBoard, so we do recommend to complete the [Getting Started](/docs/getting-started-guides/helloworld) guide.
  
  

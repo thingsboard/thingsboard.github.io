@@ -1,0 +1,22 @@
+<svg width="57" height="60" viewBox="0 0 57 60" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<style>
+svg .img {
+opacity: 0;
+transition-duration: 0.5s;
+}
+svg .img:hover {
+opacity: 1;
+transition-duration: 0.3s;
+}
+</style>
+<g opacity="0.15">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0.0224609 10.0416L27.7742 0.153687H27.7743L56.2733 9.86575H56.2734L51.659 46.6047L27.7743 59.8105H27.7742L4.26327 46.7585L0.0224609 10.0416ZM10.5254 45.594L27.818 7.11925L45.9457 45.7038L39.7714 45.594L35.97 36.8047H20.4572L16.9853 45.4841L10.5254 45.594ZM33.7068 31.663L27.8621 19.4461L22.7202 31.663H33.7068Z" fill="#0D2743"/>
+</g>
+<a xlink:href="https://angular.io/" target="_blank" xlink:title="Angular" xlink:alt="Angular">
+<g class="img">
+<rect width="57" height="60" fill="white" opacity="0"/>
+<path d="M0.0224609 10.0416L27.7742 0.153687L56.2733 9.86575L51.6589 46.5827L27.7742 59.8105L4.26327 46.7585L0.0224609 10.0416Z" fill="#E23237"/>
+<path d="M56.2735 9.86575L27.7744 0.153687V59.8105L51.6591 46.6047L56.2735 9.86575V9.86575Z" fill="#B52E31"/>
+<path d="M27.818 7.11926L10.5254 45.594L16.9853 45.4841L20.4572 36.8047H35.97L39.7714 45.594L45.9457 45.7038L27.818 7.11926ZM27.8621 19.4462L33.7068 31.663H22.7202L27.8621 19.4462Z" fill="white"/>
+</g></a>
+</svg>

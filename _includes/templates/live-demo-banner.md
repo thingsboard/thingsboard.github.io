@@ -5,10 +5,10 @@
   </td>
   <td>
       <br/>  
-      <p><b>IoT PaaS Demo</b></p>
+      <p><b>ThingsBoard cloud</b></p>
       <br/>  
-      <p>We recommend to use ThingsBoard Professional Edition <a href="https://cloud.thingsboard.io/signup"><b>Live Demo</b></a> for the seamless experience and the newest features from the latest source code!</p>
-      <p>Save time on the installation and configuration with several pre-provisioned devices, dashboards available in the cloud and pre-integrated email server to create new customer accounts and users.</p>
+      <p>We recommend to use <a href="https://thingsboard.cloud/signup"><b>ThingsBoard Cloud</b></a> - fully managed, scalable and fault-tolerant platform for your IoT applications</p>
+      <p>ThingsBoard Cloud is for everyone who would like to use ThingsBoard but don’t want to host their own instance of the platform.</p>
   </td>
 </tr>
 </table>

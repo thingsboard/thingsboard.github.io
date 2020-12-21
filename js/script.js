@@ -103,7 +103,7 @@ function px(n){
 
 var tb = (function () {
 	var HEADER_HEIGHT;
-	var OPEN_NAV_HEIGHT = 224;
+	var OPEN_NAV_HEIGHT = 240;
 	var html, header, navs, navItems, quickstartButton, hero, encyclopedia, footer, headlineWrapper;
 
 	$(document).ready(function () {

@@ -96,7 +96,7 @@ Integration should look like this:
       </tr>
       <tr>
           <td>Base URl</td>
-          <td>http://cloud.thingsboard.io</td>
+          <td>http://thingsboard.cloud</td>
       </tr>
       <tr>
           <td>Enable secrurity</td>
