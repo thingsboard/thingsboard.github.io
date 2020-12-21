@@ -109,6 +109,18 @@
                 @media (min-width: 992px)
                     padding-top: 32px
 
+                .button-container
+                    margin-top: 32px
+                    margin-bottom: 16px
+                    justify-content: center
+                    align-items: start
+                    & > .btn-blue
+                        margin-right: 1.5rem
+                        margin-bottom: 1rem
+                    @media (min-width: 992px)
+                        margin-bottom: 90px
+                        justify-content: start
+
             .install-content-details
                 padding-top: 12px
                 color: #707275
@@ -147,8 +159,6 @@
 
         a, button
             &.btn-blue
-                margin-top: 32px
-                margin-bottom: 32px
                 min-width: 200px
                 padding: 10px 50px
                 background-color: #2A7DEC
@@ -166,8 +176,6 @@
                     background-color: #fff
                     color: #2A7DEC
                     box-shadow: 0 6px 14px 0 rgba(0,0,0,0.15)
-                @media (min-width: 992px)
-                    margin-bottom: 106px
 
     a.btn-blue
         text-decoration: none
