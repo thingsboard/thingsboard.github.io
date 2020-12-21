@@ -3,4 +3,8 @@ abstract: "Getting Started with ThingsBoard IoT Platform."
 hidetoc: "true"
 toc:
 - title: Getting Started
+  path: /docs/getting-started/
+- title: Getting Started with ThingsBoard CE
   path: /docs/getting-started-guides/helloworld/
+- title: Getting Started with ThingsBoard PE
+  path: /docs/getting-started-guides/helloworld-pe/
