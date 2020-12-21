@@ -144,7 +144,7 @@ defaultActivePricingSection: thingsboard-pe
                         <div class="pricing-square">
                             <h2>ULTIMATE</h2>
                             <div class="pricing-square-description" style="min-height: 50px;">
-                                <p> <b>privileged bundle for up to 10 running servers</b></p><br>
+                                <p><b>privileged bundle for up to 10 running servers</b></p>
                             </div>
                             <div>
                                 What's in?
