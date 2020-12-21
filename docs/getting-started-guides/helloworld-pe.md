@@ -2,7 +2,7 @@
 layout: docwithnav
 assignees:
 - ashvayka
-title: Getting Started
+title: Getting Started with ThingsBoard Professional Edition
 description: Getting started with ThingsBoard open-source IoT platform and simulated IoT devices
 step1:
     0:
