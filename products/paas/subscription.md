@@ -8,7 +8,7 @@ description: Features and advantages of subscription payment model
 ---
 
 ThingsBoars Cloud provides subscription plans based on the **pay-as-you-go** model. 
-Main characteristics of the subscription plan are: [entity limits](/docs/user-guide/tenant-profiles/#entity-limits), [api limits](/docs/user-guide/tenant-profiles/#api-limits--usage), white-labeling and the level of support you get.   
+Main characteristics of the subscription plan are: [entity limits](/docs/user-guide/tenant-profiles/#entity-limits), [api limits](/docs/user-guide/tenant-profiles/#api-limits--usage), [white-labeling](#white-labeling) and the level of support you get.   
 
 
 ### Entity Limits
