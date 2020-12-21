@@ -9,10 +9,10 @@ step1:
         image: /images/helloworld/hello-world-pe-step-1-item-1.png
         title: 'Login to your ThingsBoard instance and open Device Groups page.'
     1:
-        image: /images/helloworld/hello-world-pe-step-1-item-2.png
+        image: /images/helloworld/hello-world-pe-step-1-item-3.png
         title: 'Navigate to default device group “ALL”.'
     2:
-        image: /images/helloworld/hello-world-pe-step-1-item-3.png 
+        image: /images/helloworld/hello-world-pe-step-1-item-2.png 
         title: 'Click on the "+" icon in the top right corner of the table and then select "Add new device".'
     3:
         image: /images/helloworld/hello-world-pe-step-1-item-4.png
@@ -247,7 +247,7 @@ The goal of this tutorial is to demonstrate the basic usage of the most popular 
 
 We will connect and visualize data from the temperature sensor to keep it simple. 
  
-{% include templates/prerequisites.md %}
+{% include templates/prerequisites-pe.md %}
 
 ## Step 1. Provision Device
 
@@ -271,10 +271,10 @@ Now you are ready to publish telemetry data on behalf of your device.
 We will use simple commands to publish data over HTTP or MQTT in this example.
 
 {% capture connectdevicetogglespec %}
-HTTP<small>Linux, macOS or Windows</small>%,%http%,%templates/helloworld/http.md%br%
-MQTT<small>Linux or macOS</small>%,%mqtt-linux%,%templates/helloworld/mqtt-linux.md%br%
-MQTT<small>Windows</small>%,%mqtt-windows%,%templates/helloworld/mqtt-windows.md%br%
-CoAP<small>Linux or macOS</small>%,%coap%,%templates/helloworld/coap.md%br%
+HTTP<small>Linux, macOS or Windows</small>%,%http%,%templates/helloworld-pe/http.md%br%
+MQTT<small>Linux or macOS</small>%,%mqtt-linux%,%templates/helloworld-pe/mqtt-linux.md%br%
+MQTT<small>Windows</small>%,%mqtt-windows%,%templates/helloworld-pe/mqtt-windows.md%br%
+CoAP<small>Linux or macOS</small>%,%coap%,%templates/helloworld-pe/coap.md%br%
 Other Protocols<small>Modbus, SNMP, LoRaWAN, etc</small>%,%other%,%templates/helloworld/other.md{% endcapture %}
 {% include content-toggle.html content-toggle-id="connectdevice" toggle-spec=connectdevicetogglespec %}
 
