@@ -13,7 +13,7 @@ hidetoc: "true"
                 insight from your data:</p>
         </div>
         <ul>
-            <li class="pricing-square-item">One-click integration with ThingsBaord</li>
+            <li class="pricing-square-item">One-click integration with ThingsBoard</li>
             <li class="pricing-square-item">Self-service analytics</li>
             <li class="pricing-square-item">Data clear and filtering</li>
             <li class="pricing-square-item">Advanced visualizations</li>
