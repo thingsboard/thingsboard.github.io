@@ -18,13 +18,25 @@ One-way SSL authentication is a standard authentication mode, where your client 
 In order to run one-way MQTT SSL, the server certificate chain should be signed by authorized CA or client must import the self-signed server certificate (.cer or .pem) to its trust store. 
 Otherwise, a connection will fail with the 'Unknown CA' error.
 
-#### Run One-Way MQTT SSL Python Client
+The example below demonstrates how to connect to [ThingsBoard.cloud](thingsboard.cloud) or to a ThingsBoard MQTT server that uses a self-signed certificate.
 
-The example below demonstrates how to connect to a ThingsBoard MQTT server that uses a self-signed certificate.
+##### Self-signed certificates
+
 You will need to have the public key of server certificate in PEM format. 
 See [following instructions](/docs/user-guide/mqtt-over-ssl/#self-signed-certificate-generation) for more details on server-side configuration.
 
+
+##### ThingsBoard.cloud certificate
+
+You will need to have CA certificate from Let's encrypt in pem format.
+You may download it [here](https://letsencrypt.org/certs/lets-encrypt-r3.pem).
+
+
+#### Run One-Way MQTT SSL Python Client
+
 Download Python client example [**one-way-ssl-mqtt-client.py**](/docs/user-guide/resources/mqtt-over-ssl/one-way-ssl-mqtt-client.py).
+
+Put certificate(s) that you have downloaded/created into the same folder with the example script.
 
 **Note** Script uses **8883** mqtt port and requires paho mqtt library that you can install using the following command: **pip3 install paho-mqtt**
  
