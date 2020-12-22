@@ -353,7 +353,7 @@ and documentation about [alarm notifications](/docs/user-guide/device-profiles/#
 **Note**: At the moment ThingsBoard supports AWS SNS and Twilio to send SMS. 
 Both services are non free and require you to create an account. However, you may integrate with other SMS/EMAIL gateways using [REST API call](https://thingsboard.io/docs/user-guide/rule-engine-2-0/tutorials/get-weather-using-rest-api-call/#node-d-external-rest-api-call-node) node.  
 
-### Step 7. Assign Dashboard to Customer
+### Step 7. Assign Device and Dashboard to Customer
 
 One of the important ThingsBoard features is the ability to assign Dashboards to Customers. 
 You may assign different devices to different customers. Then, you may create a Dashboard(s) and assign it to multiple customers.
