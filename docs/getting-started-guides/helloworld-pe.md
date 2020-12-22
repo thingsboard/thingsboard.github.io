@@ -221,6 +221,65 @@ step7:
         image: /images/helloworld/hello-world-pe-step-7-item-14.png 
         title: 'You have logged in as a Customer User. You may browse the data and acknowledge/clear alarms.'
         
+step71:
+    0:
+        image: /images/helloworld/hello-world-pe-step-7-item-1.png 
+        title: 'Navigate to customer groups page.'
+    1:
+         image: /images/helloworld/hello-world-pe-step-7-item-2.png
+         title: 'Then navigate to default customer group "All".'
+    2:
+        image: /images/helloworld/hello-world-pe-step-7-item-3.png 
+        title: 'Click "+" to add a customer.'
+    3:
+        image: /images/helloworld/hello-world-pe-step-7-item-4.png 
+        title: 'Add customer title and click "Add".' 
+        
+step72:
+    0:
+        image: /images/helloworld/hello-world-pe-step-72-item-1.png 
+        title: 'Select your device and click "Change Owner" button.'
+    1:
+        image: /images/helloworld/hello-world-pe-step-72-item-2.png
+        title: 'Start typing the customer name and then click on the customer item.'
+    2:
+        image: /images/helloworld/hello-world-pe-step-72-item-3.png 
+        title: 'Click "Change owner" button.'
+    3:
+        image: /images/helloworld/hello-world-pe-step-72-item-4.png 
+        title: 'Click "Yes". You can always change owner back to tenant.'
+    4:
+        image: /images/helloworld/hello-world-pe-step-72-item-5.png 
+        title: 'Your device list should be empty now. This is because it displays devices of the tenant. Navigate to the customer hierarchy to see your device.' 
+    5:
+        image: /images/helloworld/hello-world-pe-step-72-item-6.png 
+        title: 'Your device is now in the Customers group "All".'                          
+        
+step73:
+    0:
+        image: /images/helloworld/hello-world-pe-step-73-item-1.png 
+        title: 'Open "Dashboard Groups" and click "Share" button.'
+    1:
+        image: /images/helloworld/hello-world-pe-step-73-item-2.png
+        title: 'Select the customer and click "Share".'
+        
+step74:
+    0:
+        image: /images/helloworld/hello-world-pe-step-74-item-1.png 
+        title: 'Open "Customers hierarchy", select "Customer Users" and click "Add".'
+    1:
+        image: /images/helloworld/hello-world-pe-step-74-item-2.png
+        title: 'Specify email, first and last name. Click "Add".'
+    2:
+        image: /images/helloworld/hello-world-pe-step-74-item-3.png 
+        title: 'Copy activation link and save it to a safe place. Then click "OK".'
+    3:
+        image: /images/helloworld/hello-world-pe-step-74-item-4.png 
+        title: 'Click on the user name to open user details. Toggle edit mode.' 
+    4:
+        image: /images/helloworld/hello-world-pe-step-74-item-5.png 
+        title: 'Optionally, select the dashboard and enable "always fullscreen" mode. Apply changes.'                                         
+        
 mqttWindows:
     0:
         image: /images/helloworld/hello-world-step-3-item-1.png
@@ -249,7 +308,7 @@ We will connect and visualize data from the temperature sensor to keep it simple
  
 {% include templates/prerequisites-pe.md %}
 
-## Step 1. Provision Device
+## Step 1. Provision device
 
 For simplicity, we will provision device manually using the UI. 
  
@@ -282,15 +341,15 @@ Once you have successfully published the "temperature" readings, you should imme
 
 {% include images-gallery.html imageCollection="step3" showListImageTitles="true" %}
 
-## Step 3. Create Dashboard
+## Step 3. Create dashboard
 
 We will create a dashboard and add most popular widgets. See instructions below. 
 
-### Step 3.1 Create Empty Dashboard
+### Step 3.1 Create empty dashboard
 
 {% include images-gallery.html imageCollection="step31" showListImageTitles="true" %}
 
-### Step 3.2 Add Entity Alias
+### Step 3.2 Add entity alias
 
 Alias is a reference to single entity or group of entities that is used in the widgets.
 Alias may be static or dynamic. For simplicity, we will use "Single entity" alias reference one and only one entity ("My New Device" in our case).
@@ -299,7 +358,7 @@ You may learn more about different aliases [here](/docs/user-guide/ui/aliases/).
 
 {% include images-gallery.html imageCollection="step32" showListImageTitles="true" %}   
 
-### Step 3.3 Add Table Widget
+### Step 3.3 Add table widget
 
 To add the table widget we need to select it from the widget library. Widgets are grouped into widget bundles.
 Each widget has a data source. This is how widget "knows" what data to display.
@@ -309,7 +368,7 @@ To see the latest value of our "temperature" data that we sent during step 2, we
 
 Congratulations! You have added first widget. Now you can send new telemetry reading and it will immediately appear in the table. 
 
-### Step 3.4 Add Chart Widget
+### Step 3.4 Add chart widget
 
 To add the chart widget we need to select it from the widget library. 
 Chart widget displays multiple historical values of the same data key ("temperature" in our case).
@@ -319,13 +378,13 @@ We should also configure the time window to use the chart widget.
 
 Congratulations! You have added chart widget. Now you can send new telemetry reading and it will immediately appear in the chart. 
 
-### Step 3.5 Add Alarm Widget
+### Step 3.5 Add alarm widget
 
 {% include images-gallery.html imageCollection="step35" showListImageTitles="true" %}
 
 Congratulations! You have added alarm widget. Not it's time to configure alarm rules and raise some alarms. 
 
-### Step 4. Configure Alarm Rules
+### Step 4. Configure alarm rules
 
 We will use [alarm rules](/docs/user-guide/device-profiles/#alarm-rules) feature to raise alarm when temperature reading is greater than 25 degrees.
 For this purpose, we should edit device profile and add new alarm rule. 
@@ -334,7 +393,7 @@ We recommend creating dedicated [device profiles](/docs/user-guide/device-profil
 
 {% include images-gallery.html imageCollection="step4" showListImageTitles="true" %}
 
-### Step 5. Create Alarm
+### Step 5. Create alarm
 
 Now our alarm rule is active (see [Step 4](/docs/getting-started-guides/helloworld/#step-4-configure-alarm-rules)), 
 and we should send new telemetry on behalf of the device (see [Step 2](/docs/getting-started-guides/helloworld/#step-2-connect-device)) to trigger the alarm.
@@ -350,15 +409,45 @@ and documentation about [alarm notifications](/docs/user-guide/device-profiles/#
 **Note**: At the moment ThingsBoard supports AWS SNS and Twilio to send SMS. 
 Both services are non free and require you to create an account. However, you may integrate with other SMS/EMAIL gateways using [REST API call](https://thingsboard.io/docs/user-guide/rule-engine-2-0/tutorials/get-weather-using-rest-api-call/#node-d-external-rest-api-call-node) node.  
 
-### Step 7. Assign Dashboard to Customer
+### Step 7. Share dashboard with customers
 
-One of the important ThingsBoard features is the ability to assign Dashboards to Customers. 
-You may assign different devices to different customers. Then, you may create a Dashboard(s) and assign it to multiple customers.
-Each customer user will see his own devices and will not be able to see devices or any other data that belong to a different customer.
+One of the important ThingsBoard features is the ability to create end-user dashboards.
+Each customer user should see his own devices and should not be able to see devices or any other data that belong to a different customer. 
 
-Let's create "My New Customer" and add a user for this customer. Please see instruction below:
+We have already created a Device(Step 1), and a Dashboard(Step 3). 
+Now it's time to create a Customer and a Customer User and make sure they will have access to device data and to the dashboard.
+There are two options how Tenant Administrator can give access to certain Entity (Device, Dashboard, Asset, etc.) for a Customer:
 
-{% include images-gallery.html imageCollection="step7" showListImageTitles="true" %}
+* A. Make Customer become the owner of the entity. This option is useful to ensure that only this customer can access the device and its data. See [Step 7.2](/docs/getting-started-guides/helloworld-pe/#step-72-change-owner-of-the-device).
+* B. Share the entity with the Customer. This option is useful to share single dashboard with multiple customers. See [Step 7.3](/docs/getting-started-guides/helloworld-pe/#step-73-share-the-dashboard).
+ 
+#### Step 7.1 Create customer
+
+Let's create a customer with title "My New Customer". Please see instruction below:
+
+{% include images-gallery.html imageCollection="step71" showListImageTitles="true" %}
+
+#### Step 7.2 Change owner of the device
+
+Let's make Customer become the owner of the device.
+
+{% include images-gallery.html imageCollection="step72" showListImageTitles="true" %}
+ 
+Let's change the owner of the device to a new customer. This basically means that new Customer may use the 
+
+#### Step 7.3 Share the dashboard
+
+Let's share our dashboard with the Customer. 
+Our dashboard is in the group "All". Ideally, we should create another dashboard group, but to simplify the guide, we will use group "All". 
+
+{% include images-gallery.html imageCollection="step73" showListImageTitles="true" %}
+
+#### Step 7.4 Create customer user
+
+Finally, let's create a user that will belong to the customer and will have read-only access to the dashboard and the device.
+You may optionally configure the dashboard to appear just after user login to the platform web UI. 
+
+{% include images-gallery.html imageCollection="step74" showListImageTitles="true" %}
 
 ## Next steps
 

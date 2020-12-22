@@ -1,11 +1,12 @@
 dir="$1"
+filter="$2"
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 BLUE='\033[0;34m'
 YELLOW='\033[1;33m'
 BROWN='\033[0;33m'
 NC='\033[0m'
-[ $# -eq 0 ] && { echo "Usage: $0 path_to_folder"; exit 1; }
+[ $# -eq 0 ] && { echo "Usage: $0 path_to_folder filter"; exit 1; }
  
 if [ -d "$dir" -a ! -h "$dir" ]
 then
@@ -17,7 +18,7 @@ then
         fi
         echo
         echo -e "${BROWN}###################################################################${NC}"
-        if file "$file" | grep -qE 'PNG'; then
+        if file "$file" | grep -vE 'preview' | grep -E $filter | grep -qE 'png'; then
             echo -e "${GREEN}File ${BLUE}$(basename $file)${GREEN} is PNG image. Perform creating preview...${NC}"
             oldFilePath="$(dirname $file)/$(basename $file)"
             previewFilePath="$(dirname $file)/$(basename $file .png)-preview.png"
