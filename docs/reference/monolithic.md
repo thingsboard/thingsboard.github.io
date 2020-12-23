@@ -50,7 +50,7 @@ We suggest to review existing transports [implementation](https://github.com/thi
 ## Rule engine component
 
 ThingsBoard rule engine is responsible for processing the incoming messages with user defined logic and flow. 
-You can lear more about the rule engine using corresponding [documentation page](/docs/user-guide/rule-engine-2-0/overview/).
+You can learn more about the rule engine using corresponding [documentation page](/docs/user-guide/rule-engine-2-0/overview/).
 
 ## Core services
 
