@@ -282,10 +282,10 @@ step74:
         
 mqttWindows:
     0:
-        image: /images/helloworld/hello-world-step-3-item-1.png
+        image: /images/helloworld/hello-world-pe-step-3-item-1.png
         title: 'Create new MQTT Client with the properties listed in screenshots below.' 
     1:
-        image: /images/helloworld/hello-world-step-3-item-2.png
+        image: /images/helloworld/hello-world-pe-step-3-item-2.png
         title: 'Populate the topic name and payload. Make sure the payload is a valid JSON document. Click "Publish" button.' 
                            
 ---
@@ -395,8 +395,8 @@ We recommend creating dedicated [device profiles](/docs/user-guide/device-profil
 
 ### Step 5. Create alarm
 
-Now our alarm rule is active (see [Step 4](/docs/getting-started-guides/helloworld/#step-4-configure-alarm-rules)), 
-and we should send new telemetry on behalf of the device (see [Step 2](/docs/getting-started-guides/helloworld/#step-2-connect-device)) to trigger the alarm.
+Now our alarm rule is active (see [Step 4](/docs/getting-started-guides/helloworld-pe/#step-4-configure-alarm-rules)), 
+and we should send new telemetry on behalf of the device (see [Step 2](/docs/getting-started-guides/helloworld-pe/#step-2-connect-device)) to trigger the alarm.
 Note that the temperature value should be 26 or higher to raise the alarm. Once we send new temperature reading, we should immediately see a new alarm on our dashboard.
 
 {% include images-gallery.html imageCollection="step5" showListImageTitles="true" %}
@@ -414,12 +414,12 @@ Both services are non-free and require you to create an account. However, you ma
 One of the most important ThingsBoard features is the ability to create end-user dashboards.
 Each Customer User should see his own devices and should not be able to see devices or any other data that belongs to a different customer. 
 
-We have already created a Device(Step 1), and a Dashboard(Step 3). 
+We have already created a Device (see [Step 1](/docs/getting-started-guides/helloworld-pe/#step-1-provision-device)), and a Dashboard (see [Step 3](/docs/getting-started-guides/helloworld-pe/#step-3-create-dashboard)). 
 Now it's time to create a Customer and a Customer User and make sure they will have access to the device's data and to the dashboard.
 There are two options how Tenant Administrator can give access to certain Entity (Device, Dashboard, Asset, etc.) for a Customer:
 
-* A. Make Customer become the owner of the entity. This option is useful to ensure that only this customer can access the device and its data. See [Step 7.2](/docs/getting-started-guides/helloworld-pe/#step-72-change-owner-of-the-device).
-* B. Share the entity with the Customer. This option is useful to share a single dashboard with multiple customers. See [Step 7.3](/docs/getting-started-guides/helloworld-pe/#step-73-share-the-dashboard).
+* A. Make Customer become the owner of the entity. This option is useful to ensure that only this customer can access the device and its data (see [Step 7.2](/docs/getting-started-guides/helloworld-pe/#step-72-change-owner-of-the-device)).
+* B. Share the entity with the Customer. This option is useful to share a single dashboard with multiple customers (see [Step 7.3](/docs/getting-started-guides/helloworld-pe/#step-73-share-the-dashboard)).
  
 #### Step 7.1 Create customer
 
@@ -448,6 +448,10 @@ Finally, let's create a user that will belong to the customer and will have read
 You may optionally configure the dashboard to appear just after the user login to the platform web UI. 
 
 {% include images-gallery.html imageCollection="step74" showListImageTitles="true" %}
+
+#### Step 7.5 Activate customer user
+
+
 
 ## Next steps
 
