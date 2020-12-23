@@ -1,9 +1,23 @@
-Execute the following command to run this docker directly:
+Execute the following command to pull the image:
+
+```bash
+docker pull thingsboard/tb-pe-tcp-udp-integration:{{ site.release.pe_full_ver }}
+```
+{: .copy-code}
+
+Execute the following command to create volume for the integration logs (799 is the user id of ThingsBoard non-root docker user):
+
+```bash
+mkdir -p ~/.tb-pe-tcp-udp-integration-logs && sudo chown -R 799:799 ~/.tb-pe-tcp-udp-integration-logs
+```
+{: .copy-code}
+
+Execute the following command to run the integration:
 
 ```bash
 docker run -it -p 10560:10560 -v ~/.tb-pe-tcp-udp-integration-logs:/var/log/tb-tcp-udp-integration  \
 -e "PRC_HOST=thingsboard.cloud" -e "RPC_PORT=9090" \
--e "INTEGRATION_ROUTING_KEY=YOUR_ROUTING_KEY"  -e "INTEGRATION_SECRET=YOUR_SECRET " \
+-e "INTEGRATION_ROUTING_KEY=YOUR_ROUTING_KEY"  -e "INTEGRATION_SECRET=YOUR_SECRET" \
 --name my-tb-pe-tcp-udp-integration --restart always thingsboard/tb-pe-tcp-udp-integration:{{ site.release.pe_full_ver }}
 ```
 {: .copy-code}

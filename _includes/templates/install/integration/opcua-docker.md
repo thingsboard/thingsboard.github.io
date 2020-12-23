@@ -1,9 +1,23 @@
-Execute the following command to run this docker directly:
+Execute the following command to pull the image:
+
+```bash
+docker pull thingsboard/tb-pe-opc-ua-integration:{{ site.release.pe_full_ver }}
+```
+{: .copy-code}
+
+Execute the following command to create volume for the integration logs (799 is the user id of ThingsBoard non-root docker user):
+
+```bash
+mkdir -p ~/.tb-pe-opc-ua-integration-logs && sudo chown -R 799:799 ~/.tb-pe-opc-ua-integration-logs
+```
+{: .copy-code}
+
+Execute the following command to run the integration:
 
 ```bash
 docker run -it -v ~/.tb-pe-opc-ua-integration-logs:/var/log/tb-opc-ua-integration \
 -e "PRC_HOST=thingsboard.cloud" -e "RPC_PORT=9090" \
--e "INTEGRATION_ROUTING_KEY=YOUR_ROUTING_KEY"  -e "INTEGRATION_SECRET=YOUR_SECRET " \
+-e "INTEGRATION_ROUTING_KEY=YOUR_ROUTING_KEY"  -e "INTEGRATION_SECRET=YOUR_SECRET" \
 --name my-tb-pe-opc-ua-integration --restart always thingsboard/tb-pe-opc-ua-integration:{{ site.release.pe_full_ver }}
 ```
 {: .copy-code}
