@@ -19,12 +19,13 @@ In order to run one-way MQTT SSL, the server certificate chain should be signed 
 Otherwise, a connection will fail with the 'Unknown CA' error.
 
 The python based client example below demonstrates how to connect to [ThingsBoard Cloud](https://thingsboard.cloud/signup) or to any other ThingsBoard MQTT server.
-Assuming you plan to use ThingsBoard Cloud, you should download the certificate chain using this [link](https://thingsboard.io/docs/user-guide/resources/mqtt-over-ssl/tb-cloud-chain.pem) (certificate expires on 15.09.25) 
+Assuming you plan to use ThingsBoard Cloud, you should download the certificate chain using this [link](/docs/user-guide/resources/mqtt-over-ssl/tb-cloud-chain.pem) (certificate expires on 15.09.25) 
 and store it to your working directory as "tb-cloud-chain.pem".
 
 ```bash
 wget https://thingsboard.io/docs/user-guide/resources/mqtt-over-ssl/tb-cloud-chain.pem
 ```
+{: .copy-code}
 
 Assuming you plan to use your own server with self-signed certificate, you will need to have the public key of server certificate in PEM format. 
 See [following instructions](/docs/user-guide/mqtt-over-ssl/#self-signed-certificate-generation) for more details on server-side configuration.
@@ -36,6 +37,7 @@ Download Python client example [**one-way-ssl-mqtt-client.py**](/docs/user-guide
 ```bash
 wget https://thingsboard.io/docs/user-guide/resources/mqtt-over-ssl/one-way-ssl-mqtt-client.py
 ```
+{: .copy-code}
 
 Put certificate(s) that you have downloaded/created into the same folder with the example script. The script will automatically use "tb-cloud-chain.pem" if you use default ThingsBoard host (thingsboard.cloud) 
 
@@ -43,12 +45,15 @@ Put certificate(s) that you have downloaded/created into the same folder with th
  
 Run the script and follow steps in console:
 
-{% capture tabspec %}mqtt-ssl-configuration-keygen
-A,Run command,shell,resources/mqtt-ssl-configuration-run-onewaysslmqttclient.sh,/docs/user-guide/resources/mqtt-ssl-configuration-run-onewaysslmqttclient.sh{% endcapture %}
-{% include tabs.html %}         
+```bash
+python3 one-way-ssl-mqtt-client.py
+```
+{: .copy-code}
 
 If everything was configured correctly, the output should be like:
 
-{% capture tabspec %}mqtt-ssl-configuration-output
-A,Result,shell,resources/mqtt-ssl-configuration-onewaysslmqttclient-output.txt,/docs/user-guide/resources/mqtt-ssl-configuration-onewaysslmqttclient-output.txt{% endcapture %}
-{% include tabs.html %}
+```bash
+Connected with result code 0
+Topic: v1/devices/me/attributes/response/1
+Message: {}
+```
