@@ -16,6 +16,7 @@
 
 import paho.mqtt.client as mqtt
 import ssl
+import json
 
 
 def collect_required_data():
@@ -30,7 +31,7 @@ def collect_required_data():
             "Please write path to your server public certificate or leave it blank to use default (mqttserver.pub.pem): ")
         config["ca_cert"] = ca_cert if ca_cert else "mqttserver.pub.pem"
     else:
-        config["ca_cert"] = "lets-encrypt-r3.pem"
+        config["ca_cert"] = "tb-cloud-chain.pem"
     token = ""
     while not token:
         token = input("Please write accessToken for device: ")
@@ -49,11 +50,12 @@ def on_connect(client, userdata, rc, *extra_params):
     client.subscribe('v1/devices/me/attributes')
     client.subscribe('v1/devices/me/attributes/response/+')
     client.subscribe('v1/devices/me/rpc/request/+')
+    client.publish('v1/devices/me/telemetry', json.dumps({"temperature":42}), 1)
 
 
 # The callback for when a PUBLISH message is received from the server.
 def on_message(client, userdata, msg):
-    print('Topic: ' + msg.topic + '\nMessage: ' + str(msg.payload))
+    print('Topic: ' + msg.topic + '\nMessage: ' + msg.payload.decode("UTF-8"))
     if msg.topic.startswith('v1/devices/me/rpc/request/'):
         requestId = msg.topic[len('v1/devices/me/rpc/request/'):len(msg.topic)]
         print('This is a RPC call. RequestID: ' + requestId + '. Going to reply now!')
@@ -70,10 +72,8 @@ if __name__ == '__main__':
     client.publish('v1/devices/me/attributes/request/1', "{\"clientKeys\":\"model\"}", 1)
 
     # Publish request to the server to get the *model* attribute from client scope.
-
-    client.tls_set(ca_certs=config["ca_cert"], tls_version=ssl.PROTOCOL_TLSv1_2, cert_reqs=ssl.CERT_NONE)
+    client.tls_set(ca_certs=config["ca_cert"], tls_version=ssl.PROTOCOL_TLSv1_2, cert_reqs=ssl.CERT_REQUIRED)
     client.username_pw_set(config["token"])
-    client.tls_insecure_set(False)
     client.connect(config["host"], 8883, 1)
 
     # Blocking call that processes network traffic, dispatches callbacks and
