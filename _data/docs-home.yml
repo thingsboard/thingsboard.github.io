@@ -299,6 +299,8 @@ toc:
     path: /docs/user-guide/ui/mail-settings/
   - title: Aliases
     path: /docs/user-guide/ui/aliases/
+  - title: Edges
+    path: /docs/user-guide/ui/edges/
 - title: IoT Gateway
   path: /docs/iot-gateway/
   section:
