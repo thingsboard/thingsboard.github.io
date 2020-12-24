@@ -28,11 +28,11 @@ defaultActivePricingSection: thingsboard-cloud
        </nav>
        <nav id="inner-navigation" class="inner-navigation">
          <ul id="menu-pricing-navigation-2" class="menu">
-            <li id="menu-item-trendz" class="menu-item trendz-logo">
-               <a href="javascript:void(0);" onClick="activatePricingSection('trendz')">Trendz Analytics</a>
-            </li>
             <li id="menu-item-thingsboard-edge" class="menu-item tb-edge-logo">
                <a href="javascript:void(0);" onClick="activatePricingSection('thingsboard-edge')">Edge</a>
+                </li>
+            <li id="menu-item-trendz" class="menu-item trendz-logo">
+               <a href="javascript:void(0);" onClick="activatePricingSection('trendz')">Trendz Analytics</a>
             </li>
          </ul>
        </nav>  
@@ -516,180 +516,191 @@ defaultActivePricingSection: thingsboard-cloud
     </div>
 </div>
 
-<section id="thingsboard-edge" class="pricing-content">
- <div class="text-center pt-4 pb-4">
-    <a class="btn btn-full-green btn-pricing" href="/docs/contact-us/?subject=Partnership">Become a partner</a> 
- </div> 
- <div class="col-lg-12">
-    <div class="solution-selector">
-        <div class="solution active defaultselection" data-toggle="#payAsYouGo">
-            <input type="radio" class="magic-radio" name="pricing-radio-selector" id="PricingPayAsYouGo" value="Pricing Pay As You Go Details" checked>
-            <label for="PricingPayAsYouGo">
-                <div class="solution-icon-div d-inline-block">
-                    <img src="/images/pricing/pay-as-you-go.png" alt="pay as you go icon" class="pay-as-you-go-icon d-inline">
-                </div>
-                <h2 class="d-none d-md-inline-block" data-faq-id="what-is-pay-as-you-go" data-faq-link-size="50%">Pay-as-you-go</h2>
-            </label>
+<div id="thingsboard-edge" class="pricing-content">
+ <div class="container">
+    <div class="pricing-content-header row">
+        <div id="payAsYouGoHeader" class="pricing-content-description col-lg-6">
+            <h2>Subscription plans</h2>
+            <div class="pricing-content-details">
+                All subscription plans include <b>unlimited</b> customers, dashboards, integrations, api calls, data points & messages
+            </div>
         </div>
-        <div class="solution" data-toggle="#perpetual">
-            <input type="radio" class="magic-radio" name="pricing-radio-selector" id="PricingPerpetual" value="Pricing Perpetual Details">
-            <label for="PricingPerpetual">
-                <div class="solution-icon-div d-inline-block">
-                    <img src="/images/pricing/perpetual.png" alt="perpetual icon" class="perpetual-icon d-inline">
+        <div id="perpetualHeader" class="pricing-content-description col-lg-6">
+            <h2>License packages</h2>
+        </div>
+        <div class="col d-flex justify-content-end">
+            <div class="solution-selector">
+                <div class="solution pay-as-you-go active defaultselection" data-toggle="#payAsYouGo" data-description-toggle="#payAsYouGoHeader">
+                    <h3 data-faq-id="what-is-pay-as-you-go" data-faq-link-size="70%">Pay-as-you-go</h3>
                 </div>
-                <h2 class="d-none d-md-inline-block" data-faq-id="what-is-perpetual" data-faq-link-size="50%">Perpetual</h2>
-            </label>
+                <div class="solution perpetual" data-toggle="#perpetual" data-description-toggle="#perpetualHeader">
+                    <h3 data-faq-id="what-is-perpetual" data-faq-link-size="70%">Perpetual</h3>
+                </div>
+            </div>
         </div>
     </div>
     <div class="pricing-div">
-        <div class="container">
-            <div class="pricing-section pricing-pay-as-you-go active" id="payAsYouGo">
-               <div class="row d-none d-lg-flex mb-4">
-                   <div class="col-lg-12">
-                        <div class="indicator gray-bg text-white text-center pt-2 pb-2">
-                            SUBSCRIPTION PLANS
+        <div class="pricing-section pricing-pay-as-you-go active" id="payAsYouGo">
+           <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-6 col-xl-4 col-gt-xl mb-4">
+                    <div class="pricing-square">
+                        <h2>Pico</h2>
+                        <div class="pricing-square-description">
+                            <p>Up to 5 Devices and Assets</p>
                         </div>
-                   </div> 
-                   <div class="col-lg-12">
-                   </div>                    
-               </div>
-               <div class="row d-none d-lg-flex mb-4"></div>
-               <div class="row justify-content-center">
-                    <div class="col-md-4 col-lg-4 col-xl mb-4">
-                        <div class="pricing-square">
-                            <h2>Pico</h2>
-                            <h4 class="pricing-square-price mb-0">
-                                2
-                                <span>USD / Month</span>
-                            </h4>
-                            <div class="pricing-square-item">Up to 5 Devices and Assets</div>
-                            <a class="btn btn-full-green btn-pricing" href="javascript:void(0);" 
+                        <h4 class="pricing-square-price mb-0">
+                            $2
+                            <span>/&nbsp;month</span>
+                        </h4>
+                        <div class="row justify-content-center">
+                            <button class="btn-blue btn-pricing" 
                                 onClick="getLicense(event,
                                 false,
                                 'd3b7d030-fe4c-11ea-951e-b77b877a367b',
                                 'da425aa0-fe4d-11ea-951e-b77b877a367b',
-                                'Edge Pico')">
+                                'Edge Pico', null, false)">
                                 Get your license
-                            </a>
-                            <div class="pricing-square-item" data-faq-id="optional-support">
-                                Optional support
-                            </div><br>
-                            <div class="pricing-square-item" data-faq-id="thingsboard-edge-discount">
-                                Tired discounts                           
-                            </div><br>
+                            </button>
+                        </div>
+                        <div class="pricing-square-item">Up to 5 Devices</div>
+                        <div class="pricing-square-item">Up to 5 Assets</div>
+                        <div class="pricing-square-item" data-faq-id="optional-support">
+                            Optional support
+                        </div>
+                        <div class="pricing-square-item" data-faq-id="thingsboard-edge-discount">
+                            Tired discounts
                         </div>
                     </div>
-                    <div class="col-md-4 col-lg-4 col-xl mb-4">
-                        <div class="pricing-square">
-                            <h2>Nano</h2>
-                            <h4 class="pricing-square-price mb-0">
-                                19
-                                <span>USD / Month</span>
-                            </h4>
-                            <div class="pricing-square-item">Up to 50 Devices and Assets</div>
-                            <a class="btn btn-full-green btn-pricing" href="javascript:void(0);" 
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-4 col-gt-xl mb-4">
+                    <div class="pricing-square">
+                        <h2>Nano</h2>
+                        <div class="pricing-square-description">
+                            <p>Up to 50 Devices and Assets</p>
+                        </div>
+                        <h4 class="pricing-square-price mb-0">
+                            $19
+                            <span>/&nbsp;month</span>
+                        </h4>
+                        <div class="row justify-content-center">
+                            <button class="btn-blue btn-pricing" 
                                 onClick="getLicense(event,
                                 false,
                                 'd3b7d030-fe4c-11ea-951e-b77b877a367b',
                                 '302e3420-fe4e-11ea-951e-b77b877a367b',
-                                'Edge Nano')">
+                                'Edge Nano', null, false)">
                                 Get your license
-                            </a>
-                            <div class="pricing-square-item" data-faq-id="optional-support">
-                                Optional support
-                            </div><br>
-                            <div class="pricing-square-item" data-faq-id="thingsboard-edge-discount">
-                                Tired discounts                           
-                            </div><br>
+                            </button>
+                        </div>
+                        <div class="pricing-square-item">Up to 50 Devices</div>
+                        <div class="pricing-square-item">Up to 50 Assets</div>
+                        <div class="pricing-square-item" data-faq-id="optional-support">
+                            Optional support
+                        </div>
+                        <div class="pricing-square-item" data-faq-id="thingsboard-edge-discount">
+                            Tired discounts
                         </div>
                     </div>
-                    <div class="col-md-4 col-lg-4 col-xl mb-4">
-                        <div class="pricing-square">
-                            <h2>Micro</h2>
-                            <h4 class="pricing-square-price mb-0">
-                                29
-                                <span>USD / Month</span>
-                            </h4>
-                            <div class="pricing-square-item">Up to 250 Devices and Assets</div>
-                            <a class="btn btn-full-green btn-pricing" href="javascript:void(0);" 
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-4 col-gt-xl mb-4">
+                    <div class="pricing-square">
+                        <h2>Micro</h2>
+                        <div class="pricing-square-description">
+                            <p>Up to 250 Devices and Assets</p>
+                        </div>
+                        <h4 class="pricing-square-price mb-0">
+                            $29
+                            <span>/&nbsp;month</span>
+                        </h4>
+                        <div class="row justify-content-center">
+                            <button class="btn-blue btn-pricing"
                                 onClick="getLicense(event,
                                 false,
                                 'd3b7d030-fe4c-11ea-951e-b77b877a367b',
                                 '6e6c58c0-fe4e-11ea-951e-b77b877a367b',
-                                'Edge Micro')">
+                                'Edge Micro', null, false)">
                                 Get your license
-                            </a>
-                            <div class="pricing-square-item" data-faq-id="optional-support">
-                                Optional support
-                            </div><br>
-                            <div class="pricing-square-item" data-faq-id="thingsboard-edge-discount">
-                                Tired discounts                           
-                            </div><br>
+                            </button>
+                        </div>
+                        <div class="pricing-square-item">Up to 250 Devices</div>
+                        <div class="pricing-square-item">Up to 250 Assets</div>
+                        <div class="pricing-square-item" data-faq-id="optional-support">
+                            Optional support
+                        </div>
+                        <div class="pricing-square-item" data-faq-id="thingsboard-edge-discount">
+                            Tired discounts
                         </div>
                     </div>
-                    <div class="col-md-4 col-lg-4 col-xl mb-4">
-                        <div class="pricing-square">
-                            <h2>Macro</h2>
-                            <h4 class="pricing-square-price mb-0">
-                                39
-                                <span>USD / Month</span>
-                            </h4>
-                            <div class="pricing-square-item">Up to 1000 Devices and Assets</div>
-                            <a class="btn btn-full-green btn-pricing" href="javascript:void(0);" 
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-4 col-gt-xl mb-4">
+                    <div class="pricing-square">
+                        <h2>Macro</h2>
+                        <div class="pricing-square-description">
+                            <p>Up to 1000 Devices and Assets</p>
+                        </div>
+                        <h4 class="pricing-square-price mb-0">
+                            $39
+                            <span>/&nbsp;month</span>
+                        </h4>
+                        <div class="row justify-content-center">
+                            <button class="btn-blue btn-pricing"
                                 onClick="getLicense(event,
                                 false,
                                 'd3b7d030-fe4c-11ea-951e-b77b877a367b',
                                 'a0e02610-fe4e-11ea-951e-b77b877a367b',
-                                'Edge Macro')">
+                                'Edge Macro', null, false)">
                                 Get your license
-                            </a>
-                            <div class="pricing-square-item" data-faq-id="optional-support">
-                                Optional support
-                            </div><br>
-                            <div class="pricing-square-item" data-faq-id="thingsboard-edge-discount">
-                                Tired discounts                           
-                            </div><br>
+                            </button>
+                        </div>
+                        <div class="pricing-square-item">Up to 1000 Devices</div>
+                        <div class="pricing-square-item">Up to 1000 Assets</div>
+                        <div class="pricing-square-item" data-faq-id="optional-support">
+                            Optional support
+                        </div>
+                        <div class="pricing-square-item" data-faq-id="thingsboard-edge-discount">
+                            Tired discounts
                         </div>
                     </div>
-               </div>
-            </div>
-            <div class="pricing-section pricing-perpetual" id="perpetual">
-               <div class="row d-none d-lg-flex mb-4">
-                   <div class="col-lg-12">
-                        <div class="indicator gray-bg text-white text-center pt-2 pb-2">
-                            LICENSE PACKAGES
+                </div>
+           </div>
+        </div>
+        <div class="pricing-section pricing-perpetual" id="perpetual">
+           <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-6 col-xl-4 mb-4">
+                    <div class="pricing-square">
+                        <h2>Perpetual Fallback License</h2>
+                        <div class="pricing-square-description" style="min-height: 50px;">
+                            <p>Use your ThingsBoard Edge instance forever</p>
                         </div>
-                   </div>                   
-               </div>
-               <div class="row justify-content-center">
-                    <div class="col-md-8 col-lg-6 col-xl-4 mb-4">
-                        <div class="pricing-square">
-                            <h2>Perpetual Fallback License</h2>
-                            <div class="pricing-square-description">
-                                <h3>Use your ThingsBoard Edge instance forever</h3>
-                            </div>
-                            <h4 class="pricing-square-price mb-0">
-                                299
-                                <span>USD</span>
-                            </h4>                  
-                            <a class="btn btn-full-green btn-pricing" href="javascript:void(0);" 
+                        <h4 class="pricing-square-price mb-0">
+                            $299
+                        </h4>
+                        <div class="row justify-content-center">
+                            <button class="btn-blue btn-pricing"
                                 onClick="getLicense(event,
                                 true,
                                 'f59db8c0-fe4e-11ea-951e-b77b877a367b',
                                 '7eb90e70-fe4f-11ea-951e-b77b877a367b',
-                                'Edge Perpetual')">
+                                'Edge Perpetual', null, false)">
                                 Get your license
-                            </a>
-                            <div class="pricing-square-item">1 year of software updates</div><br>
-                            <div class="pricing-square-item">Up to 1000 Devices and Assets</div><br>
+                            </button>
+                        </div>
+                        <div class="pricing-square-item">1 year of software updates</div>
+                        <div class="pricing-square-item">Up to 1000 Devices</div>
+                        <div class="pricing-square-item">Up to 1000 Assets</div>
+                        <div class="pricing-square-item" data-faq-id="optional-support">
+                            Optional support
+                        </div>
+                        <div class="pricing-square-item" data-faq-id="thingsboard-edge-discount">
+                            Tired discounts
                         </div>
                     </div>
-               </div>
-            </div>
+                </div>
+           </div>
         </div>
     </div>
  </div>  
-</section>
+</div>
 
 <div class="container faq-content">
     <h2 id="faq" class="text-center">Frequently asked questions</h2>
