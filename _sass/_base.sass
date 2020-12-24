@@ -590,13 +590,67 @@ footer
 				color: $light-blue
 
 	.newsletterSubsContainer
+		.subscribe-newsletter-button
+			margin-top: 20px
+			margin-bottom: 20px
+			font-size: 20px
+			line-height: 48px
+			padding: 0 20px
+			@media (max-width: 768px)
+				width: 100%
+				margin-left: 15px
+				margin-right: 15px
+				font-size: 16px
+				line-height: 42px
+				padding: 0 10px
 		#mlb2-7341216
 			.subscribe-form
 				background: none !important
 				border: none !important
-
+				padding: 20px
+				width: 460px !important
+				@media (max-width: 768px)
+					width: 100% !important
+				&.horizontal
+					padding-bottom: 0px
+			.form-section
+				p
+					line-height: 150%
+					padding: 0px !important
+					margin: 0px 0px 10px 0px
+				&.mb10
+					margin-bottom: 10px
+					float: left
+				&.horizontal
+					float: left
+					margin-bottom: 5px
+					width: 70%
+					@media (max-width: 768px)
+						float: none
+						width: 100%
+						padding: 0
+					&.ml-button-position
+						width: 30%
+						padding: 0
+						@media (max-width: 768px)
+							float: none
+							width: 100%
+							padding: 0
+							margin-bottom: 20px
+							.button
+								width: 100%
+					.form-group
+						float: left
+						width: 100%
+						padding-right: 10px
+						box-sizing: border-box
+						@media (max-width: 768px)
+							padding: 0
 		#mlb2-7341216.ml-subscribe-form
 			.form-group
+				&.ml-error
+					.form-control
+						border-color: red!important
 				.form-control
 					background-color: transparent !important
 					font-family: "Roboto",sans-serif
@@ -1375,6 +1429,12 @@ iframe
 		width: 100%
 		margin: 0
 
+	div.products-title
+		text-align: center
+		font-size: 48px
+		padding-bottom: 50px
+		font-weight: 500
+
 	.cards
 		position: relative
 		display: flex
@@ -1455,6 +1515,8 @@ iframe
 				&.consulting-bg
 					background-image: url(/images/services/consulting.svg)
 
+				&.cloud-bg
+					background-image: url(/images/services/cloud.svg)
 				&.professional-edition-bg
 					background-image: url(/images/services/professional_edition.svg)
 				&.community-edition-bg

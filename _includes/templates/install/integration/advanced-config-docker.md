@@ -44,7 +44,7 @@ executors:
 
 rpc:
   # Host of the ThingsBoard server
-  host: "${PRC_HOST:cloud.thingsboard.io}"
+  host: "${PRC_HOST:thingsboard.cloud}"
   # Port of the ThingsBoard server
   port: "${RPC_PORT:9090}"
   # No reply timeout

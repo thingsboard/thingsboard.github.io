@@ -27,7 +27,7 @@ Please review the integration diagram to learn more.
 
 In this tutorial, we will use:
 
- - ThingsBoard Professional Edition instance — [cloud.thingsboard.io](https://cloud.thingsboard.io);
+ - ThingsBoard Professional Edition instance — [thingsboard.cloud](https://thingsboard.cloud);
  - TCP Integration, running externally and connected to the cloud ThingsBoard PE instance;
  - **echo** command which intended to display a line of text, and will redirect it's output to **netcat** (**nc**) utility;
  - **netcat** (**nc**) utility to establish TCP connections, receive data from there and transfer them;    

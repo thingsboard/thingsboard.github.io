@@ -120,14 +120,14 @@
     }
   },
   {
-    "type": ["Worldwide", "Asia"],
+    "type": ["Asia"],
     "country": ["Russia"],
     "name": "Datastreams AI",
     "contact": {
       "href": "contact@dstreams.ai"
     },
     "site": {
-      "href": "dstreams.ai",
+      "href": "",
       "target": "_blank"
     }
   },
@@ -180,7 +180,7 @@
     }
   },
   {
-    "type": ["Worldwide", "Europe"],
+    "type": ["Europe"],
     "country": ["Ukraine"],
     "name": "Euristiq",
     "contact": {
@@ -432,7 +432,7 @@
     }
   },
   {
-    "type": ["Worldwide", "Europe"],
+    "type": ["Europe"],
     "country": ["Czechia"],
     "name": "Simac",
     "contact": {
@@ -492,7 +492,7 @@
     }
   },
   {
-    "type": ["Asia","Europe", "Middle East"],
+    "type": ["Asia", "Europe", "Middle East"],
     "country": ["Kazakhstan", "Uzbekistan", "Turkmenistan", "Tajikistan", "Kyrgyzstan", "Armenia", "Azerbaijan", "Moldova", "Russia", "Belarus"],
     "name": "Syssoft LLC",
     "contact": {
@@ -572,6 +572,18 @@
     },
     "site": {
       "href": "volsoft.com.tr",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Europe", "Africa", "Asia", "Middle East"],
+    "country": ["Turkey", "Georgia", "Kazakhstan", "Azerbaijan", "Tajikistan", "Turkmenistan", "Uzbekistan", "Kyrgyzstan", "Tunisia", "Libya", "Iraq", "Albania", "Montenegro", "Bosnia and Herzegovina"],
+    "name": "Basari Muhendislik",
+    "contact": {
+      "href": "sales@basarimuhendislik.com"
+    },
+    "site": {
+      "href": "basarimuhendislik.com",
       "target": "_blank"
     }
   },

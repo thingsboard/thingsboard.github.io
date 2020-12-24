@@ -2,7 +2,7 @@
 layout: docwithnav
 assignees:
 - ashvayka
-title: Getting Started
+title: Getting Started with ThingsBoard
 description: Getting started with ThingsBoard open-source IoT platform and simulated IoT devices
 step1:
     0:
@@ -174,7 +174,7 @@ step5:
         image: /images/helloworld/hello-world-step-5-item-2.png 
         title: 'User may acknowledge and clear the alarms.'     
         
-step7:
+step71:
     0:
         image: /images/helloworld/hello-world-step-7-item-1.png 
         title: 'Navigate to Customers page.'
@@ -184,43 +184,51 @@ step7:
     2:
         image: /images/helloworld/hello-world-step-7-item-3.png 
         title: 'Add customer title and click "Add".'
-    3:
+
+step72:
+    0:
         image: /images/helloworld/hello-world-step-71-item-1.png 
         title: 'Open Devices page. Click "Assign to customer" for "My New Device".'
-    4:
+    1:
         image: /images/helloworld/hello-world-step-71-item-2.png 
         title: 'Select "My New Customer" and click "Assign".'
-    5:
+
+step73:
+    0:
         image: /images/helloworld/hello-world-step-71-item-3.png 
         title: 'Open Dashboards. Click "Manage assigned customers".'
-    6:
+    1:
         image: /images/helloworld/hello-world-step-71-item-4.png 
         title: 'Select "My New Customer" and click "Update".'
-    7:
+
+step74:
+    0:
         image: /images/helloworld/hello-world-step-7-item-4.png 
         title: 'Navigate back to "Customers" page and click "manage customer users" icon.'        
-    8:
+    1:
         image: /images/helloworld/hello-world-step-7-item-5.png 
         title: 'Click "Add user" icon.'        
-    9:
+    2:
         image: /images/helloworld/hello-world-step-7-item-6.png 
         title: 'Specify email that you will use to login as a customer user and click "Add".'
-    10:
+    3:
         image: /images/helloworld/hello-world-step-7-item-7.png 
         title: 'Copy the activation link and save it to a safe place. You will use it later to set the password.'
-    11:
+    4:
         image: /images/helloworld/hello-world-step-71-item-7.png 
         title: 'Open user details'          
-    12:
+    5:
         image: /images/helloworld/hello-world-step-71-item-5.png 
         title: 'Toggle edit mode'
-    13:
+    6:
         image: /images/helloworld/hello-world-step-71-item-6.png 
-        title: 'Select default dashboard and check "Always fullscreen". Apply changes.'  
-    14:
+        title: 'Select default dashboard and check "Always fullscreen". Apply changes.'
+
+step75:
+    0:
         image: /images/helloworld/hello-world-step-7-item-8.png 
         title: 'Use activation link to set the password. Click "Create Password". You will automatically login as a customer user.'
-    15:
+    1:
         image: /images/helloworld/hello-world-step-7-item-9.png 
         title: 'You have logged in as a Customer User. You may browse the data and acknowledge/clear alarms.'
         
@@ -353,15 +361,40 @@ and documentation about [alarm notifications](/docs/user-guide/device-profiles/#
 **Note**: At the moment ThingsBoard supports AWS SNS and Twilio to send SMS. 
 Both services are non free and require you to create an account. However, you may integrate with other SMS/EMAIL gateways using [REST API call](https://thingsboard.io/docs/user-guide/rule-engine-2-0/tutorials/get-weather-using-rest-api-call/#node-d-external-rest-api-call-node) node.  
 
-### Step 7. Assign Dashboard to Customer
+### Step 7. Assign Device and Dashboard to Customer
 
 One of the important ThingsBoard features is the ability to assign Dashboards to Customers. 
 You may assign different devices to different customers. Then, you may create a Dashboard(s) and assign it to multiple customers.
 Each customer user will see his own devices and will not be able to see devices or any other data that belong to a different customer.
 
-Let's create "My New Customer" and add a user for this customer. Please see instruction below:
+#### Step 7.1 Create customer
 
-{% include images-gallery.html imageCollection="step7" showListImageTitles="true" %}
+Let's create a customer with title "My New Customer". Please see instruction below:
+
+{% include images-gallery.html imageCollection="step71" showListImageTitles="true" %}
+
+#### Step 7.2 Assign device to Customer
+
+Let's assign device to the Customer. The Customer users will have ability to read and write telemetry and send commands to devices. 
+
+{% include images-gallery.html imageCollection="step72" showListImageTitles="true" %}
+
+#### Step 7.3 Assign dashboard to Customer
+
+Let's share our dashboard with the Customer. The Customer users will have read-only access to the Dashboard. 
+
+{% include images-gallery.html imageCollection="step73" showListImageTitles="true" %}
+
+#### Step 7.4 Create customer user
+
+Finally, let's create a user that will belong to the customer and will have read-only access to the dashboard and the device.
+You may optionally configure the dashboard to appear just after user login to the platform web UI.
+
+{% include images-gallery.html imageCollection="step74" showListImageTitles="true" %}
+
+#### Step 7.5 Activate customer user
+
+{% include images-gallery.html imageCollection="step75" showListImageTitles="true" %}
 
 ## Next steps
 

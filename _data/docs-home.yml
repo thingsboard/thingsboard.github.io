@@ -363,6 +363,17 @@ toc:
         path: /docs/iot-gateway/guides/how-to-enable-remote-shell/
   - title: IoT Gateway Roadmap
     path: /docs/iot-gateway/roadmap/
+- title: ThingsBoard Cloud
+  new: true
+  section:
+    - title: What is ThingsBoard Cloud?
+      path: /products/paas/
+    - title: Subscriptions
+      path: /products/paas/subscription/
+    - title: Plan and billing
+      path: /products/paas/billing-info/
+    - title: Domains
+      path: /products/paas/domains/
 - title: Troubleshooting
   path: /docs/user-guide/troubleshooting/
 - title: Contribution Guide

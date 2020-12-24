@@ -7,8 +7,8 @@
       <br/>  
       <p><b>ThingsBoard PE Feature</b></p>
       <br/>  
-      <p>Only <a class="pe-link" href="/products/thingsboard-pe/"><b>ThingsBoard Professional Edition</b></a> supports <b>{{ feature }}</b> feature.</p>
-      <p>See <a class="pe-learn-more" href="/docs/user-guide/install/pe/installation-options/"><b>ThingsBoard PE Installation Options</b></a> to install ThingsBoard PE.</p>
+      <p>Only <a class="pe-link" href="/products/thingsboard-pe/"><b>Professional Edition</b></a> supports <b>{{ feature }}</b> feature.</p>
+      <p>Use <a class="pe-learn-more" href="https://thingsboard.cloud/signup"><b>ThingsBoard Cloud</b></a> or <a class="pe-learn-more" href="/docs/user-guide/install/pe/installation-options/"><b>install</b></a> your own platform instance.</p>
   </td>
 </tr>
 </table>
