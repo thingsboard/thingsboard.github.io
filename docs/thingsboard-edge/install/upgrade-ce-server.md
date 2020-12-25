@@ -1,3 +1,12 @@
+---
+layout: docwithnav
+title: Upgrade instructions for ThingsBoard CE server (beta)
+description: Upgrade instructions for ThingsBoard CE server (beta)
+---
+
+* TOC
+{:toc}
+
 ### Ubuntu/CentOS {#ubuntucentos-260beta}
 
 **NOTE**: These upgrade steps are applicable for ThingsBoard version 2.5.5. In order to upgrade to 2.6.0beta you need to [**upgrade to 2.5.5 first**](/docs/user-guide/install/upgrade-instructions/#ubuntucentos-255).
@@ -31,7 +40,7 @@ sudo nano /etc/thingsboard/conf/thingsboard.conf
 Add the following lines to the configuration file:
 
 ```bash
-export EDGES_RPC_ENABLED=true
+export EDGES_ENABLED=true
 ```
 {: .copy-code}
 
@@ -79,7 +88,7 @@ and locate "# Edges parameters" block:
 # Edges parameters
 edges:
   rpc:
-    enabled: "${EDGES_RPC_ENABLED:false}"
+    enabled: "${EDGES_ENABLED:false}"
     port: "${EDGES_RPC_PORT:7070}"
     client_max_keep_alive_time_sec: "${EDGES_RPC_CLIENT_MAX_KEEP_ALIVE_TIME_SEC:300}"
     ssl:
@@ -97,10 +106,10 @@ edges:
 ``` 
 {: .copy-code}
 
-locate "EDGES_RPC_ENABLED" parameter. Replace "false" with "true".
+locate "EDGES_ENABLED" parameter. Replace "false" with "true".
 
 ```yml
-    enabled: "${EDGES_RPC_ENABLED:true}"
+    enabled: "${EDGES_ENABLED:true}"
 ```
 
 #### Start the service

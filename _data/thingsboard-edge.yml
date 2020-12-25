@@ -21,6 +21,8 @@ toc:
       path: /docs/thingsboard-edge/install/docker-windows/
     - title: Installing Edge using Docker (Linux or Mac OS)
       path: /docs/thingsboard-edge/install/docker/
+    - title: Upgrade instructions for ThingsBoard CE server (beta)
+      path: /docs/thingsboard-edge/install/upgrade-ce-server/
 - title: ThingsBoard Edge features
   section:
     - title: Synchronization with ThingsBoard CE/PE (cloud)

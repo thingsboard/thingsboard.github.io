@@ -38,7 +38,7 @@ In configuration file it will look like this
 # Edges parameters
 edges:
   rpc:
-    enabled: "${EDGES_RPC_ENABLED:true}"
+    enabled: "${EDGES_ENABLED:true}"
     port: "${EDGES_RPC_PORT:60100}"
 ``` 
 Write out changes (**Ctrl-O**) and exit from nano editor (**Ctrl-X**).
