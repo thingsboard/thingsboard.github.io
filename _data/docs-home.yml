@@ -155,48 +155,6 @@ toc:
     path: /docs/user-guide/integrations/custom/
   - title: Notifications and Alarms on your smartphone using Telegram Bot
     path: /docs/user-guide/rule-engine-2-0/tutorials/integration-with-telegram-bot/
-- title: ThingsBoard Edge
-  path: /docs/thingsboard-edge/
-  beta: true
-  section:
-    - title: What is ThingsBoard Edge?
-      path: /docs/thingsboard-edge/what-is-edge/
-    - title: Getting Started
-      path: /docs/thingsboard-edge/getting-started/
-    - title: Installation guides
-      section:
-        - title: Installation options
-          path: /docs/thingsboard-edge/install/installation-options/
-        - title: Installing Edge on Ubuntu (DEB)
-          path: /docs/thingsboard-edge/install/deb-installation/
-        - title: Installing Edge on CentOS/RHEL (RPM)
-          path: /docs/thingsboard-edge/install/rhel/
-        - title: Installing Edge on Windows
-          path: /docs/thingsboard-edge/install/windows/
-        - title: Installing Edge using Docker (Windows)
-          path: /docs/thingsboard-edge/install/docker-windows/
-        - title: Installing Edge using Docker (Linux or Mac OS)
-          path: /docs/thingsboard-edge/install/docker/
-    - title: ThingsBoard Edge features
-      section:
-        - title: Synchronization with ThingsBoard CE/PE (cloud)
-          path: /docs/thingsboard-edge/features/sync/
-        - title: Edge Rule Engine
-          path: /docs/thingsboard-edge/features/edge-rule-engine/
-        - title: User Access management
-          path: /docs/thingsboard-edge/features/user-access/
-    - title: Use Cases
-      section:
-        -  title: Overview
-           path: /docs/thingsboard-edge/use-cases/overview/
-        -  title: Manage alarms and RPC requests on edge devices
-           pe: true
-           path: /docs/thingsboard-edge/use-cases/manage-alarms-rpc-requests/
-        -  title: Data filtering and traffic reduce
-           pe: true
-           path: /docs/thingsboard-edge/use-cases/data-filtering-traffic-reduce/
-    - title: ThingsBoard Edge Roadmap
-      path: /docs/thingsboard-edge/roadmap/
 - title: Analytics
   section:
   - title: Trendz Analytics
@@ -374,6 +332,48 @@ toc:
       path: /products/paas/billing-info/
     - title: Domains
       path: /products/paas/domains/
+- title: ThingsBoard Edge
+  path: /docs/thingsboard-edge/
+  beta: true
+  section:
+    - title: What is ThingsBoard Edge?
+      path: /docs/thingsboard-edge/what-is-edge/
+    - title: Getting Started
+      path: /docs/thingsboard-edge/getting-started/
+    - title: Installation guides
+      section:
+        - title: Installation options
+          path: /docs/thingsboard-edge/install/installation-options/
+        - title: Installing Edge on Ubuntu (DEB)
+          path: /docs/thingsboard-edge/install/deb-installation/
+        - title: Installing Edge on CentOS/RHEL (RPM)
+          path: /docs/thingsboard-edge/install/rhel/
+        - title: Installing Edge on Windows
+          path: /docs/thingsboard-edge/install/windows/
+        - title: Installing Edge using Docker (Windows)
+          path: /docs/thingsboard-edge/install/docker-windows/
+        - title: Installing Edge using Docker (Linux or Mac OS)
+          path: /docs/thingsboard-edge/install/docker/
+    - title: ThingsBoard Edge features
+      section:
+        - title: Synchronization with ThingsBoard CE/PE (cloud)
+          path: /docs/thingsboard-edge/features/sync/
+        - title: Edge Rule Engine
+          path: /docs/thingsboard-edge/features/edge-rule-engine/
+        - title: User Access management
+          path: /docs/thingsboard-edge/features/user-access/
+    - title: Use Cases
+      section:
+        -  title: Overview
+           path: /docs/thingsboard-edge/use-cases/overview/
+        -  title: Manage alarms and RPC requests on edge devices
+           pe: true
+           path: /docs/thingsboard-edge/use-cases/manage-alarms-rpc-requests/
+        -  title: Data filtering and traffic reduce
+           pe: true
+           path: /docs/thingsboard-edge/use-cases/data-filtering-traffic-reduce/
+    - title: ThingsBoard Edge Roadmap
+      path: /docs/thingsboard-edge/roadmap/
 - title: Troubleshooting
   path: /docs/user-guide/troubleshooting/
 - title: Contribution Guide

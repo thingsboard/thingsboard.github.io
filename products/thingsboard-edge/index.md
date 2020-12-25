@@ -4,6 +4,12 @@ title: ThingsBoard Edge
 description: 
 ---
 
+<section id="intro">
+	<main>
+		<h1>The <a href="/docs/thingsboard-edge/what-is-edge/">ThingsBoard Edge</a> is a ThingsBoard's software product for edge computing.</h1>
+		<h2>It allows bringing data analysis and management to the edge, while seamlessly synchronizing with the cloud (ThingsBoard CE/PE).</h2>
+    </main>
+</section>
 <section class="pe-features edge-features">
     <div class="main-bg">
         <main>

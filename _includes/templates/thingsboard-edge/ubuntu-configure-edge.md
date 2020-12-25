@@ -10,7 +10,7 @@ Add the following lines to the configuration file. Don't forget **to replace**:
  * "PUT_YOUR_EDGE_KEY_HERE" and "PUT_YOUR_EDGE_SECRET_HERE" with Edge **key and secret** respectively:
 ```bash
 # DB Configuration 
-export SPRING_DATASOURCE_URL=jdbc:postgresql://localhost:5432/thingsboard_edge
+export SPRING_DATASOURCE_URL=jdbc:postgresql://localhost:5432/tb_edge
 export SPRING_DATASOURCE_USERNAME=postgres
 export SPRING_DATASOURCE_PASSWORD=PUT_YOUR_POSTGRESQL_PASSWORD_HERE
 export CLOUD_ROUTING_KEY=PUT_YOUR_EDGE_KEY_HERE

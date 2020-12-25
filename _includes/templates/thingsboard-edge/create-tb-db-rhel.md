@@ -42,7 +42,7 @@ psql -U postgres -d postgres -h 127.0.0.1 -W
 Execute create database statement
 
 ```bash
-CREATE DATABASE thingsboard_edge;
+CREATE DATABASE tb_edge;
 \q
 
 ```

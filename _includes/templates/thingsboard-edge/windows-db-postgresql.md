@@ -10,4 +10,4 @@ Don't forget this password. It will be used later. For simplicity, we will subst
 ##### Create ThingsBoard Edge Database
 
 Once installed, launch the "pgAdmin" software and login as superuser (postgres). 
-Open your server and create database **thingsboard_edge** with owner "postgres".
+Open your server and create database **tb_edge** with owner "postgres".

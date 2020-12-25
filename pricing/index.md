@@ -24,13 +24,13 @@ defaultActivePricingSection: thingsboard-cloud
             <li id="menu-item-thingsboard-pe" class="menu-item tb-logo">
                 <a href="javascript:void(0);" onClick="activatePricingSection('thingsboard-pe')">Professional Edition</a>
             </li>
-         </ul>
-       </nav>
-       <nav id="inner-navigation" class="inner-navigation">
-         <ul id="menu-pricing-navigation-2" class="menu">
             <li id="menu-item-thingsboard-edge" class="menu-item tb-edge-logo">
                <a href="javascript:void(0);" onClick="activatePricingSection('thingsboard-edge')">Edge</a>
-                </li>
+            </li>
+         </ul>
+       </nav>
+       <nav id="inner-navigation-2" class="inner-navigation">
+         <ul id="menu-pricing-navigation-2" class="menu">
             <li id="menu-item-trendz" class="menu-item trendz-logo">
                <a href="javascript:void(0);" onClick="activatePricingSection('trendz')">Trendz Analytics</a>
             </li>
@@ -522,7 +522,7 @@ defaultActivePricingSection: thingsboard-cloud
         <div id="payAsYouGoHeader" class="pricing-content-description col-lg-6">
             <h2>Subscription plans</h2>
             <div class="pricing-content-details">
-                All subscription plans include <b>unlimited</b> customers, dashboards, integrations, api calls, data points & messages
+                TODO: voba All subscription plans include <b>unlimited</b> customers, dashboards, integrations, api calls, data points & messages
             </div>
         </div>
         <div id="perpetualHeader" class="pricing-content-description col-lg-6">
