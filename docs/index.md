@@ -84,4 +84,4 @@ description: ThingsBoard documentation - learn about the platform and get your I
 
 <h2>ThingsBoard Edge</h2>
 
-<p>Contains documentation and use cases about <b><a href="/docs/thingsboard-edge/">ThingsBoard Edge</a></b>.</p>
+<p>Contains documentation and use cases about <b><a href="/docs/edge/">ThingsBoard Edge</a></b>.</p>

@@ -333,49 +333,79 @@ toc:
     - title: Domains
       path: /products/paas/domains/
 - title: ThingsBoard Edge
-  path: /docs/thingsboard-edge/
+  path: /docs/edge/
   beta: true
   section:
     - title: What is ThingsBoard Edge?
-      path: /docs/thingsboard-edge/what-is-edge/
+      path: /docs/edge/what-is-edge/
     - title: Getting Started
-      path: /docs/thingsboard-edge/getting-started/
+      path: /docs/edge/getting-started/
+    - title: Architecture
+      path: /docs/edge/edge-architecture/
     - title: Installation guides
       section:
         - title: Installation options
-          path: /docs/thingsboard-edge/install/installation-options/
+          path: /docs/edge/install/installation-options/
+        - title: Upgrade instructions for ThingsBoard CE server
+          path: /docs/edge/install/upgrade-ce-server/
         - title: Installing Edge on Ubuntu (DEB)
-          path: /docs/thingsboard-edge/install/deb-installation/
+          path: /docs/edge/install/deb-installation/
         - title: Installing Edge on CentOS/RHEL (RPM)
-          path: /docs/thingsboard-edge/install/rhel/
+          path: /docs/edge/install/rhel/
         - title: Installing Edge on Windows
-          path: /docs/thingsboard-edge/install/windows/
+          path: /docs/edge/install/windows/
         - title: Installing Edge using Docker (Windows)
-          path: /docs/thingsboard-edge/install/docker-windows/
+          path: /docs/edge/install/docker-windows/
         - title: Installing Edge using Docker (Linux or Mac OS)
-          path: /docs/thingsboard-edge/install/docker/
-        - title: Upgrade instructions for ThingsBoard CE server (beta)
-          path: /docs/thingsboard-edge/install/upgrade-ce-server/
-    - title: ThingsBoard Edge features
+          path: /docs/edge/install/docker/
+    - title: Configuration guides
       section:
-        - title: Synchronization with ThingsBoard CE/PE (cloud)
-          path: /docs/thingsboard-edge/features/sync/
-        - title: Edge Rule Engine
-          path: /docs/thingsboard-edge/features/edge-rule-engine/
-        - title: User Access management
-          path: /docs/thingsboard-edge/features/user-access/
+        - title: Community Edition
+          section:
+          - title: Edge Management Overview
+            path: /docs/edge/config/ce/management/
+          - title: Create Device on edge and provision to cloud
+            path: /docs/edge/config/ce/create-device/
+          - title: Provision Device(s) from cloud to edge
+            path: /docs/edge/config/ce/provision-device/
+          - title: Provision Asset(s) from cloud to edge
+            path: /docs/edge/config/ce/provision-asset/
+          - title: Provision Entity View(s) from cloud to edge
+            path: /docs/edge/config/ce/provision-entity-view/
+          - title: Provision Dashboard(s) from cloud to edge
+            path: /docs/edge/config/ce/provision-dashboard/
+          - title: Provision User(s) from cloud to edge
+            path: /docs/edge/config/ce/provision-user/
+          - title: Provision Customer from cloud to edge
+            path: /docs/edge/config/ce/provision-customer/
+        - title: Professional Edition
+          path: /docs/edge/config/pe/coming-soon/
+    - title: Edge Rule Engine
+      section:
+        - title: General Overview
+          path: /docs/edge/rule-engine/general/
+        - title: Rule Chain Templates
+          path: /docs/edge/rule-engine/rule-chain-templates/
+        - title: Provision Rule Chains from cloud to edge
+          path: /docs/edge/rule-engine/provision-rule-chains/
+        - title: Push Attributes from edge to cloud and vise versa
+          path: /docs/edge/rule-engine/attributes/
+    - title: Features
+      section:
+        - title: Edge status
+          path: /docs/edge/features/edge-status/
     - title: Use Cases
       section:
         -  title: Overview
-           path: /docs/thingsboard-edge/use-cases/overview/
+           path: /docs/edge/use-cases/overview/
         -  title: Manage alarms and RPC requests on edge devices
            pe: true
-           path: /docs/thingsboard-edge/use-cases/manage-alarms-rpc-requests/
+           path: /docs/edge/use-cases/manage-alarms-rpc-requests/
         -  title: Data filtering and traffic reduce
            pe: true
-           path: /docs/thingsboard-edge/use-cases/data-filtering-traffic-reduce/
+           path: /docs/edge/use-cases/data-filtering-traffic-reduce/
     - title: ThingsBoard Edge Roadmap
-      path: /docs/thingsboard-edge/roadmap/
+      path: /docs/edge/roadmap/
 - title: Troubleshooting
   path: /docs/user-guide/troubleshooting/
 - title: Contribution Guide

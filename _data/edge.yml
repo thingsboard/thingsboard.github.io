@@ -1,0 +1,73 @@
+bigheader: "ThingsBoard Edge"
+abstract: "Distribute data processing and analysis using edge computing."
+toc:
+- title: ThingsBoard Edge
+  path: /docs/edge/
+- title: What is ThingsBoard Edge?
+  path: /docs/edge/what-is-edge/
+- title: Getting Started
+  path: /docs/edge/getting-started/
+- title: Architecture
+  path: /docs/edge/edge-architecture/
+- title: Installation guides
+  section:
+    - title: Installation options
+      path: /docs/edge/install/installation-options/
+    - title: Upgrade instructions for ThingsBoard CE server
+      path: /docs/edge/install/upgrade-ce-server/
+    - title: Installing Edge on Ubuntu (DEB)
+      path: /docs/edge/install/deb-installation/
+    - title: Installing Edge on CentOS/RHEL (RPM)
+      path: /docs/edge/install/rhel/
+    - title: Installing Edge on Windows
+      path: /docs/edge/install/windows/
+    - title: Installing Edge using Docker (Windows)
+      path: /docs/edge/install/docker-windows/
+    - title: Installing Edge using Docker (Linux or Mac OS)
+      path: /docs/edge/install/docker/
+- title: Configuration guides
+  section:
+    - title: Community Edition
+      section:
+      - title: Edge Management Overview
+        path: /docs/edge/config/ce/management/
+      - title: Create Device on edge and provision to cloud
+        path: /docs/edge/config/ce/create-device/
+      - title: Provision Device(s) from cloud to edge
+        path: /docs/edge/config/ce/provision-device/
+      - title: Provision Asset(s) from cloud to edge
+        path: /docs/edge/config/ce/provision-asset/
+      - title: Provision Entity View(s) from cloud to edge
+        path: /docs/edge/config/ce/provision-entity-view/
+      - title: Provision Dashboard(s) from cloud to edge
+        path: /docs/edge/config/ce/provision-dashboard/
+      - title: Provision User(s) from cloud to edge
+        path: /docs/edge/config/ce/provision-user/
+      - title: Provision Customer from cloud to edge
+        path: /docs/edge/config/ce/provision-customer/
+    - title: Professional Edition
+      path: /docs/edge/config/pe/coming-soon/
+- title: Edge Rule Engine
+  section:
+    - title: General Overview
+      path: /docs/edge/rule-engine/general/
+    - title: Rule Chain Templates
+      path: /docs/edge/rule-engine/rule-chain-templates/
+    - title: Provision Rule Chains from cloud to edge
+      path: /docs/edge/rule-engine/provision-rule-chains/
+    - title: Push Attributes from edge to cloud and vise versa
+      path: /docs/edge/rule-engine/attributes/
+- title: Features
+  section:
+    - title: Edge status
+      path: /docs/edge/features/edge-status/
+- title: Use Cases
+  section:
+    -  title: Overview
+       path: /docs/edge/use-cases/overview
+    -  title: Manage alarms and RPC requests on edge devices
+       path: /docs/edge/use-cases/manage-alarms-rpc-requests/
+    -  title: Data filtering and traffic reduce
+       path: /docs/edge/use-cases/data-filtering-traffic-reduce/
+- title: ThingsBoard Edge Roadmap
+  path: /docs/edge/roadmap/

@@ -6,7 +6,7 @@ description:
 
 <section id="intro">
 	<main>
-		<h1>The <a href="/docs/thingsboard-edge/what-is-edge/">ThingsBoard Edge</a> is a ThingsBoard's software product for edge computing.</h1>
+		<h1>The <a href="/docs/edge/what-is-edge/">ThingsBoard Edge</a> is a ThingsBoard's software product for edge computing.</h1>
 		<h2>It allows bringing data analysis and management to the edge, while seamlessly synchronizing with the cloud (ThingsBoard CE/PE).</h2>
     </main>
 </section>
@@ -16,11 +16,11 @@ description:
             <div class="content">
                 <h3 class="header"><span class="cBlue" >Local deployment and storage</span></h3>
                 <p>Operate with and store data from local devices without internet connection. Push updates to the cloud once connection restored. </p>
-                <a href="/docs/thingsboard-edge/what-is-edge/" class="button cBlue try-button">Learn more</a>           
+                <a href="/docs/edge/what-is-edge/" class="button cBlue try-button">Learn more</a>           
             </div>
             <div class="image-block">
                 <div class="image-wrapper">
-                    <video poster="/images/thingsboard-edge/overview/offline_network_.svg" autoplay="" loop="" preload="auto" muted="">
+                    <video poster="/images/edge/overview/offline_network_.svg" autoplay="" loop="" preload="auto" muted="">
                     </video>
                 </div>
             </div>
@@ -31,11 +31,11 @@ description:
             <div class="content">
                 <h3 class="header"><span class="cBlue" >Traffic filtering</span></h3>
                 <p>Filter data from devices on the ThingsBoard Edge service and push to cloud only subset of the data.</p>
-                <a href="/docs/thingsboard-edge/what-is-edge/" class="button cBlue try-button">Learn more</a>           
+                <a href="/docs/edge/what-is-edge/" class="button cBlue try-button">Learn more</a>           
             </div>
             <div class="image-block">
                 <div class="image-wrapper">
-                    <video poster="/images/thingsboard-edge/overview/data_filtering.svg" autoplay="" loop="" preload="auto" muted="">               
+                    <video poster="/images/edge/overview/data_filtering.svg" autoplay="" loop="" preload="auto" muted="">               
                     </video>
                 </div>
             </div>
@@ -46,11 +46,11 @@ description:
             <div class="content">
                 <h3 class="header"><span class="cBlue" >Local alarms</span></h3>
                 <p> React instantly to critical situations on site without internet connection to cloud.</p>
-                <a href="/docs/thingsboard-edge/what-is-edge/" class="button cBlue try-button">Learn more</a>           
+                <a href="/docs/edge/what-is-edge/" class="button cBlue try-button">Learn more</a>           
             </div>
             <div class="image-block">
                 <div class="image-wrapper">
-                    <video poster="/images/thingsboard-edge/overview/alarm.svg" autoplay="" loop="" preload="auto" muted="">               
+                    <video poster="/images/edge/overview/alarm.svg" autoplay="" loop="" preload="auto" muted="">               
                     </video>
                 </div>
             </div>
@@ -62,11 +62,11 @@ description:
                 <h3 class="header"><span class="cBlue" >Batch update and visualization</span></h3>
                 <p>Update thousands of edge configurations in a single click.</p>
                 <p>Monitor local events and timeseries data with a real-time dashboard.</p>
-                <a href="/docs/thingsboard-edge/what-is-edge/" class="button cBlue try-button">Learn more</a>           
+                <a href="/docs/edge/what-is-edge/" class="button cBlue try-button">Learn more</a>           
             </div>
             <div class="image-block">
                 <div class="image-wrapper">
-                    <video poster="/images/thingsboard-edge/overview/update_dashboard.svg" autoplay="" loop="" preload="auto" muted="">
+                    <video poster="/images/edge/overview/update_dashboard.svg" autoplay="" loop="" preload="auto" muted="">
                     </video>
                 </div>
             </div>
@@ -121,7 +121,7 @@ description:
                     Durable
                 </div>
                 <div class="more-features__text">
-                    All messages and events are collected in the persistence layer and will be delivered to cloud.
+                    Edge collects all messages and events in the persistence layer. Particular messages could be transferred to the cloud, if required.
                 </div>
             </div>
         </div>
