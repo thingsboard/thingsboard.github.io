@@ -31,16 +31,37 @@
             justify-content: center
             align-content: center
             background-color: rgba(0,0,0,0.72)
-            .tb-title
-                margin-bottom: 20px
-                font-size: 22px
-                font-weight: 400
-                text-shadow: 0 0 18px rgba(0,0,0,.66)
-            .tb-sub-title
-                margin-bottom: 40px
-                font-size: 14px
-                line-height: 16px
-                text-shadow: 0 0 18px rgba(0,0,0,.66)
+            h1
+                margin-bottom: 46px
+                font-size: 96px
+                font-weight: 600
+                text-shadow: 0 10px 20px rgba(0,0,0,0.25)
+            h2
+                margin-bottom: 140px
+                font-size: 48px
+                letter-spacing: 7px
+                text-shadow: 0 10px 20px rgba(0,0,0,0.25)
+            .try-pe
+                background-color: none
+                font-size: 24px
+                font-weight: 500
+                text-align: center
+                color: white
+                border-radius: 4px
+                text-decoration: none
+                padding: 15px 100px
+                margin: 0 auto
+                text-shadow: 0 8px 16px rgba(0,0,0,0.25)
+                box-shadow: 0 28px 16px -20px rgba(0,0,0,0.25)
+                border: 4px solid
+                border-color: white
+                &:hover
+                    background-color: white
+                    color: #305680
+                &:active
+                    background-color: #f1f1f1
+                    border-color: #f1f1f1
+                    transition-duration: 0s
             .learn-tb
                 cursor: pointer
                 line-height: 40px
@@ -71,13 +92,7 @@
                 .tb-arrow
                     display: none
 
-    #talkToUs
-        main
-            padding: 30px 0
-        h5
-            font-size: 20px
-
-    #intro, #main-features, #dashboard_description, #rule_engine, #tb-customers, #tb-intro-video
+    #intro, #matrix, #features
         color: #212529
         h1
             color: #212529
@@ -99,6 +114,115 @@
             font-weight: 400
         p
             line-height: 1.5em
+            color: #44474A
+            font-size: 18px
+            font-weight: normal
+            line-height: 27px
+            margin-block-start: 9px
+
+    #bottom
+        background-color: #F9FAFB
+        margin: -20px -100%
+        padding: 66px 0 124px
+        text-align: center
+        .try-pe
+            background-color: #0D2743
+            font-size: 24px
+            font-weight: 400
+            text-align: center
+            color: white
+            border-radius: 4px
+            text-decoration: none
+            padding: 15px 128px
+            height: 127px
+            box-shadow: 0 28px 16px -20px rgba(13,39,67,0.25)
+            &:hover
+                background-color: #305680
+                text-decoration: none
+                color: #fff
+            &:active
+                background-color: #4B6D93
+                transition-duration: 0s
+
+    #features
+        div.item
+            display: flow-root
+            margin: 88px 0 120px
+            div
+                float: left
+                width: calc(100% - 412px)
+                h1
+                    font-size: 28px
+                    line-height: normal
+                    text-align: left
+            img
+                padding: 0 0 0 72px
+                float: left
+            &:nth-child(2n)
+                img
+                    padding: 0 72px 0 0
+
+    #matrix
+        background-color: #F9FAFB
+        margin: 60px -100% 0
+        padding: 88px 0
+        .table_bg
+            margin: 160px 0 16px
+            div
+                background-color: white
+                height: 64px
+                margin: 0 -100%
+                &:nth-child(2n)
+                    background-color: unset
+        h1
+            line-height: normal
+            font-weight: normal
+        table
+            td, th
+                box-shadow: inset -1px 0 0 #212529
+                padding: 0
+                &:nth-child(4n-2)
+                    color: #305680
+                &:nth-child(4n-1)
+                    color: #00695C
+                &:nth-child(4n)
+                    color: #2A7DEC
+            border: none
+            margin-top: 64px
+            position: absolute
+            top: 40px
+            thead
+                color: #212529
+                font-size: 20px
+                line-height: 30px
+                background-color: unset
+                tr
+                    height: 104px
+                    th
+                        text-align: center
+                        vertical-align: top
+                        font-weight: 500
+                        width: 20%
+                    td
+                        width: 40%
+            tbody
+                tr
+                    background-color: unset
+                    &:nth-child(2n-1)
+                        background-color: white
+                    height: 64px
+                    th
+                        font-weight: 600
+                        font-size: 18px
+                        padding-right: 48px
+                        a
+                            color: #212529
+                        img
+                            vertical-align: top
+                    td
+                        text-align: center
+                        font-weight: 600
+                        font-size: 20px
 
     #intro
         margin-bottom: 64px
@@ -111,12 +235,6 @@
                 div
                     float: left
                     width: calc(100% - 92px)
-                    p
-                        color: #44474A
-                        font-size: 18px
-                        font-weight: normal
-                        line-height: 27px
-                        margin-block-start: 15px
                     h1
                         font-size: 24px
                         line-height: normal
@@ -158,57 +276,6 @@
             line-height: 27px
             margin-block-start: 15px
 
-
-    #products
-        width: 100%
-        background-color: #F9FAFB
-        padding: 96px 0 56px
-        margin-bottom: 72px
-        .product-list
-            display: flex
-            margin: 0 60px
-            div
-                color: #212529
-                background-color: white
-                box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.1)
-                border-radius: 4px
-                padding: 40px
-                text-align: center
-                flex: 1
-                margin-bottom: 40px
-                h1
-                    color: #707275
-                    font-size: 18px
-                    line-height: 32px
-                h2
-                    font-size: 28px
-                    font-weight: 600
-                h3
-                    font-size: 16px
-                img
-                    display: block
-                    margin: 50px auto 50px auto
-                    width: 80%
-                &.main
-                    box-shadow: inset 0px -6px 0px #305680, 0 10px 20px 0 rgba(0, 0, 0, 0.1)
-                    margin: 0 30px
-                    h2
-                        font-size: 42px
-                        font-weight: 600
-                    img
-                        margin: 60px auto
-                a
-                    color: #305680
-                    font-weight: 500
-            @media(max-width: 992px)
-                flex-direction: column
-                div.main
-                    margin: 0 0 40px
-        a
-            color: #707275
-            font-weight: 500
-            margin-top: 56px
-            text-align: center
 
     #tb-customers
         background-color: #FBFBFB

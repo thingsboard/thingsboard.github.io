@@ -16,7 +16,7 @@ description:
 </section>
 <section id="intro">
 	<main>
-		<h1>Advanced ThingsBoard IoT Platform distribution<br/>with value added features</h1>
+		<h1 style="padding: 0 200px">Advanced ThingsBoard IoT Platform distribution with value added features</h1>
 		<div id="labeling"> 
 		<div><hr><img src="/images/pe/white-labeling.svg"><hr></div>
 		<h1>White-labeling</h1>
@@ -70,14 +70,138 @@ description:
 	</main>
 </section>
 
+<section id="matrix">
+	<main>
+	<h1>Feature Comparison Matrix</h1>
+	<div class="table_bg">
+	<div></div><div></div>
+	<div></div><div></div>
+	<div></div><div></div>
+	<div></div><div></div>
+	<div></div><div></div>
+	<div></div><div></div>
+	<div></div><div></div>
+	</div>
+	<table>
+            <thead>
+                <tr>
+                    <td></td>
+                    <th>Community<br/>Edition</th>
+                    <th>Professional<br/>Edition</th>
+                    <th>Cloud</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>Asset management & Data collection</th>
+                    <td><img src="/images/pe/checked_ce.svg"></td>
+                    <td><img src="/images/pe/checked_pe.svg"></td>
+                    <td><img src="/images/pe/checked_c.svg"></td>
+                </tr>
+                <tr>
+                    <th>End-user real-time dashboards</th>
+                    <td><img src="/images/pe/checked_ce.svg"></td>
+                    <td><img src="/images/pe/checked_pe.svg"></td>
+                    <td><img src="/images/pe/checked_c.svg"></td>
+                </tr>
+                <tr>
+                    <th>Customizable rule chains, widgets</th>
+                    <td><img src="/images/pe/checked_ce.svg"></td>
+                    <td><img src="/images/pe/checked_pe.svg"></td>
+                    <td><img src="/images/pe/checked_c.svg"></td>
+                </tr>
+                <tr>
+                    <th>MQTT, HTTP, CoAP, OPC-UA transport</th>
+                    <td><img src="/images/pe/checked_ce.svg"></td>
+                    <td><img src="/images/pe/checked_pe.svg"></td>
+                    <td><img src="/images/pe/checked_c.svg"></td>
+                </tr>
+                <tr>
+                    <th>Integrations with BigData systems</th>
+                    <td><img src="/images/pe/checked_ce.svg"></td>
+                    <td><img src="/images/pe/checked_pe.svg"></td>
+                    <td><img src="/images/pe/checked_c.svg"></td>
+                </tr>
+                <tr>
+                    <th>NB-IoT, SigFox, LoRaWAN support</th>
+                    <td>Basic</td>
+                    <td>Advanced</td>
+                    <td>Advanced</td>
+                </tr>
+                <tr>
+                    <th><a href="/docs/user-guide/rule-engine-2-0/overview/">Rule Engine: Components<img src="/images/pe/help-black18.svg"></a></th>
+                    <td>Basic</td>
+                    <td>Advanced</td>
+                    <td>Advanced</td>
+                </tr>              
+                <tr>
+                    <th><a href="/docs/user-guide/groups/">Entity groups<img src="/images/pe/help-black18.svg"></a></th>
+                    <td><img src="/images/pe/unchecked.svg"></td>
+                    <td><img src="/images/pe/checked_pe.svg"></td>
+                    <td><img src="/images/pe/checked_c.svg"></td>
+                </tr>              
+                <tr>
+                    <th><a href="/docs/user-guide/rbac/">Advanced RBAC for IoT<img src="/images/pe/help-black18.svg"></a></th>
+                    <td><img src="/images/pe/unchecked.svg"></td>
+                    <td><img src="/images/pe/checked_pe.svg"></td>
+                    <td><img src="/images/pe/checked_c.svg"></td>
+                </tr>              
+                <tr>
+                    <th><a href="/docs/user-guide/scheduler/">Scheduler<img src="/images/pe/help-black18.svg"></a></th>
+                    <td><img src="/images/pe/unchecked.svg"></td>
+                    <td><img src="/images/pe/checked_pe.svg"></td>
+                    <td><img src="/images/pe/checked_c.svg"></td>
+                </tr>              
+                <tr>
+                    <th><a href="/docs/user-guide/reporting/">Reporting<img src="/images/pe/help-black18.svg"></a></th>
+                    <td><img src="/images/pe/unchecked.svg"></td>
+                    <td><img src="/images/pe/checked_pe.svg"></td>
+                    <td><img src="/images/pe/checked_c.svg"></td>
+                </tr>              
+                <tr>
+                    <th><a href="/docs/user-guide/white-labeling/">Multi-tenant configurable white-labeling<img src="/images/pe/help-black18.svg"></a></th>
+                    <td><img src="/images/pe/unchecked.svg"></td>
+                    <td><img src="/images/pe/checked_pe.svg"></td>
+                    <td><img src="/images/pe/checked_c.svg"></td>
+                </tr>              
+                <tr>
+                    <th><a href="/docs/user-guide/csv-xls-data-export/">CSV/XLS data export<img src="/images/pe/help-black18.svg"></a></th>
+                    <td><img src="/images/pe/unchecked.svg"></td>
+                    <td><img src="/images/pe/checked_pe.svg"></td>
+                    <td><img src="/images/pe/checked_c.svg"></td>
+                </tr>              
+                <tr>
+                    <th><a href="/docs/user-guide/integrations/">Platform Integrations<img src="/images/pe/help-black18.svg"></a></th>
+                    <td><img src="/images/pe/unchecked.svg"></td>
+                    <td><img src="/images/pe/checked_pe.svg"></td>
+                    <td><img src="/images/pe/checked_c.svg"></td>
+                </tr>              
+            </tbody>
+    </table>
+	</main>
+</section>
 
+<section id="features">
+    <main>
+        <div class="item">
+            <div>
+            <h1>Flexible deployment options</h1>
+            <p>Deploy ThingsBoard platform in the cloud or on premises. Use commodity hardware to scale out horizontally by adding new nodes to your cluster. Single ThingsBoard server can support 10 000+ devices and 100M messages per hour, while simple cluster can support millions of devices and billions of messages.</p>
+            </div>
+            <img src="/images/pe/cloud-premises.svg">
+        </div>
+        <div class="item">
+            <img src="/images/pe/pricing-models.svg">
+            <div>
+            <h1>Simple and predictable pricing models</h1>
+            <p>Say "No!" to per message or per device pricing that turns to a monster bills in production system. ThingsBoard PE supports two simple and predictable pricing models depending on your product life-cycle stage.</p>
+            </div>
+        </div>
+	</main>
+</section>
 
-<br/>
-<br/>
-
-<p align="center">
-    <a href="/pricing/" class="button try-pe">Get it now</a>
-</p>
-
-<br/>
-<br/>
+<section id="bottom">
+<main>
+<a href="/pricing/" class="try-pe">Get it now</a>
+</main>
+</section>
