@@ -14,9 +14,9 @@
         <h1>ThingsBoard</h1>
         <h2>Professional Edition</h2>
         <a href="/pricing/" class="try-pe">Try it now</a>
-<!--        <div class="pe-arrow">-->
-<!--            <a href="#docsContent"><i class="fa fa-chevron-down fa-2x" aria-hidden="true"></i></a>-->
-<!--        </div>-->
+        <div class="pe-arrow">
+            <a href="#intro"><i class="fa fa-chevron-down fa-2x" aria-hidden="true"></i></a>
+        </div>
     </div>
 </section>
 
@@ -31,76 +31,5 @@
 {% if site.data[foundTOC].hidetoc != "true" and page.hidetoc != "true" %}
 <button class="flyout-button" onclick="tb.toggleToc()"></button>
 {% endif %}
-
-<!--<script type="text/javascript">-->
-<!--    jqueryDefer(function () {-->
-<!--        vis(function() {-->
-<!--            if (vis()) {-->
-<!--                slideUp();-->
-<!--            }-->
-<!--        });-->
-<!--        $('#hero-content > .pe-arrow > a').click(function(event) {-->
-<!--            event.preventDefault();-->
-<!--            var target = $('#encyclopedia');-->
-<!--            $('html, body').animate({-->
-<!--                scrollTop: target.offset().top - 60 //header height-->
-<!--            }, 1000, "easeOutCirc");-->
-<!--        });-->
-
-<!--    });-->
-
-<!--    inViewportDefer(function() {-->
-<!--        $("#hero-content").inViewport(function(px){-->
-<!--            if($(this).height()-px >= 60) {-->
-<!--                $(this).addClass("arrow-hidden");-->
-<!--            } else {-->
-<!--                $(this).removeClass("arrow-hidden");-->
-<!--            }-->
-<!--        });-->
-<!--        $(".pe-features main:nth-child(odd) .image-wrapper, .pe-features main:nth-child(even) .content").inViewport(function(px){-->
-<!--            if(px >= 80) {-->
-<!--                $(this).addClass("animated bounceInRight");-->
-<!--                return true;-->
-<!--            }-->
-<!--        });-->
-
-<!--        $(".pe-features main:nth-child(even) .image-wrapper, .pe-features main:nth-child(odd) .content").inViewport(function(px){-->
-<!--            if(px >= 80) {-->
-<!--                $(this).addClass("animated bounceInLeft");-->
-<!--                return true;-->
-<!--            }-->
-<!--        });-->
-
-<!--        $("#feature-comparison table th:nth-child(2), " +-->
-<!--                "#feature-comparison table th:nth-child(4), " +-->
-<!--                "#feature-comparison table td:nth-child(2), " +-->
-<!--                "#feature-comparison table td:nth-child(4)").inViewport(function(px){-->
-<!--            if(px >= 80) {-->
-<!--                $(this).addClass("animated flipInY");-->
-<!--                return true;-->
-<!--            }-->
-<!--        });-->
-<!--        $("#pricing-models-cards main, #peContent .button.try-pe, #pe-customers .customers-container .customer-block").inViewport(function(px){-->
-<!--            if(px >= 80) {-->
-<!--                $(this).addClass("animated zoomIn");-->
-<!--                return true;-->
-<!--            }-->
-<!--        });-->
-<!--    });-->
-
-<!--    function slideUp() {-->
-<!--        var headAnimations = $('#hero-content').find('.header-animation');-->
-<!--        for (var i=0;i<headAnimations.length;i++) {-->
-<!--            reinsert($(headAnimations[i]));-->
-<!--        }-->
-<!--    }-->
-
-<!--    function reinsert(el) {-->
-<!--        var newone = el.clone(true);-->
-<!--        el.before(newone);-->
-<!--        el.remove();-->
-<!--    }-->
-
-<!--</script>-->
 </body>
 </html>
