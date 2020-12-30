@@ -1,5 +1,16 @@
-Hardware requirements depend on an amount of devices connected to the system and GUI usage locally. 
+## Prerequisites
 
-To run ThingsBoard Edge ***without*** heavily usage of GUI (local dashboards, device management etc.) and relatively small amount of devices (under 100) on a single machine you will need at least 1GB of RAM.
+You will need to have ThingsBoard CE server that supports **edge** functionality up and running.
+The easiest way is to use [Live Demo](https://demo.thingsboard.io/signup) server, that is already updated to the required version.
 
-To run ThingsBoard Edge ***with*** heavily usage of GUI (local dashboards, device management etc.) and with 100+ devices on a single machine we recommend having at least 4GB of RAM.
+Additionally, you will need to have ThingsBoard Edge up and running and connected to the ThingsBoard CE server.
+
+Please install ThingsBoard Edge using [Installation Guide](/docs/edge/install/installation-options/).
+
+This guide will help you to install ThingsBoard Edge and connect it to ThingsBoard CE server.
+
+ThingsBoard **CE** server UI will be available using the URL: [http://localhost:8080](http://localhost:8080).
+You may use username **tenant@thingsboard.org** and password **tenant**.
+
+ThingsBoard **Edge** UI will be available using the URL: [http://localhost:18080](http://localhost:18080).
+You may use the same username **tenant@thingsboard.org** and password **tenant** to log in.

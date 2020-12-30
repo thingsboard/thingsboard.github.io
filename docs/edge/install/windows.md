@@ -12,7 +12,7 @@ description: Installing ThingsBoard Edge on Windows
 This guide describes how to install ThingsBoard Edge on Windows machine.
 Instructions below are provided for Windows 10/8.1/8/7 32-bit/64-bit.
 
-{% include templates/edge/prerequisites.md %}
+{% include templates/edge/hardware-requirements.md %}
 
 ### Step 1. Install Java 8 (OpenJDK) 
 

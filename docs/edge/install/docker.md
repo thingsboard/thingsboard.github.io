@@ -33,24 +33,26 @@ version: '2.2'
 services:
   mytbedge:
     restart: always
-    image: "thingsboard/tb-edge"
+    image: "thingsboard/tb-edge:3.3.0-edge"
     ports:
-      - "8080:8080"
-      - "1883:1883"
-      - "5683:5683/udp"
+      - "18080:8080"
+      - "11883:1883"
+      - "15683:5683/udp"
     environment:
+      EDGE_LICENSE_INSTANCE_DATA_FILE: /data/instance-edge-license.data
       CLOUD_ROUTING_KEY: PUT_YOUR_EDGE_KEY_HERE # e.g. 19ea7ee8-5e6d-e642-4f32-05440a529015
       CLOUD_ROUTING_SECRET: PUT_YOUR_EDGE_SECRET_HERE # e.g. bztvkvfqsye7omv9uxlp
       CLOUD_PRC_HOST: PUT_YOUR_CLOUD_IP # e.g. 192.168.1.250
     volumes:
       - ~/.mytb-edge-data:/data
       - ~/.mytb-edge-logs:/var/log/tb-edge
+      
 ```
 
 Where:    
-- `8080:8080` - connect local port 8080 to exposed internal HTTP port 8080
-- `1883:1883` - connect local port 1883 to exposed internal MQTT port 1883  
-- `5683:5683` - connect local port 5683 to exposed internal COAP port 5683   
+- `18080:8080` - connect local port 18080 to exposed internal HTTP port 8080
+- `11883:1883` - connect local port 11883 to exposed internal MQTT port 1883  
+- `15683:5683` - connect local port 15683 to exposed internal COAP port 5683   
 - `mytb-edge-data:/data` - mounts the host's dir `mytb-edge-data` to ThingsBoard Edge DataBase data directory
 - `mytb-edge-logs:/var/log/tb-edge` - mounts the host's dir `mytb-edge-logs` to ThingsBoard Edge logs directory
 - `thingsboard/tb-edge` - docker image
@@ -77,7 +79,7 @@ docker-compose pull
 docker-compose up
 ```
 
-After executing this command you can open `http://{your-host-ip}:8080` in you browser (for ex. `http://localhost:8080`). 
+After executing this command you can open `http://{your-host-ip}:18080` in you browser (for ex. `http://localhost:18080`). 
 You should see ThingsBoard Edge login page.
 
 Please use **tenant administrator** credentials to login to ThingsBoard Edge UI in case Edge connected to **ThingsBoard CE**.
