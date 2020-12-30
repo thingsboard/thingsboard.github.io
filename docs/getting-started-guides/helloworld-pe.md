@@ -352,7 +352,7 @@ We will create a dashboard to add the most popular widgets. See instructions bel
 ### Step 3.2 Add entity alias
 
 Alias is a reference to a single entity or a group of entities that are used in the widgets.
-Alias may be static or dynamic. For simplicity, we will use "Single entity" alias reference one and only one entity ("My New Device" in our case).
+Alias may be static or dynamic. For simplicity, we will use "Single entity" alias reference the one and only entity ("My New Device" in our case).
 It is possible to configure an alias that references multiple devices. For example, devices of a certain type or related to a certain asset. 
 You may learn more about different aliases [here](/docs/user-guide/ui/aliases/).
 
@@ -382,7 +382,7 @@ Congratulations! You have added chart widget. Now you are able to send new telem
 
 {% include images-gallery.html imageCollection="step35" showListImageTitles="true" %}
 
-Congratulations! You have added alarm widget. Not it's time to configure alarm rules and raise some alarms. 
+Congratulations! You have added alarm widget. Now it's time to configure alarm rules and raise some alarms. 
 
 ### Step 4. Configure alarm rules
 

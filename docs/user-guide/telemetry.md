@@ -12,25 +12,25 @@ description: IoT device time-series data collection using various IoT protocols 
 
 ThingsBoard provides a rich set of features related to telemetry data:
 
- - **collect** data from devices using MQTT, CoAP or HTTP protocols.
- - **store** timeseries data in Cassandra (efficient, scalable and fault-tolerant NoSQL database).
- - **query** latest timeseries data values or all data within the specified time interval.
- - **subscribe** to data updates using websockets (for visualization or real-time analytics).
- - **visualize** timeseries data using configurable and highly customizable widgets and dashboards.
- - **filter and analyze** data using flexible Rule Engine (/docs/user-guide/rule-engine/).
- - **generate alarms** based on collected data.
- - **forward** data to external systems using Rule Nodes (e.g. Kafka or RabbitMQ Rule Nodes).
+ - **Collect** data from devices using MQTT, CoAP, or HTTP protocols;
+ - **Store** time series data in Cassandra (efficient, scalable, and fault-tolerant NoSQL database);
+ - **Query** the latest time series data values or all data within the specified timeframe;
+ - **Subscribe** to data updates using WebSockets (for visualization or real-time analytics);
+ - **Visualize** time series data using configurable and highly customizable widgets and dashboards;
+ - **Filter and analyze** data using flexible Rule Engine (/docs/user-guide/rule-engine/);
+ - **Generate alarms** based on collected data;
+ - **Forward** data to external systems using Rule Nodes (e.g. Kafka or RabbitMQ Rule Nodes).
 
-This guide provides an overview of the features listed above and some useful links to get more details.  
+This guide provides an overview of the features listed above, and some useful links to get more details.  
 
 ![image](/images/user-guide/telemetry.svg)
 
 ## Device telemetry upload API
 
-ThingsBoard provides an API to upload timeseries key-value data.
-Flexibility and simplicity of key-value format allow easy and seamless integration with almost any IoT device on the market.
-Telemetry upload API is specific for each supported network protocol.
-You can review API and examples in corresponding reference page:
+ThingsBoard provides an API to upload time series key-value data.
+Flexibility and simplicity of a key-value format allow easy and seamless integration with almost any IoT device on the market.
+Telemetry upload API depends on each supported network protocol.
+API and examples can be reviewed in corresponding reference page:
 
  - [MQTT API reference](/docs/reference/mqtt-api/#telemetry-upload-api)
  - [CoAP API reference](/docs/reference/coap-api/#telemetry-upload-api)
@@ -38,14 +38,14 @@ You can review API and examples in corresponding reference page:
   
 ## Telemetry Service
 
-Telemetry Service is responsible for persisting timeseries data to internal data storage; 
+Telemetry Service is responsible for persisting time series data to internal data storage. It also 
 provides server-side API to query and subscribe for data updates. 
 
 ### Internal data storage
 
 ThingsBoard uses either Cassandra NoSQL database or SQL database to store all data.
 
-A device that is sending data to the server will receive confirmation about data delivery as soon as data is stored in DB.
+A device that sends data to the server will receive confirmation about data delivery as soon as data is stored in DB.
 Modern MQTT clients allow temporary local storage of undelivered data. 
 Thus, even if one of the ThingsBoard nodes goes down, the device will not lose the data and will be able to push it to other servers.
  
