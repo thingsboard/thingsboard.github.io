@@ -16,7 +16,7 @@ description:
 </section>
 <section id="intro">
 	<main>
-		<h1 style="padding: 0 200px">Advanced ThingsBoard IoT Platform distribution with value added features</h1>
+		<h1 class="intro_title">Advanced ThingsBoard IoT Platform distribution with value added features</h1>
 		<div id="labeling"> 
 		<div><hr><img src="/images/pe/white-labeling.svg"><hr></div>
 		<h1>White-labeling</h1>

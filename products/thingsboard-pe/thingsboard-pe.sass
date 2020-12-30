@@ -146,26 +146,26 @@
 
     #features
         div.item
+            position: relative
             display: flow-root
             margin: 88px 0 120px
             div
+                padding-top: 200px
                 float: left
-                width: calc(100% - 412px)
+                width: 100%
+                text-align: center
                 h1
                     font-size: 28px
                     line-height: normal
-                    text-align: left
             img
-                padding: 0 0 0 72px
-                float: left
-            &:nth-child(2n)
-                img
-                    padding: 0 72px 0 0
+                position: absolute
+                top: 0
+                left: calc(50% - 170px)
 
     #matrix
         background-color: #F9FAFB
         margin: 60px -100% 0
-        padding: 88px 0
+        padding: 88px 100%
         .table_bg
             margin: 160px 0 16px
             div
@@ -193,7 +193,7 @@
             top: 40px
             thead
                 color: #212529
-                font-size: 20px
+                font-size: 16px
                 line-height: 30px
                 background-color: unset
                 tr
@@ -202,9 +202,9 @@
                         text-align: center
                         vertical-align: top
                         font-weight: 500
-                        width: 20%
+                        width: 15%
                     td
-                        width: 40%
+                        width: 55%
             tbody
                 tr
                     background-color: unset
@@ -213,7 +213,7 @@
                     height: 64px
                     th
                         font-weight: 600
-                        font-size: 18px
+                        font-size: 16px
                         padding-right: 48px
                         a
                             color: #212529
@@ -222,7 +222,7 @@
                     td
                         text-align: center
                         font-weight: 600
-                        font-size: 20px
+                        font-size: 16px
 
     #intro
         margin-bottom: 64px
@@ -306,37 +306,76 @@
 @media screen and (min-width: 750px)
     #thingsboard-pe
         #hero
-            #peContent
-                .tb-title
+            #hero-content
+                .pe-title
                     font-size: 36px
-                .tb-sub-title
-                    font-size: 20px
-                    margin-bottom: 60px
+        #peContent
+            .intro_title
+                padding: 0
+            #matrix
+                table
+                    thead
+                        font-size: 20px
+                        tr
+                            th
+                                width: 20%
+                            td
+                                width: 40%
+                    tbody
+                        tr
+                            th
+                                font-size: 18px
+                            td
+                                font-size: 20px
 
 @media screen and (min-width: 1025px)
     #thingsboard-pe
-        #hero
-            #vendorStrip
-                display: block
         section, header
             main
-                max-width: 1400px
+                max-width: 100%
         footer
             main
-                max-width: 1400px
+                max-width: 100%
+        #peContent
+            #features
+                div.item
+                    div
+                        padding: 0
+                        text-align: left
+                        width: calc(100% - 412px)
+                        h1
+                            text-align: left
+                    img
+                        top: calc(50% - 60px)
+                        right: 0
+                        left: unset
+                    &:nth-child(2n)
+                        img
+                            left: 0
+                        div
+                            float: right
+            .intro_title
+                padding: 0 10%
+            max-width: 100%
+
 
 @media screen and (min-width: 1250px)
     #thingsboard-pe
         #hero
-            #peContent
-                .tb-title
-                    margin-bottom: 40px
+            #hero-content
+                .pe-title
+                    //height: 100px
+                    margin-bottom: 60px
                     font-size: 64px
-                .tb-sub-title
-                    font-size: 28px
-                    margin-bottom: 80px
-                .learn-tb
-                    line-height: 60px
-                    font-size: 28px
-                    padding: 0 40px
-                    border-width: 3px
+        #hero #hero-content, #peContent
+        #peContent
+            max-width: 1200px
+            .intro_title
+                padding: 0 15%
+
+@media screen and (min-width: 1500px)
+    #thingsboard-pe
+        #peContent
+            .intro_title
+                padding: 0 20%
+            max-width: 1400px
