@@ -278,7 +278,16 @@ step74:
         title: 'Click on the user name to open user details. Toggle edit mode.' 
     4:
         image: /images/helloworld/hello-world-pe-step-74-item-5.png 
-        title: 'Optionally, select the dashboard and enable "always fullscreen" mode. Apply changes.'                                         
+        title: 'Optionally, select the dashboard and enable "always fullscreen" mode. Apply changes.'
+
+step75:
+    0:
+        image: /images/helloworld/hello-world-pe-step-75-item-1.png 
+        title: 'Use activation link to set the password. Click "Create Password". You will automatically login as a customer user.'
+    1:
+        image: /images/helloworld/hello-world-pe-step-75-item-2.png 
+        title: 'You have logged in as a Customer User. You may browse the data and acknowledge/clear alarms.'
+
         
 mqttWindows:
     0:
@@ -286,7 +295,7 @@ mqttWindows:
         title: 'Create new MQTT Client with the properties listed in screenshots below.' 
     1:
         image: /images/helloworld/hello-world-pe-step-3-item-2.png
-        title: 'Populate the topic name and payload. Make sure the payload is a valid JSON document. Click "Publish" button.' 
+        title: 'Populate the topic name and payload. Make sure the payload is a valid JSON document. Click "Publish" button.'
                            
 ---
 
@@ -432,8 +441,6 @@ Let's create a customer with title "My New Customer". Please see instruction bel
 Let's make Customer become the owner of the device.
 
 {% include images-gallery.html imageCollection="step72" showListImageTitles="true" %}
- 
-Let's change the owner of the device to a new customer. This basically means that the new Customer may use the same Dashboard with the owner.
 
 #### Step 7.3 Share the dashboard
 
@@ -451,17 +458,17 @@ You may optionally configure the dashboard to appear just after the user login t
 
 #### Step 7.5 Activate customer user
 
-
+{% include images-gallery.html imageCollection="step75" showListImageTitles="true" %}
 
 ## Next steps
 
 {% assign currentGuide = "GettingStartedGuides" %}{% include templates/guides-banner.md %}
 
-## ThingsBoard Community Edition education course
- 
+## ThingsBoard Professional Edition white-labeling guide
+
  <div id="video">  
      <div id="video_wrapper">
-         <iframe src="https://www.youtube.com/embed/videoseries?list=PLYEKB_XwLCZJ6T8RPLTjRwMw0eoabpEKO" frameborder="0" allowfullscreen></iframe>
+         <iframe src="https://www.youtube.com/embed/VSNZWl1NjWU" frameborder="0" allowfullscreen></iframe>
      </div>
  </div>
  <p></p>
