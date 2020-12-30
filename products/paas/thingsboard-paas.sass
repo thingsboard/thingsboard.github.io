@@ -1,0 +1,362 @@
+#thingsboard-paas
+    &:not(.open-nav):not(.flip-nav)
+        header
+            &::after
+                opacity: 0
+    #hero
+        height: 100vh //calc(100vh + 5px)
+        padding-top: 0px
+        position: relative
+        overflow: hidden
+        background: none
+        div:nth-child(1)
+            background-image: url(/video/tb-cover.jpg) !important
+        .video-cover
+            position: absolute
+            z-index: -2
+            top: 0px
+            left: 0px
+            bottom: 0px
+            right: 0px
+            overflow: hidden
+            background-size: cover
+            background-color: #000
+            background-repeat: no-repeat
+            background-position: 50% 50%
+            background-image: url(/video/tb-cover.jpg)
+        #hero-content
+            height: 100%
+            display: flex
+            flex-direction: column
+            justify-content: center
+            align-content: center
+            background-color: rgba(0,0,0,0.72)
+            h1
+                margin-bottom: 46px
+                font-size: 96px
+                font-weight: 600
+                text-shadow: 0 10px 20px rgba(0,0,0,0.25)
+            h2
+                margin-bottom: 140px
+                font-size: 48px
+                letter-spacing: 7px
+                text-shadow: 0 10px 20px rgba(0,0,0,0.25)
+            .try-paas
+                background-color: none
+                font-size: 24px
+                font-weight: 500
+                text-align: center
+                color: white
+                border-radius: 4px
+                text-decoration: none
+                padding: 15px 100px
+                margin: 0 auto
+                text-shadow: 0 8px 16px rgba(0,0,0,0.25)
+                box-shadow: 0 28px 16px -20px rgba(0,0,0,0.25)
+                border: 4px solid
+                border-color: white
+                &:hover
+                    background-color: white
+                    color: #305680
+                &:active
+                    background-color: #f1f1f1
+                    border-color: #f1f1f1
+                    transition-duration: 0s
+            .learn-tb
+                cursor: pointer
+                line-height: 40px
+                font-size: 16px
+                padding: 0 15px
+                border: 1px solid white
+                background-color: transparent
+                transition: 0.6s
+                text-shadow: 0 0 18px rgba(0,0,0,.66)
+                &:hover
+                    background-color: white
+                    color: $dark-grey
+                    text-shadow: none
+            .paas-arrow
+                position: fixed
+                bottom: 40px
+                left: 0
+                right: 0
+                margin: auto
+                width: 40px
+                height: 40px
+                opacity: 1
+                z-index: 24
+                color: #fff
+                a
+                    color: #fff
+            &.arrow-hidden
+                .paas-arrow
+                    display: none
+
+    #intro, #matrix
+        color: #212529
+        h1
+            color: #212529
+            font-weight: 600
+            text-align: center
+            font-size: 32px
+            line-height: 48px
+            a
+                color: #305680
+        h2
+            margin: 48px 0 136px
+            text-align: center
+            color: #707275
+            font-size: 18px
+            line-height: 27px
+            font-weight: normal
+        h3
+            border: none
+            font-weight: 400
+        p
+            line-height: 1.5em
+            color: #44474A
+            font-size: 18px
+            font-weight: normal
+            line-height: 27px
+            margin-block-start: 9px
+
+    #bottom
+        background-color: white
+        margin: -20px -100%
+        padding: 66px 0 124px
+        text-align: center
+        .try-paas
+            background-color: #0D2743
+            font-size: 24px
+            font-weight: 400
+            text-align: center
+            color: white
+            border-radius: 4px
+            text-decoration: none
+            padding: 15px 128px
+            height: 127px
+            box-shadow: 0 28px 16px -20px rgba(13,39,67,0.25)
+            &:hover
+                background-color: #305680
+                text-decoration: none
+                color: #fff
+            &:active
+                background-color: #4B6D93
+                transition-duration: 0s
+
+    #matrix
+        background-color: #F9FAFB
+        margin: 60px -100% 0
+        padding: 88px 100%
+        .table_bg
+            margin: 160px 0 16px
+            div
+                background-color: white
+                height: 64px
+                margin: 0 -100%
+                &:nth-child(2n)
+                    background-color: unset
+        h1
+            line-height: normal
+            font-weight: normal
+        table
+            td, th
+                box-shadow: inset -1px 0 0 #212529
+                padding: 0
+                &:nth-child(4n-2)
+                    color: #305680
+                &:nth-child(4n-1)
+                    color: #00695C
+                &:nth-child(4n)
+                    color: #2A7DEC
+            border: none
+            margin-top: 64px
+            position: absolute
+            top: 40px
+            thead
+                color: #212529
+                font-size: 16px
+                line-height: 30px
+                background-color: unset
+                tr
+                    height: 104px
+                    th
+                        text-align: center
+                        vertical-align: top
+                        font-weight: 500
+                        width: 15%
+                    td
+                        width: 55%
+            tbody
+                tr
+                    background-color: unset
+                    &:nth-child(2n-1)
+                        background-color: white
+                    height: 64px
+                    th
+                        font-weight: 600
+                        font-size: 16px
+                        padding-right: 48px
+                        a
+                            color: #212529
+                        img
+                            vertical-align: top
+                    td
+                        text-align: center
+                        font-weight: 600
+                        font-size: 16px
+
+    #intro
+        margin-bottom: 64px
+        padding-top: 88px
+        #cards
+            justify-content: center
+            &>div
+                margin-bottom: 56px
+                text-align: center
+                &.col-lg-6
+                    padding: 0 30px
+                    max-width: 100%
+                div
+                    float: left
+                    width: 100%
+                    h1
+                        font-size: 24px
+                        line-height: normal
+
+                    a
+                        color: #305680
+                        font-size: 18px
+                        font-weight: 500
+                        line-height: 27px
+                        margin-block-start: 15px
+                img
+                    margin-bottom: 24px
+
+    #labeling
+        margin: 48px 0 112px
+        text-align: center
+        div
+            display: flex
+            padding: 0 20%
+            hr
+                flex: 1
+                margin-top: 74px
+        p
+            color: #707275
+            font-size: 18px
+            font-weight: normal
+            line-height: 27px
+            margin-block-start: 15px
+
+
+    #tb-customers
+        background-color: #FBFBFB
+        margin: -50px -100% 0
+        padding: 50px 100%
+        text-align: justify
+        -moz-text-align-last: justify
+        text-align-last: justify
+        display: none
+        @media(min-width: 992px)
+            display: block
+        img
+            height: 60px
+            margin-bottom: 20px
+        main
+            display: flex
+            flex-wrap: wrap
+            flex-direction: row
+            justify-content: space-around
+            align-items: center
+            padding: 0 50px
+            a
+                display: block
+                padding: 10px
+                object
+                    pointer-events: none
+          
+@media screen and (min-width: 750px)
+    #thingsboard-paas
+        #hero
+            #hero-content
+                .paas-title
+                    font-size: 36px
+        #paasContent
+            #intro
+                #cards
+                    justify-content: center
+                    &>div
+                        &.col-lg-6
+                            max-width: 50%
+            .intro_title
+                padding: 0
+            #labeling
+                p
+                    padding: 0
+            #matrix
+                table
+                    thead
+                        font-size: 20px
+                        tr
+                            th
+                                width: 20%
+                            td
+                                width: 40%
+                    tbody
+                        tr
+                            th
+                                font-size: 18px
+                            td
+                                font-size: 20px
+
+@media screen and (min-width: 1025px)
+    #thingsboard-paas
+        section, header
+            main
+                max-width: 100%
+        footer
+            main
+                max-width: 100%
+        #paasContent
+
+            .intro_title
+                padding: 0 5%
+            #labeling
+                p
+                    padding: 0 10%
+            max-width: 100%
+
+
+@media screen and (min-width: 1250px)
+    #thingsboard-paas
+        #hero
+            #hero-content
+                .paas-title
+                    //height: 100px
+                    margin-bottom: 60px
+                    font-size: 64px
+        #hero #hero-content, #paasContent
+        #paasContent
+            #intro
+                #cards
+                    justify-content: center
+                    &>div
+                        &.col-lg-6
+                            max-width: 33%
+            max-width: 1200px
+            .intro_title
+                padding: 0 7%
+            #labeling
+                p
+                    padding: 0 15%
+
+@media screen and (min-width: 1500px)
+    #thingsboard-paas
+        #paasContent
+            .intro_title
+                padding: 0 10%
+            #labeling
+                p
+                    padding: 0 20%
+            max-width: 1400px
