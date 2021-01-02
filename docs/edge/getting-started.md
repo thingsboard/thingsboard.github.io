@@ -2,6 +2,22 @@
 layout: docwithnav
 title: Getting started with ThingsBoard Edge
 description: Getting started with ThingsBoard Edge
+step1:
+    0:
+        image: /images/edge/getting-started-step-1-item-1.png 
+        title: 'Login to your ThingsBoard Edge instance and open Device groups page.'
+    1:
+        image: /images/edge/getting-started-step-1-item-2.png  
+        title: 'Open "All" device group.'
+    2:
+        image: /images/edge/getting-started-step-1-item-3.png 
+        title: 'Click on the "Add Device"("+") icon in the top right corner of the table.'
+    3:
+        image: /images/edge/getting-started-step-1-item-4.png 
+        title: 'Input device name. For example, "My New Device". No other changes required at this time. Click "Add" to add the device.'
+    4:
+        image: /images/edge/getting-started-step-1-item-5.png 
+        title: 'Now your device should be listed first, since table sort devices using created time by default. '
 
 ---
 
@@ -13,8 +29,8 @@ description: Getting started with ThingsBoard Edge
 The goal of this tutorial is to demonstrate the basic usage of the most popular ThingsBoard Edge features. You will learn how to:
 
 - Connect devices to ThingsBoard Edge;
-- Provision devices from ThingsBoard Edge to ThingsBoard CE/PE server (cloud); 
-- Push data from devices to ThingsBoard Edge and propagate this data to ThingsBoard CE/PE server (cloud);
+- Provision devices from ThingsBoard Edge to ThingsBoard CE server (cloud); 
+- Push data from devices to ThingsBoard Edge and propagate this data to ThingsBoard CE server (cloud);
 - Build real-time end-user dashboards on cloud and provision them to edge;
 
 We will connect and visualize data from the temperature sensor to keep it simple.
@@ -29,10 +45,9 @@ For simplicity, we will provision device manually using the UI.
 
 You may also use:
 * [Bulk provisioning](/docs/user-guide/bulk-provisioning/) to provision multiple devices from a CSV file using UI;
-* [Device provisioning](/docs/user-guide/device-provisioning/) to allow device firmware to automatically provision the device, so you don't need to configure each device manually;
 * [REST API](/docs/api/) to provision devices and other entities programmatically;
 
-## Step 2. Provision Device from ThingsBoard Edge to ThingsBoard CE/PE server (cloud)
+## Step 2. Provision Device from ThingsBoard Edge to ThingsBoard CE server (cloud)
 
 ## Step 3. Connect device
 
