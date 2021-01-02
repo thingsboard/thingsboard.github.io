@@ -13,6 +13,7 @@
     * [**Push Attributes from edge to cloud and vise versa**](/docs/edge/rule-engine/attributes/)
 * Features:
     * [**Edge Status**](/docs/edge/features/edge-status/)
+    * [**Cloud Events**](/docs/edge/features/cloud-events/)
 * Use cases:
     * [**Manage alarms and RPC requests on edge devices**](/docs/edge/use-cases/manage-alarms-rpc-requests/)
     * [**Data filtering and traffic reduce**](/docs/edge/use-cases/data-filtering-traffic-reduce/)

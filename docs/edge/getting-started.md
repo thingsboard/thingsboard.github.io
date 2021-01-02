@@ -5,7 +5,7 @@ description: Getting started with ThingsBoard Edge
 step1:
     0:
         image: /images/edge/getting-started-step-1-item-1.png 
-        title: 'Login to your ThingsBoard Edge instance and open Device groups page.'
+        title: 'Login to your ThingsBoard <b>Edge</b> instance and open Device groups page.'
     1:
         image: /images/edge/getting-started-step-1-item-2.png  
         title: 'Open "All" device group.'
@@ -18,6 +18,50 @@ step1:
     4:
         image: /images/edge/getting-started-step-1-item-5.png 
         title: 'Now your device should be listed first, since table sort devices using created time by default. '
+
+step2:
+    0:
+        image: /images/edge/getting-started-step-2-item-1.png
+        title: 'Login to your ThingsBoard <b>CE</b> UI instance and open Devices page.'
+    1:
+        image: /images/edge/getting-started-step-2-item-2.png  
+        title: 'Verify that "My New Device" device was created on the ThingsBoard CE cloud.'
+    2:
+        image: /images/edge/getting-started-step-2-item-3.png
+        title: 'Click on the "My New Device" device and navigate to the "Relations" tab.'
+    3:
+        image: /images/edge/getting-started-step-2-item-4.png
+        title: 'Change direction "From" to "To" and see relation to the edge that has provisioned this device.'
+
+step31:
+    0:
+        image: /images/edge/getting-started-step-1-item-1.png
+        title: 'Open Device groups page in the ThingsBoard <b>Edge</b> instance.'
+    1:
+        image: /images/edge/getting-started-step-1-item-2.png  
+        title: 'Open "All" device group.'
+    2:
+        image: /images/edge/getting-started-step-3-item-1.png  
+        title: 'Click on the device row in the table to open device details.'
+    3:
+        image: /images/edge/getting-started-step-3-item-2.png  
+        title: 'Click "Copy access token". Token will be copied to your clipboard. Save it to a safe place.'
+
+step32:
+    0:
+        image: /images/edge/getting-started-step-3-item-1.png
+        title: 'Click on the device row in the table to open device details.'
+    1:
+        image: /images/edge/getting-started-step-3-item-3.png
+        title: 'Navigate to the telemetry tab.'
+
+mqttWindows:
+    0:
+        image: /images/helloworld/hello-world-step-3-item-1.png
+        title: 'Create new MQTT Client with the properties listed in screenshots below.'
+    1:
+        image: /images/helloworld/hello-world-step-3-item-2.png
+        title: 'Populate the topic name and payload. Make sure the payload is a valid JSON document. Click "Publish" button.'
 
 ---
 
@@ -41,6 +85,8 @@ We will connect and visualize data from the temperature sensor to keep it simple
 
 For simplicity, we will provision device manually using the UI.
 
+We are going to provision device on the Edge. Please open ThingsBoard **Edge** UI using the URL: [http://localhost:18080](http://localhost:18080).
+
 {% include images-gallery.html imageCollection="step1" showListImageTitles="true" %}
 
 You may also use:
@@ -49,29 +95,35 @@ You may also use:
 
 ## Step 2. Provision Device from ThingsBoard Edge to ThingsBoard CE server (cloud)
 
+Provision device from the edge to the cloud is done automatically, so no additional actions required. 
+Once device is created on the edge, it's going to be automatically created on the cloud.
+To see provisioned device please open ThingsBoard **CE** UI using the URL: [http://localhost:8080](http://localhost:8080).
+
+{% include images-gallery.html imageCollection="step2" showListImageTitles="true" %}
+
 ## Step 3. Connect device
 
 To connect the device you need to get the device credentials first.
 ThingsBoard support different device credentials. We recommend to use default auto-generated credentials which is access token for this guide.
 
-{% include images-gallery.html imageCollection="step2" showListImageTitles="true" %}
+{% include images-gallery.html imageCollection="step31" showListImageTitles="true" %}
 
 Now you are ready to publish telemetry data on behalf of your device.
 We will use simple commands to publish data over HTTP or MQTT in this example.
 
 {% capture connectdevicetogglespec %}
-HTTP<small>Linux, macOS or Windows</small>%,%http%,%templates/helloworld/http.md%br%
-MQTT<small>Linux or macOS</small>%,%mqtt-linux%,%templates/helloworld/mqtt-linux.md%br%
-MQTT<small>Windows</small>%,%mqtt-windows%,%templates/helloworld/mqtt-windows.md%br%
-CoAP<small>Linux or macOS</small>%,%coap%,%templates/helloworld/coap.md%br%
-Other Protocols<small>Modbus, SNMP, LoRaWAN, etc</small>%,%other%,%templates/helloworld/other.md{% endcapture %}
+HTTP<small>Linux, macOS or Windows</small>%,%http%,%templates/edge/getting-started/http.md%br%
+MQTT<small>Linux or macOS</small>%,%mqtt-linux%,%templates/edge/getting-started/mqtt-linux.md%br%
+MQTT<small>Windows</small>%,%mqtt-windows%,%templates/edge/getting-started/mqtt-windows.md%br%
+CoAP<small>Linux or macOS</small>%,%coap%,%templates/edge/getting-started/coap.md%br%
+Other Protocols<small>Modbus, SNMP, LoRaWAN, etc</small>%,%other%,%templates/edge/getting-started/other.md{% endcapture %}
 {% include content-toggle.html content-toggle-id="connectdevice" toggle-spec=connectdevicetogglespec %}
 
 Once you have successfully published the "temperature" readings, you should immediately see them in the Device Telemetry Tab:
 
-{% include images-gallery.html imageCollection="step3" showListImageTitles="true" %}
+{% include images-gallery.html imageCollection="step32" showListImageTitles="true" %}
 
-## Step 4. Push data from ThingsBoard Edge to ThingsBoard CE/PE server (cloud)
+## Step 4. Push data from ThingsBoard Edge to ThingsBoard CE server (cloud)
 
 ## Step 5. Create Dashboard
 

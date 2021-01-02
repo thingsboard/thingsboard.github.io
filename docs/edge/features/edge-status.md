@@ -16,4 +16,6 @@ edgeInfo:
 
 {% include images-gallery.html imageCollection="edgeInfo" %}
 
+## Next steps
+
 {% include templates/edge/next-steps.md %}

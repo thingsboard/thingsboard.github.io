@@ -4,10 +4,8 @@ title: What is ThingsBoard Edge?
 description: ThingsBoard Edge features, FAQ
 ---
 
-The [**ThingsBoard Edge**](/products/thingsboard-edge/) is a ThingsBoard's software product for edge computing. 
+The **ThingsBoard Edge** is a ThingsBoard's software product for edge computing. 
 It allows bringing data analysis and management to the edge, while seamlessly synchronizing with ThingsBoard CE/PE server.
-
-{% include templates/edge/tb-32-pe-beta-note.md %}
 
 ThingsBoard is an open-source IoT platform for data collection, processing, visualization, and device management. See [**What is ThingsBoard?**](/docs/getting-started-guides/what-is-thingsboard/) if you are new platform user.  
 <br>
@@ -53,6 +51,8 @@ As well ThingsBoard Edge supports major **ThingsBoard PE** features:
  * [**White-labeling**](/docs/user-guide/white-labeling/) - allows you to configure a custom menu, logo, color scheme, email server settings, customer email templates to interact with the users etc.
  * [**Scheduler**](/docs/user-guide/scheduler/) - allows you to schedule various types of events with flexible schedule configuration.
  * [**Entity Groups**](/docs/user-guide/groups/) - allows you to organize entities into groups, assign roles to specific user group, grant specific permissions to specific user groups over specific device groups.
+
+{% include templates/edge/tb-32-pe-beta-note.md %}
 
 #### Project Roadmap
 
