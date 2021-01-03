@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
-title: Push attributes from edge to cloud and vise versa
-description: Push attributes from edge to cloud and vise versa
+title: Push data from edge to cloud and vise versa
+description: Push data from edge to cloud and vise versa
 ---
 
 TODO

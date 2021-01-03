@@ -55,6 +55,111 @@ step32:
         image: /images/edge/getting-started-step-3-item-3.png
         title: 'Navigate to the telemetry tab.'
 
+step4:
+    0:
+        image: /images/edge/getting-started-step-3-item-1222.png
+        title: 'Open Rule chains page in the ThingsBoard <b>Edge</b> instance.'
+    1:
+        image: /images/edge/getting-started-step-3-item-3222.png
+        title: 'Open Edge Root Rule Chain.'
+    2:
+        image: /images/edge/getting-started-step-3-item-3222.png
+        title: '<b>Push to cloud</b> rule node pushes temperature timeseries data to the cloud once it is stored in local database.'
+
+step51:
+    0:
+        image: /images/helloworld/hello-world-step-31-item-1.png
+        title: 'Open <b>Dashboards</b> page in the ThingsBoard <b>CE</b> server. Click on the "+" icon in the top right corner. Select "Create new dashboard".'
+    1:
+        image: /images/helloworld/hello-world-step-31-item-2.png
+        title: 'Input dashboard name. For example, "My New Dashboard". Click "Add" to add the dashboard.'
+    2:
+        image: /images/helloworld/hello-world-step-31-item-3.png
+        title: 'Now your dashboard should be listed first, since table sort dashboards using created time by default. Click on the "Open dashboard" icon.'
+
+step52:
+    0:
+        image: /images/helloworld/hello-world-step-32-item-1.png
+        title: 'Enter edit mode. Click on the pencil button in the bottom right corner.'
+    1:
+        image: /images/helloworld/hello-world-step-32-item-2.png
+        title: 'Click "Entity Aliases" icon in the top right part of the screen. You will see empty list of Entity aliases.'
+    2:
+        image: /images/helloworld/hello-world-step-32-item-3.png
+        title: 'Click "Add alias".'
+    3:
+        image: /images/helloworld/hello-world-step-32-item-4.png
+        title: 'Input alias name, for example "MyDevice". Select "Single entity" Filter type. Select "Device" as Type and type "My New" to enable autocomplete. Choose your device from the auto-complete and click on the device.'        
+    4:
+        image: /images/helloworld/hello-world-step-32-item-5.png
+        title: 'Click "Add" and then "Save".'        
+    5:
+        image: /images/helloworld/hello-world-step-32-item-6.png
+        title: 'Finally, Click "Apply changes" in the dashboard editor to save the changes. Then you should enter edit mode again.'
+
+step53:
+    0:
+        image: /images/helloworld/hello-world-step-33-item-1.png
+        title: 'Enter edit mode. Click on the "Add new widget" button. '
+    1:
+        image: /images/helloworld/hello-world-step-33-item-2.png
+        title: 'Select "Cards" widget bundle. Select "Latest values" tab. Click on the header of the Entities widget. The "Add Widget" window will appear.'
+    2:
+        image: /images/helloworld/hello-world-step-33-item-3.png
+        title: 'Click "Add" to add the data source. Widget may have multiple data sources, but we will use only one in this case.'
+    3:
+        image: /images/helloworld/hello-world-step-33-item-4.png
+        title: 'Select "MyDevice" entity alias. Then click on the input field to the right. The auto-complete with available data points will appear. Select "temperature" data point and click "Add".'        
+    4:
+        image: /images/helloworld/hello-world-step-33-item-5.png
+        title: 'Resize the widget to make it a little bigger. Just drag the bottom right corner of the widget. You can also play with the advanced settings if you edit the widget.'
+
+step54:
+    0:
+        image: /images/helloworld/hello-world-step-34-item-1.png
+        title: 'Enter Edit mode.'
+    1:
+        image: /images/helloworld/hello-world-step-34-item-2.png
+        title: 'Click "Add new widget" icon in the bottom right corner of the screen.'
+    2:
+        image: /images/helloworld/hello-world-step-34-item-3.png
+        title: 'Click "Create new widget" icon.'
+    3:
+        image: /images/helloworld/hello-world-step-34-item-4.png
+        title: 'Select "Charts" bundle. Scroll down and click on the "Timeseries - Flot" chart widget.'        
+    4:
+        image: /images/helloworld/hello-world-step-34-item-5.png
+        title: 'Click "Add datasource" button.'
+    5:
+        image: /images/helloworld/hello-world-step-34-item-6.png
+        title: 'Select "MyDevice" Alias. Select "temperature" key. Click "Add".'
+    6:
+        image: /images/helloworld/hello-world-step-34-item-7.png
+        title: 'Drag and Drop you widget to desired space. Resize the widget. Apply changes.'
+    7:
+        image: /images/helloworld/hello-world-step-34-item-8.png
+        title: 'Publish different telemetry values multiple times Step 2. Note that the widget displays only one minute of data by default.'
+    8:
+        image: /images/helloworld/hello-world-step-34-item-9.png
+        title: 'Enter Edit mode. Open time selection window. Change the interval and aggregation function. Update the time window and apply changes.'
+
+step6:
+    0:
+        image: /images/edge/getting-started-step-3-item-1222.png
+        title: 'Open Edge instances page in the ThingsBoard <b>CE</b> server.'
+    1:
+        image: /images/edge/getting-started-step-3-item-3222.png
+        title: 'Click on the <b>Dashboards</b> button on the edge instance to open dashboards that are already assigned to this edge.'
+    2:
+        image: /images/edge/getting-started-step-3-item-3222.png
+        title: 'Click on the "+" plus icon and select "My New Dashboard" in the list. Now this dashboard is going to be provisioned to the edge.'
+    3:
+        image: /images/edge/getting-started-step-3-item-1222.png
+        title: 'Open "All" dashboards group in the ThingsBoard <b>Edge</b> instance to see "My New Dashboard" in the list as well.'
+    4:
+        image: /images/edge/getting-started-step-3-item-1222.png
+        title: 'Open "My New Dashboard" to see the same widgets that you have added on the cloud and temperature readings from the device.'
+
 mqttWindows:
     0:
         image: /images/helloworld/hello-world-step-3-item-1.png
@@ -125,13 +230,20 @@ Once you have successfully published the "temperature" readings, you should imme
 
 ## Step 4. Push data from ThingsBoard Edge to ThingsBoard CE server (cloud)
 
+Timeseries data and attributes pushed to the cloud according to the [Edge Rule Engine](/docs/edge/rule-engine/general/).
+We will go over default **Edge Root Rule chain** to see how temperature data is going to be pushed from edge to cloud.
+
+If you are interested in more details how to push data from edge to cloud please refer to [Push data from edge to cloud and vise versa](/docs/edge/rule-engine/push-data/) for more details.
+
+{% include images-gallery.html imageCollection="step4" showListImageTitles="true" %}
+
 ## Step 5. Create Dashboard
 
-We will create a dashboard and add most popular widgets. See instructions below.
+We will create a dashboard and add table and chart widget to see temperature data on cloud and edge. See instructions below.
 
 ### Step 5.1 Create Empty Dashboard
 
-{% include images-gallery.html imageCollection="step31" showListImageTitles="true" %}
+{% include images-gallery.html imageCollection="step51" showListImageTitles="true" %}
 
 ### Step 5.2 Add Entity Alias
 
@@ -140,7 +252,7 @@ Alias may be static or dynamic. For simplicity, we will use "Single entity" alia
 It is possible to configure an alias that reference multiple devices. For example, devices of a certain type or related to a certan asset.
 You may learn more about different aliases [here](/docs/user-guide/ui/aliases/).
 
-{% include images-gallery.html imageCollection="step32" showListImageTitles="true" %}
+{% include images-gallery.html imageCollection="step52" showListImageTitles="true" %}
 
 ### Step 5.3 Add Table Widget
 
@@ -148,7 +260,7 @@ To add the table widget we need to select it from the widget library. Widgets ar
 Each widget has a data source. This is how widget "knows" what data to display.
 To see the latest value of our "temperature" data that we sent during step 2, we should configure the data source.
 
-{% include images-gallery.html imageCollection="step33" showListImageTitles="true" %}
+{% include images-gallery.html imageCollection="step53" showListImageTitles="true" %}
 
 Congratulations! You have added first widget. Now you can send new telemetry reading and it will immediately appear in the table.
 
@@ -158,11 +270,19 @@ To add the chart widget we need to select it from the widget library.
 Chart widget displays multiple historical values of the same data key ("temperature" in our case).
 We should also configure the time window to use the chart widget.
 
-{% include images-gallery.html imageCollection="step34" showListImageTitles="true" %}
+{% include images-gallery.html imageCollection="step54" showListImageTitles="true" %}
 
-Congratulations! You have added chart widget. Now you can send new telemetry reading and it will immediately appear in the chart.
+You have added chart widget. Now you can send new telemetry reading and it will immediately appear in the chart. Let's provision this dashboard to the edge to see temperature data from the device on the edge as well. 
 
 ## Step 6. Provision Dashboard to ThingsBoard Edge
+
+To provision dashboard to edge we need to open edge dashboards on ThingsBoard **CE** server and assign the newly created dashboard. Once this dashboard is assigned we are going to open ThingsBoard **Edge** UI to see the same dashboard on the edge.
+
+If you are interested in more details how to provision different entities from the cloud to the edge please refer to [CE edge management](/docs/edge/config/ce/management/) or [PE edge management](/docs/edge/config/pe/management/) for more details.
+
+{% include images-gallery.html imageCollection="step6" showListImageTitles="true" %}
+
+Congratulations! Dashboard provisioned to edge. Now you can send new telemetry reading and it will immediately appear in the chart on the edge.
 
 ## Next steps
 

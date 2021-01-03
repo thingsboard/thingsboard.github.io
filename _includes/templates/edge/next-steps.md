@@ -10,7 +10,7 @@
 * Edge Rule Engine:
     * [**Rule Chain Templates**](/docs/edge/rule-engine/rule-chain-templates/)
     * [**Provision Rule Chains from cloud to edge**](/docs/edge/rule-engine/provision-rule-chains/)
-    * [**Push Attributes from edge to cloud and vise versa**](/docs/edge/rule-engine/attributes/)
+    * [**Push data from edge to cloud and vise versa**](/docs/edge/rule-engine/push-data/)
 * Features:
     * [**Edge Status**](/docs/edge/features/edge-status/)
     * [**Cloud Events**](/docs/edge/features/cloud-events/)

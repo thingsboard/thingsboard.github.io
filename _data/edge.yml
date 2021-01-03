@@ -55,8 +55,8 @@ toc:
       path: /docs/edge/rule-engine/rule-chain-templates/
     - title: Provision Rule Chains from cloud to edge
       path: /docs/edge/rule-engine/provision-rule-chains/
-    - title: Push Attributes from edge to cloud and vise versa
-      path: /docs/edge/rule-engine/attributes/
+    - title: Push data from edge to cloud and vise versa
+      path: /docs/edge/rule-engine/push-data/
 - title: Features
   section:
     - title: Edge status
