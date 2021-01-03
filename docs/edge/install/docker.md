@@ -9,7 +9,7 @@ description: Installing ThingsBoard Edge using Docker (Linux or Mac OS)
 
 This guide will help you to install and start ThingsBoard Edge using Docker on Linux or Mac OS.
 
-### Prerequisites
+{% include templates/edge/install/prerequisites.md %}
 
 - [Install Docker CE](https://docs.docker.com/engine/install/){:target="_blank"}
 - [Install Docker Compose](https://docs.docker.com/compose/install/){:target="_blank"}

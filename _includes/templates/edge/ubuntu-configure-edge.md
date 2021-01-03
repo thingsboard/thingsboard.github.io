@@ -6,7 +6,7 @@ sudo nano /etc/tb-edge/conf/tb-edge.conf
 
 Add the following lines to the configuration file. Don't forget **to replace**:
  * "PUT_YOUR_POSTGRESQL_PASSWORD_HERE" with your **real postgres user password**.
- * "PUT_YOUR_CLOUD_IP" with an IP address of the machine where ThingsBoard CE/PE version is running. Use **localhost** in case ThingsBoard Edge is running on the same machine where cloud instance is running.
+ * "PUT_YOUR_CLOUD_IP" with an IP address of the machine where ThingsBoard CE server is running. Use **localhost** in case ThingsBoard Edge is running on the same machine where cloud instance is running.
  * "PUT_YOUR_EDGE_KEY_HERE" and "PUT_YOUR_EDGE_SECRET_HERE" with Edge **key and secret** respectively:
 ```bash
 # DB Configuration 
@@ -20,15 +20,15 @@ export CLOUD_PRC_HOST=PUT_YOUR_CLOUD_IP
 {: .copy-code}
 
 {% capture local-deployment %}
-If ThingsBoard Edge is going to be running on the same machine where ThingsBoard CE/PE cloud is running you'll need to add additional configuration parameters to avoid port collision.
+If ThingsBoard Edge is going to be running on the same machine where ThingsBoard CE server is running you'll need to add additional configuration parameters to avoid port collision.
  
 Please add next parameters to ThingsBoard Edge configuration file: 
  
  ```bash
  
- export HTTP_BIND_PORT=8081
- export MQTT_BIND_PORT=1884
- export COAP_BIND_PORT=5684
+ export HTTP_BIND_PORT=18080
+ export MQTT_BIND_PORT=11883
+ export COAP_BIND_PORT=15683
   ```
 
 Please make sure ports above are not used by any other application.

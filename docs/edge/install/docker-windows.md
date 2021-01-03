@@ -8,10 +8,9 @@ description: Installing ThingsBoard Edge using Docker (Windows)
 {:toc}
 
 This guide will help you to install and start ThingsBoard Edge using Docker on Windows. 
-The container image used in this guide has embedded PostgreSQL 9.6 to simplify setup. 
-If you are looking for a cluster installation instruction, please visit [cluster setup page](/docs/user-guide/install/pe/cluster-setup/).
+The container image used in this guide has embedded PostgreSQL 11 to simplify setup. 
 
-### Prerequisites
+{% include templates/edge/install/prerequisites.md %}
 
 - [Install Docker Toolbox for Windows](https://docs.docker.com/toolbox/toolbox_install_windows/){:target="_blank"}
 
