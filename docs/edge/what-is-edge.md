@@ -5,7 +5,7 @@ description: ThingsBoard Edge features, FAQ
 ---
 
 The **ThingsBoard Edge** is a ThingsBoard's software product for edge computing. 
-It allows bringing data analysis and management to the edge, while seamlessly synchronizing with ThingsBoard CE/PE server.
+It allows bringing data analysis and management to the edge, while seamlessly synchronizing with ThingsBoard CE/PE server (cloud).
 
 ThingsBoard is an open-source IoT platform for data collection, processing, visualization, and device management. See [**What is ThingsBoard?**](/docs/getting-started-guides/what-is-thingsboard/) if you are new platform user.  
 <br>

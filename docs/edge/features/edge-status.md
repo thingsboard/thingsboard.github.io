@@ -18,4 +18,4 @@ edgeInfo:
 
 ## Next steps
 
-{% include templates/edge/next-steps.md %}
+{% assign currentGuide = "EdgeStatus" %}{% include templates/edge/guides-banner-edge.md %}

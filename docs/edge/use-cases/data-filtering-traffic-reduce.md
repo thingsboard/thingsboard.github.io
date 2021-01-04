@@ -271,3 +271,7 @@ Remember that we configured ThingsBoard Edge Rule Engine send to the cloud only 
  * from the **Edge** dashboard you are able to see only real-time fuel consumption and speed
 
 ![image](/images/edge/tutorial/data-filtering/edge-final.png)
+
+## Next Steps
+
+{% assign currentGuide = "DataFilteringAndTrafficReduce" %}{% include templates/edge/guides-banner-edge.md %}

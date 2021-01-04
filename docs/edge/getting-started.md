@@ -203,8 +203,11 @@ You may also use:
 
 ## Step 2. Provision Device from ThingsBoard Edge to ThingsBoard CE server (cloud)
 
-Provision device from the edge to the cloud is done automatically, so no additional actions required. 
-Once device is created on the edge, it's going to be automatically created on the cloud.
+Provision device from the edge to the cloud done automatically, so no additional actions required. 
+Once device has been created on the edge, it's going to be automatically created on the cloud.
+
+If you are interested in more details how to provision different entities from the cloud to the edge please refer to [CE edge management](/docs/edge/config/ce/management/) or [PE edge management](/docs/edge/config/pe/management/) for more details.
+
 To see provisioned device please open ThingsBoard **CE** UI using the URL: [http://localhost:8080](http://localhost:8080).
 
 {% include images-gallery.html imageCollection="step2" showListImageTitles="true" %}
@@ -289,7 +292,7 @@ Congratulations! Dashboard provisioned to edge. Now you can send new telemetry r
 
 ## Next steps
 
-{% assign currentGuide = "GettingStartedGuides" %}{% include templates/guides-banner.md %}
+{% assign currentGuide = "GettingStartedGuide" %}{% include templates/edge/guides-banner-edge.md %}
 
 ## Your feedback
 

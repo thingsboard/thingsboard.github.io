@@ -2,6 +2,7 @@
 layout: docwithnav
 title: Installing ThingsBoard Edge using Docker (Linux or Mac OS)
 description: Installing ThingsBoard Edge using Docker (Linux or Mac OS)
+
 ---
 
 * TOC
@@ -9,7 +10,7 @@ description: Installing ThingsBoard Edge using Docker (Linux or Mac OS)
 
 This guide will help you to install and start ThingsBoard Edge using Docker on Linux or Mac OS.
 
-{% include templates/edge/install/prerequisites.md %}
+{% include templates/edge/hardware-requirements.md %}
 
 - [Install Docker CE](https://docs.docker.com/engine/install/){:target="_blank"}
 - [Install Docker Compose](https://docs.docker.com/compose/install/){:target="_blank"}
@@ -60,7 +61,7 @@ Where:
 - `CLOUD_ROUTING_SECRET` - your edge secret
 - `CLOUD_PRC_HOST` - ip address of the machine with the ThingsBoard platform. 
 
-**NOTE**: do not use *'localhost'* - *'localhost'* is the ip address of the edge service in the docker container 
+**NOTE**: do not use **'localhost'** - **'localhost'** is the ip address of the edge service in the docker container. Please use the IP address of machine where ThingsBoard CE is running and this IP address must be accessible by docker container. 
 
 - `restart: always` - automatically start ThingsBoard Edge in case of system reboot and restart in case of failure
 
@@ -79,19 +80,15 @@ docker-compose pull
 docker-compose up
 ```
 
-After executing this command you can open `http://{your-host-ip}:18080` in you browser (for ex. `http://localhost:18080`). 
-You should see ThingsBoard Edge login page.
+### Step 2. Open ThingsBoard Edge UI
 
-Please use **tenant administrator** credentials to login to ThingsBoard Edge UI in case Edge connected to **ThingsBoard CE**.
+{% include templates/edge/open-edge-ui.md %}
 
-If ThingBoard Edge connected to **ThingsBoard PE** please use credentials of the **user(s)** that were assigned to the Edge during Edge **provisioning**.
-
-
-## Step 2. Detaching, stop and start commands
+### Step 3. Detaching, stop and start commands
 
 {% include templates/edge/docker-control.md %}
 
-## Troubleshootings
+### Troubleshootings
 
 **Note** If you observe errors related to DNS issues, for example
 
@@ -104,7 +101,7 @@ See corresponding [Linux](https://developers.google.com/speed/public-dns/docs/us
 
 ## Next Steps
 
-{% include templates/edge/next-steps.md %} 
+{% include templates/edge/install/next-steps.md %}
 
 
 

@@ -49,4 +49,4 @@ You are able to export your rule chain to JSON format and import it to the same 
 
 ### Next Steps
 
-{% include templates/edge/next-steps.md %}
+{% assign currentGuide = "EdgeRuleEngineOverview" %}{% include templates/edge/guides-banner-edge.md %}

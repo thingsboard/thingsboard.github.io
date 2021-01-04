@@ -40,4 +40,4 @@ If user has **WRITE** access to other entities (except **Device**) on the cloud 
 
 ### Next Steps
 
-{% include templates/edge/next-steps.md %}
+{% assign currentGuide = "ProvisionUserFromCloudToEdge" %}{% include templates/edge/guides-banner-edge.md %}

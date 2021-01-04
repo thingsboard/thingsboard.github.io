@@ -9,7 +9,7 @@ description: Installing ThingsBoard Edge on CentOS/RHEL Server
 
 This guide describes how to install ThingsBoard Edge on RHEL/CentOS 7/8.
 
-{% include templates/edge/install/prerequisites.md %}
+{% include templates/edge/hardware-requirements.md %}
 
 Before continue to installation execute the following commands in order to install necessary tools:
 
@@ -77,6 +77,6 @@ cat /var/log/tb-edge/tb-edge.log | grep ERROR
 
 {% include templates/edge/edge-service-commands.md %} 
 
-### Next Steps
+## Next Steps
 
-{% include templates/edge/next-steps.md %}
+{% include templates/edge/install/next-steps.md %}

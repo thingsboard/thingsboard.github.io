@@ -42,4 +42,4 @@ List of possible cloud actions:
 
 ## Next steps
 
-{% include templates/edge/next-steps.md %}
+{% assign currentGuide = "CloudEvents" %}{% include templates/edge/guides-banner-edge.md %}

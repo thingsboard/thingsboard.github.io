@@ -9,12 +9,14 @@ toc:
   path: /docs/edge/getting-started/
 - title: Architecture
   path: /docs/edge/edge-architecture/
+- title: Upgrade instructions for ThingsBoard CE server
+  path: /docs/edge/upgrade-ce-server/
+- title: Provision ThingsBoard Edge on ThingsBoard CE server
+  path: /docs/edge/provision-edge-on-ce-server/
 - title: Installation guides
   section:
     - title: Installation options
       path: /docs/edge/install/installation-options/
-    - title: Upgrade instructions for ThingsBoard CE server
-      path: /docs/edge/install/upgrade-ce-server/
     - title: Installing Edge on Ubuntu (DEB)
       path: /docs/edge/install/deb-installation/
     - title: Installing Edge on CentOS/RHEL (RPM)

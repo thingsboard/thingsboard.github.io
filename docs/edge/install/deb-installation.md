@@ -2,6 +2,7 @@
 layout: docwithnav
 title: Installing ThingsBoard Edge on Ubuntu Server
 description: Installing ThingsBoard Edge on Ubuntu Server
+
 ---
 
 * TOC
@@ -9,7 +10,7 @@ description: Installing ThingsBoard Edge on Ubuntu Server
 
 This guide describes how to install ThingsBoard Edge on Ubuntu Server 18.04 LTS.
 
-{% include templates/edge/install/prerequisites.md %}
+{% include templates/edge/hardware-requirements.md %}
 
 ### Step 1. Install Java 8 (OpenJDK) 
 
@@ -56,7 +57,7 @@ sudo service tb-edge restart
 
 ### Troubleshootings
 
-ThingsBoard Edge logs are stored in the following directory:
+ThingsBoard Edge logs stored in the following directory:
  
 ```bash
 /var/log/tb-edge
@@ -70,6 +71,6 @@ cat /var/log/tb-edge/tb-edge.log | grep ERROR
 
 {% include templates/edge/edge-service-commands.md %} 
 
-### Next Steps
+## Next Steps
 
-{% include templates/edge/next-steps.md %}
+{% include templates/edge/install/next-steps.md %}

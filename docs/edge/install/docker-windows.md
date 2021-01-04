@@ -10,7 +10,7 @@ description: Installing ThingsBoard Edge using Docker (Windows)
 This guide will help you to install and start ThingsBoard Edge using Docker on Windows. 
 The container image used in this guide has embedded PostgreSQL 11 to simplify setup. 
 
-{% include templates/edge/install/prerequisites.md %}
+{% include templates/edge/hardware-requirements.md %}
 
 - [Install Docker Toolbox for Windows](https://docs.docker.com/toolbox/toolbox_install_windows/){:target="_blank"}
 
@@ -98,11 +98,11 @@ Please use **tenant administrator** credentials to login to ThingsBoard Edge UI 
 If ThingBoard Edge connected to **ThingsBoard PE** please use credentials of the **user(s)** that were assigned to the Edge during Edge **provisioning**.
 
 
-## Step 2. Detaching, stop and start commands
+### Step 2. Detaching, stop and start commands
 
 {% include templates/edge/docker-control.md %}
 
-## Troubleshootings
+### Troubleshootings
 
 **Note** If you observe errors related to DNS issues, for example
 
@@ -114,4 +114,4 @@ You may configure your system to use [Google public DNS servers](https://develop
 
 ## Next Steps
 
-{% include templates/edge/next-steps.md %} 
+{% include templates/edge/install/next-steps.md %}

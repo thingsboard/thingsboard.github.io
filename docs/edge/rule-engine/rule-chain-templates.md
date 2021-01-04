@@ -8,4 +8,4 @@ TODO
 
 #### Next Steps
 
-<p><a href="/docs/edge/getting-started" class="button">Getting Started Guide</a></p>
+{% assign currentGuide = "RuleChainTemplates" %}{% include templates/edge/guides-banner-edge.md %}

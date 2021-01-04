@@ -9,13 +9,13 @@ description: Upgrade instructions for ThingsBoard CE server (beta)
 
 {% capture beta_note %}
 **Important note before upgrading to ThingsBoard 3.3beta**
-- ThingsBoard Edge and ThingsBoard CE **3.3beta** version that supports Edge functionality is currently in **beta** phase, so please upgrade only in case you are interested in evaluating the Edge functionality
+- ThingsBoard Edge and ThingsBoard CE **3.3beta** version that supports edge functionality is currently in **beta** phase, so please upgrade only in case you are interested in evaluating the Edge functionality
  - Please make sure you have backup of your database before upgrading - especially if this ThingsBoard CE server instance has some critical data
  - Usage of the **beta** version in your production environment not recommended and could be used only on your own risk
 {% endcapture %}
 {% include templates/info-banner.md content=beta_note %}
 
-### Ubuntu/CentOS {#ubuntucentos-260beta}
+### Ubuntu/CentOS {#ubuntucentos-33beta}
 
 **NOTE**: These upgrade steps are applicable for ThingsBoard version 3.2. In order to upgrade to 3.3beta you need to [**upgrade to 3.2 first**](/docs/user-guide/install/upgrade-instructions/#ubuntucentos-32).
 

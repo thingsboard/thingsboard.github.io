@@ -66,4 +66,4 @@ ThingsBoard Professional Edition%,%pe%,%templates/edge/sync/pe-entities-manageme
 
 ### Next Steps
 
-{% include templates/edge/next-steps.md %}
+{% assign currentGuide = "ProvisionEntityViewFromCloudToEdge" %}{% include templates/edge/guides-banner-edge.md %}

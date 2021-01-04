@@ -359,3 +359,7 @@ Open the terminal where **mqtt-js.sh** script is running.
 You should see similar messages on the screen:
 
 ![image](/images/edge/tutorial/alarm/terminal-rpc-message.png)
+
+## Next Steps
+
+{% assign currentGuide = "ManageAlarmsAndRpcRequestsOnEdgeDevices" %}{% include templates/edge/guides-banner-edge.md %}
