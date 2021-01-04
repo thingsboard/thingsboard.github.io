@@ -336,7 +336,7 @@ Congratulations! You have added chart widget. Now you can send new telemetry rea
 
 Congratulations! You have added alarm widget. Not it's time to configure alarm rules and raise some alarms. 
 
-### Step 4. Configure Alarm Rules
+## Step 4. Configure Alarm Rules
 
 We will use [alarm rules](/docs/user-guide/device-profiles/#alarm-rules) feature to raise alarm when temperature reading is greater than 25 degrees.
 For this purpose, we should edit device profile and add new alarm rule. 
@@ -345,7 +345,7 @@ We recommend creating dedicated [device profiles](/docs/user-guide/device-profil
 
 {% include images-gallery.html imageCollection="step4" showListImageTitles="true" %}
 
-### Step 5. Create Alarm
+## Step 5. Create Alarm
 
 Now our alarm rule is active (see [Step 4](/docs/getting-started-guides/helloworld/#step-4-configure-alarm-rules)), 
 and we should send new telemetry on behalf of the device (see [Step 2](/docs/getting-started-guides/helloworld/#step-2-connect-device)) to trigger the alarm.
@@ -353,7 +353,7 @@ Note that temperature value should be 26 or higher to raise the alarm. Once we s
 
 {% include images-gallery.html imageCollection="step5" showListImageTitles="true" %}
 
-### Step 6. Alarm notifications
+## Step 6. Alarm notifications
 
 It is quite easy to configure email or sms notifications for alarms. We recommend to review alarm rule [examples](/docs/user-guide/device-profiles/#alarm-rules) 
 and documentation about [alarm notifications](/docs/user-guide/device-profiles/#notifications-about-alarms). 
@@ -361,7 +361,7 @@ and documentation about [alarm notifications](/docs/user-guide/device-profiles/#
 **Note**: At the moment ThingsBoard supports AWS SNS and Twilio to send SMS. 
 Both services are non free and require you to create an account. However, you may integrate with other SMS/EMAIL gateways using [REST API call](https://thingsboard.io/docs/user-guide/rule-engine-2-0/tutorials/get-weather-using-rest-api-call/#node-d-external-rest-api-call-node) node.  
 
-### Step 7. Assign Device and Dashboard to Customer
+## Step 7. Assign Device and Dashboard to Customer
 
 One of the important ThingsBoard features is the ability to assign Dashboards to Customers. 
 You may assign different devices to different customers. Then, you may create a Dashboard(s) and assign it to multiple customers.

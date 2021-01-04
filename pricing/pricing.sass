@@ -186,6 +186,100 @@ html#pricing
           margin-right: 11px
           margin-left: -32px
 
+    .solution-selector
+      height: 44px
+      border-radius: 26px
+      margin-bottom: 30px
+      @media (min-width: 992px)
+        margin-bottom: 0
+      .solution
+        padding-left: 14px
+        padding-right: 24px
+        &:nth-of-type(1)
+          margin-right: 12px
+        h3
+          font-size: 14px
+          line-height: 20px
+          @media (min-width: 480px)
+            font-size: 18px
+            line-height: 27px
+          &:before
+            padding-right: 12px
+            line-height: 42px
+        &.active
+          border-radius: 22px
+
+    .product-selector
+      height: 44px
+      border-radius: 26px
+      .solution
+        padding-left: 14px
+        padding-right: 24px
+        &:nth-of-type(1)
+          margin-right: 12px
+        h3
+          font-size: 14px
+          line-height: 20px
+          @media (min-width: 480px)
+            font-size: 18px
+            line-height: 27px
+          &:before
+            padding-right: 12px
+            line-height: 42px
+        &.active
+          border-radius: 22px
+
+    .solution-selector, .product-selector
+      display: flex
+      border: 1px solid rgba(0, 0, 0, 0.08)
+      .solution
+        position: relative
+        color: #707275
+        cursor: pointer
+        height: 100%
+        display: flex
+        align-items: center
+        h3
+          font-weight: 500
+          &:before
+            display: inline-block
+            vertical-align: middle
+          a.faq-link
+            &:after
+              transform: translate(5%, -80%)
+        &.pay-as-you-go
+          h3
+            &:before
+              content: "\f017"
+              font: normal normal normal 14px/1 FontAwesome
+              font-size: 26px
+        &.perpetual
+          h3
+            &:before
+              content: "\221E"
+              font-size: 36px
+              height: 46px
+        &.thingsboard-cloud
+          h3
+            &:before
+              content: "\f0c2"
+              font: normal normal normal 14px/1 FontAwesome
+              font-size: 26px
+        &.thingsboard-pe
+          h3
+            &:before
+              content: "\f233"
+              font: normal normal normal 14px/1 FontAwesome
+              font-size: 26px
+        &.active
+          color: #fff
+          background: #2A7DEC
+          box-shadow: 0px 6px 8px rgba(42,125,236,0.25)
+          &:after
+            background-color: #fff
+        &:hover:not(.active)
+          color: #000
+
     div.pricing-content
       position: relative
       z-index: 4
@@ -225,62 +319,6 @@ html#pricing
             font-size: 18px
             line-height: 27px
 
-      .solution-selector
-        display: flex
-        height: 44px
-        border: 1px solid rgba(0, 0, 0, 0.08)
-        border-radius: 26px
-        margin-bottom: 30px
-        @media (min-width: 992px)
-          margin-bottom: 0
-        .solution
-          position: relative
-          padding-left: 14px
-          padding-right: 24px
-          color: #707275
-          cursor: pointer
-          height: 100%
-          display: flex
-          align-items: center
-          &:nth-of-type(1)
-            margin-right: 12px
-          h3
-            font-weight: 500
-            line-height: 20px
-            font-size: 14px
-            text-transform: uppercase
-            @media (min-width: 480px)
-              font-size: 18px
-              line-height: 27px
-            &:before
-              display: inline-block
-              padding-right: 12px
-              vertical-align: middle
-              line-height: 42px
-            a.faq-link
-              &:after
-                transform: translate(5%, -80%)
-          &.pay-as-you-go
-            h3
-              &:before
-                content: "\f017"
-                font: normal normal normal 14px/1 FontAwesome
-                font-size: 26px
-          &.perpetual
-            h3
-              &:before
-                content: "\221E"
-                font-size: 36px
-                height: 46px
-          &.active
-            color: #fff
-            background: #2A7DEC
-            border-radius: 22px
-            box-shadow: 0px 6px 8px rgba(42,125,236,0.25)
-            &:after
-              background-color: #fff
-          &:hover:not(.active)
-            color: #000
       &#thingsboard-ce
         padding-top: 60px
         .pricing-div
@@ -318,15 +356,22 @@ html#pricing
             li
               list-style: disc
 
+    .select-product-content
+      height: 64px
+      @media (min-width: 768px)
+        height: 64px
+      @media (min-width: 1200px)
+        height: 96px
     .pricing-header-divider
-      margin-top: 96px
       height: 8px
       width: 100%
       background-color: #102A4E
-      @media (min-width: 768px)
-        margin-top: 20px
-      @media (min-width: 1200px)
-        margin-top: 96px
+      &:not(.no-margin)
+        margin-top: 64px
+        @media (min-width: 768px)
+          margin-top: 64px
+        @media (min-width: 1200px)
+          margin-top: 96px
     .pricing-hero
       position: relative
       z-index: 6
@@ -376,9 +421,8 @@ html#pricing
     .inner-navigation
       position: relative
       margin-top: 32px
-      height: 68px
       display: flex
-      justify-content: start
+      justify-content: center
       align-items: center
       ul
         list-style-type: none
@@ -388,12 +432,12 @@ html#pricing
         align-items: center
         margin: 0
         padding: 0
-        height: 68px
         li
           position: relative
           display: table
           height: 68px
-          padding-right: 12px
+          padding-left: 6px
+          padding-right: 6px
           a
             text-decoration: none
             display: block
