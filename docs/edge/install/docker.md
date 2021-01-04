@@ -56,7 +56,7 @@ Where:
 - `15683:5683` - connect local port 15683 to exposed internal COAP port 5683   
 - `mytb-edge-data:/data` - mounts the host's dir `mytb-edge-data` to ThingsBoard Edge DataBase data directory
 - `mytb-edge-logs:/var/log/tb-edge` - mounts the host's dir `mytb-edge-logs` to ThingsBoard Edge logs directory
-- `thingsboard/tb-edge` - docker image
+- `thingsboard/tb-edge:3.3.0-edge` - docker image
 - `CLOUD_ROUTING_KEY` - your edge key
 - `CLOUD_ROUTING_SECRET` - your edge secret
 - `CLOUD_PRC_HOST` - ip address of the machine with the ThingsBoard platform. 

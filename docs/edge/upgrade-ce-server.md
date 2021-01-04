@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
-title: Upgrade instructions for ThingsBoard CE server (beta)
-description: Upgrade instructions for ThingsBoard CE server (beta)
+title: Upgrade instructions for ThingsBoard CE server
+description: Upgrade instructions for ThingsBoard CE server
 ---
 
 * TOC

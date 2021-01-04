@@ -25,15 +25,11 @@ defaultActivateSelectProduct: true
             <li id="menu-item-thingsboard-edge" class="menu-item tb-edge-logo">
                <a href="javascript:void(0);" onClick="activatePricingSection('thingsboard-edge')">Edge</a>
             </li>
-         </ul>
-       </nav>
-       <nav id="inner-navigation-2" class="inner-navigation">
-         <ul id="menu-pricing-navigation-2" class="menu">
             <li id="menu-item-trendz" class="menu-item trendz-logo">
                <a href="javascript:void(0);" onClick="activatePricingSection('trendz')">Trendz Analytics</a>
             </li>
          </ul>
-       </nav>  
+       </nav>
     </div>
     <div id="thingsboard-pe-options" class="select-product-content justify-content-center align-items-center" style="display: none;">
         <div class="product-selector">
