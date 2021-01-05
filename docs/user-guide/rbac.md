@@ -205,7 +205,7 @@ Now let's assign those roles to the "Supervisors" group.
 6. Choose "Generic" for a Role Type and "All Entities Read-only" in the Options. Click "Add";
 7. Again press the "+" sign at the top of the opened window;
 8. This time choose "Group" for a Role Type and "Entity Group Administrator" for a Role;
-9. For a Group Owner choose "Tenant", for a Type choose "Dashboard", and in the Entity Group click on the "Supervisor Dashboard".
+9. For a Group Owner choose "Tenant", for a Type choose "Dashboard", and click on the "Supervisor Dashboard" in the Entity Group.
 
 <img data-gifffer="/images/user-guide/security/smart-buildings-user-group.gif" />
  
@@ -214,19 +214,33 @@ Now let's assign those roles to the "Supervisors" group.
 We will create a separate Customer entity for each building or group of buildings. We will add the Facility Manager user account to the default "Customer Administrators" group which is automatically created for each Customer.
 Now, as Facility Manager, we can log in, design dashboards, provision devices, and end-users.  
 1. In the Customer Hierarchy click on the "+" sign (Add Customer) at the top right of the screen;
-2. 
-  
+2. Input the Title "Building A" and click "Add";
+3. At the left top of the screen you, shall see the blue icon "All". Click on it;
+4. In the drop-down menu follow the path: Building A --> User Groups --> Customer Administrators;
+5. On the right side of the screen should have been opened "Customers Administrators: Users", click on the "+" sign at the top right of the screen;
+6. Input email address, for instance, we can use _alice@thingsboard.oi_, and click "Add";
+7. In the opened window you can see the User Activation Link, click "ok".  
+
 <img data-gifffer="/images/user-guide/security/smart-buildings-building-a.gif" />  
 
 **End Users**
 
-Let's login as Alice (created in a previous screencast), Building A administrator, and create several dashboards. 
-To simplify this guide we will not demonstrate particular dashboard creation steps (there are planty of guides available).
+Let's log in as Alice (created in a previous guide), Building A administrator, and create several dashboards.
+1. Open the Dashboards page. Click on the "+" icon in the top right corner. Select "Create new dashboard".
+2. Input dashboard name. For example, "End User Dashboard". Click "Add" to add the dashboard.
+3. Now your dashboard should be listed first, since the table sort dashboards using created time by default.
       
 ![image](/images/user-guide/security/smart-buildings-building-a-dashboards.png)
 
-Now, let's create a read-only user. Let's assume we want to assign "End User Dashboard" to him and make sure that this dashboard will open full screen once the user is logged in. 
-So, our read-only user will not have access to the administration panel to the left, since they are still not allowed to perform any server side API calls, except read-only browsing the data.   
+Now, let's create a Read-only User. Let's assume we want to assign "End User Dashboard" to him and make sure that this Dashboard will open full screen once the user is logged in. 
+So, our read-only user will not have access to the administration panel to the left, since they are still not allowed to perform any server-side API calls, except read-only browsing the data.  
+1. Choose Customer User in the User Group section;
+2. Click "+" at the top right of the screen;
+3. Input email address, for example, we will use bob@thingsboard.io, click "Add";
+4. In the opened window you can see the User Activation Link, click "ok";
+5. Now, click at the created User;
+6. At the right top of the screen you shall see the "Pen" icon, click on it;
+7. Check the box "Always full screen" and choose "End User Dashboard" in the Select Dashboard menu.
 
 <img data-gifffer="/images/user-guide/security/smart-buildings-read-only-user.gif" />
 
