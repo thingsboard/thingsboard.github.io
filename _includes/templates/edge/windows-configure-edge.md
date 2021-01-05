@@ -33,7 +33,7 @@ spring:
 
 Locate "cloud" block and replace **PUT_YOUR_EDGE_KEY_HERE** and **PUT_YOUR_EDGE_SECRET_HERE** with Edge **key and secret** respectively. 
 
-Please replace **PUT_YOUR_CLOUD_IP** with an IP address of the machine where ThingsBoard CE/PE version is running. Use **localhost** in case ThingsBoard Edge is running on the same machine where cloud instance is running:
+Please replace **PUT_YOUR_CLOUD_IP** with an IP address of the machine where ThingsBoard CE/PE version is running. Use **localhost** in case ThingsBoard Edge is running on the same machine where cloud instance is running. Or use **demo.thingsboard.io** if you are connecting edge to ThingsBoard **Live Demo** for evaluation:
  
 ```yml
 cloud:

@@ -392,6 +392,10 @@ toc:
           path: /docs/edge/rule-engine/provision-rule-chains/
         - title: Push data from edge to cloud and vise versa
           path: /docs/edge/rule-engine/push-data/
+    - title: Security
+      section:
+        - title: Enable gRPC over SSL/TLS for edge communication
+          path: /docs/edge/security/grpc-over-ssl/
     - title: Features
       section:
         - title: Edge status

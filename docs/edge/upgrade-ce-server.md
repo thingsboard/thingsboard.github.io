@@ -59,6 +59,27 @@ export EDGES_ENABLED=true
 ```
 {: .copy-code}
 
+#### RPC port for edge communication
+
+ThingsBoard **Edge** connects to ThingsBoard **CE** server on 7070 port (by default).
+
+You can overwrite this by setting **EDGES_RPC_PORT** variable in configuration file.
+To change it please edit ThingsBoard configuration file:
+
+```text
+sudo nano /etc/thingsboard/conf/thingsboard.conf
+```
+{: .copy-code}
+
+Add the following lines to the configuration file:
+
+```bash
+export EDGES_RPC_PORT=**NEW_EDGES_RPC_PORT**
+```
+{: .copy-code}
+
+**NOTE**: This port must be accessible by edge to be able to communicate. Please update your firewall settings or docker configuration if required.
+
 {% include templates/edge/ssl-grpc-note.md %}
 
 #### Start the service
@@ -140,6 +161,18 @@ locate "EDGES_ENABLED" parameter. Replace "false" with "true".
 ```yml
   enabled: "${EDGES_ENABLED:true}"
 ```
+
+ThingsBoard **Edge** connects to ThingsBoard **CE** server on 7070 port (by default).
+
+You can overwrite this by updating **EDGES_RPC_PORT** variable in configuration file.
+locate "EDGES_RPC_PORT" parameter. Replace "7070" with "**NEW_EDGES_RPC_PORT**".
+
+```yml
+  rpc:
+    port: "${EDGES_RPC_PORT:NEW_EDGES_RPC_PORT}"
+```
+
+**NOTE**: This port must be accessible by edge to be able to communicate. Please update your firewall settings or docker configuration if required.
 
 {% include templates/edge/ssl-grpc-note.md %}
 

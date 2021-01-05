@@ -10,17 +10,31 @@
 
 ![image](/images/edge/nodes/push-to-cloud.png)
 
-Pushes messages to cloud. This node used only on Edge instances to push messages from ThingsBoard Edge to Cloud.
+Push messages from edge to cloud. This node used only on edge to push messages from edge to cloud. Once message arrived into this node it’s going to be converted into cloud event and saved to the local database. Node doesn't push messages directly to cloud, but stores event(s) in the cloud queue.
+Supports next originator types:
+- DEVICE
+- ASSET
+- ENTITY_VIEW
+- DASHBOARD
+- TENANT
+- CUSTOMER
+- EDGE
 
-Once specific message arrived into this node it's going to be converted into cloud event and saved to the database.
+As well node supports next message types:
+- POST_TELEMETRY_REQUEST
+- POST_ATTRIBUTES_REQUEST
+- ATTRIBUTES_UPDATED
+- ATTRIBUTES_DELETED
+- ALARM
 
-This message doesn't push messages to cloud directly, but using cloud queue.
+In case successful storage edge event to database message will be routed via **Success** route.
 
 ![image](/images/edge/nodes/push-to-cloud-form.png)
 
 Message will be routed via **Failure** chain in the following cases:
-
-- Node was not able to save cloud event to database 
+- Node was not able to save edge event to database
+- Unsupported originator type arrived
+- Unsupported message type arrived
 
 # Push to edge 
 
@@ -34,18 +48,28 @@ Message will be routed via **Failure** chain in the following cases:
 
 ![image](/images/edge/nodes/push-to-edge.png)
 
-Pushes messages from Cloud to ThingsBoard Edge if Message Originator assigned to particular edge or is Edge entity. 
+Push messages from cloud to edge. Message originator must be assigned to particular edge or message originator is **EDGE** entity itself. This node used only on cloud instances to push messages from cloud to edge. Once message arrived into this node it’s going to be converted into edge event and saved to the database. Node doesn't push messages directly to edge, but stores event(s) in the edge queue.
+Supports next originator types:
+- DEVICE
+- ASSET
+- ENTITY_VIEW
+- DASHBOARD
+- TENANT
+- CUSTOMER
+- EDGE
 
-This node used only on Cloud instances to push messages from Cloud to ThingsBoard Edge. 
+As well node supports next message types:
+- POST_TELEMETRY_REQUEST
+- POST_ATTRIBUTES_REQUEST
+- ATTRIBUTES_UPDATED
+- ATTRIBUTES_DELETED
+- ALARM
 
-Once specific message arrived into this node it's going to be converted into edge event and saved to the database.
-
-This message doesn't push messages to edge directly, but using edge queue.
-
-Supports only **DEVICE, ENTITY_VIEW, ASSET and EDGE Message Originator(s)**.
+In case successful storage edge event to database message will be routed via **Success** route.
 
 ![image](/images/edge/nodes/push-to-edge-form.png)
 
 Message will be routed via **Failure** chain in the following cases:
-
-- Node was not able to save edge event to database 
+- Node was not able to save edge event to database
+- Unsupported originator type arrived
+- Unsupported message type arrived

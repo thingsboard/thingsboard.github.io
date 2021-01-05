@@ -41,7 +41,11 @@
 {% endif %}
 {% if currentGuide != "PushDataFromEdgeToCloudAndViseVersa" %}
   - [Push data from edge to cloud and vise versa](/docs/edge/rule-engine/push-data/) - Learn how to push data from edge to cloud and vise versa.
-{% endif %} 
+{% endif %}
+{% if currentGuide != "GrpcOverSsl" %}
+- Security:
+  - [gRPC over SSL/TLS](/docs/edge/security/grpc-over-ssl/) - Learn how to configure gRPC over SSL/TLS for communication between edge and cloud.
+{% endif %}
 - Features:
 {% if currentGuide != "EdgeStatus" %}
   - [Edge Status](/docs/edge/features/edge-status/) - Learn about Edge Status page on ThingsBoard Edge.
