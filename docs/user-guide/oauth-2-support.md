@@ -122,30 +122,31 @@ step28:
 
 ## Overview
 
-ThingsBoard allows you to provide Single Sign On functionality for your customers and automatically create tenants, customers or subcustomers using external user management platforms, that supports OAuth 2.0 protocol.  
-A list of platforms which supports the OAUth 2.0 protocol: [Google](https://developers.google.com/identity/protocols/oauth2/openid-connect), [Okta](https://www.okta.com/), [Auth0](https://auth0.com/) etc.   
+ThingsBoard allows you to provide Single Sign-On functionality for your customers and automatically create tenants, customers, or sub customers using external user management platforms, that supports the OAuth 2.0 protocol.  
+A list of platforms that supports the OAuth 2.0 protocol: [Google](https://developers.google.com/identity/protocols/oauth2/openid-connect), [Okta](https://www.okta.com/), [Auth0](https://auth0.com/), etc.   
 
 
 ## OAuth 2.0 authentication flow
 
 ThingsBoard supports the Authorization Code grant type to exchange an authorization code for an access token.   
-Once user returns to the ThingsBoard client via redirect URL, the platform will get the authorization code from the URL and use it to request an access token from the external user management platform.
-Using the [basic mapper](/docs/user-guide/oauth-2-support/#basic-mapper) or [custom mapper](/docs/user-guide/oauth-2-support/#custom-mapper) external user info object will be converted from external platform into ThingsBoard internal OAuth 2.0 user and then the regular ThingsBoard authorization flow will happen.
+Once the user returns to the ThingsBoard client via redirect URL, the platform will get the authorization code from the URL and will use it to request an access token from the external user management platform.
+Using the [basic mapper](/docs/user-guide/oauth-2-support/#basic-mapper) or [custom mapper](/docs/user-guide/oauth-2-support/#custom-mapper), external user info object will be converted from external platform into ThingsBoard internal OAuth 2.0 user. 
+After this, the regular ThingsBoard authorization flow will happen.
 
 
 ## Scenario description
 
-In this sample we are going to use [Google](https://developers.google.com/identity/protocols/oauth2/openid-connect) for the authentication. 
-User is going to be logged into the Tenant and Tenant name is going to be equal to the users email.
-If Tenant does not exist in the system, the new Tenant will be created.
+In this sample, we are going to use [Google](https://developers.google.com/identity/protocols/oauth2/openid-connect) the authentication. 
+The user is going to be logged into the Tenant, and the Tenant name is going to be equal to the user's email.
+If the Tenant does not exist in the system, the new Tenant will be created.
 
-As a second step we are going to add a new external provider for authentication - [Auth0](https://auth0.com/).
-In this case User is going to be logged into the Tenant which name is going to be equal to a user email domain name.
-Additionally, for every user we are going to create a new Customer and Customer name is going to be equal to a user email. 
+As a second step, we are going to add a new external provider for authentication - [Auth0](https://auth0.com/).
+In this case, the User is going to be logged into the Tenant which name is going to be equal to a user email domain name.
+Additionally, for every user, we are going to create a new Customer and the Customer name is going to be equal to a user email. 
 
-To map those external user infos from Google and Auth0 platform we are going to use built-in [basic mapper](/docs/user-guide/oauth-2-support/#basic-mapper). 
+To map that external user info from Google and Auth0 platform, we are going to use a built-in [basic mapper](/docs/user-guide/oauth-2-support/#basic-mapper). 
 
-If [basic mapper](/docs/user-guide/oauth-2-support/#basic-mapper) functionality will not fit your business needs, you can configure the [custom mapper](/docs/user-guide/oauth-2-support/#custom-mapper)  so that you are able to add an implementation that fits under your specific needs.
+If [basic mapper](/docs/user-guide/oauth-2-support/#basic-mapper) functionality doesn't fit your business needs, you can configure the [custom mapper](/docs/user-guide/oauth-2-support/#custom-mapper),  so that you are able to add an implementation that fits your specific needs.
 
 ### Login with Google
 
@@ -163,7 +164,7 @@ After completing the instructions above, you should have a new OAuth Client with
 [comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/3-client-id.png&#41;)
 {% include images-gallery.html imageCollection="step3" preview="false" max-width="100%" %}
 
-Please add to Authorized redirect URIs section default ThingsBoard redirect URI that we are going to use in this sample:
+Please, add the ThingsBoard default redirect URI, which we are going to use in this example, to the Authorized Redirect URI section:
 
 ```
 http://localhost:8080/login/oauth2/code/
@@ -196,14 +197,15 @@ Then expand the **Custom settings** menu.
 [comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/8-login-provider-google.png&#41;)
 {% include images-gallery.html imageCollection="step8" preview="false" max-width="100%" %}
 
-Let's make the settings for the General block. Use this [link](https://developers.google.com/identity/protocols/oauth2/openid-connect#discovery) to see the list of up-to-date URLs like **accessTokenUri**, **authorizationUri** etc.
+Let's make the settings for the General block. 
+Use this [link](https://developers.google.com/identity/protocols/oauth2/openid-connect#discovery) to see the list of up-to-date URLs like **accessTokenUri**, **authorizationUri**, etc.
 Select **POST** in the *Client authentication method* field. Then check the "Allow user creation" checkbox. Add to the scope field: *openid, email, profile*. And go to the **Mapper** block.
 
 [comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/9-oauth2-google-general.png&#41;)
 {% include images-gallery.html imageCollection="step9" preview="false" max-width="100%" %}
 
 Select the **Basic** type and fill in the fields, if necessary (*described in more detail below in this article in the Basic mapper part*).
-Some configurations available only in Professional Edition. Then, **save** the settings.
+Some configurations are available only in Professional Edition. Then, **save the settings**.
 
 
 [comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/10-oauth2-google-general-mapper-pe.png&#41;)
@@ -211,17 +213,17 @@ Some configurations available only in Professional Edition. Then, **save** the s
 
 So that the resulted oauth2 configurations for Google will look similar to the provided below.
 
-If we navigate to the Login screen, we will see additional Login option with Google:
+If we navigate to the Login screen, we will see an additional Login option with Google:
 
 [comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/11-login-with-google.png&#41;)
 {% include images-gallery.html imageCollection="step11" preview="false" max-width="100%" %}
 
-Once we click it and select on of our Google Account, we are going to be logged into ThingsBoard with our Google's email as a Tenant Administrator email:
+Once we click it and select one of our Google Account, we are going to be logged into ThingsBoard with our Google's email as a Tenant Administrator email:
 
 [comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/12-tenant-administrator.png&#41;)
 {% include images-gallery.html imageCollection="step12" preview="false" max-width="100%" %}
 
-If you will login as the System Administrator, you will see that the Tenant name is our Google's email, according to basic mapper:
+If you log in as the System Administrator, you will see that the Tenant name is our Google's email, according to basic mapper:
 
 [comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/13-tenants-email.png&#41;)
 {% include images-gallery.html imageCollection="step13" preview="false" max-width="100%" %}
@@ -231,22 +233,22 @@ If you will login as the System Administrator, you will see that the Tenant name
 Now let's add one more provider to our list - [Auth0](https://auth0.com/).
 This time we are going to create customers for our users inside a single domain tenant.
 
-To use Auth0 authentication platform for Login, let's create new application of 'Regular Web App' type following this [link](https://auth0.com/docs/quickstarts/).
+To use the Auth0 authentication platform for Login, let's create a new application of the 'Regular Web App' type following this [link](https://auth0.com/docs/quickstarts/).
 
 [comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/14-auth0-regular-web-app.png&#41;)
 {% include images-gallery.html imageCollection="step14" preview="false" max-width="100%" %}
 
-From the list of technology please select *Java Spring Boot*:
+From the list of technologies please select *Java Spring Boot*:
 
 [comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/15-auth0-java-spring-boot.png&#41;)
 {% include images-gallery.html imageCollection="step15" preview="false" max-width="100%" %}
 
-Once your application will be created you can navigate to application details to obtain **clientId** and **clientSecret**:
+Once your application is created, you can navigate to application details to obtain **clientId** and **clientSecret**:
 
 [comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/16-auth0-applications-settings.png&#41;)
 {% include images-gallery.html imageCollection="step16" preview="false" max-width="100%" %}
 
-As well please update you allowed Callback URLs:
+As well, please update your allowed Callback URLs:
 
 ```
 http://localhost:8080/login/oauth2/code/
@@ -274,14 +276,14 @@ Then select **Custom:**
 [comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/20-oauth2-add-provider-custom.png&#41;)
 {% include images-gallery.html imageCollection="step20" preview="false" max-width="100%" %}
 
-Please provide information (**client ID** and **Client secret**) from your application details and in the advanced details section you may find all the required URLs.
+Please provide information (**client ID** and **Client secret**) from your application details, and you may find all the required URLs in the advanced details section.
 
-Select **POST** in the *client authentication method* field. In the *provider label* field we indicate **Auth0**. Then check the “Allow user creation” checkbox. Add to the scope field: *openid, email, profile*. And go to the **Mapper** block.
+Select **POST** in the *client authentication method* field. We indicate **Auth0** in the *provider label* field. Then check the “Allow user creation” checkbox. Add to the scope field: *openid, email, profile*. And go to the **Mapper** block.
 
 [comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/21-oauth2-custom-general.png&#41;)
 {% include images-gallery.html imageCollection="step21" preview="false" max-width="100%" %}
 
-Select the **Basic** type and fill in the fields, if necessary *(described in more detail below in this article in the Basic mapper part).* Some configurations available only in Professional Edition. Then, **save** the settings.
+Select the **Basic** type and, if necessary fill in the fields *(described in more detail below in this article in the Basic mapper part).* Some configurations are available only in Professional Edition. Then, **save** the settings.
 
 [comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/22-oauth2-custom-mapper-pe.png&#41;)
 {% include images-gallery.html imageCollection="step22" preview="false" max-width="100%" %}
@@ -304,7 +306,7 @@ If we are logged as System Administrator, you will see that Tenant name is our *
 [comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/25-tenants-emails.png&#41;)
 {% include images-gallery.html imageCollection="step25" preview="false" max-width="100%" %}
 
-We have completed our sample and now your users not required to create accounts inside ThingsBoard - they can use already exist SSO providers for this.
+We have completed our sample and now your users are not required to create accounts inside ThingsBoard - they can use already exist SSO providers for this.
 
 ### Resulted Snipped
 This snippet contains both providers that are used in our sample:
@@ -312,10 +314,10 @@ This snippet contains both providers that are used in our sample:
 [comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/26-both-providers.png&#41;)
 {% include images-gallery.html imageCollection="step26" preview="false" max-width="100%" %}
 
-## Mapping of external user into ThingBoard internal user structure
+## Mapping of the external user into ThingBoard internal user structure
 
 Mapping of the external user info object into ThingBoard user can be achieved in two ways - using the **Basic** and **Custom** mappers. 
-Main functionality of the mapper is to map key-value attributes from the external user info object into expected structure of the ThingsBoard OAuth 2.0 User:
+The main functionality of the mapper is to map key-value attributes from the external user info object into the expected structure of the ThingsBoard OAuth 2.0 User:
 
 ```java
 public class OAuth2User {
@@ -339,89 +341,89 @@ public class OAuth2User {
 
 ### Basic mapper
 
-A basic mapper is able to merge external OAuth 2.0 user info object into ThingsBoard OAuth 2.0 user with a predefined set of rules.
+A basic mapper is able to merge an external OAuth 2.0 user info object into the ThingsBoard OAuth 2.0 user with a predefined set of rules.
 
 [comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/27-oauth2-basic-mapper-pe.png&#41;)
 {% include images-gallery.html imageCollection="step27" preview="false" max-width="100%" %}
 
-To use basic mapper please set *mapperConfig.type* or *SECURITY_OAUTH2_DEFAULT_MAPPER_TYPE* environment variable to **basic**. 
+To use a basic mapper please set *mapperConfig.type* or *SECURITY_OAUTH2_DEFAULT_MAPPER_TYPE* environment variable to **basic**. 
 
 Here are the details of other properties:
 
-- **allowUserCreation**
-  If this option set to **true**, then if user account does not exist in the ThingsBoard yet, it will be created.
-  If this option set to **false**, user will get access denied error if will try to login with an external OAuth 2.0 provider, but there is no user exists with those credentials in the ThingsBoard.   
+- **allowUserCreation** -
+  if this option is set to **true**, then in case, the user account does not exist in the ThingsBoard yet, it will be created.
+  If this option is set to **false**, the user will get access denied error, in case, he tries to log in with an external OAuth 2.0 provider, but there is no user on ThingsBoard with those credentials.   
  
-- **emailAttributeKey**
-  This is the key of the attributes from the external OAuth 2.0 user info that is going to be used as ThingsBoard user email property.
+- **emailAttributeKey** -
+  this is the key to the attributes from the external OAuth 2.0 user info that is going to be used as ThingsBoard user email property.
   
-- **firstNameAttributeKey**
-  This is the key of the attributes from the external OAuth 2.0 user info that is going to be used as ThingsBoard user first name property.
+- **firstNameAttributeKey** -
+  this is the key to the attributes from the external OAuth 2.0 user info that is going to be used as ThingsBoard user first name property.
     
-- **lastNameAttributeKey**
-  This is the key of the attributes from the external OAuth 2.0 user info that is going to be used as ThingsBoard user surname property.
+- **lastNameAttributeKey** -
+  this is the key to the attributes from the external OAuth 2.0 user info that is going to be used as ThingsBoard user surname property.
 
-- **tenantNameStrategy**
-  This option specifies which tenant is going to be chosen for creating of the user.
-  A basic mapper provide three possible options strategy for generating Tenant name from external user info object - *domain*, *email* or *custom*.
-     - **domain** - name of the Tenant will be extracted as domain from the email of the user
-     - **email** - name of the Tenant will email of the user
-     - **custom** - you can define a custom pattern for Tenant name. Please see *tenantNamePattern*.
+- **tenantNameStrategy** -
+  this option specifies which tenant is going to be chosen for creating the user.
+  A basic mapper provides three possible options strategy for a generating Tenant name from an external user info object - *domain*, *email*, or *custom*:
+     - **domain** - the name of the Tenant will be extracted as the domain from the email of the user;
+     - **email** - the name of the Tenant will be the user's email;
+     - **custom** - a custom pattern can be set for the Tenant name. Please see *tenantNamePattern*.
 
-- **tenantNamePattern**
-  In case if the *tenantNameStrategy* is **custom** you can specify a name of the Tenant where user is going to be created with a help of custom pattern.
-  You can use attributes from the external user info object to put them into the Tenant's name. Please use %{attribute_key} as placeholder for attribute value.
+- **tenantNamePattern** -
+  In case, the *tenantNameStrategy* is **custom** you can specify the name of the Tenant, where the user is going to be created with a help of a custom pattern.
+  You can use attributes from the external user info object to put them into the Tenant's name. Please use %{attribute_key} as placeholder for the attribute value.
   
   Tenant pattern examples:
-     - **Demo Tenant**           # Hard coded Tenant name
-     - **Demo Tenant %{email}**  # In this case if user's email is *test@demo.com*, Tenant's name will be the *'Demo Tenant test@demo.com'*
-     - **%{givenName}**          # In this case if user's givenName attribute is *Demo User*, Tenant name will be *'Demo User'* 
+     - **Demo Tenant**           # Hard coded Tenant name;
+     - **Demo Tenant %{email}**  # if the user's email is *test@demo.com*, the Tenant's name will be the *'Demo Tenant test@demo.com'*;
+     - **%{givenName}**          # if the user's givenName attribute is *Demo User*, the Tenant name will be *'Demo User'*.
         
 - **customerNamePattern**
-  User can be created under specific Customer, and not under the Tenant, if this pattern field is not empty.
-  You can use attributes from the external user info object to put them into the Customer name. Please use %{attribute_key} as placeholder for attribute value.
+  User can be created under specific Customer, and not under the Tenant if this pattern field is not empty.
+  You can use attributes from the external user info object to put them into the Customer name. Please use %{attribute_key} as placeholder for the attribute value.
   
   Customer pattern examples:
-     - **Demo Customer**             # Hard coded Customer name
-     - **Demo Customer %{email}**    # If user's *email* attribute is *test@demo.com*, Customer name is going to be *'Demo Customer test@demo.com'*
-     - **%{city}**                   # If user's *city* attribute is *New York*, Customer name is going to be *'New York'* 
+     - **Demo Customer**             # Hard coded Customer name;
+     - **Demo Customer %{email}**    # If the user's *email* attribute is *test@demo.com*, the Customer name will be *'Demo Customer test@demo.com'*;
+     - **%{city}**                   # If the user's *city* attribute is *New York*, the Customer name will be *'New York'*. 
 
 - **defaultDashboardName**
-  User will be redirected to specific Dashboard, if this field is not empty.
+  A user will be redirected to a specific Dashboard if this field is not empty.
   
 - **alwaysFullScreen**
-  If this field is **true** and **defaultDashboardName** is not empty, User will be redirected to specific Dashboard in fullscreen mode.
+  If this field is **true** and **defaultDashboardName** is not empty, the User will be redirected to a specific Dashboard in a fullscreen mode.
 
 - **parentCustomerNamePattern**
 
-  **NOTE: This configuration available only in Professional Edition**
+  **NOTE: This configuration available only in Professional Edition.**
 
-  Customer of the user can be created in the hierarchy under this parent Customer, if this pattern field is not empty.
-  You can use attributes from the external user info object to put them into Parent Customer name. Please use %{attribute_key} as placeholder for attribute value.
+  The Customer of the user can be created in the hierarchy under this parent Customer if this pattern field is not empty.
+  You can use attributes from the external user info object to put them into the Parent Customer name. Please use %{attribute_key} as a placeholder for the attribute value.
   
   Parent Customer pattern examples:
-     - **Demo Parent Customer**           # Hard coded Parent Customer name
-     - **Demo Parent Customer %{email}**  # If user's *email* attribute is *test@demo.com*, Parent Customer name is going to be *'Demo Parent Customer test@demo.com'*
-     - **%{country}**                     # If user's *country* attribute is *Top Customer*, Parent Customer name is going to be *'Parent Customer'* 
+     - **Demo Parent Customer**           # Hard coded Parent Customer name;
+     - **Demo Parent Customer %{email}**  # If user's *email* attribute is *test@demo.com*, Parent Customer name is going to be *'Demo Parent Customer test@demo.com'*;
+     - **%{country}**                     # If user's *country* attribute is *Top Customer*, Parent Customer name is going to be *'Parent Customer'*. 
 
 - **userGroupsNamePattern**
 
-  **NOTE: This configuration available only in Professional Edition**
+  **NOTE: This configuration available only in Professional Edition.**
 
-  By default, newly created user will be assigned only to the **All** user's group. 
-  You can customize this behaviour by specifying list of groups, where user must be assigned to as well. 
+  By default, the newly created user is assigned only to the **All** user's group. 
+  You can customize this behavior by specifying a list of groups, where a user has to be assigned to as well. 
   You can use attributes from the external user info object to put them into user group names. Please use %{attribute_key} as placeholder for attribute value.
-  If groups doesn't exist, this group will be created automatically.
+  If groups don't exist, this group will be created automatically.
   
   User groups pattern examples:
-     - **Tenant Administrators, Managers**   # Hard coded user groups
+     - **Tenant Administrators, Managers**   # Hard coded user groups;
      - **%{job_title}**                    # If user's *job_title* attribute is *Manager*, user is going to be assigned into *Manager* user group.
 
 ### Custom mapper
 
-If basic mapper functionality doesn't cover your business needs, with the help of custom mapper you are able to add an implementation that fits your specific goals.
+If the basic mapper functionality doesn't cover your business needs, with the help of the custom mapper you are able to add an implementation that fits your specific goals.
 
-A custom mapper designed as a separate microservice which is running nearby the ThingsBoard core microservice.
+A custom mapper designed as a separate microservice that is running nearby the ThingsBoard core microservice.
 ThingsBoard forwards all mapping requests to this microservice and expects as a response ThingsBoard OAuth 2.0 user object:
 
 ```java
@@ -445,23 +447,23 @@ public class OAuth2User {
 
 Please refer to this [base implementation](https://github.com/thingsboard/custom-oauth2-mapper) as a starting point for your custom mapper.
 
-To use custom mapper please set *mapperConfig.type* or *SECURITY_OAUTH2_DEFAULT_MAPPER_TYPE* environment variable to **custom**. 
+To use the custom mapper please set *mapperConfig.type* or *SECURITY_OAUTH2_DEFAULT_MAPPER_TYPE* environment variable to **custom**. 
 
 Here are the details of other properties:
 
-- **url**
+- **URL**
 
-  Url of the custom mapper endpoint.
+  URL of the custom mapper endpoint.
 
 - **username**
 
-  If custom mapper endpoint configured with a basic authorization, specify *username* in this property.
+  If the custom mapper endpoint configured with basic authorization, specify the *username* in this property.
  
 - **password**
 
-  If custom mapper endpoint configured with a basic authorization, specify *password* in this property.
+  If the custom mapper endpoint configured with basic authorization, specify the *password* in this property.
   
-Here is the example of demo configuration:
+Here is an example of demo configuration:
 
 ```bash
   custom:
@@ -497,7 +499,7 @@ Here is the example of demo configuration:
 
 ## HaProxy configuration
 
-If ThingsBoard is running under loadbalancer like HAProxy please configure properly balance algorithm to make sure that the correct session is available on the ThingsBoard instance: 
+If ThingsBoard is running under a load balancer like HAProxy please configure properly balance algorithm to make sure that the correct session is available on the ThingsBoard instance: 
 ```bash
 backend tb-api-backend
   ...

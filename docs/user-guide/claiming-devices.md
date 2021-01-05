@@ -18,30 +18,30 @@ Once device is claimed, the customer becomes its owner and customer users may ac
 ## Device Claiming scenarios
  
 ThingsBoard User can claim the device if they "know" the device Name and Secret Key. 
-The Secret Key is optional, always has an expiration time and may also change over time. 
+The Secret Key is optional, always has an expiration time, and may also change over time. 
 
 The Secret Key may be provisioned in two different ways. 
-Either reported by device (device-side key) or using server-side device attribute (server-side key).
+Either reported by the device (device-side key) or using a server-side device attribute (server-side key).
 See below for more details.
 
 ### Claiming using Device-side key
 
-This procedure requires device to generate the Secret Key based on some trigger event. 
-For example, once device is booted or when some physical button is pressed. 
-Once the Secret Key is generated, it is valid for certain period of time. 
+This procedure requires a device to generate the Secret Key based on some trigger event. 
+For example, once the device is booted or when some physical button is pressed. 
+Once the Secret Key is generated, it is valid for a certain period of time. 
 The device sends Claiming Information to the server which contains both the Secret Key and the duration of the validity of the key.  
-ThingsBoard server stores Claiming Information for the duration of the validity of the key. See diagram below.
+ThingsBoard server stores Claiming Information for the duration of the validity of the key. See the diagram below.
 
 ![image](/images/user-guide/claiming-devices/device-side-key-diagram.png)
 
-Device may send Claiming Information to TB using all supported transport protocols. The message body has two parameters: **secretKey** and **durationMs**, which may be optionally specified. 
+A Device can send Claiming Information to TB using all supported transport protocols. The message body has two parameters: **secretKey** and **durationMs**, which can be optionally specified. 
 The **secretKey** parameter adds security to the claiming process.
 The **durationMs** parameter determines the expiration of claiming time.
-In case the **secretKey** is not specified, the empty string as a default value is used.
+In case the **secretKey** is not specified, the empty string is used as a default value.
 In case the **durationMs** is not specified, the system parameter **device.claim.duration** is used (in the file **/etc/thingsboard/conf/thingsboard.yml**).
 
 In order to enable claiming devices feature a system parameter **security.claim.allowClaimingByDefault** (see [configuration guide](/docs/user-guide/install/config/)) 
-should be set to **true**, otherwise a server-side **claimingAllowed** attribute with the value **true** is obligatory for provisioned devices.
+should be set to **true**, otherwise, a server-side **claimingAllowed** attribute with the value **true** is obligatory for provisioned devices.
 
 Please see the Device API references to get the information about the message structure and topics/URLs to which to send the claiming messages.
 You can use the MQTT Gateway API that allows initiating claiming of multiple devices per time as well.
@@ -52,16 +52,16 @@ You can use the MQTT Gateway API that allows initiating claiming of multiple dev
  - [MQTT Gateway API](/docs/reference/gateway-mqtt-api/#claiming-devices-api)
  
 
-Once the Claiming Info is sent, device may display the Secret Key either in plain text or using the QR code. User should scan this key and use it to send the Claiming Request.
+Once the Claiming Info is sent, the device can display the Secret Key either in plain text or using the QR code. A user should scan this key and use it to send the Claiming Request.
 Claiming Request consists of the device Name and Secret Key. You may use MAC address or other unique property as the device Name. 
-See instructions how to send the Claiming Request [here](/docs/user-guide/claiming-devices/#device-claiming-api-request).   
+See instructions on how to send the Claiming Request [here](/docs/user-guide/claiming-devices/#device-claiming-api-request).   
 
 **Note:** The Secret Key may also be an empty string. This is useful if your device does not have any way to display the Secret Key. 
-For example, you may allow to claim device within 30 seconds after the claim button is pressed on the device. In this case user needs to know the device Name (MAC address, etc) only.
+For example, you may allow claiming the device within 30 seconds after the claim button is pressed on the device. In this case, a user needs to know the device Name (MAC address, etc) only.
 
-Server validates the Claiming Request and replies with the Claiming Response. Claiming Response contains status of the Claiming operation and Device ID if the operation was successful.
+The server validates the Claiming Request and replies with the Claiming Response. Claiming Response contains the status of the Claiming operation and Device ID if the operation was successful.
 
-Once Claiming Information is provisioned, Customer User may use [Claim Device](/docs/user-guide/claiming-devices/#device-claiming-widget) widget.        
+Once Claiming Information is provisioned, Customer User can use [Claim Device](/docs/user-guide/claiming-devices/#device-claiming-widget) widget.        
 
 ### Claiming using Server-side key
 
@@ -69,23 +69,23 @@ Let's assume you have thousands of NB IoT/LoRaWAN/Sigfox devices connected using
 The integration layer will automatically provision them in ThingsBoard. 
 Assuming Tenant Admin knows the list of DevEUIs (LoRaWAN) or any other device identifiers, 
 it is possible to generate a random Secret Key per device and upload this key to ThingsBoard as a server-side attribute using [REST API](https://thingsboard.io/docs/reference/rest-api/) or UI.
-Once this is done, tenant admin can email those keys to the Customer, or put them inside the device package box. 
+Once this is done, the tenant admin can email those keys to the Customer, or put them inside the device package box. 
 
 ![image](/images/user-guide/claiming-devices/server-side-key-diagram.png)
 
-In order to provision device Secret Key, Tenant Administrator should set server-side attribute "claimingData" with the following value:
+In order to provision device Secret Key, the Tenant Administrator should set server-side attribute "claimingData" with the following value:
 
 ```json
 {"secretKey": "YOUR_SECRET_KEY", "expirationTime": "1640995200000"}
 ``` 
 
-, where 1577836800000 is an expiration time of the device Secret Key that is 01/01/2022 as a unix timestamp with milliseconds precision.
+where 1577836800000 is an expiration time of the device Secret Key that is 01/01/2022 as a unix timestamp with milliseconds precision.
 
-Once server-side attribute is provisioned, Customer User may use [Claim Device](/docs/user-guide/claiming-devices/#device-claiming-widget) widget.  
+Once server-side attribute is provisioned, the Customer User may use the [Claim Device](/docs/user-guide/claiming-devices/#device-claiming-widget) widget.  
 
 ## Device Claiming Permissions in PE
 
-It is important to know that in case of the PE version the user that is trying to claim the specific device must have the necessary permissions to do so.
+It is important to know that in the case of the PE version the user that is trying to claim the specific device must have the necessary permissions to do so.
 In this case, the needed permission is the following:
 
 - **Resource: Device**
@@ -103,7 +103,7 @@ And then assign that role for a user group:
 
 ## Device Claiming Widget
 
-Claim device widget is quite simple and allows to input device name and Secret Key. 
+To claim a device widget is quite simple and allows the input of a device name and Secret Key. 
 
 ![image](/images/user-guide/claiming-devices/claim-device-widget.png)
 
@@ -115,7 +115,7 @@ It is also possible to configure all sorts of messages to the user in "Message s
 
 ![image](/images/user-guide/claiming-devices/claim-device-widget-message-settings.png)
 
-Finally, you can relate claimed device to the current state entity of the dashboard. 
+Last, but not least, you can relate the claimed device to the current state entity of the dashboard. 
 This is useful if you have multiple assets and would like to relate your device to one of them. 
 
 ![image](/images/user-guide/claiming-devices/claim-device-widget-relation-settings.png)
