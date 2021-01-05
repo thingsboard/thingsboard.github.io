@@ -54,6 +54,45 @@ time-window1:
     0:
         image: /images/user-guide/dashboards/add-time-window1-src.png
 
+alarm-filters:
+    0:
+        image: /images/user-guide/dashboards/alarm-filters1-src.png
+    1:
+        image: /images/user-guide/dashboards/alarm-filters2-src.png
+
+basic-settings:
+    0:
+        image: /images/user-guide/dashboards/basic-widget-settings1-src.png
+
+basic-settings-title:
+    0:
+        image: /images/user-guide/dashboards/basic-widget-settings1-src.png
+    1:
+        image: /images/user-guide/dashboards/basic-widget-settings-title1-src.png
+    2:
+        image: /images/user-guide/dashboards/basic-widget-settings-title2-src.png
+
+basic-settings-style:
+    0:
+        image: /images/user-guide/dashboards/basic-widget-settings-title2-src.png
+    1:
+        image: /images/user-guide/dashboards/basic-widget-settings-style1-src.png
+    2:
+        image: /images/user-guide/dashboards/basic-widget-settings-style2-src.png
+
+basic-settings-legend:
+    0:
+        image: /images/user-guide/dashboards/basic-widget-settings-title2-src.png
+    1:
+        image: /images/user-guide/dashboards/basic-widget-settings-legend1-src.png
+    2:
+        image: /images/user-guide/dashboards/basic-widget-settings-legend2-src.png
+    3:
+        image: /images/user-guide/dashboards/basic-widget-settings-legend3-src.png
+    4:
+        image: /images/user-guide/dashboards/basic-widget-settings-legend4-src.png
+
+
 ---
 
 * TOC
@@ -108,7 +147,7 @@ However, if you login as a Customer User, the alias will resolve to "Thermometer
 
 {% include images-gallery.html imageCollection="aliases" %}
 
-Please see the Entity Aliases [documentation](/docs/user-guide/ui/aliases) for more details.
+Please see the Entity Aliases [documentation](/docs/user-guide/ui/aliases) for more details and examples of other aliases.
 
 ## Entity Filters
 
@@ -159,7 +198,7 @@ To add a widget to the dashboard you should:
 
 {% include images-gallery.html imageCollection="add-widget" %}
 
-### Add widget dialog
+### Add widget dialog and settings
 
 Widget definition consists of the widget type, one or multiple data sources, basic and advanced settings, and the list of actions.   
 Therefore, the "Add widget" dialog contains four tabs to define a widget. Note that only the datasource configuration is strictly required. 
@@ -205,13 +244,17 @@ List of available attribute keys is basically a list of all client, server and s
 List of available time series keys depends on what time series data you devices [report](/docs/user-guide/telemetry/#device-telemetry-upload-api) to ThingsBoard 
 or what time series data you have saved via rule engine or [REST API](/docs/reference/rest-api/).
 
-List of entity fields depends on entity type:
+List of entity fields depends on the entity type and may extend in the future:
 
  * **Devices, assets and entity views** have the following fields: create time, entity type, name, type, label, additional info.
  * **User** has the following fields: created time, first name, last name, email and additional info.
  * **Customer** has the following fields: create time, entity type, email, title, country, state, city, address, zip code, phone, additional info.
 
-The list of available entity fields may extend in the future.
+###### Basic data key settings
+
+
+
+###### Advanced data key settings
 
 ##### Widget time window
 
@@ -226,10 +269,95 @@ Learn more about time window configuration [here](/docs/user-guide/dashboards/#t
 
 ##### Alarm filter
 
+In addition to the time window configuration, alarm widgets allow you to filter [alarms](/docs/user-guide/alarms/) based on [status](/docs/user-guide/alarms/#lifecycle), [severity](/docs/user-guide/alarms/#severity) and [type](/docs/user-guide/alarms/#type).
+You may choose combination of alarm statuses and severity. You may also define specific alarm types. You may also enable search of [propagated](/docs/user-guide/alarms/#propagation) alarms.
+
+{% include images-gallery.html imageCollection="alarm-filters" %}
 
 #### Basic widget settings
 
+Let's assume you have added the "Timeseries - Flot" widget to display thermometers using the widget data configuration [step](/docs/user-guide/dashboards/#widget-data-settings) only.
+You should see a similar widget (note that you should send/simulate some data to see the actual lines in the chart):
+
+{% include images-gallery.html imageCollection="basic-settings" %}
+
+Let's use the basic widget settings to tune the widget. We will demonstrate how each setting impacts the widget.
+
+##### Widget Title
+
+You may define custom widget title, tooltip and title style. You may also add an icon to the title and control icon color and size.
+See configuration and the corresponding result below.
+
+
+{% include images-gallery.html imageCollection="basic-settings-title" %}
+
+
+Title style from the screen above: 
+
+```json
+{
+  "fontSize": "10px",
+  "fontWeight": 600
+}
+```
+
+You may also completely hide the title using "Display title" checkbox. 
+You may also disable the widget shadow using "Drop shadow" checkbox and disable fullscreen using "Enable fullscreen" checkbox. 
+All those settings are enabled by default. 
+
+{: .copy-code}
+
+##### Widget Style
+
+You may define custom widget style using CSS properties. This style will be applied to the main div element of the widget. You may also change the background color, text color, padding and margin. 
+See configuration and the corresponding result below. Please note that both style and background color is just an example and definitely is not part of our guidelines. 
+
+
+{% include images-gallery.html imageCollection="basic-settings-style" %}
+
+Widget style from the screen above:
+
+```json
+{
+  "border": "3px solid #2E86C1",
+  "cursor": "pointer"
+}
+```
+{: .copy-code}
+
+##### Legend settings
+
+Chart widgets have "Display legend" setting enabled by default. The legend is used to display the min/max/average/total values.
+Others widgets have this setting disabled.  
+
+While legend is enabled you may choose the legend direction and position. You may also choose what data to include (min, max, average, total) and either to sort the data keys or not.
+
+You may notice that the legend displays the [data key](/docs/user-guide/dashboards/#data-keys) label for each configured data key.
+When you have data from multiple devices in the same widget, it is hard to find which device corresponds to which record in the legend or in the tooltip.
+In order to make the legend and tooltip clear, you should use "${entityName}" or "${entityLabel}" in the data key configuration.
+More info is available in the [data key settings](/docs/user-guide/dashboards/#basic-data-key-settings) documentation.
+
+See configuration and the corresponding result below:
+
+{% include images-gallery.html imageCollection="basic-settings-legend" %}
+
+##### Mobile mode settings
+
+##### Other settings
+
+You may choose which symbol to show next to the value and number of digits after the floating point. 
+These settings are useful if you want to apply same settings for all axis. 
+For example, if you show temperature readings for multiple devices, you may add '°C' or '°F' symbol. 
+However, if you display both temperature and humidity, you should configure those data keys separately, using [data key settings](/docs/user-guide/dashboards/#basic-data-key-settings). 
+
 #### Advanced widget settings
+
+Advanced widget settings are specific to widget implementation. Those settings allow you to fine tune the widget. 
+For example, "Timeseries - Flot" widget allows you to configure line style, width, enable comparison with the previous time interval and use entity attributes in the legend.  
+
+Learn more about specific advanced settings in the corresponding widget documentation:
+
+  TODO: coming soon.
 
 #### Widget actions
 
@@ -249,12 +377,13 @@ We recommend to use aggregation functions whenever is possible if you have a lot
 There are 5 aggregation functions available at the moment: **Min**, **Max**, **Average**, **Sum** and **Count**. 
 The special function called **None** is used to disable the aggregation.
 The default behavior of the dashboard is to show average values for the last minute grouped into 1 second intervals.
-Most likely, you will need to change this interval to last day ot even last 30 days. 
+Most likely, you will need to change this interval to last day or even last 30 days. 
 You may notice that the value of minimum grouping interval is automatically adjusted according to the main time interval.
 The goal of the adjustment is to keep number of intervals lower than configurable value (700 in our case).
 
-
-
+The time window may work in two modes: **realtime** and **history**.
+While in history mode, the widget will receive data only during the initial load and no updates will be issued over websockets.  
+In the realtime mode, the widgets will constantly receive updates from the server and will automatically show you only the data that matches the time window for a current timestamp.
 
 ## Settings
 

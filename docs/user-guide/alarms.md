@@ -28,20 +28,20 @@ Of course, this is a very simplified case, and real scenarios may be much more c
 
 Let's review main concepts of the alarm below:
 
-**Originator**
+##### Originator
 
 Alarm originator is an entity that caused the alarm. 
 For example, if ThingsBoard receives temperature reading from Device A and raise the "HighTemperature" alarm because the reading exceeds the threshold, then Device A is an originator of the alarm.
 
-**Type**
+##### Type
 
 Alarm type helps to identify the root cause of the alarm. For example, "HighTemperature" or "LowHumidity" are two different alarms.
 
-**Severity**
+##### Severity
 
 Each alarm has severity which is either Critical, Major, Minor, Warning or Indeterminate (sorted by priority in descending order).
 
-**Lifecycle**
+##### Lifecycle
 
 Alarm may be active or cleared. When ThingsBoard creates an alarm it persists the **start** and **end time** of the alarm. By default, start and end time are the same. 
 If alarm trigger condition repeats, platform will update the end time. ThingsBoard may automatically clear the alarm when event that matches alarm clear condition happens.
@@ -55,8 +55,8 @@ To summarize, there are 4 possible values of the "**status**" field:
  * Active acknowledged(ACTIVE_ACK) - alarm is not cleared but already acknowledged;
  * Cleared unacknowledged(CLEARED_UNACK) - alarm was already cleared but not yet acknowledged;
  * Cleared acknowledged(CLEARED_ACK) - alarm was already cleared and acknowledged;
- 
-**Alarm uniqueness**
+
+##### Alarm uniqueness
 
 ThingsBoard identifies alarm using a combination of originator, type, and start time. 
 Thus, at a single point in time, there should be only one active alarm with the same originator, type, and start time.
@@ -72,8 +72,8 @@ Assuming the following sequence of events:
  * 13:30 - temperature equals 18
  
 We will create single "HithTemperature" alarm with start time = 12:30 and end time = 13:00.
- 
-**Propagation**
+
+##### Propagation
 
 Let's assume your have a topology where one Tenant has 1000 Customers and each Customer has 1000 Devices. 
 Thus, you have 1M Devices in your server installation. 
@@ -89,7 +89,6 @@ Now, when you know the theory, let's proceed to practical tutorials.
 ### How to create the alarm?
 
 The **easiest way** is to use the [**Alarm Rules**](/docs/user-guide/device-profiles/#alarm-rules).
-
 The alternative option is to configure your custom logic in the [Rule Engine](/docs/user-guide/rule-engine-2-0/re-getting-started/) and use 
 [Create Alarm](/docs/user-guide/rule-engine-2-0/action-nodes/#create-alarm-node) and [Clear Alarm](/docs/user-guide/rule-engine-2-0/action-nodes/#clear-alarm-node) rule nodes. 
 You may find corresponding example [here](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/).
