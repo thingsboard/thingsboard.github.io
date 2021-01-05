@@ -26,7 +26,7 @@ rateLimits:
 
 ## Overview
 
-Since ThingsBoard 3.2, a System administrator is able to configure common settings for multiple tenants using Tenant Profiles. 
+Since ThingsBoard 3.2, a System Administrator is able to configure common settings for multiple tenants using Tenant Profiles. 
 Each Tenant has the one and only profile at a single point in time.
 
 Let's review the settings available in the tenant profile, one-by-one.
@@ -46,8 +46,8 @@ This group of settings allows the System Administrator to configure a maximum nu
 This group of settings allows a System Administrator to configure a maximum number of messages, API calls, etc., per month that each Tenant would like to perform. 
 ThingsBoard constantly collects and analyzes statistics about API Usage. The typical update interval of the statistics is 1 minute
 
-ThingsBoard tracks API usage for six main components: Transport, Rule Engine, JS functions, Telemetry persistence, Email and SMS services. The platform will disable the component if one of the related API Limits reaches a threshold. 
-For example, if Tenant devices produce more than 100M messages per month, the platform will disable all connections for devices that belong to this Tenant. 
+ThingsBoard tracks API usage for six main components: Transport, Rule Engine, JS functions, Telemetry persistence, Email, and SMS services. The platform will disable the component if one of the related API Limits reaches a threshold. 
+For example, if Tenant devices produce more than 100M messages per a month, the platform will disable all connections for devices that belong to this Tenant. 
 When the API usage is disabled or reaches a certain threshold (typically 80%) ThingsBoard will notify the Tenant Administrator via email.  
 
 Let's review each limit separately:
@@ -76,13 +76,13 @@ For example, the message listed below contains 5 data points, because the “jso
 **Rule Engine executions** mean any execution of the rule node that belongs to the current Tenant. Processing of a single telemetry message may cause multiple Rule Engine executions. 
 The platform will also count periodic messages produced by Generator nodes, etc.
 
-**JavaScript executions** mean any execution of the custom function defined by tenant administrators. For example, processing of the “Script” filter or a transformation node, an invocation of the data converter, etc.       
+**JavaScript executions** mean any execution of the custom function defined by Tenant Administrators. For example, processing of the “Script” filter or a transformation node, an invocation of the data converter, etc.       
 
 **Data points storage days** are calculated for all time-series data points that are stored in the database. 
 Platform multiplies the number of data points by the number of days those data points will be stored. The TTL parameter is used to extract the number of days to store the data. 
 For example, if you store 3 data points for 30 days, this is 90 storage data point days.
-A system administrator is able to configure default TTL using the "**Default Storage TTL Days**" parameter in the tenant profile.
-A Tenant administrator is able to overwrite default TTL using the "**Save Timeseries**" ule node configuration or using the “TTL” parameter in the post telemetry request.
+A System Administrator is able to configure default TTL using the "**Default Storage TTL Days**" parameter in the tenant profile.
+A Tenant Administrator is able to overwrite default TTL using the "**Save Timeseries**" ule node configuration or using the “TTL” parameter in the post telemetry request.
 
 **Emails sent** means the number of emails that are sent from the rule engine using system SMTP provider (settings). 
 Please note that the Tenant Administrator is able to define custom SMTP settings in both Community and Professional Editions of the platform. 
@@ -92,17 +92,17 @@ Emails sent with custom SMTP settings do not affect API limits.
 Please note that the Tenant Administrator is able to define custom SMS provider settings in both Community and Professional Editions of the platform. 
 SMS sent with custom SMTP settings do not affect API limits.
 
-### Api Usage dashboard
+### API Usage dashboard
 
 As a Tenant Administrator, you can review the API Usage dashboard. 
-The dashboard below allows tenant administrators to learn more about their hourly/daily/monthly API usage and instantly review the status of the API limits. 
+The dashboard below allows Tenant Administrators to learn more about their hourly/daily/monthly API usage and instantly review the status of the API limits. 
 
 {% include images-gallery.html imageCollection="apiLimitsDashboard" %}
 
 ## Rate Limits
 
 This group of settings allows a System Administrator to configure a maximum number of
-requests the platform should process for a specific device (device level) or for all devices belonging to a single tenant (tenant level).
+requests the platform should process for a specific device (device-level) or for all devices belonging to a single tenant (tenant-level).
 The implementation of rate limits is based on the [token bucket](https://en.wikipedia.org/wiki/Token_bucket) algorithm.
 
 The rate limit definition consists of the value and time interval. For example, "1000:60" means "no more than 1000 messages per 60 seconds". 

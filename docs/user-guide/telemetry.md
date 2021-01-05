@@ -39,7 +39,7 @@ API and examples can be reviewed in corresponding reference page:
 ## Telemetry Service
 
 Telemetry Service is responsible for persisting time series data to internal data storage. It also 
-provides server-side API to query and subscribe for data updates. 
+provides server-side API to query and subscribe to data updates. 
 
 ### Internal data storage
 
@@ -49,12 +49,12 @@ A device that sends data to the server will receive confirmation about data deli
 Modern MQTT clients allow temporary local storage of undelivered data. 
 Thus, even if one of the ThingsBoard nodes goes down, the device will not lose the data and will be able to push it to other servers.
  
-Server side applications are also able to publish telemetry valued for different entities and entity types.
+Server-side applications are also able to publish telemetry values for different entities and entity types.
   
-Although you can query the database directly, ThingsBoard provides set of RESTful and Websocket API that simplify this process and apply certain security policies:
+Although you can query the database directly, ThingsBoard provides set of RESTful and WebSocket API that simplify this process and apply certain security policies:
  
- - Tenant Administrator user is able to fetch data for all entities that belong to the corresponding tenant.
- - Customer user is able to fetch data only for entities that are assigned to the corresponding customer.
+ - a Tenant Administrator user is able to fetch data for all entities that belong to the corresponding tenant.
+ - a Customer user is able to fetch data only for entities that are assigned to the corresponding customer.
   
 #### Data Query API
 
@@ -62,10 +62,10 @@ Telemetry Service provides following REST API to fetch entity data:
 
 ![image](/images/user-guide/telemetry-service/rest-api.png)
 
-**NOTE:** The API listed above is available via Swagger UI, please review general [REST API](/docs/reference/rest-api/) documentation for more details.
+**NOTE:** The API listed above is available via Swagger UI. Please review the general [REST API](/docs/reference/rest-api/) documentation for more details.
 The API is backward compatible with TB v1.0+ and this is the main reason why API call URLs contain "plugin".
 
-##### Timeseries data keys API
+##### Time series data keys API
 
 You can fetch list of all *data keys* for particular *entity type* and *entity id* using GET request to the following URL  
  
@@ -80,7 +80,7 @@ B,get-telemetry-keys-result.json,json,resources/get-telemetry-keys-result.json,/
 
 Supported entity types are: TENANT, CUSTOMER, USER, DASHBOARD, ASSET, DEVICE, ALARM, ENTITY_VIEW
 
-##### Timeseries data values API
+##### Time series data values API
 
 You can fetch list of latest values for particular *entity type* and *entity id* using GET request to the following URL  
  
@@ -103,14 +103,14 @@ http(s)://host:port/api/plugins/telemetry/{entityType}/{entityId}/values/timeser
 
 The supported parameters are described below:
 
- - **keys** - comma separated list of telemetry keys to fetch.
- - **startTs** - unix timestamp that identifies start of the interval in milliseconds.
- - **endTs** - unix timestamp that identifies end of the interval in milliseconds.
+ - **keys** - comma-separated list of telemetry keys to fetch.
+ - **startTs** - Unix timestamp that identifies the start of the interval in milliseconds.
+ - **endTs** - Unix timestamp that identifies the end of the interval in milliseconds.
  - **interval** - the aggregation interval, in milliseconds.
  - **agg** - the aggregation function. One of MIN, MAX, AVG, SUM, COUNT, NONE.
  - **limit** - the max amount of data points to return or intervals to process.
 
-ThingsBoard will use *startTs*, *endTs* and *interval* to identify aggregation partitions or sub-queries and execute asynchronous queries to DB that leverage built-in aggregation functions.
+ThingsBoard will use *startTs*, *endTs*, and *interval* to identify aggregation partitions or sub-queries and execute asynchronous queries to DB that leverage built-in aggregation functions.
 
 {% capture tabspec %}get-telemetry-values
 A,get-telemetry-values.sh,shell,resources/get-telemetry-values.sh,/docs/user-guide/resources/get-telemetry-values.sh
@@ -119,10 +119,10 @@ B,get-telemetry-values-result.json,json,resources/get-telemetry-values-result.js
 
 Supported entity types are: TENANT, CUSTOMER, USER, DASHBOARD, ASSET, DEVICE, ALARM, ENTITY_VIEW
 
-#### Websocket API
+#### WebSocket API
 
-Websockets are actively used by Thingsobard Web UI. Websocket API duplicates REST API functionality and provides the ability to subscribe to device data changes.
-You can open a websocket connection to a telemetry service using the following URL
+WebSockets are actively used by Thingsobard Web UI. WebSocket API duplicates REST API functionality and provides the ability to subscribe to device data changes.
+You can open a WebSocket connection to a telemetry service using the following URL
 
 ```shell
 ws(s)://host:port/api/ws/plugins/telemetry?token=$JWT_TOKEN
@@ -136,11 +136,11 @@ and receive
 
 where 
 
- - **cmdId** - unique command id (within corresponding websocket connection)
+ - **cmdId** - unique command id (within corresponding WebSocket connection)
  - **entityType** - unique entity type. Supported entity types are: TENANT, CUSTOMER, USER, DASHBOARD, ASSET, DEVICE, ALARM
  - **entityId** - unique entity identifier
- - **keys** - comma separated list of data keys
- - **timeWindow** - fetch interval for timeseries subscriptions, in milliseconds. Data will be fetch within following interval **[now()-timeWindow, now()]**
+ - **keys** - a comma-separated list of data keys
+ - **timeWindow** - fetch interval for time series subscriptions, in milliseconds. Data will be fetch within following interval **[now()-timeWindow, now()]**
  - **startTs** - start time of fetch interval for historical data query, in milliseconds.
  - **endTs** - end time of fetch interval for historical data query, in milliseconds.
  
@@ -175,9 +175,10 @@ This topic is covered in a separate guide.
 ThingsBoard provides the ability to configure data processing rules.
 Each rule consists of
 
- - filters - to filter incoming data feed, 
- - processor - to generate alarms or enrich incoming data with some server-side values
- - action - to apply a certain logic to filtered data.
-You can find more details in a separate guide.    
+ - **filters** to filter incoming data feed; 
+ - **processor** to generate alarms or enrich incoming data with some server-side values;
+ - **action** to apply a certain logic to filtered data.
+
+You can find more details in a separate guide:    
 <p><a href="/docs/user-guide/rule-engine" class="button">Rule Engine guide</a></p>
     
