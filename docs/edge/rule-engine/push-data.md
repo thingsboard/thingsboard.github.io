@@ -4,7 +4,7 @@ title: Push data from edge to cloud and vise versa
 description: Push data from edge to cloud and vise versa
 ---
 
-TODO
+Coming soon…
 
 #### Next Steps
 

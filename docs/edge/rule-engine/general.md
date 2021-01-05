@@ -5,6 +5,12 @@ description: ThingsBoard Edge Rule Engine
 
 ---
 
+### Prerequisites
+
+Please get familiar with ThingsBoard [Rule Engine Overview](/docs/user-guide/rule-engine-2-0/overview/) before continue.
+
+Edge Rule Engine uses the same architecture as ThingsBoard [Rule Engine Architecture](/docs/user-guide/rule-engine-2-0/architecture/).
+
 ### Edge Rule Engine
 
 ThingsBoard Edge uses the same [ThingsBoard Rule Engine framework](/docs/user-guide/rule-engine-2-0/re-getting-started/) for building event-based workflows on the edge side and communicating with cloud.
