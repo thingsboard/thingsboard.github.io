@@ -368,15 +368,15 @@ toc:
             path: /docs/edge/config/ce/management/
           - title: Create Device on edge and provision to cloud
             path: /docs/edge/config/ce/create-device/
-          - title: Provision Device(s) from cloud to edge
+          - title: Provision Device from cloud to edge
             path: /docs/edge/config/ce/provision-device/
-          - title: Provision Asset(s) from cloud to edge
+          - title: Provision Asset from cloud to edge
             path: /docs/edge/config/ce/provision-asset/
-          - title: Provision Entity View(s) from cloud to edge
+          - title: Provision Entity View from cloud to edge
             path: /docs/edge/config/ce/provision-entity-view/
-          - title: Provision Dashboard(s) from cloud to edge
+          - title: Provision Dashboard from cloud to edge
             path: /docs/edge/config/ce/provision-dashboard/
-          - title: Provision User(s) from cloud to edge
+          - title: Provision User from cloud to edge
             path: /docs/edge/config/ce/provision-user/
           - title: Provision Customer from cloud to edge
             path: /docs/edge/config/ce/provision-customer/
@@ -409,7 +409,6 @@ toc:
         -  title: Manage alarms and RPC requests on edge devices
            path: /docs/edge/use-cases/manage-alarms-rpc-requests/
         -  title: Data filtering and traffic reduce
-           pe: true
            path: /docs/edge/use-cases/data-filtering-traffic-reduce/
     - title: ThingsBoard Edge Roadmap
       path: /docs/edge/roadmap/

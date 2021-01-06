@@ -3,76 +3,124 @@ layout: docwithnav
 title: Manage alarms and RPC requests on edge devices
 description: ThingsBoard Edge use case #1
 
+configureAlarmRules:
+    0:
+        image: /images/edge/use-cases/manage-alarms-configure-rules-item-1.png
+        title: 'Login to your ThingsBoard <b>CE</b> instance and open Device profiles page.'
+    1:
+        image: /images/edge/use-cases/manage-alarms-configure-rules-item-2.png
+        title: 'Click default profile row. This will open device profile details.'
+    2:
+        image: /images/edge/use-cases/manage-alarms-configure-rules-item-3.png
+        title: 'Select "Alarm Rules" tab and toggle edit mode.'
+    3:
+        image: /images/edge/use-cases/manage-alarms-configure-rules-item-4.png
+        title: 'Click "Add alarm rule".'        
+    4:
+        image: /images/edge/use-cases/manage-alarms-configure-rules-item-5.png
+        title: 'Specify alarm type and click "+" icon to add alarm rule condition.'
+    5:
+        image: /images/edge/use-cases/manage-alarms-configure-rules-item-6.png
+        title: 'Click "Add key filter" button to specify condition.'
+    6:
+        image: /images/edge/use-cases/manage-alarms-configure-rules-item-7.png
+        title: 'Select key type, input key name, select value type and click "Add".'
+    7:
+        image: /images/edge/use-cases/manage-alarms-configure-rules-item-8.png
+        title: 'Select operation and input threshold value. Click "Add".'
+    8:
+        image: /images/edge/use-cases/manage-alarms-configure-rules-item-9.png
+        title: 'TODO'
+    9:
+        image: /images/edge/use-cases/manage-alarms-configure-rules-item-10.png
+        title: 'TODO'
+    10:
+        image: /images/edge/use-cases/manage-alarms-configure-rules-item-11.png
+        title: 'TODO'
+    11:
+        image: /images/edge/use-cases/manage-alarms-configure-rules-item-12.png
+        title: 'TODO'
+    12:
+        image: /images/edge/use-cases/manage-alarms-configure-rules-item-13.png
+        title: 'Login to your ThingsBoard <b>Edge</b> instance and open Device profiles page.'
+    13:
+        image: /images/edge/use-cases/manage-alarms-configure-rules-item-14.png
+        title: 'Verify that "edge thermostat" was provisioned to edge as well.'
+
+provisionDevices:
+    0:
+        image: /images/edge/getting-started-step-1-item-1.png
+        title: 'Login to your ThingsBoard <b>Edge</b> instance and open Device groups page.'
+    1:
+        image: /images/edge/getting-started-step-1-item-2.png  
+        title: 'Open "All" device group.'
+    2:
+        image: /images/edge/getting-started-step-1-item-3.png
+        title: 'Click on the "Add Device"("+") icon in the top right corner of the table.'
+    3:
+        image: /images/edge/getting-started-step-1-item-4.png
+        title: 'Input device name. For example, "My New Device". No other changes required at this time. Click "Add" to add the device.'
+    4:
+        image: /images/edge/getting-started-step-1-item-5.png
+        title: 'Now your device should be listed first, since table sort devices using created time by default. '
+
 ---
-
-{% assign feature = "Edge Groups" %}{% include templates/pe-feature-banner.md %}
-
 * TOC
 {:toc}
 
 ## Use case
-Let's assume you have a warehouse with two **edge computing devices** connected to ThingsBoard Edge: 
+Let's assume you have a warehouse with two devices connected to ThingsBoard **Edge**: 
 * DHT22 temperature sensor
 * Air Conditioner 
 
 ThingsBoard Edge has the following responsibilities:
  * **Collects temperature readings** from the DHT22 sensor
- * **Creates and updates alarms** if the temperature in the warehouse is higher than 50°C
- * In case if the temperature becomes critical, ThingsBoard Edge turns on the cooler system by **sending RPC call requests**
+ * **Creates and updates alarms** if the temperature in the warehouse is higher than 50 °C
+ * In case if the temperature becomes critical, ThingsBoard Edge turns on the cooler system by **sending RPC call requests** to Air Conditioner device
  * **Pushes telemetry to the cloud**
 
 Please note that this is just a simple theoretical use case to demonstrate the capabilities of the platform. 
 You can use this tutorial as a basis for much more complex scenarios.
 
 ## Prerequisites
-We assume you have completed the following guides and reviewed the articles listed below:
-  * [Getting Started](/docs/getting-started-guides/helloworld/) guide.
-  * [Rule Engine Overview](/docs/user-guide/rule-engine-2-0/overview/) article.
-  * [ThingsBoard Edge Getting Started](/docs/edge/getting-started/) article.
 
-Let's do the following actions on the cloud:
- * Create [edge entity](/docs/user-guide/ui/edges/#add-and-delete-edges) **Edge ThingsBoard** in group **All**.
- 
-![image](/images/edge/tutorial/alarm/add-edge.png) 
+{% include templates/edge/use-cases/ce-prerequisites.md %}
 
- * Assign Tenant Administrators [user group](/docs/user-guide/ui/edges/#assign-entities-to-edge) to newly created edge. Users from this group will be able to create devices on the edge.
+## Configure Alarm Rules
 
-![image](/images/edge/tutorial/alarm/assign-user.png) 
- 
- Now let's connect ThingsBoard Edge to cloud. Detailed step by step instructions on how to configure edge and cloud you can find in [installation guides](/docs/edge/install/installation-options/). Screen of successfully connected edge to cloud:
- 
-![image](/images/edge/tutorial/alarm/edge-status.png)
+We will use [alarm rules](/docs/user-guide/device-profiles/#alarm-rules) feature to raise alarm when temperature reading is greater than 50 degrees.
+For this purpose, we should create new device profile and add new alarm rule. We recommend creating dedicated [device profiles](/docs/user-guide/device-profiles/) for each corresponding device type. Let's create new device profile "edge thermostat".
 
-## Model definition
-Open ThingsBoard Edge UI (default UI port is 8080) and login as tenant administrator.
+{% include images-gallery.html imageCollection="configureAlarmRules" showListImageTitles="true" %}
 
-{% capture local-deployment %}
-If you have changed **HTTP_BIND_PORT** during installation process please use that instead of 8080 port
-```bash
-http://localhost:HTTP_BIND_PORT
-``` 
-{% endcapture %}
-{% include templates/info-banner.md content=local-deployment %}
+## Provision devices
+
+TODO
+
+For simplicity, we will provision device manually using the UI.
+
+Let's first create **DHT22 temperature sensor** and **Air Conditioner** devices on the edge and add relation between these devices. This relation will be used to find related **Air Conditioner** device once **DHT22 temperature sensor** will send critical temperature value.
+
+We are going to provision device on the Edge. Please open ThingsBoard **Edge** UI using the URL: [http://localhost:18080](http://localhost:18080).
+
+{% include templates/edge/bind-port-changed-banner.md %}
+
+{% include images-gallery.html imageCollection="provisionDevices" showListImageTitles="true" %}
+
  
 [Add two devices](/docs/user-guide/ui/devices/#add-and-delete-devices) in the group "All" (**Device Groups -> All -> Add device**):
 * Thermometer's name is **DHT22** and its type is **temperature sensor**.
 * Cooler's name is **Air Conditioner** and its type is **cooler system**.
-
-![image](/images/edge/tutorial/alarm/add-device-thermometer.png) 
 
 <br/>
 
 [Create relation](/docs/user-guide/entities-and-relations/) from DHT22 to Air Conditioner with:
  * direction - **From**
  * type - **Uses**
- 
-![image](/images/edge/tutorial/alarm/add-relation-2.png)
 
-![image](/images/edge/tutorial/alarm/add-relation.png)
 
 **Note** that devices created on ThingsBoard Edge automatically appears in the cloud device group. Such group has a special pattern name **[Edge] *${edge name}* All** - a associated with particular edge.
 
-![image](/images/edge/tutorial/alarm/device-group.png)
 
 ## Message flow
 In this section we explain the purpose of each node in this tutorial:

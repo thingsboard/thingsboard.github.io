@@ -35,15 +35,15 @@ toc:
         path: /docs/edge/config/ce/management/
       - title: Create Device on edge and provision to cloud
         path: /docs/edge/config/ce/create-device/
-      - title: Provision Device(s) from cloud to edge
+      - title: Provision Device from cloud to edge
         path: /docs/edge/config/ce/provision-device/
-      - title: Provision Asset(s) from cloud to edge
+      - title: Provision Asset from cloud to edge
         path: /docs/edge/config/ce/provision-asset/
-      - title: Provision Entity View(s) from cloud to edge
+      - title: Provision Entity View from cloud to edge
         path: /docs/edge/config/ce/provision-entity-view/
-      - title: Provision Dashboard(s) from cloud to edge
+      - title: Provision Dashboard from cloud to edge
         path: /docs/edge/config/ce/provision-dashboard/
-      - title: Provision User(s) from cloud to edge
+      - title: Provision User from cloud to edge
         path: /docs/edge/config/ce/provision-user/
       - title: Provision Customer from cloud to edge
         path: /docs/edge/config/ce/provision-customer/

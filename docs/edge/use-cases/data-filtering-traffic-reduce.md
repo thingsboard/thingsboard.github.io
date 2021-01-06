@@ -5,8 +5,6 @@ description: ThingsBoard Edge use case #2
 
 ---
 
-{% assign feature = "Analytics Rule Nodes" %}{% include templates/pe-feature-banner.md %}
-
 You can have thousands of edge devices with sensors that constantly report data in realtime. It might be expensive enough to forward and process all messages to the cloud.
 Probably much more efficient would be to **filter and process it on the edge** and send to the cloud only refined business-relevant data.
 
@@ -23,24 +21,8 @@ Vehicle sensors gather data in realtime and transmit it to the edge computing se
 Please note that this is just a simple theoretical use case to demonstrate the capabilities of the platform. You can use this tutorial as a basis for much more complex scenarios.
 
 ## Prerequisites
-We assume you have completed the following guides and reviewed the articles listed below:
-  * [Getting Started](/docs/getting-started-guides/helloworld/) guide.
-  * [Dashboard development](/docs/iot-video-tutorials/#dashboard-development-guide-part-1-of-3-visualizing-assets-data-using-maps-and-tables) guide.
-  * [Rule Engine Overview](/docs/user-guide/rule-engine-2-0/overview/) article.
-  * [ThingsBoard Edge Getting Started](/docs/edge/getting-started/) article.
 
-Let's do the following actions on the cloud:
- * Create [edge entity](/docs/user-guide/ui/edges/#add-and-delete-edges) **Edge ThingsBoard** in group **All**.
- 
-![image](/images/edge/tutorial/alarm/add-edge.png) 
- 
- * Assign Tenant Administrators [user group](/docs/user-guide/ui/edges/#assign-entities-to-edge) to newly created edge. Users from this group will be able to create devices on the edge.
- 
-![image](/images/edge/tutorial/alarm/assign-user.png) 
- 
- Now let's connect ThingsBoard Edge to cloud. Detailed step by step instructions on how to configure edge and cloud you can find in [installation guides](/docs/edge/install/installation-options/). Screen of successfully connected edge to cloud:
- 
-![image](/images/edge/tutorial/alarm/edge-status.png) 
+{% include templates/edge/use-cases/ce-prerequisites.md %}
 
 ## Create device group
 Open ThingsBoard Edge UI (default UI port is 8080) and login as tenant administrator.

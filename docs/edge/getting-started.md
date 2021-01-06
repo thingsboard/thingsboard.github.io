@@ -22,7 +22,7 @@ step1:
 step2:
     0:
         image: /images/edge/getting-started-step-2-item-1.png
-        title: 'Login to your ThingsBoard <b>CE</b> UI instance and open Devices page.'
+        title: 'Login to your ThingsBoard <b>CE</b> instance and open Devices page.'
     1:
         image: /images/edge/getting-started-step-2-item-2.png  
         title: 'Verify that "My New Device" device was created on the ThingsBoard CE cloud.'
