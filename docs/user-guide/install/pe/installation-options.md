@@ -55,7 +55,7 @@ notitle: "true"
                             <div class="deployment-cards">
                                 <div class="deployment-cards-container">
                                     <div class="deployment-card-block">
-                                        <a href="https://cloud.thingsboard.io/signup">
+                                        <a href="https://thingsboard.cloud/signup">
                                             <span>
                                                 <div class="deployment-logo" style="height:134px">
                                                     <img width="" src="/images/install/live-demo/signup-pe.png" title="Live Demo" alt="Live Demo">

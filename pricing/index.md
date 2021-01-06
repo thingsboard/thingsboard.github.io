@@ -2,32 +2,157 @@
 layout: pricing
 title: Pricing
 description: ThingsBoard Products Pricing
+defaultActivePricingSection: thingsboard-pe-options
+defaultActivateSelectProduct: true
 
 ---
 
-<div class="pricing-header">
-   <div class="pricing-hero">
-      <div class="container">
+<div class="container">
+    <div class="pricing-header">
+       <div class="pricing-hero">
         <div class="pricing-hero-content">
-            <h1>Get your product  <span class="a-full-green">Deploy anywhere</span></h1>
+            <h1>ThingsBoard Pricing</h1>
         </div>
-      </div>
-   </div>
-   <nav id="inner-navigation" class="inner-navigation">
-     <ul id="menu-pricing-navigation-1" class="menu">
-        <li id="menu-item-thingsboard-ce" class="menu-item">
-            <a href="javascript:void(0);" onClick="activatePricingSection('thingsboard-ce')">Community Edition</a>
-        </li>
-        <li id="menu-item-thingsboard-pe" class="menu-item active">
-            <a href="javascript:void(0);" onClick="activatePricingSection('thingsboard-pe')">Professional Edition</a>
-        </li>
-        <li id="menu-item-trendz" class="menu-item">
-            <a href="javascript:void(0);" onClick="activatePricingSection('trendz')">Trendz Analytics</a>
-        </li>
-     </ul>
-   </nav> 
+       </div>
+       <nav id="inner-navigation" class="inner-navigation">
+         <ul id="menu-pricing-navigation-1" class="menu">
+            <li id="menu-item-thingsboard-ce" class="menu-item tb-logo">
+                <a href="javascript:void(0);" onClick="activatePricingSection('thingsboard-ce')">Community Edition</a>
+            </li>
+            <li id="menu-item-thingsboard-pe-options" class="menu-item tb-logo">
+                <a href="javascript:void(0);" onClick="activatePricingSection('thingsboard-pe-options', true)">Professional Edition</a>
+            </li>
+            <li id="menu-item-trendz" class="menu-item trendz-logo">
+                <a href="javascript:void(0);" onClick="activatePricingSection('trendz')">Trendz Analytics</a>
+            </li>
+         </ul>
+       </nav> 
+    </div>
+    <div id="thingsboard-pe-options" class="select-product-content justify-content-center align-items-center" style="display: none;">
+        <div class="product-selector">
+            <div class="solution thingsboard-cloud active defaultselection" onClick="activateProductSection('thingsboard-cloud')">
+                <h3>Cloud</h3>
+            </div>
+            <div class="solution thingsboard-pe" onClick="activateProductSection('thingsboard-pe')">
+                <h3>Self-managed</h3>
+            </div>
+        </div>
+    </div>
+    <div class="pricing-header-divider">
+    </div>
 </div>
-<section id="thingsboard-ce" class="pricing-content" style="display: none;">
+
+<div id="thingsboard-cloud" class="pricing-content" style="display: none;">
+    <div class="container">
+        <div class="pricing-content-header row">
+            <div class="pricing-content-description pricing-cloud active col-lg-6">
+                <h2>Subscription plans</h2>
+            </div>
+        </div>
+        <div class="pricing-div">
+            <div class="pricing-section pricing-cloud active">
+               <div class="row justify-content-center">
+                    <div class="col-md-6 col-lg-6 col-xl-4 col-gt-xl mb-4">
+                        <div class="pricing-square">
+                            <h2>Maker</h2>
+                            <div class="pricing-square-description">
+                                <p>Become familiar with ThingsBoard features</p>
+                            </div>
+                            <h4 class="pricing-square-price mb-0">
+                                $29
+                                <span>/&nbsp;month</span>
+                            </h4>
+                            <div class="row justify-content-center">
+                                <a class="btn-blue btn-pricing" href="https://thingsboard.cloud/signup">
+                                    Start Free
+                                </a>
+                            </div>
+                            <div class="pricing-square-item">Up to 10 Devices</div>
+                            <div class="pricing-square-item">Up to 10 Assets</div>
+                            <div class="pricing-square-item">10 million <span data-faq-id="data-points">data points</span><br/> per month</div> 
+                            <div class="pricing-square-item" data-faq-id="community-support">
+                                Community support
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-4 col-gt-xl mb-4">
+                        <div class="pricing-square">
+                            <h2>Prototype</h2>
+                            <div class="pricing-square-description">
+                                <p>For PoCs and MVPs</p>
+                            </div>
+                            <h4 class="pricing-square-price mb-0">
+                                $149
+                                <span>/&nbsp;month</span>
+                            </h4>
+                            <div class="row justify-content-center">
+                                <a class="btn-blue btn-pricing" href="https://thingsboard.cloud/signup">
+                                    Get Started
+                                </a>
+                            </div>
+                            <div class="pricing-square-item">Up to 100 Devices</div>
+                            <div class="pricing-square-item">Up to 100 Assets</div>
+                            <div class="pricing-square-item">100 million <span data-faq-id="data-points">data points</span><br/> per month</div> 
+                            <div class="pricing-square-item" data-faq-id="community-support">
+                                Community support
+                            </div>
+                            <div class="pricing-square-item" data-faq-id="white-labeling"><b>White-labeling</b></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-4 col-gt-xl mb-4">
+                        <div class="pricing-square">
+                            <h2>Startup</h2>
+                            <div class="pricing-square-description">
+                                <p>For upcoming IoT Unicorns</p>
+                            </div>
+                            <h4 class="pricing-square-price mb-0">
+                                $399
+                                <span>/&nbsp;month</span>
+                            </h4>
+                            <div class="row justify-content-center">
+                                <a class="btn-blue btn-pricing" href="https://thingsboard.cloud/signup">
+                                    Get Started
+                                </a>
+                            </div>
+                            <div class="pricing-square-item">Up to 500 Devices</div>
+                            <div class="pricing-square-item">Up to 500 Assets</div>
+                            <div class="pricing-square-item">500 million <span data-faq-id="data-points">data points</span><br/> per month</div>
+                            <div class="pricing-square-item" data-faq-id="subscription-support">
+                                Email support
+                            </div>
+                            <div class="pricing-square-item" data-faq-id="white-labeling"><b>White-labeling</b></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-4 col-gt-xl mb-4">
+                        <div class="pricing-square">
+                            <h2>Enterprise</h2>
+                            <div class="pricing-square-description">
+                                <p>Consider yourself a Fortune 500 company in the field?</p>
+                            </div>
+                            <h4 class="pricing-square-price mb-0">
+                                Custom
+                            </h4>
+                            <div class="row justify-content-center">
+                                <a class="btn-blue btn-pricing" href="/docs/contact-us/">
+                                    Contact Us
+                                </a>
+                            </div>
+                            <div class="pricing-square-item">Unlimited number of Devices</div> 
+                            <div class="pricing-square-item">Unlimited number of Assets</div>
+                            <div class="pricing-square-item">Unlimited <span data-faq-id="data-points">data points</span><br/> per month</div>
+                            <div class="pricing-square-item" data-faq-id="subscription-support">
+                                Custom <b>SLA</b>
+                            </div>
+                            <div class="pricing-square-item" data-faq-id="white-labeling"><b>White-labeling</b></div>
+                        </div>
+                    </div>
+               </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="thingsboard-ce" class="pricing-content" style="display: none;">
     <div class="pricing-div">
         <div class="container">
             <div class="pricing-section pricing-community active" id="community">
@@ -41,17 +166,16 @@ description: ThingsBoard Products Pricing
                             <h4 class="pricing-square-price no-sign mb-0">
                                 YES, IT'S FREE
                             </h4>
-                            <a class="btn btn-full-green btn-pricing" href="/docs/user-guide/install/installation-options/">
-                                Install
-                            </a>
+                            <div class="row justify-content-center">
+                                <a class="btn-blue btn-pricing" href="/docs/user-guide/install/installation-options/">
+                                    Install
+                                </a>
+                            </div>
+                            <div class="pricing-square-item">Unlimited Devices and Assets</div>
+                            <div class="pricing-square-item">Unlimited software updates</div>
+                            <div class="pricing-square-item">Ability to contribute</div>
                             <div class="pricing-square-item" data-faq-id="community-support">
                                 Community support
-                            </div><br>
-                            <div class="pricing-square-item">Unlimited Devices and Assets</div><br>
-                            <div class="pricing-square-item">Unlimited software updates</div><br>
-                            <div class="pricing-square-item">Ability to contribute</div>
-                            <div class="pricing-square-item">
-                                <p>&nbsp;</p>
                             </div>
                         </div>
                     </div>
@@ -59,381 +183,311 @@ description: ThingsBoard Products Pricing
             </div>
         </div>
     </div>     
-</section>
+</div>
 
-<section id="thingsboard-pe" class="pricing-content">
- <div class="text-center pt-4 pb-4">
-    <a class="btn btn-full-green btn-pricing" href="/docs/contact-us/?subject=Partnership">Become a partner</a> 
- </div> 
- <div class="col-lg-12">
-    <div class="solution-selector">
-        <div class="solution active defaultselection" data-toggle="#payAsYouGo">
-            <input type="radio" class="magic-radio" name="pricing-radio-selector" id="PricingPayAsYouGo" value="Pricing Pay As You Go Details" checked>
-            <label for="PricingPayAsYouGo">
-                <div class="solution-icon-div d-inline-block">
-                    <img src="/images/pricing/pay-as-you-go.png" alt="pay as you go icon" class="pay-as-you-go-icon d-inline">
-                </div>
-                <h2 class="d-none d-md-inline-block" data-faq-id="what-is-pay-as-you-go" data-faq-link-size="50%">Pay-as-you-go</h2>
-            </label>
+<div id="thingsboard-pe" class="pricing-content">
+ <div class="container">
+    <div class="pricing-content-header row">
+        <div id="payAsYouGoHeader" class="pricing-content-description col-lg-6">
+            <h2>Subscription plans</h2>
+            <div class="pricing-content-details">
+                All subscription plans include <b>unlimited</b> customers, dashboards, integrations, api calls, data points & messages
+            </div>
         </div>
-        <div class="solution" data-toggle="#perpetual">
-            <input type="radio" class="magic-radio" name="pricing-radio-selector" id="PricingPerpetual" value="Pricing Perpetual Details">
-            <label for="PricingPerpetual">
-                <div class="solution-icon-div d-inline-block">
-                    <img src="/images/pricing/perpetual.png" alt="perpetual icon" class="perpetual-icon d-inline">
+        <div id="perpetualHeader" class="pricing-content-description col-lg-6">
+            <h2>License packages</h2>
+        </div>
+        <div class="col d-flex justify-content-end">
+            <div class="solution-selector">
+                <div class="solution pay-as-you-go active defaultselection" data-toggle="#payAsYouGo" data-description-toggle="#payAsYouGoHeader">
+                    <h3 data-faq-id="what-is-pay-as-you-go" data-faq-link-size="70%">Pay-as-you-go</h3>
                 </div>
-                <h2 class="d-none d-md-inline-block" data-faq-id="what-is-perpetual" data-faq-link-size="50%">Perpetual</h2>
-            </label>
+                <div class="solution perpetual" data-toggle="#perpetual" data-description-toggle="#perpetualHeader">
+                    <h3 data-faq-id="what-is-perpetual" data-faq-link-size="70%">Perpetual</h3>
+                </div>
+            </div>
         </div>
     </div>
     <div class="pricing-div">
-        <div class="container">
-            <div class="pricing-section pricing-pay-as-you-go active" id="payAsYouGo">
-               <div class="row d-none d-lg-flex mb-4">
-                   <div class="col-lg-12">
-                        <div class="indicator gray-bg text-white text-center pt-2 pb-2">
-                            SUBSCRIPTION PLANS
+        <div class="pricing-section pricing-pay-as-you-go active" id="payAsYouGo">
+           <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-6 col-xl-4 col-gt-xl mb-4">
+                    <div class="pricing-square">
+                        <h2>Maker</h2>
+                        <div class="pricing-square-description">
+                            <p>To become familiar with ThingsBoard PE features</p>
                         </div>
-                   </div> 
-                   <div class="col-lg-12">
-                   <p>&nbsp;</p>
-                        <div class="pricing-square-item text-center">
-                            All subscription plans include <span class="a-full-green">unlimited</span> customers, dashboards, integrations, api calls, datapoints & messages  
-                        </div>
-                   </div>                    
-               </div>
-               <div class="row d-none d-lg-flex mb-4"></div>
-               <div class="row justify-content-center">
-                    <div class="col-md-4 col-lg-4 col-xl mb-4">
-                        <div class="pricing-square">
-                            <h2>Maker</h2>
-                            <div class="pricing-square-description">
-                                <p>To become familiar with ThingsBoard PE features</p>
-                            </div>
-                            <h4 class="pricing-square-price mb-0">
-                                10
-                                <span>USD&nbsp;/&nbsp;Month</span>
-                            </h4>
-                            <div class="pricing-square-item">Up to 10 Devices</div>
-                            <div class="pricing-square-item">and 10 Assets</div> 
-                            <a class="btn btn-full-green btn-pricing" href="javascript:void(0);" 
+                        <h4 class="pricing-square-price mb-0">
+                            $10
+                            <span>/&nbsp;month</span>
+                        </h4>
+                        <div class="row justify-content-center">
+                            <button class="btn-blue btn-pricing" 
                                 onClick="getLicense(event,
                                 false,
                                 '20be6f50-a18e-11e9-8e16-03828ff5271c',
                                 '7ef31a80-a18e-11e9-8e16-03828ff5271c',
                                 'Maker', null, false)">
                                 Get your license
-                            </a>
-                            <div class="pricing-square-item" data-faq-id="community-support">
-                                Community support
-                            </div><br>
-                            <div class="pricing-square-item">—</div><br>
-                            <div class="pricing-square-item">
-                                <p>&nbsp;</p>
-                            </div>
+                            </button>
+                        </div>
+                        <div class="pricing-square-item">Up to 10 Devices</div>
+                        <div class="pricing-square-item">Up to 10 Assets</div> 
+                        <div class="pricing-square-item" data-faq-id="community-support">
+                            Community support
                         </div>
                     </div>
-                    <div class="col-md-4 col-lg-4 col-xl mb-4">
-                        <div class="pricing-square">
-                            <h2>Prototype</h2>
-                            <div class="pricing-square-description">
-                                <p>The subscription is designed for PoCs and prototyping</p>
-                            </div>
-                            <h4 class="pricing-square-price mb-0">
-                                99
-                                <span>USD&nbsp;/&nbsp;Month</span>
-                            </h4>
-                            <div class="pricing-square-item">Up to 100 Devices</div>
-                            <div class="pricing-square-item"> and 100 Assets</div>
-                            <a class="btn btn-full-green btn-pricing" href="javascript:void(0);" 
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-4 col-gt-xl mb-4">
+                    <div class="pricing-square">
+                        <h2>Prototype</h2>
+                        <div class="pricing-square-description">
+                            <p>The subscription is designed for PoCs and prototyping</p>
+                        </div>
+                        <h4 class="pricing-square-price mb-0">
+                            $99
+                            <span>/&nbsp;month</span>
+                        </h4>
+                        <div class="row justify-content-center">
+                            <button class="btn-blue btn-pricing" 
                                 onClick="getLicense(event,
                                 false,
                                 '20be6f50-a18e-11e9-8e16-03828ff5271c',
                                 '0e236dc0-a196-11e9-8e16-03828ff5271c',
                                 'Prototype', null, false)">
                                 Get your license
-                            </a>
-                            <div class="pricing-square-item" data-faq-id="community-support">
-                                Community support
-                            </div><br>
-                            <div class="pricing-square-item"><span class="a-full-green">White-labeling</span></div><br>
-                            <div class="pricing-square-item">
-                                <p>&nbsp;</p>
-                            </div>
+                            </button>
                         </div>
+                        <div class="pricing-square-item">Up to 100 Devices</div>
+                        <div class="pricing-square-item">Up to 100 Assets</div>
+                        <div class="pricing-square-item" data-faq-id="community-support">
+                            Community support
+                        </div>
+                        <div class="pricing-square-item"><b>White-labeling</b></div>
                     </div>
-                    <div class="col-md-4 col-lg-4 col-xl mb-4">
-                        <div class="pricing-square">
-                            <h2>Startup</h2>
-                            <div class="pricing-square-description">
-                                <p>For upcoming IoT Unicorns</p>
-                            </div>
-                            <h4 class="pricing-square-price mb-0">
-                                199
-                                <span>USD&nbsp;/&nbsp;Month</span>
-                            </h4>
-                            <div class="pricing-square-item">Up to 500 Devices</div>
-                            <div class="pricing-square-item"> and 500 Assets</div>
-                            <a class="btn btn-full-green btn-pricing" href="javascript:void(0);" 
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-4 col-gt-xl mb-4">
+                    <div class="pricing-square">
+                        <h2>Startup</h2>
+                        <div class="pricing-square-description">
+                            <p>For upcoming IoT Unicorns</p>
+                        </div>
+                        <h4 class="pricing-square-price mb-0">
+                            $199
+                            <span>/&nbsp;month</span>
+                        </h4>
+                        <div class="row justify-content-center">
+                            <button class="btn-blue btn-pricing" 
                                 onClick="getLicense(event,
                                 false,
                                 '20be6f50-a18e-11e9-8e16-03828ff5271c',
                                 '8ac6d190-a197-11e9-8e16-03828ff5271c',
                                 'Startup', null, false)">
                                 Get your license
-                            </a>
-                            <div class="pricing-square-item" data-faq-id="subscription-support">
-                                Email support within 36 hours
-                            </div><br>
-                            <div class="pricing-square-item"><span class="a-full-green">White-labeling</span></div><br>
-                            <div class="pricing-square-item">
-                                <p>&nbsp;</p>
-                            </div>
+                            </button>
                         </div>
-                    </div>
-                    <div class="col-md-4 col-lg-4 col-xl mb-4">
-                        <div class="pricing-square">
-                            <h2>Business</h2>
-                            <div class="pricing-square-description">
-                                <p>For established mid-level market players with mature IoT approach</p>
-                            </div>
-                            <h4 class="pricing-square-price mb-0">
-                                299
-                                <span>USD&nbsp;/&nbsp;Month</span>
-                            </h4>
-                            <div class="pricing-square-item">Up to 1000 Devices</div>
-                            <div class="pricing-square-item"> and 1000 Assets</div>
-                            <a class="btn btn-full-green btn-pricing" href="javascript:void(0);" 
-                                onClick="getLicense(event,
-                                false,
-                                '20be6f50-a18e-11e9-8e16-03828ff5271c',
-                                'd82185c0-a197-11e9-8e16-03828ff5271c',
-                                'Business', null, false)">
-                                Get your license
-                            </a>
-                            <div class="pricing-square-item" data-faq-id="subscription-support">
-                                Email support within 24 hours
-                            </div><br>
-                            <div class="pricing-square-item"><span class="a-full-green">White-labeling</span></div><br>
-                            <div class="pricing-square-item">
-                                <p>&nbsp;</p>
-                            </div>
+                        <div class="pricing-square-item">Up to 500 Devices</div>
+                        <div class="pricing-square-item">Up to 500 Assets</div>
+                        <div class="pricing-square-item" data-faq-id="subscription-support">
+                            Email support within <b>36 hours</b>
                         </div>
+                        <div class="pricing-square-item"><b>White-labeling</b></div>
                     </div>
-                    <div class="col-md-4 col-lg-4 col-xl flex-xl-grow-0 mb-4">
-                        <div class="pricing-square">
-                            <h2>Enterprise</h2>
-                            <div class="pricing-square-description">
-                                <p>Consider youself a Fortune 500 company in the field? Subscribe this plan</p>
-                            </div>
-                            <h4 class="pricing-square-price mb-0">
-                                500
-                                <span>USD&nbsp;/&nbsp;Month</span>
-                            </h4>
-                            <div class="pricing-square-item">Unlimited number</div> 
-                            <div class="pricing-square-item"> of Devices and Assets</div>
-                            <a class="btn btn-full-green btn-pricing" href="javascript:void(0);" 
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-4 col-gt-xl mb-4">
+                    <div class="pricing-square">
+                        <h2>Enterprise</h2>
+                        <div class="pricing-square-description">
+                            <p>Consider yourself a Fortune 500 company in the field? Subscribe this plan</p>
+                        </div>
+                        <h4 class="pricing-square-price mb-0">
+                            $500
+                            <span>/&nbsp;month</span>
+                        </h4>
+                        <div class="row justify-content-center">
+                            <button class="btn-blue btn-pricing" 
                                 onClick="getLicense(event,
                                 false,
                                 '20be6f50-a18e-11e9-8e16-03828ff5271c',
                                 '34530df0-a198-11e9-8e16-03828ff5271c',
                                 'Enterprise', null, false)">
                                 Get your license
-                            </a>
-                            <div class="pricing-square-item" data-faq-id="subscription-support">
-                                Email support within 12 hours
-                            </div><br>
-                            <div class="pricing-square-item"> <span class="a-full-green">White-labeling</span></div><br>
-                            <div class="pricing-square-item">
-                                <p>&nbsp;</p>
-                            </div>
+                            </button>
                         </div>
+                        <div class="pricing-square-item">Unlimited number of Devices</div> 
+                        <div class="pricing-square-item">Unlimited number of Assets</div>
+                        <div class="pricing-square-item" data-faq-id="subscription-support">
+                            Email support within <b>12 hours</b>
+                        </div>
+                        <div class="pricing-square-item"><b>White-labeling</b></div>
                     </div>
-               </div>
-            </div>
-            <div class="pricing-section pricing-perpetual" id="perpetual">
-               <div class="row d-none d-lg-flex mb-4">
-                   <div class="col-lg-12">
-                        <div class="indicator gray-bg text-white text-center pt-2 pb-2">
-                            LICENSE PACKAGES
+                </div>
+           </div>
+        </div>
+        <div class="pricing-section pricing-perpetual" id="perpetual">
+           <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-6 col-xl-4 mb-4">
+                    <div class="pricing-square">
+                        <h2>Perpetual Fallback License</h2>
+                        <div class="pricing-square-description" style="min-height: 50px;">
+                            <p>Use your ThingsBoard instance forever</p>
                         </div>
-                   </div>                   
-               </div>
-               <div class="row justify-content-center">
-                    <div class="col-md-8 col-lg-6 col-xl-4 mb-4">
-                        <div class="pricing-square">
-                            <h2>Perpetual Fallback License</h2>
-                            <div class="pricing-square-description">
-                                <h3>Use your ThingsBoard instance forever</h3>
-                            </div>
-                            <h4 class="pricing-square-price mb-0">
-                                2999
-                                <span>USD</span>
-                            </h4>                  
-                            <a class="btn btn-full-green btn-pricing" href="javascript:void(0);" 
+                        <h4 class="pricing-square-price mb-0">
+                            $2999
+                        </h4>                  
+                        <div class="row justify-content-center">
+                            <button class="btn-blue btn-pricing" 
                                 onClick="getLicense(event,
                                 true,
                                 '90b6c9b0-a198-11e9-8e16-03828ff5271c',
                                 '4c711b60-a199-11e9-8e16-03828ff5271c',
                                 'Perpetual', null, false)">
                                 Get your license
-                            </a>
-                            <div class="pricing-square-item" data-faq-id="subscription-support">
-                                Email support within 24 hours
-                            </div><br>
-                            <div class="pricing-square-item">1 year of software updates</div><br>
-                            <div class="pricing-square-item">Unlimited Devices and Assets</div><br>
-                            <div class="pricing-square-item">White-labeling</div><br>
-                            <div class="pricing-square-item">Integrations feature</div><br>
-                            <div class="pricing-square-item">Unlimited datapoints</div>
-                            <div class="pricing-square-item">and messages</div><br>
-                            <div class="pricing-square-item">Unlimited API calls</div><br>
-                            <div class="pricing-square-item">
-                                <p>&nbsp;</p>
-                            </div>
+                            </button>
                         </div>
+                        <div class="pricing-square-item">1 year of software updates</div>
+                        <div class="pricing-square-item">Unlimited Devices and Assets</div>
+                        <div class="pricing-square-item">Integrations feature</div>
+                        <div class="pricing-square-item">Unlimited datapoints and messages</div>
+                        <div class="pricing-square-item">Unlimited API calls</div>
+                        <div class="pricing-square-item" data-faq-id="subscription-support">
+                            Email support within <b>24 hours</b>
+                        </div>
+                        <div class="pricing-square-item"><b>White-labeling</b></div>
                     </div>
-               </div>
-            </div>
+                </div>
+           </div>
         </div>
     </div>
  </div>  
-</section>
+</div>
 
-<section id="trendz" class="pricing-content">
-<div class="col-lg-12">
-    <br>
-    <div class="solution-selector">
-        <div class="solution defaultselection" data-toggle="#payAsYouGo">
-            <input type="radio" class="magic-radio" name="pricing-radio-selector" id="PricingPayAsYouGo" value="Pricing Pay As You Go Details">
-            <label for="PricingPayAsYouGo">
-                <div class="solution-icon-div d-inline-block">
-                    <img src="/images/pricing/pay-as-you-go.png" alt="pay as you go icon" class="pay-as-you-go-icon d-inline">
-                </div>
-                <h2 class="d-none d-md-inline-block" data-faq-id="what-is-pay-as-you-go" data-faq-link-size="50%">Pay-as-you-go</h2>
-            </label>
-        </div>
-        <div class="solution" data-toggle="#perpetual">
-            <input type="radio" class="magic-radio" name="pricing-radio-selector" id="PricingPerpetual" value="Pricing Perpetual Details">
-            <label for="PricingPerpetual">
-                <div class="solution-icon-div d-inline-block">
-                    <img src="/images/pricing/perpetual.png" alt="perpetual icon" class="perpetual-icon d-inline">
-                </div>
-                <h2 class="d-none d-md-inline-block" data-faq-id="what-is-perpetual" data-faq-link-size="50%">Perpetual</h2>
-            </label>
-        </div>
-    </div>
-    <div class="pricing-div">
-        <div class="container">
-            <div class="pricing-section pricing-pay-as-you-go active" id="payAsYouGo">
-                <div class="row d-none d-lg-flex mb-4">
-                    <div class="col-lg-12">
-                        <div class="indicator gray-bg text-white text-center pt-2 pb-2">
-                            TRENDZ SUBSCRIPTION PLANS
-                        </div>
+<div id="trendz" class="pricing-content">
+    <div class="container">
+        <div class="pricing-content-header row">
+            <div id="trendzPayAsYouGoHeader" class="pricing-content-description col-lg-6">
+                <h2>Subscription plans</h2>
+            </div>
+            <div id="trendzPerpetualHeader" class="pricing-content-description col-lg-6">
+                <h2>License packages</h2>
+            </div>
+            <div class="col d-flex justify-content-end">
+                <div class="solution-selector">
+                    <div class="solution pay-as-you-go active defaultselection" data-toggle="#trendzPayAsYouGo" data-description-toggle="#trendzPayAsYouGoHeader">
+                        <h3 data-faq-id="what-is-pay-as-you-go" data-faq-link-size="70%">Pay-as-you-go</h3>
+                    </div>
+                    <div class="solution perpetual" data-toggle="#trendzPerpetual" data-description-toggle="#trendzPerpetualHeader">
+                        <h3 data-faq-id="what-is-perpetual" data-faq-link-size="70%">Perpetual</h3>
                     </div>
                 </div>
-                <div class="row d-none d-lg-flex mb-4"></div>
+            </div>
+        </div>
+        <div class="pricing-div">
+            <div class="pricing-section pricing-pay-as-you-go active" id="trendzPayAsYouGo">
                 <div class="row justify-content-center">
-                    <div class="col-md-4 col-lg-4 col-xl mb-4">
+                    <div class="col-md-6 col-lg-4 col-xl mb-4">
                         <div class="pricing-square">
                             <h2>Prototype</h2>
-                            <h4 class="pricing-square-price mb-0">
-                                175
-                                <span>USD&nbsp;/&nbsp;Month</span>
-                            </h4>
-                            <div style="color: rgba(var(--sk_foreground_high,29,28,29),.5); font-size: 15px; font-weight: 400;">Up to 200 Devices and Assets</div>
-                            <div class="pricing-square-item" >
-                                <div style="margin: 5px">Calculated Fields</div>
-                                <div style="margin: 5px">Predictive Analytics</div>
-                                <div style="margin: 5px">Self-service Interface</div>
-                                <div style="margin: 5px">Advanced Visualizations</div>
+                            <div class="pricing-square-description" style="min-height: 50px;">
+                                <p>Up to 200 Devices and Assets</p>
                             </div>
-                            <a class="btn btn-full-green btn-pricing" href="javascript:void(0);"
-                               onClick="getLicense(event,
-                                false,
-                                '31307df0-11f6-11ea-951e-b77b877a367b',
-                                '2985f1a0-7afd-11ea-951e-b77b877a367b',
-                                'Trendz Analytics Prototype', 'KFYU8D47ZB', true)">
-                                try 30 days for free
-                            </a>
-                            <div>
-                                <a href="/products/trendz/"><span class="a-full-green">Learn More</span><br></a>
-                            </div>                            
+                            <h4 class="pricing-square-price mb-0">
+                                $175
+                                <span>/&nbsp;month</span>
+                            </h4>
+                            <div class="row justify-content-center">
+                                <button class="btn-blue btn-pricing" 
+                                   onClick="getLicense(event,
+                                    false,
+                                    '31307df0-11f6-11ea-951e-b77b877a367b',
+                                    '2985f1a0-7afd-11ea-951e-b77b877a367b',
+                                    'Trendz Analytics Prototype', 'KFYU8D47ZB', true)">
+                                    Try 30 days for free
+                                </button>
+                            </div>
+                            <div class="pricing-square-item">Calculated Fields</div>
+                            <div class="pricing-square-item">Predictive Analytics</div>
+                            <div class="pricing-square-item">Self-service Interface</div>
+                            <div class="pricing-square-item">Advanced Visualizations</div>
                             <div class="pricing-square-item" data-faq-id="community-support">
                                 Community support
-                            </div><br>
+                            </div>
+                            <br/>
+                            <div>
+                                <a href="/products/trendz/"><span class="a-full-green">Learn More</span></a>
+                            </div>                            
                         </div>
                     </div>
-                    <div class="col-md-4 col-lg-4 col-xl mb-4">
+                    <div class="col-md-6 col-lg-4 col-xl mb-4">
                         <div class="pricing-square">
                             <h2>Startup</h2>                            
-                            <h4 class="pricing-square-price mb-0">
-                                200
-                                <span>USD&nbsp;/&nbsp;Month</span>
-                            </h4>
-                            <div style="color: rgba(var(--sk_foreground_high,29,28,29),.5); font-size: 15px; font-weight: 400;">Up to 500 Devices and Assets</div>
-                            <div class="pricing-square-item" >
-                                <div style="margin: 5px">Calculated Fields</div>
-                                <div style="margin: 5px">Predictive Analytics</div>
-                                <div style="margin: 5px">Self-service Interface</div>
-                                <div style="margin: 5px">Advanced Visualizations</div>
+                            <div class="pricing-square-description" style="min-height: 50px;">
+                                <p>Up to 500 Devices and Assets</p>
                             </div>
-                            <a class="btn btn-full-green btn-pricing" href="javascript:void(0);"
-                               onClick="getLicense(event,
-                                false,
-                                '31307df0-11f6-11ea-951e-b77b877a367b',
-                                '018b7520-7afe-11ea-951e-b77b877a367b',
-                                'Trendz Analytics StartUp', 'KFYU8D47ZB', true)">
-                                try 30 days for free
-                            </a>
-                            <div>
-                                <a href="/products/trendz/"><span class="a-full-green">Learn More</span><br></a>
-                            </div>   
+                            <h4 class="pricing-square-price mb-0">
+                                $200
+                                <span>/&nbsp;month</span>
+                            </h4>
+                            <div class="row justify-content-center">
+                                <button class="btn-blue btn-pricing" 
+                                   onClick="getLicense(event,
+                                    false,
+                                    '31307df0-11f6-11ea-951e-b77b877a367b',
+                                    '018b7520-7afe-11ea-951e-b77b877a367b',
+                                    'Trendz Analytics StartUp', 'KFYU8D47ZB', true)">
+                                    Try 30 days for free
+                                </button>
+                            </div>
+                            <div class="pricing-square-item">Calculated Fields</div>
+                            <div class="pricing-square-item">Predictive Analytics</div>
+                            <div class="pricing-square-item">Self-service Interface</div>
+                            <div class="pricing-square-item">Advanced Visualizations</div>
                             <div class="pricing-square-item" data-faq-id="subscription-support">
-                                Email support within 36 hours
-                            </div><br>
+                                Email support within <b>36 hours</b>
+                            </div>
+                            <br>
+                            <div>
+                                <a href="/products/trendz/"><span class="a-full-green">Learn More</span></a>
+                            </div>   
                         </div>
                     </div>
-                    <div class="col-md-4 col-lg-4 col-xl mb-4">
+                    <div class="col-md-6 col-lg-4 col-xl mb-4">
                         <div class="pricing-square">
                             <h2>Business</h2>
-                            <h4 class="pricing-square-price mb-0">
-                                350
-                                <span>USD&nbsp;/&nbsp;Month</span>
-                            </h4>
-                            <div style="color: rgba(var(--sk_foreground_high,29,28,29),.5); font-size: 15px; font-weight: 400;">Up to 1000 Devices and Assets</div>
-                            <div class="pricing-square-item" >
-                                <div style="margin: 5px">Calculated Fields</div>
-                                <div style="margin: 5px">Predictive Analytics</div>
-                                <div style="margin: 5px">Self-service Interface</div>
-                                <div style="margin: 5px">Advanced Visualizations</div>
+                            <div class="pricing-square-description" style="min-height: 50px;">
+                                <p>Up to 1000 Devices and Assets</p>
                             </div>
-                            <a class="btn btn-full-green btn-pricing" href="javascript:void(0);"
-                               onClick="getLicense(event,
-                                false,
-                                '31307df0-11f6-11ea-951e-b77b877a367b',
-                                '6e3bb4f0-7afe-11ea-951e-b77b877a367b',
-                                'Trendz Analytics Business', 'KFYU8D47ZB', true)">
-                                try 30 days for free
-                            </a>
-                            <div>
-                                <a href="/products/trendz/"><span class="a-full-green">Learn More</span><br></a>
-                            </div>   
+                            <h4 class="pricing-square-price mb-0">
+                                $350
+                                <span>/&nbsp;month</span>
+                            </h4>
+                            <div class="row justify-content-center">
+                                <button class="btn-blue btn-pricing" 
+                                    onClick="getLicense(event,
+                                    false,
+                                    '31307df0-11f6-11ea-951e-b77b877a367b',
+                                    '6e3bb4f0-7afe-11ea-951e-b77b877a367b',
+                                    'Trendz Analytics Business', 'KFYU8D47ZB', true)">
+                                    Try 30 days for free
+                                </button>
+                            </div>
+                            <div class="pricing-square-item">Calculated Fields</div>
+                            <div class="pricing-square-item">Predictive Analytics</div>
+                            <div class="pricing-square-item">Self-service Interface</div>
+                            <div class="pricing-square-item">Advanced Visualizations</div>
                             <div class="pricing-square-item" data-faq-id="subscription-support">
-                                Email support within 24 hours
-                            </div><br>
+                                Email support within <b>24 hours</b>
+                            </div>
+                            <br/>
+                            <div>
+                                <a href="/products/trendz/"><span class="a-full-green">Learn More</span></a>
+                            </div>   
                         </div>
                     </div>                    
                 </div>
             </div>
-            <div class="pricing-section pricing-perpetual" id="perpetual">
-                <div class="row d-none d-lg-flex mb-4">
-                    <div class="col-lg-12">
-                        <div class="indicator gray-bg text-white text-center pt-2 pb-2">
-                            LICENSE PACKAGES
-                        </div>
-                    </div>
+            <div class="pricing-section pricing-perpetual" id="trendzPerpetual">
+                <div class="col-lg-8 offset-lg-2 mb-4">
                     <h4 class="text-center pt-2 pb-2" style="width: 100%">Trendz Analytics Perpetual Fallback License</h4>
                     <div style="display: flex;">
                         <div style="width: 50%; margin: 30px 10px 0;">
@@ -442,7 +496,7 @@ description: ThingsBoard Products Pricing
                                     insight from your data:</p>
                             </div>
                             <ul>
-                                <li class="pricing-square-item">One-click integration with ThingsBaord</li>
+                                <li class="pricing-square-item">One-click integration with ThingsBoard</li>
                                 <li class="pricing-square-item">Self-service analytics</li>
                                 <li class="pricing-square-item">Data clear and filtering</li>
                                 <li class="pricing-square-item">Advanced visualizations</li>
@@ -462,13 +516,11 @@ description: ThingsBoard Products Pricing
         </div>
     </div>
 </div>
-</section>
 
 
 <div class="container faq-content">
     <h2 id="faq" class="text-center">Frequently asked questions</h2>
-        <br>
-<div class="pi-accordion">
+    <div class="pi-accordion">
         <h3 id="licensing">Licensing</h3>    
         <div class="item" data-tag="h4" data-item-id="what-is-pay-as-you-go" data-title="What is &quot;Pay-as-you-go&quot; license?">
             <div class="container">
@@ -528,7 +580,7 @@ description: ThingsBoard Products Pricing
         <div class="item" data-tag="h4" data-item-id="trial-enable" data-title="How can I enable free trial?">
             <div class="container">
                 <p>
-                    Customer may still use <a href="https://cloud.thingsboard.io" target="blank">ThingsBoard Professional Edition Live Demo</a> for that. 
+                    Customer may still use <a href="https://thingsboard.cloud" target="blank">ThingsBoard Professional Edition Live Demo</a> for that. 
                     30 days of seamless experience and the newest features, except white-labeling, from the latest source code! 
                     Note: Live Demo is a shared environment with hardware and software limitations. 
                     It is introduced to host multiple trial tenants on the same server instance(s).
@@ -564,6 +616,32 @@ description: ThingsBoard Products Pricing
                 </p>    
             </div>    
         </div>
+        <h3 id="section3">ThingsBoard Cloud</h3>
+        <div class="item" data-tag="h4" data-item-id="api-limits" data-title="Is there any API Limits?">
+            <div class="container">
+                <p>
+                Yes, ThingsBoard Cloud subscriptions have Entity, API and Rate limits. See subscription <a href="/products/paas/subscription/" target="blank">documentation</a> for more details.
+                </p>  
+            </div>    
+        </div>
+        <div class="item" data-tag="h4" data-item-id="data-points" data-title="What is a data point?">
+            <div class="container">
+                <p>
+                Data point is a key-value pair that your device telemetry messages contain. For example, the message <i>{"temperature":42, "humidity": 60}</i> contains two data points.  
+                Each ThingsBoard Cloud subscription plan has a maximum number of data points that can be sent from all your devices per month. 
+                There are other <a href="/products/paas/subscription/" target ="blank">important parameters</a> of the subscription.
+                </p>  
+            </div>    
+        </div>
+        <div class="item" data-tag="h4" data-item-id="white-labeling" data-title="What is a white-labeling?">
+            <div class="container">
+                <p>
+               ThingsBoard web interface allows you to configure your company or product logo and color scheme in 2 minutes with zero coding efforts and no service restart required. 
+               See feature <a href="/docs/user-guide/white-labeling/" target ="blank">documentation</a> for more details. ThingsBoard Cloud extends white-labeling feature with ability to configure own domain name easily. 
+               See <a href="/products/paas/domains/" target ="blank">managing domain</a> for more details.
+                </p>  
+            </div>    
+        </div>                   
         <h3 id="section3">Support</h3>
         <div class="item" data-tag="h4" data-item-id="community-support" data-title="What does community support mean?">
             <div class="container">
@@ -587,7 +665,7 @@ description: ThingsBoard Products Pricing
         <div class="item" data-tag="h4" data-item-id="subscription-support" data-title="What issues included in email support?">
             <div class="container">
                 <p>
-                For StartUp, Business and Enterprise licensees as well as Perpetual licensees we provide email response on any issue within certain amount of time, if separate support agreement is not signed. Solution time depends on issue severity and may require a meeting with out team member
+                For StartUp, Business and Enterprise licensees as well as Perpetual licensees we provide email response on any issue within certain amount of time, if separate support agreement is not signed. Solution time depends on issue severity and may require a meeting with out team member.
                 </p>    
             </div>    
         </div>

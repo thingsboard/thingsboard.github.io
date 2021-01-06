@@ -11,7 +11,10 @@ description: ThingsBoard IoT Platform sample for Raspberry Pi Grove Base Hat con
 
 ## Introduction 
 
-ThingsBoard Community Edition is an open-source server-side platform that allows you to monitor and control IoT devices. It is free for both personal and commercial usage and you can deploy it anywhere. If you are not familiar with the platform yet, we recommend to review [what is thingsboard page](https://thingsboard.io/docs/getting-started-guides/what-is-thingsboard/) and [getting started guide](https://thingsboard.io/docs/getting-started-guides/helloworld/) at first and then proceed with this tutorial. Within this guide we use [cloud.thingsboard.io](cloud.thingsboard.io).
+ThingsBoard Community Edition is an open-source server-side platform that allows you to monitor and control IoT devices. 
+It is free for both personal and commercial usage and you can deploy it anywhere. 
+If you are not familiar with the platform yet, we recommend to review [what is thingsboard page](https://thingsboard.io/docs/getting-started-guides/what-is-thingsboard/) and [getting started guide](https://thingsboard.io/docs/getting-started-guides/helloworld/) at first and then proceed with this tutorial. 
+Within this guide we use [thingsboard.cloud](https://thingsboard.cloud).
 
 This sample application will allow you to collect information from sensors and control Servo, Led of your Raspberry Pi device with Grove Base Hat PCB using ThingsBoard web UI. The purpose of this application is to demonstrate ThingsBoard and Grove Base Hat PCB integrations.
 
@@ -35,7 +38,7 @@ At the end we will get the following result:
 
 ## Prerequisites
 
-For the purpose of this tutorial you need ThingsBoard server up and running. Within this guide we use [cloud.thingsboard.io](cloud.thingsboard.io)
+For the purpose of this tutorial you need ThingsBoard server up and running. Within this guide we use [thingsboard.cloud](https://thingsboard.cloud)
 
 
 Hardware and pinouts:
@@ -132,7 +135,7 @@ Also we need say to ThingsBoard that we want to connect this device and get the 
 <br> 
 
 
-After this you need to replace the THINGSBOARD_HOST and ACCESS_TOKEN in the script below, with your values. In case you use Live demo, populate <b>cloud.thingsboard.io</b> as THINGSBOARD_HOST
+After this you need to replace the THINGSBOARD_HOST and ACCESS_TOKEN in the script below, with your values. In case you use Live demo, populate <b>thingsboard.cloud</b> as THINGSBOARD_HOST
 
 ```python
 import logging

@@ -17,13 +17,13 @@ that will use any transport protocol for communication with your devices.
 
 This guide contains step-by-step instructions on how to create and launch ThingsBoard custom integration.
 For example, we will launch custom integration that uses TCP transport protocol to stream data from devices and pushes the converted data to 
-[cloud.thingsboard.io](https://cloud.thingsboard.io/signup).
+[thingsboard.cloud](https://thingsboard.cloud/signup).
 
 Before we start, you can find the full code of custom integration example that we will use in this guide [here](https://github.com/thingsboard/remote-integration-example).
  
 ### Prerequisites
 
-We assume you already have a tenant administrator account on your own ThingsBoard PE v2.4.1+ instance or cloud.thingsboard.io.
+We assume you already have a tenant administrator account on your own ThingsBoard PE v2.4.1+ instance or thingsboard.cloud.
 
 Let’s assume that we have a sensor which is sending current temperature, humidity and battery level readings respectively in the following format: **“25,40,94”**.
  

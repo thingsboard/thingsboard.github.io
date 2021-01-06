@@ -59,7 +59,7 @@ hidetoc: "true"
                 <div class="marketplace" style="padding-bottom: 10px;">
                     <div id="pe-cloud-trial" class="pricing-image-wrapper clickable" style="max-width: 50%;">
                         <img src="/images/pe/pe_cloud_signup.svg">
-                        <a target="_blank" href="https://cloud.thingsboard.io/signup"></a>
+                        <a target="_blank" href="https://thingsboard.cloud/signup"></a>
                     </div>
                 </div>
                 <div style="font-size: 20px;">

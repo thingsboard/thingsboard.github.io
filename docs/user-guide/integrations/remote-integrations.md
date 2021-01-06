@@ -17,14 +17,14 @@ description: Remote Integrations Documentation
 It is possible to execute any ThingsBoard Integration remotely from main ThingsBoard instance.
 This guide contains step-by-step instructions how to launch ThingsBoard integration remotely.
 For example, we will launch MQTT integration that connects to the local MQTT Broker and pushes data to 
-[cloud.thingsboard.io](https://cloud.thingsboard.io/signup).  
+[thingsboard.cloud](https://thingsboard.cloud/signup).  
 
 See [deployment options](/docs/user-guide/integrations/#deployment-options) for more general information.
 
 ## Prerequisites
 
 We assume you already have a tenant administrator account on your own ThingsBoard PE v2.4.1+ instance or
-[cloud.thingsboard.io](https://cloud.thingsboard.io/signup).  
+[thingsboard.cloud](https://thingsboard.cloud/signup).  
 
 ## ThingsBoard configuration steps
 

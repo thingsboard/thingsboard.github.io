@@ -157,10 +157,8 @@ toc:
   - title: Notifications and Alarms on your smartphone using Telegram Bot
     path: /docs/user-guide/rule-engine-2-0/tutorials/integration-with-telegram-bot/
 - title: Analytics
-  new: true
   section:
   - title: Trendz Analytics
-    new: true
     section:
       - title: Getting Started
         path: /docs/trendz/
@@ -263,7 +261,6 @@ toc:
     path: /docs/user-guide/ui/aliases/
 - title: IoT Gateway
   path: /docs/iot-gateway/
-  new: true
   section:
   - title: What is ThingsBoard IoT Gateway?
     path: /docs/iot-gateway/what-is-iot-gateway/
@@ -324,6 +321,17 @@ toc:
         path: /docs/iot-gateway/guides/how-to-enable-remote-shell/
   - title: IoT Gateway Roadmap
     path: /docs/iot-gateway/roadmap/
+- title: ThingsBoard Cloud
+  new: true
+  section:
+    - title: What is ThingsBoard Cloud?
+      path: /products/paas/
+    - title: Subscriptions
+      path: /products/paas/subscription/
+    - title: Plan and billing
+      path: /products/paas/billing-info/
+    - title: Domains
+      path: /products/paas/domains/
 - title: Troubleshooting
   path: /docs/user-guide/troubleshooting/
 - title: Contribution Guide

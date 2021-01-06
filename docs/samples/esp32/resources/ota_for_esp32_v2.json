@@ -1,0 +1,499 @@
+{
+  "title": "OTA for ESP32",
+  "configuration": {
+    "widgets": {
+      "b9ee3e2f-86e9-47e0-c854-cabd49aa6f84": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "entities_table",
+        "type": "latest",
+        "title": "New widget",
+        "sizeX": 12,
+        "sizeY": 4,
+        "config": {
+          "timewindow": {
+            "realtime": {
+              "interval": 1000,
+              "timewindowMs": 86400000
+            },
+            "aggregation": {
+              "type": "NONE",
+              "limit": 200
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "4px",
+          "settings": {
+            "enableSearch": true,
+            "displayPagination": true,
+            "defaultPageSize": 10,
+            "defaultSortOrder": "entityName",
+            "displayEntityName": true,
+            "displayEntityType": false,
+            "entityNameColumnTitle": "Device"
+          },
+          "title": "Devices supported OTA",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400,
+            "padding": "5px 10px 5px 10px"
+          },
+          "useDashboardTimewindow": false,
+          "showLegend": false,
+          "datasources": [
+            {
+              "type": "entity",
+              "dataKeys": [
+                {
+                  "name": "active",
+                  "type": "attribute",
+                  "label": "Connected",
+                  "color": "#2196f3",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": true,
+                    "useCellContentFunction": false,
+                    "cellStyleFunction": "if (value == 'true') {\n    return {\n        color:'rgb(0, 176, 24)',\n        fontWeight: 500\n    };\n} else {\n    return {\n        color:'rgb(255, 66, 0)',\n        fontWeight: 500\n    };\n}"
+                  },
+                  "_hash": 0.4814332252677638
+                },
+                {
+                  "name": "fwStateIsSynced",
+                  "type": "attribute",
+                  "label": "FW state",
+                  "color": "#f44336",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": true,
+                    "useCellContentFunction": false,
+                    "cellStyleFunction": "if (value == 'Synced') {\n    return {\n        color:'rgb(0, 176, 24)',\n        fontWeight: 500\n    };\n} else {\n    return {\n        color:'rgb(255, 66, 0)',\n        fontWeight: 500\n    };\n}\n"
+                  },
+                  "_hash": 0.26258755064064077,
+                  "postFuncBody": "return value == 'true' ? 'Synced' : 'Not synced';"
+                }
+              ],
+              "entityAliasId": "5760db51-bafe-c795-9d94-cb027582a518"
+            }
+          ],
+          "enableDataExport": true,
+          "widgetStyle": {},
+          "actions": {
+            "actionCellButton": [
+              {
+                "id": "deab859b-4d52-3394-cd07-c13fc4938cb3",
+                "name": "Select OTA configuration",
+                "icon": "settings",
+                "type": "openDashboardState",
+                "targetDashboardStateId": "ota_configuration",
+                "setEntityId": true
+              }
+            ]
+          }
+        },
+        "id": "b9ee3e2f-86e9-47e0-c854-cabd49aa6f84"
+      },
+      "a8083feb-029a-10da-53b5-81925b471df9": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "entities_table",
+        "type": "latest",
+        "title": "New widget",
+        "sizeX": 24,
+        "sizeY": 2,
+        "config": {
+          "timewindow": {
+            "realtime": {
+              "interval": 1000,
+              "timewindowMs": 86400000
+            },
+            "aggregation": {
+              "type": "NONE",
+              "limit": 200
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "4px",
+          "settings": {
+            "enableSearch": false,
+            "displayPagination": false,
+            "defaultPageSize": 1,
+            "defaultSortOrder": "entityName",
+            "displayEntityName": true,
+            "displayEntityType": false,
+            "entityNameColumnTitle": "Device"
+          },
+          "title": "Devices supported OTA",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400,
+            "padding": "5px 10px 5px 10px"
+          },
+          "useDashboardTimewindow": false,
+          "showLegend": false,
+          "datasources": [
+            {
+              "type": "entity",
+              "dataKeys": [
+                {
+                  "name": "active",
+                  "type": "attribute",
+                  "label": "Connected",
+                  "color": "#2196f3",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": true,
+                    "useCellContentFunction": false,
+                    "cellStyleFunction": "if (value == 'true') {\n    return {\n        color:'rgb(0, 176, 24)',\n        fontWeight: 500\n    };\n} else {\n    return {\n        color:'rgb(255, 66, 0)',\n        fontWeight: 500\n    };\n}"
+                  },
+                  "_hash": 0.4814332252677638
+                },
+                {
+                  "name": "fwStateIsSynced",
+                  "type": "attribute",
+                  "label": "FW state",
+                  "color": "#f44336",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": true,
+                    "useCellContentFunction": false,
+                    "cellStyleFunction": "if (value == 'Synced') {\n    return {\n        color:'rgb(0, 176, 24)',\n        fontWeight: 500\n    };\n} else {\n    return {\n        color:'rgb(255, 66, 0)',\n        fontWeight: 500\n    };\n}\n"
+                  },
+                  "_hash": 0.26258755064064077,
+                  "postFuncBody": "return value == 'true' ? 'Synced' : 'Not synced';"
+                },
+                {
+                  "name": "currentFwVer",
+                  "type": "attribute",
+                  "label": "Current FW version",
+                  "color": "#f44336",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "useCellContentFunction": false
+                  },
+                  "_hash": 0.4056666628562333
+                },
+                {
+                  "name": "lastTargetFwVer",
+                  "type": "attribute",
+                  "label": "Sent FW version",
+                  "color": "#ffc107",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "useCellContentFunction": false
+                  },
+                  "_hash": 0.4782701615941076
+                },
+                {
+                  "name": "lastTargetFwUrl",
+                  "type": "attribute",
+                  "label": "Sent FW link",
+                  "color": "#607d8b",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "useCellContentFunction": false
+                  },
+                  "_hash": 0.5277326335113159
+                },
+                {
+                  "name": "lastOtaStartedOn",
+                  "type": "attribute",
+                  "label": "OTA started on",
+                  "color": "#9c27b0",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "useCellContentFunction": false
+                  },
+                  "_hash": 0.3780564804303881,
+                  "postFuncBody": "return new Date(value).toLocaleString();"
+                }
+              ],
+              "entityAliasId": "95aa36da-af72-b076-feeb-8f5272c443eb"
+            }
+          ],
+          "enableDataExport": true,
+          "widgetStyle": {},
+          "actions": {
+            "actionCellButton": []
+          }
+        },
+        "id": "a8083feb-029a-10da-53b5-81925b471df9"
+      },
+      "dff6793f-9fad-7fce-ed14-c01c7399333b": {
+        "isSystemType": true,
+        "bundleAlias": "charts",
+        "typeAlias": "basic_timeseries",
+        "type": "timeseries",
+        "title": "New widget",
+        "sizeX": 7,
+        "sizeY": 4,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "dataKeys": [
+                {
+                  "name": "counter",
+                  "type": "timeseries",
+                  "label": "counter",
+                  "color": "#2196f3",
+                  "settings": {
+                    "showLines": true,
+                    "fillLines": false,
+                    "showPoints": false,
+                    "showSeparateAxis": false,
+                    "axisPosition": "left"
+                  },
+                  "_hash": 0.25739465847728793
+                }
+              ],
+              "entityAliasId": "95aa36da-af72-b076-feeb-8f5272c443eb"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "shadowSize": 4,
+            "fontColor": "#545454",
+            "fontSize": 10,
+            "xaxis": {
+              "showLabels": true,
+              "color": "#545454"
+            },
+            "yaxis": {
+              "showLabels": true,
+              "color": "#545454",
+              "min": -1,
+              "max": 3,
+              "tickDecimals": 0,
+              "tickSize": 1
+            },
+            "grid": {
+              "color": "#545454",
+              "tickColor": "#DDDDDD",
+              "verticalLines": true,
+              "horizontalLines": true,
+              "outlineWidth": 1
+            },
+            "stack": false,
+            "tooltipIndividual": false
+          },
+          "title": "Counter value",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "mobileHeight": null,
+          "enableDataExport": true,
+          "widgetStyle": {},
+          "useDashboardTimewindow": true,
+          "showLegend": true,
+          "actions": {}
+        },
+        "id": "dff6793f-9fad-7fce-ed14-c01c7399333b"
+      },
+      "93107a03-3ba2-25a8-a7bd-03871e321376": {
+        "isSystemType": false,
+        "bundleAlias": "custom",
+        "typeAlias": "next_variant2",
+        "type": "latest",
+        "title": "New widget",
+        "sizeX": 7.5,
+        "sizeY": 3,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "5760db51-bafe-c795-9d94-cb027582a518",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "lastTargetFwVer",
+                  "type": "attribute",
+                  "label": "lastTargetFwVer",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.6079765574191398
+                },
+                {
+                  "name": "lastTargetFwUrl",
+                  "type": "attribute",
+                  "label": "lastTargetFwUrl",
+                  "color": "#4caf50",
+                  "settings": {},
+                  "_hash": 0.6906374786718688
+                },
+                {
+                  "name": "active",
+                  "type": "attribute",
+                  "label": "active",
+                  "color": "#f44336",
+                  "settings": {},
+                  "_hash": 0.046291843377005204
+                }
+              ]
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "versionKeyName": "lastTargetFwVer",
+            "serverKeyName": "lastTargetFwUrl",
+            "showLabel": true
+          },
+          "title": "OTA configuration",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "useDashboardTimewindow": true,
+          "showLegend": false,
+          "actions": {},
+          "showTitleIcon": false,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "enableDataExport": true
+        },
+        "row": 0,
+        "col": 0,
+        "id": "93107a03-3ba2-25a8-a7bd-03871e321376"
+      }
+    },
+    "states": {
+      "default": {
+        "name": "OTA",
+        "root": true,
+        "layouts": {
+          "main": {
+            "widgets": {
+              "b9ee3e2f-86e9-47e0-c854-cabd49aa6f84": {
+                "sizeX": 12,
+                "sizeY": 4,
+                "row": 0,
+                "col": 0
+              }
+            },
+            "gridSettings": {
+              "backgroundColor": "#eeeeee",
+              "color": "rgba(0,0,0,0.870588)",
+              "columns": 24,
+              "backgroundSizeMode": "100%",
+              "margin": 10
+            }
+          }
+        }
+      },
+      "ota_configuration": {
+        "name": "OTA configuration",
+        "root": false,
+        "layouts": {
+          "main": {
+            "widgets": {
+              "a8083feb-029a-10da-53b5-81925b471df9": {
+                "sizeX": 24,
+                "sizeY": 2,
+                "row": 4,
+                "col": 0
+              },
+              "dff6793f-9fad-7fce-ed14-c01c7399333b": {
+                "sizeX": 7,
+                "sizeY": 4,
+                "mobileHeight": null,
+                "row": 0,
+                "col": 0
+              },
+              "93107a03-3ba2-25a8-a7bd-03871e321376": {
+                "sizeX": 8,
+                "sizeY": 4,
+                "row": 0,
+                "col": 7
+              }
+            },
+            "gridSettings": {
+              "backgroundColor": "#eeeeee",
+              "color": "rgba(0,0,0,0.870588)",
+              "columns": 24,
+              "backgroundSizeMode": "100%",
+              "margin": 10
+            }
+          }
+        }
+      }
+    },
+    "entityAliases": {
+      "5760db51-bafe-c795-9d94-cb027582a518": {
+        "id": "5760db51-bafe-c795-9d94-cb027582a518",
+        "alias": "ESP32_OTA_alias",
+        "filter": {
+          "type": "deviceType",
+          "resolveMultiple": true,
+          "deviceType": "ESP32_OTA",
+          "deviceNameFilter": ""
+        }
+      },
+      "95aa36da-af72-b076-feeb-8f5272c443eb": {
+        "id": "95aa36da-af72-b076-feeb-8f5272c443eb",
+        "alias": "state_alias",
+        "filter": {
+          "type": "stateEntity",
+          "resolveMultiple": false,
+          "stateEntityParamName": null,
+          "defaultStateEntity": null
+        }
+      }
+    },
+    "timewindow": {
+      "realtime": {
+        "interval": 1000,
+        "timewindowMs": 60000
+      },
+      "aggregation": {
+        "type": "AVG",
+        "limit": 2500
+      }
+    },
+    "settings": {
+      "stateControllerId": "entity",
+      "showTitle": false,
+      "showDashboardsSelect": true,
+      "showEntitiesSelect": true,
+      "showDashboardTimewindow": true,
+      "showDashboardExport": true,
+      "toolbarAlwaysOpen": true
+    },
+    "filters": {}
+  },
+  "name": "OTA for ESP32"
+}
