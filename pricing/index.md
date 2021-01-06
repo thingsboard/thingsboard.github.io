@@ -2,7 +2,8 @@
 layout: pricing
 title: Pricing
 description: ThingsBoard Products Pricing
-defaultActivePricingSection: thingsboard-cloud
+defaultActivePricingSection: thingsboard-pe-options
+defaultActivateSelectProduct: true
 
 ---
 
@@ -15,20 +16,27 @@ defaultActivePricingSection: thingsboard-cloud
        </div>
        <nav id="inner-navigation" class="inner-navigation">
          <ul id="menu-pricing-navigation-1" class="menu">
-            <li id="menu-item-thingsboard-cloud" class="menu-item active tb-logo">
-                <a href="javascript:void(0);" onClick="activatePricingSection('thingsboard-cloud')">Cloud</a>
-            </li>
             <li id="menu-item-thingsboard-ce" class="menu-item tb-logo">
                 <a href="javascript:void(0);" onClick="activatePricingSection('thingsboard-ce')">Community Edition</a>
             </li>
-            <li id="menu-item-thingsboard-pe" class="menu-item tb-logo">
-                <a href="javascript:void(0);" onClick="activatePricingSection('thingsboard-pe')">Professional Edition</a>
+            <li id="menu-item-thingsboard-pe-options" class="menu-item tb-logo">
+                <a href="javascript:void(0);" onClick="activatePricingSection('thingsboard-pe-options', true)">Professional Edition</a>
             </li>
             <li id="menu-item-trendz" class="menu-item trendz-logo">
                 <a href="javascript:void(0);" onClick="activatePricingSection('trendz')">Trendz Analytics</a>
             </li>
          </ul>
        </nav> 
+    </div>
+    <div id="thingsboard-pe-options" class="select-product-content justify-content-center align-items-center" style="display: none;">
+        <div class="product-selector">
+            <div class="solution thingsboard-cloud active defaultselection" onClick="activateProductSection('thingsboard-cloud')">
+                <h3>Cloud</h3>
+            </div>
+            <div class="solution thingsboard-pe" onClick="activateProductSection('thingsboard-pe')">
+                <h3>Self-managed</h3>
+            </div>
+        </div>
     </div>
     <div class="pricing-header-divider">
     </div>

@@ -11,7 +11,7 @@ description: IoT device management using ThingsBoard attributes feature
 {:toc}
 
 ThingsBoard provides the ability to assign custom attributes to your entities and manage these attributes.
-Attributes are treated key-value pairs. Flexibility and simplicity of the key-value format allow easy and seamless integration with almost any IoT device on the market.
+Attributes are treated as key-value pairs. Flexibility and simplicity of the key-value format allow easy and seamless integration with almost any IoT device on the market.
 
 
 ## Video Tutorial
@@ -27,34 +27,34 @@ Attributes are treated key-value pairs. Flexibility and simplicity of the key-va
 
 Attributes are separated into three main groups:
 
- - **server-side** - attributes are reported and managed by the server-side application. Not visible to the device application.
-   Some secret data that may be used by thingsboard rules but should not be available to the device.
+ - **Server-side** - attributes are reported and managed by the server-side application. Not visible to the device application.
+   Some secret data could be used by ThingsBoard rules, but should not be available to the device.
    Any ThingsBoard entity supports server-side attributes: Device, Asset, Customer, Tenant, Rules, etc.
    
    {:refdef: style="text-align: center;"}
    ![image](/images/user-guide/server-side-attributes.svg)
    {: refdef}  
 
- - **client-side** - see device specific attributes 
- - **shared** - see device specific attributes
+ - **Client-side** - see device specific attributes below.
+ - **Shared** - see device specific attributes below.
 
 
 ## Device specific Attribute types
 
-All attributes may be used in [Rule Engine](/docs/user-guide/rule-engine) components: filters, processors, and actions.
-This guide provides the overview of the features listed above and some useful links to get more details.  
+All attributes can be used in [Rule Engine](/docs/user-guide/rule-engine) components: filters, processors, and actions.
+This guide provides the overview of the features listed above, and some useful links to get more details.  
 
-Device specific attributes are separated into two main groups:
+Device-specific attributes are separated into two main groups:
  
- - **client-side** - attributes are reported and managed by the device application. 
-   For example current software/firmware version, hardware specification, etc.     
+ - **Client-side** - these attributes are reported and managed by the device application. 
+   For example, current software/firmware version, hardware specification, etc.     
 
    {:refdef: style="text-align: center;"}
    ![image](/images/user-guide/client-side-attributes.svg)
    {: refdef}  
         
- - **shared** - attributes are reported and managed by the server-side application. Visible to the device application.
-   For example customer subscription plan, target software/firmware version.
+ - **Shared** - these attributes are reported and managed by the server-side application. Visible to the device application.
+   For example, customer subscription plan, target software/firmware version.
    
    {:refdef: style="text-align: center;"}
    ![image](/images/user-guide/shared-attributes.svg)
@@ -62,36 +62,36 @@ Device specific attributes are separated into two main groups:
 
 ## Device attributes API
 
-ThingsBoard provides following API to device applications:
+ThingsBoard provides the following API to device applications:
  
- - upload *client-side* attributes to the server
+ - upload *client-side* attributes to the server.
  - request *client-side* and *shared* attributes from the server.
- - subscribe to updates of *shared* attributes.
+ - subscribe to update of *shared* attributes.
 
 Attributes API is specific for each supported network protocol.
-You can review API and examples in corresponding reference page:
+The API and examples can be reviewed on the corresponding reference page:
 
- - [MQTT API reference](/docs/reference/mqtt-api/#attributes-api)
- - [CoAP API reference](/docs/reference/coap-api/#attributes-api)
- - [HTTP API reference](/docs/reference/http-api/#attributes-api)
+ - [MQTT API reference](/docs/reference/mqtt-api/#attributes-api);
+ - [CoAP API reference](/docs/reference/coap-api/#attributes-api);
+ - [HTTP API reference](/docs/reference/http-api/#attributes-api).
   
 ## Telemetry Service
 
-Telemetry Service is responsible for persisting attributes data to internal data storage; 
-provides server-side API to query and subscribe for attribute updates. 
+Telemetry Service is responsible for persisting attributes data to internal data storage. 
+Also, it provides a server-side API to query and subscribe to attribute updates. 
 
 ### Internal data storage
 
 ThingsBoard uses either Cassandra NoSQL database or SQL database to store all data.
   
-Although you can query the database directly, ThingsBoard provides a set of RESTful and Websocket API that simplify this process and apply certain security policies:
+Although you can query the database directly, ThingsBoard provides a set of RESTful and a Websocket API that simplify this process and apply certain security policies:
  
- - Tenant Administrator user is able to manage attributes for all entities that belong to the corresponding tenant.
- - Customer user is able to manage attributes only for entities that are assigned to the corresponding customer.
+ - the Tenant Administrator user is able to manage attributes for all entities that belong to the corresponding tenant.
+ - the Customer user is able to manage attributes only for entities that are assigned to the corresponding customer.
   
 ### Data Query API
 
-Telemetry Service provides following REST API to fetch entity data:
+Telemetry Service provides the following REST API to fetch entity data:
 
 ![image](/images/user-guide/telemetry-service/rest-api.png)
 
@@ -100,7 +100,7 @@ The API is backward compatible with TB v1.0+ and this is the main reason why API
 
 #### Attribute keys API
 
-You can fetch list of all *attribute keys* for particular *entity type* and *entity id* using GET request to the following URL  
+You can fetch the list of all *attribute keys* for a particular *entity type* and *entity id* using a GET request to the following URL  
  
 ```shell
 http(s)://host:port/api/plugins/telemetry/{entityType}/{entityId}/keys/attributes
@@ -115,7 +115,7 @@ Supported entity types are: TENANT, CUSTOMER, USER, RULE, DASHBOARD, ASSET, DEVI
 
 #### Attribute values API
 
-You can fetch list of latest values for particular *entity type* and *entity id* using GET request to the following URL  
+You can fetch list of the latest values for particular *entity type* and *entity id* using a GET request to the following URL  
  
 ```shell
 http(s)://host:port/api/plugins/telemetry/{entityType}/{entityId}/values/attributes?keys=key1,key2,key3

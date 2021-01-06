@@ -41,7 +41,7 @@ Once device is claimed, the customer becomes its owner and customer users may ac
 ## Device Claiming scenarios
  
 ThingsBoard User can claim the device if they "know" the device Name and Secret Key. 
-The Secret Key is optional, always has an expiration time and may also change over time. 
+The Secret Key is optional, always has an expiration time, and may also change over time. 
 
 The Secret Key may be provisioned in two different ways:
 
@@ -58,7 +58,7 @@ Claiming using <b>server-side</b> key scenario%,%serverside%,%templates/claiming
 
 ## Device Claiming Permissions in PE
 
-It is important to know that in case of the PE version the user that is trying to claim the specific device must have the necessary permissions to do so.
+It is important to know that in the case of the PE version the user that is trying to claim the specific device must have the necessary permissions to do so.
 In this case, the needed permission is the following:
 
 - **Resource: Device**

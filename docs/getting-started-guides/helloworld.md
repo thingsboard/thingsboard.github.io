@@ -7,7 +7,7 @@ description: Getting started with ThingsBoard open-source IoT platform and simul
 step1:
     0:
         image: /images/helloworld/hello-world-step-1-item-1.png 
-        title: 'Login to your ThingsBoard instance and open Devices page.'
+        title: 'Login to your ThingsBoard instance and open the Devices page.'
     1:
         image: /images/helloworld/hello-world-step-1-item-2.png 
         title: 'Click on the "+" icon in the top right corner of the table and then select "Add new device".'
@@ -16,7 +16,7 @@ step1:
         title: 'Input device name. For example, "My New Device". No other changes required at this time. Click "Add" to add the device.'
     3:
         image: /images/helloworld/hello-world-step-1-item-4.png 
-        title: 'Now your device should be listed first, since table sort devices using created time by default. '
+        title: 'Now your device should be listed first, since the table sort devices using the time of the creation by default. '
         
 step2:
     0:
@@ -37,13 +37,13 @@ step3:
 step31:
     0:
         image: /images/helloworld/hello-world-step-31-item-1.png 
-        title: 'Open Dashboards page. Click on the "+" icon in the top right corner. Select "Create new dashboard".'
+        title: 'Open the Dashboards page. Click on the "+" icon in the top right corner. Select "Create new dashboard".'
     1:
         image: /images/helloworld/hello-world-step-31-item-2.png 
         title: 'Input dashboard name. For example, "My New Dashboard". Click "Add" to add the dashboard.'
     2:
         image: /images/helloworld/hello-world-step-31-item-3.png 
-        title: 'Now your dashboard should be listed first, since table sort dashboards using created time by default. Click on the "Open dashboard" icon.'
+        title: 'Now your dashboard should be listed first, since the table sorts dashboards using the time of the creation by default. Click on the "Open dashboard" icon.'
         
 step32:
     0:
@@ -51,19 +51,19 @@ step32:
         title: 'Enter edit mode. Click on the pencil button in the bottom right corner.'
     1:
         image: /images/helloworld/hello-world-step-32-item-2.png 
-        title: 'Click "Entity Aliases" icon in the top right part of the screen. You will see empty list of Entity aliases.'
+        title: 'Click the "Entity Aliases" icon in the top right part of the screen. You will see an empty list of Entity aliases.'
     2:
         image: /images/helloworld/hello-world-step-32-item-3.png 
         title: 'Click "Add alias".'
     3:
         image: /images/helloworld/hello-world-step-32-item-4.png 
-        title: 'Input alias name, for example "MyDevice". Select "Single entity" Filter type. Select "Device" as Type and type "My New" to enable autocomplete. Choose your device from the auto-complete and click on the device.'        
+        title: 'Input alias name, for example, "MyDevice". Select the "Single entity" Filter type. Select "Device" as Type and type "My New" to enable autocomplete. Choose your device from the auto-complete and click on it.'        
     4:
         image: /images/helloworld/hello-world-step-32-item-5.png 
         title: 'Click "Add" and then "Save".'        
     5:
         image: /images/helloworld/hello-world-step-32-item-6.png 
-        title: 'Finally, Click "Apply changes" in the dashboard editor to save the changes. Then you should enter edit mode again.'
+        title: 'Finally, click "Apply changes" in the dashboard editor to save the changes. Then you should enter edit mode again.'
 
 step33:
     0:
@@ -71,16 +71,16 @@ step33:
         title: 'Enter edit mode. Click on the "Add new widget" button. '
     1:
         image: /images/helloworld/hello-world-step-33-item-2.png 
-        title: 'Select "Cards" widget bundle. Select "Latest values" tab. Click on the header of the Entities widget. The "Add Widget" window will appear.'
+        title: 'Select the "Cards" widget bundle. Select the "Latest values" tab. Click on the header of the Entities widget. The "Add Widget" window will appear.'
     2:
         image: /images/helloworld/hello-world-step-33-item-3.png 
-        title: 'Click "Add" to add the data source. Widget may have multiple data sources, but we will use only one in this case.'
+        title: 'Click "Add" to add the data source. A widget may have multiple data sources, but we will use only one in this case.'
     3:
         image: /images/helloworld/hello-world-step-33-item-4.png 
-        title: 'Select "MyDevice" entity alias. Then click on the input field to the right. The auto-complete with available data points will appear. Select "temperature" data point and click "Add".'        
+        title: 'Select "MyDevice" entity alias. Then click on the input field on the right. The auto-complete with available data points will appear. Select "temperature" data point and click "Add".'        
     4:
         image: /images/helloworld/hello-world-step-33-item-5.png 
-        title: 'Resize the widget to make it a little bigger. Just drag the bottom right corner of the widget. You can also play with the advanced settings if you edit the widget.'
+        title: 'Resize the widget to make it a little bigger. Just drag the bottom right corner of the widget. You can also play with the advanced settings if you would like to edit the widget.'
         
 step34:
     0:
@@ -88,22 +88,22 @@ step34:
         title: 'Enter Edit mode.'
     1:
         image: /images/helloworld/hello-world-step-34-item-2.png 
-        title: 'Click "Add new widget" icon in the bottom right corner of the screen.'
+        title: 'Click the "Add new widget" icon in the bottom right corner of the screen.'
     2:
         image: /images/helloworld/hello-world-step-34-item-3.png 
-        title: 'Click "Create new widget" icon.'
+        title: 'Click the "Create new widget" icon.'
     3:
         image: /images/helloworld/hello-world-step-34-item-4.png 
-        title: 'Select "Charts" bundle. Scroll down and click on the "Timeseries - Flot" chart widget.'        
+        title: 'Select the "Charts" bundle. Scroll down and click on the "Timeseries - Flot" chart widget.'        
     4:
         image: /images/helloworld/hello-world-step-34-item-5.png 
-        title: 'Click "Add datasource" button.'
+        title: 'Click the "Add Datasource" button.'
     5:
         image: /images/helloworld/hello-world-step-34-item-6.png 
-        title: 'Select "MyDevice" Alias. Select "temperature" key. Click "Add".'
+        title: 'Select "MyDevice" Alias. Select the "temperature" key. Click "Add".'
     6:
         image: /images/helloworld/hello-world-step-34-item-7.png 
-        title: 'Drag and Drop you widget to desired space. Resize the widget. Apply changes.'
+        title: 'Drag and Drop your widget to the desired space. Resize the widget. Apply changes.'
     7:
         image: /images/helloworld/hello-world-step-34-item-8.png 
         title: 'Publish different telemetry values multiple times Step 2. Note that the widget displays only one minute of data by default.'
@@ -117,19 +117,19 @@ step35:
         title: 'Enter Edit mode.'
     1:
         image: /images/helloworld/hello-world-step-34-item-2.png 
-        title: 'Click "Add new widget" icon in the bottom right corner of the screen.'
+        title: 'Click the "Add new widget" icon in the bottom right corner of the screen.'
     2:
         image: /images/helloworld/hello-world-step-34-item-3.png 
-        title: 'Click "Create new widget" icon.'
+        title: 'Click the "Create new widget" icon.'
     3:
         image: /images/helloworld/hello-world-step-35-item-3.png 
-        title: 'Select "Alarm widgets" bundle. Click on the "Alarms" widget header.'        
+        title: 'Select the "Alarm widgets" bundle. Click on the "Alarms" widget header.'        
     4:
         image: /images/helloworld/hello-world-step-35-item-4.png 
-        title: 'Select "Entity" alarm source and "MyDevice" alias. Click "Add"'
+        title: 'Select the "Entity" alarm source and "MyDevice" alias. Click "Add"'
     5:
         image: /images/helloworld/hello-world-step-35-item-5.png 
-        title: 'Scroll down and locate new "Alarms" widget. Drag and Drop widget to the top right corner of the dashboard.'
+        title: 'Scroll down and locate the new "Alarms" widget. Drag and Drop widget to the top right corner of the dashboard.'
     6:
         image: /images/helloworld/hello-world-step-35-item-6.png 
         title: 'Resize the widget and apply changes.'
@@ -137,25 +137,25 @@ step35:
 step4:
     0:
         image: /images/helloworld/hello-world-step-4-item-1.png 
-        title: 'Navigate to device profiles page.'
+        title: 'Navigate to the device profiles page.'
     1:
         image: /images/helloworld/hello-world-step-4-item-2.png 
-        title: 'Click default profile row. This will open device profile details.'
+        title: 'Click the default profile row. This will open device profile details.'
     2:
         image: /images/helloworld/hello-world-step-4-item-3.png 
-        title: 'Select "Alarm Rules" tab and toggle edit mode.'
+        title: 'Select the "Alarm Rules" tab and toggle edit mode.'
     3:
         image: /images/helloworld/hello-world-step-4-item-4.png 
         title: 'Click "Add alarm rule".'        
     4:
         image: /images/helloworld/hello-world-step-4-item-5.png 
-        title: 'Specify alarm type and click "+" icon to add alarm rule condition.'
+        title: 'Specify alarm type and click the "+" icon to add alarm rule condition.'
     5:
         image: /images/helloworld/hello-world-step-4-item-6.png 
-        title: 'Click "Add key filter" button to specify condition.'
+        title: 'Click the "Add key filter" button to specify a condition.'
     6:
         image: /images/helloworld/hello-world-step-4-item-7.png 
-        title: 'Select key type, input key name, select value type and click "Add".'
+        title: 'Select key type, input key name, select value type, and click "Add".'
     7:
         image: /images/helloworld/hello-world-step-4-item-8.png 
         title: 'Select operation and input threshold value. Click "Add".'
@@ -169,7 +169,7 @@ step4:
 step5:
     0:
         image: /images/helloworld/hello-world-step-5-item-1.png 
-        title: 'Notice new temperature telemetry cause new active alarm.'
+        title: 'Notice that the new temperature telemetry causes a new active alarm.'
     1:
         image: /images/helloworld/hello-world-step-5-item-2.png 
         title: 'User may acknowledge and clear the alarms.'     
@@ -177,10 +177,10 @@ step5:
 step71:
     0:
         image: /images/helloworld/hello-world-step-7-item-1.png 
-        title: 'Navigate to Customers page.'
+        title: 'Navigate to the Customers page.'
     1:
         image: /images/helloworld/hello-world-step-7-item-2.png 
-        title: 'Click "+" to add a customer.'
+        title: 'Click the "+" sign to add a customer.'
     2:
         image: /images/helloworld/hello-world-step-7-item-3.png 
         title: 'Add customer title and click "Add".'
@@ -204,10 +204,10 @@ step73:
 step74:
     0:
         image: /images/helloworld/hello-world-step-7-item-4.png 
-        title: 'Navigate back to "Customers" page and click "manage customer users" icon.'        
+        title: 'Navigate back to the "Customers" page and click the "manage customer users" icon.'        
     1:
         image: /images/helloworld/hello-world-step-7-item-5.png 
-        title: 'Click "Add user" icon.'        
+        title: 'Click the "Add user" icon.'        
     2:
         image: /images/helloworld/hello-world-step-7-item-6.png 
         title: 'Specify email that you will use to login as a customer user and click "Add".'
@@ -216,10 +216,10 @@ step74:
         title: 'Copy the activation link and save it to a safe place. You will use it later to set the password.'
     4:
         image: /images/helloworld/hello-world-step-71-item-7.png 
-        title: 'Open user details'          
+        title: 'Open user details.'         
     5:
         image: /images/helloworld/hello-world-step-71-item-5.png 
-        title: 'Toggle edit mode'
+        title: 'Toggle edit mode.'
     6:
         image: /images/helloworld/hello-world-step-71-item-6.png 
         title: 'Select default dashboard and check "Always fullscreen". Apply changes.'
@@ -227,7 +227,7 @@ step74:
 step75:
     0:
         image: /images/helloworld/hello-world-step-7-item-8.png 
-        title: 'Use activation link to set the password. Click "Create Password". You will automatically login as a customer user.'
+        title: 'Use the activation link to set the password. Click "Create Password". You will automatically login as a customer user.'
     1:
         image: /images/helloworld/hello-world-step-7-item-9.png 
         title: 'You have logged in as a Customer User. You may browse the data and acknowledge/clear alarms.'
@@ -254,7 +254,7 @@ The goal of this tutorial is to demonstrate the basic usage of the most popular 
  - Push data from devices to ThingsBoard;
  - Build real-time end-user dashboards;
  - Define thresholds and trigger alarms;
- - Push notification about new alarms over email, sms or other systems.
+ - Push notifications about new alarms over email, sms or other systems.
 
 We will connect and visualize data from the temperature sensor to keep it simple. 
  
@@ -262,7 +262,7 @@ We will connect and visualize data from the temperature sensor to keep it simple
 
 ## Step 1. Provision Device
 
-For simplicity, we will provision device manually using the UI. 
+For simplicity, we will provision the device manually using the UI. 
  
 {% include images-gallery.html imageCollection="step1" showListImageTitles="true" %} 
 
@@ -274,7 +274,7 @@ You may also use:
 ## Step 2. Connect device
 
 To connect the device you need to get the device credentials first. 
-ThingsBoard support different device credentials. We recommend to use default auto-generated credentials which is access token for this guide.
+ThingsBoard supports various device credentials. We recommend using default auto-generated credentials which is access token for this guide.
 
 {% include images-gallery.html imageCollection="step2" showListImageTitles="true" %}
 
@@ -295,7 +295,7 @@ Once you have successfully published the "temperature" readings, you should imme
 
 ## Step 3. Create Dashboard
 
-We will create a dashboard and add most popular widgets. See instructions below. 
+We will create a dashboard and add the most popular widgets. See the instructions below. 
 
 ### Step 3.1 Create Empty Dashboard
 
@@ -303,9 +303,9 @@ We will create a dashboard and add most popular widgets. See instructions below.
 
 ### Step 3.2 Add Entity Alias
 
-Alias is a reference to single entity or group of entities that is used in the widgets.
-Alias may be static or dynamic. For simplicity, we will use "Single entity" alias reference one and only one entity ("My New Device" in our case).
-It is possible to configure an alias that reference multiple devices. For example, devices of a certain type or related to a certan asset. 
+Alias is a reference to a single entity or group of entities that are used in the widgets.
+Alias may be static or dynamic. For simplicity, we will use "Single entity" alias references the one and only entity ("My New Device" in our case).
+It is possible to configure an alias that references multiple devices. For example, devices of a certain type or related to a certain asset. 
 You may learn more about different aliases [here](/docs/user-guide/ui/aliases/).
 
 {% include images-gallery.html imageCollection="step32" showListImageTitles="true" %}   
@@ -313,12 +313,12 @@ You may learn more about different aliases [here](/docs/user-guide/ui/aliases/).
 ### Step 3.3 Add Table Widget
 
 To add the table widget we need to select it from the widget library. Widgets are grouped into widget bundles.
-Each widget has a data source. This is how widget "knows" what data to display.
+Each widget has a data source. This is how the widget "knows" what data to display.
 To see the latest value of our "temperature" data that we sent during step 2, we should configure the data source.
 
 {% include images-gallery.html imageCollection="step33" showListImageTitles="true" %}
 
-Congratulations! You have added first widget. Now you can send new telemetry reading and it will immediately appear in the table. 
+Congratulations! You have added the first widget. Now you can send new telemetry reading and it will immediately appear in the table. 
 
 ### Step 3.4 Add Chart Widget
 
@@ -328,44 +328,44 @@ We should also configure the time window to use the chart widget.
 
 {% include images-gallery.html imageCollection="step34" showListImageTitles="true" %}
 
-Congratulations! You have added chart widget. Now you can send new telemetry reading and it will immediately appear in the chart. 
+Congratulations! You have added a chart widget. Now you can send new telemetry reading and it will immediately appear in the chart. 
 
 ### Step 3.5 Add Alarm Widget
 
 {% include images-gallery.html imageCollection="step35" showListImageTitles="true" %}
 
-Congratulations! You have added alarm widget. Not it's time to configure alarm rules and raise some alarms. 
+Congratulations! You have added an alarm widget. Now it's time to configure alarm rules and raise some alarms. 
 
-### Step 4. Configure Alarm Rules
+## Step 4. Configure Alarm Rules
 
-We will use [alarm rules](/docs/user-guide/device-profiles/#alarm-rules) feature to raise alarm when temperature reading is greater than 25 degrees.
-For this purpose, we should edit device profile and add new alarm rule. 
-The "My New Device" is using "Default" device profile.
+We will use the [alarm rules](/docs/user-guide/device-profiles/#alarm-rules) feature to raise alarm when the temperature reading is greater than 25 degrees.
+For this purpose, we should edit the device profile and add a new alarm rule. 
+The "My New Device" is using the "Default" device profile.
 We recommend creating dedicated [device profiles](/docs/user-guide/device-profiles/) for each corresponding device type but will skip this step for simplicity.
 
 {% include images-gallery.html imageCollection="step4" showListImageTitles="true" %}
 
-### Step 5. Create Alarm
+## Step 5. Create Alarm
 
 Now our alarm rule is active (see [Step 4](/docs/getting-started-guides/helloworld/#step-4-configure-alarm-rules)), 
 and we should send new telemetry on behalf of the device (see [Step 2](/docs/getting-started-guides/helloworld/#step-2-connect-device)) to trigger the alarm.
-Note that temperature value should be 26 or higher to raise the alarm. Once we send new temperature reading, we should immediately see new alarm in our dashboard.
+Note that the temperature value should be 26 or higher to raise the alarm. Once we send a new temperature reading, we should immediately see a new alarm on our dashboard.
 
 {% include images-gallery.html imageCollection="step5" showListImageTitles="true" %}
 
-### Step 6. Alarm notifications
+## Step 6. Alarm notifications
 
-It is quite easy to configure email or sms notifications for alarms. We recommend to review alarm rule [examples](/docs/user-guide/device-profiles/#alarm-rules) 
+It is quite easy to configure email or sms notifications for alarms. We recommend reviewing alarm rule [examples](/docs/user-guide/device-profiles/#alarm-rules) 
 and documentation about [alarm notifications](/docs/user-guide/device-profiles/#notifications-about-alarms). 
  
 **Note**: At the moment ThingsBoard supports AWS SNS and Twilio to send SMS. 
-Both services are non free and require you to create an account. However, you may integrate with other SMS/EMAIL gateways using [REST API call](https://thingsboard.io/docs/user-guide/rule-engine-2-0/tutorials/get-weather-using-rest-api-call/#node-d-external-rest-api-call-node) node.  
+Both services are non-free and require you to create an account. However, you may integrate with other SMS/EMAIL gateways using [REST API call](https://thingsboard.io/docs/user-guide/rule-engine-2-0/tutorials/get-weather-using-rest-api-call/#node-d-external-rest-api-call-node) node.  
 
-### Step 7. Assign Device and Dashboard to Customer
+## Step 7. Assign Device and Dashboard to Customer
 
-One of the important ThingsBoard features is the ability to assign Dashboards to Customers. 
+One of the most important ThingsBoard features is the ability to assign Dashboards to Customers. 
 You may assign different devices to different customers. Then, you may create a Dashboard(s) and assign it to multiple customers.
-Each customer user will see his own devices and will not be able to see devices or any other data that belong to a different customer.
+Each customer user will see his own devices and will not be able to see devices or any other data that belongs to a different customer.
 
 #### Step 7.1 Create customer
 
