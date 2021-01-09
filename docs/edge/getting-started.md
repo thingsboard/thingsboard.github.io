@@ -143,7 +143,7 @@ step54:
         image: /images/edge/getting-started-step-54-item-9.png
         title: 'Enter Edit mode. Open time selection window. Change the interval and aggregation function. Update the time window and apply changes.'
 
-step6:
+step6CE:
     0:
         image: /images/edge/getting-started-step-6-item-1.png
         title: 'Open Edge instances page in the ThingsBoard <b>CE</b> server.'
@@ -153,13 +153,15 @@ step6:
     2:
         image: /images/edge/getting-started-step-6-item-3.png
         title: 'Click on the "+" plus icon and select "My New Dashboard" in the list. Now this dashboard is going to be provisioned to the edge.'
-    3:
+
+step6Edge:
+    0:
         image: /images/edge/getting-started-step-6-item-4.png
         title: 'Open "Dashboard groups" page in the ThingsBoard <b>Edge</b> UI.'    
-    4:
+    1:
         image: /images/edge/getting-started-step-6-item-5.png
         title: 'Open "All" dashboards group to see "My New Dashboard" in the list. Open "My New Dashboard".'
-    5:
+    2:
         image: /images/edge/getting-started-step-6-item-6.png
         title: 'Verify that you see the same widgets that you have added on the cloud and temperature readings from the device.'
 
@@ -286,7 +288,13 @@ To provision dashboard to edge we need to open edge dashboards on ThingsBoard **
 
 If you are interested in more details how to provision different entities from the cloud to the edge please refer to [CE edge management](/docs/edge/config/ce/management/) or [PE edge management](/docs/edge/config/pe/management/) for more details.
 
-{% include images-gallery.html imageCollection="step6" showListImageTitles="true" %}
+Please open ThingsBoard **CE** using the URL [http://localhost:8080](http://localhost:8080) or [Live Demo](https://demo.thingsboard.io):
+
+{% include images-gallery.html imageCollection="step6CE" showListImageTitles="true" %}
+
+Let's open ThingsBoard **Edge** UI using the URL [http://localhost:18080](http://localhost:18080) to verify that dashboard was provisioned.
+
+{% include images-gallery.html imageCollection="step6Edge" showListImageTitles="true" %}
 
 Congratulations! Dashboard provisioned to edge. Now you can send new telemetry reading and it will immediately appear in the chart on the edge.
 

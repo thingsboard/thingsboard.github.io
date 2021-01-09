@@ -5,6 +5,8 @@ description: ThingsBoard Edge Rule Engine
 
 ---
 
+Coming soon…
+
 ### Prerequisites
 
 Please get familiar with ThingsBoard [Rule Engine Overview](/docs/user-guide/rule-engine-2-0/overview/) before continue.

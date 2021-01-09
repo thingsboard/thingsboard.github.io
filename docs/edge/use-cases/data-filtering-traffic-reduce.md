@@ -5,6 +5,8 @@ description: ThingsBoard Edge use case #2
 
 ---
 
+Coming soon…
+
 You can have thousands of edge devices with sensors that constantly report data in realtime. It might be expensive enough to forward and process all messages to the cloud.
 Probably much more efficient would be to **filter and process it on the edge** and send to the cloud only refined business-relevant data.
 
