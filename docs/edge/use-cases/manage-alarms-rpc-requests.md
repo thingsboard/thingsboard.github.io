@@ -9,37 +9,37 @@ configureAlarmRules:
         title: 'Login to your ThingsBoard <b>CE</b> instance and open Device profiles page.'
     1:
         image: /images/edge/use-cases/manage-alarms-configure-rules-item-2.png
-        title: 'Click default profile row. This will open device profile details.'
+        title: 'Click "+" to add new device profile.'
     2:
         image: /images/edge/use-cases/manage-alarms-configure-rules-item-3.png
-        title: 'Select "Alarm Rules" tab and toggle edit mode.'
+        title: 'Input device profile name. For example, type "edge thermostat". Click "Transport configuration" to proceed.'
     3:
         image: /images/edge/use-cases/manage-alarms-configure-rules-item-4.png
-        title: 'Click "Add alarm rule".'        
+        title: 'For this example we will use default transport configuration. Click "Alarm rules" to proceed.'        
     4:
         image: /images/edge/use-cases/manage-alarms-configure-rules-item-5.png
-        title: 'Specify alarm type and click "+" icon to add alarm rule condition.'
+        title: 'Click "Add alarm rule" button.'
     5:
         image: /images/edge/use-cases/manage-alarms-configure-rules-item-6.png
-        title: 'Click "Add key filter" button to specify condition.'
+        title: 'Specify alarm type. For example, "High temperature". Click "+" icon to add new alarm condition.'
     6:
         image: /images/edge/use-cases/manage-alarms-configure-rules-item-7.png
-        title: 'Select key type, input key name, select value type and click "Add".'
+        title: 'Click "Add key filter" button.'
     7:
         image: /images/edge/use-cases/manage-alarms-configure-rules-item-8.png
-        title: 'Select operation and input threshold value. Click "Add".'
+        title: 'Select key type, input key name, select value type and click "Add".'
     8:
         image: /images/edge/use-cases/manage-alarms-configure-rules-item-9.png
-        title: 'TODO'
+        title: 'Select operation and input threshold value. Click "Add".'
     9:
         image: /images/edge/use-cases/manage-alarms-configure-rules-item-10.png
-        title: 'TODO'
+        title: 'Click "Save" button.'
     10:
         image: /images/edge/use-cases/manage-alarms-configure-rules-item-11.png
-        title: 'TODO'
+        title: 'Click "Add" button.'
     11:
         image: /images/edge/use-cases/manage-alarms-configure-rules-item-12.png
-        title: 'TODO'
+        title: 'Newly create device profile will be show first in the list, because default sort order is by created time.'
     12:
         image: /images/edge/use-cases/manage-alarms-configure-rules-item-13.png
         title: 'Login to your ThingsBoard <b>Edge</b> instance and open Device profiles page.'
@@ -49,20 +49,41 @@ configureAlarmRules:
 
 provisionDevices:
     0:
-        image: /images/edge/getting-started-step-1-item-1.png
+        image: /images/edge/use-cases/manage-alarms-provision-devices-item-1.png
         title: 'Login to your ThingsBoard <b>Edge</b> instance and open Device groups page.'
     1:
-        image: /images/edge/getting-started-step-1-item-2.png  
+        image: /images/edge/use-cases/manage-alarms-provision-devices-item-2.png
         title: 'Open "All" device group.'
     2:
-        image: /images/edge/getting-started-step-1-item-3.png
+        image: /images/edge/use-cases/manage-alarms-provision-devices-item-3.png
         title: 'Click on the "Add Device"("+") icon in the top right corner of the table.'
     3:
-        image: /images/edge/getting-started-step-1-item-4.png
-        title: 'Input device name. For example, "My New Device". No other changes required at this time. Click "Add" to add the device.'
+        image: /images/edge/use-cases/manage-alarms-provision-devices-item-4.png
+        title: 'Input device name. For example, "DHT22". Select "edge thermostat" from device profiles list. No other changes required at this time. Click "Add" to add the device.'
     4:
-        image: /images/edge/getting-started-step-1-item-5.png
-        title: 'Now your device should be listed first, since table sort devices using created time by default. '
+        image: /images/edge/use-cases/manage-alarms-provision-devices-item-5.png
+        title: 'Now your "DHT22" device should be listed first, since table sort devices using created time by default. Click "Add" to add one more device.'
+    5:
+        image: /images/edge/use-cases/manage-alarms-provision-devices-item-6.png
+        title: 'Input device name. For example, "Air Conditioner". No other changes required at this time. Click "Add" to add the device.'
+    6:
+        image: /images/edge/use-cases/manage-alarms-provision-devices-item-7.png
+        title: 'Now your "Air Conditioner" device should be listed first, since table sort devices using created time by default.'
+    7:
+        image: /images/edge/use-cases/manage-alarms-provision-devices-item-8.png
+        title: 'Click on "DHT22" device row to open device details and navigate to "Relations" tab. Click "+" icon to add new relation.'
+    8:
+        image: /images/edge/use-cases/manage-alarms-provision-devices-item-9.png
+        title: 'Specify relation type "Manages" and select "Air Conditioner" device from the list. Click "Add" to add this relation. Now we verify that devices were provisioned to cloud.'
+    9:
+        image: /images/edge/use-cases/manage-alarms-provision-devices-item-10.png
+        title: 'Login to your ThingsBoard <b>CE</b> instance and open Devices page.'
+    10:
+        image: /images/edge/use-cases/manage-alarms-provision-devices-item-11.png
+        title: 'Make sure that "DHT22" and "Air Conditioner" devices are in the devices list.'
+    11:
+        image: /images/edge/use-cases/manage-alarms-provision-devices-item-12.png
+        title: 'Verify that relation from "DHT22" to "Air Conditioner" was provisioned as well.'
 
 ---
 * TOC
@@ -95,8 +116,6 @@ For this purpose, we should create new device profile and add new alarm rule. We
 
 ## Provision devices
 
-TODO
-
 For simplicity, we will provision device manually using the UI.
 
 Let's first create **DHT22 temperature sensor** and **Air Conditioner** devices on the edge and add relation between these devices. This relation will be used to find related **Air Conditioner** device once **DHT22 temperature sensor** will send critical temperature value.
@@ -106,21 +125,6 @@ We are going to provision device on the Edge. Please open ThingsBoard **Edge** U
 {% include templates/edge/bind-port-changed-banner.md %}
 
 {% include images-gallery.html imageCollection="provisionDevices" showListImageTitles="true" %}
-
- 
-[Add two devices](/docs/user-guide/ui/devices/#add-and-delete-devices) in the group "All" (**Device Groups -> All -> Add device**):
-* Thermometer's name is **DHT22** and its type is **temperature sensor**.
-* Cooler's name is **Air Conditioner** and its type is **cooler system**.
-
-<br/>
-
-[Create relation](/docs/user-guide/entities-and-relations/) from DHT22 to Air Conditioner with:
- * direction - **From**
- * type - **Uses**
-
-
-**Note** that devices created on ThingsBoard Edge automatically appears in the cloud device group. Such group has a special pattern name **[Edge] *${edge name}* All** - a associated with particular edge.
-
 
 ## Message flow
 In this section we explain the purpose of each node in this tutorial:
