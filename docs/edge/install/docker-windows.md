@@ -101,7 +101,7 @@ Where:
 
 ### Troubleshootings
 
-**Note** If you observe errors related to DNS issues, for example
+**NOTE** If you observe errors related to DNS issues, for example
 
 ```bash
 127.0.1.1:53: cannot unmarshal DNS message

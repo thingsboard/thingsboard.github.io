@@ -90,7 +90,7 @@ docker-compose up
 
 ### Troubleshootings
 
-**Note** If you observe errors related to DNS issues, for example
+**NOTE** If you observe errors related to DNS issues, for example
 
 ```bash
 127.0.1.1:53: cannot unmarshal DNS message
@@ -99,7 +99,7 @@ docker-compose up
 You may configure your system to use Google public DNS servers. 
 See corresponding [Linux](https://developers.google.com/speed/public-dns/docs/using#linux) and [Mac OS](https://developers.google.com/speed/public-dns/docs/using#mac_os) instructions.
 
-**Note** If you see errors related to edge is not able to connect to database, for example
+**NOTE** If you see errors related to edge is not able to connect to database, for example
 
 ```bash
 Caused by: org.postgresql.util.PSQLException: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.

@@ -117,44 +117,26 @@ updateRootRuleChainCE:
         title: 'Click "Apply changes" to save current progress.'
     7:
         image: /images/edge/use-cases/manage-alarms/update-root-item-8.png
-        title: 'Right click on the "script" node to copy it.'
+        title: 'Filter rule nodes by "change" word and add "change originator" node to rule chain.'
     8:
         image: /images/edge/use-cases/manage-alarms/update-root-item-9.png
-        title: 'Paste (duplicate) script node to rule chain.'
+        title: 'Select "Related" source. Select "Manages" filter. Select "Device" type. Click "Add".'
     9:
         image: /images/edge/use-cases/manage-alarms/update-root-item-10.png
-        title: 'Click modify icon.'
-    10:
-        image: /images/edge/use-cases/manage-alarms/update-root-item-11.png
-        title: 'Update accordingly script rule node to emulate <b>disable</b> command for Air Conditioner device (you can copy and paste it from the snippet above).'
-    11:
-        image: /images/edge/use-cases/manage-alarms/update-root-item-12.png
-        title: 'Close rule node editor.'
-    12:
-        image: /images/edge/use-cases/manage-alarms/update-root-item-13.png
-        title: 'Add "Alarm Cleared" connection from "Device Profile" node to <b>disabled</b> script node. Save changes.'
-    13:
-        image: /images/edge/use-cases/manage-alarms/update-root-item-14.png
-        title: 'Filter rule nodes by "change" word and add "change originator" node to rule chain.'
-    14:
-        image: /images/edge/use-cases/manage-alarms/update-root-item-15.png
-        title: 'Select "Related" source. Select "Manages" filter. Select "Device" type. Click "Add".'
-    15:
-        image: /images/edge/use-cases/manage-alarms/update-root-item-16.png
         title: 'Add "Success" relations from script node to change originator. Add "Success" relation from change originator to RPC Call Request node. Save changes.'
 
 updateRootRuleChainEdge:
     0:
-        image: /images/edge/use-cases/manage-alarms/update-root-item-17.png
+        image: /images/edge/use-cases/manage-alarms/update-root-item-11.png
         title: 'Login to your ThingsBoard <b>Edge</b> instance and open Rule chains page.'
     1:
-        image: /images/edge/use-cases/manage-alarms/update-root-item-18.png
+        image: /images/edge/use-cases/manage-alarms/update-root-item-12.png
         title: 'Open "Edge Root Rule Chain".'
     2:
-        image: /images/edge/use-cases/manage-alarms/update-root-item-19.png
+        image: /images/edge/use-cases/manage-alarms/update-root-item-13.png
         title: 'Verify that rule chain is the same as you have updated on cloud.'
 
-copyAccessToken:
+copyAccessTokenAirConditioner:
     0:
         image: /images/edge/use-cases/manage-alarms/copy-access-token-item-1.png
         title: 'Open Device groups page in the ThingsBoard <b>Edge</b> instance.'
@@ -163,26 +145,32 @@ copyAccessToken:
         title: 'Open "All" device group.'
     2:
         image: /images/edge/use-cases/manage-alarms/copy-access-token-item-3.png
-        title: 'Click on the device row in the table to open device details.'
+        title: 'Click on the <b>Air Conditioner</b> device row in the table to open device details.'
     3:
         image: /images/edge/use-cases/manage-alarms/copy-access-token-item-4.png  
         title: 'Click "Copy access token". Token will be copied to your clipboard. Save it to a safe place.'
 
-deviceAlarmTab1:
+copyAccessTokenDht22:
     0:
-        image: /images/edge/getting-started-step-3-item-1.png
-        title: 'Click on the device row in the table to open device details.'
+        image: /images/edge/use-cases/manage-alarms/copy-access-token-item-1.png
+        title: 'Open Device groups page in the ThingsBoard <b>Edge</b> instance.'
     1:
-        image: /images/edge/getting-started-step-3-item-3.png
-        title: 'Navigate to the telemetry tab.'
+        image: /images/edge/use-cases/manage-alarms/copy-access-token-item-2.png
+        title: 'Open "All" device group.'
+    2:
+        image: /images/edge/use-cases/manage-alarms/copy-access-token-item-5.png
+        title: 'Click on the <b>DHT22</b> device row in the table to open device details.'
+    3:
+        image: /images/edge/use-cases/manage-alarms/copy-access-token-item-6.png  
+        title: 'Click "Copy access token". Token will be copied to your clipboard. Save it to a safe place.'
 
-deviceAlarmTab2:
+deviceAlarmTab:
     0:
-        image: /images/edge/getting-started-step-3-item-1.png
-        title: 'Click on the device row in the table to open device details.'
+        image: /images/edge/use-cases/manage-alarms/copy-access-token-item-3.png
+        title: 'Click on the <b>DHT22</b> device row in the table to open device details.'
     1:
-        image: /images/edge/getting-started-step-3-item-3.png
-        title: 'Navigate to the telemetry tab.'
+        image: /images/edge/use-cases/manage-alarms/device-alarm-tab-item-1.png
+        title: 'Navigate to the alarm tab.'
 
 mqttWindows:
     0:
@@ -245,31 +233,21 @@ Please open ThingsBoard **CE** using the URL [http://localhost:8080](http://loca
 
 ## Configure edge rule engine to handle alarms and send RPC calls
 
-### Update "Edge Root Rule Chain"
-
-We are going to update "Edge Root Rule Chain" that will handle **Alarm Created/Alarm Cleared** events for "DHT22" sensor and will send appropriate commands to the "Air Conditioner" device.
+We are going to update "Edge Root Rule Chain" that will handle **Alarm Created** events for "DHT22" sensor and will send appropriate commands to the "Air Conditioner" device.
 Here is the final configuration of edge root rule chain:
 
 {% include images-gallery.html imageCollection="rootRuleChainPreview" %}
 
-In the next steps we are going to create two **JavaScript** nodes to create appropriate RPC commands to the **Air Conditioner** device.
+In the next steps we are going to create **JavaScript** node to create appropriate RPC commands to the **Air Conditioner** device.
 JavaScript for script node that will emulate enabling of Air Conditioner:
 
 {% highlight javascript %}
 var newMsg = {};
-newMsg.method = "set_air_conditioner_status";
-newMsg.params = {"enabled": true};
+newMsg.method = "enabled_air_conditioner";
+newMsg.params = {"speed": 1.0};
 return {msg: newMsg, metadata: metadata, msgType: msgType}; {% endhighlight %}
 
-JavaScript for script node that will emulate disabling of Air Conditioner:
-
-{% highlight javascript %}
-var newMsg = {};
-newMsg.method = "set_air_conditioner_status";
-newMsg.params = {"enabled": false};
-return {msg: newMsg, metadata: metadata, msgType: msgType}; {% endhighlight %}
-
-Please use these snippets in the next steps, if required.
+Please use this snippet in the next steps, if required.
 
 Here are the steps to update default edge "Root Rule Chain" to the rule chain above:
 
@@ -281,39 +259,56 @@ Now let's open ThingsBoard **Edge** UI to see updated root rule chain:
 
 ## Connect "Air Conditioner" to edge and subscribe for RPC commands
 
-- Use the following scripts to connect the device **Air Conditioner** to the ThingsBoard Edge by MQTT protocol.  
-The script will emulate turning on/off cooler based on temperature readings: "If the temperature is > 50°C - turn cooler on, otherwise - turn off".
-    - [**mqtt-js.sh**](/docs/edge/use-cases/resources/manage-alarms-rpc-requests/mqtt-js.sh)
-    - [**cooler.js**](/docs/edge/use-cases/resources/manage-alarms-rpc-requests/cooler.js)
-    
-To run the scripts, you need to modify **mqtt-js.sh** file. Please do the following steps:
+To subscribe to RPC commands from edge for the **Air Conditioner** device you need to get the **Air Conditioner** device credentials first.
+ThingsBoard support different device credentials. We recommend to use default auto-generated credentials which is access token for this guide.
 
-- Replace **YOUR_ACCESS_TOKEN** with **Air Conditioner device access token**. You can find device access token [on the Device page](/docs/user-guide/ui/devices/#manage-device-credentials). <br>
+Please open ThingsBoard **Edge** UI using the URL: [http://localhost:18080](http://localhost:18080).
 
-![image](/images/edge/tutorial/alarm/copy-cooler-token.png)
+{% include templates/edge/bind-port-changed-banner.md %}
 
-- Replace **YOUR_THINGSBOARD_HOST** with your ThingsBoard Edge host. For example, **127.0.0.1**. 
+{% include images-gallery.html imageCollection="copyAccessTokenAirConditioner" showListImageTitles="true" %}
 
-- Open the terminal and go to the folder that contains these emulator scripts. 
- Make sure it is executable:
-  
- ```shell
+Now you are ready to subscribe to RPC commands for Air Conditioner device.
+We will use simple commands to subscribe to RPC commands over MQTT protocol in this example.
+
+Please download following scripts to your local folder:
+- [**mqtt-js.sh**](/docs/edge/use-cases/resources/manage-alarms-rpc-requests/mqtt-js.sh)
+- [**cooler.js**](/docs/edge/use-cases/resources/manage-alarms-rpc-requests/cooler.js)
+
+**NOTE** We assume that you have Node.js and NPM installed on your local PC.
+
+Before running the scripts, please modify **mqtt-js.sh** accordingly:
+
+- Replace **YOUR_ACCESS_TOKEN** with **Air Conditioner** device access token copied from the steps above. 
+
+- Replace **YOUR_TB_EDGE_HOST** with your ThingsBoard Edge host. For example, **localhost**.
+
+- Replace **YOUR_TB_EDGE_MQTT_PORT** with your ThingsBoard Edge MQTT port. For example, **11883** or **1883**.
+
+Open the terminal, go to the folder that contains **mqtt-js.sh** and **cooler.js** scripts and make sure it is executable:
+```shell
  chmod +x *.sh
- ```
+```
+
+Install **mqtt** node module to be able to use mqtt package in the **cooler.js** script:
+```shell
+node install mqtt
+```
 
 Then run the following command:
-
-{% highlight bash %}
+```shell
 bash mqtt-js.sh
-{% endhighlight %}
-
-<br/>
+```
 
 You should see the following screen with your host and device token:
 
-![image](/images/edge/tutorial/alarm/terminal-run-sh.png)
+```shell
+pc@pc-XPS-15-9550:~/alarm-tutorial$ bash mqtt-js.sh
+Connecting to: localhost:11883 using access token: sFqoF18PTyViO8L0qo7c
+Cooler is connected!
+```
 
-**Note** Please open a new terminal tab to push temperature telemetry to device and leave this running in the background until end of the guide.
+**NOTE** Please open a new terminal tab to push temperature telemetry to device and leave this running in the background until end of the guide.
 
 ## Post telemetry to "DHT22" sensor to create alarm
 
@@ -324,7 +319,7 @@ Please open ThingsBoard **Edge** UI using the URL: [http://localhost:18080](http
 
 {% include templates/edge/bind-port-changed-banner.md %}
 
-{% include images-gallery.html imageCollection="copyAccessToken" showListImageTitles="true" %}
+{% include images-gallery.html imageCollection="copyAccessTokenDht22" showListImageTitles="true" %}
 
 Now you are ready to publish temperature telemetry data on behalf of your device.
 We will use simple commands to publish temperature data over HTTP or MQTT in this example.
@@ -347,27 +342,23 @@ CoAP<small>Linux or macOS</small>%,%coap%,%templates/edge/use-cases/manage-alarm
 
 You should immediately see alarm in the Device Alarm Tab:
 
-{% include images-gallery.html imageCollection="deviceAlarmTab1" showListImageTitles="true" %}
-
-If you publish the "temperature" readings with value less than **49**:
-
-{% capture connectdevicetogglespec %}
-HTTP<small>Linux, macOS or Windows</small>%,%http%,%templates/edge/use-cases/manage-alarms/http-below-threshold.md%br%
-MQTT<small>Linux or macOS</small>%,%mqtt-linux%,%templates/edge/use-cases/manage-alarms/mqtt-linux-below-threshold.md%br%
-MQTT<small>Windows</small>%,%mqtt-windows%,%templates/edge/use-cases/manage-alarms/mqtt-windows-below-threshold.md%br%
-CoAP<small>Linux or macOS</small>%,%coap%,%templates/edge/use-cases/manage-alarms/coap-below-threshold.md{% endcapture %}
-{% include content-toggle.html content-toggle-id="connectdevice" toggle-spec=connectdevicetogglespec %}
-
-You should immediately in the Device Alarm Tab that alarm was cleared:
-
-{% include images-gallery.html imageCollection="deviceAlarmTab2" showListImageTitles="true" %}
+{% include images-gallery.html imageCollection="deviceAlarmTab" showListImageTitles="true" %}
 
 ## Verify that RPC request was send to "Air Conditioner" device
 
 Open the terminal where **mqtt-js.sh** script is running. 
 You should see similar messages on the screen:
 
-![image](/images/edge/tutorial/alarm/terminal-rpc-message.png)
+```shell
+pc@pc-XPS-15-9550:~/alarm-tutorial$ bash mqtt-js.sh
+Connecting to: localhost:11883 using access token: sFqoF18PTyViO8L0qo7c
+Cooler is connected!
+Received RPC command from edge!
+Method: enabled_air_conditioner
+Speed params: 1
+```
+
+Congratulations! RPC request was successfully sent to **Air Conditioner** device based on the temperature readings from the **DHT22** sensor.
 
 ## Next Steps
 
