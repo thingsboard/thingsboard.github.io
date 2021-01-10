@@ -42,5 +42,3 @@ Client mosqpub|xxx sending DISCONNECT
 and customize **topic names** and **payload type** using Device Profile. See more info [here](/docs/user-guide/device-profiles/#mqtt-transport-type).
 
 <br/>
-<br/>
-  

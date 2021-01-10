@@ -20,4 +20,3 @@ echo -n '{"temperature": 25}' | coap post coap://localhost:15683/api/v1/ABC123/t
 {: .copy-code}
 
 <br/>
-<br/>

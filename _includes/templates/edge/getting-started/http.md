@@ -36,4 +36,3 @@ curl -v -X POST -d "{\"temperature\": 25}" http://localhost:18080/api/v1/ABC123/
 {: .copy-code}
 
 <br/>
-<br/>

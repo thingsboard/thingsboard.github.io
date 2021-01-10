@@ -4,5 +4,3 @@ Please explore [Connectivity Diagram](/docs/getting-started-guides/connectivity/
 **Note:** We recommend to start exploring the platform capabilities with simulated devices that are connected over MQTT.
 
 <br/>
-<br/>
-   
