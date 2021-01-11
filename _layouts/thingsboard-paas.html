@@ -28,10 +28,6 @@
 
 {% include footer.html %}
 
-{% if site.data[foundTOC].hidetoc != "true" and page.hidetoc != "true" %}
-<button class="flyout-button" onclick="tb.toggleToc()"></button>
-{% endif %}
-
 <script type="text/javascript">
     jqueryDefer(function () {
         vis(function() {
