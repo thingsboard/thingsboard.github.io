@@ -26,14 +26,14 @@ To run ThingsBoard and Cassandra on a single machine you will need at least 8Gb 
 Download installation package.
 
 ```bash
-wget https://dist.thingsboard.io/thingsboard-3.0.1pe.deb
+wget https://dist.thingsboard.io/thingsboard-{{ site.release.pe_ver }}.deb
 ```
 {: .copy-code}
 
 Install ThingsBoard as a service
 
 ```bash
-sudo dpkg -i thingsboard-3.0.1pe.deb
+sudo dpkg -i thingsboard-{{ site.release.pe_ver }}.deb
 ```
 {: .copy-code}
 
@@ -83,13 +83,14 @@ Hybrid <br/>PostgreSQL+TimescaleDB<br/><small>(for TimescaleDB professionals)</s
 {% include templates/install/install-queue.md %}
 
 {% capture contenttogglespecqueue %}
-In Memory %,%inmemory%,%templates/install/queue-in-memory.md%br%
-Kafka%,%kafka%,%templates/install/ubuntu-queue-kafka.md%br%
-Kafka <small>(in docker container)</small>%,%kafka-in-docker%,%templates/install/ubuntu-queue-kafka-in-docker.md%br%
-AWS SQS %,%aws-sqs%,%templates/install/ubuntu-queue-aws-sqs.md%br%
-Google Pub/Sub %,%pubsub%,%templates/install/ubuntu-queue-pub-sub.md%br%
-Azure Service Bus %,%service-bus%,%templates/install/ubuntu-queue-service-bus.md%br%
-RabbitMQ %,%rabbitmq%,%templates/install/ubuntu-queue-rabbitmq.md{% endcapture %}
+In Memory <small>(built-in and default)</small>%,%inmemory%,%templates/install/queue-in-memory.md%br%
+Kafka <small>(recommended for on-prem, production installations)</small>%,%kafka%,%templates/install/ubuntu-queue-kafka.md%br%
+Kafka in docker container <small>(recommended for on-prem, production installations)</small>%,%kafka-in-docker%,%templates/install/ubuntu-queue-kafka-in-docker.md%br%
+AWS SQS <small>(managed service from AWS)</small>%,%aws-sqs%,%templates/install/ubuntu-queue-aws-sqs.md%br%
+Google Pub/Sub <small>(managed service from Google)</small>%,%pubsub%,%templates/install/ubuntu-queue-pub-sub.md%br%
+Azure Service Bus <small>(managed service from Azure)</small>%,%service-bus%,%templates/install/ubuntu-queue-service-bus.md%br%
+RabbitMQ <small>(for small on-prem installations)</small>%,%rabbitmq%,%templates/install/ubuntu-queue-rabbitmq.md%br%
+Confluent Cloud <small>(Event Streaming Platform based on Kafka)</small>%,%confluent-cloud%,%templates/install/ubuntu-queue-confluent-cloud.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="ubuntuThingsboardQueue" toggle-spec=contenttogglespecqueue %} 
 
@@ -114,7 +115,7 @@ Please allow up to 90 seconds for the Web UI to start. This is applicable only f
 Download installation package for the [Reports Server](/docs/user-guide/reporting/#reports-server) component:
 
 ```bash
-wget https://dist.thingsboard.io/tb-web-report-3.0.1pe.deb
+wget https://dist.thingsboard.io/tb-web-report-{{ site.release.pe_ver }}.deb
 ```
 {: .copy-code}
 
@@ -125,7 +126,7 @@ sudo apt install -yq gconf-service libasound2 libatk1.0-0 libc6 libcairo2 libcup
      libexpat1 libfontconfig1 libgcc1 libgconf-2-4 libgdk-pixbuf2.0-0 libglib2.0-0 libgtk-3-0 libnspr4 \
      libpango-1.0-0 libpangocairo-1.0-0 libstdc++6 libx11-6 libx11-xcb1 libxcb1 libxcomposite1 \
      libxcursor1 libxdamage1 libxext6 libxfixes3 libxi6 libxrandr2 libxrender1 libxss1 libxtst6 \
-     ca-certificates fonts-liberation libappindicator1 libnss3 lsb-release xdg-utils unzip wget
+     ca-certificates fonts-liberation libappindicator1 libnss3 lsb-release xdg-utils unzip wget libgbm-dev
 ```
 {: .copy-code}
 
@@ -154,7 +155,7 @@ rm -rf ~/noto
 Install and start Web Report service:
 
 ```bash
-sudo dpkg -i tb-web-report-3.0.1pe.deb
+sudo dpkg -i tb-web-report-{{ site.release.pe_ver }}.deb
 sudo service tb-web-report start
 ```
 

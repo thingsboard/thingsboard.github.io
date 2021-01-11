@@ -1,288 +1,368 @@
-{  
-   "title":"ESP8266 DHT22: Temperature & Humidity Demo Dashboard",
-   "configuration":{  
-      "description":"Demo dashboard for sample applications that upload temperature and humidity received from ESP8266 with DHT22 sensor",
-      "widgets":[  
-         {  
-            "isSystemType":true,
-            "bundleAlias":"digital_gauges",
-            "typeAlias":"digital_thermometer",
-            "type":"latest",
-            "title":"Digital thermometer",
-            "sizeX":4,
-            "sizeY":5,
-            "row":0,
-            "col":0,
-            "config":{  
-               "datasources":[  
-                  {  
-                     "type":"device",
-                     "deviceAliasId":"1",
-                     "dataKeys":[  
-                        {  
-                           "name":"temperature",
-                           "type":"timeseries",
-                           "label":"temperature",
-                           "color":"#ff6f00",
-                           "settings":{  
-
-                           },
-                           "_hash":0.12513745304517898
+{
+   "title": "ESP8266 DHT22: Temperature & Humidity Demo Dashboard",
+   "configuration": {
+      "description": "Demo dashboard for sample applications that upload temperature and humidity received from ESP8266 with DHT22 sensor",
+      "widgets": {
+         "77bcc7bd-4aeb-17e2-7d83-3dd498374cc3": {
+            "isSystemType": true,
+            "bundleAlias": "digital_gauges",
+            "typeAlias": "digital_thermometer",
+            "type": "latest",
+            "title": "Digital thermometer",
+            "sizeX": 4,
+            "sizeY": 5,
+            "row": 0,
+            "col": 0,
+            "config": {
+               "datasources": [
+                  {
+                     "type": "entity",
+                     "dataKeys": [
+                        {
+                           "name": "temperature",
+                           "type": "timeseries",
+                           "label": "temperature",
+                           "color": "#ff6f00",
+                           "settings": {},
+                           "_hash": 0.12513745304517898
                         }
                      ],
-                     "name":"ESP8266 Demo Device"
+                     "name": "ESP8266 Demo Device",
+                     "entityAliasId": "6d8aee02-673d-a2b6-bc0e-3b866fae07dc"
                   }
                ],
-               "timewindow":{  
-                  "realtime":{  
-                     "timewindowMs":60000
+               "timewindow": {
+                  "realtime": {
+                     "timewindowMs": 60000
                   }
                },
-               "showTitle":false,
-               "backgroundColor":"#000000",
-               "color":"rgba(0, 0, 0, 0.87)",
-               "padding":"0px",
-               "settings":{  
-                  "maxValue":125,
-                  "donutStartAngle":90,
-                  "showValue":true,
-                  "showMinMax":true,
-                  "gaugeWidthScale":0.75,
-                  "levelColors":[  
+               "showTitle": false,
+               "backgroundColor": "#000000",
+               "color": "rgba(0, 0, 0, 0.87)",
+               "padding": "0px",
+               "settings": {
+                  "maxValue": 125,
+                  "donutStartAngle": 90,
+                  "showValue": true,
+                  "showMinMax": true,
+                  "gaugeWidthScale": 0.75,
+                  "levelColors": [
                      "#ff6f00",
                      "#ff6f00"
                   ],
-                  "refreshAnimationType":"<>",
-                  "refreshAnimationTime":700,
-                  "startAnimationType":"<>",
-                  "startAnimationTime":700,
-                  "titleFont":{  
-                     "family":"RobotoDraft",
-                     "size":12,
-                     "style":"normal",
-                     "weight":"500"
+                  "refreshAnimationType": "<>",
+                  "refreshAnimationTime": 700,
+                  "startAnimationType": "<>",
+                  "startAnimationTime": 700,
+                  "titleFont": {
+                     "family": "RobotoDraft",
+                     "size": 12,
+                     "style": "normal",
+                     "weight": "500"
                   },
-                  "labelFont":{  
-                     "family":"RobotoDraft",
-                     "size":8,
-                     "style":"normal",
-                     "weight":"500"
+                  "labelFont": {
+                     "family": "RobotoDraft",
+                     "size": 8,
+                     "style": "normal",
+                     "weight": "500"
                   },
-                  "valueFont":{  
-                     "family":"Segment7Standard",
-                     "style":"normal",
-                     "weight":"500",
-                     "size":14
+                  "valueFont": {
+                     "family": "Segment7Standard",
+                     "style": "normal",
+                     "weight": "500",
+                     "size": 14
                   },
-                  "minMaxFont":{  
-                     "family":"Segment7Standard",
-                     "size":8,
-                     "style":"normal",
-                     "weight":"500"
+                  "minMaxFont": {
+                     "family": "Segment7Standard",
+                     "size": 8,
+                     "style": "normal",
+                     "weight": "500"
                   },
-                  "dashThickness":0.85,
-                  "decimals":1,
-                  "gaugeColor":"#333333",
-                  "neonGlowBrightness":35,
-                  "gaugeType":"verticalBar",
-                  "minValue":-40,
-                  "showUnitTitle":true,
-                  "unitTitle":"Temperature °C",
-                  "defaultColor":"#ff6f00"
+                  "dashThickness": 0.85,
+                  "decimals": 1,
+                  "gaugeColor": "#333333",
+                  "neonGlowBrightness": 35,
+                  "gaugeType": "verticalBar",
+                  "minValue": -40,
+                  "showUnitTitle": true,
+                  "unitTitle": "Temperature °C",
+                  "defaultColor": "#ff6f00"
                },
-               "title":"Digital thermometer"
-            }
+               "title": "Digital thermometer"
+            },
+            "id": "77bcc7bd-4aeb-17e2-7d83-3dd498374cc3"
          },
-         {  
-            "isSystemType":true,
-            "bundleAlias":"charts",
-            "typeAlias":"timeseries",
-            "type":"timeseries",
-            "title":"Timeseries - Chart.js",
-            "sizeX":14,
-            "sizeY":5,
-            "row":0,
-            "col":4,
-            "config":{  
-               "datasources":[  
-                  {  
-                     "type":"device",
-                     "deviceAliasId":"1",
-                     "dataKeys":[  
-                        {  
-                           "name":"temperature",
-                           "label":"Temperature, °C",
-                           "type":"timeseries",
-                           "color":"#ff6f00",
-                           "settings":{  
-                              "showLines":true,
-                              "fillLines":false,
-                              "showPoints":false
+         "305d7fab-a02e-ad9d-fa32-28355eef6460": {
+            "isSystemType": true,
+            "bundleAlias": "charts",
+            "typeAlias": "basic_timeseries",
+            "type": "timeseries",
+            "title": "Timeseries - Chart.js",
+            "sizeX": 14,
+            "sizeY": 5,
+            "row": 0,
+            "col": 4,
+            "config": {
+               "datasources": [
+                  {
+                     "type": "entity",
+                     "dataKeys": [
+                        {
+                           "name": "temperature",
+                           "label": "Temperature, °C",
+                           "type": "timeseries",
+                           "color": "#ff6f00",
+                           "settings": {
+                              "showLines": true,
+                              "fillLines": false,
+                              "showPoints": false
                            },
-                           "_hash":0.7438679421517123
+                           "_hash": 0.7438679421517123
                         }
                      ],
-                     "name":"ESP8266 Demo Device"
+                     "name": "ESP8266 Demo Device",
+                     "entityAliasId": "6d8aee02-673d-a2b6-bc0e-3b866fae07dc"
                   }
                ],
-               "timewindow":{  
-                  "realtime":{  
-                     "timewindowMs":120000
+               "timewindow": {
+                  "realtime": {
+                     "timewindowMs": 120000
                   }
                },
-               "showTitle":true,
-               "backgroundColor":"#fff",
-               "color":"rgba(0, 0, 0, 0.87)",
-               "padding":"8px",
-               "settings":{  
-
-               },
-               "title":"Temperature"
-            }
+               "showTitle": true,
+               "backgroundColor": "#fff",
+               "color": "rgba(0, 0, 0, 0.87)",
+               "padding": "8px",
+               "settings": {},
+               "title": "Temperature"
+            },
+            "id": "305d7fab-a02e-ad9d-fa32-28355eef6460"
          },
-         {  
-            "isSystemType":true,
-            "bundleAlias":"digital_gauges",
-            "typeAlias":"digital_vertical_bar",
-            "type":"latest",
-            "title":"Digital vertical bar",
-            "sizeX":4,
-            "sizeY":5,
-            "row":5,
-            "col":0,
-            "config":{  
-               "datasources":[  
-                  {  
-                     "type":"device",
-                     "deviceAliasId":"1",
-                     "dataKeys":[  
-                        {  
-                           "name":"humidity",
-                           "label":"humidity",
-                           "type":"timeseries",
-                           "color":"#2196f3",
-                           "settings":{  
-
-                           },
-                           "_hash":0.3269453210790785
+         "94630db6-2915-b98a-ff30-5de41973dd26": {
+            "isSystemType": true,
+            "bundleAlias": "digital_gauges",
+            "typeAlias": "digital_vertical_bar",
+            "type": "latest",
+            "title": "Digital vertical bar",
+            "sizeX": 4,
+            "sizeY": 5,
+            "row": 5,
+            "col": 0,
+            "config": {
+               "datasources": [
+                  {
+                     "type": "entity",
+                     "dataKeys": [
+                        {
+                           "name": "humidity",
+                           "label": "humidity",
+                           "type": "timeseries",
+                           "color": "#2196f3",
+                           "settings": {},
+                           "_hash": 0.3269453210790785
                         }
                      ],
-                     "name":"ESP8266 Demo Device"
+                     "name": "ESP8266 Demo Device",
+                     "entityAliasId": "6d8aee02-673d-a2b6-bc0e-3b866fae07dc"
                   }
                ],
-               "timewindow":{  
-                  "realtime":{  
-                     "timewindowMs":60000
+               "timewindow": {
+                  "realtime": {
+                     "timewindowMs": 60000
                   }
                },
-               "showTitle":false,
-               "backgroundColor":"#000000",
-               "color":"rgba(0, 0, 0, 0.87)",
-               "padding":"0px",
-               "settings":{  
-                  "maxValue":100,
-                  "donutStartAngle":90,
-                  "showValue":true,
-                  "showMinMax":true,
-                  "gaugeWidthScale":0.75,
-                  "levelColors":[  
+               "showTitle": false,
+               "backgroundColor": "#000000",
+               "color": "rgba(0, 0, 0, 0.87)",
+               "padding": "0px",
+               "settings": {
+                  "maxValue": 100,
+                  "donutStartAngle": 90,
+                  "showValue": true,
+                  "showMinMax": true,
+                  "gaugeWidthScale": 0.75,
+                  "levelColors": [
                      "#3d5afe",
                      "#0288d1"
                   ],
-                  "refreshAnimationType":"<>",
-                  "refreshAnimationTime":700,
-                  "startAnimationType":"<>",
-                  "startAnimationTime":700,
-                  "titleFont":{  
-                     "family":"RobotoDraft",
-                     "size":12,
-                     "style":"normal",
-                     "weight":"500"
+                  "refreshAnimationType": "<>",
+                  "refreshAnimationTime": 700,
+                  "startAnimationType": "<>",
+                  "startAnimationTime": 700,
+                  "titleFont": {
+                     "family": "RobotoDraft",
+                     "size": 12,
+                     "style": "normal",
+                     "weight": "500"
                   },
-                  "labelFont":{  
-                     "family":"RobotoDraft",
-                     "size":8,
-                     "style":"normal",
-                     "weight":"500"
+                  "labelFont": {
+                     "family": "RobotoDraft",
+                     "size": 8,
+                     "style": "normal",
+                     "weight": "500"
                   },
-                  "valueFont":{  
-                     "family":"Segment7Standard",
-                     "style":"normal",
-                     "weight":"500",
-                     "size":14
+                  "valueFont": {
+                     "family": "Segment7Standard",
+                     "style": "normal",
+                     "weight": "500",
+                     "size": 14
                   },
-                  "minMaxFont":{  
-                     "family":"Segment7Standard",
-                     "size":8,
-                     "style":"normal",
-                     "weight":"normal"
+                  "minMaxFont": {
+                     "family": "Segment7Standard",
+                     "size": 8,
+                     "style": "normal",
+                     "weight": "normal"
                   },
-                  "neonGlowBrightness":20,
-                  "decimals":0,
-                  "showUnitTitle":true,
-                  "gaugeColor":"#151c3d",
-                  "gaugeType":"verticalBar",
-                  "showTitle":false,
-                  "minValue":0,
-                  "dashThickness":0.85,
-                  "unitTitle":"Humidity %"
+                  "neonGlowBrightness": 20,
+                  "decimals": 0,
+                  "showUnitTitle": true,
+                  "gaugeColor": "#151c3d",
+                  "gaugeType": "verticalBar",
+                  "showTitle": false,
+                  "minValue": 0,
+                  "dashThickness": 0.85,
+                  "unitTitle": "Humidity %"
                },
-               "title":"Digital vertical bar"
-            }
+               "title": "Digital vertical bar"
+            },
+            "id": "94630db6-2915-b98a-ff30-5de41973dd26"
          },
-         {  
-            "isSystemType":true,
-            "bundleAlias":"charts",
-            "typeAlias":"timeseries",
-            "type":"timeseries",
-            "title":"Timeseries - Chart.js",
-            "sizeX":14,
-            "sizeY":5,
-            "row":5,
-            "col":4,
-            "config":{  
-               "datasources":[  
-                  {  
-                     "type":"device",
-                     "deviceAliasId":"1",
-                     "dataKeys":[  
-                        {  
-                           "name":"humidity",
-                           "label":"Humidity, %",
-                           "type":"timeseries",
-                           "color":"#2196f3",
-                           "settings":{  
-                              "showLines":true,
-                              "fillLines":false,
-                              "showPoints":false
+         "aaf464d7-6b7d-b838-a51a-98913476c936": {
+            "isSystemType": true,
+            "bundleAlias": "charts",
+            "typeAlias": "basic_timeseries",
+            "type": "timeseries",
+            "title": "Timeseries - Chart.js",
+            "sizeX": 14,
+            "sizeY": 5,
+            "row": 5,
+            "col": 4,
+            "config": {
+               "datasources": [
+                  {
+                     "type": "entity",
+                     "dataKeys": [
+                        {
+                           "name": "humidity",
+                           "label": "Humidity, %",
+                           "type": "timeseries",
+                           "color": "#2196f3",
+                           "settings": {
+                              "showLines": true,
+                              "fillLines": false,
+                              "showPoints": false
                            },
-                           "_hash":0.37845111848900936
+                           "_hash": 0.37845111848900936
                         }
                      ],
-                     "name":"ESP8266 Demo Device"
+                     "name": "ESP8266 Demo Device",
+                     "entityAliasId": "6d8aee02-673d-a2b6-bc0e-3b866fae07dc"
                   }
                ],
-               "timewindow":{  
-                  "realtime":{  
-                     "timewindowMs":120000
+               "timewindow": {
+                  "realtime": {
+                     "timewindowMs": 120000
                   }
                },
-               "showTitle":true,
-               "backgroundColor":"#fff",
-               "color":"rgba(0, 0, 0, 0.87)",
-               "padding":"8px",
-               "settings":{  
-
-               },
-               "title":"Humidity Level"
+               "showTitle": true,
+               "backgroundColor": "#fff",
+               "color": "rgba(0, 0, 0, 0.87)",
+               "padding": "8px",
+               "settings": {},
+               "title": "Humidity Level"
+            },
+            "id": "aaf464d7-6b7d-b838-a51a-98913476c936"
+         }
+      },
+      "states": {
+         "default": {
+            "name": "ESP8266 DHT22: Temperature & Humidity Demo Dashboard",
+            "root": true,
+            "layouts": {
+               "main": {
+                  "widgets": {
+                     "77bcc7bd-4aeb-17e2-7d83-3dd498374cc3": {
+                        "sizeX": 4,
+                        "sizeY": 5,
+                        "row": 0,
+                        "col": 0
+                     },
+                     "305d7fab-a02e-ad9d-fa32-28355eef6460": {
+                        "sizeX": 14,
+                        "sizeY": 5,
+                        "row": 0,
+                        "col": 4
+                     },
+                     "94630db6-2915-b98a-ff30-5de41973dd26": {
+                        "sizeX": 4,
+                        "sizeY": 5,
+                        "row": 5,
+                        "col": 0
+                     },
+                     "aaf464d7-6b7d-b838-a51a-98913476c936": {
+                        "sizeX": 14,
+                        "sizeY": 5,
+                        "row": 5,
+                        "col": 4
+                     }
+                  },
+                  "gridSettings": {
+                     "backgroundColor": "#eeeeee",
+                     "color": "rgba(0,0,0,0.870588)",
+                     "columns": 24,
+                     "margin": 10,
+                     "backgroundSizeMode": "100%"
+                  }
+               }
             }
          }
-      ],
-      "deviceAliases":{  
-         "1":{  
-            "alias":"ESP8266 Demo Device",
-            "deviceId":"f924db20-d0e1-11e6-ac30-000000000000"
+      },
+      "entityAliases": {
+         "6d8aee02-673d-a2b6-bc0e-3b866fae07dc": {
+            "id": "6d8aee02-673d-a2b6-bc0e-3b866fae07dc",
+            "alias": "ESP8266 Demo Device",
+            "filter": {
+               "type": "entityName",
+               "resolveMultiple": false,
+               "entityType": "DEVICE",
+               "entityNameFilter": "ESP8266 Demo Device"
+            }
          }
+      },
+      "filters": {},
+      "timewindow": {
+         "displayValue": "",
+         "hideInterval": false,
+         "hideAggregation": false,
+         "hideAggInterval": false,
+         "selectedTab": 0,
+         "realtime": {
+            "interval": 1000,
+            "timewindowMs": 60000
+         },
+         "history": {
+            "historyType": 0,
+            "interval": 1000,
+            "timewindowMs": 60000,
+            "fixedTimewindow": {
+               "startTimeMs": 1606209386673,
+               "endTimeMs": 1606295786673
+            }
+         },
+         "aggregation": {
+            "type": "AVG",
+            "limit": 25000
+         }
+      },
+      "settings": {
+         "stateControllerId": "entity",
+         "showTitle": false,
+         "showDashboardsSelect": true,
+         "showEntitiesSelect": true,
+         "showDashboardTimewindow": true,
+         "showDashboardExport": true,
+         "toolbarAlwaysOpen": true
       }
-   }
+   },
+   "name": "ESP8266 DHT22: Temperature & Humidity Demo Dashboard"
 }

@@ -50,14 +50,14 @@ sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.
 Download installation package.
 
 ```bash
-wget https://dist.thingsboard.io/thingsboard-3.0.1pe.rpm
+wget https://dist.thingsboard.io/thingsboard-{{ site.release.pe_ver }}.rpm
 ```
 {: .copy-code}
 
 Install ThingsBoard as a service
 
 ```bash
-sudo rpm -Uvh thingsboard-3.0.1pe.rpm
+sudo rpm -Uvh thingsboard-{{ site.release.pe_ver }}.rpm
 ```
 {: .copy-code}
 
@@ -108,12 +108,13 @@ Hybrid <br/>PostgreSQL+TimescaleDB<br/><small>(for TimescaleDB professionals)</s
 {% include templates/install/install-queue.md %}
 
 {% capture contenttogglespecqueue %}
-In Memory %,%inmemory%,%templates/install/queue-in-memory.md%br%
-Kafka %,%kafka%,%templates/install/rhel-queue-kafka.md%br%
-AWS SQS %,%aws-sqs%,%templates/install/ubuntu-queue-aws-sqs.md%br%
-Google Pub/Sub %,%pubsub%,%templates/install/ubuntu-queue-pub-sub.md%br%
-Azure Service Bus %,%service-bus%,%templates/install/ubuntu-queue-service-bus.md%br%
-RabbitMQ %,%rabbitmq%,%templates/install/rhel-queue-rabbitmq.md{% endcapture %}
+In Memory <small>(built-in and default)</small>%,%inmemory%,%templates/install/queue-in-memory.md%br%
+Kafka <small>(recommended for on-prem, production installations)</small>%,%kafka%,%templates/install/rhel-queue-kafka.md%br%
+AWS SQS <small>(managed service from AWS)</small>%,%aws-sqs%,%templates/install/ubuntu-queue-aws-sqs.md%br%
+Google Pub/Sub <small>(managed service from Google)</small>%,%pubsub%,%templates/install/ubuntu-queue-pub-sub.md%br%
+Azure Service Bus <small>(managed service from Azure)</small>%,%service-bus%,%templates/install/ubuntu-queue-service-bus.md%br%
+RabbitMQ <small>(for small on-prem installations)</small>%,%rabbitmq%,%templates/install/rhel-queue-rabbitmq.md%br%
+Confluent Cloud <small>(Event Streaming Platform based on Kafka)</small>%,%confluent-cloud%,%templates/install/ubuntu-queue-confluent-cloud.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="ubuntuThingsboardQueue" toggle-spec=contenttogglespecqueue %} 
 
@@ -147,7 +148,7 @@ Please allow up to 90 seconds for the Web UI to start. This is applicable only f
 Download installation package for the [Reports Server](/docs/user-guide/reporting/#reports-server) component:
 
 ```bash
-wget https://dist.thingsboard.io/tb-web-report-3.0.1pe.rpm
+wget https://dist.thingsboard.io/tb-web-report-{{ site.release.pe_ver }}.rpm
 ```
 {: .copy-code}
 
@@ -186,7 +187,7 @@ rm -rf ~/noto
 Install and start Web Report service:
 
 ```bash
-sudo rpm -Uvh tb-web-report-3.0.1pe.rpm
+sudo rpm -Uvh tb-web-report-{{ site.release.pe_ver }}.rpm
 sudo service tb-web-report start
 ```
 

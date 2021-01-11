@@ -103,7 +103,7 @@ function px(n){
 
 var tb = (function () {
 	var HEADER_HEIGHT;
-	var OPEN_NAV_HEIGHT = 224;
+	var OPEN_NAV_HEIGHT = 240;
 	var html, header, navs, navItems, quickstartButton, hero, encyclopedia, footer, headlineWrapper;
 
 	$(document).ready(function () {
@@ -371,7 +371,6 @@ var tb = (function () {
     function openFaqNode(nodeId) {
         tb.openAccordionItem(nodeId);
         document.getElementById(nodeId).scrollIntoView();
-        debugger;
         reportFaqNode(nodeId);
     }
 

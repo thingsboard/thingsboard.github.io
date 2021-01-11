@@ -27,7 +27,7 @@ To run ThingsBoard and Cassandra on a single machine you will need at least 8Gb 
 Download and run the installation package.
 
 ```bash
-https://dist.thingsboard.io/thingsboard-windows-setup-3.0.1pe.exe
+https://dist.thingsboard.io/thingsboard-windows-setup-{{ site.release.pe_ver }}.exe
 ```
 {: .copy-code}
 
@@ -79,12 +79,13 @@ Hybrid <br/>PostgreSQL+TimescaleDB<br/><small>(for TimescaleDB professionals)</s
 {% include templates/install/install-queue.md %}
 
 {% capture contenttogglespecqueue %}
-In Memory %,%inmemory%,%templates/install/queue-in-memory.md%br%
-Kafka %,%kafka%,%templates/install/windows-queue-kafka.md%br%
-AWS SQS %,%aws-sqs%,%templates/install/windows-queue-aws-sqs.md%br%
-Google Pub/Sub %,%pubsub%,%templates/install/windows-queue-pub-sub.md%br%
-Azure Service Bus %,%service-bus%,%templates/install/windows-queue-service-bus.md%br%
-RabbitMQ %,%rabbitmq%,%templates/install/windows-queue-rabbitmq.md{% endcapture %}
+In Memory <small>(built-in and default)</small>%,%inmemory%,%templates/install/queue-in-memory.md%br%
+Kafka <small>(recommended for on-prem, production installations)</small>%,%kafka%,%templates/install/windows-queue-kafka.md%br%
+AWS SQS <small>(managed service from AWS)</small>%,%aws-sqs%,%templates/install/windows-queue-aws-sqs.md%br%
+Google Pub/Sub <small>(managed service from Google)</small>%,%pubsub%,%templates/install/windows-queue-pub-sub.md%br%
+Azure Service Bus <small>(managed service from Azure)</small>%,%service-bus%,%templates/install/windows-queue-service-bus.md%br%
+RabbitMQ <small>(for small on-prem installations)</small>%,%rabbitmq%,%templates/install/windows-queue-rabbitmq.md%br%
+Confluent Cloud <small>(Event Streaming Platform based on Kafka)</small>%,%confluent-cloud%,%templates/install/windows-queue-confluent-cloud.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="windowsThingsboardQueue" toggle-spec=contenttogglespecqueue %} 
 
@@ -124,7 +125,7 @@ Please allow up to 90 seconds for the Web UI to start. This is applicable only f
 Download and extract the installation package.
 
 ```bash
-https://dist.thingsboard.io/tb-web-report-windows-3.0.1pe.zip
+https://dist.thingsboard.io/tb-web-report-windows-{{ site.release.pe_ver }}.zip
 ```
 {: .copy-code}
 

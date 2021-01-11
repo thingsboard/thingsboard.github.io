@@ -1,16 +1,30 @@
-Execute the following command to run this docker directly:
+Execute the following command to pull the image:
+
+```bash
+docker pull thingsboard/tb-pe-mqtt-integration:{{ site.release.pe_full_ver }}
+```
+{: .copy-code}
+
+Execute the following command to create volume for the integration logs (799 is the user id of ThingsBoard non-root docker user):
+
+```bash
+mkdir -p ~/.tb-pe-mqtt-integration-logs && sudo chown -R 799:799 ~/.tb-pe-mqtt-integration-logs
+```
+{: .copy-code}
+
+Execute the following command to run the integration:
 
 ```bash
 docker run -it -v ~/.tb-pe-mqtt-integration-logs:/var/log/tb-mqtt-integration \
--e "PRC_HOST=cloud.thingsboard.io" -e "RPC_PORT=9090" \
--e "INTEGRATION_ROUTING_KEY=YOUR_ROUTING_KEY"  -e "INTEGRATION_SECRET=YOUR_SECRET " \
---name my-tb-pe-mqtt-integration --restart always thingsboard/tb-pe-mqtt-integration:3.0.1PE
+-e "PRC_HOST=thingsboard.cloud" -e "RPC_PORT=9090" \
+-e "INTEGRATION_ROUTING_KEY=YOUR_ROUTING_KEY"  -e "INTEGRATION_SECRET=YOUR_SECRET" \
+--name my-tb-pe-mqtt-integration --restart always thingsboard/tb-pe-mqtt-integration:{{ site.release.pe_full_ver }}
 ```
 {: .copy-code}
 
 Where: 
     
-- `cloud.thingsboard.io` - is the host name of your ThingsBoard PE instance;
+- `thingsboard.cloud` - is the host name of your ThingsBoard PE instance;
 - `9090` - is the port of your ThingsBoard PE instance. It is configured in thingsboard.yml using INTEGRATIONS_RPC_PORT env variable;    
 - `YOUR_ROUTING_KEY` - placeholder for your integration routing key obtained on [Step 3](/docs/user-guide/integrations/remote-integrations/#step-3-save-remote-integration-credentials);
 - `YOUR_SECRET` - placeholder for your integration secret obtained on [Step 3](/docs/user-guide/integrations/remote-integrations/#step-3-save-remote-integration-credentials);
@@ -19,7 +33,7 @@ Where:
 - `-v ~/.tb-pe-mqtt-integration-logs:/var/log/tb-mqtt-integration`   - mounts the host's dir `~/.tb-pe-mqtt-integration-logs` to ThingsBoard logs directory;
 - `--name tb-pe-mqtt-integration`             - friendly local name of this machine;
 - `--restart always`        - automatically start ThingsBoard Integration in case of system reboot and restart in case of failure.;
-- `thingsboard/tb-pe-mqtt-integration:3.0.1PE`          - docker image.
+- `thingsboard/tb-pe-mqtt-integration:{{ site.release.pe_full_ver }}`          - docker image.
 
 After executing this command you can open logs which are located here `~/.tb-pe-mqtt-integration-logs`. 
 You should see some INFO log messages with your latest Integration configuration that arrived from the server.

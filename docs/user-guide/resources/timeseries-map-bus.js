@@ -1,7 +1,7 @@
 var mqtt = require('mqtt');
 const ACCESS_TOKEN = process.argv[2];
 
-var client  = mqtt.connect('mqtt://cloud.thingsboard.io',{
+var client  = mqtt.connect('mqtt://thingsboard.cloud',{
     username: ACCESS_TOKEN
 });
 

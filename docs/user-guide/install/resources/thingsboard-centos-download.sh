@@ -1,1 +1,1 @@
-wget https://github.com/thingsboard/thingsboard/releases/download/v3.0/thingsboard-3.0.rpm
+wget https://github.com/thingsboard/thingsboard/releases/download/{{ site.release.ce_tag }}/thingsboard-{{ site.release.ce_ver }}.rpm

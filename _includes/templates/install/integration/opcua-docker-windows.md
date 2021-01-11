@@ -11,15 +11,15 @@ Execute the following command to run this docker directly:
 
 ```bash
 docker run -it -v tb-pe-opc-ua-integration-logs:/var/log/tb-opc-ua-integration `
--e "PRC_HOST=cloud.thingsboard.io" -e "RPC_PORT=9090" `
+-e "PRC_HOST=thingsboard.cloud" -e "RPC_PORT=9090" `
 -e "INTEGRATION_ROUTING_KEY=YOUR_ROUTING_KEY"  -e "INTEGRATION_SECRET=YOUR_SECRET" `
---name my-tb-pe-opc-ua-integration --restart always thingsboard/tb-pe-opc-ua-integration:3.0.1PE
+--name my-tb-pe-opc-ua-integration --restart always thingsboard/tb-pe-opc-ua-integration:{{ site.release.pe_full_ver }}
 ```
 {: .copy-code}
 
 Where: 
     
-- `cloud.thingsboard.io` - is the host name of your ThingsBoard PE instance;
+- `thingsboard.cloud` - is the host name of your ThingsBoard PE instance;
 - `9090` - is the port of your ThingsBoard PE instance. It is configured in thingsboard.yml using INTEGRATIONS_RPC_PORT env variable;    
 - `YOUR_ROUTING_KEY` - placeholder for your integration routing key obtained on [Step 3](/docs/user-guide/integrations/remote-integrations/#step-3-save-remote-integration-credentials);
 - `YOUR_SECRET` - placeholder for your integration secret obtained on [Step 3](/docs/user-guide/integrations/remote-integrations/#step-3-save-remote-integration-credentials);
@@ -28,7 +28,7 @@ Where:
 - `-v tb-pe-opc-ua-integration-logs:/var/log/tb-opc-ua-integration`   - mounts the host's dir `~/.tb-pe-opc-ua-integration-logs` to ThingsBoard logs directory;
 - `--name tb-pe-opc-ua-integration`             - friendly local name of this machine;
 - `--restart always`        - automatically start ThingsBoard Integration in case of system reboot and restart in case of failure.;
-- `thingsboard/tb-pe-opc-ua-integration:3.0.1PE`          - docker image.
+- `thingsboard/tb-pe-opc-ua-integration:{{ site.release.pe_full_ver }}`          - docker image.
 
 After executing this command you can open logs which are located here `~/.tb-pe-opc-ua-integration-logs`. 
 You should see some INFO log messages with your latest Integration configuration that arrived from the server.

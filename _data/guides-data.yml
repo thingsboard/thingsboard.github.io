@@ -108,10 +108,22 @@
       keywords: install cluster kubernetes k8s aws cloud
       video: false
       pe: false
+    - path: /docs/user-guide/install/cluster/aws-eks-cluster-setup
+      title: Cluster setup with Kubernetes on AWS EKS cloud infrstructure
+      subtitle: Learn how to setup ThingsBoard cluster with Kubernetes on AWS cloud infrstructure.
+      keywords: install cluster kubernetes k8s aws cloud
+      video: false
+      pe: false
     - path: /docs/user-guide/install/cluster/aws-self-hosted-setup
       title: Self-hosted setup using AWS EC2 instance
       subtitle: Learn how to setup ThingsBoard on AWS EC2 instance.
       keywords: install ec2 aws cloud self-hosted
+      video: false
+      pe: false
+    - path: /docs/user-guide/install/cluster/gcp-self-hosted-setup
+      title: Self-hosted setup using GCP VM instance
+      subtitle: Learn how to setup ThingsBoard on GCP VM instance.
+      keywords: install gcp compute-engine cloud self-hosted
       video: false
       pe: false
     - path: /docs/user-guide/install/cluster/openshift-cluster-setup
@@ -220,6 +232,12 @@
       keywords:
       pe: true
       video: true
+    - path: /docs/user-guide/integrations/azure-iot-hub/
+      title: Connect devices through Azure IoT Hub
+      subtitle: Learn how to connect to Azure IoT Hub and transform the incoming messages using ThingsBoard.
+      keywords:
+      pe: true
+      video: false
     - path: /docs/user-guide/integrations/tcp/
       title: Devices uses TCP protocol
       subtitle: How to connect to ThingsBoard TCP-server, transform the incoming messages and generate the downlinks using ThingsBoard.

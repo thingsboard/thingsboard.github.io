@@ -2,30 +2,33 @@
 layout: pricing
 title: Support plans
 description: ThingsBoard professional support plans for IoT projects, cloud infrastructure support
+defaultActivePricingSection: thingsboard-pe
 
 ---
 
-<div class="pricing-header">
-   <div class="pricing-hero">
-      <div class="container">
+<div class="container">
+    <div class="pricing-header">
+       <div class="pricing-hero">
         <div class="pricing-hero-content">
-            <h1><span class="a-full-green">ThingsBoard support options</span></h1>
+            <h1>ThingsBoard support options</h1>
         </div>
-      </div>
-   </div>
-   <nav id="inner-navigation" class="inner-navigation">
-     <ul id="menu-pricing-navigation-1" class="menu">
-        <li id="menu-item-thingsboard-ce" class="menu-item">
-            <a href="javascript:void(0);" onClick="activatePricingSection('thingsboard-ce')">Community support</a>
-        </li>
-        <li id="menu-item-thingsboard-pe" class="menu-item active">
-            <a href="javascript:void(0);" onClick="activatePricingSection('thingsboard-pe')">Professional support</a>
-        </li>
-     </ul>
-   </nav> 
+       </div>
+       <nav id="inner-navigation" class="inner-navigation">
+         <ul id="menu-pricing-navigation-1" class="menu">
+            <li id="menu-item-thingsboard-ce" class="menu-item tb-logo">
+                <a href="javascript:void(0);" onClick="activatePricingSection('thingsboard-ce')">Community support</a>
+            </li>
+            <li id="menu-item-thingsboard-pe" class="menu-item tb-logo active">
+                <a href="javascript:void(0);" onClick="activatePricingSection('thingsboard-pe')">Professional support</a>
+            </li>
+         </ul>
+       </nav> 
+    </div>
+    <div class="pricing-header-divider">
+    </div>
 </div>
 
-<section id="thingsboard-ce" class="pricing-content" style="display: none;">
+<div id="thingsboard-ce" class="pricing-content" style="display: none;">
     <div class="pricing-div">
         <div class="container">
             <div class="pricing-section pricing-community active" id="community">
@@ -43,9 +46,11 @@ description: ThingsBoard professional support plans for IoT projects, cloud infr
                                 </p>
                                 <p>Customer may also rely on answers from ThingsBoard <a href="https://github.com/thingsboard/thingsboard/issues" target="blank">community on GitHub</a> (issues page), send their queries to <a href="https://groups.google.com/forum/#!forum/thingsboard" target="blank">Q&A forum</a> and start <a href="http://stackoverflow.com/questions/tagged/thingsboard" target="blank">Stack Overflow</a> themes.
                                 </p>  
-                                <a class="btn btn-full-green btn-pricing" href="/docs/contact-us/">
-                                Help me! 
-                                </a>
+                                <div class="row justify-content-center">
+                                    <a class="btn-blue btn-pricing" href="/docs/contact-us/">
+                                        Help me!
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -53,113 +58,126 @@ description: ThingsBoard professional support plans for IoT projects, cloud infr
             </div>
         </div>
     </div>     
-</section>
+</div>
 
 
-<section id="thingsboard-pe" class="pricing-content">
- <div class="col-lg-12">
-    <div class="pricing-div">
-        <div class="container">
-            <div class="pricing-section pricing-pay-as-you-go active" id="payAsYouGo">
-               <div class="row d-none d-lg-flex mb-4">
-                   <div class="col-lg-12">
-                        <div class="indicator gray-bg text-white text-center pt-2 pb-2">
-                            SUPPORT PACKAGES
-                        </div>
-                   </div> 
-                   <div class="col-lg-12">
-                   <p>&nbsp;</p>
-                        <div class="pricing-square-item text-center">
-                           OUR SUPPORT PACKS DESIGNED TO COVER DIVERSE REQUIREMENTS   
-                        </div>
-                   </div>                    
-               </div>
-               <div class="row d-none d-lg-flex mb-4"></div>
-               <div class="row justify-content-center">
-                    <div class="col-md-4 col-lg-4 col-xl mb-4">
-                        <div class="pricing-square">
-                            <h2>ESSENTIAL</h2>
-                            <div class="pricing-square-item">
-                                <p> <b>for 1 server instance only</b></p><br>
-                            </div>
-                            <div class="pricing-square-item">
-                                What's in?
-                            </div><br>
-                            <div class="pricing-square-item">—</div><br>
-                            <div class="pricing-square-item">
-                                <p><strong>Email</strong> <strong>consulting</strong>: 2h per month </p><br>
-                                <p><b>Server issue response time</b>: < 48h</p><br>
-                                 <p><b>On-demand trainings</b>: <i>not packed</i></p><br>
-                                <p><b>1 named contact</b> <br>
-                                within normal business hours</p>
-                            </div><br>
-                            <h4 class="pricing-square-price mb-0">
-                                248
-                                <span>USD / Month</span>
-                            </h4>
-                                <a class="btn btn-full-green btn-pricing" href="/docs/contact-us/">
-                                Order 
-                                </a>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-lg-4 col-xl mb-4">
-                        <div class="pricing-square">
-                            <h2>PREMIUM</h2>
-                            <div class="pricing-square-item">
-                                <p> <b>for up to 5 running servers</b></p><br>
-                            </div>
-                            <div class="pricing-square-item">
-                                What's in?
-                            </div><br>
-                            <div class="pricing-square-item">—</div><br>
-                            <div class="pricing-square-item">
-                                <p><strong>Email</strong> <strong>consulting</strong>: 4h per month </p><br>
-                                <p><b>Server issue response time</b>: < 24h</p><br>
-                                <p><b>On-demand trainings</b>: 2h per month</p><br>
-                                <p><b>2 named contacts</b> <br>
-                                within extended business hours</p>
-                            </div><br>
-                            <h4 class="pricing-square-price mb-0">
-                                498
-                                <span>USD / Month</span>
-                            </h4>
-                                <a class="btn btn-full-green btn-pricing" href="/docs/contact-us/">
-                                Order 
-                                </a>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-lg-4 col-xl mb-4">
-                        <div class="pricing-square">
-                            <h2>ULTIMATE</h2>
-                            <div class="pricing-square-item">
-                                <p> <b>privileged bundle for up to 10 running servers</b></p><br>
-                            </div>
-                            <div class="pricing-square-item">
-                                What's in?
-                            </div><br>
-                            <div class="pricing-square-item">—</div><br>
-                            <div class="pricing-square-item">
-                                <p><strong>Email</strong> <strong>consulting</strong>: 8h per month </p><br>
-                                <p><b>Server issue response time</b>: < 12h</p><br>
-                                <p><b>On-demand trainings</b>: 4h per month</p><br>
-                                <p><b>3 named contact</b> <br>
-                                within 24/7</p>
-                            </div><br>
-                            <h4 class="pricing-square-price mb-0">
-                                1198
-                                <span>USD / Month</span>
-                            </h4>
-                                <a class="btn btn-full-green btn-pricing" href="/docs/contact-us/">
-                                Order 
-                                </a>
-                        </div>
-                    </div>
+<div id="thingsboard-pe" class="pricing-content">
+    <div class="container">
+        <div class="pricing-content-header row">
+            <div class="pricing-content-description pricing-cloud active col-lg-6">
+                <h2>Support packages</h2>
+                <div class="pricing-content-details">
+                    Our support packs designed to cover diverse requirements
                 </div>
             </div>
         </div>
+        <div class="pricing-div">
+            <div class="pricing-section pricing-pay-as-you-go active" id="payAsYouGo">
+               <div class="row justify-content-center">
+                    <div class="col-md-6 col-lg-4 col-xl mb-4">
+                        <div class="pricing-square">
+                            <h2>ESSENTIAL</h2>
+                            <div class="pricing-square-description" style="min-height: 50px;">
+                                <p> <b>for 1 server instance only</b></p>
+                            </div>
+                            <div>
+                                What's in?
+                            </div>
+                            <br/>
+                            <div class="pricing-square-item">
+                                <strong>Email</strong> <strong>consulting</strong>: 2h per month
+                            </div>
+                            <div class="pricing-square-item">
+                                <b>Server issue response time</b>: < 48h
+                            </div>
+                            <div class="pricing-square-item">
+                                <b>On-demand trainings</b>: <i>not packed</i>
+                            </div>
+                            <div class="pricing-square-item">
+                                <b>1 named contact</b> within normal business hours
+                            </div>
+                            <h4 class="pricing-square-price mt-4 mb-4">
+                                $248
+                                <span>/ month</span>
+                            </h4>
+                            <div class="row justify-content-center">
+                                <a class="btn-blue btn-pricing" href="/docs/contact-us/">
+                                    Order
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-xl mb-4">
+                        <div class="pricing-square">
+                            <h2>PREMIUM</h2>
+                            <div class="pricing-square-description" style="min-height: 50px;">
+                                <p> <b>for up to 5 running servers</b></p>
+                            </div>
+                            <div>
+                                What's in?
+                            </div>
+                            <br/>
+                            <div class="pricing-square-item">
+                                <strong>Email</strong> <strong>consulting</strong>: 4h per month
+                            </div>
+                            <div class="pricing-square-item">
+                                <b>Server issue response time</b>: < 24h
+                            </div>
+                            <div class="pricing-square-item">
+                                <b>On-demand trainings</b>: 2h per month
+                            </div>
+                            <div class="pricing-square-item">
+                                <b>2 named contacts</b> within extended business hours
+                            </div>
+                            <h4 class="pricing-square-price mt-4 mb-4">
+                                $498
+                                <span>/ month</span>
+                            </h4>
+                            <div class="row justify-content-center">
+                                <a class="btn-blue btn-pricing" href="/docs/contact-us/">
+                                    Order
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-xl mb-4">
+                        <div class="pricing-square">
+                            <h2>ULTIMATE</h2>
+                            <div class="pricing-square-description" style="min-height: 50px;">
+                                <p><b>privileged bundle for up to 10 running servers</b></p>
+                            </div>
+                            <div>
+                                What's in?
+                            </div>
+                            <br/>
+                            <div class="pricing-square-item">
+                                <strong>Email</strong> <strong>consulting</strong>: 8h per month
+                            </div>
+                            <div class="pricing-square-item">
+                                <b>Server issue response time</b>: < 12h
+                            </div>
+                            <div class="pricing-square-item">
+                                <b>On-demand trainings</b>: 4h per month
+                            </div>
+                            <div class="pricing-square-item">
+                                <b>3 named contact</b> within 24/7
+                            </div>
+                            <h4 class="pricing-square-price mt-4 mb-4">
+                                $1198
+                                <span>/ month</span>
+                            </h4>
+                            <div class="row justify-content-center">
+                                <a class="btn-blue btn-pricing" href="/docs/contact-us/">
+                                    Order
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+               </div>
+            </div>
+        </div>
     </div>
- </div>  
-</section>
+</div>
 
 
 

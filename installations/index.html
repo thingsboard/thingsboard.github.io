@@ -4,7 +4,6 @@ customTitle: "true"
 description: ThingsBoard is an open-source IoT platform for device management, data collection, processing and visualization for your IoT projects
 ---
 
-<!Doctype html>
 <html id="installations">
 
 {% include head-header.html %}
@@ -12,164 +11,388 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 <section id="hero" class="light-text">
 </section>
 
-<section id="install-cards">
-	<main id="thingsboard-community">
-		<div class="content">
-			<div class="content-block py-0x">
-				<h3 class="content-title">ThingsBoard Community Edition</h3>
-				<h4>Open-source IoT platform for device management, data collection, processing and visualization.</h4>
-			</div>
-            <div class="content-block">
-                <p><a href="/docs/" class="button">Learn More</a></p>
-                <p><a href="/docs/user-guide/install/installation-options/" class="button">Deployment options</a></p>
-                <p><a target="_blank" href="https://demo.thingsboard.io/signup" class="button">Live Demo</a></p>
-            </div>
-			<ul class="content-list">
-				<li class="content-list-item">
-					<div class="item-row">
-						<div class="item-text">
-							<p class="item-title">
-                                <strong><a href="/docs/user-guide/entities-and-relations/">Devices & Assets management</a></strong>
-							</p>
-							<p>
-								Provision, monitor and control your IoT entities.
-							</p>
-						</div>
-					</div>
+<div class="container">
+	<div class="install-header">
+		<nav id="inner-navigation" class="inner-navigation">
+			<ul id="menu-install-navigation-1" class="menu">
+				<li id="menu-item-thingsboard-cloud" class="menu-item active tb-logo">
+					<a href="javascript:void(0);" onClick="activatePricingSection('thingsboard-cloud')">Cloud</a>
 				</li>
-				<li class="content-list-item">
-					<div class="item-row">
-						<div class="item-text">
-							<p class="item-title">
-                                <strong><a href="/docs/user-guide/visualization/">Data collection & Visualization</a></strong>
-							</p>
-							<p>
-								Collect and store telemetry data. Visualize your data with flexible dashboards.
-							</p>
-						</div>
-					</div>
+				<li id="menu-item-thingsboard-ce" class="menu-item tb-logo">
+					<a href="javascript:void(0);" onClick="activatePricingSection('thingsboard-ce')">Community Edition</a>
 				</li>
-				<li class="content-list-item">
-					<div class="item-row">
-						<div class="item-text">
-							<p class="item-title">
-                                <strong><a href="/docs/user-guide/rule-engine-2-0/re-getting-started/">Rule Engine</a></strong>
-							</p>
-							<p>
-								Define data processing rules and trigger reactions using powerful rule engine components.
-							</p>
-						</div>
-					</div>
-				</li>
-                <li class="content-list-item">
-                    <div class="item-row">
-                        <div class="item-text">
-                            <p class="item-title">
-                                <strong><a href="/docs/reference/msa/">Microservices</a></strong>
-                            </p>
-                            <p>
-                                Construct your ThingsBoard cluster and get maximum scalability and fault-tolerance with new microservices architecture.
-                            </p>
-                        </div>
-                    </div>
-                </li>
-			</ul>
-			<div style="flex: 1;"></div>
-		</div>
-	</main>
-	<main id="thingsboard-pe">
-		<div class="content">
-			<div class="content-block py-0x">
-				<h3 class="content-title">ThingsBoard Professional Edition</h3>
-				<h4>Advanced IoT Platform distribution based on latest stable open-source version with value added features.</h4>
-			</div>
-            <div class="content-block">
-                <p><a href="/products/thingsboard-pe/" class="button">Learn More</a></p>
-                <p><a href="/docs/user-guide/install/pe/installation-options/" class="button">Deployment options</a></p>
-                <p><a target="_blank" href="https://cloud.thingsboard.io/signup" class="button">Free trial</a></p>
-                <!--p><a href="/products/thingsboard-pe/install/?deploy=premise" class="button">Pay yearly</a></p>
-                <p><a href="/products/thingsboard-pe/install/?deploy=cloud" class="button">Pay as you go</a></p-->
-            </div>
-			<ul class="content-list">
-				<li class="content-list-item">
-					<div class="item-row">
-						<div class="item-text">
-							<p class="item-title">
-                                <strong><a href="/docs/user-guide/white-labeling/">White-labeling</a></strong>
-							</p>
-							<p>
-								Multi-tenant configurable white-labeling.
-							</p>
-						</div>
-					</div>
-				</li>
-				<li class="content-list-item">
-					<div class="item-row">
-						<div class="item-text">
-							<p class="item-title">
-                                <strong><a href="/docs/user-guide/integrations/">Platform Integrations</a></strong>
-							</p>
-							<p>
-								Out of the box integrations with popular IoT platforms and connectivity providers.
-							</p>
-						</div>
-					</div>
-				</li>
-				<li class="content-list-item">
-					<div class="item-row">
-						<div class="item-text">
-							<p class="item-title">
-                                <strong><a href="/docs/user-guide/groups/">Entity Groups</a></strong>
-							</p>
-							<p>
-								Custom entity groups (devices, assets, etc.) with customizable actions and configurable columns.
-							</p>
-						</div>
-					</div>
-				</li>
-                <li class="content-list-item">
-                    <div class="item-row">
-                        <div class="item-text">
-                            <p class="item-title">
-                                <strong><a href="/docs/user-guide/rbac/">Advanced RBAC for IoT</a></strong>
-                            </p>
-                            <p>
-                                Advanced management of user roles and permissions. Manage hierarchy of customers.
-                            </p>
-                        </div>
-                    </div>
-                </li>
-				<li class="content-list-item">
-					<div class="item-row">
-						<div class="item-text">
-							<p class="item-title">
-                                <strong><a href="/docs/user-guide/scheduler/">Scheduler</a> &nbsp;&nbsp;&nbsp; and <a href="/docs/user-guide/reporting/">Reporting</a></strong>
-							</p>
-							<p>
-								Schedule various types of events with flexible schedule configuration.
-                                Generate great looking reports using dashboards visualization capabilities.
-							</p>
-						</div>
-					</div>
-				</li>
-				<li class="content-list-item">
-					<div class="item-row">
-						<div class="item-text">
-							<p class="item-title">
-                                <strong><a href="/docs/user-guide/csv-xls-data-export/">CSV/XLS data export</a></strong>
-							</p>
-							<p>
-								Export any dashboard widget data to CSV or XLS format.
-							</p>
-						</div>
-					</div>
+				<li id="menu-item-thingsboard-pe" class="menu-item tb-logo">
+					<a href="javascript:void(0);" onClick="activatePricingSection('thingsboard-pe')">Professional Edition</a>
 				</li>
 			</ul>
+		</nav>
+	</div>
+	<div class="pricing-header-divider">
+	</div>
+</div>
+
+<div id="thingsboard-cloud" class="install-content">
+	<div class="container">
+		<div class="install-content-header row">
+			<div class="install-content-description col-lg-7">
+				<h1>ThingsBoard Professional Edition Cloud</h1>
+				<div class="install-content-details">
+					<p>The ThingsBoard Cloud is a fully managed, scalable and fault-tolerant platform for your IoT applications.
+						ThingsBoard Cloud is for everyone who would like to use ThingsBoard Professional Edition but don’t want to host their own instance of the platform.
+					</p>
+				</div>
+				<div class="row container button-container">
+					<a class="btn-blue" href="https://thingsboard.cloud/signup">
+						Start Free
+					</a>
+					<a class="btn-blue" href="/pricing/">
+						Pricing
+					</a>
+				</div>
+			</div>
+			<div class="col d-flex justify-content-start">
+				<div class="image-content">
+					<img src="/images/install/thingsboard-pe-smart-building-energy-meter.png" alt="ThingsBoard Cloud Smart Building Energy Meter" class="bg">
+					<img src="/images/install/thingsboard-pe-smart-building-company.png" alt="ThingsBoard Cloud Smart Building Company" class="main">
+				</div>
+			</div>
 		</div>
-	</main>
-</section>
-<div class="question-contact center">
-	<small>Questions about products or deployment options? <a href="/docs/contact-us/?subject=ThingsBoard%20Products">Contact us.</a></small>
+		<div class="feature">
+			<div class="column">
+				<div class="item-row">
+					<div class="item-text">
+						<a class="item-title" href="/products/thingsboard-pe/#advanced-thingsboard-iot-platform-distribution-with-value-added-features">More features</a>
+						<p>
+							Platform supports all Professional Edition features.
+						</p>
+					</div>
+				</div>
+				<div class="item-row">
+					<div class="item-text">
+						<a class="item-title" href="/docs/getting-started-guides/helloworld-pe/">Improved time to market</a>
+						<p>
+							Save time on maintenance of the platform or configuration of the features.
+						</p>
+					</div>
+				</div>
+				<div class="item-row">
+					<div class="item-text">
+						<a class="item-title" href="/pricing/">Reduced costs</a>
+						<p>
+							The cost of the cluster infrastructure is shared between the users of the platform.
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="column">
+				<div class="item-row">
+					<div class="item-text">
+						<a class="item-title" href="/docs/reference/msa/">High availability</a>
+						<p>
+							ThingsBoard Cloud uses microservices architecture and is deployed in multiple availability zones.
+						</p>
+					</div>
+				</div>
+				<div class="item-row">
+					<div class="item-text">
+						<a class="item-title" href="/docs/reference/msa/">Data durability</a>
+						<p>
+							Platform uses data replication and backup procedures to make sure you don’t lose the data.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="thingsboard-ce" class="install-content" style="display: none">
+	<div class="container">
+		<div class="install-content-header row">
+			<div class="install-content-description col-lg-7">
+				<h1>ThingsBoard Community Edition</h1>
+				<div class="install-content-details">
+					<p>Open-source IoT platform for device management, data collection, processing and visualization. <a href="/docs/">Read More</a>.</p>
+				</div>
+				<div class="row container button-container">
+                    <a class="btn-blue" href="/docs/user-guide/install/installation-options/">
+                        Install
+                    </a>
+					<a class="btn-blue" href="https://demo.thingsboard.io/signup">
+						Live Demo
+					</a>
+				</div>
+			</div>
+			<div class="col d-flex justify-content-start">
+				<div class="image-content">
+					<img src="/images/install/thingsboard-ce-smart-energy.png" alt="ThingsBoard CE Smart Energy Dashboard" class="bg">
+					<img src="/images/install/thingsboard-ce-smart-bus-tracking.png" alt="ThingsBoard CE Smart Bus Tracking Dashboard" class="main">
+				</div>
+			</div>
+		</div>
+		<div class="feature">
+			<div class="column">
+				<div class="item-row">
+					<div class="item-text">
+						<a class="item-title" href="/docs/user-guide/rule-engine-2-0/re-getting-started/">Rule Engine</a>
+						<p>
+							Define data processing rules and trigger reactions using powerful rule engine components.
+						</p>
+					</div>
+				</div>
+				<div class="item-row">
+					<div class="item-text">
+						<a class="item-title" href="/docs/reference/msa/">Microservices</a>
+						<p>
+							Construct your ThingsBoard cluster and get maximum scalability and fault-tolerance with new microservices architecture.
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="column">
+				<div class="item-row">
+					<div class="item-text">
+						<a class="item-title" href="/docs/user-guide/visualization/">Data collection & Visualization</a>
+						<p>
+							Collect and store telemetry data. Visualize your data with flexible dashboards.
+						</p>
+					</div>
+				</div>
+				<div class="item-row">
+					<div class="item-text">
+						<a class="item-title" href="/docs/user-guide/entities-and-relations/">Devices & Assets management</a>
+						<p>
+							Provision, monitor and control your IoT entities.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="deploy">
+			<h2>Deployment options</h2>
+			<div class="wrapper">
+				<div class="column">
+					<h3 class="premise">On premise</h3>
+					<div class="deployment-cards">
+						<div class="deployment-card-block">
+							<a href="/docs/user-guide/install/ubuntu/" class="deployment-logo">
+								<img src="/images/install/platform/ubuntu.svg" title="Ubuntu" alt="Ubuntu">
+							</a>
+						</div>
+						<div class="deployment-card-block">
+							<a href="/docs/user-guide/install/rhel/" class="deployment-logo">
+								<img width="" src="/images/install/platform/centos-redhat.svg" title="CentOS/RHEL" alt="CentOS/RHEL">
+							</a>
+						</div>
+						<div class="deployment-card-block">
+							<a href="/docs/user-guide/install/windows/" class="deployment-logo">
+								<img width="" src="/images/install/platform/windows.svg" title="Windows" alt="Windows">
+							</a>
+						</div>
+						<div class="deployment-card-block">
+							<a href="/docs/user-guide/install/rpi/" class="deployment-logo">
+								<img width="" src="/images/install/platform/rpi3.svg" title="Raspberry Pi 3" alt="Raspberry Pi 3">
+							</a>
+						</div>
+						<div class="deployment-card-block">
+							<a href="/docs/user-guide/install/docker-windows/" class="deployment-logo">
+								<img src="/images/install/platform/docker-windows.svg" title="Docker (Windows)" alt="Docker (Windows)">
+							</a>
+						</div>
+						<div class="deployment-card-block">
+							<a href="/docs/user-guide/install/docker/" class="deployment-logo">
+								<img width="" src="/images/install/platform/docker-linux-macos.svg" title="Docker (Linux or Mac OS)" alt="Docker (Linux or Mac OS)">
+							</a>
+						</div>
+						<div class="deployment-card-block">
+							<a href="/docs/user-guide/install/building-from-source/" class="deployment-logo">
+								<img width="" src="/images/install/platform/sources.svg" title="Building from source" alt="Building from source">
+							</a>
+						</div>
+						<div class="deployment-card-block">
+							<a href="/docs/user-guide/install/cluster-setup/" class="deployment-logo">
+								<img width="" src="/images/install/platform/cluster-ce.svg" title="Cluster setup" alt="Cluster setup">
+							</a>
+						</div>
+					</div>
+				</div>
+				<dic class="divider"></dic>
+				<div class="column">
+					<h3 class="cloud">Cloud</h3>
+					<div class="deployment-cards">
+						<div class="deployment-card-block">
+							<a href="/docs/user-guide/install/aws/" class="deployment-logo">
+								<img height="70px" width="" src="/images/install/cloud/aws.svg" title="AWS" alt="AWS">
+							</a>
+						</div>
+						<div class="deployment-card-block">
+							<a href="/docs/user-guide/install/digital-ocean/" class="deployment-logo">
+								<img width="" src="/images/install/cloud/digitalocean.svg" title="DigitalOcean" alt="DigitalOcean">
+							</a>
+						</div>
+						<div class="deployment-card-block">
+							<a href="/docs/user-guide/install/gcp/" class="deployment-logo">
+								<img width="" src="/images/install/cloud/gcp.svg" title="Google Cloud Platform" alt="Google Cloud Platform">
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="thingsboard-pe" class="install-content" style="display: none">
+	<div class="container">
+		<div class="install-content-header row">
+			<div class="install-content-description col-lg-7">
+				<h1>ThingsBoard Professional Edition</h1>
+				<div class="install-content-details">
+					<p>Advanced IoT Platform distribution based on latest stable open-source version with value added features. <a href="/products/thingsboard-pe/">Read More</a>.</p>
+				</div>
+				<div class="row container button-container">
+                    <a class="btn-blue" href="/docs/user-guide/install/pe/installation-options/">
+                        Install
+                    </a>
+					<a class="btn-blue" href="https://thingsboard.cloud/signup">
+						Start Free
+					</a>
+					<a class="btn-blue" href="/pricing/">
+						Pricing
+					</a>
+				</div>
+			</div>
+			<div class="col d-flex justify-content-start">
+				<div class="image-content">
+                    <img src="/images/install/thingsboard-pe-smart-building-energy-meter.png" alt="ThingsBoard PE Smart Building Energy Meter" class="bg">
+                    <img src="/images/install/thingsboard-pe-smart-building-company.png" alt="ThingsBoard PE Smart Building Company" class="main">
+				</div>
+			</div>
+		</div>
+		<div class="feature">
+			<div class="column">
+				<div class="item-row">
+					<div class="item-text">
+						<a class="item-title" href="/docs/user-guide/white-labeling/">White-labeling</a>
+						<p>
+							Multi-tenant configurable white-labeling.
+						</p>
+					</div>
+				</div>
+				<div class="item-row">
+					<div class="item-text">
+						<a class="item-title" href="/docs/user-guide/groups/">Entity Groups</a>
+						<p>
+							Custom entity groups (devices, assets, etc.) with customizable actions and configurable columns.
+						</p>
+					</div>
+				</div>
+				<div class="item-row">
+					<div class="item-text">
+						<a class="item-title" href="/docs/user-guide/rbac/">Advanced RBAC for IoT</a>
+						<p>
+							Advanced management of user roles and permissions. Manage hierarchy of customers.
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="column">
+				<div class="item-row">
+					<div class="item-text">
+						<a class="item-title" href="/docs/user-guide/csv-xls-data-export/">CSV/XLS data export</a>
+						<p>
+							Export any dashboard widget data to CSV or XLS format.
+						</p>
+					</div>
+				</div>
+				<div class="item-row">
+					<div class="item-text">
+						<a class="item-title" href="/docs/user-guide/integrations/">Platform Integrations</a>
+						<p>
+							Out of the box integrations with popular IoT platforms and connectivity providers.
+						</p>
+					</div>
+				</div>
+				<div class="item-row">
+					<div class="item-text">
+						<span class="item-title">
+							<a href="/docs/user-guide/scheduler/">Scheduler</a>&nbsp;and <a href="/docs/user-guide/reporting/">Reporting</a>
+						</span>
+						<p>
+							Schedule various types of events with flexible schedule configuration.
+							Generate great looking reports using dashboards visualization capabilities.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="deploy">
+			<h2>Deployment options</h2>
+			<div class="wrapper">
+				<div class="column">
+					<h3 class="premise">On premise</h3>
+					<div class="deployment-cards">
+						<div class="deployment-card-block">
+							<a href="/docs/user-guide/install/pe/ubuntu/" class="deployment-logo">
+								<img src="/images/install/platform/ubuntu.svg" title="Ubuntu" alt="Ubuntu">
+							</a>
+						</div>
+						<div class="deployment-card-block">
+							<a href="/docs/user-guide/install/pe/rhel/" class="deployment-logo">
+								<img width="" src="/images/install/platform/centos-redhat.svg" title="CentOS/RHEL" alt="CentOS/RHEL">
+							</a>
+						</div>
+						<div class="deployment-card-block">
+							<a href="/docs/user-guide/install/pe/windows/" class="deployment-logo">
+								<img width="" src="/images/install/platform/windows.svg" title="Windows" alt="Windows">
+							</a>
+						</div>
+						<div class="deployment-card-block">
+							<a href="/docs/user-guide/install/pe/docker-windows/" class="deployment-logo">
+								<img src="/images/install/platform/docker-windows.svg" title="Docker (Windows)" alt="Docker (Windows)">
+							</a>
+						</div>
+						<div class="deployment-card-block">
+							<a href="/docs/user-guide/install/pe/docker/" class="deployment-logo">
+								<img width="" src="/images/install/platform/docker-linux-macos.svg" title="Docker (Linux or Mac OS)" alt="Docker (Linux or Mac OS)">
+							</a>
+						</div>
+						<div class="deployment-card-block">
+							<a href="/docs/user-guide/install/pe/cluster-setup/" class="deployment-logo">
+								<img width="" src="/images/install/platform/cluster.svg" title="Cluster setup" alt="Cluster setup">
+							</a>
+						</div>
+					</div>
+				</div>
+				<dic class="divider"></dic>
+				<div class="column">
+					<h3 class="cloud">Cloud</h3>
+					<div class="deployment-cards">
+						<div class="deployment-card-block">
+							<a href="/docs/user-guide/install/pe/aws/" class="deployment-logo">
+								<img height="70px" width="" src="/images/install/cloud/aws.svg" title="AWS" alt="AWS">
+							</a>
+						</div>
+						<div class="deployment-card-block">
+							<a href="/docs/user-guide/install/pe/azure/" class="deployment-logo">
+								<img width="" src="/images/install/cloud/azure.svg" title="Microsoft Azure" alt="Microsoft Azure">
+							</a>
+						</div>
+						<div class="deployment-card-block">
+							<a href="/docs/user-guide/install/pe/digital-ocean/" class="deployment-logo">
+								<img width="" src="/images/install/cloud/digitalocean.svg" title="DigitalOcean" alt="DigitalOcean">
+							</a>
+						</div>
+						<div class="deployment-card-block">
+							<a href="/docs/user-guide/install/pe/gcp/" class="deployment-logo">
+								<img width="" src="/images/install/cloud/gcp.svg" title="Google Cloud Platform" alt="Google Cloud Platform">
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 
 {% include footer.html %}
@@ -183,6 +406,17 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 			}
 		});
 	});
+
+	jqueryDefer(function () {
+		activatePricingSection('thingsboard-cloud')
+	})
+
+	function activatePricingSection(sectionId) {
+		$("li.menu-item").removeClass("active");
+		$("li.menu-item#menu-item-"+sectionId).addClass("active");
+		$("div.install-content").css("display", "none");
+		$("div.install-content#"+sectionId).css("display", "block");
+	}
 </script>
 
 </body>

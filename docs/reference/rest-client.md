@@ -26,7 +26,7 @@ In order to add REST Client to your Maven/Gradle project, you should use the fol
     <dependency>
         <groupId>org.thingsboard</groupId>
         <artifactId>rest-client</artifactId>
-        <version>2.5.0-SNAPSHOT</version>
+        <version>{{ site.release.ce_full_ver}}</version>
     </dependency>
 </dependencies>
 ```
@@ -89,7 +89,7 @@ In order to add REST Client to your Maven/Gradle project, you should use the fol
     <dependency>
         <groupId>org.thingsboard</groupId>
         <artifactId>rest-client</artifactId>
-        <version>2.5.0PE-SNAPSHOT</version>
+        <version>{{ site.release.pe_full_ver}}</version>
     </dependency>
 </dependencies>
 ```
@@ -215,4 +215,3 @@ restClient.activateUser(user.getId(), userPassword);
 
 restClient.addEntitiesToEntityGroup(customer1Administrators.getId(), Collections.singletonList(user.getId()));
 ```
- 

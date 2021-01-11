@@ -18,35 +18,42 @@ One-way SSL authentication is a standard authentication mode, where your client 
 In order to run one-way MQTT SSL, the server certificate chain should be signed by authorized CA or client must import the self-signed server certificate (.cer or .pem) to its trust store. 
 Otherwise, a connection will fail with the 'Unknown CA' error.
 
-#### Run One-Way MQTT SSL Python Client
+The python based client example below demonstrates how to connect to [ThingsBoard Cloud](https://thingsboard.cloud/signup) or to any other ThingsBoard MQTT server.
+Assuming you plan to use ThingsBoard Cloud, you should download the certificate chain using this [link](/docs/user-guide/resources/mqtt-over-ssl/tb-cloud-chain.pem) (certificate expires on 15.09.25) 
+and store it to your working directory as "tb-cloud-chain.pem".
 
-The example below demonstrates how to connect to a ThingsBoard MQTT server that uses a self-signed certificate.
-You will need to have the public key of server certificate in PEM format. 
+```bash
+wget https://thingsboard.io/docs/user-guide/resources/mqtt-over-ssl/tb-cloud-chain.pem
+```
+{: .copy-code}
+
+Assuming you plan to use your own server with self-signed certificate, you will need to have the public key of server certificate in PEM format. 
 See [following instructions](/docs/user-guide/mqtt-over-ssl/#self-signed-certificate-generation) for more details on server-side configuration.
 
-Download Python client example [**one-way-ssl-mqtt-client.py**](/docs/user-guide/resources/mqtt-over-ssl/one-way-ssl-mqtt-client.py).
-Specify your access token and path to the public key of the server certificate.
+### Run One-Way MQTT SSL Python Client
 
-```python
-# Some code omitted
+Download Python client example [**one-way-ssl-mqtt-client.py**](/docs/user-guide/resources/mqtt-over-ssl/one-way-ssl-mqtt-client.py) to the same working directory where you store the certificates.
 
-client.tls_set(ca_certs="mqttserver.pub.pem", certfile=None, keyfile=None, cert_reqs=ssl.CERT_REQUIRED, tls_version=ssl.PROTOCOL_TLSv1, ciphers=None);
-
-client.username_pw_set("accessToken")
-
-# Some code omitted
+```bash
+wget https://thingsboard.io/docs/user-guide/resources/mqtt-over-ssl/one-way-ssl-mqtt-client.py
 ```
+{: .copy-code}
+
+Put certificate(s) that you have downloaded/created into the same folder with the example script. The script will automatically use "tb-cloud-chain.pem" if you use default ThingsBoard host (thingsboard.cloud) 
 
 **Note** Script uses **8883** mqtt port and requires paho mqtt library that you can install using the following command: **pip3 install paho-mqtt**
  
-Run the script:
+Run the script and follow steps in console:
 
-{% capture tabspec %}mqtt-ssl-configuration-keygen
-A,python one-way-ssl-mqtt-client.py,shell,resources/mqtt-ssl-configuration-run-onewaysslmqttclient.sh,/docs/user-guide/resources/mqtt-ssl-configuration-run-onewaysslmqttclient.sh{% endcapture %}
-{% include tabs.html %}         
+```bash
+python3 one-way-ssl-mqtt-client.py
+```
+{: .copy-code}
 
 If everything was configured correctly, the output should be like:
 
-{% capture tabspec %}mqtt-ssl-configuration-output
-A,onewaysslmqttclient.py output,shell,resources/mqtt-ssl-configuration-onewaysslmqttclient-output.txt,/docs/user-guide/resources/mqtt-ssl-configuration-onewaysslmqttclient-output.txt{% endcapture %}
-{% include tabs.html %}
+```bash
+Connected with result code 0
+Topic: v1/devices/me/attributes/response/1
+Message: {}
+```

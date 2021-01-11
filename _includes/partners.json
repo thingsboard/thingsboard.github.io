@@ -34,6 +34,23 @@
   {
     "type": "hardware",
     "program": "",
+    "name": "Teltonika",
+    "logo": "teltonika-only-logo.svg",
+    "links": {
+      "Site": {
+        "href": "https://teltonika-networks.com/",
+        "target": "_blank"
+      },
+      "Integration guide": {
+        "href": "https://wiki.teltonika-networks.com/view/Monitoring_with_Thingsboard.io",
+        "target": "_blank"
+      }
+    },
+    "blurb": "Teltonika IoT Group is a leading fleet management solutions manufacturer from Europe"
+  },
+  {
+    "type": "hardware",
+    "program": "",
     "name": "TEKTELIC Communications Inc.",
     "logo": "tektelic.png",
     "links": {
@@ -91,5 +108,21 @@
       }
     },
     "blurb": "Whether you are a developer, technical supplier, or industry player, we provide products and services for your IoT needs."
+  },
+  {
+    "type": "hardware",
+    "program": "",
+    "name": "DECODE",
+    "logo": "decode.png",
+    "links": {
+      "Site": {
+        "href": "https://www.decode.rs/",
+        "target": "_blank"
+     },
+    "Integration guide": {
+      "href": "/docs/user-guide/integrations/decode/"
+      }
+    },
+    "blurb": "Decode is a Serbian company with extensive experience in design, engineering and production of devices for industrial communication and telemetry."
   }
 ]

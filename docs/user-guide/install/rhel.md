@@ -50,14 +50,14 @@ sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.
 Download installation package.
 
 ```bash
-wget https://github.com/thingsboard/thingsboard/releases/download/v3.0.1/thingsboard-3.0.1.rpm
+wget https://github.com/thingsboard/thingsboard/releases/download/{{ site.release.ce_tag }}/thingsboard-{{ site.release.ce_ver }}.rpm
 ```
 {: .copy-code}
 
 Install ThingsBoard as a service
 
 ```bash
-sudo rpm -Uvh thingsboard-3.0.1.rpm
+sudo rpm -Uvh thingsboard-{{ site.release.ce_ver }}.rpm
 ```
 {: .copy-code}
 
@@ -83,7 +83,8 @@ Kafka <small>(recommended for on-prem, production installations)</small>%,%kafka
 AWS SQS <small>(managed service from AWS)</small> %,%aws-sqs%,%templates/install/ubuntu-queue-aws-sqs.md%br%
 Google Pub/Sub <small>(managed service from Google)</small> %,%pubsub%,%templates/install/ubuntu-queue-pub-sub.md%br%
 Azure Service Bus <small>(managed service from Azure)</small>%,%service-bus%,%templates/install/ubuntu-queue-service-bus.md%br%
-RabbitMQ <small>(for small on-prem installations)</small>%,%rabbitmq%,%templates/install/rhel-queue-rabbitmq.md{% endcapture %}
+RabbitMQ <small>(for small on-prem installations)</small>%,%rabbitmq%,%templates/install/rhel-queue-rabbitmq.md%br%
+Confluent Cloud <small>(Event Streaming Platform based on Kafka)</small>%,%confluent-cloud%,%templates/install/ubuntu-queue-confluent-cloud.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="ubuntuThingsboardQueue" toggle-spec=contenttogglespecqueue %} 
 

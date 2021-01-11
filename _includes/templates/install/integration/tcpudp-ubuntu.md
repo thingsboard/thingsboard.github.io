@@ -1,14 +1,14 @@
 Download installation package:
 
 ```bash
-wget https://dist.thingsboard.io/tb-tcp-udp-integration-3.0.1pe.deb
+wget https://dist.thingsboard.io/tb-tcp-udp-integration-{{ site.release.pe_ver }}.deb
 ```
 {: .copy-code}
 
 Install integration as a service:
 
 ```bash
-sudo dpkg -i tb-tcp-udp-integration-3.0.1pe.deb
+sudo dpkg -i tb-tcp-udp-integration-{{ site.release.pe_ver }}.deb
 ```
 {: .copy-code}
 
@@ -23,7 +23,7 @@ Locate the following configuration block:
 
 ```bash
 # UNCOMMENT NEXT LINES AND PUT YOUR CONNECTION PARAMETERS:
-# export PRC_HOST=cloud.thingsboard.io
+# export PRC_HOST=thingsboard.cloud
 # export RPC_PORT=9090
 # export INTEGRATION_ROUTING_KEY=YOUR_INTEGRATION_KEY
 # export INTEGRATION_SECRET=YOUR_INTEGRATION_SECRET
@@ -33,7 +33,7 @@ and put your configuration parameters. Please don't forget to uncomment the expo
 
 ```bash
 # UNCOMMENT NEXT LINES AND PUT YOUR CONNECTION PARAMETERS:
-export PRC_HOST=cloud.thingsboard.io
+export PRC_HOST=thingsboard.cloud
 export RPC_PORT=9090
 export INTEGRATION_ROUTING_KEY=b75**************************34d
 export INTEGRATION_SECRET=vna**************mik

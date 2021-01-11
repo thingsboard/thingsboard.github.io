@@ -14,13 +14,14 @@ version: '2.2'
 services:
   mytbpe:
     restart: always
-    image: "store/thingsboard/tb-pe:3.0.1PE"
+    image: "store/thingsboard/tb-pe:{{ site.release.pe_full_ver }}"
     ports:
-      - "8080:9090"
+      - "8080:8080"
       - "1883:1883"
       - "5683:5683/udp"
     environment:
       TB_QUEUE_TYPE: aws-sqs
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/thingsboard
       TB_QUEUE_AWS_SQS_ACCESS_KEY_ID: YOUR_KEY
       TB_QUEUE_AWS_SQS_SECRET_ACCESS_KEY: YOUR_SECRET
       TB_QUEUE_AWS_SQS_REGION: YOUR_REGION
@@ -51,12 +52,21 @@ services:
       TB_QUEUE_RE_HP_PARTITIONS: 1
       TB_QUEUE_RE_SQ_POLL_INTERVAL_MS: 1000
       TB_QUEUE_RE_SQ_PARTITIONS: 1
-      TB_QUEUE_CORE_POLL_INTERVAL_MS: 1000
       TB_QUEUE_TRANSPORT_REQUEST_POLL_INTERVAL_MS: 1000
       TB_QUEUE_TRANSPORT_RESPONSE_POLL_INTERVAL_MS: 1000
       TB_QUEUE_TRANSPORT_NOTIFICATIONS_POLL_INTERVAL_MS: 1000
     volumes:
       - ~/.mytbpe-data:/data
       - ~/.mytbpe-logs:/var/log/thingsboard
+  postgres:
+    restart: always
+    image: "postgres:12"
+    ports:
+    - "5432"
+    environment:
+      POSTGRES_DB: thingsboard
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - ~/.mytbpe-data/db:/var/lib/postgresql/data
 ```
 {: .copy-code}

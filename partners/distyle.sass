@@ -1,0 +1,243 @@
+#distyle
+  footer
+    position: static
+
+  color: #212529
+
+  #integratorsContent
+    position: relative
+    width: calc(100% - 468px)
+    margin: auto
+
+#distributors
+  font-size: 32px
+  line-height: 1.5em
+  padding-top: 80px
+  font-weight: 300
+
+#des
+  margin-top: 10px
+
+#map
+  margin-top: 80px
+  display: block
+  margin-left: auto
+  margin-right: auto
+
+#integratorsGrid
+  margin-top: 25px
+  margin-bottom: 25px
+  display: grid
+  grid-template-columns: repeat(4, 1fr)
+  column-gap: 30px
+
+#filterContainer
+  color: #212529
+  font-size: 18px
+  font-weight: bold
+  display: block
+  border: 1px solid #EDEDED
+  height: fit-content
+  padding: 18px
+  vertical-align: top
+
+  .form
+    margin-top: 25px
+
+    .dropSelector
+      items-height: 50px
+      background-color: #F5F7F9
+      border-radius: 3px
+      border: 1px solid #B5C9DE
+      padding-left: 13px
+      height: 47px
+      width: 100%
+      margin-bottom: 11px
+      color: #212529
+
+      &:hover
+        background-color: #ffffff
+        border: 1px solid #305680
+
+      &:disabled
+        background-color: #F8F8F8
+        border: 1px solid #DCDCDC
+
+      &:focus
+        background-color: #ffffff
+        border: 2px solid #305680
+
+    .buttonSearch
+      margin-top: 25px
+      color: #fff
+      font-weight: 500
+      text-align: center
+      background-color: #305680
+      border-radius: 3px
+      height: 47px
+      width: 100%
+
+      &:hover
+        background-color: #4B6D93
+        transition-duration: 0.3s
+
+      &:active
+        background-color: #0D2743
+        transition-duration: 0s
+
+      &:disabled
+        background-color: #E7E7E7
+        color: #75797C
+
+    .buttonRe
+      font-weight: 500
+      color: #305680
+      border: 1px solid #B5C9DE
+      text-align: center
+      background-color: #fff
+      border-radius: 3px
+      height: 47px
+      width: 100%
+      transition: all 0.3s ease 0s
+
+      &:hover
+        border: 0px solid #305680
+        color: #fff
+        background-color: #305680
+
+#integratorsContainer
+  display: grid
+  border: 1px solid #EDEDED
+  height: fit-content
+  padding: 18px
+  vertical-align: top
+  grid-column-start: 2
+  grid-column-end: 5
+  grid-template-columns: repeat(2, 1fr)
+  column-gap: 18px
+  row-gap: 1em
+
+  .integrator-box
+    display: block
+    background-color: #F5F7F9
+    border-radius: 3px
+    padding: 20px
+
+    div
+      Margin-top: 8px
+      Margin-bottom: 3px
+
+      a.links
+        color: #305680
+        font-weight: 500
+
+        &:hover
+          text-decoration: underline
+
+    p.title
+      font-weight: bold !important
+      font-size: 24px
+      line-height: 32px
+      Margin-top: 1px
+      Margin-bottom: 29px
+      Color: #212529
+
+    p.become-integrator
+      display: flex
+      flex: 1
+      align-items: center
+      font-size: 18px
+
+#integratorsContainerEmpty
+  display: grid
+  border: 1px solid #EDEDED
+  height: fit-content
+  vertical-align: top
+  grid-column-start: 2
+  grid-column-end: 5
+  padding: 60px
+  text-align: center
+
+  p
+    font-weight: 400
+    color: #AFAFAF
+
+  object
+    display: block
+    margin-left: auto
+    margin-right: auto
+
+@media screen and (max-width: 1500px)
+  #distyle
+    #integratorsContent
+      width: calc(100% - 200px)
+
+@media screen and (max-width: 1280px)
+  #integratorsGrid
+    grid-template-columns: repeat(3, 1fr)
+
+  #integratorsContainer
+    grid-column-end: 4
+    grid-template-columns: repeat(1, 1fr)
+
+    .integrator-box
+      flex-direction: column
+      justify-content: flex-start
+
+      div
+        margin: 20px 0 0
+
+        img.integrator-program
+          height: 30px
+
+    #integratorsContainerEmpty
+      grid-column-end: 4
+      grid-template-columns: repeat(1, 1fr)
+
+  #map
+    width: 70%
+
+@media screen and (max-width: 1025px)
+  #distyle
+    #integratorsContent
+      width: 100%
+
+@media screen and (max-width: 568px)
+  #integratorsGrid
+    grid-template-columns: repeat(1, 1fr)
+
+  #hardwareContainer, #integratorContainer
+    justify-content: center
+
+  #integratorsContainer
+    grid-column-end: 1
+    grid-template-columns: repeat(1, 1fr)
+
+    .integrator-box
+      flex-direction: column
+      justify-content: flex-start
+      width: 100%
+      max-width: 100%
+      min-width: 100%
+
+      div
+        margin: 20px 0 0
+
+  #integratorsContainerEmpty
+    grid-column-end: 1
+    grid-template-columns: repeat(1, 1fr)
+
+  #map
+    display: none
+
+  #des
+    display: none
+
+  #distributors
+    font-size: 24px
+    padding-top: 20px
+
+@media screen and (min-width: 1920px)
+  #distyle
+    #integratorsContent
+      width: 1500px

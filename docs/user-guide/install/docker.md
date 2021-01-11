@@ -47,7 +47,8 @@ Kafka <small>(recommended for on-prem, production installations)</small>%,%kafka
 AWS SQS <small>(managed service from AWS)</small>%,%aws-sqs%,%templates/install/docker-queue-aws-sqs.md%br%
 Google Pub/Sub <small>(managed service from Google)</small>%,%pubsub%,%templates/install/docker-queue-pub-sub.md%br%
 Azure Service Bus <small>(managed service from Azure)</small>%,%service-bus%,%templates/install/docker-queue-service-bus.md%br%
-RabbitMQ <small>(for small on-prem installations)</small>%,%rabbitmq%,%templates/install/docker-queue-rabbitmq.md{% endcapture %}
+RabbitMQ <small>(for small on-prem installations)</small>%,%rabbitmq%,%templates/install/docker-queue-rabbitmq.md%br%
+Confluent Cloud <small>(Event Streaming Platform based on Kafka)</small>%,%confluent-cloud%,%templates/install/docker-queue-confluent-cloud.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="ubuntuThingsboardQueue" toggle-spec=contenttogglespecqueue %} 
 
@@ -67,15 +68,14 @@ Before starting Docker container run following commands to create a directory fo
 to be able to change user, **chown** command is used, which requires sudo permissions (command will request password for a sudo access):
 
 ```
-$ mkdir -p ~/.mytb-data && sudo chown -R 799:799 ~/.mytb-data
-$ mkdir -p ~/.mytb-logs && sudo chown -R 799:799 ~/.mytb-logs
+mkdir -p ~/.mytb-data && sudo chown -R 799:799 ~/.mytb-data
+mkdir -p ~/.mytb-logs && sudo chown -R 799:799 ~/.mytb-logs
 ```
+{: .copy-code}
 
-**NOTE**: replace directory `~/.mytb-data` and `~/.mytb-logs` with directories you're planning to used in `docker-compose.yml`. 
+**NOTE**: Replace directory `~/.mytb-data` and `~/.mytb-logs` with directories you're planning to use in `docker-compose.yml`.
 
-Execute the following command to up this docker compose directly:
-
-**NOTE**: For running docker compose commands you have to be in a directory with docker-compose.yml file. 
+Set the terminal in the directory which contains the `docker-compose.yml` file and execute the following command to up this docker compose directly:
 
 ```
 docker-compose pull
@@ -84,10 +84,10 @@ docker-compose up
 {: .copy-code}
 
     
-After executing this command you can open `http://{your-host-ip}:8080` in you browser (for ex. `http://localhost:8080`). You should see ThingsBoard login page.
-Use the following default credentials:
+After executing this command you can open `http://{your-host-ip}:8080` in your browser (for ex. `http://localhost:8080`). 
+You should see ThingsBoard login page. Use the following default credentials:
 
-- **Systen Administrator**: sysadmin@thingsboard.org / sysadmin
+- **System Administrator**: sysadmin@thingsboard.org / sysadmin
 - **Tenant Administrator**: tenant@thingsboard.org / tenant
 - **Customer User**: customer@thingsboard.org / customer
     
