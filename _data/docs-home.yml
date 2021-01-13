@@ -251,6 +251,8 @@ toc:
       path: /docs/user-guide/ui/trip-animation-widget/
     - title: Widgets Library
       path: /docs/user-guide/ui/widget-library/
+    - title: Advanced Settings of the Entity Table widget
+      path: /docs/user-guide/ui/entity-table-widget/
   - title: Dashboards
     path: /docs/user-guide/ui/dashboards/
   - title: SMS Provider Settings
