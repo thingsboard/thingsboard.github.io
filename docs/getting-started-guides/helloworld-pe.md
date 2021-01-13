@@ -361,7 +361,7 @@ We will create a dashboard to add the most popular widgets. See instructions bel
 ### Step 3.2 Add entity alias
 
 Alias is a reference to a single entity or a group of entities that are used in the widgets.
-Alias may be static or dynamic. For simplicity, we will use "Single entity" alias reference one and only one entity ("My New Device" in our case).
+Alias may be static or dynamic. For simplicity, we will use "Single entity" alias reference the one and only entity ("My New Device" in our case).
 It is possible to configure an alias that references multiple devices. For example, devices of a certain type or related to a certain asset. 
 You may learn more about different aliases [here](/docs/user-guide/ui/aliases/).
 
@@ -391,9 +391,9 @@ Congratulations! You have added chart widget. Now you are able to send new telem
 
 {% include images-gallery.html imageCollection="step35" showListImageTitles="true" %}
 
-Congratulations! You have added alarm widget. Not it's time to configure alarm rules and raise some alarms. 
+Congratulations! You have added alarm widget. Now it's time to configure alarm rules and raise some alarms. 
 
-### Step 4. Configure alarm rules
+## Step 4. Configure alarm rules
 
 We will use the [alarm rules](/docs/user-guide/device-profiles/#alarm-rules) feature to raise alarm when the temperature reading is greater than 25 degrees.
 For this purpose, we should edit the device profile and add a new alarm rule. 
@@ -402,7 +402,7 @@ We recommend creating dedicated [device profiles](/docs/user-guide/device-profil
 
 {% include images-gallery.html imageCollection="step4" showListImageTitles="true" %}
 
-### Step 5. Create alarm
+## Step 5. Create alarm
 
 Now our alarm rule is active (see [Step 4](/docs/getting-started-guides/helloworld-pe/#step-4-configure-alarm-rules)), 
 and we should send new telemetry on behalf of the device (see [Step 2](/docs/getting-started-guides/helloworld-pe/#step-2-connect-device)) to trigger the alarm.
@@ -410,7 +410,7 @@ Note that the temperature value should be 26 or higher to raise the alarm. Once 
 
 {% include images-gallery.html imageCollection="step5" showListImageTitles="true" %}
 
-### Step 6. Alarm notifications
+## Step 6. Alarm notifications
 
 It is quite easy to configure email or sms notifications for alarms. We recommend reviewing alarm rule [examples](/docs/user-guide/device-profiles/#alarm-rules) 
 and documentation about [alarm notifications](/docs/user-guide/device-profiles/#notifications-about-alarms). 
@@ -418,7 +418,7 @@ and documentation about [alarm notifications](/docs/user-guide/device-profiles/#
 **Note**: At the moment ThingsBoard supports AWS SNS and Twilio to send SMS. 
 Both services are non-free and require you to create an account. However, you may integrate with other SMS/EMAIL gateways using [REST API call](https://thingsboard.io/docs/user-guide/rule-engine-2-0/tutorials/get-weather-using-rest-api-call/#node-d-external-rest-api-call-node) node.  
 
-### Step 7. Share dashboard with customers
+## Step 7. Share dashboard with customers
 
 One of the most important ThingsBoard features is the ability to create end-user dashboards.
 Each Customer User should see his own devices and should not be able to see devices or any other data that belongs to a different customer. 
