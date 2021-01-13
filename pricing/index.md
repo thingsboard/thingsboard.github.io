@@ -59,7 +59,7 @@ defaultActivateSelectProduct: true
                                 <p>Become familiar with ThingsBoard features</p>
                             </div>
                             <h4 class="pricing-square-price mb-0">
-                                $29
+                                $10
                                 <span>/&nbsp;month</span>
                             </h4>
                             <div class="row justify-content-center">
