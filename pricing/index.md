@@ -67,8 +67,8 @@ defaultActivateSelectProduct: true
                                     Start Free
                                 </a>
                             </div>
-                            <div class="pricing-square-item">Up to 10 Devices</div>
-                            <div class="pricing-square-item">Up to 10 Assets</div>
+                            <div class="pricing-square-item">Up to 30 Devices</div>
+                            <div class="pricing-square-item">Up to 30 Assets</div>
                             <div class="pricing-square-item">10 million <span data-faq-id="data-points">data points</span><br/> per month</div> 
                             <div class="pricing-square-item" data-faq-id="community-support">
                                 Community support
@@ -580,10 +580,8 @@ defaultActivateSelectProduct: true
         <div class="item" data-tag="h4" data-item-id="trial-enable" data-title="How can I enable free trial?">
             <div class="container">
                 <p>
-                    Customer may still use <a href="https://thingsboard.cloud" target="blank">ThingsBoard Professional Edition Live Demo</a> for that. 
-                    30 days of seamless experience and the newest features, except white-labeling, from the latest source code! 
-                    Note: Live Demo is a shared environment with hardware and software limitations. 
-                    It is introduced to host multiple trial tenants on the same server instance(s).
+                    Customer may <a href="https://thingsboard.cloud/signup" target="blank">signup on ThingsBoard Professional Edition Cloud</a> and get 30 days of free trial on Maker plan. 
+                    30 days of seamless experience and the newest features, except white-labeling!
                 </p>    
             </div>    
         </div>
