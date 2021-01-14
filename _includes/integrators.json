@@ -433,7 +433,7 @@
   },
   {
     "type": ["Europe"],
-    "country": ["Czechia"],
+    "country": ["Czech Republic"],
     "name": "Simac",
     "contact": {
       "href": "info@simac.cz"
@@ -512,18 +512,6 @@
     },
     "site": {
       "href": "techyugadi.com ",
-      "target": "_blank"
-    }
-  },
-  {
-    "type": ["North America"],
-    "country": ["Canada"],
-    "name": "Teldio Corp.",
-    "contact": {
-      "href": "sales@teldio.com"
-    },
-    "site": {
-      "href": "teldio.com",
       "target": "_blank"
     }
   },
