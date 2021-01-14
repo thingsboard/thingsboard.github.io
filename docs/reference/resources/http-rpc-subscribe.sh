@@ -2,7 +2,7 @@
 # for ThingsBoard Cloud
 
 # Send HTTP attributes request
-curl -v -X GET https://thingsboard:cloud/api/v1/$ACCESS_TOKEN/rpc?timeout=20000
+curl -v -X GET https://thingsboard.cloud/api/v1/$ACCESS_TOKEN/rpc?timeout=20000
 
 # for local ThingsBoard
 
