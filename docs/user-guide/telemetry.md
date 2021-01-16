@@ -12,25 +12,25 @@ description: IoT device time-series data collection using various IoT protocols 
 
 ThingsBoard provides a rich set of features related to telemetry data:
 
- - **collect** data from devices using MQTT, CoAP or HTTP protocols.
- - **store** timeseries data in Cassandra (efficient, scalable and fault-tolerant NoSQL database).
- - **query** latest timeseries data values or all data within the specified time interval.
- - **subscribe** to data updates using websockets (for visualization or real-time analytics).
- - **visualize** timeseries data using configurable and highly customizable widgets and dashboards.
- - **filter and analyze** data using flexible Rule Engine (/docs/user-guide/rule-engine/).
- - **generate alarms** based on collected data.
- - **forward** data to external systems using Rule Nodes (e.g. Kafka or RabbitMQ Rule Nodes).
+ - **Collect** data from devices using MQTT, CoAP, or HTTP protocols;
+ - **Store** time series data in Cassandra (efficient, scalable, and fault-tolerant NoSQL database);
+ - **Query** the latest time series data values or all data within the specified timeframe;
+ - **Subscribe** to data updates using WebSockets (for visualization or real-time analytics);
+ - **Visualize** time series data using configurable and highly customizable widgets and dashboards;
+ - **Filter and analyze** data using flexible Rule Engine (/docs/user-guide/rule-engine/);
+ - **Generate alarms** based on collected data;
+ - **Forward** data to external systems using Rule Nodes (e.g. Kafka or RabbitMQ Rule Nodes).
 
-This guide provides an overview of the features listed above and some useful links to get more details.  
+This guide provides an overview of the features listed above, and some useful links to get more details.  
 
 ![image](/images/user-guide/telemetry.svg)
 
 ## Device telemetry upload API
 
-ThingsBoard provides an API to upload timeseries key-value data.
-Flexibility and simplicity of key-value format allow easy and seamless integration with almost any IoT device on the market.
-Telemetry upload API is specific for each supported network protocol.
-You can review API and examples in corresponding reference page:
+ThingsBoard provides an API to upload time series key-value data.
+Flexibility and simplicity of a key-value format allow easy and seamless integration with almost any IoT device on the market.
+Telemetry upload API depends on each supported network protocol.
+API and examples can be reviewed in corresponding reference page:
 
  - [MQTT API reference](/docs/reference/mqtt-api/#telemetry-upload-api)
  - [CoAP API reference](/docs/reference/coap-api/#telemetry-upload-api)
@@ -38,23 +38,23 @@ You can review API and examples in corresponding reference page:
   
 ## Telemetry Service
 
-Telemetry Service is responsible for persisting timeseries data to internal data storage; 
-provides server-side API to query and subscribe for data updates. 
+Telemetry Service is responsible for persisting time series data to internal data storage. It also 
+provides server-side API to query and subscribe to data updates. 
 
 ### Internal data storage
 
 ThingsBoard uses either Cassandra NoSQL database or SQL database to store all data.
 
-A device that is sending data to the server will receive confirmation about data delivery as soon as data is stored in DB.
+A device that sends data to the server will receive confirmation about data delivery as soon as data is stored in DB.
 Modern MQTT clients allow temporary local storage of undelivered data. 
 Thus, even if one of the ThingsBoard nodes goes down, the device will not lose the data and will be able to push it to other servers.
  
-Server side applications are also able to publish telemetry valued for different entities and entity types.
+Server-side applications are also able to publish telemetry values for different entities and entity types.
   
-Although you can query the database directly, ThingsBoard provides set of RESTful and Websocket API that simplify this process and apply certain security policies:
+Although you can query the database directly, ThingsBoard provides set of RESTful and WebSocket API that simplify this process and apply certain security policies:
  
- - Tenant Administrator user is able to fetch data for all entities that belong to the corresponding tenant.
- - Customer user is able to fetch data only for entities that are assigned to the corresponding customer.
+ - a Tenant Administrator user is able to fetch data for all entities that belong to the corresponding tenant.
+ - a Customer user is able to fetch data only for entities that are assigned to the corresponding customer.
   
 #### Data Query API
 
@@ -62,10 +62,10 @@ Telemetry Service provides following REST API to fetch entity data:
 
 ![image](/images/user-guide/telemetry-service/rest-api.png)
 
-**NOTE:** The API listed above is available via Swagger UI, please review general [REST API](/docs/reference/rest-api/) documentation for more details.
+**NOTE:** The API listed above is available via Swagger UI. Please review the general [REST API](/docs/reference/rest-api/) documentation for more details.
 The API is backward compatible with TB v1.0+ and this is the main reason why API call URLs contain "plugin".
 
-##### Timeseries data keys API
+##### Time series data keys API
 
 You can fetch list of all *data keys* for particular *entity type* and *entity id* using GET request to the following URL  
  
@@ -80,7 +80,7 @@ B,get-telemetry-keys-result.json,json,resources/get-telemetry-keys-result.json,/
 
 Supported entity types are: TENANT, CUSTOMER, USER, DASHBOARD, ASSET, DEVICE, ALARM, ENTITY_VIEW
 
-##### Timeseries data values API
+##### Time series data values API
 
 You can fetch list of latest values for particular *entity type* and *entity id* using GET request to the following URL  
  
@@ -103,14 +103,14 @@ http(s)://host:port/api/plugins/telemetry/{entityType}/{entityId}/values/timeser
 
 The supported parameters are described below:
 
- - **keys** - comma separated list of telemetry keys to fetch.
- - **startTs** - unix timestamp that identifies start of the interval in milliseconds.
- - **endTs** - unix timestamp that identifies end of the interval in milliseconds.
+ - **keys** - comma-separated list of telemetry keys to fetch.
+ - **startTs** - Unix timestamp that identifies the start of the interval in milliseconds.
+ - **endTs** - Unix timestamp that identifies the end of the interval in milliseconds.
  - **interval** - the aggregation interval, in milliseconds.
  - **agg** - the aggregation function. One of MIN, MAX, AVG, SUM, COUNT, NONE.
  - **limit** - the max amount of data points to return or intervals to process.
 
-ThingsBoard will use *startTs*, *endTs* and *interval* to identify aggregation partitions or sub-queries and execute asynchronous queries to DB that leverage built-in aggregation functions.
+ThingsBoard will use *startTs*, *endTs*, and *interval* to identify aggregation partitions or sub-queries and execute asynchronous queries to DB that leverage built-in aggregation functions.
 
 {% capture tabspec %}get-telemetry-values
 A,get-telemetry-values.sh,shell,resources/get-telemetry-values.sh,/docs/user-guide/resources/get-telemetry-values.sh
@@ -119,10 +119,10 @@ B,get-telemetry-values-result.json,json,resources/get-telemetry-values-result.js
 
 Supported entity types are: TENANT, CUSTOMER, USER, DASHBOARD, ASSET, DEVICE, ALARM, ENTITY_VIEW
 
-#### Websocket API
+#### WebSocket API
 
-Websockets are actively used by Thingsobard Web UI. Websocket API duplicates REST API functionality and provides the ability to subscribe to device data changes.
-You can open a websocket connection to a telemetry service using the following URL
+WebSockets are actively used by Thingsobard Web UI. WebSocket API duplicates REST API functionality and provides the ability to subscribe to device data changes.
+You can open a WebSocket connection to a telemetry service using the following URL
 
 ```shell
 ws(s)://host:port/api/ws/plugins/telemetry?token=$JWT_TOKEN
@@ -132,15 +132,15 @@ Once opened, you can send
 
 [subscription commands](https://github.com/thingsboard/thingsboard/blob/master/application/src/main/java/org/thingsboard/server/service/telemetry/cmd/TelemetryPluginCmdsWrapper.java) 
 and receive 
-[subscription updates](https://github.com/thingsboard/thingsboard/blob/master/application/src/main/java/org/thingsboard/server/service/telemetry/sub/SubscriptionUpdate.java):
+[subscription updates](https://github.com/thingsboard/thingsboard/blob/master/application/src/main/java/org/thingsboard/server/service/telemetry/sub/TelemetrySubscriptionUpdate.java):
 
 where 
 
- - **cmdId** - unique command id (within corresponding websocket connection)
+ - **cmdId** - unique command id (within corresponding WebSocket connection)
  - **entityType** - unique entity type. Supported entity types are: TENANT, CUSTOMER, USER, DASHBOARD, ASSET, DEVICE, ALARM
  - **entityId** - unique entity identifier
- - **keys** - comma separated list of data keys
- - **timeWindow** - fetch interval for timeseries subscriptions, in milliseconds. Data will be fetch within following interval **[now()-timeWindow, now()]**
+ - **keys** - a comma-separated list of data keys
+ - **timeWindow** - fetch interval for time series subscriptions, in milliseconds. Data will be fetch within following interval **[now()-timeWindow, now()]**
  - **startTs** - start time of fetch interval for historical data query, in milliseconds.
  - **endTs** - end time of fetch interval for historical data query, in milliseconds.
  
@@ -175,9 +175,10 @@ This topic is covered in a separate guide.
 ThingsBoard provides the ability to configure data processing rules.
 Each rule consists of
 
- - filters - to filter incoming data feed, 
- - processor - to generate alarms or enrich incoming data with some server-side values
- - action - to apply a certain logic to filtered data.
-You can find more details in a separate guide.    
+ - **filters** to filter incoming data feed; 
+ - **processor** to generate alarms or enrich incoming data with some server-side values;
+ - **action** to apply a certain logic to filtered data.
+
+You can find more details in a separate guide:    
 <p><a href="/docs/user-guide/rule-engine" class="button">Rule Engine guide</a></p>
     

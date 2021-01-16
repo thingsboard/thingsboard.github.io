@@ -33,7 +33,7 @@ See video tutorial below for this sample with additional detailed demonstration 
 - Any development board with ESP32-PICO-D4 chip.  
   For this sample we were using [ESP32-PICO-KIT mini development board](https://docs.espressif.com/projects/esp-idf/en/latest/get-started/get-started-pico-kit.html#overview)  
     <img src="/images/samples/esp32/ota/esp32_board.png" width="400"/>
-- Account in ThingsBoard application. You can use your own instance or [ThingsBoard PE Cloud](https://cloud.thingsboard.io)  
+- Account in ThingsBoard application. You can use your own instance or [ThingsBoard Cloud](https://thingsboard.cloud)  
   We need to say that this sample works well with both CE and PE, but we use PE cloud since it has more features and in the next sample we will show how to do mass firmware updates for multiple devices simultaneously.
 
 ## ThingsBoard configuration
@@ -66,8 +66,8 @@ To the added node should be connected two links:
     - After the user save the new OTA configuration in the widget.  
     The new value of firmware version passes through *Attributes Updated* link in the rule chain as server attribute *lastTargetFwVer*.
 
-4. Download and import [OTA widgets](/docs/samples/esp32/resources/ota_widgets.json) widgets group to Widgets Library to allow specifying of firmware URL and version and send OTA configuration to ESP32.
-5. Download and import [OTA for ESP32](/docs/samples/esp32/resources/ota_for_esp32.json) dashboard to Dashboards Group. The dashboard has the alias *ESP32_OTA_alias* for the devices with type *ESP32_OTA*.  
+4. Download and import [OTA widgets (ThingsBoard v3.x)](/docs/samples/esp32/resources/ota_widgets_v2.json) or [OTA widgets (ThingsBoard v2.x)](/docs/samples/esp32/resources/ota_widgets.json) widgets group to Widgets Library to allow specifying of firmware URL and version and send OTA configuration to ESP32.
+5. Download and import [OTA for ESP32 (ThingsBoard v3.x)](/docs/samples/esp32/resources/ota_for_esp32_v2.json) or [OTA for ESP32 (ThingsBoard v2.x)](/docs/samples/esp32/resources/ota_for_esp32.json) dashboard to Dashboards Group. The dashboard has the alias *ESP32_OTA_alias* for the devices with type *ESP32_OTA*.  
 It allows to show on the dashboard a list of ESP32 with OTA support and the current firmware state (synced or not synced) for every device in the list.  
 User can change and update OTA config of any ESP32 form the list by clicking 'Select OTA configuration' control in the last column.  
 

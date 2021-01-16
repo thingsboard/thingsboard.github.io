@@ -34,6 +34,23 @@
   {
     "type": "hardware",
     "program": "",
+    "name": "Teltonika",
+    "logo": "teltonika-only-logo.svg",
+    "links": {
+      "Site": {
+        "href": "https://teltonika-networks.com/",
+        "target": "_blank"
+      },
+      "Integration guide": {
+        "href": "https://wiki.teltonika-networks.com/view/Monitoring_with_Thingsboard.io",
+        "target": "_blank"
+      }
+    },
+    "blurb": "Teltonika IoT Group is a leading fleet management solutions manufacturer from Europe"
+  },
+  {
+    "type": "hardware",
+    "program": "",
     "name": "TEKTELIC Communications Inc.",
     "logo": "tektelic.png",
     "links": {

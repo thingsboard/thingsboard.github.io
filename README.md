@@ -10,7 +10,7 @@
 The below commands setup your environment for running GitHub pages locally. 
 Any edits you make will be viewable on a lightweight webserver that runs on your local machine.
 
-Install Ruby 2.2 or higher. If you're on Ubuntu 18.04.2 LTS, run these commands:
+Install Ruby 2.2 or higher. If you're on Ubuntu 20.04.1 LTS, run these commands:
 
 	sudo apt-get install software-properties-common
 	sudo apt-add-repository ppa:brightbox/ruby-ng

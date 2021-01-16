@@ -9,7 +9,49 @@
 			<a href="/docs/contact-us/">Contact us</a>
 		</nav>
 		<div class="newsletterSubsContainer">
-			<script type="text/javascript" src="https://app.mailerlite.com/data/webforms/708170/r9r9x7.js?v5"></script>
+            <script type="text/javascript">
+                function subscribeForNewsletter(event) {
+                    event.stopPropagation();
+                    var script_tag = document.createElement('script');
+                    script_tag.setAttribute("type", "text/javascript");
+                    script_tag.setAttribute("src", "https://static.mailerlite.com/js/w/webforms.min.js?v28bf44f740701752bfc6767bc7e171d4");
+                    document.getElementsByTagName("head")[0].appendChild(script_tag);
+                    $(event.target).css('display', 'none');
+                    $('#mlb2-7341216').css('display', 'block');
+                }
+            </script>
+            <button class="button subscribe-newsletter-button" onClick="subscribeForNewsletter(event)">Sign up for ThingsBoard news</button>
+            <div id="mlb2-7341216" class="ml-subscribe-form ml-subscribe-form-7341216" style="display: none;">
+                <div class="ml-vertical-align-center">
+                    <div class="subscribe-form ml-block-success" style="display:none">
+                        <div class="form-section">
+                            <p style="text-align: center;">Thank you for your interest in ThingsBoard!<br/>Have a great day!</p>
+                        </div>
+                    </div>
+                    <form class="ml-block-form" action="https://static.mailerlite.com/webforms/submit/r9r9x7" data-id="708170" data-code="r9r9x7" method="POST" target="_blank">
+                        <div class="subscribe-form horizontal">
+                            <div class="form-section mb10">
+                                <p style="text-align: center;"><span style="font-size: 24px; color: #ffffff;">Sign up for ThingsBoard news</span></p>
+                            </div>
+                            <div class="form-section horizontal">
+                                <div class="form-group ml-field-email ml-validate-required ml-validate-email">
+                                    <input type="email" name="fields[email]" class="form-control" placeholder="Email*" value="" autocomplete="email" x-autocompletetype="email" spellcheck="false" autocapitalize="off" autocorrect="off">
+                                </div>
+                            </div>
+                            <input type="hidden" name="ml-submit" value="1">
+                            <div class="form-section horizontal ml-button-position">
+                                <button class="button primary" type="submit">
+                                    Submit
+                                </button>
+                                <button disabled="disabled" style="display: none;" type="button" class="button loading">
+                                    <img src="https://static.mailerlite.com/images/rolling@2x.gif" width="20" height="20" style="width: 20px; height: 20px;">
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
 		</div>
 		<div class="center">
 			<div class="social">

@@ -2,7 +2,7 @@
 - [Getting started guides](/docs/guides#AnchorIDGettingStartedGuides) - These guides provide quick overview of main ThingsBoard features. Designed to be completed in 15-30 minutes.
 {% endif %}
 {% if currentGuide != "InstallationGuides" %}
-- [Installation guides](/docs/guides#AnchorIDInstallationGuides) - Learn how to setup ThingsBoard on various available operating systems.
+- [Installation guides](/docs/user-guide/install/installation-options/) - Learn how to setup ThingsBoard on various available operating systems.
 {% endif %}
 {% if currentGuide != "ConnectYourDevice" %}
 - [Connect your device](/docs/guides#AnchorIDConnectYourDevice) - Learn how to connect devices based on your connectivity technology or solution.
@@ -25,8 +25,7 @@
 {% if currentGuide != "Contribution" %}
 - [Contribution and Development](/docs/guides#AnchorIDContribution) - Learn about contribution and development in ThingsBoard.
 {% endif %}
-
-<br/>
+  
 <br/>
 
 

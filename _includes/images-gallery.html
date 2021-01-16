@@ -1,0 +1,294 @@
+{% assign min = 0 %}
+{% assign max = 1000 %}
+{% assign diff = max | minus: min %}
+{% assign id = "now" | date: "%N" | modulo: diff | plus: min %}
+
+{% if include.showListImageTitles %}
+<ul>
+    {% for image in page[include.imageCollection] %}
+    <li> {{image[1].title}} </li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+<div id="{{id}}">
+    <div itemscope itemtype="http://schema.org/ImageGallery" class="images-gallery" style="justify-content: {{ include.align | default: 'start'}};">
+        {% for image in page[include.imageCollection] %}
+            <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" style="max-width: min({{ include.max-width | default: '225px'}}, 100%);
+                    max-height: min({{ include.max-height | default: '225px'}}, 100%);"
+                {% if page[include.imageCollection].size > 1 %} class="list-item"{% endif %}>
+                <a href="{{image[1].image}}" itemprop="contentUrl">
+                    <img src={% if include.preview == "false" %}
+                                "{{image[1].image}}"
+                            {% else %}
+                                "{{image[1].image | split: "" | reverse | join: "" | replace_first: ".", ".weiverp-" | split: "" | reverse | join: ""}}"
+                            {% endif %}
+                         itemprop="thumbnail"  alt="image"
+                         style="max-width: min({{ include.max-width | default: '225px'}}, 100%);
+                                max-height: min({{ include.max-height | default: '225px'}}, 100%);"/>
+                </a>
+                <figcaption itemprop="caption description" style="display: none">{{image[1].title}}</figcaption>
+            </figure>
+        {% endfor %}
+    </div>
+</div>
+
+<script>
+    window.addEventListener("load", function() {
+        window.removeEventListener("load", arguments.callee, false);
+
+        if(!document.getElementsByClassName('pswp').length){
+            document.body.insertAdjacentHTML('beforeend',
+                '<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">\n' +
+                '        <div class="pswp__bg"></div>\n' +
+                '        <div class="pswp__scroll-wrap">\n' +
+                '            <div class="pswp__container">\n' +
+                '                <div class="pswp__item"></div>\n' +
+                '                <div class="pswp__item"></div>\n' +
+                '                <div class="pswp__item"></div>\n' +
+                '            </div>\n' +
+                '\n' +
+                '            <div class="pswp__ui pswp__ui--hidden">\n' +
+                '\n' +
+                '                <div class="pswp__top-bar">\n' +
+                '                    <div class="pswp__counter"></div>\n' +
+                '\n' +
+                '                    <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>\n' +
+                '\n' +
+                '                    <button class="pswp__button pswp__button--share" title="Share"></button>\n' +
+                '\n' +
+                '                    <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>\n' +
+                '\n' +
+                '                    <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>\n' +
+                '\n' +
+                '                    <div class="pswp__preloader">\n' +
+                '                        <div class="pswp__preloader__icn">\n' +
+                '                            <div class="pswp__preloader__cut">\n' +
+                '                                <div class="pswp__preloader__donut"></div>\n' +
+                '                            </div>\n' +
+                '                        </div>\n' +
+                '                    </div>\n' +
+                '                </div>\n' +
+                '                <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">\n' +
+                '                    <div class="pswp__share-tooltip"></div>\n' +
+                '                </div>\n' +
+                '                <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">\n' +
+                '                </button>\n' +
+                '                <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">\n' +
+                '                </button>\n' +
+                '                <div class="pswp__caption">\n' +
+                '                    <div class="pswp__caption__center"></div>\n' +
+                '                </div>\n' +
+                '            </div>\n' +
+                '        </div>\n' +
+                '    </div>'
+            );
+        }
+
+        var container = document.getElementById('{{id}}');
+
+        var initPhotoSwipeFromDOM = function(gallerySelector) {
+            var parseThumbnailElements = function(el) {
+                var thumbElements = el.childNodes,
+                    numNodes = thumbElements.length,
+                    items = [],
+                    figureEl,
+                    linkEl,
+                    size,
+                    item;
+
+                for(var i = 0; i < numNodes; i++) {
+
+                    figureEl = thumbElements[i];
+                    if(figureEl.nodeType !== 1) {
+                        continue;
+                    }
+                    linkEl = figureEl.children[0];
+                    size = linkEl.children[0];
+                    item = {
+                        src: linkEl.getAttribute('href'),
+                        w: 2500,
+                        h: 0,
+                        sizeLoaded: false
+                    };
+
+                    if(figureEl.children.length > 1) {
+                        item.title = figureEl.children[1].innerHTML;
+                    }
+                    if(linkEl.children.length > 0) {
+                        item.msrc = linkEl.children[0].getAttribute('src');
+                    }
+                    if(item.msrc === item.src){
+                        item.w = parseInt(size.naturalWidth, 10);
+                        item.h = parseInt(size.naturalHeight, 10);
+                    }
+
+                    item.el = figureEl;
+                    items.push(item);
+                }
+                return items;
+            };
+
+            var closest = function closest(el, fn) {
+                return el && ( fn(el) ? el : closest(el.parentNode, fn) );
+            };
+
+            var onThumbnailsClick = function(e) {
+                e = e || window.event;
+                e.preventDefault ? e.preventDefault() : e.returnValue = false;
+
+                var eTarget = e.target || e.srcElement;
+
+                var clickedListItem = closest(eTarget, function(el) {
+                    return (el.tagName && el.tagName.toUpperCase() === 'FIGURE');
+                });
+
+                if(!clickedListItem) {
+                    return;
+                }
+
+                var clickedGallery = clickedListItem.parentNode,
+                    childNodes = clickedListItem.parentNode.childNodes,
+                    numChildNodes = childNodes.length,
+                    nodeIndex = 0,
+                    index;
+
+                for (var i = 0; i < numChildNodes; i++) {
+                    if(childNodes[i].nodeType !== 1) {
+                        continue;
+                    }
+
+                    if(childNodes[i] === clickedListItem) {
+                        index = nodeIndex;
+                        break;
+                    }
+                    nodeIndex++;
+                }
+
+                if(index >= 0) {
+                    openPhotoSwipe( index, clickedGallery );
+                }
+                return false;
+            };
+
+            var photoswipeParseHash = function() {
+                var hash = window.location.hash.substring(1),
+                    params = {};
+
+                if(hash.length < 5) {
+                    return params;
+                }
+
+                var vars = hash.split('&');
+                for (var i = 0; i < vars.length; i++) {
+                    if(!vars[i]) {
+                        continue;
+                    }
+                    var pair = vars[i].split('=');
+                    if(pair.length < 2) {
+                        continue;
+                    }
+                    params[pair[0]] = pair[1];
+                }
+
+                if(params.gid) {
+                    params.gid = parseInt(params.gid, 10);
+                }
+
+                return params;
+            };
+
+            var openPhotoSwipe = function(index, galleryElement, disableAnimation, fromURL) {
+                var pswpElement = document.querySelectorAll('.pswp')[0],
+                    gallery,
+                    options,
+                    items;
+
+                items = parseThumbnailElements(galleryElement);
+
+                options = {
+                    galleryUID: galleryElement.getAttribute('data-pswp-uid'),
+                    getThumbBoundsFn: function(index) {
+                        var thumbnail = items[index].el.getElementsByTagName('img')[0], // find thumbnail
+                            pageYScroll = window.pageYOffset || document.documentElement.scrollTop,
+                            rect = thumbnail.getBoundingClientRect();
+                        return {x:rect.left, y:rect.top + pageYScroll, w:rect.width};
+                    },
+                    bgOpacity: 0.8,
+                    closeOnScroll: false,
+                    shareEl: false,
+                    fullscreenEl: false,
+                    zoomEl: true,
+                    history: false,
+                    loop: false
+                };
+
+                if(fromURL) {
+                    if(options.galleryPIDs) {
+                        for(var j = 0; j < items.length; j++) {
+                            if(items[j].pid == index) {
+                                options.index = j;
+                                break;
+                            }
+                        }
+                    } else {
+                        options.index = parseInt(index, 10) - 1;
+                    }
+                } else {
+                    options.index = parseInt(index, 10);
+                }
+
+                if( isNaN(options.index) ) {
+                    return;
+                }
+
+                if(disableAnimation) {
+                    options.showAnimationDuration = 0;
+                }
+
+                gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
+
+                gallery.listen('gettingData', function(index, item) {
+                    if (!item.sizeLoaded) {
+                        item.sizeLoaded = true;
+                        var img = new Image();
+                        img.onload = function() {
+                            item.w = this.width;
+                            item.h = this.height;
+                            gallery.updateSize(true);
+                        }
+                        img.src = item.src;
+                    }
+                });
+
+                gallery.init();
+
+                var buttonLeft = pswpElement.getElementsByClassName('pswp__button--arrow--left')[0];
+                var buttonRight = pswpElement.getElementsByClassName('pswp__button--arrow--right')[0];
+
+                buttonLeft.hidden = gallery.getCurrentIndex() === 0;
+                buttonRight.hidden = gallery.getCurrentIndex() + 1 === gallery.items.length;
+
+                gallery.listen('beforeChange', function() {
+                        buttonLeft.hidden = gallery.getCurrentIndex() === 0;
+                        buttonRight.hidden = gallery.getCurrentIndex() + 1 === gallery.items.length;
+                    }
+                );
+            };
+
+            var galleryElements = container.querySelectorAll( gallerySelector );
+
+            for(var i = 0, l = galleryElements.length; i < l; i++) {
+                galleryElements[i].setAttribute('data-pswp-uid', i+1);
+                galleryElements[i].onclick = onThumbnailsClick;
+            }
+
+            var hashData = photoswipeParseHash();
+            if(hashData.pid && hashData.gid) {
+                openPhotoSwipe( hashData.pid ,  galleryElements[ hashData.gid - 1 ], true, true );
+            }
+        };
+
+        initPhotoSwipeFromDOM('.images-gallery');
+    }, false)
+</script>

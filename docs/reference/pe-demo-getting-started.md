@@ -1,11 +1,11 @@
 ---
 layout: docwithnav
-title: ThingsBoard PE Cloud Getting Started
-description: ThingsBoard PE Cloud Overview
+title: ThingsBoard PE Demo Getting Started
+description: ThingsBoard PE Demo Overview
 
 ---
 
-Once you signed-up to [ThingsBoard PE Cloud](https://cloud.thingsboard.io/) we automatically create separate Tenant account for you.
+Once you signed-up to [ThingsBoard PE Demo](https://cloud.thingsboard.io/) we automatically create separate Tenant account for you.
 The email and password you have specified allows you to login as Tenant Administrator. 
 Also, we automatically provision sample Smart Metering application for your Tenant.
 The purpose of this application is to show how different ThingsBoard features are used to implement smart metering use cases.

@@ -37,11 +37,13 @@
         $('.solution-selector .solution').click(function(event) {
             event.preventDefault();
             var id = $(this).attr("data-toggle");
-            $(this).find(".magic-radio").prop("checked", true);
+            var headerId = $(this).attr("data-description-toggle");
             $('.solution-selector .solution').removeClass("active");
             $(this).addClass("active");
-            $('.pricing-div .pricing-section:not(.pricing-community)').removeClass("active");
+            $('.pricing-div .pricing-section:not(.pricing-community):not(.pricing-cloud)').removeClass("active");
             $('.pricing-div .pricing-section'+id).addClass("active");
+            $('.pricing-content-header .pricing-content-description:not(.pricing-cloud)').removeClass("active");
+            $('.pricing-content-header .pricing-content-description'+headerId).addClass("active");
         });
 
         $.urlParam = function (name) {
@@ -53,15 +55,36 @@
         if (activeTab && activeTab === 'trendz') {
             activatePricingSection('trendz');
         } else {
-            activatePricingSection('thingsboard-pe');
+            activatePricingSection('{{page.defaultActivePricingSection}}', {{page.defaultActivateSelectProduct}});
         }
     });
 
-    function activatePricingSection(sectionId) {
+    function activatePricingSection(sectionId, activateSelectProduct) {
         $("li.menu-item").removeClass("active");
         $("li.menu-item#menu-item-"+sectionId).addClass("active");
-        $("section.pricing-content").css("display", "none");
-        $("section.pricing-content#"+sectionId).css("display", "block");
+        $("div.pricing-content").css("display", "none");
+        if (activateSelectProduct) {
+            $("div.select-product-content#" + sectionId).css("display", "flex");
+            $('div.pricing-header-divider').addClass("no-margin");
+            $('#' + sectionId + ' .product-selector .solution.defaultselection').click();
+        } else {
+            $("div.select-product-content").css("display", "none");
+            $('div.pricing-header-divider').removeClass("no-margin");
+            $("div.pricing-content#" + sectionId).css("display", "block");
+            $('#' + sectionId + ' .solution-selector .solution.defaultselection').click();
+        }
+
+        if(sectionId) {
+            reportPriceOpen(sectionId);
+        }
+    }
+
+    function activateProductSection(sectionId) {
+        $('.product-selector .solution').removeClass("active");
+        $('.product-selector .solution.'+sectionId).addClass("active");
+
+        $("div.pricing-content").css("display", "none");
+        $("div.pricing-content#"+sectionId).css("display", "block");
 
         $('#' + sectionId + ' .solution-selector .solution.defaultselection').click();
         if(sectionId) {

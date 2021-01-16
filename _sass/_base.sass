@@ -92,10 +92,9 @@ p
 	border-radius: 3px
 	padding: 0 10px
 	line-height: 40px
-	color: rgba(255,255,255,0.87)
+	color: white
 	background-color: $blue
 	text-decoration: none
-	text-transform: uppercase
 	font-size: 14px
 	font-weight: 500
 	box-shadow: 0 2px 5px 0 rgba(0,0,0,.26)
@@ -116,7 +115,6 @@ p
 			background-color: $orange-02
 
 .nav-item
-	text-transform: uppercase
 	color: #fff
 	padding: 15px 6px
 	font-size: 16px
@@ -374,7 +372,7 @@ header
 		justify-content: space-around
 		align-items: flex-start
 		.nav-box
-			width: 280px
+			width: 300px
 			white-space: normal
 			display: inline-block
 			padding: 0 10px
@@ -556,7 +554,7 @@ header
 	text-align: center
 
 	li a
-		color: transparentize(white, 0.5)
+		color: transparentize(white, 0.35)
 
 		&.YAH
 			color: white
@@ -592,13 +590,67 @@ footer
 				color: $light-blue
 
 	.newsletterSubsContainer
+		.subscribe-newsletter-button
+			margin-top: 20px
+			margin-bottom: 20px
+			font-size: 20px
+			line-height: 48px
+			padding: 0 20px
+			@media (max-width: 768px)
+				width: 100%
+				margin-left: 15px
+				margin-right: 15px
+				font-size: 16px
+				line-height: 42px
+				padding: 0 10px
 		#mlb2-7341216
 			.subscribe-form
 				background: none !important
 				border: none !important
-
+				padding: 20px
+				width: 460px !important
+				@media (max-width: 768px)
+					width: 100% !important
+				&.horizontal
+					padding-bottom: 0px
+			.form-section
+				p
+					line-height: 150%
+					padding: 0px !important
+					margin: 0px 0px 10px 0px
+				&.mb10
+					margin-bottom: 10px
+					float: left
+				&.horizontal
+					float: left
+					margin-bottom: 5px
+					width: 70%
+					@media (max-width: 768px)
+						float: none
+						width: 100%
+						padding: 0
+					&.ml-button-position
+						width: 30%
+						padding: 0
+						@media (max-width: 768px)
+							float: none
+							width: 100%
+							padding: 0
+							margin-bottom: 20px
+							.button
+								width: 100%
+					.form-group
+						float: left
+						width: 100%
+						padding-right: 10px
+						box-sizing: border-box
+						@media (max-width: 768px)
+							padding: 0
 		#mlb2-7341216.ml-subscribe-form
 			.form-group
+				&.ml-error
+					.form-control
+						border-color: red!important
 				.form-control
 					background-color: transparent !important
 					font-family: "Roboto",sans-serif
@@ -863,8 +915,8 @@ section
 		margin: 0
 	& > .container:first-child > .item:first-child > .title:first-child
 		padding-left: 0
-		font-size: 1.4em
-		font-weight: 700
+		font-size: 1.2em
+		font-weight: 600
 
 	& > .container:first-child > .item.yah:first-child > .title:first-child
 		margin-left: -20px !important
@@ -1116,9 +1168,8 @@ iframe
 	h1, h2, h3, h4, h5, h6
 		line-height: normal
 		font-weight: 500
-		margin-bottom: 30px
-		padding-bottom: 10px
-		border-bottom: 1px solid #cccccc
+		margin-bottom: 10px
+		padding-bottom: 0
 		pointer-events: none
 
 		// Make sure anchor links aren't hidden by the header
@@ -1149,7 +1200,7 @@ iframe
 	p
 		font-size: 16px
 		font-weight: 400
-		line-height: 1.25em
+		line-height: 1.5em
 
 	p + p
 		margin-top: 10px
@@ -1292,7 +1343,7 @@ iframe
 		a
 			position: relative
 			color: $blue
-			font-weight: 700
+			font-weight: 600
 
 	img
 		max-width: 100%
@@ -1359,6 +1410,12 @@ iframe
 	#video
 		width: 100%
 		margin: 0
+
+	div.products-title
+		text-align: center
+		font-size: 48px
+		padding-bottom: 50px
+		font-weight: 500
 
 	.cards
 		position: relative
@@ -1438,6 +1495,8 @@ iframe
 				&.consulting-bg
 					background-image: url(/images/services/consulting.svg)
 
+				&.cloud-bg
+					background-image: url(/images/services/cloud.svg)
 				&.professional-edition-bg
 					background-image: url(/images/services/professional_edition.svg)
 				&.community-edition-bg
