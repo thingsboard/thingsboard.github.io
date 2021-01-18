@@ -3,22 +3,95 @@ layout: docwithnav
 title: Data filtering and traffic reduce
 description: ThingsBoard Edge use case #2
 
+provisionDevicesEdge:
+        0:
+            image: /images/edge/use-cases/data-filtering/provision-devices-item-1.png
+            title: 'Login to your ThingsBoard <b>Edge</b> instance and open Device groups page.'
+        1:
+            image: /images/edge/use-cases/data-filtering/provision-devices-item-2.png
+            title: 'Open "All" device group.'
+        2:
+            image: /images/edge/use-cases/data-filtering/provision-devices-item-3.png
+            title: 'Click on the "Add Device"("+") icon in the top right corner of the table.'
+        3:
+            image: /images/edge/use-cases/data-filtering/provision-devices-item-4.png
+            title: 'Input device name. For example, "Vehicle monitoring system". Click "Add" to add the device.'
+        4:
+            image: /images/edge/use-cases/data-filtering/provision-devices-item-5.png
+            title: 'Now your "Vehicle monitoring system" device should be listed first, since table sort devices using created time by default.
+
+provisionDevicesCE:    
+    0:
+        image: /images/edge/use-cases/data-filtering/provision-devices-item-10.png
+        title: 'Login to your ThingsBoard <b>CE</b> instance and open Devices page.'
+    1:
+        image: /images/edge/use-cases/data-filtering/provision-devices-item-11.png
+        title: 'Make sure that "Vehicle monitoring system" device is in the devices list.'
+        
+rootRuleChainPreview:
+    0:
+        image: /images/edge/use-cases/data-filtering/root-rule-chain.png
+
+updateRootRuleChainCE:
+    0:
+        image: /images/edge/use-cases/data-filtering/update-root-item-1.png
+        title: 'Login to your ThingsBoard <b>CE</b> instance and open Rule chain templates page.'
+    1:
+        image: /images/edge/use-cases/data-filtering/update-root-item-2.png
+        title: 'Open default "Edge Root Rule Chain".'
+    2:
+        image: /images/edge/use-cases/data-filtering/update-root-item-3.png
+        title: 'Filter node by "script" word and drag script node (Transformation) to rule chain.'
+    3:
+        image: /images/edge/use-cases/data-filtering/update-root-item-4.png
+        title: 'Input node name, e.g. "Filter vehicle data" and add <b>JavaScript</b> code (you can copy and paste it from the snippet above) to send further only 'distance' readings. Click "Add" to proceed.'
+    4:
+        image: /images/edge/use-cases/data-filtering/update-root-item-5.png
+        title: 'Drag connection from "Save Timeseries" to newly added script node.'
+    5:
+        image: /images/edge/use-cases/data-filtering/update-root-item-6.png
+        title: 'Select "Success" from the list and click "Add" button.'
+    6:
+        image: /images/edge/use-cases/data-filtering/update-root-item-7.png
+        title: 'Drag connection from "Filter vehicle data" to the "Push to cloud" node  the list and click "Add" button.'
+    7:
+        image: /images/edge/use-cases/data-filtering/update-root-item-8.png
+        title: 'Select "Success" from the list and click "Add" button.'
+    8:
+        image: /images/edge/use-cases/data-filtering/update-root-item-9.png
+        title: 'Click "Apply changes" to save current progress.'
+
+copyAccessTokenDevice:
+    0:
+        image: /images/edge/use-cases/data-filtering/copy-access-token-item-1.png
+        title: 'Open Device groups page in the ThingsBoard <b>Edge</b> instance.'
+    1:
+        image: /images/edge/use-cases/data-filtering/copy-access-token-item-2.png
+        title: 'Open "All" device group.'
+    2:
+        image: /images/edge/use-cases/data-filtering/copy-access-token-item-3.png
+        title: 'Click on the <b>Vehicle monitoring system</b> device row in the table to open device details.'
+    3:
+        image: /images/edge/use-cases/data-filtering/copy-access-token-item-4.png  
+        title: 'Click "Copy access token". Token will be copied to your clipboard. Save it to a safe place.'
+
 ---
-
-Coming soon…
-
-You can have thousands of edge devices with sensors that constantly report data in realtime. It might be expensive enough to forward and process all messages to the cloud.
-Probably much more efficient would be to **filter and process it on the edge** and send to the cloud only refined business-relevant data.
-
 * TOC
 {:toc}
 
 ## Use case
-Let's assume you have a delivery van with mounted IoT devices:
- * A **fuel monitoring system** that tracks real-time fuel consumption
- * A **GPS tracker** that tracks car speed
+Let's assume you have a vehicle with mounted IoT monitoring system connected to ThingsBoard **Edge**. The monitoring system has 10 sensors:
+* Distance
+* Gas consumption
+* Vehicle speed
+* Engine temperature
+* Ambient temperature
+* Tire temperature
+* Pressure in each tire (4x)
 
-Vehicle sensors gather data in realtime and transmit it to the edge computing service. Edge performs necessary processing/analysis, e.g. **calculates average fuel consumption** and **sends it periodically to the cloud**. While less important data flow temporarily stored on the edge.
+ThingsBoard Edge has the following responsibilities:
+ * **Collects readings** from 10 sensors
+ * **Pushes to the cloud** - ThingsBoard Community Edition - only distance telemetry
 
 Please note that this is just a simple theoretical use case to demonstrate the capabilities of the platform. You can use this tutorial as a basis for much more complex scenarios.
 
@@ -26,236 +99,77 @@ Please note that this is just a simple theoretical use case to demonstrate the c
 
 {% include templates/edge/use-cases/ce-prerequisites.md %}
 
-## Create device group
-Open ThingsBoard Edge UI (default UI port is 8080) and login as tenant administrator.
+## Create device
 
-{% capture local-deployment %}
-If you have changed **HTTP_BIND_PORT** during installation process please use that instead of 8080 port
-```bash
-http://localhost:HTTP_BIND_PORT
-``` 
-{% endcapture %}
-{% include templates/info-banner.md content=local-deployment %}
+First we will create a new device "Vehicle monitoring system" on the edge with type "monitoring system".
+
+Please open ThingsBoard **Edge** UI using the URL: [http://localhost:18080](http://localhost:18080).
+
+{% include templates/edge/bind-port-changed-banner.md %}
+
+{% include images-gallery.html imageCollection="provisionDevicesEdge" showListImageTitles="true" %}
  
-Add new [device group](/docs/user-guide/groups/) **Vehicles**:
+Please open ThingsBoard **CE** using the URL [http://localhost:8080](http://localhost:8080) or [Live Demo](https://demo.thingsboard.io):
 
-![image](/images/edge/tutorial/data-filtering/add-device-group.png) 
+{% include images-gallery.html imageCollection="provisionDevicesCE" showListImageTitles="true" %}
 
-Create two devices with the following information:
- * device #1: name **Fuel monitoring system**, type **monitoring system**
- * device #2: name **GPS**, type **tracker**
+## Configure edge rule engine to push to the cloud filtered data
 
-<br>![image](/images/edge/tutorial/data-filtering/add-device.png) 
-![image](/images/edge/tutorial/data-filtering/add-device-2.png) 
+We will update "Edge Root Rule Chain" that will save on the edge 10 readings from the device "Vehicle monitoring system" and send to the cloud only one - "distance".
+Here is the final configuration of the edge root rule chain:
 
-## Create dashboard group
-Let's also create two dashboards in order to visualize data flow:
- * **Dashboard Edge** for visualizing real-time vehicle's fuel consumption and speed
- * **Dashboard Cloud** for visualizing on the chart average hourly fuel consumption and speed
+{% include images-gallery.html imageCollection="rootRuleChainPreview" %}
 
-Open cloud UI. Go to Dashboard groups -> Add new entity group and name it "Delivery van dashboards".
+In the next steps we are going to create **JavaScript** node to filter data. 
+JavaScript for script node will create an empty object *newMsg*, add property "distance" with corresponding value from the "Vehicle monitoring system" and send further new object as a new message:
 
-![image](/images/edge/tutorial/data-filtering/add-dashboard-group.png)
+{% highlight javascript %}
+var newMsg = {};
+newMsg.distance = msg.distance;
+return {msg: newMsg, metadata: metadata, msgType: msgType}; {% endhighlight %}
 
-Please download the attached JSON files - [**dashboard Edge**](/docs/edge/use-cases/resources/data-filtering-traffic-reduce/edge.json) and [**dashboard Cloud**](/docs/edge/use-cases/resources/data-filtering-traffic-reduce/cloud.json) - for the dashboards indicated in this tutorial and import it.
+Please use this snippet in the next steps, if required.
 
-Open dashboard group **Delivery van dashboards**. Click **Import Dashboard** and drop alternately downloaded JSON files.
+Here are the steps to update default edge "Root Rule Chain" to the rule chain above:
 
-![image](/images/edge/tutorial/data-filtering/dashboards.png)
+{% include images-gallery.html imageCollection="updateRootRuleChainCE" showListImageTitles="true" %}
 
-## Assign device and dashboard groups to the edge
-If you have created an entity group on the cloud and want to use it on the edge - you must assign it. Follow these steps in order to assign device group **Delivery van** and dashboard group **Delivery van dashboards** to the edge **Edge ThingsBoard**:
- * Open cloud UI
- * Click **Menu -> Edge groups -> All -> Edge ThingsBoard -> Manage edge device groups**:
- 
-![image](/images/edge/tutorial/data-filtering/assign-device-group-1.png)
+Now let's open ThingsBoard **Edge** UI to see updated root rule chain:
 
- * Click the button **Assign new entity group**, choose **Delivery van** in the list of available groups and click the button **Assign**:
- 
-![image](/images/edge/tutorial/data-filtering/assign-device-group-2.png) 
+{% include images-gallery.html imageCollection="updateRootRuleChainEdge" showListImageTitles="true" %}
 
- * Click **Menu -> Edge groups -> All -> Edge ThingsBoard -> Manage edge dashboard groups**:
- 
-![image](/images/edge/tutorial/data-filtering/assign-dashboard-group-1.png)
+## Connect "Vehicle monitoring system" to edge
+To connect "Vehicle monitoring system" to the ThingsBoard Edge you need to get device credentials first.
+ThingsBoard support different device credentials. We recommend to use default auto-generated credentials which is access token for this guide.
 
- * Click the button **Assign new entity group**, choose **Delivery van dashobard** in the list of available groups and click the button **Assign**.
+Please open ThingsBoard **Edge** UI using the URL: [http://localhost:18080](http://localhost:18080).
 
-In the ThingsBoard Edge UI you should see assigned groups and entities:
+{% include templates/edge/bind-port-changed-banner.md %}
 
-![image](/images/edge/tutorial/data-filtering/assign-device-group-3.png)
+{% include images-gallery.html imageCollection="copyAccessTokenAirConditioner" showListImageTitles="true" %}
 
-![image](/images/edge/tutorial/data-filtering/assign-dashboard-group-3.png)
+We will use simple commands to generate random telemetry data, subscribe device **Vehicle monitoring system** and publish to the ThingsBoard Edge by MQTT protocol.
 
-## Message flow
-In this section we explain the purpose of two kind of nodes used in this tutorial:
-- Node [**Filter Script**](/docs/user-guide/rule-engine-2-0/filter-nodes/#check-relation-filter-node): **Node A** and **Node B**.
-  - This node will check the type of telemetry data. If the incoming message has type "mpg" - script will direct it to the node **Aggregate stream** to calculate average fuel consumption. If the message type is "mph" - it flows to similar **Aggregate node** to calculate average speed.
-- Node [**Aggregate stream**](/docs/user-guide/rule-engine-2-0/pe/analytics-nodes/#aggregate-stream-node): **Node C** and **Node D**.
-  - This node can set custom interval and calculate the MIN/MAX/SUM/AVG/COUNT/UNIQUE of the data stream.
+Please download following script to your local folder:
+- [**mqtt-generator-vehicle.py**](/docs/edge/use-cases/resources/)
 
-![image](/images/edge/tutorial/data-filtering/rule-chain-root.png)
+**NOTE** We assume that you have ????? installed on your local PC.
 
-Download the attached [JSON file](/docs/edge/use-cases/resources/data-filtering-traffic-reduce/edge_root_rule_chain.json) for the **Edge Root Rule Chain** rule chain. 
+Before running the scripts, please modify **mqtt-generator-vehicle.py** accordingly:
 
-Also, you can create such rule chain from scratch. The following section shows you how to modify Edge Root Rule Chain.
+- Replace **YOUR_ACCESS_TOKEN** with **Vehicle monitoring system** device access token copied from the steps above. 
 
-## Configure Rule Engine
+- Replace **YOUR_TB_EDGE_HOST** with your ThingsBoard Edge host. For example, **localhost**.
 
-Go to **Rule Chains** -> **Edge Rule Chains** on the cloud and click on the **Edge Root Rule Chain**:
+- Replace **YOUR_TB_EDGE_MQTT_PORT** with your ThingsBoard Edge MQTT port. For example, **11883** or **1883**.
 
-- Add two nodes **Filter Script**. You can find it in the Filter node section:
-
-![image](/images/edge/tutorial/data-filtering/node-script.png)
-
-- Fill in the fields with the input data shown in the following tables: 
-
-**Node A**:
-
-<table style="width: 25%">
-  <thead>
-      <tr>
-          <td><b>Field</b></td><td><b>Input Data</b></td>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>Name</td>
-          <td>mph exists?</td>
-      </tr>
-      <tr>
-          <td>Filter</td>
-          <td>return typeof msg.mph !== 'undefined';</td>
-      </tr>
-   </tbody>
-</table>
-
-**Node B**:
-
-<table style="width: 25%">
-  <thead>
-      <tr>
-          <td><b>Field</b></td><td><b>Input Data</b></td>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>Name</td>
-          <td>mpg exists?</td>
-      </tr>
-      <tr>
-          <td>Filter</td>
-          <td>return typeof msg.mpg !== 'undefined';</td>
-      </tr>
-   </tbody>
-</table>
-
-- Add two nodes **Aggregate stream**. You can find it in the Analytics node section:
-
-![image](/images/edge/tutorial/data-filtering/node-aggregate.png)
-
-- Fill in the fields with the input data shown in the following tables: 
-
-**Node C**:
-
-<table style="width: 25%">
-  <thead>
-      <tr>
-          <td><b>Field</b></td><td><b>Input Data</b></td>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>Name</td>
-          <td>Average Speed</td>
-      </tr>
-      <tr>
-          <td>Input value key</td>
-          <td>mph</td>
-      </tr>
-      <tr>
-          <td>Output value key</td>
-          <td>avgHourlySpeed</td>
-      </tr>
-      <tr>
-          <td>Aggregation interval type</td>
-          <td>Hour</td>
-      </tr>
-   </tbody>
-</table>
-
-**Node D**:
-
-<table style="width: 25%">
-  <thead>
-      <tr>
-          <td><b>Field</b></td><td><b>Input Data</b></td>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>Name</td>
-          <td>Average Fuel Consumption</td>
-      </tr>
-      <tr>
-          <td>Input value key</td>
-          <td>mpg</td>
-      </tr>
-      <tr>
-          <td>Output value key</td>
-          <td>avgHourlyFuelConsumption</td>
-      </tr>
-      <tr>
-          <td>Aggregation interval type</td>
-          <td>Hour</td>
-      </tr>
-   </tbody>
-</table>
-
-Now let's create connections between nodes in the following way:
- * Remove the connection between **Save timeseries** and **Push to cloud** nodes
- * Connect **Save timeseries** node to the **Node A** and **Node B** with the relation type **Success**
- * Connect **Node A** and **Node C** with relation type **True**
- * Connect **Node B** and **Node D** with relation type **True** 
- * Connect **Node C** and **Node D** to the **Push to cloud** node with relation type **Success**
-
-![image](/images/edge/tutorial/data-filtering/rule-chain-root.png)
-
-## Generate telemetry
-
-- Use the following scripts to connect the devices **GPS** and **Fuel monitoring system** to the ThingsBoard Edge by MQTT protocol.  
-    - [**mqtt_generator_gps.py**](/docs/edge/use-cases/resources/data-filtering-traffic-reduce/mqtt_generator_gps.py): the script generates each second speed data (mph)
-    - [**mqtt_generator_fuel.py**](/docs/edge/use-cases/resources/data-filtering-traffic-reduce/mqtt_generator_fuel.py): the script generates each second fuel consumption data (mpg)
-
-To run the scripts, you need to do the following steps:
- * Replace THINGSBOARD_EDGE_HOST with your ThingsBoard Edge instance installation IP address or hostname 
- * Replace ACCESS_TOKEN. Access token can be find from the [device's page](/docs/user-guide/ui/devices/#manage-device-credentials): <br>
-
-![image](/images/edge/tutorial/data-filtering/copy-token.png)
-
-- Open the terminal and install MQTT Python library:
-
+Open the terminal and install MQTT Python library:
 ```bash
 sudo pip install paho-mqtt
 ```
 
-- Go to the folder that contains Python scripts and launch applications in separate terminal windows by these commands:
+Go to the folder that contains Python scripts and launch applications in separate terminal windows by these commands:
 
 ```bash
-python mqtt_generator_gps.py
-python mqtt_generator_fuel.py
+python mqtt-generator-vehicle.py
 ```
-
-## Validating the flow
-
-Remember that we configured ThingsBoard Edge Rule Engine send to the cloud only aggregated data. This means the following:
- * from the **Cloud** dashboard you are able to see only charts with aggregated data
- 
-![image](/images/edge/tutorial/data-filtering/cloud-final.png)
- 
- * from the **Edge** dashboard you are able to see only real-time fuel consumption and speed
-
-![image](/images/edge/tutorial/data-filtering/edge-final.png)
-
-## Next Steps
-
-{% assign currentGuide = "DataFilteringAndTrafficReduce" %}{% include templates/edge/guides-banner-edge.md %}
