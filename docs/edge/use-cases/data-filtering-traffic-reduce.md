@@ -15,18 +15,18 @@ provisionDevicesEdge:
             title: 'Click on the "Add Device"("+") icon in the top right corner of the table.'
         3:
             image: /images/edge/use-cases/data-filtering/provision-devices-item-4.png
-            title: 'Input device name. For example, "Vehicle monitoring system". Click "Add" to add the device.'
+            title: 'Input device name. For example, "In-vehicle monitoring system". Click "Add" to add the device.'
         4:
             image: /images/edge/use-cases/data-filtering/provision-devices-item-5.png
-            title: 'Now your "Vehicle monitoring system" device should be listed first, since table sort devices using created time by default.
+            title: 'Now your "In-vehicle monitoring system" device should be listed first, since table sort devices using created time by default.
 
 provisionDevicesCE:    
     0:
-        image: /images/edge/use-cases/data-filtering/provision-devices-item-10.png
+        image: /images/edge/use-cases/data-filtering/provision-devices-item-6.png
         title: 'Login to your ThingsBoard <b>CE</b> instance and open Devices page.'
     1:
-        image: /images/edge/use-cases/data-filtering/provision-devices-item-11.png
-        title: 'Make sure that "Vehicle monitoring system" device is in the devices list.'
+        image: /images/edge/use-cases/data-filtering/provision-devices-item-7.png
+        title: 'Make sure that "In-vehicle monitoring system" device is in the devices list.'
         
 rootRuleChainPreview:
     0:
@@ -70,7 +70,7 @@ copyAccessTokenDevice:
         title: 'Open "All" device group.'
     2:
         image: /images/edge/use-cases/data-filtering/copy-access-token-item-3.png
-        title: 'Click on the <b>Vehicle monitoring system</b> device row in the table to open device details.'
+        title: 'Click on the <b>In-vehicle monitoring system</b> device row in the table to open device details.'
     3:
         image: /images/edge/use-cases/data-filtering/copy-access-token-item-4.png  
         title: 'Click "Copy access token". Token will be copied to your clipboard. Save it to a safe place.'
@@ -101,7 +101,7 @@ Please note that this is just a simple theoretical use case to demonstrate the c
 
 ## Create device
 
-First we will create a new device "Vehicle monitoring system" on the edge with type "monitoring system".
+First we will create a new device "In-vehicle monitoring system" on the edge with type "monitoring system".
 
 Please open ThingsBoard **Edge** UI using the URL: [http://localhost:18080](http://localhost:18080).
 
@@ -115,13 +115,13 @@ Please open ThingsBoard **CE** using the URL [http://localhost:8080](http://loca
 
 ## Configure edge rule engine to push to the cloud filtered data
 
-We will update "Edge Root Rule Chain" that will save on the edge 10 readings from the device "Vehicle monitoring system" and send to the cloud only one - "distance".
+We will update "Edge Root Rule Chain" that will save on the edge 10 readings from the device "In-vehicle monitoring system" and send to the cloud only one - "distance".
 Here is the final configuration of the edge root rule chain:
 
 {% include images-gallery.html imageCollection="rootRuleChainPreview" %}
 
 In the next steps we are going to create **JavaScript** node to filter data. 
-JavaScript for script node will create an empty object *newMsg*, add property "distance" with corresponding value from the "Vehicle monitoring system" and send further new object as a new message:
+JavaScript for script node will create an empty object *newMsg*, add property "distance" with corresponding value from the "In-vehicle monitoring system" and send further new object as a new message:
 
 {% highlight javascript %}
 var newMsg = {};
@@ -138,8 +138,8 @@ Now let's open ThingsBoard **Edge** UI to see updated root rule chain:
 
 {% include images-gallery.html imageCollection="updateRootRuleChainEdge" showListImageTitles="true" %}
 
-## Connect "Vehicle monitoring system" to edge
-To connect "Vehicle monitoring system" to the ThingsBoard Edge you need to get device credentials first.
+## Connect "In-vehicle monitoring system" to edge
+To connect "In-vehicle monitoring system" to the ThingsBoard Edge you need to get device credentials first.
 ThingsBoard support different device credentials. We recommend to use default auto-generated credentials which is access token for this guide.
 
 Please open ThingsBoard **Edge** UI using the URL: [http://localhost:18080](http://localhost:18080).
@@ -148,7 +148,7 @@ Please open ThingsBoard **Edge** UI using the URL: [http://localhost:18080](http
 
 {% include images-gallery.html imageCollection="copyAccessTokenAirConditioner" showListImageTitles="true" %}
 
-We will use simple commands to generate random telemetry data, subscribe device **Vehicle monitoring system** and publish to the ThingsBoard Edge by MQTT protocol.
+We will use simple commands to generate random telemetry data, subscribe device **In-vehicle monitoring system** and publish to the ThingsBoard Edge by MQTT protocol.
 
 Please download following script to your local folder:
 - [**mqtt-generator-vehicle.py**](/docs/edge/use-cases/resources/)
@@ -157,7 +157,7 @@ Please download following script to your local folder:
 
 Before running the scripts, please modify **mqtt-generator-vehicle.py** accordingly:
 
-- Replace **YOUR_ACCESS_TOKEN** with **Vehicle monitoring system** device access token copied from the steps above. 
+- Replace **YOUR_ACCESS_TOKEN** with **In-vehicle monitoring system** device access token copied from the steps above. 
 
 - Replace **YOUR_TB_EDGE_HOST** with your ThingsBoard Edge host. For example, **localhost**.
 
