@@ -4,21 +4,21 @@ title: Data filtering and traffic reduce
 description: ThingsBoard Edge use case #2
 
 provisionDevicesEdge:
-        0:
-            image: /images/edge/use-cases/data-filtering/provision-devices-item-1.png
-            title: 'Login to your ThingsBoard <b>Edge</b> instance and open Device groups page.'
-        1:
-            image: /images/edge/use-cases/data-filtering/provision-devices-item-2.png
-            title: 'Open "All" device group.'
-        2:
-            image: /images/edge/use-cases/data-filtering/provision-devices-item-3.png
-            title: 'Click on the "Add Device"("+") icon in the top right corner of the table.'
-        3:
-            image: /images/edge/use-cases/data-filtering/provision-devices-item-4.png
-            title: 'Input device name. For example, "In-vehicle monitoring system". Click "Add" to add the device.'
-        4:
-            image: /images/edge/use-cases/data-filtering/provision-devices-item-5.png
-            title: 'Now your "In-vehicle monitoring system" device should be listed first, since table sort devices using created time by default.
+    0:
+        image: /images/edge/use-cases/data-filtering/provision-devices-item-1.png
+        title: 'Login to your ThingsBoard <b>Edge</b> instance and open Device groups page.'
+    1:
+        image: /images/edge/use-cases/data-filtering/provision-devices-item-2.png
+        title: 'Open "All" device group.'
+    2:
+        image: /images/edge/use-cases/data-filtering/provision-devices-item-3.png
+        title: 'Click on the "Add Device"("+") icon in the top right corner of the table.'
+    3:
+        image: /images/edge/use-cases/data-filtering/provision-devices-item-4.png
+        title: 'Input device name. For example, "In-vehicle monitoring system". Click "Add" to add the device.'
+    4:
+        image: /images/edge/use-cases/data-filtering/provision-devices-item-5.png
+        title: 'Now your "In-vehicle monitoring system" device should be listed first, since table sort devices using created time by default.
 
 provisionDevicesCE:    
     0:
@@ -75,12 +75,36 @@ copyAccessTokenDevice:
         image: /images/edge/use-cases/data-filtering/copy-access-token-item-4.png  
         title: 'Click "Copy access token". Token will be copied to your clipboard. Save it to a safe place.'
 
+verifyDeviceTelemetryEdge:
+    0:
+        image: /images/edge/use-cases/data-filtering/verify-device-telemetry-item-1.png
+        title: 'Open Device groups page in the ThingsBoard <b>Edge</b> instance.'
+    1:
+        image: /images/edge/use-cases/data-filtering/verify-device-telemetry-item-2.png
+        title: 'Open "All" device group.'
+    2:
+        image: /images/edge/use-cases/data-filtering/verify-device-telemetry-item-3.png
+        title: 'Click on the <b>In-vehicle monitoring system</b> device row in the table to open device details.'
+    3:
+        image: /images/edge/use-cases/data-filtering/verify-device-telemetry-item-4.png
+        title: 'Click on the tab <b>Latest telemetry</b> to show the latest readings of the device.'
+
+verifyDeviceTelemetryCE:
+    0:
+        image: /images/edge/use-cases/data-filtering/verify-device-telemetry-item-5.png
+        title: 'Login to your ThingsBoard <b>CE</b> instance and open Devices page.'
+    1:
+        image: /images/edge/use-cases/data-filtering/verify-device-telemetry-item-6.png
+        title: 'Click on the row <b>In-vehicle monitoring system</b> to open device details.'
+    2:
+        image: /images/edge/use-cases/data-filtering/verify-device-telemetry-item-7.png
+        title: 'Click on the tab <b>Latest telemetry</b> to verify that only telemetry with distance readings is being sent by the edge to the cloud.'
 ---
 * TOC
 {:toc}
 
 ## Use case
-Let's assume you have a vehicle with mounted IoT monitoring system connected to ThingsBoard **Edge**. The monitoring system has 10 sensors:
+Let's assume you have a vehicle with mounted IoT monitoring system connected to ThingsBoard **Edge**. The In-vehicle monitoring system has 10 sensors:
 * Distance
 * Gas consumption
 * Vehicle speed
@@ -91,7 +115,7 @@ Let's assume you have a vehicle with mounted IoT monitoring system connected to 
 
 ThingsBoard Edge has the following responsibilities:
  * **Collects readings** from 10 sensors
- * **Pushes to the cloud** - ThingsBoard Community Edition - only distance telemetry
+ * **Pushes to the cloud ThingsBoard Community Edition** only distance readings
 
 Please note that this is just a simple theoretical use case to demonstrate the capabilities of the platform. You can use this tutorial as a basis for much more complex scenarios.
 
@@ -101,7 +125,7 @@ Please note that this is just a simple theoretical use case to demonstrate the c
 
 ## Create device
 
-First we will create a new device "In-vehicle monitoring system" on the edge with type "monitoring system".
+First we will create a new device "In-vehicle monitoring system" on the edge.
 
 Please open ThingsBoard **Edge** UI using the URL: [http://localhost:18080](http://localhost:18080).
 
@@ -115,7 +139,8 @@ Please open ThingsBoard **CE** using the URL [http://localhost:8080](http://loca
 
 ## Configure edge rule engine to push to the cloud filtered data
 
-We will update "Edge Root Rule Chain" that will save on the edge 10 readings from the device "In-vehicle monitoring system" and send to the cloud only one - "distance".
+We will update "Edge Root Rule Chain" that will be saving on the edge 10 sensor readings. 
+In the rule chain we add rule node that transforms incoming messages and pushes to the cloud message only with distance readings.
 Here is the final configuration of the edge root rule chain:
 
 {% include images-gallery.html imageCollection="rootRuleChainPreview" %}
@@ -138,24 +163,22 @@ Now let's open ThingsBoard **Edge** UI to see updated root rule chain:
 
 {% include images-gallery.html imageCollection="updateRootRuleChainEdge" showListImageTitles="true" %}
 
-## Connect "In-vehicle monitoring system" to edge
+## Connect "In-vehicle monitoring system" to edge and post telemetry
 To connect "In-vehicle monitoring system" to the ThingsBoard Edge you need to get device credentials first.
-ThingsBoard support different device credentials. We recommend to use default auto-generated credentials which is access token for this guide.
+ThingsBoard supports different device credentials. We recommend to use default auto-generated credentials which is access token for this guide.
 
 Please open ThingsBoard **Edge** UI using the URL: [http://localhost:18080](http://localhost:18080).
 
 {% include templates/edge/bind-port-changed-banner.md %}
 
-{% include images-gallery.html imageCollection="copyAccessTokenAirConditioner" showListImageTitles="true" %}
+{% include images-gallery.html imageCollection="copyAccessTokenDevice" showListImageTitles="true" %}
 
-We will use simple commands to generate random telemetry data, subscribe device **In-vehicle monitoring system** and publish to the ThingsBoard Edge by MQTT protocol.
+We will use simple commands to generate random telemetry for the device **In-vehicle monitoring system** and publish to the ThingsBoard **Edge** by the MQTT protocol.
 
 Please download following script to your local folder:
-- [**mqtt-generator-vehicle.py**](/docs/edge/use-cases/resources/)
+- [**mqtt-generator.py**](/docs/edge/use-cases/resources/)
 
-**NOTE** We assume that you have ????? installed on your local PC.
-
-Before running the scripts, please modify **mqtt-generator-vehicle.py** accordingly:
+Before running the scripts, please modify **mqtt-generator.py** accordingly:
 
 - Replace **YOUR_ACCESS_TOKEN** with **In-vehicle monitoring system** device access token copied from the steps above. 
 
@@ -168,8 +191,30 @@ Open the terminal and install MQTT Python library:
 sudo pip install paho-mqtt
 ```
 
-Go to the folder that contains Python scripts and launch applications in separate terminal windows by these commands:
+Go to the folder that contains Python script and launch an application by this command:
 
 ```bash
-python mqtt-generator-vehicle.py
+python mqtt-generator.py
 ```
+
+Congratulations! You have successfully sent to the device **In-vehicle monitoring system** 10 readings.
+
+Open ThingsBoard **Edge** UI and verify that device successfully receives data:
+
+{% include images-gallery.html imageCollection="verifyDeviceTelemetryEdge" showListImageTitles="true" %}
+
+Open ThingsBoard **CE** UI and verify that edge successfully pushes data to the cloud:
+
+{% include images-gallery.html imageCollection="verifyDeviceTelemetryCE" showListImageTitles="true" %}
+
+## Create dashboard (optional step)
+
+Also we will create a dashboard that displays how many miles has been traveled and how many are left to change the oil in the vehicle.
+
+Please open ThingsBoard **CE** to start creating new dashboard:
+
+{% include images-gallery.html imageCollection="createDashboardCE" showListImageTitles="true" %}
+
+## Next Steps
+
+{% assign currentGuide = "ManageAlarmsAndRpcRequestsOnEdgeDevices" %}{% include templates/edge/guides-banner-edge.md %}

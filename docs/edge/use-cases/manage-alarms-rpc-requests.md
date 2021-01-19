@@ -260,7 +260,7 @@ Now let's open ThingsBoard **Edge** UI to see updated root rule chain:
 ## Connect "Air Conditioner" to edge and subscribe for RPC commands
 
 To subscribe to RPC commands from edge for the **Air Conditioner** device you need to get the **Air Conditioner** device credentials first.
-ThingsBoard support different device credentials. We recommend to use default auto-generated credentials which is access token for this guide.
+ThingsBoard supports different device credentials. We recommend to use default auto-generated credentials which is access token for this guide.
 
 Please open ThingsBoard **Edge** UI using the URL: [http://localhost:18080](http://localhost:18080).
 
