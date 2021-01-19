@@ -20,7 +20,7 @@ Advanced Settings of the Entity Table widget allows:
 - [Configuring data sorting](#sorting-the-data-in-the-table-widget).
 
 To enter the Advanced mode and start adjusting the settings above, you should start by clicking on the Pencil icon ("Enter edit mode") at the bottom right of the screen:
-![image](/images/user-guide/ui/widgets/entitywidget-advanced/enter-the-advncd.png)
+![image](/images/user-guide/ui/widgets/entitywidget-advanced/Group368.png)
 
 After, click on the Pencil icon ("Edit widget") at the upper right corner of the Entity Table widget itself:
 ![image](/images/user-guide/ui/widgets/entitywidget-advanced/pencil-edit-enter.png)
