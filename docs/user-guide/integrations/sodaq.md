@@ -8,7 +8,7 @@ hidetoc: "true"
 
 {% assign feature = "Platform Integrations" %}{% include templates/pe-feature-banner.md %}
 
-This guide contains step-by-step instruction how to to connect your SODAQ NB-IoT boards to ThingsBoard Professional Edition (PE) through the T-Mobile NB IoT network. 
+This guide contains step-by-step instruction how to connect your SODAQ NB-IoT boards to ThingsBoard Professional Edition (PE) through the T-Mobile NB IoT network. 
 We will use free ThingsBoard PE demo server [thingsboard.cloud](https://thingsboard.cloud/signup) in this guide. 
 This guide will be useful for anyone who wants to connect their SODAQ NB-IoT boards or other hardware to T-Mobile NB IoT network.   
 
@@ -75,10 +75,10 @@ The converter will decode incoming telemetry payload data from T-Mobile NB IoT t
 Few things to notice:
 
  * The IMEI from the incoming message will become the Device Name in ThingsBoard;
- * ThingsBoard will automatically create device with type "tracker" and name equal to IMEI;
+ * ThingsBoard will automatically create a device with type "tracker" and name equal to IMEI;
  * Timestamp and sensor readings are decoded from incoming hex string.
  
-- The following table shows the first byte position and the number of bytes for each encoded field that includes in the incoming hex string:
+- The following table shows the first byte position, and the number of bytes for each encoded field that includes in the incoming hex string:
 
 <table style="width: 22%">
   <thead>
