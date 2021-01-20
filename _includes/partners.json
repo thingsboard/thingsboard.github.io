@@ -34,19 +34,19 @@
   {
     "type": "hardware",
     "program": "",
-    "name": "Teltonika",
-    "logo": "teltonika-only-logo.svg",
+    "name": "Teltonika Networks",
+    "logo": "teltonika-networks.png",
     "links": {
       "Site": {
         "href": "https://teltonika-networks.com/",
         "target": "_blank"
       },
       "Integration guide": {
-        "href": "https://wiki.teltonika-networks.com/view/Monitoring_with_Thingsboard.io",
+        "href": "https://wiki.teltonika-networks.com/view/Monitoring_with_ThingsBoard_IoT_Platform#Configuring_data_to_server_with_MQTT_protocol",
         "target": "_blank"
       }
     },
-    "blurb": "Teltonika IoT Group is a leading fleet management solutions manufacturer from Europe"
+    "blurb": "Teltonika Networks is a rapidly growing technology company, manufacturing professional network connectivity equipment for international markets. It has developed a wide portfolio of products for the most complex areas of Industry 4.0, Smart City, and Green Energy."
   },
   {
     "type": "hardware",
