@@ -7,7 +7,7 @@
 
 ## Deployment of the site locally
 
-The below commands setup your environment for running GitHub pages locally. 
+The below commands set up your environment for running GitHub pages locally. 
 Any edits you make will be viewable on a lightweight webserver that runs on your local machine.
 
 Install Ruby 2.2 or higher. If you're on Ubuntu 20.04.1 LTS, run these commands:

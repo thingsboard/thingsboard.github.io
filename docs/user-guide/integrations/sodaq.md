@@ -19,15 +19,15 @@ This guide will be useful for anyone who wants to connect their SODAQ NB-IoT boa
 
 We assume you have at least one of SODAQ NB-IoT Trackers in your lab that is already connected to your T-Mobile IoT network. 
 We also assume you already have a ThingsBoard PE server or free demo account. 
-Otherwise you can register for a 30-days free demo account here: [thingsboard.cloud](https://thingsboard.cloud/signup).
+Otherwise, you can register for a 30-days free demo account here: [thingsboard.cloud](https://thingsboard.cloud/signup).
 
 We expect you to have a very basic knowledge about ThingsBoard, so we do recommend to complete the [Getting Started](/docs/getting-started-guides/helloworld/) guide.
  
 ## Integration overview
 
-ThingsBoard Platform Integrations feature allows to push data from various platforms and connectivity solutions to ThingsBoard. 
+ThingsBoard Platform Integrations feature allows pushing data from various platforms and connectivity solutions to ThingsBoard. 
 We will use "T-Mobile IoT CDP" platform integration to consume data from T-Mobile NB IoT Network and automatically register devices in ThingsBoard.
-Besides configuring the integration, we will also setup ThingsBoard to decode incoming data, store it in the database, visualize on the dashboard and generate alarms based on configurable thresholds.
+Besides configuring the integration, we will also set up ThingsBoard to decode incoming data, store it in the database, visualize on the dashboard and generate alarms based on configurable thresholds.
 
 <img data-gifffer="/images/user-guide/integrations/sodaq/demo-dashboard.gif" />
 
