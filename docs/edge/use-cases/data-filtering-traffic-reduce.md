@@ -1,6 +1,6 @@
 ---
 layout: docwithnav
-title: Data filtering and traffic reduce
+title: Data filtering
 description: ThingsBoard Edge use case #2
 
 provisionDevicesEdge:
@@ -178,7 +178,11 @@ createDashboardCE:
 {:toc}
 
 ## Use case
-Let's assume you have a vehicle with mounted IoT monitoring system connected to ThingsBoard **Edge**. The In-vehicle monitoring system has 10 sensors:
+Let's assume you have a vehicle with mounted IoT monitoring system connected to ThingsBoard **Edge**. 
+You want to collect all messages from the device on the edge and push to the cloud only data related to business logic. 
+For example, mileage readings may help to track how many miles left to travel till the next oil change. 
+
+The In-vehicle monitoring system has 10 sensors:
 * Distance
 * Gas consumption
 * Vehicle speed
@@ -189,7 +193,7 @@ Let's assume you have a vehicle with mounted IoT monitoring system connected to 
 
 ThingsBoard Edge has the following responsibilities:
  * **Collects readings** from 10 sensors
- * **Pushes to the cloud ThingsBoard Community Edition** only distance readings
+ * **Pushes to the cloud** only "distance" readings
 
 Please note that this is just a simple theoretical use case to demonstrate the capabilities of the platform. You can use this tutorial as a basis for much more complex scenarios.
 
@@ -211,7 +215,7 @@ Please open ThingsBoard **CE** using the URL [http://localhost:8080](http://loca
 
 {% include images-gallery.html imageCollection="provisionDevicesCE" showListImageTitles="true" %}
 
-## Configure edge rule engine to push to the cloud filtered data
+## Configure edge rule engine to push filtered data to the cloud
 
 We will update "Edge Root Rule Chain" that will be saving on the edge 10 sensor readings. 
 In the rule chain we add rule node that transforms incoming messages and pushes to the cloud message only with distance readings.
@@ -237,7 +241,8 @@ Now let's open ThingsBoard **Edge** UI to see updated root rule chain:
 
 {% include images-gallery.html imageCollection="updateRootRuleChainEdge" showListImageTitles="true" %}
 
-## Connect "In-vehicle monitoring system" to edge and post telemetry
+## Connect device to edge and post telemetry
+
 To connect "In-vehicle monitoring system" to the ThingsBoard Edge you need to get device credentials first.
 ThingsBoard supports different device credentials. We recommend to use default auto-generated credentials which is access token for this guide.
 
@@ -281,11 +286,11 @@ Open ThingsBoard **CE** UI and verify that edge successfully pushes data to the 
 
 {% include images-gallery.html imageCollection="verifyDeviceTelemetryCE" showListImageTitles="true" %}
 
-## Create dashboard (optional step)
+## Create dashboard
 
 Also we will create a dashboard that displays how many miles has been traveled and how many are left to change the oil in the vehicle.
 
-Please open ThingsBoard **CE** to start creating new dashboard:
+Please open ThingsBoard **CE** to create a new dashboard:
 
 {% include images-gallery.html imageCollection="createDashboardCE" showListImageTitles="true" %}
 
