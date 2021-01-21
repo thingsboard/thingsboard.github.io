@@ -2,22 +2,6 @@
   {
     "type": "hardware",
     "program": "",
-    "name": "How to create a guide",
-    "logo": "thingsboard_blue.svg",
-    "links": {
-      "Site": {
-        "href": "https://thingsboard.io/",
-        "target": "_blank"
-      },
-      "Integration guide": {
-        "href": "/docs/samples/sample/sample/"
-      }
-    },
-    "blurb": "This guide will help you to create a guide about your hardware integration to the ThingsBoard."
-  },
-  {
-    "type": "hardware",
-    "program": "",
     "name": "Espressif Systems",
     "logo": "espressif.svg",
     "links": {
@@ -50,32 +34,50 @@
   {
     "type": "hardware",
     "program": "",
-    "name": "Teltonika",
-    "logo": "teltonika-only-logo.svg",
+    "name": "Teltonika Networks",
+    "logo": "teltonika-networks.png",
     "links": {
       "Site": {
         "href": "https://teltonika-networks.com/",
         "target": "_blank"
       },
       "Integration guide": {
-        "href": "https://wiki.teltonika-networks.com/view/Monitoring_with_Thingsboard.io",
+        "href": "https://wiki.teltonika-networks.com/view/Monitoring_with_ThingsBoard_IoT_Platform#Configuring_data_to_server_with_MQTT_protocol",
         "target": "_blank"
       }
     },
-    "blurb": "Teltonika IoT Group is a leading fleet management solutions manufacturer from Europe"
+    "blurb": "Teltonika Networks is a rapidly growing technology company, manufacturing professional network connectivity equipment for international markets. It has developed a wide portfolio of products for the most complex areas of Industry 4.0, Smart City, and Green Energy."
   },
   {
     "type": "hardware",
     "program": "",
-    "name": "TEKTELIC Communications Inc.",
-    "logo": "tektelic.png",
+    "name": "Smartico",
+    "logo": "smartico.png",
     "links": {
       "Site": {
-        "href": "https://tektelic.com/",
+        "href": "https://www.smartico.biz/en/",
         "target": "_blank"
+      },
+      "Integration guide Electricity Meter \"Smartico E307\"": {
+        "href": "/docs/samples/smartico/elec-meter-lorawan/Electricity_Meter_LoRaWAN/"
+      },
+      "Gas Meter \"Smartico G-1.6\"": {
+        "href": "/docs/samples/smartico/gas-meter-lorawan/Gas_Meter_LoRaWAN/"
+      },
+	"Gas Shutoff Valve \"Smartico V-LR\"": {
+        "href": "/docs/samples/smartico/gas-valve-lorawan/Gas_Valve_LoRaWAN/"
+      },
+      "Leaks Detector \"Smartico L2-LR\"": {
+        "href": "/docs/samples/smartico/leaks-detector-lorawan/Leaks_Detector_LoRaWAN/"
+      },
+	  "Water meter Pulse Sensor \"Smartico P22-LR\"": {
+        "href": "/docs/samples/smartico/pulse-sensor-lorawan/Pulse_Sensor_LoRaWAN/"
+      },
+      "Water meter wM-Bus Reader \"Smartico WM-LR\"": {
+        "href": "/docs/samples/smartico/wm-bus-lorawan/wMBus_Reader_LoRaWAN/"
       }
     },
-    "blurb": "TEKTELIC is a leading supplier of LoRaWAN IoT equipment including best-in-class gateways and end devices."
+    "blurb": "Smartico is a research and production complex with its own design bureau, production base, and specialized software development department"
   },
   {
     "type": "hardware",
@@ -144,17 +146,14 @@
   {
     "type": "hardware",
     "program": "",
-    "name": "Syrus 4 IoT Telematics Gateway integration guide",
-    "logo": "DCT-Logo-Standard-Color-01.png",
+    "name": "TEKTELIC Communications Inc.",
+    "logo": "tektelic.png",
     "links": {
       "Site": {
-        "href": "https://www.digitalcomtech.com/",
+        "href": "https://tektelic.com/",
         "target": "_blank"
-      },
-      "Integration guide": {
-        "href": "/docs/samples/syrus/syrus/"
       }
     },
-    "blurb": "Since 2000, DCT has been developing IoT devices and accessories for Fleet Telematics Applications and Industrial Solutions that are trusted by integrators and service providers around the globe. Their expertise in product design and development together with firmware and software makes the perfect combination for developers to start building amazing applications."
-  }
+    "blurb": "TEKTELIC is a leading supplier of LoRaWAN IoT equipment including best-in-class gateways and end devices."
+  }	
 ]
