@@ -70,7 +70,7 @@ All the steps should be numerated and provided with a clear flow of realization 
 
 ## Add visit-card to ThingsBoard Hardware Partners page.
 
-Edit the "partners.json" file (refers to [ThingsBoard Hardware Partners](ThingsBoard Hardware Partners)), add code like bellow:
+Edit the "partners.json" file (refers to [ThingsBoard Hardware Partners](https://thingsboard.io/partners/hardware/)), add code like bellow:
   {% highlight bash %}
   {
     "type": "hardware",
