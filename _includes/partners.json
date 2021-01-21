@@ -10,7 +10,7 @@
         "target": "_blank"
       },
       "Integration guide": {
-        "href": "/docs/user-guide/integrations/sample/"
+        "href": "/docs/samples/sample/sample/"
       }
     },
     "blurb": "This guide will help you to create a guide about your hardware integration to the ThingsBoard."
@@ -140,5 +140,21 @@
       }
     },
     "blurb": "Decode is a Serbian company with extensive experience in design, engineering and production of devices for industrial communication and telemetry."
+  },
+  {
+    "type": "hardware",
+    "program": "",
+    "name": "Syrus 4 IoT Telematics Gateway integration guide",
+    "logo": "DCT-Logo-Standard-Color-01.png",
+    "links": {
+      "Site": {
+        "href": "https://www.digitalcomtech.com/",
+        "target": "_blank"
+      },
+      "Integration guide": {
+        "href": "/docs/samples/syrus/syrus/"
+      }
+    },
+    "blurb": "Since 2000, DCT has been developing IoT devices and accessories for Fleet Telematics Applications and Industrial Solutions that are trusted by integrators and service providers around the globe. Their expertise in product design and development together with firmware and software makes the perfect combination for developers to start building amazing applications."
   }
 ]
