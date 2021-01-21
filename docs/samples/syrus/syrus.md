@@ -12,11 +12,11 @@ hidetoc: "true"
 {:toc}
 
 ## Description
-<br/>
+
 Here&#39;s a detailed integration example between Syrus 4G IoT Telematics Gateway with Thingsboard Platform over MQTT connection.
 
 ## Getting Started
-<br/>
+
 [Syrus 4G IoT Telematics Gateway.](https://syrus.pegasusgateway.com/syrdocs/syrus4/getting-started/)
 
 [Thingsboard Sign Up](https://demo.thingsboard.io/signup)
@@ -50,7 +50,6 @@ Click on the device row in the table to open device details
 ![image](/images/samples/syrus/copy_token.png)
 
 Click &quot;Copy access token&quot;. Token will be copied to your clipboard. Save it to a safe place.
-<br/>
 
 ## Syrus 4G IoT Telematics Gateway Configuration
 
@@ -160,17 +159,14 @@ If you need more information about how to configure more events please refer to 
 Select your created instance:
 
 ![image](/images/samples/syrus/select_instance.png)
-<br/>
 
 Go to Data Folder Tab:
 
 ![image](/images/samples/syrus/data_tab.png)
-<br/>
 
 Select Upload File:
 
 ![image](/images/samples/syrus/upload_file.png)
-<br/>
 
 And search in your local disk the previous configurations files created, and upload it one by one
 
