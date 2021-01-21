@@ -26,7 +26,7 @@
         "target": "_blank"
       },
       "Integration guide": {
-        "href": "/docs/user-guide/integrations/sodaq/"
+        "href": "/docs/samples/sodaq/sodaq/"
       }
     },
     "blurb": "What drives us is the passion to create scalable electronics solutions that work anywhere. We have implemented projects throughout developing countries, from Peru to Sri Lanka, and we will continue working where we can have the highest impact."
@@ -155,5 +155,37 @@
       }
     },
     "blurb": "TEKTELIC is a leading supplier of LoRaWAN IoT equipment including best-in-class gateways and end devices."
-  }	
+  },
+  {
+    "type": "hardware",
+    "program": "",
+    "name": "Integration Syrus 4 IoT Telematics Gateway",
+    "logo": "DCT-Logo-Standard-Color-01.png",
+    "links": {
+      "Site": {
+        "href": "https://www.digitalcomtech.com/",
+        "target": "_blank"
+      },
+      "Integration guide": {
+        "href": "/docs/samples/syrus/syrus/"
+      }
+    },
+    "blurb": "Since 2000, DCT has been developing IoT devices and accessories for Fleet Telematics Applications and Industrial Solutions that are trusted by integrators and service providers around the globe. Their expertise in product design and development together with firmware and software makes the perfect combination for developers to start building amazing applications."
+  },
+  {
+    "type": "hardware",
+    "program": "",
+    "name": "Integration Guide Sample",
+    "logo": "thingsboard_blue.svg",
+    "links": {
+      "Site": {
+        "href": "https://thingsboard.io/",
+        "target": "_blank"
+      },
+      "Integration guide": {
+        "href": "/docs/samples/sample/sample/"
+      }
+    },
+    "blurb": "Here is the sample of visit-card which may be used as a base of your integration guide."
+  }
 ]
