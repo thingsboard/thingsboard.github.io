@@ -137,7 +137,7 @@ Few things to notice:
 
 - Go to **Data Converters** -> **Add new Data Converter** -> **Import Converter** 
 
-- Import following json file: [**SODAQ Uplink data converter**](/docs/user-guide/resources/sodaq/sodaq-uplink-data-converter.json) (left click on the link and then 'Ctrl+S' to download) 
+- Import following json file: [**SODAQ Uplink data converter**](/sodaq/sodaq-uplink-data-converter.json) (left click on the link and then 'Ctrl+S' to download) 
 as described on the following screencast: 
 
 <img data-gifffer="/images/user-guide/integrations/sodaq/import-and-test-converter.gif" />
@@ -198,7 +198,7 @@ Please note that we will use the HTTP Endpoint URL from a Step 2.
 
 For this we will need to copy HTTP endpoint URL from the **SODAQ** Integration.
 
-![image](/images/user-guide/integrations/sodaq/http-endpoint-url.png)
+![image](/images/samples/sodaq/http-endpoint-url.png)
 
 Download the attached json [**file**](/docs/user-guide/rule-engine-2-0/tutorials/resources/telemetry-data.json) with telemetry data and execute the following command: 
 
@@ -219,7 +219,7 @@ Now you can delete this dummy device if needed.
 Use HTTP endpoint URL from Step 2 to configure T-Mobile Platform to push data to this URL. See image below for reference.
 
 
-![image](/images/user-guide/integrations/sodaq/tmobile-configration.png)
+![image](/images/samples/sodaq/tmobile-configration.png)
 
 
 ## Step 5: Check Integration Debug Events
@@ -243,7 +243,7 @@ Download the attached json [**file**](/docs/user-guide/resources/sodaq/tracker-a
 
 ## Step 7: Demo dashboard import
  
-Download and import attached json [**file**](/docs/user-guide/resources/sodaq/sodaq-dashboard.json) with a dashboard from this tutorial.
+Download and import attached json [**file**](/sodaq/sodaq-dashboard.json) with a dashboard from this tutorial.
 
 <br/>The following screencast will show how to import the dashboard: 
 
@@ -295,15 +295,15 @@ In this tutorial, we modified our **Root Rule Chain** and also created Rule Chai
  
   - **Tracker Alarms:**
 
-![image](/images/user-guide/integrations/sodaq/tracker-alarms.png)
+![image](/images/samples/sodaq/tracker-alarms.png)
 
  - **Root Rule Chain:**
 
-![image](/images/user-guide/integrations/sodaq/root-rule-chain.png)
+![image](/images/samples/sodaq/root-rule-chain.png)
 
 <br/> 
 
-Download the attached json [**file**](/docs/user-guide/resources/sodaq/tracker-alarms.json) for the **Tracker Alarms** chain.
+Download the attached json [**file**](/sodaq/tracker-alarms.json) for the **Tracker Alarms** chain.
 <br/>
 <br/>
 
@@ -317,7 +317,7 @@ Configuration:
 
 - Name : **Tracker Alarms**
 
-![image](/images/user-guide/integrations/sodaq/add-chain.png)
+![image](/images/samples/sodaq/add-chain.png)
 
 New Rule Chain is created. Press **Edit** button and to configure it.
 
@@ -372,7 +372,7 @@ If the temperature more than max value the script will return **true**, otherwis
     
 - Enter the Name field as **Validate Max temperature**.  
   
-![image](/images/user-guide/integrations/sodaq/validate-max-temperature.png)
+![image](/images/samples/sodaq/validate-max-temperature.png)
  
 Rule Nodes C, D, and E have the same configuration that has the above-mentioned rule node.
 <br>Paste the JS script code shown in the following table to the corresponding Rule Nodes:
@@ -415,7 +415,7 @@ if (metadata.prevAlarmDetails) {
 }
 return details;{% endhighlight %}
 
-![image](/images/user-guide/integrations/sodaq/create-alarm.png)
+![image](/images/samples/sodaq/create-alarm.png)
 
 Rule Nodes H, J, and L have the same configuration that has the above-mentioned rule node.
 <br>Paste the Alarm Type shown in the following table to the corresponding Rule Nodes:
@@ -479,7 +479,7 @@ details.clearedValue = msg.temperature;
 return details;
 {% endhighlight %}
 
-![image](/images/user-guide/integrations/sodaq/clear-alarm.png)
+![image](/images/samples/sodaq/clear-alarm.png)
 
 Rule Nodes I, K and M have the same configuration that has the above-mentioned rule node.
 <br>Paste the Alarm Type shown in the following table to the corresponding Rule Nodes:
@@ -542,7 +542,7 @@ The initial Root Rule Chain has been modified by adding the following node:
     
 - Enter the Name field as **Tracker filter**.  
   
-![image](/images/user-guide/integrations/sodaq/tracker-filter.png)
+![image](/images/samples/sodaq/tracker-filter.png)
  
 ##### Node O: **Rule Chain**
 - Add the **Rule Chain** node and connect it to the **Filter Script** node with a relation type **True**. <br>
@@ -550,7 +550,7 @@ The initial Root Rule Chain has been modified by adding the following node:
 
 - Enter the Name field as **Tracker Alarms**.
 
-![image](/images/user-guide/integrations/sodaq/rule-chain-node.png)
+![image](/images/samples/sodaq/rule-chain-node.png)
 
 ## Next steps
 
