@@ -241,13 +241,13 @@ Once you have successfully published the "temperature" readings, you should imme
 Timeseries data and attributes pushed to the cloud according to the [Edge Rule Engine](/docs/edge/rule-engine/general/).
 We will go over default **Edge Root Rule chain** to see how temperature data is going to be pushed from edge to cloud.
 
-If you are interested in more details how to push data from edge to cloud please refer to [Push data from edge to cloud and vise versa](/docs/edge/rule-engine/push-data/) for more details.
+If you are interested in more details how to push data from edge to cloud please refer to [Push data from edge to cloud and vice versa](/docs/edge/rule-engine/push-data/) for more details.
 
 {% include images-gallery.html imageCollection="step4" showListImageTitles="true" %}
 
 ## Step 5. Create Dashboard
 
-We will create a dashboard and add table and chart widget to see temperature data on cloud and edge. See instructions below.
+We will create a dashboard, add a table and a chart widget to see temperature data on cloud and edge. See instructions below.
 
 ### Step 5.1 Create Empty Dashboard
 
@@ -296,7 +296,7 @@ Let's open ThingsBoard **Edge** UI using the URL [http://localhost:18080](http:/
 
 {% include images-gallery.html imageCollection="step6Edge" showListImageTitles="true" %}
 
-Congratulations! Dashboard provisioned to edge. Now you can send new telemetry reading and it will immediately appear in the chart on the edge.
+Congratulations! Dashboard has been provisioned to the edge. Now you can send new telemetry reading, and it will immediately appear in the chart on the edge.
 
 ## Next steps
 

@@ -3,16 +3,21 @@ layout: docwithnav
 title: Provision Device from cloud to edge
 description: Provision Device from cloud to edge
 
+edgeDevices:
+    0:
+        image: /images/edge/sync/ce-edge-devices-1.png
+    1:
+        image: /images/edge/sync/ce-edge-devices-2.png
 ---
 
 Coming soon…
 
 #### Devices management
 
-Please use 'Manage Devices' icon to navigate to devices that are *'assigned'* to specific edge entity.
+Please use 'Edge Devices' icon to navigate to devices that are *'assigned'* to specific edge entity.
 User is able to assign to edge any device that he has access to.
 
-![image](/images/edge/sync/ce-manage-devices.png)
+{% include images-gallery.html imageCollection="edgeDevices" %}
 
 ### Next Steps
 

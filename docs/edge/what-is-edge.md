@@ -24,7 +24,7 @@ With **ThingsBoard Edge** you get the following benefits:
  
   ![image](/images/edge/overview/data_filtering.svg)
  
- - React instantly to critical situations on site without internet connection to cloud with **Local alarms**.
+ - **Local alarms** to react instantly to critical situations on site if there is no connection with the cloud.
  
   ![image](/images/edge/overview/alarm.svg)
 
@@ -33,7 +33,7 @@ With **ThingsBoard Edge** you get the following benefits:
  
  ![image](/images/edge/overview/update_dashboard.svg)
  
- - **Local storage** to store data from the devices on the edge without internet connection to the cloud and push to the cloud updates once connection restored.
+ - **Local storage** to store data from the devices on the edge if there is no internet connection and push to the cloud updates once connection restored.
 
 ThingsBoard Edge inherits features from ThingsBoard CE/PE to provide you the same experience how to connect, manage and process data from your devices.  
 
@@ -42,10 +42,10 @@ It supports next **ThingsBoard Community Edition** features:
  * [**Telemetry**](/docs/user-guide/telemetry/) - API for collection of time-series data of your devices.
  * [**Entities and relations**](/docs/user-guide/entities-and-relations/) - model physical world objects (e.g. devices and assets) and relations between them.
  * [**Data visualization**](/docs/guides#AnchorIDDataVisualization) - develop custom dashboards and widgets.
- * [**Rule engine**](/docs/edge/features/edge-rule-engine/) - manage data processing & actions on incoming telemetry and events.
+ * [**Rule engine**](/docs/edge/rule-engine/general/) - manage data processing & actions on incoming telemetry and events.
  * [**RPC**](/docs/user-guide/rpc/) - send remote procedure calls (RPC) **both from edge and cloud sides** to devices and vice versa.
  * [**Audit log**](/docs/user-guide/audit-log/) - track user activity.
- * [**API Limits**](/docs/user-guide/api-limits/) - control and limit number of API requests from single host.
+ * [**API Limits**](/docs/user-guide/api-limits/) - control and limit number of API requests from a single host.
 
 As well ThingsBoard Edge supports major **ThingsBoard PE** features:
  * [**White-labeling**](/docs/user-guide/white-labeling/) - allows you to configure a custom menu, logo, color scheme, email server settings, customer email templates to interact with the users etc.
