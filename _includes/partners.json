@@ -171,21 +171,5 @@
       }
     },
     "blurb": "Since 2000, DCT has been developing IoT devices and accessories for Fleet Telematics Applications and Industrial Solutions that are trusted by integrators and service providers around the globe. Their expertise in product design and development together with firmware and software makes the perfect combination for developers to start building amazing applications."
-  },
-  {
-    "type": "hardware",
-    "program": "",
-    "name": "Integration Guide Sample",
-    "logo": "thingsboard_blue.svg",
-    "links": {
-      "Site": {
-        "href": "https://thingsboard.io/",
-        "target": "_blank"
-      },
-      "Integration guide": {
-        "href": "/docs/samples/sample/sample/"
-      }
-    },
-    "blurb": "Here is the sample of visit-card which may be used as a base of your integration guide."
   }
 ]
