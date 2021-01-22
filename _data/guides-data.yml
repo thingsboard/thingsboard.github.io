@@ -555,8 +555,8 @@
       subtitle: "Learn how to contribute to Thingsboard"
       pe: false
       video: false
-    - path: /docs/user-guide/contribution/how-to-create-an-integration-guide/
-      title: How to create Hardware Integration Guide
+    - path: /docs/user-guide/contribution/how-to-contribute-your-device-integration-guide/
+      title: How to contribute your device integration guide
       subtitle: "Learn how to contribute to Thingsboard"
       pe: false
       video: false
