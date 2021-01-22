@@ -58,7 +58,7 @@ Your copy of the site will then be viewable at: [http://localhost:4000](http://l
 
 ## Create a guide
 
-* [Step 1] Add new Directory iv path "/docs/samples/YOUR_INTEGRATION_NAME/" & "/images/samples/YOUR_INTEGRATION_NAME/".
+* [Step 1] Add new directories via paths "/docs/samples/YOUR_INTEGRATION_NAME/" & "/images/samples/YOUR_INTEGRATION_NAME/".
 * [Step 2] Create a "YOUR_INTEGRATION_NAME.md" file in your newly created directory from [Step 1].
 * [Step 3] Use this [Sample](/docs/samples/sample/sample.md) as a base for your guide.
 * [Step 4] Store all of your images for your guide in a path "/images/samples/YOUR_INTEGRATION_NAME/".
