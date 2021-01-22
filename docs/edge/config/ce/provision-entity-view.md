@@ -3,16 +3,21 @@ layout: docwithnav
 title: Provision Entity View from cloud to edge
 description: Provision Entity View from cloud to edge
 
+edgeEntityViews:
+    0:
+        image: /images/edge/sync/ce-edge-entity-views-1.png
+    1:
+        image: /images/edge/sync/ce-edge-entity-views-2.png
 ---
 
 Coming soon…
 
 #### Entity Views management
 
-Please use 'Manage Entity Views' icon to navigate to entity views that are *'assigned'* to specific edge entity.
+Please use 'Edge Entity Views' icon to navigate to entity views that are *'assigned'* to specific edge entity.
 User is able to assign to edge any entity views that he has access to.
 
-![image](/images/edge/sync/ce-manage-entity-views.png)
+{% include images-gallery.html imageCollection="edgeEntityViews" %}
 
 ### Next Steps
 

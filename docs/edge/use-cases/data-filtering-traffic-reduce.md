@@ -1,6 +1,6 @@
 ---
 layout: docwithnav
-title: Data filtering
+title: Data filtering and traffic reduce
 description: ThingsBoard Edge use case #2
 
 provisionDevicesEdge:

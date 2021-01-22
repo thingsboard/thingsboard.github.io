@@ -19,7 +19,7 @@ Once the connection established ThingsBoard Edge will push all messages in the l
 All messages that are pushed from ThingsBoard CE/PE cloud to ThingsBoard Edge are going to be stored in the cloud PostgreSQL table (**edge_event table**) prior sending.
 Once the connection established ThingsBoard CE/PE cloud will push all messages in the cloud **edge_event** table to the edge and mark ones that are successfully transferred to the edge.
 
-User is able to see list of transferred messages from the cloud to edge using **Event** tab of **Edge** entity.
+User is able to see list of transferred messages from the cloud to edge using **Downlinks** tab of **Edge** entity.
 
 ![image](/images/edge/sync/downlink-events.png)
 

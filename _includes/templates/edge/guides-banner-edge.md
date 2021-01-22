@@ -40,7 +40,7 @@
   - [Provision Rule Chains from cloud to edge](/docs/edge/rule-engine/provision-rule-chains/) - Learn how to provision edge rule chains from cloud to edge.
 {% endif %}
 {% if currentGuide != "PushDataFromEdgeToCloudAndViseVersa" %}
-  - [Push data from edge to cloud and vise versa](/docs/edge/rule-engine/push-data/) - Learn how to push data from edge to cloud and vise versa.
+  - [Push data from edge to cloud and vice versa](/docs/edge/rule-engine/push-data/) - Learn how to push data from edge to cloud and vice versa.
 {% endif %}
 {% if currentGuide != "GrpcOverSsl" %}
 - Security:

@@ -192,7 +192,7 @@ Let's assume you have a warehouse with two devices connected to ThingsBoard **Ed
 ThingsBoard Edge has the following responsibilities:
  * **Collects temperature readings** from the DHT22 sensor
  * **Creates and updates alarms** if the temperature in the warehouse is higher than 50 °C
- * In case if the temperature becomes critical, ThingsBoard Edge turns on the cooler system by **sending RPC call requests** to Air Conditioner device
+ * In case if the temperature becomes critical, ThingsBoard Edge turns on the cooler system by **sending RPC call requests** to the Air Conditioner device
  * **Pushes telemetry to the cloud**
 
 Please note that this is just a simple theoretical use case to demonstrate the capabilities of the platform. 
@@ -204,7 +204,7 @@ You can use this tutorial as a basis for much more complex scenarios.
 
 ## Configure Alarm Rules
 
-We will use [alarm rules](/docs/user-guide/device-profiles/#alarm-rules) feature to raise alarm when temperature reading is greater than 50 degrees.
+We will use [alarm rules](/docs/user-guide/device-profiles/#alarm-rules) feature to raise alarm when temperature reading is greater than 50 °C degrees.
 For this purpose, we should create new device profile and add new alarm rule. We recommend creating dedicated [device profiles](/docs/user-guide/device-profiles/) for each corresponding device type. Let's create new device profile "edge thermostat".
 
 {% include images-gallery.html imageCollection="configureAlarmRulesCE" showListImageTitles="true" %}
