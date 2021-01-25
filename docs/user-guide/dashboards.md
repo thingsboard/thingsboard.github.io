@@ -26,10 +26,12 @@ filters:
     2:
         image: /images/user-guide/dashboards/filters3-src.png
     3:
-        image: /images/user-guide/dashboards/filters4-src.png
+        image: /images/user-guide/dashboards/missing-screen.png
     4:
-        image: /images/user-guide/dashboards/filters5-src.png
+        image: /images/user-guide/dashboards/filters4-src.png
     5:
+        image: /images/user-guide/dashboards/filters5-src.png
+    6:
         image: /images/user-guide/dashboards/filters6-src.png
 
 add-widget:
@@ -92,35 +94,160 @@ basic-settings-legend:
     4:
         image: /images/user-guide/dashboards/basic-widget-settings-legend4-src.png
 
+dashboards-edit-enter:
+    0:
+        image: /images/user-guide/dashboards/settings/dashboard-enter-edit.png
 
----
+dashboards-settings-enter:
+    0: 
+        image: /images/user-guide/dashboards/settings/dashboard-settings.png
+
+toolbar-dashboard:
+    0:
+        image: /images/user-guide/dashboards/settings/toolbar-off.png
+    1:
+        image: /images/user-guide/dashboards/settings/no-toolbar-dashboard.png
+
+title-on-dashboard:
+    0:
+        image: /images/user-guide/dashboards/settings/title-color.png
+    1:
+        image: /images/user-guide/dashboards/settings/title-settings-check.png
+    2:
+        image: /images/user-guide/dashboards/settings/title-on-dashboard.png
+
+toolbar-dashboard-settings:
+    0:
+        image: /images/user-guide/dashboards/settings/toolbar-visibility-set.png
+    1:
+        image: /images/user-guide/dashboards/settings/toolbar-settings-on.png
+
+text-color:
+    0: 
+        image: /images/user-guide/dashboards/settings/text-color.png
+    1:
+        image: /images/user-guide/dashboards/settings/text-color-changed.png
+
+columns:
+    0:
+        image: /images/user-guide/dashboards/settings/columns-grid.png
+
+margin:
+    0:
+        image: /images/user-guide/dashboards/settings/margin0.png
+    1:
+        image: /images/user-guide/dashboards/settings/margin50.png
+
+autofill:
+    0:
+        image: /images/user-guide/dashboards/settings/no-autofill.png
+    1:
+        image: /images/user-guide/dashboards/settings/autofill-on.png
+
+background-settings:
+    0:
+        image: /images/user-guide/dashboards/settings/background-color.png
+    1:
+        image: /images/user-guide/dashboards/settings/background-changed.png
+
+background-image:
+    0:
+        image: /images/user-guide/dashboards/settings/background-image-select.png
+    1:
+        image: /images/user-guide/dashboards/settings/drop-down-select.png
+    2: 
+        image: /images/user-guide/dashboards/settings/background-pic.png
+
+dashboard-export:
+    0:
+        image: /images/user-guide/dashboards/settings/dashboard-list.png
+
+dashboard-export-direct:
+    0:
+        image: /images/user-guide/dashboards/settings/dashboard-direct.png
+
+export-widget:
+    0:
+        image: /images/user-guide/dashboards/settings/export-widget.png
+
+pro-export:
+    0:
+        image: /images/user-guide/dashboards/settings/pro-format.png
+    1:
+        image: /images/user-guide/dashboards/settings/pdf-export.png
+
+layouts: 
+    0:
+        image: /images/user-guide/dashboards/settings/manage-layout.png
+
+right-layout:
+    0:
+        image: /images/user-guide/dashboards/settings/right.png
+
+layout-difference:
+    0:
+        image: /images/user-guide/dashboards/settings/layouts-difference.png
+    1:
+        image: /images/user-guide/dashboards/settings/example-layouts.png
+states:
+    0:
+        image: /images/user-guide/dashboards/settings/states.png
+    1:
+        image: /images/user-guide/dashboards/settings/add-state.png
+    2:
+        image: /images/user-guide/dashboards/settings/save-the-state.png
+    3:
+        image: /images/user-guide/dashboards/settings/2states-exist.png
+
+action-state:
+    0:
+        image: /images/user-guide/dashboards/settings/enter-edit-widget.png
+    1:
+        image: /images/user-guide/dashboards/settings/action-navigation.png
+    2:
+        image: /images/user-guide/dashboards/settings/adding-action.png
+    3:
+        image: /images/user-guide/dashboards/settings/save-action.png
+    4:
+        image: /images/user-guide/dashboards/settings/click-on-row.png
+    5:
+        image: /images/user-guide/dashboards/settings/state1-transfer.png
+
+--- 
 
 * TOC
 {:toc}
 
-## Prerequisites
+## Prerequisites 
 
-We assume you have already followed the [Getting Started](/docs/getting-started/) guide to get familiar with ThingsBoard devices and dashboards.
+For faster learning and a better understanding of this guide, first, you have to follow the [Getting Started](/docs/getting-started/) guide to get familiar with ThingsBoard devices and dashboards.
 
 ## Introduction
 
-ThingsBoard provides the ability to create and manage dashboards. 
-Dashboards may display data from many entities: devices, assets, etc. Dashboards may be assigned to Customers.  
+ThingsBoard provides the ability to create and manage Dashboards. 
+
+You can have unlimited number of Dashboards. Each Dashboard may contain plenty of widgets.
+Dashboards display data from many entities: devices, assets, etc. Dashboards can be assigned to Customers. 
+
 This guide covers main concepts and various configuration settings.
 
-## Title
+## Dashboard overview 
 
-Editable dashboard title appears in the top-left corner of the dashboard. Dashboard Title is also displayed in the application breadcrumbs to simplify navigation.
+Before starting working with a dashboard, get acquainted with its appearance and understand which features are responsible for what actions.
 
-## Edit mode
+### Title
 
-The "pencil" button in the bottom-right corner of the screen is used to enter dashboard edit mode. 
-Once you switch to the edit mode, you may add new [widgets](/docs/user-guide/dashboards/#widgets) and access controls in the dashboard [toolbar](/docs/user-guide/dashboards/#toolbar).
-You may also use button "Apply changes" to save the dashboard or "Decline changes" to rollback all unsaved changes.
+Editable dashboard title appears in the top-left corner of the dashboard. Dashboard Title displays in the application breadcrumbs to simplify the navigation.
+
+### Edit mode
+
+Use the "pencil" button in the bottom-right corner of the screen to enter dashboard edit mode. 
+Once you switch to the edit mode, you can add new [widgets](/docs/user-guide/dashboards/#widgets) and access controls in the dashboard [toolbar](/docs/user-guide/dashboards/#toolbar).
+You can also use button "Apply changes" to save the dashboard or "Decline changes" to rollback all unsaved changes.
 
 {% include images-gallery.html imageCollection="editMode" %}
 
-## Toolbar
+### Toolbar
 
 Dashboard toolbar allows you to manage 
 [states](/docs/user-guide/dashboards/#states), 
@@ -130,41 +257,41 @@ Dashboard toolbar allows you to manage
 [filters](/docs/user-guide/dashboards/#entity-filters), and configure [timewindow](/docs/user-guide/dashboards/#timewindow) using the corresponding icons in the toolbar.
 
 Some of these icons (stats, layout, settings) are visible only in the "edit" mode. All other icons are visible in both "view" and "edit" mode. 
-You may hide those icons or configure the toolbar to be minimized by default using [settings](/docs/user-guide/dashboards/#settings).
+You can hide these icons or configure the toolbar to be minimized by default using [settings](/docs/user-guide/dashboards/#settings).
 
-## Entity Aliases
+### Entity Aliases
 
-Entity Aliases define what entities (devices, assets, etc) you would like to display on the dashboard. 
-You can treat alias as a reference to one or more devices. Those references are static or dynamic.
+Entity Aliases determine which entities (devices, assets, etc) you would like to display on the dashboard. 
+You can treat alias as a reference to one or more devices. These references can be static or dynamic.
 
-Good example of the static alias is the "[Single Entity](/docs/user-guide/ui/aliases/#single-entity)" alias. The entity is configured once in the alias definition.
-All users will see the same data if they do have permissions to access this device.
+An example of the static alias is the "[Single Entity](/docs/user-guide/ui/aliases/#single-entity)" alias. The entity is configured once in the alias definition.
+All users see the same data if they have permission to access this device.
 
-The example of a dynamic alias is "[Device type](/docs/user-guide/ui/aliases/#device-type)" alias that displays all devices of a certain type (e.g. "Thermometer").
-This alias is dynamic, because the list of devices depends on the user that is using the dashboard. 
-If you login as a Tenant administrator, the alias will resolve to all "Thermometer" devices. 
-However, if you login as a Customer User, the alias will resolve to "Thermometer" devices that are assigned/belong to this Customer.
+An example of a dynamic alias is the "[Device type](/docs/user-guide/ui/aliases/#device-type)" alias, which displays all devices of a certain type (e.g. "Thermometer").
+This alias is dynamic because the list of devices depends on the user using the dashboard. 
+If you are logged in as a Tenant administrator, the alias will resolve all "Thermometer" devices. 
+However, if you are logged in as a Customer User, the alias will resolve to "Thermometer" devices that are assigned/belong by that Customer.
 
 {% include images-gallery.html imageCollection="aliases" %}
 
 Please see the Entity Aliases [documentation](/docs/user-guide/ui/aliases) for more details and examples of other aliases.
 
-## Entity Filters
+### Entity Filters
 
-Entity Filters allow you to define a filter for the list of entities resolved by the entity alias.
-The easiest way to explain this feature is by example. 
+Entity Filters allow you to determine a filter for the list of entities resolved by the entity alias.
+Let's see an example: 
 
-Let's assume you have thousands of "Thermometer" devices and would like to display thermometers of specific model and with certain battery levels.
-Let's also assume that the "model" of the thermometer is stored as an attribute and battery level is stored as a time series data.
-We will define a filter that checks that the model is equal to "DHT22" and battery level is less than 20 percent. 
+Suppose you have thousands of "Thermometer" devices, and you would like to display thermometers of a specific model and with certain battery levels.
+Let's also assume that thermometer model is stored as an attribute, and the battery level is stored as a time series data.
+We will define a filter that checks if the model is "DHT22" and the battery level is less than 20 percent. 
 
-{% include images-gallery.html imageCollection="filters" %}
+{% include images-gallery.html imageCollection="filters" preview="false" %}
 
-Filters are applied only to the "latest" value of the attribute or time-series key. This feature should not be used to "filter out" historical time series values.
+Filters are applied only to the "latest" value of the attribute or time series key. Don't use this feature to "filter out" historical time series values.
 
-You may combine different logical expressions over one key using "complex" filters. For example: "(A > 0 and A < 20) or (A > 50 and A < 100)".
-You may also combine two expressions for different keys using the "and" relation. For example: "(A > 0 and A < 20) and (B > 50 and B < 100)".
-It is not possible to use "or" relation to combine different keys yet. For example: "(A > 0 and A < 20) or (B > 50 and B < 100)".
+You can combine different logical expressions over one key using "complex" filters. For example: "(A > 0 and A < 20) or (A > 50 and A < 100)".
+Also, you can combine two expressions for different keys using the "and" relation. For example: "(A > 0 and A < 20) and (B > 50 and B < 100)".
+It's not possible to use "or" relation to combining different keys yet. For example: "(A > 0 and A < 20) or (B > 50 and B < 100)".
 
 See more examples how to use filters in this video:
 
@@ -180,21 +307,21 @@ See more examples how to use filters in this video:
 
 Widgets are the building blocks of your dashboard. There are 5 types of widgets:
 
-* **Time series** widgets display data for specific time window. The time window may be realtime (e.g., last 24 hours) or historical (December 2020);  
+* **Time series** widgets display data for a specific time window. The time window may be realtime (e.g., last 24 hours) or historical (December 2020);  
   Examples of the time series widgets are chart widgets. Obviously, time series widgets are designed to display time series and not attributes;
 * **Latest values** widgets display the latest values of particular [attribute](/docs/user-guide/attributes/) or [time series](/docs/user-guide/telemetry/) keys. For example, device model or latest temperature reading;
 * **Control** widgets allow you to send [RPC commands](/docs/user-guide/rpc/) to your devices. For example, control desired temperature on the thermostat device;  
 * **Alarm** widgets allow you to display [alarms](/docs/user-guide/alarms/);
-* **Static** widgets are designed to display static information. For example, floor plan or static company information.
+* **Static** widgets are designed to display static data. For example, floor plan or static company information.
 
 ### Adding widget to the dashboard
 
-To add a widget to the dashboard you should:
+To add a widget to the dashboard, you should:
 
-* Switch to the "edit" mode and click on the "+" ("Add new widget") icon in the bottom right part of the screen. 
-* Click on the "Create new widget" to open the "widget selection" dialog.
-* Select widget bundle, for example "Charts".
-* Select a widget, for example "Timeseries - Flot", and click on it's name to open the "Add Widget" dialog.
+* Switch to the Edit mode and click the "+" icon ("Add new widget") at the bottom right part of the screen; 
+* Click the "Create new widget" to open the "widget selection" dialog box;
+* Select widget bundle, for instance, "Charts";
+* Select a widget, for example, "Timeseries - Flot", and click on its name to open the "Add Widget" dialog.
 
 {% include images-gallery.html imageCollection="add-widget" %}
 
@@ -207,14 +334,14 @@ We will discuss each of those tabs below.
 
 #### Widget data settings
 
-Widget data settings allow you to define one or multiple data sources. 
-Data source is a combination of entity [alias](/docs/user-guide/dashboards/#entity-aliases), optional [filter](/docs/user-guide/dashboards/#entity-filters) and list of data keys.
-Basically, data source defines which entities widget should use (alias and filter) and what data keys to fetch for those entities.
+Widget data settings allow you to add one or multiple data sources. 
+A Data source is a combination of [entity alias](/docs/user-guide/dashboards/#entity-aliases), optional [filter](/docs/user-guide/dashboards/#entity-filters), and list of data keys.
+Basically, the data source determines which entities widget should use (alias and filter) and what data keys to fetch for those entities.
 
 {% include images-gallery.html imageCollection="add-data-source1" %}
 
 For example, let's configure data source to fetch temperature and humidity values for all "Thermometer" devices that have model "DHT22" and battery level is less than 20 percent.
-We will use "Thermometer" alias and "Low battery DHT22 Thermometers filter configured in the previous parts of this doc, see [alias](/docs/user-guide/dashboards/#entity-aliases) and [filter](/docs/user-guide/dashboards/#entity-filters) correspondingly. 
+We will use "Thermometer" alias and "Low battery DHT22 Thermometers" filter configured in the previous parts of this doc, see [alias](/docs/user-guide/dashboards/#entity-aliases) and [filter](/docs/user-guide/dashboards/#entity-filters) correspondingly. 
 
 {% include images-gallery.html imageCollection="add-data-source2" %}
 
@@ -227,12 +354,12 @@ The list of available data keys for particular data source depends on the [widge
  * **Alarm** widgets allow you to choose any data keys: time series, attributes, entity and alarm fields;
 
 Let's assume you don't have the required time series or attribute key in the database yet. 
-In such case, you can still add a key to the data source, and the widget will start displaying the data once device will send it to ThingsBoard. 
+In such case, you can still add a key to the data source, and the widget will start displaying the data once the device will send it to ThingsBoard. 
 
 {% include images-gallery.html imageCollection="add-data-source3" %}
 
 Besides the data keys, time series widget allows you to select the [time window](/docs/user-guide/dashboards/#time-window). 
-Also, alarm widget allows you to select both [time window](/docs/user-guide/dashboards/#time-window) and [alarm filter](/docs/user-guide/dashboards/#alarm-filter)
+Also, alarm widget allows you to select both [time window](/docs/user-guide/dashboards/#time-window) and [alarm filter](/docs/user-guide/dashboards/#alarm-filter).
 
 ##### Data keys
 
@@ -250,18 +377,12 @@ List of entity fields depends on the entity type and may extend in the future:
  * **User** has the following fields: created time, first name, last name, email and additional info.
  * **Customer** has the following fields: create time, entity type, email, title, country, state, city, address, zip code, phone, additional info.
 
-###### Basic data key settings
-
-
-
-###### Advanced data key settings
-
 ##### Widget time window
 
-Widget time window defines time interval and aggregation function that should be used to fetch the time series or alarm data. 
-By default, every widget is using the main [time window](/docs/user-guide/dashboards/#time-window) defined in the dashboard [toolbar](/docs/user-guide/dashboards/#toolbar). 
-You may overwrite the default time window using "Use dashboard timewindow" checkbox.
-You may also hide the time window selection for specific widget from the user using the "Display timewindow" checkbox. 
+A widget time window defines a time interval and aggregation function that should be used to fetch the time series or alarm data. 
+By default, every widget uses the main [time window](/docs/user-guide/dashboards/#time-window) determined in the dashboard's [toolbar](/docs/user-guide/dashboards/#toolbar). 
+You can overwrite the default time window using the "Use dashboard timewindow" checkbox.
+You can also hide the time window selection for a specific widget from the user using the "Display timewindow" checkbox. 
 
 {% include images-gallery.html imageCollection="time-window1" %}
 
@@ -269,8 +390,8 @@ Learn more about time window configuration [here](/docs/user-guide/dashboards/#t
 
 ##### Alarm filter
 
-In addition to the time window configuration, alarm widgets allow you to filter [alarms](/docs/user-guide/alarms/) based on [status](/docs/user-guide/alarms/#lifecycle), [severity](/docs/user-guide/alarms/#severity) and [type](/docs/user-guide/alarms/#type).
-You may choose combination of alarm statuses and severity. You may also define specific alarm types. You may also enable search of [propagated](/docs/user-guide/alarms/#propagation) alarms.
+In addition to the time window configuration, alarm widgets allow you to filter [alarms](/docs/user-guide/alarms/) based on [status](/docs/user-guide/alarms/#lifecycle), [severity](/docs/user-guide/alarms/#severity), and [type](/docs/user-guide/alarms/#type).
+You can choose a combination of alarm statuses and severity. You may also define specific alarm types as well as enable search of [propagated](/docs/user-guide/alarms/#propagation) alarms.
 
 {% include images-gallery.html imageCollection="alarm-filters" %}
 
@@ -281,12 +402,11 @@ You should see a similar widget (note that you should send/simulate some data to
 
 {% include images-gallery.html imageCollection="basic-settings" %}
 
-Let's use the basic widget settings to tune the widget. We will demonstrate how each setting impacts the widget.
+Let's use the basic widget settings to customize the widget. We will demonstrate how each setting affects the widget.
 
 ##### Widget Title
 
-You may define custom widget title, tooltip and title style. You may also add an icon to the title and control icon color and size.
-See configuration and the corresponding result below.
+You can input custom widget title, tooltip and title style. You may also add an icon to the title and control icon color and size. See configuration and the corresponding result below.
 
 
 {% include images-gallery.html imageCollection="basic-settings-title" %}
@@ -301,16 +421,18 @@ Title style from the screen above:
 }
 ```
 
-You may also completely hide the title using "Display title" checkbox. 
-You may also disable the widget shadow using "Drop shadow" checkbox and disable fullscreen using "Enable fullscreen" checkbox. 
+You may also completely hide the title using the "Display title" checkbox. 
+You may also disable the widget shadow using the "Drop shadow" checkbox and disable fullscreen using the "Enable fullscreen" checkbox. 
 All those settings are enabled by default. 
 
 {: .copy-code}
 
 ##### Widget Style
 
-You may define custom widget style using CSS properties. This style will be applied to the main div element of the widget. You may also change the background color, text color, padding and margin. 
-See configuration and the corresponding result below. Please note that both style and background color is just an example and definitely is not part of our guidelines. 
+You can customize personal  style for the widget using CSS properties. This style will be applied to the main div element of the widget. You can also change the background color, text color, padding, and margin. 
+See the configuration and the corresponding result below. 
+
+Please note that the style and background color are just an example and are definitely not part of our guidelines. 
 
 
 {% include images-gallery.html imageCollection="basic-settings-style" %}
@@ -327,15 +449,14 @@ Widget style from the screen above:
 
 ##### Legend settings
 
-Chart widgets have "Display legend" setting enabled by default. The legend is used to display the min/max/average/total values.
-Others widgets have this setting disabled.  
+For chart widgets, the “Display legend” option is enabled by default. The legend is used to display the min/max/average/total values.
+Other widgets have this option disabled.  
 
-While legend is enabled you may choose the legend direction and position. You may also choose what data to include (min, max, average, total) and either to sort the data keys or not.
+While the legend is enabled, you can choose the direction and position of the legend. Also, you can choose which data to include (min, max, average, total) and either to sort the data keys or not.
 
 You may notice that the legend displays the [data key](/docs/user-guide/dashboards/#data-keys) label for each configured data key.
 When you have data from multiple devices in the same widget, it is hard to find which device corresponds to which record in the legend or in the tooltip.
 In order to make the legend and tooltip clear, you should use "${entityName}" or "${entityLabel}" in the data key configuration.
-More info is available in the [data key settings](/docs/user-guide/dashboards/#basic-data-key-settings) documentation.
 
 See configuration and the corresponding result below:
 
@@ -343,23 +464,20 @@ See configuration and the corresponding result below:
 
 ##### Mobile mode settings
 
+Mobile Mode settings consist of two options:
+- Order - set to an integer, specifies the priority of the order of displaying widgets in mobile mode (note that in mobile mode all widgets are displayed in one vertical column).
+If you need to arrange widgets in this column in a custom order, you can configure different order values for each widget.
+- Height - takes an integer value from 1 to 10. It sets the height of the widget in Mobile Mode in the range from 70px (1) to 700px (10), ignoring its original height.
+For example, with a value of 5, the widget height will be 350px. (70 * 5)
+If no value is specified, its original height will be used.
+
+
 ##### Other settings
 
-You may choose which symbol to show next to the value and number of digits after the floating point. 
-These settings are useful if you want to apply same settings for all axis. 
-For example, if you show temperature readings for multiple devices, you may add '°C' or '°F' symbol. 
-However, if you display both temperature and humidity, you should configure those data keys separately, using [data key settings](/docs/user-guide/dashboards/#basic-data-key-settings). 
-
-#### Advanced widget settings
-
-Advanced widget settings are specific to widget implementation. Those settings allow you to fine tune the widget. 
-For example, "Timeseries - Flot" widget allows you to configure line style, width, enable comparison with the previous time interval and use entity attributes in the legend.  
-
-Learn more about specific advanced settings in the corresponding widget documentation:
-
-  TODO: coming soon.
-
-#### Widget actions
+You can choose which symbol to display next to the value and the number of digits after the floating-point number. 
+These settings are useful if you want to apply the same settings for all axis. 
+For example, if you are showing temperature readings for multiple devices, you can add '°C' or '°F' symbol. 
+However, if you are displaying both temperature and humidity, you have to configure these data keys separately using data key settings. 
 
 
 ## Time window
@@ -387,9 +505,188 @@ In the realtime mode, the widgets will constantly receive updates from the serve
 
 ## Settings
 
+Dashboard settings allow adjusting and altering the overall look of the Dashboard. 
+To start customizing the Dashboard for a better user experience, 
+the first thing you need to do is to enter the Edit mode by clicking the "Pencil" icon at the bottom right of the page (Enter edit mode).
+
+{% include images-gallery.html imageCollection="dashboards-edit-enter" preview="false" %}
+
+When the edit mode is entered, you should click the "Gear" icon at the top of the window, so the Dashboard Settings will be opened.
+
+{% include images-gallery.html imageCollection="dashboards-settings-enter" preview="false" %}
+
+### State controller
+
+The first thing that can be changed is _State controller_. 
+By default, it's set to "entity", so to use all the features and work with the Dashboard as comfortable as possible we need to leave it that way.
+
+### Leave toolbar opened
+
+The checkbox _Leave toolbar opened_ is responsible for displaying the toolbar on the Dashboard page. 
+Toolbar allows changing the dashboard you're currently using, edit timewindow, export dashboard and expand the dashboard to the full screen.
+If we remove the checkmark, the toolbar will be closed, thus the Dashboard will look like this: 
+
+{% include images-gallery.html imageCollection="toolbar-dashboard" preview="false" %}
+ 
+### Title of the Dashboard
+
+If you'd like to see the Title of the Dashboard, you need to check the box _Display dashboard title_.
+The default text color is black. Color and transparency are easily adjusted using the _Title color_ parameter by clicking the colored circle and choosing the desired color for the title by moving the slider.
+The changed title appears on the top left of the Dashboard.
+
+{% include images-gallery.html imageCollection="title-on-dashboard" preview="false" %}
+
+### Dashboard Toolbar Settings
+
+The checkboxes _Display Dashboard selection, Display entities selection, Display filters, Display timewindow,_ and _Display export_ 
+are responsible for the visibility of the appropriate options on the Dashboard toolbar panel.
+
+_Filters_ option is shown on the toolbar panel only when the one has been created. If the filter was created, 
+but you'd like to limit the customer's opportunity to modify the device's indicators, we disable the ability to see filters on the toolbar panel by unchecking the corresponding checkbox.
+
+{% include images-gallery.html imageCollection="toolbar-dashboard-settings" preview="false" %}
+
+### Color
+
+The line _Color_ indicates the color of the text messages that you may see while editing your Dashboard. The _Color_ adjusts by clicking the colored circle on the left from the line.
+A small window will open, and by moving the sliders, you can adjust the color and transparency of the text. By default, the color is set to black.
+For instance, if the widgets haven't yet been added to the dashboard, and we change the _Color_, the message "Add new widget" will change.
+
+{% include images-gallery.html imageCollection="text-color" preview="false" %}
+
+### Capacity
+
+- **Columns count**
+
+While editing the Dashboard, specifically the size and space of your widgets, you can notice a whitish grid on a grey background. 
+These are columns that determine how many widgets can fit horizontally on a Dashboard.
+By default, the number of columns is 24. You can increase or decrease their number. The minimum number of columns is 10. The maximum number is 1000 columns. 
+
+{% include images-gallery.html imageCollection="columns" preview="false" %}
+
+- **Margin between widgets**
+
+This margin type determines how much space is between widgets. 
+Be default, the margin is set on 10. You can remove it by placing 0 in the _Margin between widgets_ line, or increase margin,  that is, the distance between widgets. The maximum margin is 50.
+
+{% include images-gallery.html imageCollection="margin" preview="false" %}
+
+- **Auto fill layout height**
+
+By default, the _Automatic Fill Layout Height_ checkbox is unchecked so that you can freely adjust the size of the widgets.
+If you tick this option, all the widgets on the Dashboard will fill in vertically in the space of the screen.
+
+{% include images-gallery.html imageCollection="autofill" preview="false" %}
+
+### Background
+
+#### Background color
+
+The Background color option allows you to customize the color that you'd like to be on the Dashboard's background. 
+To alter it, click on the colored circle, and with sliders choose the needed color and wished transparency. Then, press "Save" to apply changes. 
+After saving, you can see the customized background.
+
+{% include images-gallery.html imageCollection="background-settings" preview="false" %}
+
+#### Background image
+
+This option allows setting the picture as a background. To do this, you should drop an image in the appropriate field, or upload it from a folder on your computer.
+Once you select it, an image preview will appear on the left of the Settings window. 
+To adjust the position of the image more precisely, click the drop-down menu and choose how exactly the picture will fill the background space. 
+For instance, let's choose "Cover" and click "Save" to see how the background has changed. 
+
+{% include images-gallery.html imageCollection="background-image" preview="false" %}
+
+
+### Mobile layout settings
+
+By default, the _Automatic Fill Layout Height_ checkbox is unchecked so that you can freely adjust the size of the widgets on your mobile device.
+If you tick this option, all the widgets on the Dashboard will fill in vertically in the space of the screen. 
+
+_Mobile row height_ determines how tall you'd like your widgets to be on your mobile device. 
+By default, the height is set to 70px, but you can make it smaller or larger. The minimum Mobile row height is 5px, the maximum is 200px.
+
 ## Layouts
+
+Layouts define how widgets are arranged on a Dashboard. To manage a layout, you should enter the Edit mode by clicking the "Pencil" icon at the lower right corner of the screen.
+As soon as you appear in the Edit mode, click the small button three-rectangles "Manage layouts" in the upper left corner of the Dashboard window. 
+It opens the small window for layouts' control.
+
+{% include images-gallery.html imageCollection="layouts" preview="false" %}
+
+_The Main layout_ is the one which you're managing now. Basically, it's your dashboard. 
+If you click the big blue square button named "Main", the Layout settings window will open. 
+The layouts' settings are identical to [the Capacity](/docs/user-guide/dashboards/#capacity) and [the Background](/docs/user-guide/dashboards/#background) of the Dashboard settings.
+
+If we tick the "Right" checkbox, we divide the Dashboard into two separate parts. For each part, we are able to configure their own settings and appearance.
+
+{% include images-gallery.html imageCollection="right-layout" preview="false" %}
+
+Just to see how it can look like, let's set up both layouts in completely different ways.
+On the screenshot, you can see how the settings differ from each other (it is just an example and definitely not a recommendation). 
+After adjusting the settings, click the "Save" button in the Layouts window to see the changes.
+
+{% include images-gallery.html imageCollection="layout-difference" preview="false" %}
 
 ## States
 
+The States feature exists to create a layered hierarchy in your Dashboard. To use States properly you need to assign a specific action to a widget that will help you fast "travel" among the required states.
+To do this, you should click the upper left button with two-layered squares "Manage dashboard states". It will open the window with a dashboard state configuration.
+
+Since you haven't created any states yet, you have only your "Root state", namely your Dashboard. Root state defines the main state of your hierarchy. 
+After creating additional states. You easily can change a root state by clicking the "Pencil" icon (Edit dashboard state) and ticking the "Root state" checkbox.
+
+To add a new state, you need to click the "+" button in the right upper of the window, it will open a small window for a creating of a new state. 
+Give it a name, a State ID will form automatically according to the name, but you can change it.
+
+{% include images-gallery.html imageCollection="states" preview="false" %}
+
+Giving a corresponding action to a particular widget allows traveling between states. 
+To add an action, you should click the "pencil" icon (Edit widget) at the upper right corner of the widget to enter the widget configuration field.
+There you need to navigate to the "Action" cell and click the "+" icon to add a new action. 
+It will open the "Add action" window. 
+
+- _Action source_ is a particular act that needs to be done to achieve an aim. 
+- _Name_ means a preferred title to an action.
+- _Icon_ defines a symbol for action. 
+- _Type_ determines an aim of the action.
+
+In our case, a _Type_ should be "Navigate to new dashboard state". After choosing this option, the line "Target dashboard state" will appear, where we have to choose a newly created state. 
+When the configuration for a new state is done, click the "Save" button. The new state appears in the Action list. Click the orange tick mark at the upper right of the window to apply changes.
+
+As we have chosen the "On row click" action, we need to click on the row of our widget to bring the action into effect. After clicking, we immediately transfer to the chosen state.
+
+{% include images-gallery.html imageCollection="action-state" preview="false" %}
+
+
 ## Export
 
+In ThingsBoard Community Edition, a Dashboard export or an exporting of a specific widget is possible as a configuration file in JSON format. 
+You can use this file to transfer your Dashboard or widget configuration to another instance.
+
+### Export dashboard
+
+In the Dashboards section, find the dashboard you want to export from the list. Opposite the name of the dashboard in the list, click on the "Export dashboard" button. 
+The configuration file in JSON format with all settings on the control panel will be saved on your PC. 
+
+{% include images-gallery.html imageCollection="dashboard-export" preview="false" %}
+
+You can do this directly from the Dashboard. Open the Dashboard and click the "Export dashboard" button in the upper right corner of the screen.
+
+{% include images-gallery.html imageCollection="dashboard-export-direct" preview="false" %}
+
+### Export widget
+
+To export the widget, you should go to a Dashboard, where the widget is located.  
+Then go to the "Edit mode" by clicking on the "Pencil" icon in the lower right corner. 
+Now in the upper right corner of the needed widget, click the button "Export widget". 
+This action saves the configuration file of the JSON format with all the settings of a particular widget to your PC.
+
+{% include images-gallery.html imageCollection="export-widget" preview="false" %}
+
+### ThingsBoard Professional Edition export
+
+In ThingsBoard Professional Edition, dashboard export is possible in several additional formats: PDF, PNG & JPEG.
+This is useful when you need to send the data displayed in your dashboard by email or print.
+
+{% include images-gallery.html imageCollection="pro-export" preview="false" %}
