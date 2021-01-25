@@ -285,7 +285,7 @@ Suppose you have thousands of "Thermometer" devices, and you would like to displ
 Let's also assume that thermometer model is stored as an attribute, and the battery level is stored as a time series data.
 We will define a filter that checks if the model is "DHT22" and the battery level is less than 20 percent. 
 
-{% include images-gallery.html imageCollection="filters" preview="false" %}
+{% include images-gallery.html imageCollection="filters" %}
 
 Filters are applied only to the "latest" value of the attribute or time series key. Don't use this feature to "filter out" historical time series values.
 
@@ -509,11 +509,11 @@ Dashboard settings allow adjusting and altering the overall look of the Dashboar
 To start customizing the Dashboard for a better user experience, 
 the first thing you need to do is to enter the Edit mode by clicking the "Pencil" icon at the bottom right of the page (Enter edit mode).
 
-{% include images-gallery.html imageCollection="dashboards-edit-enter" preview="false" %}
+{% include images-gallery.html imageCollection="dashboards-edit-enter" %}
 
 When the edit mode is entered, you should click the "Gear" icon at the top of the window, so the Dashboard Settings will be opened.
 
-{% include images-gallery.html imageCollection="dashboards-settings-enter" preview="false" %}
+{% include images-gallery.html imageCollection="dashboards-settings-enter" %}
 
 ### State controller
 
@@ -526,7 +526,7 @@ The checkbox _Leave toolbar opened_ is responsible for displaying the toolbar on
 Toolbar allows changing the dashboard you're currently using, edit timewindow, export dashboard and expand the dashboard to the full screen.
 If we remove the checkmark, the toolbar will be closed, thus the Dashboard will look like this: 
 
-{% include images-gallery.html imageCollection="toolbar-dashboard" preview="false" %}
+{% include images-gallery.html imageCollection="toolbar-dashboard" %}
  
 ### Title of the Dashboard
 
@@ -534,7 +534,7 @@ If you'd like to see the Title of the Dashboard, you need to check the box _Disp
 The default text color is black. Color and transparency are easily adjusted using the _Title color_ parameter by clicking the colored circle and choosing the desired color for the title by moving the slider.
 The changed title appears on the top left of the Dashboard.
 
-{% include images-gallery.html imageCollection="title-on-dashboard" preview="false" %}
+{% include images-gallery.html imageCollection="title-on-dashboard" %}
 
 ### Dashboard Toolbar Settings
 
@@ -544,7 +544,7 @@ are responsible for the visibility of the appropriate options on the Dashboard t
 _Filters_ option is shown on the toolbar panel only when the one has been created. If the filter was created, 
 but you'd like to limit the customer's opportunity to modify the device's indicators, we disable the ability to see filters on the toolbar panel by unchecking the corresponding checkbox.
 
-{% include images-gallery.html imageCollection="toolbar-dashboard-settings" preview="false" %}
+{% include images-gallery.html imageCollection="toolbar-dashboard-settings" %}
 
 ### Color
 
@@ -552,7 +552,7 @@ The line _Color_ indicates the color of the text messages that you may see while
 A small window will open, and by moving the sliders, you can adjust the color and transparency of the text. By default, the color is set to black.
 For instance, if the widgets haven't yet been added to the dashboard, and we change the _Color_, the message "Add new widget" will change.
 
-{% include images-gallery.html imageCollection="text-color" preview="false" %}
+{% include images-gallery.html imageCollection="text-color" %}
 
 ### Capacity
 
@@ -562,21 +562,21 @@ While editing the Dashboard, specifically the size and space of your widgets, yo
 These are columns that determine how many widgets can fit horizontally on a Dashboard.
 By default, the number of columns is 24. You can increase or decrease their number. The minimum number of columns is 10. The maximum number is 1000 columns. 
 
-{% include images-gallery.html imageCollection="columns" preview="false" %}
+{% include images-gallery.html imageCollection="columns" %}
 
 - **Margin between widgets**
 
 This margin type determines how much space is between widgets. 
 Be default, the margin is set on 10. You can remove it by placing 0 in the _Margin between widgets_ line, or increase margin,  that is, the distance between widgets. The maximum margin is 50.
 
-{% include images-gallery.html imageCollection="margin" preview="false" %}
+{% include images-gallery.html imageCollection="margin" %}
 
 - **Auto fill layout height**
 
 By default, the _Automatic Fill Layout Height_ checkbox is unchecked so that you can freely adjust the size of the widgets.
 If you tick this option, all the widgets on the Dashboard will fill in vertically in the space of the screen.
 
-{% include images-gallery.html imageCollection="autofill" preview="false" %}
+{% include images-gallery.html imageCollection="autofill" %}
 
 ### Background
 
@@ -586,7 +586,7 @@ The Background color option allows you to customize the color that you'd like to
 To alter it, click on the colored circle, and with sliders choose the needed color and wished transparency. Then, press "Save" to apply changes. 
 After saving, you can see the customized background.
 
-{% include images-gallery.html imageCollection="background-settings" preview="false" %}
+{% include images-gallery.html imageCollection="background-settings" %}
 
 #### Background image
 
@@ -595,7 +595,7 @@ Once you select it, an image preview will appear on the left of the Settings win
 To adjust the position of the image more precisely, click the drop-down menu and choose how exactly the picture will fill the background space. 
 For instance, let's choose "Cover" and click "Save" to see how the background has changed. 
 
-{% include images-gallery.html imageCollection="background-image" preview="false" %}
+{% include images-gallery.html imageCollection="background-image" %}
 
 
 ### Mobile layout settings
@@ -612,7 +612,7 @@ Layouts define how widgets are arranged on a Dashboard. To manage a layout, you 
 As soon as you appear in the Edit mode, click the small button three-rectangles "Manage layouts" in the upper left corner of the Dashboard window. 
 It opens the small window for layouts' control.
 
-{% include images-gallery.html imageCollection="layouts" preview="false" %}
+{% include images-gallery.html imageCollection="layouts" %}
 
 _The Main layout_ is the one which you're managing now. Basically, it's your dashboard. 
 If you click the big blue square button named "Main", the Layout settings window will open. 
@@ -620,13 +620,13 @@ The layouts' settings are identical to [the Capacity](/docs/user-guide/dashboard
 
 If we tick the "Right" checkbox, we divide the Dashboard into two separate parts. For each part, we are able to configure their own settings and appearance.
 
-{% include images-gallery.html imageCollection="right-layout" preview="false" %}
+{% include images-gallery.html imageCollection="right-layout" %}
 
 Just to see how it can look like, let's set up both layouts in completely different ways.
 On the screenshot, you can see how the settings differ from each other (it is just an example and definitely not a recommendation). 
 After adjusting the settings, click the "Save" button in the Layouts window to see the changes.
 
-{% include images-gallery.html imageCollection="layout-difference" preview="false" %}
+{% include images-gallery.html imageCollection="layout-difference" %}
 
 ## States
 
@@ -639,7 +639,7 @@ After creating additional states. You easily can change a root state by clicking
 To add a new state, you need to click the "+" button in the right upper of the window, it will open a small window for a creating of a new state. 
 Give it a name, a State ID will form automatically according to the name, but you can change it.
 
-{% include images-gallery.html imageCollection="states" preview="false" %}
+{% include images-gallery.html imageCollection="states" %}
 
 Giving a corresponding action to a particular widget allows traveling between states. 
 To add an action, you should click the "pencil" icon (Edit widget) at the upper right corner of the widget to enter the widget configuration field.
@@ -656,7 +656,7 @@ When the configuration for a new state is done, click the "Save" button. The new
 
 As we have chosen the "On row click" action, we need to click on the row of our widget to bring the action into effect. After clicking, we immediately transfer to the chosen state.
 
-{% include images-gallery.html imageCollection="action-state" preview="false" %}
+{% include images-gallery.html imageCollection="action-state" %}
 
 
 ## Export
@@ -669,11 +669,11 @@ You can use this file to transfer your Dashboard or widget configuration to anot
 In the Dashboards section, find the dashboard you want to export from the list. Opposite the name of the dashboard in the list, click on the "Export dashboard" button. 
 The configuration file in JSON format with all settings on the control panel will be saved on your PC. 
 
-{% include images-gallery.html imageCollection="dashboard-export" preview="false" %}
+{% include images-gallery.html imageCollection="dashboard-export" %}
 
 You can do this directly from the Dashboard. Open the Dashboard and click the "Export dashboard" button in the upper right corner of the screen.
 
-{% include images-gallery.html imageCollection="dashboard-export-direct" preview="false" %}
+{% include images-gallery.html imageCollection="dashboard-export-direct" %}
 
 ### Export widget
 
@@ -682,11 +682,11 @@ Then go to the "Edit mode" by clicking on the "Pencil" icon in the lower right c
 Now in the upper right corner of the needed widget, click the button "Export widget". 
 This action saves the configuration file of the JSON format with all the settings of a particular widget to your PC.
 
-{% include images-gallery.html imageCollection="export-widget" preview="false" %}
+{% include images-gallery.html imageCollection="export-widget" %}
 
 ### ThingsBoard Professional Edition export
 
 In ThingsBoard Professional Edition, dashboard export is possible in several additional formats: PDF, PNG & JPEG.
 This is useful when you need to send the data displayed in your dashboard by email or print.
 
-{% include images-gallery.html imageCollection="pro-export" preview="false" %}
+{% include images-gallery.html imageCollection="pro-export" %}
