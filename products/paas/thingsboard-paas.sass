@@ -1,4 +1,6 @@
 #thingsboard-paas
+    section
+        background: none
     &:not(.open-nav):not(.flip-nav)
         header
             &::after
@@ -101,20 +103,19 @@
             font-size: 32px
             line-height: 48px
             a
-                color: #305680
+                color: #2A7DEC
         h2
             margin: 48px 0 136px
             text-align: center
-            color: #707275
-            font-size: 18px
-            line-height: 27px
+            color: #899AAB
+            font-size: 20x
+            line-height: 1.5em
             font-weight: normal
         h3
             border: none
             font-weight: 400
         p
-            line-height: 1.5em
-            color: #44474A
+            color: #696C6E
             font-size: 18px
             font-weight: normal
             line-height: 27px
@@ -210,48 +211,47 @@
         margin-bottom: 64px
         padding-top: 88px
         #cards
+            padding-top: 50px
             justify-content: center
             &>div
-                margin-bottom: 56px
+                margin-bottom: 36px
                 text-align: center
                 &.col-lg-6
-                    padding: 0 30px
+                    padding: 0 18px
                     max-width: 100%
                 div
+                    padding: 56px 48px
                     float: left
                     width: 100%
+                    background: white
+                    border-radius: 6px
+                    box-shadow: 0 50px 50px -20px rgba(0,0,0,0.15)
                     h1
                         font-size: 24px
                         line-height: normal
-
                     a
-                        color: #305680
+                        color: #2A7DEC
                         font-size: 18px
                         font-weight: 500
                         line-height: 27px
                         margin-block-start: 15px
-                img
-                    margin-bottom: 24px
+                    img
+                        margin-bottom: 38px
 
     #labeling
         margin: 48px 0 112px
         text-align: center
         div
             display: flex
-            padding: 0 20%
-            hr
-                flex: 1
-                margin-top: 74px
+            padding: 0 18%
         p
-            color: #707275
-            font-size: 18px
+            color: #899AAB
+            font-size: 20px
+            line-height: 1.5em
             font-weight: normal
-            line-height: 27px
-            margin-block-start: 15px
 
 
     #tb-customers
-        background-color: #FBFBFB
         margin: -50px -100% 0
         padding: 50px 100%
         text-align: justify
@@ -275,6 +275,28 @@
                 padding: 10px
                 object
                     pointer-events: none
+                    filter: invert(87%) sepia(3%) saturate(664%) hue-rotate(176deg) brightness(237%) contrast(82%)
+
+    #background
+        position: absolute
+        top: 570px
+        left: 50%
+        .main
+            position: absolute
+            width: 2560px
+            height: 525px
+            left: -1280px
+            background-color: #F8FAFE
+            -ms-transform: skewY(-6deg)
+            transform: skewY(-6deg)
+        .small
+            position: absolute
+            right: 524px
+            width: 436px
+            height: 90px
+            background-color: #2A7DEC
+            -ms-transform: skewY(-6deg)
+            transform: skewY(-6deg)
           
 @media screen and (min-width: 750px)
     #thingsboard-paas
@@ -324,7 +346,7 @@
                 padding: 0 5%
             #labeling
                 p
-                    padding: 0 10%
+                    padding: 0 8%
             max-width: 100%
 
 
@@ -349,7 +371,7 @@
                 padding: 0 7%
             #labeling
                 p
-                    padding: 0 15%
+                    padding: 0 13%
 
 @media screen and (min-width: 1500px)
     #thingsboard-paas
@@ -358,5 +380,5 @@
                 padding: 0 10%
             #labeling
                 p
-                    padding: 0 20%
+                    padding: 0 18%
             max-width: 1400px

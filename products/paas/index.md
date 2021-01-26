@@ -4,6 +4,9 @@ title: ThingsBoard Cloud
 description: 
 ---
 
+<div id="background">
+<div class="main"></div><div class="small"></div>
+</div>
 <section id="tb-customers">
 	<main>
 		<a href="/industries/telecom/#tmobile"><object data="/images/customers/clear/t-mobile.svg"></object></a>
@@ -19,43 +22,41 @@ description:
 		<h1 class="intro_title"><a href="what-is-thingsboard-cloud/">ThingsBoard Cloud</a> is a fully managed, scalable and fault-tolerant platform for your IoT applications</h1>
 		<div id="labeling"> 
         <p>ThingsBoard Cloud is for everyone who would like to use ThingsBoard Professional Edition but don’t want to host their own instance of the platform.</p>
-		<div><hr></div>
 		</div>
         <div id="cards" class="row">
             <div class="col-lg-6">
-                <img src="/images/paas/improved-time.svg">
-                <div><h1>Improved time to market</h1>
+                <div><img src="/images/paas/improved-time.svg">
+                <h1>Improved time to market</h1>
                 <p>Save time on maintenance of the platform or configuration of the features.</p>
                 </div>
             </div>
             <div class="col-lg-6">
-                <img src="/images/paas/advanced-features.svg">
-                <div><h1>Advanced features</h1>
+                <div><img src="/images/paas/advanced-features.svg">
+                <h1>Advanced features</h1>
                 <p>Platform supports all <a href="/products/thingsboard-pe/">Professional Edition</a> features and advanced <a href="/products/paas/domains/">domain management</a>.</p>
                 </div>
             </div>
             <div class="col-lg-6">
-                <img src="/images/paas/reduced-costs.svg">
-                <div><h1>Reduced costs</h1>
+                <div><img src="/images/paas/reduced-costs.svg">
+                <h1>Reduced costs</h1>
                 <p>The cost of the cluster infrastructure is shared between the users of the platform.</p>
                 </div>
             </div>
             <div class="col-lg-6">
-                <img src="/images/paas/high-availability.svg">
-                <div><h1>High availability</h1>
+                <div><img src="/images/paas/high-availability.svg">
+                <h1>High availability</h1>
                 <p>ThingsBoard Cloud uses microservices architecture and is deployed in multiple availability zones.</p>
                 </div>
             </div>
             <div class="col-lg-6">
-                <img src="/images/paas/data-durability.svg">
-                <div><h1>Data durability</h1>
+                <div><img src="/images/paas/data-durability.svg">
+                <h1>Data durability</h1>
                 <p>Platform uses data replication and backup procedures to make sure you don’t lose the data.</p>
                 </div>
             </div>
         </div>
 	</main>
 </section>
-
 <section id="matrix">
 	<main>
 	<h1>Feature Comparison Matrix</h1>
