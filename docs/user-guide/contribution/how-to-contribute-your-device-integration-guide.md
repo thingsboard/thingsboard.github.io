@@ -6,17 +6,12 @@ hidetoc: "true"
 
 ---
 
-* TOC
-{:toc}
-
 ## Introduction to thingsboard.io
 
-Our website is open-sourced. You may find the code of in this repo. Every one can contribute to the website. The flow is as follows...
+Our website is open-sourced. You may find the code of in this [repo](https://github.com/thingsboard/thingsboard.github.io). Every one can contribute to the website. The flow is as follows...
 
-{% include mermaid-graph.html
-graphId="connectivityGraph"
-file="resources/connectivity.mm"
-links-json="resources/connectivity-links.json" %}
+* TOC
+{:toc}
 
 ## What is fork
 

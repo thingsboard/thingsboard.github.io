@@ -29,6 +29,11 @@ Widget/dashboard example for visualization of the data from your device. You can
 
 Choose one of the suitable methods of integration according to - Connectivity diagram
 
+{% include mermaid-graph.html
+graphId="connectivityGraph"
+file="resources/connectivity.mm"
+links-json="resources/connectivity-links.json" %}
+
 #### Integration method
 
 * [Step 4] ThingsBoard Prerequisites (f.e. versions/components/etc. - optional).
