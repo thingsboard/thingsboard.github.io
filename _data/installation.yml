@@ -85,7 +85,7 @@ toc:
     path: /docs/user-guide/install/pe/azure/
   - title: Installing ThingsBoard PE on DigitalOcean
     path: /docs/user-guide/install/pe/digital-ocean/
-  - title: Installing ThingsBoard PE from GCP Marketplace
+  - title: Installing ThingsBoard PE on GCP
     path: /docs/user-guide/install/pe/gcp/
   - title: Installing ThingsBoard PE from IBM Cloud Marketplace
     path: /docs/user-guide/install/pe/ibm-cloud/
