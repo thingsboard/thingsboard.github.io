@@ -35,9 +35,13 @@ filters:
         image: /images/user-guide/dashboards/filters6-src.png
 
 add-widget:
-    0:
-        image: /images/user-guide/dashboards/add-widget1-src.png
+    0: 
+        image: /images/user-guide/dashboards/12-edit-mode3-src.png
     1:
+        image: /images/user-guide/dashboards/13-edit-mode4-src.png
+    2:
+        image: /images/user-guide/dashboards/add-widget1-src.png
+    3:
         image: /images/user-guide/dashboards/add-widget2-src.png
 
 add-data-source1:
@@ -76,7 +80,7 @@ basic-settings-title:
 
 basic-settings-style:
     0:
-        image: /images/user-guide/dashboards/basic-widget-settings-title2-src.png
+        image: /images/user-guide/dashboards/basic-widget-settings-title-noedits-src.png
     1:
         image: /images/user-guide/dashboards/basic-widget-settings-style1-src.png
     2:
@@ -84,7 +88,7 @@ basic-settings-style:
 
 basic-settings-legend:
     0:
-        image: /images/user-guide/dashboards/basic-widget-settings-title2-src.png
+        image: /images/user-guide/dashboards/basic-widget-settings-title-noedits-src.png
     1:
         image: /images/user-guide/dashboards/basic-widget-settings-legend1-src.png
     2:
@@ -130,18 +134,24 @@ text-color:
 
 columns:
     0:
+        image: /images/user-guide/dashboards/settings/settings-capacity.png
+    1:
         image: /images/user-guide/dashboards/settings/columns-grid.png
 
 margin:
     0:
-        image: /images/user-guide/dashboards/settings/margin0.png
+        image: /images/user-guide/dashboards/settings/settings-margin.png
     1:
+        image: /images/user-guide/dashboards/settings/margin0.png
+    2:
         image: /images/user-guide/dashboards/settings/margin50.png
 
 autofill:
     0:
-        image: /images/user-guide/dashboards/settings/no-autofill.png
+        image: /images/user-guide/dashboards/settings/settings-autofill.png
     1:
+        image: /images/user-guide/dashboards/settings/no-autofill.png
+    2:
         image: /images/user-guide/dashboards/settings/autofill-on.png
 
 background-settings:
@@ -278,12 +288,14 @@ Please see the Entity Aliases [documentation](/docs/user-guide/ui/aliases) for m
 
 ### Entity Filters
 
-Entity Filters allow you to determine a filter for the list of entities resolved by the entity alias.
-Let's see an example: 
+Entity Filters allow you to determine a filter for the list of entities resolved by the entity alias. 
 
+Let's see an example: 
 Suppose you have thousands of "Thermometer" devices, and you would like to display thermometers of a specific model and with certain battery levels.
 Let's also assume that thermometer model is stored as an attribute, and the battery level is stored as a time series data.
 We will define a filter that checks if the model is "DHT22" and the battery level is less than 20 percent. 
+
+**Please note:** while adding the filter, you can configure the ability to edit it for users by moving the slider opposite the Filter name.
 
 {% include images-gallery.html imageCollection="filters" %}
 
@@ -303,7 +315,7 @@ See more examples how to use filters in this video:
 
 ## Widgets
 
-### Widget types
+#### Widget types
 
 Widgets are the building blocks of your dashboard. There are 5 types of widgets:
 
@@ -314,7 +326,7 @@ Widgets are the building blocks of your dashboard. There are 5 types of widgets:
 * **Alarm** widgets allow you to display [alarms](/docs/user-guide/alarms/);
 * **Static** widgets are designed to display static data. For example, floor plan or static company information.
 
-### Adding widget to the dashboard
+#### Adding widget to the dashboard
 
 To add a widget to the dashboard, you should:
 
@@ -325,14 +337,14 @@ To add a widget to the dashboard, you should:
 
 {% include images-gallery.html imageCollection="add-widget" %}
 
-### Add widget dialog and settings
+#### Add widget dialog and settings
 
-Widget definition consists of the widget type, one or multiple data sources, basic and advanced settings, and the list of actions.   
+Widget consists of the widget type, one or multiple data sources, basic and advanced settings, and the list of actions.   
 Therefore, the "Add widget" dialog contains four tabs to define a widget. Note that only the datasource configuration is strictly required. 
 You may leave all other configuration tabs with the default values in most of the cases.   
 We will discuss each of those tabs below.
 
-#### Widget data settings
+##### Widget data settings
 
 Widget data settings allow you to add one or multiple data sources. 
 A Data source is a combination of [entity alias](/docs/user-guide/dashboards/#entity-aliases), optional [filter](/docs/user-guide/dashboards/#entity-filters), and list of data keys.
@@ -376,6 +388,14 @@ List of entity fields depends on the entity type and may extend in the future:
  * **Devices, assets and entity views** have the following fields: create time, entity type, name, type, label, additional info.
  * **User** has the following fields: created time, first name, last name, email and additional info.
  * **Customer** has the following fields: create time, entity type, email, title, country, state, city, address, zip code, phone, additional info.
+
+##### Basic Data keys settings
+
+Coming soon...
+
+##### Advanced Data keys settings
+
+Coming soon...
 
 ##### Widget time window
 
@@ -479,6 +499,17 @@ These settings are useful if you want to apply the same settings for all axis.
 For example, if you are showing temperature readings for multiple devices, you can add '°C' or '°F' symbol. 
 However, if you are displaying both temperature and humidity, you have to configure these data keys separately using data key settings. 
 
+##### Advanced widget settings
+
+Advanced widget settings are specific to widget implementation. Those settings allow you to fine tune the widget. For example, “Timeseries - Flot” widget allows you to configure line style, width, enable comparison with the previous time interval and use entity attributes in the legend.
+
+Learn more about specific advanced settings in the corresponding widget documentation:
+
+Coming soon...
+
+##### Widget actions
+
+Coming soon...
 
 ## Time window
 
@@ -515,20 +546,22 @@ When the edit mode is entered, you should click the "Gear" icon at the top of th
 
 {% include images-gallery.html imageCollection="dashboards-settings-enter" %}
 
-### State controller
+#### State controller
 
 The first thing that can be changed is _State controller_. 
 By default, it's set to "entity", so to use all the features and work with the Dashboard as comfortable as possible we need to leave it that way.
 
-### Leave toolbar opened
+#### Leave toolbar opened
 
 The checkbox _Leave toolbar opened_ is responsible for displaying the toolbar on the Dashboard page. 
-Toolbar allows changing the dashboard you're currently using, edit timewindow, export dashboard and expand the dashboard to the full screen.
-If we remove the checkmark, the toolbar will be closed, thus the Dashboard will look like this: 
+Toolbar allows changing the dashboard you're currently using, edit timewindow, export dashboard and expand the dashboard to the full screen. 
+
+If we remove the checkmark, the toolbar will be closed. Instead of it, on the upper right of the screen you find the three-dots icon. By clicking on it, the hidden toolbar will be opened.
+
 
 {% include images-gallery.html imageCollection="toolbar-dashboard" %}
  
-### Title of the Dashboard
+#### Title of the Dashboard
 
 If you'd like to see the Title of the Dashboard, you need to check the box _Display dashboard title_.
 The default text color is black. Color and transparency are easily adjusted using the _Title color_ parameter by clicking the colored circle and choosing the desired color for the title by moving the slider.
@@ -536,7 +569,7 @@ The changed title appears on the top left of the Dashboard.
 
 {% include images-gallery.html imageCollection="title-on-dashboard" %}
 
-### Dashboard Toolbar Settings
+#### Dashboard Toolbar Settings
 
 The checkboxes _Display Dashboard selection, Display entities selection, Display filters, Display timewindow,_ and _Display export_ 
 are responsible for the visibility of the appropriate options on the Dashboard toolbar panel.
@@ -546,7 +579,7 @@ but you'd like to limit the customer's opportunity to modify the device's indica
 
 {% include images-gallery.html imageCollection="toolbar-dashboard-settings" %}
 
-### Color
+#### Color
 
 The line _Color_ indicates the color of the text messages that you may see while editing your Dashboard. The _Color_ adjusts by clicking the colored circle on the left from the line.
 A small window will open, and by moving the sliders, you can adjust the color and transparency of the text. By default, the color is set to black.
@@ -554,7 +587,7 @@ For instance, if the widgets haven't yet been added to the dashboard, and we cha
 
 {% include images-gallery.html imageCollection="text-color" %}
 
-### Capacity
+#### Capacity
 
 - **Columns count**
 
@@ -578,9 +611,9 @@ If you tick this option, all the widgets on the Dashboard will fill in verticall
 
 {% include images-gallery.html imageCollection="autofill" %}
 
-### Background
+#### Background
 
-#### Background color
+##### Background color
 
 The Background color option allows you to customize the color that you'd like to be on the Dashboard's background. 
 To alter it, click on the colored circle, and with sliders choose the needed color and wished transparency. Then, press "Save" to apply changes. 
@@ -588,7 +621,7 @@ After saving, you can see the customized background.
 
 {% include images-gallery.html imageCollection="background-settings" %}
 
-#### Background image
+##### Background image
 
 This option allows setting the picture as a background. To do this, you should drop an image in the appropriate field, or upload it from a folder on your computer.
 Once you select it, an image preview will appear on the left of the Settings window. 
@@ -598,7 +631,7 @@ For instance, let's choose "Cover" and click "Save" to see how the background ha
 {% include images-gallery.html imageCollection="background-image" %}
 
 
-### Mobile layout settings
+#### Mobile layout settings
 
 By default, the _Automatic Fill Layout Height_ checkbox is unchecked so that you can freely adjust the size of the widgets on your mobile device.
 If you tick this option, all the widgets on the Dashboard will fill in vertically in the space of the screen. 
