@@ -64,8 +64,8 @@ collections:
 
 release:
   branch: release-3.2
-  ce_ver: 3.2
-  ce_tag: v3.2
-  ce_full_ver: 3.2.0
-  pe_ver: 3.2pe
-  pe_full_ver: 3.2.0PE
+  ce_ver: 3.2.1
+  ce_tag: v3.2.1
+  ce_full_ver: 3.2.1
+  pe_ver: 3.2.1pe
+  pe_full_ver: 3.2.1PE
