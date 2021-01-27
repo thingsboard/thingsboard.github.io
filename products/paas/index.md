@@ -5,7 +5,7 @@ description:
 ---
 
 <div id="background">
-<div class="main"></div><div class="small"></div>
+<div class="main"></div><div class="small1"></div><div class="small2"></div><div class="small3"></div><div class="small4"></div><div class="bottom"></div><div class="small5"></div>
 </div>
 <section id="tb-customers">
 	<main>
@@ -59,16 +59,12 @@ description:
 </section>
 <section id="matrix">
 	<main>
-	<h1>Feature Comparison Matrix</h1>
-	<div class="table_bg">
-	<div></div><div></div>
-	<div></div><div></div>
-	<div></div><div></div>
-	<div></div><div></div>
-	<div></div><div></div>
-	<div></div><div></div>
-	<div></div><div></div>
-	</div>
+    <div id="backg-matrix">
+    <div class="community"><div class="coln"><div class="head"></div></div></div>
+    <div class="prof"><div class="coln"><div class="head"></div></div></div>
+    <div class="cloud"><div class="coln"><div class="head"></div></div></div>
+    </div>
+	<h2>Feature Comparison Matrix</h2>
 	<table>
             <thead>
                 <tr>
@@ -81,33 +77,33 @@ description:
             <tbody>
                 <tr>
                     <th>Asset management & Data collection</th>
-                    <td><img src="/images/pe/checked_ce.svg"></td>
-                    <td><img src="/images/pe/checked_pe.svg"></td>
-                    <td><img src="/images/pe/checked_c.svg"></td>
+                    <td><img src="/images/pe/checked.svg"></td>
+                    <td><img src="/images/pe/checked.svg"></td>
+                    <td><img src="/images/pe/checked.svg"></td>
                 </tr>
                 <tr>
                     <th>End-user real-time dashboards</th>
-                    <td><img src="/images/pe/checked_ce.svg"></td>
-                    <td><img src="/images/pe/checked_pe.svg"></td>
-                    <td><img src="/images/pe/checked_c.svg"></td>
+                    <td><img src="/images/pe/checked.svg"></td>
+                    <td><img src="/images/pe/checked.svg"></td>
+                    <td><img src="/images/pe/checked.svg"></td>
                 </tr>
                 <tr>
                     <th>Customizable rule chains, widgets</th>
-                    <td><img src="/images/pe/checked_ce.svg"></td>
-                    <td><img src="/images/pe/checked_pe.svg"></td>
-                    <td><img src="/images/pe/checked_c.svg"></td>
+                    <td><img src="/images/pe/checked.svg"></td>
+                    <td><img src="/images/pe/checked.svg"></td>
+                    <td><img src="/images/pe/checked.svg"></td>
                 </tr>
                 <tr>
                     <th>MQTT, HTTP, CoAP, OPC-UA transport</th>
-                    <td><img src="/images/pe/checked_ce.svg"></td>
-                    <td><img src="/images/pe/checked_pe.svg"></td>
-                    <td><img src="/images/pe/checked_c.svg"></td>
+                    <td><img src="/images/pe/checked.svg"></td>
+                    <td><img src="/images/pe/checked.svg"></td>
+                    <td><img src="/images/pe/checked.svg"></td>
                 </tr>
                 <tr>
                     <th>Integrations with BigData systems</th>
-                    <td><img src="/images/pe/checked_ce.svg"></td>
-                    <td><img src="/images/pe/checked_pe.svg"></td>
-                    <td><img src="/images/pe/checked_c.svg"></td>
+                    <td><img src="/images/pe/checked.svg"></td>
+                    <td><img src="/images/pe/checked.svg"></td>
+                    <td><img src="/images/pe/checked.svg"></td>
                 </tr>
                 <tr>
                     <th>NB-IoT, SigFox, LoRaWAN support</th>
@@ -124,45 +120,51 @@ description:
                 <tr>
                     <th><a href="/docs/user-guide/groups/">Entity groups<img src="/images/pe/help-black18.svg"></a></th>
                     <td><img src="/images/pe/unchecked.svg"></td>
-                    <td><img src="/images/pe/checked_pe.svg"></td>
-                    <td><img src="/images/pe/checked_c.svg"></td>
+                    <td><img src="/images/pe/checked.svg"></td>
+                    <td><img src="/images/pe/checked.svg"></td>
                 </tr>              
                 <tr>
                     <th><a href="/docs/user-guide/rbac/">Advanced RBAC for IoT<img src="/images/pe/help-black18.svg"></a></th>
                     <td><img src="/images/pe/unchecked.svg"></td>
-                    <td><img src="/images/pe/checked_pe.svg"></td>
-                    <td><img src="/images/pe/checked_c.svg"></td>
+                    <td><img src="/images/pe/checked.svg"></td>
+                    <td><img src="/images/pe/checked.svg"></td>
                 </tr>              
                 <tr>
                     <th><a href="/docs/user-guide/scheduler/">Scheduler<img src="/images/pe/help-black18.svg"></a></th>
                     <td><img src="/images/pe/unchecked.svg"></td>
-                    <td><img src="/images/pe/checked_pe.svg"></td>
-                    <td><img src="/images/pe/checked_c.svg"></td>
+                    <td><img src="/images/pe/checked.svg"></td>
+                    <td><img src="/images/pe/checked.svg"></td>
                 </tr>              
                 <tr>
                     <th><a href="/docs/user-guide/reporting/">Reporting<img src="/images/pe/help-black18.svg"></a></th>
                     <td><img src="/images/pe/unchecked.svg"></td>
-                    <td><img src="/images/pe/checked_pe.svg"></td>
-                    <td><img src="/images/pe/checked_c.svg"></td>
+                    <td><img src="/images/pe/checked.svg"></td>
+                    <td><img src="/images/pe/checked.svg"></td>
                 </tr>              
                 <tr>
-                    <th><a href="/docs/user-guide/white-labeling/">Multi-tenant configurable white-labeling<img src="/images/pe/help-black18.svg"></a></th>
+                    <th><a href="/docs/user-guide/white-labeling/">White-labeling<img src="/images/pe/help-black18.svg"></a></th>
                     <td><img src="/images/pe/unchecked.svg"></td>
-                    <td><img src="/images/pe/checked_pe.svg"></td>
-                    <td><img src="/images/pe/checked_c.svg"></td>
+                    <td><img src="/images/pe/checked.svg"></td>
+                    <td><img src="/images/pe/checked.svg"></td>
                 </tr>              
                 <tr>
                     <th><a href="/docs/user-guide/csv-xls-data-export/">CSV/XLS data export<img src="/images/pe/help-black18.svg"></a></th>
                     <td><img src="/images/pe/unchecked.svg"></td>
-                    <td><img src="/images/pe/checked_pe.svg"></td>
-                    <td><img src="/images/pe/checked_c.svg"></td>
+                    <td><img src="/images/pe/checked.svg"></td>
+                    <td><img src="/images/pe/checked.svg"></td>
                 </tr>              
                 <tr>
                     <th><a href="/docs/user-guide/integrations/">Platform Integrations<img src="/images/pe/help-black18.svg"></a></th>
                     <td><img src="/images/pe/unchecked.svg"></td>
-                    <td><img src="/images/pe/checked_pe.svg"></td>
-                    <td><img src="/images/pe/checked_c.svg"></td>
-                </tr>              
+                    <td><img src="/images/pe/checked.svg"></td>
+                    <td><img src="/images/pe/checked.svg"></td>
+                </tr>     
+                <tr>
+                    <th><a href="/products/paas/domains/">Domain management<img src="/images/pe/help-black18.svg"></a></th>
+                    <td><img src="/images/pe/unchecked.svg"></td>
+                    <td><img src="/images/pe/unchecked.svg"></td>
+                    <td><img src="/images/pe/checked.svg"></td>
+                </tr>       
             </tbody>
     </table>
 	</main>

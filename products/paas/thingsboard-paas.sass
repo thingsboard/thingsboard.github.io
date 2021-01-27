@@ -105,12 +105,11 @@
             a
                 color: #2A7DEC
         h2
-            margin: 48px 0 136px
-            text-align: center
-            color: #899AAB
-            font-size: 20x
-            line-height: 1.5em
-            font-weight: normal
+            color: #212529
+            font-weight: 600
+            text-align: left
+            font-size: 42px
+            line-height: 63px
         h3
             border: none
             font-weight: 400
@@ -122,12 +121,12 @@
             margin-block-start: 9px
 
     #bottom
-        background-color: white
+        background-color: #F9FBFE
         margin: -20px -100%
         padding: 66px 0 124px
         text-align: center
         .try-paas
-            background-color: #0D2743
+            background-color: #2A7DEC
             font-size: 24px
             font-weight: 400
             text-align: center
@@ -136,43 +135,68 @@
             text-decoration: none
             padding: 15px 128px
             height: 127px
-            box-shadow: 0 28px 16px -20px rgba(13,39,67,0.25)
+            box-shadow: 0 28px 16px -20px rgba(12,29,51,0.25)
             &:hover
-                background-color: #305680
+                background-color: #4F97F8
                 text-decoration: none
                 color: #fff
             &:active
-                background-color: #4B6D93
+                background-color: #2A7DEC
                 transition-duration: 0s
 
     #matrix
-        background-color: #F9FAFB
         margin: 60px -100% 0
-        padding: 88px 100%
-        .table_bg
-            margin: 160px 0 16px
-            div
-                background-color: white
-                height: 64px
-                margin: 0 -100%
-                &:nth-child(2n)
-                    background-color: unset
-        h1
-            line-height: normal
-            font-weight: normal
+        padding: 72px 100% 112px
+        #backg-matrix
+            .cloud, .prof, .community
+                padding: 0 2px
+                width: 20%
+                position: absolute
+                z-index: -1
+                top: 127px
+            .coln
+                height: 1156px
+                border-radius: 6px
+            .cloud
+                right: 0%
+                .coln
+                    border: 2px solid #2A7DEC
+                    box-shadow: 0 50px 50px -20px rgba(0,0,0,0.15), 0 0 30px 0 rgba(0,0,0,0.10)
+                    .head
+                        height: 106px
+                        background-color: #2A7DEC
+            .prof
+                right: 20%
+                .coln
+                    border: 2px solid #A9DFBF
+                    .head
+                        height: 106px
+                        box-shadow: 0 2px 0 0 rgba(169,223,191,1)
+            .community
+                right: 40%
+                .coln
+                    border: 2px solid #ACBBCC
+                    .head
+                        height: 106px
+                        box-shadow: 0 2px 0 0 rgba(172,187,204,1)
         table
+            margin: 160px 0 16px
             td, th
-                box-shadow: inset -1px 0 0 #212529
-                padding: 0
+                margin: 0 2px
                 &:nth-child(4n-2)
                     color: #305680
+                    img
+                        filter: invert(27%) sepia(56%) saturate(585%) hue-rotate(171deg) brightness(96%) contrast(86%)
                 &:nth-child(4n-1)
-                    color: #00695C
+                    color: #27AE60
+                    img
+                        filter: invert(52%) sepia(84%) saturate(381%) hue-rotate(93deg) brightness(89%) contrast(93%)
                 &:nth-child(4n)
                     color: #2A7DEC
+                    img
+                        filter: invert(36%) sepia(77%) saturate(728%) hue-rotate(181deg) brightness(104%) contrast(106%)
             border: none
             margin-top: 64px
-            position: absolute
             top: 40px
             thead
                 color: #212529
@@ -180,19 +204,21 @@
                 line-height: 30px
                 background-color: unset
                 tr
-                    height: 104px
+                    height: 152px
                     th
                         text-align: center
-                        vertical-align: top
-                        font-weight: 500
+                        vertical-align: center
+                        font-weight: 600
+                        font-size: 22px
                         width: 15%
+                        padding: 0 0 40px
+                        &:nth-child(4n)
+                            color: white
                     td
                         width: 55%
             tbody
                 tr
                     background-color: unset
-                    &:nth-child(2n-1)
-                        background-color: white
                     height: 64px
                     th
                         font-weight: 600
@@ -208,7 +234,7 @@
                         font-size: 16px
 
     #intro
-        margin-bottom: 64px
+        margin-bottom: 80px
         padding-top: 88px
         #cards
             padding-top: 50px
@@ -236,7 +262,7 @@
                         line-height: 27px
                         margin-block-start: 15px
                     img
-                        margin-bottom: 38px
+                        margin-bottom: 28px
 
     #labeling
         margin: 48px 0 112px
@@ -289,9 +315,55 @@
             background-color: #F8FAFE
             -ms-transform: skewY(-6deg)
             transform: skewY(-6deg)
-        .small
+        .small1
             position: absolute
+            top: 16px
             right: 524px
+            width: 436px
+            height: 90px
+            background-color: #2A7DEC
+            -ms-transform: skewY(-6deg)
+            transform: skewY(-6deg)
+        .small2
+            position: absolute
+            top: -140px
+            left: 810px
+            width: 436px
+            height: 90px
+            border: 2px solid #29384B
+            -ms-transform: skewY(-6deg)
+            transform: skewY(-6deg)
+        .small3
+            position: absolute
+            top: 592px
+            right: 706px
+            width: 436px
+            height: 90px
+            border: 2px solid #29384B
+            -ms-transform: skewY(-6deg)
+            transform: skewY(-6deg)
+        .small4
+            position: absolute
+            top: 390px
+            left: 568px
+            width: 436px
+            height: 90px
+            background-color: #366CB4
+            -ms-transform: skewY(-6deg)
+            transform: skewY(-6deg)
+        .bottom
+            position: absolute
+            top: 849px
+            width: 2560px
+            height: 130px
+            left: -1280px
+            background-color: #2C4362
+            -ms-transform: skewY(-6deg)
+            transform: skewY(-6deg)
+        .small5
+            position: absolute
+            top: 849px
+            left: 773px
             width: 436px
             height: 90px
             background-color: #2A7DEC
@@ -348,6 +420,12 @@
                 p
                     padding: 0 8%
             max-width: 100%
+            #matrix
+                .cloud, .prof, .community
+                    padding: 0 14px
+                table
+                    td, th
+                        margin: 0 14px
 
 
 @media screen and (min-width: 1250px)
@@ -382,3 +460,5 @@
                 p
                     padding: 0 18%
             max-width: 1400px
+            #intro
+                margin-bottom: 160px
