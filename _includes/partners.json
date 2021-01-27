@@ -155,5 +155,21 @@
       }
     },
     "blurb": "TEKTELIC is a leading supplier of LoRaWAN IoT equipment including best-in-class gateways and end devices."
-  }	
+  },
+  {
+    "type": "hardware",
+    "program": "",
+    "name": "Integration Syrus 4 IoT Telematics Gateway",
+    "logo": "DCT-Logo-Standard-Color-01.png",
+    "links": {
+      "Site": {
+        "href": "https://www.digitalcomtech.com/",
+        "target": "_blank"
+      },
+      "Integration guide": {
+        "href": "/docs/samples/syrus/syrus/"
+      }
+    },
+    "blurb": "Since 2000, DCT has been developing IoT devices and accessories for Fleet Telematics Applications and Industrial Solutions that are trusted by integrators and service providers around the globe. Their expertise in product design and development together with firmware and software makes the perfect combination for developers to start building amazing applications."
+  }
 ]

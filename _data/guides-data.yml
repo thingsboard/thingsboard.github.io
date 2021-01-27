@@ -555,6 +555,11 @@
       subtitle: "Learn how to contribute to Thingsboard"
       pe: false
       video: false
+    - path: /docs/user-guide/contribution/how-to-contribute-your-device-integration-guide/
+      title: How to contribute your device integration guide
+      subtitle: "Learn how to contribute to Thingsboard"
+      pe: false
+      video: false
     - path: /docs/user-guide/contribution/rule-node-development/
       title: Rule Node Development Guide
       subtitle: "Learn how to customize and create custom rule nodes"
