@@ -28,7 +28,34 @@ description:
                 <img src="/images/pe/white-labeling.svg">
 		    </div>
             <div class="block">
-                <img src="/images/pe/rbac.svg">
+                <div>
+                <div class="container">
+                	<div class="install-header">
+                		<nav id="inner-navigation" class="inner-navigation">
+                			<ul id="menu-install-navigation-1" class="menu">
+                				<li id="menu-item-hierarchy">
+                					<a href="javascript:void(0);" onClick="activatePricingSection('hierarchy')">Hierarchy</a>
+                				</li>
+                				<li id="menu-item-roles">
+                					<a href="javascript:void(0);" onClick="activatePricingSection('roles')">Roles</a>
+                				</li>
+                			</ul>
+                		</nav>
+                	</div>
+                	<div class="pricing-header-divider">
+                	</div>
+                </div>
+                <div id="hierarchy" class="install-content">
+                	<div class="container">
+                	    <img src="/images/pe/entity-groups.svg">
+                	</div>
+                </div>
+                <div id="roles" class="install-content">
+                	<div class="container">
+                	    <img src="/images/pe/scheduler.svg">
+                	</div>
+                </div>
+                </div>
                 <div><h2>Advanced RBAC for IoT</h2>
                 <p>Advanced management of user roles and permissions. Manage hierarchy of customers with multiple levels of sub-customers, independent users and devices.</p>
                 <a href="/docs/user-guide/rbac/">Read more</a>
@@ -207,3 +234,25 @@ description:
 <a href="/pricing/" class="try-pe">Get it now</a>
 </main>
 </section>
+
+<script type="text/javascript">
+	inViewportDefer(function() {
+		$("#install-cards main").inViewport(function(px){
+			if(px >= 80) {
+				$(this).addClass("animated zoomIn");
+				return true;
+			}
+		});
+	});
+
+	jqueryDefer(function () {
+		activatePricingSection('hierarchy')
+	})
+
+	function activatePricingSection(sectionId) {
+		$("li.menu-item").removeClass("active");
+		$("li.menu-item#menu-item-"+sectionId).addClass("active");
+		$("div.install-content").css("display", "none");
+		$("div.install-content#"+sectionId).css("display", "block");
+	}
+</script>
