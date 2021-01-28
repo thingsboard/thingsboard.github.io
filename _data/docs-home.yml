@@ -327,7 +327,7 @@ toc:
   new: true
   section:
     - title: What is ThingsBoard Cloud?
-      path: /products/paas/
+      path: /products/paas/what-is-thingsboard-cloud/
     - title: Subscriptions
       path: /products/paas/subscription/
     - title: Plan and billing
