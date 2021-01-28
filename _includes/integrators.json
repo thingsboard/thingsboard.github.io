@@ -204,6 +204,18 @@
     }
   },
   {
+    "type": ["Asia"],
+    "country": ["China"],
+    "name": "gps.shop (Puxuan LPWAN Tech)",
+    "contact": {
+      "href": "Info@gps.shop"
+    },
+    "site": {
+      "href": "www.gps.shop",
+      "target": "_blank"
+    }
+  },
+  {
     "type": ["Europe"],
     "country": ["Swizerland"],
     "name": "Halley Technologies SA",
