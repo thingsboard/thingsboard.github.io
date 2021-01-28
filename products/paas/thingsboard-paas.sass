@@ -7,7 +7,7 @@
                 opacity: 0
     #hero
         height: 100vh //calc(100vh + 5px)
-        padding-top: 0px
+        padding-top: 0
         position: relative
         overflow: hidden
         background: none
@@ -33,37 +33,23 @@
             justify-content: center
             align-content: center
             background-color: rgba(0,0,0,0.72)
-            h1
-                margin-bottom: 66px
-                font-size: 64px
+            .paas-title
+                margin-bottom: 20px
+                font-size: 22px
                 font-weight: 400
-                text-shadow: 0 10px 20px rgba(0,0,0,0.25)
-            h2
-                margin-bottom: 140px
-                font-size: 48px
-                letter-spacing: 7px
-                text-shadow: 0 10px 20px rgba(0,0,0,0.25)
+                text-shadow: 0 0 18px rgba(0,0,0,.66)
             .try-paas
-                background-color: none
-                font-size: 28px
-                font-weight: 500
-                text-align: center
-                color: white
-                border-radius: 4px
-                text-decoration: none
-                padding: 15px 100px
-                margin: 0 auto
-                text-shadow: 0 8px 16px rgba(0,0,0,0.25)
-                box-shadow: 0 28px 16px -20px rgba(0,0,0,0.25)
-                border: 4px solid
-                border-color: white
+                cursor: pointer
+                line-height: 40px
+                font-size: 16px
+                padding: 0 15px
+                border: 1px solid white
+                background-color: transparent
+                transition: 0.6s
+                text-shadow: 0 0 18px rgba(0,0,0,.66)
                 &:hover
                     background-color: white
-                    color: #2A7DEC
-                &:active
-                    background-color: #f1f1f1
-                    border-color: #f1f1f1
-                    transition-duration: 0s
+                    color: $dark-grey
             .learn-tb
                 cursor: pointer
                 line-height: 40px
@@ -94,7 +80,7 @@
                 .paas-arrow
                     display: none
 
-    #intro, #matrix
+    #intro
         color: #212529
         h1
             color: #212529
@@ -145,11 +131,20 @@
                 transition-duration: 0s
         a
             color: #899AAB
-
     #matrix
         margin: 60px -100% 0
         padding: 72px 100% 112px
+        h2
+            color: #212529
+            font-weight: 600
+            text-align: left
+            font-size: 22px
+            line-height: 40px
         #backg-matrix
+            position: relative
+            margin-left: -20px
+            margin-right: -20px
+            width: calc(100% + 40px)
             .cloud, .prof, .community
                 padding: 0 2px
                 width: 20%
@@ -182,7 +177,8 @@
                         height: 106px
                         box-shadow: 0 2px 0 0 rgba(172,187,204,1)
         table
-            margin: 160px 0 16px
+            width: calc(100% + 40px)
+            margin: 160px -20px 16px
             td, th
                 margin: 0 2px
                 &:nth-child(4n-2)
@@ -202,30 +198,30 @@
             top: 40px
             thead
                 color: #212529
-                font-size: 16px
+                font-size: 12px
                 line-height: 30px
                 background-color: unset
                 tr
                     height: 152px
                     th
+                        width: 20%
                         text-align: center
                         vertical-align: center
                         font-weight: 600
-                        font-size: 22px
-                        width: 15%
-                        padding: 0 0 40px
+                        font-size: 11px
+                        padding: 40px 0 40px
                         &:nth-child(4n)
                             color: white
                     td
-                        width: 55%
+                        width: 40%
             tbody
                 tr
                     background-color: unset
                     height: 64px
                     th
                         font-weight: 600
-                        font-size: 16px
-                        padding-right: 48px
+                        font-size: 12px
+                        padding-right: 12px
                         a
                             color: #212529
                         img
@@ -233,7 +229,7 @@
                     td
                         text-align: center
                         font-weight: 600
-                        font-size: 16px
+                        font-size: 12px
 
     #intro
         margin-bottom: 80px
@@ -251,6 +247,7 @@
                     padding: 56px 48px
                     float: left
                     width: 100%
+                    height: 100%
                     background: white
                     border-radius: 6px
                     box-shadow: 0 50px 50px -20px rgba(0,0,0,0.15)
@@ -371,7 +368,39 @@
             background-color: #2A7DEC
             -ms-transform: skewY(-6deg)
             transform: skewY(-6deg)
-          
+
+    .header-animation
+        max-width: 100%
+        opacity: 0
+        transform: translate3d(0, 45px, 0)
+        animation-name: slideup-in
+        animation-duration: 600ms
+        animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94)
+        animation-fill-mode: forwards
+
+    .header-animation:nth-child(1)
+        animation-delay: 0ms
+
+    .header-animation:nth-child(2)
+        animation-delay: 300ms
+
+    .header-animation:nth-child(3)
+        animation-delay: 600ms
+
+    .header-animation:nth-child(4)
+        animation-delay: 900ms
+
+    .header-animation:nth-child(5)
+        animation-delay: 1200ms
+
+    @keyframes slideup-in
+        from
+            opacity: 0
+            transform: translate3d(0, 45px, 0)
+        to
+            opacity: 1
+            transform: translate3d(0, 0, 0)
+
 @media screen and (min-width: 750px)
     #thingsboard-paas
         #hero
@@ -391,17 +420,23 @@
                 p
                     padding: 0
             #matrix
+                h2
+                    font-size: 42px
+                    line-height: 63px
                 table
                     thead
                         font-size: 20px
                         tr
                             th
                                 width: 20%
+                                padding: 0 0 40px
+                                font-size: 20px
                             td
                                 width: 40%
                     tbody
                         tr
                             th
+                                padding-right: 48px
                                 font-size: 18px
                             td
                                 font-size: 20px
@@ -438,7 +473,11 @@
                     //height: 100px
                     margin-bottom: 60px
                     font-size: 64px
-        #hero #hero-content, #paasContent
+                .try-paas
+                    line-height: 60px
+                    font-size: 28px
+                    padding: 0 40px
+                    border-width: 3px
         #paasContent
             #intro
                 #cards
