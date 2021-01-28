@@ -250,6 +250,12 @@
       keywords: Connect UDP devices
       pe: true
       video: true
+    - path: /docs/samples/tektelic/
+      title: Connect Tektelic LoRaWAN sensors using TEKTELIC KONA Core Network Server
+      subtitle: Learn how to route messages from TEKTELIC KONA Core Network Server to ThingsBoard.
+      keywords: Tektelic connect
+      pe: false
+      video: false
 - title: Data visualization
   subtitle: These guides contain instructions how to configure complex ThingsBoard dashboards
   id: DataVisualization
@@ -546,6 +552,11 @@
   section:
     - path: /docs/user-guide/contribution/how-to-contribute/
       title: How to Contribute
+      subtitle: "Learn how to contribute to Thingsboard"
+      pe: false
+      video: false
+    - path: /docs/user-guide/contribution/how-to-contribute-your-device-integration-guide/
+      title: How to contribute your device integration guide
       subtitle: "Learn how to contribute to Thingsboard"
       pe: false
       video: false

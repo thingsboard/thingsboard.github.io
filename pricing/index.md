@@ -2,7 +2,8 @@
 layout: pricing
 title: Pricing
 description: ThingsBoard Products Pricing
-defaultActivePricingSection: thingsboard-cloud
+defaultActivePricingSection: thingsboard-pe-options
+defaultActivateSelectProduct: true
 
 ---
 
@@ -15,20 +16,27 @@ defaultActivePricingSection: thingsboard-cloud
        </div>
        <nav id="inner-navigation" class="inner-navigation">
          <ul id="menu-pricing-navigation-1" class="menu">
-            <li id="menu-item-thingsboard-cloud" class="menu-item active tb-logo">
-                <a href="javascript:void(0);" onClick="activatePricingSection('thingsboard-cloud')">Cloud</a>
-            </li>
             <li id="menu-item-thingsboard-ce" class="menu-item tb-logo">
                 <a href="javascript:void(0);" onClick="activatePricingSection('thingsboard-ce')">Community Edition</a>
             </li>
-            <li id="menu-item-thingsboard-pe" class="menu-item tb-logo">
-                <a href="javascript:void(0);" onClick="activatePricingSection('thingsboard-pe')">Professional Edition</a>
+            <li id="menu-item-thingsboard-pe-options" class="menu-item tb-logo">
+                <a href="javascript:void(0);" onClick="activatePricingSection('thingsboard-pe-options', true)">Professional Edition</a>
             </li>
             <li id="menu-item-trendz" class="menu-item trendz-logo">
                 <a href="javascript:void(0);" onClick="activatePricingSection('trendz')">Trendz Analytics</a>
             </li>
          </ul>
        </nav> 
+    </div>
+    <div id="thingsboard-pe-options" class="select-product-content justify-content-center align-items-center" style="display: none;">
+        <div class="product-selector">
+            <div class="solution thingsboard-cloud active defaultselection" onClick="activateProductSection('thingsboard-cloud')">
+                <h3>Cloud</h3>
+            </div>
+            <div class="solution thingsboard-pe" onClick="activateProductSection('thingsboard-pe')">
+                <h3>Self-managed</h3>
+            </div>
+        </div>
     </div>
     <div class="pricing-header-divider">
     </div>
@@ -51,7 +59,7 @@ defaultActivePricingSection: thingsboard-cloud
                                 <p>Become familiar with ThingsBoard features</p>
                             </div>
                             <h4 class="pricing-square-price mb-0">
-                                $29
+                                $10
                                 <span>/&nbsp;month</span>
                             </h4>
                             <div class="row justify-content-center">
@@ -59,8 +67,8 @@ defaultActivePricingSection: thingsboard-cloud
                                     Start Free
                                 </a>
                             </div>
-                            <div class="pricing-square-item">Up to 10 Devices</div>
-                            <div class="pricing-square-item">Up to 10 Assets</div>
+                            <div class="pricing-square-item">Up to 30 Devices</div>
+                            <div class="pricing-square-item">Up to 30 Assets</div>
                             <div class="pricing-square-item">10 million <span data-faq-id="data-points">data points</span><br/> per month</div> 
                             <div class="pricing-square-item" data-faq-id="community-support">
                                 Community support
@@ -572,10 +580,8 @@ defaultActivePricingSection: thingsboard-cloud
         <div class="item" data-tag="h4" data-item-id="trial-enable" data-title="How can I enable free trial?">
             <div class="container">
                 <p>
-                    Customer may still use <a href="https://thingsboard.cloud" target="blank">ThingsBoard Professional Edition Live Demo</a> for that. 
-                    30 days of seamless experience and the newest features, except white-labeling, from the latest source code! 
-                    Note: Live Demo is a shared environment with hardware and software limitations. 
-                    It is introduced to host multiple trial tenants on the same server instance(s).
+                    Customer may <a href="https://thingsboard.cloud/signup" target="blank">signup on ThingsBoard Professional Edition Cloud</a> and get 30 days of free trial on Maker plan. 
+                    30 days of seamless experience and the newest features, except white-labeling!
                 </p>    
             </div>    
         </div>

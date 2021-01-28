@@ -23,6 +23,8 @@ toc:
     path: /docs/user-guide/telemetry/
   - title: Working with alarms
     path: /docs/user-guide/alarms/
+  - title: Dashboards
+    path: /docs/user-guide/dashboards/
   - title: Device Connectivity Status
     path: /docs/user-guide/device-connectivity-status/
   - title: Claiming Devices
@@ -338,6 +340,8 @@ toc:
   section:
     - title: How to contribute
       path: /docs/user-guide/contribution/how-to-contribute/
+    - title: How to contribute your device integration guide
+      path: /docs/user-guide/contribution/how-to-contribute-your-device-integration-guide/
     - title: Rule Node development
       path: /docs/user-guide/contribution/rule-node-development/
     - title: Widgets development (ThingsBoard v3.x)

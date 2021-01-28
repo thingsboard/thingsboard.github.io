@@ -96,6 +96,56 @@
         },
         "id": "b9ee3e2f-86e9-47e0-c854-cabd49aa6f84"
       },
+      "ec6e1cdb-e6a4-e18b-6a7c-c98524da0120": {
+        "isSystemType": false,
+        "bundleAlias": "ota_widgets",
+        "typeAlias": "ota_for_esp32_widget",
+        "type": "latest",
+        "title": "New widget",
+        "sizeX": 7,
+        "sizeY": 4,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "dataKeys": [
+                {
+                  "name": "active",
+                  "type": "attribute",
+                  "label": "active",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.8880031022566413
+                }
+              ],
+              "entityAliasId": "5760db51-bafe-c795-9d94-cb027582a518"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {},
+          "title": "OTA configuration",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "enableDataExport": true,
+          "widgetStyle": {},
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "useDashboardTimewindow": true,
+          "showLegend": false,
+          "actions": {}
+        },
+        "id": "ec6e1cdb-e6a4-e18b-6a7c-c98524da0120"
+      },
       "a8083feb-029a-10da-53b5-81925b471df9": {
         "isSystemType": true,
         "bundleAlias": "cards",
@@ -311,84 +361,6 @@
           "actions": {}
         },
         "id": "dff6793f-9fad-7fce-ed14-c01c7399333b"
-      },
-      "93107a03-3ba2-25a8-a7bd-03871e321376": {
-        "isSystemType": false,
-        "bundleAlias": "custom",
-        "typeAlias": "next_variant2",
-        "type": "latest",
-        "title": "New widget",
-        "sizeX": 7.5,
-        "sizeY": 3,
-        "config": {
-          "datasources": [
-            {
-              "type": "entity",
-              "name": null,
-              "entityAliasId": "5760db51-bafe-c795-9d94-cb027582a518",
-              "filterId": null,
-              "dataKeys": [
-                {
-                  "name": "lastTargetFwVer",
-                  "type": "attribute",
-                  "label": "lastTargetFwVer",
-                  "color": "#2196f3",
-                  "settings": {},
-                  "_hash": 0.6079765574191398
-                },
-                {
-                  "name": "lastTargetFwUrl",
-                  "type": "attribute",
-                  "label": "lastTargetFwUrl",
-                  "color": "#4caf50",
-                  "settings": {},
-                  "_hash": 0.6906374786718688
-                },
-                {
-                  "name": "active",
-                  "type": "attribute",
-                  "label": "active",
-                  "color": "#f44336",
-                  "settings": {},
-                  "_hash": 0.046291843377005204
-                }
-              ]
-            }
-          ],
-          "timewindow": {
-            "realtime": {
-              "timewindowMs": 60000
-            }
-          },
-          "showTitle": true,
-          "backgroundColor": "#fff",
-          "color": "rgba(0, 0, 0, 0.87)",
-          "padding": "8px",
-          "settings": {
-            "versionKeyName": "lastTargetFwVer",
-            "serverKeyName": "lastTargetFwUrl",
-            "showLabel": true
-          },
-          "title": "OTA configuration",
-          "dropShadow": true,
-          "enableFullscreen": false,
-          "widgetStyle": {},
-          "titleStyle": {
-            "fontSize": "16px",
-            "fontWeight": 400
-          },
-          "useDashboardTimewindow": true,
-          "showLegend": false,
-          "actions": {},
-          "showTitleIcon": false,
-          "iconColor": "rgba(0, 0, 0, 0.87)",
-          "iconSize": "24px",
-          "titleTooltip": "",
-          "enableDataExport": true
-        },
-        "row": 0,
-        "col": 0,
-        "id": "93107a03-3ba2-25a8-a7bd-03871e321376"
       }
     },
     "states": {
@@ -409,8 +381,8 @@
               "backgroundColor": "#eeeeee",
               "color": "rgba(0,0,0,0.870588)",
               "columns": 24,
-              "backgroundSizeMode": "100%",
-              "margin": 10
+              "margin": 10,
+              "backgroundSizeMode": "100%"
             }
           }
         }
@@ -421,6 +393,12 @@
         "layouts": {
           "main": {
             "widgets": {
+              "ec6e1cdb-e6a4-e18b-6a7c-c98524da0120": {
+                "sizeX": 7,
+                "sizeY": 4,
+                "row": 0,
+                "col": 7
+              },
               "a8083feb-029a-10da-53b5-81925b471df9": {
                 "sizeX": 24,
                 "sizeY": 2,
@@ -433,20 +411,14 @@
                 "mobileHeight": null,
                 "row": 0,
                 "col": 0
-              },
-              "93107a03-3ba2-25a8-a7bd-03871e321376": {
-                "sizeX": 8,
-                "sizeY": 4,
-                "row": 0,
-                "col": 7
               }
             },
             "gridSettings": {
               "backgroundColor": "#eeeeee",
               "color": "rgba(0,0,0,0.870588)",
               "columns": 24,
-              "backgroundSizeMode": "100%",
-              "margin": 10
+              "margin": 10,
+              "backgroundSizeMode": "100%"
             }
           }
         }
