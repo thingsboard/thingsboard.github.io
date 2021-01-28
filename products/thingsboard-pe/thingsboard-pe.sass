@@ -1,4 +1,6 @@
 #thingsboard-pe
+    section
+        background: none
     &:not(.open-nav):not(.flip-nav)
         header
             &::after
@@ -10,7 +12,7 @@
         overflow: hidden
         background: none
         div:nth-child(1)
-            background-image: url(/video/pe-cover.jpg) !important
+            background-image: url(/video/tb-cover.jpg) !important
         .video-cover
             position: absolute
             z-index: -2
@@ -23,20 +25,46 @@
             background-color: #000
             background-repeat: no-repeat
             background-position: 50% 50%
-            background-image: url(/video/pe-cover.jpg)
+            background-image: url(/video/tb-cover.jpg)
         #hero-content
             height: 100%
             display: flex
             flex-direction: column
             justify-content: center
             align-content: center
-            background-color: rgba(0,0,0,0.5)
-            .pe-title
-                margin-bottom: 20px
-                font-size: 22px
-                font-weight: 400
-                text-shadow: 0 0 18px rgba(0,0,0,.66)
+            background-color: rgba(0,0,0,0.72)
+            h1
+                margin-bottom: 46px
+                font-size: 96px
+                font-weight: 600
+                text-shadow: 0 10px 20px rgba(0,0,0,0.25)
+            h2
+                margin-bottom: 140px
+                font-size: 48px
+                letter-spacing: 7px
+                text-shadow: 0 10px 20px rgba(0,0,0,0.25)
             .try-pe
+                background-color: none
+                font-size: 24px
+                font-weight: 500
+                text-align: center
+                color: white
+                border-radius: 4px
+                text-decoration: none
+                padding: 15px 100px
+                margin: 0 auto
+                text-shadow: 0 8px 16px rgba(0,0,0,0.25)
+                box-shadow: 0 28px 16px -20px rgba(0,0,0,0.25)
+                border: 4px solid
+                border-color: white
+                &:hover
+                    background-color: white
+                    color: #305680
+                &:active
+                    background-color: #f1f1f1
+                    border-color: #f1f1f1
+                    transition-duration: 0s
+            .learn-tb
                 cursor: pointer
                 line-height: 40px
                 font-size: 16px
@@ -48,6 +76,7 @@
                 &:hover
                     background-color: white
                     color: $dark-grey
+                    text-shadow: none
             .pe-arrow
                 position: fixed
                 bottom: 40px
@@ -65,448 +94,296 @@
                 .pe-arrow
                     display: none
 
-    .oceanNodes
-        &.pe-features
-            img
-                max-width: 200px
-                width: 200px
-                height: 150px
-
-    #peContent
-        color: #424242
-        h2
-            border: none
+    #intro, #matrix, #features
+        color: #212924
+        text-align: left
+        h1
+            font-weight: 600
             text-align: center
-            font-weight: 400
+            font-size: 32px
+            line-height: 52px
+            text-transform: uppercase
+        h2
+            font-weight: 500
+            font-size: 36px
+            text-transform: uppercase
         h3
-            border: none
-            font-weight: 400
+            font-size: 42px
+            font-weight: 600
+            line-height: 63px
         p
-            line-height: 1.5em
+            color: #757C76
+            font-size: 18px
+            font-weight: normal
+            line-height: 27px
+            margin: 4px 0 18px
+        a
+            color: #17BB52
+            font-weight: 500
+            font-size: 18px
 
-        .pe-features
-            padding-top: 25px
-
-            main
-                padding-top: 25px
-                min-height: 220px
-                .image-wrapper
-                    top: 0
-                    transform: translateY(0)
-                    padding: 16px
-                    box-shadow: 0 1px 8px 0 rgba(0,0,0,.2), 0 3px 4px 0 rgba(0,0,0,.14), 0 3px 3px -2px rgba(0,0,0,.12)
-                .image-wrapper, .content
-                    opacity: 0
-                    animation-duration: 1.2s
-                    &.animated
-                        opacity: 1
-
-            a.button
-                cursor: pointer
-                line-height: 30px
-                border: 2px solid $dark-grey
-                background-color: transparent
-                transition: 0.3s
-
-                &:hover
-                    background-color: $dark-grey
-                    color: white
-
-        h2#feature-comparison-matrix
-            padding-top: 0px
-            padding-bottom: 30px
-            font-size: 28px
-
-        #feature-comparison
-            background: $dark-grey url(/images/texture.png)
-            background-size: auto 100%
-            margin-top: 70px
-            width: 100vw
-            margin-left: calc(-50vw + 50%)
-            table
-                th:nth-child(2), th:nth-child(4), td:nth-child(2), td:nth-child(4)
-                    opacity: 0
-                    &.animated
-                        opacity: 1
-                margin: auto
-                border: none
-                max-width: 100%
-                transform: translateY(-70px)
-                th:nth-child(2), td:nth-child(2)
-                    transition-delay: 0.3s
-                th:nth-child(4), td:nth-child(4)
-                    transition-delay: 0.6s
-                thead
-                    background: none
-                    color: #fff
-                th
-                    font-weight: 500
-                    height: 70px
-                th, td:nth-child(2), td:nth-child(3), td:nth-child(4), td:nth-child(5)
-                    text-align: center
-                th:nth-child(1)
-                    width: 120px
-                th:nth-child(3), th:nth-child(5)
-                    width: 20px
-                th:nth-child(2), th:nth-child(4)
-                    font-size: 14px
-                    padding: 0 0 10px 0
-                    width: 100px
-                    .product-header
-                        height: 100%
-                        padding: 4px
-                        background: rgba(0, 0, 0, 0.33)
-                th:nth-child(2)
-                    background: $community-color
-                th:nth-child(4)
-                    background: $professional-color
-                tr
-                    background: none
-                    height: 60px
-                tr:nth-child(1)
-                    height: 10px
-                td
-                    border-top: none
-                    background: none
-                    color: #fff
-                    padding: 10px
-                    a
-                        &.feature-link
-                            color: #fff
-                            font-weight: 500
-                            &:hover
-                                text-decoration: underline
-                            span.info
-                                &::after
-                                    position: absolute
-                                    font-family: FontAwesome
-                                    color: #40ceef
-                                    content: '\f0a3'
-                                    font-size: 10px
-                                    transform: translate(2px,-2px)
-                                    display: inline-block
-                td:nth-child(1)
-                    font-size: 12px
-                td:nth-child(2), td:nth-child(4)
-                    font-size: 16px
-                    &.checked, &.unchecked
-                        background-size: auto 15px
-                        background-position: center center
-                        background-repeat: no-repeat
-                    &.checked
-                        background-image: url(/images/pe/feature-checked.svg)
-                    &.unchecked
-                        background-image: url(/images/pe/feature-unchecked.svg)
-                td:nth-child(2)
-                    background: #5389c5
-                td:nth-child(4)
-                    background: #45818e
-
-        #pe-customers
-            .customers-container
-                display: flex
-                flex-wrap: wrap
-                justify-content: center
-                .customer-block
-                    opacity: 0
-                    &.animated
-                        opacity: 1
-                    max-width: 100%
-                    padding: 20px 30px
-                    width: 230px
-                    a
-                        cursor: pointer
-                        color: $blue-03
-                        text-decoration: none
-                        &:hover
-                            text-decoration: underline
-                    p
-                        margin: 15px 0
-
-        .pricing-prompt
-            display: flex
-            flex-direction: row
-            background: #30557f
-            color: #fff
-            padding: 16px
-            margin: 15px -15px
-            .prompt-image-container
-                margin-right: 15px
-            .pricing-prompt-title
-                padding-bottom: 15px
-                text-align: center
-            p
-                font-size: 18px
-                text-align: center
-
-        #deployment-options
-            &:before
-                display: block
-                content: " "
-                margin-top: -80px
-                height: 80px
-                visibility: hidden
-        #pricing-models-cards
-            padding-left: 0px
-            margin-bottom: 15px
-            display: flex
-            justify-content: center
-            flex-direction: column
-            main
-                opacity: 0
-                &.animated
-                    opacity: 1
-                background: $professional-color
-                color: #fff
-                margin: 10px 10px 10px 0px
-                padding: 8px
-                box-shadow: 0 1px 8px 0 rgba(0,0,0,0.2), 0 3px 4px 0 rgba(0,0,0,0.14), 0 3px 3px -2px rgba(0,0,0,0.12)
-                flex: 0 0 100%
-                max-width: 100%
-                .content
-                    display: flex
-                    flex-direction: column
-                    height: 100%
-                    .content-title
-                        margin-bottom: 0.75rem
-                    h4
-                        color: #eee
-                        font-size: 21px
-                        font-weight: 400
-                        line-height: 28px
-                        margin-bottom: 1.2rem
-                    p+p
-                        margin-top: 10px
-                    .content-block
-                        padding: 1.25rem
-                        &.py-0x
-                            padding-top: 0
-                            padding-bottom: 0
-                        &.pb-0x
-                            padding-bottom: 0
-                        .marketplace
-                            display: flex
-                            .pricing-image-wrapper
-                                flex: 1
-                                margin: 16px
-                                display: flex
-                                align-items: center
-                    .pricing-image-wrapper
-                        background: rgba(255, 255, 255, 0.95)
-                        padding: 20px
-                        box-shadow: 0 1px 8px 0 rgba(0,0,0,0.2), 0 3px 4px 0 rgba(0,0,0,0.14), 0 3px 3px -2px rgba(0,0,0,0.12)
-                        border-radius: 10px
-                        &.clickable
-                            position: relative
-                            transition: background-color linear 250ms
-                            cursor: pointer
-                            &:hover
-                                background: rgba(255, 255, 255, 0.6)
-                            a
-                                position: absolute
-                                top: 0
-                                bottom: 0
-                                left: 0
-                                right: 0
-                        img
-                            width: 100%
-                    a.button
-                        //width: 100%
-                        text-align: center
-                        padding: 0.3rem 3rem
-                        cursor: pointer
-                        line-height: 30px
-                        border: 2px solid #fff
-                        background-color: #fff
-                        color: $professional-color
-                        transition: 0.3s
-                        &:hover
-                            background-color: #3c6c79
-                            color: white
-                    .deploy-buttons
-                        a.button
-                            width: 205px
-                            min-width: 205px
+    #bottom
+        background-color: #F9FAFB
+        margin: -20px -100%
+        padding: 66px 0 124px
+        text-align: center
         .try-pe
-            opacity: 0
-            &.animated
-                opacity: 1
-            cursor: pointer
-            line-height: 40px
-            font-size: 16px
-            padding: 0 40px
-            border: 2px solid rgb(244,81,30)
-            background-color: rgb(244,81,30)
-            transition: 0.3s
+            background-color: #17BB52
+            font-size: 24px
+            font-weight: 400
+            text-align: center
+            color: white
+            border-radius: 4px
+            text-decoration: none
+            padding: 15px 128px
+            height: 127px
+            box-shadow: 0 28px 16px -20px rgba(13,39,67,0.25)
             &:hover
-                background-color: white
-                color: rgb(244,81,30)
+                background-color: #35C86A
+                text-decoration: none
+                color: #fff
+            &:active
+                background-color: #1F8B4D
+                transition-duration: 0s
 
-    .flyout-button
+    #features
+        div.item
+            position: relative
+            display: flow-root
+            margin: 88px 0 120px
+            div
+                padding-top: 200px
+                float: left
+                width: 100%
+                text-align: center
+                h1
+                    font-size: 28px
+                    line-height: normal
+            img
+                position: absolute
+                top: 0
+                left: calc(50% - 170px)
+
+    #matrix
+        margin: 60px -100% 0
+        padding: 72px 100% 112px
+        #backg-matrix
+            .cloud, .prof, .community
+                padding: 0 2px
+                width: 20%
+                position: absolute
+                z-index: -1
+                top: 127px
+            .coln
+                height: 1156px
+                border-radius: 6px
+            .cloud
+                right: 0%
+                .coln
+                    border: 2px solid #2A7DEC
+                    box-shadow: 0 50px 50px -20px rgba(0,0,0,0.15), 0 0 30px 0 rgba(0,0,0,0.10)
+                    .head
+                        height: 106px
+                        background-color: #2A7DEC
+            .prof
+                right: 20%
+                .coln
+                    border: 2px solid #A9DFBF
+                    .head
+                        height: 106px
+                        box-shadow: 0 2px 0 0 rgba(169,223,191,1)
+            .community
+                right: 40%
+                .coln
+                    border: 2px solid #ACBBCC
+                    .head
+                        height: 106px
+                        box-shadow: 0 2px 0 0 rgba(172,187,204,1)
+        table
+            margin: 160px 0 16px
+            td, th
+                margin: 0 2px
+                &:nth-child(4n-2)
+                    color: #305680
+                    img
+                        filter: invert(27%) sepia(56%) saturate(585%) hue-rotate(171deg) brightness(96%) contrast(86%)
+                &:nth-child(4n-1)
+                    color: #27AE60
+                    img
+                        filter: invert(52%) sepia(84%) saturate(381%) hue-rotate(93deg) brightness(89%) contrast(93%)
+                &:nth-child(4n)
+                    color: #2A7DEC
+                    img
+                        filter: invert(36%) sepia(77%) saturate(728%) hue-rotate(181deg) brightness(104%) contrast(106%)
+            border: none
+            margin-top: 64px
+            top: 40px
+            thead
+                color: #212529
+                font-size: 16px
+                line-height: 30px
+                background-color: unset
+                tr
+                    height: 152px
+                    th
+                        text-align: center
+                        vertical-align: center
+                        font-weight: 600
+                        font-size: 22px
+                        width: 15%
+                        padding: 0 0 40px
+                        &:nth-child(4n)
+                            color: white
+                    td
+                        width: 55%
+            tbody
+                tr
+                    background-color: unset
+                    height: 64px
+                    th
+                        font-weight: 600
+                        font-size: 16px
+                        padding-right: 48px
+                        a
+                            color: #212529
+                        img
+                            vertical-align: top
+                    td
+                        text-align: center
+                        font-weight: 600
+                        font-size: 16px
+
+    #intro
+        margin-bottom: 64px
+        padding-top: 88px
+        .clari
+            color: #92A198
+            font-weight: normal
+            text-transform: none
+            margin-bottom: 200px
+        #features-top
+            img
+                border-radius: 6px
+                box-shadow: 0 50px 50px -20px rgba(0,0,0,0.15), 0 0 30px 0 rgba(0,0,0,0.10)
+            .block
+                justify-content: space-between
+                display: flex
+                align-items: center
+                div
+                    width: calc(50% - 80px)
+                .dark
+                    h2
+                        color: white
+                    p
+                        color: #868686
+                img
+                    width: calc(50% - 80px)
+            .double-block
+                justify-content: space-between
+                display: flex
+                align-items: center
+                div
+                    width: calc(25% - 60px)
+                img
+                    width: calc(50% - 200px)
+
+    #tb-customers
+        margin: -50px -100% 0
+        padding: 50px 100%
+        text-align: justify
+        -moz-text-align-last: justify
+        text-align-last: justify
         display: none
+        @media(min-width: 992px)
+            display: block
+        img
+            height: 60px
+            margin-bottom: 20px
+        main
+            display: flex
+            flex-wrap: wrap
+            flex-direction: row
+            justify-content: space-around
+            align-items: center
+            padding: 0 50px
+            a
+                display: block
+                padding: 10px
+                object
+                    pointer-events: none
+                    filter: invert(79%) sepia(25%) saturate(246%) hue-rotate(93deg) brightness(185%) contrast(82%)
 
-
-    //&.open-nav
-            #hero
-                    #hero-content
-                            visibility: hidden
-    .header-animation
-        max-width: 100%
-        opacity: 0
-        transform: translate3d(0, 45px, 0)
-        animation-name: slideup-in
-        animation-duration: 600ms
-        animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94)
-        animation-fill-mode: forwards
-
-    .header-animation:nth-child(1)
-        animation-delay: 0ms
-
-    .header-animation:nth-child(2)
-        animation-delay: 300ms
-
-    .header-animation:nth-child(3)
-        animation-delay: 600ms
-
-    .header-animation:nth-child(4)
-        animation-delay: 900ms
-
-    .header-animation:nth-child(5)
-        animation-delay: 1200ms
-
-    @keyframes slideup-in
-        from
-            opacity: 0
-            transform: translate3d(0, 45px, 0)
-        to
-            opacity: 1
-            transform: translate3d(0, 0, 0)
-          
 @media screen and (min-width: 750px)
     #thingsboard-pe
         #hero
             #hero-content
                 .pe-title
                     font-size: 36px
-
-        .oceanNodes
-            &.pe-features
-                main
-                    padding-top: 0px
-                    &:nth-child(odd)
-                        padding-right: 300px
-                    &:nth-child(even)
-                        padding-left: 300px
-                img
-                    max-width: 220px
-                    width: 220px
-
         #peContent
-            h2#feature-comparison-matrix
-                padding-top: 50px
-                padding-bottom: 50px
-                font-size: 46px
-            #feature-comparison
+            #matrix
                 table
-                    max-width: 80%
-                    th
-                        height: 80px
-                    th:nth-child(1)
-                        width: 320px
-                    th:nth-child(3), th:nth-child(5)
-                        width: 15px
-                    th:nth-child(2), th:nth-child(4)
-                        font-size: 18px
-                        padding: 0 0 20px 0
-                        width: 200px
-                        .product-header
-                            padding: 8px
-                    td:nth-child(1)
-                        font-size: 16px
-                    td:nth-child(2), td:nth-child(4)
+                    thead
                         font-size: 20px
-                        &.checked, &.unchecked
-                            background-size: auto 20px
-            .oceanNodes
-                main
-                    .image-wrapper
-                        position: absolute
-                        top: 15%
-
+                        tr
+                            th
+                                width: 20%
+                            td
+                                width: 40%
+                    tbody
+                        tr
+                            th
+                                font-size: 18px
+                            td
+                                font-size: 20px
 
 @media screen and (min-width: 1025px)
     #thingsboard-pe
         section, header
             main
-                max-width: 1000px
+                max-width: 100%
         footer
             main
-                max-width: 1000px
-
-        .oceanNodes
-            &.pe-features
-                main
-                    margin-top: 50px
-
+                max-width: 100%
         #peContent
-            width: calc(100% - 400px)
-            #feature-comparison
-                margin-left: calc(-50vw + 50% + 20px)
+            #features
+                div.item
+                    div
+                        padding: 0
+                        text-align: left
+                        width: calc(100% - 412px)
+                        h1
+                            text-align: left
+                    img
+                        top: calc(50% - 60px)
+                        right: 0
+                        left: unset
+                    &:nth-child(2n)
+                        img
+                            left: 0
+                        div
+                            float: right
+            max-width: 100%
+            #matrix
+                .cloud, .prof, .community
+                    padding: 0 14px
                 table
-                    max-width: 70%
-                    td
-                        a
-                            &.feature-link
-                                span.info
-                                    &::after
-                                        font-size: 14px
-                                        transform: translate(3px,-5px)
-            #pricing-models-cards
-                flex-direction: row
-                main
-                    margin: 15px
-                    padding: 16px
-                    flex: 0 0 50%
-                    max-width: 50%
-                    .content
-                        .content-block
-                            .marketplace
-                                .pricing-image-wrapper
-                                    margin: 2px
-                                    padding: 8px
+                    td, th
+                        margin: 0 14px
+
 
 @media screen and (min-width: 1250px)
     #thingsboard-pe
-        #viewDocs.center-button
-            display: inline-block
         #hero
             #hero-content
                 .pe-title
                     //height: 100px
                     margin-bottom: 60px
                     font-size: 64px
-
         #hero #hero-content, #peContent
-            .try-pe
-                line-height: 60px
-                font-size: 28px
-                padding: 0 40px
-                border-width: 3px
         #peContent
-            #pricing-models-cards
-                main
-                    .content
-                        .content-block
-                            .marketplace
-                                .pricing-image-wrapper
-                                    margin: 8px
-                                    padding: 16px
+            max-width: 1200px
 
 @media screen and (min-width: 1500px)
     #thingsboard-pe
         #peContent
-            width: calc(100% - 700px)
-            #feature-comparison
-                table
-                    max-width: 50%
-
+            max-width: 1400px
