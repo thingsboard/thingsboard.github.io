@@ -12,7 +12,7 @@ description: ThingsBoard Dashboard Widgets Library
 
 ## Introduction
 
-All [IoT Dashboards](/docs/user-guide/ui/dashboards/) are constructed using **ThingsBoard widgets** that are defined in Widget Library.
+All [IoT Dashboards](/docs/user-guide/dashboards/) are constructed using **ThingsBoard widgets** that are defined in Widget Library.
 Each widget provides end-user functions such as data visualization, remote device control, alarms management and displaying static custom html content.
 
 ## Widget Types
