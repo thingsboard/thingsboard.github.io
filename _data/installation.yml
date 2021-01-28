@@ -67,8 +67,9 @@ toc:
     path: /docs/user-guide/install/pe/windows/
   - title: Installing ThingsBoard PE using Docker (Linux or Mac OS)
     path: /docs/user-guide/install/pe/docker/
-  - title: Installing ThingsBoard PE using Docker with Cassandra
-    path: /docs/user-guide/install/pe/docker-cassandra/
+  # Deprecated
+  #- title: Installing ThingsBoard PE using Docker with Cassandra
+  #  path: /docs/user-guide/install/pe/docker-cassandra/
   - title: Installing ThingsBoard PE using Docker (Windows)
     path: /docs/user-guide/install/pe/docker-windows/
   - title: Cluster setup with Kubernetes and KubeOne on AWS cloud infrastructure
