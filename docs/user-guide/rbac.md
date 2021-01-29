@@ -24,7 +24,7 @@ description:
 ThingsBoard Community Edition (TB CE) supports a straight-forward security model with three main roles: System administrator, Tenant administrator, and Customer user. 
 A system administrator is able to manage tenants, while a tenant administrator manages devices, dashboards, customers, and other entities that belong to a particular tenant.
 Customer user is able to view dashboards and control devices that are assigned to a specific customer.
-TB CE functionality is sufficient for a lot of simple use cases, especially building real-time [end-user dashboards](/docs/user-guide/ui/dashboards/).
+TB CE functionality is sufficient for a lot of simple use cases, especially building real-time [end-user dashboards](/docs/user-guide/dashboards/).
  
 ThingsBoard Professional Edition (TB PE) brings much more flexibility in terms of user, customer, and role management. 
 It is designed to cover use cases for businesses and enterprises with multiple user groups that have different permissions but may interact with the same devices and assets. 
