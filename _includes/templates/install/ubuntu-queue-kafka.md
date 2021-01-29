@@ -7,18 +7,18 @@
 Kafka uses [ZooKeeper](https://zookeeper.apache.org/) so you need to first install ZooKeeper server:
 
 ```text
-sudo apt-get install zookeeper
+sudo apt install zookeeper
 ```
 {: .copy-code}
 
 ##### Install Kafka
 
 ```text
-wget http://www-us.apache.org/dist/kafka/2.3.0/kafka_2.12-2.3.0.tgz
+wget https://downloads.apache.org/kafka/2.6.1/kafka_2.12-2.6.1.tgz
 
-tar xzf kafka_2.12-2.3.0.tgz
+tar xzf kafka_2.12-2.6.1.tgz
 
-sudo mv kafka_2.12-2.3.0 /usr/local/kafka
+sudo mv kafka_2.12-2.6.1.tgz /usr/local/kafka
 ```
 {: .copy-code}
 
