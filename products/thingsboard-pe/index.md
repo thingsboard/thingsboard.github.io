@@ -14,13 +14,22 @@ description:
 		<a href="/industries/telecom/#tektelic"><object data="/images/customers/clear/tektelic.svg"></object></a>
 	</main>
 </section>
+
 <section id="intro">
 	<main>
 		<h1>Advanced ThingsBoard IoT Platform distribution</h1>
 		<h1 class="clari">with value added features</h1>
+	</main>
+</section>
+
+<section id="labeling">
+	<main>
 		<div id="features-top">
+            <div id="background" >
+                <div class="main1"></div><div class="small1"></div><div class="small2"></div><div class="small3"></div>
+            </div>
 		    <div class="block">
-                <div>
+                <div class="feature-des">
                 <h2>White-labeling</h2>
                 <p>Rebrand ThingsBoard platform web interface with your company or product logo and color scheme in 2 minutes. No coding or service restart required. Allow your customers and their sub-customers to white-label their interface as well.</p>
                 <a href="/docs/user-guide/white-labeling/">Read more</a>
@@ -28,41 +37,43 @@ description:
                 <img src="/images/pe/white-labeling.svg">
 		    </div>
             <div class="block">
-                <div>
-                <div class="container">
-                	<div class="install-header">
-                		<nav id="inner-navigation" class="inner-navigation">
-                			<ul id="menu-install-navigation-1" class="menu">
-                				<li id="menu-item-hierarchy">
-                					<a href="javascript:void(0);" onClick="activatePricingSection('hierarchy')">Hierarchy</a>
-                				</li>
-                				<li id="menu-item-roles">
-                					<a href="javascript:void(0);" onClick="activatePricingSection('roles')">Roles</a>
-                				</li>
-                			</ul>
-                		</nav>
-                	</div>
-                	<div class="pricing-header-divider">
-                	</div>
+                <div id="diagram" class="feature-des">
+                    <ul>
+                        <li id="menu-item-hierarchy" class="menu-item">
+                            <a href="javascript:void(0);" onClick="activatePricingSection('hierarchy')">Hierarchy</a>
+                        </li>
+                        <li id="menu-item-roles" class="menu-item">
+                            <a href="javascript:void(0);" onClick="activatePricingSection('roles')">Roles</a>
+                        </li>
+                    </ul>
+                    <img class="diagram-border" src="/images/pe/diagram-border.svg">
+                    <div id="hierarchy" class="diagram-content">
+                        <img src="/images/pe/hierarchy.svg">
+                    </div>
+                    <div id="roles" class="diagram-content">
+                        <img src="/images/pe/roles.svg">
+                    </div>
                 </div>
-                <div id="hierarchy" class="install-content">
-                	<div class="container">
-                	    <img src="/images/pe/entity-groups.svg">
-                	</div>
-                </div>
-                <div id="roles" class="install-content">
-                	<div class="container">
-                	    <img src="/images/pe/scheduler.svg">
-                	</div>
-                </div>
-                </div>
-                <div><h2>Advanced RBAC for IoT</h2>
+                <div class="feature-des"><h2>Advanced RBAC for IoT</h2>
                 <p>Advanced management of user roles and permissions. Manage hierarchy of customers with multiple levels of sub-customers, independent users and devices.</p>
                 <a href="/docs/user-guide/rbac/">Read more</a>
                 </div>
             </div>
-		    <div class="block">
-                <div class="dark"><h2>Platform Integrations</h2>
+		</div>
+	</main>
+</section>
+
+<section id="integration">
+	<main>
+		<div id="features-top">
+            <div id="lists" >
+                <img class="integrations-list" src="/images/pe/integrations-list.svg">
+            </div>
+            <div id="background" >
+                <div class="main2"></div><div class="small4"></div><div class="small5"></div>
+            </div>
+		    <div class="block dark">
+                <div class="feature-des"><h2>Platform Integrations</h2>
                 <p>Stream data from devices connected to existing IoT Platforms to enable real-time interactive dashboards and efficient data processing. Connect NB IoT, LoRaWAN and SigFox devices with specific payload formats using highly customizable data converters. Design and plugin your own converter as a JavaScript functions in real-time.</p>
                 <a href="/docs/user-guide/integrations/">Read more</a>
                 </div>
@@ -70,25 +81,48 @@ description:
             </div>
             <div class="block">
                 <img src="/images/pe/entity-groups.svg">
-                <div><h2>Entity Groups</h2>
+                <div class="feature-des"><h2>Entity Groups</h2>
                 <p>Group your entities (device, assets, etc.) to simplify administration tasks. Customize set of columns for each group and trigger actions on entities directly from administration interface.</p>
                 <a href="/docs/user-guide/groups/">Read more</a>
                 </div>
             </div>
-            <div class="double-block">
-                <div><h2>Scheduler</h2>
+		</div>
+	</main>
+</section>
+
+<section id="scheduler">
+	<main>
+		<div id="features-top">
+            <div id="background" >
+                <div class="main3"></div><div class="small6"></div><div class="small7"></div><div class="small8"></div>
+            </div>
+            <div class="block double">
+                <div class="left-textblock feature-des"><h2>Scheduler</h2>
                 <p>Schedule various types of events including report generation, commands to devices and configuration updates with flexible schedule configuration.</p>
                 <a href="/docs/user-guide/scheduler/">Read more</a>
                 </div>
                 <img src="/images/pe/scheduler.svg">
-                <div><h2>Reporting</h2>
+                <div class="right-textblock feature-des"><h2>Reporting</h2>
                 <p>Generate great looking reports using dashboards visualization capabilities. Generate reports by schedule or export by demand.</p>
                 <a href="/docs/user-guide/reporting/">Read more</a>
                 </div>
             </div>
-            <div class="block">
+		</div>
+	</main>
+</section>
+
+<section id="export">
+	<main>
+		<div id="features-top">
+            <div id="lists" >
+                <img class="export-list" src="/images/pe/export-list.svg">
+            </div>
+            <div id="background" >
+                <div class="bottom"></div><div class="small9"></div>
+            </div>
+            <div class="block end">
                 <img src="/images/pe/data-export.svg">
-                <div><h2>CSV/XLS data export</h2>
+                <div class="feature-des"><h2>CSV/XLS data export</h2>
                 <p>Export any dashboard widget data to CSV or XLS format. Allow your customers to download valuable insights from their device's data and review them in offline mode.</p>
                 <a href="/docs/user-guide/csv-xls-data-export/">Read more</a>
                 </div>
@@ -213,18 +247,15 @@ description:
 <section id="features">
     <main>
         <div class="item">
-            <div>
+            <img src="/images/pe/cloud-premises.svg">
             <h1>Flexible deployment options</h1>
             <p>Deploy ThingsBoard platform in the cloud or on premises. Use commodity hardware to scale out horizontally by adding new nodes to your cluster. Single ThingsBoard server can support 10 000+ devices and 100M messages per hour, while simple cluster can support millions of devices and billions of messages.</p>
-            </div>
-            <img src="/images/pe/cloud-premises.svg">
         </div>
+        <div class="divider"></div>
         <div class="item">
             <img src="/images/pe/pricing-models.svg">
-            <div>
             <h1>Simple and predictable pricing models</h1>
             <p>Say "No!" to per message or per device pricing that turns to a monster bills in production system. ThingsBoard PE supports two simple and predictable pricing models depending on your product life-cycle stage.</p>
-            </div>
         </div>
 	</main>
 </section>
@@ -252,7 +283,7 @@ description:
 	function activatePricingSection(sectionId) {
 		$("li.menu-item").removeClass("active");
 		$("li.menu-item#menu-item-"+sectionId).addClass("active");
-		$("div.install-content").css("display", "none");
-		$("div.install-content#"+sectionId).css("display", "block");
+		$("div.diagram-content").css("display", "none");
+		$("div.diagram-content#"+sectionId).css("display", "block");
 	}
 </script>
