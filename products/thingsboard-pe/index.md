@@ -32,18 +32,18 @@ description:
                 <div class="feature-des">
                 <h2>White-labeling</h2>
                 <p>Rebrand ThingsBoard platform web interface with your company or product logo and color scheme in 2 minutes. No coding or service restart required. Allow your customers and their sub-customers to white-label their interface as well.</p>
-                <a href="/docs/user-guide/white-labeling/">Read more</a>
+                <a id="read-more-button" href="/docs/user-guide/white-labeling/">Read more<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
                 </div>
-                <img src="/images/pe/white-labeling.svg">
+                <img class="preview" src="/images/pe/white-labeling.svg">
 		    </div>
             <div class="block">
-                <div id="diagram" class="feature-des">
+                <div id="diagram" class="feature-des preview">
                     <ul>
-                        <li id="menu-item-hierarchy" class="menu-item">
-                            <a href="javascript:void(0);" onClick="activatePricingSection('hierarchy')">Hierarchy</a>
-                        </li>
                         <li id="menu-item-roles" class="menu-item">
                             <a href="javascript:void(0);" onClick="activatePricingSection('roles')">Roles</a>
+                        </li>
+                        <li id="menu-item-hierarchy" class="menu-item">
+                            <a href="javascript:void(0);" onClick="activatePricingSection('hierarchy')">Customer hierarchy</a>
                         </li>
                     </ul>
                     <img class="diagram-border" src="/images/pe/diagram-border.svg">
@@ -56,7 +56,7 @@ description:
                 </div>
                 <div class="feature-des"><h2>Advanced RBAC for IoT</h2>
                 <p>Advanced management of user roles and permissions. Manage hierarchy of customers with multiple levels of sub-customers, independent users and devices.</p>
-                <a href="/docs/user-guide/rbac/">Read more</a>
+                <a id="read-more-button" href="/docs/user-guide/rbac/">Read more<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
                 </div>
             </div>
 		</div>
@@ -75,15 +75,15 @@ description:
 		    <div class="block dark">
                 <div class="feature-des"><h2>Platform Integrations</h2>
                 <p>Stream data from devices connected to existing IoT Platforms to enable real-time interactive dashboards and efficient data processing. Connect NB IoT, LoRaWAN and SigFox devices with specific payload formats using highly customizable data converters. Design and plugin your own converter as a JavaScript functions in real-time.</p>
-                <a href="/docs/user-guide/integrations/">Read more</a>
+                <a id="read-more-button" href="/docs/user-guide/integrations/">Read more<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
                 </div>
-                <img src="/images/pe/integrations.svg">
+                <img class="preview" src="/images/pe/integrations.svg">
             </div>
             <div class="block">
-                <img src="/images/pe/entity-groups.svg">
+                <img class="preview" src="/images/pe/entity-groups.svg">
                 <div class="feature-des"><h2>Entity Groups</h2>
                 <p>Group your entities (device, assets, etc.) to simplify administration tasks. Customize set of columns for each group and trigger actions on entities directly from administration interface.</p>
-                <a href="/docs/user-guide/groups/">Read more</a>
+                <a id="read-more-button" href="/docs/user-guide/groups/">Read more<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
                 </div>
             </div>
 		</div>
@@ -99,12 +99,12 @@ description:
             <div class="block double">
                 <div class="left-textblock feature-des"><h2>Scheduler</h2>
                 <p>Schedule various types of events including report generation, commands to devices and configuration updates with flexible schedule configuration.</p>
-                <a href="/docs/user-guide/scheduler/">Read more</a>
+                <a id="read-more-button" href="/docs/user-guide/scheduler/">Read more<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
                 </div>
-                <img src="/images/pe/scheduler.svg">
+                <img class="preview" src="/images/pe/scheduler.svg">
                 <div class="right-textblock feature-des"><h2>Reporting</h2>
                 <p>Generate great looking reports using dashboards visualization capabilities. Generate reports by schedule or export by demand.</p>
-                <a href="/docs/user-guide/reporting/">Read more</a>
+                <a id="read-more-button" href="/docs/user-guide/reporting/">Read more<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
                 </div>
             </div>
 		</div>
@@ -121,10 +121,10 @@ description:
                 <div class="bottom"></div><div class="small9"></div>
             </div>
             <div class="block end">
-                <img src="/images/pe/data-export.svg">
+                <img class="preview" src="/images/pe/data-export.svg">
                 <div class="feature-des"><h2>CSV/XLS data export</h2>
                 <p>Export any dashboard widget data to CSV or XLS format. Allow your customers to download valuable insights from their device's data and review them in offline mode.</p>
-                <a href="/docs/user-guide/csv-xls-data-export/">Read more</a>
+                <a id="read-more-button" href="/docs/user-guide/csv-xls-data-export/">Read more<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
                 </div>
             </div>
 		</div>
@@ -277,7 +277,7 @@ description:
 	});
 
 	jqueryDefer(function () {
-		activatePricingSection('hierarchy')
+		activatePricingSection('roles')
 	})
 
 	function activatePricingSection(sectionId) {
