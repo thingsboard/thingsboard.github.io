@@ -75,11 +75,9 @@
             text-align: center
             font-size: 32px
             line-height: 52px
-            text-transform: uppercase
         h2
             font-weight: 500
             font-size: 36px
-            text-transform: uppercase
         h3
             font-size: 42px
             font-weight: 600
@@ -245,12 +243,12 @@
                             width: 32px
 
     #intro
-        padding-top: 88px
+        padding-top: 28px
         .clari
             color: #92A198
             font-weight: normal
             text-transform: none
-            margin-bottom: 200px
+            margin-bottom: 100px
 
     #labeling, #integration, #scheduler, #export
         #features-top
@@ -263,13 +261,13 @@
                 align-items: center
                 flex-direction: column
                 .preview
-                    margin-top: 100px
+                    margin-top: 32px
                 img
-                    order: 1
-                .feature-des
                     order: 2
+                .feature-des
+                    order: 1
                     h2
-                        margin-top: 32px
+                        margin-top: 100px
                 .feature-des, img
                     width: 100%
                 &.dark
@@ -281,21 +279,26 @@
                         p
                             color: #868686
                 &.double
-                    margin: unset
+                    margin-top: 100px
                     div
                         width: 100%
                         &.left-textblock
                             margin: unset
+                            h2
+                                margin: unset
                         &.right-textblock
-                            margin: unset
+                            margin: 32px 0 0
+                            h2
+                                margin: unset
                     img
                         width: 100%
                 &.end
                     margin: unset
                     div
-                        margin-bottom: 80px
+                        margin-bottom: unset
                 #diagram
-                    margin-top: 100px
+                    order: 2
+                    margin-top: 32px
                     ul
                         padding-bottom: 12px
                         display: -webkit-box
@@ -360,11 +363,11 @@
             box-shadow: 0 50px 50px -20px rgba(0,0,0,0.15), 0 0 30px 0 rgba(0,0,0,0.10)
             &.integrations-list
                 width: 260px
-                top: 260px
+                top: 560px
                 left: 60px
             &.export-list
                 width: 200px
-                top: 180px
+                top: 380px
                 right: -240px
 
     #background
@@ -399,7 +402,7 @@
             &.main2
                 top: -500px
                 width: 2560px
-                height: 1125px
+                height: 725px
                 left: -1280px
                 background-color: #262C28
             &.small4
@@ -429,7 +432,7 @@
                 left: 804px
                 border: 2px solid #234732
             &.bottom
-                top: -320px
+                top: -70px
                 width: 2560px
                 height: 130px
                 left: -1280px
@@ -551,6 +554,10 @@
             main
                 max-width: 100%
         #peContent
+            #intro
+                padding-top: 88px
+                .clari
+                    margin-bottom: 200px
             #features
                 main
                     flex-direction: unset
