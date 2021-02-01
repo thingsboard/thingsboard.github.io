@@ -21,7 +21,7 @@ Or you may modify the dashboard via script when a new device is assigned to a cu
 You can find useful links to get started below:
 
  - [Getting started guide](/docs/getting-started-guides/helloworld/) - covers basic steps to create a dashboard.
- - [IoT Dashboards](/docs/user-guide/ui/dashboards/) - contains tutorials about basic IoT dashboard operations.
+ - [IoT Dashboards](/docs/user-guide/dashboards/) - contains tutorials about basic IoT dashboard operations.
  - [Samples](/docs/samples/) - contains several examples that include both client-side applications and corresponding data visualization.
  - [Widget Library](/docs/user-guide/ui/widget-library/) - contains an overview of dashboard widget bundles:
    - **Digital** and **analog** gauges for the latest real-time values visualization; 
