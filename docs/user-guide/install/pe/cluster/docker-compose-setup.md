@@ -203,14 +203,18 @@ In case when database upgrade is needed, execute the following commands:
 
 ```
 $ ./docker-stop-services.sh
-$ ./docker-upgrade-tb.sh --fromVersion=[FROM_VERSION]
-$ ./docker-start-services.sh
+$ ./docker-remove-services.sh
+```
+
+Edit .env file set "TB_VERSION" to target version (f.e. currently you on 3.2.0 so in this case you need to set 3.2.1)
+
+```
+$ ./docker-update-service.sh [SERVICE...]
 ```
 
 Where:
 
-- `FROM_VERSION` - from which version upgrade should be started. See [Upgrade Instructions](https://thingsboard.io/docs/user-guide/install/upgrade-instructions) for valid `fromVersion` values.
-
+- `SERVICE...` - list of services to update (defined in docker-compose configurations). If not specified all services will be updated.
 
 ## Next steps
 
