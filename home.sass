@@ -80,7 +80,7 @@ $feature-box-div-margin-bottom: 40px
                     display: none
     #overflow
         overflow: hidden
-        #intro, #manage, #react, #products
+        #intro, #manage, #react, #products, #dashboards, #rule-engine, #bottom-features
             color: #212529
             text-align: left
             h1
@@ -158,13 +158,13 @@ $feature-box-div-margin-bottom: 40px
                     flex-direction: column
                     .preview, .manage, .visualize
                         margin-top: 32px
-                    img, .manage, .visualize
+                    img, .manage, .visualize, .process
                         order: 2
                     .feature-des
                         order: 1
                         h2
                             margin-top: 100px
-                    .feature-des, img, .manage, .visualize
+                    .feature-des, img, .manage, .visualize, .process
                         width: 100%
                     .manage
                         position: relative
@@ -228,33 +228,32 @@ $feature-box-div-margin-bottom: 40px
 
         #products
             width: 100%
-            padding: 100px 0 56px
-            margin-bottom: 72px
+            padding-top: 100px
+            padding-bottom: 56px
             .product-title
                 color: white
                 text-align: center
                 margin-bottom: 72px
             .product-list
                 display: flex
-                margin: 0 60px
+                margin: unset
                 div
                     color: #212529
                     background-color: white
                     box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.1)
-                    border-radius: 4px
+                    border-radius: 6px
                     padding: 40px
                     text-align: center
                     flex: 1
                     margin-bottom: 40px
-                    h1
-                        color: #707275
-                        font-size: 18px
-                        line-height: 32px
+                    p
+                        margin: unset
                     h2
                         font-size: 28px
                         font-weight: 600
                     h3
                         font-size: 16px
+                        font-weight: unset
                     img
                         display: block
                         margin: 50px auto 50px auto
@@ -279,6 +278,139 @@ $feature-box-div-margin-bottom: 40px
                 font-weight: 500
                 margin-top: 56px
                 text-align: center
+
+        #dashboards
+            margin-top: 186px
+            margin-bottom: 120px
+            .content-width
+                margin: 78px auto
+            .slideshow
+                position: relative
+                width: 100%
+                display: flex
+                flex-direction: column
+                justify-content: space-around
+            .slideshow-items
+                position: relative
+                width: 100%
+            .item
+                justify-content: space-between
+                display: table-column
+                align-items: center
+            .item.active
+                display: flex
+            .item-image-container
+                position: relative
+                width: 66%
+            .item-image-container::before
+                content: ''
+                position: absolute
+                left: 0
+                border-radius: 6px
+                background: #EDF2F6
+                width: 100%
+                height: 100%
+                opacity: 0
+                z-index: 1
+            .item-image
+                position: relative
+                width: 100%
+                height: auto
+                opacity: 0
+                box-shadow: inset 0px -6px 0px #305680, 0 10px 20px 0 rgba(0, 0, 0, 0.1)
+                border-radius: 6px
+                display: block
+                transition: opacity .3s ease-out .45s
+            .item.active .item-image, .item.active .item-description
+                opacity: 1
+                z-index: 50
+            .item.active .item-image-container::before
+                opacity: .8
+            .item-description
+                width: 30%
+                opacity: 0
+                transition: opacity .3s ease-out .45s
+            .item-header
+                z-index: 10
+            .vertical-part
+                overflow: hidden
+                display: inline-block
+            .vertical-part b
+                display: inline-block
+            .item-description .vertical-part b
+                opacity: 0
+                a
+                    z-index: 1000
+            .item-header .vertical-part b
+                transition: .5s
+            .item-description .vertical-part b
+                transition: .21s
+            .item.active .item-header .vertical-part b
+                transform: translateY(0)
+            .item.active .item-description .vertical-part b
+                transform: translateY(0)
+                transition: opacity .3s ease-out .45s
+                opacity: 1
+            .controls
+                position: relative
+                text-align: right
+                z-index: 1000
+            .controls ul
+                margin-top: 30px
+                list-style: none
+            .controls ul li
+                display: inline-block
+                width: 72px
+                height: 4px
+                margin: 12px
+                border-radius: 2px
+                background: #E0E1E2
+                cursor: pointer
+            .controls ul li.active
+                background: #2A7DEC
+
+        #rule-engine
+            margin-bottom: 148px
+            .rule
+                justify-content: space-between
+                display: flex
+                align-items: center
+                flex-direction: row
+                img
+                    width: calc(65% - 60px)
+                    border-radius: 6px
+                    box-shadow: 0 50px 50px -20px rgba(0,0,0,0.15), 0 0 30px 0 rgba(0,0,0,0.05)
+                .des
+                    width: calc(35% - 60px)
+
+        #bottom-features
+            margin-bottom: 80px
+            #cards
+                padding-top: 50px
+                justify-content: center
+                &>div
+                    margin-bottom: 36px
+                    &.col-lg-6
+                        padding: 0 18px
+                        max-width: 100%
+                    .block
+                        padding: 48px
+                        float: left
+                        width: 100%
+                        height: 100%
+                        background: white
+                        border-radius: 6px
+                        box-shadow: 0 50px 50px -20px rgba(0,0,0,0.15)
+                        display: flex
+                        div
+                            width: calc(100% - 122px)
+                            a
+                                color: #2A7DEC
+                                font-size: 24px
+                                font-weight: 500
+                        img
+                            height: fit-content
+                            margin-right: 30px
 
         #read-more-button
             position: relative
@@ -366,6 +498,20 @@ $feature-box-div-margin-bottom: 40px
                     top: -350px
                     right: 736px
                     border: 4px solid #2A7DEC
+                &.dashboards
+                    top: -700px
+                    width: 2560px
+                    height: 845px
+                    left: -1280px
+                    background-color: #F7F9FC
+                &.small9
+                    top: -746px
+                    left: 466px
+                    border: 4px solid #0D2743
+                &.small10
+                    top: -805px
+                    left: 658px
+                    background-color: #2A7DEC
 
 
     .header-animation
@@ -419,9 +565,9 @@ $feature-box-div-margin-bottom: 40px
                     .block
                         .feature-des, img, .manage, .visualize, .process
                             width: 80%
-                    #lists
-                        img
-                            width: unset
+            #products
+                .product-list
+                    margin: 0 80px
 
 @media screen and (min-width: 1025px)
     #home
@@ -444,8 +590,11 @@ $feature-box-div-margin-bottom: 40px
                             order: unset
                             h2
                                 margin: unset
-                        .preview, .manage, .visualize
+                        .preview, .manage, .visualize, .process
                             margin-top: unset
+            #products
+                .product-list
+                    margin: 0 60px
 
 @media screen and (min-width: 1250px)
     #home
