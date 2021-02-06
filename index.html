@@ -167,7 +167,7 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 								</span>
 							</div>
 							<div class="item-image-container">
-								<a href="/smart-energy/"><img class="item-image" src="/images/smart-energy.png" /></a>
+								<a id="img-button" href="/smart-energy/"><span></span><img class="item-image" src="/images/smart-energy.png" /></a>
 							</div>
 						</div>
 						<div class="item">
@@ -185,7 +185,7 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 								</span>
 							</div>
 							<div class="item-image-container">
-								<a href="/smart-farming/"><img class="item-image" src="/images/smart-farming.png" /></a>
+								<a id="img-button" href="/smart-farming/"><span></span><img class="item-image" src="/images/smart-farming.png" /></a>
 							</div>
 						</div>
 						<div class="item">
@@ -203,7 +203,7 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 								</span>
 							</div>
 							<div class="item-image-container">
-								<a href="/fleet-tracking/"><img class="item-image" src="/images/fleet-tracking.png" /></a>
+								<a id="img-button" href="/fleet-tracking/"><span></span><img class="item-image" src="/images/fleet-tracking.png" /></a>
 							</div>
 						</div>
 						<div class="item">
@@ -221,7 +221,7 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 								</span>
 							</div>
 							<div class="item-image-container">
-								<a href="/smart-metering/"><img class="item-image" src="/images/smart-metering.png" /></a>
+								<a id="img-button" href="/smart-metering/"><span></span><img class="item-image" src="/images/smart-metering.png" /></a>
 							</div>
 						</div>
 					</div>
@@ -241,7 +241,7 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 	<section id="rule-engine">
 		<main>
 			<div class="rule">
-				<img src="images/demo/send-email-rule-chain.gif">
+				<a id="img-button" class="rule-button" href="/docs/user-guide/rule-engine-2-0/re-getting-started/"><span><div class="eye"><img src="images/eye-icon.svg">See more</div></span><img src="images/demo/send-email-rule-chain.gif"></a>
 				<div class="des"><h3>IoT Rule Engine</h3>
 					<p>ThingsBoard allows you to create complex <a href="/docs/user-guide/rule-engine-2-0/re-getting-started/">Rule Chains</a> to process data from your devices and match your application specific use cases.</p>
 					<a id="read-more-button" href="/docs/user-guide/rule-engine-2-0/re-getting-started/">Read more<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
@@ -252,13 +252,16 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 
 	<section id="bottom-features">
 		<main>
+			<div id="background">
+				<div class="bottom-features1"></div><div class="bottom-features2"></div><div class="small11"></div><div class="small12"></div><div class="bottom-features3"></div><div class="small13"></div><div class="small14"></div><div class="small15"></div>
+			</div>
 			<h3>ThingsBoard Features</h3>
 			<div id="cards" class="row">
 				<div class="col-lg-6">
 					<div class="block">
 						<img src="/images/telemetry-icon.svg">
 						<div>
-							<a href="/docs/user-guide/telemetry/">Telemetry Data Collection</a>
+							<a class="title" href="/docs/user-guide/telemetry/">Telemetry Data Collection</a>
 							<p>Collect and store telemetry data in reliable way, surviving network and hardware failures. Access collected data using customizable web dashboards or server-side APIs.</p>
 						</div>
 					</div>
@@ -266,7 +269,7 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 				<div class="col-lg-6">
 					<div class="block"><img src="/images/tenancy-icon.svg">
 						<div>
-						<a href="/docs/user-guide/ui/tenants/">Multi-tenancy</a>
+						<a class="title" href="/docs/user-guide/ui/tenants/">Multi-tenancy</a>
 						<p>Support multi-tenant installations out-of-the-box. Single tenant may have multiple tenant administrators and millions of devices and customers.
 						</p>
 						</div>
@@ -275,7 +278,7 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 				<div class="col-lg-6">
 					<div class="block"><img src="/images/visualization-icon.svg">
 						<div>
-						<a href="/docs/user-guide/visualization/">Data Visualization</a>
+						<a class="title" href="/docs/user-guide/visualization/">Data Visualization</a>
 						<p>Provides 30+ configurable widgets out-of-the-box and ability to create your own widgets using built-in editor. Built-in line-charts, digital and analog gauges, maps and much more.</p>
 						</div>
 					</div>
@@ -283,7 +286,7 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 				<div class="col-lg-6">
 					<div class="block"><img src="/images/scalability-icon.svg">
 						<div>
-							<a href="/docs/reference/architecture/#clustering-mode">Horizontal scalability</a>
+							<a class="title" href="/docs/reference/architecture/#clustering-mode">Horizontal scalability</a>
 							<p>Amount of supported server-side requests and devices increase linearly as new thingsboard servers are added in clustering mode. No downtime, server restarts or application errors.</p>
 						</div>
 					</div>
@@ -291,7 +294,7 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 				<div class="col-lg-6">
 					<div class="block"><img src="/images/engine-icon.svg">
 						<div>
-							<a href="/docs/user-guide/rule-engine-2-0/re-getting-started/">IoT Rule Engine</a>
+							<a class="title" href="/docs/user-guide/rule-engine-2-0/re-getting-started/">IoT Rule Engine</a>
 							<p>Process incoming device data with flexible rule chains based on entity attributes or message content. Forward data to external systems or trigger alarms using custom logic. Configure complex notification chains on alarms. Enrich server-side functionality or manipulate your devices with highly customizable rules. Define your application logic with drag-n-drop rule chain designer.</p>
 						</div>
 					</div>
@@ -299,7 +302,7 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 				<div class="col-lg-6">
 					<div class="block"><img src="/images/tolerance-icon.svg">
 						<div>
-							<a href="/docs/reference/architecture/#service-discovery">Fault-tolerance</a>
+							<a class="title" href="/docs/reference/architecture/#service-discovery">Fault-tolerance</a>
 							<p>All thingsboard servers are identical. No master-workers or hot standby. Node failure is automatically detected. Failed nodes can be replaced without downtime. Persisted data is replicated using reliable NoSQL database.</p>
 						</div>
 					</div>
@@ -307,15 +310,15 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 				<div class="col-lg-6">
 					<div class="block"><img src="/images/device-icon.svg">
 						<div>
-							<a href="/docs/user-guide/ui/devices/">Device Management</a>
-							<p>Provides ability to register and manage devices. Allows to monitor client-side and provision server-side device attributes. Provides API for server-side applications to send RPC commands to devices and vice-versa.</p>
+							<a class="title" href="/docs/user-guide/ui/devices/">Device Management</a>
+							<p>Provides ability to register and manage devices. Allows to monitor client-side and provision server-side <a href="/docs/user-guide/attributes/">device attributes</a>. Provides API for server-side applications to send <a href="/docs/user-guide/rpc/">RPC commands</a> to devices and vice-versa.</p>
 						</div>
 					</div>
 				</div>
 				<div class="col-lg-6">
 					<div class="block"><img src="/images/security-icon.svg">
 						<div>
-							<a href="/docs/reference/architecture/#security">Security</a>
+							<a class="title" href="/docs/reference/architecture/#security">Security</a>
 							<p>Supports transport encryption for both MQTT and HTTP(s) protocols. Supports device authentication and device credentials management.</p>
 						</div>
 					</div>
@@ -323,31 +326,31 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 				<div class="col-lg-6">
 					<div class="block"><img src="/images/asset-icon.svg">
 						<div>
-							<a href="/docs/user-guide/ui/assets/">Asset Management</a>
-							<p>Provides ability to register and manage assets. Allows to provision server-side asset attributes and monitor related alarms. Ability to build hierarchy of entities using relations.</p>
+							<a class="title" href="/docs/user-guide/ui/assets/">Asset Management</a>
+							<p>Provides ability to register and manage assets. Allows to provision server-side <a href="/docs/user-guide/attributes/">asset attributes</a> and monitor related <a href="/docs/user-guide/alarms/">alarms</a>. Ability to build hierarchy of entities using <a href="/docs/user-guide/entities-and-relations/">relations</a>.</p>
 						</div>
 					</div>
 				</div>
 				<div class="col-lg-6">
 					<div class="block"><img src="/images/integration-icon.svg">
 						<div>
-							<a href="/docs/user-guide/customization/">Customization and Integration</a>
-							<p>Extend default platform functionality using customizable rule chains, widgets and transport implementations. In addition to MQTT, CoAP and HTTP support, ThingsBoard users can use their own transport implementations or customize behaviour of existing protocols.</p>
+							<a class="title" href="/docs/user-guide/customization/">Customization and Integration</a>
+							<p>Extend default platform functionality using customizable <a href="/docs/user-guide/rule-engine-2-0/re-getting-started/">rule chains</a>, <a href="/docs/user-guide/ui/widget-library/">widgets</a> and <a href="/docs/reference/protocols/">transport implementations</a>. In addition to MQTT, CoAP and HTTP support, ThingsBoard users can use their own transport implementations or customize behaviour of existing protocols.</p>
 						</div>
 					</div>
 				</div>
 				<div class="col-lg-6">
 					<div class="block"><img src="/images/alarms-icon.svg">
 						<div>
-							<a href="/docs/user-guide/alarms/">Alarms Management</a>
-							<p>Provides ability to create and manage alarms related to your entities: devices, assets, customers, etc. Allows real-time alarms monitoring and alarms propagation to related entities hierarchy. Raise alarms on device disconnect or inactivity events.</p>
+							<a class="title" href="/docs/user-guide/alarms/">Alarms Management</a>
+							<p>Provides ability to create and manage <a href="/docs/user-guide/alarms/">alarms</a> related to your entities: devices, assets, customers, etc. Allows real-time alarms monitoring and alarms propagation to related entities hierarchy. Raise alarms on device disconnect or inactivity events.</p>
 						</div>
 					</div>
 				</div>
 				<div class="col-lg-6">
 					<div class="block"><img src="/images/opensource-icon.svg">
 						<div>
-							<a href="https://github.com/thingsboard/thingsboard">100% Open-source</a>
+							<a class="title" href="https://github.com/thingsboard/thingsboard">100% Open-source</a>
 							<p>ThingsBoard is licensed under Apache License 2.0, so you can use any it in your commercial products for free. You can even host it as a SaaS or PaaS solution.</p>
 						</div>
 					</div>
@@ -355,15 +358,15 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 				<div class="col-lg-6">
 					<div class="block"><img src="/images/microservices-icon.svg">
 						<div>
-							<a href="/docs/reference/#monolithic-vs-microservices-architecture">Microservices or Monolithic</a>
-							<p>Supports monolithic deployment for getting started or small environments. Provides ability to upgrade to microservices for high availability and horizontal scalability.</p>
+							<a class="title" href="/docs/reference/#monolithic-vs-microservices-architecture">Microservices or Monolithic</a>
+							<p>Supports <a href="/docs/reference/monolithic/">monolithic</a> deployment for getting started or small environments. Provides ability to upgrade to <a href="/docs/reference/msa/">microservices</a> for high availability and horizontal scalability.</p>
 						</div>
 					</div>
 				</div>
 				<div class="col-lg-6">
 					<div class="block"><img src="/images/database-icon.svg">
 						<div>
-							<a href="/docs/reference/#sql-vs-nosql-vs-hybrid-database-approach">SQL, NoSQL and Hybrid database</a>
+							<a class="title" href="/docs/reference/#sql-vs-nosql-vs-hybrid-database-approach">SQL, NoSQL and Hybrid database</a>
 							<p>Supports various database options and ability to choose where to store main entities and where to store telemetry data</p>
 						</div>
 					</div>
@@ -387,7 +390,7 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 	headerItems = document.querySelectorAll('.item-header'),
 	descriptionItems = document.querySelectorAll('.item-description'),
 	activeDelay = 0,
-	interval = 10000;
+	interval = 6000;
 
 	let current = 0;
 

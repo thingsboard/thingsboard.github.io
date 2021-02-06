@@ -376,15 +376,17 @@ $feature-box-div-margin-bottom: 40px
                 display: flex
                 align-items: center
                 flex-direction: row
-                img
+                a
                     width: calc(65% - 60px)
-                    border-radius: 6px
-                    box-shadow: 0 50px 50px -20px rgba(0,0,0,0.15), 0 0 30px 0 rgba(0,0,0,0.05)
+                    img
+                        width: 100%
+                        border-radius: 6px
+                        box-shadow: 0 50px 50px -20px rgba(0,0,0,0.15), 0 0 30px 0 rgba(0,0,0,0.05)
                 .des
                     width: calc(35% - 60px)
 
         #bottom-features
-            margin-bottom: 80px
+            padding-bottom: 80px
             #cards
                 padding-top: 50px
                 justify-content: center
@@ -404,10 +406,13 @@ $feature-box-div-margin-bottom: 40px
                         display: flex
                         div
                             width: calc(100% - 122px)
-                            a
+                            .title
                                 color: #2A7DEC
                                 font-size: 24px
                                 font-weight: 500
+                                margin-bottom: 6px
+                            p
+                                margin-top: 10px
                         img
                             height: fit-content
                             margin-right: 30px
@@ -436,6 +441,27 @@ $feature-box-div-margin-bottom: 40px
                     transform: translate(20px)
                 .third
                     transform: translate(30px)
+
+        #img-button
+            &.rule-button
+                position: relative
+            span
+                color: white
+                z-index: 1000
+                display: block
+                width: 100%
+                position: absolute
+                height: 100%
+                opacity: 0.5
+                background: linear-gradient(0deg, rgba(37,38,40,0.8) 0%, rgba(37,38,40,0) 60%)
+                transition-duration: 0.3s
+                border-radius: 6px
+                &:hover
+                    opacity: 1
+                .eye
+                    img
+                        margin-right: 10px
+                        width: unset !important
 
         #background
             z-index: -1
@@ -512,6 +538,46 @@ $feature-box-div-margin-bottom: 40px
                     top: -805px
                     left: 658px
                     background-color: #2A7DEC
+                &.bottom-features1
+                    top: -700px
+                    width: 2560px
+                    height: 3000px
+                    left: -1280px
+                    -ms-transform: unset
+                    transform: unset
+                    background-color: #F7F9FC
+                &.bottom-features2
+                    top: -240px
+                    width: 2560px
+                    height: 525px
+                    left: -1280px
+                    background-color: #252628
+                &.small11
+                    top: -382px
+                    left: 757px
+                    background-color: #2A7DEC
+                &.small12
+                    top: 334px
+                    right: 589px
+                    border: 4px solid #305680
+                &.bottom-features3
+                    top: 1008px
+                    width: 2560px
+                    height: 525px
+                    left: -1280px
+                    background-color: #252628
+                &.small13
+                    top: 1071px
+                    right: 646px
+                    background-color: #305680
+                &.small14
+                    top: 1009px
+                    right: 408px
+                    background-color: #2A7DEC
+                &.small15
+                    top: 1373px
+                    left: 830px
+                    border: 4px solid #2A7DEC
 
 
     .header-animation
