@@ -254,6 +254,8 @@ $feature-box-div-margin-bottom: 40px
                     h3
                         font-size: 16px
                         font-weight: unset
+                        margin-top: 18px
+                        line-height: 1.5
                     img
                         display: block
                         margin: 50px auto 50px auto
@@ -264,6 +266,7 @@ $feature-box-div-margin-bottom: 40px
                         h2
                             font-size: 42px
                             font-weight: 600
+                            line-height: 1.5
                         img
                             margin: 60px auto
                     a
@@ -299,9 +302,10 @@ $feature-box-div-margin-bottom: 40px
                 align-items: center
             .item.active
                 display: flex
+                flex-direction: column
             .item-image-container
                 position: relative
-                width: 66%
+                width: 100%
             .item-image-container::before
                 content: ''
                 position: absolute
@@ -327,7 +331,8 @@ $feature-box-div-margin-bottom: 40px
             .item.active .item-image-container::before
                 opacity: .8
             .item-description
-                width: 30%
+                width: 100%
+                margin-bottom: 32px
                 opacity: 0
                 transition: opacity .3s ease-out .45s
             .item-header
@@ -375,15 +380,18 @@ $feature-box-div-margin-bottom: 40px
                 justify-content: space-between
                 display: flex
                 align-items: center
-                flex-direction: row
+                flex-direction: column
                 a
-                    width: calc(65% - 60px)
+                    order: 2
+                    width: 100%
                     img
                         width: 100%
                         border-radius: 6px
                         box-shadow: 0 50px 50px -20px rgba(0,0,0,0.15), 0 0 30px 0 rgba(0,0,0,0.05)
                 .des
-                    width: calc(35% - 60px)
+                    order: 1
+                    width: 100%
+                    margin-bottom: 32px
 
         #bottom-features
             padding-bottom: 80px
@@ -403,9 +411,10 @@ $feature-box-div-margin-bottom: 40px
                         background: white
                         border-radius: 6px
                         box-shadow: 0 50px 50px -20px rgba(0,0,0,0.15)
-                        display: flex
+                        display: unset
+                        text-align: center
                         div
-                            width: calc(100% - 122px)
+                            width: 100%
                             .title
                                 color: #2A7DEC
                                 font-size: 24px
@@ -415,7 +424,7 @@ $feature-box-div-margin-bottom: 40px
                                 margin-top: 10px
                         img
                             height: fit-content
-                            margin-right: 30px
+                            margin: 0 0 18px
 
         #read-more-button
             position: relative
@@ -451,14 +460,21 @@ $feature-box-div-margin-bottom: 40px
                 display: block
                 width: 100%
                 position: absolute
+                font-weight: 400
                 height: 100%
-                opacity: 0.5
-                background: linear-gradient(0deg, rgba(37,38,40,0.8) 0%, rgba(37,38,40,0) 60%)
+                opacity: 0
+                background: linear-gradient(0deg, rgba(37,38,40,0.8) 0%, rgba(37,38,40,0.6) 100%)
                 transition-duration: 0.3s
                 border-radius: 6px
                 &:hover
                     opacity: 1
+                    .eye
+                        bottom: 14%
                 .eye
+                    transition-duration: 0.3s
+                    position: absolute
+                    bottom: 0
+                    left: calc(50% - 60px)
                     img
                         margin-right: 10px
                         width: unset !important
@@ -634,6 +650,16 @@ $feature-box-div-margin-bottom: 40px
             #products
                 .product-list
                     margin: 0 80px
+            #bottom-features
+                #cards
+                    div
+                        .block
+                            text-align: left
+                            display: flex
+                            div
+                                width: calc(100% - 122px)
+                            img
+                                margin: 0 30px 0 0
 
 @media screen and (min-width: 1025px)
     #home
@@ -661,6 +687,24 @@ $feature-box-div-margin-bottom: 40px
             #products
                 .product-list
                     margin: 0 60px
+            #rule-engine
+                .rule
+                    flex-direction: row
+                    a
+                        order: unset
+                        width: calc(65% - 20px)
+                    .des
+                        order: unset
+                        width: calc(35% - 60px)
+                        margin: unset
+            #dashboards
+                .item.active
+                    flex-direction: unset
+                .item-image-container
+                    width: 66%
+                .item-description
+                    margin: unset
+                    width: 30%
 
 @media screen and (min-width: 1250px)
     #home

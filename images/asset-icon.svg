@@ -1,14 +1,14 @@
-<svg width="94" height="92" viewBox="0 0 94 92" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g filter="url(#filter0_d)">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M45 15C46.1046 15 47 15.8954 47 17L47 60C47 61.1046 46.1046 62 45 62H22C20.8954 62 20 61.1046 20 60V17C20 15.8954 20.8954 15 22 15L45 15ZM26 21H31V26H26V21ZM31 31H26V36H31V31ZM26 41H31V46H26V41ZM31 51H26V56H31V51ZM36 21H41V26H36V21ZM41 31H36V36H41V31ZM36 41H41V46H36V41ZM41 51H36V56H41V51Z" fill="#2A7DEC"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M74 57C74 59.7614 71.7614 62 69 62L51 62L51 58L69 58C69.5523 58 70 57.5523 70 57L70 36C70 35.4477 69.5523 35 69 35L51 35L51 31L69 31C71.7614 31 74 33.2386 74 36L74 57Z" fill="#305680"/>
-<path d="M51 39H56V44H51V39Z" fill="#2A7DEC"/>
-<path d="M51 49H56V54H51V49Z" fill="#2A7DEC"/>
-<path d="M61 39H66V44H61V39Z" fill="#2A7DEC"/>
-<path d="M61 49H66V54H61V49Z" fill="#2A7DEC"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M48 16C49.1046 16 50 16.8954 50 18L50 61C50 62.1046 49.1046 63 48 63H25C23.8954 63 23 62.1046 23 61V18C23 16.8954 23.8954 16 25 16L48 16ZM29 22H34V27H29V22ZM34 32H29V37H34V32ZM29 42H34V47H29V42ZM34 52H29V57H34V52ZM39 22H44V27H39V22ZM44 32H39V37H44V32ZM39 42H44V47H39V42ZM44 52H39V57H44V52Z" fill="#2A7DEC"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M77 58C77 60.7614 74.7614 63 72 63L54 63L54 59L72 59C72.5523 59 73 58.5523 73 58L73 37C73 36.4477 72.5523 36 72 36L54 36L54 32L72 32C74.7614 32 77 34.2386 77 37L77 58Z" fill="#305680"/>
+<path d="M54 40H59V45H54V40Z" fill="#2A7DEC"/>
+<path d="M54 50H59V55H54V50Z" fill="#2A7DEC"/>
+<path d="M64 40H69V45H64V40Z" fill="#2A7DEC"/>
+<path d="M64 50H69V55H64V50Z" fill="#2A7DEC"/>
 </g>
 <defs>
-<filter id="filter0_d" x="-19" y="-10" width="132" height="124" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<filter id="filter0_d" x="-16" y="-8" width="132" height="132" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
 <feOffset dy="10"/>

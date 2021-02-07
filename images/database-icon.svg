@@ -1,4 +1,4 @@
-<svg width="92" height="84" viewBox="0 0 92 84" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="92" height="92" viewBox="0 0 92 92" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g clip-path="url(#clip0)">
 <g filter="url(#filter0_d)">
 <path fill-rule="evenodd" clip-rule="evenodd" d="M21 59C20.4477 59 20 58.5523 20 58C20 57.4477 20.4477 57 21 57L71 57C71.5523 57 72 57.4477 72 58C72 58.5523 71.5523 59 71 59C71 59 71 59 71 59L21 59ZM71 53L21 53C18.2386 53 16 55.2386 16 58C16 60.7614 18.2386 63 21 63L71 63C73.7614 63 76 60.7614 76 58C76 55.2386 73.7614 53 71 53Z" fill="#305680"/>
@@ -20,7 +20,7 @@
 <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
 </filter>
 <clipPath id="clip0">
-<rect width="92" height="84" fill="white"/>
+<rect width="92" height="92" fill="white"/>
 </clipPath>
 </defs>
 </svg>
