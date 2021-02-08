@@ -40,6 +40,7 @@ You can also take a look at [cluster setup](/docs/user-guide/install/cluster-set
 
 ThingsBoard provides
 [MQTT](/docs/reference/mqtt-api), 
+[LwM2M](/docs/reference/lwm2m-api), 
 [CoAP](/docs/reference/coap-api) and 
 [HTTP](/docs/reference/http-api) protocols support.
 **Existing** devices may be connected to the platform using **[ThingsBoard Gateway](/docs/iot-gateway/what-is-iot-gateway/)**.

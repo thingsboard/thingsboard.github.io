@@ -7,6 +7,8 @@ toc:
   path: /docs/reference/protocols/
 - title: MQTT Device API
   path: /docs/reference/mqtt-api/
+- title: LwM2M Device API
+  path: /docs/reference/lwm2m-api/
 - title: CoAP Device API
   path: /docs/reference/coap-api/
 - title: HTTP Device API

@@ -148,6 +148,12 @@
       keywords: mqtt connect
       pe: false
       video: false
+    - path: /docs/reference/lwm2m-api/
+      title: Connect devices using ThingsBoard LwM2M API
+      subtitle: Learn how to connect your devices using LwM2M protocol and ThingsBoard built-in payload format.
+      keywords: lwm2m connect
+      pe: false
+      video: false
     - path: /docs/reference/coap-api/
       title: Connect devices using ThingsBoard CoAP API
       subtitle: Learn how to connect your devices using CoAP protocol and ThingsBoard built-in payload format.

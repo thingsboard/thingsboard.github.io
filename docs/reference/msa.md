@@ -17,13 +17,14 @@ This article consist of high level diagram, description of data flow between var
   
 ## Transport Microservices
 
-ThingsBoard provides MQTT, HTTP and CoAP based APIs that are available for your device applications/firmware. 
+ThingsBoard provides MQTT, HTTP, LwM2M and CoAP based APIs that are available for your device applications/firmware. 
 Each of the protocol APIs are provided by a separate server component and is part of ThingsBoard "Transport Layer". 
 The full list of components and corresponding documentation pages are listed below:
 
 * HTTP Transport microservice provides device APIs described [here](/docs/reference/http-api/); 
 * MQTT Transport microservice provides device APIs described [here](/docs/reference/mqtt-api/)
 and also enables gateway APIs described [here](/docs/reference/gateway-mqtt-api/);
+* LwM2M Transport microservice provides device APIs described [here](/docs/reference/lwm2m-api/);
 * CoAP Transport microservice provides device APIs described [here](/docs/reference/coap-api/).
 
 Each of the transport servers listed above communicates with the main ThingsBoard Node microservices using Kafka. 

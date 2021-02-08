@@ -33,6 +33,7 @@ Telemetry upload API depends on each supported network protocol.
 API and examples can be reviewed in corresponding reference page:
 
  - [MQTT API reference](/docs/reference/mqtt-api/#telemetry-upload-api)
+ - [LwM2M API reference](/docs/reference/lwm2m-api/#telemetry-upload-api) 
  - [CoAP API reference](/docs/reference/coap-api/#telemetry-upload-api)
  - [HTTP API reference](/docs/reference/http-api/#telemetry-upload-api)
   

@@ -30,7 +30,7 @@ The diagram below shows key system components and interfaces they provide. Let's
 
 **ThingsBoard Transports**
  
-ThingsBoard provides [MQTT](/docs/reference/mqtt-api/), [HTTP](/docs/reference/http-api/) and [CoAP](/docs/reference/coap-api/) based APIs that are available for your device applications/firmware. 
+ThingsBoard provides [MQTT](/docs/reference/mqtt-api/), [HTTP](/docs/reference/http-api/), [LwM2M](/docs/reference/lwm2m-api/) and [CoAP](/docs/reference/coap-api/) based APIs that are available for your device applications/firmware. 
 Each of the protocol APIs are provided by a separate server component and is part of ThingsBoard "Transport Layer". 
 MQTT Transport also provides [Gateway APIs](/docs/reference/gateway-mqtt-api/) to be used by gateways that represent multiple connected devices and/or sensors.
 
