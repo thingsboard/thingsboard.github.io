@@ -297,12 +297,27 @@ $feature-box-div-margin-bottom: 40px
             margin-bottom: 120px
             .content-width
                 margin: 78px auto
+                display: flex
+                align-items: center
+                flex-direction: column
             .slideshow
                 position: relative
                 width: 100%
                 display: flex
                 flex-direction: column
                 justify-content: space-around
+            .slideshow button
+                top: 38%
+                position: absolute
+                filter: invert(100%) sepia(74%) saturate(108%) hue-rotate(175deg) brightness(90%) contrast(96%)
+                outline: none
+                &:hover
+                    filter: invert(62%) sepia(74%) saturate(6770%) hue-rotate(202deg) brightness(99%) contrast(87%)
+            .slideshow button.prev
+                left: -60px
+                transform: scale(-1, 1)
+            .slideshow button.next
+                right: -60px
             .slideshow-items
                 position: relative
                 width: 100%
@@ -334,7 +349,7 @@ $feature-box-div-margin-bottom: 40px
                 box-shadow: 0 50px 50px -20px rgba(0,0,0,0.15), 0 0 30px 0 rgba(0,0,0,0.05)
                 border-radius: 6px
                 display: block
-                transition: opacity .3s ease-out .45s
+                transition: opacity .1s
             .item.active .item-image, .item.active .item-description
                 opacity: 1
                 z-index: 50
@@ -371,23 +386,10 @@ $feature-box-div-margin-bottom: 40px
                 text-align: center
                 width: 100%
                 align-self: flex-end
-            .controls button
-                top: 28px
-                position: absolute
-                color: #9597A3
-                outline: none
-                font-weight: 500
-                font-size: 18px
-                &:hover
-                    color: #2A7DEC
-            .controls button.prev
-                left: 0
-            .controls button.next
-                right: 0
             .controls ul
                 margin-top: 30px
                 list-style: none
-                display: none
+                display: block
             .controls ul li
                 display: inline-block
                 width: 72px
@@ -746,6 +748,8 @@ $feature-box-div-margin-bottom: 40px
                     width: 30%
                 .controls
                     width: 66%
+                .slideshow
+                    width: 90%
             #background
                 div.main2
                     height: 525px
@@ -765,3 +769,10 @@ $feature-box-div-margin-bottom: 40px
                     font-size: 28px
                     padding: 0 40px
                     border-width: 3px
+
+@media screen and (min-width: 1500px)
+    #home
+        #overflow
+            #dashboards
+                .slideshow
+                    width: 100%
