@@ -100,7 +100,7 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 				<div class="block micro">
 					<img src="/images/microservices.svg">
 					<div class="feature-des"><h2>Microservices</h2>
-						<p>Construct your ThingsBoard cluster and get maximum scalability and fault-tolerance with new microservices architecture. ThingsBoard also supports both cloud and on-premises deployments.</p>
+						<p>Construct your ThingsBoard cluster and get maximum scalability and fault-tolerance with microservices architecture. ThingsBoard also supports both cloud and on-premises deployments.</p>
 						<a id="read-more-button" href="/docs/reference/msa/">Read more<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
 					</div>
 				</div>
@@ -227,6 +227,8 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 						</div>
 					</div>
 					<div class="controls">
+						<button class="prev" onclick="slider.prevSlide();">Previous</button>
+						<button class="next" onclick="slider.nextSlide();">Next</button>
 						<ul>
 							<li class="control" data-index="0"></li>
 							<li class="control" data-index="1"></li>
@@ -404,7 +406,18 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 	nextSlide: () => { // Increment current slide and add active class
 	slider.reset();
 	if (current === items.length - 1) current = -1; // Check if current slide is last in array
+	console.log("CURRENT USING NEXT", items.length);
+	console.log("CURRENT USING NEXT", current);
 	current++;
+	controls[current].classList.add('active');
+	items[current].classList.add('active');
+	slider.transitionDelay(headerItems);
+	slider.transitionDelay(descriptionItems);
+	},
+	prevSlide: () => { // Increment current slide and add active class
+	slider.reset();
+	if (current === 0) current = items.length; // Check if current slide is last in array
+	current--;
 	controls[current].classList.add('active');
 	items[current].classList.add('active');
 	slider.transitionDelay(headerItems);

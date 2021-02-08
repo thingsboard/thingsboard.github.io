@@ -197,12 +197,13 @@ $feature-box-div-margin-bottom: 40px
                         position: relative
                         display: inline-block
                         .react
-                            width: 114%
+                            width: 167%
+                            max-width: 1031px
                             border-radius: unset
                             position: absolute
                             box-shadow: unset
                             z-index: -1
-                            right: -226px
+                            right: -576px
                             top: 0
                         div
                             width: 100%
@@ -212,7 +213,7 @@ $feature-box-div-margin-bottom: 40px
                             border-radius: 6px
                             z-index: -1
                             position: absolute
-                            box-shadow: 0 0 30px 0 rgba(0,0,0,0.3)
+                            box-shadow: 4px 0 30px 0 rgba(37,38,40,0.6)
                         .add-rule
                             width: 100%
                             margin-top: 90px
@@ -343,7 +344,6 @@ $feature-box-div-margin-bottom: 40px
                 width: 100%
                 margin-bottom: 32px
                 opacity: 0
-                transition: opacity .3s ease-out .45s
             .item-header
                 z-index: 10
             .vertical-part
@@ -367,11 +367,27 @@ $feature-box-div-margin-bottom: 40px
                 opacity: 1
             .controls
                 position: relative
-                text-align: right
                 z-index: 1000
+                text-align: center
+                width: 100%
+                align-self: flex-end
+            .controls button
+                top: 28px
+                position: absolute
+                color: #9597A3
+                outline: none
+                font-weight: 500
+                font-size: 18px
+                &:hover
+                    color: #2A7DEC
+            .controls button.prev
+                left: 0
+            .controls button.next
+                right: 0
             .controls ul
                 margin-top: 30px
                 list-style: none
+                display: none
             .controls ul li
                 display: inline-block
                 width: 72px
@@ -463,6 +479,12 @@ $feature-box-div-margin-bottom: 40px
         #img-button
             &.rule-button
                 position: relative
+            button
+                position: absolute
+                height: 100%
+                width: 72px
+                z-index: 1000
+                right: 0
             span
                 color: white
                 z-index: 1000
@@ -674,6 +696,9 @@ $feature-box-div-margin-bottom: 40px
                                 width: calc(100% - 122px)
                             img
                                 margin: 0 30px 0 0
+            #dashboards
+                .controls ul
+                    display: block
 
 @media screen and (min-width: 1025px)
     #home
@@ -719,6 +744,8 @@ $feature-box-div-margin-bottom: 40px
                 .item-description
                     margin: unset
                     width: 30%
+                .controls
+                    width: 66%
             #background
                 div.main2
                     height: 525px
