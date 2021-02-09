@@ -58,7 +58,7 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 				<div class="block">
 					<div class="feature-des"><h2>Provision and manage devices and assets</h2>
 						<p>Provision, monitor and control your IoT entities in secure way using rich server-side APIs. Define relations between your devices, assets, customers or any other entities.</p>
-						<a id="read-more-button" href="/docs/user-guide/entities-and-relations/">Read more<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
+						<a class="read-more-button" href="/docs/user-guide/entities-and-relations/">Read more<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
 					</div>
 					<div class="manage">
 					<img class="device-list" src="/images/device-list.svg">
@@ -73,7 +73,7 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 					</div>
 					<div class="feature-des"><h2>Collect and visualize data</h2>
 						<p>Collect and store telemetry data in scalable and fault-tolerant way. Visualize your data with built-in or custom widgets and flexible dashboards. Share dashboards with your customers.</p>
-						<a id="read-more-button" href="/docs/user-guide/visualization/">Read more<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
+						<a class="read-more-button" href="/docs/user-guide/visualization/">Read more<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
 					</div>
 				</div>
 			</div>
@@ -89,7 +89,7 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 				<div class="block dark">
 					<div class="feature-des"><h2>Process and React</h2>
 						<p>Define data processing rule chains. Transform and normalize your device data. Raise alarms on incoming telemetry events, attribute updates, device inactivity and user actions.</p>
-						<a id="read-more-button" href="/docs/user-guide/rule-engine-2-0/re-getting-started/">Read more<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
+						<a class="read-more-button" href="/docs/user-guide/rule-engine-2-0/re-getting-started/">Read more<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
 					</div>
 					<div class="process">
 						<img class="react" src="/images/react.svg">
@@ -101,7 +101,7 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 					<img src="/images/microservices.svg">
 					<div class="feature-des"><h2>Microservices</h2>
 						<p>Construct your ThingsBoard cluster and get maximum scalability and fault-tolerance with microservices architecture. ThingsBoard also supports both cloud and on-premises deployments.</p>
-						<a id="read-more-button" href="/docs/reference/msa/">Read more<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
+						<a class="read-more-button" href="/docs/reference/msa/">Read more<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
 					</div>
 				</div>
 			</div>
@@ -143,98 +143,54 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 		</main>
 	</section>
 
-	<section id="dashboards">
+	<section id="dashboard_description">
 		<main>
 			<div id="background">
 				<div class="dashboards"></div><div class="small9"></div><div class="small10"></div>
 			</div>
 			<h3>Real-Time IoT Dashboards</h3>
 			<p>ThingsBoard allows you to create rich IoT Dashboards for data visualization and remote device control in real-time. More than 30 customizable widgets allows you to build end-user custom dashboards for most IoT use-cases.</p>
-			<div class="content-width">
-				<div class="slideshow">
-					<button class="prev" onclick="slider.prevSlide();"><img src="images/slider-arrow.svg"></button>
-					<button class="next" onclick="slider.nextSlide();"><img src="images/slider-arrow.svg"></button>
-					<div class="slideshow-items">
-						<div class="item">
-							<div class="item-description">
-								<div class="item-header">
-									<span class="vertical-part">
-										<b><h2>Smart energy</h2></b>
-									</span>
-								</div>
-								<span class="vertical-part">
-									<b>
-										<p>Deliver and store data from smart meters in reliable and fault-tolerant way, visualize real-time and historical energy consumption data on customizable end-user dashboards, integrate with third-party analytics frameworks and solutions.</p>
-									    <a id="read-more-button" href="/smart-energy/">More information<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
-									</b>
-								</span>
-							</div>
-							<div class="item-image-container">
-								<a id="img-button" href="/smart-energy/"><span><div class="eye"><img src="images/eye-icon.svg">See more</div></span><img class="item-image" src="/images/smart-energy.png" /></a>
-							</div>
+			<div class="slider">
+				<div class="demo-dashboards-carousel">
+					<div class="dashboard-item" style="display: none;">
+						<div class="item-description">
+							<h2>Smart energy</h2>
+							<p>Deliver and store data from smart meters in reliable and fault-tolerant way, visualize real-time and historical energy consumption data on customizable end-user dashboards, integrate with third-party analytics frameworks and solutions.</p>
+							<a class="read-more-button dash" href="/smart-energy/">More information<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
 						</div>
-						<div class="item">
-							<div class="item-description">
-								<div class="item-header">
-									<span class="vertical-part">
-										<b><h2>Smart farming</h2></b>
-									</span>
-								</div>
-								<span class="vertical-part">
-									<b>
-										<p>Collect important indicators for your agricultural production such as weather conditions or facilities state via IoT sensors and visualize them using end-user customizable dashboards provided by ThingsBoard platform.</p>
-									    <a id="read-more-button" href="/smart-farming/">More information<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
-									</b>
-								</span>
-							</div>
-							<div class="item-image-container">
-								<a id="img-button" href="/smart-farming/"><span><div class="eye"><img src="images/eye-icon.svg">See more</div></span><img class="item-image" src="/images/smart-farming.png" /></a>
-							</div>
-						</div>
-						<div class="item">
-							<div class="item-description">
-								<div class="item-header">
-									<span class="vertical-part">
-										<b><h2>Fleet tracking</h2></b>
-									</span>
-								</div>
-								<span class="vertical-part">
-									<b>
-										<p>ThingsBoard platform allows to track vehicles state and alerts via various sensors, plot vehicle routes in real-time and browse their sensors reading history at the same time using customizable high quality widgets and dashboards.</p>
-									    <a id="read-more-button" href="/fleet-tracking/">More information<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
-									</b>
-								</span>
-							</div>
-							<div class="item-image-container">
-								<a id="img-button" href="/fleet-tracking/"><span><div class="eye"><img src="images/eye-icon.svg">See more</div></span><img class="item-image" src="/images/fleet-tracking.png" /></a>
-							</div>
-						</div>
-						<div class="item">
-							<div class="item-description">
-								<div class="item-header">
-									<span class="vertical-part">
-										<b><h2>Smart metering</h2></b>
-									</span>
-								</div>
-								<span class="vertical-part">
-									<b>
-										<p>Deliver and store data from smart meters in reliable and fault-tolerant way, visualize real-time and historical energy consumption data on customizable end-user dashboards, integrate with third-party analytics frameworks and solutions.</p>
-									    <a id="read-more-button" href="/smart-metering/">More information<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
-									</b>
-								</span>
-							</div>
-							<div class="item-image-container">
-								<a id="img-button" href="/smart-metering/"><span><div class="eye"><img src="images/eye-icon.svg">See more</div></span><img class="item-image" src="/images/smart-metering.png" /></a>
-							</div>
+						<div class="item-image-container">
+							<a class="img-button" href="/smart-energy/"><div class="overlay"><div class="eye"><img src="images/eye-icon.svg">See more</div></div><img class="item-image" src="/images/smart-energy.png"></a>
 						</div>
 					</div>
-					<div class="controls">
-						<ul>
-							<li class="control" data-index="0"></li>
-							<li class="control" data-index="1"></li>
-							<li class="control" data-index="2"></li>
-							<li class="control" data-index="3"></li>
-						</ul>
+					<div class="dashboard-item" style="display: none;">
+						<div class="item-description">
+							<h2>Smart farming</h2>
+							<p>Collect important indicators for your agricultural production such as weather conditions or facilities state via IoT sensors and visualize them using end-user customizable dashboards provided by ThingsBoard platform.</p>
+							<a class="read-more-button dash" href="/smart-farming/">More information<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
+						</div>
+						<div class="item-image-container">
+							<a class="img-button" href="/smart-farming/"><div class="overlay"><div class="eye"><img src="images/eye-icon.svg">See more</div></div><img class="item-image" src="/images/smart-farming.png" /></a>
+						</div>
+					</div>
+					<div class="dashboard-item" style="display: none;">
+						<div class="item-description">
+							<h2>Fleet tracking</h2>
+							<p>ThingsBoard platform allows to track vehicles state and alerts via various sensors, plot vehicle routes in real-time and browse their sensors reading history at the same time using customizable high quality widgets and dashboards.</p>
+							<a class="read-more-button dash" href="/fleet-tracking/">More information<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
+						</div>
+						<div class="item-image-container">
+							<a class="img-button" href="/fleet-tracking/"><div class="overlay"><div class="eye"><img src="images/eye-icon.svg">See more</div></div><img class="item-image" src="/images/fleet-tracking.png" /></a>
+						</div>
+					</div>
+					<div class="dashboard-item" style="display: none;">
+						<div class="item-description">
+							<h2>Smart metering</h2>
+							<p>Deliver and store data from smart meters in reliable and fault-tolerant way, visualize real-time and historical energy consumption data on customizable end-user dashboards, integrate with third-party analytics frameworks and solutions.</p>
+							<a class="read-more-button dash" href="/smart-metering/">More information<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
+						</div>
+						<div class="item-image-container">
+							<a class="img-button" href="/smart-metering/"><div class="overlay"><div class="eye"><img src="images/eye-icon.svg">See more</div></div><img class="item-image" src="/images/smart-metering.png" /></a>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -244,10 +200,10 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 	<section id="rule-engine">
 		<main>
 			<div class="rule">
-				<a id="img-button" class="rule-button" href="/docs/user-guide/rule-engine-2-0/re-getting-started/"><span><div class="eye"><img src="images/eye-icon.svg">See more</div></span><img src="images/demo/send-email-rule-chain.gif"></a>
+				<a class="rule-button img-button" href="/docs/user-guide/rule-engine-2-0/re-getting-started/"><div class="overlay"><div class="eye"><img src="images/eye-icon.svg">See more</div></div><img src="images/demo/send-email-rule-chain.gif"></a>
 				<div class="des"><h3>IoT Rule Engine</h3>
 					<p>ThingsBoard allows you to create complex <a href="/docs/user-guide/rule-engine-2-0/re-getting-started/">Rule Chains</a> to process data from your devices and match your application specific use cases.</p>
-					<a id="read-more-button" href="/docs/user-guide/rule-engine-2-0/re-getting-started/">Read more<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
+					<a class="read-more-button" href="/docs/user-guide/rule-engine-2-0/re-getting-started/">Read more<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
 				</div>
 			</div>
 		</main>
@@ -388,89 +344,6 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 </style>
 
 <script type="text/javascript">
-	const items = document.querySelectorAll('.item'),
-	controls = document.querySelectorAll('.control'),
-	headerItems = document.querySelectorAll('.item-header'),
-	descriptionItems = document.querySelectorAll('.item-description'),
-	activeDelay = 0,
-	interval = 5500;
-
-	let current = 0;
-
-	const slider = {
-	init: () => {
-	controls.forEach(control => control.addEventListener('click', (e) => { slider.clickedControl(e) }));
-	controls[current].classList.add('active');
-	items[current].classList.add('active');
-	},
-	nextSlide: () => { // Increment current slide and add active class
-	slider.reset();
-	if (current === items.length - 1) current = -1; // Check if current slide is last in array
-	console.log("CURRENT USING NEXT", items.length);
-	console.log("CURRENT USING NEXT", current);
-	current++;
-	controls[current].classList.add('active');
-	items[current].classList.add('active');
-	slider.transitionDelay(headerItems);
-	slider.transitionDelay(descriptionItems);
-	},
-	prevSlide: () => { // Increment current slide and add active class
-	slider.reset();
-	if (current === 0) current = items.length; // Check if current slide is last in array
-	current--;
-	controls[current].classList.add('active');
-	items[current].classList.add('active');
-	slider.transitionDelay(headerItems);
-	slider.transitionDelay(descriptionItems);
-	},
-	clickedControl: (e) => { // Add active class to clicked control and corresponding slide
-	slider.reset();
-	clearInterval(intervalF);
-
-	const control = e.target,
-	dataIndex = Number(control.dataset.index);
-
-	control.classList.add('active');
-	items.forEach((item, index) => {
-	if (index === dataIndex) { // Add active class to corresponding slide
-	item.classList.add('active');
-	}
-	})
-	current = dataIndex; // Update current slide
-	slider.transitionDelay(headerItems);
-	slider.transitionDelay(descriptionItems);
-	intervalF = setInterval(slider.nextSlide, interval); // Fire that bad boi back up
-	},
-	reset: () => { // Remove active classes
-	items.forEach(item => item.classList.remove('active'));
-	controls.forEach(control => control.classList.remove('active'));
-	},
-	transitionDelay: (items) => { // Set incrementing css transition-delay for .item-header & .item-description, .vertical-part, b elements
-	let seconds;
-
-	items.forEach(item => {
-	const children = item.childNodes; // .vertical-part(s)
-	let count = 1,
-	delay;
-
-	item.classList.value === 'item-header' ? seconds = .015 : seconds = .007;
-
-	children.forEach(child => { // iterate through .vertical-part(s) and style b element
-	if (child.classList) {
-	item.parentNode.classList.contains('active') ? delay = count * seconds + activeDelay : delay = count * seconds;
-	child.firstElementChild.style.transitionDelay = `${delay}s`; // b element
-	count++;
-	}
-	})
-	})
-	},
-	}
-
-	let intervalF = setInterval(slider.nextSlide, interval);
-	slider.init();
-</script>
-
-<script type="text/javascript">
 
 	jqueryDefer(initSlick);
 
@@ -518,13 +391,6 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 		$("#main-features main:nth-child(even) .image-wrapper, #main-features main:nth-child(odd) .content").inViewport(function(px){
 			if(px >= 80) {
 				$(this).addClass("animated bounceInLeft");
-				return true;
-			}
-		});
-
-		$("#dashboard_description main").inViewport(function(px){
-			if(px >= 100) {
-				$(this).addClass("animated zoomIn");
 				return true;
 			}
 		});

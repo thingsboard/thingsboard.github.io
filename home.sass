@@ -80,7 +80,7 @@ $feature-box-div-margin-bottom: 40px
                     display: none
     #overflow
         overflow: hidden
-        #intro, #manage, #react, #products, #dashboards, #rule-engine, #bottom-features
+        #intro, #manage, #react, #products, #dashboard_description, #rule-engine, #bottom-features
             color: #212529
             text-align: left
             h1
@@ -292,114 +292,71 @@ $feature-box-div-margin-bottom: 40px
                 margin-top: 56px
                 text-align: center
 
-        #dashboards
+        #dashboard_description
             margin-top: 186px
             margin-bottom: 120px
-            .content-width
+            .slider
                 margin: 78px auto
-                display: flex
-                align-items: center
-                flex-direction: column
-            .slideshow
                 position: relative
                 width: 100%
                 display: flex
                 flex-direction: column
                 justify-content: space-around
-            .slideshow button
-                top: 38%
+            .slider button.slick-prev, button.slick-next
                 position: absolute
                 filter: invert(100%) sepia(74%) saturate(108%) hue-rotate(175deg) brightness(90%) contrast(96%)
                 outline: none
+                background-image: url(/images/slider-arrow.svg)
+                width: 17px
+                height: 50px
                 &:hover
                     filter: invert(62%) sepia(74%) saturate(6770%) hue-rotate(202deg) brightness(99%) contrast(87%)
-            .slideshow button.prev
-                left: -60px
+            .slider button.slick-prev
+                left: -50px
+                top: calc(50% - 25px)
                 transform: scale(-1, 1)
-            .slideshow button.next
-                right: -60px
-            .slideshow-items
+            .slider button.slick-next
+                right: -50px
+            .slider button.slick-prev::before, .slider button.slick-next::before, .demo-dashboards-carousel ul li button::before
+                content: unset
+            .demo-dashboards-carousel
                 position: relative
                 width: 100%
-            .item
-                justify-content: space-between
-                display: table-column
-                align-items: center
-            .item.active
-                display: flex
+            .demo-dashboards-carousel ul li
+                width: unset
+                margin: 0 12px
+            .demo-dashboards-carousel ul li button
+                background: #E0E1E2
+                border-radius: 4px
+                width: 10px
+                height: 10px
+                padding: unset
+                margin: 8px 0
+            .demo-dashboards-carousel ul li:hover
+                button
+                    filter: invert(62%) sepia(74%) saturate(6770%) hue-rotate(202deg) brightness(99%) contrast(87%)
+            .demo-dashboards-carousel ul li.slick-active
+                button
+                    filter: invert(62%) sepia(74%) saturate(6770%) hue-rotate(202deg) brightness(99%) contrast(87%)
+            .slick-list
+                margin-bottom: 32px
+            .dashboard-item
                 flex-direction: column
+                justify-content: space-between
+                display: flex !important
+                align-items: center
             .item-image-container
                 position: relative
                 width: 100%
-            .item-image-container::before
-                content: ''
-                position: absolute
-                left: 0
-                border-radius: 6px
-                background: #EDF2F6
-                width: 100%
-                height: 100%
-                opacity: 0
-                z-index: 1
             .item-image
                 position: relative
                 width: 100%
                 height: auto
-                opacity: 0
-                box-shadow: 0 50px 50px -20px rgba(0,0,0,0.15), 0 0 30px 0 rgba(0,0,0,0.05)
                 border-radius: 6px
                 display: block
-                transition: opacity .1s
-            .item.active .item-image, .item.active .item-description
-                opacity: 1
-                z-index: 50
-            .item.active .item-image-container::before
-                opacity: .8
             .item-description
                 width: 100%
                 margin-bottom: 32px
-                opacity: 0
-            .item-header
-                z-index: 10
-            .vertical-part
-                overflow: hidden
-                display: inline-block
-            .vertical-part b
-                display: inline-block
-            .item-description .vertical-part b
-                opacity: 0
-                a
-                    z-index: 1000
-            .item-header .vertical-part b
-                transition: .5s
-            .item-description .vertical-part b
-                transition: .21s
-            .item.active .item-header .vertical-part b
-                transform: translateY(0)
-            .item.active .item-description .vertical-part b
-                transform: translateY(0)
-                transition: opacity .3s ease-out .45s
-                opacity: 1
-            .controls
-                position: relative
-                z-index: 1000
-                text-align: center
-                width: 100%
-                align-self: flex-end
-            .controls ul
-                margin-top: 30px
-                list-style: none
-                display: block
-            .controls ul li
-                display: inline-block
-                width: 72px
-                height: 4px
-                margin: 12px
-                border-radius: 2px
-                background: #E0E1E2
-                cursor: pointer
-            .controls ul li.active
-                background: #2A7DEC
 
         #rule-engine
             margin-bottom: 148px
@@ -453,9 +410,13 @@ $feature-box-div-margin-bottom: 40px
                             height: fit-content
                             margin: 0 0 18px
 
-        #read-more-button
+        .read-more-button
             position: relative
             transition-duration: 0.3s
+            &.dash
+                outline: none
+                .arrow
+                    left: 156px
             .arrow
                 transform: translate(0px)
                 transition-duration: 0.3s
@@ -478,16 +439,10 @@ $feature-box-div-margin-bottom: 40px
                 .third
                     transform: translate(30px)
 
-        #img-button
+        .img-button
             &.rule-button
                 position: relative
-            button
-                position: absolute
-                height: 100%
-                width: 72px
-                z-index: 1000
-                right: 0
-            span
+            .overlay
                 color: white
                 z-index: 1000
                 display: block
@@ -508,6 +463,7 @@ $feature-box-div-margin-bottom: 40px
                     position: absolute
                     bottom: 0
                     left: calc(50% - 60px)
+                    display: flex
                     img
                         margin-right: 10px
                         width: unset !important
@@ -698,9 +654,10 @@ $feature-box-div-margin-bottom: 40px
                                 width: calc(100% - 122px)
                             img
                                 margin: 0 30px 0 0
-            #dashboards
-                .controls ul
-                    display: block
+            #dashboard_description
+                .demo-dashboards-carousel ul li button
+                    width: 72px
+                    height: 4px
 
 @media screen and (min-width: 1025px)
     #home
@@ -738,21 +695,18 @@ $feature-box-div-margin-bottom: 40px
                         order: unset
                         width: calc(35% - 60px)
                         margin: unset
-            #dashboards
-                .item.active
+            #background
+                div.main2
+                    height: 525px
+            #dashboard_description
+                .dashboard-item
                     flex-direction: unset
                 .item-image-container
                     width: 66%
                 .item-description
-                    margin: unset
                     width: 30%
-                .controls
-                    width: 66%
-                .slideshow
+                .slider
                     width: 90%
-            #background
-                div.main2
-                    height: 525px
 
 @media screen and (min-width: 1250px)
     #home
@@ -773,6 +727,6 @@ $feature-box-div-margin-bottom: 40px
 @media screen and (min-width: 1500px)
     #home
         #overflow
-            #dashboards
-                .slideshow
+            #dashboard_description
+                .slider
                     width: 100%
