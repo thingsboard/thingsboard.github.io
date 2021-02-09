@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 assignees:
-- nick
+* nick
 title: LwM2M Device API Reference
 description: Supported LwM2M API Reference for IoT Devices 
 started:
@@ -26,48 +26,57 @@ started:
 * TOC
 {:toc}
 
-## Getting started
+# Getting started
 ### LwM2M basics: architecture, terminology,  definitions.
 [LwM2M](https://en.wikipedia.org/wiki/OMA_LWM2M) is a device management protocol designed for sensor networks and the demands of a machine-to-machine (M2M) environment. 
 For simplicity, we will provision the device manually using the UI. 
-
-- about LwM2M [here](https://omaspecworks.org/what-is-oma-specworks/iot/lightweight-m2m-lwm2m/). 
- 
+* about LwM2M [here](https://omaspecworks.org/what-is-oma-specworks/iot/lightweight-m2m-lwm2m/).  
 {% include images-gallery.html imageCollection="started" showListImageTitles="true" %} 
-
 The network architecture used by the LwM2M protocol operates on a client-server basis and includes three elements: the LwM2M server, the LwM2M download server, and the LwM2M client, as shown in the figure above.
-<b>You can find more information:</b>
-- the LwM2M specification is freely available [here](http://openmobilealliance.org/wp/index.html).
-- the LwM2M Technical Specification Transport Bindings (v1.2) [here](http://www.openmobilealliance.org/release/LightweightM2M/V1_2-20201110-A/OMA-TS-LightweightM2M_Transport-V1_2-20201110-A.pdf).
-- about CoAP Transport Bindings [here](http://www.openmobilealliance.org/release/LightweightM2M/V1_2-20201110-A/OMA-TS-LightweightM2M_Transport-V1_2-20201110-A.pdf#page=62). 
-- about binding mode: does the device is always connected or not, does it uses UDP: example [here](http://www.openmobilealliance.org/release/LightweightM2M/V1_2-20201110-A/OMA-TS-LightweightM2M_Transport-V1_2-20201110-A.pdf#page=44) 
+
+**You can find more information:**
+* about `LwM2M specification` is freely available [here](http://openmobilealliance.org/wp/index.html).
+* about `LwM2M Technical Specification Transport Bindings` (v1.2) [here](http://www.openmobilealliance.org/release/LightweightM2M/V1_2-20201110-A/OMA-TS-LightweightM2M_Transport-V1_2-20201110-A.pdf).
+* about `CoAP Transport Bindings` [here](http://www.openmobilealliance.org/release/LightweightM2M/V1_2-20201110-A/OMA-TS-LightweightM2M_Transport-V1_2-20201110-A.pdf#page=62). 
+* about `binding mode`: does the device is always connected or not, does it uses UDP: example [here](http://www.openmobilealliance.org/release/LightweightM2M/V1_2-20201110-A/OMA-TS-LightweightM2M_Transport-V1_2-20201110-A.pdf#page=44) 
 and [here](http://www.openmobilealliance.org/release/LightweightM2M/V1_2-20201110-A/OMA-TS-LightweightM2M_Transport-V1_2-20201110-A.pdf#page=63).
-```shell
-The URIs indicate the way how messages are transported (which is mapped to the binding modes).
--- U (UDP)
--- T (TCP)
--- S (SMS)
--- N (Non-IP)
--- The LwM2M Server URI encodes the binding mode in the URI scheme.
-coap(s):// -> U
-coap(s)+tcp// -> T
-For S you have a tel URI scheme and for N it depends what non-IP transport you use.
+
+```ruby
+    The URIs indicate the way how messages are transported (which is mapped to the binding modes).
+    - U (UDP)
+    - T (TCP)
+    - S (SMS)
+    - N (Non-IP)
+    - The LwM2M Server URI encodes the binding mode in the URI scheme.
+    coap(s):// -> U
+    coap(s)+tcp// -> T
+    For S you have a tel URI scheme and for N it depends what non-IP transport you use.
 ```
-- about LwM2M Security and Security Requirements [here](http://www.openmobilealliance.org/release/LightweightM2M/V1_2-20201110-A/OMA-TS-LightweightM2M_Transport-V1_2-20201110-A.pdf#page=18).
-- about LwM2M DTLS-based Security [here](http://www.openmobilealliance.org/release/LightweightM2M/V1_2-20201110-A/OMA-TS-LightweightM2M_Transport-V1_2-20201110-A.pdf#page=19).
-- about LwM2M Interface: <b>Bootstrap Interface</b>, <b>Registration Interface</b>, <i>Device Management & Service Enablement Interface</i>, <i>Information Reporting Interface (Observe)</i>, 
+
+* about `LwM2M Security` and Security Requirements [here](http://www.openmobilealliance.org/release/LightweightM2M/V1_2-20201110-A/OMA-TS-LightweightM2M_Transport-V1_2-20201110-A.pdf#page=18).
+* about `LwM2M DTLS-based Security` [here](http://www.openmobilealliance.org/release/LightweightM2M/V1_2-20201110-A/OMA-TS-LightweightM2M_Transport-V1_2-20201110-A.pdf#page=19).
+* about `LwM2M Interface:` **Bootstrap Interface**, **Registration Interface**, <i>Device Management & Service Enablement Interface</i>, <i>Information Reporting Interface (**Observe**)</i>, 
 <i>Queue Mode Operation</i>, <i>Registration Update Trigger</i>, <i>Bootstrap Trigger</i> [here](http://www.openmobilealliance.org/release/LightweightM2M/V1_2-20201110-A/OMA-TS-LightweightM2M_Transport-V1_2-20201110-A.pdf#page=41). 
-- about Endpoint Client Name [here](http://www.openmobilealliance.org/release/LightweightM2M/V1_2-20201110-A/OMA-TS-LightweightM2M_Transport-V1_2-20201110-A.pdf#page=22) or 
+* about `Endpoint Client Name` [here](http://www.openmobilealliance.org/release/LightweightM2M/V1_2-20201110-A/OMA-TS-LightweightM2M_Transport-V1_2-20201110-A.pdf#page=22) or 
 [here](http://www.openmobilealliance.org/release/LightweightM2M/V1_2-20201110-A/OMA-TS-LightweightM2M_Transport-V1_2-20201110-A.pdf#page=31).
 or [here](http://www.openmobilealliance.org/release/LightweightM2M/V1_2-20201110-A/OMA-TS-LightweightM2M_Transport-V1_2-20201110-A.pdf#page=36).
 
 ### Configuration and start transport LwM2M
-#### LwM2M Thingsboard Security configuration:
+#### LwM2M Thingsboard Security configuration
+Thingsboard supports **4 LwM2M Security mode simultaneously**.
 
-Thingsboard supports <b>8</b> LwM2M servers simultaneously.
-<b>4</b> LwM2M Servers, each with one of 4 security modes and 
+```ruby
+    - 0: Pre-Shared Key mode + 3: NoSec mode
+    - 1: Raw Public Key mode + 3: NoSec mode
+    - 2: Certificate mode + 3: NoSec mode
+    - 3: NoSec mode (always runs when starting one of the security modes {0, 1, 2})   
+```
 
-<b>4</b> LwM2M Bootstrap-Servers, each with one of 4 security modes.
+Thingsboard supports **6 LwM2M servers simultaneously**.
+
+* LwM2M Servers **3, each with one of 4 security modes** {0...3} and 
+
+* LwM2M Bootstrap-Servers **3, each with one of 4 security modes.**
 
 Thingsboard, through its configuration settings, also allows you to choose to work with either one of the servers options, or selectively.
 
@@ -75,23 +84,45 @@ The Security Mode Resource in the Security Object determines what credentials ar
 the LwM2M Server or LwM2M Bootstrap-Server, respectively. 
 
 Currently five security modes are defined: [namely](http://www.openmobilealliance.org/release/LightweightM2M/V1_2-20201110-A/OMA-TS-LightweightM2M_Transport-V1_2-20201110-A.pdf#page=21).
-- about Credential Types LwM2M [5.2.9. Credential Types](http://www.openmobilealliance.org/release/LightweightM2M/V1_2-20201110-A/OMA-TS-LightweightM2M_Transport-V1_2-20201110-A.pdf#page=23).
+* about Credential Types LwM2M [5.2.9. Credential Types](http://www.openmobilealliance.org/release/LightweightM2M/V1_2-20201110-A/OMA-TS-LightweightM2M_Transport-V1_2-20201110-A.pdf#page=23).
+
 #### Start transport LwM2M 
-```shell
+* start transport LwM2M with Server without Bootstrap-Server
+```
 thingsboard/application/src/main/resources/thingsboard.yml
 ...
     lwm2m:
         enabled: "${LWM2M_ENABLED:true}"
+        bootstrap:
+            enable: "${BOOTSTRAP:false}"
 ...
 ```
-#### LwM2M Server configuration
-LwM2M transport Server supports from <b>1</b> to <b>4</b> servers (and / or):
-##### NoSec mode
-- <b>no security</b> communications:
+* start transport LwM2M with Server and Bootstrap-Server
+```
+thingsboard/application/src/main/resources/thingsboard.yml
+...
+    lwm2m:
+        enabled: "${LWM2M_ENABLED:true}"
+        bootstrap:
+            enable: "${BOOTSTRAP:true}"
+...
+```
+* do not start transport  LwM2M
+```
+thingsboard/application/src/main/resources/thingsboard.yml
+...
+    lwm2m:
+        enabled: "${LWM2M_ENABLED:false}"
+...
+```
+#### NoSec mode
+* **no security** communications:
  ```json
  {"3": "NoSec mode"}
  ```
-```shell
+##### LwM2M Server configuration
+LwM2M transport Server supports from **1** to **3** servers (and / or):
+```
 thingsboard/application/src/main/resources/thingsboard.yml
 ...
     lwm2m:
@@ -103,13 +134,24 @@ thingsboard/application/src/main/resources/thingsboard.yml
             bind_port_no_sec_x509: "${LWM2M_BIND_PORT_NO_SEC_X509:5689}"
 ...
 ```
-##### Pre-Shared Key mode
-- about Pre-Shared Keys LwM2M [5.2.9.1. Pre-Shared Keys](http://www.openmobilealliance.org/release/LightweightM2M/V1_2-20201110-A/OMA-TS-LightweightM2M_Transport-V1_2-20201110-A.pdf#page=23).
-- pre-shared keys for secure DTLS <b>PSK</b>  communications:
+##### LwM2M Bootstrap-Server configuration
+LwM2M transport Bootstrap-Server supports from **1** to **3** servers (and / or).
+##### LwM2M Server configuration
+##### LwM2M Device create and configuration
+##### LwM2M Profile create and configuration
+
+#### Pre-Shared Key mode
 ```json
 {"0": "Pre-Shared Key mode"}
 ```
-```shell
+* about Pre-Shared Keys LwM2M [5.2.9.1. Pre-Shared Keys](http://www.openmobilealliance.org/release/LightweightM2M/V1_2-20201110-A/OMA-TS-LightweightM2M_Transport-V1_2-20201110-A.pdf#page=23).
+* pre-shared keys for secure DTLS **PSK**  communications:
+The "Public Key or Identity" Resource MUST be used to store the PSK identity, described in [RFC7925](https://www.ietf.org/rfc/rfc7925.txt).
+Information about the current status of this document, any errata, and how to provide feedback on it may be obtained at  [RFC7925  (TLS/DTLS)](http://www.rfc-editor.org/info/rfc7925).
+Clients and Servers MUST support arbitrary PSK Identities of up to 128 bytes, as mandated in [RFC7925](https://www.ietf.org/rfc/rfc7925.txt).
+
+##### LwM2M Server configuration
+```
 thingsboard/application/src/main/resources/thingsboard.yml
 ...
     lwm2m:
@@ -122,11 +164,16 @@ thingsboard/application/src/main/resources/thingsboard.yml
                 private_s: "${LWM2M_SERVER_PRIVATE_S:274671fe40ce937b8a6352cf0a418e8a39e4bf0bb9bf74c910db953c20c73802}"
 ...
 ```
-After start server (<b>PSK</b> communications) and create private key:
-```shell
+After start server (**PSK** communications) and create private key:
+```
  Server uses PSK -> private key : 
   security key : [3041020100301306072a8648ce3d020106082a8648ce3d030107042730250201010420274671fe40ce937b8a6352cf0a418e8a39e4bf0bb9bf74c910db953c20c73802] 
 ```
+##### LwM2M Bootstrap-Server configuration:
+
+##### LwM2M Server configuration
+
+##### LwM2M Device create and configuration
 Example   value  for Client (Pre-Shared Key mode):
  ```json
  {
@@ -139,19 +186,17 @@ Example   value  for Client (Pre-Shared Key mode):
    }
 }
  ```
-The "Public Key or Identity" Resource MUST be used to store the PSK identity, described in [RFC7925](https://www.ietf.org/rfc/rfc7925.txt).
-Information about the current status of this document, any errata, and how to provide feedback on it may be obtained at  [RFC7925  (TLS/DTLS)](http://www.rfc-editor.org/info/rfc7925).
-Clients and Servers MUST support arbitrary PSK Identities of up to 128 bytes, as mandated in [RFC7925](https://www.ietf.org/rfc/rfc7925.txt).
-Example value for "Identity"
-To DO
+##### LwM2M Profile create and configuration
 
-##### Raw Public Key mode
-- about Raw Public Keys LwM2M [5.2.9.2. Raw Public Keys](http://www.openmobilealliance.org/release/LightweightM2M/V1_2-20201110-A/OMA-TS-LightweightM2M_Transport-V1_2-20201110-A.pdf#page=24).
-- private key and certificate for DTLS <b>RPK</b> communications:
+
+#### Raw Public Key mode
+* about Raw Public Keys LwM2M [5.2.9.2. Raw Public Keys](http://www.openmobilealliance.org/release/LightweightM2M/V1_2-20201110-A/OMA-TS-LightweightM2M_Transport-V1_2-20201110-A.pdf#page=24).
+* private key and certificate for DTLS **RPK** communications:
  ```json
  {"1": "Raw Public Key mode"}
  ```
-```shell
+##### LwM2M Server configuration
+```
 thingsboard/application/src/main/resources/thingsboard.yml
 ...
     lwm2m:
@@ -166,8 +211,8 @@ thingsboard/application/src/main/resources/thingsboard.yml
                 private_s: "${LWM2M_SERVER_PRIVATE_S:274671fe40ce937b8a6352cf0a418e8a39e4bf0bb9bf74c910db953c20c73802}"
 ...
 ```
-After start server (<b>RPK</b> communications) and create public and private key:
-```shell
+After start server (**RPK** communications) and create public and private key:
+```
 Server uses RPK : 
  Elliptic Curve parameters  : [secp256r1 [NIST P-256, X9.62 prime256v1] (1.2.840.10045.3.1.7)] 
  Public x coord : [405354ea8893471d9296afbc8b020a5c6201b0bb25812a53b849d4480fa5f069] 
@@ -175,13 +220,22 @@ Server uses RPK :
  Public Key (Hex): [3059301306072a8648ce3d020106082a8648ce3d03010703420004405354ea8893471d9296afbc8b020a5c6201b0bb25812a53b849d4480fa5f06930c9237e946a3a1692c1cafaa01a238a077f632c99371348337512363f28212b] 
  Private Key (Hex): [3041020100301306072a8648ce3d020106082a8648ce3d030107042730250201010420274671fe40ce937b8a6352cf0a418e8a39e4bf0bb9bf74c910db953c20c73802]
 ```
-##### Certificate mode
-- about X.509 Certificates Keys LwM2M [5.2.9.3. X.509 Certificates](http://www.openmobilealliance.org/release/LightweightM2M/V1_2-20201110-A/OMA-TS-LightweightM2M_Transport-V1_2-20201110-A.pdf#page=25).
-- <b>X.509</b> communications:
+##### LwM2M Bootstrap-Server configuration:
+
+##### LwM2M Server configuration
+
+##### LwM2M Device create and configuration
+
+##### LwM2M Profile create and configuration
+
+#### Certificate mode
+* about X.509 Certificates Keys LwM2M [5.2.9.3. X.509 Certificates](http://www.openmobilealliance.org/release/LightweightM2M/V1_2-20201110-A/OMA-TS-LightweightM2M_Transport-V1_2-20201110-A.pdf#page=25).
+* **X.509** communications:
   ```json
   {"2": "Certificate mode"}
   ```
-```shell
+ ##### LwM2M Server configuration
+```
 thingsboard/application/src/main/resources/thingsboard.yml
 ...
     lwm2m:
@@ -201,17 +255,24 @@ thingsboard/application/src/main/resources/thingsboard.yml
 ...
 ```
 
-After start server (<b>X509/b> communications) and read certificate from serverKeyStore.jks:
+After start server (**X509/b> communications) and read certificate from serverKeyStore.jks:
 
-```shell
+```
 Server uses X509 : 
  X509 Certificate (Hex): [308202b93082025ea003020102020828c8227829593afc300a06082a8648ce3d04030230793119301706035504030c106c6f63616c686f737420726f6f74434131143012060355040b0c0b5468696e6773626f61726431143012060355040a0c0b5468696e6773626f617264310d300b06035504070c044b7969763114301206035504080c0b4b796976204f626c617374310b3009060355040613025541301e170d3231303132383131313135385a170d3232303132383131313135385a30793119301706035504030c106c6f63616c686f73742073657276657231143012060355040b0c0b5468696e6773626f61726431143012060355040a0c0b5468696e6773626f617264310d300b06035504070c044b7969763114301206035504080c0b4b796976204f626c617374310b30090603550406130255413059301306072a8648ce3d020106082a8648ce3d030107034200048e086784254cce72b85769b0fec08b0c7240dd332f8bedbf7125f69bd0cccb91e05936a296910ece9cfc49de1b4e621bcc185bfc2c9b87d17441f48503374cafa381cf3081cc3081aa0603551d230481a230819f8014158ea631c13353ff398cd1a0d72effabf62f8212a17da47b30793119301706035504030c106c6f63616c686f737420726f6f74434131143012060355040b0c0b5468696e6773626f61726431143012060355040a0c0b5468696e6773626f617264310d300b06035504070c044b7969763114301206035504080c0b4b796976204f626c617374310b300906035504061302554182085ef53a90aa7cdc14301d0603551d0e04160414cdfe3005f5edb0a378e9e917b35bd1091c18c498300a06082a8648ce3d0403020349003046022100835c8a5c8e1fb031aa4e582660c4c5cb176364a7a2c05d93506028b0864f0a87022100bad537b98e46fa56c0d5d9cb8a75c0ff9c83a3c2f2f6dcf1f78cbc5a02813e09] 
  Private Key (Hex): [308193020100301306072a8648ce3d020106082a8648ce3d0301070479307702010104200b7c6f6ed87fdb5ed3465ae0250d2f1327892dbe2aa247ada55789cbebf72f94a00a06082a8648ce3d030107a144034200048e086784254cce72b85769b0fec08b0c7240dd332f8bedbf7125f69bd0cccb91e05936a296910ece9cfc49de1b4e621bcc185bfc2c9b87d17441f48503374caf]
 ```
+##### LwM2M Bootstrap-Server configuration:
+
+##### LwM2M Server configuration
+
+##### LwM2M Device create and configuration
+
+##### LwM2M Profile create and configuration
 
 #### LwM2M Bootstrap-Server configuration:
-- start transport LwM2M with Bootstrap-Server
-```shell
+* start transport LwM2M with Bootstrap-Server
+```
 thingsboard/application/src/main/resources/thingsboard.yml
 ...
     lwm2m:
@@ -219,10 +280,10 @@ thingsboard/application/src/main/resources/thingsboard.yml
               enable: "${BOOTSTRAP:true}"
 ...
 ```
-LwM2M transport Bootstrap-Server supports from <b>1</b> to <b>4</b> servers (and / or):
+LwM2M transport Bootstrap-Server supports from **1** to **4** servers (and / or):
 ##### NoSec mode
-- <b>no security</b> communications: 
-```shell
+* **no security** communications: 
+```
 thingsboard/application/src/main/resources/thingsboard.yml
 ...
     lwm2m:
@@ -235,8 +296,8 @@ thingsboard/application/src/main/resources/thingsboard.yml
 ...
 ```
 ##### Pre-Shared Key mode
-- pre-shared keys for secure DTLS <b>PSK</b> communications: 
-```shell
+* pre-shared keys for secure DTLS **PSK** communications: 
+```
 thingsboard/application/src/main/resources/thingsboard.yml
 ...
     lwm2m:
@@ -252,9 +313,9 @@ thingsboard/application/src/main/resources/thingsboard.yml
 
 
 ##### Raw Public Key mode
-- private key and certificate for DTLS <b>RPK</b> communications:
+* private key and certificate for DTLS **RPK** communications:
  
-```shell
+```
 thingsboard/application/src/main/resources/thingsboard.yml
 ...
     lwm2m:
@@ -270,8 +331,8 @@ thingsboard/application/src/main/resources/thingsboard.yml
                  private_s: "${LWM2M_SERVER_PRIVATE_S_BS:9dbdbb073fc63570693a9aaf1013414e261c571f27e27fc6a8c1c2ad9347875a}"
 ...
 ```
-After start server (<b>RPK</b> communications) and create public and private key:
-```shell
+After start server (**RPK** communications) and create public and private key:
+```
 Bootstrap uses RPK : 
  Elliptic Curve parameters  : [secp256r1 [NIST P-256, X9.62 prime256v1] (1.2.840.10045.3.1.7)] 
  Public x coord : [993ef2b698c6a9c0c1d8be78b13a9383c0854c7c7c7a504d289b403794648183] 
@@ -280,9 +341,9 @@ Bootstrap uses RPK :
  Private Key (Hex): [3041020100301306072a8648ce3d020106082a8648ce3d0301070427302502010104209dbdbb073fc63570693a9aaf1013414e261c571f27e27fc6a8c1c2ad9347875a]
 ```
 ##### Certificate mode
-- <b>X.509</b> communications:
+* **X.509** communications:
  
-```shell
+```
 thingsboard/application/src/main/resources/thingsboard.yml
 ...
     lwm2m:
@@ -303,9 +364,9 @@ thingsboard/application/src/main/resources/thingsboard.yml
 ...
 ```
 
-After start server (<b>X509/b> communications) and read certificate from serverKeyStore.jks:
+After start server (**X509/b> communications) and read certificate from serverKeyStore.jks:
 
-```shell
+```
 BootStrap uses X509 : 
  X509 Certificate (Hex): [308202bb30820261a0030201020208d8248857bfa14dbf300a06082a8648ce3d04030230793119301706035504030c106c6f63616c686f737420726f6f74434131143012060355040b0c0b5468696e6773626f61726431143012060355040a0c0b5468696e6773626f617264310d300b06035504070c044b7969763114301206035504080c0b4b796976204f626c617374310b3009060355040613025541301e170d3231303132383131313135385a170d3232303132383131313135385a307c311c301a06035504030c136c6f63616c686f737420626f6f74737472617031143012060355040b0c0b5468696e6773626f61726431143012060355040a0c0b5468696e6773626f617264310d300b06035504070c044b7969763114301206035504080c0b4b796976204f626c617374310b30090603550406130255413059301306072a8648ce3d020106082a8648ce3d030107034200048e1890ce4d9467180bfb36e36e143efeac4090a6b148b206808212fa06721294669d3bdb20b94dc007d3dca99ea80bc33d6c6d5aa73d11b41398866d642295c1a381cf3081cc3081aa0603551d230481a230819f8014158ea631c13353ff398cd1a0d72effabf62f8212a17da47b30793119301706035504030c106c6f63616c686f737420726f6f74434131143012060355040b0c0b5468696e6773626f61726431143012060355040a0c0b5468696e6773626f617264310d300b06035504070c044b7969763114301206035504080c0b4b796976204f626c617374310b300906035504061302554182085ef53a90aa7cdc14301d0603551d0e04160414a3a12d8e61d21c468760adb23051c345e08575e6300a06082a8648ce3d040302034800304502200a5bd0dd60352373c4f62384b462aa79149066514e010e6f2a2ddfedb37961a20221008c21921bb0d186097cfa58dbe29f5c17d9211275f66c28a0c5878321b12b84fd] 
  Private Key (Hex): [308193020100301306072a8648ce3d020106082a8648ce3d030107047930770201010420b5426e3ec61e9848087191d79ecee14cd6426a2ef6263b8d2a031f8ffeb9630fa00a06082a8648ce3d030107a144034200048e1890ce4d9467180bfb36e36e143efeac4090a6b148b206808212fa06721294669d3bdb20b94dc007d3dca99ea80bc33d6c6d5aa73d11b41398866d642295c1]
@@ -333,7 +394,7 @@ In order to setup one of those tools, you can use instructions in our [Create an
 
 In order to publish telemetry data to ThingsBoard server node, send PUBLISH message to the following topic:
  
-```shell
+```
 v1/devices/me/telemetry
 ```
 
@@ -381,8 +442,7 @@ ThingsBoard attributes API allows devices to
 ##### Publish attribute update to the server
 
 In order to publish client-side device attributes to ThingsBoard server node, send PUBLISH message to the following topic:
-
-```shell
+```
 v1/devices/me/attributes
 ```
 
@@ -396,14 +456,14 @@ C,new-attributes-values.json,json,resources/new-attributes-values.json,/docs/ref
 
 In order to request client-side or shared device attributes to ThingsBoard server node, send PUBLISH message to the following topic:
 
-```shell
+```
 v1/devices/me/attributes/request/$request_id
 ```
 
 where **$request_id** is your integer request identifier.
 Before sending PUBLISH message with the request, client need to subscribe to 
 
-```shell
+```
 v1/devices/me/attributes/response/+
 ```
 
@@ -423,7 +483,7 @@ However, it is still possible to have same keys for client, shared or even serve
 
 In order to subscribe to shared device attribute changes, send SUBSCRIBE message to the following topic:
 
-```shell
+```
 v1/devices/me/attributes
 ```
 
@@ -444,13 +504,13 @@ B,MQTT.js,shell,resources/mqtt-js-attributes-subscribe.sh,/docs/reference/resour
 
 In order to subscribe to RPC commands from the server, send SUBSCRIBE message to the following topic:
 
-```shell
+```
 v1/devices/me/rpc/request/+
 ```
 
 Once subscribed, the client will receive individual commands as a PUBLISH message to the corresponding topic:
 
-```shell
+```
 v1/devices/me/rpc/request/$request_id
 ```
 
@@ -458,7 +518,7 @@ where **$request_id** is an integer request identifier.
 
 The client should publish the response to the following topic:
 
-```shell
+```
 v1/devices/me/rpc/response/$request_id
 ```
 
@@ -474,14 +534,14 @@ B,mqtt-js-rpc-from-server.js,javascript,resources/mqtt-js-rpc-from-server.js,/do
 
 In order to send RPC commands to server, send PUBLISH message to the following topic:
 
-```shell
+```
 v1/devices/me/rpc/request/$request_id
 ```
 
 where **$request_id** is an integer request identifier.
 The response from server will be published to the following topic:
 
-```shell
+```
 v1/devices/me/rpc/response/$request_id
 ```
 
@@ -499,7 +559,7 @@ Please see the corresponding article to get more information about the [Claiming
 
 In order to initiate claiming device, send PUBLISH message to the following topic:
 
-```shell
+```
 v1/devices/me/claim
 ```
 
@@ -518,7 +578,7 @@ Please see the corresponding article to get more information about the [Device p
 
 In order to initiate device provisioning, send Provisioning request to the following topic:
  
-```shell
+```
 /provision
 ```
 
