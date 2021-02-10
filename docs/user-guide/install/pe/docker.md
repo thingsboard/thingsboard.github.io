@@ -306,7 +306,7 @@ Open docker-compose.yml and change version from **3.1.0PE** to **{{ site.release
 Then call the following commands:
 
 ```
-sudo sh -c "echo '3.1.0' > ~/.mytbpe-data/.upgradeversion"
+sudo sh -c "echo '3.1.0PE' > ~/.mytbpe-data/.upgradeversion"
 docker-compose run mytbpe upgrade-tb.sh
 ```
 {: .copy-code}
