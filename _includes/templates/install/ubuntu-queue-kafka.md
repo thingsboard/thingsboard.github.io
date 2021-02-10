@@ -7,7 +7,7 @@
 Kafka uses [ZooKeeper](https://zookeeper.apache.org/) so you need to first install ZooKeeper server:
 
 ```text
-sudo apt install zookeeper
+sudo apt-get install zookeeper
 ```
 {: .copy-code}
 
