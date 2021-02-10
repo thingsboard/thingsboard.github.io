@@ -1,9 +1,14 @@
 ---
 layout: docwithnav
 assignees:
-* nick
+- nick
 title: LwM2M Device API Reference
-description: Supported LwM2M API Reference for IoT Devices 
+description: Supported LwM2M API Reference for IoT Devices
+
+step1:
+    0:
+        image: /images/user-guide/oauth-2-support/1-create-credentials.png
+
 started:
     0:
         image: /images/lwm2m/architecture.jpg 
@@ -21,24 +26,62 @@ started:
         image: /images/lwm2m/relations_access_control_object_other_objects.jpg 
         title: 'access control object LwM2M.'
 
+profileNoSec_create:
+    0:
+        image: /images/lwm2m/noSec_profile_create_Step_1.png 
+        title: 'start create profile LwM2M.'    
+    1:
+        image: /images/lwm2m/noSec_profile_create_Step_2.png 
+        title: 'input the name of device profile (for example: "lwm2mProfileNoSec").'       
+    2:
+        image: /images/lwm2m/noSec_profile_create_Step_3.png 
+        title: 'go to the "Transport configuration" tab and select the type of device profile.'    
+    3:
+        image: /images/lwm2m/noSec_profile_create_Step_4.png 
+        title: 'save this device profile: click the "Add" button.'    
+
+
+profileNoSec_edit:
+    1:
+        image: /images/lwm2m/noSec_profile_edit_Step_1.png 
+        title: 'Select with the name of the device profile to change the configuration.'    
+    2:
+        image: /images/lwm2m/noSec_profile_edit_Step_2_3.png 
+        title: 'Select tab "Transport configuration" and click button "Toggle edit mode".'       
+
+profileNoSec_edit_typeAfterConnect:      
+    1:
+        image: /images/lwm2m/noSec_profile_edit_Step_3_1.png 
+        title: 'configuration number 1 selected.'    
+    2:
+        image: /images/lwm2m/noSec_profile_edit_Step_3_2.png 
+        title: 'configuration number 2 selected.'       
+    3:
+        image: /images/lwm2m/noSec_profile_edit_Step_3_3.png 
+        title: 'configuration number 3 selected.'    
+
 ---
 
 * TOC
 {:toc}
 
-# Getting started
+## Getting started
+{% include images-gallery.html imageCollection="step1" preview="false" max-width="100%" %}
 ### LwM2M basics: architecture, terminology,  definitions.
 [LwM2M](https://en.wikipedia.org/wiki/OMA_LWM2M) is a device management protocol designed for sensor networks and the demands of a machine-to-machine (M2M) environment. 
-For simplicity, we will provision the device manually using the UI. 
-* about LwM2M [here](https://omaspecworks.org/what-is-oma-specworks/iot/lightweight-m2m-lwm2m/).  
-{% include images-gallery.html imageCollection="started" showListImageTitles="true" %} 
-The network architecture used by the LwM2M protocol operates on a client-server basis and includes three elements: the LwM2M server, the LwM2M download server, and the LwM2M client, as shown in the figure above.
+For simplicity, we will manually provision the device using the UI.
+* about LwM2M [here](https://omaspecworks.org/what-is-oma-specworks/iot/lightweight-m2m-lwm2m/). 
+ 
+**The network architecture** used by the LwM2M protocol operates on a client-server basis and includes **three elements**: the LwM2M **server**, the LwM2M **bootstrap/download server**, and the LwM2M **client**, as shown in the next figure.
+
+    {% include images-gallery.html imageCollection="started" showListImageTitles="true" %} 
+
 
 **You can find more information:**
 * about `LwM2M specification` is freely available [here](http://openmobilealliance.org/wp/index.html).
 * about `LwM2M Technical Specification Transport Bindings` (v1.2) [here](http://www.openmobilealliance.org/release/LightweightM2M/V1_2-20201110-A/OMA-TS-LightweightM2M_Transport-V1_2-20201110-A.pdf).
 * about `CoAP Transport Bindings` [here](http://www.openmobilealliance.org/release/LightweightM2M/V1_2-20201110-A/OMA-TS-LightweightM2M_Transport-V1_2-20201110-A.pdf#page=62). 
-* about `binding mode`: does the device is always connected or not, does it uses UDP: example [here](http://www.openmobilealliance.org/release/LightweightM2M/V1_2-20201110-A/OMA-TS-LightweightM2M_Transport-V1_2-20201110-A.pdf#page=44) 
+* about `binding mode`: whether the device is always connected or not, whether it uses UDP: example [here](http://www.openmobilealliance.org/release/LightweightM2M/V1_2-20201110-A/OMA-TS-LightweightM2M_Transport-V1_2-20201110-A.pdf#page=44) 
 and [here](http://www.openmobilealliance.org/release/LightweightM2M/V1_2-20201110-A/OMA-TS-LightweightM2M_Transport-V1_2-20201110-A.pdf#page=63).
 
 ```ruby
@@ -56,12 +99,39 @@ and [here](http://www.openmobilealliance.org/release/LightweightM2M/V1_2-2020111
 * about `LwM2M Security` and Security Requirements [here](http://www.openmobilealliance.org/release/LightweightM2M/V1_2-20201110-A/OMA-TS-LightweightM2M_Transport-V1_2-20201110-A.pdf#page=18).
 * about `LwM2M DTLS-based Security` [here](http://www.openmobilealliance.org/release/LightweightM2M/V1_2-20201110-A/OMA-TS-LightweightM2M_Transport-V1_2-20201110-A.pdf#page=19).
 * about `LwM2M Interface:` **Bootstrap Interface**, **Registration Interface**, <i>Device Management & Service Enablement Interface</i>, <i>Information Reporting Interface (**Observe**)</i>, 
-<i>Queue Mode Operation</i>, <i>Registration Update Trigger</i>, <i>Bootstrap Trigger</i> [here](http://www.openmobilealliance.org/release/LightweightM2M/V1_2-20201110-A/OMA-TS-LightweightM2M_Transport-V1_2-20201110-A.pdf#page=41). 
+<i>Queue Mode Operation</i>, <i>Registration Update Trigger</i>, <i>Bootstrap Trigger</i> [here](http://www.openmobilealliance.org/release/LightweightM2M/V1_2-20201110-A/OMA-TS-LightweightM2M_Transport-V1_2-20201110-A.pdf#page=41), 
+* about currently five `Security modes` are defined: [namely](http://www.openmobilealliance.org/release/LightweightM2M/V1_2-20201110-A/OMA-TS-LightweightM2M_Transport-V1_2-20201110-A.pdf#page=21).
+* about `Credential Types` LwM2M [5.2.9. Credential Types](http://www.openmobilealliance.org/release/LightweightM2M/V1_2-20201110-A/OMA-TS-LightweightM2M_Transport-V1_2-20201110-A.pdf#page=23).
 * about `Endpoint Client Name` [here](http://www.openmobilealliance.org/release/LightweightM2M/V1_2-20201110-A/OMA-TS-LightweightM2M_Transport-V1_2-20201110-A.pdf#page=22) or 
 [here](http://www.openmobilealliance.org/release/LightweightM2M/V1_2-20201110-A/OMA-TS-LightweightM2M_Transport-V1_2-20201110-A.pdf#page=31).
 or [here](http://www.openmobilealliance.org/release/LightweightM2M/V1_2-20201110-A/OMA-TS-LightweightM2M_Transport-V1_2-20201110-A.pdf#page=36).
 
+Example: during the tests used the next `Client's Endpoint Names` (for `PSK security mode`, you must additionally use the `Endpoint Identity Client`):
+```json
+{
+    "NoSec mode": [
+        {"Client Endpoint Name": "LwNoSec00000000"},
+        {"Client Endpoint Name": "LwNoSec00019999"}
+    ],    
+    "Pre-Shared Key mode": [
+        {"Client Endpoint Name": "LwPSK00000000"},
+        {"Endpoint Identity Client": "LwPSK00000000-identity"},
+        {"Client Endpoint Name": "LwPSK00001999"},
+        {"Endpoint Identity Client": "LwPSK00001999-identity"}
+    ],    
+    "Raw Public Key mode": [
+        {"Client Endpoint Name": "LwRPK00000000"},
+        {"Client Endpoint Name": "LwRPK00001999"}
+    ],   
+    "Certificate mode": [
+        {"Client Endpoint Name": "LwX50900000000"},
+        {"Client Endpoint Name": "LwX50900019999"}
+    ]
+}
+```
+
 ### Configuration and start transport LwM2M
+
 #### LwM2M Thingsboard Security configuration
 Thingsboard supports **4 LwM2M Security mode simultaneously**.
 
@@ -83,46 +153,48 @@ Thingsboard, through its configuration settings, also allows you to choose to wo
 The Security Mode Resource in the Security Object determines what credentials are being used by the LwM2M Client and
 the LwM2M Server or LwM2M Bootstrap-Server, respectively. 
 
-Currently five security modes are defined: [namely](http://www.openmobilealliance.org/release/LightweightM2M/V1_2-20201110-A/OMA-TS-LightweightM2M_Transport-V1_2-20201110-A.pdf#page=21).
-* about Credential Types LwM2M [5.2.9. Credential Types](http://www.openmobilealliance.org/release/LightweightM2M/V1_2-20201110-A/OMA-TS-LightweightM2M_Transport-V1_2-20201110-A.pdf#page=23).
-
 #### Start transport LwM2M 
-* start transport LwM2M with Server without Bootstrap-Server
+* `start` transport LwM2M with `Server` without Bootstrap-Server
+    
+```ruby
+    thingsboard/application/src/main/resources/thingsboard.yml
+    ...
+        lwm2m:
+            enabled: "${LWM2M_ENABLED:true}"
+            bootstrap:
+                enable: "${BOOTSTRAP:false}"
+    ...
 ```
-thingsboard/application/src/main/resources/thingsboard.yml
-...
-    lwm2m:
-        enabled: "${LWM2M_ENABLED:true}"
-        bootstrap:
-            enable: "${BOOTSTRAP:false}"
-...
+* `start` transport LwM2M with `Server` and `Bootstrap-Server`
+```ruby
+    thingsboard/application/src/main/resources/thingsboard.yml
+    ...
+        lwm2m:
+            enabled: "${LWM2M_ENABLED:true}"
+            bootstrap:
+                enable: "${BOOTSTRAP:true}"
+    ...
 ```
-* start transport LwM2M with Server and Bootstrap-Server
-```
-thingsboard/application/src/main/resources/thingsboard.yml
-...
-    lwm2m:
-        enabled: "${LWM2M_ENABLED:true}"
-        bootstrap:
-            enable: "${BOOTSTRAP:true}"
-...
-```
-* do not start transport  LwM2M
-```
-thingsboard/application/src/main/resources/thingsboard.yml
-...
-    lwm2m:
-        enabled: "${LWM2M_ENABLED:false}"
-...
+* `do not start` transport  LwM2M
+```ruby
+    thingsboard/application/src/main/resources/thingsboard.yml
+    ...
+        lwm2m:
+            bootstrap:
+                bind_address: "${LWM2M_BIND_ADDRESS_BS:0.0.0.0}"
+                bind_port_no_sec_psk: "${LWM2M_BIND_PORT_NO_SEC_BS:5691}"
+                bind_port_no_sec_rpk: "${LWM2M_BIND_PORT_NO_SEC_BS:5693}"
+                bind_port_no_sec_x509: "${LWM2M_BIND_PORT_NO_SEC_BS:5695}"
+    ...
 ```
 #### NoSec mode
-* **no security** communications:
- ```json
- {"3": "NoSec mode"}
- ```
-##### LwM2M Server configuration
-LwM2M transport Server supports from **1** to **3** servers (and / or):
+    * **no security** communications:
+```json
+    {"3": "NoSec mode"}
 ```
+##### LwM2M Server configuration
+LwM2M transport **Server** supports from **1** to **3** servers (and / or):
+```ruby
 thingsboard/application/src/main/resources/thingsboard.yml
 ...
     lwm2m:
@@ -136,9 +208,49 @@ thingsboard/application/src/main/resources/thingsboard.yml
 ```
 ##### LwM2M Bootstrap-Server configuration
 LwM2M transport Bootstrap-Server supports from **1** to **3** servers (and / or).
-##### LwM2M Server configuration
+```ruby
+thingsboard/application/src/main/resources/thingsboard.yml
+...
+    lwm2m:
+        ...
+        server:
+            bind_address: "${LWM2M_BIND_ADDRESS:0.0.0.0}"
+            bind_port_no_sec_psk: "${LWM2M_BIND_PORT_NO_SEC_PSK:5685}"
+            bind_port_no_sec_rpk: "${LWM2M_BIND_PORT_NO_SEC_RPK:5687}"
+            bind_port_no_sec_x509: "${LWM2M_BIND_PORT_NO_SEC_X509:5689}"
+...
+```
+##### LwM2M Device profile create and configuration
+
+* <a name="link-create-profileNoSec"></a>To create a new LwM2M device profile, follow the instructions 
+    step by step:<sup>[[link](#link-create-profileNoSec)]</sup>
+```ruby 
+    name device profile: "lwm2mProfileNoSec", Transport configuration: "LWM2M"
+```    
+    {% include images-gallery.html imageCollection="profileNoSec_create" showListImageTitles="true" %}
+
+    
+* <a name="link-config-profileNoSec"></a>Configuration LwM2M device profile: start 
+    <sup>[[link](#link-config-profileNoSec)]</sup>
+```ruby 
+    name device profile: "lwm2mProfileNoSec", Tab: "Transport configuration"
+```    
+    {% include images-gallery.html imageCollection="profileNoSec_edit" showListImageTitles="true" %} 
+       
+* <a name="link-config-profileNoSec_typeStart"></a>Configuration LwM2M device profile: changing type start after connect Client LwM2M 
+    <sup>[[link](#link-config-profileNoSec_typeStart)]</sup>
+```ruby 
+    config number 1 for start Client: "Only Observe Request to the client after registration (Default)"
+    config number 2 for start Client: "Read&Observe Request to the client after registration 
+                                       + Request to the client after registration for All resource values"
+    config number 3 for start Client: "Read&Observe Request to the client after registration 
+                                       + Request to the client after registration to read values only as attributes or telemetry"
+```    
+    {% include images-gallery.html imageCollection="profileNoSec_edit_typeAfterConnect" showListImageTitles="true" %}
+    
+
 ##### LwM2M Device create and configuration
-##### LwM2M Profile create and configuration
+
 
 #### Pre-Shared Key mode
 ```json
@@ -602,3 +714,19 @@ MQTT transport can be fully customized for specific use-case by changing the cor
 ## Next steps
 
 {% assign currentGuide = "ConnectYourDevice" %}{% include templates/guides-banner.md %}
+
+```ruby
+  # Some Rack handlers (Thin, Rainbows!) implement an extended body object protocol, however,
+  # some middleware (namely Rack::Lint) will break it by not mirroring the methods in question.
+  # This middleware will detect an extended body object and will make sure it reaches the
+  # handler directly. We do this here, so our middleware and middleware set up by the app will
+  # still be able to run.
+  class ExtendedRack < Struct.new(:app)
+    def call(env)
+      result, callback = app.call(env), env['async.callback']
+      return result unless callback and async?(*result)
+      after_response { callback.call result }
+      setup_close(env, *result)
+      throw :async
+    end
+```
