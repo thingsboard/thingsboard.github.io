@@ -18,6 +18,11 @@ For this purpose, we will use docker container images available on [Docker Hub](
 ThingsBoard Microservices are running in dockerized environment.
 Before starting please make sure [Docker CE](https://docs.docker.com/install/) and [Docker Compose](https://docs.docker.com/compose/install/) are installed in your system. 
 
+{% capture rule_engine_note %}
+Please note that for the deployment of Rule Engine as a separate service, an additional separate License Key is required. 
+{% endcapture %}
+{% include templates/info-banner.md content=rule_engine_note %}
+
 ## Step 1. Checkout all ThingsBoard PE Images
 
 Please checkout all ThingsBoard PE Images from Docker Hub.
@@ -198,14 +203,18 @@ In case when database upgrade is needed, execute the following commands:
 
 ```
 $ ./docker-stop-services.sh
-$ ./docker-upgrade-tb.sh --fromVersion=[FROM_VERSION]
-$ ./docker-start-services.sh
+$ ./docker-remove-services.sh
+```
+
+Edit .env file set "TB_VERSION" to target version (f.e. currently you on 3.2.0 so in this case you need to set 3.2.1)
+
+```
+$ ./docker-update-service.sh [SERVICE...]
 ```
 
 Where:
 
-- `FROM_VERSION` - from which version upgrade should be started. See [Upgrade Instructions](https://thingsboard.io/docs/user-guide/install/upgrade-instructions) for valid `fromVersion` values.
-
+- `SERVICE...` - list of services to update (defined in docker-compose configurations). If not specified all services will be updated.
 
 ## Next steps
 

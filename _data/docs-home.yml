@@ -253,6 +253,8 @@ toc:
       path: /docs/user-guide/ui/trip-animation-widget/
     - title: Widgets Library
       path: /docs/user-guide/ui/widget-library/
+    - title: Advanced Settings of the Entity Table widget
+      path: /docs/user-guide/ui/entity-table-widget/
     - title: Widgets Actions
       path: /docs/user-guide/ui/widget-actions/
   - title: Dashboards
@@ -329,7 +331,7 @@ toc:
   new: true
   section:
     - title: What is ThingsBoard Cloud?
-      path: /products/paas/
+      path: /products/paas/what-is-thingsboard-cloud/
     - title: Subscriptions
       path: /products/paas/subscription/
     - title: Plan and billing
