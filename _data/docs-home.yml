@@ -255,6 +255,8 @@ toc:
       path: /docs/user-guide/ui/widget-library/
     - title: Advanced Settings of the Entity Table widget
       path: /docs/user-guide/ui/entity-table-widget/
+    - title: Widgets Actions
+      path: /docs/user-guide/ui/widget-actions/
   - title: Dashboards
     path: /docs/user-guide/ui/dashboards/
   - title: SMS Provider Settings
