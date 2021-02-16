@@ -47,6 +47,9 @@ defaultActivateSelectProduct: true
         <div class="pricing-content-header row">
             <div class="pricing-content-description pricing-cloud active col-lg-6">
                 <h2>Subscription plans</h2>
+                <div class="pricing-content-details">
+                    <b>Hosting included</b>. Pay per service only.
+                </div>
             </div>
         </div>
         <div class="pricing-div">
@@ -130,7 +133,7 @@ defaultActivateSelectProduct: true
                                 <p>Consider yourself a Fortune 500 company in the field?</p>
                             </div>
                             <h4 class="pricing-square-price mb-0">
-                                Custom
+                                Custom <span data-faq-id="calculate" data-faq-link-size="70%"></span>
                             </h4>
                             <div class="row justify-content-center">
                                 <a class="btn-blue btn-pricing" href="/docs/contact-us/">
@@ -191,7 +194,7 @@ defaultActivateSelectProduct: true
         <div id="payAsYouGoHeader" class="pricing-content-description col-lg-6">
             <h2>Subscription plans</h2>
             <div class="pricing-content-details">
-                All subscription plans include <b>unlimited</b> customers, dashboards, integrations, api calls, data points & messages
+                All subscription plans include <b>unlimited</b> customers, dashboards, integrations, api calls, data points & messages.
             </div>
         </div>
         <div id="perpetualHeader" class="pricing-content-description col-lg-6">
@@ -615,6 +618,34 @@ defaultActivateSelectProduct: true
             </div>    
         </div>
         <h3 id="section3">ThingsBoard Cloud</h3>
+        <div class="item" data-tag="h4" data-item-id="what-is-cloud" data-title="What is ThingsBoard Cloud?">
+            <div class="container">
+                <p>
+                ThingsBoard Cloud is a fully managed, scalable, and fault-tolerant platform for your IoT applications with combined subscription plans based on a monthly fee which already includes hosting costs.
+                </p>  
+            </div>    
+        </div>
+        <div class="item" data-tag="h4" data-item-id="difference" data-title="What the difference between Pay-as-you-go option and ThingsBoard Cloud?">
+            <div class="container">
+                <p>
+                Pay-as-you-go subscription plans include license fees only with no hosing services, which means that customers have to deploy ThingsBoard on an external cloud (AWS, Azure, GCP, etc), or on the local server. In this case, customers have to pay separately for the infrastructure and manage ThingsBoard PE server by themselves.<br><br>
+                ThingsBoard Cloud allows customers to use ThingsBoard Professional Edition directly on ThingsBoard environment with no need to pay additionally for the hosting.<br><br>
+                <b>Example:</b> Pay as you go Prototype subscription fee is $99 comparing to Prototype subscription on ThingsBoard cloud which is $149. ThingsBoard Cloud Prototype price is different because infrastructure costs already included and ThingsBoard team is responsible for the management of the environment.
+                </p>  
+            </div>    
+        </div>
+        <div class="item" data-tag="h4" data-item-id="calculate" data-title="How to calculate Enterprise Custom plan fee?">
+            <div class="container">
+                <p>
+                The fee consists of a fixed platform fee ($1199/month) and per-device cost:<br><br>
+                <b>XS-class</b> — less than 100 datapoints per day — $0.01<br>
+                <b>S-class</b> — up to 240 datapoints per day — $0.03<br>
+                <b>M-class</b> — up to 3000 datapoints per day — $0.05<br>
+                <b>L-class</b> — up to 100,000 datapoints per day — $0.15<br>
+                <b>XL-class</b> — above 100,000 datapoints per day — $1
+                </p>  
+            </div>    
+        </div>
         <div class="item" data-tag="h4" data-item-id="api-limits" data-title="Is there any API Limits?">
             <div class="container">
                 <p>
