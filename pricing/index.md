@@ -45,8 +45,11 @@ defaultActivateSelectProduct: true
 <div id="thingsboard-cloud" class="pricing-content" style="display: none;">
     <div class="container">
         <div class="pricing-content-header row">
-            <div class="pricing-content-description pricing-cloud active col-lg-6">
+            <div class="pricing-content-description pricing-cloud active col-lg">
                 <h2>Subscription plans</h2>
+                <div class="pricing-content-details">
+                    All subscription plans include a hosting fee. A customer has to pay for usage of ThingsBoard Professional Edition only with no additional charges for the infrastructure.
+                </div>
             </div>
         </div>
         <div class="pricing-div">
@@ -130,7 +133,7 @@ defaultActivateSelectProduct: true
                                 <p>Consider yourself a Fortune 500 company in the field?</p>
                             </div>
                             <h4 class="pricing-square-price mb-0">
-                                Custom
+                                Custom <span data-faq-id="calculate" data-faq-link-size="70%"></span>
                             </h4>
                             <div class="row justify-content-center">
                                 <a class="btn-blue btn-pricing" href="/docs/contact-us/">
@@ -191,7 +194,7 @@ defaultActivateSelectProduct: true
         <div id="payAsYouGoHeader" class="pricing-content-description col-lg-6">
             <h2>Subscription plans</h2>
             <div class="pricing-content-details">
-                All subscription plans include <b>unlimited</b> customers, dashboards, integrations, api calls, data points & messages
+                All subscription plans include <b>unlimited</b> customers, dashboards, integrations, api calls, data points & messages.
             </div>
         </div>
         <div id="perpetualHeader" class="pricing-content-description col-lg-6">
@@ -615,6 +618,42 @@ defaultActivateSelectProduct: true
             </div>    
         </div>
         <h3 id="section3">ThingsBoard Cloud</h3>
+        <div class="item" data-tag="h4" data-item-id="what-is-cloud" data-title="What is ThingsBoard Cloud?">
+            <div class="container">
+                <p>
+                ThingsBoard Cloud is a fully managed, scalable, and fault-tolerant platform for your IoT applications with combined subscription plans based on a monthly fee which already includes hosting costs.
+                </p>  
+            </div>    
+        </div>
+        <div class="item" data-tag="h4" data-item-id="difference" data-title="What the difference between Pay-as-you-go option and ThingsBoard Cloud?">
+            <div class="container">
+                <p>
+                Pay-as-you-go subscription plans include license fees only with no hosing services, which means that you have to deploy ThingsBoard on an external cloud (AWS, Azure, GCP, etc), or on the local server (On-premise). This means you have to pay separately for the infrastructure and manage ThingsBoard PE server.
+                ThingsBoard Cloud allows you to use ThingsBoard Professional Edition platform as a service on ThingsBoard enviroment.<br><br>
+                Example: Pay as you go Prototype subscription fee is $99 comparing to Prototype subscription on ThingsBoard cloud which is $149. ThingsBoard Cloud Prototype subscription price differs from the Prototype plan for the self-managed license by hosting fee which included in the Cloud subscription price
+                </p>  
+            </div>    
+        </div>
+        <div class="item" data-tag="h4" data-item-id="calculate" data-title="How to calculate Enterprise Custom plan fee?">
+            <div class="container">
+                <p>
+                The Enterprise subscription plan consists of the platform fee and per-device cost. The platform fee is fixed and equal to  $1999 per month. The per-device cost is based on the device class which is determined based on the data points of each device generates:
+                <br><b>XS-class</b> — less than 100 data points per day — $0.01 per month.
+                <br><b>S-class</b> — up to 240 data points per day — $0.03 per month.
+                <br><b>M-class</b> — up to 3000 data points per day — $0.05 per month.
+                <br><b>L-class</b> — up to 100,000 data points per day — $0.15 per month.
+                <br><b>XL-class</b> — above 100,000 data points per day — TBD
+                <br><br>
+                <b>Pricing examples:</b>
+                <br>10 000 smart meters<br>
+                You have 10 000 smart meters that report battery level and pulse counter value once per hour. This means your device reports 2x24=48 data points per day and is an XS class device.
+                The price for such a case will be $1999 (platform fee) + 0.01 (XS class) * 10,000 (number of devices) = $2099 per month.
+                <br><br>10 000 smart trackers<br>
+                You have 10 000 smart meters that report 20 data points once per minute. This means your device reports 20x24*60=28 800 data points per day and is an L class device.
+                The price for such a case will be $1999 (platform fee) + 0.15 (XS class) * 10,000 (number of devices) = $3499 per month.
+                </p>  
+            </div>    
+        </div>
         <div class="item" data-tag="h4" data-item-id="api-limits" data-title="Is there any API Limits?">
             <div class="container">
                 <p>
