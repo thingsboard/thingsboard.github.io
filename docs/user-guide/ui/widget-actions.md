@@ -291,10 +291,6 @@ Actions are adjusted in the Edit mode of the needed widget.
 
 To fully understand how to use Actions, you have to add a State to your widget. How to do this you should [read here](/docs/user-guide/dashboards/#states).
 
-## General Actions Settings
-
-**[**Coming soon...**]**
-
 ## Action types
 
 _Types of action_ define which exactly action will be taken.
