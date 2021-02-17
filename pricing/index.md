@@ -48,7 +48,7 @@ defaultActivateSelectProduct: true
             <div class="pricing-content-description pricing-cloud active col-lg">
                 <h2>Subscription plans</h2>
                 <div class="pricing-content-details">
-                    All subscription plans include a hosting fee. A customer has to pay for usage of ThingsBoard Professional Edition only with no additional charges for the infrastructure.
+                    All subscription plans include <b>hosting</b>, <b>sms</b> and <b>email</b> costs. Focus on your solution while we manage the servers for you.
                 </div>
             </div>
         </div>
@@ -140,8 +140,8 @@ defaultActivateSelectProduct: true
                                     Contact Us
                                 </a>
                             </div>
-                            <div class="pricing-square-item">Unlimited number of Devices</div> 
-                            <div class="pricing-square-item">Unlimited number of Assets</div>
+                            <div class="pricing-square-item">Dedicated server instances</div>
+                            <div class="pricing-square-item">Unlimited Devices and Assets</div>
                             <div class="pricing-square-item">Unlimited <span data-faq-id="data-points">data points</span><br/> per month</div>
                             <div class="pricing-square-item" data-faq-id="subscription-support">
                                 Custom <b>SLA</b>
@@ -634,23 +634,18 @@ defaultActivateSelectProduct: true
                 </p>  
             </div>    
         </div>
-        <div class="item" data-tag="h4" data-item-id="calculate" data-title="How to calculate Enterprise Custom plan fee?">
+        <div class="item" data-tag="h4" data-item-id="calculate" data-title="How we calculate Enterprise plan price?">
             <div class="container">
                 <p>
-                The Enterprise subscription plan consists of the platform fee and per-device cost. The platform fee is fixed and equal to  $1999 per month. The per-device cost is based on the device class which is determined based on the data points of each device generates:
-                <br><b>XS-class</b> — less than 100 data points per day — $0.01 per month.
-                <br><b>S-class</b> — up to 240 data points per day — $0.03 per month.
-                <br><b>M-class</b> — up to 3000 data points per day — $0.05 per month.
-                <br><b>L-class</b> — up to 100,000 data points per day — $0.15 per month.
-                <br><b>XL-class</b> — above 100,000 data points per day — TBD
-                <br><br>
-                <b>Pricing examples:</b>
-                <br>10 000 smart meters<br>
-                You have 10 000 smart meters that report battery level and pulse counter value once per hour. This means your device reports 2x24=48 data points per day and is an XS class device.
-                The price for such a case will be $1999 (platform fee) + 0.01 (XS class) * 10,000 (number of devices) = $2099 per month.
-                <br><br>10 000 smart trackers<br>
-                You have 10 000 smart meters that report 20 data points once per minute. This means your device reports 20x24*60=28 800 data points per day and is an L class device.
-                The price for such a case will be $1999 (platform fee) + 0.15 (XS class) * 10,000 (number of devices) = $3499 per month.
+                The Enterprise subscription plan consists of the fixed platform cost and price per device.
+                <br/><br/>The <b>platform cost</b> includes:
+                <ul>
+                  <li>White-labeling;</li>
+                  <li>Dedicated server instances that will scale with the number of your devices;</li>
+                  <li>Priority support;</li>
+                  <li>On-demand training and email consulting;</li>
+                </ul>
+                The price <b>per-device</b> starts from <b>USD 0.01</b> per month and is determined based on the data points each device generates. <a href="https://thingsboard.io/docs/contact-us/">Contact us</a> to get a precise quote for the custom Enterprise subscription.
                 </p>  
             </div>    
         </div>
