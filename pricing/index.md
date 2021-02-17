@@ -45,10 +45,10 @@ defaultActivateSelectProduct: true
 <div id="thingsboard-cloud" class="pricing-content" style="display: none;">
     <div class="container">
         <div class="pricing-content-header row">
-            <div class="pricing-content-description pricing-cloud active col-lg-6">
+            <div class="pricing-content-description pricing-cloud active col-lg">
                 <h2>Subscription plans</h2>
                 <div class="pricing-content-details">
-                    <b>Hosting included</b>. Pay per service only.
+                    All subscription plans include a hosting fee. A customer has to pay for usage of ThingsBoard Professional Edition only with no additional charges for the infrastructure.
                 </div>
             </div>
         </div>
@@ -628,21 +628,29 @@ defaultActivateSelectProduct: true
         <div class="item" data-tag="h4" data-item-id="difference" data-title="What the difference between Pay-as-you-go option and ThingsBoard Cloud?">
             <div class="container">
                 <p>
-                Pay-as-you-go subscription plans include license fees only with no hosing services, which means that customers have to deploy ThingsBoard on an external cloud (AWS, Azure, GCP, etc), or on the local server. In this case, customers have to pay separately for the infrastructure and manage ThingsBoard PE server by themselves.<br><br>
-                ThingsBoard Cloud allows customers to use ThingsBoard Professional Edition directly on ThingsBoard environment with no need to pay additionally for the hosting.<br><br>
-                <b>Example:</b> Pay as you go Prototype subscription fee is $99 comparing to Prototype subscription on ThingsBoard cloud which is $149. ThingsBoard Cloud Prototype price is different because infrastructure costs already included and ThingsBoard team is responsible for the management of the environment.
+                Pay-as-you-go subscription plans include license fees only with no hosing services, which means that you have to deploy ThingsBoard on an external cloud (AWS, Azure, GCP, etc), or on the local server (On-premise). This means you have to pay separately for the infrastructure and manage ThingsBoard PE server.
+                ThingsBoard Cloud allows you to use ThingsBoard Professional Edition platform as a service on ThingsBoard enviroment.<br><br>
+                Example: Pay as you go Prototype subscription fee is $99 comparing to Prototype subscription on ThingsBoard cloud which is $149. ThingsBoard Cloud Prototype subscription price differs from the Prototype plan for the self-managed license by hosting fee which included in the Cloud subscription price
                 </p>  
             </div>    
         </div>
         <div class="item" data-tag="h4" data-item-id="calculate" data-title="How to calculate Enterprise Custom plan fee?">
             <div class="container">
                 <p>
-                The fee consists of a fixed platform fee ($1199/month) and per-device cost:<br><br>
-                <b>XS-class</b> — less than 100 datapoints per day — $0.01<br>
-                <b>S-class</b> — up to 240 datapoints per day — $0.03<br>
-                <b>M-class</b> — up to 3000 datapoints per day — $0.05<br>
-                <b>L-class</b> — up to 100,000 datapoints per day — $0.15<br>
-                <b>XL-class</b> — above 100,000 datapoints per day — $1
+                The Enterprise subscription plan consists of the platform fee and per-device cost. The platform fee is fixed and equal to  $1999 per month. The per-device cost is based on the device class which is determined based on the data points of each device generates:
+                <br><b>XS-class</b> — less than 100 data points per day — $0.01 per month.
+                <br><b>S-class</b> — up to 240 data points per day — $0.03 per month.
+                <br><b>M-class</b> — up to 3000 data points per day — $0.05 per month.
+                <br><b>L-class</b> — up to 100,000 data points per day — $0.15 per month.
+                <br><b>XL-class</b> — above 100,000 data points per day — TBD
+                <br><br>
+                <b>Pricing examples:</b>
+                <br>10 000 smart meters<br>
+                You have 10 000 smart meters that report battery level and pulse counter value once per hour. This means your device reports 2x24=48 data points per day and is an XS class device.
+                The price for such a case will be $1999 (platform fee) + 0.01 (XS class) * 10,000 (number of devices) = $2099 per month.
+                <br><br>10 000 smart trackers<br>
+                You have 10 000 smart meters that report 20 data points once per minute. This means your device reports 20x24*60=28 800 data points per day and is an L class device.
+                The price for such a case will be $1999 (platform fee) + 0.15 (XS class) * 10,000 (number of devices) = $3499 per month.
                 </p>  
             </div>    
         </div>
