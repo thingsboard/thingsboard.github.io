@@ -261,37 +261,66 @@ html#pricing
           a.faq-link
             &:after
               transform: translate(5%, -80%)
+              margin-left: 2px
         &.pay-as-you-go
+          &:before
+            content: ""
+            display: inline-block
+            vertical-align: middle
+            background-size: contain
+            background: url("/images/pricing/payg-icon.svg") no-repeat
+            filter: invert(53%) sepia(8%) saturate(130%) hue-rotate(145deg) brightness(93%) contrast(91%)
+            width: 28px
+            height: 28px
+            margin-right: 10px
           h3
-            &:before
-              content: "\f017"
-              font: normal normal normal 14px/1 FontAwesome
-              font-size: 26px
         &.perpetual
+          &:before
+            content: ""
+            display: inline-block
+            vertical-align: middle
+            background-size: contain
+            background: url("/images/pricing/perpetual-icon.svg") no-repeat
+            filter: invert(53%) sepia(8%) saturate(130%) hue-rotate(145deg) brightness(93%) contrast(91%)
+            width: 28px
+            height: 28px
+            margin-right: 10px
           h3
-            &:before
-              content: "\221E"
-              font-size: 36px
-              height: 46px
         &.thingsboard-cloud
+          &:before
+            content: ""
+            display: inline-block
+            vertical-align: middle
+            background-size: contain
+            background: url("/images/pricing/cloud-icon.svg") no-repeat
+            filter: invert(53%) sepia(8%) saturate(130%) hue-rotate(145deg) brightness(93%) contrast(91%)
+            width: 28px
+            height: 28px
+            margin-right: 10px
           h3
-            &:before
-              content: "\f0c2"
-              font: normal normal normal 14px/1 FontAwesome
-              font-size: 26px
         &.thingsboard-pe
+          &:before
+            content: ""
+            display: inline-block
+            vertical-align: middle
+            background-size: contain
+            background: url("/images/pricing/self-icon.svg") no-repeat
+            filter: invert(53%) sepia(8%) saturate(130%) hue-rotate(145deg) brightness(93%) contrast(91%)
+            width: 28px
+            height: 28px
+            margin-right: 10px
           h3
-            &:before
-              content: "\f233"
-              font: normal normal normal 14px/1 FontAwesome
-              font-size: 26px
         &.active
+          &:before
+            filter: invert(100%) sepia(100%) saturate(2%) hue-rotate(242deg) brightness(107%) contrast(101%)
           color: #fff
           background: #2A7DEC
           box-shadow: 0px 18px 16px -10px rgba(42,125,236,0.25)
           &:after
             background-color: #fff
         &:hover:not(.active)
+          &:before
+            filter: invert(11%) sepia(10%) saturate(825%) hue-rotate(169deg) brightness(93%) contrast(90%)
           color: #000
 
     div.pricing-content
@@ -455,7 +484,7 @@ html#pricing
           a
             text-decoration: none
             display: block
-            vertical-align: middle
+            line-height: initial
             text-align: center
             border: 1px solid rgba(0, 0, 0, 0.08)
             box-sizing: border-box
@@ -488,6 +517,7 @@ html#pricing
                 height: 38px
             @media (min-width: 1400px)
               font-size: 24px
+
           &.tb-logo
             a
               &:before
