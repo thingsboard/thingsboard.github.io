@@ -360,6 +360,18 @@
     }
   },
   {
+    "type": ["Europe"],
+    "country": ["Netherlands"],
+    "name": "Produmize",
+    "contact": {
+      "href": "info@produmize.com"
+    },
+    "site": {
+      "href": "produmize.com",
+      "target": "_blank"
+    }
+  },
+  {
     "type": ["Asia", "Australia and Oceania"],
     "country": ["India", "Australia"],
     "name": "ProtoConvert",
@@ -428,6 +440,18 @@
     },
     "site": {
       "href": "sawtelnigeria.com",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["North America"],
+    "country": ["United States"],
+    "name": "Senzary LLC",
+    "contact": {
+      "href": "info@senzary.com"
+    },
+    "site": {
+      "href": "senzary.com",
       "target": "_blank"
     }
   },
