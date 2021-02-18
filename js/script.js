@@ -289,7 +289,7 @@ var tb = (function () {
         var contentHeight = thisWrapper.find('.content').eq(0).innerHeight() + 'px';
         if (!$(thisItem).hasClass('on')) {
             $(thisItem).addClass('on');
-            thisWrapper.css({height: contentHeight});
+            thisWrapper.css({height: contentHeight, visibility: 'visible'});
 
             var duration = parseFloat(getComputedStyle(thisWrapper[0]).transitionDuration) * 1000;
 
@@ -369,6 +369,14 @@ var tb = (function () {
     }
 
     function openFaqNode(nodeId) {
+		$('.pi-accordion > .container > div[data-item-id]').each(function () {
+			if ($(this).hasClass('on')) {
+				var thisWrapper = $(this).find('.wrapper').eq(0);
+				if (!thisWrapper) return;
+				$(this).removeClass('on');
+				thisWrapper.css({height: 0, visibility: 'hidden'});
+			}
+		});
         tb.openAccordionItem(nodeId);
         document.getElementById(nodeId).scrollIntoView();
         reportFaqNode(nodeId);
@@ -422,7 +430,7 @@ var tb = (function () {
 
 			if (wrapper) {
 				item.appendChild(wrapper);
-				$(wrapper).css({height: 0, padding: 0});
+				$(wrapper).css({height: 0, padding: 0, visibility: 'hidden'});
 			}
 
 
@@ -460,12 +468,12 @@ var tb = (function () {
 					$(thisItem).removeClass('on');
 
 					setTimeout(function(){
-						thisWrapper.css({height: 0});
+						thisWrapper.css({height: 0, visibility: 'hidden'});
 						moving = false;
 					}, CSS_BROWSER_HACK_DELAY);
 				} else {
 					$(item).addClass('on');
-					thisWrapper.css({height: contentHeight});
+					thisWrapper.css({height: contentHeight, visibility: 'visible'});
 
 					var duration = parseFloat(getComputedStyle(thisWrapper[0]).transitionDuration) * 1000;
 

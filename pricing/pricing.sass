@@ -13,7 +13,7 @@ html#pricing
     padding-top: 60px
 
   #encyclopedia
-    padding: 0px
+    padding: 0
     overflow: initial
 
   color: #424242
@@ -101,8 +101,8 @@ html#pricing
           &:before
             display: block
             content: " "
-            margin-top: -100px
-            height: 100px
+            margin-top: -70px
+            height: 70px
             visibility: hidden
           & > h4.title
             &:before
@@ -116,14 +116,11 @@ html#pricing
           margin: 0 10px 10px
         .item.on
           & > .wrapper
-            background-color: #fff
             border: 2px solid #2A7DEC
             border-top: none
             border-radius: 0 0 4px 4px
-            box-shadow: 0px 18px 16px -10px rgba(42,125,236,0.25)
+            box-shadow: 0 18px 16px -10px rgba(42,125,236,0.25)
           h4.title
-            border: none
-            background-color: #FFF
             padding: 21px
             border: 2px solid #2A7DEC
             border-bottom: none
@@ -144,7 +141,7 @@ html#pricing
         outline: none
         border-radius: 4px
         border: solid 2px #2A7DEC
-        box-shadow: 0px 18px 16px -10px rgba(42,125,236,0.25)
+        box-shadow: 0 18px 16px -10px rgba(42,125,236,0.25)
         line-height: 28px
         &:hover
           background-color: #fff
@@ -156,7 +153,7 @@ html#pricing
 
     .pricing-square
       padding: 25px 32px
-      box-shadow: 0px 52px 40px -32px rgba(0,0,0,0.1)
+      box-shadow: 0 52px 40px -32px rgba(0,0,0,0.1)
       border-radius: 4px
       background-color: #fff
       height: 100%
@@ -249,6 +246,10 @@ html#pricing
         &.active
           border-radius: 22px
 
+    a.faq-link
+      &:after
+        transform: translate(5%, -80%)
+
     .solution-selector, .product-selector
       display: flex
       border: 1px solid rgba(0, 0, 0, 0.08)
@@ -266,7 +267,6 @@ html#pricing
             vertical-align: middle
           a.faq-link
             &:after
-              transform: translate(5%, -80%)
               margin-left: 2px
         &.pay-as-you-go
           &:before
@@ -279,7 +279,7 @@ html#pricing
             width: 28px
             height: 28px
             margin-right: 10px
-          h3
+
         &.perpetual
           &:before
             content: ""
@@ -291,7 +291,6 @@ html#pricing
             width: 28px
             height: 28px
             margin-right: 10px
-          h3
         &.thingsboard-cloud
           &:before
             content: ""
@@ -303,7 +302,6 @@ html#pricing
             width: 28px
             height: 28px
             margin-right: 10px
-          h3
         &.thingsboard-pe
           &:before
             content: ""
@@ -315,13 +313,12 @@ html#pricing
             width: 28px
             height: 28px
             margin-right: 10px
-          h3
         &.active
           &:before
             filter: invert(100%) sepia(100%) saturate(2%) hue-rotate(242deg) brightness(107%) contrast(101%)
           color: #fff
           background: #2A7DEC
-          box-shadow: 0px 18px 16px -10px rgba(42,125,236,0.25)
+          box-shadow: 0 18px 16px -10px rgba(42,125,236,0.25)
           &:after
             background-color: #fff
         &:hover:not(.active)
@@ -541,7 +538,7 @@ html#pricing
             a
               color: #fff
               background-color: #2A7DEC
-              box-shadow: 0px 18px 16px -10px rgba(42,125,236,0.25)
+              box-shadow: 0 18px 16px -10px rgba(42,125,236,0.25)
               &:hover
                 border-color: #2A7DEC
                 border-width: 1px
