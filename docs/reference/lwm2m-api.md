@@ -5,10 +5,6 @@ assignees:
 title: LwM2M Device API Reference
 description: Supported LwM2M API Reference for IoT Devices
 
-step1:
-    0:
-        image: /images/user-guide/oauth-2-support/1-create-credentials.png
-
 started:
     0:
         image: /images/lwm2m/architecture.jpg 
@@ -29,16 +25,16 @@ started:
 profileNoSec_create:
     0:
         image: /images/lwm2m/noSec_profile_create_Step_1.png 
-        title: 'start create profile LwM2M.'    
+        title: '1. start create profile LwM2M.'    
     1:
         image: /images/lwm2m/noSec_profile_create_Step_2.png 
-        title: 'input the name of device profile (for example: "lwm2mProfileNoSec").'       
+        title: '1. input the name of device profile (for example: "lwm2mProfileNoSec").'       
     2:
         image: /images/lwm2m/noSec_profile_create_Step_3.png 
-        title: 'go to the "Transport configuration" tab and select the type of device profile.'    
+        title: '1. go to the "Transport configuration" tab and select the type of device profile.'    
     3:
         image: /images/lwm2m/noSec_profile_create_Step_4.png 
-        title: 'save this device profile: click the "Add" button.'    
+        title: '1. save this device profile: click the "Add" button.'    
 
 
 profileNoSec_edit:
@@ -60,13 +56,17 @@ profileNoSec_edit_typeAfterConnect:
         image: /images/lwm2m/noSec_profile_edit_Step_3_3.png 
         title: 'configuration number 3 selected.'    
 
+step1:
+    0:
+        image: /images/user-guide/oauth-2-support/1-create-credentials.png
+
+
 ---
 
 * TOC
 {:toc}
 
 ## Getting started
-{% include images-gallery.html imageCollection="step1" preview="false" max-width="100%" %}
 ### LwM2M basics: architecture, terminology,  definitions.
 [LwM2M](https://en.wikipedia.org/wiki/OMA_LWM2M) is a device management protocol designed for sensor networks and the demands of a machine-to-machine (M2M) environment. 
 For simplicity, we will manually provision the device using the UI.
@@ -97,6 +97,57 @@ and [here](http://www.openmobilealliance.org/release/LightweightM2M/V1_2-2020111
 ```
 
 * about `LwM2M Security` and Security Requirements [here](http://www.openmobilealliance.org/release/LightweightM2M/V1_2-20201110-A/OMA-TS-LightweightM2M_Transport-V1_2-20201110-A.pdf#page=18).
+* pre-shared keys for secure DTLS ***PSK***  communications:    
+    ```ruby
+        If a LwM2M Server supports the pre-shared key credentials it MUST support the following:
+        TLS_PSK_WITH_AES_128_CCM_8, as defined in [RFC6655] and mandated in [RFC7925]
+        TLS_PSK_WITH_AES_128_CBC_SHA256, as defined in [RFC5487].
+        The LwM2M Client SHOULD NOT use the TLS_PSK_WITH_AES_128_CBC_SHA256 ciphersuite as [RFC7457] has
+        identified security attacks against these TLS/DTLS ciphersuites.
+    ```
+    **TLS_PSK_WITH_AES_128_CCM_8**, as defined in [RFC6655](https://www.ietf.org/rfc/rfc6655.txt).
+    
+    **TLS_PSK_WITH_AES_128_CBC_SHA256**, as defined in [RFC5487](https://www.ietf.org/rfc/rfc5487.txt).
+    
+    **~~TLS_PSK_WITH_AES_128_CBC_SHA256~~** ciphersuite as [RFC7457](https://www.ietf.org/rfc/rfc7457.txt).
+    
+    * about Pre-Shared Keys LwM2M [5.2.9.1. Pre-Shared Keys](http://www.openmobilealliance.org/release/LightweightM2M/V1_2-20201110-A/OMA-TS-LightweightM2M_Transport-V1_2-20201110-A.pdf#page=23).
+    * Clients and Servers MUST support arbitrary `PSK Identities` of up to 128 bytes, as mandated in [RFC7925](https://www.ietf.org/rfc/rfc7925.txt).
+* raw public keys for secure DTLS ***RPK***  communications:
+    ```ruby
+        If a LwM2M Server supports the raw public key credentials it MUST support the following:
+        TLS_ECDHE_ECDSA_WITH_AES_128_CCM_8, as defined in [RFC6655] and mandated in [RFC7925]
+        TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256, as defined in [RFC5289]
+        The LwM2M Client SHOULD NOT use the TLS_PSK_WITH_AES_128_CBC_SHA256 ciphersuite as [RFC7457] has
+        identified security attacks against these TLS/DTLS ciphersuites.
+    ```    
+
+    **TLS_ECDHE_ECDSA_WITH_AES_128_CCM_8**, as defined in [RFC6655](https://www.ietf.org/rfc/rfc6655.txt).
+    
+    **TLS_ECDHE_ECDSA_WITH_AES_128_CCM_8**, as defined in [RFC7925](https://www.ietf.org/rfc/rfc7925.txt).
+    
+    **TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256**, as defined in [RFC5289](https://www.ietf.org/rfc/rfc5289.txt).
+    
+    **~~TLS_PSK_WITH_AES_128_CBC_SHA256~~** ciphersuite as [RFC7457](https://www.ietf.org/rfc/rfc7457.txt).
+      
+    * about Raw Public Keys LwM2M [5.2.9.2. Raw Public Keys](http://www.openmobilealliance.org/release/LightweightM2M/V1_2-20201110-A/OMA-TS-LightweightM2M_Transport-V1_2-20201110-A.pdf#page=24).
+*  X.509 Certificates Keys for secure DTLS ***X.509***  communications:
+    
+    ```ruby
+        If a LwM2M Server supports X.509 Certificate mode it MUST support:
+        TLS_ECDHE_ECDSA_WITH_AES_128_CCM_8, as defined in [RFC7251] and mandated in [RFC7925]
+        TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256, as defined in [RFC5289]
+        The LwM2M Client SHOULD NOT use the TLS_PSK_WITH_AES_128_CBC_SHA256 ciphersuite as [RFC7457] has
+        identified security attacks against these TLS/DTLS ciphersuites.
+        A LwM2M v1.1 or v1.2 Client MUST support TLS_ECDHE_ECDSA_WITH_AES_128_CCM_8 and MAY support additional
+        ciphersuites. Ciphersuites SHOULD have ECDSA authentication and SHOULD have ECDHE key exchange.
+    ```
+    **TLS_ECDHE_ECDSA_WITH_AES_128_CCM_8**, as defined in [RFC7251](https://www.ietf.org/rfc/rfc7251.txt).
+       
+    * about X.509 Certificates Keys LwM2M [5.2.9.3. X.509 Certificates](http://www.openmobilealliance.org/release/LightweightM2M/V1_2-20201110-A/OMA-TS-LightweightM2M_Transport-V1_2-20201110-A.pdf#page=25).
+
+
+* about the file format and get help on how to generate an X509 certificate and a publicKey or privateKey [here](https://github.com/eclipse/leshan/wiki/Credential-files-format).
 * about `LwM2M DTLS-based Security` [here](http://www.openmobilealliance.org/release/LightweightM2M/V1_2-20201110-A/OMA-TS-LightweightM2M_Transport-V1_2-20201110-A.pdf#page=19).
 * about `LwM2M Interface:` **Bootstrap Interface**, **Registration Interface**, <i>Device Management & Service Enablement Interface</i>, <i>Information Reporting Interface (**Observe**)</i>, 
 <i>Queue Mode Operation</i>, <i>Registration Update Trigger</i>, <i>Bootstrap Trigger</i> [here](http://www.openmobilealliance.org/release/LightweightM2M/V1_2-20201110-A/OMA-TS-LightweightM2M_Transport-V1_2-20201110-A.pdf#page=41), 
@@ -106,6 +157,7 @@ and [here](http://www.openmobilealliance.org/release/LightweightM2M/V1_2-2020111
 [here](http://www.openmobilealliance.org/release/LightweightM2M/V1_2-20201110-A/OMA-TS-LightweightM2M_Transport-V1_2-20201110-A.pdf#page=31).
 or [here](http://www.openmobilealliance.org/release/LightweightM2M/V1_2-20201110-A/OMA-TS-LightweightM2M_Transport-V1_2-20201110-A.pdf#page=36).
 
+<a name="link-example-endpoint-names"> </a>
 Example: during the tests used the next `Client's Endpoint Names` (for `PSK security mode`, you must additionally use the `Endpoint Identity Client`):
 ```json
 {
@@ -130,30 +182,11 @@ Example: during the tests used the next `Client's Endpoint Names` (for `PSK secu
 }
 ```
 
-### Configuration and start transport LwM2M
+### Start transport LwM2M with different security configuration settings
+#### Start transport LwM2M (configuration in yml)
 
-#### LwM2M Thingsboard Security configuration
-Thingsboard supports **4 LwM2M Security mode simultaneously**.
+Thingsboard supports **1 LwM2M server and 1 Bootstrap-Server simultaneously**.
 
-```ruby
-    - 0: Pre-Shared Key mode + 3: NoSec mode
-    - 1: Raw Public Key mode + 3: NoSec mode
-    - 2: Certificate mode + 3: NoSec mode
-    - 3: NoSec mode (always runs when starting one of the security modes {0, 1, 2})   
-```
-
-Thingsboard supports **6 LwM2M servers simultaneously**.
-
-* LwM2M Servers **3, each with one of 4 security modes** {0...3} and 
-
-* LwM2M Bootstrap-Servers **3, each with one of 4 security modes.**
-
-Thingsboard, through its configuration settings, also allows you to choose to work with either one of the servers options, or selectively.
-
-The Security Mode Resource in the Security Object determines what credentials are being used by the LwM2M Client and
-the LwM2M Server or LwM2M Bootstrap-Server, respectively. 
-
-#### Start transport LwM2M 
 * `start` transport LwM2M with `Server` without Bootstrap-Server
     
 ```ruby
@@ -161,8 +194,17 @@ the LwM2M Server or LwM2M Bootstrap-Server, respectively.
     ...
         lwm2m:
             enabled: "${LWM2M_ENABLED:true}"
+            ...
+            server:
+                id: "${LWM2M_SERVER_ID:123}"
+                bind_address: "${LWM2M_BIND_ADDRESS:0.0.0.0}"
+                bind_port_no_sec: "${LWM2M_BIND_PORT_NO_SEC:5685}"
+                secure:
+                    bind_address_security: "${LWM2M_BIND_ADDRESS_SECURITY:0.0.0.0}"
+                    bind_port_security: "${LWM2M_BIND_PORT_SECURITY:5686}" 
+            ...
             bootstrap:
-                enable: "${BOOTSTRAP:false}"
+                enable: "${LWM2M_BOOTSTRAP_ENABLED:false}"
     ...
 ```
 * `start` transport LwM2M with `Server` and `Bootstrap-Server`
@@ -171,8 +213,23 @@ the LwM2M Server or LwM2M Bootstrap-Server, respectively.
     ...
         lwm2m:
             enabled: "${LWM2M_ENABLED:true}"
+            ...
+            server:
+                id: "${LWM2M_SERVER_ID:123}"
+                bind_address: "${LWM2M_BIND_ADDRESS:0.0.0.0}"
+                bind_port_no_sec: "${LWM2M_BIND_PORT_NO_SEC:5685}"
+                secure:
+                    bind_address_security: "${LWM2M_BIND_ADDRESS_SECURITY:0.0.0.0}"
+                    bind_port_security: "${LWM2M_BIND_PORT_SECURITY:5686}" 
+            ...
             bootstrap:
-                enable: "${BOOTSTRAP:true}"
+                enable: "${LWM2M_BOOTSTRAP_ENABLED:true}"
+                id: "${LWM2M_SERVER_ID:111}"
+                bind_address: "${LWM2M_BIND_ADDRESS_BS:0.0.0.0}"
+                bind_port_no_sec: "${LWM2M_BIND_PORT_NO_SEC_BS:5687}"
+                secure:
+                    bind_address_security: "${LWM2M_BIND_ADDRESS_BS:0.0.0.0}"
+                    bind_port_security: "${LWM2M_BIND_PORT_SEC_BS:5688}"
     ...
 ```
 * `do not start` transport  LwM2M
@@ -180,47 +237,221 @@ the LwM2M Server or LwM2M Bootstrap-Server, respectively.
     thingsboard/application/src/main/resources/thingsboard.yml
     ...
         lwm2m:
-            bootstrap:
-                bind_address: "${LWM2M_BIND_ADDRESS_BS:0.0.0.0}"
-                bind_port_no_sec_psk: "${LWM2M_BIND_PORT_NO_SEC_BS:5691}"
-                bind_port_no_sec_rpk: "${LWM2M_BIND_PORT_NO_SEC_BS:5693}"
-                bind_port_no_sec_x509: "${LWM2M_BIND_PORT_NO_SEC_BS:5695}"
+            enabled: "${LWM2M_ENABLED:false}"
     ...
 ```
-#### NoSec mode
-    * **no security** communications:
+
+#### Security servers transport LwM2M (configuration LwM2M server and Bootstrap-Server in yml)
+Thingsboard supports **4 LwM2M Security mode simultaneously**.
+
 ```json
-    {"3": "NoSec mode"}
+  {
+    "0": "Pre-Shared Key mode",
+    "1": "Raw Public Key mode",
+    "2": "Certificate mode",
+    "3": "NoSec mode"
+  }
 ```
-##### LwM2M Server configuration
-LwM2M transport **Server** supports from **1** to **3** servers (and / or):
+
+* LwM2M Server **with one of 4 or all security modes** {0...3} and 
+
+* LwM2M Bootstrap-Servers **with one of 4 or all security modes**  {0...3}.
+
+Thingsboard, through its configuration settings, also allows you to choose to work with either one of the servers options, or selectively.
+
+The Security Mode Resource in the Security Object determines what credentials are being used by the LwM2M Client and
+the LwM2M Server or LwM2M Bootstrap-Server, respectively. 
+
+##### `Host`&`Port` for Servers
 ```ruby
 thingsboard/application/src/main/resources/thingsboard.yml
 ...
-    lwm2m:
+  lwm2m:
+    ...
+    server:
+      bind_address: "${LWM2M_BIND_ADDRESS:0.0.0.0}"
+      bind_port_no_sec: "${LWM2M_BIND_PORT_NO_SEC:5685}"
+      secure:
+        bind_address_security: "${LWM2M_BIND_ADDRESS_SECURITY:0.0.0.0}"
+        bind_port_security: "${LWM2M_BIND_PORT_SECURITY:5686}"
         ...
-        server:
-            bind_address: "${LWM2M_BIND_ADDRESS:0.0.0.0}"
-            bind_port_no_sec_psk: "${LWM2M_BIND_PORT_NO_SEC_PSK:5685}"
-            bind_port_no_sec_rpk: "${LWM2M_BIND_PORT_NO_SEC_RPK:5687}"
-            bind_port_no_sec_x509: "${LWM2M_BIND_PORT_NO_SEC_X509:5689}"
+    bootstrap:
+      ...  
+      bind_address: "${LWM2M_BIND_ADDRESS_BS:0.0.0.0}"
+      bind_port_no_sec: "${LWM2M_BIND_PORT_NO_SEC_BS:5687}"
+      secure:
+        bind_address_security: "${LWM2M_BIND_ADDRESS_BS:0.0.0.0}"
+        bind_port_security: "${LWM2M_BIND_PORT_SEC_BS:5688}"
 ...
 ```
-##### LwM2M Bootstrap-Server configuration
-LwM2M transport Bootstrap-Server supports from **1** to **3** servers (and / or).
-```ruby
-thingsboard/application/src/main/resources/thingsboard.yml
-...
-    lwm2m:
+
+<a name="link-4-security-modes"> </a>
+
+##### `4 security` modes  (`NoSec` + `PSK` + `RPK` + `X509`)
+*   *NoSec mode (`NoSec`) + Pre-Shared Key mode (`PSK`) + Raw Public Key mode (`RPK`) + Certificate mode (`X509`) communications:*
+    * Server security configuration for these modes is always enabled if `X509` mode information is available and free of errors.
+        1. `key_store_path_file: "${KEY_STORE_PATH_FILE:}"` loading is not an error or 
+        1. Default key_store_path_file: "/usr/share/thingsboard/conf/credentials/serverKeyStore.jks" loading is not an error.
+    * You need information about lwm2m server's `certificates` and bootstrap server's certificates (`X509`)       
+        ```ruby
+        thingsboard/application/src/main/resources/thingsboard.yml
         ...
-        server:
-            bind_address: "${LWM2M_BIND_ADDRESS:0.0.0.0}"
-            bind_port_no_sec_psk: "${LWM2M_BIND_PORT_NO_SEC_PSK:5685}"
-            bind_port_no_sec_rpk: "${LWM2M_BIND_PORT_NO_SEC_RPK:5687}"
-            bind_port_no_sec_x509: "${LWM2M_BIND_PORT_NO_SEC_X509:5689}"
-...
-```
-##### LwM2M Device profile create and configuration
+            lwm2m:
+                ...
+                secure:
+                    # Certificate_x509:
+                    key_store_type: "${LWM2M_KEYSTORE_TYPE:JKS}"
+                    # Default for key_store_path_file: "/usr/share/thingsboard/conf/credentials/serverKeyStore.jks"
+                    key_store_path_file: "${KEY_STORE_PATH_FILE:}"
+                    key_store_password: "${LWM2M_KEYSTORE_PASSWORD_SERVER:server_ks_password}"
+                    root_alias: "${LWM2M_SERVER_ROOT_CA:rootca}"
+                    ...
+                server:
+                    ...
+                    secure:
+                    ...
+                    # Only Certificate_x509:
+                    alias: "${LWM2M_KEYSTORE_ALIAS_SERVER:server}"
+                bootstrap:
+                    ...
+                    secure:
+                    ...
+                    # Only Certificate_x509:
+                    alias: "${LWM2M_KEYSTORE_ALIAS_BOOTSTRAP:bootstrap}"
+        ...
+        ```
+    * After start servers (`X509` communications) and read certificate from serverKeyStore.jks:
+        * Information about parameters of LwM2M `Server`:
+        
+          ```ruby
+            - Server uses [X509]: serverNoSecureURI : [0.0.0.0:5685], serverSecureURI : [0.0.0.0:5686]
+            - X509 Certificate (Hex): [308202b83082025ea00302010202088baee46c9cb8157b300a06082a8648ce3d04030230793119301706035504030c106c6f63616c686f737420726f6f74434131143012060355040b0c0b5468696e6773626f61726431143012060355040a0c0b5468696e6773626f617264310d300b06035504070c044b7969763114301206035504080c0b4b796976204f626c617374310b3009060355040613025541301e170d3231303231323134333430385a170d3232303231323134333430385a30793119301706035504030c106c6f63616c686f73742073657276657231143012060355040b0c0b5468696e6773626f61726431143012060355040a0c0b5468696e6773626f617264310d300b06035504070c044b7969763114301206035504080c0b4b796976204f626c617374310b30090603550406130255413059301306072a8648ce3d020106082a8648ce3d0301070342000405064b9e6762dd8d8b8a52355d7b4d8b9a3d64e6d2ee277d76c248861353f3585eeb1838e4f9e37b31fa347aef5ce3431eb54e0a2506910c5e0298817445721ba381cf3081cc3081aa0603551d230481a230819f8014d74dade094ce4181eb438697663b963e4cafbf0aa17da47b30793119301706035504030c106c6f63616c686f737420726f6f74434131143012060355040b0c0b5468696e6773626f61726431143012060355040a0c0b5468696e6773626f617264310d300b06035504070c044b7969763114301206035504080c0b4b796976204f626c617374310b30090603550406130255418208bfb738674fef7fe0301d0603551d0e041604141cb500d9542379c5421c628a74f2ccb82d4213d8300a06082a8648ce3d0403020348003045022100c8cac820f0e689c0828c74a58cd8ea5746daa74f35d9edea176a71f0b58d05fc0220508af1e946f92e141d9c87c645a8190a37a8ac46838ddbd079405f86092adeb7]
+            - Public Key (Hex): [3059301306072a8648ce3d020106082a8648ce3d0301070342000405064b9e6762dd8d8b8a52355d7b4d8b9a3d64e6d2ee277d76c248861353f3585eeb1838e4f9e37b31fa347aef5ce3431eb54e0a2506910c5e0298817445721b] 
+            - Private Key (Hex): [308193020100301306072a8648ce3d020106082a8648ce3d030107047930770201010420dc774b309e547ceb48fee547e104ce201a9c48c449dc5414cd04e7f5cf05f67ba00a06082a8648ce3d030107a1440342000405064b9e6762dd8d8b8a52355d7b4d8b9a3d64e6d2ee277d76c248861353f3585eeb1838e4f9e37b31fa347aef5ce3431eb54e0a2506910c5e0298817445721b], 
+            public_x: "${LWM2M_SERVER_PUBLIC_X:05064b9e6762dd8d8b8a52355d7b4d8b9a3d64e6d2ee277d76c248861353f358}" 
+            public_y: "${LWM2M_SERVER_PUBLIC_Y:5eeb1838e4f9e37b31fa347aef5ce3431eb54e0a2506910c5e0298817445721b}" 
+            private_encoded: "${LWM2M_SERVER_PRIVATE_ENCODED:308193020100301306072a8648ce3d020106082a8648ce3d030107047930770201010420dc774b309e547ceb48fee547e104ce201a9c48c449dc5414cd04e7f5cf05f67ba00a06082a8648ce3d030107a1440342000405064b9e6762dd8d8b8a52355d7b4d8b9a3d64e6d2ee277d76c248861353f3585eeb1838e4f9e37b31fa347aef5ce3431eb54e0a2506910c5e0298817445721b}" 
+          ```
+
+        * Information about parameters of `BootStrap` Server:
+        
+          ```ruby
+            - Bootstrap Server uses [X509]: serverNoSecureURI : [0.0.0.0:5687], serverSecureURI : [0.0.0.0:5688]
+            - X509 Certificate (Hex): [308202ba30820261a00302010202082a35febb06ff50c8300a06082a8648ce3d04030230793119301706035504030c106c6f63616c686f737420726f6f74434131143012060355040b0c0b5468696e6773626f61726431143012060355040a0c0b5468696e6773626f617264310d300b06035504070c044b7969763114301206035504080c0b4b796976204f626c617374310b3009060355040613025541301e170d3231303231323134333430385a170d3232303231323134333430385a307c311c301a06035504030c136c6f63616c686f737420626f6f74737472617031143012060355040b0c0b5468696e6773626f61726431143012060355040a0c0b5468696e6773626f617264310d300b06035504070c044b7969763114301206035504080c0b4b796976204f626c617374310b30090603550406130255413059301306072a8648ce3d020106082a8648ce3d030107034200045017c87a1c1768264656b3b355434b0def6edb8b9bf166a4762d9930cd730f913fc4e61bcd8901ec27c424114c3e887ed372497f0c2cf85839b8443e76988b34a381cf3081cc3081aa0603551d230481a230819f8014d74dade094ce4181eb438697663b963e4cafbf0aa17da47b30793119301706035504030c106c6f63616c686f737420726f6f74434131143012060355040b0c0b5468696e6773626f61726431143012060355040a0c0b5468696e6773626f617264310d300b06035504070c044b7969763114301206035504080c0b4b796976204f626c617374310b30090603550406130255418208bfb738674fef7fe0301d0603551d0e04160414b545646915fcc4be2173be49bb26bdb1663062bf300a06082a8648ce3d040302034700304402202f379736e4191e3fd28efb82bc7d0cbec3fb597e78b66db648a3c0734d5bf29d0220052b34e6bd5f8a7356126bb91e367dd04bdef628750cd31c8a7707e91134cc8c]
+            - Public Key (Hex): [3059301306072a8648ce3d020106082a8648ce3d030107034200045017c87a1c1768264656b3b355434b0def6edb8b9bf166a4762d9930cd730f913fc4e61bcd8901ec27c424114c3e887ed372497f0c2cf85839b8443e76988b34] 
+            - Private Key (Hex): [308193020100301306072a8648ce3d020106082a8648ce3d0301070479307702010104205ecafd90caa7be45c42e1f3f32571632b8409e6e6249d7124f4ba56fab3c8083a00a06082a8648ce3d030107a144034200045017c87a1c1768264656b3b355434b0def6edb8b9bf166a4762d9930cd730f913fc4e61bcd8901ec27c424114c3e887ed372497f0c2cf85839b8443e76988b34],
+            public_x: "${LWM2M_SERVER_PUBLIC_X_BS:5017c87a1c1768264656b3b355434b0def6edb8b9bf166a4762d9930cd730f91}" 
+            public_y: "${LWM2M_SERVER_PUBLIC_Y_BS:3fc4e61bcd8901ec27c424114c3e887ed372497f0c2cf85839b8443e76988b34}" 
+            private_encoded: "${LWM2M_SERVER_PRIVATE_ENCODED_BS:308193020100301306072a8648ce3d020106082a8648ce3d0301070479307702010104205ecafd90caa7be45c42e1f3f32571632b8409e6e6249d7124f4ba56fab3c8083a00a06082a8648ce3d030107a144034200045017c87a1c1768264656b3b355434b0def6edb8b9bf166a4762d9930cd730f913fc4e61bcd8901ec27c424114c3e887ed372497f0c2cf85839b8443e76988b34}" 
+          ```
+        
+        These parameters: ***public_x***, ***public_y*** and ***private_encoded*** You can use for the next Security servers configuration: `3 security` modes if you will only use `3 security` modes<sup>[[link](#link-3-security-modes)]</sup> and copy and paste these lines into the appropriate thingsboard/application/src/main/resources/thingsboard.yml section.
+        
+        These parameters: 
+        * ***Public Key (Hex)***:, ***Private Key (Hex)*** You must use for the security mode `RPK` to create deviceProfile tab Bootstrap and run LwM2M client (config client).
+        * ***X509 Certificate (Hex)***: You must use for the security mode `X509` to create deviceProfile You must use to create deviceProfile tab Bootstrap and run LwM2M client (config client).        
+
+<a name="link-3-security-modes"> </a>
+   
+##### `3 security` modes (`NoSec` + `PSK` + `RPK`)
+
+*   *NoSec mode (`NoSec`) + Pre-Shared Key mode (`PSK`) + Raw Public Key mode (`RPK`) communications:*
+    * Server security configuration for these modes is always enabled if `X509` mode information is not available or is in error.  
+       1. Default for `key_store_path_file: "/usr/share/thingsboard/conf/credentials/serverKeyStore.jks"` loading is error and
+       1. `key_store_path_file: "${KEY_STORE_PATH_FILE:}"` loading is error.
+    *  You need information about server's `publicKey`, server's `privateKey`, bootstrap server's `publicKey`  and  bootstrap server's  `privateKey` (`RPK`):
+        ```ruby
+        thingsboard/application/src/main/resources/thingsboard.yml
+        ...
+          lwm2m:
+            ...
+            server:
+              ...
+              secure:
+                ...
+                # Only for RPK: Public & Private Key. If the keystore file is missing or not working
+                public_x: "${LWM2M_SERVER_PUBLIC_X:05064b9e6762dd8d8b8a52355d7b4d8b9a3d64e6d2ee277d76c248861353f358}"
+                public_y: "${LWM2M_SERVER_PUBLIC_Y:5eeb1838e4f9e37b31fa347aef5ce3431eb54e0a2506910c5e0298817445721b}"
+                private_encoded: "${LWM2M_SERVER_PRIVATE_ENCODED:308193020100301306072a8648ce3d020106082a8648ce3d030107047930770201010420dc774b309e547ceb48fee547e104ce201a9c48c449dc5414cd04e7f5cf05f67ba00a06082a8648ce3d030107a1440342000405064b9e6762dd8d8b8a52355d7b4d8b9a3d64e6d2ee277d76c248861353f3585eeb1838e4f9e37b31fa347aef5ce3431eb54e0a2506910c5e0298817445721b}"
+                ...
+            bootstrap:
+              ...
+              secure:
+                ...
+                public_x: "${LWM2M_SERVER_PUBLIC_X_BS:5017c87a1c1768264656b3b355434b0def6edb8b9bf166a4762d9930cd730f91}"
+                public_y: "${LWM2M_SERVER_PUBLIC_Y_BS:3fc4e61bcd8901ec27c424114c3e887ed372497f0c2cf85839b8443e76988b34}"
+                private_encoded: "${LWM2M_SERVER_PRIVATE_ENCODED_BS:308193020100301306072a8648ce3d020106082a8648ce3d0301070479307702010104205ecafd90caa7be45c42e1f3f32571632b8409e6e6249d7124f4ba56fab3c8083a00a06082a8648ce3d030107a144034200045017c87a1c1768264656b3b355434b0def6edb8b9bf166a4762d9930cd730f913fc4e61bcd8901ec27c424114c3e887ed372497f0c2cf85839b8443e76988b34}"
+        ...
+        ```
+
+    * After start servers (`RPK` communications) and read parameters key from thingsboard/application/src/main/resources/thingsboard.yml:
+        * Information about parameters of LwM2M `Server`:
+        
+          ```ruby
+            - Server uses [RPK]: serverNoSecureURI : [0.0.0.0:5685], serverSecureURI : [0.0.0.0:5686]
+            - Public Key (Hex): [3059301306072a8648ce3d020106082a8648ce3d0301070342000405064b9e6762dd8d8b8a52355d7b4d8b9a3d64e6d2ee277d76c248861353f3585eeb1838e4f9e37b31fa347aef5ce3431eb54e0a2506910c5e0298817445721b] 
+            - Private Key (Hex): [308193020100301306072a8648ce3d020106082a8648ce3d030107047930770201010420dc774b309e547ceb48fee547e104ce201a9c48c449dc5414cd04e7f5cf05f67ba00a06082a8648ce3d030107a1440342000405064b9e6762dd8d8b8a52355d7b4d8b9a3d64e6d2ee277d76c248861353f3585eeb1838e4f9e37b31fa347aef5ce3431eb54e0a2506910c5e0298817445721b], 
+          ```
+
+        * Information about parameters of `BootStrap` Server:
+        
+          ```ruby
+            - Bootstrap Server uses [RPK]: serverNoSecureURI : [0.0.0.0:5687], serverSecureURI : [0.0.0.0:5688]
+            - Public Key (Hex): [3059301306072a8648ce3d020106082a8648ce3d030107034200045017c87a1c1768264656b3b355434b0def6edb8b9bf166a4762d9930cd730f913fc4e61bcd8901ec27c424114c3e887ed372497f0c2cf85839b8443e76988b34] 
+            - Private Key (Hex): [308193020100301306072a8648ce3d020106082a8648ce3d0301070479307702010104205ecafd90caa7be45c42e1f3f32571632b8409e6e6249d7124f4ba56fab3c8083a00a06082a8648ce3d030107a144034200045017c87a1c1768264656b3b355434b0def6edb8b9bf166a4762d9930cd730f913fc4e61bcd8901ec27c424114c3e887ed372497f0c2cf85839b8443e76988b34], 
+          ```
+       
+        These parameters: 
+        * ***Public Key (Hex)***:, ***Private Key (Hex)*** You must use for the security mode `RPK` to create deviceProfile tab Bootstrap and run LwM2M client (config client).
+
+<a name="link-2-security-modes"> </a>   
+
+##### `2 security` modes (`NoSec` + `PSK`)
+*   *NoSec mode (`NoSec`) + Pre-Shared Key mode (`PSK`) communications:*
+    * Server security configuration for these modes is always enabled if `X509` and `RPK` mode information is not available or is in error.  
+       1. Default for `key_store_path_file: "/usr/share/thingsboard/conf/credentials/serverKeyStore.jks"` loading is error and
+       1. `key_store_path_file: "${KEY_STORE_PATH_FILE:}"` loading is error and 
+       1. Information about  server (`RPK`) or about bootstrap server (`RPK`)  is missing in yml:
+        * Information about  server's `publicKey` or   server's  `privateKey`;
+        * Information about bootstrap server's `publicKey`  or  bootstrap server's  `privateKey`.
+        ```ruby
+        thingsboard/application/src/main/resources/thingsboard.yml
+        ...
+          lwm2m:
+            ...
+            server:
+              ...
+              secure:
+                ...
+                # Only for RPK: Public & Private Key. If the keystore file is missing or not working
+                public_x: "${LWM2M_SERVER_PUBLIC_X:}"
+                public_y: "${LWM2M_SERVER_PUBLIC_Y:}"
+                private_encoded: "${LWM2M_SERVER_PRIVATE_ENCODED:}"
+                ...
+            bootstrap:
+              ...
+              secure:
+                ...
+                public_x: "${LWM2M_SERVER_PUBLIC_X_BS:}"
+                public_y: "${LWM2M_SERVER_PUBLIC_Y_BS:}"
+                private_encoded: "${LWM2M_SERVER_PRIVATE_ENCODED_BS:}"
+        ...
+        ```
+    * After start servers (`RPK` communications) and read parameters key from thingsboard/application/src/main/resources/thingsboard.yml:
+        * Information about parameters of LwM2M `Server`:
+        
+          ```ruby
+            - uses [PSK]: serverNoSecureURI : [0.0.0.0:5685], serverSecureURI : [0.0.0.0:5686]
+          ```
+
+        * Information about parameters of `BootStrap` Server:
+        
+          ```ruby
+            - Bootstrap Server uses [PSK]: serverNoSecureURI : [0.0.0.0:5687], serverSecureURI : [0.0.0.0:5688]
+          ```
+
+#### Device and Device profile LwM2M (common config for all LwM2M Security mode)
+##### LwM2M Device profile: create and configuration (`NoSec`)
 
 * <a name="link-create-profileNoSec"></a>To create a new LwM2M device profile, follow the instructions 
     step by step:<sup>[[link](#link-create-profileNoSec)]</sup>
@@ -248,44 +479,47 @@ thingsboard/application/src/main/resources/thingsboard.yml
 ```    
     {% include images-gallery.html imageCollection="profileNoSec_edit_typeAfterConnect" showListImageTitles="true" %}
     
+##### LwM2M Device: create and configuration (`NoSec`)
 
-##### LwM2M Device create and configuration
+* <a name="link-create-deviceNoSec"></a>To create a new LwM2M device profile, follow the instructions 
+    step by step:<sup>[[link](#link-create-deviceNoSec)]</sup>
+```ruby 
+    name device profile: "lwm2mProfileNoSec", Transport configuration: "LWM2M"
+```    
+    {% include images-gallery.html imageCollection="profileNoSec_create" showListImageTitles="true" %}
 
+    
+* <a name="link-config-deviceNoSec"></a>Configuration LwM2M device profile: start 
+    <sup>[[link](#link-config-deviceNoSec)]</sup>
+```ruby 
+    name device profile: "lwm2mProfileNoSec", Tab: "Transport configuration"
+```    
+    {% include images-gallery.html imageCollection="profileNoSec_edit" showListImageTitles="true" %} 
+       
+* <a name="link-config-deviceNoSec_typeStart"></a>Configuration LwM2M device profile: changing type start after connect Client LwM2M 
+    <sup>[[link](#link-config-deviceNoSec_typeStart)]</sup>
+```ruby 
+    config number 1 for start Client: "Only Observe Request to the client after registration (Default)"
+    config number 2 for start Client: "Read&Observe Request to the client after registration 
+                                       + Request to the client after registration for All resource values"
+    config number 3 for start Client: "Read&Observe Request to the client after registration 
+                                       + Request to the client after registration to read values only as attributes or telemetry"
+```    
+    {% include images-gallery.html imageCollection="profileNoSec_edit_typeAfterConnect" showListImageTitles="true" %}
+    
 
-#### Pre-Shared Key mode
-```json
-{"0": "Pre-Shared Key mode"}
-```
-* about Pre-Shared Keys LwM2M [5.2.9.1. Pre-Shared Keys](http://www.openmobilealliance.org/release/LightweightM2M/V1_2-20201110-A/OMA-TS-LightweightM2M_Transport-V1_2-20201110-A.pdf#page=23).
-* pre-shared keys for secure DTLS **PSK**  communications:
-The "Public Key or Identity" Resource MUST be used to store the PSK identity, described in [RFC7925](https://www.ietf.org/rfc/rfc7925.txt).
-Information about the current status of this document, any errata, and how to provide feedback on it may be obtained at  [RFC7925  (TLS/DTLS)](http://www.rfc-editor.org/info/rfc7925).
-Clients and Servers MUST support arbitrary PSK Identities of up to 128 bytes, as mandated in [RFC7925](https://www.ietf.org/rfc/rfc7925.txt).
+#### Certificate mode (`X509`)
+* LwM2M Server configuration<sup>[[link](#link-4-security-modes)]</sup>
+* create device 
+    
+#### Raw Public Key mode (`RPK`)
+* LwM2M Server configuration<sup>[[link](#link-3-security-modes)]</sup>
+* create device 
 
-##### LwM2M Server configuration
-```
-thingsboard/application/src/main/resources/thingsboard.yml
-...
-    lwm2m:
-        ...
-        server:
-            secure:
-                bind_address: "${LWM2M_BIND_ADDRESS:0.0.0.0}"
-                start_psk: "${START_SERVER_PSK:true}"
-                bind_port_psk: "${LWM2M_BIND_PORT_SEC_PSK:5686}"
-                private_s: "${LWM2M_SERVER_PRIVATE_S:274671fe40ce937b8a6352cf0a418e8a39e4bf0bb9bf74c910db953c20c73802}"
-...
-```
-After start server (**PSK** communications) and create private key:
-```
- Server uses PSK -> private key : 
-  security key : [3041020100301306072a8648ce3d020106082a8648ce3d030107042730250201010420274671fe40ce937b8a6352cf0a418e8a39e4bf0bb9bf74c910db953c20c73802] 
-```
-##### LwM2M Bootstrap-Server configuration:
-
-##### LwM2M Server configuration
-
-##### LwM2M Device create and configuration
+    
+#### Pre-Shared Key mode (`PSK`)
+* LwM2M Server configuration<sup>[[link](#link-2-security-modes)]</sup>
+* create device 
 Example   value  for Client (Pre-Shared Key mode):
  ```json
  {
@@ -298,191 +532,13 @@ Example   value  for Client (Pre-Shared Key mode):
    }
 }
  ```
-##### LwM2M Profile create and configuration
+    
+#### NoSec mode (`NoSec`)
+* LwM2M Server configuration<sup>[[link](#link-2-security-modes)]</sup>
+* create device 
 
 
-#### Raw Public Key mode
-* about Raw Public Keys LwM2M [5.2.9.2. Raw Public Keys](http://www.openmobilealliance.org/release/LightweightM2M/V1_2-20201110-A/OMA-TS-LightweightM2M_Transport-V1_2-20201110-A.pdf#page=24).
-* private key and certificate for DTLS **RPK** communications:
- ```json
- {"1": "Raw Public Key mode"}
- ```
-##### LwM2M Server configuration
-```
-thingsboard/application/src/main/resources/thingsboard.yml
-...
-    lwm2m:
-        ...
-        server:
-            secure:
-                bind_address: "${LWM2M_BIND_ADDRESS:0.0.0.0}"
-                start_rpk: "${START_SERVER_RPK:true}"
-                bind_port_rpk: "${LWM2M_BIND_PORT_SEC_RPK:5688}"
-                public_x: "${LWM2M_SERVER_PUBLIC_X:405354ea8893471d9296afbc8b020a5c6201b0bb25812a53b849d4480fa5f069}"
-                public_y: "${LWM2M_SERVER_PUBLIC_Y:30c9237e946a3a1692c1cafaa01a238a077f632c99371348337512363f28212b}"
-                private_s: "${LWM2M_SERVER_PRIVATE_S:274671fe40ce937b8a6352cf0a418e8a39e4bf0bb9bf74c910db953c20c73802}"
-...
-```
-After start server (**RPK** communications) and create public and private key:
-```
-Server uses RPK : 
- Elliptic Curve parameters  : [secp256r1 [NIST P-256, X9.62 prime256v1] (1.2.840.10045.3.1.7)] 
- Public x coord : [405354ea8893471d9296afbc8b020a5c6201b0bb25812a53b849d4480fa5f069] 
- Public y coord : [30c9237e946a3a1692c1cafaa01a238a077f632c99371348337512363f28212b] 
- Public Key (Hex): [3059301306072a8648ce3d020106082a8648ce3d03010703420004405354ea8893471d9296afbc8b020a5c6201b0bb25812a53b849d4480fa5f06930c9237e946a3a1692c1cafaa01a238a077f632c99371348337512363f28212b] 
- Private Key (Hex): [3041020100301306072a8648ce3d020106082a8648ce3d030107042730250201010420274671fe40ce937b8a6352cf0a418e8a39e4bf0bb9bf74c910db953c20c73802]
-```
-##### LwM2M Bootstrap-Server configuration:
 
-##### LwM2M Server configuration
-
-##### LwM2M Device create and configuration
-
-##### LwM2M Profile create and configuration
-
-#### Certificate mode
-* about X.509 Certificates Keys LwM2M [5.2.9.3. X.509 Certificates](http://www.openmobilealliance.org/release/LightweightM2M/V1_2-20201110-A/OMA-TS-LightweightM2M_Transport-V1_2-20201110-A.pdf#page=25).
-* **X.509** communications:
-  ```json
-  {"2": "Certificate mode"}
-  ```
- ##### LwM2M Server configuration
-```
-thingsboard/application/src/main/resources/thingsboard.yml
-...
-    lwm2m:
-        ...
-        secure:
-            key_store_type: "${LWM2M_KEYSTORE_TYPE:JKS}"
-            # Default:  key_store_path_file: "${KEY_STORE_PATH_FILE:/usr/share/thingsboard/conf/credentials/serverKeyStore.jks}"
-            key_store_path_file: "${KEY_STORE_PATH_FILE:}"
-            key_store_password: "${LWM2M_KEYSTORE_PASSWORD_SERVER:server_ks_password}"
-            root_alias: "${LWM2M_SERVER_ROOT_CA:rootca}"
-        server:
-            secure:
-                bind_address: "${LWM2M_BIND_ADDRESS:0.0.0.0}"
-                start_rpk: "${START_SERVER_RPK:true}"
-                bind_port_rpk: "${LWM2M_BIND_PORT_SEC_RPK:5690}"
-                alias: "${LWM2M_KEYSTORE_ALIAS_SERVER:server}"
-...
-```
-
-After start server (**X509/b> communications) and read certificate from serverKeyStore.jks:
-
-```
-Server uses X509 : 
- X509 Certificate (Hex): [308202b93082025ea003020102020828c8227829593afc300a06082a8648ce3d04030230793119301706035504030c106c6f63616c686f737420726f6f74434131143012060355040b0c0b5468696e6773626f61726431143012060355040a0c0b5468696e6773626f617264310d300b06035504070c044b7969763114301206035504080c0b4b796976204f626c617374310b3009060355040613025541301e170d3231303132383131313135385a170d3232303132383131313135385a30793119301706035504030c106c6f63616c686f73742073657276657231143012060355040b0c0b5468696e6773626f61726431143012060355040a0c0b5468696e6773626f617264310d300b06035504070c044b7969763114301206035504080c0b4b796976204f626c617374310b30090603550406130255413059301306072a8648ce3d020106082a8648ce3d030107034200048e086784254cce72b85769b0fec08b0c7240dd332f8bedbf7125f69bd0cccb91e05936a296910ece9cfc49de1b4e621bcc185bfc2c9b87d17441f48503374cafa381cf3081cc3081aa0603551d230481a230819f8014158ea631c13353ff398cd1a0d72effabf62f8212a17da47b30793119301706035504030c106c6f63616c686f737420726f6f74434131143012060355040b0c0b5468696e6773626f61726431143012060355040a0c0b5468696e6773626f617264310d300b06035504070c044b7969763114301206035504080c0b4b796976204f626c617374310b300906035504061302554182085ef53a90aa7cdc14301d0603551d0e04160414cdfe3005f5edb0a378e9e917b35bd1091c18c498300a06082a8648ce3d0403020349003046022100835c8a5c8e1fb031aa4e582660c4c5cb176364a7a2c05d93506028b0864f0a87022100bad537b98e46fa56c0d5d9cb8a75c0ff9c83a3c2f2f6dcf1f78cbc5a02813e09] 
- Private Key (Hex): [308193020100301306072a8648ce3d020106082a8648ce3d0301070479307702010104200b7c6f6ed87fdb5ed3465ae0250d2f1327892dbe2aa247ada55789cbebf72f94a00a06082a8648ce3d030107a144034200048e086784254cce72b85769b0fec08b0c7240dd332f8bedbf7125f69bd0cccb91e05936a296910ece9cfc49de1b4e621bcc185bfc2c9b87d17441f48503374caf]
-```
-##### LwM2M Bootstrap-Server configuration:
-
-##### LwM2M Server configuration
-
-##### LwM2M Device create and configuration
-
-##### LwM2M Profile create and configuration
-
-#### LwM2M Bootstrap-Server configuration:
-* start transport LwM2M with Bootstrap-Server
-```
-thingsboard/application/src/main/resources/thingsboard.yml
-...
-    lwm2m:
-         bootstrap:
-              enable: "${BOOTSTRAP:true}"
-...
-```
-LwM2M transport Bootstrap-Server supports from **1** to **4** servers (and / or):
-##### NoSec mode
-* **no security** communications: 
-```
-thingsboard/application/src/main/resources/thingsboard.yml
-...
-    lwm2m:
-        ...
-    bootstrap:
-          bind_address: "${LWM2M_BIND_ADDRESS_BS:0.0.0.0}"
-          bind_port_no_sec_psk: "${LWM2M_BIND_PORT_NO_SEC_BS:5691}"
-          bind_port_no_sec_rpk: "${LWM2M_BIND_PORT_NO_SEC_BS:5693}"
-          bind_port_no_sec_x509: "${LWM2M_BIND_PORT_NO_SEC_BS:5695}"
-...
-```
-##### Pre-Shared Key mode
-* pre-shared keys for secure DTLS **PSK** communications: 
-```
-thingsboard/application/src/main/resources/thingsboard.yml
-...
-    lwm2m:
-        ...
-        bootstrap:
-            secure:
-                bind_address: "${LWM2M_BIND_ADDRESS_BS:0.0.0.0}"
-                    start_psk: "${START_SERVER_PSK_BS:true}"
-                    bind_port_psk: "${LWM2M_BIND_PORT_SEC_PSK_BS:5692}"
-                    private_s: "${LWM2M_SERVER_PRIVATE_S_BS:9dbdbb073fc63570693a9aaf1013414e261c571f27e27fc6a8c1c2ad9347875a}"
-...
-```
-
-
-##### Raw Public Key mode
-* private key and certificate for DTLS **RPK** communications:
- 
-```
-thingsboard/application/src/main/resources/thingsboard.yml
-...
-    lwm2m:
-        ...
-        bootstrap:
-            secure:
-                 bind_address: "${LWM2M_BIND_ADDRESS_BS:0.0.0.0}"
-                 start_rpk: "${START_SERVER_RPK_BS:true}"
-                 bind_port_rpk: "${LWM2M_BIND_PORT_SER_RPK_BS:5694}"
-                 # Only RPK: Public & Private Key
-                 public_x: "${LWM2M_SERVER_PUBLIC_X_BS:993ef2b698c6a9c0c1d8be78b13a9383c0854c7c7c7a504d289b403794648183}"
-                 public_y: "${LWM2M_SERVER_PUBLIC_Y_BS:267412d5fc4e5ceb2257cb7fd7f76ebdac2fa9aa100afb162e990074cc0bfaa2}"
-                 private_s: "${LWM2M_SERVER_PRIVATE_S_BS:9dbdbb073fc63570693a9aaf1013414e261c571f27e27fc6a8c1c2ad9347875a}"
-...
-```
-After start server (**RPK** communications) and create public and private key:
-```
-Bootstrap uses RPK : 
- Elliptic Curve parameters  : [secp256r1 [NIST P-256, X9.62 prime256v1] (1.2.840.10045.3.1.7)] 
- Public x coord : [993ef2b698c6a9c0c1d8be78b13a9383c0854c7c7c7a504d289b403794648183] 
- Public y coord : [267412d5fc4e5ceb2257cb7fd7f76ebdac2fa9aa100afb162e990074cc0bfaa2] 
- Public Key (Hex): [3059301306072a8648ce3d020106082a8648ce3d03010703420004993ef2b698c6a9c0c1d8be78b13a9383c0854c7c7c7a504d289b403794648183267412d5fc4e5ceb2257cb7fd7f76ebdac2fa9aa100afb162e990074cc0bfaa2] 
- Private Key (Hex): [3041020100301306072a8648ce3d020106082a8648ce3d0301070427302502010104209dbdbb073fc63570693a9aaf1013414e261c571f27e27fc6a8c1c2ad9347875a]
-```
-##### Certificate mode
-* **X.509** communications:
- 
-```
-thingsboard/application/src/main/resources/thingsboard.yml
-...
-    lwm2m:
-        ...
-        secure:
-            key_store_type: "${LWM2M_KEYSTORE_TYPE:JKS}"
-            # Default     key_store_path_file: "${KEY_STORE_PATH_FILE:/usr/share/thingsboard/conf/credentials/serverKeyStore.jks}"
-            key_store_path_file: "${KEY_STORE_PATH_FILE:}"
-            key_store_password: "${LWM2M_KEYSTORE_PASSWORD_SERVER:server_ks_password}"
-            root_alias: "${LWM2M_SERVER_ROOT_CA:rootca}"
-        bootstrap
-            secure:
-                bind_address: "${LWM2M_BIND_ADDRESS_BS:0.0.0.0}"
-                start_x509: "${START_SERVER_X509_BS:true}"
-                bind_port_x509: "${LWM2M_BIND_PORT_SEC_X509_BS:5696}"
-                # Only Certificate_x509:
-                alias: "${LWM2M_KEYSTORE_ALIAS_BOOTSTRAP:bootstrap}"
-...
-```
-
-After start server (**X509/b> communications) and read certificate from serverKeyStore.jks:
-
-```
-BootStrap uses X509 : 
- X509 Certificate (Hex): [308202bb30820261a0030201020208d8248857bfa14dbf300a06082a8648ce3d04030230793119301706035504030c106c6f63616c686f737420726f6f74434131143012060355040b0c0b5468696e6773626f61726431143012060355040a0c0b5468696e6773626f617264310d300b06035504070c044b7969763114301206035504080c0b4b796976204f626c617374310b3009060355040613025541301e170d3231303132383131313135385a170d3232303132383131313135385a307c311c301a06035504030c136c6f63616c686f737420626f6f74737472617031143012060355040b0c0b5468696e6773626f61726431143012060355040a0c0b5468696e6773626f617264310d300b06035504070c044b7969763114301206035504080c0b4b796976204f626c617374310b30090603550406130255413059301306072a8648ce3d020106082a8648ce3d030107034200048e1890ce4d9467180bfb36e36e143efeac4090a6b148b206808212fa06721294669d3bdb20b94dc007d3dca99ea80bc33d6c6d5aa73d11b41398866d642295c1a381cf3081cc3081aa0603551d230481a230819f8014158ea631c13353ff398cd1a0d72effabf62f8212a17da47b30793119301706035504030c106c6f63616c686f737420726f6f74434131143012060355040b0c0b5468696e6773626f61726431143012060355040a0c0b5468696e6773626f617264310d300b06035504070c044b7969763114301206035504080c0b4b796976204f626c617374310b300906035504061302554182085ef53a90aa7cdc14301d0603551d0e04160414a3a12d8e61d21c468760adb23051c345e08575e6300a06082a8648ce3d040302034800304502200a5bd0dd60352373c4f62384b462aa79149066514e010e6f2a2ddfedb37961a20221008c21921bb0d186097cfa58dbe29f5c17d9211275f66c28a0c5878321b12b84fd] 
- Private Key (Hex): [308193020100301306072a8648ce3d020106082a8648ce3d030107047930770201010420b5426e3ec61e9848087191d79ecee14cd6426a2ef6263b8d2a031f8ffeb9630fa00a06082a8648ce3d030107a144034200048e1890ce4d9467180bfb36e36e143efeac4090a6b148b206808212fa06721294669d3bdb20b94dc007d3dca99ea80bc33d6c6d5aa73d11b41398866d642295c1]
-```
 
 #### LwM2M client
 ##### Device for LwM2M client on thingsboard`s Server/Bootstrap-Server
@@ -730,3 +786,4 @@ MQTT transport can be fully customized for specific use-case by changing the cor
       throw :async
     end
 ```
+{% include images-gallery.html imageCollection="step1" preview="false" max-width="100%" %}
