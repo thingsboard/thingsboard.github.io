@@ -524,7 +524,7 @@ defaultActivateSelectProduct: true
 <div class="container faq-content">
     <h2 id="faq" class="text-center">Frequently asked questions</h2>
     <div class="pi-accordion">
-        <h3 id="licensing">Licensing</h3>    
+        <h3 id="licensing">Licensing</h3>  
         <div class="item" data-tag="h4" data-item-id="what-is-pay-as-you-go" data-title="What is &quot;Pay-as-you-go&quot; license?">
             <div class="container">
                 <p>
