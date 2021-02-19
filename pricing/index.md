@@ -31,10 +31,10 @@ defaultActivateSelectProduct: true
     <div id="thingsboard-pe-options" class="select-product-content justify-content-center align-items-center" style="display: none;">
         <div class="product-selector">
             <div class="solution thingsboard-cloud active defaultselection" onClick="activateProductSection('thingsboard-cloud')">
-                <h3>Cloud</h3>
+                <h3 data-faq-id="what-is-cloud" data-faq-link-size="70%">Cloud</h3>
             </div>
             <div class="solution thingsboard-pe" onClick="activateProductSection('thingsboard-pe')">
-                <h3>Self-managed</h3>
+                <h3 data-faq-id="difference" data-faq-link-size="70%">Self-managed</h3>
             </div>
         </div>
     </div>
