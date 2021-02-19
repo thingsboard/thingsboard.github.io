@@ -276,6 +276,36 @@ tooltiptag:
     4:
         image: /images/user-guide/ui/widgets/actions/maps/tooltiptag-4.png
 
+mob:
+    0:
+        image: /images/user-guide/ui/widgets/actions/settings/mob-layout.png
+    1:
+        image: /images/user-guide/ui/widgets/actions/settings/mob-layout-1.png
+
+mob-layout-1:
+    1: 
+        image: /images/user-guide/ui/widgets/actions/settings/mob-layout-2.png
+    2:
+        image: /images/user-guide/ui/widgets/actions/settings/mob-layout-3.png
+    3:
+        image: /images/user-guide/ui/widgets/actions/settings/mob-layout-4.png
+    4:
+        image: /images/user-guide/ui/widgets/actions/settings/mob-layout-5.png
+    5:
+        image: /images/user-guide/ui/widgets/actions/settings/mob-layout-6.png
+
+mob-layout-2:
+    1:
+        image: /images/user-guide/ui/widgets/actions/settings/mob-layout-7.png
+    2:
+        image: /images/user-guide/ui/widgets/actions/settings/mob-layout-8.png
+    3:
+        image: /images/user-guide/ui/widgets/actions/settings/mob-layout-9.png
+    4:
+        image: /images/user-guide/ui/widgets/actions/settings/mob-layout-10.png
+    5:
+        image: /images/user-guide/ui/widgets/actions/settings/mob-layout-11.png
+
 ---
 
 * TOC
@@ -898,3 +928,49 @@ Click a map's marker for a tooltip to appear. To execute an action, click the te
 
 {% include images-gallery.html imageCollection="tooltiptag" %}
 
+## Special actions settings
+
+#### Open right dashboard layout (mobile view)
+
+Often users need to see updated details of one widget on another widget near it. For example, we have a list of assets in Entity Table widget, and we want to update their details on the Chart widget near.
+From the desktop, it’s easily configuring by placing two widgets near each other and choosing an "Update current dashboard" action type, however an adaptive mobile screen automatically places widgets under each other,
+so you need to scroll down to see needed information on the second one.
+
+{% include images-gallery.html imageCollection="mob" %}
+
+[Layouts](/docs/user-guide/dashboards/#layouts) feature solves this issue. To configure layouts and move already created widgets, you should:
+1. Enter the Dashboard's edit mode by clicking a "Pencil" icon at the right bottom of the page.
+2. On the left top of the window click "Manage layouts".
+3. In the opened "Manage layouts" window, tick the checkbox "Right" and click "Save". Now we have two layouts.
+4. Then, we need to transfer the Chart widget to the right layout. Right-click widget and from the appeared menu choose "Copy".
+5. Right-click anywhere on the empty layout and from the appeared menu choose "Paste".
+6. When we have two copies of the same widget on both layouts, let's delete the one on the main layout by right-clicking it and choosing "Delete" in the appeared menu.
+   In the opened dialog confirmation window click "Yes" and the widget will be deleted.
+7. Adjust widgets' size by dragging their edges.
+
+{% include images-gallery.html imageCollection="mob-layout-1" %}
+
+Now, to activate an action that allows seeing details of one widget on another one with the one button click and no more movements, you need:
+
+1. Enter Edit mode of the widget on the main layout by clicking the "Pencil" icon on the right top of the widget.
+2. Go to the "Actions" cell and click the "+" icon to add a new action.
+3. Choose the desired action source, in the example, it is going to be the Action cell button.
+Give a name for the action, it is going to be visible in the mobile mode. Select an icon representing a button (if needed) by clicking an icon image and choosing from the variety of icons.
+4. Select an action type "Update current dashboard state". Select a target dashboard state - it should be the dashboard state where layouts were created.
+5. Finally, tick a checkbox "Open right dashboard layout (mobile view)".
+6. Click "Save" at the right bottom of the dialog window to apply changes.
+7. In the Dashboard Edit mode, click the orange tick-mark at the right bottom of the page.
+
+Now in the mobile mode, by clicking an action button, we will be directly transitioned to the needed widget where we can see the details of the entities of the main widget.
+
+{% include images-gallery.html imageCollection="mob-layout-2" %}
+
+
+#### Open in a separate dialog
+
+[Coming soon]
+
+
+#### Set entity from widget
+
+[Coming soon]
