@@ -114,20 +114,28 @@ navigate-new-state-cards:
 
 update-current-dash-state:
     0:
-        image: /images/user-guide/ui/widgets/actions/entity-cards/update-current-dash-cards.png
+        image: /images/user-guide/ui/widgets/actions/entity-cards/update-current-dash-cards-8.png
     1:
-        image: /images/user-guide/ui/widgets/actions/entity-cards/update-current-dash-cards-1.png
+        image: /images/user-guide/ui/widgets/actions/entity-cards/update-current-dash-cards-9.png
+    2:
+        image: /images/user-guide/ui/widgets/actions/entity-cards/update-current-dash-cards-10.png
     3:
-        image: /images/user-guide/ui/widgets/actions/entity-cards/update-current-dash-cards-2.png
+        image: /images/user-guide/ui/widgets/actions/entity-cards/update-current-dash-cards-11.png
     4:
-        image: /images/user-guide/ui/widgets/actions/entity-cards/update-current-dash-cards-3.png
-    5:
-        image: /images/user-guide/ui/widgets/actions/entity-cards/update-current-dash-cards-4.png
+        image: /images/user-guide/ui/widgets/actions/entity-cards/update-current-dash-cards.png
     6:
-        image: /images/user-guide/ui/widgets/actions/entity-cards/update-current-dash-cards-5.png
+        image: /images/user-guide/ui/widgets/actions/entity-cards/update-current-dash-cards-1.png
     7:
-        image: /images/user-guide/ui/widgets/actions/entity-cards/update-current-dash-cards-6.png
+        image: /images/user-guide/ui/widgets/actions/entity-cards/update-current-dash-cards-2.png
     8:
+        image: /images/user-guide/ui/widgets/actions/entity-cards/update-current-dash-cards-3.png
+    9:
+        image: /images/user-guide/ui/widgets/actions/entity-cards/update-current-dash-cards-4.png
+    10:
+        image: /images/user-guide/ui/widgets/actions/entity-cards/update-current-dash-cards-5.png
+    11:
+        image: /images/user-guide/ui/widgets/actions/entity-cards/update-current-dash-cards-6.png
+    12:
         image: /images/user-guide/ui/widgets/actions/entity-cards/update-current-dash-cards-7.png
 
 navigate-to-dash-cards:
@@ -333,6 +341,10 @@ dialog-window-1:
         image: /images/user-guide/ui/widgets/actions/settings/dialog-window-9.png
     6:
         image: /images/user-guide/ui/widgets/actions/settings/dialog-window-10.png
+
+entityfromwidget:
+    0:
+        image: /images/user-guide/ui/widgets/actions/settings/entityfromwidget.png
 
 ---
 
@@ -1049,4 +1061,8 @@ To perform an action and open a dialog window with the state, click a cell butto
 
 #### Set entity from widget
 
-[Coming soon]
+_Set entity from widget_ checkbox is responsible for directing details of a specific entity from one widget to another widget. 
+If the checkbox is unchecked, data from one widget is going to be shown not particularly from an entity, but from the widget altogether.
+
+{% include images-gallery.html imageCollection="entityfromwidget" %}
+
