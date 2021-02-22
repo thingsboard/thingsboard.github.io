@@ -371,6 +371,12 @@ C:\thingsboard>upgrade.bat --fromVersion=3.2.0
 net start thingsboard
 ```
 
+### Troubleshooting 
+
+In rare cases after upgrade you may face some License-related issues which are affected ThingsBoard service and it can't be started normally. How to solve it described at the [License-related issues](/docs/reference/known-issues/#license-related-issues) block.
+
+Additional, there are an enumeration of the [known issues](/docs/reference/known-issues/#v321-january-26-2021) related to the current version.
+
 ## Upgrading to 3.2PE
 
 
@@ -468,6 +474,10 @@ C:\thingsboard>upgrade.bat --fromVersion=3.1.1
 net start thingsboard
 ```
 
+### Troubleshooting
+
+In rare cases after upgrade you may face some License-related issues which are affected ThingsBoard service and it can't be started normally. How to solve it described at the [License-related issues](/docs/reference/known-issues/#license-related-issues) block.
+
 ## Upgrading to 3.1.1PE
 
 
@@ -564,6 +574,10 @@ C:\thingsboard>upgrade.bat --fromVersion=3.1.0
 ```text
 net start thingsboard
 ```
+
+### Troubleshooting
+
+In rare cases after upgrade you may face some License-related issues which are affected ThingsBoard service and it can't be started normally. How to solve it described at the [License-related issues](/docs/reference/known-issues/#license-related-issues) block.
 
 ## Upgrading to 3.1PE
 
@@ -683,6 +697,10 @@ C:\thingsboard>upgrade.bat --fromVersion=3.0.1
 ```text
 net start thingsboard
 ```
+
+### Troubleshooting
+
+In rare cases after upgrade you may face some License-related issues which are affected ThingsBoard service and it can't be started normally. How to solve it described at the [License-related issues](/docs/reference/known-issues/#license-related-issues) block.
 
 ## Upgrading to 3.0.1PE
 
@@ -819,6 +837,10 @@ C:\thingsboard>upgrade.bat --fromVersion=2.5.0
 net start thingsboard
 ```
 
+### Troubleshooting
+
+In rare cases after upgrade you may face some License-related issues which are affected ThingsBoard service and it can't be started normally. How to solve it described at the [License-related issues](/docs/reference/known-issues/#license-related-issues) block.
+
 ## Upgrading to 3.0PE
 
 
@@ -950,6 +972,10 @@ C:\thingsboard>upgrade.bat --fromVersion=2.5.0
 net start thingsboard
 ```
 
+### Troubleshooting
+
+In rare cases after upgrade you may face some License-related issues which are affected ThingsBoard service and it can't be started normally. How to solve it described at the [License-related issues](/docs/reference/known-issues/#license-related-issues) block.
+
 ## Upgrading to 2.5.6PE
 
 ### Ubuntu/CentOS {#ubuntucentos-256}
@@ -1012,6 +1038,10 @@ net stop thingsboard
 ```text
 net start thingsboard
 ```
+
+### Troubleshooting
+
+In rare cases after upgrade you may face some License-related issues which are affected ThingsBoard service and it can't be started normally. How to solve it described at the [License-related issues](/docs/reference/known-issues/#license-related-issues) block.
 
 ## Upgrading to 2.5.5PE 
 
@@ -1076,6 +1106,10 @@ net stop thingsboard
 net start thingsboard
 ```
 
+### Troubleshooting
+
+In rare cases after upgrade you may face some License-related issues which are affected ThingsBoard service and it can't be started normally. How to solve it described at the [License-related issues](/docs/reference/known-issues/#license-related-issues) block.
+
 ## Upgrading to 2.5.4PE 
 
 ### Ubuntu/CentOS {#ubuntucentos-254}
@@ -1139,6 +1173,10 @@ net stop thingsboard
 net start thingsboard
 ```
 
+### Troubleshooting
+
+In rare cases after upgrade you may face some License-related issues which are affected ThingsBoard service and it can't be started normally. How to solve it described at the [License-related issues](/docs/reference/known-issues/#license-related-issues) block.
+
 ## Upgrading to 2.5.3PE 
 
 ### Ubuntu/CentOS {#ubuntucentos-253}
@@ -1201,6 +1239,10 @@ net stop thingsboard
 ```text
 net start thingsboard
 ```
+
+### Troubleshooting
+
+In rare cases after upgrade you may face some License-related issues which are affected ThingsBoard service and it can't be started normally. How to solve it described at the [License-related issues](/docs/reference/known-issues/#license-related-issues) block.
 
 ## Upgrading to 2.5.2PE 
 
@@ -1281,6 +1323,9 @@ C:\thingsboard>upgrade.bat --fromVersion=2.4.3
 net start thingsboard
 ```
 
+### Troubleshooting
+
+In rare cases after upgrade you may face some License-related issues which are affected ThingsBoard service and it can't be started normally. How to solve it described at the [License-related issues](/docs/reference/known-issues/#license-related-issues) block.
 
 ## Upgrading to 2.5.1PE 
 
@@ -1364,6 +1409,9 @@ C:\thingsboard>upgrade.bat --fromVersion=2.4.3
 net start thingsboard
 ```
 
+### Troubleshooting
+
+In rare cases after upgrade you may face some License-related issues which are affected ThingsBoard service and it can't be started normally. How to solve it described at the [License-related issues](/docs/reference/known-issues/#license-related-issues) block.
 
 ## Upgrading to 2.5PE 
 
@@ -1515,6 +1563,9 @@ C:\thingsboard>upgrade.bat --fromVersion=2.4.3
 net start thingsboard
 ```
 
+### Troubleshooting
+
+In rare cases after upgrade you may face some License-related issues which are affected ThingsBoard service and it can't be started normally. How to solve it described at the [License-related issues](/docs/reference/known-issues/#license-related-issues) block.
 
 ## Upgrading to 2.4.3PE
 
@@ -1608,6 +1659,10 @@ C:\thingsboard>upgrade.bat --fromVersion=2.4.2
 net start thingsboard
 ```
 
+### Troubleshooting
+
+In rare cases after upgrade you may face some License-related issues which are affected ThingsBoard service and it can't be started normally. How to solve it described at the [License-related issues](/docs/reference/known-issues/#license-related-issues) block.
+
 ## Upgrading to 2.4.2.1PE
 
 These steps are applicable for 2.4.1PE and 2.4.2PE ThingsBoard Professional Edition versions.
@@ -1700,6 +1755,9 @@ C:\thingsboard>upgrade.bat --fromVersion=2.4.1
 net start thingsboard
 ```
 
+### Troubleshooting
+
+In rare cases after upgrade you may face some License-related issues which are affected ThingsBoard service and it can't be started normally. How to solve it described at the [License-related issues](/docs/reference/known-issues/#license-related-issues) block.
 
 ## Upgrading to 2.4.1PE
 
@@ -1792,6 +1850,10 @@ C:\thingsboard>upgrade.bat --fromVersion=2.4.0
 ```text
 net start thingsboard
 ```
+
+### Troubleshooting
+
+In rare cases after upgrade you may face some License-related issues which are affected ThingsBoard service and it can't be started normally. How to solve it described at the [License-related issues](/docs/reference/known-issues/#license-related-issues) block.
 
 ## Next steps
 

@@ -41,7 +41,7 @@ That for deployment of 2 or more TB-core/Rule Engine nodes, an additional separa
 <br>
 <b>Root cause:</b> Subscription not found at the License Server.
 <br>
-<b>How to fix:</b> Contact support
+<b>How to fix: </b> <a href="/docs/contact-us/">Contact support</a>.
 <br><br>
 </details>
 
@@ -54,7 +54,7 @@ That for deployment of 2 or more TB-core/Rule Engine nodes, an additional separa
 <br>
 <b>Root cause:</b> Subscription not active at the License Server.
 <br>
-<b>How to fix:</b> Contact support
+<b>How to fix: </b> <a href="/docs/contact-us/">Contact support</a>.
 <br><br>
 </details>
 
@@ -103,7 +103,7 @@ Docker <small>(choose this if the ThingsBoard service is installed on Docker)</s
 <br>
 <b>Root cause:</b> Invalid license check request sent.
 <br>
-<b>How to fix:</b> Contact support
+<b>How to fix: </b> <a href="/docs/contact-us/">Contact support</a>.
 <br><br>
 </details>
 
@@ -165,7 +165,7 @@ Docker <small>(choose this if the ThingsBoard service is installed on Docker)</s
 <br>
 <b>Root cause:</b> Internal License Server error.
 <br>
-<b>How to fix:</b> Contact support.
+<b>How to fix: </b> <a href="/docs/contact-us/">Contact support</a>.
 <br><br>
 </details>
 
@@ -183,7 +183,7 @@ Caused by: java.nio.file.FileSystemException: instance-license.data: Too many op
 {% endhighlight %}
 <b>Root cause:</b> Internal instance server error.
 <br>
-<b>How to fix:</b> Contact support <b>or:</b>
+<b>How to fix: </b> <a href="/docs/contact-us/">Contact support</a><b> or:</b>
 <br>
 <ol>
   <li>{% highlight bash %}
@@ -219,7 +219,7 @@ LimitNOFILESoft=1617596
 <br>
 <b>Root cause:</b> Internal License Server error.
 <br>
-<b>How to fix:</b> Contact support.
+<b>How to fix: </b> <a href="/docs/contact-us/">Contact support</a>.
 <br><br>
 </details>
 
@@ -232,7 +232,7 @@ LimitNOFILESoft=1617596
 <br>
 <b>Root cause:</b> Connection related issues (network, firewall, etc. -problems).
 <br>
-<b>How to fix:</b> Contact support.
+<b>How to fix: </b> <a href="/docs/contact-us/">Contact support</a>.
 <br><br>
 </details>
 

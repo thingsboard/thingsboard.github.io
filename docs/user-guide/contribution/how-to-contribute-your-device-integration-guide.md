@@ -71,7 +71,7 @@ Your copy of the site will then be viewable at: [http://localhost:4000](http://l
 
 ## Integration guide pattern
 
-Use this [Sample](/docs/samples/sample/sample.md) as a base for your guide. This page is located in a path "/docs/samples/sample/sample.md"
+Use this [Sample](/docs/samples/sample/sample) as a base for your guide. This page is located in a path "/docs/samples/sample/sample.md"
 
 Once you open the .md file perform further necessary steps
 
