@@ -349,6 +349,12 @@ toc:
     - title: Widgets development (ThingsBoard v2.x)
       path: /docs/user-guide/contribution/widgets-development-before-3.0/
 - title: Release Notes
-  path: /docs/reference/releases/
+  section:
+    - title: Known Issues and Recommendations
+      path: /docs/reference/known-issues/
+    - title: Release 3.X
+      path: /docs/reference/releases-3-X/
+    - title: Release 2.X
+      path: /docs/reference/releases-2-X/
 - title: Roadmap
   path: /docs/reference/roadmap/
