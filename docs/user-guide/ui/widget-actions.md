@@ -114,20 +114,28 @@ navigate-new-state-cards:
 
 update-current-dash-state:
     0:
-        image: /images/user-guide/ui/widgets/actions/entity-cards/update-current-dash-cards.png
+        image: /images/user-guide/ui/widgets/actions/entity-cards/update-current-dash-cards-8.png
     1:
-        image: /images/user-guide/ui/widgets/actions/entity-cards/update-current-dash-cards-1.png
+        image: /images/user-guide/ui/widgets/actions/entity-cards/update-current-dash-cards-9.png
+    2:
+        image: /images/user-guide/ui/widgets/actions/entity-cards/update-current-dash-cards-10.png
     3:
-        image: /images/user-guide/ui/widgets/actions/entity-cards/update-current-dash-cards-2.png
+        image: /images/user-guide/ui/widgets/actions/entity-cards/update-current-dash-cards-11.png
     4:
-        image: /images/user-guide/ui/widgets/actions/entity-cards/update-current-dash-cards-3.png
-    5:
-        image: /images/user-guide/ui/widgets/actions/entity-cards/update-current-dash-cards-4.png
+        image: /images/user-guide/ui/widgets/actions/entity-cards/update-current-dash-cards.png
     6:
-        image: /images/user-guide/ui/widgets/actions/entity-cards/update-current-dash-cards-5.png
+        image: /images/user-guide/ui/widgets/actions/entity-cards/update-current-dash-cards-1.png
     7:
-        image: /images/user-guide/ui/widgets/actions/entity-cards/update-current-dash-cards-6.png
+        image: /images/user-guide/ui/widgets/actions/entity-cards/update-current-dash-cards-2.png
     8:
+        image: /images/user-guide/ui/widgets/actions/entity-cards/update-current-dash-cards-3.png
+    9:
+        image: /images/user-guide/ui/widgets/actions/entity-cards/update-current-dash-cards-4.png
+    10:
+        image: /images/user-guide/ui/widgets/actions/entity-cards/update-current-dash-cards-5.png
+    11:
+        image: /images/user-guide/ui/widgets/actions/entity-cards/update-current-dash-cards-6.png
+    12:
         image: /images/user-guide/ui/widgets/actions/entity-cards/update-current-dash-cards-7.png
 
 navigate-to-dash-cards:
@@ -306,6 +314,38 @@ mob-layout-2:
     5:
         image: /images/user-guide/ui/widgets/actions/settings/mob-layout-11.png
 
+dialog-window:
+    1:
+        image: /images/user-guide/ui/widgets/actions/settings/dialog-window.png
+    2:
+        image: /images/user-guide/ui/widgets/actions/settings/dialog-window-1.png
+    3:
+        image: /images/user-guide/ui/widgets/actions/settings/dialog-window-2.png
+    4:
+        image: /images/user-guide/ui/widgets/actions/settings/dialog-window-3.png
+    5:
+        image: /images/user-guide/ui/widgets/actions/settings/dialog-window-3.5.png
+    6:
+        image: /images/user-guide/ui/widgets/actions/settings/dialog-window-4.png
+
+dialog-window-1:
+    1:
+        image: /images/user-guide/ui/widgets/actions/settings/dialog-window-5.png
+    2:
+        image: /images/user-guide/ui/widgets/actions/settings/dialog-window-6.png
+    3:
+        image: /images/user-guide/ui/widgets/actions/settings/dialog-window-7.png
+    4:
+        image: /images/user-guide/ui/widgets/actions/settings/dialog-window-8.png
+    5:
+        image: /images/user-guide/ui/widgets/actions/settings/dialog-window-9.png
+    6:
+        image: /images/user-guide/ui/widgets/actions/settings/dialog-window-10.png
+
+entityfromwidget:
+    0:
+        image: /images/user-guide/ui/widgets/actions/settings/entityfromwidget.png
+
 ---
 
 * TOC
@@ -340,7 +380,7 @@ How to add states to your dashboard, please [read here](/docs/user-guide/dashboa
 
 After a state has been added, we can configure a _Navigate to new dashboard state_ action type:
 
-1. In the widget's edit mode move to the last cell "Actions".
+1. In the widget's Edit mode move to the last cell "Actions".
 2. Click the "+" icon on the right of the window to add a new action.
 3. As an example for this manual, in the top drop-down menu, choose an "Action cell button" action source.
 4. In the next line input a name for the action and choose an icon that will represent a button. With this button, action will be performed.
@@ -366,7 +406,7 @@ For starters let's add a Chart widget to the Dashboard to configure the _Update 
 2. In the "Add widget" window type input your data source, in this manual for example is used pressure data. Click "Add" at the right bottom of the widget.
 3. We can see that the Chart widget has appeared on the dashboard, but it has no data to display yet.
 4. Enter Edit mode of the Table widget by clicking the Pencil icon on the right top of the widget.
-5. In the widget's edit mode move to the last cell "Actions".
+5. In the widget's Edit mode move to the last cell "Actions".
 6. Click the "+" icon on the right of the window to add a new action.
 7. As an example for this manual, in the top drop-down menu, choose an "Action cell button" action source.
 8. In the next line input a name for the action and choose an icon that will represent a button. With this button, action will be performed.
@@ -385,7 +425,7 @@ After saving changes, you will see button icons opposite the entity names. Click
 This type of action transfers you to a previously created dashboard of your choice.
 To be fastly transitioned to another selected dashboard, you should:
 
-1. In the widget's edit mode move to the last cell "Actions".
+1. In the widget's Edit mode move to the last cell "Actions".
 2. Click the "+" icon on the right of the window to add a new action.
 3. As an example for this manual, in the top drop-down menu, choose an "Action cell button" action source.
 4. In the next line input a name for the action and choose an icon that will represent a button. With this button, action will be performed.
@@ -406,7 +446,7 @@ After saving changes, you can see icon-buttons opposite the entity names. Clicki
 A Custom action allows manually configuring a function that can be used to add an individual action to your widget (for example deleting listed devices/assets).
 To configure a custom action with a function (with an example of an asset deletion):
 
-1. In the widget's edit mode move to the last cell "Actions".
+1. In the widget's Edit mode move to the last cell "Actions".
 2. Click the "+" icon on the right of the window to add a new action.
 3. As an example for this manual, in the top drop-down menu, choose an "Action cell button" action source.
 4. In the next line input a name for the action and choose an icon that will represent a button. With this button, action will be performed.
@@ -422,9 +462,13 @@ Execute an action by clicking the "trash box" icon opposite entity names.
 
 {% include images-gallery.html imageCollection="custom-action" %}
 
-An example of the function for an asset deletion:
+<details>
 
-```ruby
+<summary>
+<b>An example of the function for an asset deletion.</b>
+</summary>
+
+{% highlight ruby %}
 {
     let $injector = widgetContext.$scope.$injector;
     let dialogs = $injector.get(widgetContext.servicesMap.get('dialogs'));
@@ -452,13 +496,14 @@ An example of the function for an asset deletion:
         );
     }
 }
-```
+{% endhighlight %}
+</details>
 
 ##### Custom action (with HTML template)
 
 A Custom action with an HTML template allows manually entering a function in an existing HTML template (for example creating dialog windows and opportunity to edit listed devices/assets).
 
-1. In the widget's edit mode move to the last cell "Actions".
+1. In the widget's Edit mode move to the last cell "Actions".
 2. Click the "+" icon on the right of the window to add a new action.
 3. As an example for this manual, in the top drop-down menu, choose an "Action cell button" action source.
 4. In the next line input a name for the action and choose an icon that will represent a button. With this button, action will be performed.
@@ -474,9 +519,13 @@ Execute actions by clicking appropriate icons.
 
 {% include images-gallery.html imageCollection="custom-action-html" %}
 
-An example of the function that adds a dialog window to fill in:
+<details>
 
-```ruby
+<summary>
+<b>An example of a function that adds a dialog window to fill in.</b>
+</summary>
+
+{% highlight ruby %}
 let $injector = widgetContext.$scope.$injector;
 let customDialog = $injector.get(widgetContext.servicesMap.get('customDialog'));
 let assetService = $injector.get(widgetContext.servicesMap.get('assetService'));
@@ -537,11 +586,18 @@ function AddAssetDialogController(instance) {
         }
     }
 }
-```
 
-An example of a function that adds a possibility to edit assets:
+{% endhighlight %}
 
-```ruby
+</details>
+<br>
+<details>
+
+<summary>
+<b>An example of a function that adds a possibility to edit assets.</b>
+</summary>
+
+{% highlight ruby %}
 let $injector = widgetContext.$scope.$injector;
 let customDialog = $injector.get(widgetContext.servicesMap.get('customDialog'));
 let assetService = $injector.get(widgetContext.servicesMap.get('assetService'));
@@ -632,7 +688,9 @@ function EditAssetDialogController(instance) {
         }
     }
 }
-```
+{% endhighlight %}
+
+</details>
 
 ## Action sources 
 
@@ -648,7 +706,7 @@ For suitability, we consider action sources on the most commonly used widgets.
 Please, [learn here](/docs/getting-started-guides/helloworld/#step-33-add-table-widget) how to add an Entity Table widget to your dashboard. 
 
 To add an action to your Entity Table widget: 
-- Go to the Dashboard's edit mode;
+- Go to the Dashboard's Edit mode;
 - Click a "Pencil" icon in the upper right corner of the widget;
 - Choose the last cell "Actions" and click the "Plus" symbol on the right of the window.
 
@@ -658,7 +716,7 @@ To add an action to your Entity Table widget:
   
 Clicking an icon that's been chosen as a button executes an action. To configure the _Action cell button_ action source, you should:
 
-1. In the widget's edit mode move to the last cell "Actions".  
+1. In the widget's Edit mode move to the last cell "Actions".  
 2. Click the "+" icon on the right of the window to add a new action.  
 3. In the top drop-down menu, choose an _Action cell button_ action source.  
 4. In the next line input a name for the action and choose an icon that will represent a button. With this button, action will be performed.  
@@ -678,7 +736,7 @@ As you see, opposite each entity name is an action cell button. By clicking this
 A button appears in the header of the widget. Clicking this button executes an action. This button responsible for the whole widget, not for separate entities. 
 The widget header button is the most commonly used action source, and it can be found in all widgets. To configure the _Widget header button_ action source, you should:
 
-1. In the widget's edit mode move to the last cell "Actions".
+1. In the widget's Edit mode move to the last cell "Actions".
 2. Click the "+" icon on the right of the window to add a new action.
 3. In the top drop-down menu, choose a _Widget header button_ action source.
 4. In the next line input a name for the action and choose an icon that will represent a button. With this button, action will be performed.
@@ -697,7 +755,7 @@ As you see now, in the header of the widget has appeared a button-icon. After yo
   
 Clicking on the row of the Table widget executes an action. To configure the _On row click_ action source, you should:
 
-1. In the widget's edit mode move to the last cell "Actions".
+1. In the widget's Edit mode move to the last cell "Actions".
 2. Click the "+" icon on the right of the window to add a new action.
 3. In the top drop-down menu, choose an _On row click_ action source.
 4. Enter the name of the action in the appropriate line.
@@ -717,7 +775,7 @@ To execute an action, namely to be transitioned to the chosen state, just click 
   
 Double-clicking any row of the Entity table widget executes an action. To configure the _On row double click_ action source, you should:
 
-1. In the widget's edit mode move to the last cell "Actions".
+1. In the widget's Edit mode move to the last cell "Actions".
 2. Click the "+" icon on the right of the window to add a new action.
 3. In the top drop-down menu, choose an _On row double click_ action source.
 4. Enter the name of the action in the appropriate line.
@@ -736,9 +794,9 @@ To execute an action, namely to be transitioned to the chosen state, just double
 ###### 5. On node selected (only in Entities Hierarchy widget)
 
 When the Entities Hierarchy widget was added, you should configure a hierarchy itself. How to do it, please, [learn here](/docs/user-guide/entities-and-relations/#step-1-provision-entities-and-relations). 
-After relations were added, go to the edit mode of the Entities Hierarchy widget. To configure the _On node selected_ action source:
+After relations were added, go to the Edit mode of the Entities Hierarchy widget. To configure the _On node selected_ action source:
 
-1. In the widget's edit mode move to the last cell called "Actions".
+1. In the widget's Edit mode move to the last cell called "Actions".
 2. Click the "+" icon on the right of the window to add a new action.
 3. In the top drop-down menu, choose an _On node selected_ action source.
 4. Since the example for all the action sources is the "Navigate to new dashboard state" action type, choose it in the drop-down Type menu.
@@ -759,7 +817,7 @@ How to add an action source to HTML Cards and Value Title widgets:
 
 - **HTML Cards widget**
 
-    1. In the widget's edit mode move to the last cell called "Actions".
+    1. In the widget's Edit mode move to the last cell called "Actions".
     2. Click the "+" icon on the right of the window to add a new action.
     3. In the top drop-down menu, choose an _On HTML element click_ action source.
     4. Input the name of the action and be sure to remember it, because the action name will be used while configuring the HTML code.
@@ -777,7 +835,7 @@ How to add an action source to HTML Cards and Value Title widgets:
 - Where _test1_ is the name of the action and _HTML code here_ is the text which is going to be shown on the HTML Card widget
 
 Then apply changes by clicking the orange tick icon in the top right of the window and then close the details window.  
-In the edit mode of the dashboard save applied changes by clicking the orange tick icon "Apply changes" in the bottom right of the screen.
+In the Edit mode of the dashboard save applied changes by clicking the orange tick icon "Apply changes" in the bottom right of the screen.
 
 To execute an action click anywhere in the widget. 
 
@@ -785,7 +843,7 @@ To execute an action click anywhere in the widget.
 
 - **Value Title widget**
 
-    1. In the widget's edit mode, move to the last cell called "Actions".
+    1. In the widget's Edit mode, move to the last cell called "Actions".
     2. Click the "+" icon on the right of the window to add a new action.
     3. In the top drop-down menu, choose an _On HTML element click_ action source.
     4. Input the name of the action and be sure to remember it, because the action name will be used while configuring the HTML code.
@@ -804,7 +862,7 @@ To execute an action click anywhere in the widget.
 - Where _test2_ is the name of the action and _Value title_ is the text that will be shown in the widget's header.
 
 Then apply changes by clicking the orange tick icon in the top right of the window and then close the details window.  
-In the edit mode of the dashboard save applied changes by clicking the orange tick icon "Apply changes" in the bottom right of the screen.
+In the Edit mode of the dashboard save applied changes by clicking the orange tick icon "Apply changes" in the bottom right of the screen.
 
 To execute an action click the widget's header.
 
@@ -835,7 +893,7 @@ Navigate to the "Action" cell and there click the "+" icon in the right of the s
   
 Action will be executed by clicking on the red map's marker. 
 
-1. In the widget's edit mode move to the last cell "Actions".
+1. In the widget's Edit mode move to the last cell "Actions".
 2. Click the "+" icon on the right of the window to add a new action.
 3. In the top drop-down menu, choose an _On marker click_ action source. 
 4. Since the example for all the action sources is the "Navigate to new dashboard state" action type, choose it in the drop-down Type menu.
@@ -852,7 +910,7 @@ Action will be executed by clicking on the red map's marker.
 Polygon is a plane figure that’s described by a finite number of dots. We use polygon which is based on coordinates that are specified within the device we use, but you can use any other entity.
 You may mark your assets and any other entities with a polygon option. For the polygon, we can specify the next settings. Polygon coordinates are being received in a format:
 
-```ruby
+``` ruby
 [[1CoordinateLatitude,1CoordinateLatitude],[2CoordinateLatitude,2CoordinateLatitude]...[nCoordinateLatitude,nCoordinateLatitude]]
 ```
 
@@ -860,7 +918,7 @@ where n - number of coordinates which polygon is described by.
 
 To configure _On polygon click_ action source on the Map widget, you should:
 
-1. In the widget's edit mode move to the cell "Advanced".
+1. In the widget's Edit mode move to the cell "Advanced".
 2. Scroll to the Polygon Settings, tick the checkbox "Show polygon".
 3. Input Polygon key name and remember it, it's going to be used later.
 4. Click an orange tick mark on the right top of the window to apply changes.
@@ -876,8 +934,8 @@ To configure _On polygon click_ action source on the Map widget, you should:
 ```
 12. In the "Add attribute" window click the right bottom button "Add".
 13. Go back to the Dashboard with the Map widget.
-14. Enter Dashboard's edit mode by clicking the bottom right "Pencil" icon.
-15. Click the "pencil" icon on the right top corner of the Map widget to enter its edit mode.
+14. Enter Dashboard's Edit mode by clicking the bottom right "Pencil" icon.
+15. Click the "pencil" icon on the right top corner of the Map widget to enter its Edit mode.
 16. Add in the Datasources a data key that has just been configured. Just start typing its name and it will be shown in the list.
 17. After adding a new data key, apply changes.
 18. Move to the last cell "Actions".
@@ -902,7 +960,7 @@ Do it with the tooltip function in the advanced mode of the map widget.
 
 To configure the Tooltip tag action of the Map widget, you should:
 
-1. In the widget's edit mode move to the last cell "Actions".
+1. In the widget's Edit mode move to the last cell "Actions".
 2. Click the "+" icon on the right of the window to add a new action.
 3. In the top drop-down menu, choose an _On marker click_ action source.
 4. Enter a name for the action and make sure to remember it, it's going to be used later.
@@ -939,7 +997,7 @@ so you need to scroll down to see needed information on the second one.
 {% include images-gallery.html imageCollection="mob" %}
 
 [Layouts](/docs/user-guide/dashboards/#layouts) feature solves this issue. To configure layouts and move already created widgets, you should:
-1. Enter the Dashboard's edit mode by clicking a "Pencil" icon at the right bottom of the page.
+1. Enter the Dashboard's Edit mode by clicking a "Pencil" icon at the right bottom of the page.
 2. On the left top of the window click "Manage layouts".
 3. In the opened "Manage layouts" window, tick the checkbox "Right" and click "Save". Now we have two layouts.
 4. Then, we need to transfer the Chart widget to the right layout. Right-click widget and from the appeared menu choose "Copy".
@@ -968,9 +1026,45 @@ Now in the mobile mode, by clicking an action button, we will be directly transi
 
 #### Open in a separate dialog
 
-[Coming soon]
+There are times when it is impractical to move to a separate dashboard state to view the details of a widget, but you just would like to open it on the same dashboard page. 
+For these situations, there is an _Open in a separate dialog_ feature that allows opening another [state](/docs/user-guide/dashboards/#states) on the same page using a configured action.  
+To open a state in a separate dialog window on the dashboard you are in, you should:
 
+1. Enter the Dashboard's Edit mode by clicking a "Pencil" icon at the right bottom of the page.
+2. First we need to add a new state, so click the "Manage dashboard states" button on the left top of the dashboard.
+3. In the opened window, click the "+" icon to add a new state. What is a state and how to configure it, please, learn [here](/docs/user-guide/dashboards/#states).
+4. After adding a state, click the "Save" button at the right bottom of the "Manage dashboard states" window.
+5. Now, enter widget Edit mode by clicking the "Pencil" icon on the right top of the widget.
+6. Go to the "Actions" cell and click the "+" icon to add a new action.
+7. Choose the desired action source, in the example, it is going to be the Action cell button.
+Give a name for the action. Select an icon representing a button by clicking an icon image and choosing from the variety of icons.
+8. From the drop-down menu select a "Navigate to new dashboard" action type, and a target state, the one that was created in step 3.
+9. Tick the check box "Open in separate dialog" and give a title to a dialog.
+10. By default, the checkbox "Hide dashboard toolbar in dialog" is ticked. If you need to see a toolbar in the dialog window, you should uncheck it. 
+The toolbar displays entities, time window, dashboard export button, and expand to a fullscreen button.
+11. It is optional to adjust a dialog width and height in percents. Width is relative to viewport height, and height is relative to width correspondingly.
+12. When the action has been configured, click on the "Add" button at the right bottom of the "Add action" window.
+13. When the action has been added, double-check the action source, icon, and action type. If everything is correct, click the orange tick mark on the right top of the page.
+
+{% include images-gallery.html imageCollection="dialog-window" %}
+
+Now it is time to add a widget to another state and execute an action. To do it, you should:
+1. Go to a newly created yet empty state and click "Add new widget" in the middle of the screen.
+2. From the drop-down menu "Current bundle", select the desired widget, in our example, it is going to be map widget "OpenStreetMap".
+3. Add data sources and click "Add".
+4. A widget has been added on the dashboard state, drag its edges to adjust the size.
+5. When adjusted, click the orange tick at the left bottom of the screen to save applied changes.
+
+To perform an action and open a dialog window with the state, click a cell button opposite entity names.
+
+{% include images-gallery.html imageCollection="dialog-window-1" %}
 
 #### Set entity from widget
 
-[Coming soon]
+_Set entity from widget_ checkbox is responsible for adding specific entity from the widget to the state. This allows you to use the entity in the target dashboard state by creating the "[Entity from dashboard state](https://thingsboard.io/docs/user-guide/ui/aliases/#entity-from-dashboard-state)" or other aliases. For example, if you have a list of devices in the table widget and would like to show specific device details when you click on the table row.
+
+Sometimes you need to store more then one entity in the state. For example, you would like to navigate to customer list, then to devices of the customer and finally to specific device details. In such case, you may have three states: "Main", "Customer Devices" and "Device Details".
+You may use two different state entity parameters to reference current customer (e.g. "currentCustomer") and current device (e.g. "currentDevice") on the "Device Details" state.
+
+{% include images-gallery.html imageCollection="entityfromwidget" %}
+
