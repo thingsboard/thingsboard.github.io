@@ -24,7 +24,7 @@ That for deployment of 2 or more TB-core/Rule Engine nodes, an additional separa
 <b>INVALID_LICENSE_SECRET(101)</b> click to expand
 </summary>
 <br>
-<b>Issue:</b> ThingsBoard service doesn't starts.
+<b>Issue:</b> The ThingsBoard service wasn't able to start.
 <br>
 <b>Root cause:</b> Invalid license key is used in /etc/thingsboard/conf/thingsboard.conf file.
 <br>
@@ -37,7 +37,7 @@ That for deployment of 2 or more TB-core/Rule Engine nodes, an additional separa
 <b>SUBSCRIPTION_NOT_FOUND(102)</b> click to expand
 </summary>
 <br>
-<b>Issue:</b> ThingsBoard service doesn't starts.
+<b>Issue:</b> The ThingsBoard service wasn't able to start.
 <br>
 <b>Root cause:</b> Subscription not found at the License Server.
 <br>
@@ -50,7 +50,7 @@ That for deployment of 2 or more TB-core/Rule Engine nodes, an additional separa
 <b>SUBSCRIPTION_NOT_ACTIVE(103)</b> click to expand
 </summary>
 <br>
-<b>Issue:</b> ThingsBoard service doesn't starts.
+<b>Issue:</b> The ThingsBoard service wasn't able to start.
 <br>
 <b>Root cause:</b> Subscription not active at the License Server.
 <br>
@@ -63,7 +63,7 @@ That for deployment of 2 or more TB-core/Rule Engine nodes, an additional separa
 <b>ACTIVE_INSTANCES_CAPACITY_EXCEEDED(104)</b> click to expand
 </summary>
 <br>
-<b>Issue:</b> ThingsBoard service doesn't starts.
+<b>Issue:</b> The ThingsBoard service wasn't able to start.
 <br>
 <b>Root cause:</b> Active instances capacity exceeded for this particular license key.
 <br>
@@ -81,7 +81,7 @@ Docker <small>(choose this if the ThingsBoard service is installed on Docker)</s
 <b>INSTANCE_NOT_FOUND(105)</b> click to expand
 </summary>
 <br>
-<b>Issue:</b> ThingsBoard service doesn't starts.
+<b>Issue:</b> The ThingsBoard service wasn't able to start.
 <br>
 <b>Root cause:</b> ThingsBoard service has already generated a /usr/share/thingsboard/bin/instance-license.data file but the instanceId record is deleted from the License Server.
 <br>
@@ -99,7 +99,7 @@ Docker <small>(choose this if the ThingsBoard service is installed on Docker)</s
 <b>INVALID_LICENSE_CHECK_REQUEST(106)</b> click to expand
 </summary>
 <br>
-<b>Issue:</b> ThingsBoard service doesn't starts.
+<b>Issue:</b> The ThingsBoard service wasn't able to start.
 <br>
 <b>Root cause:</b> Invalid license check request sent.
 <br>
@@ -112,7 +112,7 @@ Docker <small>(choose this if the ThingsBoard service is installed on Docker)</s
 <b>INVALID_LICENSE_CHECK_SECRET(107)</b> click to expand
 </summary>
 <br>
-<b>Issue:</b> ThingsBoard service doesn't starts.
+<b>Issue:</b> The ThingsBoard service wasn't able to start.
 <br>
 <b>Root cause:</b> Invalid license key is used in /etc/thingsboard/conf/thingsboard.conf file.
 <br>
@@ -130,7 +130,7 @@ Docker <small>(choose this if the ThingsBoard service is installed on Docker)</s
 <b>INSTANCE_NOT_ACTIVE(108)</b> click to expand
 </summary>
 <br>
-<b>Issue:</b> ThingsBoard service doesn't starts.
+<b>Issue:</b> The ThingsBoard service wasn't able to start.
 <br>
 <b>Root cause:</b> InstanceId record is deactivated at the License Server.
 <br>
@@ -148,7 +148,7 @@ Docker <small>(choose this if the ThingsBoard service is installed on Docker)</s
 <b>UNSUPPORTED_SOFTWARE_VERSION(109)</b> click to expand
 </summary>
 <br>
-<b>Issue:</b> ThingsBoard service doesn't starts.
+<b>Issue:</b> The ThingsBoard service wasn't able to start.
 <br>
 <b>Root cause:</b> The ThingsBoard service was upgraded to the version but the license/subscription is outdated.
 <br>
@@ -161,7 +161,7 @@ Docker <small>(choose this if the ThingsBoard service is installed on Docker)</s
 <b>GENERAL_SERVER_ERROR(200)</b> click to expand
 </summary>
 <br>
-<b>Issue:</b> ThingsBoard service doesn't starts.
+<b>Issue:</b> The ThingsBoard service wasn't able to start.
 <br>
 <b>Root cause:</b> Internal License Server error.
 <br>
@@ -174,7 +174,7 @@ Docker <small>(choose this if the ThingsBoard service is installed on Docker)</s
 <b>GENERAL_ERROR(300)</b> click to expand
 </summary>
 <br>
-<b>Issue:</b> ThingsBoard service doesn't starts.
+<b>Issue:</b> The ThingsBoard service wasn't able to start.
 <br>
 {% highlight bash %}
 ...
@@ -215,7 +215,7 @@ LimitNOFILESoft=1617596
 <b>INVALID_SERVER_CERTIFICATE(350)</b> click to expand
 </summary>
 <br>
-<b>Issue:</b> ThingsBoard service doesn't starts.
+<b>Issue:</b> The ThingsBoard service wasn't able to start.
 <br>
 <b>Root cause:</b> Internal License Server error.
 <br>
@@ -228,7 +228,7 @@ LimitNOFILESoft=1617596
 <b>CONNECTION_ERROR(400)</b> click to expand
 </summary>
 <br>
-<b>Issue:</b> ThingsBoard service doesn't starts.
+<b>Issue:</b> The ThingsBoard service wasn't able to start.
 <br>
 <b>Root cause:</b> Connection related issues (network, firewall, etc. -problems).
 <br>
