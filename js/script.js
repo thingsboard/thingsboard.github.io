@@ -289,7 +289,7 @@ var tb = (function () {
         var contentHeight = thisWrapper.find('.content').eq(0).innerHeight() + 'px';
         if (!$(thisItem).hasClass('on')) {
             $(thisItem).addClass('on');
-            thisWrapper.css({height: contentHeight, visibility: 'visible'});
+            thisWrapper.css({height: contentHeight});
 
             var duration = parseFloat(getComputedStyle(thisWrapper[0]).transitionDuration) * 1000;
 
@@ -374,7 +374,7 @@ var tb = (function () {
 				var thisWrapper = $(this).find('.wrapper').eq(0);
 				if (!thisWrapper) return;
 				$(this).removeClass('on');
-				thisWrapper.css({height: 0, visibility: 'hidden'});
+				thisWrapper.css({height: 0});
 			}
 		});
         tb.openAccordionItem(nodeId);
@@ -430,7 +430,7 @@ var tb = (function () {
 
 			if (wrapper) {
 				item.appendChild(wrapper);
-				$(wrapper).css({height: 0, padding: 0, visibility: 'hidden'});
+				$(wrapper).css({height: 0, padding: 0});
 			}
 
 
@@ -468,12 +468,12 @@ var tb = (function () {
 					$(thisItem).removeClass('on');
 
 					setTimeout(function(){
-						thisWrapper.css({height: 0, visibility: 'hidden'});
+						thisWrapper.css({height: 0});
 						moving = false;
 					}, CSS_BROWSER_HACK_DELAY);
 				} else {
 					$(item).addClass('on');
-					thisWrapper.css({height: contentHeight, visibility: 'visible'});
+					thisWrapper.css({height: contentHeight});
 
 					var duration = parseFloat(getComputedStyle(thisWrapper[0]).transitionDuration) * 1000;
 
