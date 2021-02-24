@@ -25,47 +25,93 @@ started:
 profileNoSec_create:
     0:
         image: /images/lwm2m/noSec_profile_create_Step_1.png 
-        title: '1. start create profile LwM2M.'    
+        title: 'start create profile LwM2M.'    
     1:
         image: /images/lwm2m/noSec_profile_create_Step_2.png 
-        title: '1. input the name of device profile (for example: "lwm2mProfileNoSec").'       
+        title: ' input the name of device profile (for example: "lwm2mProfileNoSec").'       
     2:
         image: /images/lwm2m/noSec_profile_create_Step_3.png 
-        title: '1. go to the "Transport configuration" tab and select the type of device profile.'    
+        title: 'go to the "Transport configuration" tab and select the type of device profile.'    
     3:
         image: /images/lwm2m/noSec_profile_create_Step_4.png 
-        title: '1. save this device profile: click the "Add" button.'    
+        title: 'save this device profile: click the "Add" button.'    
 
 
 profileNoSec_edit:
     1:
         image: /images/lwm2m/noSec_profile_edit_Step_1.png 
-        title: 'Select with the name of the device profile to change the configuration.'    
+        title: '<i>Select</i> line with the <b>name</b> of the <b>device profile</b> to change the configuration.'    
     2:
         image: /images/lwm2m/noSec_profile_edit_Step_2_3.png 
-        title: 'Select tab "Transport configuration" and click button "Toggle edit mode".'       
+        title: '<i>Select</i> tab with <b>"Transport configuration"</b> and <i>click</i> button <b>"Toggle edit mode"</b>.'       
 
 profileNoSec_edit_typeAfterConnect:      
     1:
         image: /images/lwm2m/noSec_profile_edit_Step_3_1.png 
-        title: 'configuration number 1 selected.'    
+        title: 'configuration number <b><font color="#5f9ea0">1</font> selected</b>.'    
     2:
         image: /images/lwm2m/noSec_profile_edit_Step_3_2.png 
-        title: 'configuration number 2 selected.'       
+        title: 'configuration number <b><font color="#5f9ea0">2</font> selected</b>.'       
     3:
         image: /images/lwm2m/noSec_profile_edit_Step_3_3.png 
-        title: 'configuration number 3 selected.'    
+        title: 'configuration number <b><font color="#5f9ea0">3</font> selected</b>.'   
 
-step1:
+profileNoSec_edit_add_object:      
+    1:
+        image: /images/lwm2m/noSec_profile_edit_Step_4_1.png 
+        title: '<i>Select</i> an item <b>from</b> the list of <b>all the objects</b> ...'       
+    2:
+        image: /images/lwm2m/noSec_profile_edit_Step_4_2.png 
+        title: '<i>Select</i> object <b>by ID object</b> (input only number ID).'    
+    3:
+        image: /images/lwm2m/noSec_profile_edit_Step_4_3.png 
+        title: '<i>Select</i> object <b>by context</b> in the name object...'  
+
+profileNoSec_edit_add_instance:
+    1:
+        image: /images/lwm2m/noSec_profile_edit_Step_4_4.png 
+        title: '<b>Add new instances</b> if the object supports multiple instances...'
+
+profileNoSec_edit_observe:
+    1:
+        image: /images/lwm2m/noSec_profile_edit_Step_4_5.png 
+        title: 'For <b>observation</b> resource in an instance, it is necessary to mark check <b>"observe"</b> and <b>"attribute"</b> or/and <b>"telemetry"</b>'       
+
+profileNoSec_edit_bootstrap:      
+    1:
+        image: /images/lwm2m/noSec_profile_edit_Step_5_1.png 
+        title: '<b>Setting</b> (short identifier, lifetime, binding ...) connection to a <b>new LwM2M server</b> on the client after upgrade.'       
+    2:
+        image: /images/lwm2m/noSec_profile_edit_Step_5_2.png 
+        title: '<b>Configuring</b> (security key, host, port ...) to connect to the <b>new Bootstrap</b> server and new <b>LwM2M server</b> on the client after upgrade.'    
+
+deviceNoSec_create:
     0:
-        image: /images/user-guide/oauth-2-support/1-create-credentials.png
+        image: /images/lwm2m/noSec_device_create_Step_1.png
+        title: '<b>start</b> create device LwM2M.'    
+    1:
+        image: /images/lwm2m/noSec_device_create_Step_2.png
+        title: '<b> - input the name</b> of device (for example: "LwNoSec00000000"), <p></p><b> - select transport type:</b> "LWM2M",<p></p><b> - select existing device profile</b> (for example: "lwm2mProfileNoSec").'       
+    2:
+        image: /images/lwm2m/noSec_device_create_Step_3.png
+        title: '<b>Add credential</b>: <p></p>- input "LwM2M Security config key" (<b>endPoint Client</b>)<p></p>- edit "LwM2M Security <b>config</b>"'    
 
+deviceNoSec_create_security_config:
+    0:
+        image: /images/lwm2m/noSec_device_create_security_Step_1.png
+        title: '<b>edit security config</b> <i>of device LwM2M</i>: <b>"Client Security Config"</b>'    
+    1:
+        image: /images/lwm2m/noSec_device_create_security_Step_2.png
+        title: '<b>edit security config</b> <i>of device LwM2M</i>: <b>"Bootstrap Client"</b>: <font color="blue">BOOTSTRAP SERVER</font>'       
+    2:
+        image: /images/lwm2m/noSec_device_create_security_Step_3.png
+        title: '<b>edit security config</b> <i>of device LwM2M</i>: <b>"Bootstrap Client"</b>: <font color="blue">LWM2M SERVER</font>'       
 
 ---
 
 * TOC
 {:toc}
-
+  
 ## Getting started
 ### LwM2M basics: architecture, terminology,  definitions.
 [LwM2M](https://en.wikipedia.org/wiki/OMA_LWM2M) is a device management protocol designed for sensor networks and the demands of a machine-to-machine (M2M) environment. 
@@ -183,9 +229,19 @@ Example: during the tests used the next `Client's Endpoint Names` (for `PSK secu
 ```
 
 ### Start transport LwM2M with different security configuration settings
-#### Start transport LwM2M (configuration in yml)
+
+#### Transport LwM2M (configuration in yml)
 
 Thingsboard supports **1 LwM2M server and 1 Bootstrap-Server simultaneously**.
+
+Thingsboard, through its configuration settings, also allows you to choose to work with either one of the servers options, or selectively.
+
+The Security Mode Resource in the Security Object determines what credentials are being used by the LwM2M Client and
+the LwM2M Server or LwM2M Bootstrap-Server, respectively.
+
+!!! TO DO.
+* about `Description of all parameters` for starting the transport and their default in the **thingsboard.yml** configuration file in the **lwm2m** section can be viewed here.[configurable](/docs/user-guide/install/config/#lwm2m-transport-settings).
+
 
 * `start` transport LwM2M with `Server` without Bootstrap-Server
     
@@ -194,14 +250,6 @@ Thingsboard supports **1 LwM2M server and 1 Bootstrap-Server simultaneously**.
     ...
         lwm2m:
             enabled: "${LWM2M_ENABLED:true}"
-            ...
-            server:
-                id: "${LWM2M_SERVER_ID:123}"
-                bind_address: "${LWM2M_BIND_ADDRESS:0.0.0.0}"
-                bind_port_no_sec: "${LWM2M_BIND_PORT_NO_SEC:5685}"
-                secure:
-                    bind_address_security: "${LWM2M_BIND_ADDRESS_SECURITY:0.0.0.0}"
-                    bind_port_security: "${LWM2M_BIND_PORT_SECURITY:5686}" 
             ...
             bootstrap:
                 enable: "${LWM2M_BOOTSTRAP_ENABLED:false}"
@@ -214,22 +262,8 @@ Thingsboard supports **1 LwM2M server and 1 Bootstrap-Server simultaneously**.
         lwm2m:
             enabled: "${LWM2M_ENABLED:true}"
             ...
-            server:
-                id: "${LWM2M_SERVER_ID:123}"
-                bind_address: "${LWM2M_BIND_ADDRESS:0.0.0.0}"
-                bind_port_no_sec: "${LWM2M_BIND_PORT_NO_SEC:5685}"
-                secure:
-                    bind_address_security: "${LWM2M_BIND_ADDRESS_SECURITY:0.0.0.0}"
-                    bind_port_security: "${LWM2M_BIND_PORT_SECURITY:5686}" 
-            ...
             bootstrap:
                 enable: "${LWM2M_BOOTSTRAP_ENABLED:true}"
-                id: "${LWM2M_SERVER_ID:111}"
-                bind_address: "${LWM2M_BIND_ADDRESS_BS:0.0.0.0}"
-                bind_port_no_sec: "${LWM2M_BIND_PORT_NO_SEC_BS:5687}"
-                secure:
-                    bind_address_security: "${LWM2M_BIND_ADDRESS_BS:0.0.0.0}"
-                    bind_port_security: "${LWM2M_BIND_PORT_SEC_BS:5688}"
     ...
 ```
 * `do not start` transport  LwM2M
@@ -256,11 +290,6 @@ Thingsboard supports **4 LwM2M Security mode simultaneously**.
 * LwM2M Server **with one of 4 or all security modes** {0...3} and 
 
 * LwM2M Bootstrap-Servers **with one of 4 or all security modes**  {0...3}.
-
-Thingsboard, through its configuration settings, also allows you to choose to work with either one of the servers options, or selectively.
-
-The Security Mode Resource in the Security Object determines what credentials are being used by the LwM2M Client and
-the LwM2M Server or LwM2M Bootstrap-Server, respectively. 
 
 ##### `Host`&`Port` for Servers
 ```ruby
@@ -450,76 +479,165 @@ thingsboard/application/src/main/resources/thingsboard.yml
             - Bootstrap Server uses [PSK]: serverNoSecureURI : [0.0.0.0:5687], serverSecureURI : [0.0.0.0:5688]
           ```
 
-#### Device and Device profile LwM2M (common config for all LwM2M Security mode)
-##### LwM2M Device profile: create and configuration (`NoSec`)
+#### Thingsboard: Device profile LwM2M and Device LwM2M    
+##### NoSec mode (`NoSec`)
 
-* <a name="link-create-profileNoSec"></a>To create a new LwM2M device profile, follow the instructions 
-    step by step:<sup>[[link](#link-create-profileNoSec)]</sup>
+* **LwM2M Server configuration**<sup>[[link](#link-2-security-modes)]</sup>
+  
+<a name="link-profileNoSeck-edit"></a>
+* **Device profile LwM2M:** create and configuration<sup>[[link](#link-profileNoSeck-edit)]</sup>
+
 ```ruby 
     name device profile: "lwm2mProfileNoSec", Transport configuration: "LWM2M"
-```    
-    {% include images-gallery.html imageCollection="profileNoSec_create" showListImageTitles="true" %}
+```
 
+<ol start="1">
+<li> <i>LwM2M device</i> <b>create new</b>: follow the instructions step by step:</li>    
+  {% include images-gallery.html imageCollection="profileNoSec_create" showListImageTitles="true" %}  
+</ol>
+
+<a name="link-profileNoSec-edit-config"></a>
+* *LwM2M device profile configuration*:<sup>[[link](#link-profileNoSec-edit-config)]</sup>
     
-* <a name="link-config-profileNoSec"></a>Configuration LwM2M device profile: start 
-    <sup>[[link](#link-config-profileNoSec)]</sup>
 ```ruby 
     name device profile: "lwm2mProfileNoSec", Tab: "Transport configuration"
-```    
-    {% include images-gallery.html imageCollection="profileNoSec_edit" showListImageTitles="true" %} 
-       
-* <a name="link-config-profileNoSec_typeStart"></a>Configuration LwM2M device profile: changing type start after connect Client LwM2M 
-    <sup>[[link](#link-config-profileNoSec_typeStart)]</sup>
+```   
+
+<ol start="2">
+<li> <i>wM2M device profile configuration</i> <b>edit start</b>: follow the instructions step by step:</li>    
+  {% include images-gallery.html imageCollection="profileNoSec_edit" showListImageTitles="true" %}  
+</ol>
+
+<a name="link-profileNoSec-edit-settings-type-start"></a>
+* *LwM2M device profile configuration*: <b>setting type start Client LwM2M</b> after connect:<sup>[[link](#link-profileNoSec-edit-settings-type-start)]</sup>
+
 ```ruby 
     config number 1 for start Client: "Only Observe Request to the client after registration (Default)"
     config number 2 for start Client: "Read&Observe Request to the client after registration 
                                        + Request to the client after registration for All resource values"
     config number 3 for start Client: "Read&Observe Request to the client after registration 
                                        + Request to the client after registration to read values only as attributes or telemetry"
-```    
-    {% include images-gallery.html imageCollection="profileNoSec_edit_typeAfterConnect" showListImageTitles="true" %}
-    
-##### LwM2M Device: create and configuration (`NoSec`)
+``` 
 
-* <a name="link-create-deviceNoSec"></a>To create a new LwM2M device profile, follow the instructions 
-    step by step:<sup>[[link](#link-create-deviceNoSec)]</sup>
+<ol start="3">
+<li> <i>LwM2M device profile configuration</i>: <b>changing type start</b> Client LwM2M after connect:</li>    
+   {% include images-gallery.html imageCollection="profileNoSec_edit_typeAfterConnect" showListImageTitles="true" %}
+</ol>
+
+<a name="link-profileNoSec-edit-settings-observe"></a>
+* *LwM2M device profile configuration*: setting resources <b>observe</b> in instances on LwM2M client objects after connect:<sup>[[link](#link-profileNoSec-edit-settings-observe)]</sup>
+
+    * <font color="blue">Add a new object <font color="black">to  <font color="green">"Object list":</font>
+        * If <font color="blue">"Object list"</font> **is empty** or there is **no need object** in "Object list",
+           you can <font color="blue">Add a new object</font> to <font color="green">"Object list"</font> in the following ways:      
+            * *Select* an item **from** the list of **all the objects**.      
+            * *Select* object **by ID object** (input only number ID) **from** the list of **filtered the objects**.      
+            * *Select* an object **by context in the object name** (enter any alphabetic or numeric characters from the object name)
+              **from** the list of **filtered the objects**.
+    * <font color="blue">Add a new instance <font color="black">to object:</font>
+        * If <font color="blue">"Object list"</font> **is empty** or there is **no need object** in "Object list",
+    * <font color="blue">Add observe <font color="black">resource in instance:</font>
+        * for resource in instance of object to object LWM2M from <font color="green">"Object list"</font>:          
+            * to **mark** check: <font color="blue">"Observe" <font color="black">+ <font color="red">"Attribute" <font color="black">+ change/or no change <b>"Key Name"</b>.</font>
+            * to **mark** check: <font color="blue">"Observe" <font color="black">+ <font color="blue">"Telemetry" <font color="black">+ change/or no change <b>"Key Name"</b>.</font>
+            * to **mark** check: <font color="blue">"Observe" <font color="black">+ <font color="red">"Attribute" <font color="black">+ <font color="blue">"Telemetry" <font color="black">+ change/or no change <b>"Key Name"</b>.</font>
+
+            ```ruby
+            Thingsboard:
+            - use the {Key Name} "value" as parameter to display the resource values in the attributes or telemetry section as a [key].
+              By default, this is the name of the resource, in Camel format. 
+
+            You can change the {Key Name} "value" to your own.
+            ```
+    * <font color="blue">Save:</font> 
+        * <font color="blue">"Save"  <font color="black">or <font color="red">Cancel</font> after any configuration change to "LWM2M Model".
+
+<a name="link-profileNoSec_edit_add_object"></a>
+<ol start="4">
+<li> <i>LwM2M device profile configuration</i>: <font color="blue">Add a new object</font> to <font color="green">"Object list"</font>:</li>    
+    {% include images-gallery.html imageCollection="profileNoSec_edit_add_object" showListImageTitles="true" %}
+</ol>     
+
+<a name="link-profileNoSec_edit_add_instance"></a>
+<ol start="5">
+<li> <i>LwM2M device profile configuration</i>: <b>add object</b> LwM2M client to <b>observe:</b></li>   
+      {% include images-gallery.html imageCollection="profileNoSec_edit_add_instance" showListImageTitles="true" %}
+</ol>
+
+<a name="link-profileNoSec_edit_observe"></a>
+<ol start="6">
+<li> <i>LwM2M device profile configuration</i>: <b>add object</b> LwM2M client to <b>observe:</b></li>    
+      {% include images-gallery.html imageCollection="profileNoSec_edit_observe" showListImageTitles="true" %}
+</ol>
+
+<a name="link-profileNoSec_edit_bootstrap"></a>
+<ol start="7">
+<li> <i>LwM2M device profile configuration</i>: <b>edit Bootstrap:</b></li>     
+      {% include images-gallery.html imageCollection="profileNoSec_edit_bootstrap" showListImageTitles="true" %}
+</ol>
+
+====
+
+example link
+
+<a name="link-device-create-noSec"></a> 
+
+[device create and configuration](#link-device-create-noSec)
+
+* **device create** and *configuration* <sup>[[link](#link-device-create-noSec)]</sup>
+
+=======
+
+* **Device LwM2M:** create and configuration
+
 ```ruby 
-    name device profile: "lwm2mProfileNoSec", Transport configuration: "LWM2M"
-```    
-    {% include images-gallery.html imageCollection="profileNoSec_create" showListImageTitles="true" %}
+    name device: "LwNoSec00000000", Credentials type: "LwM2M Credentials"
+```
 
-    
-* <a name="link-config-deviceNoSec"></a>Configuration LwM2M device profile: start 
-    <sup>[[link](#link-config-deviceNoSec)]</sup>
-```ruby 
-    name device profile: "lwm2mProfileNoSec", Tab: "Transport configuration"
-```    
-    {% include images-gallery.html imageCollection="profileNoSec_edit" showListImageTitles="true" %} 
-       
-* <a name="link-config-deviceNoSec_typeStart"></a>Configuration LwM2M device profile: changing type start after connect Client LwM2M 
-    <sup>[[link](#link-config-deviceNoSec_typeStart)]</sup>
-```ruby 
-    config number 1 for start Client: "Only Observe Request to the client after registration (Default)"
-    config number 2 for start Client: "Read&Observe Request to the client after registration 
-                                       + Request to the client after registration for All resource values"
-    config number 3 for start Client: "Read&Observe Request to the client after registration 
-                                       + Request to the client after registration to read values only as attributes or telemetry"
-```    
-    {% include images-gallery.html imageCollection="profileNoSec_edit_typeAfterConnect" showListImageTitles="true" %}
-    
+<ol start="1">
+<li> <i>LwM2M device</i> <b>create new</b>: follow the instructions step by step:</li>    
+  {% include images-gallery.html imageCollection="deviceNoSec_create" showListImageTitles="true" %}
+</ol>
 
-#### Certificate mode (`X509`)
-* LwM2M Server configuration<sup>[[link](#link-4-security-modes)]</sup>
-* create device 
-    
-#### Raw Public Key mode (`RPK`)
-* LwM2M Server configuration<sup>[[link](#link-3-security-modes)]</sup>
-* create device 
+<a name="link-device-config-noSec"></a>
+<ol start="2" style="align-content: flex-start">
+<li> <i>LwM2M device</i> <b>edit security configuration</b>: follow the instructions:</li>
+  {% include images-gallery.html imageCollection="deviceNoSec_create_security_config" showListImageTitles="true" %}
+</ol>
 
-    
-#### Pre-Shared Key mode (`PSK`)
+<a name="link-device-config-json-noSec"></a>
+<ol start="3">
+<li>  Example Security Config (format Json value) for Device (No Security Key mode):</li>
+</ol>
+
+```json
+    {
+      "client": {
+        "securityConfigClientMode": "NO_SEC",
+        "endpoint": "",
+        "identity": "",
+        "key": "",
+        "x509": false
+      },
+      "bootstrap": {
+        "bootstrapServer": {
+          "securityMode": "NO_SEC",
+          "clientPublicKeyOrId": "",
+          "clientSecretKey": ""
+        },
+        "lwm2mServer": {
+          "securityMode": "NO_SEC",
+          "clientPublicKeyOrId": "",
+          "clientSecretKey": ""
+        }
+      }
+    }
+```
+
+
+##### Pre-Shared Key mode (`PSK`)
 * LwM2M Server configuration<sup>[[link](#link-2-security-modes)]</sup>
-* create device 
+###### Device profile LwM2M: create and configuration
 Example   value  for Client (Pre-Shared Key mode):
  ```json
  {
@@ -532,258 +650,46 @@ Example   value  for Client (Pre-Shared Key mode):
    }
 }
  ```
+
+###### Device LwM2M: create and configuration
+
+##### Raw Public Key mode (`RPK`)
+* LwM2M Server configuration<sup>[[link](#link-3-security-modes)]</sup>
+###### Device profile LwM2M: create and configuration
+
+###### Device LwM2M: create and configuration
+
+
+
+###### Device LwM2M: create and configuration
+
+##### Certificate mode (`X509`)
+* LwM2M Server configuration<sup>[[link](#link-4-security-modes)]</sup>
+###### Device profile LwM2M: create and configuration
+
+###### Device LwM2M: create and configuration
     
-#### NoSec mode (`NoSec`)
-* LwM2M Server configuration<sup>[[link](#link-2-security-modes)]</sup>
-* create device 
-
-
-
-
-#### LwM2M client
-##### Device for LwM2M client on thingsboard`s Server/Bootstrap-Server
-
-Lightweight Machine to Machine (LwM2M) is an application layer protocol based on CoAP/UDP, and is designed to expose various resources for reading, writing and executing via an LwM2M server in a very lightweight environment.
-
-Architecturally, LwM2M is a client-server protocol. The IOT device plays the role of the client while the server is the Device Management server where devices register, making them available to be managed. The communication between the two is bidirectional; a device reports back information either as a response to a request the server initiates or on a predefined time interval.
-
-!!! TO DO.
-In order to setup one of those tools, you can use instructions in our [Hello World](/docs/getting-started-guides/helloworld/) guide.
-
 
 ##### LwM2M client start and tests
 
-!!! TO "DO new client-application".
-
-In order to setup one of those tools, you can use instructions in our [Create and start LwM2M Client](/docs/getting-started-guides/helloworld/) guide.
-
-
-## Telemetry upload API
-
-In order to publish telemetry data to ThingsBoard server node, send PUBLISH message to the following topic:
- 
-```
-v1/devices/me/telemetry
-```
-
-The simplest supported data formats are:
-
-```json
-{"key1":"value1", "key2":"value2"}
-```
-
-or
-
-```json
-[{"key1":"value1"}, {"key2":"value2"}]
-```
-
-**Please note** that in this case, the server-side timestamp will be assigned to uploaded data!
-
-In case your device is able to get the client-side timestamp, you can use following format:
-
-
-```json
-{"ts":1451649600512, "values":{"key1":"value1", "key2":"value2"}}
-```
-
-In the example above, we assume that "1451649600512" is a [unix timestamp](https://en.wikipedia.org/wiki/Unix_time) with milliseconds precision.
-For example, the value '1451649600512' corresponds to 'Fri, 01 Jan 2016 12:00:00.512 GMT'
-
-{% capture tabspec %}mqtt-telemetry-upload
-A,Mosquitto,shell,resources/mosquitto-telemetry.sh,/docs/reference/resources/mosquitto-telemetry.sh
-B,MQTT.js,shell,resources/mqtt-js-telemetry.sh,/docs/reference/resources/mqtt-js-telemetry.sh
-C,telemetry-data-as-object.json,json,resources/telemetry-data-as-object.json,/docs/reference/resources/telemetry-data-as-object.json
-D,telemetry-data-as-array.json,json,resources/telemetry-data-as-array.json,/docs/reference/resources/telemetry-data-as-array.json
-E,telemetry-data-with-ts.json,json,resources/telemetry-data-with-ts.json,/docs/reference/resources/telemetry-data-with-ts.json{% endcapture %}
-{% include tabs.html %}
-
- 
-## Attributes API
-
-ThingsBoard attributes API allows devices to
-
-* Upload [client-side](/docs/user-guide/attributes/#attribute-types) device attributes to the server.
-* Request [client-side](/docs/user-guide/attributes/#attribute-types) and [shared](/docs/user-guide/attributes/#attribute-types) device attributes from the server.
-* Subscribe to [shared](/docs/user-guide/attributes/#attribute-types) device attributes from the server.
- 
-##### Publish attribute update to the server
-
-In order to publish client-side device attributes to ThingsBoard server node, send PUBLISH message to the following topic:
-```
-v1/devices/me/attributes
-```
-
-{% capture tabspec %}mqtt-attributes-upload
-A,Mosquitto,shell,resources/mosquitto-attributes-publish.sh,/docs/reference/resources/mosquitto-attributes-publish.sh
-B,MQTT.js,shell,resources/mqtt-js-attributes-publish.sh,/docs/reference/resources/mqtt-js-attributes-publish.sh
-C,new-attributes-values.json,json,resources/new-attributes-values.json,/docs/reference/resources/new-attributes-values.json{% endcapture %}
-{% include tabs.html %}
-
-##### Request attribute values from the server
-
-In order to request client-side or shared device attributes to ThingsBoard server node, send PUBLISH message to the following topic:
-
-```
-v1/devices/me/attributes/request/$request_id
-```
-
-where **$request_id** is your integer request identifier.
-Before sending PUBLISH message with the request, client need to subscribe to 
-
-```
-v1/devices/me/attributes/response/+
-```
-
-The following example is written in javascript and is based on mqtt.js. 
-Pure command-line examples are not available because subscribe and publish need to happen in the same mqtt session.
-
-{% capture tabspec %}mqtt-attributes-request
-A,MQTT.js,shell,resources/mqtt-js-attributes-request.sh,/docs/reference/resources/mqtt-js-attributes-request.sh
-B,mqtt-js-attributes-request.js,javascript,resources/mqtt-js-attributes-request.js,/docs/reference/resources/mqtt-js-attributes-request.js
-C,Result,json,resources/attributes-response.json,/docs/reference/resources/attributes-response.json{% endcapture %}
-{% include tabs.html %}
-
-**Please note**, the intersection of client-side and shared device attribute keys is a bad practice! 
-However, it is still possible to have same keys for client, shared or even server-side attributes.
-
-##### Subscribe to attribute updates from the server
-
-In order to subscribe to shared device attribute changes, send SUBSCRIBE message to the following topic:
-
-```
-v1/devices/me/attributes
-```
-
-When a shared attribute is changed by one of the server-side components (such as the REST API or the Rule Chain), the client will receive the following update: 
-
-```json
-{"key1":"value1"}
-```
-
-{% capture tabspec %}mqtt-attributes-subscribe
-A,Mosquitto,shell,resources/mosquitto-attributes-subscribe.sh,/docs/reference/resources/mosquitto-attributes-subscribe.sh
-B,MQTT.js,shell,resources/mqtt-js-attributes-subscribe.sh,/docs/reference/resources/mqtt-js-attributes-subscribe.sh{% endcapture %}
-{% include tabs.html %}
-
-## RPC API
-
-### Server-side RPC
-
-In order to subscribe to RPC commands from the server, send SUBSCRIBE message to the following topic:
-
-```
-v1/devices/me/rpc/request/+
-```
-
-Once subscribed, the client will receive individual commands as a PUBLISH message to the corresponding topic:
-
-```
-v1/devices/me/rpc/request/$request_id
-```
-
-where **$request_id** is an integer request identifier.
-
-The client should publish the response to the following topic:
-
-```
-v1/devices/me/rpc/response/$request_id
-```
-
-The following example is written in javascript and is based on mqtt.js. 
-Pure command-line examples are not available because subscribe and publish need to happen in the same mqtt session.
-
-{% capture tabspec %}mqtt-rpc-from-server
-A,MQTT.js,shell,resources/mqtt-js-rpc-from-server.sh,/docs/reference/resources/mqtt-js-rpc-from-server.sh
-B,mqtt-js-rpc-from-server.js,javascript,resources/mqtt-js-rpc-from-server.js,/docs/reference/resources/mqtt-js-rpc-from-server.js{% endcapture %}  
-{% include tabs.html %}
-
-### Client-side RPC
-
-In order to send RPC commands to server, send PUBLISH message to the following topic:
-
-```
-v1/devices/me/rpc/request/$request_id
-```
-
-where **$request_id** is an integer request identifier.
-The response from server will be published to the following topic:
-
-```
-v1/devices/me/rpc/response/$request_id
-```
-
-The following example is written in javascript and is based on mqtt.js. 
-Pure command-line examples are not available because subscribe and publish need to happen in the same mqtt session.
-
-{% capture tabspec %}mqtt-rpc-from-client
-A,MQTT.js,shell,resources/mqtt-js-rpc-from-client.sh,/docs/reference/resources/mqtt-js-rpc-from-client.sh
-B,mqtt-js-rpc-from-client.js,javascript,resources/mqtt-js-rpc-from-client.js,/docs/reference/resources/mqtt-js-rpc-from-client.js{% endcapture %}  
-{% include tabs.html %}
-
-## Claiming devices
-
-Please see the corresponding article to get more information about the [Claiming devices](/docs/user-guide/claiming-devices) feature.
-
-In order to initiate claiming device, send PUBLISH message to the following topic:
-
-```
-v1/devices/me/claim
-```
-
-The supported data format is:
-
-```json
-{"secretKey":"value", "durationMs":60000}
-```
-
-**Please note** that the above fields are optional. In case the **secretKey** is not specified, the empty string as a default value is used.
-In case the **durationMs** is not specified, the system parameter **device.claim.duration** is used (in the file **/etc/thingsboard/conf/thingsboard.yml**).
-
-## Device provisioning
-
-Please see the corresponding article to get more information about the [Device provisioning](/docs/user-guide/device-provisioning) feature.  
-
-In order to initiate device provisioning, send Provisioning request to the following topic:
- 
-```
-/provision
-```
-
-Also, you should set **username** or **clientId** to *provision*. 
-
-The supported data format is:
-
-```json
-{
-  "deviceName": "DEVICE_NAME",
-  "provisionDeviceKey": "u7piawkboq8v32dmcmpp",
-  "provisionDeviceSecret": "jpmwdn8ptlswmf4m29bw"
-}
-```
+```ruby
+        Lightweight Machine to Machine (LwM2M) is an application layer protocol based on CoAP/UDP, 
+    and is designed to expose various resources for reading, writing and executing via an LwM2M server in a very lightweight environment.
+        Architecturally, LwM2M is a client-server protocol. 
+        The IOT device plays the role of the client while the server is the Device Management server where devices register, 
+    making them available to be managed. 
+    
+        The communication between the two is bidirectional; a device reports back information either as a response 
+    to a request the server initiates or on a predefined time interval.
+```    
+* !!! TO DO.
+    
+    In order to setup one of those tools, you can use instructions in our [Hello World](/docs/getting-started-guides/helloworld/) guide.
   
-## Protocol customization
-
-MQTT transport can be fully customized for specific use-case by changing the corresponding [module](https://github.com/thingsboard/thingsboard/tree/master/transport/mqtt).
-
+* !!! TO DO "new client-application".
+    
+    In order to setup one of those tools, you can use instructions in our [Create and start LwM2M Client](/docs/getting-started-guides/helloworld/) guide.
 
 ## Next steps
 
 {% assign currentGuide = "ConnectYourDevice" %}{% include templates/guides-banner.md %}
-
-```ruby
-  # Some Rack handlers (Thin, Rainbows!) implement an extended body object protocol, however,
-  # some middleware (namely Rack::Lint) will break it by not mirroring the methods in question.
-  # This middleware will detect an extended body object and will make sure it reaches the
-  # handler directly. We do this here, so our middleware and middleware set up by the app will
-  # still be able to run.
-  class ExtendedRack < Struct.new(:app)
-    def call(env)
-      result, callback = app.call(env), env['async.callback']
-      return result unless callback and async?(*result)
-      after_response { callback.call result }
-      setup_close(env, *result)
-      throw :async
-    end
-```
-{% include images-gallery.html imageCollection="step1" preview="false" max-width="100%" %}
