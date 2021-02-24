@@ -114,41 +114,6 @@ p
 		&:focus
 			background-color: $orange-02
 
-.nav-item
-	color: #fff
-	padding: 15px 6px
-	font-size: 16px
-	position: relative
-	cursor: pointer
-	&:hover
-		text-decoration: none !important
-		color: #fff
-	&::before
-		content: ''
-		position: absolute
-		left: 12.5px
-		bottom: 12px
-		width: calc(100% - 25px)
-		height: 3px
-		background-color: #f5f6f7
-		transform: scale(0, 1)
-		transform-origin: 0 50%
-		transition: 250ms
-	&:not(.nav-item-on):hover::before
-		transform: scale(0.25, 1)
-	&.nav-item-on::before
-		background-color: $light-blue
-		transform: scale(1, 1)
-
-#cellophane
-	position: fixed
-	top: 0
-	left: 0
-	width: 100%
-	height: 100%
-	display: none
-
-
 // HEADER
 header
 	position: fixed
@@ -156,26 +121,23 @@ header
 	left: 0
 	width: 100%
 	z-index: 8888
-	//background-image: url(/images/texture.png)
-	//background-color: $dark-grey
-	//opacity: 0.95
-	//background-color: transparent
-	//box-shadow: 0 0 0 transparent
-	//box-shadow: 0 1px 2px $medium-grey
-	overflow: hidden
-	transition: 0.3s
-	text-align: center
-	&::after
-		transition: 0.3s
-		content: ""
-		background: $dark-grey url(/images/texture.png)
-		opacity: 0.95
-		top: 0
-		left: 0
-		bottom: 0
-		right: 0
-		position: absolute
-		z-index: -1
+	background-color: unset
+	display: flex
+
+	.head-menu
+		position: relative
+		display: flex
+		ul
+			-webkit-box-pack: center
+			justify-content: center
+			display: flex
+			li
+				display: flex
+				padding: 10px
+				align-items: center
+			a
+				display: block
+
 .logo
 	position: relative
 	float: left
@@ -185,11 +147,10 @@ header
 	top: 0
 	left: 0
 	transform: none
-	background-image: url(/images/thingsboard_logo_white.svg)
+	background-image: url(/images/thingsboard_logo_b.svg)
 	background-size: contain
 	background-position: center center
 	background-repeat: no-repeat
-
 
 #docs
 	.flyout-button
@@ -235,24 +196,6 @@ header
 	height: 60px
 	align-items: center
 	align-content: center
-
-.nav-buttons
-	display: inline-flex
-	flex-direction: row
-	align-items: center
-	align-content: center
-	.nav-items
-		display: none
-		padding-right: 20px
-
-.nav-buttons-left
-	float: left
-
-.nav-buttons-right
-	float: right
-
-.nav-buttons-center
-	float: none
 
 //#viewDocs, #useCases, #blog, #gettingStarted, #liveDemo, #githubButtonContainer
 	display: none
@@ -300,148 +243,19 @@ header
 	background-color: $blue
 	border-color: $blue
 
-#hamburger
-	display: inline-block
-	position: relative
-	vertical-align: middle
-	padding: 0
-	border: 0
-	background: none
-
-	div, &:before, &:after
-		position: absolute
-		left: 15%
-		width: 65%
-		height: 2px
-		background-color: $white
-		transition: 0.3s
-		content: ""
-
-	div
-		top: calc(50% - 1px)
-
-	&:before
-		top: 24%
-
-	&:after
-		bottom: 24%
-
-	&:hover
-		div, &:before, &:after
-			background-color: $light-blue
-
-#mainNav
-	h5
-		color: $blue
-		font-weight: normal
-
-	main
-		white-space: nowrap
-		overflow: hidden
-		clear: both
-		&#headNav
-			display: flex
-			align-items: center
-			align-content: center
-			justify-content: center
-			flex-direction: row
-			h3
-				font-size: 20px
-				line-height: 28px
-
-	.nav-box
-		white-space: normal
-		display: inline-block
-		padding: 0 10px
-
-	h3
-		a
-			color: #fff
-			text-decoration: none
-			transition: 300ms
-			&:hover
-				color: $light-blue
-
-.nav-menu
-	main
-		white-space: nowrap
-		overflow: hidden
-		clear: both
-		display: flex
-		flex-direction: row
-		justify-content: space-around
-		align-items: flex-start
-		.nav-box
-			width: 300px
-			white-space: normal
-			display: inline-block
-			padding: 0 10px
-			img
-				height: 170px
-		ul
-			a
-				&:hover
-					text-decoration: none
-			li
-				text-align: left
-				padding: 4px
-				font-size: 16px
-				color: #fff
-				transition: 300ms
-				&:hover
-					color: $light-blue
-				strong
-					position: relative
-					color: $light-blue
-					font-size: 18px
-					&::before
-						content: ''
-						position: absolute
-						bottom: -4px
-						width: 100%
-						height: 1px
-						background-color: $light-blue
-						transform: scale(0, 1)
-						transform-origin: 0 50%
-						transition: 250ms
-					&:hover::before
-						transform: scale(1, 1)
-
 // FLIP NAV
-//.flip-nav
+.flip-nav
 	header
-		//background-color: white
-
+		background-color: white
+		box-shadow: 0 4px 0 rgba(48,86,128,.07)
 
 // OPEN NAV
 .open-nav
 	//body
 	//	overflow: hidden
-
-	#cellophane
-		display: block
-		z-index: 9998
-
 	header
-		//background-color: #e0e7ea
-		//background-color: rgba(51,66,80,0.95)
+		background-color: white
 		z-index: 9999
-
-	#hamburger
-		div
-			opacity: 0
-
-		&:before, &:after
-			left: 12px
-			transform-origin: 0 1px
-
-		&:before
-			transform: rotate(45deg)
-
-		&:after
-			transform: rotate(-45deg)
-
-
 
 .flip-nav, .open-nav
 	//header
@@ -455,12 +269,6 @@ header
 			border-color: $blue
 			background-color: $blue
 			color: white
-
-	//#hamburger:hover
-	//	div, &:before, &:after
-	//		background-color: $dark-grey
-
-
 
 // HERO
 #hero
