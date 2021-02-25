@@ -117,7 +117,7 @@ Let's learn how to add a group entities alias:
 5. Widget with alias that filters a group of devices, which in this case is Irrigation systems, has been added.
 6. Don't forget to save all the changes by clicking the big orange tick icon at the right bottom of the screen.
 
-{% include images-gallery.html imageCollection="group-entities-1" preview="false" %}
+{% include images-gallery.html imageCollection="group-entities-1" %}
 
 
 ### Entity list
