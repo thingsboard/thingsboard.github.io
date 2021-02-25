@@ -28,7 +28,7 @@ $full-width-paddingX-large: 100px
 $main-width: 100%
 $main-max-width: 100%
 
-$header-height: 60px
+$header-height: 80px
 
 $logo-width: 220px
 
@@ -119,24 +119,78 @@ header
 	position: fixed
 	top: 0
 	left: 0
-	width: 100%
+	transition-duration: 0.3s
+	margin: 0 -78px
+	width: calc(100% + 156px)
 	z-index: 8888
 	background-color: unset
 	display: flex
+	align-items: center
+	justify-content: space-between
 
 	.head-menu
+		height: inherit
 		position: relative
 		display: flex
+		-webkit-box-pack: center
+		justify-content: center
 		ul
-			-webkit-box-pack: center
-			justify-content: center
 			display: flex
 			li
 				display: flex
-				padding: 10px
+				padding: 10px 14px
 				align-items: center
+				&:hover .sub-menu
+					display: block
+				&:hover a
+					color: #fff
 			a
 				display: block
+				color: #fff
+				font-size: 18px
+				font-weight: normal
+				text-decoration: none
+			.sub-menu
+				display: none
+				position: absolute
+				background-color: #fff
+				top: 80px
+				z-index: 1
+				li a
+					color: #212529
+
+	.n-button
+		font-size: 18px
+		font-weight: 500
+		text-align: center
+		height: 47px
+		transition-duration: 0.3s
+		text-decoration: none
+		border-radius: 4px
+		margin-left: 10px
+		padding: 11px 20px
+		&.try
+			color: #fff
+			transition-duration: 0s
+			border: unset
+			background-color: rgba(255, 255, 255, 0.05)
+			&:hover
+				text-decoration: none
+				color: #212529
+				background-color: rgba(255, 255, 255, 1)
+			&:active
+		&.price
+			background-color: #2A7DEC
+			color: white
+			&:hover
+				text-decoration: none
+				color: #2A7DEC
+				box-shadow: unset
+				transition-duration: 0.3s
+				background-color: #fff
+			&:active
+				background-color: #4F97F8
+				transition-duration: 0s
 
 .logo
 	position: relative
@@ -151,6 +205,7 @@ header
 	background-size: contain
 	background-position: center center
 	background-repeat: no-repeat
+	filter: invert(100%) sepia(68%) saturate(0%) hue-rotate(350deg) brightness(113%) contrast(101%)
 
 #docs
 	.flyout-button
@@ -188,10 +243,8 @@ header
 #githubButtonContainer
 	display: none
 	position: relative
-	padding-left: 35px
-	padding-right: 30px
+	padding-left: 14px
 	margin-top: 2px
-	min-width: 165px
 	float: left
 	height: 60px
 	align-items: center
@@ -246,8 +299,34 @@ header
 // FLIP NAV
 .flip-nav
 	header
+		transition-duration: 0.3s
 		background-color: white
 		box-shadow: 0 4px 0 rgba(48,86,128,.07)
+		.logo
+			filter: unset
+		.head-menu
+			ul
+				li:hover a
+					color: #2A7DEC
+				a
+					color: #212529
+				.sub-menu li a
+					color: #212529
+		.n-button
+			padding: 11px 19px
+			&.try
+				border: solid 1px #EBEBEB
+				padding: 10px 19px
+				color: #212529
+				background-color: unset
+				&:hover
+					border: solid 2px #212529
+					padding: 9px 18px
+			&.price:hover
+				color: #fff
+				background-color: #2A7DEC
+				box-shadow: 0 18px 16px -10px rgba(42,125,236,0.25)
+
 
 // OPEN NAV
 .open-nav
