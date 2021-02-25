@@ -109,24 +109,26 @@ profileNoSec_edit_bootstrap:
 deviceNoSec_create:
     0:
         image: /images/lwm2m/noSec_device_create_Step_1.png
-        title: '<b>start</b> create device LwM2M.'    
+        title: '<b> - start:</b> click <+> button, <p></p><b> - input the name</b> of device (for example: "LwNoSec00000000"), <p></p><b> - select transport type:</b> "LWM2M",<p></p><b> - select existing device profile</b> (for example: "lwm2mProfileNoSec").'       
     1:
         image: /images/lwm2m/noSec_device_create_Step_2.png
-        title: '<b> - input the name</b> of device (for example: "LwNoSec00000000"), <p></p><b> - select transport type:</b> "LWM2M",<p></p><b> - select existing device profile</b> (for example: "lwm2mProfileNoSec").'       
-    2:
-        image: /images/lwm2m/noSec_device_create_Step_3.png
-        title: '<b>Add credential</b>: <p></p>- input "LwM2M Security config key" (<b>endPoint Client</b>)<p></p>- edit "LwM2M Security <b>config</b>"'    
+        title: '<b>Add credential</b>: <p></p>- <b>to mark</b> check <font color="red">"Add credential"</font><p></p>- <b>select</b> Credentials type (<b>"LwM2M Credentials"</b>)<p></p>- <b>input</b> <b><font color="blue">"LwM2M Security config key"</font></b> (<b>endPoint</b> of LwM2M Client/PSK identity of LwM2M Client (<b>"Public Key or Identity"</b>))<p></p> - <b>edit</b> "LwM2M Security <b>config</b>"'    
 
 deviceNoSec_create_security_config:
     0:
         image: /images/lwm2m/noSec_device_create_security_Step_1.png
-        title: '<b>edit security config</b> <i>of device LwM2M</i>: <b>"Client Security Config"</b>'    
+        title: '<b>- edit</b>: <b>"Client Security Config"</b>.'    
     1:
         image: /images/lwm2m/noSec_device_create_security_Step_2.png
-        title: '<b>edit security config</b> <i>of device LwM2M</i>: <b>"Bootstrap Client"</b>: <font color="blue">BOOTSTRAP SERVER</font>'       
+        title: '<b>- edit</b>: <b>"Bootstrap Client"</b>: <font color="blue">BOOTSTRAP SERVER</font>.'       
     2:
         image: /images/lwm2m/noSec_device_create_security_Step_3.png
-        title: '<b>edit security config</b> <i>of device LwM2M</i>: <b>"Bootstrap Client"</b>: <font color="blue">LWM2M SERVER</font>'       
+        title: '- <b>edit</b>: <b>"Bootstrap Client"</b>: <font color="blue">LWM2M SERVER</font>,  <p></p> - <b><font color="blue">save</font></b>: <i>Security config info</i> after finish edit.'
+
+deviceNoSec_create_save:
+    0:
+        image: /images/lwm2m/noSec_device_create_Step_3.png
+        title: '- click <font color="blue">"Add"</font> button.'
 
 ---
 
@@ -501,9 +503,10 @@ thingsboard/application/src/main/resources/thingsboard.yml
  
 #### Thingsboard: Device profile LwM2M and Device LwM2M
 ##### NoSec mode (`NoSec`)
-* **LwM2M Server configuration**<sup>[[link](#link-2-security-modes)]</sup>
-<a name="link-profileNoSeck-edit"></a><br><br>
-* **Device profile LwM2M:** create and configuration
+###### LwM2M Server configuration
+* about `LwM2M Server configuration` [here](#link-2-security-modes)
+
+###### Device profile LwM2M: create and configuration
 ```ruby 
     name device profile: "lwm2mProfileNoSec", Transport configuration: "LWM2M"
 ```
@@ -604,122 +607,122 @@ thingsboard/application/src/main/resources/thingsboard.yml
 </ol>
 
 ```json
-{
-  "observeAttr": {
-    "keyName": {
-      "/3/0/2": "serialNumber",
-      "/3/0/3": "firmwareVersion",
-      "/3/0/9": "batLevel01InMedmoryTest",
-      "/3/0/13": "currentTime",
-      "/3/0/14": "utcOffset",
-      "/4/0/0": "networkBearer",
-      "/3303/0/5700": "sensorValue00",
-      "/3303/1/5604": "maxRangeValue",
-      "/3303/1/5700": "sensorValue",
-      "/3303/123/5700": "sensorValue00",
-      "/3303/123/5701": "sensorUnits"
-    },
-    "observe": [
-      "/3/0/9",
-      "/3/0/13",
-      "/3/0/14",
-      "/4/0/0",
-      "/3303/0/5700",
-      "/3303/1/5604",
-      "/3303/1/5700",
-      "/3303/123/5700",
-      "/3303/123/5701"
-    ],
-    "attribute": [
-      "/3/0/2",
-      "/3/0/9",
-      "/3/0/13",
-      "/3/0/14",
-      "/4/0/0",
-      "/3303/1/5604",
-      "/3303/123/5701"
-    ],
-    "telemetry": [
-      "/3/0/3",
-      "/3/0/9",
-      "/3/0/13",
-      "/3303/0/5700",
-      "/3303/1/5700",
-      "/3303/123/5700"
-    ]
-  },
-  "bootstrap": {
-    "servers": {
-      "binding": "U",
-      "shortId": 123,
-      "lifetime": 300,
-      "notifIfDisabled": true,
-      "defaultMinPeriod": 1
-    },
-    "lwm2mServer": {
-      "host": "localhost",
-      "port": 5685,
-      "serverId": 123,
-      "securityMode": "NO_SEC",
-      "serverPublicKey": "",
-      "bootstrapServerIs": false,
-      "clientHoldOffTime": 1,
-      "bootstrapServerAccountTimeout": 0
-    },
-    "bootstrapServer": {
-      "host": "0.0.0.0",
-      "port": 5687,
-      "serverId": 111,
-      "securityMode": "NO_SEC",
-      "serverPublicKey": "",
-      "clientHoldOffTime": 1,
-      "bootstrapServerAccountTimeout": 0
+    {
+      "observeAttr": {
+        "keyName": {
+          "/3/0/2": "serialNumber",
+          "/3/0/3": "firmwareVersion",
+          "/3/0/9": "batLevel01InMedmoryTest",
+          "/3/0/13": "currentTime",
+          "/3/0/14": "utcOffset",
+          "/4/0/0": "networkBearer",
+          "/3303/0/5700": "sensorValue00",
+          "/3303/1/5604": "maxRangeValue",
+          "/3303/1/5700": "sensorValue",
+          "/3303/123/5700": "sensorValue00",
+          "/3303/123/5701": "sensorUnits"
+        },
+        "observe": [
+          "/3/0/9",
+          "/3/0/13",
+          "/3/0/14",
+          "/4/0/0",
+          "/3303/0/5700",
+          "/3303/1/5604",
+          "/3303/1/5700",
+          "/3303/123/5700",
+          "/3303/123/5701"
+        ],
+        "attribute": [
+          "/3/0/2",
+          "/3/0/9",
+          "/3/0/13",
+          "/3/0/14",
+          "/4/0/0",
+          "/3303/1/5604",
+          "/3303/123/5701"
+        ],
+        "telemetry": [
+          "/3/0/3",
+          "/3/0/9",
+          "/3/0/13",
+          "/3303/0/5700",
+          "/3303/1/5700",
+          "/3303/123/5700"
+        ]
+      },
+      "bootstrap": {
+        "servers": {
+          "binding": "U",
+          "shortId": 123,
+          "lifetime": 300,
+          "notifIfDisabled": true,
+          "defaultMinPeriod": 1
+        },
+        "lwm2mServer": {
+          "host": "localhost",
+          "port": 5685,
+          "serverId": 123,
+          "securityMode": "NO_SEC",
+          "serverPublicKey": "",
+          "bootstrapServerIs": false,
+          "clientHoldOffTime": 1,
+          "bootstrapServerAccountTimeout": 0
+        },
+        "bootstrapServer": {
+          "host": "0.0.0.0",
+          "port": 5687,
+          "serverId": 111,
+          "securityMode": "NO_SEC",
+          "serverPublicKey": "",
+          "clientHoldOffTime": 1,
+          "bootstrapServerAccountTimeout": 0
+        }
+      },
+      "clientLwM2mSettings": {
+        "clientOnlyObserveAfterConnect": true,
+        "clientUpdateValueAfterConnect": true
+      }
     }
-  },
-  "clientLwM2mSettings": {
-    "clientOnlyObserveAfterConnect": true,
-    "clientUpdateValueAfterConnect": true
-  }
-}
 ```
 
-
-====
-
-example link
-
-<a name="link-device-create-noSec"></a> 
-
-[device create and configuration](#link-device-create-noSec)
-
-* **device create** and *configuration* <sup>[[link](#link-device-create-noSec)]</sup>
-
-=======
-
-* **Device LwM2M:** create and configuration
+###### Device LwM2M: create and configuration
 
 ```ruby 
-    name device: "LwNoSec00000000", Credentials type: "LwM2M Credentials"
+    Example:
+    name device: "LwNoSec00000000", 
+    Credentials type: "LwM2M Credentials"
+    LwM2M Security config key: "LwNoSec00000000"
 ```
 
+* *S*earching** for **Security configuration** of the LwM2M device and **identifying** the <b><font color="green">LwM2M client</font></b> with the <b><font color="blue">LwM2M device</font></b> in the <b><font color="blue">LwM2M thingsboard transport</font></b> is performed using the <b><font color="red">KEY</font></b> that we have to input to the field: [<b>"LwM2M Security config key"</b> (add/edit Device`s LwM2M credential)](#link-deviceNoSec-create).
+    * "LwM2M Security config key" value:
+        * for all security modes except PSK,  is [Endpoint Client Name](http://www.openmobilealliance.org/release/LightweightM2M/V1_2-20201110-A/OMA-TS-LightweightM2M_Transport-V1_2-20201110-A.pdf#page=22)
+        * for security mode PSK is identity: [The "Public Key or Identity" Resource MUST be used to store the PSK identity of LwM2M Client](http://www.openmobilealliance.org/release/LightweightM2M/V1_2-20201110-A/OMA-TS-LightweightM2M_Transport-V1_2-20201110-A.pdf#page=24)
+<a name="link-deviceNoSec-create"></a><br><br>
 <ol start="1">
 <li> <i>LwM2M device</i> <b>create new</b>: follow the instructions step by step:</li>    
   {% include images-gallery.html imageCollection="deviceNoSec_create" showListImageTitles="true" %}
 </ol>
 
-<a name="link-device-config-noSec"></a>
-<ol start="2" style="align-content: flex-start">
-<li> <i>LwM2M device</i> <b>edit security configuration</b>: follow the instructions:</li>
+<a name="link-deviceNoSec-security-config"></a><br><br>
+<ol start="2">
+<li> <i>LwM2M device</i> <b>crate/edit security configuration</b>: follow the instructions:</li>
   {% include images-gallery.html imageCollection="deviceNoSec_create_security_config" showListImageTitles="true" %}
 </ol>
 
-<a name="link-device-config-json-noSec"></a>
 <ol start="3">
-<li>  Example Security Config (format Json value) for Device (No Security Key mode):</li>
+<li> <i>LwM2M device</i> <b><font color="blue">save</font></b> <b>new/edit</b>:</li>
+  {% include images-gallery.html imageCollection="deviceNoSec_create_save" showListImageTitles="true" %}
+</ol>
+
+<a name="link-deviceNoSec-security-config-json"></a>
+<ol start="4">
+<li>  Example <font color="blue">Security Config for Device</font>font> (format Json value, No Security Key mode):</li>
 </ol>
 
 ```json
-    {
+     {
       "client": {
         "securityConfigClientMode": "NO_SEC",
         "endpoint": "",
@@ -739,7 +742,7 @@ example link
           "clientSecretKey": ""
         }
       }
-    }
+     }
 ```
 
 
