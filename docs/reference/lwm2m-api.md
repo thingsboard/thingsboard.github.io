@@ -70,20 +70,41 @@ profileNoSec_edit_add_object:
 profileNoSec_edit_add_instance:
     1:
         image: /images/lwm2m/noSec_profile_edit_Step_4_4.png 
-        title: '<b>Add new instances</b> if the object supports multiple instances...'
+        title: '<i>Object</i> is supports <b>multiple instances</b>'    
+    2:
+        image: /images/lwm2m/noSec_profile_edit_Step_4_5.png
+        title: '<b>Start</b> add...'    
+    3:
+        image: /images/lwm2m/noSec_profile_edit_Step_4_6.png
+        title: '<b>Input</b> ID for new instance'     
+    4:
+        image: /images/lwm2m/noSec_profile_edit_Step_4_7.png
+        title: '<b>Delete</b> ID instance'
 
 profileNoSec_edit_observe:
     1:
-        image: /images/lwm2m/noSec_profile_edit_Step_4_5.png 
-        title: 'For <b>observation</b> resource in an instance, it is necessary to mark check <b>"observe"</b> and <b>"attribute"</b> or/and <b>"telemetry"</b>'       
+        image: /images/lwm2m/noSec_profile_edit_Step_4_8.png 
+        title: 'For <b>observation</b> resource in an instance: to mark check <font color="blue">"Observe"</font> <u>with</u> <font color="red">"Attribute"</font> <u>without</u> <font color="blue">"Telemetry"</font> <u>without</u> change <b>"Key Name"</b>'       
+    2:
+        image: /images/lwm2m/noSec_profile_edit_Step_4_9.png 
+        title: 'For <b>observation</b> resource in an instance: to mark check <font color="blue">"Observe"</font> <u>without</u> <font color="red">"Attribute"</font> <u>with</u> <font color="blue">"Telemetry"</font> <u>without</u> change <b>"Key Name"</b>'       
+    3:
+        image: /images/lwm2m/noSec_profile_edit_Step_4_10.png 
+        title: 'For <b>observation</b> resource in an instance: to mark check <font color="blue">"Observe"</font> <u>with</u> <font color="red">"Attribute"</font> <u>with</u> <font color="blue">"Telemetry"</font> <u>without</u> change <b>"Key Name"</b>'       
+    4:
+        image: /images/lwm2m/noSec_profile_edit_Step_4_11.png 
+        title: 'For <b>observation</b> resource in an instance: to mark check <font color="blue">"Observe"</font> <u>with</u> <font color="red">"Attribute"</font> <u>with</u> <font color="blue">"Telemetry"</font> <u>with</u> change <b>"Key Name"</b>'       
 
 profileNoSec_edit_bootstrap:      
     1:
         image: /images/lwm2m/noSec_profile_edit_Step_5_1.png 
-        title: '<b>Setting</b> (short identifier, lifetime, binding ...) connection to a <b>new LwM2M server</b> on the client after upgrade.'       
+        title: '<b>Settings</b> connection to a <b>new LwM2M server</b> on the client after upgrade:<p></p> - Short identifier,<p></p> - Minimum Period...,<p></p> - Lifetime...,<p></p> - Binding (default UDP),<p></p> - Notification Storing...'       
     2:
         image: /images/lwm2m/noSec_profile_edit_Step_5_2.png 
-        title: '<b>Configuring</b> (security key, host, port ...) to connect to the <b>new Bootstrap</b> server and new <b>LwM2M server</b> on the client after upgrade.'    
+        title: '<b>Configuring</b> to connect to the <b>new Bootstrap server</b> on the client after upgrade:<p></p> - Security Mode,<p></p> - Host,<p></p> - Port,<p></p> - Short identifier,<p></p> - Hold off Time,<p></p> - Account after timeout'    
+    3:
+        image: /images/lwm2m/noSec_profile_edit_Step_5_3.png 
+        title: '<b>Configuring</b> to connect to the  new <b>LwM2M server</b> on the client after upgrade:<p></p> - Security Mode,<p></p> - Host,<p></p> - Port,<p></p> - Short identifier,<p></p> - Hold off Time,<p></p> - Account after timeout'    
 
 deviceNoSec_create:
     0:
@@ -432,9 +453,8 @@ thingsboard/application/src/main/resources/thingsboard.yml
        
         These parameters: 
         * ***Public Key (Hex)***:, ***Private Key (Hex)*** You must use for the security mode `RPK` to create deviceProfile tab Bootstrap and run LwM2M client (config client).
-
-<a name="link-2-security-modes"> </a>   
-
+<a name="link-2-security-modes"></a><br><br>
+          
 ##### `2 security` modes (`NoSec` + `PSK`)
 *   *NoSec mode (`NoSec`) + Pre-Shared Key mode (`PSK`) communications:*
     * Server security configuration for these modes is always enabled if `X509` and `RPK` mode information is not available or is in error.  
@@ -478,65 +498,62 @@ thingsboard/application/src/main/resources/thingsboard.yml
           ```ruby
             - Bootstrap Server uses [PSK]: serverNoSecureURI : [0.0.0.0:5687], serverSecureURI : [0.0.0.0:5688]
           ```
-
-#### Thingsboard: Device profile LwM2M and Device LwM2M    
+ 
+#### Thingsboard: Device profile LwM2M and Device LwM2M
 ##### NoSec mode (`NoSec`)
-
 * **LwM2M Server configuration**<sup>[[link](#link-2-security-modes)]</sup>
-  
-<a name="link-profileNoSeck-edit"></a>
-* **Device profile LwM2M:** create and configuration<sup>[[link](#link-profileNoSeck-edit)]</sup>
-
+<a name="link-profileNoSeck-edit"></a><br><br>
+* **Device profile LwM2M:** create and configuration
 ```ruby 
     name device profile: "lwm2mProfileNoSec", Transport configuration: "LWM2M"
 ```
-
 <ol start="1">
 <li> <i>LwM2M device</i> <b>create new</b>: follow the instructions step by step:</li>    
   {% include images-gallery.html imageCollection="profileNoSec_create" showListImageTitles="true" %}  
 </ol>
-
-<a name="link-profileNoSec-edit-config"></a>
-* *LwM2M device profile configuration*:<sup>[[link](#link-profileNoSec-edit-config)]</sup>
-    
+<a name="link-profileNoSec-edit-config"></a><br><br>
+* *LwM2M device profile configuration*:<sup>[[link](#link-profileNoSec-edit-config)]</sup>    
 ```ruby 
     name device profile: "lwm2mProfileNoSec", Tab: "Transport configuration"
-```   
-
+```
 <ol start="2">
 <li> <i>wM2M device profile configuration</i> <b>edit start</b>: follow the instructions step by step:</li>    
   {% include images-gallery.html imageCollection="profileNoSec_edit" showListImageTitles="true" %}  
 </ol>
-
-<a name="link-profileNoSec-edit-settings-type-start"></a>
-* *LwM2M device profile configuration*: <b>setting type start Client LwM2M</b> after connect:<sup>[[link](#link-profileNoSec-edit-settings-type-start)]</sup>
-
+<a name="link-profileNoSec-edit-settings-type-start"></a><br><br>
+* *LwM2M device profile configuration*: <b>setting type start Client LwM2M</b> after connect:
 ```ruby 
     config number 1 for start Client: "Only Observe Request to the client after registration (Default)"
     config number 2 for start Client: "Read&Observe Request to the client after registration 
                                        + Request to the client after registration for All resource values"
     config number 3 for start Client: "Read&Observe Request to the client after registration 
                                        + Request to the client after registration to read values only as attributes or telemetry"
-``` 
-
+```
 <ol start="3">
 <li> <i>LwM2M device profile configuration</i>: <b>changing type start</b> Client LwM2M after connect:</li>    
    {% include images-gallery.html imageCollection="profileNoSec_edit_typeAfterConnect" showListImageTitles="true" %}
 </ol>
 
-<a name="link-profileNoSec-edit-settings-observe"></a>
-* *LwM2M device profile configuration*: setting resources <b>observe</b> in instances on LwM2M client objects after connect:<sup>[[link](#link-profileNoSec-edit-settings-observe)]</sup>
+<a name="link-profileNoSec-edit-settings-observe"></a><br><br>
+* *LwM2M device profile configuration*: setting resources <b>observe</b> in instances on LwM2M client objects after connect:
 
-    * <font color="blue">Add a new object <font color="black">to  <font color="green">"Object list":</font>
+    * [Add a new object](#link-profileNoSec_edit_add_object) to <font color="green">"Object list":</font>
         * If <font color="blue">"Object list"</font> **is empty** or there is **no need object** in "Object list",
            you can <font color="blue">Add a new object</font> to <font color="green">"Object list"</font> in the following ways:      
             * *Select* an item **from** the list of **all the objects**.      
             * *Select* object **by ID object** (input only number ID) **from** the list of **filtered the objects**.      
             * *Select* an object **by context in the object name** (enter any alphabetic or numeric characters from the object name)
               **from** the list of **filtered the objects**.
-    * <font color="blue">Add a new instance <font color="black">to object:</font>
-        * If <font color="blue">"Object list"</font> **is empty** or there is **no need object** in "Object list",
-    * <font color="blue">Add observe <font color="black">resource in instance:</font>
+              
+              ```ruby
+              After "Add new object", if not "Add observation" to this object, and run "Save":
+              - this Object will "not" be saved in the configuration of this "device profile".
+              ```  
+    * [Add a new instance](#link-profileNoSec_edit_add_instance) to object:
+        * After <font color="blue">Add a new object <font color="black">to  <font color="green">"Object list"</font>, this <i>Object</i> has an instance with <i>ID=0</i> <b>always</b>.
+        * If *Object* is **supports multiple instances**, then an instance with **ID** no more than **65535** can be added to this *Object*.
+        * **Instances** in an *Object* by **ID** are **unique**.
+    * [Add observation](#link-profileNoSec_edit_observe) resource in instance:
         * for resource in instance of object to object LWM2M from <font color="green">"Object list"</font>:          
             * to **mark** check: <font color="blue">"Observe" <font color="black">+ <font color="red">"Attribute" <font color="black">+ change/or no change <b>"Key Name"</b>.</font>
             * to **mark** check: <font color="blue">"Observe" <font color="black">+ <font color="blue">"Telemetry" <font color="black">+ change/or no change <b>"Key Name"</b>.</font>
@@ -549,32 +566,123 @@ thingsboard/application/src/main/resources/thingsboard.yml
 
             You can change the {Key Name} "value" to your own.
             ```
-    * <font color="blue">Save:</font> 
-        * <font color="blue">"Save"  <font color="black">or <font color="red">Cancel</font> after any configuration change to "LWM2M Model".
+    * [Edit Bootstrap](#link-profileNoSec_edit_bootstrap) client:
+      * **Setting** connection to the **new LwM2M server** on the client after upgrade.
+      * **Configuring** (security key, host, port ...) to connect to the **new Bootstrap server** on the client after upgrade.
+      * **Configuring** (security key, host, port ...) to connect to the **new LwM2M server** on the client after upgrade.
+    * Control [Config (format Json value)](#link-profileNoSec_edit-json-noSec) for Device profile:
+    * <font color="blue">"Save":</font> 
+        * <font color="blue">"Save"  <font color="black">or <font color="red">"Cancel"</font> after any configuration <b>change</b> to "LWM2M Model".
 
-<a name="link-profileNoSec_edit_add_object"></a>
+<a name="link-profileNoSec_edit_add_object"></a><br><br>
 <ol start="4">
 <li> <i>LwM2M device profile configuration</i>: <font color="blue">Add a new object</font> to <font color="green">"Object list"</font>:</li>    
     {% include images-gallery.html imageCollection="profileNoSec_edit_add_object" showListImageTitles="true" %}
-</ol>     
+</ol>  
 
-<a name="link-profileNoSec_edit_add_instance"></a>
+<a name="link-profileNoSec_edit_add_instance"></a><br><br>
 <ol start="5">
-<li> <i>LwM2M device profile configuration</i>: <b>add object</b> LwM2M client to <b>observe:</b></li>   
-      {% include images-gallery.html imageCollection="profileNoSec_edit_add_instance" showListImageTitles="true" %}
+<li> <i>LwM2M device profile configuration</i>: <font color="blue">Add a new instance</font> to object:</li>    
+    {% include images-gallery.html imageCollection="profileNoSec_edit_add_instance" showListImageTitles="true" %}
 </ol>
 
-<a name="link-profileNoSec_edit_observe"></a>
+<a name="link-profileNoSec_edit_observe"></a><br><br>
 <ol start="6">
-<li> <i>LwM2M device profile configuration</i>: <b>add object</b> LwM2M client to <b>observe:</b></li>    
+<li> <font color="blue">Add observation</font> resource in instance:</li>   
       {% include images-gallery.html imageCollection="profileNoSec_edit_observe" showListImageTitles="true" %}
 </ol>
 
-<a name="link-profileNoSec_edit_bootstrap"></a>
+<a name="link-profileNoSec_edit_bootstrap"></a><br><br>
 <ol start="7">
-<li> <i>LwM2M device profile configuration</i>: <b>edit Bootstrap:</b></li>     
+<li> <font color="blue">Edit Bootstrap</font> client:</li>  
       {% include images-gallery.html imageCollection="profileNoSec_edit_bootstrap" showListImageTitles="true" %}
 </ol>
+
+<a name="link-profileNoSec_edit-json-noSec"></a><br><br>
+<ol start="8">
+<li>Example <font color="blue">Config (format Json value)</font> for Device profile (No Security Key mode):</li>
+</ol>
+
+```json
+{
+  "observeAttr": {
+    "keyName": {
+      "/3/0/2": "serialNumber",
+      "/3/0/3": "firmwareVersion",
+      "/3/0/9": "batLevel01InMedmoryTest",
+      "/3/0/13": "currentTime",
+      "/3/0/14": "utcOffset",
+      "/4/0/0": "networkBearer",
+      "/3303/0/5700": "sensorValue00",
+      "/3303/1/5604": "maxRangeValue",
+      "/3303/1/5700": "sensorValue",
+      "/3303/123/5700": "sensorValue00",
+      "/3303/123/5701": "sensorUnits"
+    },
+    "observe": [
+      "/3/0/9",
+      "/3/0/13",
+      "/3/0/14",
+      "/4/0/0",
+      "/3303/0/5700",
+      "/3303/1/5604",
+      "/3303/1/5700",
+      "/3303/123/5700",
+      "/3303/123/5701"
+    ],
+    "attribute": [
+      "/3/0/2",
+      "/3/0/9",
+      "/3/0/13",
+      "/3/0/14",
+      "/4/0/0",
+      "/3303/1/5604",
+      "/3303/123/5701"
+    ],
+    "telemetry": [
+      "/3/0/3",
+      "/3/0/9",
+      "/3/0/13",
+      "/3303/0/5700",
+      "/3303/1/5700",
+      "/3303/123/5700"
+    ]
+  },
+  "bootstrap": {
+    "servers": {
+      "binding": "U",
+      "shortId": 123,
+      "lifetime": 300,
+      "notifIfDisabled": true,
+      "defaultMinPeriod": 1
+    },
+    "lwm2mServer": {
+      "host": "localhost",
+      "port": 5685,
+      "serverId": 123,
+      "securityMode": "NO_SEC",
+      "serverPublicKey": "",
+      "bootstrapServerIs": false,
+      "clientHoldOffTime": 1,
+      "bootstrapServerAccountTimeout": 0
+    },
+    "bootstrapServer": {
+      "host": "0.0.0.0",
+      "port": 5687,
+      "serverId": 111,
+      "securityMode": "NO_SEC",
+      "serverPublicKey": "",
+      "clientHoldOffTime": 1,
+      "bootstrapServerAccountTimeout": 0
+    }
+  },
+  "clientLwM2mSettings": {
+    "clientOnlyObserveAfterConnect": true,
+    "clientUpdateValueAfterConnect": true
+  }
+}
+```
+
 
 ====
 
