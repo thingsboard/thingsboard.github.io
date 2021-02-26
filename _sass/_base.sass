@@ -140,10 +140,34 @@ header
 				display: flex
 				padding: 10px 14px
 				align-items: center
-				&:hover .sub-menu
+				&:hover .sub-menu, &:hover .head-parrent .head-arrow
 					display: block
+				&:hover .products, &:hover .customers
+					display: flex
 				&:hover a
 					color: #fff
+				.head-parrent
+					position: relative
+					.head-arrow
+						position: absolute
+						top: 47px
+						left: calc(50% - 4px)
+						display: none
+					.head-underline
+						width: 2px
+						height: 4px
+						top: 51px
+						left: 50%
+						border-radius: 2px
+						background-color: #2A7DEC
+						position: absolute
+						transition-duration: 0.3s
+						opacity: 0
+				&:hover .head-underline
+					transition-duration: 0.3s
+					width: 100%
+					left: 0
+					opacity: 1
 			a
 				display: block
 				color: #fff
@@ -151,13 +175,75 @@ header
 				font-weight: normal
 				text-decoration: none
 			.sub-menu
+				width: max-content
+				margin-top: 4px
+				padding: 35px 45px 35px 35px
 				display: none
 				position: absolute
 				background-color: #fff
 				top: 80px
 				z-index: 1
-				li a
-					color: #212529
+				border-radius: 4px
+				box-shadow: 0 52px 40px -32px rgba(0,0,0,.1), 0 0 0 2px rgba(33,37,41,0.04)
+				&.customers-partners
+					padding: 8px
+					.menu-block
+						padding: 27px 37px 27px 27px
+						p
+							color: #899AAB
+							margin: 0 0 8px 18px
+						&.partners
+							border-radius: 4px
+							background-color: #F7F9FC
+							li .hover-item
+								background-color: #fff
+				&.products
+					padding: 35px 32px 3px 35px
+					li
+						padding: 0 0 32px
+						margin-right: 13px
+					.hover-item
+						height: 72px
+					img
+						margin: 15px 9px 15px 15px
+					.products-text
+						z-index: 1
+						a
+							padding: 0 30px 0 0
+						p
+							color: #899AAB
+							font-size: 13px
+							margin-bottom: -2px
+							padding: 0 30px 0 0
+				li
+					position: relative
+					width: max-content
+					padding: unset
+					img
+						z-index: 1
+						margin-left: 13px
+					.hover-item
+						border-radius: 4px
+						width: 53px
+						height: 53px
+						left: 0px
+						position: absolute
+						background-color: #F4F8FE
+						opacity: 0
+						transition-duration: 0.3s
+					a
+						color: #212529
+						font-size: 18px
+						font-weight: 500
+						padding: 15px 18px
+						z-index: 1
+					&:hover
+						.hover-item
+							width: 100%
+							opacity: 1
+							transition-duration: 0.3s
+						a
+							color: #2A7DEC
 
 	.n-button
 		font-size: 18px
@@ -310,8 +396,12 @@ header
 					color: #2A7DEC
 				a
 					color: #212529
-				.sub-menu li a
-					color: #212529
+				.sub-menu
+					li
+						a
+							color: #212529
+						&:hover a
+							color: #2A7DEC
 		.n-button
 			padding: 11px 19px
 			&.try
