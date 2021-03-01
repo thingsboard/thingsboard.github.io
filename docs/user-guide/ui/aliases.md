@@ -7,9 +7,9 @@ description: ThingsBoard Aliases
 
 single-alias:
  0:
-  image: /images/user-guide/ui/alias/single-alias.png
+  image: /images/user-guide/ui/alias/1.png
  1:
-  image: /images/user-guide/ui/alias/single-alias-1.png
+  image: /images/user-guide/ui/alias/2.png
  2:
   image: /images/user-guide/ui/alias/single-alias-2.png
  3:
@@ -17,11 +17,11 @@ single-alias:
 
 single-alias-1:
  4:
-  image: /images/user-guide/ui/alias/single-alias-4.png
+  image: /images/user-guide/ui/alias/4.png
  5:
-  image: /images/user-guide/ui/alias/single-alias-5.png
+  image: /images/user-guide/ui/alias/5.png
  6:
-  image: /images/user-guide/ui/alias/single-alias-6.png
+  image: /images/user-guide/ui/alias/6.png
  7:
   image: /images/user-guide/ui/alias/single-alias-7.png
  8:
@@ -29,9 +29,9 @@ single-alias-1:
 
 group-entities:
  0:
-  image: /images/user-guide/ui/alias/group-entities.png
+  image: /images/user-guide/ui/alias/1.png
  1:
-  image: /images/user-guide/ui/alias/group-entities-1.png
+  image: /images/user-guide/ui/alias/2.png
  2:
   image: /images/user-guide/ui/alias/group-entities-2.png
  3:
@@ -49,9 +49,9 @@ group-entities-1:
 
 entity-list:
  0:
-  image: /images/user-guide/ui/alias/0.png
- 1:
   image: /images/user-guide/ui/alias/1.png
+ 1:
+  image: /images/user-guide/ui/alias/2.png
  2:
   image: /images/user-guide/ui/alias/entity-list-3.png
  3:
@@ -63,10 +63,109 @@ entity-list-1:
  5:
   image: /images/user-guide/ui/alias/5.png
  6:
-  image: /images/user-guide/ui/alias/entity-list-6.png
+  image: /images/user-guide/ui/alias/6.png
  7:
+  image: /images/user-guide/ui/alias/entity-list-6.png
+ 8:
   image: /images/user-guide/ui/alias/entity-list-7.png
 
+entity-name:
+ 0:
+  image: /images/user-guide/ui/alias/1.png
+ 1: 
+  image: /images/user-guide/ui/alias/2.png
+ 2:
+  image: /images/user-guide/ui/alias/entity-name-3.png
+ 3:
+  image: /images/user-guide/ui/alias/entity-name-4.png
+
+entity-name-1:
+ 4:
+  image: /images/user-guide/ui/alias/4.png
+ 5:
+  image: /images/user-guide/ui/alias/5.png
+ 6:
+  image: /images/user-guide/ui/alias/6.png
+ 7:
+  image: /images/user-guide/ui/alias/entity-name-7.png
+ 8:
+  image: /images/user-guide/ui/alias/entity-name-8.png
+
+entity-group-list:
+ 0:
+  image: /images/user-guide/ui/alias/1.png
+ 1:
+  image: /images/user-guide/ui/alias/2.png
+ 2:
+  image: /images/user-guide/ui/alias/entity-group-list-3.png
+ 3:
+  image: /images/user-guide/ui/alias/entity-group-list-4.png
+ 4:
+  image: /images/user-guide/ui/alias/entity-group-list-5.png
+ 5:
+  image: /images/user-guide/ui/alias/entity-group-list-6.png
+
+entity-group-list-1:
+ 0:
+  image: /images/user-guide/ui/alias/4.png
+ 1:
+  image: /images/user-guide/ui/alias/5.png
+ 2:
+  image: /images/user-guide/ui/alias/6.png
+ 3:
+  image: /images/user-guide/ui/alias/entity-group-list-7.png
+ 4:
+  image: /images/user-guide/ui/alias/entity-group-list-8.png
+ 5:
+  image: /images/user-guide/ui/alias/entity-group-list-9.png
+ 6:
+  image: /images/user-guide/ui/alias/entity-group-list-10.png
+ 7:
+  image: /images/user-guide/ui/alias/entity-group-list-11.png
+ 8:
+  image: /images/user-guide/ui/alias/entity-group-list-12.png
+ 9:
+  image: /images/user-guide/ui/alias/entity-group-list-13.png
+ 10:
+  image: /images/user-guide/ui/alias/entity-group-list-14.png
+
+entity-group-name:
+ 0:
+  image: /images/user-guide/ui/alias/1.png
+ 1:
+  image: /images/user-guide/ui/alias/2.png
+ 2: 
+  image: /images/user-guide/ui/alias/entity-group-name-3.png
+ 3:
+  image: /images/user-guide/ui/alias/entity-group-name-4.png
+ 4:
+  image: /images/user-guide/ui/alias/entity-group-name-5.png
+ 5:
+  image: /images/user-guide/ui/alias/entity-group-name-6.png
+
+entity-group-name-1:
+ 0:
+  image: /images/user-guide/ui/alias/4.png
+ 1:
+  image: /images/user-guide/ui/alias/5.png
+ 2:
+  image: /images/user-guide/ui/alias/6.png
+ 3:
+  image: /images/user-guide/ui/alias/entity-group-name-7.png
+ 4:
+  image: /images/user-guide/ui/alias/entity-group-name-7.5.png
+ 5:
+  image: /images/user-guide/ui/alias/entity-group-name-8.png
+ 6:
+  image: /images/user-guide/ui/alias/entity-group-name-9.png
+ 7:
+  image: /images/user-guide/ui/alias/entity-group-name-10.png
+ 8:
+  image: /images/user-guide/ui/alias/entity-group-name-11.png
+ 9:
+  image: /images/user-guide/ui/alias/entity-group-name-12.png
+ 10:
+  image: /images/user-guide/ui/alias/entity-group-name-13.png
 
 ---
 
@@ -93,7 +192,7 @@ This alias allows choosing a single entity. It can be a device, asset, entity vi
 data converter, scheduler event, blob entity, or current customer.  
 In the example was created an alias that filters one device, which in this case is Device A.  
 
-Let's learn how to add a single entity alias:
+Let's learn how to add a Single entity alias:
 1. Enter the dashboard edit mode.
 2. In the upper right corner of the window, click the "Entity alias" icon.
 3. In the opened Entity aliases window, click the "Add alias" button on the left of the dialog.
@@ -103,12 +202,13 @@ In the drop-down menu Type, select _Device_ and enter the name of the needed dev
 6. Now we see that a new alias has been added. Click "Save" in the lower right corner of the dialog box. 
 
 {% include images-gallery.html imageCollection="single-alias" %}
+<br>
 
 Let's use an added alias in a widget:
 1. Click the "Add new widget" sign in the middle of the screen.
 2. From the drop-down Select widget menu, select a Cards bundle. Move to the cell "Latest values" and pick an Entity Table widget.
 3. Input a data source: Entity type, select the name of the alias from the list, and add telemetry.
-4. Click the "Add" button in the bottom left of the dialog window.
+4. Click the "Add" button in the bottom right of the dialog window.
 5. Widget with alias that filters one device has been added.
 6. Don't forget to save all the changes by clicking the big orange tick icon at the right bottom of the screen.
 
@@ -119,7 +219,7 @@ Let's use an added alias in a widget:
 This alias allows choosing a single group of entities, which can be a customer group, an asset group, or a device group.
 In the example was created an alias that filters a group of devices, which in this case is Irrigation systems.  
 
-Let's learn how to add a group entities alias:
+Let's learn how to add a Group entities alias:
 1. Enter the dashboard edit mode.
 2. In the upper right corner of the window, click the "Entity alias" icon.
 3. In the opened Entity aliases window, click the "Add alias" button on the left of the dialog.
@@ -129,12 +229,13 @@ Let's learn how to add a group entities alias:
 6. Now we see that a new alias has been added. Click "Save" in the lower right corner of the dialog box.
 
 {% include images-gallery.html imageCollection="group-entities" %}
+<br>
 
 Now let's use an added alias in a widget:
 1. Click the "Add new widget" sign in the middle of the screen.
 2. From the drop-down Select widget menu, select a Cards bundle. Move to the cell "Latest values" and pick an Entity Table widget.
 3. Input a data source: Entity type, select the name of the created alias from the list, and add telemetry.
-4. Click the "Add" button in the bottom left of the dialog window.
+4. Click the "Add" button in the bottom right of the dialog window.
 5. Widget with alias that filters a group of devices, which in this case is Irrigation systems, has been added.
 6. Don't forget to save all the changes by clicking the big orange tick icon at the right bottom of the screen.
 
@@ -147,7 +248,7 @@ This alias allows choosing several entities manually without entering query, whi
 views, tenants, customers, dashboards, data converters, scheduler events, blob entities or customers.
 In the example was created an alias that filters a list of several devices, which in this case are Device D and Device E.  
 
-Let's learn how to add a group entities alias:
+Let's learn how to add a Entity list alias:
 1. Enter the dashboard edit mode.
 2. In the upper right corner of the window, click the "Entity alias" icon.
 3. In the opened Entity aliases window, click the "Add alias" button on the left of the dialog.
@@ -157,13 +258,14 @@ Let's learn how to add a group entities alias:
 6. Now we see that a new alias has been added. Click "Save" in the lower right corner of the dialog box.
 
 {% include images-gallery.html imageCollection="entity-list" %}
+<br>
 
 Now let's use an added alias in a widget:
 1. Click the "Add new widget" sign in the middle of the screen.
 2. From the drop-down Select widget menu, select a Cards bundle. Move to the cell "Latest values" and pick an Entity Table widget.
 3. Input a data source: Entity type, select the name of the created alias from the list, and add telemetry.
-4. Click the "Add" button in the bottom left of the dialog window.
-5. Widget with alias that filters a list of several devices, which in this case are Device D and Device E. has been added.
+4. Click the "Add" button in the bottom right of the dialog window.
+5. Widget with alias that filters a list of several devices, which in this case are Device D and Device E, has been added.
 6. Don't forget to save all the changes by clicking the big orange tick icon at the right bottom of the screen.
 
 {% include images-gallery.html imageCollection="entity-list-1" %}
@@ -171,33 +273,117 @@ Now let's use an added alias in a widget:
 
 ### Entity name
 
-This alias allows choosing one or more entities names of which start with entered query, which can be device(s), 
-asset(s), entity view(s), tenant(s), customer(s), dashboard(s), data converter(s), scheduler event(s), blob entity(-ies)
- or customer(s).
- 
-<img data-gifffer="/images/user-guide/ui/entity-name-alias.gif" />
+This alias allows choosing one or more entities names of which start with entered query, which can be devices, 
+assets, entity views, tenants, customers, dashboards, data converters, scheduler events, blob entities or customers.  
+In the example was created an alias that filters devices, which names start with ‘Device’.
 
- This alias filters devices whose names start with ‘Device’.
+Let's learn how to add an Entity name alias:
+1. Enter the dashboard edit mode.
+2. In the upper right corner of the window, click the "Entity alias" icon.
+3. In the opened Entity aliases window, click the "Add alias" button on the left of the dialog.
+4. In the opened dialog _Add alias_, enter the alias name, select a _Entity name_ filter type of the alias.
+   In the drop-down menu Type, select _Device_ and input name or just the beginning of the name by which devices will be filtered.
+5. After configuring the alias, click the "Add" button at the bottom right.
+6. Now we see that a new alias has been added. Click "Save" in the lower right corner of the dialog box.
+
+{% include images-gallery.html imageCollection="entity-name" %}
+<br>
+
+Now let's use an added alias in a widget:
+1. Click the "Add new widget" sign in the middle of the screen.
+2. From the drop-down Select widget menu, select a Cards bundle. Move to the cell "Latest values" and pick an Entity Table widget.
+3. Input a data source: Entity type, select the name of the created alias from the list, and add telemetry.
+4. Click the "Add" button in the bottom right of the dialog window.
+5. Widget with alias that filters devices, which names start with ‘Device’, has been added.
+6. Don't forget to save all the changes by clicking the big orange tick icon at the right bottom of the screen.
+
+{% include images-gallery.html imageCollection="entity-name-1" %}
+
  
 ### Entity group list
 
-This alias allows choosing several entity groups manually without entering query, which can be device group(s), 
-asset group(s), entity view group(s), customer group(s), dashboard group(s) or user group(s). 
+This alias allows choosing several entity groups manually without entering query, which can be device groups, 
+asset groups, entity view groups, customer groups, dashboard groups or user groups.
+In the example was created an alias that filters a list of device groups, which in this case are ‘Irrigation systems’ and ‘Moisture sensors’.
 
-<img data-gifffer="/images/user-guide/ui/entity-group-list-alias.gif" />
- 
- This alias filters a list of device groups, which in this case are ‘Irrigation systems’ and ‘Moisture sensors’.
+Let's learn how to add an Entity group list alias:
+1. Enter the dashboard edit mode.
+2. In the upper right corner of the window, click the "Entity alias" icon.
+3. In the opened Entity aliases window, click the "Add alias" button on the left of the dialog.
+4. In the opened dialog _Add alias_, enter the alias name, select a _Entity group list_ filter type of the alias.
+5. Select Device type and input device groups. Click "Add" in the lower right corner of the dialog box.
+6. After first alias has been added, click an "Add alias" button again.
+7. Enter the alias name, select a _Group entities_ filter type of the alias.
+8. Move slider on to use a dashboard state entity as an entity group.
+9. In Default state entity group, select _Device_ type and Irrigation system as entity group.
+10. Click "Add" in the lower right corner of the dialog box.
+11. After both aliases have been added, click "Save" in the lower right corner of the dialog box.
+
+{% include images-gallery.html imageCollection="entity-group-list" %}
+<br>
+
+Now let's use an added alias in a widget:
+1. Click the "Add new widget" sign in the middle of the screen.
+2. From the drop-down Select widget menu, select a Cards bundle. Move to the cell "Latest values" and pick an Entity Table widget.
+3. Input a data source: Entity type and _Entity group list_ alias. Click "Add" in the lower right corner to add a widget.
+4. After a widget has been added, click the "pencil" icon in the top right corner of it to enter an Edit mode of the widget. 
+5. Move to the Action cell and click a "+" icon to add a new action.
+6. In the Add widget dialog, select an [action source](/docs/user-guide/ui/widget-actions/#action-sources) which is responsible for each entity separately (action cell button, on row click etc.)
+7. Enter the name of the action ${entityName} which takes the clicked on entity's name and uses it during the action performance. 
+8. If it is needed, choose an icon that represents a button for an action execution.
+9. Select _Update current dashboard state_ action type and click "Add" to add a new action to the widget.
+10. After the action has been added successfully, click big orange tick mark in the top right of the screen to apply changes.
+11. Now, add a widget on which action will be performed by clicking orange "+" sign in the bottom right corner of the screen and choosing a "Paper" sign ("Create new widget").
+12. From the drop-down Select widget menu, select a Cards bundle. Move to the cell "Latest values" and pick an Entity Table widget.
+13. Input a data source: Entity type and _group entities_ alias and add a telemetry. Click "Add" in the bottom right corner. 
+14. After both widgets have been added, click a tick mark in the bottom right corner of the screen.
+
+To execute an action and filter aliases by device groups, click the action cell button.
+
+{% include images-gallery.html imageCollection="entity-group-list-1" %}
+
  
 ### Entity group name
 
 This alias allows choosing several entity groups names of which start with entered query, which can be device group(s),
-asset group(s), entity view group(s), customer group(s), dashboard group(s) or user group(s). 
+asset group(s), entity view group(s), customer group(s), dashboard group(s) or user group(s). In this example, an alias filters device groups which names start with ‘Irrigation’.
 
 For this example an empty device group named 'Irrigation machines' was created.
 
-<img data-gifffer="/images/user-guide/ui/entity-group-name-alias.gif" />
- 
- This alias filters device groups whose names start with ‘Irrigation’.
+Let's learn how to add an Entity group name alias:
+1. Enter the dashboard edit mode.
+2. In the upper right corner of the window, click the "Entity alias" icon.
+3. In the opened Entity aliases window, click the "Add alias" button on the left of the dialog.
+4. In the opened dialog _Add alias_, enter the alias name, select a _Entity group name_ filter type of the alias.
+5. Select Device type and enter the beginning of the group name, for example, "Irrigation". Click "Add" in the lower rigth corner.
+6. After first alias has been added, click an "Add alias" button again.
+7. Enter the alias name, select a _Group entities_ filter type of the alias.
+8. Move slider on to use a dashboard state entity as an entity group.
+9. In Default state entity group, select _Device_ type and _Irrigation system_ as entity group.
+10. Click "Add" in the lower right corner of the dialog box.
+11. After both aliases have been added, click "Save" in the lower right corner of the dialog box.
+
+{% include images-gallery.html imageCollection="entity-group-name" %}
+<br>
+
+Now let's use an added alias in a widget:
+1. Click the "Add new widget" sign in the middle of the screen.
+2. From the drop-down Select widget menu, select a Cards bundle. Move to the cell "Latest values" and pick an Entity Table widget.
+3. Input a data source: Entity type and _Entity group name_ alias. Click "Add" in the lower right corner to add a widget.
+4. After a widget has been added, click the "pencil" icon in the top right corner of it to enter an Edit mode of the widget.
+5. Move to the Action cell and click a "+" icon to add a new action.
+6. In the Add widget dialog, select an [action source](/docs/user-guide/ui/widget-actions/#action-sources) which is responsible for each entity separately (action cell button, on row click etc.)
+7. Enter the name of the action ${entityName} which takes the clicked on entity's name and uses it during the action performance.
+8. If it is needed, choose an icon that represents a button for an action execution.
+9. Select _Update current dashboard state_ action type and click "Add" to add a new action to the widget.
+10. After the action has been added successfully, click big orange tick mark in the top right of the screen to apply changes.
+11. Now, add a widget on which action will be performed by clicking orange "+" sign in the bottom right corner of the screen and choosing a "Paper" sign ("Create new widget").
+12. From the drop-down Select widget menu, select a Cards bundle. Move to the cell "Latest values" and pick an Entity Table widget.
+13. Input a data source: Entity type and _group entities_ alias and add a telemetry. Click "Add" in the bottom right corner.
+14. After both widgets have been added, click a tick mark in the bottom right corner of the screen.
+
+{% include images-gallery.html imageCollection="entity-group-name-1" %}
+
  
 ### Entity from dashboard state
 This alias allows choosing entity(-ies) from dashboard state which can be device, asset, entity view, tenant, customer,
