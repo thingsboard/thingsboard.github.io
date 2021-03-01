@@ -23,6 +23,8 @@ toc:
     path: /docs/user-guide/telemetry/
   - title: Working with alarms
     path: /docs/user-guide/alarms/
+  - title: Dashboards
+    path: /docs/user-guide/dashboards/
   - title: Device Connectivity Status
     path: /docs/user-guide/device-connectivity-status/
   - title: Claiming Devices
@@ -249,6 +251,10 @@ toc:
       path: /docs/user-guide/ui/trip-animation-widget/
     - title: Widgets Library
       path: /docs/user-guide/ui/widget-library/
+    - title: Advanced Settings of the Entity Table widget
+      path: /docs/user-guide/ui/entity-table-widget/
+    - title: Widgets Actions
+      path: /docs/user-guide/ui/widget-actions/
   - title: Dashboards
     path: /docs/user-guide/ui/dashboards/
   - title: SMS Provider Settings
@@ -325,7 +331,7 @@ toc:
   new: true
   section:
     - title: What is ThingsBoard Cloud?
-      path: /products/paas/
+      path: /products/paas/what-is-thingsboard-cloud/
     - title: Subscriptions
       path: /products/paas/subscription/
     - title: Plan and billing
@@ -418,6 +424,8 @@ toc:
   section:
     - title: How to contribute
       path: /docs/user-guide/contribution/how-to-contribute/
+    - title: How to contribute your device integration guide
+      path: /docs/user-guide/contribution/how-to-contribute-your-device-integration-guide/
     - title: Rule Node development
       path: /docs/user-guide/contribution/rule-node-development/
     - title: Widgets development (ThingsBoard v3.x)

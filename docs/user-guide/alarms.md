@@ -28,20 +28,20 @@ Of course, this is a very simplified case, and real scenarios can be much more c
 
 Let's review the main concepts of the alarm below:
 
-**Originator**
+##### Originator
 
 Alarm originator is an entity that causes the alarm.
 For instance, Device A is an originator of the alarm if ThingsBoard receives a temperature reading from it and raise the “HighTemperature” alarm because the reading exceeds the threshold.
 
-**Type**
+##### Type
 
 Alarm type helps to identify the root cause of the alarm. For example, "HighTemperature" and "LowHumidity" are two different alarms.
 
-**Severity**
+##### Severity
 
 Each alarm has severity which is either Critical, Major, Minor, Warning, or Indeterminate (sorted by priority in descending order).
 
-**Lifecycle**
+##### Lifecycle
 
 Alarm may be active or cleared. When ThingsBoard creates an alarm it persists the **start** and **end time** of the alarm. By default, the start time and the end time are the same. 
 If the alarm trigger condition repeats, the platform updates the end time. ThingsBoard can automatically clear the alarm when an event occurs that matches an alarm clearing condition.
@@ -56,8 +56,8 @@ To summarize, there are 4 possible values of the "**status**" field:
  * Active acknowledged(ACTIVE_ACK) - alarm is not cleared, but already acknowledged;
  * Cleared unacknowledged(CLEARED_UNACK) - alarm was already cleared, but not yet acknowledged;
  * Cleared acknowledged(CLEARED_ACK) - alarm was already cleared and acknowledged;
- 
-**Alarm uniqueness**
+
+##### Alarm uniqueness
 
 ThingsBoard identifies alarm using a combination of originator, type, and start time. 
 Thus, at a single point in time, there is only one active alarm with the same originator, type, and start time.
@@ -71,10 +71,10 @@ Assuming the following sequence of events:
  * 12:30 - temperature equals 22
  * 13:00 - temperature equals 25
  * 13:30 - temperature equals 18
- 
+
 Hence, you should create a single "HighTemperature" alarm with start time = 12:30 and end time = 13:00.
- 
-**Propagation**
+
+##### Propagation
 
 Suppose you have a topology where one Tenant has 1000 Customers and each Customer has 1000 Devices. 
 Thus, you have 1M Devices in your server installation. 

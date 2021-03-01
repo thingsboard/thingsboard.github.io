@@ -370,6 +370,14 @@ var tb = (function () {
     }
 
     function openFaqNode(nodeId) {
+		$('.pi-accordion > .container > div[data-item-id]').each(function () {
+			if ($(this).hasClass('on')) {
+				var thisWrapper = $(this).find('.wrapper').eq(0);
+				if (!thisWrapper) return;
+				$(this).removeClass('on');
+				thisWrapper.css({height: 0});
+			}
+		});
         tb.openAccordionItem(nodeId);
         document.getElementById(nodeId).scrollIntoView();
         reportFaqNode(nodeId);

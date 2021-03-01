@@ -33,6 +33,8 @@ and will upload them to this page as soon as possible.
 
  - [**Nettra RTU**](/docs/samples/nettrartu+/)
 
+ - [**Smartico**](/docs/samples/smartico/)
+
 #### Tutorials
 
  - [**Sending alarms using Email Plugin**](/docs/samples/alarms/mail/)

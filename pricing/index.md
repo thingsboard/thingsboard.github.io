@@ -48,8 +48,11 @@ defaultActivateSelectProduct: true
 <div id="thingsboard-cloud" class="pricing-content" style="display: none;">
     <div class="container">
         <div class="pricing-content-header row">
-            <div class="pricing-content-description pricing-cloud active col-lg-6">
+            <div class="pricing-content-description pricing-cloud active col-lg">
                 <h2>Subscription plans</h2>
+                <div class="pricing-content-details">
+                    All subscription plans include <b>hosting</b>, <b>sms</b> and <b>email</b> costs. Focus on your solution while we manage the servers for you.
+                </div>
             </div>
         </div>
         <div class="pricing-div">
@@ -133,15 +136,15 @@ defaultActivateSelectProduct: true
                                 <p>Consider yourself a Fortune 500 company in the field?</p>
                             </div>
                             <h4 class="pricing-square-price mb-0">
-                                Custom
+                                Custom <span data-faq-id="calculate" data-faq-link-size="70%"></span>
                             </h4>
                             <div class="row justify-content-center">
                                 <a class="btn-blue btn-pricing" href="/docs/contact-us/">
                                     Contact Us
                                 </a>
                             </div>
-                            <div class="pricing-square-item">Unlimited number of Devices</div> 
-                            <div class="pricing-square-item">Unlimited number of Assets</div>
+                            <div class="pricing-square-item">Dedicated server instances</div>
+                            <div class="pricing-square-item">Unlimited Devices and Assets</div>
                             <div class="pricing-square-item">Unlimited <span data-faq-id="data-points">data points</span><br/> per month</div>
                             <div class="pricing-square-item" data-faq-id="subscription-support">
                                 Custom <b>SLA</b>
@@ -194,7 +197,7 @@ defaultActivateSelectProduct: true
         <div id="payAsYouGoHeader" class="pricing-content-description col-lg-6">
             <h2>Subscription plans</h2>
             <div class="pricing-content-details">
-                All subscription plans include <b>unlimited</b> customers, dashboards, integrations, api calls, data points & messages
+                All subscription plans include <b>unlimited</b> customers, dashboards, integrations, api calls, data points & messages.
             </div>
         </div>
         <div id="perpetualHeader" class="pricing-content-description col-lg-6">
@@ -709,7 +712,7 @@ defaultActivateSelectProduct: true
 <div class="container faq-content">
     <h2 id="faq" class="text-center">Frequently asked questions</h2>
     <div class="pi-accordion">
-        <h3 id="licensing">Licensing</h3>    
+        <h3 id="licensing">Licensing</h3>  
         <div class="item" data-tag="h4" data-item-id="what-is-pay-as-you-go" data-title="What is &quot;Pay-as-you-go&quot; license?">
             <div class="container">
                 <p>
@@ -810,6 +813,37 @@ defaultActivateSelectProduct: true
             </div>    
         </div>
         <h3 id="section3">ThingsBoard Cloud</h3>
+        <div class="item" data-tag="h4" data-item-id="what-is-cloud" data-title="What is ThingsBoard Cloud?">
+            <div class="container">
+                <p>
+                ThingsBoard Cloud is a fully managed, scalable, and fault-tolerant platform for your IoT applications with combined subscription plans based on a monthly fee which already includes hosting costs.
+                </p>  
+            </div>    
+        </div>
+        <div class="item" data-tag="h4" data-item-id="difference" data-title="What the difference between Pay-as-you-go option and ThingsBoard Cloud?">
+            <div class="container">
+                <p>
+                Pay-as-you-go subscription plans include license fees only with no hosing services, which means that you have to deploy ThingsBoard on an external cloud (AWS, Azure, GCP, etc), or on the local server (On-premise). This means you have to pay separately for the infrastructure and manage ThingsBoard PE server.
+                ThingsBoard Cloud allows you to use ThingsBoard Professional Edition platform as a service on ThingsBoard enviroment.<br><br>
+                Example: Pay as you go Prototype subscription fee is $99 comparing to Prototype subscription on ThingsBoard cloud which is $149. ThingsBoard Cloud Prototype subscription price differs from the Prototype plan for the self-managed license by hosting fee which included in the Cloud subscription price
+                </p>  
+            </div>    
+        </div>
+        <div class="item" data-tag="h4" data-item-id="calculate" data-title="How we calculate Enterprise plan price?">
+            <div class="container">
+                <p>
+                The Enterprise subscription plan consists of the fixed platform cost and price per device.
+                <br/><br/>The <b>platform cost</b> includes:
+                <ul>
+                  <li>White-labeling;</li>
+                  <li>Dedicated server instances that will scale with the number of your devices;</li>
+                  <li>Priority support;</li>
+                  <li>On-demand training and email consulting;</li>
+                </ul>
+                The price <b>per-device</b> starts from <b>USD 0.01</b> per month and is determined based on the data points each device generates. <a href="https://thingsboard.io/docs/contact-us/">Contact us</a> to get a precise quote for the custom Enterprise subscription.
+                </p>  
+            </div>    
+        </div>
         <div class="item" data-tag="h4" data-item-id="api-limits" data-title="Is there any API Limits?">
             <div class="container">
                 <p>
