@@ -167,6 +167,56 @@ entity-group-name-1:
  10:
   image: /images/user-guide/ui/alias/entity-group-name-13.png
 
+entity-from-dashboard-state:
+ 0:
+  image: /images/user-guide/ui/alias/1.png
+ 1:
+  image: /images/user-guide/ui/alias/entity-from-dashboard-state-3.png
+ 2:
+  image: /images/user-guide/ui/alias/entity-from-dashboard-state-4.png
+ 3:
+  image: /images/user-guide/ui/alias/entity-from-dashboard-state-5.png
+
+entity-from-dashboard-state-1:
+ 0:
+  image: /images/user-guide/ui/alias/4.png
+ 1:
+  image: /images/user-guide/ui/alias/5.png
+ 2:
+  image: /images/user-guide/ui/alias/6.png
+ 4:
+  image: /images/user-guide/ui/alias/entity-from-dashboard-state-6.png
+ 5:
+  image: /images/user-guide/ui/alias/entity-from-dashboard-state-7.png
+ 6:
+  image: /images/user-guide/ui/alias/entity-from-dashboard-state-8.png
+ 7:
+  image: /images/user-guide/ui/alias/entity-from-dashboard-state-9.png
+
+entity-from-dashboard-state-2:
+ 0:
+  image: /images/user-guide/ui/alias/entity-from-dashboard-state-10.png
+ 1:
+  image: /images/user-guide/ui/alias/entity-from-dashboard-state-11.png
+ 2:
+  image: /images/user-guide/ui/alias/entity-from-dashboard-state-12.png
+ 3:
+  image: /images/user-guide/ui/alias/entity-from-dashboard-state-13.png
+ 4:
+  image: /images/user-guide/ui/alias/4.png
+ 5:
+  image: /images/user-guide/ui/alias/5.png
+ 6:
+  image: /images/user-guide/ui/alias/6.png
+ 7:
+  image: /images/user-guide/ui/alias/entity-from-dashboard-state-14.png
+ 8:
+  image: /images/user-guide/ui/alias/entity-from-dashboard-state-15.png
+ 9:
+  image: /images/user-guide/ui/alias/entity-from-dashboard-state-16.png
+ 10:
+  image: /images/user-guide/ui/alias/entity-from-dashboard-state-17.png
+
 ---
 
 * TOC
@@ -387,17 +437,54 @@ Now let's use an added alias in a widget:
  
 ### Entity from dashboard state
 This alias allows choosing entity(-ies) from dashboard state which can be device, asset, entity view, tenant, customer,
- dashboard, data converter, scheduler event, blob entity or current customer. 
-  
-It is used for filtering data for other dashboard states, for example, if Timeseries widget is created on a 
-root dashboard state with several entities displayed on it and you want to create a dashboard state which will display
+dashboard, data converter, scheduler event, blob entity or current customer. It is used for filtering data for other dashboard states.  
+For example, if Time series widget is created on a [root dashboard state](/docs/user-guide/dashboards/#states) with several entities displayed on it, and you'd like to create a dashboard state which will display
 a widget with the entity you clicked on, you need to use this alias. 
- 
- In the following example the alias is used after group entities alias was created.
- 
- <img data-gifffer="/images/user-guide/ui/entity-dashboard-state-alias.gif" />
 
-### Asset type
+**The following example uses an alias after creating an alias for group entities.**
+
+Let's learn how to add an Entity from dashboard state alias:
+1. Enter the dashboard edit mode.
+2. In the upper right corner of the window, click the "Entity alias" icon. 
+3. In the opened Entity aliases window, click the "Add alias" button on the left of the dialog.
+4. In the opened dialog _Add alias_, enter the alias name, select a _Entity from dashboard state_ filter type of the alias.
+5. Click "Add" in the lower right corner of the dialog box.
+6. After both aliases have been added, click "Save" in the lower right corner of the dialog box.
+
+{% include images-gallery.html imageCollection="entity-from-dashboard-state" %}
+<br>
+
+Now let's use an added alias in a widget and add a [state](/docs/user-guide/dashboards/#states) to see how this alias works:
+1. Click the "Add new widget" sign in the middle of the screen.
+2. From the drop-down Select widget menu, select a Cards bundle. Move to the cell "Latest values" and pick an Entity Table widget.
+3. Input a data source: Entity type, _Group entities_ alias and add telemetry. Click "Add" in the lower right corner to add a widget.
+4. After widget has been added, click a layers icon in the top left corner of the dashboard to create a new state.
+In the opened dialog window, click a "+" icon to add a new state.
+5. Enter state's name and click "Add".
+6. Now you see a list with two states: root one, and the one that has been just created. Click "Save" in the lower right of the dialog.
+
+{% include images-gallery.html imageCollection="entity-from-dashboard-state-1" %}
+<br>
+
+Time to add an action to a root dashboard widget and perform it using an Entity from dashboard state alias on the widget in the created state:
+1. In the root dashboard state, enter widget Edit mode by clicking the "pencil" icon in the top right corner of it to enter an Edit mode of the widget.
+2. Move to the Action cell and click a "+" icon to add a new action.
+3. In the Add widget dialog, select an [action source](/docs/user-guide/ui/widget-actions/#action-sources) which is responsible for each entity separately (action cell button, on row click etc.)
+4. Enter the name of the action ${entityName} which takes the clicked on entity's name and uses it during the action performance.
+5. If it is needed, choose an icon that represents a button for an action execution.
+6. Select _Navigate to new dashboard state_ action type and set newly created state as a target dashboard state. Click "Add" to add a new action to the widget.
+7. After the action has been added successfully, click big orange tick mark in the top right of the screen to apply changes.
+8. Then, go to the created state by selecting it from the drop-down menu by clicking the layers icon in the top right corner.
+9. Click the "Add new widget" sign in the middle of the screen. From the drop-down Select widget menu, select a Cards bundle. Move to the cell "Latest values" and pick an Entity Table widget.
+10. Input a data source: Entity type and select _Entity from dashboard state_ alias. Click "Add" in the bottom right corner.
+11. After a widget has been added, click a big tick icon in the lower right corner of the screen to save all applied changes.
+
+By clicking a button opposite needed entity, you will be transitioned to an inner state that shows a widget with entity from dashboard's state details.
+
+{% include images-gallery.html imageCollection="entity-from-dashboard-state-2" %}
+
+
+## Asset type
 
 This alias allows choosing assets of entered type (and, if needed) names of which start with entered query.
 
