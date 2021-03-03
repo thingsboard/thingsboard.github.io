@@ -217,6 +217,66 @@ entity-from-dashboard-state-2:
  10:
   image: /images/user-guide/ui/alias/entity-from-dashboard-state-17.png
 
+asset-type-alias:
+ 0:
+  image: /images/user-guide/ui/alias/1.png
+ 1:
+  image: /images/user-guide/ui/alias/2.png
+ 2:
+  image: /images/user-guide/ui/alias/asset-type-3.png 
+ 3:
+  image: /images/user-guide/ui/alias/asset-type-4.png
+ 4:
+  image: /images/user-guide/ui/alias/4.png
+ 5:
+  image: /images/user-guide/ui/alias/5.png
+ 6:
+  image: /images/user-guide/ui/alias/6.png
+ 7:
+  image: /images/user-guide/ui/alias/asset-type-5.png
+ 8:
+  image: /images/user-guide/ui/alias/asset-type-6.png
+
+device-type-alias:
+ 0:
+  image: /images/user-guide/ui/alias/1.png
+ 1:
+  image: /images/user-guide/ui/alias/2.png
+ 2:
+  image: /images/user-guide/ui/alias/device-type-3.png
+ 3:
+  image: /images/user-guide/ui/alias/device-type-4.png
+ 4:
+  image: /images/user-guide/ui/alias/4.png
+ 5:
+  image: /images/user-guide/ui/alias/5.png
+ 6:
+  image: /images/user-guide/ui/alias/6.png
+ 7:
+  image: /images/user-guide/ui/alias/device-type-5.png
+ 8:
+  image: /images/user-guide/ui/alias/device-type-6.png
+
+entity-view-type:
+ 0:
+  image: /images/user-guide/ui/alias/1.png
+ 1:
+  image: /images/user-guide/ui/alias/2.png
+ 2:
+  image: /images/user-guide/ui/alias/entity-view-type-3.png
+ 3:
+  image: /images/user-guide/ui/alias/entity-view-type-4.png
+ 4:
+  image: /images/user-guide/ui/alias/4.png
+ 5:
+  image: /images/user-guide/ui/alias/5.png
+ 6:
+  image: /images/user-guide/ui/alias/entity-view-type-5.png
+ 7:
+  image: /images/user-guide/ui/alias/entity-view-type-6.png
+ 8:
+  image: /images/user-guide/ui/alias/entity-view-type-7.png
+
 ---
 
 * TOC
@@ -486,30 +546,65 @@ By clicking a button opposite needed entity, you will be transitioned to an inne
 
 ## Asset type
 
-This alias allows choosing assets of entered type (and, if needed) names of which start with entered query.
+This alias allows choosing assets of entered type (and, if needed) names of which start with entered query. This alias filters assets of type ‘field’ and with name starting with ‘House’.
 
- <img data-gifffer="/images/user-guide/ui/asset-type-alias.gif" />
- 
- This alias filters assets of type ‘field’ and with name starting with ‘House’.
+Let's learn how to add an Asset type alias and use it in a widget:
+1. Enter the dashboard edit mode.
+2. In the upper right corner of the window, click the "Entity alias" icon.
+3. In the opened Entity aliases window, click the "Add alias" button on the left of the dialog.
+4. In the opened dialog _Add alias_, enter the alias name, select a _Asset type_ filter type of the alias.
+5. Select asset type from the drop-down menu and enter the beginning of the asset name. Click "Add" in the lower right corner of the dialog box.
+6. After alias has been added, click "Save" in the lower right corner of the dialog box.
+7. Click the "Add new widget" sign in the middle of the screen.
+8. From the drop-down Select widget menu, select a Cards bundle. Move to the cell "Latest values" and pick an Entity Table widget.
+9. Input a data source: Entity type, _Asset type_ alias and click "Add" in the lower right corner to add a widget.
+10. After a widget has been added, click a big tick icon in the lower right corner of the screen to save all applied changes.
+
+{% include images-gallery.html imageCollection="asset-type-alias" %}
+<br>
+
  
 ## Device types
 
-This alias allows choosing devices of entered type (and, if needed) names of which start with entered query.
+This alias allows choosing devices of entered type (and, if needed) names of which start with entered query. This alias filters devices of type ‘Temperature Sensor’.
 
- <img data-gifffer="/images/user-guide/ui/device-type-alias.gif" />
+Let's learn how to add an Device types alias and use it in a widget:
+1. Enter the dashboard edit mode.
+2. In the upper right corner of the window, click the "Entity alias" icon.
+3. In the opened Entity aliases window, click the "Add alias" button on the left of the dialog.
+4. In the opened dialog _Add alias_, enter the alias name, select a _Device types_ filter type of the alias. 
+5. Choose previously created device type from the drop-down menu and click "Add" in the lower right corner of the dialog box.
+6. After alias has been added, click "Save" in the lower right corner of the dialog box.
+7. Click the "Add new widget" sign in the middle of the screen.
+8. From the drop-down Select widget menu, select a Cards bundle. Move to the cell "Latest values" and pick an Entity Table widget.
+9. Input a data source: Entity type, _Device types_ alias and add telemetry. Click "Add" in the lower right corner to add a widget.
+10. After a widget has been added, click a big tick icon in the lower right corner of the screen to save all applied changes.
+
+{% include images-gallery.html imageCollection="device-type-alias" %}
+<br>
  
- This alias filters devices of type ‘Device’.
  
 ### Entity view type
 
-This alias allows choosing entity views of entered type (and, if needed) names of which start with entered query.
-
-An entity view called 'Device-D-entity-view' was created with a type 'example-type' which provides access to
- 'water_level' timeseries from Device D.
-
- <img data-gifffer="/images/user-guide/ui/entity-view-type-alias.gif" />
- 
+This alias allows choosing entity views of entered type (and, if needed) names of which start with entered query. 
+An entity view called 'Device-D-entity-view' was created with a type 'example-type' which provides access to 'water_level' timeseries from Device D.  
 This alias filters entity Views of type ‘example-type’ and with name starting with ‘Device’.
+
+Let's learn how to add an Device types alias and use it in a widget:
+1. Enter the dashboard edit mode.
+2. In the upper right corner of the window, click the "Entity alias" icon.
+3. In the opened Entity aliases window, click the "Add alias" button on the left of the dialog.
+4. In the opened dialog _Add alias_, enter the alias name, select a _Entity view types_ filter type of the alias.
+5. Choose previously created entity view type from the drop-down menu and enter the beginning of an entity view name. Click "Add" in the lower right corner of the dialog box.
+6. After alias has been added, click "Save" in the lower right corner of the dialog box.
+7. Click the "Add new widget" sign in the middle of the screen.
+8. From the drop-down Select widget menu, select a Cards bundle. In the cell "Timeseries", pick a Timeseries Table widget.
+9. In the top right corner of the "Add widget" dialog, set time window. Input a data source: Entity type, _Entity view type_ alias and add telemetry. Click "Add" in the lower right corner to add a widget.
+10. After a widget has been added, click a big tick icon in the lower right corner of the screen to save all applied changes.
+
+{% include images-gallery.html imageCollection="entity-view-type" %}
+<br>
+
 
 ### Relations query
 
