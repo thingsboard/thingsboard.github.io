@@ -170,55 +170,8 @@ p
         box-shadow: unset
         background-color: #fff
 
-    &.opened-burger
-      .burger
-        background-image: url(/images/close-icon.svg)
-      transition-duration: 0.3s
-      background-color: white
-      box-shadow: 0 4px 0 rgba(48, 86, 128, .07)
-
-      .logo, .burger
-        filter: unset
-
-      .head-menu
-        display: block
-
-        ul
-          li:hover a
-            color: #2A7DEC
-
-          a
-            color: #212529
-
-          .sub-menu
-            li
-              a
-                color: #212529
-
-              &:hover a
-                color: #2A7DEC
-
-      .n-button
-        padding: 11px 19px
-        display: inline-block
-
-        &.try
-          border: solid 1px #EBEBEB
-          padding: 10px 19px
-          color: #212529
-          background-color: unset
-
-          &:hover
-            border: solid 2px #212529
-            padding: 9px 18px
-
-        &.price:hover
-          color: #fff
-          background-color: #2A7DEC
-          box-shadow: 0 18px 16px -10px rgba(42, 125, 236, 0.25)
-
 header
-  &:not(.opened-burger)
+  @media screen and (min-width: 1280px)
     .head-menu ul li:hover
       .sub-menu
         display: block
@@ -238,16 +191,6 @@ header
   display: flex
   align-items: center
   justify-content: space-between
-
-  &.opened-burger
-    .burger
-      background-image: url(/images/close-icon.svg)
-
-    .head-menu
-      display: block
-
-    .n-button
-      display: inline-block
 
   .head-menu
     height: inherit
@@ -2093,10 +2036,83 @@ iframe
       font-size: 17px
 
 @media screen and (max-width: 1280px)
+  #home, #docs, #thingsboard-paas, #thingsboard-pe, #trendz
+    .opened-burger
+      .burger
+        background-image: url(/images/close-icon.svg)
+      transition-duration: 0.3s
+      background-color: white
+      box-shadow: 0 4px 0 rgba(48, 86, 128, .07)
+
+      .logo, .burger
+        filter: unset
+
+      .head-menu
+        display: block
+
+        ul
+          li:hover a
+            color: #2A7DEC
+
+          a, a:not([href])
+            color: #212529
+
+          .sub-menu
+            background-color: unset
+            li
+              a
+                color: #212529
+
+              &:hover a
+                color: #2A7DEC
+
+      .n-button
+        padding: 11px 19px
+        display: inline-block
+
+        &.try
+          border: solid 1px #EBEBEB
+          padding: 10px 19px
+          color: #212529
+          background-color: unset
+
+          &:hover
+            border: solid 2px #212529
+            padding: 9px 18px
+
+        &.price:hover
+          color: #fff
+          background-color: #2A7DEC
+          box-shadow: 0 18px 16px -10px rgba(42, 125, 236, 0.25)
+
   header
     padding: 9px 30px
     height: unset !important
     display: unset
+
+    &.opened-burger
+      //position: absolute
+      height: 100%!important
+      .logo-burger
+        position: fixed
+        z-index: 2
+        background-color: #fff
+        box-shadow: 0 1px 0 rgba(48, 86, 128, 0.07)
+        width: 100%
+        margin: -9px 0 0 -30px
+        padding: 9px 30px
+      .burger
+        background-image: url(/images/close-icon.svg)
+
+      .head-menu
+        display: block
+        overflow-y: scroll
+        height: calc(100% - 199px)
+        margin-top: 70px
+        padding-top: 10px
+
+      .n-button
+        display: inline-block
 
     .burger
       display: block
@@ -2118,6 +2134,7 @@ iframe
             position: unset
             box-shadow: unset
             padding: 12px 0
+            background-color: unset
 
             .menu-block
               padding: 0 !important

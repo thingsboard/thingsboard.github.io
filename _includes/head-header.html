@@ -312,8 +312,12 @@
     <script>
         function Burger() {
             var header = document.getElementsByTagName("header")[0];
+            let sub = document.getElementsByClassName("sub-menu");
             if (header.classList.contains('opened-burger')) {
                 header.classList.remove("opened-burger");
+                for (let i = 0; i < sub.length; i++) {
+                    sub[i].classList.remove("open-sub");
+                }
             } else {
                 header.classList.add("opened-burger");
             }
@@ -360,7 +364,7 @@
 </head>
 <body>
 <header>
-    <div>
+    <div class="logo-burger">
         <a href="/" class="logo"></a>
         <button onclick="Burger()" class="burger"></button>
         <div id="githubButtonContainer">
