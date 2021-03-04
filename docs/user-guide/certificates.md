@@ -21,7 +21,7 @@ Open the keygen.properties file, and update the values if needed:
 DOMAIN_SUFFIX="localhost"
 ORGANIZATIONAL_UNIT=ThingsBoard
 ORGANIZATION=ThingsBoard
-CITY=San Francisco
+CITY="San Francisco"
 STATE_OR_PROVINCE=CA
 TWO_LETTER_COUNTRY_CODE=US
 
@@ -37,6 +37,8 @@ CLIENT_KEY_PASSWORD=password
 
 CLIENT_KEY_ALIAS="clientalias"
 CLIENT_FILE_PREFIX="mqttclient"
+CLIENT_KEY_ALG="RSA"
+CLIENT_KEY_SIZE="2048"
 ```
 
 #### Run Client keygen script
