@@ -345,7 +345,11 @@ toc:
     - title: What is ThingsBoard Edge?
       path: /docs/edge/what-is-edge/
     - title: Getting Started
-      path: /docs/edge/getting-started/
+      section:
+        - title: ThingsBoard Professional Edition
+          path: /docs/edge/getting-started/getting-started-pe
+        - title: ThingsBoard Community Edition
+          path: /docs/edge/getting-started/getting-started-ce
     - title: Architecture
       path: /docs/edge/edge-architecture/
     - title: Upgrade instructions for ThingsBoard CE server
