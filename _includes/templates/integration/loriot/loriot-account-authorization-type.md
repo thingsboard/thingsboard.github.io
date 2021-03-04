@@ -1,4 +1,4 @@
-In Loriot go to the **Output** menu and click on **Add new output.**
+In LORIOT go to the **Output** menu and click on **Add new output.**
 
 {% include images-gallery.html imageCollection="loriot_output" preview="false" %}
 
