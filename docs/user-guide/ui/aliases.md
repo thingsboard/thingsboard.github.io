@@ -277,6 +277,78 @@ entity-view-type:
  8:
   image: /images/user-guide/ui/alias/entity-view-type-7.png
 
+relations-query:
+ 0:
+  image: /images/user-guide/ui/alias/1.png
+ 1:
+  image: /images/user-guide/ui/alias/2.png
+ 2:
+  image: /images/user-guide/ui/alias/relations-query-3.png
+ 3:
+  image: /images/user-guide/ui/alias/relations-query-4.png
+ 4:
+  image: /images/user-guide/ui/alias/4.png
+ 5:
+  image: /images/user-guide/ui/alias/5.png
+ 6:
+  image: /images/user-guide/ui/alias/6.png
+ 7:
+  image: /images/user-guide/ui/alias/relations-query-5.png
+ 8:
+  image: /images/user-guide/ui/alias/relations-query-6.png
+
+asset-search-query:
+ 0:
+  image: /images/user-guide/ui/alias/1.png
+ 1:
+  image: /images/user-guide/ui/alias/2.png
+ 2:
+  image: /images/user-guide/ui/alias/asset-search-query-3.png
+ 3:
+  image: /images/user-guide/ui/alias/asset-search-query-4.png
+ 4:
+  image: /images/user-guide/ui/alias/4.png
+ 5:
+  image: /images/user-guide/ui/alias/5.png
+ 6:
+  image: /images/user-guide/ui/alias/6.png
+ 7:
+  image: /images/user-guide/ui/alias/asset-search-query-5.png
+ 8:
+  image: /images/user-guide/ui/alias/asset-search-query-6.png
+
+device-search-query:
+ 0:
+  image: /images/user-guide/ui/alias/1.png
+ 1:
+  image: /images/user-guide/ui/alias/2.png
+ 2:
+  image: /images/user-guide/ui/alias/device-search-query-3.png
+ 3:
+  image: /images/user-guide/ui/alias/device-search-query-4.png
+ 4:
+  image: /images/user-guide/ui/alias/4.png
+ 5:
+  image: /images/user-guide/ui/alias/5.png
+ 6:
+  image: /images/user-guide/ui/alias/6.png
+
+entity-view-search-query:
+ 0:
+  image: /images/user-guide/ui/alias/1.png
+ 1:
+  image: /images/user-guide/ui/alias/2.png
+ 2:
+  image: /images/user-guide/ui/alias/entity-view-search-query-3.png
+ 3:
+  image: /images/user-guide/ui/alias/entity-view-search-query-4.png
+ 4:
+  image: /images/user-guide/ui/alias/4.png
+ 5:
+  image: /images/user-guide/ui/alias/5.png
+ 6:
+  image: /images/user-guide/ui/alias/6.png
+
 ---
 
 * TOC
@@ -568,7 +640,7 @@ Let's learn how to add an Asset type alias and use it in a widget:
 
 This alias allows choosing devices of entered type (and, if needed) names of which start with entered query. This alias filters devices of type ‘Temperature Sensor’.
 
-Let's learn how to add an Device types alias and use it in a widget:
+Let's learn how to add a Device types alias and use it in a widget:
 1. Enter the dashboard edit mode.
 2. In the upper right corner of the window, click the "Entity alias" icon.
 3. In the opened Entity aliases window, click the "Add alias" button on the left of the dialog.
@@ -590,7 +662,7 @@ This alias allows choosing entity views of entered type (and, if needed) names o
 An entity view called 'Device-D-entity-view' was created with a type 'example-type' which provides access to 'water_level' timeseries from Device D.  
 This alias filters entity Views of type ‘example-type’ and with name starting with ‘Device’.
 
-Let's learn how to add an Device types alias and use it in a widget:
+Let's learn how to add an Entity view type alias and use it in a widget:
 1. Enter the dashboard edit mode.
 2. In the upper right corner of the window, click the "Entity alias" icon.
 3. In the opened Entity aliases window, click the "Add alias" button on the left of the dialog.
@@ -611,38 +683,87 @@ Let's learn how to add an Device types alias and use it in a widget:
 This alias allows choosing entities which are related to specified originator up to specified level and in specified 
 direction.
 
- <img data-gifffer="/images/user-guide/ui/relations-query-alias.gif" />
+In the example alias filters entities that have any relation from Asset ‘Street A’ up to relation level 2.
 
-This alias filters entities that have any relation from Asset ‘Street A’ up to relation level 2.
+Let's learn how to add a Relations query alias and use it in a widget:
+1. Enter the dashboard edit mode.
+2. In the upper right corner of the window, click the "Entity alias" icon.
+3. In the opened Entity aliases window, click the "Add alias" button on the left of the dialog.
+4. In the opened dialog _Add alias_, enter the alias name, select a _Relations query_ filter type of the alias.
+5. Select _Asset_ type and choose an asset. Set direction to "From" and max relation level 2.
+6. Click "Add" in the lower right corner of the dialog box.
+7. After alias has been added, click "Save" in the lower right corner of the dialog box.
+8. Click the "Add new widget" sign in the middle of the screen.
+9. From the drop-down Select widget menu, select a Cards bundle. Move to the cell "Latest values" and pick an Entity Table widget.
+10. Input a data source: Entity type, _Relations query_ alias and add telemetry. Click "Add" in the lower right corner to add a widget.
+11. After a widget has been added, click a big tick icon in the lower right corner of the screen to save all applied changes.
+
+{% include images-gallery.html imageCollection="relations-query" %}
+
 
 ### Asset search query
 
 This alias allows choosing assets of specified type which are related to specified originator up to specified level and
-in specified direction.
-
- <img data-gifffer="/images/user-guide/ui/Asset-search-query-alias.gif" />
-
+in specified direction.  
 This alias filters assets with types ‘field’ that have any relation to Device ‘Device D’ with relation level 1.
+
+Let's learn how to add an Asset search query alias and use it in a widget:
+1. Enter the dashboard edit mode.
+2. In the upper right corner of the window, click the "Entity alias" icon.
+3. In the opened Entity aliases window, click the "Add alias" button on the left of the dialog.
+4. In the opened dialog _Add alias_, enter the alias name, select a _Asset search query_ filter type of the alias.
+5. Select _Device_ type and choose a device. Set direction to "To" and max relation level 2. Input asset type.
+6. Click "Add" in the lower right corner of the dialog box.
+7. After alias has been added, click "Save" in the lower right corner of the dialog box.
+8. Click the "Add new widget" sign in the middle of the screen.
+9. From the drop-down Select widget menu, select a Cards bundle. Move to the cell "Latest values" and pick an Entity Table widget.
+10. Input a data source: Entity type, _Asset search query_ alias and add telemetry. Click "Add" in the lower right corner to add a widget.
+11. After a widget has been added, click a big tick icon in the lower right corner of the screen to save all applied changes.
+
+{% include images-gallery.html imageCollection="asset-search-query" %}
 
 ### Device search query
 
 This alias allows choosing devices of specified type which are related to specified originator up to specified level
-and in specified direction. 
+and in specified direction.  
+This alias filters devices with types ‘Device’ that have any relation from Asset ‘House C’ up to relation level 1.
+
+Let's learn how to add a Device search query alias and use it in a widget:
+1. Enter the dashboard edit mode.
+2. In the upper right corner of the window, click the "Entity alias" icon.
+3. In the opened Entity aliases window, click the "Add alias" button on the left of the dialog.
+4. In the opened dialog _Add alias_, enter the alias name, select a _Device search query_ filter type of the alias.
+5. Select _Asset_ type and choose an asset. Set direction to "From" and max relation level 1. Input device type.
+6. Click "Add" in the lower right corner of the dialog box.
+7. After alias has been added, click "Save" in the lower right corner of the dialog box.
+8. Click the "Add new widget" sign in the middle of the screen.
+9. From the drop-down Select widget menu, select a Cards bundle. Move to the cell "Latest values" and pick an Entity Table widget.
+
+{% include images-gallery.html imageCollection="device-search-query" %}
 
  <img data-gifffer="/images/user-guide/ui/Device-search-query-alias.gif" />
 
-This alias filters devices with types ‘Device’ that have any relation from Asset ‘House C’ up to relation level 1.
-
 ### Entity view search query
 
-This alias allows choosing entity views of specified type which are related to specified originator up to specified
-level and in specified direction.
+This alias allows choosing entity views of specified type which are related to specified originator up to specified level and in specified direction.  
+An entity view called 'Device-D-entity-view' which has 'contains' relation to it from Device D was created with a type 'example-type' which provides access to 'water_level' timeseries from Device D.  
+This alias filters entity views with types ‘example-type’ that have any relation from device ‘Device D’ up to
+relation level 1.
 
-An entity view called 'Device-D-entity-view' which has 'contains' relation to it from Device D was created with a type
- 'example-type' which provides access to 'water_level' timeseries from Device D.
+Let's learn how to add a Device search query alias and use it in a widget:
+1. Enter the dashboard edit mode.
+2. In the upper right corner of the window, click the "Entity alias" icon.
+3. In the opened Entity aliases window, click the "Add alias" button on the left of the dialog.
+4. In the opened dialog _Add alias_, enter the alias name, select a _Entity view search query_ filter type of the alias.
+5. Select _Device_ type and choose an asset. Set direction to "From" and max relation level 1. Input entity view type.
+6. Click "Add" in the lower right corner of the dialog box.
+7. After alias has been added, click "Save" in the lower right corner of the dialog box.
+8. Click the "Add new widget" sign in the middle of the screen.
+9. From the drop-down Select widget menu, select a Cards bundle. Move to the cell "Latest values" and pick an Entity Table widget.
+
+{% include images-gallery.html imageCollection="entity-view-search-query" %}
 
  <img data-gifffer="/images/user-guide/ui/entity-view-type-search-query-alias.gif" />
  
-This alias filters entity views with types ‘example-type’ that have any relation from device ‘Device D’ up to
-relation level 1.
+
 
