@@ -217,6 +217,26 @@ entity-from-dashboard-state-2:
  10:
   image: /images/user-guide/ui/alias/entity-from-dashboard-state-17.png
 
+owner-of-entity-from-dashboard-state:
+ 0:
+  image: /images/user-guide/ui/alias/1.png
+ 1:
+  image: /images/user-guide/ui/alias/2.png
+ 2:
+  image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-3.png
+ 3:
+  image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-4.png
+ 4:
+  image: /images/user-guide/ui/alias/4.png
+ 5:
+  image: /images/user-guide/ui/alias/5.png
+ 6:
+  image: /images/user-guide/ui/alias/6.png
+ 7:
+  image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-5.png
+ 8:
+  image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-6.png
+
 asset-type-alias:
  0:
   image: /images/user-guide/ui/alias/1.png
@@ -277,6 +297,26 @@ entity-view-type:
  8:
   image: /images/user-guide/ui/alias/entity-view-type-7.png
 
+api-usage-state:
+ 0:
+  image: /images/user-guide/ui/alias/1.png
+ 1:
+  image: /images/user-guide/ui/alias/2.png
+ 2:
+  image: /images/user-guide/ui/alias/api-usage-state-3.png
+ 3:
+  image: /images/user-guide/ui/alias/api-usage-state-4.png
+ 4:
+  image: /images/user-guide/ui/alias/4.png
+ 5:
+  image: /images/user-guide/ui/alias/5.png
+ 6:
+  image: /images/user-guide/ui/alias/6.png
+ 7:
+  image: /images/user-guide/ui/alias/api-usage-state-5.png
+ 8:
+  image: /images/user-guide/ui/alias/api-usage-state-6.png
+
 relations-query:
  0:
   image: /images/user-guide/ui/alias/1.png
@@ -332,6 +372,10 @@ device-search-query:
   image: /images/user-guide/ui/alias/5.png
  6:
   image: /images/user-guide/ui/alias/6.png
+ 7:
+  image: /images/user-guide/ui/alias/device-search-query-5.png
+ 8:
+  image: /images/user-guide/ui/alias/device-search-query-6.png
 
 entity-view-search-query:
  0:
@@ -345,9 +389,11 @@ entity-view-search-query:
  4:
   image: /images/user-guide/ui/alias/4.png
  5:
-  image: /images/user-guide/ui/alias/5.png
+  image: /images/user-guide/ui/alias/entity-view-type-5.png
  6:
-  image: /images/user-guide/ui/alias/6.png
+  image: /images/user-guide/ui/alias/entity-view-search-query-5.png
+ 7:
+  image: /images/user-guide/ui/alias/entity-view-search-query-6.png
 
 ---
 
@@ -566,7 +612,12 @@ Now let's use an added alias in a widget:
 
 {% include images-gallery.html imageCollection="entity-group-name-1" %}
 
- 
+### Entities by group name 
+
+
+
+
+
 ### Entity from dashboard state
 This alias allows choosing entity(-ies) from dashboard state which can be device, asset, entity view, tenant, customer,
 dashboard, data converter, scheduler event, blob entity or current customer. It is used for filtering data for other dashboard states.  
@@ -590,7 +641,7 @@ Now let's use an added alias in a widget and add a [state](/docs/user-guide/dash
 1. Click the "Add new widget" sign in the middle of the screen.
 2. From the drop-down Select widget menu, select a Cards bundle. Move to the cell "Latest values" and pick an Entity Table widget.
 3. Input a data source: Entity type, _Group entities_ alias and add telemetry. Click "Add" in the lower right corner to add a widget.
-4. After widget has been added, click a layers icon in the top left corner of the dashboard to create a new state.
+4. After widget has been added, click layers icon in the top left corner of the dashboard to create a new state.
 In the opened dialog window, click a "+" icon to add a new state.
 5. Enter state's name and click "Add".
 6. Now you see a list with two states: root one, and the one that has been just created. Click "Save" in the lower right of the dialog.
@@ -606,7 +657,7 @@ Time to add an action to a root dashboard widget and perform it using an Entity 
 5. If it is needed, choose an icon that represents a button for an action execution.
 6. Select _Navigate to new dashboard state_ action type and set newly created state as a target dashboard state. Click "Add" to add a new action to the widget.
 7. After the action has been added successfully, click big orange tick mark in the top right of the screen to apply changes.
-8. Then, go to the created state by selecting it from the drop-down menu by clicking the layers icon in the top right corner.
+8. Then, go to the created state by selecting it from the drop-down menu by clicking layers icon in the top right corner.
 9. Click the "Add new widget" sign in the middle of the screen. From the drop-down Select widget menu, select a Cards bundle. Move to the cell "Latest values" and pick an Entity Table widget.
 10. Input a data source: Entity type and select _Entity from dashboard state_ alias. Click "Add" in the bottom right corner.
 11. After a widget has been added, click a big tick icon in the lower right corner of the screen to save all applied changes.
@@ -615,6 +666,11 @@ By clicking a button opposite needed entity, you will be transitioned to an inne
 
 {% include images-gallery.html imageCollection="entity-from-dashboard-state-2" %}
 
+### Owner of entity from dashboard state
+
+
+
+{% include images-gallery.html imageCollection="owner-of-entity-from-dashboard-state" %}
 
 ## Asset type
 
@@ -676,6 +732,12 @@ Let's learn how to add an Entity view type alias and use it in a widget:
 
 {% include images-gallery.html imageCollection="entity-view-type" %}
 <br>
+
+### Api Usage State
+
+
+
+{% include images-gallery.html imageCollection="api-usage-state" %}
 
 
 ### Relations query
@@ -741,8 +803,6 @@ Let's learn how to add a Device search query alias and use it in a widget:
 
 {% include images-gallery.html imageCollection="device-search-query" %}
 
- <img data-gifffer="/images/user-guide/ui/Device-search-query-alias.gif" />
-
 ### Entity view search query
 
 This alias allows choosing entity views of specified type which are related to specified originator up to specified level and in specified direction.  
@@ -759,11 +819,12 @@ Let's learn how to add a Device search query alias and use it in a widget:
 6. Click "Add" in the lower right corner of the dialog box.
 7. After alias has been added, click "Save" in the lower right corner of the dialog box.
 8. Click the "Add new widget" sign in the middle of the screen.
-9. From the drop-down Select widget menu, select a Cards bundle. Move to the cell "Latest values" and pick an Entity Table widget.
+9. From the drop-down Select widget menu, select a Cards bundle. In the cell "Timeseries", pick a Timeseries Table widget.
+10. Set a time window, select _Entity view search query_ alias and add telemetry. Click "Add" in the bottom right of the dialog.
+11. After a widget has been added, click a big tick icon in the lower right corner of the screen to save all applied changes.
 
 {% include images-gallery.html imageCollection="entity-view-search-query" %}
 
- <img data-gifffer="/images/user-guide/ui/entity-view-type-search-query-alias.gif" />
  
 
 
