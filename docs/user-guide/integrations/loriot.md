@@ -173,14 +173,14 @@ community public network server.
 
 {% include images-gallery.html imageCollection="register" %}
 
-*We are not responsible for changing the interface of other service.*
+*The LORIOT interface may change in the future.*
 
 Fill in the registration fields. The registration confirmation letter will be sent to the specified email. Follow the
 specified link. 
 
 ## Create Uplink Converter
 
-Before creating the integration, you need to create an **Uplink** in **Data converters.**
+Before creating the integration, you need to create an **Uplink converter** in **Data converters.**
 Uplink is necessary in order to convert the incoming data from the device into the required format for displaying them in ThingsBoard.
 Click on the **"plus"** and on **"Create new converter".** 
 To view the events, enable **Debug.** In the function decoder field, specify a script to parse
@@ -190,7 +190,7 @@ and transform data.
 
 {% include images-gallery.html imageCollection="uplink" %}
 
-The uplink message from LORIOT can be:
+Let's review sample uplink message from LORIOT:
 
 ```
 {
@@ -207,7 +207,7 @@ The uplink message from LORIOT can be:
      "snr"  : 1.2
  }
 ```
-As you can see the data is encoded here. We use a converter for decoding.
+As you can see the unique device id arrives in the "EUI" field. We will use it as a device name in ThingsBoard. Device data is encoded in the "data" field.
 The encoded data here is:
 ```
 "data": "2A3F"
@@ -292,11 +292,11 @@ Copy the configuration example for the converter (or your own configuration) and
 
 ## Create Integration
 
-Now that the Uplink converter has been created, it is possible to create an integration with him.
+Now that the Uplink converter has been created, it is possible to create an integration.
 
 {% include images-gallery.html imageCollection="integration" %}
 
-In order for data to be transferred from LORIOT to ThingsBoard, you need to configure an **Output** option.  
+In order for data to be transferred from LORIOT to ThingsBoard, you need to configure an **Output** for your LORIOT application. You can do this manually (recommended) or ThingsBoard Integration can do this for you (you will need to specify login and password from your LORIOT account for us to be able to automatically provision the output).  
 <br>
 
 <div style="font-size: 20px; margin-bottom: 8px; font-weight: bold;">Configuration the Output options</div>
@@ -305,7 +305,7 @@ In order for data to be transferred from LORIOT to ThingsBoard, you need to conf
 We can create Output with LORIOT or in integration by enabling the **Create Loriot Application output** option or specifying the “Basic” credential.
 
 {% capture authorizationTypes %}
-LORIOT Account<br/>%,%loriot-account%,%templates/integration/loriot/loriot-account-authorization-type.md%br%
+LORIOT Account<br/><small>Recommended</small>%,%loriot-account%,%templates/integration/loriot/loriot-account-authorization-type.md%br%
 Basic Credential<br/>%,%basic-credential%,%templates/integration/loriot/thingsboard-basic-credentials.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="loriotAuthorizationTypes" toggle-spec=authorizationTypes %}
@@ -326,9 +326,9 @@ Once the Headers filter has been configured, it will also need to be specified i
 -H “Authorization:$VALUE”
 ```
 
-## Send Uplink message
+## Send test Uplink message
 
-For example, send a message from the console to ThingsBoard. To send an uplink message, you need a **HTTP endpoint URL** from the integration, **port** and **EUI** from LORIOT. 
+It may be useful to "emulate" the message from device using console instead of the LORIOT server. To send an uplink message, you need a **HTTP endpoint URL** from the integration, **port** and **EUI** from LORIOT. 
 
 Let`s go to the **Integrations** tab in ThingsBoard. Find your LORIOT integration and click on it. There you can find the HTTP endpoint URL. Click on the icon to copy the url.
 
