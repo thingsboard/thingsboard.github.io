@@ -13,10 +13,10 @@ toc:
       path: /docs/edge/getting-started/getting-started-ce
 - title: Architecture
   path: /docs/edge/edge-architecture/
-- title: Upgrade instructions for ThingsBoard CE server
-  path: /docs/edge/upgrade-ce-server/
-- title: Provision ThingsBoard Edge on ThingsBoard CE server
-  path: /docs/edge/provision-edge-on-ce-server/
+- title: Upgrade instructions for ThingsBoard PE/CE server
+  path: /docs/edge/upgrade-server/
+- title: Provision ThingsBoard Edge on ThingsBoard PE/CE server
+  path: /docs/edge/provision-edge-on-server/
 - title: Installation guides
   section:
     - title: Installation options

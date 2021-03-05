@@ -23,15 +23,18 @@ step1:
 step2:
     0:
         image: /images/edge/getting-started/step-2-item-1-pe.png
-        title: 'Login to your ThingsBoard <b>Professional Edition</b> instance and open Devices page.'
+        title: 'Login to your ThingsBoard <b>Professional Edition</b> instance and open Device groups page.'
     1:
-        image: /images/edge/getting-started/step-2-item-2-pe.png  
-        title: 'Verify that "My New Device" device was created on the ThingsBoard Professional Edition cloud.'
+        image: /images/edge/getting-started/step-2-item-2-pe.png
+        title: 'Click on the "Open" icon of the "All" device group to see the list of devices.'
     2:
-        image: /images/edge/getting-started/step-2-item-3-pe.png
-        title: 'Click on the "My New Device" device and navigate to the "Relations" tab.'
+        image: /images/edge/getting-started/step-2-item-3-pe.png  
+        title: 'Verify that "My New Device" device was created on the ThingsBoard Professional Edition cloud.'
     3:
         image: /images/edge/getting-started/step-2-item-4-pe.png
+        title: 'Click on the "My New Device" device and navigate to the "Relations" tab.'
+    4:
+        image: /images/edge/getting-started/step-2-item-5-pe.png
         title: 'Change direction "From" to "To" and see relation to the edge that has provisioned this device.'
 
 step31:
@@ -54,7 +57,7 @@ step32:
         title: 'Click on the device row in the table to open device details.'
     1:
         image: /images/edge/getting-started/step-3-item-3.png
-        title: 'Navigate to the telemetry tab.'
+        title: 'Navigate to the "Latest telemetry" tab.'
 
 step4:
     0:
@@ -69,101 +72,111 @@ step4:
 
 step51:
     0:
-        image: /images/edge/getting-started/step-51-item-1.png
-        title: 'Open <b>Dashboards</b> page in the ThingsBoard <b>Professional Edition</b> server. Click on the "+" icon in the top right corner. Select "Create new dashboard".'
+        image: /images/edge/getting-started/step-51-item-1-pe.png
+        title: 'Open <b>Dashboard groups</b> page in the ThingsBoard <b>Professional Edition</b> server. Click on the "+" icon in the top right corner "Add entity group".'
     1:
-        image: /images/edge/getting-started/step-51-item-2.png
-        title: 'Input dashboard name. For example, "My New Dashboard". Click "Add" to add the dashboard.'
+        image: /images/edge/getting-started/step-51-item-2-pe.png
+        title: 'Input dashboard group name. For example, "Edge dashboards". Click "Add" to add the dashboard group.'
     2:
-        image: /images/edge/getting-started/step-51-item-3.png
+        image: /images/edge/getting-started/step-51-item-3-pe.png
+        title: 'Click on the "Open" icon to open new dashboard group.'
+    2:
+        image: /images/edge/getting-started/step-51-item-4-pe.png
+        title: 'Click on the "+" icon to create new dashboard.'
+    3:
+        image: /images/edge/getting-started/step-51-item-5-pe.png
+        title: 'Input dashboard name. For example, "My New Dashboard". Click "Add" to add the dashboard.'
+    4:
+        image: /images/edge/getting-started/step-51-item-6-pe.png
         title: 'Now your dashboard should be listed first, since table sort dashboards using created time by default. Click on the "Open dashboard" icon.'
 
 step52:
     0:
-        image: /images/edge/getting-started/step-52-item-1.png
+        image: /images/edge/getting-started/step-52-item-1-pe.png
         title: 'Enter edit mode. Click on the pencil button in the bottom right corner.'
     1:
-        image: /images/edge/getting-started/step-52-item-2.png
+        image: /images/edge/getting-started/step-52-item-2-pe.png
         title: 'Click "Entity Aliases" icon in the top right part of the screen. You will see empty list of Entity aliases.'
     2:
-        image: /images/edge/getting-started/step-52-item-3.png
+        image: /images/edge/getting-started/step-52-item-3-pe.png
         title: 'Click "Add alias".'
     3:
-        image: /images/edge/getting-started/step-52-item-4.png
+        image: /images/edge/getting-started/step-52-item-4-pe.png
         title: 'Input alias name, for example "MyDevice". Select "Single entity" Filter type. Select "Device" as Type and type "My New" to enable autocomplete. Choose your device from the auto-complete and click on the device.'        
     4:
-        image: /images/edge/getting-started/step-52-item-5.png
+        image: /images/edge/getting-started/step-52-item-5-pe.png
         title: 'Click "Add" and then "Save".'        
     5:
-        image: /images/edge/getting-started/step-52-item-6.png
+        image: /images/edge/getting-started/step-52-item-6-pe.png
         title: 'Finally, Click "Apply changes" in the dashboard editor to save the changes. Then you should enter edit mode again.'
 
 step53:
     0:
-        image: /images/edge/getting-started/step-53-item-1.png
-        title: 'Enter edit mode. Click on the "Add new widget" button. '
+        image: /images/edge/getting-started/step-53-item-1-pe.png
+        title: 'Enter edit mode. Click on the "Add new widget" button.'
     1:
-        image: /images/edge/getting-started/step-53-item-2.png
+        image: /images/edge/getting-started/step-53-item-2-pe.png
         title: 'Select "Cards" widget bundle. Select "Latest values" tab. Click on the header of the Entities widget. The "Add Widget" window will appear.'
     2:
-        image: /images/edge/getting-started/step-53-item-3.png
+        image: /images/edge/getting-started/step-53-item-3-pe.png
         title: 'Click "Add" to add the data source. Widget may have multiple data sources, but we will use only one in this case.'
     3:
-        image: /images/edge/getting-started/step-53-item-4.png
+        image: /images/edge/getting-started/step-53-item-4-pe.png
         title: 'Select "MyDevice" entity alias. Then click on the input field to the right. The auto-complete with available data points will appear. Select "temperature" data point and click "Add".'        
     4:
-        image: /images/edge/getting-started/step-53-item-5.png
+        image: /images/edge/getting-started/step-53-item-5-pe.png
         title: 'Resize the widget to make it a little bigger. Just drag the bottom right corner of the widget. You can also play with the advanced settings if you edit the widget.'
 
 step54:
     0:
-        image: /images/edge/getting-started/step-54-item-1.png
+        image: /images/edge/getting-started/step-54-item-1-pe.png
         title: 'Enter Edit mode.'
     1:
-        image: /images/edge/getting-started/step-54-item-2.png
+        image: /images/edge/getting-started/step-54-item-2-pe.png
         title: 'Click "Add new widget" icon in the bottom right corner of the screen.'
     2:
-        image: /images/edge/getting-started/step-54-item-3.png
+        image: /images/edge/getting-started/step-54-item-3-pe.png
         title: 'Click "Create new widget" icon.'
     3:
-        image: /images/edge/getting-started/step-54-item-4.png
+        image: /images/edge/getting-started/step-54-item-4-pe.png
         title: 'Select "Charts" bundle. Scroll down and click on the "Timeseries - Flot" chart widget.'        
     4:
-        image: /images/edge/getting-started/step-54-item-5.png
+        image: /images/edge/getting-started/step-54-item-5-pe.png
         title: 'Click "Add datasource" button.'
     5:
-        image: /images/edge/getting-started/step-54-item-6.png
+        image: /images/edge/getting-started/step-54-item-6-pe.png
         title: 'Select "MyDevice" Alias. Select "temperature" key. Click "Add".'
     6:
-        image: /images/edge/getting-started/step-54-item-7.png
-        title: 'Drag and Drop you widget to desired space. Resize the widget. Apply changes.'
+        image: /images/edge/getting-started/step-54-item-7-pe.png
+        title: 'Drag and Drop you widget to desired space. Resize the widget.'
     7:
-        image: /images/edge/getting-started/step-54-item-8.png
+        image: /images/edge/getting-started/step-54-item-8-pe.png
         title: 'Publish different telemetry values multiple times Step 2. Note that the widget displays only one minute of data by default.'
     8:
-        image: /images/edge/getting-started/step-54-item-9.png
-        title: 'Enter Edit mode. Open time selection window. Change the interval and aggregation function. Update the time window and apply changes.'
+        image: /images/edge/getting-started/step-54-item-9-pe.png
+        title: 'Enter Edit mode. Open time selection window. Change the interval and aggregation function. Update the time window. Finally, apply changes.'
 
 step6PE:
     0:
-        image: /images/edge/getting-started/step-6-item-1.png
-        title: 'Open Edge instances page in the ThingsBoard <b>Professional Edition</b> server.'
+        image: /images/edge/getting-started/step-6-item-1-pe.png
+        title: 'Open "Edge groups" page in the ThingsBoard <b>Professional Edition</b> server and open "All" group.'
     1:
-        image: /images/edge/getting-started/step-6-item-2.png
-        title: 'Click on the <b>Dashboards</b> button on the edge instance to open dashboards that are already assigned to this edge.'
+        image: /images/edge/getting-started/step-6-item-2-pe.png
+        title: 'Click on the <b>Dashboards</b> button on the edge instance to open dashboard groups that are already assigned to this edge.'
     2:
-        image: /images/edge/getting-started/step-6-item-3.png
-        title: 'Click on the "+" plus icon and select "My New Dashboard" in the list. Now this dashboard is going to be provisioned to the edge.'
+        image: /images/edge/getting-started/step-6-item-3-pe.png
+        title: 'Click on the "+" icon to assign dashboard groups.'
+    3:
+        image: /images/edge/getting-started/step-6-item-4-pe.png
+        title: 'Select "Edge dashboards" group in the list. Now this group and all its dashboards are going to be provisioned to the edge.'
+
 
 step6Edge:
     0:
-        image: /images/edge/getting-started/step-6-item-4.png
-        title: 'Open "Dashboard groups" page in the ThingsBoard <b>Edge</b> UI.'    
+        image: /images/edge/getting-started/step-6-item-5-edge.png
+        title: 'Open "Dashboard groups" page in the ThingsBoard <b>Edge</b> UI. Click on the "All" dashboard group to see "My New Dashboard" in the list. Open "My New Dashboard".'    
     1:
-        image: /images/edge/getting-started/step-6-item-5.png
-        title: 'Open "All" dashboards group to see "My New Dashboard" in the list. Open "My New Dashboard".'
-    2:
-        image: /images/edge/getting-started/step-6-item-6.png
+        image: /images/edge/getting-started/step-6-item-6-edge.png
         title: 'Verify that you see the same widgets that you have added on the cloud and temperature readings from the device.'
 
 mqttWindows:
@@ -190,7 +203,7 @@ The goal of this tutorial is to demonstrate the basic usage of the most popular 
 
 We will connect and visualize data from the temperature sensor to keep it simple.
 
-{% include templates/edge/prerequisites-pe.md %}
+{% include templates/edge/getting-started/prerequisites-pe.md %}
 
 {% include templates/edge/getting-started/step-1.md %}
 
@@ -199,7 +212,7 @@ We will connect and visualize data from the temperature sensor to keep it simple
 Provision device from the edge to the cloud done automatically, so no additional actions required. 
 Once device has been created on the edge, it's going to be automatically created on the cloud.
 
-If you are interested in more details how to provision different entities from the cloud to the edge please refer to [Professional Edition edge management](/docs/edge/config/pe/management/) or [PE edge management](/docs/edge/config/pe/management/) for more details.
+If you are interested in more details how to provision different entities from the cloud to the edge please refer to the [Professional Edition edge management](/docs/edge/config/pe/management/) for more details.
 
 To see provisioned device please open ThingsBoard  **Professional Edition** UI using the URL: [http://localhost:8080](http://localhost:8080).
 
@@ -219,7 +232,7 @@ To see provisioned device please open ThingsBoard  **Professional Edition** UI u
 
 To provision dashboard to edge we need to open edge dashboards on ThingsBoard  **Professional Edition** server and assign the newly created dashboard. Once this dashboard is assigned we are going to open ThingsBoard **Edge** UI to see the same dashboard on the edge.
 
-If you are interested in more details how to provision different entities from the cloud to the edge please refer to [Professional Edition edge management](/docs/edge/config/ce/management/) or [PE edge management](/docs/edge/config/pe/management/) for more details.
+If you are interested in more details how to provision different entities from the cloud to the edge please refer to [Professional Edition edge management](/docs/edge/config/pe/management/) for more details.
 
 Please open ThingsBoard  **Professional Edition** using the URL [http://localhost:8080](http://localhost:8080) or [Live Demo](https://demo.thingsboard.io):
 

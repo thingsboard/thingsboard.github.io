@@ -8,4 +8,4 @@ Please make sure that you have ThingsBoard **CE** server up and running (this co
 Additionally, ThingsBoard **Edge** must be up, running and connected to the cloud (ThingsBoard **CE** or [Live Demo](https://demo.thingsboard.io/signup)).
 If you have these prerequisites in place let's go to next steps.
 
-In other case please review how to [Provision Edge on CE server](/docs/edge/provision-edge-on-ce-server/) and once it's provisined please install and connect edge to cloud using this [guide](/docs/edge/install/installation-options/).
+In other case please review how to [Provision Edge on CE server](/docs/edge/provision-edge-on-server/) and once it's provisined please install and connect edge to cloud using this [guide](/docs/edge/install/installation-options/).

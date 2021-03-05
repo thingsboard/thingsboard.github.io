@@ -1,6 +1,6 @@
 ## Prerequisites
 
-{% include templates/edge/ce-prerequisites.md %}
+{% include templates/edge/prerequisites-ce.md %}
 
 ## Step 1. Obtain and configure license key
 
