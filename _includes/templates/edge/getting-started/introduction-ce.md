@@ -9,4 +9,6 @@ The goal of this tutorial is to demonstrate the basic usage of the most popular 
 
 We will connect and visualize data from the temperature sensor to keep it simple.
 
+## Prerequisites
+
 {% include templates/edge/getting-started/prerequisites-ce.md %}

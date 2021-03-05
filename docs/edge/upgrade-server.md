@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: Upgrade instructions for ThingsBoard PE/CE server
-description: Upgrade instructions for ThingsBoard Professional Edition/Community Edition server
+description: Upgrade instructions for ThingsBoard Professional/Community Edition server
 ---
 
 * TOC
@@ -9,8 +9,8 @@ description: Upgrade instructions for ThingsBoard Professional Edition/Community
 
 {% capture beta_note %}
 **Important note before upgrading to ThingsBoard 3.3beta**
-- ThingsBoard Edge and ThingsBoard CE **3.3beta** version that supports edge functionality is currently in **beta** phase, so please upgrade only in case you are interested in evaluating the Edge functionality
- - Please make sure you have backup of your database before upgrading - especially if this ThingsBoard CE server instance has some critical data
+ - ThingsBoard Edge and ThingsBoard Professional/Community Edition **3.3beta** version that supports edge functionality is currently in **beta** phase, so please upgrade only in case you are interested in evaluating the Edge functionality
+ - Please make sure you have backup of your database before upgrading - especially if this ThingsBoard Professional/Community Edition server instance has some critical data
  - Usage of the **beta** version in your production environment not recommended and could be used only on your own risk
 {% endcapture %}
 {% include templates/info-banner.md content=beta_note %}
@@ -22,15 +22,19 @@ description: Upgrade instructions for ThingsBoard Professional Edition/Community
 #### ThingsBoard package download
 
 {% capture tabspec %}thingsboard-download-3-3-beta
-thingsboard-download-3-3-beta-ubuntu,Ubuntu,shell,resources/3.3beta/thingsboard-ubuntu-download.sh,/docs/thingsboard-edge/resources/3.3beta/thingsboard-ubuntu-download.sh
-thingsboard-download-3-3-beta-centos,CentOS,shell,resources/3.3beta/thingsboard-centos-download.sh,/docs/thingsboard-edge/resources/3.3beta/thingsboard-centos-download.sh{% endcapture %}  
+thingsboard-download-3-3-beta-ubuntu-pe,Ubuntu - PE,shell,resources/3.3beta/thingsboard-ubuntu-download.sh,/docs/thingsboard-edge/resources/3.3beta/thingsboard-ubuntu-download.sh
+thingsboard-download-3-3-beta-centos-pe,CentOS - PE,shell,resources/3.3beta/thingsboard-centos-download.sh,/docs/thingsboard-edge/resources/3.3beta/thingsboard-centos-download.sh
+thingsboard-download-3-3-beta-ubuntu-ce,Ubuntu - CE,shell,resources/3.3beta/thingsboard-ubuntu-download.sh,/docs/thingsboard-edge/resources/3.3beta/thingsboard-ubuntu-download.sh
+thingsboard-download-3-3-beta-centos-ce,CentOS - CE,shell,resources/3.3beta/thingsboard-centos-download.sh,/docs/thingsboard-edge/resources/3.3beta/thingsboard-centos-download.sh{% endcapture %}  
 {% include tabs.html %}
 
 #### ThingsBoard service upgrade
 
 {% capture tabspec %}thingsboard-installation-3-3-beta
-thingsboard-installation-3-3-beta-ubuntu,Ubuntu,shell,resources/3.3beta/thingsboard-ubuntu-installation.sh,/docs/thingsboard-edge/resources/3.3beta/thingsboard-ubuntu-installation.sh
-thingsboard-installation-3-3-beta-centos,CentOS,shell,resources/3.3beta/thingsboard-centos-installation.sh,/docs/thingsboard-edge/resources/3.3beta/thingsboard-centos-installation.sh{% endcapture %} 
+thingsboard-installation-3-3-beta-ubuntu-pe,Ubuntu - PE,shell,resources/3.3beta/thingsboard-ubuntu-installation.sh,/docs/thingsboard-edge/resources/3.3beta/thingsboard-ubuntu-installation.sh
+thingsboard-installation-3-3-beta-centos-pe,CentOS - PE,shell,resources/3.3beta/thingsboard-centos-installation.sh,/docs/thingsboard-edge/resources/3.3beta/thingsboard-centos-installation.sh
+thingsboard-installation-3-3-beta-ubuntu-ce,Ubuntu - CE,shell,resources/3.3beta/thingsboard-ubuntu-installation.sh,/docs/thingsboard-edge/resources/3.3beta/thingsboard-ubuntu-installation.sh
+thingsboard-installation-3-3-beta-centos-ce,CentOS - CE,shell,resources/3.3beta/thingsboard-centos-installation.sh,/docs/thingsboard-edge/resources/3.3beta/thingsboard-centos-installation.sh{% endcapture %} 
 {% include tabs.html %}
 
 **NOTE:** Package installer will ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.  
@@ -44,7 +48,7 @@ $ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.2.0
 
 #### Enable edges support 
 
-Edges functionality disabled on ThingsBoard CE server by default. 
+Edges functionality disabled on ThingsBoard Professional/Community Edition server by default. 
 To enable it please edit ThingsBoard configuration file:
 
 ```text
@@ -61,7 +65,7 @@ export EDGES_ENABLED=true
 
 #### RPC port for edge communication
 
-ThingsBoard **Edge** connects to ThingsBoard **CE** server on 7070 port (by default).
+ThingsBoard **Edge** connects to ThingsBoard **Professional/Community Edition** server on 7070 port (by default).
 
 You can overwrite this by setting **EDGES_RPC_PORT** variable in configuration file.
 To change it please edit ThingsBoard configuration file:
@@ -96,7 +100,9 @@ $ sudo service thingsboard start
 
 // TODO: voba - fix this link
 
-Download ThingsBoard installation archive for Windows: [thingsboard-windows-3.3beta.zip](https://github.com/thingsboard/thingsboard/releases/download/v3.3beta/thingsboard-windows-3.3beta.zip).
+Download ThingsBoard installation archive for Windows: 
+* **ThingsBoard Professional Edition** [thingsboard-windows-3.3beta.zip](https://github.com/thingsboard/thingsboard/releases/download/v3.3beta/thingsboard-windows-3.3beta.zip).
+* **ThingsBoard Community Edition** [thingsboard-windows-3.3beta.zip](https://github.com/thingsboard/thingsboard/releases/download/v3.3beta/thingsboard-windows-3.3beta.zip).
 
 #### ThingsBoard service upgrade
 
@@ -162,7 +168,7 @@ locate "EDGES_ENABLED" parameter. Replace "false" with "true".
   enabled: "${EDGES_ENABLED:true}"
 ```
 
-ThingsBoard **Edge** connects to ThingsBoard **CE** server on 7070 port (by default).
+ThingsBoard **Edge** connects to ThingsBoard **Professional/Community Edition** server on 7070 port (by default).
 
 You can overwrite this by updating **EDGES_RPC_PORT** variable in configuration file.
 locate "EDGES_RPC_PORT" parameter. Replace "7070" with "**NEW_EDGES_RPC_PORT**".

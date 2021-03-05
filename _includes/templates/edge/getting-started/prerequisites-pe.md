@@ -1,6 +1,6 @@
-## Prerequisites
-
 {% include templates/edge/prerequisites-pe.md %}
+
+{% assign currentThingsBoardVersion = "PE" %}
 
 Additionally, you will need to have ThingsBoard **Edge** up and running and connected to the ThingsBoard **Professional Edition** server.
 

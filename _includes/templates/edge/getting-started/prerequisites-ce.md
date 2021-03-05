@@ -1,6 +1,6 @@
-## Prerequisites
-
 {% include templates/edge/prerequisites-ce.md %}
+
+{% assign currentThingsBoardVersion = "CE" %}
 
 Additionally, you will need to have ThingsBoard **Edge** up and running and connected to the ThingsBoard **Community Edition** server.
 
