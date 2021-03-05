@@ -48,13 +48,10 @@ profileNoSec_edit:
 profileNoSec_edit_typeAfterConnect:      
     1:
         image: /images/lwm2m/noSec_profile_edit_Step_3_1.png 
-        title: 'configuration number <b><font color="#5f9ea0">1</font> selected</b>.'    
+        title: 'configuration: strategy number <b><font color="#5f9ea0">1</font> selected</b>.'    
     2:
         image: /images/lwm2m/noSec_profile_edit_Step_3_2.png 
-        title: 'configuration number <b><font color="#5f9ea0">2</font> selected</b>.'       
-    3:
-        image: /images/lwm2m/noSec_profile_edit_Step_3_3.png 
-        title: 'configuration number <b><font color="#5f9ea0">3</font> selected</b>.'   
+        title: 'configuration: strategy number <b><font color="#5f9ea0">2</font> selected</b>.'       
 
 profileNoSec_edit_add_object:      
     1:
@@ -251,9 +248,58 @@ Example: during the tests used the next `Client's Endpoint Names` (for `PSK secu
 }
 ```
 
-### Start transport LwM2M with different security configuration settings
+### Thingsboard transport LwM2M
 
-#### Transport LwM2M (configuration in yml)
+#### Introduction
+When connecting a client, Thingsboard transport LwM2M uses the **Coap** protocol with **UDP** connection(by default);
+
+The main purpose of ThingsBoard LWM2M Transport,  is to:
+    * perform connection and authorization;
+    * receive the information about resource values and **Observe** these values over a secure channel to ThingsBoard in the required format (**Attributes** or/and **Telemetry**).
+    * accept commands from ThingsBoard to **Observe** the current values of the **resources** of the LWM2M client, to **Change** the current values of resources if they are editable (have the **"RW"** flag) and transmit these commands to the LWM2M client
+
+In order to track the history of resource changes, use <b><a href="/docs/user-guide/telemetry/">ThingsBoard Telemetry</a></b>.
+
+If you need to store only the last values of the resources, use <b><a href="/docs/user-guide/attributes/">ThingsBoard Attributes</a></b>.
+
+In order to start ThingsBoard LwM2M transport, it is required to:
+
+1. Enable LWM2M transport <b>[config transport for start](#link-transport-config)</b>. This will start LwM2M transport with the **LwM2M** server only.
+2. (Optional) Enable **"BootStrap Server"** <b>[config transport for start](#link-transport-bootstrap-config)</b> This will start LwM2M transport with the **LwM2M** and **"BootStrap Server"**.
+
+If the LWM2M client starts in normal mode, it connects to the **"LWM2M Server"**.
+
+If the LWM2M client starts in bootstrap mode, it connects to the **"BootStrap Server"**.
+
+The security configuration for both servers is described <sup><b>[Security servers transport](#link-security-servers-config)</b></sup>
+
+In order to connect LWM2M Client to ThingsBoard, it is necessary to **configure in the ThingsBoard**:
+
+* **Device Profile** - for devices so that devices can be grouped according to common characteristics.<sup><b>[device-profile: create and configuration](#link-profileNoSec-create-new)</b></sup>
+* **Device** with the transport type **LwM2M** to collect information received from the LWM2M client.<sup><b>[device: create and configuration](#link-deviceNoSec-create-new)</b></sup>  
+  
+    Note: The Device must have a **link to** the already created **Device Profile**
+
+After creation the **Device profile** if need may be to be configured **Observe** of **Device** , depending on models.<sup><b>[device profile: setting resources observe](#link-profileNoSec-edit-settings-observe)</b></sup>
+
+After creation the **Device** need to be configured, depending on the type of security that the LWM2M client uses.<sup><b>[device crate/edit security](#link-deviceNoSec-security-config)</b></sup>
+
+After the initial connection, a strategy is executed in order to get the values of the client resources. One of the three strategies can be configured:   
+
+* **Strategy # 1** (default):      
+    
+    * Send **Observe resources** Request to the client, those **resources** that are **marked as observation** in the **Device profile** and which exist on the LWM2M client
+
+* **Strategy # 2**:
+
+    * After the registration, request the client to read all the resource values for all objects that the LWM2M client has
+    * then execute **Strategy # 1**. 
+
+The Strategy configuration details can be found <sup><b>[setting strategy types](#link-profileNoSec-edit-settings-type-start)</b></sup>.      
+
+Here is an example of how to *create* and *configuration* **Device Profile** and **Device thingsboard** and also set up *Observe* of the resource **"batteryLevel"** of Object **"Device"** for the LWM2M client.<sup><b>[link](#link-example-NoSec-create-new)</b></sup>
+
+#### Features settings configuration in thingsboard.yml
 
 Thingsboard supports **1 LwM2M server and 1 Bootstrap-Server simultaneously**.
 
@@ -265,6 +311,7 @@ the LwM2M Server or LwM2M Bootstrap-Server, respectively.
 !!! TO DO.
 * about `Description of all parameters` for starting the transport and their default in the **thingsboard.yml** configuration file in the **lwm2m** section can be viewed here.[configurable](/docs/user-guide/install/config/#lwm2m-transport-settings).
 
+<a name="link-transport-config"></a><br><br>
 
 * `start` transport LwM2M with `Server` without Bootstrap-Server
     
@@ -278,6 +325,7 @@ the LwM2M Server or LwM2M Bootstrap-Server, respectively.
                 enable: "${LWM2M_BOOTSTRAP_ENABLED:false}"
     ...
 ```
+<a name="link-transport-bootstrap-config"></a><br><br>
 * `start` transport LwM2M with `Server` and `Bootstrap-Server`
 ```ruby
     thingsboard/application/src/main/resources/thingsboard.yml
@@ -297,7 +345,7 @@ the LwM2M Server or LwM2M Bootstrap-Server, respectively.
             enabled: "${LWM2M_ENABLED:false}"
     ...
 ```
-
+<a name="link-security-servers-config"></a><br><br>
 #### Security servers transport LwM2M (configuration LwM2M server and Bootstrap-Server in yml)
 Thingsboard supports **4 LwM2M Security mode simultaneously**.
 
@@ -337,7 +385,7 @@ thingsboard/application/src/main/resources/thingsboard.yml
 ...
 ```
 
-<a name="link-4-security-modes"> </a>
+<a name="link-4-security-modes"></a><br><br>
 
 ##### `4 security` modes  (`NoSec` + `PSK` + `RPK` + `X509`)
 *   *NoSec mode (`NoSec`) + Pre-Shared Key mode (`PSK`) + Raw Public Key mode (`RPK`) + Certificate mode (`X509`) communications:*
@@ -504,37 +552,25 @@ thingsboard/application/src/main/resources/thingsboard.yml
 #### Thingsboard: Device profile LwM2M and Device LwM2M
 ##### NoSec mode (`NoSec`)
 ###### LwM2M Server configuration
-* about `LwM2M Server configuration` [here](#link-2-security-modes)
-
+* 2 security modes (NoSec + PSK) [here](#link-2-security-modes)
+<a name="link-profileNoSec-create-new"></a><br><br>
 ###### Device profile LwM2M: create and configuration
-```ruby 
-    name device profile: "lwm2mProfileNoSec", Transport configuration: "LWM2M"
+Parameters for **new Device profile LwM2M**, type: **LWM2M**:
+    * **Name** (example): **"lwm2mProfileNoSec"**.
+
+``` 
+    Input parameters (example):
+        Device profile detailsa -> Name: "lwm2mProfileNoSec", 
+        Transport configuration -> Transport type: "LWM2M"
 ```
 <ol start="1">
 <li> <i>LwM2M device</i> <b>create new</b>: follow the instructions step by step:</li>    
   {% include images-gallery.html imageCollection="profileNoSec_create" showListImageTitles="true" %}  
 </ol>
 <a name="link-profileNoSec-edit-config"></a><br><br>
-* *LwM2M device profile configuration*:<sup>[[link](#link-profileNoSec-edit-config)]</sup>    
-```ruby 
-    name device profile: "lwm2mProfileNoSec", Tab: "Transport configuration"
-```
 <ol start="2">
 <li> <i>wM2M device profile configuration</i> <b>edit start</b>: follow the instructions step by step:</li>    
   {% include images-gallery.html imageCollection="profileNoSec_edit" showListImageTitles="true" %}  
-</ol>
-<a name="link-profileNoSec-edit-settings-type-start"></a><br><br>
-* *LwM2M device profile configuration*: <b>setting type start Client LwM2M</b> after connect:
-```ruby 
-    config number 1 for start Client: "Only Observe Request to the client after registration (Default)"
-    config number 2 for start Client: "Read&Observe Request to the client after registration 
-                                       + Request to the client after registration for All resource values"
-    config number 3 for start Client: "Read&Observe Request to the client after registration 
-                                       + Request to the client after registration to read values only as attributes or telemetry"
-```
-<ol start="3">
-<li> <i>LwM2M device profile configuration</i>: <b>changing type start</b> Client LwM2M after connect:</li>    
-   {% include images-gallery.html imageCollection="profileNoSec_edit_typeAfterConnect" showListImageTitles="true" %}
 </ol>
 
 <a name="link-profileNoSec-edit-settings-observe"></a><br><br>
@@ -549,8 +585,9 @@ thingsboard/application/src/main/resources/thingsboard.yml
               **from** the list of **filtered the objects**.
               
               ```ruby
-              After "Add new object", if not "Add observation" to this object, and run "Save":
-              - this Object will "not" be saved in the configuration of this "device profile".
+              After performing the action "Add a new object" or "Add a new instance", 
+              if you do "not" perform the action "Add observation" to this object/istance, and run "Save":
+                - this object / instance "not" will be saved in the configuration of this "device profile".
               ```  
     * [Add a new instance](#link-profileNoSec_edit_add_instance) to object:
         * After <font color="blue">Add a new object <font color="black">to  <font color="green">"Object list"</font>, this <i>Object</i> has an instance with <i>ID=0</i> <b>always</b>.
@@ -564,8 +601,8 @@ thingsboard/application/src/main/resources/thingsboard.yml
 
             ```ruby
             Thingsboard:
-            - use the {Key Name} "value" as parameter to display the resource values in the attributes or telemetry section as a [key].
-              By default, this is the name of the resource, in Camel format. 
+            - uses the {Key Name} "value" as parameter to display the resource values in the attributes or telemetry section as a [key].
+              By default, this is the name of the resource, in camelcase format. 
 
             You can change the {Key Name} "value" to your own.
             ```
@@ -578,27 +615,39 @@ thingsboard/application/src/main/resources/thingsboard.yml
         * <font color="blue">"Save"  <font color="black">or <font color="red">"Cancel"</font> after any configuration <b>change</b> to "LWM2M Model".
 
 <a name="link-profileNoSec_edit_add_object"></a><br><br>
-<ol start="4">
+<ol start="3">
 <li> <i>LwM2M device profile configuration</i>: <font color="blue">Add a new object</font> to <font color="green">"Object list"</font>:</li>    
     {% include images-gallery.html imageCollection="profileNoSec_edit_add_object" showListImageTitles="true" %}
 </ol>  
 
 <a name="link-profileNoSec_edit_add_instance"></a><br><br>
-<ol start="5">
+<ol start="4">
 <li> <i>LwM2M device profile configuration</i>: <font color="blue">Add a new instance</font> to object:</li>    
     {% include images-gallery.html imageCollection="profileNoSec_edit_add_instance" showListImageTitles="true" %}
 </ol>
 
 <a name="link-profileNoSec_edit_observe"></a><br><br>
-<ol start="6">
+<ol start="5">
 <li> <font color="blue">Add observation</font> resource in instance:</li>   
       {% include images-gallery.html imageCollection="profileNoSec_edit_observe" showListImageTitles="true" %}
 </ol>
 
 <a name="link-profileNoSec_edit_bootstrap"></a><br><br>
-<ol start="7">
+<ol start="6">
 <li> <font color="blue">Edit Bootstrap</font> client:</li>  
       {% include images-gallery.html imageCollection="profileNoSec_edit_bootstrap" showListImageTitles="true" %}
+</ol>
+
+<a name="link-profileNoSec-edit-settings-type-start"></a><br><br>
+* *LwM2M device profile configuration*: <b>setting strategy types after initial Client connection</b> after connect:
+```ruby 
+    strategy number 1 for start Client: "Only Observe Request to the client after the initial connection (Default)"
+    strategy number 2 for start Client: "Read Request to the client for All resource values and 
+                                         Observe Request to the client after registration"
+```
+<ol start="7">
+<li> <i>LwM2M device profile configuration</i>: <b>changing type start</b> Client LwM2M after connect:</li>    
+   {% include images-gallery.html imageCollection="profileNoSec_edit_typeAfterConnect" showListImageTitles="true" %}
 </ol>
 
 <a name="link-profileNoSec_edit-json-noSec"></a><br><br>
@@ -685,7 +734,7 @@ thingsboard/application/src/main/resources/thingsboard.yml
       }
     }
 ```
-
+<a name="link-deviceNoSec-create-new"></a><br><br>
 ###### Device LwM2M: create and configuration
 
 ```ruby 
@@ -695,7 +744,7 @@ thingsboard/application/src/main/resources/thingsboard.yml
     LwM2M Security config key: "LwNoSec00000000"
 ```
 
-* *S*earching** for **Security configuration** of the LwM2M device and **identifying** the <b><font color="green">LwM2M client</font></b> with the <b><font color="blue">LwM2M device</font></b> in the <b><font color="blue">LwM2M thingsboard transport</font></b> is performed using the <b><font color="red">KEY</font></b> that we have to input to the field: [<b>"LwM2M Security config key"</b> (add/edit Device`s LwM2M credential)](#link-deviceNoSec-create).
+* **searching** for **Security configuration** of the LwM2M device and **identifying** the <b><font color="green">LwM2M client</font></b> with the <b><font color="blue">LwM2M device</font></b> in the <b><font color="blue">LwM2M thingsboard transport</font></b> is performed using the <b><font color="red">KEY</font></b> that we have to input to the field: [<b>"LwM2M Security config key"</b> (add/edit Device`s LwM2M credential)](#link-deviceNoSec-create).
     * "LwM2M Security config key" value:
         * for all security modes except PSK,  is [Endpoint Client Name](http://www.openmobilealliance.org/release/LightweightM2M/V1_2-20201110-A/OMA-TS-LightweightM2M_Transport-V1_2-20201110-A.pdf#page=22)
         * for security mode PSK is identity: [The "Public Key or Identity" Resource MUST be used to store the PSK identity of LwM2M Client](http://www.openmobilealliance.org/release/LightweightM2M/V1_2-20201110-A/OMA-TS-LightweightM2M_Transport-V1_2-20201110-A.pdf#page=24)
@@ -718,7 +767,7 @@ thingsboard/application/src/main/resources/thingsboard.yml
 
 <a name="link-deviceNoSec-security-config-json"></a>
 <ol start="4">
-<li>  Example <font color="blue">Security Config for Device</font>font> (format Json value, No Security Key mode):</li>
+<li>  Example <font color="blue">Security Config for Device</font> (format Json value, No Security Key mode):</li>
 </ol>
 
 ```json
@@ -744,7 +793,6 @@ thingsboard/application/src/main/resources/thingsboard.yml
       }
      }
 ```
-
 
 ##### Pre-Shared Key mode (`PSK`)
 * LwM2M Server configuration<sup>[[link](#link-2-security-modes)]</sup>
@@ -779,7 +827,30 @@ Example   value  for Client (Pre-Shared Key mode):
 ###### Device profile LwM2M: create and configuration
 
 ###### Device LwM2M: create and configuration
+
+#### Examples ana tests
+<a name="link-example-NoSec-create-new"></a><br><br>
+##### Example create and configuration Device LwM2M and Device profile LwM2M
+```ruby
+    Parameters of LWM2M Client:
+        endpoint:       "LwNoSec00000000"
+        security mode:  "NoSec"
+        
+        Parameters for the Observe:   
+            Object Name:    "Device"
+            Object Id =     "3"
+            Instance Id =   "0"
+            Resource Id =   "9"
+            Resource Name:  "batteryLevel"
+        Note: Observe from LWM2M Client to ThingsBoard Telemetry
     
+    Parameters of Device LwM2M:
+        Name:               "LwNoSec00000000"
+        security mode:      "NoSec"
+        
+    Parameters of Device profile LwM2M:
+        Name:
+```
 
 ##### LwM2M client start and tests
 
