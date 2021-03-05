@@ -135,6 +135,8 @@ toc:
     path: /docs/user-guide/integrations/ttn/
   - title: TheThingsIndustries
     path: /docs/user-guide/integrations/tti/
+  - title: Loriot
+    path: /docs/user-guide/integrations/loriot/
   - title: AWS IoT
     path: /docs/user-guide/integrations/aws-iot/
   - title: AWS Kinesis
