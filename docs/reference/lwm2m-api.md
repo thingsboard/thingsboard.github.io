@@ -2,7 +2,7 @@
 layout: docwithnav
 assignees:
 - nick
-title: LwM2M Device API Reference
+title: LWM2M Device API Reference
 description: Supported LwM2M API Reference for IoT Devices
 
 started:
@@ -222,6 +222,7 @@ For simplicity, we will manually provision the device using the UI.
   **~~TLS_PSK_WITH_AES_128_CBC_SHA256~~** ciphersuite as [RFC7457](https://www.ietf.org/rfc/rfc7457.txt).
 
     * about Raw Public Keys LWM2M [5.2.9.2. Raw Public Keys](http://www.openmobilealliance.org/release/LightweightM2M/V1_2-20201110-A/OMA-TS-LightweightM2M_Transport-V1_2-20201110-A.pdf#page=24).
+<a name="link-x-509-certificate"></a><br><br>
 *  X.509 Certificates Keys for secure DTLS ***X.509***  communications:
 
     ```ruby
@@ -297,15 +298,15 @@ If the LWM2M client starts in normal mode, it connects to the **"LWM2M Server"**
 
 If the LWM2M client starts in bootstrap mode, it connects to the **"BootStrap Server"**.
 
-The security configuration for both servers is described <sup><b>[Security servers transport](#security-servers-transport-lwm2m-configuration-lwm2m-server-and-bootstrap-server-in-yml)</b></sup>
+The security configuration for both servers is described <sup><b>[Security servers transport](#security-servers-transport-lwm2m)</b></sup>
 
 In order to connect LWM2M Client to ThingsBoard, it is necessary to **configure in the ThingsBoard**:
 
-* `LWM2M Resource Model` - for **Devices** and **Device profiles**, so that device objects can be parsed according to the common characteristics of instances and resources..<sup><b>[Thingsboard: LWM2M Resource Model](#thingsboard-lwm2m-resource-model)</b></sup>
+* `LWM2M Resource Model` - for **Devices** and **Device profiles**, so that device objects can be parsed according to the common characteristics of instances and resources.<sup><b>[Thingsboard: LWM2M Resource Model](#thingsboard-lwm2m-resource-model)</b></sup>
 * `Device Profile` - for devices so that devices can be grouped according to common characteristics.<sup><b>[device-profile: creation and configuration](#thingsboard-lwm2m-device-profile-and-device-creation-and-configuration)</b></sup>
 * `Device` with the transport type **LWM2M** to collect information received from the LWM2M client.<sup><b>[device: creation and configuration](#lwm2m-device)</b></sup>
 
-  Note: The Device must have a **link to** the already created **Device Profile**
+  **Note:** The Device must have a **link to** the already created **Device Profile**
 
 After the creation of the **Device profile**, the **Observe** of the **Device** may be configured, depending on models.<sup><b>[device profile: setting resources observe](#link-profileNoSec-edit-settings-observe)</b></sup>
 
@@ -373,7 +374,23 @@ the LWM2M Server or LWM2M Bootstrap-Server, respectively.
     ...
 ```
 
-### Security servers transport LWM2M (configuration LWM2M server and Bootstrap-Server in yml)
+### Security servers transport LWM2M
+#### Add `Key Store File` to DataBase
+If the servers are using security configuration `4 security modes (NoSec + PSK + RPK + X509)` for mode "2": "Certificate mode" or "1": "Public key mode" 
+
+uses the public and private key value from the X509 certificate.
+
+Certificate requirements [here](#link-x-509-certificate).
+
+After starting the servers, the transport receives information about the **public** and **private keys** for each server from the **serverKeyStore.jks** file.
+
+The **serverKeyStore.jks** file is **saved** in the database by the **system administrator**.
+
+`TO DO`  Add serverKeyStore.jks in pictures:
+
+**After updating** the serverKeyStore.jks file, the **transport must be restarted** for the new settings of the public and private keys for each of the servers to take effect. 
+
+#### Configuration LWM2M server and Bootstrap-Server
 Thingsboard supports **4 LWM2M Security mode simultaneously**.
 
 ```json
@@ -415,8 +432,7 @@ thingsboard/application/src/main/resources/thingsboard.yml
 #### `4 security` modes  (`NoSec` + `PSK` + `RPK` + `X509`)
 *   *NoSec mode (`NoSec`) + Pre-Shared Key mode (`PSK`) + Raw Public Key mode (`RPK`) + Certificate mode (`X509`) communications:*
     * Server security configuration for these modes is always enabled if `X509` mode information is available and free of errors.
-        1. `key_store_path_file: "${KEY_STORE_PATH_FILE:}"` loading is not an error or
-        1. Default key_store_path_file: "/usr/share/thingsboard/conf/credentials/serverKeyStore.jks" loading is not an error.
+        1. `Key Store File` is of type `JKS` and loading from DataBase is not an error.<sup><b>[Add <b>Key Store File</b>](#add-key-store-file-to-database)</b></sup>
     * You need information about LWM2M server's `certificates` and bootstrap server's certificates (`X509`)
         ```ruby
         thingsboard/application/src/main/resources/thingsboard.yml
@@ -426,8 +442,6 @@ thingsboard/application/src/main/resources/thingsboard.yml
                 secure:
                     # Certificate_x509:
                     key_store_type: "${LWM2M_KEYSTORE_TYPE:JKS}"
-                    # Default for key_store_path_file: "/usr/share/thingsboard/conf/credentials/serverKeyStore.jks"
-                    key_store_path_file: "${KEY_STORE_PATH_FILE:}"
                     key_store_password: "${LWM2M_KEYSTORE_PASSWORD_SERVER:server_ks_password}"
                     root_alias: "${LWM2M_SERVER_ROOT_CA:rootca}"
                     ...
