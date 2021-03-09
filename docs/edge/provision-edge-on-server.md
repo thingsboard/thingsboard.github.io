@@ -50,11 +50,11 @@ copyEdgeCredentialsCE:
 {:toc}
 
 ## Prerequisites
-  
-{% capture prerequisitestogglespec %}
-ThingsBoard Professional Edition%,%prerequisites-pe%,%templates/edge/getting-started/prerequisites.md%br%
-ThingsBoard Community Edition%,%prerequisites-ce%,%templates/edge/getting-started/prerequisites.md{% endcapture %}
-{% include content-toggle.html content-toggle-id="prerequisites" toggle-spec=prerequisitestogglespec %}
+
+{% capture provisionprerequisitestogglespec %}
+ThingsBoard Professional Edition%,%professional%,%templates/edge/provision/prerequisites-pe.md%br%
+ThingsBoard Community Edition%,%community%,%templates/edge/provision/prerequisites-ce.md{% endcapture %}
+{% include content-toggle.html content-toggle-id="edgeProvisionPrerequisites" toggle-spec=provisionprerequisitestogglespec %}
 
 ## Obtain and configure license key
 
@@ -62,10 +62,10 @@ ThingsBoard Community Edition%,%prerequisites-ce%,%templates/edge/getting-starte
 
 ## Provision the edge on ThingsBoard server
 
-{% capture addedgetogglespec %}
-ThingsBoard Professional Edition%,%addedge-pe%,%templates/edge/add-edge-pe.md%br%
-ThingsBoard Community Edition%,%addedge-ce%,%templates/edge/add-edge-ce.md{% endcapture %}
-{% include content-toggle.html content-toggle-id="addedge" toggle-spec=addedgetogglespec %}
+{% capture provisionedgetogglespec %}
+ThingsBoard Professional Edition%,%professional%,%templates/edge/provision/add-edge-pe.md%br%
+ThingsBoard Community Edition%,%community%,%templates/edge/provision/add-edge-ce.md{% endcapture %}
+{% include content-toggle.html content-toggle-id="edgeProvisionEdgeOnServer" toggle-spec=provisionedgetogglespec %}
 
 ## Next steps
 
