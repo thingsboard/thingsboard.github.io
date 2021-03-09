@@ -1,12 +1,12 @@
 ---
 layout: docwithnav
-title: Manage alarms and RPC requests on edge devices
+title: Manage alarms and RPC requests on edge devices - ThingsBoard Community Edition
 description: ThingsBoard Edge use case #1
 
-configureAlarmRulesCE:
+configureAlarmRules:
     0:
         image: /images/edge/use-cases/manage-alarms/configure-rules-item-1.png
-        title: 'Login to your ThingsBoard <b>CE</b> instance and open Device profiles page.'
+        title: 'Login to your ThingsBoard <b>ThingsBoard Community Edition</b> instance and open Device profiles page.'
     1:
         image: /images/edge/use-cases/manage-alarms/configure-rules-item-2.png
         title: 'Click "+" to add new device profile.'
@@ -78,10 +78,10 @@ provisionDevicesEdge:
         image: /images/edge/use-cases/manage-alarms/provision-devices-item-9.png
         title: 'Specify relation type "Manages" and select "Air Conditioner" device from the list. Click "Add" to add this relation. Now we verify that devices were provisioned to cloud.'
 
-provisionDevicesCE:    
+provisionDevices:    
     0:
         image: /images/edge/use-cases/manage-alarms/provision-devices-item-10.png
-        title: 'Login to your ThingsBoard <b>CE</b> instance and open Devices page.'
+        title: 'Login to your ThingsBoard <b>ThingsBoard Community Edition</b> instance and open Devices page.'
     1:
         image: /images/edge/use-cases/manage-alarms/provision-devices-item-11.png
         title: 'Make sure that "DHT22" and "Air Conditioner" devices are in the devices list.'
@@ -93,10 +93,10 @@ rootRuleChainPreview:
     0:
         image: /images/edge/use-cases/manage-alarms/root-rule-chain.png
 
-updateRootRuleChainCE:
+updateRootRuleChain:
     0:
         image: /images/edge/use-cases/manage-alarms/update-root-item-1.png
-        title: 'Login to your ThingsBoard <b>CE</b> instance and open Rule chain templates page.'
+        title: 'Login to your ThingsBoard <b>ThingsBoard Community Edition</b> instance and open Rule chain templates page.'
     1:
         image: /images/edge/use-cases/manage-alarms/update-root-item-2.png
         title: 'Open default "Edge Root Rule Chain".'
@@ -184,78 +184,27 @@ mqttWindows:
 * TOC
 {:toc}
 
+{% assign currentThingsBoardVersion = "ThingsBoard Community Edition" %}
+
 ## Use case
-Let's assume you have a warehouse with two devices connected to ThingsBoard **Edge**: 
-* DHT22 temperature sensor
-* Air Conditioner 
 
-ThingsBoard Edge has the following responsibilities:
- * **Collects temperature readings** from the DHT22 sensor
- * **Creates and updates alarms** if the temperature in the warehouse is higher than 50 °C
- * In case if the temperature becomes critical, ThingsBoard Edge turns on the cooler system by **sending RPC call requests** to the Air Conditioner device
- * **Pushes telemetry to the cloud**
-
-Please note that this is just a simple theoretical use case to demonstrate the capabilities of the platform. 
-You can use this tutorial as a basis for much more complex scenarios.
+{% include templates/edge/use-cases/manage-alarms/use-case.md %}
 
 ## Prerequisites
 
-{% include templates/edge/use-cases/prerequisites-pe.md %}
+{% include templates/edge/use-cases/prerequisites.md %}
 
 ## Configure Alarm Rules
 
-We will use [alarm rules](/docs/user-guide/device-profiles/#alarm-rules) feature to raise alarm when temperature reading is greater than 50 °C degrees.
-For this purpose, we should create new device profile and add new alarm rule. We recommend creating dedicated [device profiles](/docs/user-guide/device-profiles/) for each corresponding device type. Let's create new device profile "edge thermostat".
-
-{% include images-gallery.html imageCollection="configureAlarmRulesCE" showListImageTitles="true" %}
-
-Please open ThingsBoard **Edge** UI using the URL: [http://localhost:18080](http://localhost:18080) to see provisioned device profiles.
-
-{% include templates/edge/bind-port-changed-banner.md %}
-
-{% include images-gallery.html imageCollection="configureAlarmRulesEdge" showListImageTitles="true" %}
+{% include templates/edge/use-cases/manage-alarms/configure-alarm-rules.md %}
 
 ## Provision devices
 
-For simplicity, we will provision device manually using the UI.
-
-Let's first create **DHT22 temperature sensor** and **Air Conditioner** devices on the edge and add relation between these devices. This relation will be used to find related **Air Conditioner** device once **DHT22 temperature sensor** will send critical temperature value.
-
-We are going to provision device on the Edge. Please open ThingsBoard **Edge** UI using the URL: [http://localhost:18080](http://localhost:18080).
-
-{% include templates/edge/bind-port-changed-banner.md %}
-
-{% include images-gallery.html imageCollection="provisionDevicesEdge" showListImageTitles="true" %}
-
-Please open ThingsBoard **CE** using the URL [http://localhost:8080](http://localhost:8080) or [Live Demo](https://demo.thingsboard.io):
-
-{% include images-gallery.html imageCollection="provisionDevicesCE" showListImageTitles="true" %}
+{% include templates/edge/use-cases/manage-alarms/provision-devices.md %}
 
 ## Configure edge rule engine to handle alarms and send RPC calls
 
-We are going to update "Edge Root Rule Chain" that will handle **Alarm Created** events for "DHT22" sensor and will send appropriate commands to the "Air Conditioner" device.
-Here is the final configuration of edge root rule chain:
-
-{% include images-gallery.html imageCollection="rootRuleChainPreview" %}
-
-In the next steps we are going to create **JavaScript** node to create appropriate RPC commands to the **Air Conditioner** device.
-JavaScript for script node that will emulate enabling of Air Conditioner:
-
-{% highlight javascript %}
-var newMsg = {};
-newMsg.method = "enabled_air_conditioner";
-newMsg.params = {"speed": 1.0};
-return {msg: newMsg, metadata: metadata, msgType: msgType}; {% endhighlight %}
-
-Please use this snippet in the next steps, if required.
-
-Here are the steps to update default edge "Root Rule Chain" to the rule chain above:
-
-{% include images-gallery.html imageCollection="updateRootRuleChainCE" showListImageTitles="true" %}
-
-Now let's open ThingsBoard **Edge** UI to see updated root rule chain:
-
-{% include images-gallery.html imageCollection="updateRootRuleChainEdge" showListImageTitles="true" %}
+{% include templates/edge/use-cases/manage-alarms/configure-edge-rule-engine.md %}
 
 ## Connect "Air Conditioner" to edge and subscribe for RPC commands
 

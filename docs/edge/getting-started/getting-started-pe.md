@@ -192,31 +192,25 @@ mqttWindows:
 * TOC
 {:toc}
 
+{% assign currentThingsBoardVersion = "ThingsBoard Professional Edition" %}
+
 ## Introduction
 
-The goal of this tutorial is to demonstrate the basic usage of the most popular ThingsBoard Edge features. You will learn how to:
+{% include templates/edge/getting-started/introduction.md %}
 
-- Connect devices to ThingsBoard Edge;
-- Provision devices from ThingsBoard Edge to ThingsBoard Professional Edition server (cloud); 
-- Push data from devices to ThingsBoard Edge and propagate this data to ThingsBoard Professional Edition server (cloud);
-- Build real-time end-user dashboards on cloud and provision them to edge;
+## Prerequisites
 
-We will connect and visualize data from the temperature sensor to keep it simple.
+{% include templates/edge/getting-started/prerequisites.md %}
 
-{% include templates/edge/getting-started/prerequisites-pe.md %}
+## Step 1. Provision Device
 
 {% include templates/edge/getting-started/step-1.md %}
 
 ## Step 2. Provision Device from ThingsBoard Edge to ThingsBoard Professional Edition server (cloud)
 
-Provision device from the edge to the cloud done automatically, so no additional actions required. 
-Once device has been created on the edge, it's going to be automatically created on the cloud.
+{% include templates/edge/getting-started/step-2.md %}
 
-If you are interested in more details how to provision different entities from the cloud to the edge please refer to the [Professional Edition edge management](/docs/edge/config/pe/management/) for more details.
-
-To see provisioned device please open ThingsBoard  **Professional Edition** UI using the URL: [http://localhost:8080](http://localhost:8080).
-
-{% include images-gallery.html imageCollection="step2" showListImageTitles="true" %}
+## Step 3. Connect device
 
 {% include templates/edge/getting-started/step-3.md %}
 
@@ -230,19 +224,7 @@ To see provisioned device please open ThingsBoard  **Professional Edition** UI u
 
 ## Step 6. Provision Dashboard to ThingsBoard Edge
 
-To provision dashboard to edge we need to open edge dashboards on ThingsBoard  **Professional Edition** server and assign the newly created dashboard. Once this dashboard is assigned we are going to open ThingsBoard **Edge** UI to see the same dashboard on the edge.
-
-If you are interested in more details how to provision different entities from the cloud to the edge please refer to [Professional Edition edge management](/docs/edge/config/pe/management/) for more details.
-
-Please open ThingsBoard  **Professional Edition** using the URL [http://localhost:8080](http://localhost:8080) or [Live Demo](https://demo.thingsboard.io):
-
-{% include images-gallery.html imageCollection="step6PE" showListImageTitles="true" %}
-
-Let's open ThingsBoard **Edge** UI using the URL [http://localhost:18080](http://localhost:18080) to verify that dashboard was provisioned.
-
-{% include images-gallery.html imageCollection="step6Edge" showListImageTitles="true" %}
-
-Congratulations! Dashboard has been provisioned to the edge. Now you can send new telemetry reading, and it will immediately appear in the chart on the edge.
+{% include templates/edge/getting-started/step-6.md %}
 
 ## Next steps
 

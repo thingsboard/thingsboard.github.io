@@ -1,6 +1,8 @@
 ## Prerequisites
 
-{% include templates/edge/prerequisites-ce.md %}
+{% assign currentThingsBoardVersion = "ThingsBoard Professional Edition" %}
+
+{% include templates/edge/prerequisites.md %}
 
 ## Step 1. Obtain and configure license key
 

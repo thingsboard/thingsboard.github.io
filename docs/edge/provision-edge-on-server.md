@@ -52,8 +52,8 @@ copyEdgeCredentialsCE:
 ## Prerequisites
   
 {% capture prerequisitestogglespec %}
-ThingsBoard Professional Edition%,%prerequisites-pe%,%templates/edge/getting-started/prerequisites-pe.md%br%
-ThingsBoard Community Edition%,%prerequisites-ce%,%templates/edge/getting-started/prerequisites-ce.md{% endcapture %}
+ThingsBoard Professional Edition%,%prerequisites-pe%,%templates/edge/getting-started/prerequisites.md%br%
+ThingsBoard Community Edition%,%prerequisites-ce%,%templates/edge/getting-started/prerequisites.md{% endcapture %}
 {% include content-toggle.html content-toggle-id="prerequisites" toggle-spec=prerequisitestogglespec %}
 
 ## Obtain and configure license key

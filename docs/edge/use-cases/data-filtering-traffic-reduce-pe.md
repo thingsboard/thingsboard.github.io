@@ -30,7 +30,7 @@ provisionDevices:
         
 rootRuleChainPreview:
     0:
-        image: /images/edge/use-cases/data-filtering/root-rule-chain.png
+        image: /images/edge/use-cases/data-filtering/root-rule-chain-pe.png
 
 updateRootRuleChain:
     0:

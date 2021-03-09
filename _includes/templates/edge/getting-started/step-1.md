@@ -1,5 +1,3 @@
-## Step 1. Provision Device
-
 For simplicity, we will provision device manually using the UI.
 
 We are going to provision device on the Edge. Please open ThingsBoard **Edge** UI using the URL: [http://localhost:18080](http://localhost:18080).

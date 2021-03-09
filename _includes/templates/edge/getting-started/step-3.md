@@ -1,5 +1,3 @@
-## Step 3. Connect device
-
 To connect the device you need to get the device credentials first.
 ThingsBoard support different device credentials. We recommend to use default auto-generated credentials which is access token for this guide.
 
