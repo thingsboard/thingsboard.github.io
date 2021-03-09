@@ -416,10 +416,18 @@ toc:
       section:
         -  title: Overview
            path: /docs/edge/use-cases/overview/
-        -  title: Manage alarms and RPC requests on edge devices
-           path: /docs/edge/use-cases/manage-alarms-rpc-requests/
-        -  title: Data filtering and traffic reduce
-           path: /docs/edge/use-cases/data-filtering-traffic-reduce/
+        - title: Manage alarms and RPC requests on edge devices
+          section:
+            - title: ThingsBoard Professional Edition
+              path: /docs/edge/use-cases/manage-alarms-rpc-requests-pe/
+            - title: ThingsBoard Community Edition
+              path: /docs/edge/use-cases/manage-alarms-rpc-requests-ce/
+        - title: Data filtering and traffic reduce
+          section:
+            - title: ThingsBoard Professional Edition
+              path: /docs/edge/use-cases/data-filtering-traffic-reduce-pe/
+            - title: ThingsBoard Community Edition
+              path: /docs/edge/use-cases/data-filtering-traffic-reduce-ce/
     - title: ThingsBoard Edge Roadmap
       path: /docs/edge/roadmap/
 - title: Troubleshooting

@@ -58,7 +58,7 @@
   - [Manage alarms and RPC requests on edge devices](/docs/edge/use-cases/manage-alarms-rpc-requests/) - This guide will show how to generate local alarms on the edge and send RPC requests to devices connected to edge.
 {% endif %}
 {% if currentGuide != "DataFilteringAndTrafficReduce" %}
-  - [Data filtering and traffic reduce](/docs/edge/use-cases/data-filtering-traffic-reduce/) - This guide will show how to send to cloud from edge only filterd amount of device data.
+  - [Data filtering and traffic reduce](/docs/edge/use-cases/data-filtering-traffic-reduce-pe/) - This guide will show how to send to cloud from edge only filterd amount of device data.
 {% endif %}
 {% if currentGuide != "EdgeRoadmap" %}
 - [Roadmap](/docs/edge/roadmap) - ThingsBoard Edge roadmap. 

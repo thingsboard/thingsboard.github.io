@@ -200,7 +200,7 @@ You can use this tutorial as a basis for much more complex scenarios.
 
 ## Prerequisites
 
-{% include templates/edge/use-cases/ce-prerequisites.md %}
+{% include templates/edge/use-cases/prerequisites-pe.md %}
 
 ## Configure Alarm Rules
 
