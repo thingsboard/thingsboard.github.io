@@ -236,6 +236,22 @@ owner-of-entity-from-dashboard-state:
   image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-5.png
  8:
   image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-6.png
+ 9:
+  image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-7.png
+ 10:
+  image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-8.png
+ 11:
+  image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-9.png
+ 12:
+  image: /images/user-guide/ui/alias/5.png
+ 13:
+  image: /images/user-guide/ui/alias/6.png
+ 14:
+  image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-10.png
+ 15:
+  image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-11.png
+ 16:
+  image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-12.png
 
 asset-type-alias:
  0:
@@ -299,23 +315,27 @@ entity-view-type:
 
 api-usage-state:
  0:
-  image: /images/user-guide/ui/alias/1.png
+  image: /images/user-guide/ui/alias/api-usage-state-1.png
  1:
-  image: /images/user-guide/ui/alias/2.png
+  image: /images/user-guide/ui/alias/1.png
  2:
-  image: /images/user-guide/ui/alias/api-usage-state-3.png
+  image: /images/user-guide/ui/alias/2.png
  3:
-  image: /images/user-guide/ui/alias/api-usage-state-4.png
+  image: /images/user-guide/ui/alias/api-usage-state-3.png
  4:
-  image: /images/user-guide/ui/alias/4.png
+  image: /images/user-guide/ui/alias/api-usage-state-4.png
  5:
-  image: /images/user-guide/ui/alias/5.png
+  image: /images/user-guide/ui/alias/4.png
  6:
-  image: /images/user-guide/ui/alias/6.png
+  image: /images/user-guide/ui/alias/5.png
  7:
-  image: /images/user-guide/ui/alias/api-usage-state-5.png
+  image: /images/user-guide/ui/alias/6.png
  8:
+  image: /images/user-guide/ui/alias/api-usage-state-5.png
+ 9:
   image: /images/user-guide/ui/alias/api-usage-state-6.png
+ 10:
+  image: /images/user-guide/ui/alias/api-usage-state-7.png
 
 relations-query:
  0:
@@ -434,7 +454,7 @@ In the drop-down menu Type, select _Device_ and enter the name of the needed dev
 
 Let's use an added alias in a widget:
 1. Click the "Add new widget" sign in the middle of the screen.
-2. From the drop-down Select widget menu, select a Cards bundle. Move to the cell "Latest values" and pick an Entity Table widget.
+2. In the opened widget bundles selection, click "Cards system". There select an Entities table widget.
 3. Input a data source: Entity type, select the name of the alias from the list, and add telemetry.
 4. Click the "Add" button in the bottom right of the dialog window.
 5. Widget with alias that filters one device has been added.
@@ -461,7 +481,7 @@ Let's learn how to add a Group entities alias:
 
 Now let's use an added alias in a widget:
 1. Click the "Add new widget" sign in the middle of the screen.
-2. From the drop-down Select widget menu, select a Cards bundle. Move to the cell "Latest values" and pick an Entity Table widget.
+2. In the opened widget bundles selection, click "Cards system". There select an Entities table widget.
 3. Input a data source: Entity type, select the name of the created alias from the list, and add telemetry.
 4. Click the "Add" button in the bottom right of the dialog window.
 5. Widget with alias that filters a group of devices, which in this case is Irrigation systems, has been added.
@@ -490,7 +510,7 @@ Let's learn how to add a Entity list alias:
 
 Now let's use an added alias in a widget:
 1. Click the "Add new widget" sign in the middle of the screen.
-2. From the drop-down Select widget menu, select a Cards bundle. Move to the cell "Latest values" and pick an Entity Table widget.
+2. In the opened widget bundles selection, click "Cards system". There select an Entities table widget.
 3. Input a data source: Entity type, select the name of the created alias from the list, and add telemetry.
 4. Click the "Add" button in the bottom right of the dialog window.
 5. Widget with alias that filters a list of several devices, which in this case are Device D and Device E, has been added.
@@ -519,7 +539,7 @@ Let's learn how to add an Entity name alias:
 
 Now let's use an added alias in a widget:
 1. Click the "Add new widget" sign in the middle of the screen.
-2. From the drop-down Select widget menu, select a Cards bundle. Move to the cell "Latest values" and pick an Entity Table widget.
+2. In the opened widget bundles selection, click "Cards system". There select an Entities table widget.
 3. Input a data source: Entity type, select the name of the created alias from the list, and add telemetry.
 4. Click the "Add" button in the bottom right of the dialog window.
 5. Widget with alias that filters devices, which names start with ‘Device’, has been added.
@@ -552,7 +572,7 @@ Let's learn how to add an Entity group list alias:
 
 Now let's use an added alias in a widget:
 1. Click the "Add new widget" sign in the middle of the screen.
-2. From the drop-down Select widget menu, select a Cards bundle. Move to the cell "Latest values" and pick an Entity Table widget.
+2. In the opened widget bundles selection, click "Cards system". There select an Entities table widget.
 3. Input a data source: Entity type and _Entity group list_ alias. Click "Add" in the lower right corner to add a widget.
 4. After a widget has been added, click the "pencil" icon in the top right corner of it to enter an Edit mode of the widget. 
 5. Move to the Action cell and click a "+" icon to add a new action.
@@ -562,7 +582,7 @@ Now let's use an added alias in a widget:
 9. Select _Update current dashboard state_ action type and click "Add" to add a new action to the widget.
 10. After the action has been added successfully, click big orange tick mark in the top right of the screen to apply changes.
 11. Now, add a widget on which action will be performed by clicking orange "+" sign in the bottom right corner of the screen and choosing a "Paper" sign ("Create new widget").
-12. From the drop-down Select widget menu, select a Cards bundle. Move to the cell "Latest values" and pick an Entity Table widget.
+12. In the opened widget bundles selection, click "Cards system". There select an Entities table widget.
 13. Input a data source: Entity type and _group entities_ alias and add a telemetry. Click "Add" in the bottom right corner. 
 14. After both widgets have been added, click a tick mark in the bottom right corner of the screen.
 
@@ -596,7 +616,7 @@ Let's learn how to add an Entity group name alias:
 
 Now let's use an added alias in a widget:
 1. Click the "Add new widget" sign in the middle of the screen.
-2. From the drop-down Select widget menu, select a Cards bundle. Move to the cell "Latest values" and pick an Entity Table widget.
+2. In the opened widget bundles selection, click "Cards system". There select an Entities table widget.
 3. Input a data source: Entity type and _Entity group name_ alias. Click "Add" in the lower right corner to add a widget.
 4. After a widget has been added, click the "pencil" icon in the top right corner of it to enter an Edit mode of the widget.
 5. Move to the Action cell and click a "+" icon to add a new action.
@@ -606,7 +626,7 @@ Now let's use an added alias in a widget:
 9. Select _Update current dashboard state_ action type and click "Add" to add a new action to the widget.
 10. After the action has been added successfully, click big orange tick mark in the top right of the screen to apply changes.
 11. Now, add a widget on which action will be performed by clicking orange "+" sign in the bottom right corner of the screen and choosing a "Paper" sign ("Create new widget").
-12. From the drop-down Select widget menu, select a Cards bundle. Move to the cell "Latest values" and pick an Entity Table widget.
+12. In the opened widget bundles selection, click "Cards system". There select an Entities table widget.
 13. Input a data source: Entity type and _group entities_ alias and add a telemetry. Click "Add" in the bottom right corner.
 14. After both widgets have been added, click a tick mark in the bottom right corner of the screen.
 
@@ -639,7 +659,7 @@ Let's learn how to add an Entity from dashboard state alias:
 
 Now let's use an added alias in a widget and add a [state](/docs/user-guide/dashboards/#states) to see how this alias works:
 1. Click the "Add new widget" sign in the middle of the screen.
-2. From the drop-down Select widget menu, select a Cards bundle. Move to the cell "Latest values" and pick an Entity Table widget.
+2. In the opened widget bundles selection, click "Cards system". There select an Entities table widget.
 3. Input a data source: Entity type, _Group entities_ alias and add telemetry. Click "Add" in the lower right corner to add a widget.
 4. After widget has been added, click layers icon in the top left corner of the dashboard to create a new state.
 In the opened dialog window, click a "+" icon to add a new state.
@@ -658,7 +678,7 @@ Time to add an action to a root dashboard widget and perform it using an Entity 
 6. Select _Navigate to new dashboard state_ action type and set newly created state as a target dashboard state. Click "Add" to add a new action to the widget.
 7. After the action has been added successfully, click big orange tick mark in the top right of the screen to apply changes.
 8. Then, go to the created state by selecting it from the drop-down menu by clicking layers icon in the top right corner.
-9. Click the "Add new widget" sign in the middle of the screen. From the drop-down Select widget menu, select a Cards bundle. Move to the cell "Latest values" and pick an Entity Table widget.
+9. Click the "Add new widget" sign in the middle of the screen. In the opened widget bundles selection, click "Cards system". There select an Entities table widget.
 10. Input a data source: Entity type and select _Entity from dashboard state_ alias. Click "Add" in the bottom right corner.
 11. After a widget has been added, click a big tick icon in the lower right corner of the screen to save all applied changes.
 
@@ -668,7 +688,32 @@ By clicking a button opposite needed entity, you will be transitioned to an inne
 
 ### Owner of entity from dashboard state
 
+This alias allows displaying owners of the devices, assets, entities, etc. Commonly used when there is a hierarchy of customers and it is needed to see what devices belong to whom. 
 
+Let's learn how to add an Owner of entity from dashboard state alias, create a widget with it and configure an action to use it:
+1. Enter the dashboard edit mode.
+2. In the upper right corner of the window, click the "Entity alias" icon.
+3. In the opened Entity aliases window, click the "Add alias" button on the left of the dialog.
+4. In the opened dialog _Add alias_, enter the alias name, select a _Owner of entity from dashboard state_ filter type of the alias. Click "Add".
+5. After saving _Owner of entity from dashboard state_ alias, click "Add alias" again to add one more alias.
+6. In the opened dialog _Add alias_, enter the alias name, select a _Device type_ filter type, set default device type and enter the beginning of the device names. Click "Add".
+7. After both aliases have been added, click "Save" in the lower right corner of the dialog box.
+
+8. Click the "Add new widget" sign in the middle of the screen.
+9. In the opened widget bundles selection dialog, click "Cards system". There select an Entities table widget.
+10. Input a data source: Entity type and _Device type_ alias. Click "Add" in the lower right corner to add a widget.
+11. After a widget with alias that filters entities by devices which names start with Owner test, click a "Pencil" icon in the top right of the widget.
+12. Move to the Actions cell, click a "+" icon to add an action.
+13. Select an [action source](/docs/user-guide/ui/widget-actions/#action-sources) which is responsible for each entity separately (action cell button, on row click etc.). Enter the action name.
+14. Select _Update current dashboard state_ action type and set default state as a target dashboard state. Click "Add" to add a new action to the widget.
+15. After the action has been added successfully, click big orange tick mark in the top right of the screen to apply changes.
+
+16. Click a big orange "+" icon in the lower right of the screen. Among appeared icons, click a "paper" icon to create a new widget.
+17. In the opened widget bundles selection dialog, click "Cards system". There select an Entities table widget.
+18. Input a data source: Entity type and _Owner of entity from dashboard state_ alias. Click "Add" in the lower right corner to add a widget.
+19. After a widget has been added, click a big tick icon in the lower right corner of the screen to save all applied changes.
+
+By clicking on a row, the action will be executed, so an owner of the corresponding entity will be displayed on the widget on the same dashboard state.
 
 {% include images-gallery.html imageCollection="owner-of-entity-from-dashboard-state" %}
 
@@ -684,7 +729,7 @@ Let's learn how to add an Asset type alias and use it in a widget:
 5. Select asset type from the drop-down menu and enter the beginning of the asset name. Click "Add" in the lower right corner of the dialog box.
 6. After alias has been added, click "Save" in the lower right corner of the dialog box.
 7. Click the "Add new widget" sign in the middle of the screen.
-8. From the drop-down Select widget menu, select a Cards bundle. Move to the cell "Latest values" and pick an Entity Table widget.
+8. In the opened widget bundles selection, click "Cards system". There select an Entities table widget.
 9. Input a data source: Entity type, _Asset type_ alias and click "Add" in the lower right corner to add a widget.
 10. After a widget has been added, click a big tick icon in the lower right corner of the screen to save all applied changes.
 
@@ -704,7 +749,7 @@ Let's learn how to add a Device types alias and use it in a widget:
 5. Choose previously created device type from the drop-down menu and click "Add" in the lower right corner of the dialog box.
 6. After alias has been added, click "Save" in the lower right corner of the dialog box.
 7. Click the "Add new widget" sign in the middle of the screen.
-8. From the drop-down Select widget menu, select a Cards bundle. Move to the cell "Latest values" and pick an Entity Table widget.
+8. In the opened widget bundles selection, click "Cards system". There select an Entities table widget.
 9. Input a data source: Entity type, _Device types_ alias and add telemetry. Click "Add" in the lower right corner to add a widget.
 10. After a widget has been added, click a big tick icon in the lower right corner of the screen to save all applied changes.
 
@@ -735,7 +780,19 @@ Let's learn how to add an Entity view type alias and use it in a widget:
 
 ### Api Usage State
 
+There is an API Usage layout in the main menu of the TB platform. API Usage shows full statistics on the platform.  
+_Api Usage State_ alias allows fetching only the data you need from the user dashboard statistics.
 
+Let's learn how to add an Api Usage State alias and use it in a widget:
+1. Enter the dashboard edit mode.
+2. In the upper right corner of the window, click the "Entity alias" icon.
+3. In the opened Entity aliases window, click the "Add alias" button on the left of the dialog.
+4. In the opened dialog _Add alias_, enter the alias name, select a _Api Usage State_ filter type of the alias.
+5. After alias has been added, click "Save" in the lower right corner of the dialog box.
+6. Click the "Add new widget" sign in the middle of the screen.
+7. In the opened widget bundles selection, click "Cards system". There select an Entities table widget.
+8. Input a data source: Entity type, _Api Usage State_ alias and add telemetry that fetches statistics from an API usage state. Click "Add" in the lower right corner to add a widget.
+9. After a widget has been added, click a big tick icon in the lower right corner of the screen to save all applied changes.
 
 {% include images-gallery.html imageCollection="api-usage-state" %}
 
@@ -756,7 +813,7 @@ Let's learn how to add a Relations query alias and use it in a widget:
 6. Click "Add" in the lower right corner of the dialog box.
 7. After alias has been added, click "Save" in the lower right corner of the dialog box.
 8. Click the "Add new widget" sign in the middle of the screen.
-9. From the drop-down Select widget menu, select a Cards bundle. Move to the cell "Latest values" and pick an Entity Table widget.
+9. In the opened widget bundles selection, click "Cards system". There select an Entities table widget.
 10. Input a data source: Entity type, _Relations query_ alias and add telemetry. Click "Add" in the lower right corner to add a widget.
 11. After a widget has been added, click a big tick icon in the lower right corner of the screen to save all applied changes.
 
@@ -778,7 +835,7 @@ Let's learn how to add an Asset search query alias and use it in a widget:
 6. Click "Add" in the lower right corner of the dialog box.
 7. After alias has been added, click "Save" in the lower right corner of the dialog box.
 8. Click the "Add new widget" sign in the middle of the screen.
-9. From the drop-down Select widget menu, select a Cards bundle. Move to the cell "Latest values" and pick an Entity Table widget.
+9. In the opened widget bundles selection, click "Cards system". There select an Entities table widget.
 10. Input a data source: Entity type, _Asset search query_ alias and add telemetry. Click "Add" in the lower right corner to add a widget.
 11. After a widget has been added, click a big tick icon in the lower right corner of the screen to save all applied changes.
 
@@ -799,7 +856,7 @@ Let's learn how to add a Device search query alias and use it in a widget:
 6. Click "Add" in the lower right corner of the dialog box.
 7. After alias has been added, click "Save" in the lower right corner of the dialog box.
 8. Click the "Add new widget" sign in the middle of the screen.
-9. From the drop-down Select widget menu, select a Cards bundle. Move to the cell "Latest values" and pick an Entity Table widget.
+9. In the opened widget bundles selection, click "Cards system". There select an Entities table widget.
 
 {% include images-gallery.html imageCollection="device-search-query" %}
 
