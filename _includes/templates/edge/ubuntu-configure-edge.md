@@ -6,7 +6,7 @@ sudo nano /etc/tb-edge/conf/tb-edge.conf
 
 Add the following lines to the configuration file. Don't forget **to replace**:
  * "PUT_YOUR_POSTGRESQL_PASSWORD_HERE" with your **real postgres user password**.
- * "PUT_YOUR_CLOUD_IP" with an IP address of the machine where ThingsBoard **CE** server is running. Use **localhost** in case ThingsBoard Edge is running on the same machine where cloud instance is running. Or use **demo.thingsboard.io** if you are connecting edge to ThingsBoard **Live Demo** for evaluation. 
+ * "PUT_YOUR_CLOUD_IP" with an IP address of the machine where ThingsBoard **Professional Edition/Community Edition** server is running. Use **localhost** in case ThingsBoard Edge is running on the same machine where cloud instance is running. Or use **demo.thingsboard.io** if you are connecting edge to ThingsBoard **Live Demo** for evaluation. 
  * "PUT_YOUR_EDGE_KEY_HERE" and "PUT_YOUR_EDGE_SECRET_HERE" with Edge **key and secret** respectively:
 ```bash
 # DB Configuration 
@@ -20,7 +20,7 @@ export CLOUD_PRC_HOST=PUT_YOUR_CLOUD_IP
 {: .copy-code}
 
 {% capture local-deployment %}
-If ThingsBoard Edge is going to be running on the same machine where ThingsBoard CE server is running you'll need to add additional configuration parameters to avoid port collision.
+If ThingsBoard Edge is going to be running on the same machine where ThingsBoard **Professional Edition/Community Edition** server is running you'll need to add additional configuration parameters to avoid port collision.
  
 Please add next parameters to ThingsBoard Edge configuration file: 
  
