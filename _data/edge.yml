@@ -7,9 +7,9 @@ toc:
   path: /docs/edge/what-is-edge/
 - title: Getting Started
   section:
-    - title: ThingsBoard Professional Edition
+    - title: Professional Edition
       path: /docs/edge/getting-started/getting-started-pe
-    - title: ThingsBoard Community Edition
+    - title: Community Edition
       path: /docs/edge/getting-started/getting-started-ce
 - title: Architecture
   path: /docs/edge/edge-architecture/
@@ -79,15 +79,15 @@ toc:
       path: /docs/edge/use-cases/overview
     - title: Manage alarms and RPC requests on edge devices
       section:
-        - title: ThingsBoard Professional Edition
+        - title: Professional Edition
           path: /docs/edge/use-cases/manage-alarms-rpc-requests-pe/
-        - title: ThingsBoard Community Edition
+        - title: Community Edition
           path: /docs/edge/use-cases/manage-alarms-rpc-requests-ce/
     - title: Data filtering and traffic reduce
       section:
-        - title: ThingsBoard Professional Edition
+        - title: Professional Edition
           path: /docs/edge/use-cases/data-filtering-traffic-reduce-pe/
-        - title: ThingsBoard Community Edition
+        - title: Community Edition
           path: /docs/edge/use-cases/data-filtering-traffic-reduce-ce/
 - title: ThingsBoard Edge Roadmap
   path: /docs/edge/roadmap/
