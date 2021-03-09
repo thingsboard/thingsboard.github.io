@@ -1,0 +1,3 @@
+{% capture tabspec %}thingsboard-download-3-3pe-beta
+thingsboard-download-3-3-beta-pe-ubuntu,Ubuntu - PE,shell,resources/3.3pe-beta/thingsboard-ubuntu-download.sh,/docs/thingsboard-edge/resources/3.3pe-beta/thingsboard-ubuntu-download.sh
+thingsboard-download-3-3-beta-pe-centos,CentOS - PE,shell,resources/3.3pe-beta/thingsboard-centos-download.sh,/docs/thingsboard-edge/resources/3.3pe-beta/thingsboard-centos-download.sh{% endcapture %}
