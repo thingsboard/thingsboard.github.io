@@ -185,7 +185,7 @@ createDashboardCE:
 
 ## Prerequisites
 
-{% include templates/edge/use-cases/prerequisites-ce.md %}
+{% include templates/edge/use-cases/prerequisites.md %}
 
 ## Create device
 
