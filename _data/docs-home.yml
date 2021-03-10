@@ -353,7 +353,7 @@ toc:
     - title: Known Issues and Recommendations
       path: /docs/reference/known-issues/
     - title: Release 3.X
-      path: /docs/reference/releases-3-X/
+      path: /docs/reference/releases/
     - title: Release 2.X
       path: /docs/reference/releases-2-X/
 - title: Roadmap

@@ -371,11 +371,9 @@ C:\thingsboard>upgrade.bat --fromVersion=3.2.0
 net start thingsboard
 ```
 
-### Troubleshooting 
+### Troubleshooting
 
-In rare cases after upgrade you may face some License-related issues which are affected ThingsBoard service and it can't be started normally. How to solve it described at the [License-related issues](/docs/reference/known-issues/#license-related-issues) block.
-
-Additional, there are an enumeration of the [known issues](/docs/reference/known-issues/#v321-january-26-2021) related to the current version.
+{% include templates/upgrade-troubleshooting.md %}
 
 ## Upgrading to 3.2PE
 
@@ -476,10 +474,9 @@ net start thingsboard
 
 ### Troubleshooting
 
-In rare cases after upgrade you may face some License-related issues which are affected ThingsBoard service and it can't be started normally. How to solve it described at the [License-related issues](/docs/reference/known-issues/#license-related-issues) block.
+{% include templates/upgrade-troubleshooting.md %}
 
 ## Upgrading to 3.1.1PE
-
 
 ### Ubuntu/CentOS {#ubuntucentos-311}
 
@@ -577,10 +574,9 @@ net start thingsboard
 
 ### Troubleshooting
 
-In rare cases after upgrade you may face some License-related issues which are affected ThingsBoard service and it can't be started normally. How to solve it described at the [License-related issues](/docs/reference/known-issues/#license-related-issues) block.
+{% include templates/upgrade-troubleshooting.md %}
 
 ## Upgrading to 3.1PE
-
 
 ### Ubuntu/CentOS {#ubuntucentos-31}
 
@@ -700,10 +696,9 @@ net start thingsboard
 
 ### Troubleshooting
 
-In rare cases after upgrade you may face some License-related issues which are affected ThingsBoard service and it can't be started normally. How to solve it described at the [License-related issues](/docs/reference/known-issues/#license-related-issues) block.
+{% include templates/upgrade-troubleshooting.md %}
 
 ## Upgrading to 3.0.1PE
-
 
 ### Ubuntu/CentOS {#ubuntucentos-301}
 
@@ -839,7 +834,7 @@ net start thingsboard
 
 ### Troubleshooting
 
-In rare cases after upgrade you may face some License-related issues which are affected ThingsBoard service and it can't be started normally. How to solve it described at the [License-related issues](/docs/reference/known-issues/#license-related-issues) block.
+{% include templates/upgrade-troubleshooting.md %}
 
 ## Upgrading to 3.0PE
 
@@ -974,7 +969,7 @@ net start thingsboard
 
 ### Troubleshooting
 
-In rare cases after upgrade you may face some License-related issues which are affected ThingsBoard service and it can't be started normally. How to solve it described at the [License-related issues](/docs/reference/known-issues/#license-related-issues) block.
+{% include templates/upgrade-troubleshooting.md %}
 
 ## Upgrading to 2.5.6PE
 
@@ -1041,7 +1036,7 @@ net start thingsboard
 
 ### Troubleshooting
 
-In rare cases after upgrade you may face some License-related issues which are affected ThingsBoard service and it can't be started normally. How to solve it described at the [License-related issues](/docs/reference/known-issues/#license-related-issues) block.
+{% include templates/upgrade-troubleshooting.md %}
 
 ## Upgrading to 2.5.5PE 
 
@@ -1108,7 +1103,7 @@ net start thingsboard
 
 ### Troubleshooting
 
-In rare cases after upgrade you may face some License-related issues which are affected ThingsBoard service and it can't be started normally. How to solve it described at the [License-related issues](/docs/reference/known-issues/#license-related-issues) block.
+{% include templates/upgrade-troubleshooting.md %}
 
 ## Upgrading to 2.5.4PE 
 
@@ -1175,7 +1170,7 @@ net start thingsboard
 
 ### Troubleshooting
 
-In rare cases after upgrade you may face some License-related issues which are affected ThingsBoard service and it can't be started normally. How to solve it described at the [License-related issues](/docs/reference/known-issues/#license-related-issues) block.
+{% include templates/upgrade-troubleshooting.md %}
 
 ## Upgrading to 2.5.3PE 
 
@@ -1242,7 +1237,7 @@ net start thingsboard
 
 ### Troubleshooting
 
-In rare cases after upgrade you may face some License-related issues which are affected ThingsBoard service and it can't be started normally. How to solve it described at the [License-related issues](/docs/reference/known-issues/#license-related-issues) block.
+{% include templates/upgrade-troubleshooting.md %}
 
 ## Upgrading to 2.5.2PE 
 
@@ -1325,7 +1320,7 @@ net start thingsboard
 
 ### Troubleshooting
 
-In rare cases after upgrade you may face some License-related issues which are affected ThingsBoard service and it can't be started normally. How to solve it described at the [License-related issues](/docs/reference/known-issues/#license-related-issues) block.
+{% include templates/upgrade-troubleshooting.md %}
 
 ## Upgrading to 2.5.1PE 
 
@@ -1411,7 +1406,7 @@ net start thingsboard
 
 ### Troubleshooting
 
-In rare cases after upgrade you may face some License-related issues which are affected ThingsBoard service and it can't be started normally. How to solve it described at the [License-related issues](/docs/reference/known-issues/#license-related-issues) block.
+{% include templates/upgrade-troubleshooting.md %}
 
 ## Upgrading to 2.5PE 
 
@@ -1565,7 +1560,7 @@ net start thingsboard
 
 ### Troubleshooting
 
-In rare cases after upgrade you may face some License-related issues which are affected ThingsBoard service and it can't be started normally. How to solve it described at the [License-related issues](/docs/reference/known-issues/#license-related-issues) block.
+{% include templates/upgrade-troubleshooting.md %}
 
 ## Upgrading to 2.4.3PE
 
@@ -1661,7 +1656,7 @@ net start thingsboard
 
 ### Troubleshooting
 
-In rare cases after upgrade you may face some License-related issues which are affected ThingsBoard service and it can't be started normally. How to solve it described at the [License-related issues](/docs/reference/known-issues/#license-related-issues) block.
+{% include templates/upgrade-troubleshooting.md %}
 
 ## Upgrading to 2.4.2.1PE
 
@@ -1757,7 +1752,7 @@ net start thingsboard
 
 ### Troubleshooting
 
-In rare cases after upgrade you may face some License-related issues which are affected ThingsBoard service and it can't be started normally. How to solve it described at the [License-related issues](/docs/reference/known-issues/#license-related-issues) block.
+{% include templates/upgrade-troubleshooting.md %}
 
 ## Upgrading to 2.4.1PE
 
@@ -1853,7 +1848,7 @@ net start thingsboard
 
 ### Troubleshooting
 
-In rare cases after upgrade you may face some License-related issues which are affected ThingsBoard service and it can't be started normally. How to solve it described at the [License-related issues](/docs/reference/known-issues/#license-related-issues) block.
+{% include templates/upgrade-troubleshooting.md %}
 
 ## Next steps
 
