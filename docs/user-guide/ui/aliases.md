@@ -488,6 +488,8 @@ Let's use an added alias in a widget:
 ### Group entities
 
 This alias allows choosing a single group of entities, which can be a customer group, an asset group, or a device group.
+**Please note** that when you choose a group, the group Id is hard-coded to the dashboard config. 
+So, if you export and import the dashboard to another server, the alias will not work. **We recommend to use "Entities by group name" alias in most of the cases.**  
 In this example, an alias was created that filters the device group, which in this case is Irrigation systems.  
 
 Let's learn how to add a Group entities alias:
@@ -658,8 +660,9 @@ Now let's use the added alias in a widget:
 ### Entities by group name 
 
 This alias allows choosing entities by entering the exact full name of an entity group. This entity can be device group(s), asset group(s), entity view group(s), customer group(s), dashboard group(s), or user group(s).
-The difference between _Entities by group name_ and _Group entities_ is that the first one uses the name of the group to filter entities, while the second one the default group ID. Therefore, if you
-need to export a widget to another device, it is better to use _Entities by group name_ alias.
+The difference between Entities by group name and Group entities is that the first one resolved the group by the specified name while the second one uses hard-coded group ID.
+More important, during the lookup of entities, this alias will use information about the current user. So, if you share the dashboard with multiple customers, 
+and would like each customer to see devices that belong to him, you should use this alias instead of "Group entities".
 
 Let's learn how to add an _Entities by group name_ alias:
 1. Enter dashboard editing mode.
