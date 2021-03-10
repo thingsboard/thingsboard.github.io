@@ -186,7 +186,7 @@ header
   margin: 0 -78px
   width: calc(100% + 156px)
   z-index: 8888
-  box-shadow: 0 4px 0 rgba(48, 86, 128, .07)
+  box-shadow: 0 0 20px rgba(0, 0, 0, .1), 0 0 40px rgba(0, 0, 0, .1)
   background-color: white
   display: flex
   align-items: center
@@ -202,55 +202,62 @@ header
     ul
       display: flex
 
-      li
+      .indicator
+        opacity: 0
+        height: 4px
+        width: 0
+        bottom: -4px
+        left: 0
+        border-radius: 2px
+        background-color: #2A7DEC
+        position: absolute
+
+      a
         display: flex
         padding: 10px 14px
         align-items: center
-
-        &:hover .head-parrent .head-arrow
-          display: block
-
-        &:hover a
-          color: #2A7DEC
-
-        .head-parrent
-          position: relative
-
-          .head-arrow
-            position: absolute
-            top: 47px
-            left: calc(50% - 4px)
-            display: none
-
-          .head-underline
-            width: 2px
-            height: 4px
-            top: 51px
-            left: 50%
-            border-radius: 2px
-            background-color: #2A7DEC
-            position: absolute
-            transition-duration: 0.3s
-            opacity: 0
-
-        &:hover .head-underline
-          transition-duration: 0.3s
-          width: 100%
-          left: 0
-          opacity: 1
-
-      a
-        display: block
-        color: #212529
-        font-size: 18px
-        font-weight: normal
-        text-decoration: none
 
       a:not([href])
         color: #212529
 
         &:hover
           color: #2A7DEC
+
+      a:nth-child(1):hover~.indicator
+        width: 100px
+        left: 0
+        opacity: 1
+        transition-duration: 0.3s
+
+      a:nth-child(2):hover~.indicator
+        width: 100px
+        left: 150px
+        opacity: 1
+        transition-duration: 0.3s
+
+      a:nth-child(3):hover~.indicator
+        width: 100px
+        left: 200px
+        opacity: 1
+        transition-duration: 0.3s
+
+      a:nth-child(4):hover~.indicator
+        width: 100px
+        left: 300px
+        opacity: 1
+        transition-duration: 0.3s
+
+      a:nth-child(5):hover~.indicator
+        width: 100px
+        left: 400px
+        opacity: 1
+        transition-duration: 0.3s
+
+      a:nth-child(6):hover~.indicator
+        width: 100px
+        left: 500px
+        opacity: 1
+        transition-duration: 0.3s
 
       .sub-menu
         width: max-content
@@ -528,7 +535,7 @@ header
     header
       transition-duration: 0.3s
       background-color: white
-      box-shadow: 0 4px 0 rgba(48, 86, 128, .07)
+      box-shadow: 0 0 20px rgba(0, 0, 0, .1), 0 0 40px rgba(0, 0, 0, .1)
 
       .logo, .burger
         filter: unset
@@ -2042,7 +2049,7 @@ iframe
         background-image: url(/images/close-icon.svg)
       transition-duration: 0.3s
       background-color: white
-      box-shadow: 0 4px 0 rgba(48, 86, 128, .07)
+      box-shadow: 0 0 20px rgba(0, 0, 0, .1), 0 0 40px rgba(0, 0, 0, .1)
 
       .logo, .burger
         filter: unset
