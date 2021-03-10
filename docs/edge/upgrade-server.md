@@ -23,10 +23,9 @@ description: Upgrade instructions for ThingsBoard Professional/Community Edition
 #### ThingsBoard package download TEST
 
 {% capture packagedownloadtogglespec %}
-ThingsBoard Professional Edition%,%professional%,%templates/edge/upgrade-server/package-download-pe.md%br%
-ThingsBoard Community Edition%,%community%,%templates/edge/upgrade-server/package-download-ce.md{% endcapture %}
+Professional%,%professional%,%templates/edge/upgrade-server/package-download-pe.md%br%
+Community%,%community%,%templates/edge/upgrade-server/package-download-ce.md{% endcapture %}
 {% include content-toggle.html content-toggle-id="edgeThingsBoardPackageDownload" toggle-spec=packagedownloadtogglespec %}
-{% include tabs.html %}
 
 <!--
 #### ThingsBoard package download
