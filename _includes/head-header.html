@@ -374,184 +374,110 @@
     </div>
     <nav class="head-menu">
         <ul>
-            <a>Products</a>
-            <a>Services</a>
-            <a>Developers</a>
-            <a>Use Cases</a>
-            <a>Customers</a>
-            <a>Company</a>
-            <div class="indicator"><div>display: block</div></div>
-           <!-- <li class="menu-pr">
-                <div class="head-parrent"><a onclick="listburg('1')">Products</a>
-                    <img class="head-arrow" src="/images/head-arrow.svg">
-                    <div class="head-underline"></div>
-                </div>
+            <li class="nav-products">
+                <a onclick="listburg('1')">Products</a>
                 <ul class="sub-menu products">
-
-                    <li class="column-1">
-                        <img src="/images/thingsboard-icon.svg">
-                        <div class="products-text">
-                            <p>ThingsBoard</p><a href="/products/paas/">Cloud</a>
+                    <div class="sub-groups">
+                        <div class="group">
+                            <p class="group-name">IoT platforms</p>
+                            <a href="/products/paas/">
+                                <img src="/images/thingsboard-c-icon.svg">
+                                <div class="sub-text">
+                                    <h1>Cloud</h1>
+                                    <p>Platform as a service</p>
+                                </div>
+                            </a>
+                            <a href="/products/thingsboard-pe/">
+                                <img src="/images/thingsboard-p-icon.svg">
+                                <div class="sub-text">
+                                    <h1>Professional Edition</h1>
+                                    <p>Advanced IoT platform</p>
+                                </div>
+                            </a>
+                            <a href="/docs/getting-started-guides/what-is-thingsboard/">
+                                <img src="/images/thingsboard-cm-icon.svg">
+                                <div class="sub-text">
+                                    <h1>Community Edition</h1>
+                                    <p>Open source platform</p>
+                                </div>
+                            </a>
                         </div>
-                        <div class="hover-item"></div>
-                    </li>
-                    <li>
-                        <img src="/images/thingsboard-icon.svg">
-                        <div class="products-text">
-                            <p>ThingsBoard</p><a href="/docs/getting-started-guides/what-is-thingsboard/">Community
-                            Edition</a>
+                        <div class="group">
+                            <p class="group-name">Product ecosystem</p>
+                            <a href="/docs/iot-gateway/what-is-iot-gateway/">
+                                <img src="/images/gateway-icon.svg">
+                                <div class="sub-text">
+                                    <h1>IoT Gateway</h1>
+                                    <p>Connect legacy protocols</p>
+                                </div>
+                            </a>
+                            <a href="/products/license-server/">
+                                <img src="/images/license-icon.svg">
+                                <div class="sub-text">
+                                    <h1>License Server</h1>
+                                    <p>Billing solution</p>
+                                </div>
+                            </a>
+                            <a href="/products/trendz/">
+                                <img src="/images/trendz-icon.svg">
+                                <div class="sub-text">
+                                    <h1>Trendz Analytics</h1>
+                                    <p>Data analytics and Prediction</p>
+                                </div>
+                            </a>
                         </div>
-                        <div class="hover-item"></div>
-                    </li>
-                    <li>
-                        <img src="/images/thingsboard-icon.svg">
-                        <div class="products-text">
-                            <p>ThingsBoard</p><a href="/products/thingsboard-pe/">Professional Edition</a>
-                        </div>
-                        <div class="hover-item"></div>
-                    </li>
-                    <li>
-                        <img src="/images/gateway-icon.svg">
-                        <div class="products-text">
-                            <p>ThingsBoard</p><a href="/docs/iot-gateway/what-is-iot-gateway/">IoT Gateway</a>
-                        </div>
-                        <div class="hover-item"></div>
-                    </li>
-                    <li class="column-2">
-                        <img src="/images/license-icon.svg">
-                        <div class="products-text">
-                            <p>ThingsBoard</p><a href="/products/license-server/">License Server</a>
-                        </div>
-                        <div class="hover-item"></div>
-                    </li>
-                    <li>
-                        <img src="/images/trendz-icon.svg">
-                        <div class="products-text">
-                            <p>ThingsBoard</p><a href="/products/trendz/">Trendz Analytics</a>
-                        </div>
-                        <div class="hover-item"></div>
-                    </li>
+                    </div>
                 </ul>
             </li>
-            <li>
-                <div class="head-parrent"><a onclick="listburg('2')">Services</a>
-                    <img class="head-arrow" src="/images/head-arrow.svg">
-                    <div class="head-underline"></div>
-                </div>
+            <li class="nav-services">
+                <a onclick="listburg('2')">Services</a>
                 <ul class="sub-menu services">
-                    <li><img src="/images/support-icon.svg"><a href="/docs/services/support/">Support</a>
-                        <div class="hover-item"></div>
-                    </li>
-                    <li><img src="/images/train-icon.svg"><a href="/docs/services/trainings/">Trainings</a>
-                        <div class="hover-item"></div>
-                    </li>
-                    <li><img src="/images/prof-icon.svg"><a href="/docs/services/consulting/">Professional services</a>
-                        <div class="hover-item"></div>
-                    </li>
+                    <a href="/docs/services/support/">Support</a>
+                    <a href="/docs/services/trainings/">Trainings</a>
+                    <a href="/docs/services/consulting/">Professional services</a>
                 </ul>
             </li>
-            <li>
-                <div class="head-parrent"><a onclick="listburg('3')">Developers</a>
-                    <img class="head-arrow" src="/images/head-arrow.svg">
-                    <div class="head-underline"></div>
-                </div>
+            <li class="nav-developers">
+                <a onclick="listburg('3')">Developers</a>
                 <ul class="sub-menu developers">
-                    <li><img src="/images/doc-icon.svg"><a href="/docs/">Documentation</a>
-                        <div class="hover-item"></div>
-                    </li>
-                    <li><img src="/images/guides-icon.svg"><a href="/docs/guides/">Guides</a>
-                        <div class="hover-item"></div>
-                    </li>
-                    <li><img src="/images/start-icon.svg"><a href="/docs/getting-started/">Get Started</a>
-                        <div class="hover-item"></div>
-                    </li>
+                    <a href="/docs/">Documentation</a>
+                    <a href="/docs/guides/">Guides</a>
+                    <a href="/docs/getting-started/">Get Started</a>
                 </ul>
             </li>
-            <li>
-                <div class="head-parrent"><a onclick="listburg('4')">Use Cases</a>
-                    <img class="head-arrow" src="/images/head-arrow.svg">
-                    <div class="head-underline"></div>
-                </div>
+            <li class="nav-cases">
+                <a onclick="listburg('4')">Use Cases</a>
                 <ul class="sub-menu cases">
-                    <li><a href="/smart-metering/">Smart Metering</a>
-                        <div class="hover-item"></div>
-                    </li>
-                    <li><a href="/smart-energy/">Smart Energy</a>
-                        <div class="hover-item"></div>
-                    </li>
-                    <li><a href="/smart-farming/">Smart Farming</a>
-                        <div class="hover-item"></div>
-                    </li>
-                    <li><a href="/fleet-tracking/">Fleet Tracking</a>
-                        <div class="hover-item"></div>
-                    </li>
+                    <a href="/smart-metering/">Smart Metering</a>
+                    <a href="/smart-energy/">Smart Energy</a>
+                    <a href="/smart-farming/">Smart Farming</a>
+                    <a href="/fleet-tracking/">Fleet Tracking</a>
                 </ul>
             </li>
-            <li>
-                <div class="head-parrent"><a onclick="listburg('5')">Customers</a>
-                    <img class="head-arrow" src="/images/head-arrow.svg">
-                    <div class="head-underline"></div>
-                </div>
-                <ul class="sub-menu customers-partners">
-                    <div class="menu-block">
-                        <p>Customers</p>
-                        <div class="customers">
-                            <li class="cus-column-1"><a href="/industries/smart-energy/">Smart Energy</a>
-                                <div class="hover-item"></div>
-                            </li>
-                            <li><a href="/industries/smart-city/">Smart City</a>
-                                <div class="hover-item"></div>
-                            </li>
-                            <li class="cus-column-2"><a href="/industries/agriculture/">Agriculture</a>
-                                <div class="hover-item"></div>
-                            </li>
-                            <li><a href="/industries/telecom/">Telecom</a>
-                                <div class="hover-item"></div>
-                            </li>
-                            <li><a href="/industries/smart-buildings/">Smart Buildings</a>
-                                <div class="hover-item"></div>
-                            </li>
-                            <li><a href="/industries/industry40/">Industry 4.0</a>
-                                <div class="hover-item"></div>
-                            </li>
-                        </div>
-                    </div>
-                    <div class="menu-block partners">
-                        <p>Partners</p>
-                        <div class="partners-inside">
-                            <li><a href="/partners/hardware/">Hardware partners</a>
-                                <div class="hover-item"></div>
-                            </li>
-                            <li><a href="/partners/distributors/">Distributors</a>
-                                <div class="hover-item"></div>
-                            </li>
-                        </div>
-                    </div>
+            <li class="nav-customers">
+                <a onclick="listburg('5')">Customers</a>
+                <ul class="sub-menu customers">
+                    <a href="/industries/smart-energy/">Smart Energy</a>
+                    <a href="/industries/smart-city/">Smart City</a>
+                    <a href="/industries/agriculture/">Agriculture</a>
+                    <a href="/industries/telecom/">Telecom</a>
+                    <a href="/industries/smart-buildings/">Smart Buildings</a>
+                    <a href="/industries/industry40/">Industry 4.0</a>
+                    <a href="/partners/hardware/">Hardware partners</a>
+                    <a href="/partners/distributors/">Distributors</a>
                 </ul>
             </li>
-            <li>
-                <div class="head-parrent"><a onclick="listburg('6')">Company</a>
-                    <img class="head-arrow" src="/images/head-arrow.svg">
-                    <div class="head-underline"></div>
-                </div>
+            <li class="nav-company">
+                <a onclick="listburg('6')">Company</a>
                 <ul class="sub-menu about">
-                    <li><a href="/company/">Our Company</a>
-                        <div class="hover-item"></div>
-                    </li>
-                    <li><a href="/docs/contact-us/">Contact Us</a>
-                        <div class="hover-item"></div>
-                    </li>
-                    <li><a href="/mediakit/">Media Kit</a>
-                        <div class="hover-item"></div>
-                    </li>
-                    <li><a href="https://blog.thingsboard.io/">Blog</a>
-                        <div class="hover-item"></div>
-                    </li>
-                    <li><a href="/careers/">Careers</a>
-                        <div class="hover-item"></div>
-                    </li>
+                    <a href="/company/">Our Company</a>
+                    <a href="/docs/contact-us/">Contact Us</a>
+                    <a href="/mediakit/">Media Kit</a>
+                    <a href="https://blog.thingsboard.io/">Blog</a>
+                    <a href="/careers/">Careers</a>
                 </ul>
-            </li>-->
+            </li>
+            <div class="indicator"><div class="head-arrow"></div><div class="line"></div><div class="sub-background"></div></div>
         </ul>
     </nav>
     <div>

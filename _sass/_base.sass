@@ -176,9 +176,6 @@ header
       .sub-menu
         display: block
 
-      .products, .sub-menu .customers
-        display: flex
-
   position: fixed
   top: 0
   left: 0
@@ -203,19 +200,107 @@ header
       display: flex
 
       .indicator
-        opacity: 0
-        height: 4px
         width: 0
-        bottom: -4px
         left: 0
         border-radius: 2px
-        background-color: #2A7DEC
         position: absolute
+        height: 4px
+        bottom: -4px
+        transition-delay: 0.3s
+        transition-duration: 0.3s
+        z-index: -1
+        padding: 0 14px
+
+        .head-arrow
+          position: absolute
+          background-image: url(/images/head-arrow.svg)
+          width: 8px
+          height: 100%
+          left: calc(50% - 4px)
+          bottom: 4px
+          opacity: 0
+          transition-delay: 0s
+          transition-duration: 0.3s
+
+        .line
+          position: relative
+          background-color: #2A7DEC
+          width: 0
+          height: 100%
+          left: 50%
+          opacity: 0
+          transition-duration: 0.3s
+
+      .nav-products, .nav-services, .nav-developers, .nav-cases, .nav-customers, .nav-company
+        &:hover~.indicator
+          transition-delay: 0s
+          transition-duration: 0.3s
+          .line
+            transition-delay: 0.3s
+            transition-duration: 0.3s
+            width: 100%
+            left: 0
+            opacity: 1
+          .head-arrow
+            transition-delay: 0.35s
+            transition-duration: 0s
+            opacity: 1
+
+      .nav-products
+        width: 108px
+        &:hover~.indicator
+          width: 108px
+          left: 0
+
+      .nav-services
+        width: 103px
+        &:hover~.indicator
+          width: 103px
+          left: 108px
+
+      .nav-developers
+        width: 129px
+        &:hover~.indicator
+          width: 129px
+          left: 211px
+
+      .nav-cases
+        width: 122px
+        &:hover~.indicator
+          width: 122px
+          left: 340px
+
+      .nav-customers
+        width: 127px
+        &:hover~.indicator
+          width: 127px
+          left: 462px
+
+      .nav-company
+        width: 118px
+        &:hover~.indicator
+          width: 118px
+          left: 589px
+
+      li
+        display: flex
+        padding: 10px 14px 14px
+        align-items: center
+        height: calc(100% + 4px)
+
+        a
+          width: 100%
+          text-align: center
+
+        &:hover a
+          color: #2A7DEC
 
       a
-        display: flex
-        padding: 10px 14px
-        align-items: center
+        display: block
+        color: #212529
+        font-size: 18px
+        font-weight: normal
+        text-decoration: none
 
       a:not([href])
         color: #212529
@@ -223,146 +308,48 @@ header
         &:hover
           color: #2A7DEC
 
-      a:nth-child(1):hover~.indicator
-        width: 100px
-        left: 0
-        opacity: 1
-        transition-duration: 0.3s
-
-      a:nth-child(2):hover~.indicator
-        width: 100px
-        left: 150px
-        opacity: 1
-        transition-duration: 0.3s
-
-      a:nth-child(3):hover~.indicator
-        width: 100px
-        left: 200px
-        opacity: 1
-        transition-duration: 0.3s
-
-      a:nth-child(4):hover~.indicator
-        width: 100px
-        left: 300px
-        opacity: 1
-        transition-duration: 0.3s
-
-      a:nth-child(5):hover~.indicator
-        width: 100px
-        left: 400px
-        opacity: 1
-        transition-duration: 0.3s
-
-      a:nth-child(6):hover~.indicator
-        width: 100px
-        left: 500px
-        opacity: 1
-        transition-duration: 0.3s
-
       .sub-menu
         width: max-content
-        margin-top: 4px
-        padding: 35px 45px 35px 35px
+        padding: 40px
         display: none
         position: absolute
         background-color: #fff
-        top: 80px
+        top: 84px
         z-index: 1
         border-radius: 4px
-        box-shadow: 0 52px 40px -32px rgba(0, 0, 0, .1), 0 0 0 2px rgba(33, 37, 41, 0.04)
+        box-shadow: 0 30px 60px -30px rgba(0, 0, 0, .3), 0 50px 100px -20px rgba(0, 0, 0, 0.25)
 
-        &.customers-partners
-          padding: 8px
+        .sub-groups
+          display: flex
+          .group .group-name
+            height: 62px
+            text-transform: uppercase
+            font-weight: 600
+            color: #899AAB
+            font-size: 15px
+            line-height: normal
 
-          .menu-block
-            padding: 27px 37px 27px 27px
+        a
+          background-color: #fafafa
+          text-align: left
+          display: flex
+          margin: 0 40px 22px 0
 
+          .sub-text
+            padding-top: 4px
+            h1
+              color: #212529
+              font-size: 16px
+              font-weight: 600
+              line-height: normal
             p
               color: #899AAB
-              margin: 0 0 8px 18px
-
-            &.partners
-              border-radius: 4px
-              background-color: #F7F9FC
-
-              li .hover-item
-                background-color: #fff
-
-            .customers
-              flex-wrap: wrap
-              width: 322px
-              .cus-column-1
-                margin-right: 21px
-              .cus-column-2
-                margin-right: 43px
-
-        &.products
-          flex-wrap: wrap
-          width: 857px
-          padding: 35px 32px 3px 35px
-
-          li
-            padding: 0 0 32px
-            margin-right: 13px
-
-            &.column-1
-              margin-right: 43px
-
-            &.column-2
-              margin-right: 58px
-
-          .hover-item
-            height: 72px
-
+              font-size: 15px
+              font-weight: normal
+              line-height: normal
           img
-            margin: 15px 9px 15px 15px
-
-          .products-text
-            z-index: 1
-
-            a
-              padding: 0 30px 0 0
-
-            p
-              color: #899AAB
-              font-size: 13px
-              margin-bottom: -2px
-              padding: 0 30px 0 0
-
-        li
-          position: relative
-          width: max-content
-          padding: unset
-
-          img
-            z-index: 1
-            margin-left: 13px
-
-          .hover-item
-            border-radius: 4px
-            width: 53px
-            height: 53px
-            left: 0px
-            position: absolute
-            background-color: #F4F8FE
-            opacity: 0
-            transition-duration: 0.3s
-
-          a
-            color: #212529
-            font-size: 18px
-            font-weight: 500
-            padding: 15px 18px
-            z-index: 1
-
-          &:hover
-            .hover-item
-              width: 100%
-              opacity: 1
-              transition-duration: 0.3s
-
-            a
-              color: #2A7DEC
+            margin-right: 12px
+            height: fit-content
 
   .n-button
     font-size: 18px
@@ -373,7 +360,7 @@ header
     text-decoration: none
     border-radius: 4px
     margin-left: 10px
-    padding: 11px 19px
+    padding: 11px 20px
 
     &.try
       border: solid 1px #EBEBEB
@@ -557,7 +544,7 @@ header
                 color: #2A7DEC
 
       .n-button
-        padding: 11px 19px
+        padding: 11px 20px
 
         &.try
           border: solid 1px #EBEBEB
@@ -2074,7 +2061,7 @@ iframe
                 color: #2A7DEC
 
       .n-button
-        padding: 11px 19px
+        padding: 11px 20px
         display: inline-block
 
         &.try
@@ -2142,25 +2129,6 @@ iframe
             box-shadow: unset
             padding: 12px 0
             background-color: unset
-
-            .menu-block
-              padding: 0 !important
-
-              p
-                margin: 0 !important
-
-              &.partners
-                padding-top: 14px !important
-                background-color: unset !important
-
-                .hover-item
-                  background-color: #F4F8FE !important
-
-            &.products, &.customers-partners
-              padding: 12px 0
-
-              li
-                padding: unset
 
             &.open-sub
               display: flex
