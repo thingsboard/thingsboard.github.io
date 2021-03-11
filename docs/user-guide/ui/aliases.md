@@ -763,7 +763,7 @@ By clicking on a row, the action will be executed, so an owner of the correspond
 
 {% include images-gallery.html imageCollection="owner-of-entity-from-dashboard-state" %}
 
-## Asset type
+### Asset type
 
 This alias allows choosing assets of entered type (and, if needed) names of which begin with an entered query. This alias filters assets of type ‘field’ and with name starting with ‘House’.
 
@@ -783,7 +783,7 @@ Let's learn how to add an Asset type alias and use it in a widget:
 <br>
 
  
-## Device types
+### Device types
 
 This alias allows choosing devices of entered type (and, if needed) names of which begin with an entered query. This alias filters devices of type ‘Temperature Sensor’.
 
