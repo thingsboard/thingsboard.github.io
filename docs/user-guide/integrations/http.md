@@ -7,8 +7,9 @@ description: HTTP integration guide
 
 {% assign feature = "Platform Integrations" %}{% include templates/pe-feature-banner.md %}
 
+## Overview
 
-HTTP Integration allows to convert existing protocols and payload formats to ThingsBoard message format and is useful in several deployment scenarios: 
+HTTP Integration allows converting existing protocols and payload formats to ThingsBoard message format and is useful in several deployment scenarios: 
 
  - stream device and/or asset data from external system, IoT platform or connectivity provider back-end.
  - stream device and/or asset data from your custom application running in the cloud.
