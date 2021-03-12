@@ -4756,7 +4756,7 @@ Additional, you may config a few more log related things under the
 ```
 block:
 
-#####Logging path
+##### Logging path
 
 You may change the logging path under the
 ```xml
@@ -4766,7 +4766,7 @@ line.
 
 This will allow you to save logs to target storage.
 
-#####Max File Size
+##### Max File Size
 
 You may change the maxFileSize under the
 ```xml
@@ -4776,7 +4776,7 @@ line.
 
 This will allow you to configure the maximum size of the log file.
 
-#####Max History
+##### Max History
 
 You may change the maxHistory under the
 ```xml
@@ -4786,7 +4786,7 @@ line.
 
 This will allow you to configure the maximum number of log files which would be stored/saved.
 
-#####Total Size Cap
+##### Total Size Cap
 
 You may change the totalSizeCap under the
 ```xml
