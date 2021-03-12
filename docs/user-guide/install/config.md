@@ -4725,5 +4725,81 @@ The configuration file for the startup script. Contains Java options and classpa
 
 #### logback.xml
 
-The configuration file for logging. Allows controlling the log level, the size of log files and the total size/volume of logs.
+Logging is configuring in the logback.xml file which is stored at /etc/thingsboard/conf/ location.
 
+The main logger in ThingsBoard is named “**fileLogAppender**“
+
+It could have different value:
+
+- TRACE,
+
+- DEBUG,
+
+- INFO,
+
+- WARN,
+
+- ERROR
+
+By default, ThingsBoard is configured to **INFO** level. But for testing/debugging proposes you may change log level to DEBUG at the:
+
+```xml
+<root level="DEBUG">
+    <appender-ref ref="fileLogAppender"/>
+</root>
+```
+block.
+
+Additional, you may config a few more log related things under the
+```xml
+<appender name="fileLogAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+```
+block:
+
+#####Logging path
+
+You may change the logging path under the
+```xml
+    <file>/var/log/thingsboard/thingsboard.log</file>
+```
+line.
+
+This will allow you to save logs to target storage.
+
+#####Max File Size
+
+You may change the maxFileSize under the
+```xml
+    <maxFileSize>100MB</maxFileSize>
+```
+line.
+
+This will allow you to configure the maximum size of the log file.
+
+#####Max History
+
+You may change the maxHistory under the
+```xml
+    <maxHistory>30</maxHistory>
+```
+line.
+
+This will allow you to configure the maximum number of log files which would be stored/saved.
+
+#####Total Size Cap
+
+You may change the totalSizeCap under the
+```xml
+    <totalSizeCap>3GB</totalSizeCap>
+```
+line.
+
+This will allow you to configure the limit size of all log files.
+
+
+
+Also, you can config the same for licenseLogAppender but this is would be useful only for the ThingsBoard dev team.
+
+
+
+Additional and helpful info you can find on [Logback pages](http://logback.qos.ch/documentation.html).
