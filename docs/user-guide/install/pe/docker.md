@@ -141,16 +141,6 @@ docker-compose start
 ```
 {: .copy-code}
 
-## Upgrading
-
-In case when database upgrade is needed, execute the following commands:
-
-```
-$ docker-compose stop mytbpe
-$ docker-compose run mytbpe upgrade-tb.sh
-$ docker-compose start mytbpe
-```
-
 ## Troubleshooting
 
 ### DNS issues
@@ -300,25 +290,39 @@ docker-compose up mytbpe
 ```
 {: .copy-code}
 
-### Upgrading from 3.1.0PE to latest version
+### Upgrade starting from 3.1.0PE
 
-Open docker-compose.yml and change version from **3.1.0PE** to **{{ site.release.pe_full_ver }}**. 
-Then call the following commands:
+Please refer to the [troubleshooting](/docs/user-guide/install/pe/docker/#troubleshooting) section in case you are upgrading from 3.0.0 or 3.0.1.
 
-```
-sudo sh -c "echo '3.1.0PE' > ~/.mytbpe-data/.upgradeversion"
-docker-compose run mytbpe upgrade-tb.sh
-```
-{: .copy-code}
+Below is example on how to upgrade from 3.1.0 to 3.1.1
 
-Start ThingsBoard:
+1. Create a dump of your database:
 
-```
-docker-compose up mytbpe
-```
-{: .copy-code}
+    ```text
+    docker-compose exec postgres sh -c "pg_dump -U postgres thingsboard > /var/lib/postgresql/data/thingsboard_dump"
+    ```
+    {: .copy-code}
+    
+2. Open docker-compose.yml and change version from 3.1.0PE to your **current** ThingsBoard version. Then execute the following commands:
+       
+    ```text
+    sudo sh -c "echo '3.1.0' > ~/.mytbpe-data/.upgradeversion"
+    docker-compose run mytbpe upgrade-tb.sh
+    ```
+    {: .copy-code}
+    
+3. Start ThingsBoard:
+    
+    ```text
+    docker-compose up mytbpe
+    ```
+    {: .copy-code}
 
+To upgrade ThingsBoard to latest version those steps should be done **for each intermediate version**.
 
+Please note that upgrades are not cumulative.
+Refer to [upgrade instruction](/docs/user-guide/install/pe/upgrade-instructions/) to know the right order of upgrades (f.e. if you are upgrading from 3.1.0 to 3.2.1, you need to do that in the following order: 3.1.0 -> 3.1.1 -> 3.2.0 -> 3.2.1, e.g. current version -> next release version -> etc)
+    
 ## Next steps
 
 {% assign currentGuide = "InstallationGuides" %}{% include templates/guides-banner.md %}
