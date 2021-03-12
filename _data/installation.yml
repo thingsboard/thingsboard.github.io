@@ -105,6 +105,10 @@ toc:
   section:
     - title: Installation options
       path: /docs/trendz/install/installation-options/
+- title: ThingsBoard Edge
+  section:
+    - title: Installation options
+      path: /docs/thingsboard-edge/install/installation-options/
 - title: License Server
   section:
   - title: Overview

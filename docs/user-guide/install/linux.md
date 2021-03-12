@@ -28,7 +28,7 @@ To run ThingsBoard and third-party components on a single machine you will need 
 ThingsBoard service is running on Java 8. 
 The solution is actively tested on both [OpenJDK](http://openjdk.java.net/) and [Oracle JDK](http://www.oracle.com/technetwork/java/javase/overview/index.html).
 
-Follow this instructions to install OpenJDK 8:
+Follow these instructions to install OpenJDK 8:
 
 {% capture tabspec %}java-installation
 A,Ubuntu,shell,resources/java-ubuntu-installation.sh,/docs/user-guide/install/resources/java-ubuntu-installation.sh

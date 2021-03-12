@@ -1,4 +1,4 @@
-ThingsBoard service is running on Java 8. Follow this instructions to install OpenJDK 8:
+ThingsBoard service is running on Java 8. Follow these instructions to install OpenJDK 8:
 
 ```bash
 sudo apt update
