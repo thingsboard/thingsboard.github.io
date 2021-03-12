@@ -70,7 +70,7 @@ Where:
 - `CLOUD_ROUTING_SECRET` - your edge secret
 - `CLOUD_PRC_HOST` - ip address of the machine with the ThingsBoard platform
 
-**NOTE**: do not use **'localhost'** - **'localhost'** is the ip address of the edge service in the docker container. Please use the IP address of machine where ThingsBoard CE is running and this IP address must be accessible by docker container. Or use **demo.thingsboard.io** if you are connecting edge to ThingsBoard **Live Demo** for evaluation.
+**NOTE**: do not use **'localhost'** - **'localhost'** is the ip address of the edge service in the docker container. Please use the IP address of machine where ThingsBoard **Professional Edition/Community Edition** is running and this IP address must be accessible by docker container. Or use **demo.thingsboard.io** if you are connecting edge to ThingsBoard **Live Demo** for evaluation.
 
 - `restart: always` - automatically start ThingsBoard Edge in case of system reboot and restart in case of failure
 

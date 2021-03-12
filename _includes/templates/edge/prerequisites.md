@@ -1,15 +1,8 @@
-## Prerequisites
+To start using ThingsBoard **Edge** you need to have {{currentThingsBoardVersion}} server that supports edge functionality up and running. The easiest way is to use [Live Demo](https://demo.thingsboard.io/signup) server, that is already updated to the required version.
 
-{% include templates/edge/ce-prerequisites.md %}
+The alternative option is to install {{currentThingsBoardVersion}} server that supports edge functionality on-premise.
+Please visit [Upgrade instructions for {{currentThingsBoardVersion}} server](/docs/edge/upgrade-server/) to install **3.3beta** version of {{currentThingsBoardVersion}} server that supports edge functionality before the official **3.3** {{currentThingsBoardVersion}} server release.
 
-Additionally, you will need to have ThingsBoard **Edge** up and running and connected to the ThingsBoard **CE** server.
+{% include templates/edge/tb-32-beta-note.md %}
 
-To provision ThingsBoard **Edge** on ThingsBoard **CE** server please visit this guide [Provision ThingsBoard Edge on ThingsBoard CE server](/docs/edge/provision-edge-on-ce-server/).
-
-Once ThingsBoard **Edge** provisioned on ThingsBoard **CE** server please follow [Installation Guide](/docs/edge/install/installation-options/) - this guide will help you to install ThingsBoard **Edge** and connect it to ThingsBoard **CE** server.
-
-ThingsBoard **CE** server UI will be available using the URL: [http://localhost:8080](http://localhost:8080).
-You may use username **tenant@thingsboard.org** and password **tenant**.
-
-ThingsBoard **Edge** UI will be available using the URL: [http://localhost:18080](http://localhost:18080).
-You may use the same username **tenant@thingsboard.org** and password **tenant** to log in.
+{% include templates/edge/tb-32-pe-beta-note.md %}

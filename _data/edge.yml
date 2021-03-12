@@ -6,13 +6,17 @@ toc:
 - title: What is ThingsBoard Edge?
   path: /docs/edge/what-is-edge/
 - title: Getting Started
-  path: /docs/edge/getting-started/
+  section:
+    - title: Professional Edition
+      path: /docs/edge/getting-started/getting-started-pe
+    - title: Community Edition
+      path: /docs/edge/getting-started/getting-started-ce
 - title: Architecture
   path: /docs/edge/edge-architecture/
-- title: Upgrade instructions for ThingsBoard CE server
-  path: /docs/edge/upgrade-ce-server/
-- title: Provision ThingsBoard Edge on ThingsBoard CE server
-  path: /docs/edge/provision-edge-on-ce-server/
+- title: Upgrade instructions for ThingsBoard PE/CE server
+  path: /docs/edge/upgrade-server/
+- title: Provision ThingsBoard Edge on ThingsBoard PE/CE server
+  path: /docs/edge/provision-edge-on-server/
 - title: Installation guides
   section:
     - title: Installation options
@@ -71,11 +75,19 @@ toc:
       path: /docs/edge/features/cloud-events/
 - title: Use Cases
   section:
-    -  title: Overview
-       path: /docs/edge/use-cases/overview
-    -  title: Manage alarms and RPC requests on edge devices
-       path: /docs/edge/use-cases/manage-alarms-rpc-requests/
-    -  title: Data filtering and traffic reduce
-       path: /docs/edge/use-cases/data-filtering-traffic-reduce/
+    - title: Overview
+      path: /docs/edge/use-cases/overview
+    - title: Manage alarms and RPC requests on edge devices
+      section:
+        - title: Professional Edition
+          path: /docs/edge/use-cases/manage-alarms-rpc-requests-pe/
+        - title: Community Edition
+          path: /docs/edge/use-cases/manage-alarms-rpc-requests-ce/
+    - title: Data filtering and traffic reduce
+      section:
+        - title: Professional Edition
+          path: /docs/edge/use-cases/data-filtering-traffic-reduce-pe/
+        - title: Community Edition
+          path: /docs/edge/use-cases/data-filtering-traffic-reduce-ce/
 - title: ThingsBoard Edge Roadmap
   path: /docs/edge/roadmap/
