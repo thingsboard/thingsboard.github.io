@@ -310,7 +310,7 @@ header
 
       .sub-menu
         width: max-content
-        padding: 40px
+        padding: 40px 70px 40px 40px
         display: none
         position: absolute
         background-color: #fff
@@ -321,19 +321,26 @@ header
 
         .sub-groups
           display: flex
-          .group .group-name
-            height: 62px
-            text-transform: uppercase
-            font-weight: 600
-            color: #899AAB
-            font-size: 15px
-            line-height: normal
+          .group
+            padding-right: 70px
+            &:last-child
+                padding-right: 0
+            .group-name
+              height: 62px
+              text-transform: uppercase
+              font-weight: 600
+              color: #899AAB
+              font-size: 15px
+              line-height: normal
 
         a
           background-color: #fafafa
           text-align: left
           display: flex
-          margin: 0 40px 22px 0
+          margin-bottom: 22px
+
+          &:last-child
+            margin-bottom: 0
 
           .sub-text
             padding-top: 4px
