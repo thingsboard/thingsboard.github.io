@@ -17,36 +17,14 @@ description: Upgrade instructions for ThingsBoard Professional/Community Edition
 
 ### Ubuntu/CentOS {#ubuntucentos-33beta}
 
-**NOTE**: These upgrade steps are applicable for ThingsBoard version 3.2. In order to upgrade to 3.3beta you need to [**upgrade to 3.2 first**](/docs/user-guide/install/upgrade-instructions/#ubuntucentos-32).
+**NOTE**: These upgrade steps are applicable for ThingsBoard version 3.2.2. In order to upgrade to 3.3beta you need to [**upgrade to 3.2.2 first**](/docs/user-guide/install/upgrade-instructions/#ubuntucentos-322).
 
-[//]: <> ( deaflynx - fix this )
-#### ThingsBoard package download TEST
+#### ThingsBoard package download & service upgrade
 
 {% capture packagedownloadtogglespec %}
-Professional%,%professional%,%templates/edge/upgrade-server/package-download-pe.md%br%
-Community%,%community%,%templates/edge/upgrade-server/package-download-ce.md{% endcapture %}
+ThingsBoard Professional Edition%,%professional%,%templates/edge/upgrade-server/package-download-pe.md%br%
+ThingsBoard Community Edition%,%community%,%templates/edge/upgrade-server/package-download-ce.md{% endcapture %}
 {% include content-toggle.html content-toggle-id="edgeThingsBoardPackageDownload" toggle-spec=packagedownloadtogglespec %}
-
-<!--
-#### ThingsBoard package download
-
-{% capture tabspec %}thingsboard-download-3-3-beta
-thingsboard-download-3-3-beta-ubuntu-pe,Ubuntu - PE,shell,resources/3.3beta/thingsboard-ubuntu-download.sh,/docs/thingsboard-edge/resources/3.3beta/thingsboard-ubuntu-download.sh
-thingsboard-download-3-3-beta-centos-pe,CentOS - PE,shell,resources/3.3beta/thingsboard-centos-download.sh,/docs/thingsboard-edge/resources/3.3beta/thingsboard-centos-download.sh
-thingsboard-download-3-3-beta-ubuntu-ce,Ubuntu - CE,shell,resources/3.3beta/thingsboard-ubuntu-download.sh,/docs/thingsboard-edge/resources/3.3beta/thingsboard-ubuntu-download.sh
-thingsboard-download-3-3-beta-centos-ce,CentOS - CE,shell,resources/3.3beta/thingsboard-centos-download.sh,/docs/thingsboard-edge/resources/3.3beta/thingsboard-centos-download.sh{% endcapture %}  
-{% include tabs.html %}
- -->
-
-[//]: <> ( deaflynx - fix this )
-#### ThingsBoard service upgrade
-
-{% capture tabspec %}thingsboard-installation-3-3-beta
-thingsboard-installation-3-3-beta-ubuntu-pe,Ubuntu - PE,shell,resources/3.3beta/thingsboard-ubuntu-installation.sh,/docs/thingsboard-edge/resources/3.3beta/thingsboard-ubuntu-installation.sh
-thingsboard-installation-3-3-beta-centos-pe,CentOS - PE,shell,resources/3.3beta/thingsboard-centos-installation.sh,/docs/thingsboard-edge/resources/3.3beta/thingsboard-centos-installation.sh
-thingsboard-installation-3-3-beta-ubuntu-ce,Ubuntu - CE,shell,resources/3.3beta/thingsboard-ubuntu-installation.sh,/docs/thingsboard-edge/resources/3.3beta/thingsboard-ubuntu-installation.sh
-thingsboard-installation-3-3-beta-centos-ce,CentOS - CE,shell,resources/3.3beta/thingsboard-centos-installation.sh,/docs/thingsboard-edge/resources/3.3beta/thingsboard-centos-installation.sh{% endcapture %} 
-{% include tabs.html %}
 
 **NOTE:** Package installer will ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.  
 
@@ -105,7 +83,7 @@ $ sudo service thingsboard start
 
 ### Windows {#windows-33beta}
 
-**NOTE**: These upgrade steps are applicable for ThingsBoard version 3.2. In order to upgrade to 3.3beta you need to [**upgrade to 3.2 first**](/docs/user-guide/install/upgrade-instructions/#windows-32).
+**NOTE**: These upgrade steps are applicable for ThingsBoard version 3.2.2. In order to upgrade to 3.3beta you need to [**upgrade to 3.2.2 first**](/docs/user-guide/install/upgrade-instructions/#windows-322).
 
 #### ThingsBoard package download
 

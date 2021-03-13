@@ -1,6 +1,6 @@
 ---
 layout: docwithnav
-title: ThingsBoard Edge. Getting started with ThingsBoard Community Edition
+title: Getting started with ThingsBoard Edge and ThingsBoard CE
 description: Getting started with ThingsBoard Edge - ThingsBoard Community Edition 
 
 step1:
@@ -184,7 +184,7 @@ mqttWindows:
 
 ## Prerequisites
 
-{% include templates/edge/getting-started/prerequisites.md %}
+{% include templates/edge/getting-started/prerequisites-ce.md %}
 
 ## Step 1. Provision Device
 

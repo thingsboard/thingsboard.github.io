@@ -52,12 +52,11 @@ As well ThingsBoard Edge supports major **ThingsBoard PE** features:
  * [**Scheduler**](/docs/user-guide/scheduler/) - allows you to schedule various types of events with flexible schedule configuration.
  * [**Entity Groups**](/docs/user-guide/groups/) - allows you to organize entities into groups, assign roles to specific user group, grant specific permissions to specific user groups over specific device groups.
 
-{% include templates/edge/tb-32-pe-beta-note.md %}
-
 #### Project Roadmap
 
 <p><a href="/docs/edge/roadmap" class="button">ThingsBoard Edge Roadmap</a></p>
 
 #### Next Steps
 
-<p><a href="/docs/edge/getting-started" class="button">Getting Started Guide</a></p>
+<p><a href="/docs/edge/getting-started/getting-started-ce" class="button">Getting Started Guide (CE)</a></p>
+<p><a href="/docs/edge/getting-started/getting-started-pe" class="button">Getting Started Guide (PE)</a></p>

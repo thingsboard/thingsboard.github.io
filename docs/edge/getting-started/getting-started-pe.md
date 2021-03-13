@@ -1,6 +1,6 @@
 ---
 layout: docwithnav
-title: ThingsBoard Edge. Getting started with ThingsBoard Professional Edition
+title: Getting started with ThingsBoard Edge and ThingsBoard PE
 description: Getting started with ThingsBoard Edge - ThingsBoard Professional Edition 
 
 step1:
@@ -200,7 +200,7 @@ mqttWindows:
 
 ## Prerequisites
 
-{% include templates/edge/getting-started/prerequisites.md %}
+{% include templates/edge/getting-started/prerequisites-pe.md %}
 
 ## Step 1. Provision Device
 

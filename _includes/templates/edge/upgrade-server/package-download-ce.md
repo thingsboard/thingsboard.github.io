@@ -1,10 +1,3 @@
-<!--
-{% capture tabspec %}thingsboard-download-3-3-beta
-thingsboard-ubuntu-download,UbuntuCE,shell,resources/3.3beta/thingsboard-ubuntu-download.sh,/docs/thingsboard-edge/resources/3.3beta/thingsboard-ubuntu-download.sh
-thingsboard-centos-download,CentOSCE,shell,resources/3.3beta/thingsboard-centos-download.sh,/docs/thingsboard-edge/resources/3.3beta/thingsboard-centos-download.sh{% endcapture %}
-{% include tabs.html %}
--->
-
 Ubuntu
 ```bash
 wget https://dist.thingsboard.io/docs/thingsboard-edge/resources/3.3beta/thingsboard-ubuntu-download.sh
@@ -16,3 +9,8 @@ CentOS
 wget https://dist.thingsboard.io/docs/thingsboard-edge/resources/3.3beta/thingsboard-ubuntu-download.sh
 ```
 {: .copy-code}
+
+{% capture tabspec %}thingsboard-installation-3-3-ce-beta
+thingsboard-installation-3-3-beta-ubuntu-ce,Ubuntu,shell,resources/3.3beta/thingsboard-ubuntu-installation.sh,/docs/thingsboard-edge/resources/3.3beta/thingsboard-ubuntu-installation.sh
+thingsboard-installation-3-3-beta-centos-ce,CentOS,shell,resources/3.3beta/thingsboard-centos-installation.sh,/docs/thingsboard-edge/resources/3.3beta/thingsboard-centos-installation.sh{% endcapture %} 
+{% include tabs.html %}
