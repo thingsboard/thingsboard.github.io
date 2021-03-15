@@ -16,6 +16,7 @@
     <link rel="canonical" href="https://thingsboard.io{{page.url}}"/>
     {% endif %}
     <link rel="shortcut icon" type="image/png" href="/images/favicon.png">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -329,7 +330,7 @@
             let services = document.getElementsByClassName("services")[0];
             let developers = document.getElementsByClassName("developers")[0];
             let cases = document.getElementsByClassName("cases")[0];
-            let customers = document.getElementsByClassName("customers-partners")[0];
+            let customers = document.getElementsByClassName("customers")[0];
             let about = document.getElementsByClassName("about")[0];
             let sub = document.getElementsByClassName("sub-menu");
 
@@ -380,21 +381,21 @@
                     <div class="sub-groups">
                         <div class="group">
                             <p class="group-name">IoT platforms</p>
-                            <a href="/products/paas/">
+                            <a class="cloud-lnk" href="/products/paas/">
                                 <img src="/images/thingsboard-c-icon.svg">
                                 <div class="sub-text">
                                     <h1>Cloud</h1>
                                     <p>Platform as a service</p>
                                 </div>
                             </a>
-                            <a href="/products/thingsboard-pe/">
+                            <a class="prof-lnk" href="/products/thingsboard-pe/">
                                 <img src="/images/thingsboard-p-icon.svg">
                                 <div class="sub-text">
                                     <h1>Professional Edition</h1>
                                     <p>Advanced IoT platform</p>
                                 </div>
                             </a>
-                            <a href="/docs/getting-started-guides/what-is-thingsboard/">
+                            <a class="com-lnk" href="/docs/getting-started-guides/what-is-thingsboard/">
                                 <img src="/images/thingsboard-cm-icon.svg">
                                 <div class="sub-text">
                                     <h1>Community Edition</h1>
@@ -404,21 +405,21 @@
                         </div>
                         <div class="group">
                             <p class="group-name">Product ecosystem</p>
-                            <a href="/docs/iot-gateway/what-is-iot-gateway/">
+                            <a class="gateway-lnk" href="/docs/iot-gateway/what-is-iot-gateway/">
                                 <img src="/images/gateway-icon.svg">
                                 <div class="sub-text">
                                     <h1>IoT Gateway</h1>
                                     <p>Connect legacy protocols</p>
                                 </div>
                             </a>
-                            <a href="/products/license-server/">
+                            <a class="license-lnk" href="/products/license-server/">
                                 <img src="/images/license-icon.svg">
                                 <div class="sub-text">
                                     <h1>License Server</h1>
                                     <p>Billing solution</p>
                                 </div>
                             </a>
-                            <a href="/products/trendz/">
+                            <a class="trendz-lnk" href="/products/trendz/">
                                 <img src="/images/trendz-icon.svg">
                                 <div class="sub-text">
                                     <h1>Trendz Analytics</h1>
@@ -432,49 +433,192 @@
             <li class="nav-services">
                 <a onclick="listburg('2')">Services</a>
                 <ul class="sub-menu services">
-                    <a href="/docs/services/support/">Support</a>
-                    <a href="/docs/services/trainings/">Trainings</a>
-                    <a href="/docs/services/consulting/">Professional services</a>
+                    <a href="/docs/services/support/">
+                        <img src="/images/support-icon.svg">
+                        <div class="sub-text">
+                            <h1>Support</h1>
+                            <p>Support packages</p>
+                        </div>
+                    </a>
+                    <a href="/docs/services/trainings/">
+                        <img src="/images/train-icon.svg">
+                        <div class="sub-text">
+                            <h1>Trainings</h1>
+                            <p>ThingsBoard education courses</p>
+                        </div>
+                    </a>
+                    <a href="/docs/services/consulting/">
+                        <img src="/images/prof-icon.svg">
+                        <div class="sub-text">
+                            <h1>Professional services</h1>
+                            <p>Development of solutions by the ThingsBoard team</p>
+                        </div>
+                    </a>
                 </ul>
             </li>
             <li class="nav-developers">
                 <a onclick="listburg('3')">Developers</a>
                 <ul class="sub-menu developers">
-                    <a href="/docs/">Documentation</a>
-                    <a href="/docs/guides/">Guides</a>
-                    <a href="/docs/getting-started/">Get Started</a>
+                    <a href="/docs/">
+                        <img src="/images/doc-icon.svg">
+                        <div class="sub-text">
+                            <h1>Documentation</h1>
+                            <p>Detailed information about the ThingsBoard IoT platform</p>
+                        </div>
+                    </a>
+                    <a href="/docs/guides/">
+                        <img src="/images/guides-icon.svg">
+                        <div class="sub-text">
+                            <h1>Guides</h1>
+                            <p>Step-by-step instructions</p>
+                        </div>
+                    </a>
+                    <a href="/docs/getting-started/">
+                        <img src="/images/start-icon.svg">
+                        <div class="sub-text">
+                            <h1>Get Started</h1>
+                            <p>Tutorial of the most popular features</p>
+                        </div>
+                    </a>
                 </ul>
             </li>
             <li class="nav-cases">
                 <a onclick="listburg('4')">Use Cases</a>
                 <ul class="sub-menu cases">
-                    <a href="/smart-metering/">Smart Metering</a>
-                    <a href="/smart-energy/">Smart Energy</a>
-                    <a href="/smart-farming/">Smart Farming</a>
-                    <a href="/fleet-tracking/">Fleet Tracking</a>
+                    <a href="/smart-metering/">
+                        <img src="/images/case-met-icon.svg">
+                        <div class="sub-text">
+                            <h1>Smart Metering</h1>
+                            <p>Collection, analysis and visualization of data from meters</p>
+                        </div>
+                    </a>
+                    <a href="/smart-energy/">
+                        <img src="/images/case-eng-icon.svg">
+                        <div class="sub-text">
+                            <h1>Smart Energy</h1>
+                            <p>Energy monitoring and efficiency analysis</p>
+                        </div>
+                    </a>
+                    <a href="/smart-farming/">
+                        <img src="/images/case-fam-icon.svg">
+                        <div class="sub-text">
+                            <h1>Smart Farming</h1>
+                            <p>Monitoring of indoor conditions and plant growth characteristics</p>
+                        </div>
+                    </a>
+                    <a href="/fleet-tracking/">
+                        <img src="/images/case-trk-icon.svg">
+                        <div class="sub-text">
+                            <h1>Fleet Tracking</h1>
+                            <p>Fleet tracking and fleet management</p>
+                        </div>
+                    </a>
                 </ul>
             </li>
             <li class="nav-customers">
                 <a onclick="listburg('5')">Customers</a>
                 <ul class="sub-menu customers">
-                    <a href="/industries/smart-energy/">Smart Energy</a>
-                    <a href="/industries/smart-city/">Smart City</a>
-                    <a href="/industries/agriculture/">Agriculture</a>
-                    <a href="/industries/telecom/">Telecom</a>
-                    <a href="/industries/smart-buildings/">Smart Buildings</a>
-                    <a href="/industries/industry40/">Industry 4.0</a>
-                    <a href="/partners/hardware/">Hardware partners</a>
-                    <a href="/partners/distributors/">Distributors</a>
+                    <div class="sub-groups">
+                        <div class="group">
+                            <p class="group-name">Customers</p>
+                            <a class="small-link" href="/industries/smart-energy/">
+                                <img src="/images/se-s-icon.svg">
+                                <div class="sub-text">
+                                    <h1>Smart Energy</h1>
+                                </div>
+                            </a>
+                            <a class="small-link" href="/industries/agriculture/">
+                                <img src="/images/agr-s-icon.svg">
+                                <div class="sub-text">
+                                    <h1>Agriculture</h1>
+                                </div>
+                            </a>
+                            <a class="small-link" href="/industries/smart-buildings/">
+                                <img src="/images/sb-s-icon.svg">
+                                <div class="sub-text">
+                                    <h1>Smart Buildings</h1>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="group">
+                            <p class="group-name"></p>
+                            <a class="small-link" href="/industries/smart-city/">
+                                <img src="/images/sc-s-icon.svg">
+                                <div class="sub-text">
+                                    <h1>Smart City</h1>
+                                </div>
+                            </a>
+                            <a class="small-link" href="/industries/telecom/">
+                                <img src="/images/tel-s-icon.svg">
+                                <div class="sub-text">
+                                    <h1>Telecom</h1>
+                                </div>
+                            </a>
+                            <a class="small-link" href="/industries/industry40/">
+                                <img src="/images/in-s-icon.svg">
+                                <div class="sub-text">
+                                    <h1>Industry 4.0</h1>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="bottom-group">
+                        <a class="small-link" href="/partners/hardware/">
+                            <img src="/images/hard-s-icon.svg">
+                            <div class="sub-text">
+                                <h1>Hardware partners</h1>
+                            </div>
+                        </a>
+                        <a class="small-link" href="/partners/distributors/">
+                            <img src="/images/dis-s-icon.svg">
+                            <div class="sub-text">
+                                <h1>Distributors</h1>
+                            </div>
+                        </a>
+                    </div>
                 </ul>
             </li>
             <li class="nav-company">
                 <a onclick="listburg('6')">Company</a>
                 <ul class="sub-menu about">
-                    <a href="/company/">Our Company</a>
-                    <a href="/docs/contact-us/">Contact Us</a>
-                    <a href="/mediakit/">Media Kit</a>
-                    <a href="https://blog.thingsboard.io/">Blog</a>
-                    <a href="/careers/">Careers</a>
+                    <a class="small-link" href="/company/">
+                        <img src="/images/about-s-icon.svg">
+                        <div class="sub-text">
+                            <h1>Our Company</h1>
+                        </div>
+                    </a>
+                    <div class="bottom-group">
+                        <div class="sub-groups">
+                            <div class="group">
+                                <a class="small-link" href="/docs/contact-us/">
+                                    <img src="/images/contact-s-icon.svg">
+                                    <div class="sub-text">
+                                        <h1>Contact Us</h1>
+                                    </div>
+                                </a>
+                                <a class="small-link" href="/careers/">
+                                    <img src="/images/careers-s-icon.svg">
+                                    <div class="sub-text">
+                                        <h1>Careers</h1>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="group">
+                                <a class="small-link" href="/mediakit/">
+                                    <img src="/images/media-s-icon.svg">
+                                    <div class="sub-text">
+                                        <h1>Media Kit</h1>
+                                    </div>
+                                </a>
+                                <a class="small-link" href="https://blog.thingsboard.io/">
+                                    <img src="/images/blog-s-icon.svg">
+                                    <div class="sub-text">
+                                        <h1>Blog</h1>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </ul>
             </li>
             <div class="indicator"><div class="head-arrow"></div><div class="line"></div><div class="sub-background"></div></div>

@@ -328,22 +328,50 @@ header
             .group-name
               height: 62px
               text-transform: uppercase
-              font-weight: 600
+              font-weight: 500
               color: #899AAB
               font-size: 15px
               line-height: normal
 
+        .bottom-group
+          background-color: #F9FBFF
+          border-radius: 4px
+          width: calc(100% + 94px)
+          margin: 32px -32px -32px
+          padding: 32px
+
         a
-          background-color: #fafafa
           text-align: left
           display: flex
           margin-bottom: 22px
+
+          &:hover
+            .sub-text
+                h1
+                    color: #2A7DEC
+                p
+                    color: #212529
+
+          &.prof-lnk:hover, &.license-lnk:hover
+              .sub-text
+                  h1
+                    color: #1F8B4D
+
+          &.com-lnk:hover .sub-text h1
+            color: #305680
+
+          &.gateway-lnk:hover .sub-text h1
+            color: #EB5757
+
+          &.trendz-lnk:hover .sub-text h1
+            color: #2696F3
 
           &:last-child
             margin-bottom: 0
 
           .sub-text
             padding-top: 4px
+            max-width: 300px
             h1
               color: #212529
               font-size: 16px
@@ -357,6 +385,16 @@ header
           img
             margin-right: 12px
             height: fit-content
+
+          &.small-link
+            margin-bottom: 15px
+            .sub-text
+                padding: 0
+                h1
+                    font-weight: 500
+            &:last-child
+                margin-bottom: 0
+
 
   .n-button
     font-size: 18px
@@ -2026,11 +2064,52 @@ iframe
     margin: unset
     width: 100%
 
-    .head-menu ul li
-      padding: 10px
+    .head-menu
+      ul
+        li
+          padding: 10px 10px 14px
 
-      div a
-        font-size: 17px
+          &.nav-products
+            width: 95px
+            &:hover~.indicator
+              width: 95px
+              left: 0
+
+          &.nav-services
+            width: 91px
+            &:hover~.indicator
+              width: 91px
+              left: 95px
+
+          &.nav-developers
+            width: 115px
+            &:hover~.indicator
+              width: 115px
+              left: 186px
+
+          &.nav-cases
+            width: 109px
+            &:hover~.indicator
+              width: 109px
+              left: 301px
+
+          &.nav-customers
+            width: 114px
+            &:hover~.indicator
+              width: 114px
+              left: 410px
+
+          &.nav-company
+            width: 105px
+            &:hover~.indicator
+              width: 105px
+              left: 524px
+
+          a
+            font-size: 17px
+
+        .indicator
+          padding: 0 10px
 
     div .n-button
       margin-left: 8px
@@ -2126,9 +2205,13 @@ iframe
         display: unset
 
         li
-          a:focus
-            .sub-menu
-              display: block
+          height: unset
+          width: 100%!important
+          a
+            text-align: left
+            &:focus
+              .sub-menu
+                display: block
           display: block
 
           .sub-menu
@@ -2141,23 +2224,27 @@ iframe
               display: flex
               width: 100%
               flex-wrap: wrap
-              &.customers-partners
-                display: block
-                .partners-inside, .customers
-                  display: flex
-                  width: 100%
-                  .cus-column-1, .cus-column-2
-                    margin: 0
 
-            li
-              display: flex
+            .bottom-group
+              margin: 0 -32px 0
+              padding: 10px 32px 0
+
+            .sub-groups
+              flex-wrap: wrap
+              .group .group-name
+                display: none
+
+            a:last-child
+              margin-bottom: 22px
+              &.small-link
+                margin-bottom: 15px
+
+        .indicator
+          display: none
 
     .n-button
       display: none
       margin: 40px 0 40px 8px
-
-    .head-arrow, .head-underline
-      display: none !important
 
 
 @media screen and (min-width: 1700px)
