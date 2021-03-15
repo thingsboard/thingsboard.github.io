@@ -749,32 +749,37 @@ header
 // FOOTER
 footer
   width: 100%
-  background-image: url(/images/texture.png)
-  background-color: $dark-grey
+  background-color: #0F161D
 
   main
     padding: 20px 0
     max-width: 800px
 
-  nav
+  .deeper
     display: flex
-    align-items: center
-    align-content: center
-    justify-content: center
-    flex-direction: column
+    justify-content: space-between
+    .logo
+      background-image: url(/images/thingsboard_logo_b.svg)
+      
+    nav
+      display: flex
+      align-items: right
+      align-content: right
+      justify-content: right
+      flex-direction: column
+      margin-bottom: 80px
 
-    a
-      text-align: center
-      display: inline-block
-      margin: 10px 0
-      font-size: 24px
-      font-weight: 300
-      color: white
-      text-decoration: none
-      transition: 300ms
-
-      &:hover
-        color: $light-blue
+      a
+        text-align: right
+        display: inline-block
+        margin-left: 28px
+        font-size: 18px
+        font-weight: normal
+        color: white
+        text-decoration: none
+        transition: 300ms
+        &:hover
+          color: white
 
   .newsletterSubsContainer
     .subscribe-newsletter-button
@@ -892,25 +897,38 @@ footer
 
       #subsEmail
         margin-bottom: 10px
-
-  .social
-    margin: 20px 0
-    display: inline-block
-
-    div
-      text-align: center
-      margin-bottom: 20px
-
-    div:last-child
-      margin-bottom: 30px
-
-    span
-      display: block
-      margin-bottom: 8px
-
-    input
-      text-align: center
-
+  .deepmost
+    display: flex
+    justify-content: space-between
+    .copyright
+        color: #A598AB
+        font-size: 16px
+        weight: normal
+    .social
+      width: fit-content
+      display: flex
+      text-align: right
+      a
+        width: 20px
+        height: 20px
+        display: inline-block
+        margin-left: 16px
+        &.github
+          background-image: url(/images/social-git-icon.svg)
+        &.gitter
+          background-image: url(/images/social-gitter-icon.svg)
+        &.youtube
+          background-image: url(/images/social-youtube-icon.svg)
+        &.stack-overflow
+          background-image: url(/images/social-stack-icon.svg)
+        &.mailing-list
+          background-image: url(/images/social-google-icon.svg)
+        &.facebook
+          background-image: url(/images/social-face-icon.svg)
+        &.twitter
+          background-image: url(/images/social-twitt-icon.svg)
+        &:hover
+          filter: brightness(200%)
 
 #search, #wishField, #subsEmail
   background-color: transparent
@@ -936,73 +954,6 @@ footer
   &:focus
     background-color: $light-grey
     color: $dark-grey
-
-.social a
-  display: inline-block
-  background-image: url(/images/social_sprite.png)
-  background-repeat: no-repeat
-  background-size: auto
-  width: 50px
-  height: 50px
-  border-radius: 5px
-  margin-right: 10px
-
-  &:hover
-    background-color: #fff
-
-  span
-    position: absolute
-    display: block
-    height: 0
-    overflow: hidden
-
-a.twitter
-  background-position: 0 0
-
-  &:hover
-    background-position: 0 100%
-
-a.stack-overflow
-  background-position: -50px 0
-
-  &:hover
-    background-position: -50px 100%
-
-a.gitter
-  background-position: -100px 0
-
-  &:hover
-    background-position: -100px 100%
-
-a.github
-  background-position: -150px 0
-
-  &:hover
-    background-position: -150px 100%
-
-a.mailing-list
-  background-position: -200px 0
-
-  &:hover
-    background-position: -200px 100%
-
-a.calendar
-  background-position: -250px 0
-
-  &:hover
-    background-position: -250px 100%
-
-a.youtube
-  background-position: -300px 0
-
-  &:hover
-    background-position: -300px 100%
-
-a.facebook
-  background-position: -350px 0
-
-  &:hover
-    background-position: -350px 100%
 
 //#viewDocs, #blog, #useCases
 	display: none
@@ -2457,74 +2408,6 @@ $ocean-nodes-h3-margin-bottom: 30px
   padding: 0px !important
   border: 1px solid #ccc !important
   overflow-x: auto
-
-// Talk to us
-#talkToUs
-  h3, h4
-    text-align: center
-
-  h3
-    margin-bottom: 15px
-
-  h4
-    line-height: normal
-    margin-bottom: 50px
-
-    br
-      display: none
-
-  #bigSocial, #gettingHelp
-    overflow: hidden
-
-    div
-      width: 100%
-      margin-top: 20px
-      float: left
-      padding: 30px
-      padding-top: 110px
-      background-position: center top
-      background-size: auto
-      background-repeat: no-repeat
-
-    div + div
-      margin-left: 0
-
-    a
-      display: inline-block
-      color: $blue
-      font-size: 24px
-      font-weight: 400
-      text-decoration: none
-      margin-bottom: 15px
-
-    a, p
-      text-align: center
-      width: 100%
-
-  #bigSocial
-
-    div:nth-child(1)
-      background-image: url(/images/twitter_icon.png)
-
-    div:nth-child(2)
-      background-image: url(/images/github_icon.png)
-
-    div:nth-child(3)
-      background-image: url(/images/gitter_icon.png)
-
-    div:nth-child(4)
-      background-image: url(/images/stackoverflow_icon.png)
-
-  #gettingHelp
-
-    div:nth-child(1)
-      background-image: url(/images/gitter_icon.png)
-
-    div:nth-child(2)
-      background-image: url(/images/google_groups_icon.png)
-
-    div:nth-child(3)
-      background-image: url(/images/stackoverflow_icon.png)
 
 // jSocials
 
