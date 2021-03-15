@@ -10,7 +10,7 @@ description: Installing ThingsBoard Edge on Windows
 This guide describes how to install ThingsBoard Edge on Windows machine.
 Instructions below are provided for Windows 10/8.1/8/7 32-bit/64-bit.
 
-{% include templates/edge/hardware-requirements.md %}
+{% include templates/edge/install/hardware-requirements.md %}
 
 ### Step 1. Install Java 8 (OpenJDK) 
 
@@ -18,14 +18,14 @@ Instructions below are provided for Windows 10/8.1/8/7 32-bit/64-bit.
 
 ### Step 2. Configure PostgreSQL
 
-{% include templates/edge/windows-db-postgresql.md %}
+{% include templates/edge/install/windows-db-postgresql.md %}
 
 ### Step 3. ThingsBoard Edge service installation
 
 Download installation package.
 
 ```bash
-wget https://github.com/thingsboard/thingsboard/features/tb-edge-windows-1.0.0beta.zip
+wget https://github.com/thingsboard/thingsboard/features/tb-edge-windows-3.3beta.zip
 ```
 {: .copy-code}
 
@@ -33,19 +33,19 @@ wget https://github.com/thingsboard/thingsboard/features/tb-edge-windows-1.0.0be
 
 ### Step 4. Configure ThingsBoard Edge
 
-{% include templates/edge/windows-configure-edge.md %}
+{% include templates/edge/install/windows-configure-edge.md %}
 
 ### Step 5. Run installation script
 
-{% include templates/edge/run-edge-install-windows.md %} 
+{% include templates/edge/install/run-edge-install-windows.md %} 
 
 ### Step 6. Start ThingsBoard Edge service
 
-{% include templates/edge/windows-start-service.md %}
+{% include templates/edge/install/windows-start-service.md %}
 
 ### Step 7. Open ThingsBoard Edge UI
 
-{% include templates/edge/open-edge-ui.md %} 
+{% include templates/edge/install/open-edge-ui.md %} 
 
 ### Troubleshootings
 
