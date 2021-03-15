@@ -219,6 +219,24 @@ states:
     3:
         image: /images/user-guide/dashboards/settings/2states-exist.png
 
+entity-name:
+    0:
+        image: /images/user-guide/dashboards/settings/entity-name.png
+    1:
+        image: /images/user-guide/dashboards/settings/entity-name-1.png
+    2:
+        image: /images/user-guide/dashboards/settings/entity-name-2.png
+    3:
+        image: /images/user-guide/dashboards/settings/entity-name-3.png
+    4:
+        image: /images/user-guide/dashboards/settings/entity-name-4.png
+    5:
+        image: /images/user-guide/dashboards/settings/entity-name-5.png
+    6:
+        image: /images/user-guide/dashboards/settings/entity-name-6.png
+    7:
+        image: /images/user-guide/dashboards/settings/entity-name-7.png
+
 action-state:
     0:
         image: /images/user-guide/dashboards/settings/enter-edit-widget.png
@@ -711,6 +729,9 @@ As we have chosen the "On row click" action, we need to click on the row of our 
 
 {% include images-gallery.html imageCollection="action-state" %}
 
+For the state to be named after the entity, use ${entityName} as the name of the state. Thus during the action, you will be transitioned to a state that is called the same as the entity that took part in the action.
+
+{% include images-gallery.html imageCollection="entity-name" %}
 
 ## Export
 
