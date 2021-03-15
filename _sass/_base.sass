@@ -143,13 +143,14 @@ p
           &:hover
             color: #fff
 
-        .sub-menu
-          li
-            a
-              color: #212529
+        .centered-sub
+          .sub-menu
+            li
+              a
+                color: #212529
 
-            &:hover a
-              color: #2A7DEC
+              &:hover a
+                color: #2A7DEC
 
     .n-button
       padding: 11px 20px
@@ -173,7 +174,7 @@ p
 header
   @media screen and (min-width: 1280px)
     .head-menu ul li:hover
-      .sub-menu
+      .centered-sub .sub-menu
         display: block
 
   position: fixed
@@ -308,92 +309,96 @@ header
         &:hover
           color: #2A7DEC
 
-      .sub-menu
-        width: max-content
-        padding: 40px 70px 40px 40px
-        display: none
-        position: absolute
-        background-color: #fff
-        top: 84px
-        z-index: 1
-        border-radius: 4px
-        box-shadow: 0 30px 60px -30px rgba(0, 0, 0, .3), 0 50px 100px -20px rgba(0, 0, 0, 0.25)
-
-        .sub-groups
-          display: flex
-          .group
-            padding-right: 70px
-            &:last-child
-                padding-right: 0
-            .group-name
-              height: 62px
-              text-transform: uppercase
-              font-weight: 500
-              color: #899AAB
-              font-size: 15px
-              line-height: normal
-
-        .bottom-group
-          background-color: #F9FBFF
+      .centered-sub
+        margin-left: -50%
+        display: flex
+        justify-content: center
+        .sub-menu
+          width: max-content
+          padding: 40px 70px 40px 40px
+          display: none
+          position: absolute
+          background-color: #fff
+          top: 84px
+          z-index: 1
           border-radius: 4px
-          width: calc(100% + 94px)
-          margin: 32px -32px -32px
-          padding: 32px
+          box-shadow: 0 30px 60px -30px rgba(0, 0, 0, .3), 0 50px 100px -20px rgba(0, 0, 0, 0.25)
 
-        a
-          text-align: left
-          display: flex
-          margin-bottom: 22px
+          .sub-groups
+            display: flex
+            .group
+              padding-right: 70px
+              &:last-child
+                  padding-right: 0
+              .group-name
+                height: 62px
+                text-transform: uppercase
+                font-weight: 500
+                color: #899AAB
+                font-size: 15px
+                line-height: normal
 
-          &:hover
-            .sub-text
-                h1
-                    color: #2A7DEC
-                p
-                    color: #212529
+          .bottom-group
+            background-color: #F9FBFF
+            border-radius: 4px
+            width: calc(100% + 94px)
+            margin: 32px -32px -32px
+            padding: 32px
 
-          &.prof-lnk:hover, &.license-lnk:hover
+          a
+            text-align: left
+            display: flex
+            margin-bottom: 22px
+
+            &:hover
               .sub-text
                   h1
-                    color: #1F8B4D
+                      color: #2A7DEC
+                  p
+                      color: #212529
 
-          &.com-lnk:hover .sub-text h1
-            color: #305680
+            &.prof-lnk:hover, &.license-lnk:hover
+                .sub-text
+                    h1
+                      color: #1F8B4D
 
-          &.gateway-lnk:hover .sub-text h1
-            color: #EB5757
+            &.com-lnk:hover .sub-text h1
+              color: #305680
 
-          &.trendz-lnk:hover .sub-text h1
-            color: #2696F3
+            &.gateway-lnk:hover .sub-text h1
+              color: #EB5757
 
-          &:last-child
-            margin-bottom: 0
+            &.trendz-lnk:hover .sub-text h1
+              color: #2696F3
 
-          .sub-text
-            padding-top: 4px
-            max-width: 300px
-            h1
-              color: #212529
-              font-size: 16px
-              font-weight: 600
-              line-height: normal
-            p
-              color: #899AAB
-              font-size: 15px
-              font-weight: normal
-              line-height: normal
-          img
-            margin-right: 12px
-            height: fit-content
-
-          &.small-link
-            margin-bottom: 15px
-            .sub-text
-                padding: 0
-                h1
-                    font-weight: 500
             &:last-child
-                margin-bottom: 0
+              margin-bottom: 0
+
+            .sub-text
+              padding-top: 4px
+              max-width: 300px
+              h1
+                color: #212529
+                font-size: 16px
+                font-weight: 600
+                line-height: normal
+              p
+                color: #899AAB
+                font-size: 15px
+                font-weight: normal
+                line-height: normal
+            img
+              margin-right: 12px
+              height: fit-content
+
+            &.small-link
+              margin-bottom: 15px
+              .sub-text
+                  padding: 0
+                  h1
+                      font-weight: 500
+              &:last-child
+                  margin-bottom: 0
 
 
   .n-button
@@ -580,7 +585,7 @@ header
           a
             color: #212529
 
-          .sub-menu
+          .centered-sub .sub-menu
             li
               a
                 color: #212529
@@ -2137,14 +2142,16 @@ iframe
           a, a:not([href])
             color: #212529
 
-          .sub-menu
-            background-color: unset
-            li
-              a
-                color: #212529
+          .centered-sub
+            margin: 0
+            .sub-menu
+              background-color: unset
+              li
+                a
+                  color: #212529
 
-              &:hover a
-                color: #2A7DEC
+                &:hover a
+                  color: #2A7DEC
 
       .n-button
         padding: 11px 20px
@@ -2210,34 +2217,38 @@ iframe
           a
             text-align: left
             &:focus
-              .sub-menu
-                display: block
+              .centered-sub
+                margin: 0
+                .sub-menu
+                  display: block
           display: block
 
-          .sub-menu
-            position: unset
-            box-shadow: unset
-            padding: 12px 0
-            background-color: unset
+          .centered-sub
+            margin: 0
+            .sub-menu
+              position: unset
+              box-shadow: unset
+              padding: 12px 0
+              background-color: unset
 
-            &.open-sub
-              display: flex
-              width: 100%
-              flex-wrap: wrap
+              &.open-sub
+                display: flex
+                width: 100%
+                flex-wrap: wrap
 
-            .bottom-group
-              margin: 0 -32px 0
-              padding: 10px 32px 0
+              .bottom-group
+                margin: 0 -32px 0
+                padding: 10px 32px 0
 
-            .sub-groups
-              flex-wrap: wrap
-              .group .group-name
-                display: none
+              .sub-groups
+                flex-wrap: wrap
+                .group .group-name
+                  display: none
 
-            a:last-child
-              margin-bottom: 22px
-              &.small-link
-                margin-bottom: 15px
+              a:last-child
+                margin-bottom: 22px
+                &.small-link
+                  margin-bottom: 15px
 
         .indicator
           display: none
