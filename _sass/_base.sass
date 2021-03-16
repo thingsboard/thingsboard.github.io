@@ -131,11 +131,16 @@ p
 
     .head-menu
       ul
-        li:hover a
-          color: #fff
+        li:hover
+          a
+            color: #fff
+            opacity: 0.5
+          div a
+            opacity: 1
 
         a
           color: #fff
+          opacity: 1
 
         a:not([href])
           color: #fff
@@ -174,8 +179,14 @@ p
 header
   @media screen and (min-width: 1280px)
     .head-menu ul li:hover
-      .centered-sub .sub-menu
-        display: block
+      .centered-sub
+        opacity: 1
+        transition-duration: 0.6s
+        z-index: 2
+        .sub-menu
+          top: 84px
+          transition-delay: 0s
+
 
   position: fixed
   top: 0
@@ -284,6 +295,7 @@ header
           left: 589px
 
       li
+        cursor: default
         display: flex
         padding: 10px 14px 14px
         align-items: center
@@ -313,13 +325,16 @@ header
         margin-left: -50%
         display: flex
         justify-content: center
+        opacity: 0
+        transition-duration: 0.6s
         .sub-menu
+          transition-delay: 0.6s
           width: max-content
           padding: 40px 70px 40px 40px
-          display: none
+          display: block
           position: absolute
           background-color: #fff
-          top: 84px
+          top: -500px
           z-index: 1
           border-radius: 4px
           box-shadow: 0 30px 60px -30px rgba(0, 0, 0, .3), 0 50px 100px -20px rgba(0, 0, 0, 0.25)
@@ -400,45 +415,6 @@ header
               &:last-child
                   margin-bottom: 0
 
-
-  .n-button
-    font-size: 18px
-    font-weight: 500
-    text-align: center
-    height: 47px
-    transition-duration: 0.3s
-    text-decoration: none
-    border-radius: 4px
-    margin-left: 10px
-    padding: 11px 20px
-
-    &.try
-      border: solid 1px #EBEBEB
-      padding: 10px 19px
-      color: #212529
-      transition-duration: 0s
-      background-color: unset
-
-      &:hover
-        border: solid 2px #212529
-        padding: 9px 18px
-        text-decoration: none
-
-    &.price
-      background-color: #2A7DEC
-      color: white
-
-      &:hover
-        transition-duration: 0.3s
-        color: #fff
-        background-color: #2A7DEC
-        box-shadow: 0 18px 16px -10px rgba(42, 125, 236, 0.25)
-        text-decoration: none
-
-      &:active
-        background-color: #4F97F8
-        transition-duration: 0s
-
   .logo
     position: relative
     float: left
@@ -453,6 +429,44 @@ header
     background-position: center center
     background-repeat: no-repeat
     filter: unset
+
+.n-button
+  font-size: 18px
+  font-weight: 500
+  text-align: center
+  height: 47px
+  transition-duration: 0.3s
+  text-decoration: none
+  border-radius: 4px
+  margin-left: 10px
+  padding: 11px 20px
+
+  &.try
+    border: solid 1px #EBEBEB
+    padding: 10px 19px
+    color: #212529
+    transition-duration: 0s
+    background-color: unset
+
+    &:hover
+      border: solid 2px #212529
+      padding: 9px 18px
+      text-decoration: none
+
+  &.price
+    background-color: #2A7DEC
+    color: white
+
+    &:hover
+      transition-duration: 0.3s
+      color: #fff
+      background-color: #2A7DEC
+      box-shadow: 0 18px 16px -10px rgba(42, 125, 236, 0.25)
+      text-decoration: none
+
+    &:active
+      background-color: #4F97F8
+      transition-duration: 0s
 
 .burger
   position: absolute
@@ -580,6 +594,7 @@ header
       .head-menu
         ul
           li:hover a
+            opacity: 1
             color: #2A7DEC
 
           a
@@ -620,7 +635,7 @@ header
     background-color: white
     z-index: 9999
 
-.flip-nav, .open-nav
+//.flip-nav, .open-nav
 //header
 //	box-shadow: 0 1px 2px $medium-grey
 
@@ -752,34 +767,43 @@ footer
   background-color: #0F161D
 
   main
-    padding: 20px 0
+    padding: 92px 0 78px
     max-width: 800px
 
-  .deeper
-    display: flex
-    justify-content: space-between
-    .logo
-      background-image: url(/images/thingsboard_logo_b.svg)
-      
-    nav
-      display: flex
-      align-items: right
-      align-content: right
-      justify-content: right
-      flex-direction: column
-      margin-bottom: 80px
+    hr
+      border-top: 2px solid white
 
-      a
-        text-align: right
-        display: inline-block
-        margin-left: 28px
-        font-size: 18px
-        font-weight: normal
-        color: white
-        text-decoration: none
-        transition: 300ms
-        &:hover
+    .deeper
+      margin-bottom: 60px
+      display: flex
+      justify-content: space-between
+      .logo
+        background-image: url(/images/thingsboard_logo_b.svg)
+        filter: invert(100%) sepia(68%) saturate(0%) hue-rotate(350deg) brightness(113%) contrast(101%)
+        width: 180px
+        height: 60px
+        background-size: contain
+        background-position: center center
+        background-repeat: no-repeat
+
+      nav
+        display: flex
+        align-items: center
+        justify-content: right
+
+        a
+          text-align: right
+          display: inline-block
+          margin: 0 14px
+          font-size: 18px
           color: white
+          transition: 300ms
+          &:hover
+            color: white
+          &:last-child
+            margin-right: 0
+          &:first-child
+            margin-left: 0
 
   .newsletterSubsContainer
     .subscribe-newsletter-button
@@ -796,12 +820,21 @@ footer
         line-height: 42px
         padding: 0 10px
 
+    .subscribe
+      margin: 0
+      height: 48px
+      &:hover
+        box-shadow: unset
+        background-color: #4F97F8
+      &:focus
+        outline: none
+
     #mlb2-7341216
       .subscribe-form
         background: none !important
         border: none !important
-        padding: 20px
-        width: 460px !important
+        padding: 0px
+        width: 520px !important
         @media (max-width: 768px)
           width: 100% !important
 
@@ -820,7 +853,7 @@ footer
 
         &.horizontal
           float: left
-          margin-bottom: 5px
+          margin-bottom: 10px
           width: 70%
           @media (max-width: 768px)
             float: none
@@ -841,8 +874,9 @@ footer
           .form-group
             float: left
             width: 100%
-            padding-right: 10px
+            padding-right: 6px
             box-sizing: border-box
+            margin: 0
             @media (max-width: 768px)
               padding: 0
 
@@ -853,13 +887,13 @@ footer
             border-color: red !important
 
         .form-control
-          background-color: transparent !important
-          font-family: "Roboto", sans-serif
-          padding: 10px
-          font-size: 16px
+          background-color: white !important
+          height: 48px
+          padding: 16px
+          font-size: 18px
           line-height: 16px
-          font-weight: 100
-          color: #fff
+          font-weight: 400
+          color: #212529
           border: 1px solid #fff
           transition: .3s
 
@@ -878,7 +912,12 @@ footer
     display: flex
     align-items: center
     align-content: center
-    justify-content: center
+    justify-content: left
+
+    p
+      color: #6D7175
+      font-weight: 400
+
 
     form#newsletter-form
       fieldset
