@@ -290,17 +290,6 @@ An example of a sent message and a response from ThingsBoard in the terminal:
 
 {% include images-gallery.html imageCollection="downlink-terminal" %}
 
-## Video tutorial
-
-See video tutorial below for step-by-step instruction how to setup HTTP Integration.
-
-<br/>
-<div id="video">  
- <div id="video_wrapper">
-     <iframe src="https://www.youtube.com/embed/LTl9mS4uXyg" frameborder="0" allowfullscreen></iframe>
- </div>
-</div> 
-
 ## Next steps
 
 {% assign currentGuide = "ConnectYourDevice" %}{% include templates/guides-banner.md %}
