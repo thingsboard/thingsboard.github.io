@@ -132,15 +132,11 @@ p
     .head-menu
       ul
         li:hover
-          a
-            color: #fff
-            opacity: 0.5
-          div a
-            opacity: 1
+          a, a:hover
+            color: rgba(255, 255, 255, 0.5)
 
         a
           color: #fff
-          opacity: 1
 
         a:not([href])
           color: #fff
@@ -326,9 +322,9 @@ header
         display: flex
         justify-content: center
         opacity: 0
-        transition-duration: 0.6s
+        transition-duration: 0s
         .sub-menu
-          transition-delay: 0.6s
+          transition-delay: 0s
           width: max-content
           padding: 40px 70px 40px 40px
           display: block
@@ -768,7 +764,6 @@ footer
 
   main
     padding: 92px 0 78px
-    max-width: 800px
 
     hr
       border-top: 2px solid white
@@ -777,7 +772,7 @@ footer
       margin-bottom: 60px
       display: flex
       justify-content: space-between
-      .logo
+      .footer-logo
         background-image: url(/images/thingsboard_logo_b.svg)
         filter: invert(100%) sepia(68%) saturate(0%) hue-rotate(350deg) brightness(113%) contrast(101%)
         width: 180px
@@ -806,6 +801,7 @@ footer
             margin-left: 0
 
   .newsletterSubsContainer
+    height: 106px
     .subscribe-newsletter-button
       margin-top: 20px
       margin-bottom: 20px
@@ -820,10 +816,17 @@ footer
         line-height: 42px
         padding: 0 10px
 
+    .loading
+      margin: 0
+      height: 48px
+      padding: 0 18px
+
     .subscribe
       margin: 0
       height: 48px
+      transition-duration: unset
       &:hover
+        transition-duration: unset
         box-shadow: unset
         background-color: #4F97F8
       &:focus
@@ -2127,7 +2130,7 @@ iframe
 
         ul
           li:hover a
-            color: #2A7DEC
+            color: #2A7DEC!important
 
           a, a:not([href])
             color: #212529
@@ -2142,6 +2145,9 @@ iframe
 
                 &:hover a
                   color: #2A7DEC
+              .bottom-group
+                width: inherit
+
 
       .n-button
         padding: 11px 20px
@@ -2187,6 +2193,12 @@ iframe
         height: calc(100% - 199px)
         margin-top: 70px
         padding-top: 10px
+        .centered-sub
+          justify-content: left
+          opacity: 1
+          .sub-menu
+            display: none
+            top: unset
 
       .n-button
         display: inline-block
