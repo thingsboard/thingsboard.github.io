@@ -786,6 +786,12 @@ We will list only main configuration parameters below to avoid duplication of th
           <td>Cache provider. <b>caffeine</b> for stand alone installations and <b>redis</b> for clustered installations</td>
       </tr>
       <tr>
+          <td>cache.attributes.enabled</td>
+          <td>CACHE_ATTRIBUTES_ENABLED</td>
+          <td>true</td>
+          <td>Cache attribute request in <b>caffeine</b> or <b>redis</b></td>
+      </tr>
+      <tr>
           <td>caffeine.specs.relations.timeToLiveInMinutes</td>
           <td></td>
           <td>1440</td>
@@ -856,6 +862,18 @@ We will list only main configuration parameters below to avoid duplication of th
           <td></td>
           <td>100000</td>
           <td><b>entityViews</b> cache max size</td>
+      </tr>
+      <tr>
+          <td>caffeine.specs.attributes.timeToLiveInMinutes</td>
+          <td></td>
+          <td>1440</td>
+          <td><b>attributes</b> cache TTL</td>
+      </tr>
+      <tr>
+          <td>caffeine.specs.attributes.maxSize</td>
+          <td></td>
+          <td>100000</td>
+          <td><b>attributes</b> cache max size</td>
       </tr>
       <tr>
           <td>redis.connection.type</td>
