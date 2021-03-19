@@ -455,7 +455,7 @@ Here's an example of the log message:
 2021-03-19 15:01:59,794 [kafka-consumer-stats-11-thread-1] INFO  o.t.s.q.k.TbKafkaConsumerStatsService - [re-Main-consumer] Topic partitions with lag: [[topic=[tb_rule_engine.main.0], partition=[0], committedOffset=[5413], endOffset=[5418], lag=[5]]].
 ```
 
-From this message we can see that there are 5 messages pushed to the <b>Main</b> queue (<b>tb_rule_engine.main.0</b> Kafka topic) but not yet processed. 
+From this message we can see that there are 5 (5418 - 5413 = 5) messages pushed to the <b>Main</b> queue (<b>tb_rule_engine.main.0</b> Kafka topic) but not yet processed. 
 
 In general the logs have the following structure:
 
