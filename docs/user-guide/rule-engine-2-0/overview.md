@@ -203,7 +203,7 @@ List of the predefined Message Types is presented in the following table:
           <td><b>RPC Request to Device</b></td>
           <td>RPC request from server to device (see <a href="/docs/user-guide/rpc/#server-side-rpc-api">server side rpc api</a> for reference)</td>
           <td><b>requestUUID</b> - internal request id used by sustem to identify reply target,<br><b>expirationTime</b> - time when request will be expired,<br><b>oneway</b> - specifies request type: <i>true</i> - without response, <i>false</i> - with response</td>
-          <td>json containing <b>method</b> and <b>params</b>: <br> <code style="font-size: 12px;">{ <br> &nbsp;&nbsp;"method": "getGpioStatus", <br>&nbsp;&nbsp;"params": { "param1": "val1" } <br> }</code></td>
+          <td>json containing <b>method</b> and <b>params</b>: <br> < style="font-size: 12px;">{ <br> &nbsp;&nbsp;"method": "getGpioStatus", <br>&nbsp;&nbsp;"params": { "param1": "val1" } <br> }</code></td>
       </tr>
       <tr>
           <td>ACTIVITY_EVENT</td>
@@ -211,7 +211,7 @@ List of the predefined Message Types is presented in the following table:
           <td>Event indicating that device becomes active</td>
           <td><b>deviceName</b> - originator device name,<br><b>deviceType</b> - originator device type</td>
           <td>json containing device activity information: <br> <code style="font-size: 12px;">{<br> &nbsp;&nbsp;"active": true,<br> &nbsp;&nbsp;"lastConnectTime": 1526979083267,<br> &nbsp;&nbsp;"lastActivityTime": 1526979083270,<br> &nbsp;&nbsp;"lastDisconnectTime": 1526978493963,<br> &nbsp;&nbsp;"lastInactivityAlarmTime": 1526978512339,<br> &nbsp;&nbsp;"inactivityTimeout": 10000<br>}</code></td>
-      </tr>
+      </tr>code
       <tr>
           <td>INACTIVITY_EVENT</td>
           <td><b>Inactivity Event</b></td>
@@ -441,3 +441,36 @@ ThingsBoard authors have prepared several tutorials to help you get started with
   * [**Send messages between related devices**](/docs/user-guide/rule-engine-2-0/tutorials/rpc-reply-tutorial/)
   
 See more tutorials [here](https://thingsboard.io/docs/guides/).
+
+## Troubleshooting
+
+If you are using Kafka queue for processing messages, ThingsBoard provides the ability to monitor if the rate of pushing messages to the Kafka is faster than rate of consuming and processing them (in such case you will have a growing latency for message processing).
+To enable this functionality, you need to ensure that Kafka consumer-stats are enabled (see <b>queue.kafka.consumer-stats</b> section of the [Configuration properties](/docs/user-guide/install/config/#thingsboard-core-settings))
+
+Once Kafka consumer-stats are enabled, you will see logs (see [Troubleshooting](/docs/user-guide/troubleshooting/)) about offset lag for consumer groups.
+
+Here's an example of the log message:
+
+```bash
+2021-03-19 15:01:59,794 [kafka-consumer-stats-11-thread-1] INFO  o.t.s.q.k.TbKafkaConsumerStatsService - [re-Main-consumer] Topic partitions with lag: [[topic=[tb_rule_engine.main.0], partition=[0], committedOffset=[5413], endOffset=[5418], lag=[5]]].
+```
+
+From this message we can see that there are 5 messages pushed to the <b>Main</b> queue (<b>tb_rule_engine.main.0</b> Kafka topic) but not yet processed. 
+
+In general the logs have the following structure:
+
+```bash
+TIME [STATS_PRINTING_THREAD_NAME] INFO  o.t.s.q.k.TbKafkaConsumerStatsService - [CONSUMER_GROUP_NAME] Topic partitions with lag: [[topic=[KAFKA_TOPIC], partition=[KAFKA_TOPIC_PARTITION], committedOffset=[LAST_PROCESSED_MESSAGE_OFFSET], endOffset=[LAST_QUEUED_MESSAGE_OFFSET], lag=[LAG]],[topic=[ANOTHER_TOPIC], partition=[], committedOffset=[], endOffset=[], lag=[]],...].
+```
+
+Where:
+- `CONSUMER_GROUP_NAME` - name of the consumer group which is processing messages (could be any of the rule-engine queues, core queue etc)
+- `KAFKA_TOPIC` - name of the exact Kafka topic
+- `KAFKA_TOPIC_PARTITION` - number of the topic's partition
+- `LAST_PROCESSED_MESSAGE_OFFSET` - the sequence number of the last message which was processed by the consumer (last acknowledged message in the Rule Engine etc)
+- `LAST_QUEUED_MESSAGE_OFFSET` - the sequence number of the last message that was successfully pushed to the Kafka topic
+- `LAG` - the amount of unprocessed messages
+
+
+**NOTE:** Logs about consumer lag are printed only if there is a lag for this consumer group.
+
