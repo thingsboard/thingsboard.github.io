@@ -1,21 +1,22 @@
 ---
 layout: docwithnav
+assignees:
+- ddiachenko
 title: How to contribute your device integration guide
 description: Integration sample
-hidetoc: "true"
 
 ---
 
 ## Introduction to thingsboard.io
 
-Our website is open-sourced. You may find the code of in this [repo](https://github.com/thingsboard/thingsboard.github.io). Every one can contribute to the website. The flow is as follows...
+Our website is open-sourced. You may find the code of in this [repo](https://github.com/thingsboard/thingsboard.github.io). Everyone can contribute to the website. The flow is as follows...
 
 * TOC
 {:toc}
 
 ## What is fork
 
-If you are not familiar with GitHub, please read their documentation or ask a colleague who has an expertise prior to the proceeding.
+If you are not familiar with GitHub, please read their documentation or ask a colleague who has an expertise before you proceed.
 If you have enough knowledge then go through further steps. Ensure that you already have a [GitHub](https://github.com/) account, and you successfully logged in.
 
 * [Step 1. Optional] Install Git on your computer, please refer to [Set up Git](https://docs.github.com/en/github/getting-started-with-github/set-up-git) guide.
@@ -29,8 +30,8 @@ Whe-e! Starting now you have a copy of our website in your private GitHub reposi
 
 ## Local deployment of ThingsBoard documentation repo (website)
 
-Now you can launch the website on your local machine to see the up to date version.
-thingsboard.io uses jekyll site generator. So in order to run the website on localhost you need a jekyll server installed.
+Now you can launch the website on your local machine to see the up-to-date version.
+thingsboard.io uses jekyll site generator. So, in order to run the website on localhost you need a jekyll server installed.
 
 The below commands set up your environment for running GitHub pages locally.
 Any edits you make will be viewable on a lightweight webserver that runs on your local machine.

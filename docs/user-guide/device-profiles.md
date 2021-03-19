@@ -94,7 +94,7 @@ alarmСonditionsAdvanced:
         title: 'Step 1. Modify the temperature key filter and change the value type to dynamic.'
     1:
         image: /images/user-guide/device-profile/alarm-example-6-step-2.png
-        title: 'Step 2. Select a dynamic source type and input the *temperatureAlarmThreshold*, then click "Update".'
+        title: 'Step 2. Select a dynamic source type and input the *temperatureAlarmThreshold*, then click "Update". You may optionally check "Inherit from owner". Inheritance allows to take the threshold value from customer if it is not set on the device level. If the attribute value is not set on both device and customer levels, rule will take the value from the tenant attributes.'
     2:
         image: /images/user-guide/device-profile/alarm-example-6-step-3.png
         title: 'Step 3. Add another key filter for the *temperatureAlarmFlag*, then click "Add".'
@@ -104,6 +104,11 @@ alarmСonditionsAdvanced:
     4:
         image: /images/user-guide/device-profile/alarm-example-6-step-5.png
         title: 'Step 5. Provision device attributes either manually or via the script.'
+
+alarmСonstantFilters:
+    0:
+        image: /images/user-guide/device-profile/alarm-example-7-step-1.png  
+        title: 'Choose constant type and value and compare it with the value of the tenant or customer attribute.'
 
 ruleNode:
     0:
@@ -284,6 +289,17 @@ We will use two attributes: the boolean *temperatureAlarmFlag*, and the numeric 
 Our goal is to trigger an alarm creation when "*temperatureAlarmFlag* = True AND *temperature* is greater than *temperatureAlarmThreshold*".
 
 {% include images-gallery.html imageCollection="alarmСonditionsAdvanced" showListImageTitles="true" %}
+
+#### Example 7. Dynamic thresholds based on the tenant or customer attributes
+
+Example 6 demonstrates how to enable or disable rule based on the value of "temperatureAlarmFlag" attribute of the device. 
+But what if you would like to enable or disable certain rule for all devices that belong to a tenant or customer?
+To avoid configuration of the attribute for each device, you may configure alarm rule to compare constant value with the value of Tenant or Customer Attribute.
+For this purpose, you should use "Constant" key type and compare it with dynamic value. See configuration example below:
+
+{% include images-gallery.html imageCollection="alarmСonstantFilters" showListImageTitles="false" %}
+
+The technique mentioned above may be used to enable or disable rules or combine filters on device telemetry/attributes with filters on tenant or customer attributes.
 
 #### Device profile rule node
 

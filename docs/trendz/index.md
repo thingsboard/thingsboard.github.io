@@ -11,7 +11,7 @@ description: ThingsBoard Trends - Business Intelligence and Analytics Platform f
 
 The ThingsBoard **Trendz** is an [Analytics Platform](/products/trendz/) that converts the IoT dataset into insights and simplifies the decision-making process. 
 With Trendz you can:
- - Analise behavior patterns, outliers and trends
+ - Analyse behavior patterns, outliers and trends
  - Predict system behavior and react beforehand
  - Define KPI using calculated fields, review dynamic and understand what affects it
  - Monitor how much time equipment spend in different states

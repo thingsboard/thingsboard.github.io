@@ -4,11 +4,21 @@ assignees:
 - ashvayka
 title: Working with IoT dashboards
 description: IoT dashboards using ThingsBoard
+dash-title:
+    0:
+        image: /images/user-guide/dashboards/dash-title.png 
+
 editMode:
     0:
         image: /images/user-guide/dashboards/edit-mode1-src.png
     1:
         image: /images/user-guide/dashboards/edit-mode2-src.png
+
+toolbar-review:
+    0:
+        image: /images/user-guide/dashboards/toolbar-not-editmode.png
+    1:
+        image: /images/user-guide/dashboards/toolbar-editmode.png
 
 aliases:
     0:
@@ -211,6 +221,24 @@ states:
     3:
         image: /images/user-guide/dashboards/settings/2states-exist.png
 
+entity-name:
+    0:
+        image: /images/user-guide/dashboards/settings/entity-name.png
+    1:
+        image: /images/user-guide/dashboards/settings/entity-name-1.png
+    2:
+        image: /images/user-guide/dashboards/settings/entity-name-2.png
+    3:
+        image: /images/user-guide/dashboards/settings/entity-name-3.png
+    4:
+        image: /images/user-guide/dashboards/settings/entity-name-4.png
+    5:
+        image: /images/user-guide/dashboards/settings/entity-name-5.png
+    6:
+        image: /images/user-guide/dashboards/settings/entity-name-6.png
+    7:
+        image: /images/user-guide/dashboards/settings/entity-name-7.png
+
 action-state:
     0:
         image: /images/user-guide/dashboards/settings/enter-edit-widget.png
@@ -264,18 +292,22 @@ For faster learning and a better understanding of this guide, first, you have to
 
 ThingsBoard provides the ability to create and manage Dashboards. 
 
-You can have unlimited number of Dashboards. Each Dashboard may contain plenty of widgets.
+Each Dashboard may contain plenty of widgets.
 Dashboards display data from many entities: devices, assets, etc. Dashboards can be assigned to Customers. 
 
 This guide covers main concepts and various configuration settings.
 
 ## Dashboard overview 
 
-Before starting working with a dashboard, get acquainted with its appearance and understand which features are responsible for what actions.
+Before starting working with a dashboard, get familiar with its appearance and understand which features are responsible for what actions.
 
 ### Title
 
 Editable dashboard title appears in the top-left corner of the dashboard. Dashboard Title displays in the application breadcrumbs to simplify the navigation.
+You can change and adjust a Title in the [settings of the dashboard](/docs/user-guide/dashboards/#title-of-the-dashboard)
+
+{% include images-gallery.html imageCollection="dash-title" %}
+
 
 ### Edit mode
 
@@ -296,6 +328,8 @@ Dashboard toolbar allows you to manage
 
 Some of these icons (stats, layout, settings) are visible only in the "edit" mode. All other icons are visible in both "view" and "edit" mode. 
 You can hide these icons or configure the toolbar to be minimized by default using [settings](/docs/user-guide/dashboards/#settings).
+
+{% include images-gallery.html imageCollection="toolbar-review" %}
 
 ### Entity Aliases
 
@@ -354,6 +388,8 @@ Widgets are the building blocks of your dashboard. There are 5 types of widgets:
 * **Alarm** widgets allow you to display [alarms](/docs/user-guide/alarms/);
 * **Static** widgets are designed to display static data. For example, floor plan or static company information.
 
+More about widget types you can learn [here](docs/user-guide/ui/widget-library/).
+
 #### Adding widget to the dashboard
 
 To add a widget to the dashboard, you should:
@@ -372,7 +408,7 @@ Therefore, the "Add widget" dialog contains four tabs to define a widget. Note t
 You may leave all other configuration tabs with the default values in most of the cases.   
 We will discuss each of those tabs below.
 
-##### Widget data settings
+##### 1. Widget data settings
 
 Widget data settings allow you to add one or multiple data sources. 
 A Data source is a combination of [entity alias](/docs/user-guide/dashboards/#entity-aliases), optional [filter](/docs/user-guide/dashboards/#entity-filters), and list of data keys.
@@ -403,7 +439,7 @@ Also, alarm widget allows you to select both [time window](/docs/user-guide/dash
 
 ##### Entity count data source
 
-Since version 3.2.2 ThingsBoard has added an Entity count data source. This feature allows you to see the number of entities by displaying them on a widget and thus determine the number of devices, assets, etc.  
+Since version 3.2.2 ThingsBoard has added an Entity count data source. This feature allows you to see the number of entities by displaying them on a widget and thus determine the number of devices, assets, etc.
 
 Let's get familiar with this feature using a basic example, displaying the total number of existing devices on the widget.
 
@@ -417,7 +453,7 @@ Open a dashboard and start by adding an entity alias:
 
 After adding an alias, you need to add a widget to display data:
 1. Click the big sign in the middle of the screen "Add new widget".
-2. Select Cards widget bundle and, to quickly find the desired widget use a search bar by clicking on the magnifying glass and typing the name of the widget you're looking for. 
+2. Select Cards widget bundle and, to quickly find the desired widget use a search bar by clicking on the magnifying glass and typing the name of the widget you're looking for.
    To see the number of entities properly better use the Simple card widget.
 
 Now, it is time to add a data source:
@@ -431,14 +467,14 @@ Now, it is time to add a data source:
 
 **The widget that counts devices has been added.** Nevertheless by default, the special symbol of the widget itself (C°) is still there. So let's enter the widget edit mode to remove it.
 
-In the Settings tab, find the Special symbol line and delete the existing special symbol or replace it with the desired one. Also, you can indicate how many digits will be after floating-point. 
+In the Settings tab, find the Special symbol line and delete the existing special symbol or replace it with the desired one. Also, you can indicate how many digits will be after floating-point.
 When changes are applied, don't forget to save them by clicking the orange checkmark in the top-right of the dialog.
 
 {% include images-gallery.html imageCollection="entity-count-3" %}
 
 Now we have a widget that displays the number of existing devices.
 
-##### Data keys
+##### 2. Data keys
 
 Data key defines time series, attribute or entity field that you would like to use in the widget. 
 Data key definition consists of type (time series, attribute of entity field) and the actual key.
@@ -454,15 +490,15 @@ List of entity fields depends on the entity type and may extend in the future:
  * **User** has the following fields: created time, first name, last name, email and additional info.
  * **Customer** has the following fields: create time, entity type, email, title, country, state, city, address, zip code, phone, additional info.
 
-##### Basic Data keys settings
+###### 2.1. Basic Data keys settings
 
 Coming soon...
 
-##### Advanced Data keys settings
+###### 2.2. Advanced Data keys settings
 
 Coming soon...
 
-##### Widget time window
+##### 3. Widget time window
 
 A widget time window defines a time interval and aggregation function that should be used to fetch the time series or alarm data. 
 By default, every widget uses the main [time window](/docs/user-guide/dashboards/#time-window) determined in the dashboard's [toolbar](/docs/user-guide/dashboards/#toolbar). 
@@ -473,7 +509,7 @@ You can also hide the time window selection for a specific widget from the user 
 
 Learn more about time window configuration [here](/docs/user-guide/dashboards/#time-window). 
 
-##### Alarm filter
+##### 4. Alarm filter
 
 In addition to the time window configuration, alarm widgets allow you to filter [alarms](/docs/user-guide/alarms/) based on [status](/docs/user-guide/alarms/#lifecycle), [severity](/docs/user-guide/alarms/#severity), and [type](/docs/user-guide/alarms/#type).
 You can choose a combination of alarm statuses and severity. You may also define specific alarm types as well as enable search of [propagated](/docs/user-guide/alarms/#propagation) alarms.
@@ -489,7 +525,7 @@ You should see a similar widget (note that you should send/simulate some data to
 
 Let's use the basic widget settings to customize the widget. We will demonstrate how each setting affects the widget.
 
-##### Widget Title
+##### 1. Widget Title
 
 You can input custom widget title, tooltip and title style. You may also add an icon to the title and control icon color and size. See configuration and the corresponding result below.
 
@@ -512,7 +548,7 @@ All those settings are enabled by default.
 
 {: .copy-code}
 
-##### Widget Style
+##### 2. Widget Style
 
 You can customize personal  style for the widget using CSS properties. This style will be applied to the main div element of the widget. You can also change the background color, text color, padding, and margin. 
 See the configuration and the corresponding result below. 
@@ -532,7 +568,7 @@ Widget style from the screen above:
 ```
 {: .copy-code}
 
-##### Legend settings
+##### 3. Legend settings
 
 For chart widgets, the “Display legend” option is enabled by default. The legend is used to display the min/max/average/total values.
 Other widgets have this option disabled.  
@@ -547,7 +583,7 @@ See configuration and the corresponding result below:
 
 {% include images-gallery.html imageCollection="basic-settings-legend" %}
 
-##### Mobile mode settings
+##### 4. Mobile mode settings
 
 Mobile Mode settings consist of two options:
 - Order - set to an integer, specifies the priority of the order of displaying widgets in mobile mode (note that in mobile mode all widgets are displayed in one vertical column).
@@ -557,14 +593,14 @@ For example, with a value of 5, the widget height will be 350px. (70 * 5)
 If no value is specified, its original height will be used.
 
 
-##### Other settings
+##### 5. Other settings
 
 You can choose which symbol to display next to the value and the number of digits after the floating-point number. 
 These settings are useful if you want to apply the same settings for all axis. 
 For example, if you are showing temperature readings for multiple devices, you can add '°C' or '°F' symbol. 
 However, if you are displaying both temperature and humidity, you have to configure these data keys separately using data key settings. 
 
-##### Advanced widget settings
+##### 6. Advanced widget settings
 
 Advanced widget settings are specific to widget implementation. Those settings allow you to fine tune the widget. For example, “Timeseries - Flot” widget allows you to configure line style, width, enable comparison with the previous time interval and use entity attributes in the legend.
 
@@ -574,7 +610,9 @@ Coming soon...
 
 ##### Widget actions
 
-Coming soon...
+Each type of widget has its own actions. They are similar and serve the same purpose - to help you quickly switch from the created widget to certain detailed information about its devices.
+
+You can read more about the action widget in the [article dedicated to it](/docs/user-guide/ui/widget-actions/).
 
 ## Time window
 
@@ -678,7 +716,7 @@ If you tick this option, all the widgets on the Dashboard will fill in verticall
 
 #### Background
 
-##### Background color
+##### 1. Background color
 
 The Background color option allows you to customize the color that you'd like to be on the Dashboard's background. 
 To alter it, click on the colored circle, and with sliders choose the needed color and wished transparency. Then, press "Save" to apply changes. 
@@ -686,7 +724,7 @@ After saving, you can see the customized background.
 
 {% include images-gallery.html imageCollection="background-settings" %}
 
-##### Background image
+##### 2. Background image
 
 This option allows setting the picture as a background. To do this, you should drop an image in the appropriate field, or upload it from a folder on your computer.
 Once you select it, an image preview will appear on the left of the Settings window. 
@@ -756,6 +794,9 @@ As we have chosen the "On row click" action, we need to click on the row of our 
 
 {% include images-gallery.html imageCollection="action-state" %}
 
+For the state to be named after the entity, use ${entityName} as the name of the state. Thus during the action, you will be transitioned to a state that is called the same as the entity that took part in the action.
+
+{% include images-gallery.html imageCollection="entity-name" %}
 
 ## Export
 

@@ -27,6 +27,8 @@ description: ThingsBoard Cloud Privacy Policy
 
 <p> 2.3 Pursuant to the Service use, certain personal data and sensitive data can be collected by you with help of specific technical equipment for without limitation remote monitoring and control (<b>“IoT Devices”</b>). You represent and warrant that you have a legal right for such collection and Users agree upon said data collection.</p> 
 
+<p> 2.4 We obtain information from third-party sources. For example, we may collect information about you from social networks, accounting services providers and data analytics providers. Additionally, if you create or log into your account through a third-party platform (such as Google, Facebook or GitHub), we will have access to certain information from that platform, such as your name and email, in accordance with the authorization procedures determined by such platform.</p> 
+
 <br>
 <p> <b>3. Purpose and Use</b> </p> 
 <p> 3.1 ThingsBoard, Inc. uses the personally identifiable information to provide you with public information regarding us and our services; to share news, updates and reports in response to your inquiries; for gaining an understanding of your needs; for performing statistical analysis or analyses of global Service usage; for security and legal compliance; for notifying you of any changes to this Service or our remain services; for billing; and for other services. We also reserve the right to make full use of information that is not personally identifiable information.</p> 
