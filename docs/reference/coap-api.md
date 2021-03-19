@@ -24,7 +24,10 @@ ThingsBoard server nodes act as a CoAP Server that supports both regular and obs
 You can find CoAP client libraries for different programming languages on the web. Examples in this article will be based on [CoAP cli](http://manpages.ubuntu.com/manpages/focal/man5/coap-client.5.html).
 In order to setup this tool, you can use instructions in our [Hello World](/docs/getting-started-guides/helloworld/) guide.
 
-**NOTE**: In order to install the coap cli please execute: ```sudo apt install libcoap2-bin```
+**NOTE**: In order to install the coap cli please execute: <br>
+
+* **Ubuntu 20.04:** ```sudo apt install libcoap2-bin```
+* **Ubuntu 18.04:** ```sudo apt install libcoap1-bin```
 
 ##### CoAP Authentication and error codes
 
