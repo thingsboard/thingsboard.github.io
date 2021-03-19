@@ -43,6 +43,8 @@ add-widget:
         image: /images/user-guide/dashboards/add-widget1-src.png
     3:
         image: /images/user-guide/dashboards/add-widget2-src.png
+    4:
+        image: /images/user-guide/dashboards/add-widget3-src.png
 
 add-data-source1:
     0:
@@ -223,6 +225,32 @@ action-state:
     5:
         image: /images/user-guide/dashboards/settings/state1-transfer.png
 
+entity-count:
+    0:
+        image: /images/user-guide/dashboards/entitycount/add-alias.png
+    1:
+        image: /images/user-guide/dashboards/entitycount/add-alias-1.png
+    2:
+        image: /images/user-guide/dashboards/entitycount/add-alias-2.png
+
+entity-count-1:
+    0:
+        image: /images/user-guide/dashboards/entitycount/add-widget.png
+    1:
+        image: /images/user-guide/dashboards/entitycount/add-widget-1.png
+    2:
+        image: /images/user-guide/dashboards/entitycount/add-widget-2.png
+    3:
+        image: /images/user-guide/dashboards/entitycount/datasource.png
+
+entity-count-3:
+    0:
+        image: /images/user-guide/dashboards/entitycount/datasource-1.png
+    1:
+        image: /images/user-guide/dashboards/entitycount/edit-widget.png
+    2:
+        image: /images/user-guide/dashboards/entitycount/edit-widget-1.png
+
 --- 
 
 * TOC
@@ -372,6 +400,43 @@ In such case, you can still add a key to the data source, and the widget will st
 
 Besides the data keys, time series widget allows you to select the [time window](/docs/user-guide/dashboards/#time-window). 
 Also, alarm widget allows you to select both [time window](/docs/user-guide/dashboards/#time-window) and [alarm filter](/docs/user-guide/dashboards/#alarm-filter).
+
+##### Entity count data source
+
+Since version 3.2.2 ThingsBoard has added an Entity count data source. This feature allows you to see the number of entities by displaying them on a widget and thus determine the number of devices, assets, etc.  
+
+Let's get familiar with this feature using a basic example, displaying the total number of existing devices on the widget.
+
+Open a dashboard and start by adding an entity alias:
+1. Enter dashboard edit mode by clicking the pencil icon in the lower-right of the screen.
+2. CLick the "Entity alias" button on the toolbar, click "Add alias" in the lower-left corner of the Entity alias dialog box.
+3. In the opened Add alias dialog, enter an alias name, select Entity type filter type, and choose an entity type (in the given example, use Device entity type). Click "Add".
+4. Save the created alias by clicking the "Save" button in the lower right corner of the dialog.
+
+{% include images-gallery.html imageCollection="entity-count" %}
+
+After adding an alias, you need to add a widget to display data:
+1. Click the big sign in the middle of the screen "Add new widget".
+2. Select Cards widget bundle and, to quickly find the desired widget use a search bar by clicking on the magnifying glass and typing the name of the widget you're looking for. 
+   To see the number of entities properly better use the Simple card widget.
+
+Now, it is time to add a data source:
+1. Select Entities count type, choose the previously added entity alias. To change a label, click the pencil icon:
+   in the opened dialog, you can change a label name, edit its color, customize a special symbol that will be displayed next to the value, and specify the number of digits after floating-point.
+   Click "Save" in the lower-left corner of the dialog window.
+2. After customizing a data source, click "Add" in the lower-left corner of the Add widget dialog box.
+
+{% include images-gallery.html imageCollection="entity-count-1" %}
+<br>
+
+**The widget that counts devices has been added.** Nevertheless by default, the special symbol of the widget itself (C°) is still there. So let's enter the widget edit mode to remove it.
+
+In the Settings tab, find the Special symbol line and delete the existing special symbol or replace it with the desired one. Also, you can indicate how many digits will be after floating-point. 
+When changes are applied, don't forget to save them by clicking the orange checkmark in the top-right of the dialog.
+
+{% include images-gallery.html imageCollection="entity-count-3" %}
+
+Now we have a widget that displays the number of existing devices.
 
 ##### Data keys
 
