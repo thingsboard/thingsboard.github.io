@@ -437,7 +437,7 @@ In such case, you can still add a key to the data source, and the widget will st
 Besides the data keys, time series widget allows you to select the [time window](/docs/user-guide/dashboards/#time-window). 
 Also, alarm widget allows you to select both [time window](/docs/user-guide/dashboards/#time-window) and [alarm filter](/docs/user-guide/dashboards/#alarm-filter).
 
-##### Entity count data source
+##### 2. Entity count data source
 
 Since version 3.2.2 ThingsBoard has added an Entity count data source. This feature allows you to see the number of entities by displaying them on a widget and thus determine the number of devices, assets, etc.
 
@@ -474,7 +474,7 @@ When changes are applied, don't forget to save them by clicking the orange check
 
 Now we have a widget that displays the number of existing devices.
 
-##### 2. Data keys
+##### 3. Data keys
 
 Data key defines time series, attribute or entity field that you would like to use in the widget. 
 Data key definition consists of type (time series, attribute of entity field) and the actual key.
@@ -490,15 +490,15 @@ List of entity fields depends on the entity type and may extend in the future:
  * **User** has the following fields: created time, first name, last name, email and additional info.
  * **Customer** has the following fields: create time, entity type, email, title, country, state, city, address, zip code, phone, additional info.
 
-###### 2.1. Basic Data keys settings
+###### 3.1. Basic Data keys settings
 
 Coming soon...
 
-###### 2.2. Advanced Data keys settings
+###### 3.2. Advanced Data keys settings
 
 Coming soon...
 
-##### 3. Widget time window
+##### 4. Widget time window
 
 A widget time window defines a time interval and aggregation function that should be used to fetch the time series or alarm data. 
 By default, every widget uses the main [time window](/docs/user-guide/dashboards/#time-window) determined in the dashboard's [toolbar](/docs/user-guide/dashboards/#toolbar). 
@@ -509,7 +509,7 @@ You can also hide the time window selection for a specific widget from the user 
 
 Learn more about time window configuration [here](/docs/user-guide/dashboards/#time-window). 
 
-##### 4. Alarm filter
+##### 5. Alarm filter
 
 In addition to the time window configuration, alarm widgets allow you to filter [alarms](/docs/user-guide/alarms/) based on [status](/docs/user-guide/alarms/#lifecycle), [severity](/docs/user-guide/alarms/#severity), and [type](/docs/user-guide/alarms/#type).
 You can choose a combination of alarm statuses and severity. You may also define specific alarm types as well as enable search of [propagated](/docs/user-guide/alarms/#propagation) alarms.
