@@ -464,7 +464,7 @@ In such a case, you can still add a key to the data source, and the widget will 
 
 {% include images-gallery.html imageCollection="add-data-source3" %}
 
-###### 1.1 Widget data source types
+##### 2. Widget data source types
 
 - **Entity data source**
 
