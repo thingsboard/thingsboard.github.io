@@ -466,7 +466,7 @@ header
 
 .burger
   position: absolute
-  top: 17px
+  top: 16px
   right: 22px
   display: none
   filter: unset
@@ -475,9 +475,10 @@ header
   width: 47px
   background-size: cover
   @media screen and (max-width: 1024px)
-    top: 22px
+    top: 21px
     height: 37px
     width: 37px
+    background-image: url(/images/s-burger-icon.svg)
 
   &:focus
     outline: none
@@ -943,9 +944,8 @@ footer
     display: flex
     justify-content: space-between
     .copyright
-        color: #A598AB
+        color: #847989
         font-size: 16px
-        weight: normal
     .social
       width: fit-content
       display: flex
@@ -2118,6 +2118,8 @@ iframe
     .opened-burger
       .burger
         background-image: url(/images/close-icon.svg)
+        @media screen and (max-width: 1024px)
+          background-image: url(/images/s-close-icon.svg)
       transition-duration: 0.3s
       background-color: white
       box-shadow: 0 0 20px rgba(0, 0, 0, .1), 0 0 40px rgba(0, 0, 0, .1)
@@ -2127,6 +2129,8 @@ iframe
 
       .head-menu
         display: block
+        margin: 70px -30px 0
+        padding: 16px 30px 0
 
         ul
           li:hover a
@@ -2186,13 +2190,15 @@ iframe
         padding: 9px 30px
       .burger
         background-image: url(/images/close-icon.svg)
+        @media screen and (max-width: 1024px)
+          background-image: url(/images/s-close-icon.svg)
 
       .head-menu
         display: block
         overflow-y: scroll
         height: calc(100% - 199px)
-        margin-top: 70px
-        padding-top: 10px
+        margin: 70px -30px 0
+        padding: 16px 30px 0
         .centered-sub
           justify-content: left
           opacity: 1
