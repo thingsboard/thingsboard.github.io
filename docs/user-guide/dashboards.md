@@ -311,22 +311,6 @@ function-ds:
     4:
         image: /images/user-guide/dashboards/function-ds-1.png
 
-tw:
-    0:
-        image: /images/user-guide/dashboards/tw.png
-    1:
-        image: /images/user-guide/dashboards/tw-1.png
-
-tw-current-day:
-    0:
-        image: /images/user-guide/dashboards/tw-current-day.png
-    1:
-        image: /images/user-guide/dashboards/tw-current-day-sofar.png
-
-tw-time-zone:
-    0:
-        image: /images/user-guide/dashboards/tw-time-zone.png
-
 --- 
 
 * TOC
@@ -549,7 +533,7 @@ Now we have a widget that displays the number of existing devices.
 
 - **Function data source**
 
-Function data source is used when you do not have any data, but you'd like to test a widget visualization. 
+Function data source is used when you do not have any date, but you'd like to test a widget visualization. 
 Let's say you haven't added alias and haven't received any telemetry, but you want to see how a widget displays data.
 
 Firstly, to display data, you need to add a widget:
@@ -749,7 +733,7 @@ the first thing you need to do is to enter the Edit mode by clicking the "Pencil
 
 {% include images-gallery.html imageCollection="dashboards-edit-enter" %}
 
-When the edit mode is entered, you should click the "Gear" icon at the top of the window, so the Dashboard Settings will be opened.
+After entering the edit mode, click the "Gear" icon at the top of the window, so the Dashboard Settings will be opened.
 
 {% include images-gallery.html imageCollection="dashboards-settings-enter" %}
 

@@ -10,6 +10,67 @@ Enrichment Nodes are used to update meta-data of the incoming Message.
 * TOC
 {:toc}
 
+##### Calculate delta
+
+<table  style="width:12%">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Since TB Version 3.2.2</em></strong></td>
+     </tr>
+   </thead>
+</table> 
+
+![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-calculate-delta.png)
+
+Calculates 'delta' based on the previous time-series reading and current reading and adds it to the message.
+Delta calculation is done in scope of the message originator, e.g. device, asset or customer.
+Useful for smart-metering use case. 
+For example, when the water metering device reports the absolute value of the pulse counter once per day.
+To find out the consumption for the current day you need to compare value for the previous day with the value for current day.  
+
+Delta calculation is done in scope of the message originator, e.g. device, asset or customer.
+
+Configuration parameters:
+
+* Input value key ('pulseCounter' by default) - specifies the key that will be used to calculate the delta.
+* Output value key ('delta' by default) - specifies the key that will store the delta value in the enriched message.
+* Decimals - precision of the delta calculation.
+* Use cache for latest value ('enabled' by default) - enables caching of the latest values in memory.
+* Tell 'Failure' if delta is negative ('enabled' by default) - forces failure of message processing if delta value is negative.
+* Add period between messages ('disabled' by default) - adds value of the period between current and previous message.
+
+Rule node relations:
+
+The rule node produces message with one of the following relations:
+
+ * Success - if the key configured via 'Input value key' parameter is present in the incoming message;
+ * Other - if the key configured via 'Input value key' parameter is not present in the incoming message;
+ * Failure - if the 'Tell 'Failure' if delta is negative' is set and the delta calculation returns negative value;
+
+Let's review the rule node behaviour by example. Let's assume the following configuration:
+
+![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-calculate-delta-config.png)
+
+Let's assume next messages originated by the same device and arrive to the rule node in the sequence they are listed:
+
+```bash
+msg: {"pulseCounter": 42}, metadata: {"ts": "1616510425000"}
+msg: {"pulseCounter": 73}, metadata: {"ts": "1616510485000"}
+msg: {"temperature": 22}, metadata: {"ts": "1616510486000"}
+msg: {"pulseCounter": 42}, metadata: {"ts": "1616510487000"}
+```
+
+The output will be the following:
+
+```bash
+msg: {"pulseCounter": 42, "delta": 0, "periodInMs": 0}, metadata: {"ts": "1616510425000"}, relation: Success
+msg: {"pulseCounter": 73, "delta": 31, "periodInMs": 60000}, metadata: {"ts": "1616510485000"}, relation: Success
+msg: {"temperature": 22}, metadata: {"ts": "1616510486000"}, relation: Other
+msg: {"pulseCounter": 42}, metadata: {"ts": "1616510487000"}, relation: Failure
+```
+
+
+
 ##### Customer attributes
 
 <table  style="width:12%">
