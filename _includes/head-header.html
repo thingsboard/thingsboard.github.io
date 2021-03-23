@@ -27,6 +27,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gifffer/1.5.0/gifffer.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/clipboard@1/dist/clipboard.min.js"></script>
     <script type="text/javascript">
+        window.onload = function() {
+            Gifffer();
+        }
+    </script>
+    <script type="text/javascript">
         /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
         !function (a) {
             "use strict";
@@ -312,53 +317,137 @@
     </script>
     <script>
         function Burger() {
-            var header = document.getElementsByTagName("header")[0];
-            let sub = document.getElementsByClassName("sub-menu");
-            if (header.classList.contains('opened-burger')) {
-                header.classList.remove("opened-burger");
-                for (let i = 0; i < sub.length; i++) {
-                    sub[i].classList.remove("open-sub");
-                }
+            var header = $('header');
+            var body = $('body');
+            if (header.hasClass('opened-burger')) {
+                header.removeClass('opened-burger');
+                let subMenus = $('nav.head-menu > ul > li > div.centered-sub > ul.sub-menu');
+                subMenus.removeClass('open-sub');
+                body.css('overflow', '');
             } else {
-                header.classList.add("opened-burger");
+                header.addClass('opened-burger');
+                body.css('overflow', 'hidden');
             }
         }
     </script>
     <script>
-        function listburg(n) {
-            let products = document.getElementsByClassName("products")[0];
-            let services = document.getElementsByClassName("services")[0];
-            let developers = document.getElementsByClassName("developers")[0];
-            let cases = document.getElementsByClassName("cases")[0];
-            let customers = document.getElementsByClassName("customers")[0];
-            let about = document.getElementsByClassName("about")[0];
-            let sub = document.getElementsByClassName("sub-menu");
 
-            for (let i = 0; i < sub.length; i++) {
-                sub[i].classList.remove("open-sub");
+        jqueryDefer(function () {
+            let menuElement = $('nav.head-menu > ul');
+            let submenuContainer = $('nav.head-menu > div.sub-menu-container');
+            let menuItems = $('nav.head-menu > ul > li');
+            let indicator = $('nav.head-menu > ul > div.indicator');
+            let subMenuActive = false;
+            menuElement.on('mouseleave', function (event) {
+                if (!$(event.relatedTarget).parents('div.sub-menu-container').length) {
+                    subMenuActive = false;
+                    submenuContainer.removeClass('active bounds-transition');
+                    menuItems.removeClass('active');
+                    indicator.removeClass('left-transition');
+                }
+            });
+            submenuContainer.on('mouseleave', function (event) {
+                if (!$(event.relatedTarget).parents('nav.head-menu > ul').length) {
+                    subMenuActive = false;
+                    submenuContainer.removeClass('active bounds-transition');
+                    menuItems.removeClass('active');
+                    indicator.removeClass('left-transition');
+                }
+            });
+            menuItems.each(function() {
+                let item = $( this );
+                let subMenuId = item.attr('data-submenu-id');
+                item.on('mouseenter', function () {
+                    let submenus = $('nav.head-menu > div.sub-menu-container > div');
+                    submenus.css('display', 'none');
+                    menuItems.removeClass('active');
+                    item.addClass('active');
+                    let targetSubMenu = $('nav.head-menu > div.sub-menu-container > div#'+subMenuId);
+                    targetSubMenu.css('display', 'block');
+                    submenuContainer.css('overflow', 'visible');
+                    let left = item.position().left + (item.outerWidth() - targetSubMenu.outerWidth()) / 2;
+                    submenuContainer.css('left', left + 'px');
+                    if (!subMenuActive) {
+                        submenuContainer.addClass('active');
+                        subMenuActive = true;
+                    } else {
+                        submenuContainer.addClass('bounds-transition');
+                        indicator.addClass('left-transition');
+                    }
+                    indicator.css('left', item.position().left);
+                    indicator.css('width', item.outerWidth());
+                    submenuContainer.css('height', targetSubMenu.outerHeight() + 'px');
+                    submenuContainer.css('width', targetSubMenu.outerWidth() + 'px');
+                    submenuContainer.css('overflow', 'hidden');
+                });
+            });
+
+            let isMobile = $('button.burger').css('display') === 'block';
+            if (isMobile) {
+                initMobileSubmenu();
             }
 
-            switch (n) {
-                case '1':
-                    products.classList.add("open-sub");
-                    break;
-                case '2':
-                    services.classList.add("open-sub");
-                    break;
-                case '3':
-                    developers.classList.add("open-sub");
-                    break;
-                case '4':
-                    cases.classList.add("open-sub");
-                    break;
-                case '5':
-                    customers.classList.add("open-sub");
-                    break;
-                case '6':
-                    about.classList.add("open-sub");
-                    break;
-                default:
-                    break;
+            $(window).resize(function(){
+                let newIsMobile = $('button.burger').css('display') === 'block';
+                if (isMobile !== newIsMobile) {
+                    isMobile = newIsMobile;
+                    if (isMobile) {
+                        initMobileSubmenu();
+                    } else {
+                        restoreDesktopSubmenu();
+                    }
+                }
+            });
+
+        });
+
+        function initMobileSubmenu() {
+
+            var header = $('header');
+            if (header.hasClass('opened-burger')) {
+                var body = $('body');
+                body.css('overflow', 'hidden');
+            }
+
+            let targetSubMenus = $('nav.head-menu > div.sub-menu-container > div');
+            targetSubMenus.css('display', 'block');
+            let submenuContainer = $('nav.head-menu > div.sub-menu-container');
+            submenuContainer.removeClass('active');
+            submenuContainer.css('display', 'none');
+
+            targetSubMenus.each(function() {
+                let subMenu = $( this );
+                let subMenuId = subMenu.attr('id');
+                let parent = $('nav.head-menu > ul > li.'+subMenuId);
+                parent.append(subMenu);
+            });
+        }
+
+        function restoreDesktopSubmenu() {
+            var body = $('body');
+            body.css('overflow', '');
+            let targetSubMenus = $('nav.head-menu > ul > li > div');
+            let submenuContainer = $('nav.head-menu > div.sub-menu-container');
+            submenuContainer.removeClass('active');
+            submenuContainer.css('display', 'block');
+            let menuItems = $('nav.head-menu > ul > li');
+            menuItems.removeClass('active');
+            targetSubMenus.each(function() {
+                let subMenu = $( this );
+                submenuContainer.append(subMenu);
+            });
+        }
+
+        function listburg(subMenuId) {
+            let isMobile = $('button.burger').css('display') === 'block';
+            if (isMobile) {
+                let targetSubMenu = $('nav.head-menu > ul > li > div.centered-sub#'+subMenuId+' > ul.sub-menu');
+                let isOpen = targetSubMenu.hasClass('open-sub');
+                let subMenus = $('nav.head-menu > ul > li > div.centered-sub > ul.sub-menu');
+                subMenus.removeClass('open-sub');
+                if (!isOpen) {
+                    targetSubMenu.addClass('open-sub');
+                }
             }
         }
     </script>
@@ -375,286 +464,264 @@
     </div>
     <nav class="head-menu">
         <ul>
-            <li class="nav-products">
-                <a onclick="listburg('1')">Products</a>
-                <div class="centered-sub">
-                    <ul class="sub-menu products">
-                        <div class="sub-groups">
-                            <div class="group">
-                                <p class="group-name">IoT platforms</p>
-                                <a class="cloud-lnk" href="/products/paas/">
-                                    <img src="/images/thingsboard-c-icon.svg">
-                                    <div class="sub-text">
-                                        <h1>Cloud</h1>
-                                        <p>Platform as a service</p>
-                                    </div>
-                                </a>
-                                <a class="prof-lnk" href="/products/thingsboard-pe/">
-                                    <img src="/images/thingsboard-p-icon.svg">
-                                    <div class="sub-text">
-                                        <h1>Professional Edition</h1>
-                                        <p>Advanced IoT platform</p>
-                                    </div>
-                                </a>
-                                <a class="com-lnk" href="/docs/getting-started-guides/what-is-thingsboard/">
-                                    <img src="/images/thingsboard-cm-icon.svg">
-                                    <div class="sub-text">
-                                        <h1>Community Edition</h1>
-                                        <p>Open source platform</p>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="group">
-                                <p class="group-name">Product ecosystem</p>
-                                <a class="gateway-lnk" href="/docs/iot-gateway/what-is-iot-gateway/">
-                                    <img src="/images/gateway-icon.svg">
-                                    <div class="sub-text">
-                                        <h1>IoT Gateway</h1>
-                                        <p>Connect legacy protocols</p>
-                                    </div>
-                                </a>
-                                <a class="license-lnk" href="/products/license-server/">
-                                    <img src="/images/license-icon.svg">
-                                    <div class="sub-text">
-                                        <h1>License Server</h1>
-                                        <p>Billing solution</p>
-                                    </div>
-                                </a>
-                                <a class="trendz-lnk" href="/products/trendz/">
-                                    <img src="/images/trendz-icon.svg">
-                                    <div class="sub-text">
-                                        <h1>Trendz Analytics</h1>
-                                        <p>Data analytics and Prediction</p>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </ul>
-                </div>
+            <li class="nav-products" data-submenu-id="nav-products">
+                <a onclick="listburg('nav-products')">Products</a>
             </li>
-            <li class="nav-services">
-                <a onclick="listburg('2')">Services</a>
-                <div class="centered-sub">
-                    <ul class="sub-menu services">
-                        <a href="/docs/services/support/">
-                            <img src="/images/support-icon.svg">
-                            <div class="sub-text">
-                                <h1>Support</h1>
-                                <p>Support packages</p>
-                            </div>
-                        </a>
-                        <a href="/docs/services/trainings/">
-                            <img src="/images/train-icon.svg">
-                            <div class="sub-text">
-                                <h1>Trainings</h1>
-                                <p>ThingsBoard education courses</p>
-                            </div>
-                        </a>
-                        <a href="/docs/services/consulting/">
-                            <img src="/images/prof-icon.svg">
-                            <div class="sub-text">
-                                <h1>Professional services</h1>
-                                <p>Development of solutions by the ThingsBoard team</p>
-                            </div>
-                        </a>
-                    </ul>
-                </div>
+            <li class="nav-services" data-submenu-id="nav-services">
+                <a onclick="listburg('nav-services')">Services</a>
             </li>
-            <li class="nav-developers">
-                <a onclick="listburg('3')">Developers</a>
-                <div class="centered-sub">
-                    <ul class="sub-menu developers">
-                        <a href="/docs/">
-                            <img src="/images/doc-icon.svg">
-                            <div class="sub-text">
-                                <h1>Documentation</h1>
-                                <p>Detailed information about the ThingsBoard IoT platform</p>
-                            </div>
-                        </a>
-                        <a href="/docs/guides/">
-                            <img src="/images/guides-icon.svg">
-                            <div class="sub-text">
-                                <h1>Guides</h1>
-                                <p>Step-by-step instructions</p>
-                            </div>
-                        </a>
-                        <a href="/docs/getting-started/">
-                            <img src="/images/start-icon.svg">
-                            <div class="sub-text">
-                                <h1>Get Started</h1>
-                                <p>Tutorial of the most popular features</p>
-                            </div>
-                        </a>
-                    </ul>
-                </div>
+            <li class="nav-developers" data-submenu-id="nav-developers">
+                <a onclick="listburg('nav-developers')">Developers</a>
             </li>
-            <li class="nav-cases">
-                <a onclick="listburg('4')">Use Cases</a>
-                <div class="centered-sub">
-                    <ul class="sub-menu cases">
-                        <a href="/smart-metering/">
-                            <img src="/images/case-met-icon.svg">
-                            <div class="sub-text">
-                                <h1>Smart Metering</h1>
-                                <p>Collection, analysis and visualization of data from meters</p>
-                            </div>
-                        </a>
-                        <a href="/smart-energy/">
-                            <img src="/images/case-eng-icon.svg">
-                            <div class="sub-text">
-                                <h1>Smart Energy</h1>
-                                <p>Energy monitoring and efficiency analysis</p>
-                            </div>
-                        </a>
-                        <a href="/smart-farming/">
-                            <img src="/images/case-fam-icon.svg">
-                            <div class="sub-text">
-                                <h1>Smart Farming</h1>
-                                <p>Monitoring of indoor conditions and plant growth characteristics</p>
-                            </div>
-                        </a>
-                        <a href="/fleet-tracking/">
-                            <img src="/images/case-trk-icon.svg">
-                            <div class="sub-text">
-                                <h1>Fleet Tracking</h1>
-                                <p>Fleet tracking and fleet management</p>
-                            </div>
-                        </a>
-                    </ul>
-                </div>
+            <li class="nav-cases" data-submenu-id="nav-cases">
+                <a onclick="listburg('nav-cases')">Use Cases</a>
             </li>
-            <li class="nav-customers">
-                <a onclick="listburg('5')">Customers</a>
-                <div class="centered-sub">
-                    <ul class="sub-menu customers">
-                        <div class="sub-groups">
-                            <div class="group">
-<!--                                <p class="group-name">Customers</p>-->
-                                <a class="small-link" href="/industries/smart-energy/">
-                                    <img src="/images/se-s-icon.svg">
-                                    <div class="sub-text">
-                                        <h1>Smart Energy</h1>
-                                    </div>
-                                </a>
-                                <a class="small-link" href="/industries/agriculture/">
-                                    <img src="/images/agr-s-icon.svg">
-                                    <div class="sub-text">
-                                        <h1>Agriculture</h1>
-                                    </div>
-                                </a>
-                                <a class="small-link" href="/industries/smart-buildings/">
-                                    <img src="/images/sb-s-icon.svg">
-                                    <div class="sub-text">
-                                        <h1>Smart Buildings</h1>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="group">
-<!--                                <p class="group-name"></p>-->
-                                <a class="small-link" href="/industries/smart-city/">
-                                    <img src="/images/sc-s-icon.svg">
-                                    <div class="sub-text">
-                                        <h1>Smart City</h1>
-                                    </div>
-                                </a>
-                                <a class="small-link" href="/industries/telecom/">
-                                    <img src="/images/tel-s-icon.svg">
-                                    <div class="sub-text">
-                                        <h1>Telecom</h1>
-                                    </div>
-                                </a>
-                                <a class="small-link" href="/industries/industry40/">
-                                    <img src="/images/in-s-icon.svg">
-                                    <div class="sub-text">
-                                        <h1>Industry 4.0</h1>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <!--<div class="bottom-group">
-                            <a class="small-link" href="/partners/hardware/">
-                                <img src="/images/hard-s-icon.svg">
-                                <div class="sub-text">
-                                    <h1>Hardware partners</h1>
-                                </div>
-                            </a>
-                            <a class="small-link" href="/partners/distributors/">
-                                <img src="/images/dis-s-icon.svg">
-                                <div class="sub-text">
-                                    <h1>Distributors</h1>
-                                </div>
-                            </a>
-                        </div>-->
-                    </ul>
-                </div>
+            <li class="nav-customers" data-submenu-id="nav-customers">
+                <a onclick="listburg('nav-customers')">Customers</a>
             </li>
-            <li class="nav-company">
-                <a onclick="listburg('6')">Company</a>
-                <div class="centered-sub">
-                    <ul class="sub-menu about">
-<!--                        <a class="small-link" href="/company/">
-                            <img src="/images/about-s-icon.svg">
-                            <div class="sub-text">
-                                <h1>Our Company</h1>
-                            </div>
-                        </a>
-                        <div class="bottom-group">-->
-                            <div class="sub-groups">
-                                <div class="group">
-                                    <a class="small-link" href="/company/">
-                                        <img src="/images/about-s-icon.svg">
-                                        <div class="sub-text">
-                                            <h1>Our Company</h1>
-                                        </div>
-                                    </a>
-                                    <a class="small-link" href="/docs/contact-us/">
-                                        <img src="/images/contact-s-icon.svg">
-                                        <div class="sub-text">
-                                            <h1>Contact Us</h1>
-                                        </div>
-                                    </a>
-                                    <a class="small-link" href="/careers/">
-                                        <img src="/images/careers-s-icon.svg">
-                                        <div class="sub-text">
-                                            <h1>Careers</h1>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="group">
-                                    <a class="small-link" href="/mediakit/">
-                                        <img src="/images/media-s-icon.svg">
-                                        <div class="sub-text">
-                                            <h1>Media Kit</h1>
-                                        </div>
-                                    </a>
-                                    <a class="small-link" href="https://blog.thingsboard.io/">
-                                        <img src="/images/blog-s-icon.svg">
-                                        <div class="sub-text">
-                                            <h1>Blog</h1>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-<!--                        </div>-->
-                        <div class="bottom-group">
-                            <a class="small-link" href="/partners/hardware/">
-                                <img src="/images/hard-s-icon.svg">
-                                <div class="sub-text">
-                                    <h1>Hardware partners</h1>
-                                </div>
-                            </a>
-                            <a class="small-link" href="/partners/distributors/">
-                                <img src="/images/dis-s-icon.svg">
-                                <div class="sub-text">
-                                    <h1>Distributors</h1>
-                                </div>
-                            </a>
-                        </div>
-                    </ul>
-                </div>
+            <li class="nav-company" data-submenu-id="nav-company">
+                <a onclick="listburg('nav-company')">Company</a>
             </li>
             <div class="indicator"><div class="head-arrow"></div><div class="line"></div><div class="sub-background"></div></div>
         </ul>
+        <div class="sub-menu-container">
+            <div id="nav-products" class="centered-sub">
+                <ul class="sub-menu products">
+                    <div class="sub-groups">
+                        <div class="group">
+                            <p class="group-name">IoT platforms</p>
+                            <a class="cloud-lnk" href="/products/paas/">
+                                <img src="/images/thingsboard-c-icon.svg">
+                                <div class="sub-text">
+                                    <h1>Cloud</h1>
+                                    <p>Platform as a service</p>
+                                </div>
+                            </a>
+                            <a class="prof-lnk" href="/products/thingsboard-pe/">
+                                <img src="/images/thingsboard-p-icon.svg">
+                                <div class="sub-text">
+                                    <h1>Professional Edition</h1>
+                                    <p>Advanced IoT platform</p>
+                                </div>
+                            </a>
+                            <a class="com-lnk" href="/docs/getting-started-guides/what-is-thingsboard/">
+                                <img src="/images/thingsboard-cm-icon.svg">
+                                <div class="sub-text">
+                                    <h1>Community Edition</h1>
+                                    <p>Open source platform</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="group">
+                            <p class="group-name">Product ecosystem</p>
+                            <a class="gateway-lnk" href="/docs/iot-gateway/what-is-iot-gateway/">
+                                <img src="/images/gateway-icon.svg">
+                                <div class="sub-text">
+                                    <h1>IoT Gateway</h1>
+                                    <p>Connect legacy protocols</p>
+                                </div>
+                            </a>
+                            <a class="license-lnk" href="/products/license-server/">
+                                <img src="/images/license-icon.svg">
+                                <div class="sub-text">
+                                    <h1>License Server</h1>
+                                    <p>Billing solution</p>
+                                </div>
+                            </a>
+                            <a class="trendz-lnk" href="/products/trendz/">
+                                <img src="/images/trendz-icon.svg">
+                                <div class="sub-text">
+                                    <h1>Trendz Analytics</h1>
+                                    <p>Data analytics and Prediction</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </ul>
+            </div>
+            <div id="nav-services" class="centered-sub">
+                <ul class="sub-menu services">
+                    <a href="/docs/services/support/">
+                        <img src="/images/support-icon.svg">
+                        <div class="sub-text">
+                            <h1>Support</h1>
+                            <p>Support packages</p>
+                        </div>
+                    </a>
+                    <a href="/docs/services/trainings/">
+                        <img src="/images/train-icon.svg">
+                        <div class="sub-text">
+                            <h1>Trainings</h1>
+                            <p>ThingsBoard education courses</p>
+                        </div>
+                    </a>
+                    <a href="/docs/services/consulting/">
+                        <img src="/images/prof-icon.svg">
+                        <div class="sub-text">
+                            <h1>Professional services</h1>
+                            <p>Development of solutions by the ThingsBoard team</p>
+                        </div>
+                    </a>
+                </ul>
+            </div>
+            <div id="nav-developers" class="centered-sub">
+                <ul class="sub-menu developers">
+                    <a href="/docs/">
+                        <img src="/images/doc-icon.svg">
+                        <div class="sub-text">
+                            <h1>Documentation</h1>
+                            <p>Detailed information about the ThingsBoard IoT platform</p>
+                        </div>
+                    </a>
+                    <a href="/docs/guides/">
+                        <img src="/images/guides-icon.svg">
+                        <div class="sub-text">
+                            <h1>Guides</h1>
+                            <p>Step-by-step instructions</p>
+                        </div>
+                    </a>
+                    <a href="/docs/getting-started/">
+                        <img src="/images/start-icon.svg">
+                        <div class="sub-text">
+                            <h1>Get Started</h1>
+                            <p>Tutorial of the most popular features</p>
+                        </div>
+                    </a>
+                </ul>
+            </div>
+            <div id="nav-cases" class="centered-sub">
+                <ul class="sub-menu cases">
+                    <a href="/smart-metering/">
+                        <img src="/images/case-met-icon.svg">
+                        <div class="sub-text">
+                            <h1>Smart Metering</h1>
+                            <p>Collection, analysis and visualization of data from meters</p>
+                        </div>
+                    </a>
+                    <a href="/smart-energy/">
+                        <img src="/images/case-eng-icon.svg">
+                        <div class="sub-text">
+                            <h1>Smart Energy</h1>
+                            <p>Energy monitoring and efficiency analysis</p>
+                        </div>
+                    </a>
+                    <a href="/smart-farming/">
+                        <img src="/images/case-fam-icon.svg">
+                        <div class="sub-text">
+                            <h1>Smart Farming</h1>
+                            <p>Monitoring of indoor conditions and plant growth characteristics</p>
+                        </div>
+                    </a>
+                    <a href="/fleet-tracking/">
+                        <img src="/images/case-trk-icon.svg">
+                        <div class="sub-text">
+                            <h1>Fleet Tracking</h1>
+                            <p>Fleet tracking and fleet management</p>
+                        </div>
+                    </a>
+                </ul>
+            </div>
+            <div id="nav-customers" class="centered-sub">
+                <ul class="sub-menu customers">
+                    <div class="sub-groups">
+                        <div class="group">
+                            <a class="small-link" href="/industries/smart-energy/">
+                                <img src="/images/se-s-icon.svg">
+                                <div class="sub-text">
+                                    <h1>Smart Energy</h1>
+                                </div>
+                            </a>
+                            <a class="small-link" href="/industries/agriculture/">
+                                <img src="/images/agr-s-icon.svg">
+                                <div class="sub-text">
+                                    <h1>Agriculture</h1>
+                                </div>
+                            </a>
+                            <a class="small-link" href="/industries/smart-buildings/">
+                                <img src="/images/sb-s-icon.svg">
+                                <div class="sub-text">
+                                    <h1>Smart Buildings</h1>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="group">
+                            <a class="small-link" href="/industries/smart-city/">
+                                <img src="/images/sc-s-icon.svg">
+                                <div class="sub-text">
+                                    <h1>Smart City</h1>
+                                </div>
+                            </a>
+                            <a class="small-link" href="/industries/telecom/">
+                                <img src="/images/tel-s-icon.svg">
+                                <div class="sub-text">
+                                    <h1>Telecom</h1>
+                                </div>
+                            </a>
+                            <a class="small-link" href="/industries/industry40/">
+                                <img src="/images/in-s-icon.svg">
+                                <div class="sub-text">
+                                    <h1>Industry 4.0</h1>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </ul>
+            </div>
+            <div id="nav-company" class="centered-sub">
+                <ul class="sub-menu about">
+                    <div class="sub-groups">
+                        <div class="group">
+                            <a class="small-link" href="/company/">
+                                <img src="/images/about-s-icon.svg">
+                                <div class="sub-text">
+                                    <h1>Our Company</h1>
+                                </div>
+                            </a>
+                            <a class="small-link" href="/docs/contact-us/">
+                                <img src="/images/contact-s-icon.svg">
+                                <div class="sub-text">
+                                    <h1>Contact Us</h1>
+                                </div>
+                            </a>
+                            <a class="small-link" href="/careers/">
+                                <img src="/images/careers-s-icon.svg">
+                                <div class="sub-text">
+                                    <h1>Careers</h1>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="group">
+                            <a class="small-link" href="/mediakit/">
+                                <img src="/images/media-s-icon.svg">
+                                <div class="sub-text">
+                                    <h1>Media Kit</h1>
+                                </div>
+                            </a>
+                            <a class="small-link" href="https://blog.thingsboard.io/">
+                                <img src="/images/blog-s-icon.svg">
+                                <div class="sub-text">
+                                    <h1>Blog</h1>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="bottom-group">
+                        <a class="small-link" href="/partners/hardware/">
+                            <img src="/images/hard-s-icon.svg">
+                            <div class="sub-text">
+                                <h1>Hardware partners</h1>
+                            </div>
+                        </a>
+                        <a class="small-link" href="/partners/distributors/">
+                            <img src="/images/dis-s-icon.svg">
+                            <div class="sub-text">
+                                <h1>Distributors</h1>
+                            </div>
+                        </a>
+                    </div>
+                </ul>
+            </div>
+        </div>
     </nav>
     <div>
         <a href="/installations/" class="n-button try">Try it now</a>

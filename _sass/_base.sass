@@ -131,7 +131,7 @@ p
 
     .head-menu
       ul
-        li:hover
+        li.active
           a, a:hover
             color: rgba(255, 255, 255, 0.5)
 
@@ -204,143 +204,38 @@ header
     -webkit-box-pack: center
     justify-content: center
 
-    ul
-      display: flex
+    .sub-menu-container
+      position: absolute
+      top: 84px
+      left: 0
+      transition: visibility, opacity ease-in-out
+      transition-duration: 0.3s
+      border-radius: 4px
+      box-shadow: 0 30px 60px -30px rgba(0, 0, 0, .3), 0 50px 100px -20px rgba(0, 0, 0, 0.25)
+      background-color: #fff
+      visibility: hidden
+      opacity: 0
+      &.active
+        visibility: visible
+        opacity: 1
+        &.bounds-transition
+          transition: visibility 0.3s, opacity ease-in-out 0.3s, left ease-in-out 0.2s, width ease-in-out 0.2s, height ease-in-out 0.2s
 
-      .indicator
-        width: 0
-        left: 0
-        border-radius: 2px
-        position: absolute
-        height: 4px
-        bottom: -4px
-        transition-delay: 0.3s
-        transition-duration: 0.3s
-        z-index: -1
-        padding: 0 14px
-
-        .head-arrow
-          position: absolute
-          background-image: url(/images/head-arrow.svg)
-          width: 8px
-          height: 100%
-          left: calc(50% - 4px)
-          bottom: 4px
-          opacity: 0
-          transition-delay: 0s
-          transition-duration: 0.3s
-
-        .line
-          position: relative
-          background-color: #2A7DEC
-          width: 0
-          height: 100%
-          left: 50%
-          opacity: 0
-          transition-duration: 0.3s
-
-      .nav-products, .nav-services, .nav-developers, .nav-cases, .nav-customers, .nav-company
-        &:hover~.indicator
-          transition-delay: 0s
-          transition-duration: 0.3s
-          .line
-            transition-delay: 0.3s
-            transition-duration: 0.3s
-            width: 100%
-            left: 0
-            opacity: 1
-          .head-arrow
-            transition-delay: 0.35s
-            transition-duration: 0s
-            opacity: 1
-
-      .nav-products
-        width: 108px
-        &:hover~.indicator
-          width: 108px
-          left: 0
-
-      .nav-services
-        width: 103px
-        &:hover~.indicator
-          width: 103px
-          left: 108px
-
-      .nav-developers
-        width: 129px
-        &:hover~.indicator
-          width: 129px
-          left: 211px
-
-      .nav-cases
-        width: 122px
-        &:hover~.indicator
-          width: 122px
-          left: 340px
-
-      .nav-customers
-        width: 127px
-        &:hover~.indicator
-          width: 127px
-          left: 462px
-
-      .nav-company
-        width: 118px
-        &:hover~.indicator
-          width: 118px
-          left: 589px
-
-      li
-        cursor: default
-        display: flex
-        padding: 10px 14px 14px
-        align-items: center
-        height: calc(100% + 4px)
-
-        a
-          width: 100%
-          text-align: center
-
-        &:hover a
-          color: #2A7DEC
-
-      a
-        display: block
-        color: #212529
-        font-size: 18px
-        font-weight: normal
-        text-decoration: none
-
-      a:not([href])
-        color: #212529
-
-        &:hover
-          color: #2A7DEC
-
+    .sub-menu-container, ul
       .centered-sub
-        margin-left: -50%
-        display: flex
-        justify-content: center
-        opacity: 0
-        transition-duration: 0s
+        width: max-content
         .sub-menu
-          transition-delay: 0s
           width: max-content
           padding: 40px 70px 40px 40px
           display: block
-          position: absolute
-          background-color: #fff
-          top: -500px
           z-index: 1
-          border-radius: 4px
-          box-shadow: 0 30px 60px -30px rgba(0, 0, 0, .3), 0 50px 100px -20px rgba(0, 0, 0, 0.25)
 
           .sub-groups
             display: flex
             .group
               padding-right: 70px
               &:last-child
-                  padding-right: 0
+                padding-right: 0
               .group-name
                 height: 62px
                 text-transform: uppercase
@@ -363,15 +258,15 @@ header
 
             &:hover
               .sub-text
-                  h1
-                      color: #2A7DEC
-                  p
-                      color: #212529
+                h1
+                  color: #2A7DEC
+                p
+                  color: #212529
 
             &.prof-lnk:hover, &.license-lnk:hover
-                .sub-text
-                    h1
-                      color: #1F8B4D
+              .sub-text
+                h1
+                  color: #1F8B4D
 
             &.com-lnk:hover .sub-text h1
               color: #305680
@@ -405,11 +300,109 @@ header
             &.small-link
               margin-bottom: 15px
               .sub-text
-                  padding: 0
-                  h1
-                      font-weight: 500
+                padding: 0
+                h1
+                  font-weight: 500
               &:last-child
-                  margin-bottom: 0
+                margin-bottom: 0
+
+    ul
+      display: flex
+
+      .indicator
+        width: 0
+        left: 0
+        border-radius: 2px
+        position: absolute
+        height: 4px
+        bottom: -4px
+        transition-delay: 0s
+        transition-duration: 0.3s
+        z-index: -1
+        padding: 0 14px
+        transition-property: none
+        &.left-transition
+          transition-property: left
+
+        .head-arrow
+          position: absolute
+          background-image: url(/images/head-arrow.svg)
+          width: 8px
+          height: 100%
+          left: calc(50% - 4px)
+          bottom: 4px
+          opacity: 0
+          transition-delay: 0s
+          transition-duration: 0.3s
+
+        .line
+          position: relative
+          background-color: #2A7DEC
+          width: 0
+          height: 100%
+          left: 50%
+          opacity: 0
+          transition-duration: 0.3s
+
+      .nav-products, .nav-services, .nav-developers, .nav-cases, .nav-customers, .nav-company
+        &.active~.indicator
+          transition-delay: 0s
+          transition-duration: 0.3s
+          .line
+            transition-delay: 0s
+            transition-duration: 0.3s
+            width: 100%
+            left: 0
+            opacity: 1
+          .head-arrow
+            transition-delay: 0.3s
+            transition-duration: 0s
+            opacity: 1
+
+      .nav-products
+        width: 108px
+
+      .nav-services
+        width: 103px
+
+      .nav-developers
+        width: 129px
+
+      .nav-cases
+        width: 122px
+
+      .nav-customers
+        width: 127px
+
+      .nav-company
+        width: 118px
+
+      li
+        cursor: default
+        display: flex
+        padding: 10px 14px 14px
+        align-items: center
+        height: calc(100% + 4px)
+
+        a
+          width: 100%
+          text-align: center
+
+        &:hover a
+          color: #2A7DEC
+
+      a
+        display: block
+        color: #212529
+        font-size: 18px
+        font-weight: normal
+        text-decoration: none
+
+      a:not([href])
+        color: #212529
+
+        &:hover
+          color: #2A7DEC
 
   .logo
     position: relative
@@ -590,7 +583,7 @@ header
 
       .head-menu
         ul
-          li:hover a
+          li.active a
             opacity: 1
             color: #2A7DEC
 
@@ -2069,39 +2062,21 @@ iframe
 
           &.nav-products
             width: 95px
-            &:hover~.indicator
-              width: 95px
-              left: 0
 
           &.nav-services
             width: 91px
-            &:hover~.indicator
-              width: 91px
-              left: 95px
 
           &.nav-developers
             width: 115px
-            &:hover~.indicator
-              width: 115px
-              left: 186px
 
           &.nav-cases
             width: 109px
-            &:hover~.indicator
-              width: 109px
-              left: 301px
 
           &.nav-customers
             width: 114px
-            &:hover~.indicator
-              width: 114px
-              left: 410px
 
           &.nav-company
             width: 105px
-            &:hover~.indicator
-              width: 105px
-              left: 524px
 
           a
             font-size: 17px
@@ -2195,8 +2170,8 @@ iframe
 
       .head-menu
         display: block
-        overflow-y: scroll
-        height: calc(100% - 199px)
+        overflow-y: auto
+        height: calc(100% - 182px)
         margin: 70px -30px 0
         padding: 16px 30px 0
         .centered-sub
