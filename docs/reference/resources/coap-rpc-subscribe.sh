@@ -2,11 +2,9 @@
 # for ThingsBoard Cloud
 
 # Subscribe to RPC requests
-# The s option stands for subscribe and the value has to be specified in seconds
-coap-client -m get coap://coap.thingsboard.cloud/api/v1/$ACCESS_TOKEN/rpc -s 100
+coap get -o coap://coap.thingsboard.cloud/api/v1/$ACCESS_TOKEN/rpc
 
 # for local ThingsBoard
 
 # Subscribe to RPC requests
-# The s option stands for subscribe and the value has to be specified in seconds
-coap-client -m get coap://localhost/api/v1/$ACCESS_TOKEN/rpc -s 100
+coap get -o coap://localhost/api/v1/$ACCESS_TOKEN/rpc

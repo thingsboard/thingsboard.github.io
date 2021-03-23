@@ -21,10 +21,10 @@ ThingsBoard server nodes act as a CoAP Server that supports both regular and obs
 
 ##### Client libraries setup
 
-You can find CoAP client libraries for different programming languages on the web. Examples in this article will be based on [CoAP cli](http://manpages.ubuntu.com/manpages/focal/man5/coap-client.5.html).
+You can find CoAP client libraries for different programming languages on the web. Examples in this article will be based on [CoAP cli](https://www.npmjs.com/package/coap-cli).
 In order to setup this tool, you can use instructions in our [Hello World](/docs/getting-started-guides/helloworld/) guide.
 
-**NOTE**: In order to install the coap cli please execute: <br>
+**NOTE**: CoAP cli does not support query parameters. If you require to use query parameters, you should use [coap client](http://manpages.ubuntu.com/manpages/focal/man5/coap-client.5.html) instead. To install the coap-client please execute: <br>
 
 * **Ubuntu 20.04:** ```sudo apt install libcoap2-bin```
 * **Ubuntu 18.04:** ```sudo apt install libcoap1-bin```
@@ -110,6 +110,7 @@ In order to request client-side or shared device attributes to ThingsBoard serve
 coap://host/api/v1/$ACCESS_TOKEN/attributes?clientKeys=attribute1,attribute2&sharedKeys=shared1,shared2
 ```
 
+**NOTE**: This example shown with the coap-client instead of CoAP cli since CoAP cli does not support query parameters. Please refer to <a href="#docsContent">Client libraries setup</a>.
 
 {% capture tabspec %}coap-attributes-request
 A,Example,shell,resources/coap-attributes-request.sh,/docs/reference/resources/coap-attributes-request.sh
