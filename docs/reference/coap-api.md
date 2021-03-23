@@ -110,7 +110,7 @@ In order to request client-side or shared device attributes to ThingsBoard serve
 coap://host/api/v1/$ACCESS_TOKEN/attributes?clientKeys=attribute1,attribute2&sharedKeys=shared1,shared2
 ```
 
-**NOTE**: This example shown with the coap-client instead of CoAP cli since CoAP cli does not support query parameters. Please refer to <a href="#docsContent">Client libraries setup</a>.
+**NOTE**: This example shown with the coap-client instead of CoAP cli since CoAP cli does not support query parameters. Please refer to [Client libraries setup](#docsContent).
 
 {% capture tabspec %}coap-attributes-request
 A,Example,shell,resources/coap-attributes-request.sh,/docs/reference/resources/coap-attributes-request.sh
