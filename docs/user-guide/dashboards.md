@@ -311,6 +311,22 @@ function-ds:
     4:
         image: /images/user-guide/dashboards/function-ds-1.png
 
+tw:
+    0:
+        image: /images/user-guide/dashboards/tw.png
+    1:
+        image: /images/user-guide/dashboards/tw-1.png
+
+tw-current-day:
+    0:
+        image: /images/user-guide/dashboards/tw-current-day.png
+    1:
+        image: /images/user-guide/dashboards/tw-current-day-sofar.png
+
+tw-time-zone:
+    0:
+        image: /images/user-guide/dashboards/tw-time-zone.png
+
 --- 
 
 * TOC
