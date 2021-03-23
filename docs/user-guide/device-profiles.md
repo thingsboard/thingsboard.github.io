@@ -13,13 +13,21 @@ queueNameSetting:
     0:
         image: /images/user-guide/device-profile/queue-name-setting.png
 
-transportSetting:
+mqttTransportSetting:
     0:
         image: /images/user-guide/device-profile/transport-setting.png
+        
+coapTransportSetting:    
+    0:
+        image: /images/user-guide/device-profile/coap-transport-setting.png
 
 mqttProtobufSetting:
     0:
         image: /images/user-guide/device-profile/mqtt-protobuf-setting.png
+        
+coapProtobufSetting:
+    0:
+        image: /images/user-guide/device-profile/coap-protobuf-setting.png
     
 alarmСonditions:
     0:
@@ -199,7 +207,7 @@ mosquitto_pub -h 'demo.thingsboard.io' -i 'c1' -u 't1' -P 'secret' -t '/attribut
 
 assuming you have provisioned basic MQTT credentials for your device with the client id 'c1', username 't1' and password 'secret'.
 
-{% include images-gallery.html imageCollection="transportSetting" %}
+{% include images-gallery.html imageCollection="mqttTransportSetting" %}
 
 ##### MQTT device payload
 
@@ -208,7 +216,7 @@ By default, the platform expects devices to send data via JSON. However, it is a
 Protocol Buffers, or Protobuf, is a language- and a platform-neutral way of serializing structured data. It is convenient to minimize the size of transmitted data.  
 
 At the moment of writing (ThingsBoard 3.2), platform supports customizable proto schemas for [telemetry upload](/docs/reference/mqtt-api/#telemetry-upload-api) 
-and [attribute upload]/docs/reference/MQTT-API/#publish-attribute-update-to-the-server). 
+and [attribute upload](/docs/reference/MQTT-API/#publish-attribute-update-to-the-server). 
 We plan to the add ability to define a schema for downlink messages (RPC calls and attribute updates) in future releases.  
 
 {% include images-gallery.html imageCollection="mqttProtobufSetting" %}
@@ -216,6 +224,41 @@ We plan to the add ability to define a schema for downlink messages (RPC calls a
 
 ThingsBoard parses the protobuf structures dynamically, that is why, it does not support some protobuf features like OneOf, extensions and maps, yet.
 
+#### CoAP transport type
+
+The CoAP transport type enables advanced CoAP transport settings. With the CoAP transport type, you have the ability to select the CoAP device type.
+
+{% include images-gallery.html imageCollection="coapTransportSetting" %}
+
+##### CoAP device type: Default
+
+By default CoAP device type Default have CoAP device payload set to JSON that supports basic [CoAP API](/docs/reference/coap-api/) same as for [Default transport type](#default-transport-type).
+However, it is also possible to send data via [Protocol Buffers](https://developers.google.com/protocol-buffers) by changing the parameter CoAP device payload to Protobuf.
+
+Protocol Buffers, or Protobuf, is a language- and a platform-neutral way of serializing structured data. It is convenient to minimize the size of transmitted data.  
+
+At the moment of writing (ThingsBoard 3.2.2), platform supports customizable proto schemas for [telemetry upload](/docs/reference/coap-api/#telemetry-upload-api) 
+and [attribute upload](/docs/reference/coap-api/#publish-attribute-update-to-the-server). 
+We plan to the add ability to define a schema for downlink messages (RPC calls and attribute updates) in future releases.  
+
+{% include images-gallery.html imageCollection="coapProtobufSetting" %}
+
+
+ThingsBoard parses the protobuf structures dynamically, that is why, it does not support some protobuf features like OneOf, extensions and maps, yet.
+
+##### CoAP device type: Efento NB-IoT
+
+At the moment of writing (ThingsBoard 3.2.2), platform supports integration with next Efento NB-IoT sensors: 
+
+ - temperature,
+ - humidity,
+ - air pressure,
+ - differential pressure,
+ - open / close,
+ - leakage,
+ - I/O. 
+ 
+FW version: 06.02 or newer. 
 
 ### Alarm Rules
 
