@@ -187,7 +187,7 @@ def main():
     dht_sensor = DHT('11', 22)
 
     # Callback for server RPC requests (Used for control servo and led blink)
-    def on_server_side_rpc_request(request_id, request_body):
+    def on_server_side_rpc_request(client, request_id, request_body):
         log.info('received rpc: {}, {}'.format(request_id, request_body))
         if request_body['method'] == 'getLedState':
             client.send_rpc_reply(request_id, light_state)
