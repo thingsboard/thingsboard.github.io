@@ -37,6 +37,8 @@ Possible error codes and their reasons:
 
 {% include templates/api/key-value-format.md %}
 
+Using custom binary format or some serialization framework is also possible. See [protocol customization](#protocol-customization) for more details.
+
 
 ## Telemetry upload API
 
