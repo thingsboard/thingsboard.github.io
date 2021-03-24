@@ -23,7 +23,7 @@ We assume you have completed the following guides and   reviewed the articles li
   
 We also assume you have the following third-party installed:
 
-  * [OpenJDK 8](https://openjdk.java.net/install/)
+  * [OpenJDK 11](https://openjdk.java.net/install/)
   * [Maven 3.6.0+](https://maven.apache.org/install.html)
   * Any modern Java IDE, although we recommend [IntelliJ IDEA](https://www.jetbrains.com/idea/download)
   * [Optional] Install [Lombok](https://projectlombok.org/) plugin to your favorite IDE.
