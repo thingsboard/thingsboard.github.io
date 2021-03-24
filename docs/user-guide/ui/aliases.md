@@ -487,7 +487,7 @@ Let's use an added alias in a widget:
 
 ### Group entities
 
-{% assign feature = "Group entity" %}{% include templates/pe-feature-banner.md %}
+{% assign feature = "Group entities" %}{% include templates/pe-feature-banner.md %}
 
 This alias allows choosing a single group of entities, which can be a customer group, an asset group, or a device group.
 **Please note** that when you choose a group, the group Id is hard-coded to the dashboard config. 
