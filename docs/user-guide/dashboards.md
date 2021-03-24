@@ -311,6 +311,22 @@ function-ds:
     4:
         image: /images/user-guide/dashboards/function-ds-1.png
 
+tw:
+    0:
+        image: /images/user-guide/dashboards/tw.png
+    1:
+        image: /images/user-guide/dashboards/tw-1.png
+
+tw-current-day:
+    0:
+        image: /images/user-guide/dashboards/tw-current-day.png
+    1:
+        image: /images/user-guide/dashboards/tw-current-day-sofar.png
+
+tw-time-zone:
+    0:
+        image: /images/user-guide/dashboards/tw-time-zone.png
+
 --- 
 
 * TOC
@@ -695,26 +711,35 @@ Read more about [widget actions](/docs/user-guide/ui/widget-actions/) in the doc
 
 ## Time window
 
-Dashboard time window defines default time interval and aggregation function that will be used to fetch the time series or alarm data.
-This time window will be used by all the time series and alarm widgets unless they are explicitly [configured](/docs/user-guide/dashboards/#widget-time-window) to overwrite this behaviour. 
-In case of time series widget, ThingsBoard will obviously fetch telemetry with timestamp that matches the time window.
-In case of alarm widget, ThingsBoard will fetch alarms with created time that matches the time window.
+Dashboard time window represents the time interval and aggregation function that will be used to fetch the time series or alarm data.
+Time window is used by all the time series and alarm widgets unless they are explicitly [configured](/docs/user-guide/dashboards/#4-widget-time-window) to overwrite its execution.  
+In the case of a time series widget, ThingsBoard fetches telemetry with a timestamp that matches the time window.  
+In the case of an alarm widget, ThingsBoard fetches alarms with the created time that matches the time window.
 
-The data aggregation function is applicable for time series data and is not applicable for alarms.
-Data aggregation is useful when you don't want to fetch all time series data to UI, and you would like to pre-aggregate it on the database level.
+The time window can work in two modes:
+- In the **real-time mode**, widgets constantly receive updates from the server and automatically show you only the data that matches the time window for a current timestamp.
+- In the **history mode**, widgets receive data only during the initial load and no updates are issued over WebSockets.
+
+{% include images-gallery.html imageCollection="tw" %}
+<br>
+
+**The data aggregation function** is applicable for time series data and is not applicable for alarms.  
+There are five aggregation functions available at the moment: Min, Max, Average, Sum and Count. The special function called None is used to disable the aggregation.
+Data aggregation is useful when you don't want to fetch all time-series data to UI, and you would like to pre-aggregate it on the database level.
 Using the aggregation functions saves network bandwidth and computation power of the client browser.
-We recommend to use aggregation functions whenever is possible if you have a lot of raw values.
+We recommend using aggregation functions whenever is possible if you have a lot of raw values.
 
-There are 5 aggregation functions available at the moment: **Min**, **Max**, **Average**, **Sum** and **Count**. 
-The special function called **None** is used to disable the aggregation.
-The default behavior of the dashboard is to show average values for the last minute grouped into 1 second intervals.
-Most likely, you will need to change this interval to last day or even last 30 days. 
-You may notice that the value of minimum grouping interval is automatically adjusted according to the main time interval.
-The goal of the adjustment is to keep number of intervals lower than configurable value (700 in our case).
+**Since version 3.2.2,** it is possible to use predefined intervals (Current Day, Previous Day, Previous Month, etc.) in addition to last X minutes/hours/days.
+**Note** that the _Current day_ interval means 24 hours (12 am at night to 12 am the next night), whereas the _Current day so far_ means from 12 am at night until the time when the time window was updated.
+All other intervals are distinguished in the same way.
 
-The time window may work in two modes: **realtime** and **history**.
-While in history mode, the widget will receive data only during the initial load and no updates will be issued over websockets.  
-In the realtime mode, the widgets will constantly receive updates from the server and will automatically show you only the data that matches the time window for a current timestamp.
+{% include images-gallery.html imageCollection="tw-current-day" %}
+
+**Version 3.2.2** introduces time zone configurations. By default, dashboard uses the time zone provided by the browser.
+Now it is possible to set the time of your browser or a specific country. To quickly find the needed time zone, start typing its name in the time zone bar.
+
+{% include images-gallery.html imageCollection="tw-time-zone" %}
+
 
 ## Settings
 
@@ -724,7 +749,7 @@ the first thing you need to do is to enter the Edit mode by clicking the "Pencil
 
 {% include images-gallery.html imageCollection="dashboards-edit-enter" %}
 
-When the edit mode is entered, you should click the "Gear" icon at the top of the window, so the Dashboard Settings will be opened.
+After entering the edit mode, click the "Gear" icon at the top of the window, so the Dashboard Settings will be opened.
 
 {% include images-gallery.html imageCollection="dashboards-settings-enter" %}
 
