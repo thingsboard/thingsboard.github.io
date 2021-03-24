@@ -22,6 +22,40 @@ started:
         image: /images/lwm2m/relations_access_control_object_other_objects.jpg 
         title: 'access control object LwM2M.'
 
+addResourcesModel_common:
+    0:
+        image: /images/lwm2m/resources_model_common_0.png 
+        title: 'start import Resource -> object model LwM2M.'    
+    1:
+        image: /images/lwm2m/resources_model_common_1.png 
+        title: 'click to select a file to upload.'       
+    2:
+        image: /images/lwm2m/resources_model_common_2.png 
+        title: 'open file of Resource -> object model LwM2M (format xml).'    
+    3:
+        image: /images/lwm2m/resources_model_common_3.png 
+        title: 'select the Resource type "LWM2M model" and add Resource -> object model LwM2M.'    
+    4:
+        image: /images/lwm2m/resources_model_common_4.png 
+        title: 'control of parameters by the Resource -> object model LwM2M (example): <br>* Name: <b>Device</b><br>* ObjectID: <b>3</b><br>* ObjectVersion <b>1.2</b><br>* File name <b>3_1_2.xml</b>'    
+
+addResourcesModel_tenant:
+    0:
+        image: /images/lwm2m/resources_model_tenant_0.png 
+        title: 'start import Resource -> object model LwM2M.'    
+    1:
+        image: /images/lwm2m/resources_model_common_1.png 
+        title: 'click to select a file to upload.'       
+    2:
+        image: /images/lwm2m/resources_model_common_2.png 
+        title: 'open file of Resource -> object model LwM2M (format xml).'    
+    3:
+        image: /images/lwm2m/resources_model_common_3.png 
+        title: 'select the Resource type "LWM2M model" and add Resource -> object model LwM2M.'    
+    4:
+        image: /images/lwm2m/resources_model_common_4.png 
+        title: 'control of parameters by the Resource -> object model LwM2M (example): <br>* Name: <b>Device</b><br>* ObjectID: <b>3</b><br>* ObjectVersion <b>1.2</b><br>* File name <b>3_1_2.xml</b>'    
+
 profileNoSec_create:
     0:
         image: /images/lwm2m/noSec_profile_create_Step_1.png 
@@ -630,9 +664,10 @@ The tenant can use his own model for each object.
     If the system does not have a common list of models for all devices,                
     then the transport will use the **minimum** set of models provided from *LESHAN LIBRARY*<sup><b>[/org/eclipse/leshan/leshan-core/.../leshan-core-....jar!/models/](#link-lwm2m-resource-model-main)</b></sup>
 
+*Add common LWM2M Resource Model by the System Admin: follow the instructions step by step:*
+  
+    {% include images-gallery.html imageCollection="addResourcesModel_common" showListImageTitles="true" %}
 
-
-* `TO DO` Add common list in pictures:
 
 #### Add LWM2M resource model by the Tenant
 The Tenant has the option to add their own variations of the LWM2M Resource Model.
@@ -642,6 +677,10 @@ Tenant shares a common list of LWM2M Resource Models and his list of models toge
 If **the tenant adds a model** with an ID that is already in the common list of LWM2M Resource Models, then the model with this ID will be added to the list of models for the tenant instead of a model from common list of LWM2M Resource Models.
 
 When **delete the Tenant**, everything related to the Tenant **is deleted** (including: **LWM2M Device Profiles**, **LWM2M Devices** and Tenant`s  list of LWM2M **Resource Models**.
+
+*Add LWM2M resource model by the Tenant: follow the instructions step by step:*
+  
+    {% include images-gallery.html imageCollection="addResourcesModel_tenant" showListImageTitles="true" %}
 
 **Note:**<br>
     The Tenant and the System Admin can add a model with an ID that is unique to the tenant’s LWM2M Resource Model list (**ObjectID** and **ObjectVersion**).<br>
@@ -683,8 +722,6 @@ If the version of the object is not specified in the model, the default model ve
             ...
         </LWM2M> 
 ```
-
-* `TO DO` Add tenat`s list in pictures:
 
 ### Thingsboard: `LWM2M Device Profile` and `Device` creation and configuration
 #### NoSec mode (`NoSec`)
