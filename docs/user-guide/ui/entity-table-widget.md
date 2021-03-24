@@ -98,11 +98,11 @@ actions-column:
 
 ## Introduction
 
-Advanced Settings of the Entity Table widget allows [adjusting the title of the widget](#1-entities-table-title), [changing visibility of objects on widget](#2-checkbox-settings), 
+Advanced settings of the Entities Table widget allows [adjusting the title of the widget](#1-entities-table-title), [changing visibility of objects on widget](#2-checkbox-settings), 
 [customizing the columns](#3-the-columns-settings), [setting up the pagination](#4-the-pagination),
 [sorting the data](#5-sorting-data-in-the-table-widget) and [changing style of widget rows](#6-row-style-function).
 
-To enter the Advanced mode and start adjusting the settings above, you should:
+To enter the sdvanced mode and start adjusting the settings above, you should:
 
 1. Clicking the "pencil" icon ("Enter edit mode") at the bottom right of the screen;
 2. Click on the Pencil icon ("Edit widget") in the upper right corner of the Entity Table widget itself;
