@@ -1,10 +1,25 @@
 ---
 layout: docwithnav
-title: Guide creation instruction
+assignees:
+- ddiachenko
+title: YOUR_INTEGRATION_GUIDE
 description: Integration sample
 hidetoc: "true"
 
 ---
+
+{% capture domain_owner_note %}
+**Note**
+
+In this guide you may also mention (refer to) any other public source as an example of setup or configuration. However, all the steps has to fit instructions below.
+
+All the steps should be numerated and provided with a clear flow of realization with examples in screenshots/pictures.
+
+* Store your integration .md file in a directory: "/docs/user-guide/integrations/"
+* Store all of your images for your guide in a separate directory of your integration: "/images/user-guide/integrations/YOUR_INTEGRATION_NAME/"
+{% endcapture %}
+
+{% include templates/info-banner.md content=domain_owner_note %}
 
 * TOC 
 {:toc}
@@ -21,13 +36,13 @@ Widget/dashboard example for visualization of the data from your device. You can
 
 ### Block 1 Device configuration
 
-* [Step 1] List of the devices that can be used with this integration.
-* [Step 2] Prerequisites (min prerequisites for devices/device versions/required(mandatory) software).
-* [Step 3] Configuration of devices (setup/programmation/configuration).
+* [Step 1.1] List of the devices that can be used with this integration.
+* [Step 1.2] Prerequisites (min prerequisites for devices/device versions/required(mandatory) software).
+* [Step 1.3] Configuration of devices (setup/programmation/configuration).
 
 ### Block 2 ThingsBoard configuration (please use PE only recommendations)
 
-Choose one of the suitable methods of integration according to - Connectivity diagram
+Choose one of the suitable methods of integration according to Connectivity diagram below
 
 {% include mermaid-graph.html
 graphId="connectivityGraph"
@@ -36,32 +51,25 @@ links-json="resources/connectivity-links.json" %}
 
 #### Integration method
 
-* [Step 4] ThingsBoard Prerequisites (f.e. versions/components/etc. - optional).
-* [Step 5] Uplink/Downlink (may be created basic Up/Down -link).
-* [Step 6] Integration.
-* [Step 7] Uplink/Downlink configuration.
+* [Step 2.1] ThingsBoard Prerequisites (f.e. versions/components/etc. - optional).
+* [Step 2.2] Uplink/Downlink (may be created basic Up/Down -link).
+* [Step 2.3] Integration.
+* [Step 2.4] Uplink/Downlink configuration.
 
-#### API's methods
+#### or API methods
 
-* [Step 8] Device creation process.
-* [Step 9] Key-value format configuration.
-* [Step 10] Pulling data process.
+* [Step 2.1] Device creation process.
+* [Step 2.2] Key-value format configuration.
+* [Step 2.3] Pulling data process.
 
-#### IoT Gateway method
+#### or IoT Gateway method
 
-* [Step 11] Integration guide with all the nuances about the configuration and options that may be used to (secure/non-secure/etc.) may be referred to [IoT Gateway](https://thingsboard.io/docs/iot-gateway/getting-started) page.
+* [Step 2.1] Provide detailed and clear steps for IoT Gateway integration. You can refer to [IoT Gateway](https://thingsboard.io/docs/iot-gateway/getting-started) page.
 
 ### Block 3 Additional information
 
-* [Step 12] Additional integration information (if required).
-* [Step 13] Troubleshooting steps.
-  
-The integration guide should conform to the example above and should consist of all the additional info and examples with the screenshot/pictures. It may refer to other public sources as an example of setup or configuration but all the steps should be described in the integration guide.
-  
-All the steps should be numerated and provided with a clear flow of realization with examples in screenshots/pictures.
-
-* Store your integration .md file in path: "/docs/user-guide/integrations/"
-* Store all of your images for your guide in path: "/images/user-guide/integrations/YOUR_INTEGRATION_NAME/"
+* [Step 3.1] Additional integration information (if required).
+* [Step 3.2] Troubleshooting steps.
 
 ## Feedback & Contact Us for your integration
 

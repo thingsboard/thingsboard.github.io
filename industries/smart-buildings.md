@@ -129,7 +129,7 @@ description:
     </div>
 </div>
 <div class="customer-block">
-    <a href="https://www.conbee.eu/">
+    <!--<a href="https://www.conbee.eu/"> ---->
         <div class="customer-logo">
             <img width="" src="/images/customers/conbee.svg" alt="Conbee GmbH">
         </div>

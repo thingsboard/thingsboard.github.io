@@ -11,7 +11,7 @@ title: Widgets Development Guide
 
 ## Introduction
 
-**ThingsBoard widgets** are additional UI modules that easily integrate into any [IoT Dashboard](/docs/user-guide/ui/dashboards/).  They provide end-user functions such as data visualization, remote device control, alarms management and display of static custom html content.
+**ThingsBoard widgets** are additional UI modules that easily integrate into any [IoT Dashboard](/docs/user-guide/dashboards/).  They provide end-user functions such as data visualization, remote device control, alarms management and display of static custom html content.
 According to the provided features, each widget definition represents a specific [Widget Type](/docs/user-guide/ui/widget-library/#widget-types).
 
 ## Creating new widget definition

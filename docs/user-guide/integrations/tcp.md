@@ -1,9 +1,39 @@
 ---
 layout: docwithnav
 title: TCP Integration
-description: TCP Integration Guide 
+description: TCP Integration Guide
+debug:
+    0:
+        image: /images/downlink/debug.png
 
+downlink:
+    0:
+        image: /images/downlink/downlink_data_converter_details.png
+
+rule_chain:
+    0:
+        image: /images/downlink/rule_chains_integration_downlink.png
+
+shared_attributes:
+    0:
+        image: /images/downlink/device_groups_all_shared_attributes.png
+    1:
+        image: /images/downlink/device_groups_all_shared_attributes_update.png
+
+events_in:
+    0:
+        image: /images/downlink/downlink_converter_events_in.png
+
+events_out:
+    0:
+        image: /images/downlink/downlink_converter_events_out.png
+
+terminal:
+    0:
+        image: /images/downlink/terminal.png
 ---
+
+
 
 {% assign feature = "Platform Integrations" %}{% include templates/pe-feature-banner.md %}
 
@@ -33,27 +63,27 @@ In this tutorial, we will use:
  - **netcat** (**nc**) utility to establish TCP connections, receive data from there and transfer them;    
 
 Let's assume that we have a sensor which is sending current temperature and humidity readings.
-Our sensor device **SN-001** publishes it's temperature and humidity readings to TCP Integration on **10560** port to the machine where TCP Integration is running.
+Our sensor device **SN-002** publishes it's temperature and humidity readings to TCP Integration on **10560** port to the machine where TCP Integration is running.
 
 For demo purposes we assume that our device is smart enough to send data in 3 different payload types:
- - **Text** - in this case payload is **SN-001,default,temperature,25.7\n\rSN-001,default,humidity,69**
+ - **Text** - in this case payload is **SN-002,default,temperature,25.7\n\rSN-002,default,humidity,69**
  - **JSON** - in this case payload is 
  
 ```json
 [
   {
-    "deviceName": "SN-001",
+    "deviceName": "SN-002",
     "deviceType": "default",
     "temperature": 25.7,
     "humidity": 69
   }
 ]
 ```
- - **Binary** - in this case binary payload is **\x30\x30\x30\x30\x11\x53\x4e\x2d\x30\x30\x31\x64\x65\x66\x61\x75\x6c\x74\x32\x35\x2e\x37\x00\x00\x00** (in HEX string). 
+ - **Binary** - in this case binary payload is **\x30\x30\x30\x30\x11\x53\x4e\x2d\x30\x30\x32\x64\x65\x66\x61\x75\x6c\x74\x32\x35\x2e\x37\x00\x00\x00** (in HEX string). 
   Here is the description of the bytes in this payload:
     - **0-3** bytes - **\x30\x30\x30\x30** - dummy bytes to show how you can skip particular prefix bytes in your payload. These bytes are included for sample purposes;
     - **4** byte - **\x11** - payload length. If we convert it to decimal - **17**. So our payload in this case is limited to 17 bytes from the incoming TCP frame;
-    - **5-10** bytes - **\x53\x4e\x2d\x30\x30\x31** - device name. If we convert it to text - **SN-001**;
+    - **5-10** bytes - **\x53\x4e\x2d\x30\x30\x32** - device name. If we convert it to text - **SN-002**;
     - **11-17** bytes - **\x64\x65\x66\x61\x75\x6c\x74** - device type. If we convert it to text - **default**;
     - **18-21** bytes - **\x32\x35\x2e\x37** - temperature telemetry. If we convert it to text - **25.7**;
     - **22-24** bytes - **\x00\x00\x00** - dummy bytes. We are going to ignore them, because payload size is **17** bytes - from **5** till **21** byte. These bytes are included for sample purposes;
@@ -83,7 +113,43 @@ Binary payload<br/>%,%binary%,%templates/integration/tcp/tcp-uplink-converter-bi
 
 #### Downlink Converter
 
-**Currently TCP integration does not support Downlink functionality**
+Create Downlink in **Data converters.** To see events - enable **Debug.**
+
+{% include images-gallery.html imageCollection="debug" %}
+
+
+Add a converter to the integration. You can customize the downlink according to your configuration.
+Let's consider an example where we send an attribute update message. So we should change code in the downlink encoder function under line `//downlink data input`
+
+```
+data: JSON.stringify(msg)
+```
+where ***msg*** is the message that we receive and send back to the device.
+
+{% include images-gallery.html imageCollection="downlink" %}
+
+We can send a message to the device from Rule chain using the rule node. For our example, we create the **integration downlink** node and set the ***"Attributes updated"*** link to it. When changes are made to the attribute, the downlink message will be sent to the integration. 
+
+{% include images-gallery.html imageCollection="rule_chain" %}
+
+We go to the **Device group** section in the **All** folder, to see this with an example. We have indicated the serial number of the device in the **Shared attributes**. Now we edit it by clicking on the "pencil" icon. Then we make changes to the attribute (change the series number from MT-22 to MT-23) and save the data.
+
+{% include images-gallery.html imageCollection="shared_attributes" %}
+
+Received data and data that was sent can be viewed in the downlink converter.In the **“In”** block of the **Events** tab, we see what data entered:
+
+{% include images-gallery.html imageCollection="events_in" %}
+
+The **“Out”** field displays messages to device:
+
+{% include images-gallery.html imageCollection="events_out" %}
+
+An example of a sent message and a response from ThingsBoard in the terminal:
+
+{% include images-gallery.html imageCollection="terminal" %}
+
+This command will send the Uplink message to the ThingsBoard and will wait for Downlink message for 60 seconds if the message exists. 
+To learn how to send Uplink message, please [read here](/docs/user-guide/integrations/tcp/?tcpintegrationsenduplink=text&tcpintegrationhandlerconfiguration=text&tcpintegartionuplinkpayload=json#send-uplink-message)
 
 ### TCP Integration Setup
 
@@ -134,7 +200,7 @@ Binary payload<br/>%,%binary%,%templates/integration/tcp/tcp-send-uplink-binary.
 
 {% include content-toggle.html content-toggle-id="tcpintegrationsenduplink" toggle-spec=senduplink %}
 
-Once you go to **Device Groups -> All** you should find a **SN-001** device provisioned by the Integration.
+Once you go to **Device Groups -> All** you should find a **SN-002** device provisioned by the Integration.
 Click on the device, go to **Latest Telemetry** tab to see "temperature" key and its value (25.7) there.
 
 If your payload contains **humidity** telemetry, you should see "humidity" key and its value (69) there as well.

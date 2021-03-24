@@ -1,9 +1,9 @@
 Please select **Handler Type** as **TEXT**
 
-In our example we are going to split incoming text payload **SN-001,default,temperature,25.7\n\rSN-001,default,humidity,69** into two different messages
+In our example we are going to split incoming text payload **SN-002,default,temperature,25.7\n\rSN-002,default,humidity,69** into two different messages
 
-- **SN-001,default,temperature,25.7**
-- **SN-001,default,humidity,69**
+- **SN-002,default,temperature,25.7**
+- **SN-002,default,humidity,69**
 
 Newline delimiter (**\n\r**) will be used to split payload into multiple messages.
 
