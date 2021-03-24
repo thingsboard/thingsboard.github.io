@@ -346,7 +346,7 @@ the LWM2M Server or LWM2M Bootstrap-Server, respectively.
 ```ruby
     thingsboard/application/src/main/resources/thingsboard.yml
     ...
-        LWM2M:
+        lwm2m:
             enabled: "${LWM2M_ENABLED:true}"
             ...
             bootstrap:
@@ -358,7 +358,7 @@ the LWM2M Server or LWM2M Bootstrap-Server, respectively.
 ```ruby
     thingsboard/application/src/main/resources/thingsboard.yml
     ...
-        LWM2M:
+        lwm2m:
             enabled: "${LWM2M_ENABLED:true}"
             ...
             bootstrap:
@@ -369,14 +369,14 @@ the LWM2M Server or LWM2M Bootstrap-Server, respectively.
 ```ruby
     thingsboard/application/src/main/resources/thingsboard.yml
     ...
-        LWM2M:
+        lwm2m:
             enabled: "${LWM2M_ENABLED:false}"
     ...
 ```
 
 ### Security servers transport LWM2M
-#### Add `Key Store File` to DataBase
-If the servers are using security configuration `4 security modes (NoSec + PSK + RPK + X509)` for mode "2": "Certificate mode" or "1": "Public key mode" 
+#### Add `Key Store File`
+If the servers are using security configuration `4 security modes (NoSec + PSK + RPK + X509)` for mode = "2": "Certificate mode" or mode = "1": "Public key mode" 
 
 uses the public and private key value from the X509 certificate.
 
@@ -384,9 +384,41 @@ Certificate requirements [here](#link-x-509-certificate).
 
 After starting the servers, the transport receives information about the **public** and **private keys** for each server from the **serverKeyStore.jks** file.
 
-The **serverKeyStore.jks** file is **saved** in the database by the **system administrator**.
+The **serverKeyStore.jks** file is uploaded to the server at startup from the specified path or from the database:
+* in the configuration from **thingsboard.yml** (parameter: **key_store_path_file**)
+* in the application **download line** (parameter: **key_store_path_file**)
+* is **saved** in the database by the **system administrator**.
 
-`TO DO`  Add serverKeyStore.jks in pictures:
+Other parameters must be specified in thingsboard.yml: **key_store_type**, **key_store_password**, **root_alias**.
+
+Example:
+```ruby
+    thingsboard/application/src/main/resources/thingsboard.yml
+    ...
+      lwm2m:
+      ...
+        secure:
+          key_store_type: "${LWM2M_KEYSTORE_TYPE:JKS}"
+          # Default:   key_store_path_file: "${KEY_STORE_PATH_FILE:/common/transport/lwm2m/src/main/resources/credentials/serverKeyStore.jks"
+          key_store_path_file: "${KEY_STORE_PATH_FILE:}"
+          key_store_password: "${LWM2M_KEYSTORE_PASSWORD_SERVER:server_ks_password}"
+          root_alias: "${LWM2M_SERVER_ROOT_CA:rootca}"
+     ...
+     
+    thingsboard/transport/lwm2m/src/main/resources/tb-lwm2m-transport.yml
+    ...
+      lwm2m:
+      ...
+        secure:
+          key_store_type: "${LWM2M_KEYSTORE_TYPE:JKS}"
+          # Default:   key_store_path_file: "${KEY_STORE_PATH_FILE:/transport/lwm2m/src/main/data/credentials/serverKeyStore.jks}"
+          key_store_path_file: "${KEY_STORE_PATH_FILE:}"
+          key_store_password: "${LWM2M_KEYSTORE_PASSWORD_SERVER:server_ks_password}"
+          root_alias: "${LWM2M_SERVER_ROOT_CA:rootca}"
+     ...
+```
+
+`TO DO`  Add serverKeyStore.jks to database in pictures:
 
 **After updating** the serverKeyStore.jks file, the **transport must be restarted** for the new settings of the public and private keys for each of the servers to take effect. 
 
@@ -412,7 +444,7 @@ thingsboard/application/src/main/resources/thingsboard.yml
 ...
   LWM2M:
     ...
-    server:
+    server:After starting the servers, the transport receives 
       bind_address: "${LWM2M_BIND_ADDRESS:0.0.0.0}"
       bind_port_no_sec: "${LWM2M_BIND_PORT_NO_SEC:5685}"
       secure:
@@ -597,6 +629,9 @@ The tenant can use his own model for each object.
 **Note:**     
     If the system does not have a common list of models for all devices,                
     then the transport will use the **minimum** set of models provided from *LESHAN LIBRARY*<sup><b>[/org/eclipse/leshan/leshan-core/.../leshan-core-....jar!/models/](#link-lwm2m-resource-model-main)</b></sup>
+
+
+
 * `TO DO` Add common list in pictures:
 
 #### Add LWM2M resource model by the Tenant
@@ -604,11 +639,50 @@ The Tenant has the option to add their own variations of the LWM2M Resource Mode
 
 Tenant shares a common list of LWM2M Resource Models and his list of models together.
 
-The Tenant can add a model with an ID that is unique to the tenant's LWM2M Resource Model list.
-
-If the tenant adds a model with an ID that is already in the common list of LWM2M Resource Models, then the model with this ID will be added to the list of models for the tenant instead of a model from common list of LWM2M Resource Models.
+If **the tenant adds a model** with an ID that is already in the common list of LWM2M Resource Models, then the model with this ID will be added to the list of models for the tenant instead of a model from common list of LWM2M Resource Models.
 
 When **delete the Tenant**, everything related to the Tenant **is deleted** (including: **LWM2M Device Profiles**, **LWM2M Devices** and Tenant`s  list of LWM2M **Resource Models**.
+
+**Note:**<br>
+    The Tenant and the System Admin can add a model with an ID that is unique to the tenant’s LWM2M Resource Model list (**ObjectID** and **ObjectVersion**).<br>
+
+```ruby
+    3_V_1_1.xml
+        <LWM2M xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"...
+            <Object ObjectType="MODefinition">
+                <Name>Device</Name>
+                <ObjectID>3</ObjectID>
+                <ObjectURN>urn:oma:lwm2m:oma:3:1.1</ObjectURN>
+                <LWM2MVersion>1.1</LWM2MVersion>
+                <ObjectVersion>1.1</ObjectVersion>
+            ...
+        </LWM2M> 
+
+    3_V_1_2.xml
+        <LWM2M xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"...
+            <Object ObjectType="MODefinition">
+                <Name>Device</Name>
+                <ObjectID>3</ObjectID>
+                <ObjectURN>urn:oma:lwm2m:oma:3:1.2</ObjectURN>
+                <LWM2MVersion>1.2</LWM2MVersion>
+                <ObjectVersion>1.1</ObjectVersion>
+            ...
+        </LWM2M>    
+```
+
+If the version of the object is not specified in the model, the default model version value is used for this model: ObjectModel.**DEFAULT_VERSION** = "**1.0**"; 
+
+```ruby
+    3.xml
+        <LWM2M xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"...
+            <Object ObjectType="MODefinition">
+                <Name>Device</Name>
+                <ObjectID>3</ObjectID>
+                <ObjectURN>urn:oma:lwm2m:oma:3</ObjectURN>
+                <LWM2MVersion>1.1</LWM2MVersion>
+            ...
+        </LWM2M> 
+```
 
 * `TO DO` Add tenat`s list in pictures:
 
