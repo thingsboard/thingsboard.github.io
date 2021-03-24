@@ -41,6 +41,11 @@ Possible error codes and their reasons:
 
 {% include templates/api/key-value-format.md %}
 
+However, it is also possible to send data via [Protocol Buffers](https://developers.google.com/protocol-buffers).
+Please refer to the [CoAP transport type](/docs/user-guide/device-profiles/#coap-transport-type) configuration section in device profile article for more details.
+
+Using custom binary format or some serialization framework is also possible. See [protocol customization](#protocol-customization) for more details.
+
 ## Telemetry upload API
 
 In order to publish telemetry data to ThingsBoard server node, send POST request to the following URL:
