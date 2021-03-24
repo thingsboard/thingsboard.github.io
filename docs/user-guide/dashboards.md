@@ -729,15 +729,15 @@ Data aggregation is useful when you don't want to fetch all time-series data to 
 Using the aggregation functions saves network bandwidth and computation power of the client browser.
 We recommend using aggregation functions whenever is possible if you have a lot of raw values.
 
-By default, the dashboard displays average values for the last minute, grouped in 1-second intervals.  
-**Since version 3.2.2**, it is possible to set the interval on the current hour (as minimum) and current year (as maximum).
-Note that the _Current day_ interval means for 24 hours (12 am at night to 12 am the next night), whereas the _Current day so far_ means from 12 am at night until the time when the time window was updated.
+**Since version 3.2.2,** it is possible to use predefined intervals (Current Day, Previous Day, Previous Month, etc.) in addition to last X minutes/hours/days.
+**Note** that the _Current day_ interval means 24 hours (12 am at night to 12 am the next night), whereas the _Current day so far_ means from 12 am at night until the time when the time window was updated.
 All other intervals are distinguished in the same way.
 
 {% include images-gallery.html imageCollection="tw-current-day" %}
 
-**In version 3.2.2,** added time zones. Now it is possible to set the time of your browser or a specific country. To quickly find needed time zone, start typing its name in the time zone bar.
- 
+**Version 3.2.2** introduces time zone configurations. By default, dashboard uses the time zone provided by the browser.
+Now it is possible to set the time of your browser or a specific country. To quickly find the needed time zone, start typing its name in the time zone bar.
+
 {% include images-gallery.html imageCollection="tw-time-zone" %}
 
 

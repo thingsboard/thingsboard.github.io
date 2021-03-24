@@ -457,8 +457,6 @@ specific assets from a list.
 
 ## Alias types
 
-{% assign feature = "Group entity, Entity group list, Entity group name, Entity by group name, Owner of entity from dashboard state" %}{% include templates/pe-feature-banner.md %}
-
 ### Single entity
 
 This alias allows choosing a single entity. It can be a device, asset, entity view, tenant, customer, dashboard, 
@@ -488,6 +486,8 @@ Let's use an added alias in a widget:
 {% include images-gallery.html imageCollection="single-alias-1" %}
 
 ### Group entities
+
+{% assign feature = "Group entity" %}{% include templates/pe-feature-banner.md %}
 
 This alias allows choosing a single group of entities, which can be a customer group, an asset group, or a device group.
 **Please note** that when you choose a group, the group Id is hard-coded to the dashboard config. 
@@ -577,6 +577,8 @@ Now let's use the added alias in a widget:
  
 ### Entity group list
 
+{% assign feature = "Entity group list" %}{% include templates/pe-feature-banner.md %}
+
 This alias allows choosing several entity groups manually without entering a query, which can be device groups, 
 asset groups, entity view groups, customer groups, dashboard groups, or user groups.
 In this example, an alias was created that filters a list of device groups, which in this case are ‘Irrigation systems’ and ‘Moisture sensors’.
@@ -620,6 +622,8 @@ To execute an action and filter aliases by device groups, click the action cell 
  
 ### Entity group name
 
+{% assign feature = "Entity group name" %}{% include templates/pe-feature-banner.md %}
+
 This alias allows choosing multiple entity name groups that begin with an entered query, which can be device group(s),
 asset group(s), entity view group(s), customer group(s), dashboard group(s) or user group(s). In this example, an alias filters device groups whose names start with ‘Irrigation’.
 
@@ -661,6 +665,8 @@ Now let's use the added alias in a widget:
 
 ### Entities by group name 
 
+{% assign feature = "Entities by group name" %}{% include templates/pe-feature-banner.md %}
+
 This alias allows choosing entities by entering the exact full name of an entity group. This entity can be device group(s), asset group(s), entity view group(s), customer group(s), dashboard group(s), or user group(s).
 The difference between Entities by group name and Group entities is that the first one resolved the group by the specified name while the second one uses hard-coded group ID.
 More important, during the lookup of entities, this alias will use information about the current user. So, if you share the dashboard with multiple customers, 
@@ -687,6 +693,7 @@ Now let's use the added alias in a widget:
 
 
 ### Entity from dashboard state
+
 This alias allows choosing entity(-ies) from dashboard state which can be device, asset, entity view, tenant, customer,
 dashboard, data converter, scheduler event, blob entity or current customer. It is used for filtering data for other dashboard states.  
 For example, if Time series widget is created on a [root dashboard state](/docs/user-guide/dashboards/#states) with several entities displayed on it, and you'd like to create a dashboard state which will display
@@ -735,6 +742,8 @@ By clicking a button opposite needed entity, you will be transitioned to an inne
 {% include images-gallery.html imageCollection="entity-from-dashboard-state-2" %}
 
 ### Owner of entity from dashboard state
+
+{% assign feature = "Owner of entity from dashboard state" %}{% include templates/pe-feature-banner.md %}
 
 This alias allows displaying owners of the devices, assets, entities, etc. Commonly used when there is a hierarchy of customers and it is needed to see what devices belong to whom. 
 
