@@ -355,7 +355,7 @@ header
             left: 0
             opacity: 1
           .head-arrow
-            transition-delay: 0.3s
+            transition-delay: 0.1s
             transition-duration: 0s
             opacity: 1
 
@@ -479,7 +479,7 @@ header
 #docs
   .flyout-button
     position: fixed
-    top: 10px
+    top: 19px
     left: 20px
     width: 40px
     height: 40px
@@ -1084,7 +1084,8 @@ section
     overflow: hidden
 
   #docsToc
-    padding: 50px 20px
+    box-shadow: 0 0 20px rgba(0, 0, 0, .1), 0 0 40px rgba(0, 0, 0, .1)
+    padding: 78px 20px
     width: 400px
     max-width: 100vw
     overflow-y: auto
@@ -1287,7 +1288,7 @@ dd
 
 .push-menu-close-button
   position: absolute
-  top: 0
+  top: 14px
   right: 0
   width: 50px
   height: 50px
@@ -2116,6 +2117,7 @@ iframe
 
           .centered-sub
             margin: 0
+            width: 100%
             .sub-menu
               background-color: unset
               li
@@ -2125,7 +2127,7 @@ iframe
                 &:hover a
                   color: #2A7DEC
               .bottom-group
-                width: inherit
+                width: calc(100% + 94px)
 
 
       .n-button
@@ -2177,6 +2179,7 @@ iframe
         .centered-sub
           justify-content: left
           opacity: 1
+          width: 100%
           .sub-menu
             display: none
             top: unset
