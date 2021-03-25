@@ -137,7 +137,7 @@ If the checkbox is checked, the magnifying glass in the upper right corner of th
 
 - Enable select columns to display
 
-Since version 3.2.2, if the checkbox is checked, the black bars in the upper right corner of the widget allow you to choose which columns you prefer to hide and which to display.
+If the checkbox is checked, the black bars in the upper right corner of the widget allow you to choose which columns you prefer to hide and which to display.
 
 {% include images-gallery.html imageCollection="columns-to-display" %}
 
@@ -150,7 +150,6 @@ If the checkbox is checked, the widget header is always visible when we scroll t
 - Always display actions column
 
 If the checkbox is checked, the row action cell is always visible when we scroll through the widget's telemetry. When unchecked, the row action cell remains at the end of the row.
-
 
 {% include images-gallery.html imageCollection="actions-column" %}
 
