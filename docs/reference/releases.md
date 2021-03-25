@@ -14,24 +14,25 @@ description: ThingsBoard architecture
 
 Minor release with the following improvements and bug fixes:
 
-**Major Improvements  (TODO: links):**
+**Major Improvements:**
 
 * Migration to JDK 11;
 * Rule Engine:
-    * Added "calculate delta" rule node;
-    * Added current customer and current tenant dynamic source types to DeviceProfile key filter;
-    * Added kafka consumer-groups statistics;
-    * Attributes cache;
+    * Added ["calculate delta"](/docs/user-guide/rule-engine-2-0/enrichment-nodes/#calculate-delta) rule node;
+    * Added "current customer" and "current tenant" dynamic source types to DeviceProfile key filter. See examples [6](/docs/user-guide/device-profiles/#example-6-advanced-thresholds) and [7](/docs/user-guide/device-profiles/#example-7-dynamic-thresholds-based-on-the-tenant-or-customer-attributes);
+    * Added kafka consumer-groups statistics. See rule engine [troubleshooting](/docs/user-guide/rule-engine-2-0/overview/#troubleshooting) for more info;
+    * Attributes cache. See [Performance enhancement](/docs/user-guide/attributes/#performance-enhancement);
 * UI:
-    * Added "Entity Count" datasource for widgets;
-    * Added "Entity Type" alias;
-    * Added support of common intervals and time zones to the time window selector;
+    * Added ["Entity Count"](/docs/user-guide/dashboards/#2-widget-data-source-types) datasource for widgets;
+    * Added "Entity Type" alias. See usage in the "Entity count data source" example [here](/docs/user-guide/dashboards/#2-widget-data-source-types;
+    * Added support of common intervals and time zones to the [time window](/docs/user-guide/dashboards/#time-window) selector;
     * Ability to set up a home dashboard for users instead of default "Home" view;
-    * Improved "add widget" dialog. Added description and preview images for widgets and widget bundles;
-    * Added column visibility and row style functions for table widgets;
+    * Improved ["add widget"](/docs/user-guide/dashboards/#adding-widget-to-the-dashboard) dialog. Added description and preview images for widgets and widget bundles;
+    * Added column visibility and [row style](/docs/user-guide/ui/entity-table-widget/#6-row-style-function) functions for table widgets;
+    * UI: Improved dashboard load performance by optimizing widget header template.
 * Transport:
-    * Support of Protobuf for CoAP transport;
-    * Support of Efento devices for CoAP transport;
+    * Support of [Protobuf](/docs/user-guide/device-profiles/#coap-device-type-default) for CoAP transport;
+    * Support of [Efento](/docs/user-guide/device-profiles/#coap-device-type-efento-nb-iot) devices for CoAP transport;
 
 **Improvements:**
 
@@ -121,11 +122,28 @@ Everything from [TB CE v3.2.2](https://github.com/thingsboard/thingsboard/releas
 
 Main features:
 
-* TODO
+* Update custom menu: Introduce dashboardId parameter to embed dashboard instead of using iframe;
+* Azure Event Hub Integration is updated to use new SDK;
+* Added new version of ["Alarms Count Node"](/docs/user-guide/rule-engine-2-0/pe/analytics-nodes/#alarms-count-node).
+* Added "Duplicate to group entities by group name" rule node;
+* Added ability to aggregate data on each message in the "Aggregate stream node".
+* Add ability to aggregate data weekly from Sunday to Saturday in the "Aggregate stream node".
+* Extend column export parameters in entities and alarms table for CSV export;
+* Improvements to scheduler and integration services in cluster mode;
 
 Bug Fixes:
 
-* TODO
+* Security improvement: Customer can't see Tenant attributes using Entity Query API;
+* Fixed Customer Changes Owner from Sub-Customer to Customer;
+* Sigfox integration fix;
+* Fixed validation of Kafka integration configuration;
+* Fixed downlink for TCP/UDP integrations;
+* Fixed SAS credentials in IoT hub node;
+* Skip recursive tag scan for OPC-UA Integration. Added explicit disconnect at the end of the scan;
+* Can't change the role type (Generic vs Group) if it is already used;
+* Fix tb-web-report docker image;
+* UI: Fixed validation of credentials in the LORIOT integration;
+* UI: Fix entities by group name alias - do not set owner id when groupStateEntity is disabled;
 
 ## v3.2.1 (January 26, 2021)
 
