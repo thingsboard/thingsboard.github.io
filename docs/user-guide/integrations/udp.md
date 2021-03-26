@@ -2,6 +2,31 @@
 layout: docwithnav
 title: UDP Integration
 description: UDP Integration Guide 
+downlink:
+    0:
+        image: /images/udp/create_downlink_converter.png
+
+rulechain:
+    0:
+        image: /images/udp/rule_chain_downlink.png
+    1:
+        image: /images/udp/rule_chain_and_attributes_updated.png
+
+integration:
+    0:
+        image: /images/udp/integration_and_downlink_converter.png
+
+firsttest:
+    0:
+        image: /images/udp/add_shared_attribute.png
+    1:
+        image: /images/udp/terminal1.png
+
+secondtest:
+    0:
+        image: /images/udp/device_groups_all_shared_attributes_update.png
+    1:
+        image: /images/udp/terminal4.png
 
 ---
 
@@ -86,10 +111,6 @@ Hex payload<br/>%,%hex%,%templates/integration/udp/udp-uplink-converter-hex.md{%
 
 {% include content-toggle.html content-toggle-id="udpintegartionuplinkpayload" toggle-spec=uplinkpayload %}
 
-#### Downlink Converter
-
-**Currently UDP integration does not support Downlink functionality**
-
 ### UDP Integration Setup
 
 Go to **Integrations** section and click **Add new integration** button. Name it **UDP Integration**, select type **UDP**, turn the Debug mode on and from drop-down menus add recently created Uplink converter.
@@ -142,6 +163,63 @@ Once you go to **Device Groups -> All** you should find a **SN-001** device prov
 Click on the device, go to **Latest Telemetry** tab to see "temperature" key and its value (25.7) there.
 
 If your payload contains **humidity** telemetry, you should see "humidity" key and its value (69) there as well.
+
+## Advanced usage: Downlink
+
+Create Downlink Converter in **Data converters**. To see events - enable Debug. You can use our example of Downlink Converter,
+or write your own according to your configuration:
+
+```javascript
+// Result object with encoded downlink payload
+var result = {
+
+    // downlink data content type: JSON, TEXT or BINARY (base64 format)
+    contentType: "JSON",
+
+    // downlink data
+    data: JSON.stringify(msg),
+
+    // Optional metadata object presented in key/value format
+    metadata: {}
+
+};
+
+return result;
+```
+
+{% include images-gallery.html imageCollection="downlink" %}
+
+Now you have to add a converter to the integration, optionally
+configure Cache Size and Cache time to live in minutes (able just for UDP Downlink)
+
+***Note**: Cache size and Time to live - features, that helps to avoid memory leak when we are storing connections.*
+*Cache time to live - time to storage messages*
+*Cache size - maximum size of messages for UDP client*
+
+{% include images-gallery.html imageCollection="integration" %}
+
+When integration configured and ready to use, we need to go to Rule Chains, choose Root Rule Chain and here create rule node
+**Integration Downlink**. Input here some name, choose which integration you need to use and tap **Add**
+After this step, we need to tap on a right grey circle of rule node **Message type switch** and drag this circle to left side of 'Integration Downlink',
+here lets choose **Attribute Update**, tap 'Add' and save Rule node. That's it if all the steps ready, and you were not meet up problems!
+
+{% include images-gallery.html imageCollection="rulechain" %}
+
+## Test Downlink
+
+To test downlink you can create some attribute on your device, change it, and try to send some Uplink message on this device, and 
+you will see Downlink message 
+
+{% include images-gallery.html imageCollection="firsttest" %}
+
+Also, when you're sending Uplink, you can set on command to send Uplink another `-q` option, for example 120 seconds. This option setting how long you will wait for a response.
+If time of connection is over - you will receive this message on next Uplink.
+
+{% include images-gallery.html imageCollection="secondtest" %}
+
+***Note**: When you use UDP integration, and your connection established for a long time, you will receive just one Downlink message,
+all other will be saved on server side and will be sent on next Uplink*
+
 
 ## Next steps
 
