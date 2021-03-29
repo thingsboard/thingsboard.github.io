@@ -4,6 +4,24 @@ assignees:
 - ashvayka
 title: Working with IoT dashboards
 description: IoT dashboards using ThingsBoard
+creating-dash:
+    0:
+        image: /images/user-guide/dashboards/creating-dash.png
+    1:
+        image: /images/user-guide/dashboards/creating-dash-1.png
+    2:
+        image: /images/user-guide/dashboards/creating-dash-2.png
+
+make-public:
+    0:
+        image: /images/user-guide/dashboards/creating-dash.png
+    1:
+        image: /images/user-guide/dashboards/make-public-1.png
+    2:
+        image: /images/user-guide/dashboards/make-public-2.png
+    3:
+        image: /images/user-guide/dashboards/make-public-3.png
+
 dash-title:
     0:
         image: /images/user-guide/dashboards/dash-title.png 
@@ -278,6 +296,30 @@ Each Dashboard may contain plenty of widgets.
 Dashboards display data from many entities: devices, assets, etc. Dashboards can be assigned to Customers. 
 
 This guide covers main concepts and various configuration settings.
+
+## Adding a dashboard
+
+To add a new dashboard, you should:
+
+1. Go to _Dashboard groups_ through the main menu on the left of the screen;
+2. To add a new dashboard group, click the "+" sign in the upper right corner of the screen, or open the "All" dashboard group and click the  "+" sign in the upper right corner there;
+3. In the opened dialog, necessary to enter a dashboard title, description is optional. Click "Add".
+
+{% include images-gallery.html imageCollection="creating-dash" %}
+
+##### Make public
+
+If you want to make your dashboard public and share a link to it, you should:
+
+1. Go to the _Dashboard groups_;
+2. Click the "Share" icon next to the dashboard group that you want to make public;
+3. In the confirmation dialog box, click "Yes";
+4. Open the dashboard group and click the link icon opposite the needed dashboard;
+5. In the "Public dashboard link" dialog, click a copy button next to the link.
+
+Now you can share a dashboard with this link. Note that you shouldn't forget to make related devices, assets and entity views public in order to access their data.
+
+{% include images-gallery.html imageCollection="make-public" %}
 
 ## Dashboard overview 
 
@@ -774,12 +816,3 @@ In ThingsBoard Professional Edition, dashboard export is possible in several add
 This is useful when you need to send the data displayed in your dashboard by email or print.
 
 {% include images-gallery.html imageCollection="pro-export" %}
-
-
-## Dashboard as home screen
-
-**Since 3.2.2,** you can put a dashboard as your home screen. To do so, you should enter your profile setiings by clicking three dots in the upper right corner of the screen. 
-There find the _Home dashboard_ bar and from the drop-down menu select a desired dashboard to be put as a home view. After selecting, click "Save" in the lower right corner of the profile dialog box.
-To see your new home screen, click the _Home_ option from the main menu on the left.
-
-{% include images-gallery.html imageCollection="home-dash" %}
