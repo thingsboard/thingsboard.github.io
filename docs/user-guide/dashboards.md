@@ -4,6 +4,24 @@ assignees:
 - ashvayka
 title: Working with IoT dashboards
 description: IoT dashboards using ThingsBoard
+creating-dash:
+    0:
+        image: /images/user-guide/dashboards/creating-dash.png
+    1:
+        image: /images/user-guide/dashboards/creating-dash-1.png
+    2:
+        image: /images/user-guide/dashboards/creating-dash-2.png
+
+make-public:
+    0:
+        image: /images/user-guide/dashboards/creating-dash.png
+    1:
+        image: /images/user-guide/dashboards/make-public-1.png
+    2:
+        image: /images/user-guide/dashboards/make-public-2.png
+    3:
+        image: /images/user-guide/dashboards/make-public-3.png
+
 dash-title:
     0:
         image: /images/user-guide/dashboards/dash-title.png 
@@ -53,8 +71,6 @@ add-widget:
         image: /images/user-guide/dashboards/add-widget1-src.png
     3:
         image: /images/user-guide/dashboards/add-widget2-src.png
-    4:
-        image: /images/user-guide/dashboards/add-widget3-src.png
 
 add-data-source1:
     0:
@@ -253,6 +269,16 @@ action-state:
     5:
         image: /images/user-guide/dashboards/settings/state1-transfer.png
 
+home-dash:
+    0:
+        image: /images/user-guide/dashboards/home-dash.png
+    1:
+        image: /images/user-guide/dashboards/home-dash-1.png
+    2:
+        image: /images/user-guide/dashboards/home-dash-2.png
+    3:
+        image: /images/user-guide/dashboards/home-dash-3.png
+
 entity-count:
     0:
         image: /images/user-guide/dashboards/entitycount/add-alias.png
@@ -334,25 +360,54 @@ tw-time-zone:
 
 ## Prerequisites 
 
-Get familiar with ThingsBoard devices and dashboards with [Getting Started](/docs/getting-started/) for a better understanding of this guide.
+For faster learning and a better understanding of this guide, first, you have to follow the [Getting Started](/docs/getting-started/) guide to get familiar with ThingsBoard devices and dashboards.
 
 ## Introduction
 
-ThingsBoard provides the ability to create and manage dashboards. Each dashboard can contain plenty of widgets. Dashboards display data from many entities: devices, assets, etc. Dashboards can be assigned to Customers. 
+ThingsBoard provides the ability to create and manage Dashboards. 
+
+Each Dashboard may contain plenty of widgets.
+Dashboards display data from many entities: devices, assets, etc. Dashboards can be assigned to Customers. 
+
 This guide covers main concepts and various configuration settings.
+
+## Adding a dashboard
+
+To add a new dashboard, you should:
+
+1. Go to _Dashboard groups_ through the main menu on the left of the screen;
+2. To add a new dashboard group, click the "+" sign in the upper right corner of the screen, or open the "All" dashboard group and click the  "+" sign in the upper right corner there;
+3. In the opened dialog, necessary to enter a dashboard title, description is optional. Click "Add".
+
+{% include images-gallery.html imageCollection="creating-dash" %}
+
+##### Make public
+
+If you want to make your dashboard public and share a link to it, you should:
+
+1. Go to the _Dashboard groups_;
+2. Click the "Share" icon next to the dashboard group that you want to make public;
+3. In the confirmation dialog box, click "Yes";
+4. Open the dashboard group and click the link icon opposite the needed dashboard;
+5. In the "Public dashboard link" dialog, click a copy button next to the link.
+
+Now you can share a dashboard with this link. Note that you shouldn't forget to make related devices, assets and entity views public in order to access their data.
+
+{% include images-gallery.html imageCollection="make-public" %}
 
 ## Dashboard overview 
 
-Before starting working with a dashboard, get familiar with its interface to understand which features are responsible for what actions.
+Before starting working with a dashboard, get familiar with its appearance and understand which features are responsible for what actions.
 
-#### Title
+### Title
 
-Editable dashboard title appears in the top-left corner of the dashboard. Dashboard title is displayed in the application breadcrumbs to simplify the navigation
+Editable dashboard title appears in the top-left corner of the dashboard. Dashboard Title displays in the application breadcrumbs to simplify the navigation.
 You can change and adjust a Title in the [settings of the dashboard](/docs/user-guide/dashboards/#title-of-the-dashboard)
 
 {% include images-gallery.html imageCollection="dash-title" %}
 
-#### Edit mode
+
+### Edit mode
 
 Use the "pencil" button in the bottom-right corner of the screen to enter dashboard edit mode. 
 Once you switch to the edit mode, you can add new [widgets](/docs/user-guide/dashboards/#widgets) and access controls in the dashboard [toolbar](/docs/user-guide/dashboards/#toolbar).
@@ -360,7 +415,7 @@ You can also use button "Apply changes" to save the dashboard or "Decline change
 
 {% include images-gallery.html imageCollection="editMode" %}
 
-#### Toolbar
+### Toolbar
 
 Dashboard toolbar allows you to manage 
 [states](/docs/user-guide/dashboards/#states), 
@@ -374,28 +429,28 @@ You can hide these icons or configure the toolbar to be minimized by default usi
 
 {% include images-gallery.html imageCollection="toolbar-review" %}
 
-#### Entity Aliases
+### Entity Aliases
 
 Entity Aliases determine which entities (devices, assets, etc) you would like to display on the dashboard. 
 You can treat alias as a reference to one or more devices. These references can be static or dynamic.
 
-An example of the static alias is the [Single entity](/docs/user-guide/ui/aliases/#single-entity) alias. An entity is configured once in the alias dialog box.
+An example of the static alias is the "[Single Entity](/docs/user-guide/ui/aliases/#single-entity)" alias. The entity is configured once in the alias definition.
 All users see the same data if they have permission to access this device.
 
-An example of a dynamic alias is the [Device type](/docs/user-guide/ui/aliases/#device-type) alias, which displays all devices of a certain type (e.g. "Thermometer").
-This alias is dynamic because the list of devices depends on the user using the dashboard.
-If you are logged in as a Tenant administrator, this alias will be resolved all Thermometer devices. 
-However, if you are logged in as a Customer user, this alias will be resolved to Thermometer devices that are assigned/owned by that Customer.
+An example of a dynamic alias is the "[Device type](/docs/user-guide/ui/aliases/#device-type)" alias, which displays all devices of a certain type (e.g. "Thermometer").
+This alias is dynamic because the list of devices depends on the user using the dashboard. 
+If you are logged in as a Tenant administrator, the alias will resolve all "Thermometer" devices. 
+However, if you are logged in as a Customer User, the alias will resolve to "Thermometer" devices that are assigned/belong by that Customer.
 
 {% include images-gallery.html imageCollection="aliases" %}
 
-Please see the [Entity aliases documentation](/docs/user-guide/ui/aliases) for more information.
+Please see the Entity Aliases [documentation](/docs/user-guide/ui/aliases) for more details and examples of other aliases.
 
-#### Entity Filters
+### Entity Filters
 
-Entity filters allow you to specify a filter for the list of entities resolved by the entity alias. 
+Entity Filters allow you to determine a filter for the list of entities resolved by the entity alias. 
 
-let's look at an example:  
+Let's see an example: 
 Suppose you have thousands of "Thermometer" devices, and you would like to display thermometers of a specific model and with certain battery levels.
 Let's also assume that thermometer model is stored as an attribute, and the battery level is stored as a time series data.
 We will define a filter that checks if the model is "DHT22" and the battery level is less than 20 percent. 
@@ -406,8 +461,8 @@ We will define a filter that checks if the model is "DHT22" and the battery leve
 
 Filters are applied only to the "latest" value of the attribute or time series key. Don't use this feature to "filter out" historical time series values.
 
-You can combine different logical expressions over one key using "complex" filters. For example: "(A > 0 and A < 20) or (A > 50 and A < 100)".   
-Also, you can combine two expressions for different keys using the "and" relation. For example: "(A > 0 and A < 20) and (B > 50 and B < 100)".  
+You can combine different logical expressions over one key using "complex" filters. For example: "(A > 0 and A < 20) or (A > 50 and A < 100)".
+Also, you can combine two expressions for different keys using the "and" relation. For example: "(A > 0 and A < 20) and (B > 50 and B < 100)".
 It's not possible to use "or" relation to combining different keys yet. For example: "(A > 0 and A < 20) or (B > 50 and B < 100)".
 
 See more examples how to use filters in this video:
@@ -422,151 +477,65 @@ See more examples how to use filters in this video:
 
 #### Widget types
 
-All IoT dashboards are constructed using ThingsBoard widgets that are displayed in Widget library. 
-Each widget provides end-user functions such as data visualization, remote device control, alarms management and displaying static custom html content.  
-There are five types of widgets:
+Widgets are the building blocks of your dashboard. There are 5 types of widgets:
 
-* **Time series** widgets display data for a specific time window. The time window may be real-time (e.g., for the last 24 hours) or historical (December 2020);  
-  Examples of time series widgets are chart widgets. Obviously, time series widgets are designed to display time series and not attributes;
+* **Time series** widgets display data for a specific time window. The time window may be realtime (e.g., last 24 hours) or historical (December 2020);  
+  Examples of the time series widgets are chart widgets. Obviously, time series widgets are designed to display time series and not attributes;
 * **Latest values** widgets display the latest values of particular [attribute](/docs/user-guide/attributes/) or [time series](/docs/user-guide/telemetry/) keys. For example, device model or latest temperature reading;
 * **Control** widgets allow you to send [RPC commands](/docs/user-guide/rpc/) to your devices. For example, control desired temperature on the thermostat device;  
 * **Alarm** widgets allow you to display [alarms](/docs/user-guide/alarms/);
 * **Static** widgets are designed to display static data. For example, floor plan or static company information.
 
+More about widget types you can learn [here](docs/user-guide/ui/widget-library/).
+
 #### Adding widget to the dashboard
 
-To add a widget to a dashboard, you should:
+To add a widget to the dashboard, you should:
 
-1. By clicking the pencil icon in the bottom right corner of the screen, go to the Edit mode; 
-2. Click a big sign in the middle of the screen or the "+" icon ("Add new widget") in the bottom right corner of the screen. Click "Create new widget" to open the "widget selection" dialog box; 
-3. Select widget bundle, for instance, "Charts";
-4. To find the widget you want as quickly as possible, use the search bar by clicking a magnifying glass icon and inputting the name of the widget there.
-   Select a widget, for example, "Timeseries Line Chart", and click on it to open the "Add Widget" dialog box.
+* Switch to the Edit mode and click the "+" icon ("Add new widget") at the bottom right part of the screen; 
+* Click the "Create new widget" to open the "widget selection" dialog box;
+* Select widget bundle, for instance, "Charts";
+* Select a widget, for example, "Timeseries - Flot", and click on its name to open the "Add Widget" dialog.
 
 {% include images-gallery.html imageCollection="add-widget" %}
 
-#### Widget dialog and settings
+#### Add widget dialog and settings
 
-Widget consists of the widget type, one or multiple data sources, basic and advanced settings, and actions that you can add.   
-Therefore, the "Add widget" dialog contains four tabs  for defining a widget. **Note** that only the data source configuration is strictly required. 
-You can leave all other configuration tabs with the default values in most of the cases.
+Widget consists of the widget type, one or multiple data sources, basic and advanced settings, and the list of actions.   
+Therefore, the "Add widget" dialog contains four tabs to define a widget. Note that only the datasource configuration is strictly required. 
+You may leave all other configuration tabs with the default values in most of the cases.   
+We will discuss each of those tabs below.
 
 ##### 1. Widget data settings
 
-Widget data settings are for adding one or multiple data sources. 
-A data source is a combination of [a data source type](/docs/user-guide/dashboards/#widget-data-source-types), 
-[an entity alias](/docs/user-guide/dashboards/#entity-aliases), [an optional filter](/docs/user-guide/dashboards/#entity-filters), and list of data keys (entity time series).
-Basically, the data source determines which entities (alias and filter) widget should use and what data keys to fetch for those entities.
+Widget data settings allow you to add one or multiple data sources. 
+A Data source is a combination of [entity alias](/docs/user-guide/dashboards/#entity-aliases), optional [filter](/docs/user-guide/dashboards/#entity-filters), and list of data keys.
+Basically, the data source determines which entities widget should use (alias and filter) and what data keys to fetch for those entities.
 
 {% include images-gallery.html imageCollection="add-data-source1" %}
 
-For example, let's configure data source to fetch temperature and humidity values for all "Thermometer" devices that have model "DHT22", and their battery level is less than 20 percent.
-We will use "Thermometer" alias and "Low battery DHT22 Thermometers" filter configured in the previous paragraphs of this doc 
-(see [alias](/docs/user-guide/dashboards/#entity-aliases) and [filter](/docs/user-guide/dashboards/#entity-filters) correspondingly). 
+For example, let's configure data source to fetch temperature and humidity values for all "Thermometer" devices that have model "DHT22" and battery level is less than 20 percent.
+We will use "Thermometer" alias and "Low battery DHT22 Thermometers" filter configured in the previous parts of this doc, see [alias](/docs/user-guide/dashboards/#entity-aliases) and [filter](/docs/user-guide/dashboards/#entity-filters) correspondingly. 
 
 {% include images-gallery.html imageCollection="add-data-source2" %}
 
-In the above example, "temperature" and "humidity" are two time series [data keys](/docs/user-guide/dashboards/#2-data-keys).
-The data keys list for data source depends on the [widget type](/docs/user-guide/dashboards/#widget-types):
+The example above assumes that "temperature" and "humidity" are two time series [data keys](/docs/user-guide/dashboards/#data-keys).
+The list of available data keys for particular data source depends on the [widget type](/docs/user-guide/dashboards/#widget-types):
 
- * **Time series widgets** allow choosing time series data keys in the data source and the [time window](/docs/user-guide/dashboards/#time-window);
- * **Latest values widgets** allow choosing time series, attributes and entity fields;
- * **Static and Control widgets** do not require a data source;
- * **Alarm widgets** allow choosing all data keys: time series, attributes, entity and alarm fields.
-   Additionally, you can configure [time window](/docs/user-guide/dashboards/#time-window) and [alarm filter](/docs/user-guide/dashboards/#alarm-filter).
+ * **Time series** widgets allow you to choose only time series data keys in the data source;
+ * **Latest values** widgets allow you to choose time series, attributes and entity fields;
+ * **Static** and **Control** widgets does not require a data source;
+ * **Alarm** widgets allow you to choose any data keys: time series, attributes, entity and alarm fields;
 
 Let's assume you don't have the required time series or attribute key in the database yet. 
-In such a case, you can still add a key to the data source, and the widget will start displaying the data as soon as the device will send it to ThingsBoard. 
+In such case, you can still add a key to the data source, and the widget will start displaying the data once the device will send it to ThingsBoard. 
 
 {% include images-gallery.html imageCollection="add-data-source3" %}
 
-##### 2. Widget data source types
+Besides the data keys, time series widget allows you to select the [time window](/docs/user-guide/dashboards/#time-window). 
+Also, alarm widget allows you to select both [time window](/docs/user-guide/dashboards/#time-window) and [alarm filter](/docs/user-guide/dashboards/#alarm-filter).
 
-- **Entity data source**
-
-Entity data source fetches data from specified entity alias. Let’s get familiar with this feature using a basic example, displaying all existing devices on the widget.
-
-Open a dashboard and start by adding an entity alias:
-
-1. Enter dashboard edit mode by clicking the pencil icon in the lower-right of the screen.
-2. CLick the “Entity alias” button on the toolbar, click “Add alias” in the lower-left corner of the Entity alias dialog box.
-3. In the opened Add alias dialog, enter an alias name, select Entity type filter type, and choose an entity type (in the given example, use Device entity type). Click “Add”.
-4. Save the created alias by clicking the “Save” button in the lower right corner of the dialog.
-
-{% include images-gallery.html imageCollection="add-alias-ds" %}
-
-After adding an alias, you need to add a widget to display data:
-
-1. Click the big sign in the middle of the screen “Add new widget”.
-2. Select Cards widget bundle. For viewing a list of entities, the Entity table widget is most suitable, so select it.
-
-Now, it is time to add a data source:
-
-1. Select Entity type, choose the previously added entity alias. Click “Save” in the lower-left corner of the dialog window.
-2. After customizing a data source, click “Add” in the lower-left corner of the Add widget dialog box.
-
-**Widget that displays all devices through entity data source has been added.**
-
-{% include images-gallery.html imageCollection="add-widget-ds" %}
-<br>
-
-- **Entity count data source**
-
-Since version 3.2.2 ThingsBoard has added an Entity count data source. This feature allows you to see the number of entities by displaying them on a widget and thus determine the number of devices, assets, etc.
-
-Let's get familiar with this feature using a basic example, displaying the total number of existing devices on the widget.
-
-Open a dashboard and start by adding an entity alias:
-1. Enter dashboard edit mode by clicking the pencil icon in the lower-right of the screen.
-2. CLick the "Entity alias" button on the toolbar, click "Add alias" in the lower-left corner of the Entity alias dialog box.
-3. In the opened Add alias dialog, enter an alias name, select Entity type filter type, and choose an entity type (in the given example, use Device entity type). Click "Add".
-4. Save the created alias by clicking the "Save" button in the lower right corner of the dialog.
-
-{% include images-gallery.html imageCollection="entity-count" %}
-
-After adding an alias, you need to add a widget to display data:
-1. Click the big sign in the middle of the screen "Add new widget".
-2. Select Cards widget bundle and, to quickly find the desired widget use a search bar by clicking on the magnifying glass and typing the name of the widget you're looking for.
-   To see the number of entities properly better use the Simple card widget.
-
-Now, it is time to add a data source:
-1. Select Entities count type, choose the previously added entity alias. To change a label, click the pencil icon:
-   in the opened dialog, you can change a label name, edit its color, customize a special symbol that will be displayed next to the value, and specify the number of digits after floating-point.
-   Click "Save" in the lower-left corner of the dialog window.
-2. After customizing a data source, click "Add" in the lower-left corner of the Add widget dialog box.
-   
-{% include images-gallery.html imageCollection="entity-count-1" %}
-<br>
-
-**The widget that counts devices has been added.** Nevertheless, by default, the special symbol of the widget itself (C°) is still there. So let's enter the widget edit mode to remove it.
-
-In the Settings tab, find the Special symbol line and delete the existing special symbol or replace it with the desired one. Also, you can indicate how many digits will be after floating-point.
-When changes are applied, don't forget to save them by clicking the orange checkmark in the top-right of the dialog.
-
-{% include images-gallery.html imageCollection="entity-count-3" %}
-
-Now we have a widget that displays the number of existing devices.
-
-- **Function data source**
-
-Function data source is used when you do not have any date, but you'd like to test a widget visualization. 
-Let's say you haven't added alias and haven't received any telemetry, but you want to see how a widget displays data.
-
-Firstly, to display data, you need to add a widget:
-
-1. Click the big sign in the middle of the screen “Add new widget”.
-2. Select Cards widget bundle. For viewing entities, the Entity table widget is most suitable, so select it.
-
-Now, it is time to add a data source:
-
-1. Select Entity type, choose the previously added entity alias. Click “Save” in the lower-left corner of the dialog window.
-2. After customizing a data source, click “Add” in the lower-left corner of the Add widget dialog box.
-
-By dint of the widget with the function data source, we know how specific widget displays data.
-
-{% include images-gallery.html imageCollection="function-ds" %}
-
-##### 3. Data keys
+##### 2. Data keys
 
 Data key defines time series, attribute or entity field that you would like to use in the widget. 
 Data key definition consists of type (time series, attribute of entity field) and the actual key.
@@ -582,15 +551,15 @@ List of entity fields depends on the entity type and may extend in the future:
  * **User** has the following fields: created time, first name, last name, email and additional info.
  * **Customer** has the following fields: create time, entity type, email, title, country, state, city, address, zip code, phone, additional info.
 
-###### 3.1. Basic Data keys settings
+###### 2.1. Basic Data keys settings
 
 Coming soon...
 
-###### 3.2. Advanced Data keys settings
+###### 2.2. Advanced Data keys settings
 
 Coming soon...
 
-##### 4. Widget time window
+##### 3. Widget time window
 
 A widget time window defines a time interval and aggregation function that should be used to fetch the time series or alarm data. 
 By default, every widget uses the main [time window](/docs/user-guide/dashboards/#time-window) determined in the dashboard's [toolbar](/docs/user-guide/dashboards/#toolbar). 
@@ -601,7 +570,7 @@ You can also hide the time window selection for a specific widget from the user 
 
 Learn more about time window configuration [here](/docs/user-guide/dashboards/#time-window). 
 
-##### 5. Alarm filter
+##### 4. Alarm filter
 
 In addition to the time window configuration, alarm widgets allow you to filter [alarms](/docs/user-guide/alarms/) based on [status](/docs/user-guide/alarms/#lifecycle), [severity](/docs/user-guide/alarms/#severity), and [type](/docs/user-guide/alarms/#type).
 You can choose a combination of alarm statuses and severity. You may also define specific alarm types as well as enable search of [propagated](/docs/user-guide/alarms/#propagation) alarms.
@@ -700,48 +669,34 @@ Learn more about specific advanced settings in the corresponding widget document
 
 Coming soon...
 
-##### 7. Widget actions
+##### Widget actions
 
-Actions allow quickly and easily configuring the transition to the created state, transferring to other dashboards, or even updating the dashboard you are in. Depending on the widget, the action sources differ. 
-However, the type of action you are able to choose will be the same for all widgets. 
-Actions are adjusted in the Edit mode of the needed widget. 
-To fully understand how to use Actions, you have to [add a State to your widget](/docs/user-guide/dashboards/#states).
+Each type of widget has its own actions. They are similar and serve the same purpose - to help you quickly switch from the created widget to certain detailed information about its devices.
 
-Read more about [widget actions](/docs/user-guide/ui/widget-actions/) in the documentaion dedicated to it.
+You can read more about the action widget in the [article dedicated to it](/docs/user-guide/ui/widget-actions/).
 
 ## Time window
 
-Dashboard time window represents the time interval and aggregation function that will be used to fetch the time series or alarm data.
-Time window is used by all the time series and alarm widgets unless they are explicitly [configured](/docs/user-guide/dashboards/#4-widget-time-window) to overwrite its execution.  
-In the case of a time series widget, ThingsBoard fetches telemetry with a timestamp that matches the time window.  
-In the case of an alarm widget, ThingsBoard fetches alarms with the created time that matches the time window.
+Dashboard time window defines default time interval and aggregation function that will be used to fetch the time series or alarm data.
+This time window will be used by all the time series and alarm widgets unless they are explicitly [configured](/docs/user-guide/dashboards/#widget-time-window) to overwrite this behaviour. 
+In case of time series widget, ThingsBoard will obviously fetch telemetry with timestamp that matches the time window.
+In case of alarm widget, ThingsBoard will fetch alarms with created time that matches the time window.
 
-The time window can work in two modes:
-- In the **real-time mode**, widgets constantly receive updates from the server and automatically show you only the data that matches the time window for a current timestamp.
-- In the **history mode**, widgets receive data only during the initial load and no updates are issued over WebSockets.
-
-{% include images-gallery.html imageCollection="tw" %}
-<br>
-
-**The data aggregation function** is applicable for time series data and is not applicable for alarms.  
-There are five aggregation functions available at the moment: Min, Max, Average, Sum and Count. The special function called None is used to disable the aggregation.
-Data aggregation is useful when you don't want to fetch all time-series data to UI, and you would like to pre-aggregate it on the database level.
+The data aggregation function is applicable for time series data and is not applicable for alarms.
+Data aggregation is useful when you don't want to fetch all time series data to UI, and you would like to pre-aggregate it on the database level.
 Using the aggregation functions saves network bandwidth and computation power of the client browser.
-We recommend using aggregation functions whenever is possible if you have a lot of raw values.
+We recommend to use aggregation functions whenever is possible if you have a lot of raw values.
 
-By default, the dashboard displays average values for the last minute, grouped in 1-second intervals.
+There are 5 aggregation functions available at the moment: **Min**, **Max**, **Average**, **Sum** and **Count**. 
+The special function called **None** is used to disable the aggregation.
+The default behavior of the dashboard is to show average values for the last minute grouped into 1 second intervals.
+Most likely, you will need to change this interval to last day or even last 30 days. 
+You may notice that the value of minimum grouping interval is automatically adjusted according to the main time interval.
+The goal of the adjustment is to keep number of intervals lower than configurable value (700 in our case).
 
-**Since version 3.2.2,** it is possible to use predefined intervals (Current Day, Previous Day, Previous Month, etc.) in addition to last X minutes/hours/days.
-**Note** that the _Current day_ interval means 24 hours (12 am at night to 12 am the next night), whereas the _Current day so far_ means from 12 am at night until the time when the time window was updated.
-All other intervals are distinguished in the same way.
-
-{% include images-gallery.html imageCollection="tw-current-day" %}
-
-**Version 3.2.2** introduces time zone configurations. By default, dashboard uses the time zone provided by the browser.
-Now it is possible to set the time of your browser or a specific country. To quickly find the needed time zone, start typing its name in the time zone bar.
-
-{% include images-gallery.html imageCollection="tw-time-zone" %}
-
+The time window may work in two modes: **realtime** and **history**.
+While in history mode, the widget will receive data only during the initial load and no updates will be issued over websockets.  
+In the realtime mode, the widgets will constantly receive updates from the server and will automatically show you only the data that matches the time window for a current timestamp.
 
 ## Settings
 
@@ -751,7 +706,7 @@ the first thing you need to do is to enter the Edit mode by clicking the "Pencil
 
 {% include images-gallery.html imageCollection="dashboards-edit-enter" %}
 
-After entering the edit mode, click the "Gear" icon at the top of the window, so the Dashboard Settings will be opened.
+When the edit mode is entered, you should click the "Gear" icon at the top of the window, so the Dashboard Settings will be opened.
 
 {% include images-gallery.html imageCollection="dashboards-settings-enter" %}
 
@@ -860,7 +815,7 @@ _The Main layout_ is the one which you're managing now. Basically, it's your das
 If you click the big blue square button named "Main", the Layout settings window will open. 
 The layouts' settings are identical to [the Capacity](/docs/user-guide/dashboards/#capacity) and [the Background](/docs/user-guide/dashboards/#background) of the Dashboard settings.
 
-If we tick the "Right" checkbox, we divide the Dashboard into two separate parts. For each part, we are able to configure their own settings and interface.
+If we tick the "Right" checkbox, we divide the Dashboard into two separate parts. For each part, we are able to configure their own settings and appearance.
 
 {% include images-gallery.html imageCollection="right-layout" %}
 
