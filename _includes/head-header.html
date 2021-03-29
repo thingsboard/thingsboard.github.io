@@ -324,9 +324,11 @@
                 let subMenus = $('nav.head-menu > ul > li > div.centered-sub > ul.sub-menu');
                 subMenus.removeClass('open-sub');
                 body.css('overflow', '');
+                let docBurger = $('button.flyout-button').css('filter', '');
             } else {
                 header.addClass('opened-burger');
                 body.css('overflow', 'hidden');
+                let docBurger = $('button.flyout-button').css('filter', 'brightness(100%) invert(100%)');
             }
         }
     </script>
@@ -407,6 +409,7 @@
             if (header.hasClass('opened-burger')) {
                 var body = $('body');
                 body.css('overflow', 'hidden');
+                let docBurger = $('button.flyout-button').css('filter', 'brightness(100%) invert(100%)');
             }
 
             let targetSubMenus = $('nav.head-menu > div.sub-menu-container > div');
@@ -426,6 +429,7 @@
         function restoreDesktopSubmenu() {
             var body = $('body');
             body.css('overflow', '');
+            let docBurger = $('button.flyout-button').css('filter', '');
             let targetSubMenus = $('nav.head-menu > ul > li > div');
             let submenuContainer = $('nav.head-menu > div.sub-menu-container');
             submenuContainer.removeClass('active');

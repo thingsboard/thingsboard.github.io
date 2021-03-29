@@ -279,6 +279,80 @@ home-dash:
     3:
         image: /images/user-guide/dashboards/home-dash-3.png
 
+entity-count:
+    0:
+        image: /images/user-guide/dashboards/entitycount/add-alias.png
+    1:
+        image: /images/user-guide/dashboards/entitycount/add-alias-1.png
+    2:
+        image: /images/user-guide/dashboards/entitycount/add-alias-2.png
+
+entity-count-1:
+    0:
+        image: /images/user-guide/dashboards/entitycount/add-widget.png
+    1:
+        image: /images/user-guide/dashboards/entitycount/add-widget-1.png
+    2:
+        image: /images/user-guide/dashboards/entitycount/add-widget-2.png
+    3:
+        image: /images/user-guide/dashboards/entitycount/datasource.png
+
+entity-count-3:
+    0:
+        image: /images/user-guide/dashboards/entitycount/datasource-1.png
+    1:
+        image: /images/user-guide/dashboards/entitycount/edit-widget.png
+    2:
+        image: /images/user-guide/dashboards/entitycount/edit-widget-1.png
+
+add-alias-ds:
+    0:
+        image: /images/user-guide/dashboards/entitycount/add-alias.png
+    1:
+        image: /images/user-guide/dashboards/entity-type-ds.png
+    2:
+        image: /images/user-guide/dashboards/entity-type-ds-0.5.png
+
+add-widget-ds:
+    0:
+        image: /images/user-guide/dashboards/entitycount/add-widget.png
+    1:
+        image: /images/user-guide/dashboards/entitycount/add-widget-1.png
+    2:
+        image: /images/user-guide/dashboards/add-widget-ds.png
+    3:
+        image: /images/user-guide/dashboards/add-widget-ds-1.png
+    4:
+        image: /images/user-guide/dashboards/add-widget-ds-2.png
+
+function-ds:
+    0:
+        image: /images/user-guide/dashboards/entitycount/add-widget.png
+    1:
+        image: /images/user-guide/dashboards/entitycount/add-widget-1.png
+    2:
+        image: /images/user-guide/dashboards/add-widget-ds.png
+    3:
+        image: /images/user-guide/dashboards/function-ds.png
+    4:
+        image: /images/user-guide/dashboards/function-ds-1.png
+
+tw:
+    0:
+        image: /images/user-guide/dashboards/tw.png
+    1:
+        image: /images/user-guide/dashboards/tw-1.png
+
+tw-current-day:
+    0:
+        image: /images/user-guide/dashboards/tw-current-day.png
+    1:
+        image: /images/user-guide/dashboards/tw-current-day-sofar.png
+
+tw-time-zone:
+    0:
+        image: /images/user-guide/dashboards/tw-time-zone.png
+
 --- 
 
 * TOC
