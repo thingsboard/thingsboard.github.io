@@ -775,10 +775,9 @@ This is useful when you need to send the data displayed in your dashboard by ema
 
 {% include images-gallery.html imageCollection="pro-export" %}
 
-
 ## Dashboard as home screen
 
-**Since 3.2.2,** you can put a dashboard as your home screen. To do so, you should enter your profile setiings by clicking three dots in the upper right corner of the screen. 
+**Since 3.2.2,** you can put a dashboard as your home screen. To do so, you should enter your profile setiings by clicking three dots in the upper right corner of the screen.
 There find the _Home dashboard_ bar and from the drop-down menu select a desired dashboard to be put as a home view. After selecting, click "Save" in the lower right corner of the profile dialog box.
 To see your new home screen, click the _Home_ option from the main menu on the left.
 
