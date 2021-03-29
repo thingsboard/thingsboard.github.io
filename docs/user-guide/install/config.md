@@ -4831,57 +4831,98 @@ simplify maintenance of this documentation page.
         </tr>
         <tr>
             <td>transport.lwm2m.server.id</td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>LWM2M_SERVER_ID</td>
+            <td>123</td>
+            <td>This is:<br>
+                * Default value for the object: name "LWM2M Security" field: "Short Server ID" (deviceProfile: Bootstrap.LWM2M SERVER)</td>
+                * Default value for the object: name "LwM2M Server" field: "Short Server ID" (deviceProfile: Bootstrap.SERVERS)</td>
         </tr>
         <tr>
             <td>transport.lwm2m.server.bind_address</td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>LWM2M_BIND_ADDRESS</td>
+            <td>0.0.0.0</td>
+            <td>This is:<br>
+            * Hostname for unsecured LwM2M(CoAP) Server<br>
+            * Default Hostname for the object: name "LWM2M Security" field: "LWM2M Server URI" (deviceProfile: Bootstrap.LWM2M SERVER.Host)<br>
+            </td>
         </tr>
         <tr>
             <td>transport.lwm2m.server.bind_port_no_sec</td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>LWM2M_BIND_PORT_NO_SEC</td>
+            <td>5685</td>
+            <td>This is:<br>
+            * Port for unsecured LwM2M(CoAP) Server<br>
+            * Default Port for unsecured CoAP Server the object: name "LWM2M Security" field: "LWM2M Server URI" (deviceProfile: Bootstrap.LWM2M SERVER.Port)<br>
+            </td>
         </tr>
         <tr>
             <td>transport.lwm2m.server.secure.bind_address_security</td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>LWM2M_BIND_ADDRESS_SECURITY</td>
+            <td>0.0.0.0</td>
+            <td>This is:<br>
+            * Hostname for secured LwM2M(CoAP) Server (Using DTLS)<br>
+            * Default Hostname for the object: name "LWM2M Security" field: "LWM2M Server URI" (deviceProfile: Bootstrap.LWM2M SERVER.Host)<br>
+            </td>
         </tr>
         <tr>
             <td>transport.lwm2m.server.secure.bind_port_security</td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>LWM2M_BIND_PORT_SECURITY</td>
+            <td>5686</td>
+            <td>This is:<br>
+            * Port for secured LwM2M(Coap) Server (Using DTLS)<br>
+            * Default Port for secured CoAP Server (Using DTLS) the object: name "LWM2M Security" field: "LWM2M Server URI" (deviceProfile: Bootstrap.LWM2M SERVER.Port)<br>
+            </td>
         </tr>
         <tr>
             <td>transport.lwm2m.server.secure.public_x</td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>LWM2M_SERVER_PUBLIC_X</td>
+            <td>05064b9e6762dd8d8b8a523<br>
+                55d7b4d8b9a3d64e6d2ee27<br>
+                7d76c248861353f358
+            </td>
+            <td>For create of Public Key by LwM2M(Coap) Server (Using DTLS)<br>  
+                Only for security mode RPK: If the keystore file is missing or not working
+            </td>
         </tr>
         <tr>
             <td>transport.lwm2m.server.secure.public_y</td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>LWM2M_SERVER_PUBLIC_Y</td>
+            <td>5eeb1838e4f9e37b31fa347<br>
+                aef5ce3431eb54e0a250691<br>
+                0c5e0298817445721b
+            </td>
+            <td>For create of Public Key by LwM2M(Coap) Server (Using DTLS)<br>  
+                Only for security mode RPK: If the keystore file is missing or not working<br>
+                - Elliptic Curve parameters  : [secp256r1 [NIST P-256, X9.62 prime256v1] (1.2.840.10045.3.1.7)]
+            </td>
         </tr>
         <tr>
             <td>transport.lwm2m.server.secure.private_encoded</td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>LWM2M_SERVER_PRIVATE_ENCODED</td>
+            <td>308193020100301306072a8<br>
+                648ce3d020106082a8648ce<br>
+                3d030107047930770201010<br>
+                420dc774b309e547ceb48fe<br>
+                e547e104ce201a9c48c449d<br>
+                c5414cd04e7f5cf05f67ba0<br>
+                0a06082a8648ce3d030107a<br>
+                1440342000405064b9e6762<br>
+                dd8d8b8a52355d7b4d8b9a3<br>
+                d64e6d2ee277d76c2488613<br>
+                53f3585eeb1838e4f9e37b3<br>
+                1fa347aef5ce3431eb54e0a<br>
+                2506910c5e0298817445721b<br>
+            </td>
+            <td>For create of Private Key by LwM2M(Coap) Server (Using DTLS)<br>  
+                Only for security mode RPK: If the keystore file is missing or not working</td>
         </tr>
         <tr>
             <td>transport.lwm2m.server.secure.alias</td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>LWM2M_KEYSTORE_ALIAS_SERVER</td>
+            <td>server</td>
+            <td>Alias for certificate by LwM2M(Coap) Server (Using DTLS)<br> 
+                Only Only for security mode X509
+            </td>
         </tr>
         <tr>
             <td colspan="4"><span style="font-weight: bold; font-size: 24px;">Bootstrap  Server</span></td>
