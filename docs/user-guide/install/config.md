@@ -4805,6 +4805,39 @@ We will list only main configuration parameters below to avoid duplication of th
 </table>
 
 
+#### LwM2M Transport Settings
+
+
+<table>
+  <thead>
+      <tr>
+          <td><b>Property</b></td><td><b>Environment Variable</b></td><td><b>Default Value</b></td><td><b>Description</b></td>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>spring.main.web-environment</td>
+          <td> </td>
+          <td>false</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>spring.main.web-application-type</td>
+          <td></td>
+          <td>none</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td colspan="4"><span style="font-weight: bold; font-size: 24px;">Zookeeper connection parameters</span></td>
+      </tr>  
+      <tr>
+          <td>zk.enabled</td>
+          <td>ZOOKEEPER_ENABLED</td>
+          <td>false</td>
+          <td>Enable/disable zookeeper discovery service. Used for ThingsBoard cluster</td>
+      </tr>
+  </tbody>
+</table>
 
 #### Logging
 

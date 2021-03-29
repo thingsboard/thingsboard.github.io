@@ -71,7 +71,8 @@ ThingsBoard provides the following API to device applications:
 Attributes API is specific for each supported network protocol.
 The API and examples can be reviewed on the corresponding reference page:
 
- - [MQTT API reference](/docs/reference/mqtt-api/#attributes-api);
+ - [MQTT API reference](/docs/reference/mqtt-api/#attributes-api); 
+ - [LwM2M API reference](/docs/reference/lwm2m-api/#attributes-api);
  - [CoAP API reference](/docs/reference/coap-api/#attributes-api);
  - [HTTP API reference](/docs/reference/http-api/#attributes-api).
   

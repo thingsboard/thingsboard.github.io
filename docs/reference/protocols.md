@@ -10,6 +10,7 @@ description: Supported IoT protocols for IoT device connectivity
 ThingsBoard supports following protocols for device connectivity:
 
  - **[MQTT](/docs/reference/mqtt-api)**
+ - **[LwM2M](/docs/reference/lwm2m-api)** 
  - **[CoAP](/docs/reference/coap-api)**
  - **[HTTP](/docs/reference/http-api)** 
  

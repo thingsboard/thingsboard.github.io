@@ -130,6 +130,7 @@ click configureCustomBackend openLink "Are you able to configure where to push u
 click gateway openLink "Your device has multiple other devices connected to itself using various protocols like BTLE, ZigBee, etc"
 click httpCeApi openLink "HTTP Device API Reference"
 click mqttCeApi openLink "MQTT Device API Reference"
+click lwm2mCeApi openLink "LWM2M Device API Reference"
 click mqttGwApi openLink "MQTT Gateway API Reference"
 click coapCeApi openLink "CoAP Device API Reference"
 click customIntegration openLink "Contact Us"

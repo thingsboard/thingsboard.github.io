@@ -39,6 +39,7 @@ The full list of components and corresponding documentation pages are listed bel
 * HTTP Transport component provides device APIs described [here](/docs/reference/http-api/); 
 * MQTT Transport component provides device APIs described [here](/docs/reference/mqtt-api/)
 and also enables gateway APIs described [here](/docs/reference/gateway-mqtt-api/);
+* LwM2M Transport component provides device APIs described [here](/docs/reference/lwm2m-api/);
 * CoAP Transport component provides device APIs described [here](/docs/reference/coap-api/).
 
 Each of the transport components pushes data to the rule engine and also may use core services to issue requests to the database to validate device credentials, etc. 
