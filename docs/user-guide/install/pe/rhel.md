@@ -41,7 +41,7 @@ sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.
 ```
 {: .copy-code}
 
-### Step 1. Install Java 8 (OpenJDK) 
+### Step 1. Install Java 11 (OpenJDK) 
 
 {% include templates/install/rhel-java-install.md %}
 

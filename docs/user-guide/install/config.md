@@ -786,6 +786,12 @@ We will list only main configuration parameters below to avoid duplication of th
           <td>Cache provider. <b>caffeine</b> for stand alone installations and <b>redis</b> for clustered installations</td>
       </tr>
       <tr>
+          <td>cache.attributes.enabled</td>
+          <td>CACHE_ATTRIBUTES_ENABLED</td>
+          <td>true</td>
+          <td>Cache attribute request in <b>caffeine</b> or <b>redis</b></td>
+      </tr>
+      <tr>
           <td>caffeine.specs.relations.timeToLiveInMinutes</td>
           <td></td>
           <td>1440</td>
@@ -856,6 +862,18 @@ We will list only main configuration parameters below to avoid duplication of th
           <td></td>
           <td>100000</td>
           <td><b>entityViews</b> cache max size</td>
+      </tr>
+      <tr>
+          <td>caffeine.specs.attributes.timeToLiveInMinutes</td>
+          <td></td>
+          <td>1440</td>
+          <td><b>attributes</b> cache TTL</td>
+      </tr>
+      <tr>
+          <td>caffeine.specs.attributes.maxSize</td>
+          <td></td>
+          <td>100000</td>
+          <td><b>attributes</b> cache max size</td>
       </tr>
       <tr>
           <td>redis.connection.type</td>
@@ -1404,6 +1422,24 @@ We will list only main configuration parameters below to avoid duplication of th
           <td>TB_QUEUE_KAFKA_JE_TOPIC_PROPERTIES</td>
           <td>retention.ms:604800000;segment.bytes:26214400;retention.bytes:1048576000</td>
           <td>Kafka properties for Js Executor topics</td>
+      </tr>
+      <tr>
+          <td>queue.kafka.consumer-stats.enabled</td>
+          <td>TB_QUEUE_KAFKA_CONSUMER_STATS_ENABLED</td>
+          <td>true</td>
+          <td>Prints lag between consumer group offset and last messages offset in Kafka topics</td>
+      </tr>
+      <tr>
+          <td>queue.kafka.consumer-stats.print-interval-ms</td>
+          <td>TB_QUEUE_KAFKA_CONSUMER_STATS_MIN_PRINT_INTERVAL_MS</td>
+          <td>60000</td>
+          <td>Statistics printing interval for Kafka's consumer-groups stats</td>
+      </tr>
+      <tr>
+          <td>queue.kafka.consumer-stats.kafka-response-timeout-ms</td>
+          <td>TB_QUEUE_KAFKA_CONSUMER_STATS_RESPONSE_TIMEOUT_MS</td>
+          <td>1000</td>
+          <td>Time to wait for the stats-loading requests to Kafka to finish</td>
       </tr>
       <tr>
           <td>queue.aws_sqs.access_key_id</td>
@@ -2336,6 +2372,24 @@ We will list only main configuration parameters below to avoid duplication of th
           <td>Kafka properties for Js Executor topics</td>
       </tr>
       <tr>
+          <td>queue.kafka.consumer-stats.enabled</td>
+          <td>TB_QUEUE_KAFKA_CONSUMER_STATS_ENABLED</td>
+          <td>true</td>
+          <td>Prints lag between consumer group offset and last messages offset in Kafka topics</td>
+      </tr>
+      <tr>
+          <td>queue.kafka.consumer-stats.print-interval-ms</td>
+          <td>TB_QUEUE_KAFKA_CONSUMER_STATS_MIN_PRINT_INTERVAL_MS</td>
+          <td>60000</td>
+          <td>Statistics printing interval for Kafka's consumer-groups stats</td>
+      </tr>
+      <tr>
+          <td>queue.kafka.consumer-stats.kafka-response-timeout-ms</td>
+          <td>TB_QUEUE_KAFKA_CONSUMER_STATS_RESPONSE_TIMEOUT_MS</td>
+          <td>1000</td>
+          <td>Time to wait for the stats-loading requests to Kafka to finish</td>
+      </tr>
+      <tr>
           <td>queue.aws_sqs.access_key_id</td>
           <td>TB_QUEUE_AWS_SQS_ACCESS_KEY_ID</td>
           <td>YOUR_KEY</td>
@@ -3186,6 +3240,24 @@ We will list only main configuration parameters below to avoid duplication of th
           <td>TB_QUEUE_KAFKA_JE_TOPIC_PROPERTIES</td>
           <td>retention.ms:604800000;segment.bytes:26214400;retention.bytes:1048576000</td>
           <td>Kafka properties for Js Executor topics</td>
+      </tr>
+      <tr>
+          <td>queue.kafka.consumer-stats.enabled</td>
+          <td>TB_QUEUE_KAFKA_CONSUMER_STATS_ENABLED</td>
+          <td>true</td>
+          <td>Prints lag between consumer group offset and last messages offset in Kafka topics</td>
+      </tr>
+      <tr>
+          <td>queue.kafka.consumer-stats.print-interval-ms</td>
+          <td>TB_QUEUE_KAFKA_CONSUMER_STATS_MIN_PRINT_INTERVAL_MS</td>
+          <td>60000</td>
+          <td>Statistics printing interval for Kafka's consumer-groups stats</td>
+      </tr>
+      <tr>
+          <td>queue.kafka.consumer-stats.kafka-response-timeout-ms</td>
+          <td>TB_QUEUE_KAFKA_CONSUMER_STATS_RESPONSE_TIMEOUT_MS</td>
+          <td>1000</td>
+          <td>Time to wait for the stats-loading requests to Kafka to finish</td>
       </tr>
       <tr>
           <td>queue.aws_sqs.access_key_id</td>
@@ -4053,6 +4125,24 @@ We will list only main configuration parameters below to avoid duplication of th
           <td>TB_QUEUE_KAFKA_JE_TOPIC_PROPERTIES</td>
           <td>retention.ms:604800000;segment.bytes:26214400;retention.bytes:1048576000</td>
           <td>Kafka properties for Js Executor topics</td>
+      </tr>
+      <tr>
+          <td>queue.kafka.consumer-stats.enabled</td>
+          <td>TB_QUEUE_KAFKA_CONSUMER_STATS_ENABLED</td>
+          <td>true</td>
+          <td>Prints lag between consumer group offset and last messages offset in Kafka topics</td>
+      </tr>
+      <tr>
+          <td>queue.kafka.consumer-stats.print-interval-ms</td>
+          <td>TB_QUEUE_KAFKA_CONSUMER_STATS_MIN_PRINT_INTERVAL_MS</td>
+          <td>60000</td>
+          <td>Statistics printing interval for Kafka's consumer-groups stats</td>
+      </tr>
+      <tr>
+          <td>queue.kafka.consumer-stats.kafka-response-timeout-ms</td>
+          <td>TB_QUEUE_KAFKA_CONSUMER_STATS_RESPONSE_TIMEOUT_MS</td>
+          <td>1000</td>
+          <td>Time to wait for the stats-loading requests to Kafka to finish</td>
       </tr>
       <tr>
           <td>queue.aws_sqs.access_key_id</td>

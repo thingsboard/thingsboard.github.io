@@ -2,12 +2,12 @@
   {
     "type": ["Asia"],
     "country": ["Vietnam", "China", "Laos", "Thailand", "Cambodia", "Malaysia", "Singapore", "Brunei", "Philippines", "Taiwan"],
-    "name": "ACTE Solutions",
+    "name": "ACTE Technology",
     "contact": {
-      "href": "contact@acte-solutions.com"
+      "href": "contact@acte.ltd"
     },
     "site": {
-      "href": "acte-solutions.com",
+      "href": "acte.ltd",
       "target": "_blank"
     }
   },
@@ -96,8 +96,8 @@
     }
   },
   {
-    "type": ["Europe"],
-    "country": ["France"],
+    "type": ["Africa"],
+    "country": ["Senegal"],
     "name": "Cimyco",
     "contact": {
       "href": "contact@cimyco.com"
@@ -632,6 +632,18 @@
     },
     "site": {
       "href": "wirelesssolution.asia",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Asia"],
+    "country": ["India"],
+    "name": "YuDash Systems Pvt. Ltd.",
+    "contact": {
+      "href": "sunand@yudash.com"
+    },
+    "site": {
+      "href": "yudash.com",
       "target": "_blank"
     }
   }
