@@ -2,8 +2,8 @@
 layout: docwithnav
 assignees:
 - ashvayka
-title: Widgets Actions
-description: ThingsBoard Dashboard Widgets Actions
+title: Widget Actions
+description: ThingsBoard Dashboard Widget Actions
 entity-sources:
     0:
         image: /images/user-guide/ui/widgets/actions/entity-cards/entity-sources.png

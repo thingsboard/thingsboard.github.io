@@ -425,13 +425,17 @@ List of entity fields depends on the entity type and may extend in the future:
  * **User** has the following fields: created time, first name, last name, email and additional info.
  * **Customer** has the following fields: create time, entity type, email, title, country, state, city, address, zip code, phone, additional info.
 
-###### 2.1. Basic Data keys settings
+###### 2.1. Basic data key configuration
 
 Coming soon...
 
-###### 2.2. Advanced Data keys settings
+###### 2.2. Advanced data key configuration
 
-Coming soon...
+Advanced data keys configuration is responsible for the visibility, style, and appearance of a specific data key on a widget. 
+Entity table widget, alarms table widget, and entity admin widget bundles have the same advanced data key configuration.
+Charts widget bundle has its own unique advanced data key configuration. All other widget bundles have only basic data key configuration.
+
+Learn more about advanced data key configuration in the [documentation dedicated to it](/docs/user-guide/ui/advanced-data-key-configuration/).
 
 ##### 3. Widget time window
 
@@ -543,7 +547,7 @@ Learn more about specific advanced settings in the corresponding widget document
 
 Coming soon...
 
-##### Widget actions
+##### 7. Widget actions
 
 Each type of widget has its own actions. They are similar and serve the same purpose - to help you quickly switch from the created widget to certain detailed information about its devices.
 
@@ -758,7 +762,9 @@ This action saves the configuration file of the JSON format with all the setting
 
 {% include images-gallery.html imageCollection="export-widget" %}
 
-### ThingsBoard Professional Edition export
+### Export in different formats
+
+{% assign feature = "Export in different formats" %}{% include templates/pe-feature-banner.md %}
 
 In ThingsBoard Professional Edition, dashboard export is possible in several additional formats: PDF, PNG & JPEG.
 This is useful when you need to send the data displayed in your dashboard by email or print.
