@@ -24,6 +24,11 @@ ThingsBoard server nodes act as a CoAP Server that supports both regular and obs
 You can find CoAP client libraries for different programming languages on the web. Examples in this article will be based on [CoAP cli](https://www.npmjs.com/package/coap-cli).
 In order to setup this tool, you can use instructions in our [Hello World](/docs/getting-started-guides/helloworld/) guide.
 
+**NOTE**: CoAP cli does not support query parameters. If you require to use query parameters, you should use [coap client](http://manpages.ubuntu.com/manpages/focal/man5/coap-client.5.html) instead. To install the coap-client please execute: <br>
+
+* **Ubuntu 20.04:** ```sudo apt install libcoap2-bin```
+* **Ubuntu 18.04:** ```sudo apt install libcoap1-bin```
+
 ##### CoAP Authentication and error codes
 
 We will use *access token* device credentials in this article and they will be referred to later as **$ACCESS_TOKEN**.
@@ -35,6 +40,11 @@ Possible error codes and their reasons:
 * **4.04 Not Found** - Resource not found.
 
 {% include templates/api/key-value-format.md %}
+
+However, it is also possible to send data via [Protocol Buffers](https://developers.google.com/protocol-buffers).
+Please refer to the [CoAP transport type](/docs/user-guide/device-profiles/#coap-transport-type) configuration section in device profile article for more details.
+
+Using custom binary format or some serialization framework is also possible. See [protocol customization](#protocol-customization) for more details.
 
 ## Telemetry upload API
 
@@ -105,6 +115,7 @@ In order to request client-side or shared device attributes to ThingsBoard serve
 coap://host/api/v1/$ACCESS_TOKEN/attributes?clientKeys=attribute1,attribute2&sharedKeys=shared1,shared2
 ```
 
+**NOTE**: This example shown with the coap-client instead of CoAP cli since CoAP cli does not support query parameters. Please refer to [Client libraries setup](#docsContent).
 
 {% capture tabspec %}coap-attributes-request
 A,Example,shell,resources/coap-attributes-request.sh,/docs/reference/resources/coap-attributes-request.sh
