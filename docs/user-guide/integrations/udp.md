@@ -190,7 +190,7 @@ return result;
 {% include images-gallery.html imageCollection="downlink" %}
 
 Now you have to add a converter to the integration, optionally
-configure Cache Size and Cache time to live in minutes (able just for UDP Downlink)
+configure Cache Size and Cache time to live in minutes (able just for UDP Downlink).
 
 ***Note**: Cache size and Time to live - features, that helps to avoid memory leak when we are storing connections.*
 *Cache time to live - time to storage messages*
@@ -198,27 +198,27 @@ configure Cache Size and Cache time to live in minutes (able just for UDP Downli
 
 {% include images-gallery.html imageCollection="integration" %}
 
-When integration configured and ready to use, we need to go to Rule Chains, choose Root Rule Chain and here create rule node
-**Integration Downlink**. Input here some name, choose which integration you need to use and tap **Add**
-After this step, we need to tap on a right grey circle of rule node **Message type switch** and drag this circle to left side of 'Integration Downlink',
-here lets choose **Attribute Update**, tap 'Add' and save Rule node. That's it if all the steps ready, and you were not meet up problems!
+When integration configured and ready to use, we need to go to Rule Chains, choose 'Root Rule Chain' and here create rule node
+**Integration Downlink**. Input here some name, choose which integration you need to use and tap **Add**.
+After this steps, we need to tap on a right grey circle of rule node **message type switch** and drag this circle to left side of 'Integration Downlink',
+here lets choose **Attribute Update**, tap 'Add' and save Rule node. That's it!
 
 {% include images-gallery.html imageCollection="rulechain" %}
 
 ## Test Downlink
 
-To test downlink you can create some attribute on your device, change it, and try to send some Uplink message on this device, and 
-you will see Downlink message 
+To test downlink you can create some **shared attribute** on your device, change it, and try to send some Uplink message on this device. And 
+you will see Downlink message.
 
 {% include images-gallery.html imageCollection="firsttest" %}
 
-Also, when you're sending Uplink, you can set on command to send Uplink another `-q` option, for example 120 seconds. This option setting how long you will wait for a response.
-If time of connection is over - you will receive this message on next Uplink.
+Also, you can set for Uplink command option `-q`, for example 120 seconds. This option setting how long you will wait for a response.
+If time of connection is over - you will receive this message on next Uplink. See next example:
 
 {% include images-gallery.html imageCollection="secondtest" %}
 
-***Note**: When you use UDP integration, and your connection established for a long time, you will receive just one Downlink message,
-all other will be saved on server side and will be sent on next Uplink*
+***Note**: When you use UDP integration, and your connection established for a long time, you will receive just one Downlink message.
+All other will be saved on server side and will be sent on next Uplink*
 
 
 ## Next steps
