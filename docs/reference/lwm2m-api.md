@@ -371,7 +371,7 @@ The Security Mode Resource in the Security Object determines what credentials ar
 the LWM2M Server or LWM2M Bootstrap-Server, respectively.
 
 !!! TO DO.
-* about `Description of all parameters` for starting the transport and their default in the **thingsboard.yml** configuration file in the **LWM2M** section can be viewed here.[configurable](/docs/user-guide/install/config/#LWM2M-transport-settings).
+* about `Description of all parameters` for starting the transport and their default in the **thingsboard.yml** configuration file in the **LWM2M** section can be viewed [here](/docs/user-guide/install/config/#lwm2m-transport-settings).
 
 <a name="link-transport-config"></a><br><br>
 

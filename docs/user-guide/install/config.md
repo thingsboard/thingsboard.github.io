@@ -1,51 +1,53 @@
 ---
-layout: docwithnav
-assignees:
-- vparomskiy
-title: Configuration properties
-description: ThingsBoard configuration properties and environment variables
+layout: docwithnav assignees:
+
+- vparomskiy title: Configuration properties description: ThingsBoard configuration properties and environment variables
 
 ---
 
-* TOC
-{:toc}
+* TOC {:toc}
 
-This guide will help you to get familiar with ThingsBoard configuration files and parameters. 
+This guide will help you to get familiar with ThingsBoard configuration files and parameters.
 
-Configuration files location depends on the ThingsBoard installation type. If ThingsBoard is installed as a **monolithic application**, 
-you can find configuration files in the following directory:
+Configuration files location depends on the ThingsBoard installation type. If ThingsBoard is installed as a **monolithic
+application**, you can find configuration files in the following directory:
 
 ```bash
 Windows: YOUR_INSTALL_DIR/conf
 Linux: /usr/share/thingsboard/conf
 ```
 
-But if ThingsBoard is installed as a **microservice**, then each component of the platform will have separate configuration files.
+But if ThingsBoard is installed as a **microservice**, then each component of the platform will have separate
+configuration files.
 
-In this guide all application properties will be divided by components where they are applied. **Note** that in case of **monolithic application**
-all application properties are located in the single file - **thingsboard.yml** and all environment variables are in **thingsboard.conf**
-
+In this guide all application properties will be divided by components where they are applied. **Note** that in case
+of **monolithic application**
+all application properties are located in the single file - **thingsboard.yml** and all environment variables are in **
+thingsboard.conf**
 
 #### ThingsBoard Core Settings
 
-This is the main configuration file that contains configuration properties 
-for transports (HTTP, MQTT, CoAP), database (Cassandra, PostgreSQL, TimescaleDB), clustering (Zookeeper and gRPC), etc.
-The configuration file is written in YAML. 
+This is the main configuration file that contains configuration properties for transports (HTTP, MQTT, CoAP), database (
+Cassandra, PostgreSQL, TimescaleDB), clustering (Zookeeper and gRPC), etc. The configuration file is written in YAML.
 
-All configuration parameters have corresponding environment variable name and default value. In order to change configuration parameter you can simply change it's default value.
-For example:
+All configuration parameters have corresponding environment variable name and default value. In order to change
+configuration parameter you can simply change it's default value. For example:
 
 ```bash
 server:
   address: "${HTTP_BIND_ADDRESS:0.0.0.0}"
 ```
 
-In this case, *'HTTP_BIND_ADDRESS'* is environment variable name and *'0.0.0.0'* is a default value.
-Environment variables are useful in case of docker installation. 
-See [docker documentation](https://docs.docker.com/compose/environment-variables/#/the-envfile-configuration-option) for more details.
+In this case, *'HTTP_BIND_ADDRESS'* is environment variable name and *'0.0.0.0'* is a default value. Environment
+variables are useful in case of docker installation.
+See [docker documentation](https://docs.docker.com/compose/environment-variables/#/the-envfile-configuration-option) for
+more details.
 
-There is **190+** configuration parameters in **thingsboard.yml** file. You can review their description in the [**configuration file**](https://raw.githubusercontent.com/thingsboard/thingsboard/master/application/src/main/resources/thingsboard.yml) itself.
-We will list only main configuration parameters below to avoid duplication of the parameter descriptions and to simplify maintenance of this documentation page.
+There is **190+** configuration parameters in **thingsboard.yml** file. You can review their description in the [**
+configuration
+file**](https://raw.githubusercontent.com/thingsboard/thingsboard/master/application/src/main/resources/thingsboard.yml)
+itself. We will list only main configuration parameters below to avoid duplication of the parameter descriptions and to
+simplify maintenance of this documentation page.
 
 
 <table>
@@ -3847,10 +3849,7 @@ We will list only main configuration parameters below to avoid duplication of th
   </tbody>
 </table>
 
-
-
 #### CoAP Transport Settings
-
 
 <table>
   <thead>
@@ -4611,85 +4610,85 @@ We will list only main configuration parameters below to avoid duplication of th
             <td>TB_QUEUE_RE_SQ_QUEUE_NAME</td>
             <td>SequentialByOriginator</td>
             <td>Rule Engine SequentialByOriginator queue</td>
-        </tr>
-        <tr>
+      </tr>
+      <tr>
             <td>queue.rule-engine.queues.topic</td>
             <td>TB_QUEUE_RE_SQ_TOPIC</td>
             <td>tb_rule_engine.sq</td>
             <td>Topic for SequentialByOriginator queue by Rule Engine microservices</td>
-        </tr>
-        <tr>
+      </tr>
+      <tr>
             <td>queue.rule-engine.queues.poll-interval</td>
             <td>TB_QUEUE_RE_SQ_POLL_INTERVAL_MS</td>
             <td>25</td>
             <td>Interval in milliseconds to poll messages from SequentialByOriginator queue by Rule Engine microservices</td>
-        </tr>
-        <tr>
+      </tr>
+      <tr>
             <td>queue.rule-engine.queues.partitions</td>
             <td>TB_QUEUE_RE_SQ_PARTITIONS</td>
             <td>10</td>
             <td>SequentialByOriginator queue amount of partitions used by Rule Engine microservices</td>
-        </tr>
-        <tr>
+      </tr>
+      <tr>
             <td>queue.rule-engine.queues.pack-processing-timeout</td>
             <td>TB_QUEUE_RE_SQ_PACK_PROCESSING_TIMEOUT_MS</td>
             <td>60000</td>
             <td>Timeout for processing a message pack from SequentialByOriginator queue by Rule Engine microservices</td>
-        </tr>
-        <tr>
+      </tr>
+      <tr>
             <td>queue.rule-engine.queues.submit-strategy.type</td>
             <td>TB_QUEUE_RE_SQ_SUBMIT_STRATEGY_TYPE</td>
             <td>SEQUENTIAL_BY_ORIGINATOR</td>
             <td>SequentialByOriginator queue submit strategy. Can be: BURST, BATCH, SEQUENTIAL_BY_ORIGINATOR, SEQUENTIAL_WITHIN_TENANT, SEQUENTIAL</td>
-        </tr>
-        <tr>
+      </tr>
+      <tr>
             <td>queue.rule-engine.queues.submit-strategy.batch-size</td>
             <td>TB_QUEUE_RE_SQ_SUBMIT_STRATEGY_BATCH_SIZE</td>
             <td>100</td>
             <td>Maximum number of messages in batch. Only for submit strategy type: BATCH</td>
-        </tr>
-        <tr>
+      </tr>
+      <tr>
             <td>queue.rule-engine.queues.processing-strategy.type</td>
             <td>TB_QUEUE_RE_SQ_PROCESSING_STRATEGY_TYPE</td>
             <td>RETRY_FAILED_AND_TIMED_OUT</td>
             <td>SKIP_ALL_FAILURES, RETRY_ALL, RETRY_FAILED, RETRY_TIMED_OUT, RETRY_FAILED_AND_TIMED_OUT</td>
-        </tr>
-        <tr>
+      </tr>
+      <tr>
             <td>queue.rule-engine.queues.processing-strategy.retries</td>
             <td>TB_QUEUE_RE_SQ_PROCESSING_STRATEGY_RETRIES</td>
             <td>3</td>
             <td>Number of retries, 0 is unlimited. Use for RETRY_ALL, RETRY_FAILED, RETRY_TIMED_OUT, RETRY_FAILED_AND_TIMED_OUT processing strategies</td>
-        </tr>
-        <tr>
+      </tr>
+      <tr>
             <td>queue.rule-engine.queues.processing-strategy.failure-percentage</td>
             <td>TB_QUEUE_RE_SQ_PROCESSING_STRATEGY_FAILURE_PERCENTAGE</td>
             <td>0</td>
             <td>Skip retry if failures or timeouts are less then X percentage of messages</td>
-        </tr>
-        <tr>
+      </tr>
+      <tr>
             <td>queue.rule-engine.queues.processing-strategy.pause-between-retries</td>
             <td>TB_QUEUE_RE_SQ_PROCESSING_STRATEGY_RETRY_PAUSE</td>
             <td>5</td>
             <td>Time in seconds to wait in consumer thread before retries</td>
-        </tr>      
-        <tr>
+      </tr>      
+      <tr>
              <td>queue.rule-engine.queues.processing-strategy.max-pause-between-retries</td>
              <td>TB_QUEUE_RE_SQ_PROCESSING_STRATEGY_MAX_RETRY_PAUSE</td>
              <td>5</td>
              <td>Max allowed time in seconds for pause between retries</td>
-        </tr>      
-       <tr>
+      </tr>      
+      <tr>
            <td>queue.transport.notifications_topic</td>
            <td>TB_QUEUE_TRANSPORT_NOTIFICATIONS_TOPIC</td>
            <td>tb_transport.notifications</td>
            <td>Transport nottifications topic</td>
-       </tr>
-       <tr>
+      </tr>
+      <tr>
            <td>queue.transport.poll_interval</td>
            <td>TB_QUEUE_CORE_POLL_INTERVAL_MS</td>
            <td>25</td>
            <td>Interval in milliseconds to poll messages by Core microservices</td>
-       </tr>
+      </tr>
       <tr>
            <td colspan="4"><span style="font-weight: bold; font-size: 24px;">ThingsBoard service parameters</span></td>
       </tr>
@@ -4710,13 +4709,11 @@ We will list only main configuration parameters below to avoid duplication of th
            <td>TB_SERVICE_TENANT_ID</td>
            <td></td>
            <td>Empty or specific tenant id</td>
-       </tr>                                                
+       </tr>   
   </tbody>
 </table>
 
-
 #### LwM2M Transport Settings
-
 
 <table>
   <thead>
@@ -4725,32 +4722,243 @@ We will list only main configuration parameters below to avoid duplication of th
       </tr>
   </thead>
   <tbody>
-      <tr>
-          <td>spring.main.web-environment</td>
-          <td> </td>
-          <td>false</td>
-          <td></td>
-      </tr>
-      <tr>
-          <td>spring.main.web-application-type</td>
-          <td></td>
-          <td>none</td>
-          <td></td>
-      </tr>
-      <tr>
-          <td colspan="4"><span style="font-weight: bold; font-size: 24px;">Zookeeper connection parameters</span></td>
-      </tr>  
-      <tr>
-          <td>zk.enabled</td>
-          <td>ZOOKEEPER_ENABLED</td>
-          <td>false</td>
-          <td>Enable/disable zookeeper discovery service. Used for ThingsBoard cluster</td>
-      </tr>
+        <tr>
+            <td>transport.lwm2m.enabled</td>
+            <td>LWM2M_ENABLED</td>
+            <td>true</td>
+            <td>Enable/disable lvm2m transport protocol.</td>
+        </tr>       
+        <tr>
+            <td>transport.lwm2m.timeout</td>
+            <td>LWM2M_TIMEOUT</td>
+            <td>120000</td>
+            <td> - We choose a default timeout a bit higher to the MAX_TRANSMIT_WAIT(62-93s) which is the time from starting to  send a Confirmable message to the time when an acknowledgement is no longer expected.<br>
+                  - DEFAULT_TIMEOUT = 2 * 60 * 1000l; 2 min in ms
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4"><span style="font-weight: bold; font-size: 24px;">Create and Set DTLS Config</span></td>
+        </tr>
+        <tr>
+            <td>transport.lwm2m.recommended_ciphers</td>
+            <td>LWM2M_RECOMMENDED_CIPHERS</td>
+            <td>false</td>
+            <td> Set usage of recommended cipher suites.<br> 
+                * Params DTLS Connector config:<br>
+                -- recommendedCipherSuitesOnly = true allow only recommended cipher suites,<br>
+                -- recommendedCipherSuitesOnly = false, also allow not recommended cipher suites. 
+            </td>
+        </tr>
+        <tr>
+            <td>transport.lwm2m.recommended_supported_groups</td>
+            <td>LWM2M_RECOMMENDED_SUPPORTED_GROUPS</td>
+            <td>true</td>
+            <td>Set usage of recommended supported groups (curves).<br>
+                * Params DTLS Connector config:<br>
+                -- recommendedSupportedGroupsOnly = true allow only recommended supported groups,<br>
+                -- recommendedSupportedGroupsOnly = false, also allow not recommended supported groups. Default value is true</td>
+        </tr>
+        <tr>
+            <td colspan="4"><span style="font-weight: bold; font-size: 24px;">Registered/request/update pool</span></td>
+        </tr>
+        <tr>
+            <td>transport.lwm2m.response_pool_size</td>
+            <td>LWM2M_RESPONSE_POOL_SIZE</td>
+            <td>100</td>
+            <td>Specify thread pool size for Transport Response from lwm2mClient</td>
+        </tr>
+        <tr>
+            <td>transport.lwm2m.registered_pool_size</td>
+            <td>LWM2M_REGISTERED_POOL_SIZE</td>
+            <td>10</td>
+            <td>Specify thread pool size for Transport Registered of lwm2mClient</td>
+        </tr>
+        <tr>
+            <td>transport.lwm2m.update_registered_pool_size</td>
+            <td>LWM2M_UPDATE_REGISTERED_POOL_SIZE</td>
+            <td>10</td>
+            <td>Specify thread pool size for Transport UpdateRegistered of lwm2mClient</td>
+        </tr>
+        <tr>
+            <td>transport.lwm2m.un_registered_pool_size</td>
+            <td>LWM2M_UN_REGISTERED_POOL_SIZE</td>
+            <td>10</td>
+            <td>Specify thread pool size for Transport UnRegistered of lwm2mClient</td>
+        </tr>
+        <tr>
+            <td colspan="4"><span style="font-weight: bold; font-size: 24px;">Keys by security</span></td>
+        </tr>
+        <tr>
+            <td>transport.lwm2m.secure.key_store_type</td>
+            <td>LWM2M_KEYSTORE_TYPE</td>
+            <td>JKS</td>
+            <td>Certificate_x509:<br>
+                * To get helps about files format and how to generate it, see: https://github.com/eclipse/leshan/wiki/Credential-files-format.<br>
+                * If need to create new X509 Certificates: common/transport/lwm2m/src/main/resources/credentials/shell/lwM2M_credentials.sh
+        </td>
+        </tr>
+        <tr>
+            <td>transport.lwm2m.secure.key_store_path_file</td>
+            <td>KEY_STORE_PATH_FILE</td>
+            <td></td>
+            <td>Default path:<br>
+                * For core:<br>
+                -- key_store_path_file = "/common/transport/lwm2m/src/main/resources/credentials/serverKeyStore.jks"<br>
+                * For docker:<br>
+                -- key_store_path_file = "/transport/lwm2m/src/main/data/credentials/serverKeyStore.jks"<br>
+            </td>
+        </tr>
+        <tr>
+            <td>transport.lwm2m.secure.key_store_password</td>
+            <td>LWM2M_KEYSTORE_PASSWORD_SERVER</td>
+            <td>server_ks_password</td>
+            <td>Key store password for file serverKeyStore.jks</td>
+        </tr>
+        <tr>
+            <td>transport.lwm2m.secure.root_alias</td>
+            <td>LWM2M_SERVER_ROOT_CA</td>
+            <td>rootca</td>
+            <td>Alias of the Trust Certificate</td>
+        </tr>
+        <tr>
+            <td>transport.lwm2m.secure.enable_gen_new_key_psk_rpk</td>
+            <td>ENABLE_GEN_NEW_KEY_PSK_RPK</td>
+            <td>false</td>
+            <td>Function for creating new keys for security mode: PSK and RPK.</td>
+        </tr>
+        <tr>
+            <td colspan="4"><span style="font-weight: bold; font-size: 24px;">Server LwM2M</span></td>
+        </tr>
+        <tr>
+            <td>transport.lwm2m.server.id</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>transport.lwm2m.server.bind_address</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>transport.lwm2m.server.bind_port_no_sec</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>transport.lwm2m.server.secure.bind_address_security</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>transport.lwm2m.server.secure.bind_port_security</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>transport.lwm2m.server.secure.public_x</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>transport.lwm2m.server.secure.public_y</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>transport.lwm2m.server.secure.private_encoded</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>transport.lwm2m.server.secure.alias</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td colspan="4"><span style="font-weight: bold; font-size: 24px;">Bootstrap  Server</span></td>
+        </tr>
+        <tr>
+            <td>transport.lwm2m.bootstrap.enable</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>transport.lwm2m.bootstrap.id</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>transport.lwm2m.bootstrap.bind_address</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>transport.lwm2m.bootstrap.bind_port_no_sec</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>transport.lwm2m.bootstrap.secure.bind_address_security</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>transport.lwm2m.bootstrap.bind_port_security</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>transport.lwm2m.bootstrap.public_x</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>transport.lwm2m.bootstrap.public_y</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            </tr>
+        <tr>
+            <td>transport.lwm2m.bootstrap.alias</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>transport.lwm2m.bootstrap.private_encoded</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td colspan="4"><span style="font-weight: bold; font-size: 24px;">Redis</span></td>
+        </tr>
+        <tr>
+            <td>transport.lwm2m.redis.enabled</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
   </tbody>
 </table>
 
 #### Logging
-
 
 #### thingsboard.conf
 
@@ -4758,5 +4966,6 @@ The configuration file for the startup script. Contains Java options and classpa
 
 #### logback.xml
 
-The configuration file for logging. Allows controlling the log level, the size of log files and the total size/volume of logs.
+The configuration file for logging. Allows controlling the log level, the size of log files and the total size/volume of
+logs.
 
