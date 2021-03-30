@@ -86,22 +86,28 @@ cd tb-pe-docker-compose
 nano tb-node.env
 ```
 
-and put the license secret parameter
+and put the license secret parameter instead of "PUT_YOUR_LICENSE_SECRET_HERE":
 
 ```bash
 # ThingsBoard server configuration
-
-ZOOKEEPER_ENABLED=true
 ...
-
 TB_LICENSE_SECRET=PUT_YOUR_LICENSE_SECRET_HERE
 ```
 
-
-## Step 6. Review the architecture page
+## Step 6. Configure deployment type
 
 Starting ThingsBoard v2.2, it is possible to install ThingsBoard cluster using new microservices architecture and docker containers. 
 See [**microservices**](/docs/reference/msa/) architecture page for more details.
+
+The docker compose scripts support three deployment modes. In order to set the deployment mode, change the value of `TB_SETUP` variable in `.env` file to one of the following:
+
+- `basic` **(recommended, set by default)** - ThingsBoard Core and Rule Engine are launched inside one JVM (requires only one license).
+  MQTT, CoAP and HTTP transports are launched in separate containers.
+- `monolith` - ThingsBoard Core and Rule Engine are launched inside one JVM (requires only one license). 
+  MQTT, CoAP and HTTP transports are also launched in the same JVM to minimize memory footprint and server requirements.
+- `advanced`- ThingsBoard Core and Rule Engine are launched in separate containers and are replicated one JVM (requires 4 licenses).  
+  
+All deployment modes support separate JS executors, Redis, and different [queues](/docs/user-guide/install/pe/cluster/docker-compose-setup/#step-8-choose-thingsboard-queue-service).
 
 ## Step 7. Configure ThingsBoard database
 
@@ -206,7 +212,7 @@ $ ./docker-stop-services.sh
 $ ./docker-remove-services.sh
 ```
 
-Edit .env file set "TB_VERSION" to target version (f.e. currently you on 3.2.0 so in this case you need to set 3.2.1)
+Edit .env file set "TB_VERSION" to target version (f.e. currently you on 3.2.1 so in this case you need to set 3.2.2)
 
 ```
 $ ./docker-update-service.sh [SERVICE...]

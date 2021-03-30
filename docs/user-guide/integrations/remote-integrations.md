@@ -130,7 +130,7 @@ You may configure your system to use [Google public DNS servers](https://develop
 
 ### Ubuntu Server
 
- - Install Java 8 (OpenJDK) 
+ - Install Java 11 (OpenJDK) 
 
 {% include templates/install/ubuntu-java-install.md %}
 
@@ -148,7 +148,7 @@ TCP/UDP<br/> Integration<br/>%,%tcpudp%,%templates/install/integration/tcpudp-ub
 
 ### CentOS/RHEL Server
 
- - Install Java 8 (OpenJDK) 
+ - Install Java 11 (OpenJDK) 
 
 {% include templates/install/rhel-java-install.md %}
 

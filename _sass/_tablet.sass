@@ -23,7 +23,7 @@ $full-width-paddingX: 30px
 $main-width: 100%
 $main-max-width: 100%
 
-$header-height: 60px
+$header-height: 80px
 
 $logo-width: 180px
 
@@ -186,18 +186,43 @@ $ocean-nodes-padding-Y: 0px
 			text-align: center
 			flex-direction: row
 
-			a
-				padding: 0 20px
+@media screen and (max-width: 1024px)
+	footer
+		padding-left: 30px
+		padding-right: 30px
+		.deeper
+			justify-content: flex-end!important
+			.footer-logo
+				display: none
+	#docs
+		.logo
+			left: calc(50% - 70px)
+		&.flip-nav
+			.flyout-button
+				filter: brightness(100%) invert(100%)
 
-		.social
-			text-align: center
-
-			div
-				display: inline-block
-
-			span
-				display: inline-block
-				margin-right: 10px
-
-			input
-				text-align: left
+@media screen and (max-width: 768px)
+	footer
+		.deeper
+			justify-content: center!important
+			nav
+				display: block!important
+				a
+					width: 100%
+					text-align: center!important
+					margin: 18px 0 0!important
+		.deepmost
+			display: block
+			.copyright
+				text-align: center
+			.social
+				justify-content: center
+				width: 100%
+				padding-top: 48px
+		.newsletterSubsContainer
+			justify-content: center
+			.primary
+				height: unset
+				&.subscribe
+					margin-top: 8px
+					width: 100%
