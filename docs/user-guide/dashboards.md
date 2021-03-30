@@ -4,6 +4,24 @@ assignees:
 - ashvayka
 title: Working with IoT dashboards
 description: IoT dashboards using ThingsBoard
+creating-dash:
+    0:
+        image: /images/user-guide/dashboards/creating-dash.png
+    1:
+        image: /images/user-guide/dashboards/creating-dash-1.png
+    2:
+        image: /images/user-guide/dashboards/creating-dash-2.png
+
+make-public:
+    0:
+        image: /images/user-guide/dashboards/creating-dash.png
+    1:
+        image: /images/user-guide/dashboards/make-public-1.png
+    2:
+        image: /images/user-guide/dashboards/make-public-2.png
+    3:
+        image: /images/user-guide/dashboards/make-public-3.png
+
 dash-title:
     0:
         image: /images/user-guide/dashboards/dash-title.png 
@@ -53,6 +71,8 @@ add-widget:
         image: /images/user-guide/dashboards/add-widget1-src.png
     3:
         image: /images/user-guide/dashboards/add-widget2-src.png
+    4:
+        image: /images/user-guide/dashboards/add-widget3-src.png
 
 add-data-source1:
     0:
@@ -431,8 +451,6 @@ There are five types of widgets:
 * **Alarm** widgets allow you to display [alarms](/docs/user-guide/alarms/);
 * **Static** widgets are designed to display static data. For example, floor plan or static company information.
 
-More about widget types you can learn [here](docs/user-guide/ui/widget-library/).
-
 #### Adding widget to the dashboard
 
 To add a widget to a dashboard, you should:
@@ -588,11 +606,7 @@ Coming soon...
 
 ###### 2.2. Advanced data key configuration
 
-Advanced data keys configuration is responsible for the visibility, style, and appearance of a specific data key on a widget. 
-Entity table widget, alarms table widget, and entity admin widget bundles have the same advanced data key configuration.
-Charts widget bundle has its own unique advanced data key configuration. All other widget bundles have only basic data key configuration.
-
-Learn more about advanced data key configuration in the [documentation dedicated to it](/docs/user-guide/ui/advanced-data-key-configuration/).
+Coming soon...
 
 ##### 4. Widget time window
 
