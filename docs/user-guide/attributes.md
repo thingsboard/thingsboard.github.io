@@ -148,4 +148,12 @@ ThingsBoard provides the ability to configure data processing rules.
 Device attributes can be used inside rule filters. This allows applying rules based on certain device properties.
 You can find more details in a separate guide.
 <p><a href="/docs/user-guide/rule-engine" class="button">Rule Engine guide</a></p>
-    
+
+## Performance enhancement
+
+You can achieve higher performance with Attributes Cache enabled (see <b>cache.attributes.enabled</b> property of the [Configuration properties](/docs/user-guide/install/config/#thingsboard-core-settings)) 
+
+Having attributes cache enabled ThingsBoard will load the specific attribute from the database only once, all subsequent requests to the attribute will be loaded from the faster cache connection.
+
+**NOTE:** If you are using Redis cache, make sure that you change <b>maxmemory-policy</b> to <b>allkeys-random</b> to prevent Redis from filling up all available memory.
+

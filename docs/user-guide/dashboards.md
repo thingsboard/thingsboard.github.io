@@ -4,6 +4,24 @@ assignees:
 - ashvayka
 title: Working with IoT dashboards
 description: IoT dashboards using ThingsBoard
+creating-dash:
+    0:
+        image: /images/user-guide/dashboards/creating-dash.png
+    1:
+        image: /images/user-guide/dashboards/creating-dash-1.png
+    2:
+        image: /images/user-guide/dashboards/creating-dash-2.png
+
+make-public:
+    0:
+        image: /images/user-guide/dashboards/creating-dash.png
+    1:
+        image: /images/user-guide/dashboards/make-public-1.png
+    2:
+        image: /images/user-guide/dashboards/make-public-2.png
+    3:
+        image: /images/user-guide/dashboards/make-public-3.png
+
 dash-title:
     0:
         image: /images/user-guide/dashboards/dash-title.png 
@@ -53,6 +71,8 @@ add-widget:
         image: /images/user-guide/dashboards/add-widget1-src.png
     3:
         image: /images/user-guide/dashboards/add-widget2-src.png
+    4:
+        image: /images/user-guide/dashboards/add-widget3-src.png
 
 add-data-source1:
     0:
@@ -250,6 +270,80 @@ action-state:
         image: /images/user-guide/dashboards/settings/click-on-row.png
     5:
         image: /images/user-guide/dashboards/settings/state1-transfer.png
+
+entity-count:
+    0:
+        image: /images/user-guide/dashboards/entitycount/add-alias.png
+    1:
+        image: /images/user-guide/dashboards/entitycount/add-alias-1.png
+    2:
+        image: /images/user-guide/dashboards/entitycount/add-alias-2.png
+
+entity-count-1:
+    0:
+        image: /images/user-guide/dashboards/entitycount/add-widget.png
+    1:
+        image: /images/user-guide/dashboards/entitycount/add-widget-1.png
+    2:
+        image: /images/user-guide/dashboards/entitycount/add-widget-2.png
+    3:
+        image: /images/user-guide/dashboards/entitycount/datasource.png
+
+entity-count-3:
+    0:
+        image: /images/user-guide/dashboards/entitycount/datasource-1.png
+    1:
+        image: /images/user-guide/dashboards/entitycount/edit-widget.png
+    2:
+        image: /images/user-guide/dashboards/entitycount/edit-widget-1.png
+
+add-alias-ds:
+    0:
+        image: /images/user-guide/dashboards/entitycount/add-alias.png
+    1:
+        image: /images/user-guide/dashboards/entity-type-ds.png
+    2:
+        image: /images/user-guide/dashboards/entity-type-ds-0.5.png
+
+add-widget-ds:
+    0:
+        image: /images/user-guide/dashboards/entitycount/add-widget.png
+    1:
+        image: /images/user-guide/dashboards/entitycount/add-widget-1.png
+    2:
+        image: /images/user-guide/dashboards/add-widget-ds.png
+    3:
+        image: /images/user-guide/dashboards/add-widget-ds-1.png
+    4:
+        image: /images/user-guide/dashboards/add-widget-ds-2.png
+
+function-ds:
+    0:
+        image: /images/user-guide/dashboards/entitycount/add-widget.png
+    1:
+        image: /images/user-guide/dashboards/entitycount/add-widget-1.png
+    2:
+        image: /images/user-guide/dashboards/add-widget-ds.png
+    3:
+        image: /images/user-guide/dashboards/function-ds.png
+    4:
+        image: /images/user-guide/dashboards/function-ds-1.png
+
+tw:
+    0:
+        image: /images/user-guide/dashboards/tw.png
+    1:
+        image: /images/user-guide/dashboards/tw-1.png
+
+tw-current-day:
+    0:
+        image: /images/user-guide/dashboards/tw-current-day.png
+    1:
+        image: /images/user-guide/dashboards/tw-current-day-sofar.png
+
+tw-time-zone:
+    0:
+        image: /images/user-guide/dashboards/tw-time-zone.png
 
 home-dash:
     0:
@@ -774,12 +868,3 @@ In ThingsBoard Professional Edition, dashboard export is possible in several add
 This is useful when you need to send the data displayed in your dashboard by email or print.
 
 {% include images-gallery.html imageCollection="pro-export" %}
-
-
-## Dashboard as home screen
-
-**Since 3.2.2,** you can put a dashboard as your home screen. To do so, you should enter your profile setiings by clicking three dots in the upper right corner of the screen. 
-There find the _Home dashboard_ bar and from the drop-down menu select a desired dashboard to be put as a home view. After selecting, click "Save" in the lower right corner of the profile dialog box.
-To see your new home screen, click the _Home_ option from the main menu on the left.
-
-{% include images-gallery.html imageCollection="home-dash" %}
