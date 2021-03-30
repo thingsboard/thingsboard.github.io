@@ -90,9 +90,11 @@ cntnt-function:
 
 ## Introduction
 
-Advanced data keys configuration is responsible for the visibility, style, and appearance of a specific data key column on the widget.
-Entity table widget, alarms table widget, and entity admin widget bundles have the same advanced data key configuration.
-Charts widget bundle has its own unique advanced data key configuration. All other widget bundles have only basic data key configuration.
+Advanced data keys configuration is responsible for the visibility, style, and appearance of a specific data key column in a widget.
+Entity table and alarms table widgets, as well as entity admin widget bundle, have the same advanced data key configuration.
+The Charts widget bundle has its own advanced data key configuration depending on the different widgets. 
+Update multiple attributes widget from Input widgets bundle has a unique advanced data key configuration.
+All other widget bundles have only basic data key configuration.
 
 To enter a data key configuration, you should click the pencil icon on the specific data key that you'd like to adjust.
 
@@ -201,5 +203,9 @@ and never. This feature is only available in the Professional Edition.
 {% include images-gallery.html imageCollection="column-export" %}
 
 ## 2. Charts
+
+Coming soon...
+
+## Update multiple attributes widget
 
 Coming soon...
