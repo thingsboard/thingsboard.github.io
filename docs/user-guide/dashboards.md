@@ -327,6 +327,12 @@ tw-time-zone:
     0:
         image: /images/user-guide/dashboards/tw-time-zone.png
 
+zoom-in:
+    0:
+        image: /images/user-guide/dashboards/zoom-in.png
+    1:
+        image: /images/user-guide/dashboards/zoom-in-1.png
+
 --- 
 
 * TOC
@@ -734,6 +740,11 @@ We recommend using aggregation functions whenever is possible if you have a lot 
 All other intervals are distinguished in the same way.
 
 {% include images-gallery.html imageCollection="tw-current-day" %}
+
+There are times when the time intervals are long, and you'd like to see the data closer without changing timestamps, therefore, you need to zoom in. Zoom in by holding the right mouse key and move it on the chart
+in the place where you need to get a closer look. To zoom out to the original size of the chart, double-click on the widget.
+
+{% include images-gallery.html imageCollection="zoom-in" %}
 
 **Version 3.2.2** introduces time zone configurations. By default, dashboard uses the time zone provided by the browser.
 Now it is possible to set the time of your browser or a specific country. To quickly find the needed time zone, start typing its name in the time zone bar.
