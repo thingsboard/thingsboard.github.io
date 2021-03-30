@@ -2,7 +2,7 @@
 position: Pre-Sales engineer
 tag: 
 location: Kyiv, Ukraine
-dateString: 18 January, 2021
+dateString: 30 March, 2021
 layout: career
 ---
 ##### ThingsBoard, Inc. — the company that owns and develops renowned IoT products under the ThingsBoard™ umbrella is looking for a Pre-sales Engineer to join our team on a full time basis in our Kyiv office.  
