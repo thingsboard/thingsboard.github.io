@@ -1,32 +1,5 @@
 tocs:
 - docs-home
-- getting-started
-- guides
-- api
-- iot-gateway
-- installation
-- reference
-- faq
-- thingsboard-pe
-- industries
-- contact-us
-- feedback
-- company
-- mediakit
 docs-header:
-- toc: getting-started
-  title: Getting Started
 - toc: docs-home
   title: Documentation
-- toc: guides
-  title: Guides
-- toc: installation
-  title: Installation
-- toc: reference
-  title: Architecture
-- toc: api
-  title: API
-- toc: faq
-  title: FAQ
-- toc: contact-us
-  title: Contact us

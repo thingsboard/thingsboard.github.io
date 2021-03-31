@@ -37,104 +37,104 @@ $nav-buttons-margin-left: 24px
 
 	#encyclopedia
 		clear: both
-	#docsToc
-		position: fixed
-		top: 154px
-		height: calc(100vh - 154px)
-		overflow: auto
-		padding: 56px 20px
-		left: 0
-		width: 230px
-		z-index: auto
-		+tiny-scrollbar
-		@media screen and (min-width: 1500px)
-			width: 340px
-		&.horizontal
-			.yah
-				& > .title
-					margin-left: 0px
+		#docsToc
+			position: fixed
+			top: 154px
+			height: calc(100vh - 154px)
+			overflow: auto
+			padding: 56px 20px
+			left: 0
+			width: 230px
+			z-index: auto
+			+tiny-scrollbar
+			@media screen and (min-width: 1500px)
+				width: 340px
+			&.horizontal
+				.yah
+					& > .title
+						margin-left: 0px
+				width: 100%
+				margin-top: -50px
+				margin-bottom: 50px
+				padding: 0 50px
+				.pi-accordion
+					& > .container:first-child > .item.yah:first-child > .title:first-child
+						margin-left: 0px !important
+					.item
+						display: inline-block
+		#docsContent
 			width: 100%
-			margin-top: -50px
-			margin-bottom: 50px
-			padding: 0 50px
-			.pi-accordion
-				& > .container:first-child > .item.yah:first-child > .title:first-child
-					margin-left: 0px !important
-				.item
-					display: inline-block
-	#docsContent
-		width: 100%
-		@media screen and (min-width: 1281px)
-			&.hasTocContent
-				margin-right: 280px
-				width: calc(100% - 530px)
-			#table-of-contents
-				position: fixed
-				padding: 56px 20px
-				top: 154px
-				overflow: auto
-				height: calc(100vh - 154px)
-				right: 0
-				width: 260px
-				+tiny-scrollbar
-				h4
-					font-size: 16px
-					color: #212529
-					opacity: 0.6
-					margin-bottom: 0
-					&:before
-						content: none
-				ul#markdown-toc
-					margin-top: 10px
-					padding-left: 16px
-					li
+			@media screen and (min-width: 1281px)
+				&.hasTocContent
+					margin-right: 280px
+					width: calc(100% - 530px)
+				#table-of-contents
+					position: fixed
+					padding: 56px 20px
+					top: 154px
+					overflow: auto
+					height: calc(100vh - 154px)
+					right: 0
+					width: 260px
+					+tiny-scrollbar
+					h4
+						font-size: 16px
 						color: #212529
+						opacity: 0.6
+						margin-bottom: 0
 						&:before
-							display: block
-							content: " "
-							visibility: hidden
-							margin-top: -100px
-							height: 100px
-						&::marker
-							font-size: 10px
-						&:hover
-							&::marker
-								color: #2a7dec
-						a
+							content: none
+					ul#markdown-toc
+						margin-top: 10px
+						padding-left: 16px
+						li
 							color: #212529
-							font-weight: normal
-							&:hover
-								text-decoration: none
-								color: #2a7dec
-						&.active
+							&:before
+								display: block
+								content: " "
+								visibility: hidden
+								margin-top: -100px
+								height: 100px
 							&::marker
-								color: #2a7dec
-							& > a
-								color: #2a7dec
-								font-weight: 500
-		@media screen and (min-width: 1500px)
-			&.hasTocContent
-				margin-right: 390px
-				width: calc(100% - 750px)
-			#table-of-contents
-				width: 370px
+								font-size: 10px
+							&:hover
+								&::marker
+									color: #2a7dec
+							a
+								color: #212529
+								font-weight: normal
+								&:hover
+									text-decoration: none
+									color: #2a7dec
+							&.active
+								&::marker
+									color: #2a7dec
+								& > a
+									color: #2a7dec
+									font-weight: 500
+			@media screen and (min-width: 1500px)
+				&.hasTocContent
+					margin-right: 390px
+					width: calc(100% - 750px)
+				#table-of-contents
+					width: 370px
 
-		#editPageButton
-			right: -25px
+			#editPageButton
+				right: -25px
 
-		// Video
-		#video
-			width: 50%
+			// Video
+			#video
+				width: 50%
 
-	#docsContent
-		.supportPlans
-			.supportPlan
-				.pricingTable
-					li
-						font-size: 18px
-		.company-logo
-			img
-				max-width: 400px
+		#docsContent
+			.supportPlans
+				.supportPlan
+					.pricingTable
+						li
+							font-size: 18px
+			.company-logo
+				img
+					max-width: 400px
 
 	section, header, footer
 		main

@@ -31,6 +31,7 @@
               {% assign active = "false" %}
               {% if siteData[foundTOC].bigheader == toc.bigheader %}
                 {% assign active = "true" %}
+                {% assign activeHeaderToc = headertoc %}
               {% endif %}
               <li>
                   <a href="{{ toc.toc[0].path }}" {% if active == "true" %}class="YAH"{% endif %}>{{ headertoc.title }}</a>
@@ -44,7 +45,7 @@
               {% if foundTOC %}
                   {% assign tocSections = "" | split: ',' %}
                   {% assign tree = siteData[foundTOC].toc %}
-                  {% assign tocSections = tocSections | push: tree.first %}
+                  {% assign tocSections = tocSections | push: activeHeaderToc %}
                   {% for item in tree %}
                       {% if item.path == page.url %}
                         {% if tree.first != item %}

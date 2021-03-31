@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-gw
 title: How to enable remote logging feature on ThingsBoard IoT Gateway
 description: How to enable remote logging feature on ThingsBoard IoT Gateway
 

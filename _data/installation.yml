@@ -97,10 +97,6 @@ toc:
     path: /docs/user-guide/install/pe/cluster/minikube-cluster-setup/
   - title: Upgrade instructions
     path: /docs/user-guide/install/pe/upgrade-instructions/
-- title: ThingsBoard IoT Gateway
-  section:
-    - title: Installation options
-      path: /docs/iot-gateway/installation/
 - title: Trendz Analytics
   section:
     - title: Installation options

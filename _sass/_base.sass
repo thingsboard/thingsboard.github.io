@@ -188,9 +188,10 @@ p
     height: 54px
     margin-right: 16px
     @media screen and (max-width: 1024px)
-      width: 37px
-      height: 37px
+      width: 46px
+      height: 46px
       margin-right: 10px
+      margin-left: -10px
   .product-info
     display: flex
     flex-direction: column
@@ -2519,9 +2520,17 @@ $header-clearance: 210px
   position: fixed
   bottom: 0
 
+#docs
+  .fixed
+    footer
+      width: calc( 100% - 60px)
+      @media screen and (min-width: 1281px)
+        width: calc( 100% - 590px)
+      @media screen and (min-width: 1500px)
+        width: calc( 100% - 810px)
+
 #miceType
   clear: both
-
 
 html.search #docsContent
 

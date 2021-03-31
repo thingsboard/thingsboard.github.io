@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-gw
 title: Modbus Connector Configuration
 description: Modbus protocol support for ThingsBoard IoT Gateway
 

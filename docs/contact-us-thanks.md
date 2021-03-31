@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: common
 notitle: "true"
 hidetoc: "true"
 

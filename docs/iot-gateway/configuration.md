@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-gw
 title: IoT Gateway Configuration
 description: Installation structure and configuration of ThingsBoard IoT Gateway 
 

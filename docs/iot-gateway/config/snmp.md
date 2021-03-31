@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-gw
 title: SNMP Connector Configuration
 description: SNMP monitoring support for ThingsBoard IoT Gateway
 

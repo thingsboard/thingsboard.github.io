@@ -136,15 +136,23 @@ var tb = (function () {
 
 	function setFooterType() {
 		var windowHeight = window.innerHeight;
+        var footerHeight = footer.outerHeight();
 		var bodyHeight;
 
 		switch (html[0].id) {
-			case 'docs':
             case 'common': {
 				bodyHeight = hero.outerHeight() + encyclopedia.outerHeight();
 				break;
 			}
 
+            case 'docs': {
+                if ($(body).hasClass('fixed')) {
+                    bodyHeight = encyclopedia.outerHeight();
+                } else {
+                    bodyHeight = encyclopedia.outerHeight() - footerHeight;
+                }
+                break;
+            }
 			case 'home':
 			case 'thingsboard-pe':
             case 'pe-aws':
@@ -164,7 +172,6 @@ var tb = (function () {
 			}
 		}
 
-		var footerHeight = footer.outerHeight();
 		classOnCondition(body, 'fixed', windowHeight - footerHeight > bodyHeight);
 	}
 

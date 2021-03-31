@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-gw
 title: MQTT Connector Configuration
 description: MQTT protocol support for ThingsBoard IoT Gateway
 

@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-gw
 title: ThingsBoard IoT Gateway Features
 description: ThingsBoard IoT Gateway features 
 
