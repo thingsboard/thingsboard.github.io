@@ -200,6 +200,7 @@
         var markdownTocs = $('#table-of-contents ul#markdown-toc li');
         var contentAnchors = [];
         var activeAnchor = null;
+        var firstAnchor = null;
         var lastAnchor = null;
 
         function updatePositions() {
@@ -219,6 +220,9 @@
                 }
                 var contentAnchorInfo = {anchor: contentAnchor, toc: $(this), top: top, bottom: bottom};
                 contentAnchors.push(contentAnchorInfo);
+                if (i === 0) {
+                    firstAnchor = contentAnchorInfo;
+                }
                 if (i === markdownTocs.length - 1) {
                     lastAnchor = contentAnchorInfo;
                 }
@@ -240,6 +244,7 @@
                     }
                 }
             }
+            return firstAnchor;
         }
 
         function updateActiveToc() {

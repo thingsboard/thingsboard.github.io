@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-pe
 title: Platform Integrations
 description: Platform Integrations Documentation 
 

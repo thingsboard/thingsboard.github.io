@@ -3,16 +3,9 @@ tocs:
 - getting-started
 - guides
 - api
-- iot-gateway
 - installation
 - reference
 - faq
-- thingsboard-pe
-- industries
-- contact-us
-- feedback
-- company
-- mediakit
 docs-header:
 - toc: getting-started
   title: Getting Started

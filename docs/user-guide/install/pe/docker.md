@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-pe
 assignees:
 - ashvayka
 title: Installing ThingsBoard PE using Docker (Linux or Mac OS)

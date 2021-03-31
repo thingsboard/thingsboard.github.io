@@ -1,7 +1,7 @@
-bigheader: "ThingsBoard IoT Gateway"
+bigheader: "IoT Gateway Documentation"
 abstract: "Integrate legacy and third-party systems with ThingsBoard platform using IoT Gateway."
 toc:
-- title: IoT Gateway
+- title: ThingsBoard IoT Gateway
   path: /docs/iot-gateway/
 - title: What is ThingsBoard IoT Gateway?
   path: /docs/iot-gateway/what-is-iot-gateway/

@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-pe
 title: Get device parameters using SigFox integration
 description: SigFox integration guide
 

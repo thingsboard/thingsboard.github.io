@@ -1,5 +1,5 @@
 ---
-layout: docwithnav 
+layout: docwithnav-pe 
 title: LORIOT Integration 
 description: LORIOT Integration Guide 
 register:

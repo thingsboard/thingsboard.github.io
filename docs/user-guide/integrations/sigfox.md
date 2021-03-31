@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-pe
 title: SigFox Integration
 description: SigFox integration guide
 

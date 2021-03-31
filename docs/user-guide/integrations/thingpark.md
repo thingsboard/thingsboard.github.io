@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-pe
 title: ThingPark Integration
 description: ThingPark Integration Guide 
 

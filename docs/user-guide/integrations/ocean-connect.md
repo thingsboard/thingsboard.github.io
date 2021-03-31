@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-pe
 title: OceanConnect Integration
 description: Huawei OceanConnect Integration guide 
 

@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-pe
 title: MQTT Integration
 description: MQTT Integration guide
 

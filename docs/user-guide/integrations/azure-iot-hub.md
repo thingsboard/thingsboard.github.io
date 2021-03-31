@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-pe
 title: Azure IoT Hub Integration
 description: Azure IoT Hub Integration Guide 
 

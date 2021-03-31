@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-pe
 title: TheThingsIndustries Integration
 description: TheThingsIndustries Integration Guide 
 

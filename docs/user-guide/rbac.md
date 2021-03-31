@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-pe
 title: Advanced Role-Based Access Control (RBAC) for IoT devices and applications
 description:  
 ---

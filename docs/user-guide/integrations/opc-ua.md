@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-pe
 title: OPC-UA Integration
 description: OPC-UA Integration Guide 
 

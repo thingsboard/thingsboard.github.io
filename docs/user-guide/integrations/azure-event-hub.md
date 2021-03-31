@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-pe
 title: Azure Event Hub Integration
 description: Azure Event Hub Integration Guide 
 create_eventhub: 

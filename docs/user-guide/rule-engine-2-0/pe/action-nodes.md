@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-pe
 title: Action Nodes
 description: Rule Engine 2.0 PE Action Nodes
 

@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-pe
 title: AWS IoT Integration
 description: AWS IoT Integration Guide
 

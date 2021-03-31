@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-pe
 title: Installing ThingsBoard PE on DigitalOcean 
 description: Installing ThingsBoard PE on DigitalOcean
 

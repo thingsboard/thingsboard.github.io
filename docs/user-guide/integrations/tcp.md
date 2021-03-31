@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-pe
 title: TCP Integration
 description: TCP Integration Guide
 debug:

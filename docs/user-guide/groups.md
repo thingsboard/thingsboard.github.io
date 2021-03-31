@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-pe
 title: Entity Groups
 description: Entity Groups Guide 
 

@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-trendz
 assignees:
 - vparomskiy
 title: ThingsBoard Trendz Analytics installation options

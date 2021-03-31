@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-pe
 title: UDP Integration
 description: UDP Integration Guide 
 

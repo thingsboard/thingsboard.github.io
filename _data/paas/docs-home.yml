@@ -1,7 +1,7 @@
 bigheader: "ThingsBoard Cloud Documentation"
-abstract: "Documentation for using ThingsBoard IoT Platform."
+abstract: "Documentation for using ThingsBoard Cloud IoT Platform."
 toc:
-- title: What is ThingsBoard Cloud?
+- title: ThingsBoard Cloud
   path: /products/paas/what-is-thingsboard-cloud/
 - title: Subscriptions
   path: /products/paas/subscription/

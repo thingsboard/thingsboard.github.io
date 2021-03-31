@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-trendz
 title: Trendz Release Notes
 description: ThingsBoard Trendz Analytics Release Notes
 

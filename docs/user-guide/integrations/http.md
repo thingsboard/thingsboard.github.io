@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-pe
 title: HTTP Integration
 description: HTTP integration guide 
 

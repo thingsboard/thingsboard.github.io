@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-pe
 title: IBM Watson IoT Integration
 description: IBM Watson IoT Integration Guide 
 

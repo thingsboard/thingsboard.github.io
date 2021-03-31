@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-pe
 title: Scheduler
 description: Scheduler Guide 
 
@@ -168,4 +168,3 @@ This can be achieved by configuring list of **Custom event types** in **Advanced
 ## Next steps
 
 {% assign currentGuide = "AdvancedFeatures" %}{% include templates/guides-banner.md %}
- 

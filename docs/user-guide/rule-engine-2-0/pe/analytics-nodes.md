@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-pe
 title: Analytics Nodes
 description: Rule Engine 2.0 Analytics Nodes
 

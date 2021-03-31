@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-pe
 title: AWS Kinesis Integration
 description: AWS Kinesis Integration Guide 
 

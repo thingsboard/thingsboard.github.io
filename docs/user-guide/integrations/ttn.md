@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-pe
 title: TheThingsNetwork Integration
 description: TheThingsNetwork Integration Guide 
 

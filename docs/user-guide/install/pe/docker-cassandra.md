@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-pe
 assignees:
 - ashvayka
 title: ThingsBoard Professional Edition using Docker with Cassandra (Linux or Mac OS)
