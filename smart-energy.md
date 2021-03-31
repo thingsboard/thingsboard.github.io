@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: common
 title: Smart energy monitoring, data visualization and energy efficiency analysis
 description: Smart energy monitoring and data visualization with ThingsBoard IoT Platform
 horizontaltoc: "true"

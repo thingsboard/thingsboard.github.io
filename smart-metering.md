@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: common
 title: IoT smart metering solutions and smart meter data visualization with ThingsBoard 
 description: IoT smart metering solutions and smart meter data visualization with ThingsBoard
 horizontaltoc: "true"

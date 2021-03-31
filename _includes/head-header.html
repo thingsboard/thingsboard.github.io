@@ -324,11 +324,9 @@
                 let subMenus = $('nav.head-menu > ul > li > div.centered-sub > ul.sub-menu');
                 subMenus.removeClass('open-sub');
                 body.css('overflow', '');
-                let docBurger = $('button.flyout-button').css('filter', '');
             } else {
                 header.addClass('opened-burger');
                 body.css('overflow', 'hidden');
-                let docBurger = $('button.flyout-button').css('filter', 'brightness(100%) invert(100%)');
             }
         }
     </script>
@@ -401,6 +399,22 @@
                 }
             });
 
+            // Products selector
+
+            {% if docsTag %}
+            let productsSelector = $('.products-selector');
+            $(window).click(function(e) {
+                if (productsSelector[0].contains(e.target)) {
+                    if (productsSelector.hasClass('active')) {
+                        productsSelector.removeClass('active');
+                    } else {
+                        productsSelector.addClass('active');
+                    }
+                } else {
+                    productsSelector.removeClass('active');
+                }
+            });
+            {% endif %}
         });
 
         function initMobileSubmenu() {
@@ -409,7 +423,6 @@
             if (header.hasClass('opened-burger')) {
                 var body = $('body');
                 body.css('overflow', 'hidden');
-                let docBurger = $('button.flyout-button').css('filter', 'brightness(100%) invert(100%)');
             }
 
             let targetSubMenus = $('nav.head-menu > div.sub-menu-container > div');
@@ -429,7 +442,6 @@
         function restoreDesktopSubmenu() {
             var body = $('body');
             body.css('overflow', '');
-            let docBurger = $('button.flyout-button').css('filter', '');
             let targetSubMenus = $('nav.head-menu > ul > li > div');
             let submenuContainer = $('nav.head-menu > div.sub-menu-container');
             submenuContainer.removeClass('active');
@@ -457,9 +469,31 @@
     </script>
 </head>
 <body>
+{% if docsTag %}
+{% assign foundProduct = site.data.products | where: "tag", docsTag %}
+{% assign productInfo = foundProduct[0] %}
+<div class="products-selector">
+    <img src="{{productInfo.icon}}"/>
+    <div class="product-info">
+        <div class="product-title">
+            {{productInfo.title}}
+        </div>
+        <div class="product-description">
+            {{productInfo.description}}
+        </div>
+    </div>
+    <div class="products">
+        {% for product in site.data.products %}
+        <a href="{{product.path}}" class="product{% if product.tag == docsTag %} active{% endif %}">{{product.title}}</a>
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
 <header>
     <div class="logo-burger">
-        <a href="/" class="logo"></a>
+        {% unless docsTag %}
+            <a href="/" class="logo"></a>
+        {% endunless %}
         <button onclick="Burger()" class="burger"></button>
         <div id="githubButtonContainer">
             <a class="github-button" href="https://github.com/thingsboard/thingsboard" data-show-count="true"
@@ -474,9 +508,11 @@
             <li class="nav-services" data-submenu-id="nav-services">
                 <a onclick="listburg('nav-services')">Services</a>
             </li>
+            {% unless docsTag %}
             <li class="nav-developers" data-submenu-id="nav-developers">
                 <a onclick="listburg('nav-developers')">Developers</a>
             </li>
+            {% endunless %}
             <li class="nav-cases" data-submenu-id="nav-cases">
                 <a onclick="listburg('nav-cases')">Use Cases</a>
             </li>

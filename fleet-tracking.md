@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: common
 title: Fleet tracking and fleet management
 description: Fleet tracking and fleet management with ThingsBoard IoT Platform
 horizontaltoc: "true"

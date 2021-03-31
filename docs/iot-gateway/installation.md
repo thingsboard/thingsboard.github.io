@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-gw
 title: IoT Gateway Installation options
 notitle: "true"
 

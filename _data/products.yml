@@ -1,6 +1,30 @@
-bigheader: "Products"
-abstract: "ThingsBoard Products"
-hidetoc: "true"
-toc:
-- title: Products
-  path: /products/
+- title: Cloud
+  description: ThingsBoard Documentation
+  tag: paas
+  icon: /images/thingsboard-c-icon.svg
+  path: /products/paas/what-is-thingsboard-cloud/
+- title: Professional Edition
+  description: ThingsBoard Documentation
+  tag: pe
+  icon: /images/thingsboard-p-icon.svg
+  path: /docs/pe/
+- title: Community Edition
+  description: ThingsBoard Documentation
+  tag: ce
+  icon: /images/thingsboard-cm-icon.svg
+  path: /docs/
+- title: IoT Gateway
+  description: ThingsBoard Documentation
+  tag: gw
+  icon: /images/gateway-icon.svg
+  path: /docs/iot-gateway/
+- title: License Server
+  description: ThingsBoard Documentation
+  tag: license
+  icon: /images/license-icon.svg
+  path: /products/license-server/
+- title: Trendz Analytics
+  description: Trendz Documentation
+  tag: trendz
+  icon: /images/trendz-icon.svg
+  path: /docs/trendz/

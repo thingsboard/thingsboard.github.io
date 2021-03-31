@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-gw
 title: Getting started with ThingsBoard IoT Gateway
 description: Write your first IoT project using ThingsBoard IoT Gateway
 

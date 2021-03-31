@@ -1,0 +1,20 @@
+bigheader: "ThingsBoard IoT Gateway"
+abstract: "Integrate legacy and third-party systems with ThingsBoard platform using IoT Gateway."
+toc:
+- title: IoT Gateway
+  path: /docs/iot-gateway/
+- title: What is ThingsBoard IoT Gateway?
+  path: /docs/iot-gateway/what-is-iot-gateway/
+- title: Customization guide
+  path: /docs/iot-gateway/custom/
+- title: IoT Gateway features
+  path: /docs/iot-gateway/features/
+  section:
+    - title: Remote logging
+      path: /docs/iot-gateway/guides/how-to-enable-remote-logging/
+    - title: Service RPC methods
+      path: /docs/iot-gateway/guides/how-to-use-gateway-rpc-methods/
+    - title: Remote shell
+      path: /docs/iot-gateway/guides/how-to-enable-remote-shell/
+- title: IoT Gateway Roadmap
+  path: /docs/iot-gateway/roadmap/

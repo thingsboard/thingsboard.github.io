@@ -59,3 +59,22 @@ a
 	max-width: $target-height * ($width-factor / $height-factor)
 	max-height: $target-height
 
+=placeholder
+	&::-webkit-input-placeholder
+		@content
+	&:-moz-placeholder
+		@content
+	&::-moz-placeholder
+		@content
+	&:-ms-input-placeholder
+		@content
+
+=tiny-scrollbar
+	&::-webkit-scrollbar
+		width: 6px
+	&::-webkit-scrollbar-track
+		background: #f1f1f1
+	&::-webkit-scrollbar-thumb
+		background: rgba(33, 37, 41, 0.2)
+		&:hover
+			background: rgba(33, 37, 41, 0.5)

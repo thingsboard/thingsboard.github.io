@@ -1,5 +1,4 @@
 $main-max-width: 1200px
-$vendor-strip-height: 44px
 
 $nav-buttons-margin-left: 24px
 
@@ -31,93 +30,25 @@ $nav-buttons-margin-left: 24px
 					font-size: 28px
 					line-height: 36px
 
-	#vendorStrip
-		height: $vendor-strip-height
-		line-height: $vendor-strip-height
-		#docsList
-			li
-				a
-					position: relative
-					&:hover
-						text-decoration: none !important
-					&::before
-						content: ''
-						position: absolute
-						left: 0px
-						bottom: 8px
-						width: 100%
-						height: 3px
-						background-color: #f5f6f7
-						transform: scale(0, 1)
-						transform-origin: 0 50%
-						transition: 250ms
-					&:not(.YAH):hover::before
-						transform: scale(0.25, 1)
-					&.YAH::before
-						background-color: $light-blue
-						transform: scale(1, 1)
-				//a.YAH
-					&:after
-						content: ""
-						display: block
-						position: absolute
-						left: 0
-						bottom: 0
-						width: 100%
-						height: 4px
-						background-color: $blue-03
-
-
-		#searchBox
-			float: right
-
-	#docs
-		#hero
-			h1, h5
-				text-align: left
-
-			#pe-docs-banner
-				display: flex
-				flex-direction: row
-				div
-					padding-left: 10px
-					padding-top: 0px
-
-			#vendorStrip
-				#docsList
-					float: left
-
-				#searchBox
-					float: right
-					width: 15%
-
-				#search
-					vertical-align: middle
-
-		.flyout-button
-			display: none
-
+	#common
 		.logo
 			width: 180px
 			height: 60px
-		#tryItNow.center-button
-			margin-left: 20px
-
-		//&.flip-nav, &.open-nav
-		//	.logo
-		//		background-image: url(../images/thingsboard_logo_blue.svg)
 
 	#encyclopedia
-		padding: 50px 20px 20px 20px
 		clear: both
-
 	#docsToc
-		position: relative
-		float: left
-		padding: 0 20px
+		position: fixed
+		top: 154px
+		height: calc(100vh - 154px)
+		overflow: auto
+		padding: 56px 20px
 		left: 0
-		width: 350px
+		width: 230px
 		z-index: auto
+		+tiny-scrollbar
+		@media screen and (min-width: 1500px)
+			width: 340px
 		&.horizontal
 			.yah
 				& > .title
@@ -131,14 +62,62 @@ $nav-buttons-margin-left: 24px
 					margin-left: 0px !important
 				.item
 					display: inline-block
-
-		.push-menu-close-button
-			display: none
-
 	#docsContent
-		width: calc(100% - 400px)
-		&.horizontalToc
-			width: calc(100% - 50px)
+		width: 100%
+		@media screen and (min-width: 1281px)
+			&.hasTocContent
+				margin-right: 280px
+				width: calc(100% - 530px)
+			#table-of-contents
+				position: fixed
+				padding: 56px 20px
+				top: 154px
+				overflow: auto
+				height: calc(100vh - 154px)
+				right: 0
+				width: 260px
+				+tiny-scrollbar
+				h4
+					font-size: 16px
+					color: #212529
+					opacity: 0.6
+					margin-bottom: 0
+					&:before
+						content: none
+				ul#markdown-toc
+					margin-top: 10px
+					padding-left: 16px
+					li
+						color: #212529
+						&:before
+							display: block
+							content: " "
+							visibility: hidden
+							margin-top: -100px
+							height: 100px
+						&::marker
+							font-size: 10px
+						&:hover
+							&::marker
+								color: #2a7dec
+						a
+							color: #212529
+							font-weight: normal
+							&:hover
+								text-decoration: none
+								color: #2a7dec
+						&.active
+							&::marker
+								color: #2a7dec
+							& > a
+								color: #2a7dec
+								font-weight: 500
+		@media screen and (min-width: 1500px)
+			&.hasTocContent
+				margin-right: 390px
+				width: calc(100% - 750px)
+			#table-of-contents
+				width: 370px
 
 		#editPageButton
 			right: -25px
@@ -209,7 +188,7 @@ $nav-buttons-margin-left: 24px
 					margin-right: 10px
 					margin-bottom: 0px
 
-	#search, #wishField
+	#wishField
 		background-color: transparent
 		padding: 10px
 		font-size: 16px
@@ -254,6 +233,6 @@ $nav-buttons-margin-left: 24px
 		padding-right: 100px
 		main
 			max-width: 1400px!important
-	#docs
+	#docs, #common
 		footer main
 			max-width: 100%!important

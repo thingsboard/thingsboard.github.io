@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: common
 title: Training sessions
 description: ThingsBoard training sessions
 

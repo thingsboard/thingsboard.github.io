@@ -139,7 +139,8 @@ var tb = (function () {
 		var bodyHeight;
 
 		switch (html[0].id) {
-			case 'docs': {
+			case 'docs':
+            case 'common': {
 				bodyHeight = hero.outerHeight() + encyclopedia.outerHeight();
 				break;
 			}
@@ -172,10 +173,6 @@ var tb = (function () {
 			toggleMenu();
 		} else if (!event || event.type !== "scroll") {
 			HEADER_HEIGHT = header.outerHeight();
-		}
-
-		if (html.hasClass('open-toc') && event.type !== "scroll") {
-			toggleToc();
 		}
 
 		classOnCondition(html, 'flip-nav', window.pageYOffset > 0);
@@ -259,28 +256,6 @@ var tb = (function () {
 		});
 	}
 
-	function tocWasClicked(e) {
-		var target = $(e.target);
-		var docsToc = $("#docsToc");
-		return (target[0] === docsToc[0] || target.parents("#docsToc").length > 0);
-	}
-
-	function listenForTocClick(e) {
-		if (!tocWasClicked(e)) toggleToc();
-	}
-
-	function toggleToc() {
-		html.toggleClass('open-toc');
-
-		setTimeout(function () {
-			if (html.hasClass('open-toc')) {
-				window.addEventListener('click', listenForTocClick);
-			} else {
-				window.removeEventListener('click', listenForTocClick);
-			}
-		}, 100);
-	}
-
 	function openAccordionItem(itemId) {
 	    var thisItem = $('#'+itemId);
         if (!thisItem) return;
@@ -301,7 +276,6 @@ var tb = (function () {
     }
 
 	return {
-		toggleToc: toggleToc,
 		toggleMenu: toggleMenu,
 		openMenu: openMenu,
 		showVideo: showVideo,
@@ -331,7 +305,7 @@ var tb = (function () {
 			container.innerHTML = content;
 			$(accordion).empty();
 			accordion.appendChild(container);
-			CollapseBox($(container));
+			CollapseBox($(container), 0);
 		});
 
         $('[data-faq-id]').each(function () {
@@ -389,12 +363,15 @@ var tb = (function () {
         ga("send", "event", "FaqNode", nodeId);
     }
 
-	function CollapseBox(container){
+	function CollapseBox(container, index){
 		container.children('.item').each(function(){
 			// build the TOC DOM
 			// the animated open/close is enabled by having each item's content exist in the flow, at its natural height,
 			// enclosed in a wrapper with height = 0 when closed, and height = contentHeight when open.
 			var item = this;
+			// var paddingLeft = 20 * index;
+            // $(item).css('paddingLeft', paddingLeft + 'px');
+            $(item).attr('data-level-index', index);
 
 			// only add content wrappers to containers, not to links
 			var isContainer = item.tagName === 'DIV';
@@ -469,6 +446,7 @@ var tb = (function () {
 
 					setTimeout(function(){
 						thisWrapper.css({height: 0});
+                        thisWrapper.css({overflow: 'hidden'});
 						moving = false;
 					}, CSS_BROWSER_HACK_DELAY);
 				} else {
@@ -479,6 +457,7 @@ var tb = (function () {
 
 					setTimeout(function(){
 						thisWrapper.css({height: ''});
+                        thisWrapper.css({overflow: 'visible'});
 						moving = false;
 					}, duration);
 
@@ -493,7 +472,7 @@ var tb = (function () {
 				var innerContainers = $(content).children('.container');
 				if (innerContainers.length > 0) {
 					innerContainers.each(function(){
-						CollapseBox($(this));
+						CollapseBox($(this), index+1);
 					});
 				}
 			}
@@ -502,6 +481,7 @@ var tb = (function () {
 
 	function setYAH() {
 		var pathname = location.href.split('#')[0]; // on page load, make sure the page is YAH even if there's a hash
+        pathname = location.href.split('?')[0];
 		var currentLinks = [];
 
 		$('.pi-accordion a').each(function () {
@@ -511,11 +491,16 @@ var tb = (function () {
 		currentLinks.forEach(function (yahLink) {
 			$(yahLink).parents('.item').each(function(){
 				$(this).addClass('on');
-				$(this).find('.wrapper').eq(0).css({height: 'auto'});
+				$(this).find('.wrapper').eq(0).css({height: 'auto', overflow: 'visible'});
 				$(this).find('.content').eq(0).css({opacity: 1});
 			});
 
 			$(yahLink).addClass('yah');
+            var levelIndex = Number($(yahLink).attr('data-level-index'));
+            var left = -(levelIndex + 1) * 20 + 'px';
+            var yahIndicator = $('<div class="yah-indicator"></div>');
+            yahIndicator.css('left', left);
+            $(yahLink).prepend(yahIndicator);
 			yahLink.onclick = function(e){e.preventDefault();};
 		});
 	}

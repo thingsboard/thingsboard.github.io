@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: common
 title: Media Kit
 notitle: "true"
 description: ThingsBoard Media Kit

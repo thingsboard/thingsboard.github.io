@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-gw
 title: What is ThingsBoard IoT Gateway?
 description: Features and advantages of ThingsBoard IoT Gateway
 
