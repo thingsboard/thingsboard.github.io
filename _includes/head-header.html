@@ -494,7 +494,8 @@
     </div>
     <div class="products">
         {% for product in site.data.products %}
-        <a href="{{product.path}}" class="product{% if product.tag == docsTag %} active{% endif %}">{{product.title}}</a>
+        {% include find-product-url.html %}
+        <a href="{{productUrl}}" class="product{% if product.tag == docsTag %} active{% endif %}">{{product.title}}</a>
         {% endfor %}
     </div>
 </div>

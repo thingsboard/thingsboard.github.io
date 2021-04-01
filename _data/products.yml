@@ -4,18 +4,21 @@
   tag: paas
   icon: /images/thingsboard-c-icon.svg
   path: /products/paas/what-is-thingsboard-cloud/
+  docsPrefix: /docs/paas/
 - title: Professional Edition
   fulltitle: ThingsBoard Professional Edition
   description: ThingsBoard Documentation
   tag: pe
   icon: /images/thingsboard-p-icon.svg
   path: /docs/pe/
+  docsPrefix: /docs/pe/
 - title: Community Edition
   fulltitle: ThingsBoard Community Edition
   description: ThingsBoard Documentation
   tag: ce
   icon: /images/thingsboard-cm-icon.svg
   path: /docs/
+  docsPrefix: /docs/
 - title: IoT Gateway
   fulltitle: ThingsBoard IoT Gateway
   description: ThingsBoard Documentation
