@@ -2,7 +2,7 @@
 layout: docwithnav-pe
 title: Custom Menu
 description:  
-
+redirect_from: "/docs/user-guide/custom-menu/"
 ---
 
 {% assign feature = "Custom Menu" %}{% include templates/pe-feature-banner.md %}
@@ -21,5 +21,5 @@ See video tutorial below for step-by-step instruction how to use this feature.
  
 ## Next steps
 
-{% assign currentGuide = "AdvancedFeatures" %}{% include templates/guides-banner.md %}
+{% assign currentGuide = "AdvancedFeatures" %}{% include templates/guides-banner-pe.md %}
 

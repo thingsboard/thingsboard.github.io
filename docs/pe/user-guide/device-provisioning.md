@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-pe
 title: Provisioning devices
 description: IoT device management using ThingsBoard provisioning devices feature
 deviceProfileConfiguration:
@@ -15,4 +15,5 @@ deviceProfileConfiguration:
          
 ---
 
+{% assign docsPrefix = "pe/" %}
 {% include docs/user-guide/device-provisioning.md %}

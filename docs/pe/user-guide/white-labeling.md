@@ -1,7 +1,8 @@
 ---
 layout: docwithnav-pe
 title: White-labeling
-description:  
+description:
+redirect_from: "/docs/user-guide/white-labeling/"
 
 ---
 
