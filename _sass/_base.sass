@@ -1639,40 +1639,9 @@ $header-clearance: 210px
   p + p
     margin-top: 10px
 
-  code
-    display: inline-block
-    box-sizing: border-box
-    background-color: $light-grey
-    color: $dark-grey
-    font-family: $mono-font
-    vertical-align: bottom
-    font-size: 16px
-    font-weight: bold
-    padding: 2px 4px
-
-  a code
-    color: $blue
-    text-decoration: underline
-
   pre .pi, pre .s
     margin: 0
     padding: 0
-
-  .highlight code span, code, pre code
-    font-family: $mono-font
-
-  code, pre code
-    color: #303030
-
-  pre code
-    padding: 0
-
-  pre
-    background-color: #f7f7f7
-    display: block
-    margin: 20px 0
-    padding: 15px
-    overflow-x: auto
 
   h1 code, h2 code, h3 code, h4 code, h5 code, h6 code
     font-family: inherit
@@ -1710,30 +1679,31 @@ $header-clearance: 210px
   li
     margin-bottom: 0.75em
 
-  table
+  table:not(.rouge-table)
     width: 100%
+    table-layout: fixed
     border: 1px solid #ccc
     border-spacing: 0
     margin-top: 30px
     margin-bottom: 30px
 
-  thead, tr:nth-child(even)
-    background-color: $light-grey
+    thead, tr:nth-child(even)
+      background-color: $light-grey
 
-  thead
-    background-color: #555
-    color: white
+    thead
+      background-color: #555
+      color: white
 
-  th, td
-    padding: 8px
-    text-align: left
-    margin: 0
+    th, td
+      padding: 8px
+      text-align: left
+      margin: 0
 
-  th
-    font-weight: normal
+    th
+      font-weight: normal
 
-  td
-    font-size: 0.85em
+    td
+      font-size: 0.85em
 
   #editPageButton
     position: absolute

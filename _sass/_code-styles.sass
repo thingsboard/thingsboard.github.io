@@ -5,6 +5,36 @@
 .highlight
 	background: #ffffff
 
+div.highlight
+	margin-top: 12px
+	margin-bottom: 32px
+	pre
+		margin-bottom: 0
+	pre.highlight
+		border: 1px solid rgba(42,125,236,0.2)
+		border-radius: 4px
+		table.rouge-table
+			border: none
+			border-spacing: 0
+			width: 100%
+			table-layout: fixed
+			td
+				line-height: 28px
+				vertical-align: top
+			td.rouge-gutter
+				width: 50px
+				padding: 8px 12px 8px 18px
+				text-align: right
+				background: linear-gradient(0deg, #f9fbff, #f9fbff), linear-gradient(0deg, rgba(33, 37, 41, 0.04), rgba(33, 37, 41, 0.04)), #f9fbff
+				pre
+					color: rgba(33, 37, 41, 0.6)
+			td.rouge-code
+				padding: 8px 16px
+
+.highlight code span, code, pre code, pre
+	font-family: $mono-font
+	font-size: 16px
+
 .highlight .c
 	color: #999988
 	font-style: italic
@@ -30,7 +60,6 @@
 .highlight .c1
 	color: #999988
 	font-style: italic
-
 .highlight .cs
 	color: #999999
 	font-weight: bold

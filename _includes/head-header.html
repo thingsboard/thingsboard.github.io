@@ -427,6 +427,14 @@
                 }
             });
             {% endif %}
+
+            // Rogue line numbers fix (don't show line numbers for 1 row)
+            $('.rouge-gutter.gl').each(function() {
+               var lineNumbers = $(this).children('.lineno');
+               if (lineNumbers.text() === '1\n') {
+                   $(this).css('display', 'none');
+               }
+            });
         });
 
         function initMobileSubmenu() {
