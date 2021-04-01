@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-pe
 title: OAuth 2.0 Support
 description: OAuth 2.0 Support
 
@@ -117,4 +117,5 @@ step28:
 
 ---
 
+{% assign docsPrefix = "pe/" %}
 {% include docs/user-guide/oauth-2-support.md %}

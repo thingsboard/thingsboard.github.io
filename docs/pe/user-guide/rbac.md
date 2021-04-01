@@ -1,7 +1,8 @@
 ---
 layout: docwithnav-pe
 title: Advanced Role-Based Access Control (RBAC) for IoT devices and applications
-description:  
+description:
+redirect_from: "/docs/user-guide/rbac/"
 ---
 
 {% assign feature = "Advanced RBAC for IoT devices and applications" %}{% include templates/pe-feature-banner.md %}
@@ -24,7 +25,7 @@ description:
 ThingsBoard Community Edition (TB CE) supports a straight-forward security model with three main roles: System administrator, Tenant administrator, and Customer user. 
 A system administrator is able to manage tenants, while a tenant administrator manages devices, dashboards, customers, and other entities that belong to a particular tenant.
 Customer user is able to view dashboards and control devices that are assigned to a specific customer.
-TB CE functionality is sufficient for a lot of simple use cases, especially building real-time [end-user dashboards](/docs/user-guide/dashboards/).
+TB CE functionality is sufficient for a lot of simple use cases, especially building real-time [end-user dashboards](/docs/pe/user-guide/dashboards/).
  
 ThingsBoard Professional Edition (TB PE) brings much more flexibility in terms of user, customer, and role management. 
 It is designed to cover use cases for businesses and enterprises with multiple user groups that have different permissions but may interact with the same devices and assets. 
@@ -46,7 +47,7 @@ A Tenant is a separate business-entity: an individual, or an organization that o
 
 **Entity**
 
-An Entity can be a device, asset, user, dashboard, entity view, etc. Any entity is managed by ThingsBoard. See [entities and relations](/docs/user-guide/entities-and-relations/) guide for more details.
+An Entity can be a device, asset, user, dashboard, entity view, etc. Any entity is managed by ThingsBoard. See [entities and relations](/docs/pe/user-guide/entities-and-relations/) guide for more details.
 
 **Entity Group (EG)** 
 

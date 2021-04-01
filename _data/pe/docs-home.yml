@@ -42,37 +42,37 @@ toc:
     path: /docs/pe/user-guide/oauth-2-support/
     new: true
   - title: Advanced RBAC for IoT
-    path: /docs/user-guide/rbac/
+    path: /docs/pe/user-guide/rbac/
   - title: White-labeling
-    path: /docs/user-guide/white-labeling/
+    path: /docs/pe/user-guide/white-labeling/
   - title: Self-registration
-    path: /docs/user-guide/self-registration/
+    path: /docs/pe/user-guide/self-registration/
   - title: Custom Translations
-    path: /docs/user-guide/custom-translation/
+    path: /docs/pe/user-guide/custom-translation/
   - title: Custom Menu
-    path: /docs/user-guide/custom-menu/
+    path: /docs/pe/user-guide/custom-menu/
   - title: Platform Integrations
-    path: /docs/user-guide/integrations/#overview
+    path: /docs/pe/user-guide/integrations/#overview
   - title: Entity Groups
-    path: /docs/user-guide/groups/
+    path: /docs/pe/user-guide/groups/
   - title: Scheduler
-    path: /docs/user-guide/scheduler/
+    path: /docs/pe/user-guide/scheduler/
   - title: Reporting
-    path: /docs/user-guide/reporting/
+    path: /docs/pe/user-guide/reporting/
   - title: CSV/XLS data export
-    path: /docs/user-guide/csv-xls-data-export/
+    path: /docs/pe/user-guide/csv-xls-data-export/
   - title: Bulk Provisioning
     new: true
-    path: /docs/user-guide/bulk-provisioning/
+    path: /docs/pe/user-guide/bulk-provisioning/
   - title: File Storage
-    path: /docs/user-guide/file-storage/
+    path: /docs/pe/user-guide/file-storage/
   - title: Audit Log
-    path: /docs/user-guide/audit-log/
+    path: /docs/pe/user-guide/audit-log/
   - title: API Limits
-    path: /docs/user-guide/api-limits/
+    path: /docs/pe/user-guide/api-limits/
   - title: Advanced Filters
     new: true
-    path: /docs/user-guide/advanced-filters/
+    path: /docs/pe/user-guide/advanced-filters/
 - title: Rule engine
   section:
   - title: Getting Started

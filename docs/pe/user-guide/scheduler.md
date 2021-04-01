@@ -1,7 +1,8 @@
 ---
 layout: docwithnav-pe
 title: Scheduler
-description: Scheduler Guide 
+description: Scheduler Guide
+redirect_from: "/docs/user-guide/scheduler/"
 
 ---
 
@@ -14,10 +15,10 @@ description: Scheduler Guide
 
 ThingsBoard allows you to schedule various types of events with flexible schedule configuration.
 ThingsBoard Scheduler fires configured scheduler events according to their schedule.
-When scheduler event is fired the [Rule Engine Message](/docs/user-guide/rule-engine-2-0/overview/#rule-engine-message) is generated
+When scheduler event is fired the [Rule Engine Message](/docs/pe/user-guide/rule-engine-2-0/overview/#rule-engine-message) is generated
 from the event configuration which has a similar structure with a Rule Engine Message.
-Generated message is then forwarded to [Rule Engine](/docs/user-guide/rule-engine-2-0/re-getting-started/) and processed starting from
-the [Root Rule Chain](/docs/user-guide/rule-engine-2-0/overview/#rule-chain).
+Generated message is then forwarded to [Rule Engine](/docs/pe/user-guide/rule-engine-2-0/re-getting-started/) and processed starting from
+the [Root Rule Chain](/docs/pe/user-guide/rule-engine-2-0/overview/#rule-chain).
 
 <br/>
 
@@ -90,14 +91,14 @@ Custom type uses default scheduler event configuration form according to message
 
 ![image](/images/user-guide/ui/scheduler-custom-event-type.png)
 
-- **Originator** - message originator, can be *Single entity* (ex. Device, Asset etc.) or [*Group of entities*](/docs/user-guide/groups/). If not specified, scheduler event entity itself will be considered as originator.
-- **Message type** - message type according to the Rule Engine message types. Can be [existing message type](/docs/user-guide/rule-engine-2-0/overview/#predefined-message-types) or custom. If not specified, scheduler event type will be considered as message type. 
+- **Originator** - message originator, can be *Single entity* (ex. Device, Asset etc.) or [*Group of entities*](/docs/pe/user-guide/groups/). If not specified, scheduler event entity itself will be considered as originator.
+- **Message type** - message type according to the Rule Engine message types. Can be [existing message type](/docs/pe/user-guide/rule-engine-2-0/overview/#predefined-message-types) or custom. If not specified, scheduler event type will be considered as message type. 
 - **Message body** - message body in JSON representation.
 - **Metadata** - key/value table representing message metadata fields.
 
 #### Generate Report
 
-Allows to schedule reports generation supported by [Reporting](/docs/user-guide/reporting/#generate-report-rule-chain) feature.
+Allows to schedule reports generation supported by [Reporting](/docs/pe/user-guide/reporting/#generate-report-rule-chain) feature.
 
 ![image](/images/user-guide/ui/scheduler-generate-report-event-type-report-config.png)
 
@@ -132,17 +133,17 @@ Allows to schedule update of attributes for entity or group of entities.
 
 ![image](/images/user-guide/ui/scheduler-update-attributes-event-type.png)
 
-- **Target** - target entity which attributes should be updated, can be *Single entity* (ex. Device, Asset etc.) or [*Group of entities*](/docs/user-guide/groups/).
-- **Entity attributes scope** - [scope](/docs/user-guide/attributes/#attribute-types) of updated attributes. Can be selected if Device entity type is specified in **Target**. Can be either **Server attributes** or **Shared attributes**. For all other entity types **Server attributes** scope is used. 
+- **Target** - target entity which attributes should be updated, can be *Single entity* (ex. Device, Asset etc.) or [*Group of entities*](/docs/pe/user-guide/groups/).
+- **Entity attributes scope** - [scope](/docs/pe/user-guide/attributes/#attribute-types) of updated attributes. Can be selected if Device entity type is specified in **Target**. Can be either **Server attributes** or **Shared attributes**. For all other entity types **Server attributes** scope is used. 
 - **Server / Shared attributes** - key/value table representing attributes with values to update.
 
 #### Send RPC Request to Device
 
-Allows to schedule command ([RPC call](/docs/user-guide/rpc/#server-side-rpc-api)) to device or group of devices.
+Allows to schedule command ([RPC call](/docs/pe/user-guide/rpc/#server-side-rpc-api)) to device or group of devices.
 
 ![image](/images/user-guide/ui/scheduler-send-rpc-request-event-type.png)
 
-- **Target** - target device to which command should be sent, can be *Single device* or [*Group of devices*](/docs/user-guide/groups/).
+- **Target** - target device to which command should be sent, can be *Single device* or [*Group of devices*](/docs/pe/user-guide/groups/).
 - **Method** - RPC call method.
 - **Params** - RPC call params in JSON representation.
 
@@ -167,4 +168,4 @@ This can be achieved by configuring list of **Custom event types** in **Advanced
       
 ## Next steps
 
-{% assign currentGuide = "AdvancedFeatures" %}{% include templates/guides-banner.md %}
+{% assign currentGuide = "AdvancedFeatures" %}{% include templates/guides-banner-pe.md %}

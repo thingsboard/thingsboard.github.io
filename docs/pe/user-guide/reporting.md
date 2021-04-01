@@ -1,8 +1,8 @@
 ---
 layout: docwithnav-pe
 title: Reporting
-description: Reporting Guide 
-
+description: Reporting Guide
+redirect_from: "/docs/user-guide/reporting/"
 ---
 
 {% assign feature = "Reporting" %}{% include templates/pe-feature-banner.md %}
@@ -15,7 +15,7 @@ description: Reporting Guide
 
 ThingsBoard allows you to generate reports using existing dashboards.
 
-Reports can be generated either from the currently opened dashboard or scheduled using the [Scheduler](/docs/user-guide/scheduler/#generate-report) capabilities.
+Reports can be generated either from the currently opened dashboard or scheduled using the [Scheduler](/docs/pe/user-guide/scheduler/#generate-report) capabilities.
 
 <br/>
 
@@ -41,7 +41,7 @@ On each generate report request, ThingsBoard node sends a request to the Reports
 The Reports Server opens a web page with the target dashboard URL in the headless browser and waits until the page renders,
 then it captures the dashboard web page into the specified format (*PDF \| PNG \| JPEG*) and sends the captured data as a response to ThingsBoard.
 
-The system administrator can configure the Reports Server endpoint URL using [thingsboard.yml](/docs/user-guide/install/config/).
+The system administrator can configure the Reports Server endpoint URL using [thingsboard.yml](/docs/pe/user-guide/install/config/).
 
 The following is a sample configuration:
 
@@ -72,7 +72,7 @@ The Tenant Administrator or Customer User can generate a report from the current
 
 ### Generate Report by schedule
 
-Report generation can be invoked by a schedule using the [**Generate Report** Scheduler Event](/docs/user-guide/scheduler/#generate-report).
+Report generation can be invoked by a schedule using the [**Generate Report** Scheduler Event](/docs/pe/user-guide/scheduler/#generate-report).
 
 ### Generate Report Rule Chain
 
@@ -81,7 +81,7 @@ By default, a message of type **Generate Report** is routed to the **Generate Re
 
 ![image](/images/user-guide/ui/reporting-pe-root-rule-chain-switch.png)
 
-The **Generate Report Rule Chain** has a [**Generate Report** Rule Node](/docs/user-guide/rule-engine-2-0/pe/action-nodes/#generate-report-node)
+The **Generate Report Rule Chain** has a [**Generate Report** Rule Node](/docs/pe/user-guide/rule-engine-2-0/pe/action-nodes/#generate-report-node)
 that performs the report generation according to the report configuration retrieved from the message body.
 
 If the message body has a field ```sendEmail``` and its value is set to ```true```,
@@ -104,4 +104,4 @@ Each report can be downloaded by clicking on the **Download file** button.
 
 ## Next steps
 
-{% assign currentGuide = "AdvancedFeatures" %}{% include templates/guides-banner.md %}
+{% assign currentGuide = "AdvancedFeatures" %}{% include templates/guides-banner-pe.md %}
