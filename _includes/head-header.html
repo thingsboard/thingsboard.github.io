@@ -1,10 +1,22 @@
 {% if page.title %}{% assign title=page.title %}{% endif %}
 {% if page.description %}{% assign description=page.description %}{% endif %}
+
+{% if docsTag %}
+    {% assign foundProduct = site.data.products | where: "tag", docsTag %}
+    {% assign productInfo = foundProduct[0] %}
+    {% unless page.customTitle == "true" %}
+        {% assign customTitle = title | append: " | " %}
+        {% assign customTitle = customTitle | append: productInfo.fulltitle %}
+    {% endunless %}
+{% elsif page.customTitle == "true" %}
+    {% assign customTitle = title %}
+{% endif %}
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    {% if page.customTitle == "true" %}
-    <title>{{ title }}</title>
+    {% if customTitle %}
+    <title>{{ customTitle }}</title>
     {% seo title=false %}
     {% else %}
     {% seo %}
@@ -469,9 +481,7 @@
     </script>
 </head>
 <body>
-{% if docsTag %}
-{% assign foundProduct = site.data.products | where: "tag", docsTag %}
-{% assign productInfo = foundProduct[0] %}
+{% if productInfo %}
 <div class="products-selector">
     <img src="{{productInfo.icon}}"/>
     <div class="product-info">
