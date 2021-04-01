@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-pe
 assignees:
 - ashvayka
 title: REST API
@@ -7,4 +7,5 @@ description: Supported REST API Reference for server-side integration of your Io
 
 ---
 
+{% assign docsPrefix = "pe/" %}
 {% include docs/reference/rest-api.md %}

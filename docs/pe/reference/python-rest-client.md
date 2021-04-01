@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-pe
 assignees:
 - zbeacon
 title: Python REST Client
@@ -7,4 +7,5 @@ description: Supported REST API Reference for server-side integration of your py
 
 ---
 
+{% assign docsPrefix = "pe/" %}
 {% include docs/reference/python-rest-client.md %}
