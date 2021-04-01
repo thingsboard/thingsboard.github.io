@@ -84,30 +84,32 @@ p
   font-weight: 400
   margin: 0
 
+a
+  color: #2a7dec
+  &:hover
+    color: #2a7dec
+  strong
+    font-weight: 500
 
 .button
   display: inline-block
-  border-radius: 3px
-  padding: 0 10px
-  line-height: 40px
+  border-radius: 4px
+  padding: 10px 20px
+  line-height: 24px
   color: white
-  background-color: $blue
+  background-color: #2a7dec
   text-decoration: none
-  font-size: 14px
+  font-size: 16px
   font-weight: 500
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .26)
-  transition: box-shadow .4s cubic-bezier(.25, .8, .25, 1), background-color .4s cubic-bezier(.25, .8, .25, 1)
+  transition: background-color .4s cubic-bezier(.25, .8, .25, 1)
 
   &:hover
-    background-color: $blue-02
+    background-color: #4f97f8
+    color: white
     text-decoration: none
-    color: rgba(255, 255, 255, 0.87)
 
   &:focus
-    background-color: $blue-02
-
-  &:active
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4)
+    background-color: #4f97f8
 
   &.accent
     background-color: $orange
@@ -1839,9 +1841,6 @@ $header-clearance: 210px
       width: 40px
       height: 40px
       line-height: 40px
-
-  a.button
-    border-radius: 2px
 
   a.issue
     margin-left: 20px

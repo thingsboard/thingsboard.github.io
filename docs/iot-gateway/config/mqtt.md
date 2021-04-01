@@ -369,7 +369,6 @@ Configuration, provided in this section uses for sending RPC requests from Thing
 |---
 
 {% capture methodFilterOptions %}
-<br>
 There are 2 options for RPC request:  
 1. **With response** -- If in the configuration exists responseTopicExpression, gateway will try to subscribe on it and wait for response.
 2. **Without response** -- If in the configuration not exists responseTopicExpression, gateway have just send message and won't wait for response.
