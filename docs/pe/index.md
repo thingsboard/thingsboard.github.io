@@ -8,9 +8,18 @@ description: ThingsBoard Professional Edition documentation - learn about the pl
 
 <a style="margin: 10px;" href="/docs/getting-started-guides/helloworld-pe/" class="button">Getting started</a>
 
-<h2>Professional Edition Features</h2>
+<h2 id="features">Professional Edition Features</h2>
 
 <ul>
+<li><b><a href="/docs/user-guide/attributes/">Attributes</a></b> - platform ability to assign custom key-value attributes to your entities (e.g configuration, data processing, visualization parameters).</li>
+<li><b><a href="/docs/user-guide/telemetry/">Telemetry</a></b> - API for collection of time-series data and related use cases.</li>
+<li><b><a href="/docs/user-guide/rpc/">Entities and relations</a></b> - platform ability to model physical world objects (e.g. devices and assets) and relations between them.</li>
+<li><b><a href="/docs/guides#AnchorIDDataVisualization">Data visualization</a></b> - covers data visualization capabilities: Widgets, Dashboards, Dashboard states.</li>
+<li><b><a href="/docs/user-guide/rule-engine-2-0/re-getting-started/">Rule engine</a></b> - covers data processing & actions on incoming telemetry and events.</li>
+<li><b><a href="/docs/user-guide/rpc/">RPC</a></b> - API and widgets to push commands from your apps and dashboards to devices and vice versa.</li>
+<li><b><a href="/docs/user-guide/audit-log/">Audit log</a></b> - tracking of user activity and API calls usage.</li>
+<li><b><a href="/docs/user-guide/api-limits/">API Limits</a></b> - controlling API usage, by limiting number of requests from single host during single time unit.</li>
+<li><b><a href="/docs/user-guide/advanced-filters/">Advanced filters</a></b> - filters over entity fields, attributes and latest telemetry.</li>
 <li><b><a href="/docs/user-guide/white-labeling/">White-labeling</a></b> - configure your company or product logo, color scheme and mail tempates in 2 minutes.</li>
 <li><b><a href="/docs/user-guide/integrations/">Platform Integrations</a></b> - connect devices using connectivity solutions like NB IoT, LoRaWAN and SigFox, specific payload formats or various IoT Platforms</li>
     <ul>

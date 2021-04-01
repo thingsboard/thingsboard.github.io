@@ -462,7 +462,7 @@ You may optionally configure the dashboard to appear just after the user login t
 
 ## Next steps
 
-{% assign currentGuide = "GettingStartedGuides" %}{% include templates/guides-banner.md %}
+{% assign currentGuide = "GettingStartedGuides" %}{% include templates/guides-banner-pe.md %}
 
 ## ThingsBoard Professional Edition white-labeling guide
 

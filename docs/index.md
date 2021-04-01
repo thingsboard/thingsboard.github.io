@@ -10,7 +10,7 @@ description: ThingsBoard documentation - learn about the platform and get your I
 <a style="margin: 10px;" href="/docs/getting-started-guides/helloworld/" class="button">Getting started</a>
 <a style="margin: 10px;" href="/docs/guides/" class="button">&nbsp;&nbsp;&nbsp;Guides&nbsp;&nbsp;&nbsp;</a>
 
-<h2>Community Edition Features</h2>
+<h2 id="features">Community Edition Features</h2>
 
 <ul>
 <li><b><a href="/docs/user-guide/attributes/">Attributes</a></b> - platform ability to assign custom key-value attributes to your entities (e.g configuration, data processing, visualization parameters).</li>
