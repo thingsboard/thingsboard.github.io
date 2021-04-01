@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-pe
 assignees:
 - vsosliuk
 title: X.509 Certificate Based Authentication
@@ -7,4 +7,5 @@ description: ThingsBoard  X.509 Certificate based authentication for IoT devices
 
 ---
 
+{% assign docsPrefix = "pe/" %}
 {% include docs/user-guide/certificates.md %}

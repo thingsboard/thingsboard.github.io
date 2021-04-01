@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-pe
 assignees:
 - vsosliuk
 title: MQTT over SSL
@@ -7,4 +7,5 @@ description: Launching ThingsBoard with secure MQTT protocol to connect your IoT
 
 ---
 
+{% assign docsPrefix = "pe/" %}
 {% include docs/user-guide/mqtt-over-ssl.md %}

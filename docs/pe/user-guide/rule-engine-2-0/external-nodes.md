@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-pe
 title: External Nodes
 description: Rule Engine 2.0 External Nodes
 

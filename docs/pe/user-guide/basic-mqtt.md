@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-pe
 assignees:
 - vsosliuk
 title: Basic MQTT authentication
@@ -19,4 +19,5 @@ options:
         title: 'MQTT Clients will be able to connect if they specify correct combination of Client ID, Username and Password'    
 ---
 
+{% assign docsPrefix = "pe/" %}
 {% include docs/user-guide/basic-mqtt.md %}
