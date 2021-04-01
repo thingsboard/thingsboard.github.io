@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-pe
 assignees:
 - ashvayka
 title: Tenant Profiles
@@ -21,4 +21,5 @@ rateLimits:
 
 ---
 
+{% assign docsPrefix = "pe/" %}
 {% include docs/user-guide/tenant-profiles.md %}

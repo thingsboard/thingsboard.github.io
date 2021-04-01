@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-pe
 assignees:
 - ashvayka
 title: Working with IoT device alarms
@@ -16,4 +16,5 @@ alarmWidgetDataSettings:
 
 ---
 
+{% assign docsPrefix = "pe/" %}
 {% include docs/user-guide/alarms.md %}

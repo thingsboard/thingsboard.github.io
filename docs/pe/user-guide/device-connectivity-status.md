@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-pe
 assignees:
 - ashvayka
 title: Device Connectivity Status
@@ -8,6 +8,7 @@ redirect_from: "/docs/user-guide/rule-engine-2-0/tutorials/device-online-offline
 
 ---
 
+{% assign docsPrefix = "pe/" %}
 {% include docs/user-guide/device-connectivity-status.md %}
 
  

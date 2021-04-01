@@ -10,73 +10,62 @@ toc:
 - title: Features
   section:
   - title: Entities and relations
-    path: /docs/user-guide/entities-and-relations/
+    path: /docs/pe/user-guide/entities-and-relations/
   - title: Tenant Profiles
-    path: /docs/user-guide/tenant-profiles/
+    path: /docs/pe/user-guide/tenant-profiles/
     new: true
   - title: Device Profiles
-    path: /docs/user-guide/device-profiles/
+    path: /docs/pe/user-guide/device-profiles/
     new: true
   - title: Working with device attributes
-    path: /docs/user-guide/attributes/
+    path: /docs/pe/user-guide/attributes/
   - title: Working with telemetry data
-    path: /docs/user-guide/telemetry/
+    path: /docs/pe/user-guide/telemetry/
   - title: Working with alarms
-    path: /docs/user-guide/alarms/
+    path: /docs/pe/user-guide/alarms/
   - title: Dashboards
-    path: /docs/user-guide/dashboards/
+    path: /docs/pe/user-guide/dashboards/
   - title: Device Connectivity Status
-    path: /docs/user-guide/device-connectivity-status/
+    path: /docs/pe/user-guide/device-connectivity-status/
   - title: Claiming Devices
-    path: /docs/user-guide/claiming-devices/
+    path: /docs/pe/user-guide/claiming-devices/
   - title: Device provisioning
-    path: /docs/user-guide/device-provisioning/
+    path: /docs/pe/user-guide/device-provisioning/
     new: true
   - title: Entity Views
-    path: /docs/user-guide/entity-views/
+    path: /docs/pe/user-guide/entity-views/
   - title: Using RPC capabilities
-    path: /docs/user-guide/rpc/
+    path: /docs/pe/user-guide/rpc/
   - title: Data visualization
-    path: /docs/user-guide/visualization/
+    path: /docs/pe/user-guide/visualization/
   - title: OAuth 2 Support
-    path: /docs/user-guide/oauth-2-support/
+    path: /docs/pe/user-guide/oauth-2-support/
     new: true
   - title: Advanced RBAC for IoT
     path: /docs/user-guide/rbac/
-    pe: true
   - title: White-labeling
     path: /docs/user-guide/white-labeling/
-    pe: true
   - title: Self-registration
     path: /docs/user-guide/self-registration/
-    pe: true
   - title: Custom Translations
     path: /docs/user-guide/custom-translation/
-    pe: true
   - title: Custom Menu
     path: /docs/user-guide/custom-menu/
-    pe: true
   - title: Platform Integrations
     path: /docs/user-guide/integrations/#overview
-    pe: true
   - title: Entity Groups
     path: /docs/user-guide/groups/
-    pe: true
   - title: Scheduler
     path: /docs/user-guide/scheduler/
-    pe: true
   - title: Reporting
     path: /docs/user-guide/reporting/
-    pe: true
   - title: CSV/XLS data export
     path: /docs/user-guide/csv-xls-data-export/
-    pe: true
   - title: Bulk Provisioning
     new: true
     path: /docs/user-guide/bulk-provisioning/
   - title: File Storage
     path: /docs/user-guide/file-storage/
-    pe: true
   - title: Audit Log
     path: /docs/user-guide/audit-log/
   - title: API Limits

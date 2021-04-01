@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-pe
 assignees:
 - ashvayka
 title: Working with IoT dashboards
@@ -347,4 +347,5 @@ tw-time-zone:
 
 --- 
 
+{% assign docsPrefix = "pe/" %}
 {% include docs/user-guide/dashboards.md %}
