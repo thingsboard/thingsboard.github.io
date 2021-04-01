@@ -1,0 +1,42 @@
+{
+  "name": "WindSpeed Telemetry Rule",
+  "state": "SUSPENDED",
+  "weight": 0,
+  "pluginToken": "kafka-spark-streaming-sample",
+  "filters": [
+    {
+      "configuration": {
+        "messageTypes": [
+          "POST_TELEMETRY"
+        ]
+      },
+      "name": "MsgTypeFilter",
+      "clazz": "org.thingsboard.server.extensions.core.filter.MsgTypeFilter"
+    },
+    {
+      "configuration": {
+        "filter": "typeof cs.deviceType !== 'undefined' && cs.deviceType === 'WeatherStation' && typeof cs.geoZone !== 'undefined'"
+      },
+      "name": "DeviceTypeFilter",
+      "clazz": "org.thingsboard.server.extensions.core.filter.DeviceAttributesFilter"
+    },
+    {
+      "configuration": {
+        "filter": "typeof windSpeed !== 'undefined'"
+      },
+      "name": "TelemetryFilter",
+      "clazz": "org.thingsboard.server.extensions.core.filter.DeviceTelemetryFilter"
+    }
+  ],
+  "processor": null,
+  "action": {
+    "configuration": {
+      "sync": true,
+      "topic": "weather-stations-data",
+      "template": "{\"geoZone\":\"$cs.get('geoZone')\", \"windSpeed\":$windSpeed.valueAsString}"
+    },
+    "clazz": "org.thingsboard.server.extensions.kafka.action.KafkaPluginAction",
+    "name": "WindSpeed"
+  },
+  "additionalInfo": null
+}
