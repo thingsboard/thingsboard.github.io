@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-pe
 assignees:
 - ashvayka
 title: SMS Provider Settings
@@ -20,4 +20,5 @@ smsProviderSettings:
 
 ---
 
+{% assign docsPrefix = "pe/" %}
 {% include docs/user-guide/ui/sms-provider-settings.md %}

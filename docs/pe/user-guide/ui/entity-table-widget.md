@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-pe
 assignees:
 - ashvayka 
 title: Advanced Settings of the Entities Table Widget
@@ -93,4 +93,5 @@ actions-column:
 
 ---
 
+{% assign docsPrefix = "pe/" %}
 {% include docs/user-guide/ui/entity-table-widget.md %}

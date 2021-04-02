@@ -7,114 +7,75 @@ toc:
   path: /docs/getting-started-guides/what-is-thingsboard/
 - title: How to connect your device?
   path: /docs/getting-started-guides/connectivity/
-- title: Features
+- title: Key concepts
   section:
   - title: Entities and relations
     path: /docs/user-guide/entities-and-relations/
   - title: Tenant Profiles
     path: /docs/user-guide/tenant-profiles/
-    new: true
   - title: Device Profiles
     path: /docs/user-guide/device-profiles/
     new: true
-  - title: Working with device attributes
+  - title: Attributes
     path: /docs/user-guide/attributes/
-  - title: Working with telemetry data
+  - title: Time-series data
     path: /docs/user-guide/telemetry/
-  - title: Working with alarms
+  - title: Alarms
     path: /docs/user-guide/alarms/
-  - title: Dashboards
-    path: /docs/user-guide/dashboards/
-  - title: Device Connectivity Status
-    path: /docs/user-guide/device-connectivity-status/
-  - title: Claiming Devices
-    path: /docs/user-guide/claiming-devices/
-  - title: Device provisioning
-    path: /docs/user-guide/device-provisioning/
-    new: true
-  - title: Entity Views
-    path: /docs/user-guide/entity-views/
-  - title: Using RPC capabilities
+  - title: Remote commands to devices
     path: /docs/user-guide/rpc/
-  - title: Data visualization
-    path: /docs/user-guide/visualization/
-  - title: OAuth 2 Support
-    path: /docs/user-guide/oauth-2-support/
-    new: true
-  - title: Advanced RBAC for IoT
-    path: /docs/user-guide/rbac/
-    pe: true
-  - title: White-labeling
-    path: /docs/pe/user-guide/white-labeling/
-    pe: true
-  - title: Self-registration
-    path: /docs/pe/user-guide/self-registration/
-    pe: true
-  - title: Custom Translations
-    path: /docs/pe/user-guide/custom-translation/
-    pe: true
-  - title: Custom Menu
-    path: /docs/pe/user-guide/custom-menu/
-    pe: true
-  - title: Platform Integrations
-    path: /docs/pe/user-guide/integrations/#overview
-    pe: true
-  - title: Entity Groups
-    path: /docs/pe/user-guide/groups/
-    pe: true
-  - title: Scheduler
-    path: /docs/pe/user-guide/scheduler/
-    pe: true
-  - title: Reporting
-    path: /docs/pe/user-guide/reporting/
-    pe: true
-  - title: CSV/XLS data export
-    path: /docs/pe/user-guide/csv-xls-data-export/
-    pe: true
-  - title: Bulk Provisioning
-    new: true
-    path: /docs/user-guide/bulk-provisioning/
-  - title: File Storage
-    path: /docs/pe/user-guide/file-storage/
-    pe: true
-  - title: Audit Log
-    path: /docs/user-guide/audit-log/
-  - title: API Limits
-    path: /docs/user-guide/api-limits/
-  - title: Advanced Filters
-    new: true
-    path: /docs/user-guide/advanced-filters/
+- title: Dashboards
+  section:
+  - title: Overview
+    path: /docs/user-guide/dashboards/
+  - title: Aliases
+    path: /docs/user-guide/ui/aliases/
+  - title: Widget Actions
+    path: /docs/user-guide/ui/widget-actions/
+  - title: Widgets Library
+    path: /docs/user-guide/ui/widget-library/
 - title: Rule engine
   section:
-  - title: Getting Started
-    path: /docs/user-guide/rule-engine-2-0/re-getting-started/
-  - title: Overview
-    path: /docs/user-guide/rule-engine-2-0/overview/
-  - title: Architecture
-    path: /docs/user-guide/rule-engine-2-0/architecture/
-  - title: Nodes
-    section:
-    - title: Filter Nodes
-      path: /docs/user-guide/rule-engine-2-0/filter-nodes/
-    - title: Enrichment Nodes
-      path: /docs/user-guide/rule-engine-2-0/enrichment-nodes/
-    - title: Transformation Nodes
-      path: /docs/user-guide/rule-engine-2-0/transformation-nodes/
-    - title: Action Nodes
-      path: /docs/user-guide/rule-engine-2-0/action-nodes/
-    - title: External Nodes
-      path: /docs/user-guide/rule-engine-2-0/external-nodes/
-  - title: PE Nodes
-    pe: true
-    section:
-    - title: Transformation Nodes
-      path: /docs/pe/user-guide/rule-engine-2-0/transformation-nodes/
-    - title: Action Nodes
-      path: /docs/pe/user-guide/rule-engine-2-0/action-nodes/
-    - title: Analytics Nodes
-      path: /docs/pe/user-guide/rule-engine-2-0/analytics-nodes/
-  - title: Custom Rule Nodes
-    path: /docs/user-guide/contribution/rule-node-development/
+    - title: Getting Started
+      path: /docs/user-guide/rule-engine-2-0/re-getting-started/
+    - title: Overview
+      path: /docs/user-guide/rule-engine-2-0/overview/
+    - title: Architecture
+      path: /docs/user-guide/rule-engine-2-0/architecture/
+    - title: Nodes
+      section:
+        - title: Filter Nodes
+          path: /docs/user-guide/rule-engine-2-0/filter-nodes/
+        - title: Enrichment Nodes
+          path: /docs/user-guide/rule-engine-2-0/enrichment-nodes/
+        - title: Transformation Nodes
+          path: /docs/user-guide/rule-engine-2-0/transformation-nodes/
+        - title: Action Nodes
+          path: /docs/user-guide/rule-engine-2-0/action-nodes/
+        - title: External Nodes
+          path: /docs/user-guide/rule-engine-2-0/external-nodes/
+    - title: PE Nodes
+      pe: true
+      section:
+        - title: Transformation Nodes
+          path: /docs/pe/user-guide/rule-engine-2-0/transformation-nodes/
+        - title: Action Nodes
+          path: /docs/pe/user-guide/rule-engine-2-0/action-nodes/
+        - title: Analytics Nodes
+          path: /docs/pe/user-guide/rule-engine-2-0/analytics-nodes/
+    - title: Custom Rule Nodes
+      path: /docs/user-guide/contribution/rule-node-development/
+- title: White-labeling
+  pe: true
+  section:
+    - title: Overview
+      path: /docs/pe/user-guide/white-labeling/
+    - title: Self-registration
+      path: /docs/pe/user-guide/self-registration/
+    - title: Custom Translations
+      path: /docs/pe/user-guide/custom-translation/
+    - title: Custom Menu
+      path: /docs/pe/user-guide/custom-menu/
 - title: Integrations
   pe: true
   section:
@@ -164,8 +125,44 @@ toc:
     path: /docs/trendz/
   - title: Kafka Streams
     path: /docs/samples/analytics/kafka-streams/
+- title: Other Features
+  section:
+    - title: Device Connectivity Status
+      path: /docs/user-guide/device-connectivity-status/
+    - title: Claiming Devices
+      path: /docs/user-guide/claiming-devices/
+    - title: Device provisioning
+      path: /docs/user-guide/device-provisioning/
+      new: true
+    - title: Entity Views
+      path: /docs/user-guide/entity-views/
+    - title: API Limits
+      path: /docs/user-guide/api-limits/
+    - title: Bulk Provisioning
+      new: true
+      path: /docs/user-guide/bulk-provisioning/
+    - title: Entity Groups
+      path: /docs/pe/user-guide/groups/
+      pe: true
+    - title: Scheduler
+      path: /docs/pe/user-guide/scheduler/
+      pe: true
+    - title: Reporting
+      path: /docs/pe/user-guide/reporting/
+      pe: true
+    - title: CSV/XLS data export
+      path: /docs/pe/user-guide/csv-xls-data-export/
+      pe: true
+    - title: File Storage
+      path: /docs/pe/user-guide/file-storage/
+      pe: true
 - title: Security
   section:
+  - title: Audit Log
+    path: /docs/user-guide/audit-log/
+  - title: Advanced RBAC for IoT
+    path: /docs/pe/user-guide/rbac/
+    pe: true
   - title: OAuth 2 Support
     path: /docs/user-guide/oauth-2-support/
   - title: MQTT over SSL
@@ -196,12 +193,8 @@ toc:
     section:
     - title: Trip Animation Widget
       path: /docs/user-guide/ui/trip-animation-widget/
-    - title: Widgets Library
-      path: /docs/user-guide/ui/widget-library/
     - title: Advanced Settings of the Entity Table widget
       path: /docs/user-guide/ui/entity-table-widget/
-    - title: Widget Actions
-      path: /docs/user-guide/ui/widget-actions/
     - title: Advanced data key configuration
       path: /docs/user-guide/ui/advanced-data-key-configuration/
   - title: Dashboards
@@ -210,8 +203,6 @@ toc:
     path: /docs/user-guide/ui/sms-provider-settings/
   - title: Mail Settings
     path: /docs/user-guide/ui/mail-settings/
-  - title: Aliases
-    path: /docs/user-guide/ui/aliases/
 - title: Contribution Guide
   section:
     - title: How to contribute

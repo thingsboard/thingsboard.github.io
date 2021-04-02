@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-pe
 assignees:
 - ashvayka
 title: Widget Actions
@@ -348,4 +348,5 @@ entityfromwidget:
 
 ---
 
+{% assign docsPrefix = "pe/" %}
 {% include docs/user-guide/ui/widget-actions.md %}
