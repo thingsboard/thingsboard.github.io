@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-pe
 assignees:
 - ashvayka
 title: Advanced data key configuration
@@ -85,4 +85,5 @@ cntnt-function:
 
 ---
 
+{% assign docsPrefix = "pe/" %}
 {% include docs/user-guide/ui/advanced-data-key-configuration.md %}
