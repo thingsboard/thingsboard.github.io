@@ -215,8 +215,6 @@
             {src: '/js/jquery-ui.min.js', type: 'script'},
             {src: '/js/jquery.vide.js', type: 'script'},
             {src: '/js/script.js', type: 'script'},
-            {src: '/css/sweetalert.css', type: 'css'},
-            {src: '/js/sweetalert.min.js', type: 'script'},
             {src: '/css/photoswipe.css', type: 'css'},
             {src: '/css/default-skin/default-skin.css', type: 'css'},
             {src: '/js/photoswipe.min.js', type: 'script'},
@@ -429,11 +427,13 @@
             {% endif %}
 
             // Rogue line numbers fix (don't show line numbers for 1 row)
-            $('.rouge-gutter.gl').each(function() {
-               var lineNumbers = $(this).children('.lineno');
-               if (lineNumbers.text() === '1\n') {
-                   $(this).css('display', 'none');
-               }
+            $( document ).ready(function() {
+                $('.rouge-gutter.gl').each(function() {
+                    var lineNumbers = $(this).children('.lineno');
+                    if (lineNumbers.text() === '1\n') {
+                        $(this).css('display', 'none');
+                    }
+                });
             });
         });
 

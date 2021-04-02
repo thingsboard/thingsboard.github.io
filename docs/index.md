@@ -6,7 +6,7 @@ description: ThingsBoard documentation - learn about the platform and get your I
 
 <p>The ThingsBoard documentation can help you set up ThingsBoard, learn about the platform and get your IoT projects running on ThingsBoard.</p>
 
-<a style="margin: 10px;" href="/docs/getting-started-guides/what-is-thingsboard/" class="button">ThingsBoard Overview</a>
+<a style="margin: 10px 10px 10px 0;" href="/docs/getting-started-guides/what-is-thingsboard/" class="button">ThingsBoard Overview</a>
 <a style="margin: 10px;" href="/docs/getting-started-guides/helloworld/" class="button">Getting started</a>
 <a style="margin: 10px;" href="/docs/guides/" class="button">&nbsp;&nbsp;&nbsp;Guides&nbsp;&nbsp;&nbsp;</a>
 

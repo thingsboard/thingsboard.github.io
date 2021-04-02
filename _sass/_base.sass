@@ -591,6 +591,7 @@ ul
   header
     @media screen and (min-width: 1281px)
       padding-left: 372px
+      z-index: 10000
     @media screen and (min-width: 1500px)
       padding-left: 450px
   #githubButtonContainer
@@ -1007,29 +1008,22 @@ section
     button.clipboard-btn
       outline: none
       position: absolute
-      top: 5px
-      right: 5px
+      top: 3px
+      right: 8px
+      width: 38px
+      height: 38px
       background: #fff
-      box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 4px 0 rgba(0, 0, 0, 0.14), 0 3px 3px -2px rgba(0, 0, 0, 0.12)
-      border-radius: 5px
-      opacity: 0
-      transition: opacity 0.3s
-      padding: 3px 6px
-      line-height: 16px
+      padding: 10px
+      line-height: 18px
 
-      &:hover
-        background: #f9f9f9
-
-      &:active
-        background-color: #ececec
-        box-shadow: inset 1px -1px 4px 0px rgba(0, 0, 0, 0.4)
+      &:hover, &:active
+        img
+          filter: invert(49%) sepia(97%) saturate(3730%) hue-rotate(200deg) brightness(95%) contrast(95%)
 
       img
         width: 18px
-
-    &:hover
-      button.clipboard-btn
-        opacity: 0.85
+        height: 18px
+        filter: invert(51%) sepia(6%) saturate(172%) hue-rotate(177deg) brightness(94%) contrast(92%)
 
   #searchBox
     display: block
@@ -1648,20 +1642,6 @@ $header-clearance: 210px
     font-size: inherit
     background-color: transparent
 
-  .includecode, .includecode th, .includecode td
-    padding: 0 !important
-
-  .includecode th
-    //text-align: right !important
-    padding: 10px !important
-
-  .includecode th a, .includecode th a code
-    color: white !important
-    background-color: transparent !important
-
-  .includecode pre
-    margin: 0 !important
-
   ul li
     list-style: disc
 
@@ -1679,31 +1659,47 @@ $header-clearance: 210px
   li
     margin-bottom: 0.75em
 
-  table:not(.rouge-table)
+  table.includecode
+    border: none
+    margin: 0
+    > tbody > tr > td
+      padding: 0
+
+  table:not(.rouge-table):not(.includecode)
     width: 100%
+    overflow: hidden
     table-layout: fixed
-    border: 1px solid #ccc
+    border: 1px solid rgba(42,125,236,0.2)
+    border-radius: 4px
+    border-collapse: unset
     border-spacing: 0
     margin-top: 30px
     margin-bottom: 30px
 
-    thead, tr:nth-child(even)
-      background-color: $light-grey
+    > thead
+      background-color: #f9fbff
+      color: rgba(33, 37, 41, 0.6)
 
-    thead
-      background-color: #555
-      color: white
+    > tbody, > thead
+      > tr
+        > th, > td
+          font-size: 16px
+          padding: 12px 16px
+          text-align: left
+          margin: 0
+          word-break: break-word
+        > th
+          font-weight: normal
+    > thead
+      > tr
+        > th, > td
+          border-bottom: 1px solid rgba(42,125,236,0.2)
+    > tbody
+      > tr
+        &:not(:last-child)
+          > td
+            border-bottom: 1px solid rgba(42,125,236,0.2)
 
-    th, td
-      padding: 8px
-      text-align: left
-      margin: 0
-
-    th
-      font-weight: normal
-
-    td
-      font-size: 0.85em
 
   #editPageButton
     position: absolute
@@ -2567,29 +2563,91 @@ $ocean-nodes-h3-margin-bottom: 30px
       height: 100%
 
 // Tabs
-.ui-widget-header
-  background: transparent !important
-  background-color: transparent !important
-  border: 0px !important
 
-.ui-tabs
-  ul, ol, li
-    padding: 0px !important
-    list-style: none !important
-    margin-bottom: 0px !important
-    margin-left: 1px !important
+#docsContent
+  .ui-widget-header
+    background: transparent
+    border: none
 
-.ui-widget-content
-  border: 0px !important
+  .ui-tabs-scrollbox
+    height: 39px
+    overflow-x: auto
+    background: linear-gradient(to right, #fff, #fff),linear-gradient(to right, #fff, #fff),linear-gradient(to right, rgba(235, 235, 235, 1), rgba(255,255,255,0)),linear-gradient(to left, rgba(235, 235, 235, 1), rgba(255,255,255,0))
+    background-position: left center, right center, left center, right center
+    background-repeat: no-repeat
+    background-color: white
+    background-size: 40px 100%,40px 100%,20px 100%,20px 100%
+    background-attachment: local, local, scroll, scroll
+    border-bottom: 1px solid #EBEBEB
+    ul
+      display: none
+      &.ui-tabs-nav
+        display: flex
 
-.ui-widget-content
-  table
-    margin: 0px !important
+  .ui-tabs
+    .ui-tabs-scrollbox
+      height: auto
 
-.ui-tabs .ui-tabs-panel
-  padding: 0px !important
-  border: 1px solid #ccc !important
-  overflow-x: auto
+  .docs-tabs
+    margin-top: 20px
+
+  .ui-tabs
+    ul, ol, li
+      padding: 0
+      list-style: none
+      margin: 0
+
+  .ui-widget-content
+    padding: 0
+    border: none
+
+  .ui-tabs .ui-tabs-panel
+    padding: 0
+    border: none
+    overflow-x: auto
+
+  .ui-tabs .ui-tabs-nav .ui-tabs-anchor
+    padding-bottom: 10px
+    padding-left: 12px
+    padding-right: 12px
+
+  .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default
+    border: none
+    background: none
+    color: rgba(33, 37, 41, 0.6)
+    a, a:link
+      color: rgba(33, 37, 41, 0.6)
+    &:first-child
+      a, a:link
+        padding-left: 0
+    &:last-child
+      a, a:link
+        padding-right: 0
+    &:hover
+      color: #212529
+      a, a:link
+        color: #212529
+
+  .ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active
+    color: #212529
+    font-weight: 500
+    &:after
+      content: ""
+      background: #2a7dec
+      height: 3px
+      position: absolute
+      bottom: 0
+      left: 12px
+      right: 12px
+    &:first-child
+      &:after
+        left: 0
+    &:last-child
+      &:after
+        right: 0
+    a, a:link
+      color: #212529
+      font-weight: 500
 
 // Talk to us
 #talkToUs
@@ -2629,7 +2687,6 @@ $ocean-nodes-h3-margin-bottom: 30px
       font-weight: 400
       text-decoration: none
       margin-bottom: 15px
-
     a, p
       text-align: center
       width: 100%
