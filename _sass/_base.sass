@@ -120,6 +120,45 @@ a
     &:focus
       background-color: $orange-02
 
+details
+  summary
+    outline: none
+    list-style: none
+    position: relative
+    padding-left: 18px
+    &::-webkit-details-marker
+      display: none
+    &::marker
+      display: none
+    &:hover
+      color: #2a7dec
+      &:before
+        filter: invert(35%) sepia(96%) saturate(1837%) hue-rotate(202deg) brightness(98%) contrast(89%)
+    &:before
+      content: ""
+      background-image: url("/images/pe/read-more-arrow.svg")
+      background-size: contain
+      display: block
+      position: absolute
+      left: 0
+      top: 4px
+      width: 12px
+      height: 12px
+      transform: rotate(0deg)
+      transition: transform 0.3s
+      filter: invert(84%) sepia(0%) saturate(7494%) hue-rotate(88deg) brightness(94%) contrast(89%)
+      border: none
+
+details[open]
+  summary
+    font-weight: 500
+    &:before
+      filter: none
+      transform: rotate(90deg)
+    &:hover
+      &:before
+        filter: invert(35%) sepia(96%) saturate(1837%) hue-rotate(202deg) brightness(98%) contrast(89%)
+
 // HEADER
 #home, #thingsboard-paas, #thingsboard-pe, #trendz
   header
