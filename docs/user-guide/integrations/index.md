@@ -18,7 +18,7 @@ ThingsBoard Platform integrations feature was designed for two primary use cases
   - Stream data from devices connected to existing IoT Platforms to enable real-time interactive dashboards and efficient data processing.
   
 Both use cases have few things in common. There is a server-side component in the deployment topology that prevents direct access to device and provides set of APIs to interact with the device in the field instead.
-The payload format of the device is not well defined. Often two devices that have similar sensors have different payload formats depending on a vendor or even software version.  
+The payload format of the device is not well-defined. Often two devices that have similar sensors have different payload formats depending on a vendor or even software version.  
 
 The job of ThingsBoard Integration is to provide secure and reliable API bridge between core platform features (telemetry collection, attributes and RPC calls) and specific third-party platform APIs.    
 

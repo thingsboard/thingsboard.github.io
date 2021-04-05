@@ -32,12 +32,23 @@ Some entities support profiles:
   - **[Device Profiles](/docs/{{docsPrefix}}user-guide/device-profiles/)** - contains common settings for multiple devices: processing and transport configuration, etc. Each Device has the one and only profile at a single point in time.
 
 {% if docsPrefix == "pe/" %}
-ThingsBoard Professional Edition allows you to configure multiple custom [Entity Groups](/docs/pe/user-guide/groups/). Each entity (device/asset/entity view/customer/user/dashboard) may belong to multiple groups simultaneously.
-Entity Group always have an owner - particular Tenant or Customer.
+**[Entity Groups](/docs/pe/user-guide/groups/)**:
+
+ThingsBoard Professional Edition allows you to configure Entity Groups for Customers, Users, Devices, Assets, Entity Views and Dashboards.
+Each entity may belong to multiple groups simultaneously. Entity Group always have an owner - particular Tenant or Customer.
+All entities in the group must have the same entity type (i.e. You can't put device and asset into one group).
 Entity Groups are useful for dashboards and data processing, but the primary reason of their existence is to support advanced Role-Based Access Control ([RBAC](/docs/pe/user-guide/rbac/)) for IoT.
+
+**[Integrations](/docs/user-guide/integrations/)** and **[Data Converters](/docs/user-guide/integrations/#data-converters)**:
+
+ThingsBoard Platform integrations feature was designed for two primary use cases / deployment options:
+
+  - Connect existing NB IoT, LoRaWAN, SigFox and other devices with specific payload formats directly to ThingsBoard platform.
+  - Stream data from devices connected to existing IoT Platforms to enable real-time interactive dashboards and efficient data processing.
+
+Data Converters is a part of the Platform Integrations feature. Their purpose is to transform raw payload from device to the format that ThingsBoard uses and vise-versa.
+
 {% endif %}
-
-
 
 This guide provides an overview of the features listed above, some useful links to get more details, and real-life examples of their usage.
 
@@ -60,8 +71,6 @@ We are going to setup following hierarchy of assets and devices:
 
 
 Please review the following soundless screencast to learn **how to provision region and fields assets and their relations using ThingsBoard Web UI**:
-
-
 
 <div id="video">
     <div id="video_wrapper">

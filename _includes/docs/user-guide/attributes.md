@@ -3,143 +3,245 @@
 {:toc}
 
 ThingsBoard provides the ability to assign custom attributes to your entities and manage these attributes.
+Those attributes are stored in the database and may be used for data visualization and data processing.
+
 Attributes are treated as key-value pairs. Flexibility and simplicity of the key-value format allow easy and seamless integration with almost any IoT device on the market.
+Key is always a string and is basically an attribute name, while the attribute value can be either string, boolean, double, long or JSON. 
+For example:
 
+```json
+{
+ "firmwareVersion":"v2.3.1", 
+ "booleanParameter":true, 
+ "doubleParameter":42.0, 
+ "longParameter":73, 
+ "configuration": {
+    "someNumber": 42,
+    "someArray": [1,2,3],
+    "someNestedObject": {"key": "value"}
+ }
+}
+```
 
-## Video Tutorial
+## Attribute names
 
-<div id="video">
-  <div id="video_wrapper">
-    <iframe src="https://www.youtube.com/embed/JCW_hShAp7I" frameborder="0" allowfullscreen=""></iframe>
-  </div>
-</div>
-
+As a platform user, you can define any attribute name. 
+However, we recommend to use [camelCase](https://en.wikipedia.org/wiki/Camel_case).
+This make it easy to write custom JS functions for data processing and visualization.
 
 ## Attribute types
 
-Attributes are separated into three main groups:
+There are three types of attributes. Let's review them with examples:
 
- - **Server-side** - attributes are reported and managed by the server-side application. Not visible to the device application.
-   Some secret data could be used by ThingsBoard rules, but should not be available to the device.
-   Any ThingsBoard entity supports server-side attributes: Device, Asset, Customer, Tenant, Rules, etc.
-   
-   {:refdef: style="text-align: center;"}
-   ![image](/images/user-guide/server-side-attributes.svg)
-   {: refdef}  
+### Server-side attributes
 
- - **Client-side** - see device specific attributes below.
- - **Shared** - see device specific attributes below.
+This type of attribute is supported by almost any platform entity: Device, Asset, Customer, Tenant, User, etc.
+Server-side attributes are the ones that you may configure via Administration UI or REST API.
+The device firmware can't access the server-side attribute.
+
+{:refdef: style="text-align: center;"}
+![image](/images/user-guide/server-side-attributes.svg)
+{: refdef}
+
+Let's assume you would like to build a building monitoring solution and review few examples:
+
+1. The *latitude*, *longitude* and *address* are good examples of server-side attribute you may assign to assets that represent building or other real estate. You may use this attributes on the Map Widget in your dashboard to visualize location of the buildings.  
+2. The *floorPlanImage* may contain a URL to the image. You may use this attribute to visualize floor plan on the Image Map Widget.
+3. The *maxTemperatureThreshold* and *temperatureAlarmEnabled* may be used to configure and enable/disable alarms for a certain device or asset.
+
+#### Create/Update server-side attribute via Administration UI
+
+{% include images-gallery.html imageCollection="server-side-attrs-ui" showListImageTitles="true" %}
+
+#### Create/Update server-side attribute via REST API
+
+Use [REST API](/docs/{{docsPrefix}}reference/rest-api/) documentation to get the value of the JWT token. You will use it to populate the 'X-Authorization' header and authenticate your REST API call request.
+
+Send POST request with JSON representation of the attribute to the following URL: 
+
+```text
+https://$YOUR_THINGSBOARD_HOST/api/plugins/telemetry/$ENTITY_TYPE/$ENTITY_ID/SERVER_SCOPE
+```
+
+The example below creates attribute with the name "newAttributeName" and value "newAttributeValue" for device with ID 'ad17c410-914c-11eb-af0c-d5862211a5f6' and ThingsBoard Cloud server:
+```shell
+curl -v 'https://thingsboard.cloud/api/plugins/telemetry/DEVICE/ad17c410-914c-11eb-af0c-d5862211a5f6/SERVER_SCOPE' \
+-H 'x-authorization: Bearer $YOUR_JWT_TOKEN_HERE' \
+-H 'content-type: application/json' \
+--data-raw '{"newAttributeName":"newAttributeValue"}'
+```
+
+Similar, you can fetch all server-side attributes using the following command:
+
+```shell
+curl -v -X GET 'https://thingsboard.cloud/api/plugins/telemetry/DEVICE/ad17c410-914c-11eb-af0c-d5862211a5f6/values/attributes/SERVER_SCOPE' \
+  -H 'x-authorization: Bearer $YOUR_JWT_TOKEN_HERE' \
+  -H 'content-type: application/json' \
+```
+
+The output will include 'key', 'value' and timestamp of the last update:
+
+```json
+[
+    {
+        "lastUpdateTs": 1617633139380,
+        "key": "newAttributeName",
+        "value": "newAttributeValue"
+    }
+]
+```
+
+As an alternative to curl, you may use [Java](/docs/{{docsPrefix}}reference/rest-client/) or [Python](/docs/{{docsPrefix}}reference/python-rest-client/) REST clients.
+
+### Shared attributes
+
+This type of attributes is available only for Devices. It is similar to the Server-side attributes but has one important difference. 
+The device firmware/application may request the value of the shared attribute(s) or subscribe to the updates of the attribute(s).
+The devices which communicate over MQTT or other bi-directional communication protocols may subscribe to attribute updates and receive notifications in real-time.
+The devices which communicate over HTTP or other request-response communication protocols may periodically request the value of shared attribute.
+
+{:refdef: style="text-align: center;"}
+![image](/images/user-guide/shared-attributes.svg)
+{: refdef}
+
+The most common use case of shared attributes is to store device settings.
+Let's assume the same building monitoring solution and review few examples:
+
+1. The *targetFirmwareVersion* attribute may be used to store the firmware version for particular Device.
+2. The *maxTemperature* attribute may be used to automatically enable HVAC if it is too hot in the room. 
+
+The user may change the attribute via UI. The script or other server-side application may change the attribute value via REST API.
+
+#### Create/Update shared attribute via Administration UI
+
+{% include images-gallery.html imageCollection="shared-attrs-ui" showListImageTitles="true" %}
+
+#### Create/Update shared attribute via REST API
+
+Use [REST API](/docs/{{docsPrefix}}reference/rest-api/) documentation to get the value of the JWT token. You will use it to populate the 'X-Authorization' header and authenticate your REST API call request.
+
+Send POST request with JSON representation of the attribute to the following URL:
+
+```text
+https://$YOUR_THINGSBOARD_HOST/api/plugins/telemetry/$ENTITY_TYPE/$ENTITY_ID/SHARED_SCOPE
+```
+
+The example below creates attribute with the name "newAttributeName" and value "newAttributeValue" for device with ID 'ad17c410-914c-11eb-af0c-d5862211a5f6' and ThingsBoard Cloud server:
+```shell
+curl -v 'https://thingsboard.cloud/api/plugins/telemetry/DEVICE/ad17c410-914c-11eb-af0c-d5862211a5f6/SHARED_SCOPE' \
+-H 'x-authorization: Bearer $YOUR_JWT_TOKEN_HERE' \
+-H 'content-type: application/json' \
+--data-raw '{"newAttributeName":"newAttributeValue"}'
+```
+
+Similar, you can fetch all shared attributes using the following command:
+
+```shell
+curl -v -X GET 'https://thingsboard.cloud/api/plugins/telemetry/DEVICE/ad17c410-914c-11eb-af0c-d5862211a5f6/values/attributes/SHARED_SCOPE' \
+  -H 'x-authorization: Bearer $YOUR_JWT_TOKEN_HERE' \
+  -H 'content-type: application/json' \
+```
+
+The output will include 'key', 'value' and timestamp of the last update:
+
+```json
+[
+    {
+        "lastUpdateTs": 1617633139380,
+        "key": "newAttributeName",
+        "value": "newAttributeValue"
+    }
+]
+```
+
+As an alternative to curl, you may use [Java](/docs/{{docsPrefix}}reference/rest-client/) or [Python](/docs/{{docsPrefix}}reference/python-rest-client/) REST clients.
+
+#### API for device firmware or applications:
+
+- request *shared* attributes from the server: [MQTT API](/docs/{{docsPrefix}}reference/mqtt-api/#request-attribute-values-from-the-server), [CoAP API](/docs/{{docsPrefix}}reference/coap-api/#request-attribute-values-from-the-server), [HTTP API](/docs/{{docsPrefix}}reference/http-api/#request-attribute-values-from-the-server);
+- subscribe to *shared* attribute updates from the server: [MQTT API](/docs/{{docsPrefix}}reference/mqtt-api/#subscribe-to-attribute-updates-from-the-server), [CoAP API](/docs/{{docsPrefix}}reference/coap-api/#subscribe-to-attribute-updates-from-the-server), [HTTP API](/docs/{{docsPrefix}}reference/http-api/#subscribe-to-attribute-updates-from-the-server).
+
+{% capture missed_updates %}
+If device went offline, it may miss the important attribute update notification. <br/> We recommend to subscribe to attribute updates on application startup and request latest values of the attributes after each connect or reconnect.
+
+{% endcapture %}
+{% include templates/info-banner.md content=missed_updates %}
 
 
-## Device specific Attribute types
+### Client-side attributes
 
-All attributes can be used in [Rule Engine](/docs/{{docsPrefix}}user-guide/rule-engine) components: filters, processors, and actions.
-This guide provides the overview of the features listed above, and some useful links to get more details.  
+This type of attributes is available only for Devices. It is used to report various semi-static data from Device (Client) to ThingsBoard (Server). 
+It is similar to [shared attributes](/docs/{{docsPrefix}}user-guide/attributes/#shared-attributes), but has one important difference.
+The device firmware/application may send the value of the attributes from device to the platform.
 
-Device-specific attributes are separated into two main groups:
- 
- - **Client-side** - these attributes are reported and managed by the device application. 
-   For example, current software/firmware version, hardware specification, etc.     
+{:refdef: style="text-align: center;"}
+![image](/images/user-guide/client-side-attributes.svg)
+{: refdef}
 
-   {:refdef: style="text-align: center;"}
-   ![image](/images/user-guide/client-side-attributes.svg)
-   {: refdef}  
-        
- - **Shared** - these attributes are reported and managed by the server-side application. Visible to the device application.
-   For example, customer subscription plan, target software/firmware version.
-   
-   {:refdef: style="text-align: center;"}
-   ![image](/images/user-guide/shared-attributes.svg)
-   {: refdef}  
+The most common use case of client attributes is to report device state.
+Let's assume the same building monitoring solution and review few examples:
 
-## Device attributes API
+1. The *currentFirmwareVersion* attribute may be used to report the installed firmware/application version for the device to the platform.
+2. The *currentConfiguration* attribute may be used to report current firmware/application configuration to the platform.
+3. The *currentState* may be used to persist and restore current firmware/application state via network, if device does not have the persistent storage.
 
-ThingsBoard provides the following API to device applications:
- 
- - upload *client-side* attributes to the server.
- - request *client-side* and *shared* attributes from the server.
- - subscribe to update of *shared* attributes.
+The user and server-side applications may browser the client-side attributes via UI/REST API but they are not able to change them. 
+Basically, the value of the client-side attribute is read-only for the UI/REST API.
 
-Attributes API is specific for each supported network protocol.
-The API and examples can be reviewed on the corresponding reference page:
+#### Fetch client-side attributes via REST API
 
- - [MQTT API reference](/docs/{{docsPrefix}}reference/mqtt-api/#attributes-api);
- - [CoAP API reference](/docs/{{docsPrefix}}reference/coap-api/#attributes-api);
- - [HTTP API reference](/docs/{{docsPrefix}}reference/http-api/#attributes-api).
-  
-## Telemetry Service
+Use [REST API](/docs/{{docsPrefix}}reference/rest-api/) documentation to get the value of the JWT token. You will use it to populate the 'X-Authorization' header and authenticate your REST API call request.
 
-Telemetry Service is responsible for persisting attributes data to internal data storage. 
-Also, it provides a server-side API to query and subscribe to attribute updates. 
+Send GET request to the following URL:
 
-### Internal data storage
+```text
+https://$YOUR_THINGSBOARD_HOST/api/plugins/telemetry/$ENTITY_TYPE/$ENTITY_ID/CLIENT_SCOPE
+```
 
-ThingsBoard uses either Cassandra NoSQL database or SQL database to store all data.
-  
-Although you can query the database directly, ThingsBoard provides a set of RESTful and a Websocket API that simplify this process and apply certain security policies:
- 
- - the Tenant Administrator user is able to manage attributes for all entities that belong to the corresponding tenant.
- - the Customer user is able to manage attributes only for entities that are assigned to the corresponding customer.
+The example below gets all attributes for device with ID 'ad17c410-914c-11eb-af0c-d5862211a5f6' and ThingsBoard Cloud server:
+
+```shell
+curl -v -X GET 'https://thingsboard.cloud/api/plugins/telemetry/DEVICE/ad17c410-914c-11eb-af0c-d5862211a5f6/values/attributes/CLIENT_SCOPE' \
+  -H 'x-authorization: Bearer $YOUR_JWT_TOKEN_HERE' \
+  -H 'content-type: application/json' \
+```
+
+The output will include 'key', 'value' and timestamp of the last update:
+
+```json
+[
+    {
+        "lastUpdateTs": 1617633139380,
+        "key": "newAttributeName",
+        "value": "newAttributeValue"
+    }
+]
+```
+
+As an alternative to curl, you may use [Java](/docs/{{docsPrefix}}reference/rest-client/) or [Python](/docs/{{docsPrefix}}reference/python-rest-client/) REST clients.
+
+#### API for device firmware or applications:
+
+- publish *client-side* attributes to the server: [MQTT API](/docs/{{docsPrefix}}reference/mqtt-api/#publish-attribute-update-to-the-server), [CoAP API](/docs/{{docsPrefix}}reference/coap-api/#publish-attribute-update-to-the-server), [HTTP API](/docs/{{docsPrefix}}reference/http-api/#publish-attribute-update-to-the-server);
+- request *client-side* attributes from the server: [MQTT API](/docs/{{docsPrefix}}reference/mqtt-api/#request-attribute-values-from-the-server), [CoAP API](/docs/{{docsPrefix}}reference/coap-api/#request-attribute-values-from-the-server), [HTTP API](/docs/{{docsPrefix}}reference/http-api/#request-attribute-values-from-the-server).
+
   
 ### Data Query API
 
-Telemetry Service provides the following REST API to fetch entity data:
+Telemetry Controller provides the following REST API to fetch entity data:
 
 ![image](/images/user-guide/telemetry-service/rest-api.png)
 
 **NOTE:** The API listed above is available via Swagger UI, please review general [REST API](/docs/{{docsPrefix}}reference/rest-api/) documentation for more details.
 The API is backward compatible with TB v1.0+ and this is the main reason why API call URLs contain "plugin".
 
-#### Attribute keys API
+### Data visualization
 
-You can fetch the list of all *attribute keys* for a particular *entity type* and *entity id* using a GET request to the following URL  
- 
-```shell
-http(s)://host:port/api/plugins/telemetry/{entityType}/{entityId}/keys/attributes
-```
+TODO: links to how to use the attributes in the dashboards. Links to the particular widgets. Talk about filtering.
 
-{% capture tabspec %}get-attributes-keys
-A,get-attributes-keys.sh,shell,resources/get-attributes-keys.sh,/docs/{{docsPrefix}}user-guide/resources/get-attributes-keys.sh
-B,get-attributes-keys-result.json,json,resources/get-attributes-keys-result.json,/docs/{{docsPrefix}}user-guide/resources/get-attributes-keys-result.json{% endcapture %}
-{% include tabs.html %}
+### Rule engine
 
-Supported entity types are: TENANT, CUSTOMER, USER, RULE, DASHBOARD, ASSET, DEVICE, ALARM
-
-#### Attribute values API
-
-You can fetch list of the latest values for particular *entity type* and *entity id* using a GET request to the following URL  
- 
-```shell
-http(s)://host:port/api/plugins/telemetry/{entityType}/{entityId}/values/attributes?keys=key1,key2,key3
-```
-
-{% capture tabspec %}get-telemetry-values
-A,get-attributes-values.sh,shell,resources/get-attributes-values.sh,/docs/{{docsPrefix}}user-guide/resources/get-attributes-values.sh
-B,get-attributes-values-result.json,json,resources/get-attributes-values-result.json,/docs/{{docsPrefix}}user-guide/resources/get-attributes-values-result.json{% endcapture %}
-{% include tabs.html %}
-
-Supported entity types are: TENANT, CUSTOMER, USER, RULE, DASHBOARD, ASSET, DEVICE, ALARM
-
-### Telemetry Rule Node
-
-There are Rule Nodes in the Rule Engine that allows to work with Telemetry Service. Please find more details in node description:
-
-- [**Enrichment Nodes - load latest telemetry for entity**](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/enrichment-nodes/)
-- [**Save Timeseries**](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#save-timeseries-node)
-- [**Save Attributes**](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#save-attributes-node)
-
-## Data visualization
-
-ThingsBoard provides the ability to configure and customize dashboards for data visualization.
-This topic is covered in a separate guide.    
-<p><a href="/docs/{{docsPrefix}}user-guide/visualization" class="button">Data Visualization guide</a></p>
-
-## Rule engine
-
-ThingsBoard provides the ability to configure data processing rules.
-Device attributes can be used inside rule filters. This allows applying rules based on certain device properties.
-You can find more details in a separate guide.
-<p><a href="/docs/{{docsPrefix}}user-guide/rule-engine" class="button">Rule Engine guide</a></p>
+TODO: links to how to use the attributes in the rule chains and alarm rules. Links to the particular rule ndoes.
 
 ## Performance enhancement
 
@@ -149,3 +251,11 @@ Having attributes cache enabled ThingsBoard will load the specific attribute fro
 
 **NOTE:** If you are using Redis cache, make sure that you change <b>maxmemory-policy</b> to <b>allkeys-random</b> to prevent Redis from filling up all available memory.
 
+
+## Old video Tutorial
+
+<div id="video">
+  <div id="video_wrapper">
+    <iframe src="https://www.youtube.com/embed/JCW_hShAp7I" frameborder="0" allowfullscreen=""></iframe>
+  </div>
+</div>

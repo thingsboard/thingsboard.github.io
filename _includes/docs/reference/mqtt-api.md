@@ -91,6 +91,7 @@ In order to publish client-side device attributes to ThingsBoard server node, se
 ```shell
 v1/devices/me/attributes
 ```
+{: .copy-code}
 
 {% capture tabspec %}mqtt-attributes-upload
 A,Mosquitto,shell,resources/mosquitto-attributes-publish.sh,/docs/reference/resources/mosquitto-attributes-publish.sh

@@ -1,3 +1,5 @@
+* TOC 
+{:toc}
 
 ## Prerequisites
 
@@ -249,11 +251,11 @@ List of entity fields depends on the entity type and may extend in the future:
  * **User** has the following fields: created time, first name, last name, email and additional info.
  * **Customer** has the following fields: create time, entity type, email, title, country, state, city, address, zip code, phone, additional info.
 
-###### 2.1. Basic data key configuration
+###### 3.1. Basic data key configuration
 
 Coming soon...
 
-###### 2.2. Advanced data key configuration
+###### 3.2. Advanced data key configuration
 
 Coming soon...
 
