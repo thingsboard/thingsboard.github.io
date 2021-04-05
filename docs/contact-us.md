@@ -1,7 +1,7 @@
 ---
 layout: common
 title: Contact us
-
+notitle: "true"
 ---
 <script type="text/javascript">
 
@@ -58,42 +58,45 @@ title: Contact us
     }
     
     function isEmpty(val) {
-        return val === undefined || val.trim().length == 0;
+        return val === undefined || val === null || val.trim().length == 0;
     }
 
 </script>
-
+<h1 class="contact-us-title">Contact Us</h1>
+<div id="background">
+    <div class="main1"></div><div class="small1"></div><div class="small2"></div><div class="small3"></div><div class="small4"></div>
+</div>
 <form id="contact-form" method="post" class="contact-form" onsubmit="return validateContactForm(this)">
     <fieldset>
-        <div class="form-section mb30">
+        <div class="form-section">
             <div class="form-element first half">
                 <label for="first-name">
-                    <input class="form-control" value="" name="first-name" type="text" size="40" maxlength="50">
+                    <input class="form-control" value="" placeholder="Enter First Name" name="first-name" type="text" size="40" maxlength="50">
                     <p>First Name*</p>
                 </label>
             </div>
             <div class="form-element half">
                 <label for="last-name">
-                    <input class="form-control" value="" name="last-name" type="text" size="40" maxlength="50">
+                    <input class="form-control" value="" placeholder="Enter Last Name" name="last-name" type="text" size="40" maxlength="50">
                     <p>Last Name*</p>
                 </label>
             </div>
             <div class="form-element first half">
                 <label for="email">
-                    <input class="form-control" value="" name="email" type="email" size="40" maxlength="80">
+                    <input class="form-control" value="" placeholder="Enter Email" name="email" type="email" size="40" maxlength="80">
                     <p>Email Address*</p>
                 </label>
             </div>
             <div class="form-element half">
                 <label for="company">
-                    <input class="form-control" value="" name="company" type="text" size="40" maxlength="80">
+                    <input class="form-control" value="" placeholder="Enter Company" name="company" type="text" size="40" maxlength="80">
                     <p>Company*</p>
                 </label>
             </div>
             <div class="form-element">
-                <label for="subject">
+                <label for="subject" class="select-label">
                     <select class="form-control select" name="subject">
-                        <option value=""></option>
+                        <option value="" disabled selected>Select Subject</option>
                         <option value="Technical Support">Technical Support</option>
                         <option value="ThingsBoard Products">ThingsBoard Products</option>
                         <option value="Deployment Options">Deployment Options</option>
@@ -109,14 +112,14 @@ title: Contact us
             </div>        
             <div class="form-element">
                 <label for="message">
-                    <textarea class="form-control text-area" name="message" cols="50" rows="8" maxlength="3000"></textarea>
+                    <textarea class="form-control text-area" placeholder="Enter Message" name="message" cols="50" rows="4" maxlength="3000"></textarea>
                     <p class="text-area-label">Message*</p>
                 </label>
             </div>
             <input type="hidden" name="_next" value="/docs/contact-us-thanks/" />
             <input type="text" name="_gotcha" style="display:none" />
         </div>    
-        <div class="form-element">
+        <div class="submit-button-container">
              <input class="button" value="Submit" type="submit">
         </div>
     </fieldset>
@@ -130,9 +133,9 @@ title: Contact us
     jqueryDefer(
         function () {
             $( document ).ready(function() {
-                 $('html, body').animate({
+               /*  $('html, body').animate({
                             scrollTop: $('#contact-form').offset().top - 200
-                          }, 0);
+                          }, 0);*/
                  $('#contact-form .form-element .form-control').addClass("input--empty");
                  $('#contact-form .form-element .form-control').on('input', function() {
                       if( !$(this).val() ) {

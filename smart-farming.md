@@ -26,7 +26,7 @@ The following interactive dashboard hosted on live demo server represents smart 
 
 <iframe class="demoDashboardFrame" src="https://demo.thingsboard.io/dashboard/198c2b60-0edc-11e7-942c-bb0136cc33d0?publicId=963ab470-34c9-11e7-a7ce-bb0136cc33d0&source=docs" frameborder="0" width="100%"></iframe>
 <div class="center" style="margin-bottom: 20px;">
-    <a target="_blank" style="padding: 0 40px;" href="https://demo.thingsboard.io/dashboard/1f9828d0-058e-11e7-87f7-bb0136cc33d0?publicId=963ab470-34c9-11e7-a7ce-bb0136cc33d0&source=realtimeIotDashboards" class="button">Live demo</a>
+    <a target="_blank" href="https://demo.thingsboard.io/dashboard/1f9828d0-058e-11e7-87f7-bb0136cc33d0?publicId=963ab470-34c9-11e7-a7ce-bb0136cc33d0&source=realtimeIotDashboards" class="button">Live demo</a>
 </div>
 
 The attached dashboard demonstrates real-time data from IoT sensors that is collected using ThingsBoard MQTT API. The data is stored in Cassandra DB on our demo server.
@@ -51,7 +51,7 @@ ThingsBoard Rule Engine allows to forward incoming data to various analytics sys
 
 ## Learn more
 
-<a style="margin: 10px;" href="/docs/getting-started-guides/helloworld/" class="button">Getting started</a>
+<a style="margin-right: 10px;" href="/docs/getting-started-guides/helloworld/" class="button">Getting started</a>
 <a style="margin: 10px;" href="/industries/agriculture/" class="button">Customers feedback</a>
 <a style="margin: 10px;" href="/docs/#platform-features" class="button">Platform features</a>
 <a style="margin: 10px;" href="/docs/reference/" class="button">Architecture</a>
