@@ -9,9 +9,4 @@ toc:
   path: /docs/pe/reference/msa/
 - title: Deployment scenarios
   path: /docs/pe/reference/iot-platform-deployment-scenarios/
-- title: ThingsBoard Performance
-  section:
-    - title: Data Collection Performance
-      path: /docs/pe/reference/performance/
-    - title: Single instance performance on different AWS instances
-      path: /docs/pe/reference/performance-aws-instances/
+
