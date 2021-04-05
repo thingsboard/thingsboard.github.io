@@ -1,6 +1,6 @@
 {% if page.title %}{% assign title=page.title %}{% endif %}
 {% if page.description %}{% assign description=page.description %}{% endif %}
-
+{% assign docsTag = include.docsTag %}
 {% if docsTag %}
     {% assign foundProduct = site.data.products | where: "tag", docsTag %}
     {% assign productInfo = foundProduct[0] %}

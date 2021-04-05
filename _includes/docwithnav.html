@@ -1,5 +1,6 @@
 {% assign siteData = site.data %}
 {% assign searchPath = "/docs/search/?q=" %}
+{% assign docsTag = include.docsTag %}
 {% if docsTag %}
    {% assign siteData = site.data[docsTag] %}
    {% assign searchPath = "/docs/" | append: docsTag %}
@@ -19,7 +20,7 @@
     <button class="searchButton"></button>
 </div>
 
-{% include head-header.html %}
+{% include head-header.html docsTag=docsTag %}
 <!--  HERO  -->
 <section id="hero">
   <div id="hero-content">
