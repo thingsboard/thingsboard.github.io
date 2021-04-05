@@ -7,26 +7,37 @@
 ThingsBoard provides the user interface and REST APIs to provision and manage multiple entity types and their relations in your IoT application.
 Supported entities are:
 
- - **Tenants** - you can treat the tenant as a separate business-entity: it's an individual or an organization who owns or produce devices and assets;
- Tenant may have multiple tenant administrator users and millions of customers;
- - **Customers** - the customer is also a separate business-entity: individual or organization who purchase or uses tenant devices and/or assets;
+ - **[Tenants](/docs/{{docsPrefix}}user-guide/ui/tenants/)** - you can treat the tenant as a separate business-entity: it's an individual or an organization who owns or produce devices and assets;
+ Tenant may have multiple tenant administrator users and millions of customers, devices and assets;
+ - **[Customers](/docs/{{docsPrefix}}user-guide/ui/customers/)** - the customer is also a separate business-entity: individual or organization who purchase or uses tenant devices and/or assets;
  Customer may have multiple users and millions of devices and/or assets;
- - **Users** - users are able to browse dashboards and manage entities;
- - **Devices** - basic IoT entities that may produce telemetry data and handle RPC commands. For example, sensors, actuators, switches;
- - **Assets** - abstract IoT entities that may be related to other devices and assets. For example factory, field, vehicle;
- - **Alarms** - events that identify issues with your assets, devices, or other entities;
- - **Dashboards** - visualization of your IoT data and ability to control particular devices through the user interface;
+ - **[Users](/docs/{{docsPrefix}}user-guide/ui/users/)** - users are able to browse dashboards and manage entities;
+ - **[Devices](/docs/{{docsPrefix}}user-guide/ui/devices/)** - basic IoT entities that may produce telemetry data and handle RPC commands. For example, sensors, actuators, switches;
+ - **[Assets](/docs/{{docsPrefix}}user-guide/ui/assets/)** - abstract IoT entities that may be related to other devices and assets. For example factory, field, vehicle;
+ - **[Entity Views](/docs/{{docsPrefix}}user-guide/entity-views/)** - useful if you like to share only part of device or asset data to the customers;
+ - **[Alarms](/docs/{{docsPrefix}}user-guide/alarms/)** - events that identify issues with your assets, devices, or other entities;
+ - **[Dashboards](/docs/{{docsPrefix}}user-guide/dashboards/)** - visualization of your IoT data and ability to control particular devices through the user interface;
  - **Rule Node** - processing units for incoming messages, entity lifecycle events, etc;
- - **Rule Chain** - a logic unit of related Rule Nodes;
-
+ - **Rule Chain** - defines the flow of the processing in the [Rule Engine](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/re-getting-started/). May contain many rule nodes and links to other rule chains;
 
 Each entity supports:
 
- - **Attributes** - static and semi-static key-value pairs associated with entities. For example serial number, model, firmware version;
- - **Telemetry data** - time-series data points available for storage, querying and visualization. For example temperature, humidity, battery level;
+ - **[Attributes](/docs/{{docsPrefix}}user-guide/attributes/)** - static and semi-static key-value pairs associated with entities. For example serial number, model, firmware version;
+ - **[Time-series data](/docs/{{docsPrefix}}user-guide/time-series/)** - time-series data points available for storage, querying and visualization. For example temperature, humidity, battery level;
  - **Relations** - directed connections to other entities. For example contains, manages, owns, produces.
 
-Moreover, devices and assets also have their own types. This allows distinguishing them and process data from them differently.
+Some entities support profiles:
+
+  - **[Tenant Profiles](/docs/{{docsPrefix}}user-guide/tenant-profiles/)** - contains common settings for multiple tenants: entity, API and rate limits, etc. Each Tenant has the one and only profile at a single point in time.
+  - **[Device Profiles](/docs/{{docsPrefix}}user-guide/device-profiles/)** - contains common settings for multiple devices: processing and transport configuration, etc. Each Device has the one and only profile at a single point in time.
+
+{% if docsPrefix == "pe/" %}
+ThingsBoard Professional Edition allows you to configure multiple custom [Entity Groups](/docs/pe/user-guide/groups/). Each entity (device/asset/entity view/customer/user/dashboard) may belong to multiple groups simultaneously.
+Entity Group always have an owner - particular Tenant or Customer.
+Entity Groups are useful for dashboards and data processing, but the primary reason of their existence is to support advanced Role-Based Access Control ([RBAC](/docs/pe/user-guide/rbac/)) for IoT.
+{% endif %}
+
+
 
 This guide provides an overview of the features listed above, some useful links to get more details, and real-life examples of their usage.
 
