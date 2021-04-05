@@ -4,6 +4,24 @@ assignees:
 - ashvayka
 title: Working with IoT dashboards
 description: IoT dashboards using ThingsBoard
+creating-dash:
+    0:
+        image: /images/user-guide/dashboards/creating-dash.png
+    1:
+        image: /images/user-guide/dashboards/creating-dash-1.png
+    2:
+        image: /images/user-guide/dashboards/creating-dash-2.png
+
+make-public:
+    0:
+        image: /images/user-guide/dashboards/creating-dash.png
+    1:
+        image: /images/user-guide/dashboards/make-public-1.png
+    2:
+        image: /images/user-guide/dashboards/make-public-2.png
+    3:
+        image: /images/user-guide/dashboards/make-public-3.png
+
 dash-title:
     0:
         image: /images/user-guide/dashboards/dash-title.png 
@@ -582,11 +600,11 @@ List of entity fields depends on the entity type and may extend in the future:
  * **User** has the following fields: created time, first name, last name, email and additional info.
  * **Customer** has the following fields: create time, entity type, email, title, country, state, city, address, zip code, phone, additional info.
 
-###### 3.1. Basic Data keys settings
+###### 2.1. Basic data key configuration
 
 Coming soon...
 
-###### 3.2. Advanced Data keys settings
+###### 2.2. Advanced data key configuration
 
 Coming soon...
 
@@ -735,6 +753,12 @@ All other intervals are distinguished in the same way.
 
 {% include images-gallery.html imageCollection="tw-current-day" %}
 
+There are 5 aggregation functions available at the moment: **Min**, **Max**, **Average**, **Sum** and **Count**. 
+The special function called **None** is used to disable the aggregation.
+The default behavior of the dashboard is to show average values for the last minute grouped into 1 second intervals.
+Most likely, you will need to change this interval to last day or even last 30 days. 
+You may notice that the value of minimum grouping interval is automatically adjusted according to the main time interval.
+The goal of the adjustment is to keep number of intervals lower than configurable value (700 in our case).
 There are times when the time intervals are long, and you'd like to see the data closer without changing timestamps, therefore, you need to zoom in. Zoom in by holding the right mouse key and move it on the chart
 in the place where you need to get a closer look. To zoom out to the original size of the chart, double-click on the widget.
 
