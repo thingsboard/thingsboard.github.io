@@ -6,7 +6,9 @@ description: ThingsBoard Professional Edition documentation - learn about the pl
 
 <p>The ThingsBoard Professional Edition(PE) documentation can help you set up ThingsBoard PE, learn about the platform and get your IoT projects running on ThingsBoard PE.</p>
 
-<a style="margin: 10px 10px 10px 0;" href="/docs/getting-started-guides/helloworld-pe/" class="button">Getting started</a>
+<a style="margin: 10px 10px 10px 0;" href="/docs/pe/getting-started-guides/what-is-thingsboard/" class="button">ThingsBoard Overview</a>
+<a style="margin: 10px;" href="/docs/getting-started-guides/helloworld-pe/" class="button">Getting started</a>
+<a style="margin: 10px;" href="/docs/pe/guides/" class="button">&nbsp;&nbsp;&nbsp;Guides&nbsp;&nbsp;&nbsp;</a>
 
 <h2 id="features">Professional Edition Features</h2>
 

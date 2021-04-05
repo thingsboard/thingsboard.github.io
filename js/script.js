@@ -296,7 +296,10 @@ var tb = (function () {
         var locationHash = window.location.hash;
         if (locationHash && locationHash.startsWith('#')) {
             var nodeId = locationHash.substring(1);
-            var item = $('.pi-accordion div[data-item-id='+nodeId);
+            if (nodeId.endsWith('/')) {
+                nodeId = nodeId.substring(0, nodeId.length - 1);
+            }
+            var item = $('.pi-accordion div[data-item-id='+nodeId+']');
             if (item.length) {
                 openFaqNode(nodeId);
             }
@@ -442,7 +445,7 @@ var tb = (function () {
 
 	function setYAH() {
 		var pathname = location.href.split('#')[0]; // on page load, make sure the page is YAH even if there's a hash
-        pathname = location.href.split('?')[0];
+        pathname = pathname.split('?')[0];
 		var currentLinks = [];
 
 		$('.pi-accordion a').each(function () {

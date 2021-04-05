@@ -62,7 +62,7 @@ The following interactive dashboard hosted on live demo server represents smart 
 
 <iframe class="demoDashboardFrame" src="https://demo.ThingsBoard.io/dashboard/3a1026e0-83f6-11e7-b56d-c7f326cba909?publicId=322a2330-7c36-11e7-835d-c7f326cba909" frameborder="0" width="100%"></iframe>
 <div class="center" style="margin-bottom: 20px;">
-    <a target="_blank" style="padding: 0 40px;" href="https://demo.ThingsBoard.io/dashboard/3a1026e0-83f6-11e7-b56d-c7f326cba909?publicId=322a2330-7c36-11e7-835d-c7f326cba909" class="button">Live demo</a>
+    <a target="_blank" href="https://demo.ThingsBoard.io/dashboard/3a1026e0-83f6-11e7-b56d-c7f326cba909?publicId=322a2330-7c36-11e7-835d-c7f326cba909" class="button">Live demo</a>
 </div>
 
 The attached dashboard demonstrates real-time data from smart-meters that is collected using [ThingsBoard MQTT API](/docs/reference/mqtt-api/). The data is stored in Cassandra DB on our demo server.
@@ -90,7 +90,7 @@ ThingsBoard Rule Engine enables forwarding incoming data to various analytics sy
 
 ## Learn more
 
-<a style="margin: 10px;" href="/docs/getting-started-guides/helloworld/" class="button">Getting started</a>
+<a style="margin-right: 10px;" href="/docs/getting-started-guides/helloworld/" class="button">Getting started</a>
 <a style="margin: 10px;" href="/industries/smart-buildings/" class="button">Customers feedback</a>
 <a style="margin: 10px;" href="/docs/#platform-features" class="button">Platform features</a>
 <a style="margin: 10px;" href="/docs/reference/" class="button">Architecture</a>

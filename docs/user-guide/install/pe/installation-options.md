@@ -5,6 +5,7 @@ assignees:
 title: ThingsBoard Professional Edition installation options
 description: ThingsBoard Professional Edition installation instructions for various operation systems and cloud platforms
 notitle: "true"
+redirect_from: "/docs/pe/user-guide/install/installation-options/"
 ---
 
 <div class="installation-options">

@@ -4,7 +4,7 @@ assignees:
 - ashvayka
 title: ThingsBoard Professional Edition cluster setup guide
 description: ThingsBoard Professional Edition cluster setup guide
-
+redirect_from: "/docs/pe/user-guide/install/cluster-setup/"
 ---
 
 <div class="installation-options">
