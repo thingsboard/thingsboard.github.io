@@ -35,7 +35,7 @@ ThingsBoard provides
 [MQTT](/docs/{{docsPrefix}}reference/mqtt-api), 
 [CoAP](/docs/{{docsPrefix}}reference/coap-api) and 
 [HTTP](/docs/{{docsPrefix}}reference/http-api) protocols support.
-**Existing** devices may be connected to the platform using **[ThingsBoard Gateway](/docs/{{docsPrefix}}iot-gateway/what-is-iot-gateway/)**.
+**Existing** devices may be connected to the platform using **[ThingsBoard Gateway](/docs/iot-gateway/what-is-iot-gateway/)**.
 You can find more information on the [connectivity](/docs/{{docsPrefix}}reference/protocols/) page. 
 
 ## Do I need to use an SDK?
@@ -57,7 +57,7 @@ Each device has unique access token credentials that is used to setup connection
 ThingsBoard platform is horizontally scalable. Each server node in the cluster is unique.
 Scalability is achieved using [consistent-hashing](https://dzone.com/articles/simple-magic-consistent) load balancing algorithm between the cluster nodes.
 Actual performance depends on usage scenario of connected devices. 
-For example, small commodity hardware cluster can support [several millions](/docs/{{docsPrefix}}reference/iot-platform-deployment-scenarios/#1-million-smart-meters-tco/) of devices connected over MQTT. 
+For example, small commodity hardware cluster can support [several millions](/docs/{{docsPrefix}}reference/iot-platform-deployment-scenarios/#1-million-smart-meters-tco) of devices connected over MQTT.
   
 ## Where does ThingsBoard store data?
 
