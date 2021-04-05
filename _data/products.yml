@@ -19,6 +19,12 @@
   icon: /images/thingsboard-cm-icon.svg
   path: /docs/
   docsPrefix: /docs/
+- title: Edge
+  fulltitle: ThingsBoard Edge
+  description: ThingsBoard Documentation
+  tag: edge
+  icon: /images/edge-icon.svg
+  path: /docs/edge/
 - title: IoT Gateway
   fulltitle: ThingsBoard IoT Gateway
   description: ThingsBoard Documentation

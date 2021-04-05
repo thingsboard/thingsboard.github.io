@@ -1,0 +1,67 @@
+bigheader: "ThingsBoard Edge Documentation"
+abstract: "Distribute data processing and analysis using edge computing."
+toc:
+- title: ThingsBoard Edge
+  path: /docs/edge/
+  beta: true
+  section:
+    - title: What is ThingsBoard Edge?
+      path: /docs/edge/what-is-edge/
+    - title: Getting Started
+      section:
+        - title: Professional Edition
+          path: /docs/edge/getting-started/getting-started-pe/
+        - title: Community Edition
+          path: /docs/edge/getting-started/getting-started-ce/
+    - title: Architecture
+      path: /docs/edge/edge-architecture/
+    - title: Upgrade instructions for ThingsBoard server
+      section:
+        - title: Professional Edition
+          path: /docs/edge/upgrade-server-pe/
+        - title: Community Edition
+          path: /docs/edge/upgrade-server-ce/
+    - title: Provision ThingsBoard Edge on ThingsBoard server
+      section:
+        - title: Professional Edition
+          path: /docs/edge/provision-edge-on-server-pe/
+        - title: Community Edition
+          path: /docs/edge/provision-edge-on-server-ce/
+    - title: Edge Rule Engine
+      section:
+        - title: General Overview
+          path: /docs/edge/rule-engine/general/
+        - title: Rule Chain Templates
+          path: /docs/edge/rule-engine/rule-chain-templates/
+        - title: Provision Rule Chains from cloud to edge
+          path: /docs/edge/rule-engine/provision-rule-chains/
+        - title: Push data from edge to cloud and vice versa
+          path: /docs/edge/rule-engine/push-data/
+    - title: Security
+      section:
+        - title: Enable gRPC over SSL/TLS for edge communication
+          path: /docs/edge/security/grpc-over-ssl/
+    - title: Features
+      section:
+        - title: Edge status
+          path: /docs/edge/features/edge-status/
+        - title: Cloud Events
+          path: /docs/edge/features/cloud-events/
+    - title: Use Cases
+      section:
+        - title: Overview
+          path: /docs/edge/use-cases/overview/
+        - title: Manage alarms and RPC requests on edge devices
+          section:
+            - title: Professional Edition
+              path: /docs/edge/use-cases/manage-alarms-rpc-requests-pe/
+            - title: Community Edition
+              path: /docs/edge/use-cases/manage-alarms-rpc-requests-ce/
+        - title: Data filtering and traffic reduce
+          section:
+            - title: Professional Edition
+              path: /docs/edge/use-cases/data-filtering-traffic-reduce-pe/
+            - title: Community Edition
+              path: /docs/edge/use-cases/data-filtering-traffic-reduce-ce/
+    - title: ThingsBoard Edge Roadmap
+      path: /docs/edge/roadmap/

@@ -1,0 +1,37 @@
+bigheader: "Installation"
+abstract: "Documentation for installation and configuration of ThingsBoard Edge."
+toc:
+- title: Installation options
+  path: /docs/edge/install/installation-options/
+- title: Installing Edge on Ubuntu (DEB)
+  path: /docs/edge/install/deb-installation/
+- title: Installing Edge on CentOS/RHEL (RPM)
+  path: /docs/edge/install/rhel/
+- title: Installing Edge on Windows
+  path: /docs/edge/install/windows/
+- title: Installing Edge using Docker (Windows)
+  path: /docs/edge/install/docker-windows/
+- title: Installing Edge using Docker (Linux or Mac OS)
+  path: /docs/edge/install/docker/
+- title: Configuration guides
+  section:
+    - title: Community Edition
+      section:
+        - title: Edge Management Overview
+          path: /docs/edge/config/ce/management/
+        - title: Create Device on edge and provision to cloud
+          path: /docs/edge/config/ce/create-device/
+        - title: Provision Device from cloud to edge
+          path: /docs/edge/config/ce/provision-device/
+        - title: Provision Asset from cloud to edge
+          path: /docs/edge/config/ce/provision-asset/
+        - title: Provision Entity View from cloud to edge
+          path: /docs/edge/config/ce/provision-entity-view/
+        - title: Provision Dashboard from cloud to edge
+          path: /docs/edge/config/ce/provision-dashboard/
+        - title: Provision User from cloud to edge
+          path: /docs/edge/config/ce/provision-user/
+        - title: Provision Customer from cloud to edge
+          path: /docs/edge/config/ce/provision-customer/
+    - title: Professional Edition
+      path: /docs/edge/config/pe/coming-soon/
