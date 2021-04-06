@@ -5,7 +5,7 @@ Action Nodes execute various actions based on incoming Message.
 
 # Create Alarm Node
 
-<table  style="width:12%">
+<table  style="width:250px;">
    <thead>
      <tr>
 	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
@@ -143,7 +143,7 @@ You can see the real life example, where this node is used, in the next tutorial
 
 # Clear Alarm Node
 
-<table  style="width:12%">
+<table  style="width:250px;">
    <thead>
      <tr>
 	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
@@ -263,7 +263,7 @@ You can see the real life example, where this node is used, in the next tutorial
 
 # Delay Node
 
-<table  style="width:12%">
+<table  style="width:250px;">
    <thead>
      <tr>
 	 <td style="text-align: center"><strong><em>Since TB Version 2.1</em></strong></td>
@@ -290,7 +290,7 @@ Each next message will be routed via **Failure** chain if the maximum pending me
 
 # Generator Node
 
-<table  style="width:12%">
+<table  style="width:250px;">
    <thead>
      <tr>
 	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
@@ -337,7 +337,7 @@ This node can be used for Rule Chain debugging purposes.
 
 # Log Node 
 
-<table  style="width:12%">
+<table  style="width:250px;">
    <thead>
      <tr>
 	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
@@ -369,7 +369,7 @@ You can see the real life example, where this node is used, in the next tutorial
 
 # RPC Call Reply Node
 
-<table  style="width:12%">
+<table  style="width:250px;">
    <thead>
      <tr>
 	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
@@ -418,7 +418,7 @@ You can see the real life example, where this node is used, in the next tutorial
 
 # RPC Call Request Node
 
-<table  style="width:12%">
+<table  style="width:250px;">
    <thead>
      <tr>
 	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
@@ -467,7 +467,7 @@ For more details how RPC works in the Thingsboard, please read [RPC capabilities
 
 # Save Attributes Node
 
-<table  style="width:12%">
+<table  style="width:250px;">
    <thead>
      <tr>
 	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
@@ -511,7 +511,7 @@ otherwise **Failure** chain is used.
 
 # Save Timeseries Node 
 
-<table  style="width:12%">
+<table  style="width:250px;">
    <thead>
      <tr>
 	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
@@ -556,7 +556,7 @@ otherwise **Failure** chain is used.
 
 # Save to Custom Table
 
-<table  style="width:12%">
+<table  style="width:250px;">
    <thead>
      <tr>
 	 <td style="text-align: center"><strong><em>Since TB Version 2.3.1</em></strong></td>
@@ -586,7 +586,7 @@ If specified message field does not exist or is not a JSON Primitive, the outbou
 
 # Assign To Customer Node 
 
-<table  style="width:12%">
+<table  style="width:250px;">
    <thead>
      <tr>
 	 <td style="text-align: center"><strong><em>Since TB Version 2.2</em></strong></td>
@@ -623,7 +623,7 @@ In other cases Message will be routed via **Success** chain.
 
 # Unassign From Customer Node
 
-<table  style="width:12%">
+<table  style="width:250px;">
    <thead>
      <tr>
 	 <td style="text-align: center"><strong><em>Since TB Version 2.2</em></strong></td>

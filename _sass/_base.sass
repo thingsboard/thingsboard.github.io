@@ -1088,6 +1088,9 @@ section
         visibility: visible
         opacity: 1
     #search
+      -webkit-appearance: none
+      -moz-appearance: none
+      appearance: none
       width: 100%
       padding: 0 16px
       height: 44px
@@ -1115,6 +1118,7 @@ section
           opacity: 0.2
     .searchButton
       position: absolute
+      padding: 0
       top: 10px
       right: 12px
       display: inline-block
@@ -1796,58 +1800,6 @@ $header-clearance: 210px
     img
       max-width: 75%
       max-height: 85%
-
-  table.company-contacts
-    width: auto
-    background: $professional-color
-    color: #fff
-    padding: 15px
-    border: none
-    box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 4px 0 rgba(0, 0, 0, 0.14), 0 3px 3px -2px rgba(0, 0, 0, 0.12)
-
-    tr
-      background: none
-
-    td
-      font-weight: 500
-      font-size: 18px
-
-      &:first-child
-        text-align: center
-
-      a.mail
-        font-weight: 500
-        color: #fff
-
-        &:hover
-          text-decoration: underline
-
-      a.button
-        background-color: #fff
-        color: $professional-color
-        line-height: 30px
-        padding: 0.3rem 1.5rem
-        border: 2px solid #fff
-
-        &:hover
-          background-color: #3c6c79
-          color: white
-          border: 2px solid #fff
-          transition: 0.3s
-
-      &.contact-us
-        padding-top: 20px
-
-    .fa
-      color: $professional-color
-      font-size: 28px
-      margin-right: 10px
-      background: rgba(255, 255, 255, 0.8)
-      box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 4px 0 rgba(0, 0, 0, 0.14), 0 3px 3px -2px rgba(0, 0, 0, 0.12)
-      border-radius: 20%
-      width: 40px
-      height: 40px
-      line-height: 40px
 
   a.issue
     margin-left: 20px

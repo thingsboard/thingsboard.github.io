@@ -6,7 +6,7 @@ External Nodes used are used to interact with external systems.
 
 # AWS SNS Node
 
-<table  style="width:12%">
+<table  style="width:250px;">
    <thead>
      <tr>
 	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
@@ -52,7 +52,7 @@ If required, Rule Chain can be configured to use chain of Transformation Nodes f
 
 # AWS SQS Node
 
-<table  style="width:12%">
+<table  style="width:250px;">
    <thead>
      <tr>
 	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
@@ -107,7 +107,7 @@ and **sequenceNumber** in Message metadata. Original Message payload, type and o
 
 # Kafka Node
 
-<table  style="width:12%">
+<table  style="width:250px;">
    <thead>
      <tr>
 	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
@@ -171,7 +171,7 @@ Original Message payload, type and originator will not be changed.
 
 # MQTT Node
 
-<table  style="width:12%">
+<table  style="width:250px;">
    <thead>
      <tr>
 	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
@@ -220,7 +220,7 @@ otherwise **Failure** chain is used.
 
 # Azure IoT Hub Node
 
-<table  style="width:12%">
+<table  style="width:250px;">
    <thead>
      <tr>
 	 <td style="text-align: center"><strong><em>Since TB Version 2.5.3</em></strong></td>
@@ -271,7 +271,7 @@ otherwise **Failure** chain is used.
 
 # RabbitMQ Node
 
-<table  style="width:12%">
+<table  style="width:250px;">
    <thead>
      <tr>
 	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
@@ -310,7 +310,7 @@ otherwise **Failure** chain is used.
 
 # REST API Call Node
 
-<table  style="width:12%">
+<table  style="width:250px;">
    <thead>
      <tr>
 	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
@@ -362,7 +362,7 @@ otherwise **Failure** chain is used.
 
 # Send Email Node
 
-<table  style="width:12%">
+<table  style="width:250px;">
    <thead>
      <tr>
 	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
@@ -412,7 +412,7 @@ You can see the real life example, where this node is used, in the next tutorial
 
 # Send SMS Node
 
-<table  style="width:12%">
+<table  style="width:250px;">
    <thead>
      <tr>
 	 <td style="text-align: center"><strong><em>Since TB Version 3.2</em></strong></td>
@@ -436,7 +436,7 @@ If SMS message will be sent to all recipients successfully, original Message wil
 
 # Twilio SMS Node
 
-<table  style="width:12%">
+<table  style="width:250px;">
    <thead>
      <tr>
 	 <td style="text-align: center"><strong><em>Since TB Version 2.0.2</em></strong></td>

@@ -15,7 +15,7 @@ Analytics Nodes that are specific to ThingsBoard PE. Used for analysis of stream
 
 # Aggregate Latest Node
 
-<table  style="width:12%">
+<table  style="width:250px;">
    <thead>
      <tr>
 	 <td style="text-align: center"><strong><em>Since TB Version 2.1</em></strong></td>
@@ -83,7 +83,7 @@ with failure reason and parent entity as originator. Failure message is forwarde
 
 # Aggregate Stream Node
 
-<table  style="width:12%">
+<table  style="width:250px;">
    <thead>
      <tr>
 	 <td style="text-align: center"><strong><em>Since TB Version 2.1</em></strong></td>
@@ -120,7 +120,7 @@ specifying "Buildings" entity group.
 
 # Alarms Count Node
 
-<table  style="width:12%">
+<table  style="width:250px;">
    <thead>
      <tr>
 	 <td style="text-align: center"><strong><em>Since TB Version 3.2.2</em></strong></td>
@@ -163,7 +163,7 @@ with failure reason and entity as originator. Failure message is forwarded via *
 
 # Alarms Count Node (deprecated)
 
-<table  style="width:12%">
+<table  style="width:250px;">
    <thead>
      <tr>
 	 <td style="text-align: center"><strong><em>Since TB Version 2.1</em></strong></td>

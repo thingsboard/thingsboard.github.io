@@ -6,7 +6,7 @@ Transformation Nodes are used for changing incoming Message fields like Originat
 
 # Change originator
 
-<table  style="width:12%">
+<table  style="width:250px;">
    <thead>
      <tr>
 	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
@@ -44,7 +44,7 @@ Outbound Message will have new originator Id.
 
 # Script Transformation Node
 
-<table  style="width:12%">
+<table  style="width:250px;">
    <thead>
      <tr>
 	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
@@ -120,7 +120,7 @@ You can see real life example, how to use this node in those tutorials:
 
 # To Email Node
 
-<table  style="width:12%">
+<table  style="width:250px;">
    <thead>
      <tr>
 	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>

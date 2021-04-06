@@ -35,23 +35,23 @@
                 transition: opacity 0.5s
                 opacity: 1
             &.small1
-                top: -375px
-                right: -1289px
+                top: -345px
+                right: -989px
                 background-color: #305680
                 transition: top 0.5s, right 0.5s
             &.small2
-                top: -147px
-                right: 866px
+                top: -177px
+                right: 566px
                 background-color: #2A7DEC
                 transition: top 0.5s, right 0.5s
             &.small3
-                top: -436px
-                left: 1108px
+                top: -406px
+                left: 808px
                 background-color: #2A7DEC
                 transition: top 0.5s, left 0.5s
             &.small4
-                top: -66px
-                right: 1050px
+                top: -96px
+                right: 750px
                 border: 2px solid #0D2743
                 transition: top 0.5s, right 0.5s
         &.opened
@@ -59,17 +59,17 @@
                 &.main1
                     opacity: 0
                 &.small1
-                    top: -400px
-                    right: -1428px
+                    top: -370px
+                    right: -1128px
                 &.small2
-                    top: -122px
-                    right: 1005px
+                    top: -152px
+                    right: 705px
                 &.small3
-                    top: -460px
-                    left: 1244px
+                    top: -430px
+                    left: 944px
                 &.small4
-                    top: -41px
-                    right: 1189px
+                    top: -71px
+                    right: 889px
 
     .contact-form
         z-index: 2
@@ -290,6 +290,12 @@
 @media screen and (min-width: 1700px)
     #docsContent
         .contact-form, #contact-us-thanks
-            width: 50%
+            width: 75%
         .contact-form
-            left: 25%
+            left: 12.5%
+@media screen and (min-width: 1921px)
+    #docsContent
+        .contact-form, #contact-us-thanks
+            width: 1050px
+        .contact-form
+            left: calc(50% - 525px)

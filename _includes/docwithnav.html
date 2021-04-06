@@ -226,7 +226,7 @@
                 } else {
                     bottom = $('div#content').offset().top + $('div#content').innerHeight();
                 }
-                var contentAnchorInfo = {anchor: contentAnchor, toc: $(this), top: top, bottom: bottom};
+                var contentAnchorInfo = {anchor: contentAnchor, toc: $(this), top: top, bottom: bottom, href: href};
                 contentAnchors.push(contentAnchorInfo);
                 if (i === 0) {
                     firstAnchor = contentAnchorInfo;
@@ -255,19 +255,23 @@
             return firstAnchor;
         }
 
-        function updateActiveToc() {
+        function updateActiveToc(init) {
             updatePositions();
             var newActiveAnchor = findActiveContentToc();
-            if (newActiveAnchor !== activeAnchor) {
+            if (!activeAnchor || newActiveAnchor.href !== activeAnchor.href) {
                 activeAnchor = newActiveAnchor;
                 markdownTocs.removeClass('active');
                 activeAnchor.toc.addClass('active');
-                var tocTop = $('#table-of-contents').scrollTop();
-                var tocBottom = tocTop + $('#table-of-contents').innerHeight();
+                var tocTop = $('#table-of-contents').scrollTop() + 100;
+                var tocBottom = tocTop + $('#table-of-contents').innerHeight() - 200;
                 var activeTocTop = activeAnchor.toc.position().top;
-                var activeTocBottom = activeTocTop + activeAnchor.toc.height();
-                if (tocTop > activeTocTop || tocBottom < activeTocBottom) {
+                var activeTocBottom = activeTocTop + activeAnchor.toc.children(':first').height();
+                if (tocTop > activeTocTop) {
                     activeAnchor.toc[0].scrollIntoView();
+                    $('#table-of-contents')[0].scrollTop -= 100;
+                } else if (tocBottom < activeTocBottom) {
+                    activeAnchor.toc[0].scrollIntoView();
+                    $('#table-of-contents')[0].scrollTop += init ? -100 : 100;
                 }
             }
         }
@@ -285,11 +289,11 @@
                     return contentAnchor.length > 0;
                 }
             });
-            updateActiveToc();
+            updateActiveToc(true);
         });
 
         $(document).on("scroll", function() {
-            updateActiveToc();
+            updateActiveToc(false);
         });
 
     });

@@ -13,7 +13,7 @@ redirect_from: "/docs/user-guide/rule-engine-2-0/pe/transformation-nodes"
 
 {% assign feature = "PE Transformation Nodes" %}{% include templates/pe-feature-banner.md %}
 
-<table  style="width:12%">
+<table  style="width:250px;">
    <thead>
      <tr>
 	 <td style="text-align: center"><strong><em>Since TB Version 2.1</em></strong></td>
@@ -48,7 +48,7 @@ Otherwise original message will be forwarded via **Failure** chain.
 
 {% assign feature = "PE Transformation Nodes" %}{% include templates/pe-feature-banner.md %}
 
-<table  style="width:12%">
+<table  style="width:250px;">
    <thead>
      <tr>
 	 <td style="text-align: center"><strong><em>Since TB Version 2.1</em></strong></td>

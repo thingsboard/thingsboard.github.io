@@ -5,7 +5,7 @@ Enrichment Nodes are used to update meta-data of the incoming Message.
 
 ##### Calculate delta
 
-<table  style="width:12%">
+<table  style="width:250px;">
    <thead>
      <tr>
 	 <td style="text-align: center"><strong><em>Since TB Version 3.2.2</em></strong></td>
@@ -66,7 +66,7 @@ msg: {"pulseCounter": 42}, metadata: {"ts": "1616510487000"}, relation: Failure
 
 ##### Customer attributes
 
-<table  style="width:12%">
+<table  style="width:250px;">
    <thead>
      <tr>
 	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
@@ -100,7 +100,7 @@ You can see the real life example, where this node is used, in the next tutorial
 
 ##### Device attributes
 
-<table  style="width:12%">
+<table  style="width:250px;">
    <thead>
      <tr>
 	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
@@ -144,7 +144,7 @@ To access fetched attributes in other nodes you can use this template '<code>met
 
 ##### Originator attributes
 
-<table  style="width:12%">
+<table  style="width:250px;">
    <thead>
      <tr>
 	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
@@ -183,7 +183,7 @@ You can see the real life example, where this node is used, in the following tut
 
 ##### Originator fields
 
-<table  style="width:12%">
+<table  style="width:250px;">
    <thead>
      <tr>
 	 <td style="text-align: center"><strong><em>Since TB Version 2.0.1</em></strong></td>
@@ -212,7 +212,7 @@ To access fetched attributes in other nodes you can use this template '<code>met
 
 ##### Related attributes
 
-<table  style="width:12%">
+<table  style="width:250px;">
    <thead>
      <tr>
 	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
@@ -248,7 +248,7 @@ You can see the real life example, where this node is used, in the next tutorial
 
 ##### Tenant attributes
 
-<table  style="width:12%">
+<table  style="width:250px;">
    <thead>
      <tr>
 	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
@@ -276,7 +276,7 @@ If unsupported Originator type found, an error is thrown.
 
 ##### Originator telemetry
 
-<table  style="width:12%">
+<table  style="width:250px;">
    <thead>
      <tr>
 	 <td style="text-align: center"><strong><em>Since TB Version 2.1.1</em></strong></td>
@@ -364,7 +364,7 @@ You can see the real-life example, where this node is used, in the following tut
 
 ##### Tenant details
 
-<table  style="width:12%">
+<table  style="width:250px;">
    <thead>
      <tr>
 	 <td style="text-align: center"><strong><em>Since TB Version 2.3.1</em></strong></td>
@@ -392,7 +392,7 @@ To access fetched details in other nodes you can use one of the following templa
 
 ##### Customer details
 
-<table  style="width:12%">
+<table  style="width:250px;">
    <thead>
      <tr>
 	 <td style="text-align: center"><strong><em>Since TB Version 2.3.1</em></strong></td>
