@@ -53,6 +53,11 @@ Let's assume you would like to build a building monitoring solution and review f
 
 {% include images-gallery.html imageCollection="server-side-attrs-ui" showListImageTitles="true" %}
 
+{% capture bulk_provisioning %}
+[Bulk provisioning](/docs/{{docsPrefix}}user-guide/bulk-provisioning/) feature allows you to quickly create multiple devices and assets and their attributes from CSV file.
+{% endcapture %}
+{% include templates/info-banner.md content=bulk_provisioning %}
+
 #### Create/Update server-side attribute via REST API
 
 Use [REST API](/docs/{{docsPrefix}}reference/rest-api/) documentation to get the value of the JWT token. You will use it to populate the 'X-Authorization' header and authenticate your REST API call request.
@@ -116,6 +121,8 @@ The user may change the attribute via UI. The script or other server-side applic
 
 {% include images-gallery.html imageCollection="shared-attrs-ui" showListImageTitles="true" %}
 
+{% include templates/info-banner.md content=bulk_provisioning %}
+
 #### Create/Update shared attribute via REST API
 
 Use [REST API](/docs/{{docsPrefix}}reference/rest-api/) documentation to get the value of the JWT token. You will use it to populate the 'X-Authorization' header and authenticate your REST API call request.
@@ -166,7 +173,6 @@ If device went offline, it may miss the important attribute update notification.
 
 {% endcapture %}
 {% include templates/info-banner.md content=missed_updates %}
-
 
 ### Client-side attributes
 
@@ -225,8 +231,12 @@ As an alternative to curl, you may use [Java](/docs/{{docsPrefix}}reference/rest
 - publish *client-side* attributes to the server: [MQTT API](/docs/{{docsPrefix}}reference/mqtt-api/#publish-attribute-update-to-the-server), [CoAP API](/docs/{{docsPrefix}}reference/coap-api/#publish-attribute-update-to-the-server), [HTTP API](/docs/{{docsPrefix}}reference/http-api/#publish-attribute-update-to-the-server);
 - request *client-side* attributes from the server: [MQTT API](/docs/{{docsPrefix}}reference/mqtt-api/#request-attribute-values-from-the-server), [CoAP API](/docs/{{docsPrefix}}reference/coap-api/#request-attribute-values-from-the-server), [HTTP API](/docs/{{docsPrefix}}reference/http-api/#request-attribute-values-from-the-server).
 
+## Attributes persistence
+
+ThingsBoard stores latest value of the attribute and last modification time in the SQL database. This enables use of [entity filters](/docs/{{docsPrefix}}user-guide/dashboards/#entity-filters) in the dashboards.
+Changes to the attributes initiated by the user are recorded in the [audit logs](/docs/{{docsPrefix}}user-guide/audit-log/).
   
-### Data Query API
+## Data Query API
 
 Telemetry Controller provides the following REST API to fetch entity data:
 
@@ -235,13 +245,39 @@ Telemetry Controller provides the following REST API to fetch entity data:
 **NOTE:** The API listed above is available via Swagger UI, please review general [REST API](/docs/{{docsPrefix}}reference/rest-api/) documentation for more details.
 The API is backward compatible with TB v1.0+ and this is the main reason why API call URLs contain "plugin".
 
-### Data visualization
+## Data visualization
 
-TODO: links to how to use the attributes in the dashboards. Links to the particular widgets. Talk about filtering.
+We assume you have already provisioned device attributes. Now you may use them in your dashboards. We recommend [dashboards overview](/docs/{{docsPrefix}}user-guide/dashboards/) to get started.
+Once you are familiar how to create dashboards and configure data sources, 
+you may use [digital](/docs/{{docsPrefix}}user-guide/ui/widget-library/#digital-gauges) and [analog](/docs/{{docsPrefix}}user-guide/ui/widget-library/#analog-gauges) gauges to visualize 
+temperature, speed, pressure or other numeric values. You may also use [cards](/docs/{{docsPrefix}}user-guide/ui/widget-library/#cards) to visualize multiple attributes using card or [entities table](/docs/{{docsPrefix}}user-guide/ui/entity-table-widget/).
 
-### Rule engine
+You may also use [input widgets](/docs/{{docsPrefix}}user-guide/ui/widget-library/#input-widgets) to allow dashboard users to change the values of the attributes on the dashboards.
 
-TODO: links to how to use the attributes in the rule chains and alarm rules. Links to the particular rule ndoes.
+## Rule engine
+
+The [Rule Engine](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/re-getting-started/) is responsible for processing all sorts of incoming data and event.
+You may find most popular scenarios of using attributes within rule engine below:
+
+**Generate alarms based on the logical expressions against attribute values**
+
+Use [alarm rules](/docs/{{docsPrefix}}user-guide/device-profiles/#alarm-rules) to configure most common alarm conditions via UI 
+or use [filter nodes](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/filter-nodes/) to configure more specific use cases via custom JS functions.
+
+**Modify incoming client-side attributes before they are stored in the database**
+
+Use [message type switch](docs/{{docsPrefix}}/user-guide/rule-engine-2-0/filter-nodes/#message-type-switch-node) rule node to filter messages that contain "Post attributes" request. 
+Then, use [transformation rule nodes](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/transformation-nodes/) to modify a particular message. 
+
+**React on the change of server-side attribute**
+
+Use [message type switch](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/filter-nodes/#message-type-switch-node) rule node to filter messages that contain "Attributes Updated" notification.
+Then, use [action](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/) or [external](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/external-nodes/) to react on the incoming event.
+
+**Fetch attribute values to analyze incoming telemetry from device**
+
+Use [enrichment](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/enrichment-nodes/) rule nodes to enrich incoming telemetry message with attributes of the device, related asset, customer or tenant.
+This is extremely powerful technique that allows to modify processing logic and parameters based on settings stored in the attributes. 
 
 ## Performance enhancement
 

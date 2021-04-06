@@ -489,9 +489,10 @@ If you tick this option, all the widgets on the Dashboard will fill in verticall
 
 {% include images-gallery.html imageCollection="autofill" %}
 
-#### Background
 
-##### 1. Background color
+#### Background settings
+
+##### Background color
 
 The Background color option allows you to customize the color that you'd like to be on the Dashboard's background. 
 To alter it, click on the colored circle, and with sliders choose the needed color and wished transparency. Then, press "Save" to apply changes. 
@@ -499,7 +500,7 @@ After saving, you can see the customized background.
 
 {% include images-gallery.html imageCollection="background-settings" %}
 
-##### 2. Background image
+##### Background image
 
 This option allows setting the picture as a background. To do this, you should drop an image in the appropriate field, or upload it from a folder on your computer.
 Once you select it, an image preview will appear on the left of the Settings window. 
