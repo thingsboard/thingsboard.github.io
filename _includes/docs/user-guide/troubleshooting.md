@@ -12,14 +12,14 @@ Growing Latency For Messages%,%growing-latency%,%templates/troubleshooting/scena
 ## Troubleshooting instruments and tips
 
 ### Rule Engine Statistics Dashboard
-You can see if there are any Failures, Timeouts or Exceptions during the processing of your rule-chain. More detailed information you can find [here](/docs/user-guide/rule-engine-2-0/overview/#rule-engine-statistics).
+You can see if there are any Failures, Timeouts or Exceptions during the processing of your rule-chain. More detailed information you can find [here](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#rule-engine-statistics).
 
 ### Consumer group message lag for Kafka Queue
 
 **Note:** This method can be used only if Kafka is selected as a queue.
 
 With this log you can identify if there's some issue with processing of your messages (since Queue is used for all messaging inside the system you can analyze not only rule-engine queues but also <b>transport</b>, <b>core</b> etc).
-For more detailed information about troubleshooting rule-engine processing using consumer-group lag click [here](/docs/user-guide/rule-engine-2-0/overview/#troubleshooting).
+For more detailed information about troubleshooting rule-engine processing using consumer-group lag click [here](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#troubleshooting).
 
 ### CPU/Memory Usage
 
@@ -169,4 +169,4 @@ These metrics are exposed at the path: `https://<yourhostname>/actuator/promethe
 
 If your problem isn't answered by any of the guides above, feel free to contact ThingsBoard team.
 
-<a class="button" href="/docs/contact-us/">Contact us</a>
+<a class="button" href="/docs/{{docsPrefix}}contact-us/">Contact us</a>

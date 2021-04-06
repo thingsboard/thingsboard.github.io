@@ -375,11 +375,16 @@ After pressing **Test** output will be returned in right **Output** section.
 ## Rule Engine Statistics
 
 ThingsBoard Team have prepared the "default" dashboard for Rule Engine statistics. 
-This dashboard is automatically loaded for each tenant. The statistics collection is enabled by default and is controlled via configuration properties.
+This dashboard is automatically loaded for each tenant. 
+You may access it by navigating to "Api Usage"->"View statistics" (see screen below).
+
+{% include images-gallery.html imageCollection="open-statistics"  %}
+
+The statistics collection is enabled by default and is controlled via configuration properties.
 
 You may notice insights about errors in processing and what causes them on the dashbaord below: 
 
-![image](/images/user-guide/rule-engine-2-0/rule-engine-stats-dashboard.png)
+{% include images-gallery.html imageCollection="view-statistics"  %}
 
 ## Debugging
 

@@ -119,7 +119,7 @@ The user may change the attribute via UI. The script or other server-side applic
 
 #### Create/Update shared attribute via Administration UI
 
-{% include images-gallery.html imageCollection="shared-attrs-ui" showListImageTitles="true" %}
+{% include images-gallery.html imageCollection="shared-attrs-ui" %}
 
 {% include templates/info-banner.md content=bulk_provisioning %}
 

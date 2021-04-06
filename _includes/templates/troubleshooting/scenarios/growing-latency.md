@@ -1,5 +1,5 @@
 Sometimes you can experience growing latency of message processing inside the rule-engine. Here are the steps you can take to discover the reason for the issue:
-- Check if there are timeouts in [Rule Engine Statistics Dashboard](#rule-engine-statistics-dashboard). Timeouts in rule-nodes slow down the processing of the queue and can lead to latency.
+- Check if there are timeouts in [Rule Engine Statistics Dashboard](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#rule-engine-statistics). Timeouts in rule-nodes slow down the processing of the queue and can lead to latency.
 
 - [Check CPU usage](#cpumemory-usage) for the following services:
     - ThingsBoard services (tb-nodes, tb-rule-engine and tb-core nodes, transport nodes). High CPU load on some services means that you need to scale up that part of the system.
@@ -11,5 +11,5 @@ Sometimes you can experience growing latency of message processing inside the ru
 
 - Enable [Message Pack Processing Log](#message-pack-processing-log). It will allow you to see the name of the slowest rule-node.
 
-- Separate your use-cases by different queues. If some group of your devices should be processed separately from other devices, you should [configure](/docs/user-guide/device-profiles/#queue-name) the separate rule-engine queue for this group. Also, you can just separate messages based on some logic to different queues inside of the Root rule-engine. By doing this you guaranty that slow processing of one use-case will not affect the processing of the other use-case.
+- Separate your use-cases by different queues. If some group of your devices should be processed separately from other devices, you should [configure](/docs/{{docsPrefix}}user-guide/device-profiles/#queue-name) the separate rule-engine queue for this group. Also, you can just separate messages based on some logic to different queues inside of the Root rule-engine. By doing this you guaranty that slow processing of one use-case will not affect the processing of the other use-case.
 
