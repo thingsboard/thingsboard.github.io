@@ -13,16 +13,25 @@
     };
 
     jqueryDefer(function () {
-        var searchInput = $('#searchGuideInput');
-        searchInput.keyup(function() {
-            window.typeMouseX = window.mouseX;
-            window.typeMouseY = window.mouseY;
+        $( document ).ready(function() {
+            var searchInput = $('#searchGuideInput');
+            searchInput.keyup(function () {
+                window.typeMouseX = window.mouseX;
+                window.typeMouseY = window.mouseY;
+                filterGuides();
+            });
+            searchInput.blur(function () {
+                checkSearchInput();
+            });
+            searchInput.focus(
+                function () {
+                    $(this).parent('#searchGuideBox').addClass('focused');
+                }).blur(
+                function () {
+                    $(this).parent('#searchGuideBox').removeClass('focused');
+                });
             filterGuides();
         });
-        searchInput.blur(function() {
-            checkSearchInput();
-        });
-        filterGuides();
     });
 
     function checkMouseMoved () {
