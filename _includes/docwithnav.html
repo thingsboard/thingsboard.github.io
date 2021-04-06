@@ -99,31 +99,10 @@
 {% endif %}
 
 {% assign docContentClassList = docContentClassList | append: ' hasTocContent' %}
-{% assign tocLines = "" | split: ',' %}
 {% assign hasTocContent = "false" %}
-{% assign contentLines = "" | split: ',' %}
-{% capture newline %}
-{% endcapture %}
-{% assign lines = content | split: newline %}
-{% for line in lines %}
-    {% if line contains '<ul id="markdown-toc"' %}
-        {% assign hasTocContent = "true" %}
-        {% assign tocStarted = 1 %}
-    {% endif %}
-    {% if tocStarted > 0 %}
-        {% if line contains '</ul>' %}
-            {% assign tocStarted = tocStarted | minus: 1 %}
-        {% elsif line contains '<ul>' %}
-            {% assign tocStarted = tocStarted | plus: 1 %}
-        {% endif %}
-        {% assign tocLines = tocLines | push: line %}
-    {% else %}
-        {% assign contentLines = contentLines | push: line %}
-    {% endif %}
-{% endfor %}
-{% assign tocLinesSize = tocLines | size %}
-{% assign tocContent = tocLines | join: newline %}
-{% assign newContent = contentLines | join: newline %}
+{% if content contains '<ul id="markdown-toc"' %}
+    {% assign hasTocContent = "true" %}
+{% endif %}
 
 <section id="encyclopedia">
   {% if siteData[foundTOC].hidetoc != "true" and page.hidetoc != "true" %}
@@ -137,13 +116,12 @@
       <div id="table-of-contents">
           {% if hasTocContent == "true" %}
               <h4>On this page</h4>
-              {{ tocContent }}
           {% endif %}
       </div>
       <div id="top-spacer"></div>
       {% if notitle != "true" %}<h1>{{ title }}</h1>{% endif %}
       <div id="content">
-          {{ newContent }}
+          {{ content }}
       </div>
       {% include footer.html %}
   </div>
@@ -294,6 +272,9 @@
             }
         }
         $( document ).ready(function() {
+            var tocs = $('#content > ul#markdown-toc');
+            var tableOfContents = $('#table-of-contents');
+            tableOfContents.append(tocs);
             markdownTocs = $('#table-of-contents ul#markdown-toc li').filter(function() {
                 var tocAnchor = $(this).children('a');
                 var href = tocAnchor.attr('href');
