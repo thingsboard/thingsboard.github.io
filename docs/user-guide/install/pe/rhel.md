@@ -7,6 +7,8 @@ description: Installing ThingsBoard PE on CentOS/RHEL
 
 ---
 
+{% assign docsPrefix = "pe/" %}
+
 * TOC
 {:toc}
 

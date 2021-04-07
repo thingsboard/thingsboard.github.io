@@ -1,4 +1,6 @@
-Instructions listed below will help you to install Cassandra.
+Instructions listed below will help you to install Cassandra. 
+
+{% include templates/install/cassandra-4x-beta.md %}
 
 ```bash
 # Add cassandra repository
