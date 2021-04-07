@@ -4,6 +4,13 @@ In this case, ThingsBoard will be storing timeseries data in Cassandra while con
 {% endcapture %}
 {% include templates/info-banner.md content=hybrid-info %}
 
+{% capture windows-under-construction %}
+**Important note - this section is under construction:**
+
+With the 3.2.2 release, ThingsBoard requires Cassandra of at least version 4.0. Guide below describes how to install Cassandra of version 3.x. Instructions for the 4.0 are currently under construction - if you wish to use ThingsBoard 3.2.2, please refer to the third-party guides on Cassandra 4 installation (https://phoenixnap.com/kb/install-cassandra-on-windows#htoc-download-and-extract-cassandra-tar-gz-folder). If you wish to proceed with this guide, you will need to install Java 8 (step 1) and use ThingsBoard 3.2.1 (step 2 - https://dist.thingsboard.io/thingsboard-windows-setup-3.2.1pe.exe) instead.   
+{% endcapture %}
+{% include templates/info-banner.md content=windows-under-construction %}
+
 ##### PostgreSQL Installation
 
 Download the installation file (PostgreSQL 11.7 or newer releases) [here](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads#windows) and follow the installation instructions.
