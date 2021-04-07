@@ -29,17 +29,17 @@
 <li><b><a href="/docs/{{peDocsPrefix}}user-guide/white-labeling/">White-labeling</a></b> - configure your company or product logo, color scheme and mail tempates in 2 minutes.</li>
 <li><b><a href="/docs/{{peDocsPrefix}}user-guide/integrations/">Platform Integrations</a></b> - connect devices using connectivity solutions like NB IoT, LoRaWAN and SigFox, specific payload formats or various IoT Platforms</li>
     <ul>
-        <li><b><a href="/docs/user-guide/{{peDocsPrefix}}integrations/http/">HTTP</a></b></li>
-        <li><b><a href="/docs/user-guide/{{peDocsPrefix}}integrations/mqtt/">MQTT</a></b></li>
-        <li><b><a href="/docs/user-guide/{{peDocsPrefix}}integrations/opc-ua/">OPC-UA</a></b></li>
-        <li><b><a href="/docs/user-guide/{{peDocsPrefix}}integrations/sigfox/">SigFox</a></b></li>
-        <li><b><a href="/docs/user-guide/{{peDocsPrefix}}integrations/thingpark/">ThingPark</a></b></li>
-        <li><b><a href="/docs/user-guide/{{peDocsPrefix}}integrations/ttn/">TheThingsNetwork</a></b></li>
-        <li><b><a href="/docs/user-guide/{{peDocsPrefix}}integrations/azure-event-hub/">Azure Event Hub</a></b></li>
-        <li><b><a href="/docs/user-guide/{{peDocsPrefix}}integrations/azure-iot-hub/">Azure IoT Hub</a></b></li>
-        <li><b><a href="/docs/user-guide/{{peDocsPrefix}}integrations/ibm-watson-iot/">IBM Watson IoT</a></b></li>
-        <li><b><a href="/docs/user-guide/{{peDocsPrefix}}integrations/aws-iot/">AWS IoT</a></b></li>
-        <li><b><a href="/docs/user-guide/{{peDocsPrefix}}integrations/aws-kinesis/">AWS Kinesis</a></b></li>
+        <li><b><a href="/docs/{{peDocsPrefix}}user-guide/integrations/http/">HTTP</a></b></li>
+        <li><b><a href="/docs/{{peDocsPrefix}}user-guide/integrations/mqtt/">MQTT</a></b></li>
+        <li><b><a href="/docs/{{peDocsPrefix}}user-guide/integrations/opc-ua/">OPC-UA</a></b></li>
+        <li><b><a href="/docs/{{peDocsPrefix}}user-guide/integrations/sigfox/">SigFox</a></b></li>
+        <li><b><a href="/docs/{{peDocsPrefix}}user-guide/integrations/thingpark/">ThingPark</a></b></li>
+        <li><b><a href="/docs/{{peDocsPrefix}}user-guide/integrations/ttn/">TheThingsNetwork</a></b></li>
+        <li><b><a href="/docs/{{peDocsPrefix}}user-guide/integrations/azure-event-hub/">Azure Event Hub</a></b></li>
+        <li><b><a href="/docs/{{peDocsPrefix}}user-guide/integrations/azure-iot-hub/">Azure IoT Hub</a></b></li>
+        <li><b><a href="/docs/{{peDocsPrefix}}user-guide/integrations/ibm-watson-iot/">IBM Watson IoT</a></b></li>
+        <li><b><a href="/docs/{{peDocsPrefix}}user-guide/integrations/aws-iot/">AWS IoT</a></b></li>
+        <li><b><a href="/docs/{{peDocsPrefix}}user-guide/integrations/aws-kinesis/">AWS Kinesis</a></b></li>
     </ul>
 <li><b><a href="/docs/{{peDocsPrefix}}user-guide/groups/">Device & asset groups</a></b> - configure multiple custom device & asset groups.</li>
 <li><b><a href="/docs/{{peDocsPrefix}}user-guide/scheduler/">Scheduler</a></b> - schedule various types of events (i.e. configuration updates, report generation, rpc commands) with flexible configuration options.</li>

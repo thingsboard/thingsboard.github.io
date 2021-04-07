@@ -31,7 +31,11 @@ ThingsBoard cluster can handle millions of devices.
 * **customizable**: adding new functionality is easy with customizable widgets and rule engine nodes.
 * **durable**: never lose your data.
 
+{% if docsPrefix != "paas/" %}
+
 See [**ThingsBoard Architecture**](/docs/{{docsPrefix}}reference) for more details.
+
+{% endif %}
 
 #### Ready to get started?
 

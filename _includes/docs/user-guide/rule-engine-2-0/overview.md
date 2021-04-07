@@ -432,11 +432,11 @@ Note: the entity id you have specified in the call will be the originator of Rul
 
 ThingsBoard authors have prepared several tutorials to help you get started with designing rule chains by example:
 
-  * [**Transform incoming messages from device**](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/tutorials/transform-incoming-telemetry/) 
-  * [**Transform incoming messages using previous messages from device**](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/tutorials/transform-telemetry-using-previous-record/) 
-  * [**Create and clear alarms on incoming device messages**](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/tutorials/create-clear-alarms/)
-  * [**Send emails to customer on device alarm**](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/tutorials/send-email/) 
-  * [**Send messages between related devices**](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/tutorials/rpc-reply-tutorial/)
+  * [**Transform incoming messages from device**](/docs/user-guide/rule-engine-2-0/tutorials/transform-incoming-telemetry/) 
+  * [**Transform incoming messages using previous messages from device**](/docs/user-guide/rule-engine-2-0/tutorials/transform-telemetry-using-previous-record/) 
+  * [**Create and clear alarms on incoming device messages**](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/)
+  * [**Send emails to customer on device alarm**](/docs/user-guide/rule-engine-2-0/tutorials/send-email/) 
+  * [**Send messages between related devices**](/docs/user-guide/rule-engine-2-0/tutorials/rpc-reply-tutorial/)
   
 See more tutorials [here](https://thingsboard.io/docs/{{docsPrefix}}guides/).
 

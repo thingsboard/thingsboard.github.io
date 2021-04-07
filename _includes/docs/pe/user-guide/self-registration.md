@@ -20,7 +20,7 @@ Let’s start with the prerequisites.
 ### Step 1. Install ThingsBoard in the cloud 
 
 We will need a running ThingsBoard PE instance with white-labeling feature enabled. 
-You can easily deploy your own ThingsBoard PE instance using the [installation instructions](/docs/pe/user-guide/install/pe/installation-options/). 
+You can easily deploy your own ThingsBoard PE instance using the [installation instructions](/docs/user-guide/install/pe/installation-options/). 
 Note that your instance should run in the cloud, and have public IP address assigned to it.
 
 ### Step 2. Assign DNS record to your ThingsBoard IP address
@@ -31,7 +31,7 @@ If you do have the domain name, contact your system administrator to issue sub-d
 
 ### Step 3. Setup HTTPS access to your ThingsBoard instance
 
-Please note the HAProxy installation instructions in the [post install steps](/docs/pe/user-guide/install/pe/ubuntu/#post-installation-steps). 
+Please note the HAProxy installation instructions in the [post install steps](/docs/user-guide/install/pe/ubuntu/#post-installation-steps). 
 They are available for Linux distributions and Docker. You can easily issue a valid Let's Encrypt certificate and setup HTTPS for your ThingsBoard instance.
 
 ### Step 4. ReCAPTCHA v2
@@ -86,7 +86,7 @@ First, navigate to "Device Groups"->"All" and create sample device with name "De
 This is necessary to pass certain validation while importing the dashboard. 
 
 Now, let’s navigate to the Dashboard Groups and create a new Group called “Shared Dashboards”.
-Import a [simple dashboard](/docs/pe/user-guide/resources/my_smart_devices_dashboard.json) that shows you a list of devices. 
+Import a [simple dashboard](/docs/user-guide/resources/my_smart_devices_dashboard.json) that shows you a list of devices. 
 This dashboard provides the ability to add/edit/remove devices. 
 BTW, we use new widget from Entity Admin Widgets Bundle.
 

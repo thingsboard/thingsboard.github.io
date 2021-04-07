@@ -94,13 +94,13 @@ After that, you can start to configure Rule engine to use Rest API Call extensio
 
 ## Configure Rule Chains
 
-In this tutorial, we used Rule Chains from [create & clear alarms](/docs/iot-gateway/create-clear-alarms) tutorial.
+In this tutorial, we used Rule Chains from [create & clear alarms](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/) tutorial.
 We modified Rule Chain **Create & Clear Alarms** by adding nodes that was described above in the section [Message flow](#message-flow)<br>
- and renamed this rule chain to: **Create/Clear Alarms & send notifications to Telgram**.
+ and renamed this rule chain to: **Create/Clear Alarms & send notifications to Telegram**.
 
 <br/>The following screenshots show how the above Rule Chains should look like:
  
-  - **Create/Clear Alarms & send notifications to Telgram:**
+  - **Create/Clear Alarms & send notifications to Telegram:**
 
 ![image](/images/gateway/telegram-bot/send-to-telegram-chain.png)
 
@@ -110,7 +110,6 @@ We modified Rule Chain **Create & Clear Alarms** by adding nodes that was descri
 
 <br/> 
 
-Download the attached json [**file**](/docs/iot-gateway/resources/create_clear_alarms___send_notifications_to_telgram.json) for the **Create/Clear Alarms & send notifications to Telgram** rule chain.
 
 The following section shows you how to modify this rule chain from scratch.
 <br/> 

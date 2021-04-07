@@ -115,8 +115,8 @@ return {msg: msg, metadata: metadata, msgType: newType};
 
 You can see real life example, how to use this node in those tutorials:
 
-- [Transform incoming telemetry](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/tutorials/transform-incoming-telemetry/)
-- [Reply to RPC Calls](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/tutorials/rpc-reply-tutorial.md#add-transform-script-node)
+- [Transform incoming telemetry](/docs/user-guide/rule-engine-2-0/tutorials/transform-incoming-telemetry/)
+- [Reply to RPC Calls](/docs/user-guide/rule-engine-2-0/tutorials/rpc-reply-tutorial#add-transform-script-node)
 
 # To Email Node
 
@@ -154,6 +154,6 @@ Additionally this node can prepare email attachments if incoming message metadat
 
 You can see the real life example, where this node is used, in the next tutorial:
 
-- [Send Email](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/tutorials/send-email/)
+- [Send Email](/docs/user-guide/rule-engine-2-0/tutorials/send-email/)
 
 

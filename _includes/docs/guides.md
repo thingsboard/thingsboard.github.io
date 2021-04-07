@@ -114,9 +114,14 @@
 
 <ul id="markdown-toc">
     {% for item in guides %}
+    {% if guidesVersion == 'paas' and item.paaspage == 'false' %}
+    {% elsif guidesVersion == 'ce' and item.cepage == 'false' %}
+    {% elsif guidesVersion == 'pe' and item.pepage == 'false' %}
+    {% else %}
         <li>
             <a href="#AnchorID{{ item.id }}" id="markdown-toc-AnchorID{{ item.id }}">{{ item.title }}</a>
         </li>
+    {% endif %}
     {% endfor %}
 </ul>
 

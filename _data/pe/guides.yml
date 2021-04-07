@@ -17,9 +17,9 @@ toc:
     - title: Create Alarm when the Device is offline
       path: /docs/user-guide/rule-engine-2-0/tutorials/create-inactivity-alarm/
     - title: Create & Clear Alarms v2
-      path: /docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms-v2/
+      path: /docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/
     - title: Send Email v2
-      path: /docs/user-guide/rule-engine-2-0/tutorials/send-email-v2/
+      path: /docs/user-guide/rule-engine-2-0/tutorials/send-email/
     - title: Using queues for synchronization
       path: /docs/user-guide/rule-engine-2-5/tutorials/queues-for-synchronization/
     - title: Using queues for message reprocessing

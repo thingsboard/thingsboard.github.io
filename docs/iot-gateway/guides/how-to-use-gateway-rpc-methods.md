@@ -13,8 +13,8 @@ description: ThingsBoard IoT Gateway features
 This guide explains how to use RPC API on ThingsBoard IoT Gateway.  
 
 For the purpose of this tutorial, you need:  
-1. Locally installed instance of ThingsBoard platform (In case you are new with ThingsBoard [use this 'how to install' documentation](docs/user-guide/install/installation-options/)).
-2. [Installed](/docs/iot-gateway/installation/) and [configured](docs/iot-gateway/configuration/) ThingsBoard IoT Gateway. 
+1. Locally installed instance of ThingsBoard platform (In case you are new with ThingsBoard [use this 'how to install' documentation](/docs/user-guide/install/installation-options/)).
+2. [Installed](/docs/iot-gateway/installation/) and [configured](/docs/iot-gateway/configuration/) ThingsBoard IoT Gateway. 
 
 ## Gateway RPC methods 
 

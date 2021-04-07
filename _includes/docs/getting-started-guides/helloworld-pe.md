@@ -115,7 +115,7 @@ It is quite easy to configure email or sms notifications for alarms. We recommen
 and documentation about [alarm notifications](/docs/{{docsPrefix}}user-guide/device-profiles/#notifications-about-alarms).
  
 **Note**: At the moment ThingsBoard supports AWS SNS and Twilio to send SMS. 
-Both services are non-free and require you to create an account. However, you may integrate with other SMS/EMAIL gateways using [REST API call](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/tutorials/get-weather-using-rest-api-call/#node-d-external-rest-api-call-node) node.
+Both services are non-free and require you to create an account. However, you may integrate with other SMS/EMAIL gateways using [REST API call](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/external-nodes/#rest-api-call-node) node.
 
 ## Step 7. Share dashboard with customers
 

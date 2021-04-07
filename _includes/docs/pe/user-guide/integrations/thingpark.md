@@ -20,7 +20,7 @@ Configuration steps:
 
 - To create a new Integration on the ThingsBoard platform with the ThingPark Wireless OSS intelligent logger (Actility) platform, click on the link.   
  
-[Create new Integration of type "ThingPark"](/docs/samples/abeeway/tracker.md)
+[Create new Integration of type "ThingPark"](/docs/samples/abeeway/tracker)
 
 <br>
 

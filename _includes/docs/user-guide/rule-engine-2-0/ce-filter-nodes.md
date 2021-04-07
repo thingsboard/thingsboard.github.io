@@ -164,8 +164,8 @@ JavaScript condition can be verified using [Test JavaScript function](/docs/{{do
 
 You can see the real life examples, where this node is used, in the next tutorials:
 
-- [Create and Clear Alarms](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/tutorials/create-clear-alarms/)
-- [Reply to RPC Calls](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/tutorials/rpc-reply-tutorial/#add-filter-script-node)
+- [Create and Clear Alarms](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/)
+- [Reply to RPC Calls](/docs/user-guide/rule-engine-2-0/tutorials/rpc-reply-tutorial/#add-filter-script-node)
 
 ##### Switch Node
 

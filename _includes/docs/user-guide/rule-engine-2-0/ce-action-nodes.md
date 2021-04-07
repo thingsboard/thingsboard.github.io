@@ -137,7 +137,7 @@ More details about Alarms in the Thingsboard can be found in [this tutorial](/do
 
 You can see the real life example, where this node is used, in the next tutorial:
 
-- [Create and Clear Alarms](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/tutorials/create-clear-alarms/)
+- [Create and Clear Alarms](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/)
 
 <br/>
 
@@ -257,7 +257,7 @@ More details about Alarms in the Thingsboard can be found in [this tutorial](/do
 
 You can see the real life example, where this node is used, in the next tutorial:
 
-- [Create and Clear Alarms](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/tutorials/create-clear-alarms/)
+- [Create and Clear Alarms](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/)
 
 <br/>
 
@@ -365,7 +365,7 @@ JavaScript transform function can be verified using [Test JavaScript function](/
 
 You can see the real life example, where this node is used, in the next tutorial:
 
-- [Reply to RPC Calls](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/tutorials/rpc-reply-tutorial.md#log-unknown-request)
+- [Reply to RPC Calls](/docs/user-guide/rule-engine-2-0/tutorials/rpc-reply-tutorial#log-unknown-request)
 
 # RPC Call Reply Node
 
@@ -414,7 +414,7 @@ For more details how RPC works in the Thingsboard, please read [RPC capabilities
 
 You can see the real life example, where this node is used, in the next tutorial:
 
-- [Reply to RPC Calls](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/tutorials/rpc-reply-tutorial.md)
+- [Reply to RPC Calls](/docs/user-guide/rule-engine-2-0/tutorials/rpc-reply-tutorial)
 
 # RPC Call Request Node
 

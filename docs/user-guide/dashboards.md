@@ -254,8 +254,6 @@ entity-name:
         image: /images/user-guide/dashboards/settings/entity-name-5.png
     6:
         image: /images/user-guide/dashboards/settings/entity-name-6.png
-    7:
-        image: /images/user-guide/dashboards/settings/entity-name-7.png
 
 action-state:
     0:

@@ -1,7 +1,7 @@
 {% assign feature = "Platform Integrations" %}{% include templates/pe-feature-banner.md %}
 
 * TOC
-  {:toc}
+{:toc}
 
 ## Overview
 

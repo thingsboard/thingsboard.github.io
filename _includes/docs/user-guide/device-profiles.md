@@ -86,7 +86,7 @@ By default, the platform expects devices to send data via JSON. However, it is a
 Protocol Buffers, or Protobuf, is a language- and a platform-neutral way of serializing structured data. It is convenient to minimize the size of transmitted data.  
 
 At the moment of writing (ThingsBoard 3.2), platform supports customizable proto schemas for [telemetry upload](/docs/{{docsPrefix}}reference/mqtt-api/#telemetry-upload-api) 
-and [attribute upload](/docs/{{docsPrefix}}reference/MQTT-API/#publish-attribute-update-to-the-server). 
+and [attribute upload](/docs/{{docsPrefix}}reference/mqtt-api/#publish-attribute-update-to-the-server). 
 We plan to the add ability to define a schema for downlink messages (RPC calls and attribute updates) in future releases.  
 
 {% include images-gallery.html imageCollection="mqttProtobufSetting" %}
@@ -243,8 +243,8 @@ The device profile rule node has three main outbound relation types that you can
 See the example rule chain below. Please make sure that the system administrator has configured the SMS/email providers before you proceed or configure your own settings in the rule nodes. 
 
 You may also use existing guides: 
-[Send email on alarm](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/tutorials/send-email/) (Use part which explains 'to email' and 'send email' nodes) 
-or [Telegram notifications](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/tutorials/integration-with-telegram-bot/).
+[Send email on alarm](/docs/user-guide/rule-engine-2-0/tutorials/send-email/) (Use part which explains 'to email' and 'send email' nodes) 
+or [Telegram notifications](/docs/user-guide/rule-engine-2-0/tutorials/integration-with-telegram-bot/).
 There is also an additional 'Alarm Updated' relation type that should be ignored in most cases to avoid duplicate notifications.
 
 {% include images-gallery.html imageCollection="notifications" %}

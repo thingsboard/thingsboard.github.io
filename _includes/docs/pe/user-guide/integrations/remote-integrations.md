@@ -89,7 +89,7 @@ TCP/UDP<br/> Integration<br/>%,%tcpudp%,%templates/install/integration/tcpudp-do
 {: .copy-code}
 
 You may configure your system to use Google public DNS servers. 
-See corresponding [Linux](opc-uas://developers.google.com/speed/public-dns/docs/using#linux) and [Mac OS](opc-uas://developers.google.com/speed/public-dns/docs/using#mac_os) instructions.
+See corresponding [Linux](https://developers.google.com/speed/public-dns/docs/using#linux) and [Mac OS](https://developers.google.com/speed/public-dns/docs/using#mac_os) instructions.
 
 ### Docker on Windows
 

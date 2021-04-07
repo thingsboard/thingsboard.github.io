@@ -406,7 +406,7 @@ otherwise **Failure** chain is used.
 
 You can see the real life example, where this node is used, in the next tutorial:
 
-- [Send Email](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/tutorials/send-email/)
+- [Send Email](/docs/user-guide/rule-engine-2-0/tutorials/send-email/)
 
 <br/>
 

@@ -268,7 +268,7 @@ or use [filter nodes](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/filter-node
 
 **Modify incoming client-side attributes before they are stored in the database**
 
-Use [message type switch](docs/{{docsPrefix}}/user-guide/rule-engine-2-0/filter-nodes/#message-type-switch-node) rule node to filter messages that contain "Post attributes" request. 
+Use [message type switch](/docs/{{docsPrefix}}/user-guide/rule-engine-2-0/filter-nodes/#message-type-switch-node) rule node to filter messages that contain "Post attributes" request. 
 Then, use [transformation rule nodes](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/transformation-nodes/) to modify a particular message. 
 
 **React on the change of server-side attribute**
