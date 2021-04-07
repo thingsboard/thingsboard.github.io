@@ -4,24 +4,6 @@ assignees:
 - ashvayka
 title: Working with IoT dashboards
 description: IoT dashboards using ThingsBoard
-creating-dash:
-    0:
-        image: /images/user-guide/dashboards/creating-dash.png
-    1:
-        image: /images/user-guide/dashboards/creating-dash-1.png
-    2:
-        image: /images/user-guide/dashboards/creating-dash-2.png
-
-make-public:
-    0:
-        image: /images/user-guide/dashboards/creating-dash.png
-    1:
-        image: /images/user-guide/dashboards/make-public-1.png
-    2:
-        image: /images/user-guide/dashboards/make-public-2.png
-    3:
-        image: /images/user-guide/dashboards/make-public-3.png
-
 dash-title:
     0:
         image: /images/user-guide/dashboards/dash-title.png 
