@@ -53,6 +53,7 @@ Let's assume you would like to build a building monitoring solution and review f
 
 {% include images-gallery.html imageCollection="server-side-attrs-ui" showListImageTitles="true" %}
 
+
 {% capture bulk_provisioning %}
 [Bulk provisioning](/docs/{{docsPrefix}}user-guide/bulk-provisioning/) feature allows you to quickly create multiple devices and assets and their attributes from CSV file.
 {% endcapture %}
@@ -81,8 +82,9 @@ Similar, you can fetch all server-side attributes using the following command:
 ```shell
 curl -v -X GET 'https://thingsboard.cloud/api/plugins/telemetry/DEVICE/ad17c410-914c-11eb-af0c-d5862211a5f6/values/attributes/SERVER_SCOPE' \
   -H 'x-authorization: Bearer $YOUR_JWT_TOKEN_HERE' \
-  -H 'content-type: application/json' \
+  -H 'content-type: application/json' 
 ```
+
 
 The output will include 'key', 'value' and timestamp of the last update:
 
