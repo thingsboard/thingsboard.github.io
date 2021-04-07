@@ -1,5 +1,7 @@
 Instructions listed below will help you to install Cassandra.
 
+{% include templates/install/cassandra-4x-beta.md %}
+
 ```bash
 # Add cassandra repository
 echo "deb http://downloads.apache.org/cassandra/debian 40x main" | sudo tee -a /etc/apt/sources.list.d/cassandra.sources.list

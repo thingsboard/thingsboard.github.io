@@ -1,10 +1,9 @@
 ---
-layout: docwithnav-pe
+layout: docwithnav-paas
 title: Scheduler
 description: Scheduler Guide
-redirect_from: "/docs/user-guide/scheduler/"
 
 ---
 
-{% assign docsPrefix = "pe/" %}
+{% assign docsPrefix = "paas/" %}
 {% include docs/pe/user-guide/scheduler.md %}
