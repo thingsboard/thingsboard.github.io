@@ -1,9 +1,8 @@
 ---
-layout: docwithnav-pe
+layout: docwithnav-paas
 title: File Storage
 description: File Storage Guide
-redirect_from: "/docs/user-guide/file-storage/"
 ---
 
-{% assign docsPrefix = "pe/" %}
+{% assign docsPrefix = "paas/" %}
 {% include docs/pe/user-guide/file-storage.md %}

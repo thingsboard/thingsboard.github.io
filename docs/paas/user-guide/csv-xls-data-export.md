@@ -1,10 +1,9 @@
 ---
-layout: docwithnav-pe
+layout: docwithnav-paas
 title: CSV/XLS data export
 description: CSV/XLS data export guide
-redirect_from: "/docs/user-guide/csv-xls-data-export/"
 
 ---
 
-{% assign docsPrefix = "pe/" %}
+{% assign docsPrefix = "paas/" %}
 {% include docs/pe/user-guide/csv-xls-data-export.md %}
