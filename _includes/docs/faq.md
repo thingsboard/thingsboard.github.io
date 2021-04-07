@@ -12,14 +12,19 @@ You can find more information on the dedicated page.
 
 ## How do I get started?
 
+{% if docsPrefix == 'paas/' %}
+We recommend to follow the [getting started guide](/docs/{{docsPrefix}}getting-started-guides/helloworld/).
+{% else %}
 We recommend to [install](/docs/{{docsPrefix}}user-guide/install/installation-options/) ThingsBoard locally on your laptop or PC using Docker
 and follow the [getting started guide](/docs/{{docsPrefix}}getting-started-guides/helloworld/).
+{% endif %}
 
 ## What can I do with ThingsBoard?
 
 ThingsBoard provides out-of-the-box IoT solution that will enable server-side infrastructure for your IoT applications.
 You can find more information by browsing [guides](/docs/{{docsPrefix}}user-guide/) and [hardware samples](/docs/{{docsPrefix}}guides/#AnchorIDHardwareSamples)
 
+{% unless docsPrefix == 'paas/' %}
 ## Where can I host ThingsBoard?
 
 You can host ThingsBoard in the cloud, on-premises or locally on your laptop, PC or even Raspberry Pi. We recommend to get started with Docker installation
@@ -28,6 +33,7 @@ You can host ThingsBoard in the cloud, on-premises or locally on your laptop, PC
   - [Windows](/docs/{{docsPrefix}}user-guide/install/docker-windows/)
 
 You can also take a look at [cluster setup](/docs/{{docsPrefix}}user-guide/install/cluster-setup/) guide.
+{% endunless %}
 
 ## How to connect my device?
 

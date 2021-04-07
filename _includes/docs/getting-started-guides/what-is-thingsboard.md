@@ -35,4 +35,4 @@ See [**ThingsBoard Architecture**](/docs/{{docsPrefix}}reference) for more detai
 
 #### Ready to get started?
 
-<p><a href="/docs/getting-started-guides/helloworld" class="button">Hello World Application</a></p>
+<p><a href="/docs/{{docsPrefix}}getting-started-guides/helloworld" class="button">Hello World Application</a></p>

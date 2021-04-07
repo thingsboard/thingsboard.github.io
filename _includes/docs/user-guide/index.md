@@ -5,8 +5,10 @@ The ThingsBoard **Guides** can help you to get familiar with ThingsBoard platfor
 [**Getting Started**](/docs/{{docsPrefix}}getting-started-guides/what-is-thingsboard/)
 : Provides overview of the platform functionality and classical Hello World guide.
 
+{% unless docsPrefix == 'paas/' %}
 [**Installation guide**](/docs/{{docsPrefix}}user-guide/install/installation-options/)
 : Covers ThingsBoard platform installation in a single-node or cluster mode.
+{% endunless %}
 
 [**Working with device attributes**](/docs/{{docsPrefix}}user-guide/attributes/)
 : Describes device attributes feature and related use cases.

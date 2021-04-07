@@ -3,7 +3,7 @@
   description: ThingsBoard Documentation
   tag: paas
   icon: /images/thingsboard-c-icon.svg
-  path: /products/paas/what-is-thingsboard-cloud/
+  path: /docs/paas/
   docsPrefix: /docs/paas/
 - title: Professional Edition
   fulltitle: ThingsBoard Professional Edition
