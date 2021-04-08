@@ -440,6 +440,8 @@ ThingsBoard authors have prepared several tutorials to help you get started with
   
 See more tutorials [here](/docs/{{docsPrefix}}guides/).
 
+{% unless docsPrefix == "paas/" %}
+
 ## Troubleshooting
 
 If you are using Kafka queue for processing messages, ThingsBoard provides the ability to monitor if the rate of pushing messages to the Kafka is faster than rate of consuming and processing them (in such case you will have a growing latency for message processing).
@@ -472,3 +474,4 @@ Where:
 
 **NOTE:** Logs about consumer lag are printed only if there is a lag for this consumer group.
 
+{% endunless %}
