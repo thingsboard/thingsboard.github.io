@@ -117,7 +117,7 @@ This option available for both, Static Trendz widget and for Trendz View with al
 ## Embed visualization on external site
 You can also embed Trendz visualization into your web site by adding iFrame that points to required visualization.
 
-Add iFrame on your site with the following URL **http://{TRENDZ_URL}/viewMode/{VIEW_ID}?jwt={JWT_TOKEN}**. Where:
+Add iFrame on your site with the following URL **http://{TRENDZ_URL}/viewMode/{VIEW_ID}?token={JWT_TOKEN}**. Where:
 * TRENDZ_URL - url of Trendz service
 * VIEW_ID - ID of saved visualization inside Trendz
 * JWT_TOKEN - ThingsBoard JWT token that should be used to authenticate in the ThingsBoard
