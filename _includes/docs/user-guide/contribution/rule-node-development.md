@@ -589,7 +589,8 @@ plugins:
 The easiest way to validate your custom rule node is to create a [generator](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#generator-node) rule node 
 and connect it to your custom rule node. This will generate configurable stream of incoming messages. 
 Once this is done, you should enable [debug](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#debugging) for your custom rule node to validate node output and check them for errors. 
-  
+
+{% unless docsPrefix %}
 ## Step 7. Rule Node UI customization (optional)
 
 The ThingsBoard rule nodes UI is configured with another project in the official [github repo](https://github.com/thingsboard/rule-node-examples-ui-ngx). Please, refer to the following [link](https://github.com/thingsboard/rule-node-examples-ui-ngx#rule-node-examples-ui-ngx) to see build instructions.
@@ -609,6 +610,7 @@ nano ${TB_WORK_DIR}/ui-ngx/proxy.conf.js
     ```
     npm start
     ```
+{% endunless %}
 
 ## Next steps
  

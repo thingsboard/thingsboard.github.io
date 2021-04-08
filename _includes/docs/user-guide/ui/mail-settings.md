@@ -14,7 +14,7 @@ Following steps are required to configure system mail settings.
 
 #### Step 1. Login as system administrator
 
-Login to your ThingsBoard instance WEB UI as a system administrator using default [**account**](/docs/{{docsPrefix}}samples/demo-account/#system-administrator).
+Login to your ThingsBoard instance WEB UI as a system administrator using default [**account**](/docs/samples/demo-account/#system-administrator).
 
 #### Step 2. Change administrator email address 
 
@@ -23,7 +23,8 @@ Change 'sysadmin@thingsboard.org' to your email address. Now re-login as adminis
 
 #### Step 3. Open 'Outgoing Mail' and populate SMTP server settings
 
-Navigate to **System Settings -> Outgoing Mail** and populate the form. Click on 'Send Test Email' button. 
+Navigate to **System Settings -> Outgoing Mail** and populate the form. Click on 'Send Test Email' button.
+
 A test email will be sent to the email address that you have specified in 'Step 2'.
 In case of error in configuration, you should receive a popup with the error log.
 

@@ -281,6 +281,8 @@ Then, use [action](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/)
 Use [enrichment](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/enrichment-nodes/) rule nodes to enrich incoming telemetry message with attributes of the device, related asset, customer or tenant.
 This is extremely powerful technique that allows to modify processing logic and parameters based on settings stored in the attributes. 
 
+{% unless docsPrefix == "paas/" %}
+
 ## Performance enhancement
 
 You can achieve higher performance with Attributes Cache enabled (see <b>cache.attributes.enabled</b> property of the [Configuration properties](/docs/{{docsPrefix}}user-guide/install/config/#thingsboard-core-settings)) 
@@ -289,6 +291,7 @@ Having attributes cache enabled ThingsBoard will load the specific attribute fro
 
 **NOTE:** If you are using Redis cache, make sure that you change <b>maxmemory-policy</b> to <b>allkeys-random</b> to prevent Redis from filling up all available memory.
 
+{% endunless %}
 
 ## Old video Tutorial
 
