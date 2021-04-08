@@ -1,10 +1,10 @@
 source "https://rubygems.org"
 
 # gem "jekyll", "3.6.3"
-gem "github-pages", "~> 213", group: :jekyll_plugins
+gem "github-pages", "~> 214", group: :jekyll_plugins
 gem "jekyll-sass-converter", "1.5.2"
 gem "minima", "2.5.1"
-gem "kramdown", "2.3.0"
+gem "kramdown", "2.3.1"
 gem "liquid", "4.0.3"
 gem "rouge", "3.26.0"
 gem "jemoji", "0.12.0"
