@@ -30,18 +30,16 @@ description: Installing ThingsBoard CE on Google Cloud Platform
                                         <a href="/docs/user-guide/install/cluster/gcp-cluster-setup/">
                                             <span>
                                                 <div class="deployment-logo">
-                                                    <img width="" src="/images/install/cloud/kops.png" title="Cluster setup with Kubernetes and KOPS on GCP" alt="GCP K8S cluster">
+                                                    <img width="" src="/images/install/cloud/kops.svg" title="Cluster setup with Kubernetes and KOPS on GCP" alt="GCP K8S cluster">
                                                  </div>
                                             </span>
                                         </a>
                                     </div>
-                               </div>
-                               <div class="deployment-cards-container">
                                    <div class="deployment-card-block">
                                        <a href="/docs/user-guide/install/cluster/gcp-self-hosted-setup/">
                                            <span>
                                                <div class="deployment-logo">
-                                                   <img width="" src="/images/install/cloud/gcp-vm.png" title="Self-hosted setup using GCP VM instance" alt="GCP VM">
+                                                   <img width="" src="/images/install/cloud/gcp-vm.svg" title="Self-hosted setup using GCP VM instance" alt="GCP VM">
                                                 </div>
                                            </span>
                                        </a>

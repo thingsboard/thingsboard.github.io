@@ -101,37 +101,6 @@
             }
         }
 
-        function mermaidDefer(method) {
-            if (window.mermaid) {
-                method();
-            } else {
-                if (!window.mermaidLoading) {
-                    window.mermaidLoading = true;
-                    loadScript("/js/mermaid.min.js", function () {
-                        mermaid.initialize({
-                            startOnLoad: false,
-                            flowchart: {
-                                htmlLabels: true
-                            }
-                        });
-                        jqueryDefer(function () {
-                            setTimeout(function () {
-                                var scroll = $(window).scrollTop();
-                                $('.mermaidTooltip').css("transform", "translate(0px," + (scroll - 40) + "px)");
-                                $(window).scroll(function (event) {
-                                    var scroll = $(window).scrollTop();
-                                    $('.mermaidTooltip').css("transform", "translate(0px," + (scroll - 40) + "px)");
-                                });
-                            }, 300);
-                        });
-                    });
-                }
-                setTimeout(function () {
-                    mermaidDefer(method)
-                }, 50);
-            }
-        }
-
         function jqueryUiDefer(method) {
             if (window.jQuery && window.jQuery.ui) {
                 method();

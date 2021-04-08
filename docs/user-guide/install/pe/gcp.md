@@ -30,18 +30,16 @@ description: ThingsBoard IoT platform  GCP cluster setup guide
                                         <a href="/docs/user-guide/install/pe/cluster/gcp-cluster-setup/">
                                             <span>
                                                 <div class="deployment-logo">
-                                                    <img width="" src="/images/install/cloud/kops.png" title="Cluster setup with Kubernetes and kops on GCP" alt="GCP K8S cluster">
+                                                    <img width="" src="/images/install/cloud/kops.svg" title="Cluster setup with Kubernetes and kops on GCP" alt="GCP K8S cluster">
                                                  </div>
                                             </span>
                                         </a>
                                     </div>
-                               </div>
-                               <div class="deployment-cards-container">
                                    <div class="deployment-card-block">
                                        <a href="/docs/user-guide/install/pe/gcp-marketplace/">
                                            <span>
                                                <div class="deployment-logo">
-                                                   <img width="" src="/images/install/cloud/gcp-vm.png" title="Self-hosted setup using GCP Marketplace" alt="GCP Marketplace">
+                                                   <img width="" src="/images/install/cloud/gcp-vm.svg" title="Self-hosted setup using GCP Marketplace" alt="GCP Marketplace">
                                                 </div>
                                            </span>
                                        </a>

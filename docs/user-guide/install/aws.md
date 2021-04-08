@@ -30,13 +30,11 @@ description: ThingsBoard IoT platform  AWS cluster setup guide
                                         <a href="/docs/user-guide/install/cluster/aws-eks-cluster-setup/">
                                             <span>
                                                 <div class="deployment-logo">
-                                                    <img width="" src="/images/install/cloud/eks.png" title="Cluster setup with Kubernetes on AWS EKS" alt="AWS EKS K8S cluster">
+                                                    <img width="" src="/images/install/cloud/eks.svg" title="Cluster setup with Kubernetes on AWS EKS" alt="AWS EKS K8S cluster">
                                                  </div>
                                             </span>
                                         </a>
                                     </div>
-                               </div>
-                                <div class="deployment-cards-container">
                                     <div class="deployment-card-block">
                                         <a href="/docs/user-guide/install/cluster/aws-cluster-setup/">
                                             <span>
@@ -46,13 +44,11 @@ description: ThingsBoard IoT platform  AWS cluster setup guide
                                             </span>
                                         </a>
                                     </div>
-                               </div>
-                               <div class="deployment-cards-container">
                                    <div class="deployment-card-block">
                                        <a href="/docs/user-guide/install/cluster/aws-self-hosted-setup/">
                                            <span>
                                                <div class="deployment-logo">
-                                                   <img width="" src="/images/install/cloud/amazon_ec2.png" title="Self-hosted setup using AWS EC2 instance" alt="AWS EC2">
+                                                   <img width="" src="/images/install/cloud/amazon_ec2.svg" title="Self-hosted setup using AWS EC2 instance" alt="AWS EC2">
                                                 </div>
                                            </span>
                                        </a>

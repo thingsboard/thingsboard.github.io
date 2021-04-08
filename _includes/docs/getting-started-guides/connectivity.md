@@ -4,8 +4,6 @@ In case you have not found out how to connect your device using the diagram or s
 {% endcapture %}
 {% include templates/info-banner.md content=connectivityContent %}
 
-{% include mermaid-graph.html 
-graphId="connectivityGraph" 
-file="resources/connectivity.mm" 
-links-json="resources/connectivity-links.json" %}
+<object width="100%" data="/images/connectivity.svg"></object>
+
 
