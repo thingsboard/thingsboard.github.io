@@ -8,4 +8,4 @@ description: ThingsBoard Tenants management
 ---
 
 {% assign docsPrefix = "paas/" %}
-{% include docs/user-guide/ui/tenants.md %}
+{% include docs/user-guide/ui/tenants-pe.md %}
