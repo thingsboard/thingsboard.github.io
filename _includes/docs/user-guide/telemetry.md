@@ -9,7 +9,7 @@ ThingsBoard provides a rich set of features related to telemetry data:
  - **Query** the latest time series data values or all data within the specified timeframe;
  - **Subscribe** to data updates using WebSockets (for visualization or real-time analytics);
  - **Visualize** time series data using configurable and highly customizable widgets and dashboards;
- - **Filter and analyze** data using flexible [Rule Engine](/docs/{{docsPrefix}}user-guide/rule-engine/);
+ - **Filter and analyze** data using flexible [Rule Engine](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/re-getting-started/);
  - **Generate alarms** based on collected data;
  - **Forward** data to external systems using Rule Nodes (e.g. Kafka or RabbitMQ Rule Nodes).
 
@@ -140,7 +140,7 @@ where
 
 Change values of the following variables : 
 
- - **token** - to the JWT token which you can get using the [following link](https://thingsboard.io/docs/{{docsPrefix}}reference/rest-api/#rest-api-auth).
+ - **token** - to the JWT token which you can get using the [following link](/docs/{{docsPrefix}}reference/rest-api/#rest-api-auth).
 
  - **entityId** - to your device id.
  
@@ -172,5 +172,5 @@ Each rule consists of
  - **action** to apply a certain logic to filtered data.
 
 You can find more details in a separate guide:    
-<p><a href="/docs/{{docsPrefix}}user-guide/rule-engine" class="button">Rule Engine guide</a></p>
+<p><a href="/docs/{{docsPrefix}}user-guide/rule-engine-2-0/re-getting-started/" class="button">Rule Engine guide</a></p>
     

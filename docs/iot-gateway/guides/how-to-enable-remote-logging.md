@@ -11,8 +11,8 @@ description: How to enable remote logging feature on ThingsBoard IoT Gateway
 This guide will help you to enable remote logging and read logs from ThingsBoard IoT Gateway on your ThingsBoard platform instance.  
 
 For purpose of this guide, we will use following things:
-1. Locally installed instance of ThingsBoard platform (How to install you can [read here](https://thingsboard.io/docs/user-guide/install/installation-options/)).
-2. ThingsBoard IoT Gateway (How to install you can [read here](https://thingsboard.io/docs/iot-gateway/installation/)).
+1. Locally installed instance of ThingsBoard platform (How to install you can [read here](/docs/user-guide/install/installation-options/)).
+2. ThingsBoard IoT Gateway (How to install you can [read here](/docs/iot-gateway/installation/)).
 
 # Step 1. Remote logging activation and setting the logging level
 

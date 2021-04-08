@@ -35,8 +35,9 @@ For example, you might want to isolate data processing for Fire Alarm/Smoke Dete
 This way, even if your system has a peak load produced by millions of water meters, whenever the Fire Alarm is reported, it will be processed without delay.
 Separation of the queues also allows you to customize different [submit](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#queue-submit-strategy) and [processing](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#queue-processing-strategy) strategies.
 
-This setting is available in the Device Profile wizard and Device Profile details. 
+This setting is available in the Device Profile wizard and Device Profile details.{% unless docsPrefix == 'paas/' %}
 **Please note** that if you choose to use a custom queue name, you should configure it in the [thingsboard.yml](/docs/{{docsPrefix}}user-guide/install/config/#thingsboard-core-settings) file before you using it.
+{% endunless %}
 
 {% include images-gallery.html imageCollection="queueNameSetting" %}
 

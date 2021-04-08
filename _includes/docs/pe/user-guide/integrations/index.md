@@ -347,7 +347,6 @@ Explore guides and video tutorials related to specific integrations:
  - [OPC-UA](/docs/{{peDocsPrefix}}user-guide/integrations/opc-ua/)
  - [TCP](/docs/{{peDocsPrefix}}user-guide/integrations/tcp/)
  - [UDP](/docs/{{peDocsPrefix}}user-guide/integrations/udp/)
- - [Kafka](/docs/{{peDocsPrefix}}user-guide/integrations/kafka/)
  - [Custom](/docs/{{peDocsPrefix}}user-guide/integrations/custom/)
 
 

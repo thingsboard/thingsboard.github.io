@@ -3,7 +3,7 @@
 
 ## Prerequisites
 
-Get familiar with ThingsBoard devices and dashboards with [Getting Started](/docs/{{docsPrefix}}getting-started/) for a better understanding of this guide.
+Get familiar with ThingsBoard devices and dashboards with [Getting Started](/docs/{{docsPrefix}}getting-started-guides/helloworld/) for a better understanding of this guide.
 
 ## Introduction
 

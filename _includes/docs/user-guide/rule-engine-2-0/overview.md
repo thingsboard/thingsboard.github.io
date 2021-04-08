@@ -438,7 +438,7 @@ ThingsBoard authors have prepared several tutorials to help you get started with
   * [**Send emails to customer on device alarm**](/docs/user-guide/rule-engine-2-0/tutorials/send-email/) 
   * [**Send messages between related devices**](/docs/user-guide/rule-engine-2-0/tutorials/rpc-reply-tutorial/)
   
-See more tutorials [here](https://thingsboard.io/docs/{{docsPrefix}}guides/).
+See more tutorials [here](/docs/{{docsPrefix}}guides/).
 
 ## Troubleshooting
 

@@ -64,7 +64,7 @@ links-json="resources/connectivity-links.json" %}
 
 #### or IoT Gateway method
 
-* [Step 2.1] Provide detailed and clear steps for IoT Gateway integration. You can refer to [IoT Gateway](https://thingsboard.io/docs/iot-gateway/getting-started) page.
+* [Step 2.1] Provide detailed and clear steps for IoT Gateway integration. You can refer to [IoT Gateway](/docs/iot-gateway/getting-started) page.
 
 ### Block 3 Additional information
 

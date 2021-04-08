@@ -11,8 +11,6 @@ toc:
   section:
     - title: Entities and Relations
       path: /docs/paas/user-guide/entities-and-relations/
-    - title: Tenant Profiles
-      path: /docs/paas/user-guide/tenant-profiles/
     - title: Device Profiles
       path: /docs/paas/user-guide/device-profiles/
       new: true
@@ -34,6 +32,8 @@ toc:
       path: /docs/paas/user-guide/ui/widget-actions/
     - title: Widgets Library
       path: /docs/paas/user-guide/ui/widget-library/
+    - title: Widgets development
+      path: /docs/paas/user-guide/contribution/widgets-development/
 - title: Rule engine
   section:
     - title: Getting Started
