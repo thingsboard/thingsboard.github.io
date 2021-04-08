@@ -6,7 +6,7 @@ ThingsBoard provides the ability to assign custom attributes to your entities an
 Those attributes are stored in the database and may be used for data visualization and data processing.
 
 Attributes are treated as key-value pairs. Flexibility and simplicity of the key-value format allow easy and seamless integration with almost any IoT device on the market.
-Key is always a string and is basically an attribute name, while the attribute value can be either string, boolean, double, long or JSON. 
+Key is always a string and is basically an attribute name, while the attribute value can be either string, boolean, double, integer or JSON. 
 For example:
 
 ```json
@@ -22,6 +22,7 @@ For example:
  }
 }
 ```
+{: .copy-code}
 
 ## Attribute names
 
@@ -76,6 +77,7 @@ curl -v 'https://thingsboard.cloud/api/plugins/telemetry/DEVICE/ad17c410-914c-11
 -H 'content-type: application/json' \
 --data-raw '{"newAttributeName":"newAttributeValue"}'
 ```
+{: .copy-code}
 
 Similar, you can fetch all server-side attributes using the following command:
 
@@ -84,6 +86,7 @@ curl -v -X GET 'https://thingsboard.cloud/api/plugins/telemetry/DEVICE/ad17c410-
   -H 'x-authorization: Bearer $YOUR_JWT_TOKEN_HERE' \
   -H 'content-type: application/json' 
 ```
+{: .copy-code}
 
 
 The output will include 'key', 'value' and timestamp of the last update:
@@ -97,6 +100,7 @@ The output will include 'key', 'value' and timestamp of the last update:
     }
 ]
 ```
+{: .copy-code}
 
 As an alternative to curl, you may use [Java](/docs/{{docsPrefix}}reference/rest-client/) or [Python](/docs/{{docsPrefix}}reference/python-rest-client/) REST clients.
 
@@ -142,6 +146,7 @@ curl -v 'https://thingsboard.cloud/api/plugins/telemetry/DEVICE/ad17c410-914c-11
 -H 'content-type: application/json' \
 --data-raw '{"newAttributeName":"newAttributeValue"}'
 ```
+{: .copy-code}
 
 Similar, you can fetch all shared attributes using the following command:
 
@@ -150,6 +155,7 @@ curl -v -X GET 'https://thingsboard.cloud/api/plugins/telemetry/DEVICE/ad17c410-
   -H 'x-authorization: Bearer $YOUR_JWT_TOKEN_HERE' \
   -H 'content-type: application/json' \
 ```
+{: .copy-code}
 
 The output will include 'key', 'value' and timestamp of the last update:
 
@@ -162,6 +168,7 @@ The output will include 'key', 'value' and timestamp of the last update:
     }
 ]
 ```
+{: .copy-code}
 
 As an alternative to curl, you may use [Java](/docs/{{docsPrefix}}reference/rest-client/) or [Python](/docs/{{docsPrefix}}reference/python-rest-client/) REST clients.
 
@@ -205,6 +212,7 @@ Send GET request to the following URL:
 ```text
 https://$YOUR_THINGSBOARD_HOST/api/plugins/telemetry/$ENTITY_TYPE/$ENTITY_ID/CLIENT_SCOPE
 ```
+{: .copy-code}
 
 The example below gets all attributes for device with ID 'ad17c410-914c-11eb-af0c-d5862211a5f6' and ThingsBoard Cloud server:
 
@@ -213,6 +221,7 @@ curl -v -X GET 'https://thingsboard.cloud/api/plugins/telemetry/DEVICE/ad17c410-
   -H 'x-authorization: Bearer $YOUR_JWT_TOKEN_HERE' \
   -H 'content-type: application/json' \
 ```
+{: .copy-code}
 
 The output will include 'key', 'value' and timestamp of the last update:
 
@@ -225,6 +234,7 @@ The output will include 'key', 'value' and timestamp of the last update:
     }
 ]
 ```
+{: .copy-code}
 
 As an alternative to curl, you may use [Java](/docs/{{docsPrefix}}reference/rest-client/) or [Python](/docs/{{docsPrefix}}reference/python-rest-client/) REST clients.
 
@@ -244,8 +254,11 @@ Telemetry Controller provides the following REST API to fetch entity data:
 
 ![image](/images/user-guide/telemetry-service/rest-api.png)
 
-**NOTE:** The API listed above is available via Swagger UI, please review general [REST API](/docs/{{docsPrefix}}reference/rest-api/) documentation for more details.
+{% capture api_note %}
+**NOTE:** The API listed above is available via Swagger UI. Please review the general [REST API](/docs/{{docsPrefix}}reference/rest-api/) documentation for more details.
 The API is backward compatible with TB v1.0+ and this is the main reason why API call URLs contain "plugin".
+{% endcapture %}
+{% include templates/info-banner.md content=api_note %}
 
 ## Data visualization
 
