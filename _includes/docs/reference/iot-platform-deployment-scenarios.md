@@ -80,7 +80,7 @@ See diagram below.
 
 **Pros**:
 
-* Very simple setup, literally: 10 minutes to deploy using [our installation guides](/docs/{{docsPrefix}}installation/).
+* Very simple setup, literally: 10 minutes to deploy using [our installation guides](/docs/{{docsPrefix}}user-guide/install/installation-options/).
 * Easy to maintain and update the software instance.
 
 **Cons**:

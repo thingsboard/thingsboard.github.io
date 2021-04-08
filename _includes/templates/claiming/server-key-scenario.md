@@ -1,4 +1,9 @@
-Let's assume you have thousands of NB IoT/LoRaWAN/Sigfox devices connected using one of ThingsBoard [Integrations](/docs/{{docsPrefix}}user-guide/integrations/).
+{% assign peDocsPrefix = '' %}
+{% if docsPrefix == 'paas/' %}
+{% assign peDocsPrefix = docsPrefix %}
+{% endif %}
+
+Let's assume you have thousands of NB IoT/LoRaWAN/Sigfox devices connected using one of ThingsBoard [Integrations](/docs/{{peDocsPrefix}}user-guide/integrations/).
 The integration layer will automatically provision them in ThingsBoard. 
 Assuming Tenant Admin knows the list of DevEUIs (LoRaWAN) or any other device identifiers, 
 it is possible to generate a random Secret Key per device and upload this key to ThingsBoard as a server-side attribute using [REST API](/docs/{{docsPrefix}}reference/rest-api/) or UI.

@@ -169,4 +169,4 @@ These metrics are exposed at the path: `https://<yourhostname>/actuator/promethe
 
 If your problem isn't answered by any of the guides above, feel free to contact ThingsBoard team.
 
-<a class="button" href="/docs/{{docsPrefix}}contact-us/">Contact us</a>
+<a class="button" href="/docs/contact-us/">Contact us</a>
