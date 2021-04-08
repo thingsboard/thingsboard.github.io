@@ -162,7 +162,12 @@ This is extremely powerful technique that allows to modify processing logic and 
 
 **Use analytics rule nodes to aggregate data for related assets**
 
-Use [analytics](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/analytics-nodes/) rule nodes to aggregate data from multiple devices or assets. 
+{% if docsPrefix == "paas/" or docsPrefix == "pe/" %}
+Use [analytics](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/analytics-nodes/) rule nodes to aggregate data from multiple devices or assets.
+{% else %}
+Use [analytics](/docs/pe/user-guide/rule-engine-2-0/analytics-nodes/) rule nodes to aggregate data from multiple devices or assets.
+{% endif %}
+
 Useful to calculate total water consumption for the building/district based on data from multiple water meters.     
 
 ## Data Query REST API

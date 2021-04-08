@@ -48,6 +48,8 @@ tenant-edit-pe:
 
 ---
 
+{% assign docsPrefix = "pe/" %}
+
 * TOC
 {:toc}
 
@@ -96,13 +98,5 @@ If you need to log in as a tenant, just open the tenant group and click the phon
 {% include images-gallery.html imageCollection="tenant-login-pe" %}
 <br>
 
-Tenant Administrator is able to do following actions:
 
-- Provision and Manage [Devices](/docs/pe/user-guide/ui/devices/).
-- Provision and Manage [Assets](/docs/pe/user-guide/ui/assets/).
-- Create and Manage [Customers](/docs/pe/user-guide/ui/customers/).
-- Create and Manage [Dashboards](/docs/pe/user-guide/ui/dashboards/).
-- Configure [Rule Engine](/docs/pe/user-guide/rule-engine-2-0/re-getting-started/).
-- Add or modify default widgets using [Widget Library](/docs/user-guide/ui/widget-library/).
-
-All actions listed above are available using [REST API](/docs/pe/reference/rest-api/).
+{% include docs/user-guide/ui/tenants-pe.md %}
