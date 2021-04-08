@@ -1,136 +1,277 @@
-.contact-form
-    background: $professional-color
-    color: #fff
-    box-shadow: 0 1px 8px 0 rgba(0,0,0,0.2), 0 3px 4px 0 rgba(0,0,0,0.14), 0 3px 3px -2px rgba(0,0,0,0.12)
-    margin-bottom: 20px
-    padding: 5px 15px 15px
-    .form-section
-        display: inline-block
-        &.mb30
-            margin-bottom: 30px
-    .form-element
-        display: inline-block
-        position: relative
-        width: 100%
-        float: none
-        clear: both
-        &.half
-            width: 100%
-            float: left
-            margin-left: 0
-            clear: both
-        &.first
-            clear: both
-            margin-left: 0
-        .form-control
-            width: 100%
-            font-size: 13px
-            padding: 10px 10px
-            height: auto
-            border-radius: 0px
-            border: 1px solid #1f373c
-            color: #000000
-            background-color: rgba(255, 255, 255, 0.8)
-            -webkit-box-sizing: border-box
-            -moz-box-sizing: border-box
-            box-sizing: border-box
-            clear: left
-        label
-            float: left
-            width: 100%
-            line-height: 100%
-            font-size: 14px
-            p
-                cursor: text
-                position: absolute
-                margin: 0 0 0 10px
-                padding: 11px 0
-                font-size: 16px
-                color: #777
-                transition: 150ms
-                transform: scale(1) translate(0, -44px)
-                pointer-events: none
-                &.text-area-label
-                    position: absolute
-                    top: 68px
-        .form-control
-            margin: 24px 0 0 0
-            padding: 11px
-            border: 1px solid #1f373c
-            font-size: 16px
-        .form-control:focus + p, .form-control:not(.input--empty) + p
-            color: inherit
-            transform: translate(-20px, -75px) scale(0.7)
-
-    //label
-      display: block
-      position: relative
-      margin-bottom: 5px
-      margin-left: 2px
-      font-weight: bold
-      font-size: 16px
-    //.text-input, .text-area, .select
-      outline: none
-      font-size: 16px
-      margin-bottom: 0
-      background-color: #f8f8f8
-      border: 2px solid #e1e1e1
-      color: #666666
-      width: 100%
-      display: inline
-      min-width: 50px
-      padding: 6px
-      border-radius: 4px
-      box-shadow: none
-      transition: 0.3s
-      &:focus
-        background-color: $light-grey
-        color: $dark-grey
-        border-color: #2fd1ff
-        box-shadow: 0 0 8px rgba(0, 201, 255, .5)
-    //input.button
-      width: 150px
-    input.button
-        cursor: pointer
-        min-width: 150px
-        text-align: center
-        padding: 0.3rem 1.5rem
-        line-height: 30px
-        border: 2px solid #fff
-        border-radius: 3px
-        background-color: #fff
-        color: $professional-color
-        display: inline-block
-        text-decoration: none
-        text-transform: uppercase
-        font-size: 14px
-        font-weight: 500
-        box-shadow: 0 2px 5px 0 rgba(0,0,0,0.26)
-        transition: 0.3s
-        &:hover
-            background-color: #3c6c79
-            color: white
-        &:focus
-            background-color: #3c6c79
-            color: white
-
-#contact-us-thanks
-    margin: auto
-    padding: 30px
-    background: $professional-color
-    color: #fff
-    box-shadow: 0 1px 8px 0 rgba(0,0,0,0.2), 0 3px 4px 0 rgba(0,0,0,0.14), 0 3px 3px -2px rgba(0,0,0,0.12)
-    .thanks-content
-        opacity: 0
-        &.animated
-            opacity: 1
-        .fa
+#docsContent
+    #content
+        h1.contact-us-title
+            z-index: 1
+            text-align: center
+            position: relative
+            padding: 0
+            margin: 0 0 56px
             font-size: 36px
-            margin-bottom: 15px
-        p
-            font-size: 20px
-            &.thank-you
-                font-size: 32px
+            line-height: 54px
+            &:before
+                content: none
+    #background
+        z-index: 0
+        position: absolute
+        top: 524px
+        left: 50%
+        img
+            position: absolute
+            top: -650px
+            left: 134px
+            box-shadow: none !important
+        div
+            position: absolute
+            -ms-transform: skewY(-6deg)
+            transform: skewY(-6deg)
+            width: 436px
+            height: 90px
+            &.main1
+                top: -900px
+                width: 2560px
+                height: 700px
+                left: -1280px
+                background-color: #F7F9FC
+                transition: opacity 0.5s
+                opacity: 1
+            &.small1
+                top: -345px
+                right: -989px
+                background-color: #305680
+                transition: top 0.5s, right 0.5s
+            &.small2
+                top: -177px
+                right: 566px
+                background-color: #2A7DEC
+                transition: top 0.5s, right 0.5s
+            &.small3
+                top: -406px
+                left: 808px
+                background-color: #2A7DEC
+                transition: top 0.5s, left 0.5s
+            &.small4
+                top: -96px
+                right: 750px
+                border: 2px solid #0D2743
+                transition: top 0.5s, right 0.5s
+        &.opened
+            div
+                &.main1
+                    opacity: 0
+                &.small1
+                    top: -370px
+                    right: -1128px
+                &.small2
+                    top: -152px
+                    right: 705px
+                &.small3
+                    top: -430px
+                    left: 944px
+                &.small4
+                    top: -71px
+                    right: 889px
+
+    .contact-form
+        z-index: 2
+        position: relative
+        background: #fff
+        color: #212529
+        box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.04), 0px 50px 50px -20px rgba(0, 0, 0, 0.15)
+        border-radius: 6px
+        margin-bottom: 20px
+        padding: 54px 56px
+        .form-section
+            display: inline-block
+            &.mb30
+                margin-bottom: 30px
+        .form-element
+            display: inline-block
+            position: relative
+            width: 100%
+            float: none
+            clear: both
+            &.half
+                width: 100%
+                float: left
+                margin-left: 0
+                clear: both
+            &.first
+                clear: both
+                margin-left: 0
+            input.form-control, select.form-control
+                height: 44px
+            input.form-control
+                padding: 0 16px
+                &:hover
+                    padding: 1px 15px
+                &:focus
+                    padding: 1px 15px
+                +autofill
+            select.form-control
+                position: relative
+                padding: 0 36px 0 12px
+                cursor: pointer
+                -webkit-appearance: none
+                -moz-appearance: none
+                appearance: none
+                &::-ms-expand
+                    display: none
+                &:hover
+                    padding: 1px 35px 1px 11px
+                &:focus
+                    padding: 1px 35px 1px 11px
+                option[value=""][disabled]
+                    display: none
+            label.select-label
+                &:after
+                    content: ""
+                    background-image: url(/images/pe/read-more-arrow.svg)
+                    background-size: contain
+                    display: block
+                    position: absolute
+                    top: 42px
+                    right: 18px
+                    width: 10px
+                    height: 10px
+                    transform: rotate(90deg)
+                    transition: transform .3s
+                    border: none
+                &:hover
+                    &:after
+                        filter: invert(35%) sepia(96%) saturate(1837%) hue-rotate(202deg) brightness(98%) contrast(89%)
+                &:active
+                    &:after
+                        transform: rotate(-90deg)
+
+            textarea.form-control
+                padding: 8px 16px
+                &:hover
+                    padding: 7px 15px
+                &:focus
+                    padding: 7px 15px
+            .form-control
+                width: 100%
+                margin: 24px 0 0 0
+                line-height: 30px
+                font-size: 18px
+                vertical-align: middle
+                border: 1px solid #ebebeb
+                background-color: transparent
+                border-radius: 4px
+                color: #212529
+                box-shadow: none
+                +placeholder
+                    color: #212529
+                    opacity: 0.6
+                &:hover
+                    border: 2px solid #000
+                    cursor: pointer
+                &:focus
+                    cursor: initial
+                    border: 2px solid #2a7dec
+                    color: #212529
+                    +placeholder
+                        opacity: 0.2
+                &.select.input--empty
+                    color: rgba(33, 37, 41, 0.6)
+                    &:focus
+                        color: rgba(33, 37, 41, 0.2)
+                        option
+                            color: #212529
+            label
+                float: left
+                width: 100%
+                line-height: 100%
+                font-size: 14px
+                margin-bottom: 24px
+                p
+                    cursor: text
+                    position: absolute
+                    margin: 0 0 0 10px
+                    padding: 11px 0
+                    font-size: 18px
+                    transition: 150ms
+                    transform: scale(1) translate(-10px, -86px)
+                    pointer-events: none
+                    &.text-area-label
+                        position: absolute
+                        top: 68px
+            .form-control:focus + p, .form-control:not(.input--empty) + p
+                color: inherit
+        .submit-button-container
+            float: right
+
+        //label
+          display: block
+          position: relative
+          margin-bottom: 5px
+          margin-left: 2px
+          font-weight: bold
+          font-size: 16px
+        //.text-input, .text-area, .select
+          outline: none
+          font-size: 16px
+          margin-bottom: 0
+          background-color: #f8f8f8
+          border: 2px solid #e1e1e1
+          color: #666666
+          width: 100%
+          display: inline
+          min-width: 50px
+          padding: 6px
+          border-radius: 4px
+          box-shadow: none
+          transition: 0.3s
+          &:focus
+            background-color: $light-grey
+            color: $dark-grey
+            border-color: #2fd1ff
+            box-shadow: 0 0 8px rgba(0, 201, 255, .5)
+        //input.button
+          width: 150px
+        input.button
+            min-width: 150px
+
+    #contact-us-thanks
+        position: relative
+        height: 619px
+        padding: 30px
+        color: #212529
+        display: flex
+        align-items: center
+        justify-content: center
+        transition: margin-bottom 0.5s
+        margin: auto
+        margin-bottom: 130px
+        &.opened
+            margin-bottom: 0
+        .thanks-content
+            p
+                font-size: 18px
+                font-weight: normal
+                color: #75767C
+                &.thank-you
+                    font-size: 36px
+                    font-weight: 600
+                    color: #212529
+            a.homepage
+                margin-top: 48px
+                position: relative
+                display: inline-block
+                font-size: 18px
+                font-weight: 500
+                &:after
+                    content: ""
+                    background-image: url(/images/pe/read-more-arrow.svg)
+                    background-size: contain
+                    display: block
+                    position: absolute
+                    top: 6px
+                    right: -22px
+                    width: 12px
+                    height: 12px
+                    border: none
+                    filter: invert(35%) sepia(96%) saturate(1837%) hue-rotate(202deg) brightness(98%) contrast(89%)
 
 @media screen and (min-width: 1025px)
     #docsContent
@@ -138,9 +279,9 @@
             .form-element
                 float: left
                 &.half
-                    width: 49.5%
+                    width: calc(50% - 12px)
                     float: left
-                    margin-left: 1%
+                    margin-left: 24px
                     clear: none
                 &.first
                     clear: both
@@ -149,4 +290,12 @@
 @media screen and (min-width: 1700px)
     #docsContent
         .contact-form, #contact-us-thanks
-            width: 50%
+            width: 75%
+        .contact-form
+            left: 12.5%
+@media screen and (min-width: 1921px)
+    #docsContent
+        .contact-form, #contact-us-thanks
+            width: 1050px
+        .contact-form
+            left: calc(50% - 525px)

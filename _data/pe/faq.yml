@@ -1,0 +1,6 @@
+bigheader: "Frequently Asked Questions"
+abstract: "frequently asked questions"
+hidetoc: "true"
+toc:
+- title: FAQ
+  path: /docs/pe/faq/

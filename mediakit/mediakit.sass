@@ -1,68 +1,133 @@
-
 #docsContent
-    .mediakit-logos
-        display: inline-block
-        width: 100%
-        padding-bottom: 30px
-        .mediakit-logo
-            margin-top: 20px
-            margin-bottom: 20px
+    #content
+        h1.logos-title, h1.download-logos
+            z-index: 1
+            text-align: center
             position: relative
-            min-height: 1px
-            padding-left: 15px
-            padding-right: 15px
+            padding: 0
+            &:before
+                content: none
+        h1.logos-title
+            font-size: 36px
+            line-height: 54px
+            margin: 0 0 88px
+        h1.download-logos
+            font-size: 20px
+            line-height: 30px
+            margin: 0 0 48px
+            color: #899AAB
+            font-weight: normal
+    #media-kit-background
+        z-index: 0
+        position: absolute
+        top: 524px
+        left: 50%
+        img
+            position: absolute
+            top: -650px
+            left: 134px
+            box-shadow: none !important
+        div
+            position: absolute
+            -ms-transform: skewY(-6deg)
+            transform: skewY(-6deg)
+            width: 436px
+            height: 90px
+            &.main1
+                top: -936px
+                width: 2560px
+                height: 700px
+                left: -1280px
+                background-color: #F7F9FC
+
+    .mediakit-logos
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        width: 100%
+        .mediakit-logo
+            position: relative
+            width: 312px
+            height: 108px
+            background: #FFFFFF
+            box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.04), 0px 50px 50px -20px rgba(0, 0, 0, 0.15)
+            border-radius: 6px
+            &.logo-white
+                background: #2A7DEC
+            &:not(:last-child)
+                margin-bottom: 32px
             .logo-container
-                max-width: 100%
-                height: 121px
+                width: 100%
+                height: 100%
                 display: flex
-                border: 1px solid #999
                 text-align: center
                 margin: 0
                 img
-                    max-height: 45px
+                    max-height: 50px
                     max-width: 100%
-                    height: 45px
+                    height: 50px
                     margin: auto
                     display: block
                     vertical-align: middle
                     border: 0
-                &.logo-white
-                    border: 1px solid $dark-grey
-                    background: $dark-grey
 
-    .mediakit-block
-        margin-left: 15px
-        a.button
-            padding: 8px 15px 6px
-            font-size: 14px
-            img
-                width: 24px
-                height: 24px
-                vertical-align: middle
-                margin-right: 15px
+    a.download-logos
+        margin-top: 48px
+        position: relative
+        display: inline-block
+        font-size: 18px
+        font-weight: 500
+        &:after
+            content: ""
+            background-image: url(/images/download-icon.svg)
+            background-size: contain
+            display: block
+            position: absolute
+            top: 6px
+            right: -22px
+            width: 12px
+            height: 12px
+            border: none
+            filter: invert(35%) sepia(96%) saturate(1837%) hue-rotate(202deg) brightness(98%) contrast(89%)
+
+    .trademark-notice
+        margin-top: 24px
+        margin-bottom: 108px
+        text-align: center
+        color: #75767C
+        line-height: 27px
+        font-size: 18px
+        font-weight: normal
+
+    #content
+        .trademark-info
+            margin-bottom: 86px
+            h1
+                font-weight: 600
+                font-size: 24px
+                line-height: 36px
+                padding: 0 0 8px
+                margin: 0
+                pointer-events: all
+                &:before
+                    content: none
+            p, ul, li
+                font-weight: normal
+                font-size: 18px
+                line-height: 27px
+            p
+                margin-bottom: 48px
+            ul
+                margin: 0 0 48px
+                li
+                    margin-bottom: 0
 
 @media screen and (min-width: 1025px)
     #docsContent
-        .mediakit-block
-            a.button
-                padding: 10px 20px 8px
-                font-size: 18px
-                img
-                    width: 32px
-                    height: 32px
-
-@media (min-width: 1400px)
-    #docsContent
         .mediakit-logos
+            flex-direction: row
             .mediakit-logo
-                width: 33%
-                float: left
-
-@media (min-width: 1600px)
-    #docsContent
-        .mediakit-logos
-            .mediakit-logo
-                .logo-container
-                    img
-                        max-height: 60px
-                        height: 60px
+                &:not(:last-child)
+                    margin-bottom: 0
+                    margin-right: 32px

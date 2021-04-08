@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-gw
 title: REST Connector Configuration
 description: REST API enpoints support for ThingsBoard IoT Gateway
 

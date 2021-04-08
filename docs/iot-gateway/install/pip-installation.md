@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-gw
 title: IoT Gateway Pip installation.
 
 ---
@@ -50,7 +50,7 @@ sudo tar -xvzf configs.tar.gz -C /etc/thingsboard-gateway
 {: .copy-code}
 
 
-**4. Check installation you can with command** (You will get errors about connection, because you don't configure gateway for yourself. *For configuration please use [Configuration guide](/docs/iot-gateway/configuration-guide)):*
+**4. Check installation you can with command** (You will get errors about connection, because you don't configure gateway for yourself. *For configuration please use [Configuration guide](/docs/iot-gateway/configuration/)):*
 
 ```bash
 thingsboard-gateway

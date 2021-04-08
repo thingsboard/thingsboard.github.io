@@ -1,0 +1,11 @@
+name,type,Data1,Data2,Data3,Data4,Data5,Data6,Data7,Data8,Data9,Data10
+Device 1,testImport,123,test,TRUE,FALSE,123.55,test,test,test,test,AbfdgrRetGF45
+Device 2,testImport,123,test,TRUE,FALSE,123.55,test,test,test,test,AbfdgrRetGF46
+Device 3,testImport,123,test,TRUE,FALSE,123.55,test,test,test,test,AbfdgrRetGF47
+Device 4,testImport,123,test,TRUE,FALSE,123.55,test,test,test,test,AbfdgrRetGF48
+Device 5,testImport,123,,TRUE,FALSE,123.55,test,test,test,test,AbfdgrRetGF49
+Device 6,testImport,123,test,TRUE,FALSE,123.55,test,test,test,test,AbfdgrRetGF50
+Device 7,testImport,123,test,TRUE,FALSE,123.55,test,test,test,test,AbfdgrRetGF51
+Device 8,testImport,123,test,TRUE,FALSE,123.55,test,test,test,test,AbfdgrRetGF52
+Device 9,testImport,123,test,TRUE,FALSE,123.55,test,test,test,test,AbfdgrRetGF53
+Device 10,testImport,123,test,TRUE,FALSE,123.55,test,test,test,test,AbfdgrRetGF54

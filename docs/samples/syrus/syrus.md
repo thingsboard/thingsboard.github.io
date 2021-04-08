@@ -88,7 +88,7 @@ We need to create two files on any notepad application (notepad++, sublime, vsco
 
 One file contains the destination data, protocol, output format, MQTT URI, username and topics.
 
-you may define custom MQTT topics in the MQTT transport configuration. See [https://thingsboard.io/docs/user-guide/device-profiles/#transport-configuration](https://thingsboard.io/docs/user-guide/device-profiles/#transport-configuration)
+you may define custom MQTT topics in the MQTT transport configuration. See [transport configuration](/docs/user-guide/device-profiles/#transport-configuration)
 
 here is an example:
 

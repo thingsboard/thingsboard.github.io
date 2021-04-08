@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-trendz
 assignees:
 - vparomskiy
 title: Share and embed Visualizations
@@ -131,4 +131,3 @@ The problem is that most browser block mixed content requests: if ThingsBoard us
 block requests to Trendz. You can find detailed error in browser console.
 
 For fixing this - you need to enable HTTPS for Trendz UI. Find details how to do this in Trendz installation guide.
- 
