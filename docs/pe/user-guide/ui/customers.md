@@ -20,10 +20,10 @@ customer-addnew-pe:
 edit-customer-pe:
     0:
         image: /images/user-guide/ui/customers/pe/edit-customer-pe.png
-        title: ''
+        title: 'Managing customer groups, user groups, asset groups, device groups, entity view groups, dashboard groups, and deleting a customer'
     1:
         image: /images/user-guide/ui/customers/pe/edit-customer-1-pe.png
-        title: ''
+        title: 'Editing customer personal information'
 
 deleting-customer-pe:
     0:
