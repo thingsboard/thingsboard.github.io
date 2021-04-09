@@ -39,7 +39,7 @@ Each of the transport components pushes data to the rule engine and also may use
  
 Since ThingsBoard uses very simple communication protocol between transport and core services, 
 it is quite easy to implement support of custom transport protocol, for example: CSV over plain TCP, binary payloads over UDP, etc.
-We suggest to review existing transports [implementation](https://github.com/thingsboard/thingsboard/tree/master/common/transport/mqtt) to get started or [contact us](/docs/{{docsPrefix}}contact-us/) if you need any help. 
+We suggest to review existing transports [implementation](https://github.com/thingsboard/thingsboard/tree/master/common/transport/mqtt) to get started or [contact us](/docs/contact-us/) if you need any help.
 
 ## Rule engine component
 

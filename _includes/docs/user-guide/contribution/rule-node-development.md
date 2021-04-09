@@ -534,13 +534,13 @@ target/rule-engine-1.0.0-custom-nodes.jar
 ```
 
 Now you are ready to add the jar-file with your rule nodes to your ThingsBoard instance:
-
+{% unless docsPrefix %}
 * Use Step 4.1 if your ThingsBoard is installed as a service. 
 * Use Step 4.2 if your ThingsBoard is built from sources and launched locally from your IDE  
 
-  
 ### Step 4.1 Add JAR file to ThingsBoard installed as a service
- 
+{% endunless %}
+
  - first, you need to execute the following command to copy jar-file to ThingsBoard extensions:
    
 ```bash
@@ -560,7 +560,8 @@ sudo service thingsboard restart
 ```
 
 **Once ThingsBoard was restarted you need to clear browser cache and refresh the web page to reload UI of Rule Nodes**
-  
+
+{% unless docsPrefix %}
 ### Step 4.2 Add JAR file to local ThingsBoard launched using IDE
 
  - See separate instructions for [IDEA](https://www.jetbrains.com/help/idea/library.html#add-library-to-module-dependencies) and [Eclipse](https://help.eclipse.org/luna/index.jsp?topic=%2Forg.eclipse.jst.j2ee.doc.user%2Ftopics%2Ftjimpapp.html).
@@ -568,7 +569,8 @@ sudo service thingsboard restart
 Restart ThingsBoard server-side container. Please, refer to the following link to see how to do this: [Running server-side container](/docs/{{docsPrefix}}user-guide/contribution/how-to-contribute/#running-server-side-container). 
  
 **Once ThingsBoard was restarted you need to clear browser cache and refresh the web page to reload UI of Rule Nodes**
-  
+{% endunless %}
+
 ## Step 5. Add your custom package name to thingsboard.yml
 
 **NOTE** if you have changed the package name from **org.thingsboard.rule.engine** to your company package name, e.g. **com.example.rule.engine**, 
@@ -587,7 +589,8 @@ plugins:
 The easiest way to validate your custom rule node is to create a [generator](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#generator-node) rule node 
 and connect it to your custom rule node. This will generate configurable stream of incoming messages. 
 Once this is done, you should enable [debug](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#debugging) for your custom rule node to validate node output and check them for errors. 
-  
+
+{% unless docsPrefix %}
 ## Step 7. Rule Node UI customization (optional)
 
 The ThingsBoard rule nodes UI is configured with another project in the official [github repo](https://github.com/thingsboard/rule-node-examples-ui-ngx). Please, refer to the following [link](https://github.com/thingsboard/rule-node-examples-ui-ngx#rule-node-examples-ui-ngx) to see build instructions.
@@ -607,6 +610,7 @@ nano ${TB_WORK_DIR}/ui-ngx/proxy.conf.js
     ```
     npm start
     ```
+{% endunless %}
 
 ## Next steps
  

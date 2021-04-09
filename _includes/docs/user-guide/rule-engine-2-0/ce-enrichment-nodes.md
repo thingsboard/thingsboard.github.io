@@ -5,7 +5,7 @@ Enrichment Nodes are used to update meta-data of the incoming Message.
 
 ##### Calculate delta
 
-<table  style="width:12%">
+<table  style="width:250px;">
    <thead>
      <tr>
 	 <td style="text-align: center"><strong><em>Since TB Version 3.2.2</em></strong></td>
@@ -66,7 +66,7 @@ msg: {"pulseCounter": 42}, metadata: {"ts": "1616510487000"}, relation: Failure
 
 ##### Customer attributes
 
-<table  style="width:12%">
+<table  style="width:250px;">
    <thead>
      <tr>
 	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
@@ -96,11 +96,11 @@ If Originator does not have assigned Customer Entity **Failure** chain is used, 
 
 You can see the real life example, where this node is used, in the next tutorial:
 
-- [Send Email](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/tutorials/send-email/)
+- [Send Email](/docs/user-guide/rule-engine-2-0/tutorials/send-email/)
 
 ##### Device attributes
 
-<table  style="width:12%">
+<table  style="width:250px;">
    <thead>
      <tr>
 	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
@@ -144,7 +144,7 @@ To access fetched attributes in other nodes you can use this template '<code>met
 
 ##### Originator attributes
 
-<table  style="width:12%">
+<table  style="width:250px;">
    <thead>
      <tr>
 	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
@@ -178,12 +178,12 @@ To access fetched attributes in other nodes you can use this template '<code>met
 
 You can see the real life example, where this node is used, in the following tutorials:
 
-- [Transform telemetry using previous record](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/tutorials/transform-telemetry-using-previous-record/)
-- [Send Email](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/tutorials/send-email/)
+- [Transform telemetry using previous record](/docs/user-guide/rule-engine-2-0/tutorials/transform-telemetry-using-previous-record/)
+- [Send Email](/docs/user-guide/rule-engine-2-0/tutorials/send-email/)
 
 ##### Originator fields
 
-<table  style="width:12%">
+<table  style="width:250px;">
    <thead>
      <tr>
 	 <td style="text-align: center"><strong><em>Since TB Version 2.0.1</em></strong></td>
@@ -212,7 +212,7 @@ To access fetched attributes in other nodes you can use this template '<code>met
 
 ##### Related attributes
 
-<table  style="width:12%">
+<table  style="width:250px;">
    <thead>
      <tr>
 	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
@@ -244,11 +244,11 @@ To access fetched attributes in other nodes you can use this template '<code>met
 
 You can see the real life example, where this node is used, in the next tutorial:
 
-- [Reply to RPC Calls](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/tutorials/rpc-reply-tutorial/#add-related-attributes-node)
+- [Reply to RPC Calls](/docs/user-guide/rule-engine-2-0/tutorials/rpc-reply-tutorial/#add-related-attributes-node)
 
 ##### Tenant attributes
 
-<table  style="width:12%">
+<table  style="width:250px;">
    <thead>
      <tr>
 	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
@@ -276,7 +276,7 @@ If unsupported Originator type found, an error is thrown.
 
 ##### Originator telemetry
 
-<table  style="width:12%">
+<table  style="width:250px;">
    <thead>
      <tr>
 	 <td style="text-align: center"><strong><em>Since TB Version 2.1.1</em></strong></td>
@@ -360,11 +360,11 @@ To access fetched telemetry in other nodes you can use this template: <code>JSON
 
 You can see the real-life example, where this node is used, in the following tutorials:
 
-- [Telemetry delta calculation](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/tutorials/telemetry-delta-validation/)
+- [Telemetry delta calculation](/docs/user-guide/rule-engine-2-0/tutorials/telemetry-delta-validation/)
 
 ##### Tenant details
 
-<table  style="width:12%">
+<table  style="width:250px;">
    <thead>
      <tr>
 	 <td style="text-align: center"><strong><em>Since TB Version 2.3.1</em></strong></td>
@@ -392,7 +392,7 @@ To access fetched details in other nodes you can use one of the following templa
 
 ##### Customer details
 
-<table  style="width:12%">
+<table  style="width:250px;">
    <thead>
      <tr>
 	 <td style="text-align: center"><strong><em>Since TB Version 2.3.1</em></strong></td>

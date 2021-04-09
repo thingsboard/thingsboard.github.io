@@ -3,7 +3,9 @@
   description: ThingsBoard Documentation
   tag: paas
   icon: /images/thingsboard-c-icon.svg
-  path: /products/paas/what-is-thingsboard-cloud/
+  path: /docs/paas/
+  guides: /docs/paas/guides/
+  getStarted: /docs/paas/getting-started-guides/helloworld/
   docsPrefix: /docs/paas/
 - title: Professional Edition
   fulltitle: ThingsBoard Professional Edition
@@ -11,6 +13,8 @@
   tag: pe
   icon: /images/thingsboard-p-icon.svg
   path: /docs/pe/
+  guides: /docs/pe/guides/
+  getStarted: /docs/pe/getting-started-guides/helloworld/
   docsPrefix: /docs/pe/
 - title: Community Edition
   fulltitle: ThingsBoard Community Edition
@@ -18,6 +22,8 @@
   tag: ce
   icon: /images/thingsboard-cm-icon.svg
   path: /docs/
+  guides: /docs/guides/
+  getStarted: /docs/getting-started-guides/helloworld/
   docsPrefix: /docs/
 - title: IoT Gateway
   fulltitle: ThingsBoard IoT Gateway
@@ -25,6 +31,7 @@
   tag: gw
   icon: /images/gateway-icon.svg
   path: /docs/iot-gateway/
+  getStarted: /docs/iot-gateway/getting-started/
 - title: License Server
   fulltitle: ThingsBoard License Server
   description: ThingsBoard Documentation
@@ -37,3 +44,4 @@
   tag: trendz
   icon: /images/trendz-icon.svg
   path: /docs/trendz/
+  getStarted: /docs/trendz/getting-started/

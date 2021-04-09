@@ -254,8 +254,6 @@ entity-name:
         image: /images/user-guide/dashboards/settings/entity-name-5.png
     6:
         image: /images/user-guide/dashboards/settings/entity-name-6.png
-    7:
-        image: /images/user-guide/dashboards/settings/entity-name-7.png
 
 action-state:
     0:
@@ -344,6 +342,12 @@ tw-current-day:
 tw-time-zone:
     0:
         image: /images/user-guide/dashboards/tw-time-zone.png
+
+zoom-in:
+    0:
+        image: /images/user-guide/dashboards/zoom-in.png
+    1:
+        image: /images/user-guide/dashboards/zoom-in-1.png
 
 --- 
 

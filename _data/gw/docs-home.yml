@@ -5,8 +5,32 @@ toc:
   path: /docs/iot-gateway/
 - title: What is ThingsBoard IoT Gateway?
   path: /docs/iot-gateway/what-is-iot-gateway/
-- title: Customization guide
-  path: /docs/iot-gateway/custom/
+- title: Getting Started
+  path: /docs/iot-gateway/getting-started/
+- title: Configuration guides
+  section:
+    - title: General configuration
+      path: /docs/iot-gateway/configuration/
+    - title: MQTT Connector
+      path: /docs/iot-gateway/config/mqtt/
+    - title: Modbus Connector
+      path: /docs/iot-gateway/config/modbus/
+    - title: OPC-UA Connector
+      path: /docs/iot-gateway/config/opc-ua/
+    - title: BLE Connector
+      path: /docs/iot-gateway/config/ble/
+    - title: Request Connector
+      path: /docs/iot-gateway/config/request/
+    - title: CAN Connector
+      path: /docs/iot-gateway/config/can/
+    - title: BACnet Connector
+      path: /docs/iot-gateway/config/bacnet/
+    - title: ODBC Connector
+      path: /docs/iot-gateway/config/odbc/
+    - title: REST Connector
+      path: /docs/iot-gateway/config/rest/
+    - title: SNMP Connector
+      path: /docs/iot-gateway/config/snmp/
 - title: IoT Gateway features
   path: /docs/iot-gateway/features/
   section:
@@ -18,3 +42,5 @@ toc:
       path: /docs/iot-gateway/guides/how-to-enable-remote-shell/
 - title: IoT Gateway Roadmap
   path: /docs/iot-gateway/roadmap/
+- title: Customization guide
+  path: /docs/iot-gateway/custom/

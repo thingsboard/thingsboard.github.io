@@ -7,6 +7,8 @@ description: Installing ThingsBoard on Ubuntu
 
 ---
 
+{% assign docsPrefix = "pe/" %}
+
 * TOC
 {:toc}
 

@@ -12,14 +12,19 @@ You can find more information on the dedicated page.
 
 ## How do I get started?
 
+{% if docsPrefix == 'paas/' %}
+We recommend to follow the [getting started guide](/docs/{{docsPrefix}}getting-started-guides/helloworld/).
+{% else %}
 We recommend to [install](/docs/{{docsPrefix}}user-guide/install/installation-options/) ThingsBoard locally on your laptop or PC using Docker
 and follow the [getting started guide](/docs/{{docsPrefix}}getting-started-guides/helloworld/).
+{% endif %}
 
 ## What can I do with ThingsBoard?
 
 ThingsBoard provides out-of-the-box IoT solution that will enable server-side infrastructure for your IoT applications.
-You can find more information by browsing [guides](/docs/{{docsPrefix}}user-guide/) and [samples](/docs/{{docsPrefix}}samples/)
+You can find more information by browsing [guides](/docs/{{docsPrefix}}user-guide/) and [hardware samples](/docs/{{docsPrefix}}guides/#AnchorIDHardwareSamples)
 
+{% unless docsPrefix == 'paas/' %}
 ## Where can I host ThingsBoard?
 
 You can host ThingsBoard in the cloud, on-premises or locally on your laptop, PC or even Raspberry Pi. We recommend to get started with Docker installation
@@ -28,6 +33,7 @@ You can host ThingsBoard in the cloud, on-premises or locally on your laptop, PC
   - [Windows](/docs/{{docsPrefix}}user-guide/install/docker-windows/)
 
 You can also take a look at [cluster setup](/docs/{{docsPrefix}}user-guide/install/cluster-setup/) guide.
+{% endunless %}
 
 ## How to connect my device?
 
@@ -35,7 +41,7 @@ ThingsBoard provides
 [MQTT](/docs/{{docsPrefix}}reference/mqtt-api), 
 [CoAP](/docs/{{docsPrefix}}reference/coap-api) and 
 [HTTP](/docs/{{docsPrefix}}reference/http-api) protocols support.
-**Existing** devices may be connected to the platform using **[ThingsBoard Gateway](/docs/{{docsPrefix}}iot-gateway/what-is-iot-gateway/)**.
+**Existing** devices may be connected to the platform using **[ThingsBoard Gateway](/docs/iot-gateway/what-is-iot-gateway/)**.
 You can find more information on the [connectivity](/docs/{{docsPrefix}}reference/protocols/) page. 
 
 ## Do I need to use an SDK?
@@ -56,8 +62,10 @@ Each device has unique access token credentials that is used to setup connection
 
 ThingsBoard platform is horizontally scalable. Each server node in the cluster is unique.
 Scalability is achieved using [consistent-hashing](https://dzone.com/articles/simple-magic-consistent) load balancing algorithm between the cluster nodes.
-Actual performance depends on usage scenario of connected devices. 
-For example, small commodity hardware cluster can support [several millions](/docs/{{docsPrefix}}reference/iot-platform-deployment-scenarios/#1-million-smart-meters-tco/) of devices connected over MQTT. 
+Actual performance depends on usage scenario of connected devices.
+{% unless docsPrefix == 'paas/' %}
+For example, small commodity hardware cluster can support [several millions](/docs/{{docsPrefix}}reference/iot-platform-deployment-scenarios/#1-million-smart-meters-tco) of devices connected over MQTT.
+{% endunless %}
   
 ## Where does ThingsBoard store data?
 

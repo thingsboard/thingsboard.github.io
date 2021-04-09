@@ -1,10 +1,11 @@
 
-ThingsBoard System Administrator is able to configure a connection to a SMTP server that will be used to distribute activation and password reset emails to users.
-This configuration step is required in production environments. 
-If you are evaluating the platform, pre-provisioned [**demo accounts**](/docs/{{docsPrefix}}samples/demo-account/#demo-tenant) are sufficient in most of the use cases.
+ThingsBoard System Administrator is able to configure a connection to a SMTP server that will be used to distribute activation and password reset emails to users.{% unless docsPrefix %}
+This configuration step is required in production environments. If you are evaluating the platform, pre-provisioned
+[**demo accounts**](/docs/samples/demo-account/#demo-tenant) are sufficient in most of the use cases.
+{% endunless %}
   
 **NOTE** System Mail settings are used only during user creation and password reset process and are controlled by a system administrator. 
-Tenant administrator is able to [**setup email rule node**](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/tutorials/send-email/) to distribute alarms produced by [**rule engine**](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/re-getting-started/).  
+Tenant administrator is able to [**setup email rule node**](/docs/user-guide/rule-engine-2-0/tutorials/send-email/) to distribute alarms produced by [**rule engine**](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/re-getting-started/).  
 
 * TOC
 {:toc}
@@ -13,7 +14,7 @@ Following steps are required to configure system mail settings.
 
 #### Step 1. Login as system administrator
 
-Login to your ThingsBoard instance WEB UI as a system administrator using default [**account**](/docs/{{docsPrefix}}samples/demo-account/#system-administrator).
+Login to your ThingsBoard instance WEB UI as a system administrator using default [**account**](/docs/samples/demo-account/#system-administrator).
 
 #### Step 2. Change administrator email address 
 
@@ -22,7 +23,8 @@ Change 'sysadmin@thingsboard.org' to your email address. Now re-login as adminis
 
 #### Step 3. Open 'Outgoing Mail' and populate SMTP server settings
 
-Navigate to **System Settings -> Outgoing Mail** and populate the form. Click on 'Send Test Email' button. 
+Navigate to **System Settings -> Outgoing Mail** and populate the form. Click on 'Send Test Email' button.
+
 A test email will be sent to the email address that you have specified in 'Step 2'.
 In case of error in configuration, you should receive a popup with the error log.
 

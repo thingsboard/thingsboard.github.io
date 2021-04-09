@@ -33,7 +33,16 @@ In case of live-demo server:
  - replace **$THINGSBOARD_URL** with **demo.thingsboard.io**
  - replace **tenant@thingsboard.org** with your live-demo username (email)
  - replace **tenant** password with your live-demo password
+
+{% if docsPrefix == "pe/" or docsPrefix == "paas/" %}
+
+The easiest way to get your account is to use [ThingsBoard Cloud](https://thingsboard.cloud/signup) server.
+
+{% else %}
+
 See **[live-demo](/docs/{{docsPrefix}}user-guide/live-demo/)** page for more details how to get your account.
+
+{% endif %}
 
 {% capture tabspec %}token
 A,get-token.sh,shell,resources/get-token.sh,/docs/reference/resources/get-token.sh

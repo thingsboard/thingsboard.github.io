@@ -16,6 +16,7 @@ The "details" button allows reviewing low-level details of the logged action.
 It is possible to fetch audit logs via [REST API](https://demo.thingsboard.io/swagger-ui.html#/audit-log-controller). 
 There are several API calls that allow to fetch entities related to particular user, entity, customer or fetch all records using page links.  
 
+{% unless docsPrefix == "paas/" %}
 ### General configuration
 
 System administrator is able to configure audit log levels using [thingsboard.yml](/docs/{{docsPrefix}}user-guide/install/config/). You can find sample configuration below:
@@ -72,8 +73,8 @@ The configuration parameters are well documented inline.
     user_name: "${AUDIT_LOG_SINK_USER_NAME:}"
     password: "${AUDIT_LOG_SINK_PASSWORD:}"      
 ```
+{% endunless %}
 
 ## Next steps
 
 {% assign currentGuide = "AdvancedFeatures" %}{% include templates/multi-project-guides-banner.md %}
-  

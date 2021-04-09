@@ -6,7 +6,7 @@ Filter Nodes are used for Message filtering and routing.
 
 ##### Check Relation Filter Node
 
-<table  style="width:12%">
+<table  style="width:250px;">
    <thead>
      <tr>
 	 <td style="text-align: center"><strong><em>Since TB Version 2.0.1</em></strong></td>
@@ -30,7 +30,7 @@ In case that checkbox disabled and any relation exists - Message is sent via **T
 
 ##### Check Existence Fields Node
 
-<table  style="width:12%">
+<table  style="width:250px;">
    <thead>
      <tr>
 	 <td style="text-align: center"><strong><em>Since TB Version 2.3</em></strong></td>
@@ -49,7 +49,7 @@ In case that checkbox is not selected, and at least one of the keys from data or
 
 ##### Message Type Filter Node
 
-<table  style="width:12%">
+<table  style="width:250px;">
    <thead>
      <tr>
 	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
@@ -69,7 +69,7 @@ If incoming Message Type is expected - Message is sent via **True** chain, other
 
 ##### Message Type Switch Node
 
-<table  style="width:12%">
+<table  style="width:250px;">
    <thead>
      <tr>
 	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
@@ -87,7 +87,7 @@ to the **Switch Node** or **Message Type Filter Node** configured with required 
 
 ##### Originator Type Filter Node
 
-<table  style="width:12%">
+<table  style="width:250px;">
    <thead>
      <tr>
 	 <td style="text-align: center"><strong><em>Since TB Version 2.1</em></strong></td>
@@ -105,7 +105,7 @@ If incoming Originator Type is expected - Message is sent via **True** chain, ot
 
 ##### Originator Type Switch Node
 
-<table  style="width:12%">
+<table  style="width:250px;">
    <thead>
      <tr>
 	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
@@ -119,7 +119,7 @@ Routes incoming messages by Originator [Entity](/docs/{{docsPrefix}}user-guide/e
 
 ##### Script Filter Node
 
-<table  style="width:12%">
+<table  style="width:250px;">
    <thead>
      <tr>
 	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
@@ -164,12 +164,12 @@ JavaScript condition can be verified using [Test JavaScript function](/docs/{{do
 
 You can see the real life examples, where this node is used, in the next tutorials:
 
-- [Create and Clear Alarms](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/tutorials/create-clear-alarms/)
-- [Reply to RPC Calls](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/tutorials/rpc-reply-tutorial/#add-filter-script-node)
+- [Create and Clear Alarms](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/)
+- [Reply to RPC Calls](/docs/user-guide/rule-engine-2-0/tutorials/rpc-reply-tutorial/#add-filter-script-node)
 
 ##### Switch Node
 
-<table  style="width:12%">
+<table  style="width:250px;">
    <thead>
      <tr>
 	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
@@ -283,4 +283,3 @@ if configured latitude and longitude are inside configured perimeter message sen
    - incoming message has no configured latitude or longitude key in data or metadata. 
    - missing perimeter definition;     
         
-    

@@ -109,7 +109,7 @@ toc:
   - title: Custom Integration development guide
     path: /docs/user-guide/integrations/custom/
   - title: Notifications and Alarms on your smartphone using Telegram Bot
-    path: /docs/user-guide/rule-engine-2-0/tutorials/integration-with-telegram-bot/
+    path: /docs/pe/user-guide/rule-engine-2-0/tutorials/integration-with-telegram-bot/
 - title: Analytics
   section:
   - title: Trendz Analytics

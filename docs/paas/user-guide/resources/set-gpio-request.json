@@ -1,0 +1,7 @@
+{
+  "method": "setGpio",
+  "params": {
+    "pin": "23",
+    "value": 1
+  }
+}

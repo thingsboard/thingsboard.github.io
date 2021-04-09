@@ -1,0 +1,78 @@
+{
+  "ruleChain": {
+    "additionalInfo": null,
+    "name": "Send Request Rule Chain",
+    "firstRuleNodeId": null,
+    "root": false,
+    "debugMode": false,
+    "configuration": null
+  },
+  "metadata": {
+    "firstNodeIndex": null,
+    "nodes": [
+      {
+        "additionalInfo": {
+          "layoutX": 110,
+          "layoutY": 295
+        },
+        "type": "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode",
+        "name": "Generator",
+        "debugMode": false,
+        "configuration": {
+          "msgCount": 6,
+          "periodInSeconds": 1,
+          "originatorId": "aab2bd90-8614-11ea-80a1-a7a96773bb43",
+          "originatorType": "DEVICE",
+          "jsScript": "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };"
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 387,
+          "layoutY": 294
+        },
+        "type": "org.thingsboard.rule.engine.flow.TbCheckpointNode",
+        "name": "CheckPoint",
+        "debugMode": true,
+        "configuration": {
+          "queueName": "HighPriority"
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 688,
+          "layoutY": 296
+        },
+        "type": "org.thingsboard.rule.engine.rest.TbRestApiCallNode",
+        "name": "Send Request",
+        "debugMode": true,
+        "configuration": {
+          "restEndpointUrlPattern": "http://localhost/api/v1",
+          "requestMethod": "POST",
+          "headers": {
+            "Content-Type": "application/json"
+          },
+          "useSimpleClientHttpFactory": false,
+          "readTimeoutMs": 0,
+          "maxParallelRequestsCount": 0,
+          "useRedisQueueForMsgPersistence": false,
+          "trimQueue": false,
+          "maxQueueSize": 0
+        }
+      }
+    ],
+    "connections": [
+      {
+        "fromIndex": 0,
+        "toIndex": 1,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 1,
+        "toIndex": 2,
+        "type": "Success"
+      }
+    ],
+    "ruleChainConnections": null
+  }
+}

@@ -375,11 +375,16 @@ After pressing **Test** output will be returned in right **Output** section.
 ## Rule Engine Statistics
 
 ThingsBoard Team have prepared the "default" dashboard for Rule Engine statistics. 
-This dashboard is automatically loaded for each tenant. The statistics collection is enabled by default and is controlled via configuration properties.
+This dashboard is automatically loaded for each tenant. 
+You may access it by navigating to "Api Usage"->"View statistics" (see screen below).
+
+{% include images-gallery.html imageCollection="open-statistics"  %}
+
+The statistics collection is enabled by default and is controlled via configuration properties.
 
 You may notice insights about errors in processing and what causes them on the dashbaord below: 
 
-![image](/images/user-guide/rule-engine-2-0/rule-engine-stats-dashboard.png)
+{% include images-gallery.html imageCollection="view-statistics"  %}
 
 ## Debugging
 
@@ -427,20 +432,22 @@ Note: the entity id you have specified in the call will be the originator of Rul
 
 ThingsBoard authors have prepared several tutorials to help you get started with designing rule chains by example:
 
-  * [**Transform incoming messages from device**](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/tutorials/transform-incoming-telemetry/) 
-  * [**Transform incoming messages using previous messages from device**](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/tutorials/transform-telemetry-using-previous-record/) 
-  * [**Create and clear alarms on incoming device messages**](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/tutorials/create-clear-alarms/)
-  * [**Send emails to customer on device alarm**](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/tutorials/send-email/) 
-  * [**Send messages between related devices**](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/tutorials/rpc-reply-tutorial/)
+  * [**Transform incoming messages from device**](/docs/user-guide/rule-engine-2-0/tutorials/transform-incoming-telemetry/) 
+  * [**Transform incoming messages using previous messages from device**](/docs/user-guide/rule-engine-2-0/tutorials/transform-telemetry-using-previous-record/) 
+  * [**Create and clear alarms on incoming device messages**](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/)
+  * [**Send emails to customer on device alarm**](/docs/user-guide/rule-engine-2-0/tutorials/send-email/) 
+  * [**Send messages between related devices**](/docs/user-guide/rule-engine-2-0/tutorials/rpc-reply-tutorial/)
   
-See more tutorials [here](https://thingsboard.io/docs/{{docsPrefix}}guides/).
+See more tutorials [here](/docs/{{docsPrefix}}guides/).
+
+{% unless docsPrefix == "paas/" %}
 
 ## Troubleshooting
 
 If you are using Kafka queue for processing messages, ThingsBoard provides the ability to monitor if the rate of pushing messages to the Kafka is faster than rate of consuming and processing them (in such case you will have a growing latency for message processing).
 To enable this functionality, you need to ensure that Kafka consumer-stats are enabled (see <b>queue.kafka.consumer-stats</b> section of the [Configuration properties](/docs/{{docsPrefix}}user-guide/install/config/#thingsboard-core-settings))
 
-Once Kafka consumer-stats are enabled, you will see logs (see [Troubleshooting](/docs/{{docsPrefix}}user-guide/troubleshooting/)) about offset lag for consumer groups.
+Once Kafka consumer-stats are enabled, you will see logs (see [Troubleshooting](/docs/user-guide/troubleshooting/#logs)) about offset lag for consumer groups (there are consumer-group logs for tb-core, tb-rule-engine and all transport services).
 
 Here's an example of the log message:
 
@@ -467,3 +474,4 @@ Where:
 
 **NOTE:** Logs about consumer lag are printed only if there is a lag for this consumer group.
 
+{% endunless %}
