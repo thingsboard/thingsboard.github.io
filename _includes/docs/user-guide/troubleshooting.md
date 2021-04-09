@@ -146,6 +146,27 @@ You may enable prometheus metrics by setting environment variable `METRICS_ENDPO
 
 These metrics are exposed at the path: `https://<yourhostname>/actuator/prometheus` which can be scraped by prometheus (No authentication required).
 
+## OAuth2
+
+Sometimes after configuring OAuth you can not see the button for logging in with OAuth provider. This happens when “Domain name” and “Redirect URI Template” contain faulty values, they need to be the same you use for accessing your ThingsBoard web page.
+
+Example:
+
+|  Domain name     |  Redirect URI Template                    |
+|----------------- |----------------------------------         |
+|mydomain:8080     | http://yourdomain:8080/login/oauth2/code  |
+|mydomain          | http://yourdomain/login/oauth2/code       |
+
+Base URL in "HOME" section should not contain "/" or other characters.
+
+> Go to your ThingsBoard as a System Administrator. Check the General
+> Settings -> Base URL should not contain “/” at the end (f.e. “http://
+> yourdomain” instead of “https://yourdomain/”).
+
+For OAuth2 configuration click [here](/docs/{{docsPrefix}}user-guide/oauth/azure).
+
+
+
 ## Getting help
 
 <section id="talkToUs">
