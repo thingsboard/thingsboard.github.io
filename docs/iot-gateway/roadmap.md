@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-gw
 title: ThingsBoard IoT Gateway Roadmap
 description: Architecture of ThingsBoard IoT Gateway
 

@@ -1,0 +1,39 @@
+bigheader: "Trendz Documentation"
+abstract: "Analytics Platform that converts the IoT dataset into insights and simplifies the decision-making process."
+toc:
+- title: Trendz Analytics
+  path: /docs/trendz/
+- title: Data Visualization
+  section:
+    - title: Overview
+      path: /docs/trendz/visualizations-overview/
+    - title: Tables
+      path: /docs/trendz/visualizations-tables/
+    - title: Line Chart
+      path: /docs/trendz/visualizations-line/
+    - title: Bar & Histogram
+      path: /docs/trendz/visualizations-bar/
+    - title: Pie Chart
+      path: /docs/trendz/visualizations-pie/
+    - title: Scatter Plot
+      path: /docs/trendz/visualizations-scatter/
+    - title: Heat Map
+      path: /docs/trendz/visualizations-heatmap/
+    - title: Cards
+      path: /docs/trendz/visualizations-card/
+    - title: View Settings
+      path: /docs/trendz/view-settings/
+- title: Grouping and Aggregation
+  path: /docs/trendz/data-grouping-aggregation/
+- title: Filtering
+  path: /docs/trendz/data-filtering/
+- title: Calculated Fields
+  path: /docs/trendz/calculated-fields/
+- title: States
+  path: /docs/trendz/states/
+- title: Prediction
+  path: /docs/trendz/prediction/
+- title: Share and embed Visualizations
+  path: /docs/trendz/embed-visuals/
+- title: Trendz Release Notes
+  path: /docs/trendz/releases/

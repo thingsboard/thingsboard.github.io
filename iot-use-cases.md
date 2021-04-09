@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: common
 title: IoT use cases
 description: ThingsBoard IoT Platform use cases
 horizontaltoc: "true"

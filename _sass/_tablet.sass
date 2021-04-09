@@ -45,7 +45,6 @@ $main-nav-left-button-font-size: 18px
 $hero-padding-top: 80px
 $headline-wrapper-margin-bottom: 40px
 $quickstart-button-padding: 0 50px
-$vendor-strip-font-size: 16px
 
 // ocean nodes
 $ocean-nodes-padding-Y: 0px
@@ -79,26 +78,6 @@ $ocean-nodes-padding-Y: 0px
 		line-height: 40px
 		padding-bottom: 0px
 
-
-	#vendorStrip
-		display: block
-		text-align: center
-
-		img
-			max-height: 24px
-			vertical-align: middle
-			margin: 0 30px
-
-	#docs
-		#vendorStrip
-			#docsList
-				li
-					a
-						font-size: 1.2em
-						font-weight: normal
-
-					li
-						margin-right: 60px
 
 	#docsContent
 		.trainings-info
@@ -165,21 +144,6 @@ $ocean-nodes-padding-Y: 0px
 		width: $main-max-width
 		display: block
 
-	#talkToUs
-		#bigSocial, #gettingHelp
-			div
-				width: calc(50% - 15px)
-				margin-top: 20px
-
-			div + div
-				margin-left: 20px
-
-			a
-				display: inline-block
-				color: $blue
-				font-weight: 400
-				text-decoration: none
-
 	// FOOTER
 	footer
 		nav
@@ -197,9 +161,6 @@ $ocean-nodes-padding-Y: 0px
 	#docs
 		.logo
 			left: calc(50% - 70px)
-		&.flip-nav
-			.flyout-button
-				filter: brightness(100%) invert(100%)
 
 @media screen and (max-width: 768px)
 	footer

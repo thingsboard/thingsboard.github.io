@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-trendz
 title: Upgrade instructions
 description: ThingsBoard Trendz Analytics upgrade instructions
 

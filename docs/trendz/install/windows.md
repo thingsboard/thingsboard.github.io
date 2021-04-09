@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-trendz
 assignees:
 - ashvayka
 title: Installing ThingsBoard Trendz Analytics on Windows

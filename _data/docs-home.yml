@@ -1,120 +1,81 @@
 bigheader: "ThingsBoard Documentation"
 abstract: "Documentation for using ThingsBoard IoT Platform."
 toc:
-- title: Documentation
+- title: Community Edition
   path: /docs/
 - title: What is ThingsBoard?
   path: /docs/getting-started-guides/what-is-thingsboard/
 - title: How to connect your device?
   path: /docs/getting-started-guides/connectivity/
-- title: Features
+- title: Key concepts
   section:
   - title: Entities and relations
     path: /docs/user-guide/entities-and-relations/
   - title: Tenant Profiles
     path: /docs/user-guide/tenant-profiles/
-    new: true
   - title: Device Profiles
     path: /docs/user-guide/device-profiles/
     new: true
-  - title: Working with device attributes
+  - title: Attributes
     path: /docs/user-guide/attributes/
-  - title: Working with telemetry data
+  - title: Time-series data
     path: /docs/user-guide/telemetry/
-  - title: Working with alarms
+  - title: Alarms
     path: /docs/user-guide/alarms/
-  - title: Dashboards
-    path: /docs/user-guide/dashboards/
-  - title: Device Connectivity Status
-    path: /docs/user-guide/device-connectivity-status/
-  - title: Claiming Devices
-    path: /docs/user-guide/claiming-devices/
-  - title: Device provisioning
-    path: /docs/user-guide/device-provisioning/
-    new: true
-  - title: Entity Views
-    path: /docs/user-guide/entity-views/
-  - title: Using RPC capabilities
+  - title: Remote commands to devices
     path: /docs/user-guide/rpc/
-  - title: Data visualization
-    path: /docs/user-guide/visualization/
-  - title: OAuth 2 Support
-    path: /docs/user-guide/oauth-2-support/
-    new: true
-  - title: Advanced RBAC for IoT
-    path: /docs/user-guide/rbac/
-    pe: true
-  - title: White-labeling
-    path: /docs/user-guide/white-labeling/
-    pe: true
-  - title: Self-registration
-    path: /docs/user-guide/self-registration/
-    pe: true
-  - title: Custom Translations
-    path: /docs/user-guide/custom-translation/
-    pe: true
-  - title: Custom Menu
-    path: /docs/user-guide/custom-menu/
-    pe: true
-  - title: Platform Integrations
-    path: /docs/user-guide/integrations/#overview
-    pe: true
-  - title: Entity Groups
-    path: /docs/user-guide/groups/
-    pe: true
-  - title: Scheduler
-    path: /docs/user-guide/scheduler/
-    pe: true
-  - title: Reporting
-    path: /docs/user-guide/reporting/
-    pe: true
-  - title: CSV/XLS data export
-    path: /docs/user-guide/csv-xls-data-export/
-    pe: true
-  - title: Bulk Provisioning
-    new: true
-    path: /docs/user-guide/bulk-provisioning/
-  - title: File Storage
-    path: /docs/user-guide/file-storage/
-    pe: true
-  - title: Audit Log
-    path: /docs/user-guide/audit-log/
-  - title: API Limits
-    path: /docs/user-guide/api-limits/
-  - title: Advanced Filters
-    new: true
-    path: /docs/user-guide/advanced-filters/
+- title: Dashboards
+  section:
+  - title: Overview
+    path: /docs/user-guide/dashboards/
+  - title: Aliases
+    path: /docs/user-guide/ui/aliases/
+  - title: Widget Actions
+    path: /docs/user-guide/ui/widget-actions/
+  - title: Widgets Library
+    path: /docs/user-guide/ui/widget-library/
 - title: Rule engine
   section:
-  - title: Getting Started
-    path: /docs/user-guide/rule-engine-2-0/re-getting-started/
-  - title: Overview
-    path: /docs/user-guide/rule-engine-2-0/overview/
-  - title: Architecture
-    path: /docs/user-guide/rule-engine-2-0/architecture/
-  - title: Nodes
-    section:
-    - title: Filter Nodes
-      path: /docs/user-guide/rule-engine-2-0/filter-nodes/
-    - title: Enrichment Nodes
-      path: /docs/user-guide/rule-engine-2-0/enrichment-nodes/
-    - title: Transformation Nodes
-      path: /docs/user-guide/rule-engine-2-0/transformation-nodes/
-    - title: Action Nodes
-      path: /docs/user-guide/rule-engine-2-0/action-nodes/
-    - title: External Nodes
-      path: /docs/user-guide/rule-engine-2-0/external-nodes/
-  - title: PE Nodes
-    pe: true
-    section:
-    - title: Transformation Nodes
-      path: /docs/user-guide/rule-engine-2-0/pe/transformation-nodes/
-    - title: Action Nodes
-      path: /docs/user-guide/rule-engine-2-0/pe/action-nodes/
-    - title: Analytics Nodes
-      path: /docs/user-guide/rule-engine-2-0/pe/analytics-nodes/
-  - title: Custom Rule Nodes
-    path: /docs/user-guide/contribution/rule-node-development/
+    - title: Getting Started
+      path: /docs/user-guide/rule-engine-2-0/re-getting-started/
+    - title: Overview
+      path: /docs/user-guide/rule-engine-2-0/overview/
+    - title: Architecture
+      path: /docs/user-guide/rule-engine-2-0/architecture/
+    - title: Nodes
+      section:
+        - title: Filter Nodes
+          path: /docs/user-guide/rule-engine-2-0/filter-nodes/
+        - title: Enrichment Nodes
+          path: /docs/user-guide/rule-engine-2-0/enrichment-nodes/
+        - title: Transformation Nodes
+          path: /docs/user-guide/rule-engine-2-0/transformation-nodes/
+        - title: Action Nodes
+          path: /docs/user-guide/rule-engine-2-0/action-nodes/
+        - title: External Nodes
+          path: /docs/user-guide/rule-engine-2-0/external-nodes/
+    - title: PE Nodes
+      pe: true
+      section:
+        - title: Transformation Nodes
+          path: /docs/pe/user-guide/rule-engine-2-0/transformation-nodes/
+        - title: Action Nodes
+          path: /docs/pe/user-guide/rule-engine-2-0/action-nodes/
+        - title: Analytics Nodes
+          path: /docs/pe/user-guide/rule-engine-2-0/analytics-nodes/
+    - title: Custom Rule Nodes
+      path: /docs/user-guide/contribution/rule-node-development/
+- title: White-labeling
+  pe: true
+  section:
+    - title: Overview
+      path: /docs/pe/user-guide/white-labeling/
+    - title: Self-registration
+      path: /docs/pe/user-guide/self-registration/
+    - title: Custom Translations
+      path: /docs/pe/user-guide/custom-translation/
+    - title: Custom Menu
+      path: /docs/pe/user-guide/custom-menu/
 - title: Integrations
   pe: true
   section:
@@ -122,7 +83,6 @@ toc:
     path: /docs/user-guide/integrations/
   - title: Remote Integrations
     path: /docs/user-guide/integrations/remote-integrations/
-    new: true
   - title: HTTP
     path: /docs/user-guide/integrations/http/
   - title: MQTT
@@ -146,7 +106,6 @@ toc:
   - title: Azure Event Hub
     path: /docs/user-guide/integrations/azure-event-hub/
   - title: Azure IoT Hub
-    new: true
     path: /docs/user-guide/integrations/azure-iot-hub/
   - title: TCP
     path: /docs/user-guide/integrations/tcp/
@@ -163,66 +122,47 @@ toc:
 - title: Analytics
   section:
   - title: Trendz Analytics
-    section:
-      - title: Getting Started
-        path: /docs/trendz/
-      - title: Installation guide
-        section:
-          - title: Installation options
-            path: /docs/trendz/install/installation-options
-          - title: Installing Trendz on Ubuntu Server
-            path: /docs/trendz/install/ubuntu/
-          - title: Installing Trendz on CentOS/RHEL
-            path: /docs/trendz/install/rhel/
-          - title: Installing Trendz on Windows
-            path: /docs/trendz/install/windows/
-          - title: Installing Trendz using Docker (Windows)
-            path: /docs/trendz/install/docker-windows/
-          - title: Installing Trendz using Docker (Linux or Mac OS)
-            path: /docs/trendz/install/docker/
-          - title: Upgrade instructions
-            path: /docs/trendz/install/trndz-upgrade-instructions/
-      - title: Connect Trendz to Thingsboard
-        path: /docs/trendz/connect-thingsboard/
-      - title: Data Visualization
-        section:
-          - title: Overview
-            path: /docs/trendz/visualizations-overview/
-          - title: Tables
-            path: /docs/trendz/visualizations-tables/
-          - title: Line Chart
-            path: /docs/trendz/visualizations-line/
-          - title: Bar & Histogram
-            path: /docs/trendz/visualizations-bar/
-          - title: Pie Chart
-            path: /docs/trendz/visualizations-pie/
-          - title: Scatter Plot
-            path: /docs/trendz/visualizations-scatter/
-          - title: Heat Map
-            path: /docs/trendz/visualizations-heatmap/
-          - title: Cards
-            path: /docs/trendz/visualizations-card/
-          - title: View Settings
-            path: /docs/trendz/view-settings/
-      - title: Grouping and Aggregation
-        path: /docs/trendz/data-grouping-aggregation/
-      - title: Filtering
-        path: /docs/trendz/data-filtering/
-      - title: Calculated Fields
-        path: /docs/trendz/calculated-fields/
-      - title: States
-        path: /docs/trendz/states/
-      - title: Prediction
-        path: /docs/trendz/prediction/
-      - title: Share and embed Visualizations
-        path: /docs/trendz/embed-visuals/
-      - title: Trendz Release Notes
-        path: /docs/trendz/releases/
+    path: /docs/trendz/
   - title: Kafka Streams
-    new: true
     path: /docs/samples/analytics/kafka-streams/
+- title: Other Features
+  section:
+    - title: Device Connectivity Status
+      path: /docs/user-guide/device-connectivity-status/
+    - title: Claiming Devices
+      path: /docs/user-guide/claiming-devices/
+    - title: Device provisioning
+      path: /docs/user-guide/device-provisioning/
+      new: true
+    - title: Entity Views
+      path: /docs/user-guide/entity-views/
+    - title: API Limits
+      path: /docs/user-guide/api-limits/
+    - title: Bulk Provisioning
+      new: true
+      path: /docs/user-guide/bulk-provisioning/
+    - title: Entity Groups
+      path: /docs/pe/user-guide/groups/
+      pe: true
+    - title: Scheduler
+      path: /docs/pe/user-guide/scheduler/
+      pe: true
+    - title: Reporting
+      path: /docs/pe/user-guide/reporting/
+      pe: true
+    - title: CSV/XLS data export
+      path: /docs/pe/user-guide/csv-xls-data-export/
+      pe: true
+    - title: File Storage
+      path: /docs/pe/user-guide/file-storage/
+      pe: true
 - title: Security
   section:
+  - title: Audit Log
+    path: /docs/user-guide/audit-log/
+  - title: Advanced RBAC for IoT
+    path: /docs/pe/user-guide/rbac/
+    pe: true
   - title: OAuth 2 Support
     path: /docs/user-guide/oauth-2-support/
   - title: MQTT over SSL
@@ -253,12 +193,8 @@ toc:
     section:
     - title: Trip Animation Widget
       path: /docs/user-guide/ui/trip-animation-widget/
-    - title: Widgets Library
-      path: /docs/user-guide/ui/widget-library/
     - title: Advanced Settings of the Entity Table widget
       path: /docs/user-guide/ui/entity-table-widget/
-    - title: Widget Actions
-      path: /docs/user-guide/ui/widget-actions/
     - title: Advanced data key configuration
       path: /docs/user-guide/ui/advanced-data-key-configuration/
   - title: Dashboards
@@ -267,83 +203,6 @@ toc:
     path: /docs/user-guide/ui/sms-provider-settings/
   - title: Mail Settings
     path: /docs/user-guide/ui/mail-settings/
-  - title: Aliases
-    path: /docs/user-guide/ui/aliases/
-- title: IoT Gateway
-  path: /docs/iot-gateway/
-  section:
-  - title: What is ThingsBoard IoT Gateway?
-    path: /docs/iot-gateway/what-is-iot-gateway/
-  - title: Getting Started
-    path: /docs/iot-gateway/getting-started/
-  - title: Installation guide
-    section:
-      - title: Installation options
-        path: /docs/iot-gateway/installation/
-      - title: IoT Gateway installation on Ubuntu (DEB)
-        path: /docs/iot-gateway/install/deb-installation/
-      - title: IoT Gateway installation on CentOS/RHEL (RPM)
-        path: /docs/iot-gateway/install/rpm-installation/
-      - title: IoT Gateway installation using Docker (Linux and Mac OS)
-        path: /docs/iot-gateway/install/docker-installation/
-      - title: IoT Gateway installation using Docker (Windows)
-        path: /docs/iot-gateway/install/docker-windows/
-      - title: Installation from pip
-        path: /docs/iot-gateway/install/pip-installation/
-      - title: Installation from sources (Latest version)
-        path: /docs/iot-gateway/install/source-installation/
-      - title: Upgrade instructions
-        path: /docs/iot-gateway/install/upgrade-instructions/
-  - title: Configuration guide
-    section:
-      - title: General configuration
-        path: /docs/iot-gateway/configuration/
-      - title: MQTT Connector
-        path: /docs/iot-gateway/config/mqtt/
-      - title: Modbus Connector
-        path: /docs/iot-gateway/config/modbus/
-      - title: OPC-UA Connector
-        path: /docs/iot-gateway/config/opc-ua/
-      - title: BLE Connector
-        path: /docs/iot-gateway/config/ble/
-      - title: Request Connector
-        path: /docs/iot-gateway/config/request/
-      - title: CAN Connector
-        path: /docs/iot-gateway/config/can/
-      - title: BACnet Connector
-        path: /docs/iot-gateway/config/bacnet/
-      - title: ODBC Connector
-        path: /docs/iot-gateway/config/odbc/
-      - title: REST Connector
-        path: /docs/iot-gateway/config/rest/
-      - title: SNMP Connector
-        path: /docs/iot-gateway/config/snmp/
-  - title: Customization guide
-    path: /docs/iot-gateway/custom/
-  - title: IoT Gateway features
-    path: /docs/iot-gateway/features/
-    section:
-      - title: Remote logging
-        path: /docs/iot-gateway/guides/how-to-enable-remote-logging/
-      - title: Service RPC methods
-        path: /docs/iot-gateway/guides/how-to-use-gateway-rpc-methods/
-      - title: Remote shell
-        path: /docs/iot-gateway/guides/how-to-enable-remote-shell/
-  - title: IoT Gateway Roadmap
-    path: /docs/iot-gateway/roadmap/
-- title: ThingsBoard Cloud
-  new: true
-  section:
-    - title: What is ThingsBoard Cloud?
-      path: /products/paas/what-is-thingsboard-cloud/
-    - title: Subscriptions
-      path: /products/paas/subscription/
-    - title: Plan and billing
-      path: /products/paas/billing-info/
-    - title: Domains
-      path: /products/paas/domains/
-- title: Troubleshooting
-  path: /docs/user-guide/troubleshooting/
 - title: Contribution Guide
   section:
     - title: How to contribute
@@ -356,6 +215,8 @@ toc:
       path: /docs/user-guide/contribution/widgets-development/
     - title: Widgets development (ThingsBoard v2.x)
       path: /docs/user-guide/contribution/widgets-development-before-3.0/
+- title: Troubleshooting
+  path: /docs/user-guide/troubleshooting/
 - title: Release Notes
   path: /docs/reference/releases/
 - title: Roadmap

@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-gw
 title: Request Connector Configuration
 description: HTTP protocol support for ThingsBoard IoT Gateway
 

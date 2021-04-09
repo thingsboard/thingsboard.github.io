@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-gw
 title: Install ThingsBoard IoT Gateway using Docker.
 
 ---

@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: common
 title: IoT smart metering solutions and smart meter data visualization with ThingsBoard 
 description: IoT smart metering solutions and smart meter data visualization with ThingsBoard
 horizontaltoc: "true"
@@ -51,7 +51,6 @@ ThingsBoard IoT platform provides out-of-the-box components and APIs to dramatic
 - [Alarm widgets](/docs/user-guide/ui/widget-library/#alarm-widgets) to instantly notify users and / or operators about any critical events or unusual consumption levels;
 - Device management to allow you organize your endpoints in [groups](/docs/user-guide/groups/) by specific attributes, simplify navigation between different types of [entities](/docs/user-guide/entities-and-relations/) and endpoint groups, and enable more flexible data analysis based on your custom groups;
 - Customizable [end-user dashboards](/docs/user-guide/ui/dashboards/) (featuring drill-down capabilities) to analyze and share the results of smart metering monitoring;
-- Integration with [third-party analytics frameworks and solutions](/docs/samples/analytics/spark-integration-with-thingsboard/) for advanced processing of smart metering data and reporting;
 - Smart metering management by utilizing [ThingsBoard API](/docs/api/) to control and manage smart meters.
 
 The ThingsBoard IoT platform provides production ready server infrastructure to connect your smart meter devices, collect, store and analyze smart metering data, and share results of the analysis with your customers and end-users.
@@ -62,7 +61,7 @@ The following interactive dashboard hosted on live demo server represents smart 
 
 <iframe class="demoDashboardFrame" src="https://demo.ThingsBoard.io/dashboard/3a1026e0-83f6-11e7-b56d-c7f326cba909?publicId=322a2330-7c36-11e7-835d-c7f326cba909" frameborder="0" width="100%"></iframe>
 <div class="center" style="margin-bottom: 20px;">
-    <a target="_blank" style="padding: 0 40px;" href="https://demo.ThingsBoard.io/dashboard/3a1026e0-83f6-11e7-b56d-c7f326cba909?publicId=322a2330-7c36-11e7-835d-c7f326cba909" class="button">Live demo</a>
+    <a target="_blank" href="https://demo.ThingsBoard.io/dashboard/3a1026e0-83f6-11e7-b56d-c7f326cba909?publicId=322a2330-7c36-11e7-835d-c7f326cba909" class="button">Live demo</a>
 </div>
 
 The attached dashboard demonstrates real-time data from smart-meters that is collected using [ThingsBoard MQTT API](/docs/reference/mqtt-api/). The data is stored in Cassandra DB on our demo server.
@@ -90,7 +89,7 @@ ThingsBoard Rule Engine enables forwarding incoming data to various analytics sy
 
 ## Learn more
 
-<a style="margin: 10px;" href="/docs/getting-started-guides/helloworld/" class="button">Getting started</a>
+<a style="margin-right: 10px;" href="/docs/getting-started-guides/helloworld/" class="button">Getting started</a>
 <a style="margin: 10px;" href="/industries/smart-buildings/" class="button">Customers feedback</a>
 <a style="margin: 10px;" href="/docs/#platform-features" class="button">Platform features</a>
 <a style="margin: 10px;" href="/docs/reference/" class="button">Architecture</a>

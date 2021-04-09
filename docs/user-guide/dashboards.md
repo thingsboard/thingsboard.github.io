@@ -254,8 +254,6 @@ entity-name:
         image: /images/user-guide/dashboards/settings/entity-name-5.png
     6:
         image: /images/user-guide/dashboards/settings/entity-name-6.png
-    7:
-        image: /images/user-guide/dashboards/settings/entity-name-7.png
 
 action-state:
     0:
@@ -345,6 +343,7 @@ tw-time-zone:
     0:
         image: /images/user-guide/dashboards/tw-time-zone.png
 
+<<<<<<< HEAD
 --- 
 
 * TOC
@@ -957,8 +956,14 @@ This action saves the configuration file of the JSON format with all the setting
 {% include images-gallery.html imageCollection="export-widget" %}
 
 ### ThingsBoard Professional Edition export
+=======
+zoom-in:
+    0:
+        image: /images/user-guide/dashboards/zoom-in.png
+    1:
+        image: /images/user-guide/dashboards/zoom-in-1.png
+>>>>>>> 6ee023aa47e3ee01d6686193e339b57f5d87789f
 
-In ThingsBoard Professional Edition, dashboard export is possible in several additional formats: PDF, PNG & JPEG.
-This is useful when you need to send the data displayed in your dashboard by email or print.
+--- 
 
-{% include images-gallery.html imageCollection="pro-export" %}
+{% include docs/user-guide/dashboards.md %}

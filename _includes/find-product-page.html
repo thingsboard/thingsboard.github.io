@@ -1,0 +1,8 @@
+{% assign foundPage = nil %}
+{% if pageUrl contains productInfo.docsPrefix %}
+    {% assign pageUrl = pageUrl | replace_first: productInfo.docsPrefix, product.docsPrefix %}
+    {% assign foundPage = site.pages | where: "url", pageUrl %}
+    {% if foundPage.size == 0 %}
+        {% assign foundPage = site.pages | where: "redirect_from", pageUrl %}
+    {% endif %}
+{% endif %}

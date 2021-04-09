@@ -1,8 +1,9 @@
 <div class="warn-banner">
-  <div class="warn-sign">
-      <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
-  </div>
-  <div class="warn-text">
+    <img src="/images/doc-warn-icon.svg"/>
+    <div>
+      {% if include.title %}
+      <div class="warn-title">{{ include.title }}</div>
+      {% endif %}
       {{ include.content | markdownify }}
-  </div>
+    </div>
 </div>

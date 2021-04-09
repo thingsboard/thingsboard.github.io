@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-gw
 title: Getting started with ThingsBoard IoT Gateway
 description: Write your first IoT project using ThingsBoard IoT Gateway
 
@@ -15,7 +15,7 @@ We will also configure MQTT and OPC-UA extension in order to subscribe to device
 
 ### Prerequisites
 
-If you don't have access to a running ThingsBoard instance, use either [**Live Demo**](https://demo.thingsboard.io/signup) or
+If you don't have access to a running ThingsBoard instance, use either [**Live Demo**](https://thingsboard.cloud/signup) or
 [**Installation Guide**](/docs/user-guide/install/installation-options/) 
 to fix this. 
 
@@ -68,7 +68,7 @@ You gateway configuration should look similar to this file:
 ```yaml
 
 thingsboard:
-  host: demo.thingsboard.io
+  host: thingsboard.cloud
   port: 1883
   security:
     accessToken: FUH2Fonov6eajSHi0Zyw

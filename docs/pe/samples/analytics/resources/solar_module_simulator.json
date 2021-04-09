@@ -1,0 +1,102 @@
+{
+  "ruleChain": {
+    "additionalInfo": null,
+    "name": "Solar-Module-Simulator",
+    "firstRuleNodeId": null,
+    "root": false,
+    "debugMode": false,
+    "configuration": null
+  },
+  "metadata": {
+    "firstNodeIndex": null,
+    "nodes": [
+      {
+        "additionalInfo": {
+          "layoutX": 708,
+          "layoutY": 147
+        },
+        "type": "org.thingsboard.rule.engine.kafka.TbKafkaNode",
+        "name": "Push to Kafka",
+        "debugMode": true,
+        "configuration": {
+          "topicPattern": "raw-data-topic",
+          "bootstrapServers": "localhost:9092",
+          "retries": 0,
+          "batchSize": 16384,
+          "linger": 0,
+          "bufferMemory": 33554432,
+          "acks": "-1",
+          "keySerializer": "org.apache.kafka.common.serialization.StringSerializer",
+          "valueSerializer": "org.apache.kafka.common.serialization.StringSerializer",
+          "otherProperties": {}
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 350,
+          "layoutY": 73
+        },
+        "type": "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode",
+        "name": "Module 1 Simulator",
+        "debugMode": true,
+        "configuration": {
+          "msgCount": 0,
+          "periodInSeconds": 5,
+          "originatorId": "f9ffce40-fb1f-11e9-bf20-2142506a8114",
+          "originatorType": "DEVICE",
+          "jsScript": "var msg = { power: 5, name: \"Module 1\", panel: \"Panel 1\"};\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };"
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 351,
+          "layoutY": 149
+        },
+        "type": "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode",
+        "name": "Module 2 Simulator",
+        "debugMode": true,
+        "configuration": {
+          "msgCount": 0,
+          "periodInSeconds": 5,
+          "originatorId": "00014800-fb20-11e9-bf20-2142506a8114",
+          "originatorType": "DEVICE",
+          "jsScript": "var msg = { power: 5, name: \"Module 2\", panel: \"Panel 1\"};\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };"
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 351,
+          "layoutY": 218
+        },
+        "type": "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode",
+        "name": "Module 2 Simulator",
+        "debugMode": true,
+        "configuration": {
+          "msgCount": 0,
+          "periodInSeconds": 5,
+          "originatorId": "052496c0-fb20-11e9-bf20-2142506a8114",
+          "originatorType": "DEVICE",
+          "jsScript": "var msg = { power: 3.5, name: \"Module 3\", panel: \"Panel 1\"};\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };"
+        }
+      }
+    ],
+    "connections": [
+      {
+        "fromIndex": 1,
+        "toIndex": 0,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 2,
+        "toIndex": 0,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 3,
+        "toIndex": 0,
+        "type": "Success"
+      }
+    ],
+    "ruleChainConnections": null
+  }
+}

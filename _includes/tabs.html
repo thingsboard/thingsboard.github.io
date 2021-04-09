@@ -3,13 +3,17 @@
 <script>
   jqueryUiDefer(initTabs);
   function initTabs() {
-    $(function(){$("#{{tabsetname}}").tabs();});
+    $(function(){
+        $("#{{tabsetname}}").tabs();
+    });
   }
 </script>
-<div id="{{tabsetname}}">
-  <ul>{% for tab in tabsraw offset:1 %}{% assign thisTab = tab | split: ',' %}
-    <li><a href="#{{ thisTab[0] | strip | handleize }}">{{ thisTab[1] | strip}}</a></li>{% endfor %}
-  </ul>
+<div id="{{tabsetname}}" class="docs-tabs">
+    <div class="ui-tabs-scrollbox">
+      <ul>{% for tab in tabsraw offset:1 %}{% assign thisTab = tab | split: ',' %}
+        <li><a href="#{{ thisTab[0] | strip | handleize }}">{{ thisTab[1] | strip}}</a></li>{% endfor %}
+      </ul>
+    </div>
   {% for tab in tabsraw offset:1 %}
   {% assign thisTab = tab | split: ',' %}
   {% assign tabLang=thisTab[2] %}

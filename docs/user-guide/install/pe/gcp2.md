@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-pe
 title: Installing ThingsBoard PE from GCP Marketplace
 description: Installing ThingsBoard PE from Google Cloud Platform Marketplace
 

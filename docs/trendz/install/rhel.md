@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-trendz
 assignees:
 - vparomskiy
 title: Installing ThingsBoard Trendz Analytics  on CentOS/RHEL

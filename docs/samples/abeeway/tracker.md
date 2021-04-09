@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-pe
 title: Abeeway Micro Tracker and Abeeway Industrial Tracker telemetry upload
 description: Abeeway Micro Tracker and Abeeway Industrial Tracker upload
 hidetoc: "true"
@@ -919,5 +919,5 @@ and also the content of the data itself (a detailed description of the data).
 
 ## Next steps
 
-{% assign currentGuide = "HardwareSamples" %}{% include templates/guides-banner.md %}
+{% assign currentGuide = "HardwareSamples" %}{% include templates/guides-banner-pe.md %}
 

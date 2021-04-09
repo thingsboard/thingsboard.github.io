@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: common
 title: Services
 description: ThingsBoard support plans, services and training sessions
 

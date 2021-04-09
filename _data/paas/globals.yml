@@ -1,0 +1,17 @@
+tocs:
+- docs-home
+- getting-started
+- guides
+- api
+- faq
+docs-header:
+- toc: getting-started
+  title: Getting Started
+- toc: docs-home
+  title: Documentation
+- toc: guides
+  title: Guides
+- toc: api
+  title: API
+- toc: faq
+  title: FAQ

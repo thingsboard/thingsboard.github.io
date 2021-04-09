@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-pe
 assignees:
 - ashvayka
 title: ThingsBoard Professional Edition using Docker with Cassandra (Linux or Mac OS)
@@ -162,7 +162,7 @@ $ ./docker-start-services.sh
 
 Where:
 
-- `FROM_VERSION` - from which version upgrade should be started. See [Upgrade Instructions](https://thingsboard.io/docs/user-guide/install/upgrade-instructions) for valid `fromVersion` values.
+- `FROM_VERSION` - from which version upgrade should be started. See [Upgrade Instructions](/docs/user-guide/install/upgrade-instructions) for valid `fromVersion` values.
 
 
 ## Next steps
