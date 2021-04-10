@@ -19,5 +19,20 @@
 
 {% include footer.html %}
 
+<script>
+    jqueryDefer(function () {
+        $(window).scroll(function() {
+            var height = $(window).scrollTop();
+            if(height > 102){
+            $('nav.customers-nav').addClass('nav-fixed');
+            $('h1:first-of-type').addClass('customer-spacer');
+            } else{
+            $('nav.customers-nav').removeClass('nav-fixed');
+            $('h1:first-of-type').removeClass('customer-spacer');
+            }
+        });
+    });
+</script>
+
 </body>
 </html>

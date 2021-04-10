@@ -1,9 +1,32 @@
 ---
 layout: common
-title: Industry 4.0
+title: Industry 4.0 customers
 description: 
 
 ---
+
+<nav class="customers-nav">
+    <ul>
+        <li>
+            <a href="/industries/smart-energy/">Smart Energy</a>
+        </li>
+        <li>
+            <a href="/industries/agriculture/">Agriculture</a>
+        </li>
+        <li>
+            <a href="/industries/smart-buildings/">Smart Buildings</a>
+        </li>
+        <li>
+            <a href="/industries/smart-city/">Smart City</a>
+        </li>
+        <li>
+            <a href="/industries/telecom/">Telecom</a>
+        </li>
+        <li>
+            <a href="/industries/industry40/" class="active">Industry 4.0</a>
+        </li>
+    </ul>
+</nav>
 
 <div class="customer-block">
     <a href="https://www.farinia.com/">
