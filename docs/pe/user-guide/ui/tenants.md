@@ -6,45 +6,48 @@ title: Tenants
 description: ThingsBoard Tenants management 
 tenants-pe:
     0:
-        image: /images/user-guide/tenant-profile/PE/tenant-pe.png
-        title: 'You can think of the ThingsBoard tenant as a separate business entity. This is the individual or organization that owns or manufactures the device.'
+        image: /images/user-guide/tenant-profile/PE/tenant-1-pe.png
+        title: 'Click to the **Tenants.** Then click on the **plus** icon.'
+    1:
+        image: /images/user-guide/tenant-profile/PE/create-tenant-pe.png
+        title: 'Specify a name for the Tenant. We keep the default tenant profile. Fill in the fields that you think are important. Then click **Add.**'
 
 tenant-delete-pe:
     0:
-        image: /images/user-guide/tenant-profile/PE/tenant-delete-pe.png
-        title: 'Check the box to the left of the user. With the user highlighted, click the trash can icon to delete the user account.'
+        image: /images/user-guide/tenant-profile/PE/tenant-delete-1-pe.png
+        title: 'Go to the tenant. Find the user you want to delete. Click on the **trash can** icon and confirm the deletion by clicking on **Yes**'
+    1:
+        image: /images/user-guide/tenant-profile/PE/tenant-delete-2-pe.png
+        title: 'Find the tenant you want to delete. Click on the **trash can** icon and confirm the deletion by clicking on **Yes**'
 
 tenant-login-pe:
     0:
-        image: /images/user-guide/tenant-profile/PE/tenant-login-pe.png
-        title: 'Open the tenant group and click.'
-    1:
         image: /images/user-guide/tenant-profile/PE/tenant-login-1-pe.png
-        title: 'Click the phone icon opposite to the user account to log in as a tenant.'
+        title: 'Go to the tenant. Click the phone icon opposite to the user account to log in as a tenant.'
 
 tenant-new-pe:
     0:
-        image: /images/user-guide/tenant-profile/PE/tenant-new-pe.png
-        title: 'Click the plus sign in the upper right corner of the screen. In the opened dialog box, enter a name of the new tenant group and click Add.'
+        image: /images/user-guide/tenant-profile/PE/tenant-add-user-1-pe.png
+        title: 'Choose the tenant and click on it. Then click on **Manage tenant admins**.'
     1:
-        image: /images/user-guide/tenant-profile/PE/tenant-new-1-pe.png
-        title: 'Opposite the name of the created group, click the bars button to open it.'
+        image: /images/user-guide/tenant-profile/PE/tenant-add-user-2-pe.png
+        title: 'Click on the **plus** icon. Specify **email** and select "Show activation link" or "Send activation email" from the drop-down menu.'
     2:
-        image: /images/user-guide/tenant-profile/PE/tenant-new-2-pe.png
+        image: /images/user-guide/tenant-profile/PE/tenant-add-user-3-pe.png
         title: 'Click the plus sign in the upper right corner of the screen. Enter information about the new user and select _Show activation link_ or _Send activation email_ from the drop-down menu.'
     3:
-        image: /images/user-guide/tenant-profile/PE/tenant-new-3-pe.png
-        title: 'If you selected the option _Show activation link_, copy the link address and send it to the user to activate the account.'
+        image: /images/user-guide/tenant-profile/PE/tenant-add-user-4-pe.png
+        title: 'The tenant can have multiple users.'
 tenant-edit-pe:
     0:
-        image: /images/user-guide/tenant-profile/PE/tenant-edit-pe.png
-        title: "Click on a tenant's name to open their details."
-    1:
         image: /images/user-guide/tenant-profile/PE/tenant-edit-1-pe.png
-        title: "Click the pencil icon to edit the account info. Configure user's account in its details."
-    2:
+        title: "Click on a tenant's name to open their details. Click the pencil icon to edit the account info."
+    1:
         image: /images/user-guide/tenant-profile/PE/tenant-edit-2-pe.png
-        title: "After editing user's information, click the checkmark in the upper corner of the dialog box to save all changes."
+        title: "Edit fields. After that, click on the icon to save changes."
+    2:
+        image: /images/user-guide/tenant-profile/PE/tenant-edit-3-pe.png
+        title: "Click on a user's name to open their details. Click the pencil icon to edit the account info. After editing, save all changes."
 
 ---
 
@@ -56,44 +59,49 @@ tenant-edit-pe:
 ## Introduction
 
 ThingsBoard supports [Multi-tenancy](https://en.wikipedia.org/wiki/Multitenancy) right out of the box. You can think of the ThingsBoard tenant as a separate business entity. This is the individual or organization that owns or manufactures the device.
-The system administrator can create tenant entities.
+
+##### Сreate a new Tenant
+
+The **System administrator** is able to create tenant entities.
+
+To add a new tenant, you should:
+1. Go to the **Tenants** and click on the plus icon;
+2. Fill in the fields and then click on **Add**.
 
 {% include images-gallery.html imageCollection="tenants-pe" %}
 
-##### Add a new tenant
+##### Сreate user in Tenant
 
-System administrator can create multiple [users](/docs/{{docsPrefix}}user-guide/ui/users) with the tenant administrator role for each tenant by clicking the _Manage Tenant Admins_ button in the tenant details.
+System administrator can create multiple [users](/docs/{{docsPrefix}}user-guide/ui/users) with the tenant administrator role for each tenant.
 
-To add a new tenant, you should:
-1. Click the plus sign in the upper right corner of the screen. In the opened dialog box, enter a name of the new tenant group and click Add;
-2. Opposite the name of the created group, click the bars button to open it;
-3. Click the plus sign in the upper right corner of the screen. Enter information about the new user and select "Show activation link" or "Send activation email" from the drop-down menu;
-4. If you selected the option _Show activation link_, copy the link address and send it to the user to activate the account.
+To add a user, you should:
+1. Choose the tenant and click on it. Then click on **Manage tenant admins**;
+2. Click on the **plus** icon. Specify **email** and select "Show activation link" or "Send activation email" from the drop-down menu;
+3. If you selected the option _Show activation link_, copy the link address and send it to the user.
+
+The tenant can have multiple users.
 
 {% include images-gallery.html imageCollection="tenant-new-pe" %}
 
-##### Edit tenant
+##### Edit Tenant
 
-In the user details you can customize its details, attributes, telemetry, alarms, events, relations and audit logs as well as edit already added information about this user,
-such as his email address, name, and delete or disable his account.
-Moreover, you can adjust the default dashboard and home dashboard for that user.
+In the Tenant details you can edit all fields. Moreover, you can set up a home dashboard for all users of this tenant. To do this, click on the **pencil** icon and make changes. After that, save all changes.
 
-To edit user details, you should:
-1. Click on a tenant's name to open their details;
-2. Click the pencil icon to edit the account info. Configure user's account in its details;
-3. After editing user's information, click the checkmark in the upper corner of the dialog box to save all changes.
+Also, you can edit the **user.** For this, go to the tenant and click on the user and then on the pencil icon. Do not forget to save your changes.
 
 {% include images-gallery.html imageCollection="tenant-edit-pe" %}
 
-##### Delete tenant
+##### Delete Tenant
 
-You can delete a user account from ThingsBoard. To do this, you should check the box to the left of the user. With the user highlighted, click the trash can icon to delete the user account.
+You can delete any **user** from the Tenant. To do this, go to the Tenant, find the user you need and click on the trash can. After clicking, a warning window will appear. If you are sure you want to delete the user, click on **Yes.**
+
+Also, you can delete the **Tenant** at once with all its users. To do this, click on the trash can and then also confirm the deletion by clicking on **Yes.**
 
 {% include images-gallery.html imageCollection="tenant-delete-pe" %}
 
-##### Login as a tenant
+##### Login as a Tenant administrator
 
-If you need to log in as a tenant, just open the tenant group and click the phone icon opposite to the user account to log in as a tenant.
+If you need to log in as a tenant, just open the tenant group and click the icon opposite to the user account to log in as this tenant.
 
 {% include images-gallery.html imageCollection="tenant-login-pe" %}
 <br>
