@@ -19,7 +19,7 @@ You need to install a terraform (v0.12+) and the kubectl (v1.16+).
 
 [terraform](https://www.terraform.io/) - for create and manage cloud infrastructure in AWS EKS.
 
-You can choose any other available [Kubernetes cluster deployment solutions](https://kubernetes.io/docs/setup/pick-right-solution/).
+You can choose any other available [Kubernetes cluster deployment solutions](https://kubernetes.io/docs/setup/production-environment/tools/).
 
 ## Step 1. Enter the terraform working directory
 
