@@ -1,5 +1,5 @@
 ---
-layout: docwithnav-paas
+layout: docwithnav-pe
 title: Temperature & Humidity Sensors template
 description: Temperature & Humidity Sensors template overview
 solution-highlights:
@@ -25,5 +25,5 @@ solution-alarms:
 
 ---
 
-{% assign docsPrefix = "paas/" %}
+{% assign docsPrefix = "pe/" %}
 {% include docs/pe/solution-templates/temperature-humidity-sensors.md %}

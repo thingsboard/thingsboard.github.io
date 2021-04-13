@@ -1,5 +1,5 @@
 ---
-layout: docwithnav-paas
+layout: docwithnav-pe
 title: IoT Solution templates overview
 description: ThingsBoard IoT Solution templates overview
 browse-solution-templates:
@@ -37,5 +37,5 @@ remove-solution-template:
 
 ---
 
-{% assign docsPrefix = "paas/" %}
+{% assign docsPrefix = "pe/" %}
 {% include docs/pe/solution-templates/overview.md %}
