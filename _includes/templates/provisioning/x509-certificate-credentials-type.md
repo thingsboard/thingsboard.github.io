@@ -1,6 +1,6 @@
  {% capture info %}
 <br>
-**INFO: To use this feature, you should configure [MQTT over SSL in ThingsBoard](/docs/user-guide/mqtt-over-ssl/)**  
+**INFO: To use this feature, you should configure [MQTT over SSL in ThingsBoard](/docs/{{docsPrefix}}user-guide/mqtt-over-ssl/)**  
 {% endcapture %}
 {% include templates/info-banner.md content=info %}
 

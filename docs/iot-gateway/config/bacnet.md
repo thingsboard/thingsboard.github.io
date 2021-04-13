@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-gw
 title: BACnet Connector Configuration
 description: BACnet protocol support for ThingsBoard IoT Gateway
 

@@ -1,0 +1,2 @@
+mosquitto_pub -d -h "localhost" -p 1883 -t "v1/devices/me/attributes" -u "$WIND_TURBINE_1_ACCESS_TOKEN" -m "{"deviceType":"WeatherStation", "geoZone":"Zone A"}"
+mosquitto_pub -d -h "localhost" -p 1883 -t "v1/devices/me/attributes" -u "$WIND_TURBINE_2_ACCESS_TOKEN" -m "{"deviceType":"WeatherStation", "geoZone":"Zone A"}"

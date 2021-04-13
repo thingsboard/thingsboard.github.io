@@ -1,0 +1,6 @@
+bigheader: "Getting Started"
+abstract: "Getting Started with ThingsBoard Cloud IoT Platform."
+hidetoc: "true"
+toc:
+- title: Getting Started
+  path: /docs/paas/getting-started-guides/helloworld/

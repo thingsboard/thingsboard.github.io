@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: common
 title: Professional services
 description: Professional services
 

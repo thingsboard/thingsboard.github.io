@@ -1,10 +1,10 @@
 ---
-layout: docwithnav
+layout: docwithnav-pe
 assignees:
 - ashvayka
 title: Installing ThingsBoard PE using Docker (Linux or Mac OS)
 description: Installing ThingsBoard PE IoT Platform using Docker (Linux or Mac OS)
-
+redirect_from: "/docs/pe/user-guide/install/docker/"
 ---
 
 * TOC
@@ -306,7 +306,7 @@ Open docker-compose.yml and change version from **3.1.0PE** to **{{ site.release
 Then call the following commands:
 
 ```
-sudo sh -c "echo '3.1.0' > ~/.mytbpe-data/.upgradeversion"
+sudo sh -c "echo '3.1.0PE' > ~/.mytbpe-data/.upgradeversion"
 docker-compose run mytbpe upgrade-tb.sh
 ```
 {: .copy-code}

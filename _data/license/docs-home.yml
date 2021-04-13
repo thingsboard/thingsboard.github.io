@@ -1,0 +1,15 @@
+bigheader: "License Server Documentation"
+abstract: "ThingsBoard License Server is a proprietary billing solution."
+toc:
+- title: ThingsBoard License Server
+  path: /products/license-server/
+- title: Subscriptions
+  path: /products/license-server/subscription/
+- title: Perpetual
+  path: /products/license-server/perpetual/
+- title: Billing info
+  path: /products/license-server/billing-info/
+- title: User management
+  path: /products/license-server/user/
+- title: Instance management
+  path: /products/license-server/instance/

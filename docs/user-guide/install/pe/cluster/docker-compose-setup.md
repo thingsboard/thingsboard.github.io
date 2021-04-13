@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-pe
 assignees:
 - ashvayka
 title: ThingsBoard Professional Edition cluster setup with Docker Compose guide
@@ -17,6 +17,11 @@ For this purpose, we will use docker container images available on [Docker Hub](
 
 ThingsBoard Microservices are running in dockerized environment.
 Before starting please make sure [Docker CE](https://docs.docker.com/install/) and [Docker Compose](https://docs.docker.com/compose/install/) are installed in your system. 
+
+{% capture rule_engine_note %}
+Please note that for the deployment of Rule Engine as a separate service, an additional separate License Key is required. 
+{% endcapture %}
+{% include templates/info-banner.md content=rule_engine_note %}
 
 ## Step 1. Checkout all ThingsBoard PE Images
 
@@ -81,22 +86,28 @@ cd tb-pe-docker-compose
 nano tb-node.env
 ```
 
-and put the license secret parameter
+and put the license secret parameter instead of "PUT_YOUR_LICENSE_SECRET_HERE":
 
 ```bash
 # ThingsBoard server configuration
-
-ZOOKEEPER_ENABLED=true
 ...
-
 TB_LICENSE_SECRET=PUT_YOUR_LICENSE_SECRET_HERE
 ```
 
-
-## Step 6. Review the architecture page
+## Step 6. Configure deployment type
 
 Starting ThingsBoard v2.2, it is possible to install ThingsBoard cluster using new microservices architecture and docker containers. 
 See [**microservices**](/docs/reference/msa/) architecture page for more details.
+
+The docker compose scripts support three deployment modes. In order to set the deployment mode, change the value of `TB_SETUP` variable in `.env` file to one of the following:
+
+- `basic` **(recommended, set by default)** - ThingsBoard Core and Rule Engine are launched inside one JVM (requires only one license).
+  MQTT, CoAP and HTTP transports are launched in separate containers.
+- `monolith` - ThingsBoard Core and Rule Engine are launched inside one JVM (requires only one license). 
+  MQTT, CoAP and HTTP transports are also launched in the same JVM to minimize memory footprint and server requirements.
+- `advanced`- ThingsBoard Core and Rule Engine are launched in separate containers and are replicated one JVM (requires 4 licenses).  
+  
+All deployment modes support separate JS executors, Redis, and different [queues](/docs/user-guide/install/pe/cluster/docker-compose-setup/#step-8-choose-thingsboard-queue-service).
 
 ## Step 7. Configure ThingsBoard database
 
@@ -198,14 +209,18 @@ In case when database upgrade is needed, execute the following commands:
 
 ```
 $ ./docker-stop-services.sh
-$ ./docker-upgrade-tb.sh --fromVersion=[FROM_VERSION]
-$ ./docker-start-services.sh
+$ ./docker-remove-services.sh
+```
+
+Edit .env file set "TB_VERSION" to target version (f.e. currently you on 3.2.1 so in this case you need to set 3.2.2)
+
+```
+$ ./docker-update-service.sh [SERVICE...]
 ```
 
 Where:
 
-- `FROM_VERSION` - from which version upgrade should be started. See [Upgrade Instructions](https://thingsboard.io/docs/user-guide/install/upgrade-instructions) for valid `fromVersion` values.
-
+- `SERVICE...` - list of services to update (defined in docker-compose configurations). If not specified all services will be updated.
 
 ## Next steps
 

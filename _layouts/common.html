@@ -1,0 +1,23 @@
+{% if page.notitle == "true" %}{% assign notitle = "true" %}{% endif %}
+
+<!Doctype html>
+<html id="common">
+
+{% include head-header.html %}
+
+<section id="hero" class="light-text">
+</section>
+
+<section id="encyclopedia">
+    <div id="docsContent" class="noToc">
+        {% if notitle != "true" %}<h1>{{ title }}</h1>{% endif %}
+        <div id="content">
+            {{ content }}
+        </div>
+    </div>
+</section>
+
+{% include footer.html %}
+
+</body>
+</html>
