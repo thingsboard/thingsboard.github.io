@@ -1,5 +1,5 @@
 ---
-layout: docwithnav-paas
+layout: docwithnav-pe
 title: Smart office template
 description: Smart office template overview
 solution-highlights:
@@ -16,5 +16,5 @@ solution-highlights:
 
 ---
 
-{% assign docsPrefix = "paas/" %}
+{% assign docsPrefix = "pe/" %}
 {% include docs/pe/solution-templates/smart-office.md %}
