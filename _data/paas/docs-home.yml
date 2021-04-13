@@ -9,6 +9,19 @@ toc:
   path: /products/paas/what-is-thingsboard-cloud/
 - title: How to connect your device?
   path: /docs/paas/getting-started-guides/connectivity/
+- title: Solution Templates
+  new: true
+  section:
+    - title: Overview
+      path: /docs/paas/solution-templates/overview/
+    - title: Temperature & Humidity Sensors
+      path: /docs/paas/solution-templates/temperature-humidity-sensors/
+    - title: Smart office
+      path: /docs/paas/solution-templates/smart-office/
+    - title: Fleet tracking
+      path: /docs/paas/solution-templates/fleet-tracking/
+    - title: Water metering
+      path: /docs/paas/solution-templates/water-metering/
 - title: Key concepts
   section:
     - title: Entities and Relations
