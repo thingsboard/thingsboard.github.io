@@ -76,7 +76,7 @@ Payload example:
 
 
 HVAC device also accepts commands from the dashboard to enable/disable air conditioning as well as set target temperature.
-The commands are sent using the platform [RPC API](docs/{{docsPrefix}}user-guide/rpc/). 
+The commands are sent using the platform [RPC API](/docs/{{docsPrefix}}user-guide/rpc/). 
 
 You may find the exact commands to send data on behalf of created devices in the solution [instructions](/docs/{{docsPrefix}}solution-templates/overview/#install-solution-template).
 See [connecting devices](/docs/{{docsPrefix}}getting-started-guides/connectivity/) for various connectivity options to connect real devices.
