@@ -50,7 +50,7 @@ Let's assume you would like to build a building monitoring solution and review f
 2. The *floorPlanImage* may contain a URL to the image. You may use this attribute to visualize floor plan on the Image Map Widget.
 3. The *maxTemperatureThreshold* and *temperatureAlarmEnabled* may be used to configure and enable/disable alarms for a certain device or asset.
 
-#### Create/Update server-side attribute via Administration UI
+#### Administration UI
 
 {% include images-gallery.html imageCollection="server-side-attrs-ui" showListImageTitles="true" %}
 
@@ -60,7 +60,7 @@ Let's assume you would like to build a building monitoring solution and review f
 {% endcapture %}
 {% include templates/info-banner.md content=bulk_provisioning %}
 
-#### Create/Update server-side attribute via REST API
+#### REST API
 
 Use [REST API](/docs/{{docsPrefix}}reference/rest-api/) documentation to get the value of the JWT token. You will use it to populate the 'X-Authorization' header and authenticate your REST API call request.
 
@@ -123,13 +123,13 @@ Let's assume the same building monitoring solution and review few examples:
 
 The user may change the attribute via UI. The script or other server-side application may change the attribute value via REST API.
 
-#### Create/Update shared attribute via Administration UI
+#### Administration UI
 
 {% include images-gallery.html imageCollection="shared-attrs-ui" %}
 
 {% include templates/info-banner.md content=bulk_provisioning %}
 
-#### Create/Update shared attribute via REST API
+#### REST API
 
 Use [REST API](/docs/{{docsPrefix}}reference/rest-api/) documentation to get the value of the JWT token. You will use it to populate the 'X-Authorization' header and authenticate your REST API call request.
 
