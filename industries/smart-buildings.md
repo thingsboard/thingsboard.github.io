@@ -1,9 +1,12 @@
 ---
 layout: common
 title: Smart Buildings customers
-description: 
+notitle: "true"
+description:
 
 ---
+
+<h1 class="mainTitle smart-buildings">Smart Buildings customers</h1>
 
 <nav class="customers-nav">
     <ul>
@@ -41,9 +44,9 @@ description:
                 <p class="person-position"> Founder & CEO </p>
             </div>
         </div>
-        <h4>
+        <h2>
             We are providing Digital Office Solutions for Workspace Managers and Office Planners that help them to better understand how their Spaces are used.
-        </h4>
+        </h2>
         <p>
             When we started with ThingsBoard we mainly used it for core messaging and the dashboard functionality. 
             Large parts of the business logic was done by an external backend connecting to ThingsBoard using the API. 
@@ -71,9 +74,9 @@ description:
                 <p class="person-position"> Founder and CEO </p>
             </div>
         </div>
-        <h4>
+        <h2>
             mdeg GmbH – we deliver a consummate solution for digital connection of medical devices.
-        </h4>
+        </h2>
         <p>
             One of our core products is the mdeg Medical Device Cloud, a connectivity solution for medical devices to record, track, and monitor. Being dedicated for Medical Devices only, we have to meet the highest standards regarding reliability, independence, security and scalability. We also need to stay within judicial area with our infrastructure. With ThingsBoard we found the right solution and partner.
         </p>
@@ -95,9 +98,9 @@ description:
                 <p class="person-position"> Director </p>
             </div>
         </div>
-        <h4>
+        <h2>
             Environmental Energy Controls delivers turnkey "End-to-End" solutions relating to Building Energy Management Systems (BEMS).
-        </h4>
+        </h2>
         <p>
             Our company operates with the Smart Building Technology sector and were looking for a solution that was adaptable, programmable and easy to use for providing complete solutions to our existing customers with good clear visualisations of their data. 
             We had researched and tried other solutions but no other could match this platform in terms of its capability.
@@ -129,9 +132,9 @@ description:
                 <p class="person-position"> Co-founder at BeaconZone </p>
             </div>
         </div>
-        <h4>
+        <h2>
             Specialists in Bluetooth® Beacon Solutions.
-        </h4>
+        </h2>
         <p>
             ThingsBoard offers a secure, scalable IoT solution that, being Open Source, we can control. Having created our own ThingsBoard instance, we have found it to be very customisable via widgets, the rule engine and the plugin system allowing it to be used in a variety of specialist situations.
         </p>
@@ -149,9 +152,9 @@ description:
                 <p class="person-position"> Co-Founder & Executive Manager </p>
             </div>
         </div>
-        <h4>
+        <h2>
             Optimization of logistics and production processes.
-        </h4>
+        </h2>
         <p>
             As a number of IOT dashboard available, It is hard to find one which can fulfill all requirements, robust and scalable for the industrial use case.  
         </p>
@@ -174,9 +177,9 @@ description:
                 <p class="person-position"> CTO </p>
             </div>
         </div>
-        <h4>
+        <h2>
             An award winning Field Service Management platform.
-        </h4>
+        </h2>
         <p>
             We operate in highly competitive markets; from housing management to utilities and manufacturing sectors. Technology innovation is at the heart of our product strategy and service delivery approach. As we grow and extend our field service management solution, we recognised that we needed a flexible IoT platform that enables our delivery needs with lower complexity and cost without sacrificing functionality and extensibility. 
         </p> 
@@ -201,9 +204,9 @@ description:
                 <p class="person-position"> CTO </p>
             </div>
         </div>
-        <h4>
+        <h2>
             TPS offers integrated and innovative systems for the enhancement and use of cultural heritage, choosing the visitor and his / her experience as the privileged point of view.
-        </h4>
+        </h2>
         <p>
             We are very satisfied with the functionality of the IoT platform. The numerous dashboards available and the flexibility of the product allow us to develop our project dedicated to Cultural Heritage. Through the platform, we have managed to put all the sensors in the Museums in communication in order to deliver a powerful data collection and analysis tool to be delivered to the administrators of cultural sites.
         </p>

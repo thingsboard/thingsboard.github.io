@@ -1,9 +1,12 @@
 ---
 layout: common
 title: Smart Energy customers
-description: 
+notitle: "true"
+description:
 
 ---
+
+<h1 class="mainTitle smart-energy">Smart Energy customers</h1>
 
 <nav class="customers-nav">
     <ul>
@@ -41,9 +44,9 @@ description:
                 <p class="person-position"> Cloud & App Development Manager </p>
             </div>
         </div>
-        <h4>
+        <h2>
             CIRCUTOR has over 40 years’ experience working on the design and manufacture of units for improving energy efficiency: electrical energy, power quality measurement and control units, industrial electrical protection, reactive energy compensation, and harmonic filtering.
-        </h4>
+        </h2>
         <p>
             CIRCUTOR owns a wide portfolio of connected energy control and metering devices. Despite the diversity of proprietary and off-the-shelf data protocols, Thingsboard has made it easy to accommodate most of our products in a common data platform.  
         </p> 
@@ -66,9 +69,9 @@ description:
                 <p class="person-position"> CTO </p>
             </div>
         </div>
-        <h4>
+        <h2>
             An award winning Field Service Management platform.
-        </h4>
+        </h2>
         <p>
             We operate in highly competitive markets; from housing management to utilities and manufacturing sectors. Technology innovation is at the heart of our product strategy and service delivery approach. As we grow and extend our field service management solution, we recognised that we needed a flexible IoT platform that enables our delivery needs with lower complexity and cost without sacrificing functionality and extensibility. 
         </p> 
@@ -93,9 +96,9 @@ description:
                 <p class="person-position"> CEO & Co-Founder </p>
             </div>
         </div>
-        <h4>
+        <h2>
             IOT Company specialized in the monitoring and control of distributed infrastructures.
-        </h4>
+        </h2>
         <p>
             We had been working on the development of our own software platform for almost 6 months when we came across Thingsboard. Not only Thingsboard had all the functionalities we had already developed, but also included many more that were on our pipeline for the coming months. Switching to Thingsboard was a no-brainer. 
         </p> 
@@ -118,7 +121,6 @@ description:
                 <p class="person-position"> Managing Director </p>
             </div>
         </div>
-        <h4></h4>
         <p>
             We were struggling trying to implement our own IOT infrastructure when ThingsBoard suddenly appeared. Immediately we started testing and were amazed with the feature completeness, stability and ease of use of this great platform, although it was only in version 1.0 and had been released just days prior. 
         </p> 
@@ -140,9 +142,9 @@ description:
                 <p class="person-position"> Director </p>
             </div>
         </div>
-        <h4>
+        <h2>
             Environmental Energy Controls delivers turnkey "End-to-End" solutions relating to Building Energy Management Systems (BEMS).
-        </h4>
+        </h2>
         <p>
             Our company operates with the Smart Building Technology sector and were looking for a solution that was adaptable, programmable and easy to use for providing complete solutions to our existing customers with good clear visualisations of their data. 
             We had researched and tried other solutions but no other could match this platform in terms of its capability.
@@ -174,9 +176,9 @@ description:
                 <p class="person-position"> CEO </p>
             </div>
         </div>
-        <h4>
+        <h2>
             co.met GmbH has been active in the energy industry since 2001 with process and data services and in some cases proprietary IT solutions.
-        </h4>
+        </h2>
         <p>
             We’re a meter operator and as such a service provider for energy distribution network carriers (electricity, gas, water and heat) and other meter operators. We provide SaaS-Solutions for the remote reading of meters, field force management (for meter fitters) and the administration of smart meter gateways. Additionally we’re a LoRa WAN carrier for the city of Saarbrücken and a Solution Provider for LoRa-WAN Backendsystems.
         </p>

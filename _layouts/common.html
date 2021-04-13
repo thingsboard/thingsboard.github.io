@@ -23,12 +23,13 @@
     jqueryDefer(function () {
         $(window).scroll(function() {
             var height = $(window).scrollTop();
-            if(height > 102){
+            var navPosition = $('.mainTitle').height() + 50;
+            if(height > navPosition){
             $('nav.customers-nav').addClass('nav-fixed');
-            $('h1:first-of-type').addClass('customer-spacer');
+            $('h1.mainTitle').addClass('customer-spacer');
             } else{
             $('nav.customers-nav').removeClass('nav-fixed');
-            $('h1:first-of-type').removeClass('customer-spacer');
+            $('h1.mainTitle').removeClass('customer-spacer');
             }
         });
     });

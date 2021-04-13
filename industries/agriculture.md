@@ -1,9 +1,12 @@
 ---
 layout: common
 title: Agriculture customers
-description: 
+notitle: "true"
+description:
 
 ---
+
+<h1 class="mainTitle agriculture">Agriculture customers</h1>
 
 <nav class="customers-nav">
     <ul>
@@ -40,9 +43,9 @@ description:
                 <p class="person-position"> CTO </p>
             </div>
         </div>
-        <h4>
+        <h2>
             Develops, manufactures and sells high quality post-harvest equipment worldwide.
-        </h4>
+        </h2>
         <p>
             ThingsBoard (TB) turned out to be a great match to build our Agricultural IoT platform. 
             First and foremost because of the extremely skilled and service minded architects behind it. 
@@ -69,9 +72,9 @@ description:
                 <p class="person-position"> Founder & Managing Director </p>
             </div>
         </div>
-        <h4>
+        <h2>
             Developers of VineHub, the industry's first integrated vineyard management and automation platform.
-        </h4>
+        </h2>
         <p>
             ThingsBoard (TB) has been an amazing discovery after much searching. The thought and architectural maturity of the platform is unmatched in the market. It’s allowed us to bring our platform to market a full 18 months sooner, than if we had embarked on developing our own backend and visualisation capabilities. With such a flexible UI, even with just a basic understanding of HTML and Javascript one can quickly and easily begin customising and designing they’re own widgets. This has provided great value to our growers since we can build them customised dashboards with very little time and effort on our part. The ability to ingest data directly from our LoRaWAN MQTT broker, via the platform’s IoT Gateway feature, has eliminated the need for us to maintain a seperate middleware layer, improving our operational efficiencies.
         </p>
@@ -93,9 +96,9 @@ description:
                 <p class="person-position"> Director </p>
             </div>
         </div>
-        <h4>
+        <h2>
             Develops solutions for agriculture and the environment.
-        </h4>
+        </h2>
         <p>
             We started using the Thingsboard (TB) in 2017, and later switched to the professional edition (PE). We are very satisfied with the platform as it provides us with high flexibility and stability. We highly appreciate the visual editor for Rule engine new Multitenancy approach. The platform provides for us a unique possibility to create our own data connectors, which allows us to create dashboards and combine data from multiple data sources.
         </p>
