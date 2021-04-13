@@ -955,7 +955,7 @@ This action saves the configuration file of the JSON format with all the setting
 {% include images-gallery.html imageCollection="export-widget" %}
 
 ### ThingsBoard Professional Edition export
-=======
+
 zoom-in:
     0:
         image: /images/user-guide/dashboards/zoom-in.png
