@@ -343,7 +343,6 @@ tw-time-zone:
     0:
         image: /images/user-guide/dashboards/tw-time-zone.png
 
-<<<<<<< HEAD
 --- 
 
 * TOC
@@ -962,7 +961,6 @@ zoom-in:
         image: /images/user-guide/dashboards/zoom-in.png
     1:
         image: /images/user-guide/dashboards/zoom-in-1.png
->>>>>>> 6ee023aa47e3ee01d6686193e339b57f5d87789f
 
 --- 
 
