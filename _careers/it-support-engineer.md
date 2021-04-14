@@ -2,7 +2,7 @@
 position: IT Support engineer
 tag: Server-side
 location: Kyiv, Ukraine
-dateString: 21 December, 2020
+dateString: 28 March, 2021
 layout: career
 ---
 ##### We're looking for an IT Support Engineer (server-side) to join our team on the full-time basis in the Kyiv office.
@@ -31,8 +31,6 @@ Intermediate or higher level of spoken and written English.
 Experience with the NoSQL DBs;
 
 Familiarity with SDLC;
-
-Readiness to work night shifts (in future);
 
 Experience with AWS/Azure/GCP;
 
