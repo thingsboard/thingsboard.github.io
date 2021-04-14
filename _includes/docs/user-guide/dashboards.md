@@ -279,7 +279,7 @@ You can choose a combination of alarm statuses and severity. You may also define
 
 #### Basic widget settings
 
-Let's assume you have added the "Timeseries - Flot" widget to display thermometers using the widget data configuration [step](/docs/{{docsPrefix}}user-guide/dashboards/#widget-data-settings) only.
+Let's assume you have added the "Timeseries Line Chart" widget to display thermometers using the widget data configuration [step](/docs/{{docsPrefix}}user-guide/dashboards/#widget-data-settings) only.
 You should see a similar widget (note that you should send/simulate some data to see the actual lines in the chart):
 
 {% include images-gallery.html imageCollection="basic-settings" %}
