@@ -77,7 +77,7 @@ Once you open the .md file perform further necessary steps
 
 * [Step 1] Add new directories to the website structure "/docs/samples/YOUR_INTEGRATION_NAME/".
 * [Step 2] Add new directories to the website structure "/images/samples/YOUR_INTEGRATION_NAME/".
-* [Step 3] Create a "YOUR_INTEGRATION_NAME.md" file using the [Sample](/docs/samples/sample/sample.md) as a base in your newly created directory from [Step 1].
+* [Step 3] Create a "YOUR_INTEGRATION_NAME.md" file using the [Sample](/docs/samples/sample/sample) as a base in your newly created directory from [Step 1].
 * [Step 4] Store all of your images for your guide in a path "/images/samples/YOUR_INTEGRATION_NAME/".
 * [Step 5] Add your company logo to path "/images/partners/".
 * [Step 6] Add your visit-card to "partners.json" which is located via path "/_includes/" & insert name of your company logo file ([Step 5]) into the "logo" in code bellow.  
@@ -108,9 +108,9 @@ Where:
 
 ## Push changes & create Pull Request
 
-* [Step 1] [Push changes to your fork](https://thingsboard.io/docs/user-guide/contribution/how-to-contribute/#push-changes-to-your-fork).
-* [Step 2] [Create pull request](https://thingsboard.io/docs/user-guide/contribution/how-to-contribute/#create-pull-request).
+* [Step 1] [Push changes to your fork](/docs/user-guide/contribution/how-to-contribute/#push-changes-to-your-fork).
+* [Step 2] [Create pull request](/docs/user-guide/contribution/how-to-contribute/#create-pull-request).
 
 ## Optional steps
 
-You may notify us about your Pull Request (with Pull Request #) via [Contact us](https://thingsboard.io/docs/contact-us/) form or in any other way.
+You may notify us about your Pull Request (with Pull Request #) via [Contact us](/docs/contact-us/) form or in any other way.
