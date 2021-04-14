@@ -24,7 +24,7 @@ Minor release with the following improvements and bug fixes:
     * Attributes cache. See [Performance enhancement](/docs/user-guide/attributes/#performance-enhancement);
 * UI:
     * Added ["Entity Count"](/docs/user-guide/dashboards/#2-widget-data-source-types) datasource for widgets;
-    * Added "Entity Type" alias. See usage in the "Entity count data source" example [here](/docs/user-guide/dashboards/#2-widget-data-source-types;
+    * Added "Entity Type" alias. See usage in the "Entity count data source" example [here](/docs/user-guide/dashboards/#2-widget-data-source-types);
     * Added support of common intervals and time zones to the [time window](/docs/user-guide/dashboards/#time-window) selector;
     * Ability to set up a home dashboard for users instead of default "Home" view;
     * Improved ["add widget"](/docs/user-guide/dashboards/#adding-widget-to-the-dashboard) dialog. Added description and preview images for widgets and widget bundles;

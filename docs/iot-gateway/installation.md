@@ -17,17 +17,17 @@ notitle: "true"
                     </p>
                 </div>
             </div>            
-            <div class="col-lg-12 deployment-container one-line-deployment-container">
+            <div class="deployment-container one-line-deployment-container">
                 <div class="deployment-div">
                     <div class="container">
-                        <div class="deployment-section deployment-on-premise" id="onPremise">
+                        <div class="deployment-section deployment-on-premise active" id="onPremise">
                            <div class="deployment-cards">
                                 <div class="deployment-cards-container">
                                     <div class="deployment-card-block">
                                         <a href="/docs/iot-gateway/install/deb-installation/">
                                             <span>
-                                                <div class="deployment-logo" style="height:134px">
-                                                    <img width="" src="/images/install/platform/ubuntu.png" title="Ubuntu" alt="Ubuntu">
+                                                <div class="deployment-logo">
+                                                    <img width="" src="/images/install/platform/ubuntu.svg" title="Ubuntu" alt="Ubuntu">
                                                  </div>
                                             </span>
                                         </a>
@@ -35,8 +35,8 @@ notitle: "true"
                                     <div class="deployment-card-block">
                                         <a href="/docs/iot-gateway/install/rpm-installation/">
                                             <span>
-                                                <div class="deployment-logo" style="height:134px">
-                                                    <img width="" src="/images/install/platform/centos-redhat.png" title="CentOS/RHEL" alt="CentOS/RHEL">
+                                                <div class="deployment-logo">
+                                                    <img width="" src="/images/install/platform/centos-redhat.svg" title="CentOS/RHEL" alt="CentOS/RHEL">
                                                  </div>
                                             </span>
                                         </a>
@@ -44,8 +44,8 @@ notitle: "true"
                                     <div class="deployment-card-block">
                                         <a href="/docs/iot-gateway/install/deb-installation/">
                                             <span>
-                                                <div class="deployment-logo" style="height:134px">
-                                                    <img width="" src="/images/install/platform/rpi3.jpg" title="Raspberry Pi 3" alt="Raspberry Pi 3">
+                                                <div class="deployment-logo">
+                                                    <img width="" src="/images/install/platform/rpi3.svg" title="Raspberry Pi 3" alt="Raspberry Pi 3">
                                                  </div>
                                             </span>
                                         </a>
@@ -53,8 +53,8 @@ notitle: "true"
                                     <div class="deployment-card-block">
                                         <a href="/docs/iot-gateway/install/docker-installation/">
                                             <span>
-                                                <div class="deployment-logo" style="height:134px">
-                                                    <img width="" src="/images/install/platform/docker-windows.png" title="Docker (Windows)" alt="Docker (Windows)">
+                                                <div class="deployment-logo">
+                                                    <img width="" src="/images/install/platform/docker-windows.svg" title="Docker (Windows)" alt="Docker (Windows)">
                                                  </div>
                                             </span>
                                         </a>
@@ -62,8 +62,8 @@ notitle: "true"
                                     <div class="deployment-card-block">
                                         <a href="/docs/iot-gateway/install/docker-installation/">
                                             <span>
-                                                <div class="deployment-logo" style="height:134px">
-                                                    <img width="" src="/images/install/platform/docker-linux-macos.png" title="Docker (Linux or Mac OS)" alt="Docker (Linux or Mac OS)">
+                                                <div class="deployment-logo">
+                                                    <img width="" src="/images/install/platform/docker-linux-macos.svg" title="Docker (Linux or Mac OS)" alt="Docker (Linux or Mac OS)">
                                                  </div>
                                             </span>
                                         </a>
@@ -71,8 +71,8 @@ notitle: "true"
                                     <div class="deployment-card-block">
                                         <a href="/docs/iot-gateway/install/pip-installation/">
                                             <span>
-                                                <div class="deployment-logo" style="height:134px">
-                                                    <img width="" src="/images/gateway/pip.svg" title="PIP" alt="PIP">
+                                                <div class="deployment-logo">
+                                                    <img width="" src="/images/install/platform/python-img.svg" title="PIP" alt="PIP">
                                                  </div>
                                             </span>
                                         </a>
@@ -87,45 +87,3 @@ notitle: "true"
        </div>
     </div>
 </div>
-
-
-<script type="text/javascript">
-
-    inViewportDefer(function() {
-        $(".deployment-cards .deployment-cards-container .deployment-card-block").inViewport(function(px){
-            if(px >= 10) {
-                $(this).addClass("animated zoomIn");
-                return true;
-            }
-        });
-    });
-
-    jqueryDefer(function () {
-    
-        window.addEventListener('popstate', onPopStateCeInstallOptions);
-        
-        onPopStateCeInstallOptions();
-        
-    });
-    
-    function onPopStateCeInstallOptions() {
-            var params = Qs.parse(window.location.search, { ignoreQueryPrefix: true });
-            var targetId = params['ceInstallType'];
-            if (!targetId) {
-                targetId = 'onPremise';
-            }
-            selectTargetCeInstallOption('#'+targetId);
-    }
-        
-    function selectTargetCeInstallOption(targetId) {
-         $(".deployment-selector .deployment").removeClass("active");         
-         $(".deployment-selector .deployment[data-toggle='"+targetId+"']").addClass("active");
-         $(".deployment-selector .deployment[data-toggle='"+targetId+"'] .magic-radio").prop("checked", true);
-         
-         $('.deployment-div .deployment-section').removeClass("active");
-         $('.deployment-div .deployment-section'+targetId).addClass("active");
-         
-         $('.deployment-div .deployment-section' + targetId + ' .deployment-card-block').addClass("animated zoomIn");
-    }   
-
-</script>

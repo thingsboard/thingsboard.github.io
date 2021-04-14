@@ -1,8 +1,11 @@
 {% for item in guides %}
 {% if item.section %}
+{% if guidesVersion == 'paas' and item.paaspage == 'false' %}
+{% elsif guidesVersion == 'ce' and item.cepage == 'false' %}
+{% elsif guidesVersion == 'pe' and item.pepage == 'false' %}
+{% else %}
 <div class="guides-block" id="AnchorID{{ item.id }}">
     <div class="guides-title-panel">
-        <img class="guides-img" src="/images/tb-guide.svg"/>
         <div class="guides-text">
             <p class="guides-title">
                 {{ item.title }}
@@ -16,6 +19,11 @@
         {% assign guides = item.section %}{% include guides.html %}
     </ul>
 </div>
+{% endif %}
+{% else %}
+{% if guidesVersion == 'paas' and item.paaspage == 'false' %}
+{% elsif guidesVersion == 'ce' and item.cepage == 'false' %}
+{% elsif guidesVersion == 'pe' and item.pepage == 'false' %}
 {% else %}
 <li class="guide-container">
     <a href="{{ item.path }}">
@@ -40,5 +48,6 @@
         </div>
     </a>
 </li>
+{% endif %}
 {% endif %}
 {% endfor %}

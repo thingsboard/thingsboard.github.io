@@ -75,7 +75,7 @@ Now, when you know the theory, let's proceed to practical tutorials.
 
 The alternative option is to configure your custom logic in the [Rule Engine](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/re-getting-started/) and use 
 [Create Alarm](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#create-alarm-node) and [Clear Alarm](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#clear-alarm-node) rule nodes. 
-You can find a corresponding example [here](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/tutorials/create-clear-alarms/).
+You can find a corresponding example [here](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/).
 
 ### How to find alarms for a specific device or asset?
 

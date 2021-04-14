@@ -3,7 +3,7 @@
 
 ## Prerequisites
 
-Get familiar with ThingsBoard devices and dashboards with [Getting Started](/docs/{{docsPrefix}}getting-started/) for a better understanding of this guide.
+Get familiar with ThingsBoard devices and dashboards with [Getting Started](/docs/{{docsPrefix}}getting-started-guides/helloworld/) for a better understanding of this guide.
 
 ## Introduction
 
@@ -251,11 +251,11 @@ List of entity fields depends on the entity type and may extend in the future:
  * **User** has the following fields: created time, first name, last name, email and additional info.
  * **Customer** has the following fields: create time, entity type, email, title, country, state, city, address, zip code, phone, additional info.
 
-###### 3.1. Basic data key configuration
+###### 3.1. Basic data key settings
 
 Coming soon...
 
-###### 3.2. Advanced data key configuration
+###### 3.2. Advanced data key settings
 
 Coming soon...
 
@@ -398,13 +398,16 @@ Data aggregation is useful when you don't want to fetch all time-series data to 
 Using the aggregation functions saves network bandwidth and computation power of the client browser.
 We recommend using aggregation functions whenever is possible if you have a lot of raw values.
 
-By default, the dashboard displays average values for the last minute, grouped in 1-second intervals.
-
 **Since version 3.2.2,** it is possible to use predefined intervals (Current Day, Previous Day, Previous Month, etc.) in addition to last X minutes/hours/days.
 **Note** that the _Current day_ interval means 24 hours (12 am at night to 12 am the next night), whereas the _Current day so far_ means from 12 am at night until the time when the time window was updated.
 All other intervals are distinguished in the same way.
 
 {% include images-gallery.html imageCollection="tw-current-day" %}
+
+There are times when the time intervals are long, and you'd like to see the data closer without changing timestamps, therefore, you need to zoom in. Zoom in by holding the right mouse key and move it on the chart
+in the place where you need to get a closer look. To zoom out to the original size of the chart, double-click on the widget.
+
+{% include images-gallery.html imageCollection="zoom-in" %}
 
 **Version 3.2.2** introduces time zone configurations. By default, dashboard uses the time zone provided by the browser.
 Now it is possible to set the time of your browser or a specific country. To quickly find the needed time zone, start typing its name in the time zone bar.
@@ -489,9 +492,10 @@ If you tick this option, all the widgets on the Dashboard will fill in verticall
 
 {% include images-gallery.html imageCollection="autofill" %}
 
-#### Background
 
-##### 1. Background color
+#### Background settings
+
+##### Background color
 
 The Background color option allows you to customize the color that you'd like to be on the Dashboard's background. 
 To alter it, click on the colored circle, and with sliders choose the needed color and wished transparency. Then, press "Save" to apply changes. 
@@ -499,7 +503,7 @@ After saving, you can see the customized background.
 
 {% include images-gallery.html imageCollection="background-settings" %}
 
-##### 2. Background image
+##### Background image
 
 This option allows setting the picture as a background. To do this, you should drop an image in the appropriate field, or upload it from a folder on your computer.
 Once you select it, an image preview will appear on the left of the Settings window. 

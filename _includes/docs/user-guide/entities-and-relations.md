@@ -23,7 +23,7 @@ Supported entities are:
 Each entity supports:
 
  - **[Attributes](/docs/{{docsPrefix}}user-guide/attributes/)** - static and semi-static key-value pairs associated with entities. For example serial number, model, firmware version;
- - **[Time-series data](/docs/{{docsPrefix}}user-guide/time-series/)** - time-series data points available for storage, querying and visualization. For example temperature, humidity, battery level;
+ - **[Time-series data](/docs/{{docsPrefix}}user-guide/telemetry/)** - time-series data points available for storage, querying and visualization. For example temperature, humidity, battery level;
  - **Relations** - directed connections to other entities. For example contains, manages, owns, produces.
 
 Some entities support profiles:

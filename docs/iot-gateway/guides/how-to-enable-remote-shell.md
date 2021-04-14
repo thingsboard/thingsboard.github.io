@@ -11,8 +11,8 @@ description: How to enable remote shell feature on ThingsBoard IoT Gateway
 This guide will help you to enable remote shell feature and control operation system with ThingsBoard IoT Gateway from your ThingsBoard platform instance.  
 
 For purpose of this guide, we will use following things:
-1. Instance of ThingsBoard platform (How to install you can [read here](https://thingsboard.io/docs/user-guide/install/installation-options/)). For this guide we will use [demo.thingsboard.io](https://demo.thingsboard.io)
-2. Installed and configured ThingsBoard IoT Gateway (How to install you can [read here](https://thingsboard.io/docs/iot-gateway/installation/)).
+1. Instance of ThingsBoard platform (How to install you can [read here](/docs/user-guide/install/installation-options/)). For this guide we will use [thingsboard.cloud](https://thingsboard.cloud)
+2. Installed and configured ThingsBoard IoT Gateway (How to install you can [read here](/docs/iot-gateway/installation/)).
 
 # Step 1. Remote shell activation
 
@@ -29,7 +29,7 @@ For purpose of this guide, we will use following things:
 Example of the **thingsboard** section in the general configuration file:
 ```yaml
 thingsboard:
-  host: demo.thingsboard.io
+  host: thingsboard.cloud
   port: 1883
   remoteShell: true
   remoteConfiguration: false

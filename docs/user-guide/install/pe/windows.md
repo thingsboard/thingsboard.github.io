@@ -7,6 +7,8 @@ description: Installing ThingsBoard on Windows
 
 ---
 
+{% assign docsPrefix = "pe/" %}
+
 * TOC
 {:toc}
 

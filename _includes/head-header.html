@@ -1,6 +1,7 @@
 {% if page.title %}{% assign title=page.title %}{% endif %}
 {% if page.description %}{% assign description=page.description %}{% endif %}
 {% assign docsTag = include.docsTag %}
+{% assign productTag = include.productTag %}
 {% if docsTag %}
     {% assign foundProduct = site.data.products | where: "tag", docsTag %}
     {% assign productInfo = foundProduct[0] %}
@@ -96,37 +97,6 @@
             } else {
                 setTimeout(function () {
                     jqueryDefer(method)
-                }, 50);
-            }
-        }
-
-        function mermaidDefer(method) {
-            if (window.mermaid) {
-                method();
-            } else {
-                if (!window.mermaidLoading) {
-                    window.mermaidLoading = true;
-                    loadScript("/js/mermaid.min.js", function () {
-                        mermaid.initialize({
-                            startOnLoad: false,
-                            flowchart: {
-                                htmlLabels: true
-                            }
-                        });
-                        jqueryDefer(function () {
-                            setTimeout(function () {
-                                var scroll = $(window).scrollTop();
-                                $('.mermaidTooltip').css("transform", "translate(0px," + (scroll - 40) + "px)");
-                                $(window).scroll(function (event) {
-                                    var scroll = $(window).scrollTop();
-                                    $('.mermaidTooltip').css("transform", "translate(0px," + (scroll - 40) + "px)");
-                                });
-                            }, 300);
-                        });
-                    });
-                }
-                setTimeout(function () {
-                    mermaidDefer(method)
                 }, 50);
             }
         }
@@ -563,7 +533,7 @@
                                     <p>Advanced IoT platform</p>
                                 </div>
                             </a>
-                            <a class="com-lnk" href="/docs/getting-started-guides/what-is-thingsboard/">
+                            <a class="com-lnk" href="/">
                                 <img src="/images/thingsboard-cm-icon.svg">
                                 <div class="sub-text">
                                     <h1>Community Edition</h1>
@@ -623,31 +593,43 @@
                     </a>
                 </ul>
             </div>
-            <div id="nav-developers" class="centered-sub">
-                <ul class="sub-menu developers">
-                    <a href="/docs/">
-                        <img src="/images/doc-icon.svg">
-                        <div class="sub-text">
-                            <h1>Documentation</h1>
-                            <p>Detailed information about the ThingsBoard IoT platform</p>
-                        </div>
-                    </a>
-                    <a href="/docs/guides/">
-                        <img src="/images/guides-icon.svg">
-                        <div class="sub-text">
-                            <h1>Guides</h1>
-                            <p>Step-by-step instructions</p>
-                        </div>
-                    </a>
-                    <a href="/docs/getting-started/">
-                        <img src="/images/start-icon.svg">
-                        <div class="sub-text">
-                            <h1>Get Started</h1>
-                            <p>Tutorial of the most popular features</p>
-                        </div>
-                    </a>
-                </ul>
-            </div>
+            {% unless docsTag %}
+                {% unless productTag %}
+                    {% assign productTag = "ce" %}
+                {% endunless %}
+                {% assign foundDevProduct = site.data.products | where: "tag", productTag %}
+                {% assign devProductInfo = foundDevProduct[0] %}
+
+                <div id="nav-developers" class="centered-sub">
+                    <ul class="sub-menu developers">
+                        <a href="{{devProductInfo.path}}">
+                            <img src="/images/doc-icon.svg">
+                            <div class="sub-text">
+                                <h1>Documentation</h1>
+                                <p>Detailed information about the ThingsBoard IoT platform</p>
+                            </div>
+                        </a>
+                        {% if devProductInfo.guides %}
+                            <a href="{{devProductInfo.guides}}">
+                                <img src="/images/guides-icon.svg">
+                                <div class="sub-text">
+                                    <h1>Guides</h1>
+                                    <p>Step-by-step instructions</p>
+                                </div>
+                            </a>
+                        {% endif %}
+                        {% if devProductInfo.getStarted %}
+                            <a href="{{devProductInfo.getStarted}}">
+                                <img src="/images/start-icon.svg">
+                                <div class="sub-text">
+                                    <h1>Get Started</h1>
+                                    <p>Tutorial of the most popular features</p>
+                                </div>
+                            </a>
+                        {% endif %}
+                    </ul>
+                </div>
+            {% endunless %}
             <div id="nav-cases" class="centered-sub">
                 <ul class="sub-menu cases">
                     <a href="/smart-metering/">

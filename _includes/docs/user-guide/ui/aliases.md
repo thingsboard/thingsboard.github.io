@@ -14,8 +14,6 @@ specific assets from a list.
 
 ## Alias types
 
-{% assign feature = "Group entity, Entity group list, Entity group name, Entity by group name, Owner of entity from dashboard state" %}{% include templates/pe-feature-banner.md %}
-
 ### Single entity
 
 This alias allows choosing a single entity. It can be a device, asset, entity view, tenant, customer, dashboard, 
