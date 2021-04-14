@@ -24,7 +24,7 @@ Each entity supports:
 
  - **[Attributes](/docs/{{docsPrefix}}user-guide/attributes/)** - static and semi-static key-value pairs associated with entities. For example serial number, model, firmware version;
  - **[Time-series data](/docs/{{docsPrefix}}user-guide/telemetry/)** - time-series data points available for storage, querying and visualization. For example temperature, humidity, battery level;
- - **Relations** - directed connections to other entities. For example contains, manages, owns, produces.
+ - **[Relations](#relations)** - directed connections to other entities. For example contains, manages, owns, produces.
 
 Some entities support profiles:
 
@@ -52,95 +52,45 @@ Data Converters is a part of the Platform Integrations feature. Their purpose is
 
 This guide provides an overview of the features listed above, some useful links to get more details, and real-life examples of their usage.
 
-## Real-life application
+## Relations
 
-The easiest way to understand the concepts of ThingsBoard is to implement your first ThingsBoard application.
-Let's assume we want to build an application that collects data from soil moisture and temperature sensors,
-visualize this data on the dashboard, detect issues, raise alarms and control the irrigation.
+Entity relation defines connection between two ThingsBoard entities that belong to the same [Tenant](/docs/{{docsPrefix}}user-guide/ui/tenants/).
+The relation has an arbitrary type: Contains, Manages, Supports, etc. The relation is also directional.
+You may treat ThingsBoard relations as a [Has-a](https://en.wikipedia.org/wiki/Has-a) relationship from object-oriented programming.
 
-Let's also assume we want to support multiple fields with hundreds of sensors. Fields may be also grouped into the Geo regions.
+Relations help to model physical world objects in ThingsBoard. The easiest way to understand them is using the example.
+Let’s assume we want to build an application that collects data from soil moisture and temperature sensors, visualize this data on the dashboard, detect issues, raise alarms and control the irrigation.
+Let’s also assume we want to support multiple fields with hundreds of sensors. Fields may be also grouped into the Geo regions.
 
-We believe there should be the following logical steps to build such an application:
+The following diagram explains how those entities are configured and stored in ThingsBoard:
 
-### Step 1: Provision entities and relations
-
-We are going to setup following hierarchy of assets and devices:
-
-
- ![image](/images/user-guide/entities-and-relations.svg)
+![image](/images/user-guide/entities-and-relations.svg)
 
 
-Please review the following soundless screencast to learn **how to provision region and fields assets and their relations using ThingsBoard Web UI**:
+See ["add and delete assets"](/docs/pe/user-guide/ui/assets/#add-and-delete-assets) and ["manage asset relations"](/docs/pe/user-guide/ui/assets/#manage-asset-relations)
+to learn how to configure this entities via Administration UI. You may also use [REST API](/docs/reference/rest-client/) to create entities and relations programmatically.
 
-<div id="video">
-    <div id="video_wrapper">
-        <iframe src="https://www.youtube.com/embed/C-JoOfTBeT0" frameborder="0" allowfullscreen></iframe>
-    </div>
-</div>
+## Next steps
 
-Please review the following soundless screencast to learn **how to provision devices and their relations with assets using ThingsBoard Web UI**:
-
-
-<div id="video">
-    <div id="video_wrapper">
-        <iframe src="https://www.youtube.com/embed/BUFinxvzIo4" frameborder="0" allowfullscreen></iframe>
-    </div>
-</div>
-
-**You can automate these actions using ThingsBoard REST API.** You can provision a new asset using a POST request to the following URL
-
-```shell
-http(s)://host:port/api/asset
-```
-
-For example:
-
-{% capture tabspec %}create-asset
-A,create-asset.sh,shell,resources/create-asset.sh,/docs/{{docsPrefix}}user-guide/resources/create-asset.sh
-B,create-asset.json,json,resources/create-asset.json,/docs/{{docsPrefix}}user-guide/resources/create-asset.json{% endcapture %}
-{% include tabs.html %}
-
-**Note:** in order to execute this request, you will need to substitute **$JWT_TOKEN** with a valid JWT token.
-This token should belong to a user with **TENANT_ADMIN** role. You can use following [guide](/docs/{{docsPrefix}}reference/rest-api/#rest-api-auth) to get the token.
-
-Also, you can provision new relation using a POST request to the following URL
-
-```shell
-http(s)://host:port/api/relation
-```
-
-For example:
-
-{% capture tabspec %}create-relation
-A,create-relation.sh,shell,resources/create-relation.sh,/docs/{{docsPrefix}}user-guide/resources/create-relation.sh
-B,create-relation.json,json,resources/create-relation.json,/docs/{{docsPrefix}}user-guide/resources/create-relation.json{% endcapture %}
-{% include tabs.html %}
-
-**Note:** Don't forget to replace $FROM_ASSET_ID and $TO_ASSET_ID with valid asset ids.
-
-**Note:** One can relate to any entities. For example, assets to devices or assets to users.
-You can receive them as a result of a previous REST API call or use Web UI.
-
-
-### Step 2: Assign attributes to the assets
+**Assign attributes to the assets and devices**
 
 ThingsBoard provides the ability to assign attributes to entities and manage them.
 You are welcome to learn how to do it here:
 <p><a href="/docs/{{docsPrefix}}user-guide/attributes" class="button">Working with device attributes</a></p>
 
 
-### Step 3: Upload telemetry data from devices
+**Upload telemetry data from devices**
 
 ThingsBoard provides the ability to work with telemetry data for devices and other entities.
 You are welcome to learn how to do it here:
 <p><a href="/docs/{{docsPrefix}}user-guide/telemetry" class="button">Working with telemetry data</a></p>
 
-### Step 4: Creating Rules for Alarms
+**Creating Rules for Alarms**
 
 ThingsBoard provides the ability to raise alarms using rule engine for devices and other entities.
 You are welcome to learn how to do it here:
 <p><a href="/docs/{{docsPrefix}}user-guide/alarms" class="button">Working with alarms</a></p>
 
-### Step 5: Design your dashboard
+**Design your dashboard**
 
 Please [import](/docs/{{docsPrefix}}user-guide/ui/dashboards/#dashboard-import) the following [**dashboard**](/docs/{{docsPrefix}}user-guide/resources/region_fields_dashboard.json) that demonstrates Map, Alarm, Entity Table and Charts widgets.
