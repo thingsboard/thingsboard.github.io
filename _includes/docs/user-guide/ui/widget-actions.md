@@ -52,7 +52,7 @@ While using a dashboard, you can view detailed information about a specific devi
 The most common use of this action type is through Chart widgets where you can see the details more accurately.
 For starters let's add a Chart widget to the Dashboard to configure the _Update current dashboard state_ action type:
 
-1. Enter Dashboard's Edit mode and in the drop-down "Select widget" menu choose Charts: Timeseries - Flot.
+1. Enter Dashboard's Edit mode and in the drop-down "Select widget" menu choose Charts: Timeseries Line Chart.
 2. In the "Add widget" window type input your data source, in this manual for example is used pressure data. Click "Add" at the right bottom of the widget.
 3. We can see that the Chart widget has appeared on the dashboard, but it has no data to display yet.
 4. Enter Edit mode of the Table widget by clicking the Pencil icon on the right top of the widget.
