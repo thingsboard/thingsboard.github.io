@@ -1,9 +1,12 @@
 ---
 layout: common
 title: Training sessions
+notitle: "true"
 description: ThingsBoard training sessions
 
 ---
+
+<h1 class="mainTitle">Training sessions</h1>
 
 ThingsBoard training sessions are educational events that are delivered to your company’s engineers by ThingsBoard core team members. The primary goals of ThingsBoard education courses are:
 
@@ -17,6 +20,74 @@ ThingsBoard training sessions are on-demand online events for up to 8 people. On
 <br/>
 
 <span class="heading">Training courses</span>
+
+<div class="service-info-blocks">
+  <div class="card">
+    <h3 class="title">ThingsBoard Basics</h3>
+    <p class="sub-title">Basic understanding of IoT and programming concepts</p>
+    <p class="description">Learn how ThingsBoard platform helps businesses to implement IoT use cases and support IoT solutions. This training session will provide you with the basic understanding of ThingsBoard features and how they can be used in your IoT product.</p>
+    <div class="card-bot">
+      <p class="length"><b>8 hours</b> ( 1 full work day or two 4-hour sessions)</p>
+      <p class="audience"><b>software and hardware engineers, architects</b></p>
+      <div class="card-drop">Agenda</div>
+    </div>
+    <p class="agenda">
+      Platform overview
+      Explain platform capabilities and functionality.
+      Discussion on your use case to highlight key points during the training session.
+      Platform installation
+      Review available installation options. Highlight security and configuration aspects.
+      Exercise: setup ThingsBoard instance on AWS.
+      Web UI
+      Explain basic web UI capabilities and main entities: Devices, Customers, Users, Dashboards.
+      - Review available widget types and explain their basic configuration parameters.
+      - Explain ThingsBoard user roles and their permissions.
+      Exercise: create Device and provision Device Credentials
+      Exercise: create Dashboard and assign it to the Customer.
+      ThingsBoard API
+      Explain ThingsBoard API for device connectivity and integration with server-side applications.
+      Exercise: create device firmware to publish telemetry and attributes over MQTT.
+      Exercise: add widgets to the Dashboard to visualize data from the previous exercise.
+      Rule Engine
+      Explain Rule engine data flow.
+      Review Rule components: messages, relations, nodes and their available implementations.
+      Exercise: configure alerting rule based on device attributes and timeseries values.
+      Use-cases and Q&A session
+    </p>
+  </div>
+  <div class="card">
+    <h3 class="title">ThingsBoard Data Visualization</h3>
+    <p class="sub-title">Basic concepts of ThingsBoard platform</p>
+    <p class="description">Learn how ThingsBoard platform helps to collect and visualize IoT data and use this knowledge to improve customer experience. This training session will provide you with the in-depth understanding of ThingsBoard visualization capabilities, widget customization, user roles, and permissions.</p>
+    <div class="card-bot">
+      <p class="length"><b>8 hours</b> ( 1 full work day or two 4-hour sessions)</p>
+      <p class="audience"><b>front-end developers, engineers, architects</b></p>
+      <div class="card-drop">Agenda</div>
+    </div>
+    <p class="agenda"></p>
+  </div>
+  <div class="card">
+    <h3 class="title"></h3>
+    <p class="sub-title"></p>
+    <p class="description"></p>
+    <div class="card-bot">
+      <p class="length"><b>8 hours</b> ( 1 full work day or two 4-hour sessions)</p>
+      <p class="audience"><b></b></p>
+      <div class="card-drop">Agenda</div>
+    </div>
+    <p class="agenda"></p>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
 
 * TOC
 {:toc}
