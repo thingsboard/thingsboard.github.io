@@ -13,25 +13,3 @@ toc:
   path: /docs/edge/install/docker-windows/
 - title: Installing Edge using Docker (Linux or Mac OS)
   path: /docs/edge/install/docker/
-- title: Configuration guides
-  section:
-    - title: Community Edition
-      section:
-        - title: Edge Management Overview
-          path: /docs/edge/config/ce/management/
-        - title: Create Device on edge and provision to cloud
-          path: /docs/edge/config/ce/create-device/
-        - title: Provision Device from cloud to edge
-          path: /docs/edge/config/ce/provision-device/
-        - title: Provision Asset from cloud to edge
-          path: /docs/edge/config/ce/provision-asset/
-        - title: Provision Entity View from cloud to edge
-          path: /docs/edge/config/ce/provision-entity-view/
-        - title: Provision Dashboard from cloud to edge
-          path: /docs/edge/config/ce/provision-dashboard/
-        - title: Provision User from cloud to edge
-          path: /docs/edge/config/ce/provision-user/
-        - title: Provision Customer from cloud to edge
-          path: /docs/edge/config/ce/provision-customer/
-    - title: Professional Edition
-      path: /docs/edge/config/pe/coming-soon/
