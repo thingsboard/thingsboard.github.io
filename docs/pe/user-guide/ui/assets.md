@@ -108,8 +108,10 @@ First, you should click on the asset to open its details. Then, go to attributes
 ## Asset alarms
 
 Tenant administrators and customer users are able to browse asset [alarms](/docs/pe/user-guide/alarms/).
-To configure an alarm, you should create relations from asset to the device, add an alarm rule and trigger the alarm via terminal. 
-After these actions, you can see the triggered alarm in the asset details.
+Tenant administrators and customer users can view asset alarms. As an example, if there is a relation between an asset and a device, you can configure the device to display alarms on the asset. 
+To do this, you should enable the propagate option. When the alarm is created on the device, it will also be created on the asset.
+Also, you can create alarms for the asset itself using role nodes.
+After these actions, you can see the triggered alarm in the asset in the Alarms tab.
 
 {% include images-gallery.html imageCollection="asset-alarms-pe" %}
 
@@ -128,6 +130,7 @@ _Documentation dedicated to events is coming soon._
 ## Asset relations
 
 ThingsBoard provides the user interface and REST APIs to provision and manage multiple entity types and their [relations](/docs/pe/user-guide/entities-and-relations/) in your IoT application.
+For instance, you can create a relations with the devices that are related to this asset. You can do this in the Relations tab:
 
 {% include images-gallery.html imageCollection="asset-relations-pe" %}
 
