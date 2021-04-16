@@ -47,10 +47,6 @@ asset-alarms-pe:
         image: /images/user-guide/ui/assets/pe/asset-alarms-9-pe.png
         title: 'Triggered alarm from the connected device in the asset details'
 
-asset-events-pe:
-    0:
-        image: /images/user-guide/ui/assets/pe/asset-events-pe.png
-
 asset-relations-pe:
     0:
         image: /images/user-guide/ui/assets/pe/asset-relations-pe.png
@@ -121,11 +117,8 @@ Tenant administrators and customer users can browse events related to a particul
 Error event displays major problems that could affect asset's work.  
 Lifecycle event displays when the asset was created and if it was successful.  
 Statistics event displays how many messages were proceeded and how many errors were there.
-Raw data event is using while debugging.
 
 _Documentation dedicated to events is coming soon._
-
-{% include images-gallery.html imageCollection="asset-events-pe" %}
 
 ## Asset relations
 
