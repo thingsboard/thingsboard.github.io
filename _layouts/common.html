@@ -35,10 +35,10 @@
     });
 </script>
 <script>
-    function dropContent() {
-        var dContent = $('.drop-content');
-        var dCard = $('.card-drop');
-        var text = $('.drop-content > p').height();
+    function dropContent(dropId) {
+        var dContent = $('.drop-content#'+dropId);
+        var dCard = $('.card-drop#'+dropId);
+        var text = $('.drop-content#'+dropId+' > div').height();
         if (dContent.hasClass('opened')) {
             dContent.removeClass('opened');
             dContent.css('height', '0');

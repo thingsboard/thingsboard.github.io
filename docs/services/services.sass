@@ -13,7 +13,7 @@
         padding: 31px
         border: 1px solid #ebebeb
     .service-info-blocks
-      margin: 12px 0 56px
+      margin: 24px 0 56px
       .card
         width: 100%
         .title
@@ -41,6 +41,23 @@
               background: url(/images/services/length-icon.svg)
             &.audience:after
               background: url(/images/services/audience-icon.svg)
+          @media screen and (max-width: 768px)
+            padding-bottom: 48px
+            p
+              text-align: left
+              &:after
+                content: none
+              &:before
+                display: inline-block
+                content: ""
+                vertical-align: middle
+                width: 24px
+                height: 24px
+                margin-right: 12px
+              &.length:before
+                background: url(/images/services/length-icon.svg)
+              &.audience:before
+                background: url(/images/services/audience-icon.svg)
           .card-drop
             -webkit-touch-callout: none
             -webkit-user-select: none
@@ -67,6 +84,7 @@
             &.opened:after
               transform: rotate(-90deg)
         .drop-content
+          overflow: hidden
           margin-top: 0
           opacity: 0
           height: 0
@@ -81,6 +99,14 @@
             -o-transition: opacity 0.3s, height 0.3s
             -moz-transition: opacity 0.3s, height 0.3s
             opacity: 1
+          div
+            p
+              margin-bottom: 12px
+              font-weight: 600
+            li
+              list-style: unset
+              margin-left: 12px
+              font-weight: 400
     .service-cards
       display: flex
       flex-wrap: wrap
@@ -112,3 +138,28 @@
         flex-direction: column
         .card
           width: 100%
+    .bottom
+      display: flex
+      flex-direction: column
+      text-align: center
+      margin: 0 0 -50px -50%
+      background-color: #F9FBFE
+      width: 200%
+      padding: 50px 0
+      .contact-button
+        cursor: pointer
+        width: 350px
+        background-color: #2A7DEC
+        font-size: 24px
+        font-weight: 400
+        text-align: center
+        color: #fff
+        border-radius: 4px
+        text-decoration: none
+        padding: 16px 20px
+        margin: 0 auto 48px
+        box-shadow: 0 18px 16px -10px rgba(42, 125, 236, 0.25)
+        &:hover
+          background-color: #4F97F8
+      p
+        color: #899AAB
