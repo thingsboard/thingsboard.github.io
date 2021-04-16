@@ -29,31 +29,33 @@ ThingsBoard training sessions are on-demand online events for up to 8 people. On
     <div class="card-bot">
       <p class="length"><b>8 hours</b> ( 1 full work day or two 4-hour sessions)</p>
       <p class="audience"><b>software and hardware engineers, architects</b></p>
-      <div class="card-drop">Agenda</div>
+      <div class="card-drop" onclick="dropContent()">Agenda</div>
     </div>
-    <p class="agenda">
-      Platform overview
-      Explain platform capabilities and functionality.
-      Discussion on your use case to highlight key points during the training session.
-      Platform installation
-      Review available installation options. Highlight security and configuration aspects.
-      Exercise: setup ThingsBoard instance on AWS.
-      Web UI
-      Explain basic web UI capabilities and main entities: Devices, Customers, Users, Dashboards.
-      - Review available widget types and explain their basic configuration parameters.
-      - Explain ThingsBoard user roles and their permissions.
-      Exercise: create Device and provision Device Credentials
-      Exercise: create Dashboard and assign it to the Customer.
-      ThingsBoard API
-      Explain ThingsBoard API for device connectivity and integration with server-side applications.
-      Exercise: create device firmware to publish telemetry and attributes over MQTT.
-      Exercise: add widgets to the Dashboard to visualize data from the previous exercise.
-      Rule Engine
-      Explain Rule engine data flow.
-      Review Rule components: messages, relations, nodes and their available implementations.
-      Exercise: configure alerting rule based on device attributes and timeseries values.
-      Use-cases and Q&A session
-    </p>
+    <div class="drop-content">
+      <p>
+        Platform overview
+        Explain platform capabilities and functionality.
+        Discussion on your use case to highlight key points during the training session.
+        Platform installation
+        Review available installation options. Highlight security and configuration aspects.
+        Exercise: setup ThingsBoard instance on AWS.
+        Web UI
+        Explain basic web UI capabilities and main entities: Devices, Customers, Users, Dashboards.
+        - Review available widget types and explain their basic configuration parameters.
+        - Explain ThingsBoard user roles and their permissions.
+        Exercise: create Device and provision Device Credentials
+        Exercise: create Dashboard and assign it to the Customer.
+        ThingsBoard API
+        Explain ThingsBoard API for device connectivity and integration with server-side applications.
+        Exercise: create device firmware to publish telemetry and attributes over MQTT.
+        Exercise: add widgets to the Dashboard to visualize data from the previous exercise.
+        Rule Engine
+        Explain Rule engine data flow.
+        Review Rule components: messages, relations, nodes and their available implementations.
+        Exercise: configure alerting rule based on device attributes and timeseries values.
+        Use-cases and Q&A session
+      </p>
+    </div>
   </div>
   <div class="card">
     <h3 class="title">ThingsBoard Data Visualization</h3>
@@ -62,9 +64,9 @@ ThingsBoard training sessions are on-demand online events for up to 8 people. On
     <div class="card-bot">
       <p class="length"><b>8 hours</b> ( 1 full work day or two 4-hour sessions)</p>
       <p class="audience"><b>front-end developers, engineers, architects</b></p>
-      <div class="card-drop">Agenda</div>
+      <div class="card-drop" onclick="dropContent()">Agenda</div>
     </div>
-    <p class="agenda"></p>
+    <p class="drop-content"></p>
   </div>
   <div class="card">
     <h3 class="title"></h3>
@@ -73,9 +75,9 @@ ThingsBoard training sessions are on-demand online events for up to 8 people. On
     <div class="card-bot">
       <p class="length"><b>8 hours</b> ( 1 full work day or two 4-hour sessions)</p>
       <p class="audience"><b></b></p>
-      <div class="card-drop">Agenda</div>
+      <div class="card-drop" onclick="dropContent()">Agenda</div>
     </div>
-    <p class="agenda"></p>
+    <p class="drop-content"></p>
   </div>
 </div>
 

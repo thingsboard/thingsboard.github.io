@@ -34,6 +34,22 @@
         });
     });
 </script>
+<script>
+    function dropContent() {
+        var dContent = $('.drop-content');
+        var dCard = $('.card-drop');
+        var text = $('.drop-content > p').height();
+        if (dContent.hasClass('opened')) {
+            dContent.removeClass('opened');
+            dContent.css('height', '0');
+            dCard.removeClass('opened');
+        } else {
+            dContent.addClass('opened');
+            dContent.css('height', text);
+            dCard.addClass('opened');
+        }
+    }
+</script>
 
 </body>
 </html>

@@ -42,6 +42,12 @@
             &.audience:after
               background: url(/images/services/audience-icon.svg)
           .card-drop
+            -webkit-touch-callout: none
+            -webkit-user-select: none
+            -khtml-user-select: none
+            -moz-user-select: none
+            -ms-user-select: none
+            user-select: none
             color: #2a7dec
             font-weight: 500
             font-size: 18px
@@ -49,6 +55,7 @@
             cursor: pointer
             bottom: 0
             &:after
+              transition: 0.3s
               display: inline-block
               content: ""
               width: 12px
@@ -57,9 +64,23 @@
               background: url(/images/pe/read-more-arrow.svg)
               transform: rotate(90deg)
               filter: invert(35%) sepia(96%) saturate(1837%) hue-rotate(202deg) brightness(98%) contrast(89%)
-        .agenda
-          margin-top: 32px
-          display: none
+            &.opened:after
+              transform: rotate(-90deg)
+        .drop-content
+          margin-top: 0
+          opacity: 0
+          height: 0
+          transition: 0.3s, margin-top 0.1s 0.2s
+          -webkit-transition: 0.3s, margin-top 0.1s 0.2s
+          -o-transition: 0.3s, margin-top 0.1s 0.2s
+          -moz-transition: 0.3s, margin-top 0.1s 0.2s
+          &.opened
+            margin-top: 32px
+            transition: opacity 0.3s, height 0.3s
+            -webkit-transition: opacity 0.3s, height 0.3s
+            -o-transition: opacity 0.3s, height 0.3s
+            -moz-transition: opacity 0.3s, height 0.3s
+            opacity: 1
     .service-cards
       display: flex
       flex-wrap: wrap
