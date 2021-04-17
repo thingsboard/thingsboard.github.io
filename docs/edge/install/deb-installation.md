@@ -12,7 +12,7 @@ This guide describes how to install ThingsBoard Edge on Ubuntu Server 18.04 LTS.
 
 {% include templates/edge/install/hardware-requirements.md %}
 
-### Step 1. Install Java 8 (OpenJDK) 
+### Step 1. Install Java 11 (OpenJDK) 
 
 {% include templates/install/ubuntu-java-install.md %}
 

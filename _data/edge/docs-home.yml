@@ -6,30 +6,20 @@ toc:
   beta: true
 - title: What is ThingsBoard Edge?
   path: /docs/edge/what-is-edge/
-- title: Getting Started
-  section:
-    - title: Professional Edition
-      path: /docs/edge/getting-started/getting-started-pe/
-    - title: Community Edition
-      path: /docs/edge/getting-started/getting-started-ce/
-- title: Architecture
-  path: /docs/edge/edge-architecture/
-- title: Upgrade instructions for ThingsBoard server
-  section:
-    - title: Professional Edition
-      path: /docs/edge/upgrade-server-pe/
-    - title: Community Edition
-      path: /docs/edge/upgrade-server-ce/
+- title: Activate edge functionality on ThingsBoard server
+  path: /docs/edge/enable-edge/
 - title: Provision ThingsBoard Edge on ThingsBoard server
   section:
-    - title: Professional Edition
-      path: /docs/edge/provision-edge-on-server-pe/
     - title: Community Edition
       path: /docs/edge/provision-edge-on-server-ce/
+    - title: Professional Edition
+      path: /docs/edge/provision-edge-on-server-pe/
 - title: Configuration guides
   section:
     - title: Community Edition
       section:
+        - title: Edges
+          path: /docs/user-guide/ui/edges/
         - title: Edge Management Overview
           path: /docs/edge/config/ce/management/
         - title: Create Device on edge and provision to cloud
@@ -74,15 +64,15 @@ toc:
       path: /docs/edge/use-cases/overview/
     - title: Manage alarms and RPC requests on edge devices
       section:
-        - title: Professional Edition
-          path: /docs/edge/use-cases/manage-alarms-rpc-requests-pe/
         - title: Community Edition
           path: /docs/edge/use-cases/manage-alarms-rpc-requests-ce/
+        - title: Professional Edition
+          path: /docs/edge/use-cases/manage-alarms-rpc-requests-pe/
     - title: Data filtering and traffic reduce
       section:
-        - title: Professional Edition
-          path: /docs/edge/use-cases/data-filtering-traffic-reduce-pe/
         - title: Community Edition
           path: /docs/edge/use-cases/data-filtering-traffic-reduce-ce/
+        - title: Professional Edition
+          path: /docs/edge/use-cases/data-filtering-traffic-reduce-pe/
 - title: ThingsBoard Edge Roadmap
   path: /docs/edge/roadmap/

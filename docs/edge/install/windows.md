@@ -12,7 +12,7 @@ Instructions below are provided for Windows 10/8.1/8/7 32-bit/64-bit.
 
 {% include templates/edge/install/hardware-requirements.md %}
 
-### Step 1. Install Java 8 (OpenJDK) 
+### Step 1. Install Java 11 (OpenJDK) 
 
 {% include templates/install/windows-java-install.md %}
 

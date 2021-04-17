@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-edge
 assignees:
 - ababak
 title: Edges

@@ -13,12 +13,8 @@ toc:
       path: /docs/edge/getting-started/getting-started-ce
 - title: Architecture
   path: /docs/edge/edge-architecture/
-- title: Upgrade instructions for ThingsBoard server
-  section:
-    - title: Professional Edition
-      path: /docs/edge/upgrade-server-pe/
-    - title: Community Edition
-      path: /docs/edge/upgrade-server-ce/
+- title: Activate edge functionality on ThingsBoard server
+  path: /docs/edge/enable-edge/
 - title: Provision ThingsBoard Edge on ThingsBoard server
   section:
     - title: Professional Edition
