@@ -223,19 +223,19 @@ states:
 
 entity-name:
     0:
-        image: /images/user-guide/dashboards/settings/entity-name.png
+        image: /images/user-guide/dashboards/settings/entity-name-ce.png
     1:
-        image: /images/user-guide/dashboards/settings/entity-name-1.png
+        image: /images/user-guide/dashboards/settings/entity-name-1-ce.png
     2:
-        image: /images/user-guide/dashboards/settings/entity-name-2.png
+        image: /images/user-guide/dashboards/settings/entity-name-2-ce.png
     3:
-        image: /images/user-guide/dashboards/settings/entity-name-3.png
+        image: /images/user-guide/dashboards/settings/entity-name-3-ce.png
     4:
-        image: /images/user-guide/dashboards/settings/entity-name-4.png
+        image: /images/user-guide/dashboards/settings/entity-name-4-ce.png
     5:
-        image: /images/user-guide/dashboards/settings/entity-name-5.png
+        image: /images/user-guide/dashboards/settings/entity-name-5-ce.png
     6:
-        image: /images/user-guide/dashboards/settings/entity-name-6.png
+        image: /images/user-guide/dashboards/settings/entity-name-6-ce.png
 
 action-state:
     0:
@@ -253,83 +253,83 @@ action-state:
 
 entity-count:
     0:
-        image: /images/user-guide/dashboards/entitycount/add-alias.png
+        image: /images/user-guide/dashboards/entitycount/add-alias-ce.png
     1:
-        image: /images/user-guide/dashboards/entitycount/add-alias-1.png
+        image: /images/user-guide/dashboards/entitycount/add-alias-1-ce.png
     2:
-        image: /images/user-guide/dashboards/entitycount/add-alias-2.png
+        image: /images/user-guide/dashboards/entitycount/add-alias-2-ce.png
 
 entity-count-1:
     0:
-        image: /images/user-guide/dashboards/entitycount/add-widget.png
+        image: /images/user-guide/dashboards/entitycount/add-widget-ce.png
     1:
-        image: /images/user-guide/dashboards/entitycount/add-widget-1.png
+        image: /images/user-guide/dashboards/entitycount/add-widget-1-ce.png
     2:
-        image: /images/user-guide/dashboards/entitycount/add-widget-2.png
+        image: /images/user-guide/dashboards/entitycount/add-widget-2-ce.png
     3:
-        image: /images/user-guide/dashboards/entitycount/datasource.png
+        image: /images/user-guide/dashboards/entitycount/datasource-ce.png
 
 entity-count-3:
     0:
-        image: /images/user-guide/dashboards/entitycount/datasource-1.png
+        image: /images/user-guide/dashboards/entitycount/datasource-1-ce.png
     1:
-        image: /images/user-guide/dashboards/entitycount/edit-widget.png
+        image: /images/user-guide/dashboards/entitycount/edit-widget-ce.png
     2:
-        image: /images/user-guide/dashboards/entitycount/edit-widget-1.png
+        image: /images/user-guide/dashboards/entitycount/edit-widget-1-ce.png
 
 add-alias-ds:
     0:
-        image: /images/user-guide/dashboards/entitycount/add-alias.png
+        image: /images/user-guide/dashboards/entitycount/add-alias-ce.png
     1:
-        image: /images/user-guide/dashboards/entity-type-ds.png
+        image: /images/user-guide/dashboards/entity-type-ds-ce.png
     2:
-        image: /images/user-guide/dashboards/entity-type-ds-0.5.png
+        image: /images/user-guide/dashboards/entity-type-ds-0.5-ce.png
 
 add-widget-ds:
     0:
-        image: /images/user-guide/dashboards/entitycount/add-widget.png
+        image: /images/user-guide/dashboards/entitycount/add-widget-ce.png
     1:
-        image: /images/user-guide/dashboards/entitycount/add-widget-1.png
+        image: /images/user-guide/dashboards/entitycount/add-widget-1-ce.png
     2:
-        image: /images/user-guide/dashboards/add-widget-ds.png
+        image: /images/user-guide/dashboards/add-widget-ds-ce.png
     3:
-        image: /images/user-guide/dashboards/add-widget-ds-1.png
+        image: /images/user-guide/dashboards/add-widget-ds-1-ce.png
     4:
-        image: /images/user-guide/dashboards/add-widget-ds-2.png
+        image: /images/user-guide/dashboards/add-widget-ds-2-ce.png
 
 function-ds:
     0:
-        image: /images/user-guide/dashboards/entitycount/add-widget.png
+        image: /images/user-guide/dashboards/entitycount/add-widget-ce.png
     1:
-        image: /images/user-guide/dashboards/entitycount/add-widget-1.png
+        image: /images/user-guide/dashboards/entitycount/add-widget-1-ce.png
     2:
-        image: /images/user-guide/dashboards/add-widget-ds.png
+        image: /images/user-guide/dashboards/add-widget-ds-ce.png
     3:
-        image: /images/user-guide/dashboards/function-ds.png
+        image: /images/user-guide/dashboards/function-ds-ce.png
     4:
-        image: /images/user-guide/dashboards/function-ds-1.png
+        image: /images/user-guide/dashboards/function-ds-1-ce.png
 
 tw:
     0:
-        image: /images/user-guide/dashboards/tw.png
+        image: /images/user-guide/dashboards/tw-ce.png
     1:
-        image: /images/user-guide/dashboards/tw-1.png
+        image: /images/user-guide/dashboards/tw-1-ce.png
 
 tw-current-day:
     0:
-        image: /images/user-guide/dashboards/tw-current-day.png
+        image: /images/user-guide/dashboards/tw-current-day-ce.png
     1:
-        image: /images/user-guide/dashboards/tw-current-day-sofar.png
+        image: /images/user-guide/dashboards/tw-current-day-sofar-ce.png
 
 tw-time-zone:
     0:
-        image: /images/user-guide/dashboards/tw-time-zone.png
+        image: /images/user-guide/dashboards/tw-time-zone-ce.png
 
 zoom-in:
     0:
-        image: /images/user-guide/dashboards/zoom-in.png
+        image: /images/user-guide/dashboards/zoom-in-ce.png
     1:
-        image: /images/user-guide/dashboards/zoom-in-1.png
+        image: /images/user-guide/dashboards/zoom-in-1-ce.png
 
 --- 
 

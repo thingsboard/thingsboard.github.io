@@ -319,7 +319,7 @@ You will learn how to:
 
 ####  ThingsBoard PE: Data Converters Configuration Guide
 
-Data Converters are a part of the Platform Integration feature. ThignsBoard uses two types of data converters:
+Data Converters are a part of the Platform Integration feature. ThingsBoard uses two types of data converters:
 
  - Uplink data converters: to parse the payload of the incoming message and transform it to the same format used by ThingsBoard. 
  - Downlink data converters: to transform the incoming rule engine message and its metadata to the format that is used by the corresponding Integration.
