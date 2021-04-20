@@ -1,1 +1,1 @@
-sudo dpkg -i thingsboard-1.4.deb
+sudo dpkg -i thingsboard-{{ site.release.ce_ver }}.deb

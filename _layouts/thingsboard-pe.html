@@ -1,7 +1,7 @@
 <!Doctype html>
 <html id="thingsboard-pe">
 
-{% include head-header.html %}
+{% include head-header.html productTag="pe" %}
 <!--  HERO  -->
 <section id="hero" class="light-text"
          data-vide-bg="mp4: https://s3-us-west-1.amazonaws.com/tb-videos/pe-cover.mp4,
@@ -13,7 +13,7 @@
     <div id="hero-content">
         <h1 class="header-animation pe-title">ThingsBoard Professional Edition</h1>
         <div class="header-animation">
-            <a href="/products/thingsboard-pe/install/?deploy=trial" class="button try-pe">Try it now</a>
+            <a href="/pricing/" class="button try-pe">Try it now</a>
         </div>
         <div class="pe-arrow">
             <a href="#docsContent"><i class="fa fa-chevron-down fa-2x" aria-hidden="true"></i></a>
@@ -29,9 +29,9 @@
 
 {% include footer.html %}
 
-{% if site.data[foundTOC].hidetoc != "true" and page.hidetoc != "true" %}
-<button class="flyout-button" onclick="tb.toggleToc()"></button>
-{% endif %}
+<!--{% if site.data[foundTOC].hidetoc != "true" and page.hidetoc != "true" %}-->
+<!--<button class="flyout-button" onclick="tb.toggleToc()"></button>-->
+<!--{% endif %}-->
 
 <script type="text/javascript">
     jqueryDefer(function () {

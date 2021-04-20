@@ -6,6 +6,8 @@ title: SNS Plugin
 
 ---
 
+{% include templates/old-guide-notice.md %}
+
 ## Overview
 
 SNS plugin is responsible for sending messages to Amazon Web Services Simple Notification Service topics triggered by specific rules

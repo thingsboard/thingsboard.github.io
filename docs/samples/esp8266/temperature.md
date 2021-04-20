@@ -196,12 +196,18 @@ Find and install the following libraries:
 - [PubSubClient by Nick O'Leary](http://pubsubclient.knolleary.net/).
 - [Adafruit Unified Sensor by Adafruit](https://github.com/adafruit/Adafruit_Sensor)
 - [DHT sensor library by Adafruit](https://github.com/adafruit/DHT-sensor-library)
+- [Arduino ThingsBoard SDK by ThingsBoard](https://github.com/thingsboard/ThingsBoard-Arduino-MQTT-SDK)
+- [ArduinoJSON by bblanchon](https://github.com/bblanchon/ArduinoJson)
+- [Arduino Http Client](https://github.com/arduino-libraries/ArduinoHttpClient)
 
 **Note** that this tutorial was tested with the following versions of the libraries:
 
 - PubSubClient 2.6
 - Adafruit Unified Sensor 1.0.2
 - DHT sensor library 1.3.0
+- Arduino ThingsBoard SDK 0.4
+- ArduinoJSON 6.10.1
+- Arduino Http Client 0.4.0
 
 ### Step 3. Prepare and upload a sketch.
 
@@ -248,7 +254,7 @@ If all is configured correctly you should be able to see latest values of *"temp
 After, open **"Dashboards"** section then locate and open **"ESP8266 DHT22: Temperature & Humidity Demo Dashboard"**. 
 As a result, you will see two digital gauges and two time-series charts displaying temperature and humidity level (similar to dashboard image in the introduction).
 
-## Next steps
+## See also
 
 Browse other [samples](/docs/samples) or explore guides related to main ThingsBoard features:
 
@@ -261,3 +267,8 @@ Browse other [samples](/docs/samples) or explore guides related to main ThingsBo
 {% include templates/feedback.md %}
  
 {% include socials.html %}
+
+## Next steps
+
+{% assign currentGuide = "HardwareSamples" %}{% include templates/guides-banner.md %}
+

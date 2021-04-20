@@ -1,0 +1,20 @@
+<svg width="76" height="60" viewBox="0 0 76 60" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<style>
+svg .img {
+opacity: 0;
+transition-duration: 0.5s;
+}
+svg .img:hover {
+opacity: 1;
+transition-duration: 0.3s;
+}
+</style>
+<g opacity="0.15">
+<path d="M41.6578 0.00268555L19.4925 19.2241L0.578125 53.1742H17.6323L41.6578 0.00268555ZM44.6064 4.49992L35.1468 31.1624L53.2846 53.9509L18.0973 59.9968H75.7661L44.6064 4.49992Z" fill="#0D2743"/>
+</g>
+<a xlink:href="https://azure.microsoft.com/" target="_blank" xlink:title="Azure" xlink:alt="Azure">
+<g class="img">
+<rect width="76" height="60" fill="white" opacity="0"/>
+<path d="M41.6578 0.00268555L19.4925 19.2241L0.578125 53.1742H17.6323L41.6578 0.00268555ZM44.6064 4.49992L35.1468 31.1624L53.2846 53.9509L18.0973 59.9968H75.7661L44.6064 4.49992Z" fill="#0089D6"/>
+</g></a>
+</svg>

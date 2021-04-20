@@ -1,0 +1,76 @@
+{
+  "ruleChain": {
+    "additionalInfo": null,
+    "name": "Thermometer Emulators",
+    "firstRuleNodeId": null,
+    "root": false,
+    "debugMode": false,
+    "configuration": null
+  },
+  "metadata": {
+    "firstNodeIndex": null,
+    "nodes": [
+      {
+        "additionalInfo": {
+          "layoutX": 336,
+          "layoutY": 96
+        },
+        "type": "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode",
+        "name": "A1 Sensor emulator",
+        "debugMode": false,
+        "configuration": {
+          "msgCount": 0,
+          "periodInSeconds": 10,
+          "originatorId": "04857080-9ec5-11e8-8983-7f75d062e1fd",
+          "originatorType": "DEVICE",
+          "jsScript": "var msg = { \n    temperature: (42 + 5 * Math.random()).toFixed(2),\n};\n\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, msgType: msgType };"
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 334,
+          "layoutY": 205
+        },
+        "type": "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode",
+        "name": "A2 Sensor emulator",
+        "debugMode": false,
+        "configuration": {
+          "msgCount": 0,
+          "periodInSeconds": 10,
+          "originatorId": "0b725bb0-9ec5-11e8-8983-7f75d062e1fd",
+          "originatorType": "DEVICE",
+          "jsScript": "var msg = { \n    temperature: (42 + 5 * Math.random()).toFixed(2),\n};\n\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, msgType: msgType };"
+        }
+      }
+    ],
+    "connections": null,
+    "ruleChainConnections": [
+      {
+        "fromIndex": 0,
+        "targetRuleChainId": {
+          "entityType": "RULE_CHAIN",
+          "id": "505b0ec0-8aa2-11e8-8a79-a5ec960c12e2"
+        },
+        "additionalInfo": {
+          "layoutX": 693,
+          "layoutY": 152,
+          "ruleChainNodeId": "rule-chain-node-4"
+        },
+        "type": "Success"
+      },
+      {
+        "fromIndex": 1,
+        "targetRuleChainId": {
+          "entityType": "RULE_CHAIN",
+          "id": "505b0ec0-8aa2-11e8-8a79-a5ec960c12e2"
+        },
+        "additionalInfo": {
+          "layoutX": 693,
+          "layoutY": 152,
+          "ruleChainNodeId": "rule-chain-node-4"
+        },
+        "type": "Success"
+      }
+    ]
+  }
+}

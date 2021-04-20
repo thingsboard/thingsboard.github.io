@@ -1,1 +1,1 @@
-sudo rpm -Uvh thingsboard-1.4.rpm
+sudo rpm -Uvh thingsboard-{{ site.release.ce_ver }}.rpm

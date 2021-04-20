@@ -10,7 +10,7 @@ title: Contribution Guide
 {:toc}
 
 We are constantly looking for a feedback from our community on how to improve ThingsBoard.
-If you have an idea or you have some new features in mind, please open an issue at ThingsBoard [**GitHub issue page**](https://github.com/thingsboard/thingsboard/issues).
+If you have an idea, or you have some new features in mind, please open an issue at ThingsBoard [**GitHub issue page**](https://github.com/thingsboard/thingsboard/issues).
 Please make sure that the same ticket is not already opened in the issues list (or something very similar).
 
 Before you start any implementation please wait from the ThingsBoard team to comment on your ticket. We'll try to get back to you ASAP.
@@ -47,27 +47,27 @@ A build will generate all the *protobuf* files in the *application* module that 
 Next, import the project into your favorite *IDE* as **Maven** project. 
 See separate instructions for [**IDEA**](https://www.jetbrains.com/help/idea/2016.3/importing-project-from-maven-model.html) and [**Eclipse**](http://javapapers.com/java/import-maven-project-into-eclipse/).   
 
-**NOTE:** If you are using Eclipse, after the maven project is imported to the IDE, We recommend you to disable Maven Project builder on **ui** project. This will improve the Eclipse performance *a lot*, because it will avoid Eclipse Maven builder from digging in node_modules directory (which is unnecessary and only causes Eclipse to hang). To do this, right-click on **ui** project, go to **Properties -> Builders**, and then uncheck the **Maven Project Builder** checkbox and then click **Ok**.
+**NOTE:** If you are using Eclipse, after the maven project is imported to the IDE, We recommend you to disable Maven Project builder on **ui-ngx** project. This will improve the Eclipse performance *a lot*, because it will avoid Eclipse Maven builder from digging in node_modules directory (which is unnecessary and only causes Eclipse to hang). To do this, right-click on **ui-ngx** project, go to **Properties -> Builders**, and then uncheck the **Maven Project Builder** checkbox and then click **Ok**.
 
 #### Database
 
 By default, ThingsBoard uses embedded HSQLDB instance which is very convenient for evaluation or development purposes. 
   
-Alternatively, you can configure your platform to use either scalable Cassandra DB cluster or various SQL databases. 
+Alternatively, you can configure your platform to use either hybrid mode - PostgreSQL for entities data and scalable Cassandra DB cluster for timeseries data or PostgreSQL for both. 
 If you prefer to use an SQL database, we recommend PostgreSQL.
 
 ##### [Optional] SQL Database: PostgreSQL
 
-{% include templates/optional-db.md %}
+{% include templates/install/optional-db.md %}
 
 Please use [this link](https://wiki.postgresql.org/wiki/Detailed_installation_guides) for the PostgreSQL installation instructions.
 
 Once PostgreSQL is installed you may want to create a new user or set the password for the main user.
 
-{% include templates/create-tb-db.md %}
+{% include templates/install/create-tb-db.md %}
 
 
-##### [Optional] NoSQL Database: Cassandra
+##### [Optional] NoSQL Database for timeseries data: Cassandra
 
 Please refer to appropriate section where you find instructions on how to install cassandra:
 
@@ -76,12 +76,12 @@ Please refer to appropriate section where you find instructions on how to instal
 
 ##### [Optional] Configure ThingsBoard to use external database
  
-{% include templates/optional-db.md %} 
+{% include templates/install/optional-db.md %} 
  
 Edit ThingsBoard configuration file: 
 
 ```text
-/application/scr/main/resources/thingsboard.yml
+/application/src/main/resources/thingsboard.yml
 ```
 
 {% include templates/disable-hsqldb.md %} 
@@ -92,11 +92,12 @@ For **PostgreSQL**:
 
 For **Cassandra DB**:
 
-Locate and set database type configuration parameter to 'cassandra'.
+Locate and set database type configuration parameters to 'cassandra'.
  
 ```text
 database:
-  type: "${DATABASE_TYPE:cassandra}" # cassandra OR sql
+  ts:
+    type: "${DATABASE_TS_TYPE:cassandra}" # cassandra OR sql (for hybrid mode, only this value should be cassandra)
 ```
 
 **NOTE:** If your Cassandra server is installed on the remote machine or it is bind to custom interface/port, you need to specify it in thingsboard.yml as well.
@@ -135,15 +136,13 @@ install_dev_db.bat
 By default, ThingsBoard UI is served at 8080 port. However, you may want to run UI in the hot redeploy mode.
 
 **NOTE:** This step is optional. It is required only if you are going to do changes to UI.
- 
-To start UI container in hot redeploy mode you will need to install **node.js** first. Once **node.js** is installed you can start container by executing next command:
 
 ```bash
-cd ${TB_WORK_DIR}/ui
-mvn clean install -P npm-start
+cd ${TB_WORK_DIR}/ui-ngx
+mvn clean install -P yarn-start
 ```
 
-This will launch a special server that will listen on 3000 port. All REST API and websocket requests will be forwarded to 8080 port.
+This will launch a special server that will listen on 4200 port. All REST API and websocket requests will be forwarded to 8080 port.
 
 ##### Running server-side container
 
@@ -160,7 +159,7 @@ java -jar application/target/thingsboard-${VERSION}-boot.jar
 
 ##### Dry run
 
-Navigate to http://localhost:3000/ or http://localhost:8080/ and login into ThingsBoard using demo data credentials:
+Navigate to http://localhost:4200/ or http://localhost:8080/ and login into ThingsBoard using demo data credentials:
 
  - *login* **tenant@thingsboard.org**
  - *password* **tenant**
@@ -205,3 +204,13 @@ Sign up contribution license agreement (CLA) and verify that remote build has be
 Be patient, pull request may take several days to review.
 
 
+
+#### See also
+
+- [Rule Node Development](/docs/user-guide/contribution/rule-node-development/) guide that describes how to create your own rule nodes.
+
+- [Widgets Development Guide](/docs/user-guide/contribution/widgets-development/) guide that describes how to create your own widgets.
+
+## Next steps
+
+{% assign currentGuide = "Contribution" %}{% include templates/guides-banner.md %}

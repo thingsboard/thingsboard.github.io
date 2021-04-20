@@ -5,6 +5,8 @@ $feature-box-margin-bottom: 0
 $feature-box-div-margin-bottom: 40px
 
 #home
+    section
+        background: none
     &:not(.open-nav):not(.flip-nav)
         header
             &::after
@@ -36,7 +38,7 @@ $feature-box-div-margin-bottom: 40px
             flex-direction: column
             justify-content: center
             align-content: center
-            background-color: rgba(0,0,0,0.5)
+            background-color: rgba(0,0,0,0.72)
             .tb-title
                 margin-bottom: 20px
                 font-size: 22px
@@ -59,6 +61,7 @@ $feature-box-div-margin-bottom: 40px
                 &:hover
                     background-color: white
                     color: $dark-grey
+                    text-shadow: none
             .tb-arrow
                 position: fixed
                 bottom: 40px
@@ -75,160 +78,517 @@ $feature-box-div-margin-bottom: 40px
             &.arrow-hidden
                 .tb-arrow
                     display: none
-
-    #talkToUs
-        main
-            padding: 30px 0
-        h5
-            font-size: 20px
-
-    #intro, #main-features, #dashboard_description, #tb-customers
-        color: #424242
-        h2
-            border: none
-            text-align: center
-            font-weight: 400
-        h3
-            border: none
-            font-weight: 400
-        p
-            line-height: 1.5em
-
-    #tb-customers
-        padding-top: 40px
-        padding-bottom: 40px
-        .customers-container
-            display: flex
-            flex-wrap: wrap
-            justify-content: center
-            .customer-block
-                opacity: 0
-                &.animated
-                    opacity: 1
-                max-width: 100%
-                padding: 20px 30px
-                width: 230px
+    #overflow
+        overflow: hidden
+        #intro, #manage, #react, #products, #dashboard_description, #rule-engine, #bottom-features
+            color: #212529
+            text-align: left
+            h1
+                font-weight: 600
+                text-align: center
+                font-size: 32px
+                line-height: 52px
                 a
-                    cursor: pointer
-                    color: $blue-03
-                    text-decoration: none
-                    &:hover
-                        text-decoration: underline
-                p
-                    margin: 15px 0
-
-    .oceanNodes
-        &#intro
-            padding-top: 40px
-            padding-bottom: 40px
-            main:first-child
-                .image-wrapper
-                    max-width: 100%
-                    img
-                        max-width: 491px
-        &#main-features
-            .image-wrapper
-                top: 0
-                transform: translateY(0)
-            .image-wrapper, .content
-                animation-duration: 1.5s
-        .image-wrapper, .content
-            opacity: 0
-            &.animated
-                opacity: 1
-
-    .demoDashboardButton
-        text-align: center
-        padding: 20px 0
-
-    .demo-dashboards-carousel, .feedbacks-carousel
-        .slick-next, .slick-prev
-            top: 40%
-        .slick-next:before, .slick-prev:before
-            color: rgba(0,0,0,0.67)
-
-    .demo-dashboards-carousel
-        padding-top: 25px
-
-    .dashboard-item
-        outline: none
-
-    .demoDashboardWrapper
-        position: relative
-        padding-bottom: 15px
-        .overlay
-            outline: none
-            position: absolute
-            top: 0
-            left: 0
-            width: 100%
-            height: 100%
-            background: #ffffff url(/images/eye_gray.svg) no-repeat scroll center
-            background-size: 88px
-            opacity: 0
-            transition: 0.5s
-            &:hover
-                opacity: 0.5
-                transition: 0.5s
-
-    .demoDashboard
-        display: block
-        position: relative
-        width: 100%
-        height: 100%
-        img
-            width: 100%
-
-    #dashboard_description
-        main
-            display: block
-            opacity: 0
-            &.animated
-                opacity: 1
-        padding-top: 15px
-        h3
-            margin-bottom: 18px
-
-    // Features
-    #features
-        background-color: $light-grey
-        main
-            display: block
-        .features-title
-            padding-top: 100px
-            background-image: url(/images/thingsboard_blue.svg)
-            background-position: center 24px
-            background-repeat: no-repeat
-            background-size: 64px
-            margin-top: 20px
+                    font-weight: 600
+                    font-size: 32px
+            h2
+                font-weight: 500
+                line-height: 54px
+                font-size: 36px
             h3
-                margin-bottom: $features-h3-margin-bottom
-            opacity: 0
-            &.animated
-                opacity: 1
+                font-size: 42px
+                font-weight: 600
+                line-height: 63px
+            p
+                color: #75767C
+                font-size: 18px
+                font-weight: normal
+                line-height: 27px
+                margin: 4px 0 18px
+            a
+                color: #2A7DEC
+                font-weight: 500
+                font-size: 18px
 
-        .feature-box
-            margin-bottom: $feature-box-margin-bottom
-            & > div
-                width: $feature-box-div-width
-                margin-bottom: $feature-box-div-margin-bottom
-                opacity: 0
-                &.animated
-                    opacity: 1
+        #tb-customers
             width: 100%
-            //overflow: hidden
-            display: inline-block
-            clear: both
-            h4
-                line-height: normal
-                margin-bottom: 15px
-            & > div:first-child
-                float: left
-            & > div:last-child
-                float: right
+            padding: 50px 0
+            text-align: justify
+            -moz-text-align-last: justify
+            text-align-last: justify
+            display: none
+            @media(min-width: 992px)
+                display: block
+            img
+                height: 60px
+                margin-bottom: 20px
+            main
+                display: flex
+                flex-wrap: wrap
+                flex-direction: row
+                justify-content: space-around
+                align-items: center
+                padding: 0 50px
+                a
+                    display: block
+                    padding: 10px
+                    object
+                        pointer-events: none
+                        filter: invert(86%) sepia(5%) saturate(530%) hue-rotate(171deg) brightness(237%) contrast(86%)
 
-    .flyout-button
-        display: none
+        #intro
+            margin-bottom: 178px
+            padding-top: 88px
+            .second
+                margin-top: 48px
+                color: #899AAB
+                font-size: 20px
+                line-height: 1.5em
+                font-weight: normal
+
+        #manage, #react
+            #features-top
+                img
+                    border-radius: 6px
+                    box-shadow: 0 50px 50px -20px rgba(0,0,0,0.15), 0 0 30px 0 rgba(0,0,0,0.05)
+                .block
+                    justify-content: space-between
+                    display: flex
+                    align-items: center
+                    flex-direction: column
+                    .preview, .manage, .visualize
+                        margin-top: 32px
+                    img, .manage, .visualize, .process
+                        order: 2
+                    .feature-des
+                        order: 1
+                        h2
+                            margin-top: 100px
+                    .feature-des, img, .manage, .visualize, .process
+                        width: 100%
+                    .manage
+                        position: relative
+                        display: inline-block
+                        .device-list
+                            margin: 14% 0
+                            width: 100%
+                            display: block
+                            border-radius: 4px
+                            box-shadow: 0 1px 3px 0 rgba(0,0,0,0.12), 0 1px 1px 0 rgba(0,0,0,0.07)
+                        .device-manage
+                            width: 87%
+                            position: absolute
+                            right: 0
+                            top: 0
+                    .visualize
+                        position: relative
+                        .vis1
+                            width: 100%
+                            margin-bottom: 2%
+                        .vis2
+                            width: 72%
+                        .vis3
+                            width: 25.82%
+                            position: absolute
+                            right: 0
+                    &.vis
+                        margin: 20px 0 30px
+                    .process
+                        position: relative
+                        display: inline-block
+                        .react
+                            width: 167%
+                            max-width: 1031px
+                            border-radius: unset
+                            position: absolute
+                            box-shadow: unset
+                            z-index: -1
+                            right: -576px
+                            top: 0
+                        div
+                            width: 100%
+                            height: 100px
+                            top: 90px
+                            background: #305680
+                            border-radius: 6px
+                            z-index: -1
+                            position: absolute
+                            box-shadow: 4px 0 30px 0 rgba(37,38,40,0.6)
+                        .add-rule
+                            width: 100%
+                            margin-top: 90px
+                    &.dark
+                        .feature-des
+                            margin-bottom: 96px
+                            h2
+                                color: white
+                            p
+                                color: #A6A8B2
+                            a
+                                color: white
+                                img
+                                    filter: invert(98%) sepia(19%) saturate(109%) hue-rotate(232deg) brightness(115%) contrast(100%)
+                    &.micro
+                        margin: 50px 0
+                        img
+                            box-shadow: unset
+                            max-width: 569px
+                        .feature-des
+                            margin-bottom: 12px
+
+        #products
+            width: 100%
+            padding-top: 100px
+            padding-bottom: 56px
+            .product-title
+                color: white
+                text-align: center
+                margin-bottom: 72px
+            .product-list
+                display: flex
+                margin: unset
+                div
+                    color: #212529
+                    background-color: white
+                    box-shadow: 0 50px 50px -20px rgba(0,0,0,0.15), 0 0 30px 0 rgba(0,0,0,0.05)
+                    border-radius: 6px
+                    padding: 40px
+                    text-align: center
+                    flex: 1
+                    margin-bottom: 40px
+                    p
+                        margin: unset
+                    h2
+                        font-size: 28px
+                        font-weight: 600
+                    h3
+                        font-size: 16px
+                        font-weight: unset
+                        margin-top: 18px
+                        line-height: 1.5
+                    img
+                        display: block
+                        margin: 50px auto 50px auto
+                        width: 80%
+                    &.main
+                        box-shadow: inset 0px -6px 0px #305680, 0 50px 50px -20px rgba(0,0,0,0.15), 0 0 30px 0 rgba(0,0,0,0.05)
+                        margin: 0 30px
+                        h2
+                            font-size: 42px
+                            font-weight: 600
+                            line-height: 1.5
+                        img
+                            margin: 60px auto
+                    a
+                        color: #2A7DEC
+                        font-weight: 500
+                @media(max-width: 992px)
+                    flex-direction: column
+                    div.main
+                        margin: 0 0 40px
+            a
+                color: #707275
+                font-weight: 500
+                margin-top: 56px
+                text-align: center
+
+        #dashboard_description
+            margin-top: 186px
+            margin-bottom: 120px
+            .slider
+                margin: 78px auto
+                position: relative
+                width: 100%
+                display: flex
+                flex-direction: column
+                justify-content: space-around
+            .slider button.slick-prev, button.slick-next
+                position: absolute
+                filter: invert(100%) sepia(74%) saturate(108%) hue-rotate(175deg) brightness(90%) contrast(96%)
+                outline: none
+                background-image: url(/images/slider-arrow.svg)
+                width: 17px
+                height: 50px
+                &:hover
+                    filter: invert(62%) sepia(74%) saturate(6770%) hue-rotate(202deg) brightness(99%) contrast(87%)
+            .slider button.slick-prev
+                left: -50px
+                top: calc(50% - 25px)
+                transform: scale(-1, 1)
+            .slider button.slick-next
+                right: -50px
+            .slider button.slick-prev::before, .slider button.slick-next::before, .demo-dashboards-carousel ul li button::before
+                content: unset
+            .demo-dashboards-carousel
+                position: relative
+                width: 100%
+            .demo-dashboards-carousel ul li
+                width: unset
+                margin: 0 12px
+            .demo-dashboards-carousel ul li button
+                background: #E0E1E2
+                border-radius: 4px
+                width: 10px
+                height: 10px
+                padding: unset
+                margin: 8px 0
+            .demo-dashboards-carousel ul li:hover
+                button
+                    filter: invert(62%) sepia(74%) saturate(6770%) hue-rotate(202deg) brightness(99%) contrast(87%)
+            .demo-dashboards-carousel ul li.slick-active
+                button
+                    filter: invert(62%) sepia(74%) saturate(6770%) hue-rotate(202deg) brightness(99%) contrast(87%)
+            .slick-list
+                margin-bottom: 32px
+            .dashboard-item
+                flex-direction: column
+                justify-content: space-between
+                display: flex !important
+                align-items: center
+            .item-image-container
+                position: relative
+                width: 100%
+            .item-image
+                position: relative
+                width: 100%
+                height: auto
+                border-radius: 6px
+                display: block
+            .item-description
+                width: 100%
+                margin-bottom: 32px
+
+        #rule-engine
+            margin-bottom: 148px
+            .rule
+                justify-content: space-between
+                display: flex
+                align-items: center
+                flex-direction: column
+                a
+                    order: 2
+                    width: 100%
+                    img
+                        width: 100%
+                        border-radius: 6px
+                        box-shadow: 0 50px 50px -20px rgba(0,0,0,0.15), 0 0 30px 0 rgba(0,0,0,0.05)
+                .des
+                    order: 1
+                    width: 100%
+                    margin-bottom: 32px
+
+        #bottom-features
+            padding-bottom: 80px
+            #cards
+                padding-top: 50px
+                justify-content: center
+                &>div
+                    margin-bottom: 36px
+                    &.col-lg-6
+                        padding: 0 18px
+                        max-width: 100%
+                    .block
+                        padding: 48px
+                        float: left
+                        width: 100%
+                        height: 100%
+                        background: white
+                        border-radius: 6px
+                        box-shadow: 0 50px 50px -20px rgba(0,0,0,0.15)
+                        display: unset
+                        text-align: center
+                        div
+                            width: 100%
+                            .title
+                                color: #2A7DEC
+                                font-size: 24px
+                                font-weight: 500
+                                margin-bottom: 6px
+                            p
+                                margin-top: 10px
+                        img
+                            height: fit-content
+                            margin: 0 0 18px
+
+        .read-more-button
+            position: relative
+            transition-duration: 0.3s
+            &.dash
+                outline: none
+                .arrow
+                    left: 156px
+            .arrow
+                transform: translate(0px)
+                transition-duration: 0.3s
+                filter: invert(35%) sepia(96%) saturate(1837%) hue-rotate(202deg) brightness(98%) contrast(89%)
+                box-shadow: none !important
+                width: 12px !important
+                margin-left: 12px
+                position: absolute
+                top: 7px
+                &.first
+                    opacity: 0.2
+                &.second
+                    opacity: 0.5
+            &:hover
+                transition-duration: 0.3s
+                .first
+                    transform: translate(10px)
+                .second
+                    transform: translate(20px)
+                .third
+                    transform: translate(30px)
+
+        .img-button
+            &.rule-button
+                position: relative
+            .overlay
+                color: white
+                z-index: 1000
+                display: block
+                width: 100%
+                position: absolute
+                font-weight: 400
+                height: 100%
+                opacity: 0
+                background: linear-gradient(0deg, rgba(37,38,40,0.8) 0%, rgba(37,38,40,0.6) 100%)
+                transition-duration: 0.3s
+                border-radius: 6px
+                &:hover
+                    opacity: 1
+                    .eye
+                        bottom: 14%
+                .eye
+                    transition-duration: 0.3s
+                    position: absolute
+                    bottom: 0
+                    left: calc(50% - 60px)
+                    display: flex
+                    img
+                        margin-right: 10px
+                        width: unset !important
+
+        #background
+            z-index: -1
+            position: absolute
+            top: 524px
+            left: 50%
+            img
+                position: absolute
+                top: -650px
+                left: 134px
+                box-shadow: none !important
+            div
+                position: absolute
+                -ms-transform: skewY(-6deg)
+                transform: skewY(-6deg)
+                width: 436px
+                height: 90px
+                &.main1
+                    top: -572px
+                    width: 2560px
+                    height: 525px
+                    left: -1280px
+                    background-color: #F7F9FC
+                &.small1
+                    top: -528px
+                    right: 646px
+                    background-color: #305680
+                &.small2
+                    top: -590px
+                    right: 408px
+                    background-color: #2A7DEC
+                &.small3
+                    top: -715px
+                    left: 789px
+                    border: 4px solid #2A7DEC
+                &.small4
+                    top: 22px
+                    right: 814px
+                    border: 2px solid #0D2743
+                &.main2
+                    top: -576px
+                    width: 2560px
+                    height: 825px
+                    left: -1280px
+                    background-color: #252628
+                &.small5
+                    top: -742px
+                    left: 867px
+                    border: 4px solid #305680
+                &.small6
+                    top: -37px
+                    right: 525px
+                    background-color: #305680
+                &.products
+                    top: -590px
+                    width: 2560px
+                    height: 200px
+                    left: -1280px
+                    background-color: #305680
+                &.small7
+                    top: -742px
+                    left: 732px
+                    background-color: #2A7DEC
+                &.small8
+                    top: -350px
+                    right: 736px
+                    border: 4px solid #2A7DEC
+                &.dashboards
+                    top: -700px
+                    width: 2560px
+                    height: 845px
+                    left: -1280px
+                    background-color: #F7F9FC
+                &.small9
+                    top: -746px
+                    left: 466px
+                    border: 4px solid #0D2743
+                &.small10
+                    top: -805px
+                    left: 658px
+                    background-color: #2A7DEC
+                &.bottom-features1
+                    top: -700px
+                    width: 2560px
+                    height: 3000px
+                    left: -1280px
+                    -ms-transform: unset
+                    transform: unset
+                    background-color: #F7F9FC
+                &.bottom-features2
+                    top: -240px
+                    width: 2560px
+                    height: 525px
+                    left: -1280px
+                    background-color: #252628
+                &.small11
+                    top: -382px
+                    left: 757px
+                    background-color: #2A7DEC
+                &.small12
+                    top: 334px
+                    right: 589px
+                    border: 4px solid #305680
+                &.bottom-features3
+                    top: 1008px
+                    width: 2560px
+                    height: 525px
+                    left: -1280px
+                    background-color: #252628
+                &.small13
+                    top: 1071px
+                    right: 646px
+                    background-color: #305680
+                &.small14
+                    top: 1009px
+                    right: 408px
+                    background-color: #2A7DEC
+                &.small15
+                    top: 1373px
+                    left: 830px
+                    border: 4px solid #2A7DEC
+
 
     .header-animation
         max-width: 100%
@@ -275,40 +635,29 @@ $feature-box-div-margin-bottom: 40px
                 .tb-sub-title
                     font-size: 20px
                     margin-bottom: 60px
-        .oceanNodes
-            &#intro
-                main:nth-child(1)
-                    padding-right: 0
-                    h3, p
-                        text-align: center
-                    .image-wrapper
-                        position: relative
-                        display: block
-                        float: none
-                        max-width: 100%
-                        transform: none
-                    .content
-                        display: block
-            &#main-features
-                main
-                    .image-wrapper
-                        max-width: 25%
-
-        #features
-            padding-bottom: 60px
-            .features-title
-                padding-top: 120px
-                background-position: center 34px
-            .feature-box
-                margin-bottom: 30px
-                &:last-child
-                    margin-bottom: 0
-            h3
-                margin-bottom: $features-h3-margin-bottom
-            .feature-box
-                & > div
-                    width: $feature-box-div-width
-                    margin-bottom: $feature-box-div-margin-bottom
+        #overflow
+            #manage, #react
+                #features-top
+                    .block
+                        .feature-des, img, .manage, .visualize, .process
+                            width: 80%
+            #products
+                .product-list
+                    margin: 0 80px
+            #bottom-features
+                #cards
+                    div
+                        .block
+                            text-align: left
+                            display: flex
+                            div
+                                width: calc(100% - 122px)
+                            img
+                                margin: 0 30px 0 0
+            #dashboard_description
+                .demo-dashboards-carousel ul li button
+                    width: 72px
+                    height: 4px
 
 @media screen and (min-width: 1025px)
     #home
@@ -317,27 +666,47 @@ $feature-box-div-margin-bottom: 40px
                 display: block
         section, header
             main
-                max-width: 1000px
+                max-width: 1400px
         footer
             main
-                max-width: 1000px
-
-        .oceanNodes
-            &#intro
-                main:nth-child(1)
-                    max-width: 1000px
-                    padding-right: 475px
-
-                    h3, p
-                        text-align: left
-
-                    .image-wrapper
-                        position: absolute
-                        max-width: 48%
-                        transform: translateY(-50%)
-
-                        img
-                            max-width: 425px
+                max-width: 1400px
+        #overflow
+            #manage, #react
+                #features-top
+                    .block
+                        flex-direction: row
+                        .feature-des, img, .manage, .visualize, .process
+                            width: calc(50% - 80px)
+                            order: unset
+                            h2
+                                margin: unset
+                        .preview, .manage, .visualize, .process
+                            margin-top: unset
+            #products
+                .product-list
+                    margin: 0 60px
+            #rule-engine
+                .rule
+                    flex-direction: row
+                    a
+                        order: unset
+                        width: calc(65% - 20px)
+                    .des
+                        order: unset
+                        width: calc(35% - 60px)
+                        margin: unset
+            #background
+                div.main2
+                    height: 525px
+            #dashboard_description
+                .dashboard-item
+                    flex-direction: unset
+                .item-image-container
+                    width: 66%
+                .item-description
+                    width: 30%
+                .slider
+                    width: 90%
 
 @media screen and (min-width: 1250px)
     #home
@@ -354,3 +723,10 @@ $feature-box-div-margin-bottom: 40px
                     font-size: 28px
                     padding: 0 40px
                     border-width: 3px
+
+@media screen and (min-width: 1500px)
+    #home
+        #overflow
+            #dashboard_description
+                .slider
+                    width: 100%

@@ -1,0 +1,77 @@
+{
+  "ruleChain": {
+    "additionalInfo": null,
+    "name": "Warehouse Temperature",
+    "firstRuleNodeId": null,
+    "root": false,
+    "debugMode": false,
+    "configuration": null
+  },
+  "metadata": {
+    "firstNodeIndex": null,
+    "nodes": [
+      {
+        "additionalInfo": {
+          "layoutX": 678,
+          "layoutY": 151
+        },
+        "type": "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode",
+        "name": "Save To DB",
+        "debugMode": true,
+        "configuration": {
+          "defaultTTL": 0
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 326,
+          "layoutY": 151
+        },
+        "type": "org.thingsboard.rule.engine.analytics.latest.telemetry.TbAggLatestTelemetryNode",
+        "name": "Avg Warehouse Temperature",
+        "debugMode": true,
+        "configuration": {
+          "parentEntitiesQuery": {
+            "type": "single",
+            "entityId": {
+              "entityType": "ASSET",
+              "id": "ef0bd9b0-9ec4-11e8-8983-7f75d062e1fd"
+            },
+            "childRelationsQuery": {
+              "direction": "FROM",
+              "maxLevel": 1,
+              "filters": [
+                {
+                  "relationType": "Contains",
+                  "entityTypes": [
+                    "DEVICE"
+                  ]
+                }
+              ]
+            }
+          },
+          "periodTimeUnit": "MINUTES",
+          "periodValue": 1,
+          "aggMappings": [
+            {
+              "source": "temperature",
+              "sourceScope": "LATEST_TELEMETRY",
+              "defaultValue": 0,
+              "target": "avgTemperature",
+              "aggFunction": "AVG",
+              "filter": null
+            }
+          ]
+        }
+      }
+    ],
+    "connections": [
+      {
+        "fromIndex": 1,
+        "toIndex": 0,
+        "type": "Success"
+      }
+    ],
+    "ruleChainConnections": null
+  }
+}

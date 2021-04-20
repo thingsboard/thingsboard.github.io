@@ -1,0 +1,173 @@
+$install-color: #506dad
+
+#docsContent
+  #content
+    .installation-options
+      .install-options-hero
+        position: relative
+        z-index: 6
+        min-height: 160px
+        display: flex
+        align-items: center
+        .container
+          padding: 0
+        .install-options-hero-content
+          text-align: center
+          padding-top: 0
+          padding-bottom: 0
+          h1
+            padding-right: 0
+            color: #000
+            border: none
+            margin-bottom: 0
+            font-size: 32px
+            font-weight: 500
+            line-height: 56px
+            margin-top: 0
+            &:before
+              display: none
+          .install-options-description
+            margin: 12px auto auto
+            p
+              color: #000
+              font-weight: 300
+              font-size: 16px
+              line-height: 24px
+              margin-bottom: 0
+        .deployment-container
+          padding-top: 48px
+          .deployment-div
+            margin-top: 54px
+            padding-bottom: 20px
+            .deployment-section
+              display: none
+              &.active
+                display: block
+            .deployment-cards
+              padding-bottom: 40px
+              .deployment-cards-container
+                display: flex
+                flex-wrap: wrap
+                justify-content: center
+                .deployment-card-block
+                  margin-right: 12px
+                  margin-bottom: 12px
+                  a
+                    display: block
+                    width: 190px
+                    height: 120px
+                    min-width: 190px
+                    border: 1px solid #ebebeb
+                    padding: 3px
+                    border-radius: 6px
+                    cursor: pointer
+                    text-decoration: none
+                    &:hover
+                      border: 4px solid #2A7DEC
+                      padding: 0
+                      box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.05), 0px 30px 30px -20px rgba(0, 0, 0, 0.15)
+                  .deployment-logo
+                    width: 100%
+                    height: 100%
+                    padding: 15px 25px
+                    position: relative
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    align-content: center
+                    img
+                      flex: 0 0 auto
+                      object-fit: contain
+                      vertical-align: middle
+                      width: 100%
+                      height: 100%
+                    &.coming-soon
+                      &:after
+                        content: ""
+                        position: absolute
+                        top: 0
+                        left: 0
+                        right: 0
+                        bottom: 0
+                        background-image: url("/images/install/coming-soon.png")
+                        background-size: contain
+                        opacity: 0.5
+                        background-color: #fff
+        .one-line-deployment-container
+          padding-top: 0
+        .install-navigation
+          position: relative
+          display: flex
+          justify-content: center
+          align-items: center
+          ul
+            list-style-type: none
+            display: flex
+            flex-wrap: wrap
+            justify-content: space-around
+            align-items: center
+            margin: 0
+            padding: 0
+            li
+              position: relative
+              display: table
+              height: 68px
+              padding-left: 6px
+              padding-right: 6px
+              margin-bottom: 12px
+              a
+                text-decoration: none
+                display: block
+                line-height: initial
+                text-align: center
+                border: 1px solid rgba(0, 0, 0, 0.08)
+                box-sizing: border-box
+                border-radius: 34px
+                font-size: 18px
+                color: #212529
+                font-weight: 400
+                cursor: pointer
+                padding: 14px 32px 14px 24px
+                letter-spacing: 1px
+                &:hover
+                  border-color: #212529
+                  border-width: 2px
+                  margin: -1px
+                &:before
+                  display: inline-block
+                  content: ""
+                  vertical-align: middle
+                  margin-right: 12px
+                  width: 38px
+                  height: 38px
+                  filter: invert(11%) sepia(10%) saturate(825%) hue-rotate(169deg) brightness(93%) contrast(90%)
+                  background-size: contain
+                @media (min-width: 1600px)
+                  font-size: 24px
+              &.tb-live-demo
+                a
+                  &:before
+                    background: url('/images/livedemo-icon.svg')
+                    background-size: contain
+              &.tb-on-premise
+                a
+                  &:before
+                    background: url('/images/pricing/self-icon.svg')
+                    background-size: contain
+              &.tb-cloud
+                a
+                  &:before
+                    background: url('/images/pricing/cloud-icon.svg')
+                    background-size: contain
+              &.active
+                z-index: 5
+                a
+                  color: #fff
+                  background-color: #2A7DEC
+                  box-shadow: 0 18px 16px -10px rgba(42,125,236,0.25)
+                  &:hover
+                    border-color: #2A7DEC
+                    border-width: 1px
+                    margin: unset
+                  &:before
+                    filter: invert(100%) sepia(100%) saturate(2%) hue-rotate(242deg) brightness(107%) contrast(101%)

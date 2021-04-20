@@ -18,7 +18,7 @@ This section contains installation instructions for build tools.
 
 ##### Java
 
-ThingsBoard is build using Java 8. You can use [following instructions](/docs/user-guide/install/linux#java) to install Java 8.
+ThingsBoard is build using Java 11. You can use [following instructions](/docs/user-guide/install/linux#java) to install Java 11.
 
 ##### Maven
 
@@ -39,7 +39,7 @@ You can clone source code of the project from the official [github repo](https:/
 ```bash
 git clone git@github.com:thingsboard/thingsboard.git
 # checkout latest release branch
-git checkout release-1.4
+git checkout {{ site.release.branch }}
 ```
 
 #### Build
@@ -50,6 +50,12 @@ Run the following command from the thingsboard folder to build the project:
 mvn clean install
 ```
 
+#### Build local docker images
+
+```bash
+mvn clean install -Ddockerfile.skip=false
+```
+
 #### Build artifacts
 
 You can find debian, rpm and windows packages in the target folder:
@@ -57,4 +63,3 @@ You can find debian, rpm and windows packages in the target folder:
 ```bash
 application/target
 ```
- 

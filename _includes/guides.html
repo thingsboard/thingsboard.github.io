@@ -1,0 +1,53 @@
+{% for item in guides %}
+{% if item.section %}
+{% if guidesVersion == 'paas' and item.paaspage == 'false' %}
+{% elsif guidesVersion == 'ce' and item.cepage == 'false' %}
+{% elsif guidesVersion == 'pe' and item.pepage == 'false' %}
+{% else %}
+<div class="guides-block" id="AnchorID{{ item.id }}">
+    <div class="guides-title-panel">
+        <div class="guides-text">
+            <p class="guides-title">
+                {{ item.title }}
+            </p>
+            <p class="guides-subtitle">
+                {{ item.subtitle }}
+            </p>
+        </div>
+    </div>
+    <ul class="guides-list">
+        {% assign guides = item.section %}{% include guides.html %}
+    </ul>
+</div>
+{% endif %}
+{% else %}
+{% if guidesVersion == 'paas' and item.paaspage == 'false' %}
+{% elsif guidesVersion == 'ce' and item.cepage == 'false' %}
+{% elsif guidesVersion == 'pe' and item.pepage == 'false' %}
+{% else %}
+<li class="guide-container">
+    <a href="{{ item.path }}">
+        <div class="guide-text">
+            <p class="guide-title">
+                {{ item.title }}
+            </p>
+            <p class="guide-subtitle">
+                {{ item.subtitle }}
+            </p>
+            <p class="guide-keywords">
+                {{ item.keywords }}
+            </p>
+        </div>
+        <div class="guide-icons">
+            {% if item.video %}
+            <span class="video"></span>
+            {% endif %}
+            {% if item.pe %}
+            <span class="pe"></span>
+            {% endif %}
+        </div>
+    </a>
+</li>
+{% endif %}
+{% endif %}
+{% endfor %}

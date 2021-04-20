@@ -1,69 +1,21 @@
-bigheader: "Reference Documentation"
-abstract: "Design docs, concept definitions, and references for APIs and CLIs."
+bigheader: "Architecture"
+abstract: "Design docs, deployment scenarios and performance"
 toc:
-- title: Reference Documentation
+- title: Architecture Overview
   path: /docs/reference/
-- title: ThingsBoard Architecture
-  path: /docs/reference/architecture/
+- title: Monolithic architecture
+  path: /docs/reference/monolithic/
+- title: Microservices architecture
+  path: /docs/reference/msa/
+- title: Deployment scenarios
+  path: /docs/reference/iot-platform-deployment-scenarios/
 - title: ThingsBoard Performance
   section:
-  - title: Data Collection Performance
-    path: /docs/reference/performance/
-  - title: Performance Test Tools
-    path: /docs/reference/performance-tools/
-  - title: How to repeate the tests
-    path: /docs/reference/performance-tests/
-- title: Rule Engine components
-  section:
-  - title: Filters
-    section:
-      - title: Message Type Filter
-        path: /docs/reference/filters/message-type-filter/
-      - title: Device Attributes Filter
-        path: /docs/reference/filters/device-attributes-filter/
-      - title: Device Telemetry Filter
-        path: /docs/reference/filters/device-telemetry-filter/
-      - title: Method Name Filter
-        path: /docs/reference/filters/method-name-filter/
-  - title: Processors
-    section:
-      - title: Alarm Deduplication Processor
-        path: /docs/reference/processors/alarm-deduplication-processor/
-  - title: Actions
-    section:
-      - title: Telemetry Plugin Action
-        path: /docs/reference/actions/telemetry-plugin-action/
-      - title: Send Mail Action
-        path: /docs/reference/actions/send-mail-action/
-      - title: Kafka Plugin Action
-        path: /docs/reference/actions/kafka-plugin-action/
-      - title: RabbitMQ Plugin Action
-        path: /docs/reference/actions/rabbitmq-plugin-action/
-      - title: REST API Call Plugin Action
-        path: /docs/reference/actions/rest-api-call-plugin-action/
-      - title: RPC Plugin Action
-        path: /docs/reference/actions/rpc-plugin-action/
-  - title: Plugins
-    section:
-      - title: Telemetry Plugin
-        path: /docs/reference/plugins/telemetry/
-      - title: RPC Plugin
-        path: /docs/reference/plugins/rpc/
-      - title: Device Messaging Plugin
-        path: /docs/reference/plugins/messaging/
-      - title: Mail Plugin
-        path: /docs/reference/plugins/mail/
-      - title: Kafka Plugin
-        path: /docs/reference/plugins/kafka/
-      - title: RabbitMQ Plugin
-        path: /docs/reference/plugins/rabbitmq/
-      - title: REST API Call Plugin
-        path: /docs/reference/plugins/rest/
-      - title: SNS Plugin
-        path: /docs/reference/plugins/sns/
-      - title: SQS Plugin
-        path: /docs/reference/plugins/sqs/
-      - title: Time RPC Plugin
-        path: /docs/reference/plugins/time/
-- title: Release Notes
-  path: https://github.com/thingsboard/thingsboard/releases/
+    - title: Data Collection Performance
+      path: /docs/reference/performance/
+#    - title: 20K IoT devices on single ThingsBoard server
+#      path: /docs/reference/20k-devices-test/
+#    - title: 1M IoT devices on ThingsBoard cluster with Kubernetes and Amazon EC2
+#      path: /docs/reference/1m-devices-test/
+    - title: Single instance performance on different AWS instances
+      path: /docs/reference/performance-aws-instances/

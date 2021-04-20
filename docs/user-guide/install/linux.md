@@ -4,6 +4,7 @@ assignees:
 - ashvayka
 title: Installing ThingsBoard on Linux
 description: Installing ThingsBoard on Linux
+redirect_to: "/docs/user-guide/install/ubuntu"
 
 ---
 
@@ -24,26 +25,30 @@ To run ThingsBoard and third-party components on a single machine you will need 
 
 #### Java
 
-ThingsBoard service is running on Java 8. 
-Although you are able to start the service using [OpenJDK](http://openjdk.java.net/), 
-the solution is actively tested on [Oracle JDK](http://www.oracle.com/technetwork/java/javase/overview/index.html).
+ThingsBoard service is running on Java 11. 
+The solution is actively tested on both [OpenJDK](http://openjdk.java.net/) and [Oracle JDK](http://www.oracle.com/technetwork/java/javase/overview/index.html).
 
-Follow this instructions to install Oracle JDK 8:
+Follow this instructions to install OpenJDK 11:
 
- - [Ubuntu 16.04](https://www.digitalocean.com/community/tutorials/how-to-install-java-with-apt-get-on-ubuntu-16-04#installing-the-oracle-jdk)
- - [CentOS 7](https://www.digitalocean.com/community/tutorials/how-to-install-java-on-centos-and-fedora#install-oracle-java-8)
+{% capture tabspec %}java-installation
+A,Ubuntu,shell,resources/java-ubuntu-installation.sh,/docs/user-guide/install/resources/java-ubuntu-installation.sh
+B,CentOS,shell,resources/java-centos-installation.sh,/docs/user-guide/install/resources/java-centos-installation.sh{% endcapture %}  
+{% include tabs.html %}   
 
-Please don't forget to configure your operating system to use Oracle JDK 8 by default. 
-Corresponding instructions are in the same articles listed above.
+Please don't forget to configure your operating system to use OpenJDK 11 by default. 
+See corresponding instructions:
+
+ - [Ubuntu](https://www.digitalocean.com/community/tutorials/how-to-install-java-with-apt-on-ubuntu-18-04#managing-java)
+ - [CentOS](https://computingforgeeks.com/how-to-install-java-11-openjdk-11-on-rhel-8/#h-selecting-java-versions-with-alternatives)
 
 
-#### [Optional] External database installation
+#### External database installation
 
-{% include templates/install-db.md %}
+{% include templates/install/install-db.md %}
 
 ###### SQL Database: PostgreSQL
 
-{% include templates/optional-db.md %}
+{% include templates/install/optional-db.md %}
 
 Instructions listed below will help you to install PostgreSQL.
 
@@ -53,13 +58,13 @@ B,CentOS,shell,resources/postgresql-centos-installation.sh,/docs/user-guide/inst
 {% include tabs.html %}   
 
 
-{% include templates/postgres-post-install.md %}
+{% include templates/install/postgres-post-install.md %}
 
-{% include templates/create-tb-db.md %}
+{% include templates/install/create-tb-db.md %}
 
 ###### NoSQL Database: Cassandra
 
-{% include templates/optional-db.md %}
+{% include templates/install/optional-db.md %}
 
 Instructions listed below will help you to install Cassandra.
 
@@ -84,10 +89,8 @@ A,Ubuntu,shell,resources/thingsboard-ubuntu-installation.sh,/docs/user-guide/ins
 B,CentOS,shell,resources/thingsboard-centos-installation.sh,/docs/user-guide/install/resources/thingsboard-centos-installation.sh{% endcapture %}  
 {% include tabs.html %}
 
-### [Optional] Configure ThingsBoard to use the external database
- 
-{% include templates/optional-db.md %} 
- 
+### Configure ThingsBoard to use the external database
+  
 Edit ThingsBoard configuration file 
 
 ```bash 
@@ -102,11 +105,14 @@ For **PostgreSQL**:
 
 For **Cassandra DB**:
 
-Locate and set database type configuration parameter to 'cassandra'.
+Locate and set database type configuration parameters to 'cassandra'.
  
 ```text
 database:
-  type: "${DATABASE_TYPE:cassandra}" # cassandra OR sql
+  entities:
+    type: "${DATABASE_ENTITIES_TYPE:cassandra}" # cassandra OR sql
+  ts:
+    type: "${DATABASE_TS_TYPE:cassandra}" # cassandra OR sql (for hybrid mode, only this value should be cassandra)
 ```
 
 {% include templates/memory-update-for-slow-machines.md %} 
@@ -137,3 +143,7 @@ You can issue the following command in order to check if there are any errors on
 ```bash
 cat /var/log/thingsboard/thingsboard.log | grep ERROR
 ```
+
+## Next steps
+
+{% assign currentGuide = "InstallationGuides" %}{% include templates/guides-banner.md %}

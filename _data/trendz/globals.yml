@@ -1,0 +1,11 @@
+tocs:
+- docs-home
+- getting-started
+- installation
+docs-header:
+- toc: getting-started
+  title: Getting Started
+- toc: docs-home
+  title: Documentation
+- toc: installation
+  title: Installation

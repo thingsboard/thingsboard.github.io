@@ -1,0 +1,1 @@
+sudo rpm -Uvh thingsboard-2.0.1.rpm

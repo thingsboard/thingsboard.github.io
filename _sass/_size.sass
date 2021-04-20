@@ -1,3 +1,6 @@
+h1, h2, h3, h4, h5
+	margin: 0
+
 h1
 	font-size: $h1-font-size
 	line-height: $h1-line-height
@@ -23,7 +26,7 @@ p
 	font-size: $p-font-size
 	line-height: $p-line-height
 
-section, header, #vendorStrip
+section, header
 	padding-left: $full-width-paddingX
 	padding-right: $full-width-paddingX
 
@@ -64,29 +67,3 @@ header
 
 nav.nav-menu
 	padding: $nav-menu-padding
-
-//.open-nav, .y-enough
-	#gettingStarted, #liveDemo
-		margin-left: $nav-buttons-margin-left
-
-#hero
-	padding-top: $hero-padding-top
-
-#docs
-	#hero
-		h1, h5
-			padding-left: $full-width-paddingX
-			padding-right: $full-width-paddingX
-
-#vendorStrip
-	height: $vendor-strip-height
-	line-height: $vendor-strip-height
-	font-size: $vendor-strip-font-size
-
-@media screen and (min-width: 1500px)
-	#docs
-		#hero
-			h1, h5
-				padding-left: $full-width-paddingX-large
-				padding-right: $full-width-paddingX-large
-

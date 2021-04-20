@@ -1,0 +1,168 @@
+#docsContent
+  .guides
+    .filter-panel
+      #searchGuideBox
+        position: relative
+        width: 250px
+        height: 44px
+        line-height: 44px
+        #searchGuideInput
+          -webkit-appearance: none
+          -moz-appearance: none
+          appearance: none
+          padding: 0 16px
+          width: 100%
+          height: 44px
+          line-height: 30px
+          font-size: 18px
+          vertical-align: middle
+          border: 1px solid #ebebeb
+          background-color: transparent
+          border-radius: 4px
+          color: #212529
+          box-shadow: none
+          +placeholder
+            color: #212529
+            opacity: 0.6
+          &:hover
+            border: 2px solid #000
+            padding: 1px 15px
+            cursor: pointer
+          &:focus
+            cursor: initial
+            border: 2px solid #2a7dec
+            padding: 1px 15px
+            color: #212529
+            +placeholder
+              opacity: 0.2
+        .searchButton
+          position: absolute
+          padding: 0
+          top: 10px
+          right: 12px
+          display: inline-block
+          vertical-align: middle
+          background-size: contain
+          background: url(/images/search.svg) no-repeat
+          filter: brightness(350%)
+          width: 24px
+          height: 24px
+          &:focus
+            outline: none
+        &.focused
+          .searchButton
+            filter: none
+    .guides-block
+      &:before
+        display: block
+        content: " "
+        visibility: hidden
+        margin-top: -210px
+        height: 210px
+      &.hidden
+        display: none
+      .guides-title-panel
+        margin-top: 48px
+        margin-bottom: 24px
+        .guides-title
+          margin-bottom: 4px
+          font-size: 24px
+          line-height: 42px
+          font-weight: 500
+          color: #000
+        .guides-subtitle
+          font-size: 16px
+          font-weight: 300
+          line-height: 24px
+          color: #000
+      ul.guides-list
+        padding: 0
+        margin: 0
+        display: flex
+        flex-wrap: wrap
+        li.guide-container
+          position: relative
+          cursor: pointer
+          display: inline-block
+          width: 100%
+          margin-right: 13px
+          margin-bottom: 12px
+          &.hidden
+            display: none
+          a
+            border: 1px solid #EBEBEB
+            border-radius: 6px
+            padding: 24px
+            display: flex
+            flex-direction: row
+            height: 100%
+            &:hover
+              text-decoration: none
+              padding: 21px
+              border: 4px solid #2A7DEC
+            .guide-text
+              flex: 1
+              .guide-title
+                margin-right: 50px
+                font-weight: 600
+                font-size: 18px
+                line-height: 28px
+                color: #2A7DEC
+              .guide-subtitle
+                margin-top: 12px
+                font-weight: 300
+                font-size: 16px
+                line-height: 24px
+                color: #212529
+              .guide-keywords
+                display: none
+            .guide-icons
+              position: absolute
+              top: 24px
+              right: 24px
+              span
+                position: absolute
+                &:after
+                  display: inline-block
+                  position: absolute
+                  top: 0
+                  right: 0
+                &.video
+                  top: 0
+                  right: 0
+                  &:after
+                    content: url('/images/guide-video.svg')
+                    width: 24px
+                    height: 24px
+                &.pe
+                  top: 0
+                  right: 30px
+                  &:after
+                    content: "PE"
+                    font-size: 16px
+                    font-weight: bold
+                    line-height: 24px
+                    color: #2A7DEC
+
+@media screen and (min-width: 750px)
+  #docsContent
+    .guides
+      .filter-panel
+        #searchGuideBox
+          width: 450px
+
+@media screen and (min-width: 1025px)
+  #docsContent
+    .guides
+      .guides-block
+        ul.guides-list
+          li.guide-container
+            width: calc(50% - 20px)
+
+@media screen and (min-width: 1700px)
+  #docsContent
+    .guides
+      .guides-block
+        ul.guides-list
+          li.guide-container
+            width: calc(100% / 3 - 20px)

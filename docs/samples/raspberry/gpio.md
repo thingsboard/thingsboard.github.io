@@ -77,7 +77,7 @@ python gpio.py
 
 ## Data visualization
 
-In order to simplify this guide, we have included "Raspberry PI GPIO Demo Dashboard" to the [demo data](/docs/samples/demo-account/#dashboards) that is available in each Thingboard installation. 
+In order to simplify this guide, we have included "Raspberry PI GPIO Demo Dashboard" to the [demo data](/docs/samples/demo-account/#dashboards) that is available in each ThingsBoard installation. 
 You still can modify this dashboard: tune, add, delete widgets, etc.
 You can access this dashboard by logging in as a tenant administrator. Use
 
@@ -93,7 +93,7 @@ Below is the screenshot of the "Raspberry PI GPIO Demo Dashboard".
 
  ![image](/images/samples/raspberry/gpio/dashboard.png)
  
-## Next steps
+## See Also
 
 Browse other [samples](/docs/samples) or explore guides related to main ThingsBoard features:
 
@@ -106,3 +106,8 @@ Browse other [samples](/docs/samples) or explore guides related to main ThingsBo
 {% include templates/feedback.md %}
   
 {% include socials.html %}
+
+## Next steps
+
+{% assign currentGuide = "HardwareSamples" %}{% include templates/guides-banner.md %}
+

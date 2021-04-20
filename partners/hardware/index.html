@@ -1,0 +1,40 @@
+---
+title: Partners
+---
+
+<!Doctype html>
+<html id="partners" class="gridPage">
+{% include head-header.html %}
+
+<section id="hero" class="light-text">
+</section>
+
+<section id="users">
+	<main>
+        <h1>ThingsBoard Hardware Partners</h1>
+        <h5></h5>
+		<h5>Hardware Partnership Program goal is to reduce time to market for ThingsBoard based solutions.
+			Together with Hardware Partners we simplify implementation of the most challenging IoT projects by providing a rich set of integration tutorials, typical use cases and best practices.
+		</h5>
+		<h3 id="hardware-partners"></h3>
+		<div id="hardwareContainer"></div>
+		<p align="center">
+			<a class="button" href="/partners/hardware/program/">Apply for Hardware Partner Program</a>
+		</p>
+	</main>
+</section>
+
+{% include footer.html %}
+{% include case-study-styles.html %}
+
+<style>
+	{% include partner-style.css %}
+</style>
+
+<script>
+	{% include partner-script.js type="hardware"
+        containerId="hardwareContainer" %}
+</script>
+
+</body>
+</html>

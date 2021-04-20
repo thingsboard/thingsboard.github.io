@@ -6,6 +6,8 @@ title: Device Messaging Plugin
 
 ---
 
+{% include templates/old-guide-notice.md %}
+
 ## Overview
 
 This RPC plugin enables communication between various IoT devices through the ThingsBoard cluster.

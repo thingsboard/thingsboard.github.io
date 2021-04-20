@@ -1,0 +1,275 @@
+{
+  "ruleChain": {
+    "additionalInfo": null,
+    "name": "Tracker Alarms",
+    "firstRuleNodeId": null,
+    "root": false,
+    "debugMode": false,
+    "configuration": null
+  },
+  "metadata": {
+    "firstNodeIndex": 13,
+    "nodes": [
+      {
+        "additionalInfo": {
+          "layoutX": 378,
+          "layoutY": 381
+        },
+        "type": "org.thingsboard.rule.engine.metadata.TbGetAttributesNode",
+        "name": "Fetch Limit telemetry",
+        "debugMode": true,
+        "configuration": {
+          "clientAttributeNames": [],
+          "sharedAttributeNames": [
+            "maxTemperature",
+            "minTemperature",
+            "maxSpeed",
+            "minVoltage"
+          ],
+          "serverAttributeNames": [],
+          "latestTsKeyNames": []
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 699,
+          "layoutY": 156
+        },
+        "type": "org.thingsboard.rule.engine.filter.TbJsFilterNode",
+        "name": "Validate Max temperature",
+        "debugMode": true,
+        "configuration": {
+          "jsScript": "return msg.temperature > metadata.shared_maxTemperature;\n    "
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 989,
+          "layoutY": 105
+        },
+        "type": "org.thingsboard.rule.engine.action.TbCreateAlarmNode",
+        "name": "Max Temperature",
+        "debugMode": true,
+        "configuration": {
+          "alarmType": "Max Temperature",
+          "alarmDetailsBuildJs": "var details = {};\ndetails.value = msg.temperature;\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n}\nreturn details;",
+          "severity": "CRITICAL",
+          "propagate": true
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 987,
+          "layoutY": 177
+        },
+        "type": "org.thingsboard.rule.engine.action.TbClearAlarmNode",
+        "name": "Max Temperature",
+        "debugMode": false,
+        "configuration": {
+          "alarmType": "Max Temperature",
+          "alarmDetailsBuildJs": "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n}\ndetails.clearedValue = msg.temperature;\nreturn details;"
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 701,
+          "layoutY": 436
+        },
+        "type": "org.thingsboard.rule.engine.filter.TbJsFilterNode",
+        "name": "Validate Max speed",
+        "debugMode": true,
+        "configuration": {
+          "jsScript": "return msg.speed > metadata.shared_maxSpeed;\n    "
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 992,
+          "layoutY": 405
+        },
+        "type": "org.thingsboard.rule.engine.action.TbCreateAlarmNode",
+        "name": "Max Speed",
+        "debugMode": true,
+        "configuration": {
+          "alarmType": "Max Speed",
+          "alarmDetailsBuildJs": "var details = {};\ndetails.value = msg.speed;\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n}\nreturn details;",
+          "severity": "CRITICAL",
+          "propagate": true
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 994,
+          "layoutY": 477
+        },
+        "type": "org.thingsboard.rule.engine.action.TbClearAlarmNode",
+        "name": "Max Speed",
+        "debugMode": false,
+        "configuration": {
+          "alarmType": "Max Speed",
+          "alarmDetailsBuildJs": "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n}\ndetails.clearedValue = msg.speed;\nreturn details;"
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 701,
+          "layoutY": 287
+        },
+        "type": "org.thingsboard.rule.engine.filter.TbJsFilterNode",
+        "name": "Validate Min temperature",
+        "debugMode": true,
+        "configuration": {
+          "jsScript": "return msg.temperature < metadata.shared_minTemperature;\n    "
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 987,
+          "layoutY": 255
+        },
+        "type": "org.thingsboard.rule.engine.action.TbCreateAlarmNode",
+        "name": "Min Temperature",
+        "debugMode": true,
+        "configuration": {
+          "alarmType": "Min Temperature",
+          "alarmDetailsBuildJs": "var details = {};\ndetails.value = msg.temperature;\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n}\nreturn details;",
+          "severity": "CRITICAL",
+          "propagate": true
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 988,
+          "layoutY": 327
+        },
+        "type": "org.thingsboard.rule.engine.action.TbClearAlarmNode",
+        "name": "Min Temperature",
+        "debugMode": false,
+        "configuration": {
+          "alarmType": "Min Temperature",
+          "alarmDetailsBuildJs": "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n}\ndetails.clearedValue = msg.temperature;\nreturn details;"
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 703,
+          "layoutY": 591
+        },
+        "type": "org.thingsboard.rule.engine.filter.TbJsFilterNode",
+        "name": "Validate Min voltage",
+        "debugMode": true,
+        "configuration": {
+          "jsScript": "return msg.batteryVoltage < metadata.shared_minVoltage;\n    "
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 994,
+          "layoutY": 555
+        },
+        "type": "org.thingsboard.rule.engine.action.TbCreateAlarmNode",
+        "name": "Min Voltage",
+        "debugMode": true,
+        "configuration": {
+          "alarmType": "Min Voltage",
+          "alarmDetailsBuildJs": "var details = {};\ndetails.value = msg.batteryVoltage;\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n}\nreturn details;",
+          "severity": "CRITICAL",
+          "propagate": true
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 994,
+          "layoutY": 637
+        },
+        "type": "org.thingsboard.rule.engine.action.TbClearAlarmNode",
+        "name": "Min Voltage",
+        "debugMode": false,
+        "configuration": {
+          "alarmType": "Min Voltage",
+          "alarmDetailsBuildJs": "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n}\ndetails.clearedValue = msg.batteryVoltage;\nreturn details;"
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 95,
+          "layoutY": 383
+        },
+        "type": "org.thingsboard.rule.engine.filter.TbJsFilterNode",
+        "name": "Tracker Filter",
+        "debugMode": false,
+        "configuration": {
+          "jsScript": "return metadata.deviceType === 'tracker';"
+        }
+      }
+    ],
+    "connections": [
+      {
+        "fromIndex": 0,
+        "toIndex": 1,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 0,
+        "toIndex": 4,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 0,
+        "toIndex": 7,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 0,
+        "toIndex": 10,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 1,
+        "toIndex": 3,
+        "type": "False"
+      },
+      {
+        "fromIndex": 1,
+        "toIndex": 2,
+        "type": "True"
+      },
+      {
+        "fromIndex": 4,
+        "toIndex": 6,
+        "type": "False"
+      },
+      {
+        "fromIndex": 4,
+        "toIndex": 5,
+        "type": "True"
+      },
+      {
+        "fromIndex": 7,
+        "toIndex": 9,
+        "type": "False"
+      },
+      {
+        "fromIndex": 7,
+        "toIndex": 8,
+        "type": "True"
+      },
+      {
+        "fromIndex": 10,
+        "toIndex": 12,
+        "type": "False"
+      },
+      {
+        "fromIndex": 10,
+        "toIndex": 11,
+        "type": "True"
+      },
+      {
+        "fromIndex": 13,
+        "toIndex": 0,
+        "type": "True"
+      }
+    ],
+    "ruleChainConnections": null
+  }
+}

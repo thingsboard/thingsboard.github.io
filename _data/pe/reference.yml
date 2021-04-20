@@ -1,0 +1,15 @@
+bigheader: "Architecture"
+abstract: "Design docs, deployment scenarios and performance"
+toc:
+- title: Architecture Overview
+  path: /docs/pe/reference/
+- title: Monolithic architecture
+  path: /docs/pe/reference/monolithic/
+- title: Microservices architecture
+  path: /docs/pe/reference/msa/
+- title: Deployment scenarios
+  path: /docs/pe/reference/iot-platform-deployment-scenarios/
+- title: ThingsBoard Performance
+  section:
+    - title: Single instance performance on different AWS instances
+      path: /docs/pe/reference/performance-aws-instances/
