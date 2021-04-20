@@ -269,6 +269,16 @@ action-state:
     5:
         image: /images/user-guide/dashboards/settings/state1-transfer.png
 
+home-dash:
+    0:
+        image: /images/user-guide/dashboards/home-dash.png
+    1:
+        image: /images/user-guide/dashboards/home-dash-1.png
+    2:
+        image: /images/user-guide/dashboards/home-dash-2.png
+    3:
+        image: /images/user-guide/dashboards/home-dash-3.png
+
 entity-count:
     0:
         image: /images/user-guide/dashboards/entitycount/add-alias-ce.png
