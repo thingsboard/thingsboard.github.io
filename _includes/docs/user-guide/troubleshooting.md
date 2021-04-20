@@ -152,20 +152,18 @@ Sometimes after configuring OAuth you can not see the button for logging in with
 
 Example:
 
-|  Domain name     |  Redirect URI Template                    |
-|----------------- |----------------------------------         |
-|mydomain:8080     | http://yourdomain:8080/login/oauth2/code  |
-|mydomain          | http://yourdomain/login/oauth2/code       |
+| Base URL |  Domain name     |  Redirect URI Template                    |
+|-----------------|----------------- |----------------------------------         |
+|http://mycompany.com:8080    |mycompany.com:8080     | http://mycompany.com:8080/login/oauth2/code  |
+|https://mycompany.com          |mycompany.com          | https://mycompany.com/login/oauth2/code       |
 
 Base URL in "HOME" section should not contain "/" or other characters.
 
 > Go to your ThingsBoard as a System Administrator. Check the General
-> Settings -> Base URL should not contain “/” at the end (f.e. “http://
-> yourdomain” instead of “http://yourdomain/”).
+> Settings -> Base URL should not contain “/” at the end (e.g. “https://
+> mycompany.com ” instead of “https://mycompany.com/”).
 
-For OAuth2 configuration click [here](/docs/{{docsPrefix}}user-guide/oauth/azure).
-
-
+For OAuth2 configuration click [here](/docs/{{docsPrefix}}user-guide/oauth-2-support/).
 
 ## Getting help
 
