@@ -13,7 +13,7 @@
 UDP Integration allows to stream data from devices which use a UDP protocol to ThingsBoard and converts payloads of these devices into the ThingsBoard format.
 
 
-**Please note** UDP Integration can be started only as [Remote Integration](/docs/user-guide/integrations/remote-integrations). It could be started on the same machine, where TB instance is running, or you can start in on another machine, that has access over the network to the TB instance.
+**Please note** UDP Integration can be started only as [Remote Integration](/docs/{{peDocsPrefix}}user-guide/integrations/remote-integrations). It could be started on the same machine, where TB instance is running, or you can start in on another machine, that has access over the network to the TB instance.
 
 Please review the integration diagram to learn more.
 
@@ -114,7 +114,7 @@ Click **Add** to save the Integration.
 
 #### Installing and running external UDP Integration
 
-Please refer to the [Remote Integration guide](/docs/user-guide/integrations/remote-integrations) and install UDP Integration service locally or on separate machine.
+Please refer to the [Remote Integration guide](/docs/{{peDocsPrefix}}user-guide/integrations/remote-integrations) and install UDP Integration service locally or on separate machine.
 
 Please use **Integration key** and **Integration secret** from the above section for your UDP Integration configuration.
 
