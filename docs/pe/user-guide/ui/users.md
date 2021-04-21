@@ -87,6 +87,11 @@ user-delete-pe:
         image: /images/user-guide/ui/users/pe/user-delete-pe.png
         title: 'To delete a user group, click the trash can icon in the end of its row and confirm deletion.'
 
+user-delete-1-pe:
+    0:
+        image: /images/user-guide/ui/users/pe/user-delete-1-pe.png
+        title: 'To delete a user, click the trash can icon in the end of its row and confirm deletion.'
+
 ---
 
 * TOC
@@ -145,3 +150,9 @@ Learn more about [actions](/docs/pe/user-guide/ui/widget-actions/).
 User group can be deleted by the administrator who created it.
 
 {% include images-gallery.html imageCollection="user-delete-pe" showListImageTitles='true' %}
+
+##### Delete user
+
+There are cases when you have several created users in a group and you need to delete one of them.
+
+{% include images-gallery.html imageCollection="user-delete-1-pe" showListImageTitles='true' %}
