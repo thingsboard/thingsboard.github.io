@@ -27,7 +27,7 @@ device-add-pe:
 device-details-pe:
     0:
         image: /images/user-guide/ui/devices/pe/device-details-pe.png
-        title: 'Clicking the device row to open its details, then you can manage credentials of the device, delete device, copy its ID and access token, and edit the device. 
+        title: 'Clicking the device row to open its details, then you can manage credentials of the device, delete device, copy its ID and access token, and edit the device.
                 To edit the device click the "pencil" icon in the upper right corner of the dialog.'
     1:
         image: /images/user-guide/ui/devices/pe/device-details-1-pe.png
@@ -137,4 +137,5 @@ _Documentation dedicated to Events is coming soon._
 Tenant administrator can delete devices from ThingsBoard. To delete device, you should:
 
 {% include images-gallery.html imageCollection="device-delete-pe" showListImageTitles="true" preview="false" %}
+
 
