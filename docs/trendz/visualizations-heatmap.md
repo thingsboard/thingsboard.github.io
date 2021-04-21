@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-trendz
 assignees:
 - vparomskiy
 title: Heat Maps

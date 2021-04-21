@@ -14,11 +14,11 @@ sudo apt-get install zookeeper
 ##### Install Kafka
 
 ```text
-wget http://www-us.apache.org/dist/kafka/2.3.0/kafka_2.12-2.3.0.tgz
+wget https://archive.apache.org/dist/kafka/2.6.0/kafka_2.13-2.6.0.tgz
 
-tar xzf kafka_2.12-2.3.0.tgz
+tar xzf kafka_2.13-2.6.0.tgz
 
-sudo mv kafka_2.12-2.3.0 /usr/local/kafka
+sudo mv kafka_2.13-2.6.0 /usr/local/kafka
 ```
 {: .copy-code}
 
@@ -57,7 +57,7 @@ sudo nano /etc/systemd/system/kafka.service
 ```
 {: .copy-code}
 
-Add the below content. Make sure **to replace** "PUT_YOUR_JAVA_PATH" with your **real JAVA_HOME path** as per the Java installed on your system, by default like "/usr/lib/jvm/java-1.8.0-openjdk-xxx": 
+Add the below content. Make sure **to replace** "PUT_YOUR_JAVA_PATH" with your **real JAVA_HOME path** as per the Java installed on your system, by default like "/usr/lib/jvm/java-11-openjdk-xxx": 
 ```bash
 [Unit]
 Description=Apache Kafka Server

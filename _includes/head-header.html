@@ -1,519 +1,771 @@
 {% if page.title %}{% assign title=page.title %}{% endif %}
 {% if page.description %}{% assign description=page.description %}{% endif %}
+{% assign docsTag = include.docsTag %}
+{% assign productTag = include.productTag %}
+{% if docsTag %}
+    {% assign foundProduct = site.data.products | where: "tag", docsTag %}
+    {% assign productInfo = foundProduct[0] %}
+    {% unless page.customTitle == "true" %}
+        {% assign customTitle = title | append: " | " %}
+        {% assign customTitle = customTitle | append: productInfo.fulltitle %}
+    {% endunless %}
+{% elsif page.customTitle == "true" %}
+    {% assign customTitle = title %}
+{% endif %}
+
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	{% if page.customTitle == "true" %}
-	<title>{{ title }}</title>
-	{% seo title=false %}
-	{% else %}
-	{% seo %}
-	{% endif %}
-	{% if description %}
-	<meta name="twitter:description" content="{{ description }}"/>
-	{% endif %}
-	{% if !page.no_canonical %}<link rel="canonical" href="https://thingsboard.io{{page.url}}" />{% endif %}
-	<link rel="shortcut icon" type="image/png" href="/images/favicon.png">
-	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-	<!--link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet"-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% if customTitle %}
+    <title>{{ customTitle }}</title>
+    {% seo title=false %}
+    {% else %}
+    {% seo %}
+    {% endif %}
+    {% if description %}
+    <meta name="twitter:description" content="{{ description }}"/>
+    {% endif %}
+    {% if !page.no_canonical %}
+    <link rel="canonical" href="https://thingsboard.io{{page.url}}"/>
+    {% endif %}
+    <link rel="shortcut icon" type="image/png" href="/images/favicon.png">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<link rel="stylesheet" href="/css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/styles.css">
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.7.0/qs.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gifffer/1.5.0/gifffer.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gifffer/1.5.0/gifffer.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/clipboard@1/dist/clipboard.min.js"></script>
-	<script type="text/javascript">
+    <script type="text/javascript">
         window.onload = function() {
             Gifffer();
         }
-	</script>
-	<script type="text/javascript">
-		/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
-		!function(a){"use strict";var b=function(b,c,d){function e(a){return h.body?a():void setTimeout(function(){e(a)})}function f(){i.addEventListener&&i.removeEventListener("load",f),i.media=d||"all"}var g,h=a.document,i=h.createElement("link");if(c)g=c;else{var j=(h.body||h.getElementsByTagName("head")[0]).childNodes;g=j[j.length-1]}var k=h.styleSheets;i.rel="stylesheet",i.href=b,i.media="only x",e(function(){g.parentNode.insertBefore(i,c?g:g.nextSibling)});var l=function(a){for(var b=i.href,c=k.length;c--;)if(k[c].href===b)return a();setTimeout(function(){l(a)})};return i.addEventListener&&i.addEventListener("load",f),i.onloadcssdefined=l,l(f),i};"undefined"!=typeof exports?exports.loadCSS=b:a.loadCSS=b}("undefined"!=typeof global?global:this);
-		/*! onloadCSS. (onload callback for loadCSS) [c]2017 Filament Group, Inc. MIT License */
-		function onloadCSS(a,b){function c(){!d&&b&&(d=!0,b.call(a))}var d;a.addEventListener&&a.addEventListener("load",c),a.attachEvent&&a.attachEvent("onload",c),"isApplicationInstalled"in navigator&&"onloadcssdefined"in a&&a.onloadcssdefined(c)}
-	</script>
-	<script type="text/javascript">
+    </script>
+    <script type="text/javascript">
+        /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+        !function (a) {
+            "use strict";
+            var b = function (b, c, d) {
+                function e(a) {
+                    return h.body ? a() : void setTimeout(function () {
+                        e(a)
+                    })
+                }
 
-		function jqueryDefer(method) {
-			if (window.jQuery) {
-				method();
-			} else {
-				setTimeout(function() {
-					jqueryDefer(method)
-				}, 50);
-			}
-		}
+                function f() {
+                    i.addEventListener && i.removeEventListener("load", f), i.media = d || "all"
+                }
 
-        function mermaidDefer(method) {
-            if (window.mermaid) {
+                var g, h = a.document, i = h.createElement("link");
+                if (c) g = c; else {
+                    var j = (h.body || h.getElementsByTagName("head")[0]).childNodes;
+                    g = j[j.length - 1]
+                }
+                var k = h.styleSheets;
+                i.rel = "stylesheet", i.href = b, i.media = "only x", e(function () {
+                    g.parentNode.insertBefore(i, c ? g : g.nextSibling)
+                });
+                var l = function (a) {
+                    for (var b = i.href, c = k.length; c--;) if (k[c].href === b) return a();
+                    setTimeout(function () {
+                        l(a)
+                    })
+                };
+                return i.addEventListener && i.addEventListener("load", f), i.onloadcssdefined = l, l(f), i
+            };
+            "undefined" != typeof exports ? exports.loadCSS = b : a.loadCSS = b
+        }("undefined" != typeof global ? global : this);
+
+        /*! onloadCSS. (onload callback for loadCSS) [c]2017 Filament Group, Inc. MIT License */
+        function onloadCSS(a, b) {
+            function c() {
+                !d && b && (d = !0, b.call(a))
+            }
+
+            var d;
+            a.addEventListener && a.addEventListener("load", c), a.attachEvent && a.attachEvent("onload", c), "isApplicationInstalled" in navigator && "onloadcssdefined" in a && a.onloadcssdefined(c)
+        }
+    </script>
+    <script type="text/javascript">
+
+        function jqueryDefer(method) {
+            if (window.jQuery) {
                 method();
             } else {
-                if (!window.mermaidLoading) {
-                    window.mermaidLoading = true;
-                    loadScript("/js/mermaid.min.js", function() {
-                        mermaid.initialize({
-                            startOnLoad:false,
-                            flowchart:{
-                                htmlLabels: true
-                            }
-                        });
-                        jqueryDefer(function() {
-                            setTimeout(function() {
-                                var scroll = $(window).scrollTop();
-                                $('.mermaidTooltip').css("transform", "translate(0px," + (scroll - 40) + "px)");
-                                $(window).scroll(function (event) {
-                                    var scroll = $(window).scrollTop();
-                                    $('.mermaidTooltip').css("transform", "translate(0px," + (scroll - 40) + "px)");
-                                });
-                            }, 300);
-                        });
-                    });
-                }
-                setTimeout(function() {
-                    mermaidDefer(method)
+                setTimeout(function () {
+                    jqueryDefer(method)
                 }, 50);
             }
         }
 
-		function jqueryUiDefer(method) {
-			if (window.jQuery && window.jQuery.ui) {
-				method();
-			} else {
-				setTimeout(function() {
-					jqueryUiDefer(method)
-				}, 50);
-			}
-		}
+        function jqueryUiDefer(method) {
+            if (window.jQuery && window.jQuery.ui) {
+                method();
+            } else {
+                setTimeout(function () {
+                    jqueryUiDefer(method)
+                }, 50);
+            }
+        }
 
-		window.vis = (function(){
-			var stateKey,
-					eventKey,
-					keys = {
-						hidden: "visibilitychange",
-						webkitHidden: "webkitvisibilitychange",
-						mozHidden: "mozvisibilitychange",
-						msHidden: "msvisibilitychange"
-					};
-			for (stateKey in keys) {
-				if (stateKey in document) {
-					eventKey = keys[stateKey];
-					break;
-				}
-			}
-			return function(c) {
-				if (c) document.addEventListener(eventKey, c);
-				return !document[stateKey];
-			}
-		})();
+        window.vis = (function () {
+            var stateKey,
+                eventKey,
+                keys = {
+                    hidden: "visibilitychange",
+                    webkitHidden: "webkitvisibilitychange",
+                    mozHidden: "mozvisibilitychange",
+                    msHidden: "msvisibilitychange"
+                };
+            for (stateKey in keys) {
+                if (stateKey in document) {
+                    eventKey = keys[stateKey];
+                    break;
+                }
+            }
+            return function (c) {
+                if (c) document.addEventListener(eventKey, c);
+                return !document[stateKey];
+            }
+        })();
 
-		function loadScript(src, callback)
-		{
-			var s, r, t;
-			r = false;
-			s = document.createElement('script');
-			s.type = 'text/javascript';
-			s.src = src;
-			s.onload = s.onreadystatechange = function() {
-				if ( !r && (!this.readyState || this.readyState == 'complete') )
-				{
-					r = true;
-					if (callback) {
-						callback();
-					}
-				}
-			};
-			t = document.getElementsByTagName('script')[0];
-			t.parentNode.insertBefore(s, t);
-		}
+        function loadScript(src, callback) {
+            var s, r, t;
+            r = false;
+            s = document.createElement('script');
+            s.type = 'text/javascript';
+            s.src = src;
+            s.onload = s.onreadystatechange = function () {
+                if (!r && (!this.readyState || this.readyState == 'complete')) {
+                    r = true;
+                    if (callback) {
+                        callback();
+                    }
+                }
+            };
+            t = document.getElementsByTagName('script')[0];
+            t.parentNode.insertBefore(s, t);
+        }
 
-		function loadCssAsync(src, callback) {
-			var stylesheet = loadCSS( src );
-			if (callback) {
-				onloadCSS(stylesheet, callback);
-			}
-		}
+        function loadCssAsync(src, callback) {
+            var stylesheet = loadCSS(src);
+            if (callback) {
+                onloadCSS(stylesheet, callback);
+            }
+        }
 
-		function loadNextScript(index, scriptsList, completeCallback) {
-			if (index < scriptsList.length) {
-				var script = scriptsList[index];
-				if (script.type === 'script') {
-					loadScript(script.src, function() {
+        function loadNextScript(index, scriptsList, completeCallback) {
+            if (index < scriptsList.length) {
+                var script = scriptsList[index];
+                if (script.type === 'script') {
+                    loadScript(script.src, function () {
                         if (script.callback) {
                             script.callback();
                         }
-						index++;
-						loadNextScript(index, scriptsList, completeCallback);
-					});
-				} else if (script.type === 'css') {
-					loadCssAsync(script.src, function() {
-						index++;
-						loadNextScript(index, scriptsList, completeCallback);
-					});
-				}
-			} else if (completeCallback) {
-				completeCallback();
-			}
-		}
+                        index++;
+                        loadNextScript(index, scriptsList, completeCallback);
+                    });
+                } else if (script.type === 'css') {
+                    loadCssAsync(script.src, function () {
+                        index++;
+                        loadNextScript(index, scriptsList, completeCallback);
+                    });
+                }
+            } else if (completeCallback) {
+                completeCallback();
+            }
+        }
 
-		var initialScriptsList = [
-			{src: '/js/jquery-2.2.0.min.js', type: 'script'},
-			{src: '/css/jquery-ui.min.css', type: 'css'},
-			{src: '/js/jquery-ui.min.js', type: 'script'},
-			{src: '/js/jquery.vide.js', type: 'script'},
-			{src: '/js/script.js', type: 'script'},
-			{src: '/css/sweetalert.css', type: 'css'},
-			{src: '/js/sweetalert.min.js', type: 'script'},
-			{src: '/css/photoswipe.css', type: 'css'},
-			{src: '/css/default-skin/default-skin.css', type: 'css'},
-			{src: '/js/photoswipe.min.js', type: 'script'},
-			{src: '/js/photoswipe-ui-default.min.js', type: 'script'}
-		];
+        var initialScriptsList = [
+            {src: '/js/jquery-2.2.0.min.js', type: 'script'},
+            {src: '/css/jquery-ui.min.css', type: 'css'},
+            {src: '/js/jquery-ui.min.js', type: 'script'},
+            {src: '/js/jquery.vide.js', type: 'script'},
+            {src: '/js/script.js', type: 'script'},
+            {src: '/css/photoswipe.css', type: 'css'},
+            {src: '/css/default-skin/default-skin.css', type: 'css'},
+            {src: '/js/photoswipe.min.js', type: 'script'},
+            {src: '/js/photoswipe-ui-default.min.js', type: 'script'}
+        ];
 
-		loadNextScript(0, initialScriptsList);
+        loadNextScript(0, initialScriptsList);
 
-		jqueryDefer(function() {
-			(function ($, win) {
-				$.fn.inViewport = function (cb) {
-					return this.each(function (i, el) {
-						function visPx() {
-							var H = $(this).height(),
-									r = el.getBoundingClientRect(), t = r.top, b = r.bottom;
-							var result = cb.call(el, Math.max(0, t > 0 ? H - t : (b < H ? b : H)));
-							if (result) {
-								$(win).off("resize scroll", visPx);
-							}
-						}
+        jqueryDefer(function () {
+            (function ($, win) {
+                $.fn.inViewport = function (cb) {
+                    return this.each(function (i, el) {
+                        function visPx() {
+                            var H = $(this).height(),
+                                r = el.getBoundingClientRect(), t = r.top, b = r.bottom;
+                            var result = cb.call(el, Math.max(0, t > 0 ? H - t : (b < H ? b : H)));
+                            if (result) {
+                                $(win).off("resize scroll", visPx);
+                            }
+                        }
 
-						visPx();
-						$(win).on("resize scroll", visPx);
-					});
-				};
-			}(jQuery, window));
-		});
+                        visPx();
+                        $(win).on("resize scroll", visPx);
+                    });
+                };
+            }(jQuery, window));
+        });
 
-		function inViewportDefer(method) {
-			if (window.jQuery && $.fn.inViewport) {
-				method();
-			} else {
-				setTimeout(function() {
-					inViewportDefer(method)
-				}, 50);
-			}
-		}
+        function inViewportDefer(method) {
+            if (window.jQuery && $.fn.inViewport) {
+                method();
+            } else {
+                setTimeout(function () {
+                    inViewportDefer(method)
+                }, 50);
+            }
+        }
 
-	</script>
-	<script type="text/javascript">
-		function _gaLt(event) {
-			/* If GA is blocked or not loaded, or not main|middle|touch click then don't track */
-			if (!ga.hasOwnProperty("loaded") || ga.loaded != true || (event.which != 1 && event.which != 2)) {
-				return;
-			}
-			var el = event.srcElement || event.target;
+    </script>
+    <script type="text/javascript">
+        function _gaLt(event) {
+            /* If GA is blocked or not loaded, or not main|middle|touch click then don't track */
+            if (!ga.hasOwnProperty("loaded") || ga.loaded != true || (event.which != 1 && event.which != 2)) {
+                return;
+            }
+            var el = event.srcElement || event.target;
 
-			while (el && (typeof el.tagName == 'undefined' || el.tagName.toLowerCase() != 'a' || !el.href)) {
-				el = el.parentNode;
-			}
-			if (el && el.href) {
-				var link = el.href;
-				if ((link.indexOf(location.host) == -1 || link.indexOf('.' + location.host) > 0) && !link.match(/^javascript\:/i)) {
-					var target = (el.target && !el.target.match(/^_(self|parent|top)$/i)) ? el.target : false;
-					if (event.ctrlKey || event.shiftKey || event.metaKey || event.which == 2) {
-						target = "_blank";
-					}
+            while (el && (typeof el.tagName == 'undefined' || el.tagName.toLowerCase() != 'a' || !el.href)) {
+                el = el.parentNode;
+            }
+            if (el && el.href) {
+                var link = el.href;
+                if ((link.indexOf(location.host) == -1 || link.indexOf('.' + location.host) > 0) && !link.match(/^javascript\:/i)) {
+                    var target = (el.target && !el.target.match(/^_(self|parent|top)$/i)) ? el.target : false;
+                    if (event.ctrlKey || event.shiftKey || event.metaKey || event.which == 2) {
+                        target = "_blank";
+                    }
 
-					var hbrun = false; // tracker has not yet run
-					var hitBack = function() {
-						if (hbrun) return;
-						hbrun = true;
-						window.location.href = link;
-					};
+                    var hbrun = false; // tracker has not yet run
+                    var hitBack = function () {
+                        if (hbrun) return;
+                        hbrun = true;
+                        window.location.href = link;
+                    };
 
-					if (target) {
-						ga(
-								"send", "event", "Outgoing Links", link,
-								document.location.pathname + document.location.search
-						);
-					} else {
-						event.preventDefault ? event.preventDefault() : event.returnValue = !1;
-						ga(
-								"send", "event", "Outgoing Links", link,
-								document.location.pathname + document.location.search, {
-									"hitCallback": hitBack
-								}
-						);
+                    if (target) {
+                        ga(
+                            "send", "event", "Outgoing Links", link,
+                            document.location.pathname + document.location.search
+                        );
+                    } else {
+                        event.preventDefault ? event.preventDefault() : event.returnValue = !1;
+                        ga(
+                            "send", "event", "Outgoing Links", link,
+                            document.location.pathname + document.location.search, {
+                                "hitCallback": hitBack
+                            }
+                        );
 
-						setTimeout(hitBack, 1000);
-					}
-				}
-			}
-		}
+                        setTimeout(hitBack, 1000);
+                    }
+                }
+            }
+        }
 
-		var _w = window;
-		var _gaLtEvt = ("ontouchstart" in _w) ? "click" : "mousedown";
-		_w.addEventListener ? _w.addEventListener("load", function() {document.body.addEventListener(_gaLtEvt, _gaLt, !1)}, !1)
-				: _w.attachEvent && _w.attachEvent("onload", function() {document.body.attachEvent("on" + _gaLtEvt, _gaLt)});
-	</script>
-	<!-- Google Tag Manager -->
-	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-				new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-			j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-			'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-	})(window,document,'script','dataLayer','GTM-TGBNQXN');</script>
-	<!-- End Google Tag Manager -->
-	<script>
-		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-					(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        var _w = window;
+        var _gaLtEvt = ("ontouchstart" in _w) ? "click" : "mousedown";
+        _w.addEventListener ? _w.addEventListener("load", function () {
+                document.body.addEventListener(_gaLtEvt, _gaLt, !1)
+            }, !1)
+            : _w.attachEvent && _w.attachEvent("onload", function () {
+            document.body.attachEvent("on" + _gaLtEvt, _gaLt)
+        });
+    </script>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-		ga('create', 'UA-88383331-1', 'auto');
-		ga('send', 'pageview');
-	</script>
-	<!-- Start of HubSpot Embed Code -->
-	<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/4596551.js"></script>
-	<!-- End of HubSpot Embed Code -->
+        ga('create', 'UA-88383331-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+    <script>
+        function Burger() {
+            var header = $('header');
+            var body = $('body');
+            if (header.hasClass('opened-burger')) {
+                header.removeClass('opened-burger');
+                let subMenus = $('nav.head-menu > ul > li > div.centered-sub > ul.sub-menu');
+                subMenus.removeClass('open-sub');
+                body.css('overflow', '');
+            } else {
+                header.addClass('opened-burger');
+                body.css('overflow', 'hidden');
+            }
+        }
+    </script>
+    <script>
+
+        jqueryDefer(function () {
+            let menuElement = $('nav.head-menu > ul');
+            let submenuContainer = $('nav.head-menu > div.sub-menu-container');
+            let menuItems = $('nav.head-menu > ul > li');
+            let indicator = $('nav.head-menu > ul > div.indicator');
+            let subMenuActive = false;
+            menuElement.on('mouseleave', function (event) {
+                if (!$(event.relatedTarget).parents('div.sub-menu-container').length) {
+                    subMenuActive = false;
+                    submenuContainer.removeClass('active bounds-transition');
+                    menuItems.removeClass('active');
+                    indicator.removeClass('left-transition');
+                }
+            });
+            submenuContainer.on('mouseleave', function (event) {
+                if (!$(event.relatedTarget).parents('nav.head-menu > ul').length) {
+                    subMenuActive = false;
+                    submenuContainer.removeClass('active bounds-transition');
+                    menuItems.removeClass('active');
+                    indicator.removeClass('left-transition');
+                }
+            });
+            menuItems.each(function() {
+                let item = $( this );
+                let subMenuId = item.attr('data-submenu-id');
+                item.on('mouseenter', function () {
+                    let submenus = $('nav.head-menu > div.sub-menu-container > div');
+                    submenus.css('display', 'none');
+                    menuItems.removeClass('active');
+                    item.addClass('active');
+                    let targetSubMenu = $('nav.head-menu > div.sub-menu-container > div#'+subMenuId);
+                    targetSubMenu.css('display', 'block');
+                    submenuContainer.css('overflow', 'visible');
+                    let left = item.position().left + (item.outerWidth() - targetSubMenu.outerWidth()) / 2;
+                    submenuContainer.css('left', left + 'px');
+                    if (!subMenuActive) {
+                        submenuContainer.addClass('active');
+                        subMenuActive = true;
+                    } else {
+                        submenuContainer.addClass('bounds-transition');
+                        indicator.addClass('left-transition');
+                    }
+                    indicator.css('left', item.position().left);
+                    indicator.css('width', item.outerWidth());
+                    submenuContainer.css('height', targetSubMenu.outerHeight() + 'px');
+                    submenuContainer.css('width', targetSubMenu.outerWidth() + 'px');
+                    submenuContainer.css('overflow', 'hidden');
+                });
+            });
+
+            let isMobile = $('button.burger').css('display') === 'block';
+            if (isMobile) {
+                initMobileSubmenu();
+            }
+
+            $(window).resize(function(){
+                let newIsMobile = $('button.burger').css('display') === 'block';
+                if (isMobile !== newIsMobile) {
+                    isMobile = newIsMobile;
+                    if (isMobile) {
+                        initMobileSubmenu();
+                    } else {
+                        restoreDesktopSubmenu();
+                    }
+                }
+            });
+
+            // Products selector
+
+            {% if docsTag %}
+            let productsSelector = $('.products-selector');
+            $(window).click(function(e) {
+                if (productsSelector[0].contains(e.target)) {
+                    if (productsSelector.hasClass('active')) {
+                        productsSelector.removeClass('active');
+                    } else {
+                        productsSelector.addClass('active');
+                    }
+                } else {
+                    productsSelector.removeClass('active');
+                }
+            });
+            {% endif %}
+
+            // Rogue line numbers fix (don't show line numbers for 1 row)
+            $( document ).ready(function() {
+                $('.rouge-gutter.gl').each(function() {
+                    var lineNumbers = $(this).children('.lineno');
+                    if (lineNumbers.text() === '1\n') {
+                        $(this).css('display', 'none');
+                    }
+                });
+            });
+        });
+
+        function initMobileSubmenu() {
+
+            var header = $('header');
+            if (header.hasClass('opened-burger')) {
+                var body = $('body');
+                body.css('overflow', 'hidden');
+            }
+
+            let targetSubMenus = $('nav.head-menu > div.sub-menu-container > div');
+            targetSubMenus.css('display', 'block');
+            let submenuContainer = $('nav.head-menu > div.sub-menu-container');
+            submenuContainer.removeClass('active');
+            submenuContainer.css('display', 'none');
+
+            targetSubMenus.each(function() {
+                let subMenu = $( this );
+                let subMenuId = subMenu.attr('id');
+                let parent = $('nav.head-menu > ul > li.'+subMenuId);
+                parent.append(subMenu);
+            });
+        }
+
+        function restoreDesktopSubmenu() {
+            var body = $('body');
+            body.css('overflow', '');
+            let targetSubMenus = $('nav.head-menu > ul > li > div');
+            let submenuContainer = $('nav.head-menu > div.sub-menu-container');
+            submenuContainer.removeClass('active');
+            submenuContainer.css('display', 'block');
+            let menuItems = $('nav.head-menu > ul > li');
+            menuItems.removeClass('active');
+            targetSubMenus.each(function() {
+                let subMenu = $( this );
+                submenuContainer.append(subMenu);
+            });
+        }
+
+        function listburg(subMenuId) {
+            let isMobile = $('button.burger').css('display') === 'block';
+            if (isMobile) {
+                let targetSubMenu = $('nav.head-menu > ul > li > div.centered-sub#'+subMenuId+' > ul.sub-menu');
+                let isOpen = targetSubMenu.hasClass('open-sub');
+                let subMenus = $('nav.head-menu > ul > li > div.centered-sub > ul.sub-menu');
+                subMenus.removeClass('open-sub');
+                if (!isOpen) {
+                    targetSubMenu.addClass('open-sub');
+                }
+            }
+        }
+    </script>
 </head>
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TGBNQXN"
-				  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-<div id="cellophane" onclick="tb.toggleMenu()"></div>
-<header>
-	<a href="/" class="logo"></a>
-	<div id="githubButtonContainer">
-        <a class="github-button" href="https://github.com/thingsboard/thingsboard" data-show-count="true" aria-label="Star thingsboard/thingsboard on GitHub">Star</a>
-    </div>
-    <div class="nav-buttons nav-buttons-left" data-auto-burger="primary">
-        <a href="/installations/" class="button center-button" id="tryItNow" data-auto-burger-exclude>Try it now</a>
-        <!--a href="/docs/guides/" class="button center-button" id="guides" data-auto-burger-exclude>Guides</a-->
-        <!--a target="_blank" href="https://demo.thingsboard.io/signup" class="button center-button" id="liveDemo" data-auto-burger-exclude>Live demo</a-->
-    </div>
-    <div class="nav-buttons nav-buttons-right" data-auto-burger="primary">
-        <div class="nav-items">
-            <div class="nav-item-container">
-                <a href="javascript:void(0);" class="nav-item" id="solutions" onclick="tb.openMenu('solutionsNav', 'solutions')" data-auto-burger-exclude>Solutions</a>
-            </div>
-            <div class="nav-item-container">
-                <a href="javascript:void(0);" class="nav-item" id="customers" onclick="tb.openMenu('customersNav', 'customers')" data-auto-burger-exclude>Customers</a>
-            </div>
-            <div class="nav-item-container">
-                <a href="javascript:void(0);" class="nav-item" id="use_cases" onclick="tb.openMenu('useCasesNav', 'use_cases')" data-auto-burger-exclude>Use Cases</a>
-            </div>
-            <div class="nav-item-container">
-                <a href="javascript:void(0);" class="nav-item" id="partners_menu" onclick="tb.openMenu('partnersNav', 'partners_menu')" data-auto-burger-exclude>Partners</a>
-            </div>
-            <div class="nav-item-container">
-                <a href="javascript:void(0);" class="nav-item" id="about_us" onclick="tb.openMenu('aboutUsNav', 'about_us')" data-auto-burger-exclude>About Us</a>
-            </div>
+{% if productInfo %}
+<div class="products-selector">
+    <img src="{{productInfo.icon}}"/>
+    <div class="product-info">
+        <div class="product-title">
+            {{productInfo.title}}
         </div>
-        <a href="/pricing/" class="button center-button" id="viewPricing" data-auto-burger-exclude>Pricing</a>
-        <a href="/docs/" class="button center-button" id="viewDocs" data-auto-burger-exclude>Docs</a>
-        <a href="/docs/guides/" class="button center-button" id="guides" data-auto-burger-exclude>Guides</a>
-		<button id="hamburger" onclick="tb.toggleMenu()" data-auto-burger-exclude><div></div></button>
-	</div>
-
-	<nav id="mainNav">
-		<main id="headNav" data-auto-burger="primary">
-			<div class="nav-box">
-				<h3><a href="/docs/getting-started-guides/helloworld/">Get Started</a></h3>
-			</div>
-			<!--div class="nav-box">
-				<h3><a href="/docs/">Documentation</a></h3>
-			</div-->
-            <div class="nav-box">
-                <h3><a href="/docs/guides/">Guides</a></h3>
+        <div class="product-description">
+            {{productInfo.description}}
+        </div>
+    </div>
+    <div class="products">
+        {% for product in site.data.products %}
+        {% include find-product-url.html %}
+        <a href="{{productUrl}}" class="product{% if product.tag == docsTag %} active{% endif %}">{{product.title}}</a>
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
+<header>
+    <div class="logo-burger">
+        {% unless docsTag %}
+            <a href="/" class="logo"></a>
+        {% endunless %}
+        <button onclick="Burger()" class="burger"></button>
+        <div id="githubButtonContainer">
+            <a class="github-button" href="https://github.com/thingsboard/thingsboard" data-show-count="true"
+               aria-label="Star thingsboard/thingsboard on GitHub">Star</a>
+        </div>
+    </div>
+    <nav class="head-menu">
+        <ul>
+            <li class="nav-products" data-submenu-id="nav-products">
+                <a onclick="listburg('nav-products')">Products</a>
+            </li>
+            <li class="nav-services" data-submenu-id="nav-services">
+                <a onclick="listburg('nav-services')">Services</a>
+            </li>
+            {% unless docsTag %}
+            <li class="nav-developers" data-submenu-id="nav-developers">
+                <a onclick="listburg('nav-developers')">Developers</a>
+            </li>
+            {% endunless %}
+            <li class="nav-cases" data-submenu-id="nav-cases">
+                <a onclick="listburg('nav-cases')">Use Cases</a>
+            </li>
+            <li class="nav-customers" data-submenu-id="nav-customers">
+                <a onclick="listburg('nav-customers')">Customers</a>
+            </li>
+            <li class="nav-company" data-submenu-id="nav-company">
+                <a onclick="listburg('nav-company')">Company</a>
+            </li>
+            <div class="indicator"><div class="head-arrow"></div><div class="line"></div><div class="sub-background"></div></div>
+        </ul>
+        <div class="sub-menu-container">
+            <div id="nav-products" class="centered-sub">
+                <ul class="sub-menu products">
+                    <div class="sub-groups">
+                        <div class="group">
+                            <p class="group-name">IoT platforms</p>
+                            <a class="cloud-lnk" href="/products/paas/">
+                                <img src="/images/thingsboard-c-icon.svg">
+                                <div class="sub-text">
+                                    <h1>Cloud</h1>
+                                    <p>Platform as a service</p>
+                                </div>
+                            </a>
+                            <a class="prof-lnk" href="/products/thingsboard-pe/">
+                                <img src="/images/thingsboard-p-icon.svg">
+                                <div class="sub-text">
+                                    <h1>Professional Edition</h1>
+                                    <p>Advanced IoT platform</p>
+                                </div>
+                            </a>
+                            <a class="com-lnk" href="/">
+                                <img src="/images/thingsboard-cm-icon.svg">
+                                <div class="sub-text">
+                                    <h1>Community Edition</h1>
+                                    <p>Open source platform</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="group">
+                            <p class="group-name">Product ecosystem</p>
+                            <a class="gateway-lnk" href="/docs/iot-gateway/what-is-iot-gateway/">
+                                <img src="/images/gateway-icon.svg">
+                                <div class="sub-text">
+                                    <h1>IoT Gateway</h1>
+                                    <p>Connect legacy protocols</p>
+                                </div>
+                            </a>
+                            <a class="license-lnk" href="/products/license-server/">
+                                <img src="/images/license-icon.svg">
+                                <div class="sub-text">
+                                    <h1>License Server</h1>
+                                    <p>Billing solution</p>
+                                </div>
+                            </a>
+                            <a class="trendz-lnk" href="/products/trendz/">
+                                <img src="/images/trendz-icon.svg">
+                                <div class="sub-text">
+                                    <h1>Trendz Analytics</h1>
+                                    <p>Data analytics and Prediction</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </ul>
             </div>
-			<div class="nav-box">
-				<h3><a href="/iot-use-cases/">Use cases</a></h3>
-			</div>
-			<div class="nav-box">
-				<h3><a href="http://blog.thingsboard.io/">Blog</a></h3>
-			</div>
-			<div class="nav-box">
-				<h3><a href="/docs/services/">Services</a></h3>
-			</div>
-			<div class="nav-box">
-				<h3><a href="/docs/contact-us/">Contact us</a></h3>
-			</div>
-		</main>
-		<main data-auto-burger="primary">
-			<div class="center">
-				<div class="social">
-					<a href="https://twitter.com/thingsboard" class="twitter"><span>Twitter</span></a>
-					<a href="https://github.com/thingsboard/thingsboard" class="github"><span>Github</span></a>
-					<a href="https://gitter.im/thingsboard/chat" class="gitter"><span>Gitter</span></a>
-					<a href="http://stackoverflow.com/questions/tagged/thingsboard" class="stack-overflow"><span>Stack Overflow</span></a>
-					<a href="https://groups.google.com/forum/#!forum/thingsboard" class="mailing-list"><span>Mailing List</span></a>
-					<a href="https://www.youtube.com/thingsboard" class="youtube"><span>YouTube Channel</span></a>
-					<a href="https://www.facebook.com/thingsboard" class="facebook"><span>Facebook Page</span></a>
-				</div>
-			</div>
-			<div class="clear" style="clear: both"></div>
-		</main>
-	</nav>
-	<nav id="solutionsNav" class="nav-menu">
-		<main data-auto-burger="primary">
-			<div class="nav-box">
-				<img src="/images/head-solutions.svg">
-			</div>
-			<div class="nav-box">
-				<ul>
-					<a href="/products/" target="_self">
-						<li><strong>Products</strong></li>
-					</a>
-                    <a href="/products/paas/" target="_self">
-                        <li><span>ThingsBoard Cloud</span></li>
+            <div id="nav-services" class="centered-sub">
+                <ul class="sub-menu services">
+                    <a href="/docs/services/support/">
+                        <img src="/images/support-icon.svg">
+                        <div class="sub-text">
+                            <h1>Support</h1>
+                            <p>Support packages</p>
+                        </div>
                     </a>
-					<a href="/docs/getting-started-guides/what-is-thingsboard/" target="_self">
-						<li><span>ThingsBoard Community Edition</span></li>
-					</a>
-					<a href="/products/thingsboard-pe/" target="_self">
-						<li><span>ThingsBoard Professional Edition</span></li>
-					</a>
-					<a href="/docs/iot-gateway/what-is-iot-gateway/" target="_self">
-						<li><span>ThingsBoard IoT Gateway</span></li>
-					</a>
-					<a href="/products/license-server/" target="_self">
-						<li><span>ThingsBoard License Server</span></li>
-					</a>
-					<a href="/products/trendz/" target="_self">
-						<li><span>ThingsBoard Trendz Analytics</span></li>
-					</a>
-				</ul>
-			</div>
-			<div class="nav-box">
-				<ul>
-					<a href="/docs/services/" target="_self">
-						<li><strong>Services</strong></li>
-					</a>
-					<a href="/docs/services/support/" target="_self">
-						<li><span>Support</span></li>
-					</a>
-					<a href="/docs/services/trainings/" target="_self">
-						<li><span>Trainings</span></li>
-					</a>
-					<a href="/docs/services/consulting/" target="_self">
-						<li><span>Professional services</span></li>
-					</a>
-				</ul>
-			</div>
-		</main>
-	</nav>
-	<nav id="customersNav" class="nav-menu">
-		<main data-auto-burger="primary">
-			<div class="nav-box">
-				<img src="/images/head-customers.svg">
-			</div>
-			<div class="nav-box">
-			</div>
-			<div class="nav-box">
-				<ul>
-					<a href="/industries/" target="_self">
-						<li><strong>Industries</strong></li>
-					</a>
-					<a href="/industries/smart-energy/" target="_self">
-						<li><span>Smart Energy</span></li>
-					</a>
-					<a href="/industries/agriculture/" target="_self">
-						<li><span>Agriculture</span></li>
-					</a>
-					<a href="/industries/smart-buildings/" target="_self">
-						<li><span>Smart Buildings</span></li>
-					</a>
-					<a href="/industries/smart-city/" target="_self">
-						<li><span>Smart City</span></li>
-					</a>
-					<a href="/industries/telecom/" target="_self">
-						<li><span>Telecom</span></li>
-					</a>
-					<a href="/industries/industry40/" target="_self">
-						<li><span>Industry 4.0</span></li>
-					</a>
-				</ul>
-			</div>
-		</main>
-	</nav>
-	<nav id="useCasesNav" class="nav-menu">
-		<main data-auto-burger="primary">
-			<div class="nav-box">
-				<img src="/images/head-use-cases.svg">
-			</div>
-			<div class="nav-box">
-			</div>
-			<div class="nav-box">
-				<ul>
-					<a href="/iot-use-cases/" target="_self">
-						<li><strong>IoT use cases</strong></li>
-					</a>
-					<a href="/smart-metering/" target="_self">
-						<li><span>Smart Metering</span></li>
-					</a>
-					<a href="/smart-energy/" target="_self">
-						<li><span>Smart Energy</span></li>
-					</a>
-					<a href="/smart-farming/" target="_self">
-						<li><span>Smart Farming</span></li>
-					</a>
-					<a href="/fleet-tracking/" target="_self">
-						<li><span>Fleet Tracking</span></li>
-					</a>
-				</ul>
-			</div>
-		</main>
-	</nav>
-    <nav id="partnersNav" class="nav-menu">
-        <main data-auto-burger="primary">
-            <div class="nav-box">
-                <img src="/images/head-partners.svg">
-            </div>
-            <div class="nav-box">
-            </div>
-            <div class="nav-box">
-                <ul>
-                    <a href="/partners/hardware/" target="_self">
-                        <li><strong>Partners</strong></li>
+                    <a href="/docs/services/trainings/">
+                        <img src="/images/train-icon.svg">
+                        <div class="sub-text">
+                            <h1>Trainings</h1>
+                            <p>ThingsBoard education courses</p>
+                        </div>
                     </a>
-                    <a href="/partners/hardware/" target="_self">
-                        <li><span>Hardware partners</span></li>
-                    </a>
-		    <a href="/partners/distributors/" target="_self">
-                        <li><span>Distributors</span></li>
+                    <a href="/docs/services/consulting/">
+                        <img src="/images/prof-icon.svg">
+                        <div class="sub-text">
+                            <h1>Professional services</h1>
+                            <p>Development of solutions by the ThingsBoard team</p>
+                        </div>
                     </a>
                 </ul>
             </div>
-        </main>
-    </nav>
-	<nav id="aboutUsNav" class="nav-menu">
-		<main data-auto-burger="primary">
-			<div class="nav-box">
-				<img src="/images/head-about-us.svg">
-			</div>
-			<div class="nav-box">
-			</div>
-			<div class="nav-box">
-				<ul>
-					<a href="/company/" target="_self">
-						<li><strong>Our Company</strong></li>
-					</a>
-					<a href="/docs/contact-us/" target="_self">
-						<li><span>Contact Us</span></li>
-					</a>
-					<a href="/mediakit/" target="_self">
-						<li><span>Media Kit</span></li>
-					</a>
-					<a href="https://blog.thingsboard.io/">
-						<li><span>Blog</span></li>
-					</a>
-					<a href="/careers/" target="_self">
-						<li><span>Careers</span></li>
-					</a>
-				</ul>
-			</div>
+            {% unless docsTag %}
+                {% unless productTag %}
+                    {% assign productTag = "ce" %}
+                {% endunless %}
+                {% assign foundDevProduct = site.data.products | where: "tag", productTag %}
+                {% assign devProductInfo = foundDevProduct[0] %}
 
-		</main>
-	</nav>
+                <div id="nav-developers" class="centered-sub">
+                    <ul class="sub-menu developers">
+                        <a href="{{devProductInfo.path}}">
+                            <img src="/images/doc-icon.svg">
+                            <div class="sub-text">
+                                <h1>Documentation</h1>
+                                <p>Detailed information about the ThingsBoard IoT platform</p>
+                            </div>
+                        </a>
+                        {% if devProductInfo.guides %}
+                            <a href="{{devProductInfo.guides}}">
+                                <img src="/images/guides-icon.svg">
+                                <div class="sub-text">
+                                    <h1>Guides</h1>
+                                    <p>Step-by-step instructions</p>
+                                </div>
+                            </a>
+                        {% endif %}
+                        {% if devProductInfo.getStarted %}
+                            <a href="{{devProductInfo.getStarted}}">
+                                <img src="/images/start-icon.svg">
+                                <div class="sub-text">
+                                    <h1>Get Started</h1>
+                                    <p>Tutorial of the most popular features</p>
+                                </div>
+                            </a>
+                        {% endif %}
+                    </ul>
+                </div>
+            {% endunless %}
+            <div id="nav-cases" class="centered-sub">
+                <ul class="sub-menu cases">
+                    <a href="/smart-metering/">
+                        <img src="/images/case-met-icon.svg">
+                        <div class="sub-text">
+                            <h1>Smart Metering</h1>
+                            <p>Collection, analysis and visualization of data from meters</p>
+                        </div>
+                    </a>
+                    <a href="/smart-energy/">
+                        <img src="/images/case-eng-icon.svg">
+                        <div class="sub-text">
+                            <h1>Smart Energy</h1>
+                            <p>Energy monitoring and efficiency analysis</p>
+                        </div>
+                    </a>
+                    <a href="/smart-farming/">
+                        <img src="/images/case-fam-icon.svg">
+                        <div class="sub-text">
+                            <h1>Smart Farming</h1>
+                            <p>Monitoring of indoor conditions and plant growth characteristics</p>
+                        </div>
+                    </a>
+                    <a href="/fleet-tracking/">
+                        <img src="/images/case-trk-icon.svg">
+                        <div class="sub-text">
+                            <h1>Fleet Tracking</h1>
+                            <p>Fleet tracking and fleet management</p>
+                        </div>
+                    </a>
+                </ul>
+            </div>
+            <div id="nav-customers" class="centered-sub">
+                <ul class="sub-menu customers">
+                    <div class="sub-groups">
+                        <div class="group">
+                            <a class="small-link" href="/industries/smart-energy/">
+                                <img src="/images/se-s-icon.svg">
+                                <div class="sub-text">
+                                    <h1>Smart Energy</h1>
+                                </div>
+                            </a>
+                            <a class="small-link" href="/industries/agriculture/">
+                                <img src="/images/agr-s-icon.svg">
+                                <div class="sub-text">
+                                    <h1>Agriculture</h1>
+                                </div>
+                            </a>
+                            <a class="small-link" href="/industries/smart-buildings/">
+                                <img src="/images/sb-s-icon.svg">
+                                <div class="sub-text">
+                                    <h1>Smart Buildings</h1>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="group">
+                            <a class="small-link" href="/industries/smart-city/">
+                                <img src="/images/sc-s-icon.svg">
+                                <div class="sub-text">
+                                    <h1>Smart City</h1>
+                                </div>
+                            </a>
+                            <a class="small-link" href="/industries/telecom/">
+                                <img src="/images/tel-s-icon.svg">
+                                <div class="sub-text">
+                                    <h1>Telecom</h1>
+                                </div>
+                            </a>
+                            <a class="small-link" href="/industries/industry40/">
+                                <img src="/images/in-s-icon.svg">
+                                <div class="sub-text">
+                                    <h1>Industry 4.0</h1>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </ul>
+            </div>
+            <div id="nav-company" class="centered-sub">
+                <ul class="sub-menu about">
+                    <div class="sub-groups">
+                        <div class="group">
+                            <a class="small-link" href="/company/">
+                                <img src="/images/about-s-icon.svg">
+                                <div class="sub-text">
+                                    <h1>Our Company</h1>
+                                </div>
+                            </a>
+                            <a class="small-link" href="/docs/contact-us/">
+                                <img src="/images/contact-s-icon.svg">
+                                <div class="sub-text">
+                                    <h1>Contact Us</h1>
+                                </div>
+                            </a>
+                            <a class="small-link" href="/careers/">
+                                <img src="/images/careers-s-icon.svg">
+                                <div class="sub-text">
+                                    <h1>Careers</h1>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="group">
+                            <a class="small-link" href="/mediakit/">
+                                <img src="/images/media-s-icon.svg">
+                                <div class="sub-text">
+                                    <h1>Media Kit</h1>
+                                </div>
+                            </a>
+                            <a class="small-link" href="https://blog.thingsboard.io/">
+                                <img src="/images/blog-s-icon.svg">
+                                <div class="sub-text">
+                                    <h1>Blog</h1>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="bottom-group">
+                        <a class="small-link" href="/partners/hardware/">
+                            <img src="/images/hard-s-icon.svg">
+                            <div class="sub-text">
+                                <h1>Hardware partners</h1>
+                            </div>
+                        </a>
+                        <a class="small-link" href="/partners/distributors/">
+                            <img src="/images/dis-s-icon.svg">
+                            <div class="sub-text">
+                                <h1>Distributors</h1>
+                            </div>
+                        </a>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div>
+        <a href="/installations/" class="n-button try">Try it now</a>
+        <a href="/pricing/" class="n-button price">Pricing</a>
+    </div>
 </header>

@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-paas
 assignees:
 - ashvayka
 title: Managing domain
@@ -108,3 +108,51 @@ The procedure of adding CNAME record to DNS database depending on your DNS servi
 * [Namecheap](https://www.namecheap.com/support/knowledgebase/article.aspx/9646/2237/how-to-create-a-cname-record-for-your-domain){:target="_blank"}
 
 If you don't find your DNS provider in the list provided try to get this information on the providers website or by contacting your provider support.
+
+### Troubleshooting
+
+Firs of all you need to check if you have added CNAME to your domain correctly:
+
+Use [Google Admin Toolbox](https://toolbox.googleapps.com/apps/dig/){:target="_blank"} or "dig" command if your OS system is Linux:
+```bash
+dig YOUR_DOMAIN_NAME any
+```
+
+The "dig" command in Linux is used to gather DNS information. It stands for Domain Information Groper, and it collects data about Domain Name Servers. The "dig" command is helpful for diagnosing DNS problems, but is also used to display DNS information.
+
+The output of "dig" command could vary duy to your domain setup.
+For example:
+```bash
+dig thingsboard.io any
+
+; <<>> DiG 9.16.1-Ubuntu <<>> thingsboard.io any
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 30457
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 65494
+;; QUESTION SECTION:
+;thingsboard.io.			IN	ANY
+
+;; ANSWER SECTION:
+thingsboard.io.		3788	IN	HINFO	"RFC8482" ""
+
+;; Query time: 24 msec
+;; SERVER: 127.0.0.53#53(127.0.0.53)
+;; WHEN: fr Jan 15 16:23:45 EET 2021
+;; MSG SIZE  rcvd: 64
+```
+
+This output shows that there are NO CNAME added to the thingsboard.io domain ("ANSWER SECTION" block).
+
+Correct output should look like that:
+```bash
+...
+;; ANSWER SECTION:
+thingsboard.io.		3788	IN	CNAME	cloud.thingsboard.io.
+...
+```
+
+If all the things are correct, but some issue still persists - please [Contact us](https://thingsboard.io/docs/contact-us/) for further support.

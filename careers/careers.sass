@@ -30,6 +30,7 @@
       font-weight: normal
       font-size: 18px
       line-height: 30px
+      margin-bottom: 30px
 
 hr
   border-top: 1px solid #212529
@@ -83,10 +84,9 @@ hr
     margin-bottom: 20px
 
 #about
-  width: calc(100% + 508px)
   background-color: #F7F7F7
-  margin: 0 -254px 68px
-  padding: 64px 254px 64px 254px
+  margin: 0 -100% 68px
+  padding: 64px 100% 34px
 
   p.title
     font-weight: bold !important
@@ -159,10 +159,9 @@ hr
 
 #mailBlock
   display: flow-root
-  width: calc(100% + 508px)
   background-color: #F7F7F7
-  margin: 48px -254px 52px
-  padding: 44px 254px 44px 254px
+  margin: 48px -100% 52px
+  padding: 44px 100%
 
   .mail
     margin: 14px 0 0 6px
@@ -279,3 +278,8 @@ hr
             margin: 3px 12px 0 0
         .date
           text-align: left
+
+@media screen and (min-width: 1920px)
+  #careers
+    #carsContent
+      width: 1500px

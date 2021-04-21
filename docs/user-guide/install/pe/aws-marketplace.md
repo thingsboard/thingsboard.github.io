@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-pe
 title: Installing ThingsBoard PE from AWS Marketplace
 description: Installing ThingsBoard PE from AWS Marketplace
 

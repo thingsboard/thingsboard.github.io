@@ -1,0 +1,16 @@
+{% for item in tree %}
+    {% if item.path ==  page.url %}
+        {% assign foundItem = item %}
+        {% assign tocSections = tocSections | push: foundItem %}
+        {% break %}
+    {% elsif item.section %}
+        {% assign tocSections = tocSections | push: item %}
+        {% assign tree = item.section %}
+        {% include breadcrumbs.html %}
+        {% if foundItem %}
+            {% break %}
+        {% else %}
+            {% assign tocSections = tocSections | pop %}
+        {% endif %}
+    {% endif %}
+{% endfor %}

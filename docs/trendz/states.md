@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-trendz
 assignees:
 - vparomskiy
 title: States
@@ -134,12 +134,12 @@ sum(Machine.temperature)
 ```
 
 Commonly, states are used for calculating how much time device/asset spent in different states. To get more precise results 
-it is recommended yo use **none()** aggregation - in this case system will process only raw telemetry to define is device inside 
+it is recommended you use **none()** aggregation - in this case system will process only raw telemetry to define is device inside 
 defined state or not.
 
 Aggregation function applied to a grouped dataset. Find more details about [Grouping and Aggregation in this article](/docs/trendz/data-grouping-aggregation/)
 
 ## Language
 
-In most cases amount of data analysed during state calculation is big enoguh. To guarantee performance function should be defined 
+In most cases amount of data analysed during state calculation is big enough. To guarantee performance function should be defined 
 using Java language (Java 8).

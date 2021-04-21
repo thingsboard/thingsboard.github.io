@@ -1,17 +1,5 @@
-<table class="pe-feature-banner">
-<tr>
-  <td style="width: 58px;" valign="top">
-      <img width="58" height="58" src="/images/info-sign-white.svg"/>
-  </td>
-  <td>
-      <br/>  
-      <p><b>ThingsBoard PE Feature</b></p>
-      <br/>  
-      <p>Only <a class="pe-link" href="/products/thingsboard-pe/"><b>ThingsBoard Professional Edition</b></a> supports <b>{{ feature }}</b> feature.</p>
-      <p>See <a class="pe-learn-more" href="/docs/user-guide/install/pe/installation-options/"><b>ThingsBoard PE Installation Options</b></a> to install ThingsBoard PE.</p>
-  </td>
-</tr>
-</table>
-
-
-
+{% capture peFeatureContent %}
+Only [**Professional Edition**](/products/thingsboard-pe/) supports **{{ feature }}** feature.<br>
+Use [**ThingsBoard Cloud**](https://thingsboard.cloud/signup) or [**install**](/docs/user-guide/install/pe/installation-options/) your own platform instance.
+{% endcapture %}
+{% include templates/info-banner.md title="ThingsBoard PE Feature" content=peFeatureContent %}

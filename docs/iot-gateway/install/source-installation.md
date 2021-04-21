@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-gw
 title: IoT Gateway installation from sources.
 
 ---
@@ -38,7 +38,7 @@ mkdir logs
 ```
 {: .copy-code}
 
-**6. Configure gateway to work with your instance of ThingsBoard platform, using ![this guide](/docs/iot-gateway/all_configuration/)** *or just run to test result of installation such as in the next step.*
+**6. Configure gateway to work with your instance of ThingsBoard platform, using [this guide](/docs/iot-gateway/configuration/)** *or just run to test result of installation such as in the next step.*
    
 **7. Run gateway, to check installation result:**
 ```bash

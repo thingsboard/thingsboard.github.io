@@ -1,58 +1,159 @@
 #docsContent
-	.customer-block
-		color: #424242
-		display: flex
-		flex-direction: column
-		margin-bottom: 20px
-		padding-bottom: 20px
-		border-bottom: 1px solid #ccc
-		.customer-logo
-			box-shadow: none
-			margin-bottom: 20px
-			width: 200px
-			height: 120px
-			min-width: 200px
-			margin-right: 20px
-			align-items: flex-start
-			align-content: flex-start
-			img
-				max-width: 100%
-				max-height: 100%
-
-		.customer-content
-			max-width: 800px
-			font-size: 16px
-			line-height: 1.5em
-			h3, h4
-				border-bottom: none
-				margin-bottom: 10px
-				margin-top: 10px
-			h3
-				padding-bottom: 0px
-			h4
-				font-size: 18px
-				color: #666
-			.person-logo-container
-				margin-top: 20px
+	#content
+		h1.mainTitle, h2
+			position: relative
+			padding: 0
+			&:before
+				content: none
+		.mainTitle
+			&.agriculture, &.industry-4, &.smart-buildings, &.smart-city, &.smart-energy, &.telecom
+				margin: 0
+				&.customer-spacer
+					margin-bottom: 183px
+		.customers-nav
+			display: flex
+			width: calc(100% + 60px)
+			margin-bottom: 56px
+			z-index: 1
+			overflow-x: auto
+			margin-left: -30px
+			&.nav-fixed
+				position: fixed
+				top: 78px
+				background-color: rgba(255, 255, 255, 0.95)
+				border-bottom: solid 1px #ebebeb
+				backdrop-filter: blur(7px)
+				width: 100%
+			ul
+				padding: 0 30px
 				display: flex
-				flex-direction: row
-				align-items: center
-				align-content: center
-				justify-content: flex-end
-				.person-logo
-					display: inline-block
-					border-radius: 50%
-					box-shadow: 0px 2px 15px #aaa
-					width: 80px
-					height: 80px
-					margin-right: 20px
-				.person-title
-					display: inline-block
+				li
+					position: relative
+					display: flex
+					align-items: center
+					height: 100%
+					margin: 0
+					margin-right: 28px
+					padding: 32px 0
+					float: left
+					width: max-content
+					a
+						color: 	rgba(33,37,41, 0.6)
+						text-decoration: none
+						font-size: 18px
+						font-weight: 400
+						&:hover
+							color: #212529
+						&.active
+							color: #2A7DEC
+							font-weight: 500
+					&:last-child
+						margin: 0
+		.customer-block
+			color: #212529
+			display: flex
+			flex-direction: column
+			margin-bottom: 56px
+			padding-bottom: 56px
+			border-bottom: 1px solid #ebebeb
+			justify-content: space-between
+			&:last-child
+				border-bottom: none
+
+			.customer-company
+				width: 100%
+				position: relative
+				margin-bottom: 72px
+				.customer-logo
+					min-width: unset
+					max-height: 120px
+					max-width: 180px
+					box-shadow: none
+					margin-bottom: 12px
+					height: auto
+					width: auto
+				.outlink
+					color: #212529
+					font-weight: 500
+					font-size: 18px
+					position: absolute
+					padding-right: 16px
+					&:hover
+						color: #2A7DEC
+						&:after
+							filter: unset
+					&:after
+						content: ""
+						background-image: url(/images/link-arrow.svg)
+						background-size: contain
+						display: block
+						position: absolute
+						right: 0
+						top: 6px
+						width: 8px
+						height: 9px
+						border: none
+						filter: grayscale(1) brightness(0.3)
+
+			.customer-content
+				width: 100%
+				h2, p
+					font-size: 16px
+					line-height: 1.5em
+				h2
+					font-weight: 500
+					margin-top: 10px
+				p
 					font-style: italic
+				.person-container
+					display: flex
+					flex-direction: row
+					margin-bottom: 30px
+					.person-logo
+						display: inline-block
+						border-radius: 50%
+						width: 48px
+						height: 48px
+						margin-right: 18px
+					.person-title
+						display: inline-block
+						p
+							font-style: unset
+							margin: unset
+						.person-name
+							font-size: 18px
+							font-weight: 500
+						.person-position
+							color: #75767C
 
 @media screen and (min-width: 1025px)
 	#docsContent
-		.customer-block
-			flex-direction: row
-			.customer-logo
-				margin-bottom: 0px
+		#content
+			.customers-nav
+				width: 100%
+				margin-left: 0
+				ul
+					padding: 0
+				&.nav-fixed
+					justify-content: center
+					left: 0
+					top: 80px
+					ul
+						width: 100%
+						max-width: 1200px
+						margin: 20px 30px
+			.customer-block
+				flex-direction: row
+				.customer-company
+					width: 180px
+				.customer-content
+					width: calc(100% - 252px)
+
+@media screen and (min-width: 1500px)
+	#docsContent
+		#content
+			.customers-nav
+				&.nav-fixed
+					ul
+						max-width: unset
+						margin: 20px 260px

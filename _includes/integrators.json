@@ -2,12 +2,12 @@
   {
     "type": ["Asia"],
     "country": ["Vietnam", "China", "Laos", "Thailand", "Cambodia", "Malaysia", "Singapore", "Brunei", "Philippines", "Taiwan"],
-    "name": "ACTE Solutions",
+    "name": "ACTE Technology",
     "contact": {
-      "href": "contact@acte-solutions.com"
+      "href": "contact@acte.ltd"
     },
     "site": {
-      "href": "acte-solutions.com",
+      "href": "acte.ltd",
       "target": "_blank"
     }
   },
@@ -96,8 +96,8 @@
     }
   },
   {
-    "type": ["Europe"],
-    "country": ["France"],
+    "type": ["Africa"],
+    "country": ["Senegal"],
     "name": "Cimyco",
     "contact": {
       "href": "contact@cimyco.com"
@@ -200,6 +200,18 @@
     },
     "site": {
       "href": "feelvirtualreality.com.au",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Asia"],
+    "country": ["China"],
+    "name": "gps.shop (Puxuan LPWAN Tech)",
+    "contact": {
+      "href": "Info@gps.shop"
+    },
+    "site": {
+      "href": "www.gps.shop",
       "target": "_blank"
     }
   },
@@ -348,6 +360,18 @@
     }
   },
   {
+    "type": ["Europe"],
+    "country": ["Netherlands"],
+    "name": "Produmize",
+    "contact": {
+      "href": "info@produmize.com"
+    },
+    "site": {
+      "href": "produmize.com",
+      "target": "_blank"
+    }
+  },
+  {
     "type": ["Asia", "Australia and Oceania"],
     "country": ["India", "Australia"],
     "name": "ProtoConvert",
@@ -420,6 +444,18 @@
     }
   },
   {
+    "type": ["North America"],
+    "country": ["United States"],
+    "name": "Senzary LLC",
+    "contact": {
+      "href": "info@senzary.com"
+    },
+    "site": {
+      "href": "senzary.com",
+      "target": "_blank"
+    }
+  },
+  {
     "type": ["Europe"],
     "country": ["Germany"],
     "name": "SienerSoft GmbH",
@@ -433,7 +469,7 @@
   },
   {
     "type": ["Europe"],
-    "country": ["Czechia"],
+    "country": ["Czech Republic"],
     "name": "Simac",
     "contact": {
       "href": "info@simac.cz"
@@ -512,18 +548,6 @@
     },
     "site": {
       "href": "techyugadi.com ",
-      "target": "_blank"
-    }
-  },
-  {
-    "type": ["North America"],
-    "country": ["Canada"],
-    "name": "Teldio Corp.",
-    "contact": {
-      "href": "sales@teldio.com"
-    },
-    "site": {
-      "href": "teldio.com",
       "target": "_blank"
     }
   },
@@ -608,6 +632,18 @@
     },
     "site": {
       "href": "wirelesssolution.asia",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Asia"],
+    "country": ["India"],
+    "name": "YuDash Systems Pvt. Ltd.",
+    "contact": {
+      "href": "sunand@yudash.com"
+    },
+    "site": {
+      "href": "yudash.com",
       "target": "_blank"
     }
   }

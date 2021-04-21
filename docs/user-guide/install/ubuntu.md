@@ -17,7 +17,7 @@ Hardware requirements depend on chosen database and amount of devices connected 
 To run ThingsBoard and PostgreSQL on a single machine you will need at least 1Gb of RAM.
 To run ThingsBoard and Cassandra on a single machine you will need at least 8Gb of RAM.
 
-### Step 1. Install Java 8 (OpenJDK) 
+### Step 1. Install Java 11 (OpenJDK) 
 
 {% include templates/install/ubuntu-java-install.md %}
 

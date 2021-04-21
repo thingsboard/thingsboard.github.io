@@ -71,7 +71,7 @@ For example:
 {: .copy-code}
 
   
-About sections of OPC-UA configuration file you can [read more here](/docs/iot-gateway/config/opcua/).  
+About sections of OPC-UA configuration file you can [read more here](/docs/iot-gateway/config/opc-ua/).  
 
 Let's analyze our settings:
 

@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-paas
 assignees:
 - ashvayka
 title: Plan and billing

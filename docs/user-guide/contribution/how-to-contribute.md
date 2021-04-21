@@ -10,7 +10,7 @@ title: Contribution Guide
 {:toc}
 
 We are constantly looking for a feedback from our community on how to improve ThingsBoard.
-If you have an idea or you have some new features in mind, please open an issue at ThingsBoard [**GitHub issue page**](https://github.com/thingsboard/thingsboard/issues).
+If you have an idea, or you have some new features in mind, please open an issue at ThingsBoard [**GitHub issue page**](https://github.com/thingsboard/thingsboard/issues).
 Please make sure that the same ticket is not already opened in the issues list (or something very similar).
 
 Before you start any implementation please wait from the ThingsBoard team to comment on your ticket. We'll try to get back to you ASAP.

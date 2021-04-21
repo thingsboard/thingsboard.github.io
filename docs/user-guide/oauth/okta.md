@@ -188,7 +188,7 @@ $ sudo service thingsboard restart
 ```  
 After that, proceed to the User Interface of yours, to make sure there are no troubles, press the **Login With Okta**.
 
-In case of the troubleshooting with those, please, contact us [using the contact us form](https://thingsboard.io/docs/contact-us/).
+In case of the troubleshooting with those, please, contact us [using the contact us form](/docs/contact-us/).
 
 ## Next Steps
 
