@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-pe
 assignees:
 - ashvayka
 title: ThingsBoard Professional Edition cluster setup with Docker Compose guide
@@ -61,12 +61,14 @@ docker pull store/thingsboard/tb-pe-http-transport:{{ site.release.pe_full_ver }
 docker pull store/thingsboard/tb-pe-mqtt-transport:{{ site.release.pe_full_ver }}
 docker pull store/thingsboard/tb-pe-coap-transport:{{ site.release.pe_full_ver }}
 ```
+{: .copy-code}
 
 ## Step 3. Clone ThingsBoard PE Docker Compose scripts
 
 ```bash
 git clone https://github.com/thingsboard/thingsboard-pe-docker-compose.git tb-pe-docker-compose
 ```
+{: .copy-code}
 
 ## Step 4. Obtain your license key
 
@@ -86,22 +88,28 @@ cd tb-pe-docker-compose
 nano tb-node.env
 ```
 
-and put the license secret parameter
+and put the license secret parameter instead of "PUT_YOUR_LICENSE_SECRET_HERE":
 
 ```bash
 # ThingsBoard server configuration
-
-ZOOKEEPER_ENABLED=true
 ...
-
 TB_LICENSE_SECRET=PUT_YOUR_LICENSE_SECRET_HERE
 ```
 
-
-## Step 6. Review the architecture page
+## Step 6. Configure deployment type
 
 Starting ThingsBoard v2.2, it is possible to install ThingsBoard cluster using new microservices architecture and docker containers. 
 See [**microservices**](/docs/reference/msa/) architecture page for more details.
+
+The docker compose scripts support three deployment modes. In order to set the deployment mode, change the value of `TB_SETUP` variable in `.env` file to one of the following:
+
+- `basic` **(recommended, set by default)** - ThingsBoard Core and Rule Engine are launched inside one JVM (requires only one license).
+  MQTT, CoAP and HTTP transports are launched in separate containers.
+- `monolith` - ThingsBoard Core and Rule Engine are launched inside one JVM (requires only one license). 
+  MQTT, CoAP and HTTP transports are also launched in the same JVM to minimize memory footprint and server requirements.
+- `advanced`- ThingsBoard Core and Rule Engine are launched in separate containers and are replicated one JVM (requires 4 licenses).  
+  
+All deployment modes support separate JS executors, Redis, and different [queues](/docs/user-guide/install/pe/cluster/docker-compose-setup/#step-8-choose-thingsboard-queue-service).
 
 ## Step 7. Configure ThingsBoard database
 
@@ -132,15 +140,17 @@ Confluent Cloud <small>(Event Streaming Platform based on Kafka)</small>%,%confl
 Execute the following command to create log folders for the services and chown of these folders to the docker container users. 
 To be able to change user, **chown** command is used, which requires sudo permissions (script will request password for a sudo access): 
 
-`
-$ ./docker-create-log-folders.sh
-`
+```bash
+./docker-create-log-folders.sh
+```
+{: .copy-code}
 
 Execute the following command to run installation:
 
-`
-$ ./docker-install-tb.sh --loadDemo
-`
+```bash
+./docker-install-tb.sh --loadDemo
+```
+{: .copy-code}
 
 Where:
 
@@ -148,9 +158,10 @@ Where:
 
 Execute the following command to start services:
 
-`
-$ ./docker-start-services.sh
-`
+```bash
+./docker-start-services.sh
+```
+{: .copy-code}
 
 After a while when all services will be successfully started you can open `http://{your-host-ip}` in you browser (for ex. `http://localhost`).
 You should see ThingsBoard login page.
@@ -167,31 +178,50 @@ If you installed DataBase with demo data (using `--loadDemo` flag) you can also 
 In case of any issues you can examine service logs for errors.
 For example to see ThingsBoard node logs execute the following command:
 
-`
-$ docker-compose logs -f tb-core1 tb-rule-engine1
-`
+```bash
+. .env
+docker-compose -f $TB_SETUP/docker-compose.yml logs -f tb-core1 tb-rule-engine1
+```
+{: .copy-code}
 
-Or use `docker-compose ps` to see the state of all the containers.
-Use `docker-compose logs --f` to inspect the logs of all running services.
+
+Or use the following command to see the state of all the containers:
+
+```bash
+. .env
+docker-compose -f $TB_SETUP/docker-compose.yml ps
+```
+{: .copy-code}
+
+Use the following command to inspect the logs of all running services.
+
+```bash
+. .env
+docker-compose -f $TB_SETUP/docker-compose.yml logs -f
+```
+{: .copy-code}
+
 See [docker-compose logs](https://docs.docker.com/compose/reference/logs/) command reference for details.
 
 Execute the following command to stop services:
 
-`
-$ ./docker-stop-services.sh
-`
+```bash
+./docker-stop-services.sh
+```
+{: .copy-code}
 
 Execute the following command to stop and completely remove deployed docker containers:
 
-`
-$ ./docker-remove-services.sh
-`
+```bash
+./docker-remove-services.sh
+```
+{: .copy-code}
 
 Execute the following command to update particular or all services (pull newer docker image and rebuild container):
 
-`
-$ ./docker-update-service.sh [SERVICE...]
-`
+```bash
+./docker-update-service.sh [SERVICE...]
+```
 
 Where:
 
@@ -201,15 +231,15 @@ Where:
 
 In case when database upgrade is needed, execute the following commands:
 
-```
-$ ./docker-stop-services.sh
-$ ./docker-remove-services.sh
+```bash
+./docker-stop-services.sh
+./docker-remove-services.sh
 ```
 
 Edit .env file set "TB_VERSION" to target version (f.e. currently you on 3.2.1 so in this case you need to set 3.2.2)
 
-```
-$ ./docker-update-service.sh [SERVICE...]
+```bash
+./docker-update-service.sh [SERVICE...]
 ```
 
 Where:

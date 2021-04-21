@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-license
 assignees:
 - ashvayka
 title: Billing info

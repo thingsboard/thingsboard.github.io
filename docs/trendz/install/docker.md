@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-trendz
 assignees:
 - ashvayka
 title: Installing ThingsBoard Trendz Analytics using Docker (Linux or Mac OS)

@@ -1,0 +1,2 @@
+For docker-compose deployment we are mapping <code>/config</code> folder to your local system (<code>./tb-node/conf</code> folder).
+So in order to change logging configuration you need to update <code>./tb-node/conf/logback.xml</code> file.

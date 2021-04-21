@@ -1,11 +1,13 @@
 ---
-layout: docwithnav
+layout: docwithnav-pe
 assignees:
 - ashvayka
 title: Installing ThingsBoard PE on CentOS/RHEL
 description: Installing ThingsBoard PE on CentOS/RHEL
 
 ---
+
+{% assign docsPrefix = "pe/" %}
 
 * TOC
 {:toc}

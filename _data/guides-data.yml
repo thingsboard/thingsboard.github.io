@@ -26,15 +26,10 @@
       keywords: device management attributes
       video: false
       pe: false
-    - path: /docs/reference/pe-demo-getting-started/
-      title: ThingsBoard PE Cloud Getting Started
-      subtitle: Learn about different ThingsBoard PE features using Demo Smart Metering application.
-      keywords: professional edition
-      video: true
-      pe: true
 - title: Installation guides
   subtitle: Learn how to setup ThingsBoard on various available operating systems.
   id: InstallationGuides
+  paaspage: "false"
   section:
     - path: /docs/user-guide/install/windows/
       title: Installing ThingsBoard on Windows
@@ -52,12 +47,6 @@
       title: Installing ThingsBoard on Raspberry Pi 3
       subtitle: Learn how to install ThingsBoard platform and all third-party on Raspberry Pi 3 Model B.
       keywords: install linux rpi raspberry pi
-      video: false
-      pe: false
-    - path: /docs/user-guide/install/kubernetes/
-      title: Installing ThingsBoard on Kubernetes
-      subtitle: Learn how to install ThingsBoard platform on Kubernetes.
-      keywords: install linux kubernetes
       video: false
       pe: false
     - path: /docs/user-guide/install/docker/
@@ -479,7 +468,7 @@
       keywords: NB IoT, NB-IoT, T-Mobile, SODAQ, 5G
       pe: true
       video: false
-    - path: /docs/samples/ble/raspberry-esp32-xiaomi-sensor-htu21d.md
+    - path: /docs/samples/ble/raspberry-esp32-xiaomi-sensor-htu21d
       title: ThingsBoard BLE Demo with Raspberry PI, ESP32, Xiaomi MI and HTU21D sensors
       subtitle: Contains wiring diagram and dashboard setup guide.
       pe: false
@@ -532,17 +521,18 @@
 - title: OAuth 2.0
   subtitle: Learn how to step-by-step setup OAuth with different providers.
   id: OAuth
+  paaspage: "false"
   section:
-  - path: /docs/user-guide/oauth/google
+  - path: /docs/user-guide/oauth-2-support/#login-with-google
     title: Google OAuth example
     subtitle: Learn how to step-by-step setup OAuth with Google.
-  - path: /docs/user-guide/oauth/oauth0
+  - path: /docs/user-guide/oauth-2-support/#login-with-auth0
     title: OAuth0 OAuth example
     subtitle: Learn how to step-by-step setup OAuth with OAuth0.
-  - path: /docs/user-guide/oauth/okta
+  - path: /docs/user-guide/oauth-2-support
     title: OAuth0 Okta example
     subtitle: Learn how to step-by-step setup OAuth with Okta.
-  - path: /docs/user-guide/oauth/azure
+  - path: /docs/user-guide/oauth-2-support
     title: OAuth0 Azure Active Directory example
     subtitle: Learn how to step-by-step setup OAuth with Azure Active Directory.
 

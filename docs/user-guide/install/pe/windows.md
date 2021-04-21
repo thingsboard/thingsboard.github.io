@@ -1,11 +1,13 @@
 ---
-layout: docwithnav
+layout: docwithnav-pe
 assignees:
 - ashvayka
 title: Installing ThingsBoard PE on Windows
 description: Installing ThingsBoard on Windows
 
 ---
+
+{% assign docsPrefix = "pe/" %}
 
 * TOC
 {:toc}

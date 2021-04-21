@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-trendz
 title: Install HAProxy Load Balancer for ThingsBoard on Ubuntu
 description: Install HAProxy Load Balancer for ThingsBoard on Ubuntu
 hidetoc: "true"

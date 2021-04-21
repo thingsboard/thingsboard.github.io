@@ -19,7 +19,7 @@ You need to install a terraform (v0.12+) and the kubectl (v1.16+).
 
 [terraform](https://www.terraform.io/) - for create and manage cloud infrastructure in AWS EKS.
 
-You can choose any other available [Kubernetes cluster deployment solutions](https://kubernetes.io/docs/setup/pick-right-solution/).
+You can choose any other available [Kubernetes cluster deployment solutions](https://kubernetes.io/docs/setup/production-environment/tools/)
 
 ## Step 1. Enter the terraform working directory
 
@@ -242,7 +242,7 @@ In case when database upgrade is needed, execute the following commands:
 
 Where:
 
-- `FROM_VERSION` - from which version upgrade should be started. See [Upgrade Instructions](https://thingsboard.io/docs/user-guide/install/upgrade-instructions) for valid `fromVersion` values.
+- `FROM_VERSION` - from which version upgrade should be started. See [Upgrade Instructions](/docs/user-guide/install/upgrade-instructions) for valid `fromVersion` values.
 
 ## Next steps
 

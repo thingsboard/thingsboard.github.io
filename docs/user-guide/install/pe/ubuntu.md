@@ -1,11 +1,13 @@
 ---
-layout: docwithnav
+layout: docwithnav-pe
 assignees:
 - ashvayka
 title: Installing ThingsBoard PE on Ubuntu
 description: Installing ThingsBoard on Ubuntu
 
 ---
+
+{% assign docsPrefix = "pe/" %}
 
 * TOC
 {:toc}

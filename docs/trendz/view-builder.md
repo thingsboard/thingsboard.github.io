@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-trendz
 assignees:
 - vparomskiy
 title: Clear, Filter, Group and Aggregate data

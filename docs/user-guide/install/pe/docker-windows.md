@@ -1,10 +1,10 @@
 ---
-layout: docwithnav
+layout: docwithnav-pe
 assignees:
 - ashvayka
 title: Installing ThingsBoard PE using Docker (Windows)
 description: Installing ThingsBoard PE IoT Platform using Docker (Windows)
-
+redirect_from: "/docs/pe/user-guide/install/docker-windows/"
 ---
 
 * TOC

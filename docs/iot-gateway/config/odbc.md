@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-gw
 title: ODBC Connector Configuration
 description: ODBC support for ThingsBoard IoT Gateway
 

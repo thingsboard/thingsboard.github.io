@@ -1,8 +1,9 @@
 <div class="info-banner">
-  <div class="info-sign">
-      <i class="fa fa-info-circle" aria-hidden="true"></i>
-  </div>
-  <div class="info-text">
+    <img src="/images/doc-info-icon.svg"/>
+    <div>
+      {% if include.title %}
+      <div class="info-title">{{ include.title }}</div>
+      {% endif %}
       {{ include.content | markdownify }}
-  </div>
+    </div>
 </div>
