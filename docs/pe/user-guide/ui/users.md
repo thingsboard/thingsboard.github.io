@@ -12,7 +12,7 @@ users-intro-pe:
 user-groups-pe:
     0:
         image: /images/user-guide/ui/users/pe/user-groups-pe.png
-        title: 'Click the plus sign to open a dialog window, enter a name for the new group and add the new group by clicking the Add button.'
+        title: 'Click the plus sign to open a dialog window, enter a name for the new group, and add the new group by clicking the Add button.'
     1:
         image: /images/user-guide/ui/users/pe/user-groups-1-pe.png
         title: 'After adding a group, click the bar icon next to the name to open a new group.'
@@ -20,43 +20,23 @@ user-groups-pe:
         image: /images/user-guide/ui/users/pe/user-groups-2-pe.png
         title: 'Click the pencil icon in the top left corner next to the group name to open the entity group details. Open Roles tab and click the plus icon to add a new role.'
 
-user-generic-groups-pe:
-    0:
-        image: /images/user-guide/ui/users/pe/user-groups-3-pe.png
-        title: 'Click the pencil icon in the top left corner next to the group name to open the entity group details. Open Roles tab and click the plus icon to add a new role.
-        Select Generic role type'
-    1:
-        image: /images/user-guide/ui/users/pe/user-groups-4-pe.png
-        title: ''
-    2:
-        image: /images/user-guide/ui/users/pe/user-groups-5-pe.png
-        title: ''
-    3:
-        image: /images/user-guide/ui/users/pe/user-groups-6-pe.png
-        title: ''
-    4:
-        image: /images/user-guide/ui/users/pe/user-groups-7-pe.png
-        title: ''
-    5:
-        image: /images/user-guide/ui/users/pe/user-groups-8-pe.png
-        title: ''
-
 user-bob-pe:
     0:
         image: /images/user-guide/ui/users/pe/user-bob-pe.png
-        title: 'Go to the "Tenant administrator" user group and click the plus sign in the top right corner of the screen. Enter administrator email, name and last name. Click the Add button to add a new administrator.'
+        title: 'Go to the "Tenant administrator" user group and click the plus sign in the top right corner of the screen. Enter the administrator email address, first and last name. 
+                Click the Add button to add a new administrator.'
     1:
         image: /images/user-guide/ui/users/pe/user-bob-1-pe.png
         title: 'Copy the activation link to send to the new administrator to activate his account. Click OK.'
     2:
         image: /images/user-guide/ui/users/pe/user-bob-2-pe.png
-        title: 'After adding a new administrator Bob, click the phone icon next to the name to log in as Bob.'
+        title: 'After adding the new administrator Bob, click the phone icon next to the name to log in as him.'
     3:
         image: /images/user-guide/ui/users/pe/user-bob-3-pe.png
         title: 'Accept Privacy Policy.'
     4:
         image: /images/user-guide/ui/users/pe/user-bob-4-pe.png
-        title: 'As you logged in as the administrator Bob, open the User groups from the left main menu.'
+        title: 'When you are logged in as administrator Bob, open User Groups from the left main menu.'
     5:
         image: /images/user-guide/ui/users/pe/user-bob-5-pe.png
         title: 'Administrator Bob can do everything as the main Tenant administrator can do.'
@@ -64,47 +44,48 @@ user-bob-pe:
 user-alice-pe:
     0:
         image: /images/user-guide/ui/users/pe/user-add-pe.png
-        title: 'Go to the "Tenant user" user group and click the plus sign in the top right corner of the screen. Enter user email, name and last name. Click the Add button to add a new user'
+        title: 'Go to the "Tenant user" user group and click the plus sign in the upper right corner of the screen. Enter the email address, first and last name of the user. Click the Add button to add a new user.'
     1:
         image: /images/user-guide/ui/users/pe/user-alice-pe.png
-        title: 'After adding a new user Alice, click the phone icon next to the name to log in as Bob.'
+        title: 'After adding a new user Alice, click the phone icon next to the name to log in as her.'
     2:
         image: /images/user-guide/ui/users/pe/user-alice-1-pe.png
-        title: 'Accept Privacy Policy and Terms of Use. Click Continue'
+        title: 'Accept Privacy Policy and Terms of Use. Click Continue.'
     3:
         image: /images/user-guide/ui/users/pe/user-alice-2-pe.png
         title: 'As you logged in as the user Alice, open the User groups from the left main menu.'
     4:
         image: /images/user-guide/ui/users/pe/user-alice-3-pe.png
-        title: 'User Alice can view everything as the main Tenant administrator can view, but can not add, edit or delete them.'
+        title: 'User Alice can view everything as the main Tenant administrator can, but cannot add, edit or delete entities.'
 
 user-edit-pe:
     0:
         image: /images/user-guide/ui/users/pe/user-edit-pe.png
-        title: 'Accept Privacy Policy.'
+        title: 'Click the pencil icon in the upper right corner to enter edit mode.'
     1:
         image: /images/user-guide/ui/users/pe/user-edit-1-pe.png
-        title: 'Accept Privacy Policy.'
+        title: "On the Details tab, you can edit the name and description of the user group. However, please note that changing the description will not affect the permissions of the user group."
     2:
         image: /images/user-guide/ui/users/pe/user-edit-2-pe.png
-        title: 'Accept Privacy Policy.'
+        title: 'The Column tab is responsible for the type, value, interface and sort order of the columns of the user group.'
     3:
         image: /images/user-guide/ui/users/pe/user-edit-3-pe.png
-        title: 'Accept Privacy Policy.'
+        title: 'To edit an existing column, click the pencil icon at the end of the column row. Make you changes and click the Save button to apply the changes.
+                (To learn more about the Cell style function, see the link below)'
     4:
         image: /images/user-guide/ui/users/pe/user-edit-4-pe.png
-        title: 'Accept Privacy Policy.'
+        title: 'To add a new column, click the Add button in the lower left of the dialog. A new row will appear where you can add a column.'
     5:
         image: /images/user-guide/ui/users/pe/user-edit-5-pe.png
-        title: 'Accept Privacy Policy.'
+        title: 'Settings tab is responsible for general permissions and interface of the columns.'
     6:
         image: /images/user-guide/ui/users/pe/user-edit-6-pe.png
-        title: 'Accept Privacy Policy.'
+        title: 'Actions tab allows navigating to specific dashboard or add a custom action (To learn more about the Actions, see the link below).'
 
 user-delete-pe:
     0:
         image: /images/user-guide/ui/users/pe/user-delete-pe.png
-        title: 'Accept Privacy Policy.'
+        title: 'To delete a user group, click the trash can icon in the end of its row and confirm deletion.'
 
 ---
 
@@ -113,46 +94,54 @@ user-delete-pe:
 
 ## Introduction
 
-To fully understand how to work with users in Professional Edition, let's create a customer user, which can create his own customers with different allowance rights.
-One of them will create his own sub-customer. Let's log into the ThingsBoard to follow the steps of the tutorial.
+User is an entity that can log in to the ThingsBoard web interface, execute REST API calls, access devices, assets and other entities if they have permissions to do so.
+Users are grouped into user groups.  
+By default, there are two autogenerated user groups: 
+[the Tenant Administrators](/docs/pe/user-guide/ui/users/#tenant-administrator-user-group) and [the Tenant Users](/docs/pe/user-guide/ui/users/#tenant-user-user-group).
+Tenant administrator can directly create new users in autogenerated user groups, however please note that they will have the access to all dashboards as tenant administrator that has created them.
+Also, there is the "All" user group. If a user is created directly in the "All" group, he won't have any permissions and will view nothing.
 
-By default, there are two autogenerated user groups: Tenant Administrators group with all permissions and Tenant Users group with read-only permissions.
+{% include images-gallery.html imageCollection="users-intro-pe" showListImageTitles='true' %}
 
-{% include images-gallery.html imageCollection="users-intro-pe" preview='false' showListImageTitles='true' %}
+**Note**: outgoing email settings have to be properly configured using [system administrator](/docs/pe/user-guide/ui/tenants/) account. This is required to send activation email to the new users.
 
-**Note**: outgoing email settings have to be properly configured using system administrator account. This is required to send activation email to the new customer users.
+## User groups
 
-## Add new user group
+A User group is group of users of the same level with the same permissions. One user can simultaneously belong to several user groups.
 
-{% include images-gallery.html imageCollection="user-groups-pe" preview='false' showListImageTitles='true' %}
+##### Tenant Administrator user group
 
-##### Role types
+The created tenant administrators in the Tenant Administrator user group have the same permissions as the tenant administrator who added them to the administrators group (except they can not delete their administrator).
+Let's create a tenant administrator to see what he can do.
 
+{% include images-gallery.html imageCollection="user-bob-pe" showListImageTitles='true' %}
 
+##### Tenant User user group
 
-##### Generic role type
+Tenant users group has read-only permissions. Let's create a tenant user to see what he can do.
 
-{% include images-gallery.html imageCollection="user-generic-groups-pe" preview='false' showListImageTitles='true' %}
+{% include images-gallery.html imageCollection="user-alice-pe" showListImageTitles='true' %}
 
-##### Group role type
+##### Adding a new user group
 
+For the tenant administrator it is possible to create your own user group with customized permissions. 
+Create a user group and add the previously created [Roles](/docs/pe/user-guide/rbac/#roles) in the Roles tab in the user group details to configure users permissions in the new group.
 
-## Tenant administrator
+{% include images-gallery.html imageCollection="user-groups-pe" showListImageTitles='true' %}
 
-{% include images-gallery.html imageCollection="user-bob-pe" preview='false' showListImageTitles='true' %}
+## Edit user group
 
-## Tenant user
+Like any group of entities, the user group can be easily customized and edited.
+To edit a user group, click the user group row to enter details about the user group.
 
-{% include images-gallery.html imageCollection="user-alice-pe" preview='false' showListImageTitles='true' %}
+{% include images-gallery.html imageCollection="user-edit-pe" showListImageTitles='true' %}
 
-## Edit user groups
+Learn more about [cell style function](/docs/pe/user-guide/ui/advanced-data-key-configuration/#12-cell-style-function).
 
-[cell style function](/docs/pe/user-guide/ui/advanced-data-key-configuration/#12-cell-style-function)
-
-[actions](/docs/pe/user-guide/ui/widget-actions/)
-
-{% include images-gallery.html imageCollection="user-edit-pe" preview='false' showListImageTitles='true' %}
+Learn more about [actions](/docs/pe/user-guide/ui/widget-actions/).
 
 ## Delete user group
 
-{% include images-gallery.html imageCollection="user-delete-pe" preview='false' showListImageTitles='true' %}
+User group can be deleted by the administrator who created it.
+
+{% include images-gallery.html imageCollection="user-delete-pe" showListImageTitles='true' %}
