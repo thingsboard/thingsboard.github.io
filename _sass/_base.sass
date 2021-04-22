@@ -160,7 +160,7 @@ details[open]
         filter: invert(35%) sepia(96%) saturate(1837%) hue-rotate(202deg) brightness(98%) contrast(89%)
 
 // HEADER
-#home, #thingsboard-paas, #thingsboard-pe, #trendz
+#home, #thingsboard-paas, #thingsboard-pe, #trendz, #thingsboard-edge
   header
     background-color: unset
     box-shadow: unset
@@ -410,6 +410,9 @@ header
 
             &.com-lnk:hover .sub-text h1
               color: #305680
+
+            &.edge-lnk:hover .sub-text h1
+              color: #009688
 
             &.gateway-lnk:hover .sub-text h1
               color: #EB5757
@@ -663,7 +666,7 @@ ul
     display: inline-block
 
 // FLIP NAV
-#home, #thingsboard-paas, #thingsboard-pe, #trendz
+#home, #thingsboard-paas, #thingsboard-pe, #trendz, #thingsboard-edge
   &.flip-nav
     header
       transition-duration: 0.3s
@@ -1554,7 +1557,7 @@ iframe
     height: 400px
     padding: 20px 0
 
-#peContent, #paasContent
+#peContent, #paasContent, #edgeContent
   position: relative
   width: 100%
   margin: auto
@@ -2295,7 +2298,7 @@ $header-clearance: 210px
   #docs
     header
       height: 80px !important
-  #home, #docs, #common, #thingsboard-paas, #thingsboard-pe, #trendz
+  #home, #docs, #common, #thingsboard-paas, #thingsboard-pe, #trendz, #thingsboard-edge
     .opened-burger
       height: 100%!important
       .burger
