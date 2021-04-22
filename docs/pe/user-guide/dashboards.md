@@ -349,6 +349,16 @@ zoom-in:
     1:
         image: /images/user-guide/dashboards/zoom-in-1.png
 
+import:
+    0:
+        image: /images/user-guide/dashboards/dashboard-import-pe.png
+    1:
+        image: /images/user-guide/dashboards/dashboard-import-1-pe.png
+    2:
+        image: /images/user-guide/dashboards/dashboard-import-2-pe.png
+    3:
+        image: /images/user-guide/dashboards/dashboard-import-3-pe.png
+
 --- 
 
 {% assign docsPrefix = "pe/" %}

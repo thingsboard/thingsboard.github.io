@@ -4,6 +4,7 @@ assignees:
 - ashvayka
 title: Dashboards
 description: ThingsBoard IoT Dashboards
+redirect_from: "/docs/pe/user-guide/ui/dashboards/"
 
 ---
 

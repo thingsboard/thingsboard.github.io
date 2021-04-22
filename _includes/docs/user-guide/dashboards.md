@@ -472,7 +472,6 @@ Toolbar allows changing the dashboard you're currently using, edit timewindow, e
 
 If we remove the checkmark, the toolbar will be closed. Instead of it, on the upper right of the screen you find the three-dots icon. By clicking on it, the hidden toolbar will be opened.
 
-
 {% include images-gallery.html imageCollection="toolbar-dashboard" %}
  
 #### Title of the Dashboard
@@ -524,7 +523,6 @@ By default, the _Automatic Fill Layout Height_ checkbox is unchecked so that you
 If you tick this option, all the widgets on the Dashboard will fill in vertically in the space of the screen.
 
 {% include images-gallery.html imageCollection="autofill" %}
-
 
 #### Background settings
 
@@ -609,6 +607,14 @@ As we have chosen the "On row click" action, we need to click on the row of our 
 For the state to be named after the entity, use ${entityName} as the name of the state. Thus during the action, you will be transitioned to a state that is called the same as the entity that took part in the action.
 
 {% include images-gallery.html imageCollection="entity-name" %}
+
+## Import dashboard
+
+You are able to import a dashboard in JSON format.
+To import a dashboard, you should go to the Dashboard group and click on the “+” button in the upper right corner of the page and choose “Import dashboard”.
+The dashboard import window should pop up, and you will be prompted to upload the JSON file and click "Import".
+
+{% include images-gallery.html imageCollection="import" preview='false' %}
 
 ## Export
 

@@ -359,6 +359,14 @@ zoom-in:
     1:
         image: /images/user-guide/dashboards/zoom-in-1-ce.png
 
+import:
+    0:
+        image: /images/user-guide/dashboards/dashboard-import-ce.png
+    1:
+        image: /images/user-guide/dashboards/dashboard-import-1-ce.png
+    2:
+        image: /images/user-guide/dashboards/dashboard-import-2-ce.png
+
 --- 
 
 
