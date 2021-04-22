@@ -102,10 +102,10 @@ description:
                 </div>
             </div>
             <div class="col-lg-6">
-                <div class="block"><img src="/images/edge/scalable-icon.svg">
+                <div class="block"><img src="/images/edge/durable-icon.svg">
                     <div>
-                    <h4 class="title">Scalable</h4>
-                    <p>Spread your computation and data analysis on thousands of edges.</p>
+                        <h4 class="title">Durable</h4>
+                        <p>Edge collects all messages and events in the persistence layer. Particular messages could be transferred to the cloud, if required.</p>
                     </div>
                 </div>
             </div>
@@ -118,10 +118,10 @@ description:
                 </div>
             </div>
             <div class="col-lg-6">
-                <div class="block"><img src="/images/edge/durable-icon.svg">
+                <div class="block"><img src="/images/edge/scalable-icon.svg">
                     <div>
-                        <h4 class="title">Durable</h4>
-                        <p>Edge collects all messages and events in the persistence layer. Particular messages could be transferred to the cloud, if required.</p>
+                    <h4 class="title">Scalable</h4>
+                    <p>Spread your computation and data analysis on thousands of edges.</p>
                     </div>
                 </div>
             </div>
