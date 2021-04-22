@@ -349,6 +349,14 @@ zoom-in:
     1:
         image: /images/user-guide/dashboards/zoom-in-1.png
 
+import:
+    0:
+        image: /images/user-guide/dashboards/dashboard-import-paas.png
+    1:
+        image: /images/user-guide/dashboards/dashboard-import-1-paas.png
+    2:
+        image: /images/user-guide/dashboards/dashboard-import-2-paas.png
+
 --- 
 
 {% assign docsPrefix = "paas/" %}
