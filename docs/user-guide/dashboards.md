@@ -7,21 +7,15 @@ description: IoT dashboards using ThingsBoard
 redirect_from: "/docs/user-guide/ui/dashboards/"
 creating-dash:
     0:
-        image: /images/user-guide/dashboards/creating-dash.png
+        image: /images/user-guide/dashboards/creating-dash-1-ce.png
     1:
-        image: /images/user-guide/dashboards/creating-dash-1.png
-    2:
-        image: /images/user-guide/dashboards/creating-dash-2.png
-
+        image: /images/user-guide/dashboards/creating-dash-2-ce.png
+  
 make-public:
     0:
-        image: /images/user-guide/dashboards/creating-dash.png
+        image: /images/user-guide/dashboards/make-public-ce.png
     1:
-        image: /images/user-guide/dashboards/make-public-1.png
-    2:
-        image: /images/user-guide/dashboards/make-public-2.png
-    3:
-        image: /images/user-guide/dashboards/make-public-3.png
+        image: /images/user-guide/dashboards/make-public-1-ce.png
 
 dash-title:
     0:
@@ -352,7 +346,7 @@ tw-current-day:
 
 tw-time-zone:
     0:
-        image: /images/user-guide/dashboards/tw-time-zone.png
+        image: /images/user-guide/dashboards/tw-time-zone-ce.png
 
 zoom-in:
     0:
