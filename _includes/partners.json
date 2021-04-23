@@ -2,6 +2,22 @@
   {
     "type": "hardware",
     "program": "",
+    "name": "Kernel Sistemi",
+    "logo": "kernel_logo.jpg",
+    "links": {
+      "Site": {
+        "href": "https://www.kernelgroup.it/",
+        "target": "_blank"
+      },
+      "Integration guide": {
+        "href": "/docs/samples/kernel/kernel/"
+      }
+    },
+    "blurb": "KERNEL Sistemi s.r.l. designs and produces electronic solutions for automation, industrial process control, photovoltaics, energy management and home automation."
+  },
+  {
+    "type": "hardware",
+    "program": "",
     "name": "Espressif Systems",
     "logo": "espressif.svg",
     "links": {
