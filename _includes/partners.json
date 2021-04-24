@@ -171,5 +171,22 @@
       }
     },
     "blurb": "Since 2000, DCT has been developing IoT devices and accessories for Fleet Telematics Applications and Industrial Solutions that are trusted by integrators and service providers around the globe. Their expertise in product design and development together with firmware and software makes the perfect combination for developers to start building amazing applications."
+  },
+	  {
+    "type": "hardware",
+    "program": "",
+    "name": "Magicbit",
+    "logo": "magicbit.png",
+    "links": {
+      "Site": {
+        "href": "https://www.magicbit.cc/",
+        "target": "_blank"
+      },
+      "Integration guide": {
+        "href": "/docs/samples/magicbit/"
+      }
+    },
+    "blurb": "Magicbit innovation platform provides an easy to learn, feature rich and cost effective solution to all innovators, learners and students which is based on ESP32."
   }
+	
 ]
