@@ -142,19 +142,7 @@ Explore guides related to main ThingsBoard features:
  - [Working with IoT dashboards](/docs/user-guide/dashboards/) - how to work with dashboards.
 <br/>
 <br/>
-
-## Contact Us
-
-For further details and / or clarifications you can contact us by email at :
-<br/>
-<img src="/images/samples/kernel/Thingsboard 009.png" width="1000"/>
-<br/>
-<br/>
-
-{% include templates/feedback.md %}
-
-{% include socials.html %}
-
+   
 ## Next steps
 
 {% assign currentGuide = "HardwareSamples" %}{% include templates/guides-banner.md %}
