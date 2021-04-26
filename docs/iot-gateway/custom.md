@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-gw
 title: Custom IoT Gateway Connector
 
 ---
@@ -42,7 +42,7 @@ After this we need add some configuration for this connector in file.
 <br>
 <details>
 <summary>
-<b>Example of custom connector configuration file. Press to expand.</b>
+Example of custom connector configuration file. Press to expand.
 </summary>
 
 {% highlight json %}

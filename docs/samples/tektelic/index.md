@@ -8,7 +8,7 @@ description: Learn how to get data from Tektelic LoRaWAN sensors at ThingsBoard
 * TOC
 {:toc}
 
-[Tektelic](tektelic.com) is a premier supplier of LoRaWAN® IoT Gateways, Sensors and custom applications.  
+[Tektelic](https://tektelic.com) is a premier supplier of LoRaWAN® IoT Gateways, Sensors and custom applications.
 This guide describes how to stream data from TEKTELIC KONA Core Network Server to ThingsBoard.
 
 ### Prerequisites

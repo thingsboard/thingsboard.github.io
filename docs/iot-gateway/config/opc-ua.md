@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-gw
 assignees:
 - ashvayka
 title: OPC-UA Connector Configuration

@@ -18,7 +18,7 @@ This section contains installation instructions for build tools.
 
 ##### Java
 
-ThingsBoard is build using Java 8. You can use [following instructions](/docs/user-guide/install/linux#java) to install Java 8.
+ThingsBoard is build using Java 11. You can use [following instructions](/docs/user-guide/install/linux#java) to install Java 11.
 
 ##### Maven
 

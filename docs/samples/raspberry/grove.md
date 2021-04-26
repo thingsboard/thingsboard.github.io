@@ -13,7 +13,7 @@ description: ThingsBoard IoT Platform sample for Raspberry Pi Grove Base Hat con
 
 ThingsBoard Community Edition is an open-source server-side platform that allows you to monitor and control IoT devices. 
 It is free for both personal and commercial usage and you can deploy it anywhere. 
-If you are not familiar with the platform yet, we recommend to review [what is thingsboard page](https://thingsboard.io/docs/getting-started-guides/what-is-thingsboard/) and [getting started guide](https://thingsboard.io/docs/getting-started-guides/helloworld/) at first and then proceed with this tutorial. 
+If you are not familiar with the platform yet, we recommend to review [what is thingsboard page](/docs/getting-started-guides/what-is-thingsboard/) and [getting started guide](/docs/getting-started-guides/helloworld/) at first and then proceed with this tutorial.
 Within this guide we use [thingsboard.cloud](https://thingsboard.cloud).
 
 This sample application will allow you to collect information from sensors and control Servo, Led of your Raspberry Pi device with Grove Base Hat PCB using ThingsBoard web UI. The purpose of this application is to demonstrate ThingsBoard and Grove Base Hat PCB integrations.

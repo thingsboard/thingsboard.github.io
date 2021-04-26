@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-trendz
 title: Install HAProxy Load Balancer for ThingsBoard on CentOS/RHEL
 description: Install HAProxy Load Balancer for ThingsBoard on CentOS/RHEL
 hidetoc: "true"

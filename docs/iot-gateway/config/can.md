@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-gw
 title: CAN Connector Configuration
 description: CAN protocol support for ThingsBoard IoT Gateway
 

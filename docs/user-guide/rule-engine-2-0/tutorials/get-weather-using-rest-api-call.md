@@ -138,7 +138,7 @@ The following screenshot show how the above Rule Chain should look like:
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/rest-api-weather/weather-rule-chain-customer.png)   
    
-Download and [**import**](docs/user-guide/ui/rule-chains/#rule-import) attached
+Download and [**import**](/docs/user-guide/ui/rule-chains/#rule-import) attached
 json [**file**](/docs/user-guide/resources/outside-temperature-humidity-customer.json) with a rule chain for this tutorial.
 Be aware that you need to set the asset you created in the beginning as an originator in the leftmost generator node.
 

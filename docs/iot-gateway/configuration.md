@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-gw
 title: IoT Gateway Configuration
 description: Installation structure and configuration of ThingsBoard IoT Gateway 
 
@@ -47,7 +47,7 @@ Please see default directory structure below for daemon installation.
 ## General configuration file
 
 The main configuration file that is used for connection to ThingsBoard platform instance and enable/disable connectors. 
-This configuration points to ThingsBoard instance demo.thingsboard.io and uses 
+This configuration points to ThingsBoard instance thingsboard.cloud and uses 
 memory file storage configured to store maximum of 100,000 records. There are 4 different connectors active. 
 If you like to use only one of them - just remove all other connectors. 
 
@@ -60,7 +60,7 @@ If you like to use only one of them - just remove all other connectors.
 {% highlight yaml %}
 
 thingsboard:
-  host: demo.thingsboard.io
+  host: thingsboard.cloud
   port: 1883
   security:
     accessToken: PUT_YOUR_ACCESS_TOKEN_HERE
@@ -121,7 +121,7 @@ connectors:
 |**Parameter**             | **Default value**                            |   **Description**                                              |
 |---                       |---                                           |---                                                             |
 | ***thingsboard***        |                                              | Configuration for connection to server.                        |
-| host                     | **127.0.0.1**                                | Hostname or ip address of ThingsBoard server.                  |
+| host                     | **thingsboard.cloud**                        | Hostname or ip address of ThingsBoard server.                  |
 | port                     | **1883**                                     | Port of mqtt service on ThingsBoard server.                    |
 
 ###### Subsection "security"

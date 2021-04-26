@@ -182,7 +182,7 @@ After that, proceed to the User Interface of yours, to make sure there are no tr
 
 ![image](/images/user-guide/oauth-2-support/azure/azure-login.png)
 
-In case of the troubleshooting with those, please, contact us [using the contact us form](https://thingsboard.io/docs/contact-us/).
+In case of the troubleshooting with those, please, contact us [using the contact us form](/docs/contact-us/).
 
 ## Next Steps
 

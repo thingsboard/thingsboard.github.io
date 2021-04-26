@@ -16,7 +16,7 @@ This guide describes how to install ThingsBoard on a Raspberry Pi 3 running Rasp
 
 ### Third-party components installation
 
-### Step 1. Install Java 8 (OpenJDK) 
+### Step 1. Install Java 11 (OpenJDK) 
 
 {% include templates/install/ubuntu-java-install.md %}
 

@@ -1,0 +1,203 @@
+bigheader: "ThingsBoard Cloud Documentation"
+abstract: "Documentation for using ThingsBoard Cloud IoT Platform."
+toc:
+- title: ThingsBoard Cloud
+  path: /docs/paas/
+- title: What is ThingsBoard?
+  path: /docs/paas/getting-started-guides/what-is-thingsboard/
+- title: What is ThingsBoard Cloud?
+  path: /products/paas/what-is-thingsboard-cloud/
+- title: How to connect your device?
+  path: /docs/paas/getting-started-guides/connectivity/
+- title: Solution Templates
+  new: true
+  section:
+    - title: Overview
+      path: /docs/paas/solution-templates/overview/
+    - title: Temperature & Humidity Sensors
+      path: /docs/paas/solution-templates/temperature-humidity-sensors/
+    - title: Smart office
+      path: /docs/paas/solution-templates/smart-office/
+    - title: Fleet tracking
+      path: /docs/paas/solution-templates/fleet-tracking/
+    - title: Water metering
+      path: /docs/paas/solution-templates/water-metering/
+- title: Key concepts
+  section:
+    - title: Entities and Relations
+      path: /docs/paas/user-guide/entities-and-relations/
+    - title: Device Profiles
+      path: /docs/paas/user-guide/device-profiles/
+      new: true
+    - title: Attributes
+      path: /docs/paas/user-guide/attributes/
+    - title: Time-series data
+      path: /docs/paas/user-guide/telemetry/
+    - title: Alarms
+      path: /docs/paas/user-guide/alarms/
+    - title: Remote commands to devices
+      path: /docs/paas/user-guide/rpc/
+- title: Dashboards
+  section:
+    - title: Overview
+      path: /docs/paas/user-guide/dashboards/
+    - title: Aliases
+      path: /docs/paas/user-guide/ui/aliases/
+    - title: Widget Actions
+      path: /docs/paas/user-guide/ui/widget-actions/
+    - title: Widgets Library
+      path: /docs/paas/user-guide/ui/widget-library/
+    - title: Widgets development
+      path: /docs/paas/user-guide/contribution/widgets-development/
+- title: Rule engine
+  section:
+    - title: Getting Started
+      path: /docs/paas/user-guide/rule-engine-2-0/re-getting-started/
+    - title: Overview
+      path: /docs/paas/user-guide/rule-engine-2-0/overview/
+    - title: Architecture
+      path: /docs/paas/user-guide/rule-engine-2-0/architecture/
+    - title: Nodes
+      section:
+        - title: Filter Nodes
+          path: /docs/paas/user-guide/rule-engine-2-0/filter-nodes/
+        - title: Enrichment Nodes
+          path: /docs/paas/user-guide/rule-engine-2-0/enrichment-nodes/
+        - title: Transformation Nodes
+          path: /docs/paas/user-guide/rule-engine-2-0/transformation-nodes/
+        - title: Action Nodes
+          path: /docs/paas/user-guide/rule-engine-2-0/action-nodes/
+        - title: External Nodes
+          path: /docs/paas/user-guide/rule-engine-2-0/external-nodes/
+        - title: Analytics Nodes
+          path: /docs/paas/user-guide/rule-engine-2-0/analytics-nodes/
+- title: White-labeling
+  section:
+    - title: Overview
+      path: /docs/paas/user-guide/white-labeling/
+    - title: Self-registration
+      path: /docs/paas/user-guide/self-registration/
+    - title: Custom Translations
+      path: /docs/paas/user-guide/custom-translation/
+    - title: Custom Menu
+      path: /docs/paas/user-guide/custom-menu/
+    - title: Domains
+      path: /products/paas/domains/
+- title: Integrations
+  section:
+    - title: Overview
+      path: /docs/paas/user-guide/integrations/
+    - title: Remote Integrations
+      path: /docs/paas/user-guide/integrations/remote-integrations/
+    - title: HTTP
+      path: /docs/paas/user-guide/integrations/http/
+    - title: MQTT
+      path: /docs/paas/user-guide/integrations/mqtt/
+    - title: OPC-UA
+      path: /docs/paas/user-guide/integrations/opc-ua/
+    - title: Actility ThingPark
+      path: /docs/paas/user-guide/integrations/thingpark/
+    - title: TheThingsNetwork
+      path: /docs/paas/user-guide/integrations/ttn/
+    - title: TheThingsIndustries
+      path: /docs/paas/user-guide/integrations/tti/
+    - title: LORIOT
+      path: /docs/paas/user-guide/integrations/loriot/
+    - title: AWS IoT
+      path: /docs/paas/user-guide/integrations/aws-iot/
+    - title: AWS Kinesis
+      path: /docs/paas/user-guide/integrations/aws-kinesis/
+    - title: IBM Watson
+      path: /docs/paas/user-guide/integrations/ibm-watson-iot/
+    - title: Azure Event Hub
+      path: /docs/paas/user-guide/integrations/azure-event-hub/
+    - title: Azure IoT Hub
+      path: /docs/paas/user-guide/integrations/azure-iot-hub/
+    - title: TCP
+      path: /docs/paas/user-guide/integrations/tcp/
+    - title: UDP
+      path: /docs/paas/user-guide/integrations/udp/
+    - title: SigFox
+      path: /docs/paas/user-guide/integrations/sigfox/
+    - title: Ocean Connect
+      path: /docs/paas/user-guide/integrations/ocean-connect/
+    - title: Custom Integration development guide
+      path: /docs/paas/user-guide/integrations/custom/
+    - title: Notifications and Alarms on your smartphone using Telegram Bot
+      path: /docs/paas/user-guide/rule-engine-2-0/tutorials/integration-with-telegram-bot/
+- title: Analytics
+  section:
+    - title: Trendz Analytics
+      path: /docs/trendz/
+    - title: Kafka Streams
+      path: /docs/paas/samples/analytics/kafka-streams/
+- title: Other Features
+  section:
+    - title: Device Connectivity Status
+      path: /docs/paas/user-guide/device-connectivity-status/
+    - title: Claiming Devices
+      path: /docs/paas/user-guide/claiming-devices/
+    - title: Device provisioning
+      path: /docs/paas/user-guide/device-provisioning/
+    - title: Entity Views
+      path: /docs/paas/user-guide/entity-views/
+    - title: API Limits
+      path: /docs/paas/user-guide/api-limits/
+    - title: Bulk Provisioning
+      path: /docs/paas/user-guide/bulk-provisioning/
+    - title: Entity Groups
+      path: /docs/paas/user-guide/groups/
+    - title: Scheduler
+      path: /docs/paas/user-guide/scheduler/
+    - title: Reporting
+      path: /docs/paas/user-guide/reporting/
+    - title: CSV/XLS data export
+      path: /docs/paas/user-guide/csv-xls-data-export/
+    - title: File Storage
+      path: /docs/paas/user-guide/file-storage/
+- title: Security
+  section:
+    - title: Audit Log
+      path: /docs/paas/user-guide/audit-log/
+    - title: Advanced RBAC for IoT
+      path: /docs/paas/user-guide/rbac/
+    - title: OAuth 2 Support
+      path: /docs/paas/user-guide/oauth-2-support/
+    - title: MQTT over SSL
+      path: /docs/paas/user-guide/mqtt-over-ssl/
+    - title: Device authentication options
+      path: /docs/paas/user-guide/device-credentials/
+    - title: Access Token based authentication
+      path: /docs/paas/user-guide/access-token/
+    - title: Basic MQTT Credentials
+      path: /docs/paas/user-guide/basic-mqtt/
+    - title: X.509 Certificate based authentication
+      path: /docs/paas/user-guide/certificates/
+- title: Administration UI
+  section:
+    - title: Tenants
+      path: /docs/paas/user-guide/ui/tenants/
+    - title: Customers
+      path: /docs/paas/user-guide/ui/customers/
+    - title: Users
+      path: /docs/paas/user-guide/ui/users/
+    - title: Assets
+      path: /docs/paas/user-guide/ui/assets/
+    - title: Devices
+      path: /docs/paas/user-guide/ui/devices/
+    - title: Rule Chains
+      path: /docs/paas/user-guide/ui/rule-chains/
+    - title: Dashboards
+      path: /docs/paas/user-guide/ui/dashboards/
+    - title: Widgets
+      section:
+        - title: Trip Animation Widget
+          path: /docs/paas/user-guide/ui/trip-animation-widget/
+        - title: Advanced Settings of the Entity Table widget
+          path: /docs/paas/user-guide/ui/entity-table-widget/
+        - title: Advanced data key configuration
+          path: /docs/paas/user-guide/ui/advanced-data-key-configuration/
+- title: Subscriptions
+  path: /products/paas/subscription/
+- title: Plan and billing
+  path: /products/paas/billing-info/

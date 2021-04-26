@@ -1,0 +1,16 @@
+{% assign productUrl = product.path %}
+{% if site.skipFindProductUrl != true %}
+    {% if product.docsPrefix and productInfo.docsPrefix %}
+        {% assign pageUrl = page.url %}
+        {% include find-product-page.html %}
+        {% if foundPage and foundPage.size == 1 %}
+            {% assign productUrl = foundPage[0].url %}
+        {% elsif page.redirect_from %}
+            {% assign pageUrl = page.redirect_from %}
+            {% include find-product-page.html %}
+            {% if foundPage and foundPage.size == 1 %}
+                {% assign productUrl = foundPage[0].url %}
+            {% endif %}
+        {% endif %}
+    {% endif %}
+{% endif %}

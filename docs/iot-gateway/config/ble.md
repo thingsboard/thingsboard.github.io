@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-gw
 title: BLE Connector Configuration
 description: BLE protocol support for ThingsBoard IoT Gateway
 
