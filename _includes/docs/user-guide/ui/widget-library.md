@@ -4,46 +4,42 @@
 ## Introduction
 
 All [IoT Dashboards](/docs/{{docsPrefix}}user-guide/dashboards/) are constructed using **ThingsBoard widgets** that are defined in Widget Library.
-Each widget provides end-user functions such as data visualization, remote device control, alarms management and displaying static custom html content.
+Each widget provides end-user functions, such as data visualization, remote device control, alarms management and displaying static custom HTML content.
 
 ## Widget Types
 
 According to the provided features, each widget definition represents specific widget type.
 At the moment there are five widget types:
 
- - [Latest values](#latest-values)
- - [Time-series](#time-series)
- - [RPC (Control widget)](#rpc-control-widget)
- - [Alarm widget](#alarm-widget)
- - [Static](#static)
+ - [Latest values;](#latest-values)
+ - [Time-series;](#time-series)
+ - [RPC (Control widget);](#rpc-control-widget)
+ - [Alarm widget;](#alarm-widget)
+ - [Static widget.](#static)
  
-Each widget type has own specific datasource configuration and corresponding widget API.
-Each widget requires datasource for data visualization. Types of the available datasource depend on widget type of the widget:
+Each widget type has its own specific data source configuration and the corresponding API widget.
+Each widget requires data sources to visualize data. Types of available data source depend on widget type of the widget:
 
- - Target device - this datasource type is used in RPC. Basically, you need to specify target device for RPC widget
- - Alarm source - this datasource type is used in Alarm widgets. This datasource requires source entity to display related alarms and corresponding alarm fields.
- - Entity - this datasource type is used in both time-series and latest values widgets. Basically, you need to specify target entity and timeseries key or attribute name.
- - Function - this datasource type is used in both time-series and latest values widgets for debug purposes. 
-   Basically, you are able to specify a javascript function that will emulate data from a device in order to tune visualization.
+ - Target device - this data source type is used in RPC. Basically, you need to specify the target device for the RPC widget;
+ - Alarm source - this data source type is used in Alarm widgets. This data source requires source entity to display related alarms and corresponding alarm fields;
+ - Entity - this datasource type is used in both time-series and latest values widgets. Basically, you need to specify the target entity and the time series key, or the attribute name;
+ - Function - this data source type is used in both time series and latest values widgets for debugging.
+   Basically, you can specify a javascript function that will simulate data from a device in order to set up visualization.
 
 ### Latest values
 
-Displays latest values of particular entity attribute or timeseries data point (for ex. any Gauge Widget or Entities Table widget).
-This kind of widgets uses values of entity attribute(s) or timeseries as datasource.   
+_Latest values_ widget type displays the latest values of a specific entity attribute or time series data point (for example, any Gauge Widget or Entities Table widget).
+This kind of widgets uses values of entity attribute(s) or time series as a data source.   
  
-![image](/images/user-guide/ui/widgets/latest-values-datasource.png)
+{% include images-gallery.html imageCollection="wl-latest-values-datasource-pe" showListImageTitles="true" preview="false" %}
 
-Below is an example of latest values widget - Digital Gauge displaying current power value. 
+### Time series
 
-![image](/images/user-guide/ui/widgets/latest-values-widget-example.png)
-
-### Time-series
-
-Displays historical values for the selected time period or latest values in the certain time window (for ex. "Timeseries - Flot" or "Timeseries table").
-This kind of widgets uses only values of entity timeseries as datasource.
-In order to specify the time frame of displayed values, **Timewindow** settings are used.
-Timewindow can be specified on the dashboard level or on the widget level. It can be either realtime - dynamically changed time frame for some latest interval, or history - fixed historical time frame.
-All these settings are part of **Time-series** widget configuration.          
+_Time series_ widget type displays historical values for the selected period of time, or the latest values in the certain time window (for example, "Time-series Line Chart" or "Time-series Bar Chart").
+This kind of widgets uses only the values of entity time series as a data source.
+In order to specify the time frame of displayed values, _Timewindow_ settings are used.
+The time window can be specified on the dashboard page or in the widget details. It can be either _realtime_ - dynamically changed time frame for a certain latest interval, or _history_ - fixed historical time frame.
+All these settings are part of Time series widget configuration.          
  
 ![image](/images/user-guide/ui/widgets/time-series-datasource.png)
 
@@ -53,99 +49,120 @@ Below is an example of time series widget - "Timeseries - Flot" displaying amper
 
 ### RPC (Control widget)
 
-Allows to send RPC commands to devices and handles/visualize reply from the device (for ex. "Raspberry Pi GPIO Control").
-RPC widgets are configured by specifying target device as target endpoint for RPC commands.
+Control widget allows sending RPC commands to devices and handles/visualize reply from the device (for example, "Raspberry Pi GPIO Control").
+RPC widgets are configured by specifying the target device as the target endpoint for RPC commands.
 
-![image](/images/user-guide/ui/widgets/rpc-datasource.png)
-
-Below is an example of RPC widget - "Basic GPIO Control" - sending GPIO switch commands and detecting current GPIOs switch status.
-
-![image](/images/user-guide/ui/widgets/rpc-widget-example.png)
+{% include images-gallery.html imageCollection="wl-control-widget-pe" showListImageTitles="true" preview="false" %}
 
 ### Alarm Widget
 
-Display alarms related to the specified entity in the certain time window (for ex. "Alarms table").
-Alarm widgets are configured by specifying entity as alarms source and corresponding alarm fields.
-Like **Time-series widgets** alarm widgets have the timewindow configuration in order to specify the time frame of displayed alarms.
-Additionally configuration contains "Alarm status" and "Alarms polling interval" parameters.
-"Alarm status" parameter specifies the status of alarms being fetched. "Alarms polling interval" controls alarms fetching frequency in seconds. 
+_Alarm Widget_ type displays alarms related to the specified entity in the certain time window (for example, "Alarms table").
+Alarm widget is configured by specifying an entity as the alarm source, and the corresponding alarm fields.
+As the _Time series widgets_, Alarm widgets have the _timewindow_ configuration to specify the time frame of the displayed alarms.  
+In addition, the configuration contains "Alarm status", "Alarms severity" and "Alarm type" parameters.
+"Alarm status" parameter specifies the status of alarms being fetched. "Alarms severity" controls alarms fetching frequency in seconds. 
+"Alarm type" allows selecting existing alarm type lists or creating new ones to  
 
-![image](/images/user-guide/ui/widgets/alarm-datasource.png) 
-
-Below is an example of Alarm widget - "Alarms table" displaying latest alarms for the asset in real-time. 
-
-![image](/images/user-guide/ui/widgets/alarm-widget-example.png)
+{% include images-gallery.html imageCollection="wl-alarms-pe" showListImageTitles="true" preview="false" %}
 
 ### Static
 
-Displays static customizable html content (for ex. "HTML card").
-Static widgets don't use any datasources and usually configured by specifying static html content and optionally css styles.
+_Static_ widget type displays static customizable HTML content (for example, "HTML card").
+Static widgets don't use any data sources and usually configured by specifying static HTML content and optionally CSS styles.
 
-![image](/images/user-guide/ui/widgets/static-html.png)
+{% include images-gallery.html imageCollection="wl-static-pe" showListImageTitles="true" preview="false" %}
 
-Below is an example of a Static widget - "HTML card" displaying specified html content. 
+<details>
 
-![image](/images/user-guide/ui/widgets/static-widget-example.png) 
+<summary>
+<b>An example of a CSS style function to adjust an HTML card style.</b>
+</summary>
+
+{% highlight ruby %}
+.card {
+font-weight: bold;
+font-size: 32px;
+color: #999;
+width: 100%;
+height: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+{% endhighlight %}
+
+</details>
+
+<details>
+
+<summary>
+<b>An example of an HTML code for specifying card content.</b>
+</summary>
+
+{% highlight ruby %}
+<h1>Static widget title</h1>
+<div class='card'>Your text here</div>
+{% endhighlight %}
+
+</details>
  
 ## Widgets Library (Bundles)
 
-Widget definitions are grouped into widget bundles according to their purpose. There are System level and Tenant level **Widgets Bundles**.
-Initial ThingsBoard installation is shipped with the basic set of system level **Widgets Bundles**.
-There are more than thirty widgets in seven widget bundles available out-of-the-box.
+Widgets are grouped into widget bundles according to their purpose. There are System-level and Tenant-level Widgets bundles.
+Initial ThingsBoard installation comes with a basic set of system-level Widgets bundles.  
 System level bundles can be managed by a **System administrator** and are available for use by any tenant in the system.
-Tenant level bundles can be managed by a **Tenant administrator** and are available for use only by this tenant and its customers. 
+Tenant level bundles can be managed by a **Tenant administrator** and are available for use only by this tenant and his customers. 
 You can always implement and add your widgets by following this [guide](/docs/{{docsPrefix}}user-guide/contribution/widgets-development/).
- 
-![image](/images/user-guide/ui/widget-bundles.png)
- 
-### Digital Gauges
- 
-Useful for visualization of temperature, humidity, speed and other integer or float values.
 
-![image](/images/user-guide/ui/digital-gauges.png)
+{% include images-gallery.html imageCollection="wl" preview="false" %}
+
+### Alarm widgets
+
+Alarm widgets are useful for visualization of alarms for specific entities both in real-time and history mode.
+
+{% include images-gallery.html imageCollection="wl-alarm-bundle-pe" preview="false" %}
 
 ### Analog Gauges
- 
-Similar to digital gauges, but have a different style. 
 
-![image](/images/user-guide/ui/analog-gauges.png)
+Analog Gauges is useful for visualization of temperature, humidity, speed and other integer or float values.
 
+{% include images-gallery.html imageCollection="wl-analog-gauges-bundle-pe" preview="false" %}
+
+### Cards
+
+Cards are useful for visualization of time series data or attributes in a table or card widgets.
+
+{% include images-gallery.html imageCollection="wl-cards-bundle-pe" preview="false" %}
 
 ### Charts
- 
-Useful for visualization of historical or real-time data with a time window.
 
-![image](/images/user-guide/ui/charts.png)
+Charts are useful for visualization of historical or real-time data with a time window.
 
-### GPIO widgets
- 
-Useful for visualization and control of GPIO state for target devices.
-
-![image](/images/user-guide/ui/gpio-widgets.png)
+{% include images-gallery.html imageCollection="wl-charts-bundle-pe" preview="false" %}
 
 ### Control widgets
- 
-Useful for visualization of current state and sending RPC commands to target devices.
 
-![image](/images/user-guide/ui/control-widgets.png)
+Control widgets are useful for visualization of current state and sending RPC commands to target devices.
+
+{% include images-gallery.html imageCollection="wl-control-bundle-pe" preview="false" %}
+
+### Digital Gauges
+
+Digital Gauges are useful for visualization of temperature, humidity, speed and other integer or float values.
+
+{% include images-gallery.html imageCollection="wl-digital-bundle-pe" preview="false" %}
+
+### GPIO widgets
+
+GPIO widgets are useful for visualization and control of GPIO state for target devices.
+
+{% include images-gallery.html imageCollection="wl-gpio-pe" preview="false" %}
 
 ### Maps widgets
  
 Useful for visualization of devices geo locations and tracking devices routes both in real-time and history mode.
 
 ![image](/images/user-guide/ui/maps-widgets.png)
-
-### Cards
- 
-Useful for visualization of timeseries data or attributes in a table or card widget.
-
-![image](/images/user-guide/ui/cards.png)
-
-### Alarm widgets
-
-Useful for visualization of alarms for specific entities both in real-time and history mode.
-
-![image](/images/user-guide/ui/alarm-widgets.png)
 
 ### Gateway widgets
 
