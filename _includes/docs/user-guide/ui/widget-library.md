@@ -31,28 +31,24 @@ Each widget requires data sources to visualize data. Types of available data sou
 _Latest values_ widget type displays the latest values of a specific entity attribute or time series data point (for example, any Gauge Widget or Entities Table widget).
 This kind of widgets uses values of entity attribute(s) or time series as a data source.   
  
-{% include images-gallery.html imageCollection="wl-latest-values-datasource-pe" showListImageTitles="true" preview="false" %}
+{% include images-gallery.html imageCollection="wl-latest-values-datasource" showListImageTitles="true" preview="false" %}
 
 ### Time series
 
-_Time series_ widget type displays historical values for the selected period of time, or the latest values in the certain time window (for example, "Time-series Line Chart" or "Time-series Bar Chart").
+_Time series_ widget type displays historical values for the selected period of time, or the latest values in the certain time window (for example, "Timeseries Line Chart" or "Timeseries Bar Chart").
 This kind of widgets uses only the values of entity time series as a data source.
 In order to specify the time frame of displayed values, _Timewindow_ settings are used.
 The time window can be specified on the dashboard page or in the widget details. It can be either _realtime_ - dynamically changed time frame for a certain latest interval, or _history_ - fixed historical time frame.
 All these settings are part of Time series widget configuration.          
- 
-![image](/images/user-guide/ui/widgets/time-series-datasource.png)
 
-Below is an example of time series widget - "Timeseries - Flot" displaying amperage values of three devices in real-time. 
-
-![image](/images/user-guide/ui/widgets/time-series-widget-example.png)
+{% include images-gallery.html imageCollection="wl-timeseries" showListImageTitles="true" preview="false" %}
 
 ### RPC (Control widget)
 
 Control widget allows sending RPC commands to devices and handles/visualize reply from the device (for example, "Raspberry Pi GPIO Control").
 RPC widgets are configured by specifying the target device as the target endpoint for RPC commands.
 
-{% include images-gallery.html imageCollection="wl-control-widget-pe" showListImageTitles="true" preview="false" %}
+{% include images-gallery.html imageCollection="wl-control-widget" showListImageTitles="true" preview="false" %}
 
 ### Alarm Widget
 
@@ -63,14 +59,14 @@ In addition, the configuration contains "Alarm status", "Alarms severity" and "A
 "Alarm status" parameter specifies the status of alarms being fetched. "Alarms severity" controls alarms fetching frequency in seconds. 
 "Alarm type" allows selecting existing alarm type lists or creating new ones to  
 
-{% include images-gallery.html imageCollection="wl-alarms-pe" showListImageTitles="true" preview="false" %}
+{% include images-gallery.html imageCollection="wl-alarms" showListImageTitles="true" preview="false" %}
 
 ### Static
 
 _Static_ widget type displays static customizable HTML content (for example, "HTML card").
 Static widgets don't use any data sources and usually configured by specifying static HTML content and optionally CSS styles.
 
-{% include images-gallery.html imageCollection="wl-static-pe" showListImageTitles="true" preview="false" %}
+{% include images-gallery.html imageCollection="wl-static" showListImageTitles="true" preview="false" %}
 
 <details>
 
@@ -120,61 +116,61 @@ You can always implement and add your widgets by following this [guide](/docs/{{
 
 Alarm widgets are useful for visualization alarms for specific entities, both in real-time and history modes.
 
-{% include images-gallery.html imageCollection="wl-alarm-bundle-pe" preview="false" %}
+{% include images-gallery.html imageCollection="wl-alarm-bundle" preview="false" %}
 
 ### Analog Gauges
 
 Analog Gauges is useful for visualization temperature, humidity, speed, and other integer or float values.
 
-{% include images-gallery.html imageCollection="wl-analog-gauges-bundle-pe" preview="false" %}
+{% include images-gallery.html imageCollection="wl-analog-gauges-bundle" preview="false" %}
 
 ### Cards
 
 Cards are useful for visualization time series data or attributes in table or card widgets.
 
-{% include images-gallery.html imageCollection="wl-cards-bundle-pe" preview="false" %}
+{% include images-gallery.html imageCollection="wl-cards-bundle" preview="false" %}
 
 ### Charts
 
 Charts are useful for visualization historical or real-time data with a time window.
 
-{% include images-gallery.html imageCollection="wl-charts-bundle-pe" preview="false" %}
+{% include images-gallery.html imageCollection="wl-charts-bundle" preview="false" %}
 
 ### Control widgets
 
 Control widgets are useful for visualization the current state and sending RPC commands to target devices.
 
-{% include images-gallery.html imageCollection="wl-control-bundle-pe" preview="false" %}
+{% include images-gallery.html imageCollection="wl-control-bundle" preview="false" %}
 
 ### Digital Gauges
 
 Digital Gauges are useful for visualization temperature, humidity, speed and other integer or float values.
 
-{% include images-gallery.html imageCollection="wl-digital-bundle-pe" preview="false" %}
+{% include images-gallery.html imageCollection="wl-digital-bundle" preview="false" %}
 
 ### Gateway widgets
 
 Gateway widgets are useful for managing extensions.
 
-{% include images-gallery.html imageCollection="wl-gateway-bundle-pe" preview="false" %}
+{% include images-gallery.html imageCollection="wl-gateway-bundle" preview="false" %}
 
 ### GPIO widgets
 
 GPIO widgets are useful for visualization and controlling GPIO state for target devices.
 
-{% include images-gallery.html imageCollection="wl-gpio-pe" preview="false" %}
+{% include images-gallery.html imageCollection="wl-gpio" preview="false" %}
 
 ### Maps widgets
 
 Map widgets are useful for visualizing the geographic location of devices and tracking device routes in both real-time and history modes.
 
-{% include images-gallery.html imageCollection="wl-maps-bundle-pe" preview="false" %}
+{% include images-gallery.html imageCollection="wl-maps-bundle" preview="false" %}
 
 ### Input widgets
 
 Input widgets are useful for modifying the attributes of an entity.
 
-{% include images-gallery.html imageCollection="wl-input-bundle-pe" preview="false" %}
+{% include images-gallery.html imageCollection="wl-input-bundle" preview="false" %}
 
 ## Widgets Bundles export/import
 
@@ -184,13 +180,13 @@ You can export a widgets bundle in JSON format, and import it in the same or dif
 
 In order to export widgets bundle, you should:
 
-{% include images-gallery.html imageCollection="wl-export-pe" showListImageTitles="true" preview="false" %}
+{% include images-gallery.html imageCollection="wl-export" showListImageTitles="true" preview="false" %}
 
 #### Widgets Bundle import
 
 Similar, to export the widgets bundle, you should: 
 
-{% include images-gallery.html imageCollection="wl-import-pe" showListImageTitles="true" preview="false" %}
+{% include images-gallery.html imageCollection="wl-import" showListImageTitles="true" preview="false" %}
 
 ## Widget Types export/import
 
@@ -200,13 +196,14 @@ You can export a specific type of widget from a widget bundle in JSON format, an
 
 In order to export a widget type, you should: 
 
-{% include images-gallery.html imageCollection="wl-export-widget-pe" showListImageTitles="true" preview="false" %}
+{% include images-gallery.html imageCollection="wl-export-widget" showListImageTitles="true" preview="false" %}
 
 #### Widget Type import
 
 Please note that only system administrators can modify system (default) widget bundles. This means that only them can delete default widget bundle, edit and delete widgets inside the bundle, 
-add or import new widgets into the bundle. 
+add or import new widgets into the bundle. By creating a new widget bundle at the system administrator level, it will be displayed in the accounts of his tenants as a system one, and they will not be able to delete or edit it.  
+Nevertheless, tenants can add their own widgets bundles. In that case, they have full rights to manage created widget types. 
 
 Likewise, to import a widget type, you should: 
 
-{% include images-gallery.html imageCollection="wl-import-widget-pe" showListImageTitles="true" preview="false" %}
+{% include images-gallery.html imageCollection="wl-import-widget" showListImageTitles="true" preview="false" %}
