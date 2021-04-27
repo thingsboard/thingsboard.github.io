@@ -10,7 +10,6 @@ hidetoc: "true"
 
 ## Introduction
 
-{% include templates/what-is-thingsboard.md %}
 
 [Magicbit](https://www.magicbit.cc) which is an innovation platform designed to learn and practice new technologies such as the Internet of Things(IoT). It’s a hardware, software and mobile app integrated environment.  Magicbit provides an easy to learn, feature rich and cost effective solution to all innovators, learners and students. Since the Magicbit hardware has ESP 32 based design, it supports integration to Cloud IoT platforms with a wide range of programming options for innovators.
 
@@ -18,7 +17,7 @@ This sample application will allow you to display humidity/temperature data from
 
 Once you complete this sample/tutorial, you will see your sensor data on the following dashboard.
 
- ![image](/images/DashboardTemp_NEW.jpeg)
+ ![image](/images/samples/magicbit/DashboardTemp_NEW.jpeg)
 
 ## List of hardware
 
@@ -52,7 +51,7 @@ If you loaded the demo data during TB installation, the next credentials can be 
 
 After Signing in On the Left Side Bar you will see Devices. Click devices and add a new device.
 
-![image](/images/Addnewdevice_NEW.jfif)
+![image](/images/samples/magicbit/Addnewdevice_NEW.jfif)
 
 Once device created, open its details and click "Manage credentials".
 
@@ -65,13 +64,13 @@ Set device to magicbit in alias. Go to the dashboard tab and import dashboard.
 Download the dashboard file using this [**link**](/docs/samples/magicbit/magicbit__temperature___humidity_demo_dashboard.json).
 Use import/export [**instructions**](/docs/user-guide/ui/dashboards/#dashboard-importexport) to import the dashboard to your ThingsBoard instance.
 
-![image](/images/importdashboard_NEW.jpeg)
+![image](/images/samples/magicbit/importdashboard_NEW.jpeg)
 
-![image](/images/setofDashboards_NEW.jpeg)
+![image](/images/samples/magicbit/setofDashboards_NEW.jpeg)
 
-![image](/images/Editaliases_NEW.jpeg)
+![image](/images/samples/magicbit/Editaliases_NEW.jpeg)
 
-![image](/images/Entityaliases_NEW.jpeg)
+![image](/images/samples/magicbit/Entityaliases_NEW.jpeg)
 
 ## Creating Magicbit firmware
 
@@ -95,17 +94,17 @@ The Magicbit support must be added to Arduino IDE before any program can be buil
 
    into **Additional Boards Manager URL** field, as shown below:
 
-   ![image](/images/Preferences_NEW.jpeg)
+   ![image](/images/samples/magicbit/Preferences_NEW.jpeg)
 
 1. Select **Tools -> Board... -> Board manager** menu.
 
 1. Enter **Magicbit** in the search field. Click **Install**
 
-   ![image](/images/ard_1NEW.jpeg)
+   ![image](/images/samples/magicbit/ard_1NEW.jpeg)
    
 1. Select **Magicbit** as the board when uploading.
 
-   ![image](/images/ard_2NEW.jpeg)
+   ![image](/images/samples/magicbit/ard_2NEW.jpeg)
 
 ### Install Arduino ThingsBoard SDK
 
@@ -125,17 +124,6 @@ To simplify application development, install the ThingsBoard Arduino SDK and its
 
 From now on, you can use ThingsBoard SDK right from Arduino IDE.
 
-### Install ESP32 DHT11 driver
-
-DHT11 sensor, connected to the ESP32 requires a special driver. To install it, proceed as follows:
-
-1. Click on "Sketch" menu. Open "Include Library..." submenu. Select "Manage Libraries".
-
-1. Type "ESP DHT11" in the search field.
-
-1. Click install on "DHT11 Sensor Library for ESPx", as shown below:
-
-   ![image](/images/dht11.JPG)
 
 ### Connect **Magicbit** to PC
 
@@ -179,7 +167,7 @@ See **[live-demo](/docs/user-guide/live-demo/)** page for more details how to ge
 Go to **"Devices"** section and locate **"Magicbit"**, open device details and switch to **"Latest telemetry"** tab.
 If all is configured correctly you should be able to see latest values of *"temperature"* and *"humidity"* in the graph.
 
-![image](/images/DashboardAfter_NEW.jpeg)
+![image](/images/samples/magicbit/DashboardAfter_NEW.jpeg)
 
 After, open **"Dashboards"** section then locate and open **"magicbit_temperature_humidity_demo_dashboard"**.
 As a result, you will see a time-series chart displaying temperature and humidity level (similar to dashboard image in the introduction).
@@ -193,11 +181,3 @@ Browse other [samples](/docs/samples) or explore guides related to main ThingsBo
  - [Using RPC capabilities](/docs/user-guide/rpc/) - how to send commands to/from devices.
  - [Rule Engine](/docs/user-guide/rule-engine/) - how to use rule engine to analyze data from devices.
  - [Data Visualization](/docs/user-guide/visualization/) - how to visualize collected data.
-
-{% include templates/feedback.md %}
-
-{% include socials.html %}
-
-## Next steps
-
-{% assign currentGuide = "HardwareSamples" %}{% include templates/guides-banner.md %}
