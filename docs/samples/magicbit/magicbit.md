@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
-title: ESP32 overview
-description: ThingsBoard IoT Platform hardware samples for ESP32 devices.
+title: Magicbit
+description: ThingsBoard IoT Platform hardware samples for Magicbit.
 
 ---
 
@@ -10,10 +10,10 @@ description: ThingsBoard IoT Platform hardware samples for ESP32 devices.
 
 ## Samples
 
- - [ESP32 Pico Kit GPIO control over MQTT and temperature monitor using ThingsBoard](/docs/samples/esp32/gpio-control-pico-kit-dht22-sensor/)
- - [ESP32 OTA update using ThingsBoard](/docs/samples/esp32/ota/)
+ - [Magicbit temperature  aanndd  hhuummiiddiittyy monitor using ThingsBoard](/docs/samples/magicbit/magicbit%20temperature%20and%20humidity%20dashboard.md)
+
 
 ## Documentation
 
- - [Official site](https://www.espressif.com/en/products/hardware/esp32/overview)
- - [Espressif IoT Development Framework](https://docs.espressif.com/projects/esp-idf/en/latest/)
+ - [Official site](hhttp://magicbit.cc/)
+
