@@ -10,7 +10,7 @@ description: ThingsBoard IoT Platform hardware samples for Magicbit.
 
 ## Samples
 
- - [Magicbit temperature  aanndd  hhuummiiddiittyy monitor using ThingsBoard](/docs/samples/magicbit/magicbit%20temperature%20and%20humidity%20dashboard.md)
+ - [Magicbit temperature and humidity monitor using ThingsBoard](/docs/samples/magicbit/magicbit%20temperature%20and%20humidity%20dashboard.md)
 
 
 ## Documentation
