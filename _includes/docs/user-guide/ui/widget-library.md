@@ -118,100 +118,95 @@ You can always implement and add your widgets by following this [guide](/docs/{{
 
 ### Alarm widgets
 
-Alarm widgets are useful for visualization of alarms for specific entities both in real-time and history mode.
+Alarm widgets are useful for visualization alarms for specific entities, both in real-time and history modes.
 
 {% include images-gallery.html imageCollection="wl-alarm-bundle-pe" preview="false" %}
 
 ### Analog Gauges
 
-Analog Gauges is useful for visualization of temperature, humidity, speed and other integer or float values.
+Analog Gauges is useful for visualization temperature, humidity, speed, and other integer or float values.
 
 {% include images-gallery.html imageCollection="wl-analog-gauges-bundle-pe" preview="false" %}
 
 ### Cards
 
-Cards are useful for visualization of time series data or attributes in a table or card widgets.
+Cards are useful for visualization time series data or attributes in table or card widgets.
 
 {% include images-gallery.html imageCollection="wl-cards-bundle-pe" preview="false" %}
 
 ### Charts
 
-Charts are useful for visualization of historical or real-time data with a time window.
+Charts are useful for visualization historical or real-time data with a time window.
 
 {% include images-gallery.html imageCollection="wl-charts-bundle-pe" preview="false" %}
 
 ### Control widgets
 
-Control widgets are useful for visualization of current state and sending RPC commands to target devices.
+Control widgets are useful for visualization the current state and sending RPC commands to target devices.
 
 {% include images-gallery.html imageCollection="wl-control-bundle-pe" preview="false" %}
 
 ### Digital Gauges
 
-Digital Gauges are useful for visualization of temperature, humidity, speed and other integer or float values.
+Digital Gauges are useful for visualization temperature, humidity, speed and other integer or float values.
 
 {% include images-gallery.html imageCollection="wl-digital-bundle-pe" preview="false" %}
 
+### Gateway widgets
+
+Gateway widgets are useful for managing extensions.
+
+{% include images-gallery.html imageCollection="wl-gateway-bundle-pe" preview="false" %}
+
 ### GPIO widgets
 
-GPIO widgets are useful for visualization and control of GPIO state for target devices.
+GPIO widgets are useful for visualization and controlling GPIO state for target devices.
 
 {% include images-gallery.html imageCollection="wl-gpio-pe" preview="false" %}
 
 ### Maps widgets
- 
-Useful for visualization of devices geo locations and tracking devices routes both in real-time and history mode.
 
-![image](/images/user-guide/ui/maps-widgets.png)
+Map widgets are useful for visualizing the geographic location of devices and tracking device routes in both real-time and history modes.
 
-### Gateway widgets
-
-Useful for managing extensions.
-
-![image](/images/user-guide/ui/gateway-widgets.png)
+{% include images-gallery.html imageCollection="wl-maps-bundle-pe" preview="false" %}
 
 ### Input widgets
 
-Useful for changing entity attributes.
+Input widgets are useful for modifying the attributes of an entity.
 
-![image](/images/user-guide/ui/input-widgets.png)
+{% include images-gallery.html imageCollection="wl-input-bundle-pe" preview="false" %}
 
-## Widgets Bundles import/export
+## Widgets Bundles export/import
 
 #### Widgets Bundle export
 
-You are able to export widgets bundle to JSON format and import it to the same or another ThingsBoard instance.
+You can export a widgets bundle in JSON format, and import it in the same or different ThingsBoard format.
 
-In order to export widgets bundle, you should navigate to the **Widgets Library** page and click on the export button located on the particular widgets bundle row.
- 
-![image](/images/user-guide/ui/export-widgets-bundle.png)
+In order to export widgets bundle, you should:
+
+{% include images-gallery.html imageCollection="wl-export-pe" showListImageTitles="true" preview="false" %}
 
 #### Widgets Bundle import
 
-Similar, to import the widgets bundle you should navigate to the **Widgets Library** page and click on the "+" button in the top-right corner of the **Widgets Bundles** table and then choose "Import widgets bundle" option. 
+Similar, to export the widgets bundle, you should: 
 
-![image](/images/user-guide/ui/import-widgets-bundle.png)
+{% include images-gallery.html imageCollection="wl-import-pe" showListImageTitles="true" preview="false" %}
 
-The widgets bundle import window should a popup and you will be prompted to upload the json file.
+## Widget Types export/import
 
-![image](/images/user-guide/ui/import-widgets-bundle-window.png)
-
-## Widgets Types import/export
+You can export a specific type of widget from a widget bundle in JSON format, and import it in the same or different ThingsBoard format.
 
 #### Widget Type export
 
-You are able to export particular widget type from widgets bundle to JSON format and import it to the same or another ThingsBoard instance.
+In order to export a widget type, you should: 
 
-In order to export widget type, you should navigate to the **Widgets Library** page, then open desired widgets bundle and finally click on the export button located on the particular widget type card.
- 
-![image](/images/user-guide/ui/export-widget-type.png)
+{% include images-gallery.html imageCollection="wl-export-widget-pe" showListImageTitles="true" preview="false" %}
 
 #### Widget Type import
 
-Similar, to import the widget type you should navigate to the **Widgets Library** page, then open your widgets bundle and click on the big "+" button in the bottom-right part of the screen and then click on the import button. 
+Please note that only system administrators can modify system (default) widget bundles. This means that only them can delete default widget bundle, edit and delete widgets inside the bundle, 
+add or import new widgets into the bundle. 
 
-![image](/images/user-guide/ui/import-widget-type.png)
+Likewise, to import a widget type, you should: 
 
-The widget type import window will show a popup and you will be prompted to upload the json file.
-
-![image](/images/user-guide/ui/import-widget-type-window.png)
+{% include images-gallery.html imageCollection="wl-import-widget-pe" showListImageTitles="true" preview="false" %}

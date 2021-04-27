@@ -77,6 +77,51 @@ wl-gpio-pe:
         image: /images/user-guide/ui/widgets/widget-library/wl-gpio-pe.png
         title: 'For visualization and control of GPIO state for target devices.'
 
+wl-maps-bundle-pe:
+    0:
+        image: /images/user-guide/ui/widgets/widget-library/wl-maps-bundle-pe.png
+        title: 'For visualization of devices geo locations and tracking devices routes both in real-time and history mode.'
+
+wl-gateway-bundle-pe:
+    0:
+        image: /images/user-guide/ui/widgets/widget-library/wl-gateway-bundle-pe.png
+        title: 'For managing extensions.'
+
+wl-input-bundle-pe:
+    0:
+        image: /images/user-guide/ui/widgets/widget-library/wl-input-bundle-pe.png
+        title: 'For changing entity attributes.'
+
+wl-export-pe:
+    0:
+        image: /images/user-guide/ui/widgets/widget-library/wl-export-pe.png
+        title: 'Go to the Widgets Library page and click the export button on the specific widgets bundle row.'
+
+wl-import-pe:
+    0:
+        image: /images/user-guide/ui/widgets/widget-library/wl-import-pe.png
+        title: 'Go to the Widgets Library page, click the "+" button in the upper right corner of the "Widgets Bundles" page. Select "Import widgets bundle" from the drop-down menu.'
+    1:
+        image: /images/user-guide/ui/widgets/widget-library/wl-import-1-pe.png
+        title: 'The widgets bundle import window should a popup, and you will be prompted to upload the JSON file. Drag and drop a file from your computer, and click "Import" to add a widget bundle to the library.'
+
+wl-export-widget-pe:
+    0:
+        image: /images/user-guide/ui/widgets/widget-library/wl-export-widget-pe.png
+        title: 'Go to the Widgets Library page, then open the desired widgets bundle and click the export button on the particular widget type card.'
+
+wl-import-widget-pe:
+    0:
+        image: /images/user-guide/ui/widgets/widget-library/wl-import-widget-pe.png
+        title: 'Go to the Widgets Library page, open the widgets bundle and click the “+” button in the lower right corner of the screen.'
+    1:
+        image: /images/user-guide/ui/widgets/widget-library/wl-import-widget-1-pe.png
+        title: 'Click the import button.'
+    2:
+        image: /images/user-guide/ui/widgets/widget-library/wl-import-widget-2-pe.png
+        title: 'A popup will appear in the import widget type window, and you will be prompted to load the JSON file. 
+                Drag and drop a file from your computer and click "Import" to add a widget type to the bundle.'
+
 ---
 
 {% assign docsPrefix = "pe/" %}
