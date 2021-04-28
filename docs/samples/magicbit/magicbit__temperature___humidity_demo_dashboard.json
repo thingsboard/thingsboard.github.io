@@ -1,0 +1,746 @@
+{
+  "title": "Magicbit: Temperature & Humidity Demo Dashboard",
+  "configuration": {
+    "description": "Demo dashboard for sample applications that upload temperature and humidity received from DHT22 sensor",
+    "widgets": {
+      "d0984108-f385-0d45-8fd4-0d66ff7fa868": {
+        "isSystemType": true,
+        "bundleAlias": "digital_gauges",
+        "typeAlias": "digital_thermometer",
+        "type": "latest",
+        "title": "Digital thermometer",
+        "sizeX": 4,
+        "sizeY": 5,
+        "row": 0,
+        "col": 0,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "dataKeys": [
+                {
+                  "name": "temperature",
+                  "type": "timeseries",
+                  "label": "temperature",
+                  "color": "#ff6f00",
+                  "settings": {},
+                  "_hash": 0.12513745304517898
+                }
+              ],
+              "name": "ESP8266 Demo Device",
+              "entityAliasId": "c1aaffce-650e-da65-7b65-d3db06c6843a"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#000000",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "0px",
+          "settings": {
+            "maxValue": 125,
+            "donutStartAngle": 90,
+            "showValue": true,
+            "showMinMax": true,
+            "gaugeWidthScale": 0.75,
+            "levelColors": [
+              "#ff6f00",
+              "#ff6f00"
+            ],
+            "refreshAnimationType": "<>",
+            "refreshAnimationTime": 700,
+            "startAnimationType": "<>",
+            "startAnimationTime": 700,
+            "titleFont": {
+              "family": "RobotoDraft",
+              "size": 12,
+              "style": "normal",
+              "weight": "500"
+            },
+            "labelFont": {
+              "family": "RobotoDraft",
+              "size": 8,
+              "style": "normal",
+              "weight": "500"
+            },
+            "valueFont": {
+              "family": "Segment7Standard",
+              "style": "normal",
+              "weight": "500",
+              "size": 14
+            },
+            "minMaxFont": {
+              "family": "Segment7Standard",
+              "size": 8,
+              "style": "normal",
+              "weight": "500"
+            },
+            "dashThickness": 0.85,
+            "decimals": 1,
+            "gaugeColor": "#333333",
+            "neonGlowBrightness": 35,
+            "gaugeType": "verticalBar",
+            "minValue": -40,
+            "showUnitTitle": true,
+            "unitTitle": "Temperature °C",
+            "defaultColor": "#ff6f00"
+          },
+          "title": "Digital thermometer"
+        },
+        "id": "d0984108-f385-0d45-8fd4-0d66ff7fa868"
+      },
+      "abffd601-49f4-42e6-1826-73b3a3a60880": {
+        "isSystemType": true,
+        "bundleAlias": "charts",
+        "typeAlias": "basic_timeseries",
+        "type": "timeseries",
+        "title": "Timeseries - Chart.js",
+        "sizeX": 14,
+        "sizeY": 5,
+        "row": 0,
+        "col": 4,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "dataKeys": [
+                {
+                  "name": "temperature",
+                  "label": "Temperature, °C",
+                  "type": "timeseries",
+                  "color": "#ff6f00",
+                  "settings": {
+                    "showLines": true,
+                    "fillLines": false,
+                    "showPoints": false
+                  },
+                  "_hash": 0.7438679421517123
+                }
+              ],
+              "name": "ESP8266 Demo Device",
+              "entityAliasId": "c1aaffce-650e-da65-7b65-d3db06c6843a"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 120000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "shadowSize": 4,
+            "fontColor": "#545454",
+            "fontSize": 10,
+            "grid": {
+              "color": "#545454",
+              "tickColor": "#DDDDDD",
+              "outlineWidth": 1,
+              "verticalLines": true,
+              "horizontalLines": true
+            },
+            "xaxis": {
+              "showLabels": true
+            },
+            "yaxis": {
+              "showLabels": true
+            },
+            "timeForComparison": "previousInterval",
+            "xaxisSecond": {
+              "axisPosition": "top",
+              "showLabels": true
+            }
+          },
+          "title": "Temperature"
+        },
+        "id": "abffd601-49f4-42e6-1826-73b3a3a60880"
+      },
+      "752cc5cb-559e-c5ad-f82b-5dcd6b331611": {
+        "isSystemType": true,
+        "bundleAlias": "digital_gauges",
+        "typeAlias": "digital_vertical_bar",
+        "type": "latest",
+        "title": "Digital vertical bar",
+        "sizeX": 4,
+        "sizeY": 5,
+        "row": 5,
+        "col": 0,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "dataKeys": [
+                {
+                  "name": "humidity",
+                  "label": "humidity",
+                  "type": "timeseries",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.3269453210790785
+                }
+              ],
+              "name": "ESP8266 Demo Device",
+              "entityAliasId": "c1aaffce-650e-da65-7b65-d3db06c6843a"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#000000",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "0px",
+          "settings": {
+            "maxValue": 100,
+            "donutStartAngle": 90,
+            "showValue": true,
+            "showMinMax": true,
+            "gaugeWidthScale": 0.75,
+            "levelColors": [
+              "#3d5afe",
+              "#0288d1"
+            ],
+            "refreshAnimationType": "<>",
+            "refreshAnimationTime": 700,
+            "startAnimationType": "<>",
+            "startAnimationTime": 700,
+            "titleFont": {
+              "family": "RobotoDraft",
+              "size": 12,
+              "style": "normal",
+              "weight": "500"
+            },
+            "labelFont": {
+              "family": "RobotoDraft",
+              "size": 8,
+              "style": "normal",
+              "weight": "500"
+            },
+            "valueFont": {
+              "family": "Segment7Standard",
+              "style": "normal",
+              "weight": "500",
+              "size": 14
+            },
+            "minMaxFont": {
+              "family": "Segment7Standard",
+              "size": 8,
+              "style": "normal",
+              "weight": "normal"
+            },
+            "neonGlowBrightness": 20,
+            "decimals": 0,
+            "showUnitTitle": true,
+            "gaugeColor": "#151c3d",
+            "gaugeType": "verticalBar",
+            "showTitle": false,
+            "minValue": 0,
+            "dashThickness": 0.85,
+            "unitTitle": "Humidity %"
+          },
+          "title": "Digital vertical bar"
+        },
+        "id": "752cc5cb-559e-c5ad-f82b-5dcd6b331611"
+      },
+      "2d5ff7a1-32a4-ca17-c22d-d8af285019fb": {
+        "isSystemType": true,
+        "bundleAlias": "charts",
+        "typeAlias": "basic_timeseries",
+        "type": "timeseries",
+        "title": "Timeseries - Chart.js",
+        "sizeX": 14,
+        "sizeY": 5,
+        "row": 5,
+        "col": 4,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "dataKeys": [
+                {
+                  "name": "humidity",
+                  "label": "Humidity, %",
+                  "type": "timeseries",
+                  "color": "#2196f3",
+                  "settings": {
+                    "showLines": true,
+                    "fillLines": false,
+                    "showPoints": false
+                  },
+                  "_hash": 0.37845111848900936
+                }
+              ],
+              "name": "ESP8266 Demo Device",
+              "entityAliasId": "c1aaffce-650e-da65-7b65-d3db06c6843a"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 120000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {},
+          "title": "Humidity Level"
+        },
+        "id": "2d5ff7a1-32a4-ca17-c22d-d8af285019fb"
+      },
+      "f75fc95f-3b0d-e0ce-c0ee-ad28189f9118": {
+        "isSystemType": true,
+        "bundleAlias": "analogue_gauges",
+        "typeAlias": "temperature_radial_gauge_canvas_gauges",
+        "type": "latest",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 6,
+        "sizeY": 5,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "c1aaffce-650e-da65-7b65-d3db06c6843a",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "temperature",
+                  "type": "timeseries",
+                  "label": "temperature",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.4109935969398999
+                }
+              ]
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "maxValue": 60,
+            "startAngle": 67.5,
+            "ticksAngle": 225,
+            "showBorder": true,
+            "defaultColor": "#e65100",
+            "needleCircleSize": 7,
+            "highlights": [
+              {
+                "from": -60,
+                "to": -50,
+                "color": "#42a5f5"
+              },
+              {
+                "from": -50,
+                "to": -40,
+                "color": "rgba(66, 165, 245, 0.83)"
+              },
+              {
+                "from": -40,
+                "to": -30,
+                "color": "rgba(66, 165, 245, 0.66)"
+              },
+              {
+                "from": -30,
+                "to": -20,
+                "color": "rgba(66, 165, 245, 0.5)"
+              },
+              {
+                "from": -20,
+                "to": -10,
+                "color": "rgba(66, 165, 245, 0.33)"
+              },
+              {
+                "from": -10,
+                "to": 0,
+                "color": "rgba(66, 165, 245, 0.16)"
+              },
+              {
+                "from": 0,
+                "to": 10,
+                "color": "rgba(229, 115, 115, 0.16)"
+              },
+              {
+                "from": 10,
+                "to": 20,
+                "color": "rgba(229, 115, 115, 0.33)"
+              },
+              {
+                "from": 20,
+                "to": 30,
+                "color": "rgba(229, 115, 115, 0.5)"
+              },
+              {
+                "from": 30,
+                "to": 40,
+                "color": "rgba(229, 115, 115, 0.66)"
+              },
+              {
+                "from": 40,
+                "to": 50,
+                "color": "rgba(229, 115, 115, 0.83)"
+              },
+              {
+                "from": 50,
+                "to": 60,
+                "color": "#e57373"
+              }
+            ],
+            "showUnitTitle": true,
+            "colorPlate": "#cfd8dc",
+            "colorMajorTicks": "#444",
+            "colorMinorTicks": "#666",
+            "minorTicks": 2,
+            "valueInt": 3,
+            "highlightsWidth": 15,
+            "valueBox": true,
+            "animation": true,
+            "animationDuration": 1000,
+            "animationRule": "bounce",
+            "colorNeedleShadowUp": "rgba(2, 255, 255, 0)",
+            "colorNeedleShadowDown": "rgba(188, 143, 143, 0.78)",
+            "majorTicksCount": 12,
+            "numbersFont": {
+              "family": "Roboto",
+              "size": 20,
+              "style": "normal",
+              "weight": "normal",
+              "color": "#263238"
+            },
+            "titleFont": {
+              "family": "Roboto",
+              "size": 24,
+              "style": "normal",
+              "weight": "normal",
+              "color": "#263238"
+            },
+            "unitsFont": {
+              "family": "Roboto",
+              "size": 28,
+              "style": "normal",
+              "weight": "500",
+              "color": "#616161"
+            },
+            "valueFont": {
+              "family": "Segment7Standard",
+              "size": 30,
+              "style": "normal",
+              "weight": "normal",
+              "shadowColor": "rgba(0, 0, 0, 0.49)",
+              "color": "#444"
+            },
+            "colorValueBoxRect": "#888",
+            "colorValueBoxRectEnd": "#666",
+            "colorValueBoxBackground": "#babab2",
+            "colorValueBoxShadow": "rgba(0,0,0,1)",
+            "unitTitle": "Temperature",
+            "minValue": -60
+          },
+          "title": "New Temperature radial gauge",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          }
+        },
+        "row": 0,
+        "col": 0,
+        "id": "f75fc95f-3b0d-e0ce-c0ee-ad28189f9118"
+      },
+      "0f77f117-31d0-b771-953e-1d9b85c5b400": {
+        "isSystemType": true,
+        "bundleAlias": "analogue_gauges",
+        "typeAlias": "temperature_radial_gauge_canvas_gauges",
+        "type": "latest",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 6,
+        "sizeY": 5,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "c1aaffce-650e-da65-7b65-d3db06c6843a",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "humidity",
+                  "type": "timeseries",
+                  "label": "humidity",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.8858514211600477
+                }
+              ]
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "maxValue": 60,
+            "startAngle": 67.5,
+            "ticksAngle": 225,
+            "showBorder": true,
+            "defaultColor": "#e65100",
+            "needleCircleSize": 7,
+            "highlights": [
+              {
+                "from": -60,
+                "to": -50,
+                "color": "#42a5f5"
+              },
+              {
+                "from": -50,
+                "to": -40,
+                "color": "rgba(66, 165, 245, 0.83)"
+              },
+              {
+                "from": -40,
+                "to": -30,
+                "color": "rgba(66, 165, 245, 0.66)"
+              },
+              {
+                "from": -30,
+                "to": -20,
+                "color": "rgba(66, 165, 245, 0.5)"
+              },
+              {
+                "from": -20,
+                "to": -10,
+                "color": "rgba(66, 165, 245, 0.33)"
+              },
+              {
+                "from": -10,
+                "to": 0,
+                "color": "rgba(66, 165, 245, 0.16)"
+              },
+              {
+                "from": 0,
+                "to": 10,
+                "color": "rgba(229, 115, 115, 0.16)"
+              },
+              {
+                "from": 10,
+                "to": 20,
+                "color": "rgba(229, 115, 115, 0.33)"
+              },
+              {
+                "from": 20,
+                "to": 30,
+                "color": "rgba(229, 115, 115, 0.5)"
+              },
+              {
+                "from": 30,
+                "to": 40,
+                "color": "rgba(229, 115, 115, 0.66)"
+              },
+              {
+                "from": 40,
+                "to": 50,
+                "color": "rgba(229, 115, 115, 0.83)"
+              },
+              {
+                "from": 50,
+                "to": 60,
+                "color": "#e57373"
+              }
+            ],
+            "showUnitTitle": true,
+            "colorPlate": "#cfd8dc",
+            "colorMajorTicks": "#444",
+            "colorMinorTicks": "#666",
+            "minorTicks": 2,
+            "valueInt": 3,
+            "highlightsWidth": 15,
+            "valueBox": true,
+            "animation": true,
+            "animationDuration": 1000,
+            "animationRule": "bounce",
+            "colorNeedleShadowUp": "rgba(2, 255, 255, 0)",
+            "colorNeedleShadowDown": "rgba(188, 143, 143, 0.78)",
+            "majorTicksCount": 12,
+            "numbersFont": {
+              "family": "Roboto",
+              "size": 20,
+              "style": "normal",
+              "weight": "normal",
+              "color": "#263238"
+            },
+            "titleFont": {
+              "family": "Roboto",
+              "size": 24,
+              "style": "normal",
+              "weight": "normal",
+              "color": "#263238"
+            },
+            "unitsFont": {
+              "family": "Roboto",
+              "size": 28,
+              "style": "normal",
+              "weight": "500",
+              "color": "#616161"
+            },
+            "valueFont": {
+              "family": "Segment7Standard",
+              "size": 30,
+              "style": "normal",
+              "weight": "normal",
+              "shadowColor": "rgba(0, 0, 0, 0.49)",
+              "color": "#444"
+            },
+            "colorValueBoxRect": "#888",
+            "colorValueBoxRectEnd": "#666",
+            "colorValueBoxBackground": "#babab2",
+            "colorValueBoxShadow": "rgba(0,0,0,1)",
+            "unitTitle": "Temperature",
+            "minValue": -60
+          },
+          "title": "New Temperature radial gauge",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          }
+        },
+        "row": 0,
+        "col": 0,
+        "id": "0f77f117-31d0-b771-953e-1d9b85c5b400"
+      }
+    },
+    "states": {
+      "default": {
+        "name": "DHT22: Temperature & Humidity Demo Dashboard",
+        "root": true,
+        "layouts": {
+          "main": {
+            "widgets": {
+              "d0984108-f385-0d45-8fd4-0d66ff7fa868": {
+                "sizeX": 4,
+                "sizeY": 5,
+                "row": 0,
+                "col": 0
+              },
+              "abffd601-49f4-42e6-1826-73b3a3a60880": {
+                "sizeX": 15,
+                "sizeY": 5,
+                "row": 0,
+                "col": 9
+              },
+              "752cc5cb-559e-c5ad-f82b-5dcd6b331611": {
+                "sizeX": 4,
+                "sizeY": 5,
+                "row": 5,
+                "col": 0
+              },
+              "2d5ff7a1-32a4-ca17-c22d-d8af285019fb": {
+                "sizeX": 15,
+                "sizeY": 5,
+                "row": 5,
+                "col": 9
+              },
+              "f75fc95f-3b0d-e0ce-c0ee-ad28189f9118": {
+                "sizeX": 5,
+                "sizeY": 5,
+                "row": 0,
+                "col": 4
+              },
+              "0f77f117-31d0-b771-953e-1d9b85c5b400": {
+                "sizeX": 5,
+                "sizeY": 5,
+                "row": 5,
+                "col": 4
+              }
+            },
+            "gridSettings": {
+              "backgroundColor": "#eeeeee",
+              "color": "rgba(0,0,0,0.870588)",
+              "columns": 24,
+              "margin": 10,
+              "backgroundSizeMode": "100%"
+            }
+          }
+        }
+      }
+    },
+    "entityAliases": {
+      "c1aaffce-650e-da65-7b65-d3db06c6843a": {
+        "id": "c1aaffce-650e-da65-7b65-d3db06c6843a",
+        "alias": "Magicbit",
+        "filter": {
+          "type": "entityList",
+          "resolveMultiple": false,
+          "entityType": "DEVICE",
+          "entityList": [
+            "f5d999c0-a4d5-11eb-bdb5-b5c1cb96ca20"
+          ]
+        }
+      }
+    },
+    "filters": {},
+    "timewindow": {
+      "displayValue": "",
+      "hideInterval": false,
+      "hideAggregation": false,
+      "hideAggInterval": false,
+      "hideTimezone": false,
+      "selectedTab": 0,
+      "realtime": {
+        "realtimeType": 0,
+        "interval": 1000,
+        "timewindowMs": 60000,
+        "quickInterval": "CURRENT_DAY"
+      },
+      "history": {
+        "historyType": 0,
+        "interval": 1000,
+        "timewindowMs": 60000,
+        "fixedTimewindow": {
+          "startTimeMs": 1619167162851,
+          "endTimeMs": 1619253562851
+        },
+        "quickInterval": "CURRENT_DAY"
+      },
+      "aggregation": {
+        "type": "AVG",
+        "limit": 2500
+      }
+    },
+    "settings": {
+      "stateControllerId": "entity",
+      "showTitle": false,
+      "showDashboardsSelect": true,
+      "showEntitiesSelect": true,
+      "showDashboardTimewindow": true,
+      "showDashboardExport": true,
+      "toolbarAlwaysOpen": true
+    }
+  },
+  "name": "Magicbit: Temperature & Humidity Demo Dashboard"
+}

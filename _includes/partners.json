@@ -187,5 +187,21 @@
       }
     },
     "blurb": "KERNEL Sistemi s.r.l. designs and produces electronic solutions for automation, industrial process control, photovoltaics, energy management and home automation."
-  }
+  },
+  {
+    "type": "hardware",
+    "program": "",
+    "name": "Magicbit",
+    "logo": "magicbit.png",
+    "links": {
+      "Site": {
+        "href": "https://www.magicbit.cc/",
+        "target": "_blank"
+      },
+      "Integration guide": {
+        "href": "/docs/samples/magicbit/"
+      }
+    },
+    "blurb": "Magicbit innovation platform provides an easy to learn, feature rich and cost effective solution to all innovators, learners and students which is based on ESP32."
+   }
 ]
