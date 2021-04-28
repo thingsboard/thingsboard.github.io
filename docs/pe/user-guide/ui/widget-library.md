@@ -7,7 +7,7 @@ description: ThingsBoard Dashboard Widgets Library
 wl-latest-values-datasource:
     0:
         image: /images/user-guide/ui/widgets/widget-library/latest-values-datasource-pe.png
-        title: 'This kind of widget uses values of entity time series as a data source.'
+        title: 'This widget type uses values of entity time series as a data source.'
     1:
         image: /images/user-guide/ui/widgets/widget-library/latest-values-datasource-1-pe.png
         title: 'Digital Gauge displaying current power value.'
@@ -39,7 +39,7 @@ wl-alarms:
 wl-static:
     0:
         image: /images/user-guide/ui/widgets/widget-library/wl-static-pe.png
-        title: 'This kind of widget uses values of entity time series as a data source.'
+        title: 'Static widget type is configured by specifying static HTML content and optionally CSS styles.'
     1:
         image: /images/user-guide/ui/widgets/widget-library/wl-static-1-pe.png
         title: 'An example of a Static widget is the “HTML card” that displays the specified HTML content.'
@@ -75,10 +75,20 @@ wl-control-bundle:
         image: /images/user-guide/ui/widgets/widget-library/wl-control-bundle-pe.png
         title: 'For visualization of current state and sending RPC commands to target devices.'
 
+wl-date-bundle:
+    0:
+        image: /images/user-guide/ui/widgets/widget-library/wl-date-bundle-pe.png
+        title: 'For changing the data range for other widgets on the dashboard.'
+
 wl-digital-bundle:
     0:
         image: /images/user-guide/ui/widgets/widget-library/wl-digital-bundle-pe.png
         title: 'For visualization of temperature, humidity, speed and other integer or float values.'
+
+wl-entity-admin-bundle:
+    0:
+        image: /images/user-guide/ui/widgets/widget-library/wl-entity-admin-bundle-pe.png
+        title: 'For listing and creating/updating/deleting devices and assets.'
 
 wl-gpio:
     0:
@@ -99,6 +109,16 @@ wl-input-bundle:
     0:
         image: /images/user-guide/ui/widgets/widget-library/wl-input-bundle-pe.png
         title: 'For changing entity attributes.'
+
+wl-navigation-bundle:
+    0:
+        image: /images/user-guide/ui/widgets/widget-library/wl-navigation-bundle-pe.png
+        title: 'For defining home dashboard of the user.'
+
+wl-scheduling-bundle:
+    0:
+        image: /images/user-guide/ui/widgets/widget-library/wl-scheduling-bundle-pe.png
+        title: 'For scheduling various types of events with flexible schedule configuration.'
 
 wl-export:
     0:
