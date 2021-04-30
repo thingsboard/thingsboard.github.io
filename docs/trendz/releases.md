@@ -8,7 +8,54 @@ description: ThingsBoard Trendz Analytics Release Notes
 * TOC
 {:toc}
 
-## v1.5.0
+## v1.7.0 (April, 2021)
+
+**Improvements:**
+
+ * Add automated anomaly detection for assets and devices
+ * Switch from in-memory DB to PostgreSQL
+ * Add configuration Import/Export to file
+ * Configure default sort order for reports
+ * Table widget - add fit columns options
+
+
+**Bug fixes:**
+
+ * Fix state overlapping issue
+ * Fix duration formatting for states
+ * Fix filtering for text fields
+
+
+## v1.6.0 (January, 2021)
+
+**Improvements:**
+
+ * Support ThingsBoard Filtering API
+ * Add Calendar heatmap widget
+ * Configure Filter visibility
+ * Support of row-click events in ThingsBoard dashboards
+ * Access to rquest start/end time in calculated fields
+ * Add support for Centos 8
+ * Improve Fourier Transformation prediction model
+ * Other performance improvements
+
+
+**Bug fixes:**
+
+ * Fix state duration rounding problems
+ * Fix data duplication in reports
+ * Fix data double loading
+ * Fix label formatting for states and calculated fields
+
+## v1.5.1 (September, 2020)
+
+**Bug fixes:**
+
+ * Fix total row calculation for tables
+ * Validate filtering options
+ * Fix query partitioning for duplicated intervals
+
+## v1.5.0 (August, 2020)
 
 **Improvements:**
 
@@ -34,7 +81,7 @@ description: ThingsBoard Trendz Analytics Release Notes
  * Fix sorting of date fields
 
 
-## v1.4.1
+## v1.4.1 (June, 2020)
 
 
 **Improvements:**
@@ -58,7 +105,7 @@ description: ThingsBoard Trendz Analytics Release Notes
  * Fix bar height detection
  
 
-## v1.4.0
+## v1.4.0 (April, 2020)
 
 **Improvements:**
 

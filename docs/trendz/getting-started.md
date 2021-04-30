@@ -41,23 +41,4 @@ After Trendz installed you can sign-in to Trendz UI and discover topology:
 
 ## Next Steps
 
-Visualization Widgets available in Trendz and how to configure them
-* [**Available Visualizations**](/docs/trendz/visualizations-overview)
-
-How to group and aggregate data
-* [**Group and Aggregate data**](/docs/trendz/data-grouping-aggregation)
-
-How to apply filters
-* [**Filters**](/docs/trendz/data-filtering)
-
-Create calculated fields
-* [**Calculated Fields**](/docs/trendz/calculated-fields)
-
-Define custom states
-* [**States**](/docs/trendz/states)
-
-Data Forecast and prediction tutorial
-* [**Prediction**](/docs/trendz/prediction)
-
-Add visualizations on dashboard and 3rd party pages
-* [**Share and embed Visualizations**](/docs/trendz/embed-visuals)
+{% assign currentGuide = "GettingStartedGuide" %}{% include templates/trndz-guides-banner.md %}
