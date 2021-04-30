@@ -25,6 +25,7 @@ Converting of business needs into feature requirements and further forwarding to
 BA/BS degree or equivalent (Information Technology, Computer Engineering, Computer Science or related field);
 
 JS is a must;
+
 2+ years of experience in software consulting or technical support;
 
 Ability to explain and present complex concepts in an easy to understand manner;
@@ -38,7 +39,7 @@ Solid technical background – understanding/experience with enterprise software
 
 Cloud experience (AWS, Azure, GCP etc.).
 
-#### We offer:
+### We offer:
 Full-time office work with flexible work shifts;
 
 Onboarding supervision and knowledge transfer;
