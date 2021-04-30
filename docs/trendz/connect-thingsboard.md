@@ -141,3 +141,7 @@ Another option for updating topology is a manual modification of Business Entity
 It may be useful in case when the same devices/assets represent different aspects of business solution. For example, single devices can monitor the environment and submit debug events for troubleshooting.
 By separating debug events from environment measurements into isolated Business Entities it becomes easier to build visualizations focused on a single aspect of your solution.
 
+
+## Next Steps
+
+{% assign currentGuide = "InstallationOptions" %}{% include templates/trndz-guides-banner.md %}
