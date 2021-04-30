@@ -208,7 +208,8 @@ Navigation widgets bundle is useful to define home dashboard of the user.
 ## Adding widgets bundle
 
 If the system administrator adds a new widgets bundle, it automatically becomes a system one. It means that only he can delete, edit and add widget types into the bundle. 
-Tenant administrators can create widgets bundles as well. In this case, they have permissions to modify created bundles.  
+Tenant administrators can create widgets bundles as well. In this case, they have permissions to modify created bundles.
+You can always implement and add your widgets by following this [guide](/docs/{{docsPrefix}}user-guide/contribution/widgets-development/).
 
 To add a new widgets bundle, you should:
 
