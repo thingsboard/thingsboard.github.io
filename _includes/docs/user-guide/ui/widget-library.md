@@ -12,10 +12,12 @@ According to the provided features, each widget definition represents a specific
 There are five widget types:
 
  - [Latest values;](#latest-values)
- - [Time-series;](#time-series)
+ - [Timeseries;](#time-series)
  - [RPC (Control widget);](#rpc-control-widget)
  - [Alarm widget;](#alarm-widget)
  - [Static widget.](#static)
+
+{% include images-gallery.html imageCollection="wl-dashboard-widgets" preview="false" %}
  
 Each widget type has its own specific data source configuration and the corresponding API widget.
 Each widget requires data sources to visualize data. Types of available data source depend on widget type of the widget:
@@ -23,14 +25,15 @@ Each widget requires data sources to visualize data. Types of available data sou
  - Target device - this data source type is used in RPC. Basically, you need to specify the target device for the RPC widget;
  - Alarm source - this data source type is used in Alarm widgets. This data source requires the source entity to display related alarms and corresponding alarm fields;
  - Entity - this datasource type is used in both time-series and latest values widgets. Basically, you need to specify the target entity, and the time series key, or the attribute name;
+ - Entities count - this data source type is used in latest values widgets. Basically, you need to specify the target entity.
  - Function - this data source type is used in both time series and latest values widgets for debugging.
-   Basically, you can specify a javascript function that will simulate data from a device in order to set up visualization.
+   Basically, you can specify a javascript function that will simulate data from a device in order to set up visualization;
 
 ### Latest values
 
 _Latest values_ widget type displays the latest values of a specific entity attribute or time series data point (for example, any Gauge Widget or Entities Table widget).
 This type of widgets uses values of entity attribute(s) or time series as a data source.
-Digital Gauge in example is displaying current power value.
+Digital Gauge in example is displaying current temperature value.
  
 {% include images-gallery.html imageCollection="wl-latest-values-datasource" %}
 
@@ -41,7 +44,7 @@ This widget types uses only the values of entity time series as a data source.
 In order to specify the time frame of displayed values, _Timewindow_ settings are used.
 The time window can be specified on the dashboard page or in the widget details. It can be either _realtime_ - dynamically changed time frame for a certain latest interval, or _history_ - fixed historical time frame.
 All these settings are part of Time series widget configuration.
-In the example, the "Timeseries Line Chart" displays temperature and water values of devices in real-time.
+In the example, the "Timeseries Line Chart" displays speed value of device in real-time.
 
 {% include images-gallery.html imageCollection="wl-timeseries" %}
 
@@ -202,11 +205,20 @@ Navigation widgets bundle is useful to define home dashboard of the user.
 
 {% include images-gallery.html imageCollection="wl-scheduling-bundle" %}
 
+## Adding widgets bundle
+
+If the system administrator adds a new widgets bundle, it automatically becomes a system one. It means that only he can delete, edit and add widget types into the bundle. 
+Tenant administrators can create widgets bundles as well. In this case, they have permissions to modify created bundles.  
+
+To add a new widgets bundle, you should:
+
+{% include images-gallery.html imageCollection="wl-add" showListImageTitles="true" %}
+
 ## Widgets Bundles export/import
 
 #### Widgets Bundle export
 
-You can export a widgets bundle in JSON format, and import it in the same or different ThingsBoard format.
+You can export a widgets bundle in JSON format, and import it in the same or different ThingsBoard instance.
 
 In order to export widgets bundle, you should:
 
@@ -220,7 +232,7 @@ Importing a widgets bundle is very similar to exporting it. To import the widget
 
 ## Widget Types export/import
 
-You can export a specific type of widget from a widget bundle in JSON format, and import it in the same or different ThingsBoard format.
+You can export a specific type of widget from a widget bundle in JSON format, and import it in the same or different ThingsBoard instance.
 
 #### Widget Type export
 
