@@ -4,6 +4,17 @@ assignees:
 - ashvayka
 title: Widgets Library
 description: ThingsBoard Dashboard Widgets Library
+wl-dashboard-widgets:
+    0:
+        image: /images/user-guide/ui/widgets/widget-library/wl-dashboard-widgets-pe.png
+        title: '.'
+    1:
+        image: /images/user-guide/ui/widgets/widget-library/wl-dashboard-widgets-1-pe.png
+        title: '.'
+    2:
+        image: /images/user-guide/ui/widgets/widget-library/wl-dashboard-widgets-2-pe.png
+        title: '.'
+
 wl-latest-values-datasource:
     0:
         image: /images/user-guide/ui/widgets/widget-library/latest-values-datasource-pe.png
@@ -119,6 +130,20 @@ wl-scheduling-bundle:
     0:
         image: /images/user-guide/ui/widgets/widget-library/wl-scheduling-bundle-pe.png
         title: 'For scheduling various types of events with flexible schedule configuration.'
+
+wl-add:
+    0:
+        image: /images/user-guide/ui/widgets/widget-library/wl-add-pe.png
+        title: 'Navigate to the widgets bundle page via the main menu on the left. Click the "+" icon in the upper right of the screen, and select the "Create new widgets bundle" option from the drop-down menu.'
+    1:
+        image: /images/user-guide/ui/widgets/widget-library/wl-add-1-pe.png
+        title: 'In the opened dialog window, enter the name for the new bundle. Adding an image and a description is optional. Click "Add" to save applied changes.'
+    2:
+        image: /images/user-guide/ui/widgets/widget-library/wl-add-2-pe.png
+        title: 'Since widgets bundles are in alphabetical order, the newly created one may be on the second page.'
+    3:
+        image: /images/user-guide/ui/widgets/widget-library/wl-add-3-pe.png
+        title: 'After adding the widgets bundle, you can add widget types in there.'
 
 wl-export:
     0:
