@@ -4,6 +4,7 @@ assignees:
 - ashvayka
 title: Working with IoT dashboards
 description: IoT dashboards using ThingsBoard
+redirect_from: "/docs/pe/user-guide/ui/dashboards/"
 creating-dash:
     0:
         image: /images/user-guide/dashboards/creating-dash.png
@@ -348,6 +349,16 @@ zoom-in:
         image: /images/user-guide/dashboards/zoom-in.png
     1:
         image: /images/user-guide/dashboards/zoom-in-1.png
+
+import:
+    0:
+        image: /images/user-guide/dashboards/dashboard-import-pe.png
+    1:
+        image: /images/user-guide/dashboards/dashboard-import-1-pe.png
+    2:
+        image: /images/user-guide/dashboards/dashboard-import-2-pe.png
+    3:
+        image: /images/user-guide/dashboards/dashboard-import-3-pe.png
 
 --- 
 

@@ -142,9 +142,87 @@ Kubernetes Deployment%,%kubernetes%,%templates/troubleshooting/logs/enable-logs/
 
 ## Metrics
 
-You may enable prometheus metrics by setting environment variable `METRICS_ENDPOINTS_EXPOSE` to value `prometheus` in the configuration file.
+You may enable prometheus metrics by setting environment variables `METRICS_ENABLED` to value `true` and `METRICS_ENDPOINTS_EXPOSE` to value `prometheus` in the configuration file.
+If you are running ThingsBoard as microservices with separate services for MQTT and COAP transport, you also need to set environment variables `WEB_APPLICATION_ENABLE` to value `true`, 
+`WEB_APPLICATION_TYPE` to value `servlet` and `HTTP_BIND_PORT` to value `8081` for MQTT and COAP services in order to enable web-server with Prometheus metrics.
 
 These metrics are exposed at the path: `https://<yourhostname>/actuator/prometheus` which can be scraped by prometheus (No authentication required).
+
+## Prometheus metrics
+
+Some internal state metrics can be exposed by the Spring Actuator using Prometheus.
+
+Here's the list of metrics ThingsBoard pushes to Prometheus.
+
+#### <b>tb-node</b> metrics:
+- <i>attributes_queue_${index_of_queue}</i> (statsNames - <i>totalMsgs, failedMsgs, successfulMsgs</i>): stats about writing <b>attributes</b> to the database. 
+Note that there are several queues (threads) for persisting attributes in order to reach maximum performance.
+- <i>ruleEngine_${name_of_queue}</i> (statsNames - <i>totalMsgs, failedMsgs, successfulMsgs, tmpFailed, failedIterations, successfulIterations, timeoutMsgs, tmpTimeout</i>): 
+  stats about processing of the messages inside of the Rule Engine. They are persisted for each queue (e.g. Main, HighPriority, SequentialByOriginator etc).
+  Some stats descriptions:
+  - <i>tmpFailed</i>: number of messages that failed and got reprocessed later
+  - <i>tmpTimeout</i>: number of messages that timed out and got reprocessed later
+  - <i>timeoutMsgs</i>: number of messages that timed out and were discarded afterwards
+  - <i>failedIterations</i>: iterations of processing messages pack where at least one message wasn't processed successfully
+- <i>ruleEngine_${name_of_queue}_seconds</i> (for each present <i>tenantId</i>): stats about the time message processing took for different queues.
+- <i>core</i> (statsNames - <i>totalMsgs, toDevRpc, coreNfs, sessionEvents, subInfo, subToAttr, subToRpc, deviceState, getAttr, claimDevice, subMsgs</i>): 
+  stats about processing of the internal system messages.
+  Some stats descriptions:
+  - <i>toDevRpc</i>: number of processed RPC responses from Transport services
+  - <i>sessionEvents</i>: number of session events from Transport services
+  - <i>subInfo</i>: number of subscription infos from Transport services
+  - <i>subToAttr</i>: number of subscribes to attribute updates from Transport services
+  - <i>subToRpc</i>: number of subscribes to RPC from Transport services
+  - <i>getAttr</i>: number of 'get attributes' requests from Transport services
+  - <i>claimDevice</i>: number of Device claims from Transport services
+  - <i>deviceState</i>: number of processed changes to Device State
+  - <i>subMsgs</i>: number of processed subscriptions
+  - <i>coreNfs</i>: number of processed specific 'system' messages
+- <i>jsInvoke</i> (statsNames - <i>requests, responses, failures</i>): stats about total, successful and failed requests to the JS executors
+- <i>attributes_cache</i> (results - <i>hit, miss</i>): stats about how much attribute requests went to the cache
+
+
+#### <b>transport</b> metrics:
+- <i>transport</i> (statsNames - <i>totalMsgs, failedMsgs, successfulMsgs</i>): stats about requests received by Transport from TB nodes 
+- <i>ruleEngine_producer</i> (statsNames - <i>totalMsgs, failedMsgs, successfulMsgs</i>): stats about pushing messages from Transport to the Rule Engine.
+- <i>core_producer</i> (statsNames - <i>totalMsgs, failedMsgs, successfulMsgs</i>): stats about pushing messages from Transport to the TB node Device actor.
+- <i>transport_producer</i> (statsNames - <i>totalMsgs, failedMsgs, successfulMsgs</i>): stats about requests from Transport to the TB.
+
+
+<b>Some metrics depends on the type of the database you are using to persist timeseries data.</b>
+
+#### PostgreSQL-specific metrics:
+- <i>ts_latest_queue_${index_of_queue}</i> (statsNames - <i>totalMsgs, failedMsgs, successfulMsgs</i>): stats about writing <b>latest telemetry</b> to the database. 
+Note that there are several queues (threads) in order to reach maximum performance.
+- <i>ts_queue_${index_of_queue}</i> (statsNames - <i>totalMsgs, failedMsgs, successfulMsgs</i>): stats about writing <b>telemetry</b> to the database. 
+Note that there are several queues (threads) in order to reach maximum performance.
+
+#### Cassandra-specific metrics:
+- <i>rateExecutor_currBuffer</i>: number of messages that are currently being persisted inside the Cassandra.
+- <i>rateExecutor_tenant</i> (for each present <i>tenantId</i>): number of requests that got rate-limited
+- <i>rateExecutor</i> (statsNames - <i>totalAdded, totalRejected, totalLaunched, totalReleased, totalFailed, totalExpired, totalRateLimited</i>)
+Stats descriptions:
+    - <i>totalAdded</i>: number messages that were submitted for persisting
+    - <i>totalRejected</i>: number messages that were rejected while trying to submit for persisting
+    - <i>totalLaunched</i>: number messages sent to the Cassandra
+    - <i>totalReleased</i>: number successfully persisted messages
+    - <i>totalFailed</i>: number of messages that were not persisted
+    - <i>totalExpired</i>: number of expired messages that were not sent to the Cassandra
+    - <i>totalRateLimited</i>: number of messages that were not processed because of the Tenant's rate-limits
+    
+## Grafana Dashboards
+
+You can import preconfigured Grafana dashboards from [here](https://github.com/thingsboard/thingsboard/tree/master/docker/monitoring/grafana/provisioning/dashboards). 
+**Note:** Depending on the cluster configuration you may need to make changes to the dashboards.
+
+Also, you can view Grafana dashboards after deploying ThingsBoards docker-compose cluster configuration (for more information please follow [this guide](/docs/user-guide/install/cluster/docker-compose-setup/)).
+Make sure that `MONITORING_ENABLED` environment variable is set to `true`. 
+After deployment, you will be able to reach Prometheus at `http://localhost:9090` and Grafana at `http://localhost:3000` (default login is `admin` and password `foobar`).
+
+Here's screenshots of default preconfigured Grafana dashboards:
+
+{% include images-gallery.html imageCollection="metrics-dashboards" %}
+
 
 ## OAuth2
 
