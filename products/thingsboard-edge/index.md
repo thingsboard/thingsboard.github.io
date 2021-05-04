@@ -1,133 +1,134 @@
 ---
 layout: thingsboard-edge
 title: ThingsBoard Edge
-description: 
+description:
 ---
+
+<section id="tb-customers">
+	<main>
+		<a href="/industries/telecom/#tmobile"><object data="/images/customers/clear/t-mobile.svg"></object></a>
+		<a href="https://www.bosch.com/"><object data="/images/customers/clear/bosch.svg"></object></a>
+		<a href="https://www.prosegur.com/"><object data="/images/customers/clear/prosegur.svg"></object></a>
+		<a href="http://www.engie.sk/en/kontakt"><object data="/images/customers/clear/engie.svg"></object></a>
+		<a href="/industries/smart-energy/#circutor"><object data="/images/customers/clear/circutor.svg"></object></a>
+		<a href="/industries/telecom/#tektelic"><object data="/images/customers/clear/tektelic.svg"></object></a>
+	</main>
+</section>
 
 <section id="intro">
 	<main>
-		<h1>The <a href="/docs/edge/what-is-edge/">ThingsBoard Edge</a> is a ThingsBoard's software product for edge computing.</h1>
-		<h2>It allows bringing data analysis and management to the edge, while seamlessly synchronizing with the cloud (ThingsBoard CE/PE).</h2>
+		<h1 class="intro_title">The <a href="/docs/edge/what-is-edge/">ThingsBoard Edge</a> is a ThingsBoard's software product for edge computing</h1>
+        <p class="labeling">It allows bringing data analysis and management to the edge, while seamlessly synchronizing with the cloud (ThingsBoard CE/PE).</p>
+	</main>
+</section>
+
+<section id="local-deployment">
+    <main>
+        <div id="background">
+            <div class="main1"></div><div class="small1"></div><div class="small2"></div><div class="small3"></div><div class="small4"></div>
+        </div>
+        <div class="block">
+            <div class="feature-des"><h2>Local deployment and storage</h2>
+                <p>Operate with and store data from local devices without internet connection. Push updates to the cloud once connection restored.</p>
+                <a class="read-more-button" href="/docs/edge/what-is-edge/">Read more<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
+            </div>
+            <div class="block-img">
+                <img src="/images/edge/local-deployment.svg">
+            </div>
+        </div>
     </main>
 </section>
-<section class="pe-features edge-features">
-    <div class="main-bg">
-        <main>
-            <div class="content">
-                <h3 class="header"><span class="cBlue" >Local deployment and storage</span></h3>
-                <p>Operate with and store data from local devices without internet connection. Push updates to the cloud once connection restored. </p>
-                <a href="/docs/edge/what-is-edge/" class="button cBlue try-button">Learn more</a>           
+
+<section id="data-filtering">
+    <main>
+        <div class="block">
+            <div class="block-img">
+                <img src="/images/edge/data-filtering.svg">
             </div>
-            <div class="image-block">
-                <div class="image-wrapper">
-                    <video poster="/images/edge/overview/offline_network_.svg" autoplay="" loop="" preload="auto" muted="">
-                    </video>
-                </div>
-            </div>
-        </main>
-    </div>
-    <div class="main-bg">
-        <main>
-            <div class="content">
-                <h3 class="header"><span class="cBlue" >Traffic filtering</span></h3>
+            <div class="feature-des"><h2>Traffic filtering</h2>
                 <p>Filter data from devices on the ThingsBoard Edge service and push to cloud only subset of the data.</p>
-                <a href="/docs/edge/what-is-edge/" class="button cBlue try-button">Learn more</a>           
+                <a class="read-more-button" href="/docs/edge/what-is-edge/">Read more<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
             </div>
-            <div class="image-block">
-                <div class="image-wrapper">
-                    <video poster="/images/edge/overview/data_filtering.svg" autoplay="" loop="" preload="auto" muted="">               
-                    </video>
-                </div>
-            </div>
-        </main>
-    </div>
-    <div class="main-bg">
-        <main>
-            <div class="content">
-                <h3 class="header"><span class="cBlue" >Local alarms</span></h3>
-                <p> React instantly to critical situations on site without internet connection to cloud.</p>
-                <a href="/docs/edge/what-is-edge/" class="button cBlue try-button">Learn more</a>           
-            </div>
-            <div class="image-block">
-                <div class="image-wrapper">
-                    <video poster="/images/edge/overview/alarm.svg" autoplay="" loop="" preload="auto" muted="">               
-                    </video>
-                </div>
-            </div>
-        </main>
-    </div>
-    <div class="main-bg">
-        <main>
-            <div class="content">
-                <h3 class="header"><span class="cBlue" >Batch update and visualization</span></h3>
-                <p>Update thousands of edge configurations in a single click.</p>
-                <p>Monitor local events and timeseries data with a real-time dashboard.</p>
-                <a href="/docs/edge/what-is-edge/" class="button cBlue try-button">Learn more</a>           
-            </div>
-            <div class="image-block">
-                <div class="image-wrapper">
-                    <video poster="/images/edge/overview/update_dashboard.svg" autoplay="" loop="" preload="auto" muted="">
-                    </video>
-                </div>
-            </div>
-        </main>
-    </div>
+        </div>
+    </main>
 </section>
 
-<div id="deployment-options"></div>
+<section id="local-alarms">
+    <main>
+        <div id="background">
+            <div class="main2"></div><div class="small5"></div><div class="small6"></div><div class="small7"></div>
+        </div>
+        <div class="block">
+            <div class="feature-des"><h2>Local alarms</h2>
+                <p>React instantly to critical situations on site without internet connection to cloud.</p>
+                <a class="read-more-button" href="/docs/edge/what-is-edge/">Read more<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
+            </div>
+            <div class="block-img">
+                <img src="/images/edge/local-alarms.svg">
+            </div>
+        </div>
+    </main>
+</section>
 
-<div class="more-features">
-    <div class="more-features__head">
-        More about ThingsBoard Edge strengths
-    </div>
-    <div class="elements">
-        <div class="more-features__element js-bounceLeft">
-            <div class="more-features-elements__icon real-time"></div>
-            <div class="more-features__separation-block">
-                <div class="more-features-element__head">
-                    Robust and efficient
-                </div>
-                <div class="more-features__text">
-                    Single edge can handle up to 1000 of devices depending on the use-case and deployed hardware.
-                </div>
+<section id="batch-update">
+    <main>
+        <div class="block">
+            <div class="block-img">
+                <img src="/images/edge/batch-update.svg">
+            </div>
+            <div class="feature-des"><h2>Batch update and visualization</h2>
+                <p>Update thousands of edge configurations in a single click. Monitor local events and timeseries data with a real-time dashboard.</p>
+                <a class="read-more-button" href="/docs/edge/what-is-edge/">Read more<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
             </div>
         </div>
-        <div class="more-features__element js-bounceRight">
-            <div class="more-features-elements__icon data"></div>
-            <div class="more-features__separation-block">
-                <div class="more-features-element__head">
-                    Scalable
-                </div>
-                <div class="more-features__text">
-                    Spread your computation and data analysis on thousands of edges.
-                </div>
-            </div>
-        </div>
-        <div class="more-features__element js-bounceLeft">
-            <div class="more-features-elements__icon analytics"></div>
-            <div class="more-features__separation-block">
-                <div class="more-features-element__head">
-                    Customizable
-                </div>
-                <div class="more-features__text">
-                    Adding new functionality is easy with rule engine, customizable widgets and dashboards.
-                </div>
-            </div>
-        </div>
-        <div class="more-features__element js-bounceRight">
-            <div class="more-features-elements__icon deployment"></div>
-            <div class="more-features__separation-block">
-                <div class="more-features-element__head">
-                    Durable
-                </div>
-                <div class="more-features__text">
-                    Edge collects all messages and events in the persistence layer. Particular messages could be transferred to the cloud, if required.
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+    </main>
+</section>
 
-<div class="try-button-block">
-    <a href="/pricing/?active=thingsboard-edge" class="button try-edge">Try Edge</a>
-</div>
+
+<section id="bottom-features">
+    <main>
+        <div id="background">
+            <div class="main3"></div><div class="small8"></div>
+        </div>
+        <h3>More about ThingsBoard Edge strengths</h3>
+        <div class="cards row">
+            <div class="col-lg-6">
+                <div class="block">
+                    <img src="/images/edge/robust-icon.svg">
+                    <div>
+                        <h4 class="title">Robust and efficient</h4>
+                        <p>Single edge can handle up to 1000 of devices depending on the use-case and deployed hardware.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="block"><img src="/images/edge/durable-icon.svg">
+                    <div>
+                        <h4 class="title">Durable</h4>
+                        <p>Edge collects all messages and events in the persistence layer. Particular messages could be transferred to the cloud, if required.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="block"><img src="/images/edge/customizable-icon.svg">
+                    <div>
+                    <h4 class="title">Customizable</h4>
+                    <p>Adding new functionality is easy with rule engine, customizable widgets and dashboards.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="block"><img src="/images/edge/scalable-icon.svg">
+                    <div>
+                    <h4 class="title">Scalable</h4>
+                    <p>Spread your computation and data analysis on thousands of edges.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</section>
+
+<section id="bottom">
+    <a href="/pricing/?active=thingsboard-edge" class="bottom-button">Try Edge</a>
+</section>

@@ -4,6 +4,24 @@ assignees:
 - ashvayka
 title: Working with IoT dashboards
 description: IoT dashboards using ThingsBoard
+creating-dash:
+    0:
+        image: /images/user-guide/dashboards/creating-dash.png
+    1:
+        image: /images/user-guide/dashboards/creating-dash-1.png
+    2:
+        image: /images/user-guide/dashboards/creating-dash-2.png
+
+make-public:
+    0:
+        image: /images/user-guide/dashboards/creating-dash.png
+    1:
+        image: /images/user-guide/dashboards/make-public-1.png
+    2:
+        image: /images/user-guide/dashboards/make-public-2.png
+    3:
+        image: /images/user-guide/dashboards/make-public-3.png
+
 dash-title:
     0:
         image: /images/user-guide/dashboards/dash-title.png 
@@ -251,6 +269,16 @@ action-state:
     5:
         image: /images/user-guide/dashboards/settings/state1-transfer.png
 
+home-dash:
+    0:
+        image: /images/user-guide/dashboards/home-dash.png
+    1:
+        image: /images/user-guide/dashboards/home-dash-1.png
+    2:
+        image: /images/user-guide/dashboards/home-dash-2.png
+    3:
+        image: /images/user-guide/dashboards/home-dash-3.png
+
 entity-count:
     0:
         image: /images/user-guide/dashboards/entitycount/add-alias-ce.png
@@ -323,7 +351,7 @@ tw-current-day:
 
 tw-time-zone:
     0:
-        image: /images/user-guide/dashboards/tw-time-zone-ce.png
+        image: /images/user-guide/dashboards/tw-time-zone.png
 
 zoom-in:
     0:
@@ -332,5 +360,6 @@ zoom-in:
         image: /images/user-guide/dashboards/zoom-in-1-ce.png
 
 --- 
+
 
 {% include docs/user-guide/dashboards.md %}
