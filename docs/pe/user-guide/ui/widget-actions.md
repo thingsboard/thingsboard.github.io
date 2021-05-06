@@ -237,6 +237,8 @@ map-creation:
         image: /images/user-guide/ui/widgets/actions/maps/to-create-a-map-4-pe.png  
     4:
         image: /images/user-guide/ui/widgets/actions/maps/to-create-a-map-5-pe.png
+    5:
+        image: /images/user-guide/ui/widgets/actions/maps/to-create-a-map-6-pe.png
 
 map-polygon:
     0:
