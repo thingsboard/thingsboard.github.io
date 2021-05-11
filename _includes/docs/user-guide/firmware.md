@@ -13,6 +13,10 @@ Each firmware update consist of:
 
 * Title - the name of your firmware package. You may use different names for production and debug firmware. 
 * Version - the version of your firmware package. Combination of the title and version must be unique in scope of tenant.
+* Link to Device Profile - Each firmware references a device profile. This helps to prevent accidental updates of devices with incompatible firmware. 
+  Link to a device profile means that this device *may* be updated to the current firmware. 
+  However, the update is not triggered, until the user or script [assigns](#assignment) the firmware to the device profile or device.
+* Type - either *Firmware* or *Software*. Each device may have an MCU firmware and the actual     
 * Checksum algorithm - short name of the checksum algorithm to use. Optional.
 * Checksum - value of the file checksum. Optional. If no checksum provided by the user, server will use SHA-256 algorithm automatically.
 * Description - optional text description of the firmware. 
@@ -35,3 +39,13 @@ Every device has a device profile. The firmware version assigned to the device w
 Deletion of the firmware packages that is assigned to at least one device or device profile is prohibited.
 {% endcapture %}
 {% include templates/info-banner.md content=delete_restrictions %}
+
+## Update process
+
+
+
+## Dashboard
+
+## Configuration
+
+TODO: talk about max size setting
