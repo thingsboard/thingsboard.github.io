@@ -11,7 +11,7 @@ history of the updates, and provides a dashboard to monitor the update process.
 As a tenant administrator, you may navigate to the "Firmware" menu item to list and upload firmware updates. 
 Each firmware update consist of:
 
-* Title - the name of your firmware package. You may use different names for production and debug firmware. 
+* Title - the name of your firmware package. You can use different names for production and debug firmware. 
 * Version - the version of your firmware package. Combination of the title and version must be unique in scope of tenant.
 * Link to Device Profile - Each firmware references a device profile. This helps to prevent accidental updates of devices with incompatible firmware. 
   Link to a device profile means that this device *may* be updated to the current firmware. 
