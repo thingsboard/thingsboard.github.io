@@ -12,52 +12,53 @@ hidetoc: "true"
 {:toc}
 
 ## Introduction
+In this guide we show step-by-step an integration of Things On Edge - Cricket Wi-Fi module to ThingsBoard. In a few steps we will make a sensor and visualise its data in ThingsBoard without coding and programing. It can be any type of sensor and we demonstrate it here based on an example of making a Wi-Fi battery powered temperature sensor.
 
-[Things On Edge](https://thingsonedge.com) designs an easy to use, ultra-low power Cricket Wi-Fi modules. They are designed to make fast & easy IOT end nodes such as sensors, buttons, switches etc.; power them directly on batteries for a very long time; and integrate to a huge ecosystem of software and internet services. All this without writing a single line of code.
-
-The integration of both Cricket and ThingsBoard is presented here step by step. As an example we make a WiFi temperature sensor and visualise its data in ThigsBoard.
-
-We show how to:
+We will walk through the following steps:
 <br/>
-1) Make power efficient Wi-Fi sensor by using [Cricket Wi-Fi module](https://thingsonedge.com)
+1) Make a battery powered Wi-Fi sensor
 <br/>
-2) Connect [Cricket](https://thingsonedge.com) to WiFi network
+2) Connect the sensor to WiFi network
 <br/>
-3) Configure [Cricket](https://thingsonedge.com) to send data to ThingsBoard
+3) Configure the sensor to send data to ThingsBoard
 <br/>
 
-More detailed documentation about [Cricket Wi-Fi module](https://thingsonedge.com) can be found at [Things On Edge documentation page](https://thingsonedge.com/documentation)
+### Things On Edge
+Things On Edge designs an easy to use, ultra-low power Cricket Wi-Fi modules. They are designed to make fast & easy IOT end nodes such as sensors, buttons, switches etc.; power them directly on batteries for a very long time; and integrate to a huge ecosystem of software and internet services. All this without writing a single line of code.
+<br/>
+<img src="/images/samples/cricket-wifi/cricket.png" width="50%">
+<br/>
+![image](/images/samples/cricket-wifi/TB-graph.png)
 
-## Hardware
+## Prerequisites
 
-### Prerequisites
-* [IOT Cricket Wi-Fi module](https://thingsonedge.com)
-* [2xAAA battery holder](https://thepihut.com/products/2-x-aaa-battery-holder-with-on-off-switch-jst-ph-connector)
+### Hardware
+* Things On Edge - Cricket Wi-Fi module
+* 2xAAA battery holder
 * 2xAAA batteries
 
+### Make a battery powered Wi-Fi sensor
 Cricket WiFi module comes with a built-in temperature sensor. For this example we do not need any other hardware peripherals. However, in order to get more accurate temperature readings it is highly recommended to use external sensors e.g. DS18B20/+
 
-### Assembly
-Simply attach batteries to the [Cricket Wi-Fi module](https://thingsonedge.com) and the device is ready to go and we can start configuring it.
-Please use fresh and good quality batteries e.g. Duracel, Energizer
+In this example simply attach batteries to the Cricket Wi-Fi module and the device is ready to go. Please use fresh and good quality batteries e.g. Duracel, Energizer
 
-![image](/images/samples/cricket-wifi/asm.png)
+<img src="/images/samples/cricket-wifi/asm.png" width="50%">
 
 
 ### Connect Cricket to Wi-Fi network
 
-![image](/images/samples/cricket-wifi/TOE-01.png)
+<img src="/images/samples/cricket-wifi/TOE-01.png" width="50%">
 
-![image](/images/samples/cricket-wifi/TOE-02.png)
+<img src="/images/samples/cricket-wifi/TOE-02.png" width="50%">
 
-![image](/images/samples/cricket-wifi/TOE-03.png)
+<img src="/images/samples/cricket-wifi/TOE-03.png" width="50%">
 
-![image](/images/samples/cricket-wifi/TOE-03.png)
+<img src="/images/samples/cricket-wifi/TOE-04.png" width="50%">
 
-[For more information please see Cricket's documentation: IOT Developer Guide](https://thingsonedge.com/documentation)
+
 
 ### Configure Cricket to send data to ThingsBoard
-Now we can configure [Cricket](https://thingsonedge.com) to transmit the temperature readings to ThingsBoard.
+Now we can configure Cricket to transmit the temperature readings to ThingsBoard.
 <br/>
 
 Cricket supports both MQTT and HTTP protocols and we are going to use the HTTP protocol for the integration. Please make sure you have the Access Token from ThingsBoard as shown below:
@@ -75,7 +76,8 @@ A complete Cricket's configuration can look like below:
 
 
 Once Cricket is configured we must exit from the Config panel by pressing the reset button in the top-right corner as shown on the image below.
-![image](/images/samples/cricket-wifi/TOE-last.png)
+<br/>
+<img src="/images/samples/cricket-wifi/TOE-last.png" width="50%">
 <br/>
 
 
@@ -88,9 +90,7 @@ If we configured our device as shown above the device will be sending data to Th
 
 ### Additional information
 
-The same integration principles apply when building other type of sensors with Cricket. For more information please check out [IOT Developer Guide documentation](https://thingsonedge.com/documentation)
-
-Do not hesitate to contact us: contact@thingsonedge.com
+[Cricket Wi-Fi module - Documentation](https://thingsonedge.com/documentation)
 
 
 {% include templates/feedback.md %}
