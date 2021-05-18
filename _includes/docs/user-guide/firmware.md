@@ -45,19 +45,14 @@ Deletion of the firmware packages that is assigned to at least one device or dev
 
 ## Update process
 
-{% capture contenttogglespecqueue %}
-HTTP ,%inmemory%,%templates/install/tb-license-ubuntu-105.md%br%
-MQTT ,%kafka%,%templates/install/tb-license-windows-105.md%br%
-CoAP ,%kafka-in-docker%,%templates/install/tb-license-docker-105.md%br%{% endcapture %}
-{% include content-toggle.html content-toggle-id="clientsFirmware" toggle-spec=contenttogglespecqueue %}
-
-{% capture contenttogglespecqueue %}
-Ubuntu <small>(choose this if the ThingsBoard service is installed on Ubuntu server)</small>%,%inmemory%,%templates/install/tb-license-ubuntu-105.md%br%
-Windows <small>(choose this if the ThingsBoard service is installed on Windows server)</small>%,%kafka%,%templates/install/tb-license-windows-105.md%br%
-Docker <small>(choose this if the ThingsBoard service is installed on Docker)</small>%,%kafka-in-docker%,%templates/install/tb-license-docker-105.md%br%{% endcapture %}
-{% include content-toggle.html content-toggle-id="ubuntuThingsboardQueue" toggle-spec=contenttogglespecqueue %}
-
-
+{% capture contenttogglespec %}
+HTTP<br/><small>(HTTP, Sigfox, ThingPark, OceanConnect and <br/> T-Mobile IoT CDP)</small>%,%http%,%templates/install/integration/http-docker.md%br%
+MQTT Integrations<br/><small>(MQTT, AWS IoT, IBM Watson, The Things Network)</small>%,%mqtt%,%templates/install/integration/mqtt-docker.md%br%
+AWS SQS<br/> Integration<br/>%,%aws%,%templates/install/integration/aws-docker.md%br%
+Azure Event Hub<br/>Integration<br/>%,%azure%,%templates/install/integration/azure-docker.md%br%
+OPC UA<br/> Integration<br/>%,%opcua%,%templates/install/integration/opcua-docker.md%br%
+TCP/UDP<br/> Integration<br/>%,%tcpudp%,%templates/install/integration/tcpudp-docker.md{% endcapture %}
+{% include content-toggle.html content-toggle-id="remoteintegrationdockerinstall" toggle-spec=contenttogglespec %}
 
 ## Dashboard
 
