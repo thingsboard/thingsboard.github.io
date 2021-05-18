@@ -30,24 +30,41 @@ h3#hardware-partners:before, h3#integrators:before {
 }
 
 .partner-box {
-    box-shadow: 0 1px 8px 0 rgba(0,0,0,0.2), 0 3px 4px 0 rgba(0,0,0,0.14), 0 3px 3px -2px rgba(0,0,0,0.12);
+	/*box-shadow: 0 0 30px 0 rgba(0,0,0,0.04), 0 50px 50px -20px rgba(0,0,0,0.15);*/
 	position: relative;
-	width: 47%;
-	max-width: 48%;
-	min-width: 48%;
-	margin-bottom: 20px;
-	padding: 20px;
+	/*border-radius: 6px;*/
+	z-index: 1;
+	max-width: calc(50% - 12px);
+	min-width: calc(50% - 12px);
+	margin-bottom: 24px;
+	padding: 32px;
 	flex: 1;
 	display: flex;
 	align-items: flex-start;
     flex-direction: column;
 }
 
+.box-background {
+	background-color: rgb(255, 255, 255);
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	position: absolute;
+	box-shadow: 0 0 30px 0 rgba(0,0,0,0.04), 0 50px 50px -20px rgba(0,0,0,0.15);
+	border-radius: 6px;
+	z-index: -1;
+}
+
+/*.partner-box:after {*/
+/*	background-color: #fff;*/
+/*	box-shadow: 0 0 30px 0 rgba(0,0,0,0.04), 0 50px 50px -20px rgba(0,0,0,0.15);*/
+/*}*/
+
 .partner-box img.logo {
     object-fit: scale-down;
     height: 50px;
     max-width: 80%;
-    margin-left: 30px;
 }
 
 .partner-box img.partner-program {
@@ -59,8 +76,6 @@ h3#hardware-partners:before, h3#integrators:before {
 }
 
 .partner-box > div {
-	margin-left: 30px;
-    margin-top: 20px;
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -86,6 +101,11 @@ h3#hardware-partners:before, h3#integrators:before {
     flex: 1;
     align-items: center;
     font-size: 18px;
+}
+
+section, footer > main {
+	width: 100%;
+	max-width: 1400px;
 }
 
 @media screen and (max-width: 1024px) {

@@ -44,8 +44,10 @@
 		var p = document.createElement('p');
 		p.textContent = obj.blurb;
 
-        var spacer = document.createElement('p');
-        p.style.flex = '1';
+        // var spacer = document.createElement('p');
+        // p.style.flex = '1';
+        var bg = document.createElement('div');
+        bg.className = 'box-background';
 
         var linksElement = document.createElement('div');
         linksElement.className = 'links';
@@ -68,11 +70,12 @@
 
         div.appendChild(titleElement);
 		div.appendChild(p);
-        div.appendChild(spacer);
+        // div.appendChild(spacer);
 		div.appendChild(linksElement);
-
+		box.appendChild(bg);
 		box.appendChild(img);
 		box.appendChild(div);
+
 
         targetContainer.appendChild(box);
 	});
