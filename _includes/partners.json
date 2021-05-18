@@ -187,5 +187,21 @@
       }
     },
     "blurb": "KERNEL Sistemi s.r.l. designs and produces electronic solutions for automation, industrial process control, photovoltaics, energy management and home automation."
+  },
+  {
+    "type": "hardware",
+    "program": "",
+    "name": "KingPigeon Technology Co., Ltd.",
+    "logo": "kingpigeon.png",
+    "links": {
+      "Site": {
+        "href": "https://www.iot-solution.com/",
+        "target": "_blank"
+      },
+      "Integration guide": {
+        "href": "/docs/samples/kingpigeon/kingpigeon/"
+      }
+    },
+    "blurb": "King Pigeon Communication Co.,Ltd. specialized in LTE Industrial Router, Industial IOT Gateways, IIOT Gateways, 4G Industrial Router, Cellular RTU, 4G RTU, PLC Gateways, Ethernet IO Module OEM ODM Since 2005."
   }
 ]
