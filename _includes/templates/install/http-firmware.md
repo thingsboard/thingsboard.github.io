@@ -1,17 +1,19 @@
 Execute the following command in terminal to install the HTTP libs:
 
-{% highlight ruby %}
+```bash
 pip3 install requests mmh3 --user
-{% endhighlight %}
+```
 {: .copy-code}
 
 Enter the path to the client's folder in terminal and execute the following command for ThingsBoard
 to get firmware example script:
 
-{% highlight ruby %}
+```bash
 python3 http_firmware_client.py 
-{% endhighlight %}
+```
 {: .copy-code}
+
+Download HTTP client example [**http_firmware_client.py**](/docs/{{docsPrefix}}user-guide/resources/firmware/http_firmware_client.py)
 
 After getting following messages
 - `Please write your ThingsBoard host or leave it blank to use default (localhost):` - use your localhost, or the platform address starting with `https:/`;

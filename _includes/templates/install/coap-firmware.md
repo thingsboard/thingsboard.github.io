@@ -1,17 +1,19 @@
 Execute the following command in terminal to install the CoAP libs:
 
-{% highlight ruby %}
+```bash
 pip3 install asyncio aiocoap mmh3 --user
-{% endhighlight %}
+```
 {: .copy-code}
 
 Enter the path to the client's folder in terminal and execute the following command for ThingsBoard
 to get firmware example script:
 
-{% highlight ruby %}
+```bash
 python3 coap_firmware_client.py 
-{% endhighlight %}
+```
 {: .copy-code}
+
+Download CoAP client example [**coap_firmware_client.py**](/docs/{{docsPrefix}}user-guide/resources/firmware/coap_firmware_client.py)
 
 After getting following messages
 - `Please write your ThingsBoard host or leave it blank to use default (localhost):` - use your localhost, or the platform address starting with `https:/`;
