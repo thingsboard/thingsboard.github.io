@@ -43,9 +43,11 @@
 
 		var p = document.createElement('p');
 		p.textContent = obj.blurb;
+        p.className = 'description';
 
-        // var spacer = document.createElement('p');
-        // p.style.flex = '1';
+        var text = document.createElement('div');
+        text.className = 'text';
+
         var bg = document.createElement('div');
         bg.className = 'box-background';
 
@@ -60,17 +62,12 @@
                 link.target = linkInfo.target;
             }
             link.textContent = linkName;
-            if (linksElement.childNodes.length) {
-                var divider = document.createElement('span');
-                divider.textContent = ' | ';
-                linksElement.appendChild(divider);
-            }
             linksElement.appendChild(link);
         }
 
-        div.appendChild(titleElement);
-		div.appendChild(p);
-        // div.appendChild(spacer);
+        text.appendChild(titleElement);
+		text.appendChild(p);
+        div.appendChild(text);
 		div.appendChild(linksElement);
 		box.appendChild(bg);
 		box.appendChild(img);
@@ -84,22 +81,23 @@
         var becomeHardwarePartnerBox = document.createElement('div');
         becomeHardwarePartnerBox.className = 'partner-box';
 
+        var bg = document.createElement('div');
+        bg.className = 'box-background';
+
         var div = document.createElement('div');
         var p = document.createElement('p');
         p.textContent = 'Want to become ThingsBoard Hardware Partner?';
         p.className = 'become-partner';
         div.appendChild(p);
 
-        var linksElement = document.createElement('div');
-        linksElement.className = 'links';
-
         var a = document.createElement('a');
+        a.className = 'button';
         a.textContent = 'Apply for Hardware Partner Program';
         a.href = '/partners/hardware/program/';
-        linksElement.appendChild(a);
 
 
-        div.appendChild(linksElement);
+        div.appendChild(a);
+        becomeHardwarePartnerBox.appendChild(bg);
         becomeHardwarePartnerBox.appendChild(div);
 
         targetContainer.appendChild(becomeHardwarePartnerBox);

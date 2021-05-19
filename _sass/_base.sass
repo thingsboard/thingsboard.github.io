@@ -160,6 +160,13 @@ details[open]
         filter: invert(35%) sepia(96%) saturate(1837%) hue-rotate(202deg) brightness(98%) contrast(89%)
 
 // HEADER
+#partners
+  header
+    background-color: unset
+    box-shadow: unset
+    &.opened-burger
+      background-color: #fff
+
 #home, #thingsboard-paas, #thingsboard-pe, #trendz
   header
     background-color: unset
@@ -663,7 +670,7 @@ ul
     display: inline-block
 
 // FLIP NAV
-#home, #thingsboard-paas, #thingsboard-pe, #trendz
+#home, #thingsboard-paas, #thingsboard-pe, #trendz, #partners
   &.flip-nav
     header
       transition-duration: 0.3s

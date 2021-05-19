@@ -14,7 +14,7 @@ TheThingsIndustries is LoRaWAN network designed for connecting your devices usin
 After integrating TheThingsIndustries with the ThingsBoard, you can connect, communicate, process and visualize data from devices in the ThingsBoard IoT platform.
 
 
-## TheThingsIndustries setup
+## The Things Stack
 
 ##### Register Application
 The first step is to create an **application** in TheThingsIndustries console. Go to console by , open 
