@@ -55,10 +55,12 @@ CoAP<br/>%,%aws%,%templates/install/coap-firmware.md%br%{% endcapture %}
 
 ## Dashboard
 
-To observe and monitor status of your device firmwares, such as which devices are updating right now, any issues with downloads, and which ones have been updated already,
-you should go to the Dashboards into the Firmware dashboard. It creates automatically when you add firmware to your ThingsBoard.
-There you can see list of all devices with full information about their firmware. To see more details about the statuses, use tabs on the right of the page. 
-Learn more about particular devices firmware status by clicking buttons opposite to the device titles. 
+To monitor and track the firmware status of your device, such as which devices are updating right now, 
+any boot issues, and which ones have already been updated, you should go to the Firmware dashboard.
+It is created automatically when you add firmware to ThingsBoard.
+There you can see a list of all devices with full information about their firmware. 
+Use the tabs on the right side of the page to see more detailed status information.
+Find out more about the firmware status of specific devices by clicking the buttons next to the device names. 
 
 {% include images-gallery.html imageCollection="fw-dashboard" %}
 

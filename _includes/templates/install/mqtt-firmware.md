@@ -13,17 +13,17 @@ python3 mqtt_firmware_client.py
 ```
 {: .copy-code}
 
-Download MQTT client example [**mqtt_firmware_client.py**](/docs/{{docsPrefix}}user-guide/resources/firmware/mqtt_firmware_client.py)
+Download MQTT client example: [**mqtt_firmware_client.py**](/docs/{{docsPrefix}}user-guide/resources/firmware/mqtt_firmware_client.py)
 
 After getting the following messages, 
-- `Please write your ThingsBoard host or leave it blank to use default (localhost):` - use your localhost, or the platform address starting with `https:/`;
+- `Please write your ThingsBoard host or leave it blank to use default (localhost):` - use your localhost, or the platform address;
 - `Please write your ThingsBoard port or leave it blank to use default (1883):` - you can just continue by pressing "enter", or 
 input your port number;
 - `Please write accessToken for device:` - copy device accessToken from ThingsBoard and paste it into the terminal;
 - `Please write firmware chunk size in bytes or leave it blank to get all firmware by request:` - if you leave it blank, the file will be downloaded at once
 in the full size. If you want to download in parts, enter the size of the chunk.
 
-{% include images-gallery.html imageCollection="fw-updated" %}
+{% include images-gallery.html imageCollection="fw-mqtt-updated" %}
 
-Firmware of the device is updated. To see status, you should go to the firmware dashboard as it shows in the following paragraph.
+Firmware of the device is updated. To see its status, you should go to the firmware dashboard as it shows in the following paragraph.
 

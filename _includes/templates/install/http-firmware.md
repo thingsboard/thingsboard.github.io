@@ -13,7 +13,7 @@ python3 http_firmware_client.py
 ```
 {: .copy-code}
 
-Download HTTP client example [**http_firmware_client.py**](/docs/{{docsPrefix}}user-guide/resources/firmware/http_firmware_client.py)
+Download HTTP client example: [**http_firmware_client.py**](/docs/{{docsPrefix}}user-guide/resources/firmware/http_firmware_client.py)
 
 After getting following messages
 - `Please write your ThingsBoard host or leave it blank to use default (localhost):` - use your localhost, or the platform address starting with `https:/`;
@@ -23,7 +23,7 @@ input your port number;
 - `Please write firmware chunk size in bytes or leave it blank to get all firmware by request:` - if you leave it blank, the file will be downloaded at once
 in the full size. If you want to download in parts, enter the size of the chunk.
 
-{% include images-gallery.html imageCollection="fw-updated" %}
+{% include images-gallery.html imageCollection="fw-http-updated" %}
 
-Firmware of the device is updated. To see status, you should go to the firmware dashboard as it shows in the following paragraph.
+Firmware of the device is updated. To see its status, you should go to the firmware dashboard as it shows in the following paragraph.
 

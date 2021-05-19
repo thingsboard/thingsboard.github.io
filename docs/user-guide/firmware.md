@@ -35,17 +35,27 @@ deviceFirmware:
 fw-dashboard:
     0:
         image: /images/user-guide/firmware/fw-dashboard-ce.png
-        title: ''
+        title: 'Monitor and track the firmware status of your device in the Firmware dashboard.'
     1:
         image: /images/user-guide/firmware/fw-dashboard-1-ce.png
-        title: ''
+        title: 'You can see a list of all devices with full information about their firmware. Use the tabs on the right side of the page to see more detailed status information.'
     2:
         image: /images/user-guide/firmware/fw-dashboard-2-ce.png
+        title: 'Find out more about the firmware status of specific devices by clicking the buttons next to the device names. '
+
+fw-http-updated:
+    0:
+        image: /images/user-guide/firmware/fw-http-updated.png
         title: ''
 
-fw-updated:
+fw-mqtt-updated:
     0:
-        image: /images/user-guide/firmware/fw-updated.png
+        image: /images/user-guide/firmware/fw-mqtt-updated.png
+        title: ''
+
+fw-coap-updated:
+    0:
+        image: /images/user-guide/firmware/fw-coap-updated.png
         title: ''
 
      
