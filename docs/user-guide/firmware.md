@@ -42,7 +42,13 @@ fw-dashboard:
     2:
         image: /images/user-guide/firmware/fw-dashboard-2-ce.png
         title: ''
-          
+
+fw-updated:
+    0:
+        image: /images/user-guide/firmware/fw-updated.png
+        title: ''
+
+     
 ---
 
 

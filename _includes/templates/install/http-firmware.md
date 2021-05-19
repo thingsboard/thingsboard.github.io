@@ -1,0 +1,27 @@
+Execute the following command in terminal to install the HTTP libs:
+
+{% highlight ruby %}
+pip3 install requests mmh3 --user
+{% endhighlight %}
+{: .copy-code}
+
+Enter the path to the client's folder in terminal and execute the following command for ThingsBoard
+to get firmware example script:
+
+{% highlight ruby %}
+python3 http_firmware_client.py 
+{% endhighlight %}
+{: .copy-code}
+
+After getting following messages
+- `Please write your ThingsBoard host or leave it blank to use default (localhost):` - use your localhost, or the platform address starting with `https:/`;
+- `Please write your ThingsBoard port or leave it blank to use default (1883):` - you can just continue by pressing "enter", or 
+input your port number;
+- `Please write accessToken for device:` - copy device accessToken from ThingsBoard and paste it into the terminal;
+- `Please write firmware chunk size in bytes or leave it blank to get all firmware by request:` - if you leave it blank, the file will be downloaded at once
+in the full size. If you want to download in parts, enter the size of the chunk.
+
+{% include images-gallery.html imageCollection="fw-updated" %}
+
+Firmware of the device is updated. To see status, you should go to the firmware dashboard as it shows in the following paragraph.
+

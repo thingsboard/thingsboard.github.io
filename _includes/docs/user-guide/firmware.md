@@ -1,6 +1,8 @@
 * TOC 
 {:toc}
 
+## Introduction
+
 Since ThingsBoard 3.3, the Tenant administrator is able to provision and distribute firmware updates to devices. As a
 tenant administrator, you can assign provisioned firmware to specific device or device profile. ThingsBoard
 notifies devices about available firmware update, provide a protocol-specific API to download the firmware, stores
@@ -21,13 +23,13 @@ Each firmware update consist of:
 * Checksum - value of the file checksum. Optional. If no checksum provided by the user, server will use SHA-256 algorithm automatically.
 * Description - optional text description of the firmware. 
 
-{% include images-gallery.html imageCollection="createFirmware" preview="false" %}
+{% include images-gallery.html imageCollection="createFirmware" %}
 
 You can browse the provisioned firmware packages as well as search them by title. Also, you are able to download and delete packages.
 To open firmware details page, click the table row. Firmware details allow you to copy firmware ID and checksum. 
 Also, in [Audit logs](/docs/{{docsPrefix}}user-guide/audit-log/) you can browse firmware status.
 
-{% include images-gallery.html imageCollection="listFirmware" preview="false" %}
+{% include images-gallery.html imageCollection="listFirmware" %}
 
 All actions listed are also available via [REST API](/docs/{{docsPrefix}}reference/rest-api/)
 
@@ -36,7 +38,7 @@ All actions listed are also available via [REST API](/docs/{{docsPrefix}}referen
 As a tenant administrator, you are able to assign uploaded firmware to the device profile or particular device.
 Every device has a device profile. The firmware version assigned to the device will automatically overwrite firmware version that is assigned to the device profile.
 
-{% include images-gallery.html imageCollection="deviceFirmware" preview="false" %}
+{% include images-gallery.html imageCollection="deviceFirmware" %}
 
 {% capture delete_restrictions %}
 Deletion of the firmware packages that is assigned to at least one device or device profile is prohibited.
@@ -46,17 +48,19 @@ Deletion of the firmware packages that is assigned to at least one device or dev
 ## Update process
 
 {% capture contenttogglespec %}
-HTTP<br/><small>(HTTP, Sigfox, ThingPark, OceanConnect and <br/> T-Mobile IoT CDP)</small>%,%http%,%templates/install/integration/http-docker.md%br%
-MQTT Integrations<br/><small>(MQTT, AWS IoT, IBM Watson, The Things Network)</small>%,%mqtt%,%templates/install/integration/mqtt-docker.md%br%
-AWS SQS<br/> Integration<br/>%,%aws%,%templates/install/integration/aws-docker.md%br%
-Azure Event Hub<br/>Integration<br/>%,%azure%,%templates/install/integration/azure-docker.md%br%
-OPC UA<br/> Integration<br/>%,%opcua%,%templates/install/integration/opcua-docker.md%br%
-TCP/UDP<br/> Integration<br/>%,%tcpudp%,%templates/install/integration/tcpudp-docker.md{% endcapture %}
+HTTP<br/>%,%http%,%templates/install/http-firmware.md%br%
+MQTT<br/>%,%mqtt%,%templates/install/mqtt-firmware.md%br%
+CoAP<br/>%,%aws%,%templates/install/coap-firmware.md%br%{% endcapture %}
 {% include content-toggle.html content-toggle-id="remoteintegrationdockerinstall" toggle-spec=contenttogglespec %}
 
 ## Dashboard
 
-{% include images-gallery.html imageCollection="fw-dashboard" preview="false" %}
+To observe and monitor status of your device firmwares, such as which devices are updating right now, any issues with downloads, and which ones have been updated already,
+you should go to the Dashboards into the Firmware dashboard. It creates automatically when you add firmware to your ThingsBoard.
+There you can see list of all devices with full information about their firmware. To see more details about the statuses, use tabs on the right of the page. 
+Learn more about particular devices firmware status by clicking buttons opposite to the device titles. 
+
+{% include images-gallery.html imageCollection="fw-dashboard" %}
 
 ## Configuration
 
