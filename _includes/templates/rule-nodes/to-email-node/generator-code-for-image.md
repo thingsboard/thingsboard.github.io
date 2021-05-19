@@ -1,6 +1,4 @@
-_To send image you need to encode image to Base64.To do this you need to find
-some service that can do this and set result string
-for `encodedImage` in next example._
+_To send an image you need to encode the image to Base64. To do this you need to find some service that can do this and set the result string for `encodedImage` in the next example._
 
 Example of generator JS code
 ```js

@@ -46,35 +46,35 @@ This Tutorial is to show you how to send an email message with HTML page or imag
 ## Message flow
 - Like a start point we will use [Generator](/docs/user-guide/rule-engine-2-0/action-nodes/#generator-node) that will imitate regular rule chain messages flow: prepared message and metadata
   where we can contain some dynamic field for **to email** node.
-- [To email node](/docs/user-guide/rule-engine-2-0/transformation-nodes/#to-email-node) will prepare data, destination email, and other for email message
-- [Send email node](/docs/user-guide/rule-engine-2-0/external-nodes/#send-email-node) will send a message
+- The [To email node](/docs/user-guide/rule-engine-2-0/transformation-nodes/#to-email-node) prepares data, destination email, and other for email message.
+- The [Send email node](/docs/user-guide/rule-engine-2-0/external-nodes/#send-email-node) sends a message.
 
 ## Configuring Rule Nodes
 
 #### Configuring "to email" node
 
-At first lets create and configure "to email" node.
+At first, lets create and configure "to email" node.
 
-1. Go to rule chain, find `to email` node and drag it to canvas.
-2. Specify: **Name**, **From Template**, **To Template** - we will use pattern to find email in data of message, **Subject Template**. Choose **Mail Body Type** HTML or Dynamic if you need. We will use dynamic.
-3. Specify HTML to **Body Template**, you can use our example.
-4. Press **Add**
+1. Go to rule chain, find `to email` node and drag it to the canvas.
+2. Specify: **Name**, **From Template**, **To Template** - we will use pattern to find an email in data of message, **Subject Template**. Select **Mail Body Type** HTML or Dynamic. We will use the Dynamic.
+3. Specify HTML to **Body Template** (you can use our example).
+4. Press **Add**.
 
 {% include images-gallery.html imageCollection="to_email_node" %}
 
 {% capture bodyTemplateExamples %}
 Example of HTML page%,%loriot-account%,%templates/rule-nodes/to-email-node/html-page.md%br%
-Example of html with image%,%basic-credential%,%templates/rule-nodes/to-email-node/html-image.md{% endcapture %}
+Example of HTML with image%,%basic-credential%,%templates/rule-nodes/to-email-node/html-image.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="bodyTemplateExamples" toggle-spec=bodyTemplateExamples %}
 
 #### Configuring generator
-At the second point lets configure "generator" node
-1. Find in rule chain `generator` and drag it to canvas
+At the second stage, let's configure the "generator" node:
+1. Find in the Rule Chain `Generator` and drag it to the canvas
 2. Specify name field, choose "1" for **message count** and, for example "2" for **Period in seconds**
-3. Now we need to prepare JS code, also you can use our example
+3. Now we need to prepare JS code, also you can use our example.
 
-*Here we need to specify fields in metadata, that dynamic in "to email" node. In our example it is "isHtml" and "userEmail" fields.*
+*Here we need to specify fields in metadata, that are dynamic in "to email" node. In our example it is "isHtml" and "userEmail" fields.*
 
 {% capture generatorCode %}
 JS code for HTML page%,%html-page%,%templates/rule-nodes/to-email-node/generator-code-for-html.md%br%
@@ -89,8 +89,8 @@ Save rule chain.
 {% include images-gallery.html imageCollection="rule_chain" %}
 
 ## Result
-Check destination email to see result of "to email" node work.
-We got next message:
+Check destination email to see the result of the “to email” node work. 
+We got the next message:
 
 {% include images-gallery.html imageCollection="results" %}
 

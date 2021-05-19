@@ -1,4 +1,4 @@
-To send image you just need to specify name of image with file extension
+To send an image, you just need to specify the name of the image with the file extension.
 
 Example of HTML with image
 ```html

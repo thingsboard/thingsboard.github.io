@@ -1,5 +1,5 @@
 
-Example of html
+Example of HTML
 ```html
 <table class="main" style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; box-sizing: border-box; border-radius: 3px; width: 100%; background-color: #f6f6f6; margin: 0px auto;" cellspacing="0" cellpadding="0" bgcolor="#f6f6f6">
     <tbody>
