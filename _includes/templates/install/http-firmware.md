@@ -16,7 +16,7 @@ python3 http_firmware_client.py
 Download HTTP client example: [**http_firmware_client.py**](/docs/{{docsPrefix}}user-guide/resources/firmware/http_firmware_client.py)
 
 After getting the following messages
-- `Please write your ThingsBoard host or leave it blank to use default (localhost):` - use your localhost, or the platform address starting with `https:/`;
+- `Please write your ThingsBoard host or leave it blank to use default (localhost):` - use your localhost, or the platform address;
 - `Please write your ThingsBoard port or leave it blank to use default (8080):` - you can just continue by pressing "enter", or 
 input your port number;
 - `Please write accessToken for device:` - copy device accessToken from ThingsBoard and paste it into the terminal;

@@ -59,7 +59,9 @@ fw-status:
     0:
         image: /images/user-guide/firmware/fw-status-ce.png
         title: ''
-    1:
+
+fw-status-1:
+    0:
         image: /images/user-guide/firmware/fw-status-1-ce.png
         title: ''
 
