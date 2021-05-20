@@ -8,7 +8,8 @@ description: IoT device firmware updates
 createFirmware:
     0:
         image: /images/user-guide/firmware/add-firmware-ce.png  
-        title: 'You have to enter title and version; select type and device profile; choose file contains firmware. Optionally add checksum algorithm and checksum.'
+        title: 'You have to enter title and version; select type and device profile (this field we define what type of device this firmware will be available; 
+                choose file contains firmware. Optionally add checksum algorithm and checksum.'
 
 listFirmware:
     0:
@@ -24,13 +25,24 @@ listFirmware:
 deviceFirmware:
     0:
         image: /images/user-guide/firmware/device-firmware-ce.png
-        title: ''
+        title: 'Go to the Device page and open needed device details to edit its information.'
     1:
         image: /images/user-guide/firmware/device-firmware-1-ce.png
-        title: ''
+        title: "From the drop-down menu select firmware that you'd like to assign to this device."
     3:
         image: /images/user-guide/firmware/device-firmware-2-ce.png
-        title: ''
+        title: 'After selecting firmware, apply changes by clicking the orange check mark in the right corner of the page.'
+
+fw-deviceprofile:
+    0:
+        image: /images/user-guide/firmware/fw-deviceprofile-ce.png
+        title: 'Go to the Device profile page and open needed device profile details to edit its information.'
+    1:
+        image: /images/user-guide/firmware/fw-deviceprofile-1-ce.png
+        title: "From the drop-down menu select firmware that you'd like to assign to this device profile."
+    2:
+        image: /images/user-guide/firmware/fw-deviceprofile-2-ce.png
+        title: 'After selecting firmware, apply changes by clicking the orange check mark in the right corner of the page.'
 
 fw-dashboard:
     0:
@@ -42,6 +54,14 @@ fw-dashboard:
     2:
         image: /images/user-guide/firmware/fw-dashboard-2-ce.png
         title: 'Find out more about the firmware status of specific devices by clicking the buttons next to the device names. '
+
+fw-status:
+    0:
+        image: /images/user-guide/firmware/fw-status-ce.png
+        title: ''
+    1:
+        image: /images/user-guide/firmware/fw-status-1-ce.png
+        title: ''
 
 fw-http-updated:
     0:
@@ -57,6 +77,8 @@ fw-coap-updated:
     0:
         image: /images/user-guide/firmware/fw-coap-updated.png
         title: ''
+
+
 
      
 ---
