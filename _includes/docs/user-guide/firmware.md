@@ -54,6 +54,18 @@ Deletion of the firmware packages that is assigned to at least one device or dev
 
 ## Update process
 
+Attributes that you need to [request](/docs/{{docsPrefix}}reference/mqtt-api/#request-attribute-values-from-the-server) 
+and [subscribe to](/docs/{{docsPrefix}}reference/mqtt-api/#subscribe-to-attribute-updates-from-the-server).
+
+- fw_checksum - attribute that responsible for verifying if the received file is the same as the sent one.
+- fw_checksum_algorithm - the algorithm by which the checksum is calculated. 
+- fw_size - size of the firmware file in bytes.
+- fw_title - name of the firmware.
+- fw_version - version of the firmware.
+- fw_state - [status](/docs/{{docsPrefix}}user-guide/firmware/?remoteintegrationdockerinstall=mqtt#dashboard) of the updating process. 
+
+{% include images-gallery.html imageCollection="fw-attributes" %}
+
 {% capture contenttogglespec %}
 HTTP<br/>%,%http%,%templates/install/http-firmware.md%br%
 MQTT<br/>%,%mqtt%,%templates/install/mqtt-firmware.md%br%

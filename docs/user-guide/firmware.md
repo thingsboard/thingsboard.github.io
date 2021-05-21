@@ -44,6 +44,11 @@ fw-deviceprofile:
         image: /images/user-guide/firmware/fw-deviceprofile-2-ce.png
         title: 'After selecting firmware, apply changes by clicking the orange check mark in the right corner of the page.'
 
+fw-attributes:
+    0:
+        image: /images/user-guide/firmware/fw-attributes-ce.png
+        title: ''
+
 fw-dashboard:
     0:
         image: /images/user-guide/firmware/fw-dashboard-ce.png

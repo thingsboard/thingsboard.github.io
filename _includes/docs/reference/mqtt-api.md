@@ -241,6 +241,10 @@ The supported data format is:
 }
 ```
   
+## Firmware API 
+
+
+
 ## Protocol customization
 
 MQTT transport can be fully customized for specific use-case by changing the corresponding [module](https://github.com/thingsboard/thingsboard/tree/master/transport/mqtt).
