@@ -1,3 +1,6 @@
+First you need to [request](/docs/{{docsPrefix}}reference/coap-api/#firmware-api/docs/reference/coap-api/#request-attribute-values-from-the-server)
+and [subscribe to](/docs/{{docsPrefix}}reference/coap-api/#subscribe-to-attribute-updates-from-the-server) attributes.
+
 Execute the following command in terminal to install the CoAP libs:
 
 ```bash

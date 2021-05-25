@@ -1,12 +1,14 @@
-Execute the following command in terminal to install the MQTT libs:
+First you need to [request](/docs/{{docsPrefix}}reference/mqtt-api/#request-attribute-values-from-the-server)
+and [subscribe to](/docs/{{docsPrefix}}reference/mqtt-api/#subscribe-to-attribute-updates-from-the-server) attributes. 
+
+After, you should execute the following command to install the MQTT libs:
 
 ```bash
 pip3 install paho-mqtt mmh3 --user
 ```
 {: .copy-code}
 
-Enter the path to the client's folder in terminal and execute the following command for ThingsBoard
-to get firmware example script:
+Enter the path to the client's folder and execute the following command for ThingsBoard to get firmware example script:
 
 ```bash
 python3 mqtt_firmware_client.py 
@@ -26,4 +28,3 @@ in the full size. If you want to download in parts, enter the size of the chunk.
 {% include images-gallery.html imageCollection="fw-mqtt-updated" %}
 
 Firmware of the device is updated. To see its status, you should go to the firmware dashboard as it shows in the following paragraph.
-

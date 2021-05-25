@@ -1,3 +1,6 @@
+First you need to [request](/docs/{{docsPrefix}}reference/http-api/#request-attribute-values-from-the-server)
+and [subscribe to](/docs/{{docsPrefix}}reference/http-api/#subscribe-to-attribute-updates-from-the-server) attributes.
+
 Execute the following command in terminal to install the HTTP libs:
 
 ```bash

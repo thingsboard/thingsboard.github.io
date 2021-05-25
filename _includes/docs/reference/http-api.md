@@ -223,7 +223,23 @@ The supported data format is:
   "provisionDeviceSecret": "jpmwdn8ptlswmf4m29bw"
 }
 ```
-  
+
+## Firmware API
+
+When ThingsBoard initiates the firmware update over HTTP it sets the fw_title, fw_version, fw_checksum, fw_checksum_algorithm shared attributes.
+To receive the shared attribute updates, the device has to subscribe to
+
+```shell
+http(s)://host/api/v1/$ACCESS_TOKEN/firmware?title=${title}&version=${version}
+```
+{: .copy-code}
+
+Where  
+host - your localhost, or the platform address;  
+$ACCESS_TOKEN -  the device access token;
+${title} - the firmware title;  
+${version} - the version of the target firmware.
+
 ## Protocol customization
 
 HTTP transport can be fully customized for specific use-case by changing the corresponding [module](https://github.com/thingsboard/thingsboard/tree/master/transport/http).
