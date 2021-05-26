@@ -251,6 +251,10 @@ v1/devices/me/attributes/response/+
 ```
 {: .copy-code}
 
+Where
+
+**+** is the Wildcard character.
+
 When the MQTT device receives updates for fw_title and fw_version shared attributes, it has to send PUBLISH message to
 
 ```bash
@@ -259,8 +263,8 @@ v2/fw/request/${requestId}/chunk/${chunk}
 {: .copy-code}
 
 Where
-${requestId} - the number that corresponds with the firmware update times. The ${requestId} has to be different for each firmware update.  
-${chunk} - the size of the firmware. The chunks are counted from 0. The device must increment the chunk index for each request until the chunk size is zero.
+**${requestId}** - number corresponding to the number of firmware updates. The ${requestId} has to be different for each firmware update.  
+**${chunk}** - the size of the firmware in bytes. The chunks are counted from 0. The device must increment the chunk index for each request until the chunk size is zero.
 
 For each new firmware update, you need to change the request ID and subscribe to 
 
@@ -268,6 +272,10 @@ For each new firmware update, you need to change the request ID and subscribe to
 v2/fw/response/+/chunk/+
 ```
 {: .copy-code}
+
+Where
+
+**+** is the Wildcard character.
 
 ## Protocol customization
 

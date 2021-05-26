@@ -236,15 +236,15 @@ The supported data format is:
 The CoAP client has to issue the GET request to
 
 ```bash
- coap get coap://host/api/v1/$ACCESS_TOKEN/firmware?title=${title}&version=${version}
+ coap get coap://host/api/v1/${access_token}/firmware?title=${title}&version=${version}
 ```
 {: .copy-code}
 
 Where  
-host - your localhost, or the platform address;  
-$ACCESS_TOKEN -  device access token;
-${title} - the firmware title;  
-${version} - the version of the target firmware.
+**host** - your localhost, or the platform address;  
+**${access_token}** -  device access token;  
+**${title}** - the firmware title;  
+**${version}** - the version of the target firmware.
 
 ## Protocol customization
 

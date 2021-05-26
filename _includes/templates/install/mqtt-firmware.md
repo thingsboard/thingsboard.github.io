@@ -1,5 +1,3 @@
-First you need to [request](/docs/{{docsPrefix}}reference/mqtt-api/#request-attribute-values-from-the-server)
-and [subscribe to](/docs/{{docsPrefix}}reference/mqtt-api/#subscribe-to-attribute-updates-from-the-server) attributes. 
 
 After, you should execute the following command to install the MQTT libs:
 
@@ -28,3 +26,5 @@ in the full size. If you want to download in parts, enter the size of the chunk.
 {% include images-gallery.html imageCollection="fw-mqtt-updated" %}
 
 Firmware of the device is updated. To see its status, you should go to the firmware dashboard as it shows in the following paragraph.
+
+To find out about the firmware update, you need to [make a request and subscribe to attributes](/docs/{{docsPrefix}}reference/mqtt-api/#firmware-api).

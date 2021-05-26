@@ -227,18 +227,18 @@ The supported data format is:
 ## Firmware API
 
 When ThingsBoard initiates the firmware update over HTTP it sets the fw_title, fw_version, fw_checksum, fw_checksum_algorithm shared attributes.
-To receive the shared attribute updates, the device has to subscribe to
+To receive the shared attribute updates, the device has to GET request
 
 ```shell
-http(s)://host/api/v1/$ACCESS_TOKEN/firmware?title=${title}&version=${version}
+http(s)://host/api/v1/${access_token}/firmware?title=${title}&version=${version}
 ```
 {: .copy-code}
 
 Where  
-host - your localhost, or the platform address;  
-$ACCESS_TOKEN -  the device access token;
-${title} - the firmware title;  
-${version} - the version of the target firmware.
+**host** - your localhost, or the platform address;  
+**${access_token}** -  the device access token;  
+**${title}** - the firmware title;  
+**${version}** - the version of the target firmware.
 
 ## Protocol customization
 

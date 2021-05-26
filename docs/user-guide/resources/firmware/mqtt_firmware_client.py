@@ -129,7 +129,7 @@ class FirmwareClient(Client):
                 self.firmware_info = self.firmware_info.get("shared", {}) if isinstance(self.firmware_info, dict) else {}
             if (self.firmware_info.get(FW_VERSION_ATTR) is not None and self.firmware_info.get(FW_VERSION_ATTR) != self.current_firmware_info.get("current_" + FW_VERSION_ATTR)) or \
                     (self.firmware_info.get(FW_TITLE_ATTR) is not None and self.firmware_info.get(FW_TITLE_ATTR) != self.current_firmware_info.get("current_" + FW_TITLE_ATTR)):
-                print("Firmware is not the same")
+                print("New firmware available!")
                 self.firmware_data = b''
                 self.__current_chunk = 0
 

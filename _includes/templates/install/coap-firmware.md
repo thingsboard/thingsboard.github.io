@@ -1,6 +1,3 @@
-First you need to [request](/docs/{{docsPrefix}}reference/coap-api/#firmware-api/docs/reference/coap-api/#request-attribute-values-from-the-server)
-and [subscribe to](/docs/{{docsPrefix}}reference/coap-api/#subscribe-to-attribute-updates-from-the-server) attributes.
-
 Execute the following command in terminal to install the CoAP libs:
 
 ```bash
@@ -29,4 +26,6 @@ in the full size. If you want to download in parts, enter the size of the chunk.
 {% include images-gallery.html imageCollection="fw-coap-updated" %}
 
 Firmware of the device is updated. To see its status, you should go to the firmware dashboard as it shows in the following paragraph.
+
+To find out about the firmware update, you need to [make a request and subscribe to attributes](/docs/{{docsPrefix}}reference/coap-api/#firmware-api).
 
