@@ -12,8 +12,20 @@ p, h1, h5 {
 	position: absolute;
 	z-index: 1;
 	top: -40px;
-	width: 1600px;
+	width: 160px;
 	left: calc(50% - 800px);
+}
+
+#hardwareContainer:after {
+	content: "";
+	background-image: url(/images/partners/hardware-map.svg);
+	background-size: contain;
+	display: block;
+	position: absolute;
+	right: 0;
+	top: -40px;
+	width: 1600px;
+	height: 800px;
 }
 
 .background div {
@@ -186,6 +198,19 @@ section {
 }
 
 @media screen and (max-width: 768px) {
+	#users {
+		padding: 30px 20px 0px;
+	}
+
+	#users main h1 {
+		font-size: 32px;
+		line-height: 50px;
+	}
+
+	#users main h5 {
+		font-size: 16px;
+	}
+
 	#hardwareContainer {
 		justify-content: center;
 	}
@@ -196,5 +221,20 @@ section {
 		width: 100%;
 		max-width: 100%;
 		min-width: 100%;
+		padding: 24px;
+	}
+
+	.partner-box > div > .links > a {
+		font-size: 14px;
+		margin-right: 6px;
+		line-height: 37px;
+	}
+
+	.partner-box div div.text p.title {
+		font-size: 22px;
+	}
+
+	.partner-box div div.text p.description {
+		font-size: 14px;
 	}
 }
