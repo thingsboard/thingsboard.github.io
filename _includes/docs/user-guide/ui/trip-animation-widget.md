@@ -12,12 +12,12 @@ Trip animation widget can be useful for multiple use cases, but mainly it is use
 
 To start, let's [create a device](/docs/{{docsPrefix}}user-guide/ui/devices/). Telemetry will be collected from it.
 
-However, you can use any device that receives coordinates(longitude and latitude) telemetry in a realtime.
+However, you can use any device that receives coordinates (longitude and latitude) telemetry in a realtime.
 Our device receives longitude, latitude and speed. Longitude and latitude are the key data for map visualization.
 
-#### Configuring rule chain
+#### Setting up rule chain
 
-For this tutorial, we created rule chain with generator to emulate telemetry and visualize it on the dashboard.
+For this tutorial, we created rule chain with generator that emulates telemetry and visualizes it on the dashboard.
 To create a rule chain, you should:
 
 {% include images-gallery.html imageCollection="taw-rulenode" showListImageTitles="true" %}
@@ -50,6 +50,10 @@ speed = 0;
 } else if (speed > 90) {
 speed = 90;
 }
+var msg = { speed: speed, latitude: latitude, longitude: longitude };
+var metadata = { data: 40 };
+var msgType = "POST_TELEMETRY_REQUEST";
+return { msg: msg, metadata: metadata, msgType: msgType };
 {% endhighlight %}
 
 </details>
@@ -105,12 +109,19 @@ Advanced settings tab allows specifying unique parameters for the Trip Animation
 
 **2.2** Latitude & Longitude key names
 
-You can specify name based on which widget will be updated. 
-It uses data based on the label of the data. Meaning you can specify label “data1” for the longitude key value and get longitude from the alias, but only after editing longitude key name as “data1”.
+You can specify a key name, based on which the widget will be updated.
+It uses data based on the data label, meaning you can specify label “data1” for the longitude key value and get longitude from the alias, but only after editing longitude key name as “data1”.
 
 {% include images-gallery.html imageCollection="taw-longitude" showListImageTitles="true" %}
 
-**2.3** Widget label, or specify label function (you may change data contained in a widget label based on data, dsData, dsIndex)
+**2.3** Widget label
+
+Widget label responsible for the label of the map marker. To change it, you should:
+
+
+{% include images-gallery.html imageCollection="taw-label" showListImageTitles="true" %}
+
+**2.4** Specify label function (change data contained in a widget label based on data, dsData, dsIndex)
 
 ![image](/images/user-guide/ui/widgets/trip-animation-widget/5.gif)
  
@@ -121,7 +132,7 @@ It uses data based on the label of the data. Meaning you can specify label “da
 </summary>
 
 {% highlight ruby %}
-var speed = dsData[0][0]['speed'];
+var speed = dsData[0]['speed'];
 var res;
 if (speed > 55) {
     res = "Too Fast"

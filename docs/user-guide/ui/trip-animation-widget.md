@@ -5,14 +5,14 @@ description: Trip animation widget guide
 taw-rulenode:
     0:
         image: /images/user-guide/ui/widgets/trip-animation-widget/taw-rulenode-ce.png
-        title: 'Open rule chains. In the node search bar, enter "generator" to quickly find the rule node that we need.
-                Drag the generator rule node to an empty spot on the rule chain canvas. In the dialog box,
+        title: 'Open rule chains. In the node search bar, enter "generator" to quickly find needed rule node.
+                Drag the generator rule node to the rule chain canvas. In the dialog box,
                 enter a name for the generator, set the Device originator type, and select the device.
-                Then, enter the function to generate latitude, longitude, and speed telemetry. Click Add.'
+                Then, enter the function to generate latitude, longitude, and speed telemetry. Click "Add".'
     1:
         image: /images/user-guide/ui/widgets/trip-animation-widget/taw-rulenode-1-ce.png
-        title: 'After adding the generator, enter "timeseries" in the search bar to quickly find the Save Timeseries rule node.
-                Drag the rule node to an empty space on the rule chain canvas somewhere near the generator rule node.
+        title: 'After adding the generator, enter "timeseries" in the search bar to find the Save Timeseries rule node.
+                Drag a rule node to the canvas next to the generator rule node.
                 In the dialog box, enter a name for the rule node and click Add.'
     2:
         image: /images/user-guide/ui/widgets/trip-animation-widget/taw-rulenode-2-ce.png
@@ -85,20 +85,28 @@ taw-mapprovider:
 
 taw-longitude:
     0:
-        image: /images/user-guide/ui/widgets/trip-animation-widget/taw-longitude-ce.png
-        title: 'In advanced tab, change Longitude key name on custom one. In the tutorial will be used Data1.'
-    1:
         image: /images/user-guide/ui/widgets/trip-animation-widget/taw-longitude-1-ce.png
-        title: 'In the Data tab, click the pencil icon opposite time series data key.'
-    2:
+        title: 'In advanced tab, change Longitude key name on a custom one. In this tutorial will be used "data1".'
+    1:
         image: /images/user-guide/ui/widgets/trip-animation-widget/taw-longitude-2-ce.png
-        title: 'Enter the same custom name in the Label bar and click "Save".'
-    3:
+        title: 'In the Tooltip row, change both label name and key name to the same custom name ("data1"). Click the orange check mark in the upper right corner of the page to save the applied changes.'
+    2:
         image: /images/user-guide/ui/widgets/trip-animation-widget/taw-longitude-3-ce.png
-        title: 'In the Advanced tab change both label name and key name to the custom name. Click orange check mark in the lower right corner of the page to save all applied changes.'
-    4:
+        title: 'Go to the Data tab and click the pencil icon opposite to the Longitude data key.'
+    3:
         image: /images/user-guide/ui/widgets/trip-animation-widget/taw-longitude-4-ce.png
+        title: 'Change the Label to the same key name (data1) and save changes'
+    4:
+        image: /images/user-guide/ui/widgets/trip-animation-widget/taw-longitude-5-ce.png
         title: 'After saving all applied changes, longitude on the tooltip displayed as Data1.'
+
+taw-label:
+    0:
+        image: /images/user-guide/ui/widgets/trip-animation-widget/taw-label-ce.png
+        title: 'In advanced tab, check the Show label box and enter the desired label. Apply changes by clicking the orange check mark in the upper right corner of the page.'
+    1:
+        image: /images/user-guide/ui/widgets/trip-animation-widget/taw-label-1-ce.png
+        title: 'Label has been changed. To save applied changes, click the orange check mark in the lower right corner of the page.'
 
 taw-tooltip:
     0:
