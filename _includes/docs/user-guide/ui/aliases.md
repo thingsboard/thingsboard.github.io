@@ -124,7 +124,7 @@ Let's learn how to add an _Entity from dashboard state_ alias:
 Now let's use an added alias in a widget and add a [state](/docs/{{docsPrefix}}user-guide/dashboards/#states) to see how this alias works:
 1. Click the "Add new widget" icon in the center of the screen.
 2. In the opened widget bundles selection, click "Cards system". There select the Entity table widget.
-3. Input data source: Entity type, _Group entities_ alias and add telemetry. Click "Add" in the lower right corner to add a widget.
+3. Input data source: Entity type, _Entity list_ alias and add telemetry. Click "Add" in the lower right corner to add a widget.
 4. After adding the widget, click layers icon in the top left corner of the dashboard to create a new state.
 In the opened dialog window, click a "+" icon to add a new state.
 5. Enter state's name and click "Add".
@@ -137,7 +137,7 @@ Time to add an action to a root dashboard widget and perform it using an Entity 
 1. In the root dashboard state, enter widget Edit mode by clicking the "pencil" icon in the upper right corner of it to enter an Edit mode of the widget.
 2. Move to the Action cell and click a "+" icon to add a new action.
 3. In the Add widget dialog, select an [action source](/docs/{{docsPrefix}}user-guide/ui/widget-actions/#action-sources) which is responsible for each entity separately (action cell button, on row click etc.)
-4. Enter the name of the action ${entityName} which takes the clicked on entity's name and uses it during the action performance.
+4. Enter the name of the action.
 5. If necessary, select the icon representing the button to perform the action.
 6. Select the _Navigate to new dashboard state_ action type and set newly created state as a target dashboard state. Click "Add" to add a new action to the widget.
 7. After successfully adding the action, click big orange tick mark in the upper right of the screen to apply the changes.
@@ -170,7 +170,7 @@ Let's learn how to add an Asset type alias and use it in a widget:
 <br>
 
  
-### Device types
+### Device type
 
 This alias allows choosing devices of entered type (and, if needed) names of which begin with an entered query. This alias filters devices of type ‘Temperature Sensor’.
 

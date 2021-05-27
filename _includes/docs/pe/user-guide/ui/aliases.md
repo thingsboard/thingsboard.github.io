@@ -58,7 +58,7 @@ Now let's use the added alias in a widget:
 4. After adding the widget, click the "pencil" icon in the upper right corner to enter the widget editing mode.
 5. Move to the Action cell and click a "+" icon to add a new action.
 6. In the Add widget dialog, select an [action source](/docs/{{docsPrefix}}user-guide/ui/widget-actions/#action-sources) which is responsible for each entity separately (action cell button, on row click etc.)
-7. Enter the name of the action ${entityName} which takes the name of the clicked entity and uses it during the action.
+7. Enter the name of the action.
 8. If necessary, select the icon representing the button to perform the action.
 9. Select the _Update current dashboard state_ action type and click "Add" to add a new action to the widget.
 10. After successfully adding the action, click the large orange checkmark in the upper right of the screen to apply the changes.
@@ -102,7 +102,7 @@ Now let's use the added alias in a widget:
 4. After adding the widget, click the "pencil" icon in the upper right corner to enter the widget editing mode.
 5. Move to the Action cell and click a "+" icon to add a new action.
 6. In the Add widget dialog, select an [action source](/docs/{{docsPrefix}}user-guide/ui/widget-actions/#action-sources) which is responsible for each entity separately (action cell button, on row click etc.)
-7. Enter the name of the action ${entityName} which takes the clicked on entity's name and uses it during the action.
+7. Enter the name of the action.
 8. If necessary, select the icon representing the button to perform the action.
 9. Select the _Update current dashboard state_ action type and click "Add" to add a new action to the widget.
 10. After successfully adding the action, click big orange tick mark in the upper right of the screen to apply the changes.
