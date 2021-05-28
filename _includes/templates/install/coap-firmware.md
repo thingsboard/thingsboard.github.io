@@ -1,4 +1,4 @@
-Execute the following command in terminal to install the CoAP libs:
+Execute the following command in terminal to install the CoAP and checksum libs:
 
 ```bash
 pip3 install asyncio aiocoap mmh3 --user

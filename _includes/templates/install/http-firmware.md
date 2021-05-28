@@ -1,5 +1,5 @@
 
-Execute the following command in terminal to install the HTTP libs:
+Execute the following command in terminal to install the HTTP and checksum libs:
 
 ```bash
 pip3 install requests mmh3 --user

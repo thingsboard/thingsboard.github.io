@@ -82,7 +82,7 @@ CoAP<br/>%,%aws%,%templates/install/coap-firmware.md%br%{% endcapture %}
 
 ThingsBoard provides the summary of the firmware update to monitor and track the firmware update status of your device, such as which devices are updating right now, 
 any boot issues, and which ones have already been updated.
-It is created automatically when you add firmware to ThingsBoard.
+It is created automatically for each new tenant you add to ThingsBoard. You can also download the dashboard JSON [here]().
 There you can see a list of all devices with full information about their firmware. 
 
 {% include images-gallery.html imageCollection="fw-dashboard" %}
@@ -121,6 +121,8 @@ So, there are eight statuses in total. Two of them are created by us and all the
 ## Configuration
 
 ##### ThingsBoard configuration file
+
+
 
 Execute following command to edit ThingsBoard configuration file:
 

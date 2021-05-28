@@ -1,5 +1,5 @@
 
-After, you should execute the following command to install the MQTT libs:
+After, you should execute the following command to install the MQTT and checksum libs:
 
 ```bash
 pip3 install paho-mqtt mmh3 --user
