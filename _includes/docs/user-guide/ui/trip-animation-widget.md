@@ -116,14 +116,14 @@ It uses data based on the data label, meaning you can specify label “data1” 
 
 **2.3** Widget label
 
-Widget label responsible for the label of the map marker. To change it, you should:
+* Widget label responsible for the label of the map marker. To change it, you should:
 
 
 {% include images-gallery.html imageCollection="taw-label" showListImageTitles="true" %}
 
-**2.4** Specify label function (change data contained in a widget label based on data, dsData, dsIndex)
+* Specify label function (change data contained in a widget label based on data, dsData, dsIndex)
 
-![image](/images/user-guide/ui/widgets/trip-animation-widget/5.gif)
+{% include images-gallery.html imageCollection="taw-labelfunction" showListImageTitles="true" %}
  
 <details>
 
@@ -169,19 +169,13 @@ return res;
 </details>
 <br>
 
-* ** Marker options**
+**2.5** Marker options
 
-In addition to all of this, there are some settings for the marker and you can specify next settings for it:
+* In addition to all of this, there are some settings for the marker. You can edit marker image, custom marker image size px, set additional rotation angle for marker. 
 
-* Color for default marker
 
-* Custom marker image
 
-* Custom marker image size px
-
-* Set additional rotation angle for marker
-
-* Marker image function (you may change marker image, marker image color based on data, dsData, dsIndex)
+* Marker image function (you may change marker image, marker image color based on data, dsData, dsIndex). 
 
 * Specify other possible marker images, which can be used in a marker image function
 
@@ -201,13 +195,24 @@ return res;
 
 ##### 3. Path Settings
 
-* Path color or specify path color function (you may change data contained in a tooltip based on data, dsData, dsIndex) - the color of the marker moves 
+* Path color, stroke's weight and opacity
 
-![image](/images/user-guide/ui/widgets/trip-animation-widget/26.png)
+{% include images-gallery.html imageCollection="taw-path" showListImageTitles="true" %}
+
+* Specify path color function (you may change data contained in a tooltip based on data, dsData, dsIndex) - the color of the marker moves
 
 Path color function:
-```javascript
-var speed = dsData['speed'];
+
+<details>
+
+<summary>
+<b>An example of Path color function:</b>
+</summary>
+
+{% highlight ruby %}
+var speed = dsData[dsIndex]['speed'];
+console.log(dsData);
+console.log(speed);
 var res;
 if (speed > 50) {
     res = "red"
@@ -215,7 +220,9 @@ if (speed > 50) {
     res = "green"
 }
 return res;
-```
+{% endhighlight %}
+</details>
+<br>
 
 * Path decorator, its size in px, end/beginning offset, decorator repeater, stroke weight and stroke opacity
 

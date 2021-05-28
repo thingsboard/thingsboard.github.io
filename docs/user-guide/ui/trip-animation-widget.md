@@ -86,7 +86,7 @@ taw-mapprovider:
 taw-longitude:
     0:
         image: /images/user-guide/ui/widgets/trip-animation-widget/taw-longitude-1-ce.png
-        title: 'In advanced tab, change Longitude key name on a custom one. In this tutorial will be used "data1".'
+        title: 'In the Advanced tab, change Longitude key name on a custom one. In this tutorial will be used "data1".'
     1:
         image: /images/user-guide/ui/widgets/trip-animation-widget/taw-longitude-2-ce.png
         title: 'In the Tooltip row, change both label name and key name to the same custom name ("data1"). Click the orange check mark in the upper right corner of the page to save the applied changes.'
@@ -103,21 +103,49 @@ taw-longitude:
 taw-label:
     0:
         image: /images/user-guide/ui/widgets/trip-animation-widget/taw-label-ce.png
-        title: 'In advanced tab, check the Show label box and enter the desired label. Apply changes by clicking the orange check mark in the upper right corner of the page.'
+        title: 'In the Advanced tab, check the Show label box and enter the desired label. Apply changes by clicking the orange check mark in the upper right corner of the page.'
     1:
         image: /images/user-guide/ui/widgets/trip-animation-widget/taw-label-1-ce.png
         title: 'Label has been changed. To save applied changes, click the orange check mark in the lower right corner of the page.'
 
+taw-labelfunction:
+    0:
+        image: /images/user-guide/ui/widgets/trip-animation-widget/taw-labelfunction-ce.png
+        title: 'In the Advanced tab, check the "Show label" box and "Use label function". In the corresponding field, enter your label function or use the one in the example (you can find it below the screenshots section).'
+    1:
+        image: /images/user-guide/ui/widgets/trip-animation-widget/taw-labelfunction-1-ce.png
+        title: 'Label function has been applied. Since speed does not exceed the specified value, the label is "Everything is OK". 
+                To save applied changes, click the orange check mark in the lower right corner of the page.'
+
 taw-tooltip:
     0:
         image: /images/user-guide/ui/widgets/trip-animation-widget/taw-tooltip-ce.png
-        title: 'In advanced tab, change Longitude key name on custom one. In the tutorial will be used Data1.'
+        title: 'In the Advanced tab, change Longitude key name on custom one. In the tutorial will be used Data1.'
     1:
         image: /images/user-guide/ui/widgets/trip-animation-widget/taw-tooltip-1-ce.png
         title: 'In the Data tab, click the pencil icon opposite time series data key.'
     2:
         image: /images/user-guide/ui/widgets/trip-animation-widget/taw-tooltip-2-ce.png
         title: 'Enter the same custom name in the Label bar and click "Save".'
+
+taw-path:
+    0:
+        image: /images/user-guide/ui/widgets/trip-animation-widget/taw-path-ce.png
+        title: 'In the Advanced tab, click the circle icon and choose a preferred path color. Click "Select" to apply.'
+    1:
+        image: /images/user-guide/ui/widgets/trip-animation-widget/taw-path-1-ce.png
+        title: 'You can also edit weight and opacity of the stroke. Apply changes by clicking the orange check mark in the upper right corner of the page.'
+    2:
+        image: /images/user-guide/ui/widgets/trip-animation-widget/taw-path-2-ce.png
+        title: 'After editing the path appearance, click the orange check mark in the lower right corner of the page to save all the changes.'
+
+taw-pathfunction:
+    0:
+        image: /images/user-guide/ui/widgets/trip-animation-widget/taw-pathfunction-ce.png
+        title: '.'
+    1:
+        image: /images/user-guide/ui/widgets/trip-animation-widget/taw-pathfunction-1-ce.png
+        title: '.'
 
 ---
 
