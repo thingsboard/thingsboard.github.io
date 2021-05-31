@@ -24,8 +24,9 @@ toc:
     path: /docs/user-guide/alarms/
   - title: Remote commands to devices
     path: /docs/user-guide/rpc/
-  - title: Firmware
+  - title: Firmware updates
     path: /docs/user-guide/firmware/
+    new: true
 - title: Dashboards
   section:
   - title: Overview
