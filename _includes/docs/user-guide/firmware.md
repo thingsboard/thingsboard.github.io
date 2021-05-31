@@ -8,7 +8,7 @@ tenant administrator, you can assign provisioned firmware to specific device or 
 ThingsBoard notifies devices about available firmware update, provide a protocol-specific API to download the firmware, stores
 history of the updates, and provides a dashboard to monitor the update process.
 
-## Provisioning
+## Provision package to the ThingsBoard
 
 Tenant administrator can navigate to the "Firmware" menu item to list and upload firmware updates. 
 Each firmware update consist of:
@@ -18,7 +18,7 @@ Each firmware update consist of:
 * Link to Device Profile - each firmware references a device profile. This helps to prevent accidental updates of devices with incompatible firmware. 
   Link to a device profile means that this device *may* be updated to the current firmware. 
   However, the update is not triggered, until the user or script [assigns](#assignment) the firmware to the device profile or device.
-* Type - can be either *Firmware* or *Software*. Each device can have an MCU firmware.     
+* Type - can be either *Firmware* or *Software*.    
 * Checksum algorithm - optional parameter, it is a short name of the checksum algorithm to use. 
 * Checksum - optional parameter, it's a value of the file checksum. If no checksum provided by the user, server will use SHA-256 algorithm automatically.
 * Description - optional text description of the firmware. 
@@ -33,23 +33,24 @@ Also, in [Audit logs](/docs/{{docsPrefix}}user-guide/audit-log/) you can browse 
 
 All actions listed are also available via [REST API](/docs/{{docsPrefix}}reference/rest-api/).
 
-## Assignment
+## Assign package to device
 
-Tenant administrator can assign uploaded firmware to the device profile or particular device. Customers also can assign a firmware to
-their devices, but only the already existed one.
-The firmware version assigned to the device will automatically overwrite firmware version that is assigned to the device profile.
+Assignment can happen via Device profile. When you assign firmware through the Device profile, it is automatically distribute to all devices with the same device profile.
+However, please notice that to all devices with this profile will be sent notification about the updating.
+Exception will be devices that have already had this firmware, and devices with other device profiles, they won't receive update notification.
 
-{% include images-gallery.html imageCollection="deviceFirmware" %}
-
-You can also assign firmware via Device profile. With this field, we define what type of device this firmware will be available.
-However, please notice that when you assign firmware through device profile, to all devices with this profile will be sent notification about the updating. 
-Exception will be devices that have already had this firmware, they won't receive update notification.
-
-**NOTE:** One firmware can be used by only one Device Profile. 
-The Firmware that is assigned to the Device Profile can be overridden on the Device level. 
-If the firmware was assigned on the lower level, the firmware changes on the higher level do not affect the entity.
+**NOTE:** One firmware can be used by only one Device Profile.
 
 {% include images-gallery.html imageCollection="fw-deviceprofile" %}
+
+Tenant administrator can assign uploaded firmware to the particular device. 
+The firmware version assigned to the device will automatically overwrite firmware version that is assigned to the device profile.
+Customers also can assign a firmware, but can't provision one.
+
+The Firmware that is assigned to the Device Profile will be overridden on the Device level.
+If the firmware was assigned on the lower level, the firmware changes on the higher level do not affect the entity.
+
+{% include images-gallery.html imageCollection="deviceFirmware" %}
 
 {% capture delete_restrictions %}
 Deletion of the firmware packages that is assigned to at least one device or device profile is prohibited.
