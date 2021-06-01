@@ -2,7 +2,7 @@
 layout: docwithnav
 assignees:
 - ashvayka
-title: Firmware updates
+title: Over-the-air firmware and software updates
 description: IoT device firmware updates
  
 createFirmware:
@@ -84,11 +84,8 @@ fw-coap-updated:
     0:
         image: /images/user-guide/firmware/fw-coap-updated.png
         title: ''
-
-
-
      
 ---
 
 
-{% include docs/user-guide/firmware.md %}
+{% include docs/user-guide/ota-updates.md %}

@@ -25,7 +25,7 @@ toc:
   - title: Remote commands to devices
     path: /docs/user-guide/rpc/
   - title: Firmware updates
-    path: /docs/user-guide/firmware/
+    path: /docs/user-guide/ota-updates/
     new: true
 - title: Dashboards
   section:
