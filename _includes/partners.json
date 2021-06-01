@@ -237,4 +237,20 @@
     },
     "blurb": "Things On Edge designs easy to use, ultra low power Wi-Fi modules."
   }
+  {
+    "type": "hardware",
+    "program": "",
+    "name": "SensiEDGE LTD",
+    "logo": "sensiedge.png",
+    "links": {
+      "Site": {
+        "href": "https://www.sensiedge.com/",
+        "target": "_blank"
+     },
+    "Integration guide": {
+      "href": "https://1a670143-e729-4ac9-9df5-772098c7b4e0.filesusr.com/ugd/19c426_04fdde62a2f84261825e62fb846be2e9.pdf"
+      }
+    },
+    "blurb": "SensiEDGE LTD is an Israeli company Designing, Developing and Mass Product Ready small PCB with Sensors, MCU, Connectivity and Battery. SensiEDGE LTD Simplify and Accelerate Sensor data to Cloud ."
+  }
 ]
