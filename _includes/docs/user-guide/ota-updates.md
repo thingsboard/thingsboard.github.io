@@ -3,21 +3,22 @@
 
 ## Overview
 
-Since ThingsBoard 3.3, the Tenant administrator is able to provision and distribute firmware updates to devices. As a
-tenant administrator, you can assign provisioned firmware to specific device or device profile. 
-ThingsBoard notifies devices about available firmware update, provide a protocol-specific API to download the firmware, stores
-history of the updates, and provides a dashboard to monitor the update process.
+Since ThingsBoard 3.3, ThingsBoard allows you to upload and distribute over-the-air(OTA) updates to devices. 
+As a tenant administrator, you may upload firmware or software packages to the OTA repository. 
+Once uploaded, you may assign them to [Device Profile](/docs/{{docsPrefix}}user-guide/device-profiles/) or [Device](/docs/{{docsPrefix}}user-guide/ui/devices/). 
+ThingsBoard will notify devices about the available update and provide a protocol-specific API to download the firmware. 
+The platform tracks status of the update and stores history of the updates. 
+As a platform user, you may monitor the update process using the dashboard.
 
-## Provision package to the ThingsBoard
+## Provision OTA package to ThingsBoard repository
 
-Tenant administrator can navigate to the "Firmware" menu item to list and upload firmware updates. 
-Each firmware update consist of:
+Navigate to the "OTA Updates" menu item to list and upload OTA update packages. Each package consist of:
 
-* Title - the name of your firmware package. You can use different names for production and debug firmware. 
-* Version - the version of your firmware package. Combination of the title and version must be unique in scope of a tenant.
-* Link to Device Profile - each firmware references a device profile. This helps to prevent accidental updates of devices with incompatible firmware. 
-  Link to a device profile means that this device *may* be updated to the current firmware. 
-  However, the update is not triggered, until the user or script [assigns](#assignment) the firmware to the device profile or device.
+* Title - the name of your package. You can use different names for production and debug firmware/software. 
+* Version - the version of your package. Combination of the title and version must be unique in scope of a tenant.
+* Device Profile - each package is compatible with one device profile. We track compatibility to prevent accidental updates of devices with incompatible firmware/software. 
+  Link to a device profile means that device that use this profile *may* be updated to the current package. 
+  However, the update is not triggered, until the user or script [assigns](#assign-ota-package-to-device-profile) the package to the device profile or device.
 * Type - can be either *Firmware* or *Software*.    
 * Checksum algorithm - optional parameter, it is a short name of the checksum algorithm to use. 
 * Checksum - optional parameter, it's a value of the file checksum. If no checksum provided by the user, server will use SHA-256 algorithm automatically.
@@ -25,32 +26,46 @@ Each firmware update consist of:
 
 {% include images-gallery.html imageCollection="createFirmware" %}
 
-You can browse the provisioned firmware packages as well as search them by title. Also, you are able to download and delete packages.
-To open firmware details page, click the table row. Firmware details allow you to copy firmware ID and checksum. 
-Also, in [Audit logs](/docs/{{docsPrefix}}user-guide/audit-log/) you can browse firmware status.
+You can browse the provisioned packages as well as search them by title. Also, you are able to download and delete packages.
+To open package details, click the table row. Package details allow you to copy package ID and checksum. 
+Also, [Audit logs](/docs/{{docsPrefix}}user-guide/audit-log/) track information about users who provisioned the firmware.
 
 {% include images-gallery.html imageCollection="listFirmware" %}
 
 All actions listed are also available via [REST API](/docs/{{docsPrefix}}reference/rest-api/).
 
-## Assign package to device
+## Firmware vs Software
 
-Assignment can happen via Device profile. When you assign firmware through the Device profile, it is automatically distribute to all devices with the same device profile.
-However, please notice that to all devices with this profile will be sent notification about the updating.
-Exception will be devices that have already had this firmware, and devices with other device profiles, they won't receive update notification.
+There is a very minor difference between FOTA and SOTA implementation inside ThingsBoard core. Many use-cases and applications will need to use FOTA only. 
+However, [LwM2M](/docs/{{docsPrefix}}reference/lwm2m-api/) devices process FOTA and SOTA updates differently. 
 
-**NOTE:** One firmware can be used by only one Device Profile.
+## Assign OTA package to device profile
+
+You may assign firmware/software to the device profile to automatically distribute the package to all devices that share the same profile. See screenshots below.
 
 {% include images-gallery.html imageCollection="fw-deviceprofile" %}
 
-Tenant administrator can assign uploaded firmware to the particular device. 
-The firmware version assigned to the device will automatically overwrite firmware version that is assigned to the device profile.
-Customers also can assign a firmware, but can't provision one.
+The device profile details will let you choose only compatible OTA update packages (see [provisioning](#provision-ota-package-to-thingsboard-repository) for more info).
+Device profile may be used by thousands of devices. Assignment of the firmware/software triggers the [update process](#update-process).
 
-The Firmware that is assigned to the Device Profile will be overridden on the Device level.
-If the firmware was assigned on the lower level, the firmware changes on the higher level do not affect the entity.
+
+## Assign OTA package to device
+
+You may also assign firmware/software to specific device. See screenshots below.
 
 {% include images-gallery.html imageCollection="deviceFirmware" %}
+
+The firmware version assigned to the device will automatically overwrite firmware version that is assigned to the device profile. 
+
+For example, let's assume you have Devices D1 and D2 that has Profile P1:
+
+* If you assign package F1 to Profile P1 (via [profile details UI](TODO) or REST API), Devices D1 and D2 will be updated to F1. 
+* If you assign package F2 to Device D1 (via [device details UI](TODO) or REST API), Device D1 will be updated to F2.
+* Subsequent assignment of the package F3 to the Profile P1 will affect only D2, since it has no specific firmware version assigned on the device level.
+So, D2 will be updated to F3, while D1 will continue to use F2.
+
+
+Customers may choose available firmware and assign it to the devices that belong to them. However, customers can't provision or manage firmware packages.
 
 {% capture delete_restrictions %}
 Deletion of the firmware packages that is assigned to at least one device or device profile is prohibited.
@@ -59,19 +74,71 @@ Deletion of the firmware packages that is assigned to at least one device or dev
 
 ## Update process
 
-Attributes show information about the new firmware update.
+Assignment of the firmware/software to the device or device profile triggers the update process.
+ThingsBoard tracks the progress of the update and persists it to the device attributes.
 
-Where
-- fw_checksum - attribute that responsible for verifying if the received file is the same as the sent one.
-- fw_checksum_algorithm - the algorithm by which the checksum is calculated. 
-- fw_size - size of the firmware file in bytes.
-- fw_title - name of the firmware.
-- fw_version - version of the firmware.
-- fw_state - [status](/docs/{{docsPrefix}}user-guide/firmware/?remoteintegrationdockerinstall=mqtt#dashboard) of the updating process. 
+Update progress may have one of the following states. The state of the update is stored as an attribute of the device and is used to visualize the update process on the [dashboard](#dashboard).
+
+### QUEUED state
+
+The very first state of the firmware/software update. 
+Means that the notification about new firmware/software is queued but not yet pushed to the device. 
+ThingsBoard queues the update notifications to avoid peak loads. The queue is processed with the constant pace. 
+By default, it is configured to notify up to 100 device per minute. See [configuration properties](/docs/{{docsPrefix}}user-guide/ota-updates/#queue-processing-pace) for more details.
+   
+### INITIATED state
+
+Means that the notification about firmware/software is fetched from queue and pushed to device.
+Under the hood, ThingsBoard converts notification to the update of the following [shared attributes](/docs/{{docsPrefix}}user-guide/attributes/#shared-attributes):
+
+- fw(sf)_title - name of the firmware (software).
+- fw(sf)_version - version of the firmware (software).
+- fw(sf)_size - size of the firmware (software) file in bytes.
+- fw(sf)_checksum - attribute that is used to verify integrity of the received file.
+- fw(sf)_checksum_algorithm - the algorithm used to calculate file checksum.
 
 {% include images-gallery.html imageCollection="fw-attributes" %}
 
-When we receive an attribute update, we download the firmware. According to them, we determine if the firmware has been updated and whether it suits us.
+Device is able to subscribe to shared attribute update using [MQTT](/docs/{{docsPrefix}}reference/mqtt-api/), 
+[HTTP](/docs/{{docsPrefix}}reference/http-api/), [CoAP](/docs/{{docsPrefix}}reference/coap-api/) or [LwM2M](/docs/{{docsPrefix}}reference/lwm2m-api/) API.
+
+### Update states reported by the device
+
+The remaining states are reported by the device firmware/software that is currently processing the update. 
+We have prepared description of those states and sample applications for the most popular protocols written in python. 
+Sample applications simulate behavior of the device firmware/software and may used as a reference for the implementation.  
+
+ * DOWNLOADING - notification about new firmware/software update was received and device started downloading the update package.
+ * DOWNLOADED - device completed downloading of the update package.
+ * VERIFIED - device verified the checksum of the downloaded package.
+ * UPDATING - device started the firmware/software update. Typically is sent before reboot of the device or restart of the service. 
+ * UPDATED - the firmware was successfully updated to the next version.
+ * FAILED - checksum wasn't verified, or the device failed to update. See "Device failed" tab on the Firmware dashboard for more details.
+
+
+Once the firmware/software is updated, ThingsBoard expect the device to send the following telemetry:
+
+for firmware:
+```json
+{"current_fw_title": "myFirmware", "current_fw_version": "1.2.3", "fw_state": "UPDATED"}
+```
+
+for software:
+```json
+{"current_sw_title": "mySoftware", "current_sw_version": "1.2.3", "sw_state": "UPDATED"}
+```
+
+If the firmware/software update failed, ThingsBoard expect the device to send the following telemetry:
+
+for firmware:
+```json
+{"fw_state": "FAILED", "fw_error":  "the human readable message about the cause of the error"}
+```
+
+for software:
+```json
+{"sw_state": "FAILED", "sw_error":  "the human readable message about the cause of the error"}
+```
 
 {% capture contenttogglespec %}
 HTTP<br/>%,%http%,%templates/install/http-firmware.md%br%
@@ -81,56 +148,43 @@ CoAP<br/>%,%aws%,%templates/install/coap-firmware.md%br%{% endcapture %}
 
 ## Dashboard
 
-ThingsBoard provides the summary of the firmware update to monitor and track the firmware update status of your device, such as which devices are updating right now, 
-any boot issues, and which ones have already been updated.
-It is created automatically for each new tenant you add to ThingsBoard. You can also download the dashboard JSON [here](https://github.com/thingsboard/thingsboard/blob/master/application/src/main/data/json/demo/dashboards/firmware.json).
+ThingsBoard provides the summary of the firmware/software update to monitor and track the firmware/software update status of your device, such as which devices are updating right now, any boot issues, and which ones have already been updated.
+
+### Firmware update monitoring dashboard
+
+The dashboard is created automatically for each new tenant that you add to ThingsBoard. 
+You can also download the dashboard JSON [here](https://github.com/thingsboard/thingsboard/blob/master/application/src/main/data/json/demo/dashboards/firmware.json) and import it for existing tenants.
+
 There you can see a list of all devices with full information about their firmware. 
 
 {% include images-gallery.html imageCollection="fw-dashboard" %}
 
-##### Firmware status
-
-Click the "History firmware update" button next to the device name to learn about the firmware update status of specific device.
+Click the "History of the firmware updates" button next to the device name to learn about the firmware update status of specific device.
 
 {% include images-gallery.html imageCollection="fw-status" %}
 
-The possible state transition can be: QUEUED -> INITIATED -> DOWNLOADING -> DOWNLOADED -> VERIFIED -> UPDATING -> UPDATED/FAILED. 
-The system uses the following algorithm:
-1. Firmware was created.
-2. Telemetry (target_fw_title, target_fw_verison and fw_state(QUEUED)) is sent on the device.
-3. Device receives notification about firmware update and saves attributes. Fw_states changes to INITIATED.
-4. Transport firmware client gets attribute update.
-5. If the firmware is not the same as the previous one, transport firmware client requests the new firmware
-   and sends telemetry with fw_state DOWNLOADING.
-6. Client gets all chunks and sends telemetry fw_state DOWNLOADED.
-7. Client checks firmware and sends telemetry fw_state VERIFIED.
-8. If verification is successful, client will send telemetry fw_state UPDATED. If it's not successful, the telemetry will be fw_state FAILED.
-
-So, there are eight statuses in total. Two of them are created by us and all the rest are generated by the device itself.
-
-1. _QUEUED_ - notification is in a queue to be sent to the device. By default, in the queue can be up to 100 devices. [It can be configured](/docs/{{docsPrefix}}user-guide/firmware/?remoteintegrationdockerinstall=http#thingsboard-configuration-file).
-2. _INITIATED_ - telemetry was sent and device was notified. "Device waiting" tab on the Firmware dashboard. 
-3. _DOWNLOADING_ - telemetry was received and device started downloading firmware.
-4. _DOWNLOADED_ - device completed downloading of the firmware.
-5. _VERIFIED_ - if the checksum of received data was successfully verified by the device.
-6. _UPDATING_ - if the verification is successful, the device firmware is updating. "Device updating" tab on the Firmware dashboard.
-7. _UPDATED_ - the firmware was updated to the next version. When fw_state changes to UPDATED, the system updates current_fw_title and current_fw_version to the new values. "Device updated" tab on the Firmware dashboard.
-8. _FAILED_ - checksum wasn't verified, or the device failed to update. "Device failed" tab on the Firmware dashboard.
-
 {% include images-gallery.html imageCollection="fw-status-1" %}
+
+### Software update monitoring dashboard
+
+The dashboard is created automatically for each new tenant that you add to ThingsBoard.
+You can also download the dashboard JSON [here](https://github.com/thingsboard/thingsboard/blob/master/application/src/main/data/json/demo/dashboards/software.json) and import it for existing tenants.
+
+There you can see a list of all devices with full information about their software.
+
+{% include images-gallery.html imageCollection="sw-dashboard" %}
+
+Click the "History of the software updates" button next to the device name to learn about the software update status of specific device.
+
+{% include images-gallery.html imageCollection="sw-status" %}
+
+{% include images-gallery.html imageCollection="sw-status-1" %}
 
 ## Configuration
 
-##### ThingsBoard configuration file
+##### Queue processing pace
 
-If you need to edit the number of devices that will be updated for a certain period of time, execute following command to edit ThingsBoard configuration file:
-
-```bash
-sudo nano /etc/thingsboard/conf/thingsboard.conf
-```
-{: .copy-code}
-
-To set the max number of devices that will be notified in the chosen time period, in terminal execute following properties:
+To set the max number of devices that will be notified in the chosen time period using the following [configuration](/docs/{{docsPrefix}}user-guide/install/config/) properties:
 
 ```bash
 export TB_QUEUE_CORE_FW_PACK_INTERVAL_MS=60000
@@ -139,4 +193,5 @@ export TB_QUEUE_CORE_FW_PACK_SIZE=100
 {: .copy-code}
 
 ##### Max size setting
+
 By default, the maximum size of firmware that we can save in database is 2 gb. It can not be configured.
