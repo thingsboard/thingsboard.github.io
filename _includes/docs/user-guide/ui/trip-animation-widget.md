@@ -171,7 +171,7 @@ return res;
 
 **2.5** Marker options
 
-* In addition to all of this, there are some settings for the marker. You can edit marker image, custom marker image size px, set additional rotation angle for marker. 
+In addition to all of this, there are some settings for the marker. You can edit marker image, custom marker image size px, set additional rotation angle for marker. 
 
 
 
@@ -181,17 +181,30 @@ return res;
 
 ![image](/images/user-guide/ui/widgets/trip-animation-widget/1.gif)
 
-Marker image function:
-```javascript
-var speed = dsData['speed'];
+<details>
+
+<summary>
+<b>An example of Marker image function:</b>
+</summary>
+
+{% highlight ruby %}
+var speed =  dsData[dsIndex]['speed'];
 var res;
-if (speed > 55) {
-    res = images[0];
+if (speed > 65) {
+    res = {
+        url: images[0],
+        size: 55
+    };
 } else {
-    res = images[1];
+    res = {
+        url: images[1],
+        size: 55
+    };
 }
 return res;
-```
+{% endhighlight %}
+</details>
+<br>
 
 ##### 3. Path Settings
 
@@ -226,19 +239,17 @@ return res;
 
 * Path decorator, its size in px, end/beginning offset, decorator repeater, stroke weight and stroke opacity
 
-![image](/images/user-guide/ui/widgets/trip-animation-widget/27.png)
+{% include images-gallery.html imageCollection="taw-pathdecorator" showListImageTitles="true" %}
 
 ##### 4. Path Points Settings
 
 The next option is a show points option. Points are a telemetry data updates so that you can check each. For the points next options are available.
 
-* Show/Hide points
+* After checking the box "Show/Hide points", you can adjust point color, point size px
 
-* Point color
+{% include images-gallery.html imageCollection="taw-showpoints" showListImageTitles="true" %}
 
-* Point size px
-
-* Use point as an anchor, point as an anchor function (you may change data contained in a polygon tooltip based on data, dsData, dsIndex)
+* point as an anchor function (you may change data contained in a polygon tooltip based on data, dsData, dsIndex)
 
 * Independent point tooltip
 

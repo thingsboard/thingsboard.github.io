@@ -147,6 +147,24 @@ taw-pathfunction:
         image: /images/user-guide/ui/widgets/trip-animation-widget/taw-pathfunction-1-ce.png
         title: '.'
 
+taw-pathdecorator:
+    0:
+        image: /images/user-guide/ui/widgets/trip-animation-widget/taw-pathdecorator-ce.png
+        title: 'Check the box "Use path decorator". From the drop-down menu select the appearance of the decorator symbol (arrow or dash) and adjust symbol size.
+                Check the box "Use path decorator custom color", select custom color by clicking the circle and adjusting slider. Enter the preferred decorator offset, end decorator offset and decorator repeat.
+                Click the orange check mark in the upper right corner of the page to apply changes.'
+    1:
+        image: /images/user-guide/ui/widgets/trip-animation-widget/taw-pathdecorator-1-ce.png
+        title: 'Now you can see how the path has changed after applying decorator.'
+
+taw-showpoints:
+    0:
+        image: /images/user-guide/ui/widgets/trip-animation-widget/taw-showpoints-ce.png
+        title: '.'
+    1:
+        image: /images/user-guide/ui/widgets/trip-animation-widget/taw-showpoints-1-ce.png
+        title: '.'
+
 ---
 
 {% include docs/user-guide/ui/trip-animation-widget.md %}
