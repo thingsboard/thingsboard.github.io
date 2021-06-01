@@ -5,7 +5,7 @@ description: PLC KERNEL Monitoring with ThingsBoard PE Platform
 hidetoc: "true"
 ---
 
-* TOC 
+* TOC
 {:toc}
 
 ## Intro/Short summary
@@ -14,7 +14,7 @@ This article contains instructions on how to configure ThingsBoard PE platform a
 
 ## Note
 
-This procedure applies to all KERNEL PLCs with the ARM microprocessor equipped with an Ethernet port. 
+This procedure applies to all KERNEL PLCs with the ARM microprocessor equipped with an Ethernet port.
 
 ## Integration flow:
 
@@ -38,7 +38,7 @@ This procedure applies to all KERNEL PLCs with the ARM microprocessor equipped w
 <br/>
 <br/>
 
-* [Step 1.4] Click on the "+" icon in the top right corner of the table and then select "Add Device". 
+* [Step 1.4] Click on the "+" icon in the top right corner of the table and then select "Add Device".
 <br/>
 <img src="/images/samples/kernel/Thingsboard 004.png" width="1000"/>
 <br/>
@@ -65,7 +65,7 @@ To connect the PLC KERNEL device you need to get the device credentials first. T
 <br/>
 <br/>
 
-* [Step 2.2] Click "Copy access token". Token will be copied to your clipboard. Save it to a safe place. 
+* [Step 2.2] Click "Copy access token". Token will be copied to your clipboard. Save it to a safe place.
 <br/>
 <img src="/images/samples/kernel/Thingsboard 007.png" width="1000"/>
 <br/>
@@ -99,7 +99,7 @@ To connect the PLC KERNEL device you need to get the device credentials first. T
 <br/>
 <br/>
 
-* [Step 2.8] Enter the following fields : 
+* [Step 2.8] Enter the following fields :
 <br/>
 <img src="/images/samples/kernel/Table 000.png" width="1000"/>
 <br/>
@@ -135,14 +135,14 @@ Click on the device row in the table to open device details :
 ### Step 3 Create dashboard
 
 Finally, the only thing left to do, is create a Dashboard according to your needs.
-Dashboards are used to collect and display the data set. Data visualization is achieved through a large variety of widgets. 
+Dashboards are used to collect and display the data set. Data visualization is achieved through a large variety of widgets.
 Explore guides related to main ThingsBoard features:
 
  - [Create Dashboard](/docs/getting-started-guides/helloworld/#step-3-create-dashboard) - how to create a new dashboard.
  - [Working with IoT dashboards](/docs/user-guide/dashboards/) - how to work with dashboards.
 <br/>
 <br/>
-   
+
 ## Next steps
 
 {% assign currentGuide = "HardwareSamples" %}{% include templates/guides-banner.md %}

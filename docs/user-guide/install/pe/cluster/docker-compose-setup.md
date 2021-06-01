@@ -76,8 +76,9 @@ We assume you have already chosen your subscription plan or decided to purchase 
 If not, please navigate to [pricing](/pricing/) page to select the best license option for your case and get your license. 
 See [How-to get pay-as-you-go subscription](https://www.youtube.com/watch?v=dK-QDFGxWek){:target="_blank"} or [How-to get perpetual license](https://www.youtube.com/watch?v=GPe0lHolWek){:target="_blank"} for more details.
 
-**IMPORTANT NOTE:** Make sure you have purchased a license key for at least two instances of ThingsBoard PE. Otherwise you need to modify local copy of 
-[docker-compose.yml](https://github.com/thingsboard/thingsboard-pe-docker-compose/blob/master/docker-compose.yml) to use only one ThingsBoard instance. 
+**IMPORTANT NOTE:** if you decide to use an [advanced deployment type](/docs/user-guide/install/pe/cluster/docker-compose-setup/#step-6-configure-deployment-type), make sure you have purchased a license key for at least four instances of ThingsBoard PE. 
+Otherwise, you need to modify the local copy of [docker-compose.yml](https://github.com/thingsboard/thingsboard-pe-docker-compose/blob/master/advanced/docker-compose.yml)) 
+to use the number of ThingsBoard instances that you've purchased.
 We will reference the license key you have obtained during this step as PUT_YOUR_LICENSE_SECRET_HERE later in this guide.
 
 
