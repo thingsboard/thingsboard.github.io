@@ -2,22 +2,6 @@
   {
     "type": "hardware",
     "program": "",
-    "name": "Things On Edge",
-    "logo": "things-on-edge.svg",
-    "links": {
-      "Site": {
-        "href": "https://thingsonedge.com/",
-        "target": "_blank"
-      },
-      "Integration guide": {
-        "href": "/docs/samples/cricket-wifi/cricket-wifi/"
-      }
-    },
-    "blurb": "Things On Edge designs easy to use, ultra low power Wi-Fi modules."
-  },
-  {
-    "type": "hardware",
-    "program": "",
     "name": "Espressif Systems",
     "logo": "espressif.svg",
     "links": {
@@ -34,18 +18,35 @@
   {
     "type": "hardware",
     "program": "",
-    "name": "SODAQ",
-    "logo": "sodaq.jpg",
+    "name": "Efento",
+    "logo": "efento.png",
     "links": {
       "Site": {
-        "href": "https://sodaq.com/",
+        "href": "https://getefento.com/",
         "target": "_blank"
       },
       "Integration guide": {
-        "href": "/docs/user-guide/integrations/sodaq/"
+        "href": "https://getefento.com/library/efento-nb-iot-sensors-and-things-board/",
+        "target": "_blank"
       }
     },
-    "blurb": "What drives us is the passion to create scalable electronics solutions that work anywhere. We have implemented projects throughout developing countries, from Peru to Sri Lanka, and we will continue working where we can have the highest impact."
+    "blurb": "Efento offers a wide portfolio of battery powered NB-IoT wireless sensors. Company has been founded in 2014 and since day one focuses on low power consumption wireless IoT devices. You can select a sensor form over 20 types of devices from our portfolio, or talk to us if you need a custom solution to meet your needs."
+  },
+  {
+    "type": "hardware",
+    "program": "",
+    "name": "Seeed Technology Co.,Ltd.",
+    "logo": "seeed.png",
+    "links": {
+      "Site": {
+        "href": "https://www.seeedstudio.com/",
+        "target": "_blank"
+      },
+      "Integration guide": {
+        "href": "/docs/samples/raspberry/grove/"
+      }
+    },
+    "blurb": "Whether you are a developer, technical supplier, or industry player, we provide products and services for your IoT needs."
   },
   {
     "type": "hardware",
@@ -130,18 +131,18 @@
   {
     "type": "hardware",
     "program": "",
-    "name": "Seeed Technology Co.,Ltd.",
-    "logo": "seeed.png",
+    "name": "SODAQ",
+    "logo": "sodaq.jpg",
     "links": {
       "Site": {
-        "href": "https://www.seeedstudio.com/",
+        "href": "https://sodaq.com/",
         "target": "_blank"
       },
       "Integration guide": {
-        "href": "/docs/samples/raspberry/grove/"
+        "href": "/docs/user-guide/integrations/sodaq/"
       }
     },
-    "blurb": "Whether you are a developer, technical supplier, or industry player, we provide products and services for your IoT needs."
+    "blurb": "What drives us is the passion to create scalable electronics solutions that work anywhere. We have implemented projects throughout developing countries, from Peru to Sri Lanka, and we will continue working where we can have the highest impact."
   },
   {
     "type": "hardware",
@@ -219,5 +220,21 @@
       }
     },
     "blurb": "King Pigeon Communication Co.,Ltd. specialized in LTE Industrial Router, Industial IOT Gateways, IIOT Gateways, 4G Industrial Router, Cellular RTU, 4G RTU, PLC Gateways, Ethernet IO Module OEM ODM Since 2005."
+  },
+  {
+    "type": "hardware",
+    "program": "",
+    "name": "Things On Edge",
+    "logo": "things-on-edge.svg",
+    "links": {
+      "Site": {
+        "href": "https://thingsonedge.com/",
+        "target": "_blank"
+      },
+      "Integration guide": {
+        "href": "/docs/samples/cricket-wifi/cricket-wifi/"
+      }
+    },
+    "blurb": "Things On Edge designs easy to use, ultra low power Wi-Fi modules."
   }
 ]
