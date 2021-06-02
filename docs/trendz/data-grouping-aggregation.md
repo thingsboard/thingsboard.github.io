@@ -121,4 +121,6 @@ Trendz automatically computes delta for this field for defined time ranges with 
 In case when **DELTA** aggregation applied for multiple devices - Trendz will apply **SUM** aggregation to the aggregate group - as the result, we can see total consumption on different levels (city, building, etc.)
 
 
+## Next Steps
 
+{% assign currentGuide = "GroupAndAggregateData" %}{% include templates/trndz-guides-banner.md %}

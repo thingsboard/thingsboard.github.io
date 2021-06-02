@@ -32,7 +32,7 @@ description: ThingsBoard Media Kit
     <a class="download-logos" href="ThingsBoard_Logos.zip" target="_blank">Download logo kit</a>
 </div>
 <div class="trademark-notice">
-    ThingsBoard logo is a trademarks of ThingsBoard, inc.
+    ThingsBoard logo is a trademark of ThingsBoard, inc.
 </div>
 <div class="trademark-info">
     <h1>Using the ThingsBoard trademarks to identify ThingsBoard platform and link to <a href="https://thingsboard.io">thingsboard.io</a>:</h1>

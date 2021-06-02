@@ -19,7 +19,7 @@ To run Trendz Analytics on a single machine you will need at least 1Gb of free R
 
 In small and medium installations Trendz can be installed **on the same** server with ThingsBoard.
 
-### Step 1. Install Java 8 (OpenJDK) 
+### Step 1. Install Java 11 (OpenJDK) 
 
 {% include templates/install/ubuntu-java-install.md %}
 
@@ -28,20 +28,20 @@ In small and medium installations Trendz can be installed **on the same** server
 Download installation package.
 
 ```bash
-wget https://dist.thingsboard.io/trendz-1.5.0.deb
+wget https://dist.thingsboard.io/trendz-1.7.0.deb
 ```
 {: .copy-code}
 
 Install Trendz Analytics as a service
 
 ```bash
-sudo dpkg -i trendz-1.5.0.deb
+sudo dpkg -i trendz-1.7.0.deb
 ```
 {: .copy-code}
 
 ### Step 3. Obtain and configure license key 
 
-We assume you have already have Trendz license key. If not, please get your [Free Trial license](/pricing/?active=trendz) before you proceed.
+We assume you have already chosen subscription plan for Trendz and have license key. If not, please get your [Free Trial license](/pricing/?active=trendz) before you proceed.
 See [How-to get pay-as-you-go subscription](https://www.youtube.com/watch?v=dK-QDFGxWek){:target="_blank"} for more details.
 
 Once you get the license secret, you should put it to the trendz configuration file. 
@@ -63,50 +63,68 @@ export TRENDZ_LICENSE_SECRET=YOUR_LICENSE_SECRET_HERE
 
 You can connect Trendz Analytics to the ThingsBoard Community Edition or ThingsBoard Professional Edition.
 
-#### Step 4.1 ThingsBoard Community Edition
-
-Edit Trendz configuration file
-```bash 
-sudo nano /etc/trendz/conf/trendz.conf
-``` 
-{: .copy-code}
-
-Add ThingsBoard REST API URL that would be used for communicating with ThingsBoard Platform
-
-```bash
-# ThingsBoard URL that will be used by Trendz
-export TB_API_URL=http://localhost:8080
-export TB_API_PE_ENABLED=false
-```
-{: .copy-code}
-
-
-#### Step 4.2 ThingsBoard Professional Edition
-
 Edit ThingsBoard configuration file
 ```bash 
 sudo nano /etc/trendz/conf/trendz.conf
 ``` 
 {: .copy-code}
 
-Add ThingsBoard REST API URL that would be used for communicating with ThingsBoard Platform
+Add ThingsBoard REST API URL that would be used for communicating with ThingsBoard Platform. In most cases, when Trendz installed
+in the same server with ThingsBoard, API_URL would be **http://localhost:8080**. Otherwise you should use ThingsBoard domain name.
 
 ```bash
 # ThingsBoard URL that will be used by Trendz
 export TB_API_URL=http://localhost:8080
-export TB_API_PE_ENABLED=true
 ```
 {: .copy-code}
 
-### Step 5. Run installation script
+### Step 5. Configure Trendz database
+Trendz uses PostgreSQL as a database. You can install PostgreSQL on the same serverfor Trendz or use managed PostgreSQL 
+service from your cloud vendor.
 
-Once Trendz service is installed, you can execute the following script:
+#### PostgreSQL Installation
+
+{% include templates/install/postgres-install-ubuntu.md %}
+
+#### Create Database for Trendz
+
+Then, press "Ctrl+D" to return to main user console and connect to the database to create trendz DB:
+
+```text
+psql -U postgres -d postgres -h 127.0.0.1 -W
+CREATE DATABASE trendz;
+\q
+```
+
+#### Configure database connection for Trendz
+
+Edit Trendz configuration file 
+
+```bash 
+sudo nano /etc/trendz/conf/trendz.conf
+``` 
+{: .copy-code}
+
+Add the following lines to the configuration file. Don't forget **to replace** "PUT_YOUR_POSTGRESQL_PASSWORD_HERE" with your **real postgres user password**:
+
+```bash
+# DB Configuration 
+export SPRING_DATASOURCE_URL=jdbc:postgresql://localhost:5432/trendz
+export SPRING_DATASOURCE_USERNAME=postgres
+export SPRING_DATASOURCE_PASSWORD=PUT_YOUR_POSTGRESQL_PASSWORD_HERE
+```
+{: .copy-code}
+
+### Step 6. Run installation script
+
+Once Trendz service is installed and DB configuration is updated, you can execute the following script:
 
 ```bash
 sudo /usr/share/trendz/bin/install/install.sh
-``` 
+```
+{: .copy-code} 
 
-### Step 6. Start Trendz service
+### Step 7. Start Trendz service
 
 Execute the following command to start Trendz Analytics:
 
@@ -120,20 +138,23 @@ Once started, you will be able to open Web UI using the following link:
 ```bash
 http://localhost:8888/
 ```
+**Note**:  If Trendz installed on a remote server, you have to replace localhost with the public IP address of 
+the server or with a domain name. Also, check that port 8888 opened for public access.
 
-##### Authentication
+
+#### Authentication
 
 For first authentication you need to use **Tenant Administrator** credentials from your **ThingsBoard**
 
 Trendz uses ThingsBoard as an authentication service. During first sign in ThingsBoard service should be also available 
 to validate credentials.
 
-### Step 7. HTTPS configuration
+### Step 8. HTTPS configuration
 
 You may want to configure HTTPS access using HAProxy. 
 This is possible in case you are hosting Trendz in the cloud and have a valid DNS name assigned to your instance.
 
-#### Step 7.1. Trendz and ThingsBoard hosted on same server
+**Trendz and ThingsBoard hosted on same server**
 
 Use this section if HAProxy/Let’s Encrypt already installed in the server and HTTPS enabled for ThingsBoard.
 
@@ -173,7 +194,7 @@ That's it, HTTPS for Trendz UI configured and now you can access it via:
 https://new-trendz-domain.com
 
 
-#### Step 7.2. Fresh installation on new server
+**Fresh installation on new server**
 
 Please follow this [guide](/docs/user-guide/install/pe/add-haproxy-ubuntu) to install HAProxy and generate valid SSL certificate using Let's Encrypt.
 
@@ -190,3 +211,7 @@ You can issue the following command in order to check if there are any errors on
 ```bash
 cat /var/log/trendz/trendz.log | grep ERROR
 ```
+
+### Next steps
+
+{% assign currentGuide = "InstallationOptions" %}{% include templates/trndz-guides-banner.md %}

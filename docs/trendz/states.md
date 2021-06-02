@@ -143,3 +143,7 @@ Aggregation function applied to a grouped dataset. Find more details about [Grou
 
 In most cases amount of data analysed during state calculation is big enough. To guarantee performance function should be defined 
 using Java language (Java 8).
+
+## Next Steps
+
+{% assign currentGuide = "States" %}{% include templates/trndz-guides-banner.md %}

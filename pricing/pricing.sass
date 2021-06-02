@@ -73,16 +73,7 @@ html#pricing
           font-weight: 500
           line-height: 27px
           padding: 22px
-          border-radius: 4px
           transition: none
-          border: 1px solid #EBEBEB
-          &:hover
-            border: 2px solid #2A7DEC
-            color: #1f3a52
-            padding: 21px
-            &:after
-                color: #1f3a52
-                margin: unset
           &:after
             content: "+"
             position: absolute
@@ -90,12 +81,21 @@ html#pricing
             font-size: 28px
             color: #707275
             transform: rotate(0deg)
-            transition: 0.3s
+            transition: transform 0.3s
             margin-right: 1px
 
         div.item
+          border: 1px solid #EBEBEB
           border-radius: 4px
           overflow: visible
+          &:hover
+            border: 2px solid #2A7DEC
+            h4.title
+              padding: 21px
+              color: #1f3a52
+              &:after
+                color: #1f3a52
+                right: 24px
           &:not(:last-of-type)
             margin-bottom: 7px
           &:before
@@ -115,19 +115,13 @@ html#pricing
           padding: 5px 50px 25px 10px
           margin: 0 10px 10px
         .item.on
-          & > .wrapper
-            border: 2px solid #2A7DEC
-            border-top: none
-            border-radius: 0 0 4px 4px
-            box-shadow: 0 18px 16px -10px rgba(42,125,236,0.25)
+          border: 2px solid #2A7DEC
+          box-shadow: 0 18px 16px -10px rgba(42,125,236,0.25)
           h4.title
             padding: 21px
-            border: 2px solid #2A7DEC
-            border-bottom: none
-            border-radius: 4px 4px 0 0
             &:after
               transform: rotate(45deg)
-              transition: 0.3s
+              transition: transform 0.3s
               margin: unset
 
     a, button

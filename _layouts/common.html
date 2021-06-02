@@ -19,5 +19,37 @@
 
 {% include footer.html %}
 
+<script>
+    jqueryDefer(function () {
+        $(window).scroll(function() {
+            var height = $(window).scrollTop();
+            var navPosition = $('.mainTitle').height() + 50;
+            if(height > navPosition){
+            $('nav.customers-nav').addClass('nav-fixed');
+            $('h1.mainTitle').addClass('customer-spacer');
+            } else{
+            $('nav.customers-nav').removeClass('nav-fixed');
+            $('h1.mainTitle').removeClass('customer-spacer');
+            }
+        });
+    });
+</script>
+<script>
+    function dropContent(dropId) {
+        var dContent = $('.drop-content#'+dropId);
+        var dCard = $('.card-drop#'+dropId);
+        var text = $('.drop-content#'+dropId+' > div').height();
+        if (dContent.hasClass('opened')) {
+            dContent.removeClass('opened');
+            dContent.css('height', '0');
+            dCard.removeClass('opened');
+        } else {
+            dContent.addClass('opened');
+            dContent.css('height', text);
+            dCard.addClass('opened');
+        }
+    }
+</script>
+
 </body>
 </html>

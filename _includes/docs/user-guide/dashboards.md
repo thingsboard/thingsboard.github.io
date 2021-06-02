@@ -3,12 +3,39 @@
 
 ## Prerequisites
 
-Get familiar with ThingsBoard devices and dashboards with [Getting Started](/docs/{{docsPrefix}}getting-started-guides/helloworld/) for a better understanding of this guide.
+For faster learning and a better understanding of this guide, first, you have to follow the [Getting Started](/docs/{{docsPrefix}}getting-started-guides/helloworld/) guide to get familiar with ThingsBoard devices and dashboards.
 
 ## Introduction
 
-ThingsBoard provides the ability to create and manage dashboards. Each dashboard can contain plenty of widgets. Dashboards display data from many entities: devices, assets, etc. Dashboards can be assigned to Customers. 
+ThingsBoard provides the ability to create and manage dashboards. 
+
+Each dashboard can contain plenty of widgets. Dashboards display data from many entities: devices, assets, etc. Dashboards can be assigned to Customers. 
+
 This guide covers main concepts and various configuration settings.
+
+## Adding a dashboard
+
+To add a new dashboard, you should:
+
+1. Go to _Dashboard groups_ through the main menu on the left of the screen;
+2. To add a new dashboard group, click the "+" sign in the upper right corner of the screen, or open the "All" dashboard group and click the  "+" sign in the upper right corner there;
+3. In the opened dialog, necessary to enter a dashboard title, description is optional. Click "Add".
+
+{% include images-gallery.html imageCollection="creating-dash" %}
+
+##### Make public
+
+If you want to make your dashboard public and share a link to it, you should:
+
+1. Go to the _Dashboard groups_;
+2. Click the "Share" icon next to the dashboard group that you want to make public;
+3. In the confirmation dialog box, click "Yes";
+4. Open the dashboard group and click the link icon opposite the needed dashboard;
+5. In the "Public dashboard link" dialog, click a copy button next to the link.
+
+Now you can share a dashboard with this link. Note that you shouldn't forget to make related devices, assets and entity views public in order to access their data.
+
+{% include images-gallery.html imageCollection="make-public" %}
 
 ## Dashboard overview 
 
@@ -101,6 +128,8 @@ There are five types of widgets:
 * **Control** widgets allow you to send [RPC commands](/docs/{{docsPrefix}}user-guide/rpc/) to your devices. For example, control desired temperature on the thermostat device;  
 * **Alarm** widgets allow you to display [alarms](/docs/{{docsPrefix}}user-guide/alarms/);
 * **Static** widgets are designed to display static data. For example, floor plan or static company information.
+
+More about widget types you can learn [here](/docs/{{docsPrefix}}user-guide/ui/widget-library/).
 
 #### Adding widget to the dashboard
 
@@ -257,7 +286,11 @@ Coming soon...
 
 ###### 3.2. Advanced data key settings
 
-Coming soon...
+Advanced data keys configuration is responsible for the visibility, style, and appearance of a specific data key column on the widget. 
+Entity table widget, alarms table widget, and entity admin widget bundles have the same advanced data key configuration. 
+Charts widget bundle has its own unique advanced data key configuration. All other widget bundles have only basic data key configuration.
+
+Learn more about advanced data key settings [here](/docs/{{docsPrefix}}user-guide/ui/advanced-data-key-configuration/).
 
 ##### 4. Widget time window
 
@@ -439,7 +472,6 @@ Toolbar allows changing the dashboard you're currently using, edit timewindow, e
 
 If we remove the checkmark, the toolbar will be closed. Instead of it, on the upper right of the screen you find the three-dots icon. By clicking on it, the hidden toolbar will be opened.
 
-
 {% include images-gallery.html imageCollection="toolbar-dashboard" %}
  
 #### Title of the Dashboard
@@ -491,7 +523,6 @@ By default, the _Automatic Fill Layout Height_ checkbox is unchecked so that you
 If you tick this option, all the widgets on the Dashboard will fill in vertically in the space of the screen.
 
 {% include images-gallery.html imageCollection="autofill" %}
-
 
 #### Background settings
 
@@ -576,6 +607,14 @@ As we have chosen the "On row click" action, we need to click on the row of our 
 For the state to be named after the entity, use ${entityName} as the name of the state. Thus during the action, you will be transitioned to a state that is called the same as the entity that took part in the action.
 
 {% include images-gallery.html imageCollection="entity-name" %}
+
+## Import dashboard
+
+You are able to import a dashboard in JSON format.
+To import a dashboard, you should go to the Dashboard group and click on the “+” button in the upper right corner of the page and choose “Import dashboard”.
+The dashboard import window should pop up, and you will be prompted to upload the JSON file and click "Import".
+
+{% include images-gallery.html imageCollection="import" preview='false' %}
 
 ## Export
 

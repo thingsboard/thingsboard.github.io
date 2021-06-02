@@ -18,34 +18,19 @@
   {
     "type": "hardware",
     "program": "",
-    "name": "Espressif Systems",
-    "logo": "espressif.svg",
+    "name": "Efento",
+    "logo": "efento.png",
     "links": {
       "Site": {
-        "href": "https://www.espressif.com/",
+        "href": "https://getefento.com/",
         "target": "_blank"
       },
       "Integration guide": {
-        "href": "/docs/samples/esp32/gpio-control-pico-kit-dht22-sensor/"
-      }
-    },
-    "blurb": "Espressif Systems designs a range of high-performance Wi-Fi+Bluetooth/BLE chipsets and modules."
-  },
-  {
-    "type": "hardware",
-    "program": "",
-    "name": "SODAQ",
-    "logo": "sodaq.jpg",
-    "links": {
-      "Site": {
-        "href": "https://sodaq.com/",
+        "href": "https://getefento.com/library/efento-nb-iot-sensors-and-things-board/",
         "target": "_blank"
-      },
-      "Integration guide": {
-        "href": "/docs/user-guide/integrations/sodaq/"
       }
     },
-    "blurb": "What drives us is the passion to create scalable electronics solutions that work anywhere. We have implemented projects throughout developing countries, from Peru to Sri Lanka, and we will continue working where we can have the highest impact."
+    "blurb": "Efento offers a wide portfolio of battery powered NB-IoT wireless sensors. Company has been founded in 2014 and since day one focuses on low power consumption wireless IoT devices. You can select a sensor form over 20 types of devices from our portfolio, or talk to us if you need a custom solution to meet your needs."
   },
   {
     "type": "hardware",
@@ -67,6 +52,38 @@
   {
     "type": "hardware",
     "program": "",
+    "name": "Espressif Systems",
+    "logo": "espressif.svg",
+    "links": {
+      "Site": {
+        "href": "https://www.espressif.com/",
+        "target": "_blank"
+      },
+      "Integration guide": {
+        "href": "/docs/samples/esp32/gpio-control-pico-kit-dht22-sensor/"
+      }
+    },
+    "blurb": "Espressif Systems designs a range of high-performance Wi-Fi+Bluetooth/BLE chipsets and modules."
+  },
+  {
+    "type": "hardware",
+    "program": "",
+    "name": "Seeed Technology Co.,Ltd.",
+    "logo": "seeed.png",
+    "links": {
+      "Site": {
+        "href": "https://www.seeedstudio.com/",
+        "target": "_blank"
+      },
+      "Integration guide": {
+        "href": "/docs/samples/raspberry/grove/"
+      }
+    },
+    "blurb": "Whether you are a developer, technical supplier, or industry player, we provide products and services for your IoT needs."
+  },
+  {
+    "type": "hardware",
+    "program": "",
     "name": "Smartico",
     "logo": "smartico.png",
     "links": {
@@ -74,22 +91,22 @@
         "href": "https://www.smartico.biz/en/",
         "target": "_blank"
       },
-      "Integration guide Electricity Meter \"Smartico E307\"": {
+      "Electricity Meter": {
         "href": "/docs/samples/smartico/elec-meter-lorawan/Electricity_Meter_LoRaWAN/"
       },
-      "Gas Meter \"Smartico G-1.6\"": {
+      "Gas Meter": {
         "href": "/docs/samples/smartico/gas-meter-lorawan/Gas_Meter_LoRaWAN/"
       },
-	"Gas Shutoff Valve \"Smartico V-LR\"": {
+	  "Gas Shutoff Valve": {
         "href": "/docs/samples/smartico/gas-valve-lorawan/Gas_Valve_LoRaWAN/"
       },
-      "Leaks Detector \"Smartico L2-LR\"": {
+      "Leaks Detector": {
         "href": "/docs/samples/smartico/leaks-detector-lorawan/Leaks_Detector_LoRaWAN/"
       },
-	  "Water meter Pulse Sensor \"Smartico P22-LR\"": {
+	  "Water meter Pulse Sensor": {
         "href": "/docs/samples/smartico/pulse-sensor-lorawan/Pulse_Sensor_LoRaWAN/"
       },
-      "Water meter wM-Bus Reader \"Smartico WM-LR\"": {
+      "Water meter wM-Bus Reader": {
         "href": "/docs/samples/smartico/wm-bus-lorawan/wMBus_Reader_LoRaWAN/"
       }
     },
@@ -130,18 +147,18 @@
   {
     "type": "hardware",
     "program": "",
-    "name": "Seeed Technology Co.,Ltd.",
-    "logo": "seeed.png",
+    "name": "SODAQ",
+    "logo": "sodaq.jpg",
     "links": {
       "Site": {
-        "href": "https://www.seeedstudio.com/",
+        "href": "https://sodaq.com/",
         "target": "_blank"
       },
       "Integration guide": {
-        "href": "/docs/samples/raspberry/grove/"
+        "href": "/docs/user-guide/integrations/sodaq/"
       }
     },
-    "blurb": "Whether you are a developer, technical supplier, or industry player, we provide products and services for your IoT needs."
+    "blurb": "What drives us is the passion to create scalable electronics solutions that work anywhere. We have implemented projects throughout developing countries, from Peru to Sri Lanka, and we will continue working where we can have the highest impact."
   },
   {
     "type": "hardware",
@@ -187,5 +204,53 @@
       }
     },
     "blurb": "Since 2000, DCT has been developing IoT devices and accessories for Fleet Telematics Applications and Industrial Solutions that are trusted by integrators and service providers around the globe. Their expertise in product design and development together with firmware and software makes the perfect combination for developers to start building amazing applications."
+  },
+  {
+    "type": "hardware",
+    "program": "",
+    "name": "Kernel Sistemi",
+    "logo": "kernel_logo.jpg",
+    "links": {
+      "Site": {
+        "href": "https://www.kernelgroup.it/",
+        "target": "_blank"
+      },
+      "Integration guide": {
+        "href": "/docs/samples/kernel/kernel/"
+      }
+    },
+    "blurb": "KERNEL Sistemi s.r.l. designs and produces electronic solutions for automation, industrial process control, photovoltaics, energy management and home automation."
+  },
+  {
+    "type": "hardware",
+    "program": "",
+    "name": "KingPigeon Technology Co., Ltd.",
+    "logo": "kingpigeon.png",
+    "links": {
+      "Site": {
+        "href": "https://www.iot-solution.com/",
+        "target": "_blank"
+      },
+      "Integration guide": {
+        "href": "/docs/samples/kingpigeon/kingpigeon/"
+      }
+    },
+    "blurb": "King Pigeon Communication Co.,Ltd. specialized in LTE Industrial Router, Industial IOT Gateways, IIOT Gateways, 4G Industrial Router, Cellular RTU, 4G RTU, PLC Gateways, Ethernet IO Module OEM ODM Since 2005."
+  },
+  {
+    "type": "hardware",
+    "program": "",
+    "name": "Things On Edge",
+    "logo": "things-on-edge.svg",
+    "links": {
+      "Site": {
+        "href": "https://thingsonedge.com/",
+        "target": "_blank"
+      },
+      "Integration guide": {
+        "href": "/docs/samples/cricket-wifi/cricket-wifi/"
+      }
+    },
+    "blurb": "Things On Edge designs easy to use, ultra low power Wi-Fi modules."
   }
 ]
