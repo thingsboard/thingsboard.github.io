@@ -45,6 +45,10 @@ charts-radar:
     0:
         image: /images/user-guide/ui/widgets/charts/charts-radar-ce.png
 
+charts-polar:
+    0:
+        image: /images/user-guide/ui/widgets/charts/charts-polar-ce.png
+
 charts-bar-advanced:
     0:
         image: /images/user-guide/ui/widgets/charts/barchart-advanced-ce.png
