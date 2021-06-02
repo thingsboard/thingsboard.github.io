@@ -99,6 +99,22 @@
   {
     "type": "hardware",
     "program": "",
+    "name": "Digital Communications Technologies, LLC.",
+    "logo": "DCT-Logo-Standard-Color-01.png",
+    "links": {
+      "Site": {
+        "href": "https://www.digitalcomtech.com/",
+        "target": "_blank"
+      },
+      "Integration guide": {
+        "href": "/docs/samples/syrus/syrus/"
+      }
+    },
+    "blurb": "Since 2000, DCT has been developing IoT devices and accessories for Fleet Telematics Applications and Industrial Solutions that are trusted by integrators and service providers around the globe. Their expertise in product design and development together with firmware and software makes the perfect combination for developers to start building amazing applications."
+  },
+  {
+    "type": "hardware",
+    "program": "",
     "name": "Nettra",
     "logo": "nettra.png",
     "links": {
@@ -111,6 +127,22 @@
       }
     },
     "blurb": "We provide comprehensive hardware and software IoT solutions"
+  },
+  {
+    "type": "hardware",
+    "program": "",
+    "name": "Things On Edge",
+    "logo": "things-on-edge.svg",
+    "links": {
+      "Site": {
+        "href": "https://thingsonedge.com/",
+        "target": "_blank"
+      },
+      "Integration guide": {
+        "href": "/docs/samples/cricket-wifi/cricket-wifi/"
+      }
+    },
+    "blurb": "Things On Edge designs easy to use, ultra low power Wi-Fi modules."
   },
   {
     "type": "hardware",
@@ -176,22 +208,6 @@
   {
     "type": "hardware",
     "program": "",
-    "name": "Digital Communications Technologies, LLC.",
-    "logo": "DCT-Logo-Standard-Color-01.png",
-    "links": {
-      "Site": {
-        "href": "https://www.digitalcomtech.com/",
-        "target": "_blank"
-      },
-      "Integration guide": {
-        "href": "/docs/samples/syrus/syrus/"
-      }
-    },
-    "blurb": "Since 2000, DCT has been developing IoT devices and accessories for Fleet Telematics Applications and Industrial Solutions that are trusted by integrators and service providers around the globe. Their expertise in product design and development together with firmware and software makes the perfect combination for developers to start building amazing applications."
-  },
-  {
-    "type": "hardware",
-    "program": "",
     "name": "Kernel Sistemi",
     "logo": "kernel_logo.jpg",
     "links": {
@@ -220,21 +236,5 @@
       }
     },
     "blurb": "King Pigeon Communication Co.,Ltd. specialized in LTE Industrial Router, Industial IOT Gateways, IIOT Gateways, 4G Industrial Router, Cellular RTU, 4G RTU, PLC Gateways, Ethernet IO Module OEM ODM Since 2005."
-  },
-  {
-    "type": "hardware",
-    "program": "",
-    "name": "Things On Edge",
-    "logo": "things-on-edge.svg",
-    "links": {
-      "Site": {
-        "href": "https://thingsonedge.com/",
-        "target": "_blank"
-      },
-      "Integration guide": {
-        "href": "/docs/samples/cricket-wifi/cricket-wifi/"
-      }
-    },
-    "blurb": "Things On Edge designs easy to use, ultra low power Wi-Fi modules."
   }
 ]

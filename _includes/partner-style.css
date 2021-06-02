@@ -16,7 +16,8 @@ p, h1, h5 {
 	left: calc(50% - 800px);
 }
 
-#hardwareContainer:after {
+/*#hardwareContainer:after*/
+.background img {
 	content: "";
 	background-image: url(/images/partners/hardware-map.svg);
 	background-size: contain;
@@ -24,12 +25,11 @@ p, h1, h5 {
 	position: fixed;
 	right: calc(50% - 800px);
 	top: 540px;
-	z-index: -1;
 	width: 1600px;
 	height: 800px;
 }
 
-.background div {
+.background .fill {
 	position: absolute;
 	width: 100%;
 	height: 2950px;
@@ -123,18 +123,20 @@ p, h1, h5 {
 	font-weight: 500;
 	font-size: 18px;
 	position: relative;
-	margin-right: 12px;
+	margin-right: 8px;
 	background-color: rgba(42,125,236, 0.1);
 	border-radius: 4px;
 	padding: 6px 10px;
 	margin-top: 8px;
-	line-height: 45px;
+	line-height: inherit;
+	display: inline-block;
 }
 
 .partner-box div.links a:first-child {
 	background-color: unset;
 	border-radius: unset;
 	padding-right: 16px;
+	margin-right: 16px;
 }
 
 .partner-box div.links a:first-child:after {
@@ -200,7 +202,7 @@ section {
 
 @media screen and (max-width: 768px) {
 	#users {
-		padding: 30px 20px 0px;
+		padding: 30px 20px 0;
 	}
 
 	#users main h1 {
@@ -229,7 +231,6 @@ section {
 	.partner-box > div > .links > a {
 		font-size: 14px;
 		margin-right: 6px;
-		line-height: 37px;
 	}
 
 	.partner-box div div.text p.title {
