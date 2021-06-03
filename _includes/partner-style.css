@@ -8,6 +8,68 @@ p, h1, h5 {
 	top: -260px;
 }
 
+#hardwareContainer .filter {
+	background-color: rgba(255,255,255,0.90);
+	backdrop-filter: blur(7px);
+	width: 100%;
+	border-radius: 6px;
+	margin-bottom: 24px;
+	padding: 24px 32px;
+	color: #75767C;
+	font-size: 18px;
+}
+
+#hardwareContainer .filter .actions {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+#hardwareContainer .filter .actions .check-box {
+	cursor: pointer;
+	margin: 8px 8px 0 0;
+	border-radius: 6px;
+	color: #212529;
+	border: solid 1px #EBEBEB;
+	padding: 7px 14px;
+	position: relative;
+}
+
+#hardwareContainer .filter .actions .check-box:hover {
+	background-color: #2A7DEC;
+	color: #fff;
+	border: unset;
+}
+
+#hardwareContainer .filter .actions .check-box:not(.checked, .main, :hover) {
+	padding: 6px 13px;
+}
+
+#hardwareContainer .filter .actions .main {
+	background-color: #F1F2F3;
+	border: unset;
+}
+
+#hardwareContainer .filter .actions .checked {
+	background-color: #2A7DEC;
+	color: #fff;
+	border: unset;
+	padding-left: 40px;
+}
+
+#hardwareContainer .filter .actions .checked:after {
+	content: "";
+	background-image: url(/images/checked-box-icon.svg);
+	background-size: contain;
+	display: block;
+	position: absolute;
+	left: 14px;
+	top: 10px;
+	width: 18px;
+	height: 18px;
+	border: none;
+	transition: all 0.3s ease-out;
+}
+
 #hardwareContainer object{
 	position: absolute;
 	z-index: 1;

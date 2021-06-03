@@ -1,10 +1,12 @@
 {% capture containerId %}{{include.containerId}}{% endcapture %}
 {% capture partnersType %}{{include.type}}{% endcapture %}
+// {% capture partnersConnection %}{{include.connection}}{% endcapture %}
 {% capture partners %}{% include partners.json %}{% endcapture %}
 
 (function () {
     var containerId = "{{ containerId }}";
     var partnersType = "{{ partnersType }}";
+    // var partnersConnection = "{{ partnersConnection }}";
 	var partners = {{ partners }};
 
 	var targetContainer = document.getElementById(containerId);
@@ -13,13 +15,11 @@
         return partner.type === partnersType;
     });
 
-	// var sorted = partnersByType.sort(function (a, b) {
-	// 	if (a.name > b.name) return 1
-	// 	if (a.name < b.name) return -1
-	// 	return 0
-	// })
-
-    // sorted.forEach(function (obj) {
+    // var partnersByConnection = partnersByType.filter(function(partnerH) {
+    //     return partnerH.connection.includes("main");
+    // });
+    //
+    // partnersByConnection.forEach(function (obj) {
     partnersByType.forEach(function (obj) {
 		var box = document.createElement('div');
 		box.className = 'partner-box';
@@ -103,3 +103,18 @@
         targetContainer.appendChild(becomeHardwarePartnerBox);
     }
 })();
+
+function actions(sectionId) {
+    if (sectionId === 'main') {
+        $("div.check-box").removeClass("checked");
+        $("div." + sectionId).addClass("checked");
+    } else {
+        $("div.main").removeClass("checked");
+        if ($("div." + sectionId).hasClass("checked")){
+            $("div." + sectionId).removeClass("checked");
+        } else {
+            $("div." + sectionId).addClass("checked");
+        }
+    }
+    // alert("rd4ewrfewrw");
+}

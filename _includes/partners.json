@@ -1,6 +1,7 @@
 [
   {
     "type": "hardware",
+    "connection": ["main", "bluetooth", "nbiot", "lte"],
     "program": "",
     "name": "Efento",
     "logo": "efento.png",
@@ -18,6 +19,7 @@
   },
   {
     "type": "hardware",
+    "connection": ["main", ""],
     "program": "",
     "name": "Teltonika Networks",
     "logo": "teltonika-networks.png",
