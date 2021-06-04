@@ -88,7 +88,7 @@ defaultActivePricingSection: thingsboard-pe
                                 <strong>Email</strong> <strong>consulting</strong>: 2h per month
                             </div>
                             <div class="pricing-square-item">
-                                <b>Server issue response time</b>: < 28h
+                                <b>Server issue response time</b>: < 24h
                             </div>
                             <div class="pricing-square-item">
                                 <b>On-demand trainings</b>: <i>not packed</i>
