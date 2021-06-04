@@ -1,7 +1,6 @@
 [
   {
-    "type": "hardware",
-    "connection": ["main", "bluetooth", "nbiot", "lte"],
+    "type": ["hardware", "bluetooth", "nbiot", "lte"],
     "program": "",
     "name": "Efento",
     "logo": "efento.png",
@@ -18,8 +17,7 @@
     "blurb": "Efento offers a wide portfolio of battery powered NB-IoT wireless sensors. Company has been founded in 2014 and since day one focuses on low power consumption wireless IoT devices. You can select a sensor form over 20 types of devices from our portfolio, or talk to us if you need a custom solution to meet your needs."
   },
   {
-    "type": "hardware",
-    "connection": ["main", ""],
+    "type": ["hardware", ""],
     "program": "",
     "name": "Teltonika Networks",
     "logo": "teltonika-networks.png",
@@ -36,7 +34,7 @@
     "blurb": "Teltonika Networks is a rapidly growing technology company, manufacturing professional network connectivity equipment for international markets. It has developed a wide portfolio of products for the most complex areas of Industry 4.0, Smart City, and Green Energy."
   },
   {
-    "type": "hardware",
+    "type": ["hardware", ""],
     "program": "",
     "name": "Espressif Systems",
     "logo": "espressif.svg",
