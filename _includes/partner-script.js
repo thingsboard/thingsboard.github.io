@@ -3,20 +3,30 @@
 // {% capture partnersConnection %}{{include.connection}}{% endcapture %}
 {% capture partners %}{% include partners.json %}{% endcapture %}
 
-(function () {
+// $(document).ready(function() { rengen(); });
+
+function rengen(connect) {
+    alert(connect);
     var containerId = "{{ containerId }}";
     var partnersType = "{{ partnersType }}";
     // var partnersConnection = "{{ partnersConnection }}";
 	var partners = {{ partners }};
 
+    alert("xyiks1");
+    var x = containerId.getElementsByClassName("checked")[0];
+    alert("xyiks2");
+    alert(x);
+
 	var targetContainer = document.getElementById(containerId);
+    targetContainer.innerHTML = '';
 
     var partnersByType = partners.filter(function(partner) {
-        return partner.type === partnersType;
+        // return partner.type === partnersType;
+        return partner.type.includes(connect);
     });
 
     // var partnersByConnection = partnersByType.filter(function(partnerH) {
-    //     return partnerH.connection.includes("main");
+    //     return partnerH.connection.includes("lte");
     // });
     //
     // partnersByConnection.forEach(function (obj) {
@@ -102,19 +112,24 @@
 
         targetContainer.appendChild(becomeHardwarePartnerBox);
     }
-})();
+}
+// )();
 
 function actions(sectionId) {
     if (sectionId === 'main') {
-        $("div.check-box").removeClass("checked");
-        $("div." + sectionId).addClass("checked");
+        if (!$("div." + sectionId).hasClass("checked")){
+            $("div.check-box").removeClass("checked");
+            $("div." + sectionId).addClass("checked");
+            rengen("hardware");
+        }
     } else {
         $("div.main").removeClass("checked");
         if ($("div." + sectionId).hasClass("checked")){
             $("div." + sectionId).removeClass("checked");
+            rengen(sectionId);
         } else {
             $("div." + sectionId).addClass("checked");
+            rengen(sectionId);
         }
     }
-    // alert("rd4ewrfewrw");
 }
