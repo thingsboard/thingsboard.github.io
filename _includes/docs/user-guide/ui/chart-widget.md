@@ -5,7 +5,7 @@
 
 In this guide, we will study Chart widgets: their functionality, features, basic and advanced settings of the widgets and widgets' data keys.
 
-Charts allow displaying time series data using customizable line and bar charts. Moreover, you can use various pie charts to display the latest values.
+Chart widgets allow displaying time series data using customizable line and bar charts. Moreover, you can use various pie charts to display the latest values.
 
 ## How to create a Chart widget
 
@@ -24,13 +24,13 @@ Time series widgets visualize changes to time series data over time. How to set 
 
 ##### Bar Chart
 
-Bar Chart widget displays changes to time series data over time. For example, temperature for the last month.
+Bar Chart widget displays changes to time series data over time. In the example the temperature for the last month is shown.
 
 {% include images-gallery.html imageCollection="charts-bar" preview="false" %}
 
 ##### Line Chart
 
-Line Chart widget displays changes to time series data over time. For example, temperature and humidity readings.
+Line Chart widget displays changes to time series data over time. In the example the temperature and humidity readings are shown.
 
 {% include images-gallery.html imageCollection="charts-line" preview="false" %}
 
@@ -48,13 +48,50 @@ Latest values widgets visualize the latest values of the attributes or time seri
 
 Radar widget displays the latest values of the attributes or time series data for multiple entities in a radar chart. Supports numeric values only.
 
-{% include images-gallery.html imageCollection="charts-bars" preview="false" %}
+In the example, widget is displaying the latest pressure time series data values of three devices.
+
+{% include images-gallery.html imageCollection="charts-radar" preview="false" %}
 
 ##### Polar Area
 
 Polar Area displays the latest values of the attributes or time series data for multiple entities in a polar area chart. Supports numeric values only.
 
+In the example, widget is displaying the latest pressure time series data values of three devices.
+
 {% include images-gallery.html imageCollection="charts-polar" preview="false" %}
+
+##### Pie - Chart.js
+
+Pie - Chart.js displays the latest values of the attributes or time series data for multiple entities in a pie chart. Supports numeric values only.
+
+In the example, widget is displaying the latest temperature time series data values of three devices.
+
+{% include images-gallery.html imageCollection="charts-piejs" preview="false" %}
+
+##### Pie - Flot
+
+Pie - Flot displays the latest values of the attributes or time series data for multiple entities in a pie chart. Supports numeric values only.
+
+In the example, widget is displaying the latest pressure time series data values of three devices.
+
+{% include images-gallery.html imageCollection="charts-pieflot" preview="false" %}
+
+##### Doughnut
+
+Doughnut widget displays the latest values of the attributes or times eries data for multiple entities in a doughnut chart. Supports numeric values only.
+
+In the example, widget is displaying the latest humidity time series data values of three devices.
+
+{% include images-gallery.html imageCollection="charts-doughnut" preview="false" %}
+
+##### Bars
+
+Bars widget displays the latest values of the attributes or time series data for multiple entities as separate bars.
+The only latest values chart widget that allows using not only numeric values.
+
+In the example, widget is displaying the latest pressure time series data values of three devices.
+
+{% include images-gallery.html imageCollection="charts-bars" preview="false" %}
 
 ## Chart widget settings
 

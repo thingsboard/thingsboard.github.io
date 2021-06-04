@@ -57,6 +57,21 @@ charts-bar-advanced:
         image: /images/user-guide/ui/widgets/charts/barchart-advanced-1-ce.png
         title: '.'
 
+charts-piejs:
+    0:
+        image: /images/user-guide/ui/widgets/charts/charts-piejs-ce.png
+
+charts-pieflot:
+    0:
+        image: /images/user-guide/ui/widgets/charts/charts-pieflot-ce.png
+
+charts-doughnut:
+    0:
+        image: /images/user-guide/ui/widgets/charts/charts-doughnut-ce.png
+
+charts-bars:
+    0:
+        image: /images/user-guide/ui/widgets/charts/charts-bars-ce.png
 
 ---
 
