@@ -2,10 +2,36 @@ p, h1, h5 {
 	color: #212529;
 }
 
+body {
+	background-color: #F7F9FC;
+}
+
 .background {
 	position: relative;
 	z-index: -1;
 	top: -260px;
+	height: 100%;
+}
+
+.background img {
+	content: "";
+	background-image: url(/images/partners/hardware-map.svg);
+	background-size: contain;
+	display: block;
+	position: fixed;
+	right: calc(50% - 800px);
+	top: 540px;
+	width: 1600px;
+	height: 800px;
+}
+
+.background .fill {
+	position: absolute;
+	width: 100%;
+	height: 460px;
+	bottom: -260px;
+	/*transform: skewY(-6deg);*/
+	background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.6) 40%, rgba(255,255,255,0.4) 60%, rgba(255,255,255,0) 100%);
 }
 
 .filter {
@@ -19,12 +45,31 @@ p, h1, h5 {
 	font-size: 18px;
 }
 
-.filter .actions {
+.nav-fixed {
+	position: fixed;
+	justify-content: center;
+	z-index: 2;
+	width: 100%;
+	left: 0;
+	display: flex;
+	top: -80px;
+	border-radius: unset;
+	border-bottom: solid 1px #ebebeb;
+	padding: 24px 30px;
+}
+
+.nav-fixed .filter-content {
+	max-width: 1200px;
+	width: 100%;
+	padding: 0 32px;
+}
+
+.filter .filter-content .actions {
 	display: flex;
 	flex-wrap: wrap;
 }
 
-.filter .actions .check-box {
+.filter .filter-content .actions .check-box {
 	cursor: pointer;
 	margin: 8px 8px 0 0;
 	border-radius: 6px;
@@ -34,29 +79,29 @@ p, h1, h5 {
 	position: relative;
 }
 
-.filter .actions .check-box:hover {
+.filter .filter-content .actions .check-box:hover {
 	background-color: #2A7DEC;
 	color: #fff;
 	border: unset;
 }
 
-.filter .actions .check-box:not(.checked, .main, :hover) {
+.filter .filter-content .actions .check-box:not(.checked, .main, :hover) {
 	padding: 6px 13px;
 }
 
-.filter .actions .main {
+.filter .filter-content .actions .main {
 	background-color: #F1F2F3;
 	border: unset;
 }
 
-.filter .actions .checked {
+.filter .filter-content .actions .checked {
 	background-color: #2A7DEC;
 	color: #fff;
 	border: unset;
 	padding-left: 40px;
 }
 
-.filter .actions .checked:after {
+.filter .filter-content .actions .checked:after {
 	content: "";
 	background-image: url(/images/checked-box-icon.svg);
 	background-size: contain;
@@ -78,27 +123,11 @@ p, h1, h5 {
 	left: calc(50% - 800px);
 }
 
+.customer-spacer {
+	margin-top: 300px!important;
+}
+
 /*#hardwareContainer:after*/
-.background img {
-	content: "";
-	background-image: url(/images/partners/hardware-map.svg);
-	background-size: contain;
-	display: block;
-	position: fixed;
-	right: calc(50% - 800px);
-	top: 540px;
-	width: 1600px;
-	height: 800px;
-}
-
-.background .fill {
-	position: fixed;
-	width: 100%;
-	height: 1950px;
-	/*transform: skewY(-6deg);*/
-	background-color: #F7F9FC;
-}
-
 #users main h1 {
 	font-size: 36px;
 	font-weight: 500;
@@ -247,6 +276,11 @@ section {
 	section > main, footer > main {
 		max-width: 1400px;
 	}
+
+	.nav-fixed .filter-content {
+		max-width: 1400px;
+	}
+
 }
 
 @media screen and (max-width: 1024px) {
@@ -276,9 +310,21 @@ section {
 		font-size: 16px;
 	}
 
+	.filter {
+		padding: 24px;
+	}
+
+	.nav-fixed {
+		padding: 24px 20px;
+	}
+
+	.nav-fixed .filter-content {
+		padding: 0 24px;
+	}
+
 	#hardwareContainer {
 		justify-content: center;
-		margin: 80px 0 60px;
+		margin: 24px 0 60px;
 	}
 
 	.partner-box {

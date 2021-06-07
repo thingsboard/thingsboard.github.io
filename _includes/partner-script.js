@@ -1,35 +1,27 @@
 {% capture containerId %}{{include.containerId}}{% endcapture %}
 {% capture partnersType %}{{include.type}}{% endcapture %}
-// {% capture partnersConnection %}{{include.connection}}{% endcapture %}
 {% capture partners %}{% include partners.json %}{% endcapture %}
 
-// $(document).ready(function() { rengen(); });
-
-function rengen(connect) {
-    alert(connect);
+function rengen() {
     var containerId = "{{ containerId }}";
     var partnersType = "{{ partnersType }}";
-    // var partnersConnection = "{{ partnersConnection }}";
 	var partners = {{ partners }};
 
-    alert("xyiks1");
-    var x = containerId.getElementsByClassName("checked")[0];
-    alert("xyiks2");
-    alert(x);
+    var checkedElements = document.getElementsByClassName('checked');
 
 	var targetContainer = document.getElementById(containerId);
     targetContainer.innerHTML = '';
 
-    var partnersByType = partners.filter(function(partner) {
-        // return partner.type === partnersType;
-        return partner.type.includes(connect);
-    });
+    var partnersByType = [];
+    for (var t = 0; t < partners.length; t++) {
+        for (var c = 0; c < checkedElements.length; c++) {
+            if (partners[t].type.includes(checkedElements[c].className.split(' ')[1])) {
+                partnersByType.push(partners[t]);
+                c = partners.length;
+            }
+        }
+    }
 
-    // var partnersByConnection = partnersByType.filter(function(partnerH) {
-    //     return partnerH.connection.includes("lte");
-    // });
-    //
-    // partnersByConnection.forEach(function (obj) {
     partnersByType.forEach(function (obj) {
 		var box = document.createElement('div');
 		box.className = 'partner-box';
@@ -120,16 +112,19 @@ function actions(sectionId) {
         if (!$("div." + sectionId).hasClass("checked")){
             $("div.check-box").removeClass("checked");
             $("div." + sectionId).addClass("checked");
-            rengen("hardware");
+            rengen();
         }
     } else {
         $("div.main").removeClass("checked");
         if ($("div." + sectionId).hasClass("checked")){
             $("div." + sectionId).removeClass("checked");
-            rengen(sectionId);
+            if (document.getElementsByClassName('checked').length === 0){
+                $("div.main").addClass("checked");
+            }
+            rengen();
         } else {
             $("div." + sectionId).addClass("checked");
-            rengen(sectionId);
+            rengen();
         }
     }
 }
