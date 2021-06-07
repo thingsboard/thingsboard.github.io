@@ -11,7 +11,7 @@ Chart widgets allow displaying time series data using customizable line and bar 
 
 To add any of the chart widgets to your dashboards, you should:
 
-{% include images-gallery.html imageCollection="charts-addwidget" showListImageTitles="true" preview="false" %}
+{% include images-gallery.html imageCollection="charts-addwidget" showListImageTitles="true" %}
 
 ## Chart widget types
 
@@ -26,19 +26,19 @@ Time series widgets visualize changes to time series data over time. How to set 
 
 Bar Chart widget displays changes to time series data over time. In the example the temperature for the last month is shown.
 
-{% include images-gallery.html imageCollection="charts-bar" preview="false" %}
+{% include images-gallery.html imageCollection="charts-bar" %}
 
 ##### Line Chart
 
 Line Chart widget displays changes to time series data over time. In the example the temperature and humidity readings are shown.
 
-{% include images-gallery.html imageCollection="charts-line" preview="false" %}
+{% include images-gallery.html imageCollection="charts-line" %}
 
 ##### State Chart
 
 State Chart widget displays changes to the state of the entity over time. For example, on and off. Learn about advanced configuring of the State Chart widget [here].
 
-{% include images-gallery.html imageCollection="charts-state" preview="false" %}
+{% include images-gallery.html imageCollection="charts-state" %}
 
 ### Last values widgets
 
@@ -50,7 +50,7 @@ Radar widget displays the latest values of the attributes or time series data fo
 
 In the example, widget is displaying the latest pressure time series data values of three devices.
 
-{% include images-gallery.html imageCollection="charts-radar" preview="false" %}
+{% include images-gallery.html imageCollection="charts-radar" %}
 
 ##### Polar Area
 
@@ -58,7 +58,7 @@ Polar Area displays the latest values of the attributes or time series data for 
 
 In the example, widget is displaying the latest pressure time series data values of three devices.
 
-{% include images-gallery.html imageCollection="charts-polar" preview="false" %}
+{% include images-gallery.html imageCollection="charts-polar" %}
 
 ##### Pie - Chart.js
 
@@ -66,7 +66,7 @@ Pie - Chart.js displays the latest values of the attributes or time series data 
 
 In the example, widget is displaying the latest temperature time series data values of three devices.
 
-{% include images-gallery.html imageCollection="charts-piejs" preview="false" %}
+{% include images-gallery.html imageCollection="charts-piejs" %}
 
 ##### Pie - Flot
 
@@ -74,7 +74,7 @@ Pie - Flot displays the latest values of the attributes or time series data for 
 
 In the example, widget is displaying the latest pressure time series data values of three devices.
 
-{% include images-gallery.html imageCollection="charts-pieflot" preview="false" %}
+{% include images-gallery.html imageCollection="charts-pieflot" %}
 
 ##### Doughnut
 
@@ -82,7 +82,7 @@ Doughnut widget displays the latest values of the attributes or times eries data
 
 In the example, widget is displaying the latest humidity time series data values of three devices.
 
-{% include images-gallery.html imageCollection="charts-doughnut" preview="false" %}
+{% include images-gallery.html imageCollection="charts-doughnut" %}
 
 ##### Bars
 
@@ -91,7 +91,7 @@ The only latest values chart widget that allows using not only numeric values.
 
 In the example, widget is displaying the latest pressure time series data values of three devices.
 
-{% include images-gallery.html imageCollection="charts-bars" preview="false" %}
+{% include images-gallery.html imageCollection="charts-bars" %}
 
 ## Chart widget settings
 
@@ -104,17 +104,28 @@ All of ThingsBoard widgets have the same basic settings, you can learn about con
 
 Advanced widget settings vary for different widget types. Advanced settings are responsible for configuring the unique features of the widget. 
 
-##### Time series Bar Chart
+##### 1 Time series Bar Chart
 
 Time series Bar chart is useful for visualizing changes to time series data over time. For example, daily water consumption for the last month.
 
 To enter widget edit mode and start adjusting its Advanced settings, first enter the dashboard edit mode. Then you should:
 
-{% include images-gallery.html imageCollection="charts-bar-advanced" showListImageTitles="true" preview="false" %}
+{% include images-gallery.html imageCollection="charts-bar-advanced" showListImageTitles="true" %}
 
-* Common Settings
+* **1** Common Settings
 
-* Comparison Settings
+- **1.1** Stacking
+
+If the Staking checkbox is not checked, you can see values of all used entities on a bar. 
+If unchecked, you will only see the highest value entity. To see values if all entities, you need to hover the mouse over a bar.
+
+{% include images-gallery.html imageCollection="charts-bar-adv-stacking" showListImageTitles="true" %}
+
+- **1.2** 
+
+- **1.3**
+
+*  Comparison Settings
 
 * Custom Legend Settings
 

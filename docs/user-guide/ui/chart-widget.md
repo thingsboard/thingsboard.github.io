@@ -73,6 +73,10 @@ charts-bars:
     0:
         image: /images/user-guide/ui/widgets/charts/charts-bars-ce.png
 
+charts-bar-adv-stacking:
+    0:
+        image: /images/user-guide/ui/widgets/charts/charts-bar-adv-stacking-ce.png
+
 ---
 
 {% include docs/user-guide/ui/chart-widget.md %}

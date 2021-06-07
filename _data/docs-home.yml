@@ -193,6 +193,7 @@ toc:
     section:
     - title: Chart widgets
       path: /docs/user-guide/ui/chart-widget/
+      new: true
     - title: Trip Animation widget
       path: /docs/user-guide/ui/trip-animation-widget/
     - title: Advanced settings of the Entity Table widget
