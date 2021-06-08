@@ -21,6 +21,9 @@ listFirmware:
     2:
         image: /images/user-guide/firmware/list-firmware-2-ce.png
         title: ''
+    3:
+        image: /images/user-guide/firmware/list-firmware-3-ce.png
+        title: ''
 
 deviceFirmware:
     0:
@@ -32,6 +35,9 @@ deviceFirmware:
     3:
         image: /images/user-guide/firmware/device-firmware-2-ce.png
         title: 'After selecting firmware, apply changes by clicking the orange check mark in the right corner of the page.'
+    4:
+        image: /images/user-guide/firmware/device-firmware-3-ce.png
+        title: '.'
 
 fw-deviceprofile:
     0:
