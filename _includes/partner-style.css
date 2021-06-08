@@ -64,9 +64,16 @@ body {
 	padding: 0 32px;
 }
 
+.filter .filter-content .filter-spacer {
+	position: fixed;
+	width: 0;
+	height: 0;
+}
+
 .filter .filter-content .actions {
 	display: flex;
-	flex-wrap: wrap;
+	white-space: nowrap;
+	overflow-x: auto;
 }
 
 .filter .filter-content .actions .check-box {
@@ -282,6 +289,11 @@ section {
 	}
 
 }
+/*@media screen and (max-width: 1180px) {*/
+/*	.customer-spacer {*/
+/*		margin-top: 346px !important;*/
+/*	}*/
+/*}*/
 
 @media screen and (max-width: 1024px) {
 	.partner-box {
@@ -294,6 +306,10 @@ section {
         height: 30px;
         max-width: 50%;
     }
+
+	.nav-fixed {
+		top: -82px;
+	}
 }
 
 @media screen and (max-width: 768px) {
@@ -310,12 +326,27 @@ section {
 		font-size: 16px;
 	}
 
+	.intro p .button {
+		font-size: 14px;
+	}
+
 	.filter {
 		padding: 24px;
+		margin-top: 60px;
+		background-color: rgba(255,255,255,1);
 	}
+
+	.filter .filter-content .filter-spacer {
+		height: 118px;
+	}
+
+		.customer-spacer {
+			margin-top: 200px !important;
+		}
 
 	.nav-fixed {
 		padding: 24px 20px;
+		top: 18px;
 	}
 
 	.nav-fixed .filter-content {

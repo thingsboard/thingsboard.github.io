@@ -11,13 +11,15 @@ title: Partners
 
 <section id="users">
 	<main>
-        <h1>ThingsBoard Hardware Partners</h1>
-		<h5>Hardware Partnership Program goal is to reduce time to market for ThingsBoard based solutions.
-			Together with Hardware Partners we simplify implementation of the most challenging IoT projects by providing a rich set of integration tutorials, typical use cases and best practices.
-		</h5>
-		<p align="center">
-			<a class="button" href="/partners/hardware/program/">Apply for Hardware Partner Program</a>
-		</p>
+		<div class="intro">
+			<h1>ThingsBoard Hardware Partners</h1>
+			<h5>Hardware Partnership Program goal is to reduce time to market for ThingsBoard based solutions.
+				Together with Hardware Partners we simplify implementation of the most challenging IoT projects by providing a rich set of integration tutorials, typical use cases and best practices.
+			</h5>
+			<p align="center">
+				<a class="button" href="/partners/hardware/program/">Apply for Hardware Partner Program</a>
+			</p>
+		</div>
 		<div class="filter">
 			<div class="filter-content">
 				Filter
@@ -32,6 +34,7 @@ title: Partners
 					<div onclick="actions('sigfox')" class="check-box sigfox">Sigfox</div>
 					<div onclick="actions('wifi')" class="check-box wifi">Wi-Fi</div>
 				</div>
+				<div class="filter-spacer"></div>
 			</div>
 		</div>
 		<div id="hardwareContainer">
@@ -61,7 +64,7 @@ title: Partners
 	jqueryDefer(function () {
 		$(window).scroll(function() {
 			var height = $(window).scrollTop();
-			var navPosition = $('.filter').height() + 458;
+			var navPosition = $('.intro').height() + $('#hero').height() + 240 - $('.filter-spacer').height();
 			if(height > navPosition){
 				$('div.filter').addClass('nav-fixed');
 				$('#hardwareContainer').addClass('customer-spacer');
