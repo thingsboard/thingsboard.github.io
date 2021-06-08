@@ -59,8 +59,8 @@ The firmware version assigned to the device will automatically overwrite firmwar
 
 For example, let's assume you have Devices D1 and D2 that has Profile P1:
 
-* If you assign package F1 to Profile P1 (via [profile details UI](TODO) or REST API), Devices D1 and D2 will be updated to F1. 
-* If you assign package F2 to Device D1 (via [device details UI](TODO) or REST API), Device D1 will be updated to F2.
+* If you assign package F1 to Profile P1 (via [profile details UI](/docs/{{docsPrefix}}user-guide/ota-updates/#assign-ota-package-to-device-profile) or REST API), Devices D1 and D2 will be updated to F1. 
+* If you assign package F2 to Device D1 (via [device details UI](/docs/{{docsPrefix}}user-guide/ota-updates/#assign-ota-package-to-device) or REST API), Device D1 will be updated to F2.
 * Subsequent assignment of the package F3 to the Profile P1 will affect only D2, since it has no specific firmware version assigned on the device level.
 So, D2 will be updated to F3, while D1 will continue to use F2.
 
