@@ -10,6 +10,8 @@ Many cloud vendors support managed PostgreSQL servers which is a cost-effective 
 
 {% include templates/install/create-tb-db.md %}
 
+{% include templates/install/optional-postgres-tune.md %}
+
 ##### ThingsBoard Configuration
 
 Edit ThingsBoard configuration file 
