@@ -80,7 +80,7 @@ This Dashboard will be the same for all our Self-Registered Customers.
 
 ![image](/images/user-guide/self-registration/read-only-role.png)
 
-### Step 6. Create shared dashboard
+### Step 7. Create shared dashboard
 
 First, navigate to "Device Groups"->"All" and create sample device with name "Device A" and type "sensor". 
 This is necessary to pass certain validation while importing the dashboard. 
@@ -110,7 +110,7 @@ See more on the custom actions and forms in a separate video tutorial.
 
 ![image](/images/user-guide/self-registration/action-config.png)
 
-### Step 7. Signup Form to open Dashboard on Full Screen 
+### Step 8. Signup Form to open Dashboard on Full Screen 
 
 Finally, we can provision our Signup Form. 
 Use your domain and ReCAPTCHA credentials.  
