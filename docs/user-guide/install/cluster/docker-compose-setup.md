@@ -39,7 +39,9 @@ See [**microservices**](/docs/reference/msa/) architecture page for more details
 
 ```bash
 git clone https://github.com/thingsboard/thingsboard.git
-cd thingsboard/docker
+cd thingsboard
+git checkout v{{ site.release.ce_full_ver }}
+cd docker
 ```
 
 ## Step 4. Configure ThingsBoard database
