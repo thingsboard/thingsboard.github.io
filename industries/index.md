@@ -1,8 +1,8 @@
 ---
 layout: common
 title: Industries
-description: 
-
+description:
+notitle: "true"
 ---
 
 <h1 class="mainTitle industries">Industries</h1>
@@ -39,4 +39,3 @@ description:
         <p></p>
     </a>
 </div>
-
