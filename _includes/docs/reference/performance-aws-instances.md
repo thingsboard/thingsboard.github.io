@@ -8,7 +8,7 @@ We are going to check how many messages per second each instance can handle and 
 
 Considering test results and your project requirements you will be able to identify what type of the instance is the most suitable for your project.
 
-## Data flow and test tools
+# Data flow and test tools
 
 IoT devices connect to ThingsBoard server via MQTT or HTTP Device API and send sample test data (*single telemetry of long type*) to the platform. 
 ThingsBoard server processes MQTT or HTTP messages and stores them to Cassandra/PostgreSQL asynchronously. 
@@ -32,24 +32,25 @@ This telemetry value could be shown as well as general telemetry on the ThingsBo
 
 **NOTE:** If you have multiple ThingsBoard nodes in the cluster, additional Rule Chain Node will save statistics under different telemetry keys on tenant level, but Performance Test Tool in the result will aggregate these values into a single result.
 
-## How to repeat the tests
+# How to repeat the tests
 
 Please use documentation of the [Performance Test Project](https://github.com/thingsboard/performance-tests/) for more details.
 
-## Performance by AWS Instance Type
+# Performance by AWS Instance Type
 
+**NOTE:** t2 instances are used [burstable performance instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-credits-baseline-concepts.html) please read the official documentation. We recommend don't count on it. btw you can get more messages on the peak.
 
-| Instance Type | Instance details | Database Type | Device API | Number of devices | Delay between messages| Maximum number of messages |
-| --- | --- | --- | --- | --- | --- | --- |
+| Instance Type | Instance details | Database Type | Device API | Number of devices | Delay between messages| Maximum number of messages | Peak with [AWS CPU Credit Balance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-credits-baseline-concepts.html)|
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | [t2.micro](#t2micro) | 1 vCPUs for a 2h 24m burst, 1GB | PostgreSQL | MQTT | 500 | 1000 ms | **~450/sec** | 
-| [t2.medium](#t2medium)  | 2 vCPUs for a 4h 48m burst, 4GB | PostgreSQL | MQTT | 900 | 1000 ms | **~780/sec** |
-| [c5.large](#c5large)  | 2 vCPUs , 4GB | PostgreSQL | MQTT | 1100 | 1000 ms | **~1020/sec** |
-| t2.xlarge | 4 vCPUs for a 5h 24m burst, 16GB | PostgreSQL | MQTT |  1800 | 1000 ms | **~1700/sec** |
-| t2.xlarge | 4 vCPUs for a 5h 24m burst, 16GB | Cassandra | MQTT | 3000 | 1000 ms | **~3000/sec** |
-| [m5.xlarge](#m5xlarge)  | 4 vCPUs, 16GB, 150GB SSD mounted | Cassandra | MQTT | 3500 | 1000 ms | **~3500/sec** |
-| [m5.xlarge](#m5xlarge)  | 4 vCPUs, 16GB, 150GB SSD mounted | Cassandra | HTTP | 2000 | 1000 ms | **~950/sec** |
+| [t2.medium](#t2medium)  | 2 vCPUs for a 4h 48m burst, 4GB | PostgreSQL | MQTT | 900 | 1000 ms | **~1500/sec** | **up to 15000/sec** |
+| [c5.large](#c5large)  | 2 vCPUs , 4GB | PostgreSQL | MQTT | 1100 | 1000 ms | **~1020/sec** | - |
+| t2.xlarge | 4 vCPUs for a 5h 24m burst, 16GB | PostgreSQL | MQTT |  1800 | 1000 ms | **~1700/sec** | **up to 15000/sec** |
+| t2.xlarge | 4 vCPUs for a 5h 24m burst, 16GB | Cassandra | MQTT | 3000 | 1000 ms | **~3000/sec** | **up to 15000/sec** |
+| [m5.xlarge](#m5xlarge)  | 4 vCPUs, 16GB, 150GB SSD mounted | Cassandra | MQTT | 3500 | 1000 ms | **~3500/sec** | - |
+| [m5.xlarge](#m5xlarge)  | 4 vCPUs, 16GB, 150GB SSD mounted | Cassandra | HTTP | 2000 | 1000 ms | **~950/sec** | - |
 
-## t2.micro
+# t2.micro
 
 **Performance Results**
 
@@ -160,32 +161,21 @@ TB dashboard
 
 ![image](/images/reference/performance-aws-instances/t2-micro/postgresql-100msgs-tb.png)
 
-## t2.medium
+
+
+# t2.medium
 
 **Performance Results**
 
-| Instance Type | Instance details | Database Type | Device API | Number of devices | Delay between messages in millis | Maximum number of messages per second |
-| --- | --- | --- | --- | --- | --- | --- |
-| t2.medium | 2 vCPUs for a 4h 48m burst, 4GB | PostgreSQL | MQTT | 900 | 1000 ms | **~780/sec** |
+In this test, we will show that Thingsboard consistently receives about 3000 requests per second on t2.medium. And also at its peak, it can process up to 15,000 requests using the [AWS CPU Credit Balance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-credits-baseline-concepts.html). Please read the official documentation for understanding how it works.
 
-Test run configuration (see [Performance Test Project](https://github.com/thingsboard/performance-tests/#running) for more details):
+### Test Run #1 (stable)
 
-```bash
-...
-DEVICE_API=MQTT
-DEVICE_START_IDX=0
-DEVICE_END_IDX=900
+There is stable test. CPU <= 20%, this means it will not be used [AWS CPU Credit Balance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-credits-baseline-concepts.html).
 
-PUBLISH_COUNT=300
-PUBLISH_PAUSE=1000
-...
-```
-
-### Test Run #1
-
-| Instance Type | Instance details | Database Type | Device API | Number of devices | Delay between messages in millis | Count of test run hours | 
-| --- | --- | --- | --- | --- | --- | --- |
-| t2.medium | 2 vCPUs for a 4h 48m burst, 4GB | PostgreSQL | MQTT | 150 | 1000 ms | 10 | 
+| Instance Type | Instance details | Database Type | Device API | Number of devices | Delay between messages in millis | Count of test run hours | Maximum number of messages per second |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| t2.medium | 2 vCPUs, 4GB | PostgreSQL | MQTT | 900 | 1000 ms | 12 | **~3000/sec** |
 
 **Test Configuration**
 
@@ -195,10 +185,10 @@ Test run configuration (see [Performance Test Project](https://github.com/things
 ...
 DEVICE_API=MQTT
 DEVICE_START_IDX=0
-DEVICE_END_IDX=150
+DEVICE_END_IDX=900
 
-PUBLISH_COUNT=36000
-PUBLISH_PAUSE=1000
+MESSAGES_PER_SECOND=600
+DURATION_IN_SECONDS=43200
 ...
 ```
 
@@ -214,10 +204,6 @@ CPU Utilization (%)
 
 ![image](/images/reference/performance-aws-instances/t2-medium/postgresql-150msgs-cpu.png)
 
-Memory Utilization (%)
-
-![image](/images/reference/performance-aws-instances/t2-medium/postgresql-150msgs-memory.png)
-
 Used Physical Memory (MB)
 
 ![image](/images/reference/performance-aws-instances/t2-medium/postgresql-150msgs-memory-1.png)
@@ -226,11 +212,13 @@ TB dashboard
 
 ![image](/images/reference/performance-aws-instances/t2-medium/postgresql-150msgs-tb.png)
 
-### Test Run #2
+### Test Run #2 (burstable)
 
-| Instance Type | Instance details | Database Type | Device API | Number of devices | Delay between messages in millis | Count of test run hours | 
-| --- | --- | --- | --- | --- | --- | --- |
-| t2.medium | 2 vCPUs for a 4h 48m burst, 4GB | PostgreSQL | MQTT | 200 | 1000 ms | 10 | 
+There is burstable test. CPU => 20%, this means it will be used [AWS CPU Credit Balance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-credits-baseline-concepts.html).
+
+| Instance Type | Instance details | Database Type | Device API | Number of devices | Delay between messages in millis | Count of test run hours | Maximum number of messages per second |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| t2.medium | 2 vCPUs, 4GB | PostgreSQL | MQTT | 900 | 1000 ms | 2 | **~15000/sec** | 
 
 **Test Configuration**
 
@@ -242,49 +230,28 @@ DEVICE_API=MQTT
 DEVICE_START_IDX=0
 DEVICE_END_IDX=200
 
-PUBLISH_COUNT=36000
-PUBLISH_PAUSE=1000
+MESSAGES_PER_SECOND=3000
+DURATION_IN_SECONDS=12000
 ...
 ```
 
 **CPU/Memory Load**
 
-Result shows that **t2.medium** AWS Instance Type is not able to handle more than 200 requests per second, because of the [AWS CPU Credit Balance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-credits-baseline-concepts.html).
+t2 instances have [AWS CPU Credit Balance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-credits-baseline-concepts.html) and you can use more request per second time by time
 
-Here is the Credit Balance chart line for the **t2.medium** during publishing 200 messages per second.
+
+Here is the Credit Balance chart line for the **t2.medium** during publishing 15000 messages per second.
 
 The line goes down and after some period instance will be dramatically decreased by CPU (20% of total).
 
 ![image](/images/reference/performance-aws-instances/t2-medium/postgresql-200msgs-failing-cpu-credit.png)
 
-### Test Run #3
+TB dashboard
 
-| Instance Type | Instance details | Database Type | Device API | Number of devices | Delay between messages in millis | Count of test run hours | 
-| --- | --- | --- | --- | --- | --- | --- |
-| t2.medium | 2 vCPUs for a 4h 48m burst, 4GB | PostgreSQL | MQTT | 300 | 1000 ms | 10 | 
+![image](/images/reference/performance-aws-instances/t2-medium/postgresql-burstable-dashboard.png)
 
-**Test Configuration**
 
-Test run configuration (see [Performance Test Project](https://github.com/thingsboard/performance-tests/#running) for more details):
-
-```bash
-...
-DEVICE_API=MQTT
-DEVICE_START_IDX=0
-DEVICE_END_IDX=300
-
-PUBLISH_COUNT=36000
-PUBLISH_PAUSE=1000
-...
-```
-
-**CPU/Memory Load**
-
-The same results as previous run, but CPU Credit Balance chart line goes down more faster.
-
-![image](/images/reference/performance-aws-instances/t2-medium/postgresql-300msgs-failed-cpu-credit.png)
-
-## c5.large
+# c5.large
 
 **Performance Results**
 
@@ -416,7 +383,7 @@ AWS write IOPS for the volume
 
 ![image](/images/reference/performance-aws-instances/c5-large/postgresql-700msgs-iops-1.png)
 
-## m5.xlarge
+# m5.xlarge
 
 **Performance Results**
 
