@@ -47,6 +47,8 @@ Career growth opportunities and regular salary review;
 
 Full-time office work with flexible work hours;
 
+Medical insurance;
+
 Free English classes;
 
 Comfortable office and fridge with free beverages.
