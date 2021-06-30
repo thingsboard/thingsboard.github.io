@@ -14,12 +14,14 @@
 
 
 from paho.mqtt.client import Client
-from time import sleep
+from time import sleep, time
 from json import dumps, loads
 from zlib import crc32
 from hashlib import sha256, sha384, sha512, md5
 from mmh3 import hash, hash128
 from math import ceil
+from threading import Thread
+from random import randint
 
 
 FW_CHECKSUM_ATTR = "fw_checksum"
@@ -72,16 +74,27 @@ def verify_checksum(firmware_data, checksum_alg, checksum):
     elif checksum_alg.lower() == "md5":
         checksum_of_received_firmware = md5(firmware_data).digest().hex()
     elif checksum_alg.lower() == "murmur3_32":
-        reversed_checksum = format(hash(firmware_data, signed=False), 'x')
-        checksum_of_received_firmware = "".join(reversed([reversed_checksum[i:i+2] for i in range(0, len(reversed_checksum), 2)]))
+        reversed_checksum = f'{hash(firmware_data, signed=False):0>2X}'
+        if len(reversed_checksum) % 2 != 0:
+            reversed_checksum = '0' + reversed_checksum
+        checksum_of_received_firmware = "".join(reversed([reversed_checksum[i:i+2] for i in range(0, len(reversed_checksum), 2)])).lower()
     elif checksum_alg.lower() == "murmur3_128":
-        reversed_checksum = format(hash128(firmware_data), 'x')
-        checksum_of_received_firmware = "".join(reversed([reversed_checksum[i:i+2] for i in range(0, len(reversed_checksum), 2)]))
+        reversed_checksum = f'{hash128(firmware_data, signed=False):0>2X}'
+        if len(reversed_checksum) % 2 != 0:
+            reversed_checksum = '0' + reversed_checksum
+        checksum_of_received_firmware = "".join(reversed([reversed_checksum[i:i+2] for i in range(0, len(reversed_checksum), 2)])).lower()
     elif checksum_alg.lower() == "crc32":
-        reversed_checksum = format(crc32(firmware_data) & 0xffffffff, 'x')
-        checksum_of_received_firmware = "".join(reversed([reversed_checksum[i:i+2] for i in range(0, len(reversed_checksum), 2)]))
+        reversed_checksum = f'{crc32(firmware_data) & 0xffffffff:0>2X}'
+        if len(reversed_checksum) % 2 != 0:
+            reversed_checksum = '0' + reversed_checksum
+        checksum_of_received_firmware = "".join(reversed([reversed_checksum[i:i+2] for i in range(0, len(reversed_checksum), 2)])).lower()
     else:
         print("Client error. Unsupported checksum algorithm.")
+    print(checksum_of_received_firmware)
+    random_value = randint(0, 5)
+    if random_value > 3:
+        print("Dummy fail! Do not panic, just restart and try again the chance of this fail is ~20%")
+        return False
     return checksum_of_received_firmware == checksum
 
 
@@ -111,14 +124,17 @@ class FirmwareClient(Client):
         self.__target_firmware_length = 0
         self.__chunk_count = 0
         self.__current_chunk = 0
+        self.firmware_received = False
+        self.__updating_thread = Thread(target=self.__update_thread, name="Updating thread")
+        self.__updating_thread.daemon = True
+        self.__updating_thread.start()
 
     def __on_connect(self, client, userdata, flags, result_code, *extra_params):
-        self.send_telemetry(self.current_firmware_info)
-
         print(f"Requesting firmware info from {config['host']}:{config['port']}..")
         self.subscribe("v1/devices/me/attributes/response/+")
         self.subscribe("v1/devices/me/attributes")
         self.subscribe("v2/fw/response/+")
+        self.send_telemetry(self.current_firmware_info)
         self.request_firmware_info()
 
     def __on_message(self, client, userdata, msg):
@@ -129,12 +145,13 @@ class FirmwareClient(Client):
                 self.firmware_info = self.firmware_info.get("shared", {}) if isinstance(self.firmware_info, dict) else {}
             if (self.firmware_info.get(FW_VERSION_ATTR) is not None and self.firmware_info.get(FW_VERSION_ATTR) != self.current_firmware_info.get("current_" + FW_VERSION_ATTR)) or \
                     (self.firmware_info.get(FW_TITLE_ATTR) is not None and self.firmware_info.get(FW_TITLE_ATTR) != self.current_firmware_info.get("current_" + FW_TITLE_ATTR)):
-                print("New firmware available!")
+                print("Firmware is not the same")
                 self.firmware_data = b''
                 self.__current_chunk = 0
 
                 self.current_firmware_info[FW_STATE_ATTR] = "DOWNLOADING"
                 self.send_telemetry(self.current_firmware_info)
+                sleep(1)
 
                 self.__firmware_request_id = self.__firmware_request_id + 1
                 self.__target_firmware_length = self.firmware_info[FW_SIZE_ATTR]
@@ -148,25 +165,48 @@ class FirmwareClient(Client):
 
             print(f'Getting chunk with number: {self.__current_chunk}. Chunk size is : {self.__chunk_size} byte(s).')
 
-            if (len(self.firmware_data) == self.__target_firmware_length):
-                self.current_firmware_info[FW_STATE_ATTR] = "DOWNLOADED"
-                self.send_telemetry(self.current_firmware_info)
+            if len(self.firmware_data) == self.__target_firmware_length:
+                self.process_firmware()
+            else:
+                self.get_firmware()
 
-                verification_result = verify_checksum(self.firmware_data, self.firmware_info.get(FW_CHECKSUM_ALG_ATTR), self.firmware_info.get(FW_CHECKSUM_ATTR))
+    def process_firmware(self):
+        self.current_firmware_info[FW_STATE_ATTR] = "DOWNLOADED"
+        self.send_telemetry(self.current_firmware_info)
+        sleep(1)
 
-                if verification_result:
-                    print("Checksum verified!")
-                    self.current_firmware_info[FW_STATE_ATTR] = "VERIFIED"
-                    self.send_telemetry(self.current_firmware_info)
-                else:
-                    print("Checksum verification failed!")
-                    self.current_firmware_info[FW_STATE_ATTR] = "FAILED"
-                    self.send_telemetry(self.current_firmware_info)
-                    self.request_firmware_info()
-                    return
+        verification_result = verify_checksum(self.firmware_data, self.firmware_info.get(FW_CHECKSUM_ALG_ATTR), self.firmware_info.get(FW_CHECKSUM_ATTR))
 
+        if verification_result:
+            print("Checksum verified!")
+            self.current_firmware_info[FW_STATE_ATTR] = "VERIFIED"
+            self.send_telemetry(self.current_firmware_info)
+            sleep(1)
+        else:
+            print("Checksum verification failed!")
+            self.current_firmware_info[FW_STATE_ATTR] = "FAILED"
+            self.send_telemetry(self.current_firmware_info)
+            self.request_firmware_info()
+            return
+        self.firmware_received = True
+
+    def get_firmware(self):
+        payload = '' if not self.__chunk_size or self.__chunk_size > self.firmware_info.get(FW_SIZE_ATTR, 0) else str(self.__chunk_size).encode()
+        self.publish(f"v2/fw/request/{self.__firmware_request_id}/chunk/{self.__current_chunk}", payload=payload, qos=1)
+
+    def send_telemetry(self, telemetry):
+        return self.publish("v1/devices/me/telemetry", dumps(telemetry), qos=1)
+
+    def request_firmware_info(self):
+        self.__request_id = self.__request_id + 1
+        self.publish(f"v1/devices/me/attributes/request/{self.__request_id}", dumps({"sharedKeys": REQUIRED_SHARED_KEYS}))
+
+    def __update_thread(self):
+        while True:
+            if self.firmware_received:
                 self.current_firmware_info[FW_STATE_ATTR] = "UPDATING"
                 self.send_telemetry(self.current_firmware_info)
+                sleep(1)
 
                 with open(self.firmware_info.get(FW_TITLE_ATTR), "wb") as firmware_file:
                     firmware_file.write(self.firmware_data)
@@ -179,19 +219,8 @@ class FirmwareClient(Client):
                     FW_STATE_ATTR: "UPDATED"
                 }
                 self.send_telemetry(self.current_firmware_info)
-            else:
-                self.get_firmware()
-
-    def get_firmware(self):
-        payload = '' if not self.__chunk_size or self.__chunk_size > self.firmware_info.get(FW_SIZE_ATTR, 0) else str(self.__chunk_size).encode()
-        self.publish(f"v2/fw/request/{self.__firmware_request_id}/chunk/{self.__current_chunk}", payload=payload)
-
-    def send_telemetry(self, telemetry):
-        self.publish("v1/devices/me/telemetry", dumps(telemetry))
-
-    def request_firmware_info(self):
-        self.__request_id = self.__request_id + 1
-        self.publish(f"v1/devices/me/attributes/request/{self.__request_id}", dumps({"sharedKeys": REQUIRED_SHARED_KEYS}))
+                self.firmware_received = False
+                sleep(1)
 
 
 if __name__ == '__main__':

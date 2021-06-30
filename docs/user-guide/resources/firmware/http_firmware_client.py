@@ -71,7 +71,9 @@ def get_firmware(fw_info):
                   "size": config["chunk_size"] if config["chunk_size"] < fw_info.get(FW_SIZE_ATTR, 0) else fw_info.get(FW_SIZE_ATTR, 0),
                   "chunk": chunk_number
                   }
+        print(params)
         print(f'Getting chunk with number: {chunk_number + 1}. Chunk size is : {config["chunk_size"]} byte(s).')
+        print(f"http{'s' if config['port'] == 443 else ''}://{config['host']}:{config['port']}/api/v1/{config['token']}/firmware", params)
         response = get(f"http{'s' if config['port'] == 443 else ''}://{config['host']}:{config['port']}/api/v1/{config['token']}/firmware", params=params)
         if response.status_code != 200:
             print("Received error:")
@@ -99,16 +101,27 @@ def verify_checksum(firmware_data, checksum_alg, checksum):
     elif checksum_alg.lower() == "md5":
         checksum_of_received_firmware = md5(firmware_data).digest().hex()
     elif checksum_alg.lower() == "murmur3_32":
-        reversed_checksum = format(hash(firmware_data, signed=False), 'x')
-        checksum_of_received_firmware = "".join(reversed([reversed_checksum[i:i+2] for i in range(0, len(reversed_checksum), 2)]))
+        reversed_checksum = f'{hash(firmware_data, signed=False):0>2X}'
+        if len(reversed_checksum) % 2 != 0:
+            reversed_checksum = '0' + reversed_checksum
+        checksum_of_received_firmware = "".join(reversed([reversed_checksum[i:i+2] for i in range(0, len(reversed_checksum), 2)])).lower()
     elif checksum_alg.lower() == "murmur3_128":
-        reversed_checksum = format(hash128(firmware_data), 'x')
-        checksum_of_received_firmware = "".join(reversed([reversed_checksum[i:i+2] for i in range(0, len(reversed_checksum), 2)]))
+        reversed_checksum = f'{hash128(firmware_data, signed=False):0>2X}'
+        if len(reversed_checksum) % 2 != 0:
+            reversed_checksum = '0' + reversed_checksum
+        checksum_of_received_firmware = "".join(reversed([reversed_checksum[i:i+2] for i in range(0, len(reversed_checksum), 2)])).lower()
     elif checksum_alg.lower() == "crc32":
-        reversed_checksum = format(crc32(firmware_data) & 0xffffffff, 'x')
-        checksum_of_received_firmware = "".join(reversed([reversed_checksum[i:i+2] for i in range(0, len(reversed_checksum), 2)]))
+        reversed_checksum = f'{crc32(firmware_data) & 0xffffffff:0>2X}'
+        if len(reversed_checksum) % 2 != 0:
+            reversed_checksum = '0' + reversed_checksum
+        checksum_of_received_firmware = "".join(reversed([reversed_checksum[i:i+2] for i in range(0, len(reversed_checksum), 2)])).lower()
     else:
         print("Client error. Unsupported checksum algorithm.")
+    print(checksum_of_received_firmware)
+    random_value = randint(0, 5)
+    if random_value > 3:
+        print("Dummy fail! Do not panic, just restart and try again the chance of this fail is ~20%")
+        return False
     return checksum_of_received_firmware == checksum
 
 
@@ -138,11 +151,13 @@ if __name__ == '__main__':
             print("New firmware available!")
 
             current_firmware_info[FW_STATE_ATTR] = "DOWNLOADING"
+            sleep(1)
             send_telemetry(current_firmware_info)
 
             firmware_data = get_firmware(firmware_info)
 
             current_firmware_info[FW_STATE_ATTR] = "DOWNLOADED"
+            sleep(1)
             send_telemetry(current_firmware_info)
 
             verification_result = verify_checksum(firmware_data, firmware_info.get(FW_CHECKSUM_ALG_ATTR), firmware_info.get(FW_CHECKSUM_ATTR))
@@ -150,15 +165,18 @@ if __name__ == '__main__':
             if verification_result:
                 print("Checksum verified!")
                 current_firmware_info[FW_STATE_ATTR] = "VERIFIED"
+                sleep(1)
                 send_telemetry(current_firmware_info)
             else:
                 print("Checksum verification failed!")
                 current_firmware_info[FW_STATE_ATTR] = "FAILED"
+                sleep(1)
                 send_telemetry(current_firmware_info)
                 firmware_data = get_firmware(firmware_info)
                 continue
 
             current_firmware_info[FW_STATE_ATTR] = "UPDATING"
+            sleep(1)
             send_telemetry(current_firmware_info)
 
             with open(firmware_info.get(FW_TITLE_ATTR), "wb") as firmware_file:
@@ -171,5 +189,6 @@ if __name__ == '__main__':
                 "current_" + FW_VERSION_ATTR: firmware_info.get(FW_VERSION_ATTR),
                 FW_STATE_ATTR: "UPDATED"
             }
+            sleep(1)
             send_telemetry(current_firmware_info)
         sleep(1)

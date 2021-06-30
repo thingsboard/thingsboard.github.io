@@ -10,6 +10,8 @@ ThingsBoard will notify devices about the available update and provide a protoco
 The platform tracks status of the update and stores history of the updates. 
 As a platform user, you may monitor the update process using the dashboard.
 
+
+
 ## Provision OTA package to ThingsBoard repository
 
 Navigate to the "OTA Updates" menu item to list and upload OTA update packages. Each package consist of:
