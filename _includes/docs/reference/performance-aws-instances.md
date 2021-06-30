@@ -273,7 +273,7 @@ PUBLISH_PAUSE=1000
 
 | Instance Type | Instance details | Database Type 	 | Queue Type  | Device API | Number of devices | Count of test run hours | 
 | --- | --- | --- | --- | --- | --- | --- |
-| c5.large | 2 vCPUs, 4GB | PostgreSQL | kafka | MQTT |  20000  | 7 |
+| c5.large | 2 vCPUs, 4GB | PostgreSQL | Kafka | MQTT |  20000  | 7 |
 
 **Test Configuration**
 
