@@ -17,6 +17,8 @@ This guide will help you to setup ThingsBoard in cluster mode using Docker Compo
 ThingsBoard Microservices are running in dockerized environment.
 Before starting please make sure [Docker CE](https://docs.docker.com/install/) and [Docker Compose](https://docs.docker.com/compose/install/) are installed in your system. 
 
+{% include templates/install/docker-install-note.md %}
+
 ## Step 1. Pull ThingsBoard CE Images
 
 Make sure your have [logged in](https://docs.docker.com/engine/reference/commandline/login/) to docker hub using command line.
