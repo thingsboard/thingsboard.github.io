@@ -40,21 +40,21 @@ Please use documentation of the [Performance Test Project](https://github.com/th
 
 **NOTE:** t2 instances are used [burstable performance instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-credits-baseline-concepts.html) please read the official documentation. We recommend don't count on it. btw you can get more messages on the peak.
 
-| Instance Type | Instance details | PostgreSQL | Queue Type  | Device API | Number of devices | Maximum number of messages | Peak with [AWS CPU Credit Balance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-credits-baseline-concepts.html)|
+| Instance Type | Instance details | Database Type 	 | Queue Type  | Device API | Number of devices | Maximum number of messages | Peak with [AWS CPU Credit Balance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-credits-baseline-concepts.html)|
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| [t2.small](#t2small) | 1 vCPUs, 2GB | PostgreSQL | In memory | MQTT | 500  | **~1500/sec** | 
-| [t2.medium](#t2medium)  | 2 vCPUs for a 4h 48m burst, 4GB | PostgreSQL | In memory | MQTT | 900  | **~3000/sec** | **up to 15000/sec** |
-| [c5.large](#c5large)  | 2 vCPUs , 4GB | PostgreSQL | In memory | MQTT | 1100  | **~12500/sec** | - |
-| t2.xlarge | 4 vCPUs for a 5h 24m burst, 16GB | PostgreSQL | In memory | MQTT |  1800  | **~1700/sec** | **up to 15000/sec** |
-| t2.xlarge | 4 vCPUs for a 5h 24m burst, 16GB | Cassandra | In memory | MQTT | 3000  | **~3000/sec** | **up to 15000/sec** |
-| [m5.xlarge](#m5xlarge)  | 4 vCPUs, 16GB, 150GB SSD mounted | Cassandra | In memory | MQTT | 3500  | **~3500/sec** | - |
-| [m5.xlarge](#m5xlarge)  | 4 vCPUs, 16GB, 150GB SSD mounted | Cassandra | In memory | HTTP | 2000  | **~950/sec** | - |
+| [t2.small](#t2small) | 1 vCPUs, 2GB | PostgreSQL | In memory | MQTT | 500  | **~1500/sec** | **up to 7500/sec** |
+| [t2.medium](#t2medium)  | 2 vCPUs, 4GB | PostgreSQL | In memory | MQTT | 900  | **~3000/sec** | **up to 15000/sec** |
+| [c5.large](#c5large)  | 2 vCPUs , 4GB | PostgreSQL | In memory | MQTT | 1100  | **~12500/sec** | N/A  |
+| t2.xlarge | 4 vCPUs, 16GB | PostgreSQL | In memory | MQTT |  1800  | **~1700/sec** | **up to 15000/sec** |
+| t2.xlarge | 4 vCPUs, 16GB | Cassandra | In memory | MQTT | 3000  | **~3000/sec** | **up to 15000/sec** |
+| [m5.xlarge](#m5xlarge)  | 4 vCPUs, 16GB, 150GB SSD mounted | Cassandra | In memory | MQTT | 3500  | **~3500/sec** | N/A  |
+| [m5.xlarge](#m5xlarge)  | 4 vCPUs, 16GB, 150GB SSD mounted | Cassandra | In memory | HTTP | 2000  | **~950/sec** | N/A  |
 
 # t2.small
 
 **Performance Results**
 
-| Instance Type | Instance details | PostgreSQL | Queue Type  | Device API | Number of devices  | Maximum number of messages |
+| Instance Type | Instance details | Database Type 	 | Queue Type  | Device API | Number of devices  | Maximum number of messages |
 | --- | --- | --- | --- | --- | --- | --- |
 | t2.small | 1 vCPUs, 2GB | PostgreSQL | In memory | MQTT | 500  | **~1500/sec** |
 
@@ -73,7 +73,9 @@ DURATION_IN_SECONDS=43200
 
 ### Test Run #1 (stable)
 
-| Instance Type | Instance details | PostgreSQL | Queue Type  | Device API | Number of devices  in millis | Count of test run hours | 
+There is stable test. CPU <= 20%, this means it will not be used [AWS CPU Credit Balance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-credits-baseline-concepts.html).
+
+| Instance Type | Instance details | Database Type 	 | Queue Type  | Device API | Number of devices | Count of test run hours | 
 | --- | --- | --- | --- | --- | --- | --- |
 | t2.small | 1 vCPUs, 2GB | PostgreSQL | In memory | MQTT | 500  | 12 | 
 
@@ -110,15 +112,17 @@ Memory Utilization (%)
 
 TB dashboard
 
-**~~5.4kk request per hour.**
+**~~5.4m request per hour.**
 
 ![image](/images/reference/performance-aws-instances/t2-micro/postgresql-50msgs-tb.png)
 
 ### Test Run #2 (burstable)
 
-| Instance Type | Instance details | PostgreSQL | Queue Type  | Device API | Number of devices  in millis | Count of test run hours |
+There is burstable test. CPU => 20%, this means it will be used [AWS CPU Credit Balance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-credits-baseline-concepts.html).
+
+| Instance Type | Instance details | Database Type 	 | Queue Type  | Device API | Number of devices | Count of test run hours |
 | --- | --- | --- | --- | --- | --- | --- |
-| t2.small | 1 vCPUs, 2GB | PostgreSQL | In memory | MQTT | 100  | 10 | 
+| t2.small | 1 vCPUs, 2GB | PostgreSQL | In memory | MQTT | 500  | 10 | 
 
 **Test Configuration**
 
@@ -137,26 +141,19 @@ PUBLISH_PAUSE=1000
 
 **CPU/Memory Load**
 
-| Property | Avg | Min | Max |
-| --- | --- | --- | --- |
-| CPU Utilization (%) | 32 | 8.1 | 100 |
-| Memory Utilization (%) | 97 | 81.3 | 98.37 | 
-| Used Physical Memory (MB) | 952 | 800 | 968 |
+t2 instances have [AWS CPU Credit Balance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-credits-baseline-concepts.html) and you can use more request per second time by time
 
-CPU Utilization (%)
 
-![image](/images/reference/performance-aws-instances/t2-micro/postgresql-100msgs-cpu.png)
+Here is the Credit Balance chart line for the **t2.medium** during publishing 15000 messages per second.
 
-Memory Utilization (%)
+The line goes down and after some period instance will be dramatically decreased by CPU (20% of total).
 
-![image](/images/reference/performance-aws-instances/t2-micro/postgresql-100msgs-memory.png)
-
-Used Physical Memory (MB)
-
-![image](/images/reference/performance-aws-instances/t2-micro/postgresql-100msgs-memory-1.png)
+![image](/images/reference/performance-aws-instances/t2-micro/t2Smallpostgresql-burstable-dashboard.png)
 
 TB dashboard
 
+**~~27m request per hour.**
+\
 ![image](/images/reference/performance-aws-instances/t2-micro/postgresql-100msgs-tb.png)
 
 
@@ -171,7 +168,7 @@ In this test, we will show that Thingsboard consistently receives about 3000 req
 
 There is stable test. CPU <= 20%, this means it will not be used [AWS CPU Credit Balance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-credits-baseline-concepts.html).
 
-| Instance Type | Instance details | PostgreSQL | Queue Type  | Device API | Number of devices  in millis | Count of test run hours | Maximum number of messages per second |
+| Instance Type | Instance details | Database Type 	 | Queue Type  | Device API | Number of devices | Count of test run hours | Maximum number of messages per second |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | t2.medium | 2 vCPUs, 4GB | PostgreSQL | In memory | MQTT | 900  | 12 | **~3000/sec** |
 
@@ -208,7 +205,7 @@ Used Physical Memory (MB)
 
 TB dashboard
 
-**~~10.5kk request per hour.**
+**~~10.5m request per hour.**
 
 ![image](/images/reference/performance-aws-instances/t2-medium/postgresql-150msgs-tb.png)
 
@@ -216,7 +213,7 @@ TB dashboard
 
 There is burstable test. CPU => 20%, this means it will be used [AWS CPU Credit Balance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-credits-baseline-concepts.html).
 
-| Instance Type | Instance details | PostgreSQL | Queue Type  | Device API | Number of devices  in millis | Count of test run hours | Maximum number of messages per second |
+| Instance Type | Instance details | Database Type 	 | Queue Type  | Device API | Number of devices | Count of test run hours | Maximum number of messages per second |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | t2.medium | 2 vCPUs, 4GB | PostgreSQL | In memory | MQTT | 900  | 2 | **~15000/sec** | 
 
@@ -255,7 +252,7 @@ TB dashboard
 
 **Performance Results**
 
-| Instance Type | Instance details | PostgreSQL | Queue Type  | Device API | Number of devices  in millis | Maximum number of messages per second |
+| Instance Type | Instance details | Database Type 	 | Queue Type  | Device API | Number of devices | Maximum number of messages per second |
 | --- | --- | --- | --- | --- | --- | --- |
 | c5.large | 2 vCPUs , 4GB | PostgreSQL | In memory | MQTT | 1100  | **~1020/sec** |
 
@@ -272,11 +269,11 @@ PUBLISH_PAUSE=1000
 ...
 ```
 
-### Test Run #1
+### Test Run #1 (kafka)
 
-| Instance Type | Instance details | PostgreSQL | Queue Type  | Device API | Number of devices  in millis | Count of test run hours | 
+| Instance Type | Instance details | Database Type 	 | Queue Type  | Device API | Number of devices | Count of test run hours | 
 | --- | --- | --- | --- | --- | --- | --- |
-| c5.large | 2 vCPUs, 4GB | PostgreSQL | In memory | MQTT |  500  | 10 |
+| c5.large | 2 vCPUs, 4GB | PostgreSQL | kafka | MQTT |  20000  | 7 |
 
 **Test Configuration**
 
@@ -287,10 +284,10 @@ Test run configuration (see [Performance Test Project](https://github.com/things
 ...
 DEVICE_API=MQTT
 DEVICE_START_IDX=0
-DEVICE_END_IDX=500
+DEVICE_END_IDX=20000
 
-PUBLISH_COUNT=36000
-PUBLISH_PAUSE=1000
+MESSAGES_PER_SECOND=4500
+DURATION_IN_SECONDS=43200
 ...
 ```
 
@@ -298,11 +295,9 @@ PUBLISH_PAUSE=1000
 
 **c5.large** AWS instance does not have CPU burst that why CPU Credit Balance is not applicable to verify in this case.
 
-But to be able to support 500 requests per seconds correct volume must be provisioned - with enough [IOPS](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-io-characteristics.html) limits.
+But to be able to support 20000 requests per seconds correct volume must be provisioned - with enough [IOPS](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-io-characteristics.html) limits. Please read [official documentation](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-optimized.html) for understand how it work.
 
-For the PostgreSQL database, 500 requests per seconds are equal to ~500 IOPS.
-
-So AWS volume for this test must be provisioned with at least 600 IOPS.
+For the PostgreSQL database, 20000 requests per seconds are equal to ~20000 IOPS.
 
 | Property | Avg | Min | Max |
 | --- | --- | --- | --- |
@@ -318,11 +313,9 @@ Memory Utilization (%)
 
 ![image](/images/reference/performance-aws-instances/c5-large/postgresql-500msgs-memory.png)
 
-Used Physical Memory (MB)
-
-![image](/images/reference/performance-aws-instances/c5-large/postgresql-500msgs-memory-1.png)
-
 TB dashboard
+
+~80m request per hour
 
 ![image](/images/reference/performance-aws-instances/c5-large/postgresql-500msgs-tb.png)
 
@@ -334,7 +327,7 @@ AWS write IOPS for the volume
 
 ### Test Run #2
 
-| Instance Type | Instance details | PostgreSQL | Queue Type  | Device API | Number of devices  in millis | Count of test run hours | 
+| Instance Type | Instance details | Database Type 	 | Queue Type  | Device API | Number of devices | Count of test run hours | 
 | --- | --- | --- | --- | --- | --- | --- |
 | c5.large | 2 vCPUs, 4GB | PostgreSQL | In memory | MQTT |  700  | 10 |
 
@@ -387,7 +380,7 @@ AWS write IOPS for the volume
 
 **Performance Results**
 
-| Instance Type | Instance details | PostgreSQL | Queue Type  | Device API | Number of devices  in millis | Maximum number of messages per second |
+| Instance Type | Instance details | Database Type 	 | Queue Type  | Device API | Number of devices | Maximum number of messages per second |
 | --- | --- | --- | --- | --- | --- | --- |
 | m5.xlarge | 4 vCPUs, 16GB, 150GB SSD mounted | Cassandra | In memory | MQTT | 3500  | **~3500/sec** |
 
@@ -404,7 +397,7 @@ PUBLISH_PAUSE=1000
 ...
 ```
 
-| Instance Type | Instance details | PostgreSQL | Queue Type  | Device API | Number of devices  in millis | Maximum number of messages per second |
+| Instance Type | Instance details | Database Type 	 | Queue Type  | Device API | Number of devices | Maximum number of messages per second |
 | --- | --- | --- | --- | --- | --- | --- |
 | m5.xlarge |  4 vCPUs, 16GB, 150GB SSD mounted | Cassandra | In memory| HTTP | 2000  | **~950/sec** |
 
@@ -423,7 +416,7 @@ PUBLISH_PAUSE=1000
 
 ### Test Run #1
 
-| Instance Type | Instance details | PostgreSQL | Queue Type  | Device API | Number of devices  in millis | Count of test run hours | 
+| Instance Type | Instance details | Database Type 	 | Queue Type  | Device API | Number of devices | Count of test run hours | 
 | --- | --- | --- | --- | --- | --- | --- |
 | m5.xlarge | 4 vCPUs, 16GB | Cassandra | In memory | MQTT | 2100  | 10 |
 
