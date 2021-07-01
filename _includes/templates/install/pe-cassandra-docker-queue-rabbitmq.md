@@ -22,7 +22,7 @@ TB_QUEUE_RABBIT_MQ_PORT=5672
 Check docker-compose.yml and configure ports if you need:
 
 ```bash
-docker-compose.yml
+nano docker-compose.yml
 ```
 
 ```bash
