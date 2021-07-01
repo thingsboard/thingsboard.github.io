@@ -62,7 +62,7 @@ TB_QUEUE_TRANSPORT_NOTIFICATIONS_POLL_INTERVAL_MS=1000
 Check docker-compose.yml and configure ports if you need:
 
 ```bash
-nano docker-compose.yml
+docker-compose.yml
 ```
 
 ```bash

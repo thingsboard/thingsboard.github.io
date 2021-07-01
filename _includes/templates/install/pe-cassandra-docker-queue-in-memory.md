@@ -15,7 +15,7 @@ TB_QUEUE_TYPE=in-memory
 Check docker-compose.yml and configure ports if you need:
 
 ```bash
-nano docker-compose.yml
+docker-compose.yml
 ```
 
 ```bash
