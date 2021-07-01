@@ -34,9 +34,10 @@ section
             line-height: 40px
         #backg-matrix
             position: relative
-            margin-left: -20px
-            margin-right: -20px
-            width: calc(100% + 40px)
+            //margin-left: -20px
+            //margin-right: -20px
+            //width: calc(100% + 40px)
+            width: 100%
             .platinum, .gold, .silver
                 padding: 0 2px
                 width: 20%
@@ -69,8 +70,9 @@ section
                         height: 106px
                         box-shadow: 0 2px 0 0 rgba(172,187,204,1)
         table
-            width: calc(100% + 40px)
-            margin: 160px -20px 16px
+            width: 100%
+            //width: calc(100% + 40px)
+            margin: 160px 0 16px
             td, th
                 margin: 0 2px
                 &:nth-child(4n-2)
@@ -129,12 +131,13 @@ section
                         text-align: center
                         font-weight: 600
                         font-size: 11px
+                        .button
+                            width: 60%
                         img
                             width: 32px
 
     .faq-content
-        padding-top: 60px
-        padding-bottom: 30px
+        padding: 60px 0 80px
         * + h2, * + h3, * + h4, * + h5, * + h6
             margin-top: 30px
         h1
@@ -223,9 +226,9 @@ section
 @media screen and (min-width: 750px)
     #partner-program
         #partnerProgramContent
-            #labeling
-                p
-                    padding: 0
+            //#labeling
+            //    p
+            //        padding: 0
             #matrix
                 h2
                     font-size: 42px
@@ -259,9 +262,9 @@ section
             main
                 max-width: 100%
         #partnerProgramContent
-            #labeling
-                p
-                    padding: 0 8%
+            //#labeling
+            //    p
+            //        padding: 0 8%
             max-width: 100%
             #matrix
                 .platinum, .gold, .silver
@@ -274,14 +277,14 @@ section
 @media screen and (min-width: 1250px)
     #partner-program
         #partnerProgramContent
-            #labeling
-                p
-                    padding: 0 13%
+            //#labeling
+            //    p
+            //        padding: 0 13%
 
 @media screen and (min-width: 1500px)
     #partner-program
         #partnerProgramContent
-            #labeling
-                p
-                    padding: 0 18%
+            //#labeling
+            //    p
+            //        padding: 0 18%
             max-width: 1400px
