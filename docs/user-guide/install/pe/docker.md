@@ -20,6 +20,7 @@ If you are looking for a cluster installation instruction, please visit [cluster
 - [Install Docker CE](https://docs.docker.com/engine/installation/)
 - [Install Docker Compose](https://docs.docker.com/compose/install/)
 
+{% include templates/install/docker-install-note.md %}
 ## Step 1. Checkout all ThingsBoard PE Image
 
 Please checkout ThingsBoard PE Image from Docker Hub.
