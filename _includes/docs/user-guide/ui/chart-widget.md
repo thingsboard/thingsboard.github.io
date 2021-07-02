@@ -24,7 +24,7 @@ Time series widgets visualize changes in time series data over time. Read [here]
 
 ##### Bar Chart
 
-[Bar Chart](/docs/{{docsPrefix}}user-guide/ui/chart-widget/#time-series-bar-chart) widget displays changes to time series data over time. The example shows the temperature for the last month.
+[Bar Chart](/docs/{{docsPrefix}}user-guide/ui/chart-widget/#time-series-bar-chart) widget displays changes to time series data over time. The example shows the temperature readings.
 
 {% include images-gallery.html imageCollection="charts-bar" %}
 
