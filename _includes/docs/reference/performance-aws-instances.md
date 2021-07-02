@@ -44,16 +44,16 @@ Please use documentation of the [Performance Test Project](https://github.com/th
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | [t2.small](#t2small) | 1 vCPUs, 2GB | PostgreSQL | In memory | MQTT | 500  | **~1500/sec** | **up to 7500/sec** |
 | [t2.medium](#t2medium)  | 2 vCPUs, 4GB | PostgreSQL | In memory | MQTT | 900  | **~3000/sec** | **up to 15000/sec** |
-| [c5.large](#c5large)  | 2 vCPUs , 4GB | PostgreSQL | In memory | MQTT | 20000  | **~22500/sec** | N/A  |
-| [c5.large](#c5large)  | 2 vCPUs , 4GB | PostgreSQL | Kafka | MQTT | 20000  | **~22500/sec** | N/A  |
+| [c5.large](#c5large)  | 2 vCPUs, 4GB | PostgreSQL | In memory | MQTT | 20000  | **~22500/sec** | N/A  |
+| [c5.large](#c5large)  | 2 vCPUs, 4GB | PostgreSQL | Kafka | MQTT | 20000  | **~22500/sec** | N/A  |
 | t2.xlarge | 4 vCPUs, 16GB | PostgreSQL | In memory | MQTT |  20000  | --- | --- |
 | t2.xlarge | 4 vCPUs, 16GB | Cassandra | In memory | MQTT | 20000  | --- | --- |
-| [m5.xlarge](#m5xlarge)  | 4 vCPUs, 16GB, 150GB SSD mounted | Cassandra | In memory | MQTT | 40000  | **~3500/sec** | N/A  |
-| [m5.xlarge](#m5xlarge)  | 4 vCPUs, 16GB, 150GB SSD mounted | Cassandra | In memory | HTTP | 40000  | **~950/sec** | N/A  |
+| [m5.xlarge](#m5xlarge)  | 4 vCPUs, 16GB | Cassandra | In memory | MQTT | 40000  | **~3500/sec** | N/A  |
+| [m5.xlarge](#m5xlarge)  | 4 vCPUs, 16GB | Cassandra | In memory | HTTP | 40000  | **~950/sec** | N/A  |
 
 # t2.small
 
-**Performance Results**
+<!-- **Performance Results**
 
 | Instance Type | Instance details | Database Type 	 | Queue Type  | Device API | Number of devices  | Maximum number of messages |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -70,7 +70,7 @@ DEVICE_END_IDX=500
 MESSAGES_PER_SECOND=300
 DURATION_IN_SECONDS=43200
 ...
-```
+``` -->
 
 ### Test Run #1 (stable)
 
@@ -154,16 +154,18 @@ The line goes down and after some period instance will be dramatically decreased
 TB dashboard
 
 **~~27m request per hour.**
-\
+
 ![image](/images/reference/performance-aws-instances/t2-micro/postgresql-100msgs-tb.png)
 
 
 
 # t2.medium
 
-**Performance Results**
+
 
 In this test, we will show that Thingsboard consistently receives about 3000 requests per second on t2.medium. And also at its peak, it can process up to 15,000 requests using the [AWS CPU Credit Balance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-credits-baseline-concepts.html). Please read the official documentation for understanding how it works.
+
+**Performance Results**
 
 ### Test Run #1 (stable)
 
@@ -259,11 +261,11 @@ For the PostgreSQL database, 20000 requests per seconds are equal to ~550 IOPS.
 
 From time to time you can use [credit balance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-optimized.html) to get more requests. Instance has few free resources left for get more requests (+~5000/s) at the peak. Read the official documentation for understand how it work.
 
-**Performance Results**
+<!-- **Performance Results**
 
 | Instance Type | Instance details | Database Type 	 | Queue Type  | Device API | Number of devices | Maximum number of messages per second |
 | --- | --- | --- | --- | --- | --- | --- |
-| c5.large | 2 vCPUs , 4GB | PostgreSQL | In memory | MQTT | 20000  | **~22500/sec** |
+| c5.large | 2 vCPUs, 4GB | PostgreSQL | In memory | MQTT | 20000  | **~22500/sec** |
 
 Test run configuration (see [Performance Test Project](https://github.com/thingsboard/performance-tests/#running) for more details):
 
@@ -276,9 +278,9 @@ DEVICE_END_IDX=20000
 MESSAGES_PER_SECOND=4500
 DURATION_IN_SECONDS=43200
 ...
-```
+``` -->
 
-### Test Run #1
+### Test Run #1 (stable)
 
 | Instance Type | Instance details | Database Type 	 | Queue Type  | Device API | Number of devices | Count of test run hours | Maximum number of messages per second |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -324,6 +326,8 @@ AWS write IOPS for the volume
 ![image](/images/reference/performance-aws-instances/c5-large/postgresql-700msgs-iops.png)
 
 ![image](/images/reference/performance-aws-instances/c5-large/postgresql-700msgs-iops-1.png)
+
+![image](/images/reference/performance-aws-instances/c5-large/postgresql-700msgs-iops-2.png)
 
 ### Test Run #2 (kafka)
 
@@ -379,7 +383,7 @@ AWS IOPS statistics
 
 # m5.xlarge
 
-**Performance Results**
+<!-- **Performance Results**
 
 | Instance Type | Instance details | Database Type 	 | Queue Type  | Device API | Number of devices | Maximum number of messages per second |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -413,7 +417,7 @@ DEVICE_END_IDX=2000
 PUBLISH_COUNT=300
 PUBLISH_PAUSE=1000
 ...
-```
+``` -->
 
 ### Test Run #1
 
