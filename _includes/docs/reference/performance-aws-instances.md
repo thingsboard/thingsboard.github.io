@@ -329,7 +329,7 @@ AWS write IOPS for the volume
 
 | Instance Type | Instance details | Database Type 	 | Queue Type  | Device API | Number of devices | Count of test run hours | Maximum number of messages per second |
 | --- | --- | --- | --- | --- | --- | --- |
-| c5.large | 2 vCPUs, 4GB | PostgreSQL | Kafka | MQTT |  20000  | 7 | **~22500** |
+| c5.large | 2 vCPUs, 4GB | PostgreSQL | Kafka | MQTT |  20000  | 12 | **~22500** |
 
 **Test Configuration**
 
@@ -369,11 +369,13 @@ TB dashboard
 
 ![image](/images/reference/performance-aws-instances/c5-large/postgresql-500msgs-tb.png)
 
-AWS write IOPS for the volume
+AWS IOPS statistics
 
 ![image](/images/reference/performance-aws-instances/c5-large/postgresql-500msgs-iops.png)
 
 ![image](/images/reference/performance-aws-instances/c5-large/postgresql-500msgs-iops-1.png)
+
+![image](/images/reference/performance-aws-instances/c5-large/postgresql-500msgs-iops-2.png)
 
 # m5.xlarge
 
