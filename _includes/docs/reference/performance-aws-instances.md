@@ -53,6 +53,8 @@ Please use documentation of the [Performance Test Project](https://github.com/th
 
 # t2.small
 
+In this test, we will show that Thingsboard consistently receives about 1500 requests per second on t2.small. And also at its peak, it can process up to 7.500 requests using the [AWS CPU Credit Balance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-credits-baseline-concepts.html). Please read the official documentation for understanding how it works.
+
 <!-- **Performance Results**
 
 | Instance Type | Instance details | Database Type 	 | Queue Type  | Device API | Number of devices  | Maximum number of messages |
