@@ -40,7 +40,7 @@ Please use documentation of the [Performance Test Project](https://github.com/th
 
 **NOTE:** t2 instances are used [burstable performance instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-credits-baseline-concepts.html) please read the official documentation. We recommend don't count on it. btw you can get more messages on the peak.
 
-| Instance Type | Instance details | Database Type 	 | Queue Type  | Device API | Number of devices | Maximum number of messages | Peak with [AWS CPU Credit Balance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-credits-baseline-concepts.html)|
+| Instance Type | Instance details | Database Type 	 | Queue Type  | Device API | Number of devices | Maximum number of data points | Peak with [AWS CPU Credit Balance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-credits-baseline-concepts.html)|
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | [t2.small](#t2small) | 1 vCPUs, 2GB | PostgreSQL | In memory | MQTT | 500  | **~1500/sec** | **up to 7500/sec** |
 | [t2.medium](#t2medium)  | 2 vCPUs, 4GB | PostgreSQL | In memory | MQTT | 900  | **~3000/sec** | **up to 15000/sec** |
@@ -53,7 +53,7 @@ Please use documentation of the [Performance Test Project](https://github.com/th
 
 # t2.small
 
-In this test, we will show that Thingsboard consistently receives about 1500 requests per second on t2.small. And also at its peak, it can process up to 7.500 requests using the [AWS CPU Credit Balance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-credits-baseline-concepts.html). Please read the official documentation for understanding how it works.
+In this test, we will show that Thingsboard consistently receives about 1500 requests per second on t2.small. And also at its peak, it can process up to 7500 requests using the [AWS CPU Credit Balance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-credits-baseline-concepts.html). Please read the official documentation for understanding how it works.
 
 <!-- **Performance Results**
 
