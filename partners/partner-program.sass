@@ -15,7 +15,7 @@ section
         position: relative
         width: 100%
         margin: auto
-    #labeling
+    #partner-intro
         margin: 48px 0 112px
         text-align: center
         p
@@ -23,16 +23,18 @@ section
             font-size: 20px
             line-height: 1.5em
             font-weight: normal
-    #matrix
+    #partners-matrix
         margin: 60px -100% 0
         padding: 72px 100% 112px
+        .table-description
+            padding-top: 48px
         h2
             color: #212529
             font-weight: 600
             text-align: left
             font-size: 22px
             line-height: 40px
-        #backg-matrix
+        #backg-partners-matrix
             position: relative
             //margin-left: -20px
             //margin-right: -20px
@@ -45,13 +47,15 @@ section
                 z-index: -1
                 top: 127px
             .coln
-                height: 1272px
+                height: 1264px
                 border-radius: 6px
+                //background: white
             .platinum
                 right: 0%
                 .coln
                     border: 2px solid #95955C
                     box-shadow: 0 50px 50px -20px rgba(0,0,0,0.15), 0 0 30px 0 rgba(0,0,0,0.10)
+                    background: white
                     .head
                         height: 106px
                         background-color: #95955C
@@ -61,14 +65,16 @@ section
                     border: 2px solid #E4DEAF
                     .head
                         height: 106px
-                        box-shadow: 0 2px 0 0 rgba(169,223,191,1)
+                        //background-color: #BCAD36
+                        box-shadow: 0 2px 0 0 rgba(228,222,175,1)
             .silver
                 right: 40%
                 .coln
                     border: 2px solid #C1C1C1
                     .head
                         height: 106px
-                        box-shadow: 0 2px 0 0 rgba(172,187,204,1)
+                        //background-color: #656565
+                        box-shadow: 0 2px 0 0 rgba(193,193,193,1)
         table
             width: 100%
             //width: calc(100% + 40px)
@@ -96,14 +102,14 @@ section
                 line-height: 30px
                 background-color: unset
                 tr
-                    height: 152px
+                    height: 150px
                     th
                         width: 20%
                         text-align: center
                         vertical-align: center
                         font-weight: 600
                         font-size: 11px
-                        padding: 40px 0 40px
+                        padding: 0 0 40px
                         &:nth-child(4n)
                             color: white
                             img
@@ -113,6 +119,7 @@ section
                 &:first-child
                     tr th img
                         filter: unset
+                        //filter: saturate(0) brightness(3)
                         width: 100%
                         max-width: 100px
             tbody
@@ -135,6 +142,21 @@ section
                             width: 60%
                         img
                             width: 32px
+                    &.table-price td
+                        font-size: 22px
+                        font-weight: 800
+                        .period
+                            font-size: 18px
+                            font-weight: normal
+                            display: unset
+                    &.title th
+                        padding-top: 16px
+                        font-size: 24px!important
+                        font-weight: 300
+
+    .container
+        width: 100%
+        max-width: 1400px
 
     .faq-content
         padding: 60px 0 80px
@@ -223,13 +245,80 @@ section
                         transition: transform 0.3s
                         margin: unset
 
+    #background
+        position: absolute
+        top: 570px
+        left: 50%
+        z-index: -1
+        .main
+            position: absolute
+            width: 2560px
+            height: 1075px
+            top: 32px
+            //top: -289px
+            left: -1280px
+            background-color: #F8FAFE
+            -ms-transform: skewY(-6deg)
+            transform: skewY(-6deg)
+        .small1
+            position: absolute
+            top: 16px
+            right: 524px
+            width: 436px
+            height: 90px
+            background-color: #2A7DEC
+            -ms-transform: skewY(-6deg)
+            transform: skewY(-6deg)
+        .small2
+            position: absolute
+            top: -390px
+            left: 810px
+            width: 436px
+            height: 90px
+            border: 2px solid #29384B
+            -ms-transform: skewY(-6deg)
+            transform: skewY(-6deg)
+        .small3
+            position: absolute
+            top: 592px
+            right: 706px
+            width: 436px
+            height: 90px
+            border: 2px solid #29384B
+            -ms-transform: skewY(-6deg)
+            transform: skewY(-6deg)
+        .small4
+            position: absolute
+            top: -400px
+            left: 568px
+            width: 436px
+            height: 90px
+            background-color: #2A7DEC
+            -ms-transform: skewY(-6deg)
+            transform: skewY(-6deg)
+        .bottom
+            position: absolute
+            top: 849px
+            width: 2560px
+            height: 130px
+            left: -1280px
+            background-color: #2C4362
+            -ms-transform: skewY(-6deg)
+            transform: skewY(-6deg)
+        .small5
+            position: absolute
+            top: 849px
+            left: 773px
+            width: 436px
+            height: 90px
+            background-color: #2A7DEC
+            -ms-transform: skewY(-6deg)
+            transform: skewY(-6deg)
+
 @media screen and (min-width: 750px)
     #partner-program
         #partnerProgramContent
-            //#labeling
-            //    p
-            //        padding: 0
-            #matrix
+            #partners-matrix
                 h2
                     font-size: 42px
                     line-height: 63px
@@ -239,7 +328,6 @@ section
                         tr
                             th
                                 width: 20%
-                                padding: 0 0 40px
                                 font-size: 20px
                             td
                                 width: 40%
@@ -262,11 +350,8 @@ section
             main
                 max-width: 100%
         #partnerProgramContent
-            //#labeling
-            //    p
-            //        padding: 0 8%
             max-width: 100%
-            #matrix
+            #partners-matrix
                 .platinum, .gold, .silver
                     padding: 0 14px
                 table
@@ -275,16 +360,10 @@ section
 
 
 @media screen and (min-width: 1250px)
-    #partner-program
-        #partnerProgramContent
-            //#labeling
-            //    p
-            //        padding: 0 13%
+    //#partner-program
+    //    #partnerProgramContent
 
 @media screen and (min-width: 1500px)
     #partner-program
         #partnerProgramContent
-            //#labeling
-            //    p
-            //        padding: 0 18%
             max-width: 1400px

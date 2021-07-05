@@ -4,16 +4,20 @@ title: Hardware Partner Program
 description:
 ---
 
-<div id="labeling"> 
+<div id="background">
+<div class="main"></div>
+</div>
+
+<div id="partner-intro"> 
     <p>
         ThingsBoard helps you to sell your devices by enabling interactive visualization and control of your device behavior for specific IoT use case. As a hardware manufacturer, you benefit from marketing exposure to thousands of system integrator companies that use the ThingsBoard platform as a basis for their solutions.
     </p>
 </div>
 
 
-<section id="matrix">
+<section id="partners-matrix">
 	<main>
-    <div id="backg-matrix">
+    <div id="backg-partners-matrix">
     <div class="silver"><div class="coln"><div class="head"></div></div></div>
     <div class="gold"><div class="coln"><div class="head"></div></div></div>
     <div class="platinum"><div class="coln"><div class="head"></div></div></div>
@@ -100,7 +104,7 @@ description:
                     <td><img src="/images/pe/unchecked.svg"></td>
                     <td><img src="/images/pe/checked.svg"></td>
                     <td><img src="/images/pe/checked.svg"></td>
-                </tr>    
+                </tr>
                 <tr>
                     <th>Demo Portal Account</th>
                     <td><img src="/images/pe/checked.svg">**</td>
@@ -119,20 +123,25 @@ description:
                     <td>5 hours</td>
                     <td>20 hours</td>
                 </tr>
-                <tr>
+                <tr class="table-price">
                     <th> </th>
                     <td>Free</td>
-                    <td>$500</td>
-                    <td>$2000</td>
+                    <td>$500 <p class="period">/ year</p></td>
+                    <td>$2000 <p class="period">/ year</p></td>
                 </tr>
                 <tr>
                     <th> </th>
-                    <td><a href="/" class="button">Apply</a></td>
-                    <td><a href="/" class="button">Apply</a></td>
-                    <td><a href="/" class="button">Apply</a></td>
+                    <td><a href="/partners/hardware/apply/?program=silver" class="button">Apply</a></td>
+                    <td><a href="/partners/hardware/apply/?program=gold" class="button">Apply</a></td>
+                    <td><a href="/partners/hardware/apply/?program=platinum" class="button">Apply</a></td>
                 </tr>
             </tbody>
     </table>
+        <p class="table-description">
+            * - Additional fees may apply
+            <br>** - Tenant administrator account on ThingsBoard PE instance deployed in the cloud and dedicated to PoCs and Sales demos (partner.thingsboard.io)
+            <br>*** - Custom logos, color schemes, login pages, translations and domains on a system, tenant and customer levels
+        </p>
 	</main>
 </section>
 
