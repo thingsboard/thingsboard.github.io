@@ -42,37 +42,18 @@ Please use documentation of the [Performance Test Project](https://github.com/th
 
 | Instance Type | Instance details | Database Type 	 | Queue Type  | Device API | Number of devices | Maximum number of data points | Peak with [AWS CPU Credit Balance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-credits-baseline-concepts.html)|
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| [t2.small](#t2small) | 1 vCPUs, 2GB | PostgreSQL | In memory | MQTT | 500  | **~1500/sec** | **up to 7500/sec** |
-| [t2.medium](#t2medium)  | 2 vCPUs, 4GB | PostgreSQL | In memory | MQTT | 900  | **~3000/sec** | **up to 15000/sec** |
+| [t2.small](#t2small) | 1 vCPUs, 2GB | PostgreSQL | In memory | MQTT | 10000  | **~1500/sec** | **up to 7500/sec** |
+| [t2.medium](#t2medium)  | 2 vCPUs, 4GB | PostgreSQL | In memory | MQTT | 10000  | **~3000/sec** | **up to 15000/sec** |
 | [c5.large](#c5large)  | 2 vCPUs, 4GB | PostgreSQL | In memory | MQTT | 20000  | **~22500/sec** | N/A  |
 | [c5.large](#c5large)  | 2 vCPUs, 4GB | PostgreSQL | Kafka | MQTT | 20000  | **~22500/sec** | N/A  |
-<!-- | t2.xlarge | 4 vCPUs, 16GB | PostgreSQL | In memory | MQTT |  20000  | --- | --- |
-| t2.xlarge | 4 vCPUs, 16GB | Cassandra | In memory | MQTT | 20000  | --- | --- | -->
-| [m5.xlarge](#m5xlarge)  | 4 vCPUs, 16GB | Cassandra | In memory | MQTT | 25000  | **~30000/sec** | N/A  |
-<!-- | [m5.xlarge](#m5xlarge)  | 4 vCPUs, 16GB | Cassandra | In memory | HTTP | 40000  | **~950/sec** | N/A  | -->
+| t2.xlarge | 4 vCPUs, 16GB | PostgreSQL | In memory | MQTT |  20000  | --- | --- |
+| t2.xlarge | 4 vCPUs, 16GB | Cassandra | In memory | MQTT | 20000  | --- | --- |
+| [m5.xlarge](#m5xlarge)  | 4 vCPUs, 16GB | Cassandra | Kafka | MQTT | 25000  | **~30000/sec** | N/A  |
+| [m5.xlarge](#m5xlarge)  | 4 vCPUs, 16GB | Cassandra | In memory | HTTP | 40000  | **~950/sec** | N/A  |
 
 # t2.small
 
-In this test, we will show that Thingsboard consistently receives about 1500 requests per second on t2.small. And also at its peak, it can process up to 7500 requests using the [AWS CPU Credit Balance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-credits-baseline-concepts.html). Please read the official documentation for understanding how it works.
-
-<!-- **Performance Results**
-
-| Instance Type | Instance details | Database Type 	 | Queue Type  | Device API | Number of devices  | Maximum number of messages |
-| --- | --- | --- | --- | --- | --- | --- |
-| t2.small | 1 vCPUs, 2GB | PostgreSQL | In memory | MQTT | 500  | **~1500/sec** |
-
-Test run configuration (see [Performance Test Project](https://github.com/thingsboard/performance-tests/#running) for more details):
-
-```bash
-...
-DEVICE_API=MQTT
-DEVICE_START_IDX=0
-DEVICE_END_IDX=500
-
-MESSAGES_PER_SECOND=300
-DURATION_IN_SECONDS=43200
-...
-``` -->
+In this test, we will show that Thingsboard consistently receives about 1500 data points per second on t2.small. And also at its peak, it can process up to 7500 data points using the [AWS CPU Credit Balance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-credits-baseline-concepts.html). Please read the official documentation for understanding how it works.
 
 ### Test Run #1 (stable)
 
@@ -80,7 +61,7 @@ There is stable test. CPU <= 20%, this means it will not be used [AWS CPU Credit
 
 | Instance Type | Instance details | Database Type 	 | Queue Type  | Device API | Number of devices | Count of test run hours | Maximum number of messages |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| t2.small | 1 vCPUs, 2GB | PostgreSQL | In memory | MQTT | 500  | 12 | **~1500/sec** |
+| t2.small | 1 vCPUs, 2GB | PostgreSQL | In memory | MQTT | 10000  | 12 | **~1500/sec** |
 
 **Test Configuration**
 
@@ -90,7 +71,7 @@ Test run configuration (see [Performance Test Project](https://github.com/things
 ...
 DEVICE_API=MQTT
 DEVICE_START_IDX=0
-DEVICE_END_IDX=500
+DEVICE_END_IDX=10000
 
 MESSAGES_PER_SECOND=300
 DURATION_IN_SECONDS=43200
@@ -125,7 +106,7 @@ There is burstable test. CPU => 20%, this means it will be used [AWS CPU Credit 
 
 | Instance Type | Instance details | Database Type 	 | Queue Type  | Device API | Number of devices | Count of test run hours | Maximum number of messages |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| t2.small | 1 vCPUs, 2GB | PostgreSQL | In memory | MQTT | 500  | 3 | **~1500/sec** |
+| t2.small | 1 vCPUs, 2GB | PostgreSQL | In memory | MQTT | 10000  | 3 | **~1500/sec** |
 
 **Test Configuration**
 
@@ -135,7 +116,7 @@ Test run configuration (see [Performance Test Project](https://github.com/things
 ...
 DEVICE_API=MQTT
 DEVICE_START_IDX=0
-DEVICE_END_IDX=100
+DEVICE_END_IDX=10000
 
 MESSAGES_PER_SECOND=600
 DURATION_IN_SECONDS=10800
@@ -159,13 +140,9 @@ TB dashboard
 
 ![image](/images/reference/performance-aws-instances/t2-micro/postgresql-100msgs-tb.png)
 
-
-
 # t2.medium
 
-
-
-In this test, we will show that Thingsboard consistently receives about 3000 requests per second on t2.medium. And also at its peak, it can process up to 15,000 requests using the [AWS CPU Credit Balance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-credits-baseline-concepts.html). Please read the official documentation for understanding how it works.
+In this test, we will show that Thingsboard consistently receives about 3000 data points per second on t2.medium. And also at its peak, it can process up to 15,000 data points using the [AWS CPU Credit Balance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-credits-baseline-concepts.html). Please read the official documentation for understanding how it works.
 
 **Performance Results**
 
@@ -175,7 +152,7 @@ There is stable test. CPU <= 20%, this means it will not be used [AWS CPU Credit
 
 | Instance Type | Instance details | Database Type 	 | Queue Type  | Device API | Number of devices | Count of test run hours | Maximum number of messages per second |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| t2.medium | 2 vCPUs, 4GB | PostgreSQL | In memory | MQTT | 900  | 12 | **~3000** |
+| t2.medium | 2 vCPUs, 4GB | PostgreSQL | In memory | MQTT | 10000  | 12 | **~3000** |
 
 **Test Configuration**
 
@@ -185,7 +162,7 @@ Test run configuration (see [Performance Test Project](https://github.com/things
 ...
 DEVICE_API=MQTT
 DEVICE_START_IDX=0
-DEVICE_END_IDX=900
+DEVICE_END_IDX=10000
 
 MESSAGES_PER_SECOND=600
 DURATION_IN_SECONDS=43200
@@ -220,7 +197,7 @@ There is burstable test. CPU => 20%, this means it will be used [AWS CPU Credit 
 
 | Instance Type | Instance details | Database Type 	 | Queue Type  | Device API | Number of devices | Count of test run hours | Maximum number of messages per second |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| t2.medium | 2 vCPUs, 4GB | PostgreSQL | In memory | MQTT | 900  | 2 | **~15000** | 
+| t2.medium | 2 vCPUs, 4GB | PostgreSQL | In memory | MQTT | 10000  | 2 | **~15000** | 
 
 **Test Configuration**
 
@@ -230,7 +207,7 @@ Test run configuration (see [Performance Test Project](https://github.com/things
 ...
 DEVICE_API=MQTT
 DEVICE_START_IDX=0
-DEVICE_END_IDX=200
+DEVICE_END_IDX=10000
 
 MESSAGES_PER_SECOND=3000
 DURATION_IN_SECONDS=12000
@@ -240,7 +217,6 @@ DURATION_IN_SECONDS=12000
 **CPU/Memory Load**
 
 t2 instances have [AWS CPU Credit Balance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-credits-baseline-concepts.html) and you can use more request per second time by time
-
 
 Here is the Credit Balance chart line for the **t2.medium** during publishing 15000 messages per second.
 
@@ -254,35 +230,15 @@ TB dashboard
 
 ![image](/images/reference/performance-aws-instances/t2-medium/postgresql-burstable-dashboard.png)
 
-
 # c5.large
 
 **c5.large** AWS instance does not have CPU burst that why CPU Credit Balance is not applicable to verify in this case.
 
-But to be able to support ~20000 requests per seconds correct volume must be provisioned - with enough [IOPS](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-io-characteristics.html) limits. Please read [official documentation](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-optimized.html) for understand how it work.
+But to be able to support ~20000 data points per seconds correct volume must be provisioned - with enough [IOPS](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-io-characteristics.html) limits. Please read [official documentation](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-optimized.html) for understand how it work.
 
-For the PostgreSQL database, 20000 requests per seconds are equal to ~550 IOPS.
+For the PostgreSQL database, 20000 data points per seconds are equal to ~550 IOPS.
 
-From time to time you can use [credit balance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-optimized.html) to get more requests. Instance has few free resources left for get more requests (+~5000/s) at the peak. Read the official documentation for understand how it work.
-
-<!-- **Performance Results**
-
-| Instance Type | Instance details | Database Type 	 | Queue Type  | Device API | Number of devices | Maximum number of messages per second |
-| --- | --- | --- | --- | --- | --- | --- |
-| c5.large | 2 vCPUs, 4GB | PostgreSQL | In memory | MQTT | 20000  | **~22500/sec** |
-
-Test run configuration (see [Performance Test Project](https://github.com/thingsboard/performance-tests/#running) for more details):
-
-```bash
-...
-DEVICE_API=MQTT
-DEVICE_START_IDX=0
-DEVICE_END_IDX=20000
-
-MESSAGES_PER_SECOND=4500
-DURATION_IN_SECONDS=43200
-...
-``` -->
+From time to time you can use [credit balance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-optimized.html) to get more data points. Instance has few free resources left for get more data points (+~5000/s) at the peak. Read the official documentation for understand how it work.
 
 ### Test Run #1 (stable)
 
@@ -345,7 +301,6 @@ AWS write IOPS for the volume
 
 Test run configuration (see [Performance Test Project](https://github.com/thingsboard/performance-tests/#running) for more details):
 
-
 ```bash
 ...
 DEVICE_API=MQTT
@@ -388,42 +343,6 @@ AWS IOPS statistics
 ![image](/images/reference/performance-aws-instances/c5-large/postgresql-500msgs-iops-2.png)
 
 # m5.xlarge
-
-<!-- **Performance Results**
-
-| Instance Type | Instance details | Database Type 	 | Queue Type  | Device API | Number of devices | Maximum number of messages per second |
-| --- | --- | --- | --- | --- | --- | --- |
-| m5.xlarge | 4 vCPUs, 16GB, 150GB SSD mounted | Cassandra | In memory | MQTT | 3500  | **~3500/sec** |
-
-Test run configuration (see [Performance Test Project](https://github.com/thingsboard/performance-tests/#running) for more details):
-
-```bash
-...
-DEVICE_API=MQTT
-DEVICE_START_IDX=0
-DEVICE_END_IDX=3500
-
-PUBLISH_COUNT=300
-PUBLISH_PAUSE=1000
-...
-```
-
-| Instance Type | Instance details | Database Type 	 | Queue Type  | Device API | Number of devices | Maximum number of messages per second |
-| --- | --- | --- | --- | --- | --- | --- |
-| m5.xlarge |  4 vCPUs, 16GB, 150GB SSD mounted | Cassandra | In memory| HTTP | 2000  | **~950/sec** |
-
-Test run configuration:
-
-```bash
-...
-DEVICE_API=HTTP
-DEVICE_START_IDX=0
-DEVICE_END_IDX=2000
-
-PUBLISH_COUNT=300
-PUBLISH_PAUSE=1000
-...
-``` -->
 
 ### Test Run #1 (kafka)
 
