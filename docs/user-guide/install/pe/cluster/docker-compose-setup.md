@@ -23,6 +23,7 @@ Please note that for the deployment of Rule Engine as a separate service, an add
 {% endcapture %}
 {% include templates/info-banner.md content=rule_engine_note %}
 
+{% include templates/install/docker-install-note.md %}
 ## Step 1. Checkout all ThingsBoard PE Images
 
 Please checkout all ThingsBoard PE Images from Docker Hub.

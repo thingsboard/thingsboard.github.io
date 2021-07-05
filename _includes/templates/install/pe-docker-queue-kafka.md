@@ -4,7 +4,7 @@
 Create docker compose file for ThingsBoard queue service:
 
 ```text
-sudo nano docker-compose.yml
+nano docker-compose.yml
 ```
 {: .copy-code}
 
