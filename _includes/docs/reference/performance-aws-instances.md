@@ -46,10 +46,10 @@ Please use documentation of the [Performance Test Project](https://github.com/th
 | [t2.medium](#t2medium)  | 2 vCPUs, 4GB | PostgreSQL | In memory | MQTT | 900  | **~3000/sec** | **up to 15000/sec** |
 | [c5.large](#c5large)  | 2 vCPUs, 4GB | PostgreSQL | In memory | MQTT | 20000  | **~22500/sec** | N/A  |
 | [c5.large](#c5large)  | 2 vCPUs, 4GB | PostgreSQL | Kafka | MQTT | 20000  | **~22500/sec** | N/A  |
-| t2.xlarge | 4 vCPUs, 16GB | PostgreSQL | In memory | MQTT |  20000  | --- | --- |
-| t2.xlarge | 4 vCPUs, 16GB | Cassandra | In memory | MQTT | 20000  | --- | --- |
-| [m5.xlarge](#m5xlarge)  | 4 vCPUs, 16GB | Cassandra | In memory | MQTT | 40000  | **~3500/sec** | N/A  |
-| [m5.xlarge](#m5xlarge)  | 4 vCPUs, 16GB | Cassandra | In memory | HTTP | 40000  | **~950/sec** | N/A  |
+<!-- | t2.xlarge | 4 vCPUs, 16GB | PostgreSQL | In memory | MQTT |  20000  | --- | --- |
+| t2.xlarge | 4 vCPUs, 16GB | Cassandra | In memory | MQTT | 20000  | --- | --- | -->
+| [m5.xlarge](#m5xlarge)  | 4 vCPUs, 16GB | Cassandra | In memory | MQTT | 25000  | **~30000/sec** | N/A  |
+<!-- | [m5.xlarge](#m5xlarge)  | 4 vCPUs, 16GB | Cassandra | In memory | HTTP | 40000  | **~950/sec** | N/A  | -->
 
 # t2.small
 
@@ -115,7 +115,7 @@ Memory Utilization (%)
 
 TB dashboard
 
-**~~5.4m request per hour.**
+**~~5.4m data points per hour**
 
 ![image](/images/reference/performance-aws-instances/t2-micro/postgresql-50msgs-tb.png)
 
@@ -155,7 +155,7 @@ The line goes down and after some period instance will be dramatically decreased
 
 TB dashboard
 
-**~~27m request per hour.**
+**~~27m data points per hour**
 
 ![image](/images/reference/performance-aws-instances/t2-micro/postgresql-100msgs-tb.png)
 
@@ -210,7 +210,7 @@ Used Physical Memory (MB)
 
 TB dashboard
 
-**~~10.5m request per hour.**
+**~~10.5m data points per hour**
 
 ![image](/images/reference/performance-aws-instances/t2-medium/postgresql-150msgs-tb.png)
 
@@ -250,6 +250,8 @@ The line goes down and after some period instance will be dramatically decreased
 
 TB dashboard
 
+**~~54m data points per hour**
+
 ![image](/images/reference/performance-aws-instances/t2-medium/postgresql-burstable-dashboard.png)
 
 
@@ -286,7 +288,7 @@ DURATION_IN_SECONDS=43200
 
 | Instance Type | Instance details | Database Type 	 | Queue Type  | Device API | Number of devices | Count of test run hours | Maximum number of messages per second |
 | --- | --- | --- | --- | --- | --- | --- |
-| c5.large | 2 vCPUs, 4GB | PostgreSQL | In memory | MQTT |  20000  | 7 | **~22500** |
+| c5.large | 2 vCPUs, 4GB | PostgreSQL | In memory | MQTT |  20000  | 12 | **~22500** |
 
 **Test Configuration**
 
@@ -320,6 +322,8 @@ Memory Utilization (%)
 ![image](/images/reference/performance-aws-instances/c5-large/postgresql-700msgs-memory.png)
 
 TB dashboard
+
+**~~80m data points per hour**
 
 ![image](/images/reference/performance-aws-instances/c5-large/postgresql-700msgs-tb.png)
 
@@ -371,7 +375,7 @@ Memory Utilization (%)
 
 TB dashboard
 
-~80m request per hour
+**~~80m data points per hour**
 
 ![image](/images/reference/performance-aws-instances/c5-large/postgresql-500msgs-tb.png)
 
@@ -421,11 +425,11 @@ PUBLISH_PAUSE=1000
 ...
 ``` -->
 
-### Test Run #1
+### Test Run #1 (kafka)
 
 | Instance Type | Instance details | Database Type 	 | Queue Type  | Device API | Number of devices | Count of test run hours | 
 | --- | --- | --- | --- | --- | --- | --- |
-| m5.xlarge | 4 vCPUs, 16GB | Cassandra | In memory | MQTT | 2100  | 10 |
+| m5.xlarge | 4 vCPUs, 16GB | PostgreSQL | KAfka | MQTT | 25000  | 12 |
 
 **Test Configuration**
 
@@ -435,10 +439,10 @@ Test run configuration (see [Performance Test Project](https://github.com/things
 ...
 DEVICE_API=MQTT
 DEVICE_START_IDX=0
-DEVICE_END_IDX=2100
+DEVICE_END_IDX=25000
 
-PUBLISH_COUNT=36000
-PUBLISH_PAUSE=1000
+MESSAGES_PER_SECOND=6000
+DURATION_IN_SECONDS=43200
 ...
 ```
 
@@ -458,10 +462,14 @@ Memory Utilization (%)
 
 ![image](/images/reference/performance-aws-instances/m5-xlarge/cassandra-2100msgs-memory.png)
 
-Used Physical Memory (MB)
-
-![image](/images/reference/performance-aws-instances/m5-xlarge/cassandra-2100msgs-memory-1.png)
-
 TB dashboard
 
 ![image](/images/reference/performance-aws-instances/m5-xlarge/cassandra-2100msgs-tb.png)
+
+AWS IOPS statistics
+
+![image](/images/reference/performance-aws-instances/m5-xlarge/m5.xlarge.AWS.ReadOps.KAFKA.png)
+
+![image](/images/reference/performance-aws-instances/m5-xlarge/m5.xlarge.AWS.WriteOps.KAFKA.png)
+
+![image](/images/reference/performance-aws-instances/m5-xlarge/m5.xlarge.AWS.CreditBalance.KAFKA.png)
