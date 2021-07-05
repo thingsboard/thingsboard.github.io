@@ -22,6 +22,7 @@ from math import ceil
 from json import loads, dumps
 from hashlib import sha256, sha384, sha512, md5
 from mmh3 import hash, hash128
+from random import randint
 
 
 FW_CHECKSUM_ATTR = "fw_checksum"
@@ -53,6 +54,7 @@ def collect_required_data():
     chunk_size = input("Please write firmware chunk size in range 1-1024 or leave it blank to set it default (512 bytes): ")
     config["chunk_size"] = int(chunk_size) if chunk_size else 0
     config["basic_uri"] = f'coap://{config["host"]}/api/v1/{config["token"]}'
+    config["firmware_uri"] = f'coap://{config["host"]}/fw/{config["token"]}'
     print("\n", "="*80, "\n", sep="")
     return config
 
@@ -87,7 +89,7 @@ async def get_firmware(context: Context, fw_info, config):
     for chunk_number in range (chunk_count + 1):
         print(f'Getting chunk with number: {chunk_number + 1}. Chunk size is : {chunk_size if chunk_size else fw_info[FW_SIZE_ATTR]} byte(s).')
         additional_parameters = f'&size={chunk_size if chunk_size > 0 and config["chunk_size"] < fw_info[FW_SIZE_ATTR] else fw_info[FW_SIZE_ATTR]}&chunk={chunk_number}' if chunk_size else ''
-        uri=f'{config["basic_uri"]}/firmware?title={fw_info[FW_TITLE_ATTR]}&version={fw_info[FW_VERSION_ATTR]}{additional_parameters}'
+        uri=f'{config["firmware_uri"]}?title={fw_info[FW_TITLE_ATTR]}&version={fw_info[FW_VERSION_ATTR]}{additional_parameters}'
         request = Message(code=Code.GET, uri=uri)
         try:
             response = await context.request(request, handle_blockwise=chunk_count == 0).response
@@ -117,16 +119,27 @@ def verify_checksum(firmware_data, checksum_alg, checksum):
     elif checksum_alg.lower() == "md5":
         checksum_of_received_firmware = md5(firmware_data).digest().hex()
     elif checksum_alg.lower() == "murmur3_32":
-        reversed_checksum = format(hash(firmware_data, signed=False), 'x')
-        checksum_of_received_firmware = "".join(reversed([reversed_checksum[i:i+2] for i in range(0, len(reversed_checksum), 2)]))
+        reversed_checksum = f'{hash(firmware_data, signed=False):0>2X}'
+        if len(reversed_checksum) % 2 != 0:
+            reversed_checksum = '0' + reversed_checksum
+        checksum_of_received_firmware = "".join(reversed([reversed_checksum[i:i+2] for i in range(0, len(reversed_checksum), 2)])).lower()
     elif checksum_alg.lower() == "murmur3_128":
-        reversed_checksum = format(hash128(firmware_data), 'x')
-        checksum_of_received_firmware = "".join(reversed([reversed_checksum[i:i+2] for i in range(0, len(reversed_checksum), 2)]))
+        reversed_checksum = f'{hash128(firmware_data, signed=False):0>2X}'
+        if len(reversed_checksum) % 2 != 0:
+            reversed_checksum = '0' + reversed_checksum
+        checksum_of_received_firmware = "".join(reversed([reversed_checksum[i:i+2] for i in range(0, len(reversed_checksum), 2)])).lower()
     elif checksum_alg.lower() == "crc32":
-        reversed_checksum = format(crc32(firmware_data) & 0xffffffff, 'x')
-        checksum_of_received_firmware = "".join(reversed([reversed_checksum[i:i+2] for i in range(0, len(reversed_checksum), 2)]))
+        reversed_checksum = f'{crc32(firmware_data) & 0xffffffff:0>2X}'
+        if len(reversed_checksum) % 2 != 0:
+            reversed_checksum = '0' + reversed_checksum
+        checksum_of_received_firmware = "".join(reversed([reversed_checksum[i:i+2] for i in range(0, len(reversed_checksum), 2)])).lower()
     else:
         print("Client error. Unsupported checksum algorithm.")
+    print(checksum_of_received_firmware)
+    random_value = randint(0, 5)
+    if random_value > 3:
+        print("Dummy fail! Do not panic, just restart and try again the chance of this fail is ~20%")
+        return False
     return checksum_of_received_firmware == checksum
 
 
@@ -158,11 +171,13 @@ async def main():
 
             current_firmware_info[FW_STATE_ATTR] = "DOWNLOADING"
             await send_telemetry(protocol, current_firmware_info, config)
+            sleep(1)
 
             firmware_data = await get_firmware(protocol, firmware_info, config)
 
             current_firmware_info[FW_STATE_ATTR] = "DOWNLOADED"
             await send_telemetry(protocol, current_firmware_info, config)
+            sleep(1)
 
             verification_result = verify_checksum(firmware_data, firmware_info.get(FW_CHECKSUM_ALG_ATTR), firmware_info.get(FW_CHECKSUM_ATTR))
 
@@ -170,6 +185,7 @@ async def main():
                 print("Checksum verified!")
                 current_firmware_info[FW_STATE_ATTR] = "VERIFIED"
                 await send_telemetry(protocol, current_firmware_info, config)
+                sleep(1)
             else:
                 print("Checksum verification failed!")
                 current_firmware_info[FW_STATE_ATTR] = "FAILED"
@@ -179,6 +195,7 @@ async def main():
 
             current_firmware_info[FW_STATE_ATTR] = "UPDATING"
             await send_telemetry(protocol, current_firmware_info, config)
+            sleep(1)
 
             with open(firmware_info.get(FW_TITLE_ATTR), "wb") as firmware_file:
                 firmware_file.write(firmware_data)
