@@ -8,6 +8,7 @@ We are going to check how many messages per second each instance can handle and 
 
 Considering test results and your project requirements you will be able to identify what type of the instance is the most suitable for your project.
 
+
 # Data flow and test tools
 
 IoT devices connect to ThingsBoard server via MQTT or HTTP Device API and send sample test data (*single telemetry of long type*) to the platform. 
@@ -42,12 +43,11 @@ Please use documentation of the [Performance Test Project](https://github.com/th
 
 | Instance Type | Instance details | Database Type 	 | Queue Type  | Device API | Number of devices | Maximum number of data points | Peak with [AWS CPU Credit Balance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-credits-baseline-concepts.html)|
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| [t2.small](#t2small) | 1 vCPUs, 2GB | PostgreSQL | In memory | MQTT | 10000  | **~1500/sec** | **up to 7500/sec** |
 | [t2.medium](#t2medium)  | 2 vCPUs, 4GB | PostgreSQL | In memory | MQTT | 10000  | **~3000/sec** | **up to 15000/sec** |
 | [c5.large](#c5large)  | 2 vCPUs, 4GB | PostgreSQL | In memory | MQTT | 20000  | **~22500/sec** | N/A  |
 | [c5.large](#c5large)  | 2 vCPUs, 4GB | PostgreSQL | Kafka | MQTT | 20000  | **~22500/sec** | N/A  |
-| t2.xlarge | 4 vCPUs, 16GB | PostgreSQL | In memory | MQTT |  20000  | --- | --- |
-| t2.xlarge | 4 vCPUs, 16GB | Cassandra | In memory | MQTT | 20000  | --- | --- |
+| M5.LARGE | 4 vCPUs, 16GB | PostgreSQL | KAFKA | MQTT |  20000  | re- | --- |
+| M5.LARGE | 4 vCPUs, 16GB | Cassandra | In memory | MQTT | 20000  | re- | --- |
 | [m5.xlarge](#m5xlarge)  | 4 vCPUs, 16GB | Cassandra | Kafka | MQTT | 25000  | **~30000/sec** | N/A  |
 | [m5.xlarge](#m5xlarge)  | 4 vCPUs, 16GB | Cassandra | In memory | HTTP | 40000  | **~950/sec** | N/A  |
 
@@ -82,9 +82,8 @@ DURATION_IN_SECONDS=43200
 
 | Property | Avg | Min | Max |
 | --- | --- | --- | --- |
-| CPU Utilization (%) | 18 | 8.9 | 55 |
-| Memory Utilization (%) | 96 | 81 | 97.36 |
-| Used Physical Memory (MB) | 940 | 797 | 958 |
+| CPU Utilization (%) | 11 | 0 | 100 |
+| Memory Utilization (%) | 63 | 22 | 73 |
 
 CPU Utilization (%)
 
@@ -106,7 +105,7 @@ There is burstable test. CPU => 20%, this means it will be used [AWS CPU Credit 
 
 | Instance Type | Instance details | Database Type 	 | Queue Type  | Device API | Number of devices | Count of test run hours | Maximum number of messages |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| t2.small | 1 vCPUs, 2GB | PostgreSQL | In memory | MQTT | 10000  | 3 | **~1500/sec** |
+| t2.small | 1 vCPUs, 2GB | PostgreSQL | In memory | MQTT | 10000  | 3 | **~7500/sec** |
 
 **Test Configuration**
 
@@ -173,9 +172,8 @@ DURATION_IN_SECONDS=43200
 
 | Property | Avg | Min | Max |
 | --- | --- | --- | --- |
-| CPU Utilization (%) | 19 | 1.5 | 25 |
-| Memory Utilization (%) | 25 | 3.54 | 28.3 |
-| Used Physical Memory (MB) | 1014 | 551 | 1116 |
+| CPU Utilization (%) | 10 | 0 | 58 |
+| Memory Utilization (%) | 36 | 33 | 38 |
 
 CPU Utilization (%)
 
@@ -265,9 +263,8 @@ DURATION_IN_SECONDS=43200
  
 | Property | Avg | Min | Max |
 | --- | --- | --- | --- |
-| CPU Utilization (%) | 70 | 66.8 | 76.1 |
+| CPU Utilization (%) | 58 | 0 | 99.8 |
 | Memory Utilization (%) | 33 | 33.39 | 33.85 |
-| Used Physical Memory (MB) | 1241 | 1237 | 1254 |
 
 CPU Utilization (%)
 
@@ -292,6 +289,8 @@ AWS write IOPS for the volume
 ![image](/images/reference/performance-aws-instances/c5-large/postgresql-700msgs-iops-2.png)
 
 ### Test Run #2 (kafka)
+
+**Thingsboard don't recommend use kafka on c5 instance (because 4gb RAM).**
 
 | Instance Type | Instance details | Database Type 	 | Queue Type  | Device API | Number of devices | Count of test run hours | Maximum number of messages per second |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -336,9 +335,9 @@ TB dashboard
 
 AWS IOPS statistics
 
-![image](/images/reference/performance-aws-instances/c5-large/postgresql-500msgs-iops.png)
-
 ![image](/images/reference/performance-aws-instances/c5-large/postgresql-500msgs-iops-1.png)
+
+![image](/images/reference/performance-aws-instances/c5-large/postgresql-500msgs-iops.png)
 
 ![image](/images/reference/performance-aws-instances/c5-large/postgresql-500msgs-iops-2.png)
 
@@ -382,6 +381,8 @@ Memory Utilization (%)
 ![image](/images/reference/performance-aws-instances/m5-xlarge/cassandra-2100msgs-memory.png)
 
 TB dashboard
+
+**~~108m data points per hour**
 
 ![image](/images/reference/performance-aws-instances/m5-xlarge/cassandra-2100msgs-tb.png)
 
