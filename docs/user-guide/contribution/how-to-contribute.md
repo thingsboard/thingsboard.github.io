@@ -197,7 +197,7 @@ Please create pull request into the **master** branch by default (the additional
 
 If there are some conflicts because new stuff has arrived into ThingsBoard master branch before your commit, please resolve those conflicts to continue.
 
-Sign up contribution license agreement (CLA) and verify that remote build has been successful. The CLA is signed atomatically using the github CLA bot.
+Sign up contribution license agreement (CLA) and verify that remote build has been successful. The CLA is signed automatically using the github CLA bot.
  
  ![image](/images/user-guide/pr_cla.png)
 
