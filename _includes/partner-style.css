@@ -2,10 +2,124 @@ p, h1, h5 {
 	color: #212529;
 }
 
+body {
+	background-color: #F7F9FC;
+}
+
 .background {
 	position: relative;
 	z-index: -1;
 	top: -260px;
+	height: 100%;
+}
+
+.background img {
+	content: "";
+	background-image: url(/images/partners/hardware-map.svg);
+	background-size: contain;
+	display: block;
+	position: fixed;
+	right: calc(50% - 800px);
+	top: 540px;
+	width: 1600px;
+	height: 800px;
+}
+
+.background .fill {
+	position: absolute;
+	width: 100%;
+	height: 460px;
+	bottom: -260px;
+	/*transform: skewY(-6deg);*/
+	background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.6) 40%, rgba(255,255,255,0.4) 60%, rgba(255,255,255,0) 100%);
+}
+
+.filter {
+	background-color: rgba(255,255,255,0.90);
+	backdrop-filter: blur(7px);
+	width: 100%;
+	border-radius: 6px;
+	margin-top: 160px;
+	padding: 24px 32px;
+	color: #75767C;
+	font-size: 18px;
+}
+
+.nav-fixed {
+	position: fixed;
+	justify-content: center;
+	z-index: 2;
+	width: 100%;
+	left: 0;
+	display: flex;
+	top: -80px;
+	border-radius: unset;
+	border-bottom: solid 1px #ebebeb;
+	padding: 24px 30px;
+}
+
+.nav-fixed .filter-content {
+	max-width: 1200px;
+	width: 100%;
+	padding: 0 32px;
+}
+
+.filter .filter-content .filter-spacer {
+	position: fixed;
+	width: 0;
+	height: 0;
+}
+
+.filter .filter-content .actions {
+	display: flex;
+	white-space: nowrap;
+	overflow-x: auto;
+}
+
+.filter .filter-content .actions .check-box {
+	cursor: pointer;
+	margin: 8px 8px 0 0;
+	border-radius: 6px;
+	color: #212529;
+	border: solid 1px #EBEBEB;
+	padding: 7px 14px;
+	position: relative;
+}
+
+.filter .filter-content .actions .check-box:hover {
+	background-color: #2A7DEC;
+	color: #fff;
+	border: unset;
+}
+
+.filter .filter-content .actions .check-box:not(.checked, .main, :hover) {
+	padding: 6px 13px;
+}
+
+.filter .filter-content .actions .main {
+	background-color: #F1F2F3;
+	border: unset;
+}
+
+.filter .filter-content .actions .checked {
+	background-color: #2A7DEC;
+	color: #fff;
+	border: unset;
+	padding-left: 40px;
+}
+
+.filter .filter-content .actions .checked:after {
+	content: "";
+	background-image: url(/images/checked-box-icon.svg);
+	background-size: contain;
+	display: block;
+	position: absolute;
+	left: 14px;
+	top: 10px;
+	width: 18px;
+	height: 18px;
+	border: none;
+	transition: all 0.3s ease-out;
 }
 
 #hardwareContainer object{
@@ -16,27 +130,11 @@ p, h1, h5 {
 	left: calc(50% - 800px);
 }
 
-#hardwareContainer:after {
-	content: "";
-	background-image: url(/images/partners/hardware-map.svg);
-	background-size: contain;
-	display: block;
-	position: fixed;
-	right: calc(50% - 800px);
-	top: 540px;
-	z-index: -1;
-	width: 1600px;
-	height: 800px;
+.customer-spacer {
+	margin-top: 300px!important;
 }
 
-.background div {
-	position: absolute;
-	width: 100%;
-	height: 2950px;
-	transform: skewY(-6deg);
-	background-color: #F7F9FC;
-}
-
+/*#hardwareContainer:after*/
 #users main h1 {
 	font-size: 36px;
 	font-weight: 500;
@@ -67,7 +165,7 @@ p, h1, h5 {
 	display: flex;
 	justify-content: space-between;
 	flex-wrap: wrap;
-	margin: 160px 0 100px;
+	margin: 24px 0 100px;
 }
 
 .partner-box {
@@ -123,18 +221,20 @@ p, h1, h5 {
 	font-weight: 500;
 	font-size: 18px;
 	position: relative;
-	margin-right: 12px;
+	margin-right: 8px;
 	background-color: rgba(42,125,236, 0.1);
 	border-radius: 4px;
 	padding: 6px 10px;
 	margin-top: 8px;
-	line-height: 45px;
+	line-height: inherit;
+	display: inline-block;
 }
 
 .partner-box div.links a:first-child {
 	background-color: unset;
 	border-radius: unset;
 	padding-right: 16px;
+	margin-right: 16px;
 }
 
 .partner-box div.links a:first-child:after {
@@ -183,7 +283,17 @@ section {
 	section > main, footer > main {
 		max-width: 1400px;
 	}
+
+	.nav-fixed .filter-content {
+		max-width: 1400px;
+	}
+
 }
+/*@media screen and (max-width: 1180px) {*/
+/*	.customer-spacer {*/
+/*		margin-top: 346px !important;*/
+/*	}*/
+/*}*/
 
 @media screen and (max-width: 1024px) {
 	.partner-box {
@@ -196,11 +306,15 @@ section {
         height: 30px;
         max-width: 50%;
     }
+
+	.nav-fixed {
+		top: -82px;
+	}
 }
 
 @media screen and (max-width: 768px) {
 	#users {
-		padding: 30px 20px 0px;
+		padding: 30px 20px 0;
 	}
 
 	#users main h1 {
@@ -212,9 +326,36 @@ section {
 		font-size: 16px;
 	}
 
+	.intro p .button {
+		font-size: 14px;
+	}
+
+	.filter {
+		padding: 24px;
+		margin-top: 60px;
+		background-color: rgba(255,255,255,1);
+	}
+
+	.filter .filter-content .filter-spacer {
+		height: 118px;
+	}
+
+		.customer-spacer {
+			margin-top: 200px !important;
+		}
+
+	.nav-fixed {
+		padding: 24px 20px;
+		top: 18px;
+	}
+
+	.nav-fixed .filter-content {
+		padding: 0 24px;
+	}
+
 	#hardwareContainer {
 		justify-content: center;
-		margin: 80px 0 60px;
+		margin: 24px 0 60px;
 	}
 
 	.partner-box {
@@ -229,7 +370,6 @@ section {
 	.partner-box > div > .links > a {
 		font-size: 14px;
 		margin-right: 6px;
-		line-height: 37px;
 	}
 
 	.partner-box div div.text p.title {

@@ -2,24 +2,26 @@
 {% capture partnersType %}{{include.type}}{% endcapture %}
 {% capture partners %}{% include partners.json %}{% endcapture %}
 
-(function () {
+function rengen() {
     var containerId = "{{ containerId }}";
     var partnersType = "{{ partnersType }}";
 	var partners = {{ partners }};
 
+    var checkedElements = document.getElementsByClassName('checked');
+
 	var targetContainer = document.getElementById(containerId);
+    targetContainer.innerHTML = '';
 
-    var partnersByType = partners.filter(function(partner) {
-        return partner.type === partnersType;
-    });
+    var partnersByType = [];
+    for (var t = 0; t < partners.length; t++) {
+        for (var c = 0; c < checkedElements.length; c++) {
+            if (partners[t].type.includes(checkedElements[c].className.split(' ')[1])) {
+                partnersByType.push(partners[t]);
+                c = partners.length;
+            }
+        }
+    }
 
-	// var sorted = partnersByType.sort(function (a, b) {
-	// 	if (a.name > b.name) return 1
-	// 	if (a.name < b.name) return -1
-	// 	return 0
-	// })
-
-    // sorted.forEach(function (obj) {
     partnersByType.forEach(function (obj) {
 		var box = document.createElement('div');
 		box.className = 'partner-box';
@@ -102,4 +104,27 @@
 
         targetContainer.appendChild(becomeHardwarePartnerBox);
     }
-})();
+}
+// )();
+
+function actions(sectionId) {
+    if (sectionId === 'main') {
+        if (!$("div." + sectionId).hasClass("checked")){
+            $("div.check-box").removeClass("checked");
+            $("div." + sectionId).addClass("checked");
+            rengen();
+        }
+    } else {
+        $("div.main").removeClass("checked");
+        if ($("div." + sectionId).hasClass("checked")){
+            $("div." + sectionId).removeClass("checked");
+            if (document.getElementsByClassName('checked').length === 0){
+                $("div.main").addClass("checked");
+            }
+            rengen();
+        } else {
+            $("div." + sectionId).addClass("checked");
+            rengen();
+        }
+    }
+}
