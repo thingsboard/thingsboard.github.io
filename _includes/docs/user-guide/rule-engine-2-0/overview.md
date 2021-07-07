@@ -196,7 +196,7 @@ List of the predefined Message Types is presented in the following table:
           <td><b>RPC Request to Device</b></td>
           <td>RPC request from server to device (see <a href="/docs/{{docsPrefix}}user-guide/rpc/#server-side-rpc-api">server side rpc api</a> for reference)</td>
           <td><b>requestUUID</b> - internal request id used by sustem to identify reply target,<br><b>expirationTime</b> - time when request will be expired,<br><b>oneway</b> - specifies request type: <i>true</i> - without response, <i>false</i> - with response</td>
-          <td>json containing <b>method</b> and <b>params</b>: <br> < style="font-size: 12px;">{ <br> &nbsp;&nbsp;"method": "getGpioStatus", <br>&nbsp;&nbsp;"params": { "param1": "val1" } <br> }</code></td>
+          <td>json containing <b>method</b> and <b>params</b>: <br> <code style="font-size: 12px;">{ <br> &nbsp;&nbsp;"method": "getGpioStatus", <br>&nbsp;&nbsp;"params": { "param1": "val1" } <br> }</code></td>
       </tr>
       <tr>
           <td>ACTIVITY_EVENT</td>
