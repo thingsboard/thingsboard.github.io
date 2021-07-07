@@ -1,0 +1,984 @@
+{
+  "ruleChain": {
+    "additionalInfo": {
+      "description": ""
+    },
+    "name": "Alarms_Pulse_Sensor",
+    "firstRuleNodeId": null,
+    "root": false,
+    "debugMode": true,
+    "configuration": null
+  },
+  "metadata": {
+    "firstNodeIndex": 39,
+    "nodes": [
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 29,
+          "layoutY": 535
+        },
+        "type": "org.thingsboard.rule.engine.filter.TbJsFilterNode",
+        "name": "FRAUD_2_0",
+        "debugMode": true,
+        "configuration": {
+          "jsScript": "return msg.FRAUD_2 === 0;"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 277,
+          "layoutY": 535
+        },
+        "type": "org.thingsboard.rule.engine.action.TbCreateAlarmNode",
+        "name": "FRAUD_2_0",
+        "debugMode": true,
+        "configuration": {
+          "alarmDetailsBuildJs": "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n}\nreturn details;",
+          "useMessageAlarmData": false,
+          "alarmType": "Line supervision disabled (input №2)",
+          "severity": "CRITICAL",
+          "propagate": true,
+          "relationTypes": []
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 29,
+          "layoutY": 612
+        },
+        "type": "org.thingsboard.rule.engine.filter.TbJsFilterNode",
+        "name": "FRAUD_2_2",
+        "debugMode": true,
+        "configuration": {
+          "jsScript": "return msg.FRAUD_2 === 2;"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 32,
+          "layoutY": 680
+        },
+        "type": "org.thingsboard.rule.engine.filter.TbJsFilterNode",
+        "name": "FRAUD_2_3",
+        "debugMode": true,
+        "configuration": {
+          "jsScript": "return msg.FRAUD_2 === 3;"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 33,
+          "layoutY": 751
+        },
+        "type": "org.thingsboard.rule.engine.filter.TbJsFilterNode",
+        "name": "FRAUD_2_4",
+        "debugMode": true,
+        "configuration": {
+          "jsScript": "return msg.FRAUD_2 === 4;"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 276,
+          "layoutY": 609
+        },
+        "type": "org.thingsboard.rule.engine.action.TbCreateAlarmNode",
+        "name": "FRAUD_2_2",
+        "debugMode": true,
+        "configuration": {
+          "alarmDetailsBuildJs": "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n}\nreturn details;",
+          "useMessageAlarmData": false,
+          "alarmType": "Meter line is open (input №2)",
+          "severity": "CRITICAL",
+          "propagate": true,
+          "relationTypes": []
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 281,
+          "layoutY": 684
+        },
+        "type": "org.thingsboard.rule.engine.action.TbCreateAlarmNode",
+        "name": "FRAUD_2_3",
+        "debugMode": true,
+        "configuration": {
+          "alarmDetailsBuildJs": "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n}\nreturn details;",
+          "useMessageAlarmData": false,
+          "alarmType": "Meter line is short-circuited (input №2)",
+          "severity": "CRITICAL",
+          "propagate": true,
+          "relationTypes": []
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 280,
+          "layoutY": 748
+        },
+        "type": "org.thingsboard.rule.engine.action.TbCreateAlarmNode",
+        "name": "FRAUD_2_4",
+        "debugMode": true,
+        "configuration": {
+          "alarmDetailsBuildJs": "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n}\nreturn details;",
+          "useMessageAlarmData": false,
+          "alarmType": "The meter line is closed through a resistor, out of range (input №2)",
+          "severity": "CRITICAL",
+          "propagate": true,
+          "relationTypes": []
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 919,
+          "layoutY": 1002
+        },
+        "type": "org.thingsboard.rule.engine.action.TbCreateAlarmNode",
+        "name": "FLG_CFG_DONE",
+        "debugMode": true,
+        "configuration": {
+          "alarmDetailsBuildJs": "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n}\nreturn details;",
+          "useMessageAlarmData": false,
+          "alarmType": "The configuration was changed successfully",
+          "severity": "WARNING",
+          "propagate": true,
+          "relationTypes": []
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 20,
+          "layoutY": 251
+        },
+        "type": "org.thingsboard.rule.engine.filter.TbJsFilterNode",
+        "name": "FRAUD_1_0",
+        "debugMode": true,
+        "configuration": {
+          "jsScript": "return msg.FRAUD_1 === 0;"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 268,
+          "layoutY": 251
+        },
+        "type": "org.thingsboard.rule.engine.action.TbCreateAlarmNode",
+        "name": "FRAUD_1_0",
+        "debugMode": true,
+        "configuration": {
+          "alarmDetailsBuildJs": "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n}\nreturn details;",
+          "useMessageAlarmData": false,
+          "alarmType": "Line supervision disabled (input №1)",
+          "severity": "CRITICAL",
+          "propagate": true,
+          "relationTypes": []
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 20,
+          "layoutY": 328
+        },
+        "type": "org.thingsboard.rule.engine.filter.TbJsFilterNode",
+        "name": "FRAUD_1_2",
+        "debugMode": true,
+        "configuration": {
+          "jsScript": "return msg.FRAUD_1 === 2;"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 23,
+          "layoutY": 396
+        },
+        "type": "org.thingsboard.rule.engine.filter.TbJsFilterNode",
+        "name": "FRAUD_1_3",
+        "debugMode": true,
+        "configuration": {
+          "jsScript": "return msg.FRAUD_1 === 3;"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 24,
+          "layoutY": 467
+        },
+        "type": "org.thingsboard.rule.engine.filter.TbJsFilterNode",
+        "name": "FRAUD_1_4",
+        "debugMode": true,
+        "configuration": {
+          "jsScript": "return msg.temperature === 4;"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 267,
+          "layoutY": 325
+        },
+        "type": "org.thingsboard.rule.engine.action.TbCreateAlarmNode",
+        "name": "FRAUD_1_2",
+        "debugMode": true,
+        "configuration": {
+          "alarmDetailsBuildJs": "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n}\nreturn details;",
+          "useMessageAlarmData": false,
+          "alarmType": "Meter line is open (input №1)",
+          "severity": "CRITICAL",
+          "propagate": true,
+          "relationTypes": []
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 272,
+          "layoutY": 400
+        },
+        "type": "org.thingsboard.rule.engine.action.TbCreateAlarmNode",
+        "name": "FRAUD_1_3",
+        "debugMode": true,
+        "configuration": {
+          "alarmDetailsBuildJs": "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n}\nreturn details;",
+          "useMessageAlarmData": false,
+          "alarmType": "Meter line is short-circuited (input №1)",
+          "severity": "CRITICAL",
+          "propagate": true,
+          "relationTypes": []
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 271,
+          "layoutY": 464
+        },
+        "type": "org.thingsboard.rule.engine.action.TbCreateAlarmNode",
+        "name": "FRAUD_1_4",
+        "debugMode": true,
+        "configuration": {
+          "alarmDetailsBuildJs": "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n}\nreturn details;",
+          "useMessageAlarmData": false,
+          "alarmType": "The meter line is closed through a resistor, out of range (input №1)",
+          "severity": "CRITICAL",
+          "propagate": true,
+          "relationTypes": []
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 531,
+          "layoutY": 150
+        },
+        "type": "org.thingsboard.rule.engine.filter.TbJsFilterNode",
+        "name": "FLG_LOW_BAT",
+        "debugMode": true,
+        "configuration": {
+          "jsScript": "return msg.FLG_LOW_BAT > 0;"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 923,
+          "layoutY": 249
+        },
+        "type": "org.thingsboard.rule.engine.action.TbCreateAlarmNode",
+        "name": "FLG_LOW_BAT",
+        "debugMode": true,
+        "configuration": {
+          "alarmDetailsBuildJs": "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n}\nreturn details;",
+          "useMessageAlarmData": false,
+          "alarmType": "Low battery",
+          "severity": "CRITICAL",
+          "propagate": true,
+          "relationTypes": []
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 921,
+          "layoutY": 296
+        },
+        "type": "org.thingsboard.rule.engine.action.TbClearAlarmNode",
+        "name": "FLG_LOW_BAT",
+        "debugMode": true,
+        "configuration": {
+          "alarmDetailsBuildJs": "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n}\nreturn details;",
+          "alarmType": "Low battery"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 530,
+          "layoutY": 88
+        },
+        "type": "org.thingsboard.rule.engine.filter.TbJsFilterNode",
+        "name": "FLG_ERR_PULSE_2",
+        "debugMode": true,
+        "configuration": {
+          "jsScript": "return msg.FLG_ERR_PULSE_2 > 0;"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 921,
+          "layoutY": 142
+        },
+        "type": "org.thingsboard.rule.engine.action.TbCreateAlarmNode",
+        "name": "FLG_ERR_PULSE_2",
+        "debugMode": false,
+        "configuration": {
+          "alarmDetailsBuildJs": "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n}\nreturn details;",
+          "useMessageAlarmData": false,
+          "alarmType": "Pulse input №2 malfunction detected",
+          "severity": "CRITICAL",
+          "propagate": true,
+          "relationTypes": []
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 921,
+          "layoutY": 189
+        },
+        "type": "org.thingsboard.rule.engine.action.TbClearAlarmNode",
+        "name": "FLG_ERR_PULSE_2",
+        "debugMode": true,
+        "configuration": {
+          "alarmDetailsBuildJs": "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n}\nreturn details;",
+          "alarmType": "Pulse input №2 malfunction detected"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 530,
+          "layoutY": 22
+        },
+        "type": "org.thingsboard.rule.engine.filter.TbJsFilterNode",
+        "name": "FLG_ERR_PULSE_1",
+        "debugMode": true,
+        "configuration": {
+          "jsScript": "return msg.FLG_ERR_PULSE_1 > 0;"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 923,
+          "layoutY": 11
+        },
+        "type": "org.thingsboard.rule.engine.action.TbCreateAlarmNode",
+        "name": "FLG_ERR_PULSE_1",
+        "debugMode": true,
+        "configuration": {
+          "alarmDetailsBuildJs": "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n}\nreturn details;",
+          "useMessageAlarmData": false,
+          "alarmType": "Pulse input №1 malfunction detected",
+          "severity": "CRITICAL",
+          "propagate": true,
+          "relationTypes": []
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 925,
+          "layoutY": 64
+        },
+        "type": "org.thingsboard.rule.engine.action.TbClearAlarmNode",
+        "name": "FLG_ERR_PULSE_1",
+        "debugMode": true,
+        "configuration": {
+          "alarmDetailsBuildJs": "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n}\nreturn details;",
+          "alarmType": "Pulse input №1 malfunction detected"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 527,
+          "layoutY": 226
+        },
+        "type": "org.thingsboard.rule.engine.filter.TbJsFilterNode",
+        "name": "FLG_MOTION_DETECT",
+        "debugMode": true,
+        "configuration": {
+          "jsScript": "return msg.FLG_MOTION_DETECT > 0;"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 923,
+          "layoutY": 357
+        },
+        "type": "org.thingsboard.rule.engine.action.TbCreateAlarmNode",
+        "name": "FLG_MOTION_DETECT",
+        "debugMode": true,
+        "configuration": {
+          "alarmDetailsBuildJs": "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n}\nreturn details;",
+          "useMessageAlarmData": false,
+          "alarmType": "Counter movement detected",
+          "severity": "CRITICAL",
+          "propagate": true,
+          "relationTypes": []
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 924,
+          "layoutY": 404
+        },
+        "type": "org.thingsboard.rule.engine.action.TbClearAlarmNode",
+        "name": "FLG_MOTION_DETECT",
+        "debugMode": true,
+        "configuration": {
+          "alarmDetailsBuildJs": "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n}\nreturn details;",
+          "alarmType": "Counter movement detected"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 920,
+          "layoutY": 462
+        },
+        "type": "org.thingsboard.rule.engine.action.TbCreateAlarmNode",
+        "name": "FLG_MAGNET_DETECT",
+        "debugMode": true,
+        "configuration": {
+          "alarmDetailsBuildJs": "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n}\nreturn details;",
+          "useMessageAlarmData": false,
+          "alarmType": "Magnetic field exposure detected",
+          "severity": "CRITICAL",
+          "propagate": true,
+          "relationTypes": []
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 921,
+          "layoutY": 510
+        },
+        "type": "org.thingsboard.rule.engine.action.TbClearAlarmNode",
+        "name": "FLG_MAGNET_DETECT",
+        "debugMode": true,
+        "configuration": {
+          "alarmDetailsBuildJs": "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n}\nreturn details;",
+          "alarmType": "Magnetic field exposure detected"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 529,
+          "layoutY": 301
+        },
+        "type": "org.thingsboard.rule.engine.filter.TbJsFilterNode",
+        "name": "FLG_MAGNET_DETECT",
+        "debugMode": true,
+        "configuration": {
+          "jsScript": "return msg.FLG_MAGNET_DETECT > 0;"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 527,
+          "layoutY": 369
+        },
+        "type": "org.thingsboard.rule.engine.filter.TbJsFilterNode",
+        "name": "FLG_TAMPER_DETECT",
+        "debugMode": true,
+        "configuration": {
+          "jsScript": "return msg.FLG_TAMPER_DETECT > 0;"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 922,
+          "layoutY": 573
+        },
+        "type": "org.thingsboard.rule.engine.action.TbCreateAlarmNode",
+        "name": "FLG_TAMPER_DETECT",
+        "debugMode": true,
+        "configuration": {
+          "alarmDetailsBuildJs": "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n}\nreturn details;",
+          "useMessageAlarmData": false,
+          "alarmType": "The case was opened",
+          "severity": "CRITICAL",
+          "propagate": true,
+          "relationTypes": []
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 922,
+          "layoutY": 620
+        },
+        "type": "org.thingsboard.rule.engine.action.TbClearAlarmNode",
+        "name": "FLG_TAMPER_DETECT",
+        "debugMode": true,
+        "configuration": {
+          "alarmDetailsBuildJs": "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n}\nreturn details;",
+          "alarmType": "The case was opened"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 921,
+          "layoutY": 1053
+        },
+        "type": "org.thingsboard.rule.engine.action.TbClearAlarmNode",
+        "name": "FLG_CFG_DONE",
+        "debugMode": true,
+        "configuration": {
+          "alarmDetailsBuildJs": "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n}\nreturn details;",
+          "alarmType": "The configuration was changed successfully"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 919,
+          "layoutY": 833
+        },
+        "type": "org.thingsboard.rule.engine.action.TbClearAlarmNode",
+        "name": "FLG_POWER_BAT",
+        "debugMode": true,
+        "configuration": {
+          "alarmDetailsBuildJs": "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n}\nreturn details;",
+          "alarmType": "Powered by internal battery"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 920,
+          "layoutY": 725
+        },
+        "type": "org.thingsboard.rule.engine.action.TbClearAlarmNode",
+        "name": "FLG_POWER_ON",
+        "debugMode": true,
+        "configuration": {
+          "alarmDetailsBuildJs": "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n}\nreturn details;",
+          "alarmType": "The meter was turned on after a power failure (disconnection)"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 917,
+          "layoutY": 939
+        },
+        "type": "org.thingsboard.rule.engine.action.TbClearAlarmNode",
+        "name": "FLG_ERR_TIME",
+        "debugMode": true,
+        "configuration": {
+          "alarmDetailsBuildJs": "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n}\nreturn details;",
+          "alarmType": "The built-in clock is reset, the time counts down from 0"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 271,
+          "layoutY": 153
+        },
+        "type": "org.thingsboard.rule.engine.metadata.TbGetTelemetryNode",
+        "name": "Alarms Pulse",
+        "debugMode": true,
+        "configuration": {
+          "latestTsKeyNames": [
+            "FLG_POWER_ON",
+            "FLG_POWER_BAT",
+            "FLG_ERR_TIME",
+            "FLG_CFG_DONE",
+            "FLG_ERR_PULSE_1",
+            "FLG_ERR_PULSE_2",
+            "FLG_LOW_BAT",
+            "FLG_MOTION_DETECT",
+            "FLG_MAGNET_DETECT",
+            "FLG_TAMPER_DETECT",
+            "FRAUD_1",
+            "FRAUD_2"
+          ],
+          "fetchMode": "FIRST",
+          "orderBy": "ASC",
+          "limit": 1000,
+          "useMetadataIntervalPatterns": false,
+          "startInterval": 2,
+          "startIntervalTimeUnit": "MINUTES",
+          "endInterval": 1,
+          "endIntervalTimeUnit": "MINUTES",
+          "startIntervalPattern": "",
+          "endIntervalPattern": ""
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 532,
+          "layoutY": 437
+        },
+        "type": "org.thingsboard.rule.engine.filter.TbJsFilterNode",
+        "name": "FLG_POWER_ON",
+        "debugMode": true,
+        "configuration": {
+          "jsScript": "return msg.FLG_POWER_ON > 0;"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 920,
+          "layoutY": 677
+        },
+        "type": "org.thingsboard.rule.engine.action.TbCreateAlarmNode",
+        "name": "FLG_POWER_ON",
+        "debugMode": true,
+        "configuration": {
+          "alarmDetailsBuildJs": "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n}\nreturn details;",
+          "useMessageAlarmData": false,
+          "alarmType": "The meter was turned on after a power failure (disconnection)",
+          "severity": "WARNING",
+          "propagate": true,
+          "relationTypes": []
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 531,
+          "layoutY": 515
+        },
+        "type": "org.thingsboard.rule.engine.filter.TbJsFilterNode",
+        "name": "FLG_POWER_BAT",
+        "debugMode": true,
+        "configuration": {
+          "jsScript": "return msg.FLG_POWER_BAT > 0;"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 920,
+          "layoutY": 783
+        },
+        "type": "org.thingsboard.rule.engine.action.TbCreateAlarmNode",
+        "name": "FLG_POWER_BAT",
+        "debugMode": true,
+        "configuration": {
+          "alarmDetailsBuildJs": "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n}\nreturn details;",
+          "useMessageAlarmData": false,
+          "alarmType": "Powered by internal battery",
+          "severity": "WARNING",
+          "propagate": true,
+          "relationTypes": []
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 538,
+          "layoutY": 599
+        },
+        "type": "org.thingsboard.rule.engine.filter.TbJsFilterNode",
+        "name": "FLG_ERR_TIME",
+        "debugMode": true,
+        "configuration": {
+          "jsScript": "return msg.FLG_ERR_TIME > 0;"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 917,
+          "layoutY": 893
+        },
+        "type": "org.thingsboard.rule.engine.action.TbCreateAlarmNode",
+        "name": "FLG_ERR_TIME",
+        "debugMode": true,
+        "configuration": {
+          "alarmDetailsBuildJs": "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n}\nreturn details;",
+          "useMessageAlarmData": false,
+          "alarmType": "The built-in clock is reset, the time counts down from 0",
+          "severity": "CRITICAL",
+          "propagate": true,
+          "relationTypes": []
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 540,
+          "layoutY": 673
+        },
+        "type": "org.thingsboard.rule.engine.filter.TbJsFilterNode",
+        "name": "FLG_CFG_DONE",
+        "debugMode": true,
+        "configuration": {
+          "jsScript": "return msg.FLG_CFG_DONE > 0;"
+        }
+      }
+    ],
+    "connections": [
+      {
+        "fromIndex": 0,
+        "toIndex": 1,
+        "type": "True"
+      },
+      {
+        "fromIndex": 0,
+        "toIndex": 2,
+        "type": "False"
+      },
+      {
+        "fromIndex": 2,
+        "toIndex": 3,
+        "type": "False"
+      },
+      {
+        "fromIndex": 2,
+        "toIndex": 5,
+        "type": "True"
+      },
+      {
+        "fromIndex": 3,
+        "toIndex": 4,
+        "type": "False"
+      },
+      {
+        "fromIndex": 3,
+        "toIndex": 6,
+        "type": "True"
+      },
+      {
+        "fromIndex": 4,
+        "toIndex": 7,
+        "type": "True"
+      },
+      {
+        "fromIndex": 9,
+        "toIndex": 10,
+        "type": "True"
+      },
+      {
+        "fromIndex": 9,
+        "toIndex": 11,
+        "type": "False"
+      },
+      {
+        "fromIndex": 11,
+        "toIndex": 12,
+        "type": "False"
+      },
+      {
+        "fromIndex": 11,
+        "toIndex": 14,
+        "type": "True"
+      },
+      {
+        "fromIndex": 12,
+        "toIndex": 13,
+        "type": "False"
+      },
+      {
+        "fromIndex": 12,
+        "toIndex": 15,
+        "type": "True"
+      },
+      {
+        "fromIndex": 13,
+        "toIndex": 16,
+        "type": "True"
+      },
+      {
+        "fromIndex": 17,
+        "toIndex": 18,
+        "type": "True"
+      },
+      {
+        "fromIndex": 17,
+        "toIndex": 19,
+        "type": "False"
+      },
+      {
+        "fromIndex": 20,
+        "toIndex": 21,
+        "type": "True"
+      },
+      {
+        "fromIndex": 20,
+        "toIndex": 22,
+        "type": "False"
+      },
+      {
+        "fromIndex": 23,
+        "toIndex": 24,
+        "type": "True"
+      },
+      {
+        "fromIndex": 23,
+        "toIndex": 25,
+        "type": "False"
+      },
+      {
+        "fromIndex": 26,
+        "toIndex": 27,
+        "type": "True"
+      },
+      {
+        "fromIndex": 26,
+        "toIndex": 28,
+        "type": "False"
+      },
+      {
+        "fromIndex": 31,
+        "toIndex": 29,
+        "type": "True"
+      },
+      {
+        "fromIndex": 31,
+        "toIndex": 30,
+        "type": "False"
+      },
+      {
+        "fromIndex": 32,
+        "toIndex": 33,
+        "type": "True"
+      },
+      {
+        "fromIndex": 32,
+        "toIndex": 34,
+        "type": "False"
+      },
+      {
+        "fromIndex": 39,
+        "toIndex": 40,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 39,
+        "toIndex": 42,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 39,
+        "toIndex": 44,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 39,
+        "toIndex": 46,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 39,
+        "toIndex": 32,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 39,
+        "toIndex": 31,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 39,
+        "toIndex": 26,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 39,
+        "toIndex": 17,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 39,
+        "toIndex": 20,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 39,
+        "toIndex": 23,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 39,
+        "toIndex": 9,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 39,
+        "toIndex": 0,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 40,
+        "toIndex": 41,
+        "type": "True"
+      },
+      {
+        "fromIndex": 40,
+        "toIndex": 37,
+        "type": "False"
+      },
+      {
+        "fromIndex": 42,
+        "toIndex": 43,
+        "type": "True"
+      },
+      {
+        "fromIndex": 42,
+        "toIndex": 36,
+        "type": "False"
+      },
+      {
+        "fromIndex": 44,
+        "toIndex": 45,
+        "type": "True"
+      },
+      {
+        "fromIndex": 44,
+        "toIndex": 38,
+        "type": "False"
+      },
+      {
+        "fromIndex": 46,
+        "toIndex": 8,
+        "type": "True"
+      },
+      {
+        "fromIndex": 46,
+        "toIndex": 35,
+        "type": "False"
+      }
+    ],
+    "ruleChainConnections": null
+  }
+}
