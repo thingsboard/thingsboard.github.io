@@ -1,64 +1,41 @@
 ---
 layout: common
 title: Industries
-description: 
-
+description:
+notitle: "true"
 ---
 
-<div class="cards">
-    <a href="/industries/smart-energy/" class="accent card">
-        <div class="card-title">
-            <span class="title-text">Smart Energy</span>
-        </div>
-        <div class="card-img smart-energy-bg"></div>
-        <div class="card-description">
-            Learn more
-        </div>
+<h1 class="mainTitle industries">Industries</h1>
+
+<div class="industries-cards">
+    <a href="/industries/smart-energy/" class="card">
+        <img src="/images/se-s-icon.svg">
+        <h5 class="title">Smart Energy</h5>
+        <p></p>
     </a>
-    <a href="/industries/agriculture/" class="accent card">
-        <div class="card-title">
-            <span class="title-text">Agriculture</span>
-        </div>
-        <div class="card-img agriculture-bg"></div>
-        <div class="card-description">  
-            Learn more
-        </div>        
+    <a href="/industries/agriculture/" class="card">
+        <img src="/images/agr-s-icon.svg">
+        <h5 class="title">Agriculture</h5>
+        <p></p>
     </a>
-    <a href="/industries/smart-buildings/" class="accent card">            
-        <div class="card-title">
-            <span class="title-text">Smart Buildings</span>
-        </div>
-        <div class="card-img smart-building-bg"></div>
-        <div class="card-description">
-            Learn more
-        </div>        
+    <a href="/industries/smart-buildings/" class="card">
+        <img src="/images/sb-s-icon.svg">
+        <h5 class="title">Smart Buildings</h5>
+        <p></p>
     </a>
-    <a href="/industries/smart-city/" class="accent card">            
-        <div class="card-title">
-            <span class="title-text">Smart City</span>
-        </div>
-        <div class="card-img smart-city-bg"></div>
-        <div class="card-description">
-            Learn more
-        </div>        
+    <a href="/industries/smart-city/" class="card">
+        <img src="/images/sc-s-icon.svg">
+        <h5 class="title">Smart City</h5>
+        <p></p>
     </a>
-    <a href="/industries/telecom/" class="accent card">            
-        <div class="card-title">
-            <span class="title-text">Telecommunications</span>
-        </div>
-        <div class="card-img telecom-bg"></div>
-        <div class="card-description">
-            Learn more
-        </div>        
+    <a href="/industries/telecom/" class="card">
+        <img src="/images/tel-s-icon.svg">
+        <h5 class="title">Telecom</h5>
+        <p></p>
     </a>
-    <a href="/industries/industry40/" class="accent card">
-        <div class="card-title">
-            <span class="title-text">Industry 4.0</span>
-        </div>
-        <div class="card-img manufacture-bg"></div>
-        <div class="card-description">
-            Learn more
-        </div>
+    <a href="/industries/industry40/" class="card">
+        <img src="/images/in-s-icon.svg">
+        <h5 class="title">Industry 4.0</h5>
+        <p></p>
     </a>
 </div>
-

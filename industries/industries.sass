@@ -126,6 +126,42 @@
 						.person-position
 							color: #75767C
 
+		.industries-cards
+			display: flex
+			flex-wrap: wrap
+			margin-bottom: 108px
+			.card
+				color: #212529
+				margin-bottom: 12px
+				padding: 31px
+				border: 1px solid #ebebeb
+				position: relative
+				cursor: pointer
+				margin-right: 12px
+				width: calc(33.33% - 8px)
+				text-align: center
+				align-items: center
+				text-decoration: none
+				display: flex
+				flex-direction: column
+				height: auto
+				img
+					width: 34px
+				.title
+					font-weight: 600
+					margin: 8px 0 14px
+				&:nth-child(3n+0)
+					margin-right: 0
+				&:hover
+					border: 4px solid #2a7dec
+					padding: 28px
+					.title
+						color: #2a7dec
+			@media screen and (max-width: 768px)
+				flex-direction: column
+				.card
+					width: 100%
+
 @media screen and (min-width: 1025px)
 	#docsContent
 		#content
