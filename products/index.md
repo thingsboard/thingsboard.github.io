@@ -1,55 +1,41 @@
 ---
-layout: docwithnav
+layout: common
 title: Products
 description: ThingsBoard Products
 notitle: "true"
 ---
 
-<div class="products-title">Products</div>
-<div class="cards">
-    <a href="/products/paas/" class="card thingsboard-pe">
-        <div class="card-title">
-            <span class="title-text">ThingsBoard<br/>Cloud</span>
-        </div>
-        <div class="card-img product cloud-bg"></div>
-        <div class="card-description">
-            Learn more
-        </div>
+<h1 class="mainTitle products">Products</h1>
+
+<div class="products-cards">
+    <a href="/products/paas/" class="card cloud">
+        <img src="/images/thingsboard-c-icon.svg">
+        <h5 class="title">ThingsBoard Cloud</h5>
+        <p>Platform as a service</p>
     </a>
-    <a href="/docs/getting-started-guides/what-is-thingsboard/" class="card thingsboard-ce">
-        <div class="card-title">
-            <span class="title-text">ThingsBoard<br/>Community Edition</span>
-        </div>
-        <div class="card-img product community-edition-bg"></div>
-        <div class="card-description">
-            Learn more
-        </div>
+    <a href="/products/thingsboard-pe/" class="card prof">
+        <img src="/images/thingsboard-p-icon.svg">
+        <h5 class="title">ThingsBoard Professional Edition</h5>
+        <p>Advanced IoT platform</p>
     </a>
-    <a href="/products/thingsboard-pe/" class="card thingsboard-pe">
-        <div class="card-title">
-            <span class="title-text">ThingsBoard<br/>Professional Edition</span>
-        </div>
-        <div class="card-img product professional-edition-bg"></div>
-        <div class="card-description">  
-            Learn more
-        </div>
+    <a href="/docs/getting-started-guides/what-is-thingsboard/" class="card com">
+        <img src="/images/thingsboard-cm-icon.svg">
+        <h5 class="title">ThingsBoard Community Edition</h5>
+        <p>Open source platform</p>
     </a>
-    <a href="/docs/iot-gateway/what-is-iot-gateway/" class="card thingsboard-gw">
-        <div class="card-title">
-            <span class="title-text">ThingsBoard<br/>IoT Gateway</span>
-        </div>
-        <div class="card-img product gateway-bg"></div>
-        <div class="card-description">
-            Learn more
-        </div>
+    <a href="/docs/iot-gateway/what-is-iot-gateway/" class="card gateway">
+        <img src="/images/gateway-icon.svg">
+        <h5 class="title">ThingsBoard IoT Gateway</h5>
+        <p>Connect legacy protocols</p>
+    </a>
+    <a href="/products/license-server/" class="card license">
+        <img src="/images/license-icon.svg">
+        <h5 class="title">ThingsBoard License Server</h5>
+        <p>Billing solution</p>
     </a>
     <a href="/products/trendz/" class="card trendz">
-        <div class="card-title">
-            <span class="title-text">Trendz<br/>Analytics Platform</span>
-        </div>
-        <div class="card-img product trendz-bg"></div>
-        <div class="card-description">  
-            Learn more
-        </div>
+        <img src="/images/trendz-icon.svg">
+        <h5 class="title">Trendz Analytics Platform</h5>
+        <p>Data analytics and Prediction</p>
     </a>
 </div>
