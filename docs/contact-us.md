@@ -63,7 +63,7 @@ notitle: "true"
 
 </script>
 <h1 class="contact-us-title">Contact Us</h1>
-<div id="background">
+<div class="background">
     <div class="main1"></div><div class="small1"></div><div class="small2"></div><div class="small3"></div><div class="small4"></div>
 </div>
 <form id="contact-form" method="post" class="contact-form" onsubmit="return validateContactForm(this)">
