@@ -8,7 +8,8 @@ We are going to check how many messages per second each instance can handle and 
 
 Considering test results and your project requirements you will be able to identify what type of the instance is the most suitable for your project.
 
-## Data flow and test tools
+
+# Data flow and test tools
 
 IoT devices connect to ThingsBoard server via MQTT or HTTP Device API and send sample test data (*single telemetry of long type*) to the platform. 
 ThingsBoard server processes MQTT or HTTP messages and stores them to Cassandra/PostgreSQL asynchronously. 
@@ -32,49 +33,38 @@ This telemetry value could be shown as well as general telemetry on the ThingsBo
 
 **NOTE:** If you have multiple ThingsBoard nodes in the cluster, additional Rule Chain Node will save statistics under different telemetry keys on tenant level, but Performance Test Tool in the result will aggregate these values into a single result.
 
-## How to repeat the tests
+# How to repeat the tests
 
 Please use documentation of the [Performance Test Project](https://github.com/thingsboard/performance-tests/) for more details.
 
-## Performance by AWS Instance Type
+# Notation
 
+1. t2 instances are used [burstable performance instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-credits-baseline-concepts.html) please read the official documentation. We recommend don't count on it. btw you can get more messages on the peak.
 
-| Instance Type | Instance details | Database Type | Device API | Number of devices | Delay between messages| Maximum number of messages |
-| --- | --- | --- | --- | --- | --- | --- |
-| [t2.micro](#t2micro) | 1 vCPUs for a 2h 24m burst, 1GB | PostgreSQL | MQTT | 500 | 1000 ms | **~450/sec** | 
-| [t2.medium](#t2medium)  | 2 vCPUs for a 4h 48m burst, 4GB | PostgreSQL | MQTT | 900 | 1000 ms | **~780/sec** |
-| [c5.large](#c5large)  | 2 vCPUs , 4GB | PostgreSQL | MQTT | 1100 | 1000 ms | **~1020/sec** |
-| t2.xlarge | 4 vCPUs for a 5h 24m burst, 16GB | PostgreSQL | MQTT |  1800 | 1000 ms | **~1700/sec** |
-| t2.xlarge | 4 vCPUs for a 5h 24m burst, 16GB | Cassandra | MQTT | 3000 | 1000 ms | **~3000/sec** |
-| [m5.xlarge](#m5xlarge)  | 4 vCPUs, 16GB, 150GB SSD mounted | Cassandra | MQTT | 3500 | 1000 ms | **~3500/sec** |
-| [m5.xlarge](#m5xlarge)  | 4 vCPUs, 16GB, 150GB SSD mounted | Cassandra | HTTP | 2000 | 1000 ms | **~950/sec** |
+2. To support ~20000 data points per seconds correct volume must be provisioned - with enough [IOPS](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-io-characteristics.html) limits. Please read [official documentation](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-optimized.html) for understand how it work. For the PostgreSQL database, 20000 data points per seconds are equal to ~750 IOPS. From time to time you can use [credit balance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-optimized.html) to get more data points.
 
-## t2.micro
+# Performance by AWS Instance Type
 
-**Performance Results**
+| Instance Type | Instance details | Database Type 	 | Queue Type  | Device API | Number of devices | Maximum number of data points |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| [t2.medium](#t2medium)  | 2 vCPUs, 4GB | PostgreSQL | In memory | MQTT | 10000  | **~3000/sec (15000/sec*)** |
+| [c5.large](#c5large)  | 2 vCPUs, 4GB | PostgreSQL | In memory | MQTT | 20000  | **~22500/sec** |
+| [c5.large](#c5large)  | 2 vCPUs, 4GB | PostgreSQL | Kafka | MQTT | 20000  | **~22500/sec** |
+| [m5.large](#m5large) | 4 vCPUs, 8GB | PostgreSQL | In Memory | MQTT |  20000  | **~23000/sec** |
+| [m5.large](#m5large) | 4 vCPUs, 8GB | Cassandra | In memory | MQTT | 20000  | **~10000/sec**|
+| [m5.xlarge](#m5xlarge)  | 4 vCPUs, 16GB | PostgreSQL | Kafka | MQTT | 25000  | **~30000/sec** |
 
-| Instance Type | Instance details | Database Type | Device API | Number of devices | Delay between messages | Maximum number of messages |
-| --- | --- | --- | --- | --- | --- | --- |
-| t2.micro | 1 vCPUs for a 2h 24m burst, 1GB | PostgreSQL | MQTT | 500 | 1000 ms | **~450/sec** |
+# t2.medium
 
-Test run configuration (see [Performance Test Project](https://github.com/thingsboard/performance-tests/#running) for more details):
+In this test, we will show that Thingsboard consistently receives about 3000 data points per second on t2.medium. And also at its peak, it can process up to 15,000 data points using the [AWS CPU Credit Balance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-credits-baseline-concepts.html). Please read the official documentation for understanding how it works.
 
-```bash
-...
-DEVICE_API=MQTT
-DEVICE_START_IDX=0
-DEVICE_END_IDX=500
+### Test Run #1 (stable)
 
-PUBLISH_COUNT=300
-PUBLISH_PAUSE=1000
-...
-```
+There is stable test. CPU <= 20%, this means it will not be used [AWS CPU Credit Balance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-credits-baseline-concepts.html).
 
-### Test Run #1
-
-| Instance Type | Instance details | Database Type | Device API | Number of devices | Delay between messages in millis | Count of test run hours | 
-| --- | --- | --- | --- | --- | --- | --- |
-| t2.micro | 1 vCPUs for a 2h 24m burst, 1GB | PostgreSQL | MQTT | 50 | 1000 ms | 10 | 
+| Instance Type | Instance details | Database Type 	 | Queue Type  | Device API | Number of devices | Count of test run hours | Maximum number of data points |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| t2.medium | 2 vCPUs, 4GB | PostgreSQL | In memory | MQTT | 10000  | 12 | **~3000/sec** |
 
 **Test Configuration**
 
@@ -84,10 +74,10 @@ Test run configuration (see [Performance Test Project](https://github.com/things
 ...
 DEVICE_API=MQTT
 DEVICE_START_IDX=0
-DEVICE_END_IDX=50
+DEVICE_END_IDX=10000
 
-PUBLISH_COUNT=36000
-PUBLISH_PAUSE=1000
+MESSAGES_PER_SECOND=600
+DURATION_IN_SECONDS=43200
 ...
 ```
 
@@ -95,31 +85,30 @@ PUBLISH_PAUSE=1000
 
 | Property | Avg | Min | Max |
 | --- | --- | --- | --- |
-| CPU Utilization (%) | 18 | 8.9 | 55 |
-| Memory Utilization (%) | 96 | 81 | 97.36 |
-| Used Physical Memory (MB) | 940 | 797 | 958 |
+| CPU Utilization (%) | 10 | 0 | 58 |
+| Memory Utilization (%) | 36 | 33.07 | 38.26 |
 
 CPU Utilization (%)
 
-![image](/images/reference/performance-aws-instances/t2-micro/postgresql-50msgs-cpu.png)
+![image](/images/reference/performance-aws-instances/t2-medium/postgres-stable-cpu.png)
 
 Memory Utilization (%)
 
-![image](/images/reference/performance-aws-instances/t2-micro/postgresql-50msgs-memory.png)
+![image](/images/reference/performance-aws-instances/t2-medium/postgres-stable-memory.png)
 
-Used Physical Memory (MB)
+**TB dashboard**
 
-![image](/images/reference/performance-aws-instances/t2-micro/postgresql-50msgs-memory-1.png)
+**~10.5m data points per hour**
 
-TB dashboard
+![image](/images/reference/performance-aws-instances/t2-medium/postgres-stable-tb.png)
 
-![image](/images/reference/performance-aws-instances/t2-micro/postgresql-50msgs-tb.png)
+### Test Run #2 (burstable)
 
-### Test Run #2
+There is burstable test. CPU => 20%, this means it will be used [AWS CPU Credit Balance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-credits-baseline-concepts.html).
 
-| Instance Type | Instance details | Database Type | Device API | Number of devices | Delay between messages in millis | Count of test run hours |
-| --- | --- | --- | --- | --- | --- | --- |
-| t2.micro | 1 vCPUs for a 2h 24m burst, 1GB | PostgreSQL | MQTT | 100 | 1000 ms | 10 | 
+| Instance Type | Instance details | Database Type 	 | Queue Type  | Device API | Number of devices | Count of test run hours | Maximum number of data points |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| t2.medium | 2 vCPUs, 4GB | PostgreSQL | In memory | MQTT | 10000  | 2 | **~15000/sec** | 
 
 **Test Configuration**
 
@@ -129,139 +118,36 @@ Test run configuration (see [Performance Test Project](https://github.com/things
 ...
 DEVICE_API=MQTT
 DEVICE_START_IDX=0
-DEVICE_END_IDX=100
+DEVICE_END_IDX=10000
 
-PUBLISH_COUNT=36000
-PUBLISH_PAUSE=1000
+MESSAGES_PER_SECOND=3000
+DURATION_IN_SECONDS=12000
 ...
 ```
 
 **CPU/Memory Load**
 
-| Property | Avg | Min | Max |
-| --- | --- | --- | --- |
-| CPU Utilization (%) | 32 | 8.1 | 100 |
-| Memory Utilization (%) | 97 | 81.3 | 98.37 | 
-| Used Physical Memory (MB) | 952 | 800 | 968 |
+t2 instances have [AWS CPU Credit Balance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-credits-baseline-concepts.html) and you can use more request per second time by time
 
-CPU Utilization (%)
-
-![image](/images/reference/performance-aws-instances/t2-micro/postgresql-100msgs-cpu.png)
-
-Memory Utilization (%)
-
-![image](/images/reference/performance-aws-instances/t2-micro/postgresql-100msgs-memory.png)
-
-Used Physical Memory (MB)
-
-![image](/images/reference/performance-aws-instances/t2-micro/postgresql-100msgs-memory-1.png)
-
-TB dashboard
-
-![image](/images/reference/performance-aws-instances/t2-micro/postgresql-100msgs-tb.png)
-
-## t2.medium
-
-**Performance Results**
-
-| Instance Type | Instance details | Database Type | Device API | Number of devices | Delay between messages in millis | Maximum number of messages per second |
-| --- | --- | --- | --- | --- | --- | --- |
-| t2.medium | 2 vCPUs for a 4h 48m burst, 4GB | PostgreSQL | MQTT | 900 | 1000 ms | **~780/sec** |
-
-Test run configuration (see [Performance Test Project](https://github.com/thingsboard/performance-tests/#running) for more details):
-
-```bash
-...
-DEVICE_API=MQTT
-DEVICE_START_IDX=0
-DEVICE_END_IDX=900
-
-PUBLISH_COUNT=300
-PUBLISH_PAUSE=1000
-...
-```
-
-### Test Run #1
-
-| Instance Type | Instance details | Database Type | Device API | Number of devices | Delay between messages in millis | Count of test run hours | 
-| --- | --- | --- | --- | --- | --- | --- |
-| t2.medium | 2 vCPUs for a 4h 48m burst, 4GB | PostgreSQL | MQTT | 150 | 1000 ms | 10 | 
-
-**Test Configuration**
-
-Test run configuration (see [Performance Test Project](https://github.com/thingsboard/performance-tests/#running) for more details):
-
-```bash
-...
-DEVICE_API=MQTT
-DEVICE_START_IDX=0
-DEVICE_END_IDX=150
-
-PUBLISH_COUNT=36000
-PUBLISH_PAUSE=1000
-...
-```
-
-**CPU/Memory Load**
-
-| Property | Avg | Min | Max |
-| --- | --- | --- | --- |
-| CPU Utilization (%) | 19 | 1.5 | 25 |
-| Memory Utilization (%) | 25 | 3.54 | 28.3 |
-| Used Physical Memory (MB) | 1014 | 551 | 1116 |
-
-CPU Utilization (%)
-
-![image](/images/reference/performance-aws-instances/t2-medium/postgresql-150msgs-cpu.png)
-
-Memory Utilization (%)
-
-![image](/images/reference/performance-aws-instances/t2-medium/postgresql-150msgs-memory.png)
-
-Used Physical Memory (MB)
-
-![image](/images/reference/performance-aws-instances/t2-medium/postgresql-150msgs-memory-1.png)
-
-TB dashboard
-
-![image](/images/reference/performance-aws-instances/t2-medium/postgresql-150msgs-tb.png)
-
-### Test Run #2
-
-| Instance Type | Instance details | Database Type | Device API | Number of devices | Delay between messages in millis | Count of test run hours | 
-| --- | --- | --- | --- | --- | --- | --- |
-| t2.medium | 2 vCPUs for a 4h 48m burst, 4GB | PostgreSQL | MQTT | 200 | 1000 ms | 10 | 
-
-**Test Configuration**
-
-Test run configuration (see [Performance Test Project](https://github.com/thingsboard/performance-tests/#running) for more details):
-
-```bash
-...
-DEVICE_API=MQTT
-DEVICE_START_IDX=0
-DEVICE_END_IDX=200
-
-PUBLISH_COUNT=36000
-PUBLISH_PAUSE=1000
-...
-```
-
-**CPU/Memory Load**
-
-Result shows that **t2.medium** AWS Instance Type is not able to handle more than 200 requests per second, because of the [AWS CPU Credit Balance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-credits-baseline-concepts.html).
-
-Here is the Credit Balance chart line for the **t2.medium** during publishing 200 messages per second.
+Here is the Credit Balance chart line for the **t2.medium** during publishing 15000 data points per second.
 
 The line goes down and after some period instance will be dramatically decreased by CPU (20% of total).
 
-![image](/images/reference/performance-aws-instances/t2-medium/postgresql-200msgs-failing-cpu-credit.png)
+![image](/images/reference/performance-aws-instances/t2-medium/postgres-failed-cpu-credit.png)
 
-### Test Run #3
+**TB dashboard**
 
-| Instance Type | Instance details | Database Type | Device API | Number of devices | Delay between messages in millis | Count of test run hours | 
+**~54m data points per hour**
+
+![image](/images/reference/performance-aws-instances/t2-medium/postgres-burst-tb.png)
+
+# c5.large
+
+### Test Run #1 (postgres)
+
+| Instance Type | Instance details | Database Type 	 | Queue Type  | Device API | Number of devices | Count of test run hours | Maximum number of data points |
 | --- | --- | --- | --- | --- | --- | --- |
-| t2.medium | 2 vCPUs for a 4h 48m burst, 4GB | PostgreSQL | MQTT | 300 | 1000 ms | 10 | 
+| c5.large | 2 vCPUs, 4GB | PostgreSQL | In memory | MQTT |  20000  | 12 | **~22500/sec** |
 
 **Test Configuration**
 
@@ -271,118 +157,10 @@ Test run configuration (see [Performance Test Project](https://github.com/things
 ...
 DEVICE_API=MQTT
 DEVICE_START_IDX=0
-DEVICE_END_IDX=300
+DEVICE_END_IDX=20000
 
-PUBLISH_COUNT=36000
-PUBLISH_PAUSE=1000
-...
-```
-
-**CPU/Memory Load**
-
-The same results as previous run, but CPU Credit Balance chart line goes down more faster.
-
-![image](/images/reference/performance-aws-instances/t2-medium/postgresql-300msgs-failed-cpu-credit.png)
-
-## c5.large
-
-**Performance Results**
-
-| Instance Type | Instance details | Database Type | Device API | Number of devices | Delay between messages in millis | Maximum number of messages per second |
-| --- | --- | --- | --- | --- | --- | --- |
-| c5.large | 2 vCPUs , 4GB | PostgreSQL | MQTT | 1100 | 1000 ms | **~1020/sec** |
-
-Test run configuration (see [Performance Test Project](https://github.com/thingsboard/performance-tests/#running) for more details):
-
-```bash
-...
-DEVICE_API=MQTT
-DEVICE_START_IDX=0
-DEVICE_END_IDX=1100
-
-PUBLISH_COUNT=300
-PUBLISH_PAUSE=1000
-...
-```
-
-### Test Run #1
-
-| Instance Type | Instance details | Database Type | Device API | Number of devices | Delay between messages in millis | Count of test run hours | 
-| --- | --- | --- | --- | --- | --- | --- |
-| c5.large | 2 vCPUs, 4GB | PostgreSQL | MQTT |  500 | 1000 ms | 10 |
-
-**Test Configuration**
-
-Test run configuration (see [Performance Test Project](https://github.com/thingsboard/performance-tests/#running) for more details):
-
-
-```bash
-...
-DEVICE_API=MQTT
-DEVICE_START_IDX=0
-DEVICE_END_IDX=500
-
-PUBLISH_COUNT=36000
-PUBLISH_PAUSE=1000
-...
-```
-
-**CPU/Memory Load**
-
-**c5.large** AWS instance does not have CPU burst that why CPU Credit Balance is not applicable to verify in this case.
-
-But to be able to support 500 requests per seconds correct volume must be provisioned - with enough [IOPS](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-io-characteristics.html) limits.
-
-For the PostgreSQL database, 500 requests per seconds are equal to ~500 IOPS.
-
-So AWS volume for this test must be provisioned with at least 600 IOPS.
-
-| Property | Avg | Min | Max |
-| --- | --- | --- | --- |
-| CPU Utilization (%) | 48 | 3 | 57.4 |
-| Memory Utilization (%) | 34 | 32.79 | 37.76 |
-| Used Physical Memory (MB) | 1254 | 1215 | 1399 |
-
-CPU Utilization (%)
-
-![image](/images/reference/performance-aws-instances/c5-large/postgresql-500msgs-cpu.png)
-
-Memory Utilization (%)
-
-![image](/images/reference/performance-aws-instances/c5-large/postgresql-500msgs-memory.png)
-
-Used Physical Memory (MB)
-
-![image](/images/reference/performance-aws-instances/c5-large/postgresql-500msgs-memory-1.png)
-
-TB dashboard
-
-![image](/images/reference/performance-aws-instances/c5-large/postgresql-500msgs-tb.png)
-
-AWS write IOPS for the volume
-
-![image](/images/reference/performance-aws-instances/c5-large/postgresql-500msgs-iops.png)
-
-![image](/images/reference/performance-aws-instances/c5-large/postgresql-500msgs-iops-1.png)
-
-### Test Run #2
-
-| Instance Type | Instance details | Database Type | Device API | Number of devices | Delay between messages in millis | Count of test run hours | 
-| --- | --- | --- | --- | --- | --- | --- |
-| c5.large | 2 vCPUs, 4GB | PostgreSQL | MQTT |  700 | 1000 ms | 10 |
-
-**Test Configuration**
-
-Test run configuration (see [Performance Test Project](https://github.com/thingsboard/performance-tests/#running) for more details):
-
-```bash
-...
-DEVICE_API=MQTT
-DEVICE_START_IDX=0
-DEVICE_END_IDX=700
-
-PUBLISH_COUNT=36000
-PUBLISH_PAUSE=1000
+MESSAGES_PER_SECOND=4500
+DURATION_IN_SECONDS=43200
 ...
 ```
  
@@ -390,75 +168,30 @@ PUBLISH_PAUSE=1000
  
 | Property | Avg | Min | Max |
 | --- | --- | --- | --- |
-| CPU Utilization (%) | 70 | 66.8 | 76.1 |
+| CPU Utilization (%) | 58 | 0 | 99.8 |
 | Memory Utilization (%) | 33 | 33.39 | 33.85 |
-| Used Physical Memory (MB) | 1241 | 1237 | 1254 |
 
 CPU Utilization (%)
 
-![image](/images/reference/performance-aws-instances/c5-large/postgresql-700msgs-cpu.png)
+![image](/images/reference/performance-aws-instances/c5-large/postgres-cpu.png)
 
 Memory Utilization (%)
 
-![image](/images/reference/performance-aws-instances/c5-large/postgresql-700msgs-memory.png)
+![image](/images/reference/performance-aws-instances/c5-large/postgres-memory.png)
 
-Used Physical Memory (MB)
+**TB dashboard**
 
-![image](/images/reference/performance-aws-instances/c5-large/postgresql-700msgs-memory-1.png)
+**~80m data points per hour**
 
-TB dashboard
+![image](/images/reference/performance-aws-instances/c5-large/postgres-tb.png)
 
-![image](/images/reference/performance-aws-instances/c5-large/postgresql-700msgs-tb.png)
+### Test Run #2 (kafka)
 
-AWS write IOPS for the volume
+**We don't recommend use kafka on c5.large instance (because 4gb RAM).**
 
-![image](/images/reference/performance-aws-instances/c5-large/postgresql-700msgs-iops.png)
-
-![image](/images/reference/performance-aws-instances/c5-large/postgresql-700msgs-iops-1.png)
-
-## m5.xlarge
-
-**Performance Results**
-
-| Instance Type | Instance details | Database Type | Device API | Number of devices | Delay between messages in millis | Maximum number of messages per second |
+| Instance Type | Instance details | Database Type 	 | Queue Type  | Device API | Number of devices | Count of test run hours | Maximum number of data points |
 | --- | --- | --- | --- | --- | --- | --- |
-| m5.xlarge | 4 vCPUs, 16GB, 150GB SSD mounted | Cassandra | MQTT | 3500 | 1000 ms | **~3500/sec** |
-
-Test run configuration (see [Performance Test Project](https://github.com/thingsboard/performance-tests/#running) for more details):
-
-```bash
-...
-DEVICE_API=MQTT
-DEVICE_START_IDX=0
-DEVICE_END_IDX=3500
-
-PUBLISH_COUNT=300
-PUBLISH_PAUSE=1000
-...
-```
-
-| Instance Type | Instance details | Database Type | Device API | Number of devices | Delay between messages in millis | Maximum number of messages per second |
-| --- | --- | --- | --- | --- | --- | --- |
-| m5.xlarge |  4 vCPUs, 16GB, 150GB SSD mounted | Cassandra | HTTP | 2000 | 1000 ms | **~950/sec** |
-
-Test run configuration:
-
-```bash
-...
-DEVICE_API=HTTP
-DEVICE_START_IDX=0
-DEVICE_END_IDX=2000
-
-PUBLISH_COUNT=300
-PUBLISH_PAUSE=1000
-...
-```
-
-### Test Run #1
-
-| Instance Type | Instance details | Database Type | Device API | Number of devices | Delay between messages in millis | Count of test run hours | 
-| --- | --- | --- | --- | --- | --- | --- |
-| m5.xlarge | 4 vCPUs, 16GB | Cassandra | MQTT | 2100 | 1000 ms | 10 |
+| c5.large | 2 vCPUs, 4GB | PostgreSQL | Kafka | MQTT |  20000  | 12 | **~22500/sec** |
 
 **Test Configuration**
 
@@ -468,10 +201,140 @@ Test run configuration (see [Performance Test Project](https://github.com/things
 ...
 DEVICE_API=MQTT
 DEVICE_START_IDX=0
-DEVICE_END_IDX=2100
+DEVICE_END_IDX=20000
 
-PUBLISH_COUNT=36000
-PUBLISH_PAUSE=1000
+MESSAGES_PER_SECOND=4500
+DURATION_IN_SECONDS=43200
+...
+```
+
+**CPU/Memory Load**
+
+| Property | Avg | Min | Max |
+| --- | --- | --- | --- |
+| CPU Utilization (%) | 40 | 1.3 | 99.7 |
+| Memory Utilization (%) | 87 | 44.66 | 92.56 |
+
+CPU Utilization (%)
+
+![image](/images/reference/performance-aws-instances/c5-large/postgres-kafka-cpu.png)
+
+Memory Utilization (%)
+
+![image](/images/reference/performance-aws-instances/c5-large/postgres-kafka-memory.png)
+
+**TB dashboard**
+
+**~80m data points per hour**
+
+![image](/images/reference/performance-aws-instances/c5-large/postgres-kafka-tb.png)
+
+# m5.large
+
+### Test Run #1 (postgres)
+
+| Instance Type | Instance details | Database Type 	 | Queue Type  | Device API | Number of devices | Count of test run hours | Maximum number of data points |
+| --- | --- | --- | --- | --- | --- | --- |
+| m5.large | 2 vCPUs, 4GB | PostgreSQL | In memory | MQTT |  20000  | 6 | **~23000/sec** |
+
+**Test Configuration**
+
+Test run configuration (see [Performance Test Project](https://github.com/thingsboard/performance-tests/#running) for more details):
+
+```bash
+...
+DEVICE_API=MQTT
+DEVICE_START_IDX=0
+DEVICE_END_IDX=20000
+
+MESSAGES_PER_SECOND=4600
+DURATION_IN_SECONDS=21600
+...
+```
+
+**CPU/Memory Load**
+
+| Property | Avg | Min | Max |
+| --- | --- | --- | --- |
+| CPU Utilization (%) | 33 | 0 | 100 |
+| Memory Utilization (%) | 46 | 16.08 | 69.96 |
+
+CPU Utilization (%)
+
+![image](/images/reference/performance-aws-instances/m5-large/postgresql-cpu.png)
+
+Memory Utilization (%)
+
+![image](/images/reference/performance-aws-instances/m5-large/postgresql-memory.png)
+
+**TB dashboard**
+
+**~83m data points per hour**
+
+![image](/images/reference/performance-aws-instances/m5-large/postgresql-tb-dashboard.png)
+
+### Test Run #2 (cassandra)
+
+| Instance Type | Instance details | Database Type 	 | Queue Type  | Device API | Number of devices | Count of test run hours | Maximum number of data points |
+| --- | --- | --- | --- | --- | --- | --- |
+| c5.large | 2 vCPUs, 4GB | Cassandra | In memory | MQTT |  20000  | 6 | **~10000/sec** |
+
+**Test Configuration**
+
+Test run configuration (see [Performance Test Project](https://github.com/thingsboard/performance-tests/#running) for more details):
+
+```bash
+...
+DEVICE_API=MQTT
+DEVICE_START_IDX=0
+DEVICE_END_IDX=20000
+
+MESSAGES_PER_SECOND=2000
+DURATION_IN_SECONDS=43200
+...
+```
+
+**CPU/Memory Load**
+
+| Property | Avg | Min | Max |
+| --- | --- | --- | --- |
+| CPU Utilization (%) | 25 | 0.2 | 100 |
+| Memory Utilization (%) | 59 | 38.94 | 61.66 |
+
+CPU Utilization (%)
+
+![image](/images/reference/performance-aws-instances/m5-large/cassandra-cpu.png)
+
+Memory Utilization (%)
+
+![image](/images/reference/performance-aws-instances/m5-large/cassandra-memory.png)
+
+**TB dashboard**
+
+**~36m data points per hour**
+
+![image](/images/reference/performance-aws-instances/m5-large/cassandra-tb-dashboard.png)
+
+# m5.xlarge
+
+### Test Run #1 (kafka)
+
+| Instance Type | Instance details | Database Type 	 | Queue Type  | Device API | Number of devices | Count of test run hours | Maximum number of data points |
+| --- | --- | --- | --- | --- | --- | --- |
+| m5.xlarge | 4 vCPUs, 16GB | PostgreSQL | KAfka | MQTT | 25000  | 12 | **~30000/sec** |
+
+**Test Configuration**
+
+Test run configuration (see [Performance Test Project](https://github.com/thingsboard/performance-tests/#running) for more details):
+
+```bash
+...
+DEVICE_API=MQTT
+DEVICE_START_IDX=0
+DEVICE_END_IDX=25000
+
+MESSAGES_PER_SECOND=6000
+DURATION_IN_SECONDS=43200
 ...
 ```
 
@@ -479,22 +342,19 @@ PUBLISH_PAUSE=1000
 
 | Property | Avg | Min | Max |
 | --- | --- | --- | --- |
-| CPU Utilization (%) | 36 | 8.3 | 61.2 |
-| Memory Utilization (%) | 40 | 39.83 | 40.14 |
-| Used Physical Memory (MB) | 6235 | 6205 | 6252 |
+| CPU Utilization (%) | 34 | 0.5 | 100 |
+| Memory Utilization (%) | 48 | 14.02 | 55.26 |
 
 CPU Utilization (%)
 
-![image](/images/reference/performance-aws-instances/m5-xlarge/cassandra-2100msgs-cpu.png)
+![image](/images/reference/performance-aws-instances/m5-xlarge/postgres-kafka-cpu.png)
 
 Memory Utilization (%)
 
-![image](/images/reference/performance-aws-instances/m5-xlarge/cassandra-2100msgs-memory.png)
+![image](/images/reference/performance-aws-instances/m5-xlarge/postgres-kafka-memory.png)
 
-Used Physical Memory (MB)
+**TB dashboard**
 
-![image](/images/reference/performance-aws-instances/m5-xlarge/cassandra-2100msgs-memory-1.png)
+**~108m data points per hour**
 
-TB dashboard
-
-![image](/images/reference/performance-aws-instances/m5-xlarge/cassandra-2100msgs-tb.png)
+![image](/images/reference/performance-aws-instances/m5-xlarge/postgres-kafka-tb-dashboard.png)
