@@ -46,8 +46,8 @@ Please use documentation of the [Performance Test Project](https://github.com/th
 | [t2.medium](#t2medium)  | 2 vCPUs, 4GB | PostgreSQL | In memory | MQTT | 10000  | **~3000/sec** | **up to 15000/sec** |
 | [c5.large](#c5large)  | 2 vCPUs, 4GB | PostgreSQL | In memory | MQTT | 20000  | **~22500/sec** | N/A  |
 | [c5.large](#c5large)  | 2 vCPUs, 4GB | PostgreSQL | Kafka | MQTT | 20000  | **~22500/sec** | N/A  |
-| M5.LARGE | 4 vCPUs, 16GB | PostgreSQL | KAFKA | MQTT |  20000  | re- | --- |
-| M5.LARGE | 4 vCPUs, 16GB | Cassandra | In memory | MQTT | 20000  | re- | --- |
+| [m5.large](#m5large) | 4 vCPUs, 8GB | PostgreSQL | In Memory | MQTT |  20000  | **~23000/sec** | N/A |
+| [m5.large](#m5large) | 4 vCPUs, 8GB | Cassandra | In memory | MQTT | 20000  | **~10000/sec**| N/A |
 | [m5.xlarge](#m5xlarge)  | 4 vCPUs, 16GB | Cassandra | Kafka | MQTT | 25000  | **~30000/sec** | N/A  |
 | [m5.xlarge](#m5xlarge)  | 4 vCPUs, 16GB | Cassandra | In memory | HTTP | 40000  | **~950/sec** | N/A  |
 
