@@ -37,7 +37,7 @@ This telemetry value could be shown as well as general telemetry on the ThingsBo
 
 Please use documentation of the [Performance Test Project](https://github.com/thingsboard/performance-tests/) for more details.
 
-# NOTE:
+# Notation
 
 1. t2 instances are used [burstable performance instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-credits-baseline-concepts.html) please read the official documentation. We recommend don't count on it. btw you can get more messages on the peak.
 
@@ -57,8 +57,6 @@ Please use documentation of the [Performance Test Project](https://github.com/th
 # t2.medium
 
 In this test, we will show that Thingsboard consistently receives about 3000 data points per second on t2.medium. And also at its peak, it can process up to 15,000 data points using the [AWS CPU Credit Balance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-credits-baseline-concepts.html). Please read the official documentation for understanding how it works.
-
-**Performance Results**
 
 ### Test Run #1 (stable)
 
@@ -88,7 +86,7 @@ DURATION_IN_SECONDS=43200
 | Property | Avg | Min | Max |
 | --- | --- | --- | --- |
 | CPU Utilization (%) | 10 | 0 | 58 |
-| Memory Utilization (%) | 36 | 33 | 38 |
+| Memory Utilization (%) | 36 | 33.07 | 38.26 |
 
 CPU Utilization (%)
 
@@ -98,9 +96,9 @@ Memory Utilization (%)
 
 ![image](/images/reference/performance-aws-instances/t2-medium/postgres-stable-memory.png)
 
-TB dashboard
+**TB dashboard**
 
-**~~10.5m data points per hour**
+**~10.5m data points per hour**
 
 ![image](/images/reference/performance-aws-instances/t2-medium/postgres-stable-tb.png)
 
@@ -137,17 +135,15 @@ The line goes down and after some period instance will be dramatically decreased
 
 ![image](/images/reference/performance-aws-instances/t2-medium/postgres-failed-cpu-credit.png)
 
-TB dashboard
+**TB dashboard**
 
-**~~54m data points per hour**
+**~54m data points per hour**
 
 ![image](/images/reference/performance-aws-instances/t2-medium/postgres-burst-tb.png)
 
 # c5.large
 
-**c5.large** 
-
-### Test Run #1 (stable)
+### Test Run #1 (postgres)
 
 | Instance Type | Instance details | Database Type 	 | Queue Type  | Device API | Number of devices | Count of test run hours | Maximum number of data points |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -183,9 +179,9 @@ Memory Utilization (%)
 
 ![image](/images/reference/performance-aws-instances/c5-large/postgres-memory.png)
 
-TB dashboard
+**TB dashboard**
 
-**~~80m data points per hour**
+**~80m data points per hour**
 
 ![image](/images/reference/performance-aws-instances/c5-large/postgres-tb.png)
 
@@ -216,8 +212,8 @@ DURATION_IN_SECONDS=43200
 
 | Property | Avg | Min | Max |
 | --- | --- | --- | --- |
-| CPU Utilization (%) | 48 | 3 | 57.4 |
-| Memory Utilization (%) | 34 | 32.79 | 37.76 |
+| CPU Utilization (%) | 40 | 1.3 | 99.7 |
+| Memory Utilization (%) | 87 | 44.66 | 92.56 |
 
 CPU Utilization (%)
 
@@ -227,15 +223,13 @@ Memory Utilization (%)
 
 ![image](/images/reference/performance-aws-instances/c5-large/postgres-kafka-memory.png)
 
-TB dashboard
+**TB dashboard**
 
-**~~80m data points per hour**
+**~80m data points per hour**
 
 ![image](/images/reference/performance-aws-instances/c5-large/postgres-kafka-tb.png)
 
 # m5.large
-
-**m5.large** 
 
 ### Test Run #1 (postgres)
 
@@ -262,8 +256,8 @@ DURATION_IN_SECONDS=21600
 
 | Property | Avg | Min | Max |
 | --- | --- | --- | --- |
-| CPU Utilization (%) | 58 | 0 | 99.8 |
-| Memory Utilization (%) | 33 | 33.39 | 33.85 |
+| CPU Utilization (%) | 33 | 0 | 100 |
+| Memory Utilization (%) | 46 | 16.08 | 69.96 |
 
 CPU Utilization (%)
 
@@ -273,9 +267,9 @@ Memory Utilization (%)
 
 ![image](/images/reference/performance-aws-instances/m5-large/postgresql-memory.png)
 
-TB dashboard
+**TB dashboard**
 
-**~~83m data points per hour**
+**~83m data points per hour**
 
 ![image](/images/reference/performance-aws-instances/m5-large/postgresql-tb-dashboard.png)
 
@@ -304,8 +298,8 @@ DURATION_IN_SECONDS=43200
 
 | Property | Avg | Min | Max |
 | --- | --- | --- | --- |
-| CPU Utilization (%) | 48 | 3 | 57.4 |
-| Memory Utilization (%) | 34 | 32.79 | 37.76 |
+| CPU Utilization (%) | 25 | 0.2 | 100 |
+| Memory Utilization (%) | 59 | 38.94 | 61.66 |
 
 CPU Utilization (%)
 
@@ -315,9 +309,9 @@ Memory Utilization (%)
 
 ![image](/images/reference/performance-aws-instances/m5-large/cassandra-memory.png)
 
-TB dashboard
+**TB dashboard**
 
-**~~36m data points per hour**
+**~36m data points per hour**
 
 ![image](/images/reference/performance-aws-instances/m5-large/cassandra-tb-dashboard.png)
 
@@ -348,8 +342,8 @@ DURATION_IN_SECONDS=43200
 
 | Property | Avg | Min | Max |
 | --- | --- | --- | --- |
-| CPU Utilization (%) | 36 | 8.3 | 61.2 |
-| Memory Utilization (%) | 40 | 39.83 | 40.14 |
+| CPU Utilization (%) | 34 | 0.5 | 100 |
+| Memory Utilization (%) | 48 | 14.02 | 55.26 |
 
 CPU Utilization (%)
 
@@ -359,8 +353,8 @@ Memory Utilization (%)
 
 ![image](/images/reference/performance-aws-instances/m5-xlarge/postgres-kafka-memory.png)
 
-TB dashboard
+**TB dashboard**
 
-**~~108m data points per hour**
+**~108m data points per hour**
 
 ![image](/images/reference/performance-aws-instances/m5-xlarge/postgres-kafka-tb-dashboard.png)
