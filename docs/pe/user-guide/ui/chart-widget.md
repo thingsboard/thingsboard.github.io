@@ -316,36 +316,36 @@ pieflot-tilt:
 
 pieflot-stroke:
     0:
-        image: /images/user-guide/ui/widgets/charts/pieflot-stroke-ce.png
+        image: /images/user-guide/ui/widgets/charts/pieflot-stroke-pe.png
         title: 'In the Advanced tab, click on the stroke color circle. In the opened dialog window, move sliders to adjust color and transparency of the stroke.
                 Click "Select" when you are done.'
     1:
-        image: /images/user-guide/ui/widgets/charts/pieflot-stroke-1-ce.png
+        image: /images/user-guide/ui/widgets/charts/pieflot-stroke-1-pe.png
         title: 'Also, you can change stroke width and disable labels visibility. Apply changes by clicking the orange checkmark in the upper right corner of the page.'
     2:
-        image: /images/user-guide/ui/widgets/charts/pieflot-stroke-2-ce.png
+        image: /images/user-guide/ui/widgets/charts/pieflot-stroke-2-pe.png
         title: 'As you can see, stroke has been added to the Pie - Flot.'
 
 donut-border:
     0:
-        image: /images/user-guide/ui/widgets/charts/donut-border-ce.png
+        image: /images/user-guide/ui/widgets/charts/donut-border-pe.png
         title: 'In the Advanced tab, click the border color circle. In the opened dialog, move sliders to adjust color and click "Select".'
     1:
-        image: /images/user-guide/ui/widgets/charts/donut-border-1-ce.png
+        image: /images/user-guide/ui/widgets/charts/donut-border-1-pe.png
         title: 'Also, you can change border width. After configuring all preferred border settings, click the orange checkmark in the upper right corner of the window.'
     2:
-        image: /images/user-guide/ui/widgets/charts/donut-border-2-ce.png
+        image: /images/user-guide/ui/widgets/charts/donut-border-2-pe.png
         title: 'As you can see on the widget, custom borders have been added to the Doughnut widget.'
 
 donut-legend:
     0:
-        image: /images/user-guide/ui/widgets/charts/donut-legend-ce.png
+        image: /images/user-guide/ui/widgets/charts/donut-legend-pe.png
         title: 'In the Advanced tab, click the Labels font color circle. In the opened dialog, move sliders to adjust color and click "Select".'
     1:
-        image: /images/user-guide/ui/widgets/charts/donut-legend-1-ce.png
+        image: /images/user-guide/ui/widgets/charts/donut-legend-1-pe.png
         title: 'Also, you can disable legend visibility. After you are done configuring legend settings, click the orange checkmark in the upper right corner of the window to apply changes.'
     2:
-        image: /images/user-guide/ui/widgets/charts/donut-legend-2-ce.png
+        image: /images/user-guide/ui/widgets/charts/donut-legend-2-pe.png
         title: 'As you can see on the widget, color of the labels font has been changed. '
 
 ---

@@ -118,7 +118,7 @@ To enter the widget Edit mode and start configuring its Advanced settings, first
 
 Use this function if the data aggregation function **is not** set to None.
 If the Stacking box checked, the bar will be split according to the values of the entities used.
-If this box isn't checked, you will only see the entity with the highest value. To see the values of all entities, you need to hover your mouse over the bar.
+If this box isn't checked, the widget will show you the sum of the used entity values. To see the values of all entities, you need to hover your mouse over the bar.
 
 {% include images-gallery.html imageCollection="charts-bar-adv-stacking" showListImageTitles="true" %}
 
@@ -286,12 +286,4 @@ This should prevent the pie from being smaller than it needed to in some cases, 
 ##### 2. Legend settings
 
 {% include images-gallery.html imageCollection="donut-legend" showListImageTitles="true" %}
-
-## Key settings
-
-##### Basic key settings
-
-##### Advanced key settings
-
-link on https://thingsboard.io/docs/user-guide/ui/advanced-data-key-configuration/#2-charts
 
