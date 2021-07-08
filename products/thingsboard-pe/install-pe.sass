@@ -1,16 +1,23 @@
 
 section#install-pe
     fieldset
+        .form-title center h1
+            padding: 0
         .cloud-provider
             display: flex
             margin-bottom: 32px
+            padding: 24px
+            border-radius: 8px
+            background: #F7F9FC
             .logo-container
-                width: 180px
+                width: 120px
                 margin-right: 40px
             .cloud-provider-desc
-                width: calc(100% - 220px)
-    padding: 0px
-    .tabs
+                width: calc(100% - 160px)
+        .form-section
+            margin-top: 52px
+    padding: 0
+    background: unset
     .tab-input
         position: absolute
         opacity: 0
@@ -249,29 +256,27 @@ section#install-pe
                 box-sizing: border-box
                 clear: left
             button
+                float: right
                 min-width: 150px
                 text-align: center
-                padding: 0.3rem 1.5rem
-                line-height: 30px
-                border: 2px solid #fff
-                border-radius: 3px
-                background-color: #fff
-                color: $professional-color
+                border-radius: 4px
+                padding: 10px 20px
+                line-height: 24px
+                background-color: #2a7dec
+                color: #fff
                 display: inline-block
                 text-decoration: none
-                text-transform: uppercase
-                font-size: 14px
+                font-size: 16px
                 font-weight: 500
-                box-shadow: 0 2px 5px 0 rgba(0,0,0,0.26)
-                transition: 0.3s
+                transition: background-color .4s cubic-bezier(.25, .8, .25, 1)
                 &:hover
-                    background-color: #3c6c79
+                    background-color: #4F97F8
                     color: white
                 &:focus
-                    background-color: #3c6c79
+                    background-color: #4F97F8
                     color: white
                 &.loading
-                    background-color: #3c6c79
+                    background-color: #2a7dec
                     img
                         vertical-align: middle
             button[disabled]
@@ -302,6 +307,15 @@ section#install-pe
     @media (max-width: 768px)
         .deploy-form
             width: 100%
+        fieldset
+            .form-title center h1
+                font-size: 24px!important
+            .cloud-provider
+                display: block
+                .logo-container
+                    margin-bottom: 24px
+                .cloud-provider-desc
+                    width: 100%
     @media (min-width: 1025px)
         .deploy-form
             .subscribe-form
