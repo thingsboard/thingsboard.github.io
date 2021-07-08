@@ -8,7 +8,6 @@ We are going to check how many messages per second each instance can handle and 
 
 Considering test results and your project requirements you will be able to identify what type of the instance is the most suitable for your project.
 
-
 # Data flow and test tools
 
 IoT devices connect to ThingsBoard server via MQTT or HTTP Device API and send sample test data (*single telemetry of long type*) to the platform. 
