@@ -253,6 +253,117 @@ AWS IOPS statistics
 
 ![image](/images/reference/performance-aws-instances/c5-large/postgresql-500msgs-iops-2.png)
 
+# m5.large
+
+**m5.large** AWS instance does not have CPU burst that why CPU Credit Balance is not applicable to verify in this case.
+
+But to be able to support ~20000 data points per seconds correct volume must be provisioned - with enough [IOPS](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-io-characteristics.html) limits. Please read [official documentation](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-optimized.html) for understand how it work.
+
+For the PostgreSQL database, 20000 data points per seconds are equal to ~550 IOPS.
+
+From time to time you can use [credit balance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-optimized.html) to get more data points. Instance has few free resources left for get more data points (+~5000/s) at the peak. Read the official documentation for understand how it work.
+
+### Test Run #1 (postgres)
+
+| Instance Type | Instance details | Database Type 	 | Queue Type  | Device API | Number of devices | Count of test run hours | Maximum number of messages per second |
+| --- | --- | --- | --- | --- | --- | --- |
+| m5.large | 2 vCPUs, 4GB | PostgreSQL | In memory | MQTT |  20000  | 6 | **~23000** |
+
+**Test Configuration**
+
+Test run configuration (see [Performance Test Project](https://github.com/thingsboard/performance-tests/#running) for more details):
+
+```bash
+...
+DEVICE_API=MQTT
+DEVICE_START_IDX=0
+DEVICE_END_IDX=20000
+
+MESSAGES_PER_SECOND=4600
+DURATION_IN_SECONDS=21600
+...
+```
+
+**CPU/Memory Load**
+
+| Property | Avg | Min | Max |
+| --- | --- | --- | --- |
+| CPU Utilization (%) | 58 | 0 | 99.8 |
+| Memory Utilization (%) | 33 | 33.39 | 33.85 |
+
+CPU Utilization (%)
+
+![image](/images/reference/performance-aws-instances/m5-large/postgresql-cpu.png)
+
+Memory Utilization (%)
+
+![image](/images/reference/performance-aws-instances/m5-large/postgresql-memory.png)
+
+TB dashboard
+
+**~~83m data points per hour**
+
+![image](/images/reference/performance-aws-instances/m5-large/postgresql-tb-dashboard.png)
+
+AWS write IOPS for the volume
+
+![image](/images/reference/performance-aws-instances/m5-large/postgresql-aws-readops.png)
+
+![image](/images/reference/performance-aws-instances/m5-large/postgresql-aws-writeops.png)
+
+![image](/images/reference/performance-aws-instances/m5-large/postgresql-aws-opsbalance.png)
+
+### Test Run #2 (cassandra)
+
+| Instance Type | Instance details | Database Type 	 | Queue Type  | Device API | Number of devices | Count of test run hours | Maximum number of messages per second |
+| --- | --- | --- | --- | --- | --- | --- |
+| c5.large | 2 vCPUs, 4GB | Cassandra | In memory | MQTT |  20000  | 6 | **~10000** |
+
+**Test Configuration**
+
+Test run configuration (see [Performance Test Project](https://github.com/thingsboard/performance-tests/#running) for more details):
+
+```bash
+...
+DEVICE_API=MQTT
+DEVICE_START_IDX=0
+DEVICE_END_IDX=20000
+
+MESSAGES_PER_SECOND=2000
+DURATION_IN_SECONDS=43200
+...
+```
+
+**CPU/Memory Load**
+
+| Property | Avg | Min | Max |
+| --- | --- | --- | --- |
+| CPU Utilization (%) | 48 | 3 | 57.4 |
+| Memory Utilization (%) | 34 | 32.79 | 37.76 |
+| Used Physical Memory (MB) | 1254 | 1215 | 1399 |
+
+CPU Utilization (%)
+
+![image](/images/reference/performance-aws-instances/m5-large/cassandra-cpu.png)
+
+Memory Utilization (%)
+
+![image](/images/reference/performance-aws-instances/m5-large/cassandra-memory.png)
+
+TB dashboard
+
+**~~36m data points per hour**
+
+![image](/images/reference/performance-aws-instances/m5-large/cassandra-tb-dashboard.png)
+
+AWS IOPS statistics
+
+![image](/images/reference/performance-aws-instances/m5-large/cassandra-aws-readops.png)
+
+![image](/images/reference/performance-aws-instances/m5-large/cassandra-aws-writeops.png)
+
+![image](/images/reference/performance-aws-instances/m5-large/cassandra-aws-burstbalance.png)
+
 # m5.xlarge
 
 ### Test Run #1 (kafka)
