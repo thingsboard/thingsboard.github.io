@@ -37,9 +37,13 @@ This telemetry value could be shown as well as general telemetry on the ThingsBo
 
 Please use documentation of the [Performance Test Project](https://github.com/thingsboard/performance-tests/) for more details.
 
-# Performance by AWS Instance Type
+# NOTE:
 
-**NOTE:** t2 instances are used [burstable performance instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-credits-baseline-concepts.html) please read the official documentation. We recommend don't count on it. btw you can get more messages on the peak.
+1. t2 instances are used [burstable performance instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-credits-baseline-concepts.html) please read the official documentation. We recommend don't count on it. btw you can get more messages on the peak.
+
+2. To support ~20000 data points per seconds correct volume must be provisioned - with enough [IOPS](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-io-characteristics.html) limits. Please read [official documentation](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-optimized.html) for understand how it work. For the PostgreSQL database, 20000 data points per seconds are equal to ~750 IOPS. From time to time you can use [credit balance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-optimized.html) to get more data points.
+
+# Performance by AWS Instance Type
 
 | Instance Type | Instance details | Database Type 	 | Queue Type  | Device API | Number of devices | Maximum number of data points |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -127,7 +131,7 @@ DURATION_IN_SECONDS=12000
 
 t2 instances have [AWS CPU Credit Balance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-credits-baseline-concepts.html) and you can use more request per second time by time
 
-Here is the Credit Balance chart line for the **t2.medium** during publishing 15000 messages per second.
+Here is the Credit Balance chart line for the **t2.medium** during publishing 15000 data points per second.
 
 The line goes down and after some period instance will be dramatically decreased by CPU (20% of total).
 
@@ -141,13 +145,7 @@ TB dashboard
 
 # c5.large
 
-**c5.large** AWS instance does not have CPU burst that why CPU Credit Balance is not applicable to verify in this case.
-
-But to be able to support ~20000 data points per seconds correct volume must be provisioned - with enough [IOPS](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-io-characteristics.html) limits. Please read [official documentation](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-optimized.html) for understand how it work.
-
-For the PostgreSQL database, 20000 data points per seconds are equal to ~550 IOPS.
-
-From time to time you can use [credit balance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-optimized.html) to get more data points. Instance has few free resources left for get more data points (+~5000/s) at the peak. Read the official documentation for understand how it work.
+**c5.large** 
 
 ### Test Run #1 (stable)
 
@@ -191,14 +189,6 @@ TB dashboard
 
 ![image](/images/reference/performance-aws-instances/c5-large/postgres-tb.png)
 
-AWS write IOPS for the volume
-
-![image](/images/reference/performance-aws-instances/c5-large/postgres-aws-readops.png)
-
-![image](/images/reference/performance-aws-instances/c5-large/postgres-aws-writeops.png)
-
-![image](/images/reference/performance-aws-instances/c5-large/postgres-aws-burstbalance.png)
-
 ### Test Run #2 (kafka)
 
 **We don't recommend use kafka on c5.large instance (because 4gb RAM).**
@@ -228,7 +218,6 @@ DURATION_IN_SECONDS=43200
 | --- | --- | --- | --- |
 | CPU Utilization (%) | 48 | 3 | 57.4 |
 | Memory Utilization (%) | 34 | 32.79 | 37.76 |
-| Used Physical Memory (MB) | 1254 | 1215 | 1399 |
 
 CPU Utilization (%)
 
@@ -244,23 +233,9 @@ TB dashboard
 
 ![image](/images/reference/performance-aws-instances/c5-large/postgres-kafka-tb.png)
 
-AWS IOPS statistics
-
-![image](/images/reference/performance-aws-instances/c5-large/postgres-kafka-aws-readops.png)
-
-![image](/images/reference/performance-aws-instances/c5-large/postgres-kafka-aws-writeops.png)
-
-![image](/images/reference/performance-aws-instances/c5-large/postgres-kafka-aws-burstbalance.png)
-
 # m5.large
 
-**m5.large** AWS instance does not have CPU burst that why CPU Credit Balance is not applicable to verify in this case.
-
-But to be able to support ~20000 data points per seconds correct volume must be provisioned - with enough [IOPS](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-io-characteristics.html) limits. Please read [official documentation](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-optimized.html) for understand how it work.
-
-For the PostgreSQL database, 20000 data points per seconds are equal to ~750 IOPS.
-
-From time to time you can use [credit balance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-optimized.html) to get more data points. Instance has few free resources left for get more data points (+~5000/s) at the peak. Read the official documentation for understand how it work.
+**m5.large** 
 
 ### Test Run #1 (postgres)
 
@@ -304,14 +279,6 @@ TB dashboard
 
 ![image](/images/reference/performance-aws-instances/m5-large/postgresql-tb-dashboard.png)
 
-AWS write IOPS for the volume
-
-![image](/images/reference/performance-aws-instances/m5-large/postgresql-aws-readops.png)
-
-![image](/images/reference/performance-aws-instances/m5-large/postgresql-aws-writeops.png)
-
-![image](/images/reference/performance-aws-instances/m5-large/postgresql-aws-burstbalance.png)
-
 ### Test Run #2 (cassandra)
 
 | Instance Type | Instance details | Database Type 	 | Queue Type  | Device API | Number of devices | Count of test run hours | Maximum number of data points |
@@ -339,7 +306,6 @@ DURATION_IN_SECONDS=43200
 | --- | --- | --- | --- |
 | CPU Utilization (%) | 48 | 3 | 57.4 |
 | Memory Utilization (%) | 34 | 32.79 | 37.76 |
-| Used Physical Memory (MB) | 1254 | 1215 | 1399 |
 
 CPU Utilization (%)
 
@@ -354,14 +320,6 @@ TB dashboard
 **~~36m data points per hour**
 
 ![image](/images/reference/performance-aws-instances/m5-large/cassandra-tb-dashboard.png)
-
-AWS IOPS statistics
-
-![image](/images/reference/performance-aws-instances/m5-large/cassandra-aws-readops.png)
-
-![image](/images/reference/performance-aws-instances/m5-large/cassandra-aws-writeops.png)
-
-![image](/images/reference/performance-aws-instances/m5-large/cassandra-aws-burstbalance.png)
 
 # m5.xlarge
 
@@ -392,7 +350,6 @@ DURATION_IN_SECONDS=43200
 | --- | --- | --- | --- |
 | CPU Utilization (%) | 36 | 8.3 | 61.2 |
 | Memory Utilization (%) | 40 | 39.83 | 40.14 |
-| Used Physical Memory (MB) | 6235 | 6205 | 6252 |
 
 CPU Utilization (%)
 
@@ -407,11 +364,3 @@ TB dashboard
 **~~108m data points per hour**
 
 ![image](/images/reference/performance-aws-instances/m5-xlarge/postgres-kafka-tb-dashboard.png)
-
-AWS IOPS statistics
-
-![image](/images/reference/performance-aws-instances/m5-xlarge/postgres-kafka-aws-readops.png)
-
-![image](/images/reference/performance-aws-instances/m5-xlarge/postgres-kafka-aws-writeops.png)
-
-![image](/images/reference/performance-aws-instances/m5-xlarge/postgres-kafka-aws-burstbalance.png)
