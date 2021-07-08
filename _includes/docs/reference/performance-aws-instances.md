@@ -41,19 +41,18 @@ Please use documentation of the [Performance Test Project](https://github.com/th
 
 **NOTE:** t2 instances are used [burstable performance instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-credits-baseline-concepts.html) please read the official documentation. We recommend don't count on it. btw you can get more messages on the peak.
 
-| Instance Type | Instance details | Database Type 	 | Queue Type  | Device API | Number of devices | Maximum number of data points | Peak with [AWS CPU Credit Balance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-credits-baseline-concepts.html)|
+| Instance Type | Instance details | Database Type 	 | Queue Type  | Device API | Number of devices | Maximum number of data points |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| [t2.medium](#t2medium)  | 2 vCPUs, 4GB | PostgreSQL | In memory | MQTT | 10000  | **~3000/sec** | **up to 15000/sec** |
-| [c5.large](#c5large)  | 2 vCPUs, 4GB | PostgreSQL | In memory | MQTT | 20000  | **~22500/sec** | N/A  |
-| [c5.large](#c5large)  | 2 vCPUs, 4GB | PostgreSQL | Kafka | MQTT | 20000  | **~22500/sec** | N/A  |
-| [m5.large](#m5large) | 4 vCPUs, 8GB | PostgreSQL | In Memory | MQTT |  20000  | **~23000/sec** | N/A |
-| [m5.large](#m5large) | 4 vCPUs, 8GB | Cassandra | In memory | MQTT | 20000  | **~10000/sec**| N/A |
-| [m5.xlarge](#m5xlarge)  | 4 vCPUs, 16GB | Cassandra | Kafka | MQTT | 25000  | **~30000/sec** | N/A  |
-| [m5.xlarge](#m5xlarge)  | 4 vCPUs, 16GB | Cassandra | In memory | HTTP | 40000  | **~950/sec** | N/A  |
+| [t2.medium](#t2medium)  | 2 vCPUs, 4GB | PostgreSQL | In memory | MQTT | 10000  | **~3000/sec (15000/sec*)** |
+| [c5.large](#c5large)  | 2 vCPUs, 4GB | PostgreSQL | In memory | MQTT | 20000  | **~22500/sec** |
+| [c5.large](#c5large)  | 2 vCPUs, 4GB | PostgreSQL | Kafka | MQTT | 20000  | **~22500/sec** |
+| [m5.large](#m5large) | 4 vCPUs, 8GB | PostgreSQL | In Memory | MQTT |  20000  | **~23000/sec** |
+| [m5.large](#m5large) | 4 vCPUs, 8GB | Cassandra | In memory | MQTT | 20000  | **~10000/sec**|
+| [m5.xlarge](#m5xlarge)  | 4 vCPUs, 16GB | PostgreSQL | Kafka | MQTT | 25000  | **~30000/sec** |
 
 # t2.medium
 
-In this test, we will show that Thingsboard consistently receives about 3000 data points per second on t2.medium. And also at its peak, it can process up to 15,000 data points using the [AWS CPU Credit Balance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-credits-baseline-concepts.html). Please read the official documentation for understanding how it works.
+*In this test, we will show that Thingsboard consistently receives about 3000 data points per second on t2.medium. And also at its peak, it can process up to 15,000 data points using the [AWS CPU Credit Balance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-credits-baseline-concepts.html). Please read the official documentation for understanding how it works.
 
 **Performance Results**
 
@@ -61,9 +60,9 @@ In this test, we will show that Thingsboard consistently receives about 3000 dat
 
 There is stable test. CPU <= 20%, this means it will not be used [AWS CPU Credit Balance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-credits-baseline-concepts.html).
 
-| Instance Type | Instance details | Database Type 	 | Queue Type  | Device API | Number of devices | Count of test run hours | Maximum number of messages per second |
+| Instance Type | Instance details | Database Type 	 | Queue Type  | Device API | Number of devices | Count of test run hours | Maximum number of data points |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| t2.medium | 2 vCPUs, 4GB | PostgreSQL | In memory | MQTT | 10000  | 12 | **~3000** |
+| t2.medium | 2 vCPUs, 4GB | PostgreSQL | In memory | MQTT | 10000  | 12 | **~3000/sec** |
 
 **Test Configuration**
 
@@ -105,9 +104,9 @@ TB dashboard
 
 There is burstable test. CPU => 20%, this means it will be used [AWS CPU Credit Balance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-credits-baseline-concepts.html).
 
-| Instance Type | Instance details | Database Type 	 | Queue Type  | Device API | Number of devices | Count of test run hours | Maximum number of messages per second |
+| Instance Type | Instance details | Database Type 	 | Queue Type  | Device API | Number of devices | Count of test run hours | Maximum number of data points |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| t2.medium | 2 vCPUs, 4GB | PostgreSQL | In memory | MQTT | 10000  | 2 | **~15000** | 
+| t2.medium | 2 vCPUs, 4GB | PostgreSQL | In memory | MQTT | 10000  | 2 | **~15000/sec** | 
 
 **Test Configuration**
 
@@ -152,9 +151,9 @@ From time to time you can use [credit balance](https://docs.aws.amazon.com/AWSEC
 
 ### Test Run #1 (stable)
 
-| Instance Type | Instance details | Database Type 	 | Queue Type  | Device API | Number of devices | Count of test run hours | Maximum number of messages per second |
+| Instance Type | Instance details | Database Type 	 | Queue Type  | Device API | Number of devices | Count of test run hours | Maximum number of data points |
 | --- | --- | --- | --- | --- | --- | --- |
-| c5.large | 2 vCPUs, 4GB | PostgreSQL | In memory | MQTT |  20000  | 12 | **~22500** |
+| c5.large | 2 vCPUs, 4GB | PostgreSQL | In memory | MQTT |  20000  | 12 | **~22500/sec** |
 
 **Test Configuration**
 
@@ -202,11 +201,11 @@ AWS write IOPS for the volume
 
 ### Test Run #2 (kafka)
 
-**Thingsboard don't recommend use kafka on c5 instance (because 4gb RAM).**
+**We don't recommend use kafka on c5.large instance (because 4gb RAM).**
 
-| Instance Type | Instance details | Database Type 	 | Queue Type  | Device API | Number of devices | Count of test run hours | Maximum number of messages per second |
+| Instance Type | Instance details | Database Type 	 | Queue Type  | Device API | Number of devices | Count of test run hours | Maximum number of data points |
 | --- | --- | --- | --- | --- | --- | --- |
-| c5.large | 2 vCPUs, 4GB | PostgreSQL | Kafka | MQTT |  20000  | 12 | **~22500** |
+| c5.large | 2 vCPUs, 4GB | PostgreSQL | Kafka | MQTT |  20000  | 12 | **~22500/sec** |
 
 **Test Configuration**
 
@@ -259,15 +258,15 @@ AWS IOPS statistics
 
 But to be able to support ~20000 data points per seconds correct volume must be provisioned - with enough [IOPS](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-io-characteristics.html) limits. Please read [official documentation](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-optimized.html) for understand how it work.
 
-For the PostgreSQL database, 20000 data points per seconds are equal to ~550 IOPS.
+For the PostgreSQL database, 20000 data points per seconds are equal to ~750 IOPS.
 
 From time to time you can use [credit balance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-optimized.html) to get more data points. Instance has few free resources left for get more data points (+~5000/s) at the peak. Read the official documentation for understand how it work.
 
 ### Test Run #1 (postgres)
 
-| Instance Type | Instance details | Database Type 	 | Queue Type  | Device API | Number of devices | Count of test run hours | Maximum number of messages per second |
+| Instance Type | Instance details | Database Type 	 | Queue Type  | Device API | Number of devices | Count of test run hours | Maximum number of data points |
 | --- | --- | --- | --- | --- | --- | --- |
-| m5.large | 2 vCPUs, 4GB | PostgreSQL | In memory | MQTT |  20000  | 6 | **~23000** |
+| m5.large | 2 vCPUs, 4GB | PostgreSQL | In memory | MQTT |  20000  | 6 | **~23000/sec** |
 
 **Test Configuration**
 
@@ -315,9 +314,9 @@ AWS write IOPS for the volume
 
 ### Test Run #2 (cassandra)
 
-| Instance Type | Instance details | Database Type 	 | Queue Type  | Device API | Number of devices | Count of test run hours | Maximum number of messages per second |
+| Instance Type | Instance details | Database Type 	 | Queue Type  | Device API | Number of devices | Count of test run hours | Maximum number of data points |
 | --- | --- | --- | --- | --- | --- | --- |
-| c5.large | 2 vCPUs, 4GB | Cassandra | In memory | MQTT |  20000  | 6 | **~10000** |
+| c5.large | 2 vCPUs, 4GB | Cassandra | In memory | MQTT |  20000  | 6 | **~10000/sec** |
 
 **Test Configuration**
 
@@ -368,9 +367,9 @@ AWS IOPS statistics
 
 ### Test Run #1 (kafka)
 
-| Instance Type | Instance details | Database Type 	 | Queue Type  | Device API | Number of devices | Count of test run hours | 
+| Instance Type | Instance details | Database Type 	 | Queue Type  | Device API | Number of devices | Count of test run hours | Maximum number of data points |
 | --- | --- | --- | --- | --- | --- | --- |
-| m5.xlarge | 4 vCPUs, 16GB | PostgreSQL | KAfka | MQTT | 25000  | 12 |
+| m5.xlarge | 4 vCPUs, 16GB | PostgreSQL | KAfka | MQTT | 25000  | 12 | **~30000/sec** |
 
 **Test Configuration**
 
