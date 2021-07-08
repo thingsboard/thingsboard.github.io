@@ -21,6 +21,8 @@ This guide will help you to install and start ThingsBoard using Docker on Linux 
 
 - [Install Docker Compose](https://docs.docker.com/compose/install/)
 
+{% include templates/install/docker-install-note.md %}
+
 ## Running
 
 Depending on the database used there are three type of ThingsBoard single instance docker images:

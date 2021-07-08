@@ -16,7 +16,7 @@ Execute the following command to run the integration:
 
 ```bash
 docker run -it -p 10560:10560 -v ~/.tb-pe-tcp-udp-integration-logs:/var/log/tb-tcp-udp-integration  \
--e "PRC_HOST=thingsboard.cloud" -e "RPC_PORT=9090" \
+-e "RPC_HOST=thingsboard.cloud" -e "RPC_PORT=9090" \
 -e "INTEGRATION_ROUTING_KEY=YOUR_ROUTING_KEY"  -e "INTEGRATION_SECRET=YOUR_SECRET" \
 --name my-tb-pe-tcp-udp-integration --restart always thingsboard/tb-pe-tcp-udp-integration:{{ site.release.pe_full_ver }}
 ```
