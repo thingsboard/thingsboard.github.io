@@ -75,99 +75,99 @@ charts-bars:
 
 charts-bar-adv-stacking:
     0:
-        image: /images/user-guide/ui/widgets/charts/bars-stacking-ce.png
+        image: /images/user-guide/ui/widgets/charts/bars-stacking-pe.png
         title: 'In the upper right corner of the screen, click on the Time window configuration and choose any preferred Data aggregation function other than None.
                 Click "Update" to apply changes.'
     1:
-        image: /images/user-guide/ui/widgets/charts/bars-stacking-1-ce.png
+        image: /images/user-guide/ui/widgets/charts/bars-stacking-1-pe.png
         title: 'Go to widgets Edit mode by clicking the pencil icon in the upper right corner of the screen.'
     2:
-        image: /images/user-guide/ui/widgets/charts/bars-stacking-2-ce.png
+        image: /images/user-guide/ui/widgets/charts/bars-stacking-2-pe.png
         title: 'In the Advanced tab, disable the Stacking box and apply changes by clicking the orange checkmark in the upper right corner of the window.'
     3:
-        image: /images/user-guide/ui/widgets/charts/bars-stacking-3-ce.png
+        image: /images/user-guide/ui/widgets/charts/bars-stacking-3-pe.png
         title: 'After changes have been applied, click the orange checkmark in the lower corner of the screen to save them.'
     4:
-        image: /images/user-guide/ui/widgets/charts/bars-stacking-4-ce.png
+        image: /images/user-guide/ui/widgets/charts/bars-stacking-4-pe.png
         title: 'Hover the mouse over a bar to see values of all entities.'
 
 bars-tooltipfunction:
     0:
-        image: /images/user-guide/ui/widgets/charts/bars-tooltipfunction-ce.png
+        image: /images/user-guide/ui/widgets/charts/bars-tooltipfunction-pe.png
         title: 'Input your custom Tooltip value format function and apply changes by clicking orange checkmark in the upper right corner of the window.'
     1:
-        image: /images/user-guide/ui/widgets/charts/bars-tooltipfunction-1-ce.png
+        image: /images/user-guide/ui/widgets/charts/bars-tooltipfunction-1-pe.png
         title: 'To see tooltip, you need to save applied changes by clicking the orange checkmark in the lower corner of the screen.'
     2:
-        image: /images/user-guide/ui/widgets/charts/bars-tooltipfunction-2-ce.png
+        image: /images/user-guide/ui/widgets/charts/bars-tooltipfunction-2-pe.png
         title: 'Hover the mouse over the widget to see tooltip with applied Tooltip value format function.'
 
 bars-ticksfun:
     0:
-        image: /images/user-guide/ui/widgets/charts/bars-ticksfun-ce.png
+        image: /images/user-guide/ui/widgets/charts/bars-ticksfun-pe.png
         title: 'Enter widget edit mode by clicking the pencil icon in the right corner of the widget.'
     1:
-        image: /images/user-guide/ui/widgets/charts/bars-ticksfun-1-ce.png
+        image: /images/user-guide/ui/widgets/charts/bars-ticksfun-1-pe.png
         title: 'In the Advanced tab, in the Ticks formatter function field, enter the custom function and apply changes by clicking the checkmark in the upper right corner of the window.'
     2:
-        image: /images/user-guide/ui/widgets/charts/bars-ticksfun-2-ce.png
+        image: /images/user-guide/ui/widgets/charts/bars-ticksfun-2-pe.png
         title: 'Function has been applied and values became more compact. Save changes by clicking the checkmark in the lower right corner of the screen.'
     3:
-        image: /images/user-guide/ui/widgets/charts/bars-ticksfun-3-ce.png
+        image: /images/user-guide/ui/widgets/charts/bars-ticksfun-3-pe.png
         title: 'By hovering the mouse over a widget you can see the tooltip with not reduced values.'
 
 bars-grid:
     0:
-        image: /images/user-guide/ui/widgets/charts/bars-grid-ce.png
+        image: /images/user-guide/ui/widgets/charts/bars-grid-pe.png
         title: 'In Advanced tab, go to the Grid settings and click on the icon of Primary color circle. In the opened dialog box, move sliders to adjust color and transparency. Click "Select" when you finished, to apply changes.'
     1:
-        image: /images/user-guide/ui/widgets/charts/bars-grid-1-ce.png
+        image: /images/user-guide/ui/widgets/charts/bars-grid-1-pe.png
         title: 'Configure preferred Grid settings and apply changes by clicking orange checkmark in the upper right corner of the window.'
     2:
-        image: /images/user-guide/ui/widgets/charts/bars-grid-2-ce.png
+        image: /images/user-guide/ui/widgets/charts/bars-grid-2-pe.png
         title: 'This set of applied colors is just an example. To save applied changes, click the orange checkmark in the lower corner of the screen.'
 
 bars-axis:
     0:
-        image: /images/user-guide/ui/widgets/charts/bars-axis-ce.png
+        image: /images/user-guide/ui/widgets/charts/bars-axis-pe.png
         title: 'Configure preferred axis settings and click the orange checkmark in the upper right corner of the window to apply changes.'
     1:
-        image: /images/user-guide/ui/widgets/charts/bars-axis-1-ce.png
+        image: /images/user-guide/ui/widgets/charts/bars-axis-1-pe.png
         title: 'As you see, titles have been added, colors of axis have been changed and values have been adjusted according to the applied changes.
                 To save these changes, click the orange checkmark in the lower corner of the screen.'
 
 bars-comparison:
     0:
-        image: /images/user-guide/ui/widgets/charts/bars-comparison-ce.png
+        image: /images/user-guide/ui/widgets/charts/bars-comparison-pe.png
         title: 'Since comparison settings work only in History time window mode, click on the clock icon in the upper right corner and select the History time window there. Click "Update" to apply.'
     1:
-        image: /images/user-guide/ui/widgets/charts/bars-comparison-1-ce.png
+        image: /images/user-guide/ui/widgets/charts/bars-comparison-1-pe.png
         title: 'In Advanced tab, enable comparison and from the drop-down menu select time to show historical data with which to compare. 
                 In the "Second X axis" section, select axis position, where the compared axis will be located on the widget. If you would like title for the second axis, enable "Show labels" and enter the Axis title.
                 When you are done with Comparison Settings configuration, click the orange checkmark in the upper right corner of the window to apply changes.'
     2:
-        image: /images/user-guide/ui/widgets/charts/bars-comparison-2-ce.png
-        title: 'You can see in the widget legend that Comparison Settings have been apllied. Save changes by clicking the orange checkmark in the lower right corner of the screen.'
+        image: /images/user-guide/ui/widgets/charts/bars-comparison-2-pe.png
+        title: 'You can see in the widget legend that Comparison Settings have been applied. Save changes by clicking the orange checkmark in the lower right corner of the screen.'
     3:
-        image: /images/user-guide/ui/widgets/charts/bars-comparison-3-ce.png
+        image: /images/user-guide/ui/widgets/charts/bars-comparison-3-pe.png
         title: 'You can see the tooltip with the comparison data when you hover the mouse over the widget.'
 
 bars-legend:
     0:
-        image: /images/user-guide/ui/widgets/charts/bars-legend-ce.png
+        image: /images/user-guide/ui/widgets/charts/bars-legend-pe.png
         title: 'In the Advanced tab, enable custom legend to use attribute or time series values in key labels. Click the "+ New" button. From the appeared drop-down menu, select key type.
                 The Key name is entered in the line below. Apply all configured settings by click the orange checkmark in the upper right corner of the window.'
     1:
-        image: /images/user-guide/ui/widgets/charts/bars-legend-1-ce.png
+        image: /images/user-guide/ui/widgets/charts/bars-legend-1-pe.png
         title: 'Go to Data tab and click the pencil icon on the data key to enter Data key configuration.'
     2:
-        image: /images/user-guide/ui/widgets/charts/bars-legend-2-ce.png
+        image: /images/user-guide/ui/widgets/charts/bars-legend-2-pe.png
         title: 'In the label line, enter the patter ${} with the data key name inside the brackets. Click "Save" to apply new label name.'
     3:
-        image: /images/user-guide/ui/widgets/charts/bars-legend-3-ce.png
+        image: /images/user-guide/ui/widgets/charts/bars-legend-3-pe.png
         title: 'Click the orange checkmark in the upper right corner of the screen to apply data key changes.'
     4:
-        image: /images/user-guide/ui/widgets/charts/bars-legend-4-ce.png
+        image: /images/user-guide/ui/widgets/charts/bars-legend-4-pe.png
         title: 'As you can see on the widget, custom legend settings have been applied. To save changes, click the orange checkmark in the lower right corner of the screen.'
 
 lines-smooth:
@@ -245,27 +245,27 @@ state-axis:
 
 state-ticksfun:
     0:
-        image: /images/user-guide/ui/widgets/charts/state-ticksfun-ce.png
+        image: /images/user-guide/ui/widgets/charts/state-ticksfun-pe.png
         title: 'In the Advanced tab, you can edit the default function according to your entity values.'
     1:
-        image: /images/user-guide/ui/widgets/charts/state-ticksfun-1-ce.png
+        image: /images/user-guide/ui/widgets/charts/state-ticksfun-1-pe.png
         title: 'After you edited values and text to be returned, apply changes by clicking the orange checkmark in the upper right corner of the window.'
     2:
-        image: /images/user-guide/ui/widgets/charts/state-ticksfun-2-ce.png
+        image: /images/user-guide/ui/widgets/charts/state-ticksfun-2-pe.png
         title: 'Ticks formatter function has been applied. To save it, click the orange checkmark in the lower right corner of the page.'
 
 state-comparison:
     0:
-        image: /images/user-guide/ui/widgets/charts/state-comparison-ce.png
+        image: /images/user-guide/ui/widgets/charts/state-comparison-pe.png
         title: 'In Advanced tab, enable comparison and from the drop-down menu select time to show historical data with which to compare.
                 In the "Second X axis" section, select axis position, where the compared axis will be located on the widget. 
                 If you would like title for the second axis, enable "Show labels" and enter the Axis title.
                 When you are done with Comparison Settings configuration, click the orange checkmark in the upper right corner of the window to apply changes.'
     1:
-        image: /images/user-guide/ui/widgets/charts/state-comparison-1-ce.png
+        image: /images/user-guide/ui/widgets/charts/state-comparison-1-pe.png
         title: 'Since comparison settings work only in History time window mode, click on the clock icon in the upper right corner and select the History time window there. Click "Update" to apply.'
     2:
-        image: /images/user-guide/ui/widgets/charts/state-comparison-2-ce.png
+        image: /images/user-guide/ui/widgets/charts/state-comparison-2-pe.png
         title: 'As you can see on the widget, now you can compare value for last minute and the one from day ago. Click the big orange checkmark in the lower right corner to apply changes.'
 
 state-legend:
@@ -286,31 +286,32 @@ state-legend:
 
 pieflot-radius:
     0:
-        image: /images/user-guide/ui/widgets/charts/pieflot-radius-ce.png
+        image: /images/user-guide/ui/widgets/charts/pieflot-radius-pe.png
         title: 'In the Advanced tab, enter preferred radius (0 to 1) and click the orange checkmark in the upper right corner of the window to apply changes.'
     1:
-        image: /images/user-guide/ui/widgets/charts/pieflot-radius-1-ce.png
+        image: /images/user-guide/ui/widgets/charts/pieflot-radius-1-pe.png
         title: 'Radius became smaller. Click the big orange checkmark in the lower right corner to apply changes.'
 
 pieflot-innerradius:
     0:
-        image: /images/user-guide/ui/widgets/charts/pieflot-innerradius-ce.png
+        image: /images/user-guide/ui/widgets/charts/pieflot-innerradius-pe.png
         title: 'In the Advanced tab, enter preferred inner radius (0 to 1) and click the orange checkmark in the upper right corner of the window to apply changes.'
     1:
-        image: /images/user-guide/ui/widgets/charts/pieflot-innerradius-1-ce.png
+        image: /images/user-guide/ui/widgets/charts/pieflot-innerradius-1-pe.png
         title: 'Inner radius has been added. Click the big orange checkmark in the lower right corner to apply changes.'
 
 pieflot-animation:
     0:
-        image: /images/user-guide/ui/widgets/charts/pieflot-animation-ce.png
-        title: 'In the Advanced tab, enable the experimental pie animation function and click the big orange checkmark in the upper right corner of the window to apply changes.'
+        image: /images/user-guide/ui/widgets/charts/pieflot-animation-pe.png
+        title: 'In the Advanced tab, enable the experimental pie animation function and click the big orange checkmark in the upper right corner of the window to apply changes.
+                '
 
 pieflot-tilt:
     0:
-        image: /images/user-guide/ui/widgets/charts/pieflot-tilt-ce.png
+        image: /images/user-guide/ui/widgets/charts/pieflot-tilt-pe.png
         title: 'In the Advanced tab, enter preferred tilt (0 to 1) and click the orange checkmark in the upper right corner of the window to apply changes.'
     1:
-        image: /images/user-guide/ui/widgets/charts/pieflot-tilt-1-ce.png
+        image: /images/user-guide/ui/widgets/charts/pieflot-tilt-1-pe.png
         title: 'As you can see, the Pie - Flot has been tilted. Save changes by clicking the big orange checkmark in the lower right of the page.'
 
 pieflot-stroke:

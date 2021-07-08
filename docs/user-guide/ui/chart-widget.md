@@ -147,7 +147,7 @@ bars-comparison:
                 When you are done with Comparison Settings configuration, click the orange checkmark in the upper right corner of the window to apply changes.'
     2:
         image: /images/user-guide/ui/widgets/charts/bars-comparison-2-ce.png
-        title: 'You can see in the widget legend that Comparison Settings have been apllied. Save changes by clicking the orange checkmark in the lower right corner of the screen.'
+        title: 'You can see in the widget legend that Comparison Settings have been applied. Save changes by clicking the orange checkmark in the lower right corner of the screen.'
     3:
         image: /images/user-guide/ui/widgets/charts/bars-comparison-3-ce.png
         title: 'You can see the tooltip with the comparison data when you hover the mouse over the widget.'

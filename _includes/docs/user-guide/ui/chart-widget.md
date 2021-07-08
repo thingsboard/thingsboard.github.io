@@ -137,17 +137,6 @@ it is applied only to the specific time series data, and the basic tooltip funct
 But, if you need something really special for your widget, the Tooltip value format function is for you.
 Suppose you have temperature readings, and you'd like to see Celsius and Fahrenheit values on your widget, which will be displayed with two floating points.
 
-
-<summary>
-<b>Let's use this example of the function to set the needed configuration:</b>
-</summary>
-
-{% highlight ruby %}
-let celsiusValue = parseFloat(value).toFixed(2);
-let farenheitValue = parseFloat(celsiusValue*1.8 + 32).toFixed(2);
-return celsiusValue + ' °C (' + farenheitValue + ' °F)';
-{% endhighlight %}
-
 {% include images-gallery.html imageCollection="bars-tooltipfunction" showListImageTitles="true" %}
 
 **1.2.** Grid settings
@@ -199,10 +188,7 @@ Advanced settings for the _Timeseries Line Chart_ widget are the same as for Tim
 
 **1.1.** Stacking
 
-By default, the Stacking box is disabled to display the values of entities in the Chart and make lines intersect.
-If the Stacking is box checked, the lines of the Line Chart are split and don't intersect. To see the values of the entities, you should hover the mouse over the chart.
-
-{% include images-gallery.html imageCollection="state-stacking" showListImageTitles="true" %}
+Stacking mode works in widgets where you need to see entity values.
 
 **1.2.** Display smooth (curved) lines works only in Line Charts.
 
@@ -220,28 +206,31 @@ You can customize the values that will be displayed in the tooltip via [Settings
 Tooltip configuration via Settings is basic and applied to all entities at the same time. When configured in the Advanced Data key configuration,
 it is applied only to the specific time series data, and the basic tooltip function will be overwritten by this configuration.
 
-But, if you need something really special for your widget, the Tooltip value format function is for you.
-Suppose you have temperature readings, and you'd like to see Celsius and Fahrenheit values on your widget, which will be displayed with two floating points.
+In State Chart, you can configure entity states to be shown on a tooltip depending on entity values.
 
 <summary>
 <b>Let's use function to set the needed configuration:</b>
 </summary>
 
 {% highlight ruby %}
-let celsiusValue = parseFloat(value).toFixed(2);
-let farenheitValue = parseFloat(celsiusValue*1.8 + 32).toFixed(2);
-return celsiusValue + ' °C (' + farenheitValue + ' °F)';
+if (value > 0 && value <= 1) {
+return 'On';
+} else if (value === 0) {
+return 'Off';
+} else {
+return '';
+}
 {% endhighlight %}
 
 {% include images-gallery.html imageCollection="state-tooltipfunction" showListImageTitles="true" %}
 
 **1.6. Grid settings**
 
-{% include images-gallery.html imageCollection="state-grid" showListImageTitles="true" %}
+Grid settings are the same as in [Timeseries Bar Chart](/docs/{{docsPrefix}}user-guide/ui/chart-widget/#1-common-settings). 
 
 **1.7. Axis settings**
 
-{% include images-gallery.html imageCollection="state-axis" showListImageTitles="true" %}
+Axis settings are the same as in [Timeseries Bar Chart](/docs/{{docsPrefix}}user-guide/ui/chart-widget/#1-common-settings).
 
 **1.8. Ticks formatter function**
 
@@ -253,7 +242,7 @@ return celsiusValue + ' °C (' + farenheitValue + ' °F)';
 
 ##### 3. Custom Legend Settings
 
-{% include images-gallery.html imageCollection="state-legend" showListImageTitles="true" %}
+Custom Legend Settings are the same as in [Timeseries Bar Chart](/docs/{{docsPrefix}}user-guide/ui/chart-widget/#3-custom-legend-settings).
 
 #### Latest values Pie - Flot
 
@@ -274,9 +263,7 @@ Sets the radius of the donut hole. If value is between 0 and 1 (inclusive) then 
 
 With the changing of entities values the Pie - Flot obviously moves, but these moves are rather sharp movements. Nevertheless, Pie animation makes these moves smoother and softer. 
 
-
 {% include images-gallery.html imageCollection="pieflot-animation" showListImageTitles="true" %}
-![image](/images/user-guide/ui/widgets/charts/pieflot-animation-1-ce.gif)
 
 ##### 4. Tilt
 
