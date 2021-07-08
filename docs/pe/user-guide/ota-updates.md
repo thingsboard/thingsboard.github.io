@@ -131,17 +131,16 @@ automatic distribution of the package to all devices that share the same group. 
 {% include images-gallery.html imageCollection="fw-devicegroup" %}
 
 The device group details allow choosing only compatible OTA update packages 
-(see [provisioning](/docs/{{docsPrefix}}user-guide/ota-updates/#provision-ota-package-to-thingsboard-repository)) for more info). 
-Device profile may be used by thousands of devices. 
+(see [provisioning](/docs/{{docsPrefix}}user-guide/ota-updates/#provision-ota-package-to-thingsboard-repository)) for more info.  
 Assignment of the firmware/software triggers the [update process](/docs/{{docsPrefix}}user-guide/ota-updates/#update-process).
 
-The firmware version assigned to the device will automatically overwrite firmware version that is assigned to the device profile.
+The firmware version assigned specifically to the device will automatically overwrite firmware version that is assigned to the device group.
 
 For example, let's assume you have Devices A1, A2 and A3 that are in the same Device Group, but have different device profiles. 
 
-* Devices A1 and A2 have compatible device profiles, while Device A3 has incompatible one. When you assign a package to this device group, 
+* Devices A1 and A2 have compatible device profiles, while Device A3 has incompatible one. When you assign the package to this device group, 
   firmware/software will be updated only on Devices A1 and A2.
-* If you update package on Device A2, 
+* If you update the package specifically on Device A2, Device A1 will stay not updated.
 
 ## Scheduler 
 
@@ -153,7 +152,7 @@ You can either observe scheduler events as a list, or see upcoming events in a c
 choose an update target:
 * If you need to schedule an update for Device, Device profile or Device group, from the drop-down menus, select an entity 
 and needed OTA package. 
-* If you need to schedule an update for Devices group owner, from the drop-down menus, select an owner of the group, specific entity group that belongs to this owner,
+* If you need to schedule an update for Devices group owner, from the drop-down menus, select the owner of the group, specific entity group that belongs to this owner,
 and the package that will be updated.
   
 3. In the **Schedule** tab, choose your timezone, set the date and time when you'd like your entity to be updated. 
