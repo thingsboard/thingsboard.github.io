@@ -52,7 +52,7 @@ Please use documentation of the [Performance Test Project](https://github.com/th
 
 # t2.medium
 
-*In this test, we will show that Thingsboard consistently receives about 3000 data points per second on t2.medium. And also at its peak, it can process up to 15,000 data points using the [AWS CPU Credit Balance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-credits-baseline-concepts.html). Please read the official documentation for understanding how it works.
+In this test, we will show that Thingsboard consistently receives about 3000 data points per second on t2.medium. And also at its peak, it can process up to 15,000 data points using the [AWS CPU Credit Balance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-credits-baseline-concepts.html). Please read the official documentation for understanding how it works.
 
 **Performance Results**
 
@@ -88,17 +88,17 @@ DURATION_IN_SECONDS=43200
 
 CPU Utilization (%)
 
-![image](/images/reference/performance-aws-instances/t2-medium/postgresql-150msgs-cpu.png)
+![image](/images/reference/performance-aws-instances/t2-medium/postgres-stable-cpu.png)
 
-Used Physical Memory (MB)
+Memory Utilization (%)
 
-![image](/images/reference/performance-aws-instances/t2-medium/postgresql-150msgs-memory-1.png)
+![image](/images/reference/performance-aws-instances/t2-medium/postgres-stable-memory.png)
 
 TB dashboard
 
 **~~10.5m data points per hour**
 
-![image](/images/reference/performance-aws-instances/t2-medium/postgresql-150msgs-tb.png)
+![image](/images/reference/performance-aws-instances/t2-medium/postgres-stable-tb.png)
 
 ### Test Run #2 (burstable)
 
@@ -131,13 +131,13 @@ Here is the Credit Balance chart line for the **t2.medium** during publishing 15
 
 The line goes down and after some period instance will be dramatically decreased by CPU (20% of total).
 
-![image](/images/reference/performance-aws-instances/t2-medium/postgresql-200msgs-failing-cpu-credit.png)
+![image](/images/reference/performance-aws-instances/t2-medium/postgres-failed-cpu-credit.png)
 
 TB dashboard
 
 **~~54m data points per hour**
 
-![image](/images/reference/performance-aws-instances/t2-medium/postgresql-burstable-dashboard.png)
+![image](/images/reference/performance-aws-instances/t2-medium/postgres-burst-tb.png)
 
 # c5.large
 
@@ -179,25 +179,25 @@ DURATION_IN_SECONDS=43200
 
 CPU Utilization (%)
 
-![image](/images/reference/performance-aws-instances/c5-large/postgresql-700msgs-cpu.png)
+![image](/images/reference/performance-aws-instances/c5-large/postgres-cpu.png)
 
 Memory Utilization (%)
 
-![image](/images/reference/performance-aws-instances/c5-large/postgresql-700msgs-memory.png)
+![image](/images/reference/performance-aws-instances/c5-large/postgres-memory.png)
 
 TB dashboard
 
 **~~80m data points per hour**
 
-![image](/images/reference/performance-aws-instances/c5-large/postgresql-700msgs-tb.png)
+![image](/images/reference/performance-aws-instances/c5-large/postgres-tb.png)
 
 AWS write IOPS for the volume
 
-![image](/images/reference/performance-aws-instances/c5-large/postgresql-700msgs-iops.png)
+![image](/images/reference/performance-aws-instances/c5-large/postgres-aws-readops.png)
 
-![image](/images/reference/performance-aws-instances/c5-large/postgresql-700msgs-iops-1.png)
+![image](/images/reference/performance-aws-instances/c5-large/postgres-aws-writeops.png)
 
-![image](/images/reference/performance-aws-instances/c5-large/postgresql-700msgs-iops-2.png)
+![image](/images/reference/performance-aws-instances/c5-large/postgres-aws-burstbalance.png)
 
 ### Test Run #2 (kafka)
 
@@ -232,25 +232,25 @@ DURATION_IN_SECONDS=43200
 
 CPU Utilization (%)
 
-![image](/images/reference/performance-aws-instances/c5-large/postgresql-500msgs-cpu.png)
+![image](/images/reference/performance-aws-instances/c5-large/postgres-kafka-cpu.png)
 
 Memory Utilization (%)
 
-![image](/images/reference/performance-aws-instances/c5-large/postgresql-500msgs-memory.png)
+![image](/images/reference/performance-aws-instances/c5-large/postgres-kafka-memory.png)
 
 TB dashboard
 
 **~~80m data points per hour**
 
-![image](/images/reference/performance-aws-instances/c5-large/postgresql-500msgs-tb.png)
+![image](/images/reference/performance-aws-instances/c5-large/postgres-kafka-tb.png)
 
 AWS IOPS statistics
 
-![image](/images/reference/performance-aws-instances/c5-large/postgresql-500msgs-iops-1.png)
+![image](/images/reference/performance-aws-instances/c5-large/postgres-kafka-aws-readops.png)
 
-![image](/images/reference/performance-aws-instances/c5-large/postgresql-500msgs-iops.png)
+![image](/images/reference/performance-aws-instances/c5-large/postgres-kafka-aws-writeops.png)
 
-![image](/images/reference/performance-aws-instances/c5-large/postgresql-500msgs-iops-2.png)
+![image](/images/reference/performance-aws-instances/c5-large/postgres-kafka-aws-burstbalance.png)
 
 # m5.large
 
@@ -310,7 +310,7 @@ AWS write IOPS for the volume
 
 ![image](/images/reference/performance-aws-instances/m5-large/postgresql-aws-writeops.png)
 
-![image](/images/reference/performance-aws-instances/m5-large/postgresql-aws-opsbalance.png)
+![image](/images/reference/performance-aws-instances/m5-large/postgresql-aws-burstbalance.png)
 
 ### Test Run #2 (cassandra)
 
@@ -396,22 +396,22 @@ DURATION_IN_SECONDS=43200
 
 CPU Utilization (%)
 
-![image](/images/reference/performance-aws-instances/m5-xlarge/cassandra-2100msgs-cpu.png)
+![image](/images/reference/performance-aws-instances/m5-xlarge/postgres-kafka-cpu.png)
 
 Memory Utilization (%)
 
-![image](/images/reference/performance-aws-instances/m5-xlarge/cassandra-2100msgs-memory.png)
+![image](/images/reference/performance-aws-instances/m5-xlarge/postgres-kafka-memory.png)
 
 TB dashboard
 
 **~~108m data points per hour**
 
-![image](/images/reference/performance-aws-instances/m5-xlarge/cassandra-2100msgs-tb.png)
+![image](/images/reference/performance-aws-instances/m5-xlarge/postgres-kafka-tb-dashboard.png)
 
 AWS IOPS statistics
 
-![image](/images/reference/performance-aws-instances/m5-xlarge/m5.xlarge.AWS.ReadOps.KAFKA.png)
+![image](/images/reference/performance-aws-instances/m5-xlarge/postgres-kafka-aws-readops.png)
 
-![image](/images/reference/performance-aws-instances/m5-xlarge/m5.xlarge.AWS.WriteOps.KAFKA.png)
+![image](/images/reference/performance-aws-instances/m5-xlarge/postgres-kafka-aws-writeops.png)
 
-![image](/images/reference/performance-aws-instances/m5-xlarge/m5.xlarge.AWS.CreditBalance.KAFKA.png)
+![image](/images/reference/performance-aws-instances/m5-xlarge/postgres-kafka-aws-burstbalance.png)
