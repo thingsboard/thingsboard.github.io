@@ -46,11 +46,11 @@ Please use documentation of the [Performance Test Project](https://github.com/th
 
 | Instance Type | Instance details | Database Type 	 | Queue Type  | Device API | Number of devices | Maximum number of data points |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| [t2.medium](#t2medium)  | 2 vCPUs, 4GB | PostgreSQL | In memory | MQTT | 10000  | **~3000/sec (15000/sec*)** |
-| [c5.large](#c5large)  | 2 vCPUs, 4GB | PostgreSQL | In memory | MQTT | 20000  | **~22500/sec** |
+| [t2.medium](#t2medium)  | 2 vCPUs, 4GB | PostgreSQL | In Memory | MQTT | 10000  | **~3000/sec (15000/sec*)** |
+| [c5.large](#c5large)  | 2 vCPUs, 4GB | PostgreSQL | In Memory | MQTT | 20000  | **~22500/sec** |
 | [c5.large](#c5large)  | 2 vCPUs, 4GB | PostgreSQL | Kafka | MQTT | 20000  | **~22500/sec** |
-| [m5.large](#m5large) | 4 vCPUs, 8GB | PostgreSQL | In Memory | MQTT |  20000  | **~23000/sec** |
-| [m5.large](#m5large) | 4 vCPUs, 8GB | Cassandra | In memory | MQTT | 20000  | **~10000/sec**|
+| [m5.large](#m5large) | 2 vCPUs, 8GB | PostgreSQL | In Memory | MQTT |  20000  | **~23000/sec** |
+| [m5.large](#m5large) | 2 vCPUs, 8GB | Cassandra | In Memory | MQTT | 20000  | **~10000/sec**|
 | [m5.xlarge](#m5xlarge)  | 4 vCPUs, 16GB | PostgreSQL | Kafka | MQTT | 25000  | **~30000/sec** |
 
 # t2.medium
@@ -63,7 +63,7 @@ There is stable test. CPU <= 20%, this means it will not be used [AWS CPU Credit
 
 | Instance Type | Instance details | Database Type 	 | Queue Type  | Device API | Number of devices | Count of test run hours | Maximum number of data points |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| t2.medium | 2 vCPUs, 4GB | PostgreSQL | In memory | MQTT | 10000  | 12 | **~3000/sec** |
+| t2.medium | 2 vCPUs, 4GB | PostgreSQL | In Memory | MQTT | 10000  | 12 | **~3000/sec** |
 
 **Test Configuration**
 
@@ -107,7 +107,7 @@ There is burstable test. CPU => 20%, this means it will be used [AWS CPU Credit 
 
 | Instance Type | Instance details | Database Type 	 | Queue Type  | Device API | Number of devices | Count of test run hours | Maximum number of data points |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| t2.medium | 2 vCPUs, 4GB | PostgreSQL | In memory | MQTT | 10000  | 2 | **~15000/sec** | 
+| t2.medium | 2 vCPUs, 4GB | PostgreSQL | In Memory | MQTT | 10000  | 2 | **~15000/sec** | 
 
 **Test Configuration**
 
@@ -146,7 +146,7 @@ The line goes down and after some period instance will be dramatically decreased
 
 | Instance Type | Instance details | Database Type 	 | Queue Type  | Device API | Number of devices | Count of test run hours | Maximum number of data points |
 | --- | --- | --- | --- | --- | --- | --- |
-| c5.large | 2 vCPUs, 4GB | PostgreSQL | In memory | MQTT |  20000  | 12 | **~22500/sec** |
+| c5.large | 2 vCPUs, 4GB | PostgreSQL | In Memory | MQTT |  20000  | 12 | **~22500/sec** |
 
 **Test Configuration**
 
@@ -234,7 +234,7 @@ Memory Utilization (%)
 
 | Instance Type | Instance details | Database Type 	 | Queue Type  | Device API | Number of devices | Count of test run hours | Maximum number of data points |
 | --- | --- | --- | --- | --- | --- | --- |
-| m5.large | 2 vCPUs, 4GB | PostgreSQL | In memory | MQTT |  20000  | 6 | **~23000/sec** |
+| m5.large | 2 vCPUs, 4GB | PostgreSQL | In Memory | MQTT |  20000  | 6 | **~23000/sec** |
 
 **Test Configuration**
 
@@ -276,7 +276,7 @@ Memory Utilization (%)
 
 | Instance Type | Instance details | Database Type 	 | Queue Type  | Device API | Number of devices | Count of test run hours | Maximum number of data points |
 | --- | --- | --- | --- | --- | --- | --- |
-| c5.large | 2 vCPUs, 4GB | Cassandra | In memory | MQTT |  20000  | 6 | **~10000/sec** |
+| c5.large | 2 vCPUs, 4GB | Cassandra | In Memory | MQTT |  20000  | 6 | **~10000/sec** |
 
 **Test Configuration**
 
