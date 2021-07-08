@@ -11,6 +11,8 @@ toc:
   path: /docs/pe/reference/coap-api/
 - title: HTTP Device API
   path: /docs/pe/reference/http-api/
+- title: LWM2M Device API
+  path: /docs/pe/reference/lwm2m-api/
 - title: Administration REST API
   path: /docs/pe/reference/rest-api/
 - title: MQTT Gateway API Reference

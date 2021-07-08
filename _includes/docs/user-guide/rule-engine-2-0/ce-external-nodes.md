@@ -355,6 +355,25 @@ If required, Rule Chain can be configured to use chain of Transformation Nodes f
 **Outbound message** from this node will contain response **status**, **statusCode**, **statusReason** and responce **headers** in the Message metadata.
 Outbound Message payload will be the same as response body. Original Message type and originator will not be changed.
 
+<br/>
+
+To send a single file as request body, add a field **attachments** to the message **metadata** with file uuid stored in DataBase. In that case any message data will be ignored and only file content will be sent. 
+To define a request content type use the header setting like
+
+<code>Content-Type: application/json; charset=UTF-8</code>
+
+Here an example of message **metadata** to send a single file:
+
+{% highlight javascript %}
+{
+  "attachments": "e18b6950-dfca-11eb-affb-8db134b46d68"
+}
+{% endhighlight %}
+
+**NOTE**: This is part of [File Storage](/docs/{{docsPrefix}}user-guide/file-storage/) feature supported by [ThingsBoard Professional Edition](/products/thingsboard-pe/).
+
+<br/>
+
 In case of successful request, outbound message will be passed to the next nodes via **Success** chain, 
 otherwise **Failure** chain is used.
 
@@ -395,7 +414,15 @@ If specific Mail Server is required for this node - disable **Use system SMTP se
 
 <br/>
 
-Additionally this node can create email attachments if incoming message has prepared **attachments** field with reference to files stored in DataBase. 
+Additionally this node can create email attachments if incoming message has prepared **attachments** metadata field with reference to files stored in DataBase.
+
+Multiple attachments supported. Use a comma separated no whitespace references (uuids) to send many files. Here an example of message **metadata**:
+
+{% highlight javascript %}
+{
+  "attachments": "e18b6950-dfca-11eb-affb-8db134b46d68,17383b4c-6000-4bb8-be04-b1cb15aa18c5"
+}
+{% endhighlight %}
 
 **NOTE**: This is part of [File Storage](/docs/{{docsPrefix}}user-guide/file-storage/) feature supported by [ThingsBoard Professional Edition](/products/thingsboard-pe/).
 

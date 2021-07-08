@@ -6,6 +6,7 @@ Device API is grouped by supported communication protocols:
 * [**MQTT API**](/docs/{{docsPrefix}}reference/mqtt-api)
 * [**CoAP API**](/docs/{{docsPrefix}}reference/coap-api)
 * [**HTTP API**](/docs/{{docsPrefix}}reference/http-api)
+* [**LWM2M API**](/docs/{{docsPrefix}}reference/lwm2m-api)
 
 [**Gateway MQTT API**](/docs/{{docsPrefix}}reference/gateway-mqtt-api) allows you to connect **existing** devices to the platform using **[ThingsBoard Gateway](/docs/iot-gateway/what-is-iot-gateway/)**
 or implement your own gateway.

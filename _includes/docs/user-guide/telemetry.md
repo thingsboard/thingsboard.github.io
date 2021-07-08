@@ -67,6 +67,7 @@ You may use built-in transport protocol implementations:
 - [MQTT API reference](/docs/{{docsPrefix}}reference/mqtt-api/#telemetry-upload-api)
 - [CoAP API reference](/docs/{{docsPrefix}}reference/coap-api/#telemetry-upload-api)
 - [HTTP API reference](/docs/{{docsPrefix}}reference/http-api/#telemetry-upload-api)
+- [LwM2M API reference](/docs/{{docsPrefix}}reference/lwm2m-api/#telemetry-upload-api)
 
 Most of the protocols above support JSON, Protobuf or own data format. For other protocols, please review ["How to connect your device?"](/docs/{{docsPrefix}}getting-started-guides/connectivity/) guide.
 

@@ -39,8 +39,9 @@ You can also take a look at [cluster setup](/docs/{{docsPrefix}}user-guide/insta
 
 ThingsBoard provides
 [MQTT](/docs/{{docsPrefix}}reference/mqtt-api), 
-[CoAP](/docs/{{docsPrefix}}reference/coap-api) and 
-[HTTP](/docs/{{docsPrefix}}reference/http-api) protocols support.
+[CoAP](/docs/{{docsPrefix}}reference/coap-api), 
+[HTTP](/docs/{{docsPrefix}}reference/http-api), and.
+[LwM2M](/docs/{{docsPrefix}}reference/lwm2m-api) protocols support.
 **Existing** devices may be connected to the platform using **[ThingsBoard Gateway](/docs/iot-gateway/what-is-iot-gateway/)**.
 You can find more information on the [connectivity](/docs/{{docsPrefix}}reference/protocols/) page. 
 

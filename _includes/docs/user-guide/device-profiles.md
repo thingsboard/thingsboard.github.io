@@ -48,7 +48,7 @@ Since ThingsBoard 3.2, the platform supports two transport types: Default and MQ
 #### Default transport type
 
 The Default transport type is intended for backward compatibility with previous releases. 
-With the Default transport type, you can continue to use the platform's default [MQTT](/docs/{{docsPrefix}}reference/mqtt-api/), [HTTP](/docs/{{docsPrefix}}reference/http-api/), and [CoAP](/docs/{{docsPrefix}}reference/mqtt-api/) APIs to connect your devices.
+With the Default transport type, you can continue to use the platform's default [MQTT](/docs/{{docsPrefix}}reference/mqtt-api/), [HTTP](/docs/{{docsPrefix}}reference/http-api/), [CoAP](/docs/{{docsPrefix}}reference/mqtt-api/) and [LwM2M](/docs/{{docsPrefix}}reference/lwm2m-api/) APIs to connect your devices.
 There is no specific configuration setting for the default transport type. 
 
 #### MQTT transport type
