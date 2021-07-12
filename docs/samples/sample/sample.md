@@ -44,9 +44,6 @@ Widget/dashboard example for visualization of the data from your device. You can
 
 Choose one of the suitable methods of integration according to Connectivity diagram below
 
-<br/>
-<br/>
-
 <object width="80%" data="/images/connectivity.svg"></object>
 
 #### Integration method

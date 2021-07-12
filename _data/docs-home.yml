@@ -218,6 +218,12 @@ toc:
 - title: Troubleshooting
   path: /docs/user-guide/troubleshooting/
 - title: Release Notes
-  path: /docs/reference/releases/
+  section:
+    - title: Known Issues and Recommendations
+      path: /docs/reference/known-issues/
+    - title: Release 3.X
+      path: /docs/reference/releases/
+    - title: Release 2.X
+      path: /docs/reference/releases-2-X/
 - title: Roadmap
   path: /docs/reference/roadmap/

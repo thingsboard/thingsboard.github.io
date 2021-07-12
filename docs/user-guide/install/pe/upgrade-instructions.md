@@ -500,6 +500,10 @@ C:\thingsboard>upgrade.bat --fromVersion=3.2.0
 net start thingsboard
 ```
 
+### Troubleshooting
+
+{% include templates/upgrade-troubleshooting.md %}
+
 ## Upgrading to 3.2PE
 
 
@@ -597,8 +601,11 @@ C:\thingsboard>upgrade.bat --fromVersion=3.1.1
 net start thingsboard
 ```
 
-## Upgrading to 3.1.1PE
+### Troubleshooting
 
+{% include templates/upgrade-troubleshooting.md %}
+
+## Upgrading to 3.1.1PE
 
 ### Ubuntu/CentOS {#ubuntucentos-311}
 
@@ -694,8 +701,11 @@ C:\thingsboard>upgrade.bat --fromVersion=3.1.0
 net start thingsboard
 ```
 
-## Upgrading to 3.1PE
+### Troubleshooting
 
+{% include templates/upgrade-troubleshooting.md %}
+
+## Upgrading to 3.1PE
 
 ### Ubuntu/CentOS {#ubuntucentos-31}
 
@@ -813,8 +823,11 @@ C:\thingsboard>upgrade.bat --fromVersion=3.0.1
 net start thingsboard
 ```
 
-## Upgrading to 3.0.1PE
+### Troubleshooting
 
+{% include templates/upgrade-troubleshooting.md %}
+
+## Upgrading to 3.0.1PE
 
 ### Ubuntu/CentOS {#ubuntucentos-301}
 
@@ -948,6 +961,10 @@ C:\thingsboard>upgrade.bat --fromVersion=2.5.0
 net start thingsboard
 ```
 
+### Troubleshooting
+
+{% include templates/upgrade-troubleshooting.md %}
+
 ## Upgrading to 3.0PE
 
 
@@ -1079,6 +1096,10 @@ C:\thingsboard>upgrade.bat --fromVersion=2.5.0
 net start thingsboard
 ```
 
+### Troubleshooting
+
+{% include templates/upgrade-troubleshooting.md %}
+
 ## Upgrading to 2.5.6PE
 
 ### Ubuntu/CentOS {#ubuntucentos-256}
@@ -1141,6 +1162,10 @@ net stop thingsboard
 ```text
 net start thingsboard
 ```
+
+### Troubleshooting
+
+{% include templates/upgrade-troubleshooting.md %}
 
 ## Upgrading to 2.5.5PE 
 
@@ -1205,6 +1230,10 @@ net stop thingsboard
 net start thingsboard
 ```
 
+### Troubleshooting
+
+{% include templates/upgrade-troubleshooting.md %}
+
 ## Upgrading to 2.5.4PE 
 
 ### Ubuntu/CentOS {#ubuntucentos-254}
@@ -1268,6 +1297,10 @@ net stop thingsboard
 net start thingsboard
 ```
 
+### Troubleshooting
+
+{% include templates/upgrade-troubleshooting.md %}
+
 ## Upgrading to 2.5.3PE 
 
 ### Ubuntu/CentOS {#ubuntucentos-253}
@@ -1330,6 +1363,10 @@ net stop thingsboard
 ```text
 net start thingsboard
 ```
+
+### Troubleshooting
+
+{% include templates/upgrade-troubleshooting.md %}
 
 ## Upgrading to 2.5.2PE 
 
@@ -1410,6 +1447,9 @@ C:\thingsboard>upgrade.bat --fromVersion=2.4.3
 net start thingsboard
 ```
 
+### Troubleshooting
+
+{% include templates/upgrade-troubleshooting.md %}
 
 ## Upgrading to 2.5.1PE 
 
@@ -1493,6 +1533,9 @@ C:\thingsboard>upgrade.bat --fromVersion=2.4.3
 net start thingsboard
 ```
 
+### Troubleshooting
+
+{% include templates/upgrade-troubleshooting.md %}
 
 ## Upgrading to 2.5PE 
 
@@ -1644,6 +1687,9 @@ C:\thingsboard>upgrade.bat --fromVersion=2.4.3
 net start thingsboard
 ```
 
+### Troubleshooting
+
+{% include templates/upgrade-troubleshooting.md %}
 
 ## Upgrading to 2.4.3PE
 
@@ -1737,6 +1783,10 @@ C:\thingsboard>upgrade.bat --fromVersion=2.4.2
 net start thingsboard
 ```
 
+### Troubleshooting
+
+{% include templates/upgrade-troubleshooting.md %}
+
 ## Upgrading to 2.4.2.1PE
 
 These steps are applicable for 2.4.1PE and 2.4.2PE ThingsBoard Professional Edition versions.
@@ -1829,6 +1879,9 @@ C:\thingsboard>upgrade.bat --fromVersion=2.4.1
 net start thingsboard
 ```
 
+### Troubleshooting
+
+{% include templates/upgrade-troubleshooting.md %}
 
 ## Upgrading to 2.4.1PE
 
@@ -1921,6 +1974,10 @@ C:\thingsboard>upgrade.bat --fromVersion=2.4.0
 ```text
 net start thingsboard
 ```
+
+### Troubleshooting
+
+{% include templates/upgrade-troubleshooting.md %}
 
 ## Next steps
 
