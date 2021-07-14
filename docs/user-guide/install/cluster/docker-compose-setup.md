@@ -155,6 +155,9 @@ Where:
 
 - `SERVICE...` - list of services to update (defined in docker-compose configurations). If not specified all services will be updated.
 
+{% include templates/install/queue-service-bus-config.md %}
+
+{% include templates/install/generate_certificate_docker-compose.md %}
 ## Next steps
 
 {% assign currentGuide = "InstallationGuides" %}{% include templates/guides-banner.md %}
