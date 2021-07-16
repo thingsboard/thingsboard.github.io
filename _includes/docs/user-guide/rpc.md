@@ -82,6 +82,34 @@ This token should belong to either
  
 You can use the following [guide](/docs/{{docsPrefix}}reference/rest-api/#rest-api-auth) to get the token.
 
+## Persistent RPC
+
+ThingsBoard provides **Persistent RPC**. It has an increased timeout and is permanently stored in the database.
+When you send Persistent RPC, the response will contain RPC ID. Over time, you can use this ID to find specific RPC from the Database to see its states and responses.
+
+#### Rule chain events from RPC
+
+Events are sent for each RPC update in the Rule chain.
+
+{% include images-gallery.html imageCollection="rule-chain" %}
+
+#### RPC States
+
+RPC states determine what happens when you sent RPC request. There are five possible states after you sent RPC:
+
+**QUEUED** - RPC was saved to the Database;  
+**DELIVERED** - RPC was delivered to the device (for two-way RPC);  
+**SUCCESSFUL** - if RPC is one-way, SUCCESSFUL means that RPC was delivered to the device. If RPC is two-way, SUCCESSFUL means that we've already received response from the device;  
+**TIMEOUT** - RPC was not delivered to the device;  
+**FAILED** - an error occurred either while sending RPC, or during one of the steps.
+
+#### Usage of Persistent RPC
+
+To use Persistent RPC, you should add RPC debug terminal widget to your dashboard. How to do it you can read [here](/docs/{{docsPrefix}}reference/lwm2m-api/#rpc-commands).
+Then follow the steps to test Persistent RPC and get RPC ID:
+
+{% include images-gallery.html imageCollection="rpc-test" showListImageTitles="true" %}
+
 ## RPC Rule Nodes
 It is possible to integrate RPC actions into processing workflow. There are 2 Rule Nodes for working with RPC requests. 
 
