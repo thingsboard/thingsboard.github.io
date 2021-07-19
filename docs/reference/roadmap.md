@@ -15,8 +15,6 @@ The product roadmap listed below covers only main features and does not cover sm
  * Rule Engine Query configuration management using Web UI;
  * OAuth configuration management using Web UI;
  * LWM2M and improved MQTT transport support;
- 
-See active development in progress [here](https://github.com/thingsboard/thingsboard/tree/develop/3.2) for more info.
 
 ### Upcoming releases
 
