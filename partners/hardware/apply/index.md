@@ -25,39 +25,39 @@ notitle: "true"
                 </div>
                 <p>Please fill this form to get further instructions.</p>
                 <div class="form-section">
-                    <div class="form-element first half">
-                        <label for="first-name">
-                            <input class="form-control" value="" placeholder="Enter First Name" name="first-name" type="text" size="40" maxlength="50">
-                            <p>First Name*</p>
+                    <div class="form-element first half ml-field-first_name ml-validate-required">
+                        <label for="fields[first_name]">
+                            <input type="text" name="fields[first_name]" class="form-control" value="" spellcheck="false" autocapitalize="off" autocorrect="off">
+                            <p>First name*</p>
+                        </label>    
+                    </div>
+                    <div class="form-element half ml-field-last_name ml-validate-required">
+                        <label for="fields[last_name]">
+                            <input type="text" name="fields[last_name]" class="form-control" value="" spellcheck="false" autocapitalize="off" autocorrect="off">
+                            <p>Last name*</p>
                         </label>
                     </div>
-                    <div class="form-element half">
-                        <label for="last-name">
-                            <input class="form-control" value="" placeholder="Enter Last Name" name="last-name" type="text" size="40" maxlength="50">
-                            <p>Last Name*</p>
-                        </label>
-                    </div>
-                    <div class="form-element first half">
-                        <label for="email">
-                            <input class="form-control" value="" placeholder="Enter Email" name="email" type="email" size="40" maxlength="80">
+                    <div class="form-element first half ml-field-email ml-validate-required ml-validate-email">
+                        <label for="fields[email]">
+                            <input type="email" name="fields[email]" class="form-control" value="" autocomplete="email" x-autocompletetype="email" spellcheck="false" autocapitalize="off" autocorrect="off">
                             <p>Email Address*</p>
                         </label>
                     </div>
-                    <div class="form-element half">
-                        <label for="company">
-                            <input class="form-control" value="" placeholder="Enter Company" name="company" type="text" size="40" maxlength="80">
+                    <div class="form-element half ml-field-company ml-validate-required">
+                        <label for="fields[company]">
+                            <input type="text" name="fields[company]" class="form-control" value="" spellcheck="false" autocapitalize="off" autocorrect="off">
                             <p>Company*</p>
-                        </label>
+                        </label>                                    
                     </div>
-                    <div class="form-element first half">
+                    <div class="form-element first half ml-field-company_website ml-validate-required">
                         <label for="fields[company_website]">
-                            <input class="form-control" value="" placeholder="Enter Company Website" name="company" type="text" size="40" maxlength="80">
+                            <input type="text" name="fields[company_website]" class="form-control" value="" spellcheck="false" autocapitalize="off" autocorrect="off">
                             <p>Company Website*</p>
                         </label>
-                    </div>
-                    <div class="form-element half">
+                    </div>                                
+                    <div class="form-element half ml-field-phone">
                         <label for="fields[phone]">
-                            <input class="form-control" value="" placeholder="Enter Phone Number" name="company" type="text" size="40" maxlength="80">
+                            <input type="text" name="fields[phone]" class="form-control" value="" spellcheck="false" autocapitalize="off" autocorrect="off">
                             <p>Phone Number</p>
                         </label>    
                     </div>
@@ -93,39 +93,39 @@ notitle: "true"
                 </div>
                 <p>Please fill this form to get further instructions.</p>
                 <div class="form-section">
-                    <div class="form-element first half">
-                        <label for="first-name">
-                            <input class="form-control" value="" placeholder="Enter First Name" name="first-name" type="text" size="40" maxlength="50">
-                            <p>First Name*</p>
+                    <div class="form-element first half ml-field-first_name ml-validate-required">
+                        <label for="fields[first_name]">
+                            <input type="text" name="fields[first_name]" class="form-control" value="" spellcheck="false" autocapitalize="off" autocorrect="off">
+                            <p>First name*</p>
+                        </label>    
+                    </div>
+                    <div class="form-element half ml-field-last_name ml-validate-required">
+                        <label for="fields[last_name]">
+                            <input type="text" name="fields[last_name]" class="form-control" value="" spellcheck="false" autocapitalize="off" autocorrect="off">
+                            <p>Last name*</p>
                         </label>
                     </div>
-                    <div class="form-element half">
-                        <label for="last-name">
-                            <input class="form-control" value="" placeholder="Enter Last Name" name="last-name" type="text" size="40" maxlength="50">
-                            <p>Last Name*</p>
-                        </label>
-                    </div>
-                    <div class="form-element first half">
-                        <label for="email">
-                            <input class="form-control" value="" placeholder="Enter Email" name="email" type="email" size="40" maxlength="80">
+                    <div class="form-element first half ml-field-email ml-validate-required ml-validate-email">
+                        <label for="fields[email]">
+                            <input type="email" name="fields[email]" class="form-control" value="" autocomplete="email" x-autocompletetype="email" spellcheck="false" autocapitalize="off" autocorrect="off">
                             <p>Email Address*</p>
                         </label>
                     </div>
-                    <div class="form-element half">
-                        <label for="company">
-                            <input class="form-control" value="" placeholder="Enter Company" name="company" type="text" size="40" maxlength="80">
+                    <div class="form-element half ml-field-company ml-validate-required">
+                        <label for="fields[company]">
+                            <input type="text" name="fields[company]" class="form-control" value="" spellcheck="false" autocapitalize="off" autocorrect="off">
                             <p>Company*</p>
-                        </label>
+                        </label>                                    
                     </div>
-                    <div class="form-element first half">
+                    <div class="form-element first half ml-field-company_website ml-validate-required">
                         <label for="fields[company_website]">
-                            <input class="form-control" value="" placeholder="Enter Company Website" name="company" type="text" size="40" maxlength="80">
+                            <input type="text" name="fields[company_website]" class="form-control" value="" spellcheck="false" autocapitalize="off" autocorrect="off">
                             <p>Company Website*</p>
                         </label>
-                    </div>
-                    <div class="form-element half">
+                    </div>                                
+                    <div class="form-element half ml-field-phone">
                         <label for="fields[phone]">
-                            <input class="form-control" value="" placeholder="Enter Phone Number" name="company" type="text" size="40" maxlength="80">
+                            <input type="text" name="fields[phone]" class="form-control" value="" spellcheck="false" autocapitalize="off" autocorrect="off">
                             <p>Phone Number</p>
                         </label>    
                     </div>
@@ -161,39 +161,39 @@ notitle: "true"
                 </div>
                 <p>Please fill this form to get further instructions.</p>
                 <div class="form-section">
-                    <div class="form-element first half">
-                        <label for="first-name">
-                            <input class="form-control" value="" placeholder="Enter First Name" name="first-name" type="text" size="40" maxlength="50">
-                            <p>First Name*</p>
+                    <div class="form-element first half ml-field-first_name ml-validate-required">
+                        <label for="fields[first_name]">
+                            <input type="text" name="fields[first_name]" class="form-control" value="" spellcheck="false" autocapitalize="off" autocorrect="off">
+                            <p>First name*</p>
+                        </label>    
+                    </div>
+                    <div class="form-element half ml-field-last_name ml-validate-required">
+                        <label for="fields[last_name]">
+                            <input type="text" name="fields[last_name]" class="form-control" value="" spellcheck="false" autocapitalize="off" autocorrect="off">
+                            <p>Last name*</p>
                         </label>
                     </div>
-                    <div class="form-element half">
-                        <label for="last-name">
-                            <input class="form-control" value="" placeholder="Enter Last Name" name="last-name" type="text" size="40" maxlength="50">
-                            <p>Last Name*</p>
-                        </label>
-                    </div>
-                    <div class="form-element first half">
-                        <label for="email">
-                            <input class="form-control" value="" placeholder="Enter Email" name="email" type="email" size="40" maxlength="80">
+                    <div class="form-element first half ml-field-email ml-validate-required ml-validate-email">
+                        <label for="fields[email]">
+                            <input type="email" name="fields[email]" class="form-control" value="" autocomplete="email" x-autocompletetype="email" spellcheck="false" autocapitalize="off" autocorrect="off">
                             <p>Email Address*</p>
                         </label>
                     </div>
-                    <div class="form-element half">
-                        <label for="company">
-                            <input class="form-control" value="" placeholder="Enter Company" name="company" type="text" size="40" maxlength="80">
+                    <div class="form-element half ml-field-company ml-validate-required">
+                        <label for="fields[company]">
+                            <input type="text" name="fields[company]" class="form-control" value="" spellcheck="false" autocapitalize="off" autocorrect="off">
                             <p>Company*</p>
-                        </label>
+                        </label>                                    
                     </div>
-                    <div class="form-element first half">
+                    <div class="form-element first half ml-field-company_website ml-validate-required">
                         <label for="fields[company_website]">
-                            <input class="form-control" value="" placeholder="Enter Company Website" name="company" type="text" size="40" maxlength="80">
+                            <input type="text" name="fields[company_website]" class="form-control" value="" spellcheck="false" autocapitalize="off" autocorrect="off">
                             <p>Company Website*</p>
                         </label>
-                    </div>
-                    <div class="form-element half">
+                    </div>                                
+                    <div class="form-element half ml-field-phone">
                         <label for="fields[phone]">
-                            <input class="form-control" value="" placeholder="Enter Phone Number" name="company" type="text" size="40" maxlength="80">
+                            <input type="text" name="fields[phone]" class="form-control" value="" spellcheck="false" autocapitalize="off" autocorrect="off">
                             <p>Phone Number</p>
                         </label>    
                     </div>
