@@ -32,33 +32,33 @@ notitle: "true"
                 </div>
                 <p>Please fill this form to get deployment instructions.</p>
                 <div class="form-section">
-                    <div class="form-element first half">
-                        <label for="first-name">
-                            <input class="form-control" value="" placeholder="Enter First Name" name="first-name" type="text" size="40" maxlength="50">
-                            <p>First Name*</p>
+                    <div class="form-element first half ml-field-first_name ml-validate-required">
+                        <label for="fields[first_name]">
+                            <input type="text" name="fields[first_name]" class="form-control" value="" spellcheck="false" autocapitalize="off" autocorrect="off">
+                            <p>First name*</p>
+                        </label>    
+                    </div>
+                    <div class="form-element half ml-field-last_name ml-validate-required">
+                        <label for="fields[last_name]">
+                            <input type="text" name="fields[last_name]" class="form-control" value="" spellcheck="false" autocapitalize="off" autocorrect="off">
+                            <p>Last name*</p>
                         </label>
                     </div>
-                    <div class="form-element half">
-                        <label for="last-name">
-                            <input class="form-control" value="" placeholder="Enter Last Name" name="last-name" type="text" size="40" maxlength="50">
-                            <p>Last Name*</p>
-                        </label>
-                    </div>
-                    <div class="form-element first half">
-                        <label for="email">
-                            <input class="form-control" value="" placeholder="Enter Email" name="email" type="email" size="40" maxlength="80">
+                    <div class="form-element first half ml-field-email ml-validate-required ml-validate-email">
+                        <label for="fields[email]">
+                            <input type="email" name="fields[email]" class="form-control" value="" autocomplete="email" x-autocompletetype="email" spellcheck="false" autocapitalize="off" autocorrect="off">
                             <p>Email Address*</p>
                         </label>
                     </div>
-                    <div class="form-element half">
-                        <label for="company">
-                            <input class="form-control" value="" placeholder="Enter Company" name="company" type="text" size="40" maxlength="80">
+                    <div class="form-element half ml-field-company ml-validate-required">
+                        <label for="fields[company]">
+                            <input type="text" name="fields[company]" class="form-control" value="" spellcheck="false" autocapitalize="off" autocorrect="off">
                             <p>Company*</p>
-                        </label>
+                        </label>                                    
                     </div>
-                    <div class="form-element first half">
+                    <div class="form-element first half ml-field-phone">
                         <label for="fields[phone]">
-                            <input class="form-control" value="" placeholder="Enter Phone Number" name="company" type="text" size="40" maxlength="80">
+                            <input type="text" name="fields[phone]" class="form-control" value="" spellcheck="false" autocapitalize="off" autocorrect="off">
                             <p>Phone Number</p>
                         </label>    
                     </div>
@@ -74,7 +74,7 @@ notitle: "true"
         </form>
     </div>            
     <div id="mlb2-11010932" style="display: none;" class="deploy-form deploy-cloud ml-subscribe-form ml-subscribe-form-11010932">
-        <form class="ml-block-form" action="https://app.mailerlite.com/webforms/submit/c1a6q7" data-id="1174562" data-code="c1a6q7" method="POST" target="_blank">
+        <form id="contact-form" class="contact-form" action="https://app.mailerlite.com/webforms/submit/c1a6q7" data-id="1174562" data-code="c1a6q7" method="POST" target="_blank">
             <fieldset>
                 <div class="form-title center">
                     <h1>Deploy ThingsBoard PE Prototype</h1>
@@ -96,33 +96,33 @@ notitle: "true"
                 </div>
                 <p>Please fill this form to get deployment instructions.</p>
                 <div class="form-section">
-                    <div class="form-element first half">
-                        <label for="first-name">
-                            <input class="form-control" value="" placeholder="Enter First Name" name="first-name" type="text" size="40" maxlength="50">
-                            <p>First Name*</p>
+                    <div class="form-element first half ml-field-first_name ml-validate-required">
+                        <label for="fields[first_name]">
+                            <input type="text" name="fields[first_name]" class="form-control" value="" spellcheck="false" autocapitalize="off" autocorrect="off">
+                            <p>First name*</p>
+                        </label>    
+                    </div>
+                    <div class="form-element half ml-field-last_name ml-validate-required">
+                        <label for="fields[last_name]">
+                            <input type="text" name="fields[last_name]" class="form-control" value="" spellcheck="false" autocapitalize="off" autocorrect="off">
+                            <p>Last name*</p>
                         </label>
                     </div>
-                    <div class="form-element half">
-                        <label for="last-name">
-                            <input class="form-control" value="" placeholder="Enter Last Name" name="last-name" type="text" size="40" maxlength="50">
-                            <p>Last Name*</p>
-                        </label>
-                    </div>
-                    <div class="form-element first half">
-                        <label for="email">
-                            <input class="form-control" value="" placeholder="Enter Email" name="email" type="email" size="40" maxlength="80">
+                    <div class="form-element first half ml-field-email ml-validate-required ml-validate-email">
+                        <label for="fields[email]">
+                            <input type="email" name="fields[email]" class="form-control" value="" autocomplete="email" x-autocompletetype="email" spellcheck="false" autocapitalize="off" autocorrect="off">
                             <p>Email Address*</p>
                         </label>
                     </div>
-                    <div class="form-element half">
-                        <label for="company">
-                            <input class="form-control" value="" placeholder="Enter Company" name="company" type="text" size="40" maxlength="80">
+                    <div class="form-element half ml-field-company ml-validate-required">
+                        <label for="fields[company]">
+                            <input type="text" name="fields[company]" class="form-control" value="" spellcheck="false" autocapitalize="off" autocorrect="off">
                             <p>Company*</p>
-                        </label>
+                        </label>                                    
                     </div>
-                    <div class="form-element first half">
+                    <div class="form-element first half ml-field-phone">
                         <label for="fields[phone]">
-                            <input class="form-control" value="" placeholder="Enter Phone Number" name="company" type="text" size="40" maxlength="80">
+                            <input type="text" name="fields[phone]" class="form-control" value="" spellcheck="false" autocapitalize="off" autocorrect="off">
                             <p>Phone Number</p>
                         </label>    
                     </div>
@@ -138,7 +138,7 @@ notitle: "true"
         </form>
     </div>         
     <div id="mlb2-11010992" style="display: none;" class="deploy-form deploy-cloud ml-subscribe-form ml-subscribe-form-11010992">
-        <form class="ml-block-form" action="https://app.mailerlite.com/webforms/submit/f6r0q1" data-id="1174572" data-code="f6r0q1" method="POST" target="_blank">
+        <form id="contact-form" class="contact-form" action="https://app.mailerlite.com/webforms/submit/f6r0q1" data-id="1174572" data-code="f6r0q1" method="POST" target="_blank">
             <fieldset>
                 <div class="form-title center">
                     <h1>Deploy ThingsBoard PE Startup</h1>
@@ -160,33 +160,33 @@ notitle: "true"
                 </div>
                 <p>Please fill this form to get deployment instructions.</p>
                 <div class="form-section">
-                    <div class="form-element first half">
-                        <label for="first-name">
-                            <input class="form-control" value="" placeholder="Enter First Name" name="first-name" type="text" size="40" maxlength="50">
-                            <p>First Name*</p>
+                    <div class="form-element first half ml-field-first_name ml-validate-required">
+                        <label for="fields[first_name]">
+                            <input type="text" name="fields[first_name]" class="form-control" value="" spellcheck="false" autocapitalize="off" autocorrect="off">
+                            <p>First name*</p>
+                        </label>    
+                    </div>
+                    <div class="form-element half ml-field-last_name ml-validate-required">
+                        <label for="fields[last_name]">
+                            <input type="text" name="fields[last_name]" class="form-control" value="" spellcheck="false" autocapitalize="off" autocorrect="off">
+                            <p>Last name*</p>
                         </label>
                     </div>
-                    <div class="form-element half">
-                        <label for="last-name">
-                            <input class="form-control" value="" placeholder="Enter Last Name" name="last-name" type="text" size="40" maxlength="50">
-                            <p>Last Name*</p>
-                        </label>
-                    </div>
-                    <div class="form-element first half">
-                        <label for="email">
-                            <input class="form-control" value="" placeholder="Enter Email" name="email" type="email" size="40" maxlength="80">
+                    <div class="form-element first half ml-field-email ml-validate-required ml-validate-email">
+                        <label for="fields[email]">
+                            <input type="email" name="fields[email]" class="form-control" value="" autocomplete="email" x-autocompletetype="email" spellcheck="false" autocapitalize="off" autocorrect="off">
                             <p>Email Address*</p>
                         </label>
                     </div>
-                    <div class="form-element half">
-                        <label for="company">
-                            <input class="form-control" value="" placeholder="Enter Company" name="company" type="text" size="40" maxlength="80">
+                    <div class="form-element half ml-field-company ml-validate-required">
+                        <label for="fields[company]">
+                            <input type="text" name="fields[company]" class="form-control" value="" spellcheck="false" autocapitalize="off" autocorrect="off">
                             <p>Company*</p>
-                        </label>
+                        </label>                                    
                     </div>
-                    <div class="form-element first half">
+                    <div class="form-element first half ml-field-phone">
                         <label for="fields[phone]">
-                            <input class="form-control" value="" placeholder="Enter Phone Number" name="company" type="text" size="40" maxlength="80">
+                            <input type="text" name="fields[phone]" class="form-control" value="" spellcheck="false" autocapitalize="off" autocorrect="off">
                             <p>Phone Number</p>
                         </label>    
                     </div>
@@ -202,7 +202,7 @@ notitle: "true"
         </form>
     </div>  
     <div id="mlb2-11011018" style="display: none;" class="deploy-form deploy-cloud ml-subscribe-form ml-subscribe-form-11011018">
-        <form class="ml-block-form" action="https://app.mailerlite.com/webforms/submit/w2i0j2" data-id="1174576" data-code="w2i0j2" method="POST" target="_blank">
+        <form id="contact-form" class="contact-form" action="https://app.mailerlite.com/webforms/submit/w2i0j2" data-id="1174576" data-code="w2i0j2" method="POST" target="_blank">
             <fieldset>
                 <div class="form-title center">
                     <h1>Deploy ThingsBoard PE Business</h1>
@@ -224,33 +224,33 @@ notitle: "true"
                 </div>
                 <p>Please fill this form to get deployment instructions.</p>
                 <div class="form-section">
-                    <div class="form-element first half">
-                        <label for="first-name">
-                            <input class="form-control" value="" placeholder="Enter First Name" name="first-name" type="text" size="40" maxlength="50">
-                            <p>First Name*</p>
+                    <div class="form-element first half ml-field-first_name ml-validate-required">
+                        <label for="fields[first_name]">
+                            <input type="text" name="fields[first_name]" class="form-control" value="" spellcheck="false" autocapitalize="off" autocorrect="off">
+                            <p>First name*</p>
+                        </label>    
+                    </div>
+                    <div class="form-element half ml-field-last_name ml-validate-required">
+                        <label for="fields[last_name]">
+                            <input type="text" name="fields[last_name]" class="form-control" value="" spellcheck="false" autocapitalize="off" autocorrect="off">
+                            <p>Last name*</p>
                         </label>
                     </div>
-                    <div class="form-element half">
-                        <label for="last-name">
-                            <input class="form-control" value="" placeholder="Enter Last Name" name="last-name" type="text" size="40" maxlength="50">
-                            <p>Last Name*</p>
-                        </label>
-                    </div>
-                    <div class="form-element first half">
-                        <label for="email">
-                            <input class="form-control" value="" placeholder="Enter Email" name="email" type="email" size="40" maxlength="80">
+                    <div class="form-element first half ml-field-email ml-validate-required ml-validate-email">
+                        <label for="fields[email]">
+                            <input type="email" name="fields[email]" class="form-control" value="" autocomplete="email" x-autocompletetype="email" spellcheck="false" autocapitalize="off" autocorrect="off">
                             <p>Email Address*</p>
                         </label>
                     </div>
-                    <div class="form-element half">
-                        <label for="company">
-                            <input class="form-control" value="" placeholder="Enter Company" name="company" type="text" size="40" maxlength="80">
+                    <div class="form-element half ml-field-company ml-validate-required">
+                        <label for="fields[company]">
+                            <input type="text" name="fields[company]" class="form-control" value="" spellcheck="false" autocapitalize="off" autocorrect="off">
                             <p>Company*</p>
-                        </label>
+                        </label>                                    
                     </div>
-                    <div class="form-element first half">
+                    <div class="form-element first half ml-field-phone">
                         <label for="fields[phone]">
-                            <input class="form-control" value="" placeholder="Enter Phone Number" name="company" type="text" size="40" maxlength="80">
+                            <input type="text" name="fields[phone]" class="form-control" value="" spellcheck="false" autocapitalize="off" autocorrect="off">
                             <p>Phone Number</p>
                         </label>    
                     </div>
@@ -266,7 +266,7 @@ notitle: "true"
         </form>
     </div>         
     <div id="mlb2-11011052" style="display: none;" class="deploy-form deploy-cloud ml-subscribe-form ml-subscribe-form-11011052">
-        <form class="ml-block-form" action="https://app.mailerlite.com/webforms/submit/m8r8r9" data-id="1174606" data-code="m8r8r9" method="POST" target="_blank">
+        <form id="contact-form" class="contact-form" action="https://app.mailerlite.com/webforms/submit/m8r8r9" data-id="1174606" data-code="m8r8r9" method="POST" target="_blank">
             <fieldset>
                 <div class="form-title center">
                     <h1>Deploy ThingsBoard PE Enterprise</h1>
@@ -288,33 +288,33 @@ notitle: "true"
                 </div>
                 <p>Please fill this form to get deployment instructions.</p>
                 <div class="form-section">
-                    <div class="form-element first half">
-                        <label for="first-name">
-                            <input class="form-control" value="" placeholder="Enter First Name" name="first-name" type="text" size="40" maxlength="50">
-                            <p>First Name*</p>
+                    <div class="form-element first half ml-field-first_name ml-validate-required">
+                        <label for="fields[first_name]">
+                            <input type="text" name="fields[first_name]" class="form-control" value="" spellcheck="false" autocapitalize="off" autocorrect="off">
+                            <p>First name*</p>
+                        </label>    
+                    </div>
+                    <div class="form-element half ml-field-last_name ml-validate-required">
+                        <label for="fields[last_name]">
+                            <input type="text" name="fields[last_name]" class="form-control" value="" spellcheck="false" autocapitalize="off" autocorrect="off">
+                            <p>Last name*</p>
                         </label>
                     </div>
-                    <div class="form-element half">
-                        <label for="last-name">
-                            <input class="form-control" value="" placeholder="Enter Last Name" name="last-name" type="text" size="40" maxlength="50">
-                            <p>Last Name*</p>
-                        </label>
-                    </div>
-                    <div class="form-element first half">
-                        <label for="email">
-                            <input class="form-control" value="" placeholder="Enter Email" name="email" type="email" size="40" maxlength="80">
+                    <div class="form-element first half ml-field-email ml-validate-required ml-validate-email">
+                        <label for="fields[email]">
+                            <input type="email" name="fields[email]" class="form-control" value="" autocomplete="email" x-autocompletetype="email" spellcheck="false" autocapitalize="off" autocorrect="off">
                             <p>Email Address*</p>
                         </label>
                     </div>
-                    <div class="form-element half">
-                        <label for="company">
-                            <input class="form-control" value="" placeholder="Enter Company" name="company" type="text" size="40" maxlength="80">
+                    <div class="form-element half ml-field-company ml-validate-required">
+                        <label for="fields[company]">
+                            <input type="text" name="fields[company]" class="form-control" value="" spellcheck="false" autocapitalize="off" autocorrect="off">
                             <p>Company*</p>
-                        </label>
+                        </label>                                    
                     </div>
-                    <div class="form-element first half">
+                    <div class="form-element first half ml-field-phone">
                         <label for="fields[phone]">
-                            <input class="form-control" value="" placeholder="Enter Phone Number" name="company" type="text" size="40" maxlength="80">
+                            <input type="text" name="fields[phone]" class="form-control" value="" spellcheck="false" autocapitalize="off" autocorrect="off">
                             <p>Phone Number</p>
                         </label>    
                     </div>
