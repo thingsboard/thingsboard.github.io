@@ -205,13 +205,13 @@ state-stacking:
 
 state-tooltipfunction:
     0:
-        image: /images/user-guide/ui/widgets/charts/state-tooltipfunction-ce.png
+        image: /images/user-guide/ui/widgets/charts/state-tooltipfunction-pe.png
         title: 'In the Tooltip value format function field, enter your function (our example you can find under screenshots section). Apply changes by clicking the orange checkmark in the upper right corner of the window.'
     1:
-        image: /images/user-guide/ui/widgets/charts/state-tooltipfunction-1-ce.png
+        image: /images/user-guide/ui/widgets/charts/state-tooltipfunction-1-pe.png
         title: 'You need to save changes to see tooltip. Do it by clicking the orange checkmark in the lower right corner of the screen.'
     2:
-        image: /images/user-guide/ui/widgets/charts/state-tooltipfunction-2-ce.png
+        image: /images/user-guide/ui/widgets/charts/state-tooltipfunction-2-pe.png
         title: 'Hover with your mouse over the widget to see tooltip with applied value format function.'
 
 state-grid:

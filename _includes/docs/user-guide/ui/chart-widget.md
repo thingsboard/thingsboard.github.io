@@ -213,13 +213,9 @@ In State Chart, you can configure entity states to be shown on a tooltip dependi
 </summary>
 
 {% highlight ruby %}
-if (value > 0 && value <= 1) {
-return 'On';
-} else if (value === 0) {
-return 'Off';
-} else {
-return '';
-}
+let celsiusValue = parseFloat(value).toFixed(2);
+let farenheitValue = parseFloat(celsiusValue*1.8 + 32).toFixed(2);
+return celsiusValue + ' °C (' + farenheitValue + ' °F)';
 {% endhighlight %}
 
 {% include images-gallery.html imageCollection="state-tooltipfunction" showListImageTitles="true" %}
