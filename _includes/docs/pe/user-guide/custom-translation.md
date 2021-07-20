@@ -12,6 +12,13 @@ See video tutorial below for step-by-step instruction how to use this feature.
     </div>
 </div> 
  
+<br>
+
+**Please, note:** Custom Translations feature does not work in several widgets such as
+
+To all other, you can apply Custom Translation in the Data key configuration using Data post-processing function. 
+Let's say you need to change your language to Ukrainian for your clients comfort. 
+
 ## Next steps
 
 {% assign currentGuide = "AdvancedFeatures" %}{% include templates/multi-project-guides-banner.md %}
