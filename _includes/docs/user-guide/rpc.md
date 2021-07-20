@@ -84,18 +84,20 @@ You can use the following [guide](/docs/{{docsPrefix}}reference/rest-api/#rest-a
 
 ## Persistent RPC
 
-ThingsBoard provides **Persistent RPC**. It has an increased timeout and is permanently stored in the database.
-When you send Persistent RPC, the response will contain RPC ID. Over time, you can use this ID to find specific RPC from the Database to see its states and responses.
+ThingsBoard provides a new and unique feature: **Persistent RPC**. 
+The difference between Basic RPC and Persistent RPC is that the second has an increased timeout and is _permanently_ stored in the Database.
+When you send a Persistent RPC, the response will contain RPC ID. Whenever you need to find a specific RPC and view its states and responses, you can use that ID in the Database.
 
 #### Rule chain events from RPC
 
-Events are sent for each RPC update in the Rule chain.
+Rule chain events have the same names as the [RPC states](/docs/user-guide/rpc/#rpc-states). However, you can manually choose which events the Rule chain will receive.
+Every time you send the RPC, a configured event will be dispatched in the Rule chain.
 
 {% include images-gallery.html imageCollection="rule-chain" %}
 
 #### RPC States
 
-RPC states determine what happens when you sent RPC request. There are five possible states after you sent RPC:
+RPC states determine steps that happen when you send an RPC request. After sending an RPC, there are five possible states:
 
 **QUEUED** - RPC was saved to the Database;  
 **DELIVERED** - RPC was delivered to the device (for two-way RPC);  
@@ -105,8 +107,8 @@ RPC states determine what happens when you sent RPC request. There are five poss
 
 #### Usage of Persistent RPC
 
-To use Persistent RPC, you should add RPC debug terminal widget to your dashboard. How to do it you can read [here](/docs/{{docsPrefix}}reference/lwm2m-api/#rpc-commands).
-Then follow the steps to test Persistent RPC and get RPC ID:
+Add RPC Debug Terminal widget to your dashboard to use the Persistent RPC. How to add RPC Debug Terminal and use this widget, you can read [here](/docs/{{docsPrefix}}reference/lwm2m-api/#rpc-commands).
+Then, follow these steps to test Persistent RPC and get RPC ID:
 
 {% include images-gallery.html imageCollection="rpc-test" showListImageTitles="true" %}
 
