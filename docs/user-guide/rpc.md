@@ -26,6 +26,14 @@ rpc-test:
         image: /images/user-guide/persistent-rpc/rpc-test-4-ce.png
         title: 'In the tutorial, we will use the command "test". As you can see, the response contains RPC ID.'
 
+tenant-profile-rpc:
+    0:
+        image: /images/user-guide/persistent-rpc/tenant-rpc-ce.png
+        title: 'Click the orange pencil icon in the lower corner of the screen to enter dashboard edit mode.'
+    1:
+        image: /images/user-guide/persistent-rpc/tenant-rpc-1-ce.png
+        title: 'Click the pencil icon in the upper right corner of the RPC debug terminal to enter widget edit mode.'
+
 ---
 
 {% include docs/user-guide/rpc.md %}

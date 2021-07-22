@@ -84,20 +84,46 @@ You can use the following [guide](/docs/{{docsPrefix}}reference/rest-api/#rest-a
 
 ## Persistent RPC
 
-ThingsBoard provides a new and unique feature: **Persistent RPC**. 
-The difference between Basic RPC and Persistent RPC is that the second has an increased timeout and is _permanently_ stored in the Database.
-When you send a Persistent RPC, the response will contain RPC ID. Whenever you need to find a specific RPC and view its states and responses, you can use that ID in the Database.
+Since version 3.3, ThingsBoard provides the new feature: **Persistent RPC**.  
+The difference between Basic RPC and Persistent RPC is that the second has an increased timeout and the command is stored in the Database configurable amount of time.
+When you send a Persistent RPC, the response will contain RPC ID. Whenever you need to find a specific RPC and view its states and responses, you can do it with that ID in the Database.
+
+#### Persistent RPC Configuration
+
+Firstly, edit ThingsBoard configuration file
+
+```
+sudo nano /etc/thingsboard/conf/thingsboard.conf
+```
+{: .copy-code}
+
+Then, add the following lines to the configuration file:
+
+```
+export SQL_TTL_RPC_ENABLED=true
+export SQL_RPC_TTL_CHECKING_INTERVAL=7200000
+```
+{: .copy-code}
+
+1. _SQL_TTL_RPC_ENABLED_ <br>parameter is for configuring whether Persistent RPC data will be cleaned from the Database in case it's outdated.
+
+2. _SQL_RPC_TTL_CHECKING_INTERVAL_ <br>parameter is for configuring how often Persistent RPC will be checked whether it's outdated.
+
+3. _RPC TTL days configuration_ <br>Via Tenant Profile, system administrator is able to configure in how many days RPC will be deleted from the Database. 
+
+{% include images-gallery.html imageCollection="tenant-profile-rpc" %}
 
 #### Rule chain events from RPC
 
-Rule chain events have the same names as the [RPC states](/docs/user-guide/rpc/#rpc-states). However, you can manually choose which events the Rule chain will receive.
+зачем? - еще не понятно
+
 Every time you send the RPC, a configured event will be dispatched in the Rule chain.
 
 {% include images-gallery.html imageCollection="rule-chain" %}
 
 #### RPC States
 
-RPC states determine steps that happen when you send an RPC request. After sending an RPC, there are five possible states:
+RPC states determine steps that happen when you send RPC request. After sending an RPC, there are five possible states:
 
 **QUEUED** - RPC was saved to the Database;  
 **DELIVERED** - RPC was delivered to the device (for two-way RPC);  
@@ -107,7 +133,8 @@ RPC states determine steps that happen when you send an RPC request. After sendi
 
 #### Usage of Persistent RPC
 
-Add RPC Debug Terminal widget to your dashboard to use the Persistent RPC. How to add RPC Debug Terminal and use this widget, you can read [here](/docs/{{docsPrefix}}reference/lwm2m-api/#rpc-commands).
+Add RPC Debug Terminal widget to your dashboard to send the Persistent RPC. 
+How to add RPC Debug Terminal and use this widget, you can read [here](/docs/{{docsPrefix}}reference/lwm2m-api/#rpc-commands).
 Then, follow these steps to test Persistent RPC and get RPC ID:
 
 {% include images-gallery.html imageCollection="rpc-test" showListImageTitles="true" %}
