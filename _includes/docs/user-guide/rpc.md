@@ -115,8 +115,6 @@ export SQL_RPC_TTL_CHECKING_INTERVAL=7200000
 
 #### Rule chain events from RPC
 
-зачем? - еще не понятно
-
 Every time you send the RPC, a configured event will be dispatched in the Rule chain.
 
 {% include images-gallery.html imageCollection="rule-chain" %}
