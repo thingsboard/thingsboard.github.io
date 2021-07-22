@@ -669,7 +669,7 @@ defaultActivateSelectProduct: true
             <div class="container">
                 <p>
                ThingsBoard web interface allows you to configure your company or product logo and color scheme in 2 minutes with zero coding efforts and no service restart required. 
-               See feature <a href="/docs/user-guide/white-labeling/" target ="blank">documentation</a> for more details. ThingsBoard Cloud extends white-labeling feature (except own SMTP server) with ability to configure own domain name easily. 
+               See feature <a href="/docs/user-guide/white-labeling/" target ="blank">documentation</a> for more details. ThingsBoard Cloud extends white-labeling feature with ability to configure own domain name easily. But currently it is not possible to connect third-party SMTP servers, notifications will be sent from our system. We plan to add this ability in future releases.
                See <a href="/products/paas/domains/" target ="blank">managing domain</a> for more details.
                 </p>  
             </div>    
