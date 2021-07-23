@@ -12,9 +12,21 @@
     }
   },
   {
+    "type": ["North America", "Middle East", "Asia"],
+    "country": ["India"],
+    "name": "Advancethings",
+    "contact": {
+      "href": "pradip.kulkarni@advancetech.in"
+    },
+    "site": {
+      "href": "advancetech.in",
+      "target": "_blank"
+    }
+  },
+  {
     "type": ["Asia"],
     "country": ["India"],
-    "name": "AMS-India",
+    "name": "Advance Mechanical Services Pvt. Ltd.",
     "contact": {
       "href": "contact@ams-india.co.in"
     },
@@ -121,6 +133,18 @@
   },
   {
     "type": ["Asia"],
+    "country": ["South Korea"],
+    "name": "Dareesoft",
+    "contact": {
+      "href": "bettyrow@dareesoft.com"
+    },
+    "site": {
+      "href": "dareesoft.com",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Asia"],
     "country": ["Russia"],
     "name": "Datastreams AI",
     "contact": {
@@ -164,6 +188,30 @@
     },
     "site": {
       "href": "microraindrop.com",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Europe"],
+    "country": ["Finland"],
+    "name": "Dimalog OY LTD",
+    "contact": {
+      "href": "teemu.kytomaki@dimalog.com"
+    },
+    "site": {
+      "href": "dimalog.com",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Europe"],
+    "country": ["Germany"],
+    "name": "ECBM GmbH",
+    "contact": {
+      "href": "hoffmann@ecbm.me"
+    },
+    "site": {
+      "href": "ecbm.me",
       "target": "_blank"
     }
   },
@@ -360,6 +408,18 @@
     }
   },
   {
+    "type": ["North America"],
+    "country": ["United States of America"],
+    "name": "Petrichor Science Group LLC",
+    "contact": {
+      "href": "miles@petrichorsciencegroup.com"
+    },
+    "site": {
+      "href": "petrichorsciencegroup.com",
+      "target": "_blank"
+    }
+  },
+  {
     "type": ["Europe"],
     "country": ["Netherlands"],
     "name": "Produmize",
@@ -408,6 +468,18 @@
     }
   },
   {
+    "type": ["Asia"],
+    "country": ["India"],
+    "name": "Samptel Technologies",
+    "contact": {
+      "href": "info@samptel.com"
+    },
+    "site": {
+      "href": "samptel.com",
+      "target": "_blank"
+    }
+  },
+  {
     "type": ["Europe"],
     "country": ["United Kingdom"],
     "name": "SanCloud Ltd.",
@@ -444,8 +516,20 @@
     }
   },
   {
+    "type": ["Africa"],
+    "country": ["Nigeria"],
+    "name": "Sawtrax ltd.",
+    "contact": {
+      "href": "silviato@sawtraxltd.com"
+    },
+    "site": {
+      "href": "sawtraxltd.com",
+      "target": "_blank"
+    }
+  },
+  {
     "type": ["North America"],
-    "country": ["United States"],
+    "country": ["United States of America"],
     "name": "Senzary LLC",
     "contact": {
       "href": "info@senzary.com"
@@ -613,7 +697,7 @@
   },
   {
     "type": ["North America", "South America"],
-    "country": ["United States", "Belize", "Panama", "Peru", "Colombia", "Argentina"],
+    "country": ["United States of America", "Belize", "Panama", "Peru", "Colombia", "Argentina"],
     "name": "Voxney PLSC, Inc.",
     "contact": {
       "href": "trading@voxney.com"
