@@ -89,3 +89,6 @@ If you want to see how trained model looks like compared to historical data you 
  
 ![image](/images/trendz/prediction-validation.png)
  
+## Next Steps
+
+{% assign currentGuide = "Prediction" %}{% include templates/trndz-guides-banner.md %}

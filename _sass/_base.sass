@@ -160,6 +160,13 @@ details[open]
         filter: invert(35%) sepia(96%) saturate(1837%) hue-rotate(202deg) brightness(98%) contrast(89%)
 
 // HEADER
+#partners
+  header
+    background-color: unset
+    box-shadow: unset
+    &.opened-burger
+      background-color: #fff
+
 #home, #thingsboard-paas, #thingsboard-pe, #trendz
   header
     background-color: unset
@@ -663,7 +670,7 @@ ul
     display: inline-block
 
 // FLIP NAV
-#home, #thingsboard-paas, #thingsboard-pe, #trendz
+#home, #thingsboard-paas, #thingsboard-pe, #trendz, #partners
   &.flip-nav
     header
       transition-duration: 0.3s
@@ -806,12 +813,13 @@ footer
 
     .loading
       margin: 0
-      height: 48px
+      height: 47px
       padding: 0 18px
 
     .subscribe
       margin: 0
-      height: 48px
+      height: fit-content
+      padding: 12px 20px
       transition-duration: unset
       &:hover
         transition-duration: unset
@@ -879,7 +887,7 @@ footer
 
         .form-control
           background-color: white !important
-          height: 48px
+          height: 47px
           padding: 16px
           font-size: 18px
           line-height: 16px
