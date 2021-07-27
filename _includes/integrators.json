@@ -36,6 +36,18 @@
     }
   },
   {
+    "type": ["Middle East"],
+    "country": ["United Arab Emirates"],
+    "name": "Agreefy FZE",
+    "contact": {
+      "href": "vinu@agreefy.com"
+    },
+    "site": {
+      "href": "agreefy.com",
+      "target": "_blank"
+    }
+  },
+  {
     "type": ["North America"],
     "country": ["United States of America"],
     "name": "Apollo-Setpoint Engineering",
@@ -44,6 +56,18 @@
     },
     "site": {
       "href": "apollosetpoint.com",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Africa"],
+    "country": ["South Africa"],
+    "name": "AppBuilder (Pty.) Ltd.",
+    "contact": {
+      "href": "tshepo@appbuilder.africa"
+    },
+    "site": {
+      "href": "appbuilder.africa",
       "target": "_blank"
     }
   },
@@ -374,7 +398,7 @@
   {
     "type": ["Asia"],
     "country": ["China"],
-    "name": "HAI Robotics Co. Ltd.",
+    "name": "HAI Robotics Co., Ltd.",
     "contact": {
       "href": "qiang.han@gmail.com"
     },
@@ -500,6 +524,18 @@
     },
     "site": {
       "href": "logicontech.com",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Asia", "Middle East"],
+    "country": ["Saudi Arabia"],
+    "name": "LTS-Connecting Things",
+    "contact": {
+      "href": "ihigazi@ltsrv.com"
+    },
+    "site": {
+      "href": "ltsrv.com",
       "target": "_blank"
     }
   },
@@ -888,6 +924,18 @@
     }
   },
   {
+    "type": ["Asia"],
+    "country": ["Taiwan"],
+    "name": "StarLinking Networks Co., Ltd.",
+    "contact": {
+      "href": "star@starlinking.com"
+    },
+    "site": {
+      "href": "starlinking.com",
+      "target": "_blank"
+    }
+  },
+  {
     "type": ["Asia", "Europe", "Middle East"],
     "country": ["Kazakhstan", "Uzbekistan", "Turkmenistan", "Tajikistan", "Kyrgyzstan", "Armenia", "Azerbaijan", "Moldova", "Russia", "Belarus"],
     "name": "Syssoft LLC",
@@ -974,7 +1022,7 @@
   {
     "type": ["Asia"],
     "country": ["Thailand"],
-    "name": "Bizforte Co. Ltd.",
+    "name": "Bizforte Co., Ltd.",
     "contact": {
       "href": "info@bizforte.co.th"
     },
@@ -1028,6 +1076,18 @@
     },
     "site": {
       "href": "4ig.hu",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Europe"],
+    "country": ["Hungary", "Austria", "Croatia", "Germany", "Liechtenstein", "Slovenia", "Switzerland"],
+    "name": "7iD Technologies GmbH",
+    "contact": {
+      "href": "gerhard.gangl@7id.com"
+    },
+    "site": {
+      "href": "7id.com",
       "target": "_blank"
     }
   }
