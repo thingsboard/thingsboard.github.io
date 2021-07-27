@@ -187,7 +187,7 @@
       "href": "fahad@cleverplatform.sa"
     },
     "site": {
-      "href": "cleverplatform.sa",
+      "href": "",
       "target": "_blank"
     }
   },
@@ -386,12 +386,12 @@
   {
     "type": ["Asia"],
     "country": ["China"],
-    "name": "gps.shop (Puxuan LPWAN Tech)",
+    "name": "PUXUAN LPWAN",
     "contact": {
-      "href": "Info@gps.shop"
+      "href": "huxiaofeng@px-tech.com"
     },
     "site": {
-      "href": "www.gps.shop",
+      "href": "",
       "target": "_blank"
     }
   },
@@ -674,9 +674,9 @@
   {
     "type": ["Europe"],
     "country": ["Netherlands"],
-    "name": "Produmize",
+    "name": "Produmize B.V.",
     "contact": {
-      "href": "info@produmize.com"
+      "href": "mark.pronk@produmize.com"
     },
     "site": {
       "href": "produmize.com",
