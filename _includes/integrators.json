@@ -504,6 +504,18 @@
     }
   },
   {
+    "type": ["Asia"],
+    "country": ["Taiwan"],
+    "name": "Linksoft Inc.",
+    "contact": {
+      "href": "info@linksoft.com.tw"
+    },
+    "site": {
+      "href": "linksoft.com.tw",
+      "target": "_blank"
+    }
+  },
+  {
     "type": ["Asia", "Middle East"],
     "country": ["United Arab Emirates"],
     "name": "Link971",
