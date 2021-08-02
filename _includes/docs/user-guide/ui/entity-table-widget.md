@@ -4,36 +4,43 @@
 
 ## Overview
 
-Table widgets are to display latest and historical values for multiple entities simultaneously. 
-Displays list of entities that match selected alias and filter with ability of additional full text search and pagination. 
-Highly customizable using widget styles, data source keys and widget actions.
+Entities table widget is created to display the latest and historical values for multiple entities simultaneously. 
+It displays a list of entities that match selected alias and filter with the ability of additional full-text search and pagination. 
+Highly customizable using [widget styles](/docs/{{docsPrefix}}user-guide/ui/entity-table-widget/#settings), [data source keys](/docs/{{docsPrefix}}user-guide/ui/advanced-data-key-configuration/), and 
+[widget actions](/docs/{{docsPrefix}}user-guide/ui/widget-actions/).
 
 ## Setting up Entities Table widget
 
+To get started with the Entities table widget, you first need to create a dashboard and add a widget to it.
+
 ### Creating a dashboard
 
-We need to [create a dashboard](/docs/{{docsPrefix}} user-guide/dashboards/#adding-a-dashboard) where our telemetry will be visualized. It might be useful if your goal is to track how your entity moved in a specific period.
-We can use an existing one or create a new dashboard for our new use case.
-In our example, we've created a new dashboard called “Entity Table” for our guide reasons.
+So let's [create a dashboard](/docs/{{docsPrefix}}user-guide/dashboards/#adding-a-dashboard) that will visualize our telemetry.  
+You can use an existing one or create a new dashboard for a new use case.
+In our example, we've created a new dashboard called “Entity Table” for the purposes of our tutorial.
 
-### Adding widget to the dashboard
+### Adding a widget to the dashboard
+
+The next step is to visualize telemetry. To add the Entity table widget to your dashboard, you should:
 
 {% include images-gallery.html imageCollection="add-widget" showListImageTitles="true" %}
 
-Learn how to [add alias](/docs/{{docsPrefix}} user-guide/ui/aliases/) to your widget.
+Learn how to [add alias](/docs/{{docsPrefix}}user-guide/ui/aliases/) to your widget.
 
 ## Settings
+
+To start customizing your widget, you should go to widget edit mode by clicking the pencil icon in the upper right corner of the widget while in the dashboard edit mode.
 
 {% include images-gallery.html imageCollection="entity-edit" %}
 
 ### 1. Title style
 
-You can change widget title, title tooltip and title style. 
-Also, you are able to add an icon to the title and adjust its color, transparency and size. See configuration and the corresponding result below.
+You can change widget title tooltip, and title style. Title itself you should change via [Advanced title settings](/docs/{{docsPrefix}}user-guide/ui/entity-table-widget/#1-entities-table-title).
+Also, you are able to add an icon to the title and adjust its color, opacity, and size. See configuration and the corresponding result below.
 
 {% include images-gallery.html imageCollection="entity-title" showListImageTitles="true" %}
 
-The checkboxes are responsible for displaying/hiding the widget's title, title shadow, and enabling/disabling fullscreen.
+The checkboxes are responsible for displaying/hiding the widget title, title shadow, and enabling/disabling fullscreen mode.
 
 ### 2. Widget style
 
@@ -43,13 +50,26 @@ You can also change the background color, text color, padding, and margin. See t
 
 Please note that the style and background color are just an example and are definitely not part of our guidelines.
 
+```json
+{
+  "border": "3px solid #2E86C1",
+  "cursor": "pointer"
+}
+```
+{: .copy-code}
+
 {% include images-gallery.html imageCollection="entity-style" showListImageTitles="true" %}
 
 ### 3. Special symbol and number of digits after floating point
 
+You can add a special symbol that will be displayed next to the entity values of your widget. Also, you can customize the number of digits to be displayed after the floating point number of your value.
+See the configuration and the corresponding result below.
+
 {% include images-gallery.html imageCollection="entity-digits" showListImageTitles="true" %}
 
 ### 4. Legend settings
+
+Legend settings make sense configure only in time series widgets where this option is enabled by default. You can read more about Legend settings [here](/docs/{{docsPrefix}}user-guide/dashboards/#3-legend-settings).
 
 ## Advanced settings
 
@@ -59,11 +79,7 @@ Advanced settings of the Entities Table widget allows [adjusting the title of th
 
 To enter the advanced mode and start adjusting the settings above, you should:
 
-1. Clicking the "pencil" icon ("Enter edit mode") at the bottom right of the screen;
-2. Click on the Pencil icon ("Edit widget") in the upper right corner of the Entity Table widget itself;
-3. Go to the Advanced cell.
-
-{% include images-gallery.html imageCollection="enter-advanced-mode" %}
+{% include images-gallery.html imageCollection="enter-advanced-mode" showListImageTitles="true" %}
 
 
 ### 1. Entities table title
@@ -71,14 +87,10 @@ To enter the advanced mode and start adjusting the settings above, you should:
 ThingsBoard has no name restrictions, either in symbols or in a number of characters.
 Nevertheless, in case the title is too long, it will not display completely in the Entity Table widget, but will be terminated with three dots.
 However, after applying the changes and opening the widget in full-screen mode, you will be able to see the full name of the widget.
-For example, let’s use something simple for the title like “The Name of the Widget”:
+For example, let’s use something simple for the title like “The New Widget Title”:
 
-1. Enter the desired title in the title bar;
-2. Click the orange checkmark in the upper right corner.
 
-The title has become visible.
-
-{% include images-gallery.html imageCollection="entities-table-title" %}
+{% include images-gallery.html imageCollection="entities-table-title" showListImageTitles="true" %}
 
 ### 2. Checkbox settings
 
@@ -120,12 +132,7 @@ If the checkbox is checked, the entity name column is visible. If it's unchecked
 
 To change the title of the column, you should:
 
-1. Enter the text in the corresponding line;
-2. Click the orange checkmark in the upper right corner.
-
-An entity column title has been changed.
-
-{% include images-gallery.html imageCollection="entity-column-title" %}
+{% include images-gallery.html imageCollection="entity-column-title" showListImageTitles="true" %}
 
 #### 3.2. Displaying an entity label column
 
@@ -136,12 +143,8 @@ After clicking on the orange checkmark in the upper right corner, the label colu
 
 #### 3.3. Displaying an entity type column
 
-The checkbox "Displaying entity type column" is responsible for appearing/hiding the corresponding column.
+The checkbox "Displaying entity type column" is responsible for showing the type of the entity on the widget (e.g. "device").
 By default, an entity type column is shown, but you can hide it by unchecking the box.
-To apply changes click the orange checkmark in the upper right corner.
-
-{% include images-gallery.html imageCollection="entity-type-column" %}
-
 
 ### 4. The Pagination
 
@@ -152,15 +155,10 @@ To apply the changes, click the orange checkmark in the upper right corner.
 
 {% include images-gallery.html imageCollection="paggination-off" %}
 
-**Please, note** to understand the next settings, we need to enable the “Display pagination” checkbox to see the number of items per a page.
+**Please, note:** to understand the next settings, we need to enable the “Display pagination” checkbox to see the number of items per a page.
 
 By default, **the page size** is set to 10 items per page.
 If you need to change this number, you should:
-
-1. Enter the numbers manually or use the arrows at the end of the line.
-2. Click the orange checkmark in the upper right corner to apply the changes.
-
-The page will now have the desired number of items as shown in our table widget.
 
 {% include images-gallery.html imageCollection="page-size" %}
 
@@ -173,36 +171,30 @@ If the values in the column are in lowercase (for example entityName/entityType)
 
 If you’d like to sort the data, for instance, by the telemetry data key type (temperature, humidity, etc.),
 you can do this by inputting the name of your value in the default sort order row.
-In the example, the temperature is used:
+In the example, the temperature is used.
+If you need to make the sort order descending, you should:
 
-![image](/images/user-guide/ui/widgets/entitywidget-advanced/temperature.png)
-
-As was mentioned, the default sort order is ascending. If you need to make the sort order descending, you should:
-
-1. Type the **“-” (minus)** symbol in front of the data key name in the Default sort order line.
-2. Be sure to click on the orange checkmark in the upper right corner to apply the changes to see the difference.
-
-Now, the telemetry data is sorted in the descending order we needed.
-
-{% include images-gallery.html imageCollection="sorting-data" %}
+{% include images-gallery.html imageCollection="sorting-data" showListImageTitles="true" %}
 
 ### 6. Row style function
 
 Since version 3.2.2, the opportunity to change style of widget rows depending on their conditions appeared. Let's see how it works on the simple example:  
-assume we need to observe which device is active and which is not. To make our mission easier, 
+assume, we need to observe which device is active and which is not. To make our mission easier, we should use the Row style function.
 
-
-{% include images-gallery.html imageCollection="style-function" %}
+An example of it and the corresponding results:
 
 ```ruby
 result = {background:"white"};
 if (entity.active == "false") {
-   result.background = '#00FF00';
+   result.background = '#FF0000';
 } else {
-   result.background = '#00f';
+   result.background = '#00FF00';
 }
 return result;
 ```
+
+{% include images-gallery.html imageCollection="style-function" %}
+
 
 ## Saving changes
 
