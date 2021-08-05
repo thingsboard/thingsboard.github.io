@@ -4,8 +4,7 @@
 
 ## Overview
 
-Entities table widget is created to display the latest and historical values for multiple entities simultaneously. 
-It displays a list of entities that match selected alias and filter with the ability of additional full-text search and pagination. 
+Entity Table widget displays the latest values with list of entities that matches selected alias and filter with ability of additional full text search and pagination options.
 Highly customizable using [widget styles](/docs/{{docsPrefix}}user-guide/ui/entity-table-widget/#settings), [data source keys](/docs/{{docsPrefix}}user-guide/ui/advanced-data-key-configuration/), and 
 [widget actions](/docs/{{docsPrefix}}user-guide/ui/widget-actions/).
 
@@ -40,7 +39,7 @@ Also, you are able to add an icon to the title and adjust its color, opacity, an
 
 {% include images-gallery.html imageCollection="entity-title" showListImageTitles="true" %}
 
-The checkboxes are responsible for displaying/hiding the widget title, title shadow, and enabling/disabling fullscreen mode.
+The checkboxes are responsible for displaying/hiding the widget title, widget shadow, and enabling/disabling fullscreen mode.
 
 ### 2. Widget style
 
@@ -165,7 +164,7 @@ If you need to change this number, you should:
 ### 5. Sorting data in the table widget
 
 By default, the data in the Table widget is sorted in ascending order.
-If the values in the column are in lowercase (for example entityName/entityType), then the sorting will be done according to the alphabetical ordering rules.
+If the values in the column are not numeric (for example name and type), then the sorting will be done according to the alphabetical ordering rules.
 
 {% include images-gallery.html imageCollection="sortingorder-name" %}
 
