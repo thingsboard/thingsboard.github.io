@@ -29,10 +29,10 @@ rpc-test:
 tenant-profile-rpc:
     0:
         image: /images/user-guide/persistent-rpc/tenant-rpc-ce.png
-        title: 'Click the orange pencil icon in the lower corner of the screen to enter dashboard edit mode.'
+        title: 'Click the orange pencil icon in the upper corner of the screen to enter dashboard edit mode.'
     1:
         image: /images/user-guide/persistent-rpc/tenant-rpc-1-ce.png
-        title: 'Click the pencil icon in the upper right corner of the RPC debug terminal to enter widget edit mode.'
+        title: 'Set the number of days in the RPC TTL days line. Apply changes by clicking the orange checkmark icon in the upper right corner of the page.'
 
 ---
 

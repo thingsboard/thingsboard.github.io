@@ -84,20 +84,24 @@ You can use the following [guide](/docs/{{docsPrefix}}reference/rest-api/#rest-a
 
 ## Persistent RPC
 
-Since version 3.3, ThingsBoard provides the new feature: **Persistent RPC**.  
-The difference between Basic RPC and Persistent RPC is that the second has an increased timeout and the command is stored in the Database configurable amount of time.
-When you send a Persistent RPC, the response will contain RPC ID. Whenever you need to find a specific RPC and view its states and responses, you can do it with that ID in the Database.
+Since version 3.3, ThingsBoard provides the new feature: **Persistent RPC**.
+The difference between Basic RPC and Persistent RPC is that the second has an increased timeout and the command is stored in the database for configurable amount of time.
+Persistent RPC is extremely useful when your device is in power-saving mode. 
+Power-saving mode (or PSM) is when the device temporary is turning off to save the battery energy.
+You can set the PSM in the device profile or device configuration. This feature is available for CoAP and LWM2M only.
+After you send an RPC request to this device, the request will be saved in the database for the time you configured and the device will receive the request when it is turned on again.  
+In addition, every time you send the Persistent RPC, the response will contain RPC ID. Whenever you need to find a specific RPC and view its states and responses, you can do it with that ID through the database.
 
 #### Persistent RPC Configuration
 
-Firstly, edit ThingsBoard configuration file
+To configure parameters for sending a Persistent RPC request, first, you need to edit the ThingsBoard configuration file:
 
 ```
 sudo nano /etc/thingsboard/conf/thingsboard.conf
 ```
 {: .copy-code}
 
-Then, add the following lines to the configuration file:
+Then, add the following lines to the configuration file to add these parameters:
 
 ```
 export SQL_TTL_RPC_ENABLED=true
@@ -105,25 +109,30 @@ export SQL_RPC_TTL_CHECKING_INTERVAL=7200000
 ```
 {: .copy-code}
 
-1. _SQL_TTL_RPC_ENABLED_ <br>parameter is for configuring whether Persistent RPC data will be cleaned from the Database in case it's outdated.
+Where:
 
-2. _SQL_RPC_TTL_CHECKING_INTERVAL_ <br>parameter is for configuring how often Persistent RPC will be checked whether it's outdated.
+1. **SQL_TTL_RPC_ENABLED** <br>parameter is for configuring whether Persistent RPC data will be removed from the database in case it's outdated.
 
-3. _RPC TTL days configuration_ <br>Via Tenant Profile, system administrator is able to configure in how many days RPC will be deleted from the Database. 
+2. **SQL_RPC_TTL_CHECKING_INTERVAL** <br>parameter is for configuring how often Persistent RPC will be checked whether it's outdated. By default, this parameter is set to two hours (in milliseconds).
+
+3. The system administrator can configure the third parameter through the Tenant Profile. This is **RPC TTL days configuration** parameter.
+Configuring this parameter will change the number of days when RPC will be deleted from the database. See the screenshot below: 
 
 {% include images-gallery.html imageCollection="tenant-profile-rpc" %}
 
 #### Rule chain events from RPC
 
-Every time you send the RPC, a configured event will be dispatched in the Rule chain.
+In the Rule chain, you are able to configure events that will be dispatched every time you send an RPC request.
+With Rule nodes, you can add or remove links for the events that you do not want to send. 
 
 {% include images-gallery.html imageCollection="rule-chain" %}
 
 #### RPC States
 
-RPC states determine steps that happen when you send RPC request. After sending an RPC, there are five possible states:
+Once you send an RPC, you can observe what exactly happened with the request that you sent in the Rule node events tab. 
+RPC states determine steps that happen when you send RPC request. There are five possible states that can occur when the request is sent:
 
-**QUEUED** - RPC was saved to the Database;  
+**QUEUED** - RPC was saved to the database;  
 **DELIVERED** - RPC was delivered to the device (for two-way RPC);  
 **SUCCESSFUL** - if RPC is one-way, SUCCESSFUL means that RPC was delivered to the device. If RPC is two-way, SUCCESSFUL means that we've already received response from the device;  
 **TIMEOUT** - RPC was not delivered to the device;  
@@ -131,9 +140,9 @@ RPC states determine steps that happen when you send RPC request. After sending 
 
 #### Usage of Persistent RPC
 
-Add RPC Debug Terminal widget to your dashboard to send the Persistent RPC. 
+To send the Persistent RPC through ThingsBoard, you need to add RPC Debug Terminal widget to your dashboard. 
 How to add RPC Debug Terminal and use this widget, you can read [here](/docs/{{docsPrefix}}reference/lwm2m-api/#rpc-commands).
-Then, follow these steps to test Persistent RPC and get RPC ID:
+Then, follow these steps to test the Persistent RPC:
 
 {% include images-gallery.html imageCollection="rpc-test" showListImageTitles="true" %}
 
