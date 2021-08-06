@@ -89,7 +89,7 @@ Unlike basic RPC, Persistent RPC has an increased timeout and the command is sto
 Persistent RPC is extremely useful when your device is in power-saving mode. 
 Power-saving mode (or PSM) is when the device temporary is turning off to save the battery energy.
 You can set the PSM in the device profile or device configuration. This feature is available for [CoAP](/docs/{{docsPrefix}}reference/coap-api/) and [LWM2M](/docs/{{docsPrefix}}reference/lwm2m-api/) only.
-After you send an RPC request to this device, the request will be saved in the database for the time you configured and the device will receive the request when it is turned on again.  
+After you send an RPC request to this device, the request will be saved in the database for the time you configured and the device will receive the request and send the response when it is turned on again.  
 In addition, every time you send the Persistent RPC, the response will contain RPC ID. Whenever you need to find a specific RPC and view its states and responses, you can do it with that ID through the database.
 
 #### Persistent RPC Configuration
@@ -120,14 +120,14 @@ Configuring this parameter will change the number of days when RPC will be delet
 
 {% include images-gallery.html imageCollection="tenant-profile-rpc" %}
 
-#### Rule chain events from RPC
+#### RPC Rule chain events 
 
 In the Rule chain, you are able to configure events that will be dispatched every time you send an RPC request: RPC queued, RPC delivered, RPC successful, RPC timeout, RPC failed.
 Configured RPC events reflect [RPC states](/docs/{{docsPrefix}}user-guide/rpc/#rpc-states).
 
 {% include images-gallery.html imageCollection="rule-chain" %}
 
-#### RPC States
+#### Persistent RPC States
 
 Once you send an RPC, you can observe what exactly happened with the request that you sent in the Rule node events tab. 
 RPC states determine steps that happen when you send RPC request. There are five possible states that can occur when the request is sent:
