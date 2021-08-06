@@ -85,10 +85,10 @@ You can use the following [guide](/docs/{{docsPrefix}}reference/rest-api/#rest-a
 ## Persistent RPC
 
 Since version 3.3, ThingsBoard provides the new feature: **Persistent RPC**.
-The difference between Basic RPC and Persistent RPC is that the second has an increased timeout and the command is stored in the database for configurable amount of time.
+Unlike basic RPC, Persistent RPC has an increased timeout and the command is stored in the database for configurable amount of time.
 Persistent RPC is extremely useful when your device is in power-saving mode. 
 Power-saving mode (or PSM) is when the device temporary is turning off to save the battery energy.
-You can set the PSM in the device profile or device configuration. This feature is available for CoAP and LWM2M only.
+You can set the PSM in the device profile or device configuration. This feature is available for [CoAP](/docs/{{docsPrefix}}reference/coap-api/) and [LWM2M](/docs/{{docsPrefix}}reference/lwm2m-api/) only.
 After you send an RPC request to this device, the request will be saved in the database for the time you configured and the device will receive the request when it is turned on again.  
 In addition, every time you send the Persistent RPC, the response will contain RPC ID. Whenever you need to find a specific RPC and view its states and responses, you can do it with that ID through the database.
 
@@ -115,15 +115,15 @@ Where:
 
 2. **SQL_RPC_TTL_CHECKING_INTERVAL** <br>parameter is for configuring how often Persistent RPC will be checked whether it's outdated. By default, this parameter is set to two hours (in milliseconds).
 
-3. The system administrator can configure the third parameter through the Tenant Profile. This is **RPC TTL days configuration** parameter.
+The system administrator can configure the default parameter for the tenants through the Tenant Profile. This is **RPC TTL days configuration** parameter.
 Configuring this parameter will change the number of days when RPC will be deleted from the database. See the screenshot below: 
 
 {% include images-gallery.html imageCollection="tenant-profile-rpc" %}
 
 #### Rule chain events from RPC
 
-In the Rule chain, you are able to configure events that will be dispatched every time you send an RPC request.
-With Rule nodes, you can add or remove links for the events that you do not want to send. 
+In the Rule chain, you are able to configure events that will be dispatched every time you send an RPC request: RPC queued, RPC delivered, RPC successful, RPC timeout, RPC failed.
+Configured RPC events reflect [RPC states](/docs/{{docsPrefix}}user-guide/rpc/#rpc-states).
 
 {% include images-gallery.html imageCollection="rule-chain" %}
 
