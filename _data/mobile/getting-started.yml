@@ -1,0 +1,6 @@
+bigheader: "Getting Started"
+abstract: "Getting Started with ThingsBoard Mobile Application."
+hidetoc: "true"
+toc:
+  - title: Getting Started
+    path: /docs/mobile/getting-started/
