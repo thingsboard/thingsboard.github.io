@@ -688,6 +688,14 @@ The **Widget Editor** will be opened, pre-populated with the content of the defa
  
 ```javascript
 self.onInit = function() {
+    var pageLink = self.ctx.pageLink();
+
+    pageLink.typeList = self.ctx.widgetConfig.alarmTypeList;
+    pageLink.statusList = self.ctx.widgetConfig.alarmStatusList;
+    pageLink.severityList = self.ctx.widgetConfig.alarmSeverityList;
+    pageLink.searchPropagatedAlarms = self.ctx.widgetConfig.searchPropagatedAlarms;
+
+    self.ctx.defaultSubscription.subscribeForAlarms(pageLink, null);
     self.ctx.$scope.alarmSource = self.ctx.defaultSubscription.alarmSource;
     
     var alarmSeverityColorFunctionBody = self.ctx.settings.alarmSeverityColorFunction;
@@ -729,7 +737,7 @@ self.onInit = function() {
 }
 
 self.onDataUpdated = function() {
-    self.ctx.$scope.alarms = self.ctx.defaultSubscription.alarms;
+    self.ctx.$scope.alarms = self.ctx.defaultSubscription.alarms.data;
     self.ctx.detectChanges();
 }
 ```
