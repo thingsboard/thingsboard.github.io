@@ -21,44 +21,14 @@ In the function decoder field, specify a script to parse and transform data.
 
 {% include images-gallery.html imageCollection="data-converters" %}
 
-**Example for the Uplink converter:**
+**Example of the Uplink converter:**
 
-```ruby
-// Decode an uplink message from a buffer
-// payload - array of bytes
-// metadata - key/value object
-/** Decoder **/
-// decode payload to string
-// var payloadStr = decodeToString(payload);
-// decode payload to JSON
-var data = decodeToJson(payload);
-var deviceName = data.deviceName;
-var deviceType = data.deviceType;
-// Result object with device attributes/telemetry data
-var result = {
-   deviceName: deviceName,
-   deviceType: deviceType,
-   attributes: {
-       model: data.model,
-       serialNumber: data.param2,
-   },
-   telemetry: {
-       temperature: data.temperature
-   }
-};
-/** Helper functions **/
-function decodeToString(payload) {
-   return String.fromCharCode.apply(String, payload);
-}
-function decodeToJson(payload) {
-   // covert payload to string.
-   var str = decodeToString(payload);
-   // parse string to JSON
-   var data = JSON.parse(str);
-   return data;
-}
-return result;
-```
+{% capture converteruplink %}
+JSON%,%json%,%templates/helloworld-pe/http/json.md%br%
+text/plain%,%text%,%templates/helloworld-pe/http/text.md%br%
+multipart/form-data%,%multipart%,%templates/helloworld-pe/http/multipart.md%br%{% endcapture %}
+{% include content-toggle.html content-toggle-id="converter" toggle-spec=converteruplink %}
+
 
 You can change the decoder function while creating the converter or after creating it. If the converter has already been created, then click on the “pencil” icon to edit it.
 Copy the configuration example for the converter (or your own configuration) and insert it into the decoder function. Save changes by clicking on the “checkmark” icon.
@@ -92,22 +62,17 @@ Once the Headers filter has been configured, it will also need to be specified i
 
 ## Send uplink message
 
-To send an uplink message, you need a HTTP endpoint URL from the integration.  
+To send an uplink message, you need an HTTP endpoint URL from the integration.  
 Let`s go to the Integrations tab in ThingsBoard. Find your HTTP integration and click on it. There you can find the HTTP endpoint URL. Click on the icon to copy the url.
 
+{% capture senduplink %}
+JSON%,%json-send%,%templates/helloworld-pe/http/json-send.md%br%
+text/plain%,%text-send%,%templates/helloworld-pe/http/text-send.md%br%
+multipart/form-data%,%multipart-send%,%templates/helloworld-pe/http/multipart-send.md%br%
+x-www-form-urlencoded%,%application-send%,%templates/helloworld-pe/http/application-send.md%br%{% endcapture %}
+{% include content-toggle.html content-toggle-id="uplink" toggle-spec=senduplink %}
+
 {% include images-gallery.html imageCollection="send-uplink" %}
-
-Use this command to send the message. Replace $DEVICEname, $DEVICEtype and $YOUR_HTTP_ENDPOINT_URL with corresponding values.
-
-```ruby
-curl -v -X POST -d "{\"deviceName\":\"$DEVICEname\",\"deviceType\":\"$DEVICEtype\",\"temperature\":33,\"model\":\"test\"}" $YOUR_HTTP_ENDPOINT_URL -H "Content-Type:application/json"
-```
-
-Use this command to send the message. Replace $DEVICEname, $DEVICEtype, $YOUR_HTTP_ENDPOINT_URL and $VALUE with corresponding values.
-
-```ruby
-curl -v -X POST -d "{\"deviceName\":\"$DEVICEname\",\"deviceType\":\"$DEVICEtype\",\"temperature\":33,\"model\":\"test\"}" $YOUR_HTTP_ENDPOINT_URL -H "Content-Type:application/json" -H "$VALUE"
-```
 
 The created device with data can be seen in the section **Device groups -> All**
 
