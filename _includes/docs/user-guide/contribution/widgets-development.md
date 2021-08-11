@@ -865,8 +865,10 @@ self.onResize = function() {
 }
 
 self.onDataUpdated = function() {
-    var value = self.ctx.defaultSubscription.data[0].data[0][1];
-    gauge.set(value);
+    if (self.ctx.defaultSubscription.data[0].data.length) {
+        var value = self.ctx.defaultSubscription.data[0].data[0][1];
+        gauge.set(value);
+    }
 }
 ```
 
