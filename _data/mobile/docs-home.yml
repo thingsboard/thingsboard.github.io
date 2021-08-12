@@ -1,7 +1,0 @@
-bigheader: "ThingsBoard Mobile Application Documentation"
-abstract: "ThingsBoard Mobile Application - starting point for your IoT mobile product."
-toc:
-  - title: ThingsBoard Mobile Application
-    path: /docs/mobile/
-  - title: Getting Started
-    path: /docs/mobile/getting-started/

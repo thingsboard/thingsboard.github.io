@@ -45,20 +45,4 @@
   icon: /images/trendz-icon.svg
   path: /docs/trendz/
   getStarted: /docs/trendz/getting-started/
-- title: Mobile Application
-  fulltitle: ThingsBoard Mobile Application
-  description: Mobile Application Documentation
-  tag: mobile
-  icon: /images/tb-mobile-icon.svg
-  path: /docs/mobile/
-  docsPrefix: /docs/mobile/
-  getStarted: /docs/mobile/getting-started/
-- title: PE Mobile Application
-  fulltitle: ThingsBoard PE Mobile Application
-  description: PE Mobile Application Documentation
-  tag: mobile-pe
-  icon: /images/tb-pe-mobile-icon.svg
-  path: /docs/pe/mobile/
-  docsPrefix: /docs/pe/mobile/
-  getStarted: /docs/pe/mobile/getting-started/
 
