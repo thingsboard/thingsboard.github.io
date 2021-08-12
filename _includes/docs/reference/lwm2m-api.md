@@ -124,15 +124,6 @@ Execute
 
 ### Bootstrap
 
-
-
-
-
-## ======
-
-
-
-
 ## LWM2M basics: architecture, terminology,  definitions.
 
 For simplicity, we will manually provision the device using the UI.

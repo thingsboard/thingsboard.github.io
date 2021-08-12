@@ -8,6 +8,10 @@ description: ThingsBoard architecture
 * TOC
 {:toc}
 
+## v3.3 (August 12, 2021)
+
+TODO
+
 ## v3.2.2 (March 24, 2021)
 
 ### ThingsBoard CE
