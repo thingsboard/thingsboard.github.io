@@ -1,0 +1,7 @@
+bigheader: "ThingsBoard PE Mobile Application Documentation"
+abstract: "ThingsBoard PE Mobile Application - starting point for your IoT mobile product."
+toc:
+  - title: ThingsBoard PE Mobile Application
+    path: /docs/pe/mobile/
+  - title: Getting Started
+    path: /docs/pe/mobile/getting-started/
