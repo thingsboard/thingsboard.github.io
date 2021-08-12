@@ -529,7 +529,7 @@ defaultActivateSelectProduct: true
         <div id="payAsYouGoHeader" class="pricing-content-description col-lg-6">
             <h2>Subscription plans</h2>
             <div class="pricing-content-details">
-                TODO: voba All subscription plans include <b>unlimited</b> customers, dashboards, integrations, api calls, data points & messages
+                All subscription plans include <b>unlimited</b> dashboards, api calls, data points & messages
             </div>
         </div>
         <div id="perpetualHeader" class="pricing-content-description col-lg-6">
@@ -675,7 +675,7 @@ defaultActivateSelectProduct: true
            <div class="row justify-content-center">
                 <div class="col-md-8 col-lg-6 col-xl-4 mb-4">
                     <div class="pricing-square">
-                        <h2>Perpetual Fallback License</h2>
+                        <h2>Edge Perpetual Fallback License</h2>
                         <div class="pricing-square-description" style="min-height: 50px;">
                             <p>Use your ThingsBoard Edge instance forever</p>
                         </div>

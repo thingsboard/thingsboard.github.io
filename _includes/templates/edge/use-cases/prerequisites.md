@@ -10,8 +10,6 @@ We assume you have completed the following guides and reviewed the articles list
 
 Please make sure that you have **{{currentThingsBoardVersion}}** server up and running. Additionally, ThingsBoard **Edge** must be up, running and connected to the cloud.
 
-{% include templates/edge/tb-33-beta-note.md %}
-
 If you have these prerequisites in place let's go to next steps.
 
 In other case please review how to [Provision Edge on {{currentThingsBoardVersion}} server](/docs/edge/provision-edge-on-server/) and once it's provisined please install and connect edge to cloud using this [guide](/docs/edge/install/installation-options/).

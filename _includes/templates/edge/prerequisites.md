@@ -10,7 +10,3 @@ The alternative option is to install ThingsBoard Community Edition server that s
 {% endif %}
 
 Please visit [Upgrade instructions for {{currentThingsBoardVersion}} server](/docs/edge/upgrade-server/) to install **3.3beta** version of {{currentThingsBoardVersion}} server that supports edge functionality before the official **3.3** {{currentThingsBoardVersion}} server release.
-
-{% include templates/edge/tb-33-beta-note-upgrade.md %}
-
-{% include templates/edge/tb-33-beta-note.md %}

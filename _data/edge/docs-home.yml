@@ -3,7 +3,6 @@ abstract: "Distribute data processing and analysis using edge computing."
 toc:
 - title: ThingsBoard Edge
   path: /docs/edge/
-  beta: true
 - title: What is ThingsBoard Edge?
   path: /docs/edge/what-is-edge/
 - title: Activate edge functionality on ThingsBoard server

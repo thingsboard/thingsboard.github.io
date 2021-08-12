@@ -29,7 +29,7 @@
   fulltitle: ThingsBoard Edge
   description: ThingsBoard Documentation
   tag: edge
-  icon: /images/edge-icon.svg
+  icon: /images/thingsboard-e-icon.svg
   path: /docs/edge/
 - title: IoT Gateway
   fulltitle: ThingsBoard IoT Gateway
