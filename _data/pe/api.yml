@@ -21,3 +21,5 @@ toc:
   path: /docs/pe/reference/rest-client/
 - title: Python REST Client
   path: /docs/pe/reference/python-rest-client/
+- title: Dart API Client
+  path: /docs/pe/reference/dart-client/
