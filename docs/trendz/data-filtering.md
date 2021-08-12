@@ -49,3 +49,7 @@ from 1 Building - you should drop Building name into **Filter** section and sele
 view will contains only apartments from selected building.
 
 Same logic work if you want to filter asset/devices by customer that they belongs to.
+
+## Next Steps
+
+{% assign currentGuide = "Filtering" %}{% include templates/trndz-guides-banner.md %}

@@ -1,9 +1,9 @@
 ---
 layout: docwithnav
 assignees:
-- ashvayka
-  title: SNMP Device API Reference
-  description: Supported SNMP API Reference for IoT Devices
+- ashvayka 
+title: SNMP Device API Reference
+description: Supported SNMP API Reference for IoT Devices
 
 ---
 

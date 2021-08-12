@@ -241,6 +241,42 @@ The supported data format is:
 }
 ```
   
+## Firmware API 
+
+When ThingsBoard initiates an MQTT device firmware update, it sets the fw_title, fw_version, fw_checksum, fw_checksum_algorithm shared attributes.
+To receive the shared attribute updates, the device has to subscribe to 
+
+```bash
+v1/devices/me/attributes/response/+
+```
+{: .copy-code}
+
+Where
+
+**+** is the Wildcard character.
+
+When the MQTT device receives updates for fw_title and fw_version shared attributes, it has to send PUBLISH message to
+
+```bash
+v2/fw/request/${requestId}/chunk/${chunk} 
+```
+{: .copy-code}
+
+Where
+**${requestId}** - number corresponding to the number of firmware updates. The ${requestId} has to be different for each firmware update.  
+**${chunk}** - the size of the firmware in bytes. The chunks are counted from 0. The device must increment the chunk index for each request until the chunk size is zero.
+
+For each new firmware update, you need to change the request ID and subscribe to 
+
+```bash
+v2/fw/response/+/chunk/+
+```
+{: .copy-code}
+
+Where
+
+**+** is the Wildcard character.
+
 ## Protocol customization
 
 MQTT transport can be fully customized for specific use-case by changing the corresponding [module](https://github.com/thingsboard/thingsboard/tree/master/transport/mqtt).

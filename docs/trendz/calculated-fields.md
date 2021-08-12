@@ -99,3 +99,7 @@ Aggregation function applied to a grouped dataset. Find more details about [Grou
 
 Calculated Fields use Javascript as a language for writing transformation function. Inner Engine provide 100% support
 of ECMAScript 5.1
+
+## Next Steps
+
+{% assign currentGuide = "CalculatedFields" %}{% include templates/trndz-guides-banner.md %}

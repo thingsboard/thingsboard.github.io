@@ -19,7 +19,7 @@ This guide will help you to install and start Trendz Analytics using Docker on W
 
 ## Step 1. Obtain the license key 
 
-We assume you have already have Trendz license key. If not, please get your [Free Trial license](/pricing/?active=trendz) before you proceed.
+We assume you have already chosen subscription plan for Trendz and have license key. If not, please get your [Free Trial license](/pricing/?active=trendz) before you proceed.
 See [How-to get pay-as-you-go subscription](https://www.youtube.com/watch?v=dK-QDFGxWek){:target="_blank"} for more details.
 
 Note: We will reference the license key you have obtained during this step as PUT_YOUR_LICENSE_SECRET_HERE later in this guide.
@@ -30,45 +30,109 @@ Open official [Trendz Analytics](https://hub.docker.com/_/trndz) Docker Hub page
 Populate basic information about yourself and click "Get Content"
 
 
-## Step 3. Running
+## Step 3. Running Trendz service
+
+##### Docker Compose setup
 
 Make sure your have [logged in](https://docs.docker.com/engine/reference/commandline/login/) to docker hub using command line.
 
-Windows users should use docker managed volume for Trendz Database. 
-Create docker volume (for ex. `mytrendz-data`) before executing docker run command:
-Open "Docker Quickstart Terminal". Execute the following command to create docker volume:
+Create docker compose file for Trendz Analytics service:
 
-``` 
-docker volume create mytrendz-data
-docker volume create mytrendz-logs
+```text
+docker-compose.yml
 ```
+{: .copy-code}
 
-Execute the following command to run this docker directly:
+Add the following line to the yml file. Don't forget to replace “PUT_YOUR_LICENSE_SECRET_HERE” with your **license secret obtained on the first step**
 
-``` 
-docker run -it -p 8888:8888 -v mytrendz-data:/data -v mytrendz-logs:/var/log/trendz -e TB_API_URL='PUT_YOUR_THINGSBOARD_URL_HERE' -e TB_API_PE_ENABLED='true' -e TRENDZ_LICENSE_SECRET=PUT_YOUR_LICENSE_SECRET_HERE --restart always --name mytrendz thingsboard/trendz:1.5.0-SNAPSHOT
+```yml
+
+version: '2.2'
+services:
+  mytrendz:
+    restart: always
+    image: "store/thingsboard/trendz:1.7.0-SNAPSHOT"
+    ports:
+      - "8888:8888"
+    environment:
+      TB_API_URL: http://10.0.0.101:8080
+      TRENDZ_LICENSE_SECRET: PUT_YOUR_LICENSE_SECRET_HERE
+      TRENDZ_LICENSE_INSTANCE_DATA_FILE: /data/license.data
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/trendz
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: postgres
+    volumes:
+      - mytrendz-data:/data
+      - mytrendz-logs:/var/log/trendz
+  postgres:
+    restart: always
+    image: "postgres:12"
+    ports:
+      - "5432"
+    environment:
+      POSTGRES_DB: trendz
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - mytrendz-data/db:/var/lib/postgresql/data
+volumes:
+  mytrendz-data:
+    external: true
+  mytrendz-logs:
+    external: true
+  mytrendz-data-db:
+    external: true
 ```
+{: .copy-code}
 
 Where: 
-
+    
+- `TB_API_URL` - url for connecting to ThingsBoard Rest API (for example http://10.5.0.11:8080). Note that ThingsBoard IP address should be resolvable from Trendz docker container
 - `PUT_YOUR_LICENSE_SECRET_HERE` - placeholder for your license secret obtained on the first step
-- `PUT_YOUR_THINGSBOARD_URL_HERE` - url for connecting to ThingsBoard Rest API (for example http://10.5.0.11:8080)
-- `TB_API_PE_ENABLED`       - set **true** if connecting to the ThingsBoard Professional Edition and **false** if connecting to the ThingsBoard Community Edition
-- `docker run`              - run this container
-- `-it`                     - attach a terminal session with current Trendz process output
-- `-p 8888:8888`            - connect local port 8888 to exposed internal HTTP port 8888
-- `-v mytrendz-data:/data`   - mounts the volume `mytbpe-data` to Trendz DataBase data directory
-- `-v mytrendz-logs:/var/log/thingsboard`   - mounts the volume `mytbpe-logs` to Trendz logs directory
-- `--name mytrendz`             - friendly local name of this machine
+- `8888:8888`            - connect local port 8888 to exposed internal HTTP port 8888
+- `mytrendz-data:/data`   - mounts the volume `mytrendz-data` to Trendz data directory
+- `mytrendz-data/db:/var/lib/postgresql/datad`   - mounts the volume `mytrendz-data/db` to Postgres data directory
+- `mytrendz-logs:/var/log/trendz`   - mounts the volume `mytrendz-logs` to Trendz logs directory
+- `mytrendz`             - friendly local name of this machine
 - `--restart always`        - automatically start Trendz in case of system reboot and restart in case of failure.
-- `thingsboard/trendz:1.5.0-SNAPSHOT`          - docker image
+- `store/thingsboard/trendz:1.7.0-SNAPSHOT`          - docker image
+    
+##### Setup Docker volumes    
+    
+Windows users should use docker managed volume for Trendz DataBase. Create docker volume (for ex. `mytrendz-data`) before 
+executing docker run command: Open “Docker Quickstart Terminal”. Execute the following command to create docker volume:
 
+```yml
+docker volume create mytrendz-data
+docker volume create mytrendz-data-db
+docker volume create mytrendz-logs
+```
+{: .copy-code}
+
+**NOTE**: replace directory ~/.mytrendz-data and ~/.mytrendz-logs with directories you’re planning to used in docker-compose.yml.
+
+##### Running service
+ 
+Execute the following command to up this docker compose directly:
+
+**NOTE**: For running docker compose commands you have to be in a directory with docker-compose.yml file.    
+    
+```yml
+docker-compose up -d
+docker-compose logs -f mytrendz
+```
+{: .copy-code}    
     
 In order to get access to necessary resources from external IP/Host on Windows machine, please execute the following commands:
 
-``` 
-VBoxManage controlvm "default" natpf1 "tcp-port8888,tcp,,8888,,8888"
+```yml
+set PATH=%PATH%;"C:\Program Files\Oracle\VirtualBox"
+VBoxManage controlvm "default" natpf1 "tcp-port8888,tcp,,8888,,8888"  
 ```
+{: .copy-code}    
+
+Where 
+
+- `C:\Program Files\Oracle\VirtualBox`          - path to your VirtualBox installation directory
     
 After executing this command you can open `http://{your-host-ip}:8888` in you browser (for ex. `http://localhost:8888`). You should see Trendz login page.
    
@@ -83,22 +147,22 @@ to validate credentials.
 
 You can detach from session terminal with `Ctrl-p` `Ctrl-q` - the container will keep running in the background.
 
-To reattach to the terminal (to see Trendz logs) run:
+In case of any issues you can examine service logs for errors. For example to see Trendz node logs execute the following command:
 
 ```
-$ docker attach mytrendz
+docker-compose logs -f mytrendz
 ```
 
 To stop the container:
 
 ```
-$ docker stop mytrendz
+docker-compose stop
 ```
 
 To start the container:
 
 ```
-$ docker start mytrendz
+docker-compose start
 ```
 
 ## Troubleshooting
@@ -112,3 +176,7 @@ $ docker start mytrendz
 ```
 
 You may configure your system to use [Google public DNS servers](https://developers.google.com/speed/public-dns/docs/using#windows)
+
+### Next steps
+
+{% assign currentGuide = "InstallationOptions" %}{% include templates/trndz-guides-banner.md %}

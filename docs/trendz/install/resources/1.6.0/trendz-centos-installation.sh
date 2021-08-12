@@ -1,0 +1,1 @@
+sudo rpm -Uvh trendz-1.6.0.rpm
