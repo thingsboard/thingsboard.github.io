@@ -213,7 +213,7 @@ Let's look how we can configure this section for different file extensions:
           "devicePatternName": "DeviceName",
           "devicePatternType": "[0:1]",
           "delimiter": ",",
-          "path": fol/table.txt,
+          "path": "fol/table.txt",
           "readMode": "FULL",
           "maxFileSize": 5,
           "pollPeriod": 60,
