@@ -22,11 +22,11 @@ defaultActivateSelectProduct: true
             <li id="menu-item-thingsboard-pe-options" class="menu-item tb-logo">
                 <a href="javascript:void(0);" onClick="activatePricingSection('thingsboard-pe-options', true)">Professional Edition</a>
             </li>
-            <li id="menu-item-thingsboard-edge" class="menu-item tb-edge-logo">
-               <a href="javascript:void(0);" onClick="activatePricingSection('thingsboard-edge')">Edge</a>
-            </li>
             <li id="menu-item-trendz" class="menu-item trendz-logo">
                <a href="javascript:void(0);" onClick="activatePricingSection('trendz')">Trendz Analytics</a>
+            </li>
+            <li id="menu-item-thingsboard-edge" class="menu-item tb-edge-logo">
+               <a href="javascript:void(0);" onClick="activatePricingSection('thingsboard-edge')">Edge</a>
             </li>
          </ul>
        </nav>

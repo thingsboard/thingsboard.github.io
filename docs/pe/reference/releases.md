@@ -8,11 +8,31 @@ description: ThingsBoard architecture
 * TOC
 {:toc}
 
-## v3.3 (August 12, 2021)
+## v3.3 (August 13, 2021)
 
 Everything from [TB CE v3.3](https://github.com/thingsboard/thingsboard/releases/tag/v3.3) with the following improvements.
 
-TODO
+Main features:
+
+* Improve MQTT integration performance by using async implementation;
+* Improve ChirpStack integration validation - application server url and API token are now required;
+* CoAP integration with DTLS mode support;
+* Confirm dialog in save device group;
+* Ability to specify Consumer Group for Azure Event Hub;
+* Use queue from device profile when pushing events from integration to the rule engine;
+* Improvement to owner autocomplete component;
+
+
+Bug fixes:
+
+* Customer can not see some data of sub-customer in the dashboard;
+* MQTT based integrations, added field for setting up max bytes in message;
+* TLS connectivity for remote integrations;
+* Incorrect work of the asset menu when the user is active / inactive edit mode;
+* Manage credentials button in the device group;
+* Scheduler widget when processing custom event configuration;
+* Processing of repartition events in the scheduler service;
+* OPC-UA integration downlink and added more logs for not connected state;
 
 ## v3.2.2 (March 24, 2021)
 
