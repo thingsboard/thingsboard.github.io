@@ -13,7 +13,7 @@ python3 mqtt_firmware_client.py
 ```
 {: .copy-code}
 
-Download MQTT client example: [**mqtt_firmware_client.py**](/docs/{{docsPrefix}}user-guide/resources/firmware/mqtt_firmware_client.py)
+Download MQTT client example: [**mqtt_firmware_client.py**](/docs/user-guide/resources/firmware/mqtt_firmware_client.py)
 
 After getting the following messages, 
 - `Please write your ThingsBoard host or leave it blank to use default (localhost):` - use your localhost, or the platform address;
