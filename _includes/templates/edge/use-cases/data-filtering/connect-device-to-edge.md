@@ -1,7 +1,7 @@
 To connect "In-vehicle monitoring system" to the ThingsBoard Edge you need to get device credentials first.
 ThingsBoard supports different device credentials. We recommend to use default auto-generated credentials which is access token for this guide.
 
-Please open ThingsBoard **Edge** UI using the URL: [http://localhost:18080](http://localhost:18080).
+Please open ThingsBoard **Edge** UI using the URL: [http://localhost:8080](http://localhost:8080).
 
 {% include templates/edge/bind-port-changed-banner.md %}
 

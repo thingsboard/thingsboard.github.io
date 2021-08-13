@@ -211,7 +211,7 @@ mqttWindows:
 To subscribe to RPC commands from edge for the **Air Conditioner** device you need to get the **Air Conditioner** device credentials first.
 ThingsBoard supports different device credentials. We recommend to use default auto-generated credentials which is access token for this guide.
 
-Please open ThingsBoard **Edge** UI using the URL: [http://localhost:18080](http://localhost:18080).
+Please open ThingsBoard **Edge** UI using the URL: [http://localhost:8080](http://localhost:8080).
 
 {% include templates/edge/bind-port-changed-banner.md %}
 
@@ -253,7 +253,7 @@ You should see the following screen with your host and device token:
 
 ```shell
 pc@pc-XPS-15-9550:~/alarm-tutorial$ bash mqtt-js.sh
-Connecting to: localhost:11883 using access token: sFqoF18PTyViO8L0qo7c
+Connecting to: localhost:1883 using access token: sFqoF18PTyViO8L0qo7c
 Cooler is connected!
 ```
 
@@ -264,7 +264,7 @@ Cooler is connected!
 To post temperature telemetry to the **DHT22** sensor you need to get the **DHT22** sensor credentials first.
 ThingsBoard support different device credentials. We recommend to use default auto-generated credentials which is access token for this guide.
 
-Please open ThingsBoard **Edge** UI using the URL: [http://localhost:18080](http://localhost:18080).
+Please open ThingsBoard **Edge** UI using the URL: [http://localhost:8080](http://localhost:8080).
 
 {% include templates/edge/bind-port-changed-banner.md %}
 
@@ -300,7 +300,7 @@ You should see similar messages on the screen:
 
 ```shell
 pc@pc-XPS-15-9550:~/alarm-tutorial$ bash mqtt-js.sh
-Connecting to: localhost:11883 using access token: sFqoF18PTyViO8L0qo7c
+Connecting to: localhost:1883 using access token: sFqoF18PTyViO8L0qo7c
 Cooler is connected!
 Received RPC command from edge!
 Method: enabled_air_conditioner

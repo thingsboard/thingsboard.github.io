@@ -12,10 +12,10 @@ echo -n '{"temperature": 25}' | coap post coap://$HOST_NAME:$COAP_PORT/api/v1/$A
 ```
 {: .copy-code}
 
-For example, $HOST_NAME reference your local ThingsBoard Edge installation, coap port is **15683** and access token is **ABC123**:
+For example, $HOST_NAME reference your local ThingsBoard Edge installation, coap port is **5683** and access token is **ABC123**:
 
 ```bash
-echo -n '{"temperature": 25}' | coap post coap://localhost:15683/api/v1/ABC123/telemetry
+echo -n '{"temperature": 25}' | coap post coap://localhost:5683/api/v1/ABC123/telemetry
 ```
 {: .copy-code}
 

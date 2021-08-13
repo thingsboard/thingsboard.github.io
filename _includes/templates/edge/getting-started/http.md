@@ -31,7 +31,7 @@ curl -v -X POST -d "{\"temperature\": 25}" $HOST_NAME/api/v1/$ACCESS_TOKEN/telem
 For example, $HOST_NAME reference your local ThingsBoard Edge installation, access token is **ABC123**:
 
 ```bash
-curl -v -X POST -d "{\"temperature\": 25}" http://localhost:18080/api/v1/ABC123/telemetry --header "Content-Type:application/json"
+curl -v -X POST -d "{\"temperature\": 25}" http://localhost:8080/api/v1/ABC123/telemetry --header "Content-Type:application/json"
 ```
 {: .copy-code}
 

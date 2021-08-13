@@ -200,7 +200,7 @@ mqttWindows:
 
 ## Prerequisites
 
-{% include templates/edge/getting-started/prerequisites-pe.md %}
+{% include templates/edge/getting-started/prerequisites.md %}
 
 ## Step 1. Provision Device
 

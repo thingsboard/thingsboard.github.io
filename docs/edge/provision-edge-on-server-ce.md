@@ -12,7 +12,7 @@ addEdge:
         title: 'Click on the "+" icon in the top right corner. Select "Add new edge".'
     2:
         image: /images/edge/installation-add-edge-item-3-ce.png
-        title: 'Input edge name and license key (from Step 1). For example, "My New Edge" and "Bsn3L4B089aXXZEiwf2glidK" (beta key). Additionally, please update cloud endpoint if required - this URL should be accessible by the edge. If edge is running in a docker container "localhost" is always <b>wrong</b>. It must be IP address of the machine where ThingsBoard <b>CE</b> is running and accessible by the edge container. If you are using ThingsBoard <b>Live Demo</b> server to evaluate edge please leave it as <b>https://demo.thingsboard.io</b>. Click "Add" to add the edge.'
+        title: 'Input edge name and license key (from Step 1). For example, "My New Edge" and "Bsn3L4B089aXXZEiwf2glidK". Additionally, please update cloud endpoint if required - this URL should be accessible by the edge. If edge is running in a docker container "localhost" is always <b>wrong</b>. It must be IP address of the machine where ThingsBoard <b>CE</b> is running and accessible by the edge container. If you are using ThingsBoard <b>Live Demo</b> server to evaluate edge please set it as <b>https://demo.thingsboard.io</b>. Click "Add" to add the edge.'
     3:
         image: /images/edge/installation-add-edge-item-4-ce.png
         title: 'Now your edge should be listed first, since table sort edges using created time by default.'
@@ -26,10 +26,6 @@ copyEdgeCredentials:
 
 * TOC
 {:toc}
-
-## Prerequisites
-
-{% include templates/edge/provision/prerequisites-ce.md %}
 
 ## Step 1: Obtain and configure license key
 

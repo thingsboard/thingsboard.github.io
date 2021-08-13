@@ -20,11 +20,9 @@ ThingsBoard Edge designed to be:
 
 ## Architecture diagram
 
-The diagram below shows key system components and interfaces they provide. Let’s walk through them.
+The diagram below shows key edge components and interfaces they provide. Let’s walk through them.
 
-!TODO: <<<<<<<<<<<<<<voba - update diagram>>>>>>>>>>>>>>
-
-<object width="80%" data="/images/reference/mono-architecture.svg"></object>
+<object width="80%" data="/images/reference/edge-architecture.svg"></object>
 
 ## Cloud manager service
 
