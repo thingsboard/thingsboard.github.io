@@ -236,5 +236,21 @@
       }
     },
     "blurb": "Things On Edge designs easy to use, ultra low power Wi-Fi modules."
+  },
+  {
+    "type": "hardware",
+    "program": "",
+    "name": "Senquip",
+    "logo": "senquip.png",
+    "links": {
+      "Site": {
+        "href": "https://www.senquip.com",
+        "target": "_blank"
+      },
+      "Integration guide": {
+        "href": "/docs/samples/senquip/senquip/"
+      }
+    },
+    "blurb": "Rugged, programmable telemetry devices that connect to any industrial sensor or system."
   }
 ]
