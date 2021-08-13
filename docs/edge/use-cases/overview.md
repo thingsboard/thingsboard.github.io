@@ -8,7 +8,7 @@ The ThingsBoard Edge **Use Cases** guides can help you to get familiar with Thin
 
 #### Contents
 
-[**Manage alarms and RPC requests on edge devices**](/docs/edge/use-cases/manage-alarms-rpc-requests/)
+[**Manage alarms and RPC requests on edge devices**](/docs/edge/use-cases/manage-alarms-rpc-requests-pe/)
 : Provides steps to configure ThingsBoard Edge to react to local situations even without internet connectivity to the cloud. 
 
 [**Data filtering and traffic reduce**](/docs/edge/use-cases/data-filtering-traffic-reduce-pe/)

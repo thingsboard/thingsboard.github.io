@@ -145,6 +145,10 @@ A,Mosquitto,shell,resources/mosquitto-attributes-subscribe.sh,/docs/reference/re
 B,MQTT.js,shell,resources/mqtt-js-attributes-subscribe.sh,/docs/reference/resources/mqtt-js-attributes-subscribe.sh{% endcapture %}
 {% include tabs.html %}
 
+## JSON value support
+
+{% include templates/api/json.md %}
+
 ## RPC API
 
 ### Server-side RPC

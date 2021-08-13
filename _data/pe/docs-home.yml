@@ -197,6 +197,9 @@ toc:
     path: /docs/pe/user-guide/ui/mail-settings/
   - title: Widgets
     section:
+      - title: Chart Widgets
+        path: /docs/pe/user-guide/ui/chart-widget/
+        new: true
       - title: Trip Animation Widget
         path: /docs/pe/user-guide/ui/trip-animation-widget/
       - title: Advanced Settings of the Entity Table widget

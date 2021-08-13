@@ -125,6 +125,10 @@ A,Example,shell,resources/http-attributes-subscribe.sh,/docs/reference/resources
 B,Result,json,resources/attributes-response.json,/docs/reference/resources/attributes-response.json{% endcapture %}
 {% include tabs.html %}
 
+## JSON value support
+
+{% include templates/api/json.md %}
+
 ## RPC API
 
 ### Server-side RPC

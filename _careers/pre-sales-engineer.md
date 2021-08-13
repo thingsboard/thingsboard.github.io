@@ -42,6 +42,8 @@ Cloud experience (AWS, Azure, GCP etc.).
 ### We offer:
 Full-time office work with flexible work shifts;
 
+Medical insurance;
+
 Onboarding supervision and knowledge transfer;
 
 Loyal, adequate and fair management;
