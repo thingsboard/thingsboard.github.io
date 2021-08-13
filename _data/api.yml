@@ -11,6 +11,8 @@ toc:
   path: /docs/reference/coap-api/
 - title: HTTP Device API
   path: /docs/reference/http-api/
+- title: LWM2M Device API
+  path: /docs/reference/lwm2m-api/
 - title: Administration REST API
   path: /docs/reference/rest-api/
 - title: MQTT Gateway API Reference
@@ -19,3 +21,5 @@ toc:
   path: /docs/reference/rest-client/
 - title: Python REST Client
   path: /docs/reference/python-rest-client/
+- title: Dart API Client
+  path: /docs/reference/dart-client/

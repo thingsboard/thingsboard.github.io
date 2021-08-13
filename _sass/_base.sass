@@ -46,7 +46,7 @@ $main-nav-left-button-size: 50px
 $main-nav-left-button-font-size: 18px
 
 // nav menu
-$nav-menu-padding: 80px 0 0
+$nav-menu-padding: 65px 0 0
 //$main-nav-h5-margin-bottom: 1em
 //$main-nav-h3-margin-bottom: 0.6em
 //$main-nav-main-sibling-margin-top: 40px
@@ -167,7 +167,7 @@ details[open]
     &.opened-burger
       background-color: #fff
 
-#home, #thingsboard-paas, #thingsboard-pe, #trendz
+#home, #thingsboard-paas, #thingsboard-pe, #trendz, #thingsboard-edge
   header
     background-color: unset
     box-shadow: unset
@@ -418,6 +418,9 @@ header
             &.com-lnk:hover .sub-text h1
               color: #305680
 
+            &.edge-lnk:hover .sub-text h1
+              color: #009688
+
             &.gateway-lnk:hover .sub-text h1
               color: #EB5757
 
@@ -645,6 +648,40 @@ ul
       position: fixed
       left: 372px
       top: 9px
+  &.search
+    .gsc-control-cse
+      margin-top: 32px
+      .gsc-above-wrapper-area
+        display: none
+      .gsc-wrapper
+        .gs-bidi-start-align
+          color: #212529
+          font-size: 16px
+          line-height: 1.32
+          margin-bottom: .75em
+        .gs-visibleUrl
+          font-size: 14px
+          opacity: .6
+          margin-bottom: .25em
+        .gs-title
+          color: #2a7dec
+          font-size: 18px
+          line-height: 1.32
+          margin-bottom: .5em
+          &:hover
+            text-decoration: underline
+        .gcsc-find-more-on-google
+          color: #212529
+          opacity: .6
+          &:hover span
+            text-decoration: underline
+          svg
+            fill: #212529
+        .gs-no-results-result .gs-snippet
+          background-color: unset
+          border: none
+          color: #212529
+          font-size: 16px
 
 //#viewDocs, #useCases, #blog, #gettingStarted, #liveDemo, #githubButtonContainer
 	display: none
@@ -670,7 +707,7 @@ ul
     display: inline-block
 
 // FLIP NAV
-#home, #thingsboard-paas, #thingsboard-pe, #trendz, #partners
+#home, #thingsboard-paas, #thingsboard-pe, #trendz, #partners, #thingsboard-edge
   &.flip-nav
     header
       transition-duration: 0.3s
@@ -1002,6 +1039,7 @@ section
   header
     box-shadow: 0 1px 0 #ebebeb
   #hero
+    background: white
     position: fixed
     padding-top: 0
     top: 80px
@@ -1562,7 +1600,7 @@ iframe
     height: 400px
     padding: 20px 0
 
-#peContent, #paasContent
+#peContent, #paasContent, #edgeContent
   position: relative
   width: 100%
   margin: auto
@@ -1869,6 +1907,9 @@ $header-clearance: 210px
       &.thingsboard-pe
         background: #00695c
 
+      &.thingsboard-edge
+        background: #009688
+
       &.thingsboard-gw
         background: #467978
 
@@ -1942,6 +1983,9 @@ $header-clearance: 210px
 
         &.community-edition-bg
           background-image: url(/images/services/community_edition.svg)
+
+        &.edge-bg
+          background-image: url(/images/services/edge.svg)
 
         &.gateway-bg
           background-image: url(/images/services/gateway.svg)
@@ -2303,7 +2347,7 @@ $header-clearance: 210px
   #docs
     header
       height: 80px !important
-  #home, #docs, #common, #thingsboard-paas, #thingsboard-pe, #trendz
+  #home, #docs, #common, #thingsboard-paas, #thingsboard-pe, #trendz, #thingsboard-edge
     .opened-burger
       height: 100%!important
       .burger

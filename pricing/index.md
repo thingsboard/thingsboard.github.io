@@ -23,10 +23,13 @@ defaultActivateSelectProduct: true
                 <a href="javascript:void(0);" onClick="activatePricingSection('thingsboard-pe-options', true)">Professional Edition</a>
             </li>
             <li id="menu-item-trendz" class="menu-item trendz-logo">
-                <a href="javascript:void(0);" onClick="activatePricingSection('trendz')">Trendz Analytics</a>
+               <a href="javascript:void(0);" onClick="activatePricingSection('trendz')">Trendz Analytics</a>
+            </li>
+            <li id="menu-item-thingsboard-edge" class="menu-item tb-edge-logo">
+               <a href="javascript:void(0);" onClick="activatePricingSection('thingsboard-edge')">Edge</a>
             </li>
          </ul>
-       </nav> 
+       </nav>
     </div>
     <div id="thingsboard-pe-options" class="select-product-content justify-content-center align-items-center" style="display: none;">
         <div class="product-selector">
@@ -520,6 +523,191 @@ defaultActivateSelectProduct: true
     </div>
 </div>
 
+<div id="thingsboard-edge" class="pricing-content">
+ <div class="container">
+    <div class="pricing-content-header row">
+        <div id="payAsYouGoHeader" class="pricing-content-description col-lg-6">
+            <h2>Subscription plans</h2>
+            <div class="pricing-content-details">
+                All subscription plans include <b>unlimited</b> dashboards, api calls, data points & messages
+            </div>
+        </div>
+        <div id="perpetualHeader" class="pricing-content-description col-lg-6">
+            <h2>License packages</h2>
+        </div>
+        <div class="col d-flex justify-content-end">
+            <div class="solution-selector">
+                <div class="solution pay-as-you-go active defaultselection" data-toggle="#payAsYouGo" data-description-toggle="#payAsYouGoHeader">
+                    <h3 data-faq-id="what-is-pay-as-you-go" data-faq-link-size="70%">Pay-as-you-go</h3>
+                </div>
+                <div class="solution perpetual" data-toggle="#perpetual" data-description-toggle="#perpetualHeader">
+                    <h3 data-faq-id="what-is-perpetual" data-faq-link-size="70%">Perpetual</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pricing-div">
+        <div class="pricing-section pricing-pay-as-you-go active" id="payAsYouGo">
+           <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-6 col-xl-4 col-gt-xl mb-4">
+                    <div class="pricing-square">
+                        <h2>Pico</h2>
+                        <div class="pricing-square-description">
+                            <p>Up to 5 Devices and Assets</p>
+                        </div>
+                        <h4 class="pricing-square-price mb-0">
+                            $2
+                            <span>/&nbsp;month</span>
+                        </h4>
+                        <div class="row justify-content-center">
+                            <button class="btn-blue btn-pricing" 
+                                onClick="getLicense(event,
+                                false,
+                                'd3b7d030-fe4c-11ea-951e-b77b877a367b',
+                                'da425aa0-fe4d-11ea-951e-b77b877a367b',
+                                'Edge Pico', null, false)">
+                                Get your license
+                            </button>
+                        </div>
+                        <div class="pricing-square-item">Up to 5 Devices</div>
+                        <div class="pricing-square-item">Up to 5 Assets</div>
+                        <div class="pricing-square-item" data-faq-id="optional-support">
+                            Optional support
+                        </div>
+                        <div class="pricing-square-item" data-faq-id="thingsboard-edge-discount">
+                            Tired discounts
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-4 col-gt-xl mb-4">
+                    <div class="pricing-square">
+                        <h2>Nano</h2>
+                        <div class="pricing-square-description">
+                            <p>Up to 50 Devices and Assets</p>
+                        </div>
+                        <h4 class="pricing-square-price mb-0">
+                            $19
+                            <span>/&nbsp;month</span>
+                        </h4>
+                        <div class="row justify-content-center">
+                            <button class="btn-blue btn-pricing" 
+                                onClick="getLicense(event,
+                                false,
+                                'd3b7d030-fe4c-11ea-951e-b77b877a367b',
+                                '302e3420-fe4e-11ea-951e-b77b877a367b',
+                                'Edge Nano', null, false)">
+                                Get your license
+                            </button>
+                        </div>
+                        <div class="pricing-square-item">Up to 50 Devices</div>
+                        <div class="pricing-square-item">Up to 50 Assets</div>
+                        <div class="pricing-square-item" data-faq-id="optional-support">
+                            Optional support
+                        </div>
+                        <div class="pricing-square-item" data-faq-id="thingsboard-edge-discount">
+                            Tired discounts
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-4 col-gt-xl mb-4">
+                    <div class="pricing-square">
+                        <h2>Micro</h2>
+                        <div class="pricing-square-description">
+                            <p>Up to 250 Devices and Assets</p>
+                        </div>
+                        <h4 class="pricing-square-price mb-0">
+                            $29
+                            <span>/&nbsp;month</span>
+                        </h4>
+                        <div class="row justify-content-center">
+                            <button class="btn-blue btn-pricing"
+                                onClick="getLicense(event,
+                                false,
+                                'd3b7d030-fe4c-11ea-951e-b77b877a367b',
+                                '6e6c58c0-fe4e-11ea-951e-b77b877a367b',
+                                'Edge Micro', null, false)">
+                                Get your license
+                            </button>
+                        </div>
+                        <div class="pricing-square-item">Up to 250 Devices</div>
+                        <div class="pricing-square-item">Up to 250 Assets</div>
+                        <div class="pricing-square-item" data-faq-id="optional-support">
+                            Optional support
+                        </div>
+                        <div class="pricing-square-item" data-faq-id="thingsboard-edge-discount">
+                            Tired discounts
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-4 col-gt-xl mb-4">
+                    <div class="pricing-square">
+                        <h2>Macro</h2>
+                        <div class="pricing-square-description">
+                            <p>Up to 1000 Devices and Assets</p>
+                        </div>
+                        <h4 class="pricing-square-price mb-0">
+                            $39
+                            <span>/&nbsp;month</span>
+                        </h4>
+                        <div class="row justify-content-center">
+                            <button class="btn-blue btn-pricing"
+                                onClick="getLicense(event,
+                                false,
+                                'd3b7d030-fe4c-11ea-951e-b77b877a367b',
+                                'a0e02610-fe4e-11ea-951e-b77b877a367b',
+                                'Edge Macro', null, false)">
+                                Get your license
+                            </button>
+                        </div>
+                        <div class="pricing-square-item">Up to 1000 Devices</div>
+                        <div class="pricing-square-item">Up to 1000 Assets</div>
+                        <div class="pricing-square-item" data-faq-id="optional-support">
+                            Optional support
+                        </div>
+                        <div class="pricing-square-item" data-faq-id="thingsboard-edge-discount">
+                            Tired discounts
+                        </div>
+                    </div>
+                </div>
+           </div>
+        </div>
+        <div class="pricing-section pricing-perpetual" id="perpetual">
+           <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-6 col-xl-4 mb-4">
+                    <div class="pricing-square">
+                        <h2>Edge Perpetual Fallback License</h2>
+                        <div class="pricing-square-description" style="min-height: 50px;">
+                            <p>Use your ThingsBoard Edge instance forever</p>
+                        </div>
+                        <h4 class="pricing-square-price mb-0">
+                            $299
+                        </h4>
+                        <div class="row justify-content-center">
+                            <button class="btn-blue btn-pricing"
+                                onClick="getLicense(event,
+                                true,
+                                'f59db8c0-fe4e-11ea-951e-b77b877a367b',
+                                '7eb90e70-fe4f-11ea-951e-b77b877a367b',
+                                'Edge Perpetual', null, false)">
+                                Get your license
+                            </button>
+                        </div>
+                        <div class="pricing-square-item">1 year of software updates</div>
+                        <div class="pricing-square-item">Up to 1000 Devices</div>
+                        <div class="pricing-square-item">Up to 1000 Assets</div>
+                        <div class="pricing-square-item" data-faq-id="optional-support">
+                            Optional support
+                        </div>
+                        <div class="pricing-square-item" data-faq-id="thingsboard-edge-discount">
+                            Tired discounts
+                        </div>
+                    </div>
+                </div>
+           </div>
+        </div>
+    </div>
+ </div>  
+</div>
 
 <div class="container faq-content">
     <h2 id="faq" class="text-center">Frequently asked questions</h2>
@@ -576,6 +764,13 @@ defaultActivateSelectProduct: true
                  The remain costs from terminated subscription plan (if remain) will be deducted from Total cost for the perpetual license.
                  Keep in mind: perpetual license is non-cancelable.
                  So, customer can not stop using perpetual license and rely on total price for any subscription plan to be decreased.         
+                </p>    
+            </div>    
+        </div>
+        <div class="item" data-tag="h4" data-item-id="thingsboard-edge-discount" data-title="Can we have a discounted price for ThingsBoard Edges in case of bulk purchase?">
+            <div class="container">
+                <p>
+                    We do understand that you may need multiple edge computing services. Price reduction starts from 10 licenses. Discount tiers are as follows: 10–50 Edges — 10%, 51–100 Edges — 12%, above 100 Edges — 15% off the license cost regardless the plan.
                 </p>    
             </div>    
         </div>
@@ -669,7 +864,7 @@ defaultActivateSelectProduct: true
             <div class="container">
                 <p>
                ThingsBoard web interface allows you to configure your company or product logo and color scheme in 2 minutes with zero coding efforts and no service restart required. 
-               See feature <a href="/docs/user-guide/white-labeling/" target ="blank">documentation</a> for more details. ThingsBoard Cloud extends white-labeling feature with ability to configure own domain name easily. 
+               See feature <a href="/docs/user-guide/white-labeling/" target ="blank">documentation</a> for more details. ThingsBoard Cloud extends white-labeling feature with ability to configure own domain name easily. But currently it is not possible to connect third-party SMTP servers, notifications will be sent from our system. We plan to add this ability in future releases.
                See <a href="/products/paas/domains/" target ="blank">managing domain</a> for more details.
                 </p>  
             </div>    
@@ -694,6 +889,13 @@ defaultActivateSelectProduct: true
                 </p>    
             </div>    
         </div>
+        <div class="item" data-tag="h4" data-item-id="optional-support" data-title="What does this optional support for ThingsBoard Edge mean?">
+            <div class="container">
+                <p>
+                It means, that Edge support is not bundled to the license. For now we provide basic support for customers with more than 50 edge licenses of any type.
+                </p>    
+            </div>    
+        </div>        
         <div class="item" data-tag="h4" data-item-id="subscription-support" data-title="What issues included in email support?">
             <div class="container">
                 <p>

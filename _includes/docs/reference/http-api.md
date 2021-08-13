@@ -125,6 +125,10 @@ A,Example,shell,resources/http-attributes-subscribe.sh,/docs/reference/resources
 B,Result,json,resources/attributes-response.json,/docs/reference/resources/attributes-response.json{% endcapture %}
 {% include tabs.html %}
 
+## JSON value support
+
+{% include templates/api/json.md %}
+
 ## RPC API
 
 ### Server-side RPC
@@ -223,7 +227,23 @@ The supported data format is:
   "provisionDeviceSecret": "jpmwdn8ptlswmf4m29bw"
 }
 ```
-  
+
+## Firmware API
+
+When ThingsBoard initiates the firmware update over HTTP it sets the fw_title, fw_version, fw_checksum, fw_checksum_algorithm shared attributes.
+To receive the shared attribute updates, the device has to GET request
+
+```shell
+http(s)://host/api/v1/${access_token}/firmware?title=${title}&version=${version}
+```
+{: .copy-code}
+
+Where  
+**host** - your localhost, or the platform address;  
+**${access_token}** -  the device access token;  
+**${title}** - the firmware title;  
+**${version}** - the version of the target firmware.
+
 ## Protocol customization
 
 HTTP transport can be fully customized for specific use-case by changing the corresponding [module](https://github.com/thingsboard/thingsboard/tree/master/transport/http).
