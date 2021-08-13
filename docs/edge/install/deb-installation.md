@@ -10,6 +10,8 @@ description: Installing ThingsBoard Edge on Ubuntu Server
 
 This guide describes how to install ThingsBoard Edge on Ubuntu Server 18.04 LTS.
 
+{% include templates/edge/install/prerequisites.md %}
+
 {% include templates/edge/install/hardware-requirements.md %}
 
 ### Step 1. Install Java 11 (OpenJDK) 
@@ -25,14 +27,14 @@ This guide describes how to install ThingsBoard Edge on Ubuntu Server 18.04 LTS.
 Download installation package.
 
 ```bash
-wget https://dist.thingsboard.io/tb-edge-3.3beta.deb
+wget https://dist.thingsboard.io/tb-edge-3.3.deb
 ```
 {: .copy-code}
 
 Go to the download repository and install ThingsBoard Edge service
 
 ```bash
-sudo dpkg -i tb-edge-3.3beta.deb
+sudo dpkg -i tb-edge-3.3.deb
 ```
 {: .copy-code}
 

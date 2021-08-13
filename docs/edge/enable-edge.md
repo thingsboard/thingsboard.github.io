@@ -8,16 +8,16 @@ description: Activate edge functionality on ThingsBoard PE/CE server
 {:toc}
 
 {% capture beta_note %}
-**Important note before upgrading to ThingsBoard 3.3beta**
- - ThingsBoard Edge and ThingsBoard Professional/Community Edition **3.3beta** version that supports edge functionality is currently in **beta** phase, so please upgrade only in case you are interested in evaluating the Edge functionality
+**Important note before upgrading to ThingsBoard 3.3a**
+ - ThingsBoard Edge and ThingsBoard Professional/Community Edition **3.3** version that supports edge functionality is currently in **beta** phase, so please upgrade only in case you are interested in evaluating the Edge functionality
  - Please make sure you have backup of your database before upgrading - especially if this ThingsBoard Professional/Community Edition server instance has some critical data
  - Usage of the **beta** version in your production environment not recommended and could be used only on your own risk
 {% endcapture %}
 {% include templates/info-banner.md content=beta_note %}
 
-### Ubuntu/CentOS {#ubuntucentos-33beta}
+### Ubuntu/CentOS {#ubuntucentos-33}
 
-**NOTE**: These upgrade steps are applicable for ThingsBoard version 3.2.2. In order to upgrade to 3.3beta you need to [**upgrade to 3.2.2 first**](/docs/user-guide/install/upgrade-instructions/#ubuntucentos-322).
+**NOTE**: These upgrade steps are applicable for ThingsBoard version 3.2.2. In order to upgrade to 3.3 you need to [**upgrade to 3.2.2 first**](/docs/user-guide/install/upgrade-instructions/#ubuntucentos-322).
 
 #### ThingsBoard package download & service upgrade
 
@@ -81,17 +81,17 @@ export EDGES_RPC_PORT=**NEW_EDGES_RPC_PORT**
 $ sudo service thingsboard start
 ```
 
-### Windows {#windows-33beta}
+### Windows {#windows-33}
 
-**NOTE**: These upgrade steps are applicable for ThingsBoard version 3.2.2. In order to upgrade to 3.3beta you need to [**upgrade to 3.2.2 first**](/docs/user-guide/install/upgrade-instructions/#windows-322).
+**NOTE**: These upgrade steps are applicable for ThingsBoard version 3.2.2. In order to upgrade to 3.3 you need to [**upgrade to 3.2.2 first**](/docs/user-guide/install/upgrade-instructions/#windows-322).
 
 #### ThingsBoard package download
 
 // TODO: voba - fix this link
 
 Download ThingsBoard installation archive for Windows: 
-* **ThingsBoard Professional Edition** [thingsboard-windows-3.3beta.zip](https://github.com/thingsboard/thingsboard/releases/download/v3.3beta/thingsboard-windows-3.3beta.zip).
-* **ThingsBoard Community Edition** [thingsboard-windows-3.3beta.zip](https://github.com/thingsboard/thingsboard/releases/download/v3.3beta/thingsboard-windows-3.3beta.zip).
+* **ThingsBoard Professional Edition** [thingsboard-windows-3.3.zip](https://github.com/thingsboard/thingsboard/releases/download/v3.3/thingsboard-windows-3.3.zip).
+* **ThingsBoard Community Edition** [thingsboard-windows-3.3.zip](https://github.com/thingsboard/thingsboard/releases/download/v3.3/thingsboard-windows-3.3.zip).
 
 #### ThingsBoard service upgrade
 
@@ -188,16 +188,16 @@ description: Upgrade instructions for ThingsBoard Professional/Community Edition
   {:toc}
 
 {% capture beta_note %}
-**Important note before upgrading to ThingsBoard 3.3beta**
-- ThingsBoard Edge and ThingsBoard Professional/Community Edition **3.3beta** version that supports edge functionality is currently in **beta** phase, so please upgrade only in case you are interested in evaluating the Edge functionality
+**Important note before upgrading to ThingsBoard 3.3**
+- ThingsBoard Edge and ThingsBoard Professional/Community Edition **3.3** version that supports edge functionality is currently in **beta** phase, so please upgrade only in case you are interested in evaluating the Edge functionality
 - Please make sure you have backup of your database before upgrading - especially if this ThingsBoard Professional/Community Edition server instance has some critical data
 - Usage of the **beta** version in your production environment not recommended and could be used only on your own risk
   {% endcapture %}
   {% include templates/info-banner.md content=beta_note %}
 
-### Ubuntu/CentOS {#ubuntucentos-33beta}
+### Ubuntu/CentOS {#ubuntucentos-33}
 
-**NOTE**: These upgrade steps are applicable for ThingsBoard version 3.2.2. In order to upgrade to 3.3beta you need to [**upgrade to 3.2.2 first**](/docs/user-guide/install/upgrade-instructions/#ubuntucentos-322).
+**NOTE**: These upgrade steps are applicable for ThingsBoard version 3.2.2. In order to upgrade to 3.3 you need to [**upgrade to 3.2.2 first**](/docs/user-guide/install/upgrade-instructions/#ubuntucentos-322).
 
 #### ThingsBoard package download & service upgrade
 
@@ -261,17 +261,17 @@ export EDGES_RPC_PORT=**NEW_EDGES_RPC_PORT**
 $ sudo service thingsboard start
 ```
 
-### Windows {#windows-33beta}
+### Windows {#windows-33}
 
-**NOTE**: These upgrade steps are applicable for ThingsBoard version 3.2.2. In order to upgrade to 3.3beta you need to [**upgrade to 3.2.2 first**](/docs/user-guide/install/upgrade-instructions/#windows-322).
+**NOTE**: These upgrade steps are applicable for ThingsBoard version 3.2.2. In order to upgrade to 3.3 you need to [**upgrade to 3.2.2 first**](/docs/user-guide/install/upgrade-instructions/#windows-322).
 
 #### ThingsBoard package download
 
 // TODO: voba - fix this link
 
 Download ThingsBoard installation archive for Windows:
-* **ThingsBoard Professional Edition** [thingsboard-windows-3.3beta.zip](https://github.com/thingsboard/thingsboard/releases/download/v3.3beta/thingsboard-windows-3.3beta.zip).
-* **ThingsBoard Community Edition** [thingsboard-windows-3.3beta.zip](https://github.com/thingsboard/thingsboard/releases/download/v3.3beta/thingsboard-windows-3.3beta.zip).
+* **ThingsBoard Professional Edition** [thingsboard-windows-3.3.zip](https://github.com/thingsboard/thingsboard/releases/download/v3.3/thingsboard-windows-3.3.zip).
+* **ThingsBoard Community Edition** [thingsboard-windows-3.3.zip](https://github.com/thingsboard/thingsboard/releases/download/v3.3/thingsboard-windows-3.3.zip).
 
 #### ThingsBoard service upgrade
 

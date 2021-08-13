@@ -3,7 +3,7 @@ In order to connect ThingsBoard Edge you must create <strong>Edge entity</strong
 {% capture important_note %}
 **Note**
 
-You can create Edge entity on ThingsBoard server in case you are using **3.3beta version or higher**.
+You can create Edge entity on ThingsBoard server in case you are using **3.3 version or higher**.
 {% endcapture %}
 {% include templates/info-banner.md content= important_note %}
 

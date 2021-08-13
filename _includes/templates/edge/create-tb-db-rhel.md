@@ -6,7 +6,6 @@ Edit pg_hba.conf file:
 
 ```bash
 sudo nano /var/lib/pgsql/12/data/pg_hba.conf
-
 ```
 {: .copy-code}
 
@@ -27,7 +26,6 @@ Finally, you should restart the PostgreSQL service to initialize the new configu
 
 ```bash
 sudo systemctl restart postgresql-12.service
-
 ```
 {: .copy-code}
 
@@ -35,7 +33,6 @@ Connect to the database to create ThingsBoard Edge DB:
 
 ```bash
 psql -U postgres -d postgres -h 127.0.0.1 -W
-
 ```
 {: .copy-code}
 
@@ -44,6 +41,5 @@ Execute create database statement
 ```bash
 CREATE DATABASE tb_edge;
 \q
-
 ```
 {: .copy-code}

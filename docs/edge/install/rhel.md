@@ -9,8 +9,11 @@ description: Installing ThingsBoard Edge on CentOS/RHEL Server
 
 This guide describes how to install ThingsBoard Edge on RHEL/CentOS 7/8.
 
+{% include templates/edge/install/prerequisites.md %}
+
 {% include templates/edge/install/hardware-requirements.md %}
 
+#### Pre-installation step 
 Before continue to installation execute the following commands in order to install necessary tools:
 
 ```bash
@@ -31,14 +34,14 @@ sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.
 Download installation package.
 
 ```bash
-wget https://dist.thingsboard.io/tb-edge-3.3beta.rpm
+wget https://dist.thingsboard.io/tb-edge-3.3.rpm
 ```
 {: .copy-code}
 
 Go to the download repository and install ThingsBoard Edge service
 
 ```bash
-sudo rpm -Uvh tb-edge-3.3beta.rpm
+sudo rpm -Uvh tb-edge-3.3.rpm
 ```
 {: .copy-code}
 

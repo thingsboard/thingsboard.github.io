@@ -10,6 +10,8 @@ description: Installing ThingsBoard Edge on Windows
 This guide describes how to install ThingsBoard Edge on Windows machine.
 Instructions below are provided for Windows 10/8.1/8/7 32-bit/64-bit.
 
+{% include templates/edge/install/prerequisites.md %}
+
 {% include templates/edge/install/hardware-requirements.md %}
 
 ### Step 1. Install Java 11 (OpenJDK) 
@@ -22,14 +24,14 @@ Instructions below are provided for Windows 10/8.1/8/7 32-bit/64-bit.
 
 ### Step 3. ThingsBoard Edge service installation
 
-Download installation package.
+Download and extract the package.
 
 ```bash
-wget https://github.com/thingsboard/thingsboard/features/tb-edge-windows-3.3beta.zip
+wget https://dist.thingsboard.io/tb-edge-windows-3.3.zip
 ```
 {: .copy-code}
 
-**Note:** We assume you have unzipped package to default location: *C:\Program Files (x86)*
+**Note:** We assume you have unzipped package to default location: *C:\Program Files (x86)\tb-edge*
 
 ### Step 4. Configure ThingsBoard Edge
 

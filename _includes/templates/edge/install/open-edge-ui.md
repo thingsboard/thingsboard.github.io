@@ -1,7 +1,6 @@
 
-Once started, you will be able to open ThingsBoard **Edge** UI using the following link [http://localhost:18080](http://localhost:18080).
-<br><br>
+Once started, you will be able to open ThingsBoard **Edge** UI using the following link [http://localhost:8080](http://localhost:8080).
 
 {% include templates/edge/bind-port-changed-banner.md %}
 
-You may use username **tenant@thingsboard.org** and password **tenant** to log in.
+Please use your tenant credentials from local cloud instance, [**ThingsBoard Cloud**](https://thingsboard.cloud/signup) or [**ThingsBoard Live Demo**](https://demo.thingsboard.io/signup) to log in to the ThingsBoard Edge.

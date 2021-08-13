@@ -10,16 +10,20 @@ description: Installing ThingsBoard Edge using Docker (Linux or Mac OS)
 
 This guide will help you to install and start ThingsBoard Edge using Docker on Linux or Mac OS.
 
+{% include templates/edge/install/prerequisites.md %}
+
 {% include templates/edge/install/hardware-requirements.md %}
 
 - [Install Docker CE](https://docs.docker.com/engine/install/){:target="_blank"}
 - [Install Docker Compose](https://docs.docker.com/compose/install/){:target="_blank"}
 
-### Step 1. Running ThingsBoard Edge
+### Step 1. Pull ThingsBoard Edge Images
 
-Here you can find ThingsBoard Edge single instance docker image with PostgreSQL database: 
+{% include templates/edge/install/pull-images.md %}
 
-* [thingsboard/tb-edge](https://hub.docker.com/r/thingsboard/tb-edge){:target="_blank"}
+### Step 2. Running ThingsBoard Edge
+
+{% include templates/edge/install/docker-images-location.md %}
 
 Create docker compose file for ThingsBoard Edge service:
 ```
@@ -34,36 +38,23 @@ version: '2.2'
 services:
   mytbedge:
     restart: always
-    image: "thingsboard/tb-edge:3.3.0-edge"
+    image: "thingsboard/tb-edge-monolith:3.3.0EDGE"
     ports:
-      - "18080:8080"
-      - "11883:1883"
-      - "15683:5683/udp"
+      - "8080:8080"
+      - "1883:1883"
+      - "5683:5683/udp"
     environment:
-      EDGE_LICENSE_INSTANCE_DATA_FILE: /data/instance-edge-license.data
+      EDGE_LICENSE_INSTANCE_DATA_FILE: /data/edge-license.data
       CLOUD_ROUTING_KEY: PUT_YOUR_EDGE_KEY_HERE # e.g. 19ea7ee8-5e6d-e642-4f32-05440a529015
       CLOUD_ROUTING_SECRET: PUT_YOUR_EDGE_SECRET_HERE # e.g. bztvkvfqsye7omv9uxlp
-      CLOUD_PRC_HOST: PUT_YOUR_CLOUD_IP # e.g. 192.168.1.250 or demo.thingsboard.io
+      CLOUD_RPC_HOST: PUT_YOUR_CLOUD_IP # e.g. 192.168.1.250, demo.thingsboard.io or thingsboard.cloud
     volumes:
       - ~/.mytb-edge-data:/data
       - ~/.mytb-edge-logs:/var/log/tb-edge
       
 ```
 
-Where:    
-- `18080:8080` - connect local port 18080 to exposed internal HTTP port 8080
-- `11883:1883` - connect local port 11883 to exposed internal MQTT port 1883  
-- `15683:5683` - connect local port 15683 to exposed internal COAP port 5683   
-- `mytb-edge-data:/data` - mounts the host's dir `mytb-edge-data` to ThingsBoard Edge DataBase data directory
-- `mytb-edge-logs:/var/log/tb-edge` - mounts the host's dir `mytb-edge-logs` to ThingsBoard Edge logs directory
-- `thingsboard/tb-edge:3.3.0-edge` - docker image
-- `CLOUD_ROUTING_KEY` - your edge key
-- `CLOUD_ROUTING_SECRET` - your edge secret
-- `CLOUD_PRC_HOST` - ip address of the machine with the ThingsBoard platform. 
-
-**NOTE**: do not use **'localhost'** - **'localhost'** is the ip address of the edge service in the docker container. Please use the IP address of machine where ThingsBoard **Professional Edition/Community Edition** is running and this IP address must be accessible by docker container. Or use **demo.thingsboard.io** if you are connecting edge to ThingsBoard **Live Demo** for evaluation.
-
-- `restart: always` - automatically start ThingsBoard Edge in case of system reboot and restart in case of failure
+{% include templates/edge/install/docker_compose_details_explain.md %}
 
 Before starting Docker container run following commands to create a directory for storing data and logs and then change its owner to docker container user, to be able to change user, chown command is used, which requires sudo permissions (command will request password for a sudo access):
 ```
@@ -80,11 +71,11 @@ docker-compose pull
 docker-compose up
 ```
 
-### Step 2. Open ThingsBoard Edge UI
+### Step 3. Open ThingsBoard Edge UI
 
 {% include templates/edge/install/open-edge-ui.md %}
 
-### Step 3. Detaching, stop and start commands
+### Step 4. Detaching, stop and start commands
 
 {% include templates/edge/install/docker-control.md %}
 

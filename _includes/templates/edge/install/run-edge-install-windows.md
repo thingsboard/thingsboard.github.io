@@ -9,8 +9,8 @@ The output should be similar to this one:
   ```text
 C:\Program Files (x86)\tb-edge\install.bat
 Detecting Java version installed.
-CurrentVersion 18
-Java 1.8 found!
+CurrentVersion 110
+Java 11 found!
 Installing Thingsboard Edge...
 ...
 ThingsBoard Edge installed successfully!

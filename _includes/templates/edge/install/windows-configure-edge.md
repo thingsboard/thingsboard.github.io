@@ -31,14 +31,19 @@ spring:
 ``` 
 ##### Configure cloud connectivity
 
-Locate "cloud" block and replace **PUT_YOUR_EDGE_KEY_HERE** and **PUT_YOUR_EDGE_SECRET_HERE** with Edge **key and secret** respectively. 
+Locate "# Cloud configuration" block and replace **PUT_YOUR_EDGE_KEY_HERE** and **PUT_YOUR_EDGE_SECRET_HERE** with Edge **key and secret** respectively. 
 
-Please replace **PUT_YOUR_CLOUD_IP** with an IP address of the machine where ThingsBoard CE/PE version is running. Use **localhost** in case ThingsBoard Edge is running on the same machine where cloud instance is running. Or use **demo.thingsboard.io** if you are connecting edge to ThingsBoard **Live Demo** for evaluation:
+Please replace **PUT_YOUR_CLOUD_IP** with an IP address of the machine where ThingsBoard CE/PE version is running:
+* Use **thingsboard.cloud** in case you are connecting edge to [**ThingsBoard Cloud**](https://thingsboard.cloud/signup). 
+* Use **localhost** in case edge is running on the same machine where cloud instance is running. 
+* Use **X.X.X.X** IP address in case edge is connecting to the cloud instance in the same network or in the docker.
+* Or use **demo.thingsboard.io** if you are connecting edge to [**ThingsBoard Live Demo**](https://demo.thingsboard.io/signup) for evaluation. 
  
 ```yml
+# Cloud configuration
 cloud:
     routingKey: "${CLOUD_ROUTING_KEY:PUT_YOUR_EDGE_KEY_HERE}"
     secret: "${CLOUD_ROUTING_SECRET:PUT_YOUR_EDGE_SECRET_HERE}"
     rpc:
-      host: "${CLOUD_PRC_HOST:PUT_YOUR_CLOUD_IP}"
+      host: "${CLOUD_RPC_HOST:PUT_YOUR_CLOUD_IP}"
 ```
