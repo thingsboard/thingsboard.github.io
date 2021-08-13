@@ -40,6 +40,8 @@ Filling up RFQs, RFPs, issuing of offers, and corresponding document workflow ma
 ### We offer:
 Full-time office work with flexible work hours;
 
+Medical insurance;
+
 Onboarding supervision and knowledge transfer;
 
 Remuneration direct impact;

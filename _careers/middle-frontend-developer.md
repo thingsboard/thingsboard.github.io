@@ -43,6 +43,8 @@ Working on an open-source IoT platform that has thousands of installations all o
 
 Full-time office work with flexible work hours;
 
+Medical insurance;
+
 Modern cutting-edge development stack;
 
 A high-professional team without bureaucracy and management overhead with 13+ years of experience;
