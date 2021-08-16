@@ -448,8 +448,8 @@ hidetoc: "true"
             </div>            
         </div>        
     </div>
-    <div class="question-contact center">
-        <small>Questions about deployment options? <a href="/docs/contact-us/?subject=Deployment%20Options">Contact us.</a></small>
+    <div class="questions">
+        Questions about deployment options? <a href="/docs/contact-us/?subject=Deployment%20Options">Contact us.</a>
     </div>
 </section>
 <script type="text/javascript" src="https://static.mailerlite.com/js/w/webforms.min.js?v3772b61f1ec61c541c401d4eadfdd02f"></script>

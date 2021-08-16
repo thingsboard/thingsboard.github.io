@@ -61,6 +61,8 @@ docker pull store/thingsboard/tb-pe-js-executor:{{ site.release.pe_full_ver }}
 docker pull store/thingsboard/tb-pe-http-transport:{{ site.release.pe_full_ver }}
 docker pull store/thingsboard/tb-pe-mqtt-transport:{{ site.release.pe_full_ver }}
 docker pull store/thingsboard/tb-pe-coap-transport:{{ site.release.pe_full_ver }}
+docker pull store/thingsboard/tb-pe-lwm2m-transport:{{ site.release.pe_full_ver }}
+docker pull store/thingsboard/tb-pe-snmp-transport:{{ site.release.pe_full_ver }}
 ```
 {: .copy-code}
 
@@ -68,6 +70,9 @@ docker pull store/thingsboard/tb-pe-coap-transport:{{ site.release.pe_full_ver }
 
 ```bash
 git clone https://github.com/thingsboard/thingsboard-pe-docker-compose.git tb-pe-docker-compose
+cd tb-pe-docker-compose
+# checkout latest release branch
+git checkout {{ site.release.branch }}
 ```
 {: .copy-code}
 
@@ -247,6 +252,8 @@ Edit .env file set "TB_VERSION" to target version (f.e. currently you on 3.2.1 s
 Where:
 
 - `SERVICE...` - list of services to update (defined in docker-compose configurations). If not specified all services will be updated.
+
+{% include templates/install/generate_certificate_docker-compose.md %}
 
 ## Next steps
 

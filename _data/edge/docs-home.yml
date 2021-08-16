@@ -1,0 +1,77 @@
+bigheader: "ThingsBoard Edge Documentation"
+abstract: "Distribute data processing and analysis using edge computing."
+toc:
+- title: ThingsBoard Edge
+  path: /docs/edge/
+- title: What is ThingsBoard Edge?
+  path: /docs/edge/what-is-edge/
+- title: Activate edge functionality on ThingsBoard server
+  path: /docs/edge/enable-edge/
+- title: Provision ThingsBoard Edge on ThingsBoard server
+  section:
+    - title: Community Edition
+      path: /docs/edge/provision-edge-on-server-ce/
+    - title: Professional Edition
+      path: /docs/edge/provision-edge-on-server-pe/
+#- title: Configuration guides
+#  section:
+#    - title: Community Edition
+#      section:
+#        - title: Edges
+#          path: /docs/user-guide/ui/edges/
+#        - title: Edge Management Overview
+#          path: /docs/edge/config/ce/management/
+#        - title: Create Device on edge and provision to cloud
+#          path: /docs/edge/config/ce/create-device/
+#        - title: Provision Device from cloud to edge
+#          path: /docs/edge/config/ce/provision-device/
+#        - title: Provision Asset from cloud to edge
+#          path: /docs/edge/config/ce/provision-asset/
+#        - title: Provision Entity View from cloud to edge
+#          path: /docs/edge/config/ce/provision-entity-view/
+#        - title: Provision Dashboard from cloud to edge
+#          path: /docs/edge/config/ce/provision-dashboard/
+#        - title: Provision User from cloud to edge
+#          path: /docs/edge/config/ce/provision-user/
+#        - title: Provision Customer from cloud to edge
+#          path: /docs/edge/config/ce/provision-customer/
+#    - title: Professional Edition
+#      path: /docs/edge/config/pe/coming-soon/
+#- title: Edge Rule Engine
+#  section:
+#    - title: General Overview
+#      path: /docs/edge/rule-engine/general/
+#    - title: Rule Chain Templates
+#      path: /docs/edge/rule-engine/rule-chain-templates/
+#    - title: Provision Rule Chains from cloud to edge
+#      path: /docs/edge/rule-engine/provision-rule-chains/
+#    - title: Push data from edge to cloud and vice versa
+#      path: /docs/edge/rule-engine/push-data/
+#- title: Security
+#  section:
+#    - title: Enable gRPC over SSL/TLS for edge communication
+#      path: /docs/edge/security/grpc-over-ssl/
+#- title: Features
+#  section:
+#    - title: Edge status
+#      path: /docs/edge/features/edge-status/
+#    - title: Cloud Events
+#      path: /docs/edge/features/cloud-events/
+- title: Use Cases
+  section:
+    - title: Overview
+      path: /docs/edge/use-cases/overview/
+    - title: Manage alarms and RPC requests on edge devices
+      section:
+        - title: Community Edition
+          path: /docs/edge/use-cases/manage-alarms-rpc-requests-ce/
+        - title: Professional Edition
+          path: /docs/edge/use-cases/manage-alarms-rpc-requests-pe/
+    - title: Data filtering and traffic reduce
+      section:
+        - title: Community Edition
+          path: /docs/edge/use-cases/data-filtering-traffic-reduce-ce/
+        - title: Professional Edition
+          path: /docs/edge/use-cases/data-filtering-traffic-reduce-pe/
+- title: ThingsBoard Edge Roadmap
+  path: /docs/edge/roadmap/
