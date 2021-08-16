@@ -663,6 +663,18 @@ We will list only main configuration parameters below to avoid duplication of th
          <td>The parameter to specify TTL(Time To Live) value for Debug Events(DEBUG_CONVERTER, DEBUG_INTEGRATION, DEBUG_RULE_NODE, DEBUG_RULE_CHAIN) records. Value set in seconds. 0 - records are never expired. Default value corresponds to one week.</td>
       </tr>
       <tr>
+         <td>sql.ttl.rpc.enabled</td>
+         <td>SQL_TTL_RPC_ENABLED</td>
+         <td>true</td>
+         <td>Parameter to enable or disable TTL(Time To Live) for Persistent RPC.</td>
+      </tr>
+      <tr>
+         <td>sql.ttl.rpc.checking_interval</td>
+         <td>SQL_RPC_TTL_CHECKING_INTERVAL</td>
+         <td>7200000</td>
+         <td>Parameter to specify how often TTL(Time To Live) will be checked.</td>
+      </tr>
+      <tr>
            <td colspan="4"><span style="font-weight: bold; font-size: 24px;">PostgreSQL database parameters</span></td>
       </tr>  
       <tr>
