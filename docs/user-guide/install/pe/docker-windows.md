@@ -74,7 +74,7 @@ Where:
     
 - `8080:8080`            - connect local port 8080 to exposed internal HTTP port 8080
 - `1883:1883`            - connect local port 1883 to exposed internal MQTT port 1883    
-- `5683:5683`            - connect local port 5683 to exposed internal COAP port 5683 
+- `5683-5688:5683-5688/udp`            - connect local UDP ports 5683-5688 to exposed internal COAP and LwM2M ports 
 - `mytbpe-data:/data`   - mounts the volume `mytb-data` to ThingsBoard data directory
 - `mytbpe-data-db:/var/lib/postgresql/data`   - mounts the volume `mytbpe-data-db` to Postgres data directory;
 - `mytb-logs:/var/log/thingsboard`   - mounts the volume `mytb-logs` to ThingsBoard logs directory

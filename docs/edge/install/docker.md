@@ -42,7 +42,7 @@ services:
     ports:
       - "8080:8080"
       - "1883:1883"
-      - "5683:5683/udp"
+      - "5683-5688:5683-5688/udp"
     environment:
       EDGE_LICENSE_INSTANCE_DATA_FILE: /data/edge-license.data
       CLOUD_ROUTING_KEY: PUT_YOUR_EDGE_KEY_HERE # e.g. 19ea7ee8-5e6d-e642-4f32-05440a529015

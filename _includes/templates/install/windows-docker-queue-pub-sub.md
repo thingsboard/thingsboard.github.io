@@ -18,7 +18,7 @@ services:
     ports:
       - "8080:9090"
       - "1883:1883"
-      - "5683:5683/udp"
+      - "5683-5688:5683-5688/udp"
     environment:
       TB_QUEUE_TYPE: pubsub
       TB_QUEUE_PUBSUB_PROJECT_ID: YOUR_PROJECT_ID

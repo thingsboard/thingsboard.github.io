@@ -2,7 +2,7 @@ Where:
 - `restart: always` - automatically start ThingsBoard Edge in case of system reboot and restart in case of failure
 - `8080:8080` - connect local port 8080 to exposed internal HTTP port 8080
 - `1883:1883` - connect local port 1883 to exposed internal MQTT port 1883  
-- `5683:5683` - connect local port 5683 to exposed internal COAP port 5683   
+- `5683-5688:5683-5688/udp` - connect local UDP ports 5683-5688 to exposed internal COAP and LwM2M ports   
 - `mytb-edge-data:/data` - mounts the host's dir `mytb-edge-data` to ThingsBoard Edge DataBase data directory
 - `mytb-edge-logs:/var/log/tb-edge` - mounts the host's dir `mytb-edge-logs` to ThingsBoard Edge logs directory
 - `thingsboard/tb-edge-monolith:3.3.0EDGE` - docker image
