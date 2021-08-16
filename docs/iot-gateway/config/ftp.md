@@ -119,8 +119,8 @@ Then, connector will subscribe to a list of paths from mapping section. See more
 Subsection "security" provides configuration for client authorization at FTP Server.
 
 {% capture mqttconnectorsecuritytogglespec %}
-Basic<small>Recommended</small>%,%accessToken%,%templates/iot-gateway/mqtt-connector-basic-security-config.md%br%
-Anonymous<small>No security</small>%,%anonymous%,%templates/iot-gateway/mqtt-connector-anonymous-security-config.md{% endcapture %}
+Basic<small>Recommended</small>%,%accessToken%,%templates/iot-gateway/ftp-connector-basic-security-config.md%br%
+Anonymous<small>No security</small>%,%anonymous%,%templates/iot-gateway/ftp-connector-anonymous-security-config.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="mqttConnectorCredentialsConfig" toggle-spec=mqttconnectorsecuritytogglespec %}  
 
@@ -299,7 +299,7 @@ The “attributeRequests” configuration allows configuring the format of the c
 | path                          | **fol/${attributeKey}/${attributeValue}.txt**         | JSON-path expression that uses for finding specific files               |
 | deviceNameFilter              | **.\***                                               | Regular expression device name filter, uses to determine, which function to execute.            |
 | writingMode                   | **OVERRIDE/WRITE**                                    | If writingMode is equal to OVERRIDE, the found files will we overwrite. If writingMode is equal to WRITE, a new data will be appended at the end of found files                |
-| valueExpression               | **,,,,${attributeKey},,,${attributeValue}**           | Expression uses for creating the message data that will send to topic.                   |
+| valueExpression               | **,,,,${attributeKey},,,${attributeValue}**           | Expression uses for creating the message data that will send to FTP server. In this case ',' has a role as the delimiter and before him, you can insert your data.                   |
 |---
 
 This section in configuration file looks like:
@@ -315,7 +315,7 @@ This section in configuration file looks like:
   ]
 ```
 
-##### Server side RPC commands
+### Server side RPC commands
 
 ThingsBoard allows sending RPC commands to the device that is connected to ThingsBoard directly or via Gateway.
 
@@ -325,7 +325,7 @@ Configuration, provided in this section uses for sending RPC requests from Thing
 |:-|:-|-
 | deviceNameFilter              | **.\***                                               | Regular expression device name filter, uses to determine, which function to execute.            |
 | methodFilter                  | **read/write**                                        | Mode for opening file                |
-| valueExpression               | **,,,,${attributeKey},,,${attributeValue}**           | JSON-path expression, uses for creating data for sending to FTP server.                   |
+| valueExpression               | **,,,,${attributeKey},,,${attributeValue}**           | JSON-path expression, uses for creating data for sending to FTP server, if methodFilter equal to write. If methodFilter is equal to read, this field will be passing.                 |
 |---
 
 This section in configuration file looks like:
