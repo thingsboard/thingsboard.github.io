@@ -15,18 +15,18 @@ HTTP Integration allows converting existing protocols and payload formats to Thi
 
 ## Create Uplink Converter
 
-Before creating the integration, you need to create an Uplink converter in Data converters. Uplink is necessary in order to convert the incoming data from the device into the required format for displaying them in ThingsBoard. 
+Before creating the integration, you need to create an Uplink converter in Data converters. 
+Uplink is necessary in order to convert the incoming data from the device into the required format for displaying them in ThingsBoard. 
 Click on the “plus” and on “Create new converter”. To view the events, enable Debug. 
 In the function decoder field, specify a script to parse and transform data.
 
 {% include images-gallery.html imageCollection="data-converters" %}
 
-**Example of the Uplink converter:**
+**Examples of the Uplink converter:**
 
 {% capture converteruplink %}
-JSON%,%json%,%templates/helloworld-pe/http/json.md%br%
-text/plain%,%text%,%templates/helloworld-pe/http/text.md%br%
-multipart/form-data%,%multipart%,%templates/helloworld-pe/http/multipart.md%br%{% endcapture %}
+JSON converter%,%json%,%templates/helloworld-pe/http/json.md%br%
+Text converter%,%text%,%templates/helloworld-pe/http/text.md%br%{% endcapture %}
 {% include content-toggle.html content-toggle-id="converter" toggle-spec=converteruplink %}
 
 
@@ -63,7 +63,7 @@ Once the Headers filter has been configured, it will also need to be specified i
 ## Send uplink message
 
 To send an uplink message, you need an HTTP endpoint URL from the integration.  
-Let`s go to the Integrations tab in ThingsBoard. Find your HTTP integration and click on it. There you can find the HTTP endpoint URL. Click on the icon to copy the url.
+Let's go to the Integrations tab in ThingsBoard. Find your HTTP integration and click on it. There you can find the HTTP endpoint URL. Click on the icon to copy the url.
 
 {% capture senduplink %}
 JSON%,%json-send%,%templates/helloworld-pe/http/json-send.md%br%
