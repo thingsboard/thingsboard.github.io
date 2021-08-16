@@ -24,6 +24,9 @@ toc:
     path: /docs/user-guide/alarms/
   - title: Remote commands to devices
     path: /docs/user-guide/rpc/
+  - title: OTA updates
+    path: /docs/user-guide/ota-updates/
+    new: true
 - title: Dashboards
   section:
   - title: Overview
@@ -193,7 +196,7 @@ toc:
     section:
     - title: Trip Animation widget
       path: /docs/user-guide/ui/trip-animation-widget/
-    - title: Advanced Settings of the Entity Table widget
+    - title: Advanced settings of the Entity Table widget
       path: /docs/user-guide/ui/entity-table-widget/
     - title: Update Multiple Attributes widget
       path: /docs/user-guide/ui/update-multiple-attributes/

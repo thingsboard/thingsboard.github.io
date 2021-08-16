@@ -1,6 +1,6 @@
 [
   {
-    "type": "hardware",
+    "type": ["main", "bluetooth", "nbiot", "lte"],
     "program": "",
     "name": "Efento",
     "logo": "efento.png",
@@ -17,7 +17,7 @@
     "blurb": "Efento offers a wide portfolio of battery powered NB-IoT wireless sensors. Company has been founded in 2014 and since day one focuses on low power consumption wireless IoT devices. You can select a sensor form over 20 types of devices from our portfolio, or talk to us if you need a custom solution to meet your needs."
   },
   {
-    "type": "hardware",
+    "type": ["main", "nbiot", "lte", "wifi"],
     "program": "",
     "name": "Teltonika Networks",
     "logo": "teltonika-networks.png",
@@ -34,7 +34,7 @@
     "blurb": "Teltonika Networks is a rapidly growing technology company, manufacturing professional network connectivity equipment for international markets. It has developed a wide portfolio of products for the most complex areas of Industry 4.0, Smart City, and Green Energy."
   },
   {
-    "type": "hardware",
+    "type": ["main", "bluetooth", "wifi"],
     "program": "",
     "name": "Espressif Systems",
     "logo": "espressif.svg",
@@ -50,7 +50,7 @@
     "blurb": "Espressif Systems designs a range of high-performance Wi-Fi+Bluetooth/BLE chipsets and modules."
   },
   {
-    "type": "hardware",
+    "type": ["main", "bluetooth", "nbiot", "lte", "sigfox", "wifi"],
     "program": "",
     "name": "Seeed Technology Co.,Ltd.",
     "logo": "seeed.png",
@@ -66,7 +66,7 @@
     "blurb": "Whether you are a developer, technical supplier, or industry player, we provide products and services for your IoT needs."
   },
   {
-    "type": "hardware",
+    "type": ["main", "nbiot", "lora"],
     "program": "",
     "name": "Smartico",
     "logo": "smartico.png",
@@ -97,84 +97,7 @@
     "blurb": "Smartico is a research and production complex with its own design bureau, production base, and specialized software development department"
   },
   {
-    "type": "hardware",
-    "program": "",
-    "name": "Nettra",
-    "logo": "nettra.png",
-    "links": {
-      "Site": {
-        "href": "http://nettra.tech/",
-        "target": "_blank"
-      },
-      "Integration guide": {
-        "href": "/docs/samples/nettrartu+/rtu_temp_sensor/"
-      }
-    },
-    "blurb": "We provide comprehensive hardware and software IoT solutions"
-  },
-  {
-    "type": "hardware",
-    "program": "",
-    "name": "Actility",
-    "logo": "actility.png",
-    "links": {
-      "Site": {
-        "href": "https://www.actility.com/",
-        "target": "_blank"
-      },
-      "Integration guide": {
-        "href": "/docs/samples/abeeway/tracker"
-      }
-    },
-    "blurb": "Actility has a strong background in large-scale project delivery and a heritage in carrier-grade systems, with leading customer deployments worldwide, making it the global leader in IoT connectivity solutions deployment."
-  },
-  {
-    "type": "hardware",
-    "program": "",
-    "name": "SODAQ",
-    "logo": "sodaq.jpg",
-    "links": {
-      "Site": {
-        "href": "https://sodaq.com/",
-        "target": "_blank"
-      },
-      "Integration guide": {
-        "href": "/docs/user-guide/integrations/sodaq/"
-      }
-    },
-    "blurb": "What drives us is the passion to create scalable electronics solutions that work anywhere. We have implemented projects throughout developing countries, from Peru to Sri Lanka, and we will continue working where we can have the highest impact."
-  },
-  {
-    "type": "hardware",
-    "program": "",
-    "name": "DECODE",
-    "logo": "decode.png",
-    "links": {
-      "Site": {
-        "href": "https://www.decode.rs/",
-        "target": "_blank"
-     },
-    "Integration guide": {
-      "href": "/docs/user-guide/integrations/decode/"
-      }
-    },
-    "blurb": "Decode is a Serbian company with extensive experience in design, engineering and production of devices for industrial communication and telemetry."
-  },
-  {
-    "type": "hardware",
-    "program": "",
-    "name": "TEKTELIC Communications Inc.",
-    "logo": "tektelic.png",
-    "links": {
-      "Site": {
-        "href": "https://tektelic.com/",
-        "target": "_blank"
-      }
-    },
-    "blurb": "TEKTELIC is a leading supplier of LoRaWAN IoT equipment including best-in-class gateways and end devices."
-  },
-  {
-    "type": "hardware",
+    "type": ["main", "bluetooth", "lte", "wifi"],
     "program": "",
     "name": "Digital Communications Technologies, LLC.",
     "logo": "DCT-Logo-Standard-Color-01.png",
@@ -190,7 +113,100 @@
     "blurb": "Since 2000, DCT has been developing IoT devices and accessories for Fleet Telematics Applications and Industrial Solutions that are trusted by integrators and service providers around the globe. Their expertise in product design and development together with firmware and software makes the perfect combination for developers to start building amazing applications."
   },
   {
-    "type": "hardware",
+    "type": ["main", "bluetooth", "wifi", "nbiot"],
+    "program": "",
+    "name": "Nettra",
+    "logo": "nettra.png",
+    "links": {
+      "Site": {
+        "href": "http://nettra.tech/",
+        "target": "_blank"
+      },
+      "Integration guide": {
+        "href": "/docs/samples/nettrartu+/rtu_temp_sensor/"
+      }
+    },
+    "blurb": "We provide comprehensive hardware and software IoT solutions"
+  },
+  {
+    "type": ["main", "wifi"],
+    "program": "",
+    "name": "Things On Edge",
+    "logo": "things-on-edge.svg",
+    "links": {
+      "Site": {
+        "href": "https://thingsonedge.com/",
+        "target": "_blank"
+      },
+      "Integration guide": {
+        "href": "/docs/samples/cricket-wifi/cricket-wifi/"
+      }
+    },
+    "blurb": "Things On Edge designs easy to use, ultra low power Wi-Fi modules."
+  },
+  {
+    "type": ["main", "lora", "lte", "nbiot"],
+    "program": "",
+    "name": "Actility",
+    "logo": "actility.png",
+    "links": {
+      "Site": {
+        "href": "https://www.actility.com/",
+        "target": "_blank"
+      },
+      "Integration guide": {
+        "href": "/docs/samples/abeeway/tracker"
+      }
+    },
+    "blurb": "Actility has a strong background in large-scale project delivery and a heritage in carrier-grade systems, with leading customer deployments worldwide, making it the global leader in IoT connectivity solutions deployment."
+  },
+  {
+    "type": ["main", "nbiot", "lte", "bluetooth"],
+    "program": "",
+    "name": "SODAQ",
+    "logo": "sodaq.jpg",
+    "links": {
+      "Site": {
+        "href": "https://sodaq.com/",
+        "target": "_blank"
+      },
+      "Integration guide": {
+        "href": "/docs/user-guide/integrations/sodaq/"
+      }
+    },
+    "blurb": "What drives us is the passion to create scalable electronics solutions that work anywhere. We have implemented projects throughout developing countries, from Peru to Sri Lanka, and we will continue working where we can have the highest impact."
+  },
+  {
+    "type": ["main", "gsm"],
+    "program": "",
+    "name": "DECODE",
+    "logo": "decode.png",
+    "links": {
+      "Site": {
+        "href": "https://www.decode.rs/",
+        "target": "_blank"
+     },
+    "Integration guide": {
+      "href": "/docs/user-guide/integrations/decode/"
+      }
+    },
+    "blurb": "Decode is a Serbian company with extensive experience in design, engineering and production of devices for industrial communication and telemetry."
+  },
+  {
+    "type": ["main", "lora"],
+    "program": "",
+    "name": "TEKTELIC Communications Inc.",
+    "logo": "tektelic.png",
+    "links": {
+      "Site": {
+        "href": "https://tektelic.com/",
+        "target": "_blank"
+      }
+    },
+    "blurb": "TEKTELIC is a leading supplier of LoRaWAN IoT equipment including best-in-class gateways and end devices."
+  },
+  {
+    "type": ["main", "modbus"],
     "program": "",
     "name": "Kernel Sistemi",
     "logo": "kernel_logo.jpg",
@@ -206,7 +222,7 @@
     "blurb": "KERNEL Sistemi s.r.l. designs and produces electronic solutions for automation, industrial process control, photovoltaics, energy management and home automation."
   },
   {
-    "type": "hardware",
+    "type": ["main", "modbus", "lora"],
     "program": "",
     "name": "KingPigeon Technology Co., Ltd.",
     "logo": "kingpigeon.png",
@@ -220,21 +236,5 @@
       }
     },
     "blurb": "King Pigeon Communication Co.,Ltd. specialized in LTE Industrial Router, Industial IOT Gateways, IIOT Gateways, 4G Industrial Router, Cellular RTU, 4G RTU, PLC Gateways, Ethernet IO Module OEM ODM Since 2005."
-  },
-  {
-    "type": "hardware",
-    "program": "",
-    "name": "Things On Edge",
-    "logo": "things-on-edge.svg",
-    "links": {
-      "Site": {
-        "href": "https://thingsonedge.com/",
-        "target": "_blank"
-      },
-      "Integration guide": {
-        "href": "/docs/samples/cricket-wifi/cricket-wifi/"
-      }
-    },
-    "blurb": "Things On Edge designs easy to use, ultra low power Wi-Fi modules."
   }
 ]

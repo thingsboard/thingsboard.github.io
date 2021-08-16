@@ -8,4 +8,3 @@ description: Supported IoT protocols for IoT device connectivity
 ---
 
 {% include docs/reference/protocols.md %}
-
