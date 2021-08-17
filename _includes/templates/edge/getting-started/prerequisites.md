@@ -1,6 +1,6 @@
 {% include templates/edge/prerequisites.md %}
 
-##### Edge provision on cloud and install
+##### Provisioning edge on cloud and installation
 
 Additionally, you will need to have ThingsBoard **Edge** up and running and connected to the {{currentThingsBoardVersion}} server.
 
@@ -17,7 +17,6 @@ If you are running {{currentThingsBoardVersion}} locally then server UI will be 
 You may use username **tenant@thingsboard.org** and password **tenant**.
  
 {% if currentThingsBoardVersion == "ThingsBoard Professional Edition" %}
-In case you are using [**ThingsBoard Cloud**](https://thingsboard.cloud/signup) server please use your tenant credentials.
 {% endif %}
 {% if currentThingsBoardVersion == "ThingsBoard Community Edition" %}
 In case you are using [Live Demo](https://demo.thingsboard.io/signup) server please use your tenant credentials.

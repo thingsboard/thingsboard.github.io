@@ -551,36 +551,6 @@ defaultActivateSelectProduct: true
            <div class="row justify-content-center">
                 <div class="col-md-6 col-lg-6 col-xl-4 col-gt-xl mb-4">
                     <div class="pricing-square">
-                        <h2>Pico</h2>
-                        <div class="pricing-square-description">
-                            <p>Up to 5 Devices and Assets</p>
-                        </div>
-                        <h4 class="pricing-square-price mb-0">
-                            $2
-                            <span>/&nbsp;month</span>
-                        </h4>
-                        <div class="row justify-content-center">
-                            <button class="btn-blue btn-pricing" 
-                                onClick="getLicense(event,
-                                false,
-                                'd3b7d030-fe4c-11ea-951e-b77b877a367b',
-                                'da425aa0-fe4d-11ea-951e-b77b877a367b',
-                                'Edge Pico', null, false)">
-                                Get your license
-                            </button>
-                        </div>
-                        <div class="pricing-square-item">Up to 5 Devices</div>
-                        <div class="pricing-square-item">Up to 5 Assets</div>
-                        <div class="pricing-square-item" data-faq-id="optional-support">
-                            Optional support
-                        </div>
-                        <div class="pricing-square-item" data-faq-id="thingsboard-edge-discount">
-                            Tired discounts
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-6 col-xl-4 col-gt-xl mb-4">
-                    <div class="pricing-square">
                         <h2>Nano</h2>
                         <div class="pricing-square-description">
                             <p>Up to 50 Devices and Assets</p>
@@ -595,8 +565,8 @@ defaultActivateSelectProduct: true
                                 false,
                                 'd3b7d030-fe4c-11ea-951e-b77b877a367b',
                                 '302e3420-fe4e-11ea-951e-b77b877a367b',
-                                'Edge Nano', null, false)">
-                                Get your license
+                                'Edge Nano', 'PU5RJSMQW5', false)">
+                                Try 30 days for free
                             </button>
                         </div>
                         <div class="pricing-square-item">Up to 50 Devices</div>
@@ -680,26 +650,18 @@ defaultActivateSelectProduct: true
                             <p>Use your ThingsBoard Edge instance forever</p>
                         </div>
                         <h4 class="pricing-square-price mb-0">
-                            $299
+                            Custom
                         </h4>
                         <div class="row justify-content-center">
-                            <button class="btn-blue btn-pricing"
-                                onClick="getLicense(event,
-                                true,
-                                'f59db8c0-fe4e-11ea-951e-b77b877a367b',
-                                '7eb90e70-fe4f-11ea-951e-b77b877a367b',
-                                'Edge Perpetual', null, false)">
-                                Get your license
-                            </button>
+                            <a class="btn-blue btn-pricing" href="/docs/contact-us/">
+                                Contact Us
+                            </a>
                         </div>
                         <div class="pricing-square-item">1 year of software updates</div>
-                        <div class="pricing-square-item">Up to 1000 Devices</div>
-                        <div class="pricing-square-item">Up to 1000 Assets</div>
-                        <div class="pricing-square-item" data-faq-id="optional-support">
-                            Optional support
-                        </div>
-                        <div class="pricing-square-item" data-faq-id="thingsboard-edge-discount">
-                            Tired discounts
+                        <div class="pricing-square-item">Unlimited number of Devices</div>
+                        <div class="pricing-square-item">Unlimited number of Assets</div>
+                        <div class="pricing-square-item" data-faq-id="subscription-support">
+                            Custom <b>SLA</b>
                         </div>
                     </div>
                 </div>
@@ -892,7 +854,7 @@ defaultActivateSelectProduct: true
         <div class="item" data-tag="h4" data-item-id="optional-support" data-title="What does this optional support for ThingsBoard Edge mean?">
             <div class="container">
                 <p>
-                It means, that Edge support is not bundled to the license. For now we provide basic support for customers with more than 50 edge licenses of any type.
+                It means, that Edge support is not bundled to the license. For now we provide basic support for customers with more than 25 edge licenses of any type.
                 </p>    
             </div>    
         </div>        
