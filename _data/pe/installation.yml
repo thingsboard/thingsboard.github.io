@@ -3,44 +3,34 @@ abstract: "Documentation for installation and configuration of ThingsBoard Profe
 toc:
 - title: Installation options
   path: /docs/user-guide/install/pe/installation-options/
-- title: Installing ThingsBoard PE on Ubuntu Server
-  path: /docs/user-guide/install/pe/ubuntu/
-- title: Installing ThingsBoard PE on CentOS/RHEL Server
-  path: /docs/user-guide/install/pe/rhel/
-- title: Installing ThingsBoard PE on Windows
-  path: /docs/user-guide/install/pe/windows/
-- title: Installing ThingsBoard PE using Docker (Linux or Mac OS)
-  path: /docs/user-guide/install/pe/docker/
-- title: Installing ThingsBoard PE using Docker (Windows)
-  path: /docs/user-guide/install/pe/docker-windows/
-- title: AWS cluster setup
-  path: /docs/user-guide/install/pe/aws/
-- title: Cluster setup with Kubernetes and KubeOne on AWS cloud infrastructure
-  path: /docs/user-guide/install/pe/cluster/aws-cluster-setup/
-- title: Cluster setup with Kubernetes on AWS EKS cloud infrastructure
-  path: /docs/user-guide/install/pe/cluster/aws-eks-cluster-setup/
-- title: Cluster setup with Kubernetes and KOPS on GCP cloud infrastructure
-  path: /docs/user-guide/install/pe/cluster/gcp-cluster-setup/
-- title: Installing ThingsBoard PE from AWS Marketplace
-  path: /docs/user-guide/install/pe/aws-marketplace/
-- title: Installing ThingsBoard PE from GCP Marketplace
-  path: /docs/user-guide/install/pe/gcp-marketplace/
-- title: Installing ThingsBoard PE from Azure Marketplace
-  path: /docs/user-guide/install/pe/azure/
-- title: Installing ThingsBoard PE on DigitalOcean
-  path: /docs/user-guide/install/pe/digital-ocean/
-- title: Installing ThingsBoard PE on GCP
-  path: /docs/user-guide/install/pe/gcp/
-- title: Installing ThingsBoard PE from IBM Cloud Marketplace
-  path: /docs/user-guide/install/pe/ibm-cloud/
-- title: Installing ThingsBoard PE from Alibaba Cloud Marketplace
-  path: /docs/user-guide/install/pe/alibaba-cloud/
-- title: Cluster setup
-  path: /docs/user-guide/install/pe/cluster-setup/
-- title: Cluster setup with Docker Compose
-  path: /docs/user-guide/install/pe/cluster/docker-compose-setup/
-- title: Cluster setup with Kubernetes on Minikube
-  path: /docs/user-guide/install/pe/cluster/minikube-cluster-setup/
+- title: On premise
+  section:  
+  - title: Ubuntu Server
+    path: /docs/user-guide/install/pe/ubuntu/
+  - title: CentOS/RHEL Server
+    path: /docs/user-guide/install/pe/rhel/
+  - title: Windows
+    path: /docs/user-guide/install/pe/windows/
+  - title: Docker (Linux or Mac OS)
+    path: /docs/user-guide/install/pe/docker/
+  - title: Docker (Windows)
+    path: /docs/user-guide/install/pe/docker-windows/
+  - title: Cluster setup
+    path: /docs/user-guide/install/pe/cluster-setup/
+- title: Cloud
+  section:
+  - title: AWS
+    path: /docs/user-guide/install/pe/aws/
+  - title: Azure
+    path: /docs/user-guide/install/pe/azure/
+  - title: DigitalOcean
+    path: /docs/user-guide/install/pe/digital-ocean/
+  - title: Google Cloud Platform
+    path: /docs/user-guide/install/pe/gcp/
+  - title: IBM Cloud
+    path: /docs/user-guide/install/pe/ibm-cloud/
+  - title: Alibaba Cloud
+    path: /docs/user-guide/install/pe/alibaba-cloud/
 - title: Upgrade instructions
   path: /docs/user-guide/install/pe/upgrade-instructions/
 - title: Configuration
