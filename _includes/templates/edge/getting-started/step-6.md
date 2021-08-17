@@ -1,7 +1,7 @@
 To provision dashboard to edge we need to open edge dashboards on **{{currentThingsBoardVersion}}** server and assign the newly created dashboard. Once this dashboard is assigned we are going to open ThingsBoard **Edge** UI to see the same dashboard on the edge.
 
 {% if currentThingsBoardVersion == "ThingsBoard Professional Edition" %}
-Please open **{{currentThingsBoardVersion}}** using the URL [Cloud](https://thingsboard.cloud) or [http://localhost:8080](http://localhost:8080).
+Please open **{{currentThingsBoardVersion}}** using the URL [http://localhost:8080](http://localhost:8080).
 
 {% include images-gallery.html imageCollection="step6PE" showListImageTitles="true" %}
 
