@@ -9,7 +9,8 @@ description: Configuration of a Senquip telemetry device to enable it to send te
 {:toc}
 
 ## Introduction
-{% include templates/what-is-thingsboard.md %}
+ThingsBoard is a sevice management, data collection, processing and visualization platform for IoT solutions.  If this is your first experience with the platform we recommend to review  [what-is-thingsboard](/docs/getting-started-guides/what-is-thingsboard/) page and [getting-started](/docs/getting-started-guides/helloworld/) guide.
+
 
 Senquip manufactures programmable telemetry devices such as the [ORB-C1](https://www.senquip.com) that connects to any industrial sensor or system. Senquip devices can maintain connection with a third-party endpoint (via UDP, HTTP and MQTT), and the [Senquip Portal](https://portal.senquip.com) at the same time. This allows for configuration changes and firmware updates to be made from the [Senquip Portal](https://portal.senquip.com) whilst sending measured data to the ThingsBoard.
 
@@ -54,11 +55,11 @@ In this guide, it will be assumed that the user has an account on the [Senquip P
 
 ### General device setup
 
-* [Step 1.1] Give the Senquip device a meaningful name (Setup/General/Name = "Demo Senquip Device").
-* [Step 1.2] Configure the interval at which the Senquip device takes measurements and transmits as 5 seconds (Setup/General/Base Interval = 5).
-* [Step 1.3] Turn on the GPS peripheral and set it to measure on every base interval (Setup/Internal/GPS/Interval = 1).
-* [Step 1.4] Turn on the CAN peripheral and set it to measure on every base interval (Setup/External/CAN/Interval = 1).  If this is the only CAN device on the network, select "Tx Enable" so that the Senquip device acknowledges the CAN messages.
-* [Step 1.5] Save your configuration by pressing the save button.
+* [Step 1] Give the Senquip device a meaningful name (Setup/General/Name = "Demo Senquip Device").
+* [Step 2] Configure the interval at which the Senquip device takes measurements and transmits as 5 seconds (Setup/General/Base Interval = 5).
+* [Step 3] Turn on the GPS peripheral and set it to measure on every base interval (Setup/Internal/GPS/Interval = 1).
+* [Step 4] Turn on the CAN peripheral and set it to measure on every base interval (Setup/External/CAN/Interval = 1).  If this is the only CAN device on the network, select "Tx Enable" so that the Senquip device acknowledges the CAN messages.
+* [Step 5] Save your configuration by pressing the save button.
 
 The General settings should now look like this.
 
@@ -66,14 +67,14 @@ The General settings should now look like this.
 
 ### Configuring the ThingsBoard endpoint
 
-Senquip devices can send to the Senquip Portal and a second endpoint at the same time.  Here the ThingsBoard will be confirgured as the seconds endpoint, using MQTT as the transport.
+Senquip devices can send to the Senquip Portal and a second endpoint at the same time.  In this example, the ThingsBoard will be confirgured as the second endpoint, using MQTT as the transport.
 
-* [Step 2.1] Enable the MQTT endpoint (Setup/Endpoint/MQTT = Enabled).
-* [Step 2.2] Set the broker address (Setup/Endpoint/MQTT/Broker Address = "thingsboard.cloud:1883").
-* [Step 2.3] Set the client address, we will use the unique device ID "AYCAN24V1" (Setup/Endpoint/MQTT/Client ID = "AYCAN24V1").
-* [Step 2.4] Set the data topic (Setup/Endpoint/MQTT/Data Topic = "v1/devices/me/telemetry").
-* [Step 2.5] Select a username to be used on the Thingsboard, we have chosen "Senquip" (Setup/Endpoint/MQTT/Username = "Senquip").
-* [Step 2.6] Select a password to be associated with the username, we have chosen "SenquipPassword", we suggest you choose smething more secure (Setup/Endpoint/MQTT/Password = "SenquipPassword").
+* [Step 1] Enable the MQTT endpoint (Setup/Endpoint/MQTT = Enabled).
+* [Step 2] Set the broker address (Setup/Endpoint/MQTT/Broker Address = "thingsboard.cloud:1883").
+* [Step 3] Set the client address, we will use the unique device ID "AYCAN24V1" (Setup/Endpoint/MQTT/Client ID = "AYCAN24V1").
+* [Step 4] Set the data topic (Setup/Endpoint/MQTT/Data Topic = "v1/devices/me/telemetry").
+* [Step 5] Select a username to be used on the ThingsBoard, we have chosen "Senquip" (Setup/Endpoint/MQTT/Username = "Senquip").
+* [Step 6] Select a password to be associated with the username, we have chosen "SenquipPassword", we suggest you choose smething more secure (Setup/Endpoint/MQTT/Password = "SenquipPassword").
 
 The Endpoint settings should now look like this.
 
@@ -81,15 +82,15 @@ The Endpoint settings should now look like this.
 
 ## Thingsboard configuration
 
-It will be assumed that the user  has an account on the [ThingsBoard Cloud](https://thingsboard.cloud/).  All device configuration described in the steps below will be performed using the [ThingsBoard Cloud](https://thingsboard.cloud/).
+It will be assumed that the user has an account on the [ThingsBoard Cloud](https://thingsboard.cloud/).  All device configuration described in the steps below will be performed using the [ThingsBoard Cloud](https://thingsboard.cloud/).
 
 ### Create a new device
 
-* [Step 3.1] Select the Device Group to which you would like to add the Senquip device.  Open the group and use the "+" button to add a new device.
-* [Step 3.2] Give the new device a meaningful name, we are using the same name as chosen in step 1.1.
-* [Step 3.3] Give the device a short label that will be used on widgets such as maps, we have chosen "SQ1".
-* [Step 3.4] Select MQTT as the transport type.
-* [Step 3.5] Press "Next:Credentials" to continue.
+* [Step 1] Select the Device Group to which you would like to add the Senquip device.  Open the group and use the "+" button to add a new device.
+* [Step 2] Give the new device a meaningful name, we are using the same name as chosen in step 1.1.
+* [Step 3] Give the device a short label that will be used on widgets such as maps, we have chosen "SQ1".
+* [Step 4] Select MQTT as the transport type.
+* [Step 5] Press "Next:Credentials" to continue.
 
 The new device settings should now look like this.
 
@@ -97,9 +98,9 @@ The new device settings should now look like this.
 
 ### Set the credentials
 
-* [Step 4.1] Select "MQTT Basic" as the Credentials type.
-* [Step 4.2] Insert the Client ID, User Name, and Password the same as in steps 2.3, 2.5, and 2.6.
-* [Step 4.3] Press "Add" to add the configured device.
+* [Step 1] Select "MQTT Basic" as the Credentials type.
+* [Step 2] Insert the Client ID, User Name, and Password the same as in steps 2.3, 2.5, and 2.6.
+* [Step 3] Press "Add" to add the configured device.
 
 The credentials should now look like this.
 
@@ -123,18 +124,18 @@ By selecting the device that we have just added to the ThingsBoard and pressing 
 
 We will now add the telemetry data to widegets on a dashboard.
 
-* [Step 1.1] Select a key from the latest telemetry and press "Show on widget".
+* [Step 1] Select a key from the latest telemetry and press "Show on widget".
 
 ![image](/images/samples/senquip/widget.jpg)
 
-* [Step 1.2] Select a bundle of widgets from those available.  For temperature, we will choose analog gauges.
-* [Step 1.3] Press "Add to dashboard" and select an available dashboard or create a new one.  We will create a new one and call it "Senquip Demo".
+* [Step 2] Select a bundle of widgets from those available.  For temperature, we will choose analog gauges.
+* [Step 3] Press "Add to dashboard" and select an available dashboard or create a new one.  We will create a new one and call it "Senquip Demo".
 
 ![image](/images/samples/senquip/add-widget.jpg)
 
-* [Step 1.4] Select additional keys from the telmetry data and associate them with widgets, each time adding them to the dashboard.
-* [Step 1.5] For some widgets such as the map widgets, multiple key values (gps_lat and gps_lon) will be required.  Under the advanced settings, the Latitude and Longitude for the widget can be associated with the gps_lat and gps_lon keys.
-* [Step 1.6] The dashboard and widgets can be customised by changing colours, sizes, locations of widgets, the fonts of text and much more.
+* [Step 4] Select additional keys from the telmetry data and associate them with widgets, each time adding them to the dashboard.
+* [Step 5] For some widgets such as the map widgets, multiple key values (gps_lat and gps_lon) will be required.  Under the advanced settings, the Latitude and Longitude for the widget can be associated with the gps_lat and gps_lon keys.
+* [Step 6] The dashboard and widgets can be customised by changing colours, sizes, locations of widgets, the fonts of text and much more.
 
 This is how the dashboard now looks.
 
