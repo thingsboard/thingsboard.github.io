@@ -3,8 +3,6 @@ For this purpose, we should create new device profile and add new alarm rule. We
 
 {% include images-gallery.html imageCollection="configureAlarmRules" showListImageTitles="true" %}
 
-Please open ThingsBoard **Edge** UI using the URL: [http://localhost:8080](http://localhost:8080) to see provisioned device profiles.
-
-{% include templates/edge/bind-port-changed-banner.md %}
+Please open ThingsBoard **Edge** UI using the URL: **http://EDGE_URL** to see provisioned device profiles.
 
 {% include images-gallery.html imageCollection="configureAlarmRulesEdge" showListImageTitles="true" %}

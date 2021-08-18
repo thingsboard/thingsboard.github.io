@@ -1,9 +1,7 @@
 To connect "In-vehicle monitoring system" to the ThingsBoard Edge you need to get device credentials first.
 ThingsBoard supports different device credentials. We recommend to use default auto-generated credentials which is access token for this guide.
 
-Please open ThingsBoard **Edge** UI using the URL: [http://localhost:8080](http://localhost:8080).
-
-{% include templates/edge/bind-port-changed-banner.md %}
+Please open ThingsBoard **Edge** UI using the URL: **http://EDGE_URL**.
 
 {% include images-gallery.html imageCollection="copyAccessTokenDevice" showListImageTitles="true" %}
 
@@ -32,8 +30,6 @@ python mqtt-generator.py
 ```
 
 Open ThingsBoard **Edge** UI and verify that device successfully receives telemetry:
-
-{% include templates/edge/bind-port-changed-banner.md %}
 
 {% include images-gallery.html imageCollection="verifyDeviceTelemetryEdge" showListImageTitles="true" %}
 
