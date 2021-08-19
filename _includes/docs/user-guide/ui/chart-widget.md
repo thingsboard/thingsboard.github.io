@@ -24,19 +24,19 @@ Time series widgets visualize changes in time series data over time. Read [here]
 
 ##### Bar Chart
 
-[Bar Chart](/docs/{{docsPrefix}}user-guide/ui/chart-widget/#time-series-bar-chart) widget displays changes to time series data over time. The example shows the temperature readings.
+[Bar Chart](/docs/{{docsPrefix}}user-guide/ui/chart-widget/#timeseries-bar-chart) widget displays changes to time series data over time. The example shows the temperature readings.
 
 {% include images-gallery.html imageCollection="charts-bar" %}
 
 ##### Line Chart
 
-[Line Chart](/docs/{{docsPrefix}}user-guide/ui/chart-widget/#time-series-line-chart) widget displays changes to time series data over time. The example shows temperature and humidity readings.
+[Line Chart](/docs/{{docsPrefix}}user-guide/ui/chart-widget/#timeseries-line-chart) widget displays changes to time series data over time. The example shows temperature and humidity readings.
 
 {% include images-gallery.html imageCollection="charts-line" %}
 
 ##### State Chart
 
-[State Chart](/docs/{{docsPrefix}}user-guide/ui/chart-widget/#time-series-state-chart) widget displays changes to the state of the entity over time. 
+[State Chart](/docs/{{docsPrefix}}user-guide/ui/chart-widget/#state-chart-1) widget displays changes to the state of the entity over time. 
 For example, if a device on and off, its states and conditions.
 
 {% include images-gallery.html imageCollection="charts-state" %}
