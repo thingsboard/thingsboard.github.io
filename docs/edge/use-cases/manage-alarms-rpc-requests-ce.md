@@ -208,102 +208,15 @@ mqttWindows:
 
 ## Connect "Air Conditioner" to edge and subscribe for RPC commands
 
-To subscribe to RPC commands from edge for the **Air Conditioner** device you need to get the **Air Conditioner** device credentials first.
-ThingsBoard supports different device credentials. We recommend to use default auto-generated credentials which is access token for this guide.
-
-Please open ThingsBoard **Edge** UI using the URL: **http://EDGE_URL**.
-
-{% include images-gallery.html imageCollection="copyAccessTokenAirConditioner" showListImageTitles="true" %}
-
-Now you are ready to subscribe to RPC commands for Air Conditioner device.
-We will use simple commands to subscribe to RPC commands over MQTT protocol in this example.
-
-Please download following scripts to your local folder:
-- [**mqtt-js.sh**](/docs/edge/use-cases/resources/manage-alarms-rpc-requests/mqtt-js.sh)
-- [**cooler.js**](/docs/edge/use-cases/resources/manage-alarms-rpc-requests/cooler.js)
-
-**NOTE** We assume that you have Node.js and NPM installed on your local PC.
-
-Before running the scripts, please modify **mqtt-js.sh** accordingly:
-
-- Replace **YOUR_ACCESS_TOKEN** with **Air Conditioner** device access token copied from the steps above. 
-
-- Replace **YOUR_TB_EDGE_HOST** with your ThingsBoard Edge host. For example, **localhost**.
-
-- Replace **YOUR_TB_EDGE_MQTT_PORT** with your ThingsBoard Edge MQTT port. For example, **11883** or **1883**.
-
-Open the terminal, go to the folder that contains **mqtt-js.sh** and **cooler.js** scripts and make sure it is executable:
-```shell
- chmod +x *.sh
-```
-
-Install **mqtt** node module to be able to use mqtt package in the **cooler.js** script:
-```shell
-node install mqtt
-```
-
-Then run the following command:
-```shell
-bash mqtt-js.sh
-```
-
-You should see the following screen with your host and device token:
-
-```shell
-pc@pc-XPS-15-9550:~/alarm-tutorial$ bash mqtt-js.sh
-Connecting to: localhost:1883 using access token: sFqoF18PTyViO8L0qo7c
-Cooler is connected!
-```
-
-**NOTE** Please open a new terminal tab to push temperature telemetry to device and leave this running in the background until end of the guide.
+{% include templates/edge/use-cases/manage-alarms/connect-air-conditioner.md %}
 
 ## Post telemetry to "DHT22" sensor to create alarm
 
-To post temperature telemetry to the **DHT22** sensor you need to get the **DHT22** sensor credentials first.
-ThingsBoard support different device credentials. We recommend to use default auto-generated credentials which is access token for this guide.
-
-Please open ThingsBoard **Edge** UI using the URL: **http://EDGE_URL**.
-
-{% include images-gallery.html imageCollection="copyAccessTokenDht22" showListImageTitles="true" %}
-
-Now you are ready to publish temperature telemetry data on behalf of your device.
-We will use simple commands to publish temperature data over HTTP or MQTT in this example.
-
-{% capture connectdevicetogglespec %}
-HTTP<small>Linux, macOS or Windows</small>%,%http%,%templates/edge/getting-started/http.md%br%
-MQTT<small>Linux or macOS</small>%,%mqtt-linux%,%templates/edge/getting-started/mqtt-linux.md%br%
-MQTT<small>Windows</small>%,%mqtt-windows%,%templates/edge/getting-started/mqtt-windows.md%br%
-CoAP<small>Linux or macOS</small>%,%coap%,%templates/edge/getting-started/coap.md{% endcapture %}
-{% include content-toggle.html content-toggle-id="connectdevice" toggle-spec=connectdevicetogglespec %}
-
-Once you have successfully published the "temperature" readings with value **51**:
-
-{% capture connectdevicetogglespec %}
-HTTP<small>Linux, macOS or Windows</small>%,%http%,%templates/edge/use-cases/manage-alarms/http-above-threshold.md%br%
-MQTT<small>Linux or macOS</small>%,%mqtt-linux%,%templates/edge/use-cases/manage-alarms/mqtt-linux-above-threshold.md%br%
-MQTT<small>Windows</small>%,%mqtt-windows%,%templates/edge/use-cases/manage-alarms/mqtt-windows-above-threshold.md%br%
-CoAP<small>Linux or macOS</small>%,%coap%,%templates/edge/use-cases/manage-alarms/coap-above-threshold.md{% endcapture %}
-{% include content-toggle.html content-toggle-id="connectdevice" toggle-spec=connectdevicetogglespec %}
-
-You should immediately see alarm in the Device Alarm Tab:
-
-{% include images-gallery.html imageCollection="deviceAlarmTab" showListImageTitles="true" %}
+{% include templates/edge/use-cases/manage-alarms/post-telemetry-to-dht22.md %}
 
 ## Verify that RPC request was send to "Air Conditioner" device
 
-Open the terminal where **mqtt-js.sh** script is running. 
-You should see similar messages on the screen:
-
-```shell
-pc@pc-XPS-15-9550:~/alarm-tutorial$ bash mqtt-js.sh
-Connecting to: localhost:1883 using access token: sFqoF18PTyViO8L0qo7c
-Cooler is connected!
-Received RPC command from edge!
-Method: enabled_air_conditioner
-Speed params: 1
-```
-
-Congratulations! RPC request was successfully sent to **Air Conditioner** device based on the temperature readings from the **DHT22** sensor.
+{% include templates/edge/use-cases/manage-alarms/verify-rpc-request.md %}
 
 ## Next Steps
 

@@ -47,3 +47,19 @@ cloud:
     rpc:
       host: "${CLOUD_RPC_HOST:PUT_YOUR_CLOUD_IP}"
 ```
+
+{% capture local-deployment %}
+If ThingsBoard Edge is going to be running on the same machine where ThingsBoard **Professional Edition/Community Edition** server is running you'll need to update additional configuration parameters to avoid port collision.
+ 
+Please locate and change next parameters in ThingsBoard Edge configuration file (**C:\Program Files (x86)\tb-edge\conf\tb-edge.yml**):
+<br>
+<br>**port: "${HTTP_BIND_PORT:18080}"**
+<br>**...**
+<br>**bind_port: "${MQTT_BIND_PORT:11883}"**
+<br>**...**
+<br>**bind_port: "${COAP_BIND_PORT:15683}"**
+
+Please make sure ports above are not used by any other application.
+
+{% endcapture %}
+{% include templates/info-banner.md content=local-deployment %}
