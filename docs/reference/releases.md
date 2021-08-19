@@ -126,7 +126,7 @@ Major release which contains 2126 commits and 1668 changed files.
   * Ability to toggle show password in the input field of login form;
   * focus for entity-key-list component after blur this component;
 
-** Bug Fixes: **
+**Bug Fixes:**
 
 * Core:
 
