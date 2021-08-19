@@ -48,9 +48,10 @@ export EDGES_RPC_PORT=**NEW_EDGES_RPC_PORT**
 
 {% include templates/edge/ssl-grpc-note.md %}
 
-#### Start the service
+#### Restart the service
 
 ```bash
+$ sudo service thingsboard stop
 $ sudo service thingsboard start
 ```
 
@@ -112,8 +113,9 @@ locate "EDGES_RPC_PORT" parameter. Replace "7070" with "**NEW_EDGES_RPC_PORT**".
 
 {% include templates/edge/ssl-grpc-note.md %}
 
-#### Start the service
+#### Restart the service
 
 ```text
+net stop thingsboard
 net start thingsboard
 ```

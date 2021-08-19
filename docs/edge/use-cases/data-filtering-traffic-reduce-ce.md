@@ -114,7 +114,7 @@ verifyDeviceTelemetry:
         image: /images/edge/use-cases/data-filtering/verify-device-telemetry-item-7-ce.png
         title: 'Click on the tab <b>Latest telemetry</b> to verify that distance readings are pushed successfully from the edge to the cloud.'
 
-createDashboardCE:
+createDashboard:
     0:
         image: /images/edge/use-cases/data-filtering/configure-dashboards-item-1.png
         title: 'Login to your ThingsBoard <b>ThingsBoard Community Edition</b> instance and open Dashboards page.'
@@ -190,63 +190,18 @@ createDashboardCE:
 ## Create device
 
 {% include templates/edge/use-cases/data-filtering/create-device.md %}
- 
-{% include images-gallery.html imageCollection="provisionDevices" showListImageTitles="true" %}
 
 ## Configure edge rule engine to push filtered data to the cloud
 
-{% include templates/edge/use-cases/data-filtering/create-device.md %}
+{% include templates/edge/use-cases/data-filtering/configure-edge-rule-engine.md %}
 
 ## Connect device to edge and post telemetry
 
-To connect "In-vehicle monitoring system" to the ThingsBoard Edge you need to get device credentials first.
-ThingsBoard supports different device credentials. We recommend to use default auto-generated credentials which is access token for this guide.
-
-Please open ThingsBoard **Edge** UI using the URL: **http://EDGE_URL**.
-
-{% include images-gallery.html imageCollection="copyAccessTokenDevice" showListImageTitles="true" %}
-
-We will use simple commands to generate random telemetry for the device **In-vehicle monitoring system** and publish to the ThingsBoard **Edge** by the MQTT protocol.
-
-Please download following script to your local folder:
-- [**mqtt-generator.py**](/docs/edge/use-cases/resources/data-filtering-traffic-reduce/mqtt_generator.py)
-
-Before running the scripts, please modify **mqtt-generator.py** accordingly:
-
-- Replace **YOUR_ACCESS_TOKEN** with **In-vehicle monitoring system** device access token copied from the steps above. 
-
-- Replace **YOUR_TB_EDGE_HOST** with your ThingsBoard Edge host. For example, **localhost**.
-
-- Replace **YOUR_TB_EDGE_MQTT_PORT** with your ThingsBoard Edge MQTT port. For example, **11883** or **1883**.
-
-Open the terminal and install MQTT Python library:
-```bash
-sudo pip install paho-mqtt
-```
-
-Go to the folder that contains Python script and launch an application by this command:
-
-```bash
-python mqtt-generator.py
-```
-
-Open ThingsBoard **Edge** UI and verify that device successfully receives telemetry:
-
-{% include images-gallery.html imageCollection="verifyDeviceTelemetryEdge" showListImageTitles="true" %}
-
-Open ThingsBoard **ThingsBoard Community Edition** UI and verify that edge successfully pushes data to the cloud:
-
-{% include images-gallery.html imageCollection="verifyDeviceTelemetry" showListImageTitles="true" %}
+{% include templates/edge/use-cases/data-filtering/connect-device-to-edge.md %}
 
 ## Create dashboard
 
-Also we will create a dashboard that displays how many miles has been traveled and how many are left to change the oil in the vehicle.
-
-Please open ThingsBoard **ThingsBoard Community Edition** to create a new dashboard:
-
-{% include images-gallery.html imageCollection="createDashboardCE" showListImageTitles="true" %}
-
-**Congratulations!** You have successfully sent from the device telemetry, saved it on the edge, pushed to the cloud filtered data and visualized it on the dashboard.
+{% include templates/edge/use-cases/data-filtering/create-dashboard.md %}
 
 ## Next Steps
 
