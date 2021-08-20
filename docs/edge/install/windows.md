@@ -27,7 +27,7 @@ Instructions below are provided for Windows 10/8.1/8/7 32-bit/64-bit.
 Download and extract the package.
 
 ```bash
-wget https://dist.thingsboard.io/tb-edge-windows-3.3.zip
+https://dist.thingsboard.io/tb-edge-windows-3.3.zip
 ```
 {: .copy-code}
 
