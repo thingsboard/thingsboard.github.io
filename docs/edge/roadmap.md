@@ -17,4 +17,4 @@ description: Upcoming releases
 * Agent for the updates over the air of the edge component
 * Notifications on the cloud if connection to edge lost
 * Integrations and Converters support
-* Auto deployment of customer rule nodes to edge
+* Auto deployment of custom rule nodes to edge

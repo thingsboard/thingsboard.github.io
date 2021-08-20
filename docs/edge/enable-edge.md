@@ -48,13 +48,6 @@ export EDGES_RPC_PORT=**NEW_EDGES_RPC_PORT**
 
 {% include templates/edge/ssl-grpc-note.md %}
 
-#### Restart the service
-
-```bash
-$ sudo service thingsboard stop
-$ sudo service thingsboard start
-```
-
 ### Windows
 
 #### Enable edges support 
@@ -66,7 +59,6 @@ Open the following file for editing (select "All Files" instead of "Text Documen
 C:\Program Files (x86)\thingsboard\conf\thingsboard.yml
 ``` 
 {: .copy-code}
-
 
 and locate "# Edges parameters" block:
 

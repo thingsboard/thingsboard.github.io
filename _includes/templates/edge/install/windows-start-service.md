@@ -4,6 +4,7 @@ Open the command prompt as an Administrator and execute the following command:
 ```shell
 net start tb-edge
 ```
+{: .copy-code}
 
 Expected output:
 

@@ -70,6 +70,7 @@ You can issue the following command in order to check if there are any errors on
 ```bash
 cat /var/log/tb-edge/tb-edge.log | grep ERROR
 ```
+{: .copy-code}
 
 {% include templates/edge/install/edge-service-commands.md %} 
 

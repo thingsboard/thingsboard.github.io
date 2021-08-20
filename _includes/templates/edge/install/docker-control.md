@@ -4,11 +4,16 @@ In case of any issues you can examine service logs for errors. For example to se
 ```
 docker-compose logs -f mytbedge
 ```
+{: .copy-code}
+
 To stop the container:
 ```
 docker-compose stop
 ```
+{: .copy-code}
+
 To start the container:
 ```
 docker-compose start
 ```
+{: .copy-code}
