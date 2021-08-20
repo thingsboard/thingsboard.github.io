@@ -1089,6 +1089,30 @@ section
 
   .copy-code
     position: relative
+    button.clipboard-btn
+      width: 100%!important
+      height: 100%!important
+      top: 0!important
+      right: 0!important
+      background: none!important
+      div
+        background-color: #fff
+        position: absolute
+        width: 38px
+        height: 38px
+        top: 3px
+        right: 3px
+        padding: 10px
+        img
+          position: initial
+    &:hover
+      cursor: pointer
+      div.highlight
+        pre.highlight
+          border: solid 1px #2A7DEC
+      button.clipboard-btn
+        img
+          filter: invert(49%) sepia(97%) saturate(3730%) hue-rotate(200deg) brightness(95%) contrast(95%)
 
     button.clipboard-btn
       outline: none
