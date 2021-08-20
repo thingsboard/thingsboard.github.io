@@ -1,6 +1,6 @@
 
- * TOC
- {:toc}
+* TOC
+{:toc}
  
 ## Python REST Client
 
@@ -67,3 +67,4 @@ with RestClientCE(base_url=url) as rest_client:
 
 ```
 
+The Professional Edition Python REST Client example you can find [here](/docs/pe/reference/python-rest-client/#professional-edition-python-rest-client-example).
