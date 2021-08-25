@@ -48,6 +48,13 @@ export EDGES_RPC_PORT=**NEW_EDGES_RPC_PORT**
 
 {% include templates/edge/ssl-grpc-note.md %}
 
+#### Restart the service
+
+```bash
+$ sudo service thingsboard stop
+$ sudo service thingsboard start
+```
+
 ### Windows
 
 #### Enable edges support 
