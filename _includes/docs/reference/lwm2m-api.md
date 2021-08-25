@@ -646,7 +646,48 @@ ObserveReadAll
 
 ## Firmware over-the-air updates
 
+LwM2M protocol supports [OTA updates](/docs/user-guide/ota-updates/) of the device firmware.
+
+There are several ways to run OTA firmware updates with LwM2M transport. You can choose the strategy in the device 
+profile, so it will be applied for all devices of the profile:
+
+TO DO: add screenshot Device Profile(LwM2M) -> Transport Configuration -> Other settings -> Firmware update dropdown.
+
+
+LwM2M defines [Object 5: Firmware Update Object](http://www.openmobilealliance.org/release/LightweightM2M/V1_1_1-20190617-A/HTML-Version/OMA-TS-LightweightM2M_Core-V1_1_1-20190617-A.html#13-6-0-E6-LwM2M-Object-Firmware-Update)
+for the OTA purpose, which enables management of firmware image and includes resources for installing a firmware package,
+updating firmware, and performing actions after updating firmware.
+
+Please note that Object 5 is an optional object, and may be not supported by some devices.
+
+To be able to run the update using Object 5, you have to make sure that Object 5 is present in the [Device profile](https://thingsboard.io/docs/reference/lwm2m-api/#step-2-define-lwm2m-device-profile/)
+LwM2M model and set up observations of following attributes on the device, which are used by the server to get feedback from 
+the device on the status of the update process:
+
+    "/3/0/3" - Firmware Version
+    "/5/0/3" - State
+    "/5/0/5" - Update Result
+    "/5/0/7" - PkgVersion
+
+
+### Push firmware update as binary file using Object 5 and Resource 0.
+The firmware package is pushed from the server directly to the device via the block-wise transfer to the Resource 0 of 
+the Object 5. The process is illustrated here: [Example of a LwM2M Server pushing a firmware image to a LwM2M client](http://www.openmobilealliance.org/release/LightweightM2M/V1_1_1-20190617-A/HTML-Version/OMA-TS-LightweightM2M_Core-V1_1_1-20190617-A.html#Figure-E62-1-Example-of-a-LwM2M-Server-pushing-a-firmware-image-to-a-LwM2M-client/).
+
+### Auto-generate a unique CoAP URL to download the package and push the firmware package via Object 5 and Resource 1.
+This option allows running the firmware update with the image file located on the 3rd party storage. In this case the 
+server generates a CoAP-URL and  sends it to the client, and the client downloads firmware image from the external 
+resource directly without transferring image to the server. The process is illustrated here: [Example
+of a client fetching a firmware image](http://www.openmobilealliance.org/release/LightweightM2M/V1_1_1-20190617-A/HTML-Version/OMA-TS-LightweightM2M_Core-V1_1_1-20190617-A.html#Figure-E62-2-Example-of-a-client-fetching-a-firmware-image/)
+
+### Push firmware update as binary file using Object 19 and Resource 0.
+
+TO DO: update this section after finalising the algorithm with Magenta.
+
+
 ## Software over-the-air updates
+
+LwM2M protocol supports [OTA updates](/docs/user-guide/ota-updates/) of the device software.
 
 ## Advanced topics
 
