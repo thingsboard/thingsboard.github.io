@@ -68,7 +68,7 @@ entity-style:
 entity-digits:
     0:
         image: /images/user-guide/ui/widgets/entitywidget/entity-digits-pe.png
-        title: 'Enter the desired symbol to be shown next to the value. Enter the number of the digits to be displayed after the floating point number.
+        title: 'Enter the desired symbol to be displayed next to the value. Input the number of the digits to be displayed after the floating point number.
                 Apply the changes by clicking the checkmark in the upper right corner of the screen.'
     1:
         image: /images/user-guide/ui/widgets/entitywidget/entity-digits-1-pe.png

@@ -153,8 +153,8 @@ You can leave all other configuration tabs with the default values in most of th
 
 Widget data settings are for adding one or multiple data sources. 
 A data source is a combination of [a data source type](/docs/{{docsPrefix}}user-guide/dashboards/#widget-data-source-types), 
-[an entity alias](/docs/{{docsPrefix}}user-guide/dashboards/#entity-aliases), [an optional filter](/docs/{{docsPrefix}}user-guide/dashboards/#entity-filters), and list of data keys (entity time series).
-Basically, the data source determines which entities (alias and filter) widget should use and what data keys to fetch for those entities.
+[an entity alias](/docs/{{docsPrefix}}user-guide/dashboards/#entity-aliases), [an optional filter](/docs/{{docsPrefix}}user-guide/dashboards/#entity-filters), and list of datakeys (entity time series).
+Basically, the data source determines which entities (alias and filter) widget should use and what datakeys to fetch for those entities.
 
 {% include images-gallery.html imageCollection="add-data-source1" %}
 
@@ -164,13 +164,13 @@ We will use "Thermometer" alias and "Low battery DHT22 Thermometers" filter conf
 
 {% include images-gallery.html imageCollection="add-data-source2" %}
 
-In the above example, "temperature" and "humidity" are two time series [data keys](/docs/{{docsPrefix}}user-guide/dashboards/#2-data-keys).
-The data keys list for data source depends on the [widget type](/docs/{{docsPrefix}}user-guide/dashboards/#widget-types):
+In the above example, "temperature" and "humidity" are two time series [datakeys](/docs/{{docsPrefix}}user-guide/dashboards/#2-data-keys).
+The datakeys list for data source depends on the [widget type](/docs/{{docsPrefix}}user-guide/dashboards/#widget-types):
 
- * **Time series widgets** allow choosing time series data keys in the data source and the [time window](/docs/{{docsPrefix}}user-guide/dashboards/#time-window);
+ * **Time series widgets** allow choosing time series datakeys in the data source and the [time window](/docs/{{docsPrefix}}user-guide/dashboards/#time-window);
  * **Latest values widgets** allow choosing time series, attributes and entity fields;
  * **Static and Control widgets** do not require a data source;
- * **Alarm widgets** allow choosing all data keys: time series, attributes, entity and alarm fields.
+ * **Alarm widgets** allow choosing all datakeys: time series, attributes, entity and alarm fields.
    Additionally, you can configure [time window](/docs/{{docsPrefix}}user-guide/dashboards/#time-window) and [alarm filter](/docs/{{docsPrefix}}user-guide/dashboards/#alarm-filter).
 
 Let's assume you don't have the required time series or attribute key in the database yet. 
@@ -280,17 +280,35 @@ List of entity fields depends on the entity type and may extend in the future:
  * **User** has the following fields: created time, first name, last name, email and additional info.
  * **Customer** has the following fields: create time, entity type, email, title, country, state, city, address, zip code, phone, additional info.
 
-###### 3.1. Basic data key settings
+###### 3.1. Basic datakey configuration
+
+* **Key**
 
 Coming soon...
 
-###### 3.2. Advanced data key settings
+* **Label and label color**
 
-Advanced data keys configuration is responsible for the visibility, style, and appearance of a specific data key column on the widget. 
-Entity table widget, alarms table widget, and entity admin widget bundles have the same advanced data key configuration. 
-Charts widget bundle has its own unique advanced data key configuration. All other widget bundles have only basic data key configuration.
+Coming soon...
 
-Learn more about advanced data key settings [here](/docs/{{docsPrefix}}user-guide/ui/advanced-data-key-configuration/).
+* **Special symbol to show next to value and number of digits after floating point**
+
+In the Datakey configuration dialog, you can add a special symbol to be displayed next to the selected entity value of your widget.
+Also, you can change the number of digits displayed after the floating point number of this datakey.
+See the configuration and the corresponding result below.
+
+{% include images-gallery.html imageCollection="basic-datakey" showListImageTitles="true" %}
+
+* **Data post-processing function**
+
+Coming soon...
+
+###### 3.2. Advanced datakey settings
+
+Advanced datakeys configuration is responsible for the visibility, style, and appearance of a specific datakey column on the widget. 
+Entity table widget, alarms table widget, and entity admin widget bundles have the same advanced datakey configuration. 
+Charts widget bundle has its own unique advanced datakey configuration. All other widget bundles have only basic datakey configuration.
+
+Learn more about advanced datakey settings [here](/docs/{{docsPrefix}}user-guide/ui/advanced-data-key-configuration/).
 
 ##### 4. Widget time window
 
@@ -367,11 +385,11 @@ Widget style from the screen above:
 For chart widgets, the “Display legend” option is enabled by default. The legend is used to display the min/max/average/total values.
 Other widgets have this option disabled.  
 
-While the legend is enabled, you can choose the direction and position of the legend. Also, you can choose which data to include (min, max, average, total) and either to sort the data keys or not.
+While the legend is enabled, you can choose the direction and position of the legend. Also, you can choose which data to include (min, max, average, total) and either to sort the datakeys or not.
 
-You may notice that the legend displays the [data key](/docs/{{docsPrefix}}user-guide/dashboards/#data-keys) label for each configured data key.
+You may notice that the legend displays the [datakey](/docs/{{docsPrefix}}user-guide/dashboards/#data-keys) label for each configured datakey.
 When you have data from multiple devices in the same widget, it is hard to find which device corresponds to which record in the legend or in the tooltip.
-In order to make the legend and tooltip clear, you should use "${entityName}" or "${entityLabel}" in the data key configuration.
+In order to make the legend and tooltip clear, you should use "${entityName}" or "${entityLabel}" in the datakey configuration.
 
 See configuration and the corresponding result below:
 
@@ -392,7 +410,7 @@ If no value is specified, its original height will be used.
 You can choose which symbol to display next to the value and the number of digits after the floating-point number. 
 These settings are useful if you want to apply the same settings for all axis. 
 For example, if you are showing temperature readings for multiple devices, you can add '°C' or '°F' symbol. 
-However, if you are displaying both temperature and humidity, you have to configure these data keys separately using data key settings. 
+However, if you are displaying both temperature and humidity, you have to configure these datakeys separately using datakey settings. 
 
 ##### 6. Advanced widget settings
 

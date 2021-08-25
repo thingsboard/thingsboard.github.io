@@ -61,10 +61,14 @@ Please note that the style and background color are just an example and are defi
 
 ### 3. Special symbol and number of digits after floating point
 
-You can add a special symbol that will be displayed next to the entity values of your widget. Also, you can customize the number of digits to be displayed after the floating point number of your value.
+Via the settings tab, you can add a special symbol that will be displayed next to all entity values of your widget. By default, it applies to the whole widget, that is, to all entities.
+Also, you can customize the number of digits to be displayed after the floating point number of your values.
 See the configuration and the corresponding result below.
 
 {% include images-gallery.html imageCollection="entity-digits" showListImageTitles="true" %}
+
+If you need to add these settings only for a specific datakey, 
+you have to do it through [Datakey сonfiguration](/docs/{{docsPrefix}}user-guide/dashboards/#31-basic-datakey-configuration). 
 
 ### 4. Legend settings
 
@@ -87,7 +91,6 @@ ThingsBoard has no name restrictions, either in symbols or in a number of charac
 Nevertheless, in case the title is too long, it will not display completely in the Entity Table widget, but will be terminated with three dots.
 However, after applying the changes and opening the widget in full-screen mode, you will be able to see the full name of the widget.
 For example, let’s use something simple for the title like “The New Widget Title”:
-
 
 {% include images-gallery.html imageCollection="entities-table-title" showListImageTitles="true" %}
 

@@ -81,6 +81,20 @@ add-data-source3:
     0:
         image: /images/user-guide/dashboards/add-data-source3-src.png
 
+basic-datakey:
+    0:
+        image: /images/user-guide/dashboards/datakey-ce.png
+        title: 'Click the pencil icon next to the datakey name to open the Datakey configuration window.'
+    1:
+        image: /images/user-guide/dashboards/datakey-1-ce.png
+        title: 'Input the desired special symbol and enter the number of digits after the floating point to be displayed next to the value of this entity. Click "Save" to apply changes to this datakey.'
+    2:
+        image: /images/user-guide/dashboards/datakey-2-ce.png
+        title: 'Click the large orange checkmark in the upper right corner of the screen to apply the changes to the widget.'
+    3:
+        image: /images/user-guide/dashboards/datakey-3-ce.png
+        title: 'As you can see, the settings have only been applied only to this datakey.'
+
 time-window1:
     0:
         image: /images/user-guide/dashboards/add-time-window1-src.png
