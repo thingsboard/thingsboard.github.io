@@ -45,7 +45,7 @@ client.disconnect()
 ### Connection using TLS
 
 TLS connection to localhost. See [MQTT over SSL](/docs/user-guide/mqtt-over-ssl/) for more information about client and ThingsBoard configuration.
-To connect to ThingsBoard with MQTT over SSL you should have generated certificate and code like following one:
+To connect to ThingsBoard with MQTT over SSL, first, you should generate a certificate and have a code like the following one:
 
 ```python
 from socket import gethostname
@@ -63,11 +63,11 @@ client.disconnect()
 ## Using Device APIs
 
 **TBDeviceMqttClient** provides access to Device MQTT APIs of ThingsBoard platform.  
-It allows to publish telemetry and attribute updates, subscribe to attribute changes, send and receive RPC commands, etc.  
+It allows publishing telemetry and attributes updates, subscribing to attribute changes, sending and receiving RPC commands, etc.    
 
 #### Subscribtion to attributes
 
-If you need to receive shared attributes updates you can use the code like the following:  
+If you need to receive shared attributes updates, you can use the code like the following:  
 
 ```python
 from time import sleep
@@ -137,9 +137,10 @@ while True:
 ```
 #### Respond to server RPC call
 
-If you want to send response for some RPC request, you can use the logic like in the code below.  
-The following example will connect to the ThingsBoard local instance and wait for RPC request.  
-When RPC request will be received, client will send response to ThingsBoard with data from machine with client for device with name "Test Device A1". 
+If you want to send a response for some RPC request, you can use the logic like in the code below.  
+The following example connects to the ThingsBoard local instance and waits for RPC request.  
+When RPC request is received, the client will send the response to ThingsBoard with data from machine with client for device with the name **Test Device A1**.  
+
 ```python
 from psutil import cpu_percent, virtual_memory
 from time import sleep
@@ -165,7 +166,7 @@ while True:
 ```
 ## Using Gateway APIs
 
-**TBGatewayMqttClient** extends **TBDeviceMqttClient**, thus has access to all it's APIs as a regular device.  
+**TBGatewayMqttClient** extends **TBDeviceMqttClient**, thus has access to all its APIs as a regular device.   
 Besides, gateway is able to represent multiple devices connected to it. For example, sending telemetry or attributes on behalf of other, constrained, device. See more info about the gateway [**here**](/docs/iot-gateway/).  
 
 #### Telemetry and attributes sending 
