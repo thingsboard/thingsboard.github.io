@@ -23,3 +23,8 @@ toc:
   path: /docs/pe/reference/python-rest-client/
 - title: Dart API Client
   path: /docs/pe/reference/dart-client/
+- title: Software development kits
+  new: true
+  section:
+    - title: Python Client SDK
+      path: /docs/reference/python-client-sdk
