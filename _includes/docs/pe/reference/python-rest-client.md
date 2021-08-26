@@ -1,4 +1,4 @@
-*TOC
+* TOC
 {:toc}
 
 ## Python REST Client
@@ -18,9 +18,9 @@ pip3 install tb-rest-client
 
 ### Basic usage
 
-You can find the example script **[here](https://github.com/thingsboard/python_tb_rest_client/blob/master/examples/example_application_2.py)**.
-Also, you will have to download the dashboard json file ("*watermeters.json*") for this example and put it in the folder with a script.
-Json file is **[here](https://github.com/thingsboard/python_tb_rest_client/blob/master/examples/watermeters.json)**.
+You can find the example of the script **[here](https://github.com/thingsboard/python_tb_rest_client/blob/master/examples/example_application_2.py)**.
+Also, you will have to download the dashboard JSON file ("*watermeters.json*") for this example and put it in the folder with a script.
+JSON file is **[here](https://github.com/thingsboard/python_tb_rest_client/blob/master/examples/watermeters.json)**.
 
 The example listening below shows more advanced usage of REST client, namely: creating shared dashboard group,
 loading dashboard from the config JSON file and adding this dashboard to the group that was created previously, also

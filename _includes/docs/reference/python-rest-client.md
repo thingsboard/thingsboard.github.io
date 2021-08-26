@@ -20,8 +20,8 @@ pip3 install tb-rest-client
 ### Basic usage
 You can find the example script **[here](https://github.com/thingsboard/python_tb_rest_client/blob/master/examples/example_application.py)**.
 
-The example listening below shows basic usage of REST client, namely perform a login, create new Asset and Device instances
-and making relationships with them.
+The example listened below shows basic usage of REST client, namely how to perform a login, create a new Asset and Device instances,
+and how to establish relationships with them.
 
 ```python
 
@@ -71,9 +71,9 @@ with RestClientCE(base_url=url) as rest_client:
 
 ```
 
-### Manage device
+### Managing device
 
-The following sample code demonstrates basic concepts of device management API (add/get/delete device, get/save device attributes).
+The following code sample demonstrates basic concepts of device management API (add/get/delete device, get/save device attributes).
 
 ```python
 import logging
@@ -124,7 +124,7 @@ with RestClientCE(base_url=url) as rest_client:
 
 ### Fetch tenant devices
 
-The following sample code shows how to fetch tenant devices via page link.
+The following code sample shows how to fetch tenant devices via page link.
 
 ```python
 import logging
@@ -157,7 +157,7 @@ with RestClientCE(base_url=url) as rest_client:
 
 ### Fetch tenant dashboards
 
-The following sample code shows how to fetch tenant dashboards via page link.
+The following code sample shows how to fetch tenant dashboards via page link.
 
 ```python
 import logging
@@ -191,7 +191,7 @@ with RestClientCE(base_url=url) as rest_client:
 
 ### Count entities using Entity Data Query API
 
-The following sample code shows how to use Entity Data Query API to count total devices.
+The following code sample shows how to use Entity Data Query API to count the total number of devices.
 
 ```python
 import logging
