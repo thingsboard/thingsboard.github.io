@@ -1,0 +1,1 @@
+sudo dpkg -i trendz-1.8.0.deb
