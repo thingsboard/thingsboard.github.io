@@ -3,7 +3,7 @@
 Create docker compose file for ThingsBoard queue service:
 
 ```text
-sudo nano docker-compose.yml
+nano docker-compose.yml
 ```
 {: .copy-code}
 
@@ -18,7 +18,7 @@ services:
     ports:
       - "8080:9090"
       - "1883:1883"
-      - "5683:5683/udp"
+      - "5683-5688:5683-5688/udp"
     environment:
       TB_QUEUE_TYPE: service-bus
       TB_QUEUE_SERVICE_BUS_NAMESPACE_NAME: YOUR_NAMESPACE_NAME
@@ -49,7 +49,6 @@ services:
       TB_QUEUE_RE_HP_PARTITIONS: 1
       TB_QUEUE_RE_SQ_POLL_INTERVAL_MS: 1000
       TB_QUEUE_RE_SQ_PARTITIONS: 1
-      TB_QUEUE_CORE_POLL_INTERVAL_MS: 1000
       TB_QUEUE_TRANSPORT_REQUEST_POLL_INTERVAL_MS: 1000
       TB_QUEUE_TRANSPORT_RESPONSE_POLL_INTERVAL_MS: 1000
       TB_QUEUE_TRANSPORT_NOTIFICATIONS_POLL_INTERVAL_MS: 1000

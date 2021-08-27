@@ -21,7 +21,7 @@ Let's learn how to add a Group entities alias:
 
 Now let's use the added alias in a widget:
 1. Click the "Add new widget" icon in the center of the screen.
-2. In the opened widget bundles selection, click "Cards system". There select the Entity table widget.
+2. In the opened widget bundles selection, click "Cards system". There select the _Entities table_ widget.
 3. Input data source: Entity type, select the name of the created alias from the list, and add telemetry.
 4. Click the "Add" button in the lower right corner of the dialog box.
 5. Widget with alias that filters a group of devices, which in this case is Irrigation systems, has been added.
@@ -53,17 +53,17 @@ Let's learn how to add an Entity group list alias:
 
 Now let's use the added alias in a widget:
 1. Click the "Add new widget" icon in the center of the screen.
-2. In the opened widget bundles selection, click "Cards system". There select the Entity table widget.
+2. In the opened widget bundles selection, click "Cards system". There select the _Entities table_ widget.
 3. Input data source: Entity type and _Entity group list_ alias. Click "Add" in the lower right corner to add a widget.
 4. After adding the widget, click the "pencil" icon in the upper right corner to enter the widget editing mode.
 5. Move to the Action cell and click a "+" icon to add a new action.
 6. In the Add widget dialog, select an [action source](/docs/{{docsPrefix}}user-guide/ui/widget-actions/#action-sources) which is responsible for each entity separately (action cell button, on row click etc.)
-7. Enter the name of the action ${entityName} which takes the name of the clicked entity and uses it during the action.
+7. Enter the name of the action.
 8. If necessary, select the icon representing the button to perform the action.
 9. Select the _Update current dashboard state_ action type and click "Add" to add a new action to the widget.
 10. After successfully adding the action, click the large orange checkmark in the upper right of the screen to apply the changes.
 11. Now, add a widget on which action will be performed by clicking the orange "+" icon in the lower right corner of the screen and choosing a "Paper" icon ("Create new widget").
-12. In the opened widget bundles selection, click "Cards system". There select the Entity table widget.
+12. In the opened widget bundles selection, click "Cards system". There select the _Entities table_ widget.
 13. Input data source: Entity type and _group entities_ alias and add telemetry. Click "Add" in the lower right corner.
 14. After adding both widgets, click the checkmark in the lower right corner of the screen.
 
@@ -97,12 +97,12 @@ Let's learn how to add an Entity group name alias:
 
 Now let's use the added alias in a widget:
 1. Click the "Add new widget" icon in the center of the screen.
-2. In the opened widget bundles selection, click "Cards system". There select the Entity table widget.
+2. In the opened widget bundles selection, click "Cards system". There select the _Entities table_ widget.
 3. Input data source: Entity type and _Entity group name_ alias. Click "Add" in the lower right corner to add a widget.
 4. After adding the widget, click the "pencil" icon in the upper right corner to enter the widget editing mode.
 5. Move to the Action cell and click a "+" icon to add a new action.
 6. In the Add widget dialog, select an [action source](/docs/{{docsPrefix}}user-guide/ui/widget-actions/#action-sources) which is responsible for each entity separately (action cell button, on row click etc.)
-7. Enter the name of the action ${entityName} which takes the clicked on entity's name and uses it during the action.
+7. Enter the name of the action.
 8. If necessary, select the icon representing the button to perform the action.
 9. Select the _Update current dashboard state_ action type and click "Add" to add a new action to the widget.
 10. After successfully adding the action, click big orange tick mark in the upper right of the screen to apply the changes.
@@ -133,7 +133,7 @@ Let's learn how to add an _Entities by group name_ alias:
 
 Now let's use the added alias in a widget:
 1. Click the "Add new widget" icon in the center of the screen.
-2. In the opened widget bundles selection, click "Cards system". There select the Entity table widget.
+2. In the opened widget bundles selection, click "Cards system". There select the _Entities table_ widget.
 3. Input data source: Entity type and _Entities by group name_ alias. Click "Add" in the lower right corner to add a widget.
 4. After adding the widget, click a big tick icon in the lower right corner of the screen to save all applied changes.
 
@@ -162,7 +162,7 @@ Let's learn how to add an Owner of entity from dashboard state alias, create a w
 15. After successfully adding the action, click big orange tick mark in the upper right of the screen to apply the changes.
 
 16. Click a big orange "+" icon in the lower right of the screen. Among appeared icons, click a "paper" icon to create a new widget.
-17. In the opened widget bundles selection dialog, click "Cards system". There select the Entity table widget.
+17. In the opened widget bundles selection dialog, click "Cards system". There select the _Entities table_ widget.
 18. Input data source: Entity type and _Owner of entity from dashboard state_ alias. Click "Add" in the lower right corner to add a widget.
 19. After adding the widget, click a big tick icon in the lower right corner of the screen to save all applied changes.
 

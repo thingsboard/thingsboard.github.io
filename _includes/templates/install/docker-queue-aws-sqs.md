@@ -3,7 +3,7 @@
 Create docker compose file for ThingsBoard queue service:
 
 ```text
-sudo nano docker-compose.yml
+nano docker-compose.yml
 ```
 {: .copy-code}
 
@@ -18,7 +18,7 @@ services:
     ports:
       - "8080:9090"
       - "1883:1883"
-      - "5683:5683/udp"
+      - "5683-5688:5683-5688/udp"
     environment:
       TB_QUEUE_TYPE: aws-sqs
       TB_QUEUE_AWS_SQS_ACCESS_KEY_ID: YOUR_KEY

@@ -3,198 +3,251 @@
 
 ## Introduction
 
-All [IoT Dashboards](/docs/{{docsPrefix}}user-guide/dashboards/) are constructed using **ThingsBoard widgets** that are defined in Widget Library.
-Each widget provides end-user functions such as data visualization, remote device control, alarms management and displaying static custom html content.
+All [IoT Dashboards](/docs/{{docsPrefix}}user-guide/dashboards/) are constructed using **ThingsBoard widgets** defined in the Widget Library.
+Each widget provides end-user functionality such as data visualization, remote device control, alarm management and display of static custom HTML content.
 
 ## Widget Types
 
-According to the provided features, each widget definition represents specific widget type.
-At the moment there are five widget types:
+According to the provided features, each widget definition represents a specific type of widget.
+There are five widget types:
 
- - [Latest values](#latest-values)
- - [Time-series](#time-series)
- - [RPC (Control widget)](#rpc-control-widget)
- - [Alarm widget](#alarm-widget)
- - [Static](#static)
+ - [Latest values;](#latest-values)
+ - [Timeseries;](#time-series)
+ - [RPC (Control widget);](#rpc-control-widget)
+ - [Alarm widget;](#alarm-widget)
+ - [Static widget.](#static)
+
+{% include images-gallery.html imageCollection="wl-dashboard-widgets" preview="false" %}
  
-Each widget type has own specific datasource configuration and corresponding widget API.
-Each widget requires datasource for data visualization. Types of the available datasource depend on widget type of the widget:
+Each widget type has its own specific data source configuration and the corresponding API widget.
+Each widget requires data sources to visualize data. Types of available data source depend on widget type of the widget:
 
- - Target device - this datasource type is used in RPC. Basically, you need to specify target device for RPC widget
- - Alarm source - this datasource type is used in Alarm widgets. This datasource requires source entity to display related alarms and corresponding alarm fields.
- - Entity - this datasource type is used in both time-series and latest values widgets. Basically, you need to specify target entity and timeseries key or attribute name.
- - Function - this datasource type is used in both time-series and latest values widgets for debug purposes. 
-   Basically, you are able to specify a javascript function that will emulate data from a device in order to tune visualization.
+ - Target device - this data source type is used in RPC. Basically, you need to specify the target device for the RPC widget;
+ - Alarm source - this data source type is used in Alarm widgets. This data source requires the source entity to display related alarms and corresponding alarm fields;
+ - Entity - this datasource type is used in both time-series and latest values widgets. Basically, you need to specify the target entity, and the time series key, or the attribute name;
+ - Entities count - this data source type is used in latest values widgets. Basically, you need to specify the target entity.
+ - Function - this data source type is used in both time series and latest values widgets for debugging.
+   Basically, you can specify a javascript function that will simulate data from a device in order to set up visualization;
 
 ### Latest values
 
-Displays latest values of particular entity attribute or timeseries data point (for ex. any Gauge Widget or Entities Table widget).
-This kind of widgets uses values of entity attribute(s) or timeseries as datasource.   
+_Latest values_ widget type displays the latest values of a specific entity attribute or time series data point (for example, any Gauge Widget or Entities Table widget).
+This type of widgets uses values of entity attribute(s) or time series as a data source.
+Digital Gauge in example is displaying current temperature value.
  
-![image](/images/user-guide/ui/widgets/latest-values-datasource.png)
+{% include images-gallery.html imageCollection="wl-latest-values-datasource" %}
 
-Below is an example of latest values widget - Digital Gauge displaying current power value. 
+### Time series
 
-![image](/images/user-guide/ui/widgets/latest-values-widget-example.png)
+_Time series_ widget type displays historical values for the selected period of time, or the latest values in the certain time window (for example, "Timeseries Line Chart" or "Timeseries Bar Chart").
+This widget types uses only the values of entity time series as a data source.
+In order to specify the time frame of displayed values, _Timewindow_ settings are used.
+The time window can be specified on the dashboard page or in the widget details. It can be either _realtime_ - dynamically changed time frame for a certain latest interval, or _history_ - fixed historical time frame.
+All these settings are part of Time series widget configuration.
+In the example, the "Timeseries Line Chart" displays speed value of device in real-time.
 
-### Time-series
-
-Displays historical values for the selected time period or latest values in the certain time window (for ex. "Timeseries - Flot" or "Timeseries table").
-This kind of widgets uses only values of entity timeseries as datasource.
-In order to specify the time frame of displayed values, **Timewindow** settings are used.
-Timewindow can be specified on the dashboard level or on the widget level. It can be either realtime - dynamically changed time frame for some latest interval, or history - fixed historical time frame.
-All these settings are part of **Time-series** widget configuration.          
- 
-![image](/images/user-guide/ui/widgets/time-series-datasource.png)
-
-Below is an example of time series widget - "Timeseries - Flot" displaying amperage values of three devices in real-time. 
-
-![image](/images/user-guide/ui/widgets/time-series-widget-example.png)
+{% include images-gallery.html imageCollection="wl-timeseries" %}
 
 ### RPC (Control widget)
 
-Allows to send RPC commands to devices and handles/visualize reply from the device (for ex. "Raspberry Pi GPIO Control").
-RPC widgets are configured by specifying target device as target endpoint for RPC commands.
+Control widget allows sending RPC commands to devices, it handles and visualize reply from the device (for example, "Raspberry Pi GPIO Control").
+RPC widgets are configured by specifying the target device as the target endpoint for RPC commands.
+In the example, the “Basic GPIO Control” widget sends GPIO switch commands and detects current GPIOs switch status.
 
-![image](/images/user-guide/ui/widgets/rpc-datasource.png)
-
-Below is an example of RPC widget - "Basic GPIO Control" - sending GPIO switch commands and detecting current GPIOs switch status.
-
-![image](/images/user-guide/ui/widgets/rpc-widget-example.png)
+{% include images-gallery.html imageCollection="wl-control-widget" %}
 
 ### Alarm Widget
 
-Display alarms related to the specified entity in the certain time window (for ex. "Alarms table").
-Alarm widgets are configured by specifying entity as alarms source and corresponding alarm fields.
-Like **Time-series widgets** alarm widgets have the timewindow configuration in order to specify the time frame of displayed alarms.
-Additionally configuration contains "Alarm status" and "Alarms polling interval" parameters.
-"Alarm status" parameter specifies the status of alarms being fetched. "Alarms polling interval" controls alarms fetching frequency in seconds. 
+_Alarm Widget_ type displays alarms related to the specified entity in the certain time window (for example, "Alarms table").
+Alarm widget is configured by specifying an entity as the alarm source, and the corresponding alarm fields.
+As the _Time series widgets_, Alarm widgets have the _timewindow_ configuration to specify the time frame of the displayed alarms.  
+In addition, the configuration contains "Alarm status", "Alarms severity" and "Alarm type" parameters.
+"Alarm status" parameter specifies the status of alarms being fetched. "Alarms severity" controls alarms fetching frequency in seconds.
+"Alarm type" helps to identify the root cause of the alarm. For example, “HighTemperature” and “LowHumidity” are two different alarms.
+In the example, the “Alarms table” widget displays the latest alarm for the device in real-time.
 
-![image](/images/user-guide/ui/widgets/alarm-datasource.png) 
-
-Below is an example of Alarm widget - "Alarms table" displaying latest alarms for the asset in real-time. 
-
-![image](/images/user-guide/ui/widgets/alarm-widget-example.png)
+{% include images-gallery.html imageCollection="wl-alarms" %}
 
 ### Static
 
-Displays static customizable html content (for ex. "HTML card").
-Static widgets don't use any datasources and usually configured by specifying static html content and optionally css styles.
+_Static_ widget type displays static customizable HTML content (for example, "HTML card").
+Static widgets don't use any data sources and usually configured by specifying static HTML content and optionally CSS styles.
+An example of a Static widget is the “HTML card” that displays the specified HTML content.
 
-![image](/images/user-guide/ui/widgets/static-html.png)
+{% include images-gallery.html imageCollection="wl-static" %}
 
-Below is an example of a Static widget - "HTML card" displaying specified html content. 
+<details>
 
-![image](/images/user-guide/ui/widgets/static-widget-example.png) 
+<summary>
+<b>An example of a CSS style function to adjust an HTML card style.</b>
+</summary>
+
+{% highlight ruby %}
+.card {
+font-weight: bold;
+font-size: 32px;
+color: #999;
+width: 100%;
+height: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+{% endhighlight %}
+
+</details>
+
+<details>
+
+<summary>
+<b>An example of an HTML code for specifying card content.</b>
+</summary>
+
+{% highlight ruby %}
+<h1>Static widget title</h1>
+<div class='card'>Your text here</div>
+{% endhighlight %}
+
+</details>
  
 ## Widgets Library (Bundles)
 
-Widget definitions are grouped into widget bundles according to their purpose. There are System level and Tenant level **Widgets Bundles**.
-Initial ThingsBoard installation is shipped with the basic set of system level **Widgets Bundles**.
-There are more than thirty widgets in seven widget bundles available out-of-the-box.
+Widgets are grouped into widget bundles according to their purposes. There are System-level and Tenant-level Widgets bundles.
+Initial ThingsBoard installation comes with a basic set of system-level Widgets bundles.  
 System level bundles can be managed by a **System administrator** and are available for use by any tenant in the system.
-Tenant level bundles can be managed by a **Tenant administrator** and are available for use only by this tenant and its customers. 
+Tenant level bundles can be managed by a **Tenant administrator** and are available for use only by this tenant and his customers. 
 You can always implement and add your widgets by following this [guide](/docs/{{docsPrefix}}user-guide/contribution/widgets-development/).
- 
-![image](/images/user-guide/ui/widget-bundles.png)
- 
-### Digital Gauges
- 
-Useful for visualization of temperature, humidity, speed and other integer or float values.
 
-![image](/images/user-guide/ui/digital-gauges.png)
-
-### Analog Gauges
- 
-Similar to digital gauges, but have a different style. 
-
-![image](/images/user-guide/ui/analog-gauges.png)
-
-
-### Charts
- 
-Useful for visualization of historical or real-time data with a time window.
-
-![image](/images/user-guide/ui/charts.png)
-
-### GPIO widgets
- 
-Useful for visualization and control of GPIO state for target devices.
-
-![image](/images/user-guide/ui/gpio-widgets.png)
-
-### Control widgets
- 
-Useful for visualization of current state and sending RPC commands to target devices.
-
-![image](/images/user-guide/ui/control-widgets.png)
-
-### Maps widgets
- 
-Useful for visualization of devices geo locations and tracking devices routes both in real-time and history mode.
-
-![image](/images/user-guide/ui/maps-widgets.png)
-
-### Cards
- 
-Useful for visualization of timeseries data or attributes in a table or card widget.
-
-![image](/images/user-guide/ui/cards.png)
+{% include images-gallery.html imageCollection="wl" %}
 
 ### Alarm widgets
 
-Useful for visualization of alarms for specific entities both in real-time and history mode.
+Alarm widgets bundle is useful for visualization alarms for specific entities, both in real-time and history modes.
 
-![image](/images/user-guide/ui/alarm-widgets.png)
+{% include images-gallery.html imageCollection="wl-alarm-bundle" %}
+
+### Analog Gauges
+
+Analog Gauges bundle is useful for visualization temperature, humidity, speed, and other integer or float values.
+
+{% include images-gallery.html imageCollection="wl-analog-gauges-bundle" %}
+
+### Cards
+
+Cards bundle is useful for visualization time series data or attributes in table or card widgets.
+
+{% include images-gallery.html imageCollection="wl-cards-bundle" %}
+
+### Charts
+
+Charts bundle is useful for visualization historical or real-time data with a time window.
+
+{% include images-gallery.html imageCollection="wl-charts-bundle" %}
+
+### Control widgets
+
+Control widgets bundle is useful for visualization the current state and sending RPC commands to target devices.
+
+{% include images-gallery.html imageCollection="wl-control-bundle" %}
+
+### Date widgets 
+
+Date widgets bundle is useful for changing the data range for other widgets on the dashboard.
+
+{% include images-gallery.html imageCollection="wl-date-bundle" %}
+
+### Digital Gauges
+
+Digital Gauges bundle is useful for visualization temperature, humidity, speed and other integer or float values.
+
+{% include images-gallery.html imageCollection="wl-digital-bundle" %}
+
+### Entity admin widgets
+
+Entity admin widgets are templates of complex widgets that allow listing and creating/updating/deleting devices and assets.
+
+{% include images-gallery.html imageCollection="wl-entity-admin-bundle" %}
 
 ### Gateway widgets
 
-Useful for managing extensions.
+Gateway widgets bundle is useful for managing extensions.
 
-![image](/images/user-guide/ui/gateway-widgets.png)
+{% include images-gallery.html imageCollection="wl-gateway-bundle" %}
+
+### GPIO widgets
+
+GPIO widgets bundle is useful for visualization and controlling GPIO state for target devices.
+
+{% include images-gallery.html imageCollection="wl-gpio" %}
 
 ### Input widgets
 
-Useful for changing entity attributes.
+Input widgets bundle is useful for modifying the attributes of an entity.
 
-![image](/images/user-guide/ui/input-widgets.png)
+{% include images-gallery.html imageCollection="wl-input-bundle" %}
 
-## Widgets Bundles import/export
+### Maps widgets
+
+Map widgets bundle is useful for visualizing the geographic location of devices and tracking device routes in both real-time and history modes.
+
+{% include images-gallery.html imageCollection="wl-maps-bundle" %}
+
+### Navigation widgets
+
+Navigation widgets bundle is useful to define home dashboard of the user.
+
+{% include images-gallery.html imageCollection="wl-navigation-bundle" %}
+
+### Scheduling widgets
+
+[Scheduling](/docs/{{docsPrefix}}user-guide/scheduler/) widgets bundle is useful for scheduling various types of events with flexible schedule configuration.  
+**Available only in PE and PaaS.**
+
+{% include images-gallery.html imageCollection="wl-scheduling-bundle" %}
+
+## Adding widgets bundle
+
+If the system administrator adds a new widgets bundle, it automatically becomes a system one. It means that only he can delete, edit and add widget types into the bundle. 
+Tenant administrators can create widgets bundles as well. In this case, they have permissions to modify created bundles.
+You can always implement and add your widgets by following this [guide](/docs/{{docsPrefix}}user-guide/contribution/widgets-development/).
+
+To add a new widgets bundle, you should:
+
+{% include images-gallery.html imageCollection="wl-add" showListImageTitles="true" %}
+
+## Widgets Bundles export/import
 
 #### Widgets Bundle export
 
-You are able to export widgets bundle to JSON format and import it to the same or another ThingsBoard instance.
+You can export a widgets bundle in JSON format, and import it in the same or different ThingsBoard instance.
 
-In order to export widgets bundle, you should navigate to the **Widgets Library** page and click on the export button located on the particular widgets bundle row.
- 
-![image](/images/user-guide/ui/export-widgets-bundle.png)
+In order to export widgets bundle, you should:
+
+{% include images-gallery.html imageCollection="wl-export" showListImageTitles="true" %}
 
 #### Widgets Bundle import
 
-Similar, to import the widgets bundle you should navigate to the **Widgets Library** page and click on the "+" button in the top-right corner of the **Widgets Bundles** table and then choose "Import widgets bundle" option. 
+Importing a widgets bundle is very similar to exporting it. To import the widgets bundle, you should: 
 
-![image](/images/user-guide/ui/import-widgets-bundle.png)
+{% include images-gallery.html imageCollection="wl-import" showListImageTitles="true" %}
 
-The widgets bundle import window should a popup and you will be prompted to upload the json file.
+## Widget Types export/import
 
-![image](/images/user-guide/ui/import-widgets-bundle-window.png)
-
-## Widgets Types import/export
+You can export a specific type of widget from a widget bundle in JSON format, and import it in the same or different ThingsBoard instance.
 
 #### Widget Type export
 
-You are able to export particular widget type from widgets bundle to JSON format and import it to the same or another ThingsBoard instance.
+In order to export a widget type, you should: 
 
-In order to export widget type, you should navigate to the **Widgets Library** page, then open desired widgets bundle and finally click on the export button located on the particular widget type card.
- 
-![image](/images/user-guide/ui/export-widget-type.png)
+{% include images-gallery.html imageCollection="wl-export-widget" showListImageTitles="true" %}
 
 #### Widget Type import
 
-Similar, to import the widget type you should navigate to the **Widgets Library** page, then open your widgets bundle and click on the big "+" button in the bottom-right part of the screen and then click on the import button. 
+Please note that only system administrators can modify system (default) widget bundles. This means that only they can delete the system widget bundle, edit and delete widgets inside the bundle, 
+add or import new widgets into the bundle. By creating a new widget bundle at the system administrator level, it will be displayed in the accounts of his tenants as a system one, 
+and they will not be able to modify it.  
+Nevertheless, tenants can add their own widgets bundles. In this case, they have full rights to manage created widget types inside the bundle. 
 
-![image](/images/user-guide/ui/import-widget-type.png)
+To import a widget type, you should: 
 
-The widget type import window will show a popup and you will be prompted to upload the json file.
-
-![image](/images/user-guide/ui/import-widget-type-window.png)
+{% include images-gallery.html imageCollection="wl-import-widget" showListImageTitles="true" %}

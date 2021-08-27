@@ -1,53 +1,203 @@
-h5 {
+p, h1, h5 {
+	color: #212529;
+}
+
+body {
+	background-color: #F7F9FC;
+}
+
+.background {
+	position: relative;
+	z-index: -1;
+	top: -260px;
+	height: 100%;
+}
+
+.background img {
+	content: "";
+	background-image: url(/images/partners/hardware-map.svg);
+	background-size: contain;
+	display: block;
+	position: fixed;
+	right: calc(50% - 800px);
+	top: 540px;
+	width: 1600px;
+	height: 800px;
+}
+
+.background .fill {
+	position: absolute;
+	width: 100%;
+	height: 460px;
+	bottom: -260px;
+	/*transform: skewY(-6deg);*/
+	background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.6) 40%, rgba(255,255,255,0.4) 60%, rgba(255,255,255,0) 100%);
+}
+
+.filter {
+	background-color: rgba(255,255,255,0.90);
+	backdrop-filter: blur(7px);
+	width: 100%;
+	border-radius: 6px;
+	margin-top: 160px;
+	padding: 24px 32px;
+	color: #75767C;
 	font-size: 18px;
+}
+
+.nav-fixed {
+	position: fixed;
+	justify-content: center;
+	z-index: 2;
+	width: 100%;
+	left: 0;
+	display: flex;
+	top: -80px;
+	border-radius: unset;
+	border-bottom: solid 1px #ebebeb;
+	padding: 24px 30px;
+}
+
+.nav-fixed .filter-content {
+	max-width: 1200px;
+	width: 100%;
+	padding: 0 32px;
+}
+
+.filter .filter-content .filter-spacer {
+	position: fixed;
+	width: 0;
+	height: 0;
+}
+
+.filter .filter-content .actions {
+	display: flex;
+	white-space: nowrap;
+	overflow-x: auto;
+}
+
+.filter .filter-content .actions .check-box {
+	cursor: pointer;
+	margin: 8px 8px 0 0;
+	border-radius: 6px;
+	color: #212529;
+	border: solid 1px #EBEBEB;
+	padding: 7px 14px;
+	position: relative;
+}
+
+.filter .filter-content .actions .check-box:hover {
+	background-color: #2A7DEC;
+	color: #fff;
+	border: unset;
+}
+
+.filter .filter-content .actions .check-box:not(.checked, .main, :hover) {
+	padding: 6px 13px;
+}
+
+.filter .filter-content .actions .main {
+	background-color: #F1F2F3;
+	border: unset;
+}
+
+.filter .filter-content .actions .checked {
+	background-color: #2A7DEC;
+	color: #fff;
+	border: unset;
+	padding-left: 40px;
+}
+
+.filter .filter-content .actions .checked:after {
+	content: "";
+	background-image: url(/images/checked-box-icon.svg);
+	background-size: contain;
+	display: block;
+	position: absolute;
+	left: 14px;
+	top: 10px;
+	width: 18px;
+	height: 18px;
+	border: none;
+	transition: all 0.3s ease-out;
+}
+
+#hardwareContainer object{
+	position: absolute;
+	z-index: 1;
+	top: -40px;
+	width: 160px;
+	left: calc(50% - 800px);
+}
+
+.customer-spacer {
+	margin-top: 300px!important;
+}
+
+/*#hardwareContainer:after*/
+#users main h1 {
+	font-size: 36px;
+	font-weight: 500;
+	line-height: 54px;
+	margin: 10px 0 32px;
+	text-align: center;
+}
+
+#users main h5 {
+	text-align: center;
+	font-size: 20px;
 	line-height: 1.5em;
-	margin-bottom: 2em;
+	color: #899AAB;
+	font-weight: normal;
+	margin-bottom: 60px;
 }
 
-h3#hardware-partners:before, h3#integrators:before {
-    display: block;
-    content: " ";
-    margin-top: -80px;
-    height: 80px;
-    visibility: hidden;
+.button {
+	font-size: 18px;
+	padding: 12px 20px;
+	/*color: white;*/
+	/*text-decoration: none;*/
 }
 
-#usersGrid a {
-	display: inline-block;
-	background-color: #f9f9f9;
-}
-
-#hardwareContainer, #integratorContainer {
+#hardwareContainer {
 	position: relative;
 	width: 100%;
 	display: flex;
 	justify-content: space-between;
 	flex-wrap: wrap;
-}
-
-#hardwareContainer {
-	margin-bottom: 20px;
+	margin: 24px 0 100px;
 }
 
 .partner-box {
-    box-shadow: 0 1px 8px 0 rgba(0,0,0,0.2), 0 3px 4px 0 rgba(0,0,0,0.14), 0 3px 3px -2px rgba(0,0,0,0.12);
 	position: relative;
-	width: 47%;
-	max-width: 48%;
-	min-width: 48%;
-	margin-bottom: 20px;
-	padding: 20px;
+	z-index: 1;
+	max-width: calc(50% - 12px);
+	min-width: calc(50% - 12px);
+	margin-bottom: 24px;
+	padding: 32px 32px 28px;
 	flex: 1;
 	display: flex;
 	align-items: flex-start;
     flex-direction: column;
 }
 
+.box-background {
+	background-color: rgb(255, 255, 255);
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	position: absolute;
+	box-shadow: 0 0 30px 0 rgba(0,0,0,0.04), 0 50px 50px -20px rgba(0,0,0,0.15);
+	border-radius: 6px;
+	z-index: -1;
+}
+
 .partner-box img.logo {
     object-fit: scale-down;
-    height: 50px;
+    height: 32px;
     max-width: 80%;
-    margin-left: 30px;
+	margin-bottom: 48px;
 }
 
 .partner-box img.partner-program {
@@ -59,8 +209,6 @@ h3#hardware-partners:before, h3#integrators:before {
 }
 
 .partner-box > div {
-	margin-left: 30px;
-    margin-top: 20px;
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -69,24 +217,83 @@ h3#hardware-partners:before, h3#integrators:before {
 }
 
 .partner-box div.links a {
-	color: #3576E3;
+	color: #2A7DEC;
+	font-weight: 500;
+	font-size: 18px;
+	position: relative;
+	margin-right: 8px;
+	background-color: rgba(42,125,236, 0.1);
+	border-radius: 4px;
+	padding: 6px 10px;
+	margin-top: 8px;
+	line-height: inherit;
+	display: inline-block;
+}
+
+.partner-box div.links a:first-child {
+	background-color: unset;
+	border-radius: unset;
+	padding-right: 16px;
+	margin-right: 16px;
+}
+
+.partner-box div.links a:first-child:after {
+    content: "";
+    background-image: url(/images/link-arrow.svg);
+    background-size: contain;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 6px;
+    width: 8px;
+    height: 9px;
+    border: none;
 }
 
 .partner-box div.links a:hover {
     text-decoration: underline;
 }
 
-.partner-box p.title {
+.partner-box div .text p.title {
     font-weight: 500 !important;
-    font-size: 20px;
+    font-size: 24px;
 }
 
-.partner-box p.become-partner {
-    display: flex;
-    flex: 1;
-    align-items: center;
-    font-size: 18px;
+.partner-box div .text p.description {
+    font-size: 16px;
+	margin-bottom: 32px;
 }
+
+.partner-box div p.become-partner {
+	font-size: 28px;
+	font-weight: 500;
+	line-height: 1.5em;
+}
+
+section > main, footer > main {
+	width: 100%;
+}
+
+section {
+	background-color: unset;
+	padding: 50px 30px 20px;
+}
+
+@media screen and (min-width: 1500px) {
+	section > main, footer > main {
+		max-width: 1400px;
+	}
+
+	.nav-fixed .filter-content {
+		max-width: 1400px;
+	}
+
+}
+/*@media screen and (max-width: 1180px) {*/
+/*	.customer-spacer {*/
+/*		margin-top: 346px !important;*/
+/*	}*/
+/*}*/
 
 @media screen and (max-width: 1024px) {
 	.partner-box {
@@ -94,24 +301,61 @@ h3#hardware-partners:before, h3#integrators:before {
 		justify-content: flex-start;
 	}
 
-	.partner-box > div {
-		margin: 20px 0 0;
-	}
-
     .partner-box img.logo {
-        margin-left: 0px;
+        margin-left: 0;
         height: 30px;
         max-width: 50%;
     }
 
-    .partner-box img.partner-program {
-        height: 30px;
-    }
+	.nav-fixed {
+		top: -82px;
+	}
 }
 
-@media screen and (max-width: 568px) {
-	#hardwareContainer, #integratorContainer {
+@media screen and (max-width: 768px) {
+	#users {
+		padding: 30px 20px 0;
+	}
+
+	#users main h1 {
+		font-size: 32px;
+		line-height: 50px;
+	}
+
+	#users main h5 {
+		font-size: 16px;
+	}
+
+	.intro p .button {
+		font-size: 14px;
+	}
+
+	.filter {
+		padding: 24px;
+		margin-top: 60px;
+		background-color: rgba(255,255,255,1);
+	}
+
+	.filter .filter-content .filter-spacer {
+		height: 118px;
+	}
+
+		.customer-spacer {
+			margin-top: 200px !important;
+		}
+
+	.nav-fixed {
+		padding: 24px 20px;
+		top: 18px;
+	}
+
+	.nav-fixed .filter-content {
+		padding: 0 24px;
+	}
+
+	#hardwareContainer {
 		justify-content: center;
+		margin: 24px 0 60px;
 	}
 
 	.partner-box {
@@ -120,9 +364,19 @@ h3#hardware-partners:before, h3#integrators:before {
 		width: 100%;
 		max-width: 100%;
 		min-width: 100%;
+		padding: 24px;
 	}
 
-	.partner-box > div {
-		margin: 20px 0 0;
+	.partner-box > div > .links > a {
+		font-size: 14px;
+		margin-right: 6px;
+	}
+
+	.partner-box div div.text p.title {
+		font-size: 22px;
+	}
+
+	.partner-box div div.text p.description {
+		font-size: 14px;
 	}
 }

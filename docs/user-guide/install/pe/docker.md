@@ -20,6 +20,7 @@ If you are looking for a cluster installation instruction, please visit [cluster
 - [Install Docker CE](https://docs.docker.com/engine/installation/)
 - [Install Docker Compose](https://docs.docker.com/compose/install/)
 
+{% include templates/install/docker-install-note.md %}
 ## Step 1. Checkout all ThingsBoard PE Image
 
 Please checkout ThingsBoard PE Image from Docker Hub.
@@ -75,7 +76,7 @@ Where:
 - `PUT_YOUR_LICENSE_SECRET_HERE` - placeholder for your license secret obtained on the third step;    
 - `8080:8080`            - connect local port 8080 to exposed internal HTTP port 8080;
 - `1883:1883`            - connect local port 1883 to exposed internal MQTT port 1883;   
-- `5683:5683`            - connect local port 5683 to exposed internal COAP port 5683; 
+- `5683-5688:5683-5688/udp`            - connect local UDP ports 5683-5688 to exposed internal COAP and LwM2M ports; 
 - `~/.mytbpe-data:/data`   - mounts the host's dir `~/.mytbpe-data` to ThingsBoard data directory;
 - `~/.mytbpe-data/db:/var/lib/postgresql/data`   - mounts the host's dir `~/.mytbpe-data/db` to Postgres data directory;
 - `~/.mytbpe-logs:/var/log/thingsboard`   - mounts the host's dir `~/.mytbpe-logs` to ThingsBoard logs directory;
@@ -215,7 +216,7 @@ services:
     ports:
       - "8080:9090"
       - "1883:1883"
-      - "5683:5683/udp"
+      - "5683-5688:5683-5688/udp"
     environment:
       TB_QUEUE_TYPE: in-memory
       TB_LICENSE_SECRET: YOUR_SECRET_KEY

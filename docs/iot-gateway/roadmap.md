@@ -9,5 +9,3 @@ The Gateway project is currently in active development stage and you should expe
 
  - RPC calls to connectors though the gateway.
  - GPIO support.
- - FTP protocol support.
-

@@ -4,7 +4,7 @@ For installing RabbitMQ use this [instruction](https://www.rabbitmq.com/install-
 Create docker compose file for ThingsBoard queue service:
 
 ```text
-sudo nano docker-compose.yml
+nano docker-compose.yml
 ```
 {: .copy-code}
 
@@ -19,7 +19,7 @@ services:
     ports:
       - "8080:9090"
       - "1883:1883"
-      - "5683:5683/udp"
+      - "5683-5688:5683-5688/udp"
     environment:
       TB_QUEUE_TYPE: rabbitmq
       TB_QUEUE_RABBIT_MQ_USERNAME: YOUR_USERNAME

@@ -180,8 +180,8 @@ In this tutorial, you will create 8 nodes as it will be explained in the followi
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-request/get-related.png)
 
-###### Node D: **Change Orignator**
-- Add the **Change Orignator** node and connect it to the **Save TimeSeries** node with a relation type **Success**. <br>
+###### Node D: **Change Originator**
+- Add the **Change Originator** node and connect it to the **Save TimeSeries** node with a relation type **Success**. <br>
   This node will change the originator from Devices **Wind Direction Sensor** and **Rotating System** to the Related Asset **Wind Turbine** that has a relation of the type **Contains** from each of them. 
   <br/>As a result, the submitted message will be processed as a message from this Entity
 - Fill in the fields with the input data shown in the following table: 

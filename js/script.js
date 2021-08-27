@@ -57,7 +57,7 @@ function px(n){
 
 var tb = (function () {
 	var HEADER_HEIGHT;
-	var OPEN_NAV_HEIGHT = 240;
+	var OPEN_NAV_HEIGHT = 250;
 	var html, header, navs, navItems, quickstartButton, hero, encyclopedia, footer, headlineWrapper;
 
 	$(document).ready(function () {
@@ -109,6 +109,7 @@ var tb = (function () {
             }
 			case 'home':
 			case 'thingsboard-pe':
+			case 'edge':
             case 'pe-aws':
             case 'pricing':
             case 'partner-program':

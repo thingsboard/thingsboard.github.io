@@ -663,6 +663,18 @@ We will list only main configuration parameters below to avoid duplication of th
          <td>The parameter to specify TTL(Time To Live) value for Debug Events(DEBUG_CONVERTER, DEBUG_INTEGRATION, DEBUG_RULE_NODE, DEBUG_RULE_CHAIN) records. Value set in seconds. 0 - records are never expired. Default value corresponds to one week.</td>
       </tr>
       <tr>
+         <td>sql.ttl.rpc.enabled</td>
+         <td>SQL_TTL_RPC_ENABLED</td>
+         <td>true</td>
+         <td>Parameter to enable or disable TTL(Time To Live) for Persistent RPC.</td>
+      </tr>
+      <tr>
+         <td>sql.ttl.rpc.checking_interval</td>
+         <td>SQL_RPC_TTL_CHECKING_INTERVAL</td>
+         <td>7200000</td>
+         <td>Parameter to specify how often TTL(Time To Live) will be checked.</td>
+      </tr>
+      <tr>
            <td colspan="4"><span style="font-weight: bold; font-size: 24px;">PostgreSQL database parameters</span></td>
       </tr>  
       <tr>
@@ -4795,6 +4807,349 @@ We will list only main configuration parameters below to avoid duplication of th
   </tbody>
 </table>
 
+#### LwM2M Transport Settings
+
+<table>
+  <thead>
+      <tr>
+          <td><b>Property</b></td><td><b>Environment Variable</b></td><td><b>Default Value</b></td><td><b>Description</b></td>
+      </tr>
+  </thead>
+  <tbody>
+        <tr>
+            <td colspan="4"><span style="font-weight: bold; font-size: 24px;">Common</span></td>
+        </tr>
+        <tr>
+            <td>transport.lwm2m.enabled</td>
+            <td>LWM2M_ENABLED</td>
+            <td>true</td>
+            <td>Enable/disable lvm2m transport protocol.</td>
+        </tr> 
+        <tr>
+            <td>transport.lwm2m.timeout</td>
+            <td>LWM2M_TIMEOUT</td>
+            <td>120000</td>
+            <td>- We choose a default timeout a bit higher to the MAX_TRANSMIT_WAIT(62-93s) which is the time from starting to  send a Confirmable message to the time when an acknowledgement is no longer expected.<br>
+                - DEFAULT_TIMEOUT = 2 * 60 * 1000l; 2 min in ms
+            </td>
+        </tr>      
+        <tr>
+            <td>transport.sessions.inactivity_timeout</td>
+            <td>TB_TRANSPORT_SESSIONS_INACTIVITY_TIMEOUT</td>
+            <td>300000</td>
+            <td>Used  in initSessionTimeout.<br>
+                If (lastActivityTime of session < (currentTimeMillis - inactivity_timeout)) then the session is closed
+            </td>
+        </tr> 
+        <tr>
+            <td colspan="4"><span style="font-weight: bold; font-size: 24px;">Create and Set DTLS Config</span></td>
+        </tr>
+        <tr>
+            <td>transport.lwm2m.recommended_ciphers</td>
+            <td>LWM2M_RECOMMENDED_CIPHERS</td>
+            <td>false</td>
+            <td> Set usage of recommended cipher suites.<br> 
+                * Params DTLS Connector config:<br>
+                -- recommendedCipherSuitesOnly = true allow only recommended cipher suites,<br>
+                -- recommendedCipherSuitesOnly = false, also allow not recommended cipher suites. 
+            </td>
+        </tr>
+        <tr>
+            <td>transport.lwm2m.recommended_supported_groups</td>
+            <td>LWM2M_RECOMMENDED_SUPPORTED_GROUPS</td>
+            <td>true</td>
+            <td>Set usage of recommended supported groups (curves).<br>
+                * Params DTLS Connector config:<br>
+                -- recommendedSupportedGroupsOnly = true allow only recommended supported groups,<br>
+                -- recommendedSupportedGroupsOnly = false, also allow not recommended supported groups. Default value is true</td>
+        </tr>
+        <tr>
+            <td colspan="4"><span style="font-weight: bold; font-size: 24px;">Registered/request/update pool</span></td>
+        </tr>
+        <tr>
+            <td>transport.lwm2m.response_pool_size</td>
+            <td>LWM2M_RESPONSE_POOL_SIZE</td>
+            <td>100</td>
+            <td>Specify thread pool size for Transport Response from lwm2mClient</td>
+        </tr>
+        <tr>
+            <td>transport.lwm2m.registered_pool_size</td>
+            <td>LWM2M_REGISTERED_POOL_SIZE</td>
+            <td>10</td>
+            <td>Specify thread pool size for Transport Registered of lwm2mClient</td>
+        </tr>
+        <tr>
+            <td>transport.lwm2m.update_registered_pool_size</td>
+            <td>LWM2M_UPDATE_REGISTERED_POOL_SIZE</td>
+            <td>10</td>
+            <td>Specify thread pool size for Transport UpdateRegistered of lwm2mClient</td>
+        </tr>
+        <tr>
+            <td>transport.lwm2m.un_registered_pool_size</td>
+            <td>LWM2M_UN_REGISTERED_POOL_SIZE</td>
+            <td>10</td>
+            <td>Specify thread pool size for Transport UnRegistered of lwm2mClient</td>
+        </tr>
+        <tr>
+            <td colspan="4"><span style="font-weight: bold; font-size: 24px;">Keys by security</span></td>
+        </tr>
+        <tr>
+            <td>transport.lwm2m.secure.key_store_type</td>
+            <td>LWM2M_KEYSTORE_TYPE</td>
+            <td>JKS</td>
+            <td>Certificate_x509:<br>
+                * To get helps about files format and how to generate it, see: https://github.com/eclipse/leshan/wiki/Credential-files-format.<br>
+                * If need to create new X509 Certificates: common/transport/lwm2m/src/main/resources/credentials/shell/lwM2M_credentials.sh
+        </td>
+        </tr>
+        <tr>
+            <td>transport.lwm2m.secure.key_store_path_file</td>
+            <td>KEY_STORE_PATH_FILE</td>
+            <td></td>
+            <td>Default path:<br>
+                * For core:<br>
+                -- key_store_path_file = "/common/transport/lwm2m/src/main/resources/credentials/serverKeyStore.jks"<br>
+                * For docker:<br>
+                -- key_store_path_file = "/transport/lwm2m/src/main/data/credentials/serverKeyStore.jks"<br>
+            </td>
+        </tr>
+        <tr>
+            <td>transport.lwm2m.secure.key_store_password</td>
+            <td>LWM2M_KEYSTORE_PASSWORD_SERVER</td>
+            <td>server_ks_password</td>
+            <td>Key store password for file serverKeyStore.jks</td>
+        </tr>
+        <tr>
+            <td>transport.lwm2m.secure.root_alias</td>
+            <td>LWM2M_SERVER_ROOT_CA</td>
+            <td>rootca</td>
+            <td>Alias of the Trust Certificate</td>
+        </tr>
+        <tr>
+            <td>transport.lwm2m.secure.enable_gen_new_key_psk_rpk</td>
+            <td>ENABLE_GEN_NEW_KEY_PSK_RPK</td>
+            <td>false</td>
+            <td>Function for creating new keys for security mode: PSK and RPK.</td>
+        </tr>
+        <tr>
+            <td colspan="4"><span style="font-weight: bold; font-size: 24px;">Server LwM2M</span></td>
+        </tr>
+        <tr>
+            <td>transport.lwm2m.server.id</td>
+            <td>LWM2M_SERVER_ID</td>
+            <td>123</td>
+            <td>This is:<br>
+                * Default value  in Lwm2mClient after start in mode Bootstrap for the object: name "LWM2M Security" field: "Short Server ID" (deviceProfile: Bootstrap.LWM2M SERVER.Short ID)
+                * Default value for the object: name "LwM2M Server" field: "Short Server ID" (deviceProfile: Bootstrap.SERVERS.Short ID)
+            </td>
+        </tr>
+        <tr>
+            <td>transport.lwm2m.server.bind_address</td>
+            <td>LWM2M_BIND_ADDRESS</td>
+            <td>0.0.0.0</td>
+            <td>This is:<br>
+            * Hostname for unsecured LwM2M(CoAP) Server<br>
+            * Default Hostname in Lwm2mClient after start in mode Bootstrap for the object: name "LWM2M Security" field: "LWM2M Server URI" (deviceProfile: Bootstrap.LWM2M SERVER.Host)<br>
+            </td>
+        </tr>
+        <tr>
+            <td>transport.lwm2m.server.bind_port_no_sec</td>
+            <td>LWM2M_BIND_PORT_NO_SEC</td>
+            <td>5685</td>
+            <td>This is:<br>
+            * Port for unsecured LwM2M(CoAP) Server<br>
+            * Default Port for unsecured CoAP Server in Lwm2mClient after start in mode Bootstrap for the object: name "LWM2M Security" field: "LWM2M Server URI" (deviceProfile: Bootstrap.LWM2M SERVER.Port)<br>
+            </td>
+        </tr>
+        <tr>
+            <td>transport.lwm2m.server.secure.bind_address_security</td>
+            <td>LWM2M_BIND_ADDRESS_SECURITY</td>
+            <td>0.0.0.0</td>
+            <td>This is:<br>
+            * Hostname for secured LwM2M(CoAP) Server (Using DTLS)<br>
+            * Default Hostname for the object: name "LWM2M Security" field: "LWM2M Server URI" (deviceProfile: Bootstrap.LWM2M SERVER.Host)<br>
+            </td>
+        </tr>
+        <tr>
+            <td>transport.lwm2m.server.secure.bind_port_security</td>
+            <td>LWM2M_BIND_PORT_SECURITY</td>
+            <td>5686</td>
+            <td>This is:<br>
+            * Port for secured LwM2M(Coap) Server (Using DTLS)<br>
+            * Default Port for secured CoAP Server (Using DTLS) in Lwm2mClient after start in mode Bootstrap for the object: name "LWM2M Security" field: "LWM2M Server URI" (deviceProfile: Bootstrap.LWM2M SERVER.Port)<br>
+            </td>
+        </tr>
+        <tr>
+            <td>transport.lwm2m.server.secure.public_x</td>
+            <td>LWM2M_SERVER_PUBLIC_X</td>
+            <td>05064b9e6762dd8d8b8a523<br>
+                55d7b4d8b9a3d64e6d2ee27<br>
+                7d76c248861353f358
+            </td>
+            <td>For create of Public Key by LwM2M(Coap) Server (Using DTLS)<br>  
+                Only for security mode RPK: If the keystore file is missing or not working
+            </td>
+        </tr>
+        <tr>
+            <td>transport.lwm2m.server.secure.public_y</td>
+            <td>LWM2M_SERVER_PUBLIC_Y</td>
+            <td>5eeb1838e4f9e37b31fa347<br>
+                aef5ce3431eb54e0a250691<br>
+                0c5e0298817445721b
+            </td>
+            <td>For create of Public Key by LwM2M(Coap) Server (Using DTLS)<br>  
+                Only for security mode RPK: If the keystore file is missing or not working<br>
+                - Elliptic Curve parameters  : [secp256r1 [NIST P-256, X9.62 prime256v1] (1.2.840.10045.3.1.7)]
+            </td>
+        </tr>
+        <tr>
+            <td>transport.lwm2m.server.secure.private_encoded</td>
+            <td>LWM2M_SERVER_PRIVATE_ENCODED</td>
+            <td>308193020100301306072a8<br>
+                648ce3d020106082a8648ce<br>
+                3d030107047930770201010<br>
+                420dc774b309e547ceb48fe<br>
+                e547e104ce201a9c48c449d<br>
+                c5414cd04e7f5cf05f67ba0<br>
+                0a06082a8648ce3d030107a<br>
+                1440342000405064b9e6762<br>
+                dd8d8b8a52355d7b4d8b9a3<br>
+                d64e6d2ee277d76c2488613<br>
+                53f3585eeb1838e4f9e37b3<br>
+                1fa347aef5ce3431eb54e0a<br>
+                2506910c5e0298817445721b<br>
+            </td>
+            <td>For create of Private Key by LwM2M(Coap) Server (Using DTLS)<br>  
+                Only for security mode RPK: If the keystore file is missing or not working</td>
+        </tr>
+        <tr>
+            <td>transport.lwm2m.server.secure.alias</td>
+            <td>LWM2M_KEYSTORE_ALIAS_SERVER</td>
+            <td>server</td>
+            <td>Alias for certificate by LwM2M(Coap) Server (Using DTLS)<br> 
+                Only Only for security mode X509
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4"><span style="font-weight: bold; font-size: 24px;">Bootstrap Server</span></td>
+        </tr>
+        <tr>
+            <td>transport.lwm2m.bootstrap.enable</td>
+            <td>LWM2M_ENABLED_BS</td>
+            <td>true</td>
+            <td>Enable/disable Bootstrap  Server</td>
+        </tr>
+        <tr>
+            <td>transport.lwm2m.bootstrap.id</td>
+            <td>LWM2M_SERVER_ID_BS</td>
+            <td>111</td>
+            <td>This is:<br>
+                * Default value in Lwm2mClient after start in mode Bootstrap for the object : name "LWM2M Security" field: "Short Server ID" (deviceProfile: Bootstrap.BOOTSTRAP SERVER.Short ID)
+            </td>
+        </tr>
+        <tr>
+            <td>transport.lwm2m.bootstrap.bind_address</td>
+            <td>LWM2M_BIND_ADDRESS_BS</td>
+            <td>0.0.0.0</td>
+            <td>This is:<br>
+            * Hostname for unsecured LwM2M(CoAP) Bootstrap Server<br>
+            * Default Hostname in Lwm2mClient after start in mode Bootstrap for the object: name "LWM2M Security" field: "LWM2M Server URI" (deviceProfile: Bootstrap.BOOTSTRAP SERVER.Host)<br>
+            </td>
+        </tr>
+        <tr>
+            <td>transport.lwm2m.bootstrap.bind_port_no_sec</td>
+            <td>LWM2M_BIND_PORT_NO_SEC_BS</td>
+            <td>5687</td>
+            <td>This is:<br>
+            * Port for unsecured LwM2M(CoAP) Bootstrap Server<br>
+            * Default Port for unsecured CoAP Bootstrap Server in Lwm2mClient after start in mode Bootstrap for the object: name "LWM2M Security" field: "LWM2M Server URI" (deviceProfile: Bootstrap.BOOTSTRAP SERVER.Port)<br>
+            </td>
+        </tr>
+        <tr>
+            <td>transport.lwm2m.bootstrap.secure.bind_address_security</td>
+            <td>LWM2M_BIND_ADDRESS_BS</td>
+            <td>0.0.0.0</td>
+            <td>This is:<br>
+            * Hostname for secured LwM2M(CoAP) Bootstrap Server (Using DTLS)<br>
+            * Default Hostname in Lwm2mClient after start in mode Bootstrap for the object: name "LWM2M Security" field: "LWM2M Server URI" (deviceProfile: Bootstrap.BOOTSTRAP SERVER.Host)<br>
+            </td>
+        </tr>
+        <tr>
+            <td>transport.lwm2m.bootstrap.bind_port_security</td>
+            <td>LWM2M_BIND_PORT_SECURITY_BS</td>
+            <td>5688</td>
+            <td>This is:<br>
+            * Port for secured LwM2M(Coap) Bootstrap Server (Using DTLS)<br>
+            * Default Port for secured CoAP Bootstrap Server (Using DTLS) in Lwm2mClient after start in mode Bootstrap for the object: name "LWM2M Security" field: "LWM2M Server URI" (deviceProfile: Bootstrap.BOOTSTRAP SERVER.Port)<br>
+            </td>
+        </tr>
+        <tr>
+            <td>transport.lwm2m.bootstrap.public_x</td>
+            <td>LWM2M_SERVER_PUBLIC_X_BS</td>
+            <td>5017c87a1c1768264656b3b<br>
+                355434b0def6edb8b9bf166<br>
+                a4762d9930cd730f91
+            </td>
+            <td>For create of Public Key by LwM2M(Coap) Bootstrap Server (Using DTLS)<br>  
+                Only for security mode RPK: If the keystore file is missing or not working
+            </td>
+        </tr>
+        <tr>
+            <td>transport.lwm2m.bootstrap.public_y</td>
+            <td>LWM2M_SERVER_PUBLIC_Y_BS</td>
+            <td>3fc4e61bcd8901ec27c4241<br>
+                14c3e887ed372497f0c2cf8<br>
+                5839b8443e76988b34
+            </td>
+            <td>For create of Public Key by LwM2M(Coap) Bootstrap Server (Using DTLS)<br>  
+                Only for security mode RPK: If the keystore file is missing or not working<br>
+                - Elliptic Curve parameters  : [secp256r1 [NIST P-256, X9.62 prime256v1] (1.2.840.10045.3.1.7)]
+            </td>
+        </tr>
+        <tr>
+            <td>transport.lwm2m.bootstrap.private_encoded</td>
+            <td>LWM2M_SERVER_PRIVATE_ENCODED_BS</td>
+            <td>308193020100301306072a8<br>
+                648ce3d020106082a8648ce<br>
+                3d030107047930770201010<br>
+                4205ecafd90caa7be45c42e<br>
+                1f3f32571632b8409e6e624<br>
+                9d7124f4ba56fab3c8083a0<br>
+                0a06082a8648ce3d030107a<br>
+                144034200045017c87a1c17<br>
+                68264656b3b355434b0def6<br>
+                edb8b9bf166a4762d9930cd<br>
+                730f913fc4e61bcd8901ec2<br>
+                7c424114c3e887ed372497f<br>
+                0c2cf85839b8443e76988b34
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>transport.lwm2m.bootstrap.alias</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>transport.lwm2m.bootstrap.private_encoded</td>
+            <td>LWM2M_KEYSTORE_ALIAS_BS</td>
+            <td>bootstrap</td>
+            <td>Alias for certificate by LwM2M(Coap) Bootstrap Server (Using DTLS)<br> 
+                Only Only for security mode X509
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4"><span style="font-weight: bold; font-size: 24px;">Redis</span></td>
+        </tr>
+        <tr>
+            <td>transport.lwm2m.redis.enabled</td>
+            <td>LWM2M_REDIS_ENABLED</td>
+            <td>false</td>
+            <td>Enable/disable Redis for lvm2m transport</td>
+        </tr>
+  </tbody>
+</table>
 
 
 #### Logging

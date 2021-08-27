@@ -23,6 +23,7 @@ Please note that for the deployment of Rule Engine as a separate service, an add
 {% endcapture %}
 {% include templates/info-banner.md content=rule_engine_note %}
 
+{% include templates/install/docker-install-note.md %}
 ## Step 1. Checkout all ThingsBoard PE Images
 
 Please checkout all ThingsBoard PE Images from Docker Hub.
@@ -60,6 +61,8 @@ docker pull store/thingsboard/tb-pe-js-executor:{{ site.release.pe_full_ver }}
 docker pull store/thingsboard/tb-pe-http-transport:{{ site.release.pe_full_ver }}
 docker pull store/thingsboard/tb-pe-mqtt-transport:{{ site.release.pe_full_ver }}
 docker pull store/thingsboard/tb-pe-coap-transport:{{ site.release.pe_full_ver }}
+docker pull store/thingsboard/tb-pe-lwm2m-transport:{{ site.release.pe_full_ver }}
+docker pull store/thingsboard/tb-pe-snmp-transport:{{ site.release.pe_full_ver }}
 ```
 {: .copy-code}
 
@@ -67,6 +70,9 @@ docker pull store/thingsboard/tb-pe-coap-transport:{{ site.release.pe_full_ver }
 
 ```bash
 git clone https://github.com/thingsboard/thingsboard-pe-docker-compose.git tb-pe-docker-compose
+cd tb-pe-docker-compose
+# checkout latest release branch
+git checkout {{ site.release.branch }}
 ```
 {: .copy-code}
 
@@ -76,8 +82,9 @@ We assume you have already chosen your subscription plan or decided to purchase 
 If not, please navigate to [pricing](/pricing/) page to select the best license option for your case and get your license. 
 See [How-to get pay-as-you-go subscription](https://www.youtube.com/watch?v=dK-QDFGxWek){:target="_blank"} or [How-to get perpetual license](https://www.youtube.com/watch?v=GPe0lHolWek){:target="_blank"} for more details.
 
-**IMPORTANT NOTE:** Make sure you have purchased a license key for at least two instances of ThingsBoard PE. Otherwise you need to modify local copy of 
-[docker-compose.yml](https://github.com/thingsboard/thingsboard-pe-docker-compose/blob/master/docker-compose.yml) to use only one ThingsBoard instance. 
+**IMPORTANT NOTE:** if you decide to use an [advanced deployment type](/docs/user-guide/install/pe/cluster/docker-compose-setup/#step-6-configure-deployment-type), make sure you have purchased a license key for at least four instances of ThingsBoard PE. 
+Otherwise, you need to modify the local copy of [docker-compose.yml](https://github.com/thingsboard/thingsboard-pe-docker-compose/blob/master/advanced/docker-compose.yml)) 
+to use the number of ThingsBoard instances that you've purchased.
 We will reference the license key you have obtained during this step as PUT_YOUR_LICENSE_SECRET_HERE later in this guide.
 
 
@@ -245,6 +252,8 @@ Edit .env file set "TB_VERSION" to target version (f.e. currently you on 3.2.1 s
 Where:
 
 - `SERVICE...` - list of services to update (defined in docker-compose configurations). If not specified all services will be updated.
+
+{% include templates/install/generate_certificate_docker-compose.md %}
 
 ## Next steps
 

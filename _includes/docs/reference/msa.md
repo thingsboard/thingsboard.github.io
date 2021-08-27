@@ -18,7 +18,8 @@ The full list of components and corresponding documentation pages are listed bel
 * HTTP Transport microservice provides device APIs described [here](/docs/{{docsPrefix}}reference/http-api/); 
 * MQTT Transport microservice provides device APIs described [here](/docs/{{docsPrefix}}reference/mqtt-api/)
 and also enables gateway APIs described [here](/docs/{{docsPrefix}}reference/gateway-mqtt-api/);
-* CoAP Transport microservice provides device APIs described [here](/docs/{{docsPrefix}}reference/coap-api/).
+* CoAP Transport microservice provides device APIs described [here](/docs/{{docsPrefix}}reference/coap-api/);
+* LwM2M Transport microservice provides device APIs described [here](/docs/{{docsPrefix}}reference/lwm2m-api/).
 
 Each of the transport servers listed above communicates with the main ThingsBoard Node microservices using Kafka. 
 [Apache Kafka](https://kafka.apache.org) is a distributed, reliable and scalable persistent message queue and streaming platform.
@@ -390,7 +391,7 @@ services:
     restart: always
     image: "${DOCKER_REPO}/${COAP_TRANSPORT_DOCKER_NAME}:${TB_VERSION}"
     ports:
-      - "5683:5683/udp"
+      - "5683-5688:5683-5688/udp"
     environment:
       TB_HOST: tb-coap-transport
       CLUSTER_NODE_ID: tb-coap-transport
