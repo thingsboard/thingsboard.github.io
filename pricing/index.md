@@ -411,8 +411,9 @@ defaultActivateSelectProduct: true
                                     Try 30 days for free
                                 </button>
                             </div>
-                            <div class="pricing-square-item">Calculated Fields</div>
+                            <div class="pricing-square-item">Anomalies detection</div> 
                             <div class="pricing-square-item">Predictive Analytics</div>
+                            <div class="pricing-square-item">Calculated Fields</div>
                             <div class="pricing-square-item">Self-service Interface</div>
                             <div class="pricing-square-item">Advanced Visualizations</div>
                             <div class="pricing-square-item" data-faq-id="community-support">
@@ -444,8 +445,9 @@ defaultActivateSelectProduct: true
                                     Try 30 days for free
                                 </button>
                             </div>
-                            <div class="pricing-square-item">Calculated Fields</div>
+                            <div class="pricing-square-item">Anomalies detection</div> 
                             <div class="pricing-square-item">Predictive Analytics</div>
+                            <div class="pricing-square-item">Calculated Fields</div>
                             <div class="pricing-square-item">Self-service Interface</div>
                             <div class="pricing-square-item">Advanced Visualizations</div>
                             <div class="pricing-square-item" data-faq-id="subscription-support">
@@ -477,8 +479,9 @@ defaultActivateSelectProduct: true
                                     Try 30 days for free
                                 </button>
                             </div>
-                            <div class="pricing-square-item">Calculated Fields</div>
+                            <div class="pricing-square-item">Anomalies detection</div> 
                             <div class="pricing-square-item">Predictive Analytics</div>
+                            <div class="pricing-square-item">Calculated Fields</div>
                             <div class="pricing-square-item">Self-service Interface</div>
                             <div class="pricing-square-item">Advanced Visualizations</div>
                             <div class="pricing-square-item" data-faq-id="subscription-support">
@@ -502,6 +505,7 @@ defaultActivateSelectProduct: true
                                     insight from your data:</p>
                             </div>
                             <ul>
+                                <li class="pricing-square-item">Anomalies detection</li>
                                 <li class="pricing-square-item">One-click integration with ThingsBoard</li>
                                 <li class="pricing-square-item">Self-service analytics</li>
                                 <li class="pricing-square-item">Data clear and filtering</li>
