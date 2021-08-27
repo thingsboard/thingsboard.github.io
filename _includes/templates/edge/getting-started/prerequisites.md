@@ -14,13 +14,16 @@ To provision ThingsBoard **Edge** on {{currentThingsBoardVersion}} server please
 Once ThingsBoard **Edge** provisioned on {{currentThingsBoardVersion}} server please follow [Installation Guide](/docs/edge/install/installation-options/) - this guide will help you to install ThingsBoard **Edge** and connect it to {{currentThingsBoardVersion}} server.
 
 {% if currentThingsBoardVersion == "ThingsBoard Professional Edition" %}
-{% include templates/edge/on-premise-cloud.md %} 
+{% capture contenttogglespec %}
+Cloud<br/><small>Connect edge to https://thingsboard.cloud</small>%,%ce%,%templates/edge/pe-cloud.md%br%
+On-premise server<br/><small>Connect edge to on-premise instance</small>%,%pe%,%templates/edge/on-premise-cloud.md{% endcapture %}
+{% include content-toggle.html content-toggle-id="cloudType" toggle-spec=contenttogglespec %}
 {% endif %}
 {% if currentThingsBoardVersion == "ThingsBoard Community Edition" %}
 {% capture contenttogglespec %}
 Live Demo<br/><small>Connect edge to https://demo.thingsboard.io</small>%,%ce%,%templates/edge/ce-cloud.md%br%
 On-premise server<br/><small>Connect edge to on-premise instance</small>%,%pe%,%templates/edge/on-premise-cloud.md{% endcapture %}
-{% include content-toggle.html content-toggle-id="cloudType" toggle-spec=contenttogglespec %} 
+{% include content-toggle.html content-toggle-id="cloudType" toggle-spec=contenttogglespec %}
 {% endif %}
 
 {% include templates/edge/bind-port-changed-banner.md %} 
