@@ -1,4 +1,3 @@
-
 Once started, you will be able to open ThingsBoard **Edge** UI using the following link [http://localhost:8080](http://localhost:8080).
 
 {% include templates/edge/bind-port-changed-banner.md %}

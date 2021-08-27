@@ -1,3 +1,4 @@
-Please visit [Install PE](/docs/user-guide/install/pe/installation-options/) to install **3.3** version or higher of server that supports edge functionality.
+The easiest way is to use [**ThingsBoard Cloud**](https://thingsboard.cloud/signup) server.
 <br/>
-At the moment [**ThingsBoard Cloud**](https://thingsboard.cloud/signup) doesn't support edge functionality. This will be available in **October 2021**.
+The alternative option is to install ThingsBoard Professional Edition server that supports edge functionality on-premise.
+Please visit [Install PE](/docs/user-guide/install/pe/installation-options/) to install **3.3** version or higher of server that supports edge functionality.

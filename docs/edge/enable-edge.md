@@ -44,7 +44,7 @@ export EDGES_RPC_PORT=**NEW_EDGES_RPC_PORT**
 ```
 {: .copy-code}
 
-**NOTE**: This port must be accessible by edge to be able to communicate. Please update your firewall settings or docker configuration if required.
+{% include templates/edge/edge-service-port-warn.md %}
 
 {% include templates/edge/ssl-grpc-note.md %}
 
@@ -108,7 +108,7 @@ locate "EDGES_RPC_PORT" parameter. Replace "7070" with "**NEW_EDGES_RPC_PORT**".
     port: "${EDGES_RPC_PORT:NEW_EDGES_RPC_PORT}"
 ```
 
-**NOTE**: This port must be accessible by edge to be able to communicate. Please update your firewall settings or docker configuration if required.
+{% include templates/edge/edge-service-port-warn.md %}
 
 {% include templates/edge/ssl-grpc-note.md %}
 
