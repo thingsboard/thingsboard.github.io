@@ -23,6 +23,8 @@ toc:
       path: /docs/trendz/visualizations-card/
     - title: View Settings
       path: /docs/trendz/view-settings/
+- title: Anomaly detection
+  path: /docs/trendz/anomaly/anomaly-detection-overview/
 - title: Grouping and Aggregation
   path: /docs/trendz/data-grouping-aggregation/
 - title: Filtering
