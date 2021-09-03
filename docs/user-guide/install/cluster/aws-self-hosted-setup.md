@@ -18,7 +18,7 @@ You need to have admin access to ec2 resourse in your AWS account.
 
 ### Step 1. Create EC2 instance
 
-Create EC2 instance ([Amazon user guide](https://docs.aws.amazon.com/efs/latest/ug/gs-step-one-create-ec2-resources.html)) and choose Ubuntu Server 18.04 LTS. We recommend this distribution and OS version for our product.
+Create EC2 instance ([Amazon user guide](https://docs.aws.amazon.com/efs/latest/ug/gs-step-one-create-ec2-resources.html)) and choose Ubuntu Server 20.04 LTS. We recommend this distribution and OS version for our product.
 
 ### Step 2. Configure your security group for the instance.
 
