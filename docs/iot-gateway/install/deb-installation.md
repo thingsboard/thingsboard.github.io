@@ -6,7 +6,7 @@ title: Install ThingsBoard IoT Gateway as package.
 
 ### Prerequisites
 
-This guide describes how to install ThingsBoard IoT Gateway on Ubuntu Server 18.04 LTS. 
+This guide describes how to install ThingsBoard IoT Gateway on Ubuntu 18.04 LTS / Ubuntu 20.04 LTS.
 The minimum system requirements match official [minimum requirements](https://help.ubuntu.com/lts/serverguide/preparing-to-install.html#system-requirements) for the OS.
 
 ### Step 1. Download the deb file
