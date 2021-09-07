@@ -41,7 +41,7 @@ Server-side RPC can be divided into one-way and two-way:
 ## Device RPC API
 
 ThingsBoard provides a convenient API to send and receive RPC commands from applications running on the device.
-This API is specific for each supported network protocol.
+This API is specific for each supported network protoc+6666666666666666666ol.
 You can review API and examples on the corresponding reference page:
 
  - [MQTT RPC API reference](/docs/{{docsPrefix}}reference/mqtt-api/#rpc-api)
@@ -138,10 +138,15 @@ RPC states determine steps that happen when you send RPC request. There are five
 **TIMEOUT** - RPC was not delivered to the device;  
 **FAILED** - an error occurred either while sending RPC, or during one of the steps.
 
-#### Usage of Persistent RPC
+#### Adding RPC debug terminal
 
 To send the Persistent RPC through ThingsBoard, you need to add RPC Debug Terminal widget to your dashboard. 
-How to add RPC Debug Terminal and use this widget, you can read [here](/docs/{{docsPrefix}}reference/lwm2m-api/#rpc-commands).
+
+{% include images-gallery.html imageCollection="add-debug" showListImageTitles="true" %}
+
+#### Usage of Persistent RPC
+
+How to add RPC Debug Terminal and use this widget, you can read [here](/docs/{{docsPrefix}}user-guide/rpc/#persistent-rpc-states).
 Then, follow these steps to test the Persistent RPC:
 
 {% include images-gallery.html imageCollection="rpc-test" showListImageTitles="true" %}
