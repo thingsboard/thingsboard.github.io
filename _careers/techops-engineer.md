@@ -1,11 +1,11 @@
 ---
-position: IT Support engineer
-tag: Server-side
+position: TechOps Engineer
+tag: 
 location: Kyiv, Ukraine
-dateString: 28 March, 2021
+dateString: 
 layout: career
 ---
-##### We're looking for an IT Support Engineer (server-side) to join our team on the full-time basis in the Kyiv office.
+##### We're looking for an TechOps Engineer to join our team on the full-time basis in the Kyiv office.
 
 
 ##### ThingsBoard, Inc. is a US corporation founded in 2016 with RnD center in Kyiv, Ukraine. We are the main contributor and maintainer of ThingsBoard open-source IoT Platform. We deliver and constantly improve scalable, robust and affordable IoT Platform that dramatically reduces time-to-market for life-changing IoT solutions. We also help companies to deliver great IoT products based on ThingsBoard.
