@@ -185,6 +185,13 @@
                     troyan.attr('data-clipboard-target', "#" + currentId);
                     troyan.on('mouseleave', clearTooltip);
                     troyan.on('blur', clearTooltip);
+                    troyan.on('click', function(e) {
+                        var el = $(e.currentTarget);
+                        if (el.hasClass('showTool')) {
+                            clearTooltip(e);
+                            troyan.attr('data-skip-tooltip', "true");
+                        }
+                    });
                 });
             });
 
@@ -192,7 +199,12 @@
             clipboard.on('success', function (e) {
                 $('.clipboard-btn').removeClass('noChars');
                 e.clearSelection();
-                showTooltip(e.trigger, 'Copied!');
+                var trigger = e.trigger;
+                if (!$(trigger).attr('data-skip-tooltip')) {
+                    showTooltip(e.trigger, 'Copied!');
+                } else {
+                    $(trigger).removeAttr('data-skip-tooltip');
+                }
             });
 
             $('#search').focus(
