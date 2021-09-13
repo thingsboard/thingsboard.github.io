@@ -3,7 +3,7 @@ layout: docwithnav-pe
 assignees:
 - ashvayka 
 title: Entities Table Widget
-description: Advanced Settings of the Entities Table Widget
+description: Entities Table Widget
 
 add-widget:
     0:
@@ -77,7 +77,7 @@ entity-digits:
 enter-advanced-mode:
     0:
         image: /images/user-guide/ui/widgets/entitywidget/enter-edit-pe.png
-        title: 'Click the pencil icon ("Enter edit mode") in the lower right corner of the screen.'
+        title: 'Click theenter-advanced-mode: pencil icon ("Enter edit mode") in the lower right corner of the screen.'
     1:
         image: /images/user-guide/ui/widgets/entitywidget/enter-edit-1-pe.png
         title: 'Click the pencil icon (“Edit widget”) in the upper right corner of the Entity Table widget itself.'

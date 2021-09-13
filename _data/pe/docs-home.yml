@@ -199,8 +199,9 @@ toc:
     section:
       - title: Chart Widgets
         path: /docs/pe/user-guide/ui/chart-widget/
-      - title: Entity Table Widget
+      - title: Entities Table Widget
         path: /docs/pe/user-guide/ui/entity-table-widget/
+        new: true
       - title: Trip Animation Widget
         path: /docs/pe/user-guide/ui/trip-animation-widget/
       - title: Advanced data key configuration

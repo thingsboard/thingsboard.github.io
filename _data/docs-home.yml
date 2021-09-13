@@ -197,7 +197,7 @@ toc:
     - title: Chart widgets
       path: /docs/user-guide/ui/chart-widget/
       new: true
-    - title: Entity Table widget
+    - title: Entities Table widget
       path: /docs/user-guide/ui/entity-table-widget/
       new: true
     - title: Trip Animation widget
