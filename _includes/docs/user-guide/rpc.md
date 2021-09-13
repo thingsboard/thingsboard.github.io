@@ -41,7 +41,7 @@ Server-side RPC can be divided into one-way and two-way:
 ## Device RPC API
 
 ThingsBoard provides a convenient API to send and receive RPC commands from applications running on the device.
-This API is specific for each supported network protoc+6666666666666666666ol.
+This API is specific for each supported network protocol.
 You can review API and examples on the corresponding reference page:
 
  - [MQTT RPC API reference](/docs/{{docsPrefix}}reference/mqtt-api/#rpc-api)
@@ -94,14 +94,14 @@ However, if you send request using the Rule Chain, you need to add "persistent" 
 
 #### RPC Rule chain events 
 
-In the Rule chain, you are able to configure events that will be dispatched every time you send an RPC request: RPC queued, RPC delivered, RPC successful, RPC timeout, RPC failed.
+In the Rule chain, you are able to configure events that will be dispatched every time you send an RPC request: RPC queued, RPC sent, RPC delivered, RPC successful, RPC timeout, RPC expired, RPC failed and RPC deleted.
 Configured RPC events reflect [RPC states](/docs/{{docsPrefix}}user-guide/rpc/#rpc-states).
 
 {% include images-gallery.html imageCollection="rule-chain" %}
 
 #### Adding RPC debug terminal widget
 
-To send RPC request persistent through ThingsBoard, first, you need to add the RPC Debug Terminal widget to your dashboard. 
+To send persistent RPC request through ThingsBoard, first, you need to add the RPC Debug Terminal widget to your dashboard. 
 So let's add this widget and then test it:
 
 {% include images-gallery.html imageCollection="add-debug" showListImageTitles="true" %}
@@ -122,7 +122,7 @@ RPC states determine steps that happen when you send RPC request. There are five
 **DELIVERED** - RPC was delivered to the device (for two-way RPC);  
 **SUCCESSFUL** - if RPC is one-way, SUCCESSFUL means that RPC was delivered to the device. If RPC is two-way, SUCCESSFUL means that we've already received response from the device;  
 **TIMEOUT** - RPC was not delivered to the device;  
-**EXPIRED** - configured in the Debug Terminal widget time was expired, the response from the device wasn't received;
+**EXPIRED** - configured expiration time ran out, the response from the device wasn't received;
 **FAILED** - an error occurred either while sending RPC, or during one of the steps;
 **DELETED** - the request ID was deleted from the queue, and the database.
 
