@@ -161,6 +161,102 @@ deviceNoSec_create_save:
         image: /images/lwm2m/noSec_device_create_Step_3.png
         title: '- click <font color="blue">"Add"</font> button.'
 
+
+upload-models:
+    0:
+        image: /images/lwm2m/images/upload-pe.png
+        title: 'Login to your ThingsBoard instance and go to System settings -> Resource Library,
+        then click "+" button'
+    1:
+        image: /images/lwm2m/images/upload-1-pe.png
+        title: 'Upload Resource model files'
+    2:
+        image: /images/lwm2m/images/upload-2-pe.png
+        title: 'Make sure you can see new files in the list'
+
+
+upload-tenant:
+    0:
+        image: /images/lwm2m/images/upload-tenant-0-pe.png
+        title: 'Tenant can not delete files, uploaded by the System administrator'
+    1:
+        image: /images/lwm2m/images/upload-tenant-1-pe.png
+        title: 'Tenant can Upload and overwrite Resource model files, uploaded by the System administrator for the same resource'
+    2:
+        image: /images/lwm2m/images/upload-tenant-2-pe.png
+        title: 'Tenant can delete files, uploaded by himself'
+    3:
+        image: /images/lwm2m/images/upload-tenant-3-pe.png
+        title: 'Try to delete file'
+    4:
+        image: /images/lwm2m/images/upload-tenant-4-pe.png
+        title: 'When Tenant deletes his files, file uploaded by the System administrator remains'
+
+device-profile:
+    0:
+        image: /images/lwm2m/images/deviceprofile-pe.png
+        title: 'Go to Device Profiles, click "+", key-in the Profile name and select the Rule chain, which will process messages'
+    1:
+        image: /images/lwm2m/images/deviceprofile-1-pe.png
+        title: 'Tenant can Upload and overwrite Resource model files, uploaded by the System administrator for the same resource'
+    2:
+        image: /images/lwm2m/images/deviceprofile-2-pe.png
+        title: 'New Profile was successfully created'
+
+device-objects:
+    0:
+        image: /images/lwm2m/images/device-objects-pe.png
+        title: 'Go to Device Profiles, select "LWM2M", go to "Transport configuration" tab, click "Edit" button'
+    1:
+        image: /images/lwm2m/images/device-objects-1-pe.png
+        title: 'Add objects from the drop-down menu. Objects should be uploaded to the Resource library'
+
+data-fetch:
+    0:
+        image: /images/lwm2m/images/data-fetch-pe.png
+        title: 'Select the object and tick on resources that you would like to fetch'
+    1:
+        image: /images/lwm2m/images/data-fetch-1-pe.png
+        title: 'Tick Telemetry and\or Observe boxes, if you would like teh Server to observe them and fetch updated values'
+    2:
+        image: /images/lwm2m/images/data-fetch-3-pe.png
+        title: 'Save changes'
+
+device-credentials:
+    0:
+        image: /images/lwm2m/images/device-credentials-pe.png
+        title: 'Create a new device'
+    1:
+        image: /images/lwm2m/images/device-credentials-1-pe.png
+        title: 'Add device credentials: Pre-shared Key'
+    2:
+        image: /images/lwm2m/images/device-credentials-2-pe.png
+        title: 'Add device credentials: Raw Public Key'
+    3:
+        image: /images/lwm2m/images/device-credentials-3-pe.png
+        title: 'Add device credentials: X.509 certificate'
+
+nosecurity-credentials:
+    0:
+        image: /images/lwm2m/images/device-credentials-pe.png
+        title: 'With No-Security mode, Endpoint Client Name is used to identify the device'
+
+wakaama-terminal:
+    0:
+        image: /images/lwm2m/images/wakaama-terminal.png
+        title: 'Terminal window with Wakaama client'
+    1:
+        image: /images/lwm2m/images/wakaama-terminal-1-pe.png
+        title: 'You can see the last message in the Transport Log section'
+
+device-objects-ce:
+    0:
+        image: /images/lwm2m/images/key-name-pe.png
+        title: 'Open transport configuration settings'
+    1:
+        image: /images/lwm2m/images/key-name-1-pe.png
+        title: 'Open LwM2M model settings'
+
 ---
 
 {% assign docsPrefix = "pe/" %}
