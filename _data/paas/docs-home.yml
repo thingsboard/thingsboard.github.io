@@ -191,9 +191,9 @@ toc:
       path: /docs/paas/user-guide/ui/dashboards/
     - title: Widgets
       section:
-        - title: Trip Animation Widget
+        - title: Trip Animation widget
           path: /docs/paas/user-guide/ui/trip-animation-widget/
-        - title: Entities Table Widget
+        - title: Entities Table widget
           path: /docs/paas/user-guide/ui/entity-table-widget/
           new: true
         - title: Advanced data key configuration
