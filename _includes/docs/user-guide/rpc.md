@@ -85,37 +85,12 @@ You can use the following [guide](/docs/{{docsPrefix}}reference/rest-api/#rest-a
 ## Persistent RPC
 
 Since version 3.3, ThingsBoard provides the new feature **Persistent RPC**.
-Unlike basic RPC, Persistent RPC has an increased timeout and the ID request is stored in the database for configurable amount of time.
+Unlike basic RPC, Persistent RPC has an increased timeout and the request ID is stored in the database for configurable amount of time.
 In addition, every time you send the Persistent RPC, the response will contain RPC ID. 
 Whenever you need to find a specific RPC request and view its states and responses, you can do it using that ID through the database.
 
-#### Persistent RPC Configuration
-
-To configure parameters for sending a Persistent RPC request, first, you should edit the ThingsBoard configuration file:
-
-```
-sudo nano /etc/thingsboard/conf/thingsboard.conf
-```
-{: .copy-code}
-
-Then, add the following lines to the configuration file to add these parameters:
-
-```
-export SQL_TTL_RPC_ENABLED=true
-export SQL_RPC_TTL_CHECKING_INTERVAL=7200000
-```
-{: .copy-code}
-
-Where:
-
-1. **SQL_TTL_RPC_ENABLED** <br>parameter is for configuring whether Persistent RPC data will be deleted from the database in case it's outdated.
-
-2. **SQL_RPC_TTL_CHECKING_INTERVAL** <br>parameter is for configuring how often Persistent RPC will be checked whether it's outdated. By default, this parameter is set to two hours (in milliseconds).
-
-The system administrator can configure the default parameter for the tenants through the Tenant Profiles. This is **RPC TTL days configuration** parameter.
-Configuring this parameter will change the number of days when RPC will be deleted from the database. 
-
-{% include images-gallery.html imageCollection="tenant-profile-rpc" %}
+If you use [Debug Terminal widget](/docs/{{docsPrefix}}user-guide/rpc/#usage-of-persistent-rpc), you should check the box to enable "RPC Request Persistent" in the Advanced settings.
+However, if you send request using the Rule Chain, you need to add "persistent" : "true" to the metadata of RPC request.
 
 #### RPC Rule chain events 
 
@@ -139,14 +114,46 @@ Let's follow these steps to test the Persistent RPC:
 
 #### Persistent RPC States
 
-Once you send an RPC, you can observe what exactly happened with the request that you sent in the Rule node events tab.
+Once you send an RPC request, you can observe what exactly happened to it in the Rule node events tab.
 RPC states determine steps that happen when you send RPC request. There are five possible states that can occur when the request is sent:
 
-**QUEUED** - RPC was saved to the database;  
+**QUEUED** - RPC was saved to the database; 
+**SENT** - RPC was sent to the device;
 **DELIVERED** - RPC was delivered to the device (for two-way RPC);  
 **SUCCESSFUL** - if RPC is one-way, SUCCESSFUL means that RPC was delivered to the device. If RPC is two-way, SUCCESSFUL means that we've already received response from the device;  
 **TIMEOUT** - RPC was not delivered to the device;  
-**FAILED** - an error occurred either while sending RPC, or during one of the steps.
+**EXPIRED** - configured in the Debug Terminal widget time was expired, the response from the device wasn't received;
+**FAILED** - an error occurred either while sending RPC, or during one of the steps;
+**DELETED** - the request ID was deleted from the queue, and the database.
+
+#### Persistent RPC TTL
+
+In case, you wouldn't like to store the outdated RPC requests, you are able to configure their deletion.
+To do this, you should edit the ThingsBoard configuration file:
+
+```
+sudo nano /etc/thingsboard/conf/thingsboard.conf
+```
+{: .copy-code}
+
+And add the following parameters:
+
+```
+export SQL_TTL_RPC_ENABLED=true
+export SQL_RPC_TTL_CHECKING_INTERVAL=7200000
+```
+{: .copy-code}
+
+Where:
+
+1. **SQL_TTL_RPC_ENABLED** <br>parameter is for configuring whether Persistent RPC data will be deleted from the database in case it's outdated.
+
+2. **SQL_RPC_TTL_CHECKING_INTERVAL** <br>parameter is for configuring how often Persistent RPC will be checked whether it's outdated. By default, this parameter is set to two hours (in milliseconds).
+
+The system administrator can configure the default parameter for the tenants through the Tenant Profiles. This is **RPC TTL days configuration** parameter.
+Configuring this parameter will change the number of days when RPC will be deleted from the database.
+
+{% include images-gallery.html imageCollection="tenant-profile-rpc" %}
 
 #### Power-saving mode (PSM)
 
