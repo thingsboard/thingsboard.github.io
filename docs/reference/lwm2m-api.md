@@ -100,6 +100,14 @@ device-objects-ce:
         image: /images/lwm2m/images/key-name-1-ce.png
         title: 'Open LwM2M model settings'
 
+otafirmware-transport:
+    0:
+        image: /images/lwm2m/images/otafirmware-transport-ce.png
+        title: 'Open the device transport configuration settings'
+    1:
+        image: /images/lwm2m/images/otafirmware-transport-1-ce.png
+        title: 'Select the firmware update strategy'
+
 ---
 
 {% include docs/reference/lwm2m-api.md %}

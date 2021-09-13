@@ -257,6 +257,14 @@ device-objects-ce:
         image: /images/lwm2m/images/key-name-1-pe.png
         title: 'Open LwM2M model settings'
 
+otafirmware-transport:
+    0:
+        image: /images/lwm2m/images/otafirmware-transport-pe.png
+        title: 'Open the devices transport configuration settings'
+    1:
+        image: /images/lwm2m/images/otafirmware-transport-1-pe.png
+        title: 'Select the firmware update strategy'
+
 ---
 
 {% assign docsPrefix = "pe/" %}

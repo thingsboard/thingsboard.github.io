@@ -651,8 +651,7 @@ LwM2M protocol supports [OTA updates](/docs/{{docsPrefix}}user-guide/ota-updates
 There are several ways to run OTA firmware updates with LwM2M transport. You can choose the strategy in the device 
 profile, so it will be applied for all devices of the profile:
 
-TO DO: add screenshot Device Profile(LwM2M) -> Transport Configuration -> Other settings -> Firmware update dropdown.
-
+{% include images-gallery.html imageCollection="otafirmware-transport" %}
 
 LwM2M defines [Object 5: Firmware Update Object](http://www.openmobilealliance.org/release/LightweightM2M/V1_1_1-20190617-A/HTML-Version/OMA-TS-LightweightM2M_Core-V1_1_1-20190617-A.html#13-6-0-E6-LwM2M-Object-Firmware-Update)
 for the OTA purpose, which enables management of firmware image and includes resources for installing a firmware package,
@@ -688,6 +687,9 @@ TO DO: update this section after finalising the algorithm with Magenta.
 ## Software over-the-air updates
 
 LwM2M protocol supports [OTA updates](/docs/{{docsPrefix}}user-guide/ota-updates/) of the device software.
+
+Software update process is similar to the firmware update process. 
+Object 9: LWM2M Software Management is used to deliver software package and execute the update.
 
 ## Advanced topics
 
