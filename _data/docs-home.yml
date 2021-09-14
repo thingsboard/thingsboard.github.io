@@ -222,6 +222,14 @@ toc:
       path: /docs/user-guide/contribution/widgets-development/
     - title: Widgets development (ThingsBoard v2.x)
       path: /docs/user-guide/contribution/widgets-development-before-3.0/
+- title: How-Tos
+  section:
+    - title: Force Redirect from HTTP to HTTPS
+      path: /docs/user-guide/how-to/redirect-http-to-https/
+    - title: Set up logging for ThingsBoard installation
+      path: /docs/user-guide/how-to/tb-logging/
+    - title: UI performance issues
+      path: /docs/user-guide/how-to/ui-performance/
 - title: Troubleshooting
   path: /docs/user-guide/troubleshooting/
 - title: Release Notes
