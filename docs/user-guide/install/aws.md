@@ -16,7 +16,7 @@ description: ThingsBoard IoT platform  AWS cluster setup guide
                 <h1>ThingsBoard Setup options on AWS</h1>
                 <div class="install-options-description">
                     <p>
-                        You may deploy ThingsBoard IoT Platform using different tools and platforms
+                        You may deploy ThingsBoard IoT Platform with different infrastructure setup
                     </p>
                 </div>
             </div>            
@@ -27,32 +27,32 @@ description: ThingsBoard IoT platform  AWS cluster setup guide
                            <div class="deployment-cards">
                                 <div class="deployment-cards-container">
                                    <div class="deployment-card-block">
-                                       <a href="/docs/user-guide/install/cluster/aws-self-hosted-setup/">
+                                       <a href="/docs/user-guide/install/cluster/aws-monolith-setup/">
                                            <span>
                                                <div class="deployment-logo">
-                                                   <img width="" src="/images/install/cloud/amazon_ec2.svg" title="Self-hosted setup using AWS EC2 instance" alt="AWS EC2">
+                                                   <img width="" src="/images/install/cloud/eks.svg" title="Monolith setup with Kubernetes on AWS EKS" alt="AWS EKS Monolith">
                                                 </div>
                                            </span>
                                        </a>
                                    </div>
-                                    <div class="deployment-card-block">
-                                        <a href="/docs/user-guide/install/cluster/aws-eks-cluster-setup/">
-                                            <span>
-                                                <div class="deployment-logo">
-                                                    <img width="" src="/images/install/cloud/eks.svg" title="Cluster setup with Kubernetes on AWS EKS" alt="AWS EKS K8S cluster">
-                                                 </div>
-                                            </span>
-                                        </a>
-                                    </div>
-                                    <div class="deployment-card-block">
-                                        <a href="/docs/user-guide/install/cluster/aws-cluster-setup/">
-                                            <span>
-                                                <div class="deployment-logo">
-                                                    <img width="" src="/images/install/cloud/kubeone.png" title="Cluster setup with Kubernetes and KubeOne on AWS" alt="AWS K8S cluster">
-                                                 </div>
-                                            </span>
-                                        </a>
-                                    </div>
+                                   <div class="deployment-card-block">
+                                       <a href="/docs/user-guide/install/cluster/aws-microservices-setup/">
+                                           <span>
+                                               <div class="deployment-logo">
+                                                   <img width="" src="/images/install/cloud/eks.svg" title="Microservices setup with Kubernetes on AWS EKS" alt="AWS EKS Microservices">
+                                                </div>
+                                           </span>
+                                       </a>
+                                   </div>
+                                   <div class="deployment-card-block">
+                                       <a href="/docs/user-guide/install/cluster/aws-custom-microservices-setup/">
+                                           <span>
+                                               <div class="deployment-logo">
+                                                   <img width="" src="/images/install/cloud/eks.svg" title="Custom microservices setup with Kubernetes on AWS EKS" alt="AWS EKS Custom Microservices">
+                                                </div>
+                                           </span>
+                                       </a>
+                                   </div>
                               </div>                     
                             </div>                        
                         </div>
