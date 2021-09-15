@@ -57,9 +57,21 @@ eksctl delete cluster -r us-east-1 -n thingsboard-cluster -w
 
 You'll need to set up PostgreSQL on Amazon RDS. 
 One of the ways to do it is by following [this](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SettingUp.html) guide.
+
 **Note**: Make sure your database is accessible from the cluster, one of the way to achieve this is to create 
 the database in the same VPC and subnets as ThingsBoard cluster.
+
+Here you should choose VPC with the name of your cluster:
+
+![image](/images/install/cloud/aws-rds-connectivity-vpc.png)
+
+Here you should choose security groups corresponding to the ones on the screen:
+
+![image](/images/install/cloud/aws-rds-connectivity-security-group.png)
+
 **Note**: Make sure that `thingsboard` database is created along with PostgreSQL instance (or create it afterwards).
+
+![image](/images/install/cloud/aws-rds-default-database.png)
 
 On AWS Console get the `Endpoint` of the RDS PostgreSQL and paste it to `SPRING_DATASOURCE_URL` in the `tb-node-db-configmap.yml` instead of `your_url`.
 
