@@ -34,26 +34,30 @@ Set `CLUSTER_NAME` to desired name of your ThingsBoard cluster.
 
 In the `cluster.yml` file you can find suggested cluster configuration. 
 Here are the fields you can change depending on your needs:
-- `region` - should be the AWS region where you want your cluster to be located
-- `availabilityZones` - should specify the exact IDs of the region's availability zones
-- `instanceType` - the type of the instance with TB node
+- `region` - should be the AWS region where you want your cluster to be located (the default value is `us-east-1`)
+- `availabilityZones` - should specify the exact IDs of the region's availability zones 
+(the default value is `[us-east-1a,us-east-1b,us-east-1c]`)
+- `instanceType` - the type of the instance with TB node (the default value is `m5.xlarge`)
+
+**Note**: if you don't make any changes to `instanceType` and `desiredCapacity` fields, the EKS will deploy **1** node of type **m5.xlarge**.
+
+**Advanced**: in case you want to secure access to the PostgreSQL, you'll need to configure the existing VPC or create a new one, 
+set it as the VPC for the ThingsBoard cluster, create security group for PostgreSQL, 
+set them for `node` node-group in the ThingsBoard cluster and configure the access from the ThingsBoard cluster nodes to PostgreSQL using another security group.
+
+You can find more information about configuring VPC for `eksctl` [here](https://eksctl.io/usage/vpc-networking/).
 
 Command to create AWS cluster:
 ```
 eksctl create cluster -f cluster.yml
 ```
 
-After the cluster is ready you need to call this command to create `aws-load-balancer-controller`:
-```
-./aws-configure-cluster.sh
-```
+## Step 4. Create AWS load-balancer controller
 
-**Note:** You can delete AWS cluster with command:
-```
-eksctl delete cluster -r us-east-1 -n thingsboard-cluster -w
-```
+After the cluster is ready you need'll need to create AWS load-balancer controller.
+You can do it by following [this](https://docs.aws.amazon.com/eks/latest/userguide/aws-load-balancer-controller.html) guide.
 
-## Step 4. Amazon PostgreSQL DB Configuration
+## Step 5. Amazon PostgreSQL DB Configuration
 
 You'll need to set up PostgreSQL on Amazon RDS. 
 One of the ways to do it is by following [this](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SettingUp.html) guide.
@@ -65,19 +69,23 @@ Here you should choose VPC with the name of your cluster:
 
 ![image](/images/install/cloud/aws-rds-connectivity-vpc.png)
 
-Here you should choose security groups corresponding to the ones on the screen:
+Here you should choose security group corresponding to the one on the screen:
 
 ![image](/images/install/cloud/aws-rds-connectivity-security-group.png)
 
-**Note**: Make sure that `thingsboard` database is created along with PostgreSQL instance (or create it afterwards).
+**Note**: in order to make PostgreSQL more secure you may create the separate security group, 
+configure access only to the 5432 port and from the ThingsBoard nodes.
+This can be achieved if you assigned security group to the `node` node-group in the `cluster.yml` file. 
+
+Make sure that `thingsboard` database is created along with PostgreSQL instance (or create it afterwards).
 
 ![image](/images/install/cloud/aws-rds-default-database.png)
 
 On AWS Console get the `Endpoint` of the RDS PostgreSQL and paste it to `SPRING_DATASOURCE_URL` in the `tb-node-db-configmap.yml` instead of `your_url`.
 
-**Note:** You should also change `username` and `password` fields.
+**Note:** You may also change `username` and `password` fields.
 
-## Step 5. Installation
+## Step 6. Installation
 
 Execute the following command to run installation:
 ```
@@ -88,7 +96,15 @@ Where:
 
 - `--loadDemo` - optional argument. Whether to load additional demo data.
 
-## Step 6. Starting
+After this command finish you should see the next line in the console:
+
+```
+Installation finished successfully!
+```
+
+Otherwise, please check if you set the PostgreSQL URL in the `tb-node-db-configmap.yml` correctly.
+
+## Step 7. Starting
 
 Execute the following command to deploy resources:
 
@@ -96,7 +112,10 @@ Execute the following command to deploy resources:
  ./k8s-deploy-resources.sh
 ```
 
-## Step 7. Using
+After few minutes you may call `kubectl get pods`. If everything went fine, you should be able to 
+see `tb-node-0` pod in the `READY` state. 
+
+## Step 8. Using
 
 Now you can open ThingsBoard web interface in your browser using DNS name of the load balancer.
 
@@ -105,6 +124,10 @@ You can see DNS name of the load-balancers using command:
 ```
 kubectl get service
 ```
+
+You should see the similar picture:
+
+![image](/images/install/cloud/aws-monolith-loadbalancers.png)
 
 There are two load-balancers:
 - tb-loadbalancer-external - for MQTT and HTTP protocols
@@ -143,6 +166,11 @@ Execute the following command to delete  **tb-node**, **load-balancers** and **c
 
 ```
 ./k8s-delete-all.sh
+```
+
+Execute the following command to delete EKS cluster (you should change the name of the cluster and zone):
+```
+eksctl delete cluster -r us-east-1 -n thingsboard-cluster -w
 ```
 
 ## Upgrading
