@@ -80,9 +80,24 @@ On AWS Console get the `Endpoint` of the RDS PostgreSQL and paste it to `SPRING_
 ## Step 5. Amazon MSK Configuration
 
 You'll need to set up Amazon MSK. 
-You can do it by following [this](https://docs.aws.amazon.com/msk/latest/developerguide/getting-started.html) guide.
-**Note**: Make sure the configured security group allows access to the Kafka brokers from your ThingsBoard cluster. 
-You can do it by setting Security Group ID of the ThingsBoard cluster in the inbound rules of Security Group of the Kafka cluster.
+To do so you need to open AWS console, MSK submenu, press `Create cluster` button and choose `Custom create` mode. 
+You should see the similar image:
+
+![image](/images/install/cloud/aws-msk-creation.png)
+
+Now you should choose the ThingsBoard cluster's VPC for the Kafka cluster:
+
+![image](/images/install/cloud/aws-msk-vpc.png)
+
+You can choose any zones and subnets.
+
+After that you need to select `Custom settings` of security groups and choose groups corresponding to the group on the screen:
+
+![image](/images/install/cloud/aws-msk-security-groups.png)
+
+Also you should enable `Plaintext` communication between clients and brokers:
+
+![image](/images/install/cloud/aws-msk-encryption.png)
 
 ## Step 6. Amazon ElactiCache (Redis) Configuration
 
