@@ -112,11 +112,18 @@ This can be achieved if you assigned security group to the `node` node-group in 
 
 ## Step 7. Amazon ElactiCache (Redis) Configuration
 
-You'll need to set up Amazon ElastiCache (Redis).
+You'll need to set up [Amazon ElastiCache (Redis)](https://aws.amazon.com/elasticache/redis/).
 
-**Note:** Make sure the configured security group allows access to the Redis cluster from your ThingsBoard cluster. 
+When creating Redis cluster you should choose `Create new` for `Subnet group` menu:
 
-For more detailed info please follow [this](https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/GettingStarted.AuthorizeAccess.html) guide.
+![image](/images/install/cloud/aws-redis-vpc.png)
+
+Then you should choose your ThingsBoard cluster's VPC (you can see the ID of your VPC under the [VPC](https://console.aws.amazon.com/vpc/home) section of AWS console) 
+and any of the subnets.
+
+Afterwards, edit the `Security groups` field of the creating form and choose the corresponding security group from your ThingsBoard cluster as on the next screen:
+
+![image](/images/install/cloud/aws-redis-security-group.png)
 
 ## Step 8. Configure links to the Kafka (Amazon MSK)/Redis/Postgres
 
