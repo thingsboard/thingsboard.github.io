@@ -13,3 +13,5 @@ toc:
   path: /docs/edge/install/docker-windows/
 - title: Docker (Linux or Mac OS)
   path: /docs/edge/install/docker/
+- title: Configuration
+  path: /docs/edge/install/config/
