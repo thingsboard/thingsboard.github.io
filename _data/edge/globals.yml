@@ -3,6 +3,7 @@ tocs:
 - getting-started
 - installation
 - reference
+- api
 - faq
 docs-header:
 - toc: getting-started
@@ -13,5 +14,7 @@ docs-header:
   title: Installation
 - toc: reference
   title: Architecture
+- toc: api
+  title: API
 - toc: faq
   title: FAQ
