@@ -22,6 +22,19 @@ You can find more information on the dedicated page.
 We recommend to [install](/docs/edge/install/installation-options/) ThingsBoard Edge locally on your laptop or PC using Docker
 and follow the [getting started guide](/docs/edge/getting-started/).
 
+## Can multiple tenants or customers access single ThingsBoard Edge on remote location?
+
+ThingsBoard Edge is **single** Tenant and **single** Customer entity.
+You cannot share ThingsBoard Edge between multiple tenants or customers. 
+In this case you'll need to provision multiple ThingsBoard Edge instances for every tenant (customer).
+But you can use a single ThingsBoard Edge instance for one tenant and one customer from the same tenant.  
+
+## Can I connect devices from multiple tenants to a single ThingsBoard Edge?
+
+ThingsBoard Edge is **single** Tenant.
+You cannot connect devices from multiple tenants to a single ThingsBoard Edge entity. 
+In this case you'll need to provision multiple ThingsBoard Edge instances for every tenant.
+
 ## Why do I need to get a license to connect ThingsBoard Edge to ThingsBoard Community Edition? 
 
 ThingsBoard Edge distributed by license model, despite the ThingsBoard cloud that being used as a server. You'll need to obtain a license key for ThingBoard Edge in case you are connecting ThingsBoard Edge to [**ThingsBoard Cloud**](https://thingsboard.cloud/signup), [**ThingsBoard Live Demo**](https://demo.thingsboard.io/signup), *ThingsBoard Professional Edition* or *ThingsBoard Community Edition*. 
