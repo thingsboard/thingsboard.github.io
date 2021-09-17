@@ -12,7 +12,7 @@ description: ThingsBoard Edge FAQ
 ## What is ThingsBoard Edge?
 
 ThingsBoard Edge is a ThingsBoard's software product for edge computing. 
-It allows bringing data analysis and management to the edge, while seamlessly synchronizing with ThingsBoard CE/PE server (cloud).
+It allows bringing data analysis and management to the edge, where the data created. At the same time ThingsBoard Edge seamlessly synchronizing with the ThingsBoard cloud (ThingsBoard Cloud, ThingsBoard Demo, ThingsBoard PE or ThingsBoard CE) according to your business needs.
 If this is your first experience with the edge we recommend to review [what-is-edge](/docs/edge/what-is-edge/) 
 and [getting started guide](/docs/edge/getting-started/).
 You can find more information on the dedicated page.
@@ -45,7 +45,7 @@ For evaluation purposes we had provided a [30 days trial period](http://localhos
 
 With ThingsBoard Edge, you can connect your on-site devices to ThingsBoard Edge, that is installed on-site as well, instead of direct connection to ThingsBoard cloud and get next benefits:
 - **Local deployment and storage**<br>
-*Process and store data from edge (local) devices without active connection to the cloud. Push updates to the cloud once connection restored.*
+*Process and store data from edge (local) devices without connection to the cloud. Push updates to the cloud once connection restored.*
 - **Traffic filtering**<br>
 *Filter data from edge (local) devices on the ThingsBoard Edge service and push to cloud only subset of the data for further processing or storage.*
 - **Local alarms**<br>

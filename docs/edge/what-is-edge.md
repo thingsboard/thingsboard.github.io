@@ -5,7 +5,7 @@ description: ThingsBoard Edge features, FAQ
 ---
 
 The **ThingsBoard Edge** is a ThingsBoard's software product for edge computing. 
-It allows bringing data analysis and management to the edge, while seamlessly synchronizing with ThingsBoard CE/PE server (cloud).
+It allows bringing data analysis and management to the edge, where the data created. At the same time ThingsBoard Edge seamlessly synchronizing with the ThingsBoard cloud (ThingsBoard Cloud, ThingsBoard Demo, ThingsBoard PE or ThingsBoard CE) according to your business needs.
 
 ThingsBoard Edge is **single** Tenant and **single** Customer entity.
 You cannot share ThingsBoard Edge between multiple tenants or customers or you cannot connect devices from multiple tenants to a single ThingsBoard Edge entity. 
@@ -17,19 +17,40 @@ ThingsBoard is an open-source IoT platform for data collection, processing, visu
 
 ![image](/images/edge/overview/edge_overview.svg)
 
-#### ThingsBoard Edge features                                                       
-                                                                
+#### ThingsBoard Edge use-cases
+
+- **Autonomous Vehicles**
+Edge computing makes it possible to collect, process and react to road events with almost no latency. Modern autonomous vehicles produces tons of data - between 5 TB and 20 TB a day. 4G or 5G will not able to provide that network throughput, but with ThingsBoard Edge you are able to filter data. Most of this data should be processed locally, and only subset of this data will be pushed to the cloud.
+
+- **Smart Farming**
+Quickly react to failures of silo aeration systems on a remote site even if connectivity to the cloud from on-field location is pure at the moment.
+
+- **Smart Houses**
+Bringing the processing and analyzing data closer to the smart house provides the possibility to secure sensitive user information at the edge. Additionally, it provides a good user experience because of the low latency of smart house solutions - user will get responses from end devices much faster, comparing to connecting edge devices to the cloud to make some decisions. 
+
+- **Security Solutions**
+It's necessary to react to security violations and threats within seconds and edge provides this possibility. You don't need to care about quality of your connectivity to cloud - decision will be made by local edge engine on a remote site in real-time. 
+
+- **In-hospital Monitoring**
+To secure data privacy in healthcare devices processing of this data must be done on the edge. Push to the cloud only required pieces of readings from medical devices, while storing all other sensitive data on the edge. 
+Additional benefit from edge processing in this use-case - react to critical medical cases as quickly as possible due to real time processing of data from edge medical devices. 
+
+- **Predictive Maintenance**
+Brings processing and storage of edge device readings closer to the equipment. Analyze tons of data locally and detect changes in the production lines before a failure occurs. Send to the cloud only average readings from productions lines according to your business needs.
+
+#### ThingsBoard Edge features
+
 With **ThingsBoard Edge** you get the following benefits:
 
- - **Local deployment and storage** to operate with and store data from local devices without internet connection. Push updates to the cloud once connection restored.
+ - **Local deployment and storage** to process and store data from edge (local) devices without connection to the cloud. Push updates to the cloud once connection restored.
  
  ![image](/images/edge/overview/offline_network_.svg)
 
- - **Traffic filtering** to filter data from devices on the ThingsBoard Edge service and push to cloud only subset of the data.
+ - **Traffic filtering** to filter data from edge (local) devices on the ThingsBoard Edge service and push to cloud only subset of the data for further processing or storage.
  
   ![image](/images/edge/overview/data_filtering.svg)
  
- - **Local alarms** to react instantly to critical situations on site if there is no connection with the cloud.
+ - **Local alarms** to react instantly to critical situations on site without connectivity to cloud.
  
   ![image](/images/edge/overview/alarm.svg)
 
@@ -38,7 +59,7 @@ With **ThingsBoard Edge** you get the following benefits:
  
  ![image](/images/edge/overview/update_dashboard.svg)
  
- - **Local storage** to store data from the devices on the edge if there is no internet connection and push to the cloud updates once connection restored.
+ - **Local storage** to store data from the edge devices on the edge if there is no active connection to cloud and push to the cloud updates once connection restored.
 
 ThingsBoard Edge inherits features from ThingsBoard CE/PE to provide you the same experience how to connect, manage and process data from your devices.  
 

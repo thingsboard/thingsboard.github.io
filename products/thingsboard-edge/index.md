@@ -7,7 +7,7 @@ description:
 <section id="intro">
 	<main>
 		<h1 class="intro_title">The <a href="/docs/edge/what-is-edge/">ThingsBoard Edge</a> is a ThingsBoard's software product for edge computing</h1>
-        <p class="labeling">It allows bringing data analysis and management to the edge, where the data is created. At the same time ThingsBoard Edge seamlessly synchronizing with the ThingsBoard cloud (ThingsBoard Cloud, ThingsBoard Demo, ThingsBoard PE or ThingsBoard CE) according to your business needs.</p>
+        <p class="labeling">It allows bringing data analysis and management to the edge, where the data created. At the same time ThingsBoard Edge seamlessly synchronizing with the ThingsBoard cloud (ThingsBoard Cloud, ThingsBoard Demo, ThingsBoard PE or ThingsBoard CE) according to your business needs.</p>
 	</main>
 </section>
 
@@ -18,7 +18,7 @@ description:
         </div>
         <div class="block">
             <div class="feature-des"><h2>Local deployment and storage</h2>
-                <p>Process and store data from edge (local) devices without active connection to the cloud. Push updates to the cloud once connection restored.</p>
+                <p>Process and store data from edge (local) devices without connection to the cloud. Push updates to the cloud once connection restored.</p>
                 <a class="read-more-button" href="/docs/edge/what-is-edge/">Read more<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
             </div>
             <div class="block-img">
