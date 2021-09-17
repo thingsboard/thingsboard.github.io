@@ -40,11 +40,14 @@ Here are the fields you can change depending on your needs:
 
 **Note**: if you don't make any changes to `instanceType` and `desiredCapacity` fields, the EKS will deploy **3** nodes of type **t3.xlarge**.
 
-**Advanced**: in case you want to secure access to the PostgreSQL and MSK, you'll need to configure the existing VPC or create a new one, 
-set it as the VPC for the ThingsBoard cluster, create security groups for PostgreSQL and MSK, 
+{% capture aws-eks-security %}
+In case you want to secure access to the PostgreSQL and MSK, you'll need to configure the existing VPC or create a new one,
+set it as the VPC for the ThingsBoard cluster, create security groups for PostgreSQL and MSK,
 set them for `node` node-group in the ThingsBoard cluster and configure the access from the ThingsBoard cluster nodes to PostgreSQL/MSK using another security group.
 
 You can find more information about configuring VPC for `eksctl` [here](https://eksctl.io/usage/vpc-networking/).
+{% endcapture %}
+{% include templates/info-banner.md content=aws-eks-security %}
 
 Command to create AWS cluster:
 ```
@@ -53,7 +56,7 @@ eksctl create cluster -f cluster.yml
 
 ## Step 4. Create AWS load-balancer controller
 
-After the cluster is ready you need'll need to create AWS load-balancer controller.
+After the cluster is ready you'll need to create AWS load-balancer controller.
 You can do it by following [this](https://docs.aws.amazon.com/eks/latest/userguide/aws-load-balancer-controller.html) guide.
 
 ## Step 5. Amazon PostgreSQL DB Configuration
@@ -79,8 +82,6 @@ This can be achieved if you assigned security group to the `node` node-group in 
 Make sure that `thingsboard` database is created along with PostgreSQL instance (or create it afterwards).
 
 ![image](/images/install/cloud/aws-rds-default-database.png)
-
-On AWS Console get the `Endpoint` of the RDS PostgreSQL and paste it to `SPRING_DATASOURCE_URL` in the `tb-node-db-configmap.yml` instead of `your_url`.
 
 **Note:** You may also change `username` and `password` fields.
 
@@ -127,13 +128,23 @@ Afterwards, edit the `Security groups` field of the creating form and choose the
 
 ## Step 8. Configure links to the Kafka (Amazon MSK)/Redis/Postgres
 
+### Amazon RDS PostgreSQL
+
+On AWS Console get the `Endpoint` of the RDS PostgreSQL and paste it to `SPRING_DATASOURCE_URL` in the `tb-node-db-configmap.yml` instead of `your_url`.
+
+![image](/images/install/cloud/aws-postgres-endpoint.png)
+
+Also, you'll need to set `SPRING_DATASOURCE_USERNAME` and `SPRING_DATASOURCE_PASSWORD` with PostgreSQL `username` and `password` corresponding.
+
 ### Amazon MSK
 
 To get the list of brokers call the command:
 ```
 aws kafka get-bootstrap-brokers --region us-east-1 --cluster-arn $CLUSTER_ARN
 ```
-Where $CLUSTER_ARN is the Amazon Resource Name (ARN) of the MSK cluster.
+Where $CLUSTER_ARN is the Amazon Resource Name (ARN) of the MSK cluster:
+
+![image](/images/install/cloud/aws-msk-arn.png)
 
 You'll need to paste data from the `BootstrapBrokerString` to the `TB_KAFKA_SERVERS` environment variable in the `tb-kafka-configmap.yml` file.
 
@@ -141,11 +152,9 @@ You'll need to paste data from the `BootstrapBrokerString` to the `TB_KAFKA_SERV
 
 [Here](https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/GettingStarted.ConnectToCacheNode.html) you can find information on how to get Redis endpoints.
 
-You'll need to paste data from the `Reader Endpoint` to the `REDIS_HOST` environment variable in the `tb-redis-configmap.yml` file.
+You'll need to paste **hostname** (part without **:6379**) from the `Primary Endpoint` to the `REDIS_HOST` environment variable in the `tb-redis-configmap.yml` file:
 
-### Amazon RDS PostgreSQL
-
-On AWS Console get the `Endpoint` of the RDS PostgreSQL and paste it to `SPRING_DATASOURCE_URL` in the `tb-node-db-configmap.yml` instead of `your_url`.
+![image](/images/install/cloud/aws-redis-endpoint.png)
 
 ## Step 9. CPU and Memory resources allocation
 
@@ -190,7 +199,7 @@ Execute the following command to deploy resources:
 ```
 
 After few minutes you may call `kubectl get pods`. If everything went fine, you should be able to see 
-`tb-coap-transport-0`, `tb-http-transport-0`, `tb-mqtt-transport-0`, two `tb-js-executor`, `tb-node-0`, `tb-web-ui` and `zookeeper-0` pods.
+`tb-coap-transport-0`, `tb-http-transport-0`, `tb-mqtt-transport-0`, two `tb-js-executor`, `tb-node-0`, `tb-web-ui` and 3 `zookeeper` pods.
 Every pod should be in the `READY` state. 
 
 ## Step 12. Using

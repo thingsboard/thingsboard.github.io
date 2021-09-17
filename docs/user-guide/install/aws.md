@@ -36,28 +36,10 @@ description: ThingsBoard IoT platform  AWS cluster setup guide
                                        </a>
                                    </div>
                                    <div class="deployment-card-block">
-                                       <a href="/docs/user-guide/install/cluster/aws-monolith-setup/">
+                                       <a href="/docs/user-guide/install/cluster/aws-eks-setup/">
                                            <span>
                                                <div class="deployment-logo">
-                                                   <img width="" src="/images/install/cloud/eks.svg" title="Monolith setup with Kubernetes on AWS EKS" alt="AWS EKS Monolith">
-                                                </div>
-                                           </span>
-                                       </a>
-                                   </div>
-                                   <div class="deployment-card-block">
-                                       <a href="/docs/user-guide/install/cluster/aws-microservices-setup/">
-                                           <span>
-                                               <div class="deployment-logo">
-                                                   <img width="" src="/images/install/cloud/eks.svg" title="Microservices setup with Kubernetes on AWS EKS" alt="AWS EKS Microservices">
-                                                </div>
-                                           </span>
-                                       </a>
-                                   </div>
-                                   <div class="deployment-card-block">
-                                       <a href="/docs/user-guide/install/cluster/aws-custom-microservices-setup/">
-                                           <span>
-                                               <div class="deployment-logo">
-                                                   <img width="" src="/images/install/cloud/eks.svg" title="Custom microservices setup with Kubernetes on AWS EKS" alt="AWS EKS Custom Microservices">
+                                                   <img width="" src="/images/install/cloud/eks.svg" title="ThingsBoard setup with Kubernetes on AWS EKS" alt="AWS EKS">
                                                 </div>
                                            </span>
                                        </a>

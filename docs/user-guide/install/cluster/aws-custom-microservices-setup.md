@@ -36,9 +36,9 @@ Here are the fields you can change depending on your needs:
 - `region` - should be the AWS region where you want your cluster to be located (the default value is `us-east-1`)
 - `availabilityZones` - should specify the exact IDs of the region's availability zones 
 (the default value is `[us-east-1a,us-east-1b,us-east-1c]`)
-- `instanceType` - the type of the instance with TB node (the default value is `t3.large`)
+- `instanceType` - the type of the instance with TB node (the default value is `m5.large`)
 
-**Note**: if you don't make any changes to `instanceType` and `desiredCapacity` fields, the EKS will deploy **4** nodes of type **t3.large**.
+**Note**: if you don't make any changes to `instanceType` and `desiredCapacity` fields, the EKS will deploy **4** nodes of type **m5.large**.
 
 Command to create AWS cluster:
 ```
@@ -47,7 +47,7 @@ eksctl create cluster -f cluster.yml
 
 ## Step 4. Create AWS load-balancer controller
 
-After the cluster is ready you need'll need to create AWS load-balancer controller.
+After the cluster is ready you'll need to create AWS load-balancer controller.
 You can do it by following [this](https://docs.aws.amazon.com/eks/latest/userguide/aws-load-balancer-controller.html) guide.
 
 ## Step 5. CPU and Memory resources allocation
@@ -96,7 +96,7 @@ Execute the following command to deploy third-party resources:
 ```
 
 After few minutes you may call `kubectl get pods`. If everything went fine, you should be able to see 
-`zookeeper-0`, `tb-kafka-0` and `tb-redis` pods in `READY` state.
+`tb-kafka-0`, `tb-redis` and 3 `zookeeper` pods in `READY` state.
 
 Execute the following command to deploy ThingsBoard resources:
 

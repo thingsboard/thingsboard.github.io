@@ -41,11 +41,14 @@ Here are the fields you can change depending on your needs:
 
 **Note**: if you don't make any changes to `instanceType` and `desiredCapacity` fields, the EKS will deploy **1** node of type **m5.xlarge**.
 
-**Advanced**: in case you want to secure access to the PostgreSQL, you'll need to configure the existing VPC or create a new one, 
-set it as the VPC for the ThingsBoard cluster, create security group for PostgreSQL, 
+{% capture aws-eks-security %}
+In case you want to secure access to the PostgreSQL, you'll need to configure the existing VPC or create a new one,
+set it as the VPC for the ThingsBoard cluster, create security group for PostgreSQL,
 set them for `node` node-group in the ThingsBoard cluster and configure the access from the ThingsBoard cluster nodes to PostgreSQL using another security group.
 
 You can find more information about configuring VPC for `eksctl` [here](https://eksctl.io/usage/vpc-networking/).
+{% endcapture %}
+{% include templates/info-banner.md content=aws-eks-security %}
 
 Command to create AWS cluster:
 ```
@@ -54,7 +57,7 @@ eksctl create cluster -f cluster.yml
 
 ## Step 4. Create AWS load-balancer controller
 
-After the cluster is ready you need'll need to create AWS load-balancer controller.
+After the cluster is ready you'll need to create AWS load-balancer controller.
 You can do it by following [this](https://docs.aws.amazon.com/eks/latest/userguide/aws-load-balancer-controller.html) guide.
 
 ## Step 5. Amazon PostgreSQL DB Configuration
@@ -81,9 +84,11 @@ Make sure that `thingsboard` database is created along with PostgreSQL instance 
 
 ![image](/images/install/cloud/aws-rds-default-database.png)
 
-On AWS Console get the `Endpoint` of the RDS PostgreSQL and paste it to `SPRING_DATASOURCE_URL` in the `tb-node-db-configmap.yml` instead of `your_url`.
+On AWS Console get the `Endpoint` of the RDS PostgreSQL and paste it to `SPRING_DATASOURCE_URL` in the `tb-node-db-configmap.yml` instead of `your_url`:
 
-**Note:** You may also change `username` and `password` fields.
+![image](/images/install/cloud/aws-postgres-endpoint.png)
+
+Also, you'll need to set `SPRING_DATASOURCE_USERNAME` and `SPRING_DATASOURCE_PASSWORD` with PostgreSQL `username` and `password` corresponding.
 
 ## Step 6. Installation
 
