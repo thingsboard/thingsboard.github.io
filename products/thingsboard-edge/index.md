@@ -18,7 +18,7 @@ description:
         </div>
         <div class="block">
             <div class="feature-des"><h2>Local deployment and storage</h2>
-                <p>Operate with and store data from local devices without internet connection. Push updates to the cloud once connection restored.</p>
+                <p>Process and store data from edge (local) devices without active connection to the cloud. Push updates to the cloud once connection restored.</p>
                 <a class="read-more-button" href="/docs/edge/what-is-edge/">Read more<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
             </div>
             <div class="block-img">
@@ -35,7 +35,7 @@ description:
                 <img src="/images/edge/data-filtering.svg">
             </div>
             <div class="feature-des"><h2>Traffic filtering</h2>
-                <p>Filter data from devices on the ThingsBoard Edge service and push to cloud only subset of the data.</p>
+                <p>Filter data from edge (local) devices on the ThingsBoard Edge service and push to cloud only subset of the data for further processing or storage.</p>
                 <a class="read-more-button" href="/docs/edge/what-is-edge/">Read more<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
             </div>
         </div>
@@ -49,7 +49,7 @@ description:
         </div>
         <div class="block">
             <div class="feature-des"><h2>Local alarms</h2>
-                <p>React instantly to critical situations on site without internet connection to cloud.</p>
+                <p>React instantly to critical situations on site without connectivity to cloud.</p>
                 <a class="read-more-button" href="/docs/edge/what-is-edge/">Read more<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
             </div>
             <div class="block-img">

@@ -45,11 +45,11 @@ For evaluation purposes we had provided a [30 days trial period](http://localhos
 
 With ThingsBoard Edge, you can connect your on-site devices to ThingsBoard Edge, that is installed on-site as well, instead of direct connection to ThingsBoard cloud and get next benefits:
 - **Local deployment and storage**<br>
-*Operate with and store data from local devices without internet connection. Push updates to the cloud once connection restored.*
+*Process and store data from edge (local) devices without active connection to the cloud. Push updates to the cloud once connection restored.*
 - **Traffic filtering**<br>
-*Filter data from devices on the ThingsBoard Edge service and push to cloud only subset of the data.*
+*Filter data from edge (local) devices on the ThingsBoard Edge service and push to cloud only subset of the data for further processing or storage.*
 - **Local alarms**<br>
-*React instantly to critical situations on site without internet connection to cloud.*
+*React instantly to critical situations on site without connectivity to cloud.*
 - **Batch update and visualization**<br>
 *Update thousands of edge configurations in a single click. Monitor local events and timeseries data with a real-time dashboard.*
 
