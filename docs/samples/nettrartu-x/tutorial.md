@@ -26,7 +26,7 @@ The RTU-X is easly configurable via a [RTU-X Configuration Interface](http://wik
 Once you complete this sample/tutorial, you will see your sensor data on a dashboard like the following on the right.
 <br /><br/>
 
-![rtu_x](https://user-images.githubusercontent.com/61634031/133831823-b6e2420e-5669-433a-a3fa-54b506ab24b9.png) MEDIDOR DASHBOARD
+![rtu_x](https://user-images.githubusercontent.com/61634031/133831823-b6e2420e-5669-433a-a3fa-54b506ab24b9.png) ![dash](https://user-images.githubusercontent.com/61634031/134030076-19fd80de-38fd-4114-b1f1-221f61756782.png)
 
 ## Prerequisites <a name="prerequisites"></a>
 
@@ -64,7 +64,7 @@ Sign up ThingsBoard Web UI as [live-demo](https://demo.thingsboard.io/signup). S
 
 ### Dashboard
 
-Download the dashboard file (.json) using this [link](/docs/samples/nettrartu+/resources/rtu_.json).
+Download the dashboard file (.json) using this [link](/docs/samples/nettrartu-x/resources/rtu_x_dashboard.json).
 Use import/export [instructions](https://thingsboard.io/docs/user-guide/dashboards/#import-dashboard) to import the dashboard to your ThingsBoard instance.
 
 ## Connect RTU-X to PC <a name="connection_pc"></a>
@@ -119,7 +119,7 @@ Once you have your RTU-X connected to the PC, we can proceed with its configurat
 
 ### Script
 
- - Download this [***script***](/docs/samples/nettrartu+/resources/rtu_temp_script.nbs).
+ - Download this [***script***](/docs/samples/nettrartu-x/resources/rtu_x_script.json).
 
 ```c
 /*
@@ -136,7 +136,7 @@ telemetry float variable;
 // SCRIPT -----------------------------------------------------------
 while (1)
 {
-    variable = 15;
+    variable; //data from a sensor
 	
     delay_loop(tLog*1000); // 10 seconds
     log(variable);
@@ -145,7 +145,7 @@ while (1)
 
 1. Go to *"User Interface"* 
 2. Import the script clicking *"Load"*. If you want to make your own script, you can see the [Nettra script user manual](http://wiki.nettra.tech/en/script).
-3. Compile and save the script in the RTU-X by clicking *"Compila & Apply"*.
+3. Compile and save the script in the RTU-X by clicking *"Compile & Apply"*.
 
 ![rtu6_step6](https://user-images.githubusercontent.com/61634031/134028433-e7412285-9f4e-4d67-9f3c-80879f99191f.png)
 
