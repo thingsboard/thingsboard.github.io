@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
-title: Temperature upload over MQTT using Nettra RTU
-description: ThingsBoard IoT Platform sample for temperature upload over MQTT using Nettra RTU
+title: Data upload over MQTT using Nettra RTU
+description: ThingsBoard IoT Platform sample for data upload over MQTT using Nettra RTU
 hidetoc: "true"
 ---
 
