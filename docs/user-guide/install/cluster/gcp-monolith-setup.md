@@ -12,6 +12,10 @@ description: ThingsBoard IoT platform monolith setup with Kubernetes in GKE
 
 This guide will help you to setup ThingsBoard in monolith mode in GKE. 
 
+## Prerequisites
+
+ThingsBoard Microservices run on the Kubernetes cluster. You need to have a Kubernetes cluster, and the `kubectl` command-line tool must be configured to communicate with your cluster. 
+
 ## Step 1. Clone ThingsBoard CE K8S scripts repository
 
 ```bash
