@@ -19,6 +19,7 @@ services:
     ports:
       - "8080:8080"
       - "1883:1883"
+      - "7070:7070"
       - "5683-5688:5683-5688/udp"
     environment:
       TB_QUEUE_TYPE: rabbitmq

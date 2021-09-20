@@ -18,7 +18,7 @@ You need to have admin access to Compute Engine in your GCP account.
 
 ### Step 1. Create VM instance
 
-Create EC2 instance ([Creating and starting a VM instance](https://cloud.google.com/compute/docs/instances/create-start-instance)) and choose Ubuntu Server 18.04 LTS. We recommend this distribution and OS version for our product.
+Create EC2 instance ([Creating and starting a VM instance](https://cloud.google.com/compute/docs/instances/create-start-instance)) and choose Ubuntu Server 20.04 LTS. We recommend this distribution and OS version for our product.
 
 ### Step 2. Configure your firewall rules for the instance.
 

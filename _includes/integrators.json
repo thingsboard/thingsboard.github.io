@@ -422,6 +422,18 @@
   {
     "type": ["Asia"],
     "country": ["India"],
+    "name": "Hinditron Corp. Systems Pvt. Ltd",
+    "contact": {
+      "href": "software@hinditron.com"
+    },
+    "site": {
+      "href": "hinditron.com",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Asia"],
+    "country": ["India"],
     "name": "IBOT Control Systems Inc.",
     "contact": {
       "href": "connect@ibotcontrols.com"

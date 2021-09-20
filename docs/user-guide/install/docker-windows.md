@@ -62,7 +62,8 @@ Confluent Cloud <small>(Event Streaming Platform based on Kafka)</small>%,%confl
 Where: 
     
 - `8080:9090`            - connect local port 8080 to exposed internal HTTP port 9090
-- `1883:1883`            - connect local port 1883 to exposed internal MQTT port 1883    
+- `1883:1883`            - connect local port 1883 to exposed internal MQTT port 1883
+- `7070:7070`            - connect local port 7070 to exposed internal Edge RPC port 7070
 - `5683-5688:5683-5688/udp`            - connect local UDP ports 5683-5688 to exposed internal COAP and LwM2M ports 
 - `~/.mytb-data:/data`   - mounts the host's dir `~/.mytb-data` to ThingsBoard DataBase data directory
 - `~/.mytb-logs:/var/log/thingsboard`   - mounts the host's dir `~/.mytb-logs` to ThingsBoard logs directory
@@ -86,6 +87,7 @@ In order to get access to necessary resources from external IP/Host on Windows m
 set PATH=%PATH%;"C:\Program Files\Oracle\VirtualBox"
 VBoxManage controlvm "default" natpf1 "tcp-port8080,tcp,,8080,,9090"  
 VBoxManage controlvm "default" natpf1 "tcp-port1883,tcp,,1883,,1883"
+VBoxManage controlvm "default" natpf1 "tcp-port7070,tcp,,7070,,7070"
 VBoxManage controlvm "default" natpf1 "udp-port5683,udp,,5683,,5683"
 VBoxManage controlvm "default" natpf1 "udp-port5684,udp,,5684,,5684"
 VBoxManage controlvm "default" natpf1 "udp-port5685,udp,,5685,,5685"
@@ -100,7 +102,7 @@ Where:
 - `C:\Program Files\Oracle\VirtualBox`            - path to your VirtualBox installation directory
 
 
-After executing this command you can open `http://{your-host-ip}:9090` in you browser (for ex. `http://localhost:9090`). You should see ThingsBoard login page.
+After executing this command you can open `http://{your-host-ip}:8080` in you browser (for ex. `http://localhost:8080`). You should see ThingsBoard login page.
 Use the following default credentials:
 
 - **System Administrator**: sysadmin@thingsboard.org / sysadmin

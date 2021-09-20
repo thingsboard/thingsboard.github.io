@@ -8,7 +8,7 @@ description: Installing ThingsBoard Edge on Ubuntu Server
 * TOC
 {:toc}
 
-This guide describes how to install ThingsBoard Edge on Ubuntu Server 18.04 LTS.
+This guide describes how to install ThingsBoard Edge on Ubuntu 18.04 LTS / Ubuntu 20.04 LTS.
 
 {% include templates/edge/install/prerequisites.md %}
 

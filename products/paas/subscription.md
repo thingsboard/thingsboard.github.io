@@ -149,18 +149,32 @@ Please see table below to compare the API limits of the subscription plans. The 
           The TTL parameter is used to extract amount of days to store the data. For example, if you store 1M data points for 30 days, this is 30M storage data point days. </td>
       </tr>
       <tr>
+          <td>Alarms TTL</td>
+          <td>60 days</td>
+          <td>180 days</td>
+          <td>365 days</td>
+          <td>How many days to store alarms in the database.</td>
+      </tr>
+      <tr>
+          <td>Alarms</td>
+          <td>200</td>
+          <td>4000</td>
+          <td>20000</td>
+          <td>Total number of alarms created per month.</td>
+      </tr>
+      <tr>
           <td>Emails</td>
           <td>100</td>
           <td>2000</td>
           <td>10000</td>
-          <td>Total number of emails sent</td>
+          <td>Total number of emails sent.</td>
       </tr>
       <tr>
           <td>SMS</td>
           <td>1</td>
           <td>20</td>
           <td>100</td>
-          <td>Total number of SMS sent</td>
+          <td>Total number of SMS sent.</td>
       </tr>          
   </tbody>
 </table>

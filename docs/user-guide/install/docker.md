@@ -57,7 +57,8 @@ Confluent Cloud <small>(Event Streaming Platform based on Kafka)</small>%,%confl
 Where: 
     
 - `8080:9090`            - connect local port 8080 to exposed internal HTTP port 9090
-- `1883:1883`            - connect local port 1883 to exposed internal MQTT port 1883    
+- `1883:1883`            - connect local port 1883 to exposed internal MQTT port 1883
+- `7070:7070`            - connect local port 7070 to exposed internal Edge RPC port 7070
 - `5683-5688:5683-5688/udp`            - connect local UDP ports 5683-5688 to exposed internal COAP and LwM2M ports 
 - `~/.mytb-data:/data`   - mounts the host's dir `~/.mytb-data` to ThingsBoard DataBase data directory
 - `~/.mytb-logs:/var/log/thingsboard`   - mounts the host's dir `~/.mytb-logs` to ThingsBoard logs directory
