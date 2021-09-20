@@ -5,14 +5,6 @@ toc:
   path: /docs/edge/
 - title: What is ThingsBoard Edge?
   path: /docs/edge/what-is-edge/
-- title: Activate edge functionality on ThingsBoard server
-  path: /docs/edge/enable-edge/
-- title: Provision ThingsBoard Edge on ThingsBoard server
-  section:
-    - title: Community Edition
-      path: /docs/edge/provision-edge-on-server-ce/
-    - title: Professional Edition
-      path: /docs/edge/provision-edge-on-server-pe/
 #- title: Configuration guides
 #  section:
 #    - title: Community Edition

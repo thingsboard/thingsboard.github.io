@@ -32,4 +32,4 @@ toc:
   new: true
   section:
     - title: Python Client SDK
-      path: /docs/reference/python-client-sdk
+      path: /docs/pe/reference/python-client-sdk/

@@ -6,4 +6,4 @@ description: Supported REST API Reference for server-side integration of your py
 ---
 
 {% assign docsPrefix = "edge/" %}
-{% include docs/reference/python-rest-client.md %}
+{% include docs/edge/reference/python-rest-client.md %}

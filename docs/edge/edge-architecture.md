@@ -43,10 +43,10 @@ Each of the protocol APIs are provided by a separate component and is part of Th
 
 ThingsBoard Edge provides support for standard ThingsBoard CE/PE device communication protocols:
 
-* HTTP Transport component provides device APIs described [here](/docs/reference/http-api/);
-* MQTT Transport component provides device APIs described [here](/docs/reference/mqtt-api/)
-  and also enables gateway APIs described [here](/docs/reference/gateway-mqtt-api/);
-* CoAP Transport component provides device APIs described [here](/docs/reference/coap-api/).
+* HTTP Transport component provides device APIs described [here](/docs/edge/reference/http-api/);
+* MQTT Transport component provides device APIs described [here](/docs/edge/reference/mqtt-api/)
+  and also enables gateway APIs described [here](/docs/edge/reference/gateway-mqtt-api/);
+* CoAP Transport component provides device APIs described [here](/docs/edge/reference/coap-api/).
 
 Each of the transport components pushes data to the rule engine and also may use core services to issue requests to the database to validate device credentials, etc.
 
@@ -58,7 +58,7 @@ You can learn more about the edge rule engine using corresponding [documentation
 
 ## Core services
 
-ThingsBoard Edge Core is responsible for handling [REST API](/docs/reference/rest-api/) calls and WebSocket [subscriptions](/docs/user-guide/telemetry/#websocket-api).
+ThingsBoard Edge Core is responsible for handling [REST API](/docs/edge/reference/rest-api/) calls and WebSocket [subscriptions](/docs/user-guide/telemetry/#websocket-api).
 It is also responsible for storing up to date information about active device sessions and monitoring device [connectivity state](/docs/user-guide/device-connectivity-status/).
 ThingsBoard Edge Core uses Actor System under the hood to implement actors for main entities: tenants and devices.
 
