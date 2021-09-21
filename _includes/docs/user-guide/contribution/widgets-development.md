@@ -563,8 +563,8 @@ To test how this widget performs RPC commands, we will need to place it in a das
  - Login as Tenant administrator.
  - Navigate to **Devices** and create new device with some name, for ex. "My RPC Device".
  - Open device details and click "Copy Access Token" button to copy device access token to clipboard.
- - Download [mqtt-js-rpc-from-server.sh](/docs/{{docsPrefix}}reference/resources/mqtt-js-rpc-from-server.sh) and [mqtt-js-rpc-from-server.js](/docs/{{docsPrefix}}reference/resources/mqtt-js-rpc-from-server.js). Place these files in a folder.
- Edit **mqtt-js-rpc-from-server.sh** - replace **$ACCESS_TOKEN** with your device access token from the clipboard.
+ - Download [mqtt-js-rpc-from-server.sh](/docs/{{docsPrefix}}reference/resources/mqtt-js-rpc-from-server.sh) and [mqtt-js-rpc-from-server.js](/docs/{{docsPrefix}}reference/resources/mqtt-js-rpc-from-server.js). Place these files in a folder. 
+ Edit **mqtt-js-rpc-from-server.sh** - replace **$ACCESS_TOKEN** with your device access token from the clipboard. And install mqtt client library.
  - Run **mqtt-js-rpc-from-server.sh** script. You should see a "connected" message in the console.
  - Navigate to **Dashboards** and create a new dashboard with some name, for ex. "My first control dashboard". Open this dashboard.
  - Click dashboard "edit" button. In the dashboard edit mode, click the "Entity aliases" button located on the dashboard toolbar.
@@ -688,6 +688,14 @@ The **Widget Editor** will be opened, pre-populated with the content of the defa
  
 ```javascript
 self.onInit = function() {
+    var pageLink = self.ctx.pageLink();
+
+    pageLink.typeList = self.ctx.widgetConfig.alarmTypeList;
+    pageLink.statusList = self.ctx.widgetConfig.alarmStatusList;
+    pageLink.severityList = self.ctx.widgetConfig.alarmSeverityList;
+    pageLink.searchPropagatedAlarms = self.ctx.widgetConfig.searchPropagatedAlarms;
+
+    self.ctx.defaultSubscription.subscribeForAlarms(pageLink, null);
     self.ctx.$scope.alarmSource = self.ctx.defaultSubscription.alarmSource;
     
     var alarmSeverityColorFunctionBody = self.ctx.settings.alarmSeverityColorFunction;
@@ -729,7 +737,7 @@ self.onInit = function() {
 }
 
 self.onDataUpdated = function() {
-    self.ctx.$scope.alarms = self.ctx.defaultSubscription.alarms;
+    self.ctx.$scope.alarms = self.ctx.defaultSubscription.alarms.data;
     self.ctx.detectChanges();
 }
 ```
@@ -857,8 +865,10 @@ self.onResize = function() {
 }
 
 self.onDataUpdated = function() {
-    var value = self.ctx.defaultSubscription.data[0].data[0][1];
-    gauge.set(value);
+    if (self.ctx.defaultSubscription.data[0].data.length) {
+        var value = self.ctx.defaultSubscription.data[0].data[0][1];
+        gauge.set(value);
+    }
 }
 ```
 

@@ -30,6 +30,8 @@ docker pull thingsboard/tb-js-executor:{{ site.release.ce_full_ver }}
 docker pull thingsboard/tb-http-transport:{{ site.release.ce_full_ver }}
 docker pull thingsboard/tb-mqtt-transport:{{ site.release.ce_full_ver }}
 docker pull thingsboard/tb-coap-transport:{{ site.release.ce_full_ver }}
+docker pull thingsboard/tb-lwm2m-transport:{{ site.release.ce_full_ver }}
+docker pull thingsboard/tb-snmp-transport:{{ site.release.ce_full_ver }}
 ```
 
 ## Step 2. Review the architecture page
@@ -41,9 +43,10 @@ See [**microservices**](/docs/reference/msa/) architecture page for more details
 
 ```bash
 git clone https://github.com/thingsboard/thingsboard.git
+cd thingsboard
 # checkout latest release branch
 git checkout {{ site.release.branch }}
-cd thingsboard/docker
+cd docker
 ```
 
 ## Step 4. Configure ThingsBoard database
@@ -159,6 +162,8 @@ Where:
 
 - `SERVICE...` - list of services to update (defined in docker-compose configurations). If not specified all services will be updated.
 
+
+{% include templates/install/generate_certificate_docker-compose.md %}
 ## Next steps
 
 {% assign currentGuide = "InstallationGuides" %}{% include templates/guides-banner.md %}

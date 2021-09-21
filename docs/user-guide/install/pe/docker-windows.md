@@ -14,7 +14,7 @@ redirect_from: "/docs/pe/user-guide/install/docker-windows/"
 This guide will help you to install and start ThingsBoard Professional Edition (PE) using Docker on Windows. 
 This guide covers standalone ThingsBoard PE installation.
 If you are looking for a cluster installation instruction, please visit [cluster setup page](/docs/user-guide/install/pe/cluster-setup/).  
-
+``
 
 ## Prerequisites
 
@@ -73,8 +73,9 @@ Confluent Cloud <small>(Event Streaming Platform based on Kafka)</small>%,%confl
 Where: 
     
 - `8080:8080`            - connect local port 8080 to exposed internal HTTP port 8080
-- `1883:1883`            - connect local port 1883 to exposed internal MQTT port 1883    
-- `5683:5683`            - connect local port 5683 to exposed internal COAP port 5683 
+- `1883:1883`            - connect local port 1883 to exposed internal MQTT port 1883
+- `7070:7070`            - connect local port 7070 to exposed internal Edge RPC port 7070
+- `5683-5688:5683-5688/udp`            - connect local UDP ports 5683-5688 to exposed internal COAP and LwM2M ports 
 - `mytbpe-data:/data`   - mounts the volume `mytb-data` to ThingsBoard data directory
 - `mytbpe-data-db:/var/lib/postgresql/data`   - mounts the volume `mytbpe-data-db` to Postgres data directory;
 - `mytb-logs:/var/log/thingsboard`   - mounts the volume `mytb-logs` to ThingsBoard logs directory
@@ -112,7 +113,13 @@ In order to get access to necessary resources from external IP/Host on Windows m
 set PATH=%PATH%;"C:\Program Files\Oracle\VirtualBox"
 VBoxManage controlvm "default" natpf1 "tcp-port8080,tcp,,8080,,8080"  
 VBoxManage controlvm "default" natpf1 "tcp-port1883,tcp,,1883,,1883"
-VBoxManage controlvm "default" natpf1 "tcp-port5683,tcp,,5683,,5683"
+VBoxManage controlvm "default" natpf1 "tcp-port7070,tcp,,7070,,7070"
+VBoxManage controlvm "default" natpf1 "udp-port5683,udp,,5683,,5683"
+VBoxManage controlvm "default" natpf1 "udp-port5684,udp,,5684,,5684"
+VBoxManage controlvm "default" natpf1 "udp-port5685,udp,,5685,,5685"
+VBoxManage controlvm "default" natpf1 "udp-port5686,udp,,5686,,5686"
+VBoxManage controlvm "default" natpf1 "udp-port5687,udp,,5687,,5687"
+VBoxManage controlvm "default" natpf1 "udp-port5688,udp,,5688,,5688"
 ```
 {: .copy-code}
     

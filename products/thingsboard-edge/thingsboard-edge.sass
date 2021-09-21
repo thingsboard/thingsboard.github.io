@@ -1,0 +1,457 @@
+#thingsboard-edge
+  section
+    background: none
+  &:not(.open-nav):not(.flip-nav)
+    header
+      &::after
+        opacity: 0
+  #hero
+    height: 100vh //calc(100vh + 5px)
+    padding-top: 0
+    position: relative
+    overflow: hidden
+    background: none
+    div:nth-child(1)
+      background-image: url(/video/tb-cover.jpg) !important
+    .video-cover
+      position: absolute
+      z-index: -2
+      top: 0
+      left: 0
+      bottom: 0
+      right: 0
+      overflow: hidden
+      background-size: cover
+      background-color: #000
+      background-repeat: no-repeat
+      background-position: 50% 50%
+      background-image: url(/video/tb-cover.jpg)
+    #hero-content
+      height: 100%
+      display: flex
+      flex-direction: column
+      justify-content: center
+      align-content: center
+      background-color: rgba(0,0,0,0.72)
+      .edge-title
+        margin-bottom: 20px
+        font-size: 22px
+        font-weight: 400
+        text-shadow: 0 0 18px rgba(0,0,0,.66)
+      .edge-description
+        margin-bottom: 40px
+        font-size: 14px
+        line-height: 16px
+        text-shadow: 0 0 18px rgba(0,0,0,.66)
+      .try-edge
+        cursor: pointer
+        line-height: 40px
+        font-size: 16px
+        padding: 0 15px
+        border: 1px solid white
+        background-color: transparent
+        transition: 0.6s
+        text-shadow: 0 0 18px rgba(0,0,0,.66)
+        &:hover
+          background-color: white
+          color: $dark-grey
+      .learn-tb
+        cursor: pointer
+        line-height: 40px
+        font-size: 16px
+        padding: 0 15px
+        border: 1px solid white
+        background-color: transparent
+        transition: 0.6s
+        text-shadow: 0 0 18px rgba(0,0,0,.66)
+        &:hover
+          background-color: white
+          color: $dark-grey
+          text-shadow: none
+      .paas-arrow
+        position: fixed
+        bottom: 40px
+        left: 0
+        right: 0
+        margin: auto
+        width: 40px
+        height: 40px
+        opacity: 1
+        z-index: 24
+        color: #fff
+        a
+          color: #fff
+      &.arrow-hidden
+        .paas-arrow
+          display: none
+
+  #edgeContent
+    width: 100%
+    color: #212924
+
+    a.read-more-button
+      position: relative
+      transition-duration: 0.3s
+      outline: none
+      .arrow
+        transform: translate(0px)
+        transition-duration: 0.3s
+        filter: invert(38%) sepia(52%) saturate(993%) hue-rotate(131deg) brightness(103%) contrast(101%)
+        box-shadow: none !important
+        width: 12px !important
+        margin-left: 12px
+        position: absolute
+        top: 7px
+        &.first
+          opacity: 0.2
+        &.second
+          opacity: 0.5
+      &:hover
+        transition-duration: 0.3s
+        .first
+          transform: translate(10px)
+        .second
+          transform: translate(20px)
+        .third
+          transform: translate(30px)
+
+    h1
+      font-weight: 600
+      text-align: center
+      font-size: 32px
+      line-height: 52px
+      a
+        font-weight: 600
+        font-size: 32px
+    h2
+      font-weight: 500
+      line-height: 54px
+      font-size: 36px
+    h3
+      font-size: 32px
+      font-weight: 600
+      text-align: center
+    h4
+      font-size: 24px
+      font-weight: 500
+    p
+      color: #757C76
+      font-size: 18px
+      font-weight: normal
+      line-height: 27px
+      margin: 4px 0 18px
+    a
+      color: #009688
+      font-weight: 500
+      font-size: 18px
+
+    #intro
+      margin-bottom: 80px
+      padding-top: 98px
+      color: #212924
+      .intro_title
+        padding: 0
+      .labeling
+        margin: 48px 0 102px
+        text-align: center
+        color: #A5A5A5
+        font-size: 20px
+        line-height: 1.5em
+        font-weight: normal
+        padding: 0
+
+    #tb-customers
+      margin: -50px -100% 0
+      padding: 50px 100%
+      text-align: justify
+      -moz-text-align-last: justify
+      text-align-last: justify
+      display: none
+      @media(min-width: 992px)
+        display: block
+      img
+        height: 60px
+        margin-bottom: 20px
+      main
+        display: flex
+        flex-wrap: wrap
+        flex-direction: row
+        justify-content: space-around
+        align-items: center
+        padding: 0 50px
+        a
+          display: block
+          padding: 10px
+          object
+            pointer-events: none
+            filter: invert(95%) sepia(6%) saturate(1404%) hue-rotate(115deg) brightness(253%) contrast(93%)
+
+    #local-deployment, #data-filtering, #local-alarms, #batch-update
+      .block
+        justify-content: space-between
+        display: flex
+        align-items: center
+        flex-direction: column
+        padding: 50px 0
+        .feature-des, img
+          width: 100%
+        .block-img
+          text-align: center
+          order: 2
+          img
+            margin-top: 32px
+            width: 100%
+            max-width: fit-content
+        .feature-des
+          order: 1
+
+    #local-deployment .block .feature-des
+      padding-top: 100px
+
+    #data-filtering .block
+      padding: 60px 0
+
+    #local-alarms .block .feature-des
+      padding-top: 200px
+      h2, a
+        color: #fff
+      p
+        color: #868686
+      .read-more-button .arrow
+        filter: brightness(100%) invert(100%)
+
+    #batch-update .block
+      padding: 80px 0 120px
+
+    #bottom-features
+      padding-top: 72px
+      .cards
+        background-color: #EFFAF9
+        padding: 72px 50% 28px
+        justify-content: center
+        margin-right: -50%
+        margin-left: -50%
+        &>div
+          margin-bottom: 36px
+          &.col-lg-6
+            padding: 0 18px
+            max-width: 100%
+          .block
+            padding: 48px
+            float: left
+            width: 100%
+            height: 100%
+            background: white
+            border-radius: 6px
+            box-shadow: 0 50px 50px -20px rgba(0,0,0,0.15)
+            display: unset
+            text-align: center
+            div
+              width: 100%
+              .title
+                margin-bottom: 6px
+                line-height: 33px
+              p
+                margin-top: 10px
+            img
+              height: fit-content
+              margin: 0 0 18px
+
+    #bottom
+      display: flex
+      justify-content: center
+      padding: 46px 0 100px
+      .bottom-button
+        background-color: #009688
+        font-size: 24px
+        font-weight: 400
+        text-align: center
+        color: white
+        border-radius: 4px
+        text-decoration: none
+        padding: 16px
+        width: 350px
+        display: block
+        box-shadow: 0 28px 16px -20px rgba(34,41,41,0.25)
+        &:hover
+          background-color: #1EB7A9
+          text-decoration: none
+          color: #fff
+        &:active
+          background-color: #009688
+          transition-duration: 0s
+
+    #background
+      z-index: -1
+      position: absolute
+      left: 50%
+      div
+        position: absolute
+        -ms-transform: skewY(-6deg)
+        transform: skewY(-6deg)
+        width: 436px
+        height: 90px
+        &.main1
+          top: 8px
+          width: 2560px
+          height: 525px
+          left: -1280px
+          background-color: #EFFAF9
+        &.small1
+          top: 71px
+          right: 646px
+          border: 4px solid #185B55
+        &.small2
+          top: 18px
+          right: 467px
+          background-color: #009688
+        &.small3
+          top: -135px
+          left: 789px
+          background-color: #185B55
+        &.small4
+          top: 612px
+          right: 814px
+          border: 2px solid #185B55
+        &.main2
+          top: 126px
+          width: 2560px
+          height: 805px
+          left: -1280px
+          background-color: #222929
+        &.small5
+          top: 145px
+          right: 552px
+          background-color: #185B55
+        &.small6
+          top: -42px
+          left: 824px
+          border: 4px solid #009688
+        &.small7
+          top: 686px
+          right: 829px
+          background-color: #009688
+        &.main3
+          top: -108px
+          width: 2560px
+          height: 525px
+          left: -1280px
+          background-color: #EFFAF9
+        &.small8
+          top: -249px
+          left: 756px
+          border: 4px solid #185B55
+
+  .header-animation
+    max-width: 100%
+    opacity: 0
+    transform: translate3d(0, 45px, 0)
+    animation-name: slideup-in
+    animation-duration: 600ms
+    animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94)
+    animation-fill-mode: forwards
+
+  .header-animation:nth-child(1)
+    animation-delay: 0ms
+
+  .header-animation:nth-child(2)
+    animation-delay: 300ms
+
+  .header-animation:nth-child(3)
+    animation-delay: 600ms
+
+  .header-animation:nth-child(4)
+    animation-delay: 900ms
+
+  .header-animation:nth-child(5)
+    animation-delay: 1200ms
+
+  @keyframes slideup-in
+    from
+      opacity: 0
+      transform: translate3d(0, 45px, 0)
+    to
+      opacity: 1
+      transform: translate3d(0, 0, 0)
+
+  @media screen and (min-width: 750px)
+    #hero
+      #hero-content
+        .edge-title
+          font-size: 36px
+        .edge-description
+          font-size: 20px
+          margin-bottom: 60px
+    #edgeContent
+      #local-deployment, #data-filtering, #local-alarms, #batch-update
+        .block
+          .feature-des, .block-img
+            width: 80%
+      #bottom-features .cards .col-lg-6 .block
+        text-align: left
+        display: flex
+        div
+          width: calc(100% - 122px)
+        img
+          margin: 0 30px 0 0
+
+  @media screen and (min-width: 1025px)
+    section, header
+      main
+        max-width: 100%
+    footer
+      main
+        max-width: 100%
+    #edgeContent
+      #intro
+        .intro_title
+          padding: 0 5%
+        .labeling
+          padding: 0 8%
+      #local-deployment, #data-filtering, #local-alarms, #batch-update
+        .block
+          flex-direction: row
+          .feature-des, .block-img
+            width: calc(50% - 80px)
+            order: unset
+          .block-img img
+              margin: unset
+      #local-alarms #background .main2
+        height: 405px
+
+  @media screen and (min-width: 1250px)
+    #hero
+      #hero-content
+        .edge-title
+          margin-bottom: 60px
+          font-size: 64px
+        .edge-description
+          font-size: 28px
+          margin-bottom: 80px
+        .try-edge
+          line-height: 60px
+          font-size: 28px
+          padding: 0 40px
+          margin: 0 4px
+          border-width: 3px
+    #edgeContent
+      max-width: 1200px
+      #intro
+        .intro_title
+          padding: 0 7%
+        .labeling
+          padding: 0 13%
+
+
+  @media screen and (min-width: 1500px)
+    #edgeContent
+      max-width: 1400px
+      #intro
+        .intro_title
+          padding: 0 10%
+        .labeling
+          padding: 0 18%
+      #batch-update .block
+        padding-top: 40px
+      #local-alarms #background .main2
+        height: 485px

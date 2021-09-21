@@ -76,25 +76,27 @@ onnode:
 
 onhtml:
     0:
-        image: /images/user-guide/ui/widgets/actions/entity-cards/onhtml.png
+        image: /images/user-guide/ui/widgets/actions/entity-cards/onhtml-1-ce.png
     1:
-        image: /images/user-guide/ui/widgets/actions/entity-cards/onhtml-1.png
+        image: /images/user-guide/ui/widgets/actions/entity-cards/onhtml-2-ce.png
     2:
-        image: /images/user-guide/ui/widgets/actions/entity-cards/onhtml-2.png
+        image: /images/user-guide/ui/widgets/actions/entity-cards/onhtml-3-ce.png
     3:
-        image: /images/user-guide/ui/widgets/actions/entity-cards/onhtml-3.png
+        image: /images/user-guide/ui/widgets/actions/entity-cards/onhtml-4-ce.png
 
 onhtml-title:
     0:
-        image: /images/user-guide/ui/widgets/actions/entity-cards/onhtml-title.png
+        image: /images/user-guide/ui/widgets/actions/entity-cards/onhtml-title-1-ce.png
     1:
-        image: /images/user-guide/ui/widgets/actions/entity-cards/onhtml-title-1.png
+        image: /images/user-guide/ui/widgets/actions/entity-cards/onhtml-title-2-ce.png
     2:
-        image: /images/user-guide/ui/widgets/actions/entity-cards/onhtml-title-2.png
+        image: /images/user-guide/ui/widgets/actions/entity-cards/onhtml-title-3-ce.png
     3:
-        image: /images/user-guide/ui/widgets/actions/entity-cards/onhtml-title-3.png
+        image: /images/user-guide/ui/widgets/actions/entity-cards/onhtml-title-4-ce.png
     4:
-        image: /images/user-guide/ui/widgets/actions/entity-cards/onhtml-takeaction.png
+        image: /images/user-guide/ui/widgets/actions/entity-cards/onhtml-title-5-ce.png
+    5:
+        image: /images/user-guide/ui/widgets/actions/entity-cards/onhtml-title-6-ce.png
 
 navigate-new-state-cards:
     0:
@@ -152,43 +154,51 @@ navigate-to-dash-cards:
 
 custom-action:
     0:
-        image: /images/user-guide/ui/widgets/actions/custom-action.png
+        image: /images/user-guide/ui/widgets/actions/custom-action-1-ce.png
     1:
-        image: /images/user-guide/ui/widgets/actions/custom-action-1.png
+        image: /images/user-guide/ui/widgets/actions/custom-action-2-ce.png
     2:
-        image: /images/user-guide/ui/widgets/actions/custom-action-2.png
+        image: /images/user-guide/ui/widgets/actions/custom-action-3-ce.png
     3:
-        image: /images/user-guide/ui/widgets/actions/custom-action-3.png
+        image: /images/user-guide/ui/widgets/actions/custom-action-4-ce.png
     4:
-        image: /images/user-guide/ui/widgets/actions/custom-action-4.png
+        image: /images/user-guide/ui/widgets/actions/custom-action-5-ce.png
     5:
-        image: /images/user-guide/ui/widgets/actions/custom-action-5.png
+        image: /images/user-guide/ui/widgets/actions/custom-action-6-ce.png
     6:
-        image: /images/user-guide/ui/widgets/actions/custom-action-6.png
+        image: /images/user-guide/ui/widgets/actions/custom-action-7-ce.png
 
 custom-action-html:
     0:
-        image: /images/user-guide/ui/widgets/actions/custom-action-html.png
+        image: /images/user-guide/ui/widgets/actions/custom-action-html-1-ce.png
     1: 
-        image: /images/user-guide/ui/widgets/actions/custom-action-html-1.png
+        image: /images/user-guide/ui/widgets/actions/custom-action-html-2-ce.png
     2:
-        image: /images/user-guide/ui/widgets/actions/custom-action-html-2.png
+        image: /images/user-guide/ui/widgets/actions/custom-action-html-3-ce.png
     3:
-        image: /images/user-guide/ui/widgets/actions/custom-action-html-3.png
+        image: /images/user-guide/ui/widgets/actions/custom-action-html-4-ce.png
     4:
-        image: /images/user-guide/ui/widgets/actions/custom-action-html-4.png
+        image: /images/user-guide/ui/widgets/actions/custom-action-html-5-ce.png
     5:
-        image: /images/user-guide/ui/widgets/actions/custom-action-html-5.png
+        image: /images/user-guide/ui/widgets/actions/custom-action-html-6-ce.png
     6:
-        image: /images/user-guide/ui/widgets/actions/custom-action-html-6.png
+        image: /images/user-guide/ui/widgets/actions/custom-action-html-7-ce.png
     7:
-        image: /images/user-guide/ui/widgets/actions/custom-action-html-7.png
+        image: /images/user-guide/ui/widgets/actions/custom-action-html-8-ce.png
     8:
-        image: /images/user-guide/ui/widgets/actions/custom-action-html-8.png
+        image: /images/user-guide/ui/widgets/actions/custom-action-html-9-ce.png
     9:
-        image: /images/user-guide/ui/widgets/actions/custom-action-html-9.png
+        image: /images/user-guide/ui/widgets/actions/custom-action-html-10-ce.png
     10:
-        image: /images/user-guide/ui/widgets/actions/custom-action-html-10.png
+        image: /images/user-guide/ui/widgets/actions/custom-action-html-11-ce.png
+    11:
+        image: /images/user-guide/ui/widgets/actions/custom-action-html-12-ce.png
+    12:
+        image: /images/user-guide/ui/widgets/actions/custom-action-html-13-ce.png
+    13:
+        image: /images/user-guide/ui/widgets/actions/custom-action-html-14-ce.png
+    14:
+        image: /images/user-guide/ui/widgets/actions/custom-action-html-15-ce.png
 
 chart-editmode:
     0:
@@ -218,15 +228,17 @@ charts-source-whb:
 
 map-creation:
     0:
-        image: /images/user-guide/ui/widgets/actions/maps/to-create-a-map.png
+        image: /images/user-guide/ui/widgets/actions/maps/to-create-a-map-1-ce.png
     1:
-        image: /images/user-guide/ui/widgets/actions/maps/to-create-a-map-1.png
+        image: /images/user-guide/ui/widgets/actions/maps/to-create-a-map-2-ce.png
     2:
-        image: /images/user-guide/ui/widgets/actions/maps/to-create-a-map-2.png
+        image: /images/user-guide/ui/widgets/actions/maps/to-create-a-map-3-ce.png
     3:
-        image: /images/user-guide/ui/widgets/actions/maps/to-create-a-map-3.png  
+        image: /images/user-guide/ui/widgets/actions/maps/to-create-a-map-4-ce.png  
     4:
-        image: /images/user-guide/ui/widgets/actions/maps/to-create-a-map-4.png
+        image: /images/user-guide/ui/widgets/actions/maps/to-create-a-map-5-ce.png
+    5:
+        image: /images/user-guide/ui/widgets/actions/maps/to-create-a-map-6-ce.png
 
 map-polygon:
     0:
@@ -254,9 +266,9 @@ map-polygon:
   
 navigate-to-actions-map:
     0:
-        image: /images/user-guide/ui/widgets/actions/maps/navigate-to-actions.png
+        image: /images/user-guide/ui/widgets/actions/maps/navigate-to-actions-1-ce.png
     1:
-        image: /images/user-guide/ui/widgets/actions/maps/navigate-to-actions-1.png
+        image: /images/user-guide/ui/widgets/actions/maps/navigate-to-actions-2-ce.png
 
 whb-map:
     0:
@@ -268,21 +280,33 @@ whb-map:
 
 omc-map:
     0:
-        image: /images/user-guide/ui/widgets/actions/maps/omc-map.png
+        image: /images/user-guide/ui/widgets/actions/maps/omc-map-1-ce.png
     1:
-        image: /images/user-guide/ui/widgets/actions/maps/omc-map-1.png
+        image: /images/user-guide/ui/widgets/actions/maps/omc-map-2-ce.png
+    2:
+        image: /images/user-guide/ui/widgets/actions/maps/omc-map-3-ce.png
+    3:
+        image: /images/user-guide/ui/widgets/actions/maps/omc-map-4-ce.png
+    4:
+        image: /images/user-guide/ui/widgets/actions/maps/omc-map-5-ce.png
+    5:
+        image: /images/user-guide/ui/widgets/actions/maps/omc-map-6-ce.png
 
 tooltiptag:
     0:
-        image: /images/user-guide/ui/widgets/actions/maps/tooltiptag.png
+        image: /images/user-guide/ui/widgets/actions/maps/tooltiptag-1-ce.png
     1:
-        image: /images/user-guide/ui/widgets/actions/maps/tooltiptag-1.png
+        image: /images/user-guide/ui/widgets/actions/maps/tooltiptag-2-ce.png
     2:
-        image: /images/user-guide/ui/widgets/actions/maps/tooltiptag-2.png
+        image: /images/user-guide/ui/widgets/actions/maps/tooltiptag-3-ce.png
     3:
-        image: /images/user-guide/ui/widgets/actions/maps/tooltiptag-3.png
+        image: /images/user-guide/ui/widgets/actions/maps/tooltiptag-4-ce.png
     4:
-        image: /images/user-guide/ui/widgets/actions/maps/tooltiptag-4.png
+        image: /images/user-guide/ui/widgets/actions/maps/tooltiptag-5-ce.png
+    5:
+        image: /images/user-guide/ui/widgets/actions/maps/tooltiptag-6-ce.png
+    6:
+        image: /images/user-guide/ui/widgets/actions/maps/tooltiptag-7-ce.png
 
 mob:
     0:

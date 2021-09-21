@@ -1,13 +1,16 @@
 ---
-layout: docwithnav
+layout: common
 notitle: "true"
 hidetoc: "true"
 
 ---
 
+<div id="background">
+    <div class="main1"></div><div class="small1"></div><div class="small2"></div><div class="small3"></div><div class="small4"></div>
+</div>
+
 <div id="install-thanks" class="center">
     <div class="thanks-content">
-        <i class="fa fa-check" aria-hidden="true"></i>
         <p class="thank-you">Thank you!</p>
         <div id="silver-form" style="display: none;">
             <p>Thanks for applying for Silver Hardware Partner Program.<br/>Please check your email for further instructions.</p>
@@ -17,12 +20,21 @@ hidetoc: "true"
         </div>    
         <div id="platinum-form" style="display: none;">
             <p>Thanks for applying for Platinum Hardware Partner Program.<br/>Please check your email for further instructions.</p>
-        </div>    
+        </div>   
+        <a class="homepage" href="/">Homepage</a>
     </div>
 </div>
 
 <script type="text/javascript">
+    jqueryDefer(function () {
+       $( document ).ready(function() {
+             $('#contact-us-thanks').addClass("opened");
+             $('#background').addClass("opened");
+       });
+    });
+</script>
 
+<script type="text/javascript">
     var typeForms = {
         "silver": "#silver-form",
         "gold": "#gold-form",
@@ -31,9 +43,6 @@ hidetoc: "true"
 
     jqueryDefer(function () {
         $( document ).ready(function() {
-            $('html, body').animate({
-                        scrollTop: $('#install-thanks').offset().top - 100
-                      }, 0);
             $.urlParam = function (name) {
                 var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
                 return results ? results[1] : null;
@@ -46,8 +55,7 @@ hidetoc: "true"
             if (formId) {
                 var typeForm = $(formId);
                 typeForm.css('display', '');
-            }          
-            $('#install-thanks .thanks-content').addClass("animated zoomIn");
+            }
         });        
     });
 </script>
