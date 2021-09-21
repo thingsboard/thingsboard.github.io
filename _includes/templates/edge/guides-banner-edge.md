@@ -21,7 +21,7 @@
 {% endif %}
 {% if currentGuide != "GrpcOverSsl" %}
 - Security:
-  - [gRPC over SSL/TLS](/docs/edge/security/grpc-over-ssl/) - Learn how to configure gRPC over SSL/TLS for communication between edge and cloud.
+  - [gRPC over SSL/TLS](/docs/edge/user-guide/grpc-over-ssl/) - Learn how to configure gRPC over SSL/TLS for communication between edge and cloud.
 {% endif %}
 - Features:
 {% if currentGuide != "EdgeStatus" %}

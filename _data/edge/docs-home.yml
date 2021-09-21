@@ -5,6 +5,26 @@ toc:
   path: /docs/edge/
 - title: What is ThingsBoard Edge?
   path: /docs/edge/what-is-edge/
+- title: Key concepts
+  section:
+  - title: Entities and Relations
+    path: /docs/edge/user-guide/entities-and-relations/
+#  - title: Tenant Profiles
+#    path: /docs/pe/user-guide/tenant-profiles/
+  - title: Device Profiles
+    path: /docs/edge/user-guide/device-profiles/
+    new: true
+  - title: Attributes
+    path: /docs/edge/user-guide/attributes/
+  - title: Time-series data
+    path: /docs/edge/user-guide/telemetry/
+  - title: Alarms
+    path: /docs/edge/user-guide/alarms/
+  - title: Remote commands to devices
+    path: /docs/edge/user-guide/rpc/
+#  - title: OTA updates
+#    path: /docs/pe/user-guide/ota-updates/
+#    new: true
 #- title: Configuration guides
 #  section:
 #    - title: Community Edition
@@ -39,10 +59,27 @@ toc:
 #      path: /docs/edge/rule-engine/provision-rule-chains/
 #    - title: Push data from edge to cloud and vice versa
 #      path: /docs/edge/rule-engine/push-data/
-#- title: Security
-#  section:
-#    - title: Enable gRPC over SSL/TLS for edge communication
-#      path: /docs/edge/security/grpc-over-ssl/
+- title: Security
+  section:
+    - title: Audit Log
+      path: /docs/edge/user-guide/audit-log/
+#    - title: Advanced RBAC for IoT
+#      path: /docs/pe/user-guide/rbac/
+#    - title: OAuth 2 Support
+#      path: /docs/pe/user-guide/oauth-2-support/
+#      new: true
+    - title: MQTT over SSL
+      path: /docs/edge/user-guide/mqtt-over-ssl/
+    - title: Device authentication options
+      path: /docs/edge/user-guide/device-credentials/
+    - title: Access Token based authentication
+      path: /docs/edge/user-guide/access-token/
+    - title: Basic MQTT Credentials
+      path: /docs/edge/user-guide/basic-mqtt/
+    - title: X.509 Certificate based authentication
+      path: /docs/edge/user-guide/certificates/
+    - title: Enable gRPC over SSL/TLS for edge communication
+      path: /docs/edge/user-guide/grpc-over-ssl/
 #- title: Features
 #  section:
 #    - title: Edge status
@@ -65,5 +102,9 @@ toc:
           path: /docs/edge/use-cases/data-filtering-traffic-reduce-ce/
         - title: Professional Edition
           path: /docs/edge/use-cases/data-filtering-traffic-reduce-pe/
-- title: ThingsBoard Edge Roadmap
+- title: Troubleshooting
+  path: /docs/edge/user-guide/troubleshooting/
+#- title: Release Notes
+#  path: /docs/pe/reference/releases/
+- title: Roadmap
   path: /docs/edge/roadmap/
