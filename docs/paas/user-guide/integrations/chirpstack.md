@@ -1,5 +1,5 @@
 ---
-layout: docwithnav-pe 
+layout: docwithnav-paas 
 title: ChirpStack Integration 
 description: ChirpStack Integration Guide 
 
