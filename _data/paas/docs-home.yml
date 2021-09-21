@@ -103,6 +103,8 @@ toc:
       path: /docs/paas/user-guide/integrations/tti/
     - title: LORIOT
       path: /docs/paas/user-guide/integrations/loriot/
+    - title: ChirpStack
+      path: /docs/paas/user-guide/integrations/chirpstack/
     - title: AWS IoT
       path: /docs/paas/user-guide/integrations/aws-iot/
     - title: AWS Kinesis
