@@ -34,6 +34,22 @@ rpc-test:
         image: /images/user-guide/persistent-rpc/rpc-test-4-pe.png
         title: 'In the tutorial, we will use the command "test". As you can see, the response contains RPC ID.'
 
+client-side-rpc-rule-chain:
+    0:
+        image: /images/user-guide/rpc/client-side-rpc-rule-chain-pe-1.png
+        title: 'Edit the root Rule Chain. Replace "log" action node with the "script" transformation node. Add "rpc call reply" action node with the default configuration.'
+    1:
+        image: /images/user-guide/rpc/client-side-rpc-rule-chain-pe-2.png
+        title: 'Copy-paste the JS code from the documentation.'
+
+server-side-rpc-rule-chain:
+    0:
+        image: /images/user-guide/rpc/server-side-rpc-rule-chain-pe-1.png
+        title: 'Edit the root Rule Chain. Add generator node and connect it to the "rpc call request" rule node.'
+    1:
+        image: /images/user-guide/rpc/server-side-rpc-rule-chain-pe-2.png
+        title: 'Copy-paste the JS code from the documentation.'
+
 ---
 
 {% assign docsPrefix = "pe/" %}

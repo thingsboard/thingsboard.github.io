@@ -200,7 +200,7 @@ The following example is written in javascript and is based on mqtt.js.
 Pure command-line examples are not available because subscribe and publish need to happen in the same mqtt session.
 
 {% capture tabspec %}mqtt-rpc-from-client
-A,MQTT.js,shell,resources/mqtt-js-rpc-from-client.sh,/docs/reference/resources/mqtt-js-rpc-from-client.sh
+A,example.sh,shell,resources/mqtt-js-rpc-from-client.sh,/docs/reference/resources/mqtt-js-rpc-from-client.sh
 B,mqtt-js-rpc-from-client.js,javascript,resources/mqtt-js-rpc-from-client.js,/docs/reference/resources/mqtt-js-rpc-from-client.js{% endcapture %}  
 {% include tabs.html %}
 
