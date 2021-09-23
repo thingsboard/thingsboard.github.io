@@ -62,7 +62,22 @@ alarmСonditionsWithDuration:
     1:
         image: /images/user-guide/device-profile/alarm-example-2-step-2-pe.png
         title: 'Step 2. Apply changes.'
-        
+
+alarmСonditionsWithDuration2:
+    0:
+        image: /images/user-guide/device-profile/alarm-example-2-step-3-paas.png  
+        title: 'Step 3. Edit the alarm condition and change the condition type to "Duration". Specify default duration value and time unit. This value will be used by default, if no attribute is set for your device;'
+    1:
+        image: /images/user-guide/device-profile/alarm-example-2-step-4-paas.png
+        title: 'Step 4. Go to the dynamic value of the alarm delay by pressing the "Switch to dynamic value" button;'
+    2:
+        image: /images/user-guide/device-profile/alarm-example-2-step-5-paas.png
+        title: 'Step 5. Select a value: current device, current customer or current tenant. And specify the attribute from which the alarm snooze value will be taken.
+        You may optionally check "Inherit from owner". Inheritance allows to take the threshold value from customer if it is not set on the device level. If the attribute value is not set on both device and customer levels, rule will take the value from the tenant attributes;'
+    3:
+        image: /images/user-guide/device-profile/alarm-example-2-step-6-paas.png
+        title: 'Step 6. Apply all changes.'
+ 
 alarmСonditionsWithRepeating:
     0:
         image: /images/user-guide/device-profile/alarm-example-3-step-1-pe.png  
@@ -70,6 +85,20 @@ alarmСonditionsWithRepeating:
     1:
         image: /images/user-guide/device-profile/alarm-example-3-step-2-pe.png
         title: 'Step 2. Apply changes.'
+
+alarmСonditionsWithRepeating2:
+    0:
+        image: /images/user-guide/device-profile/alarm-example-3-step-3-paas.png  
+        title: 'Step 3. Edit the alarm condition and change the condition type to "Repeating". Specify default value "Count of events" to trigger the alarm; This value will be used by default, if no attribute is set for your device;'
+    1:
+        image: /images/user-guide/device-profile/alarm-example-3-step-4-paas.png
+        title: 'Step 4. Go to the dynamic value of the repeating alarm condition by pressing the "Switch to dynamic value" button;'
+    2:
+        image: /images/user-guide/device-profile/alarm-example-3-step-5-paas.png
+        title: 'Step 5.Select a value: current device, current customer or current tenant. And specify the attribute from which the value will be taken, how many times the threshold value must be exceeded for an alarm to be triggered. You may optionally check "Inherit from owner". Inheritance allows to take the threshold value from customer if it is not set on the device level. If the attribute value is not set on both device and customer levels, rule will take the value from the tenant attributes;'
+    3:
+        image: /images/user-guide/device-profile/alarm-example-3-step-6-paas.png
+        title: 'Step 6. Apply all changes.'
         
 alarmСonditionsClear:
     0:
