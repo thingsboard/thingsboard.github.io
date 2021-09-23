@@ -176,9 +176,9 @@ For this purpose, we need to edit the alarm condition and modify the condition t
 
 Now let’s assume you would like to replace the 1 minute duration with a dynamic value that depends on the settings for a particular device, customer or tenant. 
 
-For this purpose, you should use the server-side [attributes] feature. 
+For this purpose, you should use the server-side [attributes](/docs/{{docsPrefix}}user-guide/attributes/#server-side-attributes) feature. 
 
-Please create a server-side attribute *“highTemperatureDurationThreshold”* with the integer value *“2”*.
+Please create a server-side attribute *“highTemperatureDurationThreshold”* with the integer value *“2”* for your device.
 
 {% include images-gallery.html imageCollection="alarmСonditionsWithDuration2" showListImageTitles="true" %}
 
@@ -192,9 +192,9 @@ For this purpose, we need to edit the alarm condition and modify the condition t
 
 Now let’s assume you would like to replace the set number of times the alarm condition is exceeded with a dynamic value that depends on the settings for a particular device, customer or tenant. 
 
-For this purpose, you should use the server-side [attributes] feature. 
+For this purpose, you should use the server-side [attributes](/docs/{{docsPrefix}}user-guide/attributes/#server-side-attributes) feature. 
 
-Please create a server-side attribute *“highTemperatureRepeatingThreshold”*, with the integer value *“5”*.
+Please create a server-side attribute *“highTemperatureRepeatingThreshold”*, with the integer value *“5”* for your device.
 
 {% include images-gallery.html imageCollection="alarmСonditionsWithRepeating2" showListImageTitles="true" %}
 
