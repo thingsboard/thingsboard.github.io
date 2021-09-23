@@ -13,13 +13,13 @@ description: ThingsBoard Edge FAQ
 
 ThingsBoard Edge is a ThingsBoard's software product for edge computing. 
 It allows bringing data analysis and management to the edge, where the data created. At the same time ThingsBoard Edge seamlessly synchronizing with the ThingsBoard cloud (ThingsBoard Cloud, ThingsBoard Demo, ThingsBoard PE or ThingsBoard CE) according to your business needs.
-If this is your first experience with the edge we recommend to review [what-is-edge](/docs/edge/what-is-edge/) 
+If this is your first experience with the edge we recommend to review [what-is-edge](/docs/edge/getting-started-guides/what-is-edge/) 
 and [getting started guide](/docs/edge/getting-started/).
 You can find more information on the dedicated page.
 
 ## How do I get started?
 
-We recommend to [install](/docs/edge/install/installation-options/) ThingsBoard Edge locally on your laptop or PC using Docker
+We recommend to [install](/docs/user-guide/install/edge/installation-options/) ThingsBoard Edge locally on your laptop or PC using Docker
 and follow the [getting started guide](/docs/edge/getting-started/).
 
 ## Can multiple tenants or customers access single ThingsBoard Edge on remote location?

@@ -4,7 +4,7 @@
     * [Community Edition](/docs/edge/getting-started/getting-started-ce/)
 {% endif %}
 {% if currentGuide != "InstallationGuides" %}
-- [Installation guides](/docs/edge/install/installation-options/) - Learn how to setup ThingsBoard Edge on various available operating systems and connect to ThingsBoard CE/PE server.
+- [Installation guides](/docs/user-guide/install/edge/installation-options/) - Learn how to setup ThingsBoard Edge on various available operating systems and connect to ThingsBoard CE/PE server.
 {% endif %}
 - Edge Rule Engine:
 {% if currentGuide != "EdgeRuleEngineOverview" %}

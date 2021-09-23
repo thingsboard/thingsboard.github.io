@@ -29,7 +29,7 @@ rpc-test:
         image: /images/user-guide/persistent-rpc/rpc-test-3-pe.png
         title: 'Click the orange checkmark icon in the lower corner of the screen to save all applied changes.'
     5:
-        image: /images/user-guide/persistent-rpc/rpc-test-4-pe.png
+        image: /images/user-guide/persistent-rpc/rpc-test-4-ce.png
         title: 'In the tutorial, we will use the command "test". As you can see, the response contains RPC ID.'
 
 ---

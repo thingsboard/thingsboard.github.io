@@ -6,7 +6,7 @@ description:
 
 <section id="intro">
 	<main>
-		<h1 class="intro_title">The <a href="/docs/edge/what-is-edge/">ThingsBoard Edge</a> is a ThingsBoard's software product for edge computing</h1>
+		<h1 class="intro_title">The <a href="/docs/edge/getting-started-guides/what-is-edge/">ThingsBoard Edge</a> is a ThingsBoard's software product for edge computing</h1>
         <p class="labeling">It allows bringing data analysis and management to the edge, where the data created. At the same time ThingsBoard Edge seamlessly synchronizing with the ThingsBoard cloud (ThingsBoard Cloud, ThingsBoard Demo, ThingsBoard PE or ThingsBoard CE) according to your business needs.</p>
 	</main>
 </section>
@@ -19,7 +19,7 @@ description:
         <div class="block">
             <div class="feature-des"><h2>Local deployment and storage</h2>
                 <p>Process and store data from edge (local) devices without connection to the cloud. Push updates to the cloud once connection restored.</p>
-                <a class="read-more-button" href="/docs/edge/what-is-edge/">Read more<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
+                <a class="read-more-button" href="/docs/edge/getting-started-guides/what-is-edge/">Read more<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
             </div>
             <div class="block-img">
                 <img src="/images/edge/local-deployment.svg">
@@ -36,7 +36,7 @@ description:
             </div>
             <div class="feature-des"><h2>Traffic filtering</h2>
                 <p>Filter data from edge (local) devices on the ThingsBoard Edge service and push to cloud only subset of the data for further processing or storage.</p>
-                <a class="read-more-button" href="/docs/edge/what-is-edge/">Read more<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
+                <a class="read-more-button" href="/docs/edge/getting-started-guides/what-is-edge/">Read more<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
             </div>
         </div>
     </main>
@@ -50,7 +50,7 @@ description:
         <div class="block">
             <div class="feature-des"><h2>Local alarms</h2>
                 <p>React instantly to critical situations on site without connectivity to cloud.</p>
-                <a class="read-more-button" href="/docs/edge/what-is-edge/">Read more<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
+                <a class="read-more-button" href="/docs/edge/getting-started-guides/what-is-edge/">Read more<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
             </div>
             <div class="block-img">
                 <img src="/images/edge/local-alarms.svg">
@@ -67,7 +67,7 @@ description:
             </div>
             <div class="feature-des"><h2>Batch update and visualization</h2>
                 <p>Update thousands of edge configurations in a single click. Monitor local events and timeseries data with a real-time dashboard.</p>
-                <a class="read-more-button" href="/docs/edge/what-is-edge/">Read more<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
+                <a class="read-more-button" href="/docs/edge/getting-started-guides/what-is-edge/">Read more<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
             </div>
         </div>
     </main>
