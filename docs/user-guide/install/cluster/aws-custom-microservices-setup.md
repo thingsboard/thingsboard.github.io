@@ -23,13 +23,7 @@ git clone https://github.com/thingsboard/thingsboard-ce-k8s.git
 cd thingsboard-ce-k8s/aws/custom-microservices
 ```
 
-## Step 2. Set AWS account ID and cluster name 
-
-You need to set `ACCOUNT_ID` and `CLUSTER_NAME` properties in `.env` file.
-[Here](https://docs.aws.amazon.com/IAM/latest/UserGuide/console_account-alias.html#FindingYourAWSId) a guide how to find your account ID.
-Set `CLUSTER_NAME` to desired name of your ThingsBoard cluster.
-
-## Step 3. Configure and create EKS cluster
+## Step 2. Configure and create EKS cluster
 
 In the `cluster.yml` file you can find suggested cluster configuration. 
 Here are the fields you can change depending on your needs:
@@ -45,12 +39,12 @@ Command to create AWS cluster:
 eksctl create cluster -f cluster.yml
 ```
 
-## Step 4. Create AWS load-balancer controller
+## Step 3. Create AWS load-balancer controller
 
 After the cluster is ready you'll need to create AWS load-balancer controller.
 You can do it by following [this](https://docs.aws.amazon.com/eks/latest/userguide/aws-load-balancer-controller.html) guide.
 
-## Step 5. CPU and Memory resources allocation
+## Step 4. CPU and Memory resources allocation
 
 The scripts have preconfigured values of resources for each service. You can change them in `.yml` files under `resources` submenu.
 
@@ -68,7 +62,7 @@ Recommended CPU/memory resources allocation:
 - Redis: 0.3 CPU / 1.2Gi memory
 - PostgreSQL: 0.8 CPU / 3.2Gi memory
 
-## Step 6. Installation
+## Step 5. Installation
 
 Execute the following command to run installation:
 ```
@@ -87,7 +81,7 @@ Installation finished successfully!
 
 Otherwise, please check if you set the PostgreSQL URL in the `tb-node-db-configmap.yml` correctly.
 
-## Step 7. Starting
+## Step 6. Starting
 
 Execute the following command to deploy third-party resources:
 
@@ -107,7 +101,7 @@ Execute the following command to deploy ThingsBoard resources:
 After few minutes you may call `kubectl get pods`. If everything went fine, you should be able to see 
 `tb-coap-transport-0`, `tb-http-transport-0`, `tb-mqtt-transport-0`, two `tb-js-executor`, `tb-node-0` and `tb-web-ui` pods in `READY` state.
 
-## Step 8. Using
+## Step 7. Using
 
 Now you can open ThingsBoard web interface in your browser using DNS name of the load balancer.
 

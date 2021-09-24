@@ -23,14 +23,7 @@ git clone https://github.com/thingsboard/thingsboard-ce-k8s.git
 cd thingsboard-ce-k8s/aws/monolith
 ```
 
-## Step 2. Set AWS account ID and cluster name 
-
-You need to set `ACCOUNT_ID` and `CLUSTER_NAME` properties in `.env` file.
-[Here](https://docs.aws.amazon.com/IAM/latest/UserGuide/console_account-alias.html#FindingYourAWSId) a guide how to find your account ID.
-Set `CLUSTER_NAME` to desired name of your ThingsBoard cluster.
-
-
-## Step 3. Configure and create EKS cluster
+## Step 2. Configure and create EKS cluster
 
 In the `cluster.yml` file you can find suggested cluster configuration. 
 Here are the fields you can change depending on your needs:
@@ -55,12 +48,12 @@ Command to create AWS cluster:
 eksctl create cluster -f cluster.yml
 ```
 
-## Step 4. Create AWS load-balancer controller
+## Step 3. Create AWS load-balancer controller
 
 After the cluster is ready you'll need to create AWS load-balancer controller.
 You can do it by following [this](https://docs.aws.amazon.com/eks/latest/userguide/aws-load-balancer-controller.html) guide.
 
-## Step 5. Amazon PostgreSQL DB Configuration
+## Step 4. Amazon PostgreSQL DB Configuration
 
 You'll need to set up PostgreSQL on Amazon RDS. 
 One of the ways to do it is by following [this](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SettingUp.html) guide.
@@ -90,7 +83,7 @@ On AWS Console get the `Endpoint` of the RDS PostgreSQL and paste it to `SPRING_
 
 Also, you'll need to set `SPRING_DATASOURCE_USERNAME` and `SPRING_DATASOURCE_PASSWORD` with PostgreSQL `username` and `password` corresponding.
 
-## Step 6. Installation
+## Step 5. Installation
 
 Execute the following command to run installation:
 ```
@@ -109,7 +102,7 @@ Installation finished successfully!
 
 Otherwise, please check if you set the PostgreSQL URL in the `tb-node-db-configmap.yml` correctly.
 
-## Step 7. Starting
+## Step 6. Starting
 
 Execute the following command to deploy resources:
 
@@ -120,7 +113,7 @@ Execute the following command to deploy resources:
 After few minutes you may call `kubectl get pods`. If everything went fine, you should be able to 
 see `tb-node-0` pod in the `READY` state. 
 
-## Step 8. Using
+## Step 7. Using
 
 Now you can open ThingsBoard web interface in your browser using DNS name of the load balancer.
 

@@ -23,13 +23,7 @@ git clone https://github.com/thingsboard/thingsboard-ce-k8s.git
 cd thingsboard-ce-k8s/aws/microservices
 ```
 
-## Step 2. Set AWS account ID and cluster name 
-
-You need to set `ACCOUNT_ID` and `CLUSTER_NAME` properties in `.env` file.
-[Here](https://docs.aws.amazon.com/IAM/latest/UserGuide/console_account-alias.html#FindingYourAWSId) a guide how to find your account ID.
-Set `CLUSTER_NAME` to desired name of your ThingsBoard cluster.
-
-## Step 3. Configure and create EKS cluster
+## Step 2. Configure and create EKS cluster
 
 In the `cluster.yml` file you can find suggested cluster configuration. 
 Here are the fields you can change depending on your needs:
@@ -54,12 +48,12 @@ Command to create AWS cluster:
 eksctl create cluster -f cluster.yml
 ```
 
-## Step 4. Create AWS load-balancer controller
+## Step 3. Create AWS load-balancer controller
 
 After the cluster is ready you'll need to create AWS load-balancer controller.
 You can do it by following [this](https://docs.aws.amazon.com/eks/latest/userguide/aws-load-balancer-controller.html) guide.
 
-## Step 5. Amazon PostgreSQL DB Configuration
+## Step 4. Amazon PostgreSQL DB Configuration
 
 You'll need to set up PostgreSQL on Amazon RDS. 
 One of the ways to do it is by following [this](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SettingUp.html) guide.
@@ -85,7 +79,7 @@ Make sure that `thingsboard` database is created along with PostgreSQL instance 
 
 **Note:** You may also change `username` and `password` fields.
 
-## Step 6. Amazon MSK Configuration
+## Step 5. Amazon MSK Configuration
 
 You'll need to set up Amazon MSK. 
 To do so you need to open AWS console, MSK submenu, press `Create cluster` button and choose `Custom create` mode. 
@@ -111,7 +105,7 @@ Also you should enable `Plaintext` communication between clients and brokers:
 configure access only to the 9092 port and from the ThingsBoard nodes.
 This can be achieved if you assigned security group to the `node` node-group in the `cluster.yml` file. 
 
-## Step 7. Amazon ElactiCache (Redis) Configuration
+## Step 6. Amazon ElactiCache (Redis) Configuration
 
 You'll need to set up [Amazon ElastiCache (Redis)](https://aws.amazon.com/elasticache/redis/).
 
@@ -126,7 +120,7 @@ Afterwards, edit the `Security groups` field of the creating form and choose the
 
 ![image](/images/install/cloud/aws-redis-security-group.png)
 
-## Step 8. Configure links to the Kafka (Amazon MSK)/Redis/Postgres
+## Step 7. Configure links to the Kafka (Amazon MSK)/Redis/Postgres
 
 ### Amazon RDS PostgreSQL
 
@@ -156,7 +150,7 @@ You'll need to paste **hostname** (part without **:6379**) from the `Primary End
 
 ![image](/images/install/cloud/aws-redis-endpoint.png)
 
-## Step 9. CPU and Memory resources allocation
+## Step 8. CPU and Memory resources allocation
 
 The scripts have preconfigured values of resources for each service. You can change them in `.yml` files under `resources` submenu.
 
@@ -171,7 +165,7 @@ Recommended CPU/memory resources allocation:
 - JS Executor: 0.1 CPU / 0.3Gi memory
 - Zookeeper: 0.3 CPU / 1Gi memory
 
-## Step 10. Installation
+## Step 9. Installation
 
 Execute the following command to run installation:
 ```
@@ -190,7 +184,7 @@ Installation finished successfully!
 
 Otherwise, please check if you set the PostgreSQL URL in the `tb-node-db-configmap.yml` correctly.
 
-## Step 11. Starting
+## Step 10. Starting
 
 Execute the following command to deploy resources:
 
@@ -202,7 +196,7 @@ After few minutes you may call `kubectl get pods`. If everything went fine, you 
 `tb-coap-transport-0`, `tb-http-transport-0`, `tb-mqtt-transport-0`, two `tb-js-executor`, `tb-node-0`, `tb-web-ui` and 3 `zookeeper` pods.
 Every pod should be in the `READY` state. 
 
-## Step 12. Using
+## Step 11. Using
 
 Now you can open ThingsBoard web interface in your browser using DNS name of the load balancer.
 
