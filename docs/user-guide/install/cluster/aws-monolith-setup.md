@@ -83,7 +83,36 @@ On AWS Console get the `Endpoint` of the RDS PostgreSQL and paste it to `SPRING_
 
 Also, you'll need to set `SPRING_DATASOURCE_USERNAME` and `SPRING_DATASOURCE_PASSWORD` with PostgreSQL `username` and `password` corresponding.
 
-## Step 5. Installation
+## Step 5. Configure secure HTTP connection
+
+**Note**: if you don't need SSL connection over HTTP, you'll need to remove **alb.ingress.kubernetes.io/listen-ports** and **alb.ingress.kubernetes.io/certificate-arn** 
+lines in the `routes.yml` file and skip this step.
+
+Use [AWS Certificate Manager](https://aws.amazon.com/certificate-manager/) to create or import SSL certificate.
+After creation/import you'll need to copy certificate's ARN and paste it instead of **ARN_VALUE** in the `routes.yml` file:
+
+![image](/images/install/cloud/aws-certificate-arn.png)
+ 
+## Step 6. Configure secure MQTT connection
+
+Follow [this guide](/docs/user-guide/mqtt-over-ssl/) to create a **.jks** file with the SSL certificate.
+Afterwards, you need to set **MQTT_SSL_KEY_STORE_PASSWORD** and **MQTT_SSL_KEY_PASSWORD** environment variables in the `tb-node.yml` file
+to the corresponding key-store and certificate key passwords.
+
+You'll need to create a config-map with your JKS file, you can do it by calling command:
+
+```
+kubectl create configmap tb-mqtts-config \
+             --from-file=server.jks=YOUR_JKS_FILENAME.jks -o yaml --dry-run=client | kubectl apply -f -
+```
+{: .copy-code}
+
+where **YOUR_JKS_FILENAME** is the name of your **.jks** file.
+
+**Note**: if you don't need SSL connection over MQTT, you'll need to set **MQTT_SSL_ENABLED** environment variable to **false**
+and delete all notions of **tb-mqtts-config** in the `tb-node.yml` file.
+
+## Step 7. Installation
 
 Execute the following command to run installation:
 ```
@@ -102,7 +131,7 @@ Installation finished successfully!
 
 Otherwise, please check if you set the PostgreSQL URL in the `tb-node-db-configmap.yml` correctly.
 
-## Step 6. Starting
+## Step 8. Starting
 
 Execute the following command to deploy resources:
 
@@ -113,22 +142,31 @@ Execute the following command to deploy resources:
 After few minutes you may call `kubectl get pods`. If everything went fine, you should be able to 
 see `tb-node-0` pod in the `READY` state. 
 
-## Step 7. Using
+## Step 9. Using
 
 Now you can open ThingsBoard web interface in your browser using DNS name of the load balancer.
 
-You can see DNS name of the load-balancers using command:
+You can see DNS name (the `ADDRESS` column) of the HTTP load-balancer using command:
+```
+kubectl get ingress
+```
 
+You should see the similar picture:
+
+![image](/images/install/cloud/aws-application-loadbalancers.png)
+
+To connect to the cluster via MQTT or COAP you'll need to get corresponding service, you can do it with command:
 ```
 kubectl get service
 ```
 
 You should see the similar picture:
 
-![image](/images/install/cloud/aws-monolith-loadbalancers.png)
+![image](/images/install/cloud/aws-network-loadbalancers.png)
+
 
 There are two load-balancers:
-- tb-loadbalancer-external - for MQTT and HTTP protocols
+- tb-mqtt-loadbalancer-external - for MQTT protocol
 - tb-coap-loadbalancer-external - for COAP protocol
 
 Use `EXTERNAL-IP` field of the load-balancers to connect to the cluster.

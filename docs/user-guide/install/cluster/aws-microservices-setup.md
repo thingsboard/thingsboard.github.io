@@ -150,7 +150,36 @@ You'll need to paste **hostname** (part without **:6379**) from the `Primary End
 
 ![image](/images/install/cloud/aws-redis-endpoint.png)
 
-## Step 8. CPU and Memory resources allocation
+## Step 8. Configure secure HTTP connection
+
+**Note**: if you don't need SSL connection over HTTP, you'll need to remove **alb.ingress.kubernetes.io/listen-ports** and **alb.ingress.kubernetes.io/certificate-arn** 
+lines in the `routes.yml` file and skip this step.
+
+Use [AWS Certificate Manager](https://aws.amazon.com/certificate-manager/) to create or import SSL certificate.
+After creation/import you'll need to copy certificate's ARN and paste it instead of **ARN_VALUE** in the `routes.yml` file:
+
+![image](/images/install/cloud/aws-certificate-arn.png)
+ 
+## Step 9. Configure secure MQTT connection
+
+Follow [this guide](/docs/user-guide/mqtt-over-ssl/) to create a **.jks** file with the SSL certificate.
+Afterwards, you need to set **MQTT_SSL_KEY_STORE_PASSWORD** and **MQTT_SSL_KEY_PASSWORD** environment variables in the `thingsboard.yml` file
+to the corresponding key-store and certificate key passwords.
+
+You'll need to create a config-map with your JKS file, you can do it by calling command:
+
+```
+kubectl create configmap tb-mqtts-config \
+             --from-file=server.jks=YOUR_JKS_FILENAME.jks -o yaml --dry-run=client | kubectl apply -f -
+```
+{: .copy-code}
+
+where **YOUR_JKS_FILENAME** is the name of your **.jks** file.
+
+**Note**: if you don't need SSL connection over MQTT, you'll need to set **MQTT_SSL_ENABLED** environment variable to **false**
+and delete all notions of **tb-mqtts-config** in the `thingsboard.yml` file.
+
+## Step 10. CPU and Memory resources allocation
 
 The scripts have preconfigured values of resources for each service. You can change them in `.yml` files under `resources` submenu.
 
@@ -165,7 +194,7 @@ Recommended CPU/memory resources allocation:
 - JS Executor: 0.1 CPU / 0.3Gi memory
 - Zookeeper: 0.3 CPU / 1Gi memory
 
-## Step 9. Installation
+## Step 11. Installation
 
 Execute the following command to run installation:
 ```
@@ -184,7 +213,7 @@ Installation finished successfully!
 
 Otherwise, please check if you set the PostgreSQL URL in the `tb-node-db-configmap.yml` correctly.
 
-## Step 10. Starting
+## Step 12. Starting
 
 Execute the following command to deploy resources:
 
@@ -196,7 +225,7 @@ After few minutes you may call `kubectl get pods`. If everything went fine, you 
 `tb-coap-transport-0`, `tb-http-transport-0`, `tb-mqtt-transport-0`, two `tb-js-executor`, `tb-node-0`, `tb-web-ui` and 3 `zookeeper` pods.
 Every pod should be in the `READY` state. 
 
-## Step 11. Using
+## Step 13. Using
 
 Now you can open ThingsBoard web interface in your browser using DNS name of the load balancer.
 
@@ -207,7 +236,7 @@ kubectl get ingress
 
 You should see the similar picture:
 
-![image](/images/install/cloud/aws-microservices-application-loadbalancers.png)
+![image](/images/install/cloud/aws-application-loadbalancers.png)
 
 To connect to the cluster via MQTT or COAP you'll need to get corresponding service, you can do it with command:
 ```
@@ -216,7 +245,7 @@ kubectl get service
 
 You should see the similar picture:
 
-![image](/images/install/cloud/aws-microservices-network-loadbalancers.png)
+![image](/images/install/cloud/aws-network-loadbalancers.png)
 
 
 There are two load-balancers:
