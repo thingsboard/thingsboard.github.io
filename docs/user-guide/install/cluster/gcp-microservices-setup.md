@@ -39,7 +39,41 @@ gcloud container clusters get-credentials $CLUSTER_NAME
 
 where **$CLUSTER_NAME** is the name you gave to your cluster.
 
-## Step 3. CPU and Memory resources allocation
+## Step 3. Configure secure HTTP connection
+
+**Note**: if you don't need SSL connection over HTTP, you'll need to remove **tls:** and **- secretName: ssl-cert-secret** 
+lines in the `routes.yml` file and skip this step.
+
+Follow [this guide](https://cloud.google.com/kubernetes-engine/docs/how-to/ingress-multi-ssl#creating_certificates_and_keys) to create your own SSL certificate.
+After the certificate is created call the next command:
+
+```
+kubectl create secret tls ssl-cert-secret --cert CERT_FILE --key KEY_FILE
+```
+where:
+- CERT_FILE: the path to your certificate file.
+- KEY_FILE: the path to the key file that goes with your certificate.
+ 
+## Step 4. Configure secure MQTT connection
+
+Follow [this guide](/docs/user-guide/mqtt-over-ssl/) to create a **.jks** file with the SSL certificate.
+Afterwards, you need to set **MQTT_SSL_KEY_STORE_PASSWORD** and **MQTT_SSL_KEY_PASSWORD** environment variables in the `thingsboard.yml` file
+to the corresponding key-store and certificate key passwords.
+
+You'll need to create a config-map with your JKS file, you can do it by calling command:
+
+```
+kubectl create configmap tb-mqtts-config \
+             --from-file=server.jks=YOUR_JKS_FILENAME.jks -o yaml --dry-run=client | kubectl apply -f -
+```
+{: .copy-code}
+
+where **YOUR_JKS_FILENAME** is the name of your **.jks** file.
+
+**Note**: if you don't need SSL connection over MQTT, you'll need to set **MQTT_SSL_ENABLED** environment variable to **false**
+and delete all notions of **tb-mqtts-config** in the `thingsboard.yml` file.
+
+## Step 5. CPU and Memory resources allocation
 
 The scripts have preconfigured values of resources for each service. You can change them in `.yml` files under `resources` submenu.
 
@@ -57,7 +91,7 @@ Recommended CPU/memory resources allocation:
 - Redis: 0.3 CPU / 1.2Gi memory
 - PostgreSQL: 0.8 CPU / 3.2Gi memory
 
-## Step 4. Installation
+## Step 6. Installation
 
 Execute the following command to run installation:
 ```
@@ -76,7 +110,7 @@ Installation finished successfully!
 
 Otherwise, please check if you set the PostgreSQL URL in the `tb-node-db-configmap.yml` correctly.
 
-## Step 5. Starting
+## Step 7. Starting
 
 Execute the following command to deploy third-party resources:
 
@@ -98,7 +132,7 @@ After few minutes you may call `kubectl get pods`. If everything went fine, you 
 `tb-coap-transport-0`, `tb-http-transport-0`, `tb-mqtt-transport-0`, two `tb-js-executor`, `tb-node-0` and `tb-web-ui` pods.
 Every pod should be in the `READY` state. 
 
-## Step 6. Using
+## Step 8. Using
 
 Now you can open ThingsBoard web interface in your browser using DNS name of the load balancer.
 
@@ -109,7 +143,7 @@ kubectl get ingress
 
 You should see the similar picture:
 
-![image](/images/install/cloud/microservices-application-loadbalancers.png)
+![image](/images/install/cloud/application-loadbalancers.png)
 
 To connect to the cluster via MQTT or COAP you'll need to get corresponding service, you can do it with command:
 ```
@@ -118,7 +152,7 @@ kubectl get service
 
 You should see the similar picture:
 
-![image](/images/install/cloud/microservices-network-loadbalancers.png)
+![image](/images/install/cloud/network-loadbalancers.png)
 
 
 There are two load-balancers:

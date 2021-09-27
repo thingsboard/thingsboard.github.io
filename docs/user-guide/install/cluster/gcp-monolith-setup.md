@@ -10,7 +10,7 @@ description: ThingsBoard IoT platform monolith setup with Kubernetes in GKE
 * TOC
 {:toc}
 
-This guide will help you to setup ThingsBoard in monolith mode in GKE. 
+This guide will help you to set up ThingsBoard in monolith mode in GKE. 
 
 ## Prerequisites
 
@@ -22,6 +22,7 @@ ThingsBoard Microservices run on the Kubernetes cluster. You need to have a Kube
 git clone https://github.com/thingsboard/thingsboard-ce-k8s.git
 cd thingsboard-ce-k8s/gcp/monolith
 ```
+{: .copy-code}
 
 ## Step 2. Configure and create GKE cluster
 
@@ -36,15 +37,51 @@ To update context of Kubectl execute this command:
 ```
 gcloud container clusters get-credentials $CLUSTER_NAME
 ```
+{: .copy-code}
 
 where **$CLUSTER_NAME** is the name you gave to your cluster.
 
-## Step 3. Installation
+## Step 3. Configure secure HTTP connection
+
+**Note**: if you don't need SSL connection over HTTP, you'll need to remove **tls:** and **- secretName: ssl-cert-secret** 
+lines in the `routes.yml` file and skip this step.
+
+Follow [this guide](https://cloud.google.com/kubernetes-engine/docs/how-to/ingress-multi-ssl#creating_certificates_and_keys) to create your own SSL certificate.
+After the certificate is created call the next command:
+
+```
+kubectl create secret tls ssl-cert-secret --cert CERT_FILE --key KEY_FILE
+```
+where:
+- CERT_FILE: the path to your certificate file.
+- KEY_FILE: the path to the key file that goes with your certificate.
+ 
+## Step 4. Configure secure MQTT connection
+
+Follow [this guide](/docs/user-guide/mqtt-over-ssl/) to create a **.jks** file with the SSL certificate.
+Afterwards, you need to set **MQTT_SSL_KEY_STORE_PASSWORD** and **MQTT_SSL_KEY_PASSWORD** environment variables in the `tb-node.yml` file
+to the corresponding key-store and certificate key passwords.
+
+You'll need to create a config-map with your JKS file, you can do it by calling command:
+
+```
+kubectl create configmap tb-mqtts-config \
+             --from-file=server.jks=YOUR_JKS_FILENAME.jks -o yaml --dry-run=client | kubectl apply -f -
+```
+{: .copy-code}
+
+where **YOUR_JKS_FILENAME** is the name of your **.jks** file.
+
+**Note**: if you don't need SSL connection over MQTT, you'll need to set **MQTT_SSL_ENABLED** environment variable to **false**
+and delete all notions of **tb-mqtts-config** in the `tb-node.yml` file.
+
+## Step 5. Installation
 
 Execute the following command to run installation:
 ```
  ./k8s-install-tb.sh --loadDemo
 ```
+{: .copy-code}
 
 Where:
 
@@ -56,33 +93,44 @@ After this command finish you should see the next line in the console:
 Installation finished successfully!
 ```
 
-## Step 4. Starting
+## Step 6. Starting
 
 Execute the following command to deploy resources:
 
 ```
  ./k8s-deploy-resources.sh
 ```
+{: .copy-code}
 
 After few minutes you may call `kubectl get pods`. If everything went fine, you should be able to 
 see `tb-node-0` pod in the `READY` state. 
 
-## Step 5. Using
+## Step 7. Using
 
 Now you can open ThingsBoard web interface in your browser using DNS name of the load balancer.
 
-You can see DNS name of the load-balancers using command:
-
+You can see DNS name (the `ADDRESS` column) of the HTTP load-balancer using command:
 ```
-kubectl get service
+kubectl get ingress
 ```
 
 You should see the similar picture:
 
-![image](/images/install/cloud/monolith-loadbalancers.png)
+![image](/images/install/cloud/application-loadbalancers.png)
+
+To connect to the cluster via MQTT or COAP you'll need to get corresponding service, you can do it with command:
+
+```
+kubectl get service
+```
+{: .copy-code}
+
+You should see the similar picture:
+
+![image](/images/install/cloud/network-loadbalancers.png)
 
 There are two load-balancers:
-- tb-loadbalancer-external - for MQTT and HTTP protocols
+- tb-mqtt-loadbalancer-external - for MQTT protocol
 - tb-coap-loadbalancer-external - for COAP protocol
 
 Use `EXTERNAL-IP` field of the load-balancers to connect to the cluster.
