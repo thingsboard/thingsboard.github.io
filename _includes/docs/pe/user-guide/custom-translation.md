@@ -5,23 +5,35 @@ and extend the translation to specific GUI elements on the dashboards.
  
 See video tutorial below for step-by-step instruction how to use this feature.
 
+## Using Locale files
+
+- Explain "Language" selector;
+- Explain "Download locale file" button (all available translations);
+- how to overwrite one of the translations;
+- example of the JSON with "real" values.
+
+## Custom menu labels 
+
+## Custom dashboard title
+
+## Custom widget title
+
+## Custom widget legend
+
+## Dynamic widget label
+
+## Using Custom translations 
+
+- How to change dashboard title
+- How to change dashboard widget title
+- How to change dashboard widget legend
+- example of the JSON
+
 ## How to use Custom Translations in Widgets
 
 Custom Translation can be used in widgets: in the post-processing function, as a value, or in the title.
 
-| ![image](/images/user-guide/custom-translation/custom_translation.png) |
-| <i>Specifying translation</i> |
-
-The post-processing function requires quotes for the i18n.
-
-| ![image](/images/user-guide/custom-translation/ct_post_processing.png) |
-| <i>Custom Translation in the post-processing function and label of telemetry</i> |
-
-| ![image](/images/user-guide/custom-translation/ct_html_value_card.png) |
-| <i>Custom Translations for “HTML Value Card”</i> |
-
-| ![image](/images/user-guide/custom-translation/ct_nav_card.png) |
-| <i>Custom Translations in the title on "Navigation Card”</i> |
+{% include images-gallery.html imageCollection="customTranslationInWidgets" showListImageTitles="true" %}
 
 <br/>
 
@@ -37,6 +49,8 @@ Date widget, Gateways widgets, Scheduling widgets.
         <iframe src="https://www.youtube.com/embed/VSNZWl1NjWU" frameborder="0" allowfullscreen></iframe>
     </div>
 </div> 
+
+## Limitations of the Custom Translations in Widgets
  
 ## Next steps
 
