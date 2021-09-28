@@ -2,15 +2,15 @@
 layout: docwithnav
 assignees:
 - ashvayka
-title: Monolith setup using AWS infrastructure
-description: ThingsBoard IoT platform monolith setup with Kubernetes in AWS EKS
+title: Microservices setup using AWS infrastructure
+description: ThingsBoard IoT platform microservices setup with Kubernetes in AWS EKS
 
 ---
 
 * TOC
 {:toc}
 
-This guide will help you to set up ThingsBoard in monolith mode in AWS EKS. 
+This guide will help you to setup ThingsBoard in microservices mode in AWS EKS. 
 
 ## Prerequisites
 
@@ -20,9 +20,8 @@ This guide will help you to set up ThingsBoard in monolith mode in AWS EKS.
 
 ```bash
 git clone https://github.com/thingsboard/thingsboard-pe-k8s.git
-cd thingsboard-pe-k8s/aws/monolith
+cd thingsboard-pe-k8s/aws/microservices
 ```
-{: .copy-code}
 
 ## Step 2. Configure and create EKS cluster
 
@@ -31,14 +30,14 @@ Here are the fields you can change depending on your needs:
 - `region` - should be the AWS region where you want your cluster to be located (the default value is `us-east-1`)
 - `availabilityZones` - should specify the exact IDs of the region's availability zones 
 (the default value is `[us-east-1a,us-east-1b,us-east-1c]`)
-- `instanceType` - the type of the instance with TB node (the default value is `m5.xlarge`)
+- `instanceType` - the type of the instance with TB node (the default value is `t3.xlarge`)
 
-**Note**: if you don't make any changes to `instanceType` and `desiredCapacity` fields, the EKS will deploy **1** node of type **m5.xlarge**.
+**Note**: if you don't make any changes to `instanceType` and `desiredCapacity` fields, the EKS will deploy **3** nodes of type **t3.xlarge**.
 
 {% capture aws-eks-security %}
-In case you want to secure access to the PostgreSQL, you'll need to configure the existing VPC or create a new one,
-set it as the VPC for the ThingsBoard cluster, create security group for PostgreSQL,
-set them for `node` node-group in the ThingsBoard cluster and configure the access from the ThingsBoard cluster nodes to PostgreSQL using another security group.
+In case you want to secure access to the PostgreSQL and MSK, you'll need to configure the existing VPC or create a new one,
+set it as the VPC for the ThingsBoard cluster, create security groups for PostgreSQL and MSK,
+set them for `node` node-group in the ThingsBoard cluster and configure the access from the ThingsBoard cluster nodes to PostgreSQL/MSK using another security group.
 
 You can find more information about configuring VPC for `eksctl` [here](https://eksctl.io/usage/vpc-networking/).
 {% endcapture %}
@@ -79,13 +78,80 @@ Make sure that `thingsboard` database is created along with PostgreSQL instance 
 
 ![image](/images/install/cloud/aws-rds-default-database.png)
 
-On AWS Console get the `Endpoint` of the RDS PostgreSQL and paste it to `SPRING_DATASOURCE_URL` in the `tb-node-db-configmap.yml` instead of `your_url`:
+**Note:** You may also change `username` and `password` fields.
+
+## Step 5. Amazon MSK Configuration
+
+You'll need to set up Amazon MSK. 
+To do so you need to open AWS console, MSK submenu, press `Create cluster` button and choose `Custom create` mode. 
+You should see the similar image:
+
+![image](/images/install/cloud/aws-msk-creation.png)
+
+Now you should choose the ThingsBoard cluster's VPC for the Kafka cluster:
+
+![image](/images/install/cloud/aws-msk-vpc.png)
+
+You can choose any zones and subnets.
+
+After that you need to select `Custom settings` of security groups and choose groups corresponding to the group on the screen:
+
+![image](/images/install/cloud/aws-msk-security-groups.png)
+
+Also you should enable `Plaintext` communication between clients and brokers:
+
+![image](/images/install/cloud/aws-msk-encryption.png)
+
+**Note**: in order to make MSK more secure you may create the separate security group, 
+configure access only to the 9092 port and from the ThingsBoard nodes.
+This can be achieved if you assigned security group to the `node` node-group in the `cluster.yml` file. 
+
+## Step 6. Amazon ElactiCache (Redis) Configuration
+
+You'll need to set up [Amazon ElastiCache (Redis)](https://aws.amazon.com/elasticache/redis/).
+
+When creating Redis cluster you should choose `Create new` for `Subnet group` menu:
+
+![image](/images/install/cloud/aws-redis-vpc.png)
+
+Then you should choose your ThingsBoard cluster's VPC (you can see the ID of your VPC under the [VPC](https://console.aws.amazon.com/vpc/home) section of AWS console) 
+and any of the subnets.
+
+Afterwards, edit the `Security groups` field of the creating form and choose the corresponding security group from your ThingsBoard cluster as on the next screen:
+
+![image](/images/install/cloud/aws-redis-security-group.png)
+
+## Step 7. Configure links to the Kafka (Amazon MSK)/Redis/Postgres
+
+### Amazon RDS PostgreSQL
+
+On AWS Console get the `Endpoint` of the RDS PostgreSQL and paste it to `SPRING_DATASOURCE_URL` in the `tb-node-db-configmap.yml` instead of `your_url`.
 
 ![image](/images/install/cloud/aws-postgres-endpoint.png)
 
 Also, you'll need to set `SPRING_DATASOURCE_USERNAME` and `SPRING_DATASOURCE_PASSWORD` with PostgreSQL `username` and `password` corresponding.
 
-## Step 5. Upload Docker credentials
+### Amazon MSK
+
+To get the list of brokers call the command:
+```
+aws kafka get-bootstrap-brokers --region us-east-1 --cluster-arn $CLUSTER_ARN
+```
+Where $CLUSTER_ARN is the Amazon Resource Name (ARN) of the MSK cluster:
+
+![image](/images/install/cloud/aws-msk-arn.png)
+
+You'll need to paste data from the `BootstrapBrokerString` to the `TB_KAFKA_SERVERS` environment variable in the `tb-kafka-configmap.yml` file.
+
+### Amazon ElastiCache Redis
+
+[Here](https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/GettingStarted.ConnectToCacheNode.html) you can find information on how to get Redis endpoints.
+
+You'll need to paste **hostname** (part without **:6379**) from the `Primary Endpoint` to the `REDIS_HOST` environment variable in the `tb-redis-configmap.yml` file:
+
+![image](/images/install/cloud/aws-redis-endpoint.png)
+
+## Step 8. Upload Docker credentials
 
 Make sure your have logged in to docker hub using command line. To upload Docker credentials, please execute next command:
 
@@ -101,13 +167,12 @@ kubectl create secret docker-registry regcred --docker-server=https://index.dock
 ```
 {: .copy-code}
 
-## Step 6. Installation
+## Step 9. Installation
 
 Execute the following command to run installation:
 ```
  ./k8s-install-tb.sh --loadDemo
 ```
-{: .copy-code}
 
 Where:
 
@@ -121,7 +186,7 @@ Installation finished successfully!
 
 Otherwise, please check if you set the PostgreSQL URL in the `tb-node-db-configmap.yml` correctly.
 
-## Step 7. Configure secure HTTP connection
+## Step 10. Configure secure HTTP connection
 
 **Note**: if you don't need SSL connection over HTTP, you'll need to remove **alb.ingress.kubernetes.io/listen-ports** and **alb.ingress.kubernetes.io/certificate-arn** 
 lines in the `routes.yml` file and skip this step.
@@ -131,10 +196,10 @@ After creation/import you'll need to copy certificate's ARN and paste it instead
 
 ![image](/images/install/cloud/aws-certificate-arn.png)
  
-## Step 8. Configure secure MQTT connection
+## Step 11. Configure secure MQTT connection
 
 Follow [this guide](/docs/user-guide/mqtt-over-ssl/) to create a **.jks** file with the SSL certificate.
-Afterwards, you need to set **MQTT_SSL_KEY_STORE_PASSWORD** and **MQTT_SSL_KEY_PASSWORD** environment variables in the `tb-node.yml` file
+Afterwards, you need to set **MQTT_SSL_KEY_STORE_PASSWORD** and **MQTT_SSL_KEY_PASSWORD** environment variables in the `thingsboard.yml` file
 to the corresponding key-store and certificate key passwords.
 
 You'll need to create a config-map with your JKS file, you can do it by calling command:
@@ -148,22 +213,36 @@ kubectl create configmap tb-mqtts-config \
 where **YOUR_JKS_FILENAME** is the name of your **.jks** file.
 
 **Note**: if you don't need SSL connection over MQTT, you'll need to set **MQTT_SSL_ENABLED** environment variable to **false**
-and delete all notions of **tb-mqtts-config** in the `tb-node.yml` file.
+and delete all notions of **tb-mqtts-config** in the `thingsboard.yml` file.
 
+## Step 12. CPU and Memory resources allocation
 
-## Step 9. Starting
+The scripts have preconfigured values of resources for each service. You can change them in `.yml` files under `resources` submenu.
+
+**Note**: if you want to allocate more resources you'll need to increase the number of Amazon nodes or use larger machines. 
+
+Recommended CPU/memory resources allocation:
+- TB Node: 1.5 CPU / 6Gi memory
+- TB HTTP Transport: 0.5 CPU / 2Gi memory
+- TB MQTT Transport: 0.5 CPU / 2Gi memory
+- TB COAP Transport: 0.5 CPU / 2Gi memory
+- TB Web UI: 0.3 CPU / 0.5Gi memory
+- JS Executor: 0.1 CPU / 0.3Gi memory
+- Zookeeper: 0.3 CPU / 1Gi memory
+
+## Step 13. Starting
 
 Execute the following command to deploy resources:
 
 ```
  ./k8s-deploy-resources.sh
 ```
-{: .copy-code}
 
-After few minutes you may call `kubectl get pods`. If everything went fine, you should be able to 
-see `tb-node-0` pod in the `READY` state. 
+After few minutes you may call `kubectl get pods`. If everything went fine, you should be able to see 
+`tb-coap-transport-0`, `tb-http-transport-0`, `tb-mqtt-transport-0`, two `tb-js-executor`, `tb-node-0`, `tb-web-ui` and 3 `zookeeper` pods.
+Every pod should be in the `READY` state. 
 
-## Step 10. Using
+## Step 14. Using
 
 Now you can open ThingsBoard web interface in your browser using DNS name of the load balancer.
 
@@ -171,7 +250,6 @@ You can see DNS name (the `ADDRESS` column) of the HTTP load-balancer using comm
 ```
 kubectl get ingress
 ```
-{: .copy-code}
 
 You should see the similar picture:
 
@@ -181,7 +259,6 @@ To connect to the cluster via MQTT or COAP you'll need to get corresponding serv
 ```
 kubectl get service
 ```
-{: .copy-code}
 
 You should see the similar picture:
 
@@ -209,31 +286,28 @@ For example to see ThingsBoard node logs execute the following command:
 ```
 kubectl logs -f tb-node-0
 ```
-{: .copy-code}
 
-Or use `kubectl get pods` to see the state of the pod.
+Or use `kubectl get pods` to see the state of the pods.
 Or use `kubectl get services` to see the state of all the services.
 Or use `kubectl get deployments` to see the state of all the deployments.
 See [kubectl Cheat Sheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/) command reference for details.
 
-Execute the following command to delete **tb-node** and **load-balancers**:
+Execute the following command to delete all ThingsBoard pods:
 
 ```
 ./k8s-delete-resources.sh
 ```
 
-Execute the following command to delete  **tb-node**, **load-balancers** and **configmaps**:
+Execute the following command to delete all ThingsBoard pods and configmaps:
 
 ```
 ./k8s-delete-all.sh
 ```
-{: .copy-code}
 
 Execute the following command to delete EKS cluster (you should change the name of the cluster and zone):
 ```
 eksctl delete cluster -r us-east-1 -n thingsboard-cluster -w
 ```
-{: .copy-code}
 
 ## Upgrading
 
