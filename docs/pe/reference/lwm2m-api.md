@@ -83,7 +83,7 @@ device-credentials:
 nosecurity-credentials:
     0:
         image: /images/lwm2m/images/device-credentials-pe.png
-        title: 'With No-Security mode, Endpoint Client Name is used to identify the device'
+        title: 'With No"-"Security mode, Endpoint Client Name is used to identify the device'
 
 wakaama-terminal:
     0:
@@ -96,7 +96,7 @@ wakaama-terminal:
 device-objects-ce:
     0:
         image: /images/lwm2m/images/key-name-pe.png
-        title: 'Open transport configuration settings'
+        title: 'Open the transport configuration settings'
     1:
         image: /images/lwm2m/images/key-name-1-pe.png
         title: 'Open LwM2M model settings'
@@ -108,6 +108,11 @@ otafirmware-transport:
     1:
         image: /images/lwm2m/images/otafirmware-transport-1-pe.png
         title: 'Select the firmware update strategy'
+
+sota:
+    0:
+        image: /images/lwm2m/images/sota-pe.png
+        title: 'Select the software update strategy from the drop down menu'
 
 ---
 

@@ -29,9 +29,6 @@ upload-tenant:
         image: /images/lwm2m/images/upload-tenant-2-ce.png
         title: 'Tenant can delete files, uploaded by himself'
     3:
-        image: /images/lwm2m/images/upload-tenant-3-ce.png
-        title: 'Try to delete file'
-    4:
         image: /images/lwm2m/images/upload-tenant-4-ce.png
         title: 'When Tenant deletes his files, file uploaded by the System administrator remains'
 
@@ -71,7 +68,7 @@ device-credentials:
         title: 'Create a new device'
     1:
         image: /images/lwm2m/images/device-credentials-1-ce.png
-        title: 'Add device credentials: Pre-shared Key'
+        title: 'Add device credentials: Pre shared Key'
     2:
         image: /images/lwm2m/images/device-credentials-2-ce.png
         title: 'Add device credentials: Raw Public Key'
@@ -82,7 +79,7 @@ device-credentials:
 nosecurity-credentials:
     0:
         image: /images/lwm2m/images/device-credentials-ce.png
-        title: 'With No-Security mode, Endpoint Client Name is used to identify the device'
+        title: 'With No Security mode, Endpoint Client Name is used to identify the device'
 
 wakaama-terminal:
     0:
@@ -95,7 +92,7 @@ wakaama-terminal:
 device-objects-ce:
     0:
         image: /images/lwm2m/images/key-name-ce.png
-        title: 'Open transport configuration settings'
+        title: 'Open the transport configuration settings'
     1:
         image: /images/lwm2m/images/key-name-1-ce.png
         title: 'Open LwM2M model settings'
@@ -107,6 +104,11 @@ otafirmware-transport:
     1:
         image: /images/lwm2m/images/otafirmware-transport-1-ce.png
         title: 'Select the firmware update strategy'
+
+sota:
+    0:
+        image: /images/lwm2m/images/sota-ce.png
+        title: 'Select the software update strategy from the drop down menu'
 
 ---
 

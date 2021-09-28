@@ -117,7 +117,7 @@ To execute attribute - oriented commands there are two ways to specify the targe
 Resource  ID is the combination of "/ObjectId/ObjectInstance/ResourceID" numbers,
 Where:
 
-* 'ObjectId' Indicates the Object number. Objects used to group resources on the device, related to a certain functionality. 
+* 'ObjectId' Indicates the Object number. Objects used to group resources on the device, related to a certain functionality.
 * 'ObjectInstance' Indicates the Object Instance to read.
 * 'ResourceID' Indicates the Resource to read.
 
@@ -152,10 +152,11 @@ Below you can find examples of usage for commands that are supported by the Thin
 
 ### Read Operation
 
-The "Read" operation is used to access the value of a Resource, a Resource Instance, an array of Resource Instances, 
+The "Read" operation is used to access the value of a Resource, a Resource Instance, an array of Resource Instances,
 an Object Instance or all the Object Instances of an Object.
 
 <b> Example: Read the value of the resource by ID</b>
+
 ```ruby
 # Request:
 Read {"id":"/3/0/9"}
@@ -226,6 +227,7 @@ is a list of application/link-format CoRE Links [RFC6690] for each targeted Obje
 with their assigned or attached Attributes including the Object Version attribute if required.
 
 <b> Example: Discover resources attached to an object </b>
+
 ```ruby
 # Request:
 Discover {"id":"/3"}
@@ -313,6 +315,7 @@ Replace: replaces the Object Instance or the Resource(s) with the new value prov
 Partial Update: updates Resources provided in the new value and leaves other existing Resources unchanged. When the Resource is a Multiple-Instance Resource, the existing array of Resource Instances is updated meaning some Instances may be created or overwritten to the condition the LwM2M Client authorizes such operations. Deleting via Partial Update is not possible.
 
 <b> Example: WriteUpdate Single ObjectInstance resource</b>
+
 ```ruby
 # Request:
 WriteUpdate  {"id":"/3/0","value":{"14":"+5","15":"Kiyv/Europe"}}
@@ -398,9 +401,8 @@ supported by the "Write-Attributes" operation: Minimum Period, Maximum Period, G
 Minimum Evaluation Period and Maximum Evaluation Period.
 The operation permits multiple Attributes to be modified within the same operation.
 
-
-
 <b> Example: Write multiple attributes </b>
+
 ```ruby
 # Request:
 WriteAttributes {"id":"/19/0/0","attributes":{"pmax":120, "pmin":10}}
@@ -420,6 +422,7 @@ the requested resources do not have a valid value to return, they will not be in
 SenML JSON shows examples of Read-Composite use.
 
 <b> Example: Read multiple Objects </b>
+
 ```ruby
 # Request:
 ReadComposite {"ids":["/3/0/9", "/1_1.2"]}
@@ -489,6 +492,7 @@ list of Resources. Therefore, before processing Write-Composite, the client MUST
 and that the Server has write access to those Objects and Resources.
 
 <b> Example: WriteComposite to multiple Objects </b>
+
 ```ruby
 # Request:
 WriteComposite {"nodes":{"/3/0/14":"+04", "/1/0/2":100, "/5/0/1":"coap://localhost:5685"}}
@@ -518,6 +522,7 @@ WriteComposite {"nodes":{"timezone":"+04", "defaultMinimumPeriod":100, "packageU
 The "Execute" operation is used by the LwM2M Server to initiate some action, and can only be performed on individual Resources.
 
 <b> Example: Execute resource</b>
+
 ```ruby
 # Request:
 Execute {"id":"5/0/2"}
@@ -537,6 +542,7 @@ The only exception concerns the single Instance of the mandatory Device Object (
 any Delete operation.
 
 <b> Example: Delete an Object Instance</b>
+
 ```ruby
 # Request:
 Delete {"id":"/19/1"}
@@ -553,6 +559,7 @@ Related parameters for "Observe" operation are described in Section 6.3.4. Write
 parameters are configured by "Write-Attributes" operation.
 
 <b> Example: Observe resource</b>
+
 ```ruby
 # Request:
 Observe {"id":"/3/0/9"}
@@ -592,6 +599,7 @@ The "Cancel Observation" operation is sent from the LwM2M Server to the LwM2M Cl
 relationship that was previously created with an "Observe" operation
 
 <b> Example: Cancel Observation for resource by ID</b>
+
 ```ruby
 # Request:
 ObserveCancel {"id":"/5/0/7"}
@@ -616,10 +624,11 @@ ObserveCancel {"key":"updateResult"}
 </details>
 
 ### Cancel All Observations Operation
-The "Cancel All Observations" operation is Thingsboard-specific operation and allows to cancel all observations 
+The "Cancel All Observations" operation is Thingsboard-specific operation and allows to cancel all observations
 on the device at once
 
 <b> Example: Cancel All Observations</b>
+
 ```ruby
 # Request:
 ObserveCancelAll
@@ -635,6 +644,7 @@ The "Read All Observations" operation is Thingsboard-specific operation and allo
 that are set on the device
 
 <b> Example: Read All Observations</b>
+
 ```ruby
 # Request:
 ObserveReadAll
@@ -648,7 +658,7 @@ ObserveReadAll
 
 LwM2M protocol supports [OTA updates](/docs/{{docsPrefix}}user-guide/ota-updates/) of the device firmware.
 
-There are several ways to run OTA firmware updates with LwM2M transport. You can choose the strategy in the device 
+There are several ways to run OTA firmware updates with LwM2M transport. You can choose the strategy in the device
 profile, so it will be applied for all devices of the profile:
 
 {% include images-gallery.html imageCollection="otafirmware-transport" %}
@@ -660,7 +670,7 @@ updating firmware, and performing actions after updating firmware.
 Please note that Object 5 is an optional object, and may be not supported by some devices.
 
 To be able to run the update using Object 5, you have to make sure that Object 5 is present in the [Device profile](/docs/{{docsPrefix}}reference/lwm2m-api/#step-2-define-lwm2m-device-profile/)
-LwM2M model and set up observations of following attributes on the device, which are used by the server to get feedback from 
+LwM2M model and set up observations of following attributes on the device, which are used by the server to get feedback from
 the device on the status of the update process:
 
     "/3/0/3" - Firmware Version
@@ -670,31 +680,117 @@ the device on the status of the update process:
 
 
 ### Push firmware update as binary file using Object 5 and Resource 0.
-The firmware package is pushed from the server directly to the device via the block-wise transfer to the Resource 0 of 
+The firmware package is pushed from the server directly to the device via the block-wise transfer to the Resource 0 of
 the Object 5. The process is illustrated here: [Example of a LwM2M Server pushing a firmware image to a LwM2M client](http://www.openmobilealliance.org/release/LightweightM2M/V1_1_1-20190617-A/HTML-Version/OMA-TS-LightweightM2M_Core-V1_1_1-20190617-A.html#Figure-E62-1-Example-of-a-LwM2M-Server-pushing-a-firmware-image-to-a-LwM2M-client/).
 
 ### Auto-generate a unique CoAP URL to download the package and push the firmware package via Object 5 and Resource 1.
-This option allows running the firmware update with the image file located on the 3rd party storage. In this case the 
-server generates a CoAP-URL and  sends it to the client, and the client downloads firmware image from the external 
+This option allows running the firmware update with the image file located on the 3rd party storage. In this case the
+server generates a CoAP-URL and  sends it to the client, and the client downloads firmware image from the external
 resource directly without transferring image to the server. The process is illustrated here: [Example
 of a client fetching a firmware image](http://www.openmobilealliance.org/release/LightweightM2M/V1_1_1-20190617-A/HTML-Version/OMA-TS-LightweightM2M_Core-V1_1_1-20190617-A.html#Figure-E62-2-Example-of-a-client-fetching-a-firmware-image/)
-
-### Push firmware update as binary file using Object 19 and Resource 0.
-
-TO DO: update this section after finalising the algorithm with Magenta.
 
 
 ## Software over-the-air updates
 
-LwM2M protocol supports [OTA updates](/docs/{{docsPrefix}}user-guide/ota-updates/) of the device software.
+LwM2M protocol supports [OTA updates](/docs/{{docsPrefix}}user-guide/ota-updates/) of the device software, 
+which has some differences comparing to the firmware update process: the Software Management process is split in 2 
+sub-processes: a Package Installation Process and a Software Activation Process.
 
-Software update process is similar to the firmware update process. 
-Object 9: LWM2M Software Management is used to deliver software package and execute the update.
+The Package Installation Process is in charge of managing all the operations performed on a Package up to the 
+final software installation in the LwM2M Client. Once the software is installed, the Software Activation Process 
+manages the operations for authorizing or not this software to be used by the LwM2M Client.
+
+LwM2M defines Object 9: Software Management Object  for the software management  purpose, which enables remote 
+software management in M2M devices and includes resources for delivering, execution of installation and activating 
+software packages, and reporting states.
+
+Please note that Object 9 is an optional object, and may be not supported by some devices.
+
+To be able to run the update using Object 9, you have to make sure that Object 9 is present in the Device profile 
+LwM2M model and set up observations of following attributes on the device, which are used by the server to get 
+feedback from the device on the status of the update process:
+
+    "/3/0/19" - Software Version
+    "/9/0/0" - PkgName
+    "/9/0/1" - PkgVersion
+    "/9/0/2" - Package ID
+    "/9/0/3" - Package URI
+    "/9/0/7" - Update State
+    "/9/0/9" - Update result
+
+There are several ways to run OTA software updates with LwM2M transport. You can choose the strategy in the device 
+profile, so it will be applied for all devices of the profile:
+
+{% include images-gallery.html imageCollection="sota" %}
+
+### Push software update as binary file using Object 9 and Resource 2.
+The software package is pushed from the server directly to the device via the block-wise transfer to the Resource 2 of 
+the Object 9.
+
+### Auto-generate a unique CoAP URL to download the package and push the software package via Object 9 and Resource 3.
+This option allows running the software update with the image file located on the 3rd party storage. In this case 
+the server generates a CoAP-URL and  sends it to the client, and the client downloads software image from the external 
+resource directly without transferring image to the server.
 
 ## Advanced topics
 
-### DTLS configuration
-
 ### Object and Resource attributes
 
+The LWM2M defines a simple resource model where each piece of information made available by the LWM2M Client is a 
+Resource. The Resources are further logically organized into Objects. The LWM2M Client can have any number of Resources,
+each of which belongs to an Object.
+
+In turn, Attributes are metadata which can be attached to an Object, an Object Instance, or a Resource. The value of an 
+Attribute is LwM2M Server specific. These attributes can fulfil various roles, from carrying information only (e.g. 
+Discover) to carrying parameters for setting up certain actions on the LwM2M Client (e.g. Notifications).
+
+You can find  more details about attributes [here.](http://www.openmobilealliance.org/release/LightweightM2M/V1_1_1-20190617-A/HTML-Version/OMA-TS-LightweightM2M_Core-V1_1_1-20190617-A.html#5-0-5-Fundamental-Considerations)
+
+Attributes attached to Objects, Object Instances, Resources are respectively named O-Attribute, OI-Attribute, 
+R-Attribute.
+
+These Attributes MAY be carried in the message payload of Registration and Discover operations; they also MAY be 
+updated - when writable - through the "Write-Attributes" operation.
+
+Regardless to the LwM2M entity a given Attribute is attached to, the value of such an Attribute can be assigned at 
+various levels: Object, Object Instance, Resource levels. Additionally, precedence rules apply when the same Attribute 
+receives a value at different levels.
+
+Resources are grouped into objects by their functionality. There are mandatory objects, which provide basic functions 
+and must be implemented by any LwM2M client, such as:
+    Security (0), 
+    Server (1), 
+    Access Control (2),
+    Device (3). 
+
+Other device specific objects must be implemented by the 
+application.
+
+You can see the official list of registered by OMA objects and also download their resource files [here.](https://technical.openmobilealliance.org/OMNA/LwM2M/LwM2MRegistry.html)
+
+### DTLS configuration
+* about `LWM2M DTLS-based Security` [here](http://www.openmobilealliance.org/release/LightweightM2M/V1_2-20201110-A/OMA-TS-LightweightM2M_Transport-V1_2-20201110-A.pdf#page=19). 
+  ThingsBoard allows securing the LwM2M connection using DTLS. DTLS is a communication security solution for datagram 
+  based protocols (such as UDP).
+
+There are 3 security modes available using DTLS for LwM2M.
+
+#### 1. Pre-shared Key mode (PSK).
+This is the simplest mode and is always available, if DTLS is enabled.
+
+
+#### 2. Raw Public Key(RPK) mode.
+
+
+
 ### Bootstrap
+
+* You can find more information about  `LWM2M Bootstrap` [here](http://www.openmobilealliance.org/release/LightweightM2M/V1_2-20201110-A/OMA-TS-LightweightM2M_Transport-V1_2-20201110-A.pdf#page=41).
+
+
+The Bootstrap Interface is used to optionally configure a LwM2M Client so that it can successfully register with a LwM2M
+Server. The Client Bootstrap operation is initiated by the LwM2M Client itself. In addition, this operation can be requested by an
+authorized LwM2M Server executing the "Bootstrap-Request Trigger" Resource of a Server Object Instance, or even by a
+proprietary mechanism (e.g. based on SMS). Note: the execution of a "Bootstrap-Request Trigger" Resource by a
+LwM2M Server in a LwM2M Client is performed through an already established registration and is therefore covered by
+the access rights mechanism
