@@ -34,9 +34,7 @@ communication configs.
 
 Here is an example of a device profile configuration:
 
-![image](/images/reference/snmp-api/snmp-api-device-profile-configyring-1-ce.png)
-
-![image](/images/reference/snmp-api/snmp-api-device-profile-configyring-2-ce.png)
+{% include images-gallery.html imageCollection="deviceProfileConfiguring1" %}
 
 We will talk about possible types of the configs a bit later, after taking a look at SNMP device
 configuring.
@@ -50,9 +48,7 @@ supports authentication and data encryption.
 
 So, for versions 1 and 2c you must set a community string. Configuration example for such SNMP devices:
 
-![image](/images/reference/snmp-api/snmp-api-device-configyring-1-ce.png)
-
-![image](/images/reference/snmp-api/snmp-api-device-configyring-2-ce.png)
+{% include images-gallery.html imageCollection="deviceConfiguring1" %}
 
 Let's move further to the third version of SNMP. ThingsBoard uses "authPriv" security level, which enables both
 authentication and encryption. Used security model is USM (User-based Security Model).
@@ -71,7 +67,7 @@ There are following properties to configure for your SNMP v3 device (in addition
 
 Here is a sample of a config for version 3:
 
-![image](/images/reference/snmp-api/snmp-api-device-configyring-3-ce.png)
+{% include images-gallery.html imageCollection="deviceConfiguring2" %}
 
 ### Telemetry
 
@@ -82,7 +78,7 @@ it as a specified data type.
 
 Here is an example:
 
-![image](/images/reference/snmp-api/snmp-api-device-profile-configyring-3-ce.png)
+{% include images-gallery.html imageCollection="deviceProfileConfiguring2" %}
 
 By the way, supported data types are: `LONG`, `DOUBLE`, `BOOLEAN` and `STRING` (for SNMP, a received variable value with
 configured data type of `JSON` will be treated as a regular string).
@@ -98,16 +94,14 @@ telemetry, should contain mappings and required querying frequency.
 
 A sample:
 
-![image](/images/reference/snmp-api/snmp-api-device-profile-configyring-4.1-ce.png)
-
-![image](/images/reference/snmp-api/snmp-api-device-profile-configyring-4.2-ce.png)
+{% include images-gallery.html imageCollection="deviceProfileConfiguring3" %}
 
 #### Shared attributes
 
 In order to make your SNMP device receive updates of some shared attributes, you may add another communication config to
 your SNMP device profile:
 
-![image](/images/reference/snmp-api/snmp-api-device-profile-configyring-5-ce.png)
+{% include images-gallery.html imageCollection="deviceProfileConfiguring4" %}
 
 For this one you only need to configure mappings: to which OID an updated shared attribute's value will be set. In this
 case, a key in the mapping is the name of a shared attribute. By the way, the used SNMP method is `SET`.
@@ -121,7 +115,7 @@ for `LONG` data type, and `OCTET STRING` for all other data types.
 To send custom SNMP request you may use RPC feature. First, you should configure some key mappings in a device profile
 to use in RPC command:
 
-![image](/images/reference/snmp-api/snmp-api-device-profile-configyring-6-ce.png)
+{% include images-gallery.html imageCollection="deviceProfileConfiguring5" %}
 
 After that, we are able to use configured mappings' keys in our RPC commands:
 
