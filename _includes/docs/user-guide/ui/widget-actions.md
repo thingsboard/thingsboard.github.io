@@ -32,7 +32,7 @@ After a state has been added, we can configure a _Navigate to new dashboard stat
 
 1. In the widget's Edit mode move to the last cell "Actions".
 2. Click the "+" icon on the right of the window to add a new action.
-3. As an example for this manual, in the top drop-down menu, choose an "Action cell button" action source.
+3. As an example for this manual, in the top drop-down menu, choose an "Widget header button" action source.
 4. In the next line input a name for the action and choose an icon that will represent a button. With this button, action will be performed.
 5. In the drop-down menu "Type", choose a _Navigate to new dashboard state_ action type.
 6. After choosing an action type, the drop-down menu "Target dashboard state" appears. Select a previously created state you'd like to be transitioned to.
@@ -41,9 +41,17 @@ After a state has been added, we can configure a _Navigate to new dashboard stat
 9. Apply changes by clicking the orange tick icon in the top right of the window and then close the details window.
 10. Save applied changes by clicking the orange tick icon "Apply changes" in the bottom right of the screen.
 
-After saving changes, you can see an icon-button opposite the entity names. Clicking any of these icons will bring you to the previously selected state.
+After saving the changes, you can see an icon-button in the upper right part of the widget. Clicking this icon will take you to the previously selected state.
 
 {% include images-gallery.html imageCollection="navigate-new-state-cards" %}
+
+If you want to open the selected state in a separate window, check the box "Open in separate dialog".
+
+{% include images-gallery.html imageCollection="navigate-new-state-cards2" %}
+
+You can hide dashboard toolbar in dialog window. To do this, select the "Hide dashboard toolbar in dialog" box.
+
+{% include images-gallery.html imageCollection="navigate-new-state-cards3" %}
 
 ##### Update current dashboard state
 
