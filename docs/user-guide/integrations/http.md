@@ -5,59 +5,61 @@ description: HTTP integration guide
 
 data-converters:
     0:
-        image: /images/user-guide/integrations/http/data-converters.png
+        image: /images/user-guide/integrations/http/data-converters-1-pe.png
     1:
-        image: /images/user-guide/integrations/http/data-converters-1.png
+        image: /images/user-guide/integrations/http/data-converters-2-pe.png
 
 add-integration:
     0:
-        image: /images/user-guide/integrations/http/add-integration.png
+        image: /images/user-guide/integrations/http/add-integration-1-pe.png
     1:
-        image: /images/user-guide/integrations/http/add-integration-1.png
+        image: /images/user-guide/integrations/http/add-integration-2-pe.png
 
 send-uplink:
     0:
-        image: /images/user-guide/integrations/http/add-integration-2.png
+        image: /images/user-guide/integrations/http/add-integration-3-pe.png
     1:
-        image: /images/user-guide/integrations/http/add-integration-3.png
+        image: /images/user-guide/integrations/http/add-integration-4-pe.png
     2:
-        image: /images/user-guide/integrations/http/add-integration-4.png
-    3:
-        image: /images/user-guide/integrations/http/add-integration-5.png
-    4:
-        image: /images/user-guide/integrations/http/send-4.png
-    5:
-        image: /images/user-guide/integrations/http/send-5.png
+        image: /images/user-guide/integrations/http/add-integration-5-pe.png
 
 converter:
     0:
-        image: /images/user-guide/integrations/http/converter-5.png
+        image: /images/user-guide/integrations/http/converter-5-pe.png
     1:
-        image: /images/user-guide/integrations/http/converter-6.png
+        image: /images/user-guide/integrations/http/converter-6-pe.png
+    2:
+        image: /images/user-guide/integrations/http/converter-7-pe.png
 
 security:
     0:
-        image: /images/user-guide/integrations/http/security.png
+        image: /images/user-guide/integrations/http/security-1-pe.png
     1:
-        image: /images/user-guide/integrations/http/security-1.png
+        image: /images/user-guide/integrations/http/security-2-pe.png
     2:
-        image: /images/user-guide/integrations/http/security-2.png
+        image: /images/user-guide/integrations/http/security-3-pe.png
 
 security-1:
     0:
-        image: /images/user-guide/integrations/http/security-3.png
+        image: /images/user-guide/integrations/http/security-4-pe.png
 
 device:
     0:
-        image: /images/user-guide/integrations/http/device.png
+        image: /images/user-guide/integrations/http/device-1-pe.png
 
 send-uplink-1:
     0:
-        image: /images/user-guide/integrations/http/add-integration-5.png
+        image: /images/user-guide/integrations/http/add-integration-6-pe.png
     1:
-        image: /images/user-guide/integrations/http/send-4.png
+        image: /images/user-guide/integrations/http/add-integration-7-pe.png
     2:
-        image: /images/user-guide/integrations/http/send-5.png
+        image: /images/user-guide/integrations/http/add-integration-8-pe.png
+
+creating-devices-is-forbidden:
+    0:
+        image: /images/user-guide/integrations/http/creating-devices-is-forbidden-1-pe.png
+    1:
+        image: /images/user-guide/integrations/http/creating-devices-is-forbidden-2-pe.png
 
 solution_templates:
     0:
