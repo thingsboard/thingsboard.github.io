@@ -1,8 +1,12 @@
 * TOC
 {:toc}
 
-ThingsBoard provides the ability to run MQTT server over SSL. Both one-way and two-way SSL are supported.
-To enable SSL, you will need to obtain a valid or generate a self-signed SSL certificate and add it to the keystore.
+ThingsBoard provides the ability to run CoAP server over DTLS. ThingsBoard support two ways of DTLS Authentication:
+
+- AccessToken based authentication
+- X.509 Certificate
+
+To enable DTLS, you will need to obtain a valid or generate a self-signed SSL certificate and add it to the keystore.
 Once added, you will need to specify the keystore information in **thingsboard.yml** file.
 See the instructions on how to generate SSL certificate and use it in your ThingsBoard installation below.
 You can skip certificate generation step if you already have a certificate.
@@ -29,7 +33,7 @@ SERVER_KEYSTORE_PASSWORD=password
 SERVER_KEY_PASSWORD=password
 
 SERVER_KEY_ALIAS="serveralias"
-SERVER_FILE_PREFIX="mqttserver"
+SERVER_FILE_PREFIX="coapserver"
 SERVER_KEY_ALG="EC"
 SERVER_KEY_GROUP_NAME="secp256r1"
 SERVER_KEYSTORE_DIR="/etc/thingsboard/conf"
@@ -66,7 +70,7 @@ You may run this script with no arguments, or alternatively, you can specify the
 
 This script will run keytool using the configuration specified. It will generate the following output files:
 
- - **SERVER_FILE_PREFIX.jks** - Java keystore file. This is the file which will be used by ThingsBoard MQTT Service
+ - **SERVER_FILE_PREFIX.jks** - Java keystore file. This is the file which will be used by ThingsBoard CoAP Service
  - **SERVER_FILE_PREFIX.cer** - Server public key file. It will be then imported to client's .jks keystore file.
  - **SERVER_FILE_PREFIX.pub.pem** - Server public key in **PEM** format, which can be then used as a keystore or imported by non-Java clients.   
 
@@ -74,34 +78,24 @@ If you specified not to copy the keystore file, then upload it manually to a dir
 You may want to modify owner and permissions for the keystore file:
 
 ```bash
-sudo chmod 400 /etc/thingsboard/conf/mqttserver.jks
-sudo chown thingsboard:thingsboard /etc/thingsboard/conf/mqttserver.jks
+sudo chmod 400 /etc/thingsboard/conf/coapserver.jks
+sudo chown thingsboard:thingsboard /etc/thingsboard/conf/coapserver.jks
 ```
 
 ### Server configuration
 
-Locate your **thingsboard.conf** file and set the MQTT_SSL_ENABLED value equals  true.
+Locate your **thingsboard.conf** file and set the COAP_DTLS_ENABLED value equals true.
 
-You can add the next row for to the **thingsboard.conf**, so that the MQTT over SSL will be enabled.  
+You can add the next row for to the **thingsboard.conf**, so that the CoAP over DTLS will be enabled.  
 ```bash 
 ...
-export MQTT_SSL_ENABLED=true
-
-```
-
-You may also want to change **mqtt.bind_port** to 8883 which is recommended for MQTT over SSL servers.
-
-The MQTT bind port can be changed with the next row within the **thingsboard.conf** being added:
-
-```bash
+export COAP_DTLS_ENABLED=true
 ...
-export MQTT_BIND_PORT=8883
-
 ```
 
-The **key_store** Property must point to the **.jks** file location. **key_store_password** and **key_password** must be the same as were used in keystore generation.
+The **key_store** property must point to the **.jks** file location. **key_store_password** and **key_password** must be the same as were used in keystore generation.
 
-**NOTE:** ThingsBoard supports **.p12** keystores as well. if this is the case, set **key_store_type** value to **'PKCS12'**
+**NOTE:** ThingsBoard supports **.p12** keystores as well.
 
 After these values are set, launch or restart your ThingsBoard server.
 
@@ -109,11 +103,11 @@ After these values are set, launch or restart your ThingsBoard server.
 The next combination of the **keygen.properties** example was used to generate a proper .jks and .pem in a case of the ThingsBoard uses the next default **thingsboard.conf** with the enchantments being specified below.   
 This example is based on the default ThingsBoard installation of the **3.3.2 version**. 
 
+
 **thingsboard.conf:**
 ```bash
 ...
-export MQTT_SSL_ENABLED=true
-export MQTT_BIND_PORT=8883
+export COAP_DTLS_ENABLED=true
 ...
 ``` 
 
@@ -132,25 +126,16 @@ SERVER_KEYSTORE_PASSWORD=server_ks_password
 SERVER_KEY_PASSWORD=server_key_password
 
 SERVER_KEY_ALIAS="serveralias"
-SERVER_FILE_PREFIX="mqttserver"
+SERVER_FILE_PREFIX="coapserver"
 SERVER_KEY_ALG="EC"
 SERVER_KEY_GROUP_NAME="secp256r1"
 SERVER_KEYSTORE_DIR="/etc/thingsboard/conf"
-
-CLIENT_KEYSTORE_PASSWORD=password
-CLIENT_KEY_PASSWORD=password
-
-CLIENT_KEY_ALIAS="clientalias"
-CLIENT_FILE_PREFIX="mqttclient"
-CLIENT_KEY_ALG="EC"
-CLIENT_KEY_GROUP_NAME="secp256r1"
 ```
-
 
 ## Client Examples
 
 See following resources:
 
  - [Device Authentication options](/docs/{{docsPrefix}}user-guide/device-credentials/) for authentication options overview
- - [Access Token based authentication](/docs/{{docsPrefix}}user-guide/access-token/?accessTokens=coap) for example of **one-way SSL** connection 
- - [X.509 Certificate based authentication](/docs/{{docsPrefix}}user-guide/certificates/?x509certificates=mqtt) for example of **two-way SSL** connection
+ - [Access Token based authentication](/docs/{{docsPrefix}}user-guide/access-token/?accessTokens=coap) for example of **CoAP AccessToken based authentication over DTLS** connection 
+ - [X.509 Certificate based authentication](/docs/{{docsPrefix}}user-guide/certificates/?x509certificates=coap) for example of **CoAP DTLS with X.509 Certificate** connection

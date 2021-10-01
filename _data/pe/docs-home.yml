@@ -94,6 +94,8 @@ toc:
     path: /docs/user-guide/integrations/http/
   - title: MQTT
     path: /docs/user-guide/integrations/mqtt/
+  - title: CoAP
+    path: /docs/user-guide/integrations/coap/
   - title: OPC-UA
     path: /docs/user-guide/integrations/opc-ua/
   - title: Actility ThingPark
@@ -167,6 +169,8 @@ toc:
     new: true
   - title: MQTT over SSL
     path: /docs/pe/user-guide/mqtt-over-ssl/
+  - title: CoAP over DTLS
+    path: /docs/pe/user-guide/coap-over-dtls/
   - title: Device authentication options
     path: /docs/pe/user-guide/device-credentials/
   - title: Access Token based authentication

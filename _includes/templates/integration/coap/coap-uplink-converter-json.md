@@ -3,24 +3,22 @@ Now copy & paste the following script to the Decoder function section:
 ```javascript
 /** Decoder **/
 
-// decode payload to string
-var strArray = decodeToString(payload);
-var payloadArray = strArray.replace(/\"/g, "").replace(/\s/g, "").replace(/\\n/g, "").split(',');
+// decode payload to JSON
+var data = decodeToJson(payload);
 
-var telemetryPayload = {};
-for (var i = 2; i < payloadArray.length; i = i + 2) {
-    var telemetryKey = payloadArray[i];
-    var telemetryValue = parseFloat(payloadArray[i + 1]);
-    telemetryPayload[telemetryKey] = telemetryValue;
-}
+// Result object with device/asset attributes/telemetry data
 
-// Result object with device attributes/telemetry data
+var deviceName = data.deviceName;
+var deviceType = data.deviceType;
 var result = {
-    deviceName: payloadArray[0],
-    deviceType: payloadArray[1],
-    telemetry: telemetryPayload,
-    attributes: {}
-  };
+   deviceName: deviceName,
+   deviceType: deviceType,
+   attributes: {},
+   telemetry: {
+       temperature: data.temperature,
+       humidity: data.humidity
+   }
+};
 
 /** Helper functions **/
 
@@ -28,10 +26,20 @@ function decodeToString(payload) {
    return String.fromCharCode.apply(String, payload);
 }
 
+function decodeToJson(payload) {
+   // covert payload to string.
+   var str = decodeToString(payload);
+
+   // parse string to JSON
+   var data = JSON.parse(str);
+   return data;
+}
+
 return result;
 
 ``` 
 {: .copy-code}
+
 
 The purpose of the decoder function is to parse the incoming data and metadata to a format that ThingsBoard can consume. 
 **deviceName** and **deviceType** are required, while **attributes** and **telemetry** are optional.
