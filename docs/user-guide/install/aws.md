@@ -16,7 +16,7 @@ description: ThingsBoard IoT platform  AWS cluster setup guide
                 <h1>ThingsBoard Setup options on AWS</h1>
                 <div class="install-options-description">
                     <p>
-                        You may deploy ThingsBoard IoT Platform using different tools and platforms
+                        You may deploy ThingsBoard IoT Platform with different infrastructure setup
                     </p>
                 </div>
             </div>            
@@ -26,7 +26,7 @@ description: ThingsBoard IoT platform  AWS cluster setup guide
                         <div class="deployment-section deployment-on-premise active" id="onPremise">
                            <div class="deployment-cards">
                                 <div class="deployment-cards-container">
-                                   <div class="deployment-card-block">
+                                    <div class="deployment-card-block">
                                        <a href="/docs/user-guide/install/cluster/aws-self-hosted-setup/">
                                            <span>
                                                <div class="deployment-logo">
@@ -35,24 +35,15 @@ description: ThingsBoard IoT platform  AWS cluster setup guide
                                            </span>
                                        </a>
                                    </div>
-                                    <div class="deployment-card-block">
-                                        <a href="/docs/user-guide/install/cluster/aws-eks-cluster-setup/">
-                                            <span>
-                                                <div class="deployment-logo">
-                                                    <img width="" src="/images/install/cloud/eks.svg" title="Cluster setup with Kubernetes on AWS EKS" alt="AWS EKS K8S cluster">
-                                                 </div>
-                                            </span>
-                                        </a>
-                                    </div>
-                                    <div class="deployment-card-block">
-                                        <a href="/docs/user-guide/install/cluster/aws-cluster-setup/">
-                                            <span>
-                                                <div class="deployment-logo">
-                                                    <img width="" src="/images/install/cloud/kubeone.png" title="Cluster setup with Kubernetes and KubeOne on AWS" alt="AWS K8S cluster">
-                                                 </div>
-                                            </span>
-                                        </a>
-                                    </div>
+                                   <div class="deployment-card-block">
+                                       <a href="/docs/user-guide/install/cluster/aws-eks-setup/">
+                                           <span>
+                                               <div class="deployment-logo">
+                                                   <img width="" src="/images/install/cloud/eks.svg" title="ThingsBoard setup with Kubernetes on AWS EKS" alt="AWS EKS">
+                                                </div>
+                                           </span>
+                                       </a>
+                                   </div>
                               </div>                     
                             </div>                        
                         </div>
