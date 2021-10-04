@@ -1,0 +1,252 @@
+---
+layout: docwithnav-pe
+assignees:
+- ashvayka
+title: Microservices setup using GCP infrastructure 
+description: ThingsBoard IoT platform microservices setup with Kubernetes in GKE
+
+---
+
+* TOC
+{:toc}
+
+This guide will help you to set up ThingsBoard in microservices mode in GKE. 
+
+## Prerequisites
+
+ThingsBoard Microservices run on the Kubernetes cluster. You need to have a Kubernetes cluster, and the `kubectl` command-line tool must be configured to communicate with your cluster. 
+
+## Step 1. Clone ThingsBoard PE K8S scripts repository
+
+```bash
+git clone https://github.com/thingsboard/thingsboard-pe-k8s.git
+cd thingsboard-pe-k8s/gcp/microservices
+```
+{: .copy-code}
+
+## Step 2. Configure and create GKE cluster
+
+Please follow [this](https://cloud.google.com/kubernetes-engine/docs/how-to/creating-a-zonal-cluster) guide to set up a GCP cluster.
+
+For this deployment you'll need **4** nodes of **e2-standard-2** machine type. You can find this configuration in the `NODE POOLS` submenu:
+
+![image](/images/install/cloud/gcp-cluster-create.png)
+
+To update context of Kubectl execute this command:
+
+```
+gcloud container clusters get-credentials $CLUSTER_NAME
+```
+{: .copy-code}
+
+where **$CLUSTER_NAME** is the name you gave to your cluster.
+
+## Step 3. Upload Docker credentials
+
+Make sure your have logged in to docker hub using command line. To upload Docker credentials, please execute next command:
+
+```
+./k8s-upload-docker-credentials.sh
+```
+{: .copy-code}
+
+Or you can use the following command:
+
+```
+kubectl create secret docker-registry regcred --docker-server=https://index.docker.io/v1/ --docker-username=$YOUR_USERNAME --docker-password=$YOUR_PASSWORD --docker-email=$YOUR_EMAIL
+```
+{: .copy-code}
+
+## Step 4. Installation
+
+Execute the following command to run installation:
+
+```
+./k8s-install-tb.sh --loadDemo
+```
+{: .copy-code}
+
+Where:
+
+- `--loadDemo` - optional argument. Whether to load additional demo data.
+
+After this command finish you should see the next line in the console:
+
+```
+Installation finished successfully!
+```
+
+## Step 5. Configure secure HTTP connection
+
+**Note**: if you don't need SSL connection over HTTP, you'll need to remove **tls:** and **- secretName: ssl-cert-secret** 
+lines in the `routes.yml` file and skip this step.
+
+Follow [this guide](https://cloud.google.com/kubernetes-engine/docs/how-to/ingress-multi-ssl#creating_certificates_and_keys) to create your own SSL certificate.
+After the certificate is created call the next command:
+
+```
+kubectl create secret tls ssl-cert-secret --cert CERT_FILE --key KEY_FILE
+```
+where:
+- CERT_FILE: the path to your certificate file.
+- KEY_FILE: the path to the key file that goes with your certificate.
+ 
+## Step 6. Configure secure MQTT connection
+
+Follow [this guide](/docs/user-guide/mqtt-over-ssl/) to create a **.jks** file with the SSL certificate.
+Afterwards, you need to set **MQTT_SSL_KEY_STORE_PASSWORD** and **MQTT_SSL_KEY_PASSWORD** environment variables in the `thingsboard.yml` file
+to the corresponding key-store and certificate key passwords.
+
+You'll need to create a config-map with your JKS file, you can do it by calling command:
+
+```
+kubectl create configmap tb-mqtts-config \
+             --from-file=server.jks=YOUR_JKS_FILENAME.jks -o yaml --dry-run=client | kubectl apply -f -
+```
+{: .copy-code}
+
+where **YOUR_JKS_FILENAME** is the name of your **.jks** file.
+
+**Note**: if you don't need SSL connection over MQTT, you'll need to set **MQTT_SSL_ENABLED** environment variable to **false**
+and delete all notions of **tb-mqtts-config** in the `thingsboard.yml` file.
+
+## Step 7. CPU and Memory resources allocation
+
+The scripts have preconfigured values of resources for each service. You can change them in `.yml` files under `resources` submenu.
+
+**Note**: if you want to allocate more resources you'll need to increase the number of Amazon nodes or use larger machines.
+
+Recommended CPU/memory resources allocation:
+- TB Node: 1.5 CPU / 6Gi memory
+- TB HTTP Transport: 0.4 CPU / 1.6Gi memory
+- TB MQTT Transport: 0.4 CPU / 1.6Gi memory
+- TB COAP Transport: 0.4 CPU / 1.6Gi memory
+- TB Web UI: 0.3 CPU / 0.5Gi memory
+- JS Executor: 0.1 CPU / 0.3Gi memory
+- Zookeeper: 0.3 CPU / 1Gi memory
+- Kafka: 1 CPU / 4Gi memory
+- Redis: 0.3 CPU / 1.2Gi memory
+- PostgreSQL: 0.8 CPU / 3.2Gi memory
+
+## Step 8. Starting
+
+Execute the following command to deploy third-party resources:
+
+```
+ ./k8s-deploy-thirdparty.sh
+```
+
+After few minutes you may call `kubectl get pods`. If everything went fine, you should be able to see
+`tb-kafka`, `tb-redis` and 3 `zookeeper` pods.
+Every pod should be in the `READY` state.
+
+Configure your license key:
+
+```
+nano tb-node.yml
+```
+
+and put the license secret parameter 
+
+```
+# tb-node StatefulSet configuration
+
+- name: TB_LICENSE_SECRET
+  value: "PUT_YOUR_LICENSE_SECRET_HERE"
+```
+
+Execute the following command to deploy third-party resources:
+
+```
+./k8s-deploy-resources.sh
+```
+{: .copy-code}
+
+After few minutes you may call `kubectl get pods`. If everything went fine, you should be able to see
+`tb-coap-transport-0`, `tb-http-transport-0`, `tb-mqtt-transport-0`, two `tb-js-executor`, `tb-node-0` and `tb-web-ui` pods.
+Every pod should be in the `READY` state.
+
+## Step 9. Using
+
+Now you can open ThingsBoard web interface in your browser using DNS name of the load balancer.
+
+You can see DNS name (the `ADDRESS` column) of the HTTP load-balancer using command:
+```
+kubectl get ingress
+```
+
+You should see the similar picture:
+
+![image](/images/install/cloud/application-loadbalancers.png)
+
+To connect to the cluster via MQTT or COAP you'll need to get corresponding service, you can do it with command:
+
+```
+kubectl get service
+```
+{: .copy-code}
+
+You should see the similar picture:
+
+![image](/images/install/cloud/network-loadbalancers.png)
+
+There are two load-balancers:
+- tb-mqtt-loadbalancer-external - for MQTT protocol
+- tb-coap-loadbalancer-external - for COAP protocol
+
+Use `EXTERNAL-IP` field of the load-balancers to connect to the cluster.
+
+Use the following default credentials:
+
+- **System Administrator**: sysadmin@thingsboard.org / sysadmin
+
+If you installed DataBase with demo data (using `--loadDemo` flag) you can also use the following credentials:
+
+- **Tenant Administrator**: tenant@thingsboard.org / tenant
+- **Customer User**: customer@thingsboard.org / customer
+
+In case of any issues you can examine service logs for errors.
+For example to see ThingsBoard node logs execute the following command:
+
+```
+kubectl logs -f tb-node-0
+```
+
+Or use `kubectl get pods` to see the state of all the pods.
+Or use `kubectl get services` to see the state of all the services.
+Or use `kubectl get deployments` to see the state of all the deployments.
+See [kubectl Cheat Sheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/) command reference for details.
+
+Execute the following command to delete all ThingsBoard pods:
+```
+./k8s-delete-resources.sh
+```
+
+
+Execute the following command to delete all third-party resources:
+```
+./k8s-delete-thirdparty.sh
+```
+
+Execute the following command to delete all data (including database):
+```
+./k8s-delete-all.sh
+```
+
+## Upgrading
+
+In case when database upgrade is needed, execute the following commands:
+
+```
+ ./k8s-delete-resources.sh
+ ./k8s-upgrade-tb.sh --fromVersion=[FROM_VERSION]
+ ./k8s-deploy-resources.sh
+```
+
+Where:
+
+- `FROM_VERSION` - from which version upgrade should be started. See [Upgrade Instructions](/docs/user-guide/install/pe/upgrade-instructions) for valid `fromVersion` values.
+
+## Next steps
+
+{% assign currentGuide = "InstallationGuides" %}{% include templates/guides-banner.md %}
