@@ -19,3 +19,5 @@ toc:
   path: /docs/trendz/install/trndz-upgrade-instructions/
 - title: Connect Trendz to Thingsboard
   path: /docs/trendz/connect-thingsboard/
+- title: Configuration properties
+  path: /docs/trendz/configuration-properties/

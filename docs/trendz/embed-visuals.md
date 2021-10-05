@@ -147,12 +147,36 @@ This option available for both, Static Trendz widget and for Trendz View with al
 * Switch to **Advanced** Tab
 * Enable checkbox **Use Dashboard Time Window** 
 
+#### Configure OnRowClock action
+Trendz Table view support onRowClick action. You can configure what should happen when user click on a Row in a table. 
+For example you can save entity to the Dashboard state alias or open new dashboard state.
+
+To enable row click event:
+* Add Trendz Table View on ThingsBoard dashboard.
+* Open widget edit mode and switch to **Actions** tab.
+* Press **Add action** button.
+* In **Action source** field select **On row click**.
+* Proceed standard widget action configuration. 
+
+Each row has multiple fields from on or multiple devices/assets. It means that 1 row can be connected with multiple items. 
+If you want to use 'onRowClick' action - you need to define what item is selected when row clicked.
+* Open **View Settings** in Trendz View edit mode.
+* Open **View Mode fields** section.
+* Select required Device/Asset type in **Row click entity** dropdown.
+* Save changes.
+
+ 
+
+#### Configure Date selected action
+
+#### Configure Switch Field action
+
 ![image](/images/trendz/trndz_dashboard_time.png)
 
 ## Embed visualization on external site
 You can also embed Trendz visualization into your web site by adding iFrame that points to required visualization.
 
-Add iFrame on your site with the following URL **http://{TRENDZ_URL}/viewMode/{VIEW_ID}?token={JWT_TOKEN}**. Where:
+Add iFrame on your site with the following URL **http://{TRENDZ_URL}/viewMode/{VIEW_ID}?jwt={JWT_TOKEN}**. Where:
 * TRENDZ_URL - url of Trendz service
 * VIEW_ID - ID of saved visualization inside Trendz
 * JWT_TOKEN - ThingsBoard JWT token that should be used to authenticate in the ThingsBoard

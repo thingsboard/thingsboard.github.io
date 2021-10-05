@@ -1,1 +1,1 @@
-sudo rpm -Uvh trendz-1.8.0.rpm
+sudo rpm -Uvh trendz-1.8.1.rpm
