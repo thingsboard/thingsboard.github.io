@@ -81,7 +81,25 @@ Trendz supports two types of color rules you can apply:
 ![image](/images/trendz/table-color.png)
 
 
-#### Total Row
+## Total Row
 
 Total row shown on the bottom of the table when aggregation type for the field is **SUM** or **COUNT**.
 In this case system will sum all cell values for each column and show total value.  
+
+## On row click action
+Trendz Table view support onRowClick action. You can configure what should happen when user click on a Row in a table 
+when it is embedded into ThingsBoard Dashobard. For example you can save entity to the Dashboard state alias or open new dashboard state.
+
+To enable row click event:
+* Add Trendz Table View on ThingsBoard dashboard.
+* Open widget edit mode and switch to **Actions** tab.
+* Press **Add action** button.
+* In **Action source** field select **On row click**.
+* Proceed standard widget action configuration. 
+
+Each row has multiple fields from on or multiple devices/assets. It means that 1 row can be connected with multiple items. 
+If you want to use 'onRowClick' action - you need to define what item is selected when row clicked.
+* Open **View Settings** in Trendz View edit mode.
+* Open **View Mode fields** section.
+* Select required Device/Asset type in **Row click entity** dropdown.
+* Save changes.
