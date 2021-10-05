@@ -67,41 +67,39 @@ solution_templates:
 
 downlink:
     0:
-        image: /images/user-guide/integrations/http/downlink.png
+        image: /images/user-guide/integrations/http/downlink-1-pe.png
+    1:
+        image: /images/user-guide/integrations/http/downlink-2-pe.png
 
 downlink-1:
     0:
-        image: /images/user-guide/integrations/http/downlink-1.png
+        image: /images/user-guide/integrations/http/downlink-3-pe.png
     1:
-        image: /images/user-guide/integrations/http/downlink-2.png
+        image: /images/user-guide/integrations/http/downlink-4-pe.png
 
 downlink-rule:
     0:
-        image: /images/user-guide/integrations/http/downlink-3.png
+        image: /images/user-guide/integrations/http/downlink-5-pe.png
+    1:
+        image: /images/user-guide/integrations/http/downlink-6-pe.png
 
 downlink-soft:
     0:
-        image: /images/user-guide/integrations/http/downlink-4.png
+        image: /images/user-guide/integrations/http/downlink-7-pe.png
     1:
-        image: /images/user-guide/integrations/http/downlink-5.png
+        image: /images/user-guide/integrations/http/downlink-8-pe.png
 
 downlink-terminal:
     0:
-        image: /images/user-guide/integrations/http/downlink-terminal.png
+        image: /images/user-guide/integrations/http/downlink-terminal-1-pe.png
     1:
-        image: /images/user-guide/integrations/http/downlink-terminal-1.png
+        image: /images/user-guide/integrations/http/downlink-terminal-2-pe.png
 
 downlink-message:
     0:
-        image: /images/user-guide/integrations/http/downlink-message.png
+        image: /images/user-guide/integrations/http/downlink-message-1-pe.png
     1:
-        image: /images/user-guide/integrations/http/downlink-message-1.png
-
-downlink-terminal:
-    0:
-        image: /images/user-guide/integrations/http/downlink-terminal.png
-    1:
-        image: /images/user-guide/integrations/http/downlink-terminal-1.png
+        image: /images/user-guide/integrations/http/downlink-message-2-pe.png
 
 ---
 {% assign docsPrefix = "pe/" %}
