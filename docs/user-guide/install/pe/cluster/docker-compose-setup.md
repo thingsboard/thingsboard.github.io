@@ -38,6 +38,8 @@ Listing all images **mandatory** for checkout for your convenience below:
  - [ThingsBoard PE HTTP Transport Microservice](https://hub.docker.com/_/thingsboard-pe-http-transport)    
  - [ThingsBoard PE MQTT Transport Microservice](https://hub.docker.com/_/thingsboard-pe-mqtt-transport)
  - [ThingsBoard PE CoAP Transport Microservice](https://hub.docker.com/_/thingsboard-pe-coap-transport) 
+ - [ThingsBoard PE LwM2M Transport Microservice](https://hub.docker.com/_/thingsboard-pe-lwm2m-transport)
+ - [ThingsBoard PE SNMP Transport Microservice](https://hub.docker.com/_/thingsboard-pe-snmp-transport)
 
 
 ![image](/images/user-guide/install/docker-pe/checkout-pe-node.png)

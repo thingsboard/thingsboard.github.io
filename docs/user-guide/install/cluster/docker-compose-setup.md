@@ -30,6 +30,8 @@ docker pull thingsboard/tb-js-executor:{{ site.release.ce_full_ver }}
 docker pull thingsboard/tb-http-transport:{{ site.release.ce_full_ver }}
 docker pull thingsboard/tb-mqtt-transport:{{ site.release.ce_full_ver }}
 docker pull thingsboard/tb-coap-transport:{{ site.release.ce_full_ver }}
+docker pull thingsboard/tb-lwm2m-transport:{{ site.release.ce_full_ver }}
+docker pull thingsboard/tb-snmp-transport:{{ site.release.ce_full_ver }}
 ```
 
 ## Step 2. Review the architecture page

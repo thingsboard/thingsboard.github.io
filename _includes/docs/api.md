@@ -18,3 +18,9 @@ Server-side API is available as REST API:
 * [**Timeseries query API**](/docs/{{docsPrefix}}user-guide/telemetry/#data-query-api) - The server-side APIs provided by [Telemetry Service](/docs/{{docsPrefix}}user-guide/telemetry/).
 * [**RPC API**](/docs/{{docsPrefix}}user-guide/rpc/#server-side-rpc-api) - The server-side APIs provided by [RPC Service](/docs/{{docsPrefix}}user-guide/rpc/).
 * [**REST Client**](/docs/{{docsPrefix}}reference/rest-client)
+* [**Python REST Client**](/docs/{{docsPrefix}}reference/python-rest-client)
+* [**Dart API Client**](/docs/{{docsPrefix}}reference/dart-client)
+
+Software development kits:
+
+* [**Python Client SDK**](/docs/{{docsPrefix}}reference/python-client-sdk) - Software development kit for client-side integration of your Python projects.
