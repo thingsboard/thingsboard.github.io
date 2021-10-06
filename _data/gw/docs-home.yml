@@ -31,6 +31,8 @@ toc:
       path: /docs/iot-gateway/config/rest/
     - title: SNMP Connector
       path: /docs/iot-gateway/config/snmp/
+    - title: FTP Connector
+      path: /docs/iot-gateway/config/ftp/
 - title: IoT Gateway features
   path: /docs/iot-gateway/features/
   section:
@@ -40,6 +42,8 @@ toc:
       path: /docs/iot-gateway/guides/how-to-use-gateway-rpc-methods/
     - title: Remote shell
       path: /docs/iot-gateway/guides/how-to-enable-remote-shell/
+    - title: Gateway Configurator
+      path: /docs/iot-gateway/guides/how-to-configure-gateway-using-configurator/
 - title: IoT Gateway Roadmap
   path: /docs/iot-gateway/roadmap/
 - title: Customization guide

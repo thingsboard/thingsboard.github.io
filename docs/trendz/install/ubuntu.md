@@ -12,7 +12,7 @@ description: Installing ThingsBoard Trendz Analytics on Ubuntu
 
 ### Prerequisites
 
-This guide describes how to install Trendz Analytics on Ubuntu Server 18.04 LTS. 
+This guide describes how to install Trendz Analytics on Ubuntu 18.04 LTS / Ubuntu 20.04 LTS.
 
 **Hardware requirements** depend on amount of analyzed data and amount of devices connected to the system. 
 To run Trendz Analytics on a single machine you will need at least 1Gb of free RAM.
@@ -28,14 +28,14 @@ In small and medium installations Trendz can be installed **on the same** server
 Download installation package.
 
 ```bash
-wget https://dist.thingsboard.io/trendz-1.7.0.deb
+wget https://dist.thingsboard.io/trendz-1.8.1.deb
 ```
 {: .copy-code}
 
 Install Trendz Analytics as a service
 
 ```bash
-sudo dpkg -i trendz-1.7.0.deb
+sudo dpkg -i trendz-1.8.1.deb
 ```
 {: .copy-code}
 

@@ -1,6 +1,6 @@
 
- * TOC
- {:toc}
+* TOC
+{:toc}
  
 ## Python REST Client
 
@@ -15,9 +15,13 @@ In order to install the ThingsBoard Python REST client, you should use the follo
 pip3 install tb-rest-client
 ``` 
 
-## Community Edition Python REST Client example
+## Python REST Client examples
 
+### Basic usage
 You can find the example script **[here](https://github.com/thingsboard/python_tb_rest_client/blob/master/examples/example_application.py)**.
+
+The example listened below shows basic usage of REST client, namely how to perform a login, create a new Asset and Device instances,
+and how to establish relationships with them.
 
 ```python
 
@@ -67,20 +71,15 @@ with RestClientCE(base_url=url) as rest_client:
 
 ```
 
+### Managing device
 
-## Professional Edition Python REST Client Example
-
-You can find the example script **[here](https://github.com/thingsboard/python_tb_rest_client/blob/master/examples/example_application_2.py)**.
-Also you will have to download the dashboard json file ("*watermeters.json*") for this example and put it in the folder with a script.  
-Json file is **[here](https://github.com/thingsboard/python_tb_rest_client/blob/master/examples/watermeters.json)**.
-
+The following code sample demonstrates basic concepts of device management API (add/get/delete device, get/save device attributes).
 
 ```python
-
 import logging
-from json import load
-# Importing models and REST client class from Professional Edition version
-from tb_rest_client.rest_client_pe import *
+# Importing models and REST client class from Community Edition version
+from tb_rest_client.rest_client_ce import *
+# Importing the API exception
 from tb_rest_client.rest import ApiException
 
 
@@ -88,81 +87,146 @@ logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s - %(levelname)s - %(module)s - %(lineno)d - %(message)s',
                     datefmt='%Y-%m-%d %H:%M:%S')
 
-
 # ThingsBoard REST API URL
 url = "http://localhost:8080"
-
 # Default Tenant Administrator credentials
 username = "tenant@thingsboard.org"
 password = "tenant"
 
 
 # Creating the REST client object with context manager to get auto token refresh
-with RestClientPE(base_url=url) as rest_client:
+with RestClientCE(base_url=url) as rest_client:
     try:
-        # Auth with credentials
-        rest_client.login(username=username, password=password)
-        
-        # Getting current user
-        current_user = rest_client.get_user()
-        
-        # Creating Dashboard Group on the Tenant Level
-        shared_dashboards_group = EntityGroup(name="Shared Dashboards", type="DASHBOARD")
-        shared_dashboards_group = rest_client.save_entity_group(shared_dashboards_group)
-
-        # Loading Dashboard from file
-        dashboard_json = None
-        with open("watermeters.json", "r") as dashboard_file:
-            dashboard_json = load(dashboard_file)
-        dashboard = Dashboard(title=dashboard_json["title"], configuration=dashboard_json["configuration"])
-        dashboard = rest_client.save_dashboard(dashboard)
-
-        # Adding Dashboard to the Shared Dashboards Group
-        rest_client.add_entities_to_entity_group(shared_dashboards_group.id, [dashboard.id.id])
-
-        # Creating Customer 1
-        customer1 = Customer(title="Customer 1")
-        customer1 = rest_client.save_customer(customer1)
-
-        # Creating Device
-        device = Device(name="WaterMeter1", type="waterMeter")
+        # creating a Device
+        device = Device(name="Thermometer 1", type="thermometer")
         device = rest_client.save_device(device)
 
-        # Fetching automatically created "Customer Administrators" Group.
-        customer1_administrators = rest_client.get_entity_group_info_by_owner_and_name_and_type(customer1.id, "USER", "Customer Administrators")
+        logging.info(" Device was created:\n%r\n", device)
 
-        # Creating Read-Only Role
-        read_only_role = Role(name="Read-Only", permissions=['READ', 'READ_ATTRIBUTES', 'READ_TELEMETRY', 'READ_CREDENTIALS'], type="GROUP")
-        read_only_role = rest_client.save_role(read_only_role)
+        # find device by device id
+        found_device = rest_client.get_device_by_id(DeviceId('DEVICE', device.id))
 
-        # Assigning Shared Dashboards to the Customer 1 Administrators
-        tenant_id = current_user.tenant_id
-        group_permission = GroupPermission(role_id=read_only_role.id,
-                                           name="Read Only Permission",
-                                           is_public=False,
-                                           user_group_id=customer1_administrators.id,
-                                           tenant_id=tenant_id,
-                                           entity_group_id=shared_dashboards_group.id,
-                                           entity_group_type=shared_dashboards_group.type)
-        group_permission = rest_client.save_group_permission(group_permission)
+        # save device shared attributes
+        res = rest_client.save_device_attributes("{'targetTemperature': 22.4}", DeviceId('DEVICE', device.id),
+                                                 'SERVER_SCOPE')
 
-        # Creating User for Customer 1 with default dashboard from Tenant "Shared Dashboards" group.
-        user_email = "user@thingsboard.org"
-        user_password = "secret"
-        additional_info = {
-            "defaultDashboardId": dashboard.id.id,
-            "defaultDashboardFullscreen": False
-        }
-        user = User(authority="CUSTOMER_USER",
-                    customer_id=customer1.id,
-                    email=user_email,
-                    additional_info=additional_info)
-        user = rest_client.save_user(user, send_activation_mail=False)
-        rest_client.activate_user(user.id, user_password)
-        
-        rest_client.add_entities_to_entity_group(customer1_administrators.id, [user.id.id])
+        logging.info("Save attributes result: \n%r", res)
 
+        # Get device shared attributes
+        res = rest_client.get_attributes_by_scope('DEVICE', DeviceId('DEVICE', device.id), 'SERVER_SCOPE')
+        logging.info("Found device attributes: \n%r", res)
+
+        # delete the device
+        rest_client.delete_device(DeviceId('DEVICE', device.id))
     except ApiException as e:
         logging.exception(e)
-
 ```
+
+### Fetch tenant devices
+
+The following code sample shows how to fetch tenant devices via page link.
+
+```python
+import logging
+# Importing models and REST client class from Community Edition version
+from tb_rest_client.rest_client_ce import *
+# Importing the API exception
+from tb_rest_client.rest import ApiException
+
+
+logging.basicConfig(level=logging.DEBUG,
+                    format='%(asctime)s - %(levelname)s - %(module)s - %(lineno)d - %(message)s',
+                    datefmt='%Y-%m-%d %H:%M:%S')
+
+# ThingsBoard REST API URL
+url = "http://localhost:8080"
+# Default Tenant Administrator credentials
+username = "tenant@thingsboard.org"
+password = "tenant"
+
+
+# Creating the REST client object with context manager to get auto token refresh
+with RestClientCE(base_url=url) as rest_client:
+    try:
+        res = rest_client.get_tenant_device_infos(page_size=str(10), page=str(0))
+
+        logging.info("Device info:\n%r", res)
+    except ApiException as e:
+        logging.exception(e)
+```
+
+### Fetch tenant dashboards
+
+The following code sample shows how to fetch tenant dashboards via page link.
+
+```python
+import logging
+# Importing models and REST client class from Community Edition version
+from tb_rest_client.rest_client_ce import *
+# Importing the API exception
+from tb_rest_client.rest import ApiException
+
+
+logging.basicConfig(level=logging.DEBUG,
+                    format='%(asctime)s - %(levelname)s - %(module)s - %(lineno)d - %(message)s',
+                    datefmt='%Y-%m-%d %H:%M:%S')
+
+# ThingsBoard REST API URL
+url = "http://localhost:8080"
+# Default Tenant Administrator credentials
+username = "tenant@thingsboard.org"
+password = "tenant"
+
+
+# Creating the REST client object with context manager to get auto token refresh
+with RestClientCE(base_url=url) as rest_client:
+    try:
+        user = rest_client.get_user()
+        devices = rest_client.get_customer_device_infos(customer_id=CustomerId('CUSTOMER', user.id), page_size=str(10),
+                                                        page=str(0))
+        logging.info("Devices: \n%r", devices)
+    except ApiException as e:
+        logging.exception(e)
+```
+
+### Count entities using Entity Data Query API
+
+The following code sample shows how to use Entity Data Query API to count the total number of devices.
+
+```python
+import logging
+# Importing models and REST client class from Community Edition version
+from tb_rest_client.rest_client_ce import *
+# Importing the API exception
+from tb_rest_client.rest import ApiException
+
+
+logging.basicConfig(level=logging.DEBUG,
+                    format='%(asctime)s - %(levelname)s - %(module)s - %(lineno)d - %(message)s',
+                    datefmt='%Y-%m-%d %H:%M:%S')
+
+# ThingsBoard REST API URL
+url = "http://localhost:8080"
+# Default Tenant Administrator credentials
+username = "tenant@thingsboard.org"
+password = "tenant"
+
+
+# Creating the REST client object with context manager to get auto token refresh
+with RestClientCE(base_url=url) as rest_client:
+    try:
+        # Create entity filter to get all devices
+        entity_filter = EntityFilter()
+
+        # Create entity count query with provided filter
+        devices_query = EntityCountQuery(entity_filter)
+
+        # Execute entity count query and get total devices count
+        devices_count = rest_client.count_entities_by_query(devices_query)
+        logging.info("Total devices: \n%r", devices_count)
+    except ApiException as e:
+        logging.exception(e)
+```
+
+
+**The Professional Edition Python REST Client example you can find [here](/docs/pe/reference/python-rest-client/#professional-edition-python-rest-client-example).**

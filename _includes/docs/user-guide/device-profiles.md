@@ -48,7 +48,7 @@ Since ThingsBoard 3.2, the platform supports two transport types: Default and MQ
 #### Default transport type
 
 The Default transport type is intended for backward compatibility with previous releases. 
-With the Default transport type, you can continue to use the platform's default [MQTT](/docs/{{docsPrefix}}reference/mqtt-api/), [HTTP](/docs/{{docsPrefix}}reference/http-api/), and [CoAP](/docs/{{docsPrefix}}reference/mqtt-api/) APIs to connect your devices.
+With the Default transport type, you can continue to use the platform's default [MQTT](/docs/{{docsPrefix}}reference/mqtt-api/), [HTTP](/docs/{{docsPrefix}}reference/http-api/), [CoAP](/docs/{{docsPrefix}}reference/mqtt-api/) and [LwM2M](/docs/{{docsPrefix}}reference/lwm2m-api/) APIs to connect your devices.
 There is no specific configuration setting for the default transport type. 
 
 #### MQTT transport type
@@ -172,7 +172,15 @@ Let's assume that we would like to modify Example 1 and raise alarms only if the
 
 For this purpose, we need to edit the alarm condition and modify the condition type from "Simple" to "Duration". We should also specify the duration value and unit.
 
-{% include images-gallery.html imageCollection="alarmСonditionsWithDuration" showListImageTitles="true" %} 
+{% include images-gallery.html imageCollection="alarmСonditionsWithDuration" showListImageTitles="true" %}
+
+Now let’s assume you would like to replace the 1 minute duration with a dynamic value that depends on the settings for a particular device, customer or tenant. 
+
+For this purpose, you should use the server-side [attributes](/docs/{{docsPrefix}}user-guide/attributes/#server-side-attributes) feature. 
+
+Please create a server-side attribute *“highTemperatureDurationThreshold”* with the integer value *“2”* for your device.
+
+{% include images-gallery.html imageCollection="alarmСonditionsWithDuration2" showListImageTitles="true" %}
 
 #### Example 3. Repeating alarm condition
 
@@ -180,7 +188,15 @@ Let's assume we would like to modify Example 1 and raise alarms only if the sens
 
 For this purpose, we need to edit the alarm condition and modify the condition type from "Simple" to "Repeating". We should also specify 3 as 'Count of events'.
 
-{% include images-gallery.html imageCollection="alarmСonditionsWithRepeating" showListImageTitles="true" %} 
+{% include images-gallery.html imageCollection="alarmСonditionsWithRepeating" showListImageTitles="true" %}
+
+Now let’s assume you would like to replace the set number of times the alarm condition is exceeded with a dynamic value that depends on the settings for a particular device, customer or tenant. 
+
+For this purpose, you should use the server-side [attributes](/docs/{{docsPrefix}}user-guide/attributes/#server-side-attributes) feature. 
+
+Please create a server-side attribute *“highTemperatureRepeatingThreshold”*, with the integer value *“5”* for your device.
+
+{% include images-gallery.html imageCollection="alarmСonditionsWithRepeating2" showListImageTitles="true" %}
 
 #### Example 4. Clear alarm rule
 

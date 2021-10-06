@@ -1,2 +1,2 @@
 # Publish response to RPC request
-cat rpc-response.json | coap post coap://localhost/api/v1/$ACCESS_TOKEN/rpc/1
+coap-client -f rpc-response.json -m post coap://localhost/api/v1/$ACCESS_TOKEN/rpc/1

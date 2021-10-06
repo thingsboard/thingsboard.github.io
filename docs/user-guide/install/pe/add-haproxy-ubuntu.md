@@ -13,7 +13,7 @@ as ubuntu service. This is possible in case you are hosting ThingsBoard in the c
 
 ### Prerequisites
 
-Ubuntu 18.04 with valid DNS name assigned to the instance. Network settings should allow connections on Port 80 (HTTP) and 443 (HTTPS). 
+Ubuntu 18.04 / Ubuntu 20.04 with valid DNS name assigned to the instance. Network settings should allow connections on Port 80 (HTTP) and 443 (HTTPS).
 
 ### Step 1. Connect to your ThingsBoard instance over SSH
 
@@ -30,9 +30,10 @@ or consult your cloud vendor for different options.
 Execute the following commands to install HAProxy package:
 
 ```bash
-sudo add-apt-repository ppa:vbernat/haproxy-1.8
+sudo apt install --no-install-recommends software-properties-common
+sudo add-apt-repository ppa:vbernat/haproxy-2.4 -y
 sudo apt-get update
-sudo apt-get install haproxy openssl
+sudo apt-get install haproxy=2.4.\* openssl
 ```
 
 ### Step 3. Install Certbot package
@@ -148,11 +149,11 @@ listen stats
  stats auth admin:admin@123
 
 frontend http-in
- bind *:80
+ bind *:80 alpn h2,http/1.1
 
  option forwardfor
 
- reqadd X-Forwarded-Proto:\ http
+ http-request add-header "X-Forwarded-Proto" "http"
 
  acl letsencrypt_http_acl path_beg /.well-known/acme-challenge/
 
@@ -163,11 +164,11 @@ frontend http-in
  default_backend tb-backend
 
 frontend https_in
-  bind *:443 ssl crt /usr/share/tb-haproxy/default.pem crt /usr/share/tb-haproxy/certs.d/ ciphers ECDHE-RSA-AES256-SHA:RC4-SHA:RC4:HIGH:!MD5:!aNULL:!EDH:!AESGCM
+  bind *:443 ssl crt /usr/share/tb-haproxy/default.pem crt /usr/share/tb-haproxy/certs.d/ ciphers ECDHE-RSA-AES256-SHA:RC4-SHA:RC4:HIGH:!MD5:!aNULL:!EDH:!AESGCM alpn h2,http/1.1
 
   option forwardfor
 
-  reqadd X-Forwarded-Proto:\ https
+  http-request add-header "X-Forwarded-Proto" "https"
 
   default_backend tb-backend
 

@@ -11,7 +11,7 @@ Execute the following command to run this docker directly:
 
 ```bash
 docker run -it -v tb-pe-azure-integration-logs:/var/log/tb-azure-integration `
--e "PRC_HOST=thingsboard.cloud" -e "RPC_PORT=9090" `
+-e "RPC_HOST=thingsboard.cloud" -e "RPC_PORT=9090" `
 -e "INTEGRATION_ROUTING_KEY=YOUR_ROUTING_KEY"  -e "INTEGRATION_SECRET=YOUR_SECRET" `
 --name my-tb-pe-azure-integration --restart always thingsboard/tb-pe-azure-integration:{{ site.release.pe_full_ver }}
 ```
