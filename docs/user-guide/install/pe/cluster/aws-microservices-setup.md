@@ -30,9 +30,9 @@ Here are the fields you can change depending on your needs:
 - `region` - should be the AWS region where you want your cluster to be located (the default value is `us-east-1`)
 - `availabilityZones` - should specify the exact IDs of the region's availability zones 
 (the default value is `[us-east-1a,us-east-1b,us-east-1c]`)
-- `instanceType` - the type of the instance with TB node (the default value is `t3.xlarge`)
+- `instanceType` - the type of the instance with TB node (the default value is `m5.xlarge`)
 
-**Note**: if you don't make any changes to `instanceType` and `desiredCapacity` fields, the EKS will deploy **3** nodes of type **t3.xlarge**.
+**Note**: if you don't make any changes to `instanceType` and `desiredCapacity` fields, the EKS will deploy **3** nodes of type **m5.xlarge**.
 
 {% capture aws-eks-security %}
 In case you want to secure access to the PostgreSQL and MSK, you'll need to configure the existing VPC or create a new one,

@@ -11,3 +11,4 @@ The default region should be the ID of the region where you'd like to deploy the
 ```
 aws configure
 ```
+{: .copy-code}

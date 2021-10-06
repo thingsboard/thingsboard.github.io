@@ -3,7 +3,72 @@ layout: docwithnav
 assignees:
 - ashvayka
 title: Microservices setup using AWS infrastructure
-description: ThingsBoard IoT platform microservices setup with Kubernetes in AWS EKS
+description: ThingsBoard IoT platform microservices setup with Kubernetes in AWS EKS 
+rdsSetup:
+    0:
+        image: /images/install/cloud/aws/rds-1.png  
+        title: 'Make sure your PostgreSQL version is latest 12.x, not 13.x yet.'
+    1:
+        image: /images/install/cloud/aws/rds-2.png  
+        title: 'Keep your PosgreSQL master password in a safe place. We will refer to it later in this guide using YOUR_RDS_PASSWORD.'
+    2:
+        image: /images/install/cloud/aws/rds-3.png  
+        title: 'Use "Provisioned IOPS" for better performance.'
+    3:
+        image: /images/install/cloud/aws/rds-4.png  
+        title: 'Make sure your PostgreSQL RDS instance is accessible from the ThingsBoard cluster; The easiest way to achieve this is to deploy the PostgreSQL RDS instance in the same VPC and use "eksctl-thingsboard-cluster-ClusterSharedNodeSecurityGroup-*" security group.'
+    4:
+        image: /images/install/cloud/aws/rds-5.png  
+        title: 'Make sure you use "thingsboard" as initial database name.'
+    5:
+        image: /images/install/cloud/aws/rds-6.png  
+        title: 'Disable "auto minor version update".'  
+
+rdsEndpointUrl:
+    0:
+        image: /images/install/cloud/aws/rds-endpoint-url.png  
+        title: 'Once the database switch to the "Available" state, navigate to the "Connectivity and Security" and copy the endpoint value. We will refer to it later in this guide using **YOUR_RDS_ENDPOINT_URL**.'
+
+mskSetup:
+    0:
+        image: /images/install/cloud/aws/msk-1.png  
+        title: 'Make sure your Apache Kafka version is 2.6.x.'
+    1:
+        image: /images/install/cloud/aws/msk-2.png  
+        title: 'Make sure your MSK instance is accessible from the ThingsBoard cluster. The easiest way to achieve this is to deploy the MSK instance in the same VPC. We also recommend to use private subnets. This way it will be nearly impossible to accidentally expose it to the internet.'
+    2:
+        image: /images/install/cloud/aws/msk-3.png  
+        title: 'Use m5.large or similar instance types.'
+    3:
+        image: /images/install/cloud/aws/msk-4.png  
+        title: 'Choose default security settings. Make sure "Plaintext" mode is enabled.'
+    4:
+        image: /images/install/cloud/aws/msk-5.png  
+        title: 'Use default "Monitoring" settings or enable "Enhenced topic level monitoring".'
+
+mskConnectionParams:
+    0:
+        image: /images/install/cloud/aws/msk-connection-params.png  
+        title: 'Once the MSK cluster switch to the "Active" state, navigate to "Details" and click "View client information".'
+    1:
+        image: /images/install/cloud/aws/msk-connection-params2.png  
+        title: 'Copy bootstrap server information in plaintext. We will refer to it later in this guide using **YOUR_MSK_BOOTSTRAP_SERVERS_PLAINTEXT**.'
+
+redisSetup:
+    0:
+        image: /images/install/cloud/aws/redis-single-1.png  
+        title: 'Specify Redis Engine version 6.x and node type with at least 1 GB of RAM.'
+    1:
+        image: /images/install/cloud/aws/redis-single-2.png  
+        title: 'Make sure your Redis cluster is accessible from the ThingsBoard cluster. The easiest way to achieve this is to deploy the Redis cluster in the same VPC. We also recommend to use private subnets. Use "eksctl-thingsboard-cluster-ClusterSharedNodeSecurityGroup-*" security group.'
+    2:
+        image: /images/install/cloud/aws/redis-single-3.png  
+        title: 'Disable automatic backups.'
+
+redisEndpointUrl:
+    0:
+        image: /images/install/cloud/aws/redis-endpoint-url.png  
+        title: 'Once the Redis cluster switch to the "Available" state, navigate to "Details" and copy "Primary Endpoint" without ":6379" port sufix. We will refer to it later in this guide using **YOUR_REDIS_ENDPOINT_URL_WITHOUT_PORT**.'
 
 ---
 
@@ -30,137 +95,138 @@ Here are the fields you can change depending on your needs:
 - `region` - should be the AWS region where you want your cluster to be located (the default value is `us-east-1`)
 - `availabilityZones` - should specify the exact IDs of the region's availability zones 
 (the default value is `[us-east-1a,us-east-1b,us-east-1c]`)
-- `instanceType` - the type of the instance with TB node (the default value is `t3.xlarge`)
+- `instanceType` - the type of the instance with TB node (the default value is `m5.xlarge`)
 
-**Note**: if you don't make any changes to `instanceType` and `desiredCapacity` fields, the EKS will deploy **3** nodes of type **t3.xlarge**.
+**Note**: if you don't make any changes to `instanceType` and `desiredCapacity` fields, the EKS will deploy **3** nodes of type **m5.xlarge**.
 
-{% capture aws-eks-security %}
-In case you want to secure access to the PostgreSQL and MSK, you'll need to configure the existing VPC or create a new one,
-set it as the VPC for the ThingsBoard cluster, create security groups for PostgreSQL and MSK,
-set them for `node` node-group in the ThingsBoard cluster and configure the access from the ThingsBoard cluster nodes to PostgreSQL/MSK using another security group.
+{% capture aws-eks-vpc %}
 
+The following command will create new VPC for your ThingsBoard cluster. This guide assumes you will create new VPC. 
+Although it is fine to use existing VPC and subnets as well. 
 You can find more information about configuring VPC for `eksctl` [here](https://eksctl.io/usage/vpc-networking/).
+
 {% endcapture %}
-{% include templates/info-banner.md content=aws-eks-security %}
+{% include templates/info-banner.md content=aws-eks-vpc %}
 
 Command to create AWS cluster:
+
 ```
 eksctl create cluster -f cluster.yml
 ```
+{: .copy-code}
 
 ## Step 3. Create AWS load-balancer controller
 
-After the cluster is ready you'll need to create AWS load-balancer controller.
+Once the cluster is ready you must create AWS load-balancer controller.
 You can do it by following [this](https://docs.aws.amazon.com/eks/latest/userguide/aws-load-balancer-controller.html) guide.
+The cluster provisioning scripts will create several load balancers:
+
+* "tb-http-loadbalancer" - AWS ALB that is responsible for the web UI, REST API and HTTP transport;
+* "tb-mqtt-loadbalancer" - AWS NLB that is responsible for the MQTT transport;
+* "tb-coap-loadbalancer" - AWS NLB that is responsible for the CoAP transport;
+
+Provisioning of the AWS load-balancer [controller](https://docs.aws.amazon.com/eks/latest/userguide/aws-load-balancer-controller.html) 
+is a **very important step** that is required for those load balancers to work properly. 
 
 ## Step 4. Amazon PostgreSQL DB Configuration
 
-You'll need to set up PostgreSQL on Amazon RDS. 
-One of the ways to do it is by following [this](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SettingUp.html) guide.
+You'll need to set up PostgreSQL on Amazon RDS. ThingsBoard will use it as a main database to store devices, dashboards, rule chains and device telemetry. 
+You may follow [this](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_GettingStarted.CreatingConnecting.PostgreSQL.html) guide,
+but take into account the following requirements:
 
-**Note**: Make sure your database is accessible from the cluster, one of the way to achieve this is to create 
-the database in the same VPC and subnets as ThingsBoard cluster.
+* Keep your postgresql password in a safe place. We will refer to it later in this guide using **YOUR_RDS_PASSWORD**.
+* Make sure your PostgreSQL version is latest 12.x, not 13.x yet;
+* Make sure your PostgreSQL RDS instance is accessible from the ThingsBoard cluster;
+  The easiest way to achieve this is to deploy the PostgreSQL RDS instance in the same VPC 
+  and use 'eksctl-thingsboard-cluster-ClusterSharedNodeSecurityGroup-*' security group.
+  We assume you locate it in the same VPC in this guide;
+* Make sure you use "thingsboard" as initial database name;
 
-Here you should choose VPC with the name of your cluster:
+, and recommendations:  
 
-![image](/images/install/cloud/aws-rds-connectivity-vpc.png)
+* Use 'Production' template for high availability. It enables a lot of useful settings by default;
+* Use 'Provisioned IOPS' for better performance;
+* Consider creation of custom parameters group for your RDS instance. It will make change of DB parameters easier;
+* Consider deployment of the RDS instance into private subnets. This way it will be nearly impossible to accidentally expose it to the internet.
 
-Here you should choose security group corresponding to the one on the screen:
+{% include images-gallery.html imageCollection="rdsSetup"%}
 
-![image](/images/install/cloud/aws-rds-connectivity-security-group.png)
+Once the database switch to the 'Available' state, navigate to the 'Connectivity and Security' and copy the endpoint value.
+We will refer to it later in this guide using **YOUR_RDS_ENDPOINT_URL**.
 
-**Note**: in order to make PostgreSQL more secure you may create the separate security group, 
-configure access only to the 5432 port and from the ThingsBoard nodes.
-This can be achieved if you assigned security group to the `node` node-group in the `cluster.yml` file. 
-
-Make sure that `thingsboard` database is created along with PostgreSQL instance (or create it afterwards).
-
-![image](/images/install/cloud/aws-rds-default-database.png)
-
-**Note:** You may also change `username` and `password` fields.
+{% include images-gallery.html imageCollection="rdsEndpointUrl"%}
 
 ## Step 5. Amazon MSK Configuration
 
-You'll need to set up Amazon MSK. 
-To do so you need to open AWS console, MSK submenu, press `Create cluster` button and choose `Custom create` mode. 
-You should see the similar image:
+You'll need to set up Kafka using Amazon MSK. ThingsBoard will use it to communicate between microservices, store unprocessed messages, etc.
+Kafka is useful to survive peak loads and hardware failures to make sure that all messages from devices will be processed.
 
-![image](/images/install/cloud/aws-msk-creation.png)
+Please open AWS console and navigate to MSK, press `Create cluster` button and choose `Custom create` mode.
 
-Now you should choose the ThingsBoard cluster's VPC for the Kafka cluster:
+* Make sure your Apache Kafka version is 2.6.x;
+* Make sure your MSK instance is accessible from the ThingsBoard cluster.
+  The easiest way to achieve this is to deploy the MSK instance in the same VPC. 
+  We also recommend to use private subnets. This way it will be nearly impossible to accidentally expose it to the internet;
+* Use m5.large or similar instance types;
+* Choose default security settings. Make sure 'Plaintext' mode is enabled;
+* Use default 'Monitoring' settings or enable 'Enhenced topic level monitoring'. 
 
-![image](/images/install/cloud/aws-msk-vpc.png)
+{% include images-gallery.html imageCollection="mskSetup"%}
 
-You can choose any zones and subnets.
+Once the MSK cluster switch to the 'Active' state, navigate to 'Details' and click 'View client information'. 
+Copy bootstrap server information in plaintext.
+We will refer to it later in this guide using **YOUR_MSK_BOOTSTRAP_SERVERS_PLAINTEXT**.
 
-After that you need to select `Custom settings` of security groups and choose groups corresponding to the group on the screen:
-
-![image](/images/install/cloud/aws-msk-security-groups.png)
-
-Also you should enable `Plaintext` communication between clients and brokers:
-
-![image](/images/install/cloud/aws-msk-encryption.png)
-
-**Note**: in order to make MSK more secure you may create the separate security group, 
-configure access only to the 9092 port and from the ThingsBoard nodes.
-This can be achieved if you assigned security group to the `node` node-group in the `cluster.yml` file. 
+{% include images-gallery.html imageCollection="mskConnectionParams"%}
 
 ## Step 6. Amazon ElactiCache (Redis) Configuration
 
-You'll need to set up [Amazon ElastiCache (Redis)](https://aws.amazon.com/elasticache/redis/).
+You'll need to set up [Amazon ElastiCache (Redis)](https://aws.amazon.com/elasticache/redis/). ThingsBoard uses cache to improve performance and avoid frequent DB reads.
 
-When creating Redis cluster you should choose `Create new` for `Subnet group` menu:
+Please open AWS console and navigate to ElastiCache->Redis->Create.
 
-![image](/images/install/cloud/aws-redis-vpc.png)
+* Specify Redis Engine version 6.x and node type with at least 1 GB of RAM;
+* Make sure your Redis cluster is accessible from the ThingsBoard cluster. The easiest way to achieve this is to deploy the Redis cluster in the same VPC. We also recommend to use private subnets. Use "eksctl-thingsboard-cluster-ClusterSharedNodeSecurityGroup-*" security group; 
+* Disable automatic backups.
 
-Then you should choose your ThingsBoard cluster's VPC (you can see the ID of your VPC under the [VPC](https://console.aws.amazon.com/vpc/home) section of AWS console) 
-and any of the subnets.
+{% include images-gallery.html imageCollection="redisSetup"%}
 
-Afterwards, edit the `Security groups` field of the creating form and choose the corresponding security group from your ThingsBoard cluster as on the next screen:
+Once the Redis cluster switch to the 'Available' state, navigate to 'Details' and copy 'Primary Endpoint' without ':6379' port sufix. 
+We will refer to it later in this guide using **YOUR_REDIS_ENDPOINT_URL_WITHOUT_PORT**.
 
-![image](/images/install/cloud/aws-redis-security-group.png)
+{% include images-gallery.html imageCollection="redisEndpointUrl"%}
 
 ## Step 7. Configure links to the Kafka (Amazon MSK)/Redis/Postgres
 
-### Amazon RDS PostgreSQL
+Edit "tb-node-db-configmap.yml" and replace **YOUR_RDS_ENDPOINT_URL** and **YOUR_RDS_PASSWORD** with the values you have obtained during [step 4](#step-4-amazon-postgresql-db-configuration).
 
-On AWS Console get the `Endpoint` of the RDS PostgreSQL and paste it to `SPRING_DATASOURCE_URL` in the `tb-node-db-configmap.yml` instead of `your_url`.
+Edit "tb-kafka-configmap.yml" and replace **YOUR_MSK_BOOTSTRAP_SERVERS_PLAINTEXT** with the values you have obtained during [step 5](#step-5-amazon-msk-configuration).
 
-![image](/images/install/cloud/aws-postgres-endpoint.png)
+Edit "tb-redis-configmap.yml" and replace **YOUR_REDIS_ENDPOINT_URL_WITHOUT_PORT** with the values you have obtained during [step 6](#step-6-amazon-elacticache-redis-configuration).
 
-Also, you'll need to set `SPRING_DATASOURCE_USERNAME` and `SPRING_DATASOURCE_PASSWORD` with PostgreSQL `username` and `password` corresponding.
-
-### Amazon MSK
-
-To get the list of brokers call the command:
-```
-aws kafka get-bootstrap-brokers --region us-east-1 --cluster-arn $CLUSTER_ARN
-```
-Where $CLUSTER_ARN is the Amazon Resource Name (ARN) of the MSK cluster:
-
-![image](/images/install/cloud/aws-msk-arn.png)
-
-You'll need to paste data from the `BootstrapBrokerString` to the `TB_KAFKA_SERVERS` environment variable in the `tb-kafka-configmap.yml` file.
-
-### Amazon ElastiCache Redis
-
-[Here](https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/GettingStarted.ConnectToCacheNode.html) you can find information on how to get Redis endpoints.
-
-You'll need to paste **hostname** (part without **:6379**) from the `Primary Endpoint` to the `REDIS_HOST` environment variable in the `tb-redis-configmap.yml` file:
-
-![image](/images/install/cloud/aws-redis-endpoint.png)
-
-## Step 8. Configure secure HTTP connection
-
-**Note**: if you don't need SSL connection over HTTP, you'll need to remove **alb.ingress.kubernetes.io/listen-ports** and **alb.ingress.kubernetes.io/certificate-arn** 
-lines in the `routes.yml` file and skip this step.
+## Step 8. Configure HTTPS (Optional)
 
 Use [AWS Certificate Manager](https://aws.amazon.com/certificate-manager/) to create or import SSL certificate.
-After creation/import you'll need to copy certificate's ARN and paste it instead of **ARN_VALUE** in the `routes.yml` file:
+After creation/import you'll need to uncomment the 'alb.ingress.kubernetes.io/certificate-arn' setting and paste certificate's ARN instead of **YOUR_CERTIFICATE_ARN** in the `routes.yml` file:
 
-![image](/images/install/cloud/aws-certificate-arn.png)
- 
-## Step 9. Configure secure MQTT connection
+```yaml
+...
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  namespace: thingsboard
+  name: tb-http-loadbalancer
+  annotations:
+    kubernetes.io/ingress.class: alb
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/target-type: ip
+    # Uncomment the following line to enable HTTPS. Don't forget to replace YOUR_CERTIFICATE_ARN with the correct value
+    # See https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#https-listener-certificates for more info
+    # alb.ingress.kubernetes.io/certificate-arn: YOUR_CERTIFICATE_ARN
+...
+```
+
+## Step 9. Configure MQTTS (Optional)
 
 Follow [this guide](/docs/user-guide/mqtt-over-ssl/) to create a **.jks** file with the SSL certificate.
 Afterwards, you need to set **MQTT_SSL_KEY_STORE_PASSWORD** and **MQTT_SSL_KEY_PASSWORD** environment variables in the `thingsboard.yml` file
@@ -174,10 +240,7 @@ kubectl create configmap tb-mqtts-config \
 ```
 {: .copy-code}
 
-where **YOUR_JKS_FILENAME** is the name of your **.jks** file.
-
-**Note**: if you don't need SSL connection over MQTT, you'll need to set **MQTT_SSL_ENABLED** environment variable to **false**
-and delete all notions of **tb-mqtts-config** in the `thingsboard.yml` file.
+where **YOUR_JKS_FILENAME** is the name of your **.jks** file. Then, uncomment all sections in the 'thingsboard.yml' file that are marked with "Uncomment the following section to enable MQTTS".
 
 ## Step 10. CPU and Memory resources allocation
 
@@ -186,13 +249,13 @@ The scripts have preconfigured values of resources for each service. You can cha
 **Note**: if you want to allocate more resources you'll need to increase the number of Amazon nodes or use larger machines. 
 
 Recommended CPU/memory resources allocation:
-- TB Node: 1.5 CPU / 6Gi memory
-- TB HTTP Transport: 0.5 CPU / 2Gi memory
-- TB MQTT Transport: 0.5 CPU / 2Gi memory
-- TB COAP Transport: 0.5 CPU / 2Gi memory
-- TB Web UI: 0.3 CPU / 0.5Gi memory
-- JS Executor: 0.1 CPU / 0.3Gi memory
-- Zookeeper: 0.3 CPU / 1Gi memory
+- TB Node: 1.0 CPU / 2Gi memory
+- TB HTTP Transport: 0.5 CPU / 0.5Gi memory
+- TB MQTT Transport: 0.5 CPU / 0.5Gi memory
+- TB COAP Transport: 0.5 CPU / 0.5Gi memory
+- TB Web UI: 0.1 CPU / 100Mi memory
+- JS Executor: 0.1 CPU / 100Mi memory
+- Zookeeper: 0.1 CPU / 0.5Gi memory
 
 ## Step 11. Installation
 
@@ -200,6 +263,7 @@ Execute the following command to run installation:
 ```
  ./k8s-install-tb.sh --loadDemo
 ```
+{: .copy-code}
 
 Where:
 
@@ -220,28 +284,54 @@ Execute the following command to deploy resources:
 ```
  ./k8s-deploy-resources.sh
 ```
+{: .copy-code}
 
-After few minutes you may call `kubectl get pods`. If everything went fine, you should be able to see 
-`tb-coap-transport-0`, `tb-http-transport-0`, `tb-mqtt-transport-0`, two `tb-js-executor`, `tb-node-0`, `tb-web-ui` and 3 `zookeeper` pods.
+After few minutes you may call `kubectl get pods`. If everything went fine, you should be able to see:
+
+* 3x`tb-coap-transport`
+* 3x`tb-http-transport`
+* 3x`tb-mqtt-transport`
+* 5x`tb-js-executor`
+* 3x`tb-node`
+* 2x`tb-web-ui`
+* 3x`zookeeper`.
+  
 Every pod should be in the `READY` state. 
 
-## Step 13. Using
+## Step 13. Validate the setup
+
+#### Validate Web UI access
 
 Now you can open ThingsBoard web interface in your browser using DNS name of the load balancer.
 
 You can see DNS name (the `ADDRESS` column) of the HTTP load-balancer using command:
-```
+
+```bash
 kubectl get ingress
 ```
+{: .copy-code}
 
 You should see the similar picture:
 
 ![image](/images/install/cloud/aws-application-loadbalancers.png)
 
+Use the following default credentials:
+
+- **System Administrator**: sysadmin@thingsboard.org / sysadmin
+
+If you installed DataBase with demo data (using `--loadDemo` flag) you can also use the following credentials:
+
+- **Tenant Administrator**: tenant@thingsboard.org / tenant
+- **Customer User**: customer@thingsboard.org / customer
+
+#### Validate MQTT/CoAP access
+
 To connect to the cluster via MQTT or COAP you'll need to get corresponding service, you can do it with command:
-```
+
+```bash
 kubectl get service
 ```
+{: .copy-code}
 
 You should see the similar picture:
 
@@ -254,21 +344,15 @@ There are two load-balancers:
 
 Use `EXTERNAL-IP` field of the load-balancers to connect to the cluster.
 
-Use the following default credentials:
-
-- **System Administrator**: sysadmin@thingsboard.org / sysadmin
-
-If you installed DataBase with demo data (using `--loadDemo` flag) you can also use the following credentials:
-
-- **Tenant Administrator**: tenant@thingsboard.org / tenant
-- **Customer User**: customer@thingsboard.org / customer
+#### Troubleshooting
 
 In case of any issues you can examine service logs for errors.
 For example to see ThingsBoard node logs execute the following command:
 
-```
+```bash
 kubectl logs -f tb-node-0
 ```
+{: .copy-code}
 
 Or use `kubectl get pods` to see the state of the pods.
 Or use `kubectl get services` to see the state of all the services.
@@ -277,34 +361,50 @@ See [kubectl Cheat Sheet](https://kubernetes.io/docs/reference/kubectl/cheatshee
 
 Execute the following command to delete all ThingsBoard pods:
 
-```
+```bash
 ./k8s-delete-resources.sh
 ```
+{: .copy-code}
 
 Execute the following command to delete all ThingsBoard pods and configmaps:
 
-```
+```bash
 ./k8s-delete-all.sh
 ```
+{: .copy-code}
 
 Execute the following command to delete EKS cluster (you should change the name of the cluster and zone):
-```
+
+```bash
 eksctl delete cluster -r us-east-1 -n thingsboard-cluster -w
 ```
+{: .copy-code}
 
 ## Upgrading
 
+Merge your local changes with the latest release branch from the repo you have used in the [Step 1](#step-1-clone-thingsboard-ce-k8s-scripts-repository).
+
+
 In case when database upgrade is needed, execute the following commands:
 
-```
- ./k8s-delete-resources.sh
+```bash
  ./k8s-upgrade-tb.sh --fromVersion=[FROM_VERSION]
- ./k8s-deploy-resources.sh
 ```
+{: .copy-code}
 
 Where:
 
 - `FROM_VERSION` - from which version upgrade should be started. See [Upgrade Instructions](/docs/user-guide/install/upgrade-instructions) for valid `fromVersion` values.
+
+Note: You may optionally stop the tb-node pods while you run the upgrade of the database. This will cause downtime, but will make sure that the DB state will be consistent after the update. 
+Most of the updates do not require the tb-nodes to be stopped. 
+
+Once completed, execute deployment of the resources again. This will cause rollout restart of the thingsboard components with the newest version.
+
+```yaml
+./k8s-deploy-resources.sh
+```
+
 
 ## Next steps
 
