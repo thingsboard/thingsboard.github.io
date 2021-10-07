@@ -207,7 +207,7 @@ Edit "tb-redis-configmap.yml" and replace **YOUR_REDIS_ENDPOINT_URL_WITHOUT_PORT
 ## Step 8. Configure HTTPS (Optional)
 
 Use [AWS Certificate Manager](https://aws.amazon.com/certificate-manager/) to create or import SSL certificate.
-After creation/import you'll need to uncomment the 'alb.ingress.kubernetes.io/certificate-arn' setting and paste certificate's ARN instead of **YOUR_CERTIFICATE_ARN** in the `routes.yml` file:
+After creation/import you'll need to uncomment the 'alb.ingress.kubernetes.io/certificate-arn' setting and paste certificate's ARN instead of **YOUR_HTTPS_CERTIFICATE_ARN** in the `routes.yml` file:
 
 ```yaml
 ...
@@ -228,8 +228,22 @@ metadata:
 
 ## Step 9. Configure MQTTS (Optional)
 
+The simplest way to configure MQTTS is to make your MQTT load balancer (AWS NLB) to act as a TLS termination point. 
+This way we setup the one-way TLS connection, where the traffic between your devices and load balancers is encrypted, and the traffic between your load balancer and MQTT Transport is not encrypted. 
+There should be no security issues, since the ALB/NLB is running in your VPC. 
+The only major disadvantage of this option is that you can't use "X.509 certificate" MQTT client credentials, since information about client certificate is not transferred from the load balancer to the ThingsBoard MQTT Transport service.
+
+To enable the **one-way TLS**:
+
+* Use [AWS Certificate Manager](https://aws.amazon.com/certificate-manager/) to create or import SSL certificate.
+* Locate 2 places marked as "Uncomment the following lines to enable one-way MQTTS" in the "routes.yml" and paste certificate's ARN instead of **YOUR_MQTTS_CERTIFICATE_ARN**.
+
+The more complex way to enable MQTTS is to obtain valid (signed) TLS certificate and configure it in the MQTT Transport. The main advantage of this option is that you may use it in combination with "X.509 certificate" MQTT client credentials.
+
+To enable the **two-way TLS**:
+
 Follow [this guide](/docs/user-guide/mqtt-over-ssl/) to create a **.jks** file with the SSL certificate.
-Afterwards, you need to set **MQTT_SSL_KEY_STORE_PASSWORD** and **MQTT_SSL_KEY_PASSWORD** environment variables in the `thingsboard.yml` file
+Afterwards, you need to set **MQTT_SSL_KEY_STORE_PASSWORD** and **MQTT_SSL_KEY_PASSWORD** environment variables in the `tb-services.yml` file
 to the corresponding key-store and certificate key passwords.
 
 You'll need to create a config-map with your JKS file, you can do it by calling command:
@@ -240,7 +254,8 @@ kubectl create configmap tb-mqtts-config \
 ```
 {: .copy-code}
 
-where **YOUR_JKS_FILENAME** is the name of your **.jks** file. Then, uncomment all sections in the 'thingsboard.yml' file that are marked with "Uncomment the following section to enable MQTTS".
+where **YOUR_JKS_FILENAME** is the name of your **.jks** file. Then, uncomment all sections in the 'tb-services.yml' file that are marked with "Uncomment the following lines to enable two-way MQTTS".
+Also, uncomment sections in the 'routes.yml' file that is marked with the same "Uncomment the following lines to enable two-way MQTTS" comment.
 
 ## Step 10. CPU and Memory resources allocation
 
@@ -259,7 +274,7 @@ Recommended CPU/memory resources allocation:
 
 ## Step 11. Installation
 
-Execute the following command to run installation:
+Execute the following command to run the initial setup of the database. This command will launch short-living ThingsBoard pod to provision necessary DB tables, indexes, etc 
 ```
  ./k8s-install-tb.sh --loadDemo
 ```
@@ -279,7 +294,7 @@ Otherwise, please check if you set the PostgreSQL URL in the `tb-node-db-configm
 
 ## Step 12. Starting
 
-Execute the following command to deploy resources:
+Execute the following command to deploy ThingsBoard services:
 
 ```
  ./k8s-deploy-resources.sh
@@ -288,13 +303,13 @@ Execute the following command to deploy resources:
 
 After few minutes you may call `kubectl get pods`. If everything went fine, you should be able to see:
 
-* 3x`tb-coap-transport`
-* 3x`tb-http-transport`
-* 3x`tb-mqtt-transport`
-* 5x`tb-js-executor`
-* 3x`tb-node`
-* 2x`tb-web-ui`
-* 3x`zookeeper`.
+* 3x `tb-coap-transport`
+* 3x `tb-http-transport`
+* 3x `tb-mqtt-transport`
+* 5x `tb-js-executor`
+* 3x `tb-node`
+* 2x `tb-web-ui`
+* 3x `zookeeper`.
   
 Every pod should be in the `READY` state. 
 
@@ -359,27 +374,6 @@ Or use `kubectl get services` to see the state of all the services.
 Or use `kubectl get deployments` to see the state of all the deployments.
 See [kubectl Cheat Sheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/) command reference for details.
 
-Execute the following command to delete all ThingsBoard pods:
-
-```bash
-./k8s-delete-resources.sh
-```
-{: .copy-code}
-
-Execute the following command to delete all ThingsBoard pods and configmaps:
-
-```bash
-./k8s-delete-all.sh
-```
-{: .copy-code}
-
-Execute the following command to delete EKS cluster (you should change the name of the cluster and zone):
-
-```bash
-eksctl delete cluster -r us-east-1 -n thingsboard-cluster -w
-```
-{: .copy-code}
-
 ## Upgrading
 
 Merge your local changes with the latest release branch from the repo you have used in the [Step 1](#step-1-clone-thingsboard-ce-k8s-scripts-repository).
@@ -404,6 +398,29 @@ Once completed, execute deployment of the resources again. This will cause rollo
 ```yaml
 ./k8s-deploy-resources.sh
 ```
+
+## Cluster deletion
+
+Execute the following command to delete all ThingsBoard pods:
+
+```bash
+./k8s-delete-resources.sh
+```
+{: .copy-code}
+
+Execute the following command to delete all ThingsBoard pods and configmaps:
+
+```bash
+./k8s-delete-all.sh
+```
+{: .copy-code}
+
+Execute the following command to delete EKS cluster (you should change the name of the cluster and zone):
+
+```bash
+eksctl delete cluster -r us-east-1 -n thingsboard -w
+```
+{: .copy-code}
 
 
 ## Next steps
