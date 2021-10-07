@@ -1,24 +1,20 @@
 {% assign feature = "Custom Translations" %}{% include templates/pe-feature-banner.md %}
 
+* TOC
+{:toc}
+
 ThingsBoard Custom Translations feature allows you to upload alternative to existing language translations
 and extend the translation to specific GUI elements on the dashboards.
 
 ### Using Locale Files
-Step 1. Open Custom Translation menu.
-
-Step 2. Choose language from dropdown menu. For example, Italian.
-
-Step 3. Download locale file.
-
-Step 4. In the locale file find all possible translation for the chosen language.
-
-Step 5. Change language in the User's Profile for applying settings.
 
 {% include images-gallery.html imageCollection="usingLocaleFiles" showListImageTitles="true"%}
 
-### Custom menu 
-Step 1. Specify new custom translation.
+### Custom menu
 
+{% include images-gallery.html imageCollection="customMenuItems" showListImageTitles="true"%}
+
+<b>Examples of the custom translation map:</b>
 ```json
 {
   "home": {
@@ -40,40 +36,19 @@ Step 1. Specify new custom translation.
 ```
 {: .copy-code}
 
-Step 2. Go to the Home page and check new translation.
-
-{% include images-gallery.html imageCollection="customMenuItems" showListImageTitles="true"%}
-
 ### Custom Dashboard Title
-Step 1. Specify new custom translation for the dashboard and widgets.
-
-Step 2. Go to the Dashboard page. Create new dashboard or chose existing one. Open dashboard menu.
-
-Step 3. Translate dashboard title. Note the required syntax: {i18n:custom.my-dashboard.title}.
-
-Step 4. Check the translated title.
 
 {% include images-gallery.html imageCollection="customDashboardTitle"  showListImageTitles="true"%}
 
-### Custom Widget's Title and Widget's Label
-Step 1. Go to the dashboard. Open an edit mode.
-
-Step 2. Open widget's edit mode.
-
-Step 3. Apply translation to the widget title - {i18n:custom.my-widget.name}, and entity label column title - {i18n:custom.my-widget.label-text}.
-
-Step 4. Check translated titles.
+### Custom Titles 
 
 {% include images-gallery.html imageCollection="customWidgetTitleAndWidgetLabel" showListImageTitles="true"%}
 
 ### Custom Translation in Widgets
 
-Step 1. Specify new custom translation for the telemetry data.
+{% include images-gallery.html imageCollection="customTranslationInWidgets" showListImageTitles="true"%}
 
-Step 2. Open widget settings and go to the data key configuration.
-
-Step 3. Use post-processing function for logic with custom translation. The post-processing function requires quotes for the i18n.
-
+<b>Examples of using custom translation in the post-processing function:</b>
 ```javascript
 if(value>70){
     return "{i18n:custom.my-widget.high-temperature}";
@@ -85,18 +60,8 @@ if(value>70){
 ```
 {: .copy-code}
 
-Step 4. Get the message from translation map if temperature is high.
 
-Step 5. Get the message from translation map if temperature is low.
-
-Step 6. Choose 'HTML Value Card' widget.
-
-Step 7. Choose telemetry data.
-
-Step 8. Write some logic with custom translation. HTML field requires quotes for the i18n.
-
-Step 9. Use quotes for the i18n.
-
+<b>Examples of using custom translation in the HTML Vale Card:</b>
 ```html
 <script>
     var description = document.getElementsByClassName('description')[0];
@@ -127,11 +92,14 @@ Step 9. Use quotes for the i18n.
 ```
 {: .copy-code}
 
-Step 10. Check the result in the 'HTML Value Card.'
+{% capture peFeatureContent %}
+For now, Custom Translation is not available in the HTML Card, Control Widgets, Files widgets,
+Date widget, Gateways widgets, Scheduling widgets.
+{% endcapture %}
+{% include templates/info-banner.md content=peFeatureContent %}
 
-{% include images-gallery.html imageCollection="customTranslationInWidgets" showListImageTitles="true"%}
 
-### Video Guide
+### Video Tutorial
 
 See video tutorial below for step-by-step instruction how to use this feature.
 
