@@ -14,7 +14,7 @@ This guide will help you to setup ThingsBoard in microservices custom mode in AW
 
 ## Prerequisites
 
-{% include templates/install/aws-eks-prerequisites.md %}
+{% include templates/install/aws/eks-prerequisites.md %}
 
 ## Step 1. Clone ThingsBoard CE K8S scripts repository
 
