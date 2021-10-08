@@ -6,11 +6,11 @@ title: Microservices setup using AWS EKS
 description: ThingsBoard IoT platform microservices setup with Kubernetes in AWS EKS 
 rdsSetup:
     0:
+        image: /images/install/cloud/aws/rds-2.png  
+        title: 'Keep your PosgreSQL master password in a safe place. We will refer to it later in this guide using YOUR_RDS_PASSWORD'
+    1:
         image: /images/install/cloud/aws/rds-1.png  
         title: 'Make sure your PostgreSQL version is latest 12.x, not 13.x yet.'
-    1:
-        image: /images/install/cloud/aws/rds-2.png  
-        title: 'Keep your PosgreSQL master password in a safe place. We will refer to it later in this guide using YOUR_RDS_PASSWORD.'
     2:
         image: /images/install/cloud/aws/rds-3.png  
         title: 'Use "Provisioned IOPS" for better performance.'
