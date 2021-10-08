@@ -10,7 +10,7 @@ rdsSetup:
         title: 'Make sure your PostgreSQL version is latest 12.x, not 13.x yet.'
     1:
         image: /images/install/cloud/aws/rds-2.png  
-        title: 'Keep your PosgreSQL master password in a safe place. We will refer to it later in this guide using YOUR_RDS_PASSWORD.'
+        title: 'Keep your PostgreSQL master password in a safe place. We will refer to it later in this guide using YOUR_RDS_PASSWORD.'
     2:
         image: /images/install/cloud/aws/rds-3.png  
         title: 'Use "Provisioned IOPS" for better performance.'
@@ -54,7 +54,6 @@ cd thingsboard-ce-k8s/aws/monolith
 {% assign eksNote = "**1** node of type **m5.xlarge**" %}
 {% include templates/install/aws/eks-create-cluster.md %}
 
-
 ## Step 3. Create AWS load-balancer controller
 
 {% include templates/install/aws/eks-lb-controller.md %}
@@ -89,11 +88,11 @@ On AWS Console get the `Endpoint` of the RDS PostgreSQL and paste it to `SPRING_
 
 Also, you'll need to set `SPRING_DATASOURCE_USERNAME` and `SPRING_DATASOURCE_PASSWORD` with PostgreSQL `username` and `password` corresponding.
 
-## Step 5. Configure secure HTTP connection
+## Step 5. Configure HTTPS (Optional)
 
 {% include templates/install/aws/configure-https.md %}
- 
-## Step 6. Configure secure MQTT connection
+
+## Step 6. Configure MQTTS (Optional)
 
 {% assign eksTbServicesFile = "tb-node.yml" %}
 {% include templates/install/aws/configure-mqtts.md %}
