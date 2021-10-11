@@ -3,7 +3,8 @@ layout: docwithnav
 assignees:
 - ashvayka
 title: Microservices setup using AWS EKS
-description: ThingsBoard IoT platform microservices setup with Kubernetes in AWS EKS 
+description: ThingsBoard IoT platform microservices setup with Kubernetes in AWS EKS
+
 rdsSetup:
     0:
         image: /images/install/cloud/aws/rds-1.png  
