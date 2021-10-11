@@ -191,7 +191,7 @@ After few minutes you may call `kubectl get pods`. If everything went fine, you 
 * 3x `tb-http-transport`
 * 3x `tb-mqtt-transport`
 * 5x `tb-js-executor`
-* 3x `tb-node`
+* 1x `tb-node` (We setup one node by default, you may scale it to many nodes if you have additional instances attached to your license key)
 * 2x `tb-web-ui`
 * 3x `zookeeper`.
 
