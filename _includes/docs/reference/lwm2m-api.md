@@ -43,26 +43,28 @@ See general device profile [documentation](/docs/{{docsPrefix}}user-guide/device
 The important step is to chose LwM2M Transport type on the "Transport configuration" step.
 The Transport Configuration allows us to define list of the LwM2M Objects that your devices supports.
 
-Let's define a profile that supports Device Object (id: 3), Connectivity, Firmware Update and Location monitoring:
-
 {% include images-gallery.html imageCollection="device-profile" showListImageTitles="true" %}
 
-You may notice that Device Object supports Manufacturer, model, and serial numbers.
-Let's configure ThingsBoard to fetch those data when device connects and store it as ThingsBoard attributes.
+Let's define a profile that supports Device Object (id: 3), Connectivity (id: 4), Firmware Update (id: 5) and Location monitoring (id: 6):
 
 {% include images-gallery.html imageCollection="device-objects" showListImageTitles="true" %}
 
-Now, let's configure ThingsBoard to observe Radio Signal Strength, Link Quality and device location push it as ThingsBoard telemetry.
+You may notice that Device Object supports Manufacturer, model, and serial numbers. Let’s configure ThingsBoard to fetch
+those data when device connects and store it as ThingsBoard attributes.
+Also we want to observe Radio Signal Strength, Link Quality and device location push it as ThingsBoard telemetry.
 Observe is a powerful LwM2M feature that will instruct a device to report changes of those values.
 You may also define conditions for reporting specific resource via LwM2M attributes. These settings are covered in the [advanced](#object-and-resource-attributes) documentation.
 
 {% include images-gallery.html imageCollection="data-fetch" showListImageTitles="true" %}
 
-Transport Configuration also allows you to define [bootstrap] (/docs/{{docsPrefix}}reference/lwm2m-api/#bootstrap) and [other](#other-settings) settings.
+Note: if you un-check all items from the Object(Telemetry, Attributes, Observe) - this object will not be displayed in the
+device profile.
+
+Transport Configuration also allows you to define [bootstrap](/docs/{{docsPrefix}}reference/lwm2m-api/#bootstrap) and [other](#other-settings) settings.
 
 ### Step 3. Define LwM2M device credentials
 
-We assume you have already created L2M2M device profile using the previous step.
+We assume you have already created LwM2M device profile using the previous step.
 
 Now, let's create the device using our profile and configure LwM2M Credentials.
 ThingsBoard supports 4 different types of credentials: Pre-Shared Key (PSK), Raw Public Ket (RPK), X.509 Certificates and "No Security" mode.
@@ -78,7 +80,7 @@ You may use other types of credentials with the DTLS mode enabled. See [DTLS con
 
 ### Step 4. Connect the device
 
-We assume you have already provisioned L2M2M device credentials using the previous step and also built Eclipse Wakaama [test client](https://github.com/eclipse/wakaama#test-client-example).
+We assume you have already provisioned LwM2M device credentials using the previous step and also built Eclipse Wakaama [test client](https://github.com/eclipse/wakaama#test-client-example).
 Now you are ready to turn on the device and observe the incoming telemetry.
 
 Let's launch the test client:
@@ -731,66 +733,3 @@ the Object 9.
 This option allows running the software update with the image file located on the 3rd party storage. In this case 
 the server generates a CoAP-URL and  sends it to the client, and the client downloads software image from the external 
 resource directly without transferring image to the server.
-
-## Advanced topics
-
-### Object and Resource attributes
-
-The LWM2M defines a simple resource model where each piece of information made available by the LWM2M Client is a 
-Resource. The Resources are further logically organized into Objects. The LWM2M Client can have any number of Resources,
-each of which belongs to an Object.
-
-In turn, Attributes are metadata which can be attached to an Object, an Object Instance, or a Resource. The value of an 
-Attribute is LwM2M Server specific. These attributes can fulfil various roles, from carrying information only (e.g. 
-Discover) to carrying parameters for setting up certain actions on the LwM2M Client (e.g. Notifications).
-
-You can find  more details about attributes [here.](http://www.openmobilealliance.org/release/LightweightM2M/V1_1_1-20190617-A/HTML-Version/OMA-TS-LightweightM2M_Core-V1_1_1-20190617-A.html#5-0-5-Fundamental-Considerations)
-
-Attributes attached to Objects, Object Instances, Resources are respectively named O-Attribute, OI-Attribute, 
-R-Attribute.
-
-These Attributes MAY be carried in the message payload of Registration and Discover operations; they also MAY be 
-updated - when writable - through the "Write-Attributes" operation.
-
-Regardless to the LwM2M entity a given Attribute is attached to, the value of such an Attribute can be assigned at 
-various levels: Object, Object Instance, Resource levels. Additionally, precedence rules apply when the same Attribute 
-receives a value at different levels.
-
-Resources are grouped into objects by their functionality. There are mandatory objects, which provide basic functions 
-and must be implemented by any LwM2M client, such as:
-    Security (0), 
-    Server (1), 
-    Access Control (2),
-    Device (3). 
-
-Other device specific objects must be implemented by the 
-application.
-
-You can see the official list of registered by OMA objects and also download their resource files [here.](https://technical.openmobilealliance.org/OMNA/LwM2M/LwM2MRegistry.html)
-
-### DTLS configuration
-* about `LWM2M DTLS-based Security` [here](http://www.openmobilealliance.org/release/LightweightM2M/V1_2-20201110-A/OMA-TS-LightweightM2M_Transport-V1_2-20201110-A.pdf#page=19). 
-  ThingsBoard allows securing the LwM2M connection using DTLS. DTLS is a communication security solution for datagram 
-  based protocols (such as UDP).
-
-There are 3 security modes available using DTLS for LwM2M.
-
-#### 1. Pre-shared Key mode (PSK).
-This is the simplest mode and is always available, if DTLS is enabled.
-
-
-#### 2. Raw Public Key(RPK) mode.
-
-
-
-### Bootstrap
-
-* You can find more information about  `LWM2M Bootstrap` [here](http://www.openmobilealliance.org/release/LightweightM2M/V1_2-20201110-A/OMA-TS-LightweightM2M_Transport-V1_2-20201110-A.pdf#page=41).
-
-
-The Bootstrap Interface is used to optionally configure a LwM2M Client so that it can successfully register with a LwM2M
-Server. The Client Bootstrap operation is initiated by the LwM2M Client itself. In addition, this operation can be requested by an
-authorized LwM2M Server executing the "Bootstrap-Request Trigger" Resource of a Server Object Instance, or even by a
-proprietary mechanism (e.g. based on SMS). Note: the execution of a "Bootstrap-Request Trigger" Resource by a
-LwM2M Server in a LwM2M Client is performed through an already established registration and is therefore covered by
-the access rights mechanism

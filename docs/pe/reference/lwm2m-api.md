@@ -39,10 +39,10 @@ upload-tenant:
 device-profile:
     0:
         image: /images/lwm2m/images/deviceprofile-pe.png
-        title: 'Go to Device Profiles, click "+", key-in the Profile name and select the Rule chain, which will process messages'
+        title: 'Go to Device Profiles, click "+", key-in the Profile name and select or create the Rule chain, which will process messages'
     1:
         image: /images/lwm2m/images/deviceprofile-1-pe.png
-        title: 'Tenant can Upload and overwrite Resource model files, uploaded by the System administrator for the same resource'
+        title: 'Select the "LwM2M" transport type from the drop-down menu'
     2:
         image: /images/lwm2m/images/deviceprofile-2-pe.png
         title: 'New Profile was successfully created'
@@ -58,10 +58,10 @@ device-objects:
 data-fetch:
     0:
         image: /images/lwm2m/images/data-fetch-pe.png
-        title: 'Select the object and tick on resources that you would like to fetch'
+        title: 'Tick "Attrubutes" for  data that you want to get when device connects and store it as ThingsBoard attributes'
     1:
         image: /images/lwm2m/images/data-fetch-1-pe.png
-        title: 'Tick Telemetry and\or Observe boxes, if you would like teh Server to observe them and fetch updated values'
+        title: 'Tick Telemetry and\or Observe boxes, if you would like the Server to observe them and fetch updated values'
     2:
         image: /images/lwm2m/images/data-fetch-3-pe.png
         title: 'Save changes'
@@ -69,7 +69,7 @@ data-fetch:
 device-credentials:
     0:
         image: /images/lwm2m/images/device-credentials-pe.png
-        title: 'Create a new device'
+        title: 'Default is No Security mode'
     1:
         image: /images/lwm2m/images/device-credentials-1-pe.png
         title: 'Add device credentials: Pre-shared Key'
