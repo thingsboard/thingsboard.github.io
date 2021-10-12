@@ -254,12 +254,6 @@ Where
 
 CoAP transport can be fully customized for specific use-case by changing the corresponding [module](https://github.com/thingsboard/thingsboard/tree/master/transport/coap).
 
-## Advanced topics
-
-### DTLS configuration
-
-
-
 ## Next steps
 
 {% assign currentGuide = "ConnectYourDevice" %}{% include templates/multi-project-guides-banner.md %}
