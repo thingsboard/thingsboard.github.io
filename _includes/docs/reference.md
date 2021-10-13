@@ -17,7 +17,7 @@ The diagram below shows key system components and interfaces they provide. Let's
 
 
 
- <object width="100%" data="/images/reference/thingsboard-architecture.svg"></object>
+ <object width="100%" data="/images/reference/thingsboard-architecture-pe.svg"></object>
 
 
 

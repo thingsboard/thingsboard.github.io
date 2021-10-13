@@ -18,7 +18,7 @@ With ThingsBoard, you are able to:
  
 See [**ThingsBoard features list**](/docs/{{docsPrefix}}#features) for more features and useful links to the specific feature documentation. 
 
-<object width="80%" data="/images/reference/thingsboard-architecture.svg"></object>
+<object width="100%" data="/images/reference/thingsboard-architecture.svg"></object>
 
 #### Architecture
 
