@@ -136,7 +136,7 @@ defaultActivateSelectProduct: true
                                 <p>For for the fast grown, defined long term projects</p>
                             </div>
                             <h4 class="pricing-square-price mb-0">
-                                $899
+                                $749
                                 <span>/month</span>
                             </h4>
                             <div class="row justify-content-center">
