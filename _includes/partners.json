@@ -236,5 +236,37 @@
       }
     },
     "blurb": "King Pigeon Communication Co.,Ltd. specialized in LTE Industrial Router, Industial IOT Gateways, IIOT Gateways, 4G Industrial Router, Cellular RTU, 4G RTU, PLC Gateways, Ethernet IO Module OEM ODM Since 2005."
+  },
+  {
+    "type": ["main", "wifi"],
+    "program": "",
+    "name": "Things On Edge",
+    "logo": "things-on-edge.svg",
+    "links": {
+      "Site": {
+        "href": "https://thingsonedge.com/",
+        "target": "_blank"
+      },
+      "Integration guide": {
+        "href": "/docs/samples/cricket-wifi/cricket-wifi/"
+      }
+    },
+    "blurb": "Things On Edge designs easy to use, ultra low power Wi-Fi modules."
+  },
+  {
+    "type": ["main", "bluetooth", "lte", "wifi"],
+    "program": "",
+    "name": "Senquip",
+    "logo": "senquip.png",
+    "links": {
+      "Site": {
+        "href": "https://www.senquip.com",
+        "target": "_blank"
+      },
+      "Integration guide": {
+        "href": "/docs/samples/senquip/senquip/"
+      }
+    },
+    "blurb": "Rugged, programmable telemetry devices that connect to any industrial sensor or system."
   }
 ]
