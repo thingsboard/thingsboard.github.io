@@ -658,12 +658,9 @@ ObserveReadAll
 
 ## Firmware over-the-air updates
 
-LwM2M protocol supports [OTA updates](/docs/{{docsPrefix}}user-guide/ota-updates/) of the device firmware.
-
-There are several ways to run OTA firmware updates with LwM2M transport. You can choose the strategy in the device
-profile, so it will be applied for all devices of the profile:
-
-{% include images-gallery.html imageCollection="otafirmware-transport" %}
+LwM2M protocol allows you to upload and distribute over-the-air(OTA) firmware updates to devices. Please read first the 
+following article  [OTA updates](/docs/{{docsPrefix}}user-guide/ota-updates/) to learn about uploading and managing
+firmware packages and the update process.
 
 LwM2M defines [Object 5: Firmware Update Object](http://www.openmobilealliance.org/release/LightweightM2M/V1_1_1-20190617-A/HTML-Version/OMA-TS-LightweightM2M_Core-V1_1_1-20190617-A.html#13-6-0-E6-LwM2M-Object-Firmware-Update)
 for the OTA purpose, which enables management of firmware image and includes resources for installing a firmware package,
@@ -680,33 +677,41 @@ the device on the status of the update process:
     "/5/0/5" - Update Result
     "/5/0/7" - PkgVersion
 
+Firmware update process is illustrated here: [Firmware Update Mechanisms ](http://www.openmobilealliance.org/release/LightweightM2M/V1_1_1-20190617-A/HTML-Version/OMA-TS-LightweightM2M_Core-V1_1_1-20190617-A.html#Figure-E61-1-Firmware-Update-Mechanisms)
+described as a UML 2.0 state diagram. The state diagram consists of states, drawn as rounded rectangles, and transitions,
+drawn as arrows connecting the states.
+
+There are several ways to run OTA firmware updates with LwM2M transport. You can choose the strategy in the device
+profile, so it will be applied for all devices of the profile:
+
+{% include images-gallery.html imageCollection="otafirmware-transport" %}
 
 ### Push firmware update as binary file using Object 5 and Resource 0.
 The firmware package is pushed from the server directly to the device via the block-wise transfer to the Resource 0 of
-the Object 5. The process is illustrated here: [Example of a LwM2M Server pushing a firmware image to a LwM2M client](http://www.openmobilealliance.org/release/LightweightM2M/V1_1_1-20190617-A/HTML-Version/OMA-TS-LightweightM2M_Core-V1_1_1-20190617-A.html#Figure-E62-1-Example-of-a-LwM2M-Server-pushing-a-firmware-image-to-a-LwM2M-client/).
+the Object 5. After the downloading is finished, the update process should be triggered using the executable 
+resource "/5/0/2". The full process is illustrated here: [Example of a LwM2M Server pushing a firmware image to a LwM2M client](http://www.openmobilealliance.org/release/LightweightM2M/V1_1_1-20190617-A/HTML-Version/OMA-TS-LightweightM2M_Core-V1_1_1-20190617-A.html#Figure-E62-1-Example-of-a-LwM2M-Server-pushing-a-firmware-image-to-a-LwM2M-client).
 
 ### Auto-generate a unique CoAP URL to download the package and push the firmware package via Object 5 and Resource 1.
 This option allows running the firmware update with the image file located on the 3rd party storage. In this case the
 server generates a CoAP-URL and  sends it to the client, and the client downloads firmware image from the external
-resource directly without transferring image to the server. The process is illustrated here: [Example
-of a client fetching a firmware image](http://www.openmobilealliance.org/release/LightweightM2M/V1_1_1-20190617-A/HTML-Version/OMA-TS-LightweightM2M_Core-V1_1_1-20190617-A.html#Figure-E62-2-Example-of-a-client-fetching-a-firmware-image/)
-
+resource directly without transferring image to the server. After the downloading is finished, the update process should
+be triggered using the executable resource "/5/0/2". The full process is illustrated here: [Example of a client fetching
+a firmware image](http://www.openmobilealliance.org/release/LightweightM2M/V1_1_1-20190617-A/HTML-Version/OMA-TS-LightweightM2M_Core-V1_1_1-20190617-A.html#Figure-E62-2-Example-of-a-client-fetching-a-firmware-image/)
 
 ## Software over-the-air updates
 
-LwM2M protocol supports [OTA updates](/docs/{{docsPrefix}}user-guide/ota-updates/) of the device software, 
-which has some differences comparing to the firmware update process: the Software Management process is split in 2 
-sub-processes: a Package Installation Process and a Software Activation Process.
+LwM2M protocol allows you to upload and distribute over-the-air(OTA) software updates to devices. Please read first the
+following article  [OTA updates](/docs/{{docsPrefix}}user-guide/ota-updates/) to learn about uploading and managing
+software packages and the update process.
 
-The Package Installation Process is in charge of managing all the operations performed on a Package up to the 
-final software installation in the LwM2M Client. Once the software is installed, the Software Activation Process 
-manages the operations for authorizing or not this software to be used by the LwM2M Client.
+Updating of the device software has some differences comparing to the firmware update process: the Software Management
+process is split in 2 sub-processes: a Package Installation Process and a Software Activation Process.
 
 LwM2M defines Object 9: Software Management Object  for the software management  purpose, which enables remote 
 software management in M2M devices and includes resources for delivering, execution of installation and activating 
 software packages, and reporting states.
 
-Please note that Object 9 is an optional object, and may be not supported by some devices.
+Please note that Object 9 is an optional object, and not may be supported by some devices.
 
 To be able to run the update using Object 9, you have to make sure that Object 9 is present in the Device profile 
 LwM2M model and set up observations of following attributes on the device, which are used by the server to get 
@@ -733,3 +738,186 @@ the Object 9.
 This option allows running the software update with the image file located on the 3rd party storage. In this case 
 the server generates a CoAP-URL and  sends it to the client, and the client downloads software image from the external 
 resource directly without transferring image to the server.
+
+
+## Advanced topics
+
+### Object and Resource attributes
+
+Attributes are metadata which can be attached to an Object, an Object Instance, or a Resource. These attributes can 
+fulfil various roles, from carrying information only (e.g. Discover) to carrying parameters for setting up certain 
+actions on the LwM2M Client (e.g. Notifications).
+
+Attributes attached to Objects, Object Instances, Resources are respectively named O-Attribute, OI-Attribute, R-Attribute.
+
+These Attributes MAY be carried in the message payload of Registration and Discover operations; they also MAY be
+updated - when writable - through the "Write-Attributes" operation.
+
+Regardless to the LwM2M entity a given Attribute is attached to, the value of such an Attribute can be assigned at
+various levels: Object, Object Instance, Resource levels. Additionally, precedence rules apply when the same Attribute
+receives a value at different levels.
+
+Some Attributes MAY be exposed to the LwM2M Server in the payload response to a "Discover" operation.
+
+The value of some Attributes MAY be changed by the LwM2M Server in using the "Write-Attributes" operation, which
+Attribute are concerned are marked as "W" (writable).
+
+Note: A payload response to a "Discover" operation is a list of application/link-format CoRE Links [RFC6690], which
+will include the LwM2M Attributes.
+
+There are two types of attributes:
+
+* PROPERTIES Class Attributes: the role of these Attributes is to provide metadata which may communicate helpful 
+information to the LwM2M Server for example easing data management. 
+  The LwM2M Server and LwM2M Client SHOULD support following [PROPERTIES Class Attributes](http://www.openmobilealliance.org/release/LightweightM2M/V1_1_1-20190617-A/HTML-Version/OMA-TS-LightweightM2M_Core-V1_1_1-20190617-A.html#Table-512-1-lessPROPERTIESgreater-Class-Attributes), 
+  except when specifically mentioned as not required.
+
+* NOTIFICATION Class Attributes: the role of these R-Attributes is to provide parameters to the "Notify" operation, which 
+is used for the resource observation. Any readable Resource can have such R-attributes. 
+
+Please find more detailed information about `LWM2M Attributes Definitions and Rules` [here](http://www.openmobilealliance.org/release/LightweightM2M/V1_1_1-20190617-A/HTML-Version/OMA-TS-LightweightM2M_Core-V1_1_1-20190617-A.html#Table-512-1-lessPROPERTIESgreater-Class-Attributes).
+
+Following NOTIFICATION attributes are available on the TB Platform to configure observation parameters:
+
+* "pmin"  - Minimum period - indicates the minimum time in seconds the LwM2M Client MUST wait between two notifications.
+  If a notification of an observed Resource is supposed to be generated but it is before pmin expiry,
+  notification MUST be sent as soon as pmin expires. In the absence of this parameter, the Minimum Period is
+  defined by the Default Minimum Period set in the LwM2M Server Account.
+
+* "pmax"  - Maximum period -  indicates the maximum time in seconds the LwM2M Client MAY wait between two notifications.
+  When this "Maximum Period" expires after the last notification, a new notification MUST be sent. In the absence
+  of this parameter, the "Maximum Period" is defined by the Default Maximum Period when set in the LwM2M Server
+  Account or considered as 0 otherwise. The value of 0, means pmax MUST be ignored. The maximum period parameter
+  MUST be greater than the minimum period parameter otherwise pmax will be ignored for the Resource to which
+  such inconsistent timing conditions are applied.
+
+* "gt"    - Greater than - defines a threshold high value. When this Attribute is present, the LwM2M Client MUST notify
+  the Server each time the Observed Resource value crosses this threshold with respect to pmin parameter and
+  valid "Change Value Conditions" (see Notification Conditions above).
+
+* "lt"    - Less than - defines a threshold low value. When this Attributes is present, the LwM2M Client MUST notify the
+  Server each time the Observed Resource value crosses this threshold with respect to pmin parameter and valid
+  "Change Value Conditions" (see Notification Conditions above).
+
+* "st"    - Step - defines a threshold low value. When this Attributes is present, the LwM2M Client MUST notify the Server
+  each time the Observed Resource value crosses this threshold with respect to pmin parameter and valid "Change
+  Value Conditions" (see Notification Conditions above).
+
+Notification attributes can be configured in the Device Profile, please follow the guide:
+
+{% include images-gallery.html imageCollection="object-attributes" %}
+
+
+
+
+### DTLS configuration
+
+The Thingsboard platform supports secured connection using DTLS. DTLS, which stands for Datagram Transport Layer
+Security, is based on the Transport Layer Security (TLS) protocol and built on top of the User Datagram Protocol (UDP).
+Thingsboard allows the use of DTLS  with the LwM2M transport connection for devices.
+
+Detailed information about `LWM2M DTLS-based Security` [here](http://www.openmobilealliance.org/release/LightweightM2M/V1_2-20201110-A/OMA-TS-LightweightM2M_Transport-V1_2-20201110-A.pdf#page=19).
+
+There are three authentication methods available on the Thingsboard for LwM2M DTLS: using the Pre-Shared Key(PSK), using
+the Raw Public Key(RPK) and using the X.509 certificate.
+
+To use DTLS, the end-user device has to connect to the ThingsBoard server using secured port 5686, and configure device
+credentials on the UI.
+
+We will use Leshan Demo Client, please refer to the link for downloading and configuration: [here](https://github.com/eclipse/leshan)
+
+#### 1. Pre-shared Key mode (PSK).
+The pre-shared key profile offers the most efficient solution for integration of DTLS into LwM2M since pre-shared
+ciphersuites recommended in [RFC7925] require a minimum amount of flash space as well as RAM size in your device.
+
+Symmetric cryptographic algorithms require only a minimal computational overhead. The size of the exchanged messages
+is also kept at a minimum. There is, however, a downside as well: symmetric keys need to be preconfigured to both
+communication endpoints.
+
+You need only three strings to configure the connection:
+
+* Endpoint client name: which is used to identify the device and can be any text string.
+* Client identity (PSK identity) key: any text string.
+* PSK key (security key): should be a random sequence in HexDec format and 32, 64 or 128 characters long.
+
+PSK mode requires the following resources of the Security Object to be populated:
+* The "Security Mode" Resource MUST contain the value 0.
+* The "Public Key or Identity" Resource must be used to store the PSK identity.
+* The "Secret Key" Resource MUST be used to store the PSK.
+* The "Server Public Key" Resource MUST NOT be used in the Pre-Shared Key mode.
+
+Example of using  Leshan Demo Client:
+
+    Endpoint client name= "ClientPsk";
+    Client identity (PSK identity) = "ClientPskIdentity";
+    Client key (PSK key or PSK security key) = "0123456789ABCDEF0123456789ABCDEF";
+
+Example command for start "Leshan client demo" in mode PSK:
+
+```ruby
+java -jar leshan-client-demo.jar -u localhost:5686 -lh 0.0.0.0 -lp 10004 -n ClientPsk -i ClientPskIdentity -p 0123456789ABCDEF0123456789ABCDEF
+    
+Leshan Client Demo Interactive Console :
+...
+DefaultRegistrationEngine 2021-09-30 19:09:52,789 [INFO] Trying to register to coaps://192.168.1.81:5686 ...
+LeshanClientDemo 2021-09-30 19:09:52,830 [INFO] DTLS Full Handshake initiated by client : STARTED ...
+LeshanClientDemo 2021-09-30 19:09:52,949 [INFO] DTLS Full Handshake initiated by client : SUCCEED
+DefaultRegistrationEngine 2021-09-30 19:09:52,990 [INFO] Registered with location '/rd/vXMGfVFgQi'.
+...
+```
+{: .copy-code}
+
+
+#### 2. Raw Public Key(RPK) mode.
+
+The raw public key profile offers features that sit between the pre-shared key and the certificate-based profile and
+combines the benefits of these two profiles. The use of asymmetric cryptography offers improved security but avoids
+the overhead associated with certificates and the public key infrastructure.
+
+This mode requires the following resources of the Security Object of the device to be populated:
+* The "Security Mode" Resource MUST contain the value 1.
+* The "Public Key or Identity" Resource MUST store the raw public key.
+* The "Secret Key" Resource MUST be used to store the client private key.
+* The "Server Public Key" Resource MUST be used to store the server public key.
+
+To configure the connection, you need to generate keys first.
+We will use OpenSSl tool and follow the guide from Leshan:  [here](https://github.com/eclipse/leshan/wiki/Credential-files-format)
+
+#### 3. X.509 Certificate mode
+
+The certificate-based profile re-uses widely deployed X.509 certificates. This allows both tools as well as existing
+infrastructure, such as Certification Authorities (CAs) and the Public Key Infrastructure (PKI), to be re-used. Unlike
+the typical web browser use of certificates, [RFC7925] specifies the use of certificates for mutual authentication
+between clients and servers. The use of certificates comes at a price: The use of asymmetric cryptography is more
+complex to implement, requires more bandwidth for the exchanged messages, is computationally more demanding, and
+requires a larger code size as well as more RAM. The benefits are, in addition to the re-use of existing technologies,
+the need to only share the certificates with other communication partners in an authentic fashion and to keep the
+private key local to each party (at least in the case where EST is used). This property of asymmetric cryptography
+reduces the risk of exposing private keying material.
+
+This mode requires the following resources of the Security Object to be populated:
+* The "Security Mode" Resource MUST contain the value 2.
+* The "Public Key or Identity" Resource MUST be used to store the X.509 certificate of the TLS/DTLS client.
+* The "Secret Key" Resource MUST be used to store the private key of the TLS/DTLS client as a DER encoded asymmetric key
+  package.
+* The "Server Public Key" Resource MUST be used to store either a trust anchor certificate suitable for path validation
+  of the certificate of the TLS/DTLS server, or directly the certificate of the TLS/DTLS server ("domain-issued
+  certificate mode").
+
+To launch the conenction, we need to get following data:
+
+* Endpoint name = "ClientX509", identifies our client;
+*
+
+
+### Bootstrap
+
+* You can find more information about  `LWM2M Bootstrap` [here](http://www.openmobilealliance.org/release/LightweightM2M/V1_2-20201110-A/OMA-TS-LightweightM2M_Transport-V1_2-20201110-A.pdf#page=41).
+
+
+The Bootstrap Interface is used to optionally configure a LwM2M Client so that it can successfully register with a LwM2M
+Server. The Client Bootstrap operation is initiated by the LwM2M Client itself. In addition, this operation can be requested by an
+authorized LwM2M Server executing the "Bootstrap-Request Trigger" Resource of a Server Object Instance, or even by a
+proprietary mechanism (e.g. based on SMS). Note: the execution of a "Bootstrap-Request Trigger" Resource by a
+LwM2M Server in a LwM2M Client is performed through an already established registration and is therefore covered by
+the access rights mechanism

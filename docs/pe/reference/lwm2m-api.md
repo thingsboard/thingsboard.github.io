@@ -114,6 +114,26 @@ sota:
         image: /images/lwm2m/images/sota-pe.png
         title: 'Select the software update strategy from the drop down menu'
 
+object-attributes:
+    0:
+        image: /images/lwm2m/images/object-attrib-1-pe.png
+        title: 'Open the device profile configuration page, LwM2M model section'
+    1:
+        image: /images/lwm2m/images/object-attrib-2-pe.png
+        title: 'Add new attribute'
+    2:
+        image: /images/lwm2m/images/object-attrib-3-pe.png
+        title: 'Click to open the drop-down list'
+    3:
+        image: /images/lwm2m/images/object-attrib-4-pe.png
+        title: 'Select the attribute from the list'
+    4:
+        image: /images/lwm2m/images/object-attrib-5-pe.png
+        title: 'Key-in the value and save'
+    5:
+        image: /images/lwm2m/images/object-attrib-6-pe.png
+        title: 'Save the device profile configuration'
+
 ---
 
 {% assign docsPrefix = "pe/" %}
