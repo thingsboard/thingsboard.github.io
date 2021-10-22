@@ -181,7 +181,7 @@ In order to send RPC commands to the server, send POST request to the following 
 http://host:port/api/v1/$ACCESS_TOKEN/rpc
 ```
 
-Both request and response body should be valid JSON documents. Theh content of the documents is specific to the rule node that will handle your request.
+Both request and response body should be valid JSON documents. The content of the documents is specific to the rule node that will handle your request.
 
 {% capture tabspec %}http-rpc-from-client
 A,Example Request,shell,resources/http-rpc-from-client.sh,/docs/reference/resources/http-rpc-from-client.sh

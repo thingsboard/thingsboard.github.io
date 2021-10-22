@@ -4,3 +4,4 @@ Once ThingsBoard Edge is installed and configured please execute the following i
 ```bash
 sudo /usr/share/tb-edge/bin/install/install.sh
 ```
+{: .copy-code}

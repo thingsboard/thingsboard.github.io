@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 assignees:
-- ashvayka
+- nick
 title: LWM2M Device API Reference
 description: Supported LWM2M API Reference for IoT Devices 
 

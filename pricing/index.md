@@ -58,7 +58,7 @@ defaultActivateSelectProduct: true
         <div class="pricing-div">
             <div class="pricing-section pricing-cloud active">
                <div class="row justify-content-center">
-                    <div class="col-md-6 col-lg-6 col-xl-4 col-gt-xl mb-4">
+                    <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
                         <div class="pricing-square">
                             <h2>Maker</h2>
                             <div class="pricing-square-description">
@@ -66,7 +66,7 @@ defaultActivateSelectProduct: true
                             </div>
                             <h4 class="pricing-square-price mb-0">
                                 $10
-                                <span>/&nbsp;month</span>
+                                <span>/month</span>
                             </h4>
                             <div class="row justify-content-center">
                                 <a class="btn-blue btn-pricing" href="https://thingsboard.cloud/signup">
@@ -81,7 +81,7 @@ defaultActivateSelectProduct: true
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-6 col-xl-4 col-gt-xl mb-4">
+                    <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
                         <div class="pricing-square">
                             <h2>Prototype</h2>
                             <div class="pricing-square-description">
@@ -89,7 +89,7 @@ defaultActivateSelectProduct: true
                             </div>
                             <h4 class="pricing-square-price mb-0">
                                 $149
-                                <span>/&nbsp;month</span>
+                                <span>/month</span>
                             </h4>
                             <div class="row justify-content-center">
                                 <a class="btn-blue btn-pricing" href="https://thingsboard.cloud/signup">
@@ -105,7 +105,7 @@ defaultActivateSelectProduct: true
                             <div class="pricing-square-item" data-faq-id="white-labeling"><b>White-labeling</b></div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-6 col-xl-4 col-gt-xl mb-4">
+                    <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
                         <div class="pricing-square">
                             <h2>Startup</h2>
                             <div class="pricing-square-description">
@@ -113,7 +113,7 @@ defaultActivateSelectProduct: true
                             </div>
                             <h4 class="pricing-square-price mb-0">
                                 $399
-                                <span>/&nbsp;month</span>
+                                <span>/month</span>
                             </h4>
                             <div class="row justify-content-center">
                                 <a class="btn-blue btn-pricing" href="https://thingsboard.cloud/signup">
@@ -129,7 +129,31 @@ defaultActivateSelectProduct: true
                             <div class="pricing-square-item" data-faq-id="white-labeling"><b>White-labeling</b></div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-6 col-xl-4 col-gt-xl mb-4">
+                    <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
+                        <div class="pricing-square">
+                            <h2>Business</h2>
+                            <div class="pricing-square-description">
+                                <p>For for the fast grown, defined long term projects</p>
+                            </div>
+                            <h4 class="pricing-square-price mb-0">
+                                $749
+                                <span>/month</span>
+                            </h4>
+                            <div class="row justify-content-center">
+                                <a class="btn-blue btn-pricing" href="https://thingsboard.cloud/signup">
+                                    Get Started
+                                </a>
+                            </div>
+                            <div class="pricing-square-item">Up to 1000 Devices</div>
+                            <div class="pricing-square-item">Up to 1000 Assets</div>
+                            <div class="pricing-square-item">1 billion <span data-faq-id="data-points">data points</span><br/> per month</div>
+                            <div class="pricing-square-item" data-faq-id="subscription-support">
+                                Email support
+                            </div>
+                            <div class="pricing-square-item" data-faq-id="white-labeling"><b>White-labeling</b></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
                         <div class="pricing-square">
                             <h2>Enterprise</h2>
                             <div class="pricing-square-description">
@@ -225,7 +249,7 @@ defaultActivateSelectProduct: true
                         </div>
                         <h4 class="pricing-square-price mb-0">
                             $10
-                            <span>/&nbsp;month</span>
+                            <span>/month</span>
                         </h4>
                         <div class="row justify-content-center">
                             <button class="btn-blue btn-pricing" 
@@ -252,7 +276,7 @@ defaultActivateSelectProduct: true
                         </div>
                         <h4 class="pricing-square-price mb-0">
                             $99
-                            <span>/&nbsp;month</span>
+                            <span>/month</span>
                         </h4>
                         <div class="row justify-content-center">
                             <button class="btn-blue btn-pricing" 
@@ -280,7 +304,7 @@ defaultActivateSelectProduct: true
                         </div>
                         <h4 class="pricing-square-price mb-0">
                             $199
-                            <span>/&nbsp;month</span>
+                            <span>/month</span>
                         </h4>
                         <div class="row justify-content-center">
                             <button class="btn-blue btn-pricing" 
@@ -308,7 +332,7 @@ defaultActivateSelectProduct: true
                         </div>
                         <h4 class="pricing-square-price mb-0">
                             $500
-                            <span>/&nbsp;month</span>
+                            <span>/month</span>
                         </h4>
                         <div class="row justify-content-center">
                             <button class="btn-blue btn-pricing" 
@@ -399,7 +423,7 @@ defaultActivateSelectProduct: true
                             </div>
                             <h4 class="pricing-square-price mb-0">
                                 $175
-                                <span>/&nbsp;month</span>
+                                <span>/month</span>
                             </h4>
                             <div class="row justify-content-center">
                                 <button class="btn-blue btn-pricing" 
@@ -411,8 +435,9 @@ defaultActivateSelectProduct: true
                                     Try 30 days for free
                                 </button>
                             </div>
-                            <div class="pricing-square-item">Calculated Fields</div>
+                            <div class="pricing-square-item">Anomalies detection</div> 
                             <div class="pricing-square-item">Predictive Analytics</div>
+                            <div class="pricing-square-item">Calculated Fields</div>
                             <div class="pricing-square-item">Self-service Interface</div>
                             <div class="pricing-square-item">Advanced Visualizations</div>
                             <div class="pricing-square-item" data-faq-id="community-support">
@@ -432,7 +457,7 @@ defaultActivateSelectProduct: true
                             </div>
                             <h4 class="pricing-square-price mb-0">
                                 $200
-                                <span>/&nbsp;month</span>
+                                <span>/month</span>
                             </h4>
                             <div class="row justify-content-center">
                                 <button class="btn-blue btn-pricing" 
@@ -444,8 +469,9 @@ defaultActivateSelectProduct: true
                                     Try 30 days for free
                                 </button>
                             </div>
-                            <div class="pricing-square-item">Calculated Fields</div>
+                            <div class="pricing-square-item">Anomalies detection</div> 
                             <div class="pricing-square-item">Predictive Analytics</div>
+                            <div class="pricing-square-item">Calculated Fields</div>
                             <div class="pricing-square-item">Self-service Interface</div>
                             <div class="pricing-square-item">Advanced Visualizations</div>
                             <div class="pricing-square-item" data-faq-id="subscription-support">
@@ -465,7 +491,7 @@ defaultActivateSelectProduct: true
                             </div>
                             <h4 class="pricing-square-price mb-0">
                                 $350
-                                <span>/&nbsp;month</span>
+                                <span>/month</span>
                             </h4>
                             <div class="row justify-content-center">
                                 <button class="btn-blue btn-pricing" 
@@ -477,8 +503,9 @@ defaultActivateSelectProduct: true
                                     Try 30 days for free
                                 </button>
                             </div>
-                            <div class="pricing-square-item">Calculated Fields</div>
+                            <div class="pricing-square-item">Anomalies detection</div> 
                             <div class="pricing-square-item">Predictive Analytics</div>
+                            <div class="pricing-square-item">Calculated Fields</div>
                             <div class="pricing-square-item">Self-service Interface</div>
                             <div class="pricing-square-item">Advanced Visualizations</div>
                             <div class="pricing-square-item" data-faq-id="subscription-support">
@@ -502,6 +529,7 @@ defaultActivateSelectProduct: true
                                     insight from your data:</p>
                             </div>
                             <ul>
+                                <li class="pricing-square-item">Anomalies detection</li>
                                 <li class="pricing-square-item">One-click integration with ThingsBoard</li>
                                 <li class="pricing-square-item">Self-service analytics</li>
                                 <li class="pricing-square-item">Data clear and filtering</li>
@@ -551,43 +579,13 @@ defaultActivateSelectProduct: true
            <div class="row justify-content-center">
                 <div class="col-md-6 col-lg-6 col-xl-4 col-gt-xl mb-4">
                     <div class="pricing-square">
-                        <h2>Pico</h2>
-                        <div class="pricing-square-description">
-                            <p>Up to 5 Devices and Assets</p>
-                        </div>
-                        <h4 class="pricing-square-price mb-0">
-                            $2
-                            <span>/&nbsp;month</span>
-                        </h4>
-                        <div class="row justify-content-center">
-                            <button class="btn-blue btn-pricing" 
-                                onClick="getLicense(event,
-                                false,
-                                'd3b7d030-fe4c-11ea-951e-b77b877a367b',
-                                'da425aa0-fe4d-11ea-951e-b77b877a367b',
-                                'Edge Pico', null, false)">
-                                Get your license
-                            </button>
-                        </div>
-                        <div class="pricing-square-item">Up to 5 Devices</div>
-                        <div class="pricing-square-item">Up to 5 Assets</div>
-                        <div class="pricing-square-item" data-faq-id="optional-support">
-                            Optional support
-                        </div>
-                        <div class="pricing-square-item" data-faq-id="thingsboard-edge-discount">
-                            Tired discounts
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-6 col-xl-4 col-gt-xl mb-4">
-                    <div class="pricing-square">
                         <h2>Nano</h2>
                         <div class="pricing-square-description">
                             <p>Up to 50 Devices and Assets</p>
                         </div>
                         <h4 class="pricing-square-price mb-0">
                             $19
-                            <span>/&nbsp;month</span>
+                            <span>/month</span>
                         </h4>
                         <div class="row justify-content-center">
                             <button class="btn-blue btn-pricing" 
@@ -595,8 +593,8 @@ defaultActivateSelectProduct: true
                                 false,
                                 'd3b7d030-fe4c-11ea-951e-b77b877a367b',
                                 '302e3420-fe4e-11ea-951e-b77b877a367b',
-                                'Edge Nano', null, false)">
-                                Get your license
+                                'Edge Nano', 'PU5RJSMQW5', false)">
+                                Try 30 days for free
                             </button>
                         </div>
                         <div class="pricing-square-item">Up to 50 Devices</div>
@@ -617,7 +615,7 @@ defaultActivateSelectProduct: true
                         </div>
                         <h4 class="pricing-square-price mb-0">
                             $29
-                            <span>/&nbsp;month</span>
+                            <span>/month</span>
                         </h4>
                         <div class="row justify-content-center">
                             <button class="btn-blue btn-pricing"
@@ -647,7 +645,7 @@ defaultActivateSelectProduct: true
                         </div>
                         <h4 class="pricing-square-price mb-0">
                             $39
-                            <span>/&nbsp;month</span>
+                            <span>/month</span>
                         </h4>
                         <div class="row justify-content-center">
                             <button class="btn-blue btn-pricing"
@@ -680,26 +678,18 @@ defaultActivateSelectProduct: true
                             <p>Use your ThingsBoard Edge instance forever</p>
                         </div>
                         <h4 class="pricing-square-price mb-0">
-                            $299
+                            Custom
                         </h4>
                         <div class="row justify-content-center">
-                            <button class="btn-blue btn-pricing"
-                                onClick="getLicense(event,
-                                true,
-                                'f59db8c0-fe4e-11ea-951e-b77b877a367b',
-                                '7eb90e70-fe4f-11ea-951e-b77b877a367b',
-                                'Edge Perpetual', null, false)">
-                                Get your license
-                            </button>
+                            <a class="btn-blue btn-pricing" href="/docs/contact-us/">
+                                Contact Us
+                            </a>
                         </div>
                         <div class="pricing-square-item">1 year of software updates</div>
-                        <div class="pricing-square-item">Up to 1000 Devices</div>
-                        <div class="pricing-square-item">Up to 1000 Assets</div>
-                        <div class="pricing-square-item" data-faq-id="optional-support">
-                            Optional support
-                        </div>
-                        <div class="pricing-square-item" data-faq-id="thingsboard-edge-discount">
-                            Tired discounts
+                        <div class="pricing-square-item">Unlimited number of Devices</div>
+                        <div class="pricing-square-item">Unlimited number of Assets</div>
+                        <div class="pricing-square-item" data-faq-id="subscription-support">
+                            Custom <b>SLA</b>
                         </div>
                     </div>
                 </div>
@@ -892,7 +882,7 @@ defaultActivateSelectProduct: true
         <div class="item" data-tag="h4" data-item-id="optional-support" data-title="What does this optional support for ThingsBoard Edge mean?">
             <div class="container">
                 <p>
-                It means, that Edge support is not bundled to the license. For now we provide basic support for customers with more than 50 edge licenses of any type.
+                It means, that Edge support is not bundled to the license. For now we provide basic support for customers with more than 25 edge licenses of any type.
                 </p>    
             </div>    
         </div>        

@@ -13,9 +13,12 @@ Please make sure that you have **{{currentThingsBoardVersion}}** server up and r
 If you have these prerequisites in place let's go to next steps.
 
 {% if currentThingsBoardVersion == "ThingsBoard Professional Edition" %}
-In other case please review how to [Provision Edge on {{currentThingsBoardVersion}} server](/docs/edge/provision-edge-on-server-pe/) and once it's provisioned please install and connect edge to cloud using this [guide](/docs/edge/install/installation-options/).
+In other case please visit this link to provision edge on server [Provision Edge on {{currentThingsBoardVersion}} server](/docs/edge/provision-edge-on-server-pe/).
 {% endif %}
 {% if currentThingsBoardVersion == "ThingsBoard Community Edition" %}
-In other case please review how to [Provision Edge on {{currentThingsBoardVersion}} server](/docs/edge/provision-edge-on-server-ce/) and once it's provisioned please install and connect edge to cloud using this [guide](/docs/edge/install/installation-options/).
+In other case please visit this link to provision edge on server [Provision Edge on {{currentThingsBoardVersion}} server](/docs/edge/provision-edge-on-server-ce/).
 {% endif %}
 
+Once Edge provisioned on a server, please install it and connect to server using this [guide](/docs/edge/install/installation-options/).
+
+{% include templates/edge/ui-url-aliases-banner.md %} 

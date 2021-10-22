@@ -34,59 +34,7 @@ And update this property to the correct value:
 tb.api.url: "${TB_API_URL:http://localhost:9090}"
 ```    
     
-For docker installations - update environment variable ``TB_API_URL`` with the correct value.
-   
-
-## Configuration properties
-
-<table>
-  <thead>
-      <tr>
-          <td><b>Property</b></td><td><b>Environment Variable</b></td><td><b>Default Value</b></td><td><b>Description</b></td>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td colspan="4"><span style="font-weight: bold; font-size: 24px;">HTTP server parameters</span></td>
-      </tr>  
-      <tr>
-          <td>server.address</td>
-          <td>HTTP_BIND_ADDRESS</td>
-          <td>0.0.0.0</td>
-          <td>HTTP Server bind address</td>
-      </tr>
-      <tr>
-          <td>server.port</td>
-          <td>HTTP_BIND_PORT</td>
-          <td>8888</td>
-          <td>HTTP Server bind port</td>
-      </tr>
-      <tr>
-            <td>tb.api.url</td>
-            <td>TB_API_URL</td>
-            <td>http://localhost:9090</td>
-            <td>ThingsBoard Cluster REST API url</td>
-        </tr>
-      <tr>
-          <td>ratelimit.duration.sec</td>
-          <td>RATELIMIT_DURATION_SEC</td>
-          <td>1</td>
-          <td>Control amount of api calls per duration</td>
-      </tr>
-      <tr>
-          <td>ratelimit.max_reqeusts_per_duration</td>
-          <td>RATELIMIT_MAX_REQUESTS</td>
-          <td>5000</td>
-          <td>Max number of allowed API calls per configured duration</td>
-      </tr>
-      <tr>
-          <td>ratelimit.max_concurent_requests</td>
-          <td>RATELIMIT_CONCURRENT_REQUESTS</td>
-          <td>8</td>
-          <td>Max number of concurrent API calls. Overrides RATELIMIT_MAX_REQUESTS limit</td>
-      </tr>                    
-  </tbody>
-</table>
+For docker installations - update environment variable ``TB_API_URL`` with the correct value.   
 
 ## Authentication and Security
 Trendz uses ThingsBoard as an authentication service. Any Tenant Administrator or Customer User can sign in into Trendz UI using their login\password that they use for authentication in the ThingsBoard.

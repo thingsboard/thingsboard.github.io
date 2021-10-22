@@ -1,6 +1,6 @@
 {% include templates/edge/prerequisites.md %}
 
-##### Edge provision on cloud and install
+##### Provisioning edge on cloud and installation
 
 Additionally, you will need to have ThingsBoard **Edge** up and running and connected to the {{currentThingsBoardVersion}} server.
 
@@ -13,17 +13,19 @@ To provision ThingsBoard **Edge** on {{currentThingsBoardVersion}} server please
 
 Once ThingsBoard **Edge** provisioned on {{currentThingsBoardVersion}} server please follow [Installation Guide](/docs/edge/install/installation-options/) - this guide will help you to install ThingsBoard **Edge** and connect it to {{currentThingsBoardVersion}} server.
 
-If you are running {{currentThingsBoardVersion}} locally then server UI will be available using the URL: [http://localhost:8080](http://localhost:8080).
-You may use username **tenant@thingsboard.org** and password **tenant**.
- 
 {% if currentThingsBoardVersion == "ThingsBoard Professional Edition" %}
-In case you are using [**ThingsBoard Cloud**](https://thingsboard.cloud/signup) server please use your tenant credentials.
+{% capture contenttogglespec %}
+Cloud<br/><small>Connect edge to https://thingsboard.cloud</small>%,%ce%,%templates/edge/pe-cloud.md%br%
+On-premise server<br/><small>Connect edge to on-premise instance</small>%,%pe%,%templates/edge/on-premise-cloud.md{% endcapture %}
+{% include content-toggle.html content-toggle-id="cloudType" toggle-spec=contenttogglespec %}
 {% endif %}
 {% if currentThingsBoardVersion == "ThingsBoard Community Edition" %}
-In case you are using [Live Demo](https://demo.thingsboard.io/signup) server please use your tenant credentials.
+{% capture contenttogglespec %}
+Live Demo<br/><small>Connect edge to https://demo.thingsboard.io</small>%,%ce%,%templates/edge/ce-cloud.md%br%
+On-premise server<br/><small>Connect edge to on-premise instance</small>%,%pe%,%templates/edge/on-premise-cloud.md{% endcapture %}
+{% include content-toggle.html content-toggle-id="cloudType" toggle-spec=contenttogglespec %}
 {% endif %}
 
-ThingsBoard **Edge** UI will be available using the URL: [http://localhost:8080](http://localhost:8080).
-You may use your tenant credentials to log in (username **tenant@thingsboard.org** and password **tenant** in case local server deployment).
+{% include templates/edge/bind-port-changed-banner.md %} 
 
-{% include templates/edge/bind-port-changed-banner.md %}
+We are going to refer to this URL as **http://EDGE_URL** below in tutorial.

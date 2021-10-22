@@ -3,13 +3,13 @@ abstract: "Documentation for installation and configuration of ThingsBoard Edge.
 toc:
 - title: Installation options
   path: /docs/edge/install/installation-options/
-- title: Installing Edge on Ubuntu (DEB)
+- title: Ubuntu (DEB)
   path: /docs/edge/install/deb-installation/
-- title: Installing Edge on CentOS/RHEL (RPM)
+- title: CentOS/RHEL (RPM)
   path: /docs/edge/install/rhel/
-- title: Installing Edge on Windows
+- title: Windows
   path: /docs/edge/install/windows/
-- title: Installing Edge using Docker (Windows)
+- title: Docker (Windows)
   path: /docs/edge/install/docker-windows/
-- title: Installing Edge using Docker (Linux or Mac OS)
+- title: Docker (Linux or Mac OS)
   path: /docs/edge/install/docker/

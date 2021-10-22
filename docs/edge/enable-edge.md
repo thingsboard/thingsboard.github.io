@@ -44,13 +44,14 @@ export EDGES_RPC_PORT=**NEW_EDGES_RPC_PORT**
 ```
 {: .copy-code}
 
-**NOTE**: This port must be accessible by edge to be able to communicate. Please update your firewall settings or docker configuration if required.
+{% include templates/edge/edge-service-port-warn.md %}
 
 {% include templates/edge/ssl-grpc-note.md %}
 
-#### Start the service
+#### Restart the service
 
 ```bash
+$ sudo service thingsboard stop
 $ sudo service thingsboard start
 ```
 
@@ -65,7 +66,6 @@ Open the following file for editing (select "All Files" instead of "Text Documen
 C:\Program Files (x86)\thingsboard\conf\thingsboard.yml
 ``` 
 {: .copy-code}
-
 
 and locate "# Edges parameters" block:
 
@@ -108,12 +108,13 @@ locate "EDGES_RPC_PORT" parameter. Replace "7070" with "**NEW_EDGES_RPC_PORT**".
     port: "${EDGES_RPC_PORT:NEW_EDGES_RPC_PORT}"
 ```
 
-**NOTE**: This port must be accessible by edge to be able to communicate. Please update your firewall settings or docker configuration if required.
+{% include templates/edge/edge-service-port-warn.md %}
 
 {% include templates/edge/ssl-grpc-note.md %}
 
-#### Start the service
+#### Restart the service
 
 ```text
+net stop thingsboard
 net start thingsboard
 ```

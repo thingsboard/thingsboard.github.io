@@ -3,3 +3,4 @@ Make sure your have [logged in](https://docs.docker.com/engine/reference/command
 ```bash
 docker pull thingsboard/tb-edge-monolith:3.3.0EDGE
 ```
+{: .copy-code}

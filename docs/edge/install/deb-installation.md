@@ -8,7 +8,7 @@ description: Installing ThingsBoard Edge on Ubuntu Server
 * TOC
 {:toc}
 
-This guide describes how to install ThingsBoard Edge on Ubuntu Server 18.04 LTS.
+This guide describes how to install ThingsBoard Edge on Ubuntu 18.04 LTS / Ubuntu 20.04 LTS.
 
 {% include templates/edge/install/prerequisites.md %}
 
@@ -70,6 +70,7 @@ You can issue the following command in order to check if there are any errors on
 ```bash
 cat /var/log/tb-edge/tb-edge.log | grep ERROR
 ```
+{: .copy-code}
 
 {% include templates/edge/install/edge-service-commands.md %} 
 

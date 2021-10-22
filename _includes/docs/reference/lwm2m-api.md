@@ -904,7 +904,7 @@ This mode requires the following resources of the Security Object to be populate
   of the certificate of the TLS/DTLS server, or directly the certificate of the TLS/DTLS server ("domain-issued
   certificate mode").
 
-To launch the conenction, we need to get following data:
+To launch the connection, we need to get following data:
 
 * Endpoint name = "ClientX509", identifies our client;
 *

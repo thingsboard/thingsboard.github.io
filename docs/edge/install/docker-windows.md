@@ -32,6 +32,7 @@ Open "Docker Quickstart Terminal". Execute the following command to create docke
 $ docker volume create mytb-edge-data
 $ docker volume create mytb-edge-logs
 ```
+{: .copy-code}
 
 Create docker compose file for ThingsBoard Edge service:
 ```
@@ -72,6 +73,8 @@ Execute the following command to up this docker compose directly:
 docker-compose pull
 docker-compose up
 ```
+{: .copy-code}
+
 In order to get access to necessary resources from external IP/Host on Windows machine, please execute the following commands:
 ``` 
 set PATH=%PATH%;"C:\Program Files\Oracle\VirtualBox"
@@ -79,6 +82,8 @@ VBoxManage controlvm "default" natpf1 "tcp-port8080,tcp,,8080,,8080"
 VBoxManage controlvm "default" natpf1 "tcp-port1883,tcp,,1883,,1883"
 VBoxManage controlvm "default" natpf1 "tcp-port5683,tcp,,5683,,5683"
 ```
+{: .copy-code}
+
 Where:
 - `C:\Program Files\Oracle\VirtualBox` - path to your VirtualBox installation directory
 

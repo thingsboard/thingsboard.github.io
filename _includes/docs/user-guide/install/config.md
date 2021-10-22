@@ -663,6 +663,18 @@ We will list only main configuration parameters below to avoid duplication of th
          <td>The parameter to specify TTL(Time To Live) value for Debug Events(DEBUG_CONVERTER, DEBUG_INTEGRATION, DEBUG_RULE_NODE, DEBUG_RULE_CHAIN) records. Value set in seconds. 0 - records are never expired. Default value corresponds to one week.</td>
       </tr>
       <tr>
+         <td>sql.ttl.rpc.enabled</td>
+         <td>SQL_TTL_RPC_ENABLED</td>
+         <td>true</td>
+         <td>Parameter to enable or disable TTL(Time To Live) for Persistent RPC.</td>
+      </tr>
+      <tr>
+         <td>sql.ttl.rpc.checking_interval</td>
+         <td>SQL_RPC_TTL_CHECKING_INTERVAL</td>
+         <td>7200000</td>
+         <td>Parameter to specify how often TTL(Time To Live) will be checked.</td>
+      </tr>
+      <tr>
            <td colspan="4"><span style="font-weight: bold; font-size: 24px;">PostgreSQL database parameters</span></td>
       </tr>  
       <tr>
@@ -1280,10 +1292,22 @@ We will list only main configuration parameters below to avoid duplication of th
           <td>Enable/disable MQTTS support</td>
       </tr>
       <tr>
+          <td>transport.mqtt.ssl.bind_address</td>
+          <td>MQTT_SSL_BIND_ADDRESS</td>
+          <td>0.0.0.0</td>
+          <td>MMQTT SSL bind address</td>
+      </tr>
+      <tr>
+          <td>transport.mqtt.ssl.bind_port</td>
+          <td>MQTT_SSL_BIND_PORT</td>
+          <td>8883</td>
+          <td>MQTT SSL bind port</td>
+      </tr>
+      <tr>
           <td>transport.mqtt.ssl.protocol</td>
           <td>MQTT_SSL_PROTOCOL</td>
           <td>TLSv1.2</td>
-          <td>SSL protocol</td>
+          <td>SSL protocol: See <a href="http://docs.oracle.com/javase/8/docs/technotes/guides/security/StandardNames.html#SSLContext">this link</a></td>
       </tr>
       <tr>
           <td>transport.mqtt.ssl.key_store</td>
@@ -1308,6 +1332,12 @@ We will list only main configuration parameters below to avoid duplication of th
           <td>MQTT_SSL_KEY_STORE_TYPE</td>
           <td>JKS</td>
           <td>Type of the key store</td>
+      </tr>
+      <tr>
+          <td>transport.mqtt.ssl.skip_validity_check_for_client_cert</td>
+          <td>MQTT_SSL_SKIP_VALIDITY_CHECK_FOR_CLIENT_CERT</td>
+          <td>false</td>
+          <td>Skip certificate validity check for client certificates</td>
       </tr>
       <tr>
           <td>transport.coap.enabled</td>
@@ -2207,7 +2237,19 @@ We will list only main configuration parameters below to avoid duplication of th
           <td>transport.mqtt.ssl.enabled</td>
           <td>MQTT_SSL_ENABLED</td>
           <td>false</td>
-          <td>Enable/disable SSL support</td>
+          <td>Enable/disable MQTTS support</td>
+      </tr>
+      <tr>
+          <td>transport.mqtt.ssl.bind_address</td>
+          <td>MQTT_SSL_BIND_ADDRESS</td>
+          <td>0.0.0.0</td>
+          <td>MMQTT SSL bind address</td>
+      </tr>
+      <tr>
+          <td>transport.mqtt.ssl.bind_port</td>
+          <td>MQTT_SSL_BIND_PORT</td>
+          <td>8883</td>
+          <td>MQTT SSL bind port</td>
       </tr>
       <tr>
           <td>transport.mqtt.ssl.protocol</td>
@@ -2238,7 +2280,13 @@ We will list only main configuration parameters below to avoid duplication of th
           <td>MQTT_SSL_KEY_STORE_TYPE</td>
           <td>JKS</td>
           <td>Type of the key store</td>
-      </tr>  
+      </tr>
+      <tr>
+          <td>transport.mqtt.ssl.skip_validity_check_for_client_cert</td>
+          <td>MQTT_SSL_SKIP_VALIDITY_CHECK_FOR_CLIENT_CERT</td>
+          <td>false</td>
+          <td>Skip certificate validity check for client certificates</td>
+      </tr>
       <tr>
             <td>transport.sessions.inactivity_timeout</td>
             <td>TB_TRANSPORT_SESSIONS_INACTIVITY_TIMEOUT</td>
@@ -5150,4 +5198,3 @@ The configuration file for the startup script. Contains Java options and classpa
 #### logback.xml
 
 The configuration file for logging. Allows controlling the log level, the size of log files and the total size/volume of logs.
-

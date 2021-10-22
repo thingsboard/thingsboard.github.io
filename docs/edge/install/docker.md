@@ -29,6 +29,7 @@ Create docker compose file for ThingsBoard Edge service:
 ```
 sudo nano docker-compose.yml
 ```
+{: .copy-code}
 
 Add the following lines to the yml file:
 
@@ -61,6 +62,7 @@ Before starting Docker container run following commands to create a directory fo
 $ mkdir -p ~/.mytb-edge-data && sudo chown -R 799:799 ~/.mytb-edge-data
 $ mkdir -p ~/.mytb-edge-logs && sudo chown -R 799:799 ~/.mytb-edge-logs
 ```
+{: .copy-code}
 
 **NOTE**: Replace directory **~/.mytb-edge-data** and **~/.mytb-edge-logs** with directories you’re planning to use in **docker-compose.yml**.
 
@@ -70,6 +72,7 @@ Set the terminal in the directory which contains the `docker-compose.yml` file a
 docker-compose pull
 docker-compose up
 ```
+{: .copy-code}
 
 ### Step 3. Open ThingsBoard Edge UI
 
@@ -129,18 +132,21 @@ Stop and remove container:
 docker-compose stop
 docker-compose rm
 ```
+{: .copy-code}
 
 Remove **postmaster.pid** file:
 
 ```bash
 sudo rm -rf ~/.mytb-edge-data/db/postmaster.pid
 ```
+{: .copy-code}
 
 Start container:
 
 ```
 docker-compose up
 ```
+{: .copy-code}
 
 ## Next Steps
 
