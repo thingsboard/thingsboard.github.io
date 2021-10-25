@@ -282,7 +282,33 @@ List of entity fields depends on the entity type and may extend in the future:
 
 ###### 3.1. Basic data key settings
 
-Coming soon...
+In basic data key settings, you can change the name and color of the key, change the label name, set special symbol to show next to value (only for the Timeseries key), specify the number of digits after the floating point and enable/disable "Use post processing function".
+
+Let's look at the basic data key settings an example of the Entities table from the Cards bundle:
+- **Key.** You can change the name of the key. In this case, will be displayed data of the key, which key name you specify in the "Key" line. Change the name of the key and click “Save”.
+  **Note:** There are three types of keys: Attributes, Time Series and Entity Field. To correctly display data, change the key name to the existing key name of the same type. If you don’t have the required time series or attribute key in the database yet, you can still add a key to the data source. The widget will start displaying the data as soon as the device will send it to ThingsBoard. 
+
+{% include images-gallery.html imageCollection="basic-data-key-settings-1" %}
+
+- **Label.** In your widget, the name of the data column is the label name. Change the label name as desired and click “Save” in the lower right corner of the dialog box.
+
+{% include images-gallery.html imageCollection="basic-data-key-settings-2" %}
+
+- **Color.** You can change the label color. Click on the colored circle, select the desired label color and press “Select”.
+
+{% include images-gallery.html imageCollection="basic-data-key-settings-3" %}
+
+- **Special symbol to show next to value.** You can indicate a special symbol that will be displayed next to the value. Enter the desired character in this field and click “Save”.
+
+{% include images-gallery.html imageCollection="basic-data-key-settings-4" %}
+
+- **Number of digits after floating point.** Specify the desired number of digits to be displayed after floating-point number and click “Save”.
+
+{% include images-gallery.html imageCollection="basic-data-key-settings-5" %}
+
+- **Use data post-processing function.** The data post-processing function allows changing the output data depending on your wishes. To use data post-processing function, you must check the "Use data post-processing function" checkbox and enter the function in the field below. Then click the "Save" button in the lower-right corner. 
+  
+{% include images-gallery.html imageCollection="basic-data-key-settings-6" %}
 
 ###### 3.2. Advanced data key settings
 

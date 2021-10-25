@@ -71,16 +71,57 @@ add-widget:
 
 add-data-source1:
     0:
-        image: /images/user-guide/dashboards/add-data-source1-src.png
+        image: /images/user-guide/dashboards/add-data-source-1-src-ce.png
 
 add-data-source2:
     0:
-        image: /images/user-guide/dashboards/add-data-source2-src.png
+        image: /images/user-guide/dashboards/add-data-source-2-src-ce.png
 
 add-data-source3:
     0:
-        image: /images/user-guide/dashboards/add-data-source3-src.png
+        image: /images/user-guide/dashboards/add-data-source-3-src-ce.png
 
+basic-data-key-settings-1:
+    0:
+        image: /images/user-guide/dashboards/basic-data-key-configuration-settings-key-1-ce.png
+    1:
+        image: /images/user-guide/dashboards/basic-data-key-configuration-settings-key-2-ce.png
+    2:
+        image: /images/user-guide/dashboards/basic-data-key-configuration-settings-key-3-ce.png
+
+basic-data-key-settings-2:
+    0:
+        image: /images/user-guide/dashboards/basic-data-key-configuration-settings-label-1-ce.png
+    1:
+        image: /images/user-guide/dashboards/basic-data-key-configuration-settings-label-2-ce.png
+    2:
+        image: /images/user-guide/dashboards/basic-data-key-configuration-settings-label-3-ce.png
+
+basic-data-key-settings-3:
+    0:
+        image: /images/user-guide/dashboards/basic-data-key-configuration-settings-color-1-ce.png
+    1:
+        image: /images/user-guide/dashboards/basic-data-key-configuration-settings-color-2-ce.png
+    2:
+        image: /images/user-guide/dashboards/basic-data-key-configuration-settings-color-3-ce.png
+    3:
+        image: /images/user-guide/dashboards/basic-data-key-configuration-settings-color-4-ce.png
+
+basic-data-key-settings-4:
+    0:
+        image: /images/user-guide/dashboards/basic-data-key-configuration-settings-special-symbol-2-ce.png
+    1:
+        image: /images/user-guide/dashboards/basic-data-key-configuration-settings-special-symbol-3-ce.png
+
+basic-data-key-settings-5:
+    0:
+        image: /images/user-guide/dashboards/basic-data-key-configuration-settings-number-of-digits-2-ce.png
+    1:
+        image: /images/user-guide/dashboards/basic-data-key-configuration-settings-number-of-digits-3-ce.png
+
+basic-data-key-settings-6:
+    1:
+        image: /images/user-guide/dashboards/data-key-configuration-settings-post-processing-1-ce.png
 time-window1:
     0:
         image: /images/user-guide/dashboards/add-time-window1-src.png
