@@ -120,8 +120,11 @@ basic-data-key-settings-5:
         image: /images/user-guide/dashboards/basic-data-key-configuration-settings-number-of-digits-3-ce.png
 
 basic-data-key-settings-6:
-    1:
+    0:
         image: /images/user-guide/dashboards/data-key-configuration-settings-post-processing-1-ce.png
+    1:
+        image: /images/user-guide/dashboards/data-key-configuration-settings-post-processing-2-ce.png
+
 time-window1:
     0:
         image: /images/user-guide/dashboards/add-time-window1-src.png
