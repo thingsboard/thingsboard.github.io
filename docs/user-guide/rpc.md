@@ -34,6 +34,22 @@ tenant-profile-rpc:
         image: /images/user-guide/persistent-rpc/tenant-rpc-1-ce.png
         title: 'Set the number of days in the RPC TTL days line. Apply changes by clicking the orange checkmark icon in the upper right corner of the page.'
 
+client-side-rpc-rule-chain:
+    0:
+        image: /images/user-guide/rpc/client-side-rpc-rule-chain-pe-1.png
+        title: 'Edit the root Rule Chain. Replace "log" action node with the "script" transformation node. Add "rpc call reply" action node with the default configuration.'
+    1:
+        image: /images/user-guide/rpc/client-side-rpc-rule-chain-pe-2.png
+        title: 'Copy-paste the JS code from the documentation.'
+
+server-side-rpc-rule-chain:
+    0:
+        image: /images/user-guide/rpc/server-side-rpc-rule-chain-pe-1.png
+        title: 'Edit the root Rule Chain. Add generator node and connect it to the "rpc call request" rule node.'
+    1:
+        image: /images/user-guide/rpc/server-side-rpc-rule-chain-pe-2.png
+        title: 'Copy-paste the JS code from the documentation.'
+
 ---
 
 {% include docs/user-guide/rpc.md %}
