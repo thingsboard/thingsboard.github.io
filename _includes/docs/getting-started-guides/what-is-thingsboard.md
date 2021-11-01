@@ -21,10 +21,7 @@ See [**ThingsBoard features list**](/docs/{{docsPrefix}}#features) for more feat
 {% if docsPrefix == null %}
 <object width="100%" data="/images/reference/thingsboard-architecture.svg"></object>
 {% endif %}
-{% if docsPrefix == "pe/" %}
-<object width="100%" data="/images/reference/thingsboard-architecture-pe.svg"></object>
-{% endif %}
-{% if docsPrefix == "paas/" %}
+{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
 <object width="100%" data="/images/reference/thingsboard-architecture-pe.svg"></object>
 {% endif %}
 
