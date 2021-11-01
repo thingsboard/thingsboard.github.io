@@ -6,7 +6,11 @@
 ThingsBoard Custom Translations feature allows you to upload alternative to existing language translations
 and extend the translation to specific GUI elements on the dashboards.
 
+Remember: having an internalization for the platform implies the availability of custom translation maps for multiple languages.
+Otherwise, instead of translation {i18n} structure will be displayed.
+
 ### Using Locale Files
+Locale files contain basic list of translations. Their list is constantly expanding.
 
 {% include images-gallery.html imageCollection="usingLocaleFiles" showListImageTitles="true"%}
 
@@ -63,7 +67,7 @@ and extend the translation to specific GUI elements on the dashboards.
 
 {% include images-gallery.html imageCollection="usageInCellContentFunction" showListImageTitles="true"%}
 
-<b>Examples JavaScript code for cell content function</b>
+<b>JavaScript code examples for cell content function</b>
 ```javascript
 if(value>70){
     return "{i18n:custom.my-widget.high-temperature}";

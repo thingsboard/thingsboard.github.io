@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-paas
 title: Custom Translations
-description:  
+description:
 redirect_from: "/docs/user-guide/custom-translation/"
 
 usingLocaleFiles:
@@ -37,7 +37,7 @@ customTranslationForDashboard:
         title: 'Step 1. Specify new custom translation for the dashboard and widgets.'
     1:
         image: /images/user-guide/custom-translation/ct_new_dash.png
-        title: 'Step 2. Go to the Dashboard page. Create a new dashboard or chose an existing one. Open the dashboard menu.'
+        title: 'Step 2. Go to the Dashboard page. Create a new dashboard or choose an existing one. Open the dashboard menu.'
     2:
         image: /images/user-guide/custom-translation/ct_dash_title.png
         title: 'Step 3. Translate dashboard title. Note the required syntax: {i18n:custom.my-dashboard.title}.'
@@ -46,7 +46,7 @@ customTranslationForDashboard:
         title: 'Step 4. Check the translated title.'
     4:
         image: /images/user-guide/custom-translation/ct_open_states.png
-        title: 'Step 5. Open an edit mode and go to the dashboard state configurations.'
+        title: 'Step 5. Open an edit mode and go to the dashboard states configuration.'
     5:
         image: /images/user-guide/custom-translation/ct_dashboard_state.png
         title: 'Step 6. Write custom translation for the dashboard state name.'
@@ -78,7 +78,7 @@ tooltips:
         title: 'Step 1. Open an edit mode.'
     1:
         image: /images/user-guide/custom-translation/ct_tooltip_title.png
-        title: 'Step 2. In tab settings write the newt structure for tooltip title - {i18n:custom.my-widget.name}. Save it.'
+        title: 'Step 2. In Settings tab write the newt structure for tooltip title - {i18n:custom.my-widget.name}. Save it.'
     2:
         image: /images/user-guide/custom-translation/ct_tooltip_title_result.png
         title: 'Step 3. Hover on widget title and check applied translation.'
@@ -87,7 +87,7 @@ tooltips:
         title: 'Step 4. Open widgets edit mode and navigate to an Action tab.'
     4:
         image: /images/user-guide/custom-translation/ct_tooltip_action.png
-        title: 'Step 5. Create new custom action and fill field Name with {i18n:custom.my-widget.label-text}. Apply changes.'
+        title: 'Step 5. Create new custom action and fill the Name field with {i18n:custom.my-widget.label-text}. Apply changes.'
     5:
         image: /images/user-guide/custom-translation/ct_tooltip_action_result.png
         title: 'Step 6. Hover on an action button and view custom tooltip.'
@@ -142,3 +142,4 @@ otherPlaces:
 
 {% assign docsPrefix = "paas/" %}
 {% include docs/pe/user-guide/custom-translation.md %}
+
