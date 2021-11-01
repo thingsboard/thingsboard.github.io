@@ -287,7 +287,7 @@ opacity: 1;
 <a xlink:href="/docs/user-guide/integrations/http/" target="_parent" xlink:title="HTTP Integration">
 <rect class="magic" x="886.5" y="465.5" width="143" fill="#ffffff00" height="36" rx="5.5"/>
 </a>
-<a xlink:href="" target="_parent" xlink:title="CoAP Integration">
+<a xlink:href="/docs/user-guide/integrations/coap/" target="_parent" xlink:title="CoAP Integration">
 <rect class="magic" x="886.5" y="511.5" width="143" fill="#ffffff00" height="36" rx="5.5"/>
 </a>
 
