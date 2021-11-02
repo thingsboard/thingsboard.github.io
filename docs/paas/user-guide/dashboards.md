@@ -77,15 +77,35 @@ add-widget:
 
 add-data-source1:
     0:
-        image: /images/user-guide/dashboards/add-data-source-1-src-paas.png
+        image: /images/user-guide/dashboards/add-data-source1-src-pe.png
 
 add-data-source2:
     0:
-        image: /images/user-guide/dashboards/add-data-source-2-src-paas.png
+        image: /images/user-guide/dashboards/add-data-source2-src-pe.png
 
 add-data-source3:
     0:
-        image: /images/user-guide/dashboards/add-data-source-3-src-paas.png
+        image: /images/user-guide/dashboards/add-data-source3-src-pe.png
+
+add-data-source4:
+    0:
+        image: /images/user-guide/dashboards/add-data-source4-src-pe.png
+    1:
+        image: /images/user-guide/dashboards/add-data-source5-src-pe.png
+
+add-data-source5:
+    0:
+        image: /images/user-guide/dashboards/widget-settings-alternative-message-1-pe.png
+    1:
+        image: /images/user-guide/dashboards/widget-settings-alternative-message-2-pe.png
+    2:
+        image: /images/user-guide/dashboards/widget-settings-alternative-message-3-pe.png
+
+add-data-source6:
+    0:
+        image: /images/user-guide/dashboards/add-data-source-enable-data-export1-pe.png
+    1:
+        image: /images/user-guide/dashboards/add-data-source-enable-data-export2-pe.png
 
 basic-data-key-settings-1:
     0:
@@ -141,35 +161,45 @@ alarm-filters:
 
 basic-settings:
     0:
-        image: /images/user-guide/dashboards/basic-widget-settings1-src.png
+        image: /images/user-guide/dashboards/basic-widget-settings1-src-pe.png
 
 basic-settings-title:
     0:
-        image: /images/user-guide/dashboards/basic-widget-settings1-src.png
+        image: /images/user-guide/dashboards/basic-widget-settings1-src-pe.png
     1:
         image: /images/user-guide/dashboards/basic-widget-settings-title1-src-pe.png
     2:
-        image: /images/user-guide/dashboards/basic-widget-settings-title2-src.png
+        image: /images/user-guide/dashboards/basic-widget-settings-title2-src-pe.png
+    3:
+        image: /images/user-guide/dashboards/basic-widget-settings-title3-src-pe.png
 
 basic-settings-style:
     0:
-        image: /images/user-guide/dashboards/basic-widget-settings-title-noedits-src.png
+        image: /images/user-guide/dashboards/basic-widget-settings-title-noedits-src-pe.png
     1:
         image: /images/user-guide/dashboards/basic-widget-settings-style1-src-pe.png
     2:
-        image: /images/user-guide/dashboards/basic-widget-settings-style2-src.png
+        image: /images/user-guide/dashboards/basic-widget-settings-style2-src-pe.png
 
 basic-settings-legend:
     0:
-        image: /images/user-guide/dashboards/basic-widget-settings-title-noedits-src.png
+        image: /images/user-guide/dashboards/basic-widget-settings-title-noedits-src-pe.png
     1:
-        image: /images/user-guide/dashboards/basic-widget-settings-legend1-src-pe.png
-    2:
         image: /images/user-guide/dashboards/basic-widget-settings-legend2-src-pe.png
-    3:
+    2:
         image: /images/user-guide/dashboards/basic-widget-settings-legend3-src-pe.png
+    3:
+        image: /images/user-guide/dashboards/basic-widget-settings-legend4-src-pe.png
     4:
-        image: /images/user-guide/dashboards/basic-widget-settings-legend4-src.png
+        image: /images/user-guide/dashboards/basic-widget-settings-legend5-src-pe.png
+
+mobile-settings:
+    0:
+        image: /images/user-guide/dashboards/basic-widget-settings-mobile1-src-pe.png
+    1:
+        image: /images/user-guide/dashboards/basic-widget-settings-mobile2-src-pe.png
+    2:
+        image: /images/user-guide/dashboards/basic-widget-settings-mobile3-src-pe.png
 
 dashboards-edit-enter:
     0:
