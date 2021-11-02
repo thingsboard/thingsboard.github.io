@@ -132,6 +132,8 @@ basic-data-key-settings-3:
         image: /images/user-guide/dashboards/basic-data-key-configuration-settings-color-3-paas.png
     3:
         image: /images/user-guide/dashboards/basic-data-key-configuration-settings-color-4-paas.png
+    4:
+        image: /images/user-guide/dashboards/basic-data-key-configuration-settings-color-5-paas.png
 
 basic-data-key-settings-4:
     0:

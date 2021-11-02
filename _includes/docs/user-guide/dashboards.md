@@ -310,7 +310,7 @@ In basic data key settings, you can change the name and color of the key, change
 
 Let's look at the basic data key settings an example of the Entities table from the Cards bundle:
 - **Key.** You can change the name of the key. In this case, will be displayed data of the key, which key name you specify in the "Key" line. Change the name of the key and click “Save”.
-  **Note:** There are three types of keys: Attributes, Time Series and Entity Field. To correctly display data, change the key name to the existing key name of the same type. If you don’t have the required time series or attribute key in the database yet, you can still add a key to the data source. The widget will start displaying the data as soon as the device will send it to ThingsBoard. 
+  **Note:** There are three types of keys: Attributes, Time Series, Entity Field and Alarm Field (only for Alarm widget). To correctly display data, change the key name to the existing key name of the same type. If you don’t have the required time series or attribute key in the database yet, you can still add a key to the data source. The widget will start displaying the data as soon as the device will send it to ThingsBoard. 
 
 {% include images-gallery.html imageCollection="basic-data-key-settings-1" %}
 
@@ -318,7 +318,7 @@ Let's look at the basic data key settings an example of the Entities table from 
 
 {% include images-gallery.html imageCollection="basic-data-key-settings-2" %}
 
-- **Color.** You can change the label color. Click on the colored circle, select the desired label color and press “Select”.
+- **Color.** Each key is assigned a different color. In some widgets (for example, Chart), the color of the graph line displayed in the widget is the color of the key. You can change color of the key. Click on the colored circle, select the desired label color and press “Select”.
 
 {% include images-gallery.html imageCollection="basic-data-key-settings-3" %}
 
@@ -428,7 +428,6 @@ See configuration and the corresponding result below:
 
 ##### 4. Mobile mode settings
 
-For chart widgets, the “Mobile mode” option is disabled by default.
 Mobile Mode settings consist of two options:
 - Order - set to an integer, specifies the priority of the order of displaying widgets in mobile mode (note that in mobile mode all widgets are displayed in one vertical column).
 If you need to arrange widgets in this column in a custom order, you can configure different order values for each widget.

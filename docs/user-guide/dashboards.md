@@ -120,6 +120,8 @@ basic-data-key-settings-3:
         image: /images/user-guide/dashboards/basic-data-key-configuration-settings-color-3-ce.png
     3:
         image: /images/user-guide/dashboards/basic-data-key-configuration-settings-color-4-ce.png
+    4:
+        image: /images/user-guide/dashboards/basic-data-key-configuration-settings-color-5-ce.png
 
 basic-data-key-settings-4:
     0:
