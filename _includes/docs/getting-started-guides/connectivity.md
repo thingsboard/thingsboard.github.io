@@ -4,7 +4,9 @@ In case you have not found out how to connect your device using the diagram or s
 {% endcapture %}
 {% include templates/info-banner.md content=connectivityContent %}
 
-<object width="100%" data="/images/connectivity.svg"></object>
+ {:refdef: style="text-align: center;"}
+ ![image](/images/connectivity.sv)
+ {: refdef}
 
 {% assign peDocsPrefix = '' %}
 {% if docsPrefix == 'paas/' %}
