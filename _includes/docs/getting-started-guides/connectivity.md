@@ -5,7 +5,7 @@ In case you have not found out how to connect your device using the diagram or s
 {% include templates/info-banner.md content=connectivityContent %}
 
  {:refdef: style="text-align: center;"}
- ![image](/images/connectivity.sv)
+ ![image](/images/connectivity.svg)
  {: refdef}
 
 {% assign peDocsPrefix = '' %}
