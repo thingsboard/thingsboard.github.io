@@ -161,5 +161,5 @@ deviceNoSec_create_save:
 
 ---
 
-{% assign docsPrefix = "edge/" %}
+{% assign docsPrefix = "pe/" %}
 {% include docs/reference/lwm2m-api.md %}

@@ -5,5 +5,5 @@ description: Supported HTTP API Reference for IoT Devices
 
 ---
 
-{% assign docsPrefix = "edge/" %}
+{% assign docsPrefix = "pe/" %}
 {% include docs/reference/http-api.md %}

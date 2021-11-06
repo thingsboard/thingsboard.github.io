@@ -4,5 +4,5 @@ title: CoAP Device API Reference
 
 ---
 
-{% assign docsPrefix = "edge/" %}
+{% assign docsPrefix = "pe/" %}
 {% include docs/reference/coap-api.md %}
