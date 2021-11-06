@@ -18,16 +18,3 @@ toc:
   - title: LWM2M Device API
     path: /docs/edge/reference/lwm2m-api/
     new: true
-- title: REST APIs and clients
-  section:
-  - title: Administration REST API
-    path: /docs/edge/reference/rest-api/
-  - title: Java REST Client
-    path: /docs/edge/reference/rest-client/
-  - title: Python REST Client
-    path: /docs/edge/reference/python-rest-client/
-- title: Software development kits
-  new: true
-  section:
-    - title: Python Client SDK
-      path: /docs/edge/reference/python-client-sdk/

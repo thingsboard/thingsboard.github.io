@@ -4,7 +4,7 @@ title: PE Configuration guide
 description: PE Configuration guide
 ---
 
-Coming soon...
+![image](/images/coming-soon.jpg)
 
 #### Next Steps
 

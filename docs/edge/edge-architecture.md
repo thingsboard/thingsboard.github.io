@@ -58,7 +58,7 @@ You can learn more about the edge rule engine using corresponding [documentation
 
 ## Core services
 
-ThingsBoard Edge Core is responsible for handling [REST API](/docs/edge/reference/rest-api/) calls and WebSocket [subscriptions](/docs/user-guide/telemetry/#websocket-api).
+ThingsBoard Edge Core is responsible for handling [REST API](/docs/pe/reference/rest-api/) calls and WebSocket [subscriptions](/docs/user-guide/telemetry/#websocket-api).
 It is also responsible for storing up to date information about active device sessions and monitoring device [connectivity state](/docs/user-guide/device-connectivity-status/).
 ThingsBoard Edge Core uses Actor System under the hood to implement actors for main entities: tenants and devices.
 

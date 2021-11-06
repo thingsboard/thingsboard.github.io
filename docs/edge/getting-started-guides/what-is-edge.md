@@ -68,7 +68,7 @@ It supports next **ThingsBoard Community Edition** features:
  * [**Telemetry**](/docs/user-guide/telemetry/) - API for collection of time-series data of your devices.
  * [**Entities and relations**](/docs/user-guide/entities-and-relations/) - model physical world objects (e.g. devices and assets) and relations between them.
  * [**Data visualization**](/docs/guides#AnchorIDDataVisualization) - develop custom dashboards and widgets.
- * [**Rule engine**](/docs/edge/rule-engine/general/) - manage data processing & actions on incoming telemetry and events.
+ * [**Rule engine**](/docs/rule-engine/general/) - manage data processing & actions on incoming telemetry and events.
  * [**RPC**](/docs/user-guide/rpc/) - send remote procedure calls (RPC) **both from edge and cloud sides** to devices and vice versa.
  * [**Audit log**](/docs/user-guide/audit-log/) - track user activity.
  * [**API Limits**](/docs/user-guide/api-limits/) - control and limit number of API requests from a single host.

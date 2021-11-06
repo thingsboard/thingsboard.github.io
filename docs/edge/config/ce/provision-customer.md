@@ -5,7 +5,7 @@ description: Provision Customer from cloud to edge
 
 ---
 
-Coming soon…
+![image](/images/coming-soon.jpg)
 
 ### User Access management
 
