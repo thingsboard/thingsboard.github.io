@@ -68,4 +68,8 @@ description: ThingsBoard Careers
       <img class="advanImg" src="/images/careers/english_icon.svg">
       <h5>Free English classes</h5>
     </div>
+    <div>
+      <img class="advanImg" src="/images/careers/medical_icon.svg">
+      <h5>Medical Insurance</h5>
+    </div>
 </div>
