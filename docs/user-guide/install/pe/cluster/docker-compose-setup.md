@@ -202,7 +202,7 @@ Where:
 
 ## Upgrading
 
-In case when database upgrade is needed, edit .env file to set "TB_VERSION" to target version (f.e. set it to {{ site.release.ce_full_ver }} if you are upgrading to the latest). Then, execute the following commands:
+In case when database upgrade is needed, edit .env file to set "TB_VERSION" to target version (e.g. set it to {{ site.release.ce_full_ver }} if you are upgrading to the latest). Then, execute the following commands:
 
 ```bash
 $ ./docker-stop-services.sh
