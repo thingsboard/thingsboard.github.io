@@ -20,13 +20,13 @@ Minor release with the following improvements and bug fixes:
     * Described entities and methods;
     * Authorize via user name and password;  
     * Latest version of Swagger;
-  * Help pages for all user-defined JS functions:
+  * Help pages for user-defined JS functions:
     * Described input parameters;
     * Examples for various use cases;
     * Help content is loaded from the external [project](https://github.com/thingsboard/thingsboard-ui-help);
     * Ability to configure the external help url using 'UI_HELP_BASE_URL' parameter;
   * Performance of SQL queries:
-    * Protection from infinite recursion;
+    * Protection from an infinite recursion;
     * Ability to configure max levels of recursion using 'SQL_RELATIONS_MAX_LEVEL' parameter;
     * Timeout for all SQL queries to survive enormous heavy query using 'JAVAX_PERSISTENCE_QUERY_TIMEOUT' parameter;
   * Bulk import improved and moved to back-end;
@@ -38,6 +38,7 @@ Minor release with the following improvements and bug fixes:
 * Security:
   * Support of SSL credentials configuration to setup HTTPS without SSL termination on the load balancer.
   * Support of PEM format for certificates;
+  * Unified transport SSL credentials;
 * Transport:
   * HTTP/2 configuration support;
   * Added out-of-the-box support for Efento water-meter devices;
@@ -46,6 +47,7 @@ Minor release with the following improvements and bug fixes:
   * Add option for HTTP client rule node to not create any message body;
   * Optimize retry strategy to correctly take into account all available settings: 'retryFailed', 'retryTimeout' and 'retrySuccessful;
   * Fixed parsing of updated polygon coordinates in rule engine;
+  * Fixed duplication of MQTT packets in the MQTT Rule Node;
 * UI:
   * New widget settings layout;
   * Protobuf editor for MQTT device transport configuration
@@ -57,9 +59,12 @@ Minor release with the following improvements and bug fixes:
   * Update 'zh_CN' locale;
   * Added no data display message to entities and alarm tables;
   * Added "toastTargetId" of widget-container to the "widgetContext";
-  * added argument updatedData in function updateNode in nav-tree component;
+  * Added argument 'updatedData' in function 'updateNode' in nav-tree component;
+  * Style of the mqtt transport settings in the device profile; 
 * Build scripts:
   * K8S deployment instructions and scripts for AWS EKS;
+  * Cache cleanup added to the upgrade scripts;
+  * Logging of the progress during upgrade;
 
 **Bug fixes:**
 
