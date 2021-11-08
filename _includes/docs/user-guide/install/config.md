@@ -68,28 +68,64 @@ We will list only main configuration parameters below to avoid duplication of th
           <td>Enable/disable SSL support</td>
       </tr>
       <tr>
-          <td>server.ssl.key-store</td>
-          <td>SSL_KEY_STORE</td>
-          <td>classpath:keystore/keystore.p12</td>
-          <td>Path to the key store that holds the SSL certificate</td>
+          <td>server.ssl.credentials.type</td>
+          <td>SSL_CREDENTIALS_TYPE</td>
+          <td>PEM</td>
+          <td>Server credentials type (PEM - pem certificate file; KEYSTORE - java keystore)</td>
       </tr>
       <tr>
-          <td>server.ssl.key-store-password</td>
-          <td>SSL_KEY_STORE_PASSWORD</td>
-          <td>thingsboard</td>
-          <td>Password used to access the key store</td>
+          <td>server.ssl.credentials.pem.cert_file</td>
+          <td>SSL_PEM_CERT</td>
+          <td>server.pem</td>
+          <td>Path to the server certificate file (holds server certificate or certificate chain, may include server private key)</td>
       </tr>
       <tr>
-          <td>server.ssl.key-store-type</td>
+          <td>server.ssl.credentials.pem.key_file</td>
+          <td>SSL_PEM_KEY</td>
+          <td>server_key.pem</td>
+          <td>Path to the server certificate private key file (optional)</td>
+      </tr>
+      <tr>
+          <td>server.ssl.credentials.pem.key_password</td>
+          <td>SSL_PEM_KEY_PASSWORD</td>
+          <td>server_key_password</td>
+          <td>Server certificate private key password (optional)</td>
+      </tr>
+      <tr>
+          <td>server.ssl.credentials.keystore.type</td>
           <td>SSL_KEY_STORE_TYPE</td>
           <td>PKCS12</td>
           <td>Type of the key store</td>
       </tr>
       <tr>
-          <td>server.ssl.key-alias</td>
+          <td>server.ssl.credentials.keystore.store_file</td>
+          <td>SSL_KEY_STORE</td>
+          <td>classpath:keystore/keystore.p12</td>
+          <td>Path to the key store that holds the SSL certificate</td>
+      </tr>
+      <tr>
+          <td>server.ssl.credentials.keystore.store_password</td>
+          <td>SSL_KEY_STORE_PASSWORD</td>
+          <td>thingsboard</td>
+          <td>Password used to access the key store</td>
+      </tr>
+      <tr>
+          <td>server.ssl.credentials.keystore.key_alias</td>
           <td>SSL_KEY_ALIAS</td>
           <td>tomcat</td>
           <td>Alias that identifies the key in the key store</td>
+      </tr>
+      <tr>
+          <td>server.ssl.credentials.keystore.key_password</td>
+          <td>SSL_KEY_PASSWORD</td>
+          <td>thingsboard</td>
+          <td>Password used to access the key in the keystore</td>
+      </tr>
+      <tr>
+          <td>server.http2</td>
+          <td>HTTP2_ENABLED</td>
+          <td>true</td>
+          <td>Enable/disable HTTP/2 support (takes effect only if server SSL is enabled)</td>
       </tr>
       <tr>
           <td>server.log_controller_error_stack_trace</td>
@@ -287,13 +323,19 @@ We will list only main configuration parameters below to avoid duplication of th
           <td>Enable/disable case-sensitive username login</td>
       </tr>
       <tr>
-          <td colspan="4"><span style="font-weight: bold; font-size: 24px;">Dashboard parameters</span></td>
+          <td colspan="4"><span style="font-weight: bold; font-size: 24px;">UI parameters</span></td>
       </tr>  
       <tr>
-          <td>dashboard.max_datapoints_limit</td>
+          <td>ui.dashboard.max_datapoints_limit</td>
           <td>DASHBOARD_MAX_DATAPOINTS_LIMIT</td>
           <td>50000</td>
           <td>Maximum allowed datapoints fetched by ThingsBoard UI widgets</td>
+      </tr>
+      <tr>
+          <td>ui.help.base-url</td>
+          <td>UI_HELP_BASE_URL</td>
+          <td>https://raw.githubusercontent.com/thingsboard/thingsboard-ui-help/release-3.3.2</td>
+          <td>Base url for UI help assets</td>
       </tr>
       <tr>
           <td colspan="4"><span style="font-weight: bold; font-size: 24px;">Common database parameters</span></td>
@@ -1310,28 +1352,52 @@ We will list only main configuration parameters below to avoid duplication of th
           <td>SSL protocol: See <a href="http://docs.oracle.com/javase/8/docs/technotes/guides/security/StandardNames.html#SSLContext">this link</a></td>
       </tr>
       <tr>
-          <td>transport.mqtt.ssl.key_store</td>
+          <td>transport.mqtt.ssl.credentials.type</td>
+          <td>MQTT_SSL_CREDENTIALS_TYPE</td>
+          <td>PEM</td>
+          <td>Server credentials type (PEM - pem certificate file; KEYSTORE - java keystore)</td>
+      </tr>
+      <tr>
+          <td>transport.mqtt.ssl.credentials.pem.cert_file</td>
+          <td>MQTT_SSL_PEM_CERT</td>
+          <td>mqttserver.pem</td>
+          <td>Path to the server certificate file (holds server certificate or certificate chain, may include server private key)</td>
+      </tr>
+      <tr>
+          <td>transport.mqtt.ssl.credentials.pem.key_file</td>
+          <td>MQTT_SSL_PEM_KEY</td>
+          <td>mqttserver_key.pem</td>
+          <td>Path to the server certificate private key file (optional)</td>
+      </tr>
+      <tr>
+          <td>transport.mqtt.ssl.credentials.pem.key_password</td>
+          <td>MQTT_SSL_PEM_KEY_PASSWORD</td>
+          <td>server_key_password</td>
+          <td>Server certificate private key password (optional)</td>
+      </tr>
+      <tr>
+          <td>transport.mqtt.ssl.credentials.keystore.type</td>
+          <td>MQTT_SSL_KEY_STORE_TYPE</td>
+          <td>JKS</td>
+          <td>Type of the key store</td>
+      </tr>
+      <tr>
+          <td>transport.mqtt.ssl.credentials.keystore.store_file</td>
           <td>MQTT_SSL_KEY_STORE</td>
           <td>mqttserver.jks</td>
           <td>Path to the key store that holds the SSL certificate</td>
       </tr>
       <tr>
-          <td>transport.mqtt.ssl.key_store_password</td>
+          <td>transport.mqtt.ssl.credentials.keystore.store_password</td>
           <td>MQTT_SSL_KEY_STORE_PASSWORD</td>
           <td>server_ks_password</td>
           <td>Password used to access the key store</td>
       </tr>
       <tr>
-          <td>transport.mqtt.ssl.key_password</td>
+          <td>transport.mqtt.ssl.credentials.keystore.key_password</td>
           <td>MQTT_SSL_KEY_PASSWORD</td>
           <td>server_key_password</td>
           <td>Password used to access the key</td>
-      </tr>
-      <tr>
-          <td>transport.mqtt.ssl.key_store_type</td>
-          <td>MQTT_SSL_KEY_STORE_TYPE</td>
-          <td>JKS</td>
-          <td>Type of the key store</td>
       </tr>
       <tr>
           <td>transport.mqtt.ssl.skip_validity_check_for_client_cert</td>
@@ -1362,6 +1428,426 @@ We will list only main configuration parameters below to avoid duplication of th
           <td>COAP_TIMEOUT</td>
           <td>10000</td>
           <td></td>
+      </tr>
+      <tr>
+          <td>transport.coap.psm_activity_timer</td>
+          <td>COAP_PSM_ACTIVITY_TIMER</td>
+          <td>10000</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>transport.coap.paging_transmission_window</td>
+          <td>COAP_PAGING_TRANSMISSION_WINDOW</td>
+          <td>10000</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>transport.coap.dtls.enabled</td>
+          <td>COAP_DTLS_ENABLED</td>
+          <td>false</td>
+          <td>Enable/disable DTLS 1.2 support</td>
+      </tr>
+      <tr>
+          <td>transport.coap.dtls.bind_address</td>
+          <td>COAP_DTLS_BIND_ADDRESS</td>
+          <td>0.0.0.0</td>
+          <td>CoAP DTLS bind address</td>
+      </tr>
+      <tr>
+          <td>transport.coap.dtls.bind_port</td>
+          <td>COAP_DTLS_BIND_PORT</td>
+          <td>5684</td>
+          <td>CoAP DTLS bind port</td>
+      </tr>
+      <tr>
+          <td>transport.coap.dtls.credentials.type</td>
+          <td>COAP_DTLS_CREDENTIALS_TYPE</td>
+          <td>PEM</td>
+          <td>Server credentials type (PEM - pem certificate file; KEYSTORE - java keystore)</td>
+      </tr>
+      <tr>
+          <td>transport.coap.dtls.credentials.pem.cert_file</td>
+          <td>COAP_DTLS_PEM_CERT</td>
+          <td>coapserver.pem</td>
+          <td>Path to the server certificate file (holds server certificate or certificate chain, may include server private key)</td>
+      </tr>
+      <tr>
+          <td>transport.coap.dtls.credentials.pem.key_file</td>
+          <td>COAP_DTLS_PEM_KEY</td>
+          <td>coapserver_key.pem</td>
+          <td>Path to the server certificate private key file (optional)</td>
+      </tr>
+      <tr>
+          <td>transport.coap.dtls.credentials.pem.key_password</td>
+          <td>COAP_DTLS_PEM_KEY_PASSWORD</td>
+          <td>server_key_password</td>
+          <td>Server certificate private key password (optional)</td>
+      </tr>
+      <tr>
+          <td>transport.coap.dtls.credentials.keystore.type</td>
+          <td>COAP_DTLS_KEY_STORE_TYPE</td>
+          <td>JKS</td>
+          <td>Type of the key store</td>
+      </tr>
+      <tr>
+          <td>transport.coap.dtls.credentials.keystore.store_file</td>
+          <td>COAP_DTLS_KEY_STORE</td>
+          <td>coapserver.jks</td>
+          <td>Path to the key store that holds the SSL certificate</td>
+      </tr>
+      <tr>
+          <td>transport.coap.dtls.credentials.keystore.store_password</td>
+          <td>COAP_DTLS_KEY_STORE_PASSWORD</td>
+          <td>server_ks_password</td>
+          <td>Password used to access the key store</td>
+      </tr>
+      <tr>
+          <td>transport.coap.dtls.credentials.keystore.key_alias</td>
+          <td>COAP_DTLS_KEY_ALIAS</td>
+          <td>serveralias</td>
+          <td>Key alias</td>
+      </tr>
+      <tr>
+          <td>transport.coap.dtls.credentials.keystore.key_password</td>
+          <td>COAP_DTLS_KEY_PASSWORD</td>
+          <td>server_key_password</td>
+          <td>Password used to access the key</td>
+      </tr>
+      <tr>
+          <td>transport.coap.dtls.x509.skip_validity_check_for_client_cert</td>
+          <td>TB_COAP_X509_DTLS_SKIP_VALIDITY_CHECK_FOR_CLIENT_CERT</td>
+          <td>false</td>
+          <td>Skip certificate validity check for client certificates</td>
+      </tr>
+      <tr>
+          <td>transport.coap.dtls.x509.dtls_session_inactivity_timeout</td>
+          <td>TB_COAP_X509_DTLS_SESSION_INACTIVITY_TIMEOUT</td>
+          <td>86400000</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>transport.coap.dtls.x509.dtls_session_report_timeout</td>
+          <td>TB_COAP_X509_DTLS_SESSION_REPORT_TIMEOUT</td>
+          <td>1800000</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.enabled</td>
+          <td>LWM2M_ENABLED</td>
+          <td>true</td>
+          <td>Enable/Disable local LwM2M transport</td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.server.id</td>
+          <td>LWM2M_SERVER_ID</td>
+          <td>123</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.server.bind_address</td>
+          <td>LWM2M_BIND_ADDRESS</td>
+          <td>0.0.0.0</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.server.bind_port</td>
+          <td>LWM2M_BIND_PORT</td>
+          <td>5685</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.server.security.bind_address</td>
+          <td>LWM2M_SECURITY_BIND_ADDRESS</td>
+          <td>0.0.0.0</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.server.security.bind_port</td>
+          <td>LWM2M_SECURITY_BIND_PORT</td>
+          <td>5686</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.server.security.credentials.enabled</td>
+          <td>LWM2M_SERVER_CREDENTIALS_ENABLED</td>
+          <td>true</td>
+          <td>Whether to enable LWM2M server X509 Certificate/RPK support</td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.server.security.credentials.type</td>
+          <td>LWM2M_SERVER_CREDENTIALS_TYPE</td>
+          <td>PEM</td>
+          <td>Server credentials type (PEM - pem certificate file; KEYSTORE - java keystore)</td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.server.security.credentials.pem.cert_file</td>
+          <td>LWM2M_SERVER_PEM_CERT</td>
+          <td>lwm2mserver.pem</td>
+          <td>Path to the server certificate file (holds server certificate or certificate chain, may include server private key)</td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.server.security.credentials.pem.key_file</td>
+          <td>LWM2M_SERVER_PEM_KEY</td>
+          <td>lwm2mserver_key.pem</td>
+          <td>Path to the server certificate private key file (optional)</td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.server.security.credentials.pem.key_password</td>
+          <td>LWM2M_SERVER_PEM_KEY_PASSWORD</td>
+          <td>server_key_password</td>
+          <td>Server certificate private key password (optional)</td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.server.security.credentials.keystore.type</td>
+          <td>LWM2M_SERVER_KEY_STORE_TYPE</td>
+          <td>JKS</td>
+          <td>Type of the key store</td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.server.security.credentials.keystore.store_file</td>
+          <td>LWM2M_SERVER_KEY_STORE</td>
+          <td>lwm2mserver.jks</td>
+          <td>Path to the key store that holds the SSL certificate</td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.server.security.credentials.keystore.store_password</td>
+          <td>LWM2M_SERVER_KEY_STORE_PASSWORD</td>
+          <td>server_ks_password</td>
+          <td>Password used to access the key store</td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.server.security.credentials.keystore.key_alias</td>
+          <td>LWM2M_SERVER_KEY_ALIAS</td>
+          <td>server</td>
+          <td>Key alias</td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.server.security.credentials.keystore.key_password</td>
+          <td>LWM2M_SERVER_KEY_PASSWORD</td>
+          <td>server_key_password</td>
+          <td>Password used to access the key</td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.server.security.skip_validity_check_for_client_cert</td>
+          <td>TB_LWM2M_SERVER_SECURITY_SKIP_VALIDITY_CHECK_FOR_CLIENT_CERT</td>
+          <td>false</td>
+          <td>Skip certificate validity check for client certificates (Only for X509 certificates mode)</td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.bootstrap.enable</td>
+          <td>LWM2M_ENABLED_BS</td>
+          <td>true</td>
+          <td>Enable/Disable local LwM2M bootstrap server</td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.bootstrap.id</td>
+          <td>LWM2M_SERVER_ID_BS</td>
+          <td>111</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.bootstrap.bind_address</td>
+          <td>LWM2M_BS_BIND_ADDRESS</td>
+          <td>0.0.0.0</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.bootstrap.bind_port</td>
+          <td>LWM2M_BS_BIND_PORT</td>
+          <td>5687</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.bootstrap.security.bind_address</td>
+          <td>LWM2M_BS_SECURITY_BIND_ADDRESS</td>
+          <td>0.0.0.0</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.bootstrap.security.bind_port</td>
+          <td>LWM2M_BS_SECURITY_BIND_PORT</td>
+          <td>5688</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.bootstrap.security.credentials.enabled</td>
+          <td>LWM2M_BS_CREDENTIALS_ENABLED</td>
+          <td>true</td>
+          <td>Whether to enable LWM2M bootstrap server X509 Certificate/RPK support</td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.bootstrap.security.credentials.type</td>
+          <td>LWM2M_BS_CREDENTIALS_TYPE</td>
+          <td>PEM</td>
+          <td>Server credentials type (PEM - pem certificate file; KEYSTORE - java keystore)</td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.bootstrap.security.credentials.pem.cert_file</td>
+          <td>LWM2M_BS_PEM_CERT</td>
+          <td>lwm2mserver.pem</td>
+          <td>Path to the server certificate file (holds server certificate or certificate chain, may include server private key)</td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.bootstrap.security.credentials.pem.key_file</td>
+          <td>LWM2M_BS_PEM_KEY</td>
+          <td>lwm2mserver_key.pem</td>
+          <td>Path to the server certificate private key file (optional)</td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.bootstrap.security.credentials.pem.key_password</td>
+          <td>LWM2M_BS_PEM_KEY_PASSWORD</td>
+          <td>server_key_password</td>
+          <td>Server certificate private key password (optional)</td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.bootstrap.security.credentials.keystore.type</td>
+          <td>LWM2M_BS_KEY_STORE_TYPE</td>
+          <td>JKS</td>
+          <td>Type of the key store</td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.bootstrap.security.credentials.keystore.store_file</td>
+          <td>LWM2M_BS_KEY_STORE</td>
+          <td>lwm2mserver.jks</td>
+          <td>Path to the key store that holds the SSL certificate</td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.bootstrap.security.credentials.keystore.store_password</td>
+          <td>LWM2M_BS_KEY_STORE_PASSWORD</td>
+          <td>server_ks_password</td>
+          <td>Password used to access the key store</td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.bootstrap.security.credentials.keystore.key_alias</td>
+          <td>LWM2M_BS_KEY_ALIAS</td>
+          <td>bootstrap</td>
+          <td>Key alias</td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.bootstrap.security.credentials.keystore.key_password</td>
+          <td>LWM2M_BS_KEY_PASSWORD</td>
+          <td>server_key_password</td>
+          <td>Password used to access the key</td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.security.trust-credentials.enabled</td>
+          <td>LWM2M_TRUST_CREDENTIALS_ENABLED</td>
+          <td>true</td>
+          <td>Whether to load X509 trust certificates</td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.security.trust-credentials.type</td>
+          <td>LWM2M_TRUST_CREDENTIALS_TYPE</td>
+          <td>PEM</td>
+          <td>Trust certificates store type (PEM - pem certificate file; KEYSTORE - java keystore)</td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.security.trust-credentials.pem.cert_file</td>
+          <td>LWM2M_TRUST_PEM_CERT</td>
+          <td>lwm2mserver.pem</td>
+          <td>Path to the certificates file (holds trust certificates)</td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.security.trust-credentials.keystore.type</td>
+          <td>LWM2M_TRUST_KEY_STORE_TYPE</td>
+          <td>JKS</td>
+          <td>Type of the key store</td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.security.trust-credentials.keystore.store_file</td>
+          <td>LWM2M_TRUST_KEY_STORE</td>
+          <td>lwm2mserver.jks</td>
+          <td>Path to the key store that holds the X509 certificates</td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.security.trust-credentials.keystore.store_password</td>
+          <td>LWM2M_TRUST_KEY_STORE_PASSWORD</td>
+          <td>server_ks_password</td>
+          <td>Password used to access the key store</td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.security.recommended_ciphers</td>
+          <td>LWM2M_RECOMMENDED_CIPHERS</td>
+          <td>false</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.security.recommended_supported_groups</td>
+          <td>LWM2M_RECOMMENDED_SUPPORTED_GROUPS</td>
+          <td>true</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.timeout</td>
+          <td>LWM2M_TIMEOUT</td>
+          <td>120000</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.uplink_pool_size</td>
+          <td>LWM2M_UPLINK_POOL_SIZE</td>
+          <td>10</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.downlink_pool_size</td>
+          <td>LWM2M_DOWNLINK_POOL_SIZE</td>
+          <td>10</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.ota_pool_size</td>
+          <td>LWM2M_OTA_POOL_SIZE</td>
+          <td>10</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.clean_period_in_sec</td>
+          <td>LWM2M_CLEAN_PERIOD_IN_SEC</td>
+          <td>2</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.log_max_length</td>
+          <td>LWM2M_LOG_MAX_LENGTH</td>
+          <td>1024</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.redis.enabled</td>
+          <td>LWM2M_REDIS_ENABLED</td>
+          <td>false</td>
+          <td>Whether to use redis for Security and Registration stores</td>
+      </tr>
+      <tr>
+          <td>transport.snmp.enabled</td>
+          <td>SNMP_ENABLED</td>
+          <td>true</td>
+          <td>Enable/Disable local SNMP transport</td>
+      </tr>
+      <tr>
+          <td>transport.snmp.response_processing.parallelism_level</td>
+          <td>SNMP_RESPONSE_PROCESSING_PARALLELISM_LEVEL</td>
+          <td>20</td>
+          <td>Parallelism level for executor (workStealingPool) that is responsible for handling responses from SNMP devices</td>
+      </tr>
+      <tr>
+          <td>transport.snmp.underlying_protocol</td>
+          <td>SNMP_UNDERLYING_PROTOCOL</td>
+          <td>udp</td>
+          <td>Underlying SNMP protocol: UDP or TCP</td>
+      </tr>
+      <tr>
+          <td>transport.stats.enabled</td>
+          <td>TB_TRANSPORT_STATS_ENABLED</td>
+          <td>true</td>
+          <td>Enable/Disable transport statistics</td>
+      </tr>
+      <tr>
+          <td>transport.stats.interval-ms</td>
+          <td>TB_TRANSPORT_STATS_PRINT_INTERVAL_MS</td>
+          <td>60000</td>
+          <td>Transport statistics report interval in milliseconds</td>
       </tr>
       <tr>
            <td colspan="4"><span style="font-weight: bold; font-size: 24px;">Queue parameters</span></td>
@@ -2258,28 +2744,52 @@ We will list only main configuration parameters below to avoid duplication of th
           <td>SSL protocol: See <a href="http://docs.oracle.com/javase/8/docs/technotes/guides/security/StandardNames.html#SSLContext">this link</a></td>
       </tr>
       <tr>
-          <td>transport.mqtt.ssl.key_store</td>
+          <td>transport.mqtt.ssl.credentials.type</td>
+          <td>MQTT_SSL_CREDENTIALS_TYPE</td>
+          <td>PEM</td>
+          <td>Server credentials type (PEM - pem certificate file; KEYSTORE - java keystore)</td>
+      </tr>
+      <tr>
+          <td>transport.mqtt.ssl.credentials.pem.cert_file</td>
+          <td>MQTT_SSL_PEM_CERT</td>
+          <td>mqttserver.pem</td>
+          <td>Path to the server certificate file (holds server certificate or certificate chain, may include server private key)</td>
+      </tr>
+      <tr>
+          <td>transport.mqtt.ssl.credentials.pem.key_file</td>
+          <td>MQTT_SSL_PEM_KEY</td>
+          <td>mqttserver_key.pem</td>
+          <td>Path to the server certificate private key file (optional)</td>
+      </tr>
+      <tr>
+          <td>transport.mqtt.ssl.credentials.pem.key_password</td>
+          <td>MQTT_SSL_PEM_KEY_PASSWORD</td>
+          <td>server_key_password</td>
+          <td>Server certificate private key password (optional)</td>
+      </tr>
+      <tr>
+          <td>transport.mqtt.ssl.credentials.keystore.type</td>
+          <td>MQTT_SSL_KEY_STORE_TYPE</td>
+          <td>JKS</td>
+          <td>Type of the key store</td>
+      </tr>
+      <tr>
+          <td>transport.mqtt.ssl.credentials.keystore.store_file</td>
           <td>MQTT_SSL_KEY_STORE</td>
           <td>mqttserver.jks</td>
           <td>Path to the key store that holds the SSL certificate</td>
       </tr>
       <tr>
-          <td>transport.mqtt.ssl.key_store_password</td>
+          <td>transport.mqtt.ssl.credentials.keystore.store_password</td>
           <td>MQTT_SSL_KEY_STORE_PASSWORD</td>
           <td>server_ks_password</td>
           <td>Password used to access the key store</td>
       </tr>
       <tr>
-          <td>transport.mqtt.ssl.key_password</td>
+          <td>transport.mqtt.ssl.credentials.keystore.key_password</td>
           <td>MQTT_SSL_KEY_PASSWORD</td>
           <td>server_key_password</td>
           <td>Password used to access the key</td>
-      </tr>
-      <tr>
-          <td>transport.mqtt.ssl.key_store_type</td>
-          <td>MQTT_SSL_KEY_STORE_TYPE</td>
-          <td>JKS</td>
-          <td>Type of the key store</td>
       </tr>
       <tr>
           <td>transport.mqtt.ssl.skip_validity_check_for_client_cert</td>
@@ -3070,8 +3580,8 @@ We will list only main configuration parameters below to avoid duplication of th
        <tr>
            <td>service.type.</td>
            <td>TB_SERVICE_TYPE</td>
-           <td>monolith</td>
-           <td>Tb Queue service type. Can be: monolith or tb-core or tb-rule-engine</td>
+           <td>tb-transport</td>
+           <td>Tb Queue service type. Can be: monolith or tb-core or tb-rule-engine or tb-transport</td>
        </tr>
        <tr>
            <td>service.id.</td>
@@ -3108,6 +3618,72 @@ We will list only main configuration parameters below to avoid duplication of th
           <td>HTTP_BIND_PORT</td>
           <td>8081</td>
           <td>HTTP Server bind port</td>
+      </tr>
+      <tr>
+          <td>server.ssl.enabled</td>
+          <td>SSL_ENABLED</td>
+          <td>false</td>
+          <td>Enable/disable SSL support</td>
+      </tr>
+      <tr>
+          <td>server.ssl.credentials.type</td>
+          <td>SSL_CREDENTIALS_TYPE</td>
+          <td>PEM</td>
+          <td>Server credentials type (PEM - pem certificate file; KEYSTORE - java keystore)</td>
+      </tr>
+      <tr>
+          <td>server.ssl.credentials.pem.cert_file</td>
+          <td>SSL_PEM_CERT</td>
+          <td>server.pem</td>
+          <td>Path to the server certificate file (holds server certificate or certificate chain, may include server private key)</td>
+      </tr>
+      <tr>
+          <td>server.ssl.credentials.pem.key_file</td>
+          <td>SSL_PEM_KEY</td>
+          <td>server_key.pem</td>
+          <td>Path to the server certificate private key file (optional)</td>
+      </tr>
+      <tr>
+          <td>server.ssl.credentials.pem.key_password</td>
+          <td>SSL_PEM_KEY_PASSWORD</td>
+          <td>server_key_password</td>
+          <td>Server certificate private key password (optional)</td>
+      </tr>
+      <tr>
+          <td>server.ssl.credentials.keystore.type</td>
+          <td>SSL_KEY_STORE_TYPE</td>
+          <td>PKCS12</td>
+          <td>Type of the key store</td>
+      </tr>
+      <tr>
+          <td>server.ssl.credentials.keystore.store_file</td>
+          <td>SSL_KEY_STORE</td>
+          <td>classpath:keystore/keystore.p12</td>
+          <td>Path to the key store that holds the SSL certificate</td>
+      </tr>
+      <tr>
+          <td>server.ssl.credentials.keystore.store_password</td>
+          <td>SSL_KEY_STORE_PASSWORD</td>
+          <td>thingsboard</td>
+          <td>Password used to access the key store</td>
+      </tr>
+      <tr>
+          <td>server.ssl.credentials.keystore.key_alias</td>
+          <td>SSL_KEY_ALIAS</td>
+          <td>tomcat</td>
+          <td>Alias that identifies the key in the key store</td>
+      </tr>
+      <tr>
+          <td>server.ssl.credentials.keystore.key_password</td>
+          <td>SSL_KEY_PASSWORD</td>
+          <td>thingsboard</td>
+          <td>Password used to access the key in the keystore</td>
+      </tr>
+      <tr>
+          <td>server.http2</td>
+          <td>HTTP2_ENABLED</td>
+          <td>true</td>
+          <td>Enable/disable HTTP/2 support (takes effect only if server SSL is enabled)</td>
       </tr>
       <tr>
           <td colspan="4"><span style="font-weight: bold; font-size: 24px;">Zookeeper connection parameters</span></td>
@@ -3940,8 +4516,8 @@ We will list only main configuration parameters below to avoid duplication of th
        <tr>
            <td>service.type.</td>
            <td>TB_SERVICE_TYPE</td>
-           <td>monolith</td>
-           <td>Tb Queue service type. Can be: monolith or tb-core or tb-rule-engine</td>
+           <td>tb-transport</td>
+           <td>Tb Queue service type. Can be: monolith or tb-core or tb-rule-engine or tb-transport</td>
        </tr>
        <tr>
            <td>service.id.</td>
@@ -4042,6 +4618,108 @@ We will list only main configuration parameters below to avoid duplication of th
           <td>10000</td>
           <td>CoaP processing timeout in milliseconds</td>
       </tr>          
+      <tr>
+          <td>transport.coap.psm_activity_timer</td>
+          <td>COAP_PSM_ACTIVITY_TIMER</td>
+          <td>10000</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>transport.coap.paging_transmission_window</td>
+          <td>COAP_PAGING_TRANSMISSION_WINDOW</td>
+          <td>10000</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>transport.coap.dtls.enabled</td>
+          <td>COAP_DTLS_ENABLED</td>
+          <td>false</td>
+          <td>Enable/disable DTLS 1.2 support</td>
+      </tr>
+      <tr>
+          <td>transport.coap.dtls.bind_address</td>
+          <td>COAP_DTLS_BIND_ADDRESS</td>
+          <td>0.0.0.0</td>
+          <td>CoAP DTLS bind address</td>
+      </tr>
+      <tr>
+          <td>transport.coap.dtls.bind_port</td>
+          <td>COAP_DTLS_BIND_PORT</td>
+          <td>5684</td>
+          <td>CoAP DTLS bind port</td>
+      </tr>
+      <tr>
+          <td>transport.coap.dtls.credentials.type</td>
+          <td>COAP_DTLS_CREDENTIALS_TYPE</td>
+          <td>PEM</td>
+          <td>Server credentials type (PEM - pem certificate file; KEYSTORE - java keystore)</td>
+      </tr>
+      <tr>
+          <td>transport.coap.dtls.credentials.pem.cert_file</td>
+          <td>COAP_DTLS_PEM_CERT</td>
+          <td>coapserver.pem</td>
+          <td>Path to the server certificate file (holds server certificate or certificate chain, may include server private key)</td>
+      </tr>
+      <tr>
+          <td>transport.coap.dtls.credentials.pem.key_file</td>
+          <td>COAP_DTLS_PEM_KEY</td>
+          <td>coapserver_key.pem</td>
+          <td>Path to the server certificate private key file (optional)</td>
+      </tr>
+      <tr>
+          <td>transport.coap.dtls.credentials.pem.key_password</td>
+          <td>COAP_DTLS_PEM_KEY_PASSWORD</td>
+          <td>server_key_password</td>
+          <td>Server certificate private key password (optional)</td>
+      </tr>
+      <tr>
+          <td>transport.coap.dtls.credentials.keystore.type</td>
+          <td>COAP_DTLS_KEY_STORE_TYPE</td>
+          <td>JKS</td>
+          <td>Type of the key store</td>
+      </tr>
+      <tr>
+          <td>transport.coap.dtls.credentials.keystore.store_file</td>
+          <td>COAP_DTLS_KEY_STORE</td>
+          <td>coapserver.jks</td>
+          <td>Path to the key store that holds the SSL certificate</td>
+      </tr>
+      <tr>
+          <td>transport.coap.dtls.credentials.keystore.store_password</td>
+          <td>COAP_DTLS_KEY_STORE_PASSWORD</td>
+          <td>server_ks_password</td>
+          <td>Password used to access the key store</td>
+      </tr>
+      <tr>
+          <td>transport.coap.dtls.credentials.keystore.key_alias</td>
+          <td>COAP_DTLS_KEY_ALIAS</td>
+          <td>serveralias</td>
+          <td>Key alias</td>
+      </tr>
+      <tr>
+          <td>transport.coap.dtls.credentials.keystore.key_password</td>
+          <td>COAP_DTLS_KEY_PASSWORD</td>
+          <td>server_key_password</td>
+          <td>Password used to access the key</td>
+      </tr>
+      <tr>
+          <td>transport.coap.dtls.x509.skip_validity_check_for_client_cert</td>
+          <td>TB_COAP_X509_DTLS_SKIP_VALIDITY_CHECK_FOR_CLIENT_CERT</td>
+          <td>false</td>
+          <td>Skip certificate validity check for client certificates</td>
+      </tr>
+      <tr>
+          <td>transport.coap.dtls.x509.dtls_session_inactivity_timeout</td>
+          <td>TB_COAP_X509_DTLS_SESSION_INACTIVITY_TIMEOUT</td>
+          <td>86400000</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>transport.coap.dtls.x509.dtls_session_report_timeout</td>
+          <td>TB_COAP_X509_DTLS_SESSION_REPORT_TIMEOUT</td>
+          <td>1800000</td>
+          <td></td>
+      </tr>
       <tr>
             <td>transport.sessions.inactivity_timeout</td>
             <td>TB_TRANSPORT_SESSIONS_INACTIVITY_TIMEOUT</td>
@@ -4825,8 +5503,8 @@ We will list only main configuration parameters below to avoid duplication of th
        <tr>
            <td>service.type.</td>
            <td>TB_SERVICE_TYPE</td>
-           <td>monolith</td>
-           <td>Tb Queue service type. Can be: monolith or tb-core or tb-rule-engine</td>
+           <td>tb-transport</td>
+           <td>Tb Queue service type. Can be: monolith or tb-core or tb-rule-engine or tb-transport</td>
        </tr>
        <tr>
            <td>service.id.</td>
@@ -4852,341 +5530,2018 @@ We will list only main configuration parameters below to avoid duplication of th
       </tr>
   </thead>
   <tbody>
-        <tr>
-            <td colspan="4"><span style="font-weight: bold; font-size: 24px;">Common</span></td>
-        </tr>
-        <tr>
-            <td>transport.lwm2m.enabled</td>
-            <td>LWM2M_ENABLED</td>
-            <td>true</td>
-            <td>Enable/disable lvm2m transport protocol.</td>
-        </tr> 
-        <tr>
-            <td>transport.lwm2m.timeout</td>
-            <td>LWM2M_TIMEOUT</td>
-            <td>120000</td>
-            <td>- We choose a default timeout a bit higher to the MAX_TRANSMIT_WAIT(62-93s) which is the time from starting to  send a Confirmable message to the time when an acknowledgement is no longer expected.<br>
-                - DEFAULT_TIMEOUT = 2 * 60 * 1000l; 2 min in ms
-            </td>
-        </tr>      
-        <tr>
+      <tr>
+          <td>spring.main.web-environment</td>
+          <td> </td>
+          <td>false</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>spring.main.web-application-type</td>
+          <td></td>
+          <td>none</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td colspan="4"><span style="font-weight: bold; font-size: 24px;">Zookeeper connection parameters</span></td>
+      </tr>  
+      <tr>
+          <td>zk.enabled</td>
+          <td>ZOOKEEPER_ENABLED</td>
+          <td>false</td>
+          <td>Enable/disable zookeeper discovery service. Used for ThingsBoard cluster</td>
+      </tr>
+      <tr>
+          <td>zk.url</td>
+          <td>ZOOKEEPER_URL</td>
+          <td>localhost:2181</td>
+          <td>Zookeeper connect string</td>
+      </tr>
+      <tr>
+          <td>zk.retry_interval_ms</td>
+          <td>ZOOKEEPER_RETRY_INTERVAL_MS</td>
+          <td>3000</td>
+          <td>Zookeeper retry interval in milliseconds</td>
+      </tr>
+      <tr>
+          <td>zk.connection_timeout_ms</td>
+          <td>ZOOKEEPER_CONNECTION_TIMEOUT_MS</td>
+          <td>3000</td>
+          <td>Zookeeper connection timeout in milliseconds</td>
+      </tr>
+      <tr>
+          <td>zk.session_timeout_ms</td>
+          <td>ZOOKEEPER_SESSION_TIMEOUT_MS</td>
+          <td>3000</td>
+          <td>Zookeeper session timeout in milliseconds</td>
+      </tr>
+      <tr>
+          <td>zk.zk_dir</td>
+          <td>ZOOKEEPER_NODES_DIR</td>
+          <td>/thingsboard</td>
+          <td>Name of the directory in zookeeper 'filesystem'</td>
+      </tr> 
+      <tr>
+          <td colspan="4"><span style="font-weight: bold; font-size: 24px;">LwM2M server parameters</span></td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.server.id</td>
+          <td>LWM2M_SERVER_ID</td>
+          <td>123</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.server.bind_address</td>
+          <td>LWM2M_BIND_ADDRESS</td>
+          <td>0.0.0.0</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.server.bind_port</td>
+          <td>LWM2M_BIND_PORT</td>
+          <td>5685</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.server.security.bind_address</td>
+          <td>LWM2M_SECURITY_BIND_ADDRESS</td>
+          <td>0.0.0.0</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.server.security.bind_port</td>
+          <td>LWM2M_SECURITY_BIND_PORT</td>
+          <td>5686</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.server.security.credentials.enabled</td>
+          <td>LWM2M_SERVER_CREDENTIALS_ENABLED</td>
+          <td>true</td>
+          <td>Whether to enable LWM2M server X509 Certificate/RPK support</td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.server.security.credentials.type</td>
+          <td>LWM2M_SERVER_CREDENTIALS_TYPE</td>
+          <td>PEM</td>
+          <td>Server credentials type (PEM - pem certificate file; KEYSTORE - java keystore)</td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.server.security.credentials.pem.cert_file</td>
+          <td>LWM2M_SERVER_PEM_CERT</td>
+          <td>lwm2mserver.pem</td>
+          <td>Path to the server certificate file (holds server certificate or certificate chain, may include server private key)</td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.server.security.credentials.pem.key_file</td>
+          <td>LWM2M_SERVER_PEM_KEY</td>
+          <td>lwm2mserver_key.pem</td>
+          <td>Path to the server certificate private key file (optional)</td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.server.security.credentials.pem.key_password</td>
+          <td>LWM2M_SERVER_PEM_KEY_PASSWORD</td>
+          <td>server_key_password</td>
+          <td>Server certificate private key password (optional)</td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.server.security.credentials.keystore.type</td>
+          <td>LWM2M_SERVER_KEY_STORE_TYPE</td>
+          <td>JKS</td>
+          <td>Type of the key store</td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.server.security.credentials.keystore.store_file</td>
+          <td>LWM2M_SERVER_KEY_STORE</td>
+          <td>lwm2mserver.jks</td>
+          <td>Path to the key store that holds the SSL certificate</td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.server.security.credentials.keystore.store_password</td>
+          <td>LWM2M_SERVER_KEY_STORE_PASSWORD</td>
+          <td>server_ks_password</td>
+          <td>Password used to access the key store</td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.server.security.credentials.keystore.key_alias</td>
+          <td>LWM2M_SERVER_KEY_ALIAS</td>
+          <td>server</td>
+          <td>Key alias</td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.server.security.credentials.keystore.key_password</td>
+          <td>LWM2M_SERVER_KEY_PASSWORD</td>
+          <td>server_key_password</td>
+          <td>Password used to access the key</td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.server.security.skip_validity_check_for_client_cert</td>
+          <td>TB_LWM2M_SERVER_SECURITY_SKIP_VALIDITY_CHECK_FOR_CLIENT_CERT</td>
+          <td>false</td>
+          <td>Skip certificate validity check for client certificates (Only for X509 certificates mode)</td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.bootstrap.enable</td>
+          <td>LWM2M_ENABLED_BS</td>
+          <td>true</td>
+          <td>Enable/Disable local LwM2M bootstrap server</td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.bootstrap.id</td>
+          <td>LWM2M_SERVER_ID_BS</td>
+          <td>111</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.bootstrap.bind_address</td>
+          <td>LWM2M_BS_BIND_ADDRESS</td>
+          <td>0.0.0.0</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.bootstrap.bind_port</td>
+          <td>LWM2M_BS_BIND_PORT</td>
+          <td>5687</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.bootstrap.security.bind_address</td>
+          <td>LWM2M_BS_SECURITY_BIND_ADDRESS</td>
+          <td>0.0.0.0</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.bootstrap.security.bind_port</td>
+          <td>LWM2M_BS_SECURITY_BIND_PORT</td>
+          <td>5688</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.bootstrap.security.credentials.enabled</td>
+          <td>LWM2M_BS_CREDENTIALS_ENABLED</td>
+          <td>true</td>
+          <td>Whether to enable LWM2M bootstrap server X509 Certificate/RPK support</td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.bootstrap.security.credentials.type</td>
+          <td>LWM2M_BS_CREDENTIALS_TYPE</td>
+          <td>PEM</td>
+          <td>Server credentials type (PEM - pem certificate file; KEYSTORE - java keystore)</td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.bootstrap.security.credentials.pem.cert_file</td>
+          <td>LWM2M_BS_PEM_CERT</td>
+          <td>lwm2mserver.pem</td>
+          <td>Path to the server certificate file (holds server certificate or certificate chain, may include server private key)</td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.bootstrap.security.credentials.pem.key_file</td>
+          <td>LWM2M_BS_PEM_KEY</td>
+          <td>lwm2mserver_key.pem</td>
+          <td>Path to the server certificate private key file (optional)</td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.bootstrap.security.credentials.pem.key_password</td>
+          <td>LWM2M_BS_PEM_KEY_PASSWORD</td>
+          <td>server_key_password</td>
+          <td>Server certificate private key password (optional)</td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.bootstrap.security.credentials.keystore.type</td>
+          <td>LWM2M_BS_KEY_STORE_TYPE</td>
+          <td>JKS</td>
+          <td>Type of the key store</td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.bootstrap.security.credentials.keystore.store_file</td>
+          <td>LWM2M_BS_KEY_STORE</td>
+          <td>lwm2mserver.jks</td>
+          <td>Path to the key store that holds the SSL certificate</td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.bootstrap.security.credentials.keystore.store_password</td>
+          <td>LWM2M_BS_KEY_STORE_PASSWORD</td>
+          <td>server_ks_password</td>
+          <td>Password used to access the key store</td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.bootstrap.security.credentials.keystore.key_alias</td>
+          <td>LWM2M_BS_KEY_ALIAS</td>
+          <td>bootstrap</td>
+          <td>Key alias</td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.bootstrap.security.credentials.keystore.key_password</td>
+          <td>LWM2M_BS_KEY_PASSWORD</td>
+          <td>server_key_password</td>
+          <td>Password used to access the key</td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.security.trust-credentials.enabled</td>
+          <td>LWM2M_TRUST_CREDENTIALS_ENABLED</td>
+          <td>true</td>
+          <td>Whether to load X509 trust certificates</td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.security.trust-credentials.type</td>
+          <td>LWM2M_TRUST_CREDENTIALS_TYPE</td>
+          <td>PEM</td>
+          <td>Trust certificates store type (PEM - pem certificate file; KEYSTORE - java keystore)</td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.security.trust-credentials.pem.cert_file</td>
+          <td>LWM2M_TRUST_PEM_CERT</td>
+          <td>lwm2mserver.pem</td>
+          <td>Path to the certificates file (holds trust certificates)</td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.security.trust-credentials.keystore.type</td>
+          <td>LWM2M_TRUST_KEY_STORE_TYPE</td>
+          <td>JKS</td>
+          <td>Type of the key store</td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.security.trust-credentials.keystore.store_file</td>
+          <td>LWM2M_TRUST_KEY_STORE</td>
+          <td>lwm2mserver.jks</td>
+          <td>Path to the key store that holds the X509 certificates</td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.security.trust-credentials.keystore.store_password</td>
+          <td>LWM2M_TRUST_KEY_STORE_PASSWORD</td>
+          <td>server_ks_password</td>
+          <td>Password used to access the key store</td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.security.recommended_ciphers</td>
+          <td>LWM2M_RECOMMENDED_CIPHERS</td>
+          <td>false</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.security.recommended_supported_groups</td>
+          <td>LWM2M_RECOMMENDED_SUPPORTED_GROUPS</td>
+          <td>true</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.timeout</td>
+          <td>LWM2M_TIMEOUT</td>
+          <td>120000</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.uplink_pool_size</td>
+          <td>LWM2M_UPLINK_POOL_SIZE</td>
+          <td>10</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.downlink_pool_size</td>
+          <td>LWM2M_DOWNLINK_POOL_SIZE</td>
+          <td>10</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.ota_pool_size</td>
+          <td>LWM2M_OTA_POOL_SIZE</td>
+          <td>10</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.clean_period_in_sec</td>
+          <td>LWM2M_CLEAN_PERIOD_IN_SEC</td>
+          <td>2</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.log_max_length</td>
+          <td>LWM2M_LOG_MAX_LENGTH</td>
+          <td>1024</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>transport.lwm2m.redis.enabled</td>
+          <td>LWM2M_REDIS_ENABLED</td>
+          <td>false</td>
+          <td>Whether to use redis for Security and Registration stores</td>
+      </tr>
+      <tr>
             <td>transport.sessions.inactivity_timeout</td>
             <td>TB_TRANSPORT_SESSIONS_INACTIVITY_TIMEOUT</td>
             <td>300000</td>
-            <td>Used  in initSessionTimeout.<br>
-                If (lastActivityTime of session < (currentTimeMillis - inactivity_timeout)) then the session is closed
-            </td>
-        </tr> 
-        <tr>
-            <td colspan="4"><span style="font-weight: bold; font-size: 24px;">Create and Set DTLS Config</span></td>
+            <td></td>
         </tr>
         <tr>
-            <td>transport.lwm2m.recommended_ciphers</td>
-            <td>LWM2M_RECOMMENDED_CIPHERS</td>
+            <td>transport.sessions.report_timeout</td>
+            <td>TB_TRANSPORT_SESSIONS_REPORT_TIMEOUT</td>
+            <td>30000</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>transport.rate_limits.enabled</td>
+            <td>TB_TRANSPORT_RATE_LIMITS_ENABLED</td>
             <td>false</td>
-            <td> Set usage of recommended cipher suites.<br> 
-                * Params DTLS Connector config:<br>
-                -- recommendedCipherSuitesOnly = true allow only recommended cipher suites,<br>
-                -- recommendedCipherSuitesOnly = false, also allow not recommended cipher suites. 
-            </td>
+            <td>Enabel/Disable rate limits on transport layer</td>
         </tr>
         <tr>
-            <td>transport.lwm2m.recommended_supported_groups</td>
-            <td>LWM2M_RECOMMENDED_SUPPORTED_GROUPS</td>
+            <td>transport.rate_limits.tenant</td>
+            <td>TB_TRANSPORT_RATE_LIMITS_TENANT</td>
+            <td>1000:1,20000:60</td>
+            <td>Tenant Rate limit policy x:y where x = number of messages per time unit, y = timeunit size in seconds</td>
+        </tr>
+        <tr>
+            <td>transport.rate_limits.device</td>
+            <td>TB_TRANSPORT_RATE_LIMITS_DEVICE</td>
+            <td>10:1,300:60</td>
+            <td>Device Rate limit policy x:y where x = number of messages per time unit, y = timeunit size in seconds</td>
+        </tr>
+        <tr>
+            <td>transport.json.type_cast_enabled</td>
+            <td>JSON_TYPE_CAST_ENABLED</td>
             <td>true</td>
-            <td>Set usage of recommended supported groups (curves).<br>
-                * Params DTLS Connector config:<br>
-                -- recommendedSupportedGroupsOnly = true allow only recommended supported groups,<br>
-                -- recommendedSupportedGroupsOnly = false, also allow not recommended supported groups. Default value is true</td>
+            <td>Cast String data types to Numeric if possible when processing Telemetry/Attributes JSON</td>
+        </tr>
+      <tr>
+          <td>transport.json.max_string_value_length</td>
+          <td>JSON_MAX_STRING_VALUE_LENGTH</td>
+          <td>0</td>
+          <td>Maximum allowed string value length when processing Telemetry/Attributes JSON (0 value disables string value length check)</td>
+      </tr>
+      <tr>
+           <td colspan="4"><span style="font-weight: bold; font-size: 24px;">Queue parameters</span></td>
+      </tr>  
+      <tr>
+          <td>queue.type</td>
+          <td>TB_QUEUE_TYPE</td>
+          <td>kafka</td>
+          <td>Queue type. Can be: kafka (Apache Kafka) or aws-sqs (AWS SQS) or pubsub (PubSub) or service-bus (Azure Service Bus) or rabbitmq (RabbitMQ)</td>
+      </tr>
+      <tr>
+          <td>queue.kafka.bootstrap.servers</td>
+          <td>TB_KAFKA_SERVERS</td>
+          <td>localhost:9092</td>
+          <td>List of kafka bootstrap servers used to establish connection</td>
+      </tr>
+      <tr>
+          <td>queue.kafka.acks</td>
+          <td>TB_KAFKA_ACKS</td>
+          <td>all</td>
+          <td>The number of acknowledgments the producer requires the leader to have received before considering a request complete</td>
+      </tr>
+      <tr>
+          <td>queue.kafka.retries</td>
+          <td>TB_KAFKA_RETRIES</td>
+          <td>1</td>
+          <td>Setting a value greater than zero will cause the client to resend any record whose send fails with a potentially transient error</td>
+      </tr>
+      <tr>
+          <td>queue.kafka.batch.size</td>
+          <td>TB_KAFKA_BATCH_SIZE</td>
+          <td>16384</td>
+          <td>The producer will attempt to batch records together into fewer requests whenever multiple records are being sent to the same partition</td>
+      </tr>
+      <tr>
+          <td>queue.kafka.linger.ms</td>
+          <td>TB_KAFKA_LINGER_MS</td>
+          <td>1</td>
+          <td>The producer groups together any records that arrive in between request transmissions into a single batched request</td>
+      </tr>
+      <tr>
+          <td>queue.kafka.buffer.memory</td>
+          <td>TB_BUFFER_MEMORY</td>
+          <td>33554432</td>
+          <td>The total bytes of memory the producer can use to buffer records waiting to be sent to the server</td>
+      </tr>
+      <tr>
+          <td>queue.kafka.replication_factor</td>
+          <td>TB_QUEUE_KAFKA_REPLICATION_FACTOR</td>
+          <td>1</td>
+          <td>Replication factor defines the number of copies of a topic in a Kafka cluster</td>
+      </tr>
+      <tr>
+          <td>queue.kafka.topic-properties.rule-engine</td>
+          <td>TB_QUEUE_KAFKA_RE_TOPIC_PROPERTIES</td>
+          <td>retention.ms:604800000;segment.bytes:26214400;retention.bytes:1048576000</td>
+          <td>Kafka properties for Rule Engine topics</td>
+      </tr>
+      <tr>
+          <td>queue.kafka.topic-properties.core</td>
+          <td>TB_QUEUE_KAFKA_CORE_TOPIC_PROPERTIES</td>
+          <td>retention.ms:604800000;segment.bytes:26214400;retention.bytes:1048576000</td>
+          <td>Kafka properties for Core topics</td>
+      </tr>
+      <tr>
+          <td>queue.kafka.topic-properties.transport-api</td>
+          <td>TB_QUEUE_KAFKA_TA_TOPIC_PROPERTIES</td>
+          <td>retention.ms:604800000;segment.bytes:26214400;retention.bytes:1048576000</td>
+          <td>Kafka properties for Transport Api topics</td>
+      </tr>
+      <tr>
+          <td>queue.kafka.topic-properties.notifications</td>
+          <td>TB_QUEUE_KAFKA_NOTIFICATIONS_TOPIC_PROPERTIES</td>
+          <td>retention.ms:604800000;segment.bytes:26214400;retention.bytes:1048576000</td>
+          <td>Kafka properties for Notifications topics</td>
+      </tr>
+      <tr>
+          <td>queue.kafka.topic-properties.js-executor</td>
+          <td>TB_QUEUE_KAFKA_JE_TOPIC_PROPERTIES</td>
+          <td>retention.ms:604800000;segment.bytes:26214400;retention.bytes:1048576000</td>
+          <td>Kafka properties for Js Executor topics</td>
+      </tr>
+      <tr>
+          <td>queue.kafka.consumer-stats.enabled</td>
+          <td>TB_QUEUE_KAFKA_CONSUMER_STATS_ENABLED</td>
+          <td>true</td>
+          <td>Prints lag between consumer group offset and last messages offset in Kafka topics</td>
+      </tr>
+      <tr>
+          <td>queue.kafka.consumer-stats.print-interval-ms</td>
+          <td>TB_QUEUE_KAFKA_CONSUMER_STATS_MIN_PRINT_INTERVAL_MS</td>
+          <td>60000</td>
+          <td>Statistics printing interval for Kafka's consumer-groups stats</td>
+      </tr>
+      <tr>
+          <td>queue.kafka.consumer-stats.kafka-response-timeout-ms</td>
+          <td>TB_QUEUE_KAFKA_CONSUMER_STATS_RESPONSE_TIMEOUT_MS</td>
+          <td>1000</td>
+          <td>Time to wait for the stats-loading requests to Kafka to finish</td>
+      </tr>
+      <tr>
+          <td>queue.aws_sqs.access_key_id</td>
+          <td>TB_QUEUE_AWS_SQS_ACCESS_KEY_ID</td>
+          <td>YOUR_KEY</td>
+          <td>Access key ID from AWS IAM user</td>
+      </tr>
+      <tr>
+          <td>queue.aws_sqs.secret_access_key</td>
+          <td>TB_QUEUE_AWS_SQS_SECRET_ACCESS_KEY</td>
+          <td>YOUR_SECRET</td>
+          <td>Secret access key from AWS IAM user</td>
+      </tr>
+      <tr>
+          <td>queue.aws_sqs.region</td>
+          <td>TB_QUEUE_AWS_SQS_REGION</td>
+          <td>YOUR_REGION</td>
+          <td>Region from AWS account</td>
+      </tr>
+      <tr>
+          <td>queue.aws_sqs.threads_per_topic</td>
+          <td>TB_QUEUE_AWS_SQS_THREADS_PER_TOPIC</td>
+          <td>1</td>
+          <td>Number of threads per each AWS SQS queue in consumer</td>
+      </tr>
+      <tr>
+          <td>queue.aws_sqs.queue-properties.rule-engine</td>
+          <td>TB_QUEUE_AWS_SQS_RE_QUEUE_PROPERTIES</td>
+          <td>VisibilityTimeout:30;MaximumMessageSize:262144;MessageRetentionPeriod:604800</td>
+          <td>AWS SQS properties for Rule Engine queues, messages which will commit after visibility timeout period can be consume again. VisibilityTimeout in seconds;MaximumMessageSize in bytes;MessageRetentionPeriod in seconds</td>
+      </tr>
+      <tr>
+          <td>queue.aws_sqs.queue-properties.core</td>
+          <td>TB_QUEUE_AWS_SQS_CORE_QUEUE_PROPERTIES</td>
+          <td>VisibilityTimeout:30;MaximumMessageSize:262144;MessageRetentionPeriod:604800</td>
+          <td>AWS SQS properties for Core queues, messages which will commit after visibility timeout period can be consume again. VisibilityTimeout in seconds;MaximumMessageSize in bytes;MessageRetentionPeriod in seconds</td>
+      </tr>
+      <tr>
+          <td>queue.aws_sqs.queue-properties.transport-api</td>
+          <td>TB_QUEUE_AWS_SQS_TA_QUEUE_PROPERTIES</td>
+          <td>VisibilityTimeout:30;MaximumMessageSize:262144;MessageRetentionPeriod:604800</td>
+          <td>AWS SQS properties for Transport Api queues, messages which will commit after visibility timeout period can be consume again. VisibilityTimeout in seconds;MaximumMessageSize in bytes;MessageRetentionPeriod in seconds</td>
+      </tr>
+      <tr>
+          <td>queue.aws_sqs.queue-properties.notifications</td>
+          <td>TB_QUEUE_AWS_SQS_NOTIFICATIONS_QUEUE_PROPERTIES</td>
+          <td>VisibilityTimeout:30;MaximumMessageSize:262144;MessageRetentionPeriod:604800</td>
+          <td>AWS SQS properties for Notifications queues, messages which will commit after visibility timeout period can be consume again. VisibilityTimeout in seconds;MaximumMessageSize in bytes;MessageRetentionPeriod in seconds</td>
+      </tr>
+      <tr>
+          <td>queue.aws_sqs.queue-properties.js-executor</td>
+          <td>TB_QUEUE_AWS_SQS_JE_QUEUE_PROPERTIES</td>
+          <td>VisibilityTimeout:30;MaximumMessageSize:262144;MessageRetentionPeriod:604800</td>
+          <td>AWS SQS properties for Transport Api queues, messages which will commit after visibility timeout period can be consume again. VisibilityTimeout in seconds;MaximumMessageSize in bytes;MessageRetentionPeriod in seconds</td>
+      </tr>
+      <tr>
+          <td>queue.pubsub.project_id</td>
+          <td>TB_QUEUE_PUBSUB_PROJECT_ID</td>
+          <td>YOUR_PROJECT_ID</td>
+          <td>Project Id from google cloud</td>
+      </tr>
+      <tr>
+          <td>queue.pubsub.service_account</td>
+          <td>TB_QUEUE_PUBSUB_SERVICE_ACCOUNT</td>
+          <td>YOUR_SERVICE_ACCOUNT</td>
+          <td>API Credentials in json format</td>
+      </tr>
+      <tr>
+          <td>queue.pubsub.max_msg_size</td>
+          <td>TB_QUEUE_PUBSUB_MAX_MSG_SIZE</td>
+          <td>1048576</td>
+          <td>Pub/Sub max message size. In bytes</td>
+      </tr>
+      <tr>
+          <td>queue.pubsub.max_messages</td>
+          <td>TB_QUEUE_PUBSUB_MAX_MESSAGES</td>
+          <td>1000</td>
+          <td>Number of messages per a consumer</td>
+      </tr>
+      <tr>
+          <td>queue.pubsub.queue-properties.rule-engine</td>
+          <td>TB_QUEUE_PUBSUB_RE_QUEUE_PROPERTIES</td>
+          <td>ackDeadlineInSec:30;messageRetentionInSec:604800</td>
+          <td>Pub/Sub properties for Rule Engine subscribers, messages which will commit after ackDeadlineInSec period can be consume again</td>
+      </tr>
+      <tr>
+          <td>queue.pubsub.queue-properties.core</td>
+          <td>TB_QUEUE_PUBSUB_CORE_QUEUE_PROPERTIES</td>
+          <td>ackDeadlineInSec:30;messageRetentionInSec:604800</td>
+          <td>Pub/Sub properties for Core subscribers, messages which will commit after ackDeadlineInSec period can be consume again</td>
+      </tr>
+      <tr>
+          <td>queue.pubsub.queue-properties.transport-api</td>
+          <td>TB_QUEUE_PUBSUB_TA_QUEUE_PROPERTIES</td>
+          <td>ackDeadlineInSec:30;messageRetentionInSec:604800</td>
+          <td>Pub/Sub properties for Transport Api subscribers, messages which will commit after ackDeadlineInSec period can be consume again</td>
+      </tr>
+      <tr>
+          <td>queue.pubsub.queue-properties.notifications</td>
+          <td>TB_QUEUE_PUBSUB_NOTIFICATIONS_QUEUE_PROPERTIES</td>
+          <td>ackDeadlineInSec:30;messageRetentionInSec:604800</td>
+          <td>Pub/Sub properties for Notifications subscribers, messages which will commit after ackDeadlineInSec period can be consume again</td>
+      </tr>
+      <tr>
+          <td>queue.pubsub.queue-properties.js-executor</td>
+          <td>TB_QUEUE_PUBSUB_JE_QUEUE_PROPERTIES</td>
+          <td>ackDeadlineInSec:30;messageRetentionInSec:604800</td>
+          <td>Pub/Sub properties for Js Executor subscribers, messages which will commit after ackDeadlineInSec period can be consume again</td>
+      </tr>
+      <tr>
+          <td>queue.service_bus.namespace_name</td>
+          <td>TB_QUEUE_SERVICE_BUS_NAMESPACE_NAME</td>
+          <td>YOUR_NAMESPACE_NAME</td>
+          <td>Azure namespace is a scoping container for all messaging components</td>
+      </tr>
+      <tr>
+          <td>queue.service_bus.sas_key_name</td>
+          <td>TB_QUEUE_SERVICE_BUS_SAS_KEY_NAME</td>
+          <td>YOUR_SAS_KEY_NAME</td>
+          <td>Azure Service Bus Shared Access Signatures key name</td>
+      </tr>
+      <tr>
+          <td>queue.service_bus.sas_key</td>
+          <td>TB_QUEUE_SERVICE_BUS_SAS_KEY</td>
+          <td>YOUR_SAS_KEY</td>
+          <td>Azure Service Bus Shared Access Signatures key</td>
+      </tr>
+      <tr>
+          <td>queue.service_bus.max_messages</td>
+          <td>TB_QUEUE_SERVICE_BUS_MAX_MESSAGES</td>
+          <td>1000</td>
+          <td>Number of messages per a consumer</td>
+      </tr>
+      <tr>
+          <td>queue.service_bus.queue-properties.rule-engine</td>
+          <td>TB_QUEUE_SERVICE_BUS_RE_QUEUE_PROPERTIES</td>
+          <td>lockDurationInSec:30;maxSizeInMb:1024;messageTimeToLiveInSec:604800</td>
+          <td>Azure Service Bus properties for Rule Engine queues</td>
+      </tr>
+      <tr>
+          <td>queue.service_bus.queue-properties.core</td>
+          <td>TB_QUEUE_SERVICE_BUS_CORE_QUEUE_PROPERTIES</td>
+          <td>lockDurationInSec:30;maxSizeInMb:1024;messageTimeToLiveInSec:604800</td>
+          <td>Azure Service Bus properties for Core queues</td>
+      </tr>
+      <tr>
+          <td>queue.service_bus.queue-properties.transport-api</td>
+          <td>TB_QUEUE_SERVICE_BUS_TA_QUEUE_PROPERTIES</td>
+          <td>lockDurationInSec:30;maxSizeInMb:1024;messageTimeToLiveInSec:604800</td>
+          <td>Azure Service Bus properties for Transport Api queues</td>
+      </tr>
+      <tr>
+          <td>queue.service_bus.queue-properties.notifications</td>
+          <td>TB_QUEUE_SERVICE_BUS_NOTIFICATIONS_QUEUE_PROPERTIES</td>
+          <td>lockDurationInSec:30;maxSizeInMb:1024;messageTimeToLiveInSec:604800</td>
+          <td>Azure Service Bus properties for Notifications queues</td>
+      </tr>
+      <tr>
+          <td>queue.service_bus.queue-properties.js-executor</td>
+          <td>TB_QUEUE_SERVICE_BUS_JE_QUEUE_PROPERTIES</td>
+          <td>lockDurationInSec:30;maxSizeInMb:1024;messageTimeToLiveInSec:604800</td>
+          <td>Azure Service Bus properties for Js Executor queues</td>
+      </tr>      
+      <tr>
+          <td>queue.rabbitmq.exchange_name</td>
+          <td>TB_QUEUE_RABBIT_MQ_EXCHANGE_NAME</td>
+          <td></td>
+          <td>Default empty</td>
+      </tr>
+      <tr>
+          <td>queue.rabbitmq.host</td>
+          <td>TB_QUEUE_RABBIT_MQ_HOST</td>
+          <td>localhost</td>
+          <td>RabbitMQ host used to establish connection</td>
+      </tr>
+      <tr>
+          <td>queue.rabbitmq.port</td>
+          <td>TB_QUEUE_RABBIT_MQ_PORT</td>
+          <td>5672</td>
+          <td>RabbitMQ host used to establish connection</td>
+      </tr>
+      <tr>
+          <td>queue.rabbitmq.virtual_host</td>
+          <td>TB_QUEUE_RABBIT_MQ_VIRTUAL_HOST</td>
+          <td>/</td>
+          <td>Virtual hosts provide logical grouping and separation of resources</td>
+      </tr>
+      <tr>
+          <td>queue.rabbitmq.username</td>
+          <td>TB_QUEUE_RABBIT_MQ_USERNAME</td>
+          <td>YOUR_USERNAME</td>
+          <td>User name for RabbitMQ user account</td>
+      </tr>      
+      <tr>
+          <td>queue.rabbitmq.password</td>
+          <td>TB_QUEUE_RABBIT_MQ_PASSWORD</td>
+          <td>YOUR_PASSWORD</td>
+          <td>User password for RabbitMQ user account</td>
+      </tr>      
+      <tr>
+          <td>queue.rabbitmq.automatic_recovery_enabled</td>
+          <td>TB_QUEUE_RABBIT_MQ_AUTOMATIC_RECOVERY_ENABLED</td>
+          <td>false</td>
+          <td>Network connection between clients and RabbitMQ nodes can fail. RabbitMQ Java client supports automatic recovery of connections and topology (queues, exchanges, bindings, and consumers).</td>
+      </tr>
+      <tr>
+          <td>queue.rabbitmq.connection_timeout</td>
+          <td>TB_QUEUE_RABBIT_MQ_CONNECTION_TIMEOUT</td>
+          <td>60000</td>
+          <td>The connection timeout for the RabbitMQ connection factory</td>
+      </tr>
+      <tr>
+          <td>queue.rabbitmq.handshake_timeout</td>
+          <td>TB_QUEUE_RABBIT_MQ_HANDSHAKE_TIMEOUT</td>
+          <td>10000</td>
+          <td>RabbitMQ has a timeout for connection handshake. When clients run in heavily constrained environments, it may be necessary to increase the timeout.</td>
+      </tr>                  
+      <tr>
+          <td>queue.rabbitmq.queue-properties.rule-engine</td>
+          <td>TB_QUEUE_RABBIT_MQ_RE_QUEUE_PROPERTIES</td>
+          <td>x-max-length-bytes:1048576000;x-message-ttl:604800000</td>
+          <td>RabbitMQ properties for Rule Engine queues</td>
+      </tr>
+      <tr>
+          <td>queue.rabbitmq.queue-properties.core</td>
+          <td>TB_QUEUE_RABBIT_MQ_CORE_QUEUE_PROPERTIES</td>
+          <td>x-max-length-bytes:1048576000;x-message-ttl:604800000</td>
+          <td>RabbitMQ properties for Core queues</td>
+      </tr>
+      <tr>
+          <td>queue.rabbitmq.queue-properties.transport-api</td>
+          <td>TB_QUEUE_RABBIT_MQ_TA_QUEUE_PROPERTIES</td>
+          <td>x-max-length-bytes:1048576000;x-message-ttl:604800000</td>
+          <td>RabbitMQ properties for Transport Api queues</td>
+      </tr>
+      <tr>
+          <td>queue.rabbitmq.queue-properties.notifications</td>
+          <td>TB_QUEUE_RABBIT_MQ_NOTIFICATIONS_QUEUE_PROPERTIES</td>
+          <td>x-max-length-bytes:1048576000;x-message-ttl:604800000</td>
+          <td>RabbitMQ properties for Notifications queues</td>
+      </tr>
+      <tr>
+          <td>queue.rabbitmq.queue-properties.js-executor</td>
+          <td>TB_QUEUE_RABBIT_MQ_JE_QUEUE_PROPERTIES</td>
+          <td>x-max-length-bytes:1048576000;x-message-ttl:604800000</td>
+          <td>RabbitMQ properties for Js Executor queues</td>
+      </tr>
+      <tr>
+          <td>queue.partitions.hash_function_name</td>
+          <td>TB_QUEUE_PARTITIONS_HASH_FUNCTION_NAME</td>
+          <td>murmur3_128</td>
+          <td>Name of hash function used for consistent hash ring in Cluster Mode. See architecture docs for more details.</td>
+      </tr>
+      <tr>
+          <td>queue.partitions.virtual_nodes_size</td>
+          <td>TB_QUEUE_PARTITIONS_VIRTUAL_NODES_SIZE</td>
+          <td>16</td>
+          <td>Amount of virtual nodes in consistent hash ring.</td>
+      </tr>
+      <tr>
+          <td>queue.transport_api.requests_topic</td>
+          <td>TB_QUEUE_TRANSPORT_API_REQUEST_TOPIC</td>
+          <td>tb_transport.api.requests</td>
+          <td>Topic used to consume api requests from transport microservices</td>
+      </tr>
+      <tr>
+          <td>queue.transport_api.responses_topic</td>
+          <td>TB_QUEUE_TRANSPORT_API_RESPONSE_TOPIC</td>
+          <td>tb_transport.api.responses</td>
+          <td>Topic used to produce api responses to transport microservices</td>
+      </tr>
+      <tr>
+          <td>queue.transport_api.max_pending_requests</td>
+          <td>TB_QUEUE_TRANSPORT_MAX_PENDING_REQUESTS</td>
+          <td>10000</td>
+          <td>Maximum pending api requests from transport microservices to be handled by server</td>
+      </tr>
+      <tr>
+          <td>queue.transport_api.request_timeout</td>
+          <td>TB_QUEUE_TRANSPORT_MAX_REQUEST_TIMEOUT</td>
+          <td>10000</td>
+          <td>Maximum timeout in milliseconds to handle api request from transport microservice by server</td>
+      </tr>
+      <tr>
+          <td>queue.transport_api.max_callback_threads</td>
+          <td>TB_QUEUE_TRANSPORT_MAX_CALLBACK_THREADS</td>
+          <td>100</td>
+          <td>Amount of threads used to invoke callbacks</td>
+      </tr>
+      <tr>
+          <td>queue.transport_api.request_poll_interval</td>
+          <td>TB_QUEUE_TRANSPORT_REQUEST_POLL_INTERVAL_MS</td>
+          <td>25</td>
+          <td>Interval in milliseconds to poll api requests from transport microservices</td>
+      </tr>
+      <tr>
+          <td>queue.transport_api.response_poll_interval</td>
+          <td>TB_QUEUE_TRANSPORT_RESPONSE_POLL_INTERVAL_MS</td>
+          <td>25</td>
+          <td>Interval in milliseconds to poll api response from transport microservices</td>
+      </tr>
+      <tr>
+          <td>queue.core.topic</td>
+          <td>TB_QUEUE_CORE_TOPIC</td>
+          <td>tb_core</td>
+          <td>Topic name for Core microservices</td>
+      </tr>
+      <tr>
+          <td>queue.core.poll-interval</td>
+          <td>TB_QUEUE_CORE_POLL_INTERVAL_MS</td>
+          <td>25</td>
+          <td>Interval in milliseconds to poll messages by Core microservices</td>
+      </tr>
+      <tr>
+          <td>queue.core.partitions</td>
+          <td>TB_QUEUE_CORE_PARTITIONS</td>
+          <td>10</td>
+          <td>Amount of partitions used by Core microservices</td>
+      </tr>
+      <tr>
+          <td>queue.core.pack-processing-timeout</td>
+          <td>TB_QUEUE_CORE_PACK_PROCESSING_TIMEOUT_MS</td>
+          <td>60000</td>
+          <td>Timeout for processing a message pack by Core microservices</td>
+      </tr>
+      <tr>
+          <td>queue.core.stats.enabled</td>
+          <td>TB_QUEUE_CORE_STATS_ENABLED</td>
+          <td>false</td>
+          <td>Enable/disable statistics for Core microservices</td>
+      </tr>
+      <tr>
+          <td>queue.core.stats.print-interval-ms</td>
+          <td>TB_QUEUE_CORE_STATS_PRINT_INTERVAL_MS</td>
+          <td>10000</td>
+          <td>Statistics printing interval for Core microservices</td>
+      </tr>   
+      <tr>
+          <td>queue.js.request_topic</td>
+          <td>REMOTE_JS_EVAL_REQUEST_TOPIC</td>
+          <td>js_eval.requests</td>
+          <td>Queue topic used for producing JavaScript evaluation requests</td>
+      </tr>
+      <tr>
+          <td>queue.js.response_topic_prefix</td>
+          <td>REMOTE_JS_EVAL_RESPONSE_TOPIC</td>
+          <td>js_eval.responses</td>
+          <td>Prefix queue topic used to consume JavaScript evaluation responses</td>
+      </tr>
+      <tr>
+          <td>queue.js.max_pending_requests</td>
+          <td>REMOTE_JS_MAX_PENDING_REQUESTS</td>
+          <td>10000</td>
+          <td>Maximum pending JavaScript evaluation requests</td>
+      </tr>
+      <tr>
+          <td>queue.js.max_eval_requests_timeout</td>
+          <td>REMOTE_JS_MAX_EVAL_REQUEST_TIMEOUT</td>
+          <td>60000</td>
+          <td>Maximum timeout in milliseconds for JavaScript evaluation</td>
+      </tr>
+      <tr>
+          <td>queue.js.max_requests_timeout</td>
+          <td>REMOTE_JS_MAX_REQUEST_TIMEOUT</td>
+          <td>10000</td>
+          <td>Maximum timeout in milliseconds for JavaScript execution</td>
+      </tr>
+      <tr>
+          <td>queue.js.response_poll_interval</td>
+          <td>REMOTE_JS_RESPONSE_POLL_INTERVAL_MS</td>
+          <td>25</td>
+          <td>JavaScript evaluation responses poll interval</td>
+      </tr>
+      <tr>
+          <td>queue.js.response_auto_commit_interval</td>
+          <td>REMOTE_JS_RESPONSE_AUTO_COMMIT_INTERVAL_MS</td>
+          <td>100</td>
+          <td>JavaScript evaluation responses auto commit interval</td>
+      </tr>
+      <tr>
+          <td>queue.rule-engine.topic</td>
+          <td>TB_QUEUE_RULE_ENGINE_TOPIC</td>
+          <td>tb_rule_engine</td>
+          <td>Topic name for Rule Engine microservices</td>
+      </tr>
+      <tr>
+          <td>queue.rule-engine.poll-interval</td>
+          <td>TB_QUEUE_RULE_ENGINE_POLL_INTERVAL_MS</td>
+          <td>25</td>
+          <td>Interval in milliseconds to poll messages by Rule Engine microservices</td>
+      </tr>
+      <tr>
+          <td>queue.rule-engine.pack-processing-timeout</td>
+          <td>TB_QUEUE_RULE_ENGINE_PACK_PROCESSING_TIMEOUT_MS</td>
+          <td>60000</td>
+          <td>Timeout for processing a message pack</td>
+      </tr>
+      <tr>
+          <td>queue.rule-engine.stats.enabled</td>
+          <td>TB_QUEUE_RULE_ENGINE_STATS_ENABLED</td>
+          <td>true</td>
+          <td>Enable/disable statistics for Rule Engine microservices</td>
+      </tr>
+      <tr>
+          <td>queue.rule-engine.stats.print-interval-ms</td>
+          <td>TB_QUEUE_RULE_ENGINE_STATS_PRINT_INTERVAL_MS</td>
+          <td>10000</td>
+          <td>Statistics printing interval for Rule Engine microservices</td>
+      </tr>
+      <tr>
+          <td>queue.rule-engine.queues.name</td>
+          <td>TB_QUEUE_RE_MAIN_QUEUE_NAME</td>
+          <td>Main</td>
+          <td>Rule Engine Main queue (mustn't be renamed)</td>
+      </tr>
+      <tr>
+          <td>queue.rule-engine.queues.topic</td>
+          <td>TB_QUEUE_RE_MAIN_TOPIC</td>
+          <td>tb_rule_engine.main</td>
+          <td>Topic for Main queue by Rule Engine microservices</td>
+      </tr>
+      <tr>
+          <td>queue.rule-engine.queues.poll-interval</td>
+          <td>TB_QUEUE_RE_MAIN_POLL_INTERVAL_MS</td>
+          <td>25</td>
+          <td>Interval in milliseconds to poll messages from Main queue by Rule Engine microservices</td>
+      </tr>
+      <tr>
+          <td>queue.rule-engine.queues.partitions</td>
+          <td>TB_QUEUE_RE_MAIN_PARTITIONS</td>
+          <td>10</td>
+          <td>Main queue amount of partitions used by Rule Engine microservices</td>
+      </tr>
+      <tr>
+          <td>queue.rule-engine.queues.pack-processing-timeout</td>
+          <td>TB_QUEUE_RE_MAIN_PACK_PROCESSING_TIMEOUT_MS</td>
+          <td>60000</td>
+          <td>Timeout for processing a message pack from Main queue by Rule Engine microservices</td>
+      </tr>
+      <tr>
+          <td>queue.rule-engine.queues.submit-strategy.type</td>
+          <td>TB_QUEUE_RE_MAIN_SUBMIT_STRATEGY_TYPE</td>
+          <td>BURST</td>
+          <td>Main queue submit strategy. Can be: BURST, BATCH, SEQUENTIAL_BY_ORIGINATOR, SEQUENTIAL_WITHIN_TENANT, SEQUENTIAL</td>
+      </tr>
+      <tr>
+          <td>queue.rule-engine.queues.submit-strategy.batch-size</td>
+          <td>TB_QUEUE_RE_MAIN_SUBMIT_STRATEGY_BATCH_SIZE</td>
+          <td>1000</td>
+          <td>Maximum number of messages in batch. Only for submit strategy type: BATCH</td>
+      </tr>
+      <tr>
+          <td>queue.rule-engine.queues.processing-strategy.type</td>
+          <td>TB_QUEUE_RE_MAIN_PROCESSING_STRATEGY_TYPE</td>
+          <td>SKIP_ALL_FAILURES</td>
+          <td>Main queue processing strategy. Can be: SKIP_ALL_FAILURES, RETRY_ALL, RETRY_FAILED, RETRY_TIMED_OUT, RETRY_FAILED_AND_TIMED_OUT</td>
+      </tr>
+      <tr>
+          <td>queue.rule-engine.queues.processing-strategy.retries</td>
+          <td>TB_QUEUE_RE_MAIN_PROCESSING_STRATEGY_RETRIES</td>
+          <td>3</td>
+          <td>Number of retries, 0 is unlimited. Use for RETRY_ALL, RETRY_FAILED, RETRY_TIMED_OUT, RETRY_FAILED_AND_TIMED_OUT processing strategies</td>
+      </tr>
+      <tr>
+          <td>queue.rule-engine.queues.processing-strategy.failure-percentage</td>
+          <td>TB_QUEUE_RE_MAIN_PROCESSING_STRATEGY_FAILURE_PERCENTAGE</td>
+          <td>0</td>
+          <td>Skip retry if failures or timeouts are less then X percentage of messages</td>
+      </tr>
+      <tr>
+          <td>queue.rule-engine.queues.processing-strategy.pause-between-retries</td>
+          <td>TB_QUEUE_RE_MAIN_PROCESSING_STRATEGY_RETRY_PAUSE</td>
+          <td>3</td>
+          <td>Time in seconds to wait in consumer thread before retries</td>
+      </tr>
+      <tr>
+          <td>queue.rule-engine.queues.processing-strategy.max-pause-between-retries</td>
+          <td>TB_QUEUE_RE_MAIN_PROCESSING_STRATEGY_MAX_RETRY_PAUSE</td>
+          <td>3</td>
+          <td>Max allowed time in seconds for pause between retries</td>
+      </tr>
+      <tr>
+          <td>queue.rule-engine.queues.name</td>
+          <td>TB_QUEUE_RE_HP_QUEUE_NAME</td>
+          <td>HighPriority</td>
+          <td>Rule Engine HighPriority queue</td>
+      </tr>
+      <tr>
+          <td>queue.rule-engine.queues.topic</td>
+          <td>TB_QUEUE_RE_HP_TOPIC</td>
+          <td>tb_rule_engine.hp</td>
+          <td>Topic for HighPriority queue by Rule Engine microservices</td>
+      </tr>
+      <tr>
+          <td>queue.rule-engine.queues.poll-interval</td>
+          <td>TB_QUEUE_RE_HP_POLL_INTERVAL_MS</td>
+          <td>25</td>
+          <td>Interval in milliseconds to poll messages from HighPriority queue by Rule Engine microservices</td>
+      </tr>
+      <tr>
+          <td>queue.rule-engine.queues.partitions</td>
+          <td>TB_QUEUE_RE_HP_PARTITIONS</td>
+          <td>10</td>
+          <td>HighPriority queue amount of partitions used by Rule Engine microservices</td>
+      </tr>
+      <tr>
+          <td>queue.rule-engine.queues.pack-processing-timeout</td>
+          <td>TB_QUEUE_RE_HP_PACK_PROCESSING_TIMEOUT_MS</td>
+          <td>60000</td>
+          <td>Timeout for processing a message pack from HighPriority queue by Rule Engine microservices</td>
+      </tr>
+      <tr>
+          <td>queue.rule-engine.queues.submit-strategy.type</td>
+          <td>TB_QUEUE_RE_HP_SUBMIT_STRATEGY_TYPE</td>
+          <td>BURST</td>
+          <td>HighPriority queue submit strategy. Can be: BURST, BATCH, SEQUENTIAL_BY_ORIGINATOR, SEQUENTIAL_WITHIN_TENANT, SEQUENTIAL</td>
+      </tr>
+      <tr>
+          <td>queue.rule-engine.queues.submit-strategy.batch-size</td>
+          <td>TB_QUEUE_RE_HP_SUBMIT_STRATEGY_BATCH_SIZE</td>
+          <td>100</td>
+          <td>Maximum number of messages in batch. Only for submit strategy type: BATCH</td>
+      </tr>
+      <tr>
+          <td>queue.rule-engine.queues.processing-strategy.type</td>
+          <td>TB_QUEUE_RE_HP_PROCESSING_STRATEGY_TYPE</td>
+          <td>RETRY_FAILED_AND_TIMED_OUT</td>
+          <td>SKIP_ALL_FAILURES, RETRY_ALL, RETRY_FAILED, RETRY_TIMED_OUT, RETRY_FAILED_AND_TIMED_OUT</td>
+      </tr>
+      <tr>
+          <td>queue.rule-engine.queues.processing-strategy.retries</td>
+          <td>TB_QUEUE_RE_HP_PROCESSING_STRATEGY_RETRIES</td>
+          <td>0</td>
+          <td>Number of retries, 0 is unlimited. Use for RETRY_ALL, RETRY_FAILED, RETRY_TIMED_OUT, RETRY_FAILED_AND_TIMED_OUT processing strategies</td>
+      </tr>
+      <tr>
+          <td>queue.rule-engine.queues.processing-strategy.failure-percentage</td>
+          <td>TB_QUEUE_RE_HP_PROCESSING_STRATEGY_FAILURE_PERCENTAGE</td>
+          <td>0</td>
+          <td>Skip retry if failures or timeouts are less then X percentage of messages</td>
+      </tr>
+      <tr>
+          <td>queue.rule-engine.queues.processing-strategy.pause-between-retries</td>
+          <td>TB_QUEUE_RE_HP_PROCESSING_STRATEGY_RETRY_PAUSE</td>
+          <td>5</td>
+          <td>Time in seconds to wait in consumer thread before retries</td>
+      </tr>
+      <tr>
+          <td>queue.rule-engine.queues.processing-strategy.max-pause-between-retries</td>
+          <td>TB_QUEUE_RE_HP_PROCESSING_STRATEGY_MAX_RETRY_PAUSE</td>
+          <td>5</td>
+          <td>Max allowed time in seconds for pause between retries</td>
+      </tr> 
+      <tr>
+            <td>queue.rule-engine.queues.name</td>
+            <td>TB_QUEUE_RE_SQ_QUEUE_NAME</td>
+            <td>SequentialByOriginator</td>
+            <td>Rule Engine SequentialByOriginator queue</td>
         </tr>
         <tr>
-            <td colspan="4"><span style="font-weight: bold; font-size: 24px;">Registered/request/update pool</span></td>
+            <td>queue.rule-engine.queues.topic</td>
+            <td>TB_QUEUE_RE_SQ_TOPIC</td>
+            <td>tb_rule_engine.sq</td>
+            <td>Topic for SequentialByOriginator queue by Rule Engine microservices</td>
         </tr>
         <tr>
-            <td>transport.lwm2m.response_pool_size</td>
-            <td>LWM2M_RESPONSE_POOL_SIZE</td>
+            <td>queue.rule-engine.queues.poll-interval</td>
+            <td>TB_QUEUE_RE_SQ_POLL_INTERVAL_MS</td>
+            <td>25</td>
+            <td>Interval in milliseconds to poll messages from SequentialByOriginator queue by Rule Engine microservices</td>
+        </tr>
+        <tr>
+            <td>queue.rule-engine.queues.partitions</td>
+            <td>TB_QUEUE_RE_SQ_PARTITIONS</td>
+            <td>10</td>
+            <td>SequentialByOriginator queue amount of partitions used by Rule Engine microservices</td>
+        </tr>
+        <tr>
+            <td>queue.rule-engine.queues.pack-processing-timeout</td>
+            <td>TB_QUEUE_RE_SQ_PACK_PROCESSING_TIMEOUT_MS</td>
+            <td>60000</td>
+            <td>Timeout for processing a message pack from SequentialByOriginator queue by Rule Engine microservices</td>
+        </tr>
+        <tr>
+            <td>queue.rule-engine.queues.submit-strategy.type</td>
+            <td>TB_QUEUE_RE_SQ_SUBMIT_STRATEGY_TYPE</td>
+            <td>SEQUENTIAL_BY_ORIGINATOR</td>
+            <td>SequentialByOriginator queue submit strategy. Can be: BURST, BATCH, SEQUENTIAL_BY_ORIGINATOR, SEQUENTIAL_WITHIN_TENANT, SEQUENTIAL</td>
+        </tr>
+        <tr>
+            <td>queue.rule-engine.queues.submit-strategy.batch-size</td>
+            <td>TB_QUEUE_RE_SQ_SUBMIT_STRATEGY_BATCH_SIZE</td>
             <td>100</td>
-            <td>Specify thread pool size for Transport Response from lwm2mClient</td>
+            <td>Maximum number of messages in batch. Only for submit strategy type: BATCH</td>
         </tr>
         <tr>
-            <td>transport.lwm2m.registered_pool_size</td>
-            <td>LWM2M_REGISTERED_POOL_SIZE</td>
-            <td>10</td>
-            <td>Specify thread pool size for Transport Registered of lwm2mClient</td>
+            <td>queue.rule-engine.queues.processing-strategy.type</td>
+            <td>TB_QUEUE_RE_SQ_PROCESSING_STRATEGY_TYPE</td>
+            <td>RETRY_FAILED_AND_TIMED_OUT</td>
+            <td>SKIP_ALL_FAILURES, RETRY_ALL, RETRY_FAILED, RETRY_TIMED_OUT, RETRY_FAILED_AND_TIMED_OUT</td>
         </tr>
         <tr>
-            <td>transport.lwm2m.update_registered_pool_size</td>
-            <td>LWM2M_UPDATE_REGISTERED_POOL_SIZE</td>
-            <td>10</td>
-            <td>Specify thread pool size for Transport UpdateRegistered of lwm2mClient</td>
+            <td>queue.rule-engine.queues.processing-strategy.retries</td>
+            <td>TB_QUEUE_RE_SQ_PROCESSING_STRATEGY_RETRIES</td>
+            <td>3</td>
+            <td>Number of retries, 0 is unlimited. Use for RETRY_ALL, RETRY_FAILED, RETRY_TIMED_OUT, RETRY_FAILED_AND_TIMED_OUT processing strategies</td>
         </tr>
         <tr>
-            <td>transport.lwm2m.un_registered_pool_size</td>
-            <td>LWM2M_UN_REGISTERED_POOL_SIZE</td>
-            <td>10</td>
-            <td>Specify thread pool size for Transport UnRegistered of lwm2mClient</td>
+            <td>queue.rule-engine.queues.processing-strategy.failure-percentage</td>
+            <td>TB_QUEUE_RE_SQ_PROCESSING_STRATEGY_FAILURE_PERCENTAGE</td>
+            <td>0</td>
+            <td>Skip retry if failures or timeouts are less then X percentage of messages</td>
         </tr>
         <tr>
-            <td colspan="4"><span style="font-weight: bold; font-size: 24px;">Keys by security</span></td>
-        </tr>
+            <td>queue.rule-engine.queues.processing-strategy.pause-between-retries</td>
+            <td>TB_QUEUE_RE_SQ_PROCESSING_STRATEGY_RETRY_PAUSE</td>
+            <td>5</td>
+            <td>Time in seconds to wait in consumer thread before retries</td>
+        </tr>      
         <tr>
-            <td>transport.lwm2m.secure.key_store_type</td>
-            <td>LWM2M_KEYSTORE_TYPE</td>
-            <td>JKS</td>
-            <td>Certificate_x509:<br>
-                * To get helps about files format and how to generate it, see: https://github.com/eclipse/leshan/wiki/Credential-files-format.<br>
-                * If need to create new X509 Certificates: common/transport/lwm2m/src/main/resources/credentials/shell/lwM2M_credentials.sh
-        </td>
-        </tr>
-        <tr>
-            <td>transport.lwm2m.secure.key_store_path_file</td>
-            <td>KEY_STORE_PATH_FILE</td>
-            <td></td>
-            <td>Default path:<br>
-                * For core:<br>
-                -- key_store_path_file = "/common/transport/lwm2m/src/main/resources/credentials/serverKeyStore.jks"<br>
-                * For docker:<br>
-                -- key_store_path_file = "/transport/lwm2m/src/main/data/credentials/serverKeyStore.jks"<br>
-            </td>
-        </tr>
-        <tr>
-            <td>transport.lwm2m.secure.key_store_password</td>
-            <td>LWM2M_KEYSTORE_PASSWORD_SERVER</td>
-            <td>server_ks_password</td>
-            <td>Key store password for file serverKeyStore.jks</td>
-        </tr>
-        <tr>
-            <td>transport.lwm2m.secure.root_alias</td>
-            <td>LWM2M_SERVER_ROOT_CA</td>
-            <td>rootca</td>
-            <td>Alias of the Trust Certificate</td>
-        </tr>
-        <tr>
-            <td>transport.lwm2m.secure.enable_gen_new_key_psk_rpk</td>
-            <td>ENABLE_GEN_NEW_KEY_PSK_RPK</td>
-            <td>false</td>
-            <td>Function for creating new keys for security mode: PSK and RPK.</td>
-        </tr>
-        <tr>
-            <td colspan="4"><span style="font-weight: bold; font-size: 24px;">Server LwM2M</span></td>
-        </tr>
-        <tr>
-            <td>transport.lwm2m.server.id</td>
-            <td>LWM2M_SERVER_ID</td>
-            <td>123</td>
-            <td>This is:<br>
-                * Default value  in Lwm2mClient after start in mode Bootstrap for the object: name "LWM2M Security" field: "Short Server ID" (deviceProfile: Bootstrap.LWM2M SERVER.Short ID)
-                * Default value for the object: name "LwM2M Server" field: "Short Server ID" (deviceProfile: Bootstrap.SERVERS.Short ID)
-            </td>
-        </tr>
-        <tr>
-            <td>transport.lwm2m.server.bind_address</td>
-            <td>LWM2M_BIND_ADDRESS</td>
-            <td>0.0.0.0</td>
-            <td>This is:<br>
-            * Hostname for unsecured LwM2M(CoAP) Server<br>
-            * Default Hostname in Lwm2mClient after start in mode Bootstrap for the object: name "LWM2M Security" field: "LWM2M Server URI" (deviceProfile: Bootstrap.LWM2M SERVER.Host)<br>
-            </td>
-        </tr>
-        <tr>
-            <td>transport.lwm2m.server.bind_port_no_sec</td>
-            <td>LWM2M_BIND_PORT_NO_SEC</td>
-            <td>5685</td>
-            <td>This is:<br>
-            * Port for unsecured LwM2M(CoAP) Server<br>
-            * Default Port for unsecured CoAP Server in Lwm2mClient after start in mode Bootstrap for the object: name "LWM2M Security" field: "LWM2M Server URI" (deviceProfile: Bootstrap.LWM2M SERVER.Port)<br>
-            </td>
-        </tr>
-        <tr>
-            <td>transport.lwm2m.server.secure.bind_address_security</td>
-            <td>LWM2M_BIND_ADDRESS_SECURITY</td>
-            <td>0.0.0.0</td>
-            <td>This is:<br>
-            * Hostname for secured LwM2M(CoAP) Server (Using DTLS)<br>
-            * Default Hostname for the object: name "LWM2M Security" field: "LWM2M Server URI" (deviceProfile: Bootstrap.LWM2M SERVER.Host)<br>
-            </td>
-        </tr>
-        <tr>
-            <td>transport.lwm2m.server.secure.bind_port_security</td>
-            <td>LWM2M_BIND_PORT_SECURITY</td>
-            <td>5686</td>
-            <td>This is:<br>
-            * Port for secured LwM2M(Coap) Server (Using DTLS)<br>
-            * Default Port for secured CoAP Server (Using DTLS) in Lwm2mClient after start in mode Bootstrap for the object: name "LWM2M Security" field: "LWM2M Server URI" (deviceProfile: Bootstrap.LWM2M SERVER.Port)<br>
-            </td>
-        </tr>
-        <tr>
-            <td>transport.lwm2m.server.secure.public_x</td>
-            <td>LWM2M_SERVER_PUBLIC_X</td>
-            <td>05064b9e6762dd8d8b8a523<br>
-                55d7b4d8b9a3d64e6d2ee27<br>
-                7d76c248861353f358
-            </td>
-            <td>For create of Public Key by LwM2M(Coap) Server (Using DTLS)<br>  
-                Only for security mode RPK: If the keystore file is missing or not working
-            </td>
-        </tr>
-        <tr>
-            <td>transport.lwm2m.server.secure.public_y</td>
-            <td>LWM2M_SERVER_PUBLIC_Y</td>
-            <td>5eeb1838e4f9e37b31fa347<br>
-                aef5ce3431eb54e0a250691<br>
-                0c5e0298817445721b
-            </td>
-            <td>For create of Public Key by LwM2M(Coap) Server (Using DTLS)<br>  
-                Only for security mode RPK: If the keystore file is missing or not working<br>
-                - Elliptic Curve parameters  : [secp256r1 [NIST P-256, X9.62 prime256v1] (1.2.840.10045.3.1.7)]
-            </td>
-        </tr>
-        <tr>
-            <td>transport.lwm2m.server.secure.private_encoded</td>
-            <td>LWM2M_SERVER_PRIVATE_ENCODED</td>
-            <td>308193020100301306072a8<br>
-                648ce3d020106082a8648ce<br>
-                3d030107047930770201010<br>
-                420dc774b309e547ceb48fe<br>
-                e547e104ce201a9c48c449d<br>
-                c5414cd04e7f5cf05f67ba0<br>
-                0a06082a8648ce3d030107a<br>
-                1440342000405064b9e6762<br>
-                dd8d8b8a52355d7b4d8b9a3<br>
-                d64e6d2ee277d76c2488613<br>
-                53f3585eeb1838e4f9e37b3<br>
-                1fa347aef5ce3431eb54e0a<br>
-                2506910c5e0298817445721b<br>
-            </td>
-            <td>For create of Private Key by LwM2M(Coap) Server (Using DTLS)<br>  
-                Only for security mode RPK: If the keystore file is missing or not working</td>
-        </tr>
-        <tr>
-            <td>transport.lwm2m.server.secure.alias</td>
-            <td>LWM2M_KEYSTORE_ALIAS_SERVER</td>
-            <td>server</td>
-            <td>Alias for certificate by LwM2M(Coap) Server (Using DTLS)<br> 
-                Only Only for security mode X509
-            </td>
-        </tr>
-        <tr>
-            <td colspan="4"><span style="font-weight: bold; font-size: 24px;">Bootstrap Server</span></td>
-        </tr>
-        <tr>
-            <td>transport.lwm2m.bootstrap.enable</td>
-            <td>LWM2M_ENABLED_BS</td>
-            <td>true</td>
-            <td>Enable/disable Bootstrap  Server</td>
-        </tr>
-        <tr>
-            <td>transport.lwm2m.bootstrap.id</td>
-            <td>LWM2M_SERVER_ID_BS</td>
-            <td>111</td>
-            <td>This is:<br>
-                * Default value in Lwm2mClient after start in mode Bootstrap for the object : name "LWM2M Security" field: "Short Server ID" (deviceProfile: Bootstrap.BOOTSTRAP SERVER.Short ID)
-            </td>
-        </tr>
-        <tr>
-            <td>transport.lwm2m.bootstrap.bind_address</td>
-            <td>LWM2M_BIND_ADDRESS_BS</td>
-            <td>0.0.0.0</td>
-            <td>This is:<br>
-            * Hostname for unsecured LwM2M(CoAP) Bootstrap Server<br>
-            * Default Hostname in Lwm2mClient after start in mode Bootstrap for the object: name "LWM2M Security" field: "LWM2M Server URI" (deviceProfile: Bootstrap.BOOTSTRAP SERVER.Host)<br>
-            </td>
-        </tr>
-        <tr>
-            <td>transport.lwm2m.bootstrap.bind_port_no_sec</td>
-            <td>LWM2M_BIND_PORT_NO_SEC_BS</td>
-            <td>5687</td>
-            <td>This is:<br>
-            * Port for unsecured LwM2M(CoAP) Bootstrap Server<br>
-            * Default Port for unsecured CoAP Bootstrap Server in Lwm2mClient after start in mode Bootstrap for the object: name "LWM2M Security" field: "LWM2M Server URI" (deviceProfile: Bootstrap.BOOTSTRAP SERVER.Port)<br>
-            </td>
-        </tr>
-        <tr>
-            <td>transport.lwm2m.bootstrap.secure.bind_address_security</td>
-            <td>LWM2M_BIND_ADDRESS_BS</td>
-            <td>0.0.0.0</td>
-            <td>This is:<br>
-            * Hostname for secured LwM2M(CoAP) Bootstrap Server (Using DTLS)<br>
-            * Default Hostname in Lwm2mClient after start in mode Bootstrap for the object: name "LWM2M Security" field: "LWM2M Server URI" (deviceProfile: Bootstrap.BOOTSTRAP SERVER.Host)<br>
-            </td>
-        </tr>
-        <tr>
-            <td>transport.lwm2m.bootstrap.bind_port_security</td>
-            <td>LWM2M_BIND_PORT_SECURITY_BS</td>
-            <td>5688</td>
-            <td>This is:<br>
-            * Port for secured LwM2M(Coap) Bootstrap Server (Using DTLS)<br>
-            * Default Port for secured CoAP Bootstrap Server (Using DTLS) in Lwm2mClient after start in mode Bootstrap for the object: name "LWM2M Security" field: "LWM2M Server URI" (deviceProfile: Bootstrap.BOOTSTRAP SERVER.Port)<br>
-            </td>
-        </tr>
-        <tr>
-            <td>transport.lwm2m.bootstrap.public_x</td>
-            <td>LWM2M_SERVER_PUBLIC_X_BS</td>
-            <td>5017c87a1c1768264656b3b<br>
-                355434b0def6edb8b9bf166<br>
-                a4762d9930cd730f91
-            </td>
-            <td>For create of Public Key by LwM2M(Coap) Bootstrap Server (Using DTLS)<br>  
-                Only for security mode RPK: If the keystore file is missing or not working
-            </td>
-        </tr>
-        <tr>
-            <td>transport.lwm2m.bootstrap.public_y</td>
-            <td>LWM2M_SERVER_PUBLIC_Y_BS</td>
-            <td>3fc4e61bcd8901ec27c4241<br>
-                14c3e887ed372497f0c2cf8<br>
-                5839b8443e76988b34
-            </td>
-            <td>For create of Public Key by LwM2M(Coap) Bootstrap Server (Using DTLS)<br>  
-                Only for security mode RPK: If the keystore file is missing or not working<br>
-                - Elliptic Curve parameters  : [secp256r1 [NIST P-256, X9.62 prime256v1] (1.2.840.10045.3.1.7)]
-            </td>
-        </tr>
-        <tr>
-            <td>transport.lwm2m.bootstrap.private_encoded</td>
-            <td>LWM2M_SERVER_PRIVATE_ENCODED_BS</td>
-            <td>308193020100301306072a8<br>
-                648ce3d020106082a8648ce<br>
-                3d030107047930770201010<br>
-                4205ecafd90caa7be45c42e<br>
-                1f3f32571632b8409e6e624<br>
-                9d7124f4ba56fab3c8083a0<br>
-                0a06082a8648ce3d030107a<br>
-                144034200045017c87a1c17<br>
-                68264656b3b355434b0def6<br>
-                edb8b9bf166a4762d9930cd<br>
-                730f913fc4e61bcd8901ec2<br>
-                7c424114c3e887ed372497f<br>
-                0c2cf85839b8443e76988b34
-            </td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>transport.lwm2m.bootstrap.alias</td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>transport.lwm2m.bootstrap.private_encoded</td>
-            <td>LWM2M_KEYSTORE_ALIAS_BS</td>
-            <td>bootstrap</td>
-            <td>Alias for certificate by LwM2M(Coap) Bootstrap Server (Using DTLS)<br> 
-                Only Only for security mode X509
-            </td>
-        </tr>
-        <tr>
-            <td colspan="4"><span style="font-weight: bold; font-size: 24px;">Redis</span></td>
-        </tr>
-        <tr>
-            <td>transport.lwm2m.redis.enabled</td>
-            <td>LWM2M_REDIS_ENABLED</td>
-            <td>false</td>
-            <td>Enable/disable Redis for lvm2m transport</td>
-        </tr>
+             <td>queue.rule-engine.queues.processing-strategy.max-pause-between-retries</td>
+             <td>TB_QUEUE_RE_SQ_PROCESSING_STRATEGY_MAX_RETRY_PAUSE</td>
+             <td>5</td>
+             <td>Max allowed time in seconds for pause between retries</td>
+        </tr>      
+       <tr>
+           <td>queue.transport.notifications_topic</td>
+           <td>TB_QUEUE_TRANSPORT_NOTIFICATIONS_TOPIC</td>
+           <td>tb_transport.notifications</td>
+           <td>Transport nottifications topic</td>
+       </tr>
+       <tr>
+           <td>queue.transport.poll_interval</td>
+           <td>TB_QUEUE_CORE_POLL_INTERVAL_MS</td>
+           <td>25</td>
+           <td>Interval in milliseconds to poll messages by Core microservices</td>
+       </tr>
+      <tr>
+           <td colspan="4"><span style="font-weight: bold; font-size: 24px;">ThingsBoard service parameters</span></td>
+      </tr>
+       <tr>
+           <td>service.type.</td>
+           <td>TB_SERVICE_TYPE</td>
+           <td>tb-transport</td>
+           <td>Tb Queue service type. Can be: monolith or tb-core or tb-rule-engine or tb-transport</td>
+       </tr>
+       <tr>
+           <td>service.id.</td>
+           <td>TB_SERVICE_ID</td>
+           <td></td>
+           <td>Unique id for this service (autogenerated if empty)</td>
+       </tr>     
+       <tr>
+           <td>service.tenant_id.</td>
+           <td>TB_SERVICE_TENANT_ID</td>
+           <td></td>
+           <td>Empty or specific tenant id</td>
+       </tr>
   </tbody>
 </table>
 
+#### SNMP Transport Settings
+
+<table>
+  <thead>
+      <tr>
+          <td><b>Property</b></td><td><b>Environment Variable</b></td><td><b>Default Value</b></td><td><b>Description</b></td>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>spring.main.web-environment</td>
+          <td> </td>
+          <td>false</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>spring.main.web-application-type</td>
+          <td></td>
+          <td>none</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td colspan="4"><span style="font-weight: bold; font-size: 24px;">Zookeeper connection parameters</span></td>
+      </tr>  
+      <tr>
+          <td>zk.enabled</td>
+          <td>ZOOKEEPER_ENABLED</td>
+          <td>false</td>
+          <td>Enable/disable zookeeper discovery service. Used for ThingsBoard cluster</td>
+      </tr>
+      <tr>
+          <td>zk.url</td>
+          <td>ZOOKEEPER_URL</td>
+          <td>localhost:2181</td>
+          <td>Zookeeper connect string</td>
+      </tr>
+      <tr>
+          <td>zk.retry_interval_ms</td>
+          <td>ZOOKEEPER_RETRY_INTERVAL_MS</td>
+          <td>3000</td>
+          <td>Zookeeper retry interval in milliseconds</td>
+      </tr>
+      <tr>
+          <td>zk.connection_timeout_ms</td>
+          <td>ZOOKEEPER_CONNECTION_TIMEOUT_MS</td>
+          <td>3000</td>
+          <td>Zookeeper connection timeout in milliseconds</td>
+      </tr>
+      <tr>
+          <td>zk.session_timeout_ms</td>
+          <td>ZOOKEEPER_SESSION_TIMEOUT_MS</td>
+          <td>3000</td>
+          <td>Zookeeper session timeout in milliseconds</td>
+      </tr>
+      <tr>
+          <td>zk.zk_dir</td>
+          <td>ZOOKEEPER_NODES_DIR</td>
+          <td>/thingsboard</td>
+          <td>Name of the directory in zookeeper 'filesystem'</td>
+      </tr> 
+      <tr>
+          <td colspan="4"><span style="font-weight: bold; font-size: 24px;">SNMP parameters</span></td>
+      </tr>
+      <tr>
+          <td>transport.snmp.response_processing.parallelism_level</td>
+          <td>SNMP_RESPONSE_PROCESSING_PARALLELISM_LEVEL</td>
+          <td>20</td>
+          <td>Parallelism level for executor (workStealingPool) that is responsible for handling responses from SNMP devices</td>
+      </tr>
+      <tr>
+          <td>transport.snmp.underlying_protocol</td>
+          <td>SNMP_UNDERLYING_PROTOCOL</td>
+          <td>udp</td>
+          <td>Underlying SNMP protocol: UDP or TCP</td>
+      </tr>      
+      <tr>
+            <td>transport.sessions.inactivity_timeout</td>
+            <td>TB_TRANSPORT_SESSIONS_INACTIVITY_TIMEOUT</td>
+            <td>300000</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>transport.sessions.report_timeout</td>
+            <td>TB_TRANSPORT_SESSIONS_REPORT_TIMEOUT</td>
+            <td>30000</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>transport.rate_limits.enabled</td>
+            <td>TB_TRANSPORT_RATE_LIMITS_ENABLED</td>
+            <td>false</td>
+            <td>Enabel/Disable rate limits on transport layer</td>
+        </tr>
+        <tr>
+            <td>transport.rate_limits.tenant</td>
+            <td>TB_TRANSPORT_RATE_LIMITS_TENANT</td>
+            <td>1000:1,20000:60</td>
+            <td>Tenant Rate limit policy x:y where x = number of messages per time unit, y = timeunit size in seconds</td>
+        </tr>
+        <tr>
+            <td>transport.rate_limits.device</td>
+            <td>TB_TRANSPORT_RATE_LIMITS_DEVICE</td>
+            <td>10:1,300:60</td>
+            <td>Device Rate limit policy x:y where x = number of messages per time unit, y = timeunit size in seconds</td>
+        </tr>
+        <tr>
+            <td>transport.json.type_cast_enabled</td>
+            <td>JSON_TYPE_CAST_ENABLED</td>
+            <td>true</td>
+            <td>Cast String data types to Numeric if possible when processing Telemetry/Attributes JSON</td>
+        </tr>
+      <tr>
+          <td>transport.json.max_string_value_length</td>
+          <td>JSON_MAX_STRING_VALUE_LENGTH</td>
+          <td>0</td>
+          <td>Maximum allowed string value length when processing Telemetry/Attributes JSON (0 value disables string value length check)</td>
+      </tr>
+      <tr>
+           <td colspan="4"><span style="font-weight: bold; font-size: 24px;">Queue parameters</span></td>
+      </tr>  
+      <tr>
+          <td>queue.type</td>
+          <td>TB_QUEUE_TYPE</td>
+          <td>kafka</td>
+          <td>Queue type. Can be: kafka (Apache Kafka) or aws-sqs (AWS SQS) or pubsub (PubSub) or service-bus (Azure Service Bus) or rabbitmq (RabbitMQ)</td>
+      </tr>
+      <tr>
+          <td>queue.kafka.bootstrap.servers</td>
+          <td>TB_KAFKA_SERVERS</td>
+          <td>localhost:9092</td>
+          <td>List of kafka bootstrap servers used to establish connection</td>
+      </tr>
+      <tr>
+          <td>queue.kafka.acks</td>
+          <td>TB_KAFKA_ACKS</td>
+          <td>all</td>
+          <td>The number of acknowledgments the producer requires the leader to have received before considering a request complete</td>
+      </tr>
+      <tr>
+          <td>queue.kafka.retries</td>
+          <td>TB_KAFKA_RETRIES</td>
+          <td>1</td>
+          <td>Setting a value greater than zero will cause the client to resend any record whose send fails with a potentially transient error</td>
+      </tr>
+      <tr>
+          <td>queue.kafka.batch.size</td>
+          <td>TB_KAFKA_BATCH_SIZE</td>
+          <td>16384</td>
+          <td>The producer will attempt to batch records together into fewer requests whenever multiple records are being sent to the same partition</td>
+      </tr>
+      <tr>
+          <td>queue.kafka.linger.ms</td>
+          <td>TB_KAFKA_LINGER_MS</td>
+          <td>1</td>
+          <td>The producer groups together any records that arrive in between request transmissions into a single batched request</td>
+      </tr>
+      <tr>
+          <td>queue.kafka.buffer.memory</td>
+          <td>TB_BUFFER_MEMORY</td>
+          <td>33554432</td>
+          <td>The total bytes of memory the producer can use to buffer records waiting to be sent to the server</td>
+      </tr>
+      <tr>
+          <td>queue.kafka.replication_factor</td>
+          <td>TB_QUEUE_KAFKA_REPLICATION_FACTOR</td>
+          <td>1</td>
+          <td>Replication factor defines the number of copies of a topic in a Kafka cluster</td>
+      </tr>
+      <tr>
+          <td>queue.kafka.topic-properties.rule-engine</td>
+          <td>TB_QUEUE_KAFKA_RE_TOPIC_PROPERTIES</td>
+          <td>retention.ms:604800000;segment.bytes:26214400;retention.bytes:1048576000</td>
+          <td>Kafka properties for Rule Engine topics</td>
+      </tr>
+      <tr>
+          <td>queue.kafka.topic-properties.core</td>
+          <td>TB_QUEUE_KAFKA_CORE_TOPIC_PROPERTIES</td>
+          <td>retention.ms:604800000;segment.bytes:26214400;retention.bytes:1048576000</td>
+          <td>Kafka properties for Core topics</td>
+      </tr>
+      <tr>
+          <td>queue.kafka.topic-properties.transport-api</td>
+          <td>TB_QUEUE_KAFKA_TA_TOPIC_PROPERTIES</td>
+          <td>retention.ms:604800000;segment.bytes:26214400;retention.bytes:1048576000</td>
+          <td>Kafka properties for Transport Api topics</td>
+      </tr>
+      <tr>
+          <td>queue.kafka.topic-properties.notifications</td>
+          <td>TB_QUEUE_KAFKA_NOTIFICATIONS_TOPIC_PROPERTIES</td>
+          <td>retention.ms:604800000;segment.bytes:26214400;retention.bytes:1048576000</td>
+          <td>Kafka properties for Notifications topics</td>
+      </tr>
+      <tr>
+          <td>queue.kafka.topic-properties.js-executor</td>
+          <td>TB_QUEUE_KAFKA_JE_TOPIC_PROPERTIES</td>
+          <td>retention.ms:604800000;segment.bytes:26214400;retention.bytes:1048576000</td>
+          <td>Kafka properties for Js Executor topics</td>
+      </tr>
+      <tr>
+          <td>queue.kafka.consumer-stats.enabled</td>
+          <td>TB_QUEUE_KAFKA_CONSUMER_STATS_ENABLED</td>
+          <td>true</td>
+          <td>Prints lag between consumer group offset and last messages offset in Kafka topics</td>
+      </tr>
+      <tr>
+          <td>queue.kafka.consumer-stats.print-interval-ms</td>
+          <td>TB_QUEUE_KAFKA_CONSUMER_STATS_MIN_PRINT_INTERVAL_MS</td>
+          <td>60000</td>
+          <td>Statistics printing interval for Kafka's consumer-groups stats</td>
+      </tr>
+      <tr>
+          <td>queue.kafka.consumer-stats.kafka-response-timeout-ms</td>
+          <td>TB_QUEUE_KAFKA_CONSUMER_STATS_RESPONSE_TIMEOUT_MS</td>
+          <td>1000</td>
+          <td>Time to wait for the stats-loading requests to Kafka to finish</td>
+      </tr>
+      <tr>
+          <td>queue.aws_sqs.access_key_id</td>
+          <td>TB_QUEUE_AWS_SQS_ACCESS_KEY_ID</td>
+          <td>YOUR_KEY</td>
+          <td>Access key ID from AWS IAM user</td>
+      </tr>
+      <tr>
+          <td>queue.aws_sqs.secret_access_key</td>
+          <td>TB_QUEUE_AWS_SQS_SECRET_ACCESS_KEY</td>
+          <td>YOUR_SECRET</td>
+          <td>Secret access key from AWS IAM user</td>
+      </tr>
+      <tr>
+          <td>queue.aws_sqs.region</td>
+          <td>TB_QUEUE_AWS_SQS_REGION</td>
+          <td>YOUR_REGION</td>
+          <td>Region from AWS account</td>
+      </tr>
+      <tr>
+          <td>queue.aws_sqs.threads_per_topic</td>
+          <td>TB_QUEUE_AWS_SQS_THREADS_PER_TOPIC</td>
+          <td>1</td>
+          <td>Number of threads per each AWS SQS queue in consumer</td>
+      </tr>
+      <tr>
+          <td>queue.aws_sqs.queue-properties.rule-engine</td>
+          <td>TB_QUEUE_AWS_SQS_RE_QUEUE_PROPERTIES</td>
+          <td>VisibilityTimeout:30;MaximumMessageSize:262144;MessageRetentionPeriod:604800</td>
+          <td>AWS SQS properties for Rule Engine queues, messages which will commit after visibility timeout period can be consume again. VisibilityTimeout in seconds;MaximumMessageSize in bytes;MessageRetentionPeriod in seconds</td>
+      </tr>
+      <tr>
+          <td>queue.aws_sqs.queue-properties.core</td>
+          <td>TB_QUEUE_AWS_SQS_CORE_QUEUE_PROPERTIES</td>
+          <td>VisibilityTimeout:30;MaximumMessageSize:262144;MessageRetentionPeriod:604800</td>
+          <td>AWS SQS properties for Core queues, messages which will commit after visibility timeout period can be consume again. VisibilityTimeout in seconds;MaximumMessageSize in bytes;MessageRetentionPeriod in seconds</td>
+      </tr>
+      <tr>
+          <td>queue.aws_sqs.queue-properties.transport-api</td>
+          <td>TB_QUEUE_AWS_SQS_TA_QUEUE_PROPERTIES</td>
+          <td>VisibilityTimeout:30;MaximumMessageSize:262144;MessageRetentionPeriod:604800</td>
+          <td>AWS SQS properties for Transport Api queues, messages which will commit after visibility timeout period can be consume again. VisibilityTimeout in seconds;MaximumMessageSize in bytes;MessageRetentionPeriod in seconds</td>
+      </tr>
+      <tr>
+          <td>queue.aws_sqs.queue-properties.notifications</td>
+          <td>TB_QUEUE_AWS_SQS_NOTIFICATIONS_QUEUE_PROPERTIES</td>
+          <td>VisibilityTimeout:30;MaximumMessageSize:262144;MessageRetentionPeriod:604800</td>
+          <td>AWS SQS properties for Notifications queues, messages which will commit after visibility timeout period can be consume again. VisibilityTimeout in seconds;MaximumMessageSize in bytes;MessageRetentionPeriod in seconds</td>
+      </tr>
+      <tr>
+          <td>queue.aws_sqs.queue-properties.js-executor</td>
+          <td>TB_QUEUE_AWS_SQS_JE_QUEUE_PROPERTIES</td>
+          <td>VisibilityTimeout:30;MaximumMessageSize:262144;MessageRetentionPeriod:604800</td>
+          <td>AWS SQS properties for Transport Api queues, messages which will commit after visibility timeout period can be consume again. VisibilityTimeout in seconds;MaximumMessageSize in bytes;MessageRetentionPeriod in seconds</td>
+      </tr>
+      <tr>
+          <td>queue.pubsub.project_id</td>
+          <td>TB_QUEUE_PUBSUB_PROJECT_ID</td>
+          <td>YOUR_PROJECT_ID</td>
+          <td>Project Id from google cloud</td>
+      </tr>
+      <tr>
+          <td>queue.pubsub.service_account</td>
+          <td>TB_QUEUE_PUBSUB_SERVICE_ACCOUNT</td>
+          <td>YOUR_SERVICE_ACCOUNT</td>
+          <td>API Credentials in json format</td>
+      </tr>
+      <tr>
+          <td>queue.pubsub.max_msg_size</td>
+          <td>TB_QUEUE_PUBSUB_MAX_MSG_SIZE</td>
+          <td>1048576</td>
+          <td>Pub/Sub max message size. In bytes</td>
+      </tr>
+      <tr>
+          <td>queue.pubsub.max_messages</td>
+          <td>TB_QUEUE_PUBSUB_MAX_MESSAGES</td>
+          <td>1000</td>
+          <td>Number of messages per a consumer</td>
+      </tr>
+      <tr>
+          <td>queue.pubsub.queue-properties.rule-engine</td>
+          <td>TB_QUEUE_PUBSUB_RE_QUEUE_PROPERTIES</td>
+          <td>ackDeadlineInSec:30;messageRetentionInSec:604800</td>
+          <td>Pub/Sub properties for Rule Engine subscribers, messages which will commit after ackDeadlineInSec period can be consume again</td>
+      </tr>
+      <tr>
+          <td>queue.pubsub.queue-properties.core</td>
+          <td>TB_QUEUE_PUBSUB_CORE_QUEUE_PROPERTIES</td>
+          <td>ackDeadlineInSec:30;messageRetentionInSec:604800</td>
+          <td>Pub/Sub properties for Core subscribers, messages which will commit after ackDeadlineInSec period can be consume again</td>
+      </tr>
+      <tr>
+          <td>queue.pubsub.queue-properties.transport-api</td>
+          <td>TB_QUEUE_PUBSUB_TA_QUEUE_PROPERTIES</td>
+          <td>ackDeadlineInSec:30;messageRetentionInSec:604800</td>
+          <td>Pub/Sub properties for Transport Api subscribers, messages which will commit after ackDeadlineInSec period can be consume again</td>
+      </tr>
+      <tr>
+          <td>queue.pubsub.queue-properties.notifications</td>
+          <td>TB_QUEUE_PUBSUB_NOTIFICATIONS_QUEUE_PROPERTIES</td>
+          <td>ackDeadlineInSec:30;messageRetentionInSec:604800</td>
+          <td>Pub/Sub properties for Notifications subscribers, messages which will commit after ackDeadlineInSec period can be consume again</td>
+      </tr>
+      <tr>
+          <td>queue.pubsub.queue-properties.js-executor</td>
+          <td>TB_QUEUE_PUBSUB_JE_QUEUE_PROPERTIES</td>
+          <td>ackDeadlineInSec:30;messageRetentionInSec:604800</td>
+          <td>Pub/Sub properties for Js Executor subscribers, messages which will commit after ackDeadlineInSec period can be consume again</td>
+      </tr>
+      <tr>
+          <td>queue.service_bus.namespace_name</td>
+          <td>TB_QUEUE_SERVICE_BUS_NAMESPACE_NAME</td>
+          <td>YOUR_NAMESPACE_NAME</td>
+          <td>Azure namespace is a scoping container for all messaging components</td>
+      </tr>
+      <tr>
+          <td>queue.service_bus.sas_key_name</td>
+          <td>TB_QUEUE_SERVICE_BUS_SAS_KEY_NAME</td>
+          <td>YOUR_SAS_KEY_NAME</td>
+          <td>Azure Service Bus Shared Access Signatures key name</td>
+      </tr>
+      <tr>
+          <td>queue.service_bus.sas_key</td>
+          <td>TB_QUEUE_SERVICE_BUS_SAS_KEY</td>
+          <td>YOUR_SAS_KEY</td>
+          <td>Azure Service Bus Shared Access Signatures key</td>
+      </tr>
+      <tr>
+          <td>queue.service_bus.max_messages</td>
+          <td>TB_QUEUE_SERVICE_BUS_MAX_MESSAGES</td>
+          <td>1000</td>
+          <td>Number of messages per a consumer</td>
+      </tr>
+      <tr>
+          <td>queue.service_bus.queue-properties.rule-engine</td>
+          <td>TB_QUEUE_SERVICE_BUS_RE_QUEUE_PROPERTIES</td>
+          <td>lockDurationInSec:30;maxSizeInMb:1024;messageTimeToLiveInSec:604800</td>
+          <td>Azure Service Bus properties for Rule Engine queues</td>
+      </tr>
+      <tr>
+          <td>queue.service_bus.queue-properties.core</td>
+          <td>TB_QUEUE_SERVICE_BUS_CORE_QUEUE_PROPERTIES</td>
+          <td>lockDurationInSec:30;maxSizeInMb:1024;messageTimeToLiveInSec:604800</td>
+          <td>Azure Service Bus properties for Core queues</td>
+      </tr>
+      <tr>
+          <td>queue.service_bus.queue-properties.transport-api</td>
+          <td>TB_QUEUE_SERVICE_BUS_TA_QUEUE_PROPERTIES</td>
+          <td>lockDurationInSec:30;maxSizeInMb:1024;messageTimeToLiveInSec:604800</td>
+          <td>Azure Service Bus properties for Transport Api queues</td>
+      </tr>
+      <tr>
+          <td>queue.service_bus.queue-properties.notifications</td>
+          <td>TB_QUEUE_SERVICE_BUS_NOTIFICATIONS_QUEUE_PROPERTIES</td>
+          <td>lockDurationInSec:30;maxSizeInMb:1024;messageTimeToLiveInSec:604800</td>
+          <td>Azure Service Bus properties for Notifications queues</td>
+      </tr>
+      <tr>
+          <td>queue.service_bus.queue-properties.js-executor</td>
+          <td>TB_QUEUE_SERVICE_BUS_JE_QUEUE_PROPERTIES</td>
+          <td>lockDurationInSec:30;maxSizeInMb:1024;messageTimeToLiveInSec:604800</td>
+          <td>Azure Service Bus properties for Js Executor queues</td>
+      </tr>      
+      <tr>
+          <td>queue.rabbitmq.exchange_name</td>
+          <td>TB_QUEUE_RABBIT_MQ_EXCHANGE_NAME</td>
+          <td></td>
+          <td>Default empty</td>
+      </tr>
+      <tr>
+          <td>queue.rabbitmq.host</td>
+          <td>TB_QUEUE_RABBIT_MQ_HOST</td>
+          <td>localhost</td>
+          <td>RabbitMQ host used to establish connection</td>
+      </tr>
+      <tr>
+          <td>queue.rabbitmq.port</td>
+          <td>TB_QUEUE_RABBIT_MQ_PORT</td>
+          <td>5672</td>
+          <td>RabbitMQ host used to establish connection</td>
+      </tr>
+      <tr>
+          <td>queue.rabbitmq.virtual_host</td>
+          <td>TB_QUEUE_RABBIT_MQ_VIRTUAL_HOST</td>
+          <td>/</td>
+          <td>Virtual hosts provide logical grouping and separation of resources</td>
+      </tr>
+      <tr>
+          <td>queue.rabbitmq.username</td>
+          <td>TB_QUEUE_RABBIT_MQ_USERNAME</td>
+          <td>YOUR_USERNAME</td>
+          <td>User name for RabbitMQ user account</td>
+      </tr>      
+      <tr>
+          <td>queue.rabbitmq.password</td>
+          <td>TB_QUEUE_RABBIT_MQ_PASSWORD</td>
+          <td>YOUR_PASSWORD</td>
+          <td>User password for RabbitMQ user account</td>
+      </tr>      
+      <tr>
+          <td>queue.rabbitmq.automatic_recovery_enabled</td>
+          <td>TB_QUEUE_RABBIT_MQ_AUTOMATIC_RECOVERY_ENABLED</td>
+          <td>false</td>
+          <td>Network connection between clients and RabbitMQ nodes can fail. RabbitMQ Java client supports automatic recovery of connections and topology (queues, exchanges, bindings, and consumers).</td>
+      </tr>
+      <tr>
+          <td>queue.rabbitmq.connection_timeout</td>
+          <td>TB_QUEUE_RABBIT_MQ_CONNECTION_TIMEOUT</td>
+          <td>60000</td>
+          <td>The connection timeout for the RabbitMQ connection factory</td>
+      </tr>
+      <tr>
+          <td>queue.rabbitmq.handshake_timeout</td>
+          <td>TB_QUEUE_RABBIT_MQ_HANDSHAKE_TIMEOUT</td>
+          <td>10000</td>
+          <td>RabbitMQ has a timeout for connection handshake. When clients run in heavily constrained environments, it may be necessary to increase the timeout.</td>
+      </tr>                  
+      <tr>
+          <td>queue.rabbitmq.queue-properties.rule-engine</td>
+          <td>TB_QUEUE_RABBIT_MQ_RE_QUEUE_PROPERTIES</td>
+          <td>x-max-length-bytes:1048576000;x-message-ttl:604800000</td>
+          <td>RabbitMQ properties for Rule Engine queues</td>
+      </tr>
+      <tr>
+          <td>queue.rabbitmq.queue-properties.core</td>
+          <td>TB_QUEUE_RABBIT_MQ_CORE_QUEUE_PROPERTIES</td>
+          <td>x-max-length-bytes:1048576000;x-message-ttl:604800000</td>
+          <td>RabbitMQ properties for Core queues</td>
+      </tr>
+      <tr>
+          <td>queue.rabbitmq.queue-properties.transport-api</td>
+          <td>TB_QUEUE_RABBIT_MQ_TA_QUEUE_PROPERTIES</td>
+          <td>x-max-length-bytes:1048576000;x-message-ttl:604800000</td>
+          <td>RabbitMQ properties for Transport Api queues</td>
+      </tr>
+      <tr>
+          <td>queue.rabbitmq.queue-properties.notifications</td>
+          <td>TB_QUEUE_RABBIT_MQ_NOTIFICATIONS_QUEUE_PROPERTIES</td>
+          <td>x-max-length-bytes:1048576000;x-message-ttl:604800000</td>
+          <td>RabbitMQ properties for Notifications queues</td>
+      </tr>
+      <tr>
+          <td>queue.rabbitmq.queue-properties.js-executor</td>
+          <td>TB_QUEUE_RABBIT_MQ_JE_QUEUE_PROPERTIES</td>
+          <td>x-max-length-bytes:1048576000;x-message-ttl:604800000</td>
+          <td>RabbitMQ properties for Js Executor queues</td>
+      </tr>
+      <tr>
+          <td>queue.partitions.hash_function_name</td>
+          <td>TB_QUEUE_PARTITIONS_HASH_FUNCTION_NAME</td>
+          <td>murmur3_128</td>
+          <td>Name of hash function used for consistent hash ring in Cluster Mode. See architecture docs for more details.</td>
+      </tr>
+      <tr>
+          <td>queue.partitions.virtual_nodes_size</td>
+          <td>TB_QUEUE_PARTITIONS_VIRTUAL_NODES_SIZE</td>
+          <td>16</td>
+          <td>Amount of virtual nodes in consistent hash ring.</td>
+      </tr>
+      <tr>
+          <td>queue.transport_api.requests_topic</td>
+          <td>TB_QUEUE_TRANSPORT_API_REQUEST_TOPIC</td>
+          <td>tb_transport.api.requests</td>
+          <td>Topic used to consume api requests from transport microservices</td>
+      </tr>
+      <tr>
+          <td>queue.transport_api.responses_topic</td>
+          <td>TB_QUEUE_TRANSPORT_API_RESPONSE_TOPIC</td>
+          <td>tb_transport.api.responses</td>
+          <td>Topic used to produce api responses to transport microservices</td>
+      </tr>
+      <tr>
+          <td>queue.transport_api.max_pending_requests</td>
+          <td>TB_QUEUE_TRANSPORT_MAX_PENDING_REQUESTS</td>
+          <td>10000</td>
+          <td>Maximum pending api requests from transport microservices to be handled by server</td>
+      </tr>
+      <tr>
+          <td>queue.transport_api.request_timeout</td>
+          <td>TB_QUEUE_TRANSPORT_MAX_REQUEST_TIMEOUT</td>
+          <td>10000</td>
+          <td>Maximum timeout in milliseconds to handle api request from transport microservice by server</td>
+      </tr>
+      <tr>
+          <td>queue.transport_api.max_callback_threads</td>
+          <td>TB_QUEUE_TRANSPORT_MAX_CALLBACK_THREADS</td>
+          <td>100</td>
+          <td>Amount of threads used to invoke callbacks</td>
+      </tr>
+      <tr>
+          <td>queue.transport_api.request_poll_interval</td>
+          <td>TB_QUEUE_TRANSPORT_REQUEST_POLL_INTERVAL_MS</td>
+          <td>25</td>
+          <td>Interval in milliseconds to poll api requests from transport microservices</td>
+      </tr>
+      <tr>
+          <td>queue.transport_api.response_poll_interval</td>
+          <td>TB_QUEUE_TRANSPORT_RESPONSE_POLL_INTERVAL_MS</td>
+          <td>25</td>
+          <td>Interval in milliseconds to poll api response from transport microservices</td>
+      </tr>
+      <tr>
+          <td>queue.core.topic</td>
+          <td>TB_QUEUE_CORE_TOPIC</td>
+          <td>tb_core</td>
+          <td>Topic name for Core microservices</td>
+      </tr>
+      <tr>
+          <td>queue.core.poll-interval</td>
+          <td>TB_QUEUE_CORE_POLL_INTERVAL_MS</td>
+          <td>25</td>
+          <td>Interval in milliseconds to poll messages by Core microservices</td>
+      </tr>
+      <tr>
+          <td>queue.core.partitions</td>
+          <td>TB_QUEUE_CORE_PARTITIONS</td>
+          <td>10</td>
+          <td>Amount of partitions used by Core microservices</td>
+      </tr>
+      <tr>
+          <td>queue.core.pack-processing-timeout</td>
+          <td>TB_QUEUE_CORE_PACK_PROCESSING_TIMEOUT_MS</td>
+          <td>60000</td>
+          <td>Timeout for processing a message pack by Core microservices</td>
+      </tr>
+      <tr>
+          <td>queue.core.stats.enabled</td>
+          <td>TB_QUEUE_CORE_STATS_ENABLED</td>
+          <td>false</td>
+          <td>Enable/disable statistics for Core microservices</td>
+      </tr>
+      <tr>
+          <td>queue.core.stats.print-interval-ms</td>
+          <td>TB_QUEUE_CORE_STATS_PRINT_INTERVAL_MS</td>
+          <td>10000</td>
+          <td>Statistics printing interval for Core microservices</td>
+      </tr>   
+      <tr>
+          <td>queue.js.request_topic</td>
+          <td>REMOTE_JS_EVAL_REQUEST_TOPIC</td>
+          <td>js_eval.requests</td>
+          <td>Queue topic used for producing JavaScript evaluation requests</td>
+      </tr>
+      <tr>
+          <td>queue.js.response_topic_prefix</td>
+          <td>REMOTE_JS_EVAL_RESPONSE_TOPIC</td>
+          <td>js_eval.responses</td>
+          <td>Prefix queue topic used to consume JavaScript evaluation responses</td>
+      </tr>
+      <tr>
+          <td>queue.js.max_pending_requests</td>
+          <td>REMOTE_JS_MAX_PENDING_REQUESTS</td>
+          <td>10000</td>
+          <td>Maximum pending JavaScript evaluation requests</td>
+      </tr>
+      <tr>
+          <td>queue.js.max_eval_requests_timeout</td>
+          <td>REMOTE_JS_MAX_EVAL_REQUEST_TIMEOUT</td>
+          <td>60000</td>
+          <td>Maximum timeout in milliseconds for JavaScript evaluation</td>
+      </tr>
+      <tr>
+          <td>queue.js.max_requests_timeout</td>
+          <td>REMOTE_JS_MAX_REQUEST_TIMEOUT</td>
+          <td>10000</td>
+          <td>Maximum timeout in milliseconds for JavaScript execution</td>
+      </tr>
+      <tr>
+          <td>queue.js.response_poll_interval</td>
+          <td>REMOTE_JS_RESPONSE_POLL_INTERVAL_MS</td>
+          <td>25</td>
+          <td>JavaScript evaluation responses poll interval</td>
+      </tr>
+      <tr>
+          <td>queue.js.response_auto_commit_interval</td>
+          <td>REMOTE_JS_RESPONSE_AUTO_COMMIT_INTERVAL_MS</td>
+          <td>100</td>
+          <td>JavaScript evaluation responses auto commit interval</td>
+      </tr>
+      <tr>
+          <td>queue.rule-engine.topic</td>
+          <td>TB_QUEUE_RULE_ENGINE_TOPIC</td>
+          <td>tb_rule_engine</td>
+          <td>Topic name for Rule Engine microservices</td>
+      </tr>
+      <tr>
+          <td>queue.rule-engine.poll-interval</td>
+          <td>TB_QUEUE_RULE_ENGINE_POLL_INTERVAL_MS</td>
+          <td>25</td>
+          <td>Interval in milliseconds to poll messages by Rule Engine microservices</td>
+      </tr>
+      <tr>
+          <td>queue.rule-engine.pack-processing-timeout</td>
+          <td>TB_QUEUE_RULE_ENGINE_PACK_PROCESSING_TIMEOUT_MS</td>
+          <td>60000</td>
+          <td>Timeout for processing a message pack</td>
+      </tr>
+      <tr>
+          <td>queue.rule-engine.stats.enabled</td>
+          <td>TB_QUEUE_RULE_ENGINE_STATS_ENABLED</td>
+          <td>true</td>
+          <td>Enable/disable statistics for Rule Engine microservices</td>
+      </tr>
+      <tr>
+          <td>queue.rule-engine.stats.print-interval-ms</td>
+          <td>TB_QUEUE_RULE_ENGINE_STATS_PRINT_INTERVAL_MS</td>
+          <td>10000</td>
+          <td>Statistics printing interval for Rule Engine microservices</td>
+      </tr>
+      <tr>
+          <td>queue.rule-engine.queues.name</td>
+          <td>TB_QUEUE_RE_MAIN_QUEUE_NAME</td>
+          <td>Main</td>
+          <td>Rule Engine Main queue (mustn't be renamed)</td>
+      </tr>
+      <tr>
+          <td>queue.rule-engine.queues.topic</td>
+          <td>TB_QUEUE_RE_MAIN_TOPIC</td>
+          <td>tb_rule_engine.main</td>
+          <td>Topic for Main queue by Rule Engine microservices</td>
+      </tr>
+      <tr>
+          <td>queue.rule-engine.queues.poll-interval</td>
+          <td>TB_QUEUE_RE_MAIN_POLL_INTERVAL_MS</td>
+          <td>25</td>
+          <td>Interval in milliseconds to poll messages from Main queue by Rule Engine microservices</td>
+      </tr>
+      <tr>
+          <td>queue.rule-engine.queues.partitions</td>
+          <td>TB_QUEUE_RE_MAIN_PARTITIONS</td>
+          <td>10</td>
+          <td>Main queue amount of partitions used by Rule Engine microservices</td>
+      </tr>
+      <tr>
+          <td>queue.rule-engine.queues.pack-processing-timeout</td>
+          <td>TB_QUEUE_RE_MAIN_PACK_PROCESSING_TIMEOUT_MS</td>
+          <td>60000</td>
+          <td>Timeout for processing a message pack from Main queue by Rule Engine microservices</td>
+      </tr>
+      <tr>
+          <td>queue.rule-engine.queues.submit-strategy.type</td>
+          <td>TB_QUEUE_RE_MAIN_SUBMIT_STRATEGY_TYPE</td>
+          <td>BURST</td>
+          <td>Main queue submit strategy. Can be: BURST, BATCH, SEQUENTIAL_BY_ORIGINATOR, SEQUENTIAL_WITHIN_TENANT, SEQUENTIAL</td>
+      </tr>
+      <tr>
+          <td>queue.rule-engine.queues.submit-strategy.batch-size</td>
+          <td>TB_QUEUE_RE_MAIN_SUBMIT_STRATEGY_BATCH_SIZE</td>
+          <td>1000</td>
+          <td>Maximum number of messages in batch. Only for submit strategy type: BATCH</td>
+      </tr>
+      <tr>
+          <td>queue.rule-engine.queues.processing-strategy.type</td>
+          <td>TB_QUEUE_RE_MAIN_PROCESSING_STRATEGY_TYPE</td>
+          <td>SKIP_ALL_FAILURES</td>
+          <td>Main queue processing strategy. Can be: SKIP_ALL_FAILURES, RETRY_ALL, RETRY_FAILED, RETRY_TIMED_OUT, RETRY_FAILED_AND_TIMED_OUT</td>
+      </tr>
+      <tr>
+          <td>queue.rule-engine.queues.processing-strategy.retries</td>
+          <td>TB_QUEUE_RE_MAIN_PROCESSING_STRATEGY_RETRIES</td>
+          <td>3</td>
+          <td>Number of retries, 0 is unlimited. Use for RETRY_ALL, RETRY_FAILED, RETRY_TIMED_OUT, RETRY_FAILED_AND_TIMED_OUT processing strategies</td>
+      </tr>
+      <tr>
+          <td>queue.rule-engine.queues.processing-strategy.failure-percentage</td>
+          <td>TB_QUEUE_RE_MAIN_PROCESSING_STRATEGY_FAILURE_PERCENTAGE</td>
+          <td>0</td>
+          <td>Skip retry if failures or timeouts are less then X percentage of messages</td>
+      </tr>
+      <tr>
+          <td>queue.rule-engine.queues.processing-strategy.pause-between-retries</td>
+          <td>TB_QUEUE_RE_MAIN_PROCESSING_STRATEGY_RETRY_PAUSE</td>
+          <td>3</td>
+          <td>Time in seconds to wait in consumer thread before retries</td>
+      </tr>
+      <tr>
+          <td>queue.rule-engine.queues.processing-strategy.max-pause-between-retries</td>
+          <td>TB_QUEUE_RE_MAIN_PROCESSING_STRATEGY_MAX_RETRY_PAUSE</td>
+          <td>3</td>
+          <td>Max allowed time in seconds for pause between retries</td>
+      </tr>
+      <tr>
+          <td>queue.rule-engine.queues.name</td>
+          <td>TB_QUEUE_RE_HP_QUEUE_NAME</td>
+          <td>HighPriority</td>
+          <td>Rule Engine HighPriority queue</td>
+      </tr>
+      <tr>
+          <td>queue.rule-engine.queues.topic</td>
+          <td>TB_QUEUE_RE_HP_TOPIC</td>
+          <td>tb_rule_engine.hp</td>
+          <td>Topic for HighPriority queue by Rule Engine microservices</td>
+      </tr>
+      <tr>
+          <td>queue.rule-engine.queues.poll-interval</td>
+          <td>TB_QUEUE_RE_HP_POLL_INTERVAL_MS</td>
+          <td>25</td>
+          <td>Interval in milliseconds to poll messages from HighPriority queue by Rule Engine microservices</td>
+      </tr>
+      <tr>
+          <td>queue.rule-engine.queues.partitions</td>
+          <td>TB_QUEUE_RE_HP_PARTITIONS</td>
+          <td>10</td>
+          <td>HighPriority queue amount of partitions used by Rule Engine microservices</td>
+      </tr>
+      <tr>
+          <td>queue.rule-engine.queues.pack-processing-timeout</td>
+          <td>TB_QUEUE_RE_HP_PACK_PROCESSING_TIMEOUT_MS</td>
+          <td>60000</td>
+          <td>Timeout for processing a message pack from HighPriority queue by Rule Engine microservices</td>
+      </tr>
+      <tr>
+          <td>queue.rule-engine.queues.submit-strategy.type</td>
+          <td>TB_QUEUE_RE_HP_SUBMIT_STRATEGY_TYPE</td>
+          <td>BURST</td>
+          <td>HighPriority queue submit strategy. Can be: BURST, BATCH, SEQUENTIAL_BY_ORIGINATOR, SEQUENTIAL_WITHIN_TENANT, SEQUENTIAL</td>
+      </tr>
+      <tr>
+          <td>queue.rule-engine.queues.submit-strategy.batch-size</td>
+          <td>TB_QUEUE_RE_HP_SUBMIT_STRATEGY_BATCH_SIZE</td>
+          <td>100</td>
+          <td>Maximum number of messages in batch. Only for submit strategy type: BATCH</td>
+      </tr>
+      <tr>
+          <td>queue.rule-engine.queues.processing-strategy.type</td>
+          <td>TB_QUEUE_RE_HP_PROCESSING_STRATEGY_TYPE</td>
+          <td>RETRY_FAILED_AND_TIMED_OUT</td>
+          <td>SKIP_ALL_FAILURES, RETRY_ALL, RETRY_FAILED, RETRY_TIMED_OUT, RETRY_FAILED_AND_TIMED_OUT</td>
+      </tr>
+      <tr>
+          <td>queue.rule-engine.queues.processing-strategy.retries</td>
+          <td>TB_QUEUE_RE_HP_PROCESSING_STRATEGY_RETRIES</td>
+          <td>0</td>
+          <td>Number of retries, 0 is unlimited. Use for RETRY_ALL, RETRY_FAILED, RETRY_TIMED_OUT, RETRY_FAILED_AND_TIMED_OUT processing strategies</td>
+      </tr>
+      <tr>
+          <td>queue.rule-engine.queues.processing-strategy.failure-percentage</td>
+          <td>TB_QUEUE_RE_HP_PROCESSING_STRATEGY_FAILURE_PERCENTAGE</td>
+          <td>0</td>
+          <td>Skip retry if failures or timeouts are less then X percentage of messages</td>
+      </tr>
+      <tr>
+          <td>queue.rule-engine.queues.processing-strategy.pause-between-retries</td>
+          <td>TB_QUEUE_RE_HP_PROCESSING_STRATEGY_RETRY_PAUSE</td>
+          <td>5</td>
+          <td>Time in seconds to wait in consumer thread before retries</td>
+      </tr>
+      <tr>
+          <td>queue.rule-engine.queues.processing-strategy.max-pause-between-retries</td>
+          <td>TB_QUEUE_RE_HP_PROCESSING_STRATEGY_MAX_RETRY_PAUSE</td>
+          <td>5</td>
+          <td>Max allowed time in seconds for pause between retries</td>
+      </tr> 
+      <tr>
+            <td>queue.rule-engine.queues.name</td>
+            <td>TB_QUEUE_RE_SQ_QUEUE_NAME</td>
+            <td>SequentialByOriginator</td>
+            <td>Rule Engine SequentialByOriginator queue</td>
+        </tr>
+        <tr>
+            <td>queue.rule-engine.queues.topic</td>
+            <td>TB_QUEUE_RE_SQ_TOPIC</td>
+            <td>tb_rule_engine.sq</td>
+            <td>Topic for SequentialByOriginator queue by Rule Engine microservices</td>
+        </tr>
+        <tr>
+            <td>queue.rule-engine.queues.poll-interval</td>
+            <td>TB_QUEUE_RE_SQ_POLL_INTERVAL_MS</td>
+            <td>25</td>
+            <td>Interval in milliseconds to poll messages from SequentialByOriginator queue by Rule Engine microservices</td>
+        </tr>
+        <tr>
+            <td>queue.rule-engine.queues.partitions</td>
+            <td>TB_QUEUE_RE_SQ_PARTITIONS</td>
+            <td>10</td>
+            <td>SequentialByOriginator queue amount of partitions used by Rule Engine microservices</td>
+        </tr>
+        <tr>
+            <td>queue.rule-engine.queues.pack-processing-timeout</td>
+            <td>TB_QUEUE_RE_SQ_PACK_PROCESSING_TIMEOUT_MS</td>
+            <td>60000</td>
+            <td>Timeout for processing a message pack from SequentialByOriginator queue by Rule Engine microservices</td>
+        </tr>
+        <tr>
+            <td>queue.rule-engine.queues.submit-strategy.type</td>
+            <td>TB_QUEUE_RE_SQ_SUBMIT_STRATEGY_TYPE</td>
+            <td>SEQUENTIAL_BY_ORIGINATOR</td>
+            <td>SequentialByOriginator queue submit strategy. Can be: BURST, BATCH, SEQUENTIAL_BY_ORIGINATOR, SEQUENTIAL_WITHIN_TENANT, SEQUENTIAL</td>
+        </tr>
+        <tr>
+            <td>queue.rule-engine.queues.submit-strategy.batch-size</td>
+            <td>TB_QUEUE_RE_SQ_SUBMIT_STRATEGY_BATCH_SIZE</td>
+            <td>100</td>
+            <td>Maximum number of messages in batch. Only for submit strategy type: BATCH</td>
+        </tr>
+        <tr>
+            <td>queue.rule-engine.queues.processing-strategy.type</td>
+            <td>TB_QUEUE_RE_SQ_PROCESSING_STRATEGY_TYPE</td>
+            <td>RETRY_FAILED_AND_TIMED_OUT</td>
+            <td>SKIP_ALL_FAILURES, RETRY_ALL, RETRY_FAILED, RETRY_TIMED_OUT, RETRY_FAILED_AND_TIMED_OUT</td>
+        </tr>
+        <tr>
+            <td>queue.rule-engine.queues.processing-strategy.retries</td>
+            <td>TB_QUEUE_RE_SQ_PROCESSING_STRATEGY_RETRIES</td>
+            <td>3</td>
+            <td>Number of retries, 0 is unlimited. Use for RETRY_ALL, RETRY_FAILED, RETRY_TIMED_OUT, RETRY_FAILED_AND_TIMED_OUT processing strategies</td>
+        </tr>
+        <tr>
+            <td>queue.rule-engine.queues.processing-strategy.failure-percentage</td>
+            <td>TB_QUEUE_RE_SQ_PROCESSING_STRATEGY_FAILURE_PERCENTAGE</td>
+            <td>0</td>
+            <td>Skip retry if failures or timeouts are less then X percentage of messages</td>
+        </tr>
+        <tr>
+            <td>queue.rule-engine.queues.processing-strategy.pause-between-retries</td>
+            <td>TB_QUEUE_RE_SQ_PROCESSING_STRATEGY_RETRY_PAUSE</td>
+            <td>5</td>
+            <td>Time in seconds to wait in consumer thread before retries</td>
+        </tr>      
+        <tr>
+             <td>queue.rule-engine.queues.processing-strategy.max-pause-between-retries</td>
+             <td>TB_QUEUE_RE_SQ_PROCESSING_STRATEGY_MAX_RETRY_PAUSE</td>
+             <td>5</td>
+             <td>Max allowed time in seconds for pause between retries</td>
+        </tr>      
+       <tr>
+           <td>queue.transport.notifications_topic</td>
+           <td>TB_QUEUE_TRANSPORT_NOTIFICATIONS_TOPIC</td>
+           <td>tb_transport.notifications</td>
+           <td>Transport nottifications topic</td>
+       </tr>
+       <tr>
+           <td>queue.transport.poll_interval</td>
+           <td>TB_QUEUE_CORE_POLL_INTERVAL_MS</td>
+           <td>25</td>
+           <td>Interval in milliseconds to poll messages by Core microservices</td>
+       </tr>
+      <tr>
+           <td colspan="4"><span style="font-weight: bold; font-size: 24px;">ThingsBoard service parameters</span></td>
+      </tr>
+       <tr>
+           <td>service.type.</td>
+           <td>TB_SERVICE_TYPE</td>
+           <td>tb-transport</td>
+           <td>Tb Queue service type. Can be: monolith or tb-core or tb-rule-engine or tb-transport</td>
+       </tr>
+       <tr>
+           <td>service.id.</td>
+           <td>TB_SERVICE_ID</td>
+           <td></td>
+           <td>Unique id for this service (autogenerated if empty)</td>
+       </tr>     
+       <tr>
+           <td>service.tenant_id.</td>
+           <td>TB_SERVICE_TENANT_ID</td>
+           <td></td>
+           <td>Empty or specific tenant id</td>
+       </tr>
+  </tbody>
+</table>
 
 #### Logging
 

@@ -2,12 +2,35 @@
 {:toc}
 
 ThingsBoard provides the ability to run MQTT server over SSL. Both one-way and two-way SSL are supported.
-To enable SSL, you will need to obtain a valid or generate a self-signed SSL certificate and add it to the keystore.
-Once added, you will need to specify the keystore information in **thingsboard.yml** file.
+To enable SSL, you will need to obtain a valid or generate a self-signed SSL certificate.
+Once added, you will need to specify the SSL credentials information in **thingsboard.yml** file.
 See the instructions on how to generate SSL certificate and use it in your ThingsBoard installation below.
 You can skip certificate generation step if you already have a certificate.
 
 ### Self-signed certificate generation
+
+#### PEM certificate file
+
+**Note** This step requires Linux based OS with openssl installed.
+
+To generate server self-signed PEM certificate and private key, use the following command:
+
+```bash
+openssl req -x509 -newkey rsa:4096 -keyout mqttserver_key.pem -out mqttserver.pem -sha256 -days 365
+```
+{: .copy-code}
+
+You can also add -nodes (short for no DES) if you don't want to protect your private key with a passphrase. Otherwise, it will prompt you for "at least a 4 character" password.
+
+The **days** parameter (365) you can replace with any number to affect the expiration date. It will then prompt you for things like "Country Name", but you can just hit Enter and accept the defaults.
+
+Add -subj '/CN=localhost' to suppress questions about the contents of the certificate (replace localhost with your desired domain).
+
+Self-signed certificates are not validated with any third party unless you import them to the browsers previously. If you need more security, you should use a certificate signed by a certificate authority (CA).
+
+Next configure MQTT server to [enable SSL](#server-configuration) and use newly generated [PEM certificate](#pem-certificate-file-1). 
+
+#### Java keystore
 
 **Note** This step requires Linux based OS with Java installed.
 
@@ -87,9 +110,11 @@ sudo chmod 400 /etc/thingsboard/conf/mqttserver.jks
 sudo chown thingsboard:thingsboard /etc/thingsboard/conf/mqttserver.jks
 ```
 
+Next configure MQTT server to [enable SSL](#server-configuration) and use newly generated [Keystore](#java-keystore-1).
+
 ### Server configuration
 
-Locate your **thingsboard.conf** file and set the MQTT_SSL_ENABLED value equals  true.
+Locate your **thingsboard.conf** file and set the MQTT_SSL_ENABLED value equals true.
 
 You can add the next row for to the **thingsboard.conf**, so that the MQTT over SSL will be enabled.  
 ```bash 
@@ -98,35 +123,98 @@ export MQTT_SSL_ENABLED=true
 
 ```
 
-You may also want to change **mqtt.bind_port** to 8883 which is recommended for MQTT over SSL servers.
+You may also want to change **mqtt.ssl.bind_port** to 8883 which is recommended for MQTT over SSL servers.
 
 The MQTT bind port can be changed with the next row within the **thingsboard.conf** being added:
 
 ```bash
 ...
-export MQTT_BIND_PORT=8883
+export MQTT_SSL_BIND_PORT=8883
 
 ```
 
-The **key_store** Property must point to the **.jks** file location. **key_store_password** and **key_password** must be the same as were used in keystore generation.
+Further SSL configuration depends on certificate storage format: either [PEM certificate file](#pem-certificate-file-1) or [Java keystore](#java-keystore-1).
 
-**NOTE:** ThingsBoard supports **.p12** keystores as well. if this is the case, set **key_store_type** value to **'PKCS12'**
+#### PEM certificate file
 
-After these values are set, launch or restart your ThingsBoard server.
+In the **thingsboard.conf** file set the MQTT_SSL_CREDENTIALS_TYPE value equals to PEM.
 
-### Example of configuration 
-The next combination of the **keygen.properties** example was used to generate a proper .jks and .pem in a case of the ThingsBoard uses the next default **thingsboard.conf** with the enchantments being specified below.   
-This example is based on the default ThingsBoard installation of the **2.5 version**. 
+```bash 
+...
+export MQTT_SSL_CREDENTIALS_TYPE=PEM
 
+```
+
+Set the MQTT_SSL_PEM_CERT value to point your PEM server certificate file (for ex. mqttserver.pem):
+
+```bash 
+...
+export MQTT_SSL_PEM_CERT=mqttserver.pem
+
+```
+
+**Please note:** If your PEM server certificate file already includes a private key, you can skip the next step.
+
+Set the MQTT_SSL_PEM_KEY value to point your PEM server key file (for ex. mqttserver_key.pem):
+
+```bash 
+...
+export MQTT_SSL_PEM_KEY=mqttserver_key.pem
+
+```
+
+Finally, if your server private key requires password, set the MQTT_SSL_PEM_KEY_PASSWORD value:
+
+```bash 
+...
+export MQTT_SSL_PEM_KEY_PASSWORD=server_key_password
+
+```
+
+The final configuration might look like this:
 
 **thingsboard.conf:**
 ```bash
 ...
 export MQTT_SSL_ENABLED=true
-export MQTT_BIND_PORT=8883
+export MQTT_SSL_BIND_PORT=8883
+export MQTT_SSL_CREDENTIALS_TYPE=PEM
+export MQTT_SSL_PEM_CERT=mqttserver.pem
+export MQTT_SSL_PEM_KEY=mqttserver_key.pem
+export MQTT_SSL_PEM_KEY_PASSWORD=server_key_password
 ...
 ``` 
 
+After these values are set, launch or restart your ThingsBoard server.
+
+#### Java keystore
+
+In the **thingsboard.conf** file set the MQTT_SSL_CREDENTIALS_TYPE value equals to KEYSTORE.
+
+```bash 
+...
+export MQTT_SSL_CREDENTIALS_TYPE=KEYSTORE
+
+```
+
+The **MQTT_SSL_KEY_STORE** variable must point to the **.jks** file location. **MQTT_SSL_KEY_STORE_PASSWORD** and **MQTT_SSL_KEY_PASSWORD** must be the same as were used in keystore generation.
+
+**NOTE:** ThingsBoard supports **.p12** keystores as well. if this is the case, set **MQTT_SSL_KEY_STORE_TYPE** value to **'PKCS12'**
+
+The next combination of the **keygen.properties** example was used to generate a proper .jks and .pem in a case of the ThingsBoard uses the next default **thingsboard.conf** with the enchantments being specified below.   
+This example is based on the default ThingsBoard installation. 
+
+**thingsboard.conf:**
+```bash
+...
+export MQTT_SSL_ENABLED=true
+export MQTT_SSL_BIND_PORT=8883
+export MQTT_SSL_CREDENTIALS_TYPE=KEYSTORE
+export MQTT_SSL_KEY_STORE=mqttserver.jks
+export MQTT_SSL_KEY_STORE_PASSWORD=server_ks_password
+export MQTT_SSL_KEY_PASSWORD=server_key_password
+...
+``` 
 
 **keygen.properties:** 
 ```bash
@@ -151,6 +239,7 @@ CLIENT_KEY_ALIAS="clientalias"
 CLIENT_FILE_PREFIX="mqttclient"
 ```
 
+After completing the setup, start or restart the ThingsBoard server.
 
 ## Client Examples
 
