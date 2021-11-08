@@ -202,22 +202,15 @@ Where:
 
 ## Upgrading
 
-In case when database upgrade is needed, execute the following commands:
+In case when database upgrade is needed, edit .env file to set "TB_VERSION" to target version (f.e. set it to {{ site.release.ce_full_ver }} if you are upgrading to the latest). Then, execute the following commands:
 
 ```bash
-./docker-stop-services.sh
-./docker-remove-services.sh
+$ ./docker-stop-services.sh
+$ ./docker-upgrade-tb.sh --fromVersion=[FROM_VERSION]
+$ ./docker-start-services.sh
 ```
 
-Edit .env file set "TB_VERSION" to target version (f.e. currently you on 3.2.1 so in this case you need to set 3.2.2)
-
-```bash
-./docker-update-service.sh [SERVICE...]
-```
-
-Where:
-
-- `SERVICE...` - list of services to update (defined in docker-compose configurations). If not specified all services will be updated.
+Where `FROM_VERSION` - from which version upgrade should be started. See [Upgrade Instructions](/docs/user-guide/install/pe/upgrade-instructions) for valid `fromVersion` values.
 
 {% include templates/install/generate_certificate_docker-compose.md %}
 
