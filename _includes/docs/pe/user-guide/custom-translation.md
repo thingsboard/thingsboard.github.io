@@ -6,7 +6,11 @@
 ThingsBoard Custom Translations feature allows you to upload alternative to existing language translations
 and extend the translation to specific GUI elements on the dashboards.
 
+Remember: having an internalization for the platform implies the availability of custom translation maps for multiple languages.
+Otherwise, instead of translation {i18n} structure will be displayed.
+
 ### Using Locale Files
+Locale files contain basic list of translations. Their list is constantly expanding.
 
 {% include images-gallery.html imageCollection="usingLocaleFiles" showListImageTitles="true"%}
 
@@ -20,13 +24,18 @@ and extend the translation to specific GUI elements on the dashboards.
   "home": {
     "home": "Pagina principale di un sito web"
   },
+
   "custom": {
+    "group":{
+      "office":"Clienti di Office 1"
+    },
     "my-dashboard": {
       "title": "Dashboard per esempi"
     },
     "my-widget": {
       "name":"Widget per dispositivo sensore",
       "label-text": "Etichetta per dispositivo sensore",
+      "temperature": "Etichetta della temperatura",
       "low-temperature": "Bassa temperatura",
       "high-temperature": "Alta temperatura",
       "normal-temperature": "Temperatura normale"
@@ -36,19 +45,29 @@ and extend the translation to specific GUI elements on the dashboards.
 ```
 {: .copy-code}
 
-### Custom Dashboard Title
 
-{% include images-gallery.html imageCollection="customDashboardTitle"  showListImageTitles="true"%}
+### Dashboard
 
-### Custom Titles 
+{% include images-gallery.html imageCollection="customTranslationForDashboard"  showListImageTitles="true"%}
+
+### Widgets
+
+#### Common Usage
+
+<b>Titles:</b>
 
 {% include images-gallery.html imageCollection="customWidgetTitleAndWidgetLabel" showListImageTitles="true"%}
 
-### Custom Translation in Widgets
+<b>Tooltips:</b>
 
-{% include images-gallery.html imageCollection="customTranslationInWidgets" showListImageTitles="true"%}
+{% include images-gallery.html imageCollection="tooltips" showListImageTitles="true"%}
 
-<b>Examples of using custom translation in the post-processing function:</b>
+
+#### Usage in the cell content function
+
+{% include images-gallery.html imageCollection="usageInCellContentFunction" showListImageTitles="true"%}
+
+<b>JavaScript code examples for cell content function</b>
 ```javascript
 if(value>70){
     return "{i18n:custom.my-widget.high-temperature}";
@@ -60,6 +79,9 @@ if(value>70){
 ```
 {: .copy-code}
 
+#### Usage in HTML Value Card
+
+{% include images-gallery.html imageCollection="usageInHTMLValueCard" showListImageTitles="true"%}
 
 <b>Examples of using custom translation in the HTML Vale Card:</b>
 ```html
@@ -79,7 +101,7 @@ if(value>70){
 <div class='card'>
     <div class='content'>
         <div class='column'>
-            <h1>Sensor Device</h1>
+            <h1>Thermostat Device</h1>
             <div class='value'>
                 Temperature: ${temperature:0} °C
             </div>    
@@ -91,6 +113,12 @@ if(value>70){
 </div>
 ```
 {: .copy-code}
+
+
+
+#### Other places
+
+{% include images-gallery.html imageCollection="otherPlaces" showListImageTitles="true"%}
 
 {% capture peFeatureContent %}
 For now, Custom Translation is not available in the HTML Card, Control Widgets, Files widgets,
