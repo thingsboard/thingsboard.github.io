@@ -9,7 +9,7 @@ The Thingsboard **IoT Gateway** is an open-source solution that allows you to in
 
 Thingsboard is an open-source IoT platform for data collection, processing, visualization, and device management. See [**What is Thingsboard?**](/docs/getting-started-guides/what-is-thingsboard/) if you are new platform user.
 
-<object width="80%" data="/images/gateway/python-gateway-animd-ff.svg"></object>
+<object width="95%" data="/images/gateway/python-gateway-animd-ff.svg"></object>
 
 #### Gateway features
 
@@ -25,6 +25,7 @@ ThingsBoard IoT Gateway provides following features:
  - [**ODBC** connector](/docs/iot-gateway/config/odbc/) to collect data from ODBC databases.
  - [**REST** connector](/docs/iot-gateway/config/rest/) to create endpoints and collect data from incoming HTTP requests.
  - [**SNMP** connector](/docs/iot-gateway/config/rest/) to collect data from SNMP managers.
+ - [**FTP** connector](/docs/iot-gateway/config/ftp/) to collect data from FTP server
  - [**Custom** connector](/docs/iot-gateway/custom/) to collect data from IoT devices that are connected by different protocols. (You can create your own connector for the requires protocol).
  - **Persistence** of collected data to guarantee data delivery in case of network or hardware failures.
  - **Automatic reconnect** to ThingsBoard cluster.

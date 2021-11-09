@@ -18,7 +18,8 @@ services:
     ports:
       - "8080:9090"
       - "1883:1883"
-      - "5683:5683/udp"
+      - "7070:7070"
+      - "5683-5688:5683-5688/udp"
     environment:
       TB_QUEUE_TYPE: aws-sqs
       TB_QUEUE_AWS_SQS_ACCESS_KEY_ID: YOUR_KEY

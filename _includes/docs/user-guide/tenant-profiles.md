@@ -62,6 +62,10 @@ For example, if you store 3 data points for 30 days, this is 90 storage data poi
 A System Administrator is able to configure default TTL using the "**Default Storage TTL Days**" parameter in the tenant profile.
 A Tenant Administrator is able to overwrite default TTL using the "**Save Timeseries**" ule node configuration or using the “TTL” parameter in the post telemetry request.
 
+**Alarms TTL** means how many days to store alarms in the database.
+
+**Alarms sent** means the total number of alarms created per the period (one month by default).
+
 **Emails sent** means the number of emails that are sent from the rule engine using system SMTP provider (settings). 
 Please note that the Tenant Administrator is able to define custom SMTP settings in both Community and Professional Editions of the platform. 
 Emails sent with custom SMTP settings do not affect API limits.  

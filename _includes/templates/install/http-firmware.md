@@ -14,7 +14,7 @@ python3 http_firmware_client.py
 ```
 {: .copy-code}
 
-Download HTTP client example: [**http_firmware_client.py**](/docs/{{docsPrefix}}user-guide/resources/firmware/http_firmware_client.py)
+Download HTTP client example: [**http_firmware_client.py**](/docs/user-guide/resources/firmware/http_firmware_client.py)
 
 After getting the following messages
 - `Please write your ThingsBoard host or leave it blank to use default (localhost):` - use your localhost, or the platform address;

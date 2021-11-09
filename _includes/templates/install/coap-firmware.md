@@ -13,7 +13,7 @@ python3 coap_firmware_client.py
 ```
 {: .copy-code}
 
-Download CoAP client example: [**coap_firmware_client.py**](/docs/{{docsPrefix}}user-guide/resources/firmware/coap_firmware_client.py)
+Download CoAP client example: [**coap_firmware_client.py**](/docs/user-guide/resources/firmware/coap_firmware_client.py)
 
 After getting the following messages
 - `Please write your ThingsBoard host or leave it blank to use default (localhost):` - use your localhost, or the platform address;

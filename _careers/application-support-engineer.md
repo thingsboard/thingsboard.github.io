@@ -2,7 +2,7 @@
 position: Application Support engineer
 tag: 
 location: Kyiv, Ukraine
-dateString: 30 March, 2021
+dateString: 
 layout: career
 ---
 ##### We're looking for an Application Support Engineer to join our team on the full-time basis in the Kyiv office.  
@@ -38,6 +38,8 @@ A high-professional team without bureaucracy and management overhead with 13+ ye
 Career growth opportunities and regular salary review;
 
 Full-time office work with flexible work hours;
+
+Medical insurance;
 
 Free English classes;
 

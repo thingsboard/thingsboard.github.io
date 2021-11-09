@@ -25,6 +25,12 @@
   guides: /docs/guides/
   getStarted: /docs/getting-started-guides/helloworld/
   docsPrefix: /docs/
+- title: Edge
+  fulltitle: ThingsBoard Edge
+  description: ThingsBoard Documentation
+  tag: edge
+  icon: /images/thingsboard-e-icon.svg
+  path: /docs/edge/
 - title: IoT Gateway
   fulltitle: ThingsBoard IoT Gateway
   description: ThingsBoard Documentation

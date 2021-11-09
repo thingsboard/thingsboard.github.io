@@ -391,7 +391,7 @@ services:
     restart: always
     image: "${DOCKER_REPO}/${COAP_TRANSPORT_DOCKER_NAME}:${TB_VERSION}"
     ports:
-      - "5683:5683/udp"
+      - "5683-5688:5683-5688/udp"
     environment:
       TB_HOST: tb-coap-transport
       CLUSTER_NODE_ID: tb-coap-transport
