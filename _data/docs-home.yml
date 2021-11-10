@@ -161,23 +161,40 @@ toc:
       pe: true
 - title: Security
   section:
-  - title: Audit Log
-    path: /docs/user-guide/audit-log/
-  - title: Advanced RBAC for IoT
-    path: /docs/pe/user-guide/rbac/
-    pe: true
-  - title: OAuth 2 Support
-    path: /docs/user-guide/oauth-2-support/
-  - title: MQTT over SSL
-    path: /docs/user-guide/mqtt-over-ssl/
-  - title: Device authentication options
-    path: /docs/user-guide/device-credentials/
-  - title: Access Token based authentication
-    path: /docs/user-guide/access-token/
-  - title: Basic MQTT Credentials
-    path: /docs/user-guide/basic-mqtt/
-  - title: X.509 Certificate based authentication
-    path: /docs/user-guide/certificates/
+    - title: Enable HTTPS
+      path: /docs/user-guide/ssl/http-over-ssl/
+    - title: Audit Log
+      path: /docs/user-guide/audit-log/
+    - title: Advanced RBAC for IoT
+      path: /docs/pe/user-guide/rbac/
+      pe: true
+    - title: OAuth 2 Support
+      path: /docs/user-guide/oauth-2-support/
+    - title: HTTP Transport
+      section:
+        - title: HTTP over SSL
+          path: /docs/user-guide/ssl/http-transport-over-ssl/
+        - title: Device authentication options
+          path: /docs/user-guide/http-device-credentials/
+    - title: MQTT Transport
+      section:
+      - title: MQTT over SSL
+        path: /docs/user-guide/mqtt-over-ssl/
+      - title: Device authentication options
+        path: /docs/user-guide/device-credentials/
+      - title: Access Token based authentication
+        path: /docs/user-guide/access-token/
+      - title: Basic MQTT Credentials
+        path: /docs/user-guide/basic-mqtt/
+      - title: X.509 Certificate based authentication
+        path: /docs/user-guide/certificates/
+    - title: CoAP Transport
+      section:
+      - title: CoAP over DTLS
+        path: /docs/user-guide/coap-over-dtls/
+      - title: Device authentication options
+        path: /docs/user-guide/coap-device-credentials/
+
 - title: Administration UI
   section:
   - title: Tenants

@@ -8,4 +8,4 @@ description: Launching ThingsBoard with secure MQTT protocol to connect your IoT
 ---
 
 {% assign docsPrefix = "pe/" %}
-{% include docs/user-guide/mqtt-over-ssl.md %}
+{% include docs/user-guide/ssl/mqtt-over-ssl.md %}
