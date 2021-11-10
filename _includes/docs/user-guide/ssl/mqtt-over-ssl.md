@@ -84,7 +84,7 @@ You may configure following additional environment variables via [configuration]
  * MQTT_SSL_PROTOCOL - ssl protocol name. Default value is *TLSv1.2*. See [java doc](https://docs.oracle.com/en/java/javase/11/docs/specs/security/standard-names.html#sslcontext-algorithms) for more details;
  * MQTT_SSL_SKIP_VALIDITY_CHECK_FOR_CLIENT_CERT - Skip certificate validity check for client certificates. Default value is *false*.
 
-{% include docs/user-guide/ssl/self-signed-rsa.md %}
+{% include docs/user-guide/ssl/self-signed-ecc.md %}
 
 ## Client Examples
 

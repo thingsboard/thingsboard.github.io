@@ -21,8 +21,6 @@ Add -subj '/CN=localhost' to suppress questions about the contents of the certif
 
 Self-signed certificates are not validated with any third party unless you import them to the browsers previously. If you need more security, you should use a certificate signed by a certificate authority (CA).
 
-Next configure MQTT server to [enable SSL](#server-configuration) and use newly generated [PEM certificate](#pem-certificate-file-1).
-
 #### Java keystore
 
 **Note** This step requires Linux based OS with Java installed.
@@ -41,23 +39,15 @@ CITY="San Francisco"
 STATE_OR_PROVINCE=CA
 TWO_LETTER_COUNTRY_CODE=US
 
-SERVER_KEYSTORE_PASSWORD=server_ks_password
-SERVER_KEY_PASSWORD=server_key_password
+SERVER_KEYSTORE_PASSWORD=password
+SERVER_KEY_PASSWORD=password
 
 SERVER_KEY_ALIAS="serveralias"
 SERVER_FILE_PREFIX="mqttserver"
-SERVER_KEYSTORE_DIR="/etc/thingsboard/conf/"
-SERVER_KEY_ALG="RSA"
-SERVER_KEY_SIZE="2048"
+SERVER_KEY_ALG="EC"
+SERVER_KEY_GROUP_NAME="secp256r1"
+SERVER_KEYSTORE_DIR="/etc/thingsboard/conf"
 
-CLIENT_KEYSTORE_PASSWORD=password
-CLIENT_KEY_PASSWORD=password
-
-CLIENT_TRUSTSTORE="client_truststore"
-CLIENT_KEY_ALIAS="clientalias"
-CLIENT_FILE_PREFIX="mqttclient"
-CLIENT_KEY_ALG="RSA"
-CLIENT_KEY_SIZE="2048"
 ```
 
 where

@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-pe
 assignees:
-- vsosliuk
+- ashvayka
 title: MQTT over SSL
 description: Launching ThingsBoard with secure MQTT protocol to connect your IoT devices and projects.
 

@@ -67,4 +67,4 @@ After completing the setup, start or restart the ThingsBoard server.
 
 {% include templates/ssl/jks_files_location.md %}
 
-{% include docs/user-guide/ssl/self-signed-rsa.md %}
+{% include docs/user-guide/ssl/self-signed-ecc.md %}
