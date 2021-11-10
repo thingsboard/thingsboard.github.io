@@ -5,3 +5,19 @@ toc:
     path: /docs/pe/mobile/
   - title: Getting Started
     path: /docs/pe/mobile/getting-started/
+  - title: Customize your app
+    section:
+      - title: Overview
+        path: /docs/pe/mobile/customization/
+      - title: Dashboards list
+        path: /docs/pe/mobile/customize-dashboards/
+      - title: Devices views
+        path: /docs/pe/mobile/customize-devices/
+      - title: Default device dashboard
+        path: /docs/pe/mobile/default-device-dashboard/
+      - title: Alarm specific dashboard
+        path: /docs/pe/mobile/alarm-dashboard/
+      - title: Mobile actions
+        path: /docs/pe/mobile/dashboard-mobile-actions/
+  - title: Publish your app
+    path: /docs/pe/mobile/release/

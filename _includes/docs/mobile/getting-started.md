@@ -1,11 +1,15 @@
 {% if docsPrefix == 'pe/' %}
 {% assign appPrefix = "ThingsBoard PE" %}
 {% assign appRepo = "https://github.com/thingsboard/flutter_thingsboard_pe_app.git" %}
+{% assign appProject = "flutter_thingsboard_pe_app" %}
 {% assign cloudApp = "[ThingsBoard Cloud](https://thingsboard.cloud/signup)" %}
+{% assign cloudEndpoint = "https://thingsboard.cloud" %}
 {% else %}
 {% assign appPrefix = "ThingsBoard" %}
 {% assign appRepo = "https://github.com/thingsboard/flutter_thingsboard_app.git" %}
+{% assign appProject = "flutter_thingsboard_app" %}
 {% assign cloudApp = "[Live Demo](https://demo.thingsboard.io/signup)" %}
+{% assign cloudEndpoint = "https://demo.thingsboard.io" %}
 {% endif %}
 
 * TOC
@@ -15,15 +19,12 @@
 
 The goal of this tutorial is to demonstrate the basic setup of {{appPrefix}} Mobile Application with your {{appPrefix}} platform instance. You will learn how to:
 
-* Get and build Flutter {{appPrefix}} Mobile Application project;
-* Customize the list of dashboards displayed on the home screen;
-* Customize look of devices by configuring device profiles;
-* Configure default device dashboard;
-* Configure alarm specific dashboard;
-* Configure mobile actions;
-* Prepare application for release.
+* Setup development environment;
+* Get application project source code;
+* Configure API endpoint to your {{appPrefix}} platform instance;
+* Build and run your version of {{appPrefix}} Mobile Application;
 
-## Prerequisites
+## Step 1. Prepare development environment
 
 Flutter {{appPrefix}} Mobile Application requires Flutter SDK starting from version 2.12.0.
 Follow [these](https://flutter.dev/docs/get-started/install) instructions in order to setup Flutter SDK.
@@ -33,7 +34,7 @@ Flutter {{appPrefix}} Mobile Application is served by {{appPrefix}} platform sta
 You will need to have {{appPrefix}} server up and running. The easiest way is to use {{cloudApp}}.
 The alternative option is to install {{appPrefix}} using [Installation Guide](/docs/user-guide/install/{{docsPrefix}}installation-options/).
 
-## Step 1. Get Flutter {{appPrefix}} Mobile Application source code
+## Step 2. Get app source code
 
 You can get Flutter {{appPrefix}} Mobile Application source code by cloning it from [github repository]({{appRepo}}):
 
@@ -42,21 +43,65 @@ git clone {{appRepo}}
 ```
 {: .copy-code}
 
-## Step 2. Configure {{appPrefix}} API endpoint
+## Step 3. Configure {{appPrefix}} API endpoint
 
-## Step 3. Build and run Mobile Application
+Open **{{appProject}}** project in your editor/IDE. Edit **lib/constants/app_constants.dart**.
 
-## Step 4. Customize list of dashboards
+Set value of **thingsBoardApiEndpoint** constant to match api endpoint of your {{appPrefix}} server instance.<br>
+In case of {{cloudApp}} set it to `{{cloudEndpoint}}`.
 
-## Step 5. Customize look of devices
+```dart
+abstract class ThingsboardAppConstants {
+  static final thingsBoardApiEndpoint = '{{cloudEndpoint}}';
+  
+  ...
+}
 
-## Step 6. Setup default device dashboard
+```
 
-## Step 7. Setup alarm specific dashboard
+{% capture local_endpoint_note %}
+**Note:** Do not use `localhost` or `127.0.0.1` host names.<br>
+If you are using local {{appPrefix}} installation use alternative ip address/host name accessible within your local network.<br>
+You can read [Connecting Flutter application to Localhost](https://medium.com/@podcoder/connecting-flutter-application-to-localhost-a1022df63130){:target="_blank"} for more information.
+{% endcapture %}
+{% include templates/info-banner.md content=local_endpoint_note %}
 
-## Step 8. Configure mobile actions
+## Step 4. Run the app
 
-## Step 9. Prepare for release
+Run the app [in the way your IDE describes](https://flutter.dev/docs/get-started/test-drive).
+
+When using terminal run the app with the following command:
+
+```bash
+flutter run
+```
+{: .copy-code}
+
+You should see either Android, iOS, or web output, depending on your device.
+
+<br>
+
+<div style="display: flex; flex-direction: row;">
+    <div style="display: flex; flex-direction: column; align-items: center;">
+        <img width="" src="/images/mobile/{{docsPrefix}}android-app-login.png" title="Android login screen" alt="Android login screen">
+        <span style="margin-top: 16px; font-size: 90%; color: #6c757d;">Android</span>
+    </div>
+    <div style="display: flex; flex-direction: column; align-items: center;">
+        <img width="" src="/images/mobile/{{docsPrefix}}ios-app-login.png" title="iOS login screen" alt="iOS login screen">
+        <span style="margin-top: 16px; font-size: 90%; color: #6c757d;">iOS</span>
+    </div>
+</div>
+
+{% capture run_tip %}
+**Tip:** The first time you run on a physical device, it can take a while to load.
+Afterward, you can use hot reload for quick updates.
+
+**Save** also performs a hot reload if the app is running.
+When running an app directly from the console using `flutter run`, enter `r` to perform hot reload.
+{% endcapture %}
+{% include templates/info-banner.md content=run_tip %}
 
 ## Next Steps
 
+- [Customize your app](/docs/{{docsPrefix}}mobile/customization) - Learn how to customize your {{appPrefix}} Mobile Application to meet your requirements.
+- [Publish your app](/docs/{{docsPrefix}}mobile/release) - Learn how to build release and publish your version of {{appPrefix}} Mobile Application to Google Play or App Store.

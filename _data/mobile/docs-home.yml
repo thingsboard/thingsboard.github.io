@@ -5,3 +5,19 @@ toc:
     path: /docs/mobile/
   - title: Getting Started
     path: /docs/mobile/getting-started/
+  - title: Customize your app
+    section:
+      - title: Overview
+        path: /docs/mobile/customization/
+      - title: Dashboards list
+        path: /docs/mobile/customize-dashboards/
+      - title: Devices views
+        path: /docs/mobile/customize-devices/
+      - title: Default device dashboard
+        path: /docs/mobile/default-device-dashboard/
+      - title: Alarm specific dashboard
+        path: /docs/mobile/alarm-dashboard/
+      - title: Mobile actions
+        path: /docs/mobile/dashboard-mobile-actions/
+  - title: Publish your app
+    path: /docs/mobile/release/
