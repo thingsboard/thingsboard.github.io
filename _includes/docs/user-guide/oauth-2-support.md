@@ -189,7 +189,7 @@ If we are logged as System Administrator, you will see that Tenant name is our *
 
 We have completed our sample and now your users are not required to create accounts inside ThingsBoard - they can use already exist SSO providers for this.
 
-### Resulted Snipped
+### Resulted Snippet
 This snippet contains both providers that are used in our sample:
 
 [comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/26-both-providers.png&#41;)
