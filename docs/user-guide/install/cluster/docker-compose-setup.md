@@ -42,11 +42,8 @@ See [**microservices**](/docs/reference/msa/) architecture page for more details
 ## Step 3. Clone ThingsBoard CE repository
 
 ```bash
-git clone https://github.com/thingsboard/thingsboard.git
-cd thingsboard
-# checkout latest release branch
-git checkout {{ site.release.branch }}
-cd docker
+git clone -b {{ site.release.branch }} https://github.com/thingsboard/thingsboard.git
+cd thingsboard/docker
 ```
 
 ## Step 4. Configure ThingsBoard database

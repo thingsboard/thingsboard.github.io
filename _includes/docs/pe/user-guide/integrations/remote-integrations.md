@@ -19,7 +19,7 @@ See [deployment options](/docs/{{peDocsPrefix}}user-guide/integrations/#deployme
 
 ## Prerequisites
 
-We assume you already have a tenant administrator account on your own ThingsBoard PE v2.4.1+ instance or
+We assume you already have a tenant administrator account on your own ThingsBoard PE v3.3.1+ instance or
 [thingsboard.cloud](https://thingsboard.cloud/signup).  
 
 ## ThingsBoard configuration steps
@@ -70,7 +70,8 @@ MQTT Integrations<br/><small>(MQTT, AWS IoT, IBM Watson, The Things Network)</sm
 AWS SQS<br/> Integration<br/>%,%aws%,%templates/install/integration/aws-docker.md%br%
 Azure Event Hub<br/>Integration<br/>%,%azure%,%templates/install/integration/azure-docker.md%br%
 OPC UA<br/> Integration<br/>%,%opcua%,%templates/install/integration/opcua-docker.md%br%
-TCP/UDP<br/> Integration<br/>%,%tcpudp%,%templates/install/integration/tcpudp-docker.md{% endcapture %}
+TCP/UDP<br/> Integration<br/>%,%tcpudp%,%templates/install/integration/tcpudp-docker.md%br%
+CoAP<br/> Integration<br/>%,%coap%,%templates/install/integration/coap-docker.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="remoteintegrationdockerinstall" toggle-spec=contenttogglespec %}
 
@@ -104,7 +105,8 @@ MQTT Integrations<br/><small>(MQTT, AWS IoT, IBM Watson, The Things Network)</sm
 AWS SQS<br/> Integration<br/>%,%aws%,%templates/install/integration/aws-docker-windows.md%br%
 Azure Event Hub<br/>Integration<br/>%,%azure%,%templates/install/integration/azure-docker-windows.md%br%
 OPC UA<br/> Integration<br/>%,%opcua%,%templates/install/integration/opcua-docker-windows.md%br%
-TCP/UDP<br/> Integration<br/>%,%tcpudp%,%templates/install/integration/tcpudp-docker-windows.md{% endcapture %}
+TCP/UDP<br/> Integration<br/>%,%tcpudp%,%templates/install/integration/tcpudp-docker-windows.md%br%
+CoAP<br/> Integration<br/>%,%coap%,%templates/install/integration/coap-docker-windows.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="remoteintegrationdockerinstallwin" toggle-spec=contenttogglespecwin %}
 
@@ -138,7 +140,8 @@ MQTT Integrations<br/><small>(MQTT, AWS IoT, IBM Watson, The Things Network)</sm
 AWS SQS<br/> Integration<br/>%,%aws%,%templates/install/integration/aws-ubuntu.md%br%
 Azure Event Hub<br/>Integration<br/>%,%azure%,%templates/install/integration/azure-ubuntu.md%br%
 OPC UA<br/> Integration<br/>%,%opcua%,%templates/install/integration/opcua-ubuntu.md%br%
-TCP/UDP<br/> Integration<br/>%,%tcpudp%,%templates/install/integration/tcpudp-ubuntu.md{% endcapture %}
+TCP/UDP<br/> Integration<br/>%,%tcpudp%,%templates/install/integration/tcpudp-ubuntu.md%br%
+CoAP<br/> Integration<br/>%,%coap%,%templates/install/integration/coap-ubuntu.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="remoteintegrationinstallubuntu" toggle-spec=ubuntuinstallspec %} 
 
@@ -177,6 +180,7 @@ Explore guides and video tutorials related to specific integrations:
  - [OPC-UA](/docs/{{peDocsPrefix}}user-guide/integrations/opc-ua/)
  - [TCP](/docs/{{peDocsPrefix}}user-guide/integrations/tcp/)
  - [UDP](/docs/{{peDocsPrefix}}user-guide/integrations/udp/)
+ - [CoAP](/docs/{{peDocsPrefix}}user-guide/integrations/coap/)
  - [Custom](/docs/{{peDocsPrefix}}user-guide/integrations/custom/)
 
   

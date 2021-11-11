@@ -3,7 +3,7 @@
 Configure ThingsBoard environment file:
 
 ```text
-sudo nano .env
+nano .env
 ```
 {: .copy-code}
 
@@ -17,7 +17,7 @@ TB_QUEUE_TYPE=pubsub
 Configure Pub/Sub environment file for ThingsBoard queue service:
 
 ```text
-sudo nano queue-pubsub.env
+nano queue-pubsub.env
 ```
 {: .copy-code}
 

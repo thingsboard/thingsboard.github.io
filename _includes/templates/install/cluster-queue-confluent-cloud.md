@@ -3,7 +3,7 @@
 Configure ThingsBoard environment file:
 
 ```text
-sudo nano .env
+nano .env
 ```
 {: .copy-code}
 
@@ -17,7 +17,7 @@ TB_QUEUE_TYPE=confluent
 Configure Confluent Cloud environment file for ThingsBoard queue service:
 
 ```text
-sudo nano queue-confluent-cloud.env
+nano queue-confluent-cloud.env
 ```
 {: .copy-code}
 

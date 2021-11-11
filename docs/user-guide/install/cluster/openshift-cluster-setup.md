@@ -44,7 +44,7 @@ See [**microservices**](/docs/reference/msa/) architecture page for more details
 ## Step 2. Clone ThingsBoard CE Kubernetes scripts repository
 
 ```bash
-git clone https://github.com/thingsboard/thingsboard-ce-k8s.git
+git clone -b release-{{ site.release.ver }} https://github.com/thingsboard/thingsboard-ce-k8s.git
 cd thingsboard-ce-k8s/openshift
 ```
 
