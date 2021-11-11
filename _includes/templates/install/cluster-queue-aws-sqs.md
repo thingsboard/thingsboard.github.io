@@ -3,7 +3,7 @@
 Configure ThingsBoard environment file:
 
 ```text
-sudo nano .env
+nano .env
 ```
 {: .copy-code}
 
@@ -17,7 +17,7 @@ TB_QUEUE_TYPE=aws-sqs
 Configure AWS SQS environment file for ThingsBoard queue service:
 
 ```text
-sudo nano queue-aws-sqs.env
+nano queue-aws-sqs.env
 ```
 {: .copy-code}
 

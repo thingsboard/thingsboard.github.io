@@ -57,7 +57,6 @@ We will reference the license key you have obtained during this step as PUT_YOUR
 ## Step 5. Configure your license key
 
 ```bash
-cd tb-pe-docker-compose
 nano tb-node.env
 ```
 
