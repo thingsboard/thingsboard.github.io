@@ -4,6 +4,7 @@ assignees:
 - ashvayka
 title: ThingsBoard Professional Edition cluster setup with Docker Compose guide
 description: ThingsBoard Professional Edition cluster setup with Docker Compose guide
+redirect_from: "/docs/user-guide/install/pe/docker-cassandra/"  
 
 ---
 
@@ -35,10 +36,8 @@ Please note that for the deployment of Rule Engine as a separate service, an add
 ## Step 3. Clone ThingsBoard PE Docker Compose scripts
 
 ```bash
-git clone https://github.com/thingsboard/thingsboard-pe-docker-compose.git tb-pe-docker-compose
+git clone -b release-{{ site.release.ce_ver }} https://github.com/thingsboard/thingsboard-pe-docker-compose.git tb-pe-docker-compose
 cd tb-pe-docker-compose
-# checkout latest release branch
-git checkout {{ site.release.branch }}
 ```
 {: .copy-code}
 
@@ -57,7 +56,6 @@ We will reference the license key you have obtained during this step as PUT_YOUR
 ## Step 5. Configure your license key
 
 ```bash
-cd tb-pe-docker-compose
 nano tb-node.env
 ```
 

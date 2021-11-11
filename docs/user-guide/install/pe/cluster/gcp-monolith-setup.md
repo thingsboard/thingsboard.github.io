@@ -19,7 +19,7 @@ ThingsBoard Microservices run on the Kubernetes cluster. You need to have a Kube
 ## Step 1. Clone ThingsBoard PE K8S scripts repository
 
 ```bash
-git clone https://github.com/thingsboard/thingsboard-pe-k8s.git
+git clone -b release-{{ site.release.ver }} https://github.com/thingsboard/thingsboard-pe-k8s.git
 cd thingsboard-pe-k8s/gcp/monolith
 ```
 {: .copy-code}

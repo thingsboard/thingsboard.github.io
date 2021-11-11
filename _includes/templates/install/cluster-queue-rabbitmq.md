@@ -3,7 +3,7 @@ For installing RabbitMQ use this [instruction](https://www.rabbitmq.com/install-
 Configure ThingsBoard environment file:
 
 ```text
-sudo nano .env
+nano .env
 ```
 {: .copy-code}
 
@@ -17,7 +17,7 @@ TB_QUEUE_TYPE=rabbitmq
 Configure RabbitMQ environment file for ThingsBoard queue service:
 
 ```text
-sudo nano queue-rabbitmq.env
+nano queue-rabbitmq.env
 ```
 {: .copy-code}
 
