@@ -3,13 +3,13 @@
 Configure ThingsBoard environment file:
 
 ```text
-sudo nano .env
+nano .env
 ```
 {: .copy-code}
 
 Check following line:
 
-```.env
+```bash
 TB_QUEUE_TYPE=aws-sqs
 ```
 {: .copy-code}
@@ -23,7 +23,7 @@ sudo nano queue-aws-sqs.env
 
 Don’t forget to replace "YOUR_KEY", "YOUR_SECRET" with your **real AWS SQS IAM user credentials** and "YOUR_REGION" with your **real AWS SQS account region:**
 
-```.env
+```bash
 TB_QUEUE_TYPE=aws-sqs
 TB_QUEUE_AWS_SQS_ACCESS_KEY_ID=YOUR_KEY
 TB_QUEUE_AWS_SQS_SECRET_ACCESS_KEY=YOUR_SECRET

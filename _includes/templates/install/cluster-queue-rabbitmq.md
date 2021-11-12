@@ -3,13 +3,13 @@ For installing RabbitMQ use this [instruction](https://www.rabbitmq.com/install-
 Configure ThingsBoard environment file:
 
 ```text
-sudo nano .env
+nano .env
 ```
 {: .copy-code}
 
 Check following line:
 
-```.env
+```bash
 TB_QUEUE_TYPE=rabbitmq
 ```
 {: .copy-code}
@@ -23,7 +23,7 @@ sudo nano queue-rabbitmq.env
 
 Don't forget to replace "YOUR_USERNAME" and "YOUR_PASSWORD" with your **real user credentials**, "localhost" and "5672" with your **real RabbitMQ host and port**:
 
-```.env
+```bash
 TB_QUEUE_TYPE=rabbitmq
 TB_QUEUE_RABBIT_MQ_HOST=localhost
 TB_QUEUE_RABBIT_MQ_PORT=5672
