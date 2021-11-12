@@ -10,7 +10,7 @@ Where:
 - `CLOUD_ROUTING_KEY` - your edge key;
 - `CLOUD_ROUTING_SECRET` - your edge secret;
 - `CLOUD_RPC_HOST` - ip address of the machine with the ThingsBoard platform;
-- `CLOUD_RPC_SSL_ENABLED` - enable or disable SSL connection to server from ecadge.
+- `CLOUD_RPC_SSL_ENABLED` - enable or disable SSL connection to server from edge.
 
 {% capture cloud_rpc_host %}
 Please set **CLOUD_RPC_HOST** with an IP address of the machine where ThingsBoard CE/PE version is running:
