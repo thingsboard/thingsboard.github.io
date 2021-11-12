@@ -35,7 +35,7 @@ See [**microservices**](/docs/reference/msa/) architecture page for more details
 ## Step 2. Clone ThingsBoard CE Kubernetes scripts repository
 
 ```bash
-git clone https://github.com/thingsboard/thingsboard-ce-k8s.git
+git clone -b release-{{ site.release.ver }} https://github.com/thingsboard/thingsboard-ce-k8s.git
 cd thingsboard-ce-k8s/minikube
 ```
 
@@ -59,7 +59,7 @@ It is recommended to have 3 Cassandra nodes with `CASSANDRA_REPLICATION_FACTOR` 
 {% endcapture %}
 {% include templates/info-banner.md content=cassandra-replication %}
 
-## Step 5. Running
+## Step 4. Running
 
 Execute the following command to run installation:
 
@@ -148,14 +148,19 @@ Execute the following command to delete all resources (including database):
 
 ## Upgrading
 
-In case when database upgrade is needed, execute the following commands:
+In case you would like to upgrade, please pull the *latest* changes from `master` branch:
+```
+git pull origin master
+```
+{: .copy-code}
+
+and then execute the following commands:
 
 ```
 ./k8s-delete-resources.sh
 ./k8s-upgrade-tb.sh --fromVersion=[FROM_VERSION]
 ./k8s-deploy-resources.sh
 ```
-
 Where:
 
 - `FROM_VERSION` - from which version upgrade should be started. See [Upgrade Instructions](/docs/user-guide/install/upgrade-instructions) for valid `fromVersion` values.

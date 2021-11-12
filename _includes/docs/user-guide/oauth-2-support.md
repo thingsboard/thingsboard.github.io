@@ -56,7 +56,7 @@ http://localhost:8080/login/oauth2/code/
 
 #### Configuration of ThingsBoard
 
-Go to your ThingsBoard as a System Administrator (sysadmin@thingsboard.org / sysadmin). Check the General Settings -> Base URL should not contain "/" at the end (f.e. "`http://127.0.0.1:8080`" instead of "`https://127.0.0.1:8080/`"). Then in the **Home** section, find the "OAuth2" icon and click on it.
+Go to your ThingsBoard as a System Administrator (sysadmin@thingsboard.org / sysadmin). Check the General Settings -> Base URL should not contain "/" at the end (e.g. "`http://127.0.0.1:8080`" instead of "`https://127.0.0.1:8080/`"). Then in the **Home** section, find the "OAuth2" icon and click on it.
 
 [comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/5-home-oauth2.png&#41;)
 {% include images-gallery.html imageCollection="step5" preview="false" max-width="100%" %}
@@ -189,7 +189,7 @@ If we are logged as System Administrator, you will see that Tenant name is our *
 
 We have completed our sample and now your users are not required to create accounts inside ThingsBoard - they can use already exist SSO providers for this.
 
-### Resulted Snipped
+### Resulted Snippet
 This snippet contains both providers that are used in our sample:
 
 [comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/26-both-providers.png&#41;)

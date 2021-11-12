@@ -90,7 +90,7 @@ This guide will help you to setup ThingsBoard in microservices mode in AWS EKS.
 ## Step 1. Clone ThingsBoard PE K8S scripts repository
 
 ```bash
-git clone https://github.com/thingsboard/thingsboard-pe-k8s.git
+git clone -b release-{{ site.release.ver }} https://github.com/thingsboard/thingsboard-pe-k8s.git
 cd thingsboard-pe-k8s/aws/microservices
 ```
 {: .copy-code}
@@ -134,19 +134,7 @@ Edit “tb-services.yml” and replace **PUT_YOUR_LICENSE_SECRET_HERE** with you
 
 If the above command fails, repeat the [prerequisites](#checkout-thingsboard-pe-images-from-docker-store) step.
 
-To upload Docker credentials, please execute next command:
-
-```
-./k8s-upload-docker-credentials.sh
-```
-{: .copy-code}
-
-Or you can use the following command:
-
-```
-kubectl create secret docker-registry regcred --docker-server=https://index.docker.io/v1/ --docker-username=$YOUR_USERNAME --docker-password=$YOUR_PASSWORD --docker-email=$YOUR_EMAIL
-```
-{: .copy-code}
+{% include templates/install/dockerhub/upload-docker-credentials.md %}
 
 ## Step 10. Configure HTTPS (Optional)
 
