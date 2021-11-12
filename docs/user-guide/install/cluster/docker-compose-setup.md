@@ -10,6 +10,8 @@ description: ThingsBoard IoT platform cluster setup with Docker Compose guide
 * TOC
 {:toc}
 
+{% assign docsPrefix = "ce/" %}
+
 This guide will help you to setup ThingsBoard in cluster mode using Docker Compose tool. 
 
 ## Prerequisites
@@ -148,29 +150,10 @@ Where:
 
 - `[SERVICE...]` - list of services to update (defined in docker-compose configurations). If not specified all services will be updated.
 
-## Upgrading
-
-In case when database upgrade is needed, execute the following commands:
-
-```bash
-./docker-stop-services.sh
-./docker-remove-services.sh
-```
-{: .copy-code}
-
-Edit .env file set "TB_VERSION" to target version (f.e. currently you have 3.2.1 so in this case you need to set 3.2.2)
-
-```bash
-./docker-update-service.sh [SERVICE...]
-```
-{: .copy-code}
-
-Where:
-
-- `SERVICE...` - list of services to update (defined in docker-compose configurations). If not specified all services will be updated.
-
+{% include templates/install/upgrade-docker-compose.md %}
 
 {% include templates/install/generate_certificate_docker-compose.md %}
+
 ## Next steps
 
 {% assign currentGuide = "InstallationGuides" %}{% include templates/guides-banner.md %}

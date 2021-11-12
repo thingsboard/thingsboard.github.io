@@ -10,6 +10,8 @@ description: ThingsBoard Professional Edition cluster setup with Docker Compose 
 * TOC
 {:toc}
 
+{% assign docsPrefix = "pe/" %}
+
 This guide will help you to setup ThingsBoard in cluster mode with Docker Compose. 
 For this purpose, we will use docker container images available on [Docker Hub](https://hub.docker.com/search?q=thingsboard&type=image&image_filter=store).  
 
@@ -196,24 +198,7 @@ Where:
 
 - `[SERVICE...]` - list of services to update (defined in docker-compose configurations). If not specified all services will be updated.
 
-## Upgrading
-
-In case when database upgrade is needed, execute the following commands:
-
-```bash
-./docker-stop-services.sh
-./docker-remove-services.sh
-```
-
-Edit .env file set "TB_VERSION" to target version (f.e. currently you on 3.2.1 so in this case you need to set 3.2.2)
-
-```bash
-./docker-update-service.sh [SERVICE...]
-```
-
-Where:
-
-- `SERVICE...` - list of services to update (defined in docker-compose configurations). If not specified all services will be updated.
+{% include templates/install/upgrade-docker-compose.md %}
 
 {% include templates/install/generate_certificate_docker-compose.md %}
 
