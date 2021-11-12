@@ -8,7 +8,6 @@ description: Installing ThingsBoard Edge using Docker (Windows)
 {:toc}
 
 This guide will help you to install and start ThingsBoard Edge using Docker on Windows. 
-The container image used in this guide has embedded PostgreSQL 11 to simplify setup. 
 
 {% include templates/edge/install/prerequisites.md %}
 
@@ -31,38 +30,56 @@ Open "Docker Quickstart Terminal". Execute the following command to create docke
 ``` 
 $ docker volume create mytb-edge-data
 $ docker volume create mytb-edge-logs
+$ docker volume create mytb-edge-data-db
 ```
 {: .copy-code}
 
 Create docker compose file for ThingsBoard Edge service:
-```
+
+```text
 docker-compose.yml
 ```
-```
-version: '2.2'
+{: .copy-code}
 
+```yml
+version: '2.2'
 services:
   mytbedge:
     restart: always
-    image: "thingsboard/tb-edge-monolith:3.3.0EDGE"
+    image: "thingsboard/tb-edge:{{ site.release.edge_full_ver }}"
     ports:
       - "8080:8080"
       - "1883:1883"
       - "5683-5688:5683-5688/udp"
     environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/tb-edge
       EDGE_LICENSE_INSTANCE_DATA_FILE: /data/instance-edge-license.data
       CLOUD_ROUTING_KEY: PUT_YOUR_EDGE_KEY_HERE # e.g. 19ea7ee8-5e6d-e642-4f32-05440a529015
       CLOUD_ROUTING_SECRET: PUT_YOUR_EDGE_SECRET_HERE # e.g. bztvkvfqsye7omv9uxlp
       CLOUD_RPC_HOST: PUT_YOUR_CLOUD_IP # e.g. 192.168.1.250 or demo.thingsboard.io
+      CLOUD_RPC_SSL_ENABLED: 'false' # set it to 'true' if you are connecting edge to thingsboard.cloud
     volumes:
       - mytb-edge-data:/data
       - mytb-edge-logs:/var/log/tb-edge
+  postgres:
+    restart: always
+    image: "postgres:12"
+    ports:
+    - "5432"
+    environment:
+      POSTGRES_DB: tb-edge
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - mytb-edge-data-db:/var/lib/postgresql/data
 volumes:
   mytb-edge-data:
     external: true
   mytb-edge-logs:
     external: true
+  mytb-edge-data-db:
+    external: true
 ```
+{: .copy-code}
 
 {% include templates/edge/install/docker_compose_details_explain.md %}
 

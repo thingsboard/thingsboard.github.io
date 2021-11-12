@@ -1,14 +1,16 @@
 Where:    
-- `restart: always` - automatically start ThingsBoard Edge in case of system reboot and restart in case of failure
-- `8080:8080` - connect local port 8080 to exposed internal HTTP port 8080
-- `1883:1883` - connect local port 1883 to exposed internal MQTT port 1883  
-- `5683-5688:5683-5688/udp` - connect local UDP ports 5683-5688 to exposed internal COAP and LwM2M ports   
-- `mytb-edge-data:/data` - mounts the host's dir `mytb-edge-data` to ThingsBoard Edge DataBase data directory
-- `mytb-edge-logs:/var/log/tb-edge` - mounts the host's dir `mytb-edge-logs` to ThingsBoard Edge logs directory
-- `thingsboard/tb-edge-monolith:3.3.0EDGE` - docker image
-- `CLOUD_ROUTING_KEY` - your edge key
-- `CLOUD_ROUTING_SECRET` - your edge secret
-- `CLOUD_RPC_HOST` - ip address of the machine with the ThingsBoard platform. 
+- `restart: always` - automatically start ThingsBoard Edge in case of system reboot and restart in case of failure;
+- `8080:8080` - connect local port 8080 to exposed internal HTTP port 8080;
+- `1883:1883` - connect local port 1883 to exposed internal MQTT port 1883;
+- `5683-5688:5683-5688/udp` - connect local UDP ports 5683-5688 to exposed internal COAP and LwM2M ports;
+- `mytb-edge-data:/data` - mounts the host's dir `mytb-edge-data` to ThingsBoard Edge DataBase data directory;
+- `mytb-edge-logs:/var/log/tb-edge` - mounts the host's dir `mytb-edge-logs` to ThingsBoard Edge logs directory;
+- `mytb-edge-data/db:/var/lib/postgresql/data` - mounts the host's dir `mytb-edge-data/db` to Postgres data directory;
+- `thingsboard/tb-edge:{{ site.release.pe_full_ver }}` - docker image;
+- `CLOUD_ROUTING_KEY` - your edge key;
+- `CLOUD_ROUTING_SECRET` - your edge secret;
+- `CLOUD_RPC_HOST` - ip address of the machine with the ThingsBoard platform;
+- `CLOUD_RPC_SSL_ENABLED` - enable or disable SSL connection to server from ecadge.
 
 {% capture cloud_rpc_host %}
 Please set **CLOUD_RPC_HOST** with an IP address of the machine where ThingsBoard CE/PE version is running:
