@@ -10,7 +10,7 @@ edgeAssets:
         image: /images/edge/sync/ce-edge-assets-2.png
 ---
 
-Coming soon…
+![image](/images/coming-soon.jpg)
 
 #### Assets management
 

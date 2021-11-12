@@ -5,7 +5,7 @@ description: ThingsBoard Edge Rule Engine
 
 ---
 
-Coming soon…
+![image](/images/coming-soon.jpg)
 
 ### Next Steps
 

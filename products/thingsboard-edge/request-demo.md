@@ -12,12 +12,12 @@ hidetoc: "true"
             <p>Connect devices to ThingsBoard Edge and start processing data locally without internet connection:</p>
         </div>
         <ul>
-            <li class="pricing-square-item">Operate with local devices without internet connection</li>
+            <li class="pricing-square-item">Operate with local devices without connection to cloud</li>
             <li class="pricing-square-item">Monitor local events/timeseries data with real-time dashboard</li>
-            <li class="pricing-square-item">Push to cloud only subset of filtered data from devices</li>
-            <li class="pricing-square-item">React to critical local situations on site without internet connection</li>
-            <li class="pricing-square-item">Update thousands of edges in a single click</li>
-            <li class="pricing-square-item">Store data locally from devices without internet connection and push to cloud once connection is restored</li>
+            <li class="pricing-square-item">Push to cloud only subset of filtered data from edge devices</li>
+            <li class="pricing-square-item">React to critical local situations on site without connection to cloud</li>
+            <li class="pricing-square-item">Update thousands of edge configurations in a single click</li>
+            <li class="pricing-square-item">Store data locally from devices without connection to cloud and push to cloud once connection is restored</li>
         </ul>
     </div>
     <div style="width: 50%; margin: 0 10px 0;">
