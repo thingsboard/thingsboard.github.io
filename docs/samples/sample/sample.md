@@ -51,7 +51,7 @@ Choose one of the suitable methods of integration according to Connectivity diag
 
 #### Integration method
 
-* [Step 2.1] ThingsBoard Prerequisites (f.e. versions/components/etc. - optional).
+* [Step 2.1] ThingsBoard Prerequisites (e.g. versions/components/etc. - optional).
 * [Step 2.2] Uplink/Downlink (may be created basic Up/Down -link).
 * [Step 2.3] Integration.
 * [Step 2.4] Uplink/Downlink configuration.

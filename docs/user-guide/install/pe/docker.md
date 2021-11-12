@@ -339,7 +339,7 @@ Below is example on how to upgrade from 3.1.0 to 3.1.1
 To upgrade ThingsBoard to latest version those steps should be done **for each intermediate version**.
 
 Please note that upgrades are not cumulative.
-Refer to [upgrade instruction](/docs/user-guide/install/pe/upgrade-instructions/) to know the right order of upgrades (f.e. if you are upgrading from 3.1.0 to 3.2.1, you need to do that in the following order: 3.1.0 -> 3.1.1 -> 3.2.0 -> 3.2.1, e.g. current version -> next release version -> etc)
+Refer to [upgrade instruction](/docs/user-guide/install/pe/upgrade-instructions/) to know the right order of upgrades (e.g. if you are upgrading from 3.1.0 to 3.2.1, you need to do that in the following order: 3.1.0 -> 3.1.1 -> 3.2.0 -> 3.2.1, e.g. current version -> next release version -> etc)
 
 
 In case you need to **restore from the backup**:

@@ -10,6 +10,8 @@ description: ThingsBoard IoT platform cluster setup with Docker Compose guide
 * TOC
 {:toc}
 
+{% assign docsPrefix = "ce/" %}
+
 This guide will help you to setup ThingsBoard in cluster mode using Docker Compose tool. 
 
 ## Prerequisites
@@ -42,22 +44,13 @@ See [**microservices**](/docs/reference/msa/) architecture page for more details
 ## Step 3. Clone ThingsBoard CE repository
 
 ```bash
-git clone https://github.com/thingsboard/thingsboard.git
-cd thingsboard
-# checkout latest release branch
-git checkout {{ site.release.branch }}
-cd docker
+git clone -b {{ site.release.branch }} https://github.com/thingsboard/thingsboard.git
+cd thingsboard/docker
 ```
 
 ## Step 4. Configure ThingsBoard database
 
-Before performing initial installation you can configure the type of database to be used with ThingsBoard.
-In order to set database type change the value of `DATABASE` variable in `.env` file to one of the following:
-
-- `postgres` - use PostgreSQL database;
-- `hybrid` - use PostgreSQL for entities database and Cassandra for timeseries database;
-
-**NOTE**: According to the database type corresponding docker service will be deployed (see `docker-compose.postgres.yml`, `docker-compose.hybrid.yml` for details).
+{% include templates/install/configure-db-docker-compose.md %}
 
 ## Step 5. Choose ThingsBoard queue service 
 
@@ -73,20 +66,26 @@ Confluent Cloud <small>(Event Streaming Platform based on Kafka)</small>%,%confl
 
 {% include content-toggle.html content-toggle-id="ubuntuThingsboardQueue" toggle-spec=contenttogglespecqueue %} 
 
-## Step 6. Running
+## Step 6. Enable monitoring (optional)
+
+{% include templates/install/configure-monitoring-docker-compose.md %}
+
+## Step 7. Running
 
 Execute the following command to create log folders for the services and chown of these folders to the docker container users. 
 To be able to change user, **chown** command is used, which requires sudo permissions (script will request password for a sudo access): 
 
-`
-$ ./docker-create-log-folders.sh
-`
+```bash
+./docker-create-log-folders.sh
+```
+{: .copy-code}
 
 Execute the following command to run installation:
 
-`
-$ ./docker-install-tb.sh --loadDemo
-`
+```bash
+./docker-install-tb.sh --loadDemo
+```
+{: .copy-code}
 
 Where:
 
@@ -94,9 +93,10 @@ Where:
 
 Execute the following command to start services:
 
-`
-$ ./docker-start-services.sh
-`
+```bash
+./docker-start-services.sh
+```
+{: .copy-code}
 
 After a while when all services will be successfully started you can open `http://{your-host-ip}` in you browser (for ex. `http://localhost`).
 You should see ThingsBoard login page.
@@ -113,9 +113,10 @@ If you installed DataBase with demo data (using `--loadDemo` flag) you can also 
 In case of any issues you can examine service logs for errors.
 For example to see ThingsBoard node logs execute the following command:
 
-`
-$ docker-compose logs -f tb-core1 tb-rule-engine1
-`
+```bash
+docker-compose logs -f tb-core1 tb-rule-engine1
+```
+{: .copy-code}
 
 Or use `docker-compose ps` to see the state of all the containers.
 Use `docker-compose logs --f` to inspect the logs of all running services.
@@ -123,47 +124,33 @@ See [docker-compose logs](https://docs.docker.com/compose/reference/logs/) comma
 
 Execute the following command to stop services:
 
-`
-$ ./docker-stop-services.sh
-`
+```bash
+./docker-stop-services.sh
+```
+{: .copy-code}
 
 Execute the following command to stop and completely remove deployed docker containers:
 
-`
-$ ./docker-remove-services.sh
-`
+```bash
+./docker-remove-services.sh
+```
+{: .copy-code}
 
 Execute the following command to update particular or all services (pull newer docker image and rebuild container):
 
-`
-$ ./docker-update-service.sh [SERVICE...]
-`
+```bash
+./docker-update-service.sh [SERVICE...]
+```
+{: .copy-code}
 
 Where:
 
 - `[SERVICE...]` - list of services to update (defined in docker-compose configurations). If not specified all services will be updated.
 
-## Upgrading
-
-In case when database upgrade is needed, execute the following commands:
-
-```
-$ ./docker-stop-services.sh
-$ ./docker-remove-services.sh
-```
-
-Edit .env file set "TB_VERSION" to target version (f.e. currently you have 3.2.1 so in this case you need to set 3.2.2)
-
-```
-$ ./docker-update-service.sh [SERVICE...]
-```
-
-Where:
-
-- `SERVICE...` - list of services to update (defined in docker-compose configurations). If not specified all services will be updated.
-
+{% include templates/install/upgrade-docker-compose.md %}
 
 {% include templates/install/generate_certificate_docker-compose.md %}
+
 ## Next steps
 
 {% assign currentGuide = "InstallationGuides" %}{% include templates/guides-banner.md %}

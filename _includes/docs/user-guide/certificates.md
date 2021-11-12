@@ -1,16 +1,17 @@
-    
-X.509 Certificate Based Authentication is used in Two-Way SSL connection. In this case, the certificate itself is the client's  ID, thus, Access Token is no longer needed.
+ 
+X.509 Certificate Based Authentication is used in MQTT Two-Way SSL and CoAP DTLS with X.509 Certificate. In this case, the certificate itself is the client's  ID, thus, Access Token is no longer needed.
 
 Instructions below will describe how to generate a client-side certificate and connect to the server that is running MQTT over SSL.
-You will need to have the public key of the server certificate in PEM format. 
+You will need to have the public key of the server certificate in PEM format.
 See [following instructions](/docs/{{docsPrefix}}user-guide/mqtt-over-ssl/#self-signed-certificate-generation) for more details on server-side configuration.
 
 #### Update keygen.properties file
- 
+
 Open the keygen.properties file, and update the values if needed:
 
 ```bash
 DOMAIN_SUFFIX="localhost"
+SUBJECT_ALTERNATIVE_NAMES="ip:127.0.0.1"
 ORGANIZATIONAL_UNIT=ThingsBoard
 ORGANIZATION=ThingsBoard
 CITY="San Francisco"
@@ -22,15 +23,15 @@ SERVER_KEY_PASSWORD=server_key_password
 
 SERVER_KEY_ALIAS="serveralias"
 SERVER_FILE_PREFIX="mqttserver"
-SERVER_KEYSTORE_DIR="/etc/thingsboard/conf/"
+SERVER_KEYSTORE_DIR="/etc/thingsboard/conf"
 
 CLIENT_KEYSTORE_PASSWORD=password
 CLIENT_KEY_PASSWORD=password
 
 CLIENT_KEY_ALIAS="clientalias"
 CLIENT_FILE_PREFIX="mqttclient"
-CLIENT_KEY_ALG="RSA"
-CLIENT_KEY_SIZE="2048"
+CLIENT_KEY_ALG="EC"
+CLIENT_KEY_GROUP_NAME="secp256r1"
 ```
 
 #### Run Client keygen script
@@ -44,9 +45,9 @@ chmod +x client.keygen.sh
 
 The script outputs the following files:
 
- - **CLIENT_FILE_PREFIX.jks** - Java Keystore file with the server certificate imported
- - **CLIENT_FILE_PREFIX.nopass.pem** - Client certificate file in PEM format to be used by non-java client 
- - **CLIENT_FILE_PREFIX.pub.pem** - Client public key
+- **CLIENT_FILE_PREFIX.jks** - Java Keystore file with the server certificate imported
+- **CLIENT_FILE_PREFIX.nopass.pem** - Client certificate file in PEM format to be used by non-java client
+- **CLIENT_FILE_PREFIX.pub.pem** - Client public key
 
 #### Provision Client Public Key as Device Credentials
 
@@ -63,17 +64,10 @@ Run the script and follow steps in console:
 
 {% capture tabspec %}mqtt-ssl-configuration-twoway
 A,Run command,shell,resources/mqtt-ssl-configuration-run-twowaysslmqttclient.sh,/docs/{{docsPrefix}}user-guide/resources/mqtt-ssl-configuration-run-twowaysslmqttclient.sh{% endcapture %}
-{% include tabs.html %}  
+{% include tabs.html %}
 
 If everything was configured correctly, the output should be like:
 
 {% capture tabspec %}mqtt-ssl-configuration-output-twoway
 A,Result,shell,resources/mqtt-ssl-configuration-twowaysslmqttclient-output.txt,/docs/{{docsPrefix}}user-guide/resources/mqtt-ssl-configuration-twowaysslmqttclient-output.txt{% endcapture %}
-{% include tabs.html %}
-
-
-To run Java client, import **CLIENT_FILE_PREFIX.jks** file as follows:
-
-{% capture tabspec %}mqtt-ssl-java-twoway-client
-A,MqttSslClient.java,java,resources/MqttSslClient.java,/docs/{{docsPrefix}}user-guide/resources/MqttSslClient.java{% endcapture %}
 {% include tabs.html %}
