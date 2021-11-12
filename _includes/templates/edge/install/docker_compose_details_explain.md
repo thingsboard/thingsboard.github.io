@@ -6,7 +6,7 @@ Where:
 - `mytb-edge-data:/data` - mounts the host's dir `mytb-edge-data` to ThingsBoard Edge DataBase data directory;
 - `mytb-edge-logs:/var/log/tb-edge` - mounts the host's dir `mytb-edge-logs` to ThingsBoard Edge logs directory;
 - `mytb-edge-data/db:/var/lib/postgresql/data` - mounts the host's dir `mytb-edge-data/db` to Postgres data directory;
-- `thingsboard/tb-edge:{{ site.release.pe_full_ver }}` - docker image;
+- `thingsboard/tb-edge:{{ site.release.edge_full_ver }}` - docker image;
 - `CLOUD_ROUTING_KEY` - your edge key;
 - `CLOUD_ROUTING_SECRET` - your edge secret;
 - `CLOUD_RPC_HOST` - ip address of the machine with the ThingsBoard platform;
@@ -15,7 +15,11 @@ Where:
 {% capture cloud_rpc_host %}
 Please set **CLOUD_RPC_HOST** with an IP address of the machine where ThingsBoard CE/PE version is running:
 * DO NOT use **'localhost'** - **'localhost'** is the ip address of the edge service in the docker container.
-* Use **thingsboard.cloud** in case you are connecting edge to [**ThingsBoard Cloud**](https://thingsboard.cloud/signup). 
+* Use **thingsboard.cloud** in case you are connecting edge to [**ThingsBoard Cloud**](https://thingsboard.cloud/signup).
+
+**NOTE**: **thingsboard.cloud** uses SSL protocol for edge communication.
+Please change **CLOUD_RPC_SSL_ENABLED** to **true** as well.
+
 * Use **X.X.X.X** IP address in case edge is connecting to the cloud instance in the same network or in the docker.
 * Or use **demo.thingsboard.io** if you are connecting edge to [**ThingsBoard Live Demo**](https://demo.thingsboard.io/signup) for evaluation.
 
