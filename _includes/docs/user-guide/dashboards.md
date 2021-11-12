@@ -178,6 +178,30 @@ In such a case, you can still add a key to the data source, and the widget will 
 
 {% include images-gallery.html imageCollection="add-data-source3" %}
 
+You can also choose which symbol to display next to the value and the number of digits after the floating-point number.
+These settings are useful if you want to apply the same settings for all axis.
+For example, if you are showing temperature readings for multiple devices, you can add '°C' or '°F' symbol.
+However, if you are displaying both temperature and humidity, you have to configure these data keys separately using data key settings.
+
+{% include images-gallery.html imageCollection="add-data-source4" %}
+
+You can also specify an alternative message that will be displayed if widget doesn't have incoming data. When data arrives, the message will disappear and the incoming data will be displayed.
+
+{% include images-gallery.html imageCollection="add-data-source5" %}
+
+{% if docsPrefix == null %}
+{% endif %}
+{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+
+The "Enable data export" button is responsible for enabling/disabling the ability to export data that is displayed in the widget.
+By default data export is enabled.
+To download data, click on the “Export widget data” icon at the top right of the widget.
+You can export the data in csv, xls or xlsx format.
+
+{% include images-gallery.html imageCollection="add-data-source6" %}
+
+{% endif %}
+
 ##### 2. Widget data source types
 
 - **Entity data source**
@@ -282,7 +306,33 @@ List of entity fields depends on the entity type and may extend in the future:
 
 ###### 3.1. Basic data key settings
 
-Coming soon...
+In basic data key settings, you can change the name and color of the key, change the label name, set special symbol to show next to value (only for the Timeseries key), specify the number of digits after the floating point and enable/disable "Use post processing function".
+
+Let's look at the basic data key settings an example of the Entities table from the Cards bundle:
+- **Key.** You can change the name of the key. In this case, will be displayed data of the key, which key name you specify in the "Key" line. Change the name of the key and click “Save”.
+  **Note:** There are three types of keys: Attributes, Time Series, Entity Field and Alarm Field (only for Alarm widget). To correctly display data, change the key name to the existing key name of the same type. If you don’t have the required time series or attribute key in the database yet, you can still add a key to the data source. The widget will start displaying the data as soon as the device will send it to ThingsBoard. 
+
+{% include images-gallery.html imageCollection="basic-data-key-settings-1" %}
+
+- **Label.** In your widget, the name of the data column is the label name. Change the label name as desired and click “Save” in the lower right corner of the dialog box.
+
+{% include images-gallery.html imageCollection="basic-data-key-settings-2" %}
+
+- **Color.** Each key is assigned a different color. In some widgets (for example, Chart), the color of the graph line displayed in the widget is the color of the key. You can change color of the key. Click on the colored circle, select the desired label color and press “Select”.
+
+{% include images-gallery.html imageCollection="basic-data-key-settings-3" %}
+
+- **Special symbol to show next to value.** You can indicate a special symbol that will be displayed next to the value. Enter the desired character in this field and click “Save”.
+
+{% include images-gallery.html imageCollection="basic-data-key-settings-4" %}
+
+- **Number of digits after floating point.** Specify the desired number of digits to be displayed after floating-point number and click “Save”.
+
+{% include images-gallery.html imageCollection="basic-data-key-settings-5" %}
+
+- **Use data post-processing function.** The data post-processing function allows changing the output data depending on your wishes. To use data post-processing function, you must check the "Use data post-processing function" checkbox and enter the function in the field below. Then click the "Save" button in the lower-right corner. 
+  
+{% include images-gallery.html imageCollection="basic-data-key-settings-6" %}
 
 ###### 3.2. Advanced data key settings
 
@@ -312,7 +362,7 @@ You can choose a combination of alarm statuses and severity. You may also define
 
 #### Basic widget settings
 
-Let's assume you have added the "Timeseries - Flot" widget to display thermometers using the widget data configuration [step](/docs/{{docsPrefix}}user-guide/dashboards/#widget-data-settings) only.
+Let's assume you have added the "Timeseries Line Chart" widget to display thermometers using the widget data configuration [step](/docs/{{docsPrefix}}user-guide/dashboards/#widget-data-settings) only.
 You should see a similar widget (note that you should send/simulate some data to see the actual lines in the chart):
 
 {% include images-gallery.html imageCollection="basic-settings" %}
@@ -331,24 +381,23 @@ Title style from the screen above:
 
 ```json
 {
-  "fontSize": "10px",
+  "fontSize": "15px",
   "fontWeight": 600
 }
 ```
-
-You may also completely hide the title using the "Display title" checkbox. 
-You may also disable the widget shadow using the "Drop shadow" checkbox and disable fullscreen using the "Enable fullscreen" checkbox. 
-All those settings are enabled by default. 
-
 {: .copy-code}
 
 ##### 2. Widget Style
 
-You can customize personal  style for the widget using CSS properties. This style will be applied to the main div element of the widget. You can also change the background color, text color, padding, and margin. 
+You can customize personal  style for the widget using CSS properties. This style will be applied to the main div element of the widget. 
+
+You may also disable the widget shadow using the "Drop shadow" checkbox and disable fullscreen using the "Enable fullscreen" checkbox.
+All those settings are enabled by default.
+
+You can also change the background color, text color, padding, and margin. 
 See the configuration and the corresponding result below. 
 
 Please note that the style and background color are just an example and are definitely not part of our guidelines. 
-
 
 {% include images-gallery.html imageCollection="basic-settings-style" %}
 
@@ -384,17 +433,11 @@ Mobile Mode settings consist of two options:
 If you need to arrange widgets in this column in a custom order, you can configure different order values for each widget.
 - Height - takes an integer value from 1 to 10. It sets the height of the widget in Mobile Mode in the range from 70px (1) to 700px (10), ignoring its original height.
 For example, with a value of 5, the widget height will be 350px. (70 * 5)
-If no value is specified, its original height will be used.
+If no value is specified, its original height will be used. 
+  
+{% include images-gallery.html imageCollection="mobile-settings" %}
 
-
-##### 5. Other settings
-
-You can choose which symbol to display next to the value and the number of digits after the floating-point number. 
-These settings are useful if you want to apply the same settings for all axis. 
-For example, if you are showing temperature readings for multiple devices, you can add '°C' or '°F' symbol. 
-However, if you are displaying both temperature and humidity, you have to configure these data keys separately using data key settings. 
-
-##### 6. Advanced widget settings
+#### Advanced widget settings
 
 Advanced widget settings are specific to widget implementation. Those settings allow you to fine tune the widget. For example, “Timeseries - Flot” widget allows you to configure line style, width, enable comparison with the previous time interval and use entity attributes in the legend.
 
@@ -402,7 +445,7 @@ Learn more about specific advanced settings in the corresponding widget document
 
 Coming soon...
 
-##### 7. Widget actions
+#### Widget actions
 
 Actions allow quickly and easily configuring the transition to the created state, transferring to other dashboards, or even updating the dashboard you are in. Depending on the widget, the action sources differ. 
 However, the type of action you are able to choose will be the same for all widgets. 

@@ -18,7 +18,8 @@ var result = {
    deviceType: deviceType,
    attributes: {},
    telemetry: {
-       temperature: parseFloat(payloadStr.substring(13,17))
+       temperature: parseFloat(payloadStr.substring(13,17)),
+       humidity: parseFloat(payloadStr.substring(17,19))
    }
 };
 
@@ -40,6 +41,7 @@ function decodeToJson(payload) {
 return result;
 
 ``` 
+{: .copy-code}
 
 The purpose of the decoder function is to parse the incoming data and metadata to a format that ThingsBoard can consume. 
 **deviceName** and **deviceType** are required, while **attributes** and **telemetry** are optional.

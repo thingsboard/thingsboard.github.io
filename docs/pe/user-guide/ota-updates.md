@@ -4,7 +4,6 @@ assignees:
 - ashvayka
 title: Over-the-air firmware and software updates
 description: IoT device firmware updates
-redirect_from: "/docs/pe/user-guide/ui/dashboards/"
  
 createFirmware:
     0:

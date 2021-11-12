@@ -4,6 +4,7 @@ assignees:
 - ashvayka
 title: ThingsBoard Professional Edition cluster setup with Docker Compose guide
 description: ThingsBoard Professional Edition cluster setup with Docker Compose guide
+redirect_from: "/docs/user-guide/install/pe/docker-cassandra/"  
 
 ---
 
@@ -35,10 +36,8 @@ Please note that for the deployment of Rule Engine as a separate service, an add
 ## Step 3. Clone ThingsBoard PE Docker Compose scripts
 
 ```bash
-git clone https://github.com/thingsboard/thingsboard-pe-docker-compose.git tb-pe-docker-compose
+git clone -b release-{{ site.release.ce_ver }} https://github.com/thingsboard/thingsboard-pe-docker-compose.git tb-pe-docker-compose
 cd tb-pe-docker-compose
-# checkout latest release branch
-git checkout {{ site.release.branch }}
 ```
 {: .copy-code}
 
@@ -57,7 +56,6 @@ We will reference the license key you have obtained during this step as PUT_YOUR
 ## Step 5. Configure your license key
 
 ```bash
-cd tb-pe-docker-compose
 nano tb-node.env
 ```
 
@@ -202,22 +200,15 @@ Where:
 
 ## Upgrading
 
-In case when database upgrade is needed, execute the following commands:
+In case when database upgrade is needed, edit .env file to set "TB_VERSION" to target version (e.g. set it to {{ site.release.ce_full_ver }} if you are upgrading to the latest). Then, execute the following commands:
 
 ```bash
-./docker-stop-services.sh
-./docker-remove-services.sh
+$ ./docker-stop-services.sh
+$ ./docker-upgrade-tb.sh --fromVersion=[FROM_VERSION]
+$ ./docker-start-services.sh
 ```
 
-Edit .env file set "TB_VERSION" to target version (f.e. currently you on 3.2.1 so in this case you need to set 3.2.2)
-
-```bash
-./docker-update-service.sh [SERVICE...]
-```
-
-Where:
-
-- `SERVICE...` - list of services to update (defined in docker-compose configurations). If not specified all services will be updated.
+Where `FROM_VERSION` - from which version upgrade should be started. See [Upgrade Instructions](/docs/user-guide/install/pe/upgrade-instructions) for valid `fromVersion` values.
 
 {% include templates/install/generate_certificate_docker-compose.md %}
 
