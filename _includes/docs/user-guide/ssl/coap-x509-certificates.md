@@ -1,76 +1,41 @@
 * TOC
 {:toc}
 
-Instructions below will describe how to generate a client-side certificate and connect to the server that is running CoAP over DTLS.
-You will need to have the public key of the server certificate in PEM format.
-See [following instructions](/docs/{{docsPrefix}}user-guide/coap-over-dtls/#self-signed-certificate-generation) for more details on server-side configuration.
+X.509 Certificates are used to setup [mutual](https://en.wikipedia.org/wiki/Mutual_authentication) (two-way) authentication for CoAP over DTLS.
+It is similar to [access token](/docs/{{docsPrefix}}user-guide/access-token/) authentication, but uses X.509 Certificate instead of token.
 
-#### Update keygen.properties file
+Instructions below will describe how to connect CoAP client using X.509 Certificate to ThingsBoard Cloud.
 
-Open the keygen.properties file, and update the values if needed:
+#### Step 1. Generate Client certificate
 
-```bash
-DOMAIN_SUFFIX="localhost"
-SUBJECT_ALTERNATIVE_NAMES="ip:127.0.0.1"
-ORGANIZATIONAL_UNIT=ThingsBoard
-ORGANIZATION=ThingsBoard
-CITY="San Francisco"
-STATE_OR_PROVINCE=CA
-TWO_LETTER_COUNTRY_CODE=US
-
-SERVER_KEYSTORE_PASSWORD=server_ks_password
-SERVER_KEY_PASSWORD=server_key_password
-
-SERVER_KEY_ALIAS="serveralias"
-SERVER_FILE_PREFIX="coapserver"
-SERVER_KEYSTORE_DIR="/etc/thingsboard/conf"
-
-CLIENT_KEYSTORE_PASSWORD=password
-CLIENT_KEY_PASSWORD=password
-
-CLIENT_KEY_ALIAS="clientalias"
-CLIENT_FILE_PREFIX="coapclient"
-CLIENT_KEY_ALG="EC"
-CLIENT_KEY_GROUP_NAME="secp256r1"
-```
-
-#### Run Client keygen script
-
-Download and launch the [**client.keygen.sh**](https://raw.githubusercontent.com/thingsboard/thingsboard/master/tools/src/main/shell/client.keygen.sh) script.
+Use the following command to generate the self-signed EC based private key and x509 certificate.
+The command is based on the **openssl** tool which is most likely already installed on your workstation:
 
 ```bash
-chmod +x client.keygen.sh
-./client.keygen.sh
+openssl ecparam -out key.pem -name secp256r1 -genkey
+openssl req -new -key key.pem -x509 -nodes -days 365 -out cert.pem 
 ```
+{: .copy-code}
 
-The script outputs the following files:
+The output of the command will be a private key file *key.pem* and a public certificate *cert.pem*.
+We will use them in next steps.
 
-- **CLIENT_FILE_PREFIX.jks** - Java Keystore file with the server certificate imported
-- **CLIENT_FILE_PREFIX.nopass.pem** - Client certificate file in PEM format to be used by non-java client
-- **CLIENT_FILE_PREFIX.pub.pem** - Client public key
+#### Step 2. Provision Client Public Key as Device Credentials
 
-#### Provision Client Public Key as Device Credentials
+Go to **ThingsBoard Web UI -> Device Groups -> Group "All" -> Your Device -> Device Credentials**.
+Select **X.509 Certificate** device credentials, insert the contents of *cert.pem* file and click save.
+Alternatively, the same can be done through the [REST API](/docs/{{docsPrefix}}reference/rest-api/).
 
-Go to **ThingsBoard Web UI -> Devices -> Your Device -> Device Credentials**. Select **X.509 Certificate** device credentials, insert the contents of  **CLIENT_FILE_PREFIX.pub.pem** file and click save.
-Alternatively, the same can be done through the REST API.
-
-### Connect DTLS CoAP Client using X.509 certificate
+### Step 3. Connect DTLS CoAP Client using X.509 certificate
 
 {% include templates/coap-dtls/coap-client-dtls.md %}
 
 Finally, run the example script below to validate DTLS with X.509 Certificate auth and subscribe for shared attributes updates:
 The coap-client example below demonstrates how to connect to [ThingsBoard Cloud](https://thingsboard.cloud/signup) or to any other ThingsBoard CoAP server that has valid and trusted certificate.
 
-
 ```bash
-coap-client-openssl -v 9 -c $CERTIFICATE  -j $KEY_FILE -m get coaps://coap.thingsboard.cloud/api/v1/attributes -B $BREAK_OPERATION_TIMEOUT -s $OBSERVE_TIMEOUT
+coap-client-openssl -v 9 -c cert.pem  -j key.pem -m POST \
+-t "application/json" -e '{"temperature":43}' coaps://coap.thingsboard.cloud/api/v1/telemetry
 ```
 {: .copy-code}
-
-where,
-
-- $CERTIFICATE - certificate PEM file, e.g: client.pub.pem.
-- &KEY_FILE - key PEM file, e.g: client.pk8.pem.
-- $BREAK_OPERATION_TIMEOUT - Break operation after waiting given seconds(default is 90)
-- $OBSERVE_TIMEOUT - Subscribe to / Observe resource for given duration in seconds
 
