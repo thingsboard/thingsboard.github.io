@@ -2,8 +2,8 @@
 layout: docwithnav-trendz
 assignees:
 - vparomskiy
-title: Trendz configuration properteis
-description: Trendz configuration properteis description
+title: Trendz configuration properties
+description: Trendz configuration properties description
 ---
 
 
