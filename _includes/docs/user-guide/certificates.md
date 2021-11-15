@@ -1,5 +1,5 @@
- 
-X.509 Certificate Based Authentication is used in MQTT Two-Way SSL and CoAP DTLS with X.509 Certificate. In this case, the certificate itself is the client's  ID, thus, Access Token is no longer needed.
+X.509 Certificate authentication is used in mutual MQTT Two-Way SSL and CoAP DTLS with X.509 Certificate. 
+In this case, the certificate itself is the client's  ID, thus, Access Token is no longer needed.
 
 Instructions below will describe how to generate a client-side certificate and connect to the server that is running MQTT over SSL.
 You will need to have the public key of the server certificate in PEM format.

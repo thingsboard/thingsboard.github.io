@@ -14,4 +14,4 @@ MQTT Clients will be able to connect with any client ID if they specify correct 
 * Authentication based on Client ID, Username and Password. For this option, you should populate Client ID, Username and Password.
 MQTT Clients will be able to connect if they specify correct combination of Client ID, Username and Password; 
 
-{% include images-gallery.html imageCollection="options" showListImageTitles="true" %}
+{% include images-gallery.html imageCollection="options" %}
