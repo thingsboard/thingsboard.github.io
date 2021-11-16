@@ -6,10 +6,11 @@ Use instructions below to generate your own certificate files. Useful for tests,
 
 **Note** This step requires Linux based OS with openssl installed.
 
-To generate server self-signed PEM certificate and private key, use the following command:
+To generate a server self-signed PEM certificate and private key, use the following command:
 
 ```bash
-openssl req -x509 -newkey rsa:4096 -keyout mqttserver_key.pem -out mqttserver.pem -sha256 -days 365
+openssl ecparam -out server_key.pem -name secp256r1 -genkey
+openssl req -new -key server_key.pem -x509 -nodes -days 365 -out server.pem 
 ```
 {: .copy-code}
 
@@ -43,7 +44,7 @@ SERVER_KEYSTORE_PASSWORD=password
 SERVER_KEY_PASSWORD=password
 
 SERVER_KEY_ALIAS="serveralias"
-SERVER_FILE_PREFIX="mqttserver"
+SERVER_FILE_PREFIX="server"
 SERVER_KEY_ALG="EC"
 SERVER_KEY_GROUP_NAME="secp256r1"
 SERVER_KEYSTORE_DIR="/etc/thingsboard/conf"

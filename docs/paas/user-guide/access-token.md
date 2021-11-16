@@ -15,7 +15,7 @@ Access Token based authentication is the default device authentication type.
 The unique access token is generated once the device is created in ThingsBoard. It can be changed afterwards.
 The client must specify the access token as a username in MQTT connect message. 
 
-#### Plain MQTT (without TLS)
+#### Plain MQTT (without SSL)
  
 Let's review a simple command to upload temperature readings using Access Token *YOUR_ACCESS_TOKEN* to ThingsBoard Cloud. 
 See [MQTT API](/docs/{{docsPrefix}}reference/mqtt-api/) for more details. The command is using plain MQTT without TLS:
@@ -25,9 +25,9 @@ mosquitto_pub -d -q 1 -h "mqtt.thingsboard.cloud" -p "1883" -t "v1/devices/me/te
 ```
 {: .copy-code}
 
-**Note** Script uses **mqtt.thingsboard.cloud** host and **1883** port and requires mosquitto clients library that you can install using the following command: **apt-get install mosquitto-clients**
+The above command uses **mqtt.thingsboard.cloud** host and **1883** port and requires mosquitto clients library that you can install using the following command: **apt-get install mosquitto-clients**
 
-#### MQTTS (MQTT over TLS)
+#### MQTTS (MQTT over SSL)
 
 One-way SSL authentication is a standard authentication mode, where your client device verifies the identity of a server using server certificate.
 ThingsBoard Cloud uses a valid certificate. 
@@ -46,5 +46,5 @@ mosquitto_pub --cafile tb-cloud-chain.pem -d -q 1 -h "mqtt.thingsboard.cloud" -p
 ```
 {: .copy-code}
 
-**Note** Script uses **mqtt.thingsboard.cloud** host and **8883** port and requires mosquitto clients library that you can install using the following command: **apt-get install mosquitto-clients**
+The above command uses **mqtt.thingsboard.cloud** host and **8883** port and requires mosquitto clients library that you can install using the following command: **apt-get install mosquitto-clients**
 

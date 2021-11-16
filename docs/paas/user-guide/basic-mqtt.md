@@ -21,13 +21,17 @@ options:
 
 {% assign docsPrefix = "paas/" %}
 
+* TOC
+{:toc}
+
 MQTT Based Authentication is available for devices that connect using MQTT. 
 You may change the device credential type from 'Access Token' to 'MQTT Basic'.
-
 Basic MQTT credentials consist of the optional client id, username and password. There are three options available:
 
-* Authentication based on Client ID only. For this purpose, you should populate only Client ID in the credentials form below.
-  MQTT Clients will be able to connect with any username or password if they specify correct Client ID;
+#### Authentication based on Client ID only. 
+
+For this purpose, you should populate only Client ID in the credentials form below.
+MQTT Clients will be able to connect with any username or password if they specify correct Client ID;
 
 Let's review a simple command to upload temperature readings using MQTT Client Id to ThingsBoard Cloud.
 See [MQTT API](/docs/{{docsPrefix}}reference/mqtt-api/) for more details. The command is using plain MQTT without TLS:
@@ -37,10 +41,12 @@ mosquitto_pub -d -q 1 -h "mqtt.thingsboard.cloud" -p "1883" -t "v1/devices/me/te
 ```
 {: .copy-code}
 
-**Note** Script uses **mqtt.thingsboard.cloud** host and **1883** port and requires mosquitto clients library that you can install using the following command: **apt-get install mosquitto-clients**
+The above command uses **mqtt.thingsboard.cloud** host and **1883** port and requires mosquitto clients library that you can install using the following command: **apt-get install mosquitto-clients**
 
-* Authentication based on Username and Password. For this purpose, you should populate only Username and Password in the credentials form below.
-  MQTT Clients will be able to connect with any client ID if they specify correct Username and Password. Password is optional;
+#### Authentication based on Username and Password. 
+
+For this purpose, you should populate only Username and Password in the credentials form below.
+MQTT Clients will be able to connect with any client ID if they specify correct Username and Password. Password is optional;
 
 Let's review a simple command to upload temperature readings using MQTT Client username and password to ThingsBoard Cloud.
 See [MQTT API](/docs/{{docsPrefix}}reference/mqtt-api/) for more details. The command is using plain MQTT without TLS:
@@ -51,10 +57,12 @@ mosquitto_pub -d -q 1 -h "mqtt.thingsboard.cloud" -p "1883" \
 ```
 {: .copy-code}
 
-**Note** Script uses **mqtt.thingsboard.cloud** host and **1883** port and requires mosquitto clients library that you can install using the following command: **apt-get install mosquitto-clients**
+The above command uses **mqtt.thingsboard.cloud** host and **1883** port and requires mosquitto clients library that you can install using the following command: **apt-get install mosquitto-clients**
 
-* Authentication based on Client ID, Username and Password. For this option, you should populate Client ID, Username and Password.
-  MQTT Clients will be able to connect if they specify correct combination of Client ID, Username and Password;
+#### Authentication based on Client ID, Username and Password. 
+
+For this option, you should populate Client ID, Username and Password.
+MQTT Clients will be able to connect if they specify correct combination of Client ID, Username and Password;
 
 Let's review a simple command to upload temperature readings using MQTT Client ID, username and password to ThingsBoard Cloud.
 See [MQTT API](/docs/{{docsPrefix}}reference/mqtt-api/) for more details. The command is using plain MQTT without TLS:
@@ -65,7 +73,7 @@ mosquitto_pub -d -q 1 -h "mqtt.thingsboard.cloud" -p "1883" \
 ```
 {: .copy-code}
 
-**Note** Script uses **mqtt.thingsboard.cloud** host and **1883** port and requires mosquitto clients library that you can install using the following command: **apt-get install mosquitto-clients**
+The above command uses **mqtt.thingsboard.cloud** host and **1883** port and requires mosquitto clients library that you can install using the following command: **apt-get install mosquitto-clients**
 
 {% include images-gallery.html imageCollection="options" %}
 
@@ -89,4 +97,4 @@ mosquitto_pub --cafile tb-cloud-chain.pem -d -q 1 -h "mqtt.thingsboard.cloud" -p
 ```
 {: .copy-code}
 
-**Note** Script uses **mqtt.thingsboard.cloud** host and **8883** port and requires mosquitto clients library that you can install using the following command: **apt-get install mosquitto-clients**
+The above command uses **mqtt.thingsboard.cloud** host and **8883** port and requires mosquitto clients library that you can install using the following command: **apt-get install mosquitto-clients**

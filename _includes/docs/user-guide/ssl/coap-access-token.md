@@ -36,3 +36,4 @@ where,
 - *-B 3600* - Break operation after waiting given seconds;
 - *-s 3600* - Subscribe to / Observe resource for given duration in seconds.
 
+Don't forget to replace **coap.thingsboard.cloud** with the host of your ThingsBoard instance and **YOUR_ACCESS_TOKEN** with the access token of your device.

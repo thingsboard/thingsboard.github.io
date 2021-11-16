@@ -21,12 +21,15 @@ The output of the command will be a private key file *key.pem* and a public cert
 We will use them in next steps.
 
 #### Step 2. Provision Client Public Key as Device Credentials
-
+{% if docsPrefix == 'pe/' %}
 Go to **ThingsBoard Web UI -> Device Groups -> Group "All" -> Your Device -> Device Credentials**.
+{% else %}
+Go to **ThingsBoard Web UI -> Devices -> Your Device -> Device Credentials**.
+{% endif %}
 Select **X.509 Certificate** device credentials, insert the contents of *cert.pem* file and click save.
 Alternatively, the same can be done through the [REST API](/docs/{{docsPrefix}}reference/rest-api/).
 
-### Step 3. Connect DTLS CoAP Client using X.509 certificate
+#### Step 3. Connect DTLS CoAP Client using X.509 certificate
 
 {% include templates/coap-dtls/coap-client-dtls.md %}
 
@@ -38,4 +41,6 @@ coap-client-openssl -v 9 -c cert.pem  -j key.pem -m POST \
 -t "application/json" -e '{"temperature":43}' coaps://coap.thingsboard.cloud/api/v1/telemetry
 ```
 {: .copy-code}
+
+Don't forget to replace **coap.thingsboard.cloud** with the host of your ThingsBoard instance.
 
