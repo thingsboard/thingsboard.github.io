@@ -1032,6 +1032,18 @@
     }
   },
   {
+    "type": ["United States of America"],
+    "country": [""],
+    "name": "Vypin LLC",
+    "contact": {
+      "href": "sales@vypin.com"
+    },
+    "site": {
+      "href": "vypin.com",
+      "target": "_blank"
+    }
+  },
+  {
     "type": ["Europe", "Africa", "Asia", "Middle East"],
     "country": ["Turkey", "Georgia", "Kazakhstan", "Azerbaijan", "Tajikistan", "Turkmenistan", "Uzbekistan", "Kyrgyzstan", "Tunisia", "Libya", "Iraq", "Albania", "Montenegro", "Bosnia and Herzegovina"],
     "name": "Basari Muhendislik",
