@@ -1,12 +1,31 @@
 
 section#install-pe
-    padding: 0px
-    max-width: 700px
+    fieldset
+        .form-title
+            margin: 0 0 16px!important
+            h1
+                padding: 0
+        .cloud-provider
+            display: flex
+            margin-bottom: 32px
+            padding: 24px
+            border-radius: 8px
+            background: #F7F9FC
+            .logo-container
+                width: 120px
+                margin-right: 40px
+            .cloud-provider-desc
+                width: calc(100% - 160px)
+        .form-section
+            margin-top: 52px
+    padding: 0
+    background: unset
     .tabs
         display: flex
         flex-wrap: wrap
-        background: #efefef
-        box-shadow: 0 1px 8px 0 rgba(0,0,0,0.2), 0 3px 4px 0 rgba(0,0,0,0.14), 0 3px 3px -2px rgba(0,0,0,0.12)
+    .questions
+        text-align: center
+        margin: 32px 0 48px
     .tab-input
         position: absolute
         opacity: 0
@@ -34,10 +53,16 @@ section#install-pe
         .tab-label
             width: calc(100% / 3)
     .tab-panel
-        background: $professional-color
-        color: #fff
         width: 100%
         display: none
+        z-index: 2
+        position: relative
+        background: #fff
+        color: #212529
+        box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.04), 0px 50px 50px -20px rgba(0, 0, 0, 0.15)
+        border-radius: 6px
+        margin-bottom: 20px
+        padding: 54px 56px
         .choose-marketplace
             p
                 font-size: 24px
@@ -241,29 +266,27 @@ section#install-pe
                 box-sizing: border-box
                 clear: left
             button
+                float: right
                 min-width: 150px
                 text-align: center
-                padding: 0.3rem 1.5rem
-                line-height: 30px
-                border: 2px solid #fff
-                border-radius: 3px
-                background-color: #fff
-                color: $professional-color
+                border-radius: 4px
+                padding: 10px 20px
+                line-height: 24px
+                background-color: #2a7dec
+                color: #fff
                 display: inline-block
                 text-decoration: none
-                text-transform: uppercase
-                font-size: 14px
+                font-size: 16px
                 font-weight: 500
-                box-shadow: 0 2px 5px 0 rgba(0,0,0,0.26)
-                transition: 0.3s
+                transition: background-color .4s cubic-bezier(.25, .8, .25, 1)
                 &:hover
-                    background-color: #3c6c79
+                    background-color: #4F97F8
                     color: white
                 &:focus
-                    background-color: #3c6c79
+                    background-color: #4F97F8
                     color: white
                 &.loading
-                    background-color: #3c6c79
+                    background-color: #2a7dec
                     img
                         vertical-align: middle
             button[disabled]
@@ -294,6 +317,15 @@ section#install-pe
     @media (max-width: 768px)
         .deploy-form
             width: 100%
+        fieldset
+            .form-title center h1
+                font-size: 24px!important
+            .cloud-provider
+                display: block
+                .logo-container
+                    margin-bottom: 24px
+                .cloud-provider-desc
+                    width: 100%
     @media (min-width: 1025px)
         .deploy-form
             .subscribe-form
@@ -326,28 +358,47 @@ section#install-pe
                 text-decoration: underline
 
 #install-thanks
-    max-width: 700px
+    position: relative
+    height: 619px
+    //padding: 30px
+    color: #212529
+    display: flex
+    align-items: center
+    justify-content: center
+    transition: margin-bottom 0.5s
     margin: auto
-    padding: 30px
-    background: $professional-color
-    color: #fff
-    box-shadow: 0 1px 8px 0 rgba(0,0,0,0.2), 0 3px 4px 0 rgba(0,0,0,0.14), 0 3px 3px -2px rgba(0,0,0,0.12)
+    //margin-bottom: 130px
+    &.opened
+        margin-bottom: 0
     .thanks-content
-        opacity: 0
-        &.animated
-            opacity: 1
         .fa
             font-size: 36px
             margin-bottom: 15px
         p
-            font-size: 20px
+            font-size: 18px
+            font-weight: normal
+            color: #75767C
+            margin-top: 10px
             &.thank-you
-                font-size: 32px
-        .instructions
-            padding-top: 25px
-            //text-align: left
-            a
-                text-decoration: underline
-                color: #fff
-                font-weight: 500
-                font-size: 26px
+                font-size: 36px
+                font-weight: 600
+                color: #212529
+                margin-top: 0
+        a.homepage
+            margin-top: 48px
+            position: relative
+            display: inline-block
+            font-size: 18px
+            font-weight: 500
+            &:after
+                content: ""
+                background-image: url(/images/pe/read-more-arrow.svg)
+                background-size: contain
+                display: block
+                position: absolute
+                top: 6px
+                right: -22px
+                width: 12px
+                height: 12px
+                border: none
+                filter: invert(35%) sepia(96%) saturate(1837%) hue-rotate(202deg) brightness(98%) contrast(89%)

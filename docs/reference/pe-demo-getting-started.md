@@ -34,8 +34,8 @@ Let's briefly review those use cases one-by-one:
 
 There are different  Buildings in the city. Each Building has a few Apartments and each Apartment has 3 devices - Energy/Water meters and Thermostat.
 Buildings, and Apartments are represented as **Assets**. Relations with type 'Contains' are used to represent how assets/devices are connected between each other.
- 
-![image](/images/reference/pe-demo/smart-metering-model.png)
+
+<object width="100%" data="/images/reference/pe-demo/smart-metering-model.svg"></object>
 
 Devices submit telemetry every 30 seconds.
 

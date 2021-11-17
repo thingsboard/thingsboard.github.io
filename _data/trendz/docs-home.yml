@@ -19,10 +19,14 @@ toc:
       path: /docs/trendz/visualizations-scatter/
     - title: Heat Map
       path: /docs/trendz/visualizations-heatmap/
+    - title: Calendar
+      path: /docs/trendz/visualizations-calendar/
     - title: Cards
       path: /docs/trendz/visualizations-card/
     - title: View Settings
       path: /docs/trendz/view-settings/
+- title: Anomaly detection
+  path: /docs/trendz/anomaly/anomaly-detection-overview/
 - title: Grouping and Aggregation
   path: /docs/trendz/data-grouping-aggregation/
 - title: Filtering
@@ -35,5 +39,9 @@ toc:
   path: /docs/trendz/prediction/
 - title: Share and embed Visualizations
   path: /docs/trendz/embed-visuals/
+- title: Caching
+  path: /docs/trendz/cache-settings/
+- title: Trendz REST API
+  path: /docs/trendz/rest-api/
 - title: Trendz Release Notes
   path: /docs/trendz/releases/

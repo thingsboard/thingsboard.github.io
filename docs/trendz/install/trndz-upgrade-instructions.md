@@ -8,6 +8,20 @@ description: ThingsBoard Trendz Analytics upgrade instructions
 
 <ul id="markdown-toc">
     <li>
+      <a href="#upgrading-to-180" id="markdown-toc-upgrading-to-170">Upgrading to 1.8.1</a>
+      <ul>
+          <li>
+              <a href="#ubuntucentos-180" id="markdown-toc-ubuntucentos-180">Ubuntu/CentOS</a>        
+          </li>
+          <li>
+              <a href="#windows-180" id="markdown-toc-windows-180">Windows</a>        
+          </li>
+          <li>
+            <a href="#tb_widget_bundle-180" id="markdown-toc-tb_widget_bundle-180">Widget Bundle for ThingsBoard</a>        
+          </li>
+      </ul>
+    </li> 
+    <li>
       <a href="#upgrading-to-170" id="markdown-toc-upgrading-to-170">Upgrading to 1.7.0</a>
       <ul>
           <li>
@@ -81,6 +95,86 @@ description: ThingsBoard Trendz Analytics upgrade instructions
   </li>  
 </ul>
 
+## Upgrading to 1.8.1
+
+These steps are applicable for 1.7.0 Trendz Analytics version.
+
+### Ubuntu/CentOS {#ubuntucentos-180}
+
+#### Trendz Analytics package download
+
+{% capture tabspec %}trendz-download-1-8-0
+trendz-download-1-8-0-ubuntu,Ubuntu,shell,resources/1.8.0/trendz-ubuntu-download.sh,/docs/user-guide/install/resources/1.8.0/trendz-ubuntu-download.sh
+trendz-download-1-8-0-centos,CentOS,shell,resources/1.8.0/trendz-centos-download.sh,/docs/user-guide/install/resources/1.8.0/trendz-centos-download.sh{% endcapture %}  
+{% include tabs.html %}
+
+#### Trendz Analytics service upgrade
+
+* Stop Trendz Analytics service if it is running.
+
+```bash
+sudo service trendz stop
+```
+{: .copy-code}
+
+* Install latest Trendz Analytics service 
+
+{% capture tabspec %}trendz-installation-1-8-0
+trendz-installation-1-8-0-ubuntu,Ubuntu,shell,resources/1.8.0/trendz-ubuntu-installation.sh,/docs/user-guide/install/resources/1.8.0/trendz-ubuntu-installation.sh
+trendz-installation-1-8-0-centos,CentOS,shell,resources/1.8.0/trendz-centos-installation.sh,/docs/user-guide/install/resources/1.8.0/trendz-centos-installation.sh{% endcapture %}  
+{% include tabs.html %}
+
+**NOTE:** Package installer will ask you to merge your trendz configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.  
+ 
+Execute regular upgrade script:
+
+```bash
+sudo /usr/share/trendz/bin/install/upgrade.sh --fromVersion=1.7.0
+``` 
+{: .copy-code}
+ 
+#### Start the service
+
+```bash
+sudo service trendz start
+```
+{: .copy-code}
+
+### Windows {#windows-180}
+
+#### Trendz Analytics package download
+
+Download ThingsBoard Trendz Analytics installation package for Windows: [trendz-windows-1.8.0.zip](https://dist.thingsboard.io/trendz-windows-1.8.0.zip).
+
+#### Trendz Analytics service upgrade
+
+* Stop Trendz service if it is running.
+ 
+```text
+net stop trendz
+```
+{: .copy-code}
+
+* Make a backup of previous Trendz Analytics configuration located in \<Trendz install dir\>\conf (for ex. C:\trendz\conf).
+* Remove ThingsBoard install dir.
+* Unzip installation archive to ThingsBoard install dir.
+* Compare your old Trendz configuration files (from the backup you made in the first step) with new ones.
+
+* Finally, run **upgrade.bat** script to upgrade Trendz to the new version.
+
+**NOTE** Scripts listed above should be executed using Administrator Role.
+
+```text
+C:\trendz>upgrade.bat --fromVersion=1.7.0
+```
+
+#### Start the service
+
+```text
+net start trendz
+```
+{: .copy-code}
+
 ## Upgrading to 1.7.0
 
 **Note** These steps are applicable for 1.5.0, 1.5.1 and 1.6.0 Trendz Analytics version.
@@ -120,7 +214,7 @@ sudo tar -zcvf trndz_conf_old.tar.gz ./conf
 * Stop Trendz Analytics service if it is running.
 
 ```bash
-$ sudo service trendz stop
+sudo service trendz stop
 ```
 {: .copy-code}
 
@@ -146,15 +240,16 @@ export SPRING_DATASOURCE_PASSWORD=PUT_YOUR_POSTGRESQL_PASSWORD_HERE
 Execute regular upgrade script:
 
 ```bash
-# Execute regular upgrade script
-$ sudo /usr/share/trendz/bin/install/upgrade.sh --fromVersion=1.6.0
+sudo /usr/share/trendz/bin/install/upgrade.sh --fromVersion=1.6.0
 ``` 
+{: .copy-code}
  
 #### Start the service
 
 ```bash
-$ sudo service trendz start
+sudo service trendz start
 ```
+{: .copy-code}
 
 ### Windows {#windows-170}
 
@@ -268,7 +363,7 @@ trendz-download-1-6-0-centos,CentOS,shell,resources/1.6.0/trendz-centos-download
 * Stop Trendz Analytics service if it is running.
 
 ```bash
-$ sudo service trendz stop
+sudo service trendz stop
 ```
 {: .copy-code}
 
@@ -284,7 +379,7 @@ trendz-installation-1-6-0-centos,CentOS,shell,resources/1.6.0/trendz-centos-inst
 #### Start the service
 
 ```bash
-$ sudo service trendz start
+sudo service trendz start
 ```
 {: .copy-code}
 
@@ -336,7 +431,7 @@ trendz-download-1-5-1-centos,CentOS,shell,resources/1.5.1/trendz-centos-download
 * Stop Trendz Analytics service if it is running.
 
 ```bash
-$ sudo service trendz stop
+sudo service trendz stop
 ```
 {: .copy-code}
 
@@ -352,7 +447,7 @@ trendz-installation-1-5-1-centos,CentOS,shell,resources/1.5.1/trendz-centos-inst
 #### Start the service
 
 ```bash
-$ sudo service trendz start
+sudo service trendz start
 ```
 {: .copy-code}
 
@@ -402,7 +497,7 @@ trendz-download-1-5-0-centos,CentOS,shell,resources/1.5.0/trendz-centos-download
 * Stop Trendz Analytics service if it is running.
 
 ```bash
-$ sudo service trendz stop
+sudo service trendz stop
 ```
 
 * Install latest Trendz Analytics service 
@@ -417,7 +512,7 @@ trendz-installation-1-5-0-centos,CentOS,shell,resources/1.5.0/trendz-centos-inst
 #### Start the service
 
 ```bash
-$ sudo service trendz start
+sudo service trendz start
 ```
 
 ### Windows {#windows-150}
@@ -487,7 +582,7 @@ trendz-download-1-4-1-centos,CentOS,shell,resources/1.4.1/trendz-centos-download
 * Stop Trendz Analytics service if it is running.
 
 ```bash
-$ sudo service trendz stop
+sudo service trendz stop
 ```
 
 * Install latest Trendz Analytics service 
@@ -502,7 +597,7 @@ trendz-installation-1-4-1-centos,CentOS,shell,resources/1.4.1/trendz-centos-inst
 #### Start the service
 
 ```bash
-$ sudo service trendz start
+sudo service trendz start
 ```
 
 ### Windows {#windows-141}
@@ -547,7 +642,7 @@ trendz-download-1-4-0-centos,CentOS,shell,resources/1.4.0/trendz-centos-download
 * Stop Trendz Analytics service if it is running.
 
 ```bash
-$ sudo service trendz stop
+sudo service trendz stop
 ```
 
 * Install latest Trendz Analytics service 
@@ -562,7 +657,7 @@ trendz-installation-1-4-0-centos,CentOS,shell,resources/1.4.0/trendz-centos-inst
 #### Start the service
 
 ```bash
-$ sudo service trendz start
+sudo service trendz start
 ```
 
 ### Windows {#windows-140}

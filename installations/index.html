@@ -24,6 +24,9 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 				<li id="menu-item-thingsboard-pe" class="menu-item tb-logo">
 					<a href="javascript:void(0);" onClick="activatePricingSection('thingsboard-pe')">Professional Edition</a>
 				</li>
+				<li id="menu-item-thingsboard-edge" class="menu-item tb-logo">
+					<a href="javascript:void(0);" onClick="activatePricingSection('thingsboard-edge')">Edge</a>
+				</li>
 			</ul>
 		</nav>
 	</div>
@@ -386,6 +389,105 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 						<div class="deployment-card-block">
 							<a href="/docs/user-guide/install/pe/gcp/" class="deployment-logo">
 								<img width="" src="/images/install/cloud/gcp.svg" title="Google Cloud Platform" alt="Google Cloud Platform">
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="thingsboard-edge" class="install-content" style="display: none">
+	<div class="container">
+		<div class="install-content-header row">
+			<div class="install-content-description col-lg-7">
+				<h1>ThingsBoard Edge</h1>
+				<div class="install-content-details">
+					<p>It allows bringing data analysis and management to the edge, where the data is created. At the same time ThingsBoard Edge seamlessly synchronizing with the ThingsBoard cloud (ThingsBoard Cloud, ThingsBoard Demo, ThingsBoard PE or ThingsBoard CE) according to your business needs. <a href="/products/thingsboard-edge/">Read More</a>.</p>
+				</div>
+				<div class="row container button-container">
+					<a class="btn-blue" href="/docs/user-guide/install/edge/installation-options/">
+						Install
+					</a>
+					<a class="btn-blue" href="/pricing/">
+						Pricing
+					</a>
+				</div>
+			</div>
+			<div class="col d-flex justify-content-start">
+				<div class="image-content">
+					<img src="/images/install/thingsboard-ce-smart-bus-tracking.png" alt="ThingsBoard Edge Smart Bus Tracking Dashboard" class="bg">
+					<img src="/images/install/thingsboard-ce-smart-energy.png" alt="ThingsBoard Edge Smart Energy Dashboard" class="main">
+				</div>
+			</div>
+		</div>
+		<div class="feature">
+			<div class="column">
+				<div class="item-row">
+					<div class="item-text">
+						<a class="item-title" href="/docs/edge/getting-started-guides/what-is-edge/">Local deployment and storage</a>
+						<p>
+							Process and store data from edge (local) devices without connection to the cloud. Push updates to the cloud once connection restored.
+						</p>
+					</div>
+				</div>
+				<div class="item-row">
+					<div class="item-text">
+						<a class="item-title" href="/docs/edge/getting-started-guides/what-is-edge/">Traffic filtering</a>
+						<p>
+							Filter data from edge (local) devices on the ThingsBoard Edge service and push to cloud only subset of the data for further processing or storage.
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="column">
+				<div class="item-row">
+					<div class="item-text">
+						<a class="item-title" href="/docs/edge/getting-started-guides/what-is-edge/">Local alarms</a>
+						<p>
+							React instantly to critical situations on site without connectivity to cloud.
+						</p>
+					</div>
+				</div>
+				<div class="item-row">
+					<div class="item-text">
+						<a class="item-title" href="/docs/edge/getting-started-guides/what-is-edge/">Batch update and visualization</a>
+						<p>
+							Update thousands of edge configurations in a single click. Monitor local events and timeseries data with a real-time dashboard.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="deploy">
+			<h2>Deployment options</h2>
+			<div class="wrapper">
+				<div class="column">
+					<div class="deployment-cards">
+						<div class="deployment-card-block">
+							<a href="/docs/user-guide/install/edge/deb-installation/" class="deployment-logo">
+								<img src="/images/install/platform/ubuntu.svg" title="Ubuntu" alt="Ubuntu">
+							</a>
+						</div>
+						<div class="deployment-card-block">
+							<a href="/docs/user-guide/install/edge/rhel/" class="deployment-logo">
+								<img width="" src="/images/install/platform/centos-redhat.svg" title="CentOS/RHEL" alt="CentOS/RHEL">
+							</a>
+						</div>
+						<div class="deployment-card-block">
+							<a href="/docs/user-guide/install/edge/windows/" class="deployment-logo">
+								<img width="" src="/images/install/platform/windows.svg" title="Windows" alt="Windows">
+							</a>
+						</div>
+						<div class="deployment-card-block">
+							<a href="/docs/user-guide/install/edge/docker-windows/" class="deployment-logo">
+								<img src="/images/install/platform/docker-windows.svg" title="Docker (Windows)" alt="Docker (Windows)">
+							</a>
+						</div>
+						<div class="deployment-card-block">
+							<a href="/docs/user-guide/install/edge/docker/" class="deployment-logo">
+								<img width="" src="/images/install/platform/docker-linux-macos.svg" title="Docker (Linux or Mac OS)" alt="Docker (Linux or Mac OS)">
 							</a>
 						</div>
 					</div>
