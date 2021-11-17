@@ -13,7 +13,7 @@
 
 OPC UA Integration allows you to stream data from the OPC UA server to ThingsBoard and converts the device payloads to the ThingsBoard format.
 
-![image](/images/user-guide/integrations/opc-ua-integration.svg)
+<object width="100%" style="max-width: max-content;" data="/images/user-guide/integrations/opc-ua-integration.svg"></object>
 
 ### Video tutorial
 
