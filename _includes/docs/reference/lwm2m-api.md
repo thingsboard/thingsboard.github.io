@@ -228,7 +228,7 @@ value=1.02, type=STRING], 20=LwM2mSingleResource [id=20, value=2, type=INTEGER],
 
 The "Discover" operation is used to discover LwM2M Resources available on an Objects or Object Instances.
 This operation can be used to discover which Resources are instantiated in a given Object Instance. The returned payload
-is a list of application/link-format CoRE Links [RFC6690] for each targeted Object, Object Instance, or Resource, along
+is a list of application/link-format CoRE Links [RFC6690](https://datatracker.ietf.org/doc/html/rfc6690) for each targeted Object, Object Instance, or Resource, along
 with their assigned or attached Attributes including the Object Version attribute if required.
 
 <b> Example: Discover resources attached to an object </b>
@@ -246,22 +246,6 @@ Discover {"id":"/3"}
 
 <b> More examples:</b>
 <br>
-
-<details>
-<summary>
-<b>Discover all resources on the client</b>
-</summary>
-{% highlight ruby %}
-# Request:
-DiscoverAll
-
-# Response:
-{"result":"CONTENT","value":"[{\"url\":\"/\",\"attributes\":{\"ct\":\"110\",\"rt\":\"\\\"oma.lwm2m\\\"\"}},{\"url\":\"/1\",\"attributes\":{\"ver\":\"1.1\"}},{\"url\":\"/1
-/0\",\"attributes\":{}},{\"url\":\"/2/0\",\"attributes\":{}},{\"url\":\"/3/0\",\"attributes\":{}},{\"url\":\"/4/0\",\"attributes\":{}},{\"url\":\"/5/0\",\"attributes\":{}
-},{\"url\":\"/6/0\",\"attributes\":{}},{\"url\":\"/7/0\",\"attributes\":{}},{\"url\":\"/31024\",\"attributes\":{\"ver\":\"1.0\"}},{\"url\":\"/31024/10\",\"attributes\":{}
-},{\"url\":\"/31024/11\",\"attributes\":{}},{\"url\":\"/31024/12\",\"attributes\":{}}]"}
-{% endhighlight %}
-</details>
 
 <details>
 <summary>
@@ -399,11 +383,9 @@ WriteReplace {"id": "/19_1.1/0/0","value": {"0":"00ad456797", "25":"25ad456700"}
 
 ### Write-Attributes Operation
 
-Only Attributes from the <NOTIFICATION> class MAY be changed in using the "Write-Attributes" operation.
-The general rules for Attributes which are specified in Section 5.1.1. Attributes Definitions and Rules fully apply here.
-Table: 5.1.2.-1 Class Attributes in Section 5.1.2. Attributes Classification provides explanation on the Attributes
-supported by the "Write-Attributes" operation: Minimum Period, Maximum Period, Greater Than, Less Than, Step,
-Minimum Evaluation Period and Maximum Evaluation Period.
+Only Attributes from the NOTIFICATION class MAY be changed in using the "Write-Attributes" operation.
+[Object and Resource attributes](http://localhost:4000/docs/reference/lwm2m-api/#object-and-resource-attributes) section provides explanation on the Attributes supported by the "Write-Attributes" operation: 
+Minimum Period, Maximum Period, Greater Than, Less Than, Step.
 The operation permits multiple Attributes to be modified within the same operation.
 
 <b> Example: Write multiple attributes </b>
@@ -422,9 +404,8 @@ The LwM2M Client MAY support the "Read-Composite" operation.
 The "Read-Composite" operation can be used by the LwM2M Server to selectively read any combination of Objects,
 Object Instance(s), Resources, and/or Resource Instances of different or same Objects in a single request. The list of
 elements to be read are provided as SenML Pack where the records contain Base Name and/or Name Fields, but no Value
-fields. The Read-Composite operation is treated as non-atomic and handled as best effort by the client. That is, if any of
-the requested resources do not have a valid value to return, they will not be included in the response. Section 7.4.5.
-SenML JSON shows examples of Read-Composite use.
+fields. The Read-Composite operation is treated as non-atomic and handled as best effort by the client. That is, if any 
+of the requested resources do not have a valid value to return, they will not be included in the response. 
 
 <b> Example: Read multiple Objects </b>
 
@@ -489,7 +470,7 @@ In contrast to "Write" operation, the scope of which is limited to a Resource(s)
 the "Write-Composite" operation can be used by the Server to update values of a number of different Resources across
 different Instances of one or more Objects. The Write-Composite operation provides a list of
 all resources to be updated, and their new values, using the SenML JSON/CBOR format. Unlike for Write operation, the
-Resources that are not provided are not impacted by the operation. Examples are shown in Section 7.4.5. SenML JSON.
+Resources that are not provided are not impacted by the operation.
 
 The "Write-Composite" operation is atomic and cannot have partial success. That is, if the client supports this
 operation, it MUST reject a Server request where it cannot successfully write all the requested values to the requested
@@ -560,7 +541,7 @@ Delete {"id":"/19/1"}
 ### Observe Operation
 The LwM2M Server initiates an observation request for changes of a specific Resource, Resources within an Object
 Instance or for all the Object Instances of an Object within the LwM2M Client.
-Related parameters for "Observe" operation are described in Section 6.3.4. Write-Attributes Operation and those
+Related parameters for "Observe" operation are described in [Notification attributes](http://localhost:4000/docs/reference/lwm2m-api/#object-and-resource-attributes) Write-Attributes Operation and those
 parameters are configured by "Write-Attributes" operation.
 
 <b> Example: Observe resource</b>
@@ -646,7 +627,7 @@ ObserveCancelAll
 
 ### Read All Observations Operation
 The "Read All Observations" operation is Thingsboard-specific operation and allows to get all observations 
-that are set on the device
+that are set on the device.
 
 <b> Example: Read All Observations</b>
 
@@ -656,6 +637,30 @@ ObserveReadAll
 
 # Response:
 {"result":"CONTENT","value":"[\"/5/0/7\",\"/3/0/3\",\"/5/0/3\",\"/5/0/5\"]"}
+```
+{: .copy-code}
+
+### Discover All Operation
+
+The "Discover All Observations" operation is Thingsboard-specific operation and allows to get the object and resources hierarchy,
+instantiated on the client. When DiscoverAll is executed, it doesn't send any request to the client device, instead it 
+returns LwM2M model of the client device, which was created during the device connection to the server.
+This command is very useful for device setting up and troubleshooting, as it allows to see available objects and their 
+versions.
+
+<b> Example: Discover all resources </b>
+
+```ruby
+# Request:
+DiscoverAll
+
+# Response:
+{"result":"CONTENT","value":"[{\"url\":\"/\",\"attributes\":{\"ct\":\"110\",\"rt\":\"\\\"oma.lwm2m\\\"\"}},
+{\"url\":\"/1\",\"attributes\":{\"ver\":\"1.1\"}},{\"url\":\"/1/0\",\"attributes\":{}},{\"url\":\"/2/0\",
+\"attributes\":{}},{\"url\":\"/3/0\",\"attributes\":{}},{\"url\":\"/4/0\",\"attributes\":{}},{\"url\":\"/5/0\",
+\"attributes\":{}},{\"url\":\"/6/0\",\"attributes\":{}},{\"url\":\"/7/0\",\"attributes\":{}},{\"url\":\"/31024\",
+\"attributes\":{\"ver\":\"1.0\"}},{\"url\":\"/31024/10\",\"attributes\":{}},{\"url\":\"/31024/11\",\"attributes\":{}},
+{\"url\":\"/31024/12\",\"attributes\":{}}]"}
 ```
 {: .copy-code}
 
@@ -741,3 +746,284 @@ the Object 9.
 This option allows running the software update with the image file located on the 3rd party storage. In this case 
 the server generates a CoAP-URL and  sends it to the client, and the client downloads software image from the external 
 resource directly without transferring image to the server.
+
+
+## Advanced topics
+
+### Object and Resource attributes
+
+Please note that attributes in LwM2M context are different and not related to Server, Client or Shared attributes on 
+the Thingsboard platform.
+
+In LwM2M protocol, attributes are metadata which can be attached to an Object, an Object Instance, or a Resource. These 
+attributes can fulfil various roles, from carrying information only to carrying parameters for setting up certain
+actions on the LwM2M Client (e.g., Notifications).
+
+Attributes attached to Objects, Object Instances, Resources are respectively named O-Attribute, OI-Attribute, R-Attribute.
+
+These Attributes MAY be carried in the message payload of Registration and Discover operations; they also MAY be
+updated - when writable - through the [Write-Attributes](http://localhost:4000/docs/reference/lwm2m-api/#write-attributes-operation) operation.
+
+There are two types of attributes:
+
+<b> PROPERTIES Class Attributes, or Object Attributes </b> 
+
+The role of these Attributes is to provide metadata which may communicate helpful information to the LwM2M Server, for 
+example easing data management. Thingsboard supports Object Version attribute, which indicates the version of the 
+associated Object and is displayed in the results of [DiscoverAll](http://localhost:4000/docs/reference/lwm2m-api/#discover-all-operation) command.
+
+You can find more details about all available in LwM2M Object attributes here:  [PROPERTIES Class Attributes](http://www.openmobilealliance.org/release/LightweightM2M/V1_1_1-20190617-A/HTML-Version/OMA-TS-LightweightM2M_Core-V1_1_1-20190617-A.html#Table-512-1-lessPROPERTIESgreater-Class-Attributes)
+
+
+<b> NOTIFICATION Class Attributes, or Resource Attributes </b> 
+
+The role of these R-Attributes is to provide parameters to the "Notify" operation, which is used for the resource 
+observation. Any readable Resource can have such R-attributes.
+
+Following NOTIFICATION attributes are available on the TB Platform to configure observation parameters:
+
+* "pmin"  - Minimum period - indicates the minimum time in seconds the LwM2M Client MUST wait between two notifications.
+  If a notification of an observed Resource is supposed to be generated but it is before pmin expiry,
+  notification MUST be sent as soon as pmin expires. In the absence of this parameter, the Minimum Period is
+  defined by the Default Minimum Period set in the LwM2M Server Account.
+
+* "pmax"  - Maximum period -  indicates the maximum time in seconds the LwM2M Client MAY wait between two notifications.
+  When this "Maximum Period" expires after the last notification, a new notification MUST be sent. In the absence
+  of this parameter, the "Maximum Period" is defined by the Default Maximum Period when set in the LwM2M Server
+  Account or considered as 0 otherwise. The value of 0, means pmax MUST be ignored. The maximum period parameter
+  MUST be greater than the minimum period parameter otherwise pmax will be ignored for the Resource to which
+  such inconsistent timing conditions are applied.
+
+* "gt"    - Greater than - defines a threshold high value. When this Attribute is present, the LwM2M Client MUST notify
+  the Server each time the Observed Resource value crosses this threshold with respect to pmin parameter and
+  valid "Change Value Conditions" (see Notification Conditions above).
+
+* "lt"    - Less than - defines a threshold low value. When this Attributes is present, the LwM2M Client MUST notify the
+  Server each time the Observed Resource value crosses this threshold with respect to pmin parameter and valid
+  "Change Value Conditions" (see Notification Conditions above).
+
+* "st"    - Step - defines a threshold low value. When this Attributes is present, the LwM2M Client MUST notify the Server
+  each time the Observed Resource value crosses this threshold with respect to pmin parameter and valid "Change
+  Value Conditions" (see Notification Conditions above).
+
+Please find more more details about all available in LwM2M NOTIFICATION attributes [here.](http://www.openmobilealliance.org/release/LightweightM2M/V1_1_1-20190617-A/HTML-Version/OMA-TS-LightweightM2M_Core-V1_1_1-20190617-A.html#Table-512-2-lessNOTIFICATIONgreater-class-Attributes).
+
+Notification attributes can be configured in the Device Profile, please follow the guide:
+
+{% include images-gallery.html imageCollection="object-attributes" %}
+
+
+### DTLS configuration
+
+The Thingsboard platform supports secured connection using DTLS. DTLS, which stands for Datagram Transport Layer
+Security, is based on the Transport Layer Security (TLS) protocol and built on top of the User Datagram Protocol (UDP).
+Thingsboard allows the use of DTLS  with the LwM2M transport connection for devices.
+
+You can find detailed information about `LWM2M DTLS-based Security` [here](http://www.openmobilealliance.org/release/LightweightM2M/V1_2-20201110-A/OMA-TS-LightweightM2M_Transport-V1_2-20201110-A.pdf#page=19).
+
+There are three authentication methods available on the Thingsboard for LwM2M DTLS: using the Pre-Shared Key(PSK), using
+the Raw Public Key(RPK) and using the X.509 certificate.
+
+To use DTLS, the end-user device has to connect to the ThingsBoard server using secured port 5686.
+
+For the demonstration purpose we will use Leshan Demo Client, please refer to the link for downloading and configuration: [here](https://github.com/eclipse/leshan)
+
+#### 1. Pre-shared Key mode (PSK).
+
+The pre-shared key profile offers the most resource-efficient solution for integration of DTLS into LwM2M since pre-shared
+ciphersuites recommended in [RFC7925] require a minimum amount of flash space as well as RAM in your device.
+
+Symmetric cryptographic algorithms require only a minimal computational overhead. The size of the exchanged messages
+is also kept at a minimum. There is, however, a downside as well: symmetric keys need to be preconfigured to both
+communication endpoints.
+
+You need only three strings to configure the connection in the Device profile:
+
+* Endpoint client name: which is used to identify the device and can be any text string.
+* Client identity (PSK identity) key: any text string.
+* PSK key (security key): should be a random sequence in HexDec format and 32, 64 or 128 characters long.
+
+Example of using  Leshan Demo Client:
+
+    Endpoint client name= "ClientPsk";
+    Client identity (PSK identity) = "ClientPskIdentity";
+    Client key (PSK key or PSK security key) = "0123456789ABCDEF0123456789ABCDEF";
+
+Example command for start "Leshan client demo" in mode PSK:
+
+```ruby
+java -jar leshan-client-demo.jar -u localhost:5686 -lh 0.0.0.0 -lp 10004 -n ClientPsk -i ClientPskIdentity 
+-p 0123456789ABCDEF0123456789ABCDEF
+    
+Leshan Client Demo Interactive Console :
+...
+DefaultRegistrationEngine 2021-09-30 19:09:52,789 [INFO] Trying to register to coaps://192.168.1.81:5686 ...
+LeshanClientDemo 2021-09-30 19:09:52,830 [INFO] DTLS Full Handshake initiated by client : STARTED ...
+LeshanClientDemo 2021-09-30 19:09:52,949 [INFO] DTLS Full Handshake initiated by client : SUCCEED
+DefaultRegistrationEngine 2021-09-30 19:09:52,990 [INFO] Registered with location '/rd/vXMGfVFgQi'.
+...
+```
+{: .copy-code}
+
+
+#### 2. Raw Public Key(RPK) mode.
+
+The raw public key profile offers features that sit between the pre-shared key and the certificate-based mode and
+combines the benefits of these two profiles. The use of asymmetric cryptography offers improved security but avoids
+the overhead associated with certificates and the public key infrastructure.
+
+To configure the connection, you need to do following steps:
+
+   * Generate Client keys and copy-paste the Client Public key to the Device Credentials - Client Key on the Thingsboard platform.
+   * Generate Server keys and add them to the Server key-storage file lwm2mserver.jks, copy the file back to the server installation folder.
+   * Configure your client’s connection.
+
+We will use OpenSSl tool and follow the guide from Leshan: [here](https://github.com/eclipse/leshan/wiki/Credential-files-format)
+
+<b>Note:</b> This step requires Linux-based OS with Java installed.
+
+1. Create a separate folder where we will keep all generated keys.
+2. Thingsboard keeps server keys in the key-storage file "lwm2mserver.jks", please find and copy this file to our folder.
+   Default key file location is:
+
+```ruby
+/common/transport/lwm2m/src/main/resources/credentials/lwm2mserver.jks
+```
+{: .copy-code}
+
+{:start="3"}
+3. We will use the script below to generate all necessary keys. Just create a text file with any text editor, copy the 
+script into it and save the file with *.sh extention, for example 'generate-rpk.sh'
+
+<b> generate-rpk.sh </b>
+
+```ruby
+#!/bin/bash
+#
+# Copyright © 2016-2021 The Thingsboard Authors
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+# RPK. Generation of the keys.
+echo "====START RPK ========"
+echo "Generating client keys..."
+
+# Create EC key pair (private and public) using default openssl pem encoding:
+openssl ecparam -out keysClient.pem -name prime256v1 -genkey
+
+# Convert Client Private Key to PKCS#8 format (DER encoding):
+openssl pkcs8 -topk8 -inform PEM -outform DER -in keysClient.pem -out cprik.der -nocrypt
+
+# Output Client Public Key portion in SubjectPublicKeyInfo format (DER encoding):
+openssl ec -in keysClient.pem -pubout -outform DER -out cpubk.der
+
+echo "Client public key in base64 format. Copy this key to the Thingsboard - Client Key field in Device Credentials"
+base64 cpubk.der
+
+# get server keys
+
+# Importing keystore lwm2mserver.jks alias="server" to scertServer.p12
+keytool -importkeystore -srckeystore lwm2mserver.jks -alias server -destkeystore scertServer.p12 -deststoretype PKCS12
+
+# Importing keystore lwm2mserver.jks to scert.p12...
+# Enter destination keystore password:  server_ks_password
+# Re-enter new password: server_ks_password
+# Enter source keystore password:  server_ks_password
+
+# Generating scertServer.pem:
+openssl pkcs12 -in scertServer.p12  -nodes -nocerts -out scertServer.pem
+echo Enter Import Password: server_ks_password
+
+# Server public key in base64 format  (spubk.pem):
+openssl ec -in scertServer.pem -pubout -outform DER -out spubk.der
+```
+{: .copy-code}
+
+Please note that script us using the default password for "lwm2mserver.jks" file. If you are going to use another password,
+please also update it in ["thinsboard.yml"](https://thingsboard.io/docs/user-guide/install/config/) configuration file:
+
+```ruby
+...
+lwm2m:
+    ...
+    server:
+      ...
+      security:
+        ...
+        key_alias: "${LWM2M_SERVER_KEY_ALIAS:server}"
+        key_password: "${LWM2M_SERVER_KEY_PASSWORD:server_ks_password}"
+        ...
+
+```
+
+{:start="4"}
+4. To run the script, use following commands:
+
+```ruby
+chmod +x generate-rpk.sh
+sudo ./generate-rpk.sh
+```
+This script will run keytool and ssh utilities. It will generate the following output files:
+
+* lwm2mserver.jks - Server keystore file. 
+* keysClient.pem - Client Public \ Private Key pair 
+* cprik.der - Client Private Key in DER format with Base64 encryption
+* cpubk.der - Client Public Key in DER format
+* spubk.der - Server public key in DER format
+* scertServer.pem - Server public key with no encryption 
+  
+{:start="5"}
+5. Configure Device on the Thingsboard platform:
+
+* Endpoint name: input unique text string used to identify the client device
+* Client key:
+In terminal, Open the cprik.der file using Base64 command and copy the code to Client key field:
+  
+```ruby
+#command:
+$ Base64 cpubk.der
+
+#Output:
+MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEdvBZZ2vQRK9wgDhctj6B1c7bxR3Z0wYg1+YdoYFnVUKWb+rIfTTyYK9tmQJx5Vlb5fxdLnVv1RJOPiwsLIQbAA==
+```
+
+{:start="6"}
+6. Example command to launch  "Leshan demo client" in RPK mode:
+
+```ruby
+#command:
+$ java -jar leshan-client-demo.jar -u localhost:5686 -lh 0.0.0.0 -lp 10004 -n ClientRpk -cpubk cpubk.der -cprik cprik.der -spubk spubk.der
+
+#Output:
+Leshan Client Demo Interactive Console :
+ 
+Commands:
+  help	Displays help information about the specified command
+  create  Enable a new Object
+  delete  Disable a new object
+  update  Trigger a registration update.
+  send	Send data to server
+  move	Simulate client mouvement.
+ 
+Press Ctl-C to exit.
+ 
+              	LeshanClient 2021-10-27 10:37:21,196 [INFO] Starting Leshan client ...
+   CaliforniumEndpointsManager 2021-10-27 10:37:21,470 [INFO] New endpoint created for server coaps://18.184.200.162:5686 at coaps://[0:0:0:0:0:0:0:0]:10004
+              	LeshanClient 2021-10-27 10:37:21,472 [INFO] Leshan client[endpoint:leshan-rpkz] started.
+ 	DefaultRegistrationEngine 2021-10-27 10:37:21,474 [INFO] Trying to register to coaps://18.184.200.162:5686 ...
+          	LeshanClientDemo 2021-10-27 10:37:21,549 [INFO] DTLS Full Handshake initiated by client : STARTED ...
+          	LeshanClientDemo 2021-10-27 10:37:21,729 [INFO] DTLS Full Handshake initiated by client : SUCCEED
+ 	DefaultRegistrationEngine 2021-10-27 10:37:21,771 [INFO] Registered with location '/rd/yyIIQFyg6H'.
+ 	DefaultRegistrationEngine 2021-10-27 10:37:21,773 [INFO] Next registration update to coaps://18.184.200.162:5686 in 53s...
+```
+
