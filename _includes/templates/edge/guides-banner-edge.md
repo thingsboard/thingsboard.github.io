@@ -4,7 +4,7 @@
     * [Community Edition](/docs/edge/getting-started/getting-started-ce/)
 {% endif %}
 {% if currentGuide != "InstallationGuides" %}
-- [Installation guides](/docs/edge/install/installation-options/) - Learn how to setup ThingsBoard Edge on various available operating systems and connect to ThingsBoard CE/PE server.
+- [Installation guides](/docs/user-guide/install/edge/installation-options/) - Learn how to setup ThingsBoard Edge on various available operating systems and connect to ThingsBoard CE/PE server.
 {% endif %}
 - Edge Rule Engine:
 {% if currentGuide != "EdgeRuleEngineOverview" %}
@@ -21,7 +21,7 @@
 {% endif %}
 {% if currentGuide != "GrpcOverSsl" %}
 - Security:
-  - [gRPC over SSL/TLS](/docs/edge/security/grpc-over-ssl/) - Learn how to configure gRPC over SSL/TLS for communication between edge and cloud.
+  - [gRPC over SSL/TLS](/docs/edge/user-guide/grpc-over-ssl/) - Learn how to configure gRPC over SSL/TLS for communication between edge and cloud.
 {% endif %}
 - Features:
 {% if currentGuide != "EdgeStatus" %}

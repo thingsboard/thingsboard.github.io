@@ -94,6 +94,8 @@ toc:
     path: /docs/user-guide/integrations/http/
   - title: MQTT
     path: /docs/user-guide/integrations/mqtt/
+  - title: CoAP
+    path: /docs/user-guide/integrations/coap/
   - title: OPC-UA
     path: /docs/user-guide/integrations/opc-ua/
   - title: Actility ThingPark
@@ -158,23 +160,44 @@ toc:
       path: /docs/pe/user-guide/file-storage/
 - title: Security
   section:
+  - title: Enable HTTPS
+    path: /docs/pe/user-guide/ssl/http-over-ssl/
   - title: Audit Log
     path: /docs/pe/user-guide/audit-log/
   - title: Advanced RBAC for IoT
     path: /docs/pe/user-guide/rbac/
   - title: OAuth 2 Support
     path: /docs/pe/user-guide/oauth-2-support/
-    new: true
-  - title: MQTT over SSL
-    path: /docs/pe/user-guide/mqtt-over-ssl/
-  - title: Device authentication options
-    path: /docs/pe/user-guide/device-credentials/
-  - title: Access Token based authentication
-    path: /docs/pe/user-guide/access-token/
-  - title: Basic MQTT Credentials
-    path: /docs/pe/user-guide/basic-mqtt/
-  - title: X.509 Certificate based authentication
-    path: /docs/pe/user-guide/certificates/
+  - title: HTTP Transport
+    section:
+      - title: HTTP over SSL
+        path: /docs/pe/user-guide/ssl/http-transport-over-ssl/
+      - title: Access Token based authentication
+        path: /docs/pe/user-guide/ssl/http-access-token/
+  - title: MQTT Transport
+    section:
+      - title: MQTT over SSL
+        path: /docs/pe/user-guide/mqtt-over-ssl/
+      - title: Device authentication options
+        path: /docs/pe/user-guide/device-credentials/
+      - title: Access Token based authentication
+        path: /docs/pe/user-guide/access-token/
+      - title: Basic MQTT Credentials
+        path: /docs/pe/user-guide/basic-mqtt/
+      - title: X.509 Certificate based authentication
+        path: /docs/pe/user-guide/certificates/
+  - title: CoAP Transport
+    section:
+      - title: CoAP over DTLS
+        path: /docs/pe/user-guide/coap-over-dtls/
+      - title: Access Token based authentication
+        path: /docs/pe/user-guide/ssl/coap-access-token/
+      - title: X.509 Certificate based authentication
+        path: /docs/pe/user-guide/ssl/coap-x509-certificates/
+  - title: LwM2M Transport
+    section:
+      - title: LwM2M over DTLS
+        path: /docs/pe/user-guide/ssl/lwm2m-over-dtls/
 - title: Administration UI
   section:
   - title: Tenants

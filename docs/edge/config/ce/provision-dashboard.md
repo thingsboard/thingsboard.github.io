@@ -10,7 +10,7 @@ edgeDashboards:
         image: /images/edge/sync/ce-edge-dashboards-2.png
 ---
 
-Coming soon…
+![image](/images/coming-soon.jpg)
 
 #### Dashboards management
 

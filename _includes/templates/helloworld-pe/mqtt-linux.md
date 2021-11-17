@@ -23,7 +23,7 @@ mosquitto_pub -d -q 1 -h "$HOST_NAME" -p "1883" -t "v1/devices/me/telemetry" -u 
 For example, $HOST_NAME reference ThingsBoard Cloud server, access token is ABC123:
 
 ```bash
-mosquitto_pub -d -q 1 -h "thingsboard.cloud" -p "1883" -t "v1/devices/me/telemetry" -u "ABC123" -m {"temperature":25} 
+mosquitto_pub -d -q 1 -h "mqtt.thingsboard.cloud"-p "1883" -t "v1/devices/me/telemetry" -u "ABC123" -m {"temperature":25} 
 ```
 {: .copy-code}
 

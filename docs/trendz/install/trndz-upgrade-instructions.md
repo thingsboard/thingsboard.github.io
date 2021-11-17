@@ -8,7 +8,7 @@ description: ThingsBoard Trendz Analytics upgrade instructions
 
 <ul id="markdown-toc">
     <li>
-      <a href="#upgrading-to-180" id="markdown-toc-upgrading-to-170">Upgrading to 1.8.0</a>
+      <a href="#upgrading-to-180" id="markdown-toc-upgrading-to-170">Upgrading to 1.8.1</a>
       <ul>
           <li>
               <a href="#ubuntucentos-180" id="markdown-toc-ubuntucentos-180">Ubuntu/CentOS</a>        
@@ -95,7 +95,7 @@ description: ThingsBoard Trendz Analytics upgrade instructions
   </li>  
 </ul>
 
-## Upgrading to 1.8.0
+## Upgrading to 1.8.1
 
 These steps are applicable for 1.7.0 Trendz Analytics version.
 
