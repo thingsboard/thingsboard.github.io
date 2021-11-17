@@ -984,6 +984,18 @@
     }
   },
   {
+    "type": ["Europe"],
+    "country": ["Lietuvos Respublika"],
+    "name": "Techno Pynė",
+    "contact": {
+      "href": "ia@technopyne.lt"
+    },
+    "site": {
+      "href": "technopyne.lt",
+      "target": "_blank"
+    }
+  },
+  {
     "type": ["Africa"],
     "country": ["South Africa"],
     "name": "Tesla Water",
