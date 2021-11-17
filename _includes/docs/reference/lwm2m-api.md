@@ -26,10 +26,13 @@ This part of documentation covers provisioning of your first LwM2M device in Thi
 
 ### Step 1. Upload LwM2M models
 
+{% unless docsPrefix == 'paas/' %}
 System administrator is able to upload LwM2M models using "Resource library" UI located in the "System settings" menu.
 One may upload multiple files at once. We recommend you to download list of available models from official [github](https://github.com/OpenMobileAlliance/lwm2m-registry) repo and import all of them.
 
 {% include images-gallery.html imageCollection="upload-models" showListImageTitles="true" %}
+
+{% endunless %}
 
 <p> Tenant administrator is able to use LwM2M models defined by system administrator or overwrite them for the specific tenant.</p>
 
@@ -85,7 +88,7 @@ Now you are ready to turn on the device and observe the incoming telemetry.
 
 Let's launch the test client:
 
-```ruby
+```bash
 ./lwm2mclient -h lwm2m.thingsboard.cloud -n UniqueEndpointName -p 5685 -c
 ```
 {: .copy-code}
