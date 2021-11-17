@@ -197,6 +197,10 @@ toc:
         path: /docs/user-guide/ssl/coap-access-token/
       - title: X.509 Certificate based authentication
         path: /docs/user-guide/ssl/coap-x509-certificates/
+    - title: LwM2M Transport
+      section:
+        - title: LwM2M over DTLS
+          path: /docs/user-guide/ssl/lwm2m-over-dtls/
 - title: Administration UI
   section:
   - title: Tenants
