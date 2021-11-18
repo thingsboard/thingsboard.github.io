@@ -1,6 +1,6 @@
 ---
 layout: docwithnav-mobile-pe
-title: Customize dashboards in ThingsBoard PE Mobile Application
+title: Customize home screen in ThingsBoard PE Mobile Application
 
 dashboard-image:
  0:

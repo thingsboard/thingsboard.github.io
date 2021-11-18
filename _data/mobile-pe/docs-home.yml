@@ -1,7 +1,7 @@
 bigheader: "ThingsBoard PE Mobile Application Documentation"
 abstract: "ThingsBoard PE Mobile Application - starting point for your IoT mobile product."
 toc:
-  - title: ThingsBoard PE Mobile Application
+  - title: PE Mobile Application
     path: /docs/pe/mobile/
   - title: Getting Started
     path: /docs/pe/mobile/getting-started/
@@ -9,7 +9,7 @@ toc:
     section:
       - title: Overview
         path: /docs/pe/mobile/customization/
-      - title: Dashboards list
+      - title: Home screen
         path: /docs/pe/mobile/customize-dashboards/
       - title: Devices views
         path: /docs/pe/mobile/customize-devices/

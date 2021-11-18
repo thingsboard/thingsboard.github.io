@@ -1,7 +1,7 @@
 bigheader: "ThingsBoard Mobile Application Documentation"
 abstract: "ThingsBoard Mobile Application - starting point for your IoT mobile product."
 toc:
-  - title: ThingsBoard Mobile Application
+  - title: Mobile Application
     path: /docs/mobile/
   - title: Getting Started
     path: /docs/mobile/getting-started/
@@ -9,7 +9,7 @@ toc:
     section:
       - title: Overview
         path: /docs/mobile/customization/
-      - title: Dashboards list
+      - title: Home screen
         path: /docs/mobile/customize-dashboards/
       - title: Devices views
         path: /docs/mobile/customize-devices/

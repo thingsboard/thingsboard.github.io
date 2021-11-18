@@ -77,7 +77,7 @@ flutter run
 ```
 {: .copy-code}
 
-You should see either Android, iOS, or web output, depending on your device.
+You should see either Android or iOS output, depending on your device.
 
 <br>
 
