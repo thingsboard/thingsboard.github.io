@@ -1,73 +1,58 @@
- 
-X.509 Certificate Based Authentication is used in MQTT Two-Way SSL and CoAP DTLS with X.509 Certificate. In this case, the certificate itself is the client's  ID, thus, Access Token is no longer needed.
+X.509 Certificates are used to setup [mutual](https://en.wikipedia.org/wiki/Mutual_authentication) (two-way) authentication for MQTT over TLS.
+It is similar to [access token](/docs/{{docsPrefix}}user-guide/access-token/) authentication, but uses X.509 Certificate instead of token.
 
-Instructions below will describe how to generate a client-side certificate and connect to the server that is running MQTT over SSL.
-You will need to have the public key of the server certificate in PEM format.
-See [following instructions](/docs/{{docsPrefix}}user-guide/mqtt-over-ssl/#self-signed-certificate-generation) for more details on server-side configuration.
+Instructions below will describe how to connect MQTT client using X.509 Certificate to ThingsBoard Cloud.
 
-#### Update keygen.properties file
+#### Step 1. Prepare your server and certificate chain
 
-Open the keygen.properties file, and update the values if needed:
+ThingsBoard Team has already provisioned a valid certificate for [ThingsBoard Cloud](https://thingsboard.cloud/signup).
+Follow the [MQTT over SSL](/docs/{{docsPrefix}}user-guide/mqtt-over-ssl/) guide to provision server certificate if you are hosting your own ThingsBoard instance.
 
-```bash
-DOMAIN_SUFFIX="localhost"
-SUBJECT_ALTERNATIVE_NAMES="ip:127.0.0.1"
-ORGANIZATIONAL_UNIT=ThingsBoard
-ORGANIZATION=ThingsBoard
-CITY="San Francisco"
-STATE_OR_PROVINCE=CA
-TWO_LETTER_COUNTRY_CODE=US
+Once provisioned, you should prepare a certificate chain in pem format. This chain will be used by mqtt client to validate the server certificate.
+Save the chain to your working directory as "**tb-server-chain.pem**".
+An example of certificate chain for *mqtt.thingsboard.cloud* is located [here](/docs/paas/user-guide/resources/mqtt-over-ssl/tb-cloud-chain.pem).
 
-SERVER_KEYSTORE_PASSWORD=server_ks_password
-SERVER_KEY_PASSWORD=server_key_password
+#### Step 2. Generate Client certificate
 
-SERVER_KEY_ALIAS="serveralias"
-SERVER_FILE_PREFIX="mqttserver"
-SERVER_KEYSTORE_DIR="/etc/thingsboard/conf"
+Use the following command to generate the self-signed private key and x509 certificate.
+The command is based on the **openssl** tool which is most likely already installed on your workstation:
 
-CLIENT_KEYSTORE_PASSWORD=password
-CLIENT_KEY_PASSWORD=password
-
-CLIENT_KEY_ALIAS="clientalias"
-CLIENT_FILE_PREFIX="mqttclient"
-CLIENT_KEY_ALG="EC"
-CLIENT_KEY_GROUP_NAME="secp256r1"
-```
-
-#### Run Client keygen script
-
-Download and launch the [**client.keygen.sh**](https://raw.githubusercontent.com/thingsboard/thingsboard/master/tools/src/main/shell/client.keygen.sh) script.
+To generate the RSA based key and certificate, use:
 
 ```bash
-chmod +x client.keygen.sh
-./client.keygen.sh
+openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -sha256 -days 365 -nodes
 ```
+{: .copy-code}
 
-The script outputs the following files:
+To generate the EC based key and certificate, use:
 
-- **CLIENT_FILE_PREFIX.jks** - Java Keystore file with the server certificate imported
-- **CLIENT_FILE_PREFIX.nopass.pem** - Client certificate file in PEM format to be used by non-java client
-- **CLIENT_FILE_PREFIX.pub.pem** - Client public key
+```bash
+openssl ecparam -out key.pem -name secp256r1 -genkey
+openssl req -new -key key.pem -x509 -nodes -days 365 -out cert.pem 
+```
+{: .copy-code}
 
-#### Provision Client Public Key as Device Credentials
+The output of the command will be a private key file *key.pem* and a public certificate *cert.pem*.
+We will use them in next steps.
 
-Go to **ThingsBoard Web UI -> Devices -> Your Device -> Device Credentials**. Select **X.509 Certificate** device credentials, insert the contents of  **CLIENT_FILE_PREFIX.pub.pem** file and click save.
-Alternatively, the same can be done through the REST API.
+#### Step 3. Provision Client Public Key as Device Credentials
 
-#### Run Two-Way MQTT SSL Python Client
+{% if docsPrefix == 'pe/' %}
+Go to **ThingsBoard Web UI -> Device Groups -> Group "All" -> Your Device -> Device Credentials**.
+{% else %}
+Go to **ThingsBoard Web UI -> Devices -> Your Device -> Device Credentials**.
+{% endif %}
+Select **X.509 Certificate** device credentials, insert the contents of *cert.pem* file and click save.
+Alternatively, the same can be done through the [REST API](/docs/{{docsPrefix}}reference/rest-api/).
 
-Download Python client example [**two-way-ssl-mqtt-client.py**](/docs/{{docsPrefix}}user-guide/resources/mqtt-over-ssl/two-way-ssl-mqtt-client.py).
+#### Step 4. Test the connection
 
-**Note** Script uses **8883** MQTT port and requires paho-mqtt library that you can install using the following command: **pip3 install paho-mqtt**
+Execute the following command to upload temperature readings to ThingsBoard Cloud using secure channel:
 
-Run the script and follow steps in console:
+```bash
+mosquitto_pub --cafile tb-server-chain.pem -d -q 1 -h "YOUR_TB_HOST" -p "8883" \
+-t "v1/devices/me/telemetry" --key key.pem --cert cert.pem -m {"temperature":25}
+```
+{: .copy-code}
 
-{% capture tabspec %}mqtt-ssl-configuration-twoway
-A,Run command,shell,resources/mqtt-ssl-configuration-run-twowaysslmqttclient.sh,/docs/{{docsPrefix}}user-guide/resources/mqtt-ssl-configuration-run-twowaysslmqttclient.sh{% endcapture %}
-{% include tabs.html %}
-
-If everything was configured correctly, the output should be like:
-
-{% capture tabspec %}mqtt-ssl-configuration-output-twoway
-A,Result,shell,resources/mqtt-ssl-configuration-twowaysslmqttclient-output.txt,/docs/{{docsPrefix}}user-guide/resources/mqtt-ssl-configuration-twowaysslmqttclient-output.txt{% endcapture %}
-{% include tabs.html %}
+Don't forget to replace **YOUR_TB_HOST** with the host of your ThingsBoard instance.

@@ -19,6 +19,6 @@ In other case please visit this link to provision edge on server [Provision Edge
 In other case please visit this link to provision edge on server [Provision Edge on {{currentThingsBoardVersion}} server](/docs/edge/provision-edge-on-server-ce/).
 {% endif %}
 
-Once Edge provisioned on a server, please install it and connect to server using this [guide](/docs/edge/install/installation-options/).
+Once Edge provisioned on a server, please install it and connect to server using this [guide](/docs/user-guide/install/edge/installation-options/).
 
 {% include templates/edge/ui-url-aliases-banner.md %} 

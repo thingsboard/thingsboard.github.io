@@ -9,7 +9,7 @@ nano .env
 
 Check following line:
 
-```.env
+```bash
 TB_QUEUE_TYPE=kafka
 ```
 {: .copy-code}

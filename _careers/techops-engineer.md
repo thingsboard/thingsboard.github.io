@@ -37,7 +37,7 @@ Experience with AWS/Azure/GCP;
 Docker, Docker-Compose knowledge.
 
 ### We offer:
-Working on an open-source IoT platform that has thousands of installations all over the world and 7000+ stars on GitHub;
+Working on an open-source IoT platform that has thousands of installations all over the world and 10,000+ stars on GitHub;
 
 Modern cutting-edge development stack;
 

@@ -7,4 +7,5 @@ description: ThingsBoard Access Token based authentication for HTTP transport.
 
 ---
 
+{% assign docsPrefix = "pe/" %}
 {% include docs/user-guide/ssl/http-access-token.md %}

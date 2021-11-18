@@ -7,4 +7,5 @@ description: Launching ThingsBoard with secure HTTP protocol to connect your IoT
 
 ---
 
+{% assign docsPrefix = "pe/" %}
 {% include docs/user-guide/ssl/http-transport-over-ssl.md %}

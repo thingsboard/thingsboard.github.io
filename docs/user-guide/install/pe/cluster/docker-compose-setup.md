@@ -11,6 +11,8 @@ redirect_from: "/docs/user-guide/install/pe/docker-cassandra/"
 * TOC
 {:toc}
 
+{% assign docsPrefix = "pe/" %}
+
 This guide will help you to setup ThingsBoard in cluster mode with Docker Compose. 
 For this purpose, we will use docker container images available on [Docker Hub](https://hub.docker.com/search?q=thingsboard&type=image&image_filter=store).  
 
@@ -58,6 +60,7 @@ We will reference the license key you have obtained during this step as PUT_YOUR
 ```bash
 nano tb-node.env
 ```
+{: .copy-code}
 
 and put the license secret parameter instead of "PUT_YOUR_LICENSE_SECRET_HERE":
 
@@ -84,13 +87,7 @@ All deployment modes support separate JS executors, Redis, and different [queues
 
 ## Step 7. Configure ThingsBoard database
 
-Before performing initial installation you can configure the type of database to be used with ThingsBoard.
-In order to set database type change the value of `DATABASE` variable in `.env` file to one of the following:
-
-- `postgres` - use PostgreSQL database;
-- `hybrid` - use PostgreSQL for entities database and Cassandra for timeseries database;
-
-**NOTE**: According to the database type corresponding docker service will be deployed (see `docker-compose.postgres.yml`, `docker-compose.hybrid.yml` for details).
+{% include templates/install/configure-db-docker-compose.md %}
 
 ## Step 8. Choose ThingsBoard queue service 
 
@@ -106,7 +103,11 @@ Confluent Cloud <small>(Event Streaming Platform based on Kafka)</small>%,%confl
 
 {% include content-toggle.html content-toggle-id="ubuntuThingsboardQueue" toggle-spec=contenttogglespecqueue %}
 
-## Step 9. Running
+## Step 9. Enable monitoring (optional)
+
+{% include templates/install/configure-monitoring-docker-compose.md %}
+
+## Step 10. Running
 
 Execute the following command to create log folders for the services and chown of these folders to the docker container users. 
 To be able to change user, **chown** command is used, which requires sudo permissions (script will request password for a sudo access): 
@@ -150,7 +151,6 @@ In case of any issues you can examine service logs for errors.
 For example to see ThingsBoard node logs execute the following command:
 
 ```bash
-. .env
 docker-compose -f $TB_SETUP/docker-compose.yml logs -f tb-core1 tb-rule-engine1
 ```
 {: .copy-code}
@@ -159,7 +159,6 @@ docker-compose -f $TB_SETUP/docker-compose.yml logs -f tb-core1 tb-rule-engine1
 Or use the following command to see the state of all the containers:
 
 ```bash
-. .env
 docker-compose -f $TB_SETUP/docker-compose.yml ps
 ```
 {: .copy-code}
@@ -167,7 +166,6 @@ docker-compose -f $TB_SETUP/docker-compose.yml ps
 Use the following command to inspect the logs of all running services.
 
 ```bash
-. .env
 docker-compose -f $TB_SETUP/docker-compose.yml logs -f
 ```
 {: .copy-code}
@@ -198,24 +196,7 @@ Where:
 
 - `[SERVICE...]` - list of services to update (defined in docker-compose configurations). If not specified all services will be updated.
 
-## Upgrading
-
-In case when database upgrade is needed, execute the following commands:
-
-```bash
-./docker-stop-services.sh
-./docker-remove-services.sh
-```
-
-Edit .env file set "TB_VERSION" to target version (f.e. currently you on 3.2.1 so in this case you need to set 3.2.2)
-
-```bash
-./docker-update-service.sh [SERVICE...]
-```
-
-Where:
-
-- `SERVICE...` - list of services to update (defined in docker-compose configurations). If not specified all services will be updated.
+{% include templates/install/upgrade-docker-compose.md %}
 
 {% include templates/install/generate_certificate_docker-compose.md %}
 

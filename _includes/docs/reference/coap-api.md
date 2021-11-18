@@ -37,6 +37,8 @@ Possible error codes and their reasons:
 * **4.01 Unauthorized** - Invalid **$ACCESS_TOKEN**.
 * **4.04 Not Found** - Resource not found.
 
+The alternative authentication option is to use [X.509 Certificates](/docs/{{docsPrefix}}user-guide/ssl/coap-x509-certificates/).
+
 {% include templates/api/key-value-format.md %}
 
 However, it is also possible to send data via [Protocol Buffers](https://developers.google.com/protocol-buffers).
@@ -258,7 +260,6 @@ Where
 ## Protocol customization
 
 CoAP transport can be fully customized for specific use-case by changing the corresponding [module](https://github.com/thingsboard/thingsboard/tree/master/transport/coap).
-
 
 ## Next steps
 

@@ -20,6 +20,9 @@ CoAP Integration allows us to choose a security mode:
 - **MIXED**
 
 ![image](/images/user-guide/integrations/coap/coap-integration-modes.png)
+
+{% if docsPrefix != "paas/" %}
+
  
 For the last 2 types, before creating integration, DTLS support should be enabled in the .yml configuration file or should be updated by overriding the next environment variables in the .conf file:
 
@@ -39,7 +42,9 @@ export COAP_DTLS_KEY_ALIAS=serveralias
 export TB_COAP_X509_DTLS_SKIP_VALIDITY_CHECK_FOR_CLIENT_CERT=false
 ```
 
-Please, note, that added above environment variables use default DTLS configuration settings. In order to get the CoAP server launched correctly in the DTLS mode, you need to update at least key store settings. {% if peDocsPrefix == '' %}Please refer to the [CoAP over DTLS](/docs/user-guide/coap-over-dtls) guide in order to learn more about the CoAP DTLS configuration.{% else %} Please refer to the [CoAP over DTLS](/docs/{{docsPrefix}}/user-guide/coap-over-dtls) guide in order to learn more about the CoAP DTLS configuration.{% endif %}
+Please, note, that added above environment variables use default DTLS configuration settings. In order to get the CoAP server launched correctly in the DTLS mode, you need to update at least key store settings. Please refer to the [CoAP over DTLS](/docs/pe/user-guide/coap-over-dtls) guide in order to learn more about the CoAP DTLS configuration.
+
+{% endif %}
 
 In addition, CoAP integration will provide us automatically generated CoAP endpoint URL for data transmitting based on the Base URL path and next path prefixes: 
  - **/i** - Integration resource in the CoAP server

@@ -15,10 +15,19 @@ The coap-client example below demonstrates how to connect to [ThingsBoard Cloud]
 
 {% include templates/coap-dtls/coap-client-dtls.md %}
 
-Finally, run the example script below to validate DTLS with access token auth and subscribe for shared attributes updates:
+Finally, run the example script below to validate DTLS with access token (replace YOUR_ACCESS_TOKEN with your access token) auth:
+
+publish time-series data:
 
 ```bash
-coap-client-openssl -v 9 -B 3600 -s 3600 coaps://coap.thingsboard.cloud/api/v1/$ACCESS_TOKEN/attributes
+coap-client-openssl -v 9 -m POST -t "application/json" -e '{"temperature":42}' coaps://coap.thingsboard.cloud/api/v1/YOUR_ACCESS_TOKEN/telemetry
+```
+{: .copy-code}
+
+subscribe for shared attributes updates:
+
+```bash
+coap-client-openssl -v 9 -B 3600 -s 3600 coaps://coap.thingsboard.cloud/api/v1/YOUR_ACCESS_TOKEN/attributes
 ```
 {: .copy-code}
 
@@ -27,3 +36,4 @@ where,
 - *-B 3600* - Break operation after waiting given seconds;
 - *-s 3600* - Subscribe to / Observe resource for given duration in seconds.
 
+Don't forget to replace **coap.thingsboard.cloud** with the host of your ThingsBoard instance and **YOUR_ACCESS_TOKEN** with the access token of your device.

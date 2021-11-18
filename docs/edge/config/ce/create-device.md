@@ -5,7 +5,7 @@ description: Create Device on edge and provision to cloud
 
 ---
 
-Coming soon…
+![image](/images/coming-soon.jpg)
 
 ### Device management on edge
 
