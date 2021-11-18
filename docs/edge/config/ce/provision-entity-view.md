@@ -10,7 +10,7 @@ edgeEntityViews:
         image: /images/edge/sync/ce-edge-entity-views-2.png
 ---
 
-Coming soon…
+![image](/images/coming-soon.jpg)
 
 #### Entity Views management
 

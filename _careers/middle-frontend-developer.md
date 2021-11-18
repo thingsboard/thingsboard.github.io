@@ -39,7 +39,7 @@ Integration with Java back-end via RESTful and WebSocket APIs;
 Review and acceptance of Pull Requests on GitHub from community members.
 
 ### We offer:
-Working on an open-source IoT platform that has thousands of installations all over the world and 7000+ stars on GitHub;
+Working on an open-source IoT platform that has thousands of installations all over the world and 10,000+ stars on GitHub;
 
 Full-time office work with flexible work hours;
 

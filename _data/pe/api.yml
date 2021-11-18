@@ -15,8 +15,11 @@ toc:
     path: /docs/pe/reference/coap-api/
   - title: HTTP Device API
     path: /docs/pe/reference/http-api/
-  - title: LWM2M Device API
+  - title: LWM2M Transport API
     path: /docs/pe/reference/lwm2m-api/
+    new: true
+  - title: SNMP Transport API
+    path: /docs/pe/reference/snmp-api/
     new: true
 - title: REST APIs and clients
   section:
@@ -32,4 +35,4 @@ toc:
   new: true
   section:
     - title: Python Client SDK
-      path: /docs/reference/python-client-sdk
+      path: /docs/pe/reference/python-client-sdk/

@@ -7,9 +7,12 @@ Device API is grouped by supported communication protocols:
 * [**CoAP API**](/docs/{{docsPrefix}}reference/coap-api)
 * [**HTTP API**](/docs/{{docsPrefix}}reference/http-api)
 * [**LWM2M API**](/docs/{{docsPrefix}}reference/lwm2m-api)
+* [**SNMP API**](/docs/{{docsPrefix}}reference/snmp-api)
 
 [**Gateway MQTT API**](/docs/{{docsPrefix}}reference/gateway-mqtt-api) allows you to connect **existing** devices to the platform using **[ThingsBoard Gateway](/docs/iot-gateway/what-is-iot-gateway/)**
 or implement your own gateway.
+
+{% if docsPrefix != "edge/" %}
 
 Server-side API is available as REST API:
 
@@ -24,3 +27,5 @@ Server-side API is available as REST API:
 Software development kits:
 
 * [**Python Client SDK**](/docs/{{docsPrefix}}reference/python-client-sdk) - Software development kit for client-side integration of your Python projects.
+
+{% endif %}

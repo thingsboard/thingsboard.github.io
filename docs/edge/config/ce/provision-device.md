@@ -10,7 +10,7 @@ edgeDevices:
         image: /images/edge/sync/ce-edge-devices-2.png
 ---
 
-Coming soon…
+![image](/images/coming-soon.jpg)
 
 #### Devices management
 

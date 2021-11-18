@@ -3,13 +3,13 @@
 Configure ThingsBoard environment file:
 
 ```text
-sudo nano .env
+nano .env
 ```
 {: .copy-code}
 
 Check following line:
 
-```.env
+```bash
 TB_QUEUE_TYPE=confluent
 ```
 {: .copy-code}
@@ -17,13 +17,13 @@ TB_QUEUE_TYPE=confluent
 Configure Confluent Cloud environment file for ThingsBoard queue service:
 
 ```text
-sudo nano queue-confluent-cloud.env
+nano queue-confluent-cloud.env
 ```
 {: .copy-code}
 
 Don’t forget to replace "CLUSTER_API_KEY", "CLUSTER_API_SECRET" and "confluent.cloud:9092" with your real Confluent Cloud bootstrap servers:
 
-```.env
+```bash
 TB_QUEUE_TYPE=kafka
 
 TB_KAFKA_SERVERS=confluent.cloud:9092

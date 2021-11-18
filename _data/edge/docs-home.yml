@@ -4,15 +4,7 @@ toc:
 - title: ThingsBoard Edge
   path: /docs/edge/
 - title: What is ThingsBoard Edge?
-  path: /docs/edge/what-is-edge/
-- title: Activate edge functionality on ThingsBoard server
-  path: /docs/edge/enable-edge/
-- title: Provision ThingsBoard Edge on ThingsBoard server
-  section:
-    - title: Community Edition
-      path: /docs/edge/provision-edge-on-server-ce/
-    - title: Professional Edition
-      path: /docs/edge/provision-edge-on-server-pe/
+  path: /docs/edge/getting-started-guides/what-is-edge/
 #- title: Configuration guides
 #  section:
 #    - title: Community Edition
@@ -47,10 +39,10 @@ toc:
 #      path: /docs/edge/rule-engine/provision-rule-chains/
 #    - title: Push data from edge to cloud and vice versa
 #      path: /docs/edge/rule-engine/push-data/
-#- title: Security
-#  section:
-#    - title: Enable gRPC over SSL/TLS for edge communication
-#      path: /docs/edge/security/grpc-over-ssl/
+- title: Security
+  section:
+    - title: Enable gRPC over SSL/TLS for edge communication
+      path: /docs/edge/user-guide/grpc-over-ssl/
 #- title: Features
 #  section:
 #    - title: Edge status
@@ -73,5 +65,9 @@ toc:
           path: /docs/edge/use-cases/data-filtering-traffic-reduce-ce/
         - title: Professional Edition
           path: /docs/edge/use-cases/data-filtering-traffic-reduce-pe/
-- title: ThingsBoard Edge Roadmap
+- title: Troubleshooting
+  path: /docs/edge/user-guide/troubleshooting/
+#- title: Release Notes
+#  path: /docs/edge/reference/releases/
+- title: Roadmap
   path: /docs/edge/roadmap/
