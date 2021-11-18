@@ -1,6 +1,6 @@
 ---
 layout: docwithnav-mobile
-title: Customize dashboards in ThingsBoard Mobile Application
+title: Customize home screen in ThingsBoard Mobile Application
 
 dashboard-image:
  0:
