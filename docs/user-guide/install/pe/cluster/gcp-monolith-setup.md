@@ -10,13 +10,20 @@ description: ThingsBoard IoT platform monolith setup with Kubernetes in GKE
 * TOC
 {:toc}
 
-This guide will help you to set up ThingsBoard in monolith mode in GKE. 
+This guide will help you to set up ThingsBoard in monolith mode using [Google Kubernetes Engine](https://cloud.google.com/kubernetes-engine). 
 
 ## Prerequisites
 
-ThingsBoard Microservices run on the Kubernetes cluster. You need to have a Kubernetes cluster, and the `kubectl` command-line tool must be configured to communicate with your cluster. 
+{% include templates/install/gcp/gke-prerequisites.md %}
+
+#### Checkout ThingsBoard PE images from docker store
+
+{% assign checkoutMode = "monolith" %}
+{% include templates/install/dockerhub/checkout.md %}
 
 ## Step 1. Clone ThingsBoard PE K8S scripts repository
+
+Clone the repository and change the working directory to GCP scripts.
 
 ```bash
 git clone -b release-{{ site.release.ver }} https://github.com/thingsboard/thingsboard-pe-k8s.git
@@ -26,13 +33,27 @@ cd thingsboard-pe-k8s/gcp/monolith
 
 ## Step 2. Configure and create GKE cluster
 
-Please follow [this](https://cloud.google.com/kubernetes-engine/docs/how-to/creating-a-zonal-cluster) guide to set up a GCP cluster.
+Create a zonal cluster with **1** node of **e2-standard-4** machine type.
 
-For this deployment you'll need **2** nodes of **e2-standard-2** machine type. You can find this configuration in the `NODE POOLS` submenu:
+Follow [this](https://cloud.google.com/kubernetes-engine/docs/how-to/creating-a-zonal-cluster) guide (recommended) or execute the following command: 
 
-![image](/images/install/cloud/gcp-cluster-create.png)
+```bash
+gcloud container clusters create tb3 \
+--release-channel stable \
+--zone us-central1-a \
+--node-locations us-central1-a \
+--enable-ip-alias \
+--num-nodes=1 \
+--machine-type=e2-standard-4
+```
+{: .copy-code}
 
-To update context of Kubectl execute this command:
+where:
+
+ * *thingsboard* is the name of your cluster. You may input a different name. We will refer to it later in this guide using **CLUSTER_NAME**;
+ * *us-central1-a* is one of the available compute [zones](https://cloud.google.com/compute/docs/regions-zones#available). We will refer to it later in this guide using **COMPUTE_ZONE**;
+
+Then, update context of kubectl using command:
 
 ```
 gcloud container clusters get-credentials $CLUSTER_NAME
@@ -41,28 +62,68 @@ gcloud container clusters get-credentials $CLUSTER_NAME
 
 where **$CLUSTER_NAME** is the name you gave to your cluster.
 
-## Step 3. Upload Docker credentials
+## Step 3. Provision Google Cloud SQL (PostgreSQL) Instance
 
-{% include templates/install/dockerhub/upload-docker-credentials.md %}
+Create the PostgreSQL instance with database version "**PostgreSQL 12**" and the following recommendations:
 
-## Step 4. Installation
+ * use the same region where your K8S cluster **COMPUTE_ZONE** is located;
+ * use the same VPC network where your K8S cluster **COMPUTE_ZONE** is located;
+ * use private IP address to connect to your instance and disable public IP address;  
+ * use highly available DB instance for production and single zone instance for development clusters;  
+ * use at least 2 vCPUs and 7.5 GB RAM, which is sufficient for most of the workloads. You may scale it later if needed;
+ 
 
-Execute the following command to run installation:
+Follow [this](https://cloud.google.com/sql/docs/postgres/create-instance) guide (recommended) or execute the following command:
 
-```
-./k8s-install-tb.sh --loadDemo
+```bash
+gcloud beta sql instances create thingsboard-db4 \
+--database-version=POSTGRES_12 \
+--region=us-central1 --availability-type=regional \
+--no-assign-ip --network=projects/tb-ce-gke/global/networks/default \
+--cpu=2 --memory=7680MB \
 ```
 {: .copy-code}
 
-Where:
+where:
 
-- `--loadDemo` - optional argument. Whether to load additional demo data.
+* *thingsboard-db* is the name of your database server instance;
+* *us-central1* is one of the available compute [regions](https://cloud.google.com/compute/docs/regions-zones#available). Should contain the **COMPUTE_ZONE** you have previously specified during cluster creation;
 
-After this command finish you should see the next line in the console:
+Note your IP address (**YOUR_DB_IP_ADDRESS**) from command output. Successful command output should look similar to this:
 
+```text
+Created [https://sqladmin.googleapis.com/sql/v1beta4/projects/YOUR_PROJECT_ID/instances/thingsboard-db].
+NAME            DATABASE_VERSION  LOCATION       TIER              PRIMARY_ADDRESS  PRIVATE_ADDRESS  STATUS
+thingsboard-db  POSTGRES_12       us-central1-f  db-custom-2-7680  35.192.189.68    -                RUNNABLE
 ```
-Installation finished successfully!
+
+Set password for your new database server instance:
+
+```bash
+gcloud sql users set-password postgres \
+--instance=thingsboard-db4 \
+--password=secret
 ```
+
+where:
+* *thingsboard* is the name of your database. You may input a different name. We will refer to it later in this guide using **YOUR_DB_NAME**;
+* *secret* is the password. You **should** input a different password. We will refer to it later in this guide using **YOUR_DB_PASSWORD**;
+
+Create "thingsboard" database inside your postgres database server instance:
+
+```bash
+gcloud sql databases create thingsboard --instance=thingsboard-db4
+```
+
+## Step 4. Upload Docker credentials
+
+{% include templates/install/dockerhub/upload-docker-credentials.md %}
+
+## Step 5. Installation
+
+Edit "tb-node-db-configmap.yml" and replace **YOUR_DB_IP_ADDRESS**, **YOUR_DB_NAME** and **YOUR_DB_PASSWORD** with the values you have obtained during [step 3](#step-3-provision-google-cloud-sql-postgresql-instance).
+
+{% include templates/install/aws/eks-installation.md %}
 
 ## Step 5. Configure secure HTTP connection
 
