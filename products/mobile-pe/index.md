@@ -25,6 +25,8 @@ description:
                 </div>
                 <div class="preview">
                     <div class="mobile-frame ios">
+                        <img class="phone-bg" src="/images/mobile/pe/mobile-bg-pe.svg">
+                        <div class="phone-shadow pe"></div>
                         <div class="frame-image">
                             <img src="/images/mobile/pe/browse-dashboards-frame.png">
                         </div>
@@ -40,6 +42,8 @@ description:
             <div class="block vis">
                 <div class="preview">
                     <div class="mobile-frame ios">
+                        <img class="phone-bg" src="/images/mobile/pe/mobile-bg-pe.svg">
+                        <div class="phone-shadow pe"></div>
                         <div class="frame-image">
                             <img src="/images/mobile/pe/white-labeling-frame.png">
                         </div>
@@ -73,6 +77,8 @@ description:
                 </div>
                 <div class="preview">
                     <div class="mobile-frame ios">
+                        <img class="phone-bg" src="/images/mobile/pe/mobile-bg-pe.svg">
+                        <div class="phone-shadow pe"></div>
                         <div class="frame-image">
                             <img src="/images/mobile/pe/self-registration-frame.png">
                         </div>
@@ -88,6 +94,8 @@ description:
             <div class="block micro">
                 <div class="preview">
                     <div class="mobile-frame ios">
+                        <img class="phone-bg" src="/images/mobile/pe/mobile-bg-pe.svg">
+                        <div class="phone-shadow pe"></div>
                         <div class="frame-image">
                             <img src="/images/mobile/pe/manage-alarms-frame.png">
                         </div>
@@ -121,6 +129,8 @@ description:
                 </div>
                 <div class="preview">
                     <div class="mobile-frame ios">
+                        <img class="phone-bg" src="/images/mobile/pe/mobile-bg-pe.svg">
+                        <div class="phone-shadow pe"></div>
                         <div class="frame-image">
                             <img src="/images/mobile/pe/navigate-devices-frame.png">
                         </div>
@@ -136,6 +146,8 @@ description:
             <div class="block micro">
                 <div class="preview">
                     <div class="mobile-frame ios">
+                        <img class="phone-bg" src="/images/mobile/pe/mobile-bg-pe.svg">
+                        <div class="phone-shadow pe"></div>
                         <div class="frame-image">
                             <img src="/images/mobile/pe/mobile-actions-frame.png">
                         </div>
