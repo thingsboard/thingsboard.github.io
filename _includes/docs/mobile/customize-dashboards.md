@@ -17,15 +17,15 @@ All configuration options related to mobile app are available in dashboard detai
 You can configure dashboard image for mobile app in dashboard details form:
 
 {% if docsPrefix == 'pe/' %}
-1. Go to the *Dashboard groups* through the main menu on the left of the screen;
+1. Go to the **Dashboard groups** through the main menu on the left of the screen;
 2. Open target dashboard group;
 {% else %}
-1. Go to the *Dashboards* through the main menu on the left of the screen;
+1. Go to the **Dashboards** through the main menu on the left of the screen;
 {% endif %}
 2. Click on the dashboard you want to modify;
-3. In the opened dashboard details click *edit* button;
-4. Upload desired image to *Dashboard image* field;
-5. Click *Apply changes* button;
+3. In the opened dashboard details click **edit** button;
+4. Upload desired image to **Dashboard image** field;
+5. Click **Apply changes** button;
 
 {% include images-gallery.html imageCollection="dashboard-image" %}
 
@@ -34,15 +34,15 @@ You can configure dashboard image for mobile app in dashboard details form:
 You can configure dashboards order in mobile app home screen:
 
 {% if docsPrefix == 'pe/' %}
-1. Go to the *Dashboard groups* through the main menu on the left of the screen;
+1. Go to the **Dashboard groups** through the main menu on the left of the screen;
 2. Open target dashboard group;
 {% else %}
-1. Go to the *Dashboards* through the main menu on the left of the screen;
+1. Go to the **Dashboards** through the main menu on the left of the screen;
 {% endif %}
 2. Click on the dashboard you want to modify;
-3. In the opened dashboard details click *edit* button;
-4. Input desired order in the *Dashboard order in mobile application* field;
-5. Click *Apply changes* button;
+3. In the opened dashboard details click **edit** button;
+4. Input desired order in the **Dashboard order in mobile application** field;
+5. Click **Apply changes** button;
 
 {% include images-gallery.html imageCollection="dashboard-order" %}
 
@@ -51,14 +51,14 @@ You can configure dashboards order in mobile app home screen:
 You can hide particular dashboards from mobile app home screen:
 
 {% if docsPrefix == 'pe/' %}
-1. Go to the *Dashboard groups* through the main menu on the left of the screen;
+1. Go to the **Dashboard groups** through the main menu on the left of the screen;
 2. Open target dashboard group;
 {% else %}
-1. Go to the *Dashboards* through the main menu on the left of the screen;
+1. Go to the **Dashboards** through the main menu on the left of the screen;
 {% endif %}
 2. Click on the dashboard you want to modify;
-3. In the opened dashboard details click *edit* button;
-4. Check *Hide dashboard in mobile application* checkbox;
-5. Click *Apply changes* button;
+3. In the opened dashboard details click **edit** button;
+4. Check **Hide dashboard in mobile application** checkbox;
+5. Click **Apply changes** button;
 
 {% include images-gallery.html imageCollection="hide-dashboard" %}
