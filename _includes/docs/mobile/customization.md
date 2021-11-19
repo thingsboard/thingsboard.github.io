@@ -8,6 +8,6 @@
 
 - **[Customize home screen](/docs/{{docsPrefix}}mobile/customize-dashboards)**
 - **[Customize devices views](/docs/{{docsPrefix}}mobile/customize-devices)**
-- **[Setup default device dashboard](/docs/{{docsPrefix}}mobile/default-device-dashboard)**
-- **[Setup alarm specific dashboard](/docs/{{docsPrefix}}mobile/alarm-dashboard)**
+- **[Setup device details dashboard](/docs/{{docsPrefix}}mobile/device-dashboard)**
+- **[Setup alarm details dashboard](/docs/{{docsPrefix}}mobile/alarm-dashboard)**
 - **[Configure mobile actions](/docs/{{docsPrefix}}mobile/dashboard-mobile-actions)**

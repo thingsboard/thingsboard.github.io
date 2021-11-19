@@ -13,9 +13,9 @@ toc:
         path: /docs/mobile/customize-dashboards/
       - title: Devices views
         path: /docs/mobile/customize-devices/
-      - title: Default device dashboard
-        path: /docs/mobile/default-device-dashboard/
-      - title: Alarm specific dashboard
+      - title: Device details dashboard
+        path: /docs/mobile/device-dashboard/
+      - title: Alarm details dashboard
         path: /docs/mobile/alarm-dashboard/
       - title: Mobile actions
         path: /docs/mobile/dashboard-mobile-actions/

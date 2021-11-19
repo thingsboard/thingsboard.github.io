@@ -1,20 +1,31 @@
 .mobile-frame
   position: relative
-  .frame-image
+  width: 320px
+  &:before
+    content: ""
+    display: block
+  .frame-video, .frame-image
     position: absolute
+    top: 0
+    left: 0
+    bottom: 0
+    right: 0
+    img, video
+      width: 100%
+  .frame-image
     z-index: -1
     background-repeat: no-repeat
     background-size: contain
-  .frame-video, .frame-image
-    width: fit-content
-    img, video
-      width: 100%
   &.android
+    &:before
+      padding-top: 207.8%
     .frame-image
       background-image: url(/images/mobile/pixel2-frame620.png)
     .frame-image img, .frame-video video
       padding: 23.2% 5.2% 23.6% 4.3%
   &.ios
+    &:before
+      padding-top: 201.5%
     .frame-image
       background-image: url(/images/mobile/iphone12promax-frame620.png)
     .frame-image img, .frame-video video
@@ -87,8 +98,6 @@
             position: relative
             margin-top: 32px
             order: 2
-            .mobile-frame
-              width: 320px
           .feature-des, .preview
             width: 100%
           &.vis
@@ -200,16 +209,6 @@
           .block
             .feature-des, .preview
               width: 80%
-
-@media screen and (min-width: 376px)
-  #mobile-app
-    #overflow
-      .features
-        .features-top
-          .block
-            .preview
-              .mobile-frame
-                height: 645px
 
 @media screen and (min-width: 1025px)
   #mobile-app
