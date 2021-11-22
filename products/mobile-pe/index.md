@@ -149,7 +149,7 @@ description:
                 </div>
                 <div class="feature-des"><h2>Rich set of mobile actions</h2>
                     <p>Use mobile device to take photo, scan QR code, update location and more within dashboard. Extend the action with your own processing logic using ThingsBoard.</p>
-                    <a class="read-more-button" href="/docs/pe/mobile/dashboard-mobile-actions/">Read more<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
+                    <a class="read-more-button" href="/docs/pe/mobile/mobile-actions/">Read more<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
                 </div>
             </div>
             <div class="background bottom">

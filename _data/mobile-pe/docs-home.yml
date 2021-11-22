@@ -11,13 +11,13 @@ toc:
         path: /docs/pe/mobile/customization/
       - title: Home screen
         path: /docs/pe/mobile/customize-dashboards/
-      - title: Devices views
+      - title: Device icons
         path: /docs/pe/mobile/customize-devices/
       - title: Device details dashboard
         path: /docs/pe/mobile/device-dashboard/
       - title: Alarm details dashboard
         path: /docs/pe/mobile/alarm-dashboard/
       - title: Mobile actions
-        path: /docs/pe/mobile/dashboard-mobile-actions/
+        path: /docs/pe/mobile/mobile-actions/
   - title: Publish your app
     path: /docs/pe/mobile/release/

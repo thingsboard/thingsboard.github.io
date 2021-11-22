@@ -7,7 +7,7 @@
 {{appPrefix}} Mobile Application allows you to perform the following customizations **without code changes**:
 
 - **[Customize home screen](/docs/{{docsPrefix}}mobile/customize-dashboards)**
-- **[Customize devices views](/docs/{{docsPrefix}}mobile/customize-devices)**
+- **[Customize device icons](/docs/{{docsPrefix}}mobile/customize-devices)**
 - **[Setup device details dashboard](/docs/{{docsPrefix}}mobile/device-dashboard)**
 - **[Setup alarm details dashboard](/docs/{{docsPrefix}}mobile/alarm-dashboard)**
-- **[Configure mobile actions](/docs/{{docsPrefix}}mobile/dashboard-mobile-actions)**
+- **[Configure mobile actions](/docs/{{docsPrefix}}mobile/mobile-actions)**
