@@ -12,3 +12,7 @@
 - **[Setup alarm details dashboard](/docs/{{docsPrefix}}mobile/alarm-dashboard)**
 - **[Configure mobile actions](/docs/{{docsPrefix}}mobile/mobile-actions)**
 - **[Configure OAuth 2.0](/docs/{{docsPrefix}}mobile/oauth2)**
+{% if docsPrefix == 'pe/' %}
+- **[Configure white-labeling](/docs/pe/mobile/white-labeling)**
+- **[Configure self-registration](/docs/pe/mobile/self-registration)**
+{% endif %}
