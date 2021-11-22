@@ -25,7 +25,8 @@ description:
                 </div>
                 <div class="preview">
                     <div class="mobile-frame ios">
-                        <img class="phone-bg" src="/images/mobile/mobile-bg.svg">
+                        <img class="phone-bg points" src="/images/mobile/mobile-bg.svg">
+                        <img class="phone-bg web flexible" src="/images/mobile/flexible-nav.svg">
                         <div class="phone-shadow"></div>
                         <div class="frame-image">
                             <img src="/images/mobile/browse-dashboards-frame.png">
@@ -42,7 +43,8 @@ description:
             <div class="block vis">
                 <div class="preview">
                     <div class="mobile-frame ios">
-                        <img class="phone-bg" src="/images/mobile/mobile-bg.svg">
+                        <img class="phone-bg points" src="/images/mobile/mobile-bg.svg">
+                        <img class="phone-bg web alarms-m" src="/images/mobile/alarms-m.svg">
                         <div class="phone-shadow"></div>
                         <div class="frame-image">
                             <img src="/images/mobile/manage-alarms-frame.png">
@@ -77,7 +79,8 @@ description:
                 </div>
                 <div class="preview">
                     <div class="mobile-frame ios">
-                        <img class="phone-bg" src="/images/mobile/mobile-bg.svg">
+                        <img class="phone-bg points" src="/images/mobile/mobile-bg.svg">
+                        <img class="phone-bg web devices-nav" src="/images/mobile/devices-nav.svg">
                         <div class="phone-shadow"></div>
                         <div class="frame-image">
                             <img src="/images/mobile/navigate-devices-frame.png">
@@ -92,9 +95,10 @@ description:
                 </div>
             </div>
             <div class="block micro">
-                <div class="preview">
+                <div class="preview act">
                     <div class="mobile-frame ios">
-                        <img class="phone-bg" src="/images/mobile/mobile-bg.svg">
+                        <img class="phone-bg points" src="/images/mobile/mobile-bg.svg">
+                        <img class="phone-bg web mobile-act" src="/images/mobile/mobile-act.svg">
                         <div class="phone-shadow"></div>
                         <div class="frame-image">
                             <img src="/images/mobile/mobile-actions-frame.png">
