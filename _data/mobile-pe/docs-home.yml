@@ -19,5 +19,7 @@ toc:
         path: /docs/pe/mobile/alarm-dashboard/
       - title: Mobile actions
         path: /docs/pe/mobile/mobile-actions/
+      - title: OAuth 2 Support
+        path: /docs/pe/mobile/oauth2/
   - title: Publish your app
     path: /docs/pe/mobile/release/

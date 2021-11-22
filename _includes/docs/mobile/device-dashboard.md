@@ -20,7 +20,7 @@ Device details dashboard is configurable in the device profile form:
 {% endcapture %}
 {% include templates/info-banner.md content=dashboard_state_parameter %}
 
-To verify your configuration open the mobile app. Then navigate to the devices list. Tap on the device having type for which dashboard was configured.
+To verify your configuration run the mobile app. Then navigate to the devices list. Tap on the device having type for which dashboard was configured.
 
 <br>
 

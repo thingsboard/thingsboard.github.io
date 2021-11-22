@@ -21,7 +21,7 @@ Alarm details dashboard is configurable in the alarm rules of the device profile
 {% endcapture %}
 {% include templates/info-banner.md content=dashboard_state_parameter %}
 
-To verify your configuration open the mobile app. Then navigate to the alarms list. Tap on the alarm having type for which dashboard was configured.
+To verify your configuration run the mobile app. Then navigate to the alarms list. Tap on the alarm having type for which dashboard was configured.
 **Note** that alarm dashboard configuration only applied to alarms generated after applying configuration.
 
 <br>
