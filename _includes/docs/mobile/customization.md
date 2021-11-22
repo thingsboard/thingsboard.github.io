@@ -11,3 +11,4 @@
 - **[Setup device details dashboard](/docs/{{docsPrefix}}mobile/device-dashboard)**
 - **[Setup alarm details dashboard](/docs/{{docsPrefix}}mobile/alarm-dashboard)**
 - **[Configure mobile actions](/docs/{{docsPrefix}}mobile/mobile-actions)**
+- **[Configure OAuth 2.0](/docs/{{docsPrefix}}mobile/oauth2)**
