@@ -43,9 +43,9 @@ description:
             <div class="block vis">
                 <div class="preview">
                     <div class="mobile-frame ios">
-                        <img class="phone-bg points" src="/images/mobile/mobile-bg.svg">
-                        <img class="phone-bg web alarms-m" src="/images/mobile/alarms-m.svg">
-                        <div class="phone-shadow"></div>
+                        <img class="phone-bg points right" src="/images/mobile/mobile-bg.svg">
+                        <img class="phone-bg web right alarms-m" src="/images/mobile/alarms-m.svg">
+                        <div class="phone-shadow right"></div>
                         <div class="frame-image">
                             <img src="/images/mobile/manage-alarms-frame.png">
                         </div>

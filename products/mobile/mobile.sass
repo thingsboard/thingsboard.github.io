@@ -21,11 +21,15 @@
     left: -10%
     top: 11%
     &.points
-      left: -10%
+      left: -90%
       top: 11%
+      &.right
+        left: 53%
     &.web
       border-radius: 6px
-      box-shadow: 0 30px 30px -20px rgba(0,0,0,.15), 0 0 10px 0 rgba(0,0,0,.05) !important
+      box-shadow: -20px 20px 40px -20px rgba(0,0,0,.15), -30px 30px 60px rgba(0,0,0,.15)
+      &.right
+        box-shadow: 20px 20px 40px -20px rgba(0,0,0,.15), 30px 30px 60px rgba(0,0,0,.15)
     &.flexible
       top: 15%
       left: -70%
@@ -39,11 +43,11 @@
       left: -60%
       width: 140%
     &.mobile-act
-      top: 15%
+      top: 20%
       left: -70%
       width: 140%
     &.w-label
-      top: 27%
+      top: 11%
       left: 25%
       width: 140%
     &.self-reg
@@ -58,7 +62,9 @@
     top: 0.3%
     bottom: 0.9%
     border-radius: 50px
-    box-shadow: 0 20px 20px rgba(0,0,0,.15), 0 30px 40px rgba(0,0,0,.15)
+    box-shadow: -20px 20px 20px rgba(0,0,0,.15), -30px 30px 40px rgba(0,0,0,.15)
+    &.right
+      box-shadow: 20px 20px 20px rgba(0,0,0,.15), 30px 30px 40px rgba(0,0,0,.15)
   .frame-video, .frame-image
     position: absolute
     img, video
@@ -177,8 +183,6 @@
             position: relative
             margin-top: 32px
             order: 2
-            &.act
-              margin-left: 100px
           .feature-des, .preview
             width: 100%
           &.vis
@@ -196,7 +200,6 @@
           &.micro
             margin: 80px 0
             img
-              box-shadow: unset
               max-width: 569px
             .feature-des
               margin-bottom: 12px
@@ -290,6 +293,8 @@
           .block
             .feature-des, .preview
               width: 80%
+            .preview.act
+              margin-left: 100px
 
 @media screen and (min-width: 1025px)
   #mobile-app

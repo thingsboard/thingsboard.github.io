@@ -43,9 +43,9 @@ description:
             <div class="block vis">
                 <div class="preview">
                     <div class="mobile-frame ios">
-                        <img class="phone-bg points" src="/images/mobile/pe/mobile-bg-pe.svg">
-                        <img class="phone-bg web w-label" src="/images/mobile/pe/pe-white-labeling.svg">
-                        <div class="phone-shadow pe"></div>
+                        <img class="phone-bg points right" src="/images/mobile/pe/mobile-bg-pe.svg">
+                        <img class="phone-bg web right w-label" src="/images/mobile/pe/pe-white-labeling.svg">
+                        <div class="phone-shadow right pe"></div>
                         <div class="frame-image">
                             <img src="/images/mobile/pe/white-labeling-frame.png">
                         </div>
@@ -97,9 +97,9 @@ description:
             <div class="block micro">
                 <div class="preview">
                     <div class="mobile-frame ios">
-                        <img class="phone-bg points" src="/images/mobile/pe/mobile-bg-pe.svg">
-                        <img class="phone-bg web alarms-m" src="/images/mobile/pe/pe-alarms-m.svg">
-                        <div class="phone-shadow pe"></div>
+                        <img class="phone-bg points right" src="/images/mobile/pe/mobile-bg-pe.svg">
+                        <img class="phone-bg web right alarms-m" src="/images/mobile/pe/pe-alarms-m.svg">
+                        <div class="phone-shadow right pe"></div>
                         <div class="frame-image">
                             <img src="/images/mobile/pe/manage-alarms-frame.png">
                         </div>
