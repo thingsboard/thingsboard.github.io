@@ -49,6 +49,24 @@
       img, video
         border-radius: 4%
 
+.mobile-market-badges
+  display: flex
+  flex-direction: column
+  a
+    img
+      width: 200px
+      height: auto
+      margin: 16px
+
+@media screen and (min-width: 750px)
+  .mobile-market-badges
+    flex-direction: row
+    a
+      img
+        height: 70px
+        width: auto
+        margin: 24px
+
 #mobile-app
   section
     background: none

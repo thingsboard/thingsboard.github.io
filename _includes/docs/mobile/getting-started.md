@@ -101,6 +101,24 @@ When running an app directly from the console using `flutter run`, enter `r` to 
 {% endcapture %}
 {% include templates/info-banner.md content=run_tip %}
 
+{% if docsPrefix != 'pe/' %}
+## Live demo app
+
+To be familiar with common app features try out our ThingsBoard Live mobile application available on Google Play and App Store.
+
+<br>
+
+<div class="mobile-market-badges">
+    <a href="https://play.google.com/store/apps/details?id=org.thingsboard.demo.app&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1" target="_blank">
+        <img src="/images/mobile/get-it-on-google-play.png" alt="Get it on Google Play"/>
+    </a>
+    <a href="https://apps.apple.com/us/app/thingsboard-live/id1594355695?itsct=apps_box_badge&amp;itscg=30200" target="_blank">
+        <img src="/images/mobile/download-on-the-app-store.png" alt="Download on the App Store">
+    </a>
+</div>
+
+{% endif %}
+
 ## Next Steps
 
 - [Customize your app](/docs/{{docsPrefix}}mobile/customization) - Learn how to customize your {{appPrefix}} Mobile Application to meet your requirements.
