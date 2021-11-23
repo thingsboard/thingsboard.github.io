@@ -7,7 +7,7 @@ MQTT Integration allows to connect to external MQTT brokers, subscribe to data s
 
 Please review the integration diagram to learn more. 
 
- ![image](/images/user-guide/integrations/mqtt-integration.png)
+<object width="100%" style="max-width: max-content;" data="/images/user-guide/integrations/mqtt-integration.svg"></object>
 
 ThingsBoard MQTT Integration acts as an MQTT client. It subscribes to topics and converts the data into telemetry and attribute updates. In case of downlink message, MQTT integration converts it to the device-suitable format and pushes to external MQTT broker. 
 Pay attention: MQTT broker should be either co-located with ThingsBoard instance or deployed in the cloud and have a valid DNS name or static IP address. ThingsBoard instance that is running in the cloud can’t connect to the MQTT broker deployed in local area network.

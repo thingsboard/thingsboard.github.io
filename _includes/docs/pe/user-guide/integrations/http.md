@@ -11,7 +11,7 @@ HTTP Integration allows converting existing protocols and payload formats to Thi
  - stream device and/or asset data from your custom application running in the cloud.
  - connect the existing device with custom HTTP based protocol to ThingsBoard.
 
-![image](/images/user-guide/integrations/http-integration.svg)
+<object width="100%" style="max-width: max-content;" data="/images/user-guide/integrations/http-integration.svg"></object>
 
 ## Create Uplink Converter
 

@@ -2,7 +2,7 @@
 position: Application Support engineer
 tag: 
 location: Kyiv, Ukraine
-dateString: 30 March, 2021
+dateString: 
 layout: career
 ---
 ##### We're looking for an Application Support Engineer to join our team on the full-time basis in the Kyiv office.  
@@ -29,7 +29,7 @@ Readiness to work night shifts (in future);
 Any experience with logical chain creation.
 
 ### We offer:
-Working on an open-source IoT platform that has thousands of installations all over the world and 7000+ stars on GitHub;
+Working on an open-source IoT platform that has thousands of installations all over the world and 10,000+ stars on GitHub;
 
 Modern cutting-edge development stack;
 

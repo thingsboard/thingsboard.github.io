@@ -1,1 +1,1 @@
-curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{"username":"tenant@thingsboard.org", "password":"tenant"}' 'http://THINGSBOARD_URL/api/auth/login'
+curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{"username":"your_user@company.com", "password":"secret"}' 'https://thingsboard.cloud/api/auth/login'

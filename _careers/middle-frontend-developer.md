@@ -2,7 +2,7 @@
 position: Middle Frontend developer
 tag: Angular 2+
 location: Kyiv, Ukraine
-dateString: 30 March, 2021
+dateString: 
 layout: career
 ---
 ##### ThingsBoard Inc. is looking for a Front-end Developer (Angular 2+) to join our team on a full-time basis in the Kyiv office! We would like you to help us to improve our Open-Source IoT platform. UI is based on Angular 10 and uses Angular Material.
@@ -39,7 +39,7 @@ Integration with Java back-end via RESTful and WebSocket APIs;
 Review and acceptance of Pull Requests on GitHub from community members.
 
 ### We offer:
-Working on an open-source IoT platform that has thousands of installations all over the world and 7000+ stars on GitHub;
+Working on an open-source IoT platform that has thousands of installations all over the world and 10,000+ stars on GitHub;
 
 Full-time office work with flexible work hours;
 
