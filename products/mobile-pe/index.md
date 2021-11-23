@@ -25,6 +25,9 @@ description:
                 </div>
                 <div class="preview">
                     <div class="mobile-frame ios">
+                        <img class="phone-bg points" src="/images/mobile/pe/mobile-bg-pe.svg">
+                        <img class="phone-bg web flexible" src="/images/mobile/pe/pe-flexible-nav.svg">
+                        <div class="phone-shadow pe"></div>
                         <div class="frame-image">
                             <img src="/images/mobile/pe/browse-dashboards-frame.png">
                         </div>
@@ -40,6 +43,9 @@ description:
             <div class="block vis">
                 <div class="preview">
                     <div class="mobile-frame ios">
+                        <img class="phone-bg points" src="/images/mobile/pe/mobile-bg-pe.svg">
+                        <img class="phone-bg web w-label" src="/images/mobile/pe/pe-white-labeling.svg">
+                        <div class="phone-shadow pe"></div>
                         <div class="frame-image">
                             <img src="/images/mobile/pe/white-labeling-frame.png">
                         </div>
@@ -73,6 +79,9 @@ description:
                 </div>
                 <div class="preview">
                     <div class="mobile-frame ios">
+                        <img class="phone-bg points" src="/images/mobile/pe/mobile-bg-pe.svg">
+                        <img class="phone-bg web self-reg" src="/images/mobile/pe/pe-self-registration.svg">
+                        <div class="phone-shadow pe"></div>
                         <div class="frame-image">
                             <img src="/images/mobile/pe/self-registration-frame.png">
                         </div>
@@ -88,6 +97,9 @@ description:
             <div class="block micro">
                 <div class="preview">
                     <div class="mobile-frame ios">
+                        <img class="phone-bg points" src="/images/mobile/pe/mobile-bg-pe.svg">
+                        <img class="phone-bg web alarms-m" src="/images/mobile/pe/pe-alarms-m.svg">
+                        <div class="phone-shadow pe"></div>
                         <div class="frame-image">
                             <img src="/images/mobile/pe/manage-alarms-frame.png">
                         </div>
@@ -121,6 +133,9 @@ description:
                 </div>
                 <div class="preview">
                     <div class="mobile-frame ios">
+                        <img class="phone-bg points" src="/images/mobile/pe/mobile-bg-pe.svg">
+                        <img class="phone-bg web devices-nav" src="/images/mobile/pe/pe-devices-nav.svg">
+                        <div class="phone-shadow pe"></div>
                         <div class="frame-image">
                             <img src="/images/mobile/pe/navigate-devices-frame.png">
                         </div>
@@ -134,8 +149,11 @@ description:
                 </div>
             </div>
             <div class="block micro">
-                <div class="preview">
+                <div class="preview act">
                     <div class="mobile-frame ios">
+                        <img class="phone-bg points" src="/images/mobile/pe/mobile-bg-pe.svg">
+                        <img class="phone-bg web mobile-act" src="/images/mobile/pe/pe-mobile-act.svg">
+                        <div class="phone-shadow pe"></div>
                         <div class="frame-image">
                             <img src="/images/mobile/pe/mobile-actions-frame.png">
                         </div>
