@@ -1,4 +1,3 @@
-### 8.1 Configure HTTP(S) Load Balancer
 
 Configure HTTP(S) Load Balancer to access web interface of your ThingsBoard instance. Basically you have 3 possible options of configuration:
 

@@ -85,6 +85,8 @@ Alternatively, you may use [this](https://cloud.google.com/kubernetes-engine/doc
 
 ## Step 8. Configure Load Balancers
 
+### 8.1 Configure HTTP(S) Load Balancer
+
 {% include templates/install/gcp/http-lb.md %}
 
 ### 8.2. Configure MQTT Load Balancer (Optional)
