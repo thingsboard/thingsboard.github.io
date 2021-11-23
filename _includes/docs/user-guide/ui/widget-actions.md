@@ -1,3 +1,9 @@
+{% if docsPrefix == 'pe/' or docsPrefix == 'paas/' %}
+{% assign mobileDocsPrefix = "pe/" %}
+{% else %}
+{% assign mobileDocsPrefix = "" %}
+{% endif %}
+
 * TOC
 {:toc}
 
@@ -14,7 +20,7 @@ To fully understand how to use Actions, you have to add a State to your widget. 
 ## Action types
 
 _Types of action_ define which exactly action will be taken.
-There are five action types that are the same for all widgets.
+There are six action types that are the same for all widgets.
 Learn how to configure action types with the example on [Entity Cards widget](/docs/{{docsPrefix}}user-guide/ui/widget-actions/#action-types-configuration) examples.
 
 ## Action types configuration
@@ -910,6 +916,10 @@ HTML code.
 {% endhighlight %}
 
 </details>
+
+##### Mobile action
+
+Mobile action is explained in mobile application configuration. See [Mobile actions](/docs/{{mobileDocsPrefix}}mobile/mobile-actions/) for details.
 
 ## Action sources 
 

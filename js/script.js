@@ -109,6 +109,7 @@ var tb = (function () {
             }
 			case 'home':
 			case 'thingsboard-pe':
+            case 'mobile-app':
 			case 'edge':
             case 'pe-aws':
             case 'pricing':

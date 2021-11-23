@@ -16,10 +16,14 @@ This guide covers main concepts and various configuration settings.
 ## Adding a dashboard
 
 To add a new dashboard, you should:
-
+{% if docsPrefix == null %}
+1. Go to _Dashboards_ through the main menu on the left of the screen;
+2. Click the  "+" sign in the upper right corner there;
+{% else %}
 1. Go to _Dashboard groups_ through the main menu on the left of the screen;
 2. To add a new dashboard group, click the "+" sign in the upper right corner of the screen, or open the "All" dashboard group and click the  "+" sign in the upper right corner there;
-3. In the opened dialog, necessary to enter a dashboard title, description is optional. Click "Add".
+{% endif %} 
+4. In the opened dialog, necessary to enter a dashboard title, description is optional. Click "Add".
 
 {% include images-gallery.html imageCollection="creating-dash" %}
 
@@ -27,11 +31,21 @@ To add a new dashboard, you should:
 
 If you want to make your dashboard public and share a link to it, you should:
 
-1. Go to the _Dashboard groups_;
-2. Click the "Share" icon next to the dashboard group that you want to make public;
-3. In the confirmation dialog box, click "Yes";
-4. Open the dashboard group and click the link icon opposite the needed dashboard;
-5. In the "Public dashboard link" dialog, click a copy button next to the link.
+{% if docsPrefix == null %}
+1. Go to the _Dashboards_;
+2. Click the "Share" icon next to the dashboard that you want to make public;
+{% else %}
+3. Go to the _Dashboard groups_;
+4. Click the "Share" icon next to the dashboard group that you want to make public;
+{% endif %} 
+5. In the confirmation dialog box, click "Yes";
+{% if docsPrefix == null %}
+6. Click the dashboard to open details;
+7. In the dashboard details, click a copy button next to the public link; 
+{% else %}
+6. Open the dashboard group and click the link icon opposite the needed dashboard;
+7. In the "Public dashboard link" dialog, click a copy button next to the link.
+{% endif %}
 
 Now you can share a dashboard with this link. Note that you shouldn't forget to make related devices, assets and entity views public in order to access their data.
 

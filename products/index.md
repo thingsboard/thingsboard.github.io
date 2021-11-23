@@ -43,4 +43,14 @@ notitle: "true"
         <h5 class="title">Trendz Analytics Platform</h5>
         <p>Data analytics and Prediction</p>
     </a>
+    <a href="/products/mobile/" class="card mobile">
+        <img src="/images/tb-mobile-icon.svg">
+        <h5 class="title">ThingsBoard Mobile Application</h5>
+        <p>IoT mobile product</p>
+    </a>
+    <a href="/products/mobile-pe/" class="card pe-mobile">
+        <img src="/images/tb-pe-mobile-icon.svg">
+        <h5 class="title">ThingsBoard PE Mobile Application</h5>
+        <p>Advanced IoT mobile product</p>
+    </a>
 </div>
