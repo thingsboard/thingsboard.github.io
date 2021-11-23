@@ -28,6 +28,7 @@ To verify your configuration run the mobile app. Then navigate to the alarms lis
 
 <div style="display: flex;">
     <div class="mobile-frame ios">
+        <div class="phone-shadow"></div>
         <div class="frame-image">
             <img src="/images/mobile/{{docsPrefix}}alarm-dashboard-frame.png">
         </div>
