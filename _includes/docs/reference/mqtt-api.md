@@ -19,14 +19,15 @@ In order to setup one of those tools, you can use instructions in our [Hello Wor
 ##### MQTT Connect
 
 We will use *access token* device credentials in this article and they will be referred to later as **$ACCESS_TOKEN**.
-The application needs to send MQTT CONNECT message with username that contains **$ACCESS_TOKEN**.
-The alternative option is to use [Basic MQTT Credentials](/docs/{{docsPrefix}}user-guide/basic-mqtt/) - combination of client id, username and password; 
+The application needs to send MQTT CONNECT message with username that contains **$ACCESS_TOKEN**. 
 
-Possible return codes and their reasons during connect sequence:
+Possible return codes, and their reasons during connect sequence:
 
 * **0x00 Connected** - Successfully connected to ThingsBoard MQTT server.
-* **0x04 Connection Refused, bad user name or password** - Username is empty.
-* **0x05 Connection Refused, not authorized** - Username contains invalid **$ACCESS_TOKEN**. 
+* **0x04 Connection Refused, bad username or password** - Username is empty.
+* **0x05 Connection Refused, not authorized** - Username contains invalid **$ACCESS_TOKEN**.
+
+The alternative authentication option is to use [X.509 Certificates](/docs/{{docsPrefix}}user-guide/certificates/) or [Basic MQTT Credentials](/docs/{{docsPrefix}}user-guide/basic-mqtt/) - combination of client id, username and password.
 
 {% include templates/api/key-value-format.md %}
 

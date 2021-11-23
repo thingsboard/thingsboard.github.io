@@ -4,7 +4,7 @@ title: Edge Management Overview
 description: Edge Management Overview
 ---
 
-Coming soon…
+![image](/images/coming-soon.jpg)
 
 ### Synchronization architecture
 

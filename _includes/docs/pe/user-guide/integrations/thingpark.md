@@ -3,7 +3,7 @@
 
 ThingPark Integration allows to stream data from Actility ThingPark servers to ThingsBoard and converts binary device payloads to the ThingsBoard format.
 
- ![image](/images/user-guide/integrations/thingpark-integration.svg)
+<object width="100%" style="max-width: max-content;" data="/images/user-guide/integrations/thingpark-integration.svg"></object>
 
 Configuration steps:
 - Review official  ThingPark DX Dataflow API reference documentation:

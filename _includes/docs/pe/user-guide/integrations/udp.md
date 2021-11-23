@@ -47,11 +47,12 @@ For demo purposes we assume that our device is smart enough to send data in 3 di
   }
 ]
 ```
-- **Binary** - in this case binary payload is **\x53\x4e\x2d\x30\x30\x31\x64\x65\x66\x61\x75\x6c\x74\x32\x35\x2e\x37** (in HEX string).
+- **Binary** - in this case payload is: **\x53\x4e\x2d\x30\x30\x31\x64\x65\x66\x61\x75\x6c\x74\x32\x35\x2e\x37\x36\x39** (in HEX string).
   Here is the description of the bytes in this payload:
     - **0-5** bytes - **\x53\x4e\x2d\x30\x30\x31** - device name. If we convert it to text - **SN-001**;
     - **6-12** bytes - **\x64\x65\x66\x61\x75\x6c\x74** - device type. If we convert it to text - **default**;
     - **13-16** bytes - **\x32\x35\x2e\x37** - temperature telemetry. If we convert it to text - **25.7**;
+    - **17-18** bytes - **\x36\x39** - humidity telemetry. If we convert it to text - **69**;
 
 - **Hex** - in this case payload is hexadecimal string **534e2d30303164656661756c7432352e373639**.
   Here is the description of the bytes in this payload:
@@ -133,9 +134,9 @@ Hex payload<br/>%,%hex%,%templates/integration/udp/udp-send-uplink-hex.md{% endc
 {% include content-toggle.html content-toggle-id="udpintegrationsenduplink" toggle-spec=senduplink %}
 
 Once you go to **Device Groups -> All** you should find a **SN-001** device provisioned by the Integration.
-Click on the device, go to **Latest Telemetry** tab to see "temperature" key and its value (25.7) there.
+Click on the device, go to the **Latest Telemetry** tab to see the “temperature” key and its value (25.7) there and also the “humidity” key and its value (69) there as well.
 
-If your payload contains **humidity** telemetry, you should see "humidity" key and its value (69) there as well.
+![image](/images/user-guide/integrations/udp/udp-integration-test-uplink.png)
 
 ## Advanced usage: Downlink
 

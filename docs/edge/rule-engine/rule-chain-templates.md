@@ -4,7 +4,7 @@ title: Rule Chain templates
 description: Rule Chain templates
 ---
 
-Coming soon…
+![image](/images/coming-soon.jpg)
 
 #### Next Steps
 

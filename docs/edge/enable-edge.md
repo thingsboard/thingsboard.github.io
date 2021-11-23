@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-edge
-title: Activate edge functionality on ThingsBoard PE/CE server
-description: Activate edge functionality on ThingsBoard PE/CE server
+title: Activate edge functionality on ThingsBoard PE/CE server (3.3.0 only)
+description: Activate edge functionality on ThingsBoard PE/CE server (3.3.0 only)
 ---
 
 * TOC
@@ -10,7 +10,8 @@ description: Activate edge functionality on ThingsBoard PE/CE server
 ### Ubuntu/CentOS
 #### Enable edges support 
 
-Edges functionality disabled on ThingsBoard Professional/Community Edition server by default. 
+Edges functionality **enabled** on ThingsBoard Professional/Community Edition server **by default** starting from **3.3.1** version.
+If you are using **3.3.0** please do next steps to enable edge functionality. 
 To enable it please edit ThingsBoard configuration file:
 
 ```text
