@@ -24,3 +24,5 @@ Populate basic information about yourself and click "Get Content"
 
 
 ![image](/images/user-guide/install/docker-pe/details.png)
+
+{% include templates/install/dockerhub/pull.md %}
