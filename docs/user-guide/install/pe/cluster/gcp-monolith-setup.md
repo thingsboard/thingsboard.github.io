@@ -7,6 +7,8 @@ description: ThingsBoard IoT platform monolith setup with Kubernetes in GKE
 
 ---
 
+{% assign docsPrefix = "pe/" %}
+
 * TOC
 {:toc}
 
@@ -52,32 +54,21 @@ cd thingsboard-pe-k8s/gcp/monolith
 
 {% include templates/install/dockerhub/upload-docker-credentials.md %}
 
-## Step 7. Installation
+## Step 7. Configure license key
+
+{% include templates/install/k8s-license-secret.md %}
+
+## Step 8. Installation
 
 {% include templates/install/gcp/install.md %}
 
-## Step 8. Starting
-
-Configure your license key:
-
-```
-nano tb-node.yml
-```
-
-and put the license secret parameter
-
-```
-# tb-node StatefulSet configuration
-
-- name: TB_LICENSE_SECRET
-  value: "PUT_YOUR_LICENSE_SECRET_HERE"
-```
+## Step 9. Starting
 
 {% include templates/install/gcp/start-monolith.md %}
 
-## Step 9. Configure Load Balancers
+## Step 10. Configure Load Balancers
 
-### 9.1 Configure HTTP(S) Load Balancer
+### 10.1 Configure HTTP(S) Load Balancer
 
 {% include templates/install/gcp/http-lb.md %}
 
@@ -96,16 +87,16 @@ This version of setup does not support an automatic redirect of http port 80 to 
 {: .copy-code}
 
 
-### 9.2. Configure MQTT Load Balancer (Optional)
+### 10.2. Configure MQTT Load Balancer (Optional)
 
 {% assign tbServicesFile = "tb-node.yml" %}
 {% include templates/install/gcp/configure-mqtt.md %}
 
-### 9.3. Configure UDP Load Balancer (Optional)
+### 10.3. Configure UDP Load Balancer (Optional)
 
 {% include templates/install/gcp/configure-udp.md %}
 
-## Step 10. Using
+## Step 11. Using
 
 {% include templates/install/gcp/using.md %}
 

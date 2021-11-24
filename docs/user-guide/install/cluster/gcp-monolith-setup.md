@@ -45,6 +45,7 @@ cd thingsboard-сe-k8s/gcp/monolith
 
 ## Step 6. Installation
 
+
 {% include templates/install/gcp/install.md %}
 
 ## Step 7. Starting

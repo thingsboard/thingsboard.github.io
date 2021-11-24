@@ -1,4 +1,4 @@
-Edit "tb-node-db-configmap.yml" and replace **YOUR_DB_IP_ADDRESS** and **** with the values you have obtained during [step 3](#step-3-provision-google-cloud-sql-postgresql-instance).
+Edit "tb-node-db-configmap.yml" and replace **YOUR_DB_IP_ADDRESS** and **YOUR_DB_PASSWORD** with the values you have obtained during [step 5](#step-5-provision-google-cloud-sql-postgresql-instance).
 
 ```bash
 nano tb-node-db-configmap.yml
