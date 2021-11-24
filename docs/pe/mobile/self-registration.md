@@ -112,7 +112,7 @@ If your setup is correct you should be able to perform sign up and activate acco
 
 <div style="display: flex;">
     <div class="mobile-frame ios">
-        <div class="phone-shadow"></div>
+        <div class="phone-shadow right"></div>
         <div class="frame-image">
             <img src="/images/mobile/pe/self-registration-frame.png">
         </div>
