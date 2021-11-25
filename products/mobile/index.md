@@ -6,7 +6,7 @@ description:
 
 <section id="intro">
     <main>
-        <h1><a href="https://github.com/thingsboard/flutter_thingsboard_app">ThingsBoard Mobile Application</a> is an open-source project based on <a href="https://flutter.dev/">Flutter</a></h1>
+        <h1><a href="/docs/mobile/">ThingsBoard Mobile Application</a> is an open-source <a href="https://github.com/thingsboard/flutter_thingsboard_app">project</a> based on Flutter</h1>
         <h1 class="second">Build your own IoT mobile application with minimum coding efforts</h1>
         <h1 class="second">Powered by ThingsBoard IoT Platform</h1>
     </main>
