@@ -117,16 +117,7 @@ cd thingsboard-ce-k8s/aws/microservices
 
 {% include templates/install/aws/links.md %}
 
-## Step 8. Configure HTTPS (Optional)
-
-{% include templates/install/aws/configure-https.md %}
-
-## Step 9. Configure MQTTS (Optional)
-
-{% assign eksTbServicesFile = "tb-services.yml" %}
-{% include templates/install/aws/configure-mqtts.md %}
-
-## Step 10. CPU and Memory resources allocation
+## Step 8. CPU and Memory resources allocation
 
 The scripts have preconfigured values of resources for each service. You can change them in `.yml` files under `resources` submenu.
 
@@ -141,11 +132,11 @@ Recommended CPU/memory resources allocation:
 - JS Executor: 0.1 CPU / 100Mi memory
 - Zookeeper: 0.1 CPU / 0.5Gi memory
 
-## Step 11. Installation
+## Step 9. Installation
 
 {% include templates/install/aws/eks-installation.md %}
 
-## Step 12. Starting
+## Step 10. Starting
 
 Execute the following command to deploy ThingsBoard services:
 
@@ -167,7 +158,22 @@ After few minutes you may call `kubectl get pods`. If everything went fine, you 
   
 Every pod should be in the `READY` state. 
 
-## Step 13. Validate the setup
+## Step 11. Configure Load Balancers
+
+### 11.1 Configure HTTP(S) Load Balancer
+
+{% include templates/install/aws/http-lb.md %}
+
+### 11.2. Configure MQTT Load Balancer (Optional)
+
+{% assign tbServicesFile = "tb-services.yml" %}
+{% include templates/install/aws/configure-mqtt.md %}
+
+### 11.3. Configure UDP Load Balancer (Optional)
+
+{% include templates/install/aws/configure-udp.md %}
+
+## Step 12. Validate the setup
 
 {% include templates/install/aws/eks-validate.md %}
 

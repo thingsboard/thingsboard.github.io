@@ -34,6 +34,8 @@ rdsEndpointUrl:
 * TOC
 {:toc}
 
+{% assign tbServicesFile = "tb-node.yml" %}
+
 This guide will help you to set up ThingsBoard in monolith mode in AWS EKS. 
 
 ## Prerequisites
@@ -68,11 +70,7 @@ cd thingsboard-pe-k8s/aws/monolith
 
 ## Step 5. Obtain and configure license key
 
-We assume you have already chosen your subscription plan or decided to purchase a perpetual license.
-If not, please navigate to [pricing](/pricing/) page to select the best license option for your case and get your license.
-See [How-to get pay-as-you-go subscription](https://www.youtube.com/watch?v=dK-QDFGxWek){:target="_blank"} or [How-to get perpetual license](https://www.youtube.com/watch?v=GPe0lHolWek){:target="_blank"} for more details.
-
-Edit “tb-node.yml” and replace **PUT_YOUR_LICENSE_SECRET_HERE** with your license key.
+{% include templates/install/k8s-license-secret.md %}
 
 ## Step 6. Upload Docker credentials
 
@@ -83,22 +81,13 @@ If the above command fails, repeat the [prerequisites](#checkout-thingsboard-pe-
 
 {% include templates/install/dockerhub/upload-docker-credentials.md %}
 
-## Step 7. Configure HTTPS (Optional)
-
-{% include templates/install/aws/configure-https.md %}
-
-## Step 8. Configure MQTTS (Optional)
-
-{% assign eksTbServicesFile = "tb-node.yml" %}
-{% include templates/install/aws/configure-mqtts.md %}
-
-## Step 9. Installation
+## Step 7. Installation
 
 Edit "tb-node-db-configmap.yml" and replace **YOUR_RDS_ENDPOINT_URL** and **YOUR_RDS_PASSWORD** with the values you have obtained during [step 4](#step-4-amazon-postgresql-db-configuration).
 
 {% include templates/install/aws/eks-installation.md %}
 
-## Step 10. Starting
+## Step 8. Starting
 
 Execute the following command to deploy resources:
 
@@ -109,6 +98,20 @@ Execute the following command to deploy resources:
 
 After few minutes you may call `kubectl get pods`. If everything went fine, you should be able to
 see `tb-node-0` pod in the `READY` state.
+
+## Step 9. Configure Load Balancers
+
+### 10.1 Configure HTTP(S) Load Balancer
+
+{% include templates/install/aws/http-lb.md %}
+
+### 10.2. Configure MQTT Load Balancer (Optional)
+
+{% include templates/install/aws/configure-mqtt.md %}
+
+### 10.3. Configure UDP Load Balancer (Optional)
+
+{% include templates/install/aws/configure-udp.md %}
 
 ## Step 11. Validate the setup
 

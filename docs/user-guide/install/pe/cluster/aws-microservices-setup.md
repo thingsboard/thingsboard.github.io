@@ -77,6 +77,8 @@ redisEndpointUrl:
 * TOC
 {:toc}
 
+{% assign tbServicesFile = "tb-services.yml" %}
+
 This guide will help you to setup ThingsBoard in microservices mode in AWS EKS. 
 
 ## Prerequisites
@@ -122,11 +124,7 @@ cd thingsboard-pe-k8s/aws/microservices
 
 ## Step 8. Obtain and configure license key
 
-We assume you have already chosen your subscription plan or decided to purchase a perpetual license.
-If not, please navigate to [pricing](/pricing/) page to select the best license option for your case and get your license.
-See [How-to get pay-as-you-go subscription](https://www.youtube.com/watch?v=dK-QDFGxWek){:target="_blank"} or [How-to get perpetual license](https://www.youtube.com/watch?v=GPe0lHolWek){:target="_blank"} for more details.
-
-Edit “tb-services.yml” and replace **PUT_YOUR_LICENSE_SECRET_HERE** with your license key.
+{% include templates/install/k8s-license-secret.md %}
 
 ## Step 9. Upload Docker credentials
 
@@ -136,16 +134,7 @@ If the above command fails, repeat the [prerequisites](#checkout-thingsboard-pe-
 
 {% include templates/install/dockerhub/upload-docker-credentials.md %}
 
-## Step 10. Configure HTTPS (Optional)
-
-{% include templates/install/aws/configure-https.md %}
-
-## Step 11. Configure MQTTS (Optional)
-
-{% assign eksTbServicesFile = "tb-services.yml" %}
-{% include templates/install/aws/configure-mqtts.md %}
-
-## Step 12. CPU and Memory resources allocation
+## Step 10. CPU and Memory resources allocation
 
 The scripts have preconfigured values of resources for each service. You can change them in `.yml` files under `resources` submenu.
 
@@ -160,11 +149,11 @@ Recommended CPU/memory resources allocation:
 - JS Executor: 0.1 CPU / 0.3Gi memory
 - Zookeeper: 0.3 CPU / 1Gi memory
 
-## Step 13. Installation
+## Step 11. Installation
 
 {% include templates/install/aws/eks-installation.md %}
 
-## Step 14. Starting
+## Step 12. Starting
 
 Execute the following command to deploy ThingsBoard services:
 
@@ -185,7 +174,22 @@ After few minutes you may call `kubectl get pods`. If everything went fine, you 
 
 Every pod should be in the `READY` state.
 
-## Step 15. Validate the setup
+## Step 13. Configure Load Balancers
+
+### 13.1 Configure HTTP(S) Load Balancer
+
+{% include templates/install/aws/http-lb.md %}
+
+### 13.2. Configure MQTT Load Balancer (Optional)
+
+{% assign tbServicesFile = "tb-services.yml" %}
+{% include templates/install/aws/configure-mqtt.md %}
+
+### 13.3. Configure UDP Load Balancer (Optional)
+
+{% include templates/install/aws/configure-udp.md %}
+
+## Step 14. Validate the setup
 
 {% include templates/install/aws/eks-validate.md %}
 
