@@ -33,6 +33,8 @@ rdsEndpointUrl:
 * TOC
 {:toc}
 
+{% assign tbServicesFile = "tb-node.yml" %}
+
 This guide will help you to setup ThingsBoard in monolith mode using AWS EKS. 
 See [monolithic](/docs/reference/monolithic/) architecture page for more details about how it works. 
 The advantage of monolithic deployment via K8S comparing to Docker Compose is that in case of AWS instance outage, 
@@ -88,23 +90,13 @@ On AWS Console get the `Endpoint` of the RDS PostgreSQL and paste it to `SPRING_
 
 Also, you'll need to set `SPRING_DATASOURCE_USERNAME` and `SPRING_DATASOURCE_PASSWORD` with PostgreSQL `username` and `password` corresponding.
 
-## Step 5. Configure HTTPS (Optional)
-
-{% include templates/install/aws/configure-https.md %}
-
-## Step 6. Configure MQTTS (Optional)
-
-{% assign eksTbServicesFile = "tb-node.yml" %}
-{% include templates/install/aws/configure-mqtts.md %}
-
-## Step 7. Installation
+## Step 5. Installation
 
 Edit "tb-node-db-configmap.yml" and replace **YOUR_RDS_ENDPOINT_URL** and **YOUR_RDS_PASSWORD** with the values you have obtained during [step 4](#step-4-amazon-postgresql-db-configuration).
 
 {% include templates/install/aws/eks-installation.md %}
 
-
-## Step 8. Starting
+## Step 6. Starting
 
 Execute the following command to deploy resources:
 
@@ -114,9 +106,23 @@ Execute the following command to deploy resources:
 {: .copy-code}
 
 After few minutes you may call `kubectl get pods`. If everything went fine, you should be able to 
-see `tb-node-0` pod in the `READY` state. 
+see `tb-node-0` pod in the `READY` state.
 
-## Step 9. Validate the setup
+## Step 7. Configure Load Balancers
+
+### 7.1 Configure HTTP(S) Load Balancer
+
+{% include templates/install/aws/http-lb.md %}
+
+### 7.2. Configure MQTT Load Balancer (Optional)
+
+{% include templates/install/aws/configure-mqtt.md %}
+
+### 7.3. Configure UDP Load Balancer (Optional)
+
+{% include templates/install/aws/configure-udp.md %}
+
+## Step 8. Validate the setup
 
 {% include templates/install/aws/eks-validate.md %}
 
