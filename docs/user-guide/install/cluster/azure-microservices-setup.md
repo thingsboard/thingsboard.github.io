@@ -1,5 +1,5 @@
 ---
-layout: docwithnav-pe
+layout: docwithnav
 assignees:
 - amykolaichuk
 title: Microservices setup using AKS infrastructure
@@ -16,16 +16,11 @@ This guide will help you to setup ThingsBoard in microservices mode in Azure AKS
 
 {% include templates/install/azure/aks-prerequisites.md %}
 
-### Checkout ThingsBoard PE images from docker store
-
-{% assign checkoutMode = "monolith" %}
-{% include templates/install/dockerhub/checkout.md %}
-
-## Step 1. Clone ThingsBoard PE K8S scripts repository
+## Step 1. Clone ThingsBoard CE K8S scripts repository
 
 ```bash
-git clone -b release-{{ site.release.ver }} https://github.com/thingsboard/thingsboard-pe-k8s.git
-cd thingsboard-pe-k8s/azure/monolith
+git clone -b release-{{ site.release.ver }} https://github.com/thingsboard/thingsboard-ce-k8s.git
+cd thingsboard-ce-k8s/azure/microservices
 ```
 {: .copy-code}
 
@@ -45,23 +40,15 @@ cd thingsboard-pe-k8s/azure/monolith
 
 {% include templates/install/azure/aks-create-db.md %}
 
-## Step 6. Upload Docker credentials
+## Step 6. Azure Cache for Redis
 
-{% include templates/install/dockerhub/pull.md %}
+{% include templates/install/azure/aks-create-redis.md %}
 
-If the above command fails, repeat the [prerequisites](#checkout-thingsboard-pe-images-from-docker-store) step.
-
-{% include templates/install/dockerhub/upload-docker-credentials.md %}
-
-## Step 7. Configure license key
-
-{% include templates/install/k8s-license-secret.md %}
-
-## Step 8. Installation
+## Step 7. Installation
 
 {% include templates/install/azure/aks-installation.md %}
 
-## Step 9. Starting
+## Step 8. Starting
 
 Execute the following command to deploy ThingsBoard services:
 
@@ -72,22 +59,29 @@ Execute the following command to deploy ThingsBoard services:
 
 After few minutes you may call `kubectl get pods`. If everything went fine, you should be able to see `tb-node-0` pod in the `READY` state.
 
-## Step 10 Configure Load Balancers
+{% include templates/install/azure/aks-starting-transports.md %}
 
-### 10.1 Configure HTTP(S) Load Balancer
+## Step 9 Configure Load Balancers
+
+### 9.1 Configure HTTP(S) Load Balancer
 {% include templates/install/azure/aks-http-lb.md %}
 
-### 10.2. Configure MQTT Load Balancer (Optional)
+### 9.2. Configure MQTT Load Balancer (Optional)
 
-{% assign tbServicesFile = "tb-node.yml" %}
+{% assign tbServicesFile = "transport/tb-mqtt-transport.yml" %}
 {% include templates/install/azure/configure-mqtt.md %}
 
-### 10.3. Configure UDP Load Balancer (Optional)
+### 9.3. Configure CoAP Load Balancer (Optional)
 
-{% assign tbServicesFile = "tb-node.yml" %}
-{% include templates/install/azure/configure-udp.md %}
+{% assign tbServicesFile = "transport/tb-coap-transport.yml" %}
+{% include templates/install/azure/configure-coap.md %}
 
-## Step 11. Using
+### 9.4. Configure LwM2M Load Balancer (Optional)
+
+{% assign tbServicesFile = "transport/tb-lwm2m-transport.yml" %}
+{% include templates/install/azure/configure-lwm2m.md %}
+
+## Step 10. Using
 
 {% include templates/install/azure/using.md %}
 
@@ -98,3 +92,4 @@ After few minutes you may call `kubectl get pods`. If everything went fine, you 
 ## Next steps
 
 {% assign currentGuide = "InstallationGuides" %}{% include templates/guides-banner.md %}
+

@@ -50,8 +50,6 @@ Example of response:
 }
 ```
 
-From the response we need to take the value from ***connectionString*** and take part after @ symbol but replace /postgres? with /thingsboard? (its database that was created automatically), after add jdbc:postgresql:// at start of result string
-
-Example jdbc:postgresql://tb-db.postgres.database.azure.com/thingsboard?sslmode=require
-
-This string need to input in tb-node-db-configmap.yml instead YOUR_AZURE_POSTGRES_ENDPOINT_URL
+From the response we need to take the value from ***host***
+This string need to input in tb-node-db-configmap.yml instead YOUR_AZURE_POSTGRES_ENDPOINT_URL. Also you need to replace 
+YOUR_AZURE_POSTGRES_USER and YOUR_AZURE_POSTGRES_PASSWORD with your real username and password.
