@@ -153,16 +153,15 @@ Execute the following command to deploy ThingsBoard services:
 
 After few minutes you may call `kubectl get pods`. If everything went fine, you should be able to see:
 
-* 3x `tb-pe-coap-transport`
-* 3x `tb-pe-http-transport`
-* 3x `tb-pe-mqtt-transport`
 * 5x `tb-pe-js-executor`
 * 2x `tb-pe-web-ui`
 * 1x `tb-pe-node`
 * 1x `tb-pe-web-report`
 * 3x `zookeeper`.
   
-Every pod should be in the `READY` state. 
+Every pod should be in the `READY` state.
+
+{% include templates/install/aws/start-transports.md %}
 
 ## Step 11. Configure Load Balancers
 
