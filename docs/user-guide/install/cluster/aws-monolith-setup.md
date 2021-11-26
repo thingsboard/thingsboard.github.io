@@ -60,35 +60,15 @@ cd thingsboard-ce-k8s/aws/monolith
 
 {% include templates/install/aws/eks-lb-controller.md %}
 
-## Step 4. Amazon PostgreSQL DB Configuration
+## Step 4. Provision Databases
 
-You'll need to set up PostgreSQL on Amazon RDS. 
-One of the ways to do it is by following [this](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SettingUp.html) guide.
+### Step 4.1 Amazon PostgreSQL DB Configuration
 
-**Note**: Make sure your database is accessible from the cluster, one of the way to achieve this is to create 
-the database in the same VPC and subnets as ThingsBoard cluster.
+{% include templates/install/aws/rds-setup.md %}
 
-Here you should choose VPC with the name of your cluster:
+### Step 4.2 Cassandra
 
-![image](/images/install/cloud/aws-rds-connectivity-vpc.png)
-
-Here you should choose security group corresponding to the one on the screen:
-
-![image](/images/install/cloud/aws-rds-connectivity-security-group.png)
-
-**Note**: in order to make PostgreSQL more secure you may create the separate security group, 
-configure access only to the 5432 port and from the ThingsBoard nodes.
-This can be achieved if you assigned security group to the `node` node-group in the `cluster.yml` file. 
-
-Make sure that `thingsboard` database is created along with PostgreSQL instance (or create it afterwards).
-
-![image](/images/install/cloud/aws-rds-default-database.png)
-
-On AWS Console get the `Endpoint` of the RDS PostgreSQL and paste it to `SPRING_DATASOURCE_URL` in the `tb-node-db-configmap.yml` instead of `your_url`:
-
-![image](/images/install/cloud/aws-postgres-endpoint.png)
-
-Also, you'll need to set `SPRING_DATASOURCE_USERNAME` and `SPRING_DATASOURCE_PASSWORD` with PostgreSQL `username` and `password` corresponding.
+{% include templates/install/aws/configure-cassandra.md %}
 
 ## Step 5. Installation
 

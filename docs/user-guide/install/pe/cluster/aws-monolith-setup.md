@@ -64,9 +64,15 @@ cd thingsboard-pe-k8s/aws/monolith
 
 {% include templates/install/aws/eks-lb-controller.md %}
 
-## Step 4. Amazon PostgreSQL DB Configuration
+## Step 4. Provision Databases
+
+### Step 4.1 Amazon PostgreSQL DB Configuration
 
 {% include templates/install/aws/rds-setup.md %}
+
+### Step 4.2 Cassandra
+
+{% include templates/install/aws/configure-cassandra.md %}
 
 ## Step 5. Obtain and configure license key
 
