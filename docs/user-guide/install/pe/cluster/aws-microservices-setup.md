@@ -106,9 +106,15 @@ cd thingsboard-pe-k8s/aws/microservices
 
 {% include templates/install/aws/eks-lb-controller.md %}
 
-## Step 4. Amazon PostgreSQL DB Configuration
+## Step 4. Provision Databases
+
+### Step 4.1 Amazon PostgreSQL DB Configuration
 
 {% include templates/install/aws/rds-setup.md %}
+
+### Step 4.2 Cassandra
+
+{% include templates/install/aws/configure-cassandra.md %}
 
 ## Step 5. Amazon MSK Configuration
 
@@ -164,15 +170,14 @@ Execute the following command to deploy ThingsBoard services:
 
 After few minutes you may call `kubectl get pods`. If everything went fine, you should be able to see:
 
-* 3x `tb-coap-transport`
-* 3x `tb-http-transport`
-* 3x `tb-mqtt-transport`
 * 5x `tb-js-executor`
 * 1x `tb-node` (We setup one node by default, you may scale it to many nodes if you have additional instances attached to your license key)
 * 2x `tb-web-ui`
 * 3x `zookeeper`.
 
 Every pod should be in the `READY` state.
+
+{% include templates/install/aws/start-transports.md %}
 
 ## Step 13. Configure Load Balancers
 
