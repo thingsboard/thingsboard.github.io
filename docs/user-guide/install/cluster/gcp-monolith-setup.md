@@ -28,7 +28,7 @@ cd thingsboard-сe-k8s/gcp/monolith
 
 ## Step 2. Define environment variables
 
-{% assign tbClusterName = "tb-pe" %}
+{% assign tbClusterName = "tb-ce" %}
 {% include templates/install/gcp/env-variables-monolith.md %}
 
 ## Step 3. Configure and create GKE cluster
@@ -39,9 +39,15 @@ cd thingsboard-сe-k8s/gcp/monolith
 
 {% include templates/install/gcp/update-kubectl-zone.md %}
 
-## Step 5. Provision Google Cloud SQL (PostgreSQL) Instance
+## Step 5. Provision Databases
+
+### Step 5.1 Google Cloud SQL (PostgreSQL) Instance
 
 {% include templates/install/gcp/provision-postgresql.md %}
+
+### Step 5.2 Cassandra
+
+{% include templates/install/gcp/configure-cassandra.md %}
 
 ## Step 6. Installation
 
@@ -67,7 +73,7 @@ Afterwards, setup TCP load balancer to forward traffic from 443 port to correspo
 This version of setup does not support an automatic redirect of http port 80 to https port 443.
 
 ```bash
- kubectl apply -f receipts/transparent-http-load-balancer.yml.yml
+ kubectl apply -f receipts/transparent-http-load-balancer.yml
 ```
 {: .copy-code}
  

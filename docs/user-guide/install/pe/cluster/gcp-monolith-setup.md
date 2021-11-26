@@ -46,9 +46,15 @@ cd thingsboard-pe-k8s/gcp/monolith
 
 {% include templates/install/gcp/update-kubectl-zone.md %}
 
-## Step 5. Provision Google Cloud SQL (PostgreSQL) Instance
+## Step 5. Provision Databases
+
+### Step 5.1 Google Cloud SQL (PostgreSQL) Instance
 
 {% include templates/install/gcp/provision-postgresql.md %}
+
+### Step 5.2 Cassandra
+
+{% include templates/install/gcp/configure-cassandra.md %}
 
 ## Step 6. Upload Docker credentials
 
