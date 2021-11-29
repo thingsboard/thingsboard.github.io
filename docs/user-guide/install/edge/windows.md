@@ -4,9 +4,13 @@ title: Installing ThingsBoard Edge on Windows
 description: Installing ThingsBoard Edge on Windows
 ---
 
+{% assign docsPrefix = "edge/" %}
+
 * TOC
 {:toc}
-  
+
+{% include templates/install/windows-warning-note.md %}
+
 This guide describes how to install ThingsBoard Edge on Windows machine.
 Instructions below are provided for Windows 10/8.1/8/7 32-bit/64-bit.
 

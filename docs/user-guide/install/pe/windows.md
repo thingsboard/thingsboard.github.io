@@ -12,6 +12,8 @@ description: Installing ThingsBoard on Windows
 * TOC
 {:toc}
 
+{% include templates/install/windows-warning-note.md %}
+
 ### Prerequisites
 
 This guide describes how to install ThingsBoard on a Windows machine.
