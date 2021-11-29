@@ -9,8 +9,10 @@ You may follow [this](https://docs.microsoft.com/en-us/azure/postgresql/flexible
 and recomendations:
    * Use "High availability" enabled. It enables a lot of useful settings by default;
 
-Another way by which you can create Azure Database for PostgreSQL is use az tool
-```
+Another way by which you can create Azure Database for PostgreSQL is use az tool 
+(don't forget to replace 'POSTGRESS_USER' and 'POSTGRESS_PASS' with your username and password):
+
+```bash
 az postgres flexible-server create --location $AKS_LOCATION --resource-group $AKS_RESOURCE_GROUP \
   --name $TB_DATABASE_NAME --admin-user POSTGRESS_USER --admin-password POSTGRESS_PASS \
   --public-access 0.0.0.0 --storage-size 32 \
@@ -50,6 +52,15 @@ Example of response:
 }
 ```
 
-From the response we need to take the value from ***host***
-This string need to input in tb-node-db-configmap.yml instead YOUR_AZURE_POSTGRES_ENDPOINT_URL. Also you need to replace 
-YOUR_AZURE_POSTGRES_USER and YOUR_AZURE_POSTGRES_PASSWORD with your real username and password.
+
+Note the value of **host** from the command output (*tb-db.postgres.database.azure.com* in our case). 
+Also note username and password (*postgres*) from the command.
+
+Edit the database settings file and replace *YOUR_AZURE_POSTGRES_ENDPOINT_URL* with the **host** value,
+*YOUR_AZURE_POSTGRES_USER* and *YOUR_AZURE_POSTGRES_PASSWORD* with the correct values:
+
+```bash
+nano tb-node-db-configmap.yml
+```
+
+

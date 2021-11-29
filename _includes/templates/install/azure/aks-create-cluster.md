@@ -8,7 +8,7 @@ To see more info about `az group` please you can use [this](https://docs.microso
 
 After we created Resource group we can create AKS cluster in it using: 
 ```
-az aks create --resource-group $AKS_RESOURCE_GROUP --name $TB_CLUSTER_NAME --generate-ssh-keys -a ingress-appgw --appgw-name myApplicationGateway --appgw-subnet-cidr "10.2.0.0/16"
+az aks create --resource-group $AKS_RESOURCE_GROUP --name $TB_CLUSTER_NAME --generate-ssh-keys -a ingress-appgw --appgw-name $AKS_GATEWAY --appgw-subnet-cidr "10.2.0.0/16"
 ```
 {: .copy-code}
 
