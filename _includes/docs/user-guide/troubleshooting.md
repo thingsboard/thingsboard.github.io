@@ -1,10 +1,3 @@
----
-layout: docwithnav
-title: ThingsBoard Troubleshooting
-description: ThingsBoard IoT platform troubleshooting 
-
----
-
 * TOC
 {:toc}
 

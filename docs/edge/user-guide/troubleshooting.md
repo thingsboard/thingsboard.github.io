@@ -5,6 +5,9 @@ description: ThingsBoard Edge troubleshooting
 
 ---
 
+* TOC
+{:toc}
+
 ## Troubleshooting instruments and tips
 
 ### Message Pack Processing Log
