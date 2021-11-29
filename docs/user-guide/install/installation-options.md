@@ -143,7 +143,7 @@ notitle: "true"
                                     <div class="deployment-card-block">
                                         <a href="/docs/user-guide/install/azure/">
                                             <span>
-                                                <div class="deployment-logo coming-soon">
+                                                <div class="deployment-logo">
                                                     <img width="" src="/images/install/cloud/azure.svg" title="Microsoft Azure" alt="Microsoft Azure">
                                                  </div>
                                             </span>
