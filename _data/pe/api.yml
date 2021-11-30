@@ -17,6 +17,8 @@ toc:
     path: /docs/pe/reference/http-api/
   - title: LWM2M Transport API
     path: /docs/pe/reference/lwm2m-api/
+  - title: SNMP Device API
+    path: /docs/pe/reference/snmp-api/
     new: true
   - title: SNMP Transport API
     path: /docs/pe/reference/snmp-api/

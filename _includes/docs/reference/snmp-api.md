@@ -30,30 +30,14 @@ supports them all.
 
 Foremost, you should configure SNMP device profile: specify request timeout (timeout in milliseconds before a confirmed
 request is resent or timed out), number of retries (to be performed before a request is timed out), and the main part -
-communication configs. We will talk about possible types of the configs a bit later, after taking a look at SNMP device
-configuring.
+communication configs.
 
 Here is an example of a device profile configuration:
 
-```json
-{
-  "retries": 0,
-  "timeoutMs": 500,
-  "communicationConfigs": [
-    {
-      "spec": "TELEMETRY_QUERYING",
-      "mappings": [
-        {
-          "oid": "1.3.6.1.3.2.5.3.1",
-          "key": "temperature",
-          "dataType": "LONG"
-        }
-      ],
-      "queryingFrequencyMs": 5000
-    }
-  ]
-}
-```
+{% include images-gallery.html imageCollection="deviceProfileConfiguring1" %}
+
+We will talk about possible types of the configs a bit later, after taking a look at SNMP device
+configuring.
 
 ### Device configuring
 
@@ -64,14 +48,7 @@ supports authentication and data encryption.
 
 So, for versions 1 and 2c you must set a community string. Configuration example for such SNMP devices:
 
-```json
-{
-  "host": "192.168.3.25",
-  "port": 161,
-  "protocolVersion": "V2C",
-  "community": "public"
-}
-```
+{% include images-gallery.html imageCollection="deviceConfiguring1" %}
 
 Let's move further to the third version of SNMP. ThingsBoard uses "authPriv" security level, which enables both
 authentication and encryption. Used security model is USM (User-based Security Model).
@@ -90,21 +67,7 @@ There are following properties to configure for your SNMP v3 device (in addition
 
 Here is a sample of a config for version 3:
 
-```json
-{
-  "host": "192.168.5.2",
-  "port": 1610,
-  "protocolVersion": "V3",
-  "username": "user",
-  "securityName": "user",
-  "contextName": "context",
-  "authenticationProtocol": "SHA_512",
-  "authenticationPassphrase": "oaRSH4Lerhq5ta",
-  "privacyProtocol": "DES",
-  "privacyPassphrase": "GXxJbcg3m4NXSn",
-  "engineId": "engine"
-}
-```
+{% include images-gallery.html imageCollection="deviceConfiguring2" %}
 
 ### Telemetry
 
@@ -115,24 +78,7 @@ it as a specified data type.
 
 Here is an example:
 
-```json
-{
-  "spec": "TELEMETRY_QUERYING",
-  "mappings": [
-    {
-      "oid": "1.3.6.1.3..5.1.2.3",
-      "key": "humidity",
-      "dataType": "DOUBLE"
-    },
-    {
-      "oid": "1.3.6.1.3..5.1.2.5",
-      "key": "temperature",
-      "dataType": "LONG"
-    }
-  ],
-  "queryingFrequencyMs": 5000
-}
-```
+{% include images-gallery.html imageCollection="deviceProfileConfiguring2" %}
 
 By the way, supported data types are: `LONG`, `DOUBLE`, `BOOLEAN` and `STRING` (for SNMP, a received variable value with
 configured data type of `JSON` will be treated as a regular string).
@@ -148,37 +94,14 @@ telemetry, should contain mappings and required querying frequency.
 
 A sample:
 
-```json
-{
-  "spec": "CLIENT_ATTRIBUTES_QUERYING",
-  "mappings": [
-    {
-      "oid": "1.5.6.7.2.3.5.1.2",
-      "key": "deviceInfo",
-      "dataType": "STRING"
-    }
-  ],
-  "queryingFrequencyMs": 5000
-}
-```
+{% include images-gallery.html imageCollection="deviceProfileConfiguring3" %}
 
 #### Shared attributes
 
 In order to make your SNMP device receive updates of some shared attributes, you may add another communication config to
 your SNMP device profile:
 
-```json
-{
-  "spec": "SHARED_ATTRIBUTES_SETTING",
-  "mappings": [
-    {
-      "oid": "1.5.6.7.2.3.5.7.2",
-      "key": "lastUpdateTime",
-      "dataType": "LONG"
-    }
-  ]
-}
-```
+{% include images-gallery.html imageCollection="deviceProfileConfiguring4" %}
 
 For this one you only need to configure mappings: to which OID an updated shared attribute's value will be set. In this
 case, a key in the mapping is the name of a shared attribute. By the way, the used SNMP method is `SET`.
@@ -192,23 +115,7 @@ for `LONG` data type, and `OCTET STRING` for all other data types.
 To send custom SNMP request you may use RPC feature. First, you should configure some key mappings in a device profile
 to use in RPC command:
 
-```json
-{
-  "spec": "TO_DEVICE_RPC_REQUEST",
-  "mappings": [
-    {
-      "key": "systemInfo",
-      "oid": "1.2.3.0.9.2.8.1",
-      "dataType": "STRING"
-    },
-    {
-      "key": "lastUpdateTime",
-      "oid": "1.2.3.0.9.2.8.1",
-      "dataType": "STRING"
-    }
-  ]
-}
-```
+{% include images-gallery.html imageCollection="deviceProfileConfiguring5" %}
 
 After that, we are able to use configured mappings' keys in our RPC commands:
 
@@ -243,7 +150,7 @@ Here is an example for "SET" RPC command:
 }
 ```
 
-In this case, we will send a "SET" SNMP request to the configured in the mappings OID ("1.2.3.0.9.2.8.1") with the value
+In this case, we will send a "SET" SNMP request to the configured in the mappings OID ("1.2.3.0.6.4.3.1") with the value
 of "12901200312" as OCTET STRING.
 
 Notice, that for "SET" request you have to specify some value in your RPC command.
