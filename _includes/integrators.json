@@ -535,7 +535,7 @@
       "href": "info@it-novum.com"
     },
     "site": {
-      "href": "it-novum.com",
+      "href": "data.it-novum.com",
       "target": "_blank"
     }
   },
@@ -1012,7 +1012,7 @@
     "country": ["Lietuvos Respublika"],
     "name": "Techno Pynė",
     "contact": {
-      "href": "ia@technopyne.lt"
+      "href": "mail@technopyne.lt"
     },
     "site": {
       "href": "technopyne.lt",
