@@ -64,7 +64,7 @@ The parameters are grouped by system components. The list contains the name (add
 <table>
   <thead>
       <tr>
-          <td><b>Parameter</b></td><td><b>Environment Variable</b></td><td><b>Default Value</b></td><td><b>Description</b></td>
+          <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
       </tr>
   </thead>
   <tbody>
@@ -240,31 +240,31 @@ The parameters are grouped by system components. The list contains the name (add
           <td>server.ws.dynamic_page_link.refresh_interval</td>
           <td>TB_SERVER_WS_DYNAMIC_PAGE_LINK_REFRESH_INTERVAL_SEC</td>
           <td>60</td>
-          <td></td>
+          <td>Refresh rate of the dynamic alarm end entity data queries.</td>
       </tr>
       <tr>
           <td>server.ws.dynamic_page_link.refresh_pool_size</td>
           <td>TB_SERVER_WS_DYNAMIC_PAGE_LINK_REFRESH_POOL_SIZE</td>
           <td>1</td>
-          <td></td>
+          <td>Thread pool size to execute dynamic queries.</td>
       </tr>
       <tr>
           <td>server.ws.dynamic_page_link.max_per_user</td>
           <td>TB_SERVER_WS_DYNAMIC_PAGE_LINK_MAX_PER_USER</td>
           <td>10</td>
-          <td></td>
+          <td>Maximum number of dynamic queries per user. For example, no more then 10 alarm widgets opened by user simultaneously in all browsers.</td>
       </tr>
       <tr>
           <td>server.ws.max_entities_per_data_subscription</td>
           <td>TB_SERVER_WS_MAX_ENTITIES_PER_DATA_SUBSCRIPTION</td>
           <td>10000</td>
-          <td></td>
+          <td>Maximum number of entities returned for single entity subscription. For example, no more then 10 000 entities on the map widget.</td>
       </tr>
       <tr>
           <td>server.ws.max_entities_per_alarm_subscription</td>
           <td>TB_SERVER_WS_MAX_ENTITIES_PER_ALARM_SUBSCRIPTION</td>
           <td>10000</td>
-          <td></td>
+          <td>Maximum number of alarms returned for single alarm subscription. For example, no more then 10 000 alarms on the alarm widget.</td>
       </tr>
       <tr>
           <td>server.rest.limits.tenant.enabled</td>
@@ -312,7 +312,7 @@ The parameters are grouped by system components. The list contains the name (add
 <table>
     <thead>
         <tr>
-          <td><b>Parameter</b></td><td><b>Environment Variable</b></td><td><b>Default Value</b></td><td><b>Description</b></td>
+          <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
         </tr>
     </thead>
     <tbody>
@@ -320,13 +320,13 @@ The parameters are grouped by system components. The list contains the name (add
             <td>cluster.stats.enabled</td>
             <td>TB_CLUSTER_STATS_ENABLED</td>
             <td>false</td>
-            <td></td>
+            <td>Enable/Disable the cluster statistics. Calculates number of messages sent between cluster nodes based on each type.</td>
         </tr>
         <tr>
             <td>cluster.stats.print_interval_ms</td>
             <td>TB_CLUSTER_STATS_PRINT_INTERVAL_MS</td>
             <td>10000</td>
-            <td></td>
+            <td>Interval of printing the cluster stats to the log file.</td>
         </tr>
     </tbody>
 </table>
@@ -336,7 +336,7 @@ The parameters are grouped by system components. The list contains the name (add
 <table>
     <thead>
         <tr>
-            <td><b>Parameter</b></td><td><b>Environment Variable</b></td><td><b>Default Value</b></td><td><b>Description</b></td>
+            <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
         </tr>
     </thead>
     <tbody>
@@ -354,7 +354,7 @@ The parameters are grouped by system components. The list contains the name (add
 <table>
     <thead>
         <tr>
-            <td><b>Parameter</b></td><td><b>Environment Variable</b></td><td><b>Default Value</b></td><td><b>Description</b></td>
+            <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
         </tr>
     </thead>
     <tbody>
@@ -432,7 +432,7 @@ The parameters are grouped by system components. The list contains the name (add
 <table>
     <thead>
         <tr>
-            <td><b>Parameter</b></td><td><b>Environment Variable</b></td><td><b>Default Value</b></td><td><b>Description</b></td>
+            <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
         </tr>
     </thead>
     <tbody>
@@ -440,25 +440,25 @@ The parameters are grouped by system components. The list contains the name (add
             <td>usage.stats.report.enabled</td>
             <td>USAGE_STATS_REPORT_ENABLED</td>
             <td>true</td>
-            <td></td>
+            <td>Enable/Disable collection of statistics about API usage. Collected on a system and tenant level by default.</td>
         </tr>
         <tr>
             <td>usage.stats.report.enabled_per_customer</td>
             <td>USAGE_STATS_REPORT_PER_CUSTOMER_ENABLED</td>
             <td>false</td>
-            <td></td>
+            <td>Enable/Disable collection of statistics about API usage on a customer level.</td>
         </tr>
         <tr>
             <td>usage.stats.report.interval</td>
             <td>USAGE_STATS_REPORT_INTERVAL</td>
             <td>10</td>
-            <td></td>
+            <td>Interval of reporting the statistics. By default, the summarized statistics is sent every 10 seconds.</td>
         </tr>
         <tr>
             <td>usage.stats.check.cycle</td>
             <td>USAGE_STATS_CHECK_CYCLE</td>
             <td>60000</td>
-            <td></td>
+            <td>Interval of checking the start of next cycle and re-enabling the blocked tenants/customers.</td>
         </tr>
     </tbody>
 </table>
@@ -468,7 +468,7 @@ The parameters are grouped by system components. The list contains the name (add
 <table>
     <thead>
         <tr>
-            <td><b>Parameter</b></td><td><b>Environment Variable</b></td><td><b>Default Value</b></td><td><b>Description</b></td>
+            <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
         </tr>
     </thead>
     <tbody>
@@ -492,7 +492,7 @@ The parameters are grouped by system components. The list contains the name (add
 <table>
     <thead>
         <tr>
-            <td><b>Parameter</b></td><td><b>Environment Variable</b></td><td><b>Default Value</b></td><td><b>Description</b></td>
+            <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
         </tr>
     </thead>
     <tbody>
@@ -522,7 +522,7 @@ The parameters are grouped by system components. The list contains the name (add
 <table>
     <thead>
         <tr>
-            <td><b>Parameter</b></td><td><b>Environment Variable</b></td><td><b>Default Value</b></td><td><b>Description</b></td>
+            <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
         </tr>
     </thead>
     <tbody>
@@ -572,7 +572,7 @@ The parameters are grouped by system components. The list contains the name (add
             <td>cassandra.ssl.trust_store_password</td>
             <td>CASSANDRA_SSL_TRUST_STORE_PASSWORD</td>
             <td></td>
-            <td></td>
+            <td>The password for Cassandra trust store</td>
         </tr>
         <tr>
             <td>cassandra.ssl.key_store</td>
@@ -584,7 +584,7 @@ The parameters are grouped by system components. The list contains the name (add
             <td>cassandra.ssl.key_store_password</td>
             <td>CASSANDRA_SSL_KEY_STORE_PASSWORD</td>
             <td></td>
-            <td></td>
+            <td>The password for Cassandra key store</td>
         </tr>
         <tr>
             <td>cassandra.ssl.cipher_suites</td>
@@ -656,49 +656,49 @@ The parameters are grouped by system components. The list contains the name (add
           <td>cassandra.socket.connect_timeout</td>
           <td>CASSANDRA_SOCKET_TIMEOUT</td>
           <td>5000</td>
-          <td></td>
+          <td>General Cassandra driver parameter</td>
       </tr>
       <tr>
           <td>cassandra.socket.read_timeout</td>
           <td>CASSANDRA_SOCKET_READ_TIMEOUT</td>
           <td>20000</td>
-          <td></td>
+          <td>General Cassandra driver parameter</td>
       </tr>
       <tr>
           <td>cassandra.socket.keep_alive</td>
           <td>CASSANDRA_SOCKET_KEEP_ALIVE</td>
           <td>true</td>
-          <td></td>
+          <td>General Cassandra driver parameter</td>
       </tr>
       <tr>
           <td>cassandra.socket.reuse_address</td>
           <td>CASSANDRA_SOCKET_REUSE_ADDRESS</td>
           <td>true</td>
-          <td></td>
+          <td>General Cassandra driver parameter</td>
       </tr>
       <tr>
           <td>cassandra.socket.so_linger</td>
           <td>CASSANDRA_SOCKET_SO_LINGER</td>
           <td></td>
-          <td></td>
+          <td>General Cassandra driver parameter</td>
       </tr>
         <tr>
             <td>cassandra.socket.tcp_no_delay</td>
             <td>CASSANDRA_SOCKET_TCP_NO_DELAY</td>
             <td>false</td>
-            <td></td>
+            <td>General Cassandra driver parameter</td>
         </tr>
         <tr>
             <td>cassandra.socket.receive_buffer_size</td>
             <td>CASSANDRA_SOCKET_RECEIVE_BUFFER_SIZE</td>
             <td></td>
-            <td></td>
+            <td>General Cassandra driver parameter</td>
         </tr>
         <tr>
             <td>cassandra.socket.send_buffer_size</td>
             <td>CASSANDRA_SOCKET_SEND_BUFFER_SIZE</td>
             <td></td>
-            <td></td>
+            <td>General Cassandra driver parameter</td>
         </tr>
         <tr>
           <td>cassandra.query.read_consistency_level</td>
@@ -728,7 +728,7 @@ The parameters are grouped by system components. The list contains the name (add
           <td>cassandra.query.ts_key_value_partitions_max_cache_size</td>
           <td>TS_KV_PARTITIONS_MAX_CACHE_SIZE</td>
           <td>100000</td>
-          <td></td>
+          <td>The number of partitions that are cached in memory of each service. Useful to decrease load of re-inserting same partitions again.</td>
         </tr>
         <tr>
           <td>cassandra.query.ts_key_value_ttl</td>
@@ -828,7 +828,7 @@ The parameters are grouped by system components. The list contains the name (add
 <table>
     <thead>
         <tr>
-            <td><b>Parameter</b></td><td><b>Environment Variable</b></td><td><b>Default Value</b></td><td><b>Description</b></td>
+            <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
         </tr>
     </thead>
     <tbody>
@@ -854,7 +854,7 @@ The parameters are grouped by system components. The list contains the name (add
             <td>sql.attributes.batch_threads</td>
             <td>SQL_ATTRIBUTES_BATCH_THREADS</td>
             <td>4</td>
-            <td></td>
+            <td>Number of threads that execute batch insert/update statements for attributes</td>
         </tr>
         <tr>
             <td>sql.ts.batch_size</td>
@@ -878,7 +878,7 @@ The parameters are grouped by system components. The list contains the name (add
             <td>sql.ts.batch_threads</td>
             <td>SQL_TS_BATCH_THREADS</td>
             <td>4</td>
-            <td></td>
+            <td>Number of threads that execute batch insert/update statements for time-series data</td>
         </tr>
         <tr>
             <td>sql.ts_latest.batch_size</td>
@@ -902,13 +902,14 @@ The parameters are grouped by system components. The list contains the name (add
             <td>sql.ts_latest.batch_threads</td>
             <td>SQL_TS_LATEST_BATCH_THREADS</td>
             <td>4</td>
-            <td></td>
+            <td>Number of threads that execute batch insert/update statements for latest data</td>
         </tr>
         <tr>
             <td>sql.ts_latest.update_by_latest_ts</td>
             <td>SQL_TS_UPDATE_BY_LATEST_TIMESTAMP</td>
             <td>true</td>
-            <td></td>
+            <td>Update latest values only if the timestamp of the new record is greater or equals than timestamp of the previously saved latest value. 
+        Latest values are stored separately from historical values for fast lookup from DB. Insert of historical value happens in any case.</td>
         </tr>
         <tr>
             <td>sql.batch_sort</td>
@@ -926,13 +927,13 @@ The parameters are grouped by system components. The list contains the name (add
             <td>sql.log_queries</td>
             <td>SQL_LOG_QUERIES</td>
             <td>false</td>
-            <td></td>
+            <td>Log slow SQL queries. Slow queries are determined using SQL_LOG_QUERIES_THRESHOLD threshold</td>
         </tr>
         <tr>
             <td>sql.log_queries_threshold</td>
             <td>SQL_LOG_QUERIES_THRESHOLD</td>
             <td>5000</td>
-            <td></td>
+            <td>Threshold of slow SQL queries to log.</td>
         </tr>
         <tr>
             <td>sql.postgres.ts_key_value_partitioning</td>
@@ -950,7 +951,7 @@ The parameters are grouped by system components. The list contains the name (add
             <td>sql.timescale.batch_threads</td>
             <td>SQL_TIMESCALE_BATCH_THREADS</td>
             <td>4</td>
-            <td></td>
+            <td>Number of threads that execute batch insert/update statements for timeseries data when using Timescale DB.</td>
         </tr>
         <tr>
             <td>sql.ttl.ts.enabled</td>
@@ -998,7 +999,7 @@ The parameters are grouped by system components. The list contains the name (add
             <td>sql.ttl.edge_events.enabled</td>
             <td>SQL_TTL_EDGE_EVENTS_ENABLED</td>
             <td>true</td>
-            <td></td>
+            <td>Enable/disable TTL(Time To Live) for edge events</td>
         </tr>
         <tr>
             <td>sql.ttl.edge_events.execution_interval_ms</td>
@@ -1050,7 +1051,7 @@ The parameters are grouped by system components. The list contains the name (add
 <table>
     <thead>
         <tr>
-            <td><b>Parameter</b></td><td><b>Environment Variable</b></td><td><b>Default Value</b></td><td><b>Description</b></td>
+            <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
         </tr>
     </thead>
     <tbody>
@@ -1058,43 +1059,43 @@ The parameters are grouped by system components. The list contains the name (add
             <td>actors.system.throughput</td>
             <td>ACTORS_SYSTEM_THROUGHPUT</td>
             <td>5</td>
-            <td></td>
+            <td>Number of messages the actor system will process per actor before switching to processing of messages for next actor.</td>
         </tr>
         <tr>
             <td>actors.system.scheduler_pool_size</td>
             <td>ACTORS_SYSTEM_SCHEDULER_POOL_SIZE</td>
             <td>1</td>
-            <td></td>
+            <td>Thread pool size for actor system scheduler.</td>
         </tr>
         <tr>
             <td>actors.system.max_actor_init_attempts</td>
             <td>ACTORS_SYSTEM_MAX_ACTOR_INIT_ATTEMPTS</td>
             <td>10</td>
-            <td></td>
+            <td>Maximum number of attempts to init the actor before disabling the actor.</td>
         </tr>
         <tr>
             <td>actors.system.app_dispatcher_pool_size</td>
             <td>ACTORS_SYSTEM_APP_DISPATCHER_POOL_SIZE</td>
             <td>1</td>
-            <td></td>
+            <td>Thread pool size for main actor system dispatcher.</td>
         </tr>
         <tr>
             <td>actors.system.tenant_dispatcher_pool_size</td>
             <td>ACTORS_SYSTEM_TENANT_DISPATCHER_POOL_SIZE</td>
             <td>2</td>
-            <td></td>
+            <td>Thread pool size for actor system dispatcher that process messages for tenant actors.</td>
         </tr>
         <tr>
             <td>actors.system.device_dispatcher_pool_size</td>
             <td>ACTORS_SYSTEM_DEVICE_DISPATCHER_POOL_SIZE</td>
             <td>4</td>
-            <td></td>
+            <td>Thread pool size for actor system dispatcher that process messages for device actors.</td>
         </tr>
         <tr>
             <td>actors.system.rule_dispatcher_pool_size</td>
             <td>ACTORS_SYSTEM_RULE_DISPATCHER_POOL_SIZE</td>
             <td>4</td>
-            <td></td>
+            <td>Thread pool size for actor system dispatcher that process messages for rule engine (chain/node) actors.</td>
         </tr>
         <tr>
           <td>actors.tenant.create_components_on_init</td>
@@ -1166,13 +1167,13 @@ The parameters are grouped by system components. The list contains the name (add
           <td>actors.rule.chain.debug_mode_rate_limits_per_tenant.enabled</td>
           <td>ACTORS_RULE_CHAIN_DEBUG_MODE_RATE_LIMITS_PER_TENANT_ENABLED</td>
           <td>true</td>
-          <td></td>
+          <td>Enable/Disable the rate limit of persisted debug events for all rule nodes per tenant.</td>
         </tr>
         <tr>
           <td>actors.rule.chain.debug_mode_rate_limits_per_tenant.configuration</td>
           <td>ACTORS_RULE_CHAIN_DEBUG_MODE_RATE_LIMITS_PER_TENANT_CONFIGURATION</td>
           <td>50000:3600</td>
-          <td></td>
+          <td>The value of rate limit. By default, no more then 50 thousand events per hour.</td>
         </tr>
         <tr>
           <td>actors.rule.node.error_persist_frequency</td>
@@ -1196,13 +1197,13 @@ The parameters are grouped by system components. The list contains the name (add
           <td>actors.rpc.max_retries</td>
           <td>ACTORS_RPC_MAX_RETRIES</td>
           <td>5</td>
-          <td></td>
+          <td>Maximum number of persistent RPC call retries in case of failed requests delivery.</td>
         </tr>
         <tr>
           <td>actors.rpc.sequential</td>
           <td>ACTORS_RPC_SEQUENTIAL</td>
           <td>false</td>
-          <td></td>
+          <td>Enable/Disable sequential processing of RPC calls per device.</td>
         </tr>
         <tr>
           <td>actors.statistics.enabled</td>
@@ -1214,7 +1215,7 @@ The parameters are grouped by system components. The list contains the name (add
           <td>actors.statistics.js_print_interval_ms</td>
           <td>ACTORS_JS_STATISTICS_PRINT_INTERVAL_MS</td>
           <td>10000</td>
-          <td></td>
+          <td>Frequency of printing the JS executor statistics</td>
         </tr>
         <tr>
           <td>actors.statistics.persist_frequency</td>
@@ -1230,7 +1231,7 @@ The parameters are grouped by system components. The list contains the name (add
 <table>
     <thead>
         <tr>
-            <td><b>Parameter</b></td><td><b>Environment Variable</b></td><td><b>Default Value</b></td><td><b>Description</b></td>
+            <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
         </tr>
     </thead>
     <tbody>
@@ -1584,7 +1585,7 @@ The parameters are grouped by system components. The list contains the name (add
 <table>
     <thead>
         <tr>
-            <td><b>Parameter</b></td><td><b>Environment Variable</b></td><td><b>Default Value</b></td><td><b>Description</b></td>
+            <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
         </tr>
     </thead>
     <tbody>
@@ -1592,7 +1593,7 @@ The parameters are grouped by system components. The list contains the name (add
             <td>updates.enabled</td>
             <td>UPDATES_ENABLED</td>
             <td>true</td>
-            <td>Enable/disable thingsboard updates checking</td>
+            <td>Enable/disable ThingsBoard updates checking. If enabled, the platform will periodically request information about new releases from updates.thingsboard.io</td>
         </tr>
     </tbody>
 </table>
@@ -1602,7 +1603,7 @@ The parameters are grouped by system components. The list contains the name (add
 <table>
     <thead>
         <tr>
-            <td><b>Parameter</b></td><td><b>Environment Variable</b></td><td><b>Default Value</b></td><td><b>Description</b></td>
+            <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
         </tr>
     </thead>
     <tbody>
@@ -1620,7 +1621,7 @@ The parameters are grouped by system components. The list contains the name (add
 <table>
     <thead>
         <tr>
-            <td><b>Parameter</b></td><td><b>Environment Variable</b></td><td><b>Default Value</b></td><td><b>Description</b></td>
+            <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
         </tr>
     </thead>
     <tbody>
@@ -1662,7 +1663,7 @@ The parameters are grouped by system components. The list contains the name (add
 <table>
     <thead>
         <tr>
-            <td><b>Parameter</b></td><td><b>Environment Variable</b></td><td><b>Default Value</b></td><td><b>Description</b></td>
+            <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
         </tr>
     </thead>
     <tbody>
@@ -1670,7 +1671,7 @@ The parameters are grouped by system components. The list contains the name (add
           <td>spring.mvc.async.request-timeout</td>
           <td>SPRING_MVC_ASYNC_REQUEST_TIMEOUT</td>
           <td>30000</td>
-          <td></td>
+          <td>Timeout for HTTP requests.</td>
         </tr>
     </tbody>
 </table>
@@ -1680,7 +1681,7 @@ The parameters are grouped by system components. The list contains the name (add
 <table>
     <thead>
         <tr>
-            <td><b>Parameter</b></td><td><b>Environment Variable</b></td><td><b>Default Value</b></td><td><b>Description</b></td>
+            <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
         </tr>
     </thead>
     <tbody>
@@ -1728,7 +1729,7 @@ The parameters are grouped by system components. The list contains the name (add
 <table>
     <thead>
         <tr>
-            <td><b>Parameter</b></td><td><b>Environment Variable</b></td><td><b>Default Value</b></td><td><b>Description</b></td>
+            <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
         </tr>
     </thead>
     <tbody>
@@ -1742,7 +1743,7 @@ The parameters are grouped by system components. The list contains the name (add
             <td>spring.jpa.properties.javax.persistence.query.timeout</td>
             <td>JAVAX_PERSISTENCE_QUERY_TIMEOUT</td>
             <td>30000</td>
-            <td></td>
+            <td>General timeout for JDBC queries</td>
         </tr>
         <tr>
             <td>spring.jpa.open-in-view</td>
@@ -1802,7 +1803,7 @@ The parameters are grouped by system components. The list contains the name (add
 <table>
     <thead>
         <tr>
-            <td><b>Parameter</b></td><td><b>Environment Variable</b></td><td><b>Default Value</b></td><td><b>Description</b></td>
+            <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
         </tr>
     </thead>
     <tbody>
@@ -1980,7 +1981,7 @@ The parameters are grouped by system components. The list contains the name (add
 <table>
     <thead>
         <tr>
-            <td><b>Parameter</b></td><td><b>Environment Variable</b></td><td><b>Default Value</b></td><td><b>Description</b></td>
+            <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
         </tr>
     </thead>
     <tbody>
@@ -2010,7 +2011,7 @@ The parameters are grouped by system components. The list contains the name (add
 <table>
     <thead>
         <tr>
-            <td><b>Parameter</b></td><td><b>Environment Variable</b></td><td><b>Default Value</b></td><td><b>Description</b></td>
+            <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
         </tr>
     </thead>
     <tbody>
@@ -2062,13 +2063,13 @@ The parameters are grouped by system components. The list contains the name (add
         <td>js.local.stats.enabled</td>
         <td>TB_JS_LOCAL_STATS_ENABLED</td>
         <td>false</td>
-        <td></td>
+        <td>Enable/Disable stats collection for local JS executor</td>
     </tr>
     <tr>
         <td>js.local.stats.print_interval_ms</td>
         <td>TB_JS_LOCAL_STATS_PRINT_INTERVAL_MS</td>
         <td>10000</td>
-        <td></td>
+        <td>Interval of logging for local JS executor stats</td>
     </tr>
     <tr>
         <td>js.remote.max_errors</td>
@@ -2086,13 +2087,13 @@ The parameters are grouped by system components. The list contains the name (add
         <td>js.remote.stats.enabled</td>
         <td>TB_JS_REMOTE_STATS_ENABLED</td>
         <td>false</td>
-        <td></td>
+        <td>Enable/Disable stats collection for remote JS executor</td>
     </tr>
     <tr>
         <td>js.remote.stats.print_interval_ms</td>
         <td>TB_JS_REMOTE_STATS_PRINT_INTERVAL_MS</td>
         <td>10000</td>
-        <td></td>
+        <td>Interval of logging for remote JS executor stats</td>
     </tr>
     </tbody>
 </table>
@@ -2106,7 +2107,7 @@ The parameters are grouped by system components. The list contains the name (add
 <table>
     <thead>
       <tr>
-          <td><b>Parameter</b></td><td><b>Environment Variable</b></td><td><b>Default Value</b></td><td><b>Description</b></td>
+          <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
       </tr>
     </thead>
     <tbody>
@@ -2126,7 +2127,7 @@ The parameters are grouped by system components. The list contains the name (add
 <table>
     <thead>
       <tr>
-          <td><b>Parameter</b></td><td><b>Environment Variable</b></td><td><b>Default Value</b></td><td><b>Description</b></td>
+          <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
       </tr>
     </thead>
     <tbody>
@@ -2146,7 +2147,7 @@ The parameters are grouped by system components. The list contains the name (add
 <table>
     <thead>
       <tr>
-          <td><b>Parameter</b></td><td><b>Environment Variable</b></td><td><b>Default Value</b></td><td><b>Description</b></td>
+          <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
       </tr>
     </thead>
     <tbody>
@@ -2166,7 +2167,7 @@ The parameters are grouped by system components. The list contains the name (add
 <table>
     <thead>
       <tr>
-          <td><b>Parameter</b></td><td><b>Environment Variable</b></td><td><b>Default Value</b></td><td><b>Description</b></td>
+          <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
       </tr>
     </thead>
     <tbody>
@@ -2186,7 +2187,7 @@ The parameters are grouped by system components. The list contains the name (add
 <table>
     <thead>
       <tr>
-          <td><b>Parameter</b></td><td><b>Environment Variable</b></td><td><b>Default Value</b></td><td><b>Description</b></td>
+          <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
       </tr>
     </thead>
     <tbody>
@@ -2206,7 +2207,7 @@ The parameters are grouped by system components. The list contains the name (add
 <table>
     <thead>
         <tr>
-            <td><b>Parameter</b></td><td><b>Environment Variable</b></td><td><b>Default Value</b></td><td><b>Description</b></td>
+            <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
         </tr>
     </thead>
     <tbody>
@@ -2308,7 +2309,7 @@ The parameters are grouped by system components. The list contains the name (add
 <table>
     <thead>
       <tr>
-          <td><b>Parameter</b></td><td><b>Environment Variable</b></td><td><b>Default Value</b></td><td><b>Description</b></td>
+          <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
       </tr>
     </thead>
     <tbody>
@@ -2316,67 +2317,67 @@ The parameters are grouped by system components. The list contains the name (add
             <td>swagger.api_path_regex</td>
             <td>SWAGGER_API_PATH_REGEX</td>
             <td>/api/.*</td>
-            <td></td>
+            <td>General swagger parameters</td>
         </tr>
         <tr>
             <td>swagger.security_path_regex</td>
             <td>SWAGGER_SECURITY_PATH_REGEX</td>
             <td>/api/.*</td>
-            <td></td>
+            <td>General swagger parameters</td>
         </tr>
         <tr>
             <td>swagger.non_security_path_regex</td>
             <td>SWAGGER_NON_SECURITY_PATH_REGEX</td>
             <td>/api/(?:noauth|v1)/.*</td>
-            <td></td>
+            <td>General swagger parameters</td>
         </tr>
         <tr>
             <td>swagger.title</td>
             <td>SWAGGER_TITLE</td>
             <td>ThingsBoard REST API</td>
-            <td></td>
+            <td>The title on the API doc UI page</td>
         </tr>
         <tr>
             <td>swagger.description</td>
             <td>SWAGGER_DESCRIPTION</td>
             <td>ThingsBoard open-source IoT platform REST API documentation.</td>
-            <td></td>
+            <td>The description on the API doc UI page</td>
         </tr>
         <tr>
             <td>swagger.contact.name</td>
             <td>SWAGGER_CONTACT_NAME</td>
             <td>ThingsBoard team</td>
-            <td></td>
+            <td>The contact name on the API doc UI page</td>
         </tr>
         <tr>
             <td>swagger.contact.url</td>
             <td>SWAGGER_CONTACT_URL</td>
             <td>https://thingsboard.io</td>
-            <td></td>
+            <td>The contact URL on the API doc UI page</td>
         </tr>
         <tr>
             <td>swagger.contact.email</td>
             <td>SWAGGER_CONTACT_EMAIL</td>
             <td>info@thingsboard.io</td>
-            <td></td>
+            <td>The contact email on the API doc UI page</td>
         </tr>
         <tr>
             <td>swagger.license.title</td>
             <td>SWAGGER_LICENSE_TITLE</td>
             <td>Apache License Version 2.0</td>
-            <td></td>
+            <td>The license title on the API doc UI page</td>
         </tr>
         <tr>
             <td>swagger.license.url</td>
             <td>SWAGGER_LICENSE_URL</td>
             <td>https://github.com/thingsboard/thingsboard/blob/master/LICENSE</td>
-            <td></td>
+            <td>Link to the license body on the API doc UI page</td>
         </tr>
         <tr>
             <td>swagger.version</td>
             <td>SWAGGER_VERSION</td>
             <td></td>
-            <td></td>
+            <td>The version of the API doc to display. Default to the package version.</td>
         </tr>
     </tbody>
 </table>
@@ -2389,7 +2390,7 @@ The parameters are grouped by system components. The list contains the name (add
 <table>
     <thead>
         <tr>
-            <td><b>Parameter</b></td><td><b>Environment Variable</b></td><td><b>Default Value</b></td><td><b>Description</b></td>
+            <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
         </tr>
     </thead>
     <tbody>
@@ -2397,7 +2398,7 @@ The parameters are grouped by system components. The list contains the name (add
             <td>event.debug.max-symbols</td>
             <td>TB_MAX_DEBUG_EVENT_SYMBOLS</td>
             <td>4096</td>
-            <td></td>
+            <td>Maximum number of symbols per debug event. The event content will be truncated if needed.</td>
         </tr>
     </tbody>
 </table>
@@ -2407,7 +2408,7 @@ The parameters are grouped by system components. The list contains the name (add
 <table>
     <thead>
         <tr>
-            <td><b>Parameter</b></td><td><b>Environment Variable</b></td><td><b>Default Value</b></td><td><b>Description</b></td>
+            <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
         </tr>
     </thead>
     <tbody>
@@ -2437,7 +2438,7 @@ The parameters are grouped by system components. The list contains the name (add
 <table>
     <thead>
         <tr>
-            <td><b>Parameter</b></td><td><b>Environment Variable</b></td><td><b>Default Value</b></td><td><b>Description</b></td>
+            <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
         </tr>
     </thead>
     <tbody>
@@ -2461,7 +2462,7 @@ The parameters are grouped by system components. The list contains the name (add
 <table>
     <thead>
         <tr>
-            <td><b>Parameter</b></td><td><b>Environment Variable</b></td><td><b>Default Value</b></td><td><b>Description</b></td>
+            <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
         </tr>
     </thead>
     <tbody>
@@ -2480,7 +2481,7 @@ The parameters are grouped by system components. The list contains the name (add
 <table>
   <thead>
       <tr>
-          <td><b>Parameter</b></td><td><b>Environment Variable</b></td><td><b>Default Value</b></td><td><b>Description</b></td>
+          <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
       </tr>
   </thead>
   <tbody>
@@ -2572,7 +2573,7 @@ The parameters are grouped by system components. The list contains the name (add
 <table>
   <thead>
       <tr>
-          <td><b>Parameter</b></td><td><b>Environment Variable</b></td><td><b>Default Value</b></td><td><b>Description</b></td>
+          <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
       </tr>
   </thead>
   <tbody>
@@ -2604,7 +2605,7 @@ The parameters are grouped by system components. The list contains the name (add
 <table>
   <thead>
       <tr>
-          <td><b>Parameter</b></td><td><b>Environment Variable</b></td><td><b>Default Value</b></td><td><b>Description</b></td>
+          <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
       </tr>
   </thead>
   <tbody>
@@ -2628,7 +2629,7 @@ The parameters are grouped by system components. The list contains the name (add
 <table>
   <thead>
       <tr>
-          <td><b>Parameter</b></td><td><b>Environment Variable</b></td><td><b>Default Value</b></td><td><b>Description</b></td>
+          <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
       </tr>
   </thead>
   <tbody>
@@ -2654,7 +2655,7 @@ The parameters are grouped by system components. The list contains the name (add
 <table>
   <thead>
       <tr>
-          <td><b>Parameter</b></td><td><b>Environment Variable</b></td><td><b>Default Value</b></td><td><b>Description</b></td>
+          <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
       </tr>
   </thead>
   <tbody>
@@ -2686,7 +2687,7 @@ The parameters are grouped by system components. The list contains the name (add
 <table>
   <thead>
       <tr>
-          <td><b>Parameter</b></td><td><b>Environment Variable</b></td><td><b>Default Value</b></td><td><b>Description</b></td>
+          <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
       </tr>
   </thead>
   <tbody>
@@ -2710,7 +2711,7 @@ The parameters are grouped by system components. The list contains the name (add
 <table>
   <thead>
       <tr>
-          <td><b>Parameter</b></td><td><b>Environment Variable</b></td><td><b>Default Value</b></td><td><b>Description</b></td>
+          <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
       </tr>
   </thead>
   <tbody>
@@ -2736,7 +2737,7 @@ The parameters are grouped by system components. The list contains the name (add
 <table>
   <thead>
       <tr>
-          <td><b>Parameter</b></td><td><b>Environment Variable</b></td><td><b>Default Value</b></td><td><b>Description</b></td>
+          <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
       </tr>
   </thead>
   <tbody>
@@ -2767,7 +2768,7 @@ The parameters are grouped by system components. The list contains the name (add
 <table>
   <thead>
       <tr>
-          <td><b>Parameter</b></td><td><b>Environment Variable</b></td><td><b>Default Value</b></td><td><b>Description</b></td>
+          <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
       </tr>
   </thead>
   <tbody>
@@ -2791,7 +2792,7 @@ The parameters are grouped by system components. The list contains the name (add
 <table>
   <thead>
       <tr>
-          <td><b>Parameter</b></td><td><b>Environment Variable</b></td><td><b>Default Value</b></td><td><b>Description</b></td>
+          <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
       </tr>
   </thead>
   <tbody>
@@ -2817,7 +2818,7 @@ The parameters are grouped by system components. The list contains the name (add
 <table>
   <thead>
       <tr>
-          <td><b>Parameter</b></td><td><b>Environment Variable</b></td><td><b>Default Value</b></td><td><b>Description</b></td>
+          <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
       </tr>
   </thead>
   <tbody>
@@ -2849,7 +2850,7 @@ The parameters are grouped by system components. The list contains the name (add
 <table>
   <thead>
       <tr>
-          <td><b>Parameter</b></td><td><b>Environment Variable</b></td><td><b>Default Value</b></td><td><b>Description</b></td>
+          <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
       </tr>
   </thead>
   <tbody>
@@ -2873,7 +2874,7 @@ The parameters are grouped by system components. The list contains the name (add
 <table>
   <thead>
       <tr>
-          <td><b>Parameter</b></td><td><b>Environment Variable</b></td><td><b>Default Value</b></td><td><b>Description</b></td>
+          <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
       </tr>
   </thead>
   <tbody>
@@ -2899,7 +2900,7 @@ The parameters are grouped by system components. The list contains the name (add
 <table>
   <thead>
       <tr>
-          <td><b>Parameter</b></td><td><b>Environment Variable</b></td><td><b>Default Value</b></td><td><b>Description</b></td>
+          <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
       </tr>
   </thead>
   <tbody>

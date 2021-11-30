@@ -1,7 +1,7 @@
 <table>
     <thead>
       <tr>
-          <td><b>Parameter</b></td><td><b>Environment Variable</b></td><td><b>Default Value</b></td><td><b>Description</b></td>
+          <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
       </tr>
     </thead>
     <tbody>
@@ -27,13 +27,13 @@
         <td>transport.coap.psm_activity_timer</td>
         <td>COAP_PSM_ACTIVITY_TIMER</td>
         <td>10000</td>
-        <td></td>
+        <td>Default PSM Activity Timer if not specified in device profile.</td>
     </tr>
     <tr>
         <td>transport.coap.paging_transmission_window</td>
         <td>COAP_PAGING_TRANSMISSION_WINDOW</td>
         <td>10000</td>
-        <td></td>
+        <td>Default Paging Transmission Window for eDRX support if not specified in the device profile.</td>
     </tr>
     <tr>
         <td>transport.coap.dtls.enabled</td>
@@ -113,19 +113,19 @@
         <td>transport.coap.dtls.x509.skip_validity_check_for_client_cert</td>
         <td>TB_COAP_X509_DTLS_SKIP_VALIDITY_CHECK_FOR_CLIENT_CERT</td>
         <td>false</td>
-        <td></td>
+        <td>Skip check of client certificate validity.</td>
     </tr>
     <tr>
         <td>transport.coap.dtls.x509.dtls_session_inactivity_timeout</td>
         <td>TB_COAP_X509_DTLS_SESSION_INACTIVITY_TIMEOUT</td>
         <td>86400000</td>
-        <td></td>
+        <td>Inactivity timeout of DTLS session. Used to cleanup cache.</td>
     </tr>
     <tr>
         <td>transport.coap.dtls.x509.dtls_session_report_timeout</td>
         <td>TB_COAP_X509_DTLS_SESSION_REPORT_TIMEOUT</td>
         <td>1800000</td>
-        <td></td>
+        <td>Interval of periodic eviction of the timed-out DTLS sessions.</td>
     </tr>
     </tbody>
 </table>

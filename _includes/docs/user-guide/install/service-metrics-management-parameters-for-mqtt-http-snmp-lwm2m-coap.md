@@ -3,7 +3,7 @@
 <table>
     <thead>
         <tr>
-            <td><b>Parameter</b></td><td><b>Environment Variable</b></td><td><b>Default Value</b></td><td><b>Description</b></td>
+            <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
         </tr>
     </thead>
     <tbody>
@@ -33,7 +33,7 @@
 <table>
     <thead>
         <tr>
-            <td><b>Parameter</b></td><td><b>Environment Variable</b></td><td><b>Default Value</b></td><td><b>Description</b></td>
+            <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
         </tr>
     </thead>
     <tbody>
@@ -51,7 +51,7 @@
 <table>
     <thead>
         <tr>
-            <td><b>Parameter</b></td><td><b>Environment Variable</b></td><td><b>Default Value</b></td><td><b>Description</b></td>
+            <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
         </tr>
     </thead>
     <tbody>

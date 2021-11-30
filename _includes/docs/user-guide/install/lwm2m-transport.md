@@ -1,7 +1,7 @@
 <table>
     <thead>
       <tr>
-          <td><b>Parameter</b></td><td><b>Environment Variable</b></td><td><b>Default Value</b></td><td><b>Description</b></td>
+          <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
       </tr>
     </thead>
     <tbody>
@@ -9,40 +9,31 @@
         <td>transport.lwm2m.server.id</td>
         <td>LWM2M_SERVER_ID</td>
         <td>123</td>
-        <td>This is:<br>
-            * Default value in Lwm2mClient after start in mode Bootstrap for the object: name "LWM2M Security" field:
-            "Short Server ID" (deviceProfile: Bootstrap.LWM2M SERVER.Short ID)<br>
-            * Default value for the object: name "LwM2M Server" field: "Short Server ID" (deviceProfile:
-            Bootstrap.SERVERS.Short ID)
-        </td>
+        <td>LwM2M Server ID</td>
     </tr>
     <tr>
         <td>transport.lwm2m.server.bind_address</td>
         <td>LWM2M_BIND_ADDRESS</td>
         <td>0.0.0.0</td>
-        <td>This is:<br>
-            * Hostname for unsecured LwM2M(CoAP) Server<br>
-            * Default Hostname in Lwm2mClient after start in mode Bootstrap for the object: name "LWM2M Security" field:
-            "LWM2M Server URI" (deviceProfile: Bootstrap.LWM2M SERVER.Host)
-        </td>
+        <td>LwM2M server bind address. Bind to all interfaces by default.</td>
     </tr>
     <tr>
         <td>transport.lwm2m.server.bind_port</td>
         <td>LWM2M_BIND_PORT</td>
         <td>5685</td>
-        <td></td>
+        <td>LwM2M server bind port.</td>
     </tr>
     <tr>
         <td>transport.lwm2m.server.security.bind_address</td>
         <td>LWM2M_SECURITY_BIND_ADDRESS</td>
         <td>0.0.0.0</td>
-        <td></td>
+        <td>LwM2M server bind address for DTLS. Bind to all interfaces by default.</td>
     </tr>
     <tr>
         <td>transport.lwm2m.server.security.bind_port</td>
         <td>LWM2M_SECURITY_BIND_PORT</td>
         <td>5686</td>
-        <td></td>
+        <td>LwM2M server bind port for DTLS.</td>
     </tr>
     <tr>
         <td>transport.lwm2m.server.security.credentials.enabled</td>
@@ -131,25 +122,25 @@
         <td>transport.lwm2m.bootstrap.bind_address</td>
         <td>LWM2M_BS_BIND_ADDRESS</td>
         <td>0.0.0.0</td>
-        <td></td>
+        <td>LwM2M bootstrap server bind address. Bind to all interfaces by default.</td>
     </tr>
     <tr>
         <td>transport.lwm2m.bootstrap.bind_port</td>
         <td>LWM2M_BS_BIND_PORT</td>
         <td>5687</td>
-        <td></td>
+        <td>LwM2M bootstrap server bind port</td>
     </tr>
     <tr>
         <td>transport.lwm2m.bootstrap.security.bind_address</td>
         <td>LWM2M_BS_SECURITY_BIND_ADDRESS</td>
         <td>0.0.0.0</td>
-        <td></td>
+        <td>LwM2M bootstrap server bind address for DTLS. Bind to all interfaces by default.</td>
     </tr>
     <tr>
         <td>transport.lwm2m.bootstrap.security.bind_port</td>
         <td>LWM2M_BS_SECURITY_BIND_PORT</td>
         <td>5688</td>
-        <td></td>
+        <td>LwM2M bootstrap server bind port for DTLS.</td>
     </tr>
     <tr>
         <td>transport.lwm2m.bootstrap.security.credentials.enabled</td>
@@ -274,37 +265,31 @@
         <td>transport.lwm2m.timeout</td>
         <td>LWM2M_TIMEOUT</td>
         <td>120000</td>
-        <td></td>
+        <td>Timeout of LwM2M operation</td>
     </tr>
     <tr>
         <td>transport.lwm2m.uplink_pool_size</td>
         <td>LWM2M_UPLINK_POOL_SIZE</td>
         <td>10</td>
-        <td></td>
+        <td>Thread pool size for processing of the LwM2M uplinks</td>
     </tr>
     <tr>
         <td>transport.lwm2m.downlink_pool_size</td>
         <td>LWM2M_DOWNLINK_POOL_SIZE</td>
         <td>10</td>
-        <td></td>
+        <td>Thread pool size for processing of the LwM2M downlinks</td>
     </tr>
     <tr>
         <td>transport.lwm2m.ota_pool_size</td>
         <td>LWM2M_OTA_POOL_SIZE</td>
         <td>10</td>
-        <td></td>
+        <td>Thread pool size for processing of the OTA updates</td>
     </tr>
     <tr>
         <td>transport.lwm2m.clean_period_in_sec</td>
         <td>LWM2M_CLEAN_PERIOD_IN_SEC</td>
         <td>2</td>
-        <td></td>
-    </tr>
-    <tr>
-        <td>transport.lwm2m.log_max_length</td>
-        <td>LWM2M_LOG_MAX_LENGTH</td>
-        <td>1024</td>
-        <td></td>
+        <td>Period of cleanup for the registrations in store</td>
     </tr>
     <tr>
         <td>transport.lwm2m.redis.enabled</td>

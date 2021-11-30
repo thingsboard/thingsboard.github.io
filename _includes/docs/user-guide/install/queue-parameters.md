@@ -1,7 +1,7 @@
 <table>
     <thead>
       <tr>
-          <td><b>Parameter</b></td><td><b>Environment Variable</b></td><td><b>Default Value</b></td><td><b>Description</b></td>
+          <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
       </tr>
     </thead>
     <tbody>
@@ -15,127 +15,127 @@
             <td>queue.kafka.bootstrap.servers</td>
             <td>TB_KAFKA_SERVERS</td>
             <td>localhost:9092</td>
-            <td></td>
+            <td>Kafka Bootstrap servers list as a connection string for kafka client</td>
         </tr>
         <tr>
             <td>queue.kafka.acks</td>
             <td>TB_KAFKA_ACKS</td>
             <td>all</td>
-            <td></td>
+            <td>General Kafka client setting</td>
         </tr>
         <tr>
             <td>queue.kafka.retries</td>
             <td>TB_KAFKA_RETRIES</td>
             <td>1</td>
-            <td></td>
+            <td>General Kafka client setting</td>
         </tr>
         <tr>
             <td>queue.kafka.compression</td>
             <td>TB_KAFKA_COMPRESSION_TYPE</td>
             <td>none</td>
-            <td>none or gzip</td>
+            <td>Compression of the Kafka messages: none or gzip</td>
         </tr>
         <tr>
             <td>queue.kafka.batch.size</td>
             <td>TB_KAFKA_BATCH_SIZE</td>
             <td>16384</td>
-            <td></td>
+            <td>General Kafka client setting</td>
         </tr>
         <tr>
             <td>queue.kafka.linger.ms</td>
             <td>TB_KAFKA_LINGER_MS</td>
             <td>1</td>
-            <td></td>
+            <td>General Kafka client setting</td>
         </tr>
         <tr>
             <td>queue.kafka.max.request.size</td>
             <td>TB_KAFKA_MAX_REQUEST_SIZE</td>
             <td>1048576</td>
-            <td></td>
+            <td>General Kafka client setting</td>
         </tr>
         <tr>
             <td>queue.kafka.max.in.flight.requests.per.connection</td>
             <td>TB_KAFKA_MAX_IN_FLIGHT_REQUESTS_PER_CONNECTION</td>
             <td>5</td>
-            <td></td>
+            <td>General Kafka client setting</td>
         </tr>
         <tr>
             <td>queue.kafka.buffer.memory</td>
             <td>TB_BUFFER_MEMORY</td>
             <td>33554432</td>
-            <td></td>
+            <td>General Kafka client setting</td>
         </tr>
         <tr>
             <td>queue.kafka.replication_factor</td>
             <td>TB_QUEUE_KAFKA_REPLICATION_FACTOR</td>
             <td>1</td>
-            <td></td>
+            <td>General Kafka client setting</td>
         </tr>
         <tr>
             <td>queue.kafka.max_poll_interval_ms</td>
             <td>TB_QUEUE_KAFKA_MAX_POLL_INTERVAL_MS</td>
             <td>300000</td>
-            <td></td>
+            <td>General Kafka client setting</td>
         </tr>
         <tr>
             <td>queue.kafka.max_poll_records</td>
             <td>TB_QUEUE_KAFKA_MAX_POLL_RECORDS</td>
             <td>8192</td>
-            <td></td>
+            <td>General Kafka client setting</td>
         </tr>
         <tr>
             <td>queue.kafka.max_partition_fetch_bytes</td>
             <td>TB_QUEUE_KAFKA_MAX_PARTITION_FETCH_BYTES</td>
             <td>16777216</td>
-            <td></td>
+            <td>General Kafka client setting</td>
         </tr>
         <tr>
             <td>queue.kafka.fetch_max_bytes</td>
             <td>TB_QUEUE_KAFKA_FETCH_MAX_BYTES</td>
             <td>134217728</td>
-            <td></td>
+            <td>General Kafka client setting</td>
         </tr>
         <tr>
             <td>queue.kafka.use_confluent_cloud</td>
             <td>TB_QUEUE_KAFKA_USE_CONFLUENT_CLOUD</td>
             <td>false</td>
-            <td></td>
+            <td>Enable to connect to Confluent Cloud.</td>
         </tr>
         <tr>
             <td>queue.kafka.confluent.ssl.algorithm</td>
             <td>TB_QUEUE_KAFKA_CONFLUENT_SSL_ALGORITHM</td>
             <td>https</td>
-            <td></td>
+            <td>Confluent Cloud connection settings</td>
         </tr>
         <tr>
             <td>queue.kafka.confluent.sasl.mechanism</td>
             <td>TB_QUEUE_KAFKA_CONFLUENT_SASL_MECHANISM</td>
             <td>PLAIN</td>
-            <td></td>
+            <td>Confluent Cloud connection settings</td>
         </tr>
         <tr>
             <td>queue.kafka.confluent.sasl.config</td>
             <td>TB_QUEUE_KAFKA_CONFLUENT_SASL_JAAS_CONFIG</td>
-            <td>org.apache.kafka.common.security.plain.PlainLoginModule required username=\"CLUSTER_API_KEY\" password=\"CLUSTER_API_SECRET\";</td>
             <td></td>
+            <td>Confluent Cloud connection settings</td>
         </tr>
         <tr>
             <td>queue.kafka.confluent.security.protocol</td>
             <td>TB_QUEUE_KAFKA_CONFLUENT_SECURITY_PROTOCOL</td>
             <td>SASL_SSL</td>
-            <td></td>
+            <td>Confluent Cloud connection settings</td>
         </tr>
         <tr>
             <td>queue.kafka.consumer-properties-per-topic.tb_ota_package.key</td>
             <td></td>
             <td>max.poll.records</td>
-            <td></td>
+            <td>Example of specific consumer properties key per topic</td>
         </tr>
         <tr>
             <td>queue.kafka.consumer-properties-per-topic.tb_ota_package.value</td>
             <td>TB_QUEUE_KAFKA_OTA_MAX_POLL_RECORDS</td>
             <td>10</td>
-            <td></td>
+            <td>Example of specific consumer properties value per topic</td>
         </tr>
         <tr>
             <td>queue.kafka.other.key</td>
@@ -189,13 +189,13 @@
             <td>queue.kafka.topic-properties.js-executor</td>
             <td>TB_QUEUE_KAFKA_JE_TOPIC_PROPERTIES</td>
             <td>retention.ms:604800000;segment.bytes:26214400;retention.bytes:104857600;partitions:100;min.insync.replicas:1</td>
-            <td>Kafka properties for Js Executor topics</td>
+            <td>Kafka properties for JS Executor topics</td>
         </tr>
         <tr>
             <td>queue.kafka.topic-properties.ota-updates</td>
             <td>TB_QUEUE_KAFKA_OTA_TOPIC_PROPERTIES</td>
             <td>retention.ms:604800000;segment.bytes:26214400;retention.bytes:1048576000;partitions:10;min.insync.replicas:1</td>
-            <td></td>
+            <td>Kafka properties for OTA updates topic</td>
         </tr>
         <tr>
             <td>queue.kafka.consumer-stats.enabled</td>
@@ -219,7 +219,7 @@
             <td>queue.aws_sqs.use_default_credential_provider_chain</td>
             <td>TB_QUEUE_AWS_SQS_USE_DEFAULT_CREDENTIAL_PROVIDER_CHAIN</td>
             <td>false</td>
-            <td></td>
+            <td>Use default credentials provider for AWS SQS</td>
         </tr>
         <tr>
             <td>queue.aws_sqs.access_key_id</td>
@@ -537,25 +537,25 @@
             <td>queue.core.ota.topic</td>
             <td>TB_QUEUE_CORE_OTA_TOPIC</td>
             <td>tb_ota_package</td>
-            <td></td>
+            <td>The topic for queue of OTA updates</td>
         </tr>
         <tr>
             <td>queue.core.ota.pack-interval-ms</td>
             <td>TB_QUEUE_CORE_OTA_PACK_INTERVAL_MS</td>
             <td>60000</td>
-            <td></td>
+            <td>The interval of processing the OTA updates for devices. Used to avoid any harm to network due to many parallel OTA updates</td>
         </tr>
         <tr>
             <td>queue.core.ota.pack-size</td>
             <td>TB_QUEUE_CORE_OTA_PACK_SIZE</td>
             <td>100</td>
-            <td></td>
+            <td>The size of OTA updates notifications fetched from the queue. The queue stores pairs of firmware and device ids.</td>
         </tr>
         <tr>
             <td>queue.core.usage-stats-topic</td>
             <td>TB_QUEUE_US_TOPIC</td>
             <td>tb_usage_stats</td>
-            <td></td>
+            <td>The parameter to store usage statistics</td>
         </tr>
         <tr>
             <td>queue.core.stats.enabled</td>
@@ -663,7 +663,7 @@
             <td>queue.rule-engine.queues.consumer-per-partition</td>
             <td>TB_QUEUE_RE_MAIN_CONSUMER_PER_PARTITION</td>
             <td>true</td>
-            <td></td>
+            <td>Run separate Rule Engine consumer per each partition. Helps to isolate processing of partitions.</td>
         </tr>
         <tr>
             <td>queue.rule-engine.queues.pack-processing-timeout</td>
@@ -741,7 +741,7 @@
             <td>queue.rule-engine.queues.consumer-per-partition</td>
             <td>TB_QUEUE_RE_HP_CONSUMER_PER_PARTITION</td>
             <td>true</td>
-            <td></td>
+            <td>Run separate Rule Engine consumer per each partition. Helps to isolate processing of partitions.</td>
         </tr>
         <tr>
             <td>queue.rule-engine.queues.pack-processing-timeout</td>
@@ -819,7 +819,7 @@
             <td>queue.rule-engine.queues.consumer-per-partition</td>
             <td>TB_QUEUE_RE_SQ_CONSUMER_PER_PARTITION</td>
             <td>true</td>
-            <td></td>
+            <td>Run separate Rule Engine consumer per each partition. Helps to isolate processing of partitions.</td>
         </tr>
         <tr>
             <td>queue.rule-engine.queues.pack-processing-timeout</td>
