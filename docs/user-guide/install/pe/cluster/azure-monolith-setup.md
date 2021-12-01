@@ -2,15 +2,15 @@
 layout: docwithnav-pe
 assignees:
 - amykolaichuk
-title: Microservices setup using AKS infrastructure
-description: ThingsBoard IoT platform microservices setup with Kubernetes in Azure AKS 
+title: Monolith setup using AKS infrastructure
+description: ThingsBoard IoT platform monolith setup with Kubernetes in Azure AKS 
 
 ---
 
 * TOC
 {:toc}
 
-This guide will help you to setup ThingsBoard in microservices mode in Azure AKS.
+This guide will help you to setup ThingsBoard in monolith mode in Azure AKS.
 
 ## Prerequisites
 
@@ -35,6 +35,7 @@ cd thingsboard-pe-k8s/azure/monolith
 
 ## Step 3. Configure and create AKS cluster
 
+{% assign nodeCount = "1" %}
 {% include templates/install/azure/aks-create-cluster.md %}
 
 ## Step 4 Update the context of kubectl

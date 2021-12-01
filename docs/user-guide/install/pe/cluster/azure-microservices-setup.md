@@ -34,6 +34,7 @@ cd thingsboard-pe-k8s/azure/microservices
 
 ## Step 3. Configure and create AKS cluster
 
+{% assign nodeCount = "3" %}
 {% include templates/install/azure/aks-create-cluster.md %}
 
 ## Step 4 Update the context of kubectl
