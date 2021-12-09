@@ -41,9 +41,10 @@ Then, connector will subscribe to a list of topics using topic filters from mapp
     "name":"Default Local Broker",
     "host":"192.168.1.100",
     "port":1883,
+    "clientId": "ThingsBoard_gateway",
     "security": {
       "type": "basic",
-      "username": "user",
+      "username": "username",
       "password": "password"
     }
   },
@@ -60,6 +61,11 @@ Then, connector will subscribe to a list of topics using topic filters from mapp
             "type": "string",
             "key": "model",
             "value": "${sensorModel}"
+          }
+          {
+            "type": "string",
+            "key": "${sensorModel}",
+            "value": "on"
           }
         ],
         "timeseries": [
@@ -119,29 +125,29 @@ Then, connector will subscribe to a list of topics using topic filters from mapp
   ],
   "connectRequests": [
     {
-      "topicFilter": "sensor/connect",
-      "deviceNameJsonExpression": "${SerialNumber}"
+      "topicFilter": "/sensor/connect",
+      "deviceNameJsonExpression": "${serialNumber}"
     },
     {
-      "topicFilter": "sensor/+/connect",
+      "topicFilter": "/sensor/+/connect",
       "deviceNameTopicExpression": "(?<=sensor\/)(.*?)(?=\/connect)"
     }
   ],
   "disconnectRequests": [
     {
-      "topicFilter": "sensor/disconnect",
-      "deviceNameJsonExpression": "${SerialNumber}"
+      "topicFilter": "/sensor/disconnect",
+      "deviceNameJsonExpression": "${serialNumber}"
     },
     {
-      "topicFilter": "sensor/+/disconnect",
+      "topicFilter": "/sensor/+/disconnect",
       "deviceNameTopicExpression": "(?<=sensor\/)(.*?)(?=\/disconnect)"
     }
   ],
   "attributeUpdates": [
     {
-      "deviceNameFilter": "SmartMeter.*",
-      "attributeFilter": "uploadFrequency",
-      "topicExpression": "sensor/${deviceName}/${attributeKey}",
+      "deviceNameFilter": ".*",
+      "attributeFilter": ".*",
+      "topicExpression": "/sensor/${deviceName}/${attributeKey}",
       "valueExpression": "{\"${attributeKey}\":\"${attributeValue}\"}"
     }
   ],
@@ -149,15 +155,15 @@ Then, connector will subscribe to a list of topics using topic filters from mapp
     {
       "deviceNameFilter": ".*",
       "methodFilter": "echo",
-      "requestTopicExpression": "sensor/${deviceName}/request/${methodName}/${requestId}",
-      "responseTopicExpression": "sensor/${deviceName}/response/${methodName}/${requestId}",
+      "requestTopicExpression": "/sensor/${deviceName}/request/${methodName}/${requestId}",
+      "responseTopicExpression": "/sensor/${deviceName}/response/${methodName}/${requestId}",
       "responseTimeout": 10000,
       "valueExpression": "${params}"
     },
     {
       "deviceNameFilter": ".*",
       "methodFilter": "no-reply",
-      "requestTopicExpression": "sensor/${deviceName}/request/${methodName}/${requestId}",
+      "requestTopicExpression": "/sensor/${deviceName}/request/${methodName}/${requestId}",
       "valueExpression": "${params}"
     }
   ]
@@ -172,11 +178,12 @@ Then, connector will subscribe to a list of topics using topic filters from mapp
 
 ### Section "broker"
 
-| **Parameter** | **Default value**              | **Description**                                        |
+| **Parameter** | **Default value**              | **Description**                                            |
 |:-|:-|-
-| name          | **Default Broker**             | Broker name for logs and saving to persistent devices. |
-| host          | **localhost**                  | Mqtt broker hostname or ip address.                    |
-| port          | **1883**                       | Mqtt port on the broker.                               |
+| name          | **Default Local Broker**       | Broker name for logs and saving to persistent devices.     |
+| host          | **localhost**                  | Mqtt broker hostname or ip address.                        |
+| port          | **1883**                       | Mqtt port on the broker.                                   |
+| clientId      | **ThingsBoard_gateway**        | This is the client ID. It must be unique for each session. |
 |---
 
 #### Subsection "security"
@@ -204,11 +211,46 @@ The **topicFilter** supports special symbols: '#' and '+' to allow to subscribe 
 
 Let's assume we would like to subscribe and process following data from Thermometer devices:
 
-|**Example Name**|**Topic**|**Topic Filter**|**Payload**|**Comments**|
-|:-|:-|:-|-
-| Example 1 | /sensor/data | /sensor/data | {"serialNumber": "SN-001", "sensorType": "Thermometer", "sensorModel": "T1000", "temp":  42, "hum": 58} | Device Name is part of the payload|
-| Example 2 | /sensor/SN-001/data | /sensor/+/data | { "sensorType": "Thermometer", "sensorModel": "T1000", "temp":  42, "hum": 58} | Device Name is part of the topic|
-|---
+<table>
+  <thead>
+    <tr>
+      <td style="width: 25%"><b>Example Name</b></td><td style="width: 25%"><b>Topic</b></td><td style="width: 25%"><b>Topic Filter</b></td><td style="width: 30%"><b>Payload</b></td><td style="width: 20%"><b>Comments</b></td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Example 1</td>
+      <td>/sensor/data</td>
+      <td>/sensor/data</td>
+      <td>{"serialNumber": "SN-001", "sensorType": "Thermometer", "sensorModel": "T1000", "temp":  42, "hum": 58}</td>
+      <td>Device Name is part of the payload</td>
+    </tr>
+    <tr>
+      <td>Example 2</td>
+      <td>/sensor/SN-001/data</td>
+      <td>/sensor/+/data</td>
+      <td>{"sensorType": "Thermometer", "sensorModel": "T1000", "temp":  42, "hum": 58}</td>
+      <td>Device Name is part of the topic</td>
+    </tr>
+  </tbody>
+</table>
+
+In this case following messages are valid:
+
+Example 1:
+
+```bash
+mosquitto_pub -h YOUR_MQTT_BROKER_HOST -p YOUR_MQTT_BROKER_PORT -t "/sensor/data" -m '{"serialNumber": "SN-001", "sensorType": "Thermometer", "sensorModel": "T1000", "temp": 42, "hum": 58}'
+```
+{: .copy-code}
+
+Example 2:
+
+```bash
+mosquitto_pub -h YOUR_MQTT_BROKER_HOST -p YOUR_MQTT_BROKER_PORT -t "/sensor/SN-001/data" -m '{"sensorType": "Thermometer", "sensorModel": "T1000", "temp": 42, "hum": 58}'
+```
+{: .copy-code}
+
 
 Now let's review how we can configure JSON converter to parse this data
 
@@ -232,6 +274,29 @@ Mapping process subscribes to the MQTT topics using **topicFilter** parameter of
 Each message that is published to this topic by other devices or applications is analyzed to extract device name, type and data (attributes and/or timeseries values).
 By default, gateway uses Json converter, but it is possible to provide custom converter. See examples in the source code.
 
+**Now let’s review an example of sending data from "SN-001" thermometer device.**
+
+Let’s assume MQTT broker is installed locally on your server.
+
+Use terminal to simulate sending message from the device to the MQTT broker:
+```bash
+mosquitto_pub -h 127.0.0.1 -p 1883 -t "/sensor/data" -m '{"serialNumber": "SN-001", "sensorType": "Thermometer", "sensorModel": "T1000", "temp": 42, "hum": 58}'
+```
+{: .copy-code}
+
+{:refdef: style="text-align: center;"}
+![image](/images/gateway/mqtt-message-1.png)
+{: refdef}
+
+The device will be created and displayed in ThingsBoard based on the passed parameters.
+{:refdef: style="text-align: center;"}
+![image](/images/gateway/mqtt-created-device-1.png)
+{: refdef}
+
+{:refdef: style="text-align: center;"}
+![image](/images/gateway/mqtt-created-device-2.png)
+{: refdef}
+
 ### Section "connectRequests"
 
 ThingsBoard allows sending RPC commands and notifications about device attribute updates to the device.
@@ -243,27 +308,27 @@ If your device just connects to MQTT broker and waits for commands/updates, you 
 
 | **Parameter**                 | **Default value**                     | **Description**                                                                                   |
 |:-|:-|-
-| topicFilter                   | **sensors/connect**                   | Topic address on the broker, where the broker sends information about new connected devices.      |
-| deviceNameJsonExpression      | **${SerialNumber}**                 | JSON-path expression, for looking the new device name.                                            |
+| topicFilter                   | **/sensor/connect**                   | Topic address on the broker, where the broker sends information about new connected devices.      |
+| deviceNameJsonExpression      | **${serialNumber}**                   | JSON-path expression, for looking the new device name.                                            |
 |---
 
 **2. Name in topic address:**
 
 | **Parameter**                 | **Default value**                     | **Description**                                                                                   |
 |:-|:-|-
-| topicFilter                   | **sensors/+/connect**                 | Topic address on the broker, where the broker sends information about new connected devices.      |
+| topicFilter                   | **/sensor/+/connect**                 | Topic address on the broker, where the broker sends information about new connected devices.      |
 | deviceNameTopicExpression     | **(?<=sensor\/)(.\*?)(?=\/connect)**  | Regular expression for looking the device name in topic path.                                     |
 |---
 
-This section in configuration looks like:  
+This section in configuration looks like:
 ```json
   "connectRequests": [
     {
-      "topicFilter": "sensors/connect",
-      "deviceNameJsonExpression": "${$.SerialNumber}"
+      "topicFilter": "/sensor/connect",
+      "deviceNameJsonExpression": "${serialNumber}"
     },
     {
-      "topicFilter": "sensor/+/connect",
+      "topicFilter": "/sensor/+/connect",
       "deviceNameTopicExpression": "(?<=sensor\/)(.*?)(?=\/connect)"
     }
   ]
@@ -272,10 +337,32 @@ This section in configuration looks like:
 In this case following messages are valid:
 
 ```bash
-mosquitto_pub -h YOUR_MQTT_BROKER_HOST -p YOUR_MQTT_BROKER_PORT -t "sensors/connect" -m '{"serialNumber":"SN-001"}'
-mosquitto_pub -h YOUR_MQTT_BROKER_HOST -p YOUR_MQTT_BROKER_PORT -t "sensor/SN-001/connect" -m ''
+mosquitto_pub -h YOUR_MQTT_BROKER_HOST -p YOUR_MQTT_BROKER_PORT -t "/sensor/connect" -m '{"serialNumber":"SN-001"}'
 ```
+{: .copy-code}
+```bash
+mosquitto_pub -h YOUR_MQTT_BROKER_HOST -p YOUR_MQTT_BROKER_PORT -t "/sensor/SN-001/connect" -m ''
+```
+{: .copy-code}
 
+**Now let’s review an example.**
+
+Use a terminal to simulate sending a message from the device to the MQTT broker:
+
+```bash
+mosquitto_pub -h 127.0.0.1 -p 1883 -t "/sensor/connect" -m '{"serialNumber": "SN-001"}'
+```
+{: .copy-code}
+
+{:refdef: style="text-align: center;"}
+![image](/images/gateway/mqtt-message-connect.png)
+{: refdef}
+
+Your ThingsBoard instance will get information from the broker about last connecting time of the device. You can see this information on the "Server attributes" scope ("Attributes" tab).
+
+{:refdef: style="text-align: center;"}
+![image](/images/gateway/mqtt-connect-device.png)
+{: refdef}
 
 ### Section "disconnectRequest"
 
@@ -287,15 +374,15 @@ If your device just disconnects from MQTT broker and waits for commands/updates,
 
 | **Parameter**                 | **Default value**                     | **Description**                                                                                   |
 |:-|:-|-
-| topicFilter                   | **sensors/disconnect**                | Topic address on the broker, where the broker sends information about disconnected devices.       |
-| deviceNameJsonExpression      | **${SerialNumber}**                 | JSON-path expression, for looking the new device name.                                            |
+| topicFilter                   | **/sensor/disconnect**                | Topic address on the broker, where the broker sends information about disconnected devices.       |
+| deviceNameJsonExpression      | **${serialNumber}**                   | JSON-path expression, for looking the new device name.                                            |
 |---
 
 **2. Name in topic address:**
 
 | **Parameter**                 | **Default value**                     | **Description**                                                                                   |
 |:-|:-|-
-| topicFilter                   | **sensors/+/disconnect**              | Topic address on the broker, where the broker sends information about disconnected devices.       |
+| topicFilter                   | **/sensor/+/disconnect**              | Topic address on the broker, where the broker sends information about disconnected devices.       |
 | deviceNameTopicExpression     | **(?<=sensor\/)(.\*?)(?=\/connect)**  | Regular expression for looking the device name in topic path.                                     |
 |---
 
@@ -304,11 +391,11 @@ This section in configuration file looks like:
 ```json
   "disconnectRequests": [
     {
-      "topicFilter": "sensors/disconnect",
-      "deviceNameJsonExpression": "${SerialNumber}"
+      "topicFilter": "/sensor/disconnect",
+      "deviceNameJsonExpression": "${serialNumber}"
     },
     {
-      "topicFilter": "sensor/+/disconnect",
+      "topicFilter": "/sensor/+/disconnect",
       "deviceNameTopicExpression": "(?<=sensor\/)(.*?)(?=\/disconnect)"
     }
   ]
@@ -317,9 +404,32 @@ This section in configuration file looks like:
 In this case following messages are valid:
 
 ```bash
-mosquitto_pub -h YOUR_MQTT_BROKER_HOST -p YOUR_MQTT_BROKER_PORT -t "sensors/disconnect" -m '{"serialNumber":"SN-001"}'
-mosquitto_pub -h YOUR_MQTT_BROKER_HOST -p YOUR_MQTT_BROKER_PORT -t "sensor/SN-001/disconnect" -m ''
+mosquitto_pub -h YOUR_MQTT_BROKER_HOST -p YOUR_MQTT_BROKER_PORT -t "/sensor/disconnect" -m '{"serialNumber":"SN-001"}'
 ```
+{: .copy-code}
+```bash
+mosquitto_pub -h YOUR_MQTT_BROKER_HOST -p YOUR_MQTT_BROKER_PORT -t "/sensor/SN-001/disconnect" -m ''
+```
+{: .copy-code}
+
+**Now let’s review an example.** 
+
+Use a terminal to simulate sending a message from the device to MQTT broker:
+
+```bash
+mosquitto_pub -h 127.0.0.1 -p 1883 -t "/sensor/disconnect" -m '{"serialNumber": "SN-001"}'
+```
+{: .copy-code}
+
+{:refdef: style="text-align: center;"}
+![image](/images/gateway/mqtt-message-disconnect.png)
+{: refdef}
+
+Your ThingsBoard instance will get information from the broker about last disconnecting time of the device. You can see this information on the "Server attributes" scope ("Attributes" tab).
+
+{:refdef: style="text-align: center;"}
+![image](/images/gateway/mqtt-disconnect-device.png)
+{: refdef}
 
 ### Section "attributeUpdates"
 
@@ -332,9 +442,9 @@ The "**attributeRequests**" configuration allows configuring the format of the c
 
 | **Parameter**                 | **Default value**                                     | **Description**                                                                                    |
 |:-|:-|-
-| deviceNameFilter              | **SmartMeter.\***                                     | Regular expression device name filter, uses to determine, which function to execute.               |
-| attributeFilter               | **uploadFrequency**                                   | Regular expression attribute name filter, uses to determine, which function to execute.            |
-| topicExpression               | **sensor/${deviceName}/${attributeKey}**              | JSON-path expression uses for creating topic address to send a message.                            |
+| deviceNameFilter              | **.\***                                               | Regular expression device name filter, uses to determine, which function to execute.               |
+| attributeFilter               | **.\***                                               | Regular expression attribute name filter, uses to determine, which function to execute.            |
+| topicExpression               | **/sensor/${deviceName}/${attributeKey}**             | JSON-path expression uses for creating topic address to send a message.                            |
 | valueExpression               | **{\\"${attributeKey}\\":\\"${attributeValue}\\"}**   | JSON-path expression uses for creating the message data that will send to topic.                   |
 |---
 
@@ -344,15 +454,52 @@ This section in configuration file looks like:
 ```json
   "attributeUpdates": [
     {
-      "deviceNameFilter": "SmartMeter.*",
-      "attributeFilter": "uploadFrequency",
-      "topicExpression": "sensor/${deviceName}/${attributeKey}",
+      "deviceNameFilter": ".*",
+      "attributeFilter": ".*",
+      "topicExpression": "/sensor/${deviceName}/${attributeKey}",
       "valueExpression": "{\"${attributeKey}\":\"${attributeValue}\"}"
     }
   ]
 ```
 
-##### Server side RPC commands
+**Let's look at an example.**
+
+Run the command below. You will start the *mosquitto_sub* client that subscribes to the topic “/sensor/SN-001/FirmwareVersion” of the local broker and start waiting for new messages from ThingsBoard server to broker.
+
+```bash
+mosquitto_sub -t /sensor/SN-001/FirmwareVersion
+```
+{: .copy-code}
+
+{:refdef: style="text-align: center;"}
+![image](/images/gateway/mqtt-mosquitto-sub-wait-1.png)
+{: refdef}
+
+Update device attribute value on the ThingsBoard server. Open Devices -> click by your device -> Attributes tab -> Shared attributes scope and click on the "pencil" button next to *"FirmwareVersion"* attribute.
+
+{:refdef: style="text-align: center;"}
+![image](/images/gateway/mqtt-update-attribute-1.png)
+{: refdef}
+
+Change firmware version value from "1.1" to "1.2". Then click "Update" button.
+
+{:refdef: style="text-align: center;"}
+![image](/images/gateway/mqtt-update-attribute-2.png)
+{: refdef}
+
+The firmware version has been updated to "1.2".
+
+{:refdef: style="text-align: center;"}
+![image](/images/gateway/mqtt-update-attribute-3.png)
+{: refdef}
+
+Broker received new message from the ThingsBoard server about updating attribute "FirmwareVersion" to "1.2".
+
+{:refdef: style="text-align: center;"}
+![image](/images/gateway/mqtt-mosquitto-sub-get-1.png)
+{: refdef}
+
+#### Server side RPC commands
 
 ThingsBoard allows sending [RPC commands](/docs/user-guide/rpc/) to the device that is connected to ThingsBoard directly or via Gateway.
  
@@ -360,10 +507,10 @@ Configuration, provided in this section uses for sending RPC requests from Thing
 
 | **Parameter**                 | **Default value**                                                 | **Description**                                                                                                           |
 |:-|:-|-
-| deviceNameFilter              | **SmartMeter.\***                                                 | Regular expression device name filter, uses to determine, which function to execute.                                      |
+| deviceNameFilter              | **.\***                                                           | Regular expression device name filter, uses to determine, which function to execute.                                      |
 | methodFilter                  | **echo**                                                          | Regular expression method name filter, uses to determine, which function to execute.                                      |
-| requestTopicExpression        | **sensor/${deviceName}/request/${methodName}/${requestId}**       | JSON-path expression, uses for creating topic address to send RPC request.                                                |
-| responseTopicExpression       | **sensor/${deviceName}/response/${methodName}/${requestId}**      | JSON-path expression, uses for creating topic address to subscribe for response message.                                  |
+| requestTopicExpression        | **/sensor/${deviceName}/request/${methodName}/${requestId}**      | JSON-path expression, uses for creating topic address to send RPC request.                                                |
+| responseTopicExpression       | **/sensor/${deviceName}/response/${methodName}/${requestId}**     | JSON-path expression, uses for creating topic address to subscribe for response message.                                  |
 | responseTimeout               | **10000**                                                         | Value in milliseconds, if no response in this period after sending request, gateway will unsubscribe from response topic. |
 | valueExpression               | **${params}**                                                     | JSON-path expression, uses for creating data for sending to broker.                                                       |
 |---
@@ -382,15 +529,15 @@ This section in configuration file looks like:
     {
       "deviceNameFilter": ".*",
       "methodFilter": "echo",
-      "requestTopicExpression": "sensor/${deviceName}/request/${methodName}/${requestId}",
-      "responseTopicExpression": "sensor/${deviceName}/response/${methodName}/${requestId}",
+      "requestTopicExpression": "/sensor/${deviceName}/request/${methodName}/${requestId}",
+      "responseTopicExpression": "/sensor/${deviceName}/response/${methodName}/${requestId}",
       "responseTimeout": 10000,
       "valueExpression": "${params}"
     },
     {
       "deviceNameFilter": ".*",
       "methodFilter": "no-reply",
-      "requestTopicExpression": "sensor/${deviceName}/request/${methodName}/${requestId}",
+      "requestTopicExpression": "/sensor/${deviceName}/request/${methodName}/${requestId}",
       "valueExpression": "${params}"
     }
   ]
