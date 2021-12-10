@@ -153,7 +153,7 @@ Then, connector will subscribe to a list of topics using topic filters from mapp
   ],
   "serverSideRpc": [
     {
-      "deviceNameFilter": ".*",
+      "deviceNameFilter": "SN.*",
       "methodFilter": "echo",
       "requestTopicExpression": "/sensor/${deviceName}/request/${methodName}/${requestId}",
       "responseTopicExpression": "/sensor/${deviceName}/response/${methodName}/${requestId}",
@@ -505,14 +505,14 @@ ThingsBoard allows sending [RPC commands](/docs/user-guide/rpc/) to the device t
  
 Configuration, provided in this section uses for sending RPC requests from ThingsBoard to device.
 
-| **Parameter**                 | **Default value**                                                 | **Description**                                                                                                           |
+| **Parameter**                 | **Default value**                                                 | **Description**                                                                                                                                                                  |
 |:-|:-|-
-| deviceNameFilter              | **.\***                                                           | Regular expression device name filter, uses to determine, which function to execute.                                      |
-| methodFilter                  | **echo**                                                          | Regular expression method name filter, uses to determine, which function to execute.                                      |
-| requestTopicExpression        | **/sensor/${deviceName}/request/${methodName}/${requestId}**      | JSON-path expression, uses for creating topic address to send RPC request.                                                |
-| responseTopicExpression       | **/sensor/${deviceName}/response/${methodName}/${requestId}**     | JSON-path expression, uses for creating topic address to subscribe for response message.                                  |
-| responseTimeout               | **10000**                                                         | Value in milliseconds, if no response in this period after sending request, gateway will unsubscribe from response topic. |
-| valueExpression               | **${params}**                                                     | JSON-path expression, uses for creating data for sending to broker.                                                       |
+| deviceNameFilter              | **SN.\***                                                         | Regular expression device name filter, uses to determine, which function to execute. In the example configuration, we are using a filter for device name that starts with “SN”.  |
+| methodFilter                  | **echo**                                                          | Regular expression method name filter, uses to determine, which function to execute.                                                                                             |
+| requestTopicExpression        | **/sensor/${deviceName}/request/${methodName}/${requestId}**      | JSON-path expression, uses for creating topic address to send RPC request.                                                                                                       |
+| responseTopicExpression       | **/sensor/${deviceName}/response/${methodName}/${requestId}**     | JSON-path expression, uses for creating topic address to subscribe for response message.                                                                                         |
+| responseTimeout               | **10000**                                                         | Value in milliseconds, if no response in this period after sending request, gateway will unsubscribe from response topic.                                                        |
+| valueExpression               | **${params}**                                                     | JSON-path expression, uses for creating data for sending to broker.                                                                                                              |
 |---
 
 {% capture methodFilterOptions %}
@@ -527,7 +527,7 @@ This section in configuration file looks like:
 ```json
   "serverSideRpc": [
     {
-      "deviceNameFilter": ".*",
+      "deviceNameFilter": "SN.*",
       "methodFilter": "echo",
       "requestTopicExpression": "/sensor/${deviceName}/request/${methodName}/${requestId}",
       "responseTopicExpression": "/sensor/${deviceName}/response/${methodName}/${requestId}",
