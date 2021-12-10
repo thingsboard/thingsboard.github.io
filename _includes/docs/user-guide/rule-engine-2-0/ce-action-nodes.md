@@ -15,7 +15,7 @@ Action Nodes execute various actions based on incoming Message.
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/action-create-alarm.png)
 
-This Node tries to load latest Alarm with configured **Alarm Type** for Message Originator.
+This Node tries to load the latest Alarm with configured **Alarm Type** for Message Originator.
 If **Uncleared** Alarm exist, then this Alarm will be updated, otherwise a new Alarm will be created.
 
 Node Configuration:
