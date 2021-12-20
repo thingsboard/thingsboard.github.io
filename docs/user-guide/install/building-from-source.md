@@ -11,7 +11,7 @@ description: Building ThingsBoard IoT platform from sources
 {:toc}
 
 This guide will help you to download and build ThingsBoard from sources. Instructions listed below are tested on Ubuntu 20.04 LTS
-and CentOS 7.1
+and CentOS 7/8
 
 #### Required tools
 
@@ -52,6 +52,8 @@ mvn clean install -DskipTests
 ```
 
 #### Build local docker images
+
+Make sure that [Docker](https://docs.docker.com/engine/install/) is installed.
 
 ```bash
 mvn clean install -DskipTests -Ddockerfile.skip=false
@@ -95,7 +97,7 @@ rm -rf ~/.m2/repository
 ```
 - clean gradle cache
 ```bash
-rm -r $HOME/.gradle/caches/
+rm -rf ~/.gradle/caches/
 ```
 - clean node modules
 ```bash
