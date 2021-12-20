@@ -94,6 +94,14 @@ If unsupported Originator type found, an error is thrown.
 
 If Originator does not have assigned Customer Entity **Failure** chain is used, otherwise **Success** chain.
 
+**Note:** Since TB Version 3.3.3 you can use `${metadataKey}` for value from metadata, `$[messageKey]` for value from the message body.
+
+**Example:**  You have metadata `{"country": "England"}`, where **"country"** is key and **"England"** is value.
+Also, you have attributes, which contain key is country and value is capital(`{"England": "London"}`).
+And you want to get capital for this country from attribute and add this to metadata with the key which name is **"city"**.
+So you can use `${country}` which gets value from metadata for key **"country"** and attaches to metadata with key **"city"**.
+Result is `{"city": "London"}`.
+
 You can see the real life example, where this node is used, in the next tutorial:
 
 - [Send Email](/docs/user-guide/rule-engine-2-0/tutorials/send-email/)
@@ -242,6 +250,10 @@ Outbound Message Metadata will contain configured attributes if they exist.
 
 To access fetched attributes in other nodes you can use this template '<code>metadata.tempo</code>'
 
+**Note:** Since TB Version 3.3.3 you can use `${metadataKey}` for value from metadata, `$[messageKey]` for value from the message body.
+
+An example of this feature can see in the description for the **Customer attributes node**.
+
 You can see the real life example, where this node is used, in the next tutorial:
 
 - [Reply to RPC Calls](/docs/user-guide/rule-engine-2-0/tutorials/rpc-reply-tutorial/#add-related-attributes-node)
@@ -273,6 +285,10 @@ Following Message Originator types are allowed: **Tenant**, **Customer**, **User
 If unsupported Originator type found, an error is thrown.
 
 **Failure** chain is used if Originator does not have assigned Tenant Entity, otherwise - **Success** chain.
+
+**Note:** Since TB Version 3.3.3 you can use `${metadataKey}` for value from metadata, `$[messageKey]` for value from the message body.
+
+An example of this feature can see in the description for the **Customer attributes node**.
 
 ##### Originator telemetry
 
