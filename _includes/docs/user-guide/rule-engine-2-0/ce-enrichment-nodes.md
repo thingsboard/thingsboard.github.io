@@ -96,11 +96,13 @@ If Originator does not have assigned Customer Entity **Failure** chain is used, 
 
 **Note:** Since TB Version 3.3.3 you can use `${metadataKey}` for value from metadata, `$[messageKey]` for value from the message body.
 
-**Example:**  You have metadata `{"country": "England"}`, where **"country"** is key and **"England"** is value.
-Also, you have attributes, which contain key is country and value is capital(`{"England": "London"}`).
-And you want to get capital for this country from attribute and add this to metadata with the key which name is **"city"**.
-So you can use `${country}` which gets value from metadata for key **"country"** and attaches to metadata with key **"city"**.
-Result is `{"city": "London"}`.
+**Example:**  You have the following metadata `{"country": "England"}`.
+In addition, you have an attribute, which key is country name and value is capital city (`{"England": "London"}`).
+
+The aim is to get capital city from attribute for the country from metadata and add result to metadata with the key **"city"**.
+To achieve this you can use `${country}` as a **Source attribute** and the "city" as a **Target attribute**.
+
+Result would be `{"city": "London"}`.
 
 You can see the real life example, where this node is used, in the next tutorial:
 
@@ -252,7 +254,7 @@ To access fetched attributes in other nodes you can use this template '<code>met
 
 **Note:** Since TB Version 3.3.3 you can use `${metadataKey}` for value from metadata, `$[messageKey]` for value from the message body.
 
-An example of this feature can see in the description for the **Customer attributes node**.
+An example of this feature you can see in the description for the **Customer attributes node**.
 
 You can see the real life example, where this node is used, in the next tutorial:
 
@@ -288,7 +290,7 @@ If unsupported Originator type found, an error is thrown.
 
 **Note:** Since TB Version 3.3.3 you can use `${metadataKey}` for value from metadata, `$[messageKey]` for value from the message body.
 
-An example of this feature can see in the description for the **Customer attributes node**.
+An example of this feature you can see in the description for the **Customer attributes node**.
 
 ##### Originator telemetry
 
