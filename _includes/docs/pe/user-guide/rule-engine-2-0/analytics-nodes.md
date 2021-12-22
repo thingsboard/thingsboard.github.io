@@ -71,6 +71,10 @@ parent entity itself as originator and json body containing target telemetry wit
 In case when aggregation of some child attributes will fail node will generate failure message
 with failure reason and parent entity as originator. Failure message is forwarded via **Failure** chain.
 
+**Since TB Version 3.3.3** you can select the queue name:
+
+![image](/images/user-guide/rule-engine-2-0/pe/nodes/analytics-queue-name.png)
+
 <br/>
 
 # Aggregate Stream Node
@@ -110,6 +114,9 @@ specifying "Buildings" entity group.
 
 ![image](/images/user-guide/rule-engine-2-0/pe/nodes/analytics-aggregate-stream-config-2.png)
 
+**Since TB Version 3.3.3** you can select the queue name:
+
+![image](/images/user-guide/rule-engine-2-0/pe/nodes/analytics-queue-name.png)
 # Alarms Count Node
 
 <table  style="width:250px;">
@@ -150,6 +157,10 @@ For each selected entity node will generate and forward via **Success** chain ne
 and json body containing target telemetry with alarms count value.
 In case when alarms count for some entity will fail node will generate failure message
 with failure reason and entity as originator. Failure message is forwarded via **Failure** chain.
+
+**Since TB Version 3.3.3** you can select the queue name:
+
+![image](/images/user-guide/rule-engine-2-0/pe/nodes/analytics-queue-name.png)
 
 <br/>
 
@@ -202,5 +213,9 @@ For each selected entity node will generate and forward via **Success** chain ne
 and json body containing target telemetry with alarms count value.
 In case when alarms count for some entity will fail node will generate failure message
 with failure reason and entity as originator. Failure message is forwarded via **Failure** chain.
+
+**Since TB Version 3.3.3** you can select the queue name:
+
+![image](/images/user-guide/rule-engine-2-0/pe/nodes/analytics-queue-name.png)
 
 <br/>
