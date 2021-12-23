@@ -17,11 +17,11 @@ The goal is to compare the performance on each instance and chose between postgr
 
 To run clear test lets spin up two instances for Thingsboard and for performance tool. Assign Elastic IP to get permanent access to the instances.
 
-![Thingsboard and Performance test instances](/home/smatvienko/thingsboard.github.io/images/reference/performance-aws-instances/method/2021-12-22_14-09.png "Thingsboard and Performance test instances")
+![Thingsboard and Performance test instances](/images/reference/performance-aws-instances/method/performance_test_aws_instances.png "Thingsboard and Performance test instances")
 
 Setup network Security groups for both instances and open TCP ports 22 (SSH), 8080 (HTTP), 1883 (MQTT), 9999 (JMX) for inbound rules for source IPs (office, home, perf-test).
 
-![Setup network security group for performance test](/home/smatvienko/thingsboard.github.io/images/reference/performance-aws-instances/method/2021-12-22_14-29.png "Setup network security group for performance test")
+![Setup network security group for performance test](/images/reference/performance-aws-instances/method/performance_test_network_security_group.png "Setup network security group for performance test")
 
 Optionally, setup SSH private keys to access the instances. It is convenient to set up ~/.ssh/config like:
 ```bash
