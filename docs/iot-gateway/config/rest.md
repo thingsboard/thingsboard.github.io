@@ -37,9 +37,10 @@ Then, connector will create endpoints from a list of endpoints using endpoints f
 {
   "host": "127.0.0.1",
   "port": "5000",
-  "mapping":[
+  "SSL": false,
+  "mapping": [
     {
-      "endpoint": "/test_device",
+      "endpoint": "/my_devices",
       "HTTPMethod": [
         "POST"
       ],
@@ -47,17 +48,22 @@ Then, connector will create endpoints from a list of endpoints using endpoints f
       {
         "type": "basic",
         "username": "user",
-        "password": "passwd"
+        "password": "password"
       },
       "converter": {
         "type": "json",
-        "deviceNameExpression": "Device ${name}",
-        "deviceTypeExpression": "default",
+        "deviceNameExpression": "${sensorName}",
+        "deviceTypeExpression": "${sensorType}",
         "attributes": [
           {
             "type": "string",
             "key": "model",
             "value": "${sensorModel}"
+          },
+          {
+            "type": "string",
+            "key": "${sensorModel}",
+            "value": "on"
           }
         ],
         "timeseries": [
@@ -69,14 +75,13 @@ Then, connector will create endpoints from a list of endpoints using endpoints f
           {
             "type": "double",
             "key": "humidity",
-            "value": "${hum}",
-            "converter": "CustomConverter"
+            "value": "${hum}"
           }
         ]
       }
     },
     {
-      "endpoint": "/test",
+      "endpoint": "/anon1",
       "HTTPMethod": [
         "GET",
         "POST"
@@ -87,7 +92,7 @@ Then, connector will create endpoints from a list of endpoints using endpoints f
       },
       "converter": {
         "type": "custom",
-        "class": "CustomConverter",
+        "extension": "CustomConverter",
         "deviceNameExpression": "Device 2",
         "deviceTypeExpression": "default",
         "attributes": [
@@ -111,6 +116,53 @@ Then, connector will create endpoints from a list of endpoints using endpoints f
         ]
       }
     }
+  ],
+  "attributeUpdates": [
+    {
+      "HTTPMethod": "POST",
+      "SSLVerify": false,
+      "httpHeaders": {
+        "CONTENT-TYPE": "application/json"
+      },
+      "security": {
+        "type": "anonymous"
+      },
+      "timeout": 0.5,
+      "tries": 3,
+      "allowRedirects": true,
+      "deviceNameFilter": "SN.*",
+      "attributeFilter": ".*",
+      "requestUrlExpression": "http://127.0.0.1:5001/",
+      "valueExpression": "{\"deviceName\":\"${deviceName}\",\"${attributeKey}\":\"${attributeValue}\"}"
+    }
+  ],
+  "serverSideRpc": [
+    {
+      "deviceNameFilter": ".*",
+      "methodFilter": "echo",
+      "requestUrlExpression": "http://127.0.0.1:5001/${deviceName}",
+      "responseTimeout": 1,
+      "HTTPMethod": "GET",
+      "valueExpression": "${params}",
+      "timeout": 0.5,
+      "tries": 3,
+      "httpHeaders": {
+        "Content-Type": "application/json"
+      },
+      "security": {
+      "type": "anonymous"
+      }
+    },
+    {
+      "deviceNameFilter": ".*",
+      "methodFilter": "no-reply",
+      "requestUrlExpression": "/sensor/${deviceName}/request/${methodName}/${requestId}",
+      "HTTPMethod": "POST",
+      "valueExpression": "${params}",
+      "httpHeaders": {
+        "Content-Type": "application/json"
+      }
+    }
   ]
 }
 
@@ -121,13 +173,14 @@ Then, connector will create endpoints from a list of endpoints using endpoints f
 
 ### General section
 
-| **Parameter** | **Default value**                 | **Description**                                           |
+| **Parameter** | **Default value**                 | **Description**                                                                               |
 |:-|:-|-
-| host          | **http://127.0.0.1:5000**         | Domain address or ip of the server.                       |
-| SSLVerify     | **true**                          | Verify or no SSL certificate on the server if available.  |
+| host          | **127.0.0.1**                     | Domain address or ip of the server.                                                           |
+| port          | **5000**                          |                                                                                               |
+| SSLVerify     | **false**                         | Verify or no SSL certificate on the server if available. The value can be "true" or "false".  |
 |---
 
-### Mapping section
+### Section “mapping”
 
 This configuration section contains array of objects with endpoints that the gateway will create.  
 Also this section contains settings about processing incoming messages (converter).  
@@ -136,13 +189,15 @@ By default, the gateway uses Json converter, but it is possible to provide custo
 
 **Note**: You can specify multiple mapping objects inside the array.
 
+#### Subsection "endpoint"
+
 | **Parameter**     | **Default value**                     | **Description**                                               |
 |:-|:-|-
-| endpoint          | **/test_device**                      | Url address of the endpoint.                                  |
-| HTTPMethod        | **GET**                               | HTTP method allowed for endpoint (**GET**, **POST** etc.).    |
+| endpoint          | **/my_devices**                       | Url address of the endpoint.                                  |
+| HTTPMethod        | **POST**                              | HTTP method allowed for endpoint (**GET**, **POST** etc.).    |
 |---
 
-#### Security section
+#### Subsection "security"
 
 This section provides configuration for client authorization at the gateway for every endpoint.
  
@@ -152,8 +207,7 @@ Anonymous<small>No security</small>%,%anonymous%,%templates/iot-gateway/rest-con
 
 {% include content-toggle.html content-toggle-id="restConnectorCredentialsConfig" toggle-spec=restconnectorsecuritytogglespec %}
 
-
-#### Converter subsection
+#### Subsection "converter"
 
 This subsection contains configuration for processing incoming messages.  
 
@@ -167,8 +221,54 @@ custom<small>Recommended if bytes or anything else will be received in the reque
 
 {% include content-toggle.html content-toggle-id="restConverterTypeConfig" toggle-spec=restconvertertypespec %}
 
+**Now let’s review an example of sending data from "SN-001" thermometer device.**
 
-### Attribute update section
+Let's assume we would like to process following data from Thermometer devices:
+
+<table>
+  <thead>
+    <tr>
+      <td style="width: 15%"><b>HTTP Method</b></td><td style="width: 15%"><b>Endpoint</b></td><td style="width: 70%"><b>Payload</b></td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>POST</td>
+      <td>/my_devices</td>
+      <td>{"sensorName": "Device 1", "sensorType": "Thermometer", "sensorModel": "T1000", "temp":  32, "hum": 67}</td>
+      </tr>
+  </tbody>
+</table>
+
+In this case following messages are valid:
+
+```bash
+curl [HTTP_METHOD] [PAYLOAD] [REST_CONNECTOR_HOST:REST_CONNECTOR_PORT/ENDPOINT]
+```
+{: .copy-code}
+
+In this example, REST connector is installed locally on your server.
+
+Use terminal to simulate sending message from the device to the REST Connector:
+```bash
+curl -X POST -d '{"sensorName": "SN-001", "sensorType": "Thermometer", "sensorModel": "T1000", "temp": 32, "hum": 67}' 127.0.0.1:5000/my_devices
+```
+{: .copy-code}
+
+{:refdef: style="text-align: center;"}
+![image](/images/gateway/rest-message-1.png)
+{: refdef}
+
+The device will be created and displayed in ThingsBoard based on the passed parameters.
+{:refdef: style="text-align: center;"}
+![image](/images/gateway/rest-created-device-1.png)
+{: refdef}
+
+{:refdef: style="text-align: center;"}
+![image](/images/gateway/rest-created-device-2.png)
+{: refdef}
+
+### Section "attributeUpdates"
 
 Configuration in this section are optional.  
 ThingsBoard allows to provision device attributes and fetch some of them from the device application.
@@ -181,18 +281,19 @@ The "**attributeRequests**" configuration allows configuring the format of the c
 |:-|:-|-
 | httpMethod                    | **POST**                                              | HTTP method for request (**GET**, **POST** etc.).                                                  |
 | SSLVerify                     | **false**                                             | Verify or no SSL certificate on the server if available.                                           |
-| httpHeaders                   | **{ "CONTENT-TYPE": "application/json" }**            | Object contains additional HTTP headers for request.                                               |
-| security                      |                                                       | Security for request:                                                                              |
+| httpHeaders:                  |                                                       |                                                                 |
+| CONTENT-TYPE                  | **application/json**                                  | Object contains additional HTTP headers for request.
+| security:                     |                                                       | Security for request:                                                                              |
 |   type                        | **basic**                                             | Security type for request to the server (**basic** or **anonymous**).                              |
 |   username                    | **user**                                              | Username for basic type of the security.                                                           |
-|   password                    | **passwd**                                            | Password for basic type of the security.                                                           |   
+|   password                    | **password**                                          | Password for basic type of the security.                                                           |   
 | timeout                       | **0.5**                                               | Timeout for request.                                                                               |
 | tries                         | **3**                                                 | Count of tries to send data                                                                        |
 | allowRedirects                | **true**                                              | Allow request redirection.                                                                         |
-| deviceNameFilter              | **.\*REST$**                                          | Regular expression device name filter, uses to determine, which function to execute.               |
-| attributeFilter               | **data**                                              | Regular expression attribute name filter, uses to determine, which function to execute.            |
-| requestUrlExpression          | **sensor/${deviceName}/${attributeKey}**              | JSON-path expression uses for creating url address to send a message.                              |
-| valueExpression               | **{\\"${attributeKey}\\":\\"${attributeValue}\\"}**   | JSON-path expression uses for creating the message data that will send to url.                     |
+| deviceNameFilter              | **SN.\***                                             | Regular expression device name filter, uses to determine, which function to execute.               |
+| attributeFilter               | **.\***                                               | Regular expression attribute name filter, uses to determine, which function to execute.            |
+| requestUrlExpression          | **http://127.0.0.1:5001/**              | JSON-path expression uses for creating url address to send a message.                              |
+| valueExpression               | **{\\"deviceName\\":\\"${deviceName}\\",\\\"${attributeKey}\\":\\"${attributeValue}\\"}**   | JSON-path expression uses for creating the message data that will send to url.                     |
 |---
 
 The **attributeUpdates** section will look like:
@@ -208,21 +309,77 @@ The **attributeUpdates** section will look like:
         "security": {
           "type": "basic",
           "username": "user",
-          "password": "passwd"
+          "password": "password"
         },
         "timeout": 0.5,
         "tries": 3,
         "allowRedirects": true,
-        "deviceNameFilter": ".*REST$",
-        "attributeFilter": "data",
-        "requestUrlExpression": "sensor/${deviceName}/${attributeKey}",
-        "valueExpression": "{\"${attributeKey}\":\"${attributeValue}\"}"
+        "deviceNameFilter": "SN.*",
+        "attributeFilter": ".*",
+        "requestUrlExpression": "http://127.0.0.1:5001/",
+        "valueExpression": "{\"deviceName\":\"${deviceName}\",\"${attributeKey}\":\"${attributeValue}\"}"
       }
   ],
 
 ```
 
-### Server side RPC section
+**Let's look an example.**
+
+In order to test attribute updates we use simple server based on Flask framework:
+
+```bash
+from flask import Flask, request
+
+app = Flask(__name__)
+
+@app.route('/', methods=['POST', 'GET'])
+def query_example():
+  print(request.get_data())
+  return "OK"
+
+if __name__ == '__main__':
+  app.run(port=5001)
+```
+{: .copy-code}
+
+Save as **“test_flask_server.py”** or <a href="https://thingsboard.io/docs/iot-gateway/config/test_flask_server.py">download this file</a> and run it in **terminal** with the command:
+
+```bash
+python3 test_flask_server.py
+```
+{: .copy-code}
+
+{:refdef: style="text-align: center;"}
+![image](/images/gateway/flask-server-1.png)
+{: refdef}
+
+Now, update device attribute value on the ThingsBoard server. Open Devices -> click by your device -> Attributes tab -> Shared attributes scope and click on the "pencil" button next to *"FirmwareVersion"* attribute.
+
+{:refdef: style="text-align: center;"}
+![image](/images/gateway/rest-update-attribute-1.png)
+{: refdef}
+
+Change firmware version value from "1.1" to "1.2". Then click "Update" button.
+
+{:refdef: style="text-align: center;"}
+![image](/images/gateway/rest-update-attribute-2.png)
+{: refdef}
+
+The firmware version has been updated to "1.2".
+
+{:refdef: style="text-align: center;"}
+![image](/images/gateway/rest-update-attribute-3.png)
+{: refdef}
+
+Our test server received new message from the ThingsBoard server about updating attribute "FirmwareVersion" to "1.2".
+
+{:refdef: style="text-align: center;"}
+![image](/images/gateway/flask-server-get-1.png)
+{: refdef}
+
+
+
+### Section "serverSideRpc"
 
 
 ThingsBoard allows sending [RPC commands](/docs/user-guide/rpc/) to the device that is connected to ThingsBoard directly or via Gateway.
@@ -233,14 +390,15 @@ Configuration, provided in this section uses for sending RPC requests from Thing
 |:-|:-|-
 | deviceNameFilter              | **.\***                                                           | Regular expression device name filter, uses to determine, which function to execute.  |
 | methodFilter                  | **echo**                                                          | Regular expression method name filter, uses to determine, which function to execute.  |
-| requestUrlExpression          | **http://127.0.0.1:5001/${deviceName}**                           | JSON-path expression, uses to create url address to send RPC request.                 |
+| requestUrlExpression          | **http://127.0.0.1:5001/**                                        | JSON-path expression, uses to create url address to send RPC request.                 |
 | responseTimeout               | **1**                                                             | Timeout for request.                                                                  |
 | httpMethod                    | **GET**                                                           | HTTP method for request (**GET**, **POST** etc.).                                     |
 | valueExpression               | **${params}**                                                     | JSON-path expression, uses for creating data for sending.                             |
 | timeout                       | **0.5**                                                           | Timeout for request.                                                                  |
 | tries                         | **3**                                                             | Count of tries to send data                                                           |
-| httpHeaders                   | **{ "CONTENT-TYPE": "application/json" }**                        | Object contains additional HTTP headers for request.                                  |
-| security                      |                                                                   | Security for request:                                                                 |
+| httpHeaders:                  |                                                                   |                                                                                       |
+| CONTENT-TYPE                  | **application/json**                                              | Object contains additional HTTP headers for request.                                  |
+| security:                     |                                                                   | Security for request:                                                                 |
 |   type                        | **anonymous**                                                     | Security type for request to the server (**basic** or **anonymous**).                 |
 |---
 
@@ -259,7 +417,7 @@ Examples for both methods provided below.
     {
       "deviceNameFilter": ".*",
       "methodFilter": "echo",
-      "requestUrlExpression": "http://127.0.0.1:5001/${deviceName}",
+      "requestUrlExpression": "http://127.0.0.1:5001/",
       "responseTimeout": 1,
       "HTTPMethod": "GET",
       "valueExpression": "${params}",
@@ -280,10 +438,23 @@ Examples for both methods provided below.
       "valueExpression": "${params}",
       "httpHeaders": {
         "Content-Type": "application/json"
-      }
+      },
+      "security": {
+      "type": "anonymous"
+      }      
     }
   ]
 ```
+
+**Let's look an example.**
+
+To send RPC requests to the gateway the one should use **RPC Debug Terminal** from **Control widgets** bundle.
+
+Create a dashboard to use RPC API in ThingsBoard IoT Gateway as described <a href="https://thingsboard.io/docs/iot-gateway/guides/how-to-use-gateway-rpc-methods/">in this guide</a>.
+
+{:refdef: style="text-align: center;"}
+![image](/images/gateway/rest-service-rpc-methods-1.png)
+{: refdef}
 
 
 
