@@ -27,30 +27,34 @@ You can choose any other available [Kubernetes cluster deployment solutions](htt
 
 ## Step 1. Enter the terraform working directory
 
-`
+```
 cd ./gcp
-`
+```
+{: .copy-code}
 
 ## Step 2. GCP credentials and access
 Also you need access to GCP.
 
 To login, please execute the following command:
 
-`
+```
 gcloud auth application-default login
-`
+```
+{: .copy-code}
 
 Get your project id:
 
-`
+```
 gcloud projects list
-`
+```
+{: .copy-code}
 
 To set your project for k8s cluster, please execute following command:
 
-`
+```
 gcloud config set project $your_project_id
-`
+```
+{: .copy-code}
 
 ## Step 3. Installation GCP cloud infrastructure
 To create a service account, a storage bucket and a rules for a k8s cluster, please create variables file:
@@ -64,43 +68,50 @@ vpc_name    = "$vpc_name"
 EOF
 ```
 
+
 To initialize terraform states, please execute the following command:
 
-`
+```
 terraform init
-`
+```
+{: .copy-code}
 
 To review what infrastructure will be created, please execute the following command:
 
-`
+```
 terraform plan
-`
+```
+{: .copy-code}
 
 To create infrastructure for the k8s cluster, please execute the following command:
 
-`
+```
 terraform apply
-`
+```
+{: .copy-code}
 
 In output of this command you will have your bucket name and service account email.
 
 To get your service account id, email, name with gcloud, please execute the following command:
 
-`
+```
 gcloud iam service-accounts list
-` 
+```
+{: .copy-code}
 
 To create a new json key for your service account, please execute the following command:
 
-`
+```
 gcloud iam service-accounts keys create --iam-account $serviceAccountEMAIL kops-cluster-gcp-key.json
-`
+```
+{: .copy-code}
 
 To export a JSON file content of the created service account json key, please execute the following command:
 
-`
+```
 export GOOGLE_CREDENTIALS=$(cat ./kops-cluster-gcp-key.json)
-`
+```
+{: .copy-code}
 
 To create the k8s cluster, please execute the following commands:
 
@@ -109,45 +120,51 @@ PROJECT=$your_project_id
 export KOPS_FEATURE_FLAGS=AlphaAllowGCE # to unlock the GCE features
 kops create cluster kops-example-dev.k8s.local --zones=us-central1-a,us-central1-b,us-central1-c --gce-service-account $serviceAccountEMAIL --vpc $vpc_name --state gs://$bucket_name_for_kops/ --project=${PROJECT} --kubernetes-version=1.18.0 --node-count 3 --node-size n2-standard-4
 ```
+{: .copy-code}
 
 If you want a high-available cluster, please add this option to the last command:
 
-`
+```
 --master-count 3
 --master-zones=us-central1-a,us-central1-b,us-central1-c
 --node-count 6
 --node-size n2-standard-4
-`
+```
 
 To get the k8s cluster name from the bucket, please execute following command:
 
-`
+```
 kops get cluster --state gs://$bucket_name_for_kops/
-`
+```
+{: .copy-code}
 
 To deploy the cluster to the gcp infrastructure, please execute following command:
 
-`
+```
 kops update cluster kops-example-dev.k8s.local --state gs://$bucket_name_for_kops/ --yes
-`
+```
+{: .copy-code}
 
 To check status of your cluster, please execute following command:
 
-`
+```
 kops validate cluster --wait 10m --state gs://$bucket_name_for_kops/
-`
+```
+{: .copy-code}
 
 After that you can check your nodes:
 
-`
+```
 kubectl get ndoes
-`
+```
+{: .copy-code}
 
 If you want to export a kubectl config, please execute following command:
 
-`
+```
 kops export kubecfg kops-example-dev.k8s.local
-`
+```
+{: .copy-code}
 
 ## Step 4. Review the architecture page
 
@@ -191,9 +208,10 @@ Also, to run PostgreSQL in `high-availability` deployment mode you'll need to  [
 
 Execute the following command to run installation:
 
-`
+```
  ./k8s-install-tb.sh --loadDemo
-`
+```
+{: .copy-code}
 
 Where:
 
@@ -201,26 +219,29 @@ Where:
 
 Execute the following command to deploy third-party resources:
 
-`
+```
  ./k8s-deploy-thirdparty.sh
-`
+```
+{: .copy-code}
 
 Type **'yes'** when prompted, if you are running ThingsBoard in `high-availability` `DEPLOYMENT_TYPE` for the first time or don't have configured Redis cluster.
 
 
 Execute the following command to deploy ThingsBoard resources:
 
-`
+```
  ./k8s-deploy-resources.sh
-`
+```
+{: .copy-code}
 
 After a while when all resources will be successfully started you can open ThingsBoard web interface in your browser using dns name of the load balancer. 
 
 You can see DNS name of the loadbalancer using command:
 
-`
+```
  kubectl get ingress -oyaml
-`
+```
+{: .copy-code}
 
 Or you can see this name on the AWS ELB page.
 
@@ -240,15 +261,17 @@ For example to see ThingsBoard node logs execute the following command:
 
 1) Get the list of the running tb-node pods:
 
-`
+```
  kubectl get pods -l app=tb-node
-`
+```
+{: .copy-code}
 
 2) Fetch logs of the tb-node pod:
 
-`
+```
  kubectl logs -f $tb-node-pod-name
-`
+```
+{: .copy-code}
 
 Where:
 
@@ -261,21 +284,24 @@ See [kubectl Cheat Sheet](https://kubernetes.io/docs/reference/kubectl/cheatshee
 
 Execute the following command to delete all ThingsBoard microservices:
 
-`
+```
  ./k8s-delete-resources.sh
-`
+```
+{: .copy-code}
 
 Execute the following command to delete all third-party microservices:
 
-`
+```
  ./k8s-delete-thirdparty.sh
-`
+```
+{: .copy-code}
 
 Execute the following command to delete all resources (including database):
 
-`
+```
  ./k8s-delete-all.sh
-`
+```
+{: .copy-code}
 
 To destroy the k8s cluster and GCP resources, please execute following commands:
 
@@ -284,6 +310,7 @@ kops delete cluster kops-example-dev.k8s.local --state gs://$bucket_name_for_kop
 export GOOGLE_CREDENTIALS=""
 terraform destroy
 ```
+{: .copy-code}
 
 ## Upgrading
 
@@ -291,9 +318,17 @@ In case when database upgrade is needed, execute the following commands:
 
 ```
  ./k8s-delete-resources.sh
+```
+{: .copy-code}
+```
  ./k8s-upgrade-tb.sh --fromVersion=[FROM_VERSION]
+```
+{: .copy-code}
+```
+ 
  ./k8s-deploy-resources.sh
 ```
+{: .copy-code}
 
 Where:
 

@@ -7,6 +7,8 @@ description: ThingsBoard Professional Edition cluster setup with Kubernetes and 
 
 ---
 
+{% assign docsPrefix = "pe/" %}
+
 * TOC
 {:toc}
 
@@ -48,15 +50,17 @@ Populate basic information about yourself and click "Get Content"
 Make sure your have [logged in](https://docs.docker.com/engine/reference/commandline/login/) to docker hub using command line.
 To upload Docker credentials, please execute next command:
 
-`
-$ ./k8s-upload-docker-credentials.sh
-` 
+```
+./k8s-upload-docker-credentials.sh
+```
+{: .copy-code}
 
 ## Step 3. Clone ThingsBoard PE Kubernetes scripts
 
 ```bash
 git clone https://github.com/thingsboard/thingsboard-pe-k8s.git
 ```
+{: .copy-code}
 
 In `.env` file set the value of `PLATFORM` field to `minikube`.
 
@@ -77,6 +81,7 @@ We will reference the license key you have obtained during this step as PUT_YOUR
 cd thingsboard-pe-k8s
 nano common/tb-node.yml
 ```
+{: .copy-code}
 
 and put the license secret parameter
 
@@ -98,9 +103,10 @@ See [**microservices**](/docs/reference/msa/) architecture page for more details
 By default ingress addon is disabled in the Minikube, and available only in cluster providers.
 To enable ingress, please execute the following command:
 
-`
-$ minikube addons enable ingress
-`
+```
+minikube addons enable ingress
+```
+{: .copy-code} 
 
 ## Step 8. Configure ThingsBoard database
 
@@ -126,9 +132,10 @@ In order to set deployment type change the value of `DEPLOYMENT_TYPE` variable i
 
 Execute the following command to run installation:
 
-`
-$ ./k8s-install-tb.sh --loadDemo
-`
+```
+./k8s-install-tb.sh --loadDemo
+```
+{: .copy-code}
 
 Where:
 
@@ -136,24 +143,28 @@ Where:
 
 Execute the following command to deploy third-party resources:
 
-`
-$ ./k8s-deploy-thirdparty.sh
-`
+```
+./k8s-deploy-thirdparty.sh
+```
+{: .copy-code}
 
 Type **'yes'** when prompted, if you are running ThingsBoard in `high-availability` `DEPLOYMENT_TYPE` for the first time or don't have configured Redis cluster.
 
 Execute the following command to deploy ThingsBoard resources:
  
-`
-$ ./k8s-deploy-resources.sh
-`
+```
+./k8s-deploy-resources.sh
+```
+{: .copy-code}
 
 After a while when all resources will be successfully started you can open `http://{your-cluster-ip}` in your browser (for ex. `http://192.168.99.101`).
 You can see your cluster IP using command:
 
-`
-$ minikube ip
-`
+```
+minikube ip
+```
+{: .copy-code}
+
 You should see ThingsBoard login page.
 
 Use the following default credentials:
@@ -170,15 +181,17 @@ For example to see ThingsBoard node logs execute the following command:
 
 1) Get the list of the running tb-node pods:
 
-`
-$ kubectl get pods -l app=tb-node
-`
+```
+kubectl get pods -l app=tb-node
+```
+{: .copy-code}
 
 2) Fetch logs of the tb-node pod:
 
-`
-$ kubectl logs -f [tb-node-pod-name]
-`
+```
+kubectl logs -f [tb-node-pod-name]
+```
+{: .copy-code}
 
 Where:
 
@@ -191,31 +204,41 @@ See [kubectl Cheat Sheet](https://kubernetes.io/docs/reference/kubectl/cheatshee
 
 Execute the following command to delete all ThingsBoard microservices:
 
-`
-$ ./k8s-delete-resources.sh
-`
+```
+./k8s-delete-resources.sh
+```
+{: .copy-code}
 
 Execute the following command to delete all third-party microservices:
 
-`
-$ ./k8s-delete-thirdparty.sh
-`
+```
+./k8s-delete-thirdparty.sh
+```
+{: .copy-code}
 
 Execute the following command to delete all resources (including database):
 
-`
-$ ./k8s-delete-all.sh
-`
+```
+./k8s-delete-all.sh
+```
+{: .copy-code}
 
 ## Upgrading
 
 In case when database upgrade is needed, execute the following commands:
 
 ```
-$ ./k8s-delete-resources.sh
-$ ./k8s-upgrade-tb.sh --fromVersion=[FROM_VERSION]
-$ ./k8s-deploy-resources.sh
+./k8s-delete-resources.sh
 ```
+{: .copy-code}
+```
+./k8s-upgrade-tb.sh --fromVersion=[FROM_VERSION]
+```
+{: .copy-code}
+```
+./k8s-deploy-resources.sh
+```
+{: .copy-code}
 
 Where:
 

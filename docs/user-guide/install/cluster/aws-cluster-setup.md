@@ -25,52 +25,60 @@ You can choose any other available [Kubernetes cluster deployment solutions](htt
 
 ## Step 1. Clone ThingsBoard CE Kubernetes scripts repository. Enter the terraform working directory
 
-`
+```
  git clone https://github.com/thingsboard/thingsboard-ce-k8s.git
-`
+```
+{: .copy-code}
 
-`
+```
  cd ./aws
-`
+```
+{: .copy-code}
 
 ## Step 2. Generate ssh key
 
 Kubeone needs ssh key for access to ec2 instance. By default, terraform uses ~/.ssh/id_rsa and ~/.ssh/id_rsa.pub. But you can generate your ssh key to any folder and add this path to terraform variables file.
 To generate ssh key, please execute the following command:
 
-`
+```
  ssh-keygen
-` 
+```
+{: .copy-code}
 
 ## Step 3. AWS credentials
 Also you need access to AWS. It can be iam user or iam role. You need have a AWS_ACCESS_KEY and AWS_SECRET_ACCESS_KEY.
 To add environment variables, please execute the following command:
 
-`
+```
  export AWS_PROFILE=default
-`
+```
+{: .copy-code}
 
-`
+```
  export AWS_ACCESS_KEY=xxxxxxxxx
-`
+```
+{: .copy-code}
 
-`
+```
  export AWS_SECRET_ACCESS_KEY=xxxxxxxxxxxxxx
-`
+```
+{: .copy-code}
 
 ## Step 4. Installation AWS cloud infrastructure
 
 To initialize a working directory for terraform, please execute the following command:
 
-`
+```
  terraform init
-`
+```
+{: .copy-code}
 
 To create configure file for terraform, please execute the following command:
 
-`
+```
  nano terraform.tfvars
-`
+```
+{: .copy-code}
 
 And add this example config:
 ```
@@ -78,72 +86,84 @@ cluster_name = "k8s-cluster-example"
 aws_region = "eu-west-1"
 control_plane_type = "t3.medium"
 ```
+{: .copy-code}
+
 Now we use this example config, but you can see all the variables in `variables.tf`.
 
 To see what infrastructure will be created, please execute the following command:
 
-`
+```
  terraform plan
-`
+```
+{: .copy-code}
 
 To create this infrastructure, please execute the following command:
 
-`
+```
  terraform apply
-`
+```
+{: .copy-code}
 
 After executing this command we will have the infrastructure to create the k8s cluster.
 For kubeone, we need to generate terraform output file with all resourse id. Please execute the following command:
 
-`
+```
  terraform output -json > tf.state
-`
+```
+{: .copy-code}
 
 Generate config file for kubeone. Please execute the following command:
 
-`
+```
  kubeone config print --full > config.yml
-`
+```
+{: .copy-code}
 
 You can change the settings for yourself. We will use default config.
 
 To add your ssh key to ssh agent, please execute the following command:
 
-`
+```
  ssh-add /path/to/your/id_rsa
-`
+```
+{: .copy-code}
 
 To start deploy k8s cluster, please execute the following command:
 
-`
+```
  kubeone install config.yml -t tf.state
-`
+```
+{: .copy-code}
 
 After executing this command you will have a working k8s cluster with three master nodes and kubeconfig for your kubectl in this directory  $(pwd)/ .
 
 To set KUBECONFIG variable for kubectl, please execute the following command:
 
-`
+```
  export KUBECONFIG=$(pwd)/k8s-cluster-example-kubeconfig
-`
+```
+{: .copy-code}
 
 And check your nodes in the cluster:
 
-`
+```
  kubectl get nodes 
-`
+```
+{: .copy-code}
 
 For manage workers node kubeone uses machinedeployments, please execute the following command:
 
-`
+```
  kubectl get machinedeployments -n kube-system
-`
+```
+{: .copy-code}
 
 To scale your workers node, please execute the following command:
 
-`
+```
  kubectl --namespace kube-system scale machinedeployment/$MACHINE-DEPLOYMENT-NAME --replicas=3
-`
+```
+{: .copy-code}
 
 ## Step 5. Review the architecture page
 
@@ -187,9 +207,10 @@ Also, to run PostgreSQL in `high-availability` deployment mode you'll need to  [
 
 Execute the following command to run installation:
 
-`
+```
  ./k8s-install-tb.sh --loadDemo
-`
+```
+{: .copy-code}
 
 Where:
 
@@ -197,26 +218,29 @@ Where:
 
 Execute the following command to deploy third-party resources:
 
-`
+```
  ./k8s-deploy-thirdparty.sh
-`
+```
+{: .copy-code}
 
 Type **'yes'** when prompted, if you are running ThingsBoard in `high-availability` `DEPLOYMENT_TYPE` for the first time or don't have configured Redis cluster.
 
 
 Execute the following command to deploy ThingsBoard resources:
 
-`
+```
  ./k8s-deploy-resources.sh
-`
+```
+{: .copy-code}
 
 After a while when all resources will be successfully started you can open ThingsBoard web interface in your browser using dns name of the load balancer. 
 
 You can see DNS name of the loadbalancer using command:
 
-`
+```
  kubectl get ingress -oyaml
-`
+```
+{: .copy-code}
 
 Or you can see this name on the AWS ELB page.
 
@@ -236,15 +260,17 @@ For example to see ThingsBoard node logs execute the following command:
 
 1) Get the list of the running tb-node pods:
 
-`
+```
  kubectl get pods -l app=tb-node
-`
+```
+{: .copy-code}
 
 2) Fetch logs of the tb-node pod:
 
-`
+```
  kubectl logs -f [tb-node-pod-name]
-`
+```
+{: .copy-code}
 
 Where:
 
@@ -257,21 +283,24 @@ See [kubectl Cheat Sheet](https://kubernetes.io/docs/reference/kubectl/cheatshee
 
 Execute the following command to delete all ThingsBoard microservices:
 
-`
+```
  ./k8s-delete-resources.sh
-`
+```
+{: .copy-code}
 
 Execute the following command to delete all third-party microservices:
 
-`
+```
  ./k8s-delete-thirdparty.sh
-`
+```
+{: .copy-code}
 
 Execute the following command to delete all resources (including database):
 
-`
+```
  ./k8s-delete-all.sh
-`
+```
+{: .copy-code}
 
 To remove k8s cluster and aws resources, you can execute the following command:
 
@@ -279,6 +308,7 @@ To remove k8s cluster and aws resources, you can execute the following command:
  kubeone reset config.yml -t tf.state
  terraform destroy
 ```
+{: .copy-code}
 
 ## Upgrading
 
@@ -289,6 +319,7 @@ In case when database upgrade is needed, execute the following commands:
  ./k8s-upgrade-tb.sh --fromVersion=[FROM_VERSION]
  ./k8s-deploy-resources.sh
 ```
+{: .copy-code}
 
 Where:
 

@@ -228,83 +228,103 @@ description: ThingsBoard PE IoT platform upgrade instructions
 **Stop ThingsBoard**
 Check if ThingsBoard and database services are running 
 Initially ThingsBoard, check status to ensure it is stopped and then databases.  
+```bash
+sudo systemctl stop thingsboard
 ```
-$ sudo systemctl stop thingsboard
-```
+{: .copy-code}
 
+```bash
+sudo systemctl status thingsboard
 ```
-$ sudo systemctl status thingsboard
-```
+{: .copy-code}
 
 ## Backup Database
 Make a backup of the database before upgrading.  
 #### PostgreSQL
 Check PostgreSQL status. It is unnecessary to stop PostgreSQL for the backup.
+```bash
+sudo systemctl status postgresql
 ```
-$ sudo systemctl status postgresql
-```
+{: .copy-code}
+
 ***Make sure you have enough space to place a backup of the database***  
 Check database size
 ```bash
-$ sudo -u postgres psql -c "SELECT pg_size_pretty( pg_database_size('thingsboard') );"
+sudo -u postgres psql -c "SELECT pg_size_pretty( pg_database_size('thingsboard') );"
 ```
+{: .copy-code}
 Check free space
+
 ```bash
-$ df -h /
+df -h /
 ```
+{: .copy-code}
+
 If there is enough free space - make a backup.
 ```bash
-$ sudo -Hiu postgres pg_dump thingsboard > thingsboard.sql.bak
+sudo -Hiu postgres pg_dump thingsboard > thingsboard.sql.bak
 ```
+{: .copy-code}
+
 Check backup file being created.
 
 #### Cassandra   
 Check Cassandra status. It is necessary to stop Cassandra for the backup.
 
+```bash
+sudo systemctl status cassandra
 ```
-$ sudo systemctl status cassandra
-```
+{: .copy-code}
 
 Flush all memtables from the node to SSTables on disk.
 
+```bash
+nodetool drain
 ```
-$ nodetool drain
-```
+{: .copy-code}
 
 Stop Cassandra.
 
+```bash
+sudo systemctl stop cassandra
 ```
-$ sudo systemctl stop cassandra
-```
-
+{: .copy-code}
 And you have to check the status again to ensure they are surely stopped.
 
 ```bash
-$ sudo systemctl status cassandra
+sudo systemctl status cassandra
 ```
+{: .copy-code}
 
 ***Make sure you have enough space to place a backup of the database***  
 Check database size.
 ```bash
-$ du -h /var/lib/cassandra/ | tail -1
+du -h /var/lib/cassandra/ | tail -1
 ```
+{: .copy-code}
 
 Check free space.
 ```bash
-$ df -h /
+df -h /
 ```
+{: .copy-code}
+
 Make a backup of Cassandra database.
 ```bash
-$ mkdir backup
-$ sudo tar -cvf backup/cassandra.tar /var/lib/cassandra
+mkdir backup
+sudo tar -cvf backup/cassandra.tar /var/lib/cassandra
 ```  
+{: .copy-code}
+
 ***Check archive being created***
 
 ### Start Database
 **Cassandra**  
+```bash
+sudo systemctl start cassandra
 ```
-$ sudo systemctl start cassandra
-```
+{: .copy-code}
+
 **PostgreSQL**
 Do nothing, postgresql is already running.
 
@@ -326,8 +346,9 @@ thingsboard-download-3-3-1-centos,CentOS,shell,resources/3.3.1pe/thingsboard-cen
 * Stop ThingsBoard service if it is running.
 
 ```bash
-$ sudo service thingsboard stop
+sudo service thingsboard stop
 ```
+{: .copy-code}
 
 * Install Thingsboard Web Report component as described [here](/docs/user-guide/install/pe/ubuntu/#step-9-install-thingsboard-webreport-component).
 
@@ -350,15 +371,16 @@ database:
 Execute regular upgrade script:
 
 ```bash
-# Execute regular upgrade script
-$ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.3.0
+sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.3.0
 ```
+{: .copy-code}
 
 #### Start the service
 
 ```bash
-$ sudo service thingsboard start
+sudo service thingsboard start
 ```
+{: .copy-code}
 
 ### Windows {#windows-331}
 
@@ -375,6 +397,7 @@ Download ThingsBoard PE installation package for Windows: [thingsboard-windows-s
 ```text
 net stop thingsboard
 ```
+{: .copy-code}
 
 * Make a backup of previous ThingsBoard PE configuration located in \<ThingsBoard install dir\>\conf (for ex. C:\thingsboard\conf).
 * Run installation package **thingsboard-windows-setup-3.3.1pe.exe**.
@@ -397,12 +420,14 @@ Execute regular upgrade script:
 ```text
 C:\thingsboard>upgrade.bat --fromVersion=3.3.0
 ```
+{: .copy-code}
 
 #### Start the service
 
 ```text
 net start thingsboard
 ```
+{: .copy-code}
 
 ## Upgrading to 3.3PE
 
@@ -422,8 +447,9 @@ thingsboard-download-3-3-centos,CentOS,shell,resources/3.3pe/thingsboard-centos-
 * Stop ThingsBoard service if it is running.
 
 ```bash
-$ sudo service thingsboard stop
+sudo service thingsboard stop
 ```
+{: .copy-code}
 
 * Install Thingsboard Web Report component as described [here](/docs/user-guide/install/pe/ubuntu/#step-9-install-thingsboard-webreport-component).
 
@@ -455,6 +481,7 @@ export MQTT_SSL_BIND_PORT=8883
 export MQTT_BIND_ADDRESS=0.0.0.0
 export MQTT_BIND_PORT=1883
 ```
+{: .copy-code}
 
 **/etc/thingsboard/conf/thingsboard.yml**
 
@@ -484,15 +511,16 @@ transport:
 Execute regular upgrade script:
 
 ```bash
-# Execute regular upgrade script
-$ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.2.2
+sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.2.2
 ```
+{: .copy-code}
 
 #### Start the service
 
 ```bash
-$ sudo service thingsboard start
+sudo service thingsboard start
 ```
+{: .copy-code}
 
 ### Windows {#windows-33}
 
@@ -509,6 +537,7 @@ Download ThingsBoard PE installation package for Windows: [thingsboard-windows-s
 ```text
 net stop thingsboard
 ```
+{: .copy-code}
 
 * Make a backup of previous ThingsBoard PE configuration located in \<ThingsBoard install dir\>\conf (for ex. C:\thingsboard\conf).
 * Run installation package **thingsboard-windows-setup-3.3pe.exe**.
@@ -556,12 +585,14 @@ Execute regular upgrade script:
 ```text
 C:\thingsboard>upgrade.bat --fromVersion=3.2.2
 ```
+{: .copy-code}
 
 #### Start the service
 
 ```text
 net start thingsboard
 ```
+{: .copy-code}
 
 ## Upgrading to 3.2.2PE
 
@@ -593,8 +624,9 @@ thingsboard-download-3-2-2-centos,CentOS,shell,resources/3.2.2pe/thingsboard-cen
 * Stop ThingsBoard service if it is running.
 
 ```bash
-$ sudo service thingsboard stop
+sudo service thingsboard stop
 ```
+{: .copy-code}
 
 * Install Thingsboard Web Report component as described [here](/docs/user-guide/install/pe/ubuntu/#step-9-install-thingsboard-webreport-component).
 
@@ -617,15 +649,16 @@ database:
 Execute regular upgrade script:
 
 ```bash
-# Execute regular upgrade script
-$ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.2.1
+sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.2.1
 ```
+{: .copy-code}
 
 #### Start the service
 
 ```bash
-$ sudo service thingsboard start
+sudo service thingsboard start
 ```
+{: .copy-code}
 
 ### Windows {#windows-322}
 
@@ -652,6 +685,7 @@ Download ThingsBoard PE installation package for Windows: [thingsboard-windows-s
 ```text
 net stop thingsboard
 ```
+{: .copy-code}
 
 * Make a backup of previous ThingsBoard PE configuration located in \<ThingsBoard install dir\>\conf (for ex. C:\thingsboard\conf).
 * Run installation package **thingsboard-windows-setup-3.2.2pe.exe**.
@@ -674,12 +708,14 @@ Execute regular upgrade script:
 ```text
 C:\thingsboard>upgrade.bat --fromVersion=3.2.1
 ```
+{: .copy-code}
 
 #### Start the service
 
 ```text
 net start thingsboard
 ```
+{: .copy-code}
 
 ## Upgrading to 3.2.1PE
 
@@ -699,8 +735,9 @@ thingsboard-download-3-2-1-centos,CentOS,shell,resources/3.2.1pe/thingsboard-cen
 * Stop ThingsBoard service if it is running.
 
 ```bash
-$ sudo service thingsboard stop
+sudo service thingsboard stop
 ```
+{: .copy-code}
 
 * Install Thingsboard Web Report component as described [here](/docs/user-guide/install/pe/ubuntu/#step-9-install-thingsboard-webreport-component).
 
@@ -723,15 +760,16 @@ database:
 Execute regular upgrade script:
 
 ```bash
-# Execute regular upgrade script
-$ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.2.0
+sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.2.0
 ```
+{: .copy-code}
 
 #### Start the service
 
 ```bash
-$ sudo service thingsboard start
+sudo service thingsboard start
 ```
+{: .copy-code}
 
 ### Windows {#windows-321}
 
@@ -748,6 +786,7 @@ Download ThingsBoard PE installation package for Windows: [thingsboard-windows-s
 ```text
 net stop thingsboard
 ```
+{: .copy-code}
 
 * Make a backup of previous ThingsBoard PE configuration located in \<ThingsBoard install dir\>\conf (for ex. C:\thingsboard\conf).
 * Run installation package **thingsboard-windows-setup-3.2.1pe.exe**.
@@ -770,12 +809,14 @@ Execute regular upgrade script:
 ```text
 C:\thingsboard>upgrade.bat --fromVersion=3.2.0
 ```
+{: .copy-code}
 
 #### Start the service
 
 ```text
 net start thingsboard
 ```
+{: .copy-code}
 
 ## Upgrading to 3.2PE
 
@@ -796,8 +837,9 @@ thingsboard-download-3-2-centos,CentOS,shell,resources/3.2pe/thingsboard-centos-
 * Stop ThingsBoard service if it is running.
 
 ```bash
-$ sudo service thingsboard stop
+sudo service thingsboard stop
 ```
+{: .copy-code}
 
 * Install Thingsboard Web Report component as described [here](/docs/user-guide/install/pe/ubuntu/#step-9-install-thingsboard-webreport-component).
 
@@ -820,15 +862,16 @@ database:
 Execute regular upgrade script:
 
 ```bash
-# Execute regular upgrade script
-$ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.1.1
+sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.1.1
 ```
+{: .copy-code}
 
 #### Start the service
 
 ```bash
-$ sudo service thingsboard start
+sudo service thingsboard start
 ```
+{: .copy-code}
 
 ### Windows {#windows-32}
 
@@ -845,6 +888,7 @@ Download ThingsBoard PE installation package for Windows: [thingsboard-windows-s
 ```text
 net stop thingsboard
 ```
+{: .copy-code}
 
 * Make a backup of previous ThingsBoard PE configuration located in \<ThingsBoard install dir\>\conf (for ex. C:\thingsboard\conf).
 * Run installation package **thingsboard-windows-setup-3.2pe.exe**.
@@ -867,12 +911,14 @@ Execute regular upgrade script:
 ```text
 C:\thingsboard>upgrade.bat --fromVersion=3.1.1
 ```
+{: .copy-code}
 
 #### Start the service
 
 ```text
 net start thingsboard
 ```
+{: .copy-code}
 
 ## Upgrading to 3.1.1PE
 
@@ -893,8 +939,9 @@ thingsboard-download-3-1-1-centos,CentOS,shell,resources/3.1.1pe/thingsboard-cen
 * Stop ThingsBoard service if it is running.
 
 ```bash
-$ sudo service thingsboard stop
+sudo service thingsboard stop
 ```
+{: .copy-code}
 
 * Install Thingsboard Web Report component as described [here](/docs/user-guide/install/pe/ubuntu/#step-9-install-thingsboard-webreport-component).
 
@@ -917,15 +964,16 @@ database:
 Execute regular upgrade script:
 
 ```bash
-# Execute regular upgrade script
-$ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.1.0
+sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.1.0
 ```
+{: .copy-code}
 
 #### Start the service
 
 ```bash
-$ sudo service thingsboard start
+sudo service thingsboard start
 ```
+{: .copy-code}
 
 ### Windows {#windows-311}
 
@@ -942,6 +990,7 @@ Download ThingsBoard PE installation package for Windows: [thingsboard-windows-s
 ```text
 net stop thingsboard
 ```
+{: .copy-code}
 
 * Make a backup of previous ThingsBoard PE configuration located in \<ThingsBoard install dir\>\conf (for ex. C:\thingsboard\conf).
 * Run installation package **thingsboard-windows-setup-3.1.1pe.exe**.
@@ -964,12 +1013,14 @@ Execute regular upgrade script:
 ```text
 C:\thingsboard>upgrade.bat --fromVersion=3.1.0
 ```
+{: .copy-code}
 
 #### Start the service
 
 ```text
 net start thingsboard
 ```
+{: .copy-code}
 
 ## Upgrading to 3.1PE
 
@@ -990,8 +1041,9 @@ thingsboard-download-3-1-centos,CentOS,shell,resources/3.1pe/thingsboard-centos-
 * Stop ThingsBoard service if it is running.
 
 ```bash
-$ sudo service thingsboard stop
+sudo service thingsboard stop
 ```
+{: .copy-code}
 
 * Install Thingsboard Web Report component as described [here](/docs/user-guide/install/pe/ubuntu/#step-8-install-thingsboard-webreport-component).
 
@@ -1024,21 +1076,23 @@ and execute the following migration script:
 
 ```bash
 # Execute script to migrate latest timeseries data from Cassandra to PostgreSQL
-$ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.0.1-cassandra
+sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.0.1-cassandra
 ```
+{: .copy-code}
 
 Execute regular upgrade script:
 
 ```bash
-# Execute regular upgrade script
-$ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.0.1
+sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.0.1
 ```
+{: .copy-code}
 
 #### Start the service
 
 ```bash
-$ sudo service thingsboard start
+sudo service thingsboard start
 ```
+{: .copy-code}
 
 ### Windows {#windows-31}
 
@@ -1055,6 +1109,7 @@ Download ThingsBoard PE installation package for Windows: [thingsboard-windows-s
 ```text
 net stop thingsboard
 ```
+{: .copy-code}
 
 * Make a backup of previous ThingsBoard PE configuration located in \<ThingsBoard install dir\>\conf (for ex. C:\thingsboard\conf).
 * Run installation package **thingsboard-windows-setup-3.1pe.exe**.
@@ -1077,18 +1132,21 @@ database:
 ```text
 C:\thingsboard>upgrade.bat --fromVersion=3.0.1-cassandra
 ```
+{: .copy-code}
 
 Execute regular upgrade script:
 
 ```text
 C:\thingsboard>upgrade.bat --fromVersion=3.0.1
 ```
+{: .copy-code}
 
 #### Start the service
 
 ```text
 net start thingsboard
 ```
+{: .copy-code}
 
 ## Upgrading to 3.0.1PE
 
@@ -1122,8 +1180,9 @@ thingsboard-download-3-0-1-centos,CentOS,shell,resources/3.0.1pe/thingsboard-cen
 * Stop ThingsBoard service if it is running.
 
 ```bash
-$ sudo service thingsboard stop
+sudo service thingsboard stop
 ```
+{: .copy-code}
 
 * Install Thingsboard Web Report component as described [here](/docs/user-guide/install/pe/ubuntu/#step-8-install-thingsboard-webreport-component).
 
@@ -1147,21 +1206,23 @@ database:
 
 ```bash
 # Execute migration script from Cassandra to PostgreSQL
-$ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=2.5.0PE-cassandra
+sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=2.5.0PE-cassandra
 ```
+{: .copy-code}
 
 Otherwise execute regular upgrade script:
 
 ```bash
-# Execute regular upgrade script
-$ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=2.5.0
+sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=2.5.0
 ```
+{: .copy-code}
 
 #### Start the service
 
 ```bash
-$ sudo service thingsboard start
+sudo service thingsboard start
 ```
+{: .copy-code}
 
 ### Windows {#windows-301}
 
@@ -1190,6 +1251,7 @@ Download ThingsBoard PE installation package for Windows: [thingsboard-windows-s
 ```text
 net stop thingsboard
 ```
+{: .copy-code}
 
 * Make a backup of previous ThingsBoard PE configuration located in \<ThingsBoard install dir\>\conf (for ex. C:\thingsboard\conf).
 * Run installation package **thingsboard-windows-setup-3.0.1pe.exe**.
@@ -1212,18 +1274,21 @@ database:
 ```text
 C:\thingsboard>upgrade.bat --fromVersion=2.5.0PE-cassandra
 ```
+{: .copy-code}
 
 Otherwise execute regular upgrade script:
 
 ```text
 C:\thingsboard>upgrade.bat --fromVersion=2.5.0
 ```
+{: .copy-code}
 
 #### Start the service
 
 ```text
 net start thingsboard
 ```
+{: .copy-code}
 
 ## Upgrading to 3.0PE
 
@@ -1255,8 +1320,9 @@ thingsboard-download-3-0-centos,CentOS,shell,resources/3.0.0pe/thingsboard-cento
 * Stop ThingsBoard service if it is running.
 
 ```bash
-$ sudo service thingsboard stop
+sudo service thingsboard stop
 ```
+{: .copy-code}
 
 * Install Thingsboard Web Report component as described [here](/docs/user-guide/install/pe/ubuntu/#step-8-install-thingsboard-webreport-component).
 
@@ -1278,23 +1344,26 @@ database:
 
 **NOTE**: If you were using **Cassandra** database for entities data execute the following migration script: 
 
+
 ```bash
 # Execute migration script from Cassandra to PostgreSQL
-$ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=2.5.0PE-cassandra
+sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=2.5.0PE-cassandra
 ```
+{: .copy-code}
 
 Otherwise execute regular upgrade script:
 
 ```bash
-# Execute regular upgrade script
-$ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=2.5.0
+sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=2.5.0
 ```
+{: .copy-code}
 
 #### Start the service
 
 ```bash
-$ sudo service thingsboard start
+sudo service thingsboard start
 ```
+{: .copy-code}
 
 ### Windows {#windows-30}
 
@@ -1321,6 +1390,7 @@ Download ThingsBoard PE installation package for Windows: [thingsboard-windows-s
 ```text
 net stop thingsboard
 ```
+{: .copy-code}
 
 * Make a backup of previous ThingsBoard PE configuration located in \<ThingsBoard install dir\>\conf (for ex. C:\thingsboard\conf).
 * Run installation package **thingsboard-windows-setup-3.0pe.exe**.
@@ -1343,18 +1413,21 @@ database:
 ```text
 C:\thingsboard>upgrade.bat --fromVersion=2.5.0PE-cassandra
 ```
+{: .copy-code}
 
 Otherwise execute regular upgrade script:
 
 ```text
 C:\thingsboard>upgrade.bat --fromVersion=2.5.0
 ```
+{: .copy-code}
 
 #### Start the service
 
 ```text
 net start thingsboard
 ```
+{: .copy-code}
 
 ## Upgrading to 2.5.6PE
 
@@ -1374,8 +1447,9 @@ thingsboard-download-2-5-6-centos,CentOS,shell,resources/2.5.6pe/thingsboard-cen
 * Stop ThingsBoard service if it is running.
 
 ```bash
-$ sudo service thingsboard stop
+sudo service thingsboard stop
 ```
+{: .copy-code}
 
 * Install Thingsboard Web Report component as described [here](/docs/user-guide/install/pe/ubuntu/#step-9-install-thingsboard-webreport-component).
 
@@ -1390,8 +1464,9 @@ thingsboard-installation-2-5-6-centos,CentOS,shell,resources/2.5.6pe/thingsboard
 #### Start the service
 
 ```bash
-$ sudo service thingsboard start
+sudo service thingsboard start
 ```
+{: .copy-code}
 
 ### Windows {#windows-256}
 
@@ -1408,6 +1483,7 @@ Download ThingsBoard PE installation package for Windows: [thingsboard-windows-s
 ```text
 net stop thingsboard
 ```
+{: .copy-code}
 
 * Make a backup of previous ThingsBoard PE configuration located in \<ThingsBoard install dir\>\conf (for ex. C:\thingsboard\conf).
 * Run installation package **thingsboard-windows-setup-2.5.6pe.exe**.
@@ -1418,6 +1494,7 @@ net stop thingsboard
 ```text
 net start thingsboard
 ```
+{: .copy-code}
 
 ## Upgrading to 2.5.5PE 
 
@@ -1437,8 +1514,9 @@ thingsboard-download-2-5-5-centos,CentOS,shell,resources/2.5.5pe/thingsboard-cen
 * Stop ThingsBoard service if it is running.
 
 ```bash
-$ sudo service thingsboard stop
+sudo service thingsboard stop
 ```
+{: .copy-code}
 
 * Install Thingsboard Web Report component as described [here](/docs/user-guide/install/pe/ubuntu/#step-9-install-thingsboard-webreport-component).
 
@@ -1453,8 +1531,9 @@ thingsboard-installation-2-5-5-centos,CentOS,shell,resources/2.5.5pe/thingsboard
 #### Start the service
 
 ```bash
-$ sudo service thingsboard start
+sudo service thingsboard start
 ```
+{: .copy-code}
 
 ### Windows {#windows-255}
 
@@ -1471,6 +1550,7 @@ Download ThingsBoard PE installation package for Windows: [thingsboard-windows-s
 ```text
 net stop thingsboard
 ```
+{: .copy-code}
 
 * Make a backup of previous ThingsBoard PE configuration located in \<ThingsBoard install dir\>\conf (for ex. C:\thingsboard\conf).
 * Run installation package **thingsboard-windows-setup-2.5.5pe.exe**.
@@ -1481,6 +1561,7 @@ net stop thingsboard
 ```text
 net start thingsboard
 ```
+{: .copy-code}
 
 ## Upgrading to 2.5.4PE 
 
@@ -1500,8 +1581,9 @@ thingsboard-download-2-5-4-centos,CentOS,shell,resources/2.5.4pe/thingsboard-cen
 * Stop ThingsBoard service if it is running.
 
 ```bash
-$ sudo service thingsboard stop
+sudo service thingsboard stop
 ```
+{: .copy-code}
 
 * Install Thingsboard Web Report component as described [here](/docs/user-guide/install/pe/ubuntu/#step-9-install-thingsboard-webreport-component).
 
@@ -1516,8 +1598,9 @@ thingsboard-installation-2-5-4-centos,CentOS,shell,resources/2.5.4pe/thingsboard
 #### Start the service
 
 ```bash
-$ sudo service thingsboard start
+sudo service thingsboard start
 ```
+{: .copy-code}
 
 ### Windows {#windows-254}
 
@@ -1534,6 +1617,7 @@ Download ThingsBoard PE installation package for Windows: [thingsboard-windows-s
 ```text
 net stop thingsboard
 ```
+{: .copy-code}
 
 * Make a backup of previous ThingsBoard PE configuration located in \<ThingsBoard install dir\>\conf (for ex. C:\thingsboard\conf).
 * Run installation package **thingsboard-windows-setup-2.5.4pe.exe**.
@@ -1544,6 +1628,7 @@ net stop thingsboard
 ```text
 net start thingsboard
 ```
+{: .copy-code}
 
 ## Upgrading to 2.5.3PE 
 
@@ -1563,8 +1648,9 @@ thingsboard-download-2-5-3-centos,CentOS,shell,resources/2.5.3pe/thingsboard-cen
 * Stop ThingsBoard service if it is running.
 
 ```bash
-$ sudo service thingsboard stop
+sudo service thingsboard stop
 ```
+{: .copy-code}
 
 * Install Thingsboard Web Report component as described [here](/docs/user-guide/install/pe/ubuntu/#step-8-install-thingsboard-webreport-component).
 
@@ -1579,8 +1665,9 @@ thingsboard-installation-2-5-3-centos,CentOS,shell,resources/2.5.3pe/thingsboard
 #### Start the service
 
 ```bash
-$ sudo service thingsboard start
+sudo service thingsboard start
 ```
+{: .copy-code}
 
 ### Windows {#windows-253}
 
@@ -1597,6 +1684,7 @@ Download ThingsBoard PE installation package for Windows: [thingsboard-windows-s
 ```text
 net stop thingsboard
 ```
+{: .copy-code}
 
 * Make a backup of previous ThingsBoard PE configuration located in \<ThingsBoard install dir\>\conf (for ex. C:\thingsboard\conf).
 * Run installation package **thingsboard-windows-setup-2.5.3pe.exe**.
@@ -1607,6 +1695,7 @@ net stop thingsboard
 ```text
 net start thingsboard
 ```
+{: .copy-code}
 
 ## Upgrading to 2.5.2PE 
 
@@ -1626,8 +1715,9 @@ thingsboard-download-2-5-2-centos,CentOS,shell,resources/2.5.2pe/thingsboard-cen
 * Stop ThingsBoard service if it is running.
 
 ```bash
-$ sudo service thingsboard stop
+sudo service thingsboard stop
 ```
+{: .copy-code}
 
 * Install Thingsboard Web Report component as described [here](/docs/user-guide/install/pe/ubuntu/#step-8-install-thingsboard-webreport-component).
 
@@ -1649,8 +1739,9 @@ Please refer to the guides below that will describe how to upgrade your PostgreS
 #### Start the service
 
 ```bash
-$ sudo service thingsboard start
+sudo service thingsboard start
 ```
+{: .copy-code}
 
 ### Windows {#windows-252}
 
@@ -1667,6 +1758,7 @@ Download ThingsBoard PE installation package for Windows: [thingsboard-windows-s
 ```text
 net stop thingsboard
 ```
+{: .copy-code}
 
 * Make a backup of previous ThingsBoard PE configuration located in \<ThingsBoard install dir\>\conf (for ex. C:\thingsboard\conf).
 * Run installation package **thingsboard-windows-setup-2.5.2pe.exe**.
@@ -1680,13 +1772,14 @@ net stop thingsboard
 ```text
 C:\thingsboard>upgrade.bat --fromVersion=2.4.3
 ```
+{: .copy-code}
 
 #### Start the service
 
 ```text
 net start thingsboard
 ```
-
+{: .copy-code}
 
 ## Upgrading to 2.5.1PE 
 
@@ -1706,8 +1799,9 @@ thingsboard-download-2-5-1-centos,CentOS,shell,resources/2.5.1pe/thingsboard-cen
 * Stop ThingsBoard service if it is running.
 
 ```bash
-$ sudo service thingsboard stop
+sudo service thingsboard stop
 ```
+{: .copy-code}
 
 * Install Thingsboard Web Report component as described [here](/docs/user-guide/install/pe/ubuntu/#step-8-install-thingsboard-webreport-component).
 
@@ -1726,16 +1820,18 @@ Please refer to the guides below that will describe how to upgrade your PostgreS
  
 **NOTE:** Package installer will ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.  
 
+Finally, execute upgrade script:
 ```bash
-# Finally, execute upgrade script
-$ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=2.4.3
+sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=2.4.3
 ```
+{: .copy-code}
 
 #### Start the service
 
 ```bash
-$ sudo service thingsboard start
+sudo service thingsboard start
 ```
+{: .copy-code}
 
 ### Windows {#windows-251}
 
@@ -1750,6 +1846,7 @@ Download ThingsBoard PE installation package for Windows: [thingsboard-windows-s
 ```text
 net stop thingsboard
 ```
+{: .copy-code}
 
 * Make a backup of previous ThingsBoard PE configuration located in \<ThingsBoard install dir\>\conf (for ex. C:\thingsboard\conf).
 * Run installation package **thingsboard-windows-setup-2.5.1pe.exe**.
@@ -1763,13 +1860,14 @@ net stop thingsboard
 ```text
 C:\thingsboard>upgrade.bat --fromVersion=2.4.3
 ```
+{: .copy-code}
 
 #### Start the service
 
 ```text
 net start thingsboard
 ```
-
+{: .copy-code}
 
 ## Upgrading to 2.5PE 
 
@@ -1789,8 +1887,9 @@ thingsboard-download-2-5-centos,CentOS,shell,resources/2.5pe/thingsboard-centos-
 * Stop ThingsBoard service if it is running.
 
 ```bash
-$ sudo service thingsboard stop
+sudo service thingsboard stop
 ```
+{: .copy-code}
 
 * Install Thingsboard Web Report component as described [here](/docs/user-guide/install/pe/ubuntu/#step-8-install-thingsboard-webreport-component).
 
@@ -1842,17 +1941,18 @@ ALTER TABLE ts_kv_latest ADD CONSTRAINT ts_kv_latest_pkey PRIMARY KEY (entity_ty
 # exit psql terminal 
 \q
 ```
-
+Finally, execute upgrade script:
 ```bash
-# Finally, execute upgrade script
-$ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=2.4.3
+sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=2.4.3
 ```
+{: .copy-code}
 
 #### Start the service
 
 ```bash
-$ sudo service thingsboard start
+sudo service thingsboard start
 ```
+{: .copy-code}
 
 ### Windows {#windows-3}
 
@@ -1867,6 +1967,7 @@ Download ThingsBoard PE installation package for Windows: [thingsboard-windows-s
 ```text
 net stop thingsboard
 ```
+{: .copy-code}
 
 * Make a backup of previous ThingsBoard PE configuration located in \<ThingsBoard install dir\>\conf (for ex. C:\thingsboard\conf).
 * Run installation package **thingsboard-windows-setup-2.5pe.exe**.
@@ -1914,13 +2015,14 @@ ALTER TABLE ts_kv_latest ADD CONSTRAINT ts_kv_latest_pkey PRIMARY KEY (entity_ty
 ```text
 C:\thingsboard>upgrade.bat --fromVersion=2.4.3
 ```
+{: .copy-code}
 
 #### Start the service
 
 ```text
 net start thingsboard
 ```
-
+{: .copy-code}
 
 ## Upgrading to 2.4.3PE
 
@@ -1940,8 +2042,9 @@ thingsboard-download-2-4-3-centos,CentOS,shell,resources/2.4.3pe/thingsboard-cen
 * Stop ThingsBoard service if it is running.
 
 ```bash
-$ sudo service thingsboard stop
+sudo service thingsboard stop
 ```
+{: .copy-code}
 
 * Install Thingsboard Web Report component as described [here](/docs/user-guide/install/pe/ubuntu/#step-8-install-thingsboard-webreport-component).
 
@@ -1962,16 +2065,18 @@ Please make sure that you set **database.entities.type** and **database.ts.type*
         type: "${DATABASE_TS_TYPE:cassandra}" # cassandra OR sql (for hybrid mode, only this value should be cassandra)
 ```
 
+Execute upgrade script:
 ```bash
-# Execute upgrade script
-$ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=2.4.2
+sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=2.4.2
 ```
+{: .copy-code}
 
 #### Start the service
 
 ```bash
-$ sudo service thingsboard start
+sudo service thingsboard start
 ```
+{: .copy-code}
 
 ### Windows {#windows-2}
 
@@ -1986,19 +2091,20 @@ Download ThingsBoard PE installation package for Windows: [thingsboard-windows-s
 ```text
 net stop thingsboard
 ```
+{: .copy-code}
 
 * Make a backup of previous ThingsBoard PE configuration located in \<ThingsBoard install dir\>\conf (for ex. C:\thingsboard\conf).
 * Run installation package **thingsboard-windows-setup-2.4.3pe.exe**.
 * Compare your old ThingsBoard configuration files (from the backup you made in the first step) with new ones.
 * Please make sure that you set **database.entities.type** and **database.ts.type** parameters values (in the file **\<ThingsBoard install dir\>\conf\thingsboard.yml**) to "cassandra" instead of "sql" in order to upgrade your cassandra database:
   
-  ```
-  database:
-    entities:
-      type: "${DATABASE_ENTITIES_TYPE:cassandra}" # cassandra OR sql
-    ts:
-      type: "${DATABASE_TS_TYPE:cassandra}" # cassandra OR sql (for hybrid mode, only this value should be cassandra)
-  ```       
+```
+    database:
+      entities:
+        type: "${DATABASE_ENTITIES_TYPE:cassandra}" # cassandra OR sql
+      ts:
+        type: "${DATABASE_TS_TYPE:cassandra}" # cassandra OR sql (for hybrid mode, only this value should be cassandra)
+```       
 
 * Run **upgrade.bat** script to upgrade ThingsBoard to the new version.
 
@@ -2007,12 +2113,14 @@ net stop thingsboard
 ```text
 C:\thingsboard>upgrade.bat --fromVersion=2.4.2
 ```
+{: .copy-code}
 
 #### Start the service
 
 ```text
 net start thingsboard
 ```
+{: .copy-code}
 
 ## Upgrading to 2.4.2.1PE
 
@@ -2032,8 +2140,9 @@ thingsboard-download-2-4-2-centos,CentOS,shell,resources/2.4.2.1pe/thingsboard-c
 * Stop ThingsBoard service if it is running.
 
 ```bash
-$ sudo service thingsboard stop
+sudo service thingsboard stop
 ```
+{: .copy-code}
 
 * Install Thingsboard Web Report component as described [here](/docs/user-guide/install/pe/ubuntu/#step-8-install-thingsboard-webreport-component).
 
@@ -2054,16 +2163,19 @@ Please make sure that you set **database.entities.type** and **database.ts.type*
         type: "${DATABASE_TS_TYPE:cassandra}" # cassandra OR sql (for hybrid mode, only this value should be cassandra)
 ```
 
+Execute upgrade script:
+
 ```bash
-# Execute upgrade script
-$ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=2.4.1
+sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=2.4.1
 ```
+{: .copy-code}
 
 #### Start the service
 
 ```bash
-$ sudo service thingsboard start
+sudo service thingsboard start
 ```
+{: .copy-code}
 
 ### Windows {#windows-1}
 
@@ -2078,19 +2190,20 @@ Download ThingsBoard PE installation package for Windows: [thingsboard-windows-s
 ```text
 net stop thingsboard
 ```
+{: .copy-code}
 
 * Make a backup of previous ThingsBoard PE configuration located in \<ThingsBoard install dir\>\conf (for ex. C:\thingsboard\conf).
 * Run installation package **thingsboard-windows-setup-2.4.2.1pe.exe**.
 * Compare your old ThingsBoard configuration files (from the backup you made in the first step) with new ones.
 * Please make sure that you set **database.entities.type** and **database.ts.type** parameters values (in the file **\<ThingsBoard install dir\>\conf\thingsboard.yml**) to "cassandra" instead of "sql" in order to upgrade your cassandra database:
   
-  ```
-  database:
-    entities:
-      type: "${DATABASE_ENTITIES_TYPE:cassandra}" # cassandra OR sql
-    ts:
-      type: "${DATABASE_TS_TYPE:cassandra}" # cassandra OR sql (for hybrid mode, only this value should be cassandra)
-  ```       
+```
+    database:
+      entities:
+        type: "${DATABASE_ENTITIES_TYPE:cassandra}" # cassandra OR sql
+      ts:
+        type: "${DATABASE_TS_TYPE:cassandra}" # cassandra OR sql (for hybrid mode, only this value should be cassandra)
+```       
 
 * Run **upgrade.bat** script to upgrade ThingsBoard to the new version.
 
@@ -2099,13 +2212,14 @@ net stop thingsboard
 ```text
 C:\thingsboard>upgrade.bat --fromVersion=2.4.1
 ```
+{: .copy-code}
 
 #### Start the service
 
 ```text
 net start thingsboard
 ```
-
+{: .copy-code}
 
 ## Upgrading to 2.4.1PE
 
@@ -2125,8 +2239,9 @@ thingsboard-download-2-4-1-centos,CentOS,shell,resources/2.4.1pe/thingsboard-cen
 * Stop ThingsBoard service if it is running.
 
 ```bash
-$ sudo service thingsboard stop
+sudo service thingsboard stop
 ```
+{: .copy-code}
 
 * Install Thingsboard Web Report component as described [here](/docs/user-guide/install/pe/ubuntu/#step-8-install-thingsboard-webreport-component).
 
@@ -2147,16 +2262,19 @@ Please make sure that you set **database.entities.type** and **database.ts.type*
         type: "${DATABASE_TS_TYPE:cassandra}" # cassandra OR sql (for hybrid mode, only this value should be cassandra)
 ```
 
+Execute upgrade script:
+
 ```bash
-# Execute upgrade script
-$ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=2.4.0 
+sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=2.4.0 
 ```
+{: .copy-code}
 
 #### Start the service
 
 ```bash
-$ sudo service thingsboard start
+sudo service thingsboard start
 ```
+{: .copy-code}
 
 ### Windows {#windows}
 
@@ -2171,19 +2289,20 @@ Download ThingsBoard PE installation package for Windows: [thingsboard-windows-s
 ```text
 net stop thingsboard
 ```
+{: .copy-code}
 
 * Make a backup of previous ThingsBoard PE configuration located in \<ThingsBoard install dir\>\conf (for ex. C:\thingsboard\conf).
 * Run installation package **thingsboard-windows-setup-2.4.1pe.exe**.
 * Compare your old ThingsBoard configuration files (from the backup you made in the first step) with new ones.
 * Please make sure that you set **database.entities.type** and **database.ts.type** parameters values (in the file **\<ThingsBoard install dir\>\conf\thingsboard.yml**) to "cassandra" instead of "sql" in order to upgrade your cassandra database:
   
-  ```
-  database:
-    entities:
-      type: "${DATABASE_ENTITIES_TYPE:cassandra}" # cassandra OR sql
-    ts:
+```
+    database:
+      entities:
+        type: "${DATABASE_ENTITIES_TYPE:cassandra}" # cassandra OR sql
+      ts:
       type: "${DATABASE_TS_TYPE:cassandra}" # cassandra OR sql (for hybrid mode, only this value should be cassandra)
-  ```       
+```       
 
 * Run **upgrade.bat** script to upgrade ThingsBoard to the new version.
 
@@ -2192,12 +2311,14 @@ net stop thingsboard
 ```text
 C:\thingsboard>upgrade.bat --fromVersion=2.4.0
 ```
+{: .copy-code}
 
 #### Start the service
 
 ```text
 net start thingsboard
 ```
+{: .copy-code}
 
 ## Next steps
 

@@ -152,6 +152,7 @@ Open the command prompt as an Administrator and execute the following command:
 ```shell
 net start tb-web-report
 ```
+{: .copy-code}
 
 Expected output:
 

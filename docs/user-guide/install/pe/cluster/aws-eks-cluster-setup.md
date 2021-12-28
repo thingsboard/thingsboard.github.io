@@ -23,35 +23,39 @@ You can choose any other available [Kubernetes cluster deployment solutions](htt
 
 ## Step 1. Enter the terraform working directory
 
-`
+```
 cd ./aws/eks
-`
+```
+{: .copy-code}
 
 ## Step 2. AWS credentials
 Also you need access to AWS. It can be iam user or iam role. You need have a AWS_ACCESS_KEY and AWS_SECRET_ACCESS_KEY.
 To add environment variables, please execute the following command:
 
-`
+```
 export AWS_ACCESS_KEY=xxxxxxxxx
-`
-
-`
+```
+{: .copy-code}
+```
 export AWS_SECRET_ACCESS_KEY=xxxxxxxxxxxxxx
-`
+```
+{: .copy-code}
 
 ## Step 3. Installation EKS cluster
 
 To initialize a working directory for terraform, please execute the following command:
 
-`
+```
 terraform init
-`
+```
+{: .copy-code}
 
 To create configure file for terraform, please execute the following command:
 
-`
+```
 nano terraform.tfvars
-`
+```
+{: .copy-code}
 
 And add this example config:
 ```
@@ -60,41 +64,48 @@ aws_region = "eu-west-1"
 worker_type = "t3.medium"
 cluster_version = "1.17"
 ```
+{: .copy-code}
+
 Now we use this example config, but you can see all the variables in `variables.tf`.
 
 To see what infrastructure will be created, please execute the following command:
 
-`
+```
 terraform plan
-`
+```
+{: .copy-code}
 
 To create this infrastructure, please execute the following command:
 
-`
+```
 terraform apply
-`
+```
+{: .copy-code}
 
 We will get cluster_name from the output of this command.
 And after executing this command we will have the k8s cluster.
 
 To set KUBECONFIG variable for kubectl, please execute the following command:
 
-`
+```
 export KUBECONFIG=$(pwd)/$your_kubeconfig_thingsboard_name
-`
+```
+{: .copy-code}
 
 And check your nodes in the cluster:
 
-`
+```
 kubectl get nodes 
-`
+```
+{: .copy-code}
 
 To scale your nodes you need to install "cluster_autoscaler". Please, change "cluster_name" in `../../common/cluster-autoscaler-autodiscover.yaml`, 
 and please execute the following command for install "cluster_autoscaler":
 
-`
+```
 kubectl apply -f ../../common/cluster-autoscaler-autodiscover.yaml
-`
+```
+{: .copy-code}
 
 ## Step 3. Review the architecture page
 
@@ -103,7 +114,7 @@ See [**microservices**](/docs/reference/msa/) architecture page for more details
 
 ## Step 4. Environment file.
 
-Please go to back in root folder `cd ../../`.
+Please go back in root folder `cd ../../`.
 
 In `.env` file set the value of `PLATFORM` field to `aws-eks`.
 
@@ -138,23 +149,26 @@ Also, to run PostgreSQL in `high-availability` deployment mode you'll need to  [
 
 Make sure your have logged in to docker hub using command line. To upload Docker credentials, please execute next command:
 
-`
+```
 ./k8s-upload-docker-credentials.sh
-`
+```
+{: .copy-code}
 
 Or you can use the following command:
 
-`
+```
 kubectl create secret docker-registry regcred --docker-server=https://index.docker.io/v1/ --docker-username=$YOUR_USERNAME --docker-password=$YOUR_PASSWORD --docker-email=$YOUR_EMAIL
-`
+```
+{: .copy-code}
 
 ## Step 8. Running
 
 Execute the following command to run installation:
 
-`
+```
  ./k8s-install-tb.sh --loadDemo
-`
+```
+{: .copy-code}
 
 Where:
 
@@ -162,26 +176,29 @@ Where:
 
 Execute the following command to deploy third-party resources:
 
-`
+```
  ./k8s-deploy-thirdparty.sh
-`
+```
+{: .copy-code}
 
 Type **'yes'** when prompted, if you are running ThingsBoard in `high-availability` `DEPLOYMENT_TYPE` for the first time or don't have configured Redis cluster.
 
 
 Execute the following command to deploy ThingsBoard resources:
 
-`
+```
  ./k8s-deploy-resources.sh
-`
+```
+{: .copy-code}
 
 After a while when all resources will be successfully started you can open ThingsBoard web interface in your browser using ip of the load balancer. 
 
 You can see ip of the loadbalancer using command:
 
-`
+```
  kubectl get ingress -oyaml
-`
+```
+{: .copy-code}
 
 Or you can see this name on the GCP LB page.
 
@@ -201,15 +218,17 @@ For example to see ThingsBoard node logs execute the following command:
 
 1) Get the list of the running tb-node pods:
 
-`
+```
  kubectl get pods -l app=tb-node
-`
+```
+{: .copy-code}
 
 2) Fetch logs of the tb-node pod:
 
-`
+```
  kubectl logs -f $tb-node-pod-name
-`
+```
+{: .copy-code}
 
 Where:
 
@@ -222,27 +241,31 @@ See [kubectl Cheat Sheet](https://kubernetes.io/docs/reference/kubectl/cheatshee
 
 Execute the following command to delete all ThingsBoard microservices:
 
-`
+```
  ./k8s-delete-resources.sh
-`
+```
+{: .copy-code}
 
 Execute the following command to delete all third-party microservices:
 
-`
+```
  ./k8s-delete-thirdparty.sh
-`
+```
+{: .copy-code}
 
 Execute the following command to delete all resources (including database):
 
-`
+```
  ./k8s-delete-all.sh
-`
+```
+{: .copy-code}
 
 To remove k8s cluster and aws resources, you can execute the following command:
 
 ```
 terraform destroy
 ```
+{: .copy-code}
 
 ## Upgrading
 
@@ -253,6 +276,7 @@ In case when database upgrade is needed, execute the following commands:
  ./k8s-upgrade-tb.sh --fromVersion=[FROM_VERSION]
  ./k8s-deploy-resources.sh
 ```
+{: .copy-code}
 
 Where:
 

@@ -96,6 +96,7 @@ We will reference the license key you have obtained during this step as PUT_YOUR
 cd tb-pe-docker-compose
 nano tb-node.env
 ```
+{: .copy-code}
 
 and put the license secret parameter instead of "PUT_YOUR_LICENSE_SECRET_HERE":
 
@@ -231,6 +232,7 @@ Execute the following command to update particular or all services (pull newer d
 ```bash
 ./docker-update-service.sh [SERVICE...]
 ```
+{: .copy-code}
 
 Where:
 
@@ -244,12 +246,14 @@ In case when database upgrade is needed, execute the following commands:
 ./docker-stop-services.sh
 ./docker-remove-services.sh
 ```
+{: .copy-code}
 
 Edit .env file set "TB_VERSION" to target version (f.e. currently you on 3.2.1 so in this case you need to set 3.2.2)
 
 ```bash
 ./docker-update-service.sh [SERVICE...]
 ```
+{: .copy-code}
 
 Where:
 
