@@ -8,6 +8,13 @@ description: ThingsBoard Trendz Analytics Release Notes
 * TOC
 {:toc}
 
+## v1.8.2 (December, 2021)
+
+Security update for resolving [CVE-2021-44228](https://nvd.nist.gov/vuln/detail/CVE-2021-44228) vulnerability. 
+
+ * Dependencies to log4j-core removed. 
+ * Dependencies to log4j API version updated to version 2.15  
+
 ## v1.8.0 (August, 2021)
 
 **Improvements:**

@@ -51,7 +51,7 @@ version: '2.2'
 services:
   mytrendz:
     restart: always
-    image: "thingsboard/trendz:1.8.1-SNAPSHOT"
+    image: "thingsboard/trendz:1.8.2-SNAPSHOT"
     ports:
       - "8888:8888"
     environment:
@@ -94,7 +94,7 @@ Where:
 - `mytrendz-logs:/var/log/trendz`   - mounts the volume `mytrendz-logs` to Trendz logs directory
 - `mytrendz`             - friendly local name of this machine
 - `--restart always`        - automatically start Trendz in case of system reboot and restart in case of failure.
-- `thingsboard/trendz:1.8.1-SNAPSHOT`          - docker image
+- `thingsboard/trendz:1.8.2-SNAPSHOT`          - docker image
     
 ##### Setup Docker volumes    
     

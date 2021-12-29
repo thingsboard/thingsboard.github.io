@@ -285,6 +285,8 @@ $ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.3.1
 
 #### Start the service
 
+{% include templates/redis-post-upgrade-notice.md %}
+
 ```bash
 $ sudo service thingsboard start
 ```
@@ -331,6 +333,8 @@ C:\thingsboard>upgrade.bat --fromVersion=3.3.1
 
 #### Start the service
 
+{% include templates/redis-post-upgrade-notice.md %}
+
 ```text
 net start thingsboard
 ```
@@ -373,6 +377,10 @@ $ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.3.0
 ```
 
 #### Start the service
+
+{% include templates/redis-post-upgrade-notice.md %}
+
+{% include templates/redis-post-upgrade-notice.md %}
 
 ```bash
 $ sudo service thingsboard start
@@ -419,6 +427,10 @@ C:\thingsboard>upgrade.bat --fromVersion=3.3.0
 ```
 
 #### Start the service
+
+{% include templates/redis-post-upgrade-notice.md %}
+
+{% include templates/redis-post-upgrade-notice.md %}
 
 ```text
 net start thingsboard
@@ -501,6 +513,10 @@ $ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.2.2
 
 #### Start the service
 
+{% include templates/redis-post-upgrade-notice.md %}
+
+{% include templates/redis-post-upgrade-notice.md %}
+
 ```bash
 $ sudo service thingsboard start
 ```
@@ -572,6 +588,10 @@ C:\thingsboard>upgrade.bat --fromVersion=3.2.2
 
 #### Start the service
 
+{% include templates/redis-post-upgrade-notice.md %}
+
+{% include templates/redis-post-upgrade-notice.md %}
+
 ```text
 net start thingsboard
 ```
@@ -640,6 +660,10 @@ $ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.2.1
 
 #### Start the service
 
+{% include templates/redis-post-upgrade-notice.md %}
+
+{% include templates/redis-post-upgrade-notice.md %}
+
 ```bash
 $ sudo service thingsboard start
 ```
@@ -696,6 +720,10 @@ C:\thingsboard>upgrade.bat --fromVersion=3.2.1
 
 #### Start the service
 
+{% include templates/redis-post-upgrade-notice.md %}
+
+{% include templates/redis-post-upgrade-notice.md %}
+
 ```text
 net start thingsboard
 ```
@@ -738,6 +766,10 @@ $ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.2.0
 ```
 
 #### Start the service
+
+{% include templates/redis-post-upgrade-notice.md %}
+
+{% include templates/redis-post-upgrade-notice.md %}
 
 ```bash
 $ sudo service thingsboard start
@@ -785,6 +817,10 @@ C:\thingsboard>upgrade.bat --fromVersion=3.2.0
 
 #### Start the service
 
+{% include templates/redis-post-upgrade-notice.md %}
+
+{% include templates/redis-post-upgrade-notice.md %}
+
 ```text
 net start thingsboard
 ```
@@ -827,6 +863,10 @@ $ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.1.1
 ```
 
 #### Start the service
+
+{% include templates/redis-post-upgrade-notice.md %}
+
+{% include templates/redis-post-upgrade-notice.md %}
 
 ```bash
 $ sudo service thingsboard start
@@ -874,6 +914,10 @@ C:\thingsboard>upgrade.bat --fromVersion=3.1.1
 
 #### Start the service
 
+{% include templates/redis-post-upgrade-notice.md %}
+
+{% include templates/redis-post-upgrade-notice.md %}
+
 ```text
 net start thingsboard
 ```
@@ -916,6 +960,10 @@ $ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.1.0
 ```
 
 #### Start the service
+
+{% include templates/redis-post-upgrade-notice.md %}
+
+{% include templates/redis-post-upgrade-notice.md %}
 
 ```bash
 $ sudo service thingsboard start
@@ -962,6 +1010,10 @@ C:\thingsboard>upgrade.bat --fromVersion=3.1.0
 ```
 
 #### Start the service
+
+{% include templates/redis-post-upgrade-notice.md %}
+
+{% include templates/redis-post-upgrade-notice.md %}
 
 ```text
 net start thingsboard
@@ -1022,6 +1074,10 @@ $ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.0.1
 
 #### Start the service
 
+{% include templates/redis-post-upgrade-notice.md %}
+
+{% include templates/redis-post-upgrade-notice.md %}
+
 ```bash
 $ sudo service thingsboard start
 ```
@@ -1073,6 +1129,10 @@ C:\thingsboard>upgrade.bat --fromVersion=3.0.1
 ```
 
 #### Start the service
+
+{% include templates/redis-post-upgrade-notice.md %}
+
+{% include templates/redis-post-upgrade-notice.md %}
 
 ```text
 net start thingsboard
@@ -1139,6 +1199,8 @@ $ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=2.5.0
 
 #### Start the service
 
+{% include templates/redis-post-upgrade-notice.md %}
+
 ```bash
 $ sudo service thingsboard start
 ```
@@ -1202,6 +1264,8 @@ C:\thingsboard>upgrade.bat --fromVersion=2.5.0
 ```
 
 #### Start the service
+
+{% include templates/redis-post-upgrade-notice.md %}
 
 ```text
 net start thingsboard
@@ -1268,6 +1332,8 @@ $ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=2.5.0
 
 #### Start the service
 
+{% include templates/redis-post-upgrade-notice.md %}
+
 ```bash
 $ sudo service thingsboard start
 ```
@@ -1330,6 +1396,8 @@ C:\thingsboard>upgrade.bat --fromVersion=2.5.0
 
 #### Start the service
 
+{% include templates/redis-post-upgrade-notice.md %}
+
 ```text
 net start thingsboard
 ```
@@ -1357,6 +1425,8 @@ thingsboard-installation-2-5-6-centos,CentOS,shell,resources/2.5.6/thingsboard-c
 **NOTE:** Package installer will ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.
 
 #### Start the service
+
+{% include templates/redis-post-upgrade-notice.md %}
 
 ```bash
 $ sudo service thingsboard start
@@ -1386,6 +1456,8 @@ net stop thingsboard
 
 #### Start the service
 
+{% include templates/redis-post-upgrade-notice.md %}
+
 ```text
 net start thingsboard
 ```
@@ -1413,6 +1485,8 @@ thingsboard-installation-2-5-5-centos,CentOS,shell,resources/2.5.5/thingsboard-c
 **NOTE:** Package installer will ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.  
 
 #### Start the service
+
+{% include templates/redis-post-upgrade-notice.md %}
 
 ```bash
 $ sudo service thingsboard start
@@ -1442,6 +1516,8 @@ net stop thingsboard
 
 #### Start the service
 
+{% include templates/redis-post-upgrade-notice.md %}
+
 ```text
 net start thingsboard
 ```
@@ -1469,6 +1545,8 @@ thingsboard-installation-2-5-4-centos,CentOS,shell,resources/2.5.4/thingsboard-c
 **NOTE:** Package installer will ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.  
 
 #### Start the service
+
+{% include templates/redis-post-upgrade-notice.md %}
 
 ```bash
 $ sudo service thingsboard start
@@ -1498,6 +1576,8 @@ net stop thingsboard
 
 #### Start the service
 
+{% include templates/redis-post-upgrade-notice.md %}
+
 ```text
 net start thingsboard
 ```
@@ -1526,6 +1606,8 @@ thingsboard-installation-2-5-3-centos,CentOS,shell,resources/2.5.3/thingsboard-c
 
 #### Start the service
 
+{% include templates/redis-post-upgrade-notice.md %}
+
 ```bash
 $ sudo service thingsboard start
 ```
@@ -1553,6 +1635,8 @@ net stop thingsboard
 * Compare your old ThingsBoard configuration files (from the backup you made in the first step) with new ones.
 
 #### Start the service
+
+{% include templates/redis-post-upgrade-notice.md %}
 
 ```text
 net start thingsboard
@@ -1588,6 +1672,8 @@ Please refer to the guides below that will describe how to upgrade your PostgreS
 **NOTE:** Package installer will ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.
 
 #### Start the service
+
+{% include templates/redis-post-upgrade-notice.md %}
 
 ```bash
 $ sudo service thingsboard start
@@ -1625,6 +1711,8 @@ C:\thingsboard>upgrade.bat --fromVersion=2.4.3
 ```
 
 #### Start the service
+
+{% include templates/redis-post-upgrade-notice.md %}
 
 ```text
 net start thingsboard
@@ -1667,6 +1755,8 @@ $ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=2.4.3
 
 #### Start the service
 
+{% include templates/redis-post-upgrade-notice.md %}
+
 ```bash
 $ sudo service thingsboard start
 ```
@@ -1701,6 +1791,8 @@ C:\thingsboard>upgrade.bat --fromVersion=2.4.3
 ```
 
 #### Start the service
+
+{% include templates/redis-post-upgrade-notice.md %}
 
 ```text
 net start thingsboard
@@ -1777,6 +1869,8 @@ $ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=2.4.3
 
 #### Start the service
 
+{% include templates/redis-post-upgrade-notice.md %}
+
 ```bash
 $ sudo service thingsboard start
 ```
@@ -1846,6 +1940,8 @@ C:\thingsboard>upgrade.bat --fromVersion=2.4.3
 
 #### Start the service
 
+{% include templates/redis-post-upgrade-notice.md %}
+
 ```text
 net start thingsboard
 ```
@@ -1887,6 +1983,8 @@ $ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=2.4.2
 ```
 
 #### Start the service
+
+{% include templates/redis-post-upgrade-notice.md %}
 
 ```bash
 $ sudo service thingsboard start
@@ -1931,6 +2029,8 @@ C:\thingsboard>upgrade.bat --fromVersion=2.4.2
 
 #### Start the service
 
+{% include templates/redis-post-upgrade-notice.md %}
+
 ```text
 net start thingsboard
 ```
@@ -1972,6 +2072,8 @@ $ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=2.4.1
 ```
 
 #### Start the service
+
+{% include templates/redis-post-upgrade-notice.md %}
 
 ```bash
 $ sudo service thingsboard start
@@ -2016,6 +2118,8 @@ C:\thingsboard>upgrade.bat --fromVersion=2.4.1
 
 #### Start the service
 
+{% include templates/redis-post-upgrade-notice.md %}
+
 ```text
 net start thingsboard
 ```
@@ -2058,6 +2162,8 @@ $ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=2.4.0
 ```
 
 #### Start the service
+
+{% include templates/redis-post-upgrade-notice.md %}
 
 ```bash
 $ sudo service thingsboard start
@@ -2102,6 +2208,8 @@ C:\thingsboard>upgrade.bat --fromVersion=2.4.0
 
 #### Start the service
 
+{% include templates/redis-post-upgrade-notice.md %}
+
 ```text
 net start thingsboard
 ```
@@ -2143,6 +2251,8 @@ $ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=2.3.1
 ```
 
 #### Start the service
+
+{% include templates/redis-post-upgrade-notice.md %}
 
 ```bash
 $ sudo service thingsboard start
@@ -2186,6 +2296,8 @@ C:\thingsboard>upgrade.bat --fromVersion=2.3.1
 ```
 
 #### Start the service
+
+{% include templates/redis-post-upgrade-notice.md %}
 
 ```text
 net start thingsboard
