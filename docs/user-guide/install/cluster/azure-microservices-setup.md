@@ -33,13 +33,19 @@ cd thingsboard-ce-k8s/azure/microservices
 {% assign nodeCount = "3" %}
 {% include templates/install/azure/aks-create-cluster.md %}
 
-## Step 4 Update the context of kubectl
+## Step 4. Update the context of kubectl
 
 {% include templates/install/azure/aks-kubectl-update-context.md %}
 
-## Step 5. Create Azure Database for PostgreSQL servers
+## Step 5. Provision Databases
+
+### 5.3. Create Azure Database for PostgreSQL servers
 
 {% include templates/install/azure/aks-create-db.md %}
+
+### 5.2. Cassandra
+
+{% include templates/install/azure/configure-cassandra.md %}
 
 ## Step 6. Azure Cache for Redis
 
@@ -62,9 +68,9 @@ After few minutes you may call `kubectl get pods`. If everything went fine, you 
 
 {% include templates/install/azure/aks-starting-transports.md %}
 
-## Step 9 Configure Load Balancers
+## Step 9. Configure Load Balancers
 
-### 9.1 Configure HTTP(S) Load Balancer
+### 9.1. Configure HTTP(S) Load Balancer
 {% include templates/install/azure/aks-http-lb.md %}
 
 ### 9.2. Configure MQTT Load Balancer (Optional)
