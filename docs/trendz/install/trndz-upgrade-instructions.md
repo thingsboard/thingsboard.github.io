@@ -7,20 +7,31 @@ description: ThingsBoard Trendz Analytics upgrade instructions
 
 
 <ul id="markdown-toc">
-    <li>
-      <a href="#upgrading-to-180" id="markdown-toc-upgrading-to-170">Upgrading to 1.8.1</a>
-      <ul>
-          <li>
-              <a href="#ubuntucentos-180" id="markdown-toc-ubuntucentos-180">Ubuntu/CentOS</a>        
-          </li>
-          <li>
-              <a href="#windows-180" id="markdown-toc-windows-180">Windows</a>        
-          </li>
-          <li>
-            <a href="#tb_widget_bundle-180" id="markdown-toc-tb_widget_bundle-180">Widget Bundle for ThingsBoard</a>        
-          </li>
-      </ul>
-    </li> 
+        <li>
+          <a href="#upgrading-to-182" id="markdown-toc-upgrading-to-182">Upgrading to 1.8.2</a>
+          <ul>
+              <li>
+                  <a href="#ubuntucentos-182" id="markdown-toc-ubuntucentos-182">Ubuntu/CentOS</a>        
+              </li>
+              <li>
+                  <a href="#windows-182" id="markdown-toc-windows-182">Windows</a>        
+              </li>
+          </ul>
+        </li> 
+        <li>
+          <a href="#upgrading-to-180" id="markdown-toc-upgrading-to-181">Upgrading to 1.8.1</a>
+          <ul>
+              <li>
+                  <a href="#ubuntucentos-180" id="markdown-toc-ubuntucentos-180">Ubuntu/CentOS</a>        
+              </li>
+              <li>
+                  <a href="#windows-180" id="markdown-toc-windows-180">Windows</a>        
+              </li>
+              <li>
+                <a href="#tb_widget_bundle-180" id="markdown-toc-tb_widget_bundle-180">Widget Bundle for ThingsBoard</a>        
+              </li>
+          </ul>
+        </li> 
     <li>
       <a href="#upgrading-to-170" id="markdown-toc-upgrading-to-170">Upgrading to 1.7.0</a>
       <ul>
@@ -94,6 +105,71 @@ description: ThingsBoard Trendz Analytics upgrade instructions
     </ul>
   </li>  
 </ul>
+
+## Upgrading to 1.8.2
+
+These steps are applicable for 1.8.0 and 1.8.1 Trendz Analytics version.
+
+### Ubuntu/CentOS {#ubuntucentos-182}
+
+#### Trendz Analytics package download
+
+{% capture tabspec %}trendz-download-1-8-2
+trendz-download-1-8-0-ubuntu,Ubuntu,shell,resources/1.8.0/trendz-ubuntu-download.sh,/docs/user-guide/install/resources/1.8.0/trendz-ubuntu-download.sh
+trendz-download-1-8-0-centos,CentOS,shell,resources/1.8.0/trendz-centos-download.sh,/docs/user-guide/install/resources/1.8.0/trendz-centos-download.sh{% endcapture %}  
+{% include tabs.html %}
+
+#### Trendz Analytics service upgrade
+
+* Stop Trendz Analytics service if it is running.
+
+```bash
+sudo service trendz stop
+```
+{: .copy-code}
+
+* Install latest Trendz Analytics service 
+
+{% capture tabspec %}trendz-installation-1-8-0
+trendz-installation-1-8-0-ubuntu,Ubuntu,shell,resources/1.8.0/trendz-ubuntu-installation.sh,/docs/user-guide/install/resources/1.8.0/trendz-ubuntu-installation.sh
+trendz-installation-1-8-0-centos,CentOS,shell,resources/1.8.0/trendz-centos-installation.sh,/docs/user-guide/install/resources/1.8.0/trendz-centos-installation.sh{% endcapture %}  
+{% include tabs.html %}
+
+**NOTE:** Package installer will ask you to merge your trendz configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.  
+  
+#### Start the service
+
+```bash
+sudo service trendz start
+```
+{: .copy-code}
+
+### Windows {#windows-182}
+
+#### Trendz Analytics package download
+
+Download ThingsBoard Trendz Analytics installation package for Windows: [trendz-windows-1.8.2.zip](https://dist.thingsboard.io/trendz-windows-1.8.2.zip).
+
+#### Trendz Analytics service upgrade
+
+* Stop Trendz service if it is running.
+ 
+```text
+net stop trendz
+```
+{: .copy-code}
+
+* Make a backup of previous Trendz Analytics configuration located in \<Trendz install dir\>\conf (for ex. C:\trendz\conf).
+* Remove ThingsBoard install dir.
+* Unzip installation archive to ThingsBoard install dir.
+* Compare your old Trendz configuration files (from the backup you made in the first step) with new ones.
+
+#### Start the service
+
+```text
+net start trendz
+```
+{: .copy-code}
 
 ## Upgrading to 1.8.1
 

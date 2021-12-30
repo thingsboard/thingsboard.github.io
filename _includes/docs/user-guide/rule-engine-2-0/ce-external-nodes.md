@@ -192,6 +192,8 @@ Configuration:
 - **Port** - MQTT broker port.
 - **Connection timeout** - timeout in seconds for connecting to MQTT broker.
 - **Client ID** - optional client identifier used for connecting to MQTT broker. If not specified, default generated clientId will be used.
+- **Add Service ID as suffix to Client ID** - optional flag. Server id will be added as a suffix to the client id when enabled. It is helpful when running in microservices mode to allow rule nodes on each node to connect to the broker without the errors.
+- **Clean session** - establishes a non persistent connection with the broker when enabled.
 - **SSL Enable/Disable** - enable/disable secure communication.  
 - **Credentials** - MQTT connection credentials. Can be either *Anonymous*, *Basic* or *PEM*.
 
