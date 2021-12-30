@@ -446,6 +446,8 @@ postgres_1  | 2021-12-30 12:07:49.237 UTC [1896] LOG:  incomplete message from c
 tb_1        | Starting ThingsBoard ...
 ```
 
+![](../../../images/reference/performance-aws-instances/method/t3-medium/flood/aws-instance-monitoring.png)
+
 Conclusion: persisted queue is mandatory for a well loaded production. Kafka is a good one. 
 
 ### m6a.large (2 vCPUs AMD EPYC 3rd, 8 GiB, EBS GP3) + Kafka
