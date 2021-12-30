@@ -173,6 +173,7 @@ Stop currently running docker container:
 ```
 docker stop [container_id]
 ```
+{: .copy-code}
 
 Upgrade old postgres to the new one:
 
