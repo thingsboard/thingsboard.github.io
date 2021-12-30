@@ -1,0 +1,94 @@
+{
+  "info": {
+    "title": "",
+    "version": ""
+  },
+  "wifi_ap": {
+    "enabled": true,
+    "ssid": "RTU-X-5E2944",
+    "password": "",
+    "hide_ssid": false
+  },
+  "wifi_sta": {
+    "enabled": true,
+    "ssid": "Nettra",
+    "password": "nettramandos_on",
+    "use_static_ip": false,
+    "ip": "",
+    "subnet": "",
+    "gateway": ""
+  },
+  "modem": {
+    "use_data": true,
+    "use_sms": false,
+    "use_gps": false,
+    "on_at_startup": true,
+    "network": 0,
+    "pin": 1234,
+    "apn": "webapn.movistar.com.uy",
+    "user": "",
+    "password": ""
+  },
+  "mqtt": {
+    "iface": 2,
+    "format": 2,
+    "uri": "mqtt://demo.thingsboard.io:1883",
+    "client_id": "yhrXgmEKlGqwZiJie2y1",
+    "user": "yhrXgmEKlGqwZiJie2y1",
+    "password": "",
+    "telemetry_topic": "v1/devices/me/telemetry",
+    "attribute_topic": "v1/devices/me/attributes",
+    "wachdog": 10,
+    "certificate": "-----BEGIN CERTIFICATE-----\r\nMIIDgTCCAmmgAwIBAgIEAkd/czANBgkqhkiG9w0BAQsFADBxMQswCQYDVQQGEwJV\r\nUjELMAkGA1UECBMCTVYxEzARBgNVBAcTCk1vbnRldmlkZW8xDzANBgNVBAoTBk5l\r\ndHRyYTEPMA0GA1UECxMGTmV0dHJhMR4wHAYDVQQDExV0ZWxlbWV0cnkubmV0dHJh\r\nLnRlY2gwHhcNMjAxMjMwMTIyNTA5WhcNNDgwNTE2MTIyNTA5WjBxMQswCQYDVQQG\r\nEwJVUjELMAkGA1UECBMCTVYxEzARBgNVBAcTCk1vbnRldmlkZW8xDzANBgNVBAoT\r\nBk5ldHRyYTEPMA0GA1UECxMGTmV0dHJhMR4wHAYDVQQDExV0ZWxlbWV0cnkubmV0\r\ndHJhLnRlY2gwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCXL5JWPsDq\r\nR8erCEPYiJdUhCRBFFj822rQjoUoMYR0nOXXi+Px9X5x9fiNEfvaAGRgJOZXxWPd\r\nm//Wy7fzhdxJJHplHz/0Dh3i5pjJP2/kwByGl9NwYvO+QPO0Ni06PBG6c2JfQVQn\r\nTi5kKag9un3eKf+EOC0GJiZpmG+q/0lU1ZkPIKAdF3K0XmlpMofWzUNQXiYXT8tj\r\nOHawkBN1RFrrsfQ3qprcy9fHs8VgKZBA44Z42ldtotzt2OWNyJFpsJF1z/4cMeGq\r\nk0C+hVtl65kAi7r0Tvw2v3MDttL7QgeuVNo+P7X/nJIAxmKtxdXQyhFEdRJULedF\r\nn3tjGL8O3gWjAgMBAAGjITAfMB0GA1UdDgQWBBT72avZMkTWoXwNMSBldunxwqf6\r\neDANBgkqhkiG9w0BAQsFAAOCAQEAFBx/GeBTchlFvKoaJULOf+1zGQ2nfYp1FU9C\r\npz887Euo1z8hV7EL3wq1bRvwAn2Fi6diULz80VHesDqM9uoterHChDDl9ucXF2YO\r\nUnqp/ARGRnWiSqn1nPpYkQzs3l5DROWzf400C88VxCDtvkcbnMk8bS0p9XsimLem\r\niIifHNQjTbeEfO4bOk6jDx9bs2H8V/y2E3eopRnUoCzipbRg6lElJ5cCHbWjsHdr\r\nXQ2mVW7xOvCkwsj5YwSaSMBos5K0rNZbC9+0OBVAcSpaRM0WTqtAuw0nfF0U8WmR\r\nP0BHKZoDycl0OZ3G+aX9Bpo0D3a49TNO0FlukhS5CN6GqajcDw==\r\n-----END CERTIFICATE-----\r\n"
+  },
+  "ntp": {
+    "iface": 2,
+    "server": "pool.ntp.org",
+    "timezone": -3
+  },
+  "serial": {
+    "baud_rate_0": 2,
+    "parity_0": 0,
+    "baud_rate_1": 2,
+    "parity_1": 0
+  },
+  "modbus": {
+    "slave_id": 1,
+    "gateway": 1,
+    "tcp_port": 502
+  },
+  "script": {
+    "run": true,
+    "asm": "AAAKwAATAAABEgApAAAPoAFBgAATAAPoN1IBU1MAAAEAAAFSClMQAAZR",
+    "code": "/QAfiwgAAAAAAAQAlVDBasMwDD3X4H/QMQkUJ9eNHbK1A0PpRlN2HcrsJgHXHra6Ucb+fUpCe9ph00kST0/vPVVIAQWs1s3DTj/v9dMWbsbNYgmN9WbwHSB8YBywdRYo8LTveZvagNHAClM/dVIUSgql4KXe6fp+s26Y81Fv9US5/HNNHDVRHNoT2SRF6jFaA6fBE9AmdHAHVXkrxQTkuRuFSUHW2aOleIaDC0hXyRfkbO8fQn5R9tkPnEFW5VJ8cUZc1y+glEFCOMRw5IiS9SlEKRYzzFiH51cXwns2Wiiqsizz8YatMPYteJNmpAtddiHNWfv3D5NBbIygAQAA",
+    "named": [
+      "AAATAXRMb2cA",
+      "AQBBAXZhcmlhYmxlAA=="
+    ],
+    "slaves": [],
+    "queries": []
+  },
+  "io": {
+    "analog_inputs_type": 3,
+    "debounce_input_0": 200,
+    "debounce_input_1": 200,
+    "red_led": 4,
+    "green_led": 1
+  },
+  "sms": {
+    "messages": [],
+    "phones": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "incoming": 0
+  },
+  "bluetooth": {
+    "enabled": 1,
+    "name": "RTU-X-5E2944",
+    "pin": 123456
+  }
+}
