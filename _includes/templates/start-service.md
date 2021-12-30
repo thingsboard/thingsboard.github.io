@@ -19,4 +19,4 @@ The following default credentials are available if you have specified *--loadDem
 - **Tenant Administrator**: tenant@thingsboard.org / tenant
 - **Customer User**: customer@thingsboard.org / customer
 
-You can always change passwords for each a~~~~ccount in account profile page.
+You can always change passwords for each account in account profile page.
