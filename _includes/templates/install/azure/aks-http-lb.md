@@ -38,16 +38,13 @@ Now, you may use the address (the one you see instead of 34.111.24.134 in the co
 For using ssl certificates we can add our certificate directly in Azure ApplicationGateWay using command:
 ```
 az network application-gateway ssl-cert create \
-   --resource-group MC_$AKS_RESOURCE_GROUP_$TB_CLUSTER_NAME_$AKS_LOCATION \
+   --resource-group $(az aks show --name $TB_CLUSTER_NAME --resource-group $AKS_RESOURCE_GROUP --query nodeResourceGroup | tr -d '"') \
    --gateway-name $AKS_GATEWAY\
    --name ThingsBoardHTTPCert \
    --cert-file YOUR_CERT \
    --cert-password YOUR_CERT_PASS
 ```
 {: .copy-code}
-
-where YOUR_CERT and YOUR_CERT_PASS your certificate and `ThingsBoardHTTPCert` its name that we will use in our load balancer config. 
-Be careful resource-group in this case its nodeResourceGroup from step 3.
 
 After we added certificate to Application Load balancer we can execute: 
 ```
