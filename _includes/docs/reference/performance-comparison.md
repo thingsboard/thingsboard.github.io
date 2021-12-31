@@ -17,11 +17,11 @@ The goal is to compare the performance on each instance and chose between postgr
 
 To run clear test lets spin up two instances for Thingsboard and for performance tool. Assign Elastic IP to get permanent access to the instances.
 
-![Thingsboard and Performance test instances](/images/reference/performance-aws-instances/method/performance_test_aws_instances.png "Thingsboard and Performance test instances")
+![Thingsboard and Performance test instances](../../../images/reference/performance-aws-instances/method/performance_test_aws_instances.png "Thingsboard and Performance test instances")
 
 Setup network Security groups for both instances and open TCP ports 22 (SSH), 8080 (HTTP), 1883 (MQTT), 9999 (JMX) for inbound rules for source IPs (office, home, perf-test).
 
-![Setup network security group for performance test](/images/reference/performance-aws-instances/method/performance_test_network_security_group.png "Setup network security group for performance test")
+![Setup network security group for performance test](../../../images/reference/performance-aws-instances/method/performance_test_network_security_group.png "Setup network security group for performance test")
 
 Optionally, setup SSH private keys to access the instances. It is convenient to set up ~/.ssh/config like:
 ```bash
@@ -145,15 +145,15 @@ docker run -it --rm --network host --name tb-perf-test \
 Open your browser and go http://52.50.5.45:8080/dashboards and login. Use your instance IP address instead.  
 Default login for demo instance is `tenant@thingsboard.org`, password is `tenant`.
 
-![Thingsboard dashboard list with Rule Engine Statistics](/images/reference/performance-aws-instances/method/performance_test_thingsboard_dashboard_list.png "Thingsboard dashboard list with Rule Engine Statistics")
+![Thingsboard dashboard list with Rule Engine Statistics](../../../images/reference/performance-aws-instances/method/performance_test_thingsboard_dashboard_list.png "Thingsboard dashboard list with Rule Engine Statistics")
 
 Choose the "Rule Engine Statistics" dashboard. You can see how the system perform under the load.
 
-![Thingsboard rule engine statistics](/images/reference/performance-aws-instances/method/performance_test_thingsboard_rule_engine_statistics_queue_stats.png "Thingsboard rule engine statistics")
+![Thingsboard rule engine statistics](../../../images/reference/performance-aws-instances/method/performance_test_thingsboard_rule_engine_statistics_queue_stats.png "Thingsboard rule engine statistics")
 
 Another fancy feature is the API usage page
 
-![Thingsboard API usage feature](/images/reference/performance-aws-instances/method/performance_test_thingsboard_api_usage_feature.png "Thingsboard API usage feature")
+![Thingsboard API usage feature](../../../images/reference/performance-aws-instances/method/performance_test_thingsboard_api_usage_feature.png "Thingsboard API usage feature")
 
 ### Monitor the Thingsboard Java application
 
@@ -172,7 +172,7 @@ ssh -L 9999:127.0.0.1:9999 thingsboard
 
 Now we can connect with VisualVM to the Thingsboard application and discover the internals
 
-![Thingsboard JMX overview with VisualVM](/images/reference/performance-aws-instances/method/performance_test_thingsboard_jmx_visual_vm_overview.png "Thingsboard JMX overview with VisualVM")
+![Thingsboard JMX overview with VisualVM](../../../images/reference/performance-aws-instances/method/performance_test_thingsboard_jmx_visual_vm_overview.png "Thingsboard JMX overview with VisualVM")
 
 To monitor PostgreSQL database we are going to use the pgadmin. Here is how to [download and install pgadmin](https://www.pgadmin.org/download/).  
 Open pgadmin  
@@ -204,7 +204,8 @@ Notice. If you are running the PostgreSQL in container isolated from host networ
 
 Estimated cost 42$ EC2 + 8$ EBS GP3 100GB = 50$/mo
 
-CPU 98% - *THIS IS NOT A PRODUCTION CASE*!
+CPU 98% - *THIS IS NOT A PRODUCTION CASE*! 
+Check the Thingsboard performance with [Kafka](#m6alarge-2-vcpus-amd-epyc-3rd-8-gib-ebs-gp3--kafka) on the same m6a.large instance. 
 
 ```bash
 docker run -it --rm --network host --name tb-perf-test \
@@ -218,21 +219,21 @@ docker run -it --rm --network host --name tb-perf-test \
 ```
 {: .copy-code}
 
-![Queue stats dashboard](../../../images/reference/performance-aws-instances/method/m6a-large/thingsboard-aws-m6a-large-queue-stats-dashboard.png)
+![Queue stats dashboard](../../../images/reference/performance-aws-instances/method/m6a-large/postgres/thingsboard-aws-m6a-large-queue-stats-dashboard.png)
 
-![Thingsboard API usage](../../../images/reference/performance-aws-instances/method/m6a-large/thingsboard-aws-m6a-large-api-usage-dashboard.png)
+![Thingsboard API usage](../../../images/reference/performance-aws-instances/method/m6a-large/postgres/thingsboard-aws-m6a-large-api-usage-dashboard.png)
 
-![htop CPU, memory, IO read/write](../../../images/reference/performance-aws-instances/method/m6a-large/thingsboard-aws-m6a-large-htop-cpu-memory-io-monitoring.png)
+![htop CPU, memory, IO read/write](../../../images/reference/performance-aws-instances/method/m6a-large/postgres/thingsboard-aws-m6a-large-htop-cpu-memory-io-monitoring.png)
 
-![Java CPU and heap monitoring with JMX VisualVM](../../../images/reference/performance-aws-instances/method/m6a-large/thingsboard-aws-m6a-large-jmx-visualvm-monitoring.png)
+![Java CPU and heap monitoring with JMX VisualVM](../../../images/reference/performance-aws-instances/method/m6a-large/postgres/thingsboard-aws-m6a-large-jmx-visualvm-monitoring.png)
 
-![Postgres pgadmin dashboard](../../../images/reference/performance-aws-instances/method/m6a-large/thingsboard-aws-m6a-large-postgresql-pgadmin-dashboard.png)
+![Postgres pgadmin dashboard](../../../images/reference/performance-aws-instances/method/m6a-large/postgres/thingsboard-aws-m6a-large-postgresql-pgadmin-dashboard.png)
 
-![AWS CPU, network monitoring](../../../images/reference/performance-aws-instances/method/m6a-large/thingsboard-aws-m6a-large-cpu-network-monitoring.png)
+![AWS CPU, network monitoring](../../../images/reference/performance-aws-instances/method/m6a-large/postgres/thingsboard-aws-m6a-large-cpu-network-monitoring.png)
 
-![Storage type](../../../images/reference/performance-aws-instances/method/m6a-large/thingsboard-aws-m6a-large-disk-type.png)
+![Storage type](../../../images/reference/performance-aws-instances/method/m6a-large/postgres/thingsboard-aws-m6a-large-disk-type.png)
   
-![AWS Storage monitoring](../../../images/reference/performance-aws-instances/method/m6a-large/thingsboard-aws-m6a-large-disk-monitoring.png)
+![AWS Storage monitoring](../../../images/reference/performance-aws-instances/method/m6a-large/postgres/thingsboard-aws-m6a-large-disk-monitoring.png)
 
 ### t3.medium (2 vCPUs Intel , 4 GiB, EBS GP3)
 
@@ -254,7 +255,7 @@ At the first start you have 0 credits to burst CPU up and the system is throttle
 So the first setup is quite slow without "unlimited mode".
 The standard mode will throttle you down in favour to keep you budget, but that is not for a stable production 
 
-![AWS enable unlimited mode in credit specification](../../../images/reference/performance-aws-instances/method/t3-medium/aws-credit-spec-unlimited-mode.png)
+![AWS enable unlimited mode in credit specification](../../../images/reference/performance-aws-instances/method/t3-medium/postgres/aws-credit-spec-unlimited-mode.png)
 
 Thingsboard docker-compose
 ```bash
@@ -306,19 +307,19 @@ docker run -it --rm --network host --name tb-perf-test \
 
 Here some charts
 
-![](../../../images/reference/performance-aws-instances/method/t3-medium/queue-stats.png)
+![](../../../images/reference/performance-aws-instances/method/t3-medium/postgres/queue-stats.png)
 
-![](../../../images/reference/performance-aws-instances/method/t3-medium/api-usage.png)
+![](../../../images/reference/performance-aws-instances/method/t3-medium/postgres/api-usage.png)
 
-![](../../../images/reference/performance-aws-instances/method/t3-medium/htop.png)
+![](../../../images/reference/performance-aws-instances/method/t3-medium/postgres/htop.png)
 
-![](../../../images/reference/performance-aws-instances/method/t3-medium/jmx-visualvm-monitoring.png)
+![](../../../images/reference/performance-aws-instances/method/t3-medium/postgres/jmx-visualvm-monitoring.png)
 
-![](../../../images/reference/performance-aws-instances/method/t3-medium/postgresql-pgadmin-dashboard.png)
+![](../../../images/reference/performance-aws-instances/method/t3-medium/postgres/postgresql-pgadmin-dashboard.png)
 
-![](../../../images/reference/performance-aws-instances/method/t3-medium/aws-instance-monitoring.png)
+![](../../../images/reference/performance-aws-instances/method/t3-medium/postgres/aws-instance-monitoring.png)
 
-![](../../../images/reference/performance-aws-instances/method/t3-medium/aws-storage-monitoring.png)
+![](../../../images/reference/performance-aws-instances/method/t3-medium/postgres/aws-storage-monitoring.png)
 
 #### t3.medium x3 peak survive in-memory
 
@@ -415,27 +416,27 @@ docker run -it --rm --network host --name tb-perf-test \
 
 At the beginning the system looks busy, but responsive.
 
-![](../../../images/reference/performance-aws-instances/method/t3-medium/flood/beginning-htop.png)
+![](../../../images/reference/performance-aws-instances/method/t3-medium/flood-x10/beginning-htop.png)
 
 Then the instance become short on memory and overall performance degrade. 
 
-![](../../../images/reference/performance-aws-instances/method/t3-medium/flood/beginning-queue-stats.png)
+![](../../../images/reference/performance-aws-instances/method/t3-medium/flood-x10/beginning-queue-stats.png)
 
 We see on JMX monitor that used heap memory is growing.
 
-![](../../../images/reference/performance-aws-instances/method/t3-medium/flood/beginning-jmx-visualvm-monitoring.png)
+![](../../../images/reference/performance-aws-instances/method/t3-medium/flood-x10/beginning-jmx-visualvm-monitoring.png)
 
 It takes about 10 minutes to flood all the memory and system become unresponsive.
 
-![](../../../images/reference/performance-aws-instances/method/t3-medium/flood/queue-stats.png)
+![](../../../images/reference/performance-aws-instances/method/t3-medium/flood-x10/queue-stats.png)
 
-![](../../../images/reference/performance-aws-instances/method/t3-medium/flood/htop.png)
+![](../../../images/reference/performance-aws-instances/method/t3-medium/flood-x10/htop.png)
 
-![](../../../images/reference/performance-aws-instances/method/t3-medium/flood/jmx-visualvm-monitoring.png)
+![](../../../images/reference/performance-aws-instances/method/t3-medium/flood-x10/jmx-visualvm-monitoring.png)
 
 Another 3 minutes to die and a new life begin.
 
-![](../../../images/reference/performance-aws-instances/method/t3-medium/flood/out-of-memory.png)
+![](../../../images/reference/performance-aws-instances/method/t3-medium/flood-x10/out-of-memory.png)
 
 ```
 tb_1        | java.lang.OutOfMemoryError: Java heap space
@@ -446,8 +447,102 @@ postgres_1  | 2021-12-30 12:07:49.237 UTC [1896] LOG:  incomplete message from c
 tb_1        | Starting ThingsBoard ...
 ```
 
-![](../../../images/reference/performance-aws-instances/method/t3-medium/flood/aws-instance-monitoring.png)
+![](../../../images/reference/performance-aws-instances/method/t3-medium/flood-x10/aws-instance-monitoring.png)
 
 Conclusion: persisted queue is mandatory for a well loaded production. Kafka is a good one. 
 
 ### m6a.large (2 vCPUs AMD EPYC 3rd, 8 GiB, EBS GP3) + Kafka
+
+5000 devices, MQTT, 5000 msg/sec, 15000 telemetry/sec, postgres, Kafka queue
+
+Estimated cost 19$ EC2 + x$ CPU burst + 8$ EBS GP3 100GB = 30$/mo
+
+CPU 95%. This is good setup up to 5000 msg/sec, with peak performance up to 6000 msg sec
+
+System can survive peak message rate up to message rate 20000 msg/sec (60000 telemetry/sec).
+
+Persistent queue is essential to survive peak loads. Let's setup Kafka queue and run Thingsboard performance test.
+
+Zookeeper is required to run Kafka these days.
+
+Here the docker-compose with Thingsboard + Postgresql + Zookeeper + Kafka 
+```bash
+version: '3'
+services:
+  zookeeper:
+    image: docker.io/bitnami/zookeeper:3.7
+    network_mode: "host"
+    restart: "always"
+    environment:
+      - ALLOW_ANONYMOUS_LOGIN=yes
+  kafka:
+    image: docker.io/bitnami/kafka:3
+    network_mode: "host"
+    restart: "always"
+    environment:
+      - KAFKA_CFG_ZOOKEEPER_CONNECT=localhost:2181
+      - ALLOW_PLAINTEXT_LISTENER=yes
+    depends_on:
+      - zookeeper
+  postgres:
+    image: "postgres:14"
+    network_mode: "host"
+    restart: "always"
+    environment:
+      POSTGRES_DB: "thingsboard"
+      POSTGRES_PASSWORD: "postgres"
+  tb:
+    depends_on:
+      - postgres
+      - kafka
+    image: "thingsboard/tb"
+    network_mode: "host"
+    restart: "always"
+    environment:
+      DATABASE_TS_TYPE: "sql"
+      TB_QUEUE_TYPE: "kafka"
+      TB_KAFKA_BATCH_SIZE: "65536" # default is 16384 - it helps to produce messages much efficiently
+      TB_KAFKA_LINGER_MS: "5" # default is 1
+      TB_QUEUE_KAFKA_MAX_POLL_RECORDS: "2048" # default is 8192
+      TB_SERVICE_ID: "tb-node-0"
+      HTTP_BIND_PORT: "8088" # on port 8080 zookeeper runs admin server, there is no option to move it at this moment
+      TB_QUEUE_RE_MAIN_PACK_PROCESSING_TIMEOUT_MS: "30000"
+      # Postgres connection
+      SPRING_JPA_DATABASE_PLATFORM: "org.hibernate.dialect.PostgreSQLDialect"
+      SPRING_DRIVER_CLASS_NAME: "org.postgresql.Driver"
+      SPRING_DATASOURCE_URL: "jdbc:postgresql://localhost:5432/thingsboard"
+      SPRING_DATASOURCE_USERNAME: "postgres"
+      SPRING_DATASOURCE_PASSWORD: "postgres"
+      # Java options for 4G instance and JMX enabled
+      JAVA_OPTS: " -Xmx3072M -Xms3072M -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=9999 -Dcom.sun.management.jmxremote.rmi.port=9999 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=127.0.0.1"
+```
+{: .copy-code}
+
+Performance test docker run
+```bash
+docker run -it --rm --network host --name tb-perf-test \
+  --env REST_URL=http://thingsboard:8088 \
+  --env MQTT_HOST=thingsboard \
+  --env DEVICE_END_IDX=5000 \
+  --env MESSAGES_PER_SECOND=5000 \
+  --env ALARMS_PER_SECOND=50 \
+  --env DURATION_IN_SECONDS=86400 \
+  thingsboard/tb-ce-performance-test:latest
+```
+{: .copy-code}
+
+Here results:
+
+![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka/queue-stats.png)
+
+![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka/api-usage.png)
+
+![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka/htop.png)
+
+![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka/jmx-visualvm-monitoring.png)
+
+![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka/postgresql-pgadmin-dashboard.png)
+
+![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka/aws-instance-monitoring.png)
+
+![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka/aws-storage-monitoring.png)
