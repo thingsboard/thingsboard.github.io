@@ -1,1 +1,1 @@
-sudo dpkg -i trendz-1.8.1.deb
+sudo dpkg -i trendz-1.8.2.deb
