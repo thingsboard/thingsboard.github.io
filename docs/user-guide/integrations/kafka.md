@@ -11,16 +11,16 @@ Create Uplink Converter:
         image: /images/user-guide/integrations/kafka/kafka_uplink_edit.png
         title: Edit Kafka Uplink decoder.
     1:
-        image: /images/user-guide/integrations/kafka/kafka_uplink_save_changes.png
-        title: Change Kafka Uplink decoder.
-    2:
         image: /images/user-guide/integrations/kafka/kafka_uplink_test_decoder.png
         title: Test decoder function.
 
-Kafka Integration:
+Kafka_Integration_add:
+    0:
+        image: /images/user-guide/integrations/kafka/kafka_integration_add.png
+
+Kafka_Integration:
     0:
         image: /images/user-guide/integrations/kafka/kafka_integration_edit_mode.png
-        title:
     1:  
         image: /images/user-guide/integrations/kafka/kafka_integration_save_changes.png
 
