@@ -546,3 +546,42 @@ Here results:
 ![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka/aws-instance-monitoring.png)
 
 ![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka/aws-storage-monitoring.png)
+
+Long-running result about 14 hours:
+
+![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka/long-running/queue-stats-long-running.png)
+
+![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka/long-running/api-usage-long-running.png)
+
+![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka/long-running/jmx-visualvm-monitoring-long-running.png)
+
+#### m6a.large Stress test x3 Thingsbord + Postgresql + Kafka
+
+```bash
+docker run -it --rm --network host --name tb-perf-test \
+  --env REST_URL=http://thingsboard:8088 \
+  --env MQTT_HOST=thingsboard \
+  --env DEVICE_END_IDX=5000 \
+  --env MESSAGES_PER_SECOND=15000 \
+  --env ALARMS_PER_SECOND=50 \
+  --env DURATION_IN_SECONDS=86400 \
+  --env DEVICE_CREATE_ON_START=false \
+  thingsboard/tb-ce-performance-test:latest
+```
+{: .copy-code}
+
+We can see the 100% CPU utilization, system is overloaded. 
+
+![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka/stress-x3/htop-stress-x3.png)
+
+But all non-processed messages goes to the Kafka (will be persisted eventually) and wait until rule engine be able to poll and process it.
+
+![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka/stress-x3/queue-stats-stress-x3.png)
+
+Java machine feels good. heap have enough space to operate. Let's perform garbage collection manually to find the lowest point of the memory consumption. That is a good result.
+
+![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka/stress-x3/jmx-visualvm-monitoring-long-running-stress-x3.png)
+
+Another way to ensure that we run stable is to check the Kafka producer state with JMX MBean.
+
+![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka/stress-x3/kafka-producer-jmx-mbean-stress-x3.png)
