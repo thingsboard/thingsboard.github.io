@@ -164,7 +164,7 @@ The JMX have been enabled in `docker-compose.yml` with this line
 JAVA_OPTS: " -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=9999 -Dcom.sun.management.jmxremote.rmi.port=9999 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=127.0.0.1"
 ```
 
-Let's forward JMX port from Thingsboard instance to the local machine
+Let's **forward JMX port** from Thingsboard instance to the local machine
 
 ```bash
 ssh -L 9999:127.0.0.1:9999 thingsboard 
@@ -585,3 +585,81 @@ Java machine feels good. heap have enough space to operate. Let's perform garbag
 Another way to ensure that we run stable is to check the Kafka producer state with JMX MBean.
 
 ![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka/stress-x3/kafka-producer-jmx-mbean-stress-x3.png)
+
+Lag is building up. We can find the log message like that and find out how the rule engine behind the message producer. 
+```
+tb_1         | 2022-01-01 11:13:09,206 [kafka-consumer-stats-9-thread-1] INFO  o.t.s.q.k.TbKafkaConsumerStatsService - [re-Main-consumer] Topic partitions with lag: [[topic=[tb_rule_engine.main.8], partition=[0], committedOffset=[26696438], endOffset=[29404398], lag=[2707960]], [topic=[tb_rule_engine.main.9], partition=[0], committedOffset=[27799786], endOffset=[30629198], lag=[2829412]], [topic=[tb_rule_engine.main.6], partition=[0], committedOffset=[27283852], endOffset=[30050510], lag=[2766658]], [topic=[tb_rule_engine.main.7], partition=[0], committedOffset=[27793408], endOffset=[30614682], lag=[2821274]], [topic=[tb_rule_engine.main.4], partition=[0], committedOffset=[27997981], endOffset=[30898332], lag=[2900351]], [topic=[tb_rule_engine.main.5], partition=[0], committedOffset=[26800755], endOffset=[29517286], lag=[2716531]], [topic=[tb_rule_engine.main.2], partition=[0], committedOffset=[28252902], endOffset=[31198566], lag=[2945664]], [topic=[tb_rule_engine.main.3], partition=[0], committedOffset=[28051043], endOffset=[30958401], lag=[2907358]], [topic=[tb_rule_engine.main.0], partition=[0], committedOffset=[27216979], endOffset=[29997683], lag=[2780704]], [topic=[tb_rule_engine.main.1], partition=[0], committedOffset=[26904413], endOffset=[29637343], lag=[2732930]]].
+```
+
+![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka/stress-x3/kafka-lag-stress-x3.png)
+
+Now let's stop the x3 test and get back to normal message rate (5000 msg/sec) in a minute.
+
+After a while, we may se that the lag is going down from 2.8M to 1.2M
+```
+tb_1         | 2022-01-01 19:02:10,143 [kafka-consumer-stats-9-thread-1] INFO  o.t.s.q.k.TbKafkaConsumerStatsService - [re-Main-consumer] Topic partitions with lag: [[topic=[tb_rule_engine.main.8], partition=[0], committedOffset=[34495686], endOffset=[35590695], lag=[1095009]], [topic=[tb_rule_engine.main.9], partition=[0], committedOffset=[35596375], endOffset=[37070245], lag=[1473870]], [topic=[tb_rule_engine.main.6], partition=[0], committedOffset=[35066992], endOffset=[36371684], lag=[1304692]], [topic=[tb_rule_engine.main.7], partition=[0], committedOffset=[35600195], endOffset=[37052738], lag=[1452543]], [topic=[tb_rule_engine.main.4], partition=[0], committedOffset=[35816575], endOffset=[37396165], lag=[1579590]], [topic=[tb_rule_engine.main.5], partition=[0], committedOffset=[34554861], endOffset=[35727138], lag=[1172277]], [topic=[tb_rule_engine.main.2], partition=[0], committedOffset=[36037246], endOffset=[37758600], lag=[1721354]], [topic=[tb_rule_engine.main.3], partition=[0], committedOffset=[35825723], endOffset=[37468375], lag=[1642652]], [topic=[tb_rule_engine.main.0], partition=[0], committedOffset=[35020460], endOffset=[36307867], lag=[1287407]], [topic=[tb_rule_engine.main.1], partition=[0], committedOffset=[34693477], endOffset=[35872506], lag=[1179029]]].
+```
+
+![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka/stress-x3/kafka-lag-stress-x3-after.png)
+
+Here the rule engine stats fo x1, x3 amd back to x1 loads.
+
+![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka/stress-x3/queue-stats--x1--stress-x3--x1.png)
+
+Here is the API usage stats that shows the transport rate (incoming messages and datapoints) and the rule engine performance.
+
+![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka/stress-x3/api-usage--x1--stress-x3--x1.png)
+
+#### Disk space usage
+
+By the end of the day, the system run out of the disk space. 
+
+The 200Gb disk was filled out in about 24 hours with average 5k msg/sec, 15k datapoints/sec; total messages 363M, data points 1.1B.
+
+**Postgres** database size is 160GiB
+
+![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka/stress-x3/postgresql-disk-usage-total.png)
+
+Detailed [PostgreSQL disk usage](https://wiki.postgresql.org/wiki/Disk_Usage) by tables and indexes
+
+```postgresql
+SELECT nspname || '.' || relname AS "relation", pg_size_pretty(pg_relation_size(C.oid)) AS "size"
+  FROM pg_class C
+  LEFT JOIN pg_namespace N ON (N.oid = C.relnamespace)
+  WHERE nspname NOT IN ('pg_catalog', 'information_schema')
+  ORDER BY pg_relation_size(C.oid) DESC LIMIT 20;
+```
+You can see the biggest table is timeseries (TS, telemetry) and TS index. All telemetry divided my month to gain a stable performance.  
+Test started in December and finished in January. The TS have two tables 2021_12 and 2022_01 for respective months.
+
+![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka/stress-x3/postgresql-disk-usage-by-table.png)
+
+**Kafka** size is 20GiB. 
+
+Tip: to plan and manage the Kafka disk space, please, adjust the [size retention policy](https://kafka.apache.org/documentation/#brokerconfigs_log.retention.bytes) and [period retention policy](https://www.baeldung.com/kafka-message-retention).
+
+![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka/stress-x3/kafka-disk-usage-total.png)
+
+Here the Kafka size by topics.
+
+![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka/stress-x3/kafka-disk-usage-by-topic.png)
+
+**Conclusion**: Thingsboard + Postgres + **Kafka** - is a reliable solution to survive peak loads.
+Despite the maximum performance shown above, we recommend to use m6a.large instance design for up to 3k msg/sec, 10k data points/sec.  
+The logic is quite simple: to be able to process x2 message load in case of any peak load.  
+In a real production, the Thingboard may serve all kind of user requests, run custom rule chains and supply the web services all fancy dashboards.
+When you need more performance, simply upgrade to the next m6a.xlarge or c6i.xlarge instance (restart required).  
+Another way to improve is to customize PostgreSQL config to gain much faster read query performance for dashboards, analytics, etc.
+For even more performance, please consider the **Cassandra** usage.   
+
+Pros:
+ * Reliable solution to survive the peak load
+ * Reasonable price for performance and reliability
+ * Able to scale (vertically).
+ * Short technology stack (Postgres, Kafka)
+Cons: 
+ * The telemetry storage consumption is quite intensive. It may become expensive if the telemetry time-to-live (TTL) is a years or infinite. 
+ * Scale only vertical (faster instance, more storage IOPS) - very limited by hardware available and become expensive.
+ * Kafka as a solo instance and messages persists eventually (no fsync called), potential message loss if Kafka crashes.
+ * Maintain or fail any of component will lead to downtime for all the system.
+
