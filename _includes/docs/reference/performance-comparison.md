@@ -513,7 +513,7 @@ services:
       SPRING_DATASOURCE_URL: "jdbc:postgresql://localhost:5432/thingsboard"
       SPRING_DATASOURCE_USERNAME: "postgres"
       SPRING_DATASOURCE_PASSWORD: "postgres"
-      # Java options for 4G instance and JMX enabled
+      # Java options for 8G instance and JMX enabled
       JAVA_OPTS: " -Xmx3072M -Xms3072M -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=9999 -Dcom.sun.management.jmxremote.rmi.port=9999 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=127.0.0.1"
 ```
 {: .copy-code}
@@ -556,6 +556,8 @@ Long-running result about 14 hours:
 ![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka/long-running/jmx-visualvm-monitoring-long-running.png)
 
 #### m6a.large Stress test x3 Thingsbord + Postgresql + Kafka
+
+Stress test for 5k devices, 15k msg/sec, 45k data points/sec
 
 ```bash
 docker run -it --rm --network host --name tb-perf-test \
@@ -662,4 +664,255 @@ Cons:
  * Scale only vertical (faster instance, more storage IOPS) - very limited by hardware available and become expensive.
  * Kafka as a solo instance and messages persists eventually (no fsync called), potential message loss if Kafka crashes.
  * Maintain or fail any of component will lead to downtime for all the system.
+
+### m6a.large (2 vCPUs AMD EPYC 3rd, 8 GiB, EBS GP3) + Kafka + Cassandra
+
+5000 devices, MQTT, 5000 msg/sec, 15000 telemetry/sec, postgres, Kafka queue
+
+Estimated cost 19$ EC2 + x$ CPU burst + 8$ EBS GP3 100GB = 30$/mo
+
+CPU 95%. This is good setup up to 5000 msg/sec, with peak performance up to 6000 msg sec
+
+System can survive peak message rate up to message rate 20000 msg/sec (60000 telemetry/sec).
+
+Persistent queue is essential to survive peak loads. Let's setup Kafka queue and run Thingsboard performance test.
+
+Zookeeper is required to run Kafka these days.
+
+**Cassandra** is essential for massive telemetry flow. 
+
+Here the docker-compose with Thingsboard + Postgresql + Zookeeper + Kafka
+```bash
+version: '3'
+services:
+  cassandra:
+    image: bitnami/cassandra:4.0
+    network_mode: "host"
+    restart: "always"
+    volumes:
+      - cassandra0:/bitnami
+    environment:
+      CASSANDRA_CLUSTER_NAME: "Thingsboard Cluster"
+      HEAP_NEWSIZE: "1024M"
+      MAX_HEAP_SIZE: "2048M"
+      JVM_EXTRA_OPTS: "-Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=7199 -Dcom.sun.management.jmxremote.rmi.port=7199  -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=127.0.0.1"
+  zookeeper:
+    image: docker.io/bitnami/zookeeper:3.7
+    network_mode: "host"
+    restart: "always"
+    environment:
+      ALLOW_ANONYMOUS_LOGIN: "yes"
+      JVMFLAGS: "-Xmx128m -Xms128m -Dzookeeper.admin.enableServer=false -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=9199 -Dcom.sun.management.jmxremote.rmi.port=9199  -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=127.0.0.1"
+  kafka:
+    image: docker.io/bitnami/kafka:3
+    network_mode: "host"
+    restart: "always"
+    environment:
+      KAFKA_CFG_ZOOKEEPER_CONNECT: "localhost:2181"
+      ALLOW_PLAINTEXT_LISTENER: "yes"
+      KAFKA_JMX_OPTS: "-Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=1099 -Dcom.sun.management.jmxremote.rmi.port=1099 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=127.0.0.1"
+      JMX_PORT: "1099"
+    depends_on:
+      - zookeeper
+  postgres:
+    image: "postgres:14"
+    network_mode: "host"
+    restart: "always"
+    environment:
+      POSTGRES_DB: "thingsboard"
+      POSTGRES_PASSWORD: "postgres"
+  tb:
+    depends_on:
+      - postgres
+      - kafka
+      - cassandra
+    image: "thingsboard/tb"
+    network_mode: "host"
+    restart: "always"
+    environment:
+      DATABASE_TS_TYPE: "cassandra"
+      DATABASE_TS_LATEST_TYPE: "sql"
+      #Cassandra
+      CASSANDRA_CLUSTER_NAME: "Thingsboard Cluster"
+      CASSANDRA_LOCAL_DATACENTER: "datacenter1"
+      CASSANDRA_KEYSPACE_NAME: "thingsboard"
+      CASSANDRA_URL: "127.0.0.1:9042"
+      CASSANDRA_USE_CREDENTIALS: "true"
+      CASSANDRA_USERNAME: "cassandra"
+      CASSANDRA_PASSWORD: "cassandra"
+      CASSANDRA_QUERY_BUFFER_SIZE: "100000"
+      CASSANDRA_QUERY_CONCURRENT_LIMIT: "1000"
+      CASSANDRA_QUERY_POLL_MS: "10"
+      #Kafka
+      TB_QUEUE_TYPE: "kafka"
+      TB_KAFKA_BATCH_SIZE: "65536" # default is 16384 - it helps to produce messages much efficiently
+      TB_KAFKA_LINGER_MS: "5" # default is 1
+      TB_QUEUE_KAFKA_MAX_POLL_RECORDS: "2048" # default is 8192
+      TB_SERVICE_ID: "tb-node-0"
+      HTTP_BIND_PORT: "8088" # on port 8080 zookeeper runs admin server, there is no option to move it at this moment
+      TB_QUEUE_RE_MAIN_PACK_PROCESSING_TIMEOUT_MS: "30000"
+      # Postgres connection
+      SPRING_JPA_DATABASE_PLATFORM: "org.hibernate.dialect.PostgreSQLDialect"
+      SPRING_DRIVER_CLASS_NAME: "org.postgresql.Driver"
+      SPRING_DATASOURCE_URL: "jdbc:postgresql://localhost:5432/thingsboard"
+      SPRING_DATASOURCE_USERNAME: "postgres"
+      SPRING_DATASOURCE_PASSWORD: "postgres"
+      # Cache specs
+      CACHE_SPECS_DEVICES_MAX_SIZE: "123456"
+      CACHE_SPECS_DEVICE_CREDENTIALS_MAX_SIZE: "123456"
+      CACHE_SPECS_SESSIONS_MAX_SIZE: "123456"
+      # Java options for 8G instance and JMX enabled
+      JAVA_OPTS: " -Xmx3072M -Xms3072M -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=9999 -Dcom.sun.management.jmxremote.rmi.port=9999 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=127.0.0.1"
+    ulimits:
+      nproc: 131072
+      nofile:
+        soft: 131072
+        hard: 131072
+volumes:
+  cassandra0:
+
+```
+{: .copy-code}
+
+Performance test docker run
+```bash
+docker run -it --rm --network host --name tb-perf-test \
+  --env REST_URL=http://thingsboard:8088 \
+  --env MQTT_HOST=thingsboard \
+  --env DEVICE_END_IDX=5000 \
+  --env MESSAGES_PER_SECOND=5000 \
+  --env ALARMS_PER_SECOND=50 \
+  --env DURATION_IN_SECONDS=86400 \
+  thingsboard/tb-ce-performance-test:latest
+```
+{: .copy-code}
+
+Here results:
+
+Cassandra 4.0 m6a.xlarge (4 vCPU, 16 GiB)
+
+![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka-cassandra/img.png)
+
+Cassandra 3.11 m6a.large
+
+![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka-cassandra/img_1.png)
+
+Cassandra 4.0 c6i.xlarge (4 vCPU, 8 GiB)
+
+![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka-cassandra/img_2.png)
+
+
+Cassandra 4.0 m6a.4xlarge (16 vCPU, 32 GiB)
+
+5k devices, 15k msg/sec, 45k data points/sec -- 100% handled
+
+![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka-cassandra/img_4.png)
+
+![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka-cassandra/img_3.png)
+
+5k devices, 25k msg/sec, 75k data points/sec -- 100% handled
+
+![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka-cassandra/img_5.png)
+
+![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka-cassandra/img_6.png)
+
+5k devices, 40k msg/sec, 120k data points/sec - bottleneck
+
+![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka-cassandra/img_8.png)
+
+CPU is about 60%, so bottleneck happens.
+
+![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka-cassandra/img_7.png)
+
+Let's try to write timeseries without persisting latest values to the PostgreSQL - no effect
+
+![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka-cassandra/img_9.png)
+
+25k devices, 17k msg/sec, 51k data points/sec - in progress
+
+```bash
+docker run -it --rm --network host --name tb-perf-test \
+  --env REST_URL=http://thingsboard:8088 \
+  --env MQTT_HOST=thingsboard \
+  --env DEVICE_END_IDX=25000 \
+  --env MESSAGES_PER_SECOND=17000 \
+  --env ALARMS_PER_SECOND=50 \
+  --env DURATION_IN_SECONDS=86400 \
+  thingsboard/tb-ce-performance-test:latest
+```
+
+100k devices - failed to connect more than 28k
+
+```bash
+docker run -it --rm --network host --name tb-perf-test \
+  --ulimit nofile=131072:131072 \
+  --env REST_URL=http://thingsboard:8088 \
+  --env MQTT_HOST=thingsboard \
+  --env DEVICE_END_IDX=50000 \
+  --env MESSAGES_PER_SECOND=25000 \
+  --env ALARMS_PER_SECOND=100 \
+  --env DURATION_IN_SECONDS=86400 \
+  --env DEVICE_CREATE_ON_START=false \
+  thingsboard/tb-ce-performance-test:latest
+```
+
+Fail to connect about 30k devices. Looks like file descriptor limit that stuck on 28898
+
+![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka-cassandra/img_10.png)
+
+```bash
+docker run -it --rm --name tb-perf-test0 \
+  --ulimit nofile=131072:131072 \
+  --env REST_URL=http://52.50.5.45:8088 \
+  --env MQTT_HOST=52.50.5.45 \
+  --env DEVICE_END_IDX=0 \
+  --env DEVICE_END_IDX=25000 \
+  --env MESSAGES_PER_SECOND=20000 \
+  --env ALARMS_PER_SECOND=50 \
+  --env DURATION_IN_SECONDS=86400 \
+  --env DEVICE_CREATE_ON_START=false \
+  thingsboard/tb-ce-performance-test:latest
+```
+
+```bash
+docker run -it --rm --name tb-perf-test1 \
+  --ulimit nofile=131072:131072 \
+  --env REST_URL=http://52.50.5.45:8088 \
+  --env MQTT_HOST=52.50.5.45 \
+  --env DEVICE_END_IDX=25000 \
+  --env DEVICE_END_IDX=50000 \
+  --env MESSAGES_PER_SECOND=20000 \
+  --env ALARMS_PER_SECOND=50 \
+  --env DURATION_IN_SECONDS=86400 \
+  --env DEVICE_CREATE_ON_START=false \
+  thingsboard/tb-ce-performance-test:latest
+```
+
+```bash
+docker run -it --rm --name tb-perf-test2 \
+  --env REST_URL=http://52.50.5.45:8088 \
+  --env MQTT_HOST=52.50.5.45 \
+  --env DEVICE_END_IDX=50000 \
+  --env DEVICE_END_IDX=75000 \
+  --env MESSAGES_PER_SECOND=5000 \
+  --env ALARMS_PER_SECOND=50 \
+  --env DURATION_IN_SECONDS=86400 \
+  --env DEVICE_CREATE_ON_START=false \
+  thingsboard/tb-ce-performance-test:latest
+```
+
+```bash
+docker run -it --rm --name tb-perf-test3 \
+  --env REST_URL=http://52.50.5.45:8088 \
+  --env MQTT_HOST=52.50.5.45 \
+  --env DEVICE_END_IDX=75000 \
+  --env DEVICE_END_IDX=100000 \
+  --env MESSAGES_PER_SECOND=5000 \
+  --env ALARMS_PER_SECOND=50 \
+  --env DURATION_IN_SECONDS=86400 \
+  --env DEVICE_CREATE_ON_START=false \
+  thingsboard/tb-ce-performance-test:latest
+```
+
+
 
