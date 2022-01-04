@@ -1021,8 +1021,8 @@ services:
       - cassandra:/bitnami
     environment:
       CASSANDRA_CLUSTER_NAME: "Thingsboard Cluster"
-      HEAP_NEWSIZE: "2048M"
-      MAX_HEAP_SIZE: "4096M"
+      HEAP_NEWSIZE: "4096M"
+      MAX_HEAP_SIZE: "8192M"
       JVM_EXTRA_OPTS: "-Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=7199 -Dcom.sun.management.jmxremote.rmi.port=7199  -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=127.0.0.1"
   zookeeper:
     image: docker.io/bitnami/zookeeper:3.7
@@ -1094,7 +1094,7 @@ services:
       CACHE_SPECS_DEVICE_CREDENTIALS_MAX_SIZE: "200000" # default is 10000 
       CACHE_SPECS_SESSIONS_MAX_SIZE: "200000" # default is 10000
       # Java options for 16G instance and JMX enabled
-      JAVA_OPTS: " -Xmx4096M -Xms4096M -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=9999 -Dcom.sun.management.jmxremote.rmi.port=9999 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=127.0.0.1"
+      JAVA_OPTS: " -Xmx8192M -Xms8192M -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=9999 -Dcom.sun.management.jmxremote.rmi.port=9999 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=127.0.0.1"
 volumes: # to persist data between container restarts or being recreated
   cassandra:
   kafka:
@@ -1109,10 +1109,10 @@ export REST_URL=http://thingsboard:8088
 export MQTT_HOST=thingsboard
 export DEVICE_START_IDX=0
 export DEVICE_END_IDX=50000
-export MESSAGES_PER_SECOND=5000
-export ALARMS_PER_SECOND=50
+export MESSAGES_PER_SECOND=2500
+export ALARMS_PER_SECOND=10
 export DURATION_IN_SECONDS=86400
-export DEVICE_CREATE_ON_START=true
+export DEVICE_CREATE_ON_START=false # set true once
 mvn spring-boot:run
 ```
 
@@ -1123,10 +1123,10 @@ export REST_URL=http://thingsboard:8088
 export MQTT_HOST=thingsboard
 export DEVICE_START_IDX=50000
 export DEVICE_END_IDX=100000
-export MESSAGES_PER_SECOND=5000
-export ALARMS_PER_SECOND=50
+export MESSAGES_PER_SECOND=2500
+export ALARMS_PER_SECOND=10
 export DURATION_IN_SECONDS=86400
-export DEVICE_CREATE_ON_START=true
+export DEVICE_CREATE_ON_START=false # set true once
 mvn spring-boot:run
 ```
 
