@@ -852,17 +852,14 @@ System can be scaled up vertically up to 50-100%. For significant horizontal sca
 
 ### m6a.large (2 vCPUs AMD EPYC 3rd, 8 GiB, EBS GP3) + Cassandra
 
-5000 devices, MQTT, 5000 msg/sec, 15000 telemetry/sec, postgres, Kafka queue
+5000 devices, 5000 msg/sec, 15000 telemetry/sec, MQTT, Postgres, Kafka, Cassandra
 
 Estimated cost 19$ EC2 + x$ CPU burst + 8$ EBS GP3 100GB = 30$/mo
 
-CPU 95%. This is good setup up to 5000 msg/sec, with peak performance up to 6000 msg sec
+CPU ??%. This is good setup up to ???? msg/sec, with peak performance up to ???? msg sec
 
-System can survive peak message rate up to message rate 20000 msg/sec (60000 telemetry/sec).
+System can survive peak message rate up to message rate ????? msg/sec (?????? telemetry/sec).
 
-Persistent queue is essential to survive peak loads. Let's setup Kafka queue and run Thingsboard performance test.
-
-Zookeeper is required to run Kafka these days.
 
 ```bash
 version: '3'
