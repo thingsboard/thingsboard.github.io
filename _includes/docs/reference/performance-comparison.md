@@ -1112,8 +1112,8 @@ export DEVICE_END_IDX=50000
 export MESSAGES_PER_SECOND=2500
 export ALARMS_PER_SECOND=10
 export DURATION_IN_SECONDS=86400
-export DEVICE_CREATE_ON_START=false # set true once
-mvn spring-boot:run
+export DEVICE_CREATE_ON_START=true # set true once
+nohup mvn spring-boot:run &
 ```
 
 Performance test node2
@@ -1126,8 +1126,8 @@ export DEVICE_END_IDX=100000
 export MESSAGES_PER_SECOND=2500
 export ALARMS_PER_SECOND=10
 export DURATION_IN_SECONDS=86400
-export DEVICE_CREATE_ON_START=false # set true once
-mvn spring-boot:run
+export DEVICE_CREATE_ON_START=true # set true once
+nohup mvn spring-boot:run &
 ```
 
 ```bash
