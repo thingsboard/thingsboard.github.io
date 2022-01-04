@@ -86,7 +86,7 @@ To do this, check the Enable security checkbox and click on the Headers filter. 
 Once the Headers filter has been configured, it will also need to be specified in the uplink message as follows.
 
 ```ruby
--H "test-header:security"
+-H "test-header:secret"
 ```
 {: .copy-code}
 

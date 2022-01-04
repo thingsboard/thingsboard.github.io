@@ -21,6 +21,8 @@ To build and run ThingsBoard instance make sure that you have **Java** and **Mav
 
 Please refer to [**Building from sources**](/docs/user-guide/install/building-from-source) section where [**Java**](/docs/user-guide/install/building-from-source/#java) and [**Maven**](/docs/user-guide/install/building-from-source/#maven) install processes are described.
 
+To run integration and black-box tests **docker** and **docker-compose** required, please, refer to the [Running tests](/docs/user-guide/install/building-from-source/#tips-and-tricks) section.
+
 #### Fork and build ThingsBoard repository
 
 Once you have completed installation of required tools please fork official [**ThingsBoard repository**](https://github.com/thingsboard/thingsboard).
@@ -180,7 +182,7 @@ Before you commit your changes to the remote repository build it locally with te
 mvn clean install
 ```
 
-Make sure that build is fine and all the tests are successful.
+Make sure that build is fine and all the tests are successful. Try [black-box tests](https://github.com/thingsboard/thingsboard/tree/master/msa/black-box-tests) as well.
 
 ##### Push changes to your fork
 
