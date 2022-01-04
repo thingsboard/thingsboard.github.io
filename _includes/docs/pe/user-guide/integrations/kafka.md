@@ -14,8 +14,6 @@ In some scenarios, Kafka can be used instead of a message queue, in cases where 
 ![image](/images/user-guide/integrations/kafka/Kafka_main.png)
 
 
- !!! need to change picture (downlink it is Kafka Rule node )
-
 
 ## Choose Kafka Usage Type
 
@@ -130,7 +128,7 @@ At this stage, you need to set the parameters to establish a connection between 
 | **Topics**              | Topics that ThingsBoard will subscribe to after connecting to the Kafka broker.|
 | **Bootstrap servers**              | Host and port pair that is the address of the Kafka broker to which the Kafka client first connects for bootstrapping.|
 | **Poll interval**              | Duration in milliseconds between polling of the messages if no new messages arrive.|
-| **Auto create topics**              | !!!where are topics created? on TB or Kafka or is it a common parameter?|
+| **Auto create topics**              | Set **Enable** if need topics to be created automatically|
 | **Other properties**              | Any other additional properties could be provided for kafka broker connection..|
 | **Metadata**              | Metadata is a key-value map with some integration specific fields. For example, you can put device type.|
 |---
@@ -151,13 +149,18 @@ Confluent Cloud<br/><small>Cloud solution</small>%,%confluent%,%/templates/integ
 
 ## Advanced Usage: Kafka Producer (Downlink)
 
-To get functionality such as Kafka Producer, you need to use the [Kafka Rule Node](https://thingsboard.io/docs/pe/user-guide/rule-engine-2-0/external-nodes/#kafka-node) in which you can specify Bootstrap servers, Topic and other parameters to connect to the Kafka broker:
+To get functionality such as Kafka Producer, you need to use the [Kafka Rule Node](https://thingsboard.io/docs/pe/user-guide/rule-engine-2-0/external-nodes/#kafka-node) in which you can specify Bootstrap servers, Topic and other parameters to connect to the Kafka broker, you can find more details in the corresponding [guide](https://thingsboard.io/docs/pe/user-guide/rule-engine-2-0/external-nodes/#kafka-node) .
 
-With this Node, you can send the preprocessed data to the required Kafka topic.
+If it is not possible to send commands directly to devices to manage from ThingsBoard, but only through a broker, then in this case you can use the Kafka Downlink Rule Node. Let's consider a small example with its Node, suppose the data came from the broker and passed the converter and, according to the config of Device Profile, were directed to the custom Rule Chain ("Monitoring-sensor") and at the end of all processing, we will send a response about success or failure back to the broker ( you can change the response to commands to control your device, etc.)
 
+{% include images-gallery.html imageCollection="kafka_confluent_downlink" %}
+
+Сheck whether the message has been transmitted, you can see in the Events tab of Kafka Rule Node with enable Debug Mode:
+
+{% include images-gallery.html imageCollection="kafka_confluent_downlink_result" %}
 
 {% capture kafka_note_downnlink %}
-**Note**: Using the same broker for uplink and downlink connections can lead to data loops.
+**Note**: Using the same broker topic for uplink and downlink connections can lead to data loops.
 {% endcapture %}
 
 {% include templates/info-banner.md content=kafka_note_downnlink %}

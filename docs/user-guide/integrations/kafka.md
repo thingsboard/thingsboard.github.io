@@ -84,6 +84,19 @@ kafka_confluent_send_payload_to_tb:
     2:
         image: /images/user-guide/integrations/kafka/confluent/create_integration/kafka_confluent_send_payload_to_tb_2.png
 
+kafka_confluent_downlink:
+    0:
+        image: /images/user-guide/integrations/kafka/confluent/downlink/kafka_confluent_downlink_node_0.png
+    1:
+        image: /images/user-guide/integrations/kafka/confluent/downlink/kafka_confluent_downlink_node_1.png
+    2:
+        image: /images/user-guide/integrations/kafka/confluent/downlink/kafka_confluent_downlink_node_2.png
+
+kafka_confluent_downlink_result:
+    0:
+        image: /images/user-guide/integrations/kafka/confluent/downlink/kafka_confluent_downlink_result_0.png
+    1:
+        image: /images/user-guide/integrations/kafka/confluent/downlink/kafka_confluent_downlink_result_1.png
 ---
 {% assign docsPrefix = "pe/" %}
 {% include docs/pe/user-guide/integrations/kafka.md %}
