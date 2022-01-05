@@ -539,6 +539,14 @@ Message Metadata must contain **ts** field. This field identifies timestamp in m
 Also, if Message Metadata contains **TTL** field, its value is used for timeseries data expiration, otherwise **TTL** 
 from Node Configuration is used.
 
+**Since TB Version 3.3.3** you can enable **ignoreMetadataTs** param to ignore the timestamp that arrives from message metadata. 
+Useful for all sorts of sequential processing if you merge messages from multiple sources (devices, assets, etc). 
+
+For example, if you count number of messages from multiple devices into asset time-series value. 
+Typically, you fetch the previous value of the counter, increment it and then save the value. 
+
+If you use timestamp of the original message, the value may be ignored, since it has outdated timestamp comparing to the previous message.
+
 **Expected Message Payload example:**
 {% highlight json %}
 {  
