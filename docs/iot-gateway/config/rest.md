@@ -37,6 +37,11 @@ Then, connector will create endpoints from a list of endpoints using endpoints f
 {
   "host": "127.0.0.1",
   "port": "5000",
+  "SSL": false,
+  "security": {
+    "cert": "~/ssl/cert.pem",
+    "key": "~/ssl/key.pem"
+  },
   "mapping":[
     {
       "endpoint": "/test_device",

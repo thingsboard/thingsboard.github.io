@@ -15,7 +15,7 @@ description: Installation structure and configuration of ThingsBoard IoT Gateway
 Please see default directory structure below for daemon installation.  
 
 ```text
-/thingsboard-gateway/config                   - Configuration folder.
+/etc/thingsboard-gateway/config                   - Configuration folder.
     tb_gateway.yaml                               - Main configuration file for Gateway.
     logs.conf                                     - Configuration file for logging.
     modbus.json                                   - Modbus connector configuration.
