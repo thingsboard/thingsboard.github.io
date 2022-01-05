@@ -62,6 +62,7 @@ If you like to use only one of them - just remove all other connectors.
 thingsboard:
   host: thingsboard.cloud
   port: 1883
+  minPackSendDelayMS: 0
   security:
     accessToken: PUT_YOUR_ACCESS_TOKEN_HERE
 storage:
@@ -143,10 +144,12 @@ Configs in storage subsection provides configuration for saving incoming data be
 There are 2 variants for this section: memory or file.
 1. **Memory** storage - Received data saving to the RAM memory.
 2. **File** storage - Received data saving to the hard drive.
+3. **SQLite** storage - Received data saving to the .db file.
 
 {% capture storagetogglespec %}
 Memory storage<br/> <small>(recommended if there is not enough disk space)</small>%,%memory%,%templates/iot-gateway/storage-memory-config.md%br%
-File storage<br/> <small>(recommended for more persistent)</small>%,%file%,%templates/iot-gateway/storage-file-config.md{% endcapture %}
+File storage<br/> <small>(recommended for more persistent)</small>%,%file%,%templates/iot-gateway/storage-file-config.md%br%
+SQLite storage<br/> <small>(recommended for more speed)</small>%,%sqlite%,%templates/iot-gateway/sqlite-storage-config.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="storageConfig" toggle-spec=storagetogglespec %}
 
