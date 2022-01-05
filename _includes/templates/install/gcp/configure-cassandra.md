@@ -16,6 +16,7 @@ So, first, define **3** zones within your region:
 export GCP_CASSANDRA_ZONE1=us-central1-a
 export GCP_CASSANDRA_ZONE2=us-central1-b
 export GCP_CASSANDRA_ZONE3=us-central1-c
+export GCP_ZONE=us-central1
 ```
 {: .copy-code}
 
