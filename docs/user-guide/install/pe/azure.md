@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-pe
-title: Installing ThingsBoard CE on Azure
-description: Installing ThingsBoard CE on Azure
+title: Installing ThingsBoard PE on Azure
+description: Installing ThingsBoard PE on Azure
 
 ---
 
@@ -24,6 +24,15 @@ description: Installing ThingsBoard CE on Azure
                            <div class="deployment-cards">
                                 <div class="deployment-cards-container">
                                    <div class="deployment-card-block">
+                                       <a href="/docs/user-guide/install/pe/cluster/azure-from-markeplace/">
+                                           <span>
+                                               <div class="deployment-logo">
+                                                   <img width="" src="/images/install/cloud/azure-vm.svg" title="Installing ThingsBoard PE from Azure Marketplace" alt="Azure Marketplace">
+                                                </div>
+                                           </span>
+                                       </a>
+                                   </div>
+                                   <div class="deployment-card-block">
                                        <a href="/docs/user-guide/install/pe/cluster/azure-aks-setup/">
                                            <span>
                                                <div class="deployment-logo">
@@ -32,7 +41,7 @@ description: Installing ThingsBoard CE on Azure
                                            </span>
                                        </a>
                                    </div>
-                              </div>                     
+                                </div>                     
                             </div>                        
                         </div>
                     </div>
