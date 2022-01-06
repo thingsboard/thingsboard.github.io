@@ -1000,10 +1000,8 @@ First, we need to increase ip local port range on performance test instance. Now
 ssh pt
 cat /proc/sys/net/ipv4/ip_local_port_range
 #32768	60999
-sudo -s
-echo "net.ipv4.ip_local_port_range= 1024 65535">> /etc/sysctl.conf
-exit
-sudo sysctl -p
+sudo -s echo "net.ipv4.ip_local_port_range= 1024 65535">> /etc/sysctl.conf
+sudo -s sysctl -p
 cat /proc/sys/net/ipv4/ip_local_port_range
 #1024	65535
 ```
@@ -1032,7 +1030,8 @@ services:
       - zookeeper:/bitnami
     environment:
       ALLOW_ANONYMOUS_LOGIN: "yes"
-      JVMFLAGS: "-Xmx128m -Xms128m -Dzookeeper.admin.enableServer=false -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=9199 -Dcom.sun.management.jmxremote.rmi.port=9199  -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=127.0.0.1"
+      ZOO_ENABLE_ADMIN_SERVER: "no"
+      JVMFLAGS: "-Xmx128m -Xms128m -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=9199 -Dcom.sun.management.jmxremote.rmi.port=9199  -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=127.0.0.1"
   kafka:
     image: docker.io/bitnami/kafka:3
     network_mode: "host"
@@ -1074,14 +1073,14 @@ services:
       CASSANDRA_PASSWORD: "cassandra"
       CASSANDRA_QUERY_BUFFER_SIZE: "200000"
       CASSANDRA_QUERY_CONCURRENT_LIMIT: "1000"
-      CASSANDRA_QUERY_POLL_MS: "10"
+      CASSANDRA_QUERY_POLL_MS: "5"
       #Kafka
       TB_QUEUE_TYPE: "kafka"
       TB_KAFKA_BATCH_SIZE: "65536" # default is 16384 - it helps to produce messages much efficiently
       TB_KAFKA_LINGER_MS: "5" # default is 1
       TB_QUEUE_KAFKA_MAX_POLL_RECORDS: "2048" # default is 8192
       TB_SERVICE_ID: "tb-node-0"
-      HTTP_BIND_PORT: "8088" # on port 8080 zookeeper runs admin server, there is no option to move it at this moment
+      HTTP_BIND_PORT: "8080"
       TB_QUEUE_RE_MAIN_PACK_PROCESSING_TIMEOUT_MS: "30000"
       # Postgres connection
       SPRING_JPA_DATABASE_PLATFORM: "org.hibernate.dialect.PostgreSQLDialect"
@@ -1090,9 +1089,10 @@ services:
       SPRING_DATASOURCE_USERNAME: "postgres"
       SPRING_DATASOURCE_PASSWORD: "postgres"
       # Cache specs
-      CACHE_SPECS_DEVICES_MAX_SIZE: "200000" # default is 10000
-      CACHE_SPECS_DEVICE_CREDENTIALS_MAX_SIZE: "200000" # default is 10000 
-      CACHE_SPECS_SESSIONS_MAX_SIZE: "200000" # default is 10000
+      CACHE_SPECS_DEVICES_MAX_SIZE: "512000" # default is 10000
+      CACHE_SPECS_DEVICE_CREDENTIALS_MAX_SIZE: "512000" # default is 10000 
+      CACHE_SPECS_SESSIONS_MAX_SIZE: "512000" # default is 10000
+      TS_KV_PARTITIONS_MAX_CACHE_SIZE: "1600000" # default is 100000
       # Java options for 16G instance and JMX enabled
       JAVA_OPTS: " -Xmx8192M -Xms8192M -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=9999 -Dcom.sun.management.jmxremote.rmi.port=9999 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=127.0.0.1"
 volumes: # to persist data between container restarts or being recreated
@@ -1201,5 +1201,319 @@ docker run -it --rm --name tb-perf-test3 \
   thingsboard/tb-ce-performance-test:latest
 ```
 
+#### 500k test
+
+Prepare the instance `pt01`. 
+```bash
+ssh tb2 <<'ENDSSH'
+set +x
+#optional. replace with your Thingsboard instance ip
+#echo '52.50.5.45 thingsboard' | sudo tee -a /etc/hosts
+#extend the local port range up to 64500 
+cat /proc/sys/net/ipv4/ip_local_port_range
+#32768	60999
+echo "net.ipv4.ip_local_port_range = 1024 65535" | sudo tee -a /etc/sysctl.conf
+sudo -s sysctl -p
+cat /proc/sys/net/ipv4/ip_local_port_range
+#1024	65535
+sudo apt update
+sudo apt install -y git maven docker docker-compose htop iotop mc screen
+# manage Docker as a non-root user
+sudo groupadd docker
+sudo usermod -aG docker $USER
+newgrp docker
+# test non-root docker run
+docker run hello-world
+cd ~
+git clone https://github.com/thingsboard/performance-tests.git
+# git pull
+cd performance-tests
+./build.sh
+ENDSSH
+```
 
 
+`cat > init-tests.sh`
+```bash
+#!/bin/bash
+IPS='54.170.209.209 52.50.196.218 54.75.186.93 54.195.183.19 34.253.183.135 54.170.0.222 34.253.230.87 34.244.47.118'
+
+for IP in ${IPS}; do
+  echo "INIT ${COUNTER} FOR ${IP}"
+
+  ssh -i ~/.ssh/aws/smatvienko.pem -o StrictHostKeyChecking=accept-new ubuntu@${IP} <<'ENDSSH'
+set +x
+#optional. replace with your Thingsboard instance ip
+#echo '52.50.5.45 thingsboard' | sudo tee -a /etc/hosts
+#extend the local port range up to 64500 
+cat /proc/sys/net/ipv4/ip_local_port_range
+#32768	60999
+echo "net.ipv4.ip_local_port_range = 1024 65535" | sudo tee -a /etc/sysctl.conf
+sudo -s sysctl -p
+cat /proc/sys/net/ipv4/ip_local_port_range
+#1024	65535
+sudo apt update
+sudo apt install -y git maven docker docker-compose htop iotop mc screen
+# manage Docker as a non-root user
+sudo groupadd docker
+sudo usermod -aG docker $USER
+newgrp docker
+# test non-root docker run
+docker run hello-world
+cd ~
+git clone https://github.com/thingsboard/performance-tests.git
+# git pull
+cd performance-tests
+./build.sh
+ENDSSH
+done
+```
+
+`chmod +x init-tests.sh`
+
+
+------------------
+
+
+```bash
+ssh pt01 <<'ENDSSH'
+cd ~/performance-tests
+export REST_URL=http://52.50.5.45:8088
+export MQTT_HOST=52.50.5.45
+export DEVICE_START_IDX=0
+export DEVICE_END_IDX=50000
+export MESSAGES_PER_SECOND=2500
+export ALARMS_PER_SECOND=10
+export DURATION_IN_SECONDS=86400
+export DEVICE_CREATE_ON_START=true # set true once
+nohup mvn spring-boot:run &
+ENDSSH
+```
+
+`cat > run-tests.sh`
+```bash
+#!/bin/bash
+IPS='54.170.209.209 52.50.196.218 54.75.186.93 54.195.183.19 34.253.183.135 54.170.0.222 34.253.230.87 34.244.47.118 54.216.167.9 54.77.140.209'
+
+COUNTER=0
+DEVICES_PER_NODE=62500
+MESSAGES_PER_NODE=1250
+
+for IP in ${IPS}; do
+  let COUNTER++
+  let DEVICE_START_IDX=COUNTER*DEVICES_PER_NODE-DEVICES_PER_NODE
+  let DEVICE_END_IDX=COUNTER*DEVICES_PER_NODE
+  echo "TEST ${COUNTER} FOR ${IP}"
+
+SCRIPT="
+set +x;
+sudo apt install -y screen;
+cd ~/performance-tests;
+export REST_URL=http://172.31.25.132:8080;
+export MQTT_HOST=172.31.25.132;
+export DEVICE_START_IDX=${DEVICE_START_IDX};
+export DEVICE_END_IDX=${DEVICE_END_IDX};
+export MESSAGES_PER_SECOND=${MESSAGES_PER_NODE};
+export ALARMS_PER_SECOND=10;
+export DURATION_IN_SECONDS=86400;
+export DEVICE_CREATE_ON_START=true;
+screen -d mvn spring-boot:run
+echo 'done!';
+"
+  echo ${SCRIPT}
+  ssh -i ~/.ssh/aws/smatvienko.pem -o StrictHostKeyChecking=accept-new ubuntu@${IP} ${SCRIPT}
+done
+```
+
+`chmod +x run-tests.sh`
+
+```bash
+#500k devices
+version: '3'
+services:
+  cassandra:
+    image: bitnami/cassandra:4.0
+    network_mode: "host"
+    restart: "always"
+    volumes:
+      - cassandra:/bitnami
+    environment:
+      CASSANDRA_CLUSTER_NAME: "Thingsboard Cluster"
+      HEAP_NEWSIZE: "4096M"
+      MAX_HEAP_SIZE: "8192M"
+      JVM_EXTRA_OPTS: "-Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=7199 -Dcom.sun.management.jmxremote.rmi.port=7199  -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=127.0.0.1"
+  zookeeper:
+    image: docker.io/bitnami/zookeeper:3.7
+    network_mode: "host"
+    restart: "always"
+    volumes:
+      - zookeeper:/bitnami
+    environment:
+      ALLOW_ANONYMOUS_LOGIN: "yes"
+      ZOO_ENABLE_ADMIN_SERVER: "no"
+      JVMFLAGS: "-Xmx128m -Xms128m -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=9199 -Dcom.sun.management.jmxremote.rmi.port=9199  -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=127.0.0.1"
+  kafka:
+    image: docker.io/bitnami/kafka:3
+    network_mode: "host"
+    restart: "always"
+    volumes:
+      - kafka:/bitnami
+    environment:
+      KAFKA_CFG_LISTENERS: "PLAINTEXT://:9092"
+      KAFKA_CFG_ADVERTISED_LISTENERS: "PLAINTEXT://127.0.0.1:9092"
+      KAFKA_CFG_ZOOKEEPER_CONNECT: "localhost:2181"
+      ALLOW_PLAINTEXT_LISTENER: "yes"
+      KAFKA_JMX_OPTS: "-Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=1099 -Dcom.sun.management.jmxremote.rmi.port=1099 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=127.0.0.1"
+      JMX_PORT: "1099"
+    depends_on:
+      - zookeeper
+  postgres:
+    image: "postgres:14"
+    network_mode: "host"
+    restart: "always"
+    volumes:
+      - postgres:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: "thingsboard"
+      POSTGRES_PASSWORD: "postgres"
+  tb:
+#    image: "thingsboard/tb"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - postgres
+      - kafka
+      - cassandra
+    network_mode: "host"
+    restart: "always"
+    volumes:
+      - thingsboard-data:/data
+      - thingsboard-logs:/var/log/thingsboard
+    environment:
+      DATABASE_TS_TYPE: "cassandra"
+      DATABASE_TS_LATEST_TYPE: "sql"
+      #Cassandra
+      CASSANDRA_CLUSTER_NAME: "Thingsboard Cluster"
+      CASSANDRA_LOCAL_DATACENTER: "datacenter1"
+      CASSANDRA_KEYSPACE_NAME: "thingsboard"
+      CASSANDRA_URL: "127.0.0.1:9042"
+      CASSANDRA_USE_CREDENTIALS: "true"
+      CASSANDRA_USERNAME: "cassandra"
+      CASSANDRA_PASSWORD: "cassandra"
+      CASSANDRA_QUERY_BUFFER_SIZE: "500000"
+      CASSANDRA_QUERY_CONCURRENT_LIMIT: "2000"
+      CASSANDRA_QUERY_POLL_MS: "5"
+      #Kafka
+      TB_QUEUE_TYPE: "kafka"
+      TB_KAFKA_BATCH_SIZE: "65536" # default is 16384 - it helps to produce messages much efficiently
+      TB_KAFKA_LINGER_MS: "5" # default is 1
+      TB_QUEUE_KAFKA_MAX_POLL_RECORDS: "2048" # default is 8192
+      TB_SERVICE_ID: "tb-node-0"
+      HTTP_BIND_PORT: "8080"
+      TB_QUEUE_RE_MAIN_PACK_PROCESSING_TIMEOUT_MS: "30000"
+      # Postgres connection
+      SPRING_JPA_DATABASE_PLATFORM: "org.hibernate.dialect.PostgreSQLDialect"
+      SPRING_DRIVER_CLASS_NAME: "org.postgresql.Driver"
+      SPRING_DATASOURCE_URL: "jdbc:postgresql://localhost:5432/thingsboard"
+      SPRING_DATASOURCE_USERNAME: "postgres"
+      SPRING_DATASOURCE_PASSWORD: "postgres"
+      SPRING_DATASOURCE_MAXIMUM_POOL_SIZE: "25"
+      # Cache specs
+      #500k devices
+      CACHE_SPECS_DEVICES_MAX_SIZE: "512000" # default is 10000
+      CACHE_SPECS_DEVICE_CREDENTIALS_MAX_SIZE: "512000" # default is 10000 
+      CACHE_SPECS_SESSIONS_MAX_SIZE: "512000" # default is 10000
+      TS_KV_PARTITIONS_MAX_CACHE_SIZE: "2000000" # default is 100000
+#      #1M devices  
+#      CACHE_SPECS_DEVICES_MAX_SIZE: "1000000" # default is 10000
+#      CACHE_SPECS_DEVICE_CREDENTIALS_MAX_SIZE: "100000" # default is 10000 
+#      CACHE_SPECS_SESSIONS_MAX_SIZE: "100000" # default is 10000
+#      TS_KV_PARTITIONS_MAX_CACHE_SIZE: "8000000" # default is 100000
+      # Device state service
+      DEFAULT_INACTIVITY_TIMEOUT: "1800" # defailt is 600 (10min)
+      DEFAULT_STATE_CHECK_INTERVAL: "600" # default is 60 (1min)
+      PERSIST_STATE_TO_TELEMETRY: "true" # Persist device state to the Cassandra. Default is false (Postgres, as device server_scope attributes) 
+      # Java options for 16G instance and JMX enabled
+      JAVA_OPTS: " -Xss512k -Xmx10240M -Xms10240M -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=9999 -Dcom.sun.management.jmxremote.rmi.port=9999 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=127.0.0.1"
+    ulimits:
+      nofile:
+        soft: 1048576
+        hard: 1048576
+#    sysctls:
+#      net.ipv4.ip_local_port_range: 12000 65535
+volumes: # to persist data between container restarts or being recreated
+  cassandra:
+  kafka:
+  zookeeper:
+  postgres:
+  thingsboard-data:
+  thingsboard-logs:
+```
+{: .copy-code}
+
+```dockerfile
+FROM thingsboard/tb:latest
+USER root
+RUN echo 'net.ipv4.ip_local_port_range = 12000 65535' >> /etc/sysctl.conf
+RUN echo 'fs.file-max = 1048576' >> /etc/sysctl.conf
+#RUN mkdir /etc/security/
+RUN echo '*                soft    nofile          1048576' >> /etc/security/limits.conf
+RUN echo '*                hard    nofile          1048576' >> /etc/security/limits.conf
+RUN echo 'root             soft    nofile          1048576' >> /etc/security/limits.conf
+RUN echo 'root             hard    nofile          1048576' >> /etc/security/limits.conf
+#CMD echo '+1M Connections' # your application here
+USER thingsboard
+```
+{: .copy-code}
+
+Add lines to your limits.conf file.
+
+cat | sudo tee -a /etc/security/limits.conf
+
+```
+## /etc/security/limits.conf
+## System Limits for FDs
+## "nofile" is "Number of Open Files"
+## This is the cap on number of FDs in use concurrently.
+## Set nofile to the max value of 1,048,576.
+
+#<user>     <type>    <item>     <value>
+*           soft      nofile     1048576
+*           hard      nofile     1048576
+root        soft      nofile     1048576
+root        hard      nofile     1048576
+```
+
+
+Add lines to your sysctl.conf file.
+
+cat | sudo tee -a /etc/sysctl.conf
+
+```
+## /etc/sysctl.conf
+## Increase Outbound Connections
+## Good for a service mesh and proxies like
+## Nginx/Envoy/HAProxy/Varnish and applications that
+## need long-lived connections.
+## Careful not to set the range wider as you will impact
+## running application ports in heavy usage situations.
+net.ipv4.ip_local_port_range = 12000 65535
+
+## Increase Inbound Connections
+## Allows for +1M more FDs
+## An FD is an integer value used as a traffic I/O pointer
+## on a connection with a Client.
+## The FD Int value is used to traffic packets between
+## User and Kernel Space.
+fs.file-max = 1048576
+```
+
+
+sudo sysctl -w net.netfilter.nf_conntrack_max=1048576
+
+[reference](http://renbuar.blogspot.com/2019/02/netnetfilternfconntrackmax1048576.html)
+
+scripts for managing 20 test instances
+
+_includes/docs/reference/performance-scripts/*.sh
