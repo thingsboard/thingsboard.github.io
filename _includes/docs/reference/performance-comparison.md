@@ -832,29 +832,29 @@ docker run -it --rm --network host --name tb-perf-test \
 Here the queue stats. It looks solid. A small fluctuation on the chart is nominal.  
 All systems have to run maintenance in background, so it is completely fine to have those chart for Thingsboard monolith deployment.    
 
-![](../../../images/reference/performance-aws-instances/method/m6a-x2large/25k-10k-13-k/queue-stats.png)
+![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/25k-10k-13-k/queue-stats.png)
 
 API usage about 10 hours. 1.1B data points
 
-![](../../../images/reference/performance-aws-instances/method/m6a-x2large/25k-10k-13-k/api-usage.png)
+![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/25k-10k-13-k/api-usage.png)
 
 htop shows the system is working normally and have a plenty of resources to handle another jobs.
 Memory consumption is about 9GiB, other memory is the system file cache. 
 The instance with 16GiB is more that enough to run that load.
 
-![](../../../images/reference/performance-aws-instances/method/m6a-x2large/25k-10k-13-k/htop.png)
+![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/25k-10k-13-k/htop.png)
 
 Postgres is quite intensive update the TS latest values and reach the peak value about 60k updates/sec.
 
-![](../../../images/reference/performance-aws-instances/method/m6a-x2large/25k-10k-13-k/postgresql-pgadmin-dashboard.png)
+![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/25k-10k-13-k/postgresql-pgadmin-dashboard.png)
 
 AWS instance monitoring shows about 75% average CPU load with a peak up to 88%
 
-![](../../../images/reference/performance-aws-instances/method/m6a-x2large/25k-10k-13-k/aws-instance-monitoring.png)
+![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/25k-10k-13-k/aws-instance-monitoring.png)
 
 AWS storage monitoring. The disk load is extremely low compare to the PostgreSQL only deployment
 
-![](../../../images/reference/performance-aws-instances/method/m6a-x2large/25k-10k-13-k/aws-storage-monitoring.png)
+![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/25k-10k-13-k/aws-storage-monitoring.png)
 
 Cassandra's disk size and IOPS usage is quite low (cheaper) compare to PostgreSQL-only deployments.
 
@@ -862,9 +862,9 @@ For 1.15B data points Cassandra uses 33GiB of disk space (29 GiB per 1B data poi
 As reminder, PostgreSQL takes about 161 GiB to persist 1.06B data points (152 GiB per 1B data points). 
 It is more than x5 times (152 / 29) cheaper than PostgreSQL disk consumption!
 
-![](../../../images/reference/performance-aws-instances/method/m6a-x2large/25k-10k-13-k/cassandra-disk-size.png)
+![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/25k-10k-13-k/cassandra-disk-size.png)
 
-![](../../../images/reference/performance-aws-instances/method/m6a-x2large/25k-10k-13-k/telemetry-persisted-chart.png)
+![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/25k-10k-13-k/telemetry-persisted-chart.png)
 
 Finally, let's check the JVM state on each Thingboard, Zookeeper, Kafka and Cassandra
 Let's forward JMX port with SSH to connect and monitor all Java applications presented.
@@ -875,23 +875,23 @@ ssh -L 9999:127.0.0.1:9999 -L 1099:127.0.0.1:1099 -L 9199:127.0.0.1:9199 -L 7199
 
 Open VisualVM, add the local applications, open it and let the data being gathered for a few minutes. 
 
-![](../../../images/reference/performance-aws-instances/method/m6a-x2large/25k-10k-13-k/visualvm-forwarded-applications.png)
+![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/25k-10k-13-k/visualvm-forwarded-applications.png)
 
 Here the JMX monitoring for Thingsboard. The system is stable.
 
-![](../../../images/reference/performance-aws-instances/method/m6a-x2large/25k-10k-13-k/jmx-thingsboard.png)
+![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/25k-10k-13-k/jmx-thingsboard.png)
 
 Here the JMX monitoring for Kafka. The system is stable.
 
-![](../../../images/reference/performance-aws-instances/method/m6a-x2large/25k-10k-13-k/jmx-kafka.png)
+![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/25k-10k-13-k/jmx-kafka.png)
 
 Here the JMX monitoring for Zookeeper. The system is stable.
 
-![](../../../images/reference/performance-aws-instances/method/m6a-x2large/25k-10k-13-k/jmx-zookeeper.png)
+![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/25k-10k-13-k/jmx-zookeeper.png)
 
 Here the JMX monitoring for Cassandra.  The system is stable.
 
-![](../../../images/reference/performance-aws-instances/method/m6a-x2large/25k-10k-13-k/jmx-cassandra.png)
+![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/25k-10k-13-k/jmx-cassandra.png)
 
 Conclusion: Cassandra requires more CPU resources, but it save x5 disk space, lower IOPS load.
 Cassandra can handle x2-x3 more load (compare to PostgreSQL only) with a single instance deployment and able to scale up horizontally by adding a new nodes to the Cassandra cluster.    
@@ -1070,19 +1070,19 @@ nohup mvn spring-boot:run &
 
 Test runs 24 hour and here the results:
 
-![](../../../images/reference/performance-aws-instances/method/m6a-x2large/100k-5k-15k/queue-stats.png)
+![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/100k-5k-15k/queue-stats.png)
 
-![](../../../images/reference/performance-aws-instances/method/m6a-x2large/100k-5k-15k/api-usage.png)
+![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/100k-5k-15k/api-usage.png)
 
-![](../../../images/reference/performance-aws-instances/method/m6a-x2large/100k-5k-15k/htop.png)
+![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/100k-5k-15k/htop.png)
 
-![](../../../images/reference/performance-aws-instances/method/m6a-x2large/100k-5k-15k/postgresql-pgadmin-dashboard.png)
+![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/100k-5k-15k/postgresql-pgadmin-dashboard.png)
 
-![](../../../images/reference/performance-aws-instances/method/m6a-x2large/100k-5k-15k/jmx-visualvm-monitoring.png)
+![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/100k-5k-15k/jmx-visualvm-monitoring.png)
 
-![](../../../images/reference/performance-aws-instances/method/m6a-x2large/100k-5k-15k/aws-instance-monitoring.png)
+![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/100k-5k-15k/aws-instance-monitoring.png)
 
-![](../../../images/reference/performance-aws-instances/method/m6a-x2large/100k-5k-15k/aws-storage-monitoring.png)
+![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/100k-5k-15k/aws-storage-monitoring.png)
 
 #### Cassandra disk usage
 
@@ -1090,7 +1090,7 @@ For the last 24 hours (100k devices, 432M msg) total datapoint stored is 1.3B
 
 Cassandra's disk usage is about 20 GiB per 1.3B data points. It is about 65M data points per 1 GiB disk space.
 
-![](../../../images/reference/performance-aws-instances/method/m6a-x2large/100k-5k-15k/disk-usage-cassandra.png)
+![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/100k-5k-15k/disk-usage-cassandra.png)
 
 Note: data size on disk may vary depends on the content.
 
@@ -1263,12 +1263,42 @@ export DEVICE_CREATE_ON_START=true # set true once
 nohup mvn spring-boot:run &
 ```
 
-Test results look fine:
+Test results looks fine:
 
-![](../../../images/reference/performance-aws-instances/method/m6a-x2large/100k-10k-30k/htop.png)
+![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/100k-10k-30k/queue-stats.png)
 
+![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/100k-10k-30k/api-usage.png)
 
+![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/100k-10k-30k/htop.png)
 
+![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/100k-10k-30k/jmx-visualvm-monitoring.png)
+
+![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/100k-10k-30k/postgresql-pgadmin-dashboard.png)
+
+![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/100k-10k-30k/aws-instance-monitoring.png)
+
+![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/100k-10k-30k/aws-storage-monitoring.png)
+
+**Conclusion**: the m6a.2xlarge is can handle up to 100k devices with message rate up to 10k/sec.
+CPU usage is 93%, so there is almost no spare resources left for a peak load and user activities.
+
+#### Do we really have 100k device connected?
+
+Here some point how to ensure that you have a valid test run with all device created and connected
+
+1. All devices were created. Open device List and check total device count.
+
+![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/100k-is-connected/devices-list-100k-thingsboard.png)
+
+2. All device connected. Check the logs. Device count have to be greater than 100k
+
+```
+tb_1         | 2022-01-06 16:37:11,716 [TB-Scheduling-3] INFO  o.t.s.c.t.s.DefaultTransportService - Transport Stats: openConnections [100000]
+```
+
+3. All device connected. Java JMX. VisualVM -> Thingsboard -> MBeans -> java.lang -> OpenFileDescriptorCount -> more than 100000
+
+![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/100k-is-connected/jmx-mbeans-java-lang-operating-system-open-file-descriptor-count.png)
 
 ### m6a.2xlarge (8 vCPUs AMD EPYC 3rd, 32 GiB, EBS GP3) + Cassandra - 500k devices, 5k msg/sec, 15k tps
 
@@ -1551,6 +1581,8 @@ _includes/docs/reference/performance-scripts/*.sh
 
 ### Experiments
 
+#### Cassandra versions compare
+
 Cassandra 4.0 m6a.xlarge (4 vCPU, 16 GiB)
 
 ![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka-cassandra/img.png)
@@ -1562,6 +1594,8 @@ Cassandra 3.11 m6a.large
 Cassandra 4.0 c6i.xlarge (4 vCPU, 8 GiB)
 
 ![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka-cassandra/img_2.png)
+
+#### Max msg rate experiments
 
 Cassandra 4.0 m6a.4xlarge (16 vCPU, 32 GiB)
 
@@ -1588,6 +1622,20 @@ CPU is about 60%, so bottleneck happens.
 Let's try to write timeseries without persisting latest values to the PostgreSQL - no effect
 
 ![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka-cassandra/img_9.png)
+
+#### m6a.4xlarge (16 vCPUs AMD EPYC 3rd, 64 GiB, EBS GP3)- 500k devices, 10k msg, 30k tps - almost handle
+
+Almost handle
+
+![](../../../images/reference/performance-aws-instances/method/m6a-4xlarge/500k-10k-30k/queue-stats.png)
+
+![](../../../images/reference/performance-aws-instances/method/m6a-4xlarge/500k-10k-30k/api-usage.png)
+
+![](../../../images/reference/performance-aws-instances/method/m6a-4xlarge/500k-10k-30k/aws-instance-monitoring.png)
+
+![](../../../images/reference/performance-aws-instances/method/m6a-4xlarge/500k-10k-30k/aws-storage-monitoring.png)
+
+
 
 #### m6a.large (2 vCPUs AMD EPYC 3rd, 8 GiB, EBS GP3) + Cassandra - 5k devices , 5k msg/sec, 15k tps ???
 
