@@ -3,8 +3,8 @@
 . test-ips.sh
 
 COUNTER=0
-DEVICES_PER_NODE=25000
-MESSAGES_PER_NODE=500
+DEVICES_PER_NODE=50000
+MESSAGES_PER_NODE=250
 
 START_IDX=0
 
@@ -16,23 +16,23 @@ for IP in ${IPS}; do
 
 SCRIPT="
 cd ~/performance-tests;
+export WARMUP_PACK_SIZE=20;
 export REST_URL=http://172.31.25.132:8080;
-export MQTT_HOST=172.31.25.132;
+export MQTT_HOST=54.171.220.200;
 export DEVICE_START_IDX=${DEVICE_START_IDX};
 export DEVICE_END_IDX=${DEVICE_END_IDX};
 export MESSAGES_PER_SECOND=${MESSAGES_PER_NODE};
 export ALARMS_PER_SECOND=1;
 export DURATION_IN_SECONDS=86400;
-export DEVICE_CREATE_ON_START=true;
+export DEVICE_CREATE_ON_START=false;
 screen -d -m mvn spring-boot:run;
 screen -list;
-echo 'done! ------------------------------------';
 "
 
-  echo ${SCRIPT}
+#  echo ${SCRIPT}
 
   ssh -i ~/.ssh/aws/smatvienko.pem -o StrictHostKeyChecking=accept-new ubuntu@${IP} ${SCRIPT}
 
-  sleep 1
+#  sleep 1
 
 done
