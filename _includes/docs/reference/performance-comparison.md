@@ -1300,6 +1300,16 @@ tb_1         | 2022-01-06 16:37:11,716 [TB-Scheduling-3] INFO  o.t.s.c.t.s.Defau
 
 ![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/100k-is-connected/jmx-mbeans-java-lang-operating-system-open-file-descriptor-count.png)
 
+#### 24h test run
+
+![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/100k-10k-30k/24h-run/queue-stats.png)
+
+![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/100k-10k-30k/24h-run/api-usage.png)
+
+![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/100k-10k-30k/24h-run/aws-instance-monitoring.png)
+
+![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/100k-10k-30k/24h-run/aws-storage-monitoring.png)
+
 ### m6a.2xlarge (8 vCPUs AMD EPYC 3rd, 32 GiB, EBS GP3) + Cassandra - 500k devices, 5k msg/sec, 15k tps
 
 Architecture is 1 Thingsboard server + 20 client instances each supply 25k devices (500k in total). 
