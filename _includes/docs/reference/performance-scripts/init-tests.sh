@@ -18,6 +18,8 @@ echo "net.ipv4.ip_local_port_range = 1024 65535" | sudo tee -a /etc/sysctl.conf
 sudo -s sysctl -p
 cat /proc/sys/net/ipv4/ip_local_port_range
 #1024	65535
+ulimit -n 1048576
+sudo sysctl -w net.netfilter.nf_conntrack_max=1048576
 sudo apt update
 sudo apt install -y git maven docker docker-compose htop iotop mc screen
 # manage Docker as a non-root user

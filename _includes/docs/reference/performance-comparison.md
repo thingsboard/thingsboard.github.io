@@ -1386,14 +1386,14 @@ done
 ```bash
 ssh pt01 <<'ENDSSH'
 cd ~/performance-tests
-export REST_URL=http://52.50.5.45:8080
-export MQTT_HOST=52.50.5.45
+export REST_URL=http://172.31.25.132:8080
+export MQTT_HOST=54.171.220.200
 export DEVICE_START_IDX=0
 export DEVICE_END_IDX=50000
-export MESSAGES_PER_SECOND=2500
-export ALARMS_PER_SECOND=10
+export MESSAGES_PER_SECOND=500
+export ALARMS_PER_SECOND=0 # set at least 1
 export DURATION_IN_SECONDS=86400
-export DEVICE_CREATE_ON_START=true # set true once
+export DEVICE_CREATE_ON_START=false # set true once
 nohup mvn spring-boot:run &
 ENDSSH
 ```
@@ -1481,8 +1481,8 @@ services:
       - cassandra:/bitnami
     environment:
       CASSANDRA_CLUSTER_NAME: "Thingsboard Cluster"
-      HEAP_NEWSIZE: "3072M"
-      MAX_HEAP_SIZE: "6144M"
+      HEAP_NEWSIZE: "4096M"
+      MAX_HEAP_SIZE: "8192M"
       JVM_EXTRA_OPTS: "-Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=7199 -Dcom.sun.management.jmxremote.rmi.port=7199  -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=127.0.0.1"
   zookeeper:
     image: docker.io/bitnami/zookeeper:3.7
@@ -1549,7 +1549,7 @@ services:
       #Kafka
       TB_QUEUE_TYPE: "kafka"
       TB_KAFKA_BATCH_SIZE: "65536" # default is 16384 - it helps to produce messages much efficiently
-      TB_KAFKA_LINGER_MS: "5" # default is 1
+      TB_KAFKA_LINGER_MS: "3" # default is 1
       TB_QUEUE_KAFKA_MAX_POLL_RECORDS: "2048" # default is 8192
       TB_SERVICE_ID: "tb-node-0"
       HTTP_BIND_PORT: "8080"
@@ -1563,17 +1563,17 @@ services:
       SPRING_DATASOURCE_MAXIMUM_POOL_SIZE: "25"
       # Cache specs
       #500k devices
-      CACHE_SPECS_DEVICES_MAX_SIZE: "1012000" # default is 10000
-      CACHE_SPECS_DEVICE_CREDENTIALS_MAX_SIZE: "1012000" # default is 10000 
-      CACHE_SPECS_SESSIONS_MAX_SIZE: "1012000" # default is 10000
-      TS_KV_PARTITIONS_MAX_CACHE_SIZE: "4000000" # default is 100000
+      CACHE_SPECS_DEVICES_MAX_SIZE: "1048000" # default is 10000
+      CACHE_SPECS_DEVICE_CREDENTIALS_MAX_SIZE: "1048000" # default is 10000 
+      CACHE_SPECS_SESSIONS_MAX_SIZE: "1048000" # default is 10000
+      TS_KV_PARTITIONS_MAX_CACHE_SIZE: "4194000" # default is 100000
       # Device state service
       DEFAULT_INACTIVITY_TIMEOUT: "1800" # defailt is 600 sec (10min)
       DEFAULT_STATE_CHECK_INTERVAL: "600" # default is 60 sec(1min)
       TB_TRANSPORT_SESSIONS_REPORT_TIMEOUT: "400000" # default is 3000 msec
       PERSIST_STATE_TO_TELEMETRY: "true" # Persist device state to the Cassandra. Default is false (Postgres, as device server_scope attributes) 
       # Java options for 16G instance and JMX enabled
-      JAVA_OPTS: " -Xss512k -Xmx12288M -Xms12288M -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=9999 -Dcom.sun.management.jmxremote.rmi.port=9999 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=127.0.0.1"
+      JAVA_OPTS: " -Xss512k -Xmx10240M -Xms10240M -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=9999 -Dcom.sun.management.jmxremote.rmi.port=9999 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=127.0.0.1"
     ulimits:
       nofile:
         soft: 1048576
@@ -1588,9 +1588,27 @@ volumes: # to persist data between container restarts or being recreated
 ```
 {: .copy-code}
 
+```bash
+ssh -L 9999:127.0.0.1:9999 -L 1099:127.0.0.1:1099 -L 9199:127.0.0.1:9199 -L 7199:127.0.0.1:7199 thingsboard 
+```
 
-Check that 
+Check connection count 
 `watch -n 1 ss -s`
+
+Heap dump
+
+```bash
+ssh thingsboard
+docker exec -it ubuntu_tb_1 /bin/bash
+docker exec -it ubuntu_tb_1 ps -A | grep java
+# 8 ?        00:01:46 java
+docker exec -it ubuntu_tb_1 jmap -dump:live,format=b,file=/data/dump.hprof 8
+# Heap dump file created
+sudo mv /var/lib/docker/volumes/ubuntu_thingsboard-data/_data/dump.hprof ~
+sudo chown ubuntu:ubuntu ~/dump.hprof
+exit
+scp -C tb2:/home/ubuntu/dump.hprof ~
+```
 
 ![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/500k-5k-15k/500k-is-connected-watsh-ss.png)
 
