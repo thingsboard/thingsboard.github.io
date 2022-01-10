@@ -9,7 +9,7 @@ for IP in ${IPS}; do
 
   ssh -i ~/.ssh/aws/smatvienko.pem -o StrictHostKeyChecking=accept-new ubuntu@${IP} <<'ENDSSH'
 
-    hostname
+hostname
 
 ENDSSH
 

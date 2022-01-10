@@ -1481,8 +1481,8 @@ services:
       - cassandra:/bitnami
     environment:
       CASSANDRA_CLUSTER_NAME: "Thingsboard Cluster"
-      HEAP_NEWSIZE: "4096M"
-      MAX_HEAP_SIZE: "8192M"
+      HEAP_NEWSIZE: "3072M"
+      MAX_HEAP_SIZE: "6144M"
       JVM_EXTRA_OPTS: "-Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=7199 -Dcom.sun.management.jmxremote.rmi.port=7199  -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=127.0.0.1"
   zookeeper:
     image: docker.io/bitnami/zookeeper:3.7
@@ -1569,11 +1569,22 @@ services:
       TS_KV_PARTITIONS_MAX_CACHE_SIZE: "4194000" # default is 100000
       # Device state service
       DEFAULT_INACTIVITY_TIMEOUT: "1800" # defailt is 600 sec (10min)
-      DEFAULT_STATE_CHECK_INTERVAL: "600" # default is 60 sec(1min)
-      TB_TRANSPORT_SESSIONS_REPORT_TIMEOUT: "400000" # default is 3000 msec
-      PERSIST_STATE_TO_TELEMETRY: "true" # Persist device state to the Cassandra. Default is false (Postgres, as device server_scope attributes) 
-      # Java options for 16G instance and JMX enabled
-      JAVA_OPTS: " -Xss512k -Xmx10240M -Xms10240M -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=9999 -Dcom.sun.management.jmxremote.rmi.port=9999 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=127.0.0.1"
+      DEFAULT_STATE_CHECK_INTERVAL: "900" # default is 60 sec(1min)
+      TB_TRANSPORT_SESSIONS_REPORT_TIMEOUT: "600000" # default is 3000 msec
+      PERSIST_STATE_TO_TELEMETRY: "true" # Persist device state to the Cassandra. Default is false (Postgres, as device server_scope attributes)
+      #Transport API
+      TB_QUEUE_TRANSPORT_MAX_PENDING_REQUESTS: "100000" # default is 10k
+      TB_QUEUE_TRANSPORT_MAX_CALLBACK_THREADS: "8"
+      #DEBUG
+      TB_QUEUE_RULE_ENGINE_STATS_PRINT_INTERVAL_MS: "20000"
+      TB_QUEUE_CORE_STATS_PRINT_INTERVAL_MS: "20000"
+      TB_QUEUE_CORE_PACK_PROCESSING_TIMEOUT_MS: "30000"
+      TB_QUEUE_CORE_PARTITIONS: "5"
+      ACTORS_SYSTEM_DEVICE_DISPATCHER_POOL_SIZE: "8"
+      TB_QUEUE_RE_MAIN_CONSUMER_PER_PARTITION: "false"
+      TB_QUEUE_RE_HP_CONSUMER_PER_PARTITION: "false"
+      # Java options for 32G instance and JMX enabled
+      JAVA_OPTS: " -Xss512k -Xmx12288M -Xms12288M -XX:+AlwaysPreTouch -XX:+ParallelRefProcEnabled -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=9999 -Dcom.sun.management.jmxremote.rmi.port=9999 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=127.0.0.1"
     ulimits:
       nofile:
         soft: 1048576
@@ -1599,7 +1610,7 @@ Heap dump
 
 ```bash
 ssh thingsboard
-docker exec -it ubuntu_tb_1 /bin/bash
+#docker exec -it ubuntu_tb_1 /bin/bash
 docker exec -it ubuntu_tb_1 ps -A | grep java
 # 8 ?        00:01:46 java
 docker exec -it ubuntu_tb_1 jmap -dump:live,format=b,file=/data/dump.hprof 8
