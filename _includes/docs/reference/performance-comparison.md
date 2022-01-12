@@ -1314,7 +1314,16 @@ tb_1         | 2022-01-06 16:37:11,716 [TB-Scheduling-3] INFO  o.t.s.c.t.s.Defau
 
 Architecture is 1 Thingsboard server + 20 client instances each supply 25k devices (500k in total). 
 
-Prepare the instance `pt01`. 
+500k devices connected
+
+![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/500k-5k-15k/500k-is-connected-watsh-ss.png)
+
+### m6a.4xlarge (16 vCPUs AMD EPYC 3rd, 64 GiB, EBS GP3) + Cassandra - 1Million devices, 5k msg/sec, 15k tps
+
+Architecture is 1 Thingsboard server + 32 clients instances each supply 31250 devices (1 million in total).
+
+Prepare the instance `pt01` example. See the particular scripts that manages many instances at once
+
 ```bash
 ssh tb2 <<'ENDSSH'
 set +x
@@ -1343,46 +1352,6 @@ cd performance-tests
 ENDSSH
 ```
 
-
-`cat > init-tests.sh`
-```bash
-#!/bin/bash
-IPS='54.170.209.209 52.50.196.218 54.75.186.93 54.195.183.19 34.253.183.135 54.170.0.222 34.253.230.87 34.244.47.118'
-
-for IP in ${IPS}; do
-  echo "INIT ${COUNTER} FOR ${IP}"
-
-  ssh -i ~/.ssh/aws/smatvienko.pem -o StrictHostKeyChecking=accept-new ubuntu@${IP} <<'ENDSSH'
-set +x
-#optional. replace with your Thingsboard instance ip
-#echo '52.50.5.45 thingsboard' | sudo tee -a /etc/hosts
-#extend the local port range up to 64500 
-cat /proc/sys/net/ipv4/ip_local_port_range
-#32768	60999
-echo "net.ipv4.ip_local_port_range = 1024 65535" | sudo tee -a /etc/sysctl.conf
-sudo -s sysctl -p
-cat /proc/sys/net/ipv4/ip_local_port_range
-#1024	65535
-sudo apt update
-sudo apt install -y git maven docker docker-compose htop iotop mc screen
-# manage Docker as a non-root user
-sudo groupadd docker
-sudo usermod -aG docker $USER
-newgrp docker
-# test non-root docker run
-docker run hello-world
-cd ~
-git clone https://github.com/thingsboard/performance-tests.git
-# git pull
-cd performance-tests
-./build.sh
-ENDSSH
-done
-```
-`chmod +x init-tests.sh`
-
-------------------
-
 ```bash
 ssh pt01 <<'ENDSSH'
 cd ~/performance-tests
@@ -1391,13 +1360,14 @@ export MQTT_HOST=54.171.220.200
 export DEVICE_START_IDX=0
 export DEVICE_END_IDX=50000
 export MESSAGES_PER_SECOND=500
-export ALARMS_PER_SECOND=0 # set at least 1
+export ALARMS_PER_SECOND=1
 export DURATION_IN_SECONDS=86400
-export DEVICE_CREATE_ON_START=false # set true once
+export DEVICE_CREATE_ON_START=true
 nohup mvn spring-boot:run &
 ENDSSH
 ```
 
+How to modify the docker file to handle more connections out of the box (optional)
 
 ```dockerfile
 FROM thingsboard/tb:latest
@@ -1456,8 +1426,10 @@ net.ipv4.ip_local_port_range = 12000 65535
 fs.file-max = 1048576
 ```
 
-Important: to handle more than 256k TCP connections, please adjust the `conntrack_max` system parameter.
+Important: to handle more than 256k (limit depends on total memory size) TCP connections, please adjust the `conntrack_max` system parameter.
 [reference](http://renbuar.blogspot.com/2019/02/netnetfilternfconntrackmax1048576.html)
+
+Run this once on `thingsboard` node to increase file descriptor and net filter limits. This is required to handle about 1M TCP connections.
 
 ```bash
 ulimit -n 1048576
@@ -1465,12 +1437,12 @@ sudo sysctl -a | grep conntrack_max
 sudo sysctl -w net.netfilter.nf_conntrack_max=1048576
 ```
 
-scripts for managing 20 test instances
+scripts for managing 20-32 test instances
 
 _includes/docs/reference/performance-scripts/*.sh
 
 ```bash
-#500k devices
+#1M (million) devices
 version: '3'
 services:
   cassandra:
@@ -1481,8 +1453,8 @@ services:
       - cassandra:/bitnami
     environment:
       CASSANDRA_CLUSTER_NAME: "Thingsboard Cluster"
-      HEAP_NEWSIZE: "3072M"
-      MAX_HEAP_SIZE: "6144M"
+      HEAP_NEWSIZE: "6144M"
+      MAX_HEAP_SIZE: "12288M"
       JVM_EXTRA_OPTS: "-Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=7199 -Dcom.sun.management.jmxremote.rmi.port=7199  -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=127.0.0.1"
   zookeeper:
     image: docker.io/bitnami/zookeeper:3.7
@@ -1534,7 +1506,7 @@ services:
       - thingsboard-logs:/var/log/thingsboard
     environment:
       DATABASE_TS_TYPE: "cassandra"
-      DATABASE_TS_LATEST_TYPE: "sql"
+      DATABASE_TS_LATEST_TYPE: "cassandra" # this is a key difference
       #Cassandra
       CASSANDRA_CLUSTER_NAME: "Thingsboard Cluster"
       CASSANDRA_LOCAL_DATACENTER: "datacenter1"
@@ -1543,17 +1515,23 @@ services:
       CASSANDRA_USE_CREDENTIALS: "true"
       CASSANDRA_USERNAME: "cassandra"
       CASSANDRA_PASSWORD: "cassandra"
-      CASSANDRA_QUERY_BUFFER_SIZE: "1000000"
-      CASSANDRA_QUERY_CONCURRENT_LIMIT: "2000"
+      CASSANDRA_QUERY_BUFFER_SIZE: "3000000"
+      CASSANDRA_QUERY_CONCURRENT_LIMIT: "3000"
       CASSANDRA_QUERY_POLL_MS: "3"
       #Kafka
       TB_QUEUE_TYPE: "kafka"
       TB_KAFKA_BATCH_SIZE: "65536" # default is 16384 - it helps to produce messages much efficiently
-      TB_KAFKA_LINGER_MS: "3" # default is 1
+      TB_KAFKA_LINGER_MS: "5" # default is 1
       TB_QUEUE_KAFKA_MAX_POLL_RECORDS: "2048" # default is 8192
       TB_SERVICE_ID: "tb-node-0"
-      HTTP_BIND_PORT: "8080"
+      HTTP_BIND_PORT: "8088"
+      # Queue
       TB_QUEUE_RE_MAIN_PACK_PROCESSING_TIMEOUT_MS: "30000"
+      TB_QUEUE_CORE_PACK_PROCESSING_TIMEOUT_MS: "20000"
+      TB_QUEUE_RE_MAIN_CONSUMER_PER_PARTITION: "true"
+      TB_QUEUE_RE_HP_CONSUMER_PER_PARTITION: "false"
+      TB_QUEUE_RE_SQ_CONSUMER_PER_PARTITION: "false"
+      ACTORS_SYSTEM_RULE_DISPATCHER_POOL_SIZE: "8"
       # Postgres connection
       SPRING_JPA_DATABASE_PLATFORM: "org.hibernate.dialect.PostgreSQLDialect"
       SPRING_DRIVER_CLASS_NAME: "org.postgresql.Driver"
@@ -1562,7 +1540,7 @@ services:
       SPRING_DATASOURCE_PASSWORD: "postgres"
       SPRING_DATASOURCE_MAXIMUM_POOL_SIZE: "25"
       # Cache specs
-      #500k devices
+      #1M devices
       CACHE_SPECS_DEVICES_MAX_SIZE: "1048000" # default is 10000
       CACHE_SPECS_DEVICE_CREDENTIALS_MAX_SIZE: "1048000" # default is 10000 
       CACHE_SPECS_SESSIONS_MAX_SIZE: "1048000" # default is 10000
@@ -1570,21 +1548,16 @@ services:
       # Device state service
       DEFAULT_INACTIVITY_TIMEOUT: "1800" # defailt is 600 sec (10min)
       DEFAULT_STATE_CHECK_INTERVAL: "900" # default is 60 sec(1min)
-      TB_TRANSPORT_SESSIONS_REPORT_TIMEOUT: "600000" # default is 3000 msec
+      TB_TRANSPORT_SESSIONS_REPORT_TIMEOUT: "60000" # default is 3000 msec
+      TB_TRANSPORT_SESSIONS_INACTIVITY_TIMEOUT: "600000" # default is 300000 msec
       PERSIST_STATE_TO_TELEMETRY: "true" # Persist device state to the Cassandra. Default is false (Postgres, as device server_scope attributes)
       #Transport API
-      TB_QUEUE_TRANSPORT_MAX_PENDING_REQUESTS: "100000" # default is 10k
-      TB_QUEUE_TRANSPORT_MAX_CALLBACK_THREADS: "8"
+      TB_QUEUE_TRANSPORT_MAX_PENDING_REQUESTS: "1000000" # default is 10k
       #DEBUG
-      TB_QUEUE_RULE_ENGINE_STATS_PRINT_INTERVAL_MS: "20000"
-      TB_QUEUE_CORE_STATS_PRINT_INTERVAL_MS: "20000"
-      TB_QUEUE_CORE_PACK_PROCESSING_TIMEOUT_MS: "30000"
-      TB_QUEUE_CORE_PARTITIONS: "5"
-      ACTORS_SYSTEM_DEVICE_DISPATCHER_POOL_SIZE: "8"
-      TB_QUEUE_RE_MAIN_CONSUMER_PER_PARTITION: "false"
-      TB_QUEUE_RE_HP_CONSUMER_PER_PARTITION: "false"
-      # Java options for 32G instance and JMX enabled
-      JAVA_OPTS: " -Xss512k -Xmx12288M -Xms12288M -XX:+AlwaysPreTouch -XX:+ParallelRefProcEnabled -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=9999 -Dcom.sun.management.jmxremote.rmi.port=9999 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=127.0.0.1"
+      CASSANDRA_USE_JMX: "true"
+      CASSANDRA_USE_METRICS: "true"
+      # Java options for 64G instance and JMX enabled 
+      JAVA_OPTS: " -Xss512k -Xmx20480M -Xms20480M -XX:+AlwaysPreTouch -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=9999 -Dcom.sun.management.jmxremote.rmi.port=9999 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=127.0.0.1"
     ulimits:
       nofile:
         soft: 1048576
@@ -1599,15 +1572,28 @@ volumes: # to persist data between container restarts or being recreated
 ```
 {: .copy-code}
 
+
+How to forward JMX port with ssh.
 ```bash
 ssh -L 9999:127.0.0.1:9999 -L 1099:127.0.0.1:1099 -L 9199:127.0.0.1:9199 -L 7199:127.0.0.1:7199 thingsboard 
 ```
 
-Check connection count 
+Enable pg_stat_statements preload library for PostgreSQL 
+```bash
+#config before 
+docker exec -it ubuntu_postgres_1 tail /var/lib/postgresql/data/postgresql.conf
+#apply changes
+docker exec -it ubuntu_postgres_1 /bin/bash
+echo "shared_preload_libraries = 'pg_stat_statements'" >> /var/lib/postgresql/data/postgresql.conf
+exit
+#check the result 
+docker exec -it ubuntu_postgres_1 tail /var/lib/postgresql/data/postgresql.conf
+```
+
+Check network connection count. 
 `watch -n 1 ss -s`
 
-Heap dump
-
+How to make a Java heap dump
 ```bash
 ssh thingsboard
 #docker exec -it ubuntu_tb_1 /bin/bash
@@ -1618,10 +1604,9 @@ docker exec -it ubuntu_tb_1 jmap -dump:live,format=b,file=/data/dump.hprof 8
 sudo mv /var/lib/docker/volumes/ubuntu_thingsboard-data/_data/dump.hprof ~
 sudo chown ubuntu:ubuntu ~/dump.hprof
 exit
+#copy with compression - much faster
 scp -C tb2:/home/ubuntu/dump.hprof ~
 ```
-
-![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/500k-5k-15k/500k-is-connected-watsh-ss.png)
 
 ### Experiments
 
