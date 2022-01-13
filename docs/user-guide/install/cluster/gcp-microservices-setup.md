@@ -43,7 +43,7 @@ cd thingsboard-ce-k8s/gcp/microservices
 
 {% include templates/install/gcp/provision-postgresql.md %}
 
-### Step 5.2 Cassandra
+### Step 5.2 Cassandra (optional)
 
 {% include templates/install/gcp/configure-cassandra.md %}
 
