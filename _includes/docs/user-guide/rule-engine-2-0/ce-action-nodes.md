@@ -526,6 +526,13 @@ Configured **TTL** seconds is used for timeseries data expiration. **0** value m
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/action-save-timeseries-config.png)
 
+Additionally, you could disable updating values for incoming keys for the latest timeseries data (ts_kv_latest table) if **'Skip latest persistence'** flag is set to **true**.
+This could be helpful for highly loaded use-cases to decrease the pressure on the DB. 
+Please note, this feature could be enabled when the use-case does not require advanced filtering on the Dashboards. 
+For getting the latest value, the historical data could be fetched with limit 1 and DESC order.
+
+![image](/images/user-guide/rule-engine-2-0/nodes/action-save-timeseries-config-latest.png)
+
 Expects messages with **POST_TELEMETRY_REQUEST** message type. 
 If message Type is not **POST_TELEMETRY_REQUEST**, Message will be routed via **Failure** chain.
  
