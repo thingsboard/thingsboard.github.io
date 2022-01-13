@@ -687,7 +687,7 @@
             <td>queue.rule-engine.queues.processing-strategy.type</td>
             <td>TB_QUEUE_RE_MAIN_PROCESSING_STRATEGY_TYPE</td>
             <td>SKIP_ALL_FAILURES</td>
-            <td>SKIP_ALL_FAILURES, RETRY_ALL, RETRY_FAILED, RETRY_TIMED_OUT, RETRY_FAILED_AND_TIMED_OUT</td>
+            <td>SKIP_ALL_FAILURES, SKIP_ALL_FAILURES_AND_TIMED_OUT, RETRY_ALL, RETRY_FAILED, RETRY_TIMED_OUT, RETRY_FAILED_AND_TIMED_OUT</td>
         </tr>
         <tr>
             <td>queue.rule-engine.queues.processing-strategy.retries</td>
@@ -765,7 +765,7 @@
             <td>queue.rule-engine.queues.processing-strategy.type</td>
             <td>TB_QUEUE_RE_HP_PROCESSING_STRATEGY_TYPE</td>
             <td>RETRY_FAILED_AND_TIMED_OUT</td>
-            <td>SKIP_ALL_FAILURES, RETRY_ALL, RETRY_FAILED, RETRY_TIMED_OUT, RETRY_FAILED_AND_TIMED_OUT</td>
+            <td>SKIP_ALL_FAILURES, SKIP_ALL_FAILURES_AND_TIMED_OUT, RETRY_ALL, RETRY_FAILED, RETRY_TIMED_OUT, RETRY_FAILED_AND_TIMED_OUT</td>
         </tr>
         <tr>
             <td>queue.rule-engine.queues.processing-strategy.retries</td>
@@ -843,7 +843,7 @@
             <td>queue.rule-engine.queues.processing-strategy.type</td>
             <td>TB_QUEUE_RE_SQ_PROCESSING_STRATEGY_TYPE</td>
             <td>RETRY_FAILED_AND_TIMED_OUT</td>
-            <td>SKIP_ALL_FAILURES, RETRY_ALL, RETRY_FAILED, RETRY_TIMED_OUT, RETRY_FAILED_AND_TIMED_OUT</td>
+            <td>SKIP_ALL_FAILURES, SKIP_ALL_FAILURES_AND_TIMED_OUT, RETRY_ALL, RETRY_FAILED, RETRY_TIMED_OUT, RETRY_FAILED_AND_TIMED_OUT</td>
         </tr>
         <tr>
             <td>queue.rule-engine.queues.processing-strategy.retries</td>
