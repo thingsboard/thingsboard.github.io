@@ -23,12 +23,11 @@
         <td>10000</td>
         <td>MQTT processing timeout in milliseconds</td>
     </tr>
-<tr>
+    <tr>
         <td>transport.mqtt.msg_queue_size_per_device_limit</td>
         <td>MQTT_MSG_QUEUE_SIZE_PER_DEVICE_LIMIT</td>
         <td>100</td>
-        <td>Messages await in the queue before device connected state. This limit works on low level before
-            TenantProfileLimits mechanism
+        <td>Messages await in the queue before device connected state. This limit works on low level before TenantProfileLimits mechanism
         </td>
     </tr>
     <tr>
@@ -83,8 +82,7 @@
         <td>transport.mqtt.ssl.protocol</td>
         <td>MQTT_SSL_PROTOCOL</td>
         <td>TLSv1.2</td>
-        <td>SSL protocol: See <a href="http://docs.oracle.com/javase/8/docs/technotes/guides/security/StandardNames.html#SSLContext">this
-            link</a></td>
+        <td>SSL protocol: See <a href="http://docs.oracle.com/javase/8/docs/technotes/guides/security/StandardNames.html#SSLContext">this link</a></td>
     </tr>
     <tr>
         <td>transport.mqtt.ssl.credentials.type.</td>
@@ -96,8 +94,7 @@
         <td>transport.mqtt.ssl.credentials.pem.cert_file</td>
         <td>MQTT_SSL_PEM_CERT</td>
         <td>mqttserver.pem</td>
-        <td>Path to the server certificate file (holds server certificate or certificate chain, may include server
-            private key)
+        <td>Path to the server certificate file (holds server certificate or certificate chain, may include server private key)
         </td>
     </tr>
     <tr>
