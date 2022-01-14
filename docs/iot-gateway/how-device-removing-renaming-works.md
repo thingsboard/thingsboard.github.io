@@ -43,13 +43,4 @@ RPC data examples to the gateway device:
     
     ```
 
-You can configure the following parameters in thingsboard.yml or thingsboard.conf configuration files:  
-
-| **Parameter**                         | **Default value** | **Description**                        |
-|:-|-|-|
-| **MIN_SERVER_SIDE_RPC_TIMEOUT**       | **5000**          | Minimal timeout for RPC processing.    |
-| **DEFAULT_SERVER_SIDE_RPC_TIMEOUT**   | **10000**         | Default timeout for RPC processing.    |
-|---
-
-
-**ThingsBoard takes the maximal value of timeouts and set it as a timeout for RPC.**  
+**ThingsBoard sets 1 day as a timeout for RPC.**  
