@@ -7,8 +7,11 @@ description: ThingsBoard IoT Gateway features
 
 
 If devices were provisioned using gateway API and later on the user with admin permissions renames or removes the device entity on ThingsBoard, the gateway will receive a notification about the change.  
+
 This is mission critical for the gateway to keep up with actual device entity state.  
+
 Before certain improvements, there might be cases when the gateway knew nothing about deleting or renaming of the device entity, so the physical device would sent data to non-existing endpoint.  
+
 Starting TB v3.3.3 the platform resolves the issue using Persistent RPC to avoid above data loss scenarios. Below you may find more info on implementation of the solution.
 
 1. Device renaming scenario    
@@ -18,6 +21,27 @@ Starting TB v3.3.3 the platform resolves the issue using Persistent RPC to avoid
 2. Device removing scenario  
     Deleting of the device entity on ThingsBoard UI caused a data loss as the gateway itself could not and cannot resolve the erasure properly. With "removed" notification sent to the gateway the latter initiates a new connect message on behalf of physical device, so the one is safe from data loss.  
 
+RPC data examples to the gateway device:  
+
+- Device renaming RPC:  
+
+    ```json
+    {
+      "method": "gateway_device_renamed",
+      "params": {"Old device name": "New device name"}
+    }
+    
+    ```
+
+- Device removal RPC:  
+
+    ```json
+    {
+      "method": "gateway_device_deleted",
+      "params": "Removed device name"
+    }
+    
+    ```
 
 You can configure the following parameters in thingsboard.yml or thingsboard.conf configuration files:  
 

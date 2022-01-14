@@ -182,6 +182,9 @@ A,MQTT.js,shell,resources/mqtt-js-rpc-from-server.sh,/docs/reference/resources/m
 B,mqtt-js-rpc-from-server.js,javascript,resources/mqtt-js-rpc-from-server.js,/docs/reference/resources/mqtt-js-rpc-from-server.js{% endcapture %}  
 {% include tabs.html %}
 
+In case your MQTT device is a gateway, ThingsBoard will send a server-side RPC (notification) about changes on provisioned device entities.  
+Your MQTT gateway device will receive a service RPC about removal or renaming of device to [properly resolve such events](/docs/iot-gateway/how-device-removing-renaming-works/). 
+
 ### Client-side RPC
 
 In order to send RPC commands to server, send PUBLISH message to the following topic:
