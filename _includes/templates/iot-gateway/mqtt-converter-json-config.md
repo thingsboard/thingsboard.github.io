@@ -2,26 +2,26 @@ Json converter is default converter, it looks for deviceName, deviceType, attrib
 
 |**Parameter**|**Default value**|**Description**|
 |:-|:-|-
-| type                        | **json**                  | Provides information to connector that default converter will be uses for converting data from topic.                                     |
+| type                        | **json**                  | Provides information to connector that default converter to be used for converting data from topic.                                       |
 | deviceNameJsonExpression    | **${serialNumber}**       | Simple JSON expression, uses for looking device name in the incoming message (parameter "serialNumber" will be used as device name).      |
 | deviceTypeJsonExpression    | **${sensorType}**         | Simple JSON expression, uses for looking device type in the incoming message (parameter "sensorType" will be used as device type).        |
 | timeout                     | **60000**                 | Timeout for triggering "Device Disconnected" event                                                                                        |
-| attributes:                 |                           | This subsection contains parameters of the incoming message, that will be interpreted as attributes for the device.                       |
+| attributes:                 |                           | This subsection contains parameters of the incoming message, to be interpreted as attributes for the device.                              |
 | ... type                    | **string**                | Type of incoming data for a current attribute.                                                                                            |
-| ... key                     | **model**                 | Attribute name, that will send to ThingsBoard instance.                                                                                   |
-| ... value                   | **${sensorModel}**        | Simple JSON expression, uses for looking value in the incoming message, that will send to ThingsBoard instance as value of key parameter. |
+| ... key                     | **model**                 | Attribute name, to be sent to ThingsBoard instance.                                                                                       |
+| ... value                   | **${sensorModel}**        | Simple JSON expression, uses for looking value in the incoming message, to be sent to ThingsBoard instance as value of key parameter.     |
 |                             |                           |                                                                                                                                           |
 | ... type                    | **string**                | Type of incoming data for a current attribute.                                                                                            |
-| ... key                     | **${sensorModel}**        | Simple JSON expression, uses for looking value in the incoming message, that will be used as attribute name.                              |
-| ... value                   | **on**                    | Attribute value, that will send to ThingsBoard instance.                                                                                  |
-| timeseries:                 |                           | This subsection contains parameters of the incoming message, that will be interpreted as telemetry for the device.                        |
+| ... key                     | **${sensorModel}**        | Simple JSON expression, uses for looking value in the incoming message, to be used as attribute name.                                     |
+| ... value                   | **on**                    | Attribute value, to be sent to ThingsBoard instance.                                                                                      |
+| timeseries:                 |                           | This subsection contains parameters of the incoming message, to be interpreted as telemetry for the device.                               |
 | ... type                    | **double**                | Type of incoming data for a current telemetry.                                                                                            |
-| ... key                     | **temperature**           | Telemetry name, that will send to ThingsBoard instance.                                                                                   |
-| ... value                   | **${temp}**               | Simple JSON expression, uses for looking value in the incoming message, that will send to ThingsBoard instance as value of key parameter. |
+| ... key                     | **temperature**           | Telemetry name, to be sent to ThingsBoard instance.                                                                                       |
+| ... value                   | **${temp}**               | Simple JSON expression, uses for looking value in the incoming message, to be sent to ThingsBoard instance as value of key parameter.     |
 |                             |                           |                                                                                                                                           |
 | ... type                    | **double**                | Type of incoming data for a current telemetry.                                                                                            |
-| ... key                     | **humidity**              | Telemetry name, that will send to ThingsBoard instance.                                                                                   |
-| ... value                   | **${hum}**                | Simple JSON expression, uses for looking value in the incoming message, that will send to ThingsBoard instance as value of key parameter. |
+| ... key                     | **humidity**              | Telemetry name, to be sent to ThingsBoard instance.                                                                                       |
+| ... value                   | **${hum}**                | Simple JSON expression, uses for looking value in the incoming message, to be sent to ThingsBoard instance as value of key parameter.     |
 |--- 
 
 {% capture difference %}
