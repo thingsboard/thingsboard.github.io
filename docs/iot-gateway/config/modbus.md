@@ -8,6 +8,13 @@ description: Modbus protocol support for ThingsBoard IoT Gateway
 * TOC
 {:toc}
 
+{% capture difference %}
+<br>
+**Note that the configuration of the Modbus connector has changed since Gateway 3.0. The new configuration will be 
+generated after installing the new version and running Gateway in the new_modbus.json file.**  
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
 This guide will help you to get familiar with Modbus connector configuration for ThingsBoard IoT Gateway.
 Use [general configuration](/docs/iot-gateway/configuration/) to enable this connector.
 We will describe connector configuration file below.  
@@ -21,20 +28,27 @@ We will describe connector configuration file below.
 {% highlight json %}
 
 {
-  "server": {
-    "type": "tcp",
-    "host": "127.0.0.1",
-    "port": 5020,
-    "timeout": 35,
-    "method": "socket",
-    "byteOrder": "BIG",
-    "devices": [
+  "master": {
+    "slaves": [
       {
+        "host": "127.0.0.1",
+        "port": 5021,
+        "type": "tcp",
+        "method": "socket",
+        "timeout": 35,
+        "byteOrder": "BIG",
+        "retries": true,
+        "retryOnEmpty": true,
+        "retryOnInvalid": true,
+        "pollPeriod": 5000,
         "unitId": 1,
         "deviceName": "Temp Sensor",
         "attributesPollPeriod": 5000,
         "timeseriesPollPeriod": 5000,
         "sendDataOnlyOnChange": true,
+        "connectAttemptTimeMs": 5000,
+        "connectAttemptCount": 5,
+        "waitAfterFailedAttemptsMs": 300000,
         "attributes": [
           {
             "tag": "string_read",
@@ -94,8 +108,8 @@ We will describe connector configuration file below.
             "objectsCount": 4,
             "address": 13
           }
-      ],
-      "timeseries": [
+        ],
+        "timeseries": [
           {
             "tag": "8uint_read",
             "type": "8uint",
@@ -178,7 +192,7 @@ We will describe connector configuration file below.
             "address": 33
           },
           {
-            "tag":"getCPULoad",
+            "tag": "getCPULoad",
             "type": "32int",
             "functionCode": 4,
             "objectsCount": 2,
@@ -187,6 +201,78 @@ We will describe connector configuration file below.
         ]
       }
     ]
+  },
+  "slave": {
+    "type": "tcp",
+    "host": "127.0.0.1",
+    "port": 5026,
+    "method": "socket",
+    "deviceName": "Gateway",
+    "deviceType": "default",
+    "pollPeriod": 5000,
+    "sendDataToThingsBoard": false,
+    "byteOrder": "BIG",
+    "unitId": 0,
+    "values": {
+      "holding_registers": [
+        {
+          "attributes": [
+            {
+              "address": 1,
+              "type": "string",
+              "tag": "sm",
+              "objectsCount": 1,
+              "value": "ON"
+            }
+          ],
+          "timeseries": [
+            {
+              "address": 2,
+              "type": "int",
+              "tag": "smm",
+              "objectsCount": 1,
+              "value": "12334"
+            }
+          ],
+          "attributeUpdates": [
+            {
+              "tag": "shared_attribute_write",
+              "type": "32int",
+              "functionCode": 6,
+              "objectsCount": 2,
+              "address": 29,
+              "value": 1243
+            }
+          ],
+          "rpc": [
+            {
+              "tag": "setValue",
+              "type": "bits",
+              "functionCode": 5,
+              "objectsCount": 1,
+              "address": 31,
+              "value": 22
+            }
+          ]
+        }
+      ],
+      "coils_initializer": [
+        {
+          "attributes": [
+            {
+              "address": 5,
+              "type": "string",
+              "tag": "sm",
+              "objectsCount": 1,
+              "value": "12"
+            }
+          ],
+          "timeseries": [],
+          "attributeUpdates": [],
+          "rpc": []
+        }
+      ]
+    }
   }
 }
 
@@ -194,9 +280,17 @@ We will describe connector configuration file below.
 
 </details>
 
-### Section "server": description and configuration parameters
-In order to connect to Modbus server, the one must set required parameters of section "server".
-Due to the nature of preferred way of communication with Modbus server there are 2 options how to configure this part: if using TCP/UDP or via Serial port.  
+### Section "master": description and configuration parameters
+A Modbus Master is used to query data from devices. In order to configure slaves which the master must be queried, it 
+must be specified "master" section that includes the "slaves" list.
+
+#### Subsection "slaves"
+This subsection provides array of configurations for slaves.
+
+##### Slave object settings
+This configuration contains common connection parameters and settings for data processing.
+
+Due to the nature of preferred way of communication between Modbus master there are 2 options how to configure this part: if using TCP/UDP or via Serial port.  
 
 {% capture modbusConnectionType %}
 TCP/UDP<small>Connection over TCP/UDP protocol</small>%,%tcpUdp%,%templates/iot-gateway/modbus-tcpudp-connection.md%br%
@@ -206,31 +300,37 @@ There are 2 variants of server section:
 
 {% include content-toggle.html content-toggle-id="modbusConnection" toggle-spec=modbusConnectionType %}
 
-#### Sub-section "devices"
-This sub-section provides array of configurations for devices.
+The next part of slave section contains common connection parameters and settings for data processing. 
+Available parameters are as follows:
 
-##### Device object settings
-This configuration contains common connection parameters and settings for data processing. Available parameters are as follows:
-
-| **Parameter**                 | **Default value**   | **Description**                                                                             |
+| **Parameter**                 | **Default value**   | **Description**                                                                            |
 |:-|:-|-
-| unitId                        | **1**               | Id of current device on Modbus.                                                             |
-| deviceName                    | **Temp Sensor**     | Name of the current device                                                                  |
-| attributesPollPeriod          | **5000**            | Period in milliseconds for check the attributes on device.                                  |
-| timeseriesPollPeriod          | **5000**            | Period in milliseconds for check the telemetry on device.                                   |
-| sendDataOnlyOnChange          | **true**            | Sending only if data changed from last check, if no -- data will send after every check     |
+| unitId                        | **1**               | Id of current slave on Modbus.                                                             |
+| deviceName                    | **Temp Sensor**     | Name of the current slave                                                                  |
+| deviceType                    | **default**         | Type of the current slave                                                                  |
+| pollPeriod                    | **5000**            | Period in milliseconds for check the attributes and the telemetry on slave.                |
+| sendDataOnlyOnChange          | **true**            | Sending only if data changed from last check, if no -- data will send after every check    |
+| waitAfterFailedAttemptsMs     | **0**               | A period in milliseconds for a wait before trying to send data to the master               |
+| connectAttemptTimeMs          | **0**               | A period in milliseconds for waiting to connect to the master                              |
+| retryOnEmpty                  | **false**           | Retrying sending data to the master if it is empty                                         |
+| retryOnInvalid                | **false**           | Retrying sending data to the master if it is failed                                        |
 |---
 
 Example:
 
 ```json
-    "devices": [
-      {
-        "unitId": 1,
-        "deviceName": "Temp Sensor",
-        "attributesPollPeriod": 5000,
-        "timeseriesPollPeriod": 5000,
-        "sendDataOnlyOnChange": true,
+    ...
+    "unitId": 1,
+    "deviceName": "Temp Sensor",
+    "attributesPollPeriod": 5000,
+    "timeseriesPollPeriod": 5000,
+    "sendDataOnlyOnChange": true,
+    "waitAfterFailedAttemptsMs": 0,
+    "connectAttemptTimeMs": 0,
+    "retryOnEmpty": false,
+    "retryOnInvalid": false
+  }
+]
 ```
 
 ###### Key settings for "attributes"
@@ -341,12 +441,98 @@ Example:
         ],
 ```
 
+### Section "slave": description and configuration parameters
+Starting with version 3.0, Gateway can run as a Modbus slave. In order to configure Gateway as a Modbus slave,
+specify the "slave" section in the configuration file.
 
-##### Additional information
+There are 2 variants of Gateway slave section:
+
+{% capture modbusConnectionType %}
+TCP/UDP<small>Connection over TCP/UDP protocol</small>%,%tcpUdp%,%templates/iot-gateway/gateway-as-modbus-slave-tcpudp-connection.md%br%
+Serial<small>Connection over serial port</small>%,%serial%,%templates/iot-gateway/gateway-as-modbus-slave-serial-connection.md{% endcapture %}
+
+There are 2 variants of server section:
+
+{% include content-toggle.html content-toggle-id="modbusConnection" toggle-spec=modbusConnectionType %}
+
+You can also specify service information about the device using the "identity" subsection as follows:
+
+| **Parameter**        | **Default value**                                             |
+|:-|-
+| vendorName           | **Gateway**                                                   |
+| productCode          | **GT**                                                        |
+| vendorUrl            | **https://github.com/thingsboard/thingsboard-gateway**        |
+| productName          | **Gateway**                                                   |
+| modelName            | **1**                                                         |
+|--
+
+#### Subsection "values"
+In this section you can specify values that Gateway will save in the store. Each value refers to a specific type of 
+register. There are:
+1. holding_registers
+2. coils_initializer
+3. input_registers
+4. discrete_inputs
+
+Depending on which value the register belongs to, you must add it to the appropriate array. For example:
+```json
+"values": {
+      "holding_registers": [
+        {
+          "attributes": [
+            {
+              "address": 1,
+              "type": "string",
+              "tag": "sm",
+              "objectsCount": 1,
+              "value": "ON"
+            }
+          ],
+          "timeseries": [
+            {
+              "address": 2,
+              "type": "int",
+              "tag": "smm",
+              "objectsCount": 1,
+              "value": "12334"
+            }
+          ],
+          "attributeUpdates": [
+            {
+              "tag": "shared_attribute_write",
+              "type": "32int",
+              "functionCode": 6,
+              "objectsCount": 2,
+              "address": 29,
+              "value": 1243
+            }
+          ],
+          "rpc": [
+            {
+              "tag": "setValue",
+              "type": "bits",
+              "functionCode": 5,
+              "objectsCount": 1,
+              "address": 31,
+              "value": 22
+            }
+          ]
+        }
+      ],
+```
+
+{% capture difference %}
+<br>
+**In this section of the configuration, the only difference is the placement of values to a certain type of 
+register, but the configuration of telemetry, attributes, rps, etc. is the same as the "master" section.**  
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
+### Additional information
 
 Additional information about Modbus functions and supported data types.
 
-###### Modbus functions
+#### Modbus functions
 
 The Modbus connector supports the following Modbus functions:
 
@@ -363,7 +549,7 @@ The Modbus connector supports the following Modbus functions:
 | **16**                    | Write Registers                |
 
 
-###### Data types
+#### Data types
 
 A list and description of the supported data types for reading/writing data.
 

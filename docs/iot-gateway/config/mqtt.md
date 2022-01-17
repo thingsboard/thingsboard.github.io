@@ -41,10 +41,9 @@ Then, connector will subscribe to a list of topics using topic filters from mapp
     "name":"Default Local Broker",
     "host":"192.168.1.100",
     "port":1883,
-    "clientId": "ThingsBoard_gateway",
     "security": {
       "type": "basic",
-      "username": "username",
+      "username": "user",
       "password": "password"
     }
   },
@@ -61,7 +60,7 @@ Then, connector will subscribe to a list of topics using topic filters from mapp
             "type": "string",
             "key": "model",
             "value": "${sensorModel}"
-          }
+          },
           {
             "type": "string",
             "key": "${sensorModel}",
@@ -78,6 +77,11 @@ Then, connector will subscribe to a list of topics using topic filters from mapp
             "type": "double",
             "key": "humidity",
             "value": "${hum}"
+          },
+          {
+            "type": "string",
+            "key": "combine",
+            "value": "${hum}:${temp}"
           }
         ]
       }
@@ -143,11 +147,20 @@ Then, connector will subscribe to a list of topics using topic filters from mapp
       "deviceNameTopicExpression": "(?<=sensor\/)(.*?)(?=\/disconnect)"
     }
   ],
+  "attributeRequests": [
+    {
+      "retain": false,
+      "topicFilter": "v1/devices/me/attributes/request",
+      "topicExpression": "${SerialNumber}",
+      "valueExpression": "${sensorModel}"
+    }
+  ],
   "attributeUpdates": [
     {
-      "deviceNameFilter": ".*",
-      "attributeFilter": ".*",
-      "topicExpression": "/sensor/${deviceName}/${attributeKey}",
+      "retain": false,
+      "deviceNameFilter": "SN.*",
+      "attributeFilter": "uploadFrequency",
+      "topicExpression": "sensor/${deviceName}/${attributeKey}",
       "valueExpression": "{\"${attributeKey}\":\"${attributeValue}\"}"
     }
   ],
@@ -164,7 +177,7 @@ Then, connector will subscribe to a list of topics using topic filters from mapp
       "deviceNameFilter": ".*",
       "methodFilter": "no-reply",
       "requestTopicExpression": "/sensor/${deviceName}/request/${methodName}/${requestId}",
-      "valueExpression": "${params}"
+      "valueExpression": "${params.hum}::${params.temp}"
     }
   ]
 }
@@ -269,6 +282,39 @@ custom<small>Recommended if bytes or anything else will be received in response<
 
 
 **Note**: You can specify multiple mapping objects inside the array.
+
+Also, you can combine values from MQTT message in attributes, telemetry and serverSideRpc section, for example:
+{% highlight json %}
+{
+  {
+      "topicFilter": "/sensor/data",
+      "converter": {
+        "type": "json",
+        "deviceNameJsonExpression": "${serialNumber}",
+        "deviceTypeJsonExpression": "${sensorType}",
+        "timeout": 60000,
+        "attributes": [],
+        "timeseries": [
+          {
+            "type": "double",
+            "key": "temperature",
+            "value": "${temp}"
+          },
+          {
+            "type": "double",
+            "key": "humidity",
+            "value": "${hum}"
+          },
+          {
+            "type": "string",
+            "key": "combine",
+            "value": "${hum}:${temp}"
+          }
+        ]
+      }
+    }
+}
+{% endhighlight %}
 
 Mapping process subscribes to the MQTT topics using **topicFilter** parameter of the mapping object. 
 Each message that is published to this topic by other devices or applications is analyzed to extract device name, type and data (attributes and/or timeseries values).
@@ -442,9 +488,10 @@ The "**attributeRequests**" configuration allows configuring the format of the c
 
 | **Parameter**                 | **Default value**                                     | **Description**                                                                                    |
 |:-|:-|-
-| deviceNameFilter              | **.\***                                               | Regular expression device name filter, uses to determine, which function to execute.               |
-| attributeFilter               | **.\***                                               | Regular expression attribute name filter, uses to determine, which function to execute.            |
-| topicExpression               | **/sensor/${deviceName}/${attributeKey}**             | JSON-path expression uses for creating topic address to send a message.                            |
+| retain                        | **false**                                             | If set to true, the message will be set as the "last known good"/retained message for the topic    |
+| deviceNameFilter              | **SN.\***                                     | Regular expression device name filter, uses to determine, which function to execute.               |
+| attributeFilter               | **uploadFrequency**                                   | Regular expression attribute name filter, uses to determine, which function to execute.            |
+| topicExpression               | **/sensor/${deviceName}/${attributeKey}**              | JSON-path expression uses for creating topic address to send a message.                            |
 | valueExpression               | **{\\"${attributeKey}\\":\\"${attributeValue}\\"}**   | JSON-path expression uses for creating the message data that will send to topic.                   |
 |---
 
@@ -454,8 +501,9 @@ This section in configuration file looks like:
 ```json
   "attributeUpdates": [
     {
-      "deviceNameFilter": ".*",
-      "attributeFilter": ".*",
+      "retain": false,
+      "deviceNameFilter": "SN.*",
+      "attributeFilter": "uploadFrequency",
       "topicExpression": "/sensor/${deviceName}/${attributeKey}",
       "valueExpression": "{\"${attributeKey}\":\"${attributeValue}\"}"
     }
@@ -538,7 +586,7 @@ This section in configuration file looks like:
       "deviceNameFilter": ".*",
       "methodFilter": "no-reply",
       "requestTopicExpression": "/sensor/${deviceName}/request/${methodName}/${requestId}",
-      "valueExpression": "${params}"
+      "valueExpression": "${params.hum}::${params.temp}"
     }
   ]
 ```

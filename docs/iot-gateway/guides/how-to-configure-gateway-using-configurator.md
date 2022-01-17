@@ -17,6 +17,7 @@ To start configuring Gateway you have to start your terminal and launch Configur
 ```bash
 tb-gateway-configurator
 ```
+{: .copy-code}
 
 If you have correctly installed the gateway, you will see the following:
 
@@ -27,8 +28,8 @@ If you have correctly installed the gateway, you will see the following:
 Answering questions to be displayed in turn using your option (You can use the default value which
 displays in the input field).
 
-_Default value is taken from **/etc/thingsboard-gateway/config/tb_gateway.yaml** and all your configuration via
-CLI will be saved there._
+**NOTE**: Default value is taken from **/etc/thingsboard-gateway/config/tb_gateway.yaml** and all your configuration via
+CLI will be saved there.
 
 ![](/images/gateway/gateway-cli-questions.png)
 
@@ -38,6 +39,7 @@ Finally, you can start your ThingsBoard IoT gateway with the following command:
 ```bash
 thingsboard-gateway
 ```
+{: .copy-code}
 
 ## Next steps
 

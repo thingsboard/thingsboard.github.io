@@ -53,7 +53,7 @@ version: '2.2'
 services:
   mytrendz:
     restart: always
-    image: "thingsboard/trendz:1.8.1-SNAPSHOT"
+    image: "thingsboard/trendz:1.8.2-SNAPSHOT"
     ports:
       - "8888:8888"
     environment:
@@ -90,7 +90,7 @@ Where:
 - `~/.mytrendz-logs:/var/log/thingsboard`   - mounts the volume `~/.mytrendz-logs` to Trendz logs directory
 - `mytrendz`             - friendly local name of this machine
 - `--restart always`        - automatically start Trendz in case of system reboot and restart in case of failure.
-- `thingsboard/trendz:1.8.1-SNAPSHOT`          - docker image
+- `thingsboard/trendz:1.8.2-SNAPSHOT`          - docker image
     
 Before starting Docker container run following commands to create a directory for storing data and logs and then change 
 its owner to docker container user, to be able to change user, chown command is used, which requires sudo permissions 
@@ -167,7 +167,7 @@ Below is example on how to upgrade from 1.6.0 to 1.7.0
     ```
     {: .copy-code}
 
-3. After this you need to update docker-compose.yml as in [Step 3](#step-3-running) but with 1.8.1-SNAPSHOT instead of 1.7.0-SNAPSHOT:
+3. After this you need to update docker-compose.yml as in [Step 3](#step-3-running) but with 1.8.2-SNAPSHOT instead of 1.7.0-SNAPSHOT:
     
 4. Change upgradeversion version to your **current** ThingsBoard version.
        

@@ -1,7 +1,5 @@
 Instructions listed below will help you to install Cassandra. 
 
-{% include templates/install/cassandra-4x-beta.md %}
-
 ```bash
 # Add cassandra repository
 sudo touch /etc/yum.repos.d/cassandra.repo

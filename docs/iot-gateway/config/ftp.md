@@ -284,7 +284,39 @@ Let's look how we can configure this section for different file extensions:
         }
       ]
     ```
-
+4. Combine attributes, telemetry and serverSideRpc section, for example .json file:
+  ```json
+  "paths": [
+          {
+            "devicePatternName": "${temp}",
+            "devicePatternType": "Device",
+            "delimiter": ",",
+            "path": "fol/*.json",
+            "readMode": "FULL",
+            "maxFileSize": 5,
+            "pollPeriod": 60,
+            "withSortingFiles": true,
+            "attributes": [],
+            "timeseries": [
+              {
+                "type": "int",
+                "key": "hum",
+                "value": "${hum}"
+              },
+              {
+                "type": "int",
+                "key": "temp",
+                "value": "${tmp}"
+              },
+              {
+                "type": "string",
+                "key": "combine",
+                "value": "${tmp}::${hum}"
+              }
+            ]
+          }
+        ]
+  ```
 
 ### Section "attributeUpdates"
 
