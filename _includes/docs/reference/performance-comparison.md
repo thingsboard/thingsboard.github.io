@@ -1504,6 +1504,12 @@ sudo sysctl -w net.netfilter.nf_conntrack_max=1048576
 scripts for managing 20-32 test instances
 
 _includes/docs/reference/performance-scripts/*.sh
+init-tests.sh
+ping-from-tests.sh
+reboot-tests.sh
+run-test.sh
+ssh-tests.sh
+test-ips.sh
 
 Here the docker-compose config
 
