@@ -9,17 +9,14 @@
 [MQTT](https://en.wikipedia.org/wiki/MQTT) is a lightweight publish-subscribe messaging protocol which probably makes it the most suitable for various IoT devices. 
 You can find more information about MQTT [here](http://mqtt.org/).
 
-ThingsBoard server nodes act as an MQTT Broker that supports QoS levels 0 (at most once) and 1 (at least once) and a set of [configurable](/docs/{{docsPrefix}}user-guide/device-profiles/#mqtt-device-topic-filters) topics.
-
-##### Client libraries setup
-
-You can find a large number of MQTT client libraries on the web. Examples in this article will be based on Mosquitto and MQTT.js.
-In order to setup one of those tools, you can use instructions in our [Hello World](/docs/{{docsPrefix}}getting-started-guides/helloworld/) guide.
+ThingsBoard server nodes act as an MQTT Broker that supports QoS levels 0 (at most once) and 1 (at least once) 
+and a set of [predefined](https://raw.githubusercontent.com/thingsboard/thingsboard/master/common/data/src/main/java/org/thingsboard/server/common/data/device/profile/MqttTopics.java) topics. 
+In addition, there is set of [configurable](/docs/{{docsPrefix}}user-guide/device-profiles/#mqtt-device-topic-filters) topics.
 
 ##### MQTT Connect
 
 We will use *access token* device credentials in this article and they will be referred to later as **$ACCESS_TOKEN**.
-The application needs to send MQTT CONNECT message with username that contains **$ACCESS_TOKEN**. 
+The application needs to send MQTT CONNECT message with username that contains **$ACCESS_TOKEN**.
 
 Possible return codes, and their reasons during connect sequence:
 
@@ -36,12 +33,37 @@ Please refer to the [MQTT transport type](/docs/{{docsPrefix}}user-guide/device-
 
 Using custom binary format or some serialization framework is also possible. See [protocol customization](#protocol-customization) for more details.
 
+##### MQTT Topics
+
+As we mentioned in the MQTT basics section, there is a set of predefined topics that we can separate into 2 sub-sets based on the leading(first) topic level:
+
+ - **v1 topics(starts with /v1 topic level)** supported since ThingsBoard version 1.0 and used as topics for backward compatibility with versions older than 3.3.2.
+ - **v2 topics(starts with /v2 topic level)** supported since ThingsBoard version 3.3.2 and act as basic topics for communication with MQTT clients.  
+ 
+Additionally, v2 topics can be separated into 3 sub-sets: 
+
+ - **v2 basic topics** - default MQTT topics that in the same way as **v1 topics** use JSON payload format by default.
+ - **v2 json topics(includes /j topic level)** - support only JSON payload format.
+ - **v2 proto topics(includes /p topic level)** - support only Proto payload format.
+ 
+##### Client libraries setup
+
+You can find a large number of MQTT client libraries on the web. Examples in this article will be based on Mosquitto and MQTT.js.
+In order to setup one of those tools, you can use instructions in our [Hello World](/docs/{{docsPrefix}}getting-started-guides/helloworld/) guide.
+
 ## Telemetry upload API
 
-In order to publish telemetry data to ThingsBoard server node, send PUBLISH message to the following topic:
- 
+In order to publish telemetry data to ThingsBoard server node, send PUBLISH message to one of the following topics:
+
 ```shell
-v1/devices/me/telemetry
+# Since ThingsBoard version 1.0
+v1/devices/me/telemetry 
+```
+
+```shell
+# Since ThingsBoard version 3.3.2
+v2/t
+v2/t/j
 ```
 
 The simplest supported data formats are:

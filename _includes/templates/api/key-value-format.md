@@ -1,4 +1,4 @@
-## Key-value format
+##### Key-value format
 
 By default, ThingsBoard supports key-value content in JSON. Key is always a string, while value can be either string, boolean, double, long or JSON.
 For example:

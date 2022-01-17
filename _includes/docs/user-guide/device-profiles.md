@@ -86,9 +86,10 @@ By default, the platform expects devices to send data via JSON. However, it is a
 
 Protocol Buffers, or Protobuf, is a language- and a platform-neutral way of serializing structured data. It is convenient to minimize the size of transmitted data.  
 
-At the moment of writing (ThingsBoard 3.2), platform supports customizable proto schemas for [telemetry upload](/docs/{{docsPrefix}}reference/mqtt-api/#telemetry-upload-api) 
+At the moment of writing initial version of these feature (ThingsBoard 3.2), platform supports customizable proto schemas for [telemetry upload](/docs/{{docsPrefix}}reference/mqtt-api/#telemetry-upload-api) 
 and [attribute upload](/docs/{{docsPrefix}}reference/mqtt-api/#publish-attribute-update-to-the-server). 
-We plan to the add ability to define a schema for downlink messages (RPC calls and attribute updates) in future releases.  
+However, since ThingsBoard 3.3 release, platform also support proto schemas for [Server-side RPC](/docs/{{docsPrefix}}reference/mqtt-api/#server-side-rpc).
+We plan to the add ability to define a schema for attribute updates and other downlink messages in future releases.  
 
 {% include images-gallery.html imageCollection="mqttProtobufSetting" %}
 
@@ -108,9 +109,10 @@ However, it is also possible to send data via [Protocol Buffers](https://develop
 
 Protocol Buffers, or Protobuf, is a language- and a platform-neutral way of serializing structured data. It is convenient to minimize the size of transmitted data.  
 
-At the moment of writing (ThingsBoard 3.2.2), platform supports customizable proto schemas for [telemetry upload](/docs/{{docsPrefix}}reference/coap-api/#telemetry-upload-api) 
+At the moment of writing initial version of these feature (ThingsBoard 3.2.2), platform supports customizable proto schemas for [telemetry upload](/docs/{{docsPrefix}}reference/coap-api/#telemetry-upload-api)
 and [attribute upload](/docs/{{docsPrefix}}reference/coap-api/#publish-attribute-update-to-the-server). 
-We plan to the add ability to define a schema for downlink messages (RPC calls and attribute updates) in future releases.  
+However, since ThingsBoard 3.3 release, platform also support proto schemas for [Server-side RPC](/docs/{{docsPrefix}}reference/coap-api/#server-side-rpc).
+We plan to the add ability to define a schema for attribute updates and other downlink messages in future releases.
 
 {% include images-gallery.html imageCollection="coapProtobufSetting" %}
 
