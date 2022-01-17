@@ -8,20 +8,37 @@ How many resources do you need to scale up? Let's discover!
 
 We are going to spin up a few AWS instances with different resources and find out the limits for each one of this.
 
+## Performance test summary
+
+| Thingsboard configuration |   queue   |     TS    | Device state | TS latest | devices | msg/sec | datapoints/sec |   instance  | CPU usage | Write IOPS |
+|:-------------------------:|:---------:|:---------:|:------------:|:---------:|:-------:|:-------:|:--------------:|:-----------:|:---------:|:----------:|
+|       Postgres only       | in-memory |  Postgres |   Postgres   |  Postgres |    5k   |    1k   |       3k       |  t3.medium  |    27%    |     800    |
+|          Postgres         |   Kafka   |  Postgres |   Postgres   |  Postgres |    5k   |    5k   |       15k      |  m6a.large  |    95%    |     850    |
+|    Cassandra + Postgres   |   Kafka   | Cassandra |   Postgres   |  Postgres |   25k   |   10k   |       30k      | m6a.2xlarge |    75%    |     200    |
+|    Cassandra + Postgres   |   Kafka   | Cassandra |   Postgres   |  Postgres |   100k  |    5k   |       15k      | m6a.2xlarge |    71%    |     700    |
+|    Cassandra + Postgres   |   Kafka   | Cassandra |   Cassandra  |  Postgres |   100k  |   10k   |       30k      | m6a.2xlarge |    95%    |     240    |
+
+
 ## Performance test methodology
 
 The technique is quite simple and easy to reproduce. Here the special [performance-test tool](https://github.com/thingsboard/performance-tests/#running). 
 It creates entities like devices, dashboards, etc. Then sends telemetry the same way as device do. 
 As an output we will analyse the Thingsboard rule engine statistics dashboard and fancy API usage stats feature.
-The goal is to compare the performance on each instance and chose between postgres and cassandra telemetry storage.
+The goal is to compare the performance on each instance whether to use Kafka, Postgres or Cassandra and why.
+
+### Setup AWS instances
 
 To run clear test lets spin up two instances for Thingsboard and for performance tool. Assign Elastic IP to get permanent access to the instances.
 
-![Thingsboard and Performance test instances](../../../images/reference/performance-aws-instances/method/performance_test_aws_instances.png "Thingsboard and Performance test instances")
+![Thingsboard and Performance test instances](../../../images/reference/performance-aws-instances/method/setup/performance_test_aws_instances.png "Thingsboard and Performance test instances")
 
-Setup network Security groups for both instances and open TCP ports 22 (SSH), 8080 (HTTP), 1883 (MQTT), 9999 (JMX) for inbound rules for source IPs (office, home, perf-test).
+Setup network Security groups for both instances and open TCP ports 22 (SSH), 8080 (HTTP), 1883 (MQTT), 9999 (JMX) for inbound rules for source IPs (office, home, perf-test).  
 
-![Setup network security group for performance test](../../../images/reference/performance-aws-instances/method/performance_test_network_security_group.png "Setup network security group for performance test")
+![Setup network security group for performance test](../../../images/reference/performance-aws-instances/method/setup/performance_test_network_security_group.png "Setup network security group for performance test")
+
+As fas as we experience the number of rules will affect the network performance, so another good option is to allow the "All traffic" for the trusted IPs and local network IP subnet.
+
+![](../../../images/reference/performance-aws-instances/method/setup/performance_test_network_security_group_inbound_rules.png)
 
 Optionally, setup SSH private keys to access the instances. It is convenient to set up ~/.ssh/config like:
 ```bash
@@ -106,7 +123,7 @@ volumes: # to persist data between container restarts or being recreated
 
 Press `Ctrl`+`Shift`+`V` to paste and `Ctrl`+`D` to save the `docker-compose.yml`
 
-Let's add IP address of Thingsboard to the Performance test instance
+For more convenient usage you may add IP address of Thingsboard to the Performance test instance
 
 ```bash
 ssh perf-test
@@ -117,10 +134,9 @@ echo '52.50.5.45 thingsboard' | sudo tee -a /etc/hosts
 ```
 
 For the sake of simplicity, we are using a [docker-compose host network mode](https://docs.docker.com/compose/compose-file/compose-file-v3/#network_mode).
+This also helps to avoid docker-proxy overhead during active network communication between microservices.
 
-## How to run the test
-
-### Start the new Thingsboard
+### Start new Thingsboard
 
 ```bash
 ssh thingsboard
@@ -151,18 +167,20 @@ docker run -it --rm --network host --name tb-perf-test \
 ```
 {: .copy-code}
 
+### Get the Performance charts
+
 Open your browser and go http://52.50.5.45:8080/dashboards and login. Use your instance IP address instead.  
 Default login for demo instance is `tenant@thingsboard.org`, password is `tenant`.
 
-![Thingsboard dashboard list with Rule Engine Statistics](../../../images/reference/performance-aws-instances/method/performance_test_thingsboard_dashboard_list.png "Thingsboard dashboard list with Rule Engine Statistics")
+![Thingsboard dashboard list with Rule Engine Statistics](../../../images/reference/performance-aws-instances/method/chart-examples/performance_test_thingsboard_dashboard_list.png "Thingsboard dashboard list with Rule Engine Statistics")
 
 Choose the "Rule Engine Statistics" dashboard. You can see how the system perform under the load.
 
-![Thingsboard rule engine statistics](../../../images/reference/performance-aws-instances/method/performance_test_thingsboard_rule_engine_statistics_queue_stats.png "Thingsboard rule engine statistics")
+![Thingsboard rule engine statistics](../../../images/reference/performance-aws-instances/method/chart-examples/performance_test_thingsboard_rule_engine_statistics_queue_stats.png "Thingsboard rule engine statistics")
 
 Another fancy feature is the API usage page
 
-![Thingsboard API usage feature](../../../images/reference/performance-aws-instances/method/performance_test_thingsboard_api_usage_feature.png "Thingsboard API usage feature")
+![Thingsboard API usage feature](../../../images/reference/performance-aws-instances/method/chart-examples/performance_test_thingsboard_api_usage_feature.png "Thingsboard API usage feature")
 
 ### Monitor the Thingsboard Java application
 
@@ -181,7 +199,9 @@ ssh -L 9999:127.0.0.1:9999 thingsboard
 
 Now we can connect with VisualVM to the Thingsboard application and discover the internals
 
-![Thingsboard JMX overview with VisualVM](../../../images/reference/performance-aws-instances/method/performance_test_thingsboard_jmx_visual_vm_overview.png "Thingsboard JMX overview with VisualVM")
+![Thingsboard JMX overview with VisualVM](../../../images/reference/performance-aws-instances/method/chart-examples/performance_test_thingsboard_jmx_visual_vm_overview.png "Thingsboard JMX overview with VisualVM")
+
+### Monitor the PostgreSQL with the PgAdmin
 
 To monitor PostgreSQL database we are going to use the pgadmin. Here is how to [download and install pgadmin](https://www.pgadmin.org/download/).  
 Open pgadmin  
@@ -203,48 +223,9 @@ As result, you can see the dashboard with real time PostgreSQL metrics.
 
 ![](../../../images/reference/performance-aws-instances/method/pgadmin/pgadmin-thingsboard-dashboard.png)
 
-Notice. If you are running the PostgreSQL in container isolated from host network, your connection will come with internal docker IP and you should configure security configuration in the [pg_hba.conf](https://www.postgresql.org/docs/current/auth-pg-hba-conf.html) file.
+Notice: if you are running the PostgreSQL in container isolated from host network, your connection will come with internal docker IP and you should configure security configuration in the [pg_hba.conf](https://www.postgresql.org/docs/current/auth-pg-hba-conf.html) file.
 
-## Run tests
-
-## Postgres only
-
-### m6a.large (2 vCPUs AMD EPYC 3rd, 8 GiB, EBS GP3) + Postgres - 6k devices, 6k msg/sec, 18k tps
-
-6000 devices, MQTT, 6000 msg/sec, 18000 telemetry/sec, postgres, in-memory queue
-
-Estimated cost 42$ EC2 + 8$ EBS GP3 100GB = 50$/mo
-
-CPU 98% - *THIS IS NOT A PRODUCTION CASE*! 
-Check the Thingsboard performance with [Kafka](#m6alarge-2-vcpus-amd-epyc-3rd-8-gib-ebs-gp3--kafka) on the same m6a.large instance. 
-
-```bash
-docker run -it --rm --network host --name tb-perf-test \
-  --env REST_URL=http://thingsboard:8080 \
-  --env MQTT_HOST=thingsboard \
-  --env DEVICE_END_IDX=6000 \
-  --env MESSAGES_PER_SECOND=6000 \
-  --env ALARMS_PER_SECOND=10 \
-  --env DURATION_IN_SECONDS=600 \
-  thingsboard/tb-ce-performance-test:latest
-```
-{: .copy-code}
-
-![Queue stats dashboard](../../../images/reference/performance-aws-instances/method/m6a-large/postgres/thingsboard-aws-m6a-large-queue-stats-dashboard.png)
-
-![Thingsboard API usage](../../../images/reference/performance-aws-instances/method/m6a-large/postgres/thingsboard-aws-m6a-large-api-usage-dashboard.png)
-
-![htop CPU, memory, IO read/write](../../../images/reference/performance-aws-instances/method/m6a-large/postgres/thingsboard-aws-m6a-large-htop-cpu-memory-io-monitoring.png)
-
-![Java CPU and heap monitoring with JMX VisualVM](../../../images/reference/performance-aws-instances/method/m6a-large/postgres/thingsboard-aws-m6a-large-jmx-visualvm-monitoring.png)
-
-![Postgres pgadmin dashboard](../../../images/reference/performance-aws-instances/method/m6a-large/postgres/thingsboard-aws-m6a-large-postgresql-pgadmin-dashboard.png)
-
-![AWS CPU, network monitoring](../../../images/reference/performance-aws-instances/method/m6a-large/postgres/thingsboard-aws-m6a-large-cpu-network-monitoring.png)
-
-![Storage type](../../../images/reference/performance-aws-instances/method/m6a-large/postgres/thingsboard-aws-m6a-large-disk-type.png)
-  
-![AWS Storage monitoring](../../../images/reference/performance-aws-instances/method/m6a-large/postgres/thingsboard-aws-m6a-large-disk-monitoring.png)
+## Postgres only performance
 
 ### t3.medium (2 vCPUs Intel, 4 GiB, EBS GP3) + Postgres - 5k devices, 1k msg/sec, 3k tps
 
@@ -471,7 +452,46 @@ tb_1        | Starting ThingsBoard ...
 
 Conclusion: persisted queue is mandatory for a well loaded production. Kafka is a good one. 
 
-## Kafka + Postgres
+### m6a.large (2 vCPUs AMD EPYC 3rd, 8 GiB, EBS GP3) + Postgres - 6k devices, 6k msg/sec, 18k tps
+
+6000 devices, MQTT, 6000 msg/sec, 18000 telemetry/sec, postgres, in-memory queue
+
+Estimated cost 42$ EC2 + 8$ EBS GP3 100GB = 50$/mo
+
+CPU 98% - *THIS IS NOT A PRODUCTION CASE*!
+Check the Thingsboard performance with [Kafka](#m6alarge-2-vcpus-amd-epyc-3rd-8-gib-ebs-gp3--kafka---5k-devices--5k-msgsec-15k-tps) on the same m6a.large instance.
+
+```bash
+docker run -it --rm --network host --name tb-perf-test \
+  --env REST_URL=http://thingsboard:8080 \
+  --env MQTT_HOST=thingsboard \
+  --env DEVICE_END_IDX=6000 \
+  --env MESSAGES_PER_SECOND=6000 \
+  --env ALARMS_PER_SECOND=10 \
+  --env DURATION_IN_SECONDS=600 \
+  thingsboard/tb-ce-performance-test:latest
+```
+{: .copy-code}
+
+![Queue stats dashboard](../../../images/reference/performance-aws-instances/method/m6a-large/postgres/thingsboard-aws-m6a-large-queue-stats-dashboard.png)
+
+![Thingsboard API usage](../../../images/reference/performance-aws-instances/method/m6a-large/postgres/thingsboard-aws-m6a-large-api-usage-dashboard.png)
+
+![htop CPU, memory, IO read/write](../../../images/reference/performance-aws-instances/method/m6a-large/postgres/thingsboard-aws-m6a-large-htop-cpu-memory-io-monitoring.png)
+
+![Java CPU and heap monitoring with JMX VisualVM](../../../images/reference/performance-aws-instances/method/m6a-large/postgres/thingsboard-aws-m6a-large-jmx-visualvm-monitoring.png)
+
+![Postgres pgadmin dashboard](../../../images/reference/performance-aws-instances/method/m6a-large/postgres/thingsboard-aws-m6a-large-postgresql-pgadmin-dashboard.png)
+
+![AWS CPU, network monitoring](../../../images/reference/performance-aws-instances/method/m6a-large/postgres/thingsboard-aws-m6a-large-cpu-network-monitoring.png)
+
+![Storage type](../../../images/reference/performance-aws-instances/method/m6a-large/postgres/thingsboard-aws-m6a-large-disk-type.png)
+
+![AWS Storage monitoring](../../../images/reference/performance-aws-instances/method/m6a-large/postgres/thingsboard-aws-m6a-large-disk-monitoring.png)
+
+Conclusion: Kafka is essential to survive the high CPU load.
+
+## Kafka + Postgres performance
 
 ### m6a.large (2 vCPUs AMD EPYC 3rd, 8 GiB, EBS GP3) + Kafka - 5k devices , 5k msg/sec, 15k tps
 
@@ -702,7 +722,7 @@ Cons:
  * Kafka as a solo instance and messages persists eventually (no fsync called), potential message loss if Kafka crashes.
  * Maintain or fail any of component will lead to downtime for all the system.
 
-## Cassandra + Kafka + Postgres 
+## Cassandra + Kafka + Postgres performance
 
 ### m6a.2xlarge (8 vCPUs AMD EPYC 3rd, 32 GiB, EBS GP3) + Cassandra - 25k devices, 10k msg/sec, 30k tps
 
@@ -1310,13 +1330,116 @@ tb_1         | 2022-01-06 16:37:11,716 [TB-Scheduling-3] INFO  o.t.s.c.t.s.Defau
 
 ![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/100k-10k-30k/24h-run/aws-storage-monitoring.png)
 
+## Experiments 
+
+Postgres + Kafka + Cassandra
+
+### Cassandra 4.0 vs 3.11 versions comparison on AMD and Intel instances
+
+Cassandra 4.0 m6a.xlarge (4 vCPU, 16 GiB)
+
+![](../../../images/reference/performance-aws-instances/method/experiments/img_0.png)
+
+Cassandra 3.11 m6a.xlarge (4 vCPU, 16 GiB)
+
+![](../../../images/reference/performance-aws-instances/method/experiments/img_1.png)
+
+Cassandra 4.0 c6i.xlarge (4 vCPU, 8 GiB)
+
+![](../../../images/reference/performance-aws-instances/method/experiments/img_2.png)
+
+### Max msg rate experiments Cassandra 4.0 m6a.4xlarge (16 vCPU, 32 GiB)
+
+Cassandra 4.0 m6a.4xlarge (16 vCPU, 32 GiB)
+
+5k devices, 15k msg/sec, 45k data points/sec -- 100% handled
+
+![](../../../images/reference/performance-aws-instances/method/experiments/img_4.png)
+
+![](../../../images/reference/performance-aws-instances/method/experiments/img_3.png)
+
+5k devices, 25k msg/sec, 75k data points/sec -- 100% handled
+
+![](../../../images/reference/performance-aws-instances/method/experiments/img_5.png)
+
+![](../../../images/reference/performance-aws-instances/method/experiments/img_6.png)
+
+5k devices, 40k msg/sec, 120k data points/sec - bottleneck
+
+![](../../../images/reference/performance-aws-instances/method/experiments/img_8.png)
+
+CPU is about 60%, so bottleneck happens.
+
+![](../../../images/reference/performance-aws-instances/method/experiments/img_7.png)
+
+Let's try to write timeseries without persisting latest values to the PostgreSQL - no effect
+
+![](../../../images/reference/performance-aws-instances/method/experiments/img_9.png)
+
+### 1M connection setup with Docker and Ubuntu
+
+How to modify the docker file to handle more connections out of the box (optional)
+
+```dockerfile
+FROM thingsboard/tb:latest
+USER root
+RUN echo 'net.ipv4.ip_local_port_range = 1024 65535' >> /etc/sysctl.conf
+RUN echo 'fs.file-max = 1048576' >> /etc/sysctl.conf
+RUN echo '*                soft    nofile          1048576' >> /etc/security/limits.conf
+RUN echo '*                hard    nofile          1048576' >> /etc/security/limits.conf
+RUN echo 'root             soft    nofile          1048576' >> /etc/security/limits.conf
+RUN echo 'root             hard    nofile          1048576' >> /etc/security/limits.conf
+USER thingsboard
+```
+{: .copy-code}
+
+Add lines to your limits.conf file.
+
+cat | sudo tee -a /etc/security/limits.conf
+
+```
+## /etc/security/limits.conf
+## "nofile" mean "number of open files"
+#<user>     <type>    <item>     <value>
+*           soft      nofile     1048576
+*           hard      nofile     1048576
+root        soft      nofile     1048576
+root        hard      nofile     1048576
+```
+
+Add lines to your sysctl.conf file.
+
+cat | sudo tee -a /etc/sysctl.conf
+
+```
+## /etc/sysctl.conf
+## Increase outbound connections
+net.ipv4.ip_local_port_range = 1024 65535
+
+## Increase inbound connections
+## 1M+ file descriptors
+fs.file-max = 1048576
+```
+
 ### m6a.2xlarge (8 vCPUs AMD EPYC 3rd, 32 GiB, EBS GP3) + Cassandra - 500k devices, 5k msg/sec, 15k tps
 
-Architecture is 1 Thingsboard server + 20 client instances each supply 25k devices (500k in total). 
+Architecture is 1 Thingsboard server + 20 client instances each supply 25k devices (500k in total).
 
 500k devices connected
 
 ![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/500k-5k-15k/500k-is-connected-watsh-ss.png)
+
+### m6a.4xlarge (16 vCPUs AMD EPYC 3rd, 64 GiB, EBS GP3)- 500k devices, 10k msg, 30k tps - almost handle
+
+Almost handle, but it's hard to handle 10k mps rate with 500k devices without further optimization. Work in progress!
+
+![](../../../images/reference/performance-aws-instances/method/m6a-4xlarge/500k-10k-30k/queue-stats.png)
+
+![](../../../images/reference/performance-aws-instances/method/m6a-4xlarge/500k-10k-30k/api-usage.png)
+
+![](../../../images/reference/performance-aws-instances/method/m6a-4xlarge/500k-10k-30k/aws-instance-monitoring.png)
+
+![](../../../images/reference/performance-aws-instances/method/m6a-4xlarge/500k-10k-30k/aws-storage-monitoring.png)
 
 ### m6a.4xlarge (16 vCPUs AMD EPYC 3rd, 64 GiB, EBS GP3) + Cassandra - 1Million devices, 5k msg/sec, 15k tps
 
@@ -1367,65 +1490,6 @@ nohup mvn spring-boot:run &
 ENDSSH
 ```
 
-How to modify the docker file to handle more connections out of the box (optional)
-
-```dockerfile
-FROM thingsboard/tb:latest
-USER root
-RUN echo 'net.ipv4.ip_local_port_range = 12000 65535' >> /etc/sysctl.conf
-RUN echo 'fs.file-max = 1048576' >> /etc/sysctl.conf
-#RUN mkdir /etc/security/
-RUN echo '*                soft    nofile          1048576' >> /etc/security/limits.conf
-RUN echo '*                hard    nofile          1048576' >> /etc/security/limits.conf
-RUN echo 'root             soft    nofile          1048576' >> /etc/security/limits.conf
-RUN echo 'root             hard    nofile          1048576' >> /etc/security/limits.conf
-#CMD echo '+1M Connections' # your application here
-USER thingsboard
-```
-{: .copy-code}
-
-Add lines to your limits.conf file.
-
-cat | sudo tee -a /etc/security/limits.conf
-
-```
-## /etc/security/limits.conf
-## System Limits for FDs
-## "nofile" is "Number of Open Files"
-## This is the cap on number of FDs in use concurrently.
-## Set nofile to the max value of 1,048,576.
-
-#<user>     <type>    <item>     <value>
-*           soft      nofile     1048576
-*           hard      nofile     1048576
-root        soft      nofile     1048576
-root        hard      nofile     1048576
-```
-
-
-Add lines to your sysctl.conf file.
-
-cat | sudo tee -a /etc/sysctl.conf
-
-```
-## /etc/sysctl.conf
-## Increase Outbound Connections
-## Good for a service mesh and proxies like
-## Nginx/Envoy/HAProxy/Varnish and applications that
-## need long-lived connections.
-## Careful not to set the range wider as you will impact
-## running application ports in heavy usage situations.
-net.ipv4.ip_local_port_range = 12000 65535
-
-## Increase Inbound Connections
-## Allows for +1M more FDs
-## An FD is an integer value used as a traffic I/O pointer
-## on a connection with a Client.
-## The FD Int value is used to traffic packets between
-## User and Kernel Space.
-fs.file-max = 1048576
-```
-
 Important: to handle more than 256k (limit depends on total memory size) TCP connections, please adjust the `conntrack_max` system parameter.
 [reference](http://renbuar.blogspot.com/2019/02/netnetfilternfconntrackmax1048576.html)
 
@@ -1440,6 +1504,8 @@ sudo sysctl -w net.netfilter.nf_conntrack_max=1048576
 scripts for managing 20-32 test instances
 
 _includes/docs/reference/performance-scripts/*.sh
+
+Here the docker-compose config
 
 ```bash
 #1M (million) devices
@@ -1494,7 +1560,7 @@ services:
     image: "thingsboard/tb"
 #    build:
 #      context: .
-#      dockerfile: Dockerfile
+#      dockerfile: Dockerfile # for the custom build for experimental setup
     depends_on:
       - postgres
       - kafka
@@ -1572,13 +1638,12 @@ volumes: # to persist data between container restarts or being recreated
 ```
 {: .copy-code}
 
-
-How to forward JMX port with ssh.
+How to forward JMX port with ssh for all Java application in this deployment.
 ```bash
 ssh -L 9999:127.0.0.1:9999 -L 1099:127.0.0.1:1099 -L 9199:127.0.0.1:9199 -L 7199:127.0.0.1:7199 thingsboard 
 ```
 
-Enable pg_stat_statements preload library for PostgreSQL 
+Enable pg_stat_statements preload library for PostgreSQL
 ```bash
 #config before 
 docker exec -it ubuntu_postgres_1 tail /var/lib/postgresql/data/postgresql.conf
@@ -1590,7 +1655,7 @@ exit
 docker exec -it ubuntu_postgres_1 tail /var/lib/postgresql/data/postgresql.conf
 ```
 
-Check network connection count. 
+Check network connection count.
 `watch -n 1 ss -s`
 
 How to make a Java heap dump
@@ -1608,53 +1673,7 @@ exit
 scp -C tb2:/home/ubuntu/dump.hprof ~
 ```
 
-### Experiments
-
-#### Cassandra versions compare
-
-Cassandra 4.0 m6a.xlarge (4 vCPU, 16 GiB)
-
-![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka-cassandra/img.png)
-
-Cassandra 3.11 m6a.large
-
-![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka-cassandra/img_1.png)
-
-Cassandra 4.0 c6i.xlarge (4 vCPU, 8 GiB)
-
-![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka-cassandra/img_2.png)
-
-#### Max msg rate experiments
-
-Cassandra 4.0 m6a.4xlarge (16 vCPU, 32 GiB)
-
-5k devices, 15k msg/sec, 45k data points/sec -- 100% handled
-
-![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka-cassandra/img_4.png)
-
-![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka-cassandra/img_3.png)
-
-5k devices, 25k msg/sec, 75k data points/sec -- 100% handled
-
-![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka-cassandra/img_5.png)
-
-![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka-cassandra/img_6.png)
-
-5k devices, 40k msg/sec, 120k data points/sec - bottleneck
-
-![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka-cassandra/img_8.png)
-
-CPU is about 60%, so bottleneck happens.
-
-![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka-cassandra/img_7.png)
-
-Let's try to write timeseries without persisting latest values to the PostgreSQL - no effect
-
-![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka-cassandra/img_9.png)
-
-#### m6a.4xlarge (16 vCPUs AMD EPYC 3rd, 64 GiB, EBS GP3)- 500k devices, 10k msg, 30k tps - almost handle
-
-Almost handle
+Here the results for 1M devices!
 
 ![](../../../images/reference/performance-aws-instances/method/m6a-4xlarge/500k-10k-30k/queue-stats.png)
 
@@ -1664,125 +1683,20 @@ Almost handle
 
 ![](../../../images/reference/performance-aws-instances/method/m6a-4xlarge/500k-10k-30k/aws-storage-monitoring.png)
 
+Conclusion: 
+    1. We did it! Thingsboard has been demonstrated the code and design quality.
+    2. It is too risky to go production with monolith with more than 100k devices on a single node.
+    3. Never do such experiments on the production environment.
+    4. This case helps to discover the bottlenecks and further improve performance.
 
+## Thank you
 
-#### m6a.large (2 vCPUs AMD EPYC 3rd, 8 GiB, EBS GP3) + Cassandra - 5k devices , 5k msg/sec, 15k tps ???
+Thank you for your time to read all this stuff. 
+Thanks to Thingsboard community that filed issues and shared performance solution. 
+Thanks to all my colleagues that helps me speedup the Thingsboard.
 
-5000 devices, 5000 msg/sec, 15000 telemetry/sec, MQTT, Postgres, Kafka, Cassandra
+It was Thingsboard 3.3.3 version.
 
-Estimated cost 19$ EC2 + x$ CPU burst + 8$ EBS GP3 100GB = 30$/mo
+Feel free to send as a feedback or share your fancy setup on [GitHub](https://github.com/thingsboard/performance-tests/issues)
 
-CPU ??%. This is good setup up to ???? msg/sec, with peak performance up to ???? msg sec
-
-System can survive peak message rate up to message rate ????? msg/sec (?????? telemetry/sec).
-
-```bash
-version: '3'
-services:
-  cassandra:
-    image: bitnami/cassandra:4.0
-    network_mode: "host"
-    restart: "always"
-    volumes:
-      - cassandra:/bitnami
-    environment:
-      CASSANDRA_CLUSTER_NAME: "Thingsboard Cluster"
-      HEAP_NEWSIZE: "768M"
-      MAX_HEAP_SIZE: "1536M"
-      JVM_EXTRA_OPTS: "-Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=7199 -Dcom.sun.management.jmxremote.rmi.port=7199  -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=127.0.0.1"
-  zookeeper:
-    image: docker.io/bitnami/zookeeper:3.7
-    network_mode: "host"
-    restart: "always"
-    volumes:
-      - zookeeper:/bitnami
-    environment:
-      ALLOW_ANONYMOUS_LOGIN: "yes"
-      ZOO_ENABLE_ADMIN_SERVER: "no"
-      JVMFLAGS: "-Xmx128m -Xms128m -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=9199 -Dcom.sun.management.jmxremote.rmi.port=9199  -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=127.0.0.1"
-  kafka:
-    image: docker.io/bitnami/kafka:3
-    network_mode: "host"
-    restart: "always"
-    volumes:
-      - kafka:/bitnami
-    environment:
-      KAFKA_CFG_ZOOKEEPER_CONNECT: "localhost:2181"
-      ALLOW_PLAINTEXT_LISTENER: "yes"
-      KAFKA_JMX_OPTS: "-Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=1099 -Dcom.sun.management.jmxremote.rmi.port=1099 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=127.0.0.1"
-      JMX_PORT: "1099"
-    depends_on:
-      - zookeeper
-  postgres:
-    image: "postgres:14"
-    network_mode: "host"
-    restart: "always"
-    volumes:
-      - postgres:/var/lib/postgresql/data
-    environment:
-      POSTGRES_DB: "thingsboard"
-      POSTGRES_PASSWORD: "postgres"
-  tb:
-    depends_on:
-      - postgres
-      - kafka
-      - cassandra
-    image: "thingsboard/tb"
-    network_mode: "host"
-    restart: "always"
-    volumes:
-      - thingsboard-data:/data
-      - thingsboard-logs:/var/log/thingsboard
-    environment:
-      DATABASE_TS_TYPE: "cassandra"
-      DATABASE_TS_LATEST_TYPE: "sql"
-      #Cassandra
-      CASSANDRA_CLUSTER_NAME: "Thingsboard Cluster"
-      CASSANDRA_LOCAL_DATACENTER: "datacenter1"
-      CASSANDRA_KEYSPACE_NAME: "thingsboard"
-      CASSANDRA_URL: "127.0.0.1:9042"
-      CASSANDRA_USE_CREDENTIALS: "true"
-      CASSANDRA_USERNAME: "cassandra"
-      CASSANDRA_PASSWORD: "cassandra"
-      CASSANDRA_QUERY_BUFFER_SIZE: "100000"
-      CASSANDRA_QUERY_CONCURRENT_LIMIT: "1000"
-      CASSANDRA_QUERY_POLL_MS: "10"
-      #Kafka
-      TB_QUEUE_TYPE: "kafka"
-      TB_KAFKA_BATCH_SIZE: "65536" # default is 16384 - it helps to produce messages much efficiently
-      TB_KAFKA_LINGER_MS: "5" # default is 1
-      TB_QUEUE_KAFKA_MAX_POLL_RECORDS: "2048" # default is 8192
-      TB_SERVICE_ID: "tb-node-0"
-      HTTP_BIND_PORT: "8080"
-      TB_QUEUE_RE_MAIN_PACK_PROCESSING_TIMEOUT_MS: "30000"
-      # Postgres connection
-      SPRING_JPA_DATABASE_PLATFORM: "org.hibernate.dialect.PostgreSQLDialect"
-      SPRING_DRIVER_CLASS_NAME: "org.postgresql.Driver"
-      SPRING_DATASOURCE_URL: "jdbc:postgresql://localhost:5432/thingsboard"
-      SPRING_DATASOURCE_USERNAME: "postgres"
-      SPRING_DATASOURCE_PASSWORD: "postgres"
-      # Java options for 8G instance and JMX enabled
-      JAVA_OPTS: " -Xmx2560M -Xms2560M -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=9999 -Dcom.sun.management.jmxremote.rmi.port=9999 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=127.0.0.1"
-volumes: # to persist data between container restarts or being recreated
-  cassandra:
-  kafka:
-  zookeeper:
-  postgres:
-  thingsboard-data:
-  thingsboard-logs:
-```
-
-Performance test docker run
-```bash
-docker run -it --rm --network host --name tb-perf-test \
-  --env REST_URL=http://thingsboard:8080 \
-  --env MQTT_HOST=thingsboard \
-  --env DEVICE_END_IDX=5000 \
-  --env MESSAGES_PER_SECOND=5000 \
-  --env ALARMS_PER_SECOND=50 \
-  --env DURATION_IN_SECONDS=86400 \
-  thingsboard/tb-ce-performance-test:latest
-```
-{: .copy-code}
-
-[comment]: <> (TODO)
+See You next release!
