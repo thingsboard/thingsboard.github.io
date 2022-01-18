@@ -929,11 +929,13 @@ First, we need to increase ip local port range on performance test instance that
 ssh pt
 cat /proc/sys/net/ipv4/ip_local_port_range
 #32768	60999
-sudo -s echo "net.ipv4.ip_local_port_range= 1024 65535">> /etc/sysctl.conf
+echo "net.ipv4.ip_local_port_range = 1024 65535" | sudo tee -a /etc/sysctl.conf
 sudo -s sysctl -p
 cat /proc/sys/net/ipv4/ip_local_port_range
 #1024	65535
 ulimit -n 1048576
+sudo sysctl -a | grep conntrack_max
+sudo sysctl -w net.netfilter.nf_conntrack_max=1048576
 ```
 
 Let's prepare the Thingsboard 
@@ -1258,7 +1260,7 @@ cd performance-tests
 Performance test node1
 ```bash
 cd ~/performance-tests
-export REST_URL=http://52.50.5.45:8080 # put Thingsboard API here
+export REST_URL=http://172.31.29.195:8080 # put Thingsboard API here
 export MQTT_HOST=52.50.5.45 # put Thingsboard API here
 export DEVICE_START_IDX=0
 export DEVICE_END_IDX=50000
@@ -1272,7 +1274,7 @@ nohup mvn spring-boot:run &
 Performance test node2
 ```bash
 cd ~/performance-tests
-export REST_URL=http://52.50.5.45:8080 # put Thingsboard API here
+export REST_URL=http://172.31.29.195:8080 # put Thingsboard API here
 export MQTT_HOST=52.50.5.45 # put Thingsboard API here
 export DEVICE_START_IDX=50000
 export DEVICE_END_IDX=100000
