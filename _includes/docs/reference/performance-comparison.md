@@ -18,6 +18,7 @@ We are going to spin up a few AWS instances with different resources and find ou
 |    Cassandra + Postgres   |   Kafka   | Cassandra |   Postgres   |  Postgres |   100k  |    5k   |       15k      | m6a.2xlarge |    71%    |     700    |
 |    Cassandra + Postgres   |   Kafka   | Cassandra |   Cassandra  |  Postgres |   100k  |   10k   |       30k      | m6a.2xlarge |    95%    |     240    |
 
+[comment]: <> ( To format table as markdown, please use the online table generator https://www.tablesgenerator.com/markdown_tables )
 
 ## Performance test methodology
 
