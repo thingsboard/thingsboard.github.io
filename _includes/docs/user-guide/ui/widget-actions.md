@@ -1,3 +1,9 @@
+{% if docsPrefix == 'pe/' or docsPrefix == 'paas/' %}
+{% assign mobileDocsPrefix = "pe/" %}
+{% else %}
+{% assign mobileDocsPrefix = "" %}
+{% endif %}
+
 * TOC
 {:toc}
 
@@ -14,7 +20,7 @@ To fully understand how to use Actions, you have to add a State to your widget. 
 ## Action types
 
 _Types of action_ define which exactly action will be taken.
-There are five action types that are the same for all widgets.
+There are six action types that are the same for all widgets.
 Learn how to configure action types with the example on [Entity Cards widget](/docs/{{docsPrefix}}user-guide/ui/widget-actions/#action-types-configuration) examples.
 
 ## Action types configuration
@@ -32,7 +38,7 @@ After a state has been added, we can configure a _Navigate to new dashboard stat
 
 1. In the widget's Edit mode move to the last cell "Actions".
 2. Click the "+" icon on the right of the window to add a new action.
-3. As an example for this manual, in the top drop-down menu, choose an "Action cell button" action source.
+3. As an example for this manual, in the top drop-down menu, choose an "Widget header button" action source.
 4. In the next line input a name for the action and choose an icon that will represent a button. With this button, action will be performed.
 5. In the drop-down menu "Type", choose a _Navigate to new dashboard state_ action type.
 6. After choosing an action type, the drop-down menu "Target dashboard state" appears. Select a previously created state you'd like to be transitioned to.
@@ -41,9 +47,17 @@ After a state has been added, we can configure a _Navigate to new dashboard stat
 9. Apply changes by clicking the orange tick icon in the top right of the window and then close the details window.
 10. Save applied changes by clicking the orange tick icon "Apply changes" in the bottom right of the screen.
 
-After saving changes, you can see an icon-button opposite the entity names. Clicking any of these icons will bring you to the previously selected state.
+After saving the changes, you can see an icon-button in the upper right part of the widget. Clicking this icon will take you to the previously selected state.
 
 {% include images-gallery.html imageCollection="navigate-new-state-cards" %}
+
+If you want to open the selected state in a separate window, check the box "Open in separate dialog".
+
+{% include images-gallery.html imageCollection="navigate-new-state-cards2" %}
+
+You can hide dashboard toolbar in dialog window. To do this, select the "Hide dashboard toolbar in dialog" box.
+
+{% include images-gallery.html imageCollection="navigate-new-state-cards3" %}
 
 ##### Update current dashboard state
 
@@ -52,7 +66,7 @@ While using a dashboard, you can view detailed information about a specific devi
 The most common use of this action type is through Chart widgets where you can see the details more accurately.
 For starters let's add a Chart widget to the Dashboard to configure the _Update current dashboard state_ action type:
 
-1. Enter Dashboard's Edit mode and in the drop-down "Select widget" menu choose Charts: Timeseries - Flot.
+1. Enter Dashboard's Edit mode and in the drop-down "Select widget" menu choose Charts: Timeseries Line Chart.
 2. In the "Add widget" window type input your data source, in this manual for example is used pressure data. Click "Add" at the right bottom of the widget.
 3. We can see that the Chart widget has appeared on the dashboard, but it has no data to display yet.
 4. Enter Edit mode of the Table widget by clicking the Pencil icon on the right top of the widget.
@@ -94,7 +108,7 @@ After saving changes, you can see icon-buttons opposite the entity names. Clicki
 ##### Custom action
 
 A Custom action allows manually configuring a function that can be used to add an individual action to your widget (for example deleting listed devices/assets).
-To configure a custom action with a function (with an example of an asset deletion):
+To configure a custom action with a function (with an example of a device deletion):
 
 1. In the widget's Edit mode move to the last cell "Actions".
 2. Click the "+" icon on the right of the window to add a new action.
@@ -102,9 +116,9 @@ To configure a custom action with a function (with an example of an asset deleti
 4. In the next line input a name for the action and choose an icon that will represent a button. With this button, action will be performed.
 5. In the drop-down menu "Type", choose a _Custom action_ action type.
 6. After choosing a Custom action type, a field for inputting a function will appear.
-7. Enter your custom function there. An example in this tutorial is an Asset deletion action that adds the ability to delete assets right from the table
+7. Enter your custom function there. An example in this tutorial is a device deletion action that adds the ability to delete devices right from the table
    (you can find an example of the function under the screenshots section).
-8. Apply changes by clicking the "Save" button at the right bottom of the "Edit action" window.
+8. Apply changes by clicking the "Save" button at the right bottom of the "Add action" window.
 9. Apply changes by clicking the orange tick icon in the top right of the window and then close the details window.
 10. Save applied changes by clicking the orange tick icon "Apply changes" in the bottom right of the screen.
 
@@ -115,53 +129,58 @@ Execute an action by clicking the "trash box" icon opposite entity names.
 <details>
 
 <summary>
-<b>An example of the function for an asset deletion.</b>
+<b>An example of the function for a device deletion.</b>
 </summary>
 
 {% highlight ruby %}
-{
-    let $injector = widgetContext.$scope.$injector;
-    let dialogs = $injector.get(widgetContext.servicesMap.get('dialogs'));
-    let assetService = $injector.get(widgetContext.servicesMap.get('assetService'));
+let $injector = widgetContext.$scope.$injector;
+let dialogs = $injector.get(widgetContext.servicesMap.get('dialogs'));
+let deviceService = $injector.get(widgetContext.servicesMap.get('deviceService'));
 
-    openDeleteAssetDialog();
+openDeleteDeviceDialog();
 
-    function openDeleteAssetDialog() {
-        let title = "Are you sure you want to delete the asset " + entityName + "?";
-        let content = "Be careful, after the confirmation, the asset and all related data will become unrecoverable!";
-        dialogs.confirm(title, content, 'Cancel', 'Delete').subscribe(
-            function(result) {
-                if (result) {
-                    deleteAsset();
-                }
+function openDeleteDeviceDialog() {
+    let title = "Are you sure you want to delete the device " + entityName + "?";
+    let content = "Be careful, after the confirmation, the device and all related data will become unrecoverable!";
+    dialogs.confirm(title, content, 'Cancel', 'Delete').subscribe(
+        function(result) {
+            if (result) {
+                deleteDevice();
             }
-        );
-    }
+        }
+    );
+}
 
-    function deleteAsset() {
-        assetService.deleteAsset(entityId.id).subscribe(
-            function() {
-                widgetContext.updateAliases();
-            }
-        );
-    }
+function deleteDevice() {
+    deviceService.deleteDevice(entityId.id).subscribe(
+        function() {
+            widgetContext.updateAliases();
+        }
+    );
 }
 {% endhighlight %}
 </details>
 
 ##### Custom action (with HTML template)
 
-A Custom action with an HTML template allows manually entering a function in an existing HTML template (for example creating dialog windows and opportunity to edit listed devices/assets).
+A Custom action with an HTML template allows manually entering a function in an existing HTML template (for example creating dialog windows with an opportunity to create or edit listed devices/assets).
 
 1. In the widget's Edit mode move to the last cell "Actions".
 2. Click the "+" icon on the right of the window to add a new action.
 3. As an example for this manual, in the top drop-down menu, choose an "Action cell button" action source.
 4. In the next line input a name for the action and choose an icon that will represent a button. With this button, action will be performed.
-5. In the drop-down menu "Type", choose a _Custom action(with HTML template)_ action type.
-6. After choosing a Custom action type, a field with a ready template for inputting a function will appear.
-7. Enter your custom function there. Examples in this tutorial are two custom functions. One that adds a dialog window to fill in and another that adds a possibility to edit assets.
-   (you can find an example of the function under the screenshots section).
-8. Apply changes by clicking the "Save" button at the right bottom of the "Edit action" window.
+5. In the drop-down menu "Type", choose a _Custom action(with HTML template)_ action type. After choosing a Custom action type, four tabs appea:
+   
+   _Resources_ tab is used to specify external JavaScript/CSS resources used by the widget;
+   
+   _CSS_ tab contains custom action specific CSS style definitions;
+   
+   _HTML_ tab contains custom action HTML code;
+   
+   _JavaScript_ section contains JS code of your custom action.
+6. In JavaScript tab, enter a JavaScript function for your custom action (you can find an example of JavaScript function under the screenshots section).
+7. In HTML tab, enter an HTML code for your custom action (you can find an example of HTML code under the screenshots section).
+8. Apply changes by clicking the "Save" button at the right bottom of the "Add action" window.
 9. Apply changes by clicking the orange tick icon in the top right of the window and then close the details window.
 10. Save applied changes by clicking the orange tick icon "Apply changes" in the bottom right of the screen.
 
@@ -169,51 +188,83 @@ Execute actions by clicking appropriate icons.
 
 {% include images-gallery.html imageCollection="custom-action-html" %}
 
+<b>Examples of JavaScript function and HTML code that add a possibility to create a device or an asset:</b>
+<br>
+<br>
 <details>
 
 <summary>
-<b>An example of a function that adds a dialog window to fill in.</b>
+JavaScript function.
 </summary>
 
 {% highlight ruby %}
 let $injector = widgetContext.$scope.$injector;
 let customDialog = $injector.get(widgetContext.servicesMap.get('customDialog'));
 let assetService = $injector.get(widgetContext.servicesMap.get('assetService'));
+let deviceService = $injector.get(widgetContext.servicesMap.get('deviceService'));
 let attributeService = $injector.get(widgetContext.servicesMap.get('attributeService'));
+let entityRelationService = $injector.get(widgetContext.servicesMap.get('entityRelationService'));
 
-openAddAssetDialog();
+openAddEntityDialog();
 
-function openAddAssetDialog() {
-    customDialog.customDialog(htmlTemplate, AddAssetDialogController).subscribe();
+function openAddEntityDialog() {
+customDialog.customDialog(htmlTemplate, AddEntityDialogController).subscribe();
 }
 
-function AddAssetDialogController(instance) {
-    let vm = instance;
-    
-    vm.addAssetFormGroup = vm.fb.group({
-      assetName: ['', [vm.validators.required]],
-      assetType: ['', [vm.validators.required]],
-      assetLabel: [''],
-      attributes: vm.fb.group({
-          latitude: [null],
-          longitude: [null]
-      })      
+function AddEntityDialogController(instance) {
+let vm = instance;
+
+    vm.allowedEntityTypes = ['ASSET', 'DEVICE'];
+    vm.entitySearchDirection = {
+        from: "FROM",
+        to: "TO"
+    }
+
+    vm.addEntityFormGroup = vm.fb.group({
+     entityName: ['', [vm.validators.required]],
+     entityType: ['DEVICE'],
+     entityLabel: [null],
+     type: ['', [vm.validators.required]],
+     attributes: vm.fb.group({
+         latitude: [null],
+         longitude: [null],
+         address: [null],
+         owner: [null],
+         number: [null, [vm.validators.pattern(/^-?[0-9]+$/)]],
+         booleanValue: [null]
+     }),
+     relations: vm.fb.array([])
     });
-    
+
     vm.cancel = function() {
         vm.dialogRef.close(null);
     };
-    
+
+    vm.relations = function() {
+        return vm.addEntityFormGroup.get('relations');
+    };
+
+    vm.addRelation = function() {
+        vm.relations().push(vm.fb.group({
+         relatedEntity: [null, [vm.validators.required]],
+         relationType: [null, [vm.validators.required]],
+         direction: [null, [vm.validators.required]]
+        }));
+    };
+
+    vm.removeRelation = function(index) {
+        vm.relations().removeAt(index);
+        vm.relations().markAsDirty();
+    };
+
     vm.save = function() {
-        vm.addAssetFormGroup.markAsPristine();
-        let asset = {
-            name: vm.addAssetFormGroup.get('assetName').value,
-            type: vm.addAssetFormGroup.get('assetType').value,
-            label: vm.addAssetFormGroup.get('assetLabel').value
-        };
-        assetService.saveAsset(asset).subscribe(
-            function (asset) {
-                saveAttributes(asset.id).subscribe(
+        vm.addEntityFormGroup.markAsPristine();
+        saveEntityObservable().subscribe(
+            function (entity) {
+                widgetContext.rxjs.forkJoin([
+                    saveAttributes(entity.id),
+                    saveRelations(entity.id)
+                ]).subscribe(
                     function () {
                         widgetContext.updateAliases();
                         vm.dialogRef.close(null);
@@ -222,18 +273,56 @@ function AddAssetDialogController(instance) {
             }
         );
     };
-    
+
+    function saveEntityObservable() {
+        const formValues = vm.addEntityFormGroup.value;
+        let entity = {
+            name: formValues.entityName,
+            type: formValues.type,
+            label: formValues.entityLabel
+        };
+        if (formValues.entityType == 'ASSET') {
+            return assetService.saveAsset(entity);
+        } else if (formValues.entityType == 'DEVICE') {
+            return deviceService.saveDevice(entity);
+        }
+    }
+
     function saveAttributes(entityId) {
-        let attributes = vm.addAssetFormGroup.get('attributes').value;
+        let attributes = vm.addEntityFormGroup.get('attributes').value;
         let attributesArray = [];
         for (let key in attributes) {
-            attributesArray.push({key: key, value: attributes[key]});
+            if(attributes[key] !== null) {
+                attributesArray.push({key: key, value: attributes[key]});
+            }
         }
         if (attributesArray.length > 0) {
             return attributeService.saveEntityAttributes(entityId, "SERVER_SCOPE", attributesArray);
-        } else {
-            return widgetContext.rxjs.of([]);
         }
+        return widgetContext.rxjs.of([]);
+    }
+
+    function saveRelations(entityId) {
+        let relations = vm.addEntityFormGroup.get('relations').value;
+        let tasks = [];
+        for(let i=0; i < relations.length; i++) {
+            let relation = {
+                type: relations[i].relationType,
+                typeGroup: 'COMMON'
+            };
+            if (relations[i].direction == 'FROM') {
+                relation.to = relations[i].relatedEntity;
+                relation.from = entityId;
+            } else {
+                relation.to = entityId;
+                relation.from = relations[i].relatedEntity;
+            }
+            tasks.push(entityRelationService.saveRelation(relation));
+        }
+        if (tasks.length > 0) {
+            return widgetContext.rxjs.forkJoin(tasks);
+        }
+        return widgetContext.rxjs.of([]);
     }
 }
 
@@ -244,103 +333,601 @@ function AddAssetDialogController(instance) {
 <details>
 
 <summary>
-<b>An example of a function that adds a possibility to edit assets.</b>
+HTML code.
+</summary>
+
+{% highlight ruby %}
+<form #addEntityForm="ngForm" [formGroup]="addEntityFormGroup"
+      (ngSubmit)="save()" class="add-entity-form">
+    <mat-toolbar fxLayout="row" color="primary">
+        <h2>Add entity</h2>
+        <span fxFlex></span>
+        <button mat-icon-button (click)="cancel()" type="button">
+            <mat-icon class="material-icons">close</mat-icon>
+        </button>
+    </mat-toolbar>
+    <mat-progress-bar color="warn" mode="indeterminate" *ngIf="isLoading$ | async">
+    </mat-progress-bar>
+    <div style="height: 4px;" *ngIf="!(isLoading$ | async)"></div>
+    <div mat-dialog-content fxLayout="column">
+        <div fxLayout="row" fxLayoutGap="8px" fxLayout.xs="column"  fxLayoutGap.xs="0">
+            <mat-form-field fxFlex class="mat-block">
+                <mat-label>Entity Name</mat-label>
+                <input matInput formControlName="entityName" required>
+                <mat-error *ngIf="addEntityFormGroup.get('entityName').hasError('required')">
+                    Entity name is required.
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field fxFlex class="mat-block">
+                <mat-label>Entity Label</mat-label>
+                <input matInput formControlName="entityLabel" >
+            </mat-form-field>
+        </div>
+        <div fxLayout="row" fxLayoutGap="8px" fxLayout.xs="column"  fxLayoutGap.xs="0">
+            <tb-entity-type-select
+                    class="mat-block"
+                    formControlName="entityType"
+                    [showLabel]="true"
+                    [allowedEntityTypes]="allowedEntityTypes"
+            ></tb-entity-type-select>
+            <tb-entity-subtype-autocomplete
+                    fxFlex *ngIf="addEntityFormGroup.get('entityType').value == 'ASSET'"
+                    class="mat-block"
+                    formControlName="type"
+                    [required]="true"
+                    [entityType]="'ASSET'"
+            ></tb-entity-subtype-autocomplete>
+            <tb-entity-subtype-autocomplete
+                    fxFlex *ngIf="addEntityFormGroup.get('entityType').value != 'ASSET'"
+                    class="mat-block"
+                    formControlName="type"
+                    [required]="true"
+                    [entityType]="'DEVICE'"
+            ></tb-entity-subtype-autocomplete>
+        </div>
+        <div formGroupName="attributes" fxLayout="column">
+            <div fxLayout="row" fxLayoutGap="8px" fxLayout.xs="column"  fxLayoutGap.xs="0">
+                <mat-form-field fxFlex class="mat-block">
+                    <mat-label>Latitude</mat-label>
+                    <input type="number" step="any" matInput formControlName="latitude">
+                </mat-form-field>
+                <mat-form-field fxFlex class="mat-block">
+                    <mat-label>Longitude</mat-label>
+                    <input type="number" step="any" matInput formControlName="longitude">
+                </mat-form-field>
+            </div>
+            <div fxLayout="row" fxLayoutGap="8px" fxLayout.xs="column"  fxLayoutGap.xs="0">
+                <mat-form-field fxFlex class="mat-block">
+                    <mat-label>Address</mat-label>
+                    <input matInput formControlName="address">
+                </mat-form-field>
+                <mat-form-field fxFlex class="mat-block">
+                    <mat-label>Owner</mat-label>
+                    <input matInput formControlName="owner">
+                </mat-form-field>
+            </div>
+            <div fxLayout="row" fxLayoutGap="8px" fxLayout.xs="column"  fxLayoutGap.xs="0">
+                <mat-form-field fxFlex class="mat-block">
+                    <mat-label>Integer Value</mat-label>
+                    <input type="number" step="1" matInput formControlName="number">
+                    <mat-error *ngIf="addEntityFormGroup.get('attributes.number').hasError('pattern')">
+                        Invalid integer value.
+                    </mat-error>
+                </mat-form-field>
+                <div class="boolean-value-input" fxLayout="column" fxLayoutAlign="center start" fxFlex>
+                    <label class="checkbox-label">Boolean Value</label>
+                    <mat-checkbox formControlName="booleanValue" style="margin-bottom: 40px;">
+                        {{ (addEntityFormGroup.get('attributes.booleanValue').value ? "value.true" : "value.false") | translate }}
+                    </mat-checkbox>
+                </div>
+            </div>
+        </div>
+        <div class="relations-list">
+            <div class="mat-body-1" style="padding-bottom: 10px; color: rgba(0,0,0,0.57);">Relations</div>
+            <div class="body" [fxShow]="relations().length">
+                <div class="row" fxLayout="row" fxLayoutAlign="start center" formArrayName="relations" *ngFor="let relation of relations().controls; let i = index;">
+                    <div [formGroupName]="i" class="mat-elevation-z2" fxFlex fxLayout="row" style="padding: 5px 0 5px 5px;">
+                        <div fxFlex fxLayout="column">
+                            <div fxLayout="row" fxLayoutGap="8px" fxLayout.xs="column"  fxLayoutGap.xs="0">
+                                <mat-form-field class="mat-block" style="min-width: 100px;">
+                                    <mat-label>Direction</mat-label>
+                                    <mat-select formControlName="direction" name="direction">
+                                        <mat-option *ngFor="let direction of entitySearchDirection | keyvalue" [value]="direction.value">
+                                            {{ ("relation.search-direction." + direction.value) | translate}}
+                                        </mat-option>
+                                    </mat-select>
+                                    <mat-error *ngIf="relation.get('direction').hasError('required')">
+                                        Relation direction is required.
+                                    </mat-error>
+                                </mat-form-field>
+                                <tb-relation-type-autocomplete
+                                        fxFlex class="mat-block"
+                                        formControlName="relationType"
+                                        [required]="true">
+                                </tb-relation-type-autocomplete>
+                            </div>
+                            <div fxLayout="row" fxLayout.xs="column">
+                                <tb-entity-select
+                                        fxFlex class="mat-block"
+                                        [required]="true"
+                                        formControlName="relatedEntity">
+                                </tb-entity-select>
+                            </div>
+                        </div>
+                        <div fxLayout="column" fxLayoutAlign="center center">
+                            <button mat-icon-button color="primary"
+                                    aria-label="Remove"
+                                    type="button"
+                                    (click)="removeRelation(i)"
+                                    matTooltip="Remove relation"
+                                    matTooltipPosition="above">
+                                <mat-icon>close</mat-icon>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <button mat-raised-button color="primary"
+                        type="button"
+                        (click)="addRelation()"
+                        matTooltip="Add Relation"
+                        matTooltipPosition="above">
+                    Add
+                </button>
+            </div>
+        </div>
+    </div>
+    <div mat-dialog-actions fxLayout="row" fxLayoutAlign="end center">
+        <button mat-button color="primary"
+                type="button"
+                [disabled]="(isLoading$ | async)"
+                (click)="cancel()" cdkFocusInitial>
+            Cancel
+        </button>
+        <button mat-button mat-raised-button color="primary"
+                type="submit"
+                [disabled]="(isLoading$ | async) || addEntityForm.invalid || !addEntityForm.dirty">
+            Create
+        </button>
+    </div>
+</form>
+
+{% endhighlight %}
+
+</details>
+<br>
+<b>Examples of JavaScript function and HTML code that add a possibility to edit a device or an asset:</b>
+<br>
+<br>
+<details>
+
+<summary>
+JavaScript function.
 </summary>
 
 {% highlight ruby %}
 let $injector = widgetContext.$scope.$injector;
 let customDialog = $injector.get(widgetContext.servicesMap.get('customDialog'));
+let entityService = $injector.get(widgetContext.servicesMap.get('entityService'));
 let assetService = $injector.get(widgetContext.servicesMap.get('assetService'));
+let deviceService = $injector.get(widgetContext.servicesMap.get('deviceService'));
 let attributeService = $injector.get(widgetContext.servicesMap.get('attributeService'));
+let entityRelationService = $injector.get(widgetContext.servicesMap.get('entityRelationService'));
 
-openEditAssetDialog();
+openEditEntityDialog();
 
-function openEditAssetDialog() {
-    customDialog.customDialog(htmlTemplate, EditAssetDialogController).subscribe();
+function openEditEntityDialog() {
+customDialog.customDialog(htmlTemplate, EditEntityDialogController).subscribe();
 }
 
-function EditAssetDialogController(instance) {
-    let vm = instance;
-    
-    vm.asset = null;
+function EditEntityDialogController(instance) {
+let vm = instance;
+
+    vm.entityName = entityName;
+    vm.entityType = entityId.entityType;
+    vm.entitySearchDirection = {
+        from: "FROM",
+        to: "TO"
+    };
     vm.attributes = {};
-    
-    vm.editAssetFormGroup = vm.fb.group({
-      assetName: ['', [vm.validators.required]],
-      assetType: ['', [vm.validators.required]],
-      assetLabel: [''],
-      attributes: vm.fb.group({
-          latitude: [null],
-          longitude: [null]
-      })      
+    vm.oldRelationsData = [];
+    vm.relationsToDelete = [];
+    vm.entity = {};
+
+    vm.editEntityFormGroup = vm.fb.group({
+        entityName: ['', [vm.validators.required]],
+        entityType: [null],
+        entityLabel: [null],
+        type: ['', [vm.validators.required]],
+        attributes: vm.fb.group({
+            latitude: [null],
+            longitude: [null],
+            address: [null],
+            owner: [null],
+            number: [null, [vm.validators.pattern(/^-?[0-9]+$/)]],
+            booleanValue: [false]
+        }),
+        oldRelations: vm.fb.array([]),
+        relations: vm.fb.array([])
     });
-    
+
+    getEntityInfo();
+
     vm.cancel = function() {
         vm.dialogRef.close(null);
     };
-    
+
+    vm.relations = function() {
+        return vm.editEntityFormGroup.get('relations');
+    };
+
+    vm.oldRelations = function() {
+        return vm.editEntityFormGroup.get('oldRelations');
+    };
+
+    vm.addRelation = function() {
+        vm.relations().push(vm.fb.group({
+            relatedEntity: [null, [vm.validators.required]],
+            relationType: [null, [vm.validators.required]],
+            direction: [null, [vm.validators.required]]
+        }));
+    };
+
+    function addOldRelation() {
+        vm.oldRelations().push(vm.fb.group({
+            relatedEntity: [{value: null, disabled: true}, [vm.validators.required]],
+            relationType: [{value: null, disabled: true}, [vm.validators.required]],
+            direction: [{value: null, disabled: true}, [vm.validators.required]]
+        }));
+    }
+
+    vm.removeRelation = function(index) {
+        vm.relations().removeAt(index);
+        vm.relations().markAsDirty();
+    };
+
+    vm.removeOldRelation = function(index) {
+        vm.oldRelations().removeAt(index);
+        vm.relationsToDelete.push(vm.oldRelationsData[index]);
+        vm.oldRelations().markAsDirty();
+    };
+
     vm.save = function() {
-        vm.editAssetFormGroup.markAsPristine();
-        vm.asset.name = vm.editAssetFormGroup.get('assetName').value,
-        vm.asset.type = vm.editAssetFormGroup.get('assetType').value,
-        vm.asset.label = vm.editAssetFormGroup.get('assetLabel').value
-        assetService.saveAsset(vm.asset).subscribe(
+        vm.editEntityFormGroup.markAsPristine();
+        widgetContext.rxjs.forkJoin([
+            saveAttributes(entityId),
+            saveRelations(entityId),
+            saveEntity()
+        ]).subscribe(
             function () {
-                saveAttributes().subscribe(
-                    function () {
-                        widgetContext.updateAliases();
-                        vm.dialogRef.close(null);
-                    }
-                );
+                widgetContext.updateAliases();
+                vm.dialogRef.close(null);
             }
         );
     };
-    
-    getEntityInfo();
-    
-    function getEntityInfo() {
-        assetService.getAsset(entityId.id).subscribe(
-            function (asset) {
-                attributeService.getEntityAttributes(entityId, 'SERVER_SCOPE',
-                                                    ['latitude', 'longitude']).subscribe(
-                   function (attributes) {
-                        for (let i = 0; i < attributes.length; i++) {
-                            vm.attributes[attributes[i].key] = attributes[i].value; 
-                        }
-                        vm.asset = asset;
-                        vm.editAssetFormGroup.patchValue(
-                            {
-                                assetName: vm.asset.name,
-                                assetType: vm.asset.type,
-                                assetLabel: vm.asset.label,
-                                attributes: {
-                                    latitude: vm.attributes.latitude,
-                                    longitude: vm.attributes.longitude
-                                }
-                            }, {emitEvent: false}
-                        );
-                   } 
-                );
-            }
-        );    
+
+    function getEntityAttributes(attributes) {
+        for (var i = 0; i < attributes.length; i++) {
+            vm.attributes[attributes[i].key] = attributes[i].value;
+        }
     }
-    
-    function saveAttributes() {
-        let attributes = vm.editAssetFormGroup.get('attributes').value;
+
+    function getEntityRelations(relations) {
+        let relationsFrom = relations[0];
+        let relationsTo = relations[1];
+        for (let i=0; i < relationsFrom.length; i++) {
+            let relation = {
+                direction: 'FROM',
+                relationType: relationsFrom[i].type,
+                relatedEntity: relationsFrom[i].to
+            };
+            vm.oldRelationsData.push(relation);
+            addOldRelation();
+        }
+        for (let i=0; i < relationsTo.length; i++) {
+            let relation = {
+                direction: 'TO',
+                relationType: relationsTo[i].type,
+                relatedEntity: relationsTo[i].from
+            };
+            vm.oldRelationsData.push(relation);
+            addOldRelation();
+        }
+    }
+
+    function getEntityInfo() {
+        widgetContext.rxjs.forkJoin([
+            entityRelationService.findInfoByFrom(entityId),
+            entityRelationService.findInfoByTo(entityId),
+            attributeService.getEntityAttributes(entityId, 'SERVER_SCOPE'),
+            entityService.getEntity(entityId.entityType, entityId.id)
+        ]).subscribe(
+            function (data) {
+                getEntityRelations(data.slice(0,2));
+                getEntityAttributes(data[2]);
+                vm.entity = data[3];
+                vm.editEntityFormGroup.patchValue({
+                    entityName: vm.entity.name,
+                    entityType: vm.entityType,
+                    entityLabel: vm.entity.label,
+                    type: vm.entity.type,
+                    attributes: vm.attributes,
+                    oldRelations: vm.oldRelationsData
+                }, {emitEvent: false});
+            }
+        );
+    }
+
+    function saveEntity() {
+        const formValues = vm.editEntityFormGroup.value;
+        if (vm.entity.label !== formValues.entityLabel){
+            vm.entity.label = formValues.entityLabel;
+            if (formValues.entityType == 'ASSET') {
+                return assetService.saveAsset(vm.entity);
+            } else if (formValues.entityType == 'DEVICE') {
+                return deviceService.saveDevice(vm.entity);
+            }
+        }
+        return widgetContext.rxjs.of([]);
+    }
+
+    function saveAttributes(entityId) {
+        let attributes = vm.editEntityFormGroup.get('attributes').value;
         let attributesArray = [];
         for (let key in attributes) {
-            attributesArray.push({key: key, value: attributes[key]});
+            if (attributes[key] !== vm.attributes[key]) {
+                attributesArray.push({key: key, value: attributes[key]});
+            }
         }
         if (attributesArray.length > 0) {
-            return attributeService.saveEntityAttributes(entityId, 'SERVER_SCOPE', attributesArray);
-        } else {
-            return widgetContext.rxjs.of([]);
+            return attributeService.saveEntityAttributes(entityId, "SERVER_SCOPE", attributesArray);
         }
+        return widgetContext.rxjs.of([]);
+    }
+
+    function saveRelations(entityId) {
+        let relations = vm.editEntityFormGroup.get('relations').value;
+        let tasks = [];
+        for(let i=0; i < relations.length; i++) {
+            let relation = {
+                type: relations[i].relationType,
+                typeGroup: 'COMMON'
+            };
+            if (relations[i].direction == 'FROM') {
+                relation.to = relations[i].relatedEntity;
+                relation.from = entityId;
+            } else {
+                relation.to = entityId;
+                relation.from = relations[i].relatedEntity;
+            }
+            tasks.push(entityRelationService.saveRelation(relation));
+        }
+        for (let i=0; i < vm.relationsToDelete.length; i++) {
+            let relation = {
+                type: vm.relationsToDelete[i].relationType
+            };
+            if (vm.relationsToDelete[i].direction == 'FROM') {
+                relation.to = vm.relationsToDelete[i].relatedEntity;
+                relation.from = entityId;
+            } else {
+                relation.to = entityId;
+                relation.from = vm.relationsToDelete[i].relatedEntity;
+            }
+            tasks.push(entityRelationService.deleteRelation(relation.from, relation.type, relation.to));
+        }
+        if (tasks.length > 0) {
+            return widgetContext.rxjs.forkJoin(tasks);
+        }
+        return widgetContext.rxjs.of([]);
     }
 }
 {% endhighlight %}
 
 </details>
+<br>
+<details>
+
+<summary>
+HTML code.
+</summary>
+
+{% highlight ruby %}
+<form #editEntityForm="ngForm" [formGroup]="editEntityFormGroup"
+      (ngSubmit)="save()"  class="edit-entity-form">
+    <mat-toolbar fxLayout="row" color="primary">
+        <h2>Edit {{entityType.toLowerCase()}} {{entityName}}</h2>
+        <span fxFlex></span>
+        <button mat-icon-button (click)="cancel()" type="button">
+            <mat-icon class="material-icons">close</mat-icon>
+        </button>
+    </mat-toolbar>
+    <mat-progress-bar color="warn" mode="indeterminate" *ngIf="isLoading$ | async">
+    </mat-progress-bar>
+    <div style="height: 4px;" *ngIf="!(isLoading$ | async)"></div>
+    <div mat-dialog-content fxLayout="column">
+        <div fxLayout="row" fxLayoutGap="8px" fxLayout.xs="column"  fxLayoutGap.xs="0">
+            <mat-form-field fxFlex class="mat-block">
+                <mat-label>Entity Name</mat-label>
+                <input matInput formControlName="entityName" required readonly="">
+            </mat-form-field>
+            <mat-form-field fxFlex class="mat-block">
+                <mat-label>Entity Label</mat-label>
+                <input matInput formControlName="entityLabel">
+            </mat-form-field>
+        </div>
+        <div fxLayout="row" fxLayoutGap="8px" fxLayout.xs="column"  fxLayoutGap.xs="0">
+            <mat-form-field fxFlex class="mat-block">
+                <mat-label>Entity Type</mat-label>
+                <input matInput formControlName="entityType" readonly>
+            </mat-form-field>
+            <mat-form-field fxFlex class="mat-block">
+                <mat-label>Type</mat-label>
+                <input matInput formControlName="type" readonly>
+            </mat-form-field>
+        </div>
+        <div formGroupName="attributes" fxLayout="column">
+            <div fxLayout="row" fxLayoutGap="8px" fxLayout.xs="column"  fxLayoutGap.xs="0">
+                <mat-form-field fxFlex class="mat-block">
+                    <mat-label>Latitude</mat-label>
+                    <input type="number" step="any" matInput formControlName="latitude">
+                </mat-form-field>
+                <mat-form-field fxFlex class="mat-block">
+                    <mat-label>Longitude</mat-label>
+                    <input type="number" step="any" matInput formControlName="longitude">
+                </mat-form-field>
+            </div>
+            <div fxLayout="row" fxLayoutGap="8px" fxLayout.xs="column"  fxLayoutGap.xs="0">
+                <mat-form-field fxFlex class="mat-block">
+                    <mat-label>Address</mat-label>
+                    <input matInput formControlName="address">
+                </mat-form-field>
+                <mat-form-field fxFlex class="mat-block">
+                    <mat-label>Owner</mat-label>
+                    <input matInput formControlName="owner">
+                </mat-form-field>
+            </div>
+            <div fxLayout="row" fxLayoutGap="8px" fxLayout.xs="column"  fxLayoutGap.xs="0">
+                <mat-form-field fxFlex class="mat-block">
+                    <mat-label>Integer Value</mat-label>
+                    <input type="number" step="1" matInput formControlName="number">
+                    <mat-error *ngIf="editEntityFormGroup.get('attributes.number').hasError('pattern')">
+                        Invalid integer value.
+                    </mat-error>
+                </mat-form-field>
+                <div class="boolean-value-input" fxLayout="column" fxLayoutAlign="center start" fxFlex>
+                    <label class="checkbox-label">Boolean Value</label>
+                    <mat-checkbox formControlName="booleanValue" style="margin-bottom: 40px;">
+                        {{ (editEntityFormGroup.get('attributes.booleanValue').value ? "value.true" : "value.false") | translate }}
+                    </mat-checkbox>
+                </div>
+            </div>
+        </div>
+        <div class="relations-list old-relations">
+            <div class="mat-body-1" style="padding-bottom: 10px; color: rgba(0,0,0,0.57);">Relations</div>
+            <div class="body" [fxShow]="oldRelations().length">
+                <div class="row" fxLayout="row" fxLayoutAlign="start center" formArrayName="oldRelations" 
+                     *ngFor="let relation of oldRelations().controls; let i = index;">
+                    <div [formGroupName]="i" class="mat-elevation-z2" fxFlex fxLayout="row" style="padding: 5px 0 5px 5px;">
+                        <div fxFlex fxLayout="column">
+                            <div fxLayout="row" fxLayoutGap="8px" fxLayout.xs="column"  fxLayoutGap.xs="0">
+                                <mat-form-field class="mat-block" style="min-width: 100px;">
+                                    <mat-label>Direction</mat-label>
+                                    <mat-select formControlName="direction" name="direction">
+                                        <mat-option *ngFor="let direction of entitySearchDirection | keyvalue" [value]="direction.value">
+                                            {{ ("relation.search-direction." + direction.value) | translate}}
+                                        </mat-option>
+                                    </mat-select>
+                                    <mat-error *ngIf="relation.get('direction').hasError('required')">
+                                        Relation direction is required.
+                                    </mat-error>
+                                </mat-form-field>
+                                <tb-relation-type-autocomplete
+                                        fxFlex class="mat-block"
+                                        formControlName="relationType"
+                                        required="true">
+                                </tb-relation-type-autocomplete>
+                            </div>
+                            <div fxLayout="row" fxLayout.xs="column">
+                                <tb-entity-select
+                                        fxFlex class="mat-block"
+                                        required="true"
+                                        formControlName="relatedEntity">
+                                </tb-entity-select>
+                            </div>
+                        </div>
+                        <div fxLayout="column" fxLayoutAlign="center center">
+                            <button mat-icon-button color="primary"
+                                    aria-label="Remove"
+                                    type="button"
+                                    (click)="removeOldRelation(i)"
+                                    matTooltip="Remove relation"
+                                    matTooltipPosition="above">
+                                <mat-icon>close</mat-icon>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="relations-list">
+            <div class="mat-body-1" style="padding-bottom: 10px; color: rgba(0,0,0,0.57);">New Relations</div>
+            <div class="body" [fxShow]="relations().length">
+                <div class="row" fxLayout="row" fxLayoutAlign="start center" formArrayName="relations" *ngFor="let relation of relations().controls; let i = index;">
+                    <div [formGroupName]="i" class="mat-elevation-z2" fxFlex fxLayout="row" style="padding: 5px 0 5px 5px;">
+                        <div fxFlex fxLayout="column">
+                            <div fxLayout="row" fxLayoutGap="8px" fxLayout.xs="column"  fxLayoutGap.xs="0">
+                                <mat-form-field class="mat-block" style="min-width: 100px;">
+                                    <mat-label>Direction</mat-label>
+                                    <mat-select formControlName="direction" name="direction">
+                                        <mat-option *ngFor="let direction of entitySearchDirection | keyvalue" [value]="direction.value">
+                                            {{ ("relation.search-direction." + direction.value) | translate}}
+                                        </mat-option>
+                                    </mat-select>
+                                    <mat-error *ngIf="relation.get('direction').hasError('required')">
+                                        Relation direction is required.
+                                    </mat-error>
+                                </mat-form-field>
+                                <tb-relation-type-autocomplete
+                                        fxFlex class="mat-block"
+                                        formControlName="relationType"
+                                        [required]="true">
+                                </tb-relation-type-autocomplete>
+                            </div>
+                            <div fxLayout="row" fxLayout.xs="column">
+                                <tb-entity-select
+                                        fxFlex class="mat-block"
+                                        [required]="true"
+                                        formControlName="relatedEntity">
+                                </tb-entity-select>
+                            </div>
+                        </div>
+                        <div fxLayout="column" fxLayoutAlign="center center">
+                            <button mat-icon-button color="primary"
+                                    aria-label="Remove"
+                                    type="button"
+                                    (click)="removeRelation(i)"
+                                    matTooltip="Remove relation"
+                                    matTooltipPosition="above">
+                                <mat-icon>close</mat-icon>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <button mat-raised-button color="primary"
+                        type="button"
+                        (click)="addRelation()"
+                        matTooltip="Add Relation"
+                        matTooltipPosition="above">
+                    Add
+                </button>
+            </div>
+        </div>
+    </div>
+    <div mat-dialog-actions fxLayout="row" fxLayoutAlign="end center">
+        <button mat-button color="primary"
+                type="button"
+                [disabled]="(isLoading$ | async)"
+                (click)="cancel()" cdkFocusInitial>
+            Cancel
+        </button>
+        <button mat-button mat-raised-button color="primary"
+                type="submit"
+                [disabled]="(isLoading$ | async) || editEntityForm.invalid || !editEntityForm.dirty">
+            Save
+        </button>
+    </div>
+</form>
+
+{% endhighlight %}
+
+</details>
+
+##### Mobile action
+
+Mobile action is explained in mobile application configuration. See [Mobile actions](/docs/{{mobileDocsPrefix}}mobile/mobile-actions/) for details.
 
 ## Action sources 
 
@@ -479,10 +1066,10 @@ How to add an action source to HTML Cards and Value Title widgets:
     10. In the HTML field enter an ID of the action which is its name. Since the name in the example is _test1_, the HTML code will look like this:
 
 ```ruby
-<div id='test1' class='card'>HTML code here</div>
+<div id='button' class='card'>HTML code here</div>
 ```
 
-- Where _test1_ is the name of the action and _HTML code here_ is the text which is going to be shown on the HTML Card widget
+- Where _button_ is the name of the action and _HTML code here_ is the text which is going to be shown on the HTML Card widget
 
 Then apply changes by clicking the orange tick icon in the top right of the window and then close the details window.  
 In the Edit mode of the dashboard save applied changes by clicking the orange tick icon "Apply changes" in the bottom right of the screen.
@@ -506,10 +1093,10 @@ To execute an action click anywhere in the widget.
         Since the name in the example is _test2_, the HTML code will look like this:
 
 ```ruby
-<h1 id='test2'>Value title</h1>
+<h1 id='button2'>Value title</h1>
 ```
 
-- Where _test2_ is the name of the action and _Value title_ is the text that will be shown in the widget's header.
+- Where _button2_ is the name of the action and _Value title_ is the text that will be shown in the widget's header.
 
 Then apply changes by clicking the orange tick icon in the top right of the window and then close the details window.  
 In the Edit mode of the dashboard save applied changes by clicking the orange tick icon "Apply changes" in the bottom right of the screen.
@@ -624,10 +1211,10 @@ To configure the Tooltip tag action of the Map widget, you should:
 12. In the Tooltip line find _link-act name_ and input there the action name in a format:
 
 ```
-<link-act name='TooltipTag'>Navigate to the Compressor</link-act>
+<link-act name='TooltipTag'>Navigate to the Building A</link-act>
 ```
 
-where _TooltipTag_ is an action name and _Navigate to the Compressor_ is the text that will be shown as a link on a tooltip.
+where _TooltipTag_ is an action name and _Navigate to the Building A_ is the text that will be shown as a link on a tooltip.
 
 13. Apply changes by clicking the orange tick icon in the top right of the window and then close the details window.
 14. Save applied changes by clicking the orange at the right bottom of the screen.

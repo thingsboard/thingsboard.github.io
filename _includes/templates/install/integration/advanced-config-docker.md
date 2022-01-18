@@ -44,7 +44,7 @@ executors:
 
 rpc:
   # Host of the ThingsBoard server
-  host: "${PRC_HOST:thingsboard.cloud}"
+  host: "${RPC_HOST:thingsboard.cloud}"
   # Port of the ThingsBoard server
   port: "${RPC_PORT:9090}"
   # No reply timeout
@@ -69,4 +69,7 @@ js:
     max_cpu_time: "${LOCAL_JS_SANDBOX_MAX_CPU_TIME:5000}"
     # Maximum allowed JavaScript execution errors before JavaScript will be blacklisted
     max_errors: "${LOCAL_JS_SANDBOX_MAX_ERRORS:3}"
+
+service:
+  type: "${TB_SERVICE_TYPE:tb-integration}"
 ``` 

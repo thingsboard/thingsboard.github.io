@@ -20,24 +20,24 @@ To run Trendz Analytics on a single machine you will need at least 1Gb of free R
 
 In small and medium installations Trendz can be installed **on the same** server with ThingsBoard.
 
-### Step 1. Install Java 8 (OpenJDK) 
+### Step 1. Install Java 11 (OpenJDK) 
 
 {% include templates/install/windows-java-install.md %}
 
-### Step 2. ThingsBoard service installation
+### Step 2. Trendz Analytics service installation
 
 Download and extract the package.
 
 ```bash
-https://dist.thingsboard.io/trendz-windows-1.5.0.zip
+https://dist.thingsboard.io/trendz-windows-1.8.2.zip
 ```
 {: .copy-code}
 
-**Note:** We assume you have installed Trendz to default location: *C:\Program Files (x86)\trendz*  
+**Note:** We assume you have extracted Trendz package to default location: *C:\Program Files (x86)\trendz*  
 
 ### Step 3. Obtain and configure license key 
 
-We assume you have already have Trendz license key. If not, please get your [Free Trial license](/pricing/?active=trendz) before you proceed.
+We assume you have already chosen subscription plan for Trendz and have license key. If not, please get your [Free Trial license](/pricing/?active=trendz) before you proceed.
 See [How-to get pay-as-you-go subscription](https://www.youtube.com/watch?v=dK-QDFGxWek){:target="_blank"} for more details.
 
 Once you get the license secret, you should put it to the trendz configuration file. 
@@ -60,39 +60,75 @@ license:
 
 You can connect Trendz Analytics to the ThingsBoard Community Edition or ThingsBoard Professional Edition.
 
-#### Step 4.1 ThingsBoard Community Edition
+Open the Notepad or other editor as administrator user (right click on the app icon and select "Run as administrator").  
+Open the following file for editing (select "All Files" instead of "Text Documents" in file choosing dialog, the encoding is UTF-8):
 
-Edit Trendz configuration file in the notepad
 ```text
 C:\Program Files (x86)\trendz\conf\trendz.yml
 ``` 
 {: .copy-code}
 
-Add ThingsBoard REST API URL that would be used for communicating with ThingsBoard Platform
+Add ThingsBoard REST API URL that would be used for communicating with ThingsBoard Platform. In most cases, when Trendz installed
+in the same server with ThingsBoard, API_URL would be **http://localhost:8080**. Otherwise you should use ThingsBoard domain name.
 
 ```bash
-tb.api.url: "${TB_API_URL:http://localhost:9090}"
-tb.api.pe: "${TB_API_PE_ENABLED:false}"
+tb.api.url: "${TB_API_URL:http://localhost:8080}"
 ```
 {: .copy-code}
 
-#### Step 4.2 ThingsBoard Professional Edition
+### Step 5. Configure Trendz database
+Trendz uses PostgreSQL as a database. You can install PostgreSQL on the same serverfor Trendz or use managed PostgreSQL 
+service from your cloud vendor.
 
-Edit Trendz configuration file in the notepad
-```text
+#### PostgreSQL Installation
+
+Download the installation file (PostgreSQL 11.7 or newer releases) [here](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads#windows) and follow the installation instructions.
+
+During PostgreSQL installation, you will be prompted for superuser (postgres) password.
+Don't forget this password. It will be used later. For simplicity, we will substitute it with "postgres".
+
+#### Create Database for Trendz
+
+Once installed, launch the "pgAdmin" software and login as superuser (postgres). 
+Open your server and create database "trendz" with owner "postgres".
+
+
+#### Configure database connection for Trendz
+
+Open the Notepad or other editor as administrator user (right click on the app icon and select "Run as administrator").  
+Open the following file for editing (select "All Files" instead of "Text Documents" in file choosing dialog, the encoding is UTF-8):
+
+```text 
 C:\Program Files (x86)\trendz\conf\trendz.yml
 ``` 
 {: .copy-code}
 
-Add ThingsBoard REST API URL that would be used for communicating with ThingsBoard Platform
+and locate "# SQL DAO Configuration" block. Replace SPRING_DATASOURCE_URL, SPRING_DATASOURCE_USERNAME and SPRING_DATASOURCE_PASSWORD
+ properties with valid values. Don't forget to replace "postgres" with your real postgres user password:
 
-```bash
-tb.api.url: "${TB_API_URL:http://localhost:9090}"
-tb.api.pe: "${TB_API_PE_ENABLED:true}"
-```
+```yml
+# SQL DAO Configuration
+spring:
+  data:
+    jpa:
+      repositories:
+        enabled: "true"
+  jpa:
+    open-in-view: "false"
+    hibernate:
+      ddl-auto: "none"
+    database-platform: "${SPRING_JPA_DATABASE_PLATFORM:org.hibernate.dialect.PostgreSQLDialect}"
+  datasource:
+    driverClassName: "${SPRING_DRIVER_CLASS_NAME:org.postgresql.Driver}"
+    url: "${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/trendz}"
+    username: "${SPRING_DATASOURCE_USERNAME:postgres}"
+    password: "${SPRING_DATASOURCE_PASSWORD:YOUR_POSTGRES_PASSWORD_HERE}"
+    hikari:
+      maximumPoolSize: "${SPRING_DATASOURCE_MAXIMUM_POOL_SIZE:5}"
+``` 
 {: .copy-code}
 
-### Step 5. Run installation script
+### Step 6. Run installation script
 
 Launch windows shell (Command Prompt) as Administrator. Change directory to your Trendz installation directory.
 
@@ -111,7 +147,7 @@ Installing Trendz Analytics...
 Trendz Analytics installed successfully!
 ```
 
-### Step 6. Start Trendz service
+### Step 7. Start Trendz service
 
 Now let's start the Trendz service!
 Open the command prompt as an Administrator and execute the following command:
@@ -119,6 +155,7 @@ Open the command prompt as an Administrator and execute the following command:
 ```shell
 net start trendz
 ```
+{: .copy-code}
 
 Expected output:
 
@@ -139,6 +176,9 @@ Once started, you will be able to open Web UI using the following link:
 ```bash
 http://localhost:8888/
 ```
+
+**Note**:  If Trendz installed on a remote server, you have to replace localhost with the public IP address of 
+the server or with a domain name. Also, check that port 8888 opened for public access.
 
 ##### Authentication
 
@@ -198,3 +238,6 @@ you need to create a new inbound rule with Windows Firewall with Advanced Securi
 
 ![image](/images/user-guide/install/windows/windows7-firewall-8.png)
 
+### Next steps
+
+{% assign currentGuide = "InstallationOptions" %}{% include templates/trndz-guides-banner.md %}

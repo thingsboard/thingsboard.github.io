@@ -18,7 +18,8 @@ services:
     ports:
       - "8080:8080"
       - "1883:1883"
-      - "5683:5683/udp"
+      - "7070:7070"
+      - "5683-5688:5683-5688/udp"
     environment:
       TB_QUEUE_TYPE: aws-sqs
       SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/thingsboard

@@ -2,7 +2,7 @@
 position: IT Sales manager
 tag: 
 location: Kyiv, Ukraine
-dateString: 31 March, 2021
+dateString:
 layout: career
 ---
 ##### ThingsBoard, Inc. — the company that owns and develops renowned IoT products under the ThingsBoard™ umbrella is looking for a sales manager to the core sales team. This is a challenging position for proactive and self-motivated individuals with excellent communication skills, ability and keen interest to create chemistry with the customer.
@@ -39,6 +39,8 @@ Filling up RFQs, RFPs, issuing of offers, and corresponding document workflow ma
 
 ### We offer:
 Full-time office work with flexible work hours;
+
+Medical insurance;
 
 Onboarding supervision and knowledge transfer;
 

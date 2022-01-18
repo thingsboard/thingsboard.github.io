@@ -8,7 +8,92 @@ description: ThingsBoard Trendz Analytics Release Notes
 * TOC
 {:toc}
 
-## v1.5.0
+## v1.8.2 (December, 2021)
+
+Security update for resolving [CVE-2021-44228](https://nvd.nist.gov/vuln/detail/CVE-2021-44228) vulnerability. 
+
+ * Dependencies to log4j-core removed. 
+ * Dependencies to log4j API version updated to version 2.15  
+
+## v1.8.0 (August, 2021)
+
+**Improvements:**
+
+ * Add persistent cache for states, simple and calculated fields
+ * Add view report short term cache
+ * Scheduled field cache refresh
+ * Add native widget bundle for ThingsBoard
+ * Change rendering engine for views that uses canvas
+ * Add simplified REST API for 3rd party services
+ * Add date click event for calendar view
+ * Add row click event for tables
+ * Add field changed event for switch config
+ * Save state & calculated fields configuration
+ * Improve query partitioning
+ * Improve anomalies loading time
+ * Add option for loading raw telemetry instead of partitioning
+ * Add preview/edit links for views added on the dashboard
+ * Add option for mark field as hidden in view
+ 
+
+**Bug fixes:**
+
+ * Table - fix total row when first field is not static
+ * Clear duplicates when anomaly detection model cloned
+ * Fix state duration percent calculation
+ * Fix interval formatting issue on horizontal charts
+ * Fix not valid JWT token storage
+ * Fix deadlock in batch field calculation
+
+
+## v1.7.0 (April, 2021)
+
+**Improvements:**
+
+ * Add automated anomaly detection for assets and devices
+ * Switch from in-memory DB to PostgreSQL
+ * Add configuration Import/Export to file
+ * Configure default sort order for reports
+ * Table widget - add fit columns options
+
+
+**Bug fixes:**
+
+ * Fix state overlapping issue
+ * Fix duration formatting for states
+ * Fix filtering for text fields
+
+
+## v1.6.0 (January, 2021)
+
+**Improvements:**
+
+ * Support ThingsBoard Filtering API
+ * Add Calendar heatmap widget
+ * Configure Filter visibility
+ * Support of row-click events in ThingsBoard dashboards
+ * Access to rquest start/end time in calculated fields
+ * Add support for Centos 8
+ * Improve Fourier Transformation prediction model
+ * Other performance improvements
+
+
+**Bug fixes:**
+
+ * Fix state duration rounding problems
+ * Fix data duplication in reports
+ * Fix data double loading
+ * Fix label formatting for states and calculated fields
+
+## v1.5.1 (September, 2020)
+
+**Bug fixes:**
+
+ * Fix total row calculation for tables
+ * Validate filtering options
+ * Fix query partitioning for duplicated intervals
+
+## v1.5.0 (August, 2020)
 
 **Improvements:**
 
@@ -34,7 +119,7 @@ description: ThingsBoard Trendz Analytics Release Notes
  * Fix sorting of date fields
 
 
-## v1.4.1
+## v1.4.1 (June, 2020)
 
 
 **Improvements:**
@@ -58,7 +143,7 @@ description: ThingsBoard Trendz Analytics Release Notes
  * Fix bar height detection
  
 
-## v1.4.0
+## v1.4.0 (April, 2020)
 
 **Improvements:**
 

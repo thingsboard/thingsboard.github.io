@@ -4,7 +4,7 @@
 
 AWS IoT Integration allows to stream data from AWS IoT Backend to ThingsBoard and converts device payloads to the ThingsBoard format.
 
- ![image](/images/user-guide/integrations/aws-iot-integration.svg)
+<object width="100%" style="max-width: max-content;" data="/images/user-guide/integrations/aws-iot-integration.svg"></object>
 
 ## Video tutorial
  

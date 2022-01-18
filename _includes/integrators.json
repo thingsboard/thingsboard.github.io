@@ -12,14 +12,74 @@
     }
   },
   {
+    "type": ["North America", "Middle East", "Asia"],
+    "country": ["India"],
+    "name": "Advancethings",
+    "contact": {
+      "href": "pradip.kulkarni@advancetech.in"
+    },
+    "site": {
+      "href": "advancetech.in",
+      "target": "_blank"
+    }
+  },
+  {
     "type": ["Asia"],
     "country": ["India"],
-    "name": "AMS-India",
+    "name": "Advance Mechanical Services Pvt. Ltd.",
     "contact": {
       "href": "contact@ams-india.co.in"
     },
     "site": {
       "href": "ams-india.co.in",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Middle East"],
+    "country": ["United Arab Emirates"],
+    "name": "Agreefy FZE",
+    "contact": {
+      "href": "vinu@agreefy.com"
+    },
+    "site": {
+      "href": "agreefy.com",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["North America"],
+    "country": ["United States of America"],
+    "name": "Apollo-Setpoint Engineering",
+    "contact": {
+      "href": "arielmendoza@apollosetpoint.com"
+    },
+    "site": {
+      "href": "apollosetpoint.com",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Africa"],
+    "country": ["South Africa"],
+    "name": "AppBuilder (Pty.) Ltd.",
+    "contact": {
+      "href": "tshepo@appbuilder.africa"
+    },
+    "site": {
+      "href": "appbuilder.africa",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Asia"],
+    "country": ["China"],
+    "name": "Arapo Ltd.",
+    "contact": {
+      "href": "tamati.iro@gmail.com"
+    },
+    "site": {
+      "href": "",
       "target": "_blank"
     }
   },
@@ -56,6 +116,30 @@
     },
     "site": {
       "href": "augesmart.com",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Europe", "Africa", "Asia", "Middle East"],
+    "country": ["Turkey", "Georgia", "Kazakhstan", "Azerbaijan", "Tajikistan", "Turkmenistan", "Uzbekistan", "Kyrgyzstan", "Tunisia", "Libya", "Iraq", "Albania", "Montenegro", "Bosnia and Herzegovina"],
+    "name": "Basari Muhendislik",
+    "contact": {
+      "href": "sales@basarimuhendislik.com"
+    },
+    "site": {
+      "href": "basarimuhendislik.com",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Asia"],
+    "country": ["Thailand"],
+    "name": "Bizforte Co., Ltd.",
+    "contact": {
+      "href": "info@bizforte.co.th"
+    },
+    "site": {
+      "href": "bizforte.co.th",
       "target": "_blank"
     }
   },
@@ -120,6 +204,54 @@
     }
   },
   {
+    "type": ["Middle East", "Asia"],
+    "country": ["Saudi Arabia"],
+    "name": "Clever Platform",
+    "contact": {
+      "href": "fahad@cleverplatform.sa"
+    },
+    "site": {
+      "href": "",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Asia"],
+    "country": ["Russia"],
+    "name": "Clover Group LLC",
+    "contact": {
+      "href": "v.kuznetsov@ctrl2go.com"
+    },
+    "site": {
+      "href": "ctrl2go.com",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Europe"],
+    "country": ["Norway"],
+    "name": "Cypod Solutions AS",
+    "contact": {
+      "href": "rb@cypodsolutions.com"
+    },
+    "site": {
+      "href": "cypodsolutions.com",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Asia"],
+    "country": ["South Korea"],
+    "name": "Dareesoft",
+    "contact": {
+      "href": "bettyrow@dareesoft.com"
+    },
+    "site": {
+      "href": "dareesoft.com",
+      "target": "_blank"
+    }
+  },
+  {
     "type": ["Asia"],
     "country": ["Russia"],
     "name": "Datastreams AI",
@@ -168,6 +300,66 @@
     }
   },
   {
+    "type": ["Africa"],
+    "country": ["India"],
+    "name": "Digital Reach Pvt. Ltd.",
+    "contact": {
+      "href": "snehal@digireach.com"
+    },
+    "site": {
+      "href": "digireach.com",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Africa"],
+    "country": ["Mauritius"],
+    "name": "Digital Twin Services Ltd.",
+    "contact": {
+      "href": "johan@digitaltwin.mu"
+    },
+    "site": {
+      "href": "digitaltwin.mu",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Africa"],
+    "country": ["Morocco"],
+    "name": "Digitory LLC",
+    "contact": {
+      "href": "yelgoutbi@digitory.ma"
+    },
+    "site": {
+      "href": "digitory.ma",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Europe"],
+    "country": ["Finland"],
+    "name": "Dimalog OY LTD",
+    "contact": {
+      "href": "teemu.kytomaki@dimalog.com"
+    },
+    "site": {
+      "href": "dimalog.com",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Europe"],
+    "country": ["Germany"],
+    "name": "ECBM GmbH",
+    "contact": {
+      "href": "hoffmann@ecbm.me"
+    },
+    "site": {
+      "href": "ecbm.me",
+      "target": "_blank"
+    }
+  },
+  {
     "type": ["Europe"],
     "country": ["France"],
     "name": "Eiffage",
@@ -192,6 +384,18 @@
     }
   },
   {
+    "type": ["Asia"],
+    "country": ["India"],
+    "name": "Factorie Intelligent Operations Pvt. Ltd.",
+    "contact": {
+      "href": "naresh.yerrabachu@factorie.io"
+    },
+    "site": {
+      "href": "factorie.io",
+      "target": "_blank"
+    }
+  },
+  {
     "type": ["Australia and Oceania"],
     "country": ["Australia"],
     "name": "FEEL Digital Asset Strategy",
@@ -206,12 +410,24 @@
   {
     "type": ["Asia"],
     "country": ["China"],
-    "name": "gps.shop (Puxuan LPWAN Tech)",
+    "name": "PUXUAN LPWAN",
     "contact": {
-      "href": "Info@gps.shop"
+      "href": "huxiaofeng@px-tech.com"
     },
     "site": {
-      "href": "www.gps.shop",
+      "href": "",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Asia"],
+    "country": ["China"],
+    "name": "HAI Robotics Co., Ltd.",
+    "contact": {
+      "href": "qiang.han@gmail.com"
+    },
+    "site": {
+      "href": "",
       "target": "_blank"
     }
   },
@@ -224,6 +440,18 @@
     },
     "site": {
       "href": "halley-technologies.ch",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Asia"],
+    "country": ["India"],
+    "name": "Hinditron Corp. Systems Pvt. Ltd",
+    "contact": {
+      "href": "software@hinditron.com"
+    },
+    "site": {
+      "href": "hinditron.com",
       "target": "_blank"
     }
   },
@@ -264,6 +492,18 @@
     }
   },
   {
+    "type": ["Middle East"],
+    "country": ["Turkey"],
+    "name": "Inovatink",
+    "contact": {
+      "href": "bariscan@inovatink.com"
+    },
+    "site": {
+      "href": "inovatink.com",
+      "target": "_blank"
+    }
+  },
+  {
     "type": ["Asia", "Australia and Oceania"],
     "country": ["Australia", "New Zeland", "Mongolia"],
     "name": "InSig Technologies Pty. Ltd.",
@@ -295,7 +535,19 @@
       "href": "info@it-novum.com"
     },
     "site": {
-      "href": "it-novum.com",
+      "href": "data.it-novum.com",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Asia"],
+    "country": ["Taiwan"],
+    "name": "Linksoft Inc.",
+    "contact": {
+      "href": "info@linksoft.com.tw"
+    },
+    "site": {
+      "href": "linksoft.com.tw",
       "target": "_blank"
     }
   },
@@ -324,6 +576,18 @@
     }
   },
   {
+    "type": ["Asia", "Middle East"],
+    "country": ["Saudi Arabia"],
+    "name": "LTS-Connecting Things",
+    "contact": {
+      "href": "ihigazi@ltsrv.com"
+    },
+    "site": {
+      "href": "ltsrv.com",
+      "target": "_blank"
+    }
+  },
+  {
     "type": ["Asia"],
     "country": ["Japan"],
     "name": "MACNICA, Inc.",
@@ -332,6 +596,54 @@
     },
     "site": {
       "href": "macnica.co.jp",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Europe"],
+    "country": ["Belgium"],
+    "name": "Master Chips",
+    "contact": {
+      "href": "stijn.thijs@masterchips.be"
+    },
+    "site": {
+      "href": "masterchips.be",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Middle East"],
+    "country": ["Turkey"],
+    "name": "Mechanica Irev Yazılım Sa. Tic. Ltd. Şti.",
+    "contact": {
+      "href": "irfan@mechanicairev.com"
+    },
+    "site": {
+      "href": "mechanicairev.com",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Asia"],
+    "country": ["Thailand"],
+    "name": "Metro Systems Corp. PCL",
+    "contact": {
+      "href": "chaiwtha@metrosystems.co.th"
+    },
+    "site": {
+      "href": "metrosystems.co.th",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Europe"],
+    "country": ["Sweden"],
+    "name": "Mobile Integrator Sweden AB",
+    "contact": {
+      "href": "kjell.wester@mobileintegrator.se"
+    },
+    "site": {
+      "href": "mobileintegrator.se",
       "target": "_blank"
     }
   },
@@ -360,11 +672,59 @@
     }
   },
   {
+    "type": ["Asia"],
+    "country": ["Japan"],
+    "name": "NTT DATA Romania SA",
+    "contact": {
+      "href": "teo.pavel@nttdata.ro"
+    },
+    "site": {
+      "href": "nttdata.ro",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Europe"],
+    "country": ["Italy"],
+    "name": "Omnicon Srl",
+    "contact": {
+      "href": "roberto.pozzoli@omnicon.it"
+    },
+    "site": {
+      "href": "omnicon.it",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["North America"],
+    "country": ["United States of America"],
+    "name": "Petrichor Science Group LLC",
+    "contact": {
+      "href": "miles@petrichorsciencegroup.com"
+    },
+    "site": {
+      "href": "petrichorsciencegroup.com",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Europe"],
+    "country": ["Romania"],
+    "name": "Polisea S.A.",
+    "contact": {
+      "href": "dan.cherciu@polisea.ro"
+    },
+    "site": {
+      "href": "polisea.ro",
+      "target": "_blank"
+    }
+  },
+  {
     "type": ["Europe"],
     "country": ["Netherlands"],
-    "name": "Produmize",
+    "name": "Produmize B.V.",
     "contact": {
-      "href": "info@produmize.com"
+      "href": "mark.pronk@produmize.com"
     },
     "site": {
       "href": "produmize.com",
@@ -385,6 +745,18 @@
   },
   {
     "type": ["Europe"],
+    "country": ["Norway"],
+    "name": "RFID Solutions AS",
+    "contact": {
+      "href": "gv@rfid-solutions.no"
+    },
+    "site": {
+      "href": "rfid-solutions.no",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Europe"],
     "country": ["Spain"],
     "name": "Risk Factor",
     "contact": {
@@ -397,6 +769,18 @@
   },
   {
     "type": ["Europe"],
+    "country": ["Switzerland"],
+    "name": "Rittmeyer AG",
+    "contact": {
+      "href": "david.duerrenmatt@rittmeyer.com"
+    },
+    "site": {
+      "href": "rittmeyer.com",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Europe"],
     "country": ["Ukraine"],
     "name": "RPA Romsat Ltd.",
     "contact": {
@@ -404,6 +788,30 @@
     },
     "site": {
       "href": "romsat.ua",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Europe"],
+    "country": ["Romania"],
+    "name": "S.C. Skybase Solar S.R.L.",
+    "contact": {
+      "href": "skybasesolar.bacau@gmail.com"
+    },
+    "site": {
+      "href": "",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Asia"],
+    "country": ["India"],
+    "name": "Samptel Technologies",
+    "contact": {
+      "href": "info@samptel.com"
+    },
+    "site": {
+      "href": "samptel.com",
       "target": "_blank"
     }
   },
@@ -444,14 +852,38 @@
     }
   },
   {
+    "type": ["Africa"],
+    "country": ["Nigeria"],
+    "name": "Sawtrax ltd.",
+    "contact": {
+      "href": "silviato@sawtraxltd.com"
+    },
+    "site": {
+      "href": "sawtraxltd.com",
+      "target": "_blank"
+    }
+  },
+  {
     "type": ["North America"],
-    "country": ["United States"],
+    "country": ["United States of America"],
     "name": "Senzary LLC",
     "contact": {
       "href": "info@senzary.com"
     },
     "site": {
       "href": "senzary.com",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Asia"],
+    "country": ["Hong Kong"],
+    "name": "Sharp Peak Consulting Limited",
+    "contact": {
+      "href": "wing.kiang@sharp-peak.com"
+    },
+    "site": {
+      "href": "sharp-peak.com",
       "target": "_blank"
     }
   },
@@ -476,18 +908,6 @@
     },
     "site": {
       "href": "simac.cz",
-      "target": "_blank"
-    }
-  },
-  {
-    "type": ["Europe"],
-    "country": ["Romania"],
-    "name": "S.C. Skybase Solar S.R.L.",
-    "contact": {
-      "href": "skybasesolar.bacau@gmail.com"
-    },
-    "site": {
-      "href": "",
       "target": "_blank"
     }
   },
@@ -528,6 +948,42 @@
     }
   },
   {
+    "type": ["Asia", "Middle East"],
+    "country": ["United Arab Emirates"],
+    "name": "Spectrum Smart Solutions Systems LLC",
+    "contact": {
+      "href": "salem@spectrum.co.ae"
+    },
+    "site": {
+      "href": "spectrum.co.ae",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Asia"],
+    "country": ["India"],
+    "name": "Spia Tech Pvt. Ltd.",
+    "contact": {
+      "href": "jasir@spiatech.com"
+    },
+    "site": {
+      "href": "spiatech.com",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Asia"],
+    "country": ["Taiwan"],
+    "name": "StarLinking Networks Co., Ltd.",
+    "contact": {
+      "href": "star@starlinking.com"
+    },
+    "site": {
+      "href": "starlinking.com",
+      "target": "_blank"
+    }
+  },
+  {
     "type": ["Asia", "Europe", "Middle East"],
     "country": ["Kazakhstan", "Uzbekistan", "Turkmenistan", "Tajikistan", "Kyrgyzstan", "Armenia", "Azerbaijan", "Moldova", "Russia", "Belarus"],
     "name": "Syssoft LLC",
@@ -548,6 +1004,18 @@
     },
     "site": {
       "href": "techyugadi.com ",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Europe"],
+    "country": ["Lietuvos Respublika"],
+    "name": "Techno Pynė",
+    "contact": {
+      "href": "mail@technopyne.lt"
+    },
+    "site": {
+      "href": "technopyne.lt",
       "target": "_blank"
     }
   },
@@ -600,26 +1068,26 @@
     }
   },
   {
-    "type": ["Europe", "Africa", "Asia", "Middle East"],
-    "country": ["Turkey", "Georgia", "Kazakhstan", "Azerbaijan", "Tajikistan", "Turkmenistan", "Uzbekistan", "Kyrgyzstan", "Tunisia", "Libya", "Iraq", "Albania", "Montenegro", "Bosnia and Herzegovina"],
-    "name": "Basari Muhendislik",
-    "contact": {
-      "href": "sales@basarimuhendislik.com"
-    },
-    "site": {
-      "href": "basarimuhendislik.com",
-      "target": "_blank"
-    }
-  },
-  {
     "type": ["North America", "South America"],
-    "country": ["United States", "Belize", "Panama", "Peru", "Colombia", "Argentina"],
+    "country": ["United States of America", "Belize", "Panama", "Peru", "Colombia", "Argentina"],
     "name": "Voxney PLSC, Inc.",
     "contact": {
       "href": "trading@voxney.com"
     },
     "site": {
       "href": "voxney.com",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["United States of America"],
+    "country": [""],
+    "name": "Vypin LLC",
+    "contact": {
+      "href": "sales@vypin.com"
+    },
+    "site": {
+      "href": "vypin.com",
       "target": "_blank"
     }
   },
@@ -644,6 +1112,30 @@
     },
     "site": {
       "href": "yudash.com",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Europe"],
+    "country": ["Hungary"],
+    "name": "4iG Nyrt.",
+    "contact": {
+      "href": "barnabas.rejto@4ig.hu"
+    },
+    "site": {
+      "href": "4ig.hu",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Europe"],
+    "country": ["Hungary", "Austria", "Croatia", "Germany", "Liechtenstein", "Slovenia", "Switzerland"],
+    "name": "7iD Technologies GmbH",
+    "contact": {
+      "href": "gerhard.gangl@7id.com"
+    },
+    "site": {
+      "href": "7id.com",
       "target": "_blank"
     }
   }

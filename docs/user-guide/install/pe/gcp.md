@@ -26,24 +26,26 @@ description: ThingsBoard IoT platform  GCP cluster setup guide
                         <div class="deployment-section deployment-on-premise active" id="onPremise">
                            <div class="deployment-cards">
                                 <div class="deployment-cards-container">
-                                    <div class="deployment-card-block">
-                                        <a href="/docs/user-guide/install/pe/cluster/gcp-cluster-setup/">
-                                            <span>
-                                                <div class="deployment-logo">
-                                                    <img width="" src="/images/install/cloud/kops.svg" title="Cluster setup with Kubernetes and kops on GCP" alt="GCP K8S cluster">
-                                                 </div>
-                                            </span>
-                                        </a>
-                                    </div>
-                                   <div class="deployment-card-block">
+                                   <div class="deployment-card-block text">
                                        <a href="/docs/user-guide/install/pe/gcp-marketplace/">
                                            <span>
                                                <div class="deployment-logo">
-                                                   <img width="" src="/images/install/cloud/gcp-vm.svg" title="Self-hosted setup using GCP Marketplace" alt="GCP Marketplace">
-                                                </div>
+                                                   <img width="" src="/images/install/cloud/gcp-vm.svg" title="Self-hosted setup using GCP VM instance" alt="GCP VM">
+                                                   <h5 class="title">Google Cloud Platform</h5>
+                                               </div>
                                            </span>
                                        </a>
                                    </div>
+                                    <div class="deployment-card-block text">
+                                        <a href="/docs/user-guide/install/pe/cluster/gcp-gke-setup/">
+                                            <span>
+                                                <div class="deployment-logo">
+                                                    <img width="" src="/images/install/cloud/gke.jpeg" title="Cluster setup with Google Kubernetes Engine" alt="GCP GKE">
+                                                    <h5 class="title">Google Kubernetes Engine</h5>
+                                                </div>
+                                            </span>
+                                        </a>
+                                    </div>
                               </div>                     
                             </div>                        
                         </div>

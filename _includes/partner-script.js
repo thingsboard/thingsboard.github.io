@@ -2,24 +2,26 @@
 {% capture partnersType %}{{include.type}}{% endcapture %}
 {% capture partners %}{% include partners.json %}{% endcapture %}
 
-(function () {
+function rengen() {
     var containerId = "{{ containerId }}";
     var partnersType = "{{ partnersType }}";
 	var partners = {{ partners }};
 
+    var checkedElements = document.getElementsByClassName('checked');
+
 	var targetContainer = document.getElementById(containerId);
+    targetContainer.innerHTML = '';
 
-    var partnersByType = partners.filter(function(partner) {
-        return partner.type === partnersType;
-    });
+    var partnersByType = [];
+    for (var t = 0; t < partners.length; t++) {
+        for (var c = 0; c < checkedElements.length; c++) {
+            if (partners[t].type.includes(checkedElements[c].className.split(' ')[1])) {
+                partnersByType.push(partners[t]);
+                c = partners.length;
+            }
+        }
+    }
 
-	// var sorted = partnersByType.sort(function (a, b) {
-	// 	if (a.name > b.name) return 1
-	// 	if (a.name < b.name) return -1
-	// 	return 0
-	// })
-
-    // sorted.forEach(function (obj) {
     partnersByType.forEach(function (obj) {
 		var box = document.createElement('div');
 		box.className = 'partner-box';
@@ -43,9 +45,13 @@
 
 		var p = document.createElement('p');
 		p.textContent = obj.blurb;
+        p.className = 'description';
 
-        var spacer = document.createElement('p');
-        p.style.flex = '1';
+        var text = document.createElement('div');
+        text.className = 'text';
+
+        var bg = document.createElement('div');
+        bg.className = 'box-background';
 
         var linksElement = document.createElement('div');
         linksElement.className = 'links';
@@ -58,21 +64,17 @@
                 link.target = linkInfo.target;
             }
             link.textContent = linkName;
-            if (linksElement.childNodes.length) {
-                var divider = document.createElement('span');
-                divider.textContent = ' | ';
-                linksElement.appendChild(divider);
-            }
             linksElement.appendChild(link);
         }
 
-        div.appendChild(titleElement);
-		div.appendChild(p);
-        div.appendChild(spacer);
+        text.appendChild(titleElement);
+		text.appendChild(p);
+        div.appendChild(text);
 		div.appendChild(linksElement);
-
+		box.appendChild(bg);
 		box.appendChild(img);
 		box.appendChild(div);
+
 
         targetContainer.appendChild(box);
 	});
@@ -81,24 +83,48 @@
         var becomeHardwarePartnerBox = document.createElement('div');
         becomeHardwarePartnerBox.className = 'partner-box';
 
+        var bg = document.createElement('div');
+        bg.className = 'box-background';
+
         var div = document.createElement('div');
         var p = document.createElement('p');
         p.textContent = 'Want to become ThingsBoard Hardware Partner?';
         p.className = 'become-partner';
         div.appendChild(p);
 
-        var linksElement = document.createElement('div');
-        linksElement.className = 'links';
-
         var a = document.createElement('a');
+        a.className = 'button';
         a.textContent = 'Apply for Hardware Partner Program';
         a.href = '/partners/hardware/program/';
-        linksElement.appendChild(a);
 
 
-        div.appendChild(linksElement);
+        div.appendChild(a);
+        becomeHardwarePartnerBox.appendChild(bg);
         becomeHardwarePartnerBox.appendChild(div);
 
         targetContainer.appendChild(becomeHardwarePartnerBox);
     }
-})();
+}
+// )();
+
+function actions(sectionId) {
+    if (sectionId === 'main') {
+        if (!$("div." + sectionId).hasClass("checked")){
+            $("div.check-box").removeClass("checked");
+            $("div." + sectionId).addClass("checked");
+            rengen();
+        }
+    } else {
+        $("div.main").removeClass("checked");
+        if ($("div." + sectionId).hasClass("checked")){
+            $("div." + sectionId).removeClass("checked");
+            if (document.getElementsByClassName('checked').length === 0){
+                $("div.main").addClass("checked");
+            }
+            rengen();
+        } else {
+            $("div." + sectionId).addClass("checked");
+            rengen();
+        }
+    }
+}

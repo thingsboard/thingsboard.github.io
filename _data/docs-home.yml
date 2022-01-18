@@ -24,6 +24,9 @@ toc:
     path: /docs/user-guide/alarms/
   - title: Remote commands to devices
     path: /docs/user-guide/rpc/
+  - title: OTA updates
+    path: /docs/user-guide/ota-updates/
+    new: true
 - title: Dashboards
   section:
   - title: Overview
@@ -87,6 +90,8 @@ toc:
     path: /docs/user-guide/integrations/http/
   - title: MQTT
     path: /docs/user-guide/integrations/mqtt/
+  - title: CoAP
+    path: /docs/user-guide/integrations/coap/
   - title: OPC-UA
     path: /docs/user-guide/integrations/opc-ua/
   - title: Actility ThingPark
@@ -158,23 +163,44 @@ toc:
       pe: true
 - title: Security
   section:
-  - title: Audit Log
-    path: /docs/user-guide/audit-log/
-  - title: Advanced RBAC for IoT
-    path: /docs/pe/user-guide/rbac/
-    pe: true
-  - title: OAuth 2 Support
-    path: /docs/user-guide/oauth-2-support/
-  - title: MQTT over SSL
-    path: /docs/user-guide/mqtt-over-ssl/
-  - title: Device authentication options
-    path: /docs/user-guide/device-credentials/
-  - title: Access Token based authentication
-    path: /docs/user-guide/access-token/
-  - title: Basic MQTT Credentials
-    path: /docs/user-guide/basic-mqtt/
-  - title: X.509 Certificate based authentication
-    path: /docs/user-guide/certificates/
+    - title: Enable HTTPS
+      path: /docs/user-guide/ssl/http-over-ssl/
+    - title: Audit Log
+      path: /docs/user-guide/audit-log/
+    - title: Advanced RBAC for IoT
+      path: /docs/pe/user-guide/rbac/
+    - title: OAuth 2 Support
+      path: /docs/user-guide/oauth-2-support/
+    - title: HTTP Transport
+      section:
+        - title: HTTP over SSL
+          path: /docs/user-guide/ssl/http-transport-over-ssl/
+        - title: Access Token based authentication
+          path: /docs/user-guide/ssl/http-access-token/
+    - title: MQTT Transport
+      section:
+      - title: MQTT over SSL
+        path: /docs/user-guide/mqtt-over-ssl/
+      - title: Device authentication options
+        path: /docs/user-guide/device-credentials/
+      - title: Access Token based authentication
+        path: /docs/user-guide/access-token/
+      - title: Basic MQTT Credentials
+        path: /docs/user-guide/basic-mqtt/
+      - title: X.509 Certificate based authentication
+        path: /docs/user-guide/certificates/
+    - title: CoAP Transport
+      section:
+      - title: CoAP over DTLS
+        path: /docs/user-guide/coap-over-dtls/
+      - title: Access Token based authentication
+        path: /docs/user-guide/ssl/coap-access-token/
+      - title: X.509 Certificate based authentication
+        path: /docs/user-guide/ssl/coap-x509-certificates/
+    - title: LwM2M Transport
+      section:
+        - title: LwM2M over DTLS
+          path: /docs/user-guide/ssl/lwm2m-over-dtls/
 - title: Administration UI
   section:
   - title: Tenants
@@ -191,10 +217,14 @@ toc:
     path: /docs/user-guide/ui/rule-chains/
   - title: Widgets
     section:
-    - title: Trip Animation Widget
-      path: /docs/user-guide/ui/trip-animation-widget/
-    - title: Advanced Settings of the Entity Table widget
+    - title: Chart widgets
+      path: /docs/user-guide/ui/chart-widget/
+      new: true
+    - title: Entity Table widget
       path: /docs/user-guide/ui/entity-table-widget/
+      new: true
+    - title: Trip Animation widget
+      path: /docs/user-guide/ui/trip-animation-widget/
     - title: Advanced data key configuration
       path: /docs/user-guide/ui/advanced-data-key-configuration/
   - title: Dashboards

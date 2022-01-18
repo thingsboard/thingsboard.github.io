@@ -21,6 +21,8 @@ To build and run ThingsBoard instance make sure that you have **Java** and **Mav
 
 Please refer to [**Building from sources**](/docs/user-guide/install/building-from-source) section where [**Java**](/docs/user-guide/install/building-from-source/#java) and [**Maven**](/docs/user-guide/install/building-from-source/#maven) install processes are described.
 
+To run integration and black-box tests **docker** and **docker-compose** required, please, refer to the [Running tests](/docs/user-guide/install/building-from-source/#tips-and-tricks) section.
+
 #### Fork and build ThingsBoard repository
 
 Once you have completed installation of required tools please fork official [**ThingsBoard repository**](https://github.com/thingsboard/thingsboard).
@@ -180,7 +182,7 @@ Before you commit your changes to the remote repository build it locally with te
 mvn clean install
 ```
 
-Make sure that build is fine and all the tests are successful.
+Make sure that build is fine and all the tests are successful. Try [black-box tests](https://github.com/thingsboard/thingsboard/tree/master/msa/black-box-tests) as well.
 
 ##### Push changes to your fork
 
@@ -197,7 +199,7 @@ Please create pull request into the **master** branch by default (the additional
 
 If there are some conflicts because new stuff has arrived into ThingsBoard master branch before your commit, please resolve those conflicts to continue.
 
-Sign up contribution license agreement (CLA) and verify that remote build has been successful. The CLA is signed atomatically using the github CLA bot.
+Sign up contribution license agreement (CLA) and verify that remote build has been successful. The CLA is signed automatically using the github CLA bot.
  
  ![image](/images/user-guide/pr_cla.png)
 

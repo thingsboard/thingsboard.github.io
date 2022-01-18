@@ -95,10 +95,10 @@ Here is a list of supported aggregation functions for state fields:
 Before applying transformation you need to get a reference to the original field value. Here is an example how to do this:
 
 ```
-double temp = avg(Machine.temperature);
+double temp = none(Machine.temperature);
 ```
 
-* avg() - aggregation function
+* none() - aggregation function
 * Machine - Entity Name (it can be Asset Type or Device Type)
 * temperature - Field Name
 
@@ -118,14 +118,6 @@ return "running".equals(currentState);
 State fields supports following aggregation functions:
 
 * none()
-* avg()
-* sum()
-* min()
-* max()
-* count()
-* latest()
-* uniq()
-* delta() 
 
 Each function allows only 1 argument - reference to the filed on format EntityName.fieldName. For example:
 
@@ -139,7 +131,21 @@ defined state or not.
 
 Aggregation function applied to a grouped dataset. Find more details about [Grouping and Aggregation in this article](/docs/trendz/data-grouping-aggregation/)
 
+## Save and reuse state fields
+
+Once the state field created you can save it for future reuse by pressing **Save Field** button under function editor. 
+Current field label would be used as a field name. If a field with such name already exists - the system will overwrite it.
+
+Saved state field is only a template. Once it is dropped from the left navigation tree into some axis, a new 
+state field created and this field would not be connected with the original template.
+It means that if you will update field configuration in the future, it will only update a template, 
+but real state fields that are added to View configuration are not affected.
+
 ## Language
 
 In most cases amount of data analysed during state calculation is big enough. To guarantee performance function should be defined 
 using Java language (Java 8).
+
+## Next Steps
+
+{% assign currentGuide = "States" %}{% include templates/trndz-guides-banner.md %}

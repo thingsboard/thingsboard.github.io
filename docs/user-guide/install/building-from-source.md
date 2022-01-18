@@ -10,7 +10,8 @@ description: Building ThingsBoard IoT platform from sources
 * TOC
 {:toc}
 
-This guide will help you to download and build ThingsBoard from sources. Instructions listed below are tested on Ubuntu 16.04 and CentOS 7.1
+This guide will help you to download and build ThingsBoard from sources. Instructions listed below are tested on Ubuntu 20.04 LTS
+and CentOS 7/8
 
 #### Required tools
 
@@ -47,13 +48,15 @@ git checkout {{ site.release.branch }}
 Run the following command from the thingsboard folder to build the project:
 
 ```bash
-mvn clean install
+mvn clean install -DskipTests
 ```
 
 #### Build local docker images
 
+Make sure that [Docker](https://docs.docker.com/engine/install/) is installed.
+
 ```bash
-mvn clean install -Ddockerfile.skip=false
+mvn clean install -DskipTests -Ddockerfile.skip=false
 ```
 
 #### Build artifacts
@@ -62,4 +65,45 @@ You can find debian, rpm and windows packages in the target folder:
  
 ```bash
 application/target
+```
+
+#### Running tests
+
+We are using [docker](https://docs.docker.com/engine/install/) and [docker-compose](https://docs.docker.com/compose/install/) to run all kind of integration and [black-box tests](https://github.com/thingsboard/thingsboard/tree/master/msa/black-box-tests).
+
+Please, manage [Docker as a non-root user](https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user) to run tests properly.
+
+Master and release branches is already tested, so you can skip tests and avoid installing docker as well.
+
+Run all unit and integration tests:
+
+```bash
+mvn clean install
+```
+
+To run black-box tests, please refer [black-box tests readme](https://github.com/thingsboard/thingsboard/blob/master/msa/black-box-tests/README.md).
+
+Estimated time is about 1 hour on AMD Ryzen 5 3600 (6-cores), 32GB DDR4, fancy SSD and shiny weather. Actual time may vary and depends on particular hardware performance.
+
+#### Tips and tricks
+
+Thingsboard is quite easy to build from sources on a brand-new clear environment.
+
+Here are some tips and tricks to boost build experience: 
+
+- [clean maven cache](https://www.baeldung.com/maven-clear-cache)
+```bash
+rm -rf ~/.m2/repository
+```
+- clean gradle cache
+```bash
+rm -rf ~/.gradle/caches/
+```
+- clean node modules
+```bash
+rm -rf ui-ngx/node_modules
+```
+- build in parallel, format headers, build docker images
+```bash
+mvn -T 0.8C license:format clean install -DskipTests -Ddockerfile.skip=false
 ```

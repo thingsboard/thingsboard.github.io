@@ -352,6 +352,9 @@
           "cntr": "Liechtenstein"
         },
         {
+          "cntr": "Lietuvos Respublika"
+        },
+        {
           "cntr": "Lithuania"
         },
         {
@@ -634,6 +637,9 @@
           "cntr": "Tunisia"
         },
         {
+          "cntr": "Turkey"
+        },
+        {
           "cntr": "Turkmenistan"
         },
         {
@@ -658,7 +664,7 @@
           "cntr": "United Kingdom"
         },
         {
-          "cntr": "United States"
+          "cntr": "United States of America"
         },
         {
           "cntr": "United States Minor Outlying Islands"
@@ -1191,6 +1197,9 @@
           "cntr": "Liechtenstein"
         },
         {
+          "cntr": "Lietuvos Respublika"
+        },
+        {
           "cntr": "Lithuania"
         },
         {
@@ -1432,7 +1441,7 @@
           "cntr": "U.S. Virgin Islands"
         },
         {
-          "cntr": "United States"
+          "cntr": "United States of America"
         },
         {
           "cntr": "United States Minor Outlying Islands"

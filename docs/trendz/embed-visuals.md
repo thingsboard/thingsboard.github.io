@@ -18,12 +18,47 @@ You can share created visualizations or even provide a self-service interface fo
 Follow 2 simple steps to make it: 
 
 #### Import Trendz widget bundle
-At the beginning you need to import Trendz widgets into your ThingsBoard installation:
-* For ThingsBoard version **3.x** download a <a href="https://dist.thingsboard.io/trendz_bundle_tb3.json" download target="_blank">Trendz_widgets_bundle V3</a> 
-* For ThingsBoard version **2.x** download a <a href="https://dist.thingsboard.io/trendz_bundle_tb2.json" download target="_blank">Trendz_widgets_bundle V2</a> 
+
+###### For ThingsBoard 3.3+ and Trendz 1.8+
+Starting from ThingsBoard 3.3 and Trendz 1.8 - Trendz widgets can be natively embedded into the ThingsBaord dashboard.
+Native Trendz widgets works much faster compared to original Trendz widgets that are based on iFrame. 
+
+Add native Trendz library into ThingsBaord extensions:
+* Download <a href="https://dist.thingsboard.io/trendz-tb-lib-1.8.0-SNAPSHOT.jar" download target="_blank">Native Trendz Library</a>
+* Deploy library into ThingsBoard extension directory
+
+```
+scp trendz-tb-lib-1.8.0-SNAPSHOT.jar ubuntu@${THINGSBOARD_SERVER}:~/.
+
+ssh ${THINGSBOARD_SERVER}
+
+sudo cp trendz-tb-lib-1.0.0-SNAPSHOT.jar /usr/share/thingsboard/extensions/
+sudo chown thingsboard:thingsboard /usr/share/thingsboard/extensions/trendz-tb-lib-1.0.0-SNAPSHOT.jar
+```
+
+* Restart ThingsBoard service to apply changes
+
+```
+sudo service thingsboard restart
+```
+
+Import Native Trendz widgets bundle
+* Download <a href="https://dist.thingsboard.io/native_trendz_bundle.json" download target="_blank">Native_Trendz_widgets_bundle</a>
 * Login as Tenant Administrator into ThingsBoard and go to **Widget Library**
 * Press **Add new widget bundle** and select **import widget bundle**
 * Import downloaded  widget bundle 
+
+###### For ThingsBoard 3.0 - 3.2
+* Download a <a href="https://dist.thingsboard.io/trendz_bundle_tb3.json" download target="_blank">Trendz_widgets_bundle V3</a> 
+* Login as Tenant Administrator into ThingsBoard and go to **Widget Library**
+* Press **Add new widget bundle** and select **import widget bundle**
+* Import downloaded  widget bundle 
+
+###### For ThingsBoard 2.x
+* Download a <a href="https://dist.thingsboard.io/trendz_bundle_tb2.json" download target="_blank">Trendz_widgets_bundle V2</a> 
+* Login as Tenant Administrator into ThingsBoard and go to **Widget Library**
+* Press **Add new widget bundle** and select **import widget bundle**
+* Import downloaded  widget bundle
 
 This bundle contains 3 widgets:
 * **Trendz View Static**- allow adding saved Trendz visualizations into ThingsBoard dashboards
@@ -112,12 +147,36 @@ This option available for both, Static Trendz widget and for Trendz View with al
 * Switch to **Advanced** Tab
 * Enable checkbox **Use Dashboard Time Window** 
 
+#### Configure OnRowClock action
+Trendz Table view support onRowClick action. You can configure what should happen when user click on a Row in a table. 
+For example you can save entity to the Dashboard state alias or open new dashboard state.
+
+To enable row click event:
+* Add Trendz Table View on ThingsBoard dashboard.
+* Open widget edit mode and switch to **Actions** tab.
+* Press **Add action** button.
+* In **Action source** field select **On row click**.
+* Proceed standard widget action configuration. 
+
+Each row has multiple fields from on or multiple devices/assets. It means that 1 row can be connected with multiple items. 
+If you want to use 'onRowClick' action - you need to define what item is selected when row clicked.
+* Open **View Settings** in Trendz View edit mode.
+* Open **View Mode fields** section.
+* Select required Device/Asset type in **Row click entity** dropdown.
+* Save changes.
+
+ 
+
+#### Configure Date selected action
+
+#### Configure Switch Field action
+
 ![image](/images/trendz/trndz_dashboard_time.png)
 
 ## Embed visualization on external site
 You can also embed Trendz visualization into your web site by adding iFrame that points to required visualization.
 
-Add iFrame on your site with the following URL **http://{TRENDZ_URL}/viewMode/{VIEW_ID}?token={JWT_TOKEN}**. Where:
+Add iFrame on your site with the following URL **http://{TRENDZ_URL}/viewMode/{VIEW_ID}?jwt={JWT_TOKEN}**. Where:
 * TRENDZ_URL - url of Trendz service
 * VIEW_ID - ID of saved visualization inside Trendz
 * JWT_TOKEN - ThingsBoard JWT token that should be used to authenticate in the ThingsBoard
@@ -131,3 +190,7 @@ The problem is that most browser block mixed content requests: if ThingsBoard us
 block requests to Trendz. You can find detailed error in browser console.
 
 For fixing this - you need to enable HTTPS for Trendz UI. Find details how to do this in Trendz installation guide.
+
+## Next Steps
+
+{% assign currentGuide = "EmbedVisualizations" %}{% include templates/trndz-guides-banner.md %}

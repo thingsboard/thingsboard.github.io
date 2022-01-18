@@ -14,6 +14,7 @@ Trendz provides major visualization types required for analyzing IoT datasets.
 * [**Pie Chart**](/docs/trendz/visualizations-pie)
 * [**Scatter Plot**](/docs/trendz/visualizations-scatter)
 * [**Heat Map**](/docs/trendz/visualizations-heatmap)
+* [**Calendar**](/docs/trendz/visualizations-calendar)
 * [**Card**](/docs/trendz/visualizations-card)
 
 ## First visualisation
@@ -47,3 +48,7 @@ Learn more about Trendz Analytics features and how it helps to transform the IoT
         <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLYEKB_XwLCZIs-_Aoos3CdNIqSYrXk4LN" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
 </div>
+
+## Next Steps
+
+{% assign currentGuide = "AvailableVisualizations" %}{% include templates/trndz-guides-banner.md %}

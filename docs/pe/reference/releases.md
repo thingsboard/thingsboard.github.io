@@ -8,6 +8,92 @@ description: ThingsBoard architecture
 * TOC
 {:toc}
 
+## v3.3.2 (November 11, 2021)
+
+Everything from [TB CE v3.3.2](https://github.com/thingsboard/thingsboard/releases/tag/v3.3.2) with the following improvements.
+
+Main features:
+
+* Core:
+  * Entity search API for system administrator; 
+* REST API documentation: 
+  * Describe PE entities and methods;
+* Help pages for user-defined JS functions:
+  * Uplink and Downlink converter documentation;
+  * Ability to configure the external help url using white-labeling parameters;
+* Rule Engine:
+  * Added ability to get parent customer details in customer details node
+  * Ignore emails api usage when using external mail sender;
+* UI: 
+  * Added "Terms Of Use" for Self Registration;
+  * Added the ability to set the background for login page by Advanced CSS 
+  * Added Role, Integration, Converter, Group and Scheduler max length fields validation;
+  * Added disable export (for notification) in Api Usage dashboard; 
+* Integrations: 
+  * Support binary data consumption for HTTP/CoAP/MQTT integrations;
+  * UDP integration improvements. Support PUT in HTTP/CoAP integrations;  
+  * Support of device and asset labels;
+  * Optimize error logging; 
+
+Bug fixes:
+
+* Core:
+  * Fixed RBAC for Resource and OTA updates;
+* Integrations:
+  * Service bus Queue: 'maxMessages' fix;
+  * Fixed incorrectly displayed Downlink URL after save in the LORIOT integration;
+* UI: 
+  * Fixed RBAC to create/write edges;
+  * Fixed entity-group-autocomplete;
+  * Fixed custom css dialog close button;
+  * Fixed customersHierarchy after updated entity group didn't save new settings group in jsTree;
+  * Fixed noDataDisplayMessage in scheduler/blob widgets;
+  * Fixed RBAC disabled select on relations and permissions tabs
+  * Fixed RBAC for rule chains details tabs;
+  * Fixed missing icon, after update icon package;  
+  * Minor fixes to Edge Downlinks table;
+
+## v3.3.1 (September 3, 2021)
+
+Everything from [TB CE v3.3.1](https://github.com/thingsboard/thingsboard/releases/tag/v3.3.1) with the following improvements.
+
+Main features:
+
+* Introduced [Solution templates](/docs/pe/solution-templates/overview/);
+* UI: Added rule engine service to make requests to rule engine from custom actions;
+* Remote integrations: Ability to setup RPC SSL without server SSL certificate
+
+Bug fixes:
+
+* UI: Fixed incorrect cashing data in permission resources autocomplete;
+* UI: Fixed **The Things Stack Industries** integration form
+
+## v3.3 (August 13, 2021)
+
+Everything from [TB CE v3.3](https://github.com/thingsboard/thingsboard/releases/tag/v3.3) with the following improvements.
+
+Main features:
+
+* Improve MQTT integration performance by using async implementation;
+* Improve ChirpStack integration validation - application server url and API token are now required;
+* CoAP integration with DTLS mode support;
+* Confirm dialog in save device group;
+* Ability to specify Consumer Group for Azure Event Hub;
+* Use queue from device profile when pushing events from integration to the rule engine;
+* Improvement to owner autocomplete component;
+
+
+Bug fixes:
+
+* Customer can not see some data of sub-customer in the dashboard;
+* MQTT based integrations, added field for setting up max bytes in message;
+* TLS connectivity for remote integrations;
+* Incorrect work of the asset menu when the user is active / inactive edit mode;
+* Manage credentials button in the device group;
+* Scheduler widget when processing custom event configuration;
+* Processing of repartition events in the scheduler service;
+* OPC-UA integration downlink and added more logs for not connected state;
+
 ## v3.2.2 (March 24, 2021)
 
 Everything from [TB CE v3.2.2](https://github.com/thingsboard/thingsboard/releases/tag/v3.2.2) with the following improvements.

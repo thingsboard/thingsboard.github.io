@@ -3,13 +3,13 @@
 Configure ThingsBoard environment file:
 
 ```text
-sudo nano .env
+nano .env
 ```
 {: .copy-code}
 
 Check following line:
 
-```.env
+```bash
 TB_QUEUE_TYPE=kafka
 ```
 {: .copy-code}

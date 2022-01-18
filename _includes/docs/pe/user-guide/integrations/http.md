@@ -11,7 +11,7 @@ HTTP Integration allows converting existing protocols and payload formats to Thi
  - stream device and/or asset data from your custom application running in the cloud.
  - connect the existing device with custom HTTP based protocol to ThingsBoard.
 
-![image](/images/user-guide/integrations/http-integration.svg)
+<object width="100%" style="max-width: max-content;" data="/images/user-guide/integrations/http-integration.svg"></object>
 
 ## Create Uplink Converter
 
@@ -59,6 +59,7 @@ function decodeToJson(payload) {
 }
 return result;
 ```
+{: .copy-code}
 
 You can change the decoder function while creating the converter or after creating it. If the converter has already been created, then click on the “pencil” icon to edit it.
 Copy the configuration example for the converter (or your own configuration) and insert it into the decoder function. Save changes by clicking on the “checkmark” icon.
@@ -85,8 +86,9 @@ To do this, check the Enable security checkbox and click on the Headers filter. 
 Once the Headers filter has been configured, it will also need to be specified in the uplink message as follows.
 
 ```ruby
--H "test-header:secret"
+-H "test-header:security"
 ```
+{: .copy-code}
 
 {% include images-gallery.html imageCollection="security-1" %}
 
@@ -102,12 +104,14 @@ Use this command to send the message. Replace $DEVICEname, $DEVICEtype and $YOUR
 ```ruby
 curl -v -X POST -d "{\"deviceName\":\"$DEVICEname\",\"deviceType\":\"$DEVICEtype\",\"temperature\":33,\"model\":\"test\"}" $YOUR_HTTP_ENDPOINT_URL -H "Content-Type:application/json"
 ```
+{: .copy-code}
 
 Use this command to send the message. Replace $DEVICEname, $DEVICEtype, $YOUR_HTTP_ENDPOINT_URL and $VALUE with corresponding values.
 
 ```ruby
 curl -v -X POST -d "{\"deviceName\":\"$DEVICEname\",\"deviceType\":\"$DEVICEtype\",\"temperature\":33,\"model\":\"test\"}" $YOUR_HTTP_ENDPOINT_URL -H "Content-Type:application/json" -H "$VALUE"
 ```
+{: .copy-code}
 
 The created device with data can be seen in the section **Device groups -> All**
 
@@ -116,6 +120,11 @@ The created device with data can be seen in the section **Device groups -> All**
 Received data can be viewed in the Uplink converter. In the **“In”** and **“Out”** blocks of the Events tab:
 
 {% include images-gallery.html imageCollection="send-uplink-1" %}
+
+Note that if the "Allow create devices or assets" checkbox is unchecked, when sending a message to thingsboard
+with any parameters of the device (or asset), if such a device (asset) does not exist, then device (asset) will not be created.
+
+{% include images-gallery.html imageCollection="creating-devices-is-forbidden" %}
 
 Use the Dashboards to work with data. Dashboards are a modern format for collecting and visualizing data sets. Visibility of data presentation is achieved through a variety of widgets.  
 ThingsBoard has examples of several types of dashboards that you can use. You can find them in **Solution templates** tab.
@@ -136,6 +145,7 @@ Let’s consider an example where we send an attribute update message. So we sho
 ```ruby
 data: JSON.stringify(msg)
 ```
+{: .copy-code}
 where **msg** is the message that we receive and send back to the device.
 
 {% include images-gallery.html imageCollection="downlink-1" %}
@@ -165,6 +175,7 @@ var result = {
 
 return result;
 ```
+{: .copy-code}
 
 We can send a message to the device from Rule chain using the rule node. 
 For example, create an **integration downlink** node and set the “**Attributes updated**” link to it. 

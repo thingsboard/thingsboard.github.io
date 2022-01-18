@@ -576,11 +576,13 @@ Administrator should set the custom table name without prefix: **cs_tb_**.
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/action-save-to-custom-cassandra-table-name-config.png)
 
-Administrator can configure the mapping between the Message field names and Table columns name. If the mapping key is **entityId**, that is identified by the Message Originator, then to the appropriate column name(mapping value) will be write the message originator id.
+Administrator can configure the mapping between the Message field names and Table columns name. If the mapping key is **$entityId**, that is identified by the Message Originator, then to the appropriate column name(mapping value) will be write the message originator id.
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/action-save-to-custom-cassandra-table-config.png)
 
-If specified message field does not exist or is not a JSON Primitive, the outbound message will be routed via **Failure** chain, otherwise, the message will be routed via **Success** chain.
+If specified message field does not exist in the **data** of the message or is not a JSON Primitive, the outbound message will be routed via **Failure** chain, otherwise, the message will be routed via **Success** chain.
+
+**NOTE**: Please make sure that you are not using **metadata** keys in the configuration - only **data** keys are possible.  
 
 <br/>
 
@@ -820,3 +822,5 @@ Minimal outside time defines whenever message originator is considered as out of
 
    - incoming message has no configured latitude or longitude key in data or metadata. 
    - missing perimeter definition;     
+
+{% include templates/edge/edge-nodes.md %}
