@@ -519,6 +519,8 @@ services:
       - zookeeper:/bitnami
     environment:
       ALLOW_ANONYMOUS_LOGIN: "yes"
+      ZOO_ENABLE_ADMIN_SERVER: "no"
+      JVMFLAGS: "-Xmx128m -Xms128m -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=9199 -Dcom.sun.management.jmxremote.rmi.port=9199  -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=127.0.0.1"
   kafka:
     image: docker.io/bitnami/kafka:3
     network_mode: "host"
@@ -721,6 +723,102 @@ Cons:
  * Scale only vertical (faster instance, more storage IOPS) - very limited by hardware available and become expensive.
  * Kafka as a solo instance and messages persists eventually (no fsync called), potential message loss if Kafka crashes.
  * Maintain or fail any of component will lead to downtime for all the system.
+
+## Timescale + Kafka + Postgres performance
+
+### m6a.large (2 vCPUs AMD EPYC 3rd, 8 GiB, EBS GP3) + Kafka - 5k devices , 5k msg/sec, 15k tps
+
+5000 devices, MQTT, 5000 msg/sec, 15000 telemetry/sec, postgres, Kafka queue, Timescale
+
+Here the docker-compose with Thingsboard + Postgresql + Zookeeper + Kafka + Timescale
+```bash
+version: '3'
+services:
+  zookeeper:
+    image: docker.io/bitnami/zookeeper:3.7
+    network_mode: "host"
+    restart: "always"
+    volumes:
+      - zookeeper:/bitnami
+    environment:
+      ALLOW_ANONYMOUS_LOGIN: "yes"
+      ZOO_ENABLE_ADMIN_SERVER: "no"
+      JVMFLAGS: "-Xmx128m -Xms128m -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=9199 -Dcom.sun.management.jmxremote.rmi.port=9199  -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=127.0.0.1"
+  kafka:
+    image: docker.io/bitnami/kafka:3
+    network_mode: "host"
+    restart: "always"
+    volumes:
+      - kafka:/bitnami
+    environment:
+      - KAFKA_CFG_ZOOKEEPER_CONNECT=localhost:2181
+      - ALLOW_PLAINTEXT_LISTENER=yes
+    depends_on:
+      - zookeeper
+  postgres:
+    image: "timescale/timescaledb:latest-pg14"
+    network_mode: "host"
+    restart: "always"
+    volumes:
+      - postgres:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: "thingsboard"
+      POSTGRES_PASSWORD: "postgres"
+  tb:
+    depends_on:
+      - postgres
+      - kafka
+    image: "thingsboard/tb"
+    network_mode: "host"
+    restart: "always"
+    volumes:
+      - thingsboard-data:/data
+      - thingsboard-logs:/var/log/thingsboard
+    environment:
+      DATABASE_TS_TYPE: "timescale"
+      SQL_TIMESCALE_CHUNK_TIME_INTERVAL: 2592000000 # Number of milliseconds MONTH
+      TB_QUEUE_TYPE: "kafka"
+      TB_KAFKA_BATCH_SIZE: "65536" # default is 16384 - it helps to produce messages much efficiently
+      TB_KAFKA_LINGER_MS: "5" # default is 1
+      TB_QUEUE_KAFKA_MAX_POLL_RECORDS: "2048" # default is 8192
+      TB_SERVICE_ID: "tb-node-0"
+      HTTP_BIND_PORT: "8080"
+      TB_QUEUE_RE_MAIN_PACK_PROCESSING_TIMEOUT_MS: "30000"
+      # Postgres connection
+      SPRING_JPA_DATABASE_PLATFORM: "org.hibernate.dialect.PostgreSQLDialect"
+      SPRING_DRIVER_CLASS_NAME: "org.postgresql.Driver"
+      SPRING_DATASOURCE_URL: "jdbc:postgresql://localhost:5432/thingsboard"
+      SPRING_DATASOURCE_USERNAME: "postgres"
+      SPRING_DATASOURCE_PASSWORD: "postgres"
+      # Java options for 8G instance and JMX enabled
+      JAVA_OPTS: " -Xmx3072M -Xms3072M -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=9999 -Dcom.sun.management.jmxremote.rmi.port=9999 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=127.0.0.1"
+volumes: # to persist data between container restarts or being recreated
+  kafka:
+  zookeeper:
+  postgres:
+  thingsboard-data:
+  thingsboard-logs:
+```
+{: .copy-code}
+
+Performance test docker run
+```bash
+docker run -it --rm --network host --name tb-perf-test \
+  --env REST_URL=http://172.31.29.195:8080 \
+  --env MQTT_HOST=52.50.5.45 \
+  --env DEVICE_END_IDX=5000 \
+  --env MESSAGES_PER_SECOND=5000 \
+  --env ALARMS_PER_SECOND=50 \
+  --env DURATION_IN_SECONDS=86400 \
+  thingsboard/tb-ce-performance-test:latest
+```
+{: .copy-code}
+
+With the Timescale it was hard to process about 2k msg/sec on the same instance as Postgres was able to handle 5k messages.
+The reason is a high CPU usage.
+We made a try to give more resources (m6a.2xlarge), but maximum that Timescale can hit is 5k msg/sec with a lot of free CPU and memory available.
+The "TS timescale" queues were always filled and much more than others.
+Hopefully, the Timescale can do much better, but for the docker image `timescale/timescaledb:latest-pg14` provided by Timescale we are not able reaching the Moon today.
 
 ## Cassandra + Kafka + Postgres performance
 
