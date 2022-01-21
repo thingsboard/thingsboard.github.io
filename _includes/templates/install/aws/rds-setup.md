@@ -8,7 +8,7 @@ but take into account the following requirements:
   The easiest way to achieve this is to deploy the PostgreSQL RDS instance in the same VPC
   and use 'eksctl-thingsboard-cluster-ClusterSharedNodeSecurityGroup-*' security group.
   We assume you locate it in the same VPC in this guide;
-* Make sure you use "thingsboard" as initial database name;
+* Make sure you use **"thingsboard"** as initial database name. If you do not specify a database name, Amazon RDS does not create a database;
 
 And recommendations:
 
