@@ -47,11 +47,13 @@ You'll need to create a config-map with your PEM file, you can do it by calling 
 
 ```
 kubectl create configmap tb-mqtts-config \
-             --from-file=server.pem=YOUR_PEM_FILENAME -o yaml --dry-run=client | kubectl apply -f -
+ --from-file=server.pem=YOUR_PEM_FILENAME \
+ --from-file=mqttserver_key.pem=YOUR_PEM_KEY_FILENAME -o yaml --dry-run=client | kubectl apply -f -
 ```
 {: .copy-code}
 
-where **YOUR_PEM_FILENAME** is the name of your **.pem** file. 
+* where **YOUR_PEM_FILENAME** is the name of your **server certificate file**.
+* where **YOUR_PEM_KEY_FILENAME** is the name of your **server certificate private key file**. 
 
 Then, uncomment all sections in the '{{tbServicesFile}}' file that are marked with "Uncomment the following lines to enable two-way MQTTS".
 

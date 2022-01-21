@@ -10,7 +10,7 @@ but take into account the following requirements:
   We assume you locate it in the same VPC in this guide;
 * Make sure you use "thingsboard" as initial database name;
 
-, and recommendations:
+And recommendations:
 
 * Use 'Production' template for high availability. It enables a lot of useful settings by default;
 * Use 'Provisioned IOPS' for better performance;
@@ -20,6 +20,8 @@ but take into account the following requirements:
 {% include images-gallery.html imageCollection="rdsSetup"%}
 
 Once the database switch to the 'Available' state, navigate to the 'Connectivity and Security' and copy the endpoint value.
-We will refer to it later in this guide using **YOUR_RDS_ENDPOINT_URL**.
 
 {% include images-gallery.html imageCollection="rdsEndpointUrl"%}
+
+Edit "tb-node-db-configmap.yml" and replace **YOUR_RDS_ENDPOINT_URL** and **YOUR_RDS_PASSWORD**.
+
