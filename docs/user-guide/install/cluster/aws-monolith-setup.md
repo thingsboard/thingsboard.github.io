@@ -72,8 +72,6 @@ cd thingsboard-ce-k8s/aws/monolith
 
 ## Step 5. Installation
 
-Edit "tb-node-db-configmap.yml" and replace **YOUR_RDS_ENDPOINT_URL** and **YOUR_RDS_PASSWORD** with the values you have obtained during [step 4](#step-4-amazon-postgresql-db-configuration).
-
 {% include templates/install/aws/eks-installation.md %}
 
 ## Step 6. Starting
