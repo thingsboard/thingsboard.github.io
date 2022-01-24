@@ -12,6 +12,7 @@ description:
 		<a href="http://www.engie.sk/en/kontakt"><object data="/images/customers/clear/engie.svg"></object></a>
 		<a href="/industries/smart-energy/#circutor"><object data="/images/customers/clear/circutor.svg"></object></a>
 		<a href="/industries/telecom/#tektelic"><object data="/images/customers/clear/tektelic.svg"></object></a>
+		<a href="https://www.magenta.at/business/iot/"><object data="/images/customers/clear/magenta.svg"></object></a>
 	</main>
 </section>
 
