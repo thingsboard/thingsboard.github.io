@@ -12,4 +12,4 @@ Once the Redis cluster switch to the 'Available' state, navigate to 'Details' an
 
 {% include images-gallery.html imageCollection="redisEndpointUrl"%}
 
-Edit “tb-redis-configmap.yml” and replace YOUR_REDIS_ENDPOINT_URL_WITHOUT_PORT.
+Edit “tb-redis-configmap.yml” and replace **YOUR_REDIS_ENDPOINT_URL_WITHOUT_PORT**.
