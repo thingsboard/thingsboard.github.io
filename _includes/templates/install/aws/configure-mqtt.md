@@ -20,17 +20,17 @@ To enable the **one-way TLS**:
 
 Use [AWS Certificate Manager](https://aws.amazon.com/certificate-manager/) to create or import SSL certificate. Note your certificate ARN.
 
-Edit the load balancer configuration and replace *YOUR_HTTPS_CERTIFICATE_ARN* with your certificate ARN:
+Edit the load balancer configuration and replace *YOUR_MQTTS_CERTIFICATE_ARN* with your certificate ARN:
 
 ```bash
-nano receipts/https-load-balancer.yml
+nano receipts/mqtts-load-balancer.yml
 ```
 {: .copy-code}
 
 Execute the following command to deploy plain https load balancer:
 
 ```bash
-kubectl apply -f receipts/https-load-balancer.yml
+kubectl apply -f receipts/mqtts-load-balancer.yml
 ```
 {: .copy-code}
 
