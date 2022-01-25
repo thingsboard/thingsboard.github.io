@@ -16,7 +16,7 @@ In addition, there is set of [configurable](/docs/{{docsPrefix}}user-guide/devic
 ##### MQTT Connect
 
 We will use *access token* device credentials in this article and they will be referred to later as **$ACCESS_TOKEN**.
-The application needs to send MQTT CONNECT message with username that contains **$ACCESS_TOKEN**.
+The application needs to send MQTT CONNECT message with username that contains **$ACCESS_TOKEN**. 
 
 Possible return codes, and their reasons during connect sequence:
 

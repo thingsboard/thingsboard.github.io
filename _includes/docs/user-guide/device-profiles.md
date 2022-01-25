@@ -88,13 +88,46 @@ Protocol Buffers, or Protobuf, is a language- and a platform-neutral way of seri
 
 At the moment of writing initial version of these feature (ThingsBoard 3.2), platform supports customizable proto schemas for [telemetry upload](/docs/{{docsPrefix}}reference/mqtt-api/#telemetry-upload-api) 
 and [attribute upload](/docs/{{docsPrefix}}reference/mqtt-api/#publish-attribute-update-to-the-server). 
+
+{% include images-gallery.html imageCollection="mqttProtobufTelemetryAndAttributesSchemas" %}
+
 However, since ThingsBoard 3.3 release, platform also support proto schemas for [Server-side RPC](/docs/{{docsPrefix}}reference/mqtt-api/#server-side-rpc).
+
+{% include images-gallery.html imageCollection="mqttProtobufRpcSchemas" %}
+
 We plan to the add ability to define a schema for attribute updates and other downlink messages in future releases.  
-
-{% include images-gallery.html imageCollection="mqttProtobufSetting" %}
-
-
 ThingsBoard parses the protobuf structures dynamically, that is why, it does not support some protobuf features like OneOf, extensions and maps, yet.
+
+In addition, in the ThingsBoard 3.3.2 release, platform provides the ability to enable advanced settings of MQTT transport message processing:
+
+- Enable compatibility with other payload formats
+
+{% include images-gallery.html imageCollection="mqttProtobufEnableCompatibilityWithOtherPayloadFormats" %}
+
+When enabled, the platform will use a Protobuf payload format by default. If parsing fails, the platform will attempt to use JSON payload format. 
+Useful for backward compatibility during firmware updates. For example, the initial release of the firmware uses Json, while the new release uses Protobuf. 
+During the process of firmware update for the fleet of devices, it is required to support both Protobuf and JSON simultaneously. 
+The compatibility mode introduces slight performance degradation, so it is recommended to disable this mode once all devices are updated.
+
+- Use Json format for default downlink topics
+
+{% include images-gallery.html imageCollection="mqttProtobufUseJsonFormatForDefaultDownlinkTopics" %}  
+ 
+When enabled, the platform will use Json payload format to push attributes and RPC via the following topics: 
+
+ - v1/devices/me/attributes/response/$request_id
+ - v1/devices/me/attributes
+ - v1/devices/me/rpc/request/$request_id
+ - v1/devices/me/rpc/response/$request_id.
+ - 
+This setting does not impact attribute and rpc subscriptions sent using new (v2) topics: 
+ 
+ - v2/a/res/$request_id, 
+ - v2/a, 
+ - v2/r/req/$request_id, 
+ - v2/r/res/$request_id. 
+
+Where $request_id is an integer request identifier.
 
 #### CoAP transport type
 
