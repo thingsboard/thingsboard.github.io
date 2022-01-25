@@ -7,16 +7,34 @@ description: IoT device profiles
 redirect_from: "/docs/user-guide/ui/device-profiles"
 ruleChainSetting:
     0:
-        image: /images/user-guide/device-profile/rule-chain-setting.png
+        image: /images/user-guide/device-profile/rule-chain-setting-ce-1.png
 
 queueNameSetting:
     0:
-        image: /images/user-guide/device-profile/queue-name-setting.png
+        image: /images/user-guide/device-profile/queue-name-setting-ce-1.png
 
 mqttTransportSetting:
     0:
-        image: /images/user-guide/device-profile/transport-setting.png
-        
+        image: /images/user-guide/device-profile/mqtt-transport-setting-ce-1.png
+
+mqttProtobufTelemetryAndAttributesSchemas:
+    0:
+        image: /images/user-guide/device-profile/mqtt-protobuf-telemetry-and-attributes-schemas-ce-1.png
+
+mqttProtobufRpcSchemas:
+    0:
+        image: /images/user-guide/device-profile/mqtt-protobuf-rpc-schemas-ce-1.png
+
+mqttProtobufEnableCompatibilityWithOtherPayloadFormats:
+    0:
+        image: /images/user-guide/device-profile/mqtt-protobuf-enable-compatibility-with-other-payload-formats-ce-1.png
+        title: 'Enable compatibility with other payload formats'
+
+mqttProtobufUseJsonFormatForDefaultDownlinkTopics:
+    0:
+        image: /images/user-guide/device-profile/mqtt-protobuf-use-json-format-for-default-downlink-topics-ce-1.png
+        title: 'Use Json format for default downlink topics'
+
 coapTransportSetting:    
     0:
         image: /images/user-guide/device-profile/coap-transport-setting.png

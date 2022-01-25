@@ -100,16 +100,12 @@ ThingsBoard parses the protobuf structures dynamically, that is why, it does not
 
 In addition, in the ThingsBoard 3.3.2 release, platform provides the ability to enable advanced settings of MQTT transport message processing:
 
-- Enable compatibility with other payload formats
-
 {% include images-gallery.html imageCollection="mqttProtobufEnableCompatibilityWithOtherPayloadFormats" %}
 
 When enabled, the platform will use a Protobuf payload format by default. If parsing fails, the platform will attempt to use JSON payload format. 
 Useful for backward compatibility during firmware updates. For example, the initial release of the firmware uses Json, while the new release uses Protobuf. 
 During the process of firmware update for the fleet of devices, it is required to support both Protobuf and JSON simultaneously. 
 The compatibility mode introduces slight performance degradation, so it is recommended to disable this mode once all devices are updated.
-
-- Use Json format for default downlink topics
 
 {% include images-gallery.html imageCollection="mqttProtobufUseJsonFormatForDefaultDownlinkTopics" %}  
  
