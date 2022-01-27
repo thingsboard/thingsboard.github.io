@@ -36,27 +36,20 @@ We will describe connector configuration file below.
         "type": "tcp",
         "method": "socket",
         "timeout": 35,
-        "byteOrder": "BIG",
+        "byteOrder": "LITTLE",
+        "wordOrder": "LITTLE",
         "retries": true,
         "retryOnEmpty": true,
         "retryOnInvalid": true,
         "pollPeriod": 5000,
         "unitId": 1,
-        "deviceName": "Temp Sensor",
-        "attributesPollPeriod": 5000,
-        "timeseriesPollPeriod": 5000,
-        "sendDataOnlyOnChange": true,
+        "deviceName": "Temperature_Sensor_1",
+        "deviceType": "sensors",
+        "sendDataOnlyOnChange": false,
         "connectAttemptTimeMs": 5000,
         "connectAttemptCount": 5,
         "waitAfterFailedAttemptsMs": 300000,
         "attributes": [
-          {
-            "tag": "string_read",
-            "type": "string",
-            "functionCode": 4,
-            "objectsCount": 4,
-            "address": 1
-          },
           {
             "tag": "bits_read",
             "type": "bits",
@@ -135,7 +128,7 @@ We will describe connector configuration file below.
             "tag": "64uint_read",
             "type": "64uint",
             "functionCode": 4,
-            "objectsCount": 1,
+            "objectsCount": 4,
             "address": 24
           },
           {
@@ -162,14 +155,21 @@ We will describe connector configuration file below.
         ],
         "attributeUpdates": [
           {
-            "tag": "shared_attribute_write",
-            "type": "32int",
-            "functionCode": 6,
-            "objectsCount": 2,
+            "tag": "shared_attribute",
+            "type": "16int",
+            "functionCode": 16,
+            "objectsCount": 1,
             "address": 29
           }
         ],
         "rpc": [
+          {
+            "tag": "shared_attribute_read",
+            "type": "16int",
+            "functionCode": 3,
+            "objectsCount": 1,
+            "address": 29
+          },
           {
             "tag": "setValue",
             "type": "bits",
@@ -207,7 +207,7 @@ We will describe connector configuration file below.
     "host": "127.0.0.1",
     "port": 5026,
     "method": "socket",
-    "deviceName": "Gateway",
+    "deviceName": "Modbus_Slave_Example",
     "deviceType": "default",
     "pollPeriod": 5000,
     "sendDataToThingsBoard": false,
@@ -218,19 +218,19 @@ We will describe connector configuration file below.
         {
           "attributes": [
             {
-              "address": 1,
-              "type": "string",
               "tag": "sm",
+              "type": "string",
               "objectsCount": 1,
+              "address": 1,
               "value": "ON"
             }
           ],
           "timeseries": [
             {
-              "address": 2,
-              "type": "int",
               "tag": "smm",
+              "type": "int",
               "objectsCount": 1,
+              "address": 2,             
               "value": "12334"
             }
           ],
@@ -260,10 +260,10 @@ We will describe connector configuration file below.
         {
           "attributes": [
             {
-              "address": 5,
               "type": "string",
               "tag": "sm",
               "objectsCount": 1,
+              "address": 5,
               "value": "12"
             }
           ],
@@ -280,14 +280,14 @@ We will describe connector configuration file below.
 
 </details>
 
-### Section "master": description and configuration parameters
+## Section "master": description and configuration parameters
 A Modbus Master is used to query data from devices. In order to configure slaves which the master must be queried, it 
 must be specified "master" section that includes the "slaves" list.
 
-#### Subsection "slaves"
+### Subsection "slaves"
 This subsection provides array of configurations for slaves.
 
-##### Slave object settings
+#### Slave object settings
 This configuration contains common connection parameters and settings for data processing.
 
 Due to the nature of preferred way of communication between Modbus master there are 2 options how to configure this part: if using TCP/UDP or via Serial port.  
@@ -303,145 +303,231 @@ There are 2 variants of server section:
 The next part of slave section contains common connection parameters and settings for data processing. 
 Available parameters are as follows:
 
-| **Parameter**                 | **Default value**   | **Description**                                                                            |
+| **Parameter**                 | **Default value**             | **Description**                                                                            |
 |:-|:-|-
-| unitId                        | **1**               | Id of current slave on Modbus.                                                             |
-| deviceName                    | **Temp Sensor**     | Name of the current slave                                                                  |
-| deviceType                    | **default**         | Type of the current slave                                                                  |
-| pollPeriod                    | **5000**            | Period in milliseconds for check the attributes and the telemetry on slave.                |
-| sendDataOnlyOnChange          | **true**            | Sending only if data changed from last check, if no -- data will send after every check    |
-| waitAfterFailedAttemptsMs     | **0**               | A period in milliseconds for a wait before trying to send data to the master               |
-| connectAttemptTimeMs          | **0**               | A period in milliseconds for waiting to connect to the master                              |
-| retryOnEmpty                  | **false**           | Retrying sending data to the master if it is empty                                         |
-| retryOnInvalid                | **false**           | Retrying sending data to the master if it is failed                                        |
+| retries                       | **true**                      | Retrying sending data to the master. The values: true or false                             |
+| retryOnEmpty                  | **true**                      | Retrying sending data to the master if it is empty                                         |
+| retryOnInvalid                | **true**                      | Retrying sending data to the master if it is failed                                        |
+| pollPeriod                    | **5000**                      | Period in milliseconds for check the attributes and the telemetry on slave.                |
+| unitId                        | **1**                         | Id of current slave on Modbus.                                                             |
+| deviceName                    | **Temperature_Sensor_1**      | Name of the current slave                                                                  |
+| deviceType                    | **sensors**                   | Type of the current slave                                                                  |
+| sendDataOnlyOnChange          | **false**                     | Sending only if data changed from last check, if no -- data will send after every check    |
+| connectAttemptTimeMs          | **5000**                      | A period in milliseconds for waiting to connect to the master                              |
+| connectAttemptCount           | **5**                         | The number of connection attempts made through the ThingsBoard gateway                     |
+| waitAfterFailedAttemptsMs     | **300000**                    | A period in milliseconds for a wait before trying to send data to the master               |
 |---
 
-Example:
+<br>
+**Example:**
 
 ```json
-    ...
-    "unitId": 1,
-    "deviceName": "Temp Sensor",
-    "attributesPollPeriod": 5000,
-    "timeseriesPollPeriod": 5000,
-    "sendDataOnlyOnChange": true,
-    "waitAfterFailedAttemptsMs": 0,
-    "connectAttemptTimeMs": 0,
-    "retryOnEmpty": false,
-    "retryOnInvalid": false
+{
+  "master": {
+    "slaves": [
+      {
+        "host": "10.7.1.106",
+        "port": 5021,
+        "type": "tcp",
+        "method": "socket",
+        "timeout": 35,
+        "byteOrder": "LITTLE",
+        "wordOrder": "LITTLE",
+        "retries": true,
+        "retryOnEmpty": true,
+        "retryOnInvalid": true,
+        "pollPeriod": 5000,
+        "unitId": 1,
+        "deviceName": "Temperature_Sensor_1",
+        "deviceType": "sensors",
+        "sendDataOnlyOnChange": false,
+        "connectAttemptTimeMs": 5000,
+        "connectAttemptCount": 5,
+        "waitAfterFailedAttemptsMs": 300000
+      }
+    ]
   }
-]
+}
 ```
 
-###### Key settings for "attributes"
+##### Key settings for "attributes"
 Configuration in this unit provides settings for processing data on Modbus server, which will be interpreted in ThingsBoard platform instance as attribute of device.
 
 | **Parameter** | **Default value**   | **Description**                                                          |
 |:-|:-|-
-| tag           | **test**      | Tag, which will use as attribute key for ThingsBoard platform instance.        |
-| type          | **32int**     | Type of value. [Available data types](#data-types)                             |
-| functionCode  | **4**         | Function to use in processing data. [Modbus functions](#modbus-functions)      |
-| objectsCount  | **1**         | Count of objects to read.                                                      |
-| address       | **1**         | Object address to check.                                                       |
+| tag           | **certificateNumber** | Tag, which will use as attribute key for ThingsBoard platform instance.        |
+| type          | **32int**             | Type of value. [Available data types](#data-types)                             |
+| functionCode  | **4**                 | Function to use in processing data. [Modbus functions](#modbus-functions)      |
+| objectsCount  | **2**                 | Count of objects to read.                                                      |
+| address       | **0**                 | Object address to check.                                                       |
 |---
 
 Optional parameters:  
 **multiplier** - result of reading will be multiplied by value of this parameter.  
 **divider** - result of reading will be divided by value of this parameter.  
 
-Example:
+<br>
+**Example**:
 
 ```json
-        "attributes": [
+        ...
+          "attributes": [
           {
-            "tag": "test",
+            "tag": "certificateNumber",
             "type": "32int",
             "functionCode": 4,
-            "objectsCount": 1,
-            "address": 1
+            "objectsCount": 2,
+            "address": 0
           }
         ],
+        ...
 ```
 
-###### Key settings for "timeseries"
+{:refdef: style="text-align: left;"}
+![image](/images/gateway/gateway-modbus-attributes-1.png)
+{: refdef}
+
+{:refdef: style="text-align: left;"}
+![image](/images/gateway/gateway-modbus-attributes-2.png)
+{: refdef}
+
+##### Key settings for "timeseries"
 Configuration in this unit provides settings for processing data on Modbus server, which will be interpreted in ThingsBoard platform instance as telemetry of device.
 
 | **Parameter** | **Default value**   | **Description**                                                                              |
 |:-|:-|-
-| tag           | **test**     | Tag, which will use as attribute key for ThingsBoard platform instance.                             |
-| type          | **16uint**   | Type of value. [Available data types](#data-types)                                                  |
-| functionCode  | **4**        | Function to use in processing data. [Modbus functions](#modbus-functions)                           |
-| objectsCount  | **1**        | Count of objects to read.                                                                           |
-| address       | **1**        | Object address to check.                                                                            |
+| tag           | **telemetry_1** | Tag, which will use as attribute key for ThingsBoard platform instance.                             |
+| type          | **16uint**      | Type of value. [Available data types](#data-types)                                                  |
+| functionCode  | **4**           | Function to use in processing data. [Modbus functions](#modbus-functions)                           |
+| objectsCount  | **1**           | Count of objects to read.                                                                           |
+| address       | **1**           | Object address to check.                                                                            |
+|               |                 |                                                                                                     |
+| tag           | **telemetry_2** | Tag, which will use as attribute key for ThingsBoard platform instance.                             |
+| type          | **16uint**      | Type of value. [Available data types](#data-types)                                                  |
+| functionCode  | **4**           | Function to use in processing data. [Modbus functions](#modbus-functions)                           |
+| objectsCount  | **1**           | Count of objects to read.                                                                           |
+| address       | **3**           | Object address to check.                                                                            |
 |---
 
-Example:
+<br>
+**Example:**
 
 ```json
+        ...
         "timeseries": [
           {
-            "tag": "test",
+            "tag": "telemetry_1",
             "type": "16uint",
             "functionCode": 4,
             "objectsCount": 1,
             "address": 1
+          },
+          {
+            "tag": "telemetry_2",
+            "type": "16uint",
+            "functionCode": 4,
+            "objectsCount": 1,
+            "address": 3
           }
         ],
+        ...
 ```
 
-###### Key settings for "attributeUpdates"
+{:refdef: style="text-align: left;"}
+![image](/images/gateway/gateway-modbus-timeseries-1.png)
+{: refdef}
+
+{:refdef: style="text-align: left;"}
+![image](/images/gateway/gateway-modbus-timeseries-2.png)
+{: refdef}
+
+##### Key settings for "attributeUpdates"
 Configuration in this unit provides settings for Attribute update requests from ThingsBoard platform instance.
 
 | **Parameter** | **Default value**          | **Description**                                                             |
 |:-|:-|-
-| tag           | **shared_attribute_write** | Shared attribute name.                                                      |
-| type          | **32int**                   | Type of value. [Available data types](#data-types)                         |
-| functionCode  | **6**                      | Function to use in processing data. [Modbus functions](#modbus-functions)   |
-| objectsCount  | **2**                      | Count of objects to write.                                                  |
-| address       | **1**                      | Object address.                                                             |
+| tag           | **maxTemperature**         | Shared attribute name.                                                      |
+| type          | **16int**                  | Type of value. [Available data types](#data-types)                          |
+| functionCode  | **16**                     | Function to use in processing data. [Modbus functions](#modbus-functions)   |
+| objectsCount  | **1**                      | Count of objects to write.                                                  |
+| address       | **29**                     | Object address.                                                             |
 |---
 
-Example:
+<br>
+**Example:**
 
 ```json
+        ...
         "attributeUpdates": [
           {
-            "tag": "shared_attribute_write",
-            "type": "32int",
-            "functionCode": 6,
-            "objectsCount": 2,
-            "address": 1
+            "tag": "maxTemperature",
+            "type": "16int",
+            "functionCode": 16,
+            "objectsCount": 1,
+            "address": 29
           }
         ],
+        ...
 ```
 
-###### Key settings for "rpc"
+{:refdef: style="text-align: left;"}
+![image](/images/gateway/gateway-modbus-attributeUpdates-1.png)
+{: refdef}
+
+For example, create a new attribute “maxTemperature” and give it a value “25”.
+
+{:refdef: style="text-align: left;"}
+![image](/images/gateway/gateway-modbus-attributeUpdates-2.png)
+{: refdef}
+
+{:refdef: style="text-align: left;"}
+![image](/images/gateway/gateway-modbus-attributeUpdates-3.png)
+{: refdef}
+
+##### Key settings for "rpc"
 Configuration in this unit provides settings for RPC requests from ThingsBoard platform instance to device.
 
-| **Parameter** | **Default value**     | **Description**                                                             |
+| **Parameter** | **Default value**       | **Description**                                                             |
 |:-|:-|-
-| tag           | **setValue** | RPC method name.                                                                     |
-| type          | **bits**     | Type of value. [Available data types](#data-types)                                   |
-| functionCode  | **5**        | Function to use in processing data. [Modbus functions](#modbus-functions)            |
-| objectsCount  | **1**        | Count of objects to write.                                                           |
-| address       | **1**        | Object address.                                                                      |
+| tag           | **maxTemperature_read** | RPC method name.                                                                     |
+| type          | **16int**               | Type of value. [Available data types](#data-types)                                   |
+| functionCode  | **3**                   | Function to use in processing data. [Modbus functions](#modbus-functions)            |
+| objectsCount  | **1**                   | Count of objects to write.                                                           |
+| address       | **29**                  | Object address.                                                                      |
 |---
 
-Example:
+<br>
+**Example:**
 
 ```json
+        ...
         "rpc": [
           {
-            "tag": "setValue",
-            "type": "bits",
-            "functionCode": 5,
+            "tag": "maxTemperature_read",
+            "type": "16int",
+            "functionCode": 3,
             "objectsCount": 1,
-            "address": 1
+            "address": 29
           }
         ],
+        ...
 ```
 
-### Section "slave": description and configuration parameters
+{:refdef: style="text-align: left;"}
+![image](/images/gateway/gateway-modbus-rpc-1.png)
+{: refdef}
+
+To send RPC requests to the gateway the one should use RPC Debug Terminal from Control widgets bundle.
+
+Execute "maxTemperature_read" RPC request from the ThingsBoard instance to the device.
+
+In response, you should receive the previously recorded value - "25".
+
+{:refdef: style="text-align: left;"}
+![image](/images/gateway/gateway-modbus-rpc-2.png)
+{: refdef}
+
+## Section "slave": description and configuration parameters
 Starting with version 3.0, Gateway can run as a Modbus slave. In order to configure Gateway as a Modbus slave,
 specify the "slave" section in the configuration file.
 
@@ -455,6 +541,26 @@ There are 2 variants of server section:
 
 {% include content-toggle.html content-toggle-id="modbusConnection" toggle-spec=modbusConnectionType %}
 
+<br>
+**Example:**
+
+```json
+{
+  "slave": {
+    "type": "tcp",
+    "host": "127.0.0.1",
+    "port": 5026,
+    "method": "socket",
+    "deviceName": "Modbus_Slave_Example",
+    "deviceType": "default",
+    "pollPeriod": 5000,
+    "sendDataToThingsBoard": false,
+    "byteOrder": "BIG",
+    "unitId": 0
+  }
+}
+```
+
 You can also specify service information about the device using the "identity" subsection as follows:
 
 | **Parameter**        | **Default value**                                             |
@@ -466,7 +572,7 @@ You can also specify service information about the device using the "identity" s
 | modelName            | **1**                                                         |
 |--
 
-#### Subsection "values"
+### Subsection "values"
 In this section you can specify values that Gateway will save in the store. Each value refers to a specific type of 
 register. There are:
 1. holding_registers
@@ -481,19 +587,19 @@ Depending on which value the register belongs to, you must add it to the appropr
         {
           "attributes": [
             {
-              "address": 1,
-              "type": "string",
               "tag": "sm",
+              "type": "string",
               "objectsCount": 1,
+              "address": 1,
               "value": "ON"
             }
           ],
           "timeseries": [
             {
-              "address": 2,
-              "type": "int",
               "tag": "smm",
+              "type": "int",
               "objectsCount": 1,
+              "address": 2,              
               "value": "12334"
             }
           ],
@@ -518,7 +624,27 @@ Depending on which value the register belongs to, you must add it to the appropr
             }
           ]
         }
-      ],
+      ], 
+        "coils_initializer": [
+        {
+          "attributes": [
+            {
+              "tag": "sm",
+              "type": "string",
+              "objectsCount": 1,
+              "address": 5,
+              "value": "12"
+            }
+         ],
+          "timeseries": [],
+          "attributeUpdates": [],
+          "rpc": []
+        }
+      ]
+    }
+  }
+}
+
 ```
 
 {% capture difference %}
@@ -528,11 +654,11 @@ register, but the configuration of telemetry, attributes, rps, etc. is the same 
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-### Additional information
+## Additional information
 
 Additional information about Modbus functions and supported data types.
 
-#### Modbus functions
+### Modbus functions
 
 The Modbus connector supports the following Modbus functions:
 
@@ -549,7 +675,7 @@ The Modbus connector supports the following Modbus functions:
 | **16**                    | Write Registers                |
 
 
-#### Data types
+### Data types
 
 A list and description of the supported data types for reading/writing data.
 
