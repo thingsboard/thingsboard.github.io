@@ -48,7 +48,8 @@ You'll need to create a config-map with your PEM file, you can do it by calling 
 ```
 kubectl create configmap tb-mqtts-config \
  --from-file=server.pem=YOUR_PEM_FILENAME \
- --from-file=mqttserver_key.pem=YOUR_PEM_KEY_FILENAME -o yaml --dry-run=client | kubectl apply -f -
+ --from-file=mqttserver_key.pem=YOUR_PEM_KEY_FILENAME \
+ -o yaml --dry-run=client | kubectl apply -f -
 ```
 {: .copy-code}
 
