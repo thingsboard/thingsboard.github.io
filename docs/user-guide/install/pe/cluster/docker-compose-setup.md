@@ -191,6 +191,7 @@ Execute the following command to update particular or all services (pull newer d
 ```bash
 ./docker-update-service.sh [SERVICE...]
 ```
+{: .copy-code}
 
 Where:
 

@@ -7,6 +7,8 @@ description: ThingsBoard Professional Edition cluster setup with Kubernetes and 
 
 ---
 
+{% assign docsPrefix = "pe/" %}
+
 * TOC
 {:toc}
 
@@ -80,7 +82,22 @@ and put the license secret parameter:
   value: "PUT_YOUR_LICENSE_SECRET_HERE"
 ```
 
-## Step 6. Configure ThingsBoard database
+## Step 6. Review the architecture page
+
+Starting ThingsBoard v2.2, it is possible to install ThingsBoard cluster using new microservices architecture and docker containers. 
+See [**microservices**](/docs/reference/msa/) architecture page for more details.
+
+## Step 7. Configure Minikube
+
+By default ingress addon is disabled in the Minikube, and available only in cluster providers.
+To enable ingress, please execute the following command:
+
+```
+minikube addons enable ingress
+```
+{: .copy-code} 
+
+## Step 8. Configure ThingsBoard database
 
 Before performing initial installation you can configure the type of database to be used with ThingsBoard.
 In order to set database type change the value of `DATABASE` variable in `.env` file to one of the following:
@@ -90,7 +107,7 @@ In order to set database type change the value of `DATABASE` variable in `.env` 
 
 **NOTE**: According to the database type corresponding kubernetes resources will be deployed (see `postgres.yml`, `cassandra.yml` for details).
 
-## Step 7. Running
+## Step 9. Running
 
 Execute the following command to run installation:
 
@@ -109,6 +126,8 @@ Execute the following command to deploy third-party resources:
 ./k8s-deploy-thirdparty.sh
 ```
 {: .copy-code}
+
+Type **'yes'** when prompted, if you are running ThingsBoard in `high-availability` `DEPLOYMENT_TYPE` for the first time or don't have configured Redis cluster.
 
 Execute the following command to deploy ThingsBoard resources:
  
@@ -195,9 +214,16 @@ and then execute the following commands:
 
 ```
 ./k8s-delete-resources.sh
+```
+{: .copy-code}
+```
 ./k8s-upgrade-tb.sh --fromVersion=[FROM_VERSION]
+```
+{: .copy-code}
+```
 ./k8s-deploy-resources.sh
 ```
+{: .copy-code}
 
 Where:
 

@@ -465,6 +465,12 @@ The parameters are grouped by system components. The list contains the name (add
 
 #### UI parameters
 
+{% if docsPrefix == null %}
+{% assign UI_HELP_BASE_URL_VALUE = "ui" %}
+{% endif %}
+{% if docsPrefix == "pe/" %}
+{% assign UI_HELP_BASE_URL_VALUE = "pe-ui" %}
+{% endif %}
 <table>
     <thead>
         <tr>
@@ -481,8 +487,8 @@ The parameters are grouped by system components. The list contains the name (add
         <tr>
             <td>ui.help.base-url</td>
             <td>UI_HELP_BASE_URL</td>
-            <td>https://raw.githubusercontent.com/thingsboard/thingsboard-ui-help/release-3.3.2</td>
-            <td>Base url for UI help assets</td>
+            <td>https://raw.githubusercontent.com/thingsboard/thingsboard-{{UI_HELP_BASE_URL_VALUE}}-help/release-3.3.3</td>
+            <td>Base URL for UI Help Assets. This is a link to the raw files hosted in the dedicated <a href="https://github.com/thingsboard/thingsboard-ui-help">GitHub project</a>. You may fork the project, update the content of the files and put your own project link. The project should be public in order for any platfrom UI users to access help resources.</td>
         </tr>
     </tbody>
 </table>
@@ -1226,6 +1232,10 @@ The parameters are grouped by system components. The list contains the name (add
     </tbody>
 </table>
 
+{% if docsPrefix == "pe/" %}
+{% include docs/user-guide/install/platform-integrations-and-reports-parameters.md %}
+{% endif %}
+
 #### Cache parameters
 
 <table>
@@ -1253,6 +1263,18 @@ The parameters are grouped by system components. The list contains the name (add
           <td>true</td>
           <td>Cache attribute request in <b>caffeine</b> or <b>redis</b></td>
       </tr>
+    </tbody>
+</table>
+
+#### Caffeine parameters
+
+<table>
+    <thead>
+        <tr>
+            <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
+        </tr>
+    </thead>
+    <tbody>
       <tr>
           <td>caffeine.specs.relations.timeToLiveInMinutes</td>
           <td></td>
@@ -1314,6 +1336,18 @@ The parameters are grouped by system components. The list contains the name (add
           <td><b>assets</b> cache max size</td>
       </tr>
       <tr>
+          <td class="item item-pe">caffeine.specs.downlink.timeToLiveInMinutes</td>
+          <td></td>
+          <td>1440</td>
+          <td><b>downlink</b> cache TTL</td>
+      </tr>
+      <tr>
+          <td class="item item-pe">caffeine.specs.downlink.maxSize</td>
+          <td></td>
+          <td>100000</td>
+          <td><b>downlink</b> cache max size</td>
+      </tr>
+      <tr>
           <td>caffeine.specs.entityViews.timeToLiveInMinutes</td>
           <td></td>
           <td>1440</td>
@@ -1324,6 +1358,42 @@ The parameters are grouped by system components. The list contains the name (add
           <td></td>
           <td>10000</td>
           <td><b>entityViews</b> cache max size</td>
+      </tr>
+      <tr>
+          <td class="item item-pe">caffeine.specs.roles.timeToLiveInMinutes</td>
+          <td></td>
+          <td>1440</td>
+          <td><b>roles</b> cache TTL</td>
+      </tr>
+      <tr>
+          <td class="item item-pe">caffeine.specs.roles.maxSize</td>
+          <td></td>
+          <td>10000</td>
+          <td><b>roles</b> cache max size</td>
+      </tr>
+      <tr>
+          <td class="item item-pe">caffeine.specs.permissions.timeToLiveInMinutes</td>
+          <td></td>
+          <td>1440</td>
+          <td><b>permissions</b> cache TTL</td>
+      </tr>
+      <tr>
+          <td class="item item-pe">caffeine.specs.permissions.maxSize</td>
+          <td></td>
+          <td>10000</td>
+          <td><b>permissions</b> cache max size</td>
+      </tr>
+      <tr>
+          <td class="item item-pe">caffeine.specs.owners.timeToLiveInMinutes</td>
+          <td></td>
+          <td>1440</td>
+          <td><b>owners</b> cache TTL</td>
+      </tr>
+      <tr>
+          <td class="item item-pe">caffeine.specs.owners.maxSize</td>
+          <td></td>
+          <td>100000</td>
+          <td><b>owners</b> cache max size</td>
       </tr>
       <tr>
           <td>caffeine.specs.claimDevices.timeToLiveInMinutes</td>
@@ -1348,6 +1418,18 @@ The parameters are grouped by system components. The list contains the name (add
           <td></td>
           <td>10000</td>
           <td><b>securitySettings</b> cache max size</td>
+      </tr>
+      <tr>
+          <td class="item item-pe">caffeine.specs.remoteIntegrations.timeToLiveInMinutes</td>
+          <td></td>
+          <td>1440</td>
+          <td><b>remoteIntegrations</b> cache TTL</td>
+      </tr>
+      <tr>
+          <td class="item item-pe">caffeine.specs.remoteIntegrations.maxSize</td>
+          <td></td>
+          <td>10000</td>
+          <td><b>remoteIntegrations</b> cache max size</td>
       </tr>
       <tr>
           <td>caffeine.specs.tenantProfiles.timeToLiveInMinutes</td>
@@ -1433,152 +1515,12 @@ The parameters are grouped by system components. The list contains the name (add
           <td>10000</td>
           <td><b>edges</b> cache max size</td>
       </tr>
-      <tr>
-          <td>redis.connection.type</td>
-          <td></td>
-          <td>standalone</td>
-          <td>Redis connection type - <b>standalone</b> or <b>cluster</b></td>
-      </tr>
-      <tr>
-          <td>redis.standalone.host</td>
-          <td>REDIS_HOST</td>
-          <td>localhost</td>
-          <td>Redis connection host</td>
-      </tr>
-      <tr>
-          <td>redis.standalone.port</td>
-          <td>REDIS_PORT</td>
-          <td>6379</td>
-          <td>Redis connection port</td>
-      </tr>
-      <tr>
-          <td>redis.standalone.useDefaultClientConfig</td>
-          <td>REDIS_USE_DEFAULT_CLIENT_CONFIG</td>
-          <td>true</td>
-          <td>Redis connection port</td>
-      </tr>
-      <tr>
-          <td>redis.standalone.clientName</td>
-          <td>REDIS_CLIENT_NAME</td>
-          <td>standalone</td>
-          <td>This value may be used only if you used not default ClientConfig</td>
-      </tr>
-      <tr>
-          <td>redis.standalone.connectTimeout</td>
-          <td>REDIS_CLIENT_CONNECT_TIMEOUT</td>
-          <td>30000</td>
-          <td>This value may be used only if you used not default ClientConfig</td>
-      </tr>
-      <tr>
-          <td>redis.standalone.readTimeout</td>
-          <td>REDIS_CLIENT_READ_TIMEOUT</td>
-          <td>60000</td>
-          <td>This value may be used only if you used not default ClientConfig</td>
-      </tr>
-      <tr>
-          <td>redis.standalone.usePoolConfig</td>
-          <td>REDIS_CLIENT_USE_POOL_CONFIG</td>
-          <td>false</td>
-          <td>This value may be used only if you used not default ClientConfig</td>
-      </tr>
-        <tr>
-            <td>redis.cluster.nodes</td>
-            <td>REDIS_NODES</td>
-            <td></td>
-            <td>Comma-separated list of "host:port" pairs to bootstrap from</td>
-        </tr>
-        <tr>
-            <td>redis.cluster.max-redirects</td>
-            <td>REDIS_MAX_REDIRECTS</td>
-            <td>12</td>
-            <td>Maximum number of redirects to follow when executing commands across the cluster</td>
-        </tr>
-        <tr>
-            <td>redis.cluster.useDefaultPoolConfig</td>
-            <td>REDIS_USE_DEFAULT_POOL_CONFIG</td>
-            <td>true</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>redis.db</td>
-            <td>REDIS_DB</td>
-            <td>0</td>
-            <td>Redis database index</td>
-        </tr>
-        <tr>
-            <td>redis.password</td>
-            <td>REDIS_PASSWORD</td>
-            <td></td>
-            <td>Redis password</td>
-        </tr>
-        <tr>
-            <td>redis.pool_config.maxTotal</td>
-            <td>REDIS_POOL_CONFIG_MAX_TOTAL</td>
-            <td>128</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>redis.pool_config.maxIdle</td>
-            <td>REDIS_POOL_CONFIG_MAX_IDLE</td>
-            <td>128</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>redis.pool_config.minIdle</td>
-            <td>REDIS_POOL_CONFIG_MIN_IDLE</td>
-            <td>16</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>redis.pool_config.testOnBorrow</td>
-            <td>REDIS_POOL_CONFIG_TEST_ON_BORROW</td>
-            <td>true</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>redis.pool_config.testOnReturn</td>
-            <td>REDIS_POOL_CONFIG_TEST_ON_RETURN</td>
-            <td>true</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>redis.pool_config.testWhileIdle</td>
-            <td>REDIS_POOL_CONFIG_TEST_WHILE_IDLE</td>
-            <td>true</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>redis.pool_config.minEvictableMs</td>
-            <td>REDIS_POOL_CONFIG_MIN_EVICTABLE_MS</td>
-            <td>60000</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>redis.pool_config.evictionRunsMs</td>
-            <td>REDIS_POOL_CONFIG_EVICTION_RUNS_MS</td>
-            <td>30000</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>redis.pool_config.maxWaitMills</td>
-            <td>REDIS_POOL_CONFIG_MAX_WAIT_MS</td>
-            <td>60000</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>redis.pool_config.numberTestsPerEvictionRun</td>
-            <td>REDIS_POOL_CONFIG_NUMBER_TESTS_PER_EVICTION_RUN</td>
-            <td>3</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>redis.pool_config.blockWhenExhausted</td>
-            <td>REDIS_POOL_CONFIG_BLOCK_WHEN_EXHAUSTED</td>
-            <td>true</td>
-            <td></td>
-        </tr>
     </tbody>
 </table>
+
+#### Redis connection parameters
+
+{% include docs/user-guide/install/redis-config.md %}
 
 #### Check new version updates parameters
 
@@ -1808,25 +1750,25 @@ The parameters are grouped by system components. The list contains the name (add
     </thead>
     <tbody>
     <tr>
-        <td>audit_log.enabled</td>
+        <td>audit-log.enabled</td>
         <td>AUDIT_LOG_ENABLED</td>
         <td>true</td>
         <td>Enable/disable audit log functionality.</td>
     </tr>
     <tr>
-        <td>audit_log.by_tenant_partitioning</td>
+        <td>audit-log.by_tenant_partitioning</td>
         <td>AUDIT_LOG_BY_TENANT_PARTITIONING</td>
         <td>MONTHS</td>
         <td>Specify partitioning size for audit log by tenant id storage. Example MINUTES, HOURS, DAYS, MONTHS</td>
     </tr>
     <tr>
-        <td>audit_log.default_query_period</td>
+        <td>audit-log.default_query_period</td>
         <td>AUDIT_LOG_DEFAULT_QUERY_PERIOD</td>
         <td>30</td>
         <td>Number of days as history period if startTime and endTime are not specified</td>
     </tr>
     <tr>
-        <td>audit_log.logging_level.mask."device"</td>
+        <td>audit-log.logging-level.mask."device"</td>
         <td>AUDIT_LOG_MASK_DEVICE</td>
         <td>W</td>
         <td>Device logging levels. Allowed values: <b>OFF</b> (disable), <b>W</b> (log write operations), <b>RW</b> (log
@@ -1834,7 +1776,7 @@ The parameters are grouped by system components. The list contains the name (add
         </td>
     </tr>
     <tr>
-        <td>audit_log.logging_level.mask."asset"</td>
+        <td>audit-log.logging-level.mask."asset"</td>
         <td>AUDIT_LOG_MASK_ASSET</td>
         <td>W</td>
         <td>Asset logging levels. Allowed values: <b>OFF</b> (disable), <b>W</b> (log write operations), <b>RW</b> (log
@@ -1842,7 +1784,7 @@ The parameters are grouped by system components. The list contains the name (add
         </td>
     </tr>
     <tr>
-        <td>audit_log.logging_level.mask."dashboard"</td>
+        <td>audit-log.logging-level.mask."dashboard"</td>
         <td>AUDIT_LOG_MASK_DASHBOARD</td>
         <td>W</td>
         <td>Dashboard logging levels. Allowed values: <b>OFF</b> (disable), <b>W</b> (log write operations), <b>RW</b>
@@ -1850,7 +1792,7 @@ The parameters are grouped by system components. The list contains the name (add
         </td>
     </tr>
     <tr>
-        <td>audit_log.logging_level.mask."customer"</td>
+        <td>audit-log.logging-level.mask."customer"</td>
         <td>AUDIT_LOG_MASK_CUSTOMER</td>
         <td>W</td>
         <td>Customer logging levels. Allowed values: <b>OFF</b> (disable), <b>W</b> (log write operations), <b>RW</b>
@@ -1858,7 +1800,7 @@ The parameters are grouped by system components. The list contains the name (add
         </td>
     </tr>
     <tr>
-        <td>audit_log.logging_level.mask."user"</td>
+        <td>audit-log.logging-level.mask."user"</td>
         <td>AUDIT_LOG_MASK_USER</td>
         <td>W</td>
         <td>User logging levels. Allowed values: <b>OFF</b> (disable), <b>W</b> (log write operations), <b>RW</b> (log
@@ -1866,7 +1808,7 @@ The parameters are grouped by system components. The list contains the name (add
         </td>
     </tr>
     <tr>
-        <td>audit_log.logging_level.mask."rule_chain"</td>
+        <td>audit-log.logging-level.mask."rule_chain"</td>
         <td>AUDIT_LOG_MASK_RULE_CHAIN</td>
         <td>W</td>
         <td>Rule Chain logging levels. Allowed values: <b>OFF</b> (disable), <b>W</b> (log write operations), <b>RW</b>
@@ -1874,7 +1816,7 @@ The parameters are grouped by system components. The list contains the name (add
         </td>
     </tr>
     <tr>
-        <td>audit_log.logging_level.mask."alarm"</td>
+        <td>audit-log.logging-level.mask."alarm"</td>
         <td>AUDIT_LOG_MASK_ALARM</td>
         <td>W</td>
         <td>Alarm logging levels. Allowed values: <b>OFF</b> (disable), <b>W</b> (log write operations), <b>RW</b> (log
@@ -1882,7 +1824,42 @@ The parameters are grouped by system components. The list contains the name (add
         </td>
     </tr>
     <tr>
-        <td>audit_log.logging_level.mask."entity_view"</td>
+        <td class="item item-pe">audit-log.logging-level.mask."integration"</td>
+        <td>AUDIT_LOG_MASK_INTEGRATION</td>
+        <td>W</td>
+        <td>Integration logging levels. Allowed values: <b>OFF</b> (disable), <b>W</b> (log write operations), <b>RW</b> (log
+            read and write operations)</td>
+    </tr>
+    <tr>
+        <td class="item item-pe">audit-log.logging-level.mask."converter"</td>
+        <td>AUDIT_LOG_MASK_CONVERTER</td>
+        <td>W</td>
+        <td>Converter logging levels. Allowed values: <b>OFF</b> (disable), <b>W</b> (log write operations), <b>RW</b> (log
+            read and write operations)</td>
+    </tr>
+    <tr>
+        <td class="item item-pe">audit-log.logging-level.mask."entity_group"</td>
+        <td>AUDIT_LOG_MASK_ENTITY_GROUP</td>
+        <td>W</td>
+        <td>Entity Group logging levels. Allowed values: <b>OFF</b> (disable), <b>W</b> (log write operations), <b>RW</b> (log
+            read and write operations)</td>
+    </tr>
+    <tr>
+        <td class="item item-pe">audit-log.logging-level.mask."scheduler_event"</td>
+        <td>AUDIT_LOG_MASK_SCHEDULER_EVENT</td>
+        <td>W</td>
+        <td>Scheduler Event logging levels. Allowed values: <b>OFF</b> (disable), <b>W</b> (log write operations), <b>RW</b> (log
+            read and write operations)</td>
+    </tr>
+    <tr>
+        <td class="item item-pe">audit-log.logging-level.mask."blob_entity"</td>
+        <td>AUDIT_LOG_MASK_BLOB_ENTITY</td>
+        <td>W</td>
+        <td>Blob Entity logging levels. Allowed values: <b>OFF</b> (disable), <b>W</b> (log write operations), <b>RW</b> (log
+            read and write operations)</td>
+    </tr>
+    <tr>
+        <td>audit-log.logging-level.mask."entity_view"</td>
         <td>AUDIT_LOG_MASK_ENTITY_VIEW</td>
         <td>W</td>
         <td>Entity View logging levels. Allowed values: <b>OFF</b> (disable), <b>W</b> (log write operations), <b>RW</b>
@@ -1890,7 +1867,7 @@ The parameters are grouped by system components. The list contains the name (add
         </td>
     </tr>
     <tr>
-        <td>audit_log.logging_level.mask."device_profile"</td>
+        <td>audit-log.logging-level.mask."device_profile"</td>
         <td>AUDIT_LOG_MASK_DEVICE_PROFILE</td>
         <td>W</td>
         <td>Device Profile logging levels. Allowed values: <b>OFF</b> (disable), <b>W</b> (log write operations),
@@ -1898,7 +1875,7 @@ The parameters are grouped by system components. The list contains the name (add
         </td>
     </tr>
     <tr>
-        <td>audit_log.logging_level.mask."edge"</td>
+        <td>audit-log.logging-level.mask."edge"</td>
         <td>AUDIT_LOG_MASK_EDGE</td>
         <td>W</td>
         <td>Edge logging levels. Allowed values: <b>OFF</b> (disable), <b>W</b> (log write operations), <b>RW</b> (log
@@ -1906,7 +1883,7 @@ The parameters are grouped by system components. The list contains the name (add
         </td>
     </tr>
     <tr>
-        <td>audit_log.logging_level.mask."tb_resource"</td>
+        <td>audit-log.logging-level.mask."tb_resource"</td>
         <td>AUDIT_LOG_MASK_RESOURCE</td>
         <td>W</td>
         <td>ThingsBoard resource logging levels. Allowed values: <b>OFF</b> (disable), <b>W</b> (log write operations),
@@ -1914,7 +1891,7 @@ The parameters are grouped by system components. The list contains the name (add
         </td>
     </tr>
     <tr>
-        <td>audit_log.logging_level.mask."ota_package"</td>
+        <td>audit-log.logging-level.mask."ota_package"</td>
         <td>AUDIT_LOG_MASK_OTA_PACKAGE</td>
         <td>W</td>
         <td>Ota package logging levels. Allowed values: <b>OFF</b> (disable), <b>W</b> (log write operations), <b>RW</b>
@@ -1922,13 +1899,27 @@ The parameters are grouped by system components. The list contains the name (add
         </td>
     </tr>
     <tr>
-        <td>audit_log.sink.type</td>
+        <td class="item item-pe">audit-log.logging-level.mask."role"</td>
+        <td>AUDIT_LOG_MASK_ROLE</td>
+        <td>W</td>
+        <td>Role logging levels. Allowed values: <b>OFF</b> (disable), <b>W</b> (log write operations), <b>RW</b> (log
+            read and write operations)</td>
+    </tr>
+    <tr>
+        <td class="item item-pe">audit-log.logging-level.mask."group_permission"</td>
+        <td>AUDIT_LOG_MASK_GROUP_PERMISSION</td>
+        <td>W</td>
+        <td>Group Permission logging levels. Allowed values: <b>OFF</b> (disable), <b>W</b> (log write operations), <b>RW</b> (log
+            read and write operations)</td>
+    </tr>
+    <tr>
+        <td>audit-log.sink.type</td>
         <td>AUDIT_LOG_SINK_TYPE</td>
         <td>none</td>
         <td>Type of external sink system to forward audit logs records. Possible options: none, elasticsearch</td>
     </tr>
     <tr>
-        <td>audit_log.sink.index_pattern</td>
+        <td>audit-log.sink.index_pattern</td>
         <td>AUDIT_LOG_SINK_INDEX_PATTERN</td>
         <td>@{TENANT}_AUDIT_LOG_@{DATE}</td>
         <td>Name of the index where audit logs stored. Index name could contain next placeholders (not mandatory):
@@ -1937,38 +1928,37 @@ The parameters are grouped by system components. The list contains the name (add
         </td>
     </tr>
     <tr>
-        <td>audit_log.sink.date_format</td>
+        <td>audit-log.sink.date_format</td>
         <td>AUDIT_LOG_SINK_DATE_FORMAT</td>
         <td>YYYY.MM.DD</td>
-        <td>Date format. Details of the pattern could be found <a href="https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html">in this
-            link</a></td>
+        <td>Date format. Details of the pattern could be found <a href="https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html">in this link</a></td>
     </tr>
     <tr>
-        <td>audit_log.sink.scheme_name</td>
+        <td>audit-log.sink.scheme_name</td>
         <td>AUDIT_LOG_SINK_SCHEME_NAME</td>
         <td>http</td>
         <td>http or https</td>
     </tr>
     <tr>
-        <td>audit_log.sink.host</td>
+        <td>audit-log.sink.host</td>
         <td>AUDIT_LOG_SINK_HOST</td>
         <td>localhost</td>
         <td>Host of external sink system</td>
     </tr>
     <tr>
-        <td>audit_log.sink.port</td>
+        <td>audit-log.sink.port</td>
         <td>AUDIT_LOG_SINK_PORT</td>
         <td>9200</td>
         <td>Port of external sink system</td>
     </tr>
     <tr>
-        <td>audit_log.sink.user_name</td>
+        <td>audit-log.sink.user_name</td>
         <td>AUDIT_LOG_SINK_USER_NAME</td>
         <td></td>
         <td>Username used to access external sink system</td>
     </tr>
     <tr>
-        <td>audit_log.sink.password</td>
+        <td>audit-log.sink.password</td>
         <td>AUDIT_LOG_SINK_PASSWORD</td>
         <td></td>
         <td>Password used to access external sink system</td>
@@ -2100,6 +2090,7 @@ The parameters are grouped by system components. The list contains the name (add
 
 #### Transport parameters
 
+{% assign JSON_TYPE_CAST_ENABLED_VALUE = "true" %}
 {% include docs/user-guide/install/transport-sessions-json-client_side_rpc-api_enabled-log-stats-parameters.md %}
 
 ##### Local HTTP transport parameters
@@ -2304,8 +2295,20 @@ The parameters are grouped by system components. The list contains the name (add
     </tbody>
 </table>
 
+{% if docsPrefix == "pe/" %}
+{% include docs/user-guide/install/license-parameters.md %}
+{% endif %}
+
 #### Swagger parameters
 
+{% if docsPrefix == null %}
+{% assign SWAGGER_DESCRIPTION_VALUE = "open-source" %}
+{% assign SWAGGER_CONTACT_NAME_VALUE = "ThingsBoard team" %}
+{% endif %}
+{% if docsPrefix == "pe/" %}
+{% assign SWAGGER_DESCRIPTION_VALUE = "Professional Edition" %}
+{% assign SWAGGER_CONTACT_NAME_VALUE = "ThingsBoard, Inc." %}
+{% endif %}
 <table>
     <thead>
       <tr>
@@ -2340,13 +2343,13 @@ The parameters are grouped by system components. The list contains the name (add
         <tr>
             <td>swagger.description</td>
             <td>SWAGGER_DESCRIPTION</td>
-            <td>ThingsBoard open-source IoT platform REST API documentation.</td>
+            <td>ThingsBoard {{SWAGGER_DESCRIPTION_VALUE}} IoT platform REST API documentation.</td>
             <td>The description on the API doc UI page</td>
         </tr>
         <tr>
             <td>swagger.contact.name</td>
             <td>SWAGGER_CONTACT_NAME</td>
-            <td>ThingsBoard team</td>
+            <td>{{SWAGGER_CONTACT_NAME_VALUE}}</td>
             <td>The contact name on the API doc UI page</td>
         </tr>
         <tr>
@@ -2383,6 +2386,28 @@ The parameters are grouped by system components. The list contains the name (add
 </table>
 
 #### Queue parameters
+
+<table>
+    <thead>
+      <tr>
+          <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>queue.type</td>
+            <td>TB_QUEUE_TYPE</td>
+            <td>in-memory</td>
+            <td>In-memory or kafka (Apache Kafka) or aws-sqs (AWS SQS) or pubsub (PubSub) or service-bus (Azure Service Bus) or rabbitmq (RabbitMQ)</td>
+        </tr>
+        <tr>
+            <td>queue.in_memory.stats.print-interval-ms</td>
+            <td>TB_QUEUE_IN_MEMORY_STATS_PRINT_INTERVAL_MS</td>
+            <td>60000</td>
+            <td>For debug lvl</td>
+        </tr>
+    </tbody>
+</table>
 {% include docs/user-guide/install/queue-parameters.md %}
 
 #### ThingsBoard event parameters
@@ -2405,6 +2430,9 @@ The parameters are grouped by system components. The list contains the name (add
 
 #### ThingsBoard service parameters
 
+{% if docsPrefix == "pe/" %}
+{% assign TB_SERVICE_TYPE_VALUE = " or tb-integration" %}
+{% endif %}
 <table>
     <thead>
         <tr>
@@ -2416,7 +2444,7 @@ The parameters are grouped by system components. The list contains the name (add
             <td>service.type</td>
             <td>TB_SERVICE_TYPE</td>
             <td>monolith</td>
-            <td>Tb Queue service type. Can be: monolith or tb-core or tb-rule-engine</td>
+            <td>Allowed values: monolith or tb-core or tb-rule-engine{{TB_SERVICE_TYPE_VALUE}}</td>
         </tr>
         <tr>
             <td>service.id</td>
@@ -2586,6 +2614,8 @@ The parameters are grouped by system components. The list contains the name (add
     </tbody>
 </table>
 
+#### Redis connection parameters
+
 {% include docs/user-guide/install/redis-config.md %}
 
 #### HTTP server parameters
@@ -2596,6 +2626,22 @@ The parameters are grouped by system components. The list contains the name (add
 {% include docs/user-guide/install/transport-sessions-json-client_side_rpc-api_enabled-log-stats-parameters.md %}
 
 #### Queue parameters
+
+<table>
+    <thead>
+      <tr>
+          <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>queue.type</td>
+            <td>TB_QUEUE_TYPE</td>
+            <td>kafka</td>
+            <td>In-memory or kafka (Apache Kafka) or aws-sqs (AWS SQS) or pubsub (PubSub) or service-bus (Azure Service Bus) or rabbitmq (RabbitMQ)</td>
+        </tr>
+    </tbody>
+</table>
 {% include docs/user-guide/install/queue-parameters.md %}
 
 {% include docs/user-guide/install/service-metrics-management-parameters-for-mqtt-http-snmp-lwm2m-coap.md %}
@@ -2668,6 +2714,8 @@ The parameters are grouped by system components. The list contains the name (add
     </tbody>
 </table>
 
+#### Redis connection parameters
+
 {% include docs/user-guide/install/redis-config.md %}
 
 #### MQTT server parameters
@@ -2678,6 +2726,22 @@ The parameters are grouped by system components. The list contains the name (add
 {% include docs/user-guide/install/transport-sessions-json-client_side_rpc-api_enabled-log-stats-parameters.md %}
 
 #### Queue parameters
+
+<table>
+    <thead>
+      <tr>
+          <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>queue.type</td>
+            <td>TB_QUEUE_TYPE</td>
+            <td>kafka</td>
+            <td>In-memory or kafka (Apache Kafka) or aws-sqs (AWS SQS) or pubsub (PubSub) or service-bus (Azure Service Bus) or rabbitmq (RabbitMQ)</td>
+        </tr>
+    </tbody>
+</table>
 {% include docs/user-guide/install/queue-parameters.md %}
 
 {% include docs/user-guide/install/service-metrics-management-parameters-for-mqtt-http-snmp-lwm2m-coap.md %}
@@ -2750,6 +2814,8 @@ The parameters are grouped by system components. The list contains the name (add
     </tbody>
 </table>
 
+#### Redis connection parameters
+
 {% include docs/user-guide/install/redis-config.md %}
 
 #### COAP server parameters
@@ -2759,6 +2825,22 @@ The parameters are grouped by system components. The list contains the name (add
 {% include docs/user-guide/install/transport-sessions-json-client_side_rpc-api_enabled-log-stats-parameters.md %}
 
 #### Queue parameters
+
+<table>
+    <thead>
+      <tr>
+          <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>queue.type</td>
+            <td>TB_QUEUE_TYPE</td>
+            <td>kafka</td>
+            <td>In-memory or kafka (Apache Kafka) or aws-sqs (AWS SQS) or pubsub (PubSub) or service-bus (Azure Service Bus) or rabbitmq (RabbitMQ)</td>
+        </tr>
+    </tbody>
+</table>
 {% include docs/user-guide/install/queue-parameters.md %}
 
 {% include docs/user-guide/install/service-metrics-management-parameters-for-mqtt-http-snmp-lwm2m-coap.md %}
@@ -2831,6 +2913,8 @@ The parameters are grouped by system components. The list contains the name (add
     </tbody>
 </table>
 
+#### Redis connection parameters
+
 {% include docs/user-guide/install/redis-config.md %}
 
 #### LWM2M server parameters
@@ -2841,6 +2925,22 @@ The parameters are grouped by system components. The list contains the name (add
 {% include docs/user-guide/install/transport-sessions-json-client_side_rpc-api_enabled-log-stats-parameters.md %}
 
 #### Queue parameters
+
+<table>
+    <thead>
+        <tr>
+            <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>queue.type</td>
+            <td>TB_QUEUE_TYPE</td>
+            <td>kafka</td>
+            <td>In-memory or kafka (Apache Kafka) or aws-sqs (AWS SQS) or pubsub (PubSub) or service-bus (Azure Service Bus) or rabbitmq (RabbitMQ)</td>
+        </tr>
+    </tbody>
+</table>
 {% include docs/user-guide/install/queue-parameters.md %}
 
 {% include docs/user-guide/install/service-metrics-management-parameters-for-mqtt-http-snmp-lwm2m-coap.md %}
@@ -2872,24 +2972,24 @@ The parameters are grouped by system components. The list contains the name (add
 #### Server Parameters
 
 <table>
-  <thead>
-      <tr>
-          <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>server.address</td>
-          <td>HTTP_BIND_ADDRESS</td>
-          <td>0.0.0.0</td>
-          <td>Server bind address (has no effect if web-environment is disabled)</td>
-      </tr>
-      <tr>
-          <td>server.port</td>
-          <td>HTTP_BIND_PORT</td>
-          <td>8083</td>
-          <td>Server bind port (has no effect if web-environment is disabled)</td>
-      </tr>
+    <thead>
+        <tr>
+            <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>server.address</td>
+            <td>HTTP_BIND_ADDRESS</td>
+            <td>0.0.0.0</td>
+            <td>Server bind address (has no effect if web-environment is disabled)</td>
+        </tr>
+        <tr>
+            <td>server.port</td>
+            <td>HTTP_BIND_PORT</td>
+            <td>8083</td>
+            <td>Server bind port (has no effect if web-environment is disabled)</td>
+        </tr>
     </tbody>
 </table>
 
@@ -2898,20 +2998,22 @@ The parameters are grouped by system components. The list contains the name (add
 #### Cache Parameter
 
 <table>
-  <thead>
-      <tr>
-          <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>cache.type</td>
-          <td>CACHE_TYPE</td>
-          <td>redis</td>
-          <td></td>
-      </tr>
+    <thead>
+        <tr>
+            <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>cache.type</td>
+            <td>CACHE_TYPE</td>
+            <td>redis</td>
+            <td></td>
+        </tr>
     </tbody>
 </table>
+
+#### Redis connection parameters
 
 {% include docs/user-guide/install/redis-config.md %}
 
@@ -2923,6 +3025,22 @@ The parameters are grouped by system components. The list contains the name (add
 {% include docs/user-guide/install/transport-sessions-json-client_side_rpc-api_enabled-log-stats-parameters.md %}
 
 #### Queue parameters
+
+<table>
+    <thead>
+      <tr>
+          <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>queue.type</td>
+            <td>TB_QUEUE_TYPE</td>
+            <td>kafka</td>
+            <td>In-memory or kafka (Apache Kafka) or aws-sqs (AWS SQS) or pubsub (PubSub) or service-bus (Azure Service Bus) or rabbitmq (RabbitMQ)</td>
+        </tr>
+    </tbody>
+</table>
 {% include docs/user-guide/install/queue-parameters.md %}
 
 {% include docs/user-guide/install/service-metrics-management-parameters-for-mqtt-http-snmp-lwm2m-coap.md %}

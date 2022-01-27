@@ -13,6 +13,7 @@ You can check the installation using the following command (using Command Prompt
 ```bash
 java -version
 ```
+{: .copy-code}
 
 Expected command output is:
 

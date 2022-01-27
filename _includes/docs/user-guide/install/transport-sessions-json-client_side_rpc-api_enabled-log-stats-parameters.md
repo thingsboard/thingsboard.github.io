@@ -18,6 +18,24 @@
             <td>Interval of periodic check for expired sessions and report of the changes to session last activity time.</td>
         </tr>
         <tr>
+            <td class="item item-pe">transport.rate_limits.enabled</td>
+            <td>TB_TRANSPORT_RATE_LIMITS_ENABLED</td>
+            <td>false</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td class="item item-pe">transport.rate_limits.tenant</td>
+            <td>TB_TRANSPORT_RATE_LIMITS_TENANT</td>
+            <td>1000:1,20000:60</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td class="item item-pe">transport.rate_limits.device</td>
+            <td>TB_TRANSPORT_RATE_LIMITS_DEVICE</td>
+            <td>10:1,300:60</td>
+            <td></td>
+        </tr>
+        <tr>
             <td>transport.json.type_cast_enabled</td>
             <td>JSON_TYPE_CAST_ENABLED</td>
             <td>{{JSON_TYPE_CAST_ENABLED_VALUE}}</td>

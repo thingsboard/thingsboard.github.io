@@ -1,16 +1,10 @@
 <table>
     <thead>
-      <tr>
-          <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
-      </tr>
+        <tr>
+            <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
+        </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>queue.type</td>
-            <td>TB_QUEUE_TYPE</td>
-            <td>kafka</td>
-            <td>In-memory or kafka (Apache Kafka) or aws-sqs (AWS SQS) or pubsub (PubSub) or service-bus (Azure Service Bus) or rabbitmq (RabbitMQ)</td>
-        </tr>
         <tr>
             <td>queue.kafka.bootstrap.servers</td>
             <td>TB_KAFKA_SERVERS</td>
@@ -687,7 +681,7 @@
             <td>queue.rule-engine.queues.processing-strategy.type</td>
             <td>TB_QUEUE_RE_MAIN_PROCESSING_STRATEGY_TYPE</td>
             <td>SKIP_ALL_FAILURES</td>
-            <td>SKIP_ALL_FAILURES, RETRY_ALL, RETRY_FAILED, RETRY_TIMED_OUT, RETRY_FAILED_AND_TIMED_OUT</td>
+            <td>SKIP_ALL_FAILURES, SKIP_ALL_FAILURES_AND_TIMED_OUT, RETRY_ALL, RETRY_FAILED, RETRY_TIMED_OUT, RETRY_FAILED_AND_TIMED_OUT</td>
         </tr>
         <tr>
             <td>queue.rule-engine.queues.processing-strategy.retries</td>
@@ -765,7 +759,7 @@
             <td>queue.rule-engine.queues.processing-strategy.type</td>
             <td>TB_QUEUE_RE_HP_PROCESSING_STRATEGY_TYPE</td>
             <td>RETRY_FAILED_AND_TIMED_OUT</td>
-            <td>SKIP_ALL_FAILURES, RETRY_ALL, RETRY_FAILED, RETRY_TIMED_OUT, RETRY_FAILED_AND_TIMED_OUT</td>
+            <td>SKIP_ALL_FAILURES, SKIP_ALL_FAILURES_AND_TIMED_OUT, RETRY_ALL, RETRY_FAILED, RETRY_TIMED_OUT, RETRY_FAILED_AND_TIMED_OUT</td>
         </tr>
         <tr>
             <td>queue.rule-engine.queues.processing-strategy.retries</td>
@@ -843,7 +837,7 @@
             <td>queue.rule-engine.queues.processing-strategy.type</td>
             <td>TB_QUEUE_RE_SQ_PROCESSING_STRATEGY_TYPE</td>
             <td>RETRY_FAILED_AND_TIMED_OUT</td>
-            <td>SKIP_ALL_FAILURES, RETRY_ALL, RETRY_FAILED, RETRY_TIMED_OUT, RETRY_FAILED_AND_TIMED_OUT</td>
+            <td>SKIP_ALL_FAILURES, SKIP_ALL_FAILURES_AND_TIMED_OUT, RETRY_ALL, RETRY_FAILED, RETRY_TIMED_OUT, RETRY_FAILED_AND_TIMED_OUT</td>
         </tr>
         <tr>
             <td>queue.rule-engine.queues.processing-strategy.retries</td>

@@ -120,17 +120,31 @@ See this [guide](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/tutorials/queues
   
 Processing Strategy controls how failed or timed out messages are re-processed. There are 5 available strategies:
 
- * SKIP_ALL_FAILURES - simply ignore all failures and timeouts. Will cause messages to be "lost". 
- For example, if DB is down, the messages will not be persisted but will be still marked as "acknowledged" and deleted from queue.
- This strategy is created mostly for backward-compatibility with previous releases and development/demo environments.
- * RETRY_ALL - retry all messages from processing pack. 
- If 1 out of 100 messages will fail, strategy will still reprocess (resubmit to Rule Engine) 100 messages. 
- * RETRY_FAILED - retry all failed messages from processing pack. 
- If 1 out of 100 messages will fail, strategy will reprocess(resubmit to Rule Engine) only 1 message. 
- Timed-out messages will not be reprocessed.
- * RETRY_TIMED_OUT - retry all timed-out messages from processing pack. 
- If 1 out of 100 messages will timeout, strategy will reprocess(resubmit to Rule Engine) only 1 message.
- Failed messages will not be reprocessed.
+ * SKIP_ALL_FAILURES - simply ignore all failures. Will cause failed messages to be "lost". 
+   For example, if DB is down, the messages will not be persisted but will be still marked as "acknowledged" and deleted from queue.
+   This strategy is created mostly for backward-compatibility with previous releases and development/demo environments. 
+   The timed out messages that was already submitted to the rule chains for processing will not be canceled. 
+   This means that the rule engine will still attempt to process them despite the timeout. 
+ * SKIP_ALL_FAILURES_AND_TIMED_OUT - simply ignore all failures and timeouts. Will cause failed and timed out messages to be "lost".
+   For example, if DB is down, the messages will not be persisted but will be still marked as "acknowledged" and deleted from queue.
+   The timed out messages that was already submitted to the rule chains for processing will be canceled. 
+   The rule nodes will not start processing of the canceled message. However, the rule node that started to process the message before the message was canceled is not interrupted.
+ * RETRY_ALL - retry all messages from processing pack. Let's assume the processing pack contains 100 messages. 
+   If 1 out of 100 messages will fail, strategy will still reprocess (resubmit to Rule Engine) 100 messages.
+   Each time the strategy resubmit the messages to the rule engine, those messages are a binary copy of original messages.
+   All messages from a previous submission are canceled before resubmission.
+   The rule nodes will not start processing of the canceled message. However, the rule node that started to process the message before the message was canceled is not interrupted.
+ * RETRY_FAILED - retry all failed messages from processing pack. Let's assume the processing pack contains 100 messages.
+   If 1 out of 100 messages will fail, strategy will reprocess(resubmit to Rule Engine) only 1 message. Timed-out messages will not be reprocessed.
+   Each time the strategy resubmit the messages to the rule engine, those messages are a binary copy of original messages.
+   All messages from a previous submission are canceled before resubmission.
+   The rule nodes will not start processing of the canceled message. However, the rule node that started to process the message before the message was canceled is not interrupted.  
+ * RETRY_TIMED_OUT - retry all timed-out messages from processing pack. Let's assume the processing pack contains 100 messages.
+   If 1 out of 100 messages will timeout, strategy will reprocess(resubmit to Rule Engine) only 1 message. Failed messages will not be reprocessed.
+   Each time the strategy resubmit the messages to the rule engine, those messages are a binary copy of original messages.
+   All messages from a previous submission are canceled before resubmission.
+   The rule nodes will not start processing of the canceled message. However, the rule node that started to process the message before the message was canceled is not interrupted.
+
  * RETRY_FAILED_AND_TIMED_OUT - retry all failed and timed-out messages from processing pack.
  
 All "RETRY*" strategies support important configuration parameters:  

@@ -9,21 +9,6 @@ The product roadmap listed below covers only main features and does not cover sm
 
 ## ThingsBoard CE
 
-### v3.3.3
-
-* Nested Rule Chains;
-  Add ability to reuse rule chain as a logical unit in another rule chain.
-  At the moment, user may forward the message to other rule chain, but there is not way to process the output.
-  We plan to add special "output" rule node which will allow to return the result of processing to outer rule chain.
-  Multiple "output" rule nodes will be supported.
-* Migration to Angular 12;
-* Separate pages for entity details. This is a basis for numerous UX improvements:
-    * open device profile details from device details;
-    * open related entity from the "relations" tab, etc;
-* Improve UI navigation by persisting page link in the URL;
-* Migration of docs and docker compose scripts to use Cassandra 4;
-* Fix windows installation;
-
 ### v3.4
 
 * Synchronization with Git version control.
