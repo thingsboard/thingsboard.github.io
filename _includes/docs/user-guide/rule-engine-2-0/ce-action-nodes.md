@@ -546,6 +546,16 @@ Message Metadata must contain **ts** field. This field identifies timestamp in m
 Also, if Message Metadata contains **TTL** field, its value is used for timeseries data expiration, otherwise **TTL** 
 from Node Configuration is used.
 
+**Since TB Version 3.3.3** you can enable 'useServerTs' param to use the timestamp of the message processing instead of the timestamp from the message. 
+Useful for all sorts of sequential processing if you merge messages from multiple sources (devices, assets, etc).
+
+In the case of sequential processing, the platform guarantees that the messages are processed in the order of their submission to the queue. 
+However, the timestamp of the messages originated by multiple devices/servers may be unsynchronized long before they are pushed to the queue. 
+The DB layer has certain optimizations to ignore the updates of the "attributes" and "latest values" tables if the new record has a timestamp that is older than the previous record. 
+
+So, to make sure that all the messages will be processed correctly, one should enable this parameter for sequential message processing scenarios.
+
+
 **Expected Message Payload example:**
 {% highlight json %}
 {  
