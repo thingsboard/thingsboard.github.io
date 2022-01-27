@@ -26,17 +26,17 @@ In order to connect your IoT gateway to ThingsBoard server, you need to provisio
 See [device authentication options](/docs/user-guide/device-credentials/) for more details.
 
 Login as tenant administrator. Use [default credentials](/docs/samples/demo-account/#demo-tenant) in case of local ThingsBoard server.
-Open **Devices** and click on big red "+" button in the bottom right corner.
+Open **Devices** and click on "+" button in the top right corner.
 
 {:refdef: style="text-align: center;"}
 ![image](/images/gateway/device-page.png)
 {: refdef} 
 
-Populate your gateway name and select "Is gateway" checkbox.
+Populate your gateway name and select "Is gateway" checkbox. Click "Add".
 
 {:refdef: style="text-align: center;"}
 ![image](/images/gateway/device-add.png)
-{: refdef} 
+{: refdef}
 
 **NOTE:** Gateway and device names should be unique in the scope of a tenant.
 
@@ -93,14 +93,20 @@ This step depends on chosen type of installation. If you install thingsboard-gat
 ```bash
 systemctl restart thingsboard-gateway.service
 ```
+{: .copy-code}
+
 In other case, if you have installed the gateway as python module - you should just rerun gateway process.   
 
 ## Step 5: Review gateway statistics
 
 Open the web UI of your ThingsBoard server and review statistics that is uploaded from your thingsboard gateway.  
 Login as Tenant Administrator and open **Devices** page. Click on the gateway device card.   
-Open "Latest Telemetry" tab and review following statistics: "**SummaryReceived**", "**SummarySent**" and parameters that provide information about every connector.  
-All values should be set to "0".  
+Open "Latest Telemetry" tab and review following statistics: "**eventsProduced**", "**eventsSent**" and parameters that provide information about every connector.  
+All values should be set to "0".
+
+{:refdef: style="text-align: center;"}
+![image](/images/gateway/review-gateway-statistics.png)
+{: refdef}
 
 ## Step 6: Add connectors to the main configuration file 
  
