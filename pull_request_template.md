@@ -1,10 +1,12 @@
-## Security Checklist
+## PR Checklist
 
-- [ ] Authorization has been implemented across these changes
-- [ ] Injection has been prevented (parameterized queries, no eval or system calls)
-- [ ] Any web UI is escaping output (to prevent XSS)
-- [ ] Sensitive data has been identified and is being protected properly
+- [ ] No broken links found using link-checker.
 
-## Additional Deploy Steps
+## Linkchecker
 
-This section lists any additional steps to deploy the PR
+Use the following command to check the broken links. Don't forget to substitute YOUR_IP with the internal IP address of your machine. 
+
+```bash
+docker run linkchecker/linkchecker http://YOUR_IP:4000/
+```
+
