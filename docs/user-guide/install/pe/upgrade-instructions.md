@@ -356,6 +356,8 @@ Do nothing, postgresql is already running.
 
 **NOTE**: These upgrade steps are applicable for ThingsBoard version 3.3.2PE. In order to upgrade to 3.3.3PE you need to [**upgrade to 3.3.2PE first**](/docs/user-guide/install/pe/upgrade-instructions/#ubuntucentos-332).
 
+{% include templates/install/tb-333-update.md %}
+
 #### ThingsBoard PE package download
 
 {% capture tabspec %}thingsboard-download-3-3-3
@@ -397,6 +399,8 @@ $ sudo service thingsboard start
 ### Windows {#windows-333}
 
 **NOTE**: These upgrade steps are applicable for ThingsBoard version 3.3.2PE. In order to upgrade to 3.3.3PE you need to [**upgrade to 3.3.2PE first**](/docs/user-guide/install/pe/upgrade-instructions/#windows-333).
+
+{% include templates/install/tb-333-update.md %}
 
 #### ThingsBoard PE package download
 
