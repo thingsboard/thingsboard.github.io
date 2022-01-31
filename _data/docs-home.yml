@@ -147,6 +147,8 @@ toc:
       path: /docs/user-guide/entity-views/
     - title: API Limits
       path: /docs/user-guide/api-limits/
+    - title: PSM and eDRX Support
+      path: /docs/user-guide/psm/
     - title: Bulk Provisioning
       new: true
       path: /docs/user-guide/bulk-provisioning/

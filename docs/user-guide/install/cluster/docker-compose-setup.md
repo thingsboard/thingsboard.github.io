@@ -10,7 +10,7 @@ description: ThingsBoard IoT platform cluster setup with Docker Compose guide
 * TOC
 {:toc}
 
-{% assign docsPrefix = "ce/" %}
+
 
 This guide will help you to setup ThingsBoard in cluster mode using Docker Compose tool. 
 

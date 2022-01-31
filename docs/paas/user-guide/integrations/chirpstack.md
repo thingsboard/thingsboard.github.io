@@ -35,16 +35,12 @@ chirpstack_integration:
 
 uplink_message:
     0:
-        image: /images/chirpstack/chirpstack-integration-uplink-event.png
+        image: /images/chirpstack/integration-uplink-message-event.png
 
 device_groups:
     0:
         image: /images/chirpstack/groups-created-device.png
         title: Device **Device_1** was created
-
-    1:
-        image: /images/chirpstack/created-device-data.png
-        title: Received data for device **Device_1**  
 
 uplink_events:
     0:
