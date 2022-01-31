@@ -114,7 +114,7 @@ The Device Management and Service Enablement Interface is used by the LwM2M Serv
 
 The Information Reporting Interface is used by a LwM2M Server to observe any changes in a Resource on a registered LwM2M Client, receiving notifications when new values are available. This observation relationship is initiated by sending an "Observe" or "Observe-Composite" operation to the L2M2M Client for an Object, an Object Instance or a Resource. An observation ends when a "Cancel Observation" or "Cancel Observation-Composite" operation is performed.
 
-We will use the [Debug Terminal]([RPC](/docs/{{docsPrefix}}user-guide/rpc/) )  widget to send commands to the device.
+We will use the Debug Terminal widget to send commands to the device.
 
 
 To execute attribute - oriented commands there are two ways to specify the target resource: by Resource ID and by the Key.
