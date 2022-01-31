@@ -7,7 +7,7 @@
 * TOC
 {:toc}
 
-Mobile actions is a special subtype of [widget actions](/docs{{docsPrefix}}/user-guide/ui/widget-actions/) allowing to use various mobile device functions
+Mobile actions is a special subtype of [widget actions](/docs/{{docsPrefix}}user-guide/ui/widget-actions/) allowing to use various mobile device functions
 like take photo, scan QR code, get device location, make phone call and so on. Result of mobile action can be processed by special java-script functions allowing
 you to perform further processing, for ex. save taken photo or device location to entity attributes, use scanned QR code for device claiming, etc.  
 

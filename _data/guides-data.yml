@@ -91,13 +91,7 @@
       keywords: install cluster kubernetes k8s minikube
       video: false
       pe: false
-    - path: /docs/user-guide/install/cluster/aws-cluster-setup
-      title: Cluster setup with Kubernetes and KubeOne on AWS cloud infrstructure
-      subtitle: Learn how to setup ThingsBoard cluster with Kubernetes on AWS cloud infrstructure.
-      keywords: install cluster kubernetes k8s aws cloud
-      video: false
-      pe: false
-    - path: /docs/user-guide/install/cluster/aws-eks-cluster-setup
+    - path: /docs/user-guide/install/cluster/aws-eks-setup/
       title: Cluster setup with Kubernetes on AWS EKS cloud infrstructure
       subtitle: Learn how to setup ThingsBoard cluster with Kubernetes on AWS cloud infrstructure.
       keywords: install cluster kubernetes k8s aws cloud

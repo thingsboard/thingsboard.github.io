@@ -1,9 +1,9 @@
 ---
-layout: docwithnav-pe
+layout: docwithnav-paas
 title: Dart API Client
 description: ThingsBoard PE API client library for Dart developers
 
 ---
  
-{% assign docsPrefix = "pe/" %}
+{% assign docsPrefix = "paas/" %}
 {% include docs/pe/reference/python-rest-client.md %}
