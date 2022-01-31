@@ -11,7 +11,7 @@ description: ThingsBoard IoT platform upgrade instructions
 
 <ul id="markdown-toc">
     <li>
-      <a href="#upgrading-to-332" id="markdown-toc-upgrading-to-332">Upgrading to 3.3.3</a>
+      <a href="#upgrading-to-333" id="markdown-toc-upgrading-to-333">Upgrading to 3.3.3</a>
       <ul>
           <li>
               <a href="#ubuntucentos-333" id="markdown-toc-ubuntucentos-333">Ubuntu/CentOS</a>
