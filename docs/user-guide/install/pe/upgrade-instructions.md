@@ -10,7 +10,7 @@ description: ThingsBoard PE IoT platform upgrade instructions
 
 <ul id="markdown-toc">
   <li>
-        <a href="#prepare-for-upgrading-thingsboard-centos-ubuntu" id="prepare-for-upgrading-thingsboard-centos-ubuntu">Prepare for upgrading ThingsBoard (CentOS, Ubuntu)</a>
+        <a href="#prepare-for-upgrading-thingsboard-centos-ubuntu" id="markdown-toc-prepare-for-upgrading-thingsboard-centos-ubuntu">Prepare for upgrading ThingsBoard (CentOS, Ubuntu)</a>
   </li>
   <li>
       <a href="#upgrading-to-333pe" id="markdown-toc-upgrading-to-333pe">Upgrading to 3.3.3PE</a>
