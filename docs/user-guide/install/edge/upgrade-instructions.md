@@ -250,7 +250,7 @@ docker-compose up
 
 #### ThingsBoard Edge package download
 
-Download ThingsBoard Edge package for Windows: [tb-edge-windows-3.3.3edge.zip](https://dist.thingsboard.io/tb-edge-windows-3.3.3.zip).
+Download ThingsBoard Edge package for Windows: [tb-edge-windows-3.3.3.zip](https://dist.thingsboard.io/tb-edge-windows-3.3.3.zip).
 
 #### ThingsBoard Edge service upgrade
 
