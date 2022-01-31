@@ -5,6 +5,7 @@ ThingsBoard supports following protocols for device connectivity:
  - **[CoAP](/docs/{{docsPrefix}}reference/coap-api)**
  - **[HTTP](/docs/{{docsPrefix}}reference/http-api)**
  - **[LwM2M](/docs/{{docsPrefix}}reference/lwm2m-api)**
+ - **[SNMP](/docs/{{docsPrefix}}reference/snmp-api)**
 
 See protocol specific documentation for more details. More protocols are coming soon.
 

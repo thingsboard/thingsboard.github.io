@@ -81,5 +81,5 @@ release:
   ce_full_ver: 3.3.3
   pe_ver: 3.3.3pe
   pe_full_ver: 3.3.3PE
-  edge_ver: 3.3.1edge
-  edge_full_ver: 3.3.1EDGE
+  edge_ver: 3.3.3
+  edge_full_ver: 3.3.3EDGE
