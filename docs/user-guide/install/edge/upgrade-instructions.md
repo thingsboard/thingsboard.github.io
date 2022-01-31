@@ -204,7 +204,7 @@ services:
 
 Execute the following command to start upgrade process:
 ```
-docker-compose -f docker-compose-update.yml up
+docker-compose -f docker-compose-upgrade.yml up
 ```
 {: .copy-code}
 
@@ -215,7 +215,7 @@ Ctrl + C
 
 Execute the following command to stop TB Edge upgrade container:
 ```
-docker-compose -f docker-compose-update.yml stop
+docker-compose -f docker-compose-upgrade.yml stop
 ```
 {: .copy-code}
 
