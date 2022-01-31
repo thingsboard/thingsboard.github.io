@@ -377,8 +377,14 @@ See example of successful RPC message below:
 
 ##### TTL configuration
 
+{% if docsPrefix == 'paas/' %}
+
+The time-to-live of persistent RPC depends on the subscription plan. See 'RPC TTL' parameter in [Subscriptions](/products/paas/subscription/) for more details.
+
+{% else %}
 The time-to-live of persistent RPC is configured by the System Administrator in the [Tenant Profile](/docs/{{docsPrefix}}user-guide/tenant-profiles/) using **RPC TTL days configuration** parameter.
 The System administrator may completely disable the cleanup of the persistent RPC from the database using **SQL_TTL_RPC_ENABLED** [configuration](/docs/{{docsPrefix}}user-guide/install/config/) parameter.
-The frequency of RPC cleanup procedure is controlled using **SQL_RPC_TTL_CHECKING_INTERVAL** parameters which is set to 2 hours by defailt.
+The frequency of RPC cleanup procedure is controlled using **SQL_RPC_TTL_CHECKING_INTERVAL** parameters which is set to 2 hours by default.
 
 {% include images-gallery.html imageCollection="tenant-profile-rpc" %}
+{% endif %}

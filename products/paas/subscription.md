@@ -182,6 +182,14 @@ Please see table below to compare the API limits of the subscription plans. The 
           <td>How many days to store alarms in the database.</td>
       </tr>
       <tr>
+          <td>RPC TTL</td>
+          <td>60 days</td>
+          <td>180 days</td>
+          <td>365 days</td>
+          <td>365 days</td>
+          <td>How many days to store persistent RPC in the database.</td>
+      </tr>
+      <tr>
           <td>Alarms</td>
           <td>200</td>
           <td>4K</td>
