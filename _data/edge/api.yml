@@ -17,4 +17,6 @@ toc:
     path: /docs/edge/reference/http-api/
   - title: LWM2M Device API
     path: /docs/edge/reference/lwm2m-api/
+  - title: SNMP Transport API
+    path: /docs/edge/reference/snmp-api/
     new: true
