@@ -11,7 +11,7 @@
 
 ## Overview
 TheThingsNetwork is LoRaWAN network designed for connecting your devices using LoRaWAN stack. 
-After integrating TheThingsNetwork with the Thingsboard, you can connect, communicate, process and visualize data from devices in the Thingsboard IoT platform.
+After integrating TheThingsNetwork with Thingsboard, you can connect, communicate, process and visualize data from devices in the Thingsboard IoT platform.
 
 
 ## TheThingsNetwork setup
@@ -20,7 +20,7 @@ After integrating TheThingsNetwork with the Thingsboard, you can connect, commun
 The first step is to create an **application** in TheThingsNetwork console. Go to [console](https://console.thethingsnetwork.org/){:target="_blank"}, open 
 **Applications** section, press **add application** button and fill required fields.
 
-- **Application ID** - tb_applciation
+- **Application ID** - tb_platform
 - **Handler registration** - ttn-handler-eu
 
 Handler registration - used to identify region where application will be registered. In our example it will be *eu* region.
@@ -70,13 +70,13 @@ Next step is a Device creation in the TTN. Open **Devices** page and press **reg
 Press **Register** button.
 
 
-## Integration with the Thingsboard
-In the TheThingsNetwork, we already make all required configuration (register device, decoder function, and register application). Now we can start configuring the Thingsboard.
+## Integration with Thingsboard
+We made all required configurations in the TheThingsNetwork (register application, add decoder function and register device). Now we can start configuring Thingsboard.
 
 ##### Thingsboard Uplink Data Converter
 
-First, we need to create Uplink Data converter that will be used for receiving messaged from the TTN. The converter should transform incoming payload into the required message format.
-Message must contains **deviceName** and **deviceType**. Those fields are used for submitting data to the correct device. If a device was not found then new device will be created.
+First, we need to create an Uplink Data Converter which will be used for receiving messages from the TTN. The converter should transform incoming payload into the required message format.
+Message must contain **deviceName** and **deviceType**. Those fields are used for submitting data to the correct device. If a device was not found a new device will be created.
 Here is how payload from TheThingsNetwork will look like:
 {% highlight json %}
 {
@@ -95,7 +95,7 @@ Here is how payload from TheThingsNetwork will look like:
 }
 {% endhighlight %}
 
-We will take **dev_id** and map it to the **deviceName** and **app_id** map to the **deviceType**. But you can use another mapping in your specific use cases.
+We will take **dev_id** and map it to the **deviceName** and **app_id** to the **deviceType**. But you can use another mapping, which fits your specific use cases.
 Also, we will take the value of the **temperature** field and use it as a device telemetry. 
 
 Go to **Data Converters** and create new **uplink** Converter with this function: {% highlight javascript %}
@@ -128,8 +128,8 @@ return result;
 
 
 ##### Thingsboard Downlink Data Converter
-For sending Downlink messages from the Thingsboard to the device inside TTN, we need to define downlink Converter.
-In general, output from Downlink converter should have the following structure:
+For sending Downlink messages from Thingsboard to the device inside TTN, we need to define a Downlink Converter.
+In general, the output from the Downlink Converter should have the following structure:
 {% highlight json %}
 {
     "contentType": "JSON",
@@ -141,7 +141,7 @@ In general, output from Downlink converter should have the following structure:
 {% endhighlight %}
 
 - **contentType** - defines how data will be encoded {TEXT \| JSON \| BINARY}
-- **data** - actual data that will be sent to the device in TTN. More details about API can be foind in this [TTN API](https://www.thethingsnetwork.org/docs/applications/mqtt/api.html){:target="_blank"}
+- **data** - actual data that will be sent to the device in TTN. More details about API can be found in this [TTN API](https://www.thethingsnetwork.org/docs/applications/mqtt/api.html){:target="_blank"}
 - **metadata** - in this object you should place correct devId value that will be used to identify target device in TTN
 
 Go to **Data Converters** and create new **downlink** Converter with this function: {% highlight javascript %}
@@ -165,13 +165,13 @@ var result = {
 return result;
 {% endhighlight %}
 
-This converter will take **version** field from the incoming message and add it is a payload field in the outbound message. Destination device is a **thermostat_a** device.
+This converter will take the **version** field from the incoming message and add it as a payload field in the outbound message. The destination device is a **thermostat_a** device.
 
 ![image](/images/user-guide/integrations/ttn/tb-downlink-converter.png)
 
 ##### TTN Integration
 
-Next we will create Integration with TheThingsNetwork inside the Thingsboard. Open **Integrations** section and add new Integration with type
+Next we will create the integration with TheThingsNetwork inside Thingsboard. Open **Integrations** section and add new Integration with type
 **TheThingsNetwork**
 
 - Name: ttn_integration
@@ -188,20 +188,20 @@ Next we will create Integration with TheThingsNetwork inside the Thingsboard. Op
 
 ##### Validate Uplink Messages
 Lets verify our integration. Go to the device **thermostat_a** page in TheThingsNetwork. Scroll to the **Simulate Uplink** section.
-Our device will publish temperature **0F** (15). So enter **0F** into payload field and press **Send** button.
+Our device will publish temperature **0F** (15). So enter **0F** into the payload field and press the **Send** button.
 
 ![image](/images/user-guide/integrations/ttn/ttn-send-payload.png)
 
-Go to **Device Group** -> **All** -> **thermostat_a** - you can see that 
+In Thingsboard go to **Device Group** -> **All** -> **thermostat_a** - here you can see that 
 
-- new device was registered in the thingsboard
-- In the **Latest Telemetry** section you will see that last submitted temperature = 15.
+- a new device was registered in Thingsboard
+- in the **Latest Telemetry** section you will see that the last submitted temperature equals 15.
 
 ![image](/images/user-guide/integrations/ttn/tb-device-telemetry.png)
 
 ##### Validate Downlink Messages
-For testing Downlink Messages, we will update our Root Rule Chain to send downlink message when device attribute is changed.
-Open and edit **Root Rule Chain**. Add **Integration Downlink** Action node and connect it with the **Message Type Switch** Node using relation 
+For testing Downlink Messages, we will update our Root Rule Chain to send downlink message when a device attribute is changed.
+Open and edit **Root Rule Chain**. Add **Integration Downlink** Action node and connect it with the **Message Type Switch** Node using the relation 
 **Attributes Updated**
  
 ![image](/images/user-guide/integrations/ttn/tb-add-rule-downlink.png)
@@ -210,13 +210,13 @@ Open and edit **Root Rule Chain**. Add **Integration Downlink** Action node and 
 
 Save Changes.
 
-Go to **Device Group** -> **All** -> **thermostat_a** -> attributes section. We will add **Shared attribute** with name **version** and
-value **v.0.11**
+Go to **Device Group** -> **All** -> **thermostat_a** -> attributes section. We will add **Shared attribute** with the name **version** and
+the value **v.0.11**
 
 ![image](/images/user-guide/integrations/ttn/tb-add-version.png)
 
-By making this step, we triggered downlink message to the device **thermostat_a** and this message should contains version field value. 
-Open TTN Console, navigate to **tb_platfrom** application, to the section **Data**. And we see that Downlink message was received.
+By making this step, we triggered a downlink message to the device **thermostat_a** and this message should contain the versions field value. 
+Open TTN Console, navigate to **tb_platform** application, to the section **Data**. And we see that the Downlink message was received.
 
 ![image](/images/user-guide/integrations/ttn/ttn-downlink-verified.png)
 
