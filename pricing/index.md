@@ -686,8 +686,8 @@ defaultActivateSelectProduct: true
                             </a>
                         </div>
                         <div class="pricing-square-item">1 year of software updates</div>
-                        <div class="pricing-square-item">Unlimited number of Devices</div>
-                        <div class="pricing-square-item">Unlimited number of Assets</div>
+                        <div class="pricing-square-item">Up to 1000 Devices</div>
+                        <div class="pricing-square-item">Up to 1000 Assets</div>
                         <div class="pricing-square-item" data-faq-id="subscription-support">
                             Custom <b>SLA</b>
                         </div>
