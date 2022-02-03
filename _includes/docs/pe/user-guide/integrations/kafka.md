@@ -13,16 +13,9 @@ In some scenarios, Kafka can be used instead of a message queue, in cases where 
 
 ![image](/images/user-guide/integrations/kafka/Kafka_main.png)
 
+## Required environment
+Before you start setting up the integration, you should already have a prepared Broker Kafka server. This is either a local installation or a cloud solution. If you haven't installed Kafka Broker yet, there is an example of basic installation of Kafka Broker locally on [our site](https://thingsboard.io/docs/user-guide/install/pe/ubuntu/?ubuntuThingsboardQueue=kafka#step-5-choose-thingsboard-queue-service). If you need to use a cloud solution, then you can consider [Kafka Confluent](https://www.confluent.io/), on the basis of which examples will be built in this guide.
 
-
-## Choose Kafka Usage Type
-
-{% capture installationTypes %}
-Kafka<br/><small>Common installation </small>%,%common%,%templates/integration/kafka/kafka-common-installation%br%
-Confluent Cloud<br/><small>Cloud solution</small>%,%confluent%,%/templates/integration/kafka/kafka-confluent%br%
-Kafka in docker container<br/><small>Separate deployment environment</small>%,%docker%,%templates/integration/kafka/kafka-docker-installation{% endcapture %}
-
-{% include content-toggle.html content-toggle-id="installationType" toggle-spec=installationTypes %}
 ## Create Uplink Converter
 
 Before creating the integration, you need to create an Uplink converter in Data converters. Uplink is necessary in order to convert the incoming data from the device into the required format for displaying them in ThingsBoard. Click on the **“plus”** and on **“Create new converter”**. To view the events, enable Debug. In the function decoder field, specify a script to parse and transform data.
