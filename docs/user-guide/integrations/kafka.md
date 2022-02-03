@@ -32,26 +32,6 @@ Kafka_confluent_create_integration:
     0:
         image: /images/user-guide/integrations/kafka/confluent/create_integration/kafka_create_integration_main.png
 
-Kafka_confluent_registration:
-    0:
-        image: /images/user-guide/integrations/kafka/confluent/registration/kafka_registration_1.png
-    1:
-        image: /images/user-guide/integrations/kafka/confluent/registration/kafka_registration_2.png
-    2:
-        image: /images/user-guide/integrations/kafka/confluent/registration/kafka_registration_3.png
-
-Kafka_cloud_environment:
-    0:
-        image: /images/user-guide/integrations/kafka/confluent/create_integration/kafka_cloud_environment_1.png
-    1:
-        image: /images/user-guide/integrations/kafka/confluent/create_integration/kafka_cloud_environment_2.png
-    2:
-        image: /images/user-guide/integrations/kafka/confluent/create_integration/kafka_cloud_environment_3.png
-    3:
-        image: /images/user-guide/integrations/kafka/confluent/create_integration/kafka_cloud_environment_4.png
-    4:
-        image: /images/user-guide/integrations/kafka/confluent/create_integration/kafka_cloud_environment_5.png
-
 Kafka_cloud_bootstrap_0:
     0:
         image: /images/user-guide/integrations/kafka/confluent/create_integration/kafka_work_with_cluster_0.png
