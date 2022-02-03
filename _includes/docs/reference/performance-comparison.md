@@ -1,14 +1,38 @@
 * TOC
 {:toc}
+  
+ThingsBoard has been run in production by numerous companies in both [monolithic](/docs/{{docsPrefix}}reference/monolithic/) 
+and [microservices](/docs/{{docsPrefix}}reference/msa/) deployment modes.
+This article describes performance of a single ThingsBoard server in the most popular usage scenarios. 
+It is useful to understand how ThingsBoard scales vertically (monolith) before describing how it scales horizontally (cluster mode).   
 
-How about performance?
+## Performance test scenarios
 
-Everything perfect when you do the first step, but what happens when you go production? 
-How many resources do you need to scale up? Let's discover!
+For simplicity, we have deployed single ThingsBoard instance with all related third-party components in a docker-compose environment on a single EC2 instance.
+The test agent provisions and connects configurable number of device emulators that constantly publish time-series data over MQTT.
 
-We are going to spin up a few AWS instances with different resources and find out the limits for each one of this.
+There are various IoT device profiles that differ based on number of messages they produce and size of each message. 
+We have emulated smart-meter devices that send messages as a JSON with three data points: pulse counter, leakage flag and battery level. 
+Each device used it`s own MQTT connection to the server.
+
+ThingsBoard stored all the time-series data to the database.
+ThingsBoard also processed the data using the [alarm rules](/docs/{{docsPrefix}}user-guide/device-profiles/#alarm-rules) to create alarms if the battery level is low.
+We have scaled the test from 5K to 100K devices and message rate from 1K msg/second to 10K messages per second. 
+Each test was executed for at least 24 hours to ensure no resource leakage or performance degradation over time.
+We have also included instructions to replicate the tests. Links to the instructions are in the details of each test run.
+
+Note: Each IoT use case is different and may impact the performance numbers. The tests cover main functionality of data ingestion and alarm generation.  
 
 ## Performance test summary
+
+The test scenarios differ in the number of connected devices, messages per second, server type and database used to store time-series data. 
+
+| Scenario   | Devices | Message per second | Data points per second | CPU                | RAM | Instance Type | Queue type | Entities DB | Time-series DB | CPU Usage | Write IOPS |
+|------------|---------|--------------------|------------------------|--------------------|-----|---------------|------------|-------------|----------------|-----------|------------|
+| [Scenario A](#Scenario A) | 5K      | 1K                 | 3K                     | 2 vCPU (burstable) | 4GB | t3.medium     | in-memory  | PostgreSQL  | PostgreSQL     | 27%       | 800        |
+|            |         |                    |                        |                    |     |               |            |             |                |           |            |
+|            |         |                    |                        |                    |     |               |            |             |                |           |            |
+
 
 | Thingsboard configuration |   queue   |     TS    | Device state | TS latest | devices | msg/sec | datapoints/sec |   instance  | CPU usage | Write IOPS |
 |:-------------------------:|:---------:|:---------:|:------------:|:---------:|:-------:|:-------:|:--------------:|:-----------:|:---------:|:----------:|
@@ -19,6 +43,8 @@ We are going to spin up a few AWS instances with different resources and find ou
 |    Cassandra + Postgres   |   Kafka   | Cassandra |   Cassandra  |  Postgres |   100k  |   10k   |       30k      | m6a.2xlarge |    95%    |     240    |
 
 [comment]: <> ( To format table as markdown, please use the online table generator https://www.tablesgenerator.com/markdown_tables )
+
+## Scenario A
 
 ## Performance test methodology
 
