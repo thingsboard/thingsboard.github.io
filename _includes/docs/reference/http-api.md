@@ -166,6 +166,21 @@ http://host:port/api/v1/$ACCESS_TOKEN/rpc/{$id}
 ```
 
 where **$id** is an integer request identifier.
+<br/>
+<br/>
+**Let’s look at an example:**
+
+- Use **RPC debug terminal** dashboard;
+
+- Subscribe to RPC commands from the server. To do this, in the first terminal window send GET request with observe flag;
+
+- Send an RPC request "connect" to the device;
+
+- In the second terminal window simulate send a response from the device to the server;
+
+- You should receive a response from the device: {"result":"ok"}
+
+{% include images-gallery.html imageCollection="server-side-rpc" %}
 
 {% capture tabspec %}http-rpc-from-server
 A,Example Subscribe,shell,resources/http-rpc-subscribe.sh,/docs/reference/resources/http-rpc-subscribe.sh
@@ -182,6 +197,23 @@ http://host:port/api/v1/$ACCESS_TOKEN/rpc
 ```
 
 Both request and response body should be valid JSON documents. The content of the documents is specific to the rule node that will handle your request.
+<br/>
+<br/>
+**Let's look at an example:**
+
+- Add two nodes to the Rule Chain: "script" and "rpc call reply";
+
+- In the **script** node enter the function:
+
+```shell
+return {msg: {time:String(new Date())}, metadata: metadata, msgType: msgType};
+```
+{: .copy-code}
+- Send request to the server;
+
+- You should receive a response from the server.
+
+{% include images-gallery.html imageCollection="client-side-rpc" %}
 
 {% capture tabspec %}http-rpc-from-client
 A,Example Request,shell,resources/http-rpc-from-client.sh,/docs/reference/resources/http-rpc-from-client.sh

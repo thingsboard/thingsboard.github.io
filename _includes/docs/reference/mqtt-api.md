@@ -118,6 +118,18 @@ v1/devices/me/attributes/response/+
 The following example is written in javascript and is based on mqtt.js. 
 Pure command-line examples are not available because subscribe and publish need to happen in the same mqtt session.
 
+{% if docsPrefix == null %}
+Replace $ACCESS_TOKEN with your device's access token. And don't forget to replace hostname "demo.thingsboard.io" to your host in the "mqtt-js-attributes-request.js" file.
+In this example, hostname reference live demo server.
+{% endif %}
+{% if docsPrefix == "pe/" %}
+Replace $ACCESS_TOKEN with your device's access token. And don't forget to replace hostname "127.0.0.1" to your host in the "mqtt-js-attributes-request.js" file.
+In this example, hostname reference your local installation.
+{% endif %}
+{% if docsPrefix == 'paas/' %}
+Replace $ACCESS_TOKEN with your device's access token.
+{% endif %}
+
 {% capture tabspec %}mqtt-attributes-request
 A,MQTT.js,shell,resources/mqtt-js-attributes-request.sh,/docs/reference/resources/mqtt-js-attributes-request.sh
 B,mqtt-js-attributes-request.js,javascript,resources/mqtt-js-attributes-request.js,/docs/reference/resources/mqtt-js-attributes-request.js
@@ -177,6 +189,28 @@ v1/devices/me/rpc/response/$request_id
 The following example is written in javascript and is based on mqtt.js. 
 Pure command-line examples are not available because subscribe and publish need to happen in the same mqtt session.
 
+{% if docsPrefix == null %}
+Don't forget to replace $ACCESS_TOKEN with your device's access token. And replace hostname "demo.thingsboard.io" to your host in the "mqtt-js-rpc-from-server.js" file.
+In this example, hostname reference live demo server.
+{% endif %}
+{% if docsPrefix == "pe/" %}
+Don't forget to replace $ACCESS_TOKEN with your device's access token. And replace hostname "127.0.0.1" to your host in the "mqtt-js-rpc-from-server.js" file.
+In this example, hostname reference your local installation.
+{% endif %}
+{% if docsPrefix == 'paas/' %}
+Replace $ACCESS_TOKEN with your device's access token.
+{% endif %}
+
+- Use **RPC debug terminal** dashboard;
+
+- Subscribe to RPC commands from the server;
+
+- Send an RPC request "connect" to the device;
+
+- You should receive a response from the device.
+
+{% include images-gallery.html imageCollection="server-side-rpc" %}
+
 {% capture tabspec %}mqtt-rpc-from-server
 A,MQTT.js,shell,resources/mqtt-js-rpc-from-server.sh,/docs/reference/resources/mqtt-js-rpc-from-server.sh
 B,mqtt-js-rpc-from-server.js,javascript,resources/mqtt-js-rpc-from-server.js,/docs/reference/resources/mqtt-js-rpc-from-server.js{% endcapture %}  
@@ -199,6 +233,33 @@ v1/devices/me/rpc/response/$request_id
 
 The following example is written in javascript and is based on mqtt.js. 
 Pure command-line examples are not available because subscribe and publish need to happen in the same mqtt session.
+
+{% if docsPrefix == null %}
+Don't forget to replace $ACCESS_TOKEN with your device's access token. And replace hostname "demo.thingsboard.io" to your host in the "mqtt-js-rpc-from-server.js" file.
+In this example, hostname reference live demo server.
+{% endif %}
+{% if docsPrefix == "pe/" %}
+Don't forget to replace $ACCESS_TOKEN with your device's access token. And replace hostname "127.0.0.1" to your host in the "mqtt-js-rpc-from-server.js" file.
+In this example, hostname reference your local installation.
+{% endif %}
+{% if docsPrefix == 'paas/' %}
+Don't forget to replace $ACCESS_TOKEN with your device's access token.
+{% endif %}
+
+- Add two nodes to the Rule Chain: "script" and "rpc call reply";
+
+- In the **script** node enter the function:
+
+```shell
+return {msg: {time:String(new Date())}, metadata: metadata, msgType: msgType};
+```
+{: .copy-code}
+
+- Send request to the server;
+
+- You should receive a response from the server.
+
+{% include images-gallery.html imageCollection="client-side-rpc" %}
 
 {% capture tabspec %}mqtt-rpc-from-client
 A,example.sh,shell,resources/mqtt-js-rpc-from-client.sh,/docs/reference/resources/mqtt-js-rpc-from-client.sh
