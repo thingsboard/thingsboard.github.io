@@ -52,29 +52,27 @@ The test scenarios differ in the number of connected devices, messages per secon
 
 ## Postgres only performance
 
-### t3.medium (2 vCPUs Intel, 4 GiB, EBS GP3) + Postgres - 5k devices, 1k msg/sec, 3k tps
+### Postgres - 1000 msg/sec
 
-5000 devices, MQTT, 1000 msg/sec, 3000 telemetry/sec, postgres, in-memory queue
+Load configuration: 5000 devices, MQTT, 1000 msg/sec, 3000 telemetry/sec, postgres, in-memory queue.  
+Instance: AWS t3.medium (2 vCPUs Intel, 4 GiB, EBS GP3)
 
 Estimated cost 19$ EC2 + x$ CPU burst + 8$ EBS GP3 100GB = 30$/mo
-
-CPU 27%. This is good setup up to 1000 msg/sec
 
 System can survive and run stable with an up to x3 message rate (3000 msg/sec).  
 Cloud provider will charge you against CPU burst, but the production will up and running fine.
 
-Note: t3.medium is a burstable cloud instance with a base level performance 20% of CPU load. When you idle, unused CPU time accumulated.
-So please, design your instance to use below 20%
+Note: t3.medium is a **burstable instance** with a base level performance 20% of CPU load. When you idle, unused CPU time accumulated up to max limit.
+So please, design your instance to use below 20% in average.
 
 Tip: Enable Unlimited mode in credit specification to get a good performance at first steps 
 and survive extra load above the limit (additional charges may apply). 
-At the first start you have 0 credits to burst CPU up and the system is throttled down to baseline 20% CPU. 
-So the first setup is quite slow without "unlimited mode".
-The standard mode will throttle you down in favour to keep you budget, but that is not for a stable production 
+Without unlimited mode at the first start you have 0 credits to burst CPU up and the system is throttled down to baseline 20% CPU. That will cause the first setup is quite slow without "unlimited mode". 
 
 ![AWS enable unlimited mode in credit specification](../../../images/reference/performance-aws-instances/method/t3-medium/postgres/aws-credit-spec-unlimited-mode.png)
 
-Thingsboard docker-compose
+Here the Thingsboard docker-compose to reproduce this test.
+
 ```bash
 version: '3'
 services:
@@ -147,22 +145,21 @@ Here some charts
 
 ![](../../../images/reference/performance-aws-instances/method/t3-medium/postgres/aws-storage-monitoring.png)
 
-### t3.medium x3 peak survive in-memory + Postgres - 5k devices, 3.3k msg/sec, 10k tps
+### Postgres - x3 peak survive
 
-Let's try to handle some messages flood about x3 of regular rate up to 10000 telemetry/sec.
+Load configuration: 5000 devices, MQTT, 3333 msg/sec, 10000 telemetry/sec, postgres, in-memory queue.   
+Instance: AWS t3.medium (2 vCPUs Intel, 4 GiB, EBS GP3)
 
-5000 devices, MQTT, 3333 msg/sec, 10000 telemetry/sec, postgres, in-memory queue
+In previous section we got the first **Thingsboard successful** deployment designed up to 1000 msg/sec.  
 
-Message rate have been increased gradually. Test have been passed successfully 
+Looks perfect, **but what happen** when we face a peak load on production? Should we worry about?  
+The **cost of failure** may be money loss, reputation or carries issue.  
+The **benefits** of reliable design may bring you to a better life, no stress, success and constant growing.
 
-This is a good trade-off configuration to survive and handle message burst with shared CPU instance type and in-memory queue.
+Let's try to handle a messages flood about x3 of regular rate up to 10000 telemetry/sec.
 
-However, the shared CPU instances did not guarantee that additional CPU resources will be available at any moment. 
-So you can starve with the base CPU level (20% for t3.medium) at the most important moment.
-The best practice approach is to set up a persistent queue service like a Kafka.
-
-Thingsboard docker compose with no change.
-
+Thingsboard docker compose with no change with the previous section. 
+Message rate have been increased gradually. 
 Performance test was stopped and run with a greater numbers step by step 
 
 ```bash
@@ -178,7 +175,7 @@ docker run -it --rm --network host --name tb-perf-test \
 ```
 {: .copy-code}
 
-Here some great shots
+Test have been passed successfully. Here some great shots.
 
 ![](../../../images/reference/performance-aws-instances/method/t3-medium/burst-x3/burst-x3-queue-stats.png)
 
@@ -194,38 +191,27 @@ Here some great shots
 
 ![](../../../images/reference/performance-aws-instances/method/t3-medium/burst-x3/burst-x3-aws-storage-monitoring.png)
 
-### t3.medium x10 peak or how to crash any in-memory queue + Postgres - 5k devices, 10k msg/sec, 30k tps
+This is a good trade-off configuration to survive and handle message burst with shared CPU instance type and in-memory queue.
 
-Maybe it is a not good idea to show how to crash the Thingsboard IoT platform with the *in-memory queue*.
+However, the shared CPU instances did not guarantee that additional CPU resources will be available at any moment.
+So you can starve with the base CPU level (20% for t3.medium) at the most important moment.
+The best practice approach is to set up a persistent queue service like a Kafka and handle the high load whether it is possible.
 
-But it may be a good experience in system design.
+### Postgres x10 peak & crash
 
-The goal is to help for anyone to avoid a bad design. And save the money, data, customers and reputation.
+Load configuration: 5000 devices, MQTT, 10_000 msg/sec, 30_000 telemetry/sec, postgres, in-memory queue.   
+Instance: AWS t3.medium (2 vCPUs Intel, 4 GiB, EBS GP3)
 
-As you know, the resource is limited. 
-CPU is limited in performance. Memory is limited in size and throughput. 
-Storage has a limited capacity, operations per second (IOPS), throughput and read/write latency as well.
-Network is limited by speed, throughput, latency, packets, etc.
+**Let's burn** this tiny instance with x10 message rate!
 
-Despite all this boring limitation, all we experience the fast and reliable services all over the internet.
+Maybe it is **not a good idea** to crash the Thingsboard IoT platform with the *in-memory queue*. 
+But it may be a benefit for a **new users** that just started using Thingsboard IoT platform.
+The goal is **to help the community** to avoid choosing a wrong design. Helping to save the money, data, customers and reputation.
 
-So how is it possible that software goes down in the most important moment?
-Is it buggy code? Is it slow? Is it aliens or attackers? 
-Should I spend few thousand dollars on the most powerful high-end cloud and keep calm?
-Unfortunately, it not works in that way.
+So let's generate some message rate spike. CPU and disk will not be able to process all the messages.
+Some lag will build up. Let's see what is going on inside the memory and what the consequences on in-memory queue flood.
 
-Eventually, you can get in-memory messages more than you have memory available.
-
-Typical scenario: processing less than 100% -> messages flood the memory -> out of memory -> messages lost -> service down for 1-2 minutes.
-
-So what if we persist our messages on disk and keep our memory clean? 
-Then read messages by small batches and process as fast (or slow) as we can. Memory stay clear. That may help!
-Hopefully, we have a service queue and Kafka is a good example.
-
-So let's generate some message rate spike. CPU and disk will not able to process and save all the messages.
-Some lag will build up. Let's see what is going on in memory and what the consequences on in-memory queue flood.  
-
-Let's burn this tiny instance with x10 message rate
+Here the performance test docker command.
 
 ```bash
 docker run -it --rm --network host --name tb-perf-test \
@@ -244,11 +230,11 @@ At the beginning the system looks busy, but responsive.
 
 ![](../../../images/reference/performance-aws-instances/method/t3-medium/flood-x10/beginning-htop.png)
 
-Then the instance become short on memory and overall performance degrade. 
+Then the instance become short on memory and overall performance going to degrade. 
 
 ![](../../../images/reference/performance-aws-instances/method/t3-medium/flood-x10/beginning-queue-stats.png)
 
-We see on JMX monitor that used heap memory is growing.
+Now we see on JMX monitor that heap memory used is growing constantly.
 
 ![](../../../images/reference/performance-aws-instances/method/t3-medium/flood-x10/beginning-jmx-visualvm-monitoring.png)
 
@@ -260,7 +246,7 @@ It takes about 10 minutes to flood all the memory and system become unresponsive
 
 ![](../../../images/reference/performance-aws-instances/method/t3-medium/flood-x10/jmx-visualvm-monitoring.png)
 
-Another 3 minutes to die and a new life begin.
+In next 3 minutes the system will die.
 
 ![](../../../images/reference/performance-aws-instances/method/t3-medium/flood-x10/out-of-memory.png)
 
@@ -275,16 +261,42 @@ tb_1        | Starting ThingsBoard ...
 
 ![](../../../images/reference/performance-aws-instances/method/t3-medium/flood-x10/aws-instance-monitoring.png)
 
-Conclusion: persisted queue is mandatory for a well loaded production. Kafka is a good one. 
+Why it happens? 
 
-### m6a.large (2 vCPUs AMD EPYC 3rd, 8 GiB, EBS GP3) + Postgres - 6k devices, 6k msg/sec, 18k tps
+As you know, the resource is limited.
+CPU is limited by performance. Memory is limited by size and throughput.
+Storage has a limited capacity, operations per second (IOPS), throughput and read/write latencies as well.
+Network is limited by speed, throughput, latency, packets, etc.
 
-6000 devices, MQTT, 6000 msg/sec, 18000 telemetry/sec, postgres, in-memory queue
+Despite all this boring limitation, all we experience the fast and reliable services all over the internet.
 
-Estimated cost 42$ EC2 + 8$ EBS GP3 100GB = 50$/mo
+So how is it possible that software goes down in the most important moment?
+Is it buggy code? Is it slow? Why? 
+Should I spend few thousand dollars on the most powerful high-end cloud and keep calm?
+Unfortunately, it not works in that way.
 
-CPU 98% - *THIS IS NOT A PRODUCTION CASE*!
-Check the Thingsboard performance with [Kafka](#m6alarge-2-vcpus-amd-epyc-3rd-8-gib-ebs-gp3--kafka---5k-devices--5k-msgsec-15k-tps) on the same m6a.large instance.
+Eventually, you can get in-memory messages more than your memory available.
+
+Typical scenario: processing less than 100% -> messages flood the memory -> out of memory -> messages lost -> service down for 1-2 minutes.
+
+Any solutions? Yes! Please, check out the Kafka or other persistent queue.
+
+### Postgres - vertical scaling boundary
+
+Load configuration: 6000 devices, MQTT, 6000 msg/sec, 18000 telemetry/sec, postgres, in-memory queue.   
+Instance: AWS _m6a.large_ (2 vCPUs AMD EPYC 3rd, 8 GiB, EBS GP3)
+
+Disclaimer: do not go production with this design and load!
+
+Scaling up vertically means you buy much expensive hardware and get much better performance.  
+But there is **boundaries** that is **hard to scale vertically**. 
+
+The Postgres is an SQL database and store the data as a rows in tables.
+All operations likely to written in a single transaction log and simply looks like one-by-one transactions.
+A bunch of rows shares a single data page and cause the wait locks on concurrent insert or update.
+Eventually you will face that putting more CPUs and memory have no positive effect on data collecting performance.
+
+Let's find out.
 
 ```bash
 docker run -it --rm --network host --name tb-perf-test \
@@ -314,7 +326,21 @@ docker run -it --rm --network host --name tb-perf-test \
 
 ![AWS Storage monitoring](../../../images/reference/performance-aws-instances/method/m6a-large/postgres/thingsboard-aws-m6a-large-disk-monitoring.png)
 
-Conclusion: Kafka is essential to survive the high CPU load.
+This is the upper boundary that we experienced on AWS instance with Thingsboard + Postgres only configuration. Please, do not design your instance to utilize 98% CPU as show in this stress test.
+
+To scale horizontally we recommend to use Cassandra NOSQL database.
+
+To run reliable production we recommend to use Kafka queue.
+
+### Postgres test summary
+
+Average CPU load is about 27% on 1000 msg/sec. This is good setup up to 1000 msg/sec.
+
+The system is able to survive the peak up to 3000 msg/sec without any additional load.
+
+In real production the CPU load may be higher because of additional logic performed by custom rule chains.
+
+To make system much reliable and peak resistant, please consider using a persistent queue type. Kafka is a good one.
 
 ## Kafka + Postgres performance
 
