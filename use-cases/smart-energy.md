@@ -47,6 +47,27 @@ description:
 
 <h1 class="mainTitle-tSpace">Smart energy monitoring, data visualization and energy efficiency analysis</h1>
 
+<h3>Smart energy dashboard</h3>
+<p>The following interactive dashboard hosted on live demo server represents smart energy IoT data visualization that may be embedded in your IoT project or solution. See dashboard description below.</p>
+
+<div class="slider">
+    <div class="demo-dashboards-carousel">
+        <div class="dashboard-item" style="display: none;">
+            <img class="item-image" src="/images/smart-energy.png">
+        </div>
+        <div class="dashboard-item" style="display: none;">
+            <img class="item-image" src="/images/smart-farming.png" />
+        </div>
+        <div class="dashboard-item" style="display: none;">
+            <img class="item-image" src="/images/fleet-tracking.png" />
+        </div>
+        <div class="dashboard-item" style="display: none;">
+            <img class="item-image" src="/images/smart-metering.png" />
+        </div>
+    </div>
+    <a style="margin: 10px;" href="/use-cases/smart-energy/" class="button">View live demo</a>
+</div>
+
 Being robust, scalable and user friendly, ThingsBoard IoT platform supports various IoT use cases by providing flexible and powerful out-of-the-box features to cut down time to market of your connected products and smart solutions. The platform is device-agnostic, so you can feed and analyze telemetry data from any sensor, connected device or application. ThingsBoard comprehensive features and rich platform APIs allow you to save time and resources on routine IoT tasks and concentrate on specific features of your IoT solution.
 
 Some of the industry use cases where ThingsBoard is being successfully utilized are listed below. Each use case is equipped with PoC dashboard and reference solution architecture.
@@ -66,3 +87,42 @@ Some of the industry use cases where ThingsBoard is being successfully utilized 
 Being robust, scalable and user friendly, ThingsBoard IoT platform supports various IoT use cases by providing flexible and powerful out-of-the-box features to cut down time to market of your connected products and smart solutions. The platform is device-agnostic, so you can feed and analyze telemetry data from any sensor, connected device or application. ThingsBoard comprehensive features and rich platform APIs allow you to save time and resources on routine IoT tasks and concentrate on specific features of your IoT solution.
 
 Some of the industry use cases where ThingsBoard is being successfully utilized are listed below. Each use case is equipped with PoC dashboard and reference solution architecture.
+
+
+
+<script type="text/javascript">
+
+	jqueryDefer(initSlick);
+	
+	function initSlick() {
+		var scriptsList = [
+			{src: '/css/slick.min.css', type: 'css'},
+			{src: '/css/slick-theme.min.css', type: 'css'},
+			{src: '/js/slick.min.js', type: 'script'}
+		];
+		loadNextScript(0, scriptsList,
+				function() {
+					$(document).ready(function(){
+						var demoDashboardsCarousel = $('.demo-dashboards-carousel');
+						$('.dashboard-item', demoDashboardsCarousel).css('display', 'block');
+						demoDashboardsCarousel.slick({
+							slidesToShow: 1,
+							slidesToScroll: 1,
+							autoplay: true,
+							autoplaySpeed: 5000,
+							arrows: true,
+							dots: true,
+							responsive: [
+								{
+									breakpoint: 750,
+									settings: {
+										arrows: false
+									}
+								}
+							]
+						});
+					});
+				}
+		);
+	}
+</script>
