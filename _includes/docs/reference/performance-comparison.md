@@ -131,6 +131,8 @@ docker run -it --rm --network host --name tb-perf-test \
 
 Here some charts
 
+{% include images-gallery.html imageCollection="postgres-only-1000" %}
+
 ![](../../../images/reference/performance-aws-instances/method/t3-medium/postgres/queue-stats.png)
 
 ![](../../../images/reference/performance-aws-instances/method/t3-medium/postgres/api-usage.png)
