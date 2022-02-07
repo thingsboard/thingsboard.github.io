@@ -34,6 +34,20 @@
         });
     });
 </script>
+
+<script>
+    jqueryDefer(function () {
+        $(window).scroll(function() {
+            var height = $(window).scrollTop();
+            if(height > 0){
+            $('nav.usecase-nav').addClass('nav-fixed');
+            } else{
+            $('nav.usecase-nav').removeClass('nav-fixed');
+            }
+        });
+    });
+</script>
+
 <script>
     function dropContent(dropId) {
         var dContent = $('.drop-content#'+dropId);
