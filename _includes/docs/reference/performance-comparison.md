@@ -199,7 +199,7 @@ However, the shared CPU instances did not guarantee that additional CPU resource
 So you can starve with the base CPU level (20% for t3.medium) at the most important moment.
 The best practice approach is to set up a persistent queue service like a Kafka and handle the high load whether it is possible.
 
-### Postgres x10 peak & crash
+### Postgres - x10 peak & crash
 
 Load configuration: 5000 devices, MQTT, 10_000 msg/sec, 30_000 telemetry/sec, postgres, in-memory queue.   
 Instance: AWS t3.medium (2 vCPUs Intel, 4 GiB, EBS GP3)
@@ -334,7 +334,7 @@ To scale horizontally we recommend to use Cassandra NOSQL database.
 
 To run reliable production we recommend to use Kafka queue.
 
-### Postgres test summary
+### Postgres - summary
 
 Average CPU load is about 27% on 1000 msg/sec. This is good setup up to 1000 msg/sec.
 
@@ -534,9 +534,9 @@ Here is the API usage stats that shows the transport rate (incoming messages and
 
 ![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka/stress-x3/api-usage--x1--stress-x3--x1.png)
 
-### Disk space usage for Postgres and Kafka
+### Kafka + Postgres - disk space usage
 
-By the end of the day, the system run out of the disk space. 
+By the end of the day in previous test, the system run out of the disk space. 
 
 The 200Gb disk was filled out in about 24 hours with average 5k msg/sec, 15k datapoints/sec; total messages 363M, data points 1.1B.
 
@@ -568,11 +568,13 @@ Here the Kafka size by topics.
 
 ![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka/stress-x3/kafka-disk-usage-by-topic.png)
 
+### Kafka + Postgres - summary
+
 **Conclusion**: Thingsboard + Postgres + **Kafka** - is a reliable solution to survive peak loads.
 Despite the maximum performance shown above, we recommend to use m6a.large instance design for up to 3k msg/sec, 10k data points/sec.  
 The logic is quite simple: to be able to process x2 message load in case of any peak load.  
-In a real production, the Thingboard may serve all kind of user requests, run custom rule chains and supply the web services all fancy dashboards.
-When you need more performance, simply upgrade to the next m6a.xlarge or c6i.xlarge instance (restart required).  
+In a real production, the Thingsboard may serve all kind of user requests, run custom rule chains and supply the web services for all fancy dashboards.
+When you need more performance, simply upgrade the instance to the next m6a.xlarge or c6i.xlarge instance (restart required).  
 Another way to improve is to customize PostgreSQL config to gain much faster read query performance for dashboards, analytics, etc.
 For even more performance, please consider the **Cassandra** usage.   
 
@@ -580,11 +582,11 @@ Pros:
  * Reliable solution to survive the peak load
  * Reasonable price for performance and reliability
  * Able to scale (vertically).
- * Short technology stack (Postgres, Kafka)
+ * Narrow technology stack (Postgres, Kafka)
 Cons: 
- * The telemetry storage consumption is quite intensive. It may become expensive if the telemetry time-to-live (TTL) is a years or infinite. 
+ * The telemetry storage consumption is quite intensive. It may become expensive if the telemetry time-to-live (TTL) is a year or infinite. 
  * Scale only vertical (faster instance, more storage IOPS) - very limited by hardware available and become expensive.
- * Kafka as a solo instance and messages persists eventually (no fsync called), potential message loss if Kafka crashes.
+ * Kafka here is a single instance. Messages persist eventually (no fsync called). It causes potential latest message loss if Kafka crashes (quite rare, but possible).
  * Maintain or fail any of component will lead to downtime for all the system.
 
 ## Timescale + Kafka + Postgres performance
