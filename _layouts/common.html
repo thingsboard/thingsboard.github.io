@@ -24,25 +24,15 @@
         $(window).scroll(function() {
             var height = $(window).scrollTop();
             var navPosition = $('.mainTitle').height() + 50;
-            if(height > navPosition){
-            $('nav.customers-nav').addClass('nav-fixed');
-            $('h1.mainTitle').addClass('customer-spacer');
-            } else{
-            $('nav.customers-nav').removeClass('nav-fixed');
-            $('h1.mainTitle').removeClass('customer-spacer');
-            }
-        });
-    });
-</script>
-
-<script>
-    jqueryDefer(function () {
-        $(window).scroll(function() {
-            var height = $(window).scrollTop();
-            if(height > 0){
-            $('nav.usecase-nav').addClass('nav-fixed');
-            } else{
-            $('nav.usecase-nav').removeClass('nav-fixed');
+            if(height > navPosition) {
+                $('nav.customers-nav').addClass('nav-fixed');
+                $('h1.mainTitle').addClass('customer-spacer');
+            } if(height > 0) {
+                $('nav.usecase-nav').addClass('nav-fixed');
+            } else {
+                $('nav.customers-nav').removeClass('nav-fixed');
+                $('h1.mainTitle').removeClass('customer-spacer');
+                $('nav.usecase-nav').removeClass('nav-fixed');
             }
         });
     });
@@ -62,6 +52,33 @@
             dContent.css('height', text);
             dCard.addClass('opened');
         }
+    }
+</script>
+
+<script>
+    jqueryDefer(Owl);
+
+    function Owl() {
+        var scriptsList = [
+            {src: '/css/owl.carousel.min.css', type: 'css'},
+            {src: '/css/owl.theme.default.min.css', type: 'css'},
+            {src: '/js/owl.carousel.min.js', type: 'script'}
+        ];
+        loadNextScript(0, scriptsList,
+            function() {
+                $(document).ready(function(){
+                    $('.owl-carousel').owlCarousel({
+                        items:1,
+                        margin:10,
+                        autoHeight:true,
+                        loop:true,
+                        autoplay:true,
+                        autoplayTimeout:5000,
+                        autoplayHoverPause:true
+                    });
+                });
+            }
+        );
     }
 </script>
 

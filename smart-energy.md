@@ -1,57 +1,86 @@
 ---
 layout: common
-title: Smart energy monitoring, data visualization and energy efficiency analysis
-description: Smart energy monitoring and data visualization with ThingsBoard IoT Platform
-horizontaltoc: "true"
+title: Smart Energy
+notitle: "true"
+description:
 
 ---
+<nav class="usecase-nav">
+    <div class="crop-nav">
+        <ul>
+            <li>
+                <a href="/smart-energy/" class="active">Smart Energy</a>
+            </li>
+            <li>
+                <a href="/fleet-tracking/">Fleet Tracking</a>
+            </li>
+            <li>
+                <a href="/smart-farming/">Smart Farming</a>
+            </li>
+            <li>
+                <a href="/smart-metering/">Smart Metering</a>
+            </li>
+            <li>
+                <a href="/">Environment Monitoring</a>
+            </li>
+            <li>
+                <a href="/">Smart Office</a>
+            </li>
+            <li>
+                <a href="/">Water Metering</a>
+            </li>
+            <li>
+                <a href="/">Smart Retail</a>
+            </li>
+            <li>
+                <a href="/">EV Charging Stations</a>
+            </li>
+            <li>
+                <a href="/">Asset Tracking</a>
+            </li>
+            <li>
+                <a href="/">Device Provisioning</a>
+            </li>
+        </ul>
+    </div>
+</nav>
 
-## Overview
+<h1 class="mainTitle-tSpace">Smart energy monitoring, data visualization and energy efficiency analysis</h1>
 
-ThingsBoard platform provides out-of-the-box components and APIs to dramatically reduce time to market and your effort to create smart energy solutions and energy monitoring systems.
-Save up to 90% of development time for your smart energy solution by utilizing following benefits:
+<h3>Smart energy dashboard</h3>
+<p>The following interactive dashboard hosted on live demo server represents smart energy IoT data visualization that may be embedded in your IoT project or solution. See dashboard description below.</p>
 
- - Reliable and fault tolerant data collection for your smart meters and energy monitors;
- - Advanced and flexible data visualization for real-time and historical smart energy monitoring;
- - Customizable end-user dashboards to analyze and share the results of energy efficiency monitoring;
- - Integration with third-party analytics frameworks and solutions for advanced electricity usage monitoring;
- - Enable energy management by utilizing ThingsBoard API to control and manage smart meters.
- 
-The platform provides production ready server infrastructure to connect your smart meter devices, collect, store and analyze energy monitoring data, and share results of the analysis with your customers and end-users.
-
-## Smart energy dashboard
-
-The following interactive dashboard hosted on live demo server represents smart energy IoT data visualization that may be embedded in your IoT project or solution. See dashboard description below.
-
-<iframe class="demoDashboardFrame" src="https://demo.thingsboard.io/dashboard/e5e72680-0eda-11e7-942c-bb0136cc33d0?publicId=963ab470-34c9-11e7-a7ce-bb0136cc33d0&source=docs" frameborder="0" width="100%"></iframe>
-<div class="center" style="margin-bottom: 20px;">
-    <a target="_blank" href="https://demo.thingsboard.io/dashboard/e8e409c0-f2b5-11e6-a6ee-bb0136cc33d0?publicId=963ab470-34c9-11e7-a7ce-bb0136cc33d0&source=realtimeIotDashboards" class="button">Live demo</a>
+<div class="owl-carousel owl-theme" id="slider">
+    <div class="slide" style="background-image: url('/images/smart-farming.png')">
+        <img class="item-image" src="/images/fleet-tracking.png" />
+    </div>
+    <div class="slide" style="background-image: url('/images/smart-farming.png')">
+        <img class="item-image" src="/images/fleet-tracking.png" />
+    </div>
+    <div class="slide" style="background-image: url('/images/smart-farming.png')">
+        <img class="item-image" src="/images/fleet-tracking.png" />
+    </div>
 </div>
 
-The attached dashboard demonstrates real-time data from smart-meters that is collected using ThingsBoard MQTT API. The data is stored in Cassandra DB on our demo server.
+<a style="margin: 10px;" href="#" class="button">View live demo</a>
 
-We would like to highlight following features:
 
- - low-latency updates using web-sockets;
- - ability to zoom-in into the charts by selecting time range with the mouse;
- - advanced tooltips and legend;
- - dashboard toolbar in the top-right corner enables global time selector and switch between dashboards.
+Being robust, scalable and user friendly, ThingsBoard IoT platform supports various IoT use cases by providing flexible and powerful out-of-the-box features to cut down time to market of your connected products and smart solutions. The platform is device-agnostic, so you can feed and analyze telemetry data from any sensor, connected device or application. ThingsBoard comprehensive features and rich platform APIs allow you to save time and resources on routine IoT tasks and concentrate on specific features of your IoT solution.
 
-## Smart energy solution overview
- 
-The diagram below identifies data flow and integration points for typical smart energy solution that uses ThingsBoard platform to collect and analyze energy monitoring data from smart meters.
+Some of the industry use cases where ThingsBoard is being successfully utilized are listed below. Each use case is equipped with PoC dashboard and reference solution architecture.
 
-![Smart energy solution diagram](/images/iot-use-cases/smart-energy-monitoring.svg)
+Being robust, scalable and user friendly, ThingsBoard IoT platform supports various IoT use cases by providing flexible and powerful out-of-the-box features to cut down time to market of your connected products and smart solutions. The platform is device-agnostic, so you can feed and analyze telemetry data from any sensor, connected device or application. ThingsBoard comprehensive features and rich platform APIs allow you to save time and resources on routine IoT tasks and concentrate on specific features of your IoT solution.
 
-You may notice that there are plenty of connectivity options for smart meters: either direct connection to the cloud or through the IoT Gateway.
-Platform supports industry standard encryption algorithms (SSL) and device credentials types (X.509 certificates and access tokens).
-The collected data is stored in Cassandra - fault-tolerant and reliable NoSQL database.
-ThingsBoard Rule Engine allows to forward incoming data to various analytics systems, such as Apache Spark or Hadoop using Kafka or other Message buses.
+Some of the industry use cases where ThingsBoard is being successfully utilized are listed below. Each use case is equipped with PoC dashboard and reference solution architecture.
 
-## Learn more
+Being robust, scalable and user friendly, ThingsBoard IoT platform supports various IoT use cases by providing flexible and powerful out-of-the-box features to cut down time to market of your connected products and smart solutions. The platform is device-agnostic, so you can feed and analyze telemetry data from any sensor, connected device or application. ThingsBoard comprehensive features and rich platform APIs allow you to save time and resources on routine IoT tasks and concentrate on specific features of your IoT solution.
 
-<a style="margin-right: 10px;" href="/docs/getting-started-guides/helloworld/" class="button">Getting started</a>
-<a style="margin: 10px;" href="/industries/smart-energy/" class="button">Customers feedback</a>
-<a style="margin: 10px;" href="/docs/#platform-features" class="button">Platform features</a>
-<a style="margin: 10px;" href="/docs/reference/" class="button">Architecture</a>
-<a style="margin: 10px;" href="/docs/contact-us/" class="button">Contact us</a>
+Some of the industry use cases where ThingsBoard is being successfully utilized are listed below. Each use case is equipped with PoC dashboard and reference solution architecture.
+
+Being robust, scalable and user friendly, ThingsBoard IoT platform supports various IoT use cases by providing flexible and powerful out-of-the-box features to cut down time to market of your connected products and smart solutions. The platform is device-agnostic, so you can feed and analyze telemetry data from any sensor, connected device or application. ThingsBoard comprehensive features and rich platform APIs allow you to save time and resources on routine IoT tasks and concentrate on specific features of your IoT solution.
+
+Some of the industry use cases where ThingsBoard is being successfully utilized are listed below. Each use case is equipped with PoC dashboard and reference solution architecture.
+
+Being robust, scalable and user friendly, ThingsBoard IoT platform supports various IoT use cases by providing flexible and powerful out-of-the-box features to cut down time to market of your connected products and smart solutions. The platform is device-agnostic, so you can feed and analyze telemetry data from any sensor, connected device or application. ThingsBoard comprehensive features and rich platform APIs allow you to save time and resources on routine IoT tasks and concentrate on specific features of your IoT solution.
+
+Some of the industry use cases where ThingsBoard is being successfully utilized are listed below. Each use case is equipped with PoC dashboard and reference solution architecture.
