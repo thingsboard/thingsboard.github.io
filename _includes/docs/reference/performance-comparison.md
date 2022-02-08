@@ -591,9 +591,12 @@ Cons:
 
 ## Timescale + Kafka + Postgres performance
 
-### m6a.large (2 vCPUs AMD EPYC 3rd, 8 GiB, EBS GP3) + Kafka - 5k devices , 5k msg/sec, 15k tps
+### Timescale + Kafka + Postgres - 2000 msg/sec
 
-5000 devices, MQTT, 5000 msg/sec, 15000 telemetry/sec, postgres, Kafka queue, Timescale
+Load configuration: 5000 devices, MQTT, 5000 msg/sec, 15000 telemetry/sec, Postgres, Kafka, Timescale.  
+Instance: AWS m6a.large (2 vCPUs AMD EPYC 3rd, 8 GiB, EBS GP3)
+
+Estimated cost 42$ EC2 + 8$ EBS GP3 100GB = 50$/mo, disk space for telemetry may add additional costs.
 
 Here the docker-compose with Thingsboard + Postgresql + Zookeeper + Kafka + Timescale
 ```bash
@@ -679,7 +682,7 @@ docker run -it --rm --network host --name tb-perf-test \
 ```
 {: .copy-code}
 
-With the Timescale it was hard to process about 2k msg/sec on the same instance as Postgres was able to handle 5k messages.
+Conclusion: with the Timescale it was hard to process about 2k msg/sec on the same instance as Postgres was able to handle 5k messages.
 The reason is a high CPU usage.
 We made a try to give more resources (m6a.2xlarge), but maximum that Timescale can hit is 5k msg/sec with a lot of free CPU and memory available.
 The "TS timescale" queues were always filled and much more than others.
@@ -693,7 +696,7 @@ Hopefully, the Timescale can do much better, but for the docker image `timescale
 
 25k devices, 10k msg/sec, 30k telemetry/sec, MQTT, Postgres (TS latest), Kafka queue, Cassandra (TS)
 
-Estimated cost 167$ EC2 m6a.2xlarge + 24$ EBS GP3 300GB = 191$/mo
+
 
 CPU avg 75%. This is good setup with average load 10k msg/sec, 30k data point/sec. 
 Peaks will be handled with Kafka queue. It is a **top monolith deployment**. 
