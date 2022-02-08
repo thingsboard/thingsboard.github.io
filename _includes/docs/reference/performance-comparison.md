@@ -534,13 +534,13 @@ Here is the API usage stats that shows the transport rate (incoming messages and
 
 ![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka/stress-x3/api-usage--x1--stress-x3--x1.png)
 
-### Kafka + Postgres - disk space usage
+### Kafka + Postgres - disk usage
 
 By the end of the day in previous test, the system run out of the disk space. 
 
 The 200Gb disk was filled out in about 24 hours with average 5k msg/sec, 15k datapoints/sec; total messages 363M, data points 1.1B.
 
-**Postgres** database size is 160GiB
+**Postgres** database size is 160GiB. It is about 7M data points per 1 GiB disk space. To reach much better disk space efficiency please, check the Cassandra disk space usage.
 
 ![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka/stress-x3/postgresql-disk-usage-total.png)
 
@@ -690,15 +690,15 @@ Hopefully, the Timescale can do much better, but for the docker image `timescale
 
 ## Cassandra + Kafka + Postgres performance
 
-### m6a.2xlarge (8 vCPUs AMD EPYC 3rd, 32 GiB, EBS GP3) + Cassandra - 25k devices, 10k msg/sec, 30k tps
+### Cassandra - 25k devices
+
+Load configuration: 25000 devices, MQTT, 10000 msg/sec, 30000 telemetry/sec, MQTT, Postgres (TS latest), Kafka queue, Cassandra (TS)  
+Instance: AWS m6a.2xlarge (8 vCPUs AMD EPYC 3rd, 32 GiB, EBS GP3)
+
+Estimated cost 167$ EC2 m6a.2xlarge + 24$ EBS GP3 300GB = 191$/mo
 
 **Cassandra** is essential for massive telemetry flow.
 
-25k devices, 10k msg/sec, 30k telemetry/sec, MQTT, Postgres (TS latest), Kafka queue, Cassandra (TS)
-
-
-
-CPU avg 75%. This is good setup with average load 10k msg/sec, 30k data point/sec. 
 Peaks will be handled with Kafka queue. It is a **top monolith deployment**. 
 
 Here the docker-compose with Thingsboard + Postgresql + Zookeeper + Kafka + **Cassandra**
@@ -880,14 +880,18 @@ Here the JMX monitoring for Cassandra.  The system is stable.
 ![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/25k-10k-15k/jmx-cassandra.png)
 
 Conclusion: Cassandra requires more CPU resources, but it save x5 disk space, lower IOPS load.
+CPU avg 75%. This is good setup with average load 10k msg/sec, 30k data point/sec.
 Cassandra can handle x2-x3 more load (compare to PostgreSQL only) with a single instance deployment and able to scale up horizontally by adding a new nodes to the Cassandra cluster.    
 It is a good idea to start with Cassandra from the very beginning of your Thingsboard instance and maintain the same stack for the entire project lifetime.
 For the lower message rate, you can fit the Cassandra deployment to a much smaller instance adjusting the heap size limits.
 System can be scaled up vertically up to 50-100%. For significant horizontal scaling, please, consider to set up a Thingsboard cluster.
 
-### m6a.2xlarge (8 vCPUs AMD EPYC 3rd, 32 GiB, EBS GP3) + Cassandra - 100k devices, 5k msg/sec, 15k tps
+### Cassandra - 100k devices, 5k msg/s
 
-To produce 100k connection we need at least 2 performance-test instances. Regarding the maximum port count 65535 on a single server.
+Load configuration: 100_000 devices, MQTT, 5000 msg/sec, 15000 telemetry/sec, MQTT, Postgres (TS latest), Kafka queue, Cassandra (TS)  
+Instance: AWS m6a.2xlarge (8 vCPUs AMD EPYC 3rd, 32 GiB, EBS GP3)
+
+To produce 100k simultaneous connection we need at least 2 performance-test instances. Regarding the maximum port count 65535 on a single server.
 
 First, we need to increase ip local port range on performance test instance that setup many outgoing connections. Now we can open up to 64511 IP ports.  
 
@@ -1018,7 +1022,7 @@ volumes: # to persist data between container restarts or being recreated
 ```
 {: .copy-code}
 
-Performance tests will be started as an application to reduce complexity using the container
+Performance tests will be started as an application to reduce network setup complexity using the container.
 Before you started, clone and build once the performance test:
 ```bash
 cd ~
@@ -1072,17 +1076,23 @@ Test runs 24 hour and here the results:
 
 ![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/100k-5k-15k/aws-storage-monitoring.png)
 
-#### Cassandra disk usage
+As you see the 
 
-For the last 24 hours (100k devices, 432M msg) total datapoint stored is 1.3B
+### Cassandra - disk usage
 
-Cassandra's disk usage is about 20 GiB per 1.3B data points. It is about 65M data points per 1 GiB disk space.
+For 24 hours (100k devices, 432M msg) total datapoint stored is 1.3B
+
+Cassandra's disk usage is about 20 GiB per 1.3B data points. It is about 65M data points per 1 GiB disk space. 
+In comparison with Postgresql the disk space consumption by Cassandra is about x10 times less. This is because the data compression used and less overhead in data structure.   
 
 ![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/100k-5k-15k/disk-usage-cassandra.png)
 
 Note: data size on disk may vary depends on the content.
 
-### m6a.2xlarge (8 vCPUs AMD EPYC 3rd, 32 GiB, EBS GP3) + Cassandra - 100k devices, 10k msg/sec, 30k tps
+### Cassandra - 100k devices, 10k msg/sec
+
+Load configuration: 100_000 devices, MQTT, 10_000 msg/sec, 30_000 telemetry/sec, MQTT, Postgres (TS latest), Kafka queue, Cassandra (TS, _device state_)  
+Instance: AWS m6a.2xlarge (8 vCPUs AMD EPYC 3rd, 32 GiB, EBS GP3)
 
 #### Persist device state to attributes (PostgreSQL)
 
@@ -1095,7 +1105,7 @@ As the next step we are going to write device state to the Cassandra.
 
 #### Persist device state to telemetry (Cassandra)
 
-Great improvement for performance is to persist device state to Cassandra telemetry.
+Great improvement for performance is to persist **device state to Cassandra telemetry**.
 
 ```yaml
       PERSIST_STATE_TO_TELEMETRY: "true" # Persist device state to the Cassandra. Default is false (Postgres, as device server_scope attributes)
@@ -1274,19 +1284,24 @@ CPU usage is 93%, so there is almost no spare resources left for a peak load and
 
 Here some point how to ensure that you have a valid test run with all device created and connected
 
-1. All devices were created. Open device List and check total device count.
+* All devices were created. Open device List and check total device count.
 
 ![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/100k-is-connected/devices-list-100k-thingsboard.png)
 
-2. All device connected. Check the logs. Device count have to be greater than 100k
+* All device connected. Check the logs. Device count have to be greater than 100k
 
 ```
 tb_1         | 2022-01-06 16:37:11,716 [TB-Scheduling-3] INFO  o.t.s.c.t.s.DefaultTransportService - Transport Stats: openConnections [100000]
 ```
 
-3. All device connected. Java JMX. VisualVM -> Thingsboard -> MBeans -> java.lang -> OpenFileDescriptorCount -> more than 100000
+* All device connected. Java JMX. VisualVM -> Thingsboard -> MBeans -> java.lang -> OpenFileDescriptorCount -> more than 100000
 
 ![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/100k-is-connected/jmx-mbeans-java-lang-operating-system-open-file-descriptor-count.png)
+
+* Count TCP connections using command 
+```bash
+ss -s
+```
 
 #### 24h test run
 
