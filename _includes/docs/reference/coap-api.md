@@ -180,11 +180,26 @@ coap://host/api/v1/$ACCESS_TOKEN/rpc/{$id}
 ```
 
 where **$id** is an integer request identifier.
+<br/>
+<br/>
+**Let’s look at an example:**
+
+- Use **RPC debug terminal** dashboard;
+
+- Subscribe to RPC commands from the server. To do this, in the first terminal window send GET request with observe flag;
+
+- Send an RPC request "connect" to the device;
+
+- In the second terminal window simulate send a response from the device to the server;
+
+- You should receive a response from the device: {"result":"ok"}
+
+{% include images-gallery.html imageCollection="server-side-rpc" %}
 
 {% capture tabspec %}coap-rpc-command
 A,Example Subscribe,shell,resources/coap-rpc-subscribe.sh,/docs/reference/resources/coap-rpc-subscribe.sh
 B,Example Reply,shell,resources/coap-rpc-reply.sh,/docs/reference/resources/coap-rpc-reply.sh
-C,Reply Body,shell,resources/rpc-response.json,/docs/reference/resources/rpc-response.json{% endcapture %}
+C,rpc-response.json,shell,resources/rpc-response.json,/docs/reference/resources/rpc-response.json{% endcapture %}
 {% include tabs.html %}
 
 ##### Client-side RPC
@@ -196,10 +211,27 @@ coap://host/api/v1/$ACCESS_TOKEN/rpc
 ```
 
 Both request and response body should be valid JSON documents. The content of the documents is specific to the rule node that will handle your request.
+<br/>
+<br/>
+**Let's look at an example:**
+
+- Add two nodes to the Rule Chain: "script" and "rpc call reply";
+
+- In the **script** node enter the function:
+
+```shell
+return {msg: {time:String(new Date())}, metadata: metadata, msgType: msgType};
+```
+{: .copy-code}
+- Send request to the server;
+
+- You should receive a response from the server.
+
+{% include images-gallery.html imageCollection="client-side-rpc" %}
 
 {% capture tabspec %}coap-rpc-from-client
 A,Example Request,shell,resources/coap-rpc-from-client.sh,/docs/reference/resources/coap-rpc-from-client.sh
-B,Request Body,shell,resources/rpc-client-request.json,/docs/reference/resources/rpc-client-request.json
+B,rpc-client-request.json,shell,resources/rpc-client-request.json,/docs/reference/resources/rpc-client-request.json
 C,Response Body,shell,resources/rpc-server-response.json,/docs/reference/resources/rpc-server-response.json{% endcapture %}
 {% include tabs.html %}
   
@@ -260,6 +292,7 @@ Where
 ## Protocol customization
 
 CoAP transport can be fully customized for specific use-case by changing the corresponding [module](https://github.com/thingsboard/thingsboard/tree/master/transport/coap).
+
 
 ## Next steps
 
