@@ -8,36 +8,74 @@ horizontaltoc: "true"
 
 ## Overview
 
-ThingsBoard platform provides out-of-the-box components and APIs to dramatically reduce time to market and your effort to create smart energy solutions and energy monitoring systems.
-Save up to 90% of development time for your smart energy solution by utilizing following benefits:
+ThingsBoard platform dramatically reduces time to market and efforts to create smart-energy solutions. Save up to 90% of development time for your smart-energy solution by utilizing the following platform benefits:
 
- - Reliable and fault tolerant data collection for your smart meters and energy monitors;
- - Advanced and flexible data visualization for real-time and historical smart energy monitoring;
- - Customizable end-user dashboards to analyze and share the results of energy efficiency monitoring;
- - Integration with third-party analytics frameworks and solutions for advanced electricity usage monitoring;
- - Enable energy management by utilizing ThingsBoard API to control and manage smart meters.
- 
-The platform provides production ready server infrastructure to connect your smart meter devices, collect, store and analyze energy monitoring data, and share results of the analysis with your customers and end-users.
+  - Reliable and scalable data collection for your smart meters and energy monitors;
+  - Powerful rule engine to process collected data and produce valuable insights;
+  - Advanced and flexible visualization for real-time and historical data;
+  - Customizable end-user dashboards to analyze and share the results of energy efficiency monitoring;
+  - Integration with third-party analytics frameworks and solutions for advanced electricity usage analytics;
+  - Enable energy management by utilizing ThingsBoard API to control and manage smart meters.
 
 ## Smart energy dashboard
 
-The following interactive dashboard hosted on live demo server represents smart energy IoT data visualization that may be embedded in your IoT project or solution. See dashboard description below.
+The following interactive dashboard represents smart-energy IoT data visualization that you may easily embed into your IoT solution. See dashboard description below.
 
 <iframe class="demoDashboardFrame" src="https://demo.thingsboard.io/dashboard/e5e72680-0eda-11e7-942c-bb0136cc33d0?publicId=963ab470-34c9-11e7-a7ce-bb0136cc33d0&source=docs" frameborder="0" width="100%"></iframe>
 <div class="center" style="margin-bottom: 20px;">
     <a target="_blank" href="https://demo.thingsboard.io/dashboard/e8e409c0-f2b5-11e6-a6ee-bb0136cc33d0?publicId=963ab470-34c9-11e7-a7ce-bb0136cc33d0&source=realtimeIotDashboards" class="button">Live demo</a>
 </div>
 
-The attached dashboard demonstrates real-time data from smart-meters that is collected using ThingsBoard MQTT API. The data is stored in Cassandra DB on our demo server.
+The live dashboard displays real-time data from several smart meters collected using ThingsBoard MQTT API. 
+Collected data is processed via the rule engine to raise alarms on certain thresholds. 
+The main dashboard displays the energy meters, corresponding alarms, and real-time data feeds. 
+Click on the alarm or energy meter row to open the meter details.
 
-We would like to highlight following features:
+You may export the dashboard from our live demo server and import it to your ThingsBoard instance.
 
- - low-latency updates using web-sockets;
- - ability to zoom-in into the charts by selecting time range with the mouse;
- - advanced tooltips and legend;
- - dashboard toolbar in the top-right corner enables global time selector and switch between dashboards.
+## ThingsBoard advantages
+
+#### Scalability and high availability
+
+ThingsBoard supports high-availability deployments on cloud and on-premises data centers using K8S or bare-metal deployments. 
+Platform components are horizontally scalable. ThingsBoard has production deployments with more than 500 000 smart-meters devices.
+
+#### Data collection
+
+Connect devices directly to the platform via the following built-in protocols: HTTP, CoAP, MQTT, LwM2M, and SNMP. 
+Connect devices in your local network to the cloud using ThingsBoard Gateway via Modbus, BLE, BACnet, OPC-UA, and other protocols. 
+Connect SigFox devices via integrations with the SigFox backend. 
+Connect LoRaWAN devices via integrations with standard network servers like TTN, LORIOT, Chirpstack, Actility, etc.
+
+ThingsBoard supports industry-standard encryption algorithms like RSA and ECDSA to ensure the data is secure during transfer via TLS(TCP) and DTLS (UDP).
+
+#### Data processing
+
+ThingsBoard allows you to define application logic with drag-n-drop rule chain designer. 
+The Rule Engine is a robust and scalable processing framework that leverages industry-standard message queue implementations like Apache Kafka or AWS SQS to ensure data durability and guarantee data processing. 
+You are free to process data with the Rule engine or push it to further processing in external systems.
+
+#### Data visualization
+
+Visualize collected data using rich interactive dashboards. Develop multi-state interactive dashboards with zero coding efforts and built-in charts, gauges, maps, tables, and control widgets. 
+Customize every dashboard aspect using advanced widget settings or even custom widget bundles. 
+Low latency updates are possible with embedded web-sockets support.
+
+#### Mobile application
+
+Build your own IoT mobile application with minimum coding efforts using ThingsBoard Mobile Application, an open-source project based on Flutter. 
+Leverage a built-in set of mobile actions to take a photo, scan QR code, update location, and more directly within the dashboard.
+
+#### Multi-tenancy
+
+ThingsBoard provides UI and API to manage tenants, customers, users, devices, and assets. 
+Single tenant may have multiple tenant administrators and millions of devices and customers.
+It also offers out-of-the-box support of OTA updates for your smart meters.
+
 
 ## Smart energy solution overview
+
+TODO: rewrite
  
 The diagram below identifies data flow and integration points for typical smart energy solution that uses ThingsBoard platform to collect and analyze energy monitoring data from smart meters.
 
