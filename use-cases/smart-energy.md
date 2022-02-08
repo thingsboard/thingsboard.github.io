@@ -50,24 +50,30 @@ description:
 <h3>Smart energy dashboard</h3>
 <p>The following interactive dashboard hosted on live demo server represents smart energy IoT data visualization that may be embedded in your IoT project or solution. See dashboard description below.</p>
 
-<div class="slider">
-    <div class="demo-dashboards-carousel">
-        <div class="dashboard-item" style="display: none;">
-            <img class="item-image" src="/images/smart-energy.png">
-        </div>
-        <div class="dashboard-item" style="display: none;">
-            <img class="item-image" src="/images/smart-farming.png" />
-        </div>
-        <div class="dashboard-item" style="display: none;">
-            <img class="item-image" src="/images/fleet-tracking.png" />
-        </div>
-        <div class="dashboard-item" style="display: none;">
-            <img class="item-image" src="/images/smart-metering.png" />
-        </div>
+<div class="owl-carousel owl-theme" id="slider">
+    <div class="slide" style="background-image: url('/images/smart-farming.png')">
+        <img class="item-image" src="/images/fleet-tracking.png" />
     </div>
-    <a style="margin: 10px;" href="/use-cases/smart-energy/" class="button">View live demo</a>
+    <div class="slide" style="background-image: url('/images/smart-farming.png')">
+        <img class="item-image" src="/images/fleet-tracking.png" />
+    </div>
+    <div class="slide" style="background-image: url('/images/smart-farming.png')">
+        <img class="item-image" src="/images/fleet-tracking.png" />
+    </div>
+    <div class="slide" style="background-image: url('/images/smart-farming.png')">
+        <img class="item-image" src="/images/fleet-tracking.png" />
+    </div>
+    <div class="slide" style="background-image: url('/images/smart-farming.png')">
+        <img class="item-image" src="/images/fleet-tracking.png" />
+    </div>
+    <div class="slide" style="background-image: url('/images/smart-farming.png')">
+        <img class="item-image" src="/images/fleet-tracking.png" />
+    </div>
 </div>
 
+<a style="margin: 10px;" href="/use-cases/smart-energy/" class="button">View live demo</a>
+
+
 Being robust, scalable and user friendly, ThingsBoard IoT platform supports various IoT use cases by providing flexible and powerful out-of-the-box features to cut down time to market of your connected products and smart solutions. The platform is device-agnostic, so you can feed and analyze telemetry data from any sensor, connected device or application. ThingsBoard comprehensive features and rich platform APIs allow you to save time and resources on routine IoT tasks and concentrate on specific features of your IoT solution.
 
 Some of the industry use cases where ThingsBoard is being successfully utilized are listed below. Each use case is equipped with PoC dashboard and reference solution architecture.
@@ -89,40 +95,29 @@ Being robust, scalable and user friendly, ThingsBoard IoT platform supports vari
 Some of the industry use cases where ThingsBoard is being successfully utilized are listed below. Each use case is equipped with PoC dashboard and reference solution architecture.
 
 
-
-<script type="text/javascript">
-
-	jqueryDefer(initSlick);
+<script>
+	jqueryDefer(Owl);
 	
-	function initSlick() {
+	function Owl() {
 		var scriptsList = [
-			{src: '/css/slick.min.css', type: 'css'},
-			{src: '/css/slick-theme.min.css', type: 'css'},
-			{src: '/js/slick.min.js', type: 'script'}
+			{src: '/css/owl.carousel.min.css', type: 'css'},
+			{src: '/css/owl.theme.default.min.css', type: 'css'},
+			{src: '/js/owl.carousel.min.js', type: 'script'}
 		];
-		loadNextScript(0, scriptsList,
-				function() {
-					$(document).ready(function(){
-						var demoDashboardsCarousel = $('.demo-dashboards-carousel');
-						$('.dashboard-item', demoDashboardsCarousel).css('display', 'block');
-						demoDashboardsCarousel.slick({
-							slidesToShow: 1,
-							slidesToScroll: 1,
-							autoplay: true,
-							autoplaySpeed: 5000,
-							arrows: true,
-							dots: true,
-							responsive: [
-								{
-									breakpoint: 750,
-									settings: {
-										arrows: false
-									}
-								}
-							]
-						});
-					});
-				}
+        loadNextScript(0, scriptsList,
+                        function() {
+                            $(document).ready(function(){
+                                $('.owl-carousel').owlCarousel({
+                                    items:1,
+                                    margin:10,
+                                    autoHeight:true,
+                                    loop:true,
+                                    autoplay:true,
+                                    autoplayTimeout:5000,
+                                    autoplayHoverPause:true
+                                });
+                            });
+                        }
 		);
-	}
+    }
 </script>
