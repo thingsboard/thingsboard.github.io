@@ -1,8 +1,8 @@
 ---
 layout: common
-title: Fleet Tracking
+title: Fleet tracking and fleet management
+description: Fleet tracking and fleet management with ThingsBoard IoT Platform
 notitle: "true"
-description:
 
 ---
 <nav class="usecase-nav">

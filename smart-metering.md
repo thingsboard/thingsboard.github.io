@@ -1,8 +1,8 @@
 ---
 layout: common
-title: Smart Metering
+title: IoT smart metering solutions and smart meter data visualization with ThingsBoard
+description: IoT smart metering solutions and smart meter data visualization with ThingsBoard
 notitle: "true"
-description:
 
 ---
 <nav class="usecase-nav">

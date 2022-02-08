@@ -1,8 +1,8 @@
 ---
 layout: common
-title: Smart Farming
+title: Smart farming and smart agriculture solutions
+description: Smart farming, future farming and smart agriculture with ThingsBoard IoT Platform
 notitle: "true"
-description:
 
 ---
 <nav class="usecase-nav">

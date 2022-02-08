@@ -1,8 +1,8 @@
 ---
 layout: common
-title: Smart Energy
+title: Smart energy monitoring, data visualization and energy efficiency analysis
+description: Smart energy monitoring and data visualization with ThingsBoard IoT Platform
 notitle: "true"
-description:
 
 ---
 <nav class="usecase-nav">

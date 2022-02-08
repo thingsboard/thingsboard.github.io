@@ -3,6 +3,7 @@ layout: common
 title: IoT use cases
 description: ThingsBoard IoT Platform use cases
 horizontaltoc: "true"
+
 ---
 
 <h1 class="mainTitle">IoT Use Cases</h1>
