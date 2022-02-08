@@ -346,21 +346,17 @@ To make system much reliable and peak resistant, please consider using a persist
 
 ## Kafka + Postgres performance
 
-### m6a.large (2 vCPUs AMD EPYC 3rd, 8 GiB, EBS GP3) + Kafka - 5k devices , 5k msg/sec, 15k tps
+### Kafka + Postgres - 5000 msg/sec
 
-5000 devices, MQTT, 5000 msg/sec, 15000 telemetry/sec, postgres, Kafka queue
+Load configuration: 5000 devices, MQTT, 5000 msg/sec, 15000 telemetry/sec, Postgres, Kafka.  
+Instance: AWS m6a.large (2 vCPUs AMD EPYC 3rd, 8 GiB, EBS GP3)
 
-Estimated cost 19$ EC2 + x$ CPU burst + 8$ EBS GP3 100GB = 30$/mo
+Estimated cost 42$ EC2 + 8$ EBS GP3 100GB = 50$/mo, disk space for telemetry may add additional costs. 
 
-CPU 95%. This is good setup up to 5000 msg/sec, with peak performance up to 6000 msg sec
+Let's setup Kafka queue and run Thingsboard performance test to find out the pros and cons.
 
-System can survive peak message rate up to message rate 20000 msg/sec (60000 telemetry/sec).
-
-Persistent queue is essential to survive peak loads. Let's setup Kafka queue and run Thingsboard performance test.
-
-Zookeeper is required to run Kafka these days.
-
-Here the docker-compose with Thingsboard + Postgresql + Zookeeper + Kafka 
+Here the docker-compose with Thingsboard + Postgresql + Zookeeper + Kafka.
+Notice that Zookeeper is required to run Kafka these days.
 ```bash
 version: '3'
 services:
@@ -430,7 +426,7 @@ volumes: # to persist data between container restarts or being recreated
 ```
 {: .copy-code}
 
-Performance test docker run
+Performance test docker command line
 ```bash
 docker run -it --rm --network host --name tb-perf-test \
   --env REST_URL=http://thingsboard:8080 \
@@ -443,7 +439,7 @@ docker run -it --rm --network host --name tb-perf-test \
 ```
 {: .copy-code}
 
-Here results:
+Here results for Kafka + Postgres:
 
 ![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka/queue-stats.png)
 
@@ -467,9 +463,23 @@ Long-running result about 14 hours:
 
 ![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka/long-running/jmx-visualvm-monitoring-long-running.png)
 
-### m6a.large Stress test x3 Thingsbord + Postgresql + Kafka - 5k devices , 15k msg/sec, 45k tps
+This is the high load configuration with CPU 95% average utilization. 
+In that example we intentionally pick almost 100% load to try to crash this in the next test.
+You definitely need add more CPU to process some custom rule chains, render your dashboards and maintain stable 5000 msg/sec.
+This is good setup up to 5000 msg/sec, with peak performance up to 6000 msg/sec.
 
-Stress test for 5k devices, 15k msg/sec, 45k data points/sec
+System can survive peak message rate up to message rate 20000 msg/sec (60000 telemetry/sec).
+
+Conclusion: Persistent queue is essential to survive peak loads. 
+Kafka CPU and disk IO overhead are tiny relative to Postgres and Thingsboard CPU consumption. 
+The memory footprint is about 1G in default configuration and can be easily adjusted for smaller instances. 
+
+### Kafka + Postgres - x3 stress test
+
+Load configuration: 5000 devices, MQTT, 15000 msg/sec, 45000 telemetry/sec, Postgres, Kafka.  
+Instance: AWS m6a.large (2 vCPUs AMD EPYC 3rd, 8 GiB, EBS GP3)
+
+Let's take a stress test to find out how the Kafka bring the stability into operations. 
 
 ```bash
 docker run -it --rm --network host --name tb-perf-test \
