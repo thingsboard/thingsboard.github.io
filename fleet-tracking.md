@@ -2,56 +2,103 @@
 layout: common
 title: Fleet tracking and fleet management
 description: Fleet tracking and fleet management with ThingsBoard IoT Platform
-horizontaltoc: "true"
+notitle: "true"
 
 ---
+<nav class="usecase-nav">
+    <div class="crop-nav">
+        <ul>
+            <li>
+                <a href="/smart-energy/">Smart Energy</a>
+            </li>
+            <li>
+                <a href="/fleet-tracking/" class="active">Fleet Tracking</a>
+            </li>
+            <li>
+                <a href="/smart-farming/">Smart Farming</a>
+            </li>
+            <li>
+                <a href="/smart-metering/">Smart Metering</a>
+            </li>
+            <li>
+                <a href="/">Environment Monitoring</a>
+            </li>
+            <li>
+                <a href="/">Smart Office</a>
+            </li>
+            <li>
+                <a href="/">Water Metering</a>
+            </li>
+            <li>
+                <a href="/">Smart Retail</a>
+            </li>
+            <li>
+                <a href="/">EV Charging Stations</a>
+            </li>
+            <li>
+                <a href="/">Asset Tracking</a>
+            </li>
+            <li>
+                <a href="/">Device Provisioning</a>
+            </li>
+        </ul>
+    </div>
+</nav>
 
-## Overview
+<h1 class="mainTitle-tSpace">Smart tracking and fleet management</h1>
 
-ThingsBoard platform provides out-of-the-box components and APIs to dramatically reduce time to market and your effort to develop
-fleet tracking solutions and gps vehicle tracking systems.
-Save up to 90% of development time for your fleet tracking project by utilizing following benefits:
+<h3>Fleet tracking dashboard</h3>
+<p>The following interactive dashboard hosted on live demo server represents vehicle routes and state indicators visualization that may be embedded in your IoT fleet tracking project. See dashboard description below.</p>
 
- - Reliable and fault-tolerant data collection for your vehicle trackers and other embedded sensors;
- - Advanced and flexible IoT data visualization for both real-time and historical vehicle data;
- - Customizable end-user dashboards to share data from the vehicle tracking system with end users and customers;
- - Integration with third-party analytics frameworks and solutions for advanced insights and import those insights back to your vehicle tracking system.
-
-The platform provides production ready server infrastructure to connect your smart cars and vehicles, collect, store and analyze various vehicle data, and share results of the analysis with your customers and end-users.
-
-## Fleet tracking dashboard
-
-The following interactive dashboard hosted on live demo server represents vehicle routes and state indicators visualization that may be embedded in your IoT fleet tracking project. See dashboard description below.
-
-<iframe class="demoDashboardFrame" src="https://demo.thingsboard.io/dashboard/83cbe060-0edc-11e7-942c-bb0136cc33d0?publicId=963ab470-34c9-11e7-a7ce-bb0136cc33d0&source=docs" frameborder="0" width="100%"></iframe>
-<div class="center" style="margin-bottom: 20px;">
-    <a target="_blank" href="https://demo.thingsboard.io/dashboard/3d0bf910-ee09-11e6-b619-bb0136cc33d0?publicId=963ab470-34c9-11e7-a7ce-bb0136cc33d0&source=realtimeIotDashboards" class="button">Live demo</a>
+<div class="owl-carousel owl-theme" id="slider">
+    <div class="slide" style="background-image: url('/images/smart-farming.png')">
+        <img class="item-image" src="/images/fleet-tracking.png" />
+    </div>
+    <div class="slide" style="background-image: url('/images/smart-farming.png')">
+        <img class="item-image" src="/images/fleet-tracking.png" />
+    </div>
+    <div class="slide" style="background-image: url('/images/smart-farming.png')">
+        <img class="item-image" src="/images/fleet-tracking.png" />
+    </div>
 </div>
 
-The attached dashboard demonstrates real-time data from vehicle sensors that is collected using ThingsBoard MQTT API. The data is stored in Cassandra DB on our demo server.
+<a style="margin: 10px;" href="#" class="button">View live demo</a>
 
-We would like to highlight following features:
 
- - low-latency updates using web-sockets;
- - ability to zoom-in into the charts by selecting time range with the mouse;
- - advanced tooltips and legend;
- - dashboard toolbar in the top-right corner enables global time selector and switch between dashboards.
-
-## Fleet tracking solution overview
- 
-The diagram below identifies data flow and integration points for typical fleet tracking solution that uses ThingsBoard platform to collect and analyze vehicle data.
-
-![Fleet tracking solution diagram](/images/iot-use-cases/fleet-tracking.svg)
-
-You may notice that there are plenty of connectivity options for vehicle sensors: either direct connection to the cloud or through the IoT Gateway.
-Platform supports industry standard encryption algorithms (SSL) and device credentials types (X.509 certificates and access tokens).
-The collected data is stored in Cassandra - fault-tolerant and reliable NoSQL database.
-ThingsBoard Rule Engine allows you to forward incoming data to various analytics systems, such as Apache Spark or Hadoop using Kafka or other Message buses.
-
-## Learn more
-
-<a style="margin-right: 10px;" href="/docs/getting-started-guides/helloworld/" class="button">Getting started</a>
-<a style="margin: 10px;" href="/industries/smart-city/" class="button">Customers feedback</a>
-<a style="margin: 10px;" href="/docs/#platform-features" class="button">Platform features</a>
-<a style="margin: 10px;" href="/docs/reference/" class="button">Architecture</a>
-<a style="margin: 10px;" href="/docs/contact-us/" class="button">Contact us</a>
+Being robust, scalable and user friendly, ThingsBoard IoT platform supports various IoT use cases by providing flexible and powerful out-of-the-box features to cut down time to market of your connected products and smart solutions. The platform is device-agnostic, so you can feed and analyze telemetry data from any sensor, connected device or application. ThingsBoard comprehensive features and rich platform APIs allow you to save time and resources on routine IoT tasks and concentrate on specific features of your IoT solution.
+Some of the industry use cases where ThingsBoard is being successfully utilized are listed below. Each use case is equipped with PoC dashboard and reference solution architecture.
+Being robust, scalable and user friendly, ThingsBoard IoT platform supports various IoT use cases by providing flexible and powerful out-of-the-box features to cut down time to market of your connected products and smart solutions. The platform is device-agnostic, so you can feed and analyze telemetry data from any sensor, connected device or application. ThingsBoard comprehensive features and rich platform APIs allow you to save time and resources on routine IoT tasks and concentrate on specific features of your IoT solution.
+Some of the industry use cases where ThingsBoard is being successfully utilized are listed below. Each use case is equipped with PoC dashboard and reference solution architecture.
+Being robust, scalable and user friendly, ThingsBoard IoT platform supports various IoT use cases by providing flexible and powerful out-of-the-box features to cut down time to market of your connected products and smart solutions. The platform is device-agnostic, so you can feed and analyze telemetry data from any sensor, connected device or application. ThingsBoard comprehensive features and rich platform APIs allow you to save time and resources on routine IoT tasks and concentrate on specific features of your IoT solution.
+Some of the industry use cases where ThingsBoard is being successfully utilized are listed below. Each use case is equipped with PoC dashboard and reference solution architecture.
+Being robust, scalable and user friendly, ThingsBoard IoT platform supports various IoT use cases by providing flexible and powerful out-of-the-box features to cut down time to market of your connected products and smart solutions. The platform is device-agnostic, so you can feed and analyze telemetry data from any sensor, connected device or application. ThingsBoard comprehensive features and rich platform APIs allow you to save time and resources on routine IoT tasks and concentrate on specific features of your IoT solution.
+Some of the industry use cases where ThingsBoard is being successfully utilized are listed below. Each use case is equipped with PoC dashboard and reference solution architecture.
+Being robust, scalable and user friendly, ThingsBoard IoT platform supports various IoT use cases by providing flexible and powerful out-of-the-box features to cut down time to market of your connected products and smart solutions. The platform is device-agnostic, so you can feed and analyze telemetry data from any sensor, connected device or application. ThingsBoard comprehensive features and rich platform APIs allow you to save time and resources on routine IoT tasks and concentrate on specific features of your IoT solution.
+Some of the industry use cases where ThingsBoard is being successfully utilized are listed below. Each use case is equipped with PoC dashboard and reference solution architecture.
+Being robust, scalable and user friendly, ThingsBoard IoT platform supports various IoT use cases by providing flexible and powerful out-of-the-box features to cut down time to market of your connected products and smart solutions. The platform is device-agnostic, so you can feed and analyze telemetry data from any sensor, connected device or application. ThingsBoard comprehensive features and rich platform APIs allow you to save time and resources on routine IoT tasks and concentrate on specific features of your IoT solution.
+Some of the industry use cases where ThingsBoard is being successfully utilized are listed below. Each use case is equipped with PoC dashboard and reference solution architecture.
+Being robust, scalable and user friendly, ThingsBoard IoT platform supports various IoT use cases by providing flexible and powerful out-of-the-box features to cut down time to market of your connected products and smart solutions. The platform is device-agnostic, so you can feed and analyze telemetry data from any sensor, connected device or application. ThingsBoard comprehensive features and rich platform APIs allow you to save time and resources on routine IoT tasks and concentrate on specific features of your IoT solution.
+Some of the industry use cases where ThingsBoard is being successfully utilized are listed below. Each use case is equipped with PoC dashboard and reference solution architecture.
+Being robust, scalable and user friendly, ThingsBoard IoT platform supports various IoT use cases by providing flexible and powerful out-of-the-box features to cut down time to market of your connected products and smart solutions. The platform is device-agnostic, so you can feed and analyze telemetry data from any sensor, connected device or application. ThingsBoard comprehensive features and rich platform APIs allow you to save time and resources on routine IoT tasks and concentrate on specific features of your IoT solution.
+Some of the industry use cases where ThingsBoard is being successfully utilized are listed below. Each use case is equipped with PoC dashboard and reference solution architecture.
+Being robust, scalable and user friendly, ThingsBoard IoT platform supports various IoT use cases by providing flexible and powerful out-of-the-box features to cut down time to market of your connected products and smart solutions. The platform is device-agnostic, so you can feed and analyze telemetry data from any sensor, connected device or application. ThingsBoard comprehensive features and rich platform APIs allow you to save time and resources on routine IoT tasks and concentrate on specific features of your IoT solution.
+Some of the industry use cases where ThingsBoard is being successfully utilized are listed below. Each use case is equipped with PoC dashboard and reference solution architecture.
+Being robust, scalable and user friendly, ThingsBoard IoT platform supports various IoT use cases by providing flexible and powerful out-of-the-box features to cut down time to market of your connected products and smart solutions. The platform is device-agnostic, so you can feed and analyze telemetry data from any sensor, connected device or application. ThingsBoard comprehensive features and rich platform APIs allow you to save time and resources on routine IoT tasks and concentrate on specific features of your IoT solution.
+Being robust, scalable and user friendly, ThingsBoard IoT platform supports various IoT use cases by providing flexible and powerful out-of-the-box features to cut down time to market of your connected products and smart solutions. The platform is device-agnostic, so you can feed and analyze telemetry data from any sensor, connected device or application. ThingsBoard comprehensive features and rich platform APIs allow you to save time and resources on routine IoT tasks and concentrate on specific features of your IoT solution.
+Some of the industry use cases where ThingsBoard is being successfully utilized are listed below. Each use case is equipped with PoC dashboard and reference solution architecture.
+Being robust, scalable and user friendly, ThingsBoard IoT platform supports various IoT use cases by providing flexible and powerful out-of-the-box features to cut down time to market of your connected products and smart solutions. The platform is device-agnostic, so you can feed and analyze telemetry data from any sensor, connected device or application. ThingsBoard comprehensive features and rich platform APIs allow you to save time and resources on routine IoT tasks and concentrate on specific features of your IoT solution.
+Some of the industry use cases where ThingsBoard is being successfully utilized are listed below. Each use case is equipped with PoC dashboard and reference solution architecture.
+Being robust, scalable and user friendly, ThingsBoard IoT platform supports various IoT use cases by providing flexible and powerful out-of-the-box features to cut down time to market of your connected products and smart solutions. The platform is device-agnostic, so you can feed and analyze telemetry data from any sensor, connected device or application. ThingsBoard comprehensive features and rich platform APIs allow you to save time and resources on routine IoT tasks and concentrate on specific features of your IoT solution.
+Some of the industry use cases where ThingsBoard is being successfully utilized are listed below. Each use case is equipped with PoC dashboard and reference solution architecture.
+Being robust, scalable and user friendly, ThingsBoard IoT platform supports various IoT use cases by providing flexible and powerful out-of-the-box features to cut down time to market of your connected products and smart solutions. The platform is device-agnostic, so you can feed and analyze telemetry data from any sensor, connected device or application. ThingsBoard comprehensive features and rich platform APIs allow you to save time and resources on routine IoT tasks and concentrate on specific features of your IoT solution.
+Some of the industry use cases where ThingsBoard is being successfully utilized are listed below. Each use case is equipped with PoC dashboard and reference solution architecture.
+Being robust, scalable and user friendly, ThingsBoard IoT platform supports various IoT use cases by providing flexible and powerful out-of-the-box features to cut down time to market of your connected products and smart solutions. The platform is device-agnostic, so you can feed and analyze telemetry data from any sensor, connected device or application. ThingsBoard comprehensive features and rich platform APIs allow you to save time and resources on routine IoT tasks and concentrate on specific features of your IoT solution.
+Being robust, scalable and user friendly, ThingsBoard IoT platform supports various IoT use cases by providing flexible and powerful out-of-the-box features to cut down time to market of your connected products and smart solutions. The platform is device-agnostic, so you can feed and analyze telemetry data from any sensor, connected device or application. ThingsBoard comprehensive features and rich platform APIs allow you to save time and resources on routine IoT tasks and concentrate on specific features of your IoT solution.
+Some of the industry use cases where ThingsBoard is being successfully utilized are listed below. Each use case is equipped with PoC dashboard and reference solution architecture.
+Being robust, scalable and user friendly, ThingsBoard IoT platform supports various IoT use cases by providing flexible and powerful out-of-the-box features to cut down time to market of your connected products and smart solutions. The platform is device-agnostic, so you can feed and analyze telemetry data from any sensor, connected device or application. ThingsBoard comprehensive features and rich platform APIs allow you to save time and resources on routine IoT tasks and concentrate on specific features of your IoT solution.
+Some of the industry use cases where ThingsBoard is being successfully utilized are listed below. Each use case is equipped with PoC dashboard and reference solution architecture.
+Being robust, scalable and user friendly, ThingsBoard IoT platform supports various IoT use cases by providing flexible and powerful out-of-the-box features to cut down time to market of your connected products and smart solutions. The platform is device-agnostic, so you can feed and analyze telemetry data from any sensor, connected device or application. ThingsBoard comprehensive features and rich platform APIs allow you to save time and resources on routine IoT tasks and concentrate on specific features of your IoT solution.
+Some of the industry use cases where ThingsBoard is being successfully utilized are listed below. Each use case is equipped with PoC dashboard and reference solution architecture.
+Being robust, scalable and user friendly, ThingsBoard IoT platform supports various IoT use cases by providing flexible and powerful out-of-the-box features to cut down time to market of your connected products and smart solutions. The platform is device-agnostic, so you can feed and analyze telemetry data from any sensor, connected device or application. ThingsBoard comprehensive features and rich platform APIs allow you to save time and resources on routine IoT tasks and concentrate on specific features of your IoT solution.
+Some of the industry use cases where ThingsBoard is being successfully utilized are listed below. Each use case is equipped with PoC dashboard and reference solution architecture.
+Being robust, scalable and user friendly, ThingsBoard IoT platform supports various IoT use cases by providing flexible and powerful out-of-the-box features to cut down time to market of your connected products and smart solutions. The platform is device-agnostic, so you can feed and analyze telemetry data from any sensor, connected device or application. ThingsBoard comprehensive features and rich platform APIs allow you to save time and resources on routine IoT tasks and concentrate on specific features of your IoT solution.
