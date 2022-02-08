@@ -2,9 +2,13 @@
 layout: common
 title: Smart energy monitoring, data visualization and energy efficiency analysis
 description: Smart energy monitoring and data visualization with ThingsBoard IoT Platform
-horizontaltoc: "true"
+notitle: "true"
 
 ---
+
+{% include usecase-nav.html usecase="smart-energy" %}
+
+<h1 class="usecase-title">Smart energy monitoring, data visualization and energy efficiency analysis</h1>
 
 ## Overview
 
@@ -21,9 +25,20 @@ ThingsBoard platform dramatically reduces time to market and efforts to create s
 
 The following interactive dashboard represents smart-energy IoT data visualization that you may easily embed into your IoT solution. See dashboard description below.
 
-<iframe class="demoDashboardFrame" src="https://demo.thingsboard.io/dashboard/e5e72680-0eda-11e7-942c-bb0136cc33d0?publicId=963ab470-34c9-11e7-a7ce-bb0136cc33d0&source=docs" frameborder="0" width="100%"></iframe>
+<div class="usecase-carousel owl-carousel owl-theme" id="slider">
+    <div class="slide">
+        <img class="item-image" src="/images/fleet-tracking.png" />
+    </div>
+    <div class="slide">
+        <img class="item-image" src="/images/fleet-tracking.png" />
+    </div>
+    <div class="slide">
+        <img class="item-image" src="/images/fleet-tracking.png" />
+    </div>
+</div>
+
 <div class="center" style="margin-bottom: 20px;">
-    <a target="_blank" href="https://demo.thingsboard.io/dashboard/e8e409c0-f2b5-11e6-a6ee-bb0136cc33d0?publicId=963ab470-34c9-11e7-a7ce-bb0136cc33d0&source=realtimeIotDashboards" class="button">Live demo</a>
+    <a target="_blank" href="https://demo.thingsboard.io/dashboard/e8e409c0-f2b5-11e6-a6ee-bb0136cc33d0?publicId=963ab470-34c9-11e7-a7ce-bb0136cc33d0&source=realtimeIotDashboards" class="button">View live demo</a>
 </div>
 
 The live dashboard displays real-time data from several smart meters collected using ThingsBoard MQTT API. 

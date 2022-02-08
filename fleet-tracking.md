@@ -5,47 +5,10 @@ description: Fleet tracking and fleet management with ThingsBoard IoT Platform
 notitle: "true"
 
 ---
-<nav class="usecase-nav">
-    <div class="crop-nav">
-        <ul>
-            <li>
-                <a href="/smart-energy/">Smart Energy</a>
-            </li>
-            <li>
-                <a href="/fleet-tracking/" class="active">Fleet Tracking</a>
-            </li>
-            <li>
-                <a href="/smart-farming/">Smart Farming</a>
-            </li>
-            <li>
-                <a href="/smart-metering/">Smart Metering</a>
-            </li>
-            <li>
-                <a href="/">Environment Monitoring</a>
-            </li>
-            <li>
-                <a href="/">Smart Office</a>
-            </li>
-            <li>
-                <a href="/">Water Metering</a>
-            </li>
-            <li>
-                <a href="/">Smart Retail</a>
-            </li>
-            <li>
-                <a href="/">EV Charging Stations</a>
-            </li>
-            <li>
-                <a href="/">Asset Tracking</a>
-            </li>
-            <li>
-                <a href="/">Device Provisioning</a>
-            </li>
-        </ul>
-    </div>
-</nav>
 
-<h1 class="mainTitle-tSpace">Smart tracking and fleet management</h1>
+{% include usecase-nav.html usecase="fleet-tracking" %}
+
+<h1 class="usecase-title">Smart tracking and fleet management</h1>
 
 <h3>Fleet tracking dashboard</h3>
 <p>The following interactive dashboard hosted on live demo server represents vehicle routes and state indicators visualization that may be embedded in your IoT fleet tracking project. See dashboard description below.</p>

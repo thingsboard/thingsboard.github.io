@@ -1,0 +1,62 @@
+#docsContent
+  .usecase-nav
+    display: flex
+    margin-bottom: 56px
+    z-index: 2
+    position: fixed
+    top: 78px
+    left: 0
+    width: 100%
+    justify-content: center
+    background-color: rgba(255, 255, 255, 0.95)
+    backdrop-filter: blur(7px)
+    &.nav-fixed
+      border-bottom: solid 1px #ebebeb
+    .crop-nav
+      overflow-x: auto
+      display: flex
+      width: 100%
+      ul
+        flex-wrap: unset
+        display: flex
+        flex-direction: row
+        padding: 32px 30px 16px
+        li
+          position: relative
+          display: block
+          align-items: center
+          margin: 0
+          margin-right: 28px
+          padding-bottom: 16px
+          float: left
+          width: max-content
+          a
+            color: 	rgba(33,37,41, 0.6)
+            text-decoration: none
+            font-size: 18px
+            font-weight: 400
+            &:hover
+              color: #212529
+            &.active
+              color: #2A7DEC
+              font-weight: 500
+          &:last-child
+            margin: 0
+
+@media screen and (min-width: 1025px)
+  #docsContent
+    .usecase-nav
+      .crop-nav
+        max-width: 1200px
+        margin: 0 30px
+        ul
+          display: unset
+          flex-wrap: wrap
+          padding: 32px 0 16px
+
+@media screen and (min-width: 1500px)
+  #docsContent
+    .usecase-nav
+      .crop-nav
+        width: calc(100% - 520px)
+        max-width: none
