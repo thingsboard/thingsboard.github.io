@@ -21,9 +21,12 @@ We have scaled the test from 5K to 100K devices and message rate from 1K msg/sec
 Each test was executed for at least 24 hours to ensure no resource leakage or performance degradation over time.
 We have also included instructions to replicate the tests. Links to the instructions are in the details of each test run.
 
-Here the general [performance test methodology](./performance/performance-test-methodology.md) used.
+Here the general [performance test methodology](/docs/{{docsPrefix}}reference/performance/performance-test-methodology/) used.
 
-Here the tool set for the [Postgres](./performance/tools/postgres-pgadmin-monitoring.md), [Java](./performance/tools/java-jmx-monitoring.md) and [Thingsboard](./performance/tools/thingsboard-performance-charts.md) used to visualize the performance.
+Here the tool set for the 
+[Postgres](/docs/{{docsPrefix}}reference/performance/tools/postgres-pgadmin-monitoring/), 
+[Java](/docs/{{docsPrefix}}reference/performance/tools/java-jmx-monitoring/) and 
+[Thingsboard](/docs/{{docsPrefix}}reference/performance/tools/thingsboard-performance-charts/) used to visualize the performance.
 
 Note: Each IoT use case is different and may impact the performance numbers. The tests cover main functionality of data ingestion and alarm generation.  
 

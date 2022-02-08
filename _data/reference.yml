@@ -21,3 +21,13 @@ toc:
       path: /docs/reference/performance-comparison/
     - title: Single instance performance on different AWS instances (OUTDATED)
       path: /docs/reference/performance-aws-instances/
+    - title: Performance test methodology
+      path: /docs/reference/performance/performance-test-methodology/
+- title: Performance tools
+  section:
+    - title: VisualVM for Java JMX
+      path: /docs/reference/performance/tools/java-jmx-monitoring/
+    - title: PgAdmin for Postgres
+      path: /docs/reference/performance/tools/postgres-pgadmin-monitoring/
+    - title: Thingsboard performance charts
+      path: /docs/reference/performance/tools/thingsboard-performance-charts/

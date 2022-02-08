@@ -9,15 +9,15 @@ The goal is to compare the performance on each instance whether to use Kafka, Po
 
 To run clear test lets spin up two instances for Thingsboard and for performance tool. Assign Elastic IP to get permanent access to the instances.
 
-![Thingsboard and Performance test instances](../../../images/reference/performance-aws-instances/method/setup/performance_test_aws_instances.png "Thingsboard and Performance test instances")
+![Thingsboard and Performance test instances](/images/reference/performance-aws-instances/method/setup/performance_test_aws_instances.png "Thingsboard and Performance test instances")
 
 Setup network Security groups for both instances and open TCP ports 22 (SSH), 8080 (HTTP), 1883 (MQTT), 9999 (JMX) for inbound rules for source IPs (office, home, perf-test).
 
-![Setup network security group for performance test](../../../images/reference/performance-aws-instances/method/setup/performance_test_network_security_group.png "Setup network security group for performance test")
+![Setup network security group for performance test](/images/reference/performance-aws-instances/method/setup/performance_test_network_security_group.png "Setup network security group for performance test")
 
 As fas as we experience the number of rules will affect the network performance, so another good option is to allow the "All traffic" for the trusted IPs and local network IP subnet.
 
-![](../../../images/reference/performance-aws-instances/method/setup/performance_test_network_security_group_inbound_rules.png)
+![Security group inbound rules](/images/reference/performance-aws-instances/method/setup/performance_test_network_security_group_inbound_rules.png)
 
 Optionally, setup SSH private keys to access the instances. It is convenient to set up ~/.ssh/config like:
 ```bash
