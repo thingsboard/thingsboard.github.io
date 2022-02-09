@@ -45,7 +45,19 @@
     margin: 64px 0 24px
     position: relative
     .owl-stage-outer
+        overflow: visible
         position: relative
+        .owl-stage
+            .owl-item
+                filter: blur(8px)
+                transition-duration: 0.5s
+                padding: 40px 80px
+                .item-image
+                    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.04), 0px 50px 50px -20px rgba(0, 0, 0, 0.15)
+                &.active
+                    filter: blur(0)
+                    transition-duration: 0.5s
+                    padding: 0
     .owl-nav
         button.owl-prev, button.owl-next
             position: absolute
@@ -79,6 +91,79 @@
                 background: #E0E1E2
                 border-radius: 4px
 
+.center
+    margin-bottom: 64px!important
+
+.usecase-advantages
+    padding: 0 0 80px
+    .cards
+        padding-top: 50px
+        justify-content: center
+        &>div
+            margin-bottom: 36px
+            &.col-lg-6
+                padding: 0 18px
+                max-width: 100%
+            .block
+                padding: 48px
+                float: left
+                width: 100%
+                height: 100%
+                background: white
+                border-radius: 6px
+                box-shadow: 0 50px 50px -20px rgba(0,0,0,0.15)
+                display: unset
+                text-align: center
+                div
+                    width: 100%
+                    .title
+                        color: #2A7DEC
+                        font-size: 24px
+                        font-weight: 500
+                        margin-bottom: 6px
+                    p
+                        margin-top: 10px
+                img
+                    height: fit-content
+                    margin: 0 0 18px
+
+    .usecase-background
+        z-index: -1
+        position: absolute
+        top: 524px
+        left: 50%
+        img
+            position: absolute
+            top: -650px
+            left: 134px
+            box-shadow: none !important
+        div
+            position: absolute
+            -ms-transform: skewY(-6deg)
+            transform: skewY(-6deg)
+            width: 436px
+            height: 90px
+            &.bottom-features1
+                top: -950px
+                width: 2560px
+                height: 3000px
+                left: -1280px
+                background-color: #F7F9FC
+            &.bottom-features2
+                top: -240px
+                width: 2560px
+                height: 525px
+                left: -1280px
+                background-color: #252628
+            &.small11
+                top: -382px
+                left: 757px
+                background-color: #2A7DEC
+            &.small12
+                top: 334px
+                right: 789px
+                border: 4px solid #305680
+
 @media screen and (min-width: 750px)
     .owl-carousel.usecase-carousel
         .owl-dots
@@ -86,3 +171,13 @@
                 span
                     width: 72px
                     height: 4px
+    .usecase-advantages
+        .cards
+            div
+                .block
+                    text-align: left
+                    display: flex
+                    div
+                        width: calc(100% - 122px)
+                    img
+                        margin: 0 30px 0 0

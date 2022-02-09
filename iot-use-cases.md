@@ -3,6 +3,7 @@ layout: common
 title: IoT use cases
 description: ThingsBoard IoT Platform use cases
 horizontaltoc: "true"
+notitle: "true"
 
 ---
 
@@ -34,41 +35,6 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
         <img src="/images/case-met-icon.svg">
         <h5 class="title">Smart Metering</h5>
         <p>Collection, analysis and visualization of data from meters</p>
-    </a>
-    <a href="/iot-use-cases/" class="card">
-        <img src="/images/start-icon.svg">
-        <h5 class="title">Environment Monitoring</h5>
-        <p>Description</p>
-    </a>
-    <a href="/iot-use-cases/" class="card">
-        <img src="/images/start-icon.svg">
-        <h5 class="title">Smart Office</h5>
-        <p>Description</p>
-    </a>
-    <a href="/iot-use-cases/" class="card">
-        <img src="/images/start-icon.svg">
-        <h5 class="title">Water Metering</h5>
-        <p>Description</p>
-    </a>
-    <a href="/iot-use-cases/" class="card">
-        <img src="/images/start-icon.svg">
-        <h5 class="title">Smart Retail</h5>
-        <p>Description</p>
-    </a>
-    <a href="/iot-use-cases/" class="card">
-        <img src="/images/start-icon.svg">
-        <h5 class="title">EV Charging Stations</h5>
-        <p>Description</p>
-    </a>
-    <a href="/iot-use-cases/" class="card">
-        <img src="/images/start-icon.svg">
-        <h5 class="title">Asset Tracking</h5>
-        <p>Description</p>
-    </a>
-    <a href="/iot-use-cases/" class="card">
-        <img src="/images/start-icon.svg">
-        <h5 class="title">Device Provisioning</h5>
-        <p>Description</p>
     </a>
 </div>
 
