@@ -27,13 +27,13 @@ The following interactive dashboard represents smart-energy IoT data visualizati
 
 <div class="usecase-carousel owl-carousel owl-theme" id="slider">
     <div class="slide">
-        <img class="item-image" src="/images/fleet-tracking.png" />
+        <img class="item-image" src="/images/usecases/smart-energy/se1.png" />
     </div>
     <div class="slide">
-        <img class="item-image" src="/images/fleet-tracking.png" />
+        <img class="item-image" src="/images/usecases/smart-energy/se2.png" />
     </div>
     <div class="slide">
-        <img class="item-image" src="/images/fleet-tracking.png" />
+        <img class="item-image" src="/images/usecases/smart-energy/se3.png" />
     </div>
 </div>
 
@@ -49,44 +49,69 @@ Click on the alarm or energy meter row to open the meter details.
 You may export the dashboard from our live demo server and import it to your ThingsBoard instance.
 
 ## ThingsBoard advantages
+<section class="usecase-advantages">
+    <div class="usecase-background">
+        <div class="bottom-features1"></div><div class="bottom-features2"></div><div class="small11"></div><div class="small12"></div>
+    </div>
+    <div class="cards row">
+        <div class="col-lg-6">
+            <div class="block">
+                <img src="/images/microservices-icon.svg">
+                <div>
+                    <a class="title" href="#">Scalability and high availability</a>
+                    <p>ThingsBoard supports high-availability deployments on cloud and on-premises data centers using K8S or bare-metal deployments. Platform components are horizontally scalable. ThingsBoard has production deployments with more than 500 000 smart-meters devices.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="block">
+                <img src="/images/telemetry-icon.svg">
+                <div>
+                    <a class="title" href="#">Data collection</a>
+                    <p>Connect devices directly to the platform via the following built-in protocols: HTTP, CoAP, MQTT, LwM2M, and SNMP. Connect devices in your local network to the cloud using ThingsBoard Gateway via Modbus, BLE, BACnet, OPC-UA, and other protocols. Connect SigFox devices via integrations with the SigFox backend. Connect LoRaWAN devices via integrations with standard network servers like TTN, LORIOT, Chirpstack, Actility, etc.
 
-#### Scalability and high availability
-
-ThingsBoard supports high-availability deployments on cloud and on-premises data centers using K8S or bare-metal deployments. 
-Platform components are horizontally scalable. ThingsBoard has production deployments with more than 500 000 smart-meters devices.
-
-#### Data collection
-
-Connect devices directly to the platform via the following built-in protocols: HTTP, CoAP, MQTT, LwM2M, and SNMP. 
-Connect devices in your local network to the cloud using ThingsBoard Gateway via Modbus, BLE, BACnet, OPC-UA, and other protocols. 
-Connect SigFox devices via integrations with the SigFox backend. 
-Connect LoRaWAN devices via integrations with standard network servers like TTN, LORIOT, Chirpstack, Actility, etc.
-
-ThingsBoard supports industry-standard encryption algorithms like RSA and ECDSA to ensure the data is secure during transfer via TLS(TCP) and DTLS (UDP).
-
-#### Data processing
-
-ThingsBoard allows you to define application logic with drag-n-drop rule chain designer. 
-The Rule Engine is a robust and scalable processing framework that leverages industry-standard message queue implementations like Apache Kafka or AWS SQS to ensure data durability and guarantee data processing. 
-You are free to process data with the Rule engine or push it to further processing in external systems.
-
-#### Data visualization
-
-Visualize collected data using rich interactive dashboards. Develop multi-state interactive dashboards with zero coding efforts and built-in charts, gauges, maps, tables, and control widgets. 
-Customize every dashboard aspect using advanced widget settings or even custom widget bundles. 
-Low latency updates are possible with embedded web-sockets support.
-
-#### Mobile application
-
-Build your own IoT mobile application with minimum coding efforts using ThingsBoard Mobile Application, an open-source project based on Flutter. 
-Leverage a built-in set of mobile actions to take a photo, scan QR code, update location, and more directly within the dashboard.
-
-#### Multi-tenancy
-
-ThingsBoard provides UI and API to manage tenants, customers, users, devices, and assets. 
-Single tenant may have multiple tenant administrators and millions of devices and customers.
-It also offers out-of-the-box support of OTA updates for your smart meters.
-
+ThingsBoard supports industry-standard encryption algorithms like RSA and ECDSA to ensure the data is secure during transfer via TLS(TCP) and DTLS (UDP).</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="block">
+                <img src="/images/integration-icon.svg">
+                <div>
+                    <a class="title" href="#">Data processing</a>
+                    <p>ThingsBoard allows you to define application logic with drag-n-drop rule chain designer. The Rule Engine is a robust and scalable processing framework that leverages industry-standard message queue implementations like Apache Kafka or AWS SQS to ensure data durability and guarantee data processing. You are free to process data with the Rule engine or push it to further processing in external systems.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="block">
+                <img src="/images/visualization-icon.svg">
+                <div>
+                    <a class="title" href="#">Data visualization</a>
+                    <p>Visualize collected data using rich interactive dashboards. Develop multi-state interactive dashboards with zero coding efforts and built-in charts, gauges, maps, tables, and control widgets. Customize every dashboard aspect using advanced widget settings or even custom widget bundles. Low latency updates are possible with embedded web-sockets support.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="block">
+                <img src="/images/device-icon.svg">
+                <div>
+                    <a class="title" href="#">Mobile application</a>
+                    <p>Build your own IoT mobile application with minimum coding efforts using ThingsBoard Mobile Application, an open-source project based on Flutter. Leverage a built-in set of mobile actions to take a photo, scan QR code, update location, and more directly within the dashboard.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="block">
+                <img src="/images/tenancy-icon.svg">
+                <div>
+                    <a class="title" href="#">Multi-tenancy</a>
+                    <p>ThingsBoard provides UI and API to manage tenants, customers, users, devices, and assets. Single tenant may have multiple tenant administrators and millions of devices and customers. It also offers out-of-the-box support of OTA updates for your smart meters.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 ## Smart energy solution overview
 
