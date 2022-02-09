@@ -51,13 +51,13 @@
             .owl-item
                 filter: blur(8px)
                 transition-duration: 0.5s
-                padding: 40px 80px
+                transform: scale(0.9)
                 .item-image
                     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.04), 0px 50px 50px -20px rgba(0, 0, 0, 0.15)
                 &.active
                     filter: blur(0)
                     transition-duration: 0.5s
-                    padding: 0
+                    transform: scale(1)
     .owl-nav
         button.owl-prev, button.owl-next
             position: absolute
@@ -90,9 +90,6 @@
                 height: 10px
                 background: #E0E1E2
                 border-radius: 4px
-
-.center
-    margin-bottom: 64px!important
 
 .usecase-advantages
     padding: 0 0 80px
