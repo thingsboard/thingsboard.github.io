@@ -1,68 +1,34 @@
 ---
-layout: common
+layout: use-case
 title: Smart farming and smart agriculture solutions
 description: Smart farming, future farming and smart agriculture with ThingsBoard IoT Platform
 notitle: "true"
 
 ---
-<nav class="usecase-nav">
-    <div class="crop-nav">
-        <ul>
-            <li>
-                <a href="/smart-energy/">Smart Energy</a>
-            </li>
-            <li>
-                <a href="/fleet-tracking/">Fleet Tracking</a>
-            </li>
-            <li>
-                <a href="/smart-farming/" class="active">Smart Farming</a>
-            </li>
-            <li>
-                <a href="/smart-metering/">Smart Metering</a>
-            </li>
-            <li>
-                <a href="/">Environment Monitoring</a>
-            </li>
-            <li>
-                <a href="/">Smart Office</a>
-            </li>
-            <li>
-                <a href="/">Water Metering</a>
-            </li>
-            <li>
-                <a href="/">Smart Retail</a>
-            </li>
-            <li>
-                <a href="/">EV Charging Stations</a>
-            </li>
-            <li>
-                <a href="/">Asset Tracking</a>
-            </li>
-            <li>
-                <a href="/">Device Provisioning</a>
-            </li>
-        </ul>
-    </div>
-</nav>
 
-<h1 class="mainTitle-tSpace">Title</h1>
+{% include usecase-nav.html usecase="smart-farming" %}
 
-<h3>Subtitle</h3>
-<p>Text</p>
+<h1 class="usecase-title">Title</h1>
 
-<div class="owl-carousel owl-theme" id="slider">
-    <div class="slide">
+## Overview
+
+Text
+
+<div class="usecase-carousel owl-carousel owl-theme">
+    <div>
         <img class="item-image" src="/images/fleet-tracking.png" />
     </div>
-    <div class="slide">
+    <div>
         <img class="item-image" src="/images/fleet-tracking.png" />
     </div>
-    <div class="slide">
+    <div>
         <img class="item-image" src="/images/fleet-tracking.png" />
     </div>
 </div>
 
-<a style="margin: 10px;" href="#" class="button">View live demo</a>
+<div class="center" style="margin-bottom: 64px;">
+    <a target="_blank" href="https://demo.thingsboard.io/dashboard/e8e409c0-f2b5-11e6-a6ee-bb0136cc33d0?publicId=963ab470-34c9-11e7-a7ce-bb0136cc33d0&source=realtimeIotDashboards" class="button">View live demo</a>
+</div>
 
 
 Being robust, scalable and user friendly, ThingsBoard IoT platform supports various IoT use cases by providing flexible and powerful out-of-the-box features to cut down time to market of your connected products and smart solutions. The platform is device-agnostic, so you can feed and analyze telemetry data from any sensor, connected device or application. ThingsBoard comprehensive features and rich platform APIs allow you to save time and resources on routine IoT tasks and concentrate on specific features of your IoT solution.
@@ -81,6 +47,6 @@ Being robust, scalable and user friendly, ThingsBoard IoT platform supports vari
 
 Some of the industry use cases where ThingsBoard is being successfully utilized are listed below. Each use case is equipped with PoC dashboard and reference solution architecture.
 
-Being robust, scalable and user friendly, ThingsBoard IoT platform supports various IoT use cases by providing flexible and powerful out-of-the-box features to cut down time to market of your connected products and smart solutions. The platform is device-agnostic, so you can feed and analyze telemetry data from any sensor, connected device or application. ThingsBoard comprehensive features and rich platform APIs allow you to save time and resources on routine IoT tasks and concentrate on specific features of your IoT solution.
+eing robust, scalable and user friendly, ThingsBoard IoT platform supports various IoT use cases by providing flexible and powerful out-of-the-box features to cut down time to market of your connected products and smart solutions. The platform is device-agnostic, so you can feed and analyze telemetry data from any sensor, connected device or application. ThingsBoard comprehensive features and rich platform APIs allow you to save time and resources on routine IoT tasks and concentrate on specific features of your IoT solution.
 
 Some of the industry use cases where ThingsBoard is being successfully utilized are listed below. Each use case is equipped with PoC dashboard and reference solution architecture.

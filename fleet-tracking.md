@@ -1,5 +1,5 @@
 ---
-layout: common
+layout: use-case
 title: Fleet tracking and fleet management
 description: Fleet tracking and fleet management with ThingsBoard IoT Platform
 notitle: "true"
@@ -10,23 +10,28 @@ notitle: "true"
 
 <h1 class="usecase-title">Smart tracking and fleet management</h1>
 
+## Overview
+
+Text
+
 <h3>Fleet tracking dashboard</h3>
 <p>The following interactive dashboard hosted on live demo server represents vehicle routes and state indicators visualization that may be embedded in your IoT fleet tracking project. See dashboard description below.</p>
 
-<div class="owl-carousel owl-theme" id="slider">
-    <div class="slide" style="background-image: url('/images/smart-farming.png')">
+<div class="usecase-carousel owl-carousel owl-theme">
+    <div>
         <img class="item-image" src="/images/fleet-tracking.png" />
     </div>
-    <div class="slide" style="background-image: url('/images/smart-farming.png')">
+    <div>
         <img class="item-image" src="/images/fleet-tracking.png" />
     </div>
-    <div class="slide" style="background-image: url('/images/smart-farming.png')">
+    <div>
         <img class="item-image" src="/images/fleet-tracking.png" />
     </div>
 </div>
 
-<a style="margin: 10px;" href="#" class="button">View live demo</a>
-
+<div class="center" style="margin-bottom: 64px;">
+    <a target="_blank" href="https://demo.thingsboard.io/dashboard/e8e409c0-f2b5-11e6-a6ee-bb0136cc33d0?publicId=963ab470-34c9-11e7-a7ce-bb0136cc33d0&source=realtimeIotDashboards" class="button">View live demo</a>
+</div>
 
 Being robust, scalable and user friendly, ThingsBoard IoT platform supports various IoT use cases by providing flexible and powerful out-of-the-box features to cut down time to market of your connected products and smart solutions. The platform is device-agnostic, so you can feed and analyze telemetry data from any sensor, connected device or application. ThingsBoard comprehensive features and rich platform APIs allow you to save time and resources on routine IoT tasks and concentrate on specific features of your IoT solution.
 Some of the industry use cases where ThingsBoard is being successfully utilized are listed below. Each use case is equipped with PoC dashboard and reference solution architecture.

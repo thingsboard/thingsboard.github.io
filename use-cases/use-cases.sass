@@ -41,14 +41,27 @@
         .card
             width: 100%
 
-.owl-carousel.usecase-carousel
+.owl-carousel.owl-theme.usecase-carousel
     margin: 64px 0 24px
     position: relative
+    visibility: hidden
+    display: block
+    min-height: 500px
+    max-height: 500px
+    &.owl-loaded
+        visibility: visible
+        min-height: unset
+        max-height: unset
+        .owl-stage-outer
+            .owl-stage
+                .owl-item
+                    transition: unset
     .owl-stage-outer
         overflow: visible
         position: relative
         .owl-stage
             .owl-item
+                transition: none
                 filter: blur(8px)
                 transition-duration: 0.5s
                 transform: scale(0.9)
@@ -77,6 +90,8 @@
             transform: scale(-1, 1)
         button.owl-next
             right: 0
+    .owl-nav.disabled+.owl-dots
+        margin-top: 32px
     .owl-dots
         margin-top: 32px
         button.owl-dot
@@ -162,7 +177,7 @@
                 border: 4px solid #305680
 
 @media screen and (min-width: 750px)
-    .owl-carousel.usecase-carousel
+    .owl-carousel.owl-theme.usecase-carousel
         .owl-dots
             button.owl-dot
                 span

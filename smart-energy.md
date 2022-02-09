@@ -1,5 +1,5 @@
 ---
-layout: common
+layout: use-case
 title: Smart energy monitoring, data visualization and energy efficiency analysis
 description: Smart energy monitoring and data visualization with ThingsBoard IoT Platform
 notitle: "true"
@@ -25,14 +25,14 @@ ThingsBoard platform dramatically reduces time to market and efforts to create s
 
 The following interactive dashboard represents smart-energy IoT data visualization that you may easily embed into your IoT solution. See dashboard description below.
 
-<div class="usecase-carousel owl-carousel owl-theme" id="slider">
-    <div class="slide">
+<div class="usecase-carousel owl-carousel owl-theme">
+    <div>
         <img class="item-image" src="/images/usecases/smart-energy/se1.png" />
     </div>
-    <div class="slide">
+    <div>
         <img class="item-image" src="/images/usecases/smart-energy/se2.png" />
     </div>
-    <div class="slide">
+    <div>
         <img class="item-image" src="/images/usecases/smart-energy/se3.png" />
     </div>
 </div>
