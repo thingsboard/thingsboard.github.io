@@ -59,9 +59,13 @@ Instance: AWS t3.medium (2 vCPUs Intel, 4 GiB, EBS GP3)
 
 Estimated cost 19$ EC2 + x$ CPU burst + 8$ EBS GP3 100GB = 30$/mo
 
-Statistics related to the test execution:
+Statistics related to the test execution on **x64** architecture:
 
 {% include images-gallery.html imageCollection="postgres-only-1000" %}
+
+Statistics related to the test execution on **ARM** architecture (t4g.medium):
+
+{% include images-gallery.html imageCollection="postgres-only-1000-arm" %}
 
 **Lessons learned**
 

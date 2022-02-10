@@ -26,6 +26,29 @@ postgres-only-1000:
         image: /images/reference/performance-aws-instances/method/t3-medium/postgres/aws-storage-monitoring.png
         title: 'AWS storage monitoring'
 
+postgres-only-1000-arm:
+    0:
+        image: /images/reference/performance-aws-instances/method/arm/t4g-medium/postgres/queue-stats.png  
+        title: 'Thingsboard queue stats on ARM architecture'
+    1:
+        image: /images/reference/performance-aws-instances/method/arm/t4g-medium/postgres/api-usage.png
+        title: 'Thingsboard API usage on ARM architecture'
+    2:
+        image: /images/reference/performance-aws-instances/method/arm/t4g-medium/postgres/htop.png
+        title: 'htop on ARM architecture'
+    3:
+        image: /images/reference/performance-aws-instances/method/arm/t4g-medium/postgres/jmx-visualvm-monitoring.png
+        title: 'JMX VisualVM monitoring on ARM architecture'
+    4:
+        image: /images/reference/performance-aws-instances/method/arm/t4g-medium/postgres/postgresql-pgadmin-dashboard.png
+        title: 'Postgresql PgAdmin dashboard on ARM architecture'
+    5:
+        image: /images/reference/performance-aws-instances/method/arm/t4g-medium/postgres/aws-instance-monitoring.png
+        title: 'AWS instance monitoring on ARM architecture'
+    6:
+        image: /images/reference/performance-aws-instances/method/arm/t4g-medium/postgres/aws-storage-monitoring.png
+        title: 'AWS storage monitoring on ARM architecture'
+
 postgres-kafka-5000:
     0:
         image: /images/reference/performance-aws-instances/method/m6a-large/postgres-kafka/queue-stats.png  
