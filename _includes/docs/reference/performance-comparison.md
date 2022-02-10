@@ -1,6 +1,7 @@
 * TOC
 {:toc}
- 
+<-- This will parse content of HTML tags as markdown when uncomment {::options parse_block_html="true" /} -->
+
 ThingsBoard has been run in production by numerous companies in both [monolithic](/docs/{{docsPrefix}}reference/monolithic/) 
 and [microservices](/docs/{{docsPrefix}}reference/msa/) deployment modes.
 This article describes the performance of a single ThingsBoard server in the most popular usage scenarios. 
@@ -87,10 +88,8 @@ Without unlimited mode at the first start you have 0 credits to burst CPU up and
 
 <details markdown="1">
 <summary>
-Setup the AWS EC2 instances
+Setup the Thingsboard instance on AWS EC2
 </summary>
-
-
 
 Use the Docker Compose file listed below to setup the AWS EC2 instance based on the [instruction](/docs/{{docsPrefix}}reference/performance/setup-aws-instances/).  
 
@@ -139,8 +138,7 @@ volumes: # to persist data between container restarts or being recreated
 
 </details>
 
-{::options parse_block_html="true" /}
-<details>
+<details markdown="1">
 <summary>
 Launch performance test tool
 </summary>
@@ -148,8 +146,11 @@ Launch performance test tool
 Use the Docker command listed below to launch the performance test tool based on the [instruction](/docs/{{docsPrefix}}reference/performance/performance-test-methodology/).
 
 ```bash
-export TB_HOST=PUT_YOUR_THINGSBOARD_HOST_IP_ADDRESS_HERE
+export TB_HOST_VPC=172.31.16.229 # put your Thingsboard virtual private cloud VPC IP address here
+export TB_HOST=52.50.5.45 # put your Thingsboard public IP address here
 docker run -it --rm --network host --name tb-perf-test \
+  --env REST_URL=http://$TB_HOST_VPC:8080 \
+  --env MQTT_HOST=$TB_HOST \
   --env REST_URL=http://$TB_HOST:8080 \
   --env MQTT_HOST=$TB_HOST \
   --env DEVICE_END_IDX=5000 \
@@ -161,11 +162,10 @@ docker run -it --rm --network host --name tb-perf-test \
 {: .copy-code}
 
 </details>
-{::options parse_block_html="false" /}
 
 ### Postgres - x3 peak survive
 
-Load configuration: 5000 devices, MQTT, 3333 msg/sec, 10000 telemetry/sec, postgres, in-memory queue.   
+Load configuration: 5000 devices, MQTT, 3333 msg/sec, 10000 data point/sec, postgres, in-memory queue.   
 Instance: AWS t3.medium (2 vCPUs Intel, 4 GiB, EBS GP3)
 
 In previous section we got the first **Thingsboard successful** deployment designed up to 1000 msg/sec.  
@@ -174,16 +174,24 @@ Looks perfect, **but what happen** when we face a peak load on production? Shoul
 The **cost of failure** may be money loss, reputation or carries issue.  
 The **benefits** of reliable design may bring you to a better life, no stress, success and constant growing.
 
-Let's try to handle a messages flood about x3 of regular rate up to 10000 telemetry/sec.
+Let's try to handle a messages flood about x3 of regular rate up to 10000 data point/sec.
 
 Thingsboard docker compose with no change with the previous section. 
-Message rate have been increased gradually. 
-Performance test was stopped and run with a greater numbers step by step 
+Message rate have been increased gradually.  
+
+<details markdown="1">
+<summary>
+Performance test was stopped and run with a greater numbers step by step
+</summary>
+
+Use the Docker command listed below to launch the performance test tool based on the [instruction](/docs/{{docsPrefix}}reference/performance/performance-test-methodology/).
 
 ```bash
+export TB_HOST_VPC=172.31.16.229 # put your Thingsboard virtual private cloud VPC IP address here
+export TB_HOST=52.50.5.45 # put your Thingsboard public IP address here
 docker run -it --rm --network host --name tb-perf-test \
-  --env REST_URL=http://thingsboard:8080 \
-  --env MQTT_HOST=thingsboard \
+  --env REST_URL=http://$TB_HOST_VPC:8080 \
+  --env MQTT_HOST=$TB_HOST \
   --env DEVICE_END_IDX=5000 \
   --env MESSAGES_PER_SECOND=3333 \
   --env ALARMS_PER_SECOND=10 \
@@ -192,6 +200,8 @@ docker run -it --rm --network host --name tb-perf-test \
   thingsboard/tb-ce-performance-test:latest
 ```
 {: .copy-code}
+
+</details>
 
 Test have been passed successfully. Here some great shots.
 
@@ -217,7 +227,7 @@ The best practice approach is to set up a persistent queue service like a Kafka 
 
 ### Postgres - x10 peak & crash
 
-Load configuration: 5000 devices, MQTT, 10_000 msg/sec, 30_000 telemetry/sec, postgres, in-memory queue.   
+Load configuration: 5000 devices, MQTT, 10_000 msg/sec, 30_000 data point/sec, postgres, in-memory queue.   
 Instance: AWS t3.medium (2 vCPUs Intel, 4 GiB, EBS GP3)
 
 **Let's burn** this tiny instance with x10 message rate!
@@ -232,9 +242,11 @@ Some lag will build up. Let's see what is going on inside the memory and what th
 Here the performance test docker command.
 
 ```bash
+export TB_HOST_VPC=172.31.16.229 # put your Thingsboard virtual private cloud VPC IP address here
+export TB_HOST=52.50.5.45 # put your Thingsboard public IP address here
 docker run -it --rm --network host --name tb-perf-test \
-  --env REST_URL=http://thingsboard:8080 \
-  --env MQTT_HOST=thingsboard \
+  --env REST_URL=http://$TB_HOST_VPC:8080 \
+  --env MQTT_HOST=$TB_HOST \
   --env DEVICE_END_IDX=5000 \
   --env MESSAGES_PER_SECOND=10000 \
   --env ALARMS_PER_SECOND=10 \
@@ -268,7 +280,7 @@ In next 3 minutes the system will die.
 
 ![](../../../images/reference/performance-aws-instances/method/t3-medium/flood-x10/out-of-memory.png)
 
-```
+```bash
 tb_1        | java.lang.OutOfMemoryError: Java heap space
 tb_1        | Dumping heap to java_pid76.hprof ...
 tb_1        | Unable to create java_pid76.hprof: Permission denied
@@ -301,7 +313,7 @@ Any solutions? Yes! Please, check out the Kafka or other persistent queue.
 
 ### Postgres - vertical scaling boundary
 
-Load configuration: 6000 devices, MQTT, 6000 msg/sec, 18000 telemetry/sec, postgres, in-memory queue.   
+Load configuration: 6000 devices, MQTT, 6000 msg/sec, 18000 data point/sec, postgres, in-memory queue.   
 Instance: AWS _m6a.large_ (2 vCPUs AMD EPYC 3rd, 8 GiB, EBS GP3)
 
 Disclaimer: do not go production with this design and load!
@@ -317,9 +329,11 @@ Eventually you will face that putting more CPUs and memory have no positive effe
 Let's find out.
 
 ```bash
+export TB_HOST_VPC=172.31.16.229 # put your Thingsboard virtual private cloud VPC IP address here
+export TB_HOST=52.50.5.45 # put your Thingsboard public IP address here
 docker run -it --rm --network host --name tb-perf-test \
-  --env REST_URL=http://thingsboard:8080 \
-  --env MQTT_HOST=thingsboard \
+  --env REST_URL=http://$TB_HOST_VPC:8080 \
+  --env MQTT_HOST=$TB_HOST \
   --env DEVICE_END_IDX=6000 \
   --env MESSAGES_PER_SECOND=6000 \
   --env ALARMS_PER_SECOND=10 \
@@ -364,7 +378,7 @@ To make system much reliable and peak resistant, please consider using a persist
 
 ### Scenario B
 
-Load configuration: 5000 devices, MQTT, 5000 msg/sec, 15000 telemetry/sec, Postgres, Kafka.  
+Load configuration: 5000 devices, MQTT, 5000 msg/sec, 15000 data point/sec, Postgres, Kafka.  
 Instance: AWS m6a.large (2 vCPUs AMD EPYC 3rd, 8 GiB, EBS GP3)
 
 Estimated cost 42$ EC2 + 8$ EBS GP3 100GB = 50$/mo, disk space for telemetry may add additional costs. 
@@ -444,9 +458,11 @@ volumes: # to persist data between container restarts or being recreated
 
 Performance test docker command line
 ```bash
+export TB_HOST_VPC=172.31.16.229 # put your Thingsboard virtual private cloud VPC IP address here
+export TB_HOST=52.50.5.45 # put your Thingsboard public IP address here
 docker run -it --rm --network host --name tb-perf-test \
-  --env REST_URL=http://thingsboard:8080 \
-  --env MQTT_HOST=thingsboard \
+  --env REST_URL=http://$TB_HOST_VPC:8080 \
+  --env MQTT_HOST=$TB_HOST \
   --env DEVICE_END_IDX=5000 \
   --env MESSAGES_PER_SECOND=5000 \
   --env ALARMS_PER_SECOND=50 \
@@ -484,7 +500,7 @@ In that example we intentionally pick almost 100% load to try to crash this in t
 You definitely need add more CPU to process some custom rule chains, render your dashboards and maintain stable 5000 msg/sec.
 This is good setup up to 5000 msg/sec, with peak performance up to 6000 msg/sec.
 
-System can survive peak message rate up to message rate 20000 msg/sec (60000 telemetry/sec).
+System can survive peak message rate up to message rate 20000 msg/sec (60000 data point/sec).
 
 Conclusion: Persistent queue is essential to survive peak loads. 
 Kafka CPU and disk IO overhead are tiny relative to Postgres and Thingsboard CPU consumption. 
@@ -492,15 +508,17 @@ The memory footprint is about 1G in default configuration and can be easily adju
 
 ### Kafka + Postgres - x3 stress test
 
-Load configuration: 5000 devices, MQTT, 15000 msg/sec, 45000 telemetry/sec, Postgres, Kafka.  
+Load configuration: 5000 devices, MQTT, 15000 msg/sec, 45000 data point/sec, Postgres, Kafka.  
 Instance: AWS m6a.large (2 vCPUs AMD EPYC 3rd, 8 GiB, EBS GP3)
 
 Let's take a stress test to find out how the Kafka bring the stability into operations. 
 
 ```bash
+export TB_HOST_VPC=172.31.16.229 # put your Thingsboard virtual private cloud VPC IP address here
+export TB_HOST=52.50.5.45 # put your Thingsboard public IP address here
 docker run -it --rm --network host --name tb-perf-test \
-  --env REST_URL=http://thingsboard:8080 \
-  --env MQTT_HOST=thingsboard \
+  --env REST_URL=http://$TB_HOST_VPC:8080 \
+  --env MQTT_HOST=$TB_HOST \
   --env DEVICE_END_IDX=5000 \
   --env MESSAGES_PER_SECOND=15000 \
   --env ALARMS_PER_SECOND=50 \
@@ -576,7 +594,7 @@ Cons:
 
 ### Timescale + Kafka + Postgres - 2000 msg/sec
 
-Load configuration: 5000 devices, MQTT, 5000 msg/sec, 15000 telemetry/sec, Postgres, Kafka, Timescale.  
+Load configuration: 5000 devices, MQTT, 5000 msg/sec, 15000 data point/sec, Postgres, Kafka, Timescale.  
 Instance: AWS m6a.large (2 vCPUs AMD EPYC 3rd, 8 GiB, EBS GP3)
 
 Estimated cost 42$ EC2 + 8$ EBS GP3 100GB = 50$/mo, disk space for telemetry may add additional costs.
@@ -654,9 +672,11 @@ volumes: # to persist data between container restarts or being recreated
 
 Performance test docker run
 ```bash
+export TB_HOST_VPC=172.31.16.229 # put your Thingsboard virtual private cloud VPC IP address here
+export TB_HOST=52.50.5.45 # put your Thingsboard public IP address here
 docker run -it --rm --network host --name tb-perf-test \
-  --env REST_URL=http://172.31.29.195:8080 \
-  --env MQTT_HOST=52.50.5.45 \
+  --env REST_URL=http://$TB_HOST_VPC:8080 \
+  --env MQTT_HOST=$TB_HOST \
   --env DEVICE_END_IDX=5000 \
   --env MESSAGES_PER_SECOND=5000 \
   --env ALARMS_PER_SECOND=50 \
@@ -675,7 +695,7 @@ Hopefully, the Timescale can do much better, but for the docker image `timescale
 
 ### Cassandra - 25k devices
 
-Load configuration: 25000 devices, MQTT, 10000 msg/sec, 30000 telemetry/sec, MQTT, Postgres (TS latest), Kafka queue, Cassandra (TS)  
+Load configuration: 25000 devices, MQTT, 10000 msg/sec, 30000 data point/sec, MQTT, Postgres (TS latest), Kafka queue, Cassandra (TS)  
 Instance: AWS m6a.2xlarge (8 vCPUs AMD EPYC 3rd, 32 GiB, EBS GP3)
 
 Estimated cost 167$ EC2 m6a.2xlarge + 24$ EBS GP3 300GB = 191$/mo
@@ -788,15 +808,18 @@ volumes: # to persist data between container restarts or being recreated
 {: .copy-code}
 
 ```bash
+export TB_HOST_VPC=172.31.16.229 # put your Thingsboard virtual private cloud VPC IP address here
+export TB_HOST=52.50.5.45 # put your Thingsboard public IP address here
 docker run -it --rm --network host --name tb-perf-test \
-  --env REST_URL=http://thingsboard:8080 \
-  --env MQTT_HOST=thingsboard \
+  --env REST_URL=http://$TB_HOST_VPC:8080 \
+  --env MQTT_HOST=$TB_HOST \
   --env DEVICE_END_IDX=25000 \
   --env MESSAGES_PER_SECOND=10000 \
   --env ALARMS_PER_SECOND=50 \
   --env DURATION_IN_SECONDS=86400 \
   thingsboard/tb-ce-performance-test:latest
 ```
+{: .copy-code}
 
 Here the queue stats. It looks solid. A small fluctuation on the chart is nominal.  
 All systems have to run maintenance in background, so it is completely fine to have those chart for Thingsboard monolith deployment.    
@@ -871,7 +894,7 @@ System can be scaled up vertically up to 50-100%. For significant horizontal sca
 
 ### Cassandra - 100k devices, 5k msg/s
 
-Load configuration: 100_000 devices, MQTT, 5000 msg/sec, 15000 telemetry/sec, MQTT, Postgres (TS latest), Kafka queue, Cassandra (TS)  
+Load configuration: 100_000 devices, MQTT, 5000 msg/sec, 15000 data point/sec, MQTT, Postgres (TS latest), Kafka queue, Cassandra (TS)  
 Instance: AWS m6a.2xlarge (8 vCPUs AMD EPYC 3rd, 32 GiB, EBS GP3)
 
 To produce 100k simultaneous connection we need at least 2 performance-test instances. Regarding the maximum port count 65535 on a single server.
@@ -890,6 +913,7 @@ ulimit -n 1048576
 sudo sysctl -a | grep conntrack_max
 sudo sysctl -w net.netfilter.nf_conntrack_max=1048576
 ```
+{: .copy-code}
 
 Let's prepare the Thingsboard 
 
@@ -1014,12 +1038,13 @@ git clone https://github.com/thingsboard/performance-tests.git
 cd performance-tests
 ./build.sh
 ```
+{: .copy-code}
 
 Performance test node1
 ```bash
 cd ~/performance-tests
-export REST_URL=http://52.50.5.45:8080 # put Thingsboard API here
-export MQTT_HOST=52.50.5.45 # put Thingsboard API here
+export REST_URL=http://172.31.16.229:8080 # put Thingsboard VPC IP here
+export MQTT_HOST=52.50.5.45 # put Thingsboard public IP here
 export DEVICE_START_IDX=0
 export DEVICE_END_IDX=50000
 export MESSAGES_PER_SECOND=2500
@@ -1028,12 +1053,13 @@ export DURATION_IN_SECONDS=86400
 export DEVICE_CREATE_ON_START=true # set true once
 nohup mvn spring-boot:run &
 ```
+{: .copy-code}
 
 Performance test node2
 ```bash
 cd ~/performance-tests
-export REST_URL=http://52.50.5.45:8080 # put Thingsboard API here
-export MQTT_HOST=52.50.5.45 # put Thingsboard API here
+export REST_URL=http://172.31.16.229:8080 # put Thingsboard VPC API here
+export MQTT_HOST=52.50.5.45 # put Thingsboard public IP here
 export DEVICE_START_IDX=50000
 export DEVICE_END_IDX=100000
 export MESSAGES_PER_SECOND=2500
@@ -1042,6 +1068,7 @@ export DURATION_IN_SECONDS=86400
 export DEVICE_CREATE_ON_START=true # set true once
 nohup mvn spring-boot:run &
 ```
+{: .copy-code}
 
 Test runs 24 hour and here the results:
 
@@ -1062,7 +1089,7 @@ Test runs 24 hour and here the results:
 
 ### Cassandra - 100k devices, 10k msg/sec
 
-Load configuration: 100_000 devices, MQTT, 10_000 msg/sec, 30_000 telemetry/sec, MQTT, Postgres (TS latest), Kafka queue, Cassandra (TS, _device state_)  
+Load configuration: 100_000 devices, MQTT, 10_000 msg/sec, 30_000 data point/sec, MQTT, Postgres (TS latest), Kafka queue, Cassandra (TS, _device state_)  
 Instance: AWS m6a.2xlarge (8 vCPUs AMD EPYC 3rd, 32 GiB, EBS GP3)
 
 #### Persist device state to attributes (PostgreSQL)
@@ -1207,8 +1234,8 @@ cd performance-tests
 Performance test node1
 ```bash
 cd ~/performance-tests
-export REST_URL=http://172.31.29.195:8080 # put Thingsboard API here
-export MQTT_HOST=52.50.5.45 # put Thingsboard API here
+export REST_URL=http://172.31.16.229:8080 # put your Thingsboard virtual private cloud VPC IP address here
+export MQTT_HOST=52.50.5.45 # put your Thingsboard API here
 export DEVICE_START_IDX=0
 export DEVICE_END_IDX=50000
 export MESSAGES_PER_SECOND=5000
@@ -1221,8 +1248,8 @@ nohup mvn spring-boot:run &
 Performance test node2
 ```bash
 cd ~/performance-tests
-export REST_URL=http://172.31.29.195:8080 # put Thingsboard API here
-export MQTT_HOST=52.50.5.45 # put Thingsboard API here
+export REST_URL=http://172.31.16.229:8080 # put your Thingsboard virtual private cloud VPC IP address here
+export MQTT_HOST=52.50.5.45 # put your Thingsboard API here
 export DEVICE_START_IDX=50000
 export DEVICE_END_IDX=100000
 export MESSAGES_PER_SECOND=5000
