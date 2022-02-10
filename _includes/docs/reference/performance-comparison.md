@@ -237,7 +237,12 @@ The goal is **to help the community** to avoid choosing a wrong design. Helping 
 So let's generate some message rate spike. CPU and disk will not be able to process all the messages.
 Some lag will build up. Let's see what is going on inside the memory and what the consequences on in-memory queue flood.
 
-Here the performance test docker command.
+<details markdown="1">
+<summary>
+Launch performance test tool
+</summary>
+
+Use the Docker command listed below to launch the performance test tool based on the [instruction](/docs/{{docsPrefix}}reference/performance/performance-test-methodology/).
 
 ```bash
 export TB_HOST_VPC=172.31.16.229 # put your Thingsboard virtual private cloud VPC IP address here
@@ -253,6 +258,8 @@ docker run -it --rm --network host --name tb-perf-test \
   thingsboard/tb-ce-performance-test:latest
 ```
 {: .copy-code}
+
+</details>
 
 At the beginning the system looks busy, but responsive.
 
@@ -324,7 +331,12 @@ All operations likely to written in a single transaction log and simply looks li
 A bunch of rows shares a single data page and cause the wait locks on concurrent insert or update.
 Eventually you will face that putting more CPUs and memory have no positive effect on data collecting performance.
 
-Let's find out.
+<details markdown="1">
+<summary>
+Launch performance test tool
+</summary>
+
+Use the Docker command listed below to launch the performance test tool based on the [instruction](/docs/{{docsPrefix}}reference/performance/performance-test-methodology/).
 
 ```bash
 export TB_HOST_VPC=172.31.16.229 # put your Thingsboard virtual private cloud VPC IP address here
@@ -339,6 +351,8 @@ docker run -it --rm --network host --name tb-perf-test \
   thingsboard/tb-ce-performance-test:latest
 ```
 {: .copy-code}
+
+</details>
 
 ![Queue stats dashboard](../../../images/reference/performance-aws-instances/method/m6a-large/postgres/thingsboard-aws-m6a-large-queue-stats-dashboard.png)
 
@@ -470,7 +484,13 @@ volumes: # to persist data between container restarts or being recreated
 
 </details>
 
-Performance test docker command line
+<details markdown="1">
+<summary>
+Launch performance test tool
+</summary>
+
+Use the Docker command listed below to launch the performance test tool based on the [instruction](/docs/{{docsPrefix}}reference/performance/performance-test-methodology/).
+
 ```bash
 export TB_HOST_VPC=172.31.16.229 # put your Thingsboard virtual private cloud VPC IP address here
 export TB_HOST=52.50.5.45 # put your Thingsboard public IP address here
@@ -484,6 +504,8 @@ docker run -it --rm --network host --name tb-perf-test \
   thingsboard/tb-ce-performance-test:latest
 ```
 {: .copy-code}
+
+</details>
 
 This is the high load configuration with CPU 95% average utilization. 
 In that example we intentionally pick almost 100% load to try to crash this in the next test.
@@ -503,6 +525,14 @@ Instance: AWS m6a.large (2 vCPUs AMD EPYC 3rd, 8 GiB, EBS GP3)
 
 Let's take a stress test to find out how the Kafka bring the stability into operations. 
 
+
+<details markdown="1">
+<summary>
+Launch performance test tool
+</summary>
+
+Use the Docker command listed below to launch the performance test tool based on the [instruction](/docs/{{docsPrefix}}reference/performance/performance-test-methodology/).
+
 ```bash
 export TB_HOST_VPC=172.31.16.229 # put your Thingsboard virtual private cloud VPC IP address here
 export TB_HOST=52.50.5.45 # put your Thingsboard public IP address here
@@ -517,6 +547,8 @@ docker run -it --rm --network host --name tb-perf-test \
   thingsboard/tb-ce-performance-test:latest
 ```
 {: .copy-code}
+
+</details>
 
 We can see the 100% CPU utilization, system is overloaded. 
 
@@ -660,7 +692,13 @@ volumes: # to persist data between container restarts or being recreated
 ```
 {: .copy-code}
 
-Performance test docker run
+<details markdown="1">
+<summary>
+Launch performance test tool
+</summary>
+
+Use the Docker command listed below to launch the performance test tool based on the [instruction](/docs/{{docsPrefix}}reference/performance/performance-test-methodology/).
+
 ```bash
 export TB_HOST_VPC=172.31.16.229 # put your Thingsboard virtual private cloud VPC IP address here
 export TB_HOST=52.50.5.45 # put your Thingsboard public IP address here
@@ -674,6 +712,8 @@ docker run -it --rm --network host --name tb-perf-test \
   thingsboard/tb-ce-performance-test:latest
 ```
 {: .copy-code}
+
+</details>
 
 Conclusion: with the Timescale it was hard to process about 2k msg/sec on the same instance as Postgres was able to handle 5k messages.
 The reason is a high CPU usage.
@@ -797,6 +837,13 @@ volumes: # to persist data between container restarts or being recreated
 ```
 {: .copy-code}
 
+<details markdown="1">
+<summary>
+Launch performance test tool
+</summary>
+
+Use the Docker command listed below to launch the performance test tool based on the [instruction](/docs/{{docsPrefix}}reference/performance/performance-test-methodology/).
+
 ```bash
 export TB_HOST_VPC=172.31.16.229 # put your Thingsboard virtual private cloud VPC IP address here
 export TB_HOST=52.50.5.45 # put your Thingsboard public IP address here
@@ -810,6 +857,8 @@ docker run -it --rm --network host --name tb-perf-test \
   thingsboard/tb-ce-performance-test:latest
 ```
 {: .copy-code}
+
+</details>
 
 Here the queue stats. It looks solid. A small fluctuation on the chart is nominal.  
 All systems have to run maintenance in background, so it is completely fine to have those chart for Thingsboard monolith deployment.    
@@ -1020,7 +1069,7 @@ volumes: # to persist data between container restarts or being recreated
 {: .copy-code}
 
 Performance tests will be started as an application to reduce network setup complexity using the container.
-Before you started, clone and build once the performance test:
+Before you started, clone and build the performance test from source:
 ```bash
 cd ~
 git clone https://github.com/thingsboard/performance-tests.git
@@ -1030,7 +1079,14 @@ cd performance-tests
 ```
 {: .copy-code}
 
-Performance test node1
+
+<details markdown="1">
+<summary>
+Launch performance test tool on the _first node_
+</summary>
+
+Use the Docker command listed below to launch the performance test tool based on the [instruction](/docs/{{docsPrefix}}reference/performance/performance-test-methodology/).
+
 ```bash
 cd ~/performance-tests
 export REST_URL=http://172.31.16.229:8080 # put Thingsboard VPC IP here
@@ -1045,7 +1101,15 @@ nohup mvn spring-boot:run &
 ```
 {: .copy-code}
 
-Performance test node2
+</details>
+
+<details markdown="1">
+<summary>
+Launch performance test tool on the _second node_
+</summary>
+
+Use the Docker command listed below to launch the performance test tool based on the [instruction](/docs/{{docsPrefix}}reference/performance/performance-test-methodology/).
+
 ```bash
 cd ~/performance-tests
 export REST_URL=http://172.31.16.229:8080 # put Thingsboard VPC API here
@@ -1059,6 +1123,8 @@ export DEVICE_CREATE_ON_START=true # set true once
 nohup mvn spring-boot:run &
 ```
 {: .copy-code}
+
+</details>
 
 Test runs 24 hour and here the results:
 
@@ -1220,8 +1286,15 @@ git clone https://github.com/thingsboard/performance-tests.git
 cd performance-tests
 ./build.sh
 ```
+{: .copy-code}
 
-Performance test node1
+<details markdown="1">
+<summary>
+Launch performance test tool on the _first node_
+</summary>
+
+Use the Docker command listed below to launch the performance test tool based on the [instruction](/docs/{{docsPrefix}}reference/performance/performance-test-methodology/).
+
 ```bash
 cd ~/performance-tests
 export REST_URL=http://172.31.16.229:8080 # put your Thingsboard virtual private cloud VPC IP address here
@@ -1234,8 +1307,17 @@ export DURATION_IN_SECONDS=86400
 export DEVICE_CREATE_ON_START=true # set true once
 nohup mvn spring-boot:run &
 ```
+{: .copy-code}
 
-Performance test node2
+</details>
+
+<details markdown="1">
+<summary>
+Launch performance test tool on the _second node_
+</summary>
+
+Use the Docker command listed below to launch the performance test tool based on the [instruction](/docs/{{docsPrefix}}reference/performance/performance-test-methodology/).
+
 ```bash
 cd ~/performance-tests
 export REST_URL=http://172.31.16.229:8080 # put your Thingsboard virtual private cloud VPC IP address here
@@ -1248,6 +1330,9 @@ export DURATION_IN_SECONDS=86400
 export DEVICE_CREATE_ON_START=true # set true once
 nohup mvn spring-boot:run &
 ```
+{: .copy-code}
+
+</details>
 
 Test results looks fine:
 
@@ -1265,20 +1350,20 @@ Test results looks fine:
 
 ![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/100k-10k-30k/aws-storage-monitoring.png)
 
-**Conclusion**: the m6a.2xlarge is can handle up to 100k devices with message rate up to 10k/sec.
-CPU usage is 93%, so there is almost no spare resources left for a peak load and user activities.
+**Conclusion**: the m6a.2xlarge can handle up to 100k devices with a message rate of up to 10k/sec.
+CPU usage is 93%, so there are almost no extra resources left for a peak load and user activities.
 
 #### Do we really have 100k device connected?
 
-Here some point how to ensure that you have a valid test run with all device created and connected
+Here are some pointers on how to ensure that you have a valid test run with all devices created and connected
 
-* All devices were created. Open device List and check total device count.
+* All devices created. Open device List and check total device count.
 
 ![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/100k-is-connected/devices-list-100k-thingsboard.png)
 
-* All device connected. Check the logs. Device count have to be greater than 100k
+* All devices connected. Check the logs. Device count has to be greater than 100k
 
-```
+```bash
 tb_1         | 2022-01-06 16:37:11,716 [TB-Scheduling-3] INFO  o.t.s.c.t.s.DefaultTransportService - Transport Stats: openConnections [100000]
 ```
 
@@ -1286,10 +1371,12 @@ tb_1         | 2022-01-06 16:37:11,716 [TB-Scheduling-3] INFO  o.t.s.c.t.s.Defau
 
 ![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/100k-is-connected/jmx-mbeans-java-lang-operating-system-open-file-descriptor-count.png)
 
-* Count TCP connections using command 
+* Count TCP connections using command
+
 ```bash
 ss -s
 ```
+{: .copy-code}
 
 #### 24h test run
 
@@ -1323,7 +1410,9 @@ SELECT nspname || '.' || relname AS "relation", pg_size_pretty(pg_relation_size(
   WHERE nspname NOT IN ('pg_catalog', 'information_schema')
   ORDER BY pg_relation_size(C.oid) DESC LIMIT 20;
 ```
-You can see the biggest table is timeseries (TS, telemetry) and TS index. All telemetry divided my month to gain a stable performance.  
+{: .copy-code}
+
+You can see the biggest table is timeseries (TS, telemetry, data points) and TS index. All telemetry divided my month to gain a stable performance.  
 Test started in December and finished in January. The TS have two tables 2021_12 and 2022_01 for respective months.
 
 ![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka/stress-x3/postgresql-disk-usage-by-table.png)
@@ -1350,18 +1439,20 @@ Note: data size on disk may vary depends on the content.
 
 ### Disk usage summary
 
-Compared with Postgresql, Cassandra's disk space consumption is about x10 times less. Cassandra's advantage is the data compression and less overhead in a data structure.
+Compared with Postgresql, Cassandra's disk space consumption is about x10 times less.
 
-TODO: IOPS..
+Cassandra's advantage is the data compression and less overhead in a data structure.
+
+Another benefit is Cassandra does less write operations than Postgres. It is enough to order storage with a standard IOPS plan and save money. 
 
 ## Thank you
 
-Thank you for your time to read all this stuff. 
-Thanks to Thingsboard community that filed issues and shared performance solution. 
-Thanks to all my colleagues that helps me speedup the Thingsboard.
+Thank you for taking your time to read all this stuff.
+Thanks to the Thingsboard community that filed issues and shared performance solutions around the time.
+Thanks to all my colleagues that help me speed up the Thingsboard.
 
 It was Thingsboard 3.3.3 version.
 
-Feel free to send as a feedback or share your fancy setup on [GitHub](https://github.com/thingsboard/performance-tests/issues)
+Feel free to send us feedback or share your fancy setup on [GitHub](https://github.com/thingsboard/performance-tests/issues)
 
 See You next release!
