@@ -1,6 +1,6 @@
 * TOC
 {:toc}
-  
+ 
 ThingsBoard has been run in production by numerous companies in both [monolithic](/docs/{{docsPrefix}}reference/monolithic/) 
 and [microservices](/docs/{{docsPrefix}}reference/msa/) deployment modes.
 This article describes the performance of a single ThingsBoard server in the most popular usage scenarios. 
@@ -64,13 +64,22 @@ Cloud provider will charge you against CPU burst, but the production will up and
 Note: t3.medium is a **burstable instance** with a base level performance 20% of CPU load. When you idle, unused CPU time accumulated up to max limit.
 So please, design your instance to use below 20% in average.
 
-Tip: Enable Unlimited mode in credit specification to get a good performance at first steps 
-and survive extra load above the limit (additional charges may apply). 
-Without unlimited mode at the first start you have 0 credits to burst CPU up and the system is throttled down to baseline 20% CPU. That will cause the first setup is quite slow without "unlimited mode". 
+<details markdown="1">
+<summary>
+Tip: Enable Unlimited mode in credit specification to get a good performance at first steps
+</summary>
+
+And survive extra load above the limit (additional charges may apply).
+Without unlimited mode at the first start you have 0 credits to burst CPU up and the system is throttled down to baseline 20% CPU. That will cause the first setup is quite slow without "unlimited mode".
 
 ![AWS enable unlimited mode in credit specification](../../../images/reference/performance-aws-instances/method/t3-medium/postgres/aws-credit-spec-unlimited-mode.png)
 
-Here the Thingsboard docker-compose to reproduce this test.
+</details>
+
+<details markdown="1">
+<summary>
+Here the Thingsboard docker-compose to reproduce this test
+</summary>
 
 ```bash
 version: '3'
@@ -115,7 +124,14 @@ volumes: # to persist data between container restarts or being recreated
 ```
 {: .copy-code}
 
+</details>
+
+{::options parse_block_html="true" /}
+<details>
+<summary>
 Performance test docker run
+</summary>
+
 ```bash
 docker run -it --rm --network host --name tb-perf-test \
   --env REST_URL=http://thingsboard:8080 \
@@ -128,23 +144,12 @@ docker run -it --rm --network host --name tb-perf-test \
 ```
 {: .copy-code}
 
+</details>
+{::options parse_block_html="false" /}
+
 Here some charts
 
 {% include images-gallery.html imageCollection="postgres-only-1000" %}
-
-![](../../../images/reference/performance-aws-instances/method/t3-medium/postgres/queue-stats.png)
-
-![](../../../images/reference/performance-aws-instances/method/t3-medium/postgres/api-usage.png)
-
-![](../../../images/reference/performance-aws-instances/method/t3-medium/postgres/htop.png)
-
-![](../../../images/reference/performance-aws-instances/method/t3-medium/postgres/jmx-visualvm-monitoring.png)
-
-![](../../../images/reference/performance-aws-instances/method/t3-medium/postgres/postgresql-pgadmin-dashboard.png)
-
-![](../../../images/reference/performance-aws-instances/method/t3-medium/postgres/aws-instance-monitoring.png)
-
-![](../../../images/reference/performance-aws-instances/method/t3-medium/postgres/aws-storage-monitoring.png)
 
 ### Postgres - x3 peak survive
 
