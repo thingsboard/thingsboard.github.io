@@ -525,6 +525,26 @@ Instance: AWS m6a.large (2 vCPUs AMD EPYC 3rd, 8 GiB, EBS GP3)
 
 Let's take a stress test to find out how the Kafka bring the stability into operations. 
 
+Statistics related to the test execution:
+
+We can see 100% CPU utilization. The system is overloaded.
+
+But all non-processed messages go to Kafka (will be persisted eventually) and wait until the rule engine can poll and process them.
+
+Java machine feels good. Heap memory has enough space to operate. Let's perform garbage collection manually to find the lowest point of the memory consumption. The free memory level goes back to the average level. That is a good result.
+
+Another way to ensure that we run stable is to check the Kafka producer state with JMX MBean.
+
+**Kafka Lag** is building up. That means that the rule engine processing speed is lower than messages coming.
+
+{% include images-gallery.html imageCollection="postgres-kafka-x3-stress" %}
+
+Now let's stop the x3 test and get back to the average message rate (5000 msg/sec) in a minute.
+
+After a while, we may see that the lag is going down from 2.8M to 1.2M. Eventually, the numbers back to nominal.
+
+{% include images-gallery.html imageCollection="postgres-kafka-x3-stress-back-to-x1" %}
+
 
 <details markdown="1">
 <summary>
@@ -549,47 +569,6 @@ docker run -it --rm --network host --name tb-perf-test \
 {: .copy-code}
 
 </details>
-
-We can see the 100% CPU utilization, system is overloaded. 
-
-![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka/stress-x3/htop-stress-x3.png)
-
-But all non-processed messages goes to the Kafka (will be persisted eventually) and wait until rule engine be able to poll and process it.
-
-![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka/stress-x3/queue-stats-stress-x3.png)
-
-Java machine feels good. heap have enough space to operate. Let's perform garbage collection manually to find the lowest point of the memory consumption. That is a good result.
-
-![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka/stress-x3/jmx-visualvm-monitoring-long-running-stress-x3.png)
-
-Another way to ensure that we run stable is to check the Kafka producer state with JMX MBean.
-
-![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka/stress-x3/kafka-producer-jmx-mbean-stress-x3.png)
-
-**Kafka Lag** is building up. We can find the log message like that and find out how the rule engine behind the message producer. 
-```
-tb_1         | 2022-01-01 11:13:09,206 [kafka-consumer-stats-9-thread-1] INFO  o.t.s.q.k.TbKafkaConsumerStatsService - [re-Main-consumer] Topic partitions with lag: [[topic=[tb_rule_engine.main.8], partition=[0], committedOffset=[26696438], endOffset=[29404398], lag=[2707960]], [topic=[tb_rule_engine.main.9], partition=[0], committedOffset=[27799786], endOffset=[30629198], lag=[2829412]], [topic=[tb_rule_engine.main.6], partition=[0], committedOffset=[27283852], endOffset=[30050510], lag=[2766658]], [topic=[tb_rule_engine.main.7], partition=[0], committedOffset=[27793408], endOffset=[30614682], lag=[2821274]], [topic=[tb_rule_engine.main.4], partition=[0], committedOffset=[27997981], endOffset=[30898332], lag=[2900351]], [topic=[tb_rule_engine.main.5], partition=[0], committedOffset=[26800755], endOffset=[29517286], lag=[2716531]], [topic=[tb_rule_engine.main.2], partition=[0], committedOffset=[28252902], endOffset=[31198566], lag=[2945664]], [topic=[tb_rule_engine.main.3], partition=[0], committedOffset=[28051043], endOffset=[30958401], lag=[2907358]], [topic=[tb_rule_engine.main.0], partition=[0], committedOffset=[27216979], endOffset=[29997683], lag=[2780704]], [topic=[tb_rule_engine.main.1], partition=[0], committedOffset=[26904413], endOffset=[29637343], lag=[2732930]]].
-```
-
-![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka/stress-x3/kafka-lag-stress-x3.png)
-
-Now let's stop the x3 test and get back to normal message rate (5000 msg/sec) in a minute.
-
-After a while, we may se that the lag is going down from 2.8M to 1.2M
-```
-tb_1         | 2022-01-01 19:02:10,143 [kafka-consumer-stats-9-thread-1] INFO  o.t.s.q.k.TbKafkaConsumerStatsService - [re-Main-consumer] Topic partitions with lag: [[topic=[tb_rule_engine.main.8], partition=[0], committedOffset=[34495686], endOffset=[35590695], lag=[1095009]], [topic=[tb_rule_engine.main.9], partition=[0], committedOffset=[35596375], endOffset=[37070245], lag=[1473870]], [topic=[tb_rule_engine.main.6], partition=[0], committedOffset=[35066992], endOffset=[36371684], lag=[1304692]], [topic=[tb_rule_engine.main.7], partition=[0], committedOffset=[35600195], endOffset=[37052738], lag=[1452543]], [topic=[tb_rule_engine.main.4], partition=[0], committedOffset=[35816575], endOffset=[37396165], lag=[1579590]], [topic=[tb_rule_engine.main.5], partition=[0], committedOffset=[34554861], endOffset=[35727138], lag=[1172277]], [topic=[tb_rule_engine.main.2], partition=[0], committedOffset=[36037246], endOffset=[37758600], lag=[1721354]], [topic=[tb_rule_engine.main.3], partition=[0], committedOffset=[35825723], endOffset=[37468375], lag=[1642652]], [topic=[tb_rule_engine.main.0], partition=[0], committedOffset=[35020460], endOffset=[36307867], lag=[1287407]], [topic=[tb_rule_engine.main.1], partition=[0], committedOffset=[34693477], endOffset=[35872506], lag=[1179029]]].
-```
-
-![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka/stress-x3/kafka-lag-stress-x3-after.png)
-
-Here the rule engine stats fo x1, x3 amd back to x1 loads.
-
-![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka/stress-x3/queue-stats--x1--stress-x3--x1.png)
-
-Here is the API usage stats that shows the transport rate (incoming messages and datapoints) and the rule engine performance.
-
-![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka/stress-x3/api-usage--x1--stress-x3--x1.png)
-
 
 ### Kafka + Postgres - summary
 

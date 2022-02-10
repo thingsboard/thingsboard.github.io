@@ -60,6 +60,34 @@ postgres-kafka-5000-long-running:
         image: /images/reference/performance-aws-instances/method/m6a-large/postgres-kafka/long-running/jmx-visualvm-monitoring-long-running.png
         title: 'JMX VisualVM monitoring'
 
+postgres-kafka-x3-stress:
+    0:
+        image: /images/reference/performance-aws-instances/method/m6a-large/postgres-kafka/stress-x3/htop-stress-x3.png  
+        title: '100% CPU utilization. The system is overloaded'
+    1:
+        image: /images/reference/performance-aws-instances/method/m6a-large/postgres-kafka/stress-x3/queue-stats-stress-x3.png
+        title: 'Thingsboard queue stats under x3 stress test'
+    2:
+        image: /images/reference/performance-aws-instances/method/m6a-large/postgres-kafka/stress-x3/jmx-visualvm-monitoring-long-running-stress-x3.png
+        title: 'Java machine feels good. Heap memory has enough space to operate'
+    3:
+        image: /images/reference/performance-aws-instances/method/m6a-large/postgres-kafka/stress-x3/kafka-producer-jmx-mbean-stress-x3.png
+        title: 'Kafka producer state with JMX MBean'
+    4:
+        image: /images/reference/performance-aws-instances/method/m6a-large/postgres-kafka/stress-x3/kafka-lag-stress-x3.png
+        title: 'Kafka Lag is building up'
+   
+postgres-kafka-x3-stress-back-to-x1:
+    0:
+        image: /images/reference/performance-aws-instances/method/m6a-large/postgres-kafka/stress-x3/queue-stats--x1--stress-x3--x1.png
+        title: 'Rule engine stats for x1, x3, and back to x1 loads'
+    1:
+        image: /images/reference/performance-aws-instances/method/m6a-large/postgres-kafka/stress-x3/api-usage--x1--stress-x3--x1.png
+        title: 'Here are the API usage stats that shows the transport rate (incoming messages and data points) and the rule engine performance'
+    2:
+       image: /images/reference/performance-aws-instances/method/m6a-large/postgres-kafka/stress-x3/kafka-lag-stress-x3-after.png  
+       title: 'Kafka lag is going down'
+
 ---
 
 {% include /docs/reference/performance-comparison.md %}
