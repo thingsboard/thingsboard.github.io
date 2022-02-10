@@ -16,13 +16,13 @@ Text
 
 <div class="usecase-carousel owl-carousel owl-theme">
     <div>
-        <img class="item-image" src="/images/fleet-tracking.png" />
+        <img class="item-image" src="/images/usecases/smart-farming/sf1.png" />
     </div>
     <div>
-        <img class="item-image" src="/images/fleet-tracking.png" />
+        <img class="item-image" src="/images/usecases/smart-farming/sf2.png" />
     </div>
     <div>
-        <img class="item-image" src="/images/fleet-tracking.png" />
+        <img class="item-image" src="/images/usecases/smart-farming/sf3.png" />
     </div>
 </div>
 

@@ -19,13 +19,13 @@ Text
 
 <div class="usecase-carousel owl-carousel owl-theme">
     <div>
-        <img class="item-image" src="/images/fleet-tracking.png" />
+        <img class="item-image" src="/images/usecases/fleet-tracking/ft1.png" />
     </div>
     <div>
-        <img class="item-image" src="/images/fleet-tracking.png" />
+        <img class="item-image" src="/images/usecases/fleet-tracking/ft2.png" />
     </div>
     <div>
-        <img class="item-image" src="/images/fleet-tracking.png" />
+        <img class="item-image" src="/images/usecases/fleet-tracking/ft3.png" />
     </div>
 </div>
 
