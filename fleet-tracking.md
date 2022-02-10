@@ -12,7 +12,14 @@ notitle: "true"
 
 ## Overview
 
-Text
+ThingsBoard platform dramatically reduces time to market and efforts to create fleet-tracking solutions.
+Save up to 90% of development time for your fleet-tracking solution by utilizing the following platform benefits:
+
+- Reliable and scalable data collection for your vehicle trackers and embedded sensors;
+- Built-in support of geo
+- Advanced and flexible IoT data visualization for both real-time and historical vehicle data;
+- Customizable end-user dashboards to share data from the vehicle tracking system with end users and customers;
+- Remote control and OTA updates for your smart devices;
 
 <h3>Fleet tracking dashboard</h3>
 <p>The following interactive dashboard hosted on live demo server represents vehicle routes and state indicators visualization that may be embedded in your IoT fleet tracking project. See dashboard description below.</p>
