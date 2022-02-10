@@ -44,8 +44,7 @@ The following interactive dashboard represents smart-energy IoT data visualizati
 The live dashboard displays real-time data from several smart meters collected using ThingsBoard MQTT API. 
 Collected data is processed via the rule engine to raise alarms on certain thresholds. 
 The main dashboard displays the energy meters, corresponding alarms, and real-time data feeds. 
-Click on the alarm or energy meter row to open the meter details.
-
+Click on the alarm or energy meter row to open the meter details. 
 You may export the dashboard from our live demo server and import it to your ThingsBoard instance.
 
 ## ThingsBoard advantages
@@ -58,8 +57,8 @@ You may export the dashboard from our live demo server and import it to your Thi
             <div class="block">
                 <img src="/images/microservices-icon.svg">
                 <div>
-                    <a class="title" href="#">Scalability and high availability</a>
-                    <p>ThingsBoard supports high-availability deployments on cloud and on-premises data centers using K8S or bare-metal deployments. Platform components are horizontally scalable. ThingsBoard has production deployments with more than 500 000 smart-meters devices.</p>
+                    <a class="title" href="/docs/reference/msa/">Scalability and high availability</a>
+                    <p>ThingsBoard supports high-availability deployments on cloud and on-premises data centers using K8S or bare-metal deployments. Platform components are horizontally scalable. ThingsBoard has production deployments with more than 500 000 smart-meters.</p>
                 </div>
             </div>
         </div>
@@ -67,10 +66,8 @@ You may export the dashboard from our live demo server and import it to your Thi
             <div class="block">
                 <img src="/images/telemetry-icon.svg">
                 <div>
-                    <a class="title" href="#">Data collection</a>
-                    <p>Connect devices directly to the platform via the following built-in protocols: HTTP, CoAP, MQTT, LwM2M, and SNMP. Connect devices in your local network to the cloud using ThingsBoard Gateway via Modbus, BLE, BACnet, OPC-UA, and other protocols. Connect SigFox devices via integrations with the SigFox backend. Connect LoRaWAN devices via integrations with standard network servers like TTN, LORIOT, Chirpstack, Actility, etc.
-
-ThingsBoard supports industry-standard encryption algorithms like RSA and ECDSA to ensure the data is secure during transfer via TLS(TCP) and DTLS (UDP).</p>
+                    <a class="title" href="/docs/getting-started-guides/connectivity/">Connectivity</a>
+                    <p>Connect devices directly to the platform via the following built-in protocols: HTTP, CoAP, MQTT, LwM2M, and SNMP. Connect devices in your local network to the cloud using ThingsBoard Gateway via Modbus, BLE, BACnet, OPC-UA, and other protocols.</p>
                 </div>
             </div>
         </div>
@@ -78,7 +75,25 @@ ThingsBoard supports industry-standard encryption algorithms like RSA and ECDSA 
             <div class="block">
                 <img src="/images/integration-icon.svg">
                 <div>
-                    <a class="title" href="#">Data processing</a>
+                    <a class="title" href="/docs/user-guide/integrations/">LoRaWAN & SigFox Support</a>
+                    <p>Connect LoRaWAN devices via integrations with standard network servers like TTN, LORIOT, Chirpstack, Actility, etc. Connect SigFox devices via integrations with the SigFox backend.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="block">
+                <img src="/images/security-icon.svg">
+                <div>
+                    <a class="title" href="/docs/pe/user-guide/ssl/http-over-ssl/">Security</a>
+                    <p>ThingsBoard supports industry-standard encryption algorithms like RSA and ECDSA to ensure the data is secure during transfer via TLS(TCP) and DTLS (UDP).</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="block">
+                <img src="/images/engine-icon.svg">
+                <div>
+                    <a class="title" href="/docs/pe/user-guide/rule-engine-2-0/overview/">Data processing</a>
                     <p>ThingsBoard allows you to define application logic with drag-n-drop rule chain designer. The Rule Engine is a robust and scalable processing framework that leverages industry-standard message queue implementations like Apache Kafka or AWS SQS to ensure data durability and guarantee data processing. You are free to process data with the Rule engine or push it to further processing in external systems.</p>
                 </div>
             </div>
@@ -87,7 +102,7 @@ ThingsBoard supports industry-standard encryption algorithms like RSA and ECDSA 
             <div class="block">
                 <img src="/images/visualization-icon.svg">
                 <div>
-                    <a class="title" href="#">Data visualization</a>
+                    <a class="title" href="/docs/user-guide/dashboards/">Data visualization</a>
                     <p>Visualize collected data using rich interactive dashboards. Develop multi-state interactive dashboards with zero coding efforts and built-in charts, gauges, maps, tables, and control widgets. Customize every dashboard aspect using advanced widget settings or even custom widget bundles. Low latency updates are possible with embedded web-sockets support.</p>
                 </div>
             </div>
@@ -96,7 +111,7 @@ ThingsBoard supports industry-standard encryption algorithms like RSA and ECDSA 
             <div class="block">
                 <img src="/images/device-icon.svg">
                 <div>
-                    <a class="title" href="#">Mobile application</a>
+                    <a class="title" href="/docs/mobile/">Mobile application</a>
                     <p>Build your own IoT mobile application with minimum coding efforts using ThingsBoard Mobile Application, an open-source project based on Flutter. Leverage a built-in set of mobile actions to take a photo, scan QR code, update location, and more directly within the dashboard.</p>
                 </div>
             </div>
@@ -105,7 +120,7 @@ ThingsBoard supports industry-standard encryption algorithms like RSA and ECDSA 
             <div class="block">
                 <img src="/images/tenancy-icon.svg">
                 <div>
-                    <a class="title" href="#">Multi-tenancy</a>
+                    <a class="title" href="/docs/user-guide/entities-and-relations/">Multi-tenancy</a>
                     <p>ThingsBoard provides UI and API to manage tenants, customers, users, devices, and assets. Single tenant may have multiple tenant administrators and millions of devices and customers. It also offers out-of-the-box support of OTA updates for your smart meters.</p>
                 </div>
             </div>
@@ -113,18 +128,15 @@ ThingsBoard supports industry-standard encryption algorithms like RSA and ECDSA 
     </div>
 </section>
 
-## Smart energy solution overview
+## Smart energy solution overview 
 
-TODO: rewrite
- 
-The diagram below identifies data flow and integration points for typical smart energy solution that uses ThingsBoard platform to collect and analyze energy monitoring data from smart meters.
+The diagram below identifies data flow and integration points for a typical smart-energy solution that uses the ThingsBoard platform to collect and analyze energy monitoring data from smart meters.
 
 ![Smart energy solution diagram](/images/iot-use-cases/smart-energy-monitoring.svg)
 
-You may notice that there are plenty of connectivity options for smart meters: either direct connection to the cloud or through the IoT Gateway.
-Platform supports industry standard encryption algorithms (SSL) and device credentials types (X.509 certificates and access tokens).
-The collected data is stored in Cassandra - fault-tolerant and reliable NoSQL database.
-ThingsBoard Rule Engine allows to forward incoming data to various analytics systems, such as Apache Spark or Hadoop using Kafka or other Message buses.
+You may notice plenty of connectivity options for the smart meters: direct connection to the cloud, through the IoT Gateway, or an Integration with a third-party system.
+The platform supports industry-standard encryption algorithms and device credentials types. ThingsBoard stores data in the fault-tolerant and reliable Cassandra database. 
+The Rule Engine enables forwarding incoming data to various analytics systems, such as Apache Spark or Hadoop, using Kafka or other Message buses.
 
 ## Learn more
 
