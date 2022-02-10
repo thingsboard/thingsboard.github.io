@@ -49,6 +49,29 @@ postgres-only-1000-arm:
         image: /images/reference/performance-aws-instances/method/arm/t4g-medium/postgres/aws-storage-monitoring.png
         title: 'AWS storage monitoring on ARM architecture'
 
+postgres-only-x3-stress:
+    0:
+        image: /images/reference/performance-aws-instances/method/t3-medium/burst-x3/burst-x3-queue-stats.png  
+        title: 'Thingsboard queue stats'
+    1:
+        image: /images/reference/performance-aws-instances/method/t3-medium/burst-x3/burst-x3-api-usage.png
+        title: 'Thingsboard API usage'
+    2:
+        image: /images/reference/performance-aws-instances/method/t3-medium/burst-x3/burst-x3-htop.png
+        title: 'htop'
+    3:
+        image: /images/reference/performance-aws-instances/method/t3-medium/burst-x3/burst-x3-jmx-visualvm-monitoring.png
+        title: 'JMX VisualVM monitoring'
+    4:
+        image: /images/reference/performance-aws-instances/method/t3-medium/burst-x3/burst-x3-postgresql-pgadmin-dashboard.png
+        title: 'Postgresql PgAdmin dashboard'
+    5:
+        image: /images/reference/performance-aws-instances/method/t3-medium/burst-x3/burst-x3-aws-instance-monitoring.png
+        title: 'AWS instance monitoring'
+    6:
+        image: /images/reference/performance-aws-instances/method/t3-medium/burst-x3/burst-x3-aws-storage-monitoring.png
+        title: 'AWS storage monitoring'
+
 postgres-kafka-5000:
     0:
         image: /images/reference/performance-aws-instances/method/m6a-large/postgres-kafka/queue-stats.png  

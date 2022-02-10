@@ -207,19 +207,7 @@ docker run -it --rm --network host --name tb-perf-test \
 
 Test have been passed successfully. Here some great shots.
 
-![](../../../images/reference/performance-aws-instances/method/t3-medium/burst-x3/burst-x3-queue-stats.png)
-
-![](../../../images/reference/performance-aws-instances/method/t3-medium/burst-x3/burst-x3-api-usage.png)
-
-![](../../../images/reference/performance-aws-instances/method/t3-medium/burst-x3/burst-x3-htop.png)
-
-![](../../../images/reference/performance-aws-instances/method/t3-medium/burst-x3/burst-x3-jmx-visualvm-monitoring.png)
-
-![](../../../images/reference/performance-aws-instances/method/t3-medium/burst-x3/burst-x3-postgresql-pgadmin-dashboard.png)
-
-![](../../../images/reference/performance-aws-instances/method/t3-medium/burst-x3/burst-x3-aws-instance-monitoring.png)
-
-![](../../../images/reference/performance-aws-instances/method/t3-medium/burst-x3/burst-x3-aws-storage-monitoring.png)
+{% include images-gallery.html imageCollection="postgres-only-x3-stress" %}
 
 This is a good trade-off configuration to survive and handle message burst with shared CPU instance type and in-memory queue.
 
