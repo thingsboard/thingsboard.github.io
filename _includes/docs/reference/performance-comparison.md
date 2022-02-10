@@ -1,6 +1,6 @@
 * TOC
 {:toc}
-<-- This will parse content of HTML tags as markdown when uncomment {::options parse_block_html="true" /} -->
+<!-- This will parse content of HTML tags as markdown when uncomment {::options parse_block_html="true" /} -->
 
 ThingsBoard has been run in production by numerous companies in both [monolithic](/docs/{{docsPrefix}}reference/monolithic/) 
 and [microservices](/docs/{{docsPrefix}}reference/msa/) deployment modes.
@@ -150,8 +150,6 @@ export TB_HOST_VPC=172.31.16.229 # put your Thingsboard virtual private cloud VP
 export TB_HOST=52.50.5.45 # put your Thingsboard public IP address here
 docker run -it --rm --network host --name tb-perf-test \
   --env REST_URL=http://$TB_HOST_VPC:8080 \
-  --env MQTT_HOST=$TB_HOST \
-  --env REST_URL=http://$TB_HOST:8080 \
   --env MQTT_HOST=$TB_HOST \
   --env DEVICE_END_IDX=5000 \
   --env MESSAGES_PER_SECOND=1000 \
@@ -381,12 +379,26 @@ To make system much reliable and peak resistant, please consider using a persist
 Load configuration: 5000 devices, MQTT, 5000 msg/sec, 15000 data point/sec, Postgres, Kafka.  
 Instance: AWS m6a.large (2 vCPUs AMD EPYC 3rd, 8 GiB, EBS GP3)
 
-Estimated cost 42$ EC2 + 8$ EBS GP3 100GB = 50$/mo, disk space for telemetry may add additional costs. 
+Estimated cost 42$ EC2 + 8$ EBS GP3 100GB = 50$/mo, disk space for telemetry may add additional costs.
 
-Let's setup Kafka queue and run Thingsboard performance test to find out the pros and cons.
+Here results for Kafka + Postgres:
 
-Here the docker-compose with Thingsboard + Postgresql + Zookeeper + Kafka.
-Notice that Zookeeper is required to run Kafka these days.
+{% include images-gallery.html imageCollection="postgres-kafka-5000" %}
+
+Long-running result about 14 hours:
+
+{% include images-gallery.html imageCollection="postgres-kafka-5000-long-running" %}
+
+**How to reproduce the test**
+
+<details markdown="1">
+<summary>
+Let's set up **Kafka queue** and run the **Thingsboard** performance test to find the pros and cons.
+</summary>
+
+Take a note that Zookeeper is required to run Kafka these days.
+Here is the docker-compose file to set up _Thingsboard + Postgresql + Zookeeper + Kafka_ on AWS EC2 instance based on the [instruction](/docs/{{docsPrefix}}reference/performance/setup-aws-instances/).
+
 ```bash
 version: '3'
 services:
@@ -456,6 +468,8 @@ volumes: # to persist data between container restarts or being recreated
 ```
 {: .copy-code}
 
+</details>
+
 Performance test docker command line
 ```bash
 export TB_HOST_VPC=172.31.16.229 # put your Thingsboard virtual private cloud VPC IP address here
@@ -470,30 +484,6 @@ docker run -it --rm --network host --name tb-perf-test \
   thingsboard/tb-ce-performance-test:latest
 ```
 {: .copy-code}
-
-Here results for Kafka + Postgres:
-
-![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka/queue-stats.png)
-
-![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka/api-usage.png)
-
-![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka/htop.png)
-
-![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka/jmx-visualvm-monitoring.png)
-
-![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka/postgresql-pgadmin-dashboard.png)
-
-![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka/aws-instance-monitoring.png)
-
-![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka/aws-storage-monitoring.png)
-
-Long-running result about 14 hours:
-
-![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka/long-running/queue-stats-long-running.png)
-
-![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka/long-running/api-usage-long-running.png)
-
-![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka/long-running/jmx-visualvm-monitoring-long-running.png)
 
 This is the high load configuration with CPU 95% average utilization. 
 In that example we intentionally pick almost 100% load to try to crash this in the next test.
