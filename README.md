@@ -70,5 +70,5 @@ Example:
 Use the following command to check the broken links.
 
 ```bash
-docker run -it --rm --network=host linkchecker/linkchecker http://0.0.0.0:4000/
+docker run -it --rm --network=host linkchecker/linkchecker --check-extern http://0.0.0.0:4000/
 ```
