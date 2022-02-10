@@ -6,7 +6,7 @@ and [microservices](/docs/{{docsPrefix}}reference/msa/) deployment modes.
 This article describes the performance of a single ThingsBoard server in the most popular usage scenarios. 
 It is helpful to understand how ThingsBoard scales vertically (monolith) before describing how it scales horizontally (cluster mode).   
 
-## Performance test scenarios
+## Performance test methodology
 
 For simplicity, we have deployed a single ThingsBoard instance with all related third-party components in a docker-compose environment on a single EC2 instance.
 The test agent provisions and connects a configurable number of device emulators that constantly publish time-series data over MQTT.
@@ -21,9 +21,7 @@ We have scaled the test from 5K to 100K devices and message rate from 1K msg/sec
 Our team executed the tests for at least 24 hours to ensure no resource leakage or performance degradation over time.
 We have also included instructions to replicate the tests. Links to the instructions are in the details of each test run.
 
-Here the general [performance test methodology](/docs/{{docsPrefix}}reference/performance/performance-test-methodology/) used.
-
-Here the tool set for the 
+Additional tool set we use for our tests: 
 [Postgres](/docs/{{docsPrefix}}reference/performance/tools/postgres-pgadmin-monitoring/), 
 [Java](/docs/{{docsPrefix}}reference/performance/tools/java-jmx-monitoring/) and 
 [Thingsboard](/docs/{{docsPrefix}}reference/performance/tools/thingsboard-performance-charts/) used to visualize the performance.
@@ -37,27 +35,36 @@ The test scenarios differ in the number of connected devices, messages per secon
 
 | Scenario                  | Devices | Data points per second | Instance Type                          | Queue type | Database               | CPU Usage | Write IOPS |
 |---------------------------|---------|------------------------|----------------------------------------|------------|------------------------|-----------|------------|
-| [Scenario A](#Scenario A) | 5K      | 1K                     | t3.medium ( 2 burstable vCPU, 4GB RAM) | in-memory  | PostgreSQL             | 27%       | 800        |
-| [Scenario B](#Scenario B) | 5K      | 15K                    | m6a.large (2 vCPU, 8GB RAM)            | Kafka      | PostgreSQL             | 95%       | 850        |
-| [Scenario C](#Scenario C) | 25K     | 30K                    | m6a.2xlarge (4 vCPU, 16GB RAM)         | Kafka      | PostgreSQL + Cassandra | 75%       | 200        |
-| [Scenario D](#Scenario D) | 100K    | 15K                    | m6a.2xlarge (4 vCPU, 16GB RAM)         | Kafka      | PostgreSQL + Cassandra | 71%       | 700        |
-| [Scenario F](#Scenario F) | 100K    | 30K                    | m6a.2xlarge (4 vCPU, 16GB RAM)         | Kafka      | PostgreSQL + Cassandra | 95%       | 240        |
+| [Scenario A](#scenario-a) | 5K      | 1K                     | t3.medium ( 2 burstable vCPU, 4GB RAM) | in-memory  | PostgreSQL             | 27%       | 800        |
+| [Scenario B](#scenario-b) | 5K      | 15K                    | m6a.large (2 vCPU, 8GB RAM)            | Kafka      | PostgreSQL             | 95%       | 850        |
+| [Scenario C](#scenario-c) | 25K     | 30K                    | m6a.2xlarge (4 vCPU, 16GB RAM)         | Kafka      | PostgreSQL + Cassandra | 75%       | 200        |
+| [Scenario D](#scenario-d) | 100K    | 15K                    | m6a.2xlarge (4 vCPU, 16GB RAM)         | Kafka      | PostgreSQL + Cassandra | 71%       | 700        |
+| [Scenario E](#scenario-e) | 100K    | 30K                    | m6a.2xlarge (4 vCPU, 16GB RAM)         | Kafka      | PostgreSQL + Cassandra | 95%       | 240        |
 
 [comment]: <> ( To format table as markdown, please use the online table generator https://www.tablesgenerator.com/markdown_tables )
 
-## Scenario A
-
-
-
 ## Postgres only performance
 
-### Postgres - 1000 msg/sec
+### Scenario A
 
-Load configuration: 5000 devices, MQTT, 1000 msg/sec, 3000 telemetry/sec, postgres, in-memory queue.  
+Load configuration: 
+
+ * 5000 devices;
+ * 1000 msg/sec over MQTT, each mqtt message contains 3 data points resulting in 3000 data points/sec;
+ * PostgreSQL Database;
+ * In-memory queue.  
+
 Instance: AWS t3.medium (2 vCPUs Intel, 4 GiB, EBS GP3)
 
 Estimated cost 19$ EC2 + x$ CPU burst + 8$ EBS GP3 100GB = 30$/mo
 
+Statistics related to the test execution:
+
+{% include images-gallery.html imageCollection="postgres-only-1000" %}
+
+**Lessons learned**
+
+This setup is mostly for the development environments, due to the in-memory queue.
 System can survive and run stable with an up to x3 message rate (3000 msg/sec).  
 Cloud provider will charge you against CPU burst, but the production will up and running fine.
 
@@ -76,10 +83,16 @@ Without unlimited mode at the first start you have 0 credits to burst CPU up and
 
 </details>
 
+**How to reproduce the test**
+
 <details markdown="1">
 <summary>
-Here the Thingsboard docker-compose to reproduce this test
+Setup the AWS EC2 instances
 </summary>
+
+
+
+Use the Docker Compose file listed below to setup the AWS EC2 instance based on the [instruction](/docs/{{docsPrefix}}reference/performance/setup-aws-instances/).  
 
 ```bash
 version: '3'
@@ -129,13 +142,16 @@ volumes: # to persist data between container restarts or being recreated
 {::options parse_block_html="true" /}
 <details>
 <summary>
-Performance test docker run
+Launch performance test tool
 </summary>
 
+Use the Docker command listed below to launch the performance test tool based on the [instruction](/docs/{{docsPrefix}}reference/performance/performance-test-methodology/).
+
 ```bash
+export TB_HOST=PUT_YOUR_THINGSBOARD_HOST_IP_ADDRESS_HERE
 docker run -it --rm --network host --name tb-perf-test \
-  --env REST_URL=http://thingsboard:8080 \
-  --env MQTT_HOST=thingsboard \
+  --env REST_URL=http://$TB_HOST:8080 \
+  --env MQTT_HOST=$TB_HOST \
   --env DEVICE_END_IDX=5000 \
   --env MESSAGES_PER_SECOND=1000 \
   --env ALARMS_PER_SECOND=10 \
@@ -146,10 +162,6 @@ docker run -it --rm --network host --name tb-perf-test \
 
 </details>
 {::options parse_block_html="false" /}
-
-Here some charts
-
-{% include images-gallery.html imageCollection="postgres-only-1000" %}
 
 ### Postgres - x3 peak survive
 
@@ -350,7 +362,7 @@ To make system much reliable and peak resistant, please consider using a persist
 
 ## Kafka + Postgres performance
 
-### Kafka + Postgres - 5000 msg/sec
+### Scenario B
 
 Load configuration: 5000 devices, MQTT, 5000 msg/sec, 15000 telemetry/sec, Postgres, Kafka.  
 Instance: AWS m6a.large (2 vCPUs AMD EPYC 3rd, 8 GiB, EBS GP3)
@@ -538,39 +550,6 @@ Here is the API usage stats that shows the transport rate (incoming messages and
 
 ![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka/stress-x3/api-usage--x1--stress-x3--x1.png)
 
-### Kafka + Postgres - disk usage
-
-By the end of the day in previous test, the system run out of the disk space. 
-
-The 200Gb disk was filled out in about 24 hours with average 5k msg/sec, 15k datapoints/sec; total messages 363M, data points 1.1B.
-
-**Postgres** database size is 160GiB. It is about 7M data points per 1 GiB disk space. To reach much better disk space efficiency please, check the Cassandra disk space usage.
-
-![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka/stress-x3/postgresql-disk-usage-total.png)
-
-Detailed [PostgreSQL disk usage](https://wiki.postgresql.org/wiki/Disk_Usage) by tables and indexes
-
-```postgresql
-SELECT nspname || '.' || relname AS "relation", pg_size_pretty(pg_relation_size(C.oid)) AS "size"
-  FROM pg_class C
-  LEFT JOIN pg_namespace N ON (N.oid = C.relnamespace)
-  WHERE nspname NOT IN ('pg_catalog', 'information_schema')
-  ORDER BY pg_relation_size(C.oid) DESC LIMIT 20;
-```
-You can see the biggest table is timeseries (TS, telemetry) and TS index. All telemetry divided my month to gain a stable performance.  
-Test started in December and finished in January. The TS have two tables 2021_12 and 2022_01 for respective months.
-
-![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka/stress-x3/postgresql-disk-usage-by-table.png)
-
-**Kafka** size is 20GiB. 
-
-Tip: to plan and manage the Kafka disk space, please, adjust the [size retention policy](https://kafka.apache.org/documentation/#brokerconfigs_log.retention.bytes) and [period retention policy](https://www.baeldung.com/kafka-message-retention).
-
-![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka/stress-x3/kafka-disk-usage-total.png)
-
-Here the Kafka size by topics.
-
-![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka/stress-x3/kafka-disk-usage-by-topic.png)
 
 ### Kafka + Postgres - summary
 
@@ -1079,19 +1058,7 @@ Test runs 24 hour and here the results:
 ![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/100k-5k-15k/aws-instance-monitoring.png)
 
 ![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/100k-5k-15k/aws-storage-monitoring.png)
-
-As you see the 
-
-### Cassandra - disk usage
-
-For 24 hours (100k devices, 432M msg) total datapoint stored is 1.3B
-
-Cassandra's disk usage is about 20 GiB per 1.3B data points. It is about 65M data points per 1 GiB disk space. 
-In comparison with Postgresql the disk space consumption by Cassandra is about x10 times less. This is because the data compression used and less overhead in data structure.   
-
-![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/100k-5k-15k/disk-usage-cassandra.png)
-
-Note: data size on disk may vary depends on the content.
+ 
 
 ### Cassandra - 100k devices, 10k msg/sec
 
@@ -1316,6 +1283,59 @@ ss -s
 ![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/100k-10k-30k/24h-run/aws-instance-monitoring.png)
 
 ![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/100k-10k-30k/24h-run/aws-storage-monitoring.png)
+
+
+## Disk usage
+
+### Postgres
+
+By the end of the day in [Scenario B](#scenario-b), the system run out of the disk space.
+
+The 200Gb disk was filled out in about 24 hours with average 5k msg/sec, 15k datapoints/sec; total messages 363M, data points 1.1B.
+
+**Postgres** database size is 160GiB. It is about 7M data points per 1 GiB disk space. To reach much better disk space efficiency please, check the Cassandra disk space usage.
+
+![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka/stress-x3/postgresql-disk-usage-total.png)
+
+Detailed [PostgreSQL disk usage](https://wiki.postgresql.org/wiki/Disk_Usage) by tables and indexes
+
+```postgresql
+SELECT nspname || '.' || relname AS "relation", pg_size_pretty(pg_relation_size(C.oid)) AS "size"
+  FROM pg_class C
+  LEFT JOIN pg_namespace N ON (N.oid = C.relnamespace)
+  WHERE nspname NOT IN ('pg_catalog', 'information_schema')
+  ORDER BY pg_relation_size(C.oid) DESC LIMIT 20;
+```
+You can see the biggest table is timeseries (TS, telemetry) and TS index. All telemetry divided my month to gain a stable performance.  
+Test started in December and finished in January. The TS have two tables 2021_12 and 2022_01 for respective months.
+
+![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka/stress-x3/postgresql-disk-usage-by-table.png)
+
+**Kafka** size is 20GiB.
+
+Tip: to plan and manage the Kafka disk space, please, adjust the [size retention policy](https://kafka.apache.org/documentation/#brokerconfigs_log.retention.bytes) and [period retention policy](https://www.baeldung.com/kafka-message-retention).
+
+![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka/stress-x3/kafka-disk-usage-total.png)
+
+Here the Kafka size by topics.
+
+![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka/stress-x3/kafka-disk-usage-by-topic.png)
+
+### Cassandra - disk usage
+
+For 24 hours (100k devices, 432M msg) total datapoint stored is 1.3B
+
+Cassandra's disk usage is about 20 GiB per 1.3B data points. It is about 65M data points per 1 GiB disk space.
+
+![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/100k-5k-15k/disk-usage-cassandra.png)
+
+Note: data size on disk may vary depends on the content.
+
+### Disk usage summary
+
+Compared with Postgresql, Cassandra's disk space consumption is about x10 times less. Cassandra's advantage is the data compression and less overhead in a data structure.
+
+TODO: IOPS..
 
 ## Thank you
 
