@@ -819,32 +819,22 @@ docker run -it --rm --network host --name tb-perf-test \
 
 </details>
 
-Here the queue stats. It looks solid. A small fluctuation on the chart is nominal.  
+The queue stats looks solid. A small fluctuation on the chart is nominal.  
 All systems have to run maintenance in background, so it is completely fine to have those chart for Thingsboard monolith deployment.    
 
-![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/25k-10k-15k/queue-stats.png)
+API usage shows about 10 hours and 1.1B data points processed
 
-API usage about 10 hours. 1.1B data points
-
-![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/25k-10k-15k/api-usage.png)
-
-htop shows the system is working normally and have a plenty of resources to handle another jobs.
+Htop shows the system is working normally and have a plenty of resources to handle another jobs.
 Memory consumption is about 9GiB, other memory is the system file cache. 
 The instance with 16GiB is more that enough to run that load.
 
-![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/25k-10k-15k/htop.png)
-
 Postgres is quite intensive update the TS latest values and reach the peak value about 60k updates/sec.
-
-![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/25k-10k-15k/postgresql-pgadmin-dashboard.png)
 
 AWS instance monitoring shows about 75% average CPU load with a peak up to 88%
 
-![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/25k-10k-15k/aws-instance-monitoring.png)
-
 AWS storage monitoring. The disk load is extremely low compare to the PostgreSQL only deployment
 
-![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/25k-10k-15k/aws-storage-monitoring.png)
+{% include images-gallery.html imageCollection="cassandra-25k-10k-30k" %}
 
 Cassandra's disk size and IOPS usage is quite low (cheaper) compare to PostgreSQL-only deployments.
 
@@ -852,9 +842,7 @@ For 1.15B data points Cassandra uses 33GiB of disk space (29 GiB per 1B data poi
 As reminder, PostgreSQL takes about 161 GiB to persist 1.06B data points (152 GiB per 1B data points). 
 It is more than x5 times (152 / 29) cheaper than PostgreSQL disk consumption!
 
-![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/25k-10k-15k/cassandra-disk-size.png)
-
-![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/25k-10k-15k/telemetry-persisted-chart.png)
+{% include images-gallery.html imageCollection="cassandra-25k-10k-30k-disk" %}
 
 Finally, let's check the JVM state on each Thingboard, Zookeeper, Kafka and Cassandra
 Let's forward JMX port with SSH to connect and monitor all Java applications presented.
@@ -864,25 +852,11 @@ ssh -L 9999:127.0.0.1:9999 -L 1099:127.0.0.1:1099 -L 9199:127.0.0.1:9199 -L 7199
 ```
 {: .copy-code}
 
-Open VisualVM, add the local applications, open it and let the data being gathered for a few minutes. 
+Open [VisualVM](https://visualvm.github.io/), add the local applications, open it and let the data being gathered for a few minutes. 
 
-![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/25k-10k-15k/visualvm-forwarded-applications.png)
+Here the JMX monitoring for Thingsboard, Kafka, Zookeeper, Cassandra. The system is stable.
 
-Here the JMX monitoring for Thingsboard. The system is stable.
-
-![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/25k-10k-15k/jmx-thingsboard.png)
-
-Here the JMX monitoring for Kafka. The system is stable.
-
-![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/25k-10k-15k/jmx-kafka.png)
-
-Here the JMX monitoring for Zookeeper. The system is stable.
-
-![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/25k-10k-15k/jmx-zookeeper.png)
-
-Here the JMX monitoring for Cassandra.  The system is stable.
-
-![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/25k-10k-15k/jmx-cassandra.png)
+{% include images-gallery.html imageCollection="cassandra-25k-10k-30k-jmx" %}
 
 Conclusion: Cassandra requires more CPU resources, but it save x5 disk space, lower IOPS load.
 CPU avg 75%. This is good setup with average load 10k msg/sec, 30k data point/sec.

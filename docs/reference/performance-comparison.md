@@ -186,6 +186,50 @@ postgres-kafka-x3-stress-back-to-x1:
        image: /images/reference/performance-aws-instances/method/m6a-large/postgres-kafka/stress-x3/kafka-lag-stress-x3-after.png  
        title: 'Kafka lag is going down'
 
+cassandra-25k-10k-30k:
+    0:
+        image: /images/reference/performance-aws-instances/method/m6a-2xlarge/25k-10k-30k/queue-stats.png  
+        title: 'Queue stats dashboard'
+    1:
+        image: /images/reference/performance-aws-instances/method/m6a-2xlarge/25k-10k-30k/api-usage.png
+        title: 'Thingsboard API usage dashboard'
+    2:
+        image: /images/reference/performance-aws-instances/method/m6a-2xlarge/25k-10k-30k/htop.png
+        title: 'htop: CPU, memory, IO read/write'
+    3:
+        image: /images/reference/performance-aws-instances/method/m6a-2xlarge/25k-10k-30k/postgresql-pgadmin-dashboard.png
+        title: 'Postgres PgAdmin dashboard'
+    4:
+        image: /images/reference/performance-aws-instances/method/m6a-2xlarge/25k-10k-30k/aws-instance-monitoring.png
+        title: 'AWS CPU and network monitoring'
+    5:
+        image: /images/reference/performance-aws-instances/method/m6a-2xlarge/25k-10k-30k/aws-storage-monitoring.png
+        title: 'AWS storage monitoring'
+
+cassandra-25k-10k-30k-disk:
+    0:
+        image: /images/reference/performance-aws-instances/method/m6a-2xlarge/25k-10k-30k/cassandra-disk-size.png
+        title: 'Cassandra disk size usage'
+    1:
+        image: /images/reference/performance-aws-instances/method/m6a-2xlarge/25k-10k-30k/telemetry-persisted-chart.png
+        title: 'Telemetry persisted chart'
+
+cassandra-25k-10k-30k-jmx:
+    0:
+        image: /images/reference/performance-aws-instances/method/m6a-2xlarge/25k-10k-30k/visualvm-forwarded-applications.png
+        title: 'VisualVM Java application list'
+    1:
+        image: /images/reference/performance-aws-instances/method/m6a-2xlarge/25k-10k-30k/jmx-thingsboard.png
+        title: 'JMX monitoring for the Thingsboard. The system is stable'
+    2:
+        image: /images/reference/performance-aws-instances/method/m6a-2xlarge/25k-10k-30k/jmx-kafka.png
+        title: 'JMX monitoring for the Kafka. The system is stable'
+    3:
+        image: /images/reference/performance-aws-instances/method/m6a-2xlarge/25k-10k-30k/jmx-zookeeper.png
+        title: 'JMX monitoring for the Zookeeper. The system is stable'
+    4:
+        image: /images/reference/performance-aws-instances/method/m6a-2xlarge/25k-10k-30k/jmx-cassandra.png
+        title: 'JMX monitoring for the Cassandra. The system is stable'
 ---
 
 {% include /docs/reference/performance-comparison.md %}
