@@ -257,6 +257,43 @@ cassandra-100k-5k-15k:
         image: /images/reference/performance-aws-instances/method/m6a-2xlarge/100k-5k-15k/disk-usage-cassandra.png
         title: 'Cassandra disk usage'
 
+cassandra-100k-10k-30k:
+    0:
+        image: /images/reference/performance-aws-instances/method/m6a-2xlarge/100k-10k-30k/queue-stats.png  
+        title: 'Queue stats dashboard'
+    1:
+        image: /images/reference/performance-aws-instances/method/m6a-2xlarge/100k-10k-30k/api-usage.png
+        title: 'Thingsboard API usage dashboard'
+    2:
+        image: /images/reference/performance-aws-instances/method/m6a-2xlarge/100k-10k-30k/htop.png
+        title: 'htop: CPU, memory, IO read/write'
+    3:
+        image: /images/reference/performance-aws-instances/method/m6a-2xlarge/100k-10k-30k/jmx-visualvm-monitoring.png
+        title: 'JMX VisualVM monitoring'
+    4:
+        image: /images/reference/performance-aws-instances/method/m6a-2xlarge/100k-10k-30k/postgresql-pgadmin-dashboard.png
+        title: 'Postgres PgAdmin dashboard'
+    5:
+        image: /images/reference/performance-aws-instances/method/m6a-2xlarge/100k-10k-30k/aws-instance-monitoring.png
+        title: 'AWS CPU and network monitoring'
+    6:
+        image: /images/reference/performance-aws-instances/method/m6a-2xlarge/100k-10k-30k/aws-storage-monitoring.png
+        title: 'AWS storage monitoring'
+
+cassandra-100k-10k-30k-24h:
+    0:
+        image: /images/reference/performance-aws-instances/method/m6a-2xlarge/100k-10k-30k/24h-run/queue-stats.png  
+        title: 'Queue stats dashboard'
+    1:
+        image: /images/reference/performance-aws-instances/method/m6a-2xlarge/100k-10k-30k/24h-run/api-usage.png
+        title: 'Thingsboard API usage dashboard'
+    2:
+        image: /images/reference/performance-aws-instances/method/m6a-2xlarge/100k-10k-30k/24h-run/aws-instance-monitoring.png
+        title: 'AWS CPU and network monitoring'
+    3:
+        image: /images/reference/performance-aws-instances/method/m6a-2xlarge/100k-10k-30k/24h-run/aws-storage-monitoring.png
+        title: 'AWS storage monitoring'
+
 ---
 
 {% include /docs/reference/performance-comparison.md %}

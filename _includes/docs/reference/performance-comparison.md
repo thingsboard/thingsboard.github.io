@@ -1270,19 +1270,7 @@ nohup mvn spring-boot:run &
 
 Test results looks fine:
 
-![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/100k-10k-30k/queue-stats.png)
-
-![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/100k-10k-30k/api-usage.png)
-
-![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/100k-10k-30k/htop.png)
-
-![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/100k-10k-30k/jmx-visualvm-monitoring.png)
-
-![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/100k-10k-30k/postgresql-pgadmin-dashboard.png)
-
-![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/100k-10k-30k/aws-instance-monitoring.png)
-
-![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/100k-10k-30k/aws-storage-monitoring.png)
+{% include images-gallery.html imageCollection="cassandra-100k-10k-30k" %}
 
 **Conclusion**: the m6a.2xlarge can handle up to 100k devices with a message rate of up to 10k/sec.
 CPU usage is 93%, so there are almost no extra resources left for a peak load and user activities.
@@ -1314,14 +1302,9 @@ ss -s
 
 #### 24h test run
 
-![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/100k-10k-30k/24h-run/queue-stats.png)
+Here the 24h run results:
 
-![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/100k-10k-30k/24h-run/api-usage.png)
-
-![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/100k-10k-30k/24h-run/aws-instance-monitoring.png)
-
-![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/100k-10k-30k/24h-run/aws-storage-monitoring.png)
-
+{% include images-gallery.html imageCollection="cassandra-100k-10k-30k" %}
 
 ## Disk usage
 
