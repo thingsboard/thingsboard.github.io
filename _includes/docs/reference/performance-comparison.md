@@ -1279,19 +1279,15 @@ CPU usage is 93%, so there are almost no extra resources left for a peak load an
 
 Here are some pointers on how to ensure that you have a valid test run with all devices created and connected
 
-* All devices created. Open device List and check total device count.
+* All devices created. Open device List and check total device count. Device count has to be greater than 100k
 
-![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/100k-is-connected/devices-list-100k-thingsboard.png)
-
-* All devices connected. Check the logs. Device count has to be greater than 100k
+* All devices connected. Check Transport Stats in the logs.
 
 ```bash
 tb_1         | 2022-01-06 16:37:11,716 [TB-Scheduling-3] INFO  o.t.s.c.t.s.DefaultTransportService - Transport Stats: openConnections [100000]
 ```
 
 * All device connected. Java JMX. VisualVM -> Thingsboard -> MBeans -> java.lang -> OpenFileDescriptorCount -> more than 100000
-
-![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/100k-is-connected/jmx-mbeans-java-lang-operating-system-open-file-descriptor-count.png)
 
 * Count TCP connections using command
 
@@ -1300,11 +1296,13 @@ ss -s
 ```
 {: .copy-code}
 
+{% include images-gallery.html imageCollection="thingsboard-100k-devices-connected" %}
+
 #### 24h test run
 
 Here the 24h run results:
 
-{% include images-gallery.html imageCollection="cassandra-100k-10k-30k" %}
+{% include images-gallery.html imageCollection="cassandra-100k-10k-30k-24h" %}
 
 ## Disk usage
 

@@ -294,6 +294,14 @@ cassandra-100k-10k-30k-24h:
         image: /images/reference/performance-aws-instances/method/m6a-2xlarge/100k-10k-30k/24h-run/aws-storage-monitoring.png
         title: 'AWS storage monitoring'
 
+thingsboard-100k-devices-connected:
+    0:
+        image: /images/reference/performance-aws-instances/method/m6a-2xlarge/100k-is-connected/devices-list-100k-thingsboard.png  
+        title: 'Device List with 100k+ lines'
+    1:
+        image: /images/reference/performance-aws-instances/method/m6a-2xlarge/100k-is-connected/jmx-mbeans-java-lang-operating-system-open-file-descriptor-count.png
+        title: 'Jmx MBeans java.lang.operating_system open_file_descriptor_count'
+
 ---
 
 {% include /docs/reference/performance-comparison.md %}
