@@ -98,6 +98,32 @@ postgres-only-x10-stress:
         image: /images/reference/performance-aws-instances/method/t3-medium/flood-x10/aws-instance-monitoring.png
         title: 'AWS instance monitoring during the x10 stress test'
 
+postgres-only-6000:
+    0:
+        image: /images/reference/performance-aws-instances/method/m6a-large/postgres/thingsboard-aws-m6a-large-queue-stats-dashboard.png  
+        title: 'Queue stats dashboard'
+    1:
+        image: /images/reference/performance-aws-instances/method/m6a-large/postgres/thingsboard-aws-m6a-large-api-usage-dashboard.png
+        title: 'Thingsboard API usage dashboard'
+    2:
+        image: /images/reference/performance-aws-instances/method/m6a-large/postgres/thingsboard-aws-m6a-large-htop-cpu-memory-io-monitoring.png
+        title: 'htop: CPU, memory, IO read/write'
+    3:
+        image: /images/reference/performance-aws-instances/method/m6a-large/postgres/thingsboard-aws-m6a-large-jmx-visualvm-monitoring.png
+        title: 'Java CPU and heap monitoring with JMX VisualVM'
+    4:
+        image: /images/reference/performance-aws-instances/method/m6a-large/postgres/thingsboard-aws-m6a-large-postgresql-pgadmin-dashboard.png
+        title: 'Postgres PgAdmin dashboard'
+    5:
+        image: /images/reference/performance-aws-instances/method/m6a-large/postgres/thingsboard-aws-m6a-large-cpu-network-monitoring.png
+        title: 'AWS CPU and network monitoring'
+    6:
+        image: /images/reference/performance-aws-instances/method/m6a-large/postgres/thingsboard-aws-m6a-large-disk-monitoring.png
+        title: 'AWS storage monitoring'
+    7:
+        image: /images/reference/performance-aws-instances/method/m6a-large/postgres/thingsboard-aws-m6a-large-disk-type.png
+        title: 'Storage type GP3, 3000 IOPS, 125 MB/s'
+
 postgres-kafka-5000:
     0:
         image: /images/reference/performance-aws-instances/method/m6a-large/postgres-kafka/queue-stats.png  
