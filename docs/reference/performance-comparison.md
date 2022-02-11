@@ -302,6 +302,26 @@ thingsboard-100k-devices-connected:
         image: /images/reference/performance-aws-instances/method/m6a-2xlarge/100k-is-connected/jmx-mbeans-java-lang-operating-system-open-file-descriptor-count.png
         title: 'Jmx MBeans java.lang.operating_system open_file_descriptor_count'
 
+postgres-kafka-disk-usage:
+    0:
+        image: /images/reference/performance-aws-instances/method/m6a-large/postgres-kafka/stress-x3/postgresql-disk-usage-total.png  
+        title: 'Postgres disk usage total'
+    1:
+        image: /images/reference/performance-aws-instances/method/m6a-large/postgres-kafka/stress-x3/postgresql-disk-usage-by-table.png
+        title: 'Postgres disk usage by table'
+    2:
+        image: /images/reference/performance-aws-instances/method/m6a-large/postgres-kafka/stress-x3/kafka-disk-usage-total.png
+        title: 'Kafka disk usage total'
+    3:
+        image: /images/reference/performance-aws-instances/method/m6a-large/postgres-kafka/stress-x3/kafka-disk-usage-by-topic.png
+        title: 'Kafka disk usage by topic'
+
+cassandra-disk-usage:
+    0:
+        image: /images/reference/performance-aws-instances/method/m6a-2xlarge/100k-5k-15k/disk-usage-cassandra.png  
+        title: 'Cassandra disk usage is about 20 GiB per 1.3B data points'
+
+
 ---
 
 {% include /docs/reference/performance-comparison.md %}

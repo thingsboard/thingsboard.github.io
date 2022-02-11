@@ -1314,8 +1314,6 @@ The 200Gb disk was filled out in about 24 hours with average 5k msg/sec, 15k dat
 
 **Postgres** database size is 160GiB. It is about 7M data points per 1 GiB disk space. To reach much better disk space efficiency please, check the Cassandra disk space usage.
 
-![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka/stress-x3/postgresql-disk-usage-total.png)
-
 Detailed [PostgreSQL disk usage](https://wiki.postgresql.org/wiki/Disk_Usage) by tables and indexes
 
 ```postgresql
@@ -1330,17 +1328,11 @@ SELECT nspname || '.' || relname AS "relation", pg_size_pretty(pg_relation_size(
 You can see the biggest table is timeseries (TS, telemetry, data points) and TS index. All telemetry divided my month to gain a stable performance.  
 Test started in December and finished in January. The TS have two tables 2021_12 and 2022_01 for respective months.
 
-![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka/stress-x3/postgresql-disk-usage-by-table.png)
-
 **Kafka** size is 20GiB.
 
 Tip: to plan and manage the Kafka disk space, please, adjust the [size retention policy](https://kafka.apache.org/documentation/#brokerconfigs_log.retention.bytes) and [period retention policy](https://www.baeldung.com/kafka-message-retention).
 
-![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka/stress-x3/kafka-disk-usage-total.png)
-
-Here the Kafka size by topics.
-
-![](../../../images/reference/performance-aws-instances/method/m6a-large/postgres-kafka/stress-x3/kafka-disk-usage-by-topic.png)
+{% include images-gallery.html imageCollection="postgres-kafka-disk-usage" %}
 
 ### Cassandra - disk usage
 
@@ -1348,13 +1340,13 @@ For 24 hours (100k devices, 432M msg) total datapoint stored is 1.3B
 
 Cassandra's disk usage is about 20 GiB per 1.3B data points. It is about 65M data points per 1 GiB disk space.
 
-![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/100k-5k-15k/disk-usage-cassandra.png)
+{% include images-gallery.html imageCollection="cassandra-disk-usage" %}
 
 Note: data size on disk may vary depends on the content.
 
 ### Disk usage summary
 
-Compared with Postgresql, Cassandra's disk space consumption is about x10 times less.
+Compared with Postgresql, Cassandra's disk space consumption is about x5-x10 times less.
 
 Cassandra's advantage is the data compression and less overhead in a data structure.
 
