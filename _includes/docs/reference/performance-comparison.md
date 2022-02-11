@@ -561,7 +561,15 @@ Instance: AWS m6a.large (2 vCPUs AMD EPYC 3rd, 8 GiB, EBS GP3)
 
 Estimated cost 42$ EC2 + 8$ EBS GP3 100GB = 50$/mo, disk space for telemetry may add additional costs.
 
+<details markdown="1">
+<summary>
+Setup the Thingsboard instance on AWS EC2
+</summary>
+
+Use the Docker Compose file listed below to setup the AWS EC2 instance based on the [instruction](/docs/{{docsPrefix}}reference/performance/setup-aws-instances/).
+
 Here the docker-compose with Thingsboard + Postgresql + Zookeeper + Kafka + Timescale
+
 ```bash
 version: '3'
 services:
@@ -632,6 +640,8 @@ volumes: # to persist data between container restarts or being recreated
 ```
 {: .copy-code}
 
+</details>
+
 <details markdown="1">
 <summary>
 Launch performance test tool
@@ -673,6 +683,13 @@ Estimated cost 167$ EC2 m6a.2xlarge + 24$ EBS GP3 300GB = 191$/mo
 **Cassandra** is essential for massive telemetry flow.
 
 Peaks will be handled with Kafka queue. It is a **top monolith deployment**. 
+
+<details markdown="1">
+<summary>
+Setup the Thingsboard instance on AWS EC2
+</summary>
+
+Use the Docker Compose file listed below to setup the AWS EC2 instance based on the [instruction](/docs/{{docsPrefix}}reference/performance/setup-aws-instances/).
 
 Here the docker-compose with Thingsboard + Postgresql + Zookeeper + Kafka + **Cassandra**
 
@@ -777,6 +794,8 @@ volumes: # to persist data between container restarts or being recreated
 ```
 {: .copy-code}
 
+</details>
+
 <details markdown="1">
 <summary>
 Launch performance test tool
@@ -843,6 +862,7 @@ Let's forward JMX port with SSH to connect and monitor all Java applications pre
 ```bash
 ssh -L 9999:127.0.0.1:9999 -L 1099:127.0.0.1:1099 -L 9199:127.0.0.1:9199 -L 7199:127.0.0.1:7199 thingsboard 
 ```
+{: .copy-code}
 
 Open VisualVM, add the local applications, open it and let the data being gathered for a few minutes. 
 
@@ -878,7 +898,14 @@ Instance: AWS m6a.2xlarge (8 vCPUs AMD EPYC 3rd, 32 GiB, EBS GP3)
 
 To produce 100k simultaneous connection we need at least 2 performance-test instances. Regarding the maximum port count 65535 on a single server.
 
-First, we need to increase ip local port range on performance test instance that setup many outgoing connections. Now we can open up to 64511 IP ports.  
+<details markdown="1">
+<summary>
+Boots network settings to generate more connections
+</summary>
+
+By default, Ubuntu Linux allows you to spin up a 28232 outgoing connection providing a local port range from 32768 to 60999.
+
+First, we need to increase the IP local port range on a performance test instance that setup many outgoing connections. Now we can open up to 64511 IP ports.
 
 ```bash
 ssh pt
@@ -894,7 +921,14 @@ sudo sysctl -w net.netfilter.nf_conntrack_max=1048576
 ```
 {: .copy-code}
 
-Let's prepare the Thingsboard 
+</details>
+
+<details markdown="1">
+<summary>
+Setup the Thingsboard instance on AWS EC2
+</summary>
+
+Use the Docker Compose file listed below to setup the AWS EC2 instance based on the [instruction](/docs/{{docsPrefix}}reference/performance/setup-aws-instances/).
 
 Here the docker-compose with Thingsboard + Postgresql + Zookeeper + Kafka + **Cassandra**
 
@@ -1008,7 +1042,15 @@ volumes: # to persist data between container restarts or being recreated
 ```
 {: .copy-code}
 
+</details>
+
+<details markdown="1">
+<summary>
+Launch performance test tool on two nodes
+</summary>
+
 Performance tests will be started as an application to reduce network setup complexity using the container.
+
 Before you started, clone and build the performance test from source:
 ```bash
 cd ~
@@ -1019,13 +1061,9 @@ cd performance-tests
 ```
 {: .copy-code}
 
-
-<details markdown="1">
-<summary>
-Launch performance test tool on the _first node_
-</summary>
-
 Use the Docker command listed below to launch the performance test tool based on the [instruction](/docs/{{docsPrefix}}reference/performance/performance-test-methodology/).
+
+Here is the run script for the _first node_.
 
 ```bash
 cd ~/performance-tests
@@ -1041,14 +1079,7 @@ nohup mvn spring-boot:run &
 ```
 {: .copy-code}
 
-</details>
-
-<details markdown="1">
-<summary>
-Launch performance test tool on the _second node_
-</summary>
-
-Use the Docker command listed below to launch the performance test tool based on the [instruction](/docs/{{docsPrefix}}reference/performance/performance-test-methodology/).
+Here is the run script for the _second node_.
 
 ```bash
 cd ~/performance-tests
@@ -1104,6 +1135,11 @@ Great improvement for performance is to persist **device state to Cassandra tele
 ```yaml
       PERSIST_STATE_TO_TELEMETRY: "true" # Persist device state to the Cassandra. Default is false (Postgres, as device server_scope attributes)
 ```
+
+<details markdown="1">
+<summary>
+Setup the Thingsboard instance on AWS EC2
+</summary>
 
 Here the docker-compose with Thingsboard + Postgresql + Zookeeper + Kafka + **Cassandra**
 
@@ -1217,6 +1253,13 @@ volumes: # to persist data between container restarts or being recreated
 ```
 {: .copy-code}
 
+</details>
+
+<details markdown="1">
+<summary>
+Launch performance test tool on the two nodes
+</summary>
+
 Performance tests will be started as an application to reduce complexity using the container
 Before you started, clone and build once the performance test:
 ```bash
@@ -1228,12 +1271,9 @@ cd performance-tests
 ```
 {: .copy-code}
 
-<details markdown="1">
-<summary>
-Launch performance test tool on the _first node_
-</summary>
-
 Use the Docker command listed below to launch the performance test tool based on the [instruction](/docs/{{docsPrefix}}reference/performance/performance-test-methodology/).
+
+Here is the run script for the _first node_.
 
 ```bash
 cd ~/performance-tests
@@ -1249,14 +1289,7 @@ nohup mvn spring-boot:run &
 ```
 {: .copy-code}
 
-</details>
-
-<details markdown="1">
-<summary>
-Launch performance test tool on the _second node_
-</summary>
-
-Use the Docker command listed below to launch the performance test tool based on the [instruction](/docs/{{docsPrefix}}reference/performance/performance-test-methodology/).
+Here is the run script for the _second node_.
 
 ```bash
 cd ~/performance-tests
