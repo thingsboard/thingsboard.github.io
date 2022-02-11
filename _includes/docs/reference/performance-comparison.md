@@ -1316,7 +1316,7 @@ The 200Gb disk was filled out in about 24 hours with average 5k msg/sec, 15k dat
 
 Detailed [PostgreSQL disk usage](https://wiki.postgresql.org/wiki/Disk_Usage) by tables and indexes
 
-```postgresql
+```sql
 SELECT nspname || '.' || relname AS "relation", pg_size_pretty(pg_relation_size(C.oid)) AS "size"
   FROM pg_class C
   LEFT JOIN pg_namespace N ON (N.oid = C.relnamespace)
