@@ -230,6 +230,33 @@ cassandra-25k-10k-30k-jmx:
     4:
         image: /images/reference/performance-aws-instances/method/m6a-2xlarge/25k-10k-30k/jmx-cassandra.png
         title: 'JMX monitoring for the Cassandra. The system is stable'
+
+cassandra-100k-5k-15k:
+    0:
+        image: /images/reference/performance-aws-instances/method/m6a-2xlarge/100k-5k-15k/queue-stats.png  
+        title: 'Queue stats dashboard'
+    1:
+        image: /images/reference/performance-aws-instances/method/m6a-2xlarge/100k-5k-15k/api-usage.png
+        title: 'Thingsboard API usage dashboard'
+    2:
+        image: /images/reference/performance-aws-instances/method/m6a-2xlarge/100k-5k-15k/htop.png
+        title: 'htop: CPU, memory, IO read/write'
+    3:
+        image: /images/reference/performance-aws-instances/method/m6a-2xlarge/100k-5k-15k/jmx-visualvm-monitoring.png
+        title: 'JMX VisualVM monitoring'
+    4:
+        image: /images/reference/performance-aws-instances/method/m6a-2xlarge/100k-5k-15k/postgresql-pgadmin-dashboard.png
+        title: 'Postgres PgAdmin dashboard'
+    5:
+        image: /images/reference/performance-aws-instances/method/m6a-2xlarge/100k-5k-15k/aws-instance-monitoring.png
+        title: 'AWS CPU and network monitoring'
+    6:
+        image: /images/reference/performance-aws-instances/method/m6a-2xlarge/100k-5k-15k/aws-storage-monitoring.png
+        title: 'AWS storage monitoring'
+    7:
+        image: /images/reference/performance-aws-instances/method/m6a-2xlarge/100k-5k-15k/disk-usage-cassandra.png
+        title: 'Cassandra disk usage'
+
 ---
 
 {% include /docs/reference/performance-comparison.md %}

@@ -1073,20 +1073,7 @@ nohup mvn spring-boot:run &
 
 Test runs 24 hour and here the results:
 
-![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/100k-5k-15k/queue-stats.png)
-
-![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/100k-5k-15k/api-usage.png)
-
-![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/100k-5k-15k/htop.png)
-
-![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/100k-5k-15k/postgresql-pgadmin-dashboard.png)
-
-![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/100k-5k-15k/jmx-visualvm-monitoring.png)
-
-![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/100k-5k-15k/aws-instance-monitoring.png)
-
-![](../../../images/reference/performance-aws-instances/method/m6a-2xlarge/100k-5k-15k/aws-storage-monitoring.png)
- 
+{% include images-gallery.html imageCollection="cassandra-100k-5k-15k" %}
 
 ### Cassandra - 100k devices, 10k msg/sec
 
