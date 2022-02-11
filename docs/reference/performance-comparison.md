@@ -72,6 +72,32 @@ postgres-only-x3-stress:
         image: /images/reference/performance-aws-instances/method/t3-medium/burst-x3/burst-x3-aws-storage-monitoring.png
         title: 'AWS storage monitoring'
 
+postgres-only-x10-stress:
+    0:
+        image: /images/reference/performance-aws-instances/method/t3-medium/flood-x10/beginning-htop.png  
+        title: '100% CPU load at the beginning x10 stress test'
+    1:
+        image: /images/reference/performance-aws-instances/method/t3-medium/flood-x10/beginning-queue-stats.png
+        title: 'Queue stats - performance degrade'
+    2:
+        image: /images/reference/performance-aws-instances/method/t3-medium/flood-x10/beginning-jmx-visualvm-monitoring.png
+        title: 'Heap memory used is constantly growing on the JMX monitor'
+    3:
+        image: /images/reference/performance-aws-instances/method/t3-medium/flood-x10/queue-stats.png
+        title: 'Queue stats drop to zero and do not respond anymore'
+    4:
+        image: /images/reference/performance-aws-instances/method/t3-medium/flood-x10/htop.png
+        title: 'CPU is still 100% load, but mainly spending on the garbage collector'
+    5:
+        image: /images/reference/performance-aws-instances/method/t3-medium/flood-x10/jmx-visualvm-monitoring.png
+        title: 'JMX VusialVM monitoring on system dying due to out of memory'
+    6:
+        image: /images/reference/performance-aws-instances/method/t3-medium/flood-x10/out-of-memory.png
+        title: 'Out of memory log message'
+    7:
+        image: /images/reference/performance-aws-instances/method/t3-medium/flood-x10/aws-instance-monitoring.png
+        title: 'AWS instance monitoring during the x10 stress test'
+
 postgres-kafka-5000:
     0:
         image: /images/reference/performance-aws-instances/method/m6a-large/postgres-kafka/queue-stats.png  

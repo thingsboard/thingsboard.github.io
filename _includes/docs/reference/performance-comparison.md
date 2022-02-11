@@ -222,12 +222,12 @@ Instance: AWS t3.medium (2 vCPUs Intel, 4 GiB, EBS GP3)
 
 **Let's burn** this tiny instance with x10 message rate!
 
-Maybe it is **not a good idea** to crash the Thingsboard IoT platform with the *in-memory queue*. 
-But it may be a benefit for a **new users** that just started using Thingsboard IoT platform.
-The goal is **to help the community** to avoid choosing a wrong design. Helping to save the money, data, customers and reputation.
+Maybe it is **not a good idea** to crash the Thingsboard IoT platform with the *in-memory queue*.
+But it may benefit **new users** who just started using the Thingsboard IoT platform.
+The goal is **to help the community** avoid choosing the wrong design and help save data, customers, reputation, and money.
 
 So let's generate some message rate spike. CPU and disk will not be able to process all the messages.
-Some lag will build up. Let's see what is going on inside the memory and what the consequences on in-memory queue flood.
+Some lag will build up. Let's see what is happening inside the memory and the consequences of the in-memory queue flood.
 
 <details markdown="1">
 <summary>
@@ -253,54 +253,37 @@ docker run -it --rm --network host --name tb-perf-test \
 
 </details>
 
-At the beginning the system looks busy, but responsive.
+In the beginning, the system looks busy but responsive.
 
-![](../../../images/reference/performance-aws-instances/method/t3-medium/flood-x10/beginning-htop.png)
+Then the instance becomes short on memory, and overall performance will degrade.
 
-Then the instance become short on memory and overall performance going to degrade. 
+Now we see that heap memory used is constantly growing on the JMX monitor.
 
-![](../../../images/reference/performance-aws-instances/method/t3-medium/flood-x10/beginning-queue-stats.png)
+It takes about 10 minutes to flood all the memory, and the system becomes unresponsive.
 
-Now we see on JMX monitor that heap memory used is growing constantly.
+Queue stats drop to zero and do not respond anymore.
 
-![](../../../images/reference/performance-aws-instances/method/t3-medium/flood-x10/beginning-jmx-visualvm-monitoring.png)
+CPU is still 100% load, but mainly spending on the garbage collector.
 
-It takes about 10 minutes to flood all the memory and system become unresponsive.
+JMX VusialVM monitoring shows how the system dies due to out-of-memory.
 
-![](../../../images/reference/performance-aws-instances/method/t3-medium/flood-x10/queue-stats.png)
+In the next 3 minutes, the system will die.
 
-![](../../../images/reference/performance-aws-instances/method/t3-medium/flood-x10/htop.png)
+{% include images-gallery.html imageCollection="postgres-only-x10-stress" %}
 
-![](../../../images/reference/performance-aws-instances/method/t3-medium/flood-x10/jmx-visualvm-monitoring.png)
-
-In next 3 minutes the system will die.
-
-![](../../../images/reference/performance-aws-instances/method/t3-medium/flood-x10/out-of-memory.png)
-
-```bash
-tb_1        | java.lang.OutOfMemoryError: Java heap space
-tb_1        | Dumping heap to java_pid76.hprof ...
-tb_1        | Unable to create java_pid76.hprof: Permission denied
-tb_1        | Terminating due to java.lang.OutOfMemoryError: Java heap space
-postgres_1  | 2021-12-30 12:07:49.237 UTC [1896] LOG:  incomplete message from client
-tb_1        | Starting ThingsBoard ...
-```
-
-![](../../../images/reference/performance-aws-instances/method/t3-medium/flood-x10/aws-instance-monitoring.png)
-
-Why it happens? 
+**Why** it happens? 
 
 As you know, the resource is limited.
-CPU is limited by performance. Memory is limited by size and throughput.
-Storage has a limited capacity, operations per second (IOPS), throughput and read/write latencies as well.
-Network is limited by speed, throughput, latency, packets, etc.
+CPU has limited by performance. Memory has limited by size and throughput.
+Storage has a limited capacity, operations per second (IOPS), throughput, and read/write latencies.
+The network has limited by speed, throughput, latency, packets, etc.
 
-Despite all this boring limitation, all we experience the fast and reliable services all over the internet.
+Despite all these boring limitations, we all experience fast and reliable services all over the internet.
 
-So how is it possible that software goes down in the most important moment?
-Is it buggy code? Is it slow? Why? 
+So how is it possible that software goes down at the most critical moment?
+Is it buggy code? Is it slow? Why?
 Should I spend few thousand dollars on the most powerful high-end cloud and keep calm?
-Unfortunately, it not works in that way.
+Unfortunately, it does not work in that way.
 
 Eventually, you can get in-memory messages more than your memory available.
 
