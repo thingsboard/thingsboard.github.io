@@ -23,14 +23,14 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
             <p>Energy monitoring and efficiency analysis</p>
         </div>
     </a>
-    <a style="background-image: url(/images/usecases/fleet-tracking/ft2.png);" href="/fleet-tracking/" class="card">
+    <a style="background-image: url(/images/usecases/fleet-tracking/ft3.png);" href="/fleet-tracking/" class="card dark">
         <div>
             <img src="/images/case-trk-icon.svg">
             <h5 class="title">Fleet Tracking</h5>
             <p>Fleet tracking and fleet management</p>
         </div>    
     </a>
-    <a style="background-image: url(/images/usecases/smart-farming/sf2.png);" href="/smart-farming/" class="card">
+    <a style="background-image: url(/images/usecases/smart-farming/sf3.png);" href="/smart-farming/" class="card dark">
         <div>
             <img src="/images/case-fam-icon.svg">
             <h5 class="title">Smart Farming</h5>

@@ -44,7 +44,6 @@
         box-shadow: 0 50px 50px -20px rgba(0,0,0,0.15)
         div
             border-radius: 6px
-            //border-radius: .25rem
             border: 1px solid #fff
             background: linear-gradient(20deg, #fff 30%, rgba(255,255,255,0) 80%)
             width: 100%
@@ -56,12 +55,15 @@
                 border-radius: 22px
                 margin-bottom: 75px
             .title
-                font-weight: 600
+                font-weight: 600!important
                 margin: 8px 0 14px
+        &.dark div
+            background: linear-gradient(20deg, rgba(13,39,67,1) 30%, rgba(13,39,67,0) 80%)
+            color: white
+            border: 1px solid #0D2743
         &:nth-child(2n+0)
             margin-right: 0
         &:hover
-            //border: 4px solid #2a7dec
             div
                 border: 4px solid #2a7dec
                 padding: 28px
