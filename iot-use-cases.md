@@ -16,25 +16,33 @@ Some of the industry use cases where ThingsBoard is being successfully utilized 
 Should you have any comments or questions please feel free to [Contact Us](/docs/contact-us/).
 
 <div class="usecase-cards">
-    <a href="/smart-energy/" class="card">
-        <img src="/images/case-eng-icon.svg">
-        <h5 class="title">Smart Energy</h5>
-        <p>Energy monitoring and efficiency analysis</p>
+    <a style="background-image: url(/images/usecases/smart-energy/se1.png);" href="/smart-energy/" class="card">
+        <div>
+            <img src="/images/case-eng-icon.svg">
+            <h5 class="title">Smart Energy</h5>
+            <p>Energy monitoring and efficiency analysis</p>
+        </div>
     </a>
-    <a href="/fleet-tracking/" class="card">
-        <img src="/images/case-trk-icon.svg">
-        <h5 class="title">Fleet Tracking</h5>
-        <p>Fleet tracking and fleet management</p>
+    <a style="background-image: url(/images/usecases/fleet-tracking/ft2.png);" href="/fleet-tracking/" class="card">
+        <div>
+            <img src="/images/case-trk-icon.svg">
+            <h5 class="title">Fleet Tracking</h5>
+            <p>Fleet tracking and fleet management</p>
+        </div>    
     </a>
-    <a href="/smart-farming/" class="card">
-        <img src="/images/case-fam-icon.svg">
-        <h5 class="title">Smart Farming</h5>
-        <p>Monitoring of indoor conditions and plant growth characteristics</p>
+    <a style="background-image: url(/images/usecases/smart-farming/sf2.png);" href="/smart-farming/" class="card">
+        <div>
+            <img src="/images/case-fam-icon.svg">
+            <h5 class="title">Smart Farming</h5>
+            <p>Monitoring of indoor conditions and plant growth characteristics</p>
+        </div>
     </a>   
-    <a href="/smart-metering/" class="card">
-        <img src="/images/case-met-icon.svg">
-        <h5 class="title">Smart Metering</h5>
-        <p>Collection, analysis and visualization of data from meters</p>
+    <a style="background-image: url(/images/usecases/smart-metering/sm1.png);" href="/smart-metering/" class="card">
+        <div>
+            <img src="/images/case-met-icon.svg">
+            <h5 class="title">Smart Metering</h5>
+            <p>Collection, analysis and visualization of data from meters</p>
+        </div>
     </a>
 </div>
 
