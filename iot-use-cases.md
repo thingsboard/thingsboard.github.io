@@ -1,13 +1,12 @@
 ---
-layout: common
+layout: use-case
 title: IoT use cases
 description: ThingsBoard IoT Platform use cases
-horizontaltoc: "true"
 notitle: "true"
 
 ---
 
-<h1 class="mainTitle">IoT Use Cases</h1>
+<h1 class="usecase-title">IoT Use Cases</h1>
 
 Being robust, scalable and user friendly, ThingsBoard IoT platform supports various IoT use cases by providing flexible and powerful out-of-the-box features to cut down time to market of your connected products and smart solutions. The platform is device-agnostic, so you can feed and analyze telemetry data from any sensor, connected device or application. ThingsBoard comprehensive features and rich platform APIs allow you to save time and resources on routine IoT tasks and concentrate on specific features of your IoT solution.
 
