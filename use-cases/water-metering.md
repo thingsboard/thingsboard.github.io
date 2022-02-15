@@ -16,16 +16,22 @@ Text
 
 <div class="usecase-carousel owl-carousel owl-theme">
     <div>
-        <img class="item-image" src="/images/usecases/smart-metering/sm1.png" />
+        <img class="item-image" src="/images/usecases/water-metering/wm1.png" />
     </div>
     <div>
-        <img class="item-image" src="/images/usecases/smart-metering/sm2.png" />
+        <img class="item-image" src="/images/usecases/water-metering/wm2.png" />
     </div>
     <div>
-        <img class="item-image" src="/images/usecases/smart-metering/sm3.png" />
+        <img class="item-image" src="/images/usecases/water-metering/wm3.png" />
     </div>
     <div>
-        <img class="item-image" src="/images/usecases/smart-metering/sm4.png" />
+        <img class="item-image" src="/images/usecases/water-metering/wm4.png" />
+    </div>
+    <div>
+        <img class="item-image" src="/images/usecases/water-metering/wm5.png" />
+    </div>
+    <div>
+        <img class="item-image" src="/images/usecases/water-metering/wm6.png" />
     </div>
 </div>
 

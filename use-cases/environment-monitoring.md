@@ -16,16 +16,13 @@ Text
 
 <div class="usecase-carousel owl-carousel owl-theme">
     <div>
-        <img class="item-image" src="/images/usecases/smart-metering/sm1.png" />
+        <img class="item-image" src="/images/usecases/environment-monitoring/em1.png" />
     </div>
     <div>
-        <img class="item-image" src="/images/usecases/smart-metering/sm2.png" />
+        <img class="item-image" src="/images/usecases/environment-monitoring/em2.png" />
     </div>
     <div>
-        <img class="item-image" src="/images/usecases/smart-metering/sm3.png" />
-    </div>
-    <div>
-        <img class="item-image" src="/images/usecases/smart-metering/sm4.png" />
+        <img class="item-image" src="/images/usecases/environment-monitoring/em3.png" />
     </div>
 </div>
 
