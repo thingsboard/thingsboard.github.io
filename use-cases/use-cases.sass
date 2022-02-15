@@ -29,7 +29,7 @@
         background-repeat: no-repeat
         background-size: cover
         background-position: center
-        color: #212529
+        color: #fff!important
         margin-bottom: 12px
         border: unset
         position: relative
@@ -43,11 +43,14 @@
         height: auto
         box-shadow: 0 50px 50px -20px rgba(0,0,0,0.15)
         div
+            height: 100%
             border-radius: 6px
-            border: 1px solid #fff
-            background: linear-gradient(20deg, #fff 30%, rgba(255,255,255,0) 80%)
+            background: linear-gradient(20deg, #0f161dbf 30%, #0f161d00 80%)
             width: 100%
-            padding: 31px
+            padding: 32px
+            p
+                margin: 0!important
+                color: #ccc!important
             img
                 padding: 0 5px
                 width: 44px
@@ -57,16 +60,10 @@
             .title
                 font-weight: 600!important
                 margin: 8px 0 14px
-        &.dark div
-            background: linear-gradient(20deg, rgba(13,39,67,1) 30%, rgba(13,39,67,0) 80%)
-            color: white
-            border: 1px solid #0D2743
         &:nth-child(2n+0)
             margin-right: 0
         &:hover
             div
-                border: 4px solid #2a7dec
-                padding: 28px
                 .title
                     color: #2a7dec
     @media screen and (max-width: 768px)

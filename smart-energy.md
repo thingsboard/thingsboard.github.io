@@ -132,7 +132,7 @@ You may export the dashboard from our live demo server and import it to your Thi
 
 The diagram below identifies data flow and integration points for a typical smart-energy solution that uses the ThingsBoard platform to collect and analyze energy monitoring data from smart meters.
 
-![Smart energy solution diagram](/images/iot-use-cases/smart-energy-diagram.svg)
+<object width="100%" style="max-width: max-content; margin: 32px 0" data="/images/iot-use-cases/smart-energy-diagram.svg"></object>
 
 You may notice plenty of connectivity options for the smart meters: direct connection to the cloud, through the IoT Gateway, or an Integration with a third-party system.
 The platform supports industry-standard encryption algorithms and device credentials types. ThingsBoard stores data in the fault-tolerant and reliable Cassandra database. 
