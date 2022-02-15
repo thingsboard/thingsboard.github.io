@@ -5,4 +5,4 @@ description: ThingsBoard Performance test methodology
 
 ---
 
-{% include /docs/reference/performance/performance-test-methodology.md %}
+{% include /docs/reference/performance/performance-test-tool.md %}
