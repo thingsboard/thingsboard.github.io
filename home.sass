@@ -295,51 +295,20 @@ $feature-box-div-margin-bottom: 40px
         #dashboard_description
             margin-top: 186px
             margin-bottom: 120px
-            .slider
+            .owl-carousel.owl-theme.usecase-carousel
                 margin: 78px auto
-                position: relative
                 width: 100%
-                display: flex
-                flex-direction: column
-                justify-content: space-around
-            .slider button.slick-prev, button.slick-next
-                position: absolute
-                filter: invert(100%) sepia(74%) saturate(108%) hue-rotate(175deg) brightness(90%) contrast(96%)
-                outline: none
-                background-image: url(/images/slider-arrow.svg)
-                width: 17px
-                height: 50px
-                &:hover
-                    filter: invert(62%) sepia(74%) saturate(6770%) hue-rotate(202deg) brightness(99%) contrast(87%)
-            .slider button.slick-prev
-                left: -50px
-                top: calc(50% - 25px)
-                transform: scale(-1, 1)
-            .slider button.slick-next
-                right: -50px
-            .slider button.slick-prev::before, .slider button.slick-next::before, .demo-dashboards-carousel ul li button::before
-                content: unset
-            .demo-dashboards-carousel
-                position: relative
-                width: 100%
-            .demo-dashboards-carousel ul li
-                width: unset
-                margin: 0 12px
-            .demo-dashboards-carousel ul li button
-                background: #E0E1E2
-                border-radius: 4px
-                width: 10px
-                height: 10px
-                padding: unset
-                margin: 8px 0
-            .demo-dashboards-carousel ul li:hover
-                button
-                    filter: invert(62%) sepia(74%) saturate(6770%) hue-rotate(202deg) brightness(99%) contrast(87%)
-            .demo-dashboards-carousel ul li.slick-active
-                button
-                    filter: invert(62%) sepia(74%) saturate(6770%) hue-rotate(202deg) brightness(99%) contrast(87%)
-            .slick-list
-                margin-bottom: 32px
+                .owl-stage-outer
+                    overflow: hidden
+                    .owl-stage
+                        .owl-item
+                            .item-image
+                                box-shadow: unset
+                .owl-nav
+                    button.owl-prev
+                        left: -50px
+                    button.owl-next
+                        right: -50px
             .dashboard-item
                 flex-direction: column
                 justify-content: space-between
@@ -654,10 +623,6 @@ $feature-box-div-margin-bottom: 40px
                                 width: calc(100% - 122px)
                             img
                                 margin: 0 30px 0 0
-            #dashboard_description
-                .demo-dashboards-carousel ul li button
-                    width: 72px
-                    height: 4px
 
 @media screen and (min-width: 1025px)
     #home
@@ -699,14 +664,14 @@ $feature-box-div-margin-bottom: 40px
                 div.main2
                     height: 525px
             #dashboard_description
+                .owl-carousel.owl-theme.usecase-carousel
+                    width: 90%
                 .dashboard-item
                     flex-direction: unset
                 .item-image-container
                     width: 66%
                 .item-description
                     width: 30%
-                .slider
-                    width: 90%
 
 @media screen and (min-width: 1250px)
     #home
@@ -728,5 +693,5 @@ $feature-box-div-margin-bottom: 40px
     #home
         #overflow
             #dashboard_description
-                .slider
+                .owl-carousel.owl-theme.usecase-carousel
                     width: 100%
