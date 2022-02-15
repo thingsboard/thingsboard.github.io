@@ -1,11 +1,11 @@
-### Setup AWS instances
+#### Step 1. Launch EC2 instance. 
 
-To run clear test lets spin up two instances for Thingsboard and for performance tool.
+To run clear test lets spin up two instances for ThingsBoard and for performance tool.
 Operating system is Linux, image *Ubuntu 20 LTS*. Architecture x64 or ARM depending on instance type.
 Assign Elastic IP to get permanent access to the instances between restarts.
-We need at least two instances: first is to run Thingsboard itself and second is to run the Performance test application.   
+We need at least two instances: first is to run ThingsBoard itself and second is to run the Performance test application.   
 
-![Thingsboard and Performance test instances](/images/reference/performance-aws-instances/method/setup/performance_test_aws_instances.png "Thingsboard and Performance test instances")
+![ThingsBoard and Performance test instances](/images/reference/performance-aws-instances/method/setup/performance_test_aws_instances.png "ThingsBoard and Performance test instances")
 
 At the beginning, the firewall does not allow to connect your instances. Lest open the necessary ports to enable connectivity between instances and your admin machine.  
 
@@ -17,6 +17,9 @@ As fas as we experience the number of rules will affect the network performance,
 
 ![Security group inbound rules](/images/reference/performance-aws-instances/method/setup/performance_test_network_security_group_inbound_rules.png)
 
+
+#### Step 2. Setup SSH to the instance.
+
 Optionally, setup SSH private keys to access the instances. It is convenient to put your `PEM` key file to the `~/.ssh/aws.pem` and set up `~/.ssh/config` like:
 ```bash
 Host tb
@@ -25,28 +28,19 @@ Host tb
  IdentityFile /home/username/.ssh/aws.pem
  IdentitiesOnly yes
  User ubuntu
-Host pt
- Hostname 34.242.159.12
- Port 22
- IdentityFile /home/username/.ssh/aws.pem
- IdentitiesOnly yes
- User ubuntu
 ```
 {: .copy-code}
 
-To connect Thingsboard instance simply use to command below
+To connect ThingsBoard instance simply use the command below:
 ```bash
 ssh tb
 ```
 
-To connect Performance test instance use this command
-```bash
-ssh pt
-```
+#### Step 3. Install Docker and Docker-compose.
 
 We are going use docker and docker-compose to run performance tests under non-root users. 
 To save the setup time and make the environment the same all the time we provide an all-in-one setup script below.  
-Login with ssh and run the commands both on Thingsboard and Performance test instances:
+Login with ssh and run the commands both on ThingsBoard and Performance test instances:
 
 ```bash
 sudo apt update
@@ -61,3 +55,23 @@ newgrp docker
 docker run hello-world
 ```
 {: .copy-code}
+
+
+#### Step 4. Launch ThingsBoard and third-party components using docker-compose
+
+Download the docker-compose file to the work directory. 
+The docker-compose file is listed in the "How to reproduce the test" section that corresponds to your performance test [scenario](/docs/{{docsPrefix}}reference/performance-comparison/#test-summary).
+
+Make sure your file is present in the working directory and is named as "docker-compose.yml", then execute the following commands: 
+
+```bash
+# stop previous instance (if any)
+docker-compose stop
+# remove previous instance (old data will be lost)
+docker-compose rm
+# run new instance from scratch 
+docker-compose up 
+```
+
+Note: For the sake of simplicity, we are using a [docker-compose host network mode](https://docs.docker.com/compose/compose-file/compose-file-v3/#network_mode).
+This also helps to avoid docker-proxy overhead during active network communication between microservices.
