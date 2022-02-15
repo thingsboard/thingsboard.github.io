@@ -39,25 +39,25 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
             <p>Collection, analysis and visualization of data from meters</p>
         </div>
     </a>
-    <a style="background-image: url(/images/usecases/smart-metering/sm1.png);" href="/use-cases/environment-monitoring/" class="card">
+    <a style="background-image: url(/images/usecases/environment-monitoring/em1.png);" href="/use-cases/environment-monitoring/" class="card">
         <div>
             <h5 class="title">Emvironment Monitoring</h5>
             <p>Collection, analysis and visualization of data from meters</p>
         </div>
     </a>
-    <a style="background-image: url(/images/usecases/smart-metering/sm1.png);" href="/use-cases/smart-office/" class="card">
+    <a style="background-image: url(/images/usecases/smart-office/so1.png);" href="/use-cases/smart-office/" class="card">
         <div>
             <h5 class="title">Smart Office</h5>
             <p>Collection, analysis and visualization of data from meters</p>
         </div>
     </a>
-    <a style="background-image: url(/images/usecases/smart-metering/sm1.png);" href="/use-cases/water-metering/" class="card">
+    <a style="background-image: url(/images/usecases/water-metering/wm1.png);" href="/use-cases/water-metering/" class="card">
         <div>
             <h5 class="title">Water Metering</h5>
             <p>Collection, analysis and visualization of data from meters</p>
         </div>
     </a>
-    <a style="background-image: url(/images/usecases/smart-metering/sm1.png);" href="/use-cases/smart-retail/" class="card">
+    <a style="background-image: url(/images/usecases/smart-retail/sr1.png);" href="/use-cases/smart-retail/" class="card">
         <div>
             <h5 class="title">Smart Retail</h5>
             <p>Collection, analysis and visualization of data from meters</p>
