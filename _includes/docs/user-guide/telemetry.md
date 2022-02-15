@@ -242,7 +242,7 @@ Supported entity types are: TENANT, CUSTOMER, USER, DASHBOARD, ASSET, DEVICE, AL
 
 ## WebSocket API
 
-WebSockets are actively used by Thingsobard Web UI. WebSocket API duplicates REST API functionality and provides the ability to subscribe to device data changes.
+WebSockets are actively used by Thingsboard Web UI. WebSocket API duplicates REST API functionality and provides the ability to subscribe to device data changes.
 You can open a WebSocket connection to a telemetry service using the following URL
 
 ```shell

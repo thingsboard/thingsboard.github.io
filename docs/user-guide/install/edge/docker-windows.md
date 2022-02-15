@@ -65,7 +65,7 @@ services:
     restart: always
     image: "postgres:12"
     ports:
-    - "5432"
+      - "5432"
     environment:
       POSTGRES_DB: tb-edge
       POSTGRES_PASSWORD: postgres

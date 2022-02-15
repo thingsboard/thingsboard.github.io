@@ -67,7 +67,7 @@ toc:
           path: /docs/edge/use-cases/data-filtering-traffic-reduce-pe/
 - title: Troubleshooting
   path: /docs/edge/user-guide/troubleshooting/
-#- title: Release Notes
-#  path: /docs/edge/reference/releases/
+- title: Release Notes
+  path: /docs/edge/releases/
 - title: Roadmap
   path: /docs/edge/roadmap/

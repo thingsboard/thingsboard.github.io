@@ -12,27 +12,39 @@ brew install mosquitto-clients
 ```
 {: .copy-code}
 
+{% if docsPrefix == 'paas/' %}
 
-Replace $HOST_NAME and $ACCESS_TOKEN with corresponding values.
+Replace $ACCESS_TOKEN with corresponding value.
 
 ```bash
-mosquitto_pub -d -q 1 -h "$HOST_NAME" -p "1883" -t "v1/devices/me/telemetry" -u "$ACCESS_TOKEN" -m {"temperature":25}
+mosquitto_pub -d -q 1 -h "mqtt.thingsboard.cloud" -p "1883" -t "v1/devices/me/telemetry" -u "$ACCESS_TOKEN" -m {"temperature":25}
 ```
 {: .copy-code}
 
-For example, $HOST_NAME reference ThingsBoard Cloud server, access token is ABC123:
+For example, $ACCESS_TOKEN is ABC123:
 
 ```bash
-mosquitto_pub -d -q 1 -h "mqtt.thingsboard.cloud"-p "1883" -t "v1/devices/me/telemetry" -u "ABC123" -m {"temperature":25} 
+mosquitto_pub -d -q 1 -h "mqtt.thingsboard.cloud" -p "1883" -t "v1/devices/me/telemetry" -u "ABC123" -m {"temperature":25} 
 ```
 {: .copy-code}
 
-For example, $HOST_NAME reference your local installation, access token is ABC123:
+{% else %}
+
+Replace $THINGSBOARD_HOST_NAME and $ACCESS_TOKEN with corresponding values.
+
+```bash
+mosquitto_pub -d -q 1 -h "$THINGSBOARD_HOST_NAME" -p "1883" -t "v1/devices/me/telemetry" -u "$ACCESS_TOKEN" -m {"temperature":25}
+```
+{: .copy-code}
+
+For example, $THINGSBOARD_HOST_NAME reference your local installation, $ACCESS_TOKEN is ABC123:
 
 ```bash
 mosquitto_pub -d -q 1 -h "localhost" -p "1883" -t "v1/devices/me/telemetry" -u "ABC123" -m {"temperature":25}
 ```
 {: .copy-code}
+
+{% endif %}
 
 Successful output should look similar to this one:
 

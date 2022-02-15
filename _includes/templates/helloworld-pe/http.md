@@ -21,26 +21,38 @@ If you are using older version of Windows OS, you may find official installation
 
 <br/>
 
-This command works for Windows, Ubuntu and macOS, assuming the cURL tool is already installed. Replace $HOST_NAME and $ACCESS_TOKEN with corresponding values.
+This command works for Windows, Ubuntu and macOS, assuming the cURL tool is already installed. 
+
+{% if docsPrefix == 'paas/' %}
+
+Replace $ACCESS_TOKEN with corresponding value.
 
 ```bash
-curl -v -X POST -d "{\"temperature\": 25}" $HOST_NAME/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
+curl -v -X POST -d "{\"temperature\": 25}" https://thingsboard.cloud/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json" 
 ```
 {: .copy-code}
 
-For example, $HOST_NAME reference ThingsBoard Cloud server, access token is ABC123:
+For example, $ACCESS_TOKEN is ABC123:
 
 ```bash
-curl -v -X POST -d "{\"temperature\": 25}" https://thingsboard.cloud/api/v1/ABC123/telemetry --header "Content-Type:application/json" 
+curl -v -X POST -d "{\"temperature\": 25}" https://thingsboard.cloud/api/v1/ABC123/telemetry --header "Content-Type:application/json"
 ```
 {: .copy-code}
 
-For example, $HOST_NAME reference your local installation, access token is ABC123:
+{% else %}
+
+Replace $THINGSBOARD_HOST_NAME and $ACCESS_TOKEN with corresponding values.
 
 ```bash
-curl -v -X POST -d "{\"temperature\": 25}" http://localhost:8080/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
+curl -v -X POST -d "{\"temperature\": 25}" https://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json" 
 ```
 {: .copy-code}
 
-<br/>
-<br/>
+For example, $THINGSBOARD_HOST_NAME reference your local installation, $ACCESS_TOKEN is ABC123:
+
+```bash
+curl -v -X POST -d "{\"temperature\": 25}" https://localhost/api/v1/ABC123/telemetry --header "Content-Type:application/json"
+```
+{: .copy-code}
+
+{% endif %}

@@ -27,14 +27,14 @@ This guide describes how to install ThingsBoard Edge on Ubuntu 18.04 LTS / Ubunt
 Download installation package.
 
 ```bash
-wget https://dist.thingsboard.io/tb-edge-3.3.deb
+wget https://dist.thingsboard.io/tb-edge-{{ site.release.edge_ver }}.deb
 ```
 {: .copy-code}
 
 Go to the download repository and install ThingsBoard Edge service
 
 ```bash
-sudo dpkg -i tb-edge-3.3.deb
+sudo dpkg -i tb-edge-{{ site.release.edge_ver }}.deb
 ```
 {: .copy-code}
 

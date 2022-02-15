@@ -1,3 +1,3 @@
-Here you can find ThingsBoard Edge single instance docker image with PostgreSQL database: 
+Here you can find ThingsBoard Edge docker image: 
 
 * [thingsboard/tb-edge](https://hub.docker.com/r/thingsboard/tb-edge){:target="_blank"}

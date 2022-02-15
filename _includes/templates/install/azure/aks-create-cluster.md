@@ -8,7 +8,14 @@ To see more info about `az group` please you can use [this](https://docs.microso
 
 After we created Resource group we can create AKS cluster in it using: 
 ```
-az aks create --resource-group $AKS_RESOURCE_GROUP --name $TB_CLUSTER_NAME --generate-ssh-keys -a ingress-appgw --appgw-name $AKS_GATEWAY --appgw-subnet-cidr "10.2.0.0/16"
+az aks create --resource-group $AKS_RESOURCE_GROUP \
+    --name $TB_CLUSTER_NAME \
+    --generate-ssh-keys \
+    --enable-addons ingress-appgw \
+    --appgw-name $AKS_GATEWAY \
+    --appgw-subnet-cidr "10.2.0.0/16" \
+    --node-vm-size Standard_DS3_v2 \
+    --node-count {{nodeCount}}
 ```
 {: .copy-code}
 
@@ -25,13 +32,5 @@ From the command above we add AKS addon for [ApplicationGateway](https://docs.mi
 
 Full list af `az aks create` options you can see [here](https://docs.microsoft.com/en-us/cli/azure/aks?view=azure-cli-latest#az_aks_create)
 
-Please notice that you will need ***nodeResourceGroup*** parameter from `az aks create` response in step 7 if you decide to configure ssl certificates for thingsboard. 
 
 Alternatively, you may use [this](https://docs.microsoft.com/en-us/azure/aks/kubernetes-walkthrough-portal) guide for custom cluster setup.
-
-{% capture aks_recommendation %}
-We recommend use at least three instances with 4 cpu and ~16Gib Memory for microservices architecture, for monolith architecture
-these requirements can be reduced. See CPU and Memory resources allocation Step for right calculation. You can see more info
-aboun Azure VM`s size [here](https://docs.microsoft.com/en-us/azure/virtual-machines/sizes)
-{% endcapture %}
-{% include templates/info-banner.md content=aks_recommendation %}

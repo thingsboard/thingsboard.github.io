@@ -487,7 +487,7 @@ The parameters are grouped by system components. The list contains the name (add
         <tr>
             <td>ui.help.base-url</td>
             <td>UI_HELP_BASE_URL</td>
-            <td>https://raw.githubusercontent.com/thingsboard/thingsboard-{{UI_HELP_BASE_URL_VALUE}}-help/release-3.3.2</td>
+            <td>https://raw.githubusercontent.com/thingsboard/thingsboard-{{UI_HELP_BASE_URL_VALUE}}-help/release-3.3.3</td>
             <td>Base URL for UI Help Assets. This is a link to the raw files hosted in the dedicated <a href="https://github.com/thingsboard/thingsboard-ui-help">GitHub project</a>. You may fork the project, update the content of the files and put your own project link. The project should be public in order for any platfrom UI users to access help resources.</td>
         </tr>
     </tbody>

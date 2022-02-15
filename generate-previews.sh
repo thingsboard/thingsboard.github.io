@@ -7,7 +7,17 @@ YELLOW='\033[1;33m'
 BROWN='\033[0;33m'
 NC='\033[0m'
 [ $# -eq 0 ] && { echo "Usage: $0 path_to_folder filter"; exit 1; }
- 
+[ -z "$2" ] && { echo "Filter not provided and was set to default *.png"; filter="*.png"; }
+
+# Check if mogrify installed
+if ! command -v mogrify &> /dev/null
+then
+    echo "'mogrify' not found"
+    echo "To install it use the command:"
+    echo "sudo apt install graphicsmagick-imagemagick-compat"
+    exit 1
+fi
+
 if [ -d "$dir" -a ! -h "$dir" ]
 then
    echo -e "${YELLOW}$dir${GREEN} found. Processing...${NC}"
