@@ -40,17 +40,27 @@
         text-decoration: none
         display: flex
         flex-direction: column
-        height: auto
+        height: 0
         box-shadow: 0 50px 50px -20px rgba(0,0,0,0.15)
+        padding-top: 22.25%
         div
-            height: 100%
-            border-radius: 6px
-            background: linear-gradient(20deg, #0f161dbf 30%, #0f161d00 80%)
+            transition-duration: 0.3s
+            position: absolute
+            left: 0
+            bottom: 0
+            //height: 100%
+            border-radius: 0 0 6px 6px
+            //background: linear-gradient(20deg, #0f161dbf 30%, #0f161d00 80%)
             width: 100%
             padding: 32px
-            p
+            background-color: rgba(15, 22, 29, 0.35)
+            backdrop-filter: blur(6px)
+            h5, p
                 margin: 0!important
-                color: #ccc!important
+                padding: 0!important
+                //color: #fff!important
+            h5
+                font-size: 24px!important
             img
                 padding: 0 5px
                 width: 44px
@@ -64,6 +74,12 @@
             margin-right: 0
         &:hover
             div
+                background: unset
+                transition-duration: 0.3s
+                background-color: rgba(15, 22, 29, 0.85)
+                height: 100%
+                border-radius: 6px
+                //filter: blur(6px)
                 .title
                     color: #2a7dec
     @media screen and (max-width: 768px)
