@@ -4,9 +4,9 @@
 
 ## Linkchecker
 
-Use the following command to check the broken links. Don't forget to substitute YOUR_IP with the internal IP address of your machine. 
+Use the following command to check the broken links. 
 
 ```bash
-docker run linkchecker/linkchecker http://YOUR_IP:4000/
+docker run -it --rm --network=host linkchecker/linkchecker --check-extern http://0.0.0.0:4000/
 ```
 
