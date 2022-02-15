@@ -51,7 +51,7 @@ notitle: "true"
                                         </a>
                                     </div>
                                     <div class="deployment-card-block">
-                                        <a href="/docs/iot-gateway/install/docker-installation/">
+                                        <a href="/docs/iot-gateway/install/docker-windows/">
                                             <span>
                                                 <div class="deployment-logo">
                                                     <img width="" src="/images/install/platform/docker-windows.svg" title="Docker (Windows)" alt="Docker (Windows)">
