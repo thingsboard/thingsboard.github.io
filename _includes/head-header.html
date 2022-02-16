@@ -457,6 +457,15 @@
                 }
             }
         }
+
+        function onUseCasesClick() {
+            let isMobile = $('button.burger').css('display') === 'block';
+            if (isMobile) {
+                listburg('nav-cases');
+            } else {
+                window.open("/iot-use-cases/","_self");
+            }
+        }
     </script>
 </head>
 <body>
@@ -504,7 +513,7 @@
             </li>
             {% endunless %}
             <li class="nav-cases" data-submenu-id="nav-cases">
-                <a onclick="listburg('nav-cases')">Use Cases</a>
+                <a onclick="onUseCasesClick()" style="cursor: pointer;">Use Cases</a>
             </li>
             <li class="nav-customers" data-submenu-id="nav-customers">
                 <a onclick="listburg('nav-customers')">Customers</a>
@@ -659,13 +668,6 @@
                 <ul class="sub-menu cases">
                     <div class="sub-groups">
                         <div class="group">
-                            <a href="/smart-metering/">
-                                <img src="/images/case-met-icon.svg">
-                                <div class="sub-text">
-                                    <h1>Smart Metering</h1>
-                                    <p>Collection, analysis and visualization of data from meters</p>
-                                </div>
-                            </a>
                             <a href="/smart-energy/">
                                 <img src="/images/case-eng-icon.svg">
                                 <div class="sub-text">
@@ -685,6 +687,13 @@
                                 <div class="sub-text">
                                     <h1>Fleet Tracking</h1>
                                     <p>Fleet tracking and fleet management</p>
+                                </div>
+                            </a>
+                            <a href="/smart-metering/">
+                                <img src="/images/case-met-icon.svg">
+                                <div class="sub-text">
+                                    <h1>Smart Metering</h1>
+                                    <p>Collection, analysis and visualization of data from meters</p>
                                 </div>
                             </a>
                         </div>

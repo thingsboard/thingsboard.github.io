@@ -14,11 +14,10 @@ Some of the industry use cases where ThingsBoard is being successfully utilized 
 
 Should you have any comments or questions please feel free to [Contact Us](/docs/contact-us/).
 
-<div class="usecase-background">
-    <div class="dashboards"></div><div class="small9"></div><div class="small10"></div>
-</div>
-
 <div id="usecase-list">
+    <div class="usecase-background">
+        <div class="dashboards"></div><div class="small9"></div><div class="small10"></div>
+    </div>
     <div class="list">
         <div class="dashboard-item">
             <div class="item-description">
@@ -67,37 +66,37 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
                 <a class="read-more-button" href="/use-cases/environment-monitoring/">More information<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
             </div>
             <div class="item-image-container">
-                <a class="img-button" href="/smart-metering/"><div class="overlay"><div class="eye"><img src="/images/eye-icon.svg">See more</div></div><img class="item-image" src="/images/usecases/environment-monitoring/em1.png" /></a>
+                <a class="img-button" href="/use-cases/environment-monitoring/"><div class="overlay"><div class="eye"><img src="/images/eye-icon.svg">See more</div></div><img class="item-image" src="/images/usecases/environment-monitoring/em1.png" /></a>
             </div>
         </div>
         <div class="dashboard-item">
             <div class="item-description">
-                <h2>Smart metering</h2>
+                <h2>Smart Office</h2>
                 <p>Deliver and store data from smart meters in reliable and fault-tolerant way, visualize real-time and historical energy consumption data on customizable end-user dashboards, integrate with third-party analytics frameworks and solutions.</p>
-                <a class="read-more-button" href="/smart-metering/">More information<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
+                <a class="read-more-button" href="/use-cases/smart-office/">More information<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
             </div>
             <div class="item-image-container">
-                <a class="img-button" href="/smart-metering/"><div class="overlay"><div class="eye"><img src="/images/eye-icon.svg">See more</div></div><img class="item-image" src="/images/usecases/smart-metering/sm1.png" /></a>
+                <a class="img-button" href="/use-cases/smart-office/"><div class="overlay"><div class="eye"><img src="/images/eye-icon.svg">See more</div></div><img class="item-image" src="/images/usecases/smart-office/so1.png" /></a>
             </div>
         </div>
         <div class="dashboard-item">
             <div class="item-description">
-                <h2>Smart metering</h2>
+                <h2>Water Metering</h2>
                 <p>Deliver and store data from smart meters in reliable and fault-tolerant way, visualize real-time and historical energy consumption data on customizable end-user dashboards, integrate with third-party analytics frameworks and solutions.</p>
-                <a class="read-more-button" href="/smart-metering/">More information<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
+                <a class="read-more-button" href="/use-cases/water-metering/">More information<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
             </div>
             <div class="item-image-container">
-                <a class="img-button" href="/smart-metering/"><div class="overlay"><div class="eye"><img src="/images/eye-icon.svg">See more</div></div><img class="item-image" src="/images/usecases/smart-metering/sm1.png" /></a>
+                <a class="img-button" href="/use-cases/water-metering/"><div class="overlay"><div class="eye"><img src="/images/eye-icon.svg">See more</div></div><img class="item-image" src="/images/usecases/water-metering/wm4.png" /></a>
             </div>
         </div>
         <div class="dashboard-item">
             <div class="item-description">
-                <h2>Smart metering</h2>
+                <h2>Smart Retail</h2>
                 <p>Deliver and store data from smart meters in reliable and fault-tolerant way, visualize real-time and historical energy consumption data on customizable end-user dashboards, integrate with third-party analytics frameworks and solutions.</p>
-                <a class="read-more-button" href="/smart-metering/">More information<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
+                <a class="read-more-button" href="/use-cases/smart-retail/">More information<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
             </div>
             <div class="item-image-container">
-                <a class="img-button" href="/smart-metering/"><div class="overlay"><div class="eye"><img src="/images/eye-icon.svg">See more</div></div><img class="item-image" src="/images/usecases/smart-metering/sm1.png" /></a>
+                <a class="img-button" href="/use-cases/smart-retail/"><div class="overlay"><div class="eye"><img src="/images/eye-icon.svg">See more</div></div><img class="item-image" src="/images/usecases/smart-retail/sr3.png" /></a>
             </div>
         </div>
     </div>
