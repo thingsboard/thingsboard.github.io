@@ -26,7 +26,7 @@ The platform provides production-ready server infrastructure to connect your IoT
 
 ## Smart farming dashboard
 
-The following interactive dashboard represents a smart-farming solution that you may easily embed into your IoT solution. 
+The following interactive dashboard represents a smart-farming component that you may easily embed into your IoT solution. 
 This particular dashboard allows users to monitor and control the aeration inside silos. 
 You may quickly adapt it to other farm assets tracking or remote control scenarios.
 
@@ -142,7 +142,7 @@ The diagram below identifies data flow and integration points for a typical smar
 ![Smart energy solution diagram](/images/iot-use-cases/smart-farming.svg)
 
 You may notice plenty of connectivity options for the IoT sensors: direct connection to the cloud, through the IoT Gateway, integration with a third-party system or ThingsBoard Edge.
-Most of smart-farming projects today use IoT Gateway deployed at the farm. 
+Most of the smart-farming projects today use IoT Gateway deployed at the farm. 
 Usually this device is either running [ThingsBoard IoT Gateway](/docs/iot-gateway/what-is-iot-gateway/) or using [Gateway API](/docs/reference/gateway-mqtt-api/).
 Using the gateway, customers optimize hardware cost and connect Modbus, BACnet and other sensors to the cloud.  
 
