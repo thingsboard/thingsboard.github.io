@@ -10,12 +10,11 @@ notitle: "true"
 
 <h1 class="usecase-title">Smart energy monitoring, data visualization and energy efficiency analysis</h1>
 
-## Overview
-
-ThingsBoard platform dramatically reduces time to market and efforts to create smart-energy solutions. Save up to 90% of development time for your smart-energy solution by utilizing the following platform benefits:
+ThingsBoard platform dramatically reduces time to market and efforts to create smart-energy solutions. 
+Save up to 90% of development time for your smart-energy solution by utilizing the following platform benefits:
 
   - Reliable and scalable data collection for your smart meters and energy monitors;
-  - Powerful rule engine to process collected data and produce valuable insights;
+  - Powerful rule engine to process collected data and produce alarms and valuable insights;
   - Advanced and flexible visualization for real-time and historical data;
   - Customizable end-user dashboards to analyze and share the results of energy efficiency monitoring;
   - Integration with third-party analytics frameworks and solutions for advanced electricity usage analytics;
