@@ -13,13 +13,14 @@ notitle: "true"
 ThingsBoard platform dramatically reduces time to market and efforts to create smart-farming solutions.
 Save up to 90% of development time for your smart-farming solution by utilizing the following platform benefits:
 
-- Reliable and fault-tolerant data collection from your IoT devices and sensors to monitor facilities state, crop growth characteristics, humidity level, etc.;
-- Powerful rule engine to process collected data and produce alarms and valuable insights;
-- Optimize resource consumption with automatic remote control of actuators;
-- Advanced and flexible visualization for real-time and historical data;
-- Customizable end-user dashboards to share farm monitoring results;
-- On-premises and cloud deployment options;
-- Tolerate connectivity issues with the farm sites with the help of [ThingsBoard Edge](/products/thingsboard-edge/);
+  - Reliable and fault-tolerant data collection from your IoT devices and sensors to monitor facilities state, crop growth characteristics, humidity level, etc.;
+  - Powerful rule engine to process collected data and produce alarms and valuable insights;
+  - Optimize resource consumption with automatic remote control of actuators;
+  - Advanced and flexible visualization for real-time and historical data;
+  - Customizable end-user dashboards to share farm monitoring results;
+  - On-premises and cloud deployment options;
+  - Tolerate connectivity issues with the farm sites with the help of [ThingsBoard Edge](/products/thingsboard-edge/);
+  - Customizable mobile applications with minimum coding efforts;
 
 The platform provides production-ready server infrastructure to connect your IoT devices, store and analyze collected IoT data and optimize returns on inputs and resources.
 
@@ -140,7 +141,7 @@ The diagram below identifies data flow and integration points for a typical smar
 
 ![Smart energy solution diagram](/images/iot-use-cases/smart-farming.svg)
 
-You may notice plenty of connectivity options for the IoT sensors: direct connection to the cloud, through the IoT Gateway, Integration with a third-party system or ThingsBoard Edge.
+You may notice plenty of connectivity options for the IoT sensors: direct connection to the cloud, through the IoT Gateway, integration with a third-party system or ThingsBoard Edge.
 Most of smart-farming projects today use IoT Gateway deployed at the farm. 
 Usually this device is either running [ThingsBoard IoT Gateway](/docs/iot-gateway/what-is-iot-gateway/) or using [Gateway API](/docs/reference/gateway-mqtt-api/).
 Using the gateway, customers optimize hardware cost and connect Modbus, BACnet and other sensors to the cloud.  

@@ -19,6 +19,7 @@ Save up to 90% of development time for your smart-energy solution by utilizing t
   - Customizable end-user dashboards to analyze and share the results of energy efficiency monitoring;
   - Integration with third-party analytics frameworks and solutions for advanced electricity usage analytics;
   - Enable energy management by utilizing ThingsBoard API to control and manage smart meters.
+  - Customizable mobile applications with minimum coding efforts;
 
 ## Smart energy dashboard
 
