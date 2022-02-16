@@ -302,7 +302,7 @@ $ sudo service thingsboard start
 
 #### ThingsBoard package download
 
-Download ThingsBoard installation archive for Windows: [thingsboard-windows-3.3.3.zip](https://github.com/thingsboard/thingsboard/releases/download/v3.3.2/thingsboard-windows-3.3.3.zip).
+Download ThingsBoard installation archive for Windows: [thingsboard-windows-3.3.3.zip](https://github.com/thingsboard/thingsboard/releases/download/v3.3.3/thingsboard-windows-3.3.3.zip).
 
 #### ThingsBoard service upgrade
 

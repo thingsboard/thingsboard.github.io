@@ -10,16 +10,16 @@ notitle: "true"
 
 <h1 class="usecase-title">Smart energy monitoring, data visualization and energy efficiency analysis</h1>
 
-## Overview
-
-ThingsBoard platform dramatically reduces time to market and efforts to create smart-energy solutions. Save up to 90% of development time for your smart-energy solution by utilizing the following platform benefits:
+ThingsBoard platform dramatically reduces time to market and efforts to create smart-energy solutions. 
+Save up to 90% of development time for your smart-energy solution by utilizing the following platform benefits:
 
   - Reliable and scalable data collection for your smart meters and energy monitors;
-  - Powerful rule engine to process collected data and produce valuable insights;
+  - Powerful rule engine to process collected data and produce alarms and valuable insights;
   - Advanced and flexible visualization for real-time and historical data;
   - Customizable end-user dashboards to analyze and share the results of energy efficiency monitoring;
   - Integration with third-party analytics frameworks and solutions for advanced electricity usage analytics;
   - Enable energy management by utilizing ThingsBoard API to control and manage smart meters.
+  - Customizable mobile applications with minimum coding efforts;
 
 ## Smart energy dashboard
 
@@ -76,7 +76,7 @@ You may export the dashboard from our live demo server and import it to your Thi
                 <object data="/images/integration-icon.svg"></object>
                 <div>
                     <a class="title" href="/docs/user-guide/integrations/">LoRaWAN & SigFox Support</a>
-                    <p>Connect LoRaWAN devices via integrations with standard network servers like TTN, LORIOT, Chirpstack, Actility, etc. Connect SigFox devices via integrations with the SigFox backend.</p>
+                    <p>Connect LoRaWAN devices via integrations with standard network servers like TTN, LORIOT, ChirpStack, Actility, etc. Connect SigFox devices via integrations with the SigFox backend.</p>
                 </div>
             </div>
         </div>
