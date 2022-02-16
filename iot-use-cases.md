@@ -1,12 +1,9 @@
 ---
 layout: use-case
-title: IoT use cases
+title: IoT Use Cases
 description: ThingsBoard IoT Platform use cases
-notitle: "true"
 
 ---
-
-<h1 class="usecase-title">IoT Use Cases</h1>
 
 Being robust, scalable and user friendly, ThingsBoard IoT platform supports various IoT use cases by providing flexible and powerful out-of-the-box features to cut down time to market of your connected products and smart solutions. The platform is device-agnostic, so you can feed and analyze telemetry data from any sensor, connected device or application. ThingsBoard comprehensive features and rich platform APIs allow you to save time and resources on routine IoT tasks and concentrate on specific features of your IoT solution.
 
@@ -16,7 +13,7 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
 
 <div id="usecase-list">
     <div class="usecase-background">
-        <div class="dashboards"></div><div class="small9"></div><div class="small10"></div>
+        <div class="usecase-big-bg1"></div><div class="small9"></div><div class="small10"></div><div class="usecase-big-bg2"></div><div class="small7"></div><div class="small8"></div>
     </div>
     <div class="list">
         <div class="dashboard-item">
@@ -61,7 +58,7 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
         </div>
         <div class="dashboard-item">
             <div class="item-description">
-                <h2>Emvironment Monitoring</h2>
+                <h2>Environment Monitoring</h2>
                 <p>Deliver and store data from smart meters in reliable and fault-tolerant way, visualize real-time and historical energy consumption data on customizable end-user dashboards, integrate with third-party analytics frameworks and solutions.</p>
                 <a class="read-more-button" href="/use-cases/environment-monitoring/">More information<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
             </div>
