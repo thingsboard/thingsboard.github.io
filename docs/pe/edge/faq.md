@@ -1,5 +1,5 @@
 ---
-layout: docwithnav-edge
+layout: docwithnav-pe-edge
 title: FAQ
 description: ThingsBoard Edge FAQ
 

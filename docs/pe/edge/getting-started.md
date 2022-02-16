@@ -1,12 +1,12 @@
 ---
-layout: docwithnav-edge
-title: Getting started with ThingsBoard Edge and ThingsBoard PE
-description: Getting started with ThingsBoard Edge - ThingsBoard Professional Edition 
+layout: docwithnav-pe-edge
+title: Getting started with ThingsBoard PE Edge
+description: Getting started with ThingsBoard PE Edge 
 
 step1:
     0:
         image: /images/edge/getting-started/step-1-item-1.png 
-        title: 'Login to your ThingsBoard <b>Edge</b> instance and open Device groups page.'
+        title: 'Login to your ThingsBoard <b>PE Edge</b> instance and open Device groups page.'
     1:
         image: /images/edge/getting-started/step-1-item-2.png  
         title: 'Open "All" device group.'
@@ -40,7 +40,7 @@ step2:
 step31:
     0:
         image: /images/edge/getting-started/step-1-item-1.png
-        title: 'Open Device groups page in the ThingsBoard <b>Edge</b> instance.'
+        title: 'Open Device groups page in the ThingsBoard <b>PE Edge</b> instance.'
     1:
         image: /images/edge/getting-started/step-1-item-2.png  
         title: 'Open "All" device group.'
@@ -62,7 +62,7 @@ step32:
 step4:
     0:
         image: /images/edge/getting-started/step-4-item-1.png
-        title: 'Open Rule chains page in the ThingsBoard <b>Edge</b> instance.'
+        title: 'Open Rule chains page in the ThingsBoard <b>PE Edge</b> instance.'
     1:
         image: /images/edge/getting-started/step-4-item-2.png
         title: 'Open Edge Root Rule Chain.'
@@ -206,7 +206,7 @@ mqttWindows:
 
 {% include templates/edge/getting-started/step-1.md %}
 
-## Step 2. Provision Device from ThingsBoard Edge to ThingsBoard Professional Edition server (cloud)
+## Step 2. Provision Device from ThingsBoard PE Edge to ThingsBoard Professional Edition server (cloud)
 
 {% include templates/edge/getting-started/step-2.md %}
 
@@ -214,7 +214,7 @@ mqttWindows:
 
 {% include templates/edge/getting-started/step-3.md %}
 
-## Step 4. Push data from ThingsBoard Edge to ThingsBoard Professional Edition server (cloud)
+## Step 4. Push data from ThingsBoard PE Edge to ThingsBoard Professional Edition server (cloud)
 
 {% include templates/edge/getting-started/step-4.md %}
 
@@ -222,7 +222,7 @@ mqttWindows:
 
 {% include templates/edge/getting-started/step-5.md %}
 
-## Step 6. Provision Dashboard to ThingsBoard Edge
+## Step 6. Provision Dashboard to ThingsBoard PE Edge
 
 {% include templates/edge/getting-started/step-6.md %}
 

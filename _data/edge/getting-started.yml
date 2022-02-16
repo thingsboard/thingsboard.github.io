@@ -1,9 +1,6 @@
 bigheader: "Getting Started"
 abstract: "Getting Started with ThingsBoard Edge."
+hidetoc: "true"
 toc:
-- title: Getting Started
-  path: /docs/edge/getting-started/
-- title: Getting Started CE
-  path: /docs/edge/getting-started/getting-started-ce/
-- title: Getting Started PE
-  path: /docs/edge/getting-started/getting-started-pe/
+  - title: Getting Started
+    path: /docs/edge/getting-started/

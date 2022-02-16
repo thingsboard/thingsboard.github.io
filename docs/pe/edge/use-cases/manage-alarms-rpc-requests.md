@@ -1,5 +1,5 @@
 ---
-layout: docwithnav-edge
+layout: docwithnav-pe-edge
 title: Manage alarms and RPC requests on edge devices - ThingsBoard Professional Edition
 description: ThingsBoard Edge use case #1
 

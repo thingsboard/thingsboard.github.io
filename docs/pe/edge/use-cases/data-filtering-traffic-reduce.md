@@ -1,5 +1,5 @@
 ---
-layout: docwithnav-edge
+layout: docwithnav-pe-edge
 title: Data filtering and traffic reduce - ThingsBoard Professional Edition
 description: ThingsBoard Edge use case #2
 

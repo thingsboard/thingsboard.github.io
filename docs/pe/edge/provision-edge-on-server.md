@@ -1,5 +1,5 @@
 ---
-layout: docwithnav-edge
+layout: docwithnav-pe-edge
 title: Provision ThingsBoard Edge on ThingsBoard PE server
 description: Provision ThingsBoard Edge on ThingsBoard PE server
 

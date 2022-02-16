@@ -1,10 +1,10 @@
 {% if currentGuide != "GettingStartedGuide" %}
 - Getting started guides - Provide quick overview of main ThingsBoard Edge features. Designed to be completed in 15-30 minutes:
-    * [Professional Edition](/docs/edge/getting-started/getting-started-pe/)
-    * [Community Edition](/docs/edge/getting-started/getting-started-ce/)
+    * [PE Edge](/docs/pe/edge/getting-started/)
+    * [Edge](/docs/edge/getting-started/)
 {% endif %}
 {% if currentGuide != "InstallationGuides" %}
-- [Installation guides](/docs/user-guide/install/edge/installation-options/) - Learn how to setup ThingsBoard Edge on various available operating systems and connect to ThingsBoard CE/PE server.
+- [Installation guides](/docs/user-guide/install/edge/installation-options/) - Learn how to setup ThingsBoard Edge on various available operating systems and connect to ThingsBoard CE server.
 {% endif %}
 - Edge Rule Engine:
 {% if currentGuide != "EdgeRuleEngineOverview" %}
