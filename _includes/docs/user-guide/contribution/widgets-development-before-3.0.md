@@ -859,9 +859,9 @@ The value displayed was obtained from [subscription](#subscription-object) **dat
 Another approach of creating widgets is to use existing bundled JavaScript code.
 In this case, you can create own JavaScript class or Angular directive and bundle it into the ThingsBoard UI code.
 In order to make this code accessible within the widget, you need to register corresponding Angular module or inject JavaScript class to a global variable (for ex. window object).
-Some of the ThingsBoard widgets already use this approach. Take a look at the [widget.service.js](https://github.com/thingsboard/thingsboard/tree/master/ui/src/app/api/widget.service.js).
+Some of the ThingsBoard widgets already use this approach. Take a look at the [widget.service.js](https://github.com/thingsboard/thingsboard/blob/v2.5.5/ui/src/app/api/widget.service.js).
 Here you can find how some bundled classes or modules are registered for later use in ThingsBoard widgets.
-For example "Timeseries - Flot" widget (from "Charts" Widgets Bundle) uses [**TbFlot**](https://github.com/thingsboard/thingsboard/tree/master/ui/src/app/widget/lib/flot-widget.js) JavaScript class which is injected as window property inside **widget.service.js**:
+For example "Timeseries - Flot" widget (from "Charts" Widgets Bundle) uses [**TbFlot**](https://github.com/thingsboard/thingsboard/blob/v2.5.5/ui/src/app/widget/lib/flot-widget.js) JavaScript class which is injected as window property inside **widget.service.js**:
 
 ```javascript
 ...
@@ -874,7 +874,7 @@ import TbFlot from '../widget/lib/flot-widget';
 
 ```
 
-Another example is "Timeseries table" widget (from "Cards" Widgets Bundle) that uses Angular directive [**tb-timeseries-table-widget**](https://github.com/thingsboard/thingsboard/tree/master/ui/src/app/widget/lib/timeseries-table-widget.js) which is registered as dependency of **'thingsboard.api.widget'** Angular module inside **widget.service.js**.
+Another example is "Timeseries table" widget (from "Cards" Widgets Bundle) that uses Angular directive [**tb-timeseries-table-widget**](https://github.com/thingsboard/thingsboard/blob/v2.5.5/ui/src/app/widget/lib/timeseries-table-widget.js) which is registered as dependency of **'thingsboard.api.widget'** Angular module inside **widget.service.js**.
 Thereby this directive becomes available for use inside the widget template HTML. 
 
 ```javascript

@@ -1476,7 +1476,7 @@ Minor release with the following improvements.
 Main features:
 
 - Migrate to Spring Boot 2.1.0 and Spring 5.1.2;
-- [Kubernetes scripts](https://github.com/thingsboard/thingsboard/tree/master/k8s) for ThingsBoard Microservices;
+- [Kubernetes scripts](https://github.com/thingsboard/thingsboard/blob/v2.3.1/k8s) for ThingsBoard Microservices;
 - UI: New Trip Animation Widget;
 - UI: New Date Range Navigator Widget;
 - UI: New [Entities Hierarchy Widget](https://www.youtube.com/watch?v=bc07ys-azqw);
