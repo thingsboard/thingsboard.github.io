@@ -45,7 +45,7 @@ You may quickly adapt it to other farm assets tracking or remote control scenari
     <a target="_blank" href="https://demo.thingsboard.io/dashboard/1f9828d0-058e-11e7-87f7-bb0136cc33d0?publicId=963ab470-34c9-11e7-a7ce-bb0136cc33d0" class="button">View live demo</a>
 </div>
 
-The live dashboard displays real-time data from temperature, moisture, and distance sensors collected using ThingsBoard MQTT API.
+The live dashboard displays real-time data from temperature, moisture, and ultrasonic sensor collected using ThingsBoard MQTT API.
 Collected data is processed via the rule engine to raise alarms on certain thresholds.
 The main dashboard displays the silo asset's location, corresponding alarms, and real-time data feeds.
 Click on the alarm or silo row to open the asset details and access the aeration controls.
@@ -62,7 +62,8 @@ You may export the dashboard from our live demo server and import it to your Thi
                 <img src="/images/microservices-icon.svg">
                 <div>
                     <a class="title" href="/docs/reference/msa/">Scalability and high availability</a>
-                    <p>ThingsBoard supports high-availability deployments on cloud and on-premises data centers using K8S or bare-metal deployments. Platform components are horizontally scalable. ThingsBoard has production deployments with more than 500 000 smart-meters.</p>
+                    <p>ThingsBoard supports high-availability deployments on cloud and on-premises data centers using K8S or bare-metal deployments. 
+                        Platform components are horizontally scalable. ThingsBoard has production deployments supporting more then 1000 agriculture sites and 500 000 devices connected.</p>
                 </div>
             </div>
         </div>
@@ -71,7 +72,8 @@ You may export the dashboard from our live demo server and import it to your Thi
                 <img src="/images/telemetry-icon.svg">
                 <div>
                     <a class="title" href="/docs/getting-started-guides/connectivity/">Connectivity</a>
-                    <p>Connect devices directly to the platform via the following built-in protocols: HTTP, CoAP, MQTT, LwM2M, and SNMP. Connect devices in your local network to the cloud using ThingsBoard Gateway via Modbus, BLE, BACnet, OPC-UA, and other protocols.</p>
+                    <p>Connect devices directly to the platform via the following built-in protocols: HTTP, CoAP, MQTT, LwM2M, and SNMP. 
+                        Connect devices in your local network to the cloud using ThingsBoard Gateway via Modbus, BLE, BACnet, OPC-UA, and other protocols.</p>
                 </div>
             </div>
         </div>
@@ -80,7 +82,7 @@ You may export the dashboard from our live demo server and import it to your Thi
                 <img src="/images/integration-icon.svg">
                 <div>
                     <a class="title" href="/docs/user-guide/integrations/">LoRaWAN & SigFox Support</a>
-                    <p>Connect LoRaWAN devices via integrations with standard network servers like TTN, LORIOT, Chirpstack, Actility, etc. Connect SigFox devices via integrations with the SigFox backend.</p>
+                    <p>Connect LoRaWAN devices via integrations with standard network servers like TTN, LORIOT, ChirpStack, Actility, etc. Connect SigFox devices via integrations with the SigFox backend.</p>
                 </div>
             </div>
         </div>
@@ -143,9 +145,12 @@ Most of smart-farming projects today use IoT Gateway deployed at the farm.
 Usually this device is either running [ThingsBoard IoT Gateway](/docs/iot-gateway/what-is-iot-gateway/) or using [Gateway API](/docs/reference/gateway-mqtt-api/).
 Using the gateway, customers optimize hardware cost and connect Modbus, BACnet and other sensors to the cloud.  
 
+Advanced smart-farming IoT solutions may leverage the [ThingsBoard Edge](/products/thingsboard-edge/). 
+The Edge computing solution is especially useful in case of poor or frequent network outages. See edge [use-cases](/docs/edge/use-cases/overview/) to learn more.
 
 The platform supports industry-standard encryption algorithms and device credentials types. ThingsBoard stores data in the fault-tolerant and reliable Cassandra database.
 The Rule Engine enables forwarding incoming data to various analytics systems, such as Apache Spark or Hadoop, using Kafka or other Message buses.
+
 
 ## Learn more
 

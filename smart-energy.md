@@ -75,7 +75,7 @@ You may export the dashboard from our live demo server and import it to your Thi
                 <object data="/images/integration-icon.svg"></object>
                 <div>
                     <a class="title" href="/docs/user-guide/integrations/">LoRaWAN & SigFox Support</a>
-                    <p>Connect LoRaWAN devices via integrations with standard network servers like TTN, LORIOT, Chirpstack, Actility, etc. Connect SigFox devices via integrations with the SigFox backend.</p>
+                    <p>Connect LoRaWAN devices via integrations with standard network servers like TTN, LORIOT, ChirpStack, Actility, etc. Connect SigFox devices via integrations with the SigFox backend.</p>
                 </div>
             </div>
         </div>
